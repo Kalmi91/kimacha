@@ -19,7 +19,7 @@ export default {
   },
   buttons: {
     again: 'újra',
-    good: 'Jó',
+    good: 'jó',
     bored: 'unom',
   },
   done: {

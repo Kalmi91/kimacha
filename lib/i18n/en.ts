@@ -19,7 +19,7 @@ export default {
   },
   buttons: {
     again: 'again',
-    good: 'Good',
+    good: 'good',
     bored: 'I know this',
   },
   done: {
