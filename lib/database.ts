@@ -12,6 +12,7 @@ export interface DB {
   getLevel(): Promise<{ level: string; correct_streak: number; mistakes_in_window: number; fail_streak: number }>;
   updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number): Promise<void>;
   getDueCardsForLevel(level: string, limit: number): Promise<any[]>;
+  recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -59,6 +60,14 @@ class SQLiteDB implements DB {
         longest_count INTEGER NOT NULL DEFAULT 0
       );
       INSERT OR IGNORE INTO streak (id, current_count, longest_count) VALUES (1, 0, 0);
+      CREATE TABLE IF NOT EXISTS card_attempts (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        word_id INTEGER NOT NULL,
+        type TEXT NOT NULL,
+        correct INTEGER NOT NULL,
+        response_time_ms INTEGER NOT NULL,
+        timestamp TEXT NOT NULL
+      );
       CREATE TABLE IF NOT EXISTS onboarding (
         id INTEGER PRIMARY KEY CHECK (id = 1),
         source TEXT NOT NULL,
@@ -151,6 +160,14 @@ class SQLiteDB implements DB {
     return await db.getAllAsync(
       `SELECT * FROM cards WHERE word_id IN (${placeholders}) AND due <= ? ORDER BY due ASC LIMIT ?`,
       [...wordIds, new Date().toISOString(), limit]
+    );
+  }
+
+  async recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number) {
+    const db = await this.open();
+    await db.runAsync(
+      'INSERT INTO card_attempts (word_id, type, correct, response_time_ms, timestamp) VALUES (?, ?, ?, ?, ?)',
+      [wordId, type, correct ? 1 : 0, responseTimeMs, new Date().toISOString()]
     );
   }
 }
