@@ -85,6 +85,23 @@ export default function LearnScreen() {
     loadCards();
   }, []);
 
+  useEffect(() => {
+    if (Platform.OS !== 'web') return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key !== 'Enter') return;
+      if (done || loading) return;
+      if (!current) return;
+      if (current.isTyping && current.type === 'word') return;
+      if (!revealed) {
+        setRevealed(true);
+      } else {
+        advance(Rating.Good);
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  });
+
   const current = queue[currentIndex];
 
   const getFrontBack = (item: DueItem) => {
@@ -296,10 +313,8 @@ export default function LearnScreen() {
   );
 
   const levelUpOverlay = levelUpMsg ? (
-    <View style={styles.levelUpOverlay}>
-      <Text style={[styles.levelUpText, { color: levelUpMsg.startsWith('↑') ? '#22C55E' : '#EF4444' }]}>
-        {levelUpMsg}
-      </Text>
+    <View style={[styles.levelUpOverlay, { backgroundColor: levelUpMsg.startsWith('↑') ? 'rgba(13,148,136,0.9)' : 'rgba(239,68,68,0.85)' }]}>
+      <Text style={styles.levelUpText}>{levelUpMsg}</Text>
     </View>
   ) : null;
 
@@ -473,15 +488,19 @@ const styles = StyleSheet.create({
   },
   levelUpOverlay: {
     position: 'absolute',
-    top: '40%',
+    top: 0,
     left: 0,
     right: 0,
+    bottom: 0,
     alignItems: 'center',
-    zIndex: 10,
+    justifyContent: 'center',
+    zIndex: 100,
+    borderRadius: 20,
   },
   levelUpText: {
-    fontSize: 48,
+    fontSize: 56,
     fontWeight: '900',
+    color: '#FFFFFF',
   },
   streakBadge: {
     flexDirection: 'row',
