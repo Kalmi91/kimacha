@@ -7,6 +7,7 @@ import 'react-native-reanimated';
 import { useColorScheme } from '@/components/useColorScheme';
 import { getDb } from '@/lib/database';
 import { initI18n, setLanguage } from '@/lib/i18n';
+import { sendAnalyticsIfNeeded } from '@/lib/analytics';
 
 export { ErrorBoundary } from 'expo-router';
 
@@ -27,7 +28,10 @@ export default function RootLayout() {
     async function check() {
       const db = getDb();
       const result = await db.getOnboarding();
-      if (result) setLanguage(result.source);
+      if (result) {
+        setLanguage(result.source);
+        sendAnalyticsIfNeeded();
+      }
       setOnboardingDone(!!result);
     }
     if (loaded) check();
