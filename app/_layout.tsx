@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useFonts } from 'expo-font';
-import { Stack, ThemeProvider, DarkTheme, DefaultTheme, router } from 'expo-router';
+import { Stack, ThemeProvider as NavThemeProvider, DarkTheme, DefaultTheme, router } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import 'react-native-reanimated';
 
-import { useColorScheme } from '@/components/useColorScheme';
 import { getDb } from '@/lib/database';
 import { initI18n, setLanguage } from '@/lib/i18n';
 import { sendAnalyticsIfNeeded } from '@/lib/analytics';
+import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
 
 export { ErrorBoundary } from 'expo-router';
 
@@ -50,18 +50,22 @@ export default function RootLayout() {
     return null;
   }
 
-  return <RootLayoutNav />;
+  return (
+    <ThemeProvider>
+      <RootLayoutNav />
+    </ThemeProvider>
+  );
 }
 
 function RootLayoutNav() {
-  const colorScheme = useColorScheme() ?? 'dark';
+  const { theme } = useTheme();
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <NavThemeProvider value={theme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="onboarding" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       </Stack>
-    </ThemeProvider>
+    </NavThemeProvider>
   );
 }

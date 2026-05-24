@@ -30,6 +30,7 @@ export default {
   tabs: {
     learn: 'Tanulás',
     active: 'Aktív',
+    settings: 'Beállítások',
   },
   active: {
     title: 'Aktív mód',

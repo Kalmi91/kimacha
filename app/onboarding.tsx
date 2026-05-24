@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Pressable, Dimensions, Alert, Platform } from '
 import { router } from 'expo-router';
 
 import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
+import { useTheme } from '@/lib/ThemeContext';
 import { languages, isPairSupported } from '@/lib/languages';
 import { getDb } from '@/lib/database';
 import { t, setLanguage } from '@/lib/i18n';
@@ -14,8 +14,8 @@ const FLAG_SIZE = width > 400 ? 56 : 48;
 type Step = 'source' | 'target';
 
 export default function OnboardingScreen() {
-  const colorScheme = useColorScheme() ?? 'dark';
-  const colors = Colors[colorScheme];
+  const { theme } = useTheme();
+  const colors = Colors[theme];
   const s = t();
 
   const [step, setStep] = useState<Step>('source');

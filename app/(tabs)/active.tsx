@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native';
 import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
+import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import FeedbackButton from '@/components/FeedbackModal';
 
 export default function ActiveScreen() {
-  const colorScheme = useColorScheme() ?? 'dark';
-  const colors = Colors[colorScheme];
+  const { theme } = useTheme();
+  const colors = Colors[theme];
   const s = t();
 
   return (

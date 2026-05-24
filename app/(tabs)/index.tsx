@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Pressable, ActivityIndicator, TextInput, Keyboa
 import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
 
 import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
+import { useTheme } from '@/lib/ThemeContext';
 import { getDb, cardFromRow } from '@/lib/database';
 import { words, type WordEntry, getWordsForLevel, LEVELS, type Level } from '@/data/words';
 import { t } from '@/lib/i18n';
@@ -23,8 +23,8 @@ interface DueItem {
 type TypingResult = 'correct' | 'almost' | 'wrong' | null;
 
 export default function LearnScreen() {
-  const colorScheme = useColorScheme() ?? 'dark';
-  const colors = Colors[colorScheme];
+  const { theme } = useTheme();
+  const colors = Colors[theme];
   const s = t();
 
   const [loading, setLoading] = useState(true);

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { StyleSheet, Text, View, Pressable, TextInput, Modal, Alert, Platform } from 'react-native';
 import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
+import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 
 const ENDPOINT = 'https://script.google.com/macros/s/AKfycbz2ziRYVpdLcQO1fI10CpbAO7l3bqUFZMxfwBTNxVsc19tRAfE8mGAg01JJscB2fRt6/exec';
@@ -13,8 +13,8 @@ interface Props {
 }
 
 export default function FeedbackButton({ level, languagePair, currentCard }: Props) {
-  const colorScheme = useColorScheme() ?? 'dark';
-  const colors = Colors[colorScheme];
+  const { theme } = useTheme();
+  const colors = Colors[theme];
   const s = t();
 
   const [visible, setVisible] = useState(false);
