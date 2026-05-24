@@ -18,9 +18,9 @@ export default {
     wrong: 'Hibás',
   },
   buttons: {
-    again: 'újra',
-    good: 'jó',
-    bored: 'unom',
+    again: 'Újra',
+    good: 'Jó',
+    bored: 'Unom',
   },
   done: {
     title: 'Kész vagy mára!',

@@ -18,9 +18,9 @@ export default {
     wrong: 'Wrong',
   },
   buttons: {
-    again: 'again',
-    good: 'good',
-    bored: 'I know this',
+    again: 'Again',
+    good: 'Good',
+    bored: 'I Know This',
   },
   done: {
     title: 'Done for today!',
