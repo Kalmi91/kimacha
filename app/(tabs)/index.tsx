@@ -290,7 +290,7 @@ export default function LearnScreen() {
         <Text style={[styles.doneSubtitle, { color: colors.tabIconDefault }]}>
           {s.done.reviewed(reviewed)}
         </Text>
-        <View style={[styles.levelBadgeLarge, { backgroundColor: colors.tint }]}>
+        <View style={[styles.levelBadgeLarge, { backgroundColor: '#38BDF8' }]}>
           <Text style={styles.levelTextLarge}>{level}</Text>
         </View>
         <View style={[styles.streakBadge, { backgroundColor: colors.card, marginTop: 12 }]}>
@@ -307,7 +307,7 @@ export default function LearnScreen() {
   const typeLabel = isWord ? s.card.word : s.card.sentence;
 
   const levelBadge = (
-    <View style={[styles.levelBadge, { backgroundColor: colors.tint }]}>
+    <View style={[styles.levelBadge, { backgroundColor: '#38BDF8' }]}>
       <Text style={styles.levelText}>{level}</Text>
     </View>
   );
@@ -368,7 +368,7 @@ export default function LearnScreen() {
         {!revealed ? (
           <View style={styles.buttons}>
             <Pressable
-              style={[styles.button, styles.checkButton, { backgroundColor: colors.tint }]}
+              style={[styles.button, styles.checkButton, { backgroundColor: '#38BDF8' }]}
               onPress={handleCheck}
             >
               <Text style={styles.buttonText}>{s.card.check}</Text>
@@ -377,7 +377,7 @@ export default function LearnScreen() {
         ) : (
           <View style={styles.buttons}>
             <Pressable
-              style={[styles.button, styles.checkButton, { backgroundColor: typingResult === 'wrong' ? '#F59E0B' : colors.tint }]}
+              style={[styles.button, styles.checkButton, { backgroundColor: typingResult === 'wrong' ? '#1D4ED8' : '#38BDF8' }]}
               onPress={handleTypingNext}
             >
               <Text style={styles.buttonText}>→</Text>
@@ -413,7 +413,7 @@ export default function LearnScreen() {
 
         {revealed ? (
           <View style={styles.backSection}>
-            <View style={[styles.divider, { backgroundColor: colors.tint }]} />
+            <View style={[styles.divider, { backgroundColor: '#38BDF8' }]} />
             <Text style={[styles.backText, { color: colors.tint }]}>{back}</Text>
           </View>
         ) : (
@@ -425,13 +425,13 @@ export default function LearnScreen() {
 
       <View style={[styles.buttons, { opacity: revealed ? 1 : 0 }]} pointerEvents={revealed ? 'auto' : 'none'}>
         <Pressable
-          style={[styles.button, { backgroundColor: '#EF4444' }]}
+          style={[styles.button, { backgroundColor: '#1D4ED8' }]}
           onPress={() => advance(Rating.Again)}
         >
           <Text style={styles.buttonText}>{s.buttons.again}</Text>
         </Pressable>
         <Pressable
-          style={[styles.button, { backgroundColor: colors.tint }]}
+          style={[styles.button, { backgroundColor: '#38BDF8' }]}
           onPress={() => advance(Rating.Good)}
         >
           <Text style={styles.buttonText}>{s.buttons.good}</Text>
