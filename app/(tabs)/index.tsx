@@ -425,7 +425,7 @@ export default function LearnScreen() {
 
       <View style={[styles.buttons, { opacity: revealed ? 1 : 0 }]} pointerEvents={revealed ? 'auto' : 'none'}>
         <Pressable
-          style={[styles.button, { backgroundColor: '#F59E0B' }]}
+          style={[styles.button, { backgroundColor: '#EF4444' }]}
           onPress={() => advance(Rating.Again)}
         >
           <Text style={styles.buttonText}>{s.buttons.again}</Text>
