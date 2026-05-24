@@ -85,17 +85,11 @@ export default function LearnScreen() {
   const current = queue[currentIndex];
 
   const getFrontBack = (item: DueItem) => {
-    const [source] = direction;
+    const [source, target] = direction;
     const isWord = item.type === 'word';
-    if (source === 'es') {
-      return {
-        front: isWord ? item.word.es : item.word.sentence_es,
-        back: isWord ? item.word.hu : item.word.sentence_hu,
-      };
-    }
     return {
-      front: isWord ? item.word.hu : item.word.sentence_hu,
-      back: isWord ? item.word.es : item.word.sentence_es,
+      front: String(isWord ? item.word[source] : item.word[`sentence_${source}`]),
+      back: String(isWord ? item.word[target] : item.word[`sentence_${target}`]),
     };
   };
 

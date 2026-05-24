@@ -13,10 +13,11 @@ export const languages: Language[] = [
   { code: 'pt', name: 'Português', flag: '🇵🇹' },
 ];
 
-export const supportedPairs: [string, string][] = [
-  ['es', 'hu'],
-  ['hu', 'es'],
-];
+const activeLangs = ['es', 'hu', 'en', 'de'];
+
+export const supportedPairs: [string, string][] = activeLangs.flatMap(
+  s => activeLangs.filter(t => t !== s).map(t => [s, t] as [string, string])
+);
 
 export function isPairSupported(source: string, target: string): boolean {
   return supportedPairs.some(([s, t]) => s === source && t === target);
