@@ -377,7 +377,7 @@ export default function LearnScreen() {
         ) : (
           <View style={styles.buttons}>
             <Pressable
-              style={[styles.button, styles.checkButton, { backgroundColor: typingResult === 'wrong' ? '#EF4444' : colors.tint }]}
+              style={[styles.button, styles.checkButton, { backgroundColor: typingResult === 'wrong' ? '#F59E0B' : colors.tint }]}
               onPress={handleTypingNext}
             >
               <Text style={styles.buttonText}>→</Text>
@@ -425,7 +425,7 @@ export default function LearnScreen() {
 
       <View style={[styles.buttons, { opacity: revealed ? 1 : 0 }]} pointerEvents={revealed ? 'auto' : 'none'}>
         <Pressable
-          style={[styles.button, { backgroundColor: '#EF4444' }]}
+          style={[styles.button, { backgroundColor: '#F59E0B' }]}
           onPress={() => advance(Rating.Again)}
         >
           <Text style={styles.buttonText}>{s.buttons.again}</Text>
