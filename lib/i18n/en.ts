@@ -20,7 +20,7 @@ export default {
   buttons: {
     again: 'again',
     good: 'Good',
-    bored: 'bored',
+    bored: 'I know this',
   },
   done: {
     title: 'Done for today!',

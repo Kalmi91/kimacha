@@ -1,7 +1,6 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { StyleSheet, Text, View, Pressable, ActivityIndicator, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
-import { useFocusEffect } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
@@ -51,7 +50,7 @@ export default function LearnScreen() {
       await db.ensureCard(w.id, 'sentence');
     }
 
-    const rows = await db.getDueCards(30);
+    const rows = await db.getDueCards(10);
     const items: DueItem[] = rows.map((row: any) => ({
       wordId: row.word_id,
       type: row.type,
@@ -72,11 +71,9 @@ export default function LearnScreen() {
     setLoading(false);
   }, []);
 
-  useFocusEffect(
-    useCallback(() => {
-      loadCards();
-    }, [loadCards])
-  );
+  useEffect(() => {
+    loadCards();
+  }, []);
 
   const current = queue[currentIndex];
 
@@ -112,7 +109,7 @@ export default function LearnScreen() {
     setReviewed(reviewed + 1);
 
     if (next >= queue.length) {
-      const newRows = await db.getDueCards(30);
+      const newRows = await db.getDueCards(10);
       const newItems: DueItem[] = newRows.map((row: any) => ({
         wordId: row.word_id,
         type: row.type,
@@ -139,7 +136,7 @@ export default function LearnScreen() {
     if (!current) return;
     const { back } = getFrontBack(current);
     const answer = typedAnswer.trim().toLowerCase();
-    const correct = back.toLowerCase().split(' / ')[0].trim();
+    const correct = back.toLowerCase().split(' / ')[0].trim().replace(/[¡¿]/g, '');
     const dist = levenshtein(answer, correct);
 
     if (dist === 0) {
