@@ -30,6 +30,7 @@ export default {
   tabs: {
     learn: 'Lernen',
     active: 'Aktiv',
+    settings: 'Einstellungen',
   },
   active: {
     title: 'Aktiver Modus',

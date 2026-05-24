@@ -2,26 +2,27 @@ import { Tabs } from 'expo-router';
 import { SymbolView } from 'expo-symbols';
 
 import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
+import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme() ?? 'dark';
+  const { theme } = useTheme();
+  const colors = Colors[theme];
   const s = t();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
-        tabBarInactiveTintColor: Colors[colorScheme].tabIconDefault,
+        tabBarActiveTintColor: colors.tint,
+        tabBarInactiveTintColor: colors.tabIconDefault,
         tabBarStyle: {
-          backgroundColor: Colors[colorScheme].background,
-          borderTopColor: Colors[colorScheme].card,
+          backgroundColor: colors.background,
+          borderTopColor: colors.card,
         },
         headerStyle: {
-          backgroundColor: Colors[colorScheme].background,
+          backgroundColor: colors.background,
         },
-        headerTintColor: Colors[colorScheme].text,
+        headerTintColor: colors.text,
       }}>
       <Tabs.Screen
         name="index"
@@ -43,6 +44,19 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => (
             <SymbolView
               name={{ ios: 'mic.fill', android: 'mic', web: 'mic' }}
+              tintColor={color}
+              size={28}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: s.tabs.settings,
+          tabBarIcon: ({ color }) => (
+            <SymbolView
+              name={{ ios: 'gearshape.fill', android: 'settings', web: 'settings' }}
               tintColor={color}
               size={28}
             />
