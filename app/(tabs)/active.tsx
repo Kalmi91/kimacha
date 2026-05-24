@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { t } from '@/lib/i18n';
+import FeedbackButton from '@/components/FeedbackModal';
 
 export default function ActiveScreen() {
   const colorScheme = useColorScheme() ?? 'dark';
@@ -18,6 +19,7 @@ export default function ActiveScreen() {
       <Text style={[styles.description, { color: colors.tabIconDefault }]}>
         {s.active.description}
       </Text>
+      <FeedbackButton level="-" languagePair="-" currentCard="active-tab" />
     </View>
   );
 }

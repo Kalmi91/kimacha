@@ -8,6 +8,7 @@ import { getDb, cardFromRow } from '@/lib/database';
 import { words, type WordEntry, getWordsForLevel, LEVELS, type Level } from '@/data/words';
 import { t } from '@/lib/i18n';
 import { levenshtein } from '@/lib/levenshtein';
+import FeedbackButton from '@/components/FeedbackModal';
 
 const f = fsrs();
 
@@ -279,6 +280,7 @@ export default function LearnScreen() {
           <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
           <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>{s.done.streak}</Text>
         </View>
+        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="done" />
       </View>
     );
   }
@@ -367,6 +369,8 @@ export default function LearnScreen() {
             </Pressable>
           </View>
         )}
+
+        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`${current.type}:${front}`} />
       </KeyboardAvoidingView>
     );
   }
@@ -426,6 +430,8 @@ export default function LearnScreen() {
           </Pressable>
         )}
       </View>
+
+      <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`${current.type}:${front}`} />
     </View>
   );
 }

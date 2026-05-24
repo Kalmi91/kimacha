@@ -36,4 +36,11 @@ export default {
     comingSoon: 'Bald verfügbar...',
     description: 'Führe ein Gespräch auf Spanisch.\nKommt in einem zukünftigen Update.',
   },
+  feedback: {
+    button: 'Feedback',
+    placeholder: 'Teile deine Meinung...',
+    send: 'Senden',
+    cancel: 'Abbrechen',
+    thanks: 'Danke!',
+  },
 };
