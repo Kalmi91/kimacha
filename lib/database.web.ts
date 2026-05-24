@@ -11,6 +11,7 @@ export interface DB {
   getLevel(): Promise<{ level: string; correct_streak: number; mistakes_in_window: number; fail_streak: number }>;
   updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number): Promise<void>;
   getDueCardsForLevel(level: string, limit: number): Promise<any[]>;
+  recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -110,6 +111,12 @@ class MemoryDB implements DB {
       .filter(c => wordIds.has(c.word_id) && c.due <= now)
       .sort((a, b) => a.due.localeCompare(b.due))
       .slice(0, limit);
+  }
+
+  private attempts: { word_id: number; type: string; correct: boolean; response_time_ms: number; timestamp: string }[] = [];
+
+  async recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number) {
+    this.attempts.push({ word_id: wordId, type, correct, response_time_ms: responseTimeMs, timestamp: new Date().toISOString() });
   }
 }
 

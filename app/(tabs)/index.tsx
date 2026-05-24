@@ -38,6 +38,7 @@ export default function LearnScreen() {
   const [typingResult, setTypingResult] = useState<TypingResult>(null);
   const [level, setLevel] = useState<Level>('A0');
   const [levelUpMsg, setLevelUpMsg] = useState<string | null>(null);
+  const [cardStartTime, setCardStartTime] = useState<number>(Date.now());
   const inputRef = useRef<TextInput>(null);
 
   const loadCards = async () => {
@@ -75,6 +76,7 @@ export default function LearnScreen() {
     setTypedAnswer('');
     setTypingResult(null);
     setDone(items.length === 0);
+    setCardStartTime(Date.now());
     setLoading(false);
   };
 
@@ -150,8 +152,11 @@ export default function LearnScreen() {
     const updated = result[rating].card;
     const wasCorrect = rating !== Rating.Again;
 
+    const responseTimeMs = Date.now() - cardStartTime;
+
     const db = getDb();
     await db.updateCard(current.wordId, current.type, updated);
+    await db.recordAttempt(current.wordId, current.type, wasCorrect, responseTimeMs);
     await db.updateStreak();
     await checkLevelChange(wasCorrect);
 
@@ -184,6 +189,7 @@ export default function LearnScreen() {
     setRevealed(false);
     setTypedAnswer('');
     setTypingResult(null);
+    setCardStartTime(Date.now());
   };
 
   const handleInSentence = async () => {
@@ -192,8 +198,11 @@ export default function LearnScreen() {
     const result = f.repeat(current.card, new Date());
     const updated = result[Rating.Again].card;
 
+    const responseTimeMs = Date.now() - cardStartTime;
+
     const db = getDb();
     await db.updateCard(current.wordId, current.type, updated);
+    await db.recordAttempt(current.wordId, current.type, false, responseTimeMs);
     await db.updateStreak();
     await checkLevelChange(false);
 
@@ -219,6 +228,7 @@ export default function LearnScreen() {
     setRevealed(false);
     setTypedAnswer('');
     setTypingResult(null);
+    setCardStartTime(Date.now());
   };
 
   const handleCheck = () => {
