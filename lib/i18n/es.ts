@@ -36,4 +36,11 @@ export default {
     comingSoon: 'Próximamente...',
     description: 'Conversa en español con un NPC.\nPróximamente.',
   },
+  feedback: {
+    button: 'Comentarios',
+    placeholder: 'Comparte tu opinión...',
+    send: 'Enviar',
+    cancel: 'Cancelar',
+    thanks: '¡Gracias!',
+  },
 };

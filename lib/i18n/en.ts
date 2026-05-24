@@ -36,4 +36,11 @@ export default {
     comingSoon: 'Coming soon...',
     description: 'Have a conversation in Spanish.\nComing in a future update.',
   },
+  feedback: {
+    button: 'Feedback',
+    placeholder: 'Share your thoughts...',
+    send: 'Send',
+    cancel: 'Cancel',
+    thanks: 'Thank You!',
+  },
 };

@@ -36,4 +36,11 @@ export default {
     comingSoon: 'Hamarosan...',
     description: 'Beszélgess spanyolul egy NPC-vel.\nIter2-ben érkezik.',
   },
+  feedback: {
+    button: 'Visszajelzés',
+    placeholder: 'Írd le a véleményed...',
+    send: 'Küldés',
+    cancel: 'Mégse',
+    thanks: 'Köszönjük!',
+  },
 };
