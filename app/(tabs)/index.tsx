@@ -154,10 +154,13 @@ export default function LearnScreen() {
       isTyping: false,
     };
 
-    const newQueue = [...queue];
-    newQueue.splice(currentIndex + 1, 0, sentenceCard);
+    const newQueue = queue.filter((item, i) =>
+      i === currentIndex || !(item.wordId === current.wordId && item.type === 'sentence')
+    );
+    const insertAt = newQueue.indexOf(current) + 1;
+    newQueue.splice(insertAt, 0, sentenceCard);
     setQueue(newQueue);
-    setCurrentIndex(currentIndex + 1);
+    setCurrentIndex(insertAt);
     setRevealed(false);
     setTypedAnswer('');
     setTypingResult(null);
