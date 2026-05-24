@@ -18,9 +18,9 @@ export default {
     wrong: 'Incorrecto',
   },
   buttons: {
-    again: 'otra vez',
-    good: 'bien',
-    bored: 'aburrido',
+    again: 'Otra Vez',
+    good: 'Bien',
+    bored: 'Aburrido',
   },
   done: {
     title: '¡Terminaste por hoy!',
