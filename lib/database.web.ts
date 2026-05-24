@@ -112,10 +112,16 @@ class MemoryDB implements DB {
     const levelWords = getWordsForLevel(level);
     const wordIds = new Set(levelWords.map((w: any) => w.id));
     const now = new Date().toISOString();
-    return [...this.cards.values()]
-      .filter(c => wordIds.has(c.word_id) && c.due <= now)
-      .sort((a, b) => a.due.localeCompare(b.due))
-      .slice(0, limit);
+    const all = [...this.cards.values()].filter(c => wordIds.has(c.word_id) && c.due <= now);
+
+    const reviewedWordIds = new Set(
+      [...this.cards.values()].filter(c => wordIds.has(c.word_id) && c.type === 'word' && c.reps > 0).map(c => c.word_id)
+    );
+
+    const wordCards = all.filter(c => c.type === 'word').sort((a, b) => a.due.localeCompare(b.due));
+    const sentenceCards = all.filter(c => c.type === 'sentence' && reviewedWordIds.has(c.word_id)).sort((a, b) => a.due.localeCompare(b.due));
+
+    return [...wordCards, ...sentenceCards].slice(0, limit);
   }
 
   private attempts: { word_id: number; type: string; correct: boolean; response_time_ms: number; timestamp: string }[] = [];
