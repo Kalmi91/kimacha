@@ -1,11 +1,11 @@
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, Pressable, ActivityIndicator, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
 
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { getDb, cardFromRow } from '@/lib/database';
-import { words, type WordEntry } from '@/data/words';
+import { words, type WordEntry, getWordsForLevel, LEVELS, type Level } from '@/data/words';
 import { t } from '@/lib/i18n';
 import { levenshtein } from '@/lib/levenshtein';
 
@@ -36,21 +36,28 @@ export default function LearnScreen() {
   const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
   const [typedAnswer, setTypedAnswer] = useState('');
   const [typingResult, setTypingResult] = useState<TypingResult>(null);
+  const [level, setLevel] = useState<Level>('A0');
+  const [levelUpMsg, setLevelUpMsg] = useState<string | null>(null);
   const inputRef = useRef<TextInput>(null);
 
-  const loadCards = useCallback(async () => {
+  const loadCards = async () => {
     const db = getDb();
     const onboarding = await db.getOnboarding();
     if (onboarding) {
       setDirection([onboarding.source, onboarding.target]);
     }
 
-    for (const w of words) {
+    const levelData = await db.getLevel();
+    const currentLevel = levelData.level as Level;
+    setLevel(currentLevel);
+
+    const levelWords = getWordsForLevel(currentLevel);
+    for (const w of levelWords) {
       await db.ensureCard(w.id, 'word');
       await db.ensureCard(w.id, 'sentence');
     }
 
-    const rows = await db.getDueCards(10);
+    const rows = await db.getDueCardsForLevel(currentLevel, 10);
     const items: DueItem[] = rows.map((row: any) => ({
       wordId: row.word_id,
       type: row.type,
@@ -69,7 +76,7 @@ export default function LearnScreen() {
     setTypingResult(null);
     setDone(items.length === 0);
     setLoading(false);
-  }, []);
+  };
 
   useEffect(() => {
     loadCards();
@@ -78,7 +85,7 @@ export default function LearnScreen() {
   const current = queue[currentIndex];
 
   const getFrontBack = (item: DueItem) => {
-    const [source, target] = direction;
+    const [source] = direction;
     const isWord = item.type === 'word';
     if (source === 'es') {
       return {
@@ -92,15 +99,67 @@ export default function LearnScreen() {
     };
   };
 
+  const checkLevelChange = async (wasCorrect: boolean) => {
+    const db = getDb();
+    const levelData = await db.getLevel();
+    let { correct_streak, mistakes_in_window, fail_streak } = levelData;
+    const currentLevel = levelData.level as Level;
+    const levelIdx = LEVELS.indexOf(currentLevel);
+
+    if (wasCorrect) {
+      correct_streak += 1;
+      fail_streak = 0;
+
+      if (correct_streak >= 5 && mistakes_in_window <= 1) {
+        if (levelIdx < LEVELS.length - 1) {
+          const newLevel = LEVELS[levelIdx + 1];
+          await db.updateLevel(newLevel, 0, 0, 0);
+          setLevel(newLevel);
+          setLevelUpMsg(`↑ ${newLevel}`);
+          setTimeout(() => setLevelUpMsg(null), 2000);
+
+          const newLevelWords = getWordsForLevel(newLevel);
+          for (const w of newLevelWords) {
+            await db.ensureCard(w.id, 'word');
+            await db.ensureCard(w.id, 'sentence');
+          }
+          return;
+        }
+      }
+      await db.updateLevel(currentLevel, correct_streak, mistakes_in_window, fail_streak);
+    } else {
+      fail_streak += 1;
+      mistakes_in_window += 1;
+      correct_streak = 0;
+
+      if (mistakes_in_window >= 2) {
+        correct_streak = 0;
+        mistakes_in_window = 0;
+      }
+
+      if (fail_streak >= 5 && levelIdx > 0) {
+        const newLevel = LEVELS[levelIdx - 1];
+        await db.updateLevel(newLevel, 0, 0, 0);
+        setLevel(newLevel);
+        setLevelUpMsg(`↓ ${newLevel}`);
+        setTimeout(() => setLevelUpMsg(null), 2000);
+        return;
+      }
+      await db.updateLevel(currentLevel, correct_streak, mistakes_in_window, fail_streak);
+    }
+  };
+
   const advance = async (rating: Grade) => {
     if (!current) return;
 
     const result = f.repeat(current.card, new Date());
     const updated = result[rating].card;
+    const wasCorrect = rating !== Rating.Again;
 
     const db = getDb();
     await db.updateCard(current.wordId, current.type, updated);
     await db.updateStreak();
+    await checkLevelChange(wasCorrect);
 
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
@@ -109,7 +168,8 @@ export default function LearnScreen() {
     setReviewed(reviewed + 1);
 
     if (next >= queue.length) {
-      const newRows = await db.getDueCards(10);
+      const levelData = await db.getLevel();
+      const newRows = await db.getDueCardsForLevel(levelData.level, 10);
       const newItems: DueItem[] = newRows.map((row: any) => ({
         wordId: row.word_id,
         type: row.type,
@@ -141,6 +201,7 @@ export default function LearnScreen() {
     const db = getDb();
     await db.updateCard(current.wordId, current.type, updated);
     await db.updateStreak();
+    await checkLevelChange(false);
 
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
@@ -207,7 +268,10 @@ export default function LearnScreen() {
         <Text style={[styles.doneSubtitle, { color: colors.tabIconDefault }]}>
           {s.done.reviewed(reviewed)}
         </Text>
-        <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
+        <View style={[styles.levelBadgeLarge, { backgroundColor: colors.tint }]}>
+          <Text style={styles.levelTextLarge}>{level}</Text>
+        </View>
+        <View style={[styles.streakBadge, { backgroundColor: colors.card, marginTop: 12 }]}>
           <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
           <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>{s.done.streak}</Text>
         </View>
@@ -219,6 +283,20 @@ export default function LearnScreen() {
   const isWord = current.type === 'word';
   const typeLabel = isWord ? s.card.word : s.card.sentence;
 
+  const levelBadge = (
+    <View style={[styles.levelBadge, { backgroundColor: colors.tint }]}>
+      <Text style={styles.levelText}>{level}</Text>
+    </View>
+  );
+
+  const levelUpOverlay = levelUpMsg ? (
+    <View style={styles.levelUpOverlay}>
+      <Text style={[styles.levelUpText, { color: levelUpMsg.startsWith('↑') ? '#22C55E' : '#EF4444' }]}>
+        {levelUpMsg}
+      </Text>
+    </View>
+  ) : null;
+
   if (current.isTyping && isWord) {
     const resultColor = typingResult === 'correct' ? '#22C55E' : typingResult === 'almost' ? '#EAB308' : '#EF4444';
     const resultText = typingResult === 'correct' ? s.card.correct : typingResult === 'almost' ? s.card.almostCorrect : s.card.wrong;
@@ -228,7 +306,9 @@ export default function LearnScreen() {
         style={[styles.container, { backgroundColor: colors.background }]}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
+        {levelUpOverlay}
         <View style={styles.header}>
+          {levelBadge}
           <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
             <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
             <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>🔥</Text>
@@ -289,7 +369,9 @@ export default function LearnScreen() {
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
+      {levelUpOverlay}
       <View style={styles.header}>
+        {levelBadge}
         <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
           <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
           <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>🔥</Text>
@@ -358,6 +440,38 @@ const styles = StyleSheet.create({
     top: 16,
     left: 20,
     right: 20,
+  },
+  levelBadge: {
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 8,
+  },
+  levelText: {
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: '800',
+  },
+  levelBadgeLarge: {
+    paddingHorizontal: 20,
+    paddingVertical: 8,
+    borderRadius: 12,
+  },
+  levelTextLarge: {
+    color: '#FFFFFF',
+    fontSize: 24,
+    fontWeight: '800',
+  },
+  levelUpOverlay: {
+    position: 'absolute',
+    top: '40%',
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+    zIndex: 10,
+  },
+  levelUpText: {
+    fontSize: 48,
+    fontWeight: '900',
   },
   streakBadge: {
     flexDirection: 'row',
