@@ -20,7 +20,7 @@ export default {
   buttons: {
     again: 'Again',
     good: 'Good',
-    bored: 'I Know This',
+    inSentence: 'In Sentence',
   },
   done: {
     title: 'Done for today!',

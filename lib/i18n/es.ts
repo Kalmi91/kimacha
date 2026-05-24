@@ -20,7 +20,7 @@ export default {
   buttons: {
     again: 'Otra Vez',
     good: 'Bien',
-    bored: 'Aburrido',
+    inSentence: 'En Frase',
   },
   done: {
     title: '¡Terminaste por hoy!',

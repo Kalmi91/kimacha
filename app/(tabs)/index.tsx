@@ -132,6 +132,37 @@ export default function LearnScreen() {
     setTypingResult(null);
   };
 
+  const handleInSentence = async () => {
+    if (!current) return;
+
+    const result = f.repeat(current.card, new Date());
+    const updated = result[Rating.Again].card;
+
+    const db = getDb();
+    await db.updateCard(current.wordId, current.type, updated);
+    await db.updateStreak();
+
+    const streakData = await db.getStreak();
+    setStreak(streakData.current_count);
+    setReviewed(reviewed + 1);
+
+    const sentenceCard: DueItem = {
+      wordId: current.wordId,
+      type: 'sentence',
+      card: current.card,
+      word: current.word,
+      isTyping: false,
+    };
+
+    const newQueue = [...queue];
+    newQueue.splice(currentIndex + 1, 0, sentenceCard);
+    setQueue(newQueue);
+    setCurrentIndex(currentIndex + 1);
+    setRevealed(false);
+    setTypedAnswer('');
+    setTypingResult(null);
+  };
+
   const handleCheck = () => {
     if (!current) return;
     const { back } = getFrontBack(current);
@@ -299,9 +330,9 @@ export default function LearnScreen() {
         </Pressable>
         <Pressable
           style={[styles.button, { backgroundColor: colors.accent }]}
-          onPress={() => advance(Rating.Easy)}
+          onPress={handleInSentence}
         >
-          <Text style={styles.buttonText}>{s.buttons.bored}</Text>
+          <Text style={styles.buttonText}>{s.buttons.inSentence}</Text>
         </Pressable>
       </View>
     </View>

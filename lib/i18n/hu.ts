@@ -20,7 +20,7 @@ export default {
   buttons: {
     again: 'Újra',
     good: 'Jó',
-    bored: 'Unom',
+    inSentence: 'Mondatban',
   },
   done: {
     title: 'Kész vagy mára!',
