@@ -328,12 +328,14 @@ export default function LearnScreen() {
         >
           <Text style={styles.buttonText}>{s.buttons.good}</Text>
         </Pressable>
-        <Pressable
-          style={[styles.button, { backgroundColor: colors.accent }]}
-          onPress={handleInSentence}
-        >
-          <Text style={styles.buttonText}>{s.buttons.inSentence}</Text>
-        </Pressable>
+        {isWord && (
+          <Pressable
+            style={[styles.button, { backgroundColor: colors.accent }]}
+            onPress={handleInSentence}
+          >
+            <Text style={styles.buttonText}>{s.buttons.inSentence}</Text>
+          </Pressable>
+        )}
       </View>
     </View>
   );
