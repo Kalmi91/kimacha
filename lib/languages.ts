@@ -15,6 +15,7 @@ export const languages: Language[] = [
 
 export const supportedPairs: [string, string][] = [
   ['es', 'hu'],
+  ['hu', 'es'],
 ];
 
 export function isPairSupported(source: string, target: string): boolean {

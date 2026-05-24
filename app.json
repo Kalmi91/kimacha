@@ -11,6 +11,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.kimachaapp.kimacha",
       "adaptiveIcon": {
         "backgroundColor": "#0F172A",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -33,10 +34,18 @@
           "resizeMode": "contain",
           "backgroundColor": "#0F172A"
         }
-      ]
+      ],
+      "expo-localization"
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "cf50ca15-5e7a-401b-ad9e-2f753e42b08c"
+      }
+    },
+    "owner": "kalman_bro_67"
   }
 }

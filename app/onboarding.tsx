@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, Pressable, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Dimensions, Alert, Platform } from 'react-native';
 import { router } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { languages, isPairSupported } from '@/lib/languages';
 import { getDb } from '@/lib/database';
+import { t } from '@/lib/i18n';
 
 const { width } = Dimensions.get('window');
 const FLAG_SIZE = width > 400 ? 56 : 48;
@@ -15,6 +16,7 @@ type Step = 'source' | 'target';
 export default function OnboardingScreen() {
   const colorScheme = useColorScheme() ?? 'dark';
   const colors = Colors[colorScheme];
+  const s = t();
 
   const [step, setStep] = useState<Step>('source');
   const [source, setSource] = useState<string | null>(null);
@@ -29,7 +31,11 @@ export default function OnboardingScreen() {
     if (!source) return;
 
     if (!isPairSupported(source, code)) {
-      alert('Ez a nyelvpár még nem elérhető. Hamarosan!');
+      if (Platform.OS === 'web') {
+        alert(s.onboarding.pairNotAvailable);
+      } else {
+        Alert.alert('', s.onboarding.pairNotAvailable);
+      }
       return;
     }
 
@@ -45,10 +51,10 @@ export default function OnboardingScreen() {
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <View style={styles.content}>
         <Text style={[styles.title, { color: colors.text }]}>
-          {step === 'source' ? 'Milyen nyelven beszélsz?' : 'Mit szeretnél tanulni?'}
+          {step === 'source' ? s.onboarding.whatLanguage : s.onboarding.whatLearn}
         </Text>
         <Text style={[styles.subtitle, { color: colors.tabIconDefault }]}>
-          {step === 'source' ? 'Válaszd ki az anyanyelved' : 'Válaszd ki a célnyelvet'}
+          {step === 'source' ? s.onboarding.selectSource : s.onboarding.selectTarget}
         </Text>
 
         <View style={styles.grid}>
@@ -73,7 +79,7 @@ export default function OnboardingScreen() {
 
         {step === 'target' && (
           <Pressable onPress={() => { setStep('source'); setSource(null); }}>
-            <Text style={[styles.back, { color: colors.tint }]}>← Vissza</Text>
+            <Text style={[styles.back, { color: colors.tint }]}>{s.onboarding.back}</Text>
           </Pressable>
         )}
       </View>
