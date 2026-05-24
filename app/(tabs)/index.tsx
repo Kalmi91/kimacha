@@ -10,6 +10,8 @@ import { t } from '@/lib/i18n';
 import { levenshtein } from '@/lib/levenshtein';
 import FeedbackButton from '@/components/FeedbackModal';
 import * as Speech from 'expo-speech';
+import ExamCard from '@/components/ExamCard';
+import { getExamQuestionsForLevel, type ExamQuestion } from '@/data/exams';
 
 const f = fsrs();
 
@@ -44,6 +46,11 @@ export default function LearnScreen() {
   const [practiceTyping, setPracticeTyping] = useState(false);
   const [practiceResult, setPracticeResult] = useState<TypingResult>(null);
   const [practiceText, setPracticeText] = useState('');
+  const [examMode, setExamMode] = useState(false);
+  const [examQuestions, setExamQuestions] = useState<ExamQuestion[]>([]);
+  const [examIndex, setExamIndex] = useState(0);
+  const [examCorrect, setExamCorrect] = useState(0);
+  const [examDone, setExamDone] = useState(false);
   const inputRef = useRef<TextInput>(null);
 
   const loadCards = async () => {
@@ -295,7 +302,74 @@ export default function LearnScreen() {
     );
   }
 
+  if (examMode && !examDone) {
+    const eq = examQuestions[examIndex];
+    return (
+      <View style={[styles.container, { backgroundColor: colors.background }]}>
+        <View style={styles.header}>
+          <View style={[styles.levelBadge, { backgroundColor: colors.accent }]}>
+            <Text style={styles.levelText}>VIZSGA</Text>
+          </View>
+          <Text style={[styles.counter, { color: colors.tabIconDefault }]}>
+            {examIndex + 1}/5
+          </Text>
+        </View>
+        {eq && <ExamCard question={eq} onResult={(correct) => {
+          const newCorrect = examCorrect + (correct ? 1 : 0);
+          setExamCorrect(newCorrect);
+          if (examIndex + 1 >= 5) {
+            setExamDone(true);
+            if (newCorrect >= 4) {
+              const levelIdx = LEVELS.indexOf(level);
+              if (levelIdx < LEVELS.length - 1) {
+                const newLevel = LEVELS[levelIdx + 1];
+                const db = getDb();
+                db.updateLevel(newLevel, 0, 0, 0);
+                setLevel(newLevel);
+              }
+            }
+          } else {
+            setExamIndex(examIndex + 1);
+          }
+        }} />}
+        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`exam:${examIndex + 1}`} />
+      </View>
+    );
+  }
+
+  if (examMode && examDone) {
+    const passed = examCorrect >= 4;
+    return (
+      <View style={[styles.container, { backgroundColor: colors.background }]}>
+        <Text style={styles.doneEmoji}>{passed ? '🏆' : '📚'}</Text>
+        <Text style={[styles.doneTitle, { color: colors.text }]}>
+          {passed ? `${level} ↑` : 'Még nem, de közel vagy!'}
+        </Text>
+        <Text style={[styles.doneSubtitle, { color: colors.tabIconDefault }]}>
+          {examCorrect}/5
+        </Text>
+        <Pressable
+          style={[styles.examStartBtn, { backgroundColor: colors.tint }]}
+          onPress={() => { setExamMode(false); setExamDone(false); setExamIndex(0); setExamCorrect(0); loadCards(); }}
+        >
+          <Text style={styles.examStartBtnText}>→</Text>
+        </Pressable>
+      </View>
+    );
+  }
+
+  const startExam = () => {
+    const questions = getExamQuestionsForLevel(level);
+    const shuffled = questions.sort(() => Math.random() - 0.5).slice(0, 5);
+    setExamQuestions(shuffled);
+    setExamIndex(0);
+    setExamCorrect(0);
+    setExamDone(false);
+    setExamMode(true);
+  };
+
   if (done) {
+    const hasExamQuestions = getExamQuestionsForLevel(level).length > 0;
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         <Text style={styles.doneEmoji}>🎉</Text>
@@ -310,6 +384,11 @@ export default function LearnScreen() {
           <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
           <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>{s.done.streak}</Text>
         </View>
+        {hasExamQuestions && (
+          <Pressable style={[styles.examStartBtn, { backgroundColor: colors.accent, marginTop: 20 }]} onPress={startExam}>
+            <Text style={styles.examStartBtnText}>🎓 Vizsga</Text>
+          </Pressable>
+        )}
         <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="done" />
       </View>
     );
@@ -654,6 +733,18 @@ const styles = StyleSheet.create({
   },
   speakIcon: {
     fontSize: 22,
+  },
+  examStartBtn: {
+    paddingHorizontal: 32,
+    paddingVertical: 14,
+    borderRadius: 14,
+    minWidth: 160,
+    alignItems: 'center',
+  },
+  examStartBtnText: {
+    color: '#FFF',
+    fontSize: 18,
+    fontWeight: '700',
   },
   typeItBtn: {
     marginTop: 12,
