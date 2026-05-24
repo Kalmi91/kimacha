@@ -2,8 +2,9 @@ import { getLocales } from 'expo-localization';
 import en from './en';
 import hu from './hu';
 import es from './es';
+import de from './de';
 
-const translations: Record<string, typeof en> = { en, hu, es };
+const translations: Record<string, typeof en> = { en, hu, es, de };
 
 type Strings = typeof en;
 
