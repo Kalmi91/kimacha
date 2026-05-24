@@ -8,6 +8,9 @@ export interface DB {
   updateStreak(): Promise<void>;
   getOnboarding(): Promise<{ source: string; target: string } | null>;
   setOnboarding(source: string, target: string): Promise<void>;
+  getLevel(): Promise<{ level: string; correct_streak: number; mistakes_in_window: number; fail_streak: number }>;
+  updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number): Promise<void>;
+  getDueCardsForLevel(level: string, limit: number): Promise<any[]>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -80,6 +83,7 @@ class MemoryDB implements DB {
   }
 
   private onboarding: { source: string; target: string } | null = null;
+  private userLevel = { level: 'A0', correct_streak: 0, mistakes_in_window: 0, fail_streak: 0 };
 
   async getOnboarding() {
     return this.onboarding;
@@ -87,6 +91,25 @@ class MemoryDB implements DB {
 
   async setOnboarding(source: string, target: string) {
     this.onboarding = { source, target };
+  }
+
+  async getLevel() {
+    return { ...this.userLevel };
+  }
+
+  async updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number) {
+    this.userLevel = { level, correct_streak: correctStreak, mistakes_in_window: mistakesInWindow, fail_streak: failStreak };
+  }
+
+  async getDueCardsForLevel(level: string, limit: number) {
+    const { getWordsForLevel } = require('@/data/words');
+    const levelWords = getWordsForLevel(level);
+    const wordIds = new Set(levelWords.map((w: any) => w.id));
+    const now = new Date().toISOString();
+    return [...this.cards.values()]
+      .filter(c => wordIds.has(c.word_id) && c.due <= now)
+      .sort((a, b) => a.due.localeCompare(b.due))
+      .slice(0, limit);
   }
 }
 

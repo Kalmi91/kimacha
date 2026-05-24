@@ -9,6 +9,9 @@ export interface DB {
   updateStreak(): Promise<void>;
   getOnboarding(): Promise<{ source: string; target: string } | null>;
   setOnboarding(source: string, target: string): Promise<void>;
+  getLevel(): Promise<{ level: string; correct_streak: number; mistakes_in_window: number; fail_streak: number }>;
+  updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number): Promise<void>;
+  getDueCardsForLevel(level: string, limit: number): Promise<any[]>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -61,6 +64,14 @@ class SQLiteDB implements DB {
         source TEXT NOT NULL,
         target TEXT NOT NULL
       );
+      CREATE TABLE IF NOT EXISTS user_level (
+        id INTEGER PRIMARY KEY CHECK (id = 1),
+        level TEXT NOT NULL DEFAULT 'A0',
+        correct_streak INTEGER NOT NULL DEFAULT 0,
+        mistakes_in_window INTEGER NOT NULL DEFAULT 0,
+        fail_streak INTEGER NOT NULL DEFAULT 0
+      );
+      INSERT OR IGNORE INTO user_level (id, level, correct_streak, mistakes_in_window, fail_streak) VALUES (1, 'A0', 0, 0, 0);
     `);
     return this.db;
   }
@@ -117,6 +128,30 @@ class SQLiteDB implements DB {
   async setOnboarding(source: string, target: string) {
     const db = await this.open();
     await db.runAsync('INSERT OR REPLACE INTO onboarding (id, source, target) VALUES (1, ?, ?)', [source, target]);
+  }
+
+  async getLevel() {
+    const db = await this.open();
+    return await db.getFirstAsync<any>('SELECT * FROM user_level WHERE id = 1');
+  }
+
+  async updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number) {
+    const db = await this.open();
+    await db.runAsync('UPDATE user_level SET level = ?, correct_streak = ?, mistakes_in_window = ?, fail_streak = ? WHERE id = 1',
+      [level, correctStreak, mistakesInWindow, failStreak]);
+  }
+
+  async getDueCardsForLevel(level: string, limit: number) {
+    const db = await this.open();
+    const { getWordsForLevel } = require('@/data/words');
+    const levelWords = getWordsForLevel(level);
+    const wordIds = levelWords.map((w: any) => w.id);
+    if (wordIds.length === 0) return [];
+    const placeholders = wordIds.map(() => '?').join(',');
+    return await db.getAllAsync(
+      `SELECT * FROM cards WHERE word_id IN (${placeholders}) AND due <= ? ORDER BY due ASC LIMIT ?`,
+      [...wordIds, new Date().toISOString(), limit]
+    );
   }
 }
 
