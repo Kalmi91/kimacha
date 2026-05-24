@@ -6,7 +6,7 @@ import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { languages, isPairSupported } from '@/lib/languages';
 import { getDb } from '@/lib/database';
-import { t } from '@/lib/i18n';
+import { t, setLanguage } from '@/lib/i18n';
 
 const { width } = Dimensions.get('window');
 const FLAG_SIZE = width > 400 ? 56 : 48;
@@ -41,6 +41,7 @@ export default function OnboardingScreen() {
 
     const db = getDb();
     await db.setOnboarding(source, code);
+    setLanguage(source);
     router.replace('/(tabs)');
   };
 
