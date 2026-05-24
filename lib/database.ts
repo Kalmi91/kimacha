@@ -176,10 +176,31 @@ class SQLiteDB implements DB {
     const wordIds = levelWords.map((w: any) => w.id);
     if (wordIds.length === 0) return [];
     const placeholders = wordIds.map(() => '?').join(',');
-    return await db.getAllAsync(
-      `SELECT * FROM cards WHERE word_id IN (${placeholders}) AND due <= ? ORDER BY due ASC LIMIT ?`,
-      [...wordIds, new Date().toISOString(), limit]
+    const now = new Date().toISOString();
+
+    const wordCards = await db.getAllAsync(
+      `SELECT * FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND due <= ? ORDER BY due ASC LIMIT ?`,
+      [...wordIds, now, limit]
     );
+
+    const reviewedWordIds = await db.getAllAsync<any>(
+      `SELECT DISTINCT word_id FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND reps > 0`,
+      wordIds
+    );
+    const reviewedSet = new Set(reviewedWordIds.map((r: any) => r.word_id));
+
+    const remaining = limit - wordCards.length;
+    let sentenceCards: any[] = [];
+    if (remaining > 0 && reviewedSet.size > 0) {
+      const reviewedIds = [...reviewedSet];
+      const sentencePlaceholders = reviewedIds.map(() => '?').join(',');
+      sentenceCards = await db.getAllAsync(
+        `SELECT * FROM cards WHERE word_id IN (${sentencePlaceholders}) AND type = 'sentence' AND due <= ? ORDER BY due ASC LIMIT ?`,
+        [...reviewedIds, now, remaining]
+      );
+    }
+
+    return [...wordCards, ...sentenceCards];
   }
 
   async recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number) {
