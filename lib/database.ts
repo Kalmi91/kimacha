@@ -13,6 +13,11 @@ export interface DB {
   updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number): Promise<void>;
   getDueCardsForLevel(level: string, limit: number): Promise<any[]>;
   recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number): Promise<void>;
+  getUserMeta(): Promise<{ userId: string; firstUseDate: string; lastSyncDate: string | null }>;
+  updateLastSync(date: string): Promise<void>;
+  getTodayStats(): Promise<{ totalReviews: number; correctCount: number; avgResponseMs: number; flashcardCount: number; typingCount: number; wordCount: number; sentenceCount: number }>;
+  getTop5Failed(): Promise<string[]>;
+  getMasteredCount(): Promise<number>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -81,7 +86,21 @@ class SQLiteDB implements DB {
         fail_streak INTEGER NOT NULL DEFAULT 0
       );
       INSERT OR IGNORE INTO user_level (id, level, correct_streak, mistakes_in_window, fail_streak) VALUES (1, 'A0', 0, 0, 0);
+      CREATE TABLE IF NOT EXISTS user_meta (
+        id INTEGER PRIMARY KEY CHECK (id = 1),
+        user_id TEXT NOT NULL,
+        first_use_date TEXT NOT NULL,
+        last_sync_date TEXT
+      );
     `);
+    const meta = await this.db.getFirstAsync<any>('SELECT id FROM user_meta WHERE id = 1');
+    if (!meta) {
+      const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+        const r = Math.random() * 16 | 0;
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+      });
+      await this.db.runAsync('INSERT INTO user_meta (id, user_id, first_use_date) VALUES (1, ?, ?)', [uuid, new Date().toISOString()]);
+    }
     return this.db;
   }
 
@@ -169,6 +188,57 @@ class SQLiteDB implements DB {
       'INSERT INTO card_attempts (word_id, type, correct, response_time_ms, timestamp) VALUES (?, ?, ?, ?, ?)',
       [wordId, type, correct ? 1 : 0, responseTimeMs, new Date().toISOString()]
     );
+  }
+
+  async getUserMeta() {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT * FROM user_meta WHERE id = 1');
+    return { userId: row.user_id, firstUseDate: row.first_use_date, lastSyncDate: row.last_sync_date };
+  }
+
+  async updateLastSync(date: string) {
+    const db = await this.open();
+    await db.runAsync('UPDATE user_meta SET last_sync_date = ? WHERE id = 1', [date]);
+  }
+
+  async getTodayStats() {
+    const db = await this.open();
+    const today = new Date().toISOString().split('T')[0];
+    const rows = await db.getAllAsync<any>(
+      "SELECT * FROM card_attempts WHERE timestamp >= ?", [`${today}T00:00:00`]
+    );
+    const total = rows.length;
+    const correct = rows.filter((r: any) => r.correct === 1).length;
+    const avgMs = total > 0 ? Math.round(rows.reduce((s: number, r: any) => s + r.response_time_ms, 0) / total) : 0;
+    return {
+      totalReviews: total,
+      correctCount: correct,
+      avgResponseMs: avgMs,
+      flashcardCount: 0,
+      typingCount: 0,
+      wordCount: rows.filter((r: any) => r.type === 'word').length,
+      sentenceCount: rows.filter((r: any) => r.type === 'sentence').length,
+    };
+  }
+
+  async getTop5Failed() {
+    const db = await this.open();
+    const rows = await db.getAllAsync<any>(
+      "SELECT word_id, COUNT(*) as cnt FROM card_attempts WHERE correct = 0 GROUP BY word_id ORDER BY cnt DESC LIMIT 5"
+    );
+    const { words } = require('@/data/words');
+    return rows.map((r: any) => {
+      const w = words.find((w: any) => w.id === r.word_id);
+      return w ? w.es : String(r.word_id);
+    });
+  }
+
+  async getMasteredCount() {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>(
+      "SELECT COUNT(*) as cnt FROM cards WHERE state >= 2 AND stability > 10"
+    );
+    return row?.cnt ?? 0;
   }
 }
 

@@ -12,6 +12,11 @@ export interface DB {
   updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number): Promise<void>;
   getDueCardsForLevel(level: string, limit: number): Promise<any[]>;
   recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number): Promise<void>;
+  getUserMeta(): Promise<{ userId: string; firstUseDate: string; lastSyncDate: string | null }>;
+  updateLastSync(date: string): Promise<void>;
+  getTodayStats(): Promise<{ totalReviews: number; correctCount: number; avgResponseMs: number; flashcardCount: number; typingCount: number; wordCount: number; sentenceCount: number }>;
+  getTop5Failed(): Promise<string[]>;
+  getMasteredCount(): Promise<number>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -118,6 +123,21 @@ class MemoryDB implements DB {
   async recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number) {
     this.attempts.push({ word_id: wordId, type, correct, response_time_ms: responseTimeMs, timestamp: new Date().toISOString() });
   }
+
+  private meta = { userId: crypto.randomUUID?.() ?? Math.random().toString(36), firstUseDate: new Date().toISOString(), lastSyncDate: null as string | null };
+
+  async getUserMeta() { return { ...this.meta }; }
+  async updateLastSync(date: string) { this.meta.lastSyncDate = date; }
+  async getTodayStats() {
+    const today = new Date().toISOString().split('T')[0];
+    const todayAttempts = this.attempts.filter(a => a.timestamp >= `${today}T00:00:00`);
+    const total = todayAttempts.length;
+    const correct = todayAttempts.filter(a => a.correct).length;
+    const avgMs = total > 0 ? Math.round(todayAttempts.reduce((s, a) => s + a.response_time_ms, 0) / total) : 0;
+    return { totalReviews: total, correctCount: correct, avgResponseMs: avgMs, flashcardCount: 0, typingCount: 0, wordCount: todayAttempts.filter(a => a.type === 'word').length, sentenceCount: todayAttempts.filter(a => a.type === 'sentence').length };
+  }
+  async getTop5Failed() { return []; }
+  async getMasteredCount() { return 0; }
 }
 
 let instance: DB;
