@@ -12,6 +12,7 @@ export default {
     sentence: 'frase',
     tapToReveal: 'Toca para traducir',
     typeTranslation: 'Escribe la traducción',
+    typeIt: 'Escribir',
     check: 'Comprobar',
     correct: '¡Correcto!',
     almostCorrect: '¡Casi!',
@@ -36,6 +37,10 @@ export default {
     title: 'Modo activo',
     comingSoon: 'Próximamente...',
     description: 'Conversa en español con un NPC.\nPróximamente.',
+  },
+  master: {
+    button: 'Maestro',
+    title: 'Elegir Nivel',
   },
   feedback: {
     button: 'Comentarios',

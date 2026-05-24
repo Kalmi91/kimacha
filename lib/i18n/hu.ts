@@ -12,6 +12,7 @@ export default {
     sentence: 'mondat',
     tapToReveal: 'Koppints a fordításhoz',
     typeTranslation: 'Írd be a fordítást',
+    typeIt: 'Begépelem',
     check: 'Ellenőrzés',
     correct: 'Helyes!',
     almostCorrect: 'Majdnem!',
@@ -36,6 +37,10 @@ export default {
     title: 'Aktív mód',
     comingSoon: 'Hamarosan...',
     description: 'Beszélgess spanyolul egy NPC-vel.\nIter2-ben érkezik.',
+  },
+  master: {
+    button: 'Mester',
+    title: 'Szint Választás',
   },
   feedback: {
     button: 'Visszajelzés',

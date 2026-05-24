@@ -12,6 +12,7 @@ export default {
     sentence: 'Satz',
     tapToReveal: 'Tippe zum Übersetzen',
     typeTranslation: 'Gib die Übersetzung ein',
+    typeIt: 'Eintippen',
     check: 'Prüfen',
     correct: 'Richtig!',
     almostCorrect: 'Fast!',
@@ -36,6 +37,10 @@ export default {
     title: 'Aktiver Modus',
     comingSoon: 'Bald verfügbar...',
     description: 'Führe ein Gespräch auf Spanisch.\nKommt in einem zukünftigen Update.',
+  },
+  master: {
+    button: 'Meister',
+    title: 'Stufe Wählen',
   },
   feedback: {
     button: 'Feedback',
