@@ -3,9 +3,11 @@ import { SymbolView } from 'expo-symbols';
 
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
+import { t } from '@/lib/i18n';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme() ?? 'dark';
+  const s = t();
 
   return (
     <Tabs
@@ -24,7 +26,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Passzív',
+          title: s.tabs.learn,
           tabBarIcon: ({ color }) => (
             <SymbolView
               name={{ ios: 'book.fill', android: 'book', web: 'book' }}
@@ -37,7 +39,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="active"
         options={{
-          title: 'Aktív',
+          title: s.tabs.active,
           tabBarIcon: ({ color }) => (
             <SymbolView
               name={{ ios: 'mic.fill', android: 'mic', web: 'mic' }}

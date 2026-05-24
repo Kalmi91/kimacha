@@ -1,5 +1,5 @@
-import { useEffect, useState, useCallback } from 'react';
-import { StyleSheet, Text, View, Pressable, ActivityIndicator } from 'react-native';
+import { useEffect, useState, useCallback, useRef } from 'react';
+import { StyleSheet, Text, View, Pressable, ActivityIndicator, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
 import { useFocusEffect } from 'expo-router';
 
@@ -7,6 +7,8 @@ import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { getDb, cardFromRow } from '@/lib/database';
 import { words, type WordEntry } from '@/data/words';
+import { t } from '@/lib/i18n';
+import { levenshtein } from '@/lib/levenshtein';
 
 const f = fsrs();
 
@@ -15,11 +17,15 @@ interface DueItem {
   type: string;
   card: Card;
   word: WordEntry;
+  isTyping: boolean;
 }
 
-export default function PassiveScreen() {
+type TypingResult = 'correct' | 'almost' | 'wrong' | null;
+
+export default function LearnScreen() {
   const colorScheme = useColorScheme() ?? 'dark';
   const colors = Colors[colorScheme];
+  const s = t();
 
   const [loading, setLoading] = useState(true);
   const [queue, setQueue] = useState<DueItem[]>([]);
@@ -28,9 +34,17 @@ export default function PassiveScreen() {
   const [streak, setStreak] = useState(0);
   const [reviewed, setReviewed] = useState(0);
   const [done, setDone] = useState(false);
+  const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
+  const [typedAnswer, setTypedAnswer] = useState('');
+  const [typingResult, setTypingResult] = useState<TypingResult>(null);
+  const inputRef = useRef<TextInput>(null);
 
   const loadCards = useCallback(async () => {
     const db = getDb();
+    const onboarding = await db.getOnboarding();
+    if (onboarding) {
+      setDirection([onboarding.source, onboarding.target]);
+    }
 
     for (const w of words) {
       await db.ensureCard(w.id, 'word');
@@ -43,6 +57,7 @@ export default function PassiveScreen() {
       type: row.type,
       card: cardFromRow(row),
       word: words.find(w => w.id === row.word_id)!,
+      isTyping: Math.random() < 0.5,
     })).filter((item: DueItem) => item.word);
 
     const streakData = await db.getStreak();
@@ -51,6 +66,8 @@ export default function PassiveScreen() {
     setCurrentIndex(0);
     setRevealed(false);
     setReviewed(0);
+    setTypedAnswer('');
+    setTypingResult(null);
     setDone(items.length === 0);
     setLoading(false);
   }, []);
@@ -63,7 +80,22 @@ export default function PassiveScreen() {
 
   const current = queue[currentIndex];
 
-  const handleRate = async (rating: Grade) => {
+  const getFrontBack = (item: DueItem) => {
+    const [source, target] = direction;
+    const isWord = item.type === 'word';
+    if (source === 'es') {
+      return {
+        front: isWord ? item.word.es : item.word.sentence_es,
+        back: isWord ? item.word.hu : item.word.sentence_hu,
+      };
+    }
+    return {
+      front: isWord ? item.word.hu : item.word.sentence_hu,
+      back: isWord ? item.word.es : item.word.sentence_es,
+    };
+  };
+
+  const advance = async (rating: Grade) => {
     if (!current) return;
 
     const result = f.repeat(current.card, new Date());
@@ -77,8 +109,7 @@ export default function PassiveScreen() {
     setStreak(streakData.current_count);
 
     const next = currentIndex + 1;
-    const newReviewed = reviewed + 1;
-    setReviewed(newReviewed);
+    setReviewed(reviewed + 1);
 
     if (next >= queue.length) {
       const newRows = await db.getDueCards(30);
@@ -87,6 +118,7 @@ export default function PassiveScreen() {
         type: row.type,
         card: cardFromRow(row),
         word: words.find(w => w.id === row.word_id)!,
+        isTyping: Math.random() < 0.5,
       })).filter((item: DueItem) => item.word);
 
       if (newItems.length === 0) {
@@ -99,6 +131,33 @@ export default function PassiveScreen() {
       setCurrentIndex(next);
     }
     setRevealed(false);
+    setTypedAnswer('');
+    setTypingResult(null);
+  };
+
+  const handleCheck = () => {
+    if (!current) return;
+    const { back } = getFrontBack(current);
+    const answer = typedAnswer.trim().toLowerCase();
+    const correct = back.toLowerCase().split(' / ')[0].trim();
+    const dist = levenshtein(answer, correct);
+
+    if (dist === 0) {
+      setTypingResult('correct');
+    } else if (dist <= 2) {
+      setTypingResult('almost');
+    } else {
+      setTypingResult('wrong');
+    }
+    setRevealed(true);
+  };
+
+  const handleTypingNext = () => {
+    if (typingResult === 'wrong') {
+      advance(Rating.Again);
+    } else {
+      advance(Rating.Good);
+    }
   };
 
   if (loading) {
@@ -112,23 +171,90 @@ export default function PassiveScreen() {
   if (done) {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
-        <Text style={[styles.doneEmoji]}>🎉</Text>
-        <Text style={[styles.doneTitle, { color: colors.text }]}>Kész vagy mára!</Text>
+        <Text style={styles.doneEmoji}>🎉</Text>
+        <Text style={[styles.doneTitle, { color: colors.text }]}>{s.done.title}</Text>
         <Text style={[styles.doneSubtitle, { color: colors.tabIconDefault }]}>
-          {reviewed} kártyát néztél át.
+          {s.done.reviewed(reviewed)}
         </Text>
         <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
           <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
-          <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>nap streak</Text>
+          <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>{s.done.streak}</Text>
         </View>
       </View>
     );
   }
 
+  const { front, back } = getFrontBack(current);
   const isWord = current.type === 'word';
-  const front = isWord ? current.word.es : current.word.sentence_es;
-  const back = isWord ? current.word.hu : current.word.sentence_hu;
-  const typeLabel = isWord ? 'szó' : 'mondat';
+  const typeLabel = isWord ? s.card.word : s.card.sentence;
+
+  if (current.isTyping && isWord) {
+    const resultColor = typingResult === 'correct' ? '#22C55E' : typingResult === 'almost' ? '#EAB308' : '#EF4444';
+    const resultText = typingResult === 'correct' ? s.card.correct : typingResult === 'almost' ? s.card.almostCorrect : s.card.wrong;
+
+    return (
+      <KeyboardAvoidingView
+        style={[styles.container, { backgroundColor: colors.background }]}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      >
+        <View style={styles.header}>
+          <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
+            <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
+            <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>🔥</Text>
+          </View>
+          <Text style={[styles.counter, { color: colors.tabIconDefault }]}>
+            {currentIndex + 1}/{queue.length}
+          </Text>
+        </View>
+
+        <View style={[styles.card, { backgroundColor: colors.card }]}>
+          <Text style={[styles.typeTag, { color: colors.tint }]}>{typeLabel}</Text>
+          <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
+
+          <TextInput
+            ref={inputRef}
+            style={[styles.input, { color: colors.text, borderColor: typingResult ? resultColor : colors.tabIconDefault }]}
+            placeholder={s.card.typeTranslation}
+            placeholderTextColor={colors.tabIconDefault}
+            value={typedAnswer}
+            onChangeText={setTypedAnswer}
+            onSubmitEditing={revealed ? handleTypingNext : handleCheck}
+            editable={!revealed}
+            autoFocus
+            autoCapitalize="none"
+            autoCorrect={false}
+          />
+
+          {revealed && (
+            <View style={styles.resultSection}>
+              <Text style={[styles.resultText, { color: resultColor }]}>{resultText}</Text>
+              <Text style={[styles.correctAnswer, { color: colors.tint }]}>{back}</Text>
+            </View>
+          )}
+        </View>
+
+        {!revealed ? (
+          <View style={styles.buttons}>
+            <Pressable
+              style={[styles.button, styles.checkButton, { backgroundColor: colors.tint }]}
+              onPress={handleCheck}
+            >
+              <Text style={styles.buttonText}>{s.card.check}</Text>
+            </Pressable>
+          </View>
+        ) : (
+          <View style={styles.buttons}>
+            <Pressable
+              style={[styles.button, styles.checkButton, { backgroundColor: typingResult === 'wrong' ? '#EF4444' : colors.tint }]}
+              onPress={handleTypingNext}
+            >
+              <Text style={styles.buttonText}>→</Text>
+            </Pressable>
+          </View>
+        )}
+      </KeyboardAvoidingView>
+    );
+  }
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
@@ -156,33 +282,31 @@ export default function PassiveScreen() {
           </View>
         ) : (
           <Text style={[styles.tapHint, { color: colors.tabIconDefault }]}>
-            Koppints a fordításhoz
+            {s.card.tapToReveal}
           </Text>
         )}
       </Pressable>
 
-      {revealed && (
-        <View style={styles.buttons}>
-          <Pressable
-            style={[styles.button, { backgroundColor: '#EF4444' }]}
-            onPress={() => handleRate(Rating.Again)}
-          >
-            <Text style={styles.buttonText}>újra</Text>
-          </Pressable>
-          <Pressable
-            style={[styles.button, { backgroundColor: colors.tint }]}
-            onPress={() => handleRate(Rating.Good)}
-          >
-            <Text style={styles.buttonText}>Jó</Text>
-          </Pressable>
-          <Pressable
-            style={[styles.button, { backgroundColor: colors.accent }]}
-            onPress={() => handleRate(Rating.Easy)}
-          >
-            <Text style={styles.buttonText}>unom</Text>
-          </Pressable>
-        </View>
-      )}
+      <View style={[styles.buttons, { opacity: revealed ? 1 : 0 }]} pointerEvents={revealed ? 'auto' : 'none'}>
+        <Pressable
+          style={[styles.button, { backgroundColor: '#EF4444' }]}
+          onPress={() => advance(Rating.Again)}
+        >
+          <Text style={styles.buttonText}>{s.buttons.again}</Text>
+        </Pressable>
+        <Pressable
+          style={[styles.button, { backgroundColor: colors.tint }]}
+          onPress={() => advance(Rating.Good)}
+        >
+          <Text style={styles.buttonText}>{s.buttons.good}</Text>
+        </Pressable>
+        <Pressable
+          style={[styles.button, { backgroundColor: colors.accent }]}
+          onPress={() => advance(Rating.Easy)}
+        >
+          <Text style={styles.buttonText}>{s.buttons.bored}</Text>
+        </Pressable>
+      </View>
     </View>
   );
 }
@@ -269,6 +393,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 12,
     marginTop: 32,
+    minHeight: 50,
   },
   button: {
     paddingHorizontal: 28,
@@ -276,6 +401,9 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     minWidth: 90,
     alignItems: 'center',
+  },
+  checkButton: {
+    minWidth: 200,
   },
   buttonText: {
     color: '#FFFFFF',
@@ -297,5 +425,27 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     marginBottom: 24,
+  },
+  input: {
+    width: '100%',
+    borderWidth: 2,
+    borderRadius: 12,
+    padding: 14,
+    fontSize: 18,
+    textAlign: 'center',
+    marginTop: 8,
+  },
+  resultSection: {
+    alignItems: 'center',
+    marginTop: 12,
+  },
+  resultText: {
+    fontSize: 18,
+    fontWeight: '700',
+    marginBottom: 4,
+  },
+  correctAnswer: {
+    fontSize: 22,
+    fontWeight: '600',
   },
 });
