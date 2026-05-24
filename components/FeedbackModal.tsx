@@ -51,10 +51,10 @@ export default function FeedbackButton({ level, languagePair, currentCard }: Pro
   return (
     <>
       <Pressable
-        style={[styles.feedbackBtn, { backgroundColor: colors.card, borderColor: colors.tabIconDefault }]}
+        style={styles.fab}
         onPress={() => setVisible(true)}
       >
-        <Text style={[styles.feedbackBtnText, { color: colors.tabIconDefault }]}>{s.feedback.button}</Text>
+        <Text style={styles.fabText}>💬</Text>
       </Pressable>
 
       <Modal visible={visible} transparent animationType="fade">
@@ -97,18 +97,25 @@ export default function FeedbackButton({ level, languagePair, currentCard }: Pro
 }
 
 const styles = StyleSheet.create({
-  feedbackBtn: {
-    alignSelf: 'center',
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 20,
-    borderWidth: 1,
-    marginTop: 16,
-    marginBottom: 8,
+  fab: {
+    position: 'absolute',
+    bottom: 24,
+    right: 24,
+    width: 52,
+    height: 52,
+    borderRadius: 26,
+    backgroundColor: '#1E3A5F',
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.25,
+    shadowRadius: 8,
+    elevation: 6,
+    zIndex: 100,
   },
-  feedbackBtnText: {
-    fontSize: 13,
-    fontWeight: '500',
+  fabText: {
+    fontSize: 24,
   },
   overlay: {
     flex: 1,
