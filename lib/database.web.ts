@@ -6,6 +6,8 @@ export interface DB {
   getDueCards(limit: number): Promise<any[]>;
   getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
   updateStreak(): Promise<void>;
+  getOnboarding(): Promise<{ source: string; target: string } | null>;
+  setOnboarding(source: string, target: string): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -75,6 +77,16 @@ class MemoryDB implements DB {
     this.streak.current_count = this.streak.last_date === yesterday ? this.streak.current_count + 1 : 1;
     this.streak.last_date = today;
     this.streak.longest_count = Math.max(this.streak.current_count, this.streak.longest_count);
+  }
+
+  private onboarding: { source: string; target: string } | null = null;
+
+  async getOnboarding() {
+    return this.onboarding;
+  }
+
+  async setOnboarding(source: string, target: string) {
+    this.onboarding = { source, target };
   }
 }
 

@@ -7,6 +7,8 @@ export interface DB {
   getDueCards(limit: number): Promise<any[]>;
   getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
   updateStreak(): Promise<void>;
+  getOnboarding(): Promise<{ source: string; target: string } | null>;
+  setOnboarding(source: string, target: string): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -54,6 +56,11 @@ class SQLiteDB implements DB {
         longest_count INTEGER NOT NULL DEFAULT 0
       );
       INSERT OR IGNORE INTO streak (id, current_count, longest_count) VALUES (1, 0, 0);
+      CREATE TABLE IF NOT EXISTS onboarding (
+        id INTEGER PRIMARY KEY CHECK (id = 1),
+        source TEXT NOT NULL,
+        target TEXT NOT NULL
+      );
     `);
     return this.db;
   }
@@ -99,6 +106,17 @@ class SQLiteDB implements DB {
     const newCount = streak.last_date === yesterday ? streak.current_count + 1 : 1;
     const longest = Math.max(newCount, streak.longest_count);
     await db.runAsync('UPDATE streak SET current_count = ?, last_date = ?, longest_count = ? WHERE id = 1', [newCount, today, longest]);
+  }
+
+  async getOnboarding() {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT source, target FROM onboarding WHERE id = 1');
+    return row ?? null;
+  }
+
+  async setOnboarding(source: string, target: string) {
+    const db = await this.open();
+    await db.runAsync('INSERT OR REPLACE INTO onboarding (id, source, target) VALUES (1, ?, ?)', [source, target]);
   }
 }
 
