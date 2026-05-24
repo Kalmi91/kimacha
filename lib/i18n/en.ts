@@ -12,6 +12,7 @@ export default {
     sentence: 'sentence',
     tapToReveal: 'Tap to translate',
     typeTranslation: 'Type the translation',
+    typeIt: 'Type It',
     check: 'Check',
     correct: 'Correct!',
     almostCorrect: 'Almost!',
@@ -36,6 +37,10 @@ export default {
     title: 'Active mode',
     comingSoon: 'Coming soon...',
     description: 'Have a conversation in Spanish.\nComing in a future update.',
+  },
+  master: {
+    button: 'Master',
+    title: 'Choose Level',
   },
   feedback: {
     button: 'Feedback',

@@ -9,6 +9,7 @@ import { words, type WordEntry, getWordsForLevel, LEVELS, type Level } from '@/d
 import { t } from '@/lib/i18n';
 import { levenshtein } from '@/lib/levenshtein';
 import FeedbackButton from '@/components/FeedbackModal';
+import * as Speech from 'expo-speech';
 
 const f = fsrs();
 
@@ -40,6 +41,9 @@ export default function LearnScreen() {
   const [level, setLevel] = useState<Level>('A0');
   const [levelUpMsg, setLevelUpMsg] = useState<string | null>(null);
   const [cardStartTime, setCardStartTime] = useState<number>(Date.now());
+  const [practiceTyping, setPracticeTyping] = useState(false);
+  const [practiceResult, setPracticeResult] = useState<TypingResult>(null);
+  const [practiceText, setPracticeText] = useState('');
   const inputRef = useRef<TextInput>(null);
 
   const loadCards = async () => {
@@ -78,6 +82,9 @@ export default function LearnScreen() {
     setTypingResult(null);
     setDone(items.length === 0);
     setCardStartTime(Date.now());
+    setPracticeTyping(false);
+    setPracticeResult(null);
+    setPracticeText('');
     setLoading(false);
   };
 
@@ -208,6 +215,9 @@ export default function LearnScreen() {
     setTypedAnswer('');
     setTypingResult(null);
     setCardStartTime(Date.now());
+    setPracticeTyping(false);
+    setPracticeResult(null);
+    setPracticeText('');
   };
 
   const handleInSentence = async () => {
@@ -247,6 +257,9 @@ export default function LearnScreen() {
     setTypedAnswer('');
     setTypingResult(null);
     setCardStartTime(Date.now());
+    setPracticeTyping(false);
+    setPracticeResult(null);
+    setPracticeText('');
   };
 
   const handleCheck = () => {
@@ -305,6 +318,11 @@ export default function LearnScreen() {
   const { front, back } = getFrontBack(current);
   const isWord = current.type === 'word';
   const typeLabel = isWord ? s.card.word : s.card.sentence;
+  const sourceLang = direction[0];
+
+  const speakFront = () => {
+    Speech.speak(front, { language: sourceLang });
+  };
 
   const levelBadge = (
     <View style={[styles.levelBadge, { backgroundColor: '#38BDF8' }]}>
@@ -313,7 +331,7 @@ export default function LearnScreen() {
   );
 
   const levelUpOverlay = levelUpMsg ? (
-    <View style={[styles.levelUpOverlay, { backgroundColor: levelUpMsg.startsWith('↑') ? 'rgba(13,148,136,0.9)' : 'rgba(239,68,68,0.85)' }]}>
+    <View style={[styles.levelUpOverlay, { backgroundColor: levelUpMsg.startsWith('↑') ? '#2563EB' : '#EF4444' }]}>
       <Text style={styles.levelUpText}>{levelUpMsg}</Text>
     </View>
   ) : null;
@@ -341,7 +359,12 @@ export default function LearnScreen() {
 
         <View style={[styles.card, { backgroundColor: colors.card }]}>
           <Text style={[styles.typeTag, { color: colors.tint }]}>{typeLabel}</Text>
-          <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
+          <View style={styles.frontRow}>
+            <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
+            <Pressable onPress={speakFront} style={styles.speakBtn}>
+              <Text style={styles.speakIcon}>🔊</Text>
+            </Pressable>
+          </View>
 
           <TextInput
             ref={inputRef}
@@ -415,6 +438,38 @@ export default function LearnScreen() {
           <View style={styles.backSection}>
             <View style={[styles.divider, { backgroundColor: '#38BDF8' }]} />
             <Text style={[styles.backText, { color: colors.tint }]}>{back}</Text>
+            {!practiceTyping && !practiceResult && (
+              <Pressable
+                style={[styles.typeItBtn, { borderColor: colors.tabIconDefault }]}
+                onPress={() => setPracticeTyping(true)}
+              >
+                <Text style={[styles.typeItText, { color: colors.tabIconDefault }]}>✏️ {s.card.typeIt}</Text>
+              </Pressable>
+            )}
+            {practiceTyping && !practiceResult && (
+              <View style={styles.practiceSection}>
+                <TextInput
+                  style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }]}
+                  placeholder={s.card.typeTranslation}
+                  placeholderTextColor={colors.tabIconDefault}
+                  value={practiceText}
+                  onChangeText={setPracticeText}
+                  onSubmitEditing={() => {
+                    const correct = back.toLowerCase().split(' / ')[0].trim().replace(/[¡¿]/g, '');
+                    const dist = levenshtein(practiceText.trim().toLowerCase(), correct);
+                    setPracticeResult(dist === 0 ? 'correct' : dist <= 2 ? 'almost' : 'wrong');
+                  }}
+                  autoFocus
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                />
+              </View>
+            )}
+            {practiceResult && (
+              <Text style={[styles.practiceResultText, { color: practiceResult === 'correct' ? '#22C55E' : practiceResult === 'almost' ? '#EAB308' : '#EF4444' }]}>
+                {practiceResult === 'correct' ? s.card.correct : practiceResult === 'almost' ? s.card.almostCorrect : s.card.wrong}
+              </Text>
+            )}
           </View>
         ) : (
           <Text style={[styles.tapHint, { color: colors.tabIconDefault }]}>
@@ -488,18 +543,21 @@ const styles = StyleSheet.create({
   },
   levelUpOverlay: {
     position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    alignItems: 'center',
-    justifyContent: 'center',
+    top: 60,
+    alignSelf: 'center',
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    borderRadius: 16,
     zIndex: 100,
-    borderRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 8,
   },
   levelUpText: {
-    fontSize: 56,
-    fontWeight: '900',
+    fontSize: 22,
+    fontWeight: '800',
     color: '#FFFFFF',
   },
   streakBadge: {
@@ -543,7 +601,6 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: '700',
     textAlign: 'center',
-    marginBottom: 16,
   },
   backSection: {
     alignItems: 'center',
@@ -585,6 +642,38 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 16,
     fontWeight: '700',
+  },
+  frontRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    marginBottom: 16,
+  },
+  speakBtn: {
+    padding: 4,
+  },
+  speakIcon: {
+    fontSize: 22,
+  },
+  typeItBtn: {
+    marginTop: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 12,
+    borderWidth: 1,
+  },
+  typeItText: {
+    fontSize: 13,
+    fontWeight: '500',
+  },
+  practiceSection: {
+    width: '100%',
+    marginTop: 12,
+  },
+  practiceResultText: {
+    fontSize: 16,
+    fontWeight: '700',
+    marginTop: 8,
   },
   doneEmoji: {
     fontSize: 64,
