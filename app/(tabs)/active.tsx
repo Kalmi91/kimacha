@@ -1,0 +1,50 @@
+import { StyleSheet, Text, View } from 'react-native';
+import Colors from '@/constants/Colors';
+import { useColorScheme } from '@/components/useColorScheme';
+
+export default function ActiveScreen() {
+  const colorScheme = useColorScheme() ?? 'dark';
+  const colors = Colors[colorScheme];
+
+  return (
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <Text style={[styles.emoji]}>🎙️</Text>
+      <Text style={[styles.title, { color: colors.text }]}>Aktív mód</Text>
+      <Text style={[styles.subtitle, { color: colors.tabIconDefault }]}>
+        Hamarosan...
+      </Text>
+      <Text style={[styles.description, { color: colors.tabIconDefault }]}>
+        Beszélgess spanyolul egy NPC-vel.{'\n'}
+        Iter2-ben érkezik.
+      </Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 24,
+  },
+  emoji: {
+    fontSize: 64,
+    marginBottom: 16,
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: '700',
+    marginBottom: 8,
+  },
+  subtitle: {
+    fontSize: 18,
+    fontWeight: '500',
+    marginBottom: 16,
+  },
+  description: {
+    fontSize: 14,
+    textAlign: 'center',
+    lineHeight: 22,
+  },
+});
