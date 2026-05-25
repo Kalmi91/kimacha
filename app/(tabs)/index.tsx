@@ -144,44 +144,12 @@ export default function LearnScreen() {
     if (wasCorrect) {
       correct_streak += 1;
       fail_streak = 0;
-
-      if (correct_streak >= 5 && mistakes_in_window <= 1) {
-        if (levelIdx < LEVELS.length - 1) {
-          const newLevel = LEVELS[levelIdx + 1];
-          await db.updateLevel(newLevel, 0, 0, 0);
-          setLevel(newLevel);
-          setLevelUpMsg(`↑ ${newLevel}`);
-          setTimeout(() => setLevelUpMsg(null), 2000);
-
-          const newLevelWords = getWordsForLevel(newLevel);
-          for (const w of newLevelWords) {
-            await db.ensureCard(w.id, 'word');
-            await db.ensureCard(w.id, 'sentence');
-          }
-          return;
-        }
-      }
-      await db.updateLevel(currentLevel, correct_streak, mistakes_in_window, fail_streak);
     } else {
       fail_streak += 1;
       mistakes_in_window += 1;
       correct_streak = 0;
-
-      if (mistakes_in_window >= 2) {
-        correct_streak = 0;
-        mistakes_in_window = 0;
-      }
-
-      if (fail_streak >= 5 && levelIdx > 0) {
-        const newLevel = LEVELS[levelIdx - 1];
-        await db.updateLevel(newLevel, 0, 0, 0);
-        setLevel(newLevel);
-        setLevelUpMsg(`↓ ${newLevel}`);
-        setTimeout(() => setLevelUpMsg(null), 2000);
-        return;
-      }
-      await db.updateLevel(currentLevel, correct_streak, mistakes_in_window, fail_streak);
     }
+    await db.updateLevel(currentLevel, correct_streak, mistakes_in_window, fail_streak);
   };
 
   const advance = async (rating: Grade) => {
@@ -292,6 +260,8 @@ export default function LearnScreen() {
       setTypingResult('wrong');
     }
     setRevealed(true);
+    const targetLang = direction[1];
+    Speech.speak(back, { language: targetLang });
   };
 
   const handleTypingNext = () => {
@@ -338,11 +308,11 @@ export default function LearnScreen() {
 
   const { front, back } = getFrontBack(current);
   const isWord = current.type === 'word';
-  const typeLabel = isWord ? s.card.word : s.card.sentence;
-  const sourceLang = direction[0];
 
-  const speakFront = () => {
-    Speech.speak(front, { language: sourceLang });
+  const targetLang = direction[1];
+
+  const speakTarget = () => {
+    Speech.speak(back, { language: targetLang });
   };
 
   const levelBadge = (
@@ -418,13 +388,7 @@ export default function LearnScreen() {
         </View>
 
         <View style={[styles.card, { backgroundColor: colors.card }]}>
-          <Text style={[styles.typeTag, { color: colors.tint }]}>{typeLabel}</Text>
-          <View style={styles.frontRow}>
-            <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
-            <Pressable onPress={speakFront} style={styles.speakBtn}>
-              <Text style={styles.speakIcon}>🔊</Text>
-            </Pressable>
-          </View>
+          <Text style={[styles.frontText, { color: colors.text, marginBottom: 16 }]}>{front}</Text>
 
           <TextInput
             ref={inputRef}
@@ -443,7 +407,12 @@ export default function LearnScreen() {
           {revealed && (
             <View style={styles.resultSection}>
               <Text style={[styles.resultText, { color: resultColor }]}>{resultText}</Text>
-              <Text style={[styles.correctAnswer, { color: colors.tint }]}>{back}</Text>
+              <View style={styles.frontRow}>
+                <Text style={[styles.correctAnswer, { color: colors.tint }]}>{back}</Text>
+                <Pressable onPress={speakTarget} style={styles.speakBtn}>
+                  <Text style={styles.speakIcon}>🔊</Text>
+                </Pressable>
+              </View>
             </View>
           )}
         </View>
@@ -489,20 +458,24 @@ export default function LearnScreen() {
 
       <Pressable
         style={[styles.card, { backgroundColor: colors.card }]}
-        onPress={() => !revealed && setRevealed(true)}
+        onPress={() => {
+          if (!revealed) {
+            setRevealed(true);
+            Speech.speak(back, { language: targetLang });
+          }
+        }}
       >
-        <Text style={[styles.typeTag, { color: colors.tint }]}>{typeLabel}</Text>
-        <View style={styles.frontRow}>
-          <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
-          <Pressable onPress={speakFront} style={styles.speakBtn}>
-            <Text style={styles.speakIcon}>🔊</Text>
-          </Pressable>
-        </View>
+        <Text style={[styles.frontText, { color: colors.text, marginBottom: 16 }]}>{front}</Text>
 
         {revealed ? (
           <View style={styles.backSection}>
             <View style={[styles.divider, { backgroundColor: '#38BDF8' }]} />
-            <Text style={[styles.backText, { color: colors.tint }]}>{back}</Text>
+            <View style={styles.frontRow}>
+              <Text style={[styles.backText, { color: colors.tint }]}>{back}</Text>
+              <Pressable onPress={speakTarget} style={styles.speakBtn}>
+                <Text style={styles.speakIcon}>🔊</Text>
+              </Pressable>
+            </View>
             {!practiceTyping && !practiceResult && (
               <Pressable
                 style={[styles.typeItBtn, { borderColor: colors.tabIconDefault }]}
@@ -598,21 +571,16 @@ const styles = StyleSheet.create({
   },
   levelUpOverlay: {
     position: 'absolute',
-    top: 60,
-    alignSelf: 'center',
-    paddingHorizontal: 24,
-    paddingVertical: 12,
-    borderRadius: 16,
+    top: 12,
+    right: 12,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 10,
     zIndex: 100,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 8,
-    elevation: 8,
   },
   levelUpText: {
-    fontSize: 22,
-    fontWeight: '800',
+    fontSize: 14,
+    fontWeight: '700',
     color: '#FFFFFF',
   },
   streakBadge: {
@@ -644,13 +612,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 12,
     elevation: 4,
-  },
-  typeTag: {
-    fontSize: 12,
-    fontWeight: '600',
-    textTransform: 'uppercase',
-    letterSpacing: 1,
-    marginBottom: 16,
   },
   frontText: {
     fontSize: 32,
