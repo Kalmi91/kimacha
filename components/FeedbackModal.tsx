@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, Pressable, TextInput, Modal, Alert, Platform } from 'react-native';
+import { StyleSheet, Text, View, Pressable, TextInput, Modal } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
@@ -20,6 +20,7 @@ export default function FeedbackButton({ level, languagePair, currentCard }: Pro
   const [visible, setVisible] = useState(false);
   const [text, setText] = useState('');
   const [sending, setSending] = useState(false);
+  const [showThanks, setShowThanks] = useState(false);
 
   const handleSend = async () => {
     if (!text.trim()) return;
@@ -40,12 +41,8 @@ export default function FeedbackButton({ level, languagePair, currentCard }: Pro
     setSending(false);
     setText('');
     setVisible(false);
-
-    if (Platform.OS === 'web') {
-      alert(s.feedback.thanks);
-    } else {
-      Alert.alert('', s.feedback.thanks);
-    }
+    setShowThanks(true);
+    setTimeout(() => setShowThanks(false), 2000);
   };
 
   return (
@@ -56,6 +53,15 @@ export default function FeedbackButton({ level, languagePair, currentCard }: Pro
       >
         <Text style={styles.fabText}>💬</Text>
       </Pressable>
+
+      <Modal visible={showThanks} transparent animationType="fade">
+        <View style={styles.toastOverlay}>
+          <View style={[styles.toast, { backgroundColor: colors.tint }]}>
+            <Text style={styles.toastEmoji}>✅</Text>
+            <Text style={styles.toastText}>{s.feedback.thanks}</Text>
+          </View>
+        </View>
+      </Modal>
 
       <Modal visible={visible} transparent animationType="fade">
         <View style={styles.overlay}>
@@ -162,5 +168,26 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 15,
     fontWeight: '600',
+  },
+  toastOverlay: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.3)',
+  },
+  toast: {
+    paddingHorizontal: 32,
+    paddingVertical: 20,
+    borderRadius: 16,
+    alignItems: 'center',
+    gap: 8,
+  },
+  toastEmoji: {
+    fontSize: 36,
+  },
+  toastText: {
+    color: '#FFFFFF',
+    fontSize: 18,
+    fontWeight: '700',
   },
 });
