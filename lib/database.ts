@@ -18,6 +18,7 @@ export interface DB {
   getTodayStats(): Promise<{ totalReviews: number; correctCount: number; avgResponseMs: number; flashcardCount: number; typingCount: number; wordCount: number; sentenceCount: number }>;
   getTop5Failed(): Promise<string[]>;
   getMasteredCount(): Promise<number>;
+  getReviewedWordCount(level: string): Promise<number>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -258,6 +259,20 @@ class SQLiteDB implements DB {
     const db = await this.open();
     const row = await db.getFirstAsync<any>(
       "SELECT COUNT(*) as cnt FROM cards WHERE state >= 2 AND stability > 10"
+    );
+    return row?.cnt ?? 0;
+  }
+
+  async getReviewedWordCount(level: string) {
+    const db = await this.open();
+    const { getWordsForLevel } = require('@/data/words');
+    const levelWords = getWordsForLevel(level);
+    const wordIds = levelWords.map((w: any) => w.id);
+    if (wordIds.length === 0) return 0;
+    const placeholders = wordIds.map(() => '?').join(',');
+    const row = await db.getFirstAsync<any>(
+      `SELECT COUNT(*) as cnt FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND reps > 0`,
+      wordIds
     );
     return row?.cnt ?? 0;
   }

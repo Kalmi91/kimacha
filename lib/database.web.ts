@@ -17,6 +17,7 @@ export interface DB {
   getTodayStats(): Promise<{ totalReviews: number; correctCount: number; avgResponseMs: number; flashcardCount: number; typingCount: number; wordCount: number; sentenceCount: number }>;
   getTop5Failed(): Promise<string[]>;
   getMasteredCount(): Promise<number>;
+  getReviewedWordCount(level: string): Promise<number>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -144,6 +145,12 @@ class MemoryDB implements DB {
   }
   async getTop5Failed() { return []; }
   async getMasteredCount() { return 0; }
+  async getReviewedWordCount(level: string) {
+    const { getWordsForLevel } = require('@/data/words');
+    const levelWords = getWordsForLevel(level);
+    const wordIds = new Set(levelWords.map((w: any) => w.id));
+    return [...this.cards.values()].filter(c => wordIds.has(c.word_id) && c.type === 'word' && c.reps > 0).length;
+  }
 }
 
 let instance: DB;
