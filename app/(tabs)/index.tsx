@@ -111,7 +111,8 @@ export default function LearnScreen() {
       if (e.key !== 'Enter') return;
       if (done || loading) return;
       if (!current) return;
-      if (current.isTyping && current.type === 'word') return;
+      if (current.isTyping) return;
+      if (current.isEasySentence) return;
       if (!revealed) {
         setRevealed(true);
       } else {
@@ -395,7 +396,7 @@ export default function LearnScreen() {
     );
   }
 
-  if (current.isTyping && isWord) {
+  if (current.isTyping) {
     const resultColor = typingResult === 'correct' ? '#22C55E' : typingResult === 'almost' ? '#EAB308' : '#EF4444';
     const resultText = typingResult === 'correct' ? s.card.correct : typingResult === 'almost' ? s.card.almostCorrect : s.card.wrong;
 
