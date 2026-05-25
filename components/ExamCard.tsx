@@ -17,12 +17,12 @@ export default function ExamCard({ question, onResult }: Props) {
   const s = t();
 
   if (question.type === 'gap') {
-    return <GapCard question={question} onResult={onResult} colors={colors} />;
+    return <GapCard question={question} onResult={onResult} colors={colors} s={s} />;
   }
   return <TranslateCard question={question} onResult={onResult} colors={colors} s={s} />;
 }
 
-function GapCard({ question, onResult, colors }: { question: GapQuestion; onResult: (c: boolean) => void; colors: any }) {
+function GapCard({ question, onResult, colors, s }: { question: GapQuestion; onResult: (c: boolean) => void; colors: any; s: any }) {
   const [selected, setSelected] = useState<number | null>(null);
   const [answered, setAnswered] = useState(false);
 
@@ -38,7 +38,7 @@ function GapCard({ question, onResult, colors }: { question: GapQuestion; onResu
 
   return (
     <View style={[styles.card, { backgroundColor: colors.card }]}>
-      <Text style={[styles.examTag, { color: colors.accent }]}>VIZSGA</Text>
+      <Text style={[styles.examTag, { color: colors.accent }]}>{s.exam.tag}</Text>
       <Text style={[styles.gapSentence, { color: colors.text }]}>{question.sentence}</Text>
       <View style={styles.optionsGrid}>
         {question.options.map((opt, idx) => {
@@ -74,7 +74,7 @@ function TranslateCard({ question, onResult, colors, s }: { question: TranslateQ
     const correct = question.target.toLowerCase().replace(/[¡¿]/g, '');
     const dist = levenshtein(answer, correct);
 
-    const r = dist === 0 ? 'correct' : dist <= 3 ? 'almost' : 'wrong';
+    const r = dist === 0 ? 'correct' : dist <= 2 ? 'almost' : 'wrong';
     setResult(r);
     setTimeout(() => onResult(r !== 'wrong'), 1500);
   };
@@ -83,7 +83,7 @@ function TranslateCard({ question, onResult, colors, s }: { question: TranslateQ
 
   return (
     <View style={[styles.card, { backgroundColor: colors.card }]}>
-      <Text style={[styles.examTag, { color: colors.accent }]}>VIZSGA</Text>
+      <Text style={[styles.examTag, { color: colors.accent }]}>{s.exam.tag}</Text>
       <Text style={[styles.translateSource, { color: colors.text }]}>{question.source}</Text>
 
       <TextInput

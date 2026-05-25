@@ -38,6 +38,9 @@ export default {
     comingSoon: 'Bald verfügbar...',
     description: 'Führe ein Gespräch auf Spanisch.\nKommt in einem zukünftigen Update.',
   },
+  exam: {
+    tag: 'Prüfung',
+  },
   master: {
     button: 'Meister',
     title: 'Stufe Wählen',

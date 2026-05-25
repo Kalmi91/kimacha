@@ -38,6 +38,9 @@ export default {
     comingSoon: 'Hamarosan...',
     description: 'Beszélgess spanyolul egy NPC-vel.\nIter2-ben érkezik.',
   },
+  exam: {
+    tag: 'Vizsga',
+  },
   master: {
     button: 'Mester',
     title: 'Szint Választás',
