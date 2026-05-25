@@ -10,8 +10,10 @@ import { t } from '@/lib/i18n';
 import { levenshtein } from '@/lib/levenshtein';
 import FeedbackButton from '@/components/FeedbackModal';
 import * as Speech from 'expo-speech';
-import ExamCard from '@/components/ExamCard';
-import { getExamQuestionsForLevel, type ExamQuestion } from '@/data/exams';
+import ExamMode from '@/components/ExamMode';
+import DoneScreen from '@/components/DoneScreen';
+import EasySentenceCard from '@/components/EasySentenceCard';
+import { getExamQuestionsForLevel } from '@/data/exams';
 
 const f = fsrs();
 
@@ -21,6 +23,7 @@ interface DueItem {
   card: Card;
   word: WordEntry;
   isTyping: boolean;
+  isEasySentence?: boolean;
 }
 
 type TypingResult = 'correct' | 'almost' | 'wrong' | null;
@@ -47,10 +50,6 @@ export default function LearnScreen() {
   const [practiceResult, setPracticeResult] = useState<TypingResult>(null);
   const [practiceText, setPracticeText] = useState('');
   const [examMode, setExamMode] = useState(false);
-  const [examQuestions, setExamQuestions] = useState<ExamQuestion[]>([]);
-  const [examIndex, setExamIndex] = useState(0);
-  const [examCorrect, setExamCorrect] = useState(0);
-  const [examDone, setExamDone] = useState(false);
   const [masteredPct, setMasteredPct] = useState(0);
   const inputRef = useRef<TextInput>(null);
 
@@ -77,7 +76,8 @@ export default function LearnScreen() {
       type: row.type,
       card: cardFromRow(row),
       word: words.find(w => w.id === row.word_id)!,
-      isTyping: Math.random() < 0.5,
+      isTyping: row.type === 'sentence' ? row.reps > 0 : Math.random() < 0.5,
+      isEasySentence: row.type === 'sentence' && row.reps === 0,
     })).filter((item: DueItem) => item.word);
 
     const streakData = await db.getStreak();
@@ -212,7 +212,8 @@ export default function LearnScreen() {
         type: row.type,
         card: cardFromRow(row),
         word: words.find(w => w.id === row.word_id)!,
-        isTyping: Math.random() < 0.5,
+        isTyping: row.type === 'sentence' ? row.reps > 0 : Math.random() < 0.5,
+        isEasySentence: row.type === 'sentence' && row.reps === 0,
       })).filter((item: DueItem) => item.word);
 
       if (newItems.length === 0) {
@@ -308,98 +309,29 @@ export default function LearnScreen() {
     );
   }
 
-  if (examMode && !examDone) {
-    const eq = examQuestions[examIndex];
+  if (examMode) {
     return (
-      <View style={[styles.container, { backgroundColor: colors.background }]}>
-        <View style={styles.header}>
-          <View style={[styles.levelBadge, { backgroundColor: colors.accent }]}>
-            <Text style={styles.levelText}>{s.exam.tag}</Text>
-          </View>
-          <Text style={[styles.counter, { color: colors.tabIconDefault }]}>
-            {examIndex + 1}/5
-          </Text>
-        </View>
-        {eq && <ExamCard question={eq} onResult={async (correct) => {
-          const newCorrect = examCorrect + (correct ? 1 : 0);
-          setExamCorrect(newCorrect);
-          if (examIndex + 1 >= 5) {
-            setExamDone(true);
-            if (newCorrect >= 4) {
-              const levelIdx = LEVELS.indexOf(level);
-              if (levelIdx < LEVELS.length - 1) {
-                const newLevel = LEVELS[levelIdx + 1];
-                const db = getDb();
-                await db.updateLevel(newLevel, 0, 0, 0);
-                setLevel(newLevel);
-              }
-            }
-          } else {
-            setExamIndex(examIndex + 1);
-          }
-        }} />}
-        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`exam:${examIndex + 1}`} />
-      </View>
+      <ExamMode
+        level={level}
+        direction={direction as [string, string]}
+        onLevelUp={(newLevel) => setLevel(newLevel)}
+        onExit={() => { setExamMode(false); loadCards(); }}
+      />
     );
   }
-
-  if (examMode && examDone) {
-    const passed = examCorrect >= 4;
-    return (
-      <View style={[styles.container, { backgroundColor: colors.background }]}>
-        <Text style={styles.doneEmoji}>{passed ? '🏆' : '📚'}</Text>
-        <Text style={[styles.doneTitle, { color: colors.text }]}>
-          {passed ? `${level} ↑` : 'Még nem, de közel vagy!'}
-        </Text>
-        <Text style={[styles.doneSubtitle, { color: colors.tabIconDefault }]}>
-          {examCorrect}/5
-        </Text>
-        <Pressable
-          style={[styles.examStartBtn, { backgroundColor: colors.tint }]}
-          onPress={() => { setExamMode(false); setExamDone(false); setExamIndex(0); setExamCorrect(0); loadCards(); }}
-        >
-          <Text style={styles.examStartBtnText}>→</Text>
-        </Pressable>
-      </View>
-    );
-  }
-
-  const startExam = () => {
-    const questions = getExamQuestionsForLevel(level);
-    const shuffled = questions.sort(() => Math.random() - 0.5).slice(0, 5);
-    setExamQuestions(shuffled);
-    setExamIndex(0);
-    setExamCorrect(0);
-    setExamDone(false);
-    setExamMode(true);
-  };
 
   if (done) {
-    const hasExamQuestions = getExamQuestionsForLevel(level).length > 0 && masteredPct >= 80;
+    const examAvailable = getExamQuestionsForLevel(level).length > 0 && masteredPct >= 70;
     return (
-      <View style={[styles.container, { backgroundColor: colors.background }]}>
-        <Text style={styles.doneEmoji}>🎉</Text>
-        <Text style={[styles.doneTitle, { color: colors.text }]}>{s.done.title}</Text>
-        <Text style={[styles.doneSubtitle, { color: colors.tabIconDefault }]}>
-          {s.done.reviewed(reviewed)}
-        </Text>
-        <View style={[styles.levelBadgeLarge, { backgroundColor: '#38BDF8' }]}>
-          <Text style={styles.levelTextLarge}>{level}</Text>
-        </View>
-        <View style={[styles.streakBadge, { backgroundColor: colors.card, marginTop: 12 }]}>
-          <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
-          <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>{s.done.streak}</Text>
-        </View>
-        <Text style={[styles.masteredText, { color: masteredPct >= 80 ? '#22C55E' : colors.tabIconDefault }]}>
-          {level}: {masteredPct}% {masteredPct < 80 ? '(vizsga: 80%)' : '✓'}
-        </Text>
-        {hasExamQuestions && (
-          <Pressable style={[styles.examStartBtn, { backgroundColor: colors.accent, marginTop: 20 }]} onPress={startExam}>
-            <Text style={styles.examStartBtnText}>🎓 Vizsga</Text>
-          </Pressable>
-        )}
-        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="done" />
-      </View>
+      <DoneScreen
+        reviewed={reviewed}
+        streak={streak}
+        level={level}
+        masteredPct={masteredPct}
+        direction={direction as [string, string]}
+        examAvailable={examAvailable}
+        onStartExam={() => setExamMode(true)}
+      />
     );
   }
 
@@ -423,6 +355,45 @@ export default function LearnScreen() {
       <Text style={styles.levelUpText}>{levelUpMsg}</Text>
     </View>
   ) : null;
+
+  if (current.isEasySentence && !isWord) {
+    const targetLang = direction[1];
+    const targetSentence = String(current.word[`sentence_${targetLang}`]);
+    const targetWordList = targetSentence.replace(/[.!?¡¿,;:]/g, '').split(/\s+/).filter(Boolean);
+    const levelWords = getWordsForLevel(level);
+    const sentenceWordsLower = new Set(targetWordList.map(w => w.toLowerCase()));
+    const traps = levelWords
+      .map(w => String(w[targetLang]).split(' / ')[0])
+      .filter(w => w && !sentenceWordsLower.has(w.toLowerCase()))
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 3);
+
+    return (
+      <View style={[styles.container, { backgroundColor: colors.background }]}>
+        {levelUpOverlay}
+        <View style={styles.header}>
+          {levelBadge}
+          <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
+            <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
+            <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>🔥</Text>
+          </View>
+          <Text style={[styles.counter, { color: colors.tabIconDefault }]}>
+            {currentIndex + 1}/{queue.length}
+          </Text>
+        </View>
+
+        <EasySentenceCard
+          sourceSentence={front}
+          targetWords={targetWordList}
+          trapWords={traps}
+          onResult={(correct) => {
+            advance(correct ? Rating.Good : Rating.Again);
+          }}
+        />
+        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`easy:${front}`} />
+      </View>
+    );
+  }
 
   if (current.isTyping && isWord) {
     const resultColor = typingResult === 'correct' ? '#22C55E' : typingResult === 'almost' ? '#EAB308' : '#EF4444';
@@ -624,16 +595,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '800',
   },
-  levelBadgeLarge: {
-    paddingHorizontal: 20,
-    paddingVertical: 8,
-    borderRadius: 12,
-  },
-  levelTextLarge: {
-    color: '#FFFFFF',
-    fontSize: 24,
-    fontWeight: '800',
-  },
   levelUpOverlay: {
     position: 'absolute',
     top: 60,
@@ -748,23 +709,6 @@ const styles = StyleSheet.create({
   speakIcon: {
     fontSize: 22,
   },
-  masteredText: {
-    fontSize: 14,
-    fontWeight: '600',
-    marginTop: 12,
-  },
-  examStartBtn: {
-    paddingHorizontal: 32,
-    paddingVertical: 14,
-    borderRadius: 14,
-    minWidth: 160,
-    alignItems: 'center',
-  },
-  examStartBtnText: {
-    color: '#FFF',
-    fontSize: 18,
-    fontWeight: '700',
-  },
   typeItBtn: {
     marginTop: 12,
     paddingHorizontal: 16,
@@ -784,22 +728,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '700',
     marginTop: 8,
-  },
-  doneEmoji: {
-    fontSize: 64,
-    textAlign: 'center',
-    marginBottom: 16,
-  },
-  doneTitle: {
-    fontSize: 28,
-    fontWeight: '700',
-    textAlign: 'center',
-    marginBottom: 8,
-  },
-  doneSubtitle: {
-    fontSize: 16,
-    textAlign: 'center',
-    marginBottom: 24,
   },
   input: {
     width: '100%',
