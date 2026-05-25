@@ -38,6 +38,9 @@ export default {
     comingSoon: 'Próximamente...',
     description: 'Conversa en español con un NPC.\nPróximamente.',
   },
+  exam: {
+    tag: 'Examen',
+  },
   master: {
     button: 'Maestro',
     title: 'Elegir Nivel',

@@ -38,6 +38,9 @@ export default {
     comingSoon: 'Coming soon...',
     description: 'Have a conversation in Spanish.\nComing in a future update.',
   },
+  exam: {
+    tag: 'Exam',
+  },
   master: {
     button: 'Master',
     title: 'Choose Level',

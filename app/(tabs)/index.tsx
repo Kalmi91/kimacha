@@ -314,13 +314,13 @@ export default function LearnScreen() {
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         <View style={styles.header}>
           <View style={[styles.levelBadge, { backgroundColor: colors.accent }]}>
-            <Text style={styles.levelText}>VIZSGA</Text>
+            <Text style={styles.levelText}>{s.exam.tag}</Text>
           </View>
           <Text style={[styles.counter, { color: colors.tabIconDefault }]}>
             {examIndex + 1}/5
           </Text>
         </View>
-        {eq && <ExamCard question={eq} onResult={(correct) => {
+        {eq && <ExamCard question={eq} onResult={async (correct) => {
           const newCorrect = examCorrect + (correct ? 1 : 0);
           setExamCorrect(newCorrect);
           if (examIndex + 1 >= 5) {
@@ -330,7 +330,7 @@ export default function LearnScreen() {
               if (levelIdx < LEVELS.length - 1) {
                 const newLevel = LEVELS[levelIdx + 1];
                 const db = getDb();
-                db.updateLevel(newLevel, 0, 0, 0);
+                await db.updateLevel(newLevel, 0, 0, 0);
                 setLevel(newLevel);
               }
             }
@@ -520,7 +520,12 @@ export default function LearnScreen() {
         onPress={() => !revealed && setRevealed(true)}
       >
         <Text style={[styles.typeTag, { color: colors.tint }]}>{typeLabel}</Text>
-        <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
+        <View style={styles.frontRow}>
+          <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
+          <Pressable onPress={speakFront} style={styles.speakBtn}>
+            <Text style={styles.speakIcon}>🔊</Text>
+          </Pressable>
+        </View>
 
         {revealed ? (
           <View style={styles.backSection}>
