@@ -51,6 +51,7 @@ export default function LearnScreen() {
   const [examIndex, setExamIndex] = useState(0);
   const [examCorrect, setExamCorrect] = useState(0);
   const [examDone, setExamDone] = useState(false);
+  const [masteredPct, setMasteredPct] = useState(0);
   const inputRef = useRef<TextInput>(null);
 
   const loadCards = async () => {
@@ -88,6 +89,11 @@ export default function LearnScreen() {
     setTypedAnswer('');
     setTypingResult(null);
     setDone(items.length === 0);
+
+    const totalWords = levelWords.length;
+    const reviewedWords = await db.getReviewedWordCount(currentLevel);
+    setMasteredPct(totalWords > 0 ? Math.round((reviewedWords / totalWords) * 100) : 0);
+
     setCardStartTime(Date.now());
     setPracticeTyping(false);
     setPracticeResult(null);
@@ -369,7 +375,7 @@ export default function LearnScreen() {
   };
 
   if (done) {
-    const hasExamQuestions = getExamQuestionsForLevel(level).length > 0;
+    const hasExamQuestions = getExamQuestionsForLevel(level).length > 0 && masteredPct >= 80;
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         <Text style={styles.doneEmoji}>🎉</Text>
@@ -384,6 +390,9 @@ export default function LearnScreen() {
           <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
           <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>{s.done.streak}</Text>
         </View>
+        <Text style={[styles.masteredText, { color: masteredPct >= 80 ? '#22C55E' : colors.tabIconDefault }]}>
+          {level}: {masteredPct}% {masteredPct < 80 ? '(vizsga: 80%)' : '✓'}
+        </Text>
         {hasExamQuestions && (
           <Pressable style={[styles.examStartBtn, { backgroundColor: colors.accent, marginTop: 20 }]} onPress={startExam}>
             <Text style={styles.examStartBtnText}>🎓 Vizsga</Text>
@@ -733,6 +742,11 @@ const styles = StyleSheet.create({
   },
   speakIcon: {
     fontSize: 22,
+  },
+  masteredText: {
+    fontSize: 14,
+    fontWeight: '600',
+    marginTop: 12,
   },
   examStartBtn: {
     paddingHorizontal: 32,
