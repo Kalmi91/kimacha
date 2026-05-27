@@ -9,9 +9,10 @@ interface Props {
   targetWords: string[];
   trapWords: string[];
   onResult: (correct: boolean) => void;
+  onBury?: () => void;
 }
 
-export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult }: Props) {
+export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, onBury }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
@@ -39,10 +40,9 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
     const isCorrect = placed.length === targetWords.length &&
       placed.every((w, i) => w.toLowerCase() === targetWords[i].toLowerCase());
     setResult(isCorrect ? 'correct' : 'wrong');
-    setTimeout(() => onResult(isCorrect), 1500);
   };
 
-  const canCheck = placed.length >= targetWords.length;
+  const canCheck = placed.length > 0;
 
   return (
     <View style={[styles.card, { backgroundColor: colors.card }]}>
@@ -66,12 +66,6 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
         <Text style={[styles.correctLine, { color: '#22C55E' }]}>{targetWords.join(' ')}</Text>
       )}
 
-      {result && (
-        <Text style={[styles.resultText, { color: result === 'correct' ? '#22C55E' : '#EF4444' }]}>
-          {result === 'correct' ? s.card.correct : s.card.wrong}
-        </Text>
-      )}
-
       <View style={styles.wordRow}>
         {available.map((w, i) => (
           <Pressable key={`${w}-${i}`} style={[styles.wordChip, { backgroundColor: '#2563EB' }]} onPress={() => addWord(w, i)}>
@@ -80,13 +74,28 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
         ))}
       </View>
 
-      {!result && (
+      {!result ? (
         <Pressable
           style={[styles.checkBtn, { backgroundColor: colors.tint, opacity: canCheck ? 1 : 0.4 }]}
           onPress={handleCheck}
           disabled={!canCheck}
         >
           <Text style={styles.checkBtnText}>{s.card.check}</Text>
+        </Pressable>
+      ) : (
+        <Pressable
+          style={[styles.checkBtn, { backgroundColor: result === 'correct' ? '#22C55E' : '#EF4444' }]}
+          onPress={() => onResult(result === 'correct')}
+        >
+          <Text style={styles.checkBtnText}>
+            {result === 'correct' ? s.card.correct : s.card.wrong} →
+          </Text>
+        </Pressable>
+      )}
+
+      {onBury && (
+        <Pressable style={styles.buryBtn} onPress={onBury}>
+          <Text style={styles.buryText}>{s.buttons.iKnowThis}</Text>
         </Pressable>
       )}
     </View>
@@ -106,4 +115,8 @@ const styles = StyleSheet.create({
   correctLine: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
   checkBtn: { paddingHorizontal: 32, paddingVertical: 12, borderRadius: 14, marginTop: 8 },
   checkBtnText: { color: '#FFF', fontSize: 16, fontWeight: '700' },
+  nextBtn: { paddingHorizontal: 32, paddingVertical: 12, borderRadius: 14, marginTop: 8, alignSelf: 'center' },
+  nextBtnText: { color: '#FFF', fontSize: 16, fontWeight: '700', textAlign: 'center' },
+  buryBtn: { marginTop: 12, paddingHorizontal: 16, paddingVertical: 8 },
+  buryText: { fontSize: 13, color: '#94A3B8', fontWeight: '500' },
 });

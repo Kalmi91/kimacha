@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { StyleSheet, Text, View, Pressable, Modal } from 'react-native';
+import { useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
@@ -10,6 +11,7 @@ export default function SettingsScreen() {
   const { theme, override, setOverride } = useTheme();
   const colors = Colors[theme];
   const s = t();
+  const router = useRouter();
   const [masterVisible, setMasterVisible] = useState(false);
 
   const themeOptions: { label: string; value: 'system' | 'light' | 'dark' }[] = [
@@ -55,6 +57,13 @@ export default function SettingsScreen() {
         onPress={() => setMasterVisible(true)}
       >
         <Text style={styles.masterBtnText}>🎓 {s.master.button}</Text>
+      </Pressable>
+
+      <Pressable
+        style={[styles.masterBtn, { backgroundColor: '#1D4ED8', marginTop: 12 }]}
+        onPress={() => router.replace('/onboarding')}
+      >
+        <Text style={styles.masterBtnText}>🌐 {s.settings.changeLanguage}</Text>
       </Pressable>
 
       <Modal visible={masterVisible} transparent animationType="fade">
