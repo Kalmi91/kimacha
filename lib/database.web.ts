@@ -11,6 +11,8 @@ export interface DB {
   getLevel(): Promise<{ level: string; correct_streak: number; mistakes_in_window: number; fail_streak: number }>;
   updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number): Promise<void>;
   getDueCardsForLevel(level: string, limit: number): Promise<any[]>;
+  getDueCardsForWordIds(wordIds: number[], limit: number): Promise<any[]>;
+  getWordReps(wordIds: number[]): Promise<Map<number, number>>;
   recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number): Promise<void>;
   getUserMeta(): Promise<{ userId: string; firstUseDate: string; lastSyncDate: string | null }>;
   updateLastSync(date: string): Promise<void>;
@@ -18,6 +20,7 @@ export interface DB {
   getTop5Failed(): Promise<string[]>;
   getMasteredCount(): Promise<number>;
   getReviewedWordCount(level: string): Promise<number>;
+  buryCard(wordId: number, type: string): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -57,7 +60,9 @@ class MemoryDB implements DB {
   }
 
   async updateCard(wordId: number, type: string, card: Card) {
-    this.cards.set(this.key(wordId, type), {
+    const k = this.key(wordId, type);
+    const existing = this.cards.get(k);
+    this.cards.set(k, {
       word_id: wordId, type,
       due: card.due.toISOString(),
       stability: card.stability, difficulty: card.difficulty,
@@ -65,13 +70,14 @@ class MemoryDB implements DB {
       learning_steps: card.learning_steps,
       reps: card.reps, lapses: card.lapses, state: card.state,
       last_review: card.last_review ? card.last_review.toISOString() : null,
+      buried: existing?.buried ?? 0,
     });
   }
 
   async getDueCards(limit: number) {
     const now = new Date().toISOString();
     return [...this.cards.values()]
-      .filter(c => c.due <= now)
+      .filter(c => c.due <= now && !c.buried)
       .sort((a, b) => a.due.localeCompare(b.due))
       .slice(0, limit);
   }
@@ -111,18 +117,51 @@ class MemoryDB implements DB {
   async getDueCardsForLevel(level: string, limit: number) {
     const { getWordsForLevel } = require('@/data/words');
     const levelWords = getWordsForLevel(level);
-    const wordIds = new Set(levelWords.map((w: any) => w.id));
-    const now = new Date().toISOString();
-    const all = [...this.cards.values()].filter(c => wordIds.has(c.word_id) && c.due <= now);
+    const wordIds = levelWords.map((w: any) => w.id);
+    return this.getDueCardsForWordIds(wordIds, limit);
+  }
 
-    const reviewedWordIds = new Set(
-      [...this.cards.values()].filter(c => wordIds.has(c.word_id) && c.type === 'word' && c.reps > 0).map(c => c.word_id)
+  async getDueCardsForWordIds(wordIds: number[], limit: number) {
+    const idSet = new Set(wordIds);
+    const now = new Date().toISOString();
+    const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
+    const all = [...this.cards.values()].filter(c => idSet.has(c.word_id));
+
+    const newLimit = Math.max(1, Math.round(limit * 0.3));
+    const reviewLimit = limit - newLimit;
+
+    const newCards = all
+      .filter(c => c.type === 'word' && c.reps === 0 && !c.buried && c.due <= now)
+      .sort((a, b) => a.due.localeCompare(b.due))
+      .slice(0, newLimit);
+
+    const reviewWords = all
+      .filter(c => c.type === 'word' && c.reps > 0 && !c.buried && c.due <= lookahead)
+      .sort((a, b) => a.due.localeCompare(b.due))
+      .slice(0, reviewLimit);
+
+    const knownWordIds = new Set(
+      all.filter(c => c.type === 'word' && (c.reps >= 2 || c.buried)).map(c => c.word_id)
     );
 
-    const wordCards = all.filter(c => c.type === 'word').sort((a, b) => a.due.localeCompare(b.due));
-    const sentenceCards = all.filter(c => c.type === 'sentence' && reviewedWordIds.has(c.word_id)).sort((a, b) => a.due.localeCompare(b.due));
+    const sentenceSlots = Math.max(3, limit - newCards.length - reviewWords.length);
+    const sentenceCards = all
+      .filter(c => c.type === 'sentence' && !c.buried && knownWordIds.has(c.word_id) && c.due <= lookahead)
+      .sort((a, b) => a.due.localeCompare(b.due))
+      .slice(0, sentenceSlots);
 
-    return [...wordCards, ...sentenceCards].slice(0, limit);
+    return [...reviewWords, ...sentenceCards, ...newCards];
+  }
+
+  async getWordReps(wordIds: number[]): Promise<Map<number, number>> {
+    const idSet = new Set(wordIds);
+    const map = new Map<number, number>();
+    for (const c of this.cards.values()) {
+      if (idSet.has(c.word_id) && c.type === 'word') {
+        map.set(c.word_id, c.reps);
+      }
+    }
+    return map;
   }
 
   private attempts: { word_id: number; type: string; correct: boolean; response_time_ms: number; timestamp: string }[] = [];
@@ -149,7 +188,13 @@ class MemoryDB implements DB {
     const { getWordsForLevel } = require('@/data/words');
     const levelWords = getWordsForLevel(level);
     const wordIds = new Set(levelWords.map((w: any) => w.id));
-    return [...this.cards.values()].filter(c => wordIds.has(c.word_id) && c.type === 'word' && c.reps > 0).length;
+    return [...this.cards.values()].filter(c => wordIds.has(c.word_id) && c.type === 'word' && c.reps > 0 && !c.buried).length;
+  }
+
+  async buryCard(wordId: number, type: string) {
+    const k = this.key(wordId, type);
+    const card = this.cards.get(k);
+    if (card) card.buried = 1;
   }
 }
 

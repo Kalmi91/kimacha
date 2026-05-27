@@ -22,6 +22,7 @@ export default {
     again: 'Nochmal',
     good: 'Gut',
     inSentence: 'Im Satz',
+    iKnowThis: 'Kann Ich Schon',
   },
   done: {
     title: 'Fertig für heute!',
@@ -41,9 +42,19 @@ export default {
   exam: {
     tag: 'Prüfung',
   },
+  topic: {
+    progress: (current: number, total: number) => `Thema ${current}/${total}`,
+    complete: 'Thema abgeschlossen!',
+    allComplete: 'Alle Themen abgeschlossen!',
+    next: (name: string) => `Nächstes: ${name}`,
+    locked: 'Gesperrt',
+  },
   master: {
     button: 'Meister',
     title: 'Stufe Wählen',
+  },
+  settings: {
+    changeLanguage: 'Sprache Wechseln',
   },
   feedback: {
     button: 'Feedback',

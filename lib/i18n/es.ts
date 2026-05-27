@@ -22,6 +22,7 @@ export default {
     again: 'Otra Vez',
     good: 'Bien',
     inSentence: 'En Frase',
+    iKnowThis: 'Ya Lo Sé',
   },
   done: {
     title: '¡Terminaste por hoy!',
@@ -41,9 +42,19 @@ export default {
   exam: {
     tag: 'Examen',
   },
+  topic: {
+    progress: (current: number, total: number) => `Tema ${current}/${total}`,
+    complete: '¡Tema completado!',
+    allComplete: '¡Todos los temas completados!',
+    next: (name: string) => `Siguiente: ${name}`,
+    locked: 'Bloqueado',
+  },
   master: {
     button: 'Maestro',
     title: 'Elegir Nivel',
+  },
+  settings: {
+    changeLanguage: 'Cambiar Idioma',
   },
   feedback: {
     button: 'Comentarios',
