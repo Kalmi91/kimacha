@@ -22,6 +22,7 @@ export default {
     again: 'Újra',
     good: 'Jó',
     inSentence: 'Mondatban',
+    iKnowThis: 'Ezt Már Tudom',
   },
   done: {
     title: 'Kész vagy mára!',
@@ -41,9 +42,19 @@ export default {
   exam: {
     tag: 'Vizsga',
   },
+  topic: {
+    progress: (current: number, total: number) => `Téma ${current}/${total}`,
+    complete: 'Téma kész!',
+    allComplete: 'Minden téma kész!',
+    next: (name: string) => `Következő: ${name}`,
+    locked: 'Zárolva',
+  },
   master: {
     button: 'Mester',
     title: 'Szint Választás',
+  },
+  settings: {
+    changeLanguage: 'Nyelv Váltás',
   },
   feedback: {
     button: 'Visszajelzés',

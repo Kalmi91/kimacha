@@ -22,6 +22,7 @@ export default {
     again: 'Again',
     good: 'Good',
     inSentence: 'In Sentence',
+    iKnowThis: 'I Know This',
   },
   done: {
     title: 'Done for today!',
@@ -41,9 +42,19 @@ export default {
   exam: {
     tag: 'Exam',
   },
+  topic: {
+    progress: (current: number, total: number) => `Topic ${current}/${total}`,
+    complete: 'Topic complete!',
+    allComplete: 'All topics complete!',
+    next: (name: string) => `Next: ${name}`,
+    locked: 'Locked',
+  },
   master: {
     button: 'Master',
     title: 'Choose Level',
+  },
+  settings: {
+    changeLanguage: 'Change Language',
   },
   feedback: {
     button: 'Feedback',

@@ -12,6 +12,8 @@ export interface DB {
   getLevel(): Promise<{ level: string; correct_streak: number; mistakes_in_window: number; fail_streak: number }>;
   updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number): Promise<void>;
   getDueCardsForLevel(level: string, limit: number): Promise<any[]>;
+  getDueCardsForWordIds(wordIds: number[], limit: number): Promise<any[]>;
+  getWordReps(wordIds: number[]): Promise<Map<number, number>>;
   recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number): Promise<void>;
   getUserMeta(): Promise<{ userId: string; firstUseDate: string; lastSyncDate: string | null }>;
   updateLastSync(date: string): Promise<void>;
@@ -19,6 +21,7 @@ export interface DB {
   getTop5Failed(): Promise<string[]>;
   getMasteredCount(): Promise<number>;
   getReviewedWordCount(level: string): Promise<number>;
+  buryCard(wordId: number, type: string): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -102,6 +105,11 @@ class SQLiteDB implements DB {
       });
       await this.db.runAsync('INSERT INTO user_meta (id, user_id, first_use_date) VALUES (1, ?, ?)', [uuid, new Date().toISOString()]);
     }
+    // Migration: add buried column
+    const colCheck = await this.db.getFirstAsync<any>("SELECT * FROM pragma_table_info('cards') WHERE name = 'buried'");
+    if (!colCheck) {
+      await this.db.execAsync('ALTER TABLE cards ADD COLUMN buried INTEGER NOT NULL DEFAULT 0');
+    }
     return this.db;
   }
 
@@ -129,7 +137,7 @@ class SQLiteDB implements DB {
 
   async getDueCards(limit: number) {
     const db = await this.open();
-    return await db.getAllAsync('SELECT * FROM cards WHERE due <= ? ORDER BY due ASC LIMIT ?', [new Date().toISOString(), limit]);
+    return await db.getAllAsync('SELECT * FROM cards WHERE due <= ? AND buried = 0 ORDER BY due ASC LIMIT ?', [new Date().toISOString(), limit]);
   }
 
   async getStreak() {
@@ -171,37 +179,63 @@ class SQLiteDB implements DB {
   }
 
   async getDueCardsForLevel(level: string, limit: number) {
-    const db = await this.open();
     const { getWordsForLevel } = require('@/data/words');
     const levelWords = getWordsForLevel(level);
     const wordIds = levelWords.map((w: any) => w.id);
+    return this.getDueCardsForWordIds(wordIds, limit);
+  }
+
+  async getDueCardsForWordIds(wordIds: number[], limit: number) {
+    const db = await this.open();
     if (wordIds.length === 0) return [];
     const placeholders = wordIds.map(() => '?').join(',');
     const now = new Date().toISOString();
+    const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
 
-    const wordCards = await db.getAllAsync(
-      `SELECT * FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND due <= ? ORDER BY due ASC LIMIT ?`,
-      [...wordIds, now, limit]
+    const newLimit = Math.max(1, Math.round(limit * 0.3));
+    const reviewLimit = limit - newLimit;
+
+    const newCards = await db.getAllAsync(
+      `SELECT * FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND reps = 0 AND buried = 0 AND due <= ? ORDER BY due ASC LIMIT ?`,
+      [...wordIds, now, newLimit]
+    );
+
+    const reviewWords = await db.getAllAsync(
+      `SELECT * FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND reps > 0 AND buried = 0 AND due <= ? ORDER BY due ASC LIMIT ?`,
+      [...wordIds, lookahead, reviewLimit]
     );
 
     const reviewedWordIds = await db.getAllAsync<any>(
-      `SELECT DISTINCT word_id FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND reps > 0`,
+      `SELECT DISTINCT word_id FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND (reps >= 2 OR buried = 1)`,
       wordIds
     );
     const reviewedSet = new Set(reviewedWordIds.map((r: any) => r.word_id));
 
-    const remaining = limit - wordCards.length;
+    const sentenceSlots = Math.max(3, limit - (newCards as any[]).length - (reviewWords as any[]).length);
     let sentenceCards: any[] = [];
-    if (remaining > 0 && reviewedSet.size > 0) {
+    if (reviewedSet.size > 0) {
       const reviewedIds = [...reviewedSet];
       const sentencePlaceholders = reviewedIds.map(() => '?').join(',');
       sentenceCards = await db.getAllAsync(
-        `SELECT * FROM cards WHERE word_id IN (${sentencePlaceholders}) AND type = 'sentence' AND due <= ? ORDER BY due ASC LIMIT ?`,
-        [...reviewedIds, now, remaining]
+        `SELECT * FROM cards WHERE word_id IN (${sentencePlaceholders}) AND type = 'sentence' AND buried = 0 AND due <= ? ORDER BY due ASC LIMIT ?`,
+        [...reviewedIds, lookahead, sentenceSlots]
       );
     }
 
-    return [...wordCards, ...sentenceCards];
+    return [...reviewWords, ...sentenceCards, ...newCards];
+  }
+
+  async getWordReps(wordIds: number[]): Promise<Map<number, number>> {
+    const db = await this.open();
+    if (wordIds.length === 0) return new Map();
+    const placeholders = wordIds.map(() => '?').join(',');
+    const rows = await db.getAllAsync<any>(
+      `SELECT word_id, reps FROM cards WHERE word_id IN (${placeholders}) AND type = 'word'`,
+      wordIds
+    );
+    const map = new Map<number, number>();
+    for (const r of rows) map.set(r.word_id, r.reps);
+    return map;
   }
 
   async recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number) {
@@ -275,6 +309,11 @@ class SQLiteDB implements DB {
       wordIds
     );
     return row?.cnt ?? 0;
+  }
+
+  async buryCard(wordId: number, type: string) {
+    const db = await this.open();
+    await db.runAsync('UPDATE cards SET buried = 1 WHERE word_id = ? AND type = ?', [wordId, type]);
   }
 }
 

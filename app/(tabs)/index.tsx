@@ -5,7 +5,8 @@ import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb, cardFromRow } from '@/lib/database';
-import { words, type WordEntry, getWordsForLevel, LEVELS, type Level } from '@/data/words';
+import { words, type WordEntry, getWordsForLevel, getWordsForTopic, LEVELS, type Level } from '@/data/words';
+import { getTopicsForLevel, hasTopics, getTopicName, type TopicDef } from '@/data/topics';
 import { t } from '@/lib/i18n';
 import { levenshtein } from '@/lib/levenshtein';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -17,6 +18,8 @@ import { getExamQuestionsForLevel } from '@/data/exams';
 
 const f = fsrs();
 
+type TypingDir = 'learned-to-native' | 'native-to-learned';
+
 interface DueItem {
   wordId: number;
   type: string;
@@ -24,6 +27,7 @@ interface DueItem {
   word: WordEntry;
   isTyping: boolean;
   isEasySentence?: boolean;
+  typingDirection?: TypingDir;
 }
 
 type TypingResult = 'correct' | 'almost' | 'wrong' | null;
@@ -51,7 +55,77 @@ export default function LearnScreen() {
   const [practiceText, setPracticeText] = useState('');
   const [examMode, setExamMode] = useState(false);
   const [masteredPct, setMasteredPct] = useState(0);
+  const [currentTopic, setCurrentTopic] = useState<TopicDef | null>(null);
+  const [topicProgress, setTopicProgress] = useState<{ done: number; total: number; wordsInTopic: number; wordsReviewed: number } | null>(null);
+  const [topicCompleteMsg, setTopicCompleteMsg] = useState<string | null>(null);
   const inputRef = useRef<TextInput>(null);
+
+  const buildQueue = (rows: any[]): DueItem[] => {
+    return rows.map((row: any) => {
+      const isWord = row.type === 'word';
+      const isSentence = row.type === 'sentence';
+      let isTyping = false;
+      let typingDirection: TypingDir | undefined;
+
+      if (isWord) {
+        if (row.reps >= 2) {
+          // Phase 2: typing native→learned
+          isTyping = true;
+          typingDirection = 'native-to-learned';
+        } else if (row.reps === 1) {
+          // Phase 1b: flashcard native→learned (passive)
+          isTyping = false;
+          typingDirection = 'native-to-learned';
+        }
+        // reps === 0: Phase 1a: flashcard learned→native (default direction)
+      } else {
+        // Sentence: easy (tap-to-order) first time, hard (typing) after
+        isTyping = row.reps > 0;
+      }
+
+      return {
+        wordId: row.word_id,
+        type: row.type,
+        card: cardFromRow(row),
+        word: words.find(w => w.id === row.word_id)!,
+        isTyping,
+        isEasySentence: isSentence && row.reps === 0,
+        typingDirection,
+      };
+    }).filter((item: DueItem) => !!item.word);
+  };
+
+  const computeUnlockedTopics = (topics: TopicDef[], repsMap: Map<number, number>, currentLevel: Level): { unlocked: TopicDef[]; activeTopic: TopicDef | null; completedCount: number } => {
+    const unlocked: TopicDef[] = [];
+    let completedCount = 0;
+    for (const topic of topics) {
+      const topicWords = getWordsForTopic(currentLevel, topic.id);
+      if (unlocked.length === 0) {
+        unlocked.push(topic);
+      } else {
+        const prevTopic = topics[topics.indexOf(topic) - 1];
+        const prevWords = getWordsForTopic(currentLevel, prevTopic.id);
+        const allReviewed = prevWords.length > 0 && prevWords.every(w => (repsMap.get(w.id) ?? 0) > 0);
+        if (allReviewed) {
+          unlocked.push(topic);
+        } else {
+          break;
+        }
+      }
+    }
+    for (const topic of unlocked) {
+      const topicWords = getWordsForTopic(currentLevel, topic.id);
+      if (topicWords.length > 0 && topicWords.every(w => (repsMap.get(w.id) ?? 0) > 0)) {
+        completedCount++;
+      }
+    }
+    const activeTopic = unlocked.find(topic => {
+      const topicWords = getWordsForTopic(currentLevel, topic.id);
+      return topicWords.some(w => (repsMap.get(w.id) ?? 0) === 0);
+    }) ?? unlocked[unlocked.length - 1] ?? null;
+
+    return { unlocked, activeTopic, completedCount };
+  };
 
   const loadCards = async () => {
     const db = getDb();
@@ -65,20 +139,45 @@ export default function LearnScreen() {
     setLevel(currentLevel);
 
     const levelWords = getWordsForLevel(currentLevel);
-    for (const w of levelWords) {
+    const topics = getTopicsForLevel(currentLevel);
+    const useTopics = topics.length > 0 && levelWords.some(w => w['topic']);
+
+    let activeWords: WordEntry[];
+    if (useTopics) {
+      const allWordIds = levelWords.map(w => w.id);
+      const repsMap = await db.getWordReps(allWordIds);
+      const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel);
+
+      setCurrentTopic(activeTopic);
+      setTopicProgress({
+        done: completedCount,
+        total: topics.length,
+        wordsInTopic: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id).length : 0,
+        wordsReviewed: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id).filter(w => (repsMap.get(w.id) ?? 0) > 0).length : 0,
+      });
+
+      activeWords = unlocked.flatMap(topic => getWordsForTopic(currentLevel, topic.id));
+    } else {
+      setCurrentTopic(null);
+      setTopicProgress(null);
+      activeWords = levelWords;
+    }
+
+    for (const w of activeWords) {
       await db.ensureCard(w.id, 'word');
       await db.ensureCard(w.id, 'sentence');
     }
 
-    const rows = await db.getDueCardsForLevel(currentLevel, 10);
-    const items: DueItem[] = rows.map((row: any) => ({
-      wordId: row.word_id,
-      type: row.type,
-      card: cardFromRow(row),
-      word: words.find(w => w.id === row.word_id)!,
-      isTyping: row.type === 'sentence' ? row.reps > 0 : Math.random() < 0.5,
-      isEasySentence: row.type === 'sentence' && row.reps === 0,
-    })).filter((item: DueItem) => item.word);
+    const totalWords = levelWords.length;
+    const reviewedWords = await db.getReviewedWordCount(currentLevel);
+    const pct = totalWords > 0 ? Math.round((reviewedWords / totalWords) * 100) : 0;
+    setMasteredPct(pct);
+
+    const activeWordIds = activeWords.map(w => w.id);
+    const rows = useTopics
+      ? await db.getDueCardsForWordIds(activeWordIds, 10)
+      : await db.getDueCardsForLevel(currentLevel, 10);
+    const items = buildQueue(rows);
 
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
@@ -89,10 +188,6 @@ export default function LearnScreen() {
     setTypedAnswer('');
     setTypingResult(null);
     setDone(items.length === 0);
-
-    const totalWords = levelWords.length;
-    const reviewedWords = await db.getReviewedWordCount(currentLevel);
-    setMasteredPct(totalWords > 0 ? Math.round((reviewedWords / totalWords) * 100) : 0);
 
     setCardStartTime(Date.now());
     setPracticeTyping(false);
@@ -125,12 +220,32 @@ export default function LearnScreen() {
 
   const current = queue[currentIndex];
 
+  useEffect(() => {
+    if (!current || loading || done) return;
+    const [, learned] = direction;
+    const { frontLang } = getFrontBack(current);
+    if (frontLang === learned) {
+      const frontText = String(current.word[current.type === 'word' ? learned : `sentence_${learned}`]);
+      Speech.speak(frontText, { language: learned });
+    }
+  }, [currentIndex, queue.length, loading, done]);
+
   const getFrontBack = (item: DueItem) => {
-    const [source, target] = direction;
+    const [native, learned] = direction;
     const isWord = item.type === 'word';
+
+    let frontLang = learned;
+    let backLang = native;
+    if (item.typingDirection === 'native-to-learned') {
+      frontLang = native;
+      backLang = learned;
+    }
+
     return {
-      front: String(isWord ? item.word[source] : item.word[`sentence_${source}`]),
-      back: String(isWord ? item.word[target] : item.word[`sentence_${target}`]),
+      front: String(isWord ? item.word[frontLang] : item.word[`sentence_${frontLang}`]),
+      back: String(isWord ? item.word[backLang] : item.word[`sentence_${backLang}`]),
+      frontLang,
+      backLang,
     };
   };
 
@@ -175,15 +290,51 @@ export default function LearnScreen() {
 
     if (next >= queue.length) {
       const levelData = await db.getLevel();
-      const newRows = await db.getDueCardsForLevel(levelData.level, 10);
-      const newItems: DueItem[] = newRows.map((row: any) => ({
-        wordId: row.word_id,
-        type: row.type,
-        card: cardFromRow(row),
-        word: words.find(w => w.id === row.word_id)!,
-        isTyping: row.type === 'sentence' ? row.reps > 0 : Math.random() < 0.5,
-        isEasySentence: row.type === 'sentence' && row.reps === 0,
-      })).filter((item: DueItem) => item.word);
+      const currentLevel = levelData.level as Level;
+      const { getWordsForLevel: gwfl } = require('@/data/words');
+      const lvlWords = gwfl(currentLevel);
+      const rvw = await db.getReviewedWordCount(currentLevel);
+      const newPct = lvlWords.length > 0 ? Math.round((rvw / lvlWords.length) * 100) : 0;
+      setMasteredPct(newPct);
+
+      const topics = getTopicsForLevel(currentLevel);
+      const useTopics = topics.length > 0 && lvlWords.some((w: WordEntry) => w['topic']);
+
+      let newRows: any[];
+      if (useTopics) {
+        const allWordIds = lvlWords.map((w: WordEntry) => w.id);
+        const repsMap = await db.getWordReps(allWordIds);
+        const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel);
+
+        if (topicProgress && completedCount > topicProgress.done && activeTopic) {
+          const s = t();
+          const lang = direction[1] === 'hu' ? 'hu' : direction[1] === 'es' ? 'es' : direction[1] === 'de' ? 'de' : 'en';
+          const prevCompleted = topics[completedCount - 1];
+          if (prevCompleted) {
+            setTopicCompleteMsg(s.topic.complete);
+            setTimeout(() => setTopicCompleteMsg(null), 3000);
+          }
+        }
+
+        setCurrentTopic(activeTopic);
+        setTopicProgress({
+          done: completedCount,
+          total: topics.length,
+          wordsInTopic: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id).length : 0,
+          wordsReviewed: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id).filter(w => (repsMap.get(w.id) ?? 0) > 0).length : 0,
+        });
+
+        const activeWordIds = unlocked.flatMap(topic => getWordsForTopic(currentLevel, topic.id)).map(w => w.id);
+        for (const w of unlocked.flatMap(topic => getWordsForTopic(currentLevel, topic.id))) {
+          await db.ensureCard(w.id, 'word');
+          await db.ensureCard(w.id, 'sentence');
+        }
+        newRows = await db.getDueCardsForWordIds(activeWordIds, 10);
+      } else {
+        newRows = await db.getDueCardsForLevel(currentLevel, 10);
+      }
+
+      const newItems = buildQueue(newRows);
 
       if (newItems.length === 0) {
         setDone(true);
@@ -260,8 +411,8 @@ export default function LearnScreen() {
       setTypingResult('wrong');
     }
     setRevealed(true);
-    const targetLang = direction[1];
-    Speech.speak(back, { language: targetLang });
+    const { backLang } = getFrontBack(current);
+    Speech.speak(back, { language: backLang });
   };
 
   const handleTypingNext = () => {
@@ -302,24 +453,46 @@ export default function LearnScreen() {
         direction={direction as [string, string]}
         examAvailable={examAvailable}
         onStartExam={() => setExamMode(true)}
+        currentTopic={currentTopic}
+        topicProgress={topicProgress}
       />
     );
   }
 
-  const { front, back } = getFrontBack(current);
+  const { front, back, frontLang, backLang } = getFrontBack(current);
   const isWord = current.type === 'word';
 
-  const targetLang = direction[1];
-
   const speakTarget = () => {
-    Speech.speak(back, { language: targetLang });
+    Speech.speak(back, { language: backLang });
   };
+
+  const topicLang = direction[1] === 'hu' ? 'hu' : direction[1] === 'es' ? 'es' : direction[1] === 'de' ? 'de' : 'en';
 
   const levelBadge = (
     <View style={[styles.levelBadge, { backgroundColor: '#38BDF8' }]}>
       <Text style={styles.levelText}>{level}</Text>
     </View>
   );
+
+  const topicHeader = currentTopic && topicProgress ? (
+    <View style={styles.topicHeader}>
+      <Text style={[styles.topicIcon, { color: currentTopic.type === 'grammar' ? '#22C55E' : '#38BDF8' }]}>
+        {currentTopic.type === 'grammar' ? '📗' : '📘'}
+      </Text>
+      <Text style={[styles.topicName, { color: colors.text }]} numberOfLines={1}>
+        {getTopicName(currentTopic, topicLang)}
+      </Text>
+      <Text style={[styles.topicCount, { color: colors.tabIconDefault }]}>
+        {topicProgress.wordsReviewed}/{topicProgress.wordsInTopic}
+      </Text>
+    </View>
+  ) : null;
+
+  const topicCompleteOverlay = topicCompleteMsg ? (
+    <View style={[styles.levelUpOverlay, { backgroundColor: '#22C55E' }]}>
+      <Text style={styles.levelUpText}>{topicCompleteMsg}</Text>
+    </View>
+  ) : null;
 
   const levelUpOverlay = levelUpMsg ? (
     <View style={[styles.levelUpOverlay, { backgroundColor: levelUpMsg.startsWith('↑') ? '#2563EB' : '#EF4444' }]}>
@@ -328,13 +501,14 @@ export default function LearnScreen() {
   ) : null;
 
   if (current.isEasySentence && !isWord) {
-    const targetLang = direction[1];
-    const targetSentence = String(current.word[`sentence_${targetLang}`]);
-    const targetWordList = targetSentence.replace(/[.!?¡¿,;:]/g, '').split(/\s+/).filter(Boolean);
+    const [native, learned] = direction;
+    const nativeSentence = String(current.word[`sentence_${native}`]);
+    const learnedSentence = String(current.word[`sentence_${learned}`]);
+    const targetWordList = learnedSentence.replace(/[.!?¡¿,;:]/g, '').split(/\s+/).filter(Boolean);
     const levelWords = getWordsForLevel(level);
     const sentenceWordsLower = new Set(targetWordList.map(w => w.toLowerCase()));
     const traps = levelWords
-      .map(w => String(w[targetLang]).split(' / ')[0])
+      .map(w => String(w[learned]).split(' / ')[0])
       .filter(w => w && !sentenceWordsLower.has(w.toLowerCase()))
       .sort(() => Math.random() - 0.5)
       .slice(0, 3);
@@ -342,26 +516,30 @@ export default function LearnScreen() {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {levelUpOverlay}
+        {topicCompleteOverlay}
         <View style={styles.header}>
           {levelBadge}
           <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
             <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
             <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>🔥</Text>
           </View>
-          <Text style={[styles.counter, { color: colors.tabIconDefault }]}>
-            {currentIndex + 1}/{queue.length}
-          </Text>
         </View>
+        {topicHeader}
 
         <EasySentenceCard
-          sourceSentence={front}
+          key={`${current.wordId}-${currentIndex}`}
+          sourceSentence={nativeSentence}
           targetWords={targetWordList}
           trapWords={traps}
           onResult={(correct) => {
             advance(correct ? Rating.Good : Rating.Again);
           }}
+          onBury={() => {
+            const db = getDb();
+            db.buryCard(current.wordId, current.type).then(() => advance(Rating.Good));
+          }}
         />
-        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`easy:${front}`} />
+        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`easy:${nativeSentence}`} />
       </View>
     );
   }
@@ -376,19 +554,23 @@ export default function LearnScreen() {
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
         {levelUpOverlay}
+        {topicCompleteOverlay}
         <View style={styles.header}>
           {levelBadge}
           <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
             <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
             <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>🔥</Text>
           </View>
-          <Text style={[styles.counter, { color: colors.tabIconDefault }]}>
-            {currentIndex + 1}/{queue.length}
-          </Text>
         </View>
+        {topicHeader}
 
         <View style={[styles.card, { backgroundColor: colors.card }]}>
-          <Text style={[styles.frontText, { color: colors.text, marginBottom: 16 }]}>{front}</Text>
+          <View style={[styles.frontRow, { marginBottom: 16 }]}>
+            <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
+            <Pressable onPress={() => Speech.speak(front, { language: frontLang })} style={styles.speakBtn}>
+              <Text style={styles.speakIcon}>🔊</Text>
+            </Pressable>
+          </View>
 
           <TextInput
             ref={inputRef}
@@ -437,6 +619,16 @@ export default function LearnScreen() {
           </View>
         )}
 
+        <Pressable
+          style={styles.buryBtn}
+          onPress={() => {
+            const db = getDb();
+            db.buryCard(current.wordId, current.type).then(() => advance(Rating.Good));
+          }}
+        >
+          <Text style={styles.buryText}>{s.buttons.iKnowThis}</Text>
+        </Pressable>
+
         <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`${current.type}:${front}`} />
       </KeyboardAvoidingView>
     );
@@ -445,6 +637,7 @@ export default function LearnScreen() {
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       {levelUpOverlay}
+      {topicCompleteOverlay}
       <View style={styles.header}>
         {levelBadge}
         <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
@@ -455,17 +648,26 @@ export default function LearnScreen() {
           {currentIndex + 1}/{queue.length}
         </Text>
       </View>
+      {topicHeader}
 
       <Pressable
         style={[styles.card, { backgroundColor: colors.card }]}
         onPress={() => {
           if (!revealed) {
             setRevealed(true);
-            Speech.speak(back, { language: targetLang });
+            const [, learned] = direction;
+            if (backLang === learned) {
+              Speech.speak(back, { language: backLang });
+            }
           }
         }}
       >
-        <Text style={[styles.frontText, { color: colors.text, marginBottom: 16 }]}>{front}</Text>
+        <View style={styles.frontRow}>
+          <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
+          <Pressable onPress={() => Speech.speak(front, { language: frontLang })} style={styles.speakBtn}>
+            <Text style={styles.speakIcon}>🔊</Text>
+          </Pressable>
+        </View>
 
         {revealed ? (
           <View style={styles.backSection}>
@@ -538,6 +740,18 @@ export default function LearnScreen() {
           </Pressable>
         )}
       </View>
+
+      {revealed && (
+        <Pressable
+          style={styles.buryBtn}
+          onPress={() => {
+            const db = getDb();
+            db.buryCard(current.wordId, current.type).then(() => advance(Rating.Good));
+          }}
+        >
+          <Text style={styles.buryText}>{s.buttons.iKnowThis}</Text>
+        </Pressable>
+      )}
 
       <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`${current.type}:${front}`} />
     </View>
@@ -712,5 +926,39 @@ const styles = StyleSheet.create({
   correctAnswer: {
     fontSize: 22,
     fontWeight: '600',
+  },
+  buryBtn: {
+    alignSelf: 'center',
+    marginTop: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+  },
+  buryText: {
+    fontSize: 13,
+    color: '#94A3B8',
+    fontWeight: '500',
+  },
+  topicHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'center',
+    gap: 6,
+    position: 'absolute',
+    top: 44,
+    left: 20,
+    right: 20,
+    justifyContent: 'center',
+  },
+  topicIcon: {
+    fontSize: 14,
+  },
+  topicName: {
+    fontSize: 13,
+    fontWeight: '600',
+    flexShrink: 1,
+  },
+  topicCount: {
+    fontSize: 12,
+    fontWeight: '500',
   },
 });
