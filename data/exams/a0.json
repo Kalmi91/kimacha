@@ -1,0 +1,422 @@
+[
+  {
+    "id": 1,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "La nieve es ____",
+    "options": [
+      "verde",
+      "blanca",
+      "amarilla",
+      "roja"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": 2,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "Carlos y yo ______ estudiantes.",
+    "options": [
+      "sois",
+      "son",
+      "somos",
+      "estamos"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": 3,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "¿______ libros sobre la mesa?",
+    "options": [
+      "Están",
+      "Hay",
+      "Son",
+      "Estáis"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": 4,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "______ inglés sino escocés.",
+    "options": [
+      "No soy",
+      "Soy no",
+      "Soy",
+      "Estoy"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": 5,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "Los hijos de mi tío son mis ______",
+    "options": [
+      "sobrinos",
+      "nietos",
+      "primos",
+      "hijos"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": 6,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "A Clara y a Marta ______ estudiar música.",
+    "options": [
+      "nos gusta",
+      "les gustan",
+      "les gusta",
+      "nos gustan"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": 7,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "______ coche es rojo.",
+    "options": [
+      "mi",
+      "el mío",
+      "mío",
+      "míos"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": 8,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "¿______ te llamas?",
+    "options": [
+      "Cómo",
+      "Qué",
+      "Cuál",
+      "Quién"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": 9,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "Mina ______ come carne porque es vegetariana.",
+    "options": [
+      "siempre",
+      "nunca",
+      "a veces",
+      "generalmente"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": 10,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "No me gusta, ¿y a ti? — ______",
+    "options": [
+      "A mí, tampoco.",
+      "A mí, también.",
+      "Mí, mal.",
+      "Mí, bien."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": 11,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "Ella ______ en una casa grande.",
+    "options": [
+      "vive",
+      "vives",
+      "vivimos",
+      "viven"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": 12,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "¿______ hora es?",
+    "options": [
+      "Qué",
+      "Cuál",
+      "Cómo",
+      "Cuánto"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": 13,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "Yo ______ café todas las mañanas.",
+    "options": [
+      "bebo",
+      "bebes",
+      "bebe",
+      "bebemos"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": 14,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "El gato ______ encima de la mesa.",
+    "options": [
+      "es",
+      "está",
+      "hay",
+      "son"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": 15,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "María ______ veinte años.",
+    "options": [
+      "es",
+      "está",
+      "tiene",
+      "hay"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": 16,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "¿De dónde ______ tú?",
+    "options": [
+      "es",
+      "eres",
+      "está",
+      "estás"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": 17,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "Los niños ______ en el parque.",
+    "options": [
+      "juega",
+      "juegan",
+      "jugamos",
+      "juegas"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": 18,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "Yo ______ la televisión por la noche.",
+    "options": [
+      "miro",
+      "veo",
+      "miras",
+      "ves"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": 19,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "¿______ hermanos tienes?",
+    "options": [
+      "Cuántos",
+      "Cuántas",
+      "Cuál",
+      "Qué"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": 20,
+    "level": "A0",
+    "type": "gap",
+    "sentence": "En España se ______ mucho aceite de oliva.",
+    "options": [
+      "come",
+      "usa",
+      "bebe",
+      "hace"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": 21,
+    "level": "A0",
+    "type": "translate",
+    "direction": "es_hu",
+    "source": "Yo soy estudiante.",
+    "target": "Én diák vagyok."
+  },
+  {
+    "id": 22,
+    "level": "A0",
+    "type": "translate",
+    "direction": "es_hu",
+    "source": "¿Cómo te llamas?",
+    "target": "Hogy hívnak?"
+  },
+  {
+    "id": 23,
+    "level": "A0",
+    "type": "translate",
+    "direction": "es_hu",
+    "source": "Mi casa es grande.",
+    "target": "A házam nagy."
+  },
+  {
+    "id": 24,
+    "level": "A0",
+    "type": "translate",
+    "direction": "es_hu",
+    "source": "Tengo dos hermanos.",
+    "target": "Két testvérem van."
+  },
+  {
+    "id": 25,
+    "level": "A0",
+    "type": "translate",
+    "direction": "es_hu",
+    "source": "Me gusta el café.",
+    "target": "Szeretem a kávét."
+  },
+  {
+    "id": 26,
+    "level": "A0",
+    "type": "translate",
+    "direction": "es_hu",
+    "source": "Ella es mi amiga.",
+    "target": "Ő a barátnőm."
+  },
+  {
+    "id": 27,
+    "level": "A0",
+    "type": "translate",
+    "direction": "es_hu",
+    "source": "El libro está en la mesa.",
+    "target": "A könyv az asztalon van."
+  },
+  {
+    "id": 28,
+    "level": "A0",
+    "type": "translate",
+    "direction": "es_hu",
+    "source": "Nosotros vivimos en Budapest.",
+    "target": "Mi Budapesten lakunk."
+  },
+  {
+    "id": 29,
+    "level": "A0",
+    "type": "translate",
+    "direction": "es_hu",
+    "source": "¿Dónde está el baño?",
+    "target": "Hol van a mosdó?"
+  },
+  {
+    "id": 30,
+    "level": "A0",
+    "type": "translate",
+    "direction": "es_hu",
+    "source": "Hoy hace sol.",
+    "target": "Ma süt a nap."
+  },
+  {
+    "id": 31,
+    "level": "A0",
+    "type": "translate",
+    "direction": "hu_es",
+    "source": "Hány éves vagy?",
+    "target": "¿Cuántos años tienes?"
+  },
+  {
+    "id": 32,
+    "level": "A0",
+    "type": "translate",
+    "direction": "hu_es",
+    "source": "Jó reggelt!",
+    "target": "¡Buenos días!"
+  },
+  {
+    "id": 33,
+    "level": "A0",
+    "type": "translate",
+    "direction": "hu_es",
+    "source": "Hol van a bolt?",
+    "target": "¿Dónde está la tienda?"
+  },
+  {
+    "id": 34,
+    "level": "A0",
+    "type": "translate",
+    "direction": "hu_es",
+    "source": "Szeretem a zenét.",
+    "target": "Me gusta la música."
+  },
+  {
+    "id": 35,
+    "level": "A0",
+    "type": "translate",
+    "direction": "hu_es",
+    "source": "Ő a barátom.",
+    "target": "Él es mi amigo."
+  },
+  {
+    "id": 36,
+    "level": "A0",
+    "type": "translate",
+    "direction": "hu_es",
+    "source": "Van egy kutyám.",
+    "target": "Tengo un perro."
+  },
+  {
+    "id": 37,
+    "level": "A0",
+    "type": "translate",
+    "direction": "hu_es",
+    "source": "Spanyolul tanulok.",
+    "target": "Estudio español."
+  },
+  {
+    "id": 38,
+    "level": "A0",
+    "type": "translate",
+    "direction": "hu_es",
+    "source": "Ma hétfő van.",
+    "target": "Hoy es lunes."
+  },
+  {
+    "id": 39,
+    "level": "A0",
+    "type": "translate",
+    "direction": "hu_es",
+    "source": "Az alma piros.",
+    "target": "La manzana es roja."
+  },
+  {
+    "id": 40,
+    "level": "A0",
+    "type": "translate",
+    "direction": "hu_es",
+    "source": "Három gyerekem van.",
+    "target": "Tengo tres hijos."
+  }
+]
