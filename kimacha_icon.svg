@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="50%" stop-color="#0891b2"/>
+      <stop offset="100%" stop-color="#0c2d6b"/>
+    </linearGradient>
+    <linearGradient id="kShine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e0f7fa"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <radialGradient id="pinkGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6fae" stop-opacity="0.95"/>
+      <stop offset="60%" stop-color="#ec4899" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="iconClip">
+      <rect x="0" y="0" width="1024" height="1024" rx="225" ry="225"/>
+    </clipPath>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect x="0" y="0" width="1024" height="1024" rx="225" ry="225" fill="url(#bg)"/>
+
+  <!-- Pink glow bottom right -->
+  <g clip-path="url(#iconClip)">
+    <circle cx="900" cy="940" r="360" fill="url(#pinkGlow)"/>
+  </g>
+
+  <!-- Subtle inner glow -->
+  <rect x="40" y="40" width="944" height="944" rx="195" ry="195"
+        fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2"/>
+
+  <!-- Soft highlight blob -->
+  <ellipse cx="320" cy="260" rx="280" ry="160" fill="#ffffff" fill-opacity="0.10" filter="url(#soft)"/>
+
+  <!-- Letter K -->
+  <g fill="url(#kShine)">
+    <!-- Vertical stem -->
+    <rect x="340" y="260" width="110" height="504" rx="20" ry="20"/>
+    <!-- Upper diagonal arm -->
+    <path d="M 450 512 L 640 260 L 752 260 L 540 540 Z" />
+    <!-- Lower diagonal leg -->
+    <path d="M 450 512 L 540 484 L 760 764 L 648 764 Z" />
+  </g>
+
+  <!-- Soft shadow under K for depth -->
+  <ellipse cx="540" cy="820" rx="220" ry="18" fill="#000000" fill-opacity="0.12"/>
+</svg>
