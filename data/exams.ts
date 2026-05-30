@@ -33,3 +33,14 @@ export const examQuestions: ExamQuestion[] = [...a0, ...a1, ...a2, ...b1, ...b2,
 export function getExamQuestionsForLevel(level: string): ExamQuestion[] {
   return examQuestions.filter(q => q.level === level);
 }
+
+// Exam size scales with level: A=25, B=30, C=35. Pass = 80% of that.
+export function examSize(level: string): number {
+  if (level === 'B1' || level === 'B2') return 30;
+  if (level === 'C1' || level === 'C2') return 35;
+  return 25; // A0, A1, A2
+}
+
+export function passThreshold(level: string): number {
+  return Math.ceil(examSize(level) * 0.8);
+}

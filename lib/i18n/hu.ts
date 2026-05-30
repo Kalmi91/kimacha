@@ -28,6 +28,7 @@ export default {
     title: 'Kész vagy mára!',
     reviewed: (n: number) => `${n} kártyát néztél át.`,
     streak: 'nap streak',
+    examStatus: (pct: number, ready: boolean) => ready ? `${pct}% ✓` : `${pct}% (vizsga: 80%)`,
   },
   tabs: {
     learn: 'Tanulás',
@@ -41,6 +42,9 @@ export default {
   },
   exam: {
     tag: 'Vizsga',
+    notYet: 'Még Nem, De Közel Vagy!',
+    retry: 'Újra',
+    backToLearning: 'Vissza A Tanuláshoz',
   },
   topic: {
     progress: (current: number, total: number) => `Téma ${current}/${total}`,

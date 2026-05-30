@@ -28,6 +28,7 @@ export default {
     title: 'Fertig für heute!',
     reviewed: (n: number) => `${n} Karten überprüft.`,
     streak: 'Tage Serie',
+    examStatus: (pct: number, ready: boolean) => ready ? `${pct}% ✓` : `${pct}% (Prüfung: 80%)`,
   },
   tabs: {
     learn: 'Lernen',
@@ -41,6 +42,9 @@ export default {
   },
   exam: {
     tag: 'Prüfung',
+    notYet: 'Noch Nicht, Aber Fast!',
+    retry: 'Nochmal',
+    backToLearning: 'Zurück Zum Lernen',
   },
   topic: {
     progress: (current: number, total: number) => `Thema ${current}/${total}`,

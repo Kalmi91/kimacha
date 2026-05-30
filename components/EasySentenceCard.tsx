@@ -12,33 +12,38 @@ interface Props {
   onBury?: () => void;
 }
 
+interface Placed {
+  word: string;
+  slot: number; // index into the fixed `slots` array
+}
+
 export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, onBury }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
 
-  const [placed, setPlaced] = useState<string[]>([]);
-  const [available, setAvailable] = useState<string[]>(() =>
-    [...targetWords, ...trapWords].sort(() => Math.random() - 0.5)
-  );
+  // Fixed pool: every word keeps its position. Tapping it moves it up into the
+  // sentence area and leaves a dashed ghost of the same size behind — nothing
+  // reflows.
+  const [slots] = useState<string[]>(() => [...targetWords, ...trapWords].sort(() => Math.random() - 0.5));
+  const [placed, setPlaced] = useState<Placed[]>([]);
   const [result, setResult] = useState<'correct' | 'wrong' | null>(null);
 
-  const addWord = (word: string, idx: number) => {
-    if (result) return;
-    setPlaced([...placed, word]);
-    setAvailable(available.filter((_, i) => i !== idx));
+  const usedSlots = new Set(placed.map(p => p.slot));
+
+  const addWord = (slot: number) => {
+    if (result || usedSlots.has(slot)) return;
+    setPlaced([...placed, { word: slots[slot], slot }]);
   };
 
   const removeWord = (idx: number) => {
     if (result) return;
-    const word = placed[idx];
     setPlaced(placed.filter((_, i) => i !== idx));
-    setAvailable([...available, word]);
   };
 
   const handleCheck = () => {
     const isCorrect = placed.length === targetWords.length &&
-      placed.every((w, i) => w.toLowerCase() === targetWords[i].toLowerCase());
+      placed.every((p, i) => p.word.toLowerCase() === targetWords[i].toLowerCase());
     setResult(isCorrect ? 'correct' : 'wrong');
   };
 
@@ -53,9 +58,9 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
           <Text style={[styles.placeholder, { color: colors.tabIconDefault }]}>...</Text>
         ) : (
           <View style={styles.wordRow}>
-            {placed.map((w, i) => (
-              <Pressable key={`${w}-${i}`} style={[styles.wordChip, styles.placedChip]} onPress={() => removeWord(i)}>
-                <Text style={styles.chipText}>{w}</Text>
+            {placed.map((p, i) => (
+              <Pressable key={`placed-${p.slot}`} style={[styles.wordChip, styles.placedChip]} onPress={() => removeWord(i)}>
+                <Text style={styles.chipText}>{p.word}</Text>
               </Pressable>
             ))}
           </View>
@@ -67,11 +72,19 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
       )}
 
       <View style={styles.wordRow}>
-        {available.map((w, i) => (
-          <Pressable key={`${w}-${i}`} style={[styles.wordChip, { backgroundColor: '#2563EB' }]} onPress={() => addWord(w, i)}>
-            <Text style={styles.chipText}>{w}</Text>
-          </Pressable>
-        ))}
+        {slots.map((w, i) =>
+          usedSlots.has(i) ? (
+            // Ghost slot: same footprint as the chip (invisible text reserves
+            // the width), dashed grey outline marks where the word lived.
+            <View key={`ghost-${i}`} style={[styles.wordChip, styles.ghostChip, { borderColor: colors.tabIconDefault }]}>
+              <Text style={[styles.chipText, styles.ghostText]}>{w}</Text>
+            </View>
+          ) : (
+            <Pressable key={`slot-${i}`} style={[styles.wordChip, { backgroundColor: '#2563EB' }]} onPress={() => addWord(i)}>
+              <Text style={styles.chipText}>{w}</Text>
+            </Pressable>
+          )
+        )}
       </View>
 
       {!result ? (
@@ -110,13 +123,13 @@ const styles = StyleSheet.create({
   wordRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, justifyContent: 'center' },
   wordChip: { paddingHorizontal: 14, paddingVertical: 8, borderRadius: 10, backgroundColor: '#2563EB' },
   placedChip: { backgroundColor: '#1E40AF' },
+  ghostChip: { backgroundColor: 'transparent', borderWidth: 1, borderStyle: 'dashed' },
+  ghostText: { opacity: 0 },
   chipText: { color: '#FFF', fontSize: 16, fontWeight: '600' },
   resultText: { fontSize: 18, fontWeight: '700' },
   correctLine: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
   checkBtn: { paddingHorizontal: 32, paddingVertical: 12, borderRadius: 14, marginTop: 8 },
   checkBtnText: { color: '#FFF', fontSize: 16, fontWeight: '700' },
-  nextBtn: { paddingHorizontal: 32, paddingVertical: 12, borderRadius: 14, marginTop: 8, alignSelf: 'center' },
-  nextBtnText: { color: '#FFF', fontSize: 16, fontWeight: '700', textAlign: 'center' },
   buryBtn: { marginTop: 12, paddingHorizontal: 16, paddingVertical: 8 },
   buryText: { fontSize: 13, color: '#94A3B8', fontWeight: '500' },
 });

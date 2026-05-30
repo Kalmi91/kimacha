@@ -18,6 +18,7 @@ export async function sendAnalyticsIfNeeded() {
     const stats = await db.getTodayStats();
     const top5 = await db.getTop5Failed();
     const mastered = await db.getMasteredCount();
+    const examSummary = await db.getExamSummary();
 
     const params = new URLSearchParams({
       userId: meta.userId,
@@ -34,11 +35,17 @@ export async function sendAnalyticsIfNeeded() {
       cardTypeWord: String(stats.wordCount),
       cardTypeSentence: String(stats.sentenceCount),
       top5Failed: JSON.stringify(top5),
+      examsTaken: String(examSummary.examsTaken),
+      examsPassed: String(examSummary.examsPassed),
+      examPassRate: examSummary.examsTaken > 0 ? String(Math.round(examSummary.examsPassed / examSummary.examsTaken * 100)) : '0',
+      lastExamLevel: examSummary.lastExamLevel ?? '-',
       firstUseDate: meta.firstUseDate,
       appVersion: APP_VERSION,
     });
 
     await fetch(`${ANALYTICS_ENDPOINT}?${params.toString()}`);
     await db.updateLastSync(new Date().toISOString());
-  } catch {}
+  } catch (e) {
+    console.warn('analytics sync failed', e);
+  }
 }

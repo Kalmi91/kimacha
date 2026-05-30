@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Pressable, TextInput } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
-import { levenshtein } from '@/lib/levenshtein';
+import { levenshtein, normalizeAnswer } from '@/lib/levenshtein';
 import { type ExamQuestion, type GapQuestion, type TranslateQuestion } from '@/data/exams';
 
 interface Props {
@@ -70,8 +70,8 @@ function TranslateCard({ question, onResult, colors, s }: { question: TranslateQ
 
   const handleCheck = () => {
     if (!text.trim()) return;
-    const answer = text.trim().toLowerCase().replace(/[¡¿]/g, '');
-    const correct = question.target.toLowerCase().replace(/[¡¿]/g, '');
+    const answer = normalizeAnswer(text);
+    const correct = normalizeAnswer(question.target);
     const dist = levenshtein(answer, correct);
 
     const r = dist === 0 ? 'correct' : dist <= 2 ? 'almost' : 'wrong';

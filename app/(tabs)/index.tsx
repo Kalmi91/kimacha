@@ -5,18 +5,21 @@ import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb, cardFromRow } from '@/lib/database';
-import { words, type WordEntry, getWordsForLevel, getWordsForTopic, LEVELS, type Level } from '@/data/words';
+import { words, type WordEntry, getWordsForLevel, getWordsForTopic, type Level } from '@/data/words';
 import { getTopicsForLevel, hasTopics, getTopicName, type TopicDef } from '@/data/topics';
 import { t } from '@/lib/i18n';
-import { levenshtein } from '@/lib/levenshtein';
+import { levenshtein, normalizeAnswer } from '@/lib/levenshtein';
 import FeedbackButton from '@/components/FeedbackModal';
 import * as Speech from 'expo-speech';
 import ExamMode from '@/components/ExamMode';
 import DoneScreen from '@/components/DoneScreen';
 import EasySentenceCard from '@/components/EasySentenceCard';
-import { getExamQuestionsForLevel } from '@/data/exams';
+import { getExamQuestionsForLevel, passThreshold } from '@/data/exams';
 
 const f = fsrs();
+
+// Build once: id → word lookup (buildQueue used words.find per row = O(n×m)).
+const wordMap = new Map(words.map(w => [w.id, w]));
 
 type TypingDir = 'learned-to-native' | 'native-to-learned';
 
@@ -87,7 +90,7 @@ export default function LearnScreen() {
         wordId: row.word_id,
         type: row.type,
         card: cardFromRow(row),
-        word: words.find(w => w.id === row.word_id)!,
+        word: wordMap.get(row.word_id)!,
         isTyping,
         isEasySentence: isSentence && row.reps === 0,
         typingDirection,
@@ -163,14 +166,11 @@ export default function LearnScreen() {
       activeWords = levelWords;
     }
 
-    for (const w of activeWords) {
-      await db.ensureCard(w.id, 'word');
-      await db.ensureCard(w.id, 'sentence');
-    }
+    await db.ensureCardsForWords(activeWords.map(w => w.id));
 
     const totalWords = levelWords.length;
-    const reviewedWords = await db.getReviewedWordCount(currentLevel);
-    const pct = totalWords > 0 ? Math.round((reviewedWords / totalWords) * 100) : 0;
+    const masteredWords = await db.getMasteredWordCount(currentLevel);
+    const pct = totalWords > 0 ? Math.round((masteredWords / totalWords) * 100) : 0;
     setMasteredPct(pct);
 
     const activeWordIds = activeWords.map(w => w.id);
@@ -216,12 +216,15 @@ export default function LearnScreen() {
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  });
+  }, [currentIndex, queue.length, revealed, done, loading]);
 
   const current = queue[currentIndex];
 
   useEffect(() => {
     if (!current || loading || done) return;
+    // Easy sentence (tap-to-order): the "front" is the target-language
+    // sentence = the answer. Speaking it would give away the solution.
+    if (current.isEasySentence) return;
     const [, learned] = direction;
     const { frontLang } = getFrontBack(current);
     if (frontLang === learned) {
@@ -249,24 +252,6 @@ export default function LearnScreen() {
     };
   };
 
-  const checkLevelChange = async (wasCorrect: boolean) => {
-    const db = getDb();
-    const levelData = await db.getLevel();
-    let { correct_streak, mistakes_in_window, fail_streak } = levelData;
-    const currentLevel = levelData.level as Level;
-    const levelIdx = LEVELS.indexOf(currentLevel);
-
-    if (wasCorrect) {
-      correct_streak += 1;
-      fail_streak = 0;
-    } else {
-      fail_streak += 1;
-      mistakes_in_window += 1;
-      correct_streak = 0;
-    }
-    await db.updateLevel(currentLevel, correct_streak, mistakes_in_window, fail_streak);
-  };
-
   const advance = async (rating: Grade) => {
     if (!current) return;
 
@@ -280,7 +265,6 @@ export default function LearnScreen() {
     await db.updateCard(current.wordId, current.type, updated);
     await db.recordAttempt(current.wordId, current.type, wasCorrect, responseTimeMs);
     await db.updateStreak();
-    await checkLevelChange(wasCorrect);
 
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
@@ -293,8 +277,8 @@ export default function LearnScreen() {
       const currentLevel = levelData.level as Level;
       const { getWordsForLevel: gwfl } = require('@/data/words');
       const lvlWords = gwfl(currentLevel);
-      const rvw = await db.getReviewedWordCount(currentLevel);
-      const newPct = lvlWords.length > 0 ? Math.round((rvw / lvlWords.length) * 100) : 0;
+      const mastered = await db.getMasteredWordCount(currentLevel);
+      const newPct = lvlWords.length > 0 ? Math.round((mastered / lvlWords.length) * 100) : 0;
       setMasteredPct(newPct);
 
       const topics = getTopicsForLevel(currentLevel);
@@ -325,10 +309,7 @@ export default function LearnScreen() {
         });
 
         const activeWordIds = unlocked.flatMap(topic => getWordsForTopic(currentLevel, topic.id)).map(w => w.id);
-        for (const w of unlocked.flatMap(topic => getWordsForTopic(currentLevel, topic.id))) {
-          await db.ensureCard(w.id, 'word');
-          await db.ensureCard(w.id, 'sentence');
-        }
+        await db.ensureCardsForWords(activeWordIds);
         newRows = await db.getDueCardsForWordIds(activeWordIds, 10);
       } else {
         newRows = await db.getDueCardsForLevel(currentLevel, 10);
@@ -366,7 +347,6 @@ export default function LearnScreen() {
     await db.updateCard(current.wordId, current.type, updated);
     await db.recordAttempt(current.wordId, current.type, false, responseTimeMs);
     await db.updateStreak();
-    await checkLevelChange(false);
 
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
@@ -399,8 +379,8 @@ export default function LearnScreen() {
   const handleCheck = () => {
     if (!current) return;
     const { back } = getFrontBack(current);
-    const answer = typedAnswer.trim().toLowerCase();
-    const correct = back.toLowerCase().split(' / ')[0].trim().replace(/[¡¿]/g, '');
+    const answer = normalizeAnswer(typedAnswer);
+    const correct = normalizeAnswer(back.split(' / ')[0]);
     const dist = levenshtein(answer, correct);
 
     if (dist === 0) {
@@ -443,7 +423,7 @@ export default function LearnScreen() {
   }
 
   if (done) {
-    const examAvailable = getExamQuestionsForLevel(level).length > 0 && masteredPct >= 70;
+    const examAvailable = getExamQuestionsForLevel(level).length >= passThreshold(level) && masteredPct >= 80;
     return (
       <DoneScreen
         reviewed={reviewed}
@@ -695,8 +675,8 @@ export default function LearnScreen() {
                   value={practiceText}
                   onChangeText={setPracticeText}
                   onSubmitEditing={() => {
-                    const correct = back.toLowerCase().split(' / ')[0].trim().replace(/[¡¿]/g, '');
-                    const dist = levenshtein(practiceText.trim().toLowerCase(), correct);
+                    const correct = normalizeAnswer(back.split(' / ')[0]);
+                    const dist = levenshtein(normalizeAnswer(practiceText), correct);
                     setPracticeResult(dist === 0 ? 'correct' : dist <= 2 ? 'almost' : 'wrong');
                   }}
                   autoFocus

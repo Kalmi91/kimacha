@@ -1,3 +1,15 @@
+// Normalize answer for comparison: lowercase, strip punctuation + extra
+// whitespace. Punctuation and upper/lowercase differences must NOT count as a
+// mistake — they normalize away so "Hola, ¿qué tal?" === "hola que tal".
+// Accents are kept on purpose (él vs el is a real difference in Spanish).
+export function normalizeAnswer(s: string): string {
+  return s
+    .toLowerCase()
+    .replace(/[.,!?¡¿;:…"'`«»()\-]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 export function levenshtein(a: string, b: string): number {
   const m = a.length, n = b.length;
   const d: number[][] = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
