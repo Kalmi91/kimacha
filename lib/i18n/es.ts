@@ -28,6 +28,7 @@ export default {
     title: '¡Terminaste por hoy!',
     reviewed: (n: number) => `${n} tarjetas revisadas.`,
     streak: 'racha de días',
+    examStatus: (pct: number, ready: boolean) => ready ? `${pct}% ✓` : `${pct}% (examen: 80%)`,
   },
   tabs: {
     learn: 'Aprender',
@@ -41,6 +42,9 @@ export default {
   },
   exam: {
     tag: 'Examen',
+    notYet: '¡Aún No, Pero Casi!',
+    retry: 'Reintentar',
+    backToLearning: 'Volver A Aprender',
   },
   topic: {
     progress: (current: number, total: number) => `Tema ${current}/${total}`,

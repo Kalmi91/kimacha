@@ -24,10 +24,7 @@ export default function SettingsScreen() {
     const db = getDb();
     await db.updateLevel(level, 0, 0, 0);
     const levelWords = getWordsForLevel(level);
-    for (const w of levelWords) {
-      await db.ensureCard(w.id, 'word');
-      await db.ensureCard(w.id, 'sentence');
-    }
+    await db.ensureCardsForWords(levelWords.map(w => w.id));
     setMasterVisible(false);
   };
 
