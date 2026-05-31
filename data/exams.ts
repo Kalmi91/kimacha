@@ -70,5 +70,9 @@ const examsByLang: Record<string, Record<string, ExamQuestion[]>> = {
 
 export function getExamQuestionsFor(targetLang: string, level: string): ExamQuestion[] {
   const langSet = examsByLang[targetLang] ?? examsByLang.es;
-  return langSet[level] ?? examsByLang.es[level] ?? [];
+  const set = langSet[level] ?? examsByLang.es[level] ?? [];
+  // Only multiple-choice "gap" questions: they are in the TARGET language and
+  // source-agnostic. The legacy es↔hu "translate" items would force Hungarian on
+  // non-Hungarian learners (e.g. en→es), so they are excluded from placement.
+  return set.filter(q => q.type === 'gap');
 }

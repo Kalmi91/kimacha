@@ -87,7 +87,7 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
           {index + 1}/{total}
         </Text>
       </View>
-      {eq && <ExamCard question={eq} onResult={handleResult} />}
+      {eq && <ExamCard key={index} question={eq} onResult={handleResult} />}
       <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`exam:${index + 1}`} />
     </View>
   );
