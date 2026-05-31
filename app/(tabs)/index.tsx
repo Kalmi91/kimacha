@@ -685,9 +685,6 @@ export default function LearnScreen() {
           <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
           <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>🔥</Text>
         </View>
-        <Text style={[styles.counter, { color: colors.tabIconDefault }]}>
-          {currentIndex + 1}/{queue.length}
-        </Text>
       </View>
       {topicHeader}
       {progressMeter}
