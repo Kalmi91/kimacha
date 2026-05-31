@@ -430,17 +430,12 @@ export default function LearnScreen() {
   const handleCheck = () => {
     if (!current) return;
     const { back } = getFrontBack(current);
-    const answer = typedAnswer.trim().toLowerCase();
-    const correct = back.toLowerCase().split(' / ')[0].trim().replace(/[¡¿]/g, '');
+    const answer = typedAnswer.trim().toLowerCase().replace(/[.]+$/, '').trim();
+    const correct = back.toLowerCase().split(' / ')[0].trim().replace(/[¡¿]/g, '').replace(/[.]+$/, '').trim();
     const dist = levenshtein(answer, correct);
 
-    if (dist === 0) {
-      setTypingResult('correct');
-    } else if (dist <= 2) {
-      setTypingResult('almost');
-    } else {
-      setTypingResult('wrong');
-    }
+    // Forgiving: ignore case + trailing period, accept up to 2-letter typos as fully correct.
+    setTypingResult(dist <= 2 ? 'correct' : 'wrong');
     setRevealed(true);
     const { backLang } = getFrontBack(current);
     Speech.speak(back, { language: backLang });
@@ -736,9 +731,9 @@ export default function LearnScreen() {
                   value={practiceText}
                   onChangeText={setPracticeText}
                   onSubmitEditing={() => {
-                    const correct = back.toLowerCase().split(' / ')[0].trim().replace(/[¡¿]/g, '');
-                    const dist = levenshtein(practiceText.trim().toLowerCase(), correct);
-                    setPracticeResult(dist === 0 ? 'correct' : dist <= 2 ? 'almost' : 'wrong');
+                    const correct = back.toLowerCase().split(' / ')[0].trim().replace(/[¡¿]/g, '').replace(/[.]+$/, '').trim();
+                    const dist = levenshtein(practiceText.trim().toLowerCase().replace(/[.]+$/, '').trim(), correct);
+                    setPracticeResult(dist <= 2 ? 'correct' : 'wrong');
                   }}
                   autoFocus
                   autoCapitalize="none"
