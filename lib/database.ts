@@ -43,6 +43,9 @@ export function cardFromRow(row: any): Card {
 
 class SQLiteDB implements DB {
   private db: SQLite.SQLiteDatabase | null = null;
+  // Active language pair (e.g. "es-hu"). All learning progress (cards + level) is
+  // scoped to this pair, so each language you study keeps its own progress.
+  private activePair = 'es-hu';
 
   private async open() {
     if (this.db) return this.db;
@@ -52,6 +55,7 @@ class SQLiteDB implements DB {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         word_id INTEGER NOT NULL,
         type TEXT NOT NULL DEFAULT 'word',
+        pair TEXT NOT NULL DEFAULT 'es-hu',
         due TEXT NOT NULL,
         stability REAL NOT NULL DEFAULT 0,
         difficulty REAL NOT NULL DEFAULT 0,
@@ -62,7 +66,8 @@ class SQLiteDB implements DB {
         lapses INTEGER NOT NULL DEFAULT 0,
         state INTEGER NOT NULL DEFAULT 0,
         last_review TEXT,
-        UNIQUE(word_id, type)
+        buried INTEGER NOT NULL DEFAULT 0,
+        UNIQUE(word_id, type, pair)
       );
       CREATE TABLE IF NOT EXISTS streak (
         id INTEGER PRIMARY KEY CHECK (id = 1),
@@ -85,13 +90,12 @@ class SQLiteDB implements DB {
         target TEXT NOT NULL
       );
       CREATE TABLE IF NOT EXISTS user_level (
-        id INTEGER PRIMARY KEY CHECK (id = 1),
+        pair TEXT PRIMARY KEY,
         level TEXT NOT NULL DEFAULT 'A0',
         correct_streak INTEGER NOT NULL DEFAULT 0,
         mistakes_in_window INTEGER NOT NULL DEFAULT 0,
         fail_streak INTEGER NOT NULL DEFAULT 0
       );
-      INSERT OR IGNORE INTO user_level (id, level, correct_streak, mistakes_in_window, fail_streak) VALUES (1, 'A0', 0, 0, 0);
       CREATE TABLE IF NOT EXISTS user_meta (
         id INTEGER PRIMARY KEY CHECK (id = 1),
         user_id TEXT NOT NULL,
@@ -107,23 +111,74 @@ class SQLiteDB implements DB {
       });
       await this.db.runAsync('INSERT INTO user_meta (id, user_id, first_use_date) VALUES (1, ?, ?)', [uuid, new Date().toISOString()]);
     }
-    // Migration: add buried column
-    const colCheck = await this.db.getFirstAsync<any>("SELECT * FROM pragma_table_info('cards') WHERE name = 'buried'");
-    if (!colCheck) {
+
+    // Resolve the active pair from onboarding before running migrations.
+    const ob = await this.db.getFirstAsync<any>('SELECT source, target FROM onboarding WHERE id = 1');
+    if (ob) this.activePair = `${ob.source}-${ob.target}`;
+
+    // Migration: add buried column (DBs created before the bury feature).
+    const buriedCol = await this.db.getFirstAsync<any>("SELECT * FROM pragma_table_info('cards') WHERE name = 'buried'");
+    if (!buriedCol) {
       await this.db.execAsync('ALTER TABLE cards ADD COLUMN buried INTEGER NOT NULL DEFAULT 0');
+    }
+    // Migration: per-pair cards. Rebuild with UNIQUE(word_id,type,pair); existing
+    // rows are tagged with the pair that was active when they were created.
+    const cardsPairCol = await this.db.getFirstAsync<any>("SELECT * FROM pragma_table_info('cards') WHERE name = 'pair'");
+    if (!cardsPairCol) {
+      await this.db.execAsync(`
+        CREATE TABLE cards_new (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          word_id INTEGER NOT NULL,
+          type TEXT NOT NULL DEFAULT 'word',
+          pair TEXT NOT NULL DEFAULT 'es-hu',
+          due TEXT NOT NULL,
+          stability REAL NOT NULL DEFAULT 0,
+          difficulty REAL NOT NULL DEFAULT 0,
+          elapsed_days INTEGER NOT NULL DEFAULT 0,
+          scheduled_days INTEGER NOT NULL DEFAULT 0,
+          learning_steps INTEGER NOT NULL DEFAULT 0,
+          reps INTEGER NOT NULL DEFAULT 0,
+          lapses INTEGER NOT NULL DEFAULT 0,
+          state INTEGER NOT NULL DEFAULT 0,
+          last_review TEXT,
+          buried INTEGER NOT NULL DEFAULT 0,
+          UNIQUE(word_id, type, pair)
+        );
+        INSERT INTO cards_new (word_id, type, pair, due, stability, difficulty, elapsed_days, scheduled_days, learning_steps, reps, lapses, state, last_review, buried)
+          SELECT word_id, type, '${this.activePair}', due, stability, difficulty, elapsed_days, scheduled_days, learning_steps, reps, lapses, state, last_review, buried FROM cards;
+        DROP TABLE cards;
+        ALTER TABLE cards_new RENAME TO cards;
+      `);
+    }
+    // Migration: per-pair user_level (old singleton id=1 → keyed by pair).
+    const levelPairCol = await this.db.getFirstAsync<any>("SELECT * FROM pragma_table_info('user_level') WHERE name = 'pair'");
+    if (!levelPairCol) {
+      await this.db.execAsync(`
+        CREATE TABLE user_level_new (
+          pair TEXT PRIMARY KEY,
+          level TEXT NOT NULL DEFAULT 'A0',
+          correct_streak INTEGER NOT NULL DEFAULT 0,
+          mistakes_in_window INTEGER NOT NULL DEFAULT 0,
+          fail_streak INTEGER NOT NULL DEFAULT 0
+        );
+        INSERT INTO user_level_new (pair, level, correct_streak, mistakes_in_window, fail_streak)
+          SELECT '${this.activePair}', level, correct_streak, mistakes_in_window, fail_streak FROM user_level WHERE id = 1;
+        DROP TABLE user_level;
+        ALTER TABLE user_level_new RENAME TO user_level;
+      `);
     }
     return this.db;
   }
 
   async ensureCard(wordId: number, type: string) {
     const db = await this.open();
-    const existing = await db.getFirstAsync('SELECT id FROM cards WHERE word_id = ? AND type = ?', [wordId, type]);
+    const existing = await db.getFirstAsync('SELECT id FROM cards WHERE word_id = ? AND type = ? AND pair = ?', [wordId, type, this.activePair]);
     if (existing) return;
     const empty = createEmptyCard();
     await db.runAsync(
-      `INSERT INTO cards (word_id, type, due, stability, difficulty, elapsed_days, scheduled_days, learning_steps, reps, lapses, state)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-      [wordId, type, empty.due.toISOString(), empty.stability, empty.difficulty, empty.elapsed_days, empty.scheduled_days, empty.learning_steps, empty.reps, empty.lapses, empty.state]
+      `INSERT INTO cards (word_id, type, pair, due, stability, difficulty, elapsed_days, scheduled_days, learning_steps, reps, lapses, state)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [wordId, type, this.activePair, empty.due.toISOString(), empty.stability, empty.difficulty, empty.elapsed_days, empty.scheduled_days, empty.learning_steps, empty.reps, empty.lapses, empty.state]
     );
   }
 
@@ -131,15 +186,15 @@ class SQLiteDB implements DB {
     const db = await this.open();
     await db.runAsync(
       `UPDATE cards SET due = ?, stability = ?, difficulty = ?, elapsed_days = ?, scheduled_days = ?,
-       learning_steps = ?, reps = ?, lapses = ?, state = ?, last_review = ? WHERE word_id = ? AND type = ?`,
+       learning_steps = ?, reps = ?, lapses = ?, state = ?, last_review = ? WHERE word_id = ? AND type = ? AND pair = ?`,
       [card.due.toISOString(), card.stability, card.difficulty, card.elapsed_days, card.scheduled_days,
-       card.learning_steps, card.reps, card.lapses, card.state, card.last_review ? card.last_review.toISOString() : null, wordId, type]
+       card.learning_steps, card.reps, card.lapses, card.state, card.last_review ? card.last_review.toISOString() : null, wordId, type, this.activePair]
     );
   }
 
   async getDueCards(limit: number) {
     const db = await this.open();
-    return await db.getAllAsync('SELECT * FROM cards WHERE due <= ? AND buried = 0 ORDER BY due ASC LIMIT ?', [new Date().toISOString(), limit]);
+    return await db.getAllAsync('SELECT * FROM cards WHERE due <= ? AND buried = 0 AND pair = ? ORDER BY due ASC LIMIT ?', [new Date().toISOString(), this.activePair, limit]);
   }
 
   async getStreak() {
@@ -167,17 +222,20 @@ class SQLiteDB implements DB {
   async setOnboarding(source: string, target: string) {
     const db = await this.open();
     await db.runAsync('INSERT OR REPLACE INTO onboarding (id, source, target) VALUES (1, ?, ?)', [source, target]);
+    this.activePair = `${source}-${target}`;
   }
 
   async getLevel() {
     const db = await this.open();
-    return await db.getFirstAsync<any>('SELECT * FROM user_level WHERE id = 1');
+    await db.runAsync("INSERT OR IGNORE INTO user_level (pair, level) VALUES (?, 'A0')", [this.activePair]);
+    return await db.getFirstAsync<any>('SELECT * FROM user_level WHERE pair = ?', [this.activePair]);
   }
 
   async updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number) {
     const db = await this.open();
-    await db.runAsync('UPDATE user_level SET level = ?, correct_streak = ?, mistakes_in_window = ?, fail_streak = ? WHERE id = 1',
-      [level, correctStreak, mistakesInWindow, failStreak]);
+    await db.runAsync("INSERT OR IGNORE INTO user_level (pair, level) VALUES (?, 'A0')", [this.activePair]);
+    await db.runAsync('UPDATE user_level SET level = ?, correct_streak = ?, mistakes_in_window = ?, fail_streak = ? WHERE pair = ?',
+      [level, correctStreak, mistakesInWindow, failStreak, this.activePair]);
   }
 
   async getDueCardsForLevel(level: string, limit: number) {
@@ -198,18 +256,18 @@ class SQLiteDB implements DB {
     const reviewLimit = limit - newLimit;
 
     const newCards = await db.getAllAsync(
-      `SELECT * FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND reps = 0 AND buried = 0 AND due <= ? ORDER BY due ASC LIMIT ?`,
-      [...wordIds, now, newLimit]
+      `SELECT * FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND reps = 0 AND buried = 0 AND pair = ? AND due <= ? ORDER BY due ASC LIMIT ?`,
+      [...wordIds, this.activePair, now, newLimit]
     );
 
     const reviewWords = await db.getAllAsync(
-      `SELECT * FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND reps > 0 AND buried = 0 AND due <= ? ORDER BY due ASC LIMIT ?`,
-      [...wordIds, lookahead, reviewLimit]
+      `SELECT * FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND reps > 0 AND buried = 0 AND pair = ? AND due <= ? ORDER BY due ASC LIMIT ?`,
+      [...wordIds, this.activePair, lookahead, reviewLimit]
     );
 
     const reviewedWordIds = await db.getAllAsync<any>(
-      `SELECT DISTINCT word_id FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND (reps >= 2 OR buried = 1)`,
-      wordIds
+      `SELECT DISTINCT word_id FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND pair = ? AND (reps >= 2 OR buried = 1)`,
+      [...wordIds, this.activePair]
     );
     const reviewedSet = new Set(reviewedWordIds.map((r: any) => r.word_id));
 
@@ -219,8 +277,8 @@ class SQLiteDB implements DB {
       const reviewedIds = [...reviewedSet];
       const sentencePlaceholders = reviewedIds.map(() => '?').join(',');
       sentenceCards = await db.getAllAsync(
-        `SELECT * FROM cards WHERE word_id IN (${sentencePlaceholders}) AND type = 'sentence' AND buried = 0 AND due <= ? ORDER BY due ASC LIMIT ?`,
-        [...reviewedIds, lookahead, sentenceSlots]
+        `SELECT * FROM cards WHERE word_id IN (${sentencePlaceholders}) AND type = 'sentence' AND buried = 0 AND pair = ? AND due <= ? ORDER BY due ASC LIMIT ?`,
+        [...reviewedIds, this.activePair, lookahead, sentenceSlots]
       );
     }
 
@@ -232,8 +290,8 @@ class SQLiteDB implements DB {
     if (wordIds.length === 0) return new Map();
     const placeholders = wordIds.map(() => '?').join(',');
     const rows = await db.getAllAsync<any>(
-      `SELECT word_id, reps FROM cards WHERE word_id IN (${placeholders}) AND type = 'word'`,
-      wordIds
+      `SELECT word_id, reps FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND pair = ?`,
+      [...wordIds, this.activePair]
     );
     const map = new Map<number, number>();
     for (const r of rows) map.set(r.word_id, r.reps);
@@ -296,7 +354,8 @@ class SQLiteDB implements DB {
   async getMasteredCount() {
     const db = await this.open();
     const row = await db.getFirstAsync<any>(
-      "SELECT COUNT(*) as cnt FROM cards WHERE state >= 2 AND stability > 10"
+      "SELECT COUNT(*) as cnt FROM cards WHERE state >= 2 AND stability > 10 AND pair = ?",
+      [this.activePair]
     );
     return row?.cnt ?? 0;
   }
@@ -304,7 +363,8 @@ class SQLiteDB implements DB {
   async getMasteredWordCount() {
     const db = await this.open();
     const row = await db.getFirstAsync<any>(
-      "SELECT COUNT(*) as cnt FROM cards WHERE type = 'word' AND state >= 2 AND stability > 10"
+      "SELECT COUNT(*) as cnt FROM cards WHERE type = 'word' AND state >= 2 AND stability > 10 AND pair = ?",
+      [this.activePair]
     );
     return row?.cnt ?? 0;
   }
@@ -317,25 +377,22 @@ class SQLiteDB implements DB {
     if (wordIds.length === 0) return 0;
     const placeholders = wordIds.map(() => '?').join(',');
     const row = await db.getFirstAsync<any>(
-      `SELECT COUNT(*) as cnt FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND (reps > 0 OR buried = 1)`,
-      wordIds
+      `SELECT COUNT(*) as cnt FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND pair = ? AND (reps > 0 OR buried = 1)`,
+      [...wordIds, this.activePair]
     );
     return row?.cnt ?? 0;
   }
 
   async buryCard(wordId: number, type: string) {
     const db = await this.open();
-    await db.runAsync('UPDATE cards SET buried = 1 WHERE word_id = ? AND type = ?', [wordId, type]);
+    await db.runAsync('UPDATE cards SET buried = 1 WHERE word_id = ? AND type = ? AND pair = ?', [wordId, type, this.activePair]);
   }
 
   async resetAllProgress() {
+    // Reset only the active language pair — other languages keep their progress.
     const db = await this.open();
-    await db.execAsync(`
-      DELETE FROM cards;
-      DELETE FROM card_attempts;
-      UPDATE user_level SET level = 'A0', correct_streak = 0, mistakes_in_window = 0, fail_streak = 0 WHERE id = 1;
-      UPDATE streak SET current_count = 0, last_date = NULL, longest_count = 0 WHERE id = 1;
-    `);
+    await db.runAsync('DELETE FROM cards WHERE pair = ?', [this.activePair]);
+    await db.runAsync("UPDATE user_level SET level = 'A0', correct_streak = 0, mistakes_in_window = 0, fail_streak = 0 WHERE pair = ?", [this.activePair]);
   }
 }
 
