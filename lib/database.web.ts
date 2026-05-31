@@ -19,8 +19,10 @@ export interface DB {
   getTodayStats(): Promise<{ totalReviews: number; correctCount: number; avgResponseMs: number; flashcardCount: number; typingCount: number; wordCount: number; sentenceCount: number }>;
   getTop5Failed(): Promise<string[]>;
   getMasteredCount(): Promise<number>;
+  getMasteredWordCount(): Promise<number>;
   getReviewedWordCount(level: string): Promise<number>;
   buryCard(wordId: number, type: string): Promise<void>;
+  resetAllProgress(): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -184,6 +186,9 @@ class MemoryDB implements DB {
   }
   async getTop5Failed() { return []; }
   async getMasteredCount() { return 0; }
+  async getMasteredWordCount() {
+    return [...this.cards.values()].filter(c => c.type === 'word' && c.state >= 2 && c.stability > 10 && !c.buried).length;
+  }
   async getReviewedWordCount(level: string) {
     const { getWordsForLevel } = require('@/data/words');
     const levelWords = getWordsForLevel(level);
@@ -195,6 +200,13 @@ class MemoryDB implements DB {
     const k = this.key(wordId, type);
     const card = this.cards.get(k);
     if (card) card.buried = 1;
+  }
+
+  async resetAllProgress() {
+    this.cards.clear();
+    this.attempts = [];
+    this.userLevel = { level: 'A0', correct_streak: 0, mistakes_in_window: 0, fail_streak: 0 };
+    this.streak = { current_count: 0, last_date: null, longest_count: 0 };
   }
 }
 

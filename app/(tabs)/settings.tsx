@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, Pressable, Modal } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Modal, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { LEVELS, type Level, getWordsForLevel } from '@/data/words';
-import { getDb } from '@/lib/database';
+import { setPendingAction } from '@/lib/pendingAction';
 
 export default function SettingsScreen() {
   const { theme, override, setOverride } = useTheme();
@@ -20,15 +20,31 @@ export default function SettingsScreen() {
     { label: '🌙 Dark', value: 'dark' },
   ];
 
-  const handleLevelSelect = async (level: Level) => {
-    const db = getDb();
-    await db.updateLevel(level, 0, 0, 0);
-    const levelWords = getWordsForLevel(level);
-    for (const w of levelWords) {
-      await db.ensureCard(w.id, 'word');
-      await db.ensureCard(w.id, 'sentence');
-    }
+  const handleLevelSelect = (level: Level) => {
     setMasterVisible(false);
+    if (level === 'A0') {
+      // No level below A0 to test against — A0 means "restart the game from scratch".
+      Alert.alert(
+        'Újrakezdés',
+        'Biztos újra akarod kezdeni? Eltűnik az eddigi haladásod.',
+        [
+          { text: 'Nem', style: 'cancel' },
+          {
+            text: 'Igen',
+            style: 'destructive',
+            onPress: () => {
+              setPendingAction({ type: 'restart' });
+              router.navigate('/');
+            },
+          },
+        ]
+      );
+      return;
+    }
+    // A1+ : take the PREVIOUS level's exam; passing it unlocks the chosen level.
+    const idx = LEVELS.indexOf(level);
+    setPendingAction({ type: 'exam', examLevel: LEVELS[idx - 1] });
+    router.navigate('/');
   };
 
   return (
@@ -80,7 +96,7 @@ export default function SettingsScreen() {
                     onPress={() => handleLevelSelect(lvl)}
                   >
                     <Text style={styles.levelOptionText}>{lvl}</Text>
-                    <Text style={styles.levelWordCount}>{wordCount} szó</Text>
+                    <Text style={styles.levelWordCount}>{lvl === 'A0' ? 'Újrakezdés' : `${wordCount} szó`}</Text>
                   </Pressable>
                 );
               })}

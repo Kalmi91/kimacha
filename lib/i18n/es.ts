@@ -56,6 +56,9 @@ export default {
   settings: {
     changeLanguage: 'Cambiar Idioma',
   },
+  progress: {
+    wordsKnown: 'Palabras Conocidas',
+  },
   feedback: {
     button: 'Comentarios',
     placeholder: 'Comparte tu opinión...',

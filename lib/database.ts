@@ -20,8 +20,10 @@ export interface DB {
   getTodayStats(): Promise<{ totalReviews: number; correctCount: number; avgResponseMs: number; flashcardCount: number; typingCount: number; wordCount: number; sentenceCount: number }>;
   getTop5Failed(): Promise<string[]>;
   getMasteredCount(): Promise<number>;
+  getMasteredWordCount(): Promise<number>;
   getReviewedWordCount(level: string): Promise<number>;
   buryCard(wordId: number, type: string): Promise<void>;
+  resetAllProgress(): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -283,9 +285,11 @@ class SQLiteDB implements DB {
       "SELECT word_id, COUNT(*) as cnt FROM card_attempts WHERE correct = 0 GROUP BY word_id ORDER BY cnt DESC LIMIT 5"
     );
     const { words } = require('@/data/words');
+    const onboarding = await this.getOnboarding();
+    const lang = onboarding?.target ?? 'es';
     return rows.map((r: any) => {
       const w = words.find((w: any) => w.id === r.word_id);
-      return w ? w.es : String(r.word_id);
+      return w ? String(w[lang] ?? w.es) : String(r.word_id);
     });
   }
 
@@ -293,6 +297,14 @@ class SQLiteDB implements DB {
     const db = await this.open();
     const row = await db.getFirstAsync<any>(
       "SELECT COUNT(*) as cnt FROM cards WHERE state >= 2 AND stability > 10"
+    );
+    return row?.cnt ?? 0;
+  }
+
+  async getMasteredWordCount() {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>(
+      "SELECT COUNT(*) as cnt FROM cards WHERE type = 'word' AND state >= 2 AND stability > 10"
     );
     return row?.cnt ?? 0;
   }
@@ -314,6 +326,16 @@ class SQLiteDB implements DB {
   async buryCard(wordId: number, type: string) {
     const db = await this.open();
     await db.runAsync('UPDATE cards SET buried = 1 WHERE word_id = ? AND type = ?', [wordId, type]);
+  }
+
+  async resetAllProgress() {
+    const db = await this.open();
+    await db.execAsync(`
+      DELETE FROM cards;
+      DELETE FROM card_attempts;
+      UPDATE user_level SET level = 'A0', correct_streak = 0, mistakes_in_window = 0, fail_streak = 0 WHERE id = 1;
+      UPDATE streak SET current_count = 0, last_date = NULL, longest_count = 0 WHERE id = 1;
+    `);
   }
 }
 
