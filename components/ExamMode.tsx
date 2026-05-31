@@ -28,12 +28,15 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
   const [correct, setCorrect] = useState(0);
   const [done, setDone] = useState(false);
 
+  const total = questions.length;
+  const passNeeded = Math.ceil(total * 0.9);
+
   const handleResult = async (isCorrect: boolean) => {
     const newCorrect = correct + (isCorrect ? 1 : 0);
     setCorrect(newCorrect);
-    if (index + 1 >= 10) {
+    if (index + 1 >= total) {
       setDone(true);
-      if (newCorrect >= 9) {
+      if (newCorrect >= passNeeded) {
         const levelIdx = LEVELS.indexOf(level);
         if (levelIdx < LEVELS.length - 1) {
           const newLevel = LEVELS[levelIdx + 1];
@@ -48,7 +51,7 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
   };
 
   if (done) {
-    const passed = correct >= 9;
+    const passed = correct >= passNeeded;
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         <Text style={styles.doneEmoji}>{passed ? '🏆' : '📚'}</Text>
@@ -56,7 +59,7 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
           {passed ? `${level} ↑` : 'Még nem, de közel vagy!'}
         </Text>
         <Text style={[styles.subtitle, { color: colors.tabIconDefault }]}>
-          {correct}/10
+          {correct}/{total}
         </Text>
         <Pressable
           style={[styles.btn, { backgroundColor: colors.tint }]}
@@ -72,11 +75,16 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <View style={styles.header}>
-        <View style={[styles.badge, { backgroundColor: colors.accent }]}>
-          <Text style={styles.badgeText}>{s.exam.tag}</Text>
+        <View style={styles.headerLeft}>
+          <Pressable onPress={onExit} hitSlop={8} style={styles.exitBtn}>
+            <Text style={[styles.exitText, { color: colors.tabIconDefault }]}>✕</Text>
+          </Pressable>
+          <View style={[styles.badge, { backgroundColor: colors.accent }]}>
+            <Text style={styles.badgeText}>{s.exam.tag}</Text>
+          </View>
         </View>
         <Text style={[styles.counter, { color: colors.tabIconDefault }]}>
-          {index + 1}/10
+          {index + 1}/{total}
         </Text>
       </View>
       {eq && <ExamCard question={eq} onResult={handleResult} />}
@@ -88,6 +96,9 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20, justifyContent: 'center' },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', position: 'absolute', top: 16, left: 20, right: 20 },
+  headerLeft: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  exitBtn: { padding: 4 },
+  exitText: { fontSize: 20, fontWeight: '700' },
   badge: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 8 },
   badgeText: { color: '#FFF', fontSize: 14, fontWeight: '800' },
   counter: { fontSize: 14 },

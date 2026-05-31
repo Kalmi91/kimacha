@@ -61,6 +61,7 @@ export default function LearnScreen() {
   const [examLevel, setExamLevel] = useState<Level | null>(null);
   const [masteredPct, setMasteredPct] = useState(0);
   const [knownWords, setKnownWords] = useState(0);
+  const [levelTotal, setLevelTotal] = useState(0);
   const [currentTopic, setCurrentTopic] = useState<TopicDef | null>(null);
   const [topicProgress, setTopicProgress] = useState<{ done: number; total: number; wordsInTopic: number; wordsReviewed: number } | null>(null);
   const [topicCompleteMsg, setTopicCompleteMsg] = useState<string | null>(null);
@@ -178,7 +179,8 @@ export default function LearnScreen() {
     const reviewedWords = await db.getReviewedWordCount(currentLevel);
     const pct = totalWords > 0 ? Math.round((reviewedWords / totalWords) * 100) : 0;
     setMasteredPct(pct);
-    setKnownWords(await db.getMasteredWordCount());
+    setKnownWords(reviewedWords);
+    setLevelTotal(totalWords);
 
     const activeWordIds = activeWords.map(w => w.id);
     const rows = useTopics
@@ -311,6 +313,7 @@ export default function LearnScreen() {
     await db.updateCard(current.wordId, current.type, updated);
     await db.recordAttempt(current.wordId, current.type, wasCorrect, responseTimeMs);
     await db.updateStreak();
+    setKnownWords(await db.getReviewedWordCount(level));
     await checkLevelChange(wasCorrect);
 
     const streakData = await db.getStreak();
@@ -327,6 +330,8 @@ export default function LearnScreen() {
       const rvw = await db.getReviewedWordCount(currentLevel);
       const newPct = lvlWords.length > 0 ? Math.round((rvw / lvlWords.length) * 100) : 0;
       setMasteredPct(newPct);
+      setKnownWords(rvw);
+      setLevelTotal(lvlWords.length);
 
       const topics = getTopicsForLevel(currentLevel);
       const useTopics = topics.length > 0 && lvlWords.some((w: WordEntry) => w['topic']);
@@ -397,6 +402,7 @@ export default function LearnScreen() {
     await db.updateCard(current.wordId, current.type, updated);
     await db.recordAttempt(current.wordId, current.type, false, responseTimeMs);
     await db.updateStreak();
+    setKnownWords(await db.getReviewedWordCount(level));
     await checkLevelChange(false);
 
     const streakData = await db.getStreak();
@@ -515,7 +521,7 @@ export default function LearnScreen() {
   const progressMeter = (
     <ProgressMeter
       known={knownWords}
-      total={words.length}
+      total={levelTotal}
       langFlag={targetLangInfo?.flag ?? ''}
       langName={targetLangInfo?.name ?? ''}
     />
