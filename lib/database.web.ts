@@ -43,15 +43,17 @@ export function cardFromRow(row: any): Card {
 class MemoryDB implements DB {
   private cards: Map<string, any> = new Map();
   private streak = { current_count: 0, last_date: null as string | null, longest_count: 0 };
+  // Active language pair (e.g. "es-hu"); scopes cards + level so each pair keeps its own progress.
+  private activePair = 'es-hu';
 
-  private key(wordId: number, type: string) { return `${wordId}:${type}`; }
+  private key(wordId: number, type: string) { return `${this.activePair}:${wordId}:${type}`; }
 
   async ensureCard(wordId: number, type: string) {
     const k = this.key(wordId, type);
     if (this.cards.has(k)) return;
     const empty = createEmptyCard();
     this.cards.set(k, {
-      word_id: wordId, type,
+      word_id: wordId, type, pair: this.activePair,
       due: empty.due.toISOString(),
       stability: empty.stability, difficulty: empty.difficulty,
       elapsed_days: empty.elapsed_days, scheduled_days: empty.scheduled_days,
@@ -65,7 +67,7 @@ class MemoryDB implements DB {
     const k = this.key(wordId, type);
     const existing = this.cards.get(k);
     this.cards.set(k, {
-      word_id: wordId, type,
+      word_id: wordId, type, pair: this.activePair,
       due: card.due.toISOString(),
       stability: card.stability, difficulty: card.difficulty,
       elapsed_days: card.elapsed_days, scheduled_days: card.scheduled_days,
@@ -79,7 +81,7 @@ class MemoryDB implements DB {
   async getDueCards(limit: number) {
     const now = new Date().toISOString();
     return [...this.cards.values()]
-      .filter(c => c.due <= now && !c.buried)
+      .filter(c => c.due <= now && !c.buried && c.pair === this.activePair)
       .sort((a, b) => a.due.localeCompare(b.due))
       .slice(0, limit);
   }
@@ -98,7 +100,7 @@ class MemoryDB implements DB {
   }
 
   private onboarding: { source: string; target: string } | null = null;
-  private userLevel = { level: 'A0', correct_streak: 0, mistakes_in_window: 0, fail_streak: 0 };
+  private userLevels: Map<string, any> = new Map();
 
   async getOnboarding() {
     return this.onboarding;
@@ -106,14 +108,15 @@ class MemoryDB implements DB {
 
   async setOnboarding(source: string, target: string) {
     this.onboarding = { source, target };
+    this.activePair = `${source}-${target}`;
   }
 
   async getLevel() {
-    return { ...this.userLevel };
+    return { ...(this.userLevels.get(this.activePair) ?? { level: 'A0', correct_streak: 0, mistakes_in_window: 0, fail_streak: 0 }) };
   }
 
   async updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number) {
-    this.userLevel = { level, correct_streak: correctStreak, mistakes_in_window: mistakesInWindow, fail_streak: failStreak };
+    this.userLevels.set(this.activePair, { level, correct_streak: correctStreak, mistakes_in_window: mistakesInWindow, fail_streak: failStreak });
   }
 
   async getDueCardsForLevel(level: string, limit: number) {
@@ -127,7 +130,7 @@ class MemoryDB implements DB {
     const idSet = new Set(wordIds);
     const now = new Date().toISOString();
     const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
-    const all = [...this.cards.values()].filter(c => idSet.has(c.word_id));
+    const all = [...this.cards.values()].filter(c => idSet.has(c.word_id) && c.pair === this.activePair);
 
     const newLimit = Math.max(1, Math.round(limit * 0.3));
     const reviewLimit = limit - newLimit;
@@ -159,7 +162,7 @@ class MemoryDB implements DB {
     const idSet = new Set(wordIds);
     const map = new Map<number, number>();
     for (const c of this.cards.values()) {
-      if (idSet.has(c.word_id) && c.type === 'word') {
+      if (idSet.has(c.word_id) && c.type === 'word' && c.pair === this.activePair) {
         map.set(c.word_id, c.reps);
       }
     }
@@ -187,13 +190,13 @@ class MemoryDB implements DB {
   async getTop5Failed() { return []; }
   async getMasteredCount() { return 0; }
   async getMasteredWordCount() {
-    return [...this.cards.values()].filter(c => c.type === 'word' && c.state >= 2 && c.stability > 10 && !c.buried).length;
+    return [...this.cards.values()].filter(c => c.type === 'word' && c.state >= 2 && c.stability > 10 && !c.buried && c.pair === this.activePair).length;
   }
   async getReviewedWordCount(level: string) {
     const { getWordsForLevel } = require('@/data/words');
     const levelWords = getWordsForLevel(level);
     const wordIds = new Set(levelWords.map((w: any) => w.id));
-    return [...this.cards.values()].filter(c => wordIds.has(c.word_id) && c.type === 'word' && (c.reps > 0 || c.buried)).length;
+    return [...this.cards.values()].filter(c => wordIds.has(c.word_id) && c.type === 'word' && (c.reps > 0 || c.buried) && c.pair === this.activePair).length;
   }
 
   async buryCard(wordId: number, type: string) {
@@ -203,10 +206,11 @@ class MemoryDB implements DB {
   }
 
   async resetAllProgress() {
-    this.cards.clear();
-    this.attempts = [];
-    this.userLevel = { level: 'A0', correct_streak: 0, mistakes_in_window: 0, fail_streak: 0 };
-    this.streak = { current_count: 0, last_date: null, longest_count: 0 };
+    // Reset only the active pair — other languages keep their progress.
+    for (const k of [...this.cards.keys()]) {
+      if (this.cards.get(k)?.pair === this.activePair) this.cards.delete(k);
+    }
+    this.userLevels.delete(this.activePair);
   }
 }
 
