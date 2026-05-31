@@ -317,7 +317,7 @@ class SQLiteDB implements DB {
     if (wordIds.length === 0) return 0;
     const placeholders = wordIds.map(() => '?').join(',');
     const row = await db.getFirstAsync<any>(
-      `SELECT COUNT(*) as cnt FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND reps > 0`,
+      `SELECT COUNT(*) as cnt FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND (reps > 0 OR buried = 1)`,
       wordIds
     );
     return row?.cnt ?? 0;
