@@ -17,7 +17,7 @@ import ExamMode from '@/components/ExamMode';
 import DoneScreen from '@/components/DoneScreen';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import ProgressMeter from '@/components/ProgressMeter';
-import { languages } from '@/lib/languages';
+import { languages, speechLang } from '@/lib/languages';
 import { getExamQuestionsFor } from '@/data/exams';
 
 const f = fsrs();
@@ -259,7 +259,7 @@ export default function LearnScreen() {
     const { frontLang } = getFrontBack(current);
     if (frontLang === learned) {
       const frontText = String(current.word[current.type === 'word' ? learned : `sentence_${learned}`]);
-      Speech.speak(frontText, { language: learned });
+      Speech.speak(frontText, { language: speechLang(learned) });
     }
   }, [currentIndex, queue.length, loading, done]);
 
@@ -444,7 +444,7 @@ export default function LearnScreen() {
     setTypingResult(dist <= 2 ? 'correct' : 'wrong');
     setRevealed(true);
     const { backLang } = getFrontBack(current);
-    Speech.speak(back, { language: backLang });
+    Speech.speak(back, { language: speechLang(backLang) });
   };
 
   const handleTypingNext = () => {
@@ -495,7 +495,7 @@ export default function LearnScreen() {
   const isWord = current.type === 'word';
 
   const speakTarget = () => {
-    Speech.speak(back, { language: backLang });
+    Speech.speak(back, { language: speechLang(backLang) });
   };
 
   const topicLang = direction[1] === 'hu' ? 'hu' : direction[1] === 'es' ? 'es' : direction[1] === 'de' ? 'de' : 'en';
@@ -608,7 +608,7 @@ export default function LearnScreen() {
         <View style={[styles.card, { backgroundColor: colors.card }]}>
           <View style={[styles.frontRow, { marginBottom: 16 }]}>
             <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
-            <Pressable onPress={() => Speech.speak(front, { language: frontLang })} style={styles.speakBtn}>
+            <Pressable onPress={() => Speech.speak(front, { language: speechLang(frontLang) })} style={styles.speakBtn}>
               <Text style={styles.speakIcon}>🔊</Text>
             </Pressable>
           </View>
@@ -696,14 +696,14 @@ export default function LearnScreen() {
             setRevealed(true);
             const [, learned] = direction;
             if (backLang === learned) {
-              Speech.speak(back, { language: backLang });
+              Speech.speak(back, { language: speechLang(backLang) });
             }
           }
         }}
       >
         <View style={styles.frontRow}>
           <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
-          <Pressable onPress={() => Speech.speak(front, { language: frontLang })} style={styles.speakBtn}>
+          <Pressable onPress={() => Speech.speak(front, { language: speechLang(frontLang) })} style={styles.speakBtn}>
             <Text style={styles.speakIcon}>🔊</Text>
           </Pressable>
         </View>
