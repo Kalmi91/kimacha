@@ -56,6 +56,9 @@ export default {
   settings: {
     changeLanguage: 'Nyelv Váltás',
   },
+  progress: {
+    wordsKnown: 'Ismert Szavak',
+  },
   feedback: {
     button: 'Visszajelzés',
     placeholder: 'Írd le a véleményed...',

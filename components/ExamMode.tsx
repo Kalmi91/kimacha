@@ -5,7 +5,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { LEVELS, type Level } from '@/data/words';
-import { getExamQuestionsForLevel, type ExamQuestion } from '@/data/exams';
+import { getExamQuestionsFor, type ExamQuestion } from '@/data/exams';
 import ExamCard from '@/components/ExamCard';
 import FeedbackButton from '@/components/FeedbackModal';
 
@@ -22,7 +22,7 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
   const s = t();
 
   const [questions] = useState<ExamQuestion[]>(() => {
-    return getExamQuestionsForLevel(level).sort(() => Math.random() - 0.5).slice(0, 10);
+    return getExamQuestionsFor(direction[1], level).sort(() => Math.random() - 0.5).slice(0, 10);
   });
   const [index, setIndex] = useState(0);
   const [correct, setCorrect] = useState(0);

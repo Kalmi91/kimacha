@@ -17,28 +17,31 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   const colors = Colors[theme];
   const s = t();
 
-  const [placed, setPlaced] = useState<string[]>([]);
-  const [available, setAvailable] = useState<string[]>(() =>
+  // Word bank shuffled once. Positions never change — clicking a word leaves a
+  // same-size dashed placeholder in its spot instead of reflowing the whole row.
+  const [bank] = useState<string[]>(() =>
     [...targetWords, ...trapWords].sort(() => Math.random() - 0.5)
   );
+  // placed = bank indices, in the order the user tapped them.
+  const [placed, setPlaced] = useState<number[]>([]);
   const [result, setResult] = useState<'correct' | 'wrong' | null>(null);
 
-  const addWord = (word: string, idx: number) => {
+  const usedSet = new Set(placed);
+
+  const addWord = (bankIdx: number) => {
     if (result) return;
-    setPlaced([...placed, word]);
-    setAvailable(available.filter((_, i) => i !== idx));
+    setPlaced([...placed, bankIdx]);
   };
 
-  const removeWord = (idx: number) => {
+  const removeWord = (posInPlaced: number) => {
     if (result) return;
-    const word = placed[idx];
-    setPlaced(placed.filter((_, i) => i !== idx));
-    setAvailable([...available, word]);
+    setPlaced(placed.filter((_, i) => i !== posInPlaced));
   };
 
   const handleCheck = () => {
-    const isCorrect = placed.length === targetWords.length &&
-      placed.every((w, i) => w.toLowerCase() === targetWords[i].toLowerCase());
+    const built = placed.map(i => bank[i]);
+    const isCorrect = built.length === targetWords.length &&
+      built.every((w, i) => w.toLowerCase() === targetWords[i].toLowerCase());
     setResult(isCorrect ? 'correct' : 'wrong');
   };
 
@@ -53,9 +56,9 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
           <Text style={[styles.placeholder, { color: colors.tabIconDefault }]}>...</Text>
         ) : (
           <View style={styles.wordRow}>
-            {placed.map((w, i) => (
-              <Pressable key={`${w}-${i}`} style={[styles.wordChip, styles.placedChip]} onPress={() => removeWord(i)}>
-                <Text style={styles.chipText}>{w}</Text>
+            {placed.map((bankIdx, pos) => (
+              <Pressable key={`placed-${bankIdx}-${pos}`} style={[styles.wordChip, styles.placedChip]} onPress={() => removeWord(pos)}>
+                <Text style={styles.chipText}>{bank[bankIdx]}</Text>
               </Pressable>
             ))}
           </View>
@@ -67,11 +70,18 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
       )}
 
       <View style={styles.wordRow}>
-        {available.map((w, i) => (
-          <Pressable key={`${w}-${i}`} style={[styles.wordChip, { backgroundColor: '#2563EB' }]} onPress={() => addWord(w, i)}>
-            <Text style={styles.chipText}>{w}</Text>
-          </Pressable>
-        ))}
+        {bank.map((w, idx) =>
+          usedSet.has(idx) ? (
+            // Same-size dashed slot keeps the layout fixed while the word is in use.
+            <View key={`slot-${idx}`} style={[styles.wordChip, styles.emptySlot, { borderColor: colors.tabIconDefault }]}>
+              <Text style={[styles.chipText, styles.hiddenText]}>{w}</Text>
+            </View>
+          ) : (
+            <Pressable key={`bank-${idx}`} style={[styles.wordChip, { backgroundColor: '#2563EB' }]} onPress={() => addWord(idx)}>
+              <Text style={styles.chipText}>{w}</Text>
+            </Pressable>
+          )
+        )}
       </View>
 
       {!result ? (
@@ -108,8 +118,11 @@ const styles = StyleSheet.create({
   placedArea: { borderWidth: 2, borderStyle: 'dashed', borderRadius: 12, padding: 12, minHeight: 50, width: '100%', justifyContent: 'center', alignItems: 'center' },
   placeholder: { fontSize: 16 },
   wordRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, justifyContent: 'center' },
-  wordChip: { paddingHorizontal: 14, paddingVertical: 8, borderRadius: 10, backgroundColor: '#2563EB' },
+  // Transparent border here keeps the chip box model identical to emptySlot so sizes match exactly.
+  wordChip: { paddingHorizontal: 14, paddingVertical: 8, borderRadius: 10, backgroundColor: '#2563EB', borderWidth: 2, borderColor: 'transparent' },
   placedChip: { backgroundColor: '#1E40AF' },
+  emptySlot: { backgroundColor: 'transparent', borderStyle: 'dashed' },
+  hiddenText: { opacity: 0 },
   chipText: { color: '#FFF', fontSize: 16, fontWeight: '600' },
   resultText: { fontSize: 18, fontWeight: '700' },
   correctLine: { fontSize: 14, fontWeight: '600', textAlign: 'center' },

@@ -1,5 +1,6 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { StyleSheet, Text, View, Pressable, ActivityIndicator, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
+import { useFocusEffect } from 'expo-router';
 import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
 
 import Colors from '@/constants/Colors';
@@ -9,12 +10,15 @@ import { words, type WordEntry, getWordsForLevel, getWordsForTopic, LEVELS, type
 import { getTopicsForLevel, hasTopics, getTopicName, type TopicDef } from '@/data/topics';
 import { t } from '@/lib/i18n';
 import { levenshtein } from '@/lib/levenshtein';
+import { consumePendingAction } from '@/lib/pendingAction';
 import FeedbackButton from '@/components/FeedbackModal';
 import * as Speech from 'expo-speech';
 import ExamMode from '@/components/ExamMode';
 import DoneScreen from '@/components/DoneScreen';
 import EasySentenceCard from '@/components/EasySentenceCard';
-import { getExamQuestionsForLevel } from '@/data/exams';
+import ProgressMeter from '@/components/ProgressMeter';
+import { languages } from '@/lib/languages';
+import { getExamQuestionsFor } from '@/data/exams';
 
 const f = fsrs();
 
@@ -54,7 +58,9 @@ export default function LearnScreen() {
   const [practiceResult, setPracticeResult] = useState<TypingResult>(null);
   const [practiceText, setPracticeText] = useState('');
   const [examMode, setExamMode] = useState(false);
+  const [examLevel, setExamLevel] = useState<Level | null>(null);
   const [masteredPct, setMasteredPct] = useState(0);
+  const [knownWords, setKnownWords] = useState(0);
   const [currentTopic, setCurrentTopic] = useState<TopicDef | null>(null);
   const [topicProgress, setTopicProgress] = useState<{ done: number; total: number; wordsInTopic: number; wordsReviewed: number } | null>(null);
   const [topicCompleteMsg, setTopicCompleteMsg] = useState<string | null>(null);
@@ -172,6 +178,7 @@ export default function LearnScreen() {
     const reviewedWords = await db.getReviewedWordCount(currentLevel);
     const pct = totalWords > 0 ? Math.round((reviewedWords / totalWords) * 100) : 0;
     setMasteredPct(pct);
+    setKnownWords(await db.getMasteredWordCount());
 
     const activeWordIds = activeWords.map(w => w.id);
     const rows = useTopics
@@ -200,6 +207,27 @@ export default function LearnScreen() {
     loadCards();
   }, []);
 
+  // On returning to the Learn tab, run any action the Settings tab queued:
+  // a full restart, or the exam of a chosen (previous) level.
+  useFocusEffect(
+    useCallback(() => {
+      const p = consumePendingAction();
+      if (!p) return;
+      if (p.type === 'restart') {
+        (async () => {
+          const db = getDb();
+          await db.resetAllProgress();
+          setExamMode(false);
+          setExamLevel(null);
+          await loadCards();
+        })();
+      } else if (p.type === 'exam') {
+        setExamLevel(p.examLevel);
+        setExamMode(true);
+      }
+    }, [])
+  );
+
   useEffect(() => {
     if (Platform.OS !== 'web') return;
     const handler = (e: KeyboardEvent) => {
@@ -223,6 +251,9 @@ export default function LearnScreen() {
   useEffect(() => {
     if (!current || loading || done) return;
     const [, learned] = direction;
+    // Easy sentence (tap-to-order): the learned-language sentence IS the answer the
+    // user must assemble, so don't auto-read it aloud — that would reveal the solution.
+    if (current.isEasySentence) return;
     const { frontLang } = getFrontBack(current);
     if (frontLang === learned) {
       const frontText = String(current.word[current.type === 'word' ? learned : `sentence_${learned}`]);
@@ -434,16 +465,16 @@ export default function LearnScreen() {
   if (examMode) {
     return (
       <ExamMode
-        level={level}
+        level={examLevel ?? level}
         direction={direction as [string, string]}
-        onLevelUp={(newLevel) => setLevel(newLevel)}
-        onExit={() => { setExamMode(false); loadCards(); }}
+        onLevelUp={(newLevel) => { setLevel(newLevel); setExamLevel(null); }}
+        onExit={() => { setExamMode(false); setExamLevel(null); loadCards(); }}
       />
     );
   }
 
   if (done) {
-    const examAvailable = getExamQuestionsForLevel(level).length > 0 && masteredPct >= 70;
+    const examAvailable = getExamQuestionsFor(direction[1], level).length > 0 && masteredPct >= 70;
     return (
       <DoneScreen
         reviewed={reviewed}
@@ -482,11 +513,18 @@ export default function LearnScreen() {
       <Text style={[styles.topicName, { color: colors.text }]} numberOfLines={1}>
         {getTopicName(currentTopic, topicLang)}
       </Text>
-      <Text style={[styles.topicCount, { color: colors.tabIconDefault }]}>
-        {topicProgress.wordsReviewed}/{topicProgress.wordsInTopic}
-      </Text>
     </View>
   ) : null;
+
+  const targetLangInfo = languages.find(l => l.code === direction[1]);
+  const progressMeter = (
+    <ProgressMeter
+      known={knownWords}
+      total={words.length}
+      langFlag={targetLangInfo?.flag ?? ''}
+      langName={targetLangInfo?.name ?? ''}
+    />
+  );
 
   const topicCompleteOverlay = topicCompleteMsg ? (
     <View style={[styles.levelUpOverlay, { backgroundColor: '#22C55E' }]}>
@@ -525,6 +563,7 @@ export default function LearnScreen() {
           </View>
         </View>
         {topicHeader}
+        {progressMeter}
 
         <EasySentenceCard
           key={`${current.wordId}-${currentIndex}`}
@@ -563,6 +602,7 @@ export default function LearnScreen() {
           </View>
         </View>
         {topicHeader}
+        {progressMeter}
 
         <View style={[styles.card, { backgroundColor: colors.card }]}>
           <View style={[styles.frontRow, { marginBottom: 16 }]}>
@@ -649,6 +689,7 @@ export default function LearnScreen() {
         </Text>
       </View>
       {topicHeader}
+      {progressMeter}
 
       <Pressable
         style={[styles.card, { backgroundColor: colors.card }]}
