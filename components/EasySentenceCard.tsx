@@ -51,7 +51,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
     <View style={[styles.card, { backgroundColor: colors.card }]}>
       <Text style={[styles.sourceText, { color: colors.text }]}>{sourceSentence}</Text>
 
-      <View style={[styles.placedArea, { borderColor: result === 'correct' ? '#22C55E' : result === 'wrong' ? '#EF4444' : colors.tabIconDefault }]}>
+      <View style={[styles.placedArea, { borderColor: result === 'correct' ? '#22C55E' : result === 'wrong' ? '#EF4444' : colors.tabIconDefault, borderStyle: result === 'correct' ? 'solid' : 'dashed' }]}>
         {placed.length === 0 ? (
           <Text style={[styles.placeholder, { color: colors.tabIconDefault }]}>...</Text>
         ) : (
@@ -86,7 +86,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
 
       {!result ? (
         <Pressable
-          style={[styles.checkBtn, { backgroundColor: colors.tint, opacity: canCheck ? 1 : 0.4 }]}
+          style={[styles.checkBtn, styles.checkBtnPrimary, { backgroundColor: colors.accent, opacity: canCheck ? 1 : 0.4 }]}
           onPress={handleCheck}
           disabled={!canCheck}
         >
@@ -127,6 +127,7 @@ const styles = StyleSheet.create({
   resultText: { fontSize: 18, fontWeight: '700' },
   correctLine: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
   checkBtn: { paddingHorizontal: 32, paddingVertical: 12, borderRadius: 14, marginTop: 8 },
+  checkBtnPrimary: { paddingHorizontal: 44, paddingVertical: 14, borderRadius: 24, alignSelf: 'center', shadowColor: '#000', shadowOffset: { width: 0, height: 3 }, shadowOpacity: 0.2, shadowRadius: 6, elevation: 4 },
   checkBtnText: { color: '#FFF', fontSize: 16, fontWeight: '700' },
   nextBtn: { paddingHorizontal: 32, paddingVertical: 12, borderRadius: 14, marginTop: 8, alignSelf: 'center' },
   nextBtnText: { color: '#FFF', fontSize: 16, fontWeight: '700', textAlign: 'center' },

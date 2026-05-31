@@ -70,13 +70,14 @@ function TranslateCard({ question, onResult, colors, s }: { question: TranslateQ
 
   const handleCheck = () => {
     if (!text.trim()) return;
-    const answer = text.trim().toLowerCase().replace(/[¡¿]/g, '');
-    const correct = question.target.toLowerCase().replace(/[¡¿]/g, '');
+    const answer = text.trim().toLowerCase().replace(/[¡¿]/g, '').replace(/[.]+$/, '').trim();
+    const correct = question.target.toLowerCase().replace(/[¡¿]/g, '').replace(/[.]+$/, '').trim();
     const dist = levenshtein(answer, correct);
 
-    const r = dist === 0 ? 'correct' : dist <= 2 ? 'almost' : 'wrong';
+    // Forgiving: ignore case + trailing period, accept up to 2-letter typos as fully correct.
+    const r = dist <= 2 ? 'correct' : 'wrong';
     setResult(r);
-    setTimeout(() => onResult(r !== 'wrong'), 1500);
+    setTimeout(() => onResult(r === 'correct'), 1500);
   };
 
   const resultColor = result === 'correct' ? '#22C55E' : result === 'almost' ? '#EAB308' : '#EF4444';
