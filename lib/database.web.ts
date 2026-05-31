@@ -193,7 +193,7 @@ class MemoryDB implements DB {
     const { getWordsForLevel } = require('@/data/words');
     const levelWords = getWordsForLevel(level);
     const wordIds = new Set(levelWords.map((w: any) => w.id));
-    return [...this.cards.values()].filter(c => wordIds.has(c.word_id) && c.type === 'word' && c.reps > 0 && !c.buried).length;
+    return [...this.cards.values()].filter(c => wordIds.has(c.word_id) && c.type === 'word' && (c.reps > 0 || c.buried)).length;
   }
 
   async buryCard(wordId: number, type: string) {

@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Pressable } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
+import { levenshtein } from '@/lib/levenshtein';
 
 interface Props {
   sourceSentence: string;
@@ -39,9 +40,12 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   };
 
   const handleCheck = () => {
-    const built = placed.map(i => bank[i]);
-    const isCorrect = built.length === targetWords.length &&
-      built.every((w, i) => w.toLowerCase() === targetWords[i].toLowerCase());
+    // Forgiving (same rule as the typing cards): ignore case + trailing
+    // punctuation, accept up to a 2-character difference as fully correct.
+    const norm = (str: string) => str.toLowerCase().replace(/[.!?¡¿,;:]+$/, '').trim();
+    const builtStr = norm(placed.map(i => bank[i]).join(' '));
+    const targetStr = norm(targetWords.join(' '));
+    const isCorrect = levenshtein(builtStr, targetStr) <= 2;
     setResult(isCorrect ? 'correct' : 'wrong');
   };
 
