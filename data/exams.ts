@@ -40,6 +40,12 @@ import hu_a2 from './exams/hu/a2.json';
 import hu_b1 from './exams/hu/b1.json';
 import hu_b2 from './exams/hu/b2.json';
 
+import de_a0 from './exams/de/a0.json';
+import de_a1 from './exams/de/a1.json';
+import de_a2 from './exams/de/a2.json';
+import de_b1 from './exams/de/b1.json';
+import de_b2 from './exams/de/b2.json';
+
 // Placement-exam question sets keyed by TARGET language, then level. Each target
 // language gets its own exam content. Languages not yet authored fall back to `es`.
 const examsByLang: Record<string, Record<string, ExamQuestion[]>> = {
@@ -66,13 +72,30 @@ const examsByLang: Record<string, Record<string, ExamQuestion[]>> = {
     B1: hu_b1 as ExamQuestion[],
     B2: hu_b2 as ExamQuestion[],
   },
+  de: {
+    A0: de_a0 as ExamQuestion[],
+    A1: de_a1 as ExamQuestion[],
+    A2: de_a2 as ExamQuestion[],
+    B1: de_b1 as ExamQuestion[],
+    B2: de_b2 as ExamQuestion[],
+  },
 };
 
+const LEVEL_ORDER = ['C2', 'C1', 'B2', 'B1', 'A2', 'A1', 'A0'];
+
 export function getExamQuestionsFor(targetLang: string, level: string): ExamQuestion[] {
+  // Stay in the TARGET language: only fall back to Spanish if the language has no
+  // content at all. Otherwise, for a level not yet authored (e.g. de C1), use the
+  // highest available level of the SAME language so the exam is never the wrong language.
   const langSet = examsByLang[targetLang] ?? examsByLang.es;
-  const set = langSet[level] ?? examsByLang.es[level] ?? [];
+  let set = langSet[level];
+  if (!set || set.length === 0) {
+    for (const lv of LEVEL_ORDER) {
+      if (langSet[lv] && langSet[lv].length > 0) { set = langSet[lv]; break; }
+    }
+  }
   // Only multiple-choice "gap" questions: they are in the TARGET language and
   // source-agnostic. The legacy es↔hu "translate" items would force Hungarian on
-  // non-Hungarian learners (e.g. en→es), so they are excluded from placement.
-  return set.filter(q => q.type === 'gap');
+  // non-Hungarian learners, so they are excluded from placement.
+  return (set ?? []).filter(q => q.type === 'gap');
 }
