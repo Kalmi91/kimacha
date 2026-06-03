@@ -49,3 +49,11 @@ data/words/backup_*/
 # Word generation work-in-progress files
 todo_*.txt
 word_batches/
+
+# local-only agent/dev scaffolding (kept locally, not for the public repo)
+CLAUDE.md
+AGENTS.md
+TASK.md
+ITER1.1-PLAN.txt
+docs/DEVOPS.md
+.claude/

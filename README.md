@@ -64,5 +64,3 @@ test (`components/__tests__/`). Run locally with `npm test`, in CI with
 2. `git tag v2.0.1 && git push --tags`.
 3. `android-release.yml` builds + signs the AAB/APK and publishes a GitHub
    Release with auto-generated notes.
-
-See [`docs/DEVOPS.md`](docs/DEVOPS.md) for the full build manifest and status.
