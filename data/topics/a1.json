@@ -340,5 +340,77 @@
     "name_en": "Home Activities",
     "name_es": "Actividades del Hogar",
     "name_de": "Haushaltsaktivitäten"
+  },
+  {
+    "id": "salud",
+    "order": 39,
+    "type": "vocab",
+    "name_hu": "Egészség és Orvos",
+    "name_en": "Health & Doctor",
+    "name_es": "Salud y Médico",
+    "name_de": "Gesundheit und Arzt"
+  },
+  {
+    "id": "dinero_banco",
+    "order": 40,
+    "type": "vocab",
+    "name_hu": "Pénz és Bank",
+    "name_en": "Money & Bank",
+    "name_es": "Dinero y Banco",
+    "name_de": "Geld und Bank"
+  },
+  {
+    "id": "ocio",
+    "order": 41,
+    "type": "vocab",
+    "name_hu": "Szabadidő és Sport",
+    "name_en": "Leisure & Sport",
+    "name_es": "Ocio y Deporte",
+    "name_de": "Freizeit und Sport"
+  },
+  {
+    "id": "viajes",
+    "order": 42,
+    "type": "vocab",
+    "name_hu": "Utazás és Hotel",
+    "name_en": "Travel & Hotel",
+    "name_es": "Viajes y Hotel",
+    "name_de": "Reisen und Hotel"
+  },
+  {
+    "id": "oficina_trabajo",
+    "order": 43,
+    "type": "vocab",
+    "name_hu": "Iroda és Munka",
+    "name_en": "Office & Work",
+    "name_es": "Oficina y Trabajo",
+    "name_de": "Büro und Arbeit"
+  },
+  {
+    "id": "rutina_diaria",
+    "order": 44,
+    "type": "vocab",
+    "name_hu": "Napi Rutin",
+    "name_en": "Daily Routine",
+    "name_es": "Rutina Diaria",
+    "name_de": "Tagesroutine"
+  },
+  {
+    "id": "ir_a_inf",
+    "order": 45,
+    "type": "grammar",
+    "name_hu": "Közeljövő: ir a + inf",
+    "name_en": "Near Future: ir a + inf",
+    "name_es": "Futuro Próximo: ir a + inf",
+    "name_de": "Nahzukunft: ir a + inf"
+  },
+  {
+    "id": "comparativos",
+    "order": 46,
+    "type": "grammar",
+    "name_hu": "Összehasonlítás (más/menos/tan)",
+    "name_en": "Comparatives (más/menos/tan)",
+    "name_es": "Comparativos (más/menos/tan)",
+    "name_de": "Komparativ (más/menos/tan)"
   }
 ]
