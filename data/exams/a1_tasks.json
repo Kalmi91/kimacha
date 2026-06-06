@@ -1,0 +1,115 @@
+[
+  { "id": 3001, "kind": "gap_mc", "topic": "ser_estar",
+    "sentence": "Mi hermana ____ médica.",
+    "options": ["es", "está", "tiene", "hay"], "correctIndex": 0 },
+
+  { "id": 3002, "kind": "gap_mc", "topic": "ser_estar",
+    "sentence": "Hoy yo ____ muy cansado.",
+    "options": ["soy", "estoy", "tengo", "hay"], "correctIndex": 1 },
+
+  { "id": 3003, "kind": "gap_mc", "topic": "articulos",
+    "sentence": "Quiero ____ libro de español.",
+    "options": ["un", "una", "unos", "el"], "correctIndex": 0 },
+
+  { "id": 3004, "kind": "gap_mc", "topic": "articulos",
+    "sentence": "Ella es ____ profesora muy buena.",
+    "options": ["un", "una", "unos", "unas"], "correctIndex": 1 },
+
+  { "id": 3005, "kind": "gap_mc", "topic": "hay_estar",
+    "sentence": "En la mesa ____ dos manzanas.",
+    "options": ["es", "está", "están", "hay"], "correctIndex": 3 },
+
+  { "id": 3006, "kind": "gap_mc", "topic": "hay_estar",
+    "sentence": "¿Dónde ____ el supermercado?",
+    "options": ["hay", "está", "es", "tiene"], "correctIndex": 1 },
+
+  { "id": 3007, "kind": "gap_mc", "topic": "presente_irregular",
+    "sentence": "Yo ____ veinte años.",
+    "options": ["soy", "estoy", "tengo", "hay"], "correctIndex": 2 },
+
+  { "id": 3008, "kind": "gap_mc", "topic": "gustar",
+    "sentence": "A mí ____ mucho el fútbol.",
+    "options": ["gusta", "gustan", "gusto", "gustas"], "correctIndex": 0 },
+
+  { "id": 3009, "kind": "gap_mc", "topic": "presente_ar",
+    "sentence": "Nosotros ____ español todos los días.",
+    "options": ["habla", "hablo", "hablamos", "hablan"], "correctIndex": 2 },
+
+  { "id": 3010, "kind": "gap_mc", "topic": "negacion",
+    "sentence": "Yo ____ tengo hermanos.",
+    "options": ["sí", "no", "ni", "nunca"], "correctIndex": 1 },
+
+  { "id": 3070, "kind": "match",
+    "pairs": [
+      { "left": "Abierto de 9 a 14", "right": "Open 9 to 14" },
+      { "left": "Prohibido fumar", "right": "No smoking" },
+      { "left": "Salida", "right": "Exit" },
+      { "left": "Rebajas", "right": "Sales" }
+    ] },
+
+  { "id": 3071, "kind": "match",
+    "pairs": [
+      { "left": "Cerrado", "right": "Closed" },
+      { "left": "Entrada", "right": "Entrance" },
+      { "left": "Caja", "right": "Checkout" },
+      { "left": "Información", "right": "Information" }
+    ] },
+
+  { "id": 3072, "kind": "match",
+    "pairs": [
+      { "left": "Precio reducido", "right": "Reduced price" },
+      { "left": "Se busca", "right": "Wanted / Help wanted" },
+      { "left": "Se alquila", "right": "For rent" },
+      { "left": "Horario", "right": "Opening hours" }
+    ] },
+
+  { "id": 3073, "kind": "match",
+    "pairs": [
+      { "left": "Urgencias", "right": "Emergency" },
+      { "left": "Farmacia de guardia", "right": "24h pharmacy" },
+      { "left": "Consulta", "right": "Doctor's office" },
+      { "left": "Planta baja", "right": "Ground floor" }
+    ] },
+
+  { "id": 3090, "kind": "reading_mc",
+    "text": "Ana vive en Madrid. Trabaja en un hospital y le gusta el café.",
+    "question": "Where does Ana work?",
+    "options": ["In a hospital", "In a café", "In a school", "At home"],
+    "correctIndex": 0 },
+
+  { "id": 3091, "kind": "reading_mc",
+    "text": "Luis tiene dieciséis años. Estudia en una escuela en Barcelona. Tiene tres hermanos y un perro.",
+    "question": "How many brothers does Luis have?",
+    "options": ["One", "Two", "Three", "Four"],
+    "correctIndex": 2 },
+
+  { "id": 3092, "kind": "reading_mc",
+    "text": "María trabaja en una tienda de ropa. El lunes no trabaja. Le gustan mucho los libros.",
+    "question": "What does María do on Mondays?",
+    "options": ["She works in a shop", "She doesn't work", "She reads books", "She studies"],
+    "correctIndex": 1 },
+
+  { "id": 3093, "kind": "reading_mc",
+    "text": "El mercado abre a las ocho de la mañana y cierra a las dos de la tarde. Los domingos está cerrado.",
+    "question": "When is the market closed?",
+    "options": ["In the morning", "At 2pm", "On Sundays", "At 8am"],
+    "correctIndex": 2 },
+
+  { "id": 3094, "kind": "reading_mc",
+    "text": "Pedro y Carmen comen en un restaurante. Pedro pide el menú del día. Carmen pide una ensalada.",
+    "question": "What does Carmen order?",
+    "options": ["The set menu", "A salad", "A coffee", "A pizza"],
+    "correctIndex": 1 },
+
+  { "id": 3095, "kind": "reading_mc",
+    "text": "Hola, soy Sofía. Vivo en Sevilla con mi familia. Tengo un gato y dos peces.",
+    "question": "Where does Sofía live?",
+    "options": ["Madrid", "Barcelona", "Sevilla", "Valencia"],
+    "correctIndex": 2 },
+
+  { "id": 3096, "kind": "reading_mc",
+    "text": "El tren para Valencia sale a las diez de la mañana. El billete cuesta veinte euros.",
+    "question": "How much does the ticket cost?",
+    "options": ["Ten euros", "Twenty euros", "Thirty euros", "Fifteen euros"],
+    "correctIndex": 1 }
+]
