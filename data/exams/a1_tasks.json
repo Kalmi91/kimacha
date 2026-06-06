@@ -111,5 +111,149 @@
     "text": "El tren para Valencia sale a las diez de la mañana. El billete cuesta veinte euros.",
     "question": "How much does the ticket cost?",
     "options": ["Ten euros", "Twenty euros", "Thirty euros", "Fifteen euros"],
-    "correctIndex": 1 }
+    "correctIndex": 1 },
+
+  { "id": 3011, "kind": "gap_mc", "topic": "presente_er",
+    "sentence": "Nosotros ____ pan todos los días.",
+    "options": ["come", "comemos", "comen", "como"], "correctIndex": 1 },
+
+  { "id": 3012, "kind": "gap_mc", "topic": "presente_ir",
+    "sentence": "Ellos ____ en Madrid con su familia.",
+    "options": ["vivo", "vives", "viven", "vivimos"], "correctIndex": 2 },
+
+  { "id": 3013, "kind": "gap_mc", "topic": "ir_verb",
+    "sentence": "Mañana yo ____ a la playa con Ana.",
+    "options": ["voy", "vas", "va", "van"], "correctIndex": 0 },
+
+  { "id": 3014, "kind": "gap_mc", "topic": "preposiciones",
+    "sentence": "El libro está ____ la mesa.",
+    "options": ["en", "de", "a", "con"], "correctIndex": 0 },
+
+  { "id": 3015, "kind": "gap_mc", "topic": "posesivos",
+    "sentence": "Nosotros vivimos aquí. Es ____ casa.",
+    "options": ["mi", "tu", "nuestra", "su"], "correctIndex": 2 },
+
+  { "id": 3016, "kind": "gap_mc", "topic": "interrogativos",
+    "sentence": "¿____ años tienes?",
+    "options": ["Qué", "Cuántos", "Cómo", "Dónde"], "correctIndex": 1 },
+
+  { "id": 3017, "kind": "gap_mc", "topic": "genero_numero",
+    "sentence": "Las ____ del jardín son rojas.",
+    "options": ["flor", "flores", "flora", "floras"], "correctIndex": 1 },
+
+  { "id": 3018, "kind": "gap_mc", "topic": "comparativos",
+    "sentence": "Juan es más alto ____ Pedro.",
+    "options": ["que", "como", "de", "más"], "correctIndex": 0 },
+
+  { "id": 3074, "kind": "match",
+    "pairs": [
+      { "left": "Llegadas", "right": "Arrivals" },
+      { "left": "Salidas", "right": "Departures" },
+      { "left": "Andén", "right": "Platform" },
+      { "left": "Billetes", "right": "Tickets" }
+    ] },
+
+  { "id": 3075, "kind": "match",
+    "pairs": [
+      { "left": "Panadería", "right": "Bakery" },
+      { "left": "Carnicería", "right": "Butcher's" },
+      { "left": "Frutería", "right": "Greengrocer's" },
+      { "left": "Pescadería", "right": "Fishmonger's" }
+    ] },
+
+  { "id": 3076, "kind": "match",
+    "pairs": [
+      { "left": "Menú del día", "right": "Menu of the day" },
+      { "left": "Carta", "right": "Menu" },
+      { "left": "Cuenta", "right": "Bill" },
+      { "left": "Propina", "right": "Tip" }
+    ] },
+
+  { "id": 3077, "kind": "match",
+    "pairs": [
+      { "left": "Aseos", "right": "Toilets" },
+      { "left": "No tocar", "right": "Do not touch" },
+      { "left": "Empujar", "right": "Push" },
+      { "left": "Tirar", "right": "Pull" }
+    ] },
+
+  { "id": 3078, "kind": "match",
+    "pairs": [
+      { "left": "Recepción", "right": "Reception" },
+      { "left": "Ascensor", "right": "Lift / Elevator" },
+      { "left": "Habitación", "right": "Room" },
+      { "left": "Desayuno incluido", "right": "Breakfast included" }
+    ] },
+
+  { "id": 3079, "kind": "match",
+    "pairs": [
+      { "left": "Peligro", "right": "Danger" },
+      { "left": "Prohibido el paso", "right": "No entry" },
+      { "left": "Cuidado", "right": "Caution" },
+      { "left": "Reservado", "right": "Reserved" }
+    ] },
+
+  { "id": 3080, "kind": "match",
+    "pairs": [
+      { "left": "Lunes a viernes", "right": "Monday to Friday" },
+      { "left": "Festivos", "right": "Public holidays" },
+      { "left": "24 horas", "right": "24 hours" },
+      { "left": "Solo por la tarde", "right": "Afternoons only" }
+    ] },
+
+  { "id": 3081, "kind": "match",
+    "pairs": [
+      { "left": "Cajero automático", "right": "ATM" },
+      { "left": "Efectivo", "right": "Cash" },
+      { "left": "Tarjeta", "right": "Card" },
+      { "left": "Gratis", "right": "Free" }
+    ] },
+
+  { "id": 3097, "kind": "reading_mc",
+    "text": "Carlos se levanta a las siete. Desayuna café con leche y va al trabajo en autobús.",
+    "question": "How does Carlos go to work?",
+    "options": ["By car", "By bus", "By train", "On foot"],
+    "correctIndex": 1 },
+
+  { "id": 3098, "kind": "reading_mc",
+    "text": "La biblioteca abre de lunes a viernes. Los fines de semana está cerrada. Hay muchos libros.",
+    "question": "When is the library open?",
+    "options": ["Every day", "Weekends", "Monday to Friday", "Only Sunday"],
+    "correctIndex": 2 },
+
+  { "id": 3099, "kind": "reading_mc",
+    "text": "Elena tiene una hermana y dos gatos. Vive en un piso pequeño en el centro de la ciudad.",
+    "question": "How many cats does Elena have?",
+    "options": ["Two", "One", "Three", "None"],
+    "correctIndex": 0 },
+
+  { "id": 3100, "kind": "reading_mc",
+    "text": "El restaurante La Plaza abre a la una. La especialidad es la paella. No abre los lunes.",
+    "question": "What is the restaurant's specialty?",
+    "options": ["Pizza", "Soup", "Paella", "Salad"],
+    "correctIndex": 2 },
+
+  { "id": 3101, "kind": "reading_mc",
+    "text": "Marta estudia medicina en la universidad. Por la tarde trabaja en una cafetería.",
+    "question": "What does Marta study?",
+    "options": ["Law", "Medicine", "Music", "Maths"],
+    "correctIndex": 1 },
+
+  { "id": 3102, "kind": "reading_mc",
+    "text": "Hace mucho calor en verano. A Juan le gusta nadar en el mar y comer helado.",
+    "question": "What does Juan like to eat?",
+    "options": ["Cake", "Fruit", "Bread", "Ice cream"],
+    "correctIndex": 3 },
+
+  { "id": 3103, "kind": "reading_mc",
+    "text": "El autobús número cinco va al aeropuerto. Sale cada veinte minutos desde la estación.",
+    "question": "How often does the bus leave?",
+    "options": ["Every 10 minutes", "Every 20 minutes", "Every hour", "Every 5 minutes"],
+    "correctIndex": 1 },
+
+  { "id": 3104, "kind": "reading_mc",
+    "text": "Los niños van al parque por la tarde. Juegan al fútbol y montan en bicicleta.",
+    "question": "What do the children do in the park?",
+    "options": ["Read books", "Swim", "Play football and ride bikes", "Study"],
+    "correctIndex": 2 }
 ]
