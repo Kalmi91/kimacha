@@ -58,8 +58,8 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
         <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
         <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>{s.done.streak}</Text>
       </View>
-      <Text style={[styles.masteredText, { color: masteredPct >= 70 ? '#22C55E' : colors.tabIconDefault }]}>
-        {level}: {masteredPct}% {masteredPct < 70 ? '(vizsga: 70%)' : '✓'}
+      <Text style={[styles.masteredText, { color: masteredPct >= 80 ? '#22C55E' : colors.tabIconDefault }]}>
+        {level}: {masteredPct}% {masteredPct < 80 ? '(vizsga: 80%)' : '✓'}
       </Text>
       {examAvailable && (
         <Pressable style={[styles.examBtn, { backgroundColor: colors.accent, marginTop: 20 }]} onPress={onStartExam}>

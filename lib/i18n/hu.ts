@@ -41,6 +41,8 @@ export default {
   },
   exam: {
     tag: 'Vizsga',
+    unlocked: 'Vizsga feloldva!',
+    unlockedCta: 'Vizsga Megkezdése',
   },
   topic: {
     progress: (current: number, total: number) => `Téma ${current}/${total}`,
