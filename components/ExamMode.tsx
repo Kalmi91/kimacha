@@ -8,6 +8,9 @@ import { LEVELS, type Level } from '@/data/words';
 import { getExamQuestionsFor, type ExamQuestion } from '@/data/exams';
 import ExamCard from '@/components/ExamCard';
 import ExamWordCard from '@/components/ExamWordCard';
+import ExamSentTypeCard from '@/components/ExamSentTypeCard';
+import ExamMatchCard from '@/components/ExamMatchCard';
+import ExamReadingCard from '@/components/ExamReadingCard';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import FeedbackButton from '@/components/FeedbackModal';
 import { buildExam, type ExamItem } from '@/lib/examBuilder';
@@ -157,18 +160,32 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
       );
     }
 
-    // sent_type, gap_mc, match, reading_mc: rendered in later commits;
-    // fall back to a placeholder that always requires manual continue.
-    return (
-      <View key={index} style={[styles.placeholderCard, { backgroundColor: colors.card }]}>
-        <Text style={[styles.placeholderText, { color: colors.text }]}>
-          {item.kind}: {item.kind === 'sent_type' ? item.prompt : '...'}
-        </Text>
-        <Pressable style={[styles.btn, { backgroundColor: colors.tint }]} onPress={() => handleResult(true)}>
-          <Text style={styles.btnText}>→</Text>
-        </Pressable>
-      </View>
-    );
+    if (item.kind === 'sent_type') {
+      return <ExamSentTypeCard key={index} item={item} onResult={handleResult} />;
+    }
+
+    if (item.kind === 'gap_mc') {
+      // Reuse ExamCard gap format — convert ExamItem gap_mc to ExamQuestion gap shape.
+      const gapQuestion: import('@/data/exams').GapQuestion = {
+        id: 0,
+        level: level,
+        type: 'gap',
+        sentence: item.sentence,
+        options: item.options,
+        correctIndex: item.correctIndex,
+      };
+      return <ExamCard key={index} question={gapQuestion} onResult={handleResult} />;
+    }
+
+    if (item.kind === 'match') {
+      return <ExamMatchCard key={index} item={item} onResult={handleResult} />;
+    }
+
+    if (item.kind === 'reading_mc') {
+      return <ExamReadingCard key={index} item={item} onResult={handleResult} />;
+    }
+
+    return null;
   };
 
   return (
@@ -209,6 +226,4 @@ const styles = StyleSheet.create({
   btnRow: { flexDirection: 'row', gap: 16, justifyContent: 'center' },
   btn: { paddingHorizontal: 32, paddingVertical: 14, borderRadius: 14, minWidth: 120, alignItems: 'center' },
   btnText: { color: '#FFF', fontSize: 18, fontWeight: '700' },
-  placeholderCard: { borderRadius: 20, padding: 24, alignItems: 'center', gap: 16, minHeight: 200, justifyContent: 'center' },
-  placeholderText: { fontSize: 16, textAlign: 'center' },
 });
