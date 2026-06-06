@@ -9,6 +9,8 @@ import { getExamQuestionsFor, type ExamQuestion } from '@/data/exams';
 import ExamCard from '@/components/ExamCard';
 import FeedbackButton from '@/components/FeedbackModal';
 
+const MAX_LIVES = 5;
+
 interface Props {
   level: Level;
   direction: [string, string];
@@ -21,45 +23,87 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
   const colors = Colors[theme];
   const s = t();
 
-  const [questions] = useState<ExamQuestion[]>(() => {
-    return getExamQuestionsFor(direction[1], level).sort(() => Math.random() - 0.5).slice(0, 10);
-  });
+  const buildQuestions = (): ExamQuestion[] =>
+    getExamQuestionsFor(direction[1], level).sort(() => Math.random() - 0.5).slice(0, 10);
+
+  const [questions, setQuestions] = useState<ExamQuestion[]>(() => buildQuestions());
   const [index, setIndex] = useState(0);
-  const [correct, setCorrect] = useState(0);
-  const [done, setDone] = useState(false);
+  const [livesLeft, setLivesLeft] = useState(MAX_LIVES);
+  const [passed, setPassed] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   const total = questions.length;
-  const passNeeded = Math.ceil(total * 0.9);
 
   const handleResult = async (isCorrect: boolean) => {
-    const newCorrect = correct + (isCorrect ? 1 : 0);
-    setCorrect(newCorrect);
+    const newLives = isCorrect ? livesLeft : livesLeft - 1;
+
+    if (!isCorrect && newLives === 0) {
+      // 5th mistake — fail
+      setLivesLeft(0);
+      setFailed(true);
+      return;
+    }
+
+    setLivesLeft(newLives);
+
     if (index + 1 >= total) {
-      setDone(true);
-      if (newCorrect >= passNeeded) {
-        const levelIdx = LEVELS.indexOf(level);
-        if (levelIdx < LEVELS.length - 1) {
-          const newLevel = LEVELS[levelIdx + 1];
-          const db = getDb();
-          await db.updateLevel(newLevel, 0, 0, 0);
-          onLevelUp(newLevel);
-        }
+      // Finished with at least 1 life remaining
+      setPassed(true);
+      const levelIdx = LEVELS.indexOf(level);
+      if (levelIdx < LEVELS.length - 1) {
+        const newLevel = LEVELS[levelIdx + 1];
+        const db = getDb();
+        await db.updateLevel(newLevel, 0, 0, 0);
+        onLevelUp(newLevel);
       }
     } else {
       setIndex(index + 1);
     }
   };
 
-  if (done) {
-    const passed = correct >= passNeeded;
+  const handleRetry = () => {
+    setQuestions(buildQuestions());
+    setIndex(0);
+    setLivesLeft(MAX_LIVES);
+    setPassed(false);
+    setFailed(false);
+  };
+
+  // FAIL screen
+  if (failed) {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
-        <Text style={styles.doneEmoji}>{passed ? '🏆' : '📚'}</Text>
-        <Text style={[styles.title, { color: colors.text }]}>
-          {passed ? `${level} ↑` : 'Még nem, de közel vagy!'}
-        </Text>
+        <Text style={styles.doneEmoji}>📚</Text>
+        <Text style={[styles.title, { color: colors.text }]}>Elfogytak az életek</Text>
         <Text style={[styles.subtitle, { color: colors.tabIconDefault }]}>
-          {correct}/{total}
+          {index + 1}/{total}
+        </Text>
+        <View style={styles.btnRow}>
+          <Pressable
+            style={[styles.btn, { backgroundColor: colors.accent }]}
+            onPress={handleRetry}
+          >
+            <Text style={styles.btnText}>Újra</Text>
+          </Pressable>
+          <Pressable
+            style={[styles.btn, { backgroundColor: colors.tint }]}
+            onPress={onExit}
+          >
+            <Text style={styles.btnText}>Kilépés</Text>
+          </Pressable>
+        </View>
+      </View>
+    );
+  }
+
+  // PASS screen
+  if (passed) {
+    return (
+      <View style={[styles.container, { backgroundColor: colors.background }]}>
+        <Text style={styles.doneEmoji}>🏆</Text>
+        <Text style={[styles.title, { color: colors.text }]}>{level} ↑</Text>
+        <Text style={[styles.subtitle, { color: colors.tabIconDefault }]}>
+          {total}/{total}
         </Text>
         <Pressable
           style={[styles.btn, { backgroundColor: colors.tint }]}
@@ -72,6 +116,8 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
   }
 
   const eq = questions[index];
+  const livesDisplay = '❤️'.repeat(livesLeft) + '🖤'.repeat(MAX_LIVES - livesLeft);
+
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <View style={styles.header}>
@@ -87,6 +133,7 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
           {index + 1}/{total}
         </Text>
       </View>
+      <Text style={styles.lives}>{livesDisplay}</Text>
       {eq && <ExamCard key={index} question={eq} onResult={handleResult} />}
       <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`exam:${index + 1}`} />
     </View>
@@ -102,9 +149,11 @@ const styles = StyleSheet.create({
   badge: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 8 },
   badgeText: { color: '#FFF', fontSize: 14, fontWeight: '800' },
   counter: { fontSize: 14 },
+  lives: { fontSize: 22, textAlign: 'center', marginBottom: 12, marginTop: 60 },
   doneEmoji: { fontSize: 64, textAlign: 'center', marginBottom: 16 },
   title: { fontSize: 28, fontWeight: '700', textAlign: 'center', marginBottom: 8 },
   subtitle: { fontSize: 16, textAlign: 'center', marginBottom: 24 },
-  btn: { paddingHorizontal: 32, paddingVertical: 14, borderRadius: 14, minWidth: 160, alignItems: 'center', alignSelf: 'center' },
+  btnRow: { flexDirection: 'row', gap: 16, justifyContent: 'center' },
+  btn: { paddingHorizontal: 32, paddingVertical: 14, borderRadius: 14, minWidth: 120, alignItems: 'center' },
   btnText: { color: '#FFF', fontSize: 18, fontWeight: '700' },
 });
