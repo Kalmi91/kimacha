@@ -7,7 +7,10 @@ import { getDb } from '@/lib/database';
 import { LEVELS, type Level } from '@/data/words';
 import { getExamQuestionsFor, type ExamQuestion } from '@/data/exams';
 import ExamCard from '@/components/ExamCard';
+import ExamWordCard from '@/components/ExamWordCard';
+import EasySentenceCard from '@/components/EasySentenceCard';
 import FeedbackButton from '@/components/FeedbackModal';
+import { buildExam, type ExamItem } from '@/lib/examBuilder';
 
 const MAX_LIVES = 5;
 
@@ -18,27 +21,36 @@ interface Props {
   onExit: () => void;
 }
 
+/** True if the level has a generated exam (A0 or A1). */
+function isGeneratedLevel(level: Level): boolean {
+  return level === 'A0' || level === 'A1';
+}
+
 export default function ExamMode({ level, direction, onLevelUp, onExit }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
 
-  const buildQuestions = (): ExamQuestion[] =>
+  const useGenerated = isGeneratedLevel(level);
+
+  // For A0/A1: use examBuilder items; for higher levels: use legacy ExamQuestion list.
+  const buildItems = (): ExamItem[] => buildExam(level as 'A0' | 'A1', `${direction[0]}-${direction[1]}`);
+  const buildLegacyQuestions = (): ExamQuestion[] =>
     getExamQuestionsFor(direction[1], level).sort(() => Math.random() - 0.5).slice(0, 10);
 
-  const [questions, setQuestions] = useState<ExamQuestion[]>(() => buildQuestions());
+  const [genItems, setGenItems] = useState<ExamItem[]>(() => useGenerated ? buildItems() : []);
+  const [legacyQuestions, setLegacyQuestions] = useState<ExamQuestion[]>(() => useGenerated ? [] : buildLegacyQuestions());
   const [index, setIndex] = useState(0);
   const [livesLeft, setLivesLeft] = useState(MAX_LIVES);
   const [passed, setPassed] = useState(false);
   const [failed, setFailed] = useState(false);
 
-  const total = questions.length;
+  const total = useGenerated ? genItems.length : legacyQuestions.length;
 
   const handleResult = async (isCorrect: boolean) => {
     const newLives = isCorrect ? livesLeft : livesLeft - 1;
 
     if (!isCorrect && newLives === 0) {
-      // 5th mistake — fail
       setLivesLeft(0);
       setFailed(true);
       return;
@@ -47,7 +59,6 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
     setLivesLeft(newLives);
 
     if (index + 1 >= total) {
-      // Finished with at least 1 life remaining
       setPassed(true);
       const levelIdx = LEVELS.indexOf(level);
       if (levelIdx < LEVELS.length - 1) {
@@ -62,7 +73,11 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
   };
 
   const handleRetry = () => {
-    setQuestions(buildQuestions());
+    if (useGenerated) {
+      setGenItems(buildItems());
+    } else {
+      setLegacyQuestions(buildLegacyQuestions());
+    }
     setIndex(0);
     setLivesLeft(MAX_LIVES);
     setPassed(false);
@@ -115,8 +130,46 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
     );
   }
 
-  const eq = questions[index];
   const livesDisplay = '❤️'.repeat(livesLeft) + '🖤'.repeat(MAX_LIVES - livesLeft);
+
+  const renderItem = () => {
+    if (!useGenerated) {
+      const eq = legacyQuestions[index];
+      return eq ? <ExamCard key={index} question={eq} onResult={handleResult} /> : null;
+    }
+
+    const item = genItems[index];
+    if (!item) return null;
+
+    if (item.kind === 'word_type') {
+      return <ExamWordCard key={index} item={item} onResult={handleResult} />;
+    }
+
+    if (item.kind === 'sent_order') {
+      return (
+        <EasySentenceCard
+          key={index}
+          sourceSentence={item.prompt}
+          targetWords={item.answerTokens}
+          trapWords={item.distractors}
+          onResult={handleResult}
+        />
+      );
+    }
+
+    // sent_type, gap_mc, match, reading_mc: rendered in later commits;
+    // fall back to a placeholder that always requires manual continue.
+    return (
+      <View key={index} style={[styles.placeholderCard, { backgroundColor: colors.card }]}>
+        <Text style={[styles.placeholderText, { color: colors.text }]}>
+          {item.kind}: {item.kind === 'sent_type' ? item.prompt : '...'}
+        </Text>
+        <Pressable style={[styles.btn, { backgroundColor: colors.tint }]} onPress={() => handleResult(true)}>
+          <Text style={styles.btnText}>→</Text>
+        </Pressable>
+      </View>
+    );
+  };
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
@@ -134,7 +187,7 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
         </Text>
       </View>
       <Text style={styles.lives}>{livesDisplay}</Text>
-      {eq && <ExamCard key={index} question={eq} onResult={handleResult} />}
+      {renderItem()}
       <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`exam:${index + 1}`} />
     </View>
   );
@@ -156,4 +209,6 @@ const styles = StyleSheet.create({
   btnRow: { flexDirection: 'row', gap: 16, justifyContent: 'center' },
   btn: { paddingHorizontal: 32, paddingVertical: 14, borderRadius: 14, minWidth: 120, alignItems: 'center' },
   btnText: { color: '#FFF', fontSize: 18, fontWeight: '700' },
+  placeholderCard: { borderRadius: 20, padding: 24, alignItems: 'center', gap: 16, minHeight: 200, justifyContent: 'center' },
+  placeholderText: { fontSize: 16, textAlign: 'center' },
 });
