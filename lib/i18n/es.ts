@@ -41,6 +41,8 @@ export default {
   },
   exam: {
     tag: 'Examen',
+    unlocked: '¡Examen desbloqueado!',
+    unlockedCta: 'Comenzar Examen',
   },
   topic: {
     progress: (current: number, total: number) => `Tema ${current}/${total}`,

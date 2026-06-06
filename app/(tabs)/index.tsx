@@ -177,8 +177,10 @@ export default function LearnScreen() {
 
     const totalWords = levelWords.length;
     const reviewedWords = await db.getReviewedWordCount(currentLevel);
+    const masteredWords = await db.getMasteredWordCount(currentLevel);
     const pct = totalWords > 0 ? Math.round((reviewedWords / totalWords) * 100) : 0;
-    setMasteredPct(pct);
+    const mPct = totalWords > 0 ? Math.round((masteredWords / totalWords) * 100) : 0;
+    setMasteredPct(mPct);
     setKnownWords(reviewedWords);
     setLevelTotal(totalWords);
 
@@ -328,8 +330,9 @@ export default function LearnScreen() {
       const { getWordsForLevel: gwfl } = require('@/data/words');
       const lvlWords = gwfl(currentLevel);
       const rvw = await db.getReviewedWordCount(currentLevel);
-      const newPct = lvlWords.length > 0 ? Math.round((rvw / lvlWords.length) * 100) : 0;
-      setMasteredPct(newPct);
+      const mst = await db.getMasteredWordCount(currentLevel);
+      const newMPct = lvlWords.length > 0 ? Math.round((mst / lvlWords.length) * 100) : 0;
+      setMasteredPct(newMPct);
       setKnownWords(rvw);
       setLevelTotal(lvlWords.length);
 
@@ -475,7 +478,7 @@ export default function LearnScreen() {
   }
 
   if (done) {
-    const examAvailable = getExamQuestionsFor(direction[1], level).length > 0 && masteredPct >= 70;
+    const examAvailable = getExamQuestionsFor(direction[1], level).length > 0 && masteredPct >= 80;
     return (
       <DoneScreen
         reviewed={reviewed}
@@ -527,6 +530,13 @@ export default function LearnScreen() {
     />
   );
 
+  const examBanner = masteredPct >= 80 ? (
+    <Pressable style={styles.examBanner} onPress={() => setExamMode(true)}>
+      <Text style={styles.examBannerTitle}>{s.exam.unlocked}</Text>
+      <Text style={styles.examBannerCta}>{s.exam.unlockedCta} →</Text>
+    </Pressable>
+  ) : null;
+
   const topicCompleteOverlay = topicCompleteMsg ? (
     <View style={[styles.levelUpOverlay, { backgroundColor: '#22C55E' }]}>
       <Text style={styles.levelUpText}>{topicCompleteMsg}</Text>
@@ -565,6 +575,7 @@ export default function LearnScreen() {
         </View>
         {topicHeader}
         {progressMeter}
+        {examBanner}
 
         <EasySentenceCard
           key={`${current.wordId}-${currentIndex}`}
@@ -604,6 +615,7 @@ export default function LearnScreen() {
         </View>
         {topicHeader}
         {progressMeter}
+        {examBanner}
 
         <View style={[styles.card, { backgroundColor: colors.card }]}>
           <View style={[styles.frontRow, { marginBottom: 16 }]}>
@@ -688,6 +700,7 @@ export default function LearnScreen() {
       </View>
       {topicHeader}
       {progressMeter}
+      {examBanner}
 
       <Pressable
         style={[styles.card, { backgroundColor: colors.card }]}
@@ -999,5 +1012,24 @@ const styles = StyleSheet.create({
   topicCount: {
     fontSize: 12,
     fontWeight: '500',
+  },
+  examBanner: {
+    backgroundColor: '#F59E0B',
+    borderRadius: 14,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    marginBottom: 12,
+    alignItems: 'center',
+  },
+  examBannerTitle: {
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: '700',
+    marginBottom: 2,
+  },
+  examBannerCta: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '800',
   },
 });
