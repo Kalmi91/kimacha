@@ -141,7 +141,7 @@ function buildA0Exam(pair: string): ExamItem[] {
   return shuffle(items);
 }
 
-/** Build exam items for A1 level. Returns exactly 20 items per spec §7. */
+/** Build exam items for A1 level. Returns exactly 35 items per spec §7 (exam-realistic mix). */
 function buildA1Exam(pair: string): ExamItem[] {
   const a1Words = getWordsForLevel('A1');
   const withSentences = a1Words.filter((w: any) => w.sentence_es && w.sentence_en);
@@ -161,9 +161,9 @@ function buildA1Exam(pair: string): ExamItem[] {
 
   const items: ExamItem[] = [];
 
-  // Mirror of A0 structure (17 items) using A1 content
-  // A: word_type es→en × 3
-  for (let i = 0; i < 3; i++) {
+  // Generated drills (20), A1 content
+  // A: word_type es→en × 4
+  for (let i = 0; i < 4; i++) {
     const w = pickWord();
     if (!w) break;
     usedWordIds.add(w.id);
@@ -178,8 +178,8 @@ function buildA1Exam(pair: string): ExamItem[] {
     items.push({ kind: 'word_type', dir: ['en', 'es'], prompt: String(w.en), answer: String(w.es) });
   }
 
-  // C: sent_order es→en × 5
-  for (let i = 0; i < 5; i++) {
+  // C: sent_order es→en × 6
+  for (let i = 0; i < 6; i++) {
     const w = pickSentenceWord();
     if (!w) break;
     usedSentenceIds.add(w.id);
@@ -194,8 +194,8 @@ function buildA1Exam(pair: string): ExamItem[] {
     });
   }
 
-  // D: sent_order en→es × 3
-  for (let i = 0; i < 3; i++) {
+  // D: sent_order en→es × 4
+  for (let i = 0; i < 4; i++) {
     const w = pickSentenceWord();
     if (!w) break;
     usedSentenceIds.add(w.id);
@@ -236,7 +236,7 @@ function buildA1Exam(pair: string): ExamItem[] {
     });
   }
 
-  // 3 extra authored items: gap_mc + match + reading_mc (from a1_tasks.json)
+  // Authored DELE-style items (15): 6 gap_mc + 3 match + 6 reading_mc (from a1_tasks.json)
   try {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const tasks: any[] = require('@/data/exams/a1_tasks.json');
@@ -244,16 +244,13 @@ function buildA1Exam(pair: string): ExamItem[] {
     const matchItems = tasks.filter((t: any) => t.kind === 'match');
     const readingItems = tasks.filter((t: any) => t.kind === 'reading_mc');
 
-    const gap = sample(gapItems, 1)[0];
-    if (gap) {
+    for (const gap of sample(gapItems, 6)) {
       items.push({ kind: 'gap_mc', sentence: gap.sentence, options: gap.options, correctIndex: gap.correctIndex });
     }
-    const match = sample(matchItems, 1)[0];
-    if (match) {
-      items.push({ kind: 'match', pairs: match.pairs });
+    for (const m of sample(matchItems, 3)) {
+      items.push({ kind: 'match', pairs: m.pairs });
     }
-    const reading = sample(readingItems, 1)[0];
-    if (reading) {
+    for (const reading of sample(readingItems, 6)) {
       items.push({ kind: 'reading_mc', text: reading.text, question: reading.question, options: reading.options, correctIndex: reading.correctIndex });
     }
   } catch {

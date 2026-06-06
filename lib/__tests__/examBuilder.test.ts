@@ -58,25 +58,40 @@ describe('buildExam A0 (spec §5 — 17 items)', () => {
   });
 });
 
-describe('buildExam A1 (spec §7 — 20 items)', () => {
-  it('returns exactly 20 items (17 mirror + 3 authored), stable across many runs', () => {
+describe('buildExam A1 (spec §7 — 35 items, exam-realistic mix)', () => {
+  it('returns exactly 35 items (20 generated + 15 authored), stable across many runs', () => {
     for (let i = 0; i < 25; i++) {
-      expect(buildExam('A1', PAIR)).toHaveLength(20);
+      expect(buildExam('A1', PAIR)).toHaveLength(35);
     }
   });
 
-  it('includes exactly one gap_mc, one match and one reading_mc (authored extras actually load)', () => {
+  it('matches the exam-realistic composition (20 generated + 15 authored)', () => {
     const k = countByKind(buildExam('A1', PAIR));
-    expect(k.gap_mc).toBe(1);
-    expect(k.match).toBe(1);
-    expect(k.reading_mc).toBe(1);
+    expect(k.word_type).toBe(6);
+    expect(k.sent_order).toBe(10);
+    expect(k.sent_type).toBe(4);
+    expect(k.gap_mc).toBe(6);
+    expect(k.match).toBe(3);
+    expect(k.reading_mc).toBe(6);
   });
 
-  it('never repeats a prompt within the generated (mirror) part', () => {
-    const prompts = buildExam('A1', PAIR)
-      .filter((it: any) => it.prompt)
-      .map((it: any) => it.prompt);
-    expect(new Set(prompts).size).toBe(prompts.length);
+  it('never repeats a prompt within the generated (drill) part', () => {
+    for (let i = 0; i < 10; i++) {
+      const prompts = buildExam('A1', PAIR)
+        .filter((it: any) => it.prompt)
+        .map((it: any) => it.prompt);
+      expect(new Set(prompts).size).toBe(prompts.length);
+    }
+  });
+
+  it('authored items are distinct within one exam (no repeated gap / reading)', () => {
+    for (let i = 0; i < 10; i++) {
+      const items = buildExam('A1', PAIR) as any[];
+      const gaps = items.filter((it) => it.kind === 'gap_mc').map((it) => it.sentence);
+      const reads = items.filter((it) => it.kind === 'reading_mc').map((it) => it.text);
+      expect(new Set(gaps).size).toBe(gaps.length);
+      expect(new Set(reads).size).toBe(reads.length);
+    }
   });
 });
 
