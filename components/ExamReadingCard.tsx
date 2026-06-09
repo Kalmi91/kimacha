@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Pressable, ScrollView } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
+import { shuffleOptions, hashString } from '@/lib/shuffle';
 import { type ExamItem } from '@/lib/examBuilder';
 
 type ReadingItem = Extract<ExamItem, { kind: 'reading_mc' }>;
@@ -19,12 +20,16 @@ export default function ExamReadingCard({ item, onResult }: Props) {
 
   const [selected, setSelected] = useState<number | null>(null);
   const [answered, setAnswered] = useState(false);
+  // Seeded shuffle so the correct option is not pinned to a fixed slot (FB2).
+  const [shuffled] = useState(() =>
+    shuffleOptions(item.options, item.correctIndex, hashString(item.question + item.options.join('|')))
+  );
 
   const handleSelect = (idx: number) => {
     if (answered) return;
     setSelected(idx);
     setAnswered(true);
-    const correct = idx === item.correctIndex;
+    const correct = idx === shuffled.correctIndex;
     setTimeout(() => onResult(correct), 1200);
   };
 
@@ -37,10 +42,10 @@ export default function ExamReadingCard({ item, onResult }: Props) {
       <View style={[styles.divider, { backgroundColor: colors.tabIconDefault }]} />
       <Text style={[styles.question, { color: colors.text }]}>{item.question}</Text>
       <View style={styles.options}>
-        {item.options.map((opt, idx) => {
+        {shuffled.options.map((opt, idx) => {
           let bg = optionColors[idx % optionColors.length];
           if (answered) {
-            if (idx === item.correctIndex) bg = '#22C55E';
+            if (idx === shuffled.correctIndex) bg = '#22C55E';
             else if (idx === selected) bg = '#EF4444';
             else bg = colors.tabIconDefault;
           }
