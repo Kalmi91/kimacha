@@ -4,6 +4,7 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { levenshtein } from '@/lib/levenshtein';
+import { shuffleOptions, hashString } from '@/lib/shuffle';
 import { type ExamQuestion, type GapQuestion, type TranslateQuestion } from '@/data/exams';
 
 interface Props {
@@ -25,12 +26,17 @@ export default function ExamCard({ question, onResult }: Props) {
 function GapCard({ question, onResult, colors, s }: { question: GapQuestion; onResult: (c: boolean) => void; colors: any; s: any }) {
   const [selected, setSelected] = useState<number | null>(null);
   const [answered, setAnswered] = useState(false);
+  // Seeded shuffle so the correct option is not pinned to slot A (FB2). Stable
+  // per question (seeded on its content), so it never reshuffles on re-render.
+  const [shuffled] = useState(() =>
+    shuffleOptions(question.options, question.correctIndex, hashString(question.sentence + question.options.join('|')))
+  );
 
   const handleSelect = (idx: number) => {
     if (answered) return;
     setSelected(idx);
     setAnswered(true);
-    const correct = idx === question.correctIndex;
+    const correct = idx === shuffled.correctIndex;
     setTimeout(() => onResult(correct), 1200);
   };
 
@@ -41,10 +47,10 @@ function GapCard({ question, onResult, colors, s }: { question: GapQuestion; onR
       <Text style={[styles.examTag, { color: colors.accent }]}>{s.exam.tag}</Text>
       <Text style={[styles.gapSentence, { color: colors.text }]}>{question.sentence}</Text>
       <View style={styles.optionsGrid}>
-        {question.options.map((opt, idx) => {
+        {shuffled.options.map((opt, idx) => {
           let bg = optionColors[idx];
           if (answered) {
-            if (idx === question.correctIndex) bg = '#22C55E';
+            if (idx === shuffled.correctIndex) bg = '#22C55E';
             else if (idx === selected) bg = '#EF4444';
             else bg = colors.tabIconDefault;
           }
