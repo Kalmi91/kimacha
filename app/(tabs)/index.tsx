@@ -10,6 +10,7 @@ import { words, type WordEntry, getWordsForLevel, getWordsForTopic, LEVELS, type
 import { getTopicsForLevel, hasTopics, getTopicName, type TopicDef } from '@/data/topics';
 import { t } from '@/lib/i18n';
 import { levenshtein } from '@/lib/levenshtein';
+import { nearMissDistractors } from '@/lib/distractors';
 import { consumePendingAction } from '@/lib/pendingAction';
 import FeedbackButton from '@/components/FeedbackModal';
 import * as Speech from 'expo-speech';
@@ -555,12 +556,10 @@ export default function LearnScreen() {
     const learnedSentence = String(current.word[`sentence_${learned}`]);
     const targetWordList = learnedSentence.replace(/[.!?¡¿,;:]/g, '').split(/\s+/).filter(Boolean);
     const levelWords = getWordsForLevel(level);
-    const sentenceWordsLower = new Set(targetWordList.map(w => w.toLowerCase()));
-    const traps = levelWords
-      .map(w => String(w[learned]).split(' / ')[0])
-      .filter(w => w && !sentenceWordsLower.has(w.toLowerCase()))
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 3);
+    // Near-miss distractors (FB1): sibling articles + same-stem/ending forms
+    // instead of random vocab, so the learner practises forms not random noise.
+    const vocab = levelWords.map(w => String(w[learned]).split(' / ')[0]);
+    const traps = nearMissDistractors(targetWordList, vocab, learned);
 
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
