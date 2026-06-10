@@ -4,7 +4,8 @@ import type { Level } from '@/data/words';
 // on focus. A module singleton works because the JS context is shared across tabs.
 export type PendingAction =
   | { type: 'restart' }
-  | { type: 'exam'; examLevel: Level };
+  | { type: 'exam'; examLevel: Level }
+  | { type: 'setLevel'; level: Level };
 
 let pending: PendingAction | null = null;
 

@@ -62,6 +62,9 @@ export default {
   master: {
     button: 'Meister',
     title: 'Stufe Wählen',
+    levels: 'Stufe Wechseln',
+    exams: 'Prüfungen',
+    restart: 'Neustart',
   },
   settings: {
     changeLanguage: 'Sprache Wechseln',

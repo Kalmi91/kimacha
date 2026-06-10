@@ -20,31 +20,37 @@ export default function SettingsScreen() {
     { label: '🌙 Dark', value: 'dark' },
   ];
 
-  const handleLevelSelect = (level: Level) => {
+  // Direct level switch — no exam gate (Master = free movement).
+  const handleLevelSwitch = (level: Level) => {
     setMasterVisible(false);
-    if (level === 'A0') {
-      // No level below A0 to test against — A0 means "restart the game from scratch".
-      Alert.alert(
-        'Újrakezdés',
-        'Biztos újra akarod kezdeni? Eltűnik az eddigi haladásod.',
-        [
-          { text: 'Nem', style: 'cancel' },
-          {
-            text: 'Igen',
-            style: 'destructive',
-            onPress: () => {
-              setPendingAction({ type: 'restart' });
-              router.navigate('/');
-            },
-          },
-        ]
-      );
-      return;
-    }
-    // A1+ : take the PREVIOUS level's exam; passing it unlocks the chosen level.
-    const idx = LEVELS.indexOf(level);
-    setPendingAction({ type: 'exam', examLevel: LEVELS[idx - 1] });
+    setPendingAction({ type: 'setLevel', level });
     router.navigate('/');
+  };
+
+  // Start the chosen level's exam directly; passing it levels up as usual.
+  const handleExamSelect = (level: Level) => {
+    setMasterVisible(false);
+    setPendingAction({ type: 'exam', examLevel: level });
+    router.navigate('/');
+  };
+
+  const handleRestart = () => {
+    setMasterVisible(false);
+    Alert.alert(
+      'Újrakezdés',
+      'Biztos újra akarod kezdeni? Eltűnik az eddigi haladásod.',
+      [
+        { text: 'Nem', style: 'cancel' },
+        {
+          text: 'Igen',
+          style: 'destructive',
+          onPress: () => {
+            setPendingAction({ type: 'restart' });
+            router.navigate('/');
+          },
+        },
+      ]
+    );
   };
 
   return (
@@ -86,6 +92,8 @@ export default function SettingsScreen() {
         <View style={styles.overlay}>
           <View style={[styles.modal, { backgroundColor: colors.card }]}>
             <Text style={[styles.modalTitle, { color: colors.text }]}>{s.master.title}</Text>
+
+            <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.master.levels}</Text>
             <View style={styles.levelGrid}>
               {LEVELS.map(lvl => {
                 const wordCount = getWordsForLevel(lvl).length;
@@ -93,14 +101,31 @@ export default function SettingsScreen() {
                   <Pressable
                     key={lvl}
                     style={[styles.levelOption, { backgroundColor: colors.tint }]}
-                    onPress={() => handleLevelSelect(lvl)}
+                    onPress={() => handleLevelSwitch(lvl)}
                   >
                     <Text style={styles.levelOptionText}>{lvl}</Text>
-                    <Text style={styles.levelWordCount}>{lvl === 'A0' ? 'Újrakezdés' : `${wordCount} szó`}</Text>
+                    <Text style={styles.levelWordCount}>{`${wordCount} szó`}</Text>
                   </Pressable>
                 );
               })}
             </View>
+
+            <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.master.exams}</Text>
+            <View style={styles.levelGrid}>
+              {LEVELS.map(lvl => (
+                <Pressable
+                  key={lvl}
+                  style={[styles.levelOption, styles.examOption]}
+                  onPress={() => handleExamSelect(lvl)}
+                >
+                  <Text style={styles.levelOptionText}>🎓 {lvl}</Text>
+                </Pressable>
+              ))}
+            </View>
+
+            <Pressable style={styles.restartBtn} onPress={handleRestart}>
+              <Text style={styles.restartText}>↺ {s.master.restart}</Text>
+            </Pressable>
             <Pressable onPress={() => setMasterVisible(false)}>
               <Text style={[styles.cancelText, { color: colors.tabIconDefault }]}>{s.feedback.cancel}</Text>
             </Pressable>
@@ -190,6 +215,28 @@ const styles = StyleSheet.create({
     color: 'rgba(255,255,255,0.7)',
     fontSize: 11,
     marginTop: 2,
+  },
+  sectionLabel: {
+    fontSize: 13,
+    fontWeight: '600',
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+    marginBottom: 8,
+  },
+  examOption: {
+    backgroundColor: '#1D4ED8',
+    paddingVertical: 10,
+  },
+  restartBtn: {
+    alignSelf: 'center',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    marginBottom: 8,
+  },
+  restartText: {
+    color: '#EF4444',
+    fontSize: 14,
+    fontWeight: '600',
   },
   cancelText: {
     textAlign: 'center',

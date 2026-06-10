@@ -252,6 +252,15 @@ export default function LearnScreen() {
       } else if (p.type === 'exam') {
         setExamLevel(p.examLevel);
         setExamMode(true);
+      } else if (p.type === 'setLevel') {
+        // Master: direct level switch, no exam gate.
+        (async () => {
+          const db = getDb();
+          await db.updateLevel(p.level, 0, 0, 0);
+          setExamMode(false);
+          setExamLevel(null);
+          await loadCards();
+        })();
       }
     }, [])
   );
