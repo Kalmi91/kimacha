@@ -373,7 +373,9 @@ export default function LearnScreen() {
         if (topicProgress && completedCount > topicProgress.done && activeTopic) {
           const s = t();
           const lang = direction[1] === 'hu' ? 'hu' : direction[1] === 'es' ? 'es' : direction[1] === 'de' ? 'de' : 'en';
-          const prevCompleted = topics[completedCount - 1];
+          // Free ordering: the just-finished topic is the one the user was
+          // studying, not the last one by order.
+          const prevCompleted = currentTopic ?? topics[completedCount - 1];
           if (prevCompleted) {
             // Sub-level celebration: check if ALL topics in the sub-level are now
             // complete (free ordering — cannot rely on "last topic" position).
