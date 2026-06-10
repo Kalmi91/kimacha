@@ -5,6 +5,7 @@ import { t } from '@/lib/i18n';
 import { type Level } from '@/data/words';
 import { type TopicDef, getTopicName, getSubLevelForTopic, getTopicsForSubLevel, getSubLevelName } from '@/data/topics';
 import FeedbackButton from '@/components/FeedbackModal';
+import { useRouter } from 'expo-router';
 
 interface TopicProgress {
   done: number;
@@ -29,6 +30,7 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
+  const router = useRouter();
   const topicLang = direction[1] === 'hu' ? 'hu' : direction[1] === 'es' ? 'es' : direction[1] === 'de' ? 'de' : 'en';
 
   // Sub-level progress: topics are unlocked sequentially by order, so the
@@ -63,7 +65,7 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
       {topicProgress && currentTopic && (
         <View style={styles.topicRow}>
           <Text style={[styles.topicIcon]}>
-            {currentTopic.type === 'grammar' ? '📗' : '📘'}
+            {currentTopic.icon ?? (currentTopic.type === 'grammar' ? '📗' : '📘')}
           </Text>
           <Text style={[styles.topicText, { color: colors.text }]}>
             {getTopicName(currentTopic, topicLang)}
@@ -72,6 +74,11 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
             {s.topic.progress(topicProgress.done, topicProgress.total)}
           </Text>
         </View>
+      )}
+      {topicProgress && level === 'A1' && (
+        <Pressable style={[styles.chooseTopicBtn, { borderColor: colors.tint }]} onPress={() => router.push('/(tabs)/tree')}>
+          <Text style={[styles.chooseTopicText, { color: colors.tint }]}>{s.topic.chooseTopic}</Text>
+        </Pressable>
       )}
       <View style={[styles.streakBadge, { backgroundColor: colors.card, marginTop: 12 }]}>
         <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
@@ -110,4 +117,6 @@ const styles = StyleSheet.create({
   topicCounter: { fontSize: 12, fontWeight: '500' },
   examBtn: { paddingHorizontal: 32, paddingVertical: 14, borderRadius: 14, minWidth: 160, alignItems: 'center', alignSelf: 'center' },
   examBtnText: { color: '#FFF', fontSize: 18, fontWeight: '700' },
+  chooseTopicBtn: { marginTop: 16, paddingHorizontal: 24, paddingVertical: 10, borderRadius: 12, borderWidth: 1.5, alignSelf: 'center' },
+  chooseTopicText: { fontSize: 14, fontWeight: '600' },
 });

@@ -33,6 +33,7 @@ export default {
     learn: 'Tanulás',
     active: 'Aktív',
     settings: 'Beállítások',
+    tree: 'Témák',
   },
   active: {
     title: 'Aktív mód',
@@ -50,6 +51,8 @@ export default {
     allComplete: 'Minden téma kész!',
     next: (name: string) => `Következő: ${name}`,
     locked: 'Zárolva',
+    chooseTopic: 'Válassz Új Témát',
+    wordProgress: (done: number, total: number) => `${done}/${total}`,
   },
   subLevel: {
     progress: (id: string, name: string, current: number, total: number) => `${id} · ${name} — ${current}/${total}`,

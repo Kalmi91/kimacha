@@ -3,6 +3,7 @@ export interface TopicDef {
   order: number;
   subLevel: string;
   type: 'grammar' | 'vocab';
+  icon: string;
   name_hu: string;
   name_en: string;
   name_es: string;

@@ -23,6 +23,8 @@ export interface DB {
   getReviewedWordCount(level: string): Promise<number>;
   buryCard(wordId: number, type: string): Promise<void>;
   resetAllProgress(): Promise<void>;
+  getSelectedTopic(): Promise<string | null>;
+  setSelectedTopic(topicId: string | null): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -216,6 +218,16 @@ class MemoryDB implements DB {
       if (this.cards.get(k)?.pair === this.activePair) this.cards.delete(k);
     }
     this.userLevels.delete(this.activePair);
+  }
+
+  private selectedTopics: Map<string, string | null> = new Map();
+
+  async getSelectedTopic(): Promise<string | null> {
+    return this.selectedTopics.get(this.activePair) ?? null;
+  }
+
+  async setSelectedTopic(topicId: string | null): Promise<void> {
+    this.selectedTopics.set(this.activePair, topicId);
   }
 }
 

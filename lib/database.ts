@@ -24,6 +24,8 @@ export interface DB {
   getReviewedWordCount(level: string): Promise<number>;
   buryCard(wordId: number, type: string): Promise<void>;
   resetAllProgress(): Promise<void>;
+  getSelectedTopic(): Promise<string | null>;
+  setSelectedTopic(topicId: string | null): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -101,6 +103,10 @@ class SQLiteDB implements DB {
         user_id TEXT NOT NULL,
         first_use_date TEXT NOT NULL,
         last_sync_date TEXT
+      );
+      CREATE TABLE IF NOT EXISTS selected_topic (
+        pair TEXT PRIMARY KEY,
+        topic_id TEXT
       );
     `);
     const meta = await this.db.getFirstAsync<any>('SELECT id FROM user_meta WHERE id = 1');
@@ -400,6 +406,17 @@ class SQLiteDB implements DB {
     const db = await this.open();
     await db.runAsync('DELETE FROM cards WHERE pair = ?', [this.activePair]);
     await db.runAsync("UPDATE user_level SET level = 'A0', correct_streak = 0, mistakes_in_window = 0, fail_streak = 0 WHERE pair = ?", [this.activePair]);
+  }
+
+  async getSelectedTopic(): Promise<string | null> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT topic_id FROM selected_topic WHERE pair = ?', [this.activePair]);
+    return row?.topic_id ?? null;
+  }
+
+  async setSelectedTopic(topicId: string | null): Promise<void> {
+    const db = await this.open();
+    await db.runAsync('INSERT OR REPLACE INTO selected_topic (pair, topic_id) VALUES (?, ?)', [this.activePair, topicId]);
   }
 }
 
