@@ -33,6 +33,7 @@ export default {
     learn: 'Learn',
     active: 'Active',
     settings: 'Settings',
+    tree: 'Topics',
   },
   active: {
     title: 'Active mode',
@@ -50,6 +51,8 @@ export default {
     allComplete: 'All topics complete!',
     next: (name: string) => `Next: ${name}`,
     locked: 'Locked',
+    chooseTopic: 'Choose a New Topic',
+    wordProgress: (done: number, total: number) => `${done}/${total}`,
   },
   subLevel: {
     progress: (id: string, name: string, current: number, total: number) => `${id} · ${name} — ${current}/${total}`,

@@ -51,6 +51,19 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="tree"
+        options={{
+          title: s.tabs.tree,
+          tabBarIcon: ({ color }) => (
+            <SymbolView
+              name={{ ios: 'square.grid.2x2.fill', android: 'grid_view', web: 'grid_view' }}
+              tintColor={color}
+              size={28}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="settings"
         options={{
           title: s.tabs.settings,

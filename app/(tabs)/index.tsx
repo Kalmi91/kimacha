@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { StyleSheet, Text, View, Pressable, ActivityIndicator, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
-import { useFocusEffect } from 'expo-router';
+import { useFocusEffect, useRouter } from 'expo-router';
 import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
 
 import Colors from '@/constants/Colors';
@@ -41,6 +41,7 @@ export default function LearnScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
+  const router = useRouter();
 
   const [loading, setLoading] = useState(true);
   const [queue, setQueue] = useState<DueItem[]>([]);
@@ -103,34 +104,55 @@ export default function LearnScreen() {
     }).filter((item: DueItem) => !!item.word);
   };
 
-  const computeUnlockedTopics = (topics: TopicDef[], repsMap: Map<number, number>, currentLevel: Level): { unlocked: TopicDef[]; activeTopic: TopicDef | null; completedCount: number } => {
-    const unlocked: TopicDef[] = [];
-    let completedCount = 0;
-    for (const topic of topics) {
-      const topicWords = getWordsForTopic(currentLevel, topic.id);
-      if (unlocked.length === 0) {
-        unlocked.push(topic);
-      } else {
-        const prevTopic = topics[topics.indexOf(topic) - 1];
-        const prevWords = getWordsForTopic(currentLevel, prevTopic.id);
-        const allReviewed = prevWords.length > 0 && prevWords.every(w => (repsMap.get(w.id) ?? 0) > 0);
-        if (allReviewed) {
+  const computeUnlockedTopics = (topics: TopicDef[], repsMap: Map<number, number>, currentLevel: Level, selectedTopicId?: string | null): { unlocked: TopicDef[]; activeTopic: TopicDef | null; completedCount: number } => {
+    // A1: all topics freely selectable — no sequential lock.
+    // Other levels: keep original sequential unlock logic.
+    let unlocked: TopicDef[];
+    if (currentLevel === 'A1') {
+      unlocked = [...topics];
+    } else {
+      unlocked = [];
+      for (const topic of topics) {
+        if (unlocked.length === 0) {
           unlocked.push(topic);
         } else {
-          break;
+          const prevTopic = topics[topics.indexOf(topic) - 1];
+          const prevWords = getWordsForTopic(currentLevel, prevTopic.id);
+          const allReviewed = prevWords.length > 0 && prevWords.every(w => (repsMap.get(w.id) ?? 0) > 0);
+          if (allReviewed) {
+            unlocked.push(topic);
+          } else {
+            break;
+          }
         }
       }
     }
+
+    let completedCount = 0;
     for (const topic of unlocked) {
       const topicWords = getWordsForTopic(currentLevel, topic.id);
       if (topicWords.length > 0 && topicWords.every(w => (repsMap.get(w.id) ?? 0) > 0)) {
         completedCount++;
       }
     }
-    const activeTopic = unlocked.find(topic => {
-      const topicWords = getWordsForTopic(currentLevel, topic.id);
-      return topicWords.some(w => (repsMap.get(w.id) ?? 0) === 0);
-    }) ?? unlocked[unlocked.length - 1] ?? null;
+
+    // Active topic: use persisted selectedTopic if set and not fully complete,
+    // otherwise fall back to first incomplete topic by order.
+    let activeTopic: TopicDef | null = null;
+    if (selectedTopicId) {
+      const sel = unlocked.find(t => t.id === selectedTopicId);
+      if (sel) {
+        const selWords = getWordsForTopic(currentLevel, sel.id);
+        const selComplete = selWords.length > 0 && selWords.every(w => (repsMap.get(w.id) ?? 0) > 0);
+        if (!selComplete) activeTopic = sel;
+      }
+    }
+    if (!activeTopic) {
+      activeTopic = unlocked.find(topic => {
+        const topicWords = getWordsForTopic(currentLevel, topic.id);
+        return topicWords.some(w => (repsMap.get(w.id) ?? 0) === 0);
+      }) ?? unlocked[unlocked.length - 1] ?? null;
+    }
 
     return { unlocked, activeTopic, completedCount };
   };
@@ -154,7 +176,8 @@ export default function LearnScreen() {
     if (useTopics) {
       const allWordIds = levelWords.map(w => w.id);
       const repsMap = await db.getWordReps(allWordIds);
-      const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel);
+      const savedTopic = await db.getSelectedTopic();
+      const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel, savedTopic);
 
       setCurrentTopic(activeTopic);
       setTopicProgress({
@@ -344,18 +367,22 @@ export default function LearnScreen() {
       if (useTopics) {
         const allWordIds = lvlWords.map((w: WordEntry) => w.id);
         const repsMap = await db.getWordReps(allWordIds);
-        const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel);
+        const savedTopic2 = await db.getSelectedTopic();
+        const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel, savedTopic2);
 
         if (topicProgress && completedCount > topicProgress.done && activeTopic) {
           const s = t();
           const lang = direction[1] === 'hu' ? 'hu' : direction[1] === 'es' ? 'es' : direction[1] === 'de' ? 'de' : 'en';
           const prevCompleted = topics[completedCount - 1];
           if (prevCompleted) {
-            // Sub-level celebration on top of the topic one when the finished
-            // topic closes its sub-level (A1.1 … A1.7).
+            // Sub-level celebration: check if ALL topics in the sub-level are now
+            // complete (free ordering — cannot rely on "last topic" position).
             const sub = getSubLevelForTopic(currentLevel, prevCompleted.id);
             const subTopics = sub ? getTopicsForSubLevel(currentLevel, sub.id) : [];
-            const closesSubLevel = sub && subTopics.length > 0 && subTopics[subTopics.length - 1].id === prevCompleted.id;
+            const closesSubLevel = sub && subTopics.length > 0 && subTopics.every(st => {
+              const stWords = getWordsForTopic(currentLevel, st.id);
+              return stWords.length > 0 && stWords.every(w => (repsMap.get(w.id) ?? 0) > 0);
+            });
             setTopicCompleteMsg(
               closesSubLevel
                 ? `${s.topic.complete}\n${s.subLevel.complete(sub.id, getSubLevelName(sub, lang))}`
@@ -524,14 +551,14 @@ export default function LearnScreen() {
 
   const topicHeader = currentTopic && topicProgress ? (
     <>
-      <View style={styles.topicHeader}>
+      <Pressable style={styles.topicHeader} onPress={() => router.push('/(tabs)/tree')}>
         <Text style={[styles.topicIcon, { color: currentTopic.type === 'grammar' ? '#22C55E' : '#38BDF8' }]}>
-          {currentTopic.type === 'grammar' ? '📗' : '📘'}
+          {currentTopic.icon ?? (currentTopic.type === 'grammar' ? '📗' : '📘')}
         </Text>
         <Text style={[styles.topicName, { color: colors.text }]} numberOfLines={1}>
           {getTopicName(currentTopic, topicLang)}
         </Text>
-      </View>
+      </Pressable>
       {currentSubLevel && subLevelPos > 0 && (
         <Text style={[styles.subLevelLine, { color: colors.tabIconDefault }]} numberOfLines={1}>
           {s.subLevel.progress(currentSubLevel.id, getSubLevelName(currentSubLevel, topicLang), subLevelPos, subLevelTopics.length)}
@@ -558,9 +585,10 @@ export default function LearnScreen() {
   ) : null;
 
   const topicCompleteOverlay = topicCompleteMsg ? (
-    <View style={[styles.levelUpOverlay, { backgroundColor: '#22C55E' }]}>
+    <Pressable style={[styles.levelUpOverlay, { backgroundColor: '#22C55E' }]} onPress={() => router.push('/(tabs)/tree')}>
       <Text style={styles.levelUpText}>{topicCompleteMsg}</Text>
-    </View>
+      {level === 'A1' && <Text style={[styles.levelUpText, { fontSize: 11 }]}>{s.topic.chooseTopic} →</Text>}
+    </Pressable>
   ) : null;
 
   const levelUpOverlay = levelUpMsg ? (
