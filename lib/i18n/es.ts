@@ -62,6 +62,9 @@ export default {
   master: {
     button: 'Maestro',
     title: 'Elegir Nivel',
+    levels: 'Cambiar Nivel',
+    exams: 'Exámenes',
+    restart: 'Reiniciar',
   },
   settings: {
     changeLanguage: 'Cambiar Idioma',

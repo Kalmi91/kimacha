@@ -62,6 +62,9 @@ export default {
   master: {
     button: 'Mester',
     title: 'Szint Választás',
+    levels: 'Szintváltás',
+    exams: 'Vizsgák',
+    restart: 'Újrakezdés',
   },
   settings: {
     changeLanguage: 'Nyelv Váltás',
