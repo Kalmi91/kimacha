@@ -9,7 +9,7 @@ import { getDb, cardFromRow } from '@/lib/database';
 import { words, type WordEntry, getWordsForLevel, getWordsForTopic, LEVELS, type Level } from '@/data/words';
 import { getTopicsForLevel, hasTopics, getTopicName, type TopicDef } from '@/data/topics';
 import { t } from '@/lib/i18n';
-import { levenshtein } from '@/lib/levenshtein';
+import { strictAnswerMatch } from '@/lib/answerMatch';
 import { nearMissDistractors } from '@/lib/distractors';
 import { consumePendingAction } from '@/lib/pendingAction';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -440,12 +440,11 @@ export default function LearnScreen() {
   const handleCheck = () => {
     if (!current) return;
     const { back } = getFrontBack(current);
-    const answer = typedAnswer.trim().toLowerCase().replace(/[.]+$/, '').trim();
-    const correct = back.toLowerCase().split(' / ')[0].trim().replace(/[¡¿]/g, '').replace(/[.]+$/, '').trim();
-    const dist = levenshtein(answer, correct);
+    const correct = back.split(' / ')[0];
 
-    // Forgiving: ignore case + trailing period, accept up to 2-letter typos as fully correct.
-    setTypingResult(dist <= 2 ? 'correct' : 'wrong');
+    // Strict (FB6): "she speak" must not pass for "She speaks" — only case,
+    // punctuation and missing accents are forgiven.
+    setTypingResult(strictAnswerMatch(typedAnswer, correct) ? 'correct' : 'wrong');
     setRevealed(true);
     const { backLang } = getFrontBack(current);
     Speech.speak(back, { language: speechLang(backLang) });
@@ -624,19 +623,30 @@ export default function LearnScreen() {
             </Pressable>
           </View>
 
-          <TextInput
-            ref={inputRef}
-            style={[styles.input, { color: colors.text, borderColor: typingResult ? resultColor : colors.tabIconDefault }]}
-            placeholder={s.card.typeTranslation}
-            placeholderTextColor={colors.tabIconDefault}
-            value={typedAnswer}
-            onChangeText={setTypedAnswer}
-            onSubmitEditing={revealed ? handleTypingNext : handleCheck}
-            editable={!revealed}
-            autoFocus
-            autoCapitalize="none"
-            autoCorrect={false}
-          />
+          {/* FB5: inline action button — with softwareKeyboardLayoutMode "pan"
+              the bottom Check button can sit under the open keyboard, so the
+              input row carries its own always-visible ✓/→. */}
+          <View style={styles.inputRow}>
+            <TextInput
+              ref={inputRef}
+              style={[styles.input, { flex: 1, width: 'auto', color: colors.text, borderColor: typingResult ? resultColor : colors.tabIconDefault }]}
+              placeholder={s.card.typeTranslation}
+              placeholderTextColor={colors.tabIconDefault}
+              value={typedAnswer}
+              onChangeText={setTypedAnswer}
+              onSubmitEditing={revealed ? handleTypingNext : handleCheck}
+              editable={!revealed}
+              autoFocus
+              autoCapitalize="none"
+              autoCorrect={false}
+            />
+            <Pressable
+              style={[styles.inlineCheckBtn, { backgroundColor: revealed && typingResult === 'wrong' ? '#1D4ED8' : '#38BDF8' }]}
+              onPress={revealed ? handleTypingNext : handleCheck}
+            >
+              <Text style={styles.inlineCheckText}>{revealed ? '→' : '✓'}</Text>
+            </Pressable>
+          </View>
 
           {revealed && (
             <View style={styles.resultSection}>
@@ -746,9 +756,7 @@ export default function LearnScreen() {
                   value={practiceText}
                   onChangeText={setPracticeText}
                   onSubmitEditing={() => {
-                    const correct = back.toLowerCase().split(' / ')[0].trim().replace(/[¡¿]/g, '').replace(/[.]+$/, '').trim();
-                    const dist = levenshtein(practiceText.trim().toLowerCase().replace(/[.]+$/, '').trim(), correct);
-                    setPracticeResult(dist <= 2 ? 'correct' : 'wrong');
+                    setPracticeResult(strictAnswerMatch(practiceText, back.split(' / ')[0]) ? 'correct' : 'wrong');
                   }}
                   autoFocus
                   autoCapitalize="none"
@@ -964,6 +972,25 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
     marginTop: 8,
+  },
+  inputRow: {
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  inlineCheckBtn: {
+    marginTop: 8,
+    borderRadius: 12,
+    paddingVertical: 14,
+    paddingHorizontal: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inlineCheckText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: '700',
   },
   resultSection: {
     alignItems: 'center',

@@ -188,6 +188,15 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
     return null;
   };
 
+  // Identify the actual question in feedback — a bare position ("exam:15")
+  // is untraceable once the run is over.
+  const fb = genItems[index];
+  const fbCard = fb
+    ? `exam:${index + 1}:${fb.kind}:${
+        'prompt' in fb ? fb.prompt : 'sentence' in fb ? fb.sentence : 'question' in fb ? fb.question : 'match'
+      }`
+    : `exam:${index + 1}`;
+
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <View style={styles.header}>
@@ -205,7 +214,7 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
       </View>
       <Text style={styles.lives}>{livesDisplay}</Text>
       {renderItem()}
-      <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`exam:${index + 1}`} />
+      <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={fbCard} />
     </View>
   );
 }

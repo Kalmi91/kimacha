@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TextInput, Pressable } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
-import { levenshtein } from '@/lib/levenshtein';
+import { strictAnswerMatch } from '@/lib/answerMatch';
 import { type ExamItem } from '@/lib/examBuilder';
 
 type SentTypeItem = Extract<ExamItem, { kind: 'sent_type' }>;
@@ -21,13 +21,10 @@ export default function ExamSentTypeCard({ item, onResult }: Props) {
   const [text, setText] = useState('');
   const [result, setResult] = useState<'correct' | 'wrong' | null>(null);
 
-  const normalise = (str: string) =>
-    str.trim().toLowerCase().replace(/[¡¿]/g, '').replace(/[.!?,;:]+$/, '').trim();
-
   const handleCheck = () => {
     if (!text.trim()) return;
-    const dist = levenshtein(normalise(text), normalise(item.answer));
-    const r = dist <= 2 ? 'correct' : 'wrong';
+    // Strict (FB6): every word must match; case/punctuation/accents forgiven.
+    const r = strictAnswerMatch(text, item.answer) ? 'correct' : 'wrong';
     setResult(r);
     setTimeout(() => onResult(r === 'correct'), 1500);
   };
