@@ -51,6 +51,11 @@ export default {
     next: (name: string) => `Következő: ${name}`,
     locked: 'Zárolva',
   },
+  subLevel: {
+    progress: (id: string, name: string, current: number, total: number) => `${id} · ${name} — ${current}/${total}`,
+    complete: (id: string, name: string) => `${id} kész: ${name}! 🎉`,
+    doneProgress: (done: number, total: number) => `${done}/${total} téma kész ebben az al-szintben`,
+  },
   master: {
     button: 'Mester',
     title: 'Szint Választás',

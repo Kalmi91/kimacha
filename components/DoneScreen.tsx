@@ -3,7 +3,7 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { type Level } from '@/data/words';
-import { type TopicDef, getTopicName } from '@/data/topics';
+import { type TopicDef, getTopicName, getSubLevelForTopic, getTopicsForSubLevel, getSubLevelName } from '@/data/topics';
 import FeedbackButton from '@/components/FeedbackModal';
 
 interface TopicProgress {
@@ -31,6 +31,15 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
   const s = t();
   const topicLang = direction[1] === 'hu' ? 'hu' : direction[1] === 'es' ? 'es' : direction[1] === 'de' ? 'de' : 'en';
 
+  // Sub-level progress: topics are unlocked sequentially by order, so the
+  // done-count inside the sub-level is the global done-count minus the
+  // topics that precede this sub-level.
+  const subLevel = currentTopic ? getSubLevelForTopic(level, currentTopic.id) : null;
+  const subTopics = subLevel ? getTopicsForSubLevel(level, subLevel.id) : [];
+  const subDone = subLevel && topicProgress
+    ? Math.min(Math.max(topicProgress.done - ((subTopics[0]?.order ?? 1) - 1), 0), subTopics.length)
+    : 0;
+
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <Text style={styles.doneEmoji}>🎉</Text>
@@ -41,6 +50,16 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
       <View style={[styles.levelBadge, { backgroundColor: '#38BDF8' }]}>
         <Text style={styles.levelText}>{level}</Text>
       </View>
+      {subLevel && (
+        <View style={styles.subLevelRow}>
+          <Text style={[styles.subLevelName, { color: colors.text }]}>
+            {subLevel.id} · {getSubLevelName(subLevel, topicLang)}
+          </Text>
+          <Text style={[styles.subLevelCounter, { color: colors.tabIconDefault }]}>
+            {s.subLevel.doneProgress(subDone, subTopics.length)}
+          </Text>
+        </View>
+      )}
       {topicProgress && currentTopic && (
         <View style={styles.topicRow}>
           <Text style={[styles.topicIcon]}>
@@ -82,6 +101,9 @@ const styles = StyleSheet.create({
   streakNumber: { fontSize: 18, fontWeight: '700' },
   streakLabel: { fontSize: 14 },
   masteredText: { fontSize: 14, fontWeight: '600', marginTop: 12, textAlign: 'center' },
+  subLevelRow: { alignItems: 'center', alignSelf: 'center', marginTop: 12 },
+  subLevelName: { fontSize: 15, fontWeight: '700' },
+  subLevelCounter: { fontSize: 12, fontWeight: '500', marginTop: 2 },
   topicRow: { flexDirection: 'row', alignItems: 'center', alignSelf: 'center', gap: 6, marginTop: 10 },
   topicIcon: { fontSize: 14 },
   topicText: { fontSize: 14, fontWeight: '600' },

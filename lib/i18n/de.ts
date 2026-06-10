@@ -51,6 +51,11 @@ export default {
     next: (name: string) => `Nächstes: ${name}`,
     locked: 'Gesperrt',
   },
+  subLevel: {
+    progress: (id: string, name: string, current: number, total: number) => `${id} · ${name} — ${current}/${total}`,
+    complete: (id: string, name: string) => `${id} abgeschlossen: ${name}! 🎉`,
+    doneProgress: (done: number, total: number) => `${done}/${total} Themen fertig in dieser Stufe`,
+  },
   master: {
     button: 'Meister',
     title: 'Stufe Wählen',
