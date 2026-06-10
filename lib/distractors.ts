@@ -53,31 +53,55 @@ export function nearMissDistractors(
   // 2) Morphological near-misses — rank vocabulary by closeness to the nearest
   //    sentence word. A shared 3-char stem (same verb, different ending) or a
   //    small edit distance both signal "almost the right word".
+  //    Multi-word vocab entries (grammar cards like "yo hablo") are split into
+  //    single tokens first — a word bank only holds one word per tile, and the
+  //    split forms (tú / hablas) are exactly the near-misses learners asked for.
+  const tokens = [
+    ...new Set(
+      vocab
+        .flatMap((w) => String(w ?? '').split(/\s+/))
+        .map((w) => w.replace(/[.,!?;:¡¿"']/g, '').trim())
+        .filter((w) => w.length > 1 || (ARTICLES[lang] ?? []).includes(w.toLowerCase())),
+    ),
+  ];
+
   const score = (cand: string): number => {
     const c = cand.toLowerCase();
     let best = Infinity;
     for (const tw of targetLower) {
       if (tw.length < 3 || c.length < 3) continue;
       const d = levenshtein(c, tw);
-      const stemBonus = c.slice(0, 3) === tw.slice(0, 3) ? -2 : 0;
-      best = Math.min(best, d + stemBonus);
+      const stem = c.slice(0, 3) === tw.slice(0, 3);
+      // Confusable = same stem with a different ending (llega → llegan), a
+      // one-letter slip, or a two-letter slip of a longer word. Anything
+      // looser ("mil" next to "muy") is noise, not a near-miss.
+      if ((stem && d <= 3) || d <= 1 || (d <= 2 && Math.min(c.length, tw.length) >= 5)) {
+        best = Math.min(best, d - (stem ? 2 : 0));
+      }
     }
     return best;
   };
 
-  const ranked = [...new Set(vocab.map((w) => w.trim()))]
+  const ranked = tokens
     .filter((w) => w && !targetSet.has(w.toLowerCase()))
     .map((w) => ({ w, s: score(w) }))
-    .filter((o) => o.s <= 4) // only genuinely confusable forms
+    .filter((o) => o.s < Infinity)
     .sort((a, b) => a.s - b.s);
   ranked.forEach((o) => push(o.w));
 
-  // 3) Fill any remaining slots with random vocabulary so the bank is full.
+  // 3) Fill any remaining slots with the closest leftover vocabulary —
+  //    never random picks, those read as obvious junk in the bank.
   if (out.length < count) {
-    const rest = [...vocab].sort(() => Math.random() - 0.5);
-    for (const w of rest) {
+    const closest = tokens
+      .filter((w) => w && !targetSet.has(w.toLowerCase()))
+      .map((w) => ({
+        w,
+        d: Math.min(...targetLower.map((tw) => levenshtein(w.toLowerCase(), tw))),
+      }))
+      .sort((a, b) => a.d - b.d);
+    for (const o of closest) {
       if (out.length >= count) break;
-      push(w);
+      push(o.w);
     }
   }
 

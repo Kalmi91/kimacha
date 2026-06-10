@@ -33,4 +33,20 @@ describe('nearMissDistractors', () => {
     const out = nearMissDistractors(['hola'], ['casa', 'casa', 'rojo', 'verde'], 'es');
     expect(new Set(out.map((w) => w.toLowerCase())).size).toBe(out.length);
   });
+
+  it('splits multi-word grammar cards into single tokens (FB: "yo hablo" tile)', () => {
+    const out = nearMissDistractors(['yo', 'hablo', 'español'], ['yo hablo', 'tú hablas', 'comer'], 'es');
+    expect(out.every((w) => !w.includes(' '))).toBe(true);
+    expect(out).toContain('hablas');
+    expect(out.map((o) => o.toLowerCase())).not.toContain('yo hablo');
+  });
+
+  it('rejects unconfusable short words (FB: "mil" next to "muy")', () => {
+    const out = nearMissDistractors(
+      ['tú', 'hablas', 'muy', 'bien'],
+      ['mil', 'hablo', 'habla', 'hablan', 'hablamos'],
+      'es',
+    );
+    expect(out).not.toContain('mil');
+  });
 });

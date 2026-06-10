@@ -1,4 +1,5 @@
 import { getWordsForLevel } from '@/data/words';
+import { nearMissDistractors } from './distractors';
 
 export type ExamDir = ['es', 'en'] | ['en', 'es'];
 
@@ -33,14 +34,12 @@ function tokenise(sentence: string): string[] {
 
 /**
  * Build the distractor tile pool for a sent_order item.
- * Returns 2-3 words from the level vocabulary that are NOT already in the answer.
+ * Near-miss forms (sibling articles, same-stem conjugations) instead of
+ * random vocabulary, so exam tiles are confusable too (FB1 follow-up).
  */
 function buildDistractors(answerTokens: string[], levelWords: any[], targetLang: 'es' | 'en', count = 3): string[] {
-  const answerSet = new Set(answerTokens.map(t => t.toLowerCase()));
-  const pool = levelWords
-    .map(w => String(w[targetLang] ?? '').split(' / ')[0].trim())
-    .filter(w => w && !answerSet.has(w.toLowerCase()));
-  return sample(pool, count);
+  const pool = levelWords.map(w => String(w[targetLang] ?? '').split(' / ')[0].trim());
+  return nearMissDistractors(answerTokens, pool, targetLang, count);
 }
 
 /** Build exam items for A0 level. Returns exactly 17 items per spec §5. */
