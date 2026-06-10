@@ -2,6 +2,7 @@
   {
     "id": "presente_ar",
     "order": 1,
+    "subLevel": "A1.1",
     "type": "grammar",
     "name_hu": "Jelen Idő: -ar Igék",
     "name_en": "Present Tense: -ar Verbs",
@@ -11,6 +12,7 @@
   {
     "id": "numeros",
     "order": 2,
+    "subLevel": "A1.1",
     "type": "vocab",
     "name_hu": "Számok",
     "name_en": "Numbers",
@@ -20,6 +22,7 @@
   {
     "id": "presente_er",
     "order": 3,
+    "subLevel": "A1.1",
     "type": "grammar",
     "name_hu": "Jelen Idő: -er Igék",
     "name_en": "Present Tense: -er Verbs",
@@ -29,6 +32,7 @@
   {
     "id": "colores",
     "order": 4,
+    "subLevel": "A1.1",
     "type": "vocab",
     "name_hu": "Színek",
     "name_en": "Colors",
@@ -38,6 +42,7 @@
   {
     "id": "presente_ir",
     "order": 5,
+    "subLevel": "A1.1",
     "type": "grammar",
     "name_hu": "Jelen Idő: -ir Igék",
     "name_en": "Present Tense: -ir Verbs",
@@ -47,6 +52,7 @@
   {
     "id": "presentacion",
     "order": 6,
+    "subLevel": "A1.1",
     "type": "vocab",
     "name_hu": "Bemutatkozás",
     "name_en": "Introductions",
@@ -56,6 +62,7 @@
   {
     "id": "ser",
     "order": 7,
+    "subLevel": "A1.2",
     "type": "grammar",
     "name_hu": "Ser (Létige: Identitás)",
     "name_en": "Ser (To Be: Identity)",
@@ -65,6 +72,7 @@
   {
     "id": "estar",
     "order": 8,
+    "subLevel": "A1.2",
     "type": "grammar",
     "name_hu": "Estar (Létige: Állapot)",
     "name_en": "Estar (To Be: State)",
@@ -74,6 +82,7 @@
   {
     "id": "comida",
     "order": 9,
+    "subLevel": "A1.2",
     "type": "vocab",
     "name_hu": "Étel és Ital",
     "name_en": "Food & Drinks",
@@ -83,6 +92,7 @@
   {
     "id": "tener",
     "order": 10,
+    "subLevel": "A1.2",
     "type": "grammar",
     "name_hu": "Tener (Birtokolni)",
     "name_en": "Tener (To Have)",
@@ -92,6 +102,7 @@
   {
     "id": "ropa",
     "order": 11,
+    "subLevel": "A1.2",
     "type": "vocab",
     "name_hu": "Ruházat",
     "name_en": "Clothing",
@@ -101,6 +112,7 @@
   {
     "id": "ir_verb",
     "order": 12,
+    "subLevel": "A1.2",
     "type": "grammar",
     "name_hu": "Ir (Menni)",
     "name_en": "Ir (To Go)",
@@ -110,6 +122,7 @@
   {
     "id": "hacer",
     "order": 13,
+    "subLevel": "A1.2",
     "type": "grammar",
     "name_hu": "Hacer (Csinálni)",
     "name_en": "Hacer (To Do/Make)",
@@ -119,6 +132,7 @@
   {
     "id": "casa",
     "order": 14,
+    "subLevel": "A1.3",
     "type": "vocab",
     "name_hu": "Ház és Lakás",
     "name_en": "House & Home",
@@ -128,6 +142,7 @@
   {
     "id": "ser_vs_estar",
     "order": 15,
+    "subLevel": "A1.3",
     "type": "grammar",
     "name_hu": "Ser vs Estar",
     "name_en": "Ser vs Estar",
@@ -137,6 +152,7 @@
   {
     "id": "cuerpo",
     "order": 16,
+    "subLevel": "A1.3",
     "type": "vocab",
     "name_hu": "Testrészek",
     "name_en": "Body Parts",
@@ -146,6 +162,7 @@
   {
     "id": "hay_vs_esta",
     "order": 17,
+    "subLevel": "A1.3",
     "type": "grammar",
     "name_hu": "Hay vs Está",
     "name_en": "Hay vs Está",
@@ -155,6 +172,7 @@
   {
     "id": "restaurante",
     "order": 18,
+    "subLevel": "A1.3",
     "type": "vocab",
     "name_hu": "Étterem",
     "name_en": "Restaurant",
@@ -164,6 +182,7 @@
   {
     "id": "genero_numero",
     "order": 19,
+    "subLevel": "A1.3",
     "type": "grammar",
     "name_hu": "Nem és Szám",
     "name_en": "Gender & Number",
@@ -173,6 +192,7 @@
   {
     "id": "profesiones",
     "order": 20,
+    "subLevel": "A1.4",
     "type": "vocab",
     "name_hu": "Foglalkozások",
     "name_en": "Professions",
@@ -182,6 +202,7 @@
   {
     "id": "posesivos",
     "order": 21,
+    "subLevel": "A1.4",
     "type": "grammar",
     "name_hu": "Birtokos Névmások",
     "name_en": "Possessive Adjectives",
@@ -191,6 +212,7 @@
   {
     "id": "transporte",
     "order": 22,
+    "subLevel": "A1.4",
     "type": "vocab",
     "name_hu": "Közlekedés",
     "name_en": "Transport",
@@ -200,6 +222,7 @@
   {
     "id": "preposiciones",
     "order": 23,
+    "subLevel": "A1.4",
     "type": "grammar",
     "name_hu": "Elöljárók",
     "name_en": "Prepositions",
@@ -209,6 +232,7 @@
   {
     "id": "clima",
     "order": 24,
+    "subLevel": "A1.4",
     "type": "vocab",
     "name_hu": "Időjárás",
     "name_en": "Weather",
@@ -218,6 +242,7 @@
   {
     "id": "interrogativos",
     "order": 25,
+    "subLevel": "A1.4",
     "type": "grammar",
     "name_hu": "Kérdőszavak",
     "name_en": "Question Words",
@@ -227,6 +252,7 @@
   {
     "id": "dias_meses",
     "order": 26,
+    "subLevel": "A1.4",
     "type": "vocab",
     "name_hu": "Napok és Hónapok",
     "name_en": "Days & Months",
@@ -236,6 +262,7 @@
   {
     "id": "negacion",
     "order": 27,
+    "subLevel": "A1.5",
     "type": "grammar",
     "name_hu": "Tagadás",
     "name_en": "Negation",
@@ -245,6 +272,7 @@
   {
     "id": "ciudad",
     "order": 28,
+    "subLevel": "A1.5",
     "type": "vocab",
     "name_hu": "Város és Irányok",
     "name_en": "City & Directions",
@@ -254,6 +282,7 @@
   {
     "id": "gustar",
     "order": 29,
+    "subLevel": "A1.5",
     "type": "grammar",
     "name_hu": "Gustar Szerkezet",
     "name_en": "Gustar Structure",
@@ -263,6 +292,7 @@
   {
     "id": "tiempo",
     "order": 30,
+    "subLevel": "A1.5",
     "type": "vocab",
     "name_hu": "Idő és Óra",
     "name_en": "Time & Clock",
@@ -272,6 +302,7 @@
   {
     "id": "familia",
     "order": 31,
+    "subLevel": "A1.5",
     "type": "vocab",
     "name_hu": "Család",
     "name_en": "Family",
@@ -281,6 +312,7 @@
   {
     "id": "emociones",
     "order": 32,
+    "subLevel": "A1.5",
     "type": "vocab",
     "name_hu": "Érzelmek",
     "name_en": "Emotions",
@@ -290,6 +322,7 @@
   {
     "id": "verbos_reflexivos",
     "order": 33,
+    "subLevel": "A1.5",
     "type": "grammar",
     "name_hu": "Visszaható Igék",
     "name_en": "Reflexive Verbs",
@@ -299,6 +332,7 @@
   {
     "id": "animales",
     "order": 34,
+    "subLevel": "A1.6",
     "type": "vocab",
     "name_hu": "Állatok",
     "name_en": "Animals",
@@ -308,6 +342,7 @@
   {
     "id": "compras",
     "order": 35,
+    "subLevel": "A1.6",
     "type": "vocab",
     "name_hu": "Vásárlás",
     "name_en": "Shopping",
@@ -317,6 +352,7 @@
   {
     "id": "verbos_cotidianos",
     "order": 36,
+    "subLevel": "A1.6",
     "type": "grammar",
     "name_hu": "Mindennapi Igék",
     "name_en": "Everyday Verbs",
@@ -326,6 +362,7 @@
   {
     "id": "adjetivos_basicos",
     "order": 37,
+    "subLevel": "A1.6",
     "type": "vocab",
     "name_hu": "Alapvető Melléknevek",
     "name_en": "Basic Adjectives",
@@ -335,6 +372,7 @@
   {
     "id": "hogar_actividades",
     "order": 38,
+    "subLevel": "A1.6",
     "type": "vocab",
     "name_hu": "Otthoni Tevékenységek",
     "name_en": "Home Activities",
@@ -344,6 +382,7 @@
   {
     "id": "salud",
     "order": 39,
+    "subLevel": "A1.6",
     "type": "vocab",
     "name_hu": "Egészség és Orvos",
     "name_en": "Health & Doctor",
@@ -353,6 +392,7 @@
   {
     "id": "dinero_banco",
     "order": 40,
+    "subLevel": "A1.6",
     "type": "vocab",
     "name_hu": "Pénz és Bank",
     "name_en": "Money & Bank",
@@ -362,6 +402,7 @@
   {
     "id": "ocio",
     "order": 41,
+    "subLevel": "A1.7",
     "type": "vocab",
     "name_hu": "Szabadidő és Sport",
     "name_en": "Leisure & Sport",
@@ -371,6 +412,7 @@
   {
     "id": "viajes",
     "order": 42,
+    "subLevel": "A1.7",
     "type": "vocab",
     "name_hu": "Utazás és Hotel",
     "name_en": "Travel & Hotel",
@@ -380,6 +422,7 @@
   {
     "id": "oficina_trabajo",
     "order": 43,
+    "subLevel": "A1.7",
     "type": "vocab",
     "name_hu": "Iroda és Munka",
     "name_en": "Office & Work",
@@ -389,6 +432,7 @@
   {
     "id": "rutina_diaria",
     "order": 44,
+    "subLevel": "A1.7",
     "type": "vocab",
     "name_hu": "Napi Rutin",
     "name_en": "Daily Routine",
@@ -398,6 +442,7 @@
   {
     "id": "ir_a_inf",
     "order": 45,
+    "subLevel": "A1.7",
     "type": "grammar",
     "name_hu": "Közeljövő: ir a + inf",
     "name_en": "Near Future: ir a + inf",
@@ -407,6 +452,7 @@
   {
     "id": "comparativos",
     "order": 46,
+    "subLevel": "A1.7",
     "type": "grammar",
     "name_hu": "Összehasonlítás (más/menos/tan)",
     "name_en": "Comparatives (más/menos/tan)",

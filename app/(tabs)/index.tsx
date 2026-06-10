@@ -7,7 +7,7 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb, cardFromRow } from '@/lib/database';
 import { words, type WordEntry, getWordsForLevel, getWordsForTopic, LEVELS, type Level } from '@/data/words';
-import { getTopicsForLevel, hasTopics, getTopicName, type TopicDef } from '@/data/topics';
+import { getTopicsForLevel, hasTopics, getTopicName, getSubLevelForTopic, getTopicsForSubLevel, getSubLevelName, type TopicDef } from '@/data/topics';
 import { t } from '@/lib/i18n';
 import { strictAnswerMatch } from '@/lib/answerMatch';
 import { nearMissDistractors } from '@/lib/distractors';
@@ -351,7 +351,16 @@ export default function LearnScreen() {
           const lang = direction[1] === 'hu' ? 'hu' : direction[1] === 'es' ? 'es' : direction[1] === 'de' ? 'de' : 'en';
           const prevCompleted = topics[completedCount - 1];
           if (prevCompleted) {
-            setTopicCompleteMsg(s.topic.complete);
+            // Sub-level celebration on top of the topic one when the finished
+            // topic closes its sub-level (A1.1 … A1.7).
+            const sub = getSubLevelForTopic(currentLevel, prevCompleted.id);
+            const subTopics = sub ? getTopicsForSubLevel(currentLevel, sub.id) : [];
+            const closesSubLevel = sub && subTopics.length > 0 && subTopics[subTopics.length - 1].id === prevCompleted.id;
+            setTopicCompleteMsg(
+              closesSubLevel
+                ? `${s.topic.complete}\n${s.subLevel.complete(sub.id, getSubLevelName(sub, lang))}`
+                : s.topic.complete,
+            );
             setTimeout(() => setTopicCompleteMsg(null), 3000);
           }
         }
@@ -509,15 +518,26 @@ export default function LearnScreen() {
     </View>
   );
 
+  const currentSubLevel = currentTopic ? getSubLevelForTopic(level, currentTopic.id) : null;
+  const subLevelTopics = currentSubLevel ? getTopicsForSubLevel(level, currentSubLevel.id) : [];
+  const subLevelPos = currentTopic ? subLevelTopics.findIndex((tp) => tp.id === currentTopic.id) + 1 : 0;
+
   const topicHeader = currentTopic && topicProgress ? (
-    <View style={styles.topicHeader}>
-      <Text style={[styles.topicIcon, { color: currentTopic.type === 'grammar' ? '#22C55E' : '#38BDF8' }]}>
-        {currentTopic.type === 'grammar' ? '📗' : '📘'}
-      </Text>
-      <Text style={[styles.topicName, { color: colors.text }]} numberOfLines={1}>
-        {getTopicName(currentTopic, topicLang)}
-      </Text>
-    </View>
+    <>
+      <View style={styles.topicHeader}>
+        <Text style={[styles.topicIcon, { color: currentTopic.type === 'grammar' ? '#22C55E' : '#38BDF8' }]}>
+          {currentTopic.type === 'grammar' ? '📗' : '📘'}
+        </Text>
+        <Text style={[styles.topicName, { color: colors.text }]} numberOfLines={1}>
+          {getTopicName(currentTopic, topicLang)}
+        </Text>
+      </View>
+      {currentSubLevel && subLevelPos > 0 && (
+        <Text style={[styles.subLevelLine, { color: colors.tabIconDefault }]} numberOfLines={1}>
+          {s.subLevel.progress(currentSubLevel.id, getSubLevelName(currentSubLevel, topicLang), subLevelPos, subLevelTopics.length)}
+        </Text>
+      )}
+    </>
   ) : null;
 
   const targetLangInfo = languages.find(l => l.code === direction[1]);
@@ -1029,6 +1049,15 @@ const styles = StyleSheet.create({
   },
   topicIcon: {
     fontSize: 14,
+  },
+  subLevelLine: {
+    position: 'absolute',
+    top: 64,
+    left: 20,
+    right: 20,
+    textAlign: 'center',
+    fontSize: 11,
+    fontWeight: '500',
   },
   topicName: {
     fontSize: 13,

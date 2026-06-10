@@ -51,6 +51,11 @@ export default {
     next: (name: string) => `Next: ${name}`,
     locked: 'Locked',
   },
+  subLevel: {
+    progress: (id: string, name: string, current: number, total: number) => `${id} · ${name} — ${current}/${total}`,
+    complete: (id: string, name: string) => `${id} complete: ${name}! 🎉`,
+    doneProgress: (done: number, total: number) => `${done}/${total} topics done in this sub-level`,
+  },
   master: {
     button: 'Master',
     title: 'Choose Level',
