@@ -5,7 +5,8 @@ import type { Level } from '@/data/words';
 export type PendingAction =
   | { type: 'restart' }
   | { type: 'exam'; examLevel: Level }
-  | { type: 'setLevel'; level: Level };
+  | { type: 'setLevel'; level: Level }
+  | { type: 'selectTopic' };
 
 let pending: PendingAction | null = null;
 

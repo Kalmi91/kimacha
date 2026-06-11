@@ -65,6 +65,7 @@ export default {
     levels: 'Cambiar Nivel',
     exams: 'Exámenes',
     restart: 'Reiniciar',
+    wordCount: (n: number) => `${n} palabras`,
   },
   settings: {
     changeLanguage: 'Cambiar Idioma',
