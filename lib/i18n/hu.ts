@@ -65,6 +65,7 @@ export default {
     levels: 'Szintváltás',
     exams: 'Vizsgák',
     restart: 'Újrakezdés',
+    wordCount: (n: number) => `${n} szó`,
   },
   settings: {
     changeLanguage: 'Nyelv Váltás',

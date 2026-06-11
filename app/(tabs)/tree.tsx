@@ -16,6 +16,7 @@ import {
   type SubLevelDef,
 } from '@/data/topics';
 import { t } from '@/lib/i18n';
+import { setPendingAction } from '@/lib/pendingAction';
 
 export default function TreeScreen() {
   const { theme } = useTheme();
@@ -49,6 +50,7 @@ export default function TreeScreen() {
     const db = getDb();
     await db.setSelectedTopic(topic.id);
     setSelectedTopicId(topic.id);
+    setPendingAction({ type: 'selectTopic' });
     router.push('/');
   };
 

@@ -187,7 +187,15 @@ export default function LearnScreen() {
         wordsReviewed: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id).filter(w => (repsMap.get(w.id) ?? 0) > 0).length : 0,
       });
 
-      activeWords = unlocked.flatMap(topic => getWordsForTopic(currentLevel, topic.id));
+      activeWords = activeTopic
+        ? [
+            ...getWordsForTopic(currentLevel, activeTopic.id),
+            ...unlocked
+              .filter(t => t.id !== activeTopic!.id)
+              .flatMap(t => getWordsForTopic(currentLevel, t.id))
+              .filter(w => (repsMap.get(w.id) ?? 0) > 0),
+          ]
+        : unlocked.flatMap(t => getWordsForTopic(currentLevel, t.id));
     } else {
       setCurrentTopic(null);
       setTopicProgress(null);
@@ -259,6 +267,11 @@ export default function LearnScreen() {
           await db.updateLevel(p.level, 0, 0, 0);
           setExamMode(false);
           setExamLevel(null);
+          await loadCards();
+        })();
+      } else if (p.type === 'selectTopic') {
+        // Tech-tree topic selection: reload cards from the newly selected topic.
+        (async () => {
           await loadCards();
         })();
       }

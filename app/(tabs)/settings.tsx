@@ -104,7 +104,7 @@ export default function SettingsScreen() {
                     onPress={() => handleLevelSwitch(lvl)}
                   >
                     <Text style={styles.levelOptionText}>{lvl}</Text>
-                    <Text style={styles.levelWordCount}>{`${wordCount} szó`}</Text>
+                    <Text style={styles.levelWordCount}>{s.master.wordCount(wordCount)}</Text>
                   </Pressable>
                 );
               })}
