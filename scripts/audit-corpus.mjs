@@ -99,7 +99,7 @@ const IRREGULAR_PARADIGM_MAP = {
   'poder':     ['pued'],             // puedo, puedes, puede, pueden
   'venir':     ['ven', 'vien'],      // ven (imp.), vengo, viene, vienen
   'decir':     ['dig', 'dic'],       // diga, digas, dice, dicen
-  'dar':       ['dam'],              // dame — 'd' removed (too broad), 'dej' removed (dejar lemma ≠ dar)
+  'dar':       ['dam', 'da'],        // dame, da — exact-length guard keeps 'da' safe ('d' removed: too broad; 'dej' removed: dejar lemma ≠ dar)
   'dormir':    ['duerm'],            // duerme, duermo, duermen
   'pensar':    ['piens'],            // pienso, piensas, piensa
   'sentir':    ['sient'],            // siento, sientes, siente
@@ -125,6 +125,14 @@ const IRREGULAR_PARADIGM_MAP = {
   'secarse':     ['sec'],            // me seco, se seca — caution: 'sec' also for 'secar'
   'prepararse':  ['prepar'],         // me preparo, se prepara
   'cepillarse':  ['cepill'],         // me cepillo
+  // Task 14: stem-changing lemmas newly taught (or already taught: llover)
+  'llover':    ['lluev'],            // llueve  (o→ue)
+  'doler':     ['duel'],             // duele, duelen  (o→ue)
+  'volar':     ['vuel'],             // vuela, vuelan  (o→ue)
+  'encender':  ['enciend'],          // enciendo, enciende  (e→ie)
+  'encontrar': ['encuentr'],         // encuentro, encuentra  (o→ue)
+  'empezar':   ['empiez'],           // empiezo, empieza, empiezan  (e→ie)
+  'sonar':     ['suen'],             // suena, suenan  (o→ue)
   // A1 hogar verbs (irregular conjugations)
   'fregar':    ['frieg'],            // friego, friegas, friega  (e→ie stem-change)
   'regar':     ['rieg'],             // riego, riegas, riega
@@ -275,6 +283,11 @@ function matches(token, taughtSet) {
       const e1 = ta.slice(-2), e2 = ta2.slice(-2);
       if ((e1 === 'os' && e2 === 'as') || (e1 === 'as' && e2 === 'os')) return true;
     }
+    // mixed singular↔plural across gender (rojo→rojas, roja→rojos); stem ≥2
+    if ((ta.endsWith('as') || ta.endsWith('os')) && (ta2.endsWith('o') || ta2.endsWith('a'))
+        && ta.slice(0, -2).length >= 2 && ta.slice(0, -2) === ta2.slice(0, -1)) return true;
+    if ((ta2.endsWith('as') || ta2.endsWith('os')) && (ta.endsWith('o') || ta.endsWith('a'))
+        && ta2.slice(0, -2).length >= 2 && ta2.slice(0, -2) === ta.slice(0, -1)) return true;
   }
 
   // (c) verb stem
