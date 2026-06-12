@@ -65,6 +65,152 @@ const GLUE_WHITELIST = new Set([
 const GLUE_WHITELIST_STRIPPED = new Set([...GLUE_WHITELIST].map(w => w.normalize('NFD').replace(/[̀-ͯ]/g, '')));
 
 // ---------------------------------------------------------------------------
+// Rule 1 — Proper nouns (accepted anywhere, conservative list from corpus)
+// Names/places that are not taught vocabulary but are culturally transparent.
+// Expanded conservatively from tokens appearing in audit report.
+// ---------------------------------------------------------------------------
+const PROPER_NOUN_LIST = new Set([
+  'madrid', 'barcelona', 'espana', 'mexico', 'africa',  // places (accent-stripped)
+  'ana', 'juan', 'garcia',                               // personal names (accent-stripped)
+]);
+
+// ---------------------------------------------------------------------------
+// Rule 2 — Apocope pairs: short form → canonical taught form (accent-stripped)
+// Only accepted if the canonical full form is in the taught vocabulary.
+// ---------------------------------------------------------------------------
+const APOCOPE_MAP = {
+  'buen':    'bueno',
+  'gran':    'grande',
+  'mal':     'malo',
+  'primer':  'primero',
+  'tercer':  'tercero',
+  'algun':   'alguno',
+  'ningun':  'ninguno',
+};
+
+// ---------------------------------------------------------------------------
+// Rule 3 — Irregular paradigm map: taught lemma (accent-stripped) →
+// array of accent-stripped token prefixes that are accepted forms of that lemma.
+// Only applied when the lemma IS in the taught set.
+// Built from tokens appearing in the audit report.
+// ---------------------------------------------------------------------------
+const IRREGULAR_PARADIGM_MAP = {
+  // A0 verbs
+  'poder':     ['pued'],             // puedo, puedes, puede, pueden
+  'venir':     ['ven', 'vien'],      // ven (imp.), vengo, viene, vienen
+  'decir':     ['dig', 'dic'],       // diga, digas, dice, dicen
+  'dar':       ['dam'],              // dame — 'd' removed (too broad), 'dej' removed (dejar lemma ≠ dar)
+  'dormir':    ['duerm'],            // duerme, duermo, duermen
+  'pensar':    ['piens'],            // pienso, piensas, piensa
+  'sentir':    ['sient'],            // siento, sientes, siente
+  'entender':  ['entiend'],          // entiendo, entiendes, entiende
+  'ver':       ['vem'],              // vemos only — 've' removed (too broad, conflicts with venir's ven)
+  'creer':     ['cre'],              // creo, crees, cree, creen
+  'saber':     ['sab', 'sabi'],      // sabe, saben, sabía, sabías
+  // A1 reflexive verbs (taught as e.g. 'levantarse')
+  'levantarse':  ['levant'],         // levanto, levantas, levanta
+  'acostarse':   ['acuest'],         // acuesto, acuestas, acuesta
+  'vestirse':    ['vist'],           // visto, vistes, viste  (careful: no conflict with 'ver' past)
+  'lavarse':     ['lav'],            // lavo, lavas, lava, lavamos
+  'sentarse':    ['sient'],          // me siento — same stem as sentir; context-free, both accepted
+  'peinarse':    ['pein'],           // peino, peinas, peina
+  'despertarse': ['despert'],        // despierto, despertamos — 'despiiert' typo removed
+  'dormirse':    ['duerm'],          // me duermo
+  'irse':        ['voy', 'vam'],     // me voy, nos vamos
+  // A1 rutina_diaria verbs
+  'ponerse':     ['pong', 'pon'],    // me pongo, te pones, se pone
+  'quitarse':    ['quit'],           // me quito, te quitas
+  'afeitarse':   ['afeit'],          // se afeita, me afeito
+  'maquillarse': ['maquill'],        // se maquilla, me maquillo
+  'secarse':     ['sec'],            // me seco, se seca — caution: 'sec' also for 'secar'
+  'prepararse':  ['prepar'],         // me preparo, se prepara
+  'cepillarse':  ['cepill'],         // me cepillo
+  // A1 hogar verbs (irregular conjugations)
+  'fregar':    ['frieg'],            // friego, friegas, friega  (e→ie stem-change)
+  'regar':     ['rieg'],             // riego, riegas, riega
+  'tender':    ['tiend'],            // tiendo, tiendes, tiende
+  'colgar':    ['cuelg'],            // cuelgo, cuelgas, cuelga
+  // A1 compras/dinero verbs
+  'pagar':     ['pag'],              // pago, pagas, paga, pagamos
+  'cobrar':    ['cobr'],             // cobro, cobras, cobra
+  'pedir':     ['pid', 'ped'],       // pido, pides, pide, pedimos (stem-change e→i)
+  // A1 verbos_cotidianos
+  'cenar':     ['cen'],              // ceno, cenas, cena, cenamos
+  'jugar':     ['jueg', 'jug'],      // juego, juegas, juega, jugamos
+  'leer':      ['le'],               // leo, lees, lee, leemos
+  'nadar':     ['nad'],              // nado, nadas, nada, nadamos
+  'cantar':    ['cant'],             // canto, cantas, canta, cantamos
+  'bailar':    ['bail'],             // bailo, bailas, baila, bailamos
+  'dibujar':   ['dibuj'],            // dibujo, dibujas, dibuja
+  'conducir':  ['conduc'],           // conduzco, conduces, conduce
+  'trabajar':  ['trabaj'],           // trabajo, trabajas, trabaja
+  'estudiar':  ['estudi'],           // estudio, estudias, estudia
+  'correr':    ['corr'],             // corro, corres, corre, corremos
+  'caminar':   ['camin'],            // camino, caminas, camina
+  'cocinar':   ['cocin'],            // cocino, cocinas, cocina
+  'escribir':  ['escrib'],           // escribo, escribes, escribe
+  // A1 salud
+  'descansar': ['descans'],          // descanso, descansas, descansa
+  // A1 viajes
+  'viajar':    ['viaj'],             // viajo, viajas, viaja, viajamos
+  // A1 ocio
+  'entrenar':  ['entren'],           // entreno, entrenas, entrena
+  'pintar':    ['pint'],             // pinto, pintas, pinta
+  'pasear':    ['pase'],             // paseo, paseas, pasea
+};
+// ---------------------------------------------------------------------------
+// Rule helper functions (called in auditCard after basic matches/glue checks)
+// ---------------------------------------------------------------------------
+
+/**
+ * Rule 1: Proper noun check.
+ * A token is accepted if it is in PROPER_NOUN_LIST (accent-stripped comparison).
+ */
+function isProperNoun(tok) {
+  return PROPER_NOUN_LIST.has(removeAccents(tok));
+}
+
+/**
+ * Rule 2: Apocope check.
+ * A token is accepted if it is a known apocope short-form AND the canonical
+ * full form is present in the currently available taught set.
+ */
+function isApocope(tok, taughtSet) {
+  const canonical = APOCOPE_MAP[removeAccents(tok)];
+  if (!canonical) return false;
+  for (const t of taughtSet) {
+    if (removeAccents(t) === canonical) return true;
+  }
+  return false;
+}
+
+/**
+ * Rule 3: Irregular paradigm check.
+ * A token is accepted if it starts with a prefix listed for a taught lemma.
+ * Guard: token length must be >= max(3, prefix.length) to prevent over-matching
+ * very short prefixes ('le' for leer), while still allowing exact-length forms
+ * ('ven' for venir imperative, 'ven' prefix len 3).
+ */
+function isIrregularForm(tok, taughtSet) {
+  const stripped = removeAccents(tok);
+  for (const [lemma, prefixes] of Object.entries(IRREGULAR_PARADIGM_MAP)) {
+    // Only apply if the lemma (accent-stripped) is in the taught set
+    const strippedLemma = removeAccents(lemma);
+    let lemmaIsTaught = false;
+    for (const t of taughtSet) {
+      if (removeAccents(t) === strippedLemma) { lemmaIsTaught = true; break; }
+    }
+    if (!lemmaIsTaught) continue;
+    for (const prefix of prefixes) {
+      if (stripped.startsWith(prefix) && stripped.length >= Math.max(3, prefix.length)) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+// ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 
@@ -220,6 +366,13 @@ function auditCard(card, availableLevel) {
     // Glue check: accent-insensitive
     if (GLUE_WHITELIST.has(tok) || GLUE_WHITELIST_STRIPPED.has(removeAccents(tok))) continue;
     if (matches(tok, taughtSet)) continue;
+
+    // Rule 1 — proper noun (culturally transparent name/place, not in taught vocab)
+    if (isProperNoun(tok)) continue;
+    // Rule 2 — apocope short form (buen/gran/mal etc.), only if canonical is taught
+    if (isApocope(tok, taughtSet)) continue;
+    // Rule 3 — irregular paradigm form of a taught verb (prefix match against IRREGULAR_PARADIGM_MAP)
+    if (isIrregularForm(tok, taughtSet)) continue;
 
     // Not in available set — is it in the full set (just later)?
     if (availableLevel === 'A1' && matches(tok, allTaughtTokens)) {

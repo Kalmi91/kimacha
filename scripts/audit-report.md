@@ -1,147 +1,62 @@
 # Corpus Audit Report
 
-Generated: 2026-06-11T21:01:04.005Z
+Generated: 2026-06-12T11:54:44.277Z
 
 ## Summary
 
 - Total A0 cards: 100
 - Total A1 cards: 800
-- P1 issues (untaught token): **373**
+- P1 issues (untaught token): **286**
 - P2 issues (taught but later): **0**
 
 ## By Topic
 
 | Topic | P1 | P2 |
 |---|---|---|
-| A0 | 28 | 0 |
 | presente_ar | 1 | 0 |
 | numeros | 10 | 0 |
 | colores | 4 | 0 |
-| presente_ir | 2 | 0 |
-| presentacion | 9 | 0 |
+| presente_ir | 1 | 0 |
+| presentacion | 7 | 0 |
 | ser | 3 | 0 |
-| comida | 26 | 0 |
+| comida | 21 | 0 |
 | tener | 2 | 0 |
-| ropa | 15 | 0 |
+| ropa | 14 | 0 |
 | ir_verb | 1 | 0 |
 | hacer | 3 | 0 |
-| casa | 18 | 0 |
-| ser_vs_estar | 3 | 0 |
-| cuerpo | 23 | 0 |
-| restaurante | 11 | 0 |
+| casa | 16 | 0 |
+| ser_vs_estar | 1 | 0 |
+| cuerpo | 19 | 0 |
+| restaurante | 9 | 0 |
 | genero_numero | 3 | 0 |
 | profesiones | 13 | 0 |
-| posesivos | 3 | 0 |
-| transporte | 12 | 0 |
-| preposiciones | 2 | 0 |
+| posesivos | 2 | 0 |
+| transporte | 10 | 0 |
+| preposiciones | 1 | 0 |
 | clima | 7 | 0 |
 | dias_meses | 9 | 0 |
 | negacion | 1 | 0 |
 | ciudad | 7 | 0 |
-| tiempo | 3 | 0 |
-| familia | 10 | 0 |
+| tiempo | 2 | 0 |
+| familia | 7 | 0 |
 | emociones | 8 | 0 |
-| verbos_reflexivos | 8 | 0 |
-| animales | 22 | 0 |
+| verbos_reflexivos | 1 | 0 |
+| animales | 19 | 0 |
 | compras | 6 | 0 |
-| verbos_cotidianos | 6 | 0 |
-| adjetivos_basicos | 4 | 0 |
-| hogar_actividades | 9 | 0 |
-| salud | 11 | 0 |
-| dinero_banco | 8 | 0 |
-| ocio | 18 | 0 |
+| verbos_cotidianos | 3 | 0 |
+| adjetivos_basicos | 3 | 0 |
+| hogar_actividades | 8 | 0 |
+| salud | 8 | 0 |
+| dinero_banco | 6 | 0 |
+| ocio | 14 | 0 |
 | viajes | 18 | 0 |
-| oficina_trabajo | 9 | 0 |
-| rutina_diaria | 12 | 0 |
+| oficina_trabajo | 8 | 0 |
+| rutina_diaria | 5 | 0 |
 | ir_a_inf | 4 | 0 |
 | comparativos | 1 | 0 |
 
 ## P1 Issues (untaught tokens — must fix)
 
-- **Card 4** (topic: `A0`, order: 0)
-  - `Qué pasa?`
-  - Missing: `pasa`
-- **Card 7** (topic: `A0`, order: 0)
-  - `Pero no puedo.`
-  - Missing: `puedo`
-- **Card 8** (topic: `A0`, order: 0)
-  - `Ven aquí.`
-  - Missing: `ven`
-- **Card 11** (topic: `A0`, order: 0)
-  - `No pasa nada.`
-  - Missing: `pasa`
-- **Card 15** (topic: `A0`, order: 0)
-  - `Así es la vida.`
-  - Missing: `así`
-- **Card 16** (topic: `A0`, order: 0)
-  - `Es un buen hombre.`
-  - Missing: `buen`
-- **Card 20** (topic: `A0`, order: 0)
-  - `Es una ciudad grande.`
-  - Missing: `ciudad`
-- **Card 29** (topic: `A0`, order: 0)
-  - `Puedo ir?`
-  - Missing: `puedo`
-- **Card 32** (topic: `A0`, order: 0)
-  - `Ven conmigo.`
-  - Missing: `ven`
-- **Card 36** (topic: `A0`, order: 0)
-  - `Dame un momento.`
-  - Missing: `dame`, `momento`
-- **Card 38** (topic: `A0`, order: 0)
-  - `No puedo creer.`
-  - Missing: `puedo`
-- **Card 39** (topic: `A0`, order: 0)
-  - `No puedo encontrarlo.`
-  - Missing: `puedo`, `encontrarlo`
-- **Card 42** (topic: `A0`, order: 0)
-  - `Mi madre es increíble.`
-  - Missing: `increíble`
-- **Card 49** (topic: `A0`, order: 0)
-  - `Hoy es un buen día.`
-  - Missing: `buen`
-- **Card 52** (topic: `A0`, order: 0)
-  - `Ayúdame, por favor.`
-  - Missing: `ayúdame`
-- **Card 53** (topic: `A0`, order: 0)
-  - `Perdón, no sabía.`
-  - Missing: `sabía`
-- **Card 56** (topic: `A0`, order: 0)
-  - `Nos vemos mañana.`
-  - Missing: `vemos`
-- **Card 58** (topic: `A0`, order: 0)
-  - `Nunca digas nunca.`
-  - Missing: `digas`
-- **Card 67** (topic: `A0`, order: 0)
-  - `Me duele la cabeza.`
-  - Missing: `duele`
-- **Card 68** (topic: `A0`, order: 0)
-  - `Dame la mano.`
-  - Missing: `dame`
-- **Card 70** (topic: `A0`, order: 0)
-  - `La comida está lista.`
-  - Missing: `lista`
-- **Card 78** (topic: `A0`, order: 0)
-  - `Qué piensas?`
-  - Missing: `piensas`
-- **Card 79** (topic: `A0`, order: 0)
-  - `Cómo te sientes?`
-  - Missing: `sientes`
-- **Card 80** (topic: `A0`, order: 0)
-  - `Espera un momento.`
-  - Missing: `momento`
-- **Card 81** (topic: `A0`, order: 0)
-  - `No entiendo.`
-  - Missing: `entiendo`
-- **Card 90** (topic: `A0`, order: 0)
-  - `Ven rápido.`
-  - Missing: `ven`
-- **Card 97** (topic: `A0`, order: 0)
-  - `Es una cosa rara.`
-  - Missing: `rara`
-- **Card 98** (topic: `A0`, order: 0)
-  - `Es un buen lugar.`
-  - Missing: `buen`
 - **Card 1005** (topic: `presente_ar`, order: 5)
   - `Ellos hablan en clase.`
   - Missing: `clase`
@@ -163,12 +78,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1029** (topic: `colores`, order: 7)
   - `El cielo está gris hoy.`
   - Missing: `cielo`
-- **Card 1031** (topic: `presente_ir`, order: 1)
-  - `Yo vivo en Madrid.`
-  - Missing: `madrid`
-- **Card 1037** (topic: `presentacion`, order: 2)
-  - `Mi apellido es García.`
-  - Missing: `garcía`
 - **Card 1038** (topic: `presentacion`, order: 3)
   - `Mi edad es veinte años.`
   - Missing: `años`
@@ -178,9 +87,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1042** (topic: `presentacion`, order: 7)
   - `Mi correo es hola@mail.com.`
   - Missing: `hola@mail`
-- **Card 1043** (topic: `presentacion`, order: 8)
-  - `Me llamo Ana.`
-  - Missing: `ana`
 - **Card 1045** (topic: `presentacion`, order: 10)
   - `Encantado de conocerte.`
   - Missing: `conocerte`
@@ -226,9 +132,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1108** (topic: `ser_vs_estar`, order: 3)
   - `Es una persona inteligente y amable.`
   - Missing: `amable`
-- **Card 1110** (topic: `ser_vs_estar`, order: 5)
-  - `Somos españoles de Madrid.`
-  - Missing: `madrid`
 - **Card 1114** (topic: `cuerpo`, order: 1)
   - `Me duele la pierna.`
   - Missing: `duele`
@@ -268,21 +171,12 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1152** (topic: `profesiones`, order: 6)
   - `El ingeniero trabaja en la empresa.`
   - Missing: `empresa`
-- **Card 1159** (topic: `posesivos`, order: 3)
-  - `Su amigo es de México.`
-  - Missing: `méxico`
-- **Card 1163** (topic: `transporte`, order: 1)
-  - `El tren va a Madrid.`
-  - Missing: `madrid`
 - **Card 1170** (topic: `transporte`, order: 8)
   - `Tomo un taxi al aeropuerto.`
   - Missing: `tomo`
 - **Card 1178** (topic: `preposiciones`, order: 6)
   - `Este regalo es para ti.`
   - Missing: `regalo`
-- **Card 1180** (topic: `preposiciones`, order: 8)
-  - `No puedo vivir sin agua.`
-  - Missing: `puedo`
 - **Card 1187** (topic: `clima`, order: 7)
   - `Hoy llueve mucho.`
   - Missing: `llueve`
@@ -328,9 +222,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1226** (topic: `ciudad`, order: 8)
   - `La biblioteca está abierta.`
   - Missing: `abierta`
-- **Card 1239** (topic: `tiempo`, order: 6)
-  - `Me levanto temprano.`
-  - Missing: `levanto`
 - **Card 1242** (topic: `numeros`, order: 13)
   - `Tengo once años.`
   - Missing: `años`
@@ -367,9 +258,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1260** (topic: `comida`, order: 17)
   - `El almuerzo es a las dos.`
   - Missing: `dos`
-- **Card 1266** (topic: `comida`, order: 23)
-  - `Pongo mantequilla en el pan.`
-  - Missing: `pongo`
 - **Card 1267** (topic: `comida`, order: 24)
   - `Cocino con aceite de oliva.`
   - Missing: `oliva`
@@ -403,18 +291,12 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1283** (topic: `cuerpo`, order: 12)
   - `Me duele un diente.`
   - Missing: `duele`
-- **Card 1284** (topic: `cuerpo`, order: 13)
-  - `Tengo la piel seca.`
-  - Missing: `seca`
 - **Card 1286** (topic: `cuerpo`, order: 15)
   - `El hueso está roto.`
   - Missing: `roto`
 - **Card 1290** (topic: `restaurante`, order: 14)
   - `¿Me trae la carta, por favor?`
   - Missing: `trae`
-- **Card 1291** (topic: `restaurante`, order: 15)
-  - `Pedimos un aperitivo antes de comer.`
-  - Missing: `pedimos`
 - **Card 1294** (topic: `profesiones`, order: 13)
   - `El arquitecto diseña casas.`
   - Missing: `diseña`
@@ -451,15 +333,9 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1337** (topic: `posesivos`, order: 10)
   - `Este es nuestro coche.`
   - Missing: `coche`
-- **Card 1340** (topic: `ser_vs_estar`, order: 11)
-  - `Soy de España, de Madrid.`
-  - Missing: `madrid`
 - **Card 1345** (topic: `familia`, order: 1)
   - `Mi abuelo tiene setenta años.`
   - Missing: `setenta`, `años`
-- **Card 1347** (topic: `familia`, order: 3)
-  - `Mi tío vive en Barcelona.`
-  - Missing: `barcelona`
 - **Card 1351** (topic: `familia`, order: 7)
   - `Mi sobrino tiene cinco años.`
   - Missing: `cinco`, `años`
@@ -471,10 +347,7 @@ Generated: 2026-06-11T21:01:04.005Z
   - Missing: `visita`
 - **Card 1357** (topic: `familia`, order: 13)
   - `El bebé duerme en la cuna.`
-  - Missing: `duerme`, `cuna`
-- **Card 1359** (topic: `familia`, order: 15)
-  - `Mi hermana estudia en Madrid.`
-  - Missing: `madrid`
+  - Missing: `cuna`
 - **Card 1365** (topic: `emociones`, order: 6)
   - `Estoy sorprendido por la noticia.`
   - Missing: `noticia`
@@ -490,36 +363,12 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1371** (topic: `emociones`, order: 12)
   - `Estoy avergonzado por el error.`
   - Missing: `error`
-- **Card 1372** (topic: `verbos_reflexivos`, order: 1)
-  - `Me levanto a las siete.`
-  - Missing: `levanto`
-- **Card 1373** (topic: `verbos_reflexivos`, order: 2)
-  - `Me acuesto tarde.`
-  - Missing: `acuesto`
-- **Card 1375** (topic: `verbos_reflexivos`, order: 4)
-  - `Me visto antes de salir.`
-  - Missing: `visto`
-- **Card 1376** (topic: `verbos_reflexivos`, order: 5)
-  - `Me lavo las manos.`
-  - Missing: `lavo`
-- **Card 1377** (topic: `verbos_reflexivos`, order: 6)
-  - `Me siento en la silla.`
-  - Missing: `siento`
-- **Card 1378** (topic: `verbos_reflexivos`, order: 7)
-  - `Me peino cada mañana.`
-  - Missing: `peino`
 - **Card 1379** (topic: `verbos_reflexivos`, order: 8)
   - `Me despierto a las seis.`
   - Missing: `despierto`
-- **Card 1380** (topic: `verbos_reflexivos`, order: 9)
-  - `Me duermo rápido.`
-  - Missing: `duermo`
 - **Card 1382** (topic: `animales`, order: 1)
   - `El perro ladra mucho.`
   - Missing: `ladra`
-- **Card 1383** (topic: `animales`, order: 2)
-  - `El gato duerme todo el día.`
-  - Missing: `duerme`
 - **Card 1384** (topic: `animales`, order: 3)
   - `El pájaro canta en el árbol.`
   - Missing: `árbol`
@@ -532,9 +381,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1388** (topic: `animales`, order: 7)
   - `El cerdo vive en la granja.`
   - Missing: `granja`
-- **Card 1389** (topic: `animales`, order: 8)
-  - `La gallina pone huevos.`
-  - Missing: `pone`
 - **Card 1391** (topic: `animales`, order: 10)
   - `La mariposa vuela en el jardín.`
   - Missing: `vuela`
@@ -550,18 +396,9 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1405** (topic: `verbos_cotidianos`, order: 2)
   - `Almorzamos en el restaurante.`
   - Missing: `restaurante`
-- **Card 1406** (topic: `verbos_cotidianos`, order: 3)
-  - `Cenamos tarde en España.`
-  - Missing: `cenamos`
-- **Card 1411** (topic: `verbos_cotidianos`, order: 8)
-  - `Leo un libro por la noche.`
-  - Missing: `leo`
 - **Card 1421** (topic: `adjetivos_basicos`, order: 6)
   - `Este coche es viejo.`
   - Missing: `coche`
-- **Card 1431** (topic: `hogar_actividades`, order: 1)
-  - `Friego los platos después de comer.`
-  - Missing: `friego`
 - **Card 1433** (topic: `hogar_actividades`, order: 3)
   - `Plancho la ropa el domingo.`
   - Missing: `ropa`
@@ -570,7 +407,7 @@ Generated: 2026-06-11T21:01:04.005Z
   - Missing: `ropa`
 - **Card 1435** (topic: `hogar_actividades`, order: 5)
   - `Riego las plantas todos los días.`
-  - Missing: `riego`, `plantas`
+  - Missing: `plantas`
 - **Card 1437** (topic: `hogar_actividades`, order: 7)
   - `Saco la basura por la noche.`
   - Missing: `saco`
@@ -589,9 +426,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1471** (topic: `hacer`, order: 7)
   - `Hacemos planes para el fin de semana.`
   - Missing: `fin`
-- **Card 1473** (topic: `familia`, order: 16)
-  - `Mi cuñado trabaja en Madrid.`
-  - Missing: `madrid`
 - **Card 1474** (topic: `familia`, order: 17)
   - `Mi cuñada es muy simpática.`
   - Missing: `simpática`
@@ -610,12 +444,9 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1485** (topic: `animales`, order: 15)
   - `La serpiente es larga y fina.`
   - Missing: `fina`
-- **Card 1486** (topic: `animales`, order: 16)
-  - `El león vive en África.`
-  - Missing: `áfrica`
 - **Card 1487** (topic: `animales`, order: 17)
   - `El oso duerme en invierno.`
-  - Missing: `duerme`, `invierno`
+  - Missing: `invierno`
 - **Card 1488** (topic: `compras`, order: 11)
   - `Qué talla usas tú?`
   - Missing: `usas`
@@ -628,9 +459,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1494** (topic: `adjetivos_basicos`, order: 17)
   - `La maleta es muy pesada.`
   - Missing: `maleta`
-- **Card 1499** (topic: `verbos_cotidianos`, order: 14)
-  - `Ella sabe bailar muy bien.`
-  - Missing: `sabe`
 - **Card 1500** (topic: `verbos_cotidianos`, order: 15)
   - `Me gusta dibujar paisajes.`
   - Missing: `paisajes`
@@ -639,10 +467,10 @@ Generated: 2026-06-11T21:01:04.005Z
   - Missing: `año`
 - **Card 1504** (topic: `hogar_actividades`, order: 13)
   - `Seco la ropa al sol.`
-  - Missing: `seco`, `ropa`
+  - Missing: `ropa`
 - **Card 1505** (topic: `hogar_actividades`, order: 14)
   - `Cuelgo la ropa en el armario.`
-  - Missing: `cuelgo`, `ropa`
+  - Missing: `ropa`
 - **Card 1506** (topic: `hogar_actividades`, order: 15)
   - `Doblo la ropa limpia.`
   - Missing: `ropa`
@@ -655,9 +483,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1511** (topic: `salud`, order: 4)
   - `Tomo la medicina dos veces al día.`
   - Missing: `tomo`, `dos`, `veces`
-- **Card 1516** (topic: `salud`, order: 9)
-  - `Estoy enfermo y no puedo trabajar.`
-  - Missing: `puedo`
 - **Card 1517** (topic: `salud`, order: 10)
   - `Como bien para estar sano.`
   - Missing: `estar`
@@ -667,24 +492,15 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1520** (topic: `salud`, order: 13)
   - `El médico me da pastillas para el dolor.`
   - Missing: `da`, `dolor`
-- **Card 1522** (topic: `salud`, order: 15)
-  - `La enfermera pone un vendaje en mi brazo.`
-  - Missing: `pone`
 - **Card 1524** (topic: `salud`, order: 17)
   - `El médico dice que debo descansar.`
-  - Missing: `dice`, `debo`
-- **Card 1530** (topic: `salud`, order: 23)
-  - `El médico pide un análisis de sangre.`
-  - Missing: `pide`
+  - Missing: `debo`
 - **Card 1531** (topic: `salud`, order: 24)
   - `El médico mira la radiografía.`
   - Missing: `mira`
 - **Card 1533** (topic: `salud`, order: 26)
   - `Voy a urgencias porque me duele mucho.`
   - Missing: `duele`
-- **Card 1536** (topic: `dinero_banco`, order: 1)
-  - `Pago con tarjeta de crédito en la tienda.`
-  - Missing: `pago`
 - **Card 1537** (topic: `dinero_banco`, order: 2)
   - `Abro una cuenta bancaria nueva.`
   - Missing: `abro`
@@ -699,19 +515,13 @@ Generated: 2026-06-11T21:01:04.005Z
   - Missing: `vacaciones`
 - **Card 1544** (topic: `dinero_banco`, order: 9)
   - `Pido un préstamo para comprar un coche.`
-  - Missing: `pido`, `coche`
-- **Card 1547** (topic: `dinero_banco`, order: 12)
-  - `Pago la factura del teléfono.`
-  - Missing: `pago`
+  - Missing: `coche`
 - **Card 1548** (topic: `dinero_banco`, order: 13)
   - `Prefiero pagar en efectivo.`
   - Missing: `prefiero`
 - **Card 1553** (topic: `ocio`, order: 1)
   - `Mi deporte favorito es el fútbol.`
   - Missing: `favorito`
-- **Card 1554** (topic: `ocio`, order: 2)
-  - `Jugamos al fútbol en el parque.`
-  - Missing: `jugamos`
 - **Card 1557** (topic: `ocio`, order: 5)
   - `Nuestro equipo gana muchos partidos.`
   - Missing: `gana`
@@ -721,15 +531,9 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1560** (topic: `ocio`, order: 8)
   - `Voy al gimnasio tres veces por semana.`
   - Missing: `tres`, `veces`
-- **Card 1561** (topic: `ocio`, order: 9)
-  - `Los jugadores entrenan cada mañana.`
-  - Missing: `jugadores`
 - **Card 1563** (topic: `ocio`, order: 11)
   - `El ciclismo es un deporte muy popular.`
   - Missing: `popular`
-- **Card 1564** (topic: `ocio`, order: 12)
-  - `Jugamos al ajedrez después de cenar.`
-  - Missing: `jugamos`
 - **Card 1565** (topic: `ocio`, order: 13)
   - `Este juego es muy divertido.`
   - Missing: `divertido`
@@ -742,15 +546,12 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1570** (topic: `ocio`, order: 18)
   - `Me gusta pintar paisajes los domingos.`
   - Missing: `paisajes`
-- **Card 1571** (topic: `ocio`, order: 19)
-  - `Leo una novela muy interesante.`
-  - Missing: `leo`
 - **Card 1576** (topic: `viajes`, order: 4)
   - `La recepción está abierta toda la noche.`
   - Missing: `abierta`
 - **Card 1578** (topic: `viajes`, order: 6)
   - `El turista busca un buen restaurante.`
-  - Missing: `busca`, `buen`, `restaurante`
+  - Missing: `busca`, `restaurante`
 - **Card 1579** (topic: `viajes`, order: 7)
   - `Me gusta viajar en verano.`
   - Missing: `verano`
@@ -781,9 +582,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1597** (topic: `oficina_trabajo`, order: 5)
   - `Guardo el documento en una carpeta.`
   - Missing: `guardo`, `carpeta`
-- **Card 1598** (topic: `oficina_trabajo`, order: 6)
-  - `Necesito imprimir veinte páginas.`
-  - Missing: `páginas`
 - **Card 1599** (topic: `oficina_trabajo`, order: 7)
   - `El jefe va a firmar la carta.`
   - Missing: `jefe`
@@ -804,43 +602,22 @@ Generated: 2026-06-11T21:01:04.005Z
   - Missing: `suena`
 - **Card 1611** (topic: `rutina_diaria`, order: 4)
   - `El cepillo está al lado del lavabo.`
-  - Missing: `lado`, `lavabo`
-- **Card 1613** (topic: `rutina_diaria`, order: 6)
-  - `Mi padre se afeita cada mañana.`
-  - Missing: `afeita`
-- **Card 1614** (topic: `rutina_diaria`, order: 7)
-  - `Ella se maquilla antes de salir.`
-  - Missing: `maquilla`
+  - Missing: `lado`
 - **Card 1615** (topic: `rutina_diaria`, order: 8)
   - `Me miro en el espejo del baño.`
   - Missing: `miro`
 - **Card 1616** (topic: `rutina_diaria`, order: 9)
   - `Uso champú para el pelo seco.`
-  - Missing: `uso`, `seco`
-- **Card 1617** (topic: `rutina_diaria`, order: 10)
-  - `Me seco con una toalla limpia.`
-  - Missing: `seco`
-- **Card 1618** (topic: `rutina_diaria`, order: 11)
-  - `Me preparo para ir al trabajo.`
-  - Missing: `preparo`
-- **Card 1619** (topic: `rutina_diaria`, order: 12)
-  - `Me pongo el abrigo antes de salir.`
-  - Missing: `pongo`
-- **Card 1620** (topic: `rutina_diaria`, order: 13)
-  - `Me quito los zapatos en casa.`
-  - Missing: `quito`
+  - Missing: `uso`
 - **Card 1621** (topic: `rutina_diaria`, order: 14)
   - `Los niños toman la merienda a las cinco.`
   - Missing: `toman`, `cinco`
-- **Card 1622** (topic: `rutina_diaria`, order: 15)
-  - `Después de comer duermo la siesta.`
-  - Missing: `duermo`
 - **Card 1623** (topic: `ir_a_inf`, order: 1)
   - `Este verano voy a viajar mucho.`
   - Missing: `verano`
 - **Card 1625** (topic: `ir_a_inf`, order: 3)
   - `Creo que va a llover pronto.`
-  - Missing: `creo`, `pronto`
+  - Missing: `pronto`
 - **Card 1627** (topic: `ir_a_inf`, order: 5)
   - `¿Vais a estudiar para el examen?`
   - Missing: `examen`
@@ -850,18 +627,12 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1634** (topic: `comparativos`, order: 4)
   - `Este libro es mejor que el otro.`
   - Missing: `otro`
-- **Card 1639** (topic: `comida`, order: 28)
-  - `Preparo una ensalada para la cena.`
-  - Missing: `preparo`
 - **Card 1640** (topic: `comida`, order: 29)
   - `La tortilla de patatas está deliciosa.`
   - Missing: `deliciosa`
 - **Card 1641** (topic: `comida`, order: 30)
   - `Llevo un bocadillo al trabajo.`
   - Missing: `llevo`
-- **Card 1643** (topic: `comida`, order: 32)
-  - `Pedimos una pizza grande.`
-  - Missing: `pedimos`
 - **Card 1644** (topic: `comida`, order: 33)
   - `Las patatas fritas están calientes.`
   - Missing: `fritas`
@@ -883,9 +654,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1655** (topic: `casa`, order: 19)
   - `Veo la tele en el sofá.`
   - Missing: `veo`, `tele`
-- **Card 1657** (topic: `casa`, order: 21)
-  - `El gato duerme en la alfombra.`
-  - Missing: `duerme`
 - **Card 1658** (topic: `casa`, order: 22)
   - `Abro las cortinas por la mañana.`
   - Missing: `abro`
@@ -901,9 +669,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1664** (topic: `casa`, order: 28)
   - `El baño está al final del pasillo.`
   - Missing: `final`
-- **Card 1666** (topic: `casa`, order: 30)
-  - `Me lavo en la ducha.`
-  - Missing: `lavo`
 - **Card 1670** (topic: `ciudad`, order: 19)
   - `Giro a la derecha en el cruce.`
   - Missing: `giro`, `derecha`
@@ -928,9 +693,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1684** (topic: `ropa`, order: 21)
   - `Llevo el bañador a la piscina.`
   - Missing: `llevo`
-- **Card 1685** (topic: `ropa`, order: 22)
-  - `Me pongo el pijama por la noche.`
-  - Missing: `pongo`
 - **Card 1686** (topic: `ropa`, order: 23)
   - `La sudadera es muy cómoda.`
   - Missing: `cómoda`
@@ -940,9 +702,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1689** (topic: `cuerpo`, order: 16)
   - `Me duele el estómago.`
   - Missing: `duele`
-- **Card 1690** (topic: `cuerpo`, order: 17)
-  - `Tengo la garganta seca.`
-  - Missing: `seca`
 - **Card 1691** (topic: `cuerpo`, order: 18)
   - `El médico mira mi lengua.`
   - Missing: `mira`
@@ -955,15 +714,9 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1694** (topic: `cuerpo`, order: 21)
   - `Me duele el tobillo derecho.`
   - Missing: `duele`, `derecho`
-- **Card 1695** (topic: `cuerpo`, order: 22)
-  - `Me lavo la cara por la mañana.`
-  - Missing: `lavo`
 - **Card 1696** (topic: `cuerpo`, order: 23)
   - `El bebé tiene las mejillas rojas.`
   - Missing: `rojas`
-- **Card 1697** (topic: `cuerpo`, order: 24)
-  - `Tengo los labios secos.`
-  - Missing: `secos`
 - **Card 1698** (topic: `cuerpo`, order: 25)
   - `El médico escucha mi pecho.`
   - Missing: `escucha`
@@ -982,9 +735,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1705** (topic: `transporte`, order: 22)
   - `El motor hace mucho ruido.`
   - Missing: `ruido`
-- **Card 1706** (topic: `transporte`, order: 23)
-  - `Pongo las manos en el volante.`
-  - Missing: `pongo`
 - **Card 1707** (topic: `transporte`, order: 24)
   - `El freno del coche funciona bien.`
   - Missing: `coche`, `funciona`
@@ -1018,9 +768,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1725** (topic: `restaurante`, order: 19)
   - `El camarero trae una bandeja.`
   - Missing: `trae`
-- **Card 1726** (topic: `restaurante`, order: 20)
-  - `Pedimos una ración de patatas.`
-  - Missing: `pedimos`
 - **Card 1727** (topic: `restaurante`, order: 21)
   - `En el bar sirven tapas ricas.`
   - Missing: `bar`, `sirven`, `ricas`
@@ -1063,9 +810,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1747** (topic: `comida`, order: 46)
   - `Las uvas verdes están ricas.`
   - Missing: `verdes`, `ricas`
-- **Card 1748** (topic: `comida`, order: 47)
-  - `Pongo limón en el té.`
-  - Missing: `pongo`
 - **Card 1749** (topic: `comida`, order: 48)
   - `La sandía es perfecta en verano.`
   - Missing: `perfecta`, `verano`
@@ -1078,9 +822,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1753** (topic: `comida`, order: 52)
   - `La salchicha está en la parrilla.`
   - Missing: `parrilla`
-- **Card 1754** (topic: `comida`, order: 53)
-  - `Pongo mermelada en el pan.`
-  - Missing: `pongo`
 - **Card 1755** (topic: `comida`, order: 54)
   - `Tomo té con miel.`
   - Missing: `tomo`
@@ -1101,7 +842,7 @@ Generated: 2026-06-11T21:01:04.005Z
   - Missing: `cae`, `coches`
 - **Card 1767** (topic: `ocio`, order: 21)
   - `Jugamos al voleibol en la playa.`
-  - Missing: `jugamos`, `playa`
+  - Missing: `playa`
 - **Card 1771** (topic: `ocio`, order: 25)
   - `El esquí es un deporte de invierno.`
   - Missing: `invierno`
@@ -1131,7 +872,7 @@ Generated: 2026-06-11T21:01:04.005Z
   - Missing: `pasa`, `bosque`
 - **Card 1782** (topic: `viajes`, order: 26)
   - `Nadamos en el lago en verano.`
-  - Missing: `nadamos`, `verano`
+  - Missing: `verano`
 - **Card 1783** (topic: `viajes`, order: 27)
   - `La costa está a dos horas.`
   - Missing: `dos`
@@ -1159,9 +900,6 @@ Generated: 2026-06-11T21:01:04.005Z
 - **Card 1799** (topic: `cuerpo`, order: 30)
   - `El zapato me hace daño en el talón.`
   - Missing: `daño`
-- **Card 1801** (topic: `adjetivos_basicos`, order: 21)
-  - `Después de la gripe me siento débil.`
-  - Missing: `siento`
 - **Card 1804** (topic: `adjetivos_basicos`, order: 24)
   - `La familia es pobre pero feliz.`
   - Missing: `familia`
