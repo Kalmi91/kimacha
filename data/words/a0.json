@@ -41,11 +41,11 @@
     "es": "qué",
     "hu": "mi / mit",
     "en": "what",
-    "sentence_es": "Qué pasa?",
-    "sentence_hu": "Mi történik?",
-    "sentence_en": "What's happening?",
+    "sentence_es": "¿Qué es esto?",
+    "sentence_hu": "Mi ez?",
+    "sentence_en": "What is this?",
     "de": "was",
-    "sentence_de": "Was passiert?"
+    "sentence_de": "Was ist das?"
   },
   {
     "id": 5,
@@ -125,11 +125,11 @@
     "es": "nada",
     "hu": "semmi",
     "en": "nothing",
-    "sentence_es": "No pasa nada.",
-    "sentence_hu": "Semmi baj.",
-    "sentence_en": "It's nothing.",
+    "sentence_es": "No hay nada.",
+    "sentence_hu": "Semmi sincs.",
+    "sentence_en": "There is nothing.",
     "de": "nichts",
-    "sentence_de": "Es ist nichts."
+    "sentence_de": "Es gibt nichts."
   },
   {
     "id": 12,
@@ -173,11 +173,11 @@
     "es": "la vida",
     "hu": "élet",
     "en": "life",
-    "sentence_es": "Así es la vida.",
-    "sentence_hu": "Ilyen az élet.",
-    "sentence_en": "That's life.",
+    "sentence_es": "La vida es buena.",
+    "sentence_hu": "Az élet jó.",
+    "sentence_en": "Life is good.",
     "de": "Leben",
-    "sentence_de": "So ist das Leben."
+    "sentence_de": "Das Leben ist gut."
   },
   {
     "id": 16,
@@ -233,11 +233,11 @@
     "es": "grande",
     "hu": "nagy",
     "en": "big",
-    "sentence_es": "Es una ciudad grande.",
-    "sentence_hu": "Nagy város.",
-    "sentence_en": "It's a big city.",
+    "sentence_es": "El hombre es grande.",
+    "sentence_hu": "A férfi nagy.",
+    "sentence_en": "The man is big.",
     "de": "groß",
-    "sentence_de": "Es ist eine große Stadt."
+    "sentence_de": "Der Mann ist groß."
   },
   {
     "id": 21,
@@ -425,11 +425,11 @@
     "es": "dar",
     "hu": "adni",
     "en": "to give",
-    "sentence_es": "Dame un momento.",
-    "sentence_hu": "Adj egy percet.",
-    "sentence_en": "Give me a moment.",
+    "sentence_es": "Puedo dar.",
+    "sentence_hu": "Tudok adni.",
+    "sentence_en": "I can give.",
     "de": "geben",
-    "sentence_de": "Gib mir einen Moment."
+    "sentence_de": "Ich kann geben."
   },
   {
     "id": 37,
@@ -461,11 +461,11 @@
     "es": "encontrar",
     "hu": "találni",
     "en": "to find",
-    "sentence_es": "No puedo encontrarlo.",
-    "sentence_hu": "Nem találom.",
-    "sentence_en": "I can't find it.",
+    "sentence_es": "No puedo encontrar esto.",
+    "sentence_hu": "Nem találom ezt.",
+    "sentence_en": "I cannot find this.",
     "de": "finden",
-    "sentence_de": "Ich kann es nicht finden."
+    "sentence_de": "Ich kann das nicht finden."
   },
   {
     "id": 40,
@@ -497,11 +497,11 @@
     "es": "la madre",
     "hu": "anya",
     "en": "mother",
-    "sentence_es": "Mi madre es increíble.",
-    "sentence_hu": "Anyám hihetetlen.",
-    "sentence_en": "My mother is amazing.",
+    "sentence_es": "Mi madre es buena.",
+    "sentence_hu": "Anyám jó.",
+    "sentence_en": "My mother is good.",
     "de": "Mutter",
-    "sentence_de": "Meine Mutter ist wunderbar."
+    "sentence_de": "Meine Mutter ist gut."
   },
   {
     "id": 43,
@@ -617,11 +617,11 @@
     "es": "por favor",
     "hu": "kérlek",
     "en": "please",
-    "sentence_es": "Ayúdame, por favor.",
-    "sentence_hu": "Segíts, kérlek.",
-    "sentence_en": "Help me, please.",
+    "sentence_es": "Habla, por favor.",
+    "sentence_hu": "Kérlek, beszélj.",
+    "sentence_en": "Speak, please.",
     "de": "bitte",
-    "sentence_de": "Hilf mir, bitte."
+    "sentence_de": "Sprich, bitte."
   },
   {
     "id": 53,
@@ -797,11 +797,11 @@
     "es": "la cabeza",
     "hu": "fej",
     "en": "head",
-    "sentence_es": "Me duele la cabeza.",
-    "sentence_hu": "Fáj a fejem.",
-    "sentence_en": "My head hurts.",
+    "sentence_es": "La cabeza es importante.",
+    "sentence_hu": "A fej fontos.",
+    "sentence_en": "The head is important.",
     "de": "Kopf",
-    "sentence_de": "Mein Kopf tut weh."
+    "sentence_de": "Der Kopf ist wichtig."
   },
   {
     "id": 68,
@@ -833,11 +833,11 @@
     "es": "la comida",
     "hu": "étel",
     "en": "food",
-    "sentence_es": "La comida está lista.",
-    "sentence_hu": "Az étel kész.",
-    "sentence_en": "The food is ready.",
+    "sentence_es": "La comida es buena.",
+    "sentence_hu": "Az étel jó.",
+    "sentence_en": "The food is good.",
     "de": "Essen",
-    "sentence_de": "Das Essen ist fertig."
+    "sentence_de": "Das Essen ist gut."
   },
   {
     "id": 71,
@@ -953,11 +953,11 @@
     "es": "esperar",
     "hu": "várni / remélni",
     "en": "to wait / to hope",
-    "sentence_es": "Espera un momento.",
-    "sentence_hu": "Várj egy pillanatot.",
-    "sentence_en": "Wait a moment.",
+    "sentence_es": "Espera, por favor.",
+    "sentence_hu": "Várj, kérlek.",
+    "sentence_en": "Wait, please.",
     "de": "warten / hoffen",
-    "sentence_de": "Warte einen Moment."
+    "sentence_de": "Warte bitte."
   },
   {
     "id": 81,
@@ -1157,11 +1157,11 @@
     "es": "la cosa",
     "hu": "dolog",
     "en": "thing",
-    "sentence_es": "Es una cosa rara.",
-    "sentence_hu": "Furcsa dolog.",
-    "sentence_en": "It's a strange thing.",
+    "sentence_es": "Es una cosa buena.",
+    "sentence_hu": "Ez egy jó dolog.",
+    "sentence_en": "It is a good thing.",
     "de": "Sache / Ding",
-    "sentence_de": "Das ist eine seltsame Sache."
+    "sentence_de": "Das ist eine gute Sache."
   },
   {
     "id": 98,
