@@ -69,6 +69,7 @@ export default {
   },
   settings: {
     changeLanguage: 'Nyelv Váltás',
+    wordsOnly: 'Csak szavak',
   },
   progress: {
     wordsKnown: 'Ismert Szavak',

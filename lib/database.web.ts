@@ -25,6 +25,8 @@ export interface DB {
   resetAllProgress(): Promise<void>;
   getSelectedTopic(): Promise<string | null>;
   setSelectedTopic(topicId: string | null): Promise<void>;
+  getWordsOnly(): Promise<boolean>;
+  setWordsOnly(v: boolean): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -228,6 +230,16 @@ class MemoryDB implements DB {
 
   async setSelectedTopic(topicId: string | null): Promise<void> {
     this.selectedTopics.set(this.activePair, topicId);
+  }
+
+  private wordsOnlyMap: Map<string, boolean> = new Map();
+
+  async getWordsOnly(): Promise<boolean> {
+    return this.wordsOnlyMap.get(this.activePair) ?? false;
+  }
+
+  async setWordsOnly(v: boolean): Promise<void> {
+    this.wordsOnlyMap.set(this.activePair, v);
   }
 }
 

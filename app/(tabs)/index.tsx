@@ -107,6 +107,38 @@ export default function LearnScreen() {
     }).filter((item: DueItem) => !!item.word);
   };
 
+  const QUEUE_POOL = 40;
+
+  const applyCadence = (items: DueItem[], wordsOnly: boolean): DueItem[] => {
+    if (wordsOnly) {
+      return items
+        .filter(item => item.type === 'word')
+        .map(item => ({ ...item, isTyping: true, typingDirection: 'native-to-learned' as TypingDir }));
+    }
+    const words: DueItem[] = [];
+    const easy: DueItem[] = [];
+    const typing: DueItem[] = [];
+    for (const item of items) {
+      if (item.type === 'word') words.push(item);
+      else if (item.isEasySentence) easy.push(item);
+      else typing.push(item);
+    }
+    const result: DueItem[] = [];
+    let wi = 0, ei = 0, ti = 0;
+    while (wi < words.length || ei < easy.length || ti < typing.length) {
+      if (wi >= words.length) break;
+      const batch = words.slice(wi, wi + 10);
+      wi += batch.length;
+      result.push(...batch);
+      for (let i = 0; i < 2 && ei < easy.length; i++, ei++) result.push(easy[ei]);
+      if (ti < typing.length) { result.push(typing[ti]); ti++; }
+    }
+    // append any remaining easy/typing that outlasted words
+    while (ei < easy.length) { result.push(easy[ei]); ei++; }
+    while (ti < typing.length) { result.push(typing[ti]); ti++; }
+    return result;
+  };
+
   const computeUnlockedTopics = (topics: TopicDef[], repsMap: Map<number, number>, currentLevel: Level, selectedTopicId?: string | null): { unlocked: TopicDef[]; activeTopic: TopicDef | null; completedCount: number } => {
     // A1: all topics freely selectable — no sequential lock.
     // Other levels: keep original sequential unlock logic.
@@ -219,11 +251,12 @@ export default function LearnScreen() {
     setKnownWords(reviewedWords);
     setLevelTotal(totalWords);
 
+    const wordsOnly = await db.getWordsOnly();
     const activeWordIds = activeWords.map(w => w.id);
     const rows = useTopics
-      ? await db.getDueCardsForWordIds(activeWordIds, 10)
-      : await db.getDueCardsForLevel(currentLevel, 10);
-    const items = buildQueue(rows);
+      ? await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL)
+      : await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
+    const items = applyCadence(buildQueue(rows), wordsOnly);
 
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
@@ -459,12 +492,13 @@ export default function LearnScreen() {
           await db.ensureCard(w.id, 'word');
           await db.ensureCard(w.id, 'sentence');
         }
-        newRows = await db.getDueCardsForWordIds(activeWordIds, 10);
+        newRows = await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL);
       } else {
-        newRows = await db.getDueCardsForLevel(currentLevel, 10);
+        newRows = await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
       }
 
-      const newItems = buildQueue(newRows);
+      const wordsOnly2 = await db.getWordsOnly();
+      const newItems = applyCadence(buildQueue(newRows), wordsOnly2);
 
       if (newItems.length === 0) {
         setDone(true);

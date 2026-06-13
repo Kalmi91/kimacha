@@ -26,6 +26,8 @@ export interface DB {
   resetAllProgress(): Promise<void>;
   getSelectedTopic(): Promise<string | null>;
   setSelectedTopic(topicId: string | null): Promise<void>;
+  getWordsOnly(): Promise<boolean>;
+  setWordsOnly(v: boolean): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -107,6 +109,10 @@ class SQLiteDB implements DB {
       CREATE TABLE IF NOT EXISTS selected_topic (
         pair TEXT PRIMARY KEY,
         topic_id TEXT
+      );
+      CREATE TABLE IF NOT EXISTS learn_settings (
+        pair TEXT PRIMARY KEY,
+        words_only INTEGER
       );
     `);
     const meta = await this.db.getFirstAsync<any>('SELECT id FROM user_meta WHERE id = 1');
@@ -417,6 +423,17 @@ class SQLiteDB implements DB {
   async setSelectedTopic(topicId: string | null): Promise<void> {
     const db = await this.open();
     await db.runAsync('INSERT OR REPLACE INTO selected_topic (pair, topic_id) VALUES (?, ?)', [this.activePair, topicId]);
+  }
+
+  async getWordsOnly(): Promise<boolean> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT words_only FROM learn_settings WHERE pair = ?', [this.activePair]);
+    return row?.words_only === 1;
+  }
+
+  async setWordsOnly(v: boolean): Promise<void> {
+    const db = await this.open();
+    await db.runAsync('INSERT OR REPLACE INTO learn_settings (pair, words_only) VALUES (?, ?)', [this.activePair, v ? 1 : 0]);
   }
 }
 

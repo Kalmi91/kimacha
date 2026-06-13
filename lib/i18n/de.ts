@@ -69,6 +69,7 @@ export default {
   },
   settings: {
     changeLanguage: 'Sprache Wechseln',
+    wordsOnly: 'Nur Wörter',
   },
   progress: {
     wordsKnown: 'Bekannte Wörter',
