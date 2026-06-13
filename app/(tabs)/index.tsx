@@ -68,6 +68,9 @@ export default function LearnScreen() {
   const [topicProgress, setTopicProgress] = useState<{ done: number; total: number; wordsInTopic: number; wordsReviewed: number } | null>(null);
   const [topicCompleteMsg, setTopicCompleteMsg] = useState<string | null>(null);
   const inputRef = useRef<TextInput>(null);
+  // Guards advance() against double-fire on the same card while its persistence
+  // (several awaited DB writes) is still running.
+  const advancingRef = useRef(false);
 
   const buildQueue = (rows: any[]): DueItem[] => {
     return rows.map((row: any) => {
@@ -348,18 +351,46 @@ export default function LearnScreen() {
     await db.updateLevel(currentLevel, correct_streak, mistakes_in_window, fail_streak);
   };
 
-  const advance = async (rating: Grade) => {
-    if (!current) return;
+  const resetCardState = () => {
+    setRevealed(false);
+    setTypedAnswer('');
+    setTypingResult(null);
+    setCardStartTime(Date.now());
+    setPracticeTyping(false);
+    setPracticeResult(null);
+    setPracticeText('');
+  };
 
-    const result = f.repeat(current.card, new Date());
+  const advance = async (rating: Grade) => {
+    if (!current || advancingRef.current) return;
+    advancingRef.current = true;
+
+    // Capture the rated card before any optimistic UI change.
+    const item = current;
+    const startTime = cardStartTime;
+    const next = currentIndex + 1;
+    const midQueue = next < queue.length;
+
+    // FB11: word-card Good/Again felt dead/slow because ~8 awaited DB writes ran
+    // before the next card appeared. For a mid-queue rating, show the next card
+    // immediately and release the guard so it stays tappable; the SRS persistence
+    // below runs in the background. (End-of-queue must await its batch rebuild.)
+    if (midQueue) {
+      setCurrentIndex(next);
+      resetCardState();
+      advancingRef.current = false;
+    }
+
+    try {
+    const result = f.repeat(item.card, new Date());
     const updated = result[rating].card;
     const wasCorrect = rating !== Rating.Again;
 
-    const responseTimeMs = Date.now() - cardStartTime;
+    const responseTimeMs = Date.now() - startTime;
 
     const db = getDb();
-    await db.updateCard(current.wordId, current.type, updated);
-    await db.recordAttempt(current.wordId, current.type, wasCorrect, responseTimeMs);
+    await db.updateCard(item.wordId, item.type, updated);
+    await db.recordAttempt(item.wordId, item.type, wasCorrect, responseTimeMs);
     await db.updateStreak();
     setKnownWords(await db.getReviewedWordCount(level));
     await checkLevelChange(wasCorrect);
@@ -367,10 +398,9 @@ export default function LearnScreen() {
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
 
-    const next = currentIndex + 1;
-    setReviewed(reviewed + 1);
+    setReviewed((r) => r + 1);
 
-    if (next >= queue.length) {
+    if (!midQueue) {
       const levelData = await db.getLevel();
       const currentLevel = levelData.level as Level;
       const { getWordsForLevel: gwfl } = require('@/data/words');
@@ -442,16 +472,11 @@ export default function LearnScreen() {
         setQueue(newItems);
         setCurrentIndex(0);
       }
-    } else {
-      setCurrentIndex(next);
+      resetCardState();
     }
-    setRevealed(false);
-    setTypedAnswer('');
-    setTypingResult(null);
-    setCardStartTime(Date.now());
-    setPracticeTyping(false);
-    setPracticeResult(null);
-    setPracticeText('');
+    } finally {
+      if (!midQueue) advancingRef.current = false;
+    }
   };
 
   const handleInSentence = async () => {
