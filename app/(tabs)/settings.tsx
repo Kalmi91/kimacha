@@ -1,11 +1,12 @@
-import { useState } from 'react';
-import { StyleSheet, Text, View, Pressable, Modal, Alert } from 'react-native';
+import { useState, useEffect } from 'react';
+import { StyleSheet, Text, View, Pressable, Modal, Alert, Switch } from 'react-native';
 import { useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { LEVELS, type Level, getWordsForLevel } from '@/data/words';
 import { setPendingAction } from '@/lib/pendingAction';
+import { getDb } from '@/lib/database';
 
 export default function SettingsScreen() {
   const { theme, override, setOverride } = useTheme();
@@ -13,6 +14,18 @@ export default function SettingsScreen() {
   const s = t();
   const router = useRouter();
   const [masterVisible, setMasterVisible] = useState(false);
+  const [wordsOnly, setWordsOnly] = useState(false);
+
+  useEffect(() => {
+    getDb().getWordsOnly().then(setWordsOnly);
+  }, []);
+
+  const handleWordsOnlyToggle = async (v: boolean) => {
+    setWordsOnly(v);
+    await getDb().setWordsOnly(v);
+    setPendingAction({ type: 'selectTopic' });
+    router.push('/');
+  };
 
   const themeOptions: { label: string; value: 'system' | 'light' | 'dark' }[] = [
     { label: '🔄 Auto', value: 'system' },
@@ -87,6 +100,11 @@ export default function SettingsScreen() {
       >
         <Text style={styles.masterBtnText}>🌐 {s.settings.changeLanguage}</Text>
       </Pressable>
+
+      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.wordsOnly}</Text>
+        <Switch value={wordsOnly} onValueChange={handleWordsOnlyToggle} trackColor={{ true: colors.tint }} />
+      </View>
 
       <Modal visible={masterVisible} transparent animationType="fade">
         <View style={styles.overlay}>
@@ -242,5 +260,18 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
     fontWeight: '500',
+  },
+  wordsOnlyRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 14,
+    paddingHorizontal: 16,
+    borderRadius: 14,
+    marginTop: 12,
+  },
+  wordsOnlyLabel: {
+    fontSize: 16,
+    fontWeight: '600',
   },
 });
