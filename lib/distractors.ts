@@ -59,8 +59,11 @@ export function nearMissDistractors(
   const tokens = [
     ...new Set(
       vocab
-        .flatMap((w) => String(w ?? '').split(/\s+/))
-        .map((w) => w.replace(/[.,!?;:¡¿"']/g, '').trim())
+        // Drop parenthetical glosses ("su casa (de ellos)") before splitting so a
+        // disambiguation hint never leaks into the bank as a stray tile ("ellos)").
+        .map((w) => String(w ?? '').replace(/\s*\([^)]*\)/g, ' '))
+        .flatMap((w) => w.split(/\s+/))
+        .map((w) => w.replace(/[.,!?;:¡¿"'()]/g, '').trim())
         .filter((w) => w.length > 1 || (ARTICLES[lang] ?? []).includes(w.toLowerCase())),
     ),
   ];
