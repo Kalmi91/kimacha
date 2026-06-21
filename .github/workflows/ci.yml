@@ -25,8 +25,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Scoped typecheck: the exam/data feature subtree is mid-refactor
-      # (see tsconfig.ci.json). It typechecks the rest of the app.
+      # Full-project typecheck (tsc --noEmit). The exam/data refactor has
+      # landed, so no files are excluded anymore.
       - name: Typecheck
         run: npm run typecheck:ci
 
