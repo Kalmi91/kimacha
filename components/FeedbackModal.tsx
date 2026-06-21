@@ -88,7 +88,7 @@ export default function FeedbackButton({ level, languagePair, currentCard }: Pro
                 <Text style={styles.modalBtnText}>{s.feedback.cancel}</Text>
               </Pressable>
               <Pressable
-                style={[styles.modalBtn, { backgroundColor: colors.tint, opacity: text.trim() ? 1 : 0.4 }]}
+                style={({ pressed }) => [styles.modalBtn, { backgroundColor: (pressed || sending) ? '#22C55E' : colors.tint, opacity: text.trim() ? 1 : 0.4 }]}
                 onPress={handleSend}
                 disabled={!text.trim() || sending}
               >
