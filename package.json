@@ -1,7 +1,7 @@
 {
   "name": "kimacha",
   "main": "expo-router/entry",
-  "version": "2.0.0",
+  "version": "3.0.1",
   "dependencies": {
     "expo": "~56.0.5",
     "expo-constants": "~56.0.15",
@@ -44,7 +44,7 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "typecheck": "tsc --noEmit",
-    "typecheck:ci": "tsc -p tsconfig.ci.json --noEmit",
+    "typecheck:ci": "tsc --noEmit",
     "test": "jest",
     "test:ci": "jest --ci --coverage --maxWorkers=2"
   },
