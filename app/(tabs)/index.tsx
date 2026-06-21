@@ -684,7 +684,12 @@ export default function LearnScreen() {
     const [native, learned] = direction;
     const nativeSentence = String(current.word[`sentence_${native}`]);
     const learnedSentence = String(current.word[`sentence_${learned}`]);
-    const targetWordList = learnedSentence.replace(/[.!?¡¿,;:]/g, '').split(/\s+/).filter(Boolean);
+    // FB16: lowercase the sentence-initial word in the tile bank, a leading
+    // capital reveals which tile starts the sentence. Grading stays case-insensitive.
+    const rawTargetWords = learnedSentence.replace(/[.!?¡¿,;:]/g, '').split(/\s+/).filter(Boolean);
+    const targetWordList = rawTargetWords.map((w, i) =>
+      i === 0 ? w.charAt(0).toLowerCase() + w.slice(1) : w,
+    );
     const levelWords = getWordsForLevel(level);
     // Near-miss distractors (FB1): sibling articles + same-stem/ending forms
     // instead of random vocab, so the learner practises forms not random noise.
@@ -716,7 +721,8 @@ export default function LearnScreen() {
           }}
           onBury={() => {
             const db = getDb();
-            db.buryCard(current.wordId, current.type).then(() => advance(Rating.Good));
+            db.buryCard(current.wordId, current.type).catch(() => {});
+            advance(Rating.Good);
           }}
         />
         <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`easy:${nativeSentence}`} />
@@ -813,10 +819,11 @@ export default function LearnScreen() {
         )}
 
         <Pressable
-          style={styles.buryBtn}
+          style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
           onPress={() => {
             const db = getDb();
-            db.buryCard(current.wordId, current.type).then(() => advance(Rating.Good));
+            db.buryCard(current.wordId, current.type).catch(() => {});
+            advance(Rating.Good);
           }}
         >
           <Text style={styles.buryText}>{s.buttons.iKnowThis}</Text>
@@ -933,10 +940,11 @@ export default function LearnScreen() {
 
       {revealed && (
         <Pressable
-          style={styles.buryBtn}
+          style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
           onPress={() => {
             const db = getDb();
-            db.buryCard(current.wordId, current.type).then(() => advance(Rating.Good));
+            db.buryCard(current.wordId, current.type).catch(() => {});
+            advance(Rating.Good);
           }}
         >
           <Text style={styles.buryText}>{s.buttons.iKnowThis}</Text>
