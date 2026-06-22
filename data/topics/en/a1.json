@@ -1,0 +1,10 @@
+[
+  {"id": "to_be", "order": 1, "subLevel": "A1.1", "type": "grammar", "icon": "🪪", "name_hu": "A 'to be' ige (am/is/are)", "name_en": "To Be (am/is/are)", "name_es": "El verbo To Be", "name_de": "Das Verb To Be"},
+  {"id": "numbers", "order": 2, "subLevel": "A1.1", "type": "vocab", "icon": "🔢", "name_hu": "Számok", "name_en": "Numbers", "name_es": "Números", "name_de": "Zahlen"},
+  {"id": "articles", "order": 3, "subLevel": "A1.1", "type": "grammar", "icon": "🅰️", "name_hu": "Névelők (a/an/the)", "name_en": "Articles (a/an/the)", "name_es": "Artículos (a/an/the)", "name_de": "Artikel (a/an/the)"},
+  {"id": "colors", "order": 4, "subLevel": "A1.1", "type": "vocab", "icon": "🎨", "name_hu": "Színek", "name_en": "Colors", "name_es": "Colores", "name_de": "Farben"},
+  {"id": "present_simple", "order": 5, "subLevel": "A1.2", "type": "grammar", "icon": "🗣️", "name_hu": "Egyszerű jelen idő", "name_en": "Present Simple", "name_es": "Presente Simple", "name_de": "Einfaches Präsens"},
+  {"id": "family", "order": 6, "subLevel": "A1.2", "type": "vocab", "icon": "👨‍👩‍👧", "name_hu": "Család", "name_en": "Family", "name_es": "La Familia", "name_de": "Die Familie"},
+  {"id": "plurals", "order": 7, "subLevel": "A1.2", "type": "grammar", "icon": "🔠", "name_hu": "Többes szám", "name_en": "Plurals", "name_es": "El Plural", "name_de": "Pluralformen"},
+  {"id": "food_drink", "order": 8, "subLevel": "A1.2", "type": "vocab", "icon": "🍎", "name_hu": "Étel és Ital", "name_en": "Food & Drink", "name_es": "Comida y Bebida", "name_de": "Essen und Trinken"}
+]

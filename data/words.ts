@@ -24,14 +24,30 @@ import b2 from './words/b2.json';
 import c1 from './words/c1.json';
 import c2 from './words/c2.json';
 
+import en_a1 from './words/en/a1.json';
+import hu_a1 from './words/hu/a1.json';
+
 export const words: WordEntry[] = [...a0, ...a1, ...a2, ...b1, ...b2, ...c1, ...c2] as WordEntry[];
 
-export function getWordsForLevel(level: Level): WordEntry[] {
+// Dedicated English-target word sets, keyed by level. Only levels with authored
+// English content appear here; every other (level, lang) falls back to the shared
+// Spanish-headword set above. So `lang` defaults to 'es' and existing callers are
+// unchanged, only an explicit lang==='en' with English content diverges.
+const enWordsByLevel: Partial<Record<Level, WordEntry[]>> = {
+  A1: en_a1 as WordEntry[],
+};
+const huWordsByLevel: Partial<Record<Level, WordEntry[]>> = {
+  A1: hu_a1 as WordEntry[],
+};
+
+export function getWordsForLevel(level: Level, lang: string = 'es'): WordEntry[] {
+  if (lang === 'en' && enWordsByLevel[level]) return enWordsByLevel[level]!;
+  if (lang === 'hu' && huWordsByLevel[level]) return huWordsByLevel[level]!;
   return words.filter(w => w.level === level);
 }
 
-export function getWordsForTopic(level: Level, topicId: string): WordEntry[] {
-  return getWordsForLevel(level)
+export function getWordsForTopic(level: Level, topicId: string, lang: string = 'es'): WordEntry[] {
+  return getWordsForLevel(level, lang)
     .filter(w => w['topic'] === topicId)
     .sort((a, b) => (Number(a['topicOrder']) || 0) - (Number(b['topicOrder']) || 0));
 }

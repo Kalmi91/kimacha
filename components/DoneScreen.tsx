@@ -36,8 +36,8 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
   // Sub-level progress: topics are unlocked sequentially by order, so the
   // done-count inside the sub-level is the global done-count minus the
   // topics that precede this sub-level.
-  const subLevel = currentTopic ? getSubLevelForTopic(level, currentTopic.id) : null;
-  const subTopics = subLevel ? getTopicsForSubLevel(level, subLevel.id) : [];
+  const subLevel = currentTopic ? getSubLevelForTopic(level, currentTopic.id, direction[1]) : null;
+  const subTopics = subLevel ? getTopicsForSubLevel(level, subLevel.id, direction[1]) : [];
   const subDone = subLevel && topicProgress
     ? Math.min(Math.max(topicProgress.done - ((subTopics[0]?.order ?? 1) - 1), 0), subTopics.length)
     : 0;

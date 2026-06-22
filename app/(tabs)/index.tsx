@@ -139,7 +139,7 @@ export default function LearnScreen() {
     return result;
   };
 
-  const computeUnlockedTopics = (topics: TopicDef[], repsMap: Map<number, number>, currentLevel: Level, selectedTopicId?: string | null): { unlocked: TopicDef[]; activeTopic: TopicDef | null; completedCount: number } => {
+  const computeUnlockedTopics = (topics: TopicDef[], repsMap: Map<number, number>, currentLevel: Level, selectedTopicId?: string | null, lang: string = 'es'): { unlocked: TopicDef[]; activeTopic: TopicDef | null; completedCount: number } => {
     // A1: all topics freely selectable — no sequential lock.
     // Other levels: keep original sequential unlock logic.
     let unlocked: TopicDef[];
@@ -152,7 +152,7 @@ export default function LearnScreen() {
           unlocked.push(topic);
         } else {
           const prevTopic = topics[topics.indexOf(topic) - 1];
-          const prevWords = getWordsForTopic(currentLevel, prevTopic.id);
+          const prevWords = getWordsForTopic(currentLevel, prevTopic.id, lang);
           const allReviewed = prevWords.length > 0 && prevWords.every(w => (repsMap.get(w.id) ?? 0) > 0);
           if (allReviewed) {
             unlocked.push(topic);
@@ -165,7 +165,7 @@ export default function LearnScreen() {
 
     let completedCount = 0;
     for (const topic of unlocked) {
-      const topicWords = getWordsForTopic(currentLevel, topic.id);
+      const topicWords = getWordsForTopic(currentLevel, topic.id, lang);
       if (topicWords.length > 0 && topicWords.every(w => (repsMap.get(w.id) ?? 0) > 0)) {
         completedCount++;
       }
@@ -177,14 +177,14 @@ export default function LearnScreen() {
     if (selectedTopicId) {
       const sel = unlocked.find(t => t.id === selectedTopicId);
       if (sel) {
-        const selWords = getWordsForTopic(currentLevel, sel.id);
+        const selWords = getWordsForTopic(currentLevel, sel.id, lang);
         const selComplete = selWords.length > 0 && selWords.every(w => (repsMap.get(w.id) ?? 0) > 0);
         if (!selComplete) activeTopic = sel;
       }
     }
     if (!activeTopic) {
       activeTopic = unlocked.find(topic => {
-        const topicWords = getWordsForTopic(currentLevel, topic.id);
+        const topicWords = getWordsForTopic(currentLevel, topic.id, lang);
         return topicWords.some(w => (repsMap.get(w.id) ?? 0) === 0);
       }) ?? unlocked[unlocked.length - 1] ?? null;
     }
@@ -203,8 +203,9 @@ export default function LearnScreen() {
     const currentLevel = levelData.level as Level;
     setLevel(currentLevel);
 
-    const levelWords = getWordsForLevel(currentLevel);
-    const topics = getTopicsForLevel(currentLevel);
+    const learned = onboarding?.target ?? 'es';
+    const levelWords = getWordsForLevel(currentLevel, learned);
+    const topics = getTopicsForLevel(currentLevel, learned);
     const useTopics = topics.length > 0 && levelWords.some(w => w['topic']);
 
     let activeWords: WordEntry[];
@@ -212,25 +213,25 @@ export default function LearnScreen() {
       const allWordIds = levelWords.map(w => w.id);
       const repsMap = await db.getWordReps(allWordIds);
       const savedTopic = await db.getSelectedTopic();
-      const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel, savedTopic);
+      const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel, savedTopic, learned);
 
       setCurrentTopic(activeTopic);
       setTopicProgress({
         done: completedCount,
         total: topics.length,
-        wordsInTopic: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id).length : 0,
-        wordsReviewed: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id).filter(w => (repsMap.get(w.id) ?? 0) > 0).length : 0,
+        wordsInTopic: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id, learned).length : 0,
+        wordsReviewed: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id, learned).filter(w => (repsMap.get(w.id) ?? 0) > 0).length : 0,
       });
 
       activeWords = activeTopic
         ? [
-            ...getWordsForTopic(currentLevel, activeTopic.id),
+            ...getWordsForTopic(currentLevel, activeTopic.id, learned),
             ...unlocked
               .filter(t => t.id !== activeTopic!.id)
-              .flatMap(t => getWordsForTopic(currentLevel, t.id))
+              .flatMap(t => getWordsForTopic(currentLevel, t.id, learned))
               .filter(w => (repsMap.get(w.id) ?? 0) > 0),
           ]
-        : unlocked.flatMap(t => getWordsForTopic(currentLevel, t.id));
+        : unlocked.flatMap(t => getWordsForTopic(currentLevel, t.id, learned));
     } else {
       setCurrentTopic(null);
       setTopicProgress(null);
@@ -436,8 +437,9 @@ export default function LearnScreen() {
     if (!midQueue) {
       const levelData = await db.getLevel();
       const currentLevel = levelData.level as Level;
+      const learned = direction[1];
       const { getWordsForLevel: gwfl } = require('@/data/words');
-      const lvlWords = gwfl(currentLevel);
+      const lvlWords = gwfl(currentLevel, learned);
       const rvw = await db.getReviewedWordCount(currentLevel);
       const mst = await db.getMasteredWordCount(currentLevel);
       const newMPct = lvlWords.length > 0 ? Math.round((mst / lvlWords.length) * 100) : 0;
@@ -445,7 +447,7 @@ export default function LearnScreen() {
       setKnownWords(rvw);
       setLevelTotal(lvlWords.length);
 
-      const topics = getTopicsForLevel(currentLevel);
+      const topics = getTopicsForLevel(currentLevel, learned);
       const useTopics = topics.length > 0 && lvlWords.some((w: WordEntry) => w['topic']);
 
       let newRows: any[];
@@ -453,7 +455,7 @@ export default function LearnScreen() {
         const allWordIds = lvlWords.map((w: WordEntry) => w.id);
         const repsMap = await db.getWordReps(allWordIds);
         const savedTopic2 = await db.getSelectedTopic();
-        const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel, savedTopic2);
+        const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel, savedTopic2, learned);
 
         if (topicProgress && completedCount > topicProgress.done && activeTopic) {
           const s = t();
@@ -464,10 +466,10 @@ export default function LearnScreen() {
           if (prevCompleted) {
             // Sub-level celebration: check if ALL topics in the sub-level are now
             // complete (free ordering — cannot rely on "last topic" position).
-            const sub = getSubLevelForTopic(currentLevel, prevCompleted.id);
-            const subTopics = sub ? getTopicsForSubLevel(currentLevel, sub.id) : [];
+            const sub = getSubLevelForTopic(currentLevel, prevCompleted.id, learned);
+            const subTopics = sub ? getTopicsForSubLevel(currentLevel, sub.id, learned) : [];
             const closesSubLevel = sub && subTopics.length > 0 && subTopics.every(st => {
-              const stWords = getWordsForTopic(currentLevel, st.id);
+              const stWords = getWordsForTopic(currentLevel, st.id, learned);
               return stWords.length > 0 && stWords.every(w => (repsMap.get(w.id) ?? 0) > 0);
             });
             setTopicCompleteMsg(
@@ -483,12 +485,12 @@ export default function LearnScreen() {
         setTopicProgress({
           done: completedCount,
           total: topics.length,
-          wordsInTopic: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id).length : 0,
-          wordsReviewed: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id).filter(w => (repsMap.get(w.id) ?? 0) > 0).length : 0,
+          wordsInTopic: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id, learned).length : 0,
+          wordsReviewed: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id, learned).filter(w => (repsMap.get(w.id) ?? 0) > 0).length : 0,
         });
 
-        const activeWordIds = unlocked.flatMap(topic => getWordsForTopic(currentLevel, topic.id)).map(w => w.id);
-        for (const w of unlocked.flatMap(topic => getWordsForTopic(currentLevel, topic.id))) {
+        const activeWordIds = unlocked.flatMap(topic => getWordsForTopic(currentLevel, topic.id, learned)).map(w => w.id);
+        for (const w of unlocked.flatMap(topic => getWordsForTopic(currentLevel, topic.id, learned))) {
           await db.ensureCard(w.id, 'word');
           await db.ensureCard(w.id, 'sentence');
         }
@@ -628,8 +630,8 @@ export default function LearnScreen() {
     </View>
   );
 
-  const currentSubLevel = currentTopic ? getSubLevelForTopic(level, currentTopic.id) : null;
-  const subLevelTopics = currentSubLevel ? getTopicsForSubLevel(level, currentSubLevel.id) : [];
+  const currentSubLevel = currentTopic ? getSubLevelForTopic(level, currentTopic.id, direction[1]) : null;
+  const subLevelTopics = currentSubLevel ? getTopicsForSubLevel(level, currentSubLevel.id, direction[1]) : [];
   const subLevelPos = currentTopic ? subLevelTopics.findIndex((tp) => tp.id === currentTopic.id) + 1 : 0;
 
   const topicHeader = currentTopic && topicProgress ? (
@@ -690,7 +692,7 @@ export default function LearnScreen() {
     const targetWordList = rawTargetWords.map((w, i) =>
       i === 0 ? w.charAt(0).toLowerCase() + w.slice(1) : w,
     );
-    const levelWords = getWordsForLevel(level);
+    const levelWords = getWordsForLevel(level, learned);
     // Near-miss distractors (FB1): sibling articles + same-stem/ending forms
     // instead of random vocab, so the learner practises forms not random noise.
     const vocab = levelWords.map(w => String(w[learned]).split(' / ')[0]);

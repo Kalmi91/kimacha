@@ -252,7 +252,7 @@ class SQLiteDB implements DB {
 
   async getDueCardsForLevel(level: string, limit: number) {
     const { getWordsForLevel } = require('@/data/words');
-    const levelWords = getWordsForLevel(level);
+    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
     const wordIds = levelWords.map((w: any) => w.id);
     return this.getDueCardsForWordIds(wordIds, limit);
   }
@@ -375,7 +375,7 @@ class SQLiteDB implements DB {
   async getMasteredWordCount(level: string) {
     const db = await this.open();
     const { getWordsForLevel } = require('@/data/words');
-    const levelWords = getWordsForLevel(level);
+    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
     const wordIds = levelWords.map((w: any) => w.id);
     if (wordIds.length === 0) return 0;
     const placeholders = wordIds.map(() => '?').join(',');
@@ -391,7 +391,7 @@ class SQLiteDB implements DB {
   async getReviewedWordCount(level: string) {
     const db = await this.open();
     const { getWordsForLevel } = require('@/data/words');
-    const levelWords = getWordsForLevel(level);
+    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
     const wordIds = levelWords.map((w: any) => w.id);
     if (wordIds.length === 0) return 0;
     const placeholders = wordIds.map(() => '?').join(',');
