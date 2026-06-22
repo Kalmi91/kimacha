@@ -15,9 +15,11 @@ export default function SettingsScreen() {
   const router = useRouter();
   const [masterVisible, setMasterVisible] = useState(false);
   const [wordsOnly, setWordsOnly] = useState(false);
+  const [target, setTarget] = useState('es');
 
   useEffect(() => {
     getDb().getWordsOnly().then(setWordsOnly);
+    getDb().getOnboarding().then(o => { if (o) setTarget(o.target); });
   }, []);
 
   const handleWordsOnlyToggle = async (v: boolean) => {
@@ -114,7 +116,7 @@ export default function SettingsScreen() {
             <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.master.levels}</Text>
             <View style={styles.levelGrid}>
               {LEVELS.map(lvl => {
-                const wordCount = getWordsForLevel(lvl).length;
+                const wordCount = getWordsForLevel(lvl, target).length;
                 return (
                   <Pressable
                     key={lvl}

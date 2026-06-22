@@ -36,7 +36,7 @@ export default function TreeScreen() {
     const levelData = await db.getLevel();
     const lvl = levelData.level as Level;
     setLevel(lvl);
-    const words = getWordsForLevel(lvl);
+    const words = getWordsForLevel(lvl, onboarding?.target ?? 'es');
     const ids = words.map(w => w.id);
     const map = await db.getWordReps(ids);
     setRepsMap(map);
@@ -57,8 +57,8 @@ export default function TreeScreen() {
   const lang = direction[1] === 'hu' ? 'hu' : direction[1] === 'es' ? 'es' : direction[1] === 'de' ? 'de' : 'en';
 
   // Only render the tree for A1; for other levels show a placeholder.
-  const topics = getTopicsForLevel(level);
-  const subLevels = getSubLevelsForLevel(level);
+  const topics = getTopicsForLevel(level, lang);
+  const subLevels = getSubLevelsForLevel(level, lang);
 
   if (level !== 'A1' || topics.length === 0) {
     return (
@@ -74,9 +74,9 @@ export default function TreeScreen() {
       contentContainerStyle={styles.scrollContent}
     >
       {subLevels.map((sub: SubLevelDef, subIdx: number) => {
-        const subTopics = getTopicsForSubLevel(level, sub.id);
+        const subTopics = getTopicsForSubLevel(level, sub.id, lang);
         const doneSub = subTopics.filter(t => {
-          const tw = getWordsForTopic(level, t.id);
+          const tw = getWordsForTopic(level, t.id, lang);
           return tw.length > 0 && tw.every(w => (repsMap.get(w.id) ?? 0) > 0);
         }).length;
 
@@ -107,7 +107,7 @@ export default function TreeScreen() {
                   {/* Branch stub from spine to row */}
                   <View style={[styles.branchStub, { borderColor: colors.tabIconDefault }]} />
                   {row.map((topic: TopicDef) => {
-                    const topicWords = getWordsForTopic(level, topic.id);
+                    const topicWords = getWordsForTopic(level, topic.id, lang);
                     const reviewedCount = topicWords.filter(w => (repsMap.get(w.id) ?? 0) > 0).length;
                     const isComplete = topicWords.length > 0 && reviewedCount === topicWords.length;
                     const isInProgress = !isComplete && reviewedCount > 0;

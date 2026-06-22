@@ -125,7 +125,7 @@ class MemoryDB implements DB {
 
   async getDueCardsForLevel(level: string, limit: number) {
     const { getWordsForLevel } = require('@/data/words');
-    const levelWords = getWordsForLevel(level);
+    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
     const wordIds = levelWords.map((w: any) => w.id);
     return this.getDueCardsForWordIds(wordIds, limit);
   }
@@ -195,7 +195,7 @@ class MemoryDB implements DB {
   async getMasteredCount() { return 0; }
   async getMasteredWordCount(level: string) {
     const { getWordsForLevel } = require('@/data/words');
-    const levelWords = getWordsForLevel(level);
+    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
     const wordIds = new Set(levelWords.map((w: any) => w.id));
     return [...this.cards.values()].filter(c =>
       wordIds.has(c.word_id) && c.type === 'word' && (c.state >= 2 || c.buried === 1) && c.pair === this.activePair
@@ -203,7 +203,7 @@ class MemoryDB implements DB {
   }
   async getReviewedWordCount(level: string) {
     const { getWordsForLevel } = require('@/data/words');
-    const levelWords = getWordsForLevel(level);
+    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
     const wordIds = new Set(levelWords.map((w: any) => w.id));
     return [...this.cards.values()].filter(c => wordIds.has(c.word_id) && c.type === 'word' && (c.reps > 0 || c.buried) && c.pair === this.activePair).length;
   }

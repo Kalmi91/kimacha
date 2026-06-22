@@ -34,7 +34,11 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
   const colors = Colors[theme];
   const s = t();
 
-  const useGenerated = isGeneratedLevel(level);
+  // The rich examBuilder drills (word/sentence items) are authored only for the
+  // Spanish course (es↔en). For any other target language, fall back to the
+  // per-language gap-question set (the same path higher levels use), so an English
+  // learner gets an English exam instead of Spanish content.
+  const useGenerated = isGeneratedLevel(level) && direction[1] === 'es';
 
   // For A0/A1: use examBuilder items; for higher levels: use legacy ExamQuestion list.
   const buildItems = (): ExamItem[] => buildExam(level as 'A0' | 'A1', `${direction[0]}-${direction[1]}`);
