@@ -828,7 +828,7 @@ export default function LearnScreen() {
             advance(Rating.Good);
           }}
         >
-          <Text style={styles.buryText}>{s.buttons.iKnowThis}</Text>
+          {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.iKnowThis}</Text>}
         </Pressable>
 
         <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`${current.type}:${front}`} />
@@ -949,7 +949,7 @@ export default function LearnScreen() {
             advance(Rating.Good);
           }}
         >
-          <Text style={styles.buryText}>{s.buttons.iKnowThis}</Text>
+          {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.iKnowThis}</Text>}
         </Pressable>
       )}
 
