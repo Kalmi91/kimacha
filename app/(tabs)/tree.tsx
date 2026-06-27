@@ -17,6 +17,7 @@ import {
 } from '@/data/topics';
 import { t } from '@/lib/i18n';
 import { setPendingAction } from '@/lib/pendingAction';
+import FeedbackButton from '@/components/FeedbackModal';
 
 export default function TreeScreen() {
   const { theme } = useTheme();
@@ -64,6 +65,9 @@ export default function TreeScreen() {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         <Text style={[styles.noTree, { color: colors.tabIconDefault }]}>{level}</Text>
+        <View style={styles.feedbackWrap}>
+          <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="tree-tab" />
+        </View>
       </View>
     );
   }
@@ -166,6 +170,9 @@ export default function TreeScreen() {
           </View>
         );
       })}
+      <View style={styles.feedbackWrap}>
+        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="tree-tab" />
+      </View>
       <View style={styles.bottomPad} />
     </ScrollView>
   );
@@ -221,5 +228,6 @@ const styles = StyleSheet.create({
   nodeName: { fontSize: 11, fontWeight: '600', textAlign: 'center', marginBottom: 2 },
   nodeProgress: { fontSize: 11, fontWeight: '700' },
   checkMark: { fontSize: 14, color: '#F59E0B', fontWeight: '800', marginTop: 2 },
+  feedbackWrap: { alignItems: 'center', marginTop: 16 },
   bottomPad: { height: 32 },
 });
