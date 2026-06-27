@@ -74,6 +74,29 @@ function charDiff(typed: string, correct: string): { ch: string; wrong: boolean 
   return out;
 }
 
+// FB26: reorder word cards so no more than `maxRun` of the same kind (flashcard
+// vs typing) appear in a row, keeping a balanced flashcard/typing mix.
+function interleaveByType(items: DueItem[], maxRun: number): DueItem[] {
+  const flash = items.filter((i) => !i.isTyping);
+  const typing = items.filter((i) => i.isTyping);
+  const out: DueItem[] = [];
+  let fi = 0, ti = 0;
+  let last: boolean | null = null;
+  let run = 0;
+  while (fi < flash.length || ti < typing.length) {
+    let pullTyping: boolean;
+    if (fi >= flash.length) pullTyping = true;
+    else if (ti >= typing.length) pullTyping = false;
+    else if (last !== null && run >= maxRun) pullTyping = !last; // force a switch
+    else pullTyping = (typing.length - ti) > (flash.length - fi); // pull from the fuller bucket
+    const item: DueItem = pullTyping ? typing[ti++] : flash[fi++];
+    out.push(item);
+    if (item.isTyping === last) run++;
+    else { run = 1; last = item.isTyping; }
+  }
+  return out;
+}
+
 export default function LearnScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -155,9 +178,13 @@ export default function LearnScreen() {
 
   const applyCadence = (items: DueItem[], wordsOnly: boolean): DueItem[] => {
     if (wordsOnly) {
-      return items
-        .filter(item => item.type === 'word')
-        .map(item => ({ ...item, isTyping: true, typingDirection: 'native-to-learned' as TypingDir }));
+      // FB24/26/27: words only, no sentences. Respect each word's natural phase
+      // (flashcard L→N at reps0, flashcard N→L at reps1, typing N→L at reps>=2),
+      // so a word becomes a typing card ONLY after it reached Good in BOTH
+      // flashcard directions. Interleave so no >4 cards of one kind run, and the
+      // first card is always a word flashcard (never a sentence build).
+      const wordItems = items.filter((item) => item.type === 'word');
+      return interleaveByType(wordItems, 4);
     }
     const words: DueItem[] = [];
     const easy: DueItem[] = [];
