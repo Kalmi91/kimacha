@@ -53,6 +53,7 @@ export default {
     next: (name: string) => `Next: ${name}`,
     locked: 'Locked',
     chooseTopic: 'Choose a New Topic',
+    switchToast: (name: string) => `Now showing new "${name}" words. Earlier ones stay as review.`,
     wordProgress: (done: number, total: number) => `${done}/${total}`,
   },
   subLevel: {

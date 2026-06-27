@@ -9,7 +9,9 @@
     "sentence_hu": "Nem akarok menni.",
     "sentence_en": "I don't want to go.",
     "de": "nein",
-    "sentence_de": "Ich will nicht gehen."
+    "sentence_de": "Ich will nicht gehen.",
+    "topic": "basicos",
+    "topicOrder": 1
   },
   {
     "id": 2,
@@ -21,7 +23,9 @@
     "sentence_hu": "Igen, persze.",
     "sentence_en": "Yes, of course.",
     "de": "ja",
-    "sentence_de": "Ja, natürlich."
+    "sentence_de": "Ja, natürlich.",
+    "topic": "basicos",
+    "topicOrder": 2
   },
   {
     "id": 3,
@@ -33,7 +37,9 @@
     "sentence_hu": "Helyi vagyok.",
     "sentence_en": "I'm from here.",
     "de": "ich",
-    "sentence_de": "Ich bin von hier."
+    "sentence_de": "Ich bin von hier.",
+    "topic": "personas",
+    "topicOrder": 1
   },
   {
     "id": 4,
@@ -45,7 +51,9 @@
     "sentence_hu": "Mi ez?",
     "sentence_en": "What is this?",
     "de": "was",
-    "sentence_de": "Was ist das?"
+    "sentence_de": "Was ist das?",
+    "topic": "basicos",
+    "topicOrder": 3
   },
   {
     "id": 5,
@@ -57,7 +65,9 @@
     "sentence_hu": "Nagyon jó.",
     "sentence_en": "It's very good.",
     "de": "ist",
-    "sentence_de": "Es ist sehr gut."
+    "sentence_de": "Es ist sehr gut.",
+    "topic": "basicos",
+    "topicOrder": 4
   },
   {
     "id": 6,
@@ -69,7 +79,9 @@
     "sentence_hu": "Jól vagyok.",
     "sentence_en": "I'm fine.",
     "de": "gut",
-    "sentence_de": "Mir geht es gut."
+    "sentence_de": "Mir geht es gut.",
+    "topic": "emociones_a0",
+    "topicOrder": 1
   },
   {
     "id": 7,
@@ -81,7 +93,9 @@
     "sentence_hu": "De nem tudok.",
     "sentence_en": "But I can't.",
     "de": "aber",
-    "sentence_de": "Aber ich kann nicht."
+    "sentence_de": "Aber ich kann nicht.",
+    "topic": "basicos",
+    "topicOrder": 8
   },
   {
     "id": 8,
@@ -93,7 +107,9 @@
     "sentence_hu": "Gyere ide.",
     "sentence_en": "Come here.",
     "de": "hier",
-    "sentence_de": "Komm hier."
+    "sentence_de": "Komm hier.",
+    "topic": "lugar_a0",
+    "topicOrder": 1
   },
   {
     "id": 9,
@@ -105,7 +121,9 @@
     "sentence_hu": "Nagyon nagy.",
     "sentence_en": "It's very big.",
     "de": "sehr",
-    "sentence_de": "Es ist sehr groß."
+    "sentence_de": "Es ist sehr groß.",
+    "topic": "basicos",
+    "topicOrder": 5
   },
   {
     "id": 10,
@@ -117,7 +135,9 @@
     "sentence_hu": "Minden rendben van.",
     "sentence_en": "Everything is fine.",
     "de": "alles",
-    "sentence_de": "Alles ist in Ordnung."
+    "sentence_de": "Alles ist in Ordnung.",
+    "topic": "basicos",
+    "topicOrder": 6
   },
   {
     "id": 11,
@@ -129,7 +149,9 @@
     "sentence_hu": "Semmi sincs.",
     "sentence_en": "There is nothing.",
     "de": "nichts",
-    "sentence_de": "Es gibt nichts."
+    "sentence_de": "Es gibt nichts.",
+    "topic": "basicos",
+    "topicOrder": 7
   },
   {
     "id": 12,
@@ -141,7 +163,9 @@
     "sentence_hu": "Menjünk most.",
     "sentence_en": "Let's go now.",
     "de": "jetzt",
-    "sentence_de": "Lass uns jetzt gehen."
+    "sentence_de": "Lass uns jetzt gehen.",
+    "topic": "tiempo_a0",
+    "topicOrder": 2
   },
   {
     "id": 13,
@@ -153,7 +177,9 @@
     "sentence_hu": "Nincs időm.",
     "sentence_en": "I don't have time.",
     "de": "Zeit",
-    "sentence_de": "Ich habe keine Zeit."
+    "sentence_de": "Ich habe keine Zeit.",
+    "topic": "tiempo_a0",
+    "topicOrder": 1
   },
   {
     "id": 14,
@@ -165,7 +191,9 @@
     "sentence_hu": "Hazamegyek.",
     "sentence_en": "I'm going home.",
     "de": "Haus / Zuhause",
-    "sentence_de": "Ich gehe nach Hause."
+    "sentence_de": "Ich gehe nach Hause.",
+    "topic": "lugar_a0",
+    "topicOrder": 7
   },
   {
     "id": 15,
@@ -177,7 +205,9 @@
     "sentence_hu": "Az élet jó.",
     "sentence_en": "Life is good.",
     "de": "Leben",
-    "sentence_de": "Das Leben ist gut."
+    "sentence_de": "Das Leben ist gut.",
+    "topic": "cosas",
+    "topicOrder": 3
   },
   {
     "id": 16,
@@ -189,7 +219,9 @@
     "sentence_hu": "Jó ember.",
     "sentence_en": "He's a good man.",
     "de": "Mann",
-    "sentence_de": "Er ist ein guter Mann."
+    "sentence_de": "Er ist ein guter Mann.",
+    "topic": "personas",
+    "topicOrder": 2
   },
   {
     "id": 17,
@@ -201,7 +233,9 @@
     "sentence_hu": "Az a nő erős.",
     "sentence_en": "That woman is strong.",
     "de": "Frau",
-    "sentence_de": "Diese Frau ist stark."
+    "sentence_de": "Diese Frau ist stark.",
+    "topic": "personas",
+    "topicOrder": 3
   },
   {
     "id": 18,
@@ -213,7 +247,9 @@
     "sentence_hu": "Jó, menjünk.",
     "sentence_en": "Good, let's go.",
     "de": "gut",
-    "sentence_de": "Gut, lass uns gehen."
+    "sentence_de": "Gut, lass uns gehen.",
+    "topic": "cualidades",
+    "topicOrder": 1
   },
   {
     "id": 19,
@@ -225,7 +261,9 @@
     "sentence_hu": "Nem rossz.",
     "sentence_en": "It's not bad.",
     "de": "schlecht",
-    "sentence_de": "Es ist nicht schlecht."
+    "sentence_de": "Es ist nicht schlecht.",
+    "topic": "cualidades",
+    "topicOrder": 2
   },
   {
     "id": 20,
@@ -237,7 +275,9 @@
     "sentence_hu": "A férfi nagy.",
     "sentence_en": "The man is big.",
     "de": "groß",
-    "sentence_de": "Der Mann ist groß."
+    "sentence_de": "Der Mann ist groß.",
+    "topic": "cualidades",
+    "topicOrder": 3
   },
   {
     "id": 21,
@@ -249,7 +289,9 @@
     "sentence_hu": "Nincs pénzem.",
     "sentence_en": "I don't have money.",
     "de": "Geld",
-    "sentence_de": "Ich habe kein Geld."
+    "sentence_de": "Ich habe kein Geld.",
+    "topic": "cosas",
+    "topicOrder": 1
   },
   {
     "id": 22,
@@ -261,7 +303,9 @@
     "sentence_hu": "A legjobb barátom.",
     "sentence_en": "He's my best friend.",
     "de": "Freund",
-    "sentence_de": "Er ist mein bester Freund."
+    "sentence_de": "Er ist mein bester Freund.",
+    "topic": "personas",
+    "topicOrder": 4
   },
   {
     "id": 23,
@@ -273,7 +317,9 @@
     "sentence_hu": "A szerelem minden.",
     "sentence_en": "Love is everything.",
     "de": "Liebe",
-    "sentence_de": "Liebe ist alles."
+    "sentence_de": "Liebe ist alles.",
+    "topic": "emociones_a0",
+    "topicOrder": 8
   },
   {
     "id": 24,
@@ -285,7 +331,9 @@
     "sentence_hu": "Vizet kérek.",
     "sentence_en": "I want water.",
     "de": "Wasser",
-    "sentence_de": "Ich möchte Wasser."
+    "sentence_de": "Ich möchte Wasser.",
+    "topic": "cosas",
+    "topicOrder": 2
   },
   {
     "id": 25,
@@ -297,7 +345,9 @@
     "sentence_hu": "Menjünk enni.",
     "sentence_en": "Let's go eat.",
     "de": "essen",
-    "sentence_de": "Lass uns essen gehen."
+    "sentence_de": "Lass uns essen gehen.",
+    "topic": "verbos_a0",
+    "topicOrder": 1
   },
   {
     "id": 26,
@@ -309,7 +359,9 @@
     "sentence_hu": "Aludni akarok.",
     "sentence_en": "I want to sleep.",
     "de": "schlafen",
-    "sentence_de": "Ich will schlafen."
+    "sentence_de": "Ich will schlafen.",
+    "topic": "verbos_a0",
+    "topicOrder": 2
   },
   {
     "id": 27,
@@ -321,7 +373,9 @@
     "sentence_hu": "Beszélnem kell veled.",
     "sentence_en": "I need to talk to you.",
     "de": "sprechen",
-    "sentence_de": "Ich muss mit dir sprechen."
+    "sentence_de": "Ich muss mit dir sprechen.",
+    "topic": "verbos_a0",
+    "topicOrder": 3
   },
   {
     "id": 28,
@@ -333,7 +387,9 @@
     "sentence_hu": "Nem tudom.",
     "sentence_en": "I don't know.",
     "de": "wissen",
-    "sentence_de": "Ich weiß es nicht."
+    "sentence_de": "Ich weiß es nicht.",
+    "topic": "verbos_a0",
+    "topicOrder": 4
   },
   {
     "id": 29,
@@ -345,7 +401,9 @@
     "sentence_hu": "Mehetek?",
     "sentence_en": "Can I go?",
     "de": "können",
-    "sentence_de": "Kann ich gehen?"
+    "sentence_de": "Kann ich gehen?",
+    "topic": "verbos_a0",
+    "topicOrder": 5
   },
   {
     "id": 30,
@@ -357,7 +415,9 @@
     "sentence_hu": "Nagyon szeretlek.",
     "sentence_en": "I love you a lot.",
     "de": "wollen / lieben",
-    "sentence_de": "Ich liebe dich sehr."
+    "sentence_de": "Ich liebe dich sehr.",
+    "topic": "verbos_a0",
+    "topicOrder": 6
   },
   {
     "id": 31,
@@ -369,7 +429,9 @@
     "sentence_hu": "Holnap megyek.",
     "sentence_en": "I'm going tomorrow.",
     "de": "gehen",
-    "sentence_de": "Ich gehe morgen."
+    "sentence_de": "Ich gehe morgen.",
+    "topic": "verbos_a0",
+    "topicOrder": 7
   },
   {
     "id": 32,
@@ -381,7 +443,9 @@
     "sentence_hu": "Gyere velem.",
     "sentence_en": "Come with me.",
     "de": "kommen",
-    "sentence_de": "Komm mit mir."
+    "sentence_de": "Komm mit mir.",
+    "topic": "verbos_a0",
+    "topicOrder": 8
   },
   {
     "id": 33,
@@ -393,7 +457,9 @@
     "sentence_hu": "Éhes vagyok.",
     "sentence_en": "I'm hungry.",
     "de": "haben",
-    "sentence_de": "Ich habe Hunger."
+    "sentence_de": "Ich habe Hunger.",
+    "topic": "verbos_a0",
+    "topicOrder": 9
   },
   {
     "id": 34,
@@ -405,7 +471,9 @@
     "sentence_hu": "Mit fogsz csinálni?",
     "sentence_en": "What are you going to do?",
     "de": "machen / tun",
-    "sentence_de": "Was wirst du machen?"
+    "sentence_de": "Was wirst du machen?",
+    "topic": "verbos_a0",
+    "topicOrder": 10
   },
   {
     "id": 35,
@@ -417,7 +485,9 @@
     "sentence_hu": "Mit akarsz mondani?",
     "sentence_en": "What do you mean?",
     "de": "sagen",
-    "sentence_de": "Was willst du sagen?"
+    "sentence_de": "Was willst du sagen?",
+    "topic": "verbos_a0",
+    "topicOrder": 11
   },
   {
     "id": 36,
@@ -429,7 +499,9 @@
     "sentence_hu": "Tudok adni.",
     "sentence_en": "I can give.",
     "de": "geben",
-    "sentence_de": "Ich kann geben."
+    "sentence_de": "Ich kann geben.",
+    "topic": "verbos_a0",
+    "topicOrder": 12
   },
   {
     "id": 37,
@@ -441,7 +513,9 @@
     "sentence_hu": "Azt akarom látni.",
     "sentence_en": "I want to see that.",
     "de": "sehen",
-    "sentence_de": "Ich will das sehen."
+    "sentence_de": "Ich will das sehen.",
+    "topic": "verbos_a0",
+    "topicOrder": 13
   },
   {
     "id": 38,
@@ -453,7 +527,9 @@
     "sentence_hu": "El sem hiszem.",
     "sentence_en": "I can't believe it.",
     "de": "glauben",
-    "sentence_de": "Ich kann es nicht glauben."
+    "sentence_de": "Ich kann es nicht glauben.",
+    "topic": "verbos_a0",
+    "topicOrder": 14
   },
   {
     "id": 39,
@@ -465,7 +541,9 @@
     "sentence_hu": "Nem találom ezt.",
     "sentence_en": "I cannot find this.",
     "de": "finden",
-    "sentence_de": "Ich kann das nicht finden."
+    "sentence_de": "Ich kann das nicht finden.",
+    "topic": "verbos_a0",
+    "topicOrder": 15
   },
   {
     "id": 40,
@@ -477,7 +555,9 @@
     "sentence_hu": "Fel foglak hívni.",
     "sentence_en": "I'm going to call you.",
     "de": "anrufen",
-    "sentence_de": "Ich werde dich anrufen."
+    "sentence_de": "Ich werde dich anrufen.",
+    "topic": "verbos_a0",
+    "topicOrder": 16
   },
   {
     "id": 41,
@@ -489,7 +569,9 @@
     "sentence_hu": "Mi a neved?",
     "sentence_en": "What's your name?",
     "de": "Name",
-    "sentence_de": "Wie heißt du?"
+    "sentence_de": "Wie heißt du?",
+    "topic": "personas",
+    "topicOrder": 9
   },
   {
     "id": 42,
@@ -501,7 +583,9 @@
     "sentence_hu": "Anyám jó.",
     "sentence_en": "My mother is good.",
     "de": "Mutter",
-    "sentence_de": "Meine Mutter ist gut."
+    "sentence_de": "Meine Mutter ist gut.",
+    "topic": "personas",
+    "topicOrder": 5
   },
   {
     "id": 43,
@@ -513,7 +597,9 @@
     "sentence_hu": "Apám sokat dolgozik.",
     "sentence_en": "My father works a lot.",
     "de": "Vater",
-    "sentence_de": "Mein Vater arbeitet viel."
+    "sentence_de": "Mein Vater arbeitet viel.",
+    "topic": "personas",
+    "topicOrder": 6
   },
   {
     "id": 44,
@@ -525,7 +611,9 @@
     "sentence_hu": "Ő a fiam.",
     "sentence_en": "He's my son.",
     "de": "Sohn",
-    "sentence_de": "Er ist mein Sohn."
+    "sentence_de": "Er ist mein Sohn.",
+    "topic": "personas",
+    "topicOrder": 7
   },
   {
     "id": 45,
@@ -537,7 +625,9 @@
     "sentence_hu": "Új munkám van.",
     "sentence_en": "I have a new job.",
     "de": "neu",
-    "sentence_de": "Ich habe einen neuen Job."
+    "sentence_de": "Ich habe einen neuen Job.",
+    "topic": "cualidades",
+    "topicOrder": 4
   },
   {
     "id": 46,
@@ -549,7 +639,9 @@
     "sentence_hu": "Nagyon kicsi.",
     "sentence_en": "It's very small.",
     "de": "klein",
-    "sentence_de": "Es ist sehr klein."
+    "sentence_de": "Es ist sehr klein.",
+    "topic": "cualidades",
+    "topicOrder": 5
   },
   {
     "id": 47,
@@ -561,7 +653,9 @@
     "sentence_hu": "Ugyanaz.",
     "sentence_en": "It's the same.",
     "de": "gleich / dasselbe",
-    "sentence_de": "Es ist dasselbe."
+    "sentence_de": "Es ist dasselbe.",
+    "topic": "basicos",
+    "topicOrder": 10
   },
   {
     "id": 48,
@@ -573,7 +667,9 @@
     "sentence_hu": "A legjobb a világon.",
     "sentence_en": "He's the best in the world.",
     "de": "Welt",
-    "sentence_de": "Er ist der Beste der Welt."
+    "sentence_de": "Er ist der Beste der Welt.",
+    "topic": "lugar_a0",
+    "topicOrder": 6
   },
   {
     "id": 49,
@@ -585,7 +681,9 @@
     "sentence_hu": "Ma szép nap van.",
     "sentence_en": "Today is a good day.",
     "de": "Tag",
-    "sentence_de": "Heute ist ein guter Tag."
+    "sentence_de": "Heute ist ein guter Tag.",
+    "topic": "tiempo_a0",
+    "topicOrder": 9
   },
   {
     "id": 50,
@@ -597,7 +695,9 @@
     "sentence_hu": "Jó éjt.",
     "sentence_en": "Good night.",
     "de": "Nacht",
-    "sentence_de": "Gute Nacht."
+    "sentence_de": "Gute Nacht.",
+    "topic": "tiempo_a0",
+    "topicOrder": 10
   },
   {
     "id": 51,
@@ -609,7 +709,9 @@
     "sentence_hu": "Nagyon köszönöm.",
     "sentence_en": "Thank you very much.",
     "de": "danke",
-    "sentence_de": "Vielen Dank."
+    "sentence_de": "Vielen Dank.",
+    "topic": "cortesia",
+    "topicOrder": 1
   },
   {
     "id": 52,
@@ -621,7 +723,9 @@
     "sentence_hu": "Kérlek, beszélj.",
     "sentence_en": "Speak, please.",
     "de": "bitte",
-    "sentence_de": "Sprich, bitte."
+    "sentence_de": "Sprich, bitte.",
+    "topic": "cortesia",
+    "topicOrder": 2
   },
   {
     "id": 53,
@@ -633,7 +737,9 @@
     "sentence_hu": "Bocsánat, nem tudtam.",
     "sentence_en": "Sorry, I didn't know.",
     "de": "Entschuldigung",
-    "sentence_de": "Entschuldigung, ich wusste es nicht."
+    "sentence_de": "Entschuldigung, ich wusste es nicht.",
+    "topic": "cortesia",
+    "topicOrder": 3
   },
   {
     "id": 54,
@@ -645,7 +751,9 @@
     "sentence_hu": "Szia! Hogy vagy?",
     "sentence_en": "Hello! How are you?",
     "de": "hallo",
-    "sentence_de": "Hallo! Wie geht es dir?"
+    "sentence_de": "Hallo! Wie geht es dir?",
+    "topic": "cortesia",
+    "topicOrder": 4
   },
   {
     "id": 55,
@@ -657,7 +765,9 @@
     "sentence_hu": "Viszlát, barátom.",
     "sentence_en": "Goodbye, friend.",
     "de": "Tschüss",
-    "sentence_de": "Tschüss, Freund."
+    "sentence_de": "Tschüss, Freund.",
+    "topic": "cortesia",
+    "topicOrder": 5
   },
   {
     "id": 56,
@@ -669,7 +779,9 @@
     "sentence_hu": "Holnap találkozunk.",
     "sentence_en": "See you tomorrow.",
     "de": "morgen / Morgen",
-    "sentence_de": "Wir sehen uns morgen."
+    "sentence_de": "Wir sehen uns morgen.",
+    "topic": "tiempo_a0",
+    "topicOrder": 3
   },
   {
     "id": 57,
@@ -681,7 +793,9 @@
     "sentence_hu": "Mindig szeretni foglak.",
     "sentence_en": "I will always love you.",
     "de": "immer",
-    "sentence_de": "Ich werde dich immer lieben."
+    "sentence_de": "Ich werde dich immer lieben.",
+    "topic": "tiempo_a0",
+    "topicOrder": 4
   },
   {
     "id": 58,
@@ -693,7 +807,9 @@
     "sentence_hu": "Sose mondd, hogy soha.",
     "sentence_en": "Never say never.",
     "de": "nie",
-    "sentence_de": "Sag niemals nie."
+    "sentence_de": "Sag niemals nie.",
+    "topic": "tiempo_a0",
+    "topicOrder": 5
   },
   {
     "id": 59,
@@ -705,7 +821,9 @@
     "sentence_hu": "Én is.",
     "sentence_en": "Me too.",
     "de": "auch",
-    "sentence_de": "Ich auch."
+    "sentence_de": "Ich auch.",
+    "topic": "basicos",
+    "topicOrder": 9
   },
   {
     "id": 60,
@@ -717,7 +835,9 @@
     "sentence_hu": "Még nem.",
     "sentence_en": "Not yet.",
     "de": "noch",
-    "sentence_de": "Noch nicht."
+    "sentence_de": "Noch nicht.",
+    "topic": "tiempo_a0",
+    "topicOrder": 6
   },
   {
     "id": 61,
@@ -729,7 +849,9 @@
     "sentence_hu": "Köztünk maradjon.",
     "sentence_en": "Between you and me.",
     "de": "zwischen",
-    "sentence_de": "Zwischen dir und mir."
+    "sentence_de": "Zwischen dir und mir.",
+    "topic": "lugar_a0",
+    "topicOrder": 2
   },
   {
     "id": 62,
@@ -741,7 +863,9 @@
     "sentence_hu": "Később beszélünk.",
     "sentence_en": "We'll talk later.",
     "de": "danach / später",
-    "sentence_de": "Wir reden später."
+    "sentence_de": "Wir reden später.",
+    "topic": "tiempo_a0",
+    "topicOrder": 7
   },
   {
     "id": 63,
@@ -753,7 +877,9 @@
     "sentence_hu": "Mint régen.",
     "sentence_en": "Like before.",
     "de": "vorher",
-    "sentence_de": "Wie vorher."
+    "sentence_de": "Wie vorher.",
+    "topic": "tiempo_a0",
+    "topicOrder": 8
   },
   {
     "id": 64,
@@ -765,7 +891,9 @@
     "sentence_hu": "Menjünk ki.",
     "sentence_en": "Let's go outside.",
     "de": "draußen",
-    "sentence_de": "Lass uns rausgehen."
+    "sentence_de": "Lass uns rausgehen.",
+    "topic": "lugar_a0",
+    "topicOrder": 3
   },
   {
     "id": 65,
@@ -777,7 +905,9 @@
     "sentence_hu": "Bent van.",
     "sentence_en": "It's inside.",
     "de": "drinnen",
-    "sentence_de": "Es ist drinnen."
+    "sentence_de": "Es ist drinnen.",
+    "topic": "lugar_a0",
+    "topicOrder": 4
   },
   {
     "id": 66,
@@ -789,7 +919,9 @@
     "sentence_hu": "Teljes szívemből.",
     "sentence_en": "With all my heart.",
     "de": "Herz",
-    "sentence_de": "Mit meinem ganzen Herzen."
+    "sentence_de": "Mit meinem ganzen Herzen.",
+    "topic": "cuerpo_a0",
+    "topicOrder": 1
   },
   {
     "id": 67,
@@ -801,7 +933,9 @@
     "sentence_hu": "A fej fontos.",
     "sentence_en": "The head is important.",
     "de": "Kopf",
-    "sentence_de": "Der Kopf ist wichtig."
+    "sentence_de": "Der Kopf ist wichtig.",
+    "topic": "cuerpo_a0",
+    "topicOrder": 2
   },
   {
     "id": 68,
@@ -813,7 +947,9 @@
     "sentence_hu": "Add a kezed.",
     "sentence_en": "Give me your hand.",
     "de": "Hand",
-    "sentence_de": "Gib mir deine Hand."
+    "sentence_de": "Gib mir deine Hand.",
+    "topic": "cuerpo_a0",
+    "topicOrder": 3
   },
   {
     "id": 69,
@@ -825,7 +961,9 @@
     "sentence_hu": "Szép szemeid vannak.",
     "sentence_en": "You have beautiful eyes.",
     "de": "Augen",
-    "sentence_de": "Du hast schöne Augen."
+    "sentence_de": "Du hast schöne Augen.",
+    "topic": "cuerpo_a0",
+    "topicOrder": 4
   },
   {
     "id": 70,
@@ -837,7 +975,9 @@
     "sentence_hu": "Az étel jó.",
     "sentence_en": "The food is good.",
     "de": "Essen",
-    "sentence_de": "Das Essen ist gut."
+    "sentence_de": "Das Essen ist gut.",
+    "topic": "cosas",
+    "topicOrder": 4
   },
   {
     "id": 71,
@@ -849,7 +989,9 @@
     "sentence_hu": "Boldog vagyok.",
     "sentence_en": "I'm happy.",
     "de": "glücklich",
-    "sentence_de": "Ich bin glücklich."
+    "sentence_de": "Ich bin glücklich.",
+    "topic": "emociones_a0",
+    "topicOrder": 2
   },
   {
     "id": 72,
@@ -861,7 +1003,9 @@
     "sentence_hu": "Szomorú vagyok.",
     "sentence_en": "I'm sad.",
     "de": "traurig",
-    "sentence_de": "Ich bin traurig."
+    "sentence_de": "Ich bin traurig.",
+    "topic": "emociones_a0",
+    "topicOrder": 3
   },
   {
     "id": 73,
@@ -873,7 +1017,9 @@
     "sentence_hu": "Félek.",
     "sentence_en": "I'm afraid.",
     "de": "Angst",
-    "sentence_de": "Ich habe Angst."
+    "sentence_de": "Ich habe Angst.",
+    "topic": "emociones_a0",
+    "topicOrder": 4
   },
   {
     "id": 74,
@@ -885,7 +1031,9 @@
     "sentence_hu": "Igaz?",
     "sentence_en": "Is it true?",
     "de": "Wahrheit / wahr",
-    "sentence_de": "Ist das wahr?"
+    "sentence_de": "Ist das wahr?",
+    "topic": "cosas",
+    "topicOrder": 6
   },
   {
     "id": 75,
@@ -897,7 +1045,9 @@
     "sentence_hu": "Ez hazugság.",
     "sentence_en": "It's a lie.",
     "de": "Lüge",
-    "sentence_de": "Das ist eine Lüge."
+    "sentence_de": "Das ist eine Lüge.",
+    "topic": "cosas",
+    "topicOrder": 7
   },
   {
     "id": 76,
@@ -909,7 +1059,9 @@
     "sentence_hu": "Nincs probléma.",
     "sentence_en": "No problem.",
     "de": "Problem",
-    "sentence_de": "Kein Problem."
+    "sentence_de": "Kein Problem.",
+    "topic": "cosas",
+    "topicOrder": 8
   },
   {
     "id": 77,
@@ -921,7 +1073,9 @@
     "sentence_hu": "Segítség kell.",
     "sentence_en": "I need help.",
     "de": "Hilfe",
-    "sentence_de": "Ich brauche Hilfe."
+    "sentence_de": "Ich brauche Hilfe.",
+    "topic": "cosas",
+    "topicOrder": 9
   },
   {
     "id": 78,
@@ -933,7 +1087,9 @@
     "sentence_hu": "Mit gondolsz?",
     "sentence_en": "What do you think?",
     "de": "denken",
-    "sentence_de": "Was denkst du?"
+    "sentence_de": "Was denkst du?",
+    "topic": "verbos_a0",
+    "topicOrder": 17
   },
   {
     "id": 79,
@@ -945,7 +1101,9 @@
     "sentence_hu": "Hogy érzed magad?",
     "sentence_en": "How do you feel?",
     "de": "fühlen",
-    "sentence_de": "Wie fühlst du dich?"
+    "sentence_de": "Wie fühlst du dich?",
+    "topic": "verbos_a0",
+    "topicOrder": 18
   },
   {
     "id": 80,
@@ -957,7 +1115,9 @@
     "sentence_hu": "Várj, kérlek.",
     "sentence_en": "Wait, please.",
     "de": "warten / hoffen",
-    "sentence_de": "Warte bitte."
+    "sentence_de": "Warte bitte.",
+    "topic": "verbos_a0",
+    "topicOrder": 19
   },
   {
     "id": 81,
@@ -969,7 +1129,9 @@
     "sentence_hu": "Nem értem.",
     "sentence_en": "I don't understand.",
     "de": "verstehen",
-    "sentence_de": "Ich verstehe nicht."
+    "sentence_de": "Ich verstehe nicht.",
+    "topic": "verbos_a0",
+    "topicOrder": 20
   },
   {
     "id": 82,
@@ -981,7 +1143,9 @@
     "sentence_hu": "Hol élsz?",
     "sentence_en": "Where do you live?",
     "de": "leben",
-    "sentence_de": "Wo lebst du?"
+    "sentence_de": "Wo lebst du?",
+    "topic": "verbos_a0",
+    "topicOrder": 21
   },
   {
     "id": 83,
@@ -993,7 +1157,9 @@
     "sentence_hu": "Nem akarok meghalni.",
     "sentence_en": "I don't want to die.",
     "de": "sterben",
-    "sentence_de": "Ich will nicht sterben."
+    "sentence_de": "Ich will nicht sterben.",
+    "topic": "verbos_a0",
+    "topicOrder": 22
   },
   {
     "id": 84,
@@ -1005,7 +1171,9 @@
     "sentence_hu": "Nagyon tetszik.",
     "sentence_en": "I like it a lot.",
     "de": "mögen / gefallen",
-    "sentence_de": "Es gefällt mir sehr."
+    "sentence_de": "Es gefällt mir sehr.",
+    "topic": "verbos_a0",
+    "topicOrder": 23
   },
   {
     "id": 85,
@@ -1017,7 +1185,9 @@
     "sentence_hu": "Szükségem van rád.",
     "sentence_en": "I need you.",
     "de": "brauchen",
-    "sentence_de": "Ich brauche dich."
+    "sentence_de": "Ich brauche dich.",
+    "topic": "verbos_a0",
+    "topicOrder": 24
   },
   {
     "id": 86,
@@ -1029,7 +1199,9 @@
     "sentence_hu": "Menjünk együtt.",
     "sentence_en": "Let's go together.",
     "de": "zusammen",
-    "sentence_de": "Lass uns zusammen gehen."
+    "sentence_de": "Lass uns zusammen gehen.",
+    "topic": "emociones_a0",
+    "topicOrder": 7
   },
   {
     "id": 87,
@@ -1041,7 +1213,9 @@
     "sentence_hu": "Egyedül vagyok.",
     "sentence_en": "I'm alone.",
     "de": "allein / nur",
-    "sentence_de": "Ich bin allein."
+    "sentence_de": "Ich bin allein.",
+    "topic": "basicos",
+    "topicOrder": 11
   },
   {
     "id": 88,
@@ -1053,7 +1227,9 @@
     "sentence_hu": "Őrült vagy!",
     "sentence_en": "You're crazy!",
     "de": "verrückt",
-    "sentence_de": "Du bist verrückt!"
+    "sentence_de": "Du bist verrückt!",
+    "topic": "emociones_a0",
+    "topicOrder": 5
   },
   {
     "id": 89,
@@ -1065,7 +1241,9 @@
     "sentence_hu": "Biztos vagy?",
     "sentence_en": "Are you sure?",
     "de": "sicher",
-    "sentence_de": "Bist du sicher?"
+    "sentence_de": "Bist du sicher?",
+    "topic": "emociones_a0",
+    "topicOrder": 6
   },
   {
     "id": 90,
@@ -1077,7 +1255,9 @@
     "sentence_hu": "Gyere gyorsan.",
     "sentence_en": "Come quickly.",
     "de": "schnell",
-    "sentence_de": "Komm schnell."
+    "sentence_de": "Komm schnell.",
+    "topic": "cualidades",
+    "topicOrder": 6
   },
   {
     "id": 91,
@@ -1089,7 +1269,9 @@
     "sentence_hu": "Beszélj lassabban.",
     "sentence_en": "Speak slower.",
     "de": "langsam",
-    "sentence_de": "Sprich langsamer."
+    "sentence_de": "Sprich langsamer.",
+    "topic": "cualidades",
+    "topicOrder": 7
   },
   {
     "id": 92,
@@ -1101,7 +1283,9 @@
     "sentence_hu": "Milyen szép.",
     "sentence_en": "How beautiful.",
     "de": "schön / hübsch",
-    "sentence_de": "Wie schön."
+    "sentence_de": "Wie schön.",
+    "topic": "cualidades",
+    "topicOrder": 8
   },
   {
     "id": 93,
@@ -1113,7 +1297,9 @@
     "sentence_hu": "Nagyon erős vagy.",
     "sentence_en": "You're very strong.",
     "de": "stark",
-    "sentence_de": "Du bist sehr stark."
+    "sentence_de": "Du bist sehr stark.",
+    "topic": "cualidades",
+    "topicOrder": 9
   },
   {
     "id": 94,
@@ -1125,7 +1311,9 @@
     "sentence_hu": "Nagyon nehéz.",
     "sentence_en": "It's very difficult.",
     "de": "schwierig",
-    "sentence_de": "Es ist sehr schwierig."
+    "sentence_de": "Es ist sehr schwierig.",
+    "topic": "cualidades",
+    "topicOrder": 10
   },
   {
     "id": 95,
@@ -1137,7 +1325,9 @@
     "sentence_hu": "Könnyű.",
     "sentence_en": "It's easy.",
     "de": "einfach / leicht",
-    "sentence_de": "Es ist einfach."
+    "sentence_de": "Es ist einfach.",
+    "topic": "cualidades",
+    "topicOrder": 11
   },
   {
     "id": 96,
@@ -1149,7 +1339,9 @@
     "sentence_hu": "Nagyon fontos.",
     "sentence_en": "It's very important.",
     "de": "wichtig",
-    "sentence_de": "Es ist sehr wichtig."
+    "sentence_de": "Es ist sehr wichtig.",
+    "topic": "cualidades",
+    "topicOrder": 12
   },
   {
     "id": 97,
@@ -1161,7 +1353,9 @@
     "sentence_hu": "Ez egy jó dolog.",
     "sentence_en": "It is a good thing.",
     "de": "Sache / Ding",
-    "sentence_de": "Das ist eine gute Sache."
+    "sentence_de": "Das ist eine gute Sache.",
+    "topic": "cosas",
+    "topicOrder": 5
   },
   {
     "id": 98,
@@ -1173,7 +1367,9 @@
     "sentence_hu": "Jó hely.",
     "sentence_en": "It's a good place.",
     "de": "Ort / Platz",
-    "sentence_de": "Das ist ein guter Ort."
+    "sentence_de": "Das ist ein guter Ort.",
+    "topic": "lugar_a0",
+    "topicOrder": 5
   },
   {
     "id": 99,
@@ -1185,7 +1381,9 @@
     "sentence_hu": "Sokan vannak.",
     "sentence_en": "There are many people.",
     "de": "Leute / Menschen",
-    "sentence_de": "Es gibt viele Leute."
+    "sentence_de": "Es gibt viele Leute.",
+    "topic": "personas",
+    "topicOrder": 8
   },
   {
     "id": 100,
@@ -1197,6 +1395,8 @@
     "sentence_hu": "Hány óra van?",
     "sentence_en": "What time is it?",
     "de": "Stunde / Uhrzeit",
-    "sentence_de": "Wie spät ist es?"
+    "sentence_de": "Wie spät ist es?",
+    "topic": "tiempo_a0",
+    "topicOrder": 11
   }
 ]

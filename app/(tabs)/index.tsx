@@ -129,6 +129,9 @@ export default function LearnScreen() {
   const [currentTopic, setCurrentTopic] = useState<TopicDef | null>(null);
   const [topicProgress, setTopicProgress] = useState<{ done: number; total: number; wordsInTopic: number; wordsReviewed: number } | null>(null);
   const [topicCompleteMsg, setTopicCompleteMsg] = useState<string | null>(null);
+  // FB21: transient toast shown after a tech-tree topic switch, signalling that
+  // the change affects FUTURE cards, not past progress.
+  const [topicSwitchMsg, setTopicSwitchMsg] = useState<string | null>(null);
   const inputRef = useRef<TextInput>(null);
   // Guards advance() against double-fire on the same card while its persistence
   // (several awaited DB writes) is still running.
@@ -211,10 +214,10 @@ export default function LearnScreen() {
   };
 
   const computeUnlockedTopics = (topics: TopicDef[], repsMap: Map<number, number>, currentLevel: Level, selectedTopicId?: string | null, lang: string = 'es'): { unlocked: TopicDef[]; activeTopic: TopicDef | null; completedCount: number } => {
-    // A1: all topics freely selectable — no sequential lock.
+    // A0/A1: all topics freely selectable, no sequential lock.
     // Other levels: keep original sequential unlock logic.
     let unlocked: TopicDef[];
-    if (currentLevel === 'A1') {
+    if (currentLevel === 'A0' || currentLevel === 'A1') {
       unlocked = [...topics];
     } else {
       unlocked = [];
@@ -378,9 +381,20 @@ export default function LearnScreen() {
           await loadCards();
         })();
       } else if (p.type === 'selectTopic') {
-        // Tech-tree topic selection: reload cards from the newly selected topic.
+        // Tech-tree topic selection: reload cards from the newly selected topic,
+        // then toast that the switch affects FUTURE cards only, not past progress (FB21).
         (async () => {
           await loadCards();
+          const db = getDb();
+          const tid = await db.getSelectedTopic();
+          const ob = await db.getOnboarding();
+          const tlang = ob?.target ?? 'es';
+          const lvl = (await db.getLevel()).level as Level;
+          const tp = tid ? getTopicsForLevel(lvl, tlang).find((t) => t.id === tid) : null;
+          if (tp) {
+            setTopicSwitchMsg(s.topic.switchToast(getTopicName(tp, tlang)));
+            setTimeout(() => setTopicSwitchMsg(null), 3500);
+          }
         })();
       }
     }, [])
@@ -749,10 +763,11 @@ export default function LearnScreen() {
     </Pressable>
   ) : null;
 
-  const topicCompleteOverlay = topicCompleteMsg ? (
-    <Pressable style={[styles.levelUpOverlay, { backgroundColor: '#22C55E' }]} onPress={() => router.push('/(tabs)/tree')}>
-      <Text style={styles.levelUpText}>{topicCompleteMsg}</Text>
-      {level === 'A1' && <Text style={[styles.levelUpText, { fontSize: 11 }]}>{s.topic.chooseTopic} →</Text>}
+  const bannerMsg = topicCompleteMsg ?? topicSwitchMsg;
+  const topicCompleteOverlay = bannerMsg ? (
+    <Pressable style={[styles.levelUpOverlay, { backgroundColor: topicCompleteMsg ? '#22C55E' : '#2563EB' }]} onPress={() => router.push('/(tabs)/tree')}>
+      <Text style={styles.levelUpText}>{bannerMsg}</Text>
+      {topicCompleteMsg && hasTopics(level, direction[1]) && <Text style={[styles.levelUpText, { fontSize: 11 }]}>{s.topic.chooseTopic} →</Text>}
     </Pressable>
   ) : null;
 

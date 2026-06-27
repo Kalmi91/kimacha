@@ -57,11 +57,12 @@ export default function TreeScreen() {
 
   const lang = direction[1] === 'hu' ? 'hu' : direction[1] === 'es' ? 'es' : direction[1] === 'de' ? 'de' : 'en';
 
-  // Only render the tree for A1; for other levels show a placeholder.
+  // Render the tree for any level that has a topic taxonomy (A0, A1); other
+  // levels show a placeholder until their topics are authored.
   const topics = getTopicsForLevel(level, lang);
   const subLevels = getSubLevelsForLevel(level, lang);
 
-  if (level !== 'A1' || topics.length === 0) {
+  if (topics.length === 0) {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         <Text style={[styles.noTree, { color: colors.tabIconDefault }]}>{level}</Text>

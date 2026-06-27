@@ -53,6 +53,7 @@ export default {
     next: (name: string) => `Következő: ${name}`,
     locked: 'Zárolva',
     chooseTopic: 'Válassz Új Témát',
+    switchToast: (name: string) => `Mostantól a(z) „${name}" új szavai jönnek. A korábbiak ismétlése marad.`,
     wordProgress: (done: number, total: number) => `${done}/${total}`,
   },
   subLevel: {
