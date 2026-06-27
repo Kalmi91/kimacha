@@ -53,6 +53,7 @@ export default {
     next: (name: string) => `Siguiente: ${name}`,
     locked: 'Bloqueado',
     chooseTopic: 'Elige un Nuevo Tema',
+    switchToast: (name: string) => `Ahora vienen palabras nuevas de "${name}". Las anteriores siguen en repaso.`,
     wordProgress: (done: number, total: number) => `${done}/${total}`,
   },
   subLevel: {
