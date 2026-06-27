@@ -1,10 +1,11 @@
 # TOPICS-A0-A2.md, A0 + A2 topic-struktúra terv (DOC-FIRST)
 
-> **Státusz: TERVEZET, user-jóváhagyásra vár.** Nincs kód, nincs adat-változás.
-> Forrás: FB21 (A0 topicok) + FB22/FB29 (A2 topicok). Döntés 2026-06-27
-> (AskUserQuestion): „Doc-first mindkettő", előbb ez a terv jóváhagyva, CSAK
-> utána build. A build az A1-minta infráját (`data/topics/`, `data/sublevels/`,
-> `tree.tsx`, ikonok, tech-tree) terjeszti ki A0-ra és A2-re.
+> **Státusz (2026-06-28): A0 KÉSZ (`4d97224`); A2 a konkrét magyar nyelvvizsga
+> tételsorára vár.** Forrás: FB21 (A0) + FB22/FB29 (A2). Doc-first döntés 2026-06-27.
+> User-döntések 2026-06-28: (1) A0 10-csoport = IGEN; (2) `verbos_a0` = egyben;
+> (3) A2 = **konkrét magyar nyelvvizsga** (NEM DELE); (4) topic-váltás jelzés = toast;
+> (5) sorrend = **A0 előbb**. A build az A1-minta infráját (`data/topics/`,
+> `data/sublevels/`, `tree.tsx`, ikonok, tech-tree) terjeszti ki.
 
 ## Miért (user-idézetek 1:1)
 
@@ -57,9 +58,15 @@ csoportosítva. Minden szó PONTOSAN egy topicba kerül. (id = a jelenlegi a0.js
 ## 2. A2 topic-struktúra (900 szó → 15 téma, nyelvvizsga szóbeli temario)
 
 A2-nek jelenleg NINCS topic-struktúrája (csak lapos 900 szó). A user kérése:
-„a Nyelvvizsga szóbeli tételei alapján". A javasolt 15 téma a **DELE A2 / Instituto
-Cervantes A2 szóbeli (monólogo) temario** + a standard A2 nyelvvizsga-témakörök
-metszete (ECL/Cambridge A2 is ugyanezeket fedi):
+„a Nyelvvizsga szóbeli tételei alapján".
+
+> ⛔ **BLOKKOLVA (döntés 3, 2026-06-28): konkrét MAGYAR nyelvvizsga tételsora kell, NEM
+> a DELE.** Az alábbi 15 téma a nemzetközi A2-standard (DELE), csak REFERENCIA. A build
+> előtt kell a választott magyar nyelvvizsga (Origó/ITK, ECL, BME, Euroexam) spanyol A2
+> **szóbeli tételsora**, küldd a tételsort vagy mondd meg melyik vizsga, ahhoz igazítom
+> a témákat. Addig az A2-build NEM indul.
+
+Referencia (DELE A2 / Instituto Cervantes szóbeli monólogo temario, a magyar tételsorhoz igazítandó):
 
 | # | topic id | ikon | téma (hu / en / es / de) |
 |---|----------|------|---------------------------|
@@ -140,10 +147,17 @@ A1-minta kiterjesztése (smallest-diff, default `es` viselkedés bájtra ne vál
 
 ---
 
-## 5. Jóváhagyandó kérdések (összegzés)
+## 5. Jóváhagyandó kérdések (megválaszolva 2026-06-28)
 
-1. **A0 csoportok** (10 topic, fenti besorolás), jó így, vagy módosítanál?
-2. **A0 `verbos_a0`** (24 ige), egyben, vagy kettébontva?
-3. **A2 15 téma** (DELE A2 temario), jó, vagy konkrét magyar nyelvvizsga-tételsorhoz igazítsam?
-4. **UX-jelzés** a topic-váltásnál, toast vagy állandó fejléc-felirat?
-5. **Sorrend:** A0 és A2 egyszerre épüljön, vagy előbb A0 (kicsi), aztán A2 (nagy)?
+1. **A0 csoportok** (10 topic) → ✅ IGEN, így jó. (Beépítve: `4d97224`.)
+2. **A0 `verbos_a0`** (24 ige) → ✅ EGYBEN. (Beépítve: `4d97224`.)
+3. **A2 témák** → ✅ konkrét MAGYAR nyelvvizsga tételsora (NEM DELE). ⏳ Tételsor kell a buildhez (lásd 2. szekció).
+4. **UX-jelzés** a topic-váltásnál → ✅ TOAST. (Beépítve: `4d97224`.)
+5. **Sorrend** → ✅ A0 előbb (KÉSZ), aztán A2 (tételsor-függő).
+
+## 6. Következő lépés (A2)
+
+A2-build indításához küldd a magyar spanyol A2 szóbeli **tételsort** (vagy a vizsga nevét:
+Origó/ITK, ECL, BME, Euroexam). Akkor: tételsorhoz igazított témalista (jóváhagyásod után) →
+900 szó kurátor-besorolása → `data/topics/a2.json` + `data/sublevels/a2.json` + `tree.tsx`
+(már A0/A1-re kész, A2 automatikusan jön a topic-adattal) + audit. A feedback-gomb A2-n már KÉSZ (FB23).
