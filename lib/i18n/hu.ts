@@ -17,6 +17,7 @@ export default {
     correct: 'Helyes!',
     almostCorrect: 'Majdnem!',
     wrong: 'Hibás',
+    pickSpelling: 'Válaszd a helyes írásmódot',
   },
   buttons: {
     again: 'Újra',

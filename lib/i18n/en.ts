@@ -17,6 +17,7 @@ export default {
     correct: 'Correct!',
     almostCorrect: 'Almost!',
     wrong: 'Wrong',
+    pickSpelling: 'Pick the correct spelling',
   },
   buttons: {
     again: 'Again',

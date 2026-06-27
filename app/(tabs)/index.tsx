@@ -11,6 +11,8 @@ import { getTopicsForLevel, hasTopics, getTopicName, getSubLevelForTopic, getTop
 import { t } from '@/lib/i18n';
 import { strictAnswerMatch } from '@/lib/answerMatch';
 import { nearMissDistractors } from '@/lib/distractors';
+import { spellingVariants } from '@/lib/spellingVariants';
+import { shuffleOptions, hashString } from '@/lib/shuffle';
 import { consumePendingAction } from '@/lib/pendingAction';
 import FeedbackButton from '@/components/FeedbackModal';
 import * as Speech from 'expo-speech';
@@ -88,6 +90,8 @@ export default function LearnScreen() {
   const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
   const [typedAnswer, setTypedAnswer] = useState('');
   const [typingResult, setTypingResult] = useState<TypingResult>(null);
+  // FB28: which spelling options were tapped wrong on the recognition fallback.
+  const [recogWrongPicks, setRecogWrongPicks] = useState<string[]>([]);
   const [level, setLevel] = useState<Level>('A0');
   const [levelUpMsg, setLevelUpMsg] = useState<string | null>(null);
   const [cardStartTime, setCardStartTime] = useState<number>(Date.now());
@@ -106,6 +110,11 @@ export default function LearnScreen() {
   // Guards advance() against double-fire on the same card while its persistence
   // (several awaited DB writes) is still running.
   const advancingRef = useRef(false);
+  // FB28: per-word consecutive typing failures this session. At >= RECOGNITION_AT
+  // the word's typing card downgrades to a multiple-choice "pick the correct
+  // spelling" card (recognition fallback) so a stuck learner can still progress.
+  const failsRef = useRef(new Map<number, number>());
+  const RECOGNITION_AT = 2;
 
   const buildQueue = (rows: any[]): DueItem[] => {
     return rows.map((row: any) => {
@@ -424,6 +433,7 @@ export default function LearnScreen() {
     setRevealed(false);
     setTypedAnswer('');
     setTypingResult(null);
+    setRecogWrongPicks([]);
     setCardStartTime(Date.now());
     setPracticeTyping(false);
     setPracticeResult(null);
@@ -598,9 +608,17 @@ export default function LearnScreen() {
     const { back } = getFrontBack(current);
     const correct = back.split(' / ')[0];
 
-    // Strict (FB6): "she speak" must not pass for "She speaks" — only case,
+    // Strict (FB6): "she speak" must not pass for "She speaks", only case,
     // punctuation and missing accents are forgiven.
-    setTypingResult(strictAnswerMatch(typedAnswer, correct) ? 'correct' : 'wrong');
+    const ok = strictAnswerMatch(typedAnswer, correct);
+    setTypingResult(ok ? 'correct' : 'wrong');
+    // FB28: track per-word failures so a repeatedly-missed word drops to the
+    // recognition fallback; a correct answer clears the streak.
+    if (current.type === 'word') {
+      const fails = failsRef.current;
+      if (ok) fails.delete(current.wordId);
+      else fails.set(current.wordId, (fails.get(current.wordId) ?? 0) + 1);
+    }
     setRevealed(true);
     const { backLang } = getFrontBack(current);
     Speech.speak(back, { language: speechLang(backLang) });
@@ -763,6 +781,84 @@ export default function LearnScreen() {
           }}
         />
         <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`easy:${nativeSentence}`} />
+      </View>
+    );
+  }
+
+  // FB28: recognition fallback, a word missed >= RECOGNITION_AT times this
+  // session becomes "pick the correct spelling" (correct form + plausible
+  // misspellings) so a stuck learner can still clear it.
+  if (isWord && current.isTyping && (failsRef.current.get(current.wordId) ?? 0) >= RECOGNITION_AT) {
+    const correct = back.split(' / ')[0];
+    const options = shuffleOptions(
+      [correct, ...spellingVariants(correct, 3)],
+      0,
+      hashString(`${current.wordId}:${correct}`),
+    ).options;
+    const handleRecogPick = (option: string) => {
+      if (strictAnswerMatch(option, correct)) {
+        failsRef.current.delete(current.wordId);
+        advance(Rating.Good);
+      } else if (!recogWrongPicks.includes(option)) {
+        setRecogWrongPicks((prev) => [...prev, option]);
+      }
+    };
+    return (
+      <View style={[styles.container, { backgroundColor: colors.background }]}>
+        {levelUpOverlay}
+        {topicCompleteOverlay}
+        <View style={styles.header}>
+          {levelBadge}
+          <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
+            <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
+            <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>🔥</Text>
+          </View>
+        </View>
+        {topicHeader}
+        {progressMeter}
+        {examBanner}
+
+        <View style={[styles.card, { backgroundColor: colors.card }]}>
+          <View style={[styles.frontRow, { marginBottom: 8 }]}>
+            <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
+            <Pressable onPress={() => Speech.speak(front, { language: speechLang(frontLang) })} style={styles.speakBtn}>
+              <Text style={styles.speakIcon}>🔊</Text>
+            </Pressable>
+          </View>
+          <Text style={[styles.recogPrompt, { color: colors.tabIconDefault }]}>{s.card.pickSpelling}</Text>
+          <View style={styles.recogOptions}>
+            {options.map((opt) => {
+              const wrong = recogWrongPicks.includes(opt);
+              return (
+                <Pressable
+                  key={opt}
+                  disabled={wrong}
+                  onPress={() => handleRecogPick(opt)}
+                  style={[
+                    styles.recogOption,
+                    { borderColor: colors.tabIconDefault, backgroundColor: colors.background },
+                    wrong && { backgroundColor: '#EF4444', borderColor: '#EF4444', opacity: 0.6 },
+                  ]}
+                >
+                  <Text style={[styles.recogOptionText, { color: wrong ? '#FFFFFF' : colors.text }]}>{opt}</Text>
+                </Pressable>
+              );
+            })}
+          </View>
+        </View>
+
+        <Pressable
+          style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
+          onPress={() => {
+            const db = getDb();
+            db.buryCard(current.wordId, current.type).catch(() => {});
+            advance(Rating.Good);
+          }}
+        >
+          {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.iKnowThis}</Text>}
+        </Pressable>
+
+        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`recog:${front}`} />
       </View>
     );
   }
@@ -1194,6 +1290,26 @@ const styles = StyleSheet.create({
   diffWrong: {
     backgroundColor: '#EF4444',
     color: '#FFFFFF',
+  },
+  recogPrompt: {
+    fontSize: 13,
+    fontWeight: '600',
+    textAlign: 'center',
+    marginBottom: 12,
+  },
+  recogOptions: {
+    gap: 10,
+  },
+  recogOption: {
+    borderWidth: 1.5,
+    borderRadius: 12,
+    paddingVertical: 14,
+    paddingHorizontal: 16,
+    alignItems: 'center',
+  },
+  recogOptionText: {
+    fontSize: 20,
+    fontWeight: '700',
   },
   correctAnswer: {
     fontSize: 22,

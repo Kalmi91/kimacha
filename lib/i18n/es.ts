@@ -17,6 +17,7 @@ export default {
     correct: '¡Correcto!',
     almostCorrect: '¡Casi!',
     wrong: 'Incorrecto',
+    pickSpelling: 'Elige la grafía correcta',
   },
   buttons: {
     again: 'Otra Vez',
