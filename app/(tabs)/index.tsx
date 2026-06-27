@@ -37,6 +37,41 @@ interface DueItem {
 
 type TypingResult = 'correct' | 'almost' | 'wrong' | null;
 
+// FB25: char-level diff for typing answers, highlights the mistyped letters.
+// LCS alignment so one missing/extra letter doesn't cascade the whole word red.
+// Comparison folds case + accents (those are forgiven by strictAnswerMatch),
+// but the user's original characters are rendered.
+const foldChar = (ch: string): string =>
+  ch.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+function charDiff(typed: string, correct: string): { ch: string; wrong: boolean }[] {
+  const a = [...typed];
+  const b = [...correct];
+  const an = a.map(foldChar);
+  const bn = b.map(foldChar);
+  const m = an.length, n = bn.length;
+  const dp: number[][] = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
+  for (let i = m - 1; i >= 0; i--) {
+    for (let j = n - 1; j >= 0; j--) {
+      dp[i][j] = an[i] === bn[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+    }
+  }
+  const out: { ch: string; wrong: boolean }[] = [];
+  let i = 0, j = 0;
+  while (i < m) {
+    if (j < n && an[i] === bn[j]) {
+      out.push({ ch: a[i], wrong: false }); i++; j++;
+    } else if (j < n && dp[i + 1][j] >= dp[i][j + 1]) {
+      out.push({ ch: a[i], wrong: true }); i++;       // typed char not in correct
+    } else if (j < n) {
+      j++;                                            // correct has a char typed missed
+    } else {
+      out.push({ ch: a[i], wrong: true }); i++;       // trailing extra typed chars
+    }
+  }
+  return out;
+}
+
 export default function LearnScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -790,6 +825,13 @@ export default function LearnScreen() {
           {revealed && (
             <View style={styles.resultSection}>
               <Text style={[styles.resultText, { color: resultColor }]}>{resultText}</Text>
+              {typingResult === 'wrong' && typedAnswer.trim().length > 0 && (
+                <Text style={styles.diffLine}>
+                  {charDiff(typedAnswer, back.split(' / ')[0]).map((d, i) => (
+                    <Text key={i} style={d.wrong ? styles.diffWrong : { color: colors.text }}>{d.ch}</Text>
+                  ))}
+                </Text>
+              )}
               <View style={styles.frontRow}>
                 <Text style={[styles.correctAnswer, { color: colors.tint }]}>{back}</Text>
                 <Pressable onPress={speakTarget} style={styles.speakBtn}>
@@ -1141,6 +1183,17 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '700',
     marginBottom: 4,
+  },
+  diffLine: {
+    fontSize: 20,
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: 1,
+    marginBottom: 6,
+  },
+  diffWrong: {
+    backgroundColor: '#EF4444',
+    color: '#FFFFFF',
   },
   correctAnswer: {
     fontSize: 22,
