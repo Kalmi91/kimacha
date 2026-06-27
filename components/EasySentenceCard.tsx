@@ -109,7 +109,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
 
       {onBury && (
         <Pressable style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]} onPress={onBury}>
-          <Text style={styles.buryText}>{s.buttons.iKnowThis}</Text>
+          {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.iKnowThis}</Text>}
         </Pressable>
       )}
     </View>
