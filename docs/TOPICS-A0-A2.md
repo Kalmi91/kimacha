@@ -55,55 +55,46 @@ csoportosítva. Minden szó PONTOSAN egy topicba kerül. (id = a jelenlegi a0.js
 
 ---
 
-## 2. A2 topic-struktúra (900 szó → 15 téma, nyelvvizsga szóbeli temario)
+## 2. A2 topic-struktúra (900 szó → 15 téma, Origó/ITK alapfok szóbeli témalista)
 
-A2-nek jelenleg NINCS topic-struktúrája (csak lapos 900 szó). A user kérése:
-„a Nyelvvizsga szóbeli tételei alapján".
+User-döntés (2026-06-28): a **konkrét magyar nyelvvizsga = Origó (ITK, ELTE)** szóbeli
+tételsora alapján.
 
-> ⛔ **BLOKKOLVA (döntés 3, 2026-06-28): konkrét MAGYAR nyelvvizsga tételsora kell, NEM
-> a DELE.** Az alábbi 15 téma a nemzetközi A2-standard (DELE), csak REFERENCIA. A build
-> előtt kell a választott magyar nyelvvizsga (Origó/ITK, ECL, BME, Euroexam) spanyol A2
-> **szóbeli tételsora**, küldd a tételsort vagy mondd meg melyik vizsga, ahhoz igazítom
-> a témákat. Addig az A2-build NEM indul.
+**Forrás (hivatalos, 1:1):** ELTE Origó B1/alapfok szóbeli **Témalista** (`Temalista_B1-2026.pdf`,
+onyc.hu). Megj: az Origó legalsó szintje = alapfok = B1, nincs külön A2 Origó-vizsga; ez a
+hivatalos magyar lista a kimacha A2-höz. 15 fő téma, mind A/B altémával. A kimacha-topicok ezekre képezve:
 
-Referencia (DELE A2 / Instituto Cervantes szóbeli monólogo temario, a magyar tételsorhoz igazítandó):
+| # | topic id | ikon | Origó téma | név (hu / en / es / de) |
+|---|----------|------|------------|--------------------------|
+| 1 | yo_familia | 👪 | Én és a családom | Én és a Család / Me & Family / Yo y la Familia / Ich und Familie |
+| 2 | hogar_entorno | 🏠 | Otthon és szűkebb környezet | Otthon és Környék / Home & Neighborhood / Casa y Entorno / Zuhause und Umgebung |
+| 3 | trabajo_dia | 💼 | Munka világa, napi tevékenység | Munka és Napirend / Work & Daily Life / Trabajo y Día a Día / Arbeit und Alltag |
+| 4 | estudios | 🎓 | Tanulás világa | Tanulás / Studies / Estudios / Lernen |
+| 5 | comunicacion | 📱 | Kommunikáció | Kommunikáció / Communication / Comunicación / Kommunikation |
+| 6 | relaciones | 🧑‍🤝‍🧑 | Kapcsolatok más emberekkel | Kapcsolatok / Relationships / Relaciones / Beziehungen |
+| 7 | ocio_cultura | 🎭 | Szórakozás, kultúra | Szórakozás és Kultúra / Entertainment & Culture / Ocio y Cultura / Unterhaltung und Kultur |
+| 8 | salud_deporte | 🩺 | Egészség, sport | Egészség és Sport / Health & Sport / Salud y Deporte / Gesundheit und Sport |
+| 9 | compras_servicios | 🛍️ | Vásárlás és szolgáltatások | Vásárlás és Szolgáltatások / Shopping & Services / Compras y Servicios / Einkaufen und Dienste |
+| 10 | comida_a2 | 🍽️ | Étkezés | Étkezés / Eating / Comida / Essen |
+| 11 | transporte_a2 | 🚆 | Közlekedés | Közlekedés / Transport / Transporte / Verkehr |
+| 12 | viajes_a2 | ✈️ | Utazás | Utazás / Travel / Viajes / Reisen |
+| 13 | naturaleza | 🌳 | Tágabb környezet, természet (állat, időjárás) | Természet / Nature / Naturaleza / Natur |
+| 14 | ocio_moda | 👗 | Szabadidő, divat, öltözködés | Szabadidő és Divat / Free Time & Fashion / Ocio y Moda / Freizeit und Mode |
+| 15 | paises | 🌍 | Magyarország és célnyelvi országok | Országok / Countries / Países / Länder |
 
-| # | topic id | ikon | téma (hu / en / es / de) |
-|---|----------|------|---------------------------|
-| 1 | info_personal | 🪪 | Személyes adatok / Personal Info / Información Personal / Persönliche Daten |
-| 2 | familia_amigos | 👪 | Család & Barátok / Family & Friends / Familia y Amigos / Familie und Freunde |
-| 3 | casa_vivienda | 🏠 | Otthon & Lakás / Home & Housing / Casa y Vivienda / Wohnen |
-| 4 | rutina_diaria_a2 | 🌅 | Napirend / Daily Routine / Rutina Diaria / Tagesablauf |
-| 5 | trabajo_estudios | 💼 | Munka & Tanulás / Work & Studies / Trabajo y Estudios / Arbeit und Studium |
-| 6 | comida_a2 | 🍽️ | Étkezés & Étterem / Food & Dining / Comida y Restaurante / Essen und Restaurant |
-| 7 | compras_ropa | 🛍️ | Vásárlás & Ruha / Shopping & Clothes / Compras y Ropa / Einkaufen und Kleidung |
-| 8 | salud_a2 | 🩺 | Egészség & Test / Health & Body / Salud y Cuerpo / Gesundheit und Körper |
-| 9 | viajes_transporte | ✈️ | Utazás & Közlekedés / Travel & Transport / Viajes y Transporte / Reisen und Verkehr |
-| 10 | ocio_tiempo_libre | 🎮 | Szabadidő & Hobbi / Leisure & Hobbies / Ocio y Tiempo Libre / Freizeit |
-| 11 | clima_estaciones | ⛅ | Időjárás & Évszakok / Weather & Seasons / Clima y Estaciones / Wetter und Jahreszeiten |
-| 12 | ciudad_servicios | 🏙️ | Város & Szolgáltatások / City & Services / Ciudad y Servicios / Stadt und Dienste |
-| 13 | tecnologia_medios | 📱 | Technológia & Média / Technology & Media / Tecnología y Medios / Technik und Medien |
-| 14 | fiestas_celebraciones | 🎉 | Ünnepek / Celebrations / Fiestas y Celebraciones / Feste |
-| 15 | naturaleza_medioambiente | 🌳 | Természet & Környezet / Nature & Environment / Naturaleza y Medio Ambiente / Natur und Umwelt |
+**Al-szintek (A2.1-A2.5)**, 3 téma/tier (Origó-sorrend):
+- A2.1 Én és Környezetem: yo_familia, hogar_entorno, trabajo_dia
+- A2.2 Tanulás és Kapcsolat: estudios, comunicacion, relaciones
+- A2.3 Szórakozás és Egészség: ocio_cultura, salud_deporte, compras_servicios
+- A2.4 Mindennapok: comida_a2, transporte_a2, viajes_a2
+- A2.5 Világ: naturaleza, ocio_moda, paises
 
-**Al-szintek (A2.1-A2.5)**, 3 téma/tier:
-- A2.1 Én & Környezetem: info_personal, familia_amigos, casa_vivienda
-- A2.2 Mindennapok: rutina_diaria_a2, trabajo_estudios, comida_a2
-- A2.3 Város & Test: compras_ropa, salud_a2, viajes_transporte
-- A2.4 Szabadidő & Világ: ocio_tiempo_libre, clima_estaciones, ciudad_servicios
-- A2.5 Modern Élet: tecnologia_medios, fiestas_celebraciones, naturaleza_medioambiente
+### A2 szó-besorolás (build-fázis, HEAVY token-burn)
 
-### A2 szó-besorolás (build-fázis, NEM most)
-
-A 900 szó 15 témába sorolása **kurátor-pass** lesz a build-ben (Sonnet-agentek,
-témánként), `audit-corpus`-szerű ellenőrzéssel (minden szó pontosan 1 témába, 0
-besorolatlan). A jelenlegi a2.json `topic` mező nélküli, a build ezt tölti fel, az
-id-k és a 4-nyelv tartalom VÁLTOZATLAN marad (csak `topic` + `topicOrder` + `subLevel`
-mező jön hozzá, mint A1-nél).
-
-**Nyitott kérdés (A2):** 15 téma jó, vagy más nyelvvizsgához (pl. ECL/origó magyar
-rendszer szerint) igazítsam? A 15 a nemzetközi A2-standard; ha konkrét magyar
-nyelvvizsga-temario kell, küldd a tételsort és ahhoz igazítom.
+A 900 szó 15 témába sorolása **kurátor-pass** (Sonnet-agentek témánként), audit-ellenőrzéssel
+(minden szó pontosan 1 témába, 0 besorolatlan). Az a2.json id + 4-nyelv tartalom VÁLTOZATLAN;
+csak `topic` + `topicOrder` + `subLevel` mező jön hozzá (mint A1). A `tree.tsx` + feedback-gomb
+már kész (A0/A1-gyel), az A2-fa automatikusan megjelenik amint a topic-adat megvan.
 
 ---
 
@@ -151,13 +142,14 @@ A1-minta kiterjesztése (smallest-diff, default `es` viselkedés bájtra ne vál
 
 1. **A0 csoportok** (10 topic) → ✅ IGEN, így jó. (Beépítve: `4d97224`.)
 2. **A0 `verbos_a0`** (24 ige) → ✅ EGYBEN. (Beépítve: `4d97224`.)
-3. **A2 témák** → ✅ konkrét MAGYAR nyelvvizsga tételsora (NEM DELE). ⏳ Tételsor kell a buildhez (lásd 2. szekció).
+3. **A2 témák** → ✅ Origó (ITK, ELTE) alapfok szóbeli témalista (lásd 2. szekció). Témalista MEGVAN.
 4. **UX-jelzés** a topic-váltásnál → ✅ TOAST. (Beépítve: `4d97224`.)
-5. **Sorrend** → ✅ A0 előbb (KÉSZ), aztán A2 (tételsor-függő).
+5. **Sorrend** → ✅ A0 előbb (KÉSZ), aztán A2 (most következik).
 
-## 6. Következő lépés (A2)
+## 6. Következő lépés (A2): 900 szó besorolása
 
-A2-build indításához küldd a magyar spanyol A2 szóbeli **tételsort** (vagy a vizsga nevét:
-Origó/ITK, ECL, BME, Euroexam). Akkor: tételsorhoz igazított témalista (jóváhagyásod után) →
-900 szó kurátor-besorolása → `data/topics/a2.json` + `data/sublevels/a2.json` + `tree.tsx`
-(már A0/A1-re kész, A2 automatikusan jön a topic-adattal) + audit. A feedback-gomb A2-n már KÉSZ (FB23).
+A 15-téma Origó-struktúra KÉSZ (fent). Hátra: a **900 A2 szó** besorolása a 15 témába, majd
+`data/topics/a2.json` + `data/sublevels/a2.json` + words-patch (`topic`/`topicOrder`/`subLevel`)
++ topics.ts wiring + audit. A `tree.tsx` + feedback-gomb már kész, az A2-fa automatikusan
+megjelenik a topic-adattal. Ez **HEAVY token-burn** (900 szó kurátor-pass), külön user-zöld
+kell az indításhoz (vagy „égess tokent").
