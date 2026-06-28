@@ -1,7 +1,7 @@
 # TOPICS-A0-A2.md, A0 + A2 topic-struktúra terv (DOC-FIRST)
 
-> **Státusz (2026-06-28): A0 KÉSZ (`4d97224`); A2 a konkrét magyar nyelvvizsga
-> tételsorára vár.** Forrás: FB21 (A0) + FB22/FB29 (A2). Doc-first döntés 2026-06-27.
+> **Státusz (2026-06-28): A0 KÉSZ (`4d97224`); A2 KÉSZ (`b1e6d87`).** Mindkét szint
+> topic-osított. Forrás: FB21 (A0) + FB22/FB29 (A2). Doc-first döntés 2026-06-27.
 > User-döntések 2026-06-28: (1) A0 10-csoport = IGEN; (2) `verbos_a0` = egyben;
 > (3) A2 = **konkrét magyar nyelvvizsga** (NEM DELE); (4) topic-váltás jelzés = toast;
 > (5) sorrend = **A0 előbb**. A build az A1-minta infráját (`data/topics/`,
@@ -146,10 +146,14 @@ A1-minta kiterjesztése (smallest-diff, default `es` viselkedés bájtra ne vál
 4. **UX-jelzés** a topic-váltásnál → ✅ TOAST. (Beépítve: `4d97224`.)
 5. **Sorrend** → ✅ A0 előbb (KÉSZ), aztán A2 (most következik).
 
-## 6. Következő lépés (A2): 900 szó besorolása
+## 6. A2 build KÉSZ (`b1e6d87`)
 
-A 15-téma Origó-struktúra KÉSZ (fent). Hátra: a **900 A2 szó** besorolása a 15 témába, majd
-`data/topics/a2.json` + `data/sublevels/a2.json` + words-patch (`topic`/`topicOrder`/`subLevel`)
-+ topics.ts wiring + audit. A `tree.tsx` + feedback-gomb már kész, az A2-fa automatikusan
-megjelenik a topic-adattal. Ez **HEAVY token-burn** (900 szó kurátor-pass), külön user-zöld
-kell az indításhoz (vagy „égess tokent").
+900 A2 szó besorolva a 15 Origó-témába (Sonnet kurátor-pass, 6×150 batch, mind pontosan 1
+témába, 0 besorolatlan). `data/topics/a2.json` (15) + `data/sublevels/a2.json` (5) + words-patch
++ topics.ts wiring kész; tree szabad-választás A0/A1/A2-re. tsc 0, jest 49, audit P1=0.
+
+**Eloszlás (egyenetlen, később finomítható):** trabajo_dia 190, yo_familia 125, relaciones 102,
+comunicacion 70, hogar_entorno 63, salud_deporte 63, ocio_cultura 51, naturaleza 48, comida_a2 33,
+transporte_a2 32, estudios 31, compras_servicios 30, viajes_a2 27, ocio_moda 20, paises 15. A nagy
+generikus bucketek (trabajo_dia, yo_familia) az általános igék/melléknevek default-célja; ha zavaró,
+egy rebalansz-pass kettébonthatja a legnagyobbakat.
