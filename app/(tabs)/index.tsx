@@ -214,10 +214,10 @@ export default function LearnScreen() {
   };
 
   const computeUnlockedTopics = (topics: TopicDef[], repsMap: Map<number, number>, currentLevel: Level, selectedTopicId?: string | null, lang: string = 'es'): { unlocked: TopicDef[]; activeTopic: TopicDef | null; completedCount: number } => {
-    // A0/A1: all topics freely selectable, no sequential lock.
-    // Other levels: keep original sequential unlock logic.
+    // Any level with a topic taxonomy (A0/A1/A2): all topics freely selectable,
+    // no sequential lock. Levels without topics keep the sequential unlock logic.
     let unlocked: TopicDef[];
-    if (currentLevel === 'A0' || currentLevel === 'A1') {
+    if (topics.length > 0) {
       unlocked = [...topics];
     } else {
       unlocked = [];
