@@ -23,13 +23,15 @@ import a0 from './topics/a0.json';
 import a0SubLevels from './sublevels/a0.json';
 import a1 from './topics/a1.json';
 import a1SubLevels from './sublevels/a1.json';
+import a2 from './topics/a2.json';
+import a2SubLevels from './sublevels/a2.json';
 import en_a1 from './topics/en/a1.json';
 import en_a1SubLevels from './sublevels/en/a1.json';
 import hu_a1 from './topics/hu/a1.json';
 import hu_a1SubLevels from './sublevels/hu/a1.json';
 
-const topicsByLevel: Record<string, TopicDef[]> = { A0: a0 as TopicDef[], A1: a1 as TopicDef[] };
-const subLevelsByLevel: Record<string, SubLevelDef[]> = { A0: a0SubLevels as SubLevelDef[], A1: a1SubLevels as SubLevelDef[] };
+const topicsByLevel: Record<string, TopicDef[]> = { A0: a0 as TopicDef[], A1: a1 as TopicDef[], A2: a2 as TopicDef[] };
+const subLevelsByLevel: Record<string, SubLevelDef[]> = { A0: a0SubLevels as SubLevelDef[], A1: a1SubLevels as SubLevelDef[], A2: a2SubLevels as SubLevelDef[] };
 
 // English-target topic/sub-level taxonomy. Keyed the same way as the Spanish set;
 // `lang` defaults to 'es' so existing callers keep the Spanish grammar topics, and

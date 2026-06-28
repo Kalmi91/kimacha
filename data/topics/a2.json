@@ -1,0 +1,17 @@
+[
+  {"id": "yo_familia", "order": 1, "subLevel": "A2.1", "type": "vocab", "icon": "👪", "name_hu": "Én és a Család", "name_en": "Me & Family", "name_es": "Yo y la Familia", "name_de": "Ich und Familie"},
+  {"id": "hogar_entorno", "order": 2, "subLevel": "A2.1", "type": "vocab", "icon": "🏠", "name_hu": "Otthon és Környék", "name_en": "Home & Neighborhood", "name_es": "Casa y Entorno", "name_de": "Zuhause und Umgebung"},
+  {"id": "trabajo_dia", "order": 3, "subLevel": "A2.1", "type": "vocab", "icon": "💼", "name_hu": "Munka és Napirend", "name_en": "Work & Daily Life", "name_es": "Trabajo y Día a Día", "name_de": "Arbeit und Alltag"},
+  {"id": "estudios", "order": 4, "subLevel": "A2.2", "type": "vocab", "icon": "🎓", "name_hu": "Tanulás", "name_en": "Studies", "name_es": "Estudios", "name_de": "Lernen"},
+  {"id": "comunicacion", "order": 5, "subLevel": "A2.2", "type": "vocab", "icon": "📱", "name_hu": "Kommunikáció", "name_en": "Communication", "name_es": "Comunicación", "name_de": "Kommunikation"},
+  {"id": "relaciones", "order": 6, "subLevel": "A2.2", "type": "vocab", "icon": "🧑‍🤝‍🧑", "name_hu": "Kapcsolatok", "name_en": "Relationships", "name_es": "Relaciones", "name_de": "Beziehungen"},
+  {"id": "ocio_cultura", "order": 7, "subLevel": "A2.3", "type": "vocab", "icon": "🎭", "name_hu": "Szórakozás és Kultúra", "name_en": "Entertainment & Culture", "name_es": "Ocio y Cultura", "name_de": "Unterhaltung und Kultur"},
+  {"id": "salud_deporte", "order": 8, "subLevel": "A2.3", "type": "vocab", "icon": "🩺", "name_hu": "Egészség és Sport", "name_en": "Health & Sport", "name_es": "Salud y Deporte", "name_de": "Gesundheit und Sport"},
+  {"id": "compras_servicios", "order": 9, "subLevel": "A2.3", "type": "vocab", "icon": "🛍️", "name_hu": "Vásárlás és Szolgáltatások", "name_en": "Shopping & Services", "name_es": "Compras y Servicios", "name_de": "Einkaufen und Dienste"},
+  {"id": "comida_a2", "order": 10, "subLevel": "A2.4", "type": "vocab", "icon": "🍽️", "name_hu": "Étkezés", "name_en": "Eating", "name_es": "Comida", "name_de": "Essen"},
+  {"id": "transporte_a2", "order": 11, "subLevel": "A2.4", "type": "vocab", "icon": "🚆", "name_hu": "Közlekedés", "name_en": "Transport", "name_es": "Transporte", "name_de": "Verkehr"},
+  {"id": "viajes_a2", "order": 12, "subLevel": "A2.4", "type": "vocab", "icon": "✈️", "name_hu": "Utazás", "name_en": "Travel", "name_es": "Viajes", "name_de": "Reisen"},
+  {"id": "naturaleza", "order": 13, "subLevel": "A2.5", "type": "vocab", "icon": "🌳", "name_hu": "Természet", "name_en": "Nature", "name_es": "Naturaleza", "name_de": "Natur"},
+  {"id": "ocio_moda", "order": 14, "subLevel": "A2.5", "type": "vocab", "icon": "👗", "name_hu": "Szabadidő és Divat", "name_en": "Free Time & Fashion", "name_es": "Ocio y Moda", "name_de": "Freizeit und Mode"},
+  {"id": "paises", "order": 15, "subLevel": "A2.5", "type": "vocab", "icon": "🌍", "name_hu": "Országok", "name_en": "Countries", "name_es": "Países", "name_de": "Länder"}
+]
