@@ -662,8 +662,14 @@ export default function LearnScreen() {
       else fails.set(current.wordId, (fails.get(current.wordId) ?? 0) + 1);
     }
     setRevealed(true);
-    const { backLang } = getFrontBack(current);
-    Speech.speak(back, { language: speechLang(backLang) });
+    // FB32: the recognition fallback (spelling options) is about to appear on
+    // this same render, don't read the answer out loud while the options are visible.
+    const showsRecognitionFallback =
+      current.type === 'word' && !ok && (failsRef.current.get(current.wordId) ?? 0) >= RECOGNITION_AT;
+    if (!showsRecognitionFallback) {
+      const { backLang } = getFrontBack(current);
+      Speech.speak(back, { language: speechLang(backLang) });
+    }
   };
 
   const handleTypingNext = () => {
@@ -1341,18 +1347,23 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   recogOptions: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     gap: 10,
   },
   recogOption: {
+    width: '48%',
     borderWidth: 1.5,
     borderRadius: 12,
-    paddingVertical: 14,
+    paddingVertical: 20,
     paddingHorizontal: 16,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   recogOptionText: {
     fontSize: 20,
     fontWeight: '700',
+    textAlign: 'center',
   },
   correctAnswer: {
     fontSize: 22,
