@@ -5,7 +5,8 @@
  * whole grammar point (verb ending, plural -s). So every word must match
  * exactly; only case, punctuation and missing accents are forgiven
  * (beginner phone keyboards rarely produce á/é/ñ → "como estas" still
- * passes for "¿Cómo estás?").
+ * passes for "¿Cómo estás?"). A stray space typed inside a word ("ofi cina"
+ * for "oficina") is forgiven too (FB34) via a whitespace-free fallback.
  */
 function normalizeWords(text: string): string[] {
   return text
@@ -20,5 +21,8 @@ function normalizeWords(text: string): string[] {
 export function strictAnswerMatch(answer: string, correct: string): boolean {
   const a = normalizeWords(answer);
   const c = normalizeWords(correct);
-  return a.length === c.length && a.every((w, i) => w === c[i]);
+  if (a.length === c.length && a.every((w, i) => w === c[i])) return true;
+  // FB34: a stray space typed inside a word ("ofi cina" for "oficina") must
+  // not fail the answer, compare the whitespace-free concatenation instead.
+  return a.join('') === c.join('');
 }
