@@ -72,6 +72,7 @@ export default {
   settings: {
     changeLanguage: 'Change Language',
     wordsOnly: 'Words Only',
+    randomTopics: 'Random Topics',
   },
   progress: {
     wordsKnown: 'Words Known',

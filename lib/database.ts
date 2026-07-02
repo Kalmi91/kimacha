@@ -28,6 +28,8 @@ export interface DB {
   setSelectedTopic(topicId: string | null): Promise<void>;
   getWordsOnly(): Promise<boolean>;
   setWordsOnly(v: boolean): Promise<void>;
+  getRandomTopics(): Promise<boolean>;
+  setRandomTopics(v: boolean): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -112,9 +114,14 @@ class SQLiteDB implements DB {
       );
       CREATE TABLE IF NOT EXISTS learn_settings (
         pair TEXT PRIMARY KEY,
-        words_only INTEGER
+        words_only INTEGER,
+        random_topics INTEGER
       );
     `);
+    // Migration: add random_topics column (DBs created before the random-topic toggle).
+    try {
+      await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN random_topics INTEGER');
+    } catch {}
     const meta = await this.db.getFirstAsync<any>('SELECT id FROM user_meta WHERE id = 1');
     if (!meta) {
       const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
@@ -433,7 +440,24 @@ class SQLiteDB implements DB {
 
   async setWordsOnly(v: boolean): Promise<void> {
     const db = await this.open();
-    await db.runAsync('INSERT OR REPLACE INTO learn_settings (pair, words_only) VALUES (?, ?)', [this.activePair, v ? 1 : 0]);
+    await db.runAsync(
+      'INSERT INTO learn_settings (pair, words_only) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET words_only = excluded.words_only',
+      [this.activePair, v ? 1 : 0]
+    );
+  }
+
+  async getRandomTopics(): Promise<boolean> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT random_topics FROM learn_settings WHERE pair = ?', [this.activePair]);
+    return row?.random_topics === 1;
+  }
+
+  async setRandomTopics(v: boolean): Promise<void> {
+    const db = await this.open();
+    await db.runAsync(
+      'INSERT INTO learn_settings (pair, random_topics) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET random_topics = excluded.random_topics',
+      [this.activePair, v ? 1 : 0]
+    );
   }
 }
 

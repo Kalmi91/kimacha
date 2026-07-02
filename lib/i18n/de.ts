@@ -72,6 +72,7 @@ export default {
   settings: {
     changeLanguage: 'Sprache Wechseln',
     wordsOnly: 'Nur Wörter',
+    randomTopics: 'Zufällige Themen',
   },
   progress: {
     wordsKnown: 'Bekannte Wörter',

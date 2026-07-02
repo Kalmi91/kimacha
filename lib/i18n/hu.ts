@@ -72,6 +72,7 @@ export default {
   settings: {
     changeLanguage: 'Nyelv Váltás',
     wordsOnly: 'Csak szavak',
+    randomTopics: 'Random témák',
   },
   progress: {
     wordsKnown: 'Ismert Szavak',
