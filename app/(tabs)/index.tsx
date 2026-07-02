@@ -117,7 +117,7 @@ export default function LearnScreen() {
   const [recogWrongPicks, setRecogWrongPicks] = useState<string[]>([]);
   const [level, setLevel] = useState<Level>('A0');
   const [levelUpMsg, setLevelUpMsg] = useState<string | null>(null);
-  const [cardStartTime, setCardStartTime] = useState<number>(Date.now());
+  const [cardStartTime, setCardStartTime] = useState<number>(() => Date.now());
   const [practiceTyping, setPracticeTyping] = useState(false);
   const [practiceResult, setPracticeResult] = useState<TypingResult>(null);
   const [practiceText, setPracticeText] = useState('');
@@ -441,38 +441,7 @@ export default function LearnScreen() {
     }, [])
   );
 
-  useEffect(() => {
-    if (Platform.OS !== 'web') return;
-    const handler = (e: KeyboardEvent) => {
-      if (e.key !== 'Enter') return;
-      if (done || loading) return;
-      if (!current) return;
-      if (current.isTyping) return;
-      if (current.isEasySentence) return;
-      if (!revealed) {
-        setRevealed(true);
-      } else {
-        advance(Rating.Good);
-      }
-    };
-    window.addEventListener('keydown', handler);
-    return () => window.removeEventListener('keydown', handler);
-  });
-
   const current = queue[currentIndex];
-
-  useEffect(() => {
-    if (!current || loading || done) return;
-    const [, learned] = direction;
-    // Easy sentence (tap-to-order): the learned-language sentence IS the answer the
-    // user must assemble, so don't auto-read it aloud — that would reveal the solution.
-    if (current.isEasySentence) return;
-    const { frontLang } = getFrontBack(current);
-    if (frontLang === learned) {
-      const frontText = String(current.word[current.type === 'word' ? learned : `sentence_${learned}`]);
-      Speech.speak(frontText, { language: speechLang(learned) });
-    }
-  }, [currentIndex, queue.length, loading, done]);
 
   const getFrontBack = (item: DueItem) => {
     const [native, learned] = direction;
@@ -492,6 +461,19 @@ export default function LearnScreen() {
       backLang,
     };
   };
+
+  useEffect(() => {
+    if (!current || loading || done) return;
+    const [, learned] = direction;
+    // Easy sentence (tap-to-order): the learned-language sentence IS the answer the
+    // user must assemble, so don't auto-read it aloud, that would reveal the solution.
+    if (current.isEasySentence) return;
+    const { frontLang } = getFrontBack(current);
+    if (frontLang === learned) {
+      const frontText = String(current.word[current.type === 'word' ? learned : `sentence_${learned}`]);
+      Speech.speak(frontText, { language: speechLang(learned) });
+    }
+  }, [currentIndex, queue.length, loading, done]);
 
   const checkLevelChange = async (wasCorrect: boolean) => {
     const db = getDb();
@@ -647,6 +629,24 @@ export default function LearnScreen() {
       if (!midQueue) advancingRef.current = false;
     }
   };
+
+  useEffect(() => {
+    if (Platform.OS !== 'web') return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key !== 'Enter') return;
+      if (done || loading) return;
+      if (!current) return;
+      if (current.isTyping) return;
+      if (current.isEasySentence) return;
+      if (!revealed) {
+        setRevealed(true);
+      } else {
+        advance(Rating.Good);
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  });
 
   const handleInSentence = async () => {
     if (!current) return;
@@ -883,6 +883,10 @@ export default function LearnScreen() {
   // FB28: recognition fallback, a word missed >= RECOGNITION_AT times this
   // session becomes "pick the correct spelling" (correct form + plausible
   // misspellings) so a stuck learner can still clear it.
+  // Reading failsRef in render is safe here: every mutation of the map is
+  // immediately followed by a state update (handleCheck sets revealed/result,
+  // handleRecogPick advances the card), so a re-render always observes it.
+  // eslint-disable-next-line react-hooks/refs
   if (isWord && current.isTyping && (failsRef.current.get(current.wordId) ?? 0) >= RECOGNITION_AT) {
     const correct = back.split(' / ')[0];
     const options = shuffleOptions(
