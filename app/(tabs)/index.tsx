@@ -189,6 +189,10 @@ export default function LearnScreen() {
       const wordItems = items.filter((item) => item.type === 'word');
       return interleaveByType(wordItems, 4);
     }
+    // FB31/FB36: repeating 4-words + 1-sentence unit (80% word / 20% sentence).
+    // Sentence slots cycle easy → easy → typing on a counter that runs across
+    // the whole queue, so the 2:1 easy:typing mix survives unit boundaries and
+    // two sentence cards are never adjacent while words remain.
     const words: DueItem[] = [];
     const easy: DueItem[] = [];
     const typing: DueItem[] = [];
@@ -197,19 +201,37 @@ export default function LearnScreen() {
       else if (item.isEasySentence) easy.push(item);
       else typing.push(item);
     }
+    // FB33/FB35: easy sentences come simplest-first (learned-language word
+    // count, then character length; stable). Typing sentences are due FSRS
+    // reviews, so their order stays untouched.
+    const sentOf = (item: DueItem) => String(item.word[`sentence_${direction[1]}`]).trim();
+    easy.sort((a, b) => {
+      const sa = sentOf(a), sb = sentOf(b);
+      const wa = sa.split(/\s+/).filter(Boolean).length;
+      const wb = sb.split(/\s+/).filter(Boolean).length;
+      return wa - wb || sa.length - sb.length;
+    });
     const result: DueItem[] = [];
-    let wi = 0, ei = 0, ti = 0;
-    while (wi < words.length || ei < easy.length || ti < typing.length) {
-      if (wi >= words.length) break;
-      const batch = words.slice(wi, wi + 10);
+    let wi = 0, ei = 0, ti = 0, slot = 0;
+    while (wi < words.length) {
+      const batch = words.slice(wi, wi + 4);
       wi += batch.length;
       result.push(...batch);
-      for (let i = 0; i < 2 && ei < easy.length; i++, ei++) result.push(easy[ei]);
-      if (ti < typing.length) { result.push(typing[ti]); ti++; }
+      if (ei >= easy.length && ti >= typing.length) continue; // no sentences left, words go on
+      const wantTyping = slot % 3 === 2;
+      slot++;
+      // an empty scheduled bucket falls back to the other, no due sentence dropped
+      if (wantTyping ? ti < typing.length : ei >= easy.length) { result.push(typing[ti]); ti++; }
+      else { result.push(easy[ei]); ei++; }
     }
-    // append any remaining easy/typing that outlasted words
-    while (ei < easy.length) { result.push(easy[ei]); ei++; }
-    while (ti < typing.length) { result.push(typing[ti]); ti++; }
+    // words exhausted: alternate remaining easy/typing so neither kind dumps
+    // in one long run (FB31)
+    let takeEasy = true;
+    while (ei < easy.length || ti < typing.length) {
+      if (takeEasy ? ei < easy.length : ti >= typing.length) { result.push(easy[ei]); ei++; }
+      else { result.push(typing[ti]); ti++; }
+      takeEasy = !takeEasy;
+    }
     return result;
   };
 
