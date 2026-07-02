@@ -27,6 +27,8 @@ export interface DB {
   setSelectedTopic(topicId: string | null): Promise<void>;
   getWordsOnly(): Promise<boolean>;
   setWordsOnly(v: boolean): Promise<void>;
+  getRandomTopics(): Promise<boolean>;
+  setRandomTopics(v: boolean): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -240,6 +242,16 @@ class MemoryDB implements DB {
 
   async setWordsOnly(v: boolean): Promise<void> {
     this.wordsOnlyMap.set(this.activePair, v);
+  }
+
+  private randomTopicsMap: Map<string, boolean> = new Map();
+
+  async getRandomTopics(): Promise<boolean> {
+    return this.randomTopicsMap.get(this.activePair) ?? false;
+  }
+
+  async setRandomTopics(v: boolean): Promise<void> {
+    this.randomTopicsMap.set(this.activePair, v);
   }
 }
 

@@ -235,7 +235,7 @@ export default function LearnScreen() {
     return result;
   };
 
-  const computeUnlockedTopics = (topics: TopicDef[], repsMap: Map<number, number>, currentLevel: Level, selectedTopicId?: string | null, lang: string = 'es'): { unlocked: TopicDef[]; activeTopic: TopicDef | null; completedCount: number } => {
+  const computeUnlockedTopics = (topics: TopicDef[], repsMap: Map<number, number>, currentLevel: Level, selectedTopicId?: string | null, lang: string = 'es', randomPick: boolean = false): { unlocked: TopicDef[]; activeTopic: TopicDef | null; completedCount: number } => {
     // Any level with a topic taxonomy (A0/A1/A2): all topics freely selectable,
     // no sequential lock. Levels without topics keep the sequential unlock logic.
     let unlocked: TopicDef[];
@@ -279,10 +279,21 @@ export default function LearnScreen() {
       }
     }
     if (!activeTopic) {
-      activeTopic = unlocked.find(topic => {
+      const isIncomplete = (topic: TopicDef) => {
         const topicWords = getWordsForTopic(currentLevel, topic.id, lang);
         return topicWords.some(w => (repsMap.get(w.id) ?? 0) === 0);
-      }) ?? unlocked[unlocked.length - 1] ?? null;
+      };
+      if (randomPick) {
+        // FB37: instead of always the first incomplete topic by order, draw
+        // uniformly among ALL incomplete topics so learning doesn't always
+        // fall back to the same "start of the queue" topic.
+        const incomplete = unlocked.filter(isIncomplete);
+        activeTopic = incomplete.length > 0
+          ? incomplete[Math.floor(Math.random() * incomplete.length)]
+          : unlocked[unlocked.length - 1] ?? null;
+      } else {
+        activeTopic = unlocked.find(isIncomplete) ?? unlocked[unlocked.length - 1] ?? null;
+      }
     }
 
     return { unlocked, activeTopic, completedCount };
@@ -309,7 +320,14 @@ export default function LearnScreen() {
       const allWordIds = levelWords.map(w => w.id);
       const repsMap = await db.getWordReps(allWordIds);
       const savedTopic = await db.getSelectedTopic();
-      const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel, savedTopic, learned);
+      const randomTopics = await db.getRandomTopics();
+      const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel, savedTopic, learned, randomTopics);
+      // FB37: persist a freshly-drawn random topic so a mid-session reload or
+      // queue rebuild doesn't jump again, the next draw only happens once
+      // this topic completes.
+      if (randomTopics && activeTopic && activeTopic.id !== savedTopic) {
+        await db.setSelectedTopic(activeTopic.id);
+      }
 
       setCurrentTopic(activeTopic);
       setTopicProgress({
@@ -564,7 +582,13 @@ export default function LearnScreen() {
         const allWordIds = lvlWords.map((w: WordEntry) => w.id);
         const repsMap = await db.getWordReps(allWordIds);
         const savedTopic2 = await db.getSelectedTopic();
-        const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel, savedTopic2, learned);
+        const randomTopics2 = await db.getRandomTopics();
+        const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel, savedTopic2, learned, randomTopics2);
+        // FB37: persist a freshly-drawn random topic so it stays stable across
+        // the rest of this session (next draw only once it completes again).
+        if (randomTopics2 && activeTopic && activeTopic.id !== savedTopic2) {
+          await db.setSelectedTopic(activeTopic.id);
+        }
 
         if (topicProgress && completedCount > topicProgress.done && activeTopic) {
           const s = t();

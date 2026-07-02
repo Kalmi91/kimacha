@@ -15,16 +15,25 @@ export default function SettingsScreen() {
   const router = useRouter();
   const [masterVisible, setMasterVisible] = useState(false);
   const [wordsOnly, setWordsOnly] = useState(false);
+  const [randomTopics, setRandomTopics] = useState(false);
   const [target, setTarget] = useState('es');
 
   useEffect(() => {
     getDb().getWordsOnly().then(setWordsOnly);
+    getDb().getRandomTopics().then(setRandomTopics);
     getDb().getOnboarding().then(o => { if (o) setTarget(o.target); });
   }, []);
 
   const handleWordsOnlyToggle = async (v: boolean) => {
     setWordsOnly(v);
     await getDb().setWordsOnly(v);
+    setPendingAction({ type: 'selectTopic' });
+    router.push('/');
+  };
+
+  const handleRandomTopicsToggle = async (v: boolean) => {
+    setRandomTopics(v);
+    await getDb().setRandomTopics(v);
     setPendingAction({ type: 'selectTopic' });
     router.push('/');
   };
@@ -106,6 +115,11 @@ export default function SettingsScreen() {
       <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.wordsOnly}</Text>
         <Switch value={wordsOnly} onValueChange={handleWordsOnlyToggle} trackColor={{ true: colors.tint }} />
+      </View>
+
+      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.randomTopics}</Text>
+        <Switch value={randomTopics} onValueChange={handleRandomTopicsToggle} trackColor={{ true: colors.tint }} />
       </View>
 
       <Modal visible={masterVisible} transparent animationType="fade">
