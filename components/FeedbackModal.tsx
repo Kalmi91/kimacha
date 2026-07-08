@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { StyleSheet, Text, View, Pressable, TextInput, Modal } from 'react-native';
+import { useEffect, useRef, useState } from 'react';
+import { StyleSheet, Text, View, Pressable, TextInput, Modal, PanResponder, Dimensions } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
+import { getDb } from '@/lib/database';
 
 const ENDPOINT = 'https://script.google.com/macros/s/AKfycbz2ziRYVpdLcQO1fI10CpbAO7l3bqUFZMxfwBTNxVsc19tRAfE8mGAg01JJscB2fRt6/exec';
 
@@ -10,9 +11,12 @@ interface Props {
   level: string;
   languagePair: string;
   currentCard: string;
+  // FB41: tree tab only, lets the user drag the button to the other side of
+  // the screen; the chosen side persists (learn_settings.feedback_btn_side).
+  draggable?: boolean;
 }
 
-export default function FeedbackButton({ level, languagePair, currentCard }: Props) {
+export default function FeedbackButton({ level, languagePair, currentCard, draggable = false }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
@@ -21,6 +25,27 @@ export default function FeedbackButton({ level, languagePair, currentCard }: Pro
   const [text, setText] = useState('');
   const [sending, setSending] = useState(false);
   const [showThanks, setShowThanks] = useState(false);
+  const [side, setSide] = useState<'left' | 'right'>('right');
+
+  useEffect(() => {
+    if (!draggable) return;
+    getDb().getFeedbackBtnSide().then(setSide);
+  }, [draggable]);
+
+  const panResponder = useRef(
+    PanResponder.create({
+      // Only claim the gesture once the finger has actually moved (|dx|>10);
+      // small movements/taps fall through to the Pressable's onPress.
+      onMoveShouldSetPanResponder: (_evt, gestureState) => Math.abs(gestureState.dx) > 10,
+      onPanResponderRelease: (evt, _gestureState) => {
+        const screenWidth = Dimensions.get('window').width;
+        const releasedX = evt.nativeEvent.pageX;
+        const newSide: 'left' | 'right' = releasedX < screenWidth / 2 ? 'left' : 'right';
+        setSide(newSide);
+        getDb().setFeedbackBtnSide(newSide);
+      },
+    })
+  ).current;
 
   const handleSend = async () => {
     if (!text.trim()) return;
@@ -48,8 +73,9 @@ export default function FeedbackButton({ level, languagePair, currentCard }: Pro
   return (
     <>
       <Pressable
-        style={styles.fab}
+        style={[styles.fab, draggable && (side === 'left' ? styles.fabLeft : styles.fabRight)]}
         onPress={() => setVisible(true)}
+        {...(draggable ? panResponder.panHandlers : {})}
       >
         <Text style={styles.fabText}>💬</Text>
       </Pressable>
@@ -119,6 +145,16 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 6,
     zIndex: 100,
+  },
+  // FB41: draggable tree-tab button only, override fab's default right:24
+  // to switch sides (left clears the inherited right, and vice versa).
+  fabLeft: {
+    left: 24,
+    right: undefined,
+  },
+  fabRight: {
+    right: 24,
+    left: undefined,
   },
   fabText: {
     fontSize: 24,
