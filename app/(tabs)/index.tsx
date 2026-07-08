@@ -558,6 +558,94 @@ export default function LearnScreen() {
     setPracticeText('');
   };
 
+  // Shared by advance() and advanceNoRating(): once the queue is exhausted,
+  // pull a fresh due batch (topic-aware) and rebuild it. Reads only
+  // level/direction/topic state, no dependency on the just-rated card, so
+  // both the rating and no-rating advance paths can reuse it verbatim.
+  const rebuildQueueAtEnd = async () => {
+    const db = getDb();
+    const levelData = await db.getLevel();
+    const currentLevel = levelData.level as Level;
+    const learned = direction[1];
+    const { getWordsForLevel: gwfl } = require('@/data/words');
+    const lvlWords = gwfl(currentLevel, learned);
+    const rvw = await db.getReviewedWordCount(currentLevel);
+    const mst = await db.getMasteredWordCount(currentLevel);
+    const newMPct = lvlWords.length > 0 ? Math.round((mst / lvlWords.length) * 100) : 0;
+    setMasteredPct(newMPct);
+    setKnownWords(rvw);
+    setLevelTotal(lvlWords.length);
+
+    const topics = getTopicsForLevel(currentLevel, learned);
+    const useTopics = topics.length > 0 && lvlWords.some((w: WordEntry) => w['topic']);
+
+    let newRows: any[];
+    if (useTopics) {
+      const allWordIds = lvlWords.map((w: WordEntry) => w.id);
+      const repsMap = await db.getWordReps(allWordIds);
+      const savedTopic2 = await db.getSelectedTopic();
+      const randomTopics2 = await db.getRandomTopics();
+      const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel, savedTopic2, learned, randomTopics2);
+      // FB37: persist a freshly-drawn random topic so it stays stable across
+      // the rest of this session (next draw only once it completes again).
+      if (randomTopics2 && activeTopic && activeTopic.id !== savedTopic2) {
+        await db.setSelectedTopic(activeTopic.id);
+      }
+
+      if (topicProgress && completedCount > topicProgress.done && activeTopic) {
+        const s = t();
+        const lang = direction[1] === 'hu' ? 'hu' : direction[1] === 'es' ? 'es' : direction[1] === 'de' ? 'de' : 'en';
+        // Free ordering: the just-finished topic is the one the user was
+        // studying, not the last one by order.
+        const prevCompleted = currentTopic ?? topics[completedCount - 1];
+        if (prevCompleted) {
+          // Sub-level celebration: check if ALL topics in the sub-level are now
+          // complete (free ordering, cannot rely on "last topic" position).
+          const sub = getSubLevelForTopic(currentLevel, prevCompleted.id, learned);
+          const subTopics = sub ? getTopicsForSubLevel(currentLevel, sub.id, learned) : [];
+          const closesSubLevel = sub && subTopics.length > 0 && subTopics.every(st => {
+            const stWords = getWordsForTopic(currentLevel, st.id, learned);
+            return stWords.length > 0 && stWords.every(w => (repsMap.get(w.id) ?? 0) > 0);
+          });
+          setTopicCompleteMsg(
+            closesSubLevel
+              ? `${s.topic.complete}\n${s.subLevel.complete(sub.id, getSubLevelName(sub, lang))}`
+              : s.topic.complete,
+          );
+          setTimeout(() => setTopicCompleteMsg(null), 3000);
+        }
+      }
+
+      setCurrentTopic(activeTopic);
+      setTopicProgress({
+        done: completedCount,
+        total: topics.length,
+        wordsInTopic: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id, learned).length : 0,
+        wordsReviewed: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id, learned).filter(w => (repsMap.get(w.id) ?? 0) > 0).length : 0,
+      });
+
+      const activeWordIds = unlocked.flatMap(topic => getWordsForTopic(currentLevel, topic.id, learned)).map(w => w.id);
+      for (const w of unlocked.flatMap(topic => getWordsForTopic(currentLevel, topic.id, learned))) {
+        await db.ensureCard(w.id, 'word');
+        await db.ensureCard(w.id, 'sentence');
+      }
+      newRows = await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL);
+    } else {
+      newRows = await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
+    }
+
+    const wordsOnly2 = await db.getWordsOnly();
+    const newItems = applyCadence(buildQueue(newRows), wordsOnly2);
+
+    if (newItems.length === 0) {
+      setDone(true);
+    } else {
+      setQueue(newItems);
+      setCurrentIndex(0);
+    }
+    resetCardState();
+  };
+
   const advance = async (rating: Grade) => {
     if (!current || advancingRef.current) return;
     advancingRef.current = true;
@@ -598,90 +686,49 @@ export default function LearnScreen() {
     setReviewed((r) => r + 1);
 
     if (!midQueue) {
-      const levelData = await db.getLevel();
-      const currentLevel = levelData.level as Level;
-      const learned = direction[1];
-      const { getWordsForLevel: gwfl } = require('@/data/words');
-      const lvlWords = gwfl(currentLevel, learned);
-      const rvw = await db.getReviewedWordCount(currentLevel);
-      const mst = await db.getMasteredWordCount(currentLevel);
-      const newMPct = lvlWords.length > 0 ? Math.round((mst / lvlWords.length) * 100) : 0;
-      setMasteredPct(newMPct);
-      setKnownWords(rvw);
-      setLevelTotal(lvlWords.length);
-
-      const topics = getTopicsForLevel(currentLevel, learned);
-      const useTopics = topics.length > 0 && lvlWords.some((w: WordEntry) => w['topic']);
-
-      let newRows: any[];
-      if (useTopics) {
-        const allWordIds = lvlWords.map((w: WordEntry) => w.id);
-        const repsMap = await db.getWordReps(allWordIds);
-        const savedTopic2 = await db.getSelectedTopic();
-        const randomTopics2 = await db.getRandomTopics();
-        const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel, savedTopic2, learned, randomTopics2);
-        // FB37: persist a freshly-drawn random topic so it stays stable across
-        // the rest of this session (next draw only once it completes again).
-        if (randomTopics2 && activeTopic && activeTopic.id !== savedTopic2) {
-          await db.setSelectedTopic(activeTopic.id);
-        }
-
-        if (topicProgress && completedCount > topicProgress.done && activeTopic) {
-          const s = t();
-          const lang = direction[1] === 'hu' ? 'hu' : direction[1] === 'es' ? 'es' : direction[1] === 'de' ? 'de' : 'en';
-          // Free ordering: the just-finished topic is the one the user was
-          // studying, not the last one by order.
-          const prevCompleted = currentTopic ?? topics[completedCount - 1];
-          if (prevCompleted) {
-            // Sub-level celebration: check if ALL topics in the sub-level are now
-            // complete (free ordering — cannot rely on "last topic" position).
-            const sub = getSubLevelForTopic(currentLevel, prevCompleted.id, learned);
-            const subTopics = sub ? getTopicsForSubLevel(currentLevel, sub.id, learned) : [];
-            const closesSubLevel = sub && subTopics.length > 0 && subTopics.every(st => {
-              const stWords = getWordsForTopic(currentLevel, st.id, learned);
-              return stWords.length > 0 && stWords.every(w => (repsMap.get(w.id) ?? 0) > 0);
-            });
-            setTopicCompleteMsg(
-              closesSubLevel
-                ? `${s.topic.complete}\n${s.subLevel.complete(sub.id, getSubLevelName(sub, lang))}`
-                : s.topic.complete,
-            );
-            setTimeout(() => setTopicCompleteMsg(null), 3000);
-          }
-        }
-
-        setCurrentTopic(activeTopic);
-        setTopicProgress({
-          done: completedCount,
-          total: topics.length,
-          wordsInTopic: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id, learned).length : 0,
-          wordsReviewed: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id, learned).filter(w => (repsMap.get(w.id) ?? 0) > 0).length : 0,
-        });
-
-        const activeWordIds = unlocked.flatMap(topic => getWordsForTopic(currentLevel, topic.id, learned)).map(w => w.id);
-        for (const w of unlocked.flatMap(topic => getWordsForTopic(currentLevel, topic.id, learned))) {
-          await db.ensureCard(w.id, 'word');
-          await db.ensureCard(w.id, 'sentence');
-        }
-        newRows = await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL);
-      } else {
-        newRows = await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
-      }
-
-      const wordsOnly2 = await db.getWordsOnly();
-      const newItems = applyCadence(buildQueue(newRows), wordsOnly2);
-
-      if (newItems.length === 0) {
-        setDone(true);
-      } else {
-        setQueue(newItems);
-        setCurrentIndex(0);
-      }
-      resetCardState();
+      await rebuildQueueAtEnd();
     }
     } finally {
       if (!midQueue) advancingRef.current = false;
     }
+  };
+
+  // FB38: advance to the next card with NO SRS write at all (used by the
+  // snooze button). Mirrors advance()'s optimistic mid-queue step and
+  // queue-end rebuild, minus every rating/persistence call.
+  const advanceNoRating = async () => {
+    if (!current || advancingRef.current) return;
+    advancingRef.current = true;
+    const next = currentIndex + 1;
+    const midQueue = next < queue.length;
+    if (midQueue) {
+      setCurrentIndex(next);
+      resetCardState();
+      advancingRef.current = false;
+    } else {
+      try {
+        await rebuildQueueAtEnd();
+      } finally {
+        advancingRef.current = false;
+      }
+    }
+  };
+
+  // FB43/FB46: move the current card to the END of the queue (no rating), then
+  // show whatever now sits at this same index, since removing the current
+  // card shifts everything after it left by one, that's already the "next"
+  // card, so the index itself doesn't move. A single-item queue is a no-op,
+  // there's nowhere to send it, so just reset the card's local UI state.
+  const requeueCurrent = () => {
+    if (!current || advancingRef.current) return;
+    if (queue.length <= 1) {
+      resetCardState();
+      return;
+    }
+    const item = current;
+    const rest = queue.filter((_, i) => i !== currentIndex);
+    setQueue([...rest, item]);
+    resetCardState();
   };
 
   useEffect(() => {
@@ -747,6 +794,13 @@ export default function LearnScreen() {
 
   const handleCheck = () => {
     if (!current) return;
+    // FB43: an empty answer isn't a wrong answer, it just means "not now" (too
+    // hard / forgotten). Don't grade it, don't touch the fail streak, don't
+    // speak the answer, just send the card to the back of the queue.
+    if (typedAnswer.trim().length === 0) {
+      requeueCurrent();
+      return;
+    }
     const { back } = getFrontBack(current);
     const correct = back.split(' / ')[0];
 
@@ -928,6 +982,7 @@ export default function LearnScreen() {
             db.buryCard(current.wordId, current.type).catch(() => {});
             advance(Rating.Good);
           }}
+          onSkip={requeueCurrent}
         />
         <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`easy:${nativeSentence}`} />
       </View>
@@ -1028,6 +1083,18 @@ export default function LearnScreen() {
           }}
         >
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.iKnowThis}</Text>}
+        </Pressable>
+
+        {/* FB38: snooze the word 3 days without any SRS write. */}
+        <Pressable
+          style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
+          onPress={() => {
+            const db = getDb();
+            db.snoozeCard(current.wordId, current.type, 3).catch(() => {});
+            advanceNoRating();
+          }}
+        >
+          {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.snooze}</Text>}
         </Pressable>
 
         <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`recog:${front}`} />
@@ -1141,6 +1208,18 @@ export default function LearnScreen() {
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.iKnowThis}</Text>}
         </Pressable>
 
+        {/* FB38: snooze the word 3 days without any SRS write. */}
+        <Pressable
+          style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
+          onPress={() => {
+            const db = getDb();
+            db.snoozeCard(current.wordId, current.type, 3).catch(() => {});
+            advanceNoRating();
+          }}
+        >
+          {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.snooze}</Text>}
+        </Pressable>
+
         <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`${current.type}:${front}`} />
       </KeyboardAvoidingView>
     );
@@ -1228,18 +1307,6 @@ export default function LearnScreen() {
       </Pressable>
 
       <View style={[styles.buttons, { opacity: revealed ? 1 : 0 }]} pointerEvents={revealed ? 'auto' : 'none'}>
-        <Pressable
-          style={[styles.button, { backgroundColor: '#1D4ED8' }]}
-          onPress={() => advance(Rating.Again)}
-        >
-          <Text style={styles.buttonText}>{s.buttons.again}</Text>
-        </Pressable>
-        <Pressable
-          style={[styles.button, { backgroundColor: '#38BDF8' }]}
-          onPress={() => advance(Rating.Good)}
-        >
-          <Text style={styles.buttonText}>{s.buttons.good}</Text>
-        </Pressable>
         {isWord && (
           <Pressable
             style={[styles.button, { backgroundColor: colors.accent }]}
@@ -1248,6 +1315,18 @@ export default function LearnScreen() {
             <Text style={styles.buttonText}>{s.buttons.inSentence}</Text>
           </Pressable>
         )}
+        <Pressable
+          style={[styles.button, { backgroundColor: '#38BDF8' }]}
+          onPress={() => advance(Rating.Good)}
+        >
+          <Text style={styles.buttonText}>{s.buttons.good}</Text>
+        </Pressable>
+        <Pressable
+          style={[styles.button, { backgroundColor: '#1D4ED8' }]}
+          onPress={() => advance(Rating.Again)}
+        >
+          <Text style={styles.buttonText}>{s.buttons.again}</Text>
+        </Pressable>
       </View>
 
       {revealed && (
@@ -1260,6 +1339,20 @@ export default function LearnScreen() {
           }}
         >
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.iKnowThis}</Text>}
+        </Pressable>
+      )}
+
+      {/* FB38: snooze the word 3 days without any SRS write. */}
+      {revealed && (
+        <Pressable
+          style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
+          onPress={() => {
+            const db = getDb();
+            db.snoozeCard(current.wordId, current.type, 3).catch(() => {});
+            advanceNoRating();
+          }}
+        >
+          {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.snooze}</Text>}
         </Pressable>
       )}
 

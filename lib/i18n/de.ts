@@ -18,12 +18,14 @@ export default {
     almostCorrect: 'Fast!',
     wrong: 'Falsch',
     pickSpelling: 'Wähle die richtige Schreibweise',
+    skip: 'Überspringen',
   },
   buttons: {
     again: 'Nochmal',
     good: 'Gut',
     inSentence: 'Im Satz',
     iKnowThis: 'Kann Ich Schon',
+    snooze: '3 Tage Pause',
   },
   done: {
     title: 'Fertig für heute!',

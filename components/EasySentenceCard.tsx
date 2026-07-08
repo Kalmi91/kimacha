@@ -11,9 +11,10 @@ interface Props {
   trapWords: string[];
   onResult: (correct: boolean) => void;
   onBury?: () => void;
+  onSkip?: () => void;
 }
 
-export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, onBury }: Props) {
+export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, onBury, onSkip }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
@@ -110,6 +111,13 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
       {onBury && (
         <Pressable style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]} onPress={onBury}>
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.iKnowThis}</Text>}
+        </Pressable>
+      )}
+
+      {/* FB46: too-hard-right-now escape hatch, requeues to the end with no rating. */}
+      {onSkip && (
+        <Pressable style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]} onPress={onSkip}>
+          {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.card.skip}</Text>}
         </Pressable>
       )}
     </View>

@@ -22,6 +22,7 @@ export interface DB {
   getMasteredWordCount(level: string): Promise<number>;
   getReviewedWordCount(level: string): Promise<number>;
   buryCard(wordId: number, type: string): Promise<void>;
+  snoozeCard(wordId: number, type: string, days: number): Promise<void>;
   resetAllProgress(): Promise<void>;
   getSelectedTopic(): Promise<string | null>;
   setSelectedTopic(topicId: string | null): Promise<void>;
@@ -214,6 +215,14 @@ class MemoryDB implements DB {
     const k = this.key(wordId, type);
     const card = this.cards.get(k);
     if (card) card.buried = 1;
+  }
+
+  // FB38: push the card's due date out by `days`, leaving reps/stability untouched
+  // (unlike buryCard, this isn't final, the card resurfaces after the snooze).
+  async snoozeCard(wordId: number, type: string, days: number) {
+    const k = this.key(wordId, type);
+    const card = this.cards.get(k);
+    if (card) card.due = new Date(Date.now() + days * 86400000).toISOString();
   }
 
   async resetAllProgress() {

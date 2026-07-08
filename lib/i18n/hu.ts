@@ -18,12 +18,14 @@ export default {
     almostCorrect: 'Majdnem!',
     wrong: 'Hibás',
     pickSpelling: 'Válaszd a helyes írásmódot',
+    skip: 'Kihagyás',
   },
   buttons: {
     again: 'Újra',
     good: 'Jó',
     inSentence: 'Mondatban',
     iKnowThis: 'Ezt Már Tudom',
+    snooze: '3 Nap Pihenés',
   },
   done: {
     title: 'Kész vagy mára!',
