@@ -41,6 +41,23 @@ describe('nearMissDistractors', () => {
     expect(out.map((o) => o.toLowerCase())).not.toContain('yo hablo');
   });
 
+  // FB50: "They decide together." → "Ellos deciden juntos."; from the English
+  // side ellos/ellas are both correct, so the counterpart is barred as a trap.
+  it('never offers the gender-counterpart pronoun (FB50: ellos vs ellas)', () => {
+    const out = nearMissDistractors(
+      ['ellos', 'deciden', 'juntos'],
+      ['ellas', 'deciden', 'comer', 'casa', 'rojo'],
+      'es',
+    );
+    expect(out.map((o) => o.toLowerCase())).not.toContain('ellas');
+    const out2 = nearMissDistractors(
+      ['nosotras', 'hablamos'],
+      ['nosotros', 'hablan', 'comer', 'rojo'],
+      'es',
+    );
+    expect(out2.map((o) => o.toLowerCase())).not.toContain('nosotros');
+  });
+
   it('rejects unconfusable short words (FB: "mil" next to "muy")', () => {
     const out = nearMissDistractors(
       ['tú', 'hablas', 'muy', 'bien'],
