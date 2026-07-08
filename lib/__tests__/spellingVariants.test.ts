@@ -61,6 +61,17 @@ describe('spellingVariants', () => {
     }
   });
 
+  // FB51: a doubled vowel ("aacera", "quoosco") reads as an obvious fake in
+  // the option grid, and consonant doubling is only plausible where Spanish
+  // actually doubles (l/r/c/n), no edit may smuggle a doubled vowel in.
+  it('never introduces a doubled vowel (la acera, el quiosco)', () => {
+    for (const w of ['la acera', 'el quiosco', 'la casa', ...words]) {
+      for (const v of spellingVariants(w, 12)) {
+        expect(fold(v)).not.toMatch(/([aeiou])\1/);
+      }
+    }
+  });
+
   // FB44: recognition options are [correct, ...spellingVariants(correct, 1)]
   // plus real words; the whole option set must never look identical to the
   // fold-based matcher, or two tiles would be indistinguishable answers.

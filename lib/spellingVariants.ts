@@ -15,6 +15,11 @@ import { hashString } from './shuffle';
 
 const VOWELS = 'aeiou';
 
+// FB51: letters Spanish legitimately doubles (llegar, perro, acción, innato).
+// Doubling anything else, above all a vowel ("aacera"), reads as an obvious
+// fake rather than a plausible misspelling, so those never enter the pool.
+const DOUBLABLE = new Set(['l', 'r', 'c', 'n']);
+
 // Common Spanish orthographic confusions (the letters beginners actually mix up).
 const CONFUSIONS: [string, string][] = [
   ['b', 'v'], ['v', 'b'],
@@ -85,8 +90,16 @@ export function spellingVariants(word: string, count: number): string[] {
   const lower = w.toLowerCase();
   const [spanStart, spanEnd] = longestWordSpan(w);
   const cands = new Set<string>();
+  const foldW = fold(w);
   const add = (s: string) => {
-    if (s && s !== w && fold(s) !== fold(w)) cands.add(s);
+    if (!s || s === w || fold(s) === foldW) return;
+    // FB51: no variant may introduce a doubled vowel the correct form lacks
+    // ("aacera", "quoosco"), doubling, transpose and vowel swap can all
+    // create one, and every one of them reads as an obvious fake.
+    for (const m of fold(s).match(/([aeiou])\1/g) ?? []) {
+      if (!foldW.includes(m)) return;
+    }
+    cands.add(s);
   };
 
   // 1. transpose two adjacent letters
@@ -99,9 +112,9 @@ export function spellingVariants(word: string, count: number): string[] {
     if (!isLetter(w[i])) continue;
     add(w.slice(0, i) + w.slice(i + 1));
   }
-  // 3. double a letter
+  // 3. double a letter (only ones Spanish actually doubles, FB51)
   for (let i = spanStart; i < spanEnd; i++) {
-    if (!isLetter(w[i])) continue;
+    if (!isLetter(w[i]) || !DOUBLABLE.has(lower[i])) continue;
     add(w.slice(0, i + 1) + w[i] + w.slice(i + 1));
   }
   // 4. swap a vowel for another vowel
