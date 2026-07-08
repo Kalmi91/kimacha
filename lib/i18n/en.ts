@@ -18,12 +18,14 @@ export default {
     almostCorrect: 'Almost!',
     wrong: 'Wrong',
     pickSpelling: 'Pick the correct spelling',
+    skip: 'Skip',
   },
   buttons: {
     again: 'Again',
     good: 'Good',
     inSentence: 'In Sentence',
     iKnowThis: 'I Know This',
+    snooze: 'Rest 3 Days',
   },
   done: {
     title: 'Done for today!',

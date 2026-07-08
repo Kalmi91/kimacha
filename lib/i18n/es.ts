@@ -18,12 +18,14 @@ export default {
     almostCorrect: '¡Casi!',
     wrong: 'Incorrecto',
     pickSpelling: 'Elige la grafía correcta',
+    skip: 'Saltar',
   },
   buttons: {
     again: 'Otra Vez',
     good: 'Bien',
     inSentence: 'En Frase',
     iKnowThis: 'Ya Lo Sé',
+    snooze: 'Descanso 3 Días',
   },
   done: {
     title: '¡Terminaste por hoy!',

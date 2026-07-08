@@ -23,6 +23,7 @@ export interface DB {
   getMasteredWordCount(level: string): Promise<number>;
   getReviewedWordCount(level: string): Promise<number>;
   buryCard(wordId: number, type: string): Promise<void>;
+  snoozeCard(wordId: number, type: string, days: number): Promise<void>;
   resetAllProgress(): Promise<void>;
   getSelectedTopic(): Promise<string | null>;
   setSelectedTopic(topicId: string | null): Promise<void>;
@@ -412,6 +413,14 @@ class SQLiteDB implements DB {
   async buryCard(wordId: number, type: string) {
     const db = await this.open();
     await db.runAsync('UPDATE cards SET buried = 1 WHERE word_id = ? AND type = ? AND pair = ?', [wordId, type, this.activePair]);
+  }
+
+  // FB38: push the card's due date out by `days`, leaving reps/stability untouched
+  // (unlike buryCard, this isn't final, the card resurfaces after the snooze).
+  async snoozeCard(wordId: number, type: string, days: number) {
+    const db = await this.open();
+    const newDue = new Date(Date.now() + days * 86400000).toISOString();
+    await db.runAsync('UPDATE cards SET due = ? WHERE word_id = ? AND type = ? AND pair = ?', [newDue, wordId, type, this.activePair]);
   }
 
   async resetAllProgress() {
