@@ -26,6 +26,7 @@ export default {
     inSentence: 'In Sentence',
     iKnowThis: 'I Know This',
     snooze: 'Rest 3 Days',
+    spelling: 'Spelling',
   },
   done: {
     title: 'Done for today!',
@@ -75,9 +76,15 @@ export default {
     changeLanguage: 'Change Language',
     wordsOnly: 'Words Only',
     randomTopics: 'Random Topics',
+    spellingPractice: (n: number) => `Spelling Practice (${n})`,
   },
   progress: {
     wordsKnown: 'Words Known',
+  },
+  spelling: {
+    title: 'Spelling Practice',
+    empty: 'No words due',
+    totalInList: (n: number) => `${n} words in your list`,
   },
   feedback: {
     button: 'Feedback',

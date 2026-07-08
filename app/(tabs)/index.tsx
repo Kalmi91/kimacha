@@ -168,6 +168,9 @@ export default function LearnScreen() {
   // FB45: recog card resolution, first tap reveals correct/wrong via color,
   // second tap (on any option) advances the card.
   const [recogResolved, setRecogResolved] = useState<'correct' | 'wrong' | null>(null);
+  // FB39: local per-card flag, flips the "Spelling" button to a ✓ state once
+  // tapped; resets whenever the card changes (via resetCardState).
+  const [spellingAdded, setSpellingAdded] = useState(false);
   const [level, setLevel] = useState<Level>('A0');
   const [levelUpMsg, setLevelUpMsg] = useState<string | null>(null);
   const [cardStartTime, setCardStartTime] = useState<number>(() => Date.now());
@@ -556,6 +559,7 @@ export default function LearnScreen() {
     setPracticeTyping(false);
     setPracticeResult(null);
     setPracticeText('');
+    setSpellingAdded(false);
   };
 
   // Shared by advance() and advanceNoRating(): once the queue is exhausted,
@@ -1097,6 +1101,18 @@ export default function LearnScreen() {
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.snooze}</Text>}
         </Pressable>
 
+        {/* FB39: add the word to the spelling-practice list, dedup on the DB side. */}
+        <Pressable
+          style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
+          onPress={() => {
+            const db = getDb();
+            db.addToSpellingList(current.wordId).catch(() => {});
+            setSpellingAdded(true);
+          }}
+        >
+          {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{spellingAdded ? `${s.buttons.spelling} ✓` : s.buttons.spelling}</Text>}
+        </Pressable>
+
         <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`recog:${front}`} />
       </View>
     );
@@ -1218,6 +1234,18 @@ export default function LearnScreen() {
           }}
         >
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.snooze}</Text>}
+        </Pressable>
+
+        {/* FB39: add the word to the spelling-practice list, dedup on the DB side. */}
+        <Pressable
+          style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
+          onPress={() => {
+            const db = getDb();
+            db.addToSpellingList(current.wordId).catch(() => {});
+            setSpellingAdded(true);
+          }}
+        >
+          {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{spellingAdded ? `${s.buttons.spelling} ✓` : s.buttons.spelling}</Text>}
         </Pressable>
 
         <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`${current.type}:${front}`} />
@@ -1353,6 +1381,20 @@ export default function LearnScreen() {
           }}
         >
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.snooze}</Text>}
+        </Pressable>
+      )}
+
+      {/* FB39: add the word to the spelling-practice list, dedup on the DB side. */}
+      {revealed && (
+        <Pressable
+          style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
+          onPress={() => {
+            const db = getDb();
+            db.addToSpellingList(current.wordId).catch(() => {});
+            setSpellingAdded(true);
+          }}
+        >
+          {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{spellingAdded ? `${s.buttons.spelling} ✓` : s.buttons.spelling}</Text>}
         </Pressable>
       )}
 
