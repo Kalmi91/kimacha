@@ -42,4 +42,33 @@ describe('spellingVariants', () => {
     expect(() => spellingVariants('a', 3)).not.toThrow();
     expect(() => spellingVariants('', 3)).not.toThrow();
   });
+
+  // FB44: edits must never touch punctuation/whitespace, only letters. A
+  // transpose/drop/double landing on "¿"/"?" reads as a broken string, not a
+  // plausible misspelling (repro: "¿Dónde estás?" used to yield "está?s").
+  it('never moves, drops, or doubles punctuation (¿Dónde estás?)', () => {
+    const phrase = '¿Dónde estás?';
+    for (const v of spellingVariants(phrase, 3)) {
+      expect(v.startsWith('¿')).toBe(true);
+      expect(v.endsWith('?')).toBe(true);
+      // Exactly one "¿" and one "?", each at the same position as the original,
+      // and the space still separates exactly two words.
+      expect(v.indexOf('¿')).toBe(phrase.indexOf('¿'));
+      expect(v.lastIndexOf('?')).toBe(v.length - 1);
+      expect((v.match(/¿/g) ?? []).length).toBe(1);
+      expect((v.match(/\?/g) ?? []).length).toBe(1);
+      expect(v.split(' ')).toHaveLength(2);
+    }
+  });
+
+  // FB44: recognition options are [correct, ...spellingVariants(correct, 1)]
+  // plus real words; the whole option set must never look identical to the
+  // fold-based matcher, or two tiles would be indistinguishable answers.
+  it('every variant is fold-distinct from the correct form and from each other', () => {
+    for (const w of ['¿Dónde estás?', 'de quién', ...words]) {
+      const variants = spellingVariants(w, 3);
+      const keys = [fold(w), ...variants.map(fold)];
+      expect(new Set(keys).size).toBe(keys.length);
+    }
+  });
 });

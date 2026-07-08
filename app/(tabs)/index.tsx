@@ -6,7 +6,7 @@ import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb, cardFromRow } from '@/lib/database';
-import { words, type WordEntry, getWordsForLevel, getWordsForTopic, LEVELS, type Level } from '@/data/words';
+import { words, type WordEntry, getWordsForLevel, getWordsForTopic, getWordTopic, LEVELS, type Level } from '@/data/words';
 import { getTopicsForLevel, hasTopics, getTopicName, getSubLevelForTopic, getTopicsForSubLevel, getSubLevelName, type TopicDef } from '@/data/topics';
 import { t } from '@/lib/i18n';
 import { strictAnswerMatch } from '@/lib/answerMatch';
@@ -97,6 +97,56 @@ function interleaveByType(items: DueItem[], maxRun: number): DueItem[] {
   return out;
 }
 
+const foldStr = (s: string): string =>
+  s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+
+// FB44+FB48: HYBRID 2+1 recognition options. Two REAL words (not misspellings)
+// from the level's vocabulary, preferring the current word's topic, so the
+// wrong options are obviously different words rather than near-identical
+// spelling noise. Deterministic (seeded by wordId) so re-renders are stable.
+function pickRecogRealWords(
+  wordId: number,
+  correct: string,
+  level: Level,
+  learned: string,
+  count: number,
+): string[] {
+  const currentWord = words.find((w) => w.id === wordId);
+  const topic = currentWord ? getWordTopic(currentWord) : undefined;
+  const levelWords = getWordsForLevel(level, learned).filter((w) => w.id !== wordId);
+  const sameTopic = topic ? levelWords.filter((w) => getWordTopic(w) === topic) : [];
+
+  const seen = new Set<string>([foldStr(correct)]);
+  const candidates: string[] = [];
+  for (const pool of [sameTopic, levelWords]) {
+    for (const w of pool) {
+      const value = String(w[learned]).split(' / ')[0];
+      const key = foldStr(value);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      candidates.push(value);
+    }
+  }
+
+  const next = rng32(hashString(`${wordId}:realwords`));
+  for (let i = candidates.length - 1; i > 0; i--) {
+    const j = Math.floor(next() * (i + 1));
+    [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
+  }
+  return candidates.slice(0, count);
+}
+
+/** mulberry32 PRNG, mirrors the seeded RNG in lib/spellingVariants.ts. */
+function rng32(seed: number): () => number {
+  let a = seed >>> 0;
+  return () => {
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
 export default function LearnScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -115,6 +165,9 @@ export default function LearnScreen() {
   const [typingResult, setTypingResult] = useState<TypingResult>(null);
   // FB28: which spelling options were tapped wrong on the recognition fallback.
   const [recogWrongPicks, setRecogWrongPicks] = useState<string[]>([]);
+  // FB45: recog card resolution, first tap reveals correct/wrong via color,
+  // second tap (on any option) advances the card.
+  const [recogResolved, setRecogResolved] = useState<'correct' | 'wrong' | null>(null);
   const [level, setLevel] = useState<Level>('A0');
   const [levelUpMsg, setLevelUpMsg] = useState<string | null>(null);
   const [cardStartTime, setCardStartTime] = useState<number>(() => Date.now());
@@ -498,6 +551,7 @@ export default function LearnScreen() {
     setTypedAnswer('');
     setTypingResult(null);
     setRecogWrongPicks([]);
+    setRecogResolved(null);
     setCardStartTime(Date.now());
     setPracticeTyping(false);
     setPracticeResult(null);
@@ -889,17 +943,32 @@ export default function LearnScreen() {
   // eslint-disable-next-line react-hooks/refs
   if (isWord && current.isTyping && (failsRef.current.get(current.wordId) ?? 0) >= RECOGNITION_AT) {
     const correct = back.split(' / ')[0];
+    // FB44+FB48: HYBRID 2+1, 1 correct + 2 real level words (obviously
+    // different, preferring the current topic) + 1 careful spelling variant.
+    const learned = direction[1];
+    const realWords = pickRecogRealWords(current.wordId, correct, level, learned, 2);
     const options = shuffleOptions(
-      [correct, ...spellingVariants(correct, 3)],
+      [correct, ...realWords, ...spellingVariants(correct, 1)],
       0,
       hashString(`${current.wordId}:${correct}`),
     ).options;
+    // FB45: first tap resolves (green on correct, red on a wrong tap) without
+    // advancing; the NEXT tap on any option advances with the earned rating.
     const handleRecogPick = (option: string) => {
+      if (recogResolved) {
+        if (recogResolved === 'correct') {
+          failsRef.current.delete(current.wordId);
+          advance(Rating.Good);
+        } else {
+          advance(Rating.Again);
+        }
+        return;
+      }
       if (strictAnswerMatch(option, correct)) {
-        failsRef.current.delete(current.wordId);
-        advance(Rating.Good);
-      } else if (!recogWrongPicks.includes(option)) {
+        setRecogResolved('correct');
+      } else {
         setRecogWrongPicks((prev) => [...prev, option]);
+        setRecogResolved('wrong');
       }
     };
     return (
@@ -928,18 +997,22 @@ export default function LearnScreen() {
           <View style={styles.recogOptions}>
             {options.map((opt) => {
               const wrong = recogWrongPicks.includes(opt);
+              // FB45: the correct option turns green once resolved, whether it
+              // was the tapped option (resolved: correct) or revealed after a
+              // wrong tap (resolved: wrong), the learner always sees the answer.
+              const green = !!recogResolved && opt === correct;
               return (
                 <Pressable
                   key={opt}
-                  disabled={wrong}
                   onPress={() => handleRecogPick(opt)}
                   style={[
                     styles.recogOption,
                     { borderColor: colors.tabIconDefault, backgroundColor: colors.background },
                     wrong && { backgroundColor: '#EF4444', borderColor: '#EF4444', opacity: 0.6 },
+                    green && { backgroundColor: '#22C55E', borderColor: '#22C55E' },
                   ]}
                 >
-                  <Text style={[styles.recogOptionText, { color: wrong ? '#FFFFFF' : colors.text }]}>{opt}</Text>
+                  <Text style={[styles.recogOptionText, { color: wrong || green ? '#FFFFFF' : colors.text }]}>{opt}</Text>
                 </Pressable>
               );
             })}

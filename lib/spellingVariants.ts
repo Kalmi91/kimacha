@@ -29,6 +29,39 @@ const CONFUSIONS: [string, string][] = [
 const fold = (s: string): string =>
   s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
+// FB44: edits must never touch punctuation/symbols/whitespace (\u00bf ? \u00a1 ! . , -
+// and spaces), only letters. Without this guard a transpose or drop could
+// shift a "?" mid-word ("est\u00e1?s") or eat a whole short word ("de" -> "d"),
+// which reads as an obvious typo/garbage rather than a plausible misspelling.
+const isLetter = (ch: string | undefined): boolean => !!ch && /\p{L}/u.test(ch);
+
+/**
+ * Span [start, end) of the LONGEST whitespace-delimited word in `phrase`,
+ * measured by letter count (punctuation attached to a token, e.g. "est\u00e1s?",
+ * doesn't count towards its length). Edits are confined to this span so a
+ * multi-word phrase never gets a misspelling stitched onto its shortest word.
+ * Ties keep the first (leftmost) word at the max letter count.
+ */
+function longestWordSpan(phrase: string): [number, number] {
+  let bestStart = 0;
+  let bestLen = 0;
+  let bestLetters = -1;
+  let i = 0;
+  while (i < phrase.length) {
+    if (/\s/.test(phrase[i])) { i++; continue; }
+    const start = i;
+    while (i < phrase.length && !/\s/.test(phrase[i])) i++;
+    const token = phrase.slice(start, i);
+    const letters = [...token].filter(isLetter).length;
+    if (letters > bestLetters) {
+      bestLetters = letters;
+      bestStart = start;
+      bestLen = token.length;
+    }
+  }
+  return [bestStart, bestStart + bestLen];
+}
+
 /** mulberry32 PRNG (seeded) for a stable, deterministic distractor pick. */
 function rng(seed: number): () => number {
   let a = seed >>> 0;
@@ -43,39 +76,46 @@ function rng(seed: number): () => number {
 /**
  * Generate up to `count` plausible misspellings of `word`.
  * Each is a single edit away; none equals the correct form (accent/case-folded);
- * all are mutually distinct. Deterministic for a given word.
+ * all are mutually distinct. Deterministic for a given word. Edits only ever
+ * touch letters inside the phrase's longest word (FB44), so punctuation and
+ * other words in a multi-word phrase are always left intact.
  */
 export function spellingVariants(word: string, count: number): string[] {
   const w = word;
   const lower = w.toLowerCase();
+  const [spanStart, spanEnd] = longestWordSpan(w);
   const cands = new Set<string>();
   const add = (s: string) => {
     if (s && s !== w && fold(s) !== fold(w)) cands.add(s);
   };
 
   // 1. transpose two adjacent letters
-  for (let i = 0; i < w.length - 1; i++) {
+  for (let i = spanStart; i < spanEnd - 1; i++) {
+    if (!isLetter(w[i]) || !isLetter(w[i + 1])) continue;
     add(w.slice(0, i) + w[i + 1] + w[i] + w.slice(i + 2));
   }
   // 2. drop a letter
-  for (let i = 0; i < w.length; i++) {
+  for (let i = spanStart; i < spanEnd; i++) {
+    if (!isLetter(w[i])) continue;
     add(w.slice(0, i) + w.slice(i + 1));
   }
   // 3. double a letter
-  for (let i = 0; i < w.length; i++) {
+  for (let i = spanStart; i < spanEnd; i++) {
+    if (!isLetter(w[i])) continue;
     add(w.slice(0, i + 1) + w[i] + w.slice(i + 1));
   }
   // 4. swap a vowel for another vowel
-  for (let i = 0; i < w.length; i++) {
+  for (let i = spanStart; i < spanEnd; i++) {
+    if (!isLetter(w[i])) continue;
     const vi = VOWELS.indexOf(lower[i]);
     if (vi >= 0) {
       for (const v of VOWELS) if (v !== lower[i]) add(w.slice(0, i) + v + w.slice(i + 1));
     }
   }
-  // 5. orthographic confusions (every occurrence)
+  // 5. orthographic confusions (every occurrence, confined to the span)
   for (const [from, to] of CONFUSIONS) {
-    let idx = lower.indexOf(from);
-    while (idx >= 0) {
+    let idx = lower.indexOf(from, spanStart);
+    while (idx >= 0 && idx + from.length <= spanEnd) {
       add(w.slice(0, idx) + to + w.slice(idx + from.length));
       idx = lower.indexOf(from, idx + 1);
     }
