@@ -26,6 +26,7 @@ export default {
     inSentence: 'Im Satz',
     iKnowThis: 'Kann Ich Schon',
     snooze: '3 Tage Pause',
+    spelling: 'Rechtschreibung',
   },
   done: {
     title: 'Fertig für heute!',
@@ -75,9 +76,15 @@ export default {
     changeLanguage: 'Sprache Wechseln',
     wordsOnly: 'Nur Wörter',
     randomTopics: 'Zufällige Themen',
+    spellingPractice: (n: number) => `Rechtschreibtraining (${n})`,
   },
   progress: {
     wordsKnown: 'Bekannte Wörter',
+  },
+  spelling: {
+    title: 'Rechtschreibtraining',
+    empty: 'Keine fälligen Wörter',
+    totalInList: (n: number) => `${n} Wörter in deiner Liste`,
   },
   feedback: {
     button: 'Feedback',

@@ -26,6 +26,7 @@ export default {
     inSentence: 'En Frase',
     iKnowThis: 'Ya Lo Sé',
     snooze: 'Descanso 3 Días',
+    spelling: 'Ortografía',
   },
   done: {
     title: '¡Terminaste por hoy!',
@@ -75,9 +76,15 @@ export default {
     changeLanguage: 'Cambiar Idioma',
     wordsOnly: 'Solo palabras',
     randomTopics: 'Temas aleatorios',
+    spellingPractice: (n: number) => `Práctica de Ortografía (${n})`,
   },
   progress: {
     wordsKnown: 'Palabras Conocidas',
+  },
+  spelling: {
+    title: 'Práctica de Ortografía',
+    empty: 'No hay palabras pendientes',
+    totalInList: (n: number) => `${n} palabras en tu lista`,
   },
   feedback: {
     button: 'Comentarios',

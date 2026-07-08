@@ -24,6 +24,12 @@ export interface DB {
   getReviewedWordCount(level: string): Promise<number>;
   buryCard(wordId: number, type: string): Promise<void>;
   snoozeCard(wordId: number, type: string, days: number): Promise<void>;
+  addToSpellingList(wordId: number): Promise<void>;
+  removeFromSpellingList(wordId: number): Promise<void>;
+  getSpellingList(): Promise<{ wordId: number; step: number; due: string }[]>;
+  getSpellingDueCount(): Promise<number>;
+  updateSpellingStep(wordId: number, step: number, due: string): Promise<void>;
+  isInSpellingList(wordId: number): Promise<boolean>;
   resetAllProgress(): Promise<void>;
   getSelectedTopic(): Promise<string | null>;
   setSelectedTopic(topicId: string | null): Promise<void>;
@@ -117,6 +123,13 @@ class SQLiteDB implements DB {
         pair TEXT PRIMARY KEY,
         words_only INTEGER,
         random_topics INTEGER
+      );
+      CREATE TABLE IF NOT EXISTS spelling_list (
+        pair TEXT NOT NULL,
+        word_id INTEGER NOT NULL,
+        step INTEGER NOT NULL DEFAULT 0,
+        due TEXT NOT NULL,
+        PRIMARY KEY (pair, word_id)
       );
     `);
     // Migration: add random_topics column (DBs created before the random-topic toggle).
@@ -423,8 +436,52 @@ class SQLiteDB implements DB {
     await db.runAsync('UPDATE cards SET due = ? WHERE word_id = ? AND type = ? AND pair = ?', [newDue, wordId, type, this.activePair]);
   }
 
+  // FB39: spelling-practice list, scoped to the active pair like cards.
+  async addToSpellingList(wordId: number) {
+    const db = await this.open();
+    const now = new Date().toISOString();
+    await db.runAsync(
+      'INSERT OR IGNORE INTO spelling_list (pair, word_id, step, due) VALUES (?, ?, 0, ?)',
+      [this.activePair, wordId, now]
+    );
+  }
+
+  async removeFromSpellingList(wordId: number) {
+    const db = await this.open();
+    await db.runAsync('DELETE FROM spelling_list WHERE pair = ? AND word_id = ?', [this.activePair, wordId]);
+  }
+
+  async getSpellingList() {
+    const db = await this.open();
+    const rows = await db.getAllAsync<any>('SELECT word_id, step, due FROM spelling_list WHERE pair = ?', [this.activePair]);
+    return rows.map((r: any) => ({ wordId: r.word_id, step: r.step, due: r.due }));
+  }
+
+  async getSpellingDueCount() {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>(
+      'SELECT COUNT(*) as cnt FROM spelling_list WHERE pair = ? AND due <= ?',
+      [this.activePair, new Date().toISOString()]
+    );
+    return row?.cnt ?? 0;
+  }
+
+  async updateSpellingStep(wordId: number, step: number, due: string) {
+    const db = await this.open();
+    await db.runAsync(
+      'UPDATE spelling_list SET step = ?, due = ? WHERE pair = ? AND word_id = ?',
+      [step, due, this.activePair, wordId]
+    );
+  }
+
+  async isInSpellingList(wordId: number) {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT 1 FROM spelling_list WHERE pair = ? AND word_id = ?', [this.activePair, wordId]);
+    return !!row;
+  }
+
   async resetAllProgress() {
-    // Reset only the active language pair — other languages keep their progress.
+    // Reset only the active language pair, other languages keep their progress.
     const db = await this.open();
     await db.runAsync('DELETE FROM cards WHERE pair = ?', [this.activePair]);
     await db.runAsync("UPDATE user_level SET level = 'A0', correct_streak = 0, mistakes_in_window = 0, fail_streak = 0 WHERE pair = ?", [this.activePair]);

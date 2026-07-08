@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import { StyleSheet, Text, View, Pressable, Modal, Alert, Switch } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useRouter, useFocusEffect } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { LEVELS, type Level, getWordsForLevel } from '@/data/words';
 import { setPendingAction } from '@/lib/pendingAction';
 import { getDb } from '@/lib/database';
+import FeedbackButton from '@/components/FeedbackModal';
 
 export default function SettingsScreen() {
   const { theme, override, setOverride } = useTheme();
@@ -17,12 +18,22 @@ export default function SettingsScreen() {
   const [wordsOnly, setWordsOnly] = useState(false);
   const [randomTopics, setRandomTopics] = useState(false);
   const [target, setTarget] = useState('es');
+  const [level, setLevel] = useState<Level>('A0');
+  const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
+  // FB39: due count for the "Spelling Practice (N)" settings row, refreshed
+  // every time Settings gains focus (e.g. after adding words on the Learn tab).
+  const [spellingDue, setSpellingDue] = useState(0);
 
-  useEffect(() => {
-    getDb().getWordsOnly().then(setWordsOnly);
-    getDb().getRandomTopics().then(setRandomTopics);
-    getDb().getOnboarding().then(o => { if (o) setTarget(o.target); });
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      const db = getDb();
+      db.getWordsOnly().then(setWordsOnly);
+      db.getRandomTopics().then(setRandomTopics);
+      db.getOnboarding().then(o => { if (o) { setTarget(o.target); setDirection([o.source, o.target]); } });
+      db.getLevel().then(l => setLevel(l.level as Level));
+      db.getSpellingDueCount().then(setSpellingDue);
+    }, [])
+  );
 
   const handleWordsOnlyToggle = async (v: boolean) => {
     setWordsOnly(v);
@@ -122,6 +133,15 @@ export default function SettingsScreen() {
         <Switch value={randomTopics} onValueChange={handleRandomTopicsToggle} trackColor={{ true: colors.tint }} />
       </View>
 
+      {/* FB39: entry point into the spelling-practice trainer screen. */}
+      <Pressable
+        style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}
+        onPress={() => router.push('/spelling')}
+      >
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.spellingPractice(spellingDue)}</Text>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+      </Pressable>
+
       <Modal visible={masterVisible} transparent animationType="fade">
         <View style={styles.overlay}>
           <View style={[styles.modal, { backgroundColor: colors.card }]}>
@@ -166,6 +186,8 @@ export default function SettingsScreen() {
           </View>
         </View>
       </Modal>
+
+      <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="settings-tab" />
     </View>
   );
 }

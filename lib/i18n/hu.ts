@@ -26,6 +26,7 @@ export default {
     inSentence: 'Mondatban',
     iKnowThis: 'Ezt Már Tudom',
     snooze: '3 Nap Pihenés',
+    spelling: 'Helyesírás',
   },
   done: {
     title: 'Kész vagy mára!',
@@ -75,9 +76,15 @@ export default {
     changeLanguage: 'Nyelv Váltás',
     wordsOnly: 'Csak szavak',
     randomTopics: 'Random témák',
+    spellingPractice: (n: number) => `Helyesírás-gyakorló (${n})`,
   },
   progress: {
     wordsKnown: 'Ismert Szavak',
+  },
+  spelling: {
+    title: 'Helyesírás-gyakorló',
+    empty: 'Nincs esedékes szó',
+    totalInList: (n: number) => `${n} szó a listádban`,
   },
   feedback: {
     button: 'Visszajelzés',

@@ -23,6 +23,12 @@ export interface DB {
   getReviewedWordCount(level: string): Promise<number>;
   buryCard(wordId: number, type: string): Promise<void>;
   snoozeCard(wordId: number, type: string, days: number): Promise<void>;
+  addToSpellingList(wordId: number): Promise<void>;
+  removeFromSpellingList(wordId: number): Promise<void>;
+  getSpellingList(): Promise<{ wordId: number; step: number; due: string }[]>;
+  getSpellingDueCount(): Promise<number>;
+  updateSpellingStep(wordId: number, step: number, due: string): Promise<void>;
+  isInSpellingList(wordId: number): Promise<boolean>;
   resetAllProgress(): Promise<void>;
   getSelectedTopic(): Promise<string | null>;
   setSelectedTopic(topicId: string | null): Promise<void>;
@@ -225,8 +231,45 @@ class MemoryDB implements DB {
     if (card) card.due = new Date(Date.now() + days * 86400000).toISOString();
   }
 
+  // FB39: spelling-practice list, per-pair map like the other pair-scoped state.
+  // Web doesn't survive reload, known, fine (same limit as wordsOnlyMap etc).
+  private spellingLists: Map<string, Map<number, { step: number; due: string }>> = new Map();
+
+  private spellingListFor(pair: string) {
+    let m = this.spellingLists.get(pair);
+    if (!m) { m = new Map(); this.spellingLists.set(pair, m); }
+    return m;
+  }
+
+  async addToSpellingList(wordId: number) {
+    const list = this.spellingListFor(this.activePair);
+    if (!list.has(wordId)) list.set(wordId, { step: 0, due: new Date().toISOString() });
+  }
+
+  async removeFromSpellingList(wordId: number) {
+    this.spellingListFor(this.activePair).delete(wordId);
+  }
+
+  async getSpellingList() {
+    const list = this.spellingListFor(this.activePair);
+    return [...list.entries()].map(([wordId, v]) => ({ wordId, step: v.step, due: v.due }));
+  }
+
+  async getSpellingDueCount() {
+    const now = new Date().toISOString();
+    return [...this.spellingListFor(this.activePair).values()].filter(v => v.due <= now).length;
+  }
+
+  async updateSpellingStep(wordId: number, step: number, due: string) {
+    this.spellingListFor(this.activePair).set(wordId, { step, due });
+  }
+
+  async isInSpellingList(wordId: number) {
+    return this.spellingListFor(this.activePair).has(wordId);
+  }
+
   async resetAllProgress() {
-    // Reset only the active pair — other languages keep their progress.
+    // Reset only the active pair, other languages keep their progress.
     for (const k of [...this.cards.keys()]) {
       if (this.cards.get(k)?.pair === this.activePair) this.cards.delete(k);
     }
