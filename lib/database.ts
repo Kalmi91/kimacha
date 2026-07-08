@@ -37,6 +37,8 @@ export interface DB {
   setWordsOnly(v: boolean): Promise<void>;
   getRandomTopics(): Promise<boolean>;
   setRandomTopics(v: boolean): Promise<void>;
+  getFeedbackBtnSide(): Promise<'left' | 'right'>;
+  setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -122,7 +124,8 @@ class SQLiteDB implements DB {
       CREATE TABLE IF NOT EXISTS learn_settings (
         pair TEXT PRIMARY KEY,
         words_only INTEGER,
-        random_topics INTEGER
+        random_topics INTEGER,
+        feedback_btn_side TEXT
       );
       CREATE TABLE IF NOT EXISTS spelling_list (
         pair TEXT NOT NULL,
@@ -135,6 +138,10 @@ class SQLiteDB implements DB {
     // Migration: add random_topics column (DBs created before the random-topic toggle).
     try {
       await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN random_topics INTEGER');
+    } catch {}
+    // Migration: add feedback_btn_side column (DBs created before the draggable feedback button, FB41).
+    try {
+      await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN feedback_btn_side TEXT');
     } catch {}
     const meta = await this.db.getFirstAsync<any>('SELECT id FROM user_meta WHERE id = 1');
     if (!meta) {
@@ -523,6 +530,20 @@ class SQLiteDB implements DB {
     await db.runAsync(
       'INSERT INTO learn_settings (pair, random_topics) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET random_topics = excluded.random_topics',
       [this.activePair, v ? 1 : 0]
+    );
+  }
+
+  async getFeedbackBtnSide(): Promise<'left' | 'right'> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT feedback_btn_side FROM learn_settings WHERE pair = ?', [this.activePair]);
+    return row?.feedback_btn_side === 'left' ? 'left' : 'right';
+  }
+
+  async setFeedbackBtnSide(side: 'left' | 'right'): Promise<void> {
+    const db = await this.open();
+    await db.runAsync(
+      'INSERT INTO learn_settings (pair, feedback_btn_side) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET feedback_btn_side = excluded.feedback_btn_side',
+      [this.activePair, side]
     );
   }
 }

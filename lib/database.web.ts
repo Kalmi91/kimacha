@@ -36,6 +36,8 @@ export interface DB {
   setWordsOnly(v: boolean): Promise<void>;
   getRandomTopics(): Promise<boolean>;
   setRandomTopics(v: boolean): Promise<void>;
+  getFeedbackBtnSide(): Promise<'left' | 'right'>;
+  setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -304,6 +306,16 @@ class MemoryDB implements DB {
 
   async setRandomTopics(v: boolean): Promise<void> {
     this.randomTopicsMap.set(this.activePair, v);
+  }
+
+  private feedbackBtnSideMap: Map<string, 'left' | 'right'> = new Map();
+
+  async getFeedbackBtnSide(): Promise<'left' | 'right'> {
+    return this.feedbackBtnSideMap.get(this.activePair) ?? 'right';
+  }
+
+  async setFeedbackBtnSide(side: 'left' | 'right'): Promise<void> {
+    this.feedbackBtnSideMap.set(this.activePair, side);
   }
 }
 

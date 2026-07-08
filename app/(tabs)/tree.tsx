@@ -67,7 +67,7 @@ export default function TreeScreen() {
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         <Text style={[styles.noTree, { color: colors.tabIconDefault }]}>{level}</Text>
         <View style={styles.feedbackWrap}>
-          <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="tree-tab" />
+          <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="tree-tab" draggable />
         </View>
       </View>
     );
@@ -172,7 +172,7 @@ export default function TreeScreen() {
         );
       })}
       <View style={styles.feedbackWrap}>
-        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="tree-tab" />
+        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="tree-tab" draggable />
       </View>
       <View style={styles.bottomPad} />
     </ScrollView>
