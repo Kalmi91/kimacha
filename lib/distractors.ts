@@ -9,6 +9,18 @@ const ARTICLES: Record<string, string[]> = {
   hu: ['a', 'az', 'egy'],
 };
 
+// FB50: subject-pronoun gender pairs the source sentence cannot disambiguate
+// ("They decide" → ellos/ellas are BOTH correct translations). Offering the
+// counterpart as a trap is unfair, so when the answer uses one member of a
+// pair, its partner is barred from the bank.
+const AMBIGUOUS_PRONOUN_PAIRS: Record<string, [string, string][]> = {
+  es: [
+    ['ellos', 'ellas'],
+    ['nosotros', 'nosotras'],
+    ['vosotros', 'vosotras'],
+  ],
+};
+
 /**
  * Near-miss distractors for the tap-to-order easy sentence card (FB1).
  *
@@ -32,10 +44,20 @@ export function nearMissDistractors(
 ): string[] {
   const targetLower = targetWords.map((w) => w.toLowerCase());
   const targetSet = new Set(targetLower);
+  const blocked = new Set<string>();
+  for (const [a, b] of AMBIGUOUS_PRONOUN_PAIRS[lang] ?? []) {
+    if (targetSet.has(a)) blocked.add(b);
+    if (targetSet.has(b)) blocked.add(a);
+  }
   const out: string[] = [];
   const push = (w: string) => {
     const c = (w ?? '').trim();
-    if (c && !targetSet.has(c.toLowerCase()) && !out.some((o) => o.toLowerCase() === c.toLowerCase())) {
+    if (
+      c &&
+      !targetSet.has(c.toLowerCase()) &&
+      !blocked.has(c.toLowerCase()) &&
+      !out.some((o) => o.toLowerCase() === c.toLowerCase())
+    ) {
       out.push(c);
     }
   };
