@@ -1,0 +1,17 @@
+[
+  {"id": "past_simple_regular", "order": 1, "subLevel": "A2.1", "type": "grammar", "icon": "⏪", "name_hu": "Egyszerű múlt: szabályos", "name_en": "Past Simple: Regular", "name_es": "Pasado Simple: Regulares", "name_de": "Einfache Vergangenheit: Regelmäßig"},
+  {"id": "past_simple_irregular", "order": 2, "subLevel": "A2.1", "type": "grammar", "icon": "⏮️", "name_hu": "Egyszerű múlt: rendhagyó", "name_en": "Past Simple: Irregular", "name_es": "Pasado Simple: Irregulares", "name_de": "Einfache Vergangenheit: Unregelmäßig"},
+  {"id": "travel", "order": 3, "subLevel": "A2.1", "type": "vocab", "icon": "✈️", "name_hu": "Utazás", "name_en": "Travel", "name_es": "Viajes", "name_de": "Reisen"},
+  {"id": "going_to", "order": 4, "subLevel": "A2.2", "type": "grammar", "icon": "🎯", "name_hu": "Jövő idő: going to", "name_en": "Future: Going To", "name_es": "Futuro: Going To", "name_de": "Zukunft: Going To"},
+  {"id": "will", "order": 5, "subLevel": "A2.2", "type": "grammar", "icon": "🔮", "name_hu": "Jövő idő: will", "name_en": "Future: Will", "name_es": "Futuro: Will", "name_de": "Zukunft: Will"},
+  {"id": "shopping", "order": 6, "subLevel": "A2.2", "type": "vocab", "icon": "🛒", "name_hu": "Vásárlás", "name_en": "Shopping", "name_es": "Compras", "name_de": "Einkaufen"},
+  {"id": "present_perfect", "order": 7, "subLevel": "A2.3", "type": "grammar", "icon": "✅", "name_hu": "Befejezett jelen", "name_en": "Present Perfect", "name_es": "Presente Perfecto", "name_de": "Present Perfect"},
+  {"id": "health", "order": 8, "subLevel": "A2.3", "type": "vocab", "icon": "🩺", "name_hu": "Egészség", "name_en": "Health", "name_es": "Salud", "name_de": "Gesundheit"},
+  {"id": "feelings", "order": 9, "subLevel": "A2.3", "type": "vocab", "icon": "😊", "name_hu": "Érzések", "name_en": "Feelings", "name_es": "Sentimientos", "name_de": "Gefühle"},
+  {"id": "comparatives", "order": 10, "subLevel": "A2.4", "type": "grammar", "icon": "📊", "name_hu": "Középfok", "name_en": "Comparatives", "name_es": "Comparativos", "name_de": "Komparativ"},
+  {"id": "superlatives", "order": 11, "subLevel": "A2.4", "type": "grammar", "icon": "🏆", "name_hu": "Felsőfok", "name_en": "Superlatives", "name_es": "Superlativos", "name_de": "Superlativ"},
+  {"id": "education", "order": 12, "subLevel": "A2.4", "type": "vocab", "icon": "🎓", "name_hu": "Oktatás", "name_en": "Education", "name_es": "Educación", "name_de": "Bildung"},
+  {"id": "must_have_to", "order": 13, "subLevel": "A2.5", "type": "grammar", "icon": "⚠️", "name_hu": "must és have to", "name_en": "Must & Have To", "name_es": "Must y Have To", "name_de": "Must und Have To"},
+  {"id": "office_work", "order": 14, "subLevel": "A2.5", "type": "vocab", "icon": "💼", "name_hu": "Irodai munka", "name_en": "Office Work", "name_es": "Trabajo de Oficina", "name_de": "Büroarbeit"},
+  {"id": "technology", "order": 15, "subLevel": "A2.5", "type": "vocab", "icon": "💻", "name_hu": "Technológia", "name_en": "Technology", "name_es": "Tecnología", "name_de": "Technologie"}
+]
