@@ -1,34 +1,22 @@
 # English-track Corpus Audit
 
-Generated: 2026-07-10T19:30:17.799Z
+Generated: 2026-07-10T20:15:30.268Z
 
 ## Summary
 
-- A0 cards: 0
+- A0 cards: 100
 - A1 cards: 62
 - A2 cards: 0
-- P1 issues (untaught token in sentence_en): **49**
+- P1 issues (untaught token in sentence_en): **37**
 
 ## P1 Issues
 
 - **Card 5001** (A1, `to_be`)
   - `I am a student.`
   - Missing: `student`
-- **Card 5002** (A1, `to_be`)
-  - `You are my friend.`
-  - Missing: `friend`
-- **Card 5003** (A1, `to_be`)
-  - `He is a doctor.`
-  - Missing: `doctor`
-- **Card 5004** (A1, `to_be`)
-  - `She is nice.`
-  - Missing: `nice`
 - **Card 5005** (A1, `to_be`)
   - `It is a big house.`
-  - Missing: `big`, `house`
-- **Card 5006** (A1, `to_be`)
-  - `We are friends.`
-  - Missing: `friends`
+  - Missing: `house`
 - **Card 5007** (A1, `to_be`)
   - `They are at school.`
   - Missing: `school`
@@ -37,16 +25,16 @@ Generated: 2026-07-10T19:30:17.799Z
   - Missing: `books`
 - **Card 5011** (A1, `numbers`)
   - `I see four cars.`
-  - Missing: `see`, `cars`
+  - Missing: `cars`
 - **Card 5013** (A1, `numbers`)
   - `We have six chairs.`
   - Missing: `chairs`
 - **Card 5014** (A1, `numbers`)
   - `A week has seven days.`
-  - Missing: `week`, `days`
+  - Missing: `week`
 - **Card 5015** (A1, `numbers`)
   - `He is eight years old.`
-  - Missing: `years`, `old`
+  - Missing: `years`
 - **Card 5016** (A1, `numbers`)
   - `I read nine pages.`
   - Missing: `read`, `pages`
@@ -56,9 +44,6 @@ Generated: 2026-07-10T19:30:17.799Z
 - **Card 5019** (A1, `articles`)
   - `She eats an apple.`
   - Missing: `eats`
-- **Card 5020** (A1, `articles`)
-  - `The sun is very hot.`
-  - Missing: `hot`
 - **Card 5022** (A1, `colors`)
   - `The sky is blue.`
   - Missing: `sky`
@@ -77,18 +62,12 @@ Generated: 2026-07-10T19:30:17.799Z
 - **Card 5030** (A1, `colors`)
   - `The cloud is grey.`
   - Missing: `cloud`
-- **Card 5031** (A1, `present_simple`)
-  - `I work every day.`
-  - Missing: `day`
 - **Card 5032** (A1, `present_simple`)
   - `You work in an office.`
   - Missing: `office`
 - **Card 5033** (A1, `present_simple`)
   - `He works at home.`
   - Missing: `home`
-- **Card 5034** (A1, `present_simple`)
-  - `She works in a shop.`
-  - Missing: `shop`
 - **Card 5035** (A1, `present_simple`)
   - `We work together.`
   - Missing: `together`
@@ -101,30 +80,18 @@ Generated: 2026-07-10T19:30:17.799Z
 - **Card 5039** (A1, `family`)
   - `My grandmother is kind.`
   - Missing: `kind`
-- **Card 5040** (A1, `family`)
-  - `My grandfather is old.`
-  - Missing: `old`
 - **Card 5041** (A1, `family`)
   - `My parents work hard.`
   - Missing: `hard`
-- **Card 5043** (A1, `family`)
-  - `The baby is small.`
-  - Missing: `small`
 - **Card 5044** (A1, `family`)
   - `Her husband is tall.`
   - Missing: `tall`
-- **Card 5045** (A1, `family`)
-  - `His wife is a doctor.`
-  - Missing: `doctor`
 - **Card 5046** (A1, `family`)
   - `I love my family.`
   - Missing: `love`
 - **Card 5049** (A1, `plurals`)
   - `The men are tall.`
   - Missing: `tall`
-- **Card 5050** (A1, `plurals`)
-  - `The women are happy.`
-  - Missing: `happy`
 - **Card 5051** (A1, `plurals`)
   - `The children play outside.`
   - Missing: `play`, `outside`
@@ -151,10 +118,7 @@ Generated: 2026-07-10T19:30:17.799Z
   - Missing: `eat`, `friday`
 - **Card 5060** (A1, `food_drink`)
   - `I drink coffee in the morning.`
-  - Missing: `drink`, `morning`
+  - Missing: `drink`
 - **Card 5061** (A1, `food_drink`)
   - `She likes green tea.`
   - Missing: `likes`
-- **Card 5062** (A1, `food_drink`)
-  - `No sugar, please.`
-  - Missing: `please`
