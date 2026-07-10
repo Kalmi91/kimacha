@@ -25,8 +25,12 @@ import a1 from './topics/a1.json';
 import a1SubLevels from './sublevels/a1.json';
 import a2 from './topics/a2.json';
 import a2SubLevels from './sublevels/a2.json';
+import en_a0 from './topics/en/a0.json';
+import en_a0SubLevels from './sublevels/en/a0.json';
 import en_a1 from './topics/en/a1.json';
 import en_a1SubLevels from './sublevels/en/a1.json';
+import en_a2 from './topics/en/a2.json';
+import en_a2SubLevels from './sublevels/en/a2.json';
 import hu_a1 from './topics/hu/a1.json';
 import hu_a1SubLevels from './sublevels/hu/a1.json';
 
@@ -36,8 +40,8 @@ const subLevelsByLevel: Record<string, SubLevelDef[]> = { A0: a0SubLevels as Sub
 // English-target topic/sub-level taxonomy. Keyed the same way as the Spanish set;
 // `lang` defaults to 'es' so existing callers keep the Spanish grammar topics, and
 // only lang==='en' (with English content) returns the English taxonomy.
-const enTopicsByLevel: Record<string, TopicDef[]> = { A1: en_a1 as TopicDef[] };
-const enSubLevelsByLevel: Record<string, SubLevelDef[]> = { A1: en_a1SubLevels as SubLevelDef[] };
+const enTopicsByLevel: Record<string, TopicDef[]> = { A0: en_a0 as TopicDef[], A1: en_a1 as TopicDef[], A2: en_a2 as TopicDef[] };
+const enSubLevelsByLevel: Record<string, SubLevelDef[]> = { A0: en_a0SubLevels as SubLevelDef[], A1: en_a1SubLevels as SubLevelDef[], A2: en_a2SubLevels as SubLevelDef[] };
 
 // Hungarian-target taxonomy (native EN → learn HU course). Same keying; only
 // lang==='hu' (with authored Hungarian content) returns these.

@@ -1,0 +1,12 @@
+[
+  {"id": "greetings", "order": 1, "subLevel": "A0.1", "type": "vocab", "icon": "👋", "name_hu": "Üdvözlések", "name_en": "Greetings", "name_es": "Saludos", "name_de": "Begrüßungen"},
+  {"id": "courtesy", "order": 2, "subLevel": "A0.1", "type": "vocab", "icon": "🙏", "name_hu": "Udvariasság", "name_en": "Courtesy", "name_es": "Cortesía", "name_de": "Höflichkeit"},
+  {"id": "politeness_phrases", "order": 3, "subLevel": "A0.1", "type": "vocab", "icon": "😊", "name_hu": "Udvarias kifejezések", "name_en": "Polite Phrases", "name_es": "Frases de Cortesía", "name_de": "Höfliche Ausdrücke"},
+  {"id": "personal_info", "order": 4, "subLevel": "A0.2", "type": "vocab", "icon": "📇", "name_hu": "Személyes adatok", "name_en": "Personal Info", "name_es": "Datos Personales", "name_de": "Persönliche Daten"},
+  {"id": "basic_verbs", "order": 5, "subLevel": "A0.2", "type": "grammar", "icon": "🏃", "name_hu": "Alapigék", "name_en": "Basic Verbs", "name_es": "Verbos Básicos", "name_de": "Grundverben"},
+  {"id": "common_adjectives", "order": 6, "subLevel": "A0.2", "type": "vocab", "icon": "✨", "name_hu": "Gyakori melléknevek", "name_en": "Common Adjectives", "name_es": "Adjetivos Comunes", "name_de": "Häufige Adjektive"},
+  {"id": "survival_needs", "order": 7, "subLevel": "A0.3", "type": "vocab", "icon": "🆘", "name_hu": "Alapszükségletek", "name_en": "Survival Needs", "name_es": "Necesidades Básicas", "name_de": "Grundbedürfnisse"},
+  {"id": "directions", "order": 8, "subLevel": "A0.3", "type": "vocab", "icon": "🧭", "name_hu": "Útbaigazítás", "name_en": "Directions", "name_es": "Direcciones", "name_de": "Wegbeschreibung"},
+  {"id": "time_basics", "order": 9, "subLevel": "A0.3", "type": "vocab", "icon": "⏰", "name_hu": "Idő alapok", "name_en": "Time Basics", "name_es": "El Tiempo Básico", "name_de": "Zeit-Grundlagen"},
+  {"id": "places_survival", "order": 10, "subLevel": "A0.3", "type": "vocab", "icon": "📍", "name_hu": "Fontos helyek", "name_en": "Key Places", "name_es": "Lugares Clave", "name_de": "Wichtige Orte"}
+]

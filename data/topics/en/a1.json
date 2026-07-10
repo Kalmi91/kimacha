@@ -6,5 +6,21 @@
   {"id": "present_simple", "order": 5, "subLevel": "A1.2", "type": "grammar", "icon": "🗣️", "name_hu": "Egyszerű jelen idő", "name_en": "Present Simple", "name_es": "Presente Simple", "name_de": "Einfaches Präsens"},
   {"id": "family", "order": 6, "subLevel": "A1.2", "type": "vocab", "icon": "👨‍👩‍👧", "name_hu": "Család", "name_en": "Family", "name_es": "La Familia", "name_de": "Die Familie"},
   {"id": "plurals", "order": 7, "subLevel": "A1.2", "type": "grammar", "icon": "🔠", "name_hu": "Többes szám", "name_en": "Plurals", "name_es": "El Plural", "name_de": "Pluralformen"},
-  {"id": "food_drink", "order": 8, "subLevel": "A1.2", "type": "vocab", "icon": "🍎", "name_hu": "Étel és Ital", "name_en": "Food & Drink", "name_es": "Comida y Bebida", "name_de": "Essen und Trinken"}
+  {"id": "food_drink", "order": 8, "subLevel": "A1.2", "type": "vocab", "icon": "🍎", "name_hu": "Étel és Ital", "name_en": "Food & Drink", "name_es": "Comida y Bebida", "name_de": "Essen und Trinken"},
+  {"id": "this_that", "order": 9, "subLevel": "A1.3", "type": "grammar", "icon": "👉", "name_hu": "Ez és Az (this/that)", "name_en": "This & That", "name_es": "Este y Ese", "name_de": "Dieser und Jener"},
+  {"id": "body", "order": 10, "subLevel": "A1.3", "type": "vocab", "icon": "💪", "name_hu": "Testrészek", "name_en": "Body Parts", "name_es": "Partes del Cuerpo", "name_de": "Körperteile"},
+  {"id": "possessives", "order": 11, "subLevel": "A1.3", "type": "grammar", "icon": "🔑", "name_hu": "Birtokos névmások (my/your)", "name_en": "Possessives (my/your)", "name_es": "Posesivos (my/your)", "name_de": "Possessivbegleiter (my/your)"},
+  {"id": "clothes", "order": 12, "subLevel": "A1.3", "type": "vocab", "icon": "👕", "name_hu": "Ruházat", "name_en": "Clothes", "name_es": "La Ropa", "name_de": "Kleidung"},
+  {"id": "there_is_are", "order": 13, "subLevel": "A1.4", "type": "grammar", "icon": "📦", "name_hu": "there is / there are", "name_en": "There is / There are", "name_es": "There is / There are", "name_de": "There is / There are"},
+  {"id": "house", "order": 14, "subLevel": "A1.4", "type": "vocab", "icon": "🏠", "name_hu": "A ház", "name_en": "The House", "name_es": "La Casa", "name_de": "Das Haus"},
+  {"id": "prepositions", "order": 15, "subLevel": "A1.4", "type": "grammar", "icon": "📌", "name_hu": "Elöljárók (in/on/under)", "name_en": "Prepositions (in/on/under)", "name_es": "Preposiciones (in/on/under)", "name_de": "Präpositionen (in/on/under)"},
+  {"id": "animals", "order": 16, "subLevel": "A1.4", "type": "vocab", "icon": "🐶", "name_hu": "Állatok", "name_en": "Animals", "name_es": "Los Animales", "name_de": "Tiere"},
+  {"id": "have_got", "order": 17, "subLevel": "A1.5", "type": "grammar", "icon": "🎒", "name_hu": "have got (birtoklás)", "name_en": "Have Got", "name_es": "Have Got", "name_de": "Have Got"},
+  {"id": "jobs", "order": 18, "subLevel": "A1.5", "type": "vocab", "icon": "💼", "name_hu": "Foglalkozások", "name_en": "Jobs", "name_es": "Profesiones", "name_de": "Berufe"},
+  {"id": "can_ability", "order": 19, "subLevel": "A1.5", "type": "grammar", "icon": "🦸", "name_hu": "can (képesség)", "name_en": "Can (Ability)", "name_es": "Can (Habilidad)", "name_de": "Can (Fähigkeit)"},
+  {"id": "days_months", "order": 20, "subLevel": "A1.5", "type": "vocab", "icon": "📅", "name_hu": "Napok és Hónapok", "name_en": "Days & Months", "name_es": "Días y Meses", "name_de": "Tage und Monate"},
+  {"id": "question_words", "order": 21, "subLevel": "A1.6", "type": "grammar", "icon": "❓", "name_hu": "Kérdőszavak", "name_en": "Question Words", "name_es": "Palabras Interrogativas", "name_de": "Fragewörter"},
+  {"id": "weather", "order": 22, "subLevel": "A1.6", "type": "vocab", "icon": "⛅", "name_hu": "Időjárás", "name_en": "Weather", "name_es": "El Tiempo", "name_de": "Wetter"},
+  {"id": "present_continuous", "order": 23, "subLevel": "A1.6", "type": "grammar", "icon": "🎬", "name_hu": "Folyamatos jelen", "name_en": "Present Continuous", "name_es": "Presente Continuo", "name_de": "Verlaufsform (Present Continuous)"},
+  {"id": "daily_routine", "order": 24, "subLevel": "A1.6", "type": "vocab", "icon": "🌅", "name_hu": "Napi rutin", "name_en": "Daily Routine", "name_es": "Rutina Diaria", "name_de": "Tagesablauf"}
 ]
