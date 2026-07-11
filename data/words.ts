@@ -26,6 +26,7 @@ import c2 from './words/c2.json';
 
 import en_a0 from './words/en/a0.json';
 import en_a1 from './words/en/a1.json';
+import en_a2 from './words/en/a2.json';
 import hu_a1 from './words/hu/a1.json';
 
 export const words: WordEntry[] = [...a0, ...a1, ...a2, ...b1, ...b2, ...c1, ...c2] as WordEntry[];
@@ -37,6 +38,7 @@ export const words: WordEntry[] = [...a0, ...a1, ...a2, ...b1, ...b2, ...c1, ...
 const enWordsByLevel: Partial<Record<Level, WordEntry[]>> = {
   A0: en_a0 as WordEntry[],
   A1: en_a1 as WordEntry[],
+  A2: en_a2 as WordEntry[],
 };
 const huWordsByLevel: Partial<Record<Level, WordEntry[]>> = {
   A1: hu_a1 as WordEntry[],
