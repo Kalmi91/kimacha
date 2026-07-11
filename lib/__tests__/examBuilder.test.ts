@@ -100,3 +100,66 @@ describe('buildExam guards', () => {
     expect(buildExam('B1' as any, PAIR)).toHaveLength(0);
   });
 });
+
+describe('buildExam en target (pair hu-en)', () => {
+  const EN_PAIR = 'hu-en';
+
+  it('A0 returns exactly 17 items, stable across many runs', () => {
+    for (let i = 0; i < 25; i++) {
+      expect(buildExam('A0', EN_PAIR)).toHaveLength(17);
+    }
+  });
+
+  it('A0 matches the en/hu type + direction composition', () => {
+    const items = buildExam('A0', EN_PAIR);
+    const k = countByKind(items);
+    expect(k.word_type).toBe(5);
+    expect(k.sent_order).toBe(8);
+    expect(k.sent_type).toBe(4);
+
+    const d: Record<string, number> = {};
+    for (const it of items) d[dirKey(it)] = (d[dirKey(it)] || 0) + 1;
+    expect(d['word_type:en-hu']).toBe(3);
+    expect(d['word_type:hu-en']).toBe(2);
+    expect(d['sent_order:en-hu']).toBe(5);
+    expect(d['sent_order:hu-en']).toBe(3);
+    expect(d['sent_type:hu-en']).toBe(2);
+    expect(d['sent_type:en-hu']).toBe(2);
+  });
+
+  it('A1 returns exactly 20 items (drills only, no authored items)', () => {
+    for (let i = 0; i < 25; i++) {
+      const items = buildExam('A1', EN_PAIR);
+      expect(items).toHaveLength(20);
+      const k = countByKind(items);
+      expect(k.gap_mc).toBeUndefined();
+      expect(k.match).toBeUndefined();
+      expect(k.reading_mc).toBeUndefined();
+    }
+  });
+
+  it('every word_type/sent_type prompt and answer is a non-empty string', () => {
+    const items = [...buildExam('A0', EN_PAIR), ...buildExam('A1', EN_PAIR)] as any[];
+    for (const it of items) {
+      if (it.kind === 'word_type' || it.kind === 'sent_type') {
+        expect(typeof it.prompt).toBe('string');
+        expect(it.prompt.length).toBeGreaterThan(0);
+        expect(typeof it.answer).toBe('string');
+        expect(it.answer.length).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it('sent_order: answer tokens non-empty and distractors never overlap the answer', () => {
+    const items = [...buildExam('A0', EN_PAIR), ...buildExam('A1', EN_PAIR)] as any[];
+    const sentOrders = items.filter((it) => it.kind === 'sent_order');
+    expect(sentOrders.length).toBeGreaterThan(0);
+    for (const it of sentOrders) {
+      expect(it.answerTokens.length).toBeGreaterThan(0);
+      const answer = new Set(it.answerTokens.map((t: string) => t.toLowerCase()));
+      for (const d of it.distractors) {
+        expect(answer.has(d.toLowerCase())).toBe(false);
+      }
+    }
+  });
+});
