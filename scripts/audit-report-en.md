@@ -1,124 +1,14 @@
 # English-track Corpus Audit
 
-Generated: 2026-07-10T20:15:30.268Z
+Generated: 2026-07-10T20:43:50.482Z
 
 ## Summary
 
 - A0 cards: 100
-- A1 cards: 62
+- A1 cards: 200
 - A2 cards: 0
-- P1 issues (untaught token in sentence_en): **37**
+- P1 issues (untaught token in sentence_en): **0**
 
 ## P1 Issues
 
-- **Card 5001** (A1, `to_be`)
-  - `I am a student.`
-  - Missing: `student`
-- **Card 5005** (A1, `to_be`)
-  - `It is a big house.`
-  - Missing: `house`
-- **Card 5007** (A1, `to_be`)
-  - `They are at school.`
-  - Missing: `school`
-- **Card 5010** (A1, `numbers`)
-  - `There are three books.`
-  - Missing: `books`
-- **Card 5011** (A1, `numbers`)
-  - `I see four cars.`
-  - Missing: `cars`
-- **Card 5013** (A1, `numbers`)
-  - `We have six chairs.`
-  - Missing: `chairs`
-- **Card 5014** (A1, `numbers`)
-  - `A week has seven days.`
-  - Missing: `week`
-- **Card 5015** (A1, `numbers`)
-  - `He is eight years old.`
-  - Missing: `years`
-- **Card 5016** (A1, `numbers`)
-  - `I read nine pages.`
-  - Missing: `read`, `pages`
-- **Card 5017** (A1, `numbers`)
-  - `I have ten fingers.`
-  - Missing: `fingers`
-- **Card 5019** (A1, `articles`)
-  - `She eats an apple.`
-  - Missing: `eats`
-- **Card 5022** (A1, `colors`)
-  - `The sky is blue.`
-  - Missing: `sky`
-- **Card 5023** (A1, `colors`)
-  - `The grass is green.`
-  - Missing: `grass`
-- **Card 5026** (A1, `colors`)
-  - `The snow is white.`
-  - Missing: `snow`
-- **Card 5027** (A1, `colors`)
-  - `I like orange flowers.`
-  - Missing: `like`, `flowers`
-- **Card 5029** (A1, `colors`)
-  - `The flower is pink.`
-  - Missing: `flower`
-- **Card 5030** (A1, `colors`)
-  - `The cloud is grey.`
-  - Missing: `cloud`
-- **Card 5032** (A1, `present_simple`)
-  - `You work in an office.`
-  - Missing: `office`
-- **Card 5033** (A1, `present_simple`)
-  - `He works at home.`
-  - Missing: `home`
-- **Card 5035** (A1, `present_simple`)
-  - `We work together.`
-  - Missing: `together`
-- **Card 5036** (A1, `present_simple`)
-  - `They work in a school.`
-  - Missing: `school`
-- **Card 5038** (A1, `family`)
-  - `My sister is young.`
-  - Missing: `young`
-- **Card 5039** (A1, `family`)
-  - `My grandmother is kind.`
-  - Missing: `kind`
-- **Card 5041** (A1, `family`)
-  - `My parents work hard.`
-  - Missing: `hard`
-- **Card 5044** (A1, `family`)
-  - `Her husband is tall.`
-  - Missing: `tall`
-- **Card 5046** (A1, `family`)
-  - `I love my family.`
-  - Missing: `love`
-- **Card 5049** (A1, `plurals`)
-  - `The men are tall.`
-  - Missing: `tall`
-- **Card 5051** (A1, `plurals`)
-  - `The children play outside.`
-  - Missing: `play`, `outside`
-- **Card 5053** (A1, `food_drink`)
-  - `I eat bread for breakfast.`
-  - Missing: `eat`, `breakfast`
-- **Card 5054** (A1, `food_drink`)
-  - `She drinks milk.`
-  - Missing: `drinks`
-- **Card 5055** (A1, `food_drink`)
-  - `The apple is sweet.`
-  - Missing: `sweet`
-- **Card 5056** (A1, `food_drink`)
-  - `I like cheese.`
-  - Missing: `like`
-- **Card 5057** (A1, `food_drink`)
-  - `I eat one egg.`
-  - Missing: `eat`
-- **Card 5058** (A1, `food_drink`)
-  - `He does not eat meat.`
-  - Missing: `eat`
-- **Card 5059** (A1, `food_drink`)
-  - `We eat fish on Friday.`
-  - Missing: `eat`, `friday`
-- **Card 5060** (A1, `food_drink`)
-  - `I drink coffee in the morning.`
-  - Missing: `drink`
-- **Card 5061** (A1, `food_drink`)
-  - `She likes green tea.`
-  - Missing: `likes`
+None, every sentence_en uses only taught English vocabulary.
