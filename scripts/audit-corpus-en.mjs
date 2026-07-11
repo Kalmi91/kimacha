@@ -78,7 +78,7 @@ function normalizeEn(str) {
   return str
     .toLowerCase()
     .replace(/['’]/g, '')
-    .replace(/[¡!¿?.,;:"()\-–, /]/g, ' ')
+    .replace(/[¡!¿?.,;:"()\-–,_ /]/g, ' ')
     .trim();
 }
 
@@ -171,12 +171,46 @@ for (const lvl of LEVELS) {
 }
 
 // ---------------------------------------------------------------------------
+// Exam audit, data/exams/en/{a0,a1,a2}.json (gap questions).
+// The question sentence and the CORRECT option must use only taught vocabulary
+// (level-cumulative + glue). Wrong options are exempt: they are deliberate
+// distractors and may be wrong inflections (e.g. "gone", "buyed").
+// ---------------------------------------------------------------------------
+
+function loadExam(level) {
+  const p = join(ROOT, `data/exams/en/${level.toLowerCase()}.json`);
+  if (!existsSync(p)) return [];
+  return JSON.parse(readFileSync(p, 'utf8'));
+}
+
+const examByLevel = {};
+for (const lvl of LEVELS) examByLevel[lvl] = loadExam(lvl);
+
+const p1ExamIssues = [];
+
+for (const lvl of LEVELS) {
+  const taught = cumulativeTaught(lvl);
+  for (const q of examByLevel[lvl]) {
+    if (q.type !== 'gap') continue;
+    const correct = q.options?.[q.correctIndex] ?? '';
+    const missing = [];
+    for (const tok of tokenizeEn(`${q.sentence ?? ''} ${correct}`)) {
+      if (!tokenTaught(tok, taught)) missing.push(tok);
+    }
+    if (missing.length > 0) {
+      p1ExamIssues.push({ id: q.id, level: lvl, sentence: q.sentence, correct, missing });
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Report
 // ---------------------------------------------------------------------------
 
 let report = `# English-track Corpus Audit\n\nGenerated: ${new Date().toISOString()}\n\n## Summary\n\n`;
-for (const lvl of LEVELS) report += `- ${lvl} cards: ${cardsByLevel[lvl].length}\n`;
-report += `- P1 issues (untaught token in sentence_en): **${p1Issues.length}**\n\n`;
+for (const lvl of LEVELS) report += `- ${lvl} cards: ${cardsByLevel[lvl].length}, exam questions: ${examByLevel[lvl].length}\n`;
+report += `- P1 issues (untaught token in sentence_en): **${p1Issues.length}**\n`;
+report += `- P1 exam issues (untaught token in question sentence/correct option): **${p1ExamIssues.length}**\n\n`;
 report += `## P1 Issues\n\n`;
 if (p1Issues.length === 0) {
   report += `None, every sentence_en uses only taught English vocabulary.\n`;
@@ -185,10 +219,19 @@ if (p1Issues.length === 0) {
     report += `- **Card ${it.id}** (${it.level}, \`${it.topic}\`)\n  - \`${it.sentence_en}\`\n  - Missing: ${it.missing.map((t) => `\`${t}\``).join(', ')}\n`;
   }
 }
+report += `\n## P1 Exam Issues\n\n`;
+if (p1ExamIssues.length === 0) {
+  report += `None, every exam sentence + correct option uses only taught English vocabulary.\n`;
+} else {
+  for (const it of p1ExamIssues) {
+    report += `- **Question ${it.id}** (${it.level})\n  - \`${it.sentence}\` (correct: \`${it.correct}\`)\n  - Missing: ${it.missing.map((t) => `\`${t}\``).join(', ')}\n`;
+  }
+}
 writeFileSync(join(ROOT, 'scripts/audit-report-en.md'), report, 'utf8');
 
 console.log('English-track audit complete.');
-for (const lvl of LEVELS) console.log(`  ${lvl} cards: ${cardsByLevel[lvl].length}`);
+for (const lvl of LEVELS) console.log(`  ${lvl} cards: ${cardsByLevel[lvl].length}, exam questions: ${examByLevel[lvl].length}`);
 console.log(`P1 (untaught): ${p1Issues.length}`);
+console.log(`P1 exam (untaught): ${p1ExamIssues.length}`);
 console.log('Report: scripts/audit-report-en.md');
-process.exit(p1Issues.length > 0 ? 1 : 0);
+process.exit(p1Issues.length + p1ExamIssues.length > 0 ? 1 : 0);

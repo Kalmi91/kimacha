@@ -19,7 +19,7 @@
     "id": 2003,
     "level": "A1",
     "type": "gap",
-    "sentence": "There ____ two cats on the sofa.",
+    "sentence": "There ____ two cats on the table.",
     "options": ["is", "are", "be", "am"],
     "correctIndex": 1
   },
@@ -27,8 +27,8 @@
     "id": 2004,
     "level": "A1",
     "type": "gap",
-    "sentence": "Can you ____ English?",
-    "options": ["speaks", "spoke", "speak", "speaking"],
+    "sentence": "Can you ____ now?",
+    "options": ["dances", "danced", "dance", "dancing"],
     "correctIndex": 2
   },
   {
@@ -67,7 +67,7 @@
     "id": 2009,
     "level": "A1",
     "type": "gap",
-    "sentence": "I like ____ apples.",
+    "sentence": "I want ____ apples.",
     "options": ["this", "that", "these", "a"],
     "correctIndex": 2
   },
@@ -83,7 +83,7 @@
     "id": 2011,
     "level": "A1",
     "type": "gap",
-    "sentence": "My favourite colour is ____.",
+    "sentence": "The sky is ____.",
     "options": ["bread", "blue", "Monday", "table"],
     "correctIndex": 1
   },
@@ -99,7 +99,7 @@
     "id": 2013,
     "level": "A1",
     "type": "gap",
-    "sentence": "He ____ not like vegetables.",
+    "sentence": "He ____ not eat meat.",
     "options": ["do", "does", "is", "are"],
     "correctIndex": 1
   },
@@ -131,7 +131,7 @@
     "id": 2017,
     "level": "A1",
     "type": "gap",
-    "sentence": "The children ____ in the park now.",
+    "sentence": "The children ____ in the garden now.",
     "options": ["play", "plays", "playing", "are playing"],
     "correctIndex": 3
   },
@@ -139,7 +139,7 @@
     "id": 2018,
     "level": "A1",
     "type": "gap",
-    "sentence": "I ____ twelve years old.",
+    "sentence": "I ____ ten years old.",
     "options": ["have", "am", "is", "be"],
     "correctIndex": 1
   }
