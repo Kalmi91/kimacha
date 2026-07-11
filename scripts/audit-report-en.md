@@ -1,12 +1,12 @@
 # English-track Corpus Audit
 
-Generated: 2026-07-10T20:43:50.482Z
+Generated: 2026-07-11T12:33:15.624Z
 
 ## Summary
 
 - A0 cards: 100
 - A1 cards: 200
-- A2 cards: 0
+- A2 cards: 180
 - P1 issues (untaught token in sentence_en): **0**
 
 ## P1 Issues
