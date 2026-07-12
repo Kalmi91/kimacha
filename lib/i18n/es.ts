@@ -78,6 +78,17 @@ export default {
     randomTopics: 'Temas aleatorios',
     spellingPractice: (n: number) => `Práctica de Ortografía (${n})`,
   },
+  backup: {
+    backup: 'Copia de seguridad',
+    restore: 'Restaurar',
+    confirmTitle: 'Restaurar',
+    confirmMessage: 'Esto sobrescribe tu progreso actual con el contenido de la copia. ¿Estás seguro?',
+    confirmYes: 'Restaurar ahora',
+    doneTitle: '¡Restaurado!',
+    errorTitle: 'Error',
+    exportError: 'No se pudo crear la copia de seguridad.',
+    importError: 'Archivo de copia inválido o dañado. Tus datos no cambiaron.',
+  },
   progress: {
     wordsKnown: 'Palabras Conocidas',
   },

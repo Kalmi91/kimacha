@@ -78,6 +78,17 @@ export default {
     randomTopics: 'Random témák',
     spellingPractice: (n: number) => `Helyesírás-gyakorló (${n})`,
   },
+  backup: {
+    backup: 'Biztonsági mentés',
+    restore: 'Visszaállítás',
+    confirmTitle: 'Visszaállítás',
+    confirmMessage: 'Ez felülírja a jelenlegi haladásod a mentés tartalmával. Biztos vagy benne?',
+    confirmYes: 'Visszaállítom',
+    doneTitle: 'Visszaállítva!',
+    errorTitle: 'Hiba',
+    exportError: 'A mentés nem sikerült.',
+    importError: 'Érvénytelen vagy sérült mentés-fájl. Az adataid nem változtak.',
+  },
   progress: {
     wordsKnown: 'Ismert Szavak',
   },

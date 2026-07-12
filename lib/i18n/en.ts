@@ -78,6 +78,17 @@ export default {
     randomTopics: 'Random Topics',
     spellingPractice: (n: number) => `Spelling Practice (${n})`,
   },
+  backup: {
+    backup: 'Backup',
+    restore: 'Restore',
+    confirmTitle: 'Restore',
+    confirmMessage: 'This overwrites your current progress with the backup contents. Are you sure?',
+    confirmYes: 'Restore Now',
+    doneTitle: 'Restored!',
+    errorTitle: 'Error',
+    exportError: 'The backup could not be created.',
+    importError: 'Invalid or corrupted backup file. Your data was not changed.',
+  },
   progress: {
     wordsKnown: 'Words Known',
   },
