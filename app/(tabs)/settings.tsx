@@ -1,12 +1,16 @@
 import { useState, useCallback } from 'react';
-import { StyleSheet, Text, View, Pressable, Modal, Alert, Switch } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Modal, Alert, Switch, Platform } from 'react-native';
 import { useRouter, useFocusEffect } from 'expo-router';
+import { File, Paths } from 'expo-file-system';
+import * as Sharing from 'expo-sharing';
+import * as DocumentPicker from 'expo-document-picker';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { LEVELS, type Level, getWordsForLevel } from '@/data/words';
 import { setPendingAction } from '@/lib/pendingAction';
 import { getDb } from '@/lib/database';
+import { validateBackupPayload } from '@/lib/backup';
 import FeedbackButton from '@/components/FeedbackModal';
 
 export default function SettingsScreen() {
@@ -67,6 +71,73 @@ export default function SettingsScreen() {
     setMasterVisible(false);
     setPendingAction({ type: 'exam', examLevel: level });
     router.navigate('/');
+  };
+
+  // RN-web Alert is a no-op, so web falls back to the browser dialogs.
+  const notify = (title: string, message?: string) => {
+    if (Platform.OS === 'web') window.alert(message ? `${title}\n${message}` : title);
+    else Alert.alert(title, message);
+  };
+
+  // Q0: export the whole learning state to a JSON file. Native hands it to the
+  // Android/iOS share sheet (user saves it to Drive, email, anywhere); web
+  // downloads it as a file.
+  const handleBackup = async () => {
+    try {
+      const payload = await getDb().exportAll();
+      const json = JSON.stringify(payload);
+      const name = `kimacha-backup-${new Date().toISOString().replace(/[:.]/g, '-')}.json`;
+      if (Platform.OS === 'web') {
+        const blob = new Blob([json], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = name;
+        a.click();
+        URL.revokeObjectURL(url);
+        return;
+      }
+      const file = new File(Paths.cache, name);
+      file.create();
+      file.write(json);
+      await Sharing.shareAsync(file.uri, { mimeType: 'application/json', dialogTitle: s.backup.backup });
+    } catch {
+      notify(s.backup.errorTitle, s.backup.exportError);
+    }
+  };
+
+  // Q0: pick a backup JSON, validate it, then (after an explicit confirm,
+  // this overwrites all progress) import it in one transaction and reload.
+  const handleRestore = async () => {
+    try {
+      const res = await DocumentPicker.getDocumentAsync({ type: 'application/json', copyToCacheDirectory: true });
+      if (res.canceled || !res.assets?.length) return;
+      const asset = res.assets[0];
+      const json = Platform.OS === 'web' && asset.file
+        ? await asset.file.text()
+        : await new File(asset.uri).text();
+      const payload = validateBackupPayload(JSON.parse(json));
+      const doImport = async () => {
+        try {
+          await getDb().importAll(payload);
+          setPendingAction({ type: 'selectTopic' });
+          notify(s.backup.doneTitle);
+          router.navigate('/');
+        } catch {
+          notify(s.backup.errorTitle, s.backup.importError);
+        }
+      };
+      if (Platform.OS === 'web') {
+        if (window.confirm(`${s.backup.confirmTitle}\n${s.backup.confirmMessage}`)) await doImport();
+      } else {
+        Alert.alert(s.backup.confirmTitle, s.backup.confirmMessage, [
+          { text: s.feedback.cancel, style: 'cancel' },
+          { text: s.backup.confirmYes, style: 'destructive', onPress: doImport },
+        ]);
+      }
+    } catch {
+      notify(s.backup.errorTitle, s.backup.importError);
+    }
   };
 
   const handleRestart = () => {
@@ -139,6 +210,23 @@ export default function SettingsScreen() {
         onPress={() => router.push('/spelling')}
       >
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.spellingPractice(spellingDue)}</Text>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+      </Pressable>
+
+      {/* Q0: backup (export + share) and restore (pick file + confirm + import). */}
+      <Pressable
+        style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}
+        onPress={handleBackup}
+      >
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>💾 {s.backup.backup}</Text>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+      </Pressable>
+
+      <Pressable
+        style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}
+        onPress={handleRestore}
+      >
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>♻️ {s.backup.restore}</Text>
         <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
       </Pressable>
 

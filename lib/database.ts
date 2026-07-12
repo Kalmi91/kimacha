@@ -1,5 +1,6 @@
 import * as SQLite from 'expo-sqlite';
 import { createEmptyCard, type Card } from 'ts-fsrs';
+import { BACKUP_SCHEMA_VERSION, BACKUP_TABLES, getAppVersion, type BackupPayload } from './backup';
 
 export interface DB {
   ensureCard(wordId: number, type: string): Promise<void>;
@@ -39,6 +40,8 @@ export interface DB {
   setRandomTopics(v: boolean): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
   setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
+  exportAll(): Promise<BackupPayload>;
+  importAll(payload: BackupPayload): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -545,6 +548,43 @@ class SQLiteDB implements DB {
       'INSERT INTO learn_settings (pair, feedback_btn_side) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET feedback_btn_side = excluded.feedback_btn_side',
       [this.activePair, side]
     );
+  }
+
+  // Q0: full learning-state backup, every table across all pairs.
+  async exportAll(): Promise<BackupPayload> {
+    const db = await this.open();
+    const tables = {} as BackupPayload['tables'];
+    for (const table of BACKUP_TABLES) {
+      tables[table] = await db.getAllAsync(`SELECT * FROM ${table}`);
+    }
+    return {
+      schemaVersion: BACKUP_SCHEMA_VERSION,
+      exportedAt: new Date().toISOString(),
+      appVersion: getAppVersion(),
+      tables,
+    };
+  }
+
+  // Q0: restore, replaces the whole learning state. Runs in one transaction:
+  // any failure (e.g. rows from an incompatible schema) rolls back and the
+  // current DB stays untouched.
+  async importAll(payload: BackupPayload): Promise<void> {
+    const db = await this.open();
+    await db.withTransactionAsync(async () => {
+      for (const table of BACKUP_TABLES) {
+        await db.runAsync(`DELETE FROM ${table}`);
+        for (const row of payload.tables[table]) {
+          const cols = Object.keys(row);
+          await db.runAsync(
+            `INSERT INTO ${table} (${cols.join(', ')}) VALUES (${cols.map(() => '?').join(', ')})`,
+            cols.map(c => row[c])
+          );
+        }
+      }
+    });
+    // The imported onboarding decides the active pair from here on.
+    const ob = await db.getFirstAsync<any>('SELECT source, target FROM onboarding WHERE id = 1');
+    if (ob) this.activePair = `${ob.source}-${ob.target}`;
   }
 }
 

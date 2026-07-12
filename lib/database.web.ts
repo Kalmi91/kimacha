@@ -1,4 +1,5 @@
 import { createEmptyCard, type Card } from 'ts-fsrs';
+import { BACKUP_SCHEMA_VERSION, getAppVersion, type BackupPayload } from './backup';
 
 export interface DB {
   ensureCard(wordId: number, type: string): Promise<void>;
@@ -38,6 +39,8 @@ export interface DB {
   setRandomTopics(v: boolean): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
   setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
+  exportAll(): Promise<BackupPayload>;
+  importAll(payload: BackupPayload): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -316,6 +319,73 @@ class MemoryDB implements DB {
 
   async setFeedbackBtnSide(side: 'left' | 'right'): Promise<void> {
     this.feedbackBtnSideMap.set(this.activePair, side);
+  }
+
+  // Q0: full learning-state backup. Memory state is serialized into the same
+  // table-row shapes as the SQLite implementation, so a backup made on one
+  // platform restores on the other.
+  async exportAll(): Promise<BackupPayload> {
+    const settingsPairs = new Set<string>([
+      ...this.wordsOnlyMap.keys(),
+      ...this.randomTopicsMap.keys(),
+      ...this.feedbackBtnSideMap.keys(),
+    ]);
+    const learn_settings = [...settingsPairs].map(pair => ({
+      pair,
+      words_only: this.wordsOnlyMap.has(pair) ? (this.wordsOnlyMap.get(pair) ? 1 : 0) : null,
+      random_topics: this.randomTopicsMap.has(pair) ? (this.randomTopicsMap.get(pair) ? 1 : 0) : null,
+      feedback_btn_side: this.feedbackBtnSideMap.get(pair) ?? null,
+    }));
+    const spelling_list: any[] = [];
+    for (const [pair, list] of this.spellingLists) {
+      for (const [wordId, v] of list) {
+        spelling_list.push({ pair, word_id: wordId, step: v.step, due: v.due });
+      }
+    }
+    return {
+      schemaVersion: BACKUP_SCHEMA_VERSION,
+      exportedAt: new Date().toISOString(),
+      appVersion: getAppVersion(),
+      tables: {
+        cards: [...this.cards.values()].map(c => ({ ...c })),
+        card_attempts: this.attempts.map(a => ({ ...a, correct: a.correct ? 1 : 0 })),
+        learn_settings,
+        onboarding: this.onboarding ? [{ id: 1, ...this.onboarding }] : [],
+        selected_topic: [...this.selectedTopics].map(([pair, topicId]) => ({ pair, topic_id: topicId })),
+        spelling_list,
+        streak: [{ id: 1, ...this.streak }],
+        user_level: [...this.userLevels].map(([pair, l]) => ({ pair, ...l })),
+        user_meta: [{ id: 1, user_id: this.meta.userId, first_use_date: this.meta.firstUseDate, last_sync_date: this.meta.lastSyncDate }],
+      },
+    };
+  }
+
+  // Q0: restore, replaces the whole in-memory state from the payload.
+  async importAll(payload: BackupPayload): Promise<void> {
+    const t = payload.tables;
+    this.cards = new Map(t.cards.map((c: any) => [`${c.pair}:${c.word_id}:${c.type}`, { ...c }]));
+    this.attempts = t.card_attempts.map((a: any) => ({ ...a, correct: !!a.correct }));
+    this.wordsOnlyMap = new Map();
+    this.randomTopicsMap = new Map();
+    this.feedbackBtnSideMap = new Map();
+    for (const row of t.learn_settings) {
+      if (row.words_only != null) this.wordsOnlyMap.set(row.pair, row.words_only === 1);
+      if (row.random_topics != null) this.randomTopicsMap.set(row.pair, row.random_topics === 1);
+      if (row.feedback_btn_side != null) this.feedbackBtnSideMap.set(row.pair, row.feedback_btn_side);
+    }
+    const ob = t.onboarding[0];
+    this.onboarding = ob ? { source: ob.source, target: ob.target } : null;
+    if (this.onboarding) this.activePair = `${this.onboarding.source}-${this.onboarding.target}`;
+    this.selectedTopics = new Map(t.selected_topic.map((r: any) => [r.pair, r.topic_id]));
+    this.spellingLists = new Map();
+    for (const row of t.spelling_list) {
+      this.spellingListFor(row.pair).set(row.word_id, { step: row.step, due: row.due });
+    }
+    const st = t.streak[0];
+    if (st) this.streak = { current_count: st.current_count, last_date: st.last_date, longest_count: st.longest_count };
+    this.userLevels = new Map(t.user_level.map((r: any) => [r.pair, { level: r.level, correct_streak: r.correct_streak, mistakes_in_window: r.mistakes_in_window, fail_streak: r.fail_streak }]));
+    const um = t.user_meta[0];
+    if (um) this.meta = { userId: um.user_id, firstUseDate: um.first_use_date, lastSyncDate: um.last_sync_date };
   }
 }
 

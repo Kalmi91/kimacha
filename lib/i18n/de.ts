@@ -78,6 +78,17 @@ export default {
     randomTopics: 'Zufällige Themen',
     spellingPractice: (n: number) => `Rechtschreibtraining (${n})`,
   },
+  backup: {
+    backup: 'Sicherung',
+    restore: 'Wiederherstellen',
+    confirmTitle: 'Wiederherstellen',
+    confirmMessage: 'Dies überschreibt deinen aktuellen Fortschritt mit dem Inhalt der Sicherung. Bist du sicher?',
+    confirmYes: 'Jetzt wiederherstellen',
+    doneTitle: 'Wiederhergestellt!',
+    errorTitle: 'Fehler',
+    exportError: 'Die Sicherung konnte nicht erstellt werden.',
+    importError: 'Ungültige oder beschädigte Sicherungsdatei. Deine Daten wurden nicht geändert.',
+  },
   progress: {
     wordsKnown: 'Bekannte Wörter',
   },
