@@ -4,7 +4,12 @@
     "level": "A0",
     "type": "gap",
     "sentence": "Én ____ vagyok.",
-    "options": ["diák", "diákok", "diákot", "diákkal"],
+    "options": [
+      "turista",
+      "turisták",
+      "turistát",
+      "turistával"
+    ],
     "correctIndex": 0
   },
   {
@@ -12,15 +17,25 @@
     "level": "A0",
     "type": "gap",
     "sentence": "Te hol ____?",
-    "options": ["vagy", "vagyok", "van", "vagytok"],
+    "options": [
+      "vagy",
+      "vagyok",
+      "van",
+      "vagytok"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3002,
     "level": "A0",
     "type": "gap",
-    "sentence": "Ő tanár ____.",
-    "options": ["nem", "vagyok", "vagy", "vagytok"],
+    "sentence": "Ő ____ magyar.",
+    "options": [
+      "nem",
+      "vagyok",
+      "vagy",
+      "vannak"
+    ],
     "correctIndex": 0
   },
   {
@@ -28,39 +43,64 @@
     "level": "A0",
     "type": "gap",
     "sentence": "Mi ____ magyarok.",
-    "options": ["vagyunk", "vagyok", "vagytok", "vannak"],
+    "options": [
+      "vagyunk",
+      "vagyok",
+      "vagytok",
+      "vannak"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3004,
     "level": "A0",
     "type": "gap",
-    "sentence": "A macska ____ az asztalon.",
-    "options": ["van", "vagyok", "vagy", "vagyunk"],
+    "sentence": "Az étterem a téren ____.",
+    "options": [
+      "van",
+      "vagyok",
+      "vagy",
+      "vagyunk"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3005,
     "level": "A0",
     "type": "gap",
-    "sentence": "Két ____ kérek.",
-    "options": ["alma", "almák", "almát", "almával"],
+    "sentence": "Egy ____ kérek.",
+    "options": [
+      "jegyet",
+      "jegy",
+      "jegyek",
+      "jeggyel"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3006,
     "level": "A0",
     "type": "gap",
-    "sentence": "Ő nem lány, hanem ____.",
-    "options": ["fiú", "fiúk", "fiúval", "fiúban"],
+    "sentence": "Ő nem magyar, hanem ____.",
+    "options": [
+      "külföldi",
+      "külföldit",
+      "külföldiek",
+      "külföldivel"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3007,
     "level": "A0",
     "type": "gap",
-    "sentence": "A szám: egy, kettő, ____.",
-    "options": ["három", "negyedik", "hatvan", "tizedik"],
+    "sentence": "Egy, kettő, ____.",
+    "options": [
+      "három",
+      "negyedik",
+      "hatvan",
+      "tizedik"
+    ],
     "correctIndex": 0
   },
   {
@@ -68,7 +108,12 @@
     "level": "A0",
     "type": "gap",
     "sentence": "Én ____ Péter vagyok.",
-    "options": ["nem", "nema", "nemi", "nemek"],
+    "options": [
+      "nem",
+      "nema",
+      "nemi",
+      "nemek"
+    ],
     "correctIndex": 0
   },
   {
@@ -76,7 +121,12 @@
     "level": "A0",
     "type": "gap",
     "sentence": "Ti hol ____ most?",
-    "options": ["vagytok", "vagyok", "vagyunk", "vannak"],
+    "options": [
+      "vagytok",
+      "vagyok",
+      "vagyunk",
+      "vannak"
+    ],
     "correctIndex": 0
   },
   {
@@ -84,23 +134,38 @@
     "level": "A0",
     "type": "gap",
     "sentence": "Ez egy ____.",
-    "options": ["ház", "házak", "házban", "házzal"],
+    "options": [
+      "bolt",
+      "boltok",
+      "boltban",
+      "bolttal"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3011,
     "level": "A0",
     "type": "gap",
-    "sentence": "Ők ____ fáradtak.",
-    "options": ["nagyon", "nagy", "nagyobb", "legnagyobb"],
+    "sentence": "Ők ____ szépek.",
+    "options": [
+      "nagyon",
+      "nagy",
+      "nagyobb",
+      "legnagyobb"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3012,
     "level": "A0",
     "type": "gap",
-    "sentence": "A kutya és a macska ____.",
-    "options": ["állatok", "állat", "állatot", "állatban"],
+    "sentence": "Ők ____.",
+    "options": [
+      "magyarok",
+      "magyar",
+      "magyart",
+      "magyarban"
+    ],
     "correctIndex": 0
   },
   {
@@ -108,39 +173,64 @@
     "level": "A0",
     "type": "gap",
     "sentence": "Öt ____ öt az tíz.",
-    "options": ["meg", "megy", "megyek", "megett"],
+    "options": [
+      "meg",
+      "megy",
+      "megyek",
+      "megett"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3014,
     "level": "A0",
     "type": "gap",
-    "sentence": "Én Anna ____, te Béla vagy.",
-    "options": ["vagyok", "vagytok", "vannak", "vagy"],
+    "sentence": "Én Anna ____, te Péter vagy.",
+    "options": [
+      "vagyok",
+      "vagytok",
+      "vannak",
+      "vagy"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3015,
     "level": "A0",
     "type": "gap",
-    "sentence": "A szék ____ az asztal mellett van.",
-    "options": ["piros", "pirost", "pirosat", "pirosba"],
+    "sentence": "A ____ étterem drága.",
+    "options": [
+      "szép",
+      "szépek",
+      "szépet",
+      "szépen"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3016,
     "level": "A0",
     "type": "gap",
-    "sentence": "Ő nem orvos, ____ tanár.",
-    "options": ["hanem", "hogy", "ahol", "amely"],
+    "sentence": "Ő nem orvos, ____ turista.",
+    "options": [
+      "hanem",
+      "hogy",
+      "ahol",
+      "amely"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3017,
     "level": "A0",
     "type": "gap",
-    "sentence": "A gyerekek ____ játszanak.",
-    "options": ["itt", "ittban", "ittnál", "ittre"],
+    "sentence": "A turisták ____ vannak.",
+    "options": [
+      "itt",
+      "ittban",
+      "ittnál",
+      "ittre"
+    ],
     "correctIndex": 0
   }
 ]

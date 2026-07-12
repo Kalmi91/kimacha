@@ -31,6 +31,8 @@ import en_a1 from './topics/en/a1.json';
 import en_a1SubLevels from './sublevels/en/a1.json';
 import en_a2 from './topics/en/a2.json';
 import en_a2SubLevels from './sublevels/en/a2.json';
+import hu_a0 from './topics/hu/a0.json';
+import hu_a0SubLevels from './sublevels/hu/a0.json';
 import hu_a1 from './topics/hu/a1.json';
 import hu_a1SubLevels from './sublevels/hu/a1.json';
 
@@ -45,8 +47,8 @@ const enSubLevelsByLevel: Record<string, SubLevelDef[]> = { A0: en_a0SubLevels a
 
 // Hungarian-target taxonomy (native EN → learn HU course). Same keying; only
 // lang==='hu' (with authored Hungarian content) returns these.
-const huTopicsByLevel: Record<string, TopicDef[]> = { A1: hu_a1 as TopicDef[] };
-const huSubLevelsByLevel: Record<string, SubLevelDef[]> = { A1: hu_a1SubLevels as SubLevelDef[] };
+const huTopicsByLevel: Record<string, TopicDef[]> = { A0: hu_a0 as TopicDef[], A1: hu_a1 as TopicDef[] };
+const huSubLevelsByLevel: Record<string, SubLevelDef[]> = { A0: hu_a0SubLevels as SubLevelDef[], A1: hu_a1SubLevels as SubLevelDef[] };
 
 export function getTopicsForLevel(level: string, lang: string = 'es'): TopicDef[] {
   if (lang === 'en') return enTopicsByLevel[level] ?? [];

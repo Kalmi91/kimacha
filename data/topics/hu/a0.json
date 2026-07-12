@@ -1,0 +1,12 @@
+[
+  {"id": "koszonesek", "order": 1, "subLevel": "A0.1", "type": "vocab", "icon": "👋", "name_hu": "Köszönések", "name_en": "Greetings", "name_es": "Saludos", "name_de": "Begrüßungen"},
+  {"id": "udvariassag", "order": 2, "subLevel": "A0.1", "type": "vocab", "icon": "🙏", "name_hu": "Udvariasság", "name_en": "Courtesy", "name_es": "Cortesía", "name_de": "Höflichkeit"},
+  {"id": "alap_kifejezesek", "order": 3, "subLevel": "A0.1", "type": "vocab", "icon": "💬", "name_hu": "Alap kifejezések", "name_en": "Basic Phrases", "name_es": "Frases Básicas", "name_de": "Grundausdrücke"},
+  {"id": "bemutatkozas", "order": 4, "subLevel": "A0.2", "type": "vocab", "icon": "📇", "name_hu": "Bemutatkozás", "name_en": "Introductions", "name_es": "Presentación", "name_de": "Vorstellung"},
+  {"id": "alapigek", "order": 5, "subLevel": "A0.2", "type": "grammar", "icon": "🏃", "name_hu": "Alapigék", "name_en": "Basic Verbs", "name_es": "Verbos Básicos", "name_de": "Grundverben"},
+  {"id": "melleknevek", "order": 6, "subLevel": "A0.2", "type": "vocab", "icon": "✨", "name_hu": "Gyakori melléknevek", "name_en": "Common Adjectives", "name_es": "Adjetivos Comunes", "name_de": "Häufige Adjektive"},
+  {"id": "szuksegletek", "order": 7, "subLevel": "A0.3", "type": "vocab", "icon": "🆘", "name_hu": "Alapszükségletek", "name_en": "Survival Needs", "name_es": "Necesidades Básicas", "name_de": "Grundbedürfnisse"},
+  {"id": "utbaigazitas", "order": 8, "subLevel": "A0.3", "type": "vocab", "icon": "🧭", "name_hu": "Útbaigazítás", "name_en": "Directions", "name_es": "Direcciones", "name_de": "Wegbeschreibung"},
+  {"id": "ido_szamok", "order": 9, "subLevel": "A0.3", "type": "vocab", "icon": "⏰", "name_hu": "Idő és számok", "name_en": "Time & Numbers", "name_es": "Tiempo y Números", "name_de": "Zeit und Zahlen"},
+  {"id": "helyek", "order": 10, "subLevel": "A0.3", "type": "vocab", "icon": "📍", "name_hu": "Helyek és közlekedés", "name_en": "Places & Transport", "name_es": "Lugares y Transporte", "name_de": "Orte und Verkehr"}
+]
