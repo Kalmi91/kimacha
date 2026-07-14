@@ -1,1 +1,36 @@
 .claude/
+.env
+.env.*
+
+# Mirror of .gitignore, .easignore REPLACES .gitignore for EAS uploads,
+# so everything below must be listed here too.
+node_modules/
+coverage/
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+.metro-health-check*
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+.DS_Store
+*.pem
+*.tsbuildinfo
+
+# generated native folders, MUST stay out so EAS runs managed prebuild
+/ios
+/android
+
+data/words/backup_*/
+todo_*.txt
+word_batches/
+.git/
+BUILD.md
