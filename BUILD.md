@@ -1,0 +1,329 @@
+# BUILD.md, Kimacha build manifest
+
+> Token-burn manifest a `feedback_build_manifest_convention` szerint.
+>
+> **Trigger:** „make kimacha app" / „építsd a kimacha appot" / „build the app" →
+> token-burn mód: kezdj az első nyitott (nem BLOCKED) queue-itemnél, haladj lefelé
+> **per-step megerősítés nélkül**, commitolj item-enként (a státusz-tábla + queue
+> frissítésével UGYANABBAN a commitban). Megállás: queue üres / acceptance kétszer
+> bukik / runtime v. secret kell a usertől / egy item BLOCKED (ugord át).
+>
+> ⚠️ **NEM ugyanaz mint „build" / „kimacha build"** = APK-release (PATCH-bump,
+> `eas build`, deploy Drive-ra; lásd `feedback_kimacha_build_release`). Az = kiadás.
+> EZ (make/építsd app) = fejlesztés a queue-ból, nincs APK.
+>
+> Részletes bug/feedback-queue + spec: **`AGENTS.md`** (auto-betöltött `@AGENTS.md`)
+> és `ITER3.md` (iter3 spec, lezárt). Korpusz-őr új tartalomnál: `node scripts/audit-corpus.mjs`.
+
+---
+
+## 1. Státusz (% kész, komponensenként)
+
+Szám-becslések `project_word_expansion` memóriából (2026-06-13), nem élő-verifikált.
+
+| Komponens | Állapot | % |
+|---|---|---|
+| App-motor (SRS, vizsga, tech-tree, UI) v3.0.1 | kész; 3.0.1 telefon-verify build folyamatban | ~95 |
+| hu→es tartalom (spanyol, flagship) | A0 100 / A1 882 / A2 900 / B1 927 / B2 394 / C1 83 / C2 92 (C1/C2 BEFAGYASZTVA) | ~73 |
+| hu→en tartalom (angol-cél) | A0 100 / A1 384 / A2 390 = **874 kártya, 41 topic**, audit P1=0; exam korpusz-tiszta; id-blokkok ~tele (2026-07-12) | ~80 |
+| **Mátrix per-ág modell (A0 közös + A1+ ágankénti)** | en-ág (hu→en) A0/A1/A2 KÉSZ (480 kártya); **hu-ág A0 KÉSZ** (100 kártya, 10 topic, audit-hu gate, 2026-07-12); es/de ágak + hu A1+ hátra | 45 |
+
+---
+
+## 2. Token-burn queue (sorrendben)
+
+### ✅ Q0. [KÉSZ 2026-07-12, éjszakai műszak] Backup + Restore gomb
+
+User: „backup gomb … ez fontos ez legyen az 1." Döntések AskUserQuestion-nel
+pinnelve (2026-07-12): **export-fájl + share sheet** (nem Drive-auth, nem csak-lokális),
+**restore IS kell**.
+
+**Spec:**
+- **Backup gomb** (Settings): a teljes tanulási állapot egyetlen JSON-fájlba
+  (schemaVersion + exportedAt + appVersion + mind a 9 tábla: `cards`,
+  `card_attempts`, `learn_settings`, `onboarding`, `selected_topic`,
+  `spelling_list`, `streak`, `user_level`, `user_meta`), írás
+  expo-file-system-mel cache-be, majd **Android share sheet** (expo-sharing):
+  user menti Drive-ra/emailbe/akárhová. Offline, nincs app-beli Google-login.
+- **Restore gomb** (Settings, backup alatt): expo-document-picker → JSON kiválasztás
+  → séma+verzió validálás → **megerősítő dialog** (felülírja a jelenlegi haladást!)
+  → tranzakcióban import (törlés+insert táblánként) → app-state reload
+  (pendingAction minta). Hibás/idegen fájl: hibaüzenet, DB érintetlen.
+- MINDKÉT db-fájl (`lib/database.ts` + `lib/database.web.ts` + IDatabase):
+  `exportAll(): Promise<BackupPayload>` + `importAll(payload)` metóduspár;
+  web = JSON letöltés/feltöltés (Blob + input file) vagy no-op toast, a
+  wordsOnly/web-minta szerint.
+- Függőség: `npx expo install expo-sharing expo-document-picker expo-file-system`
+  (package.json-ban most NINCS; natív modul → új APK-build kell hozzá, ami amúgy
+  is esedékes).
+- i18n ×4: hu „Biztonsági mentés" / „Visszaállítás"; en „Backup" / „Restore";
+  es „Copia de seguridad" / „Restaurar"; de „Sicherung" / „Wiederherstellen"
+  + megerősítő-dialog szövegek.
+- FeedbackButton már van a Settings tabon (FB40), nem kell új.
+
+**Acceptance:** tsc 0; jest zöld + új unit-teszt: export→import kör-út egy
+memória-db-n (payload minden táblát visszaad, importAll után azonos állapot);
+adat-JSON érintetlen; eszköz-verify (share sheet + visszatöltés) = user, következő build.
+
+### Q1. [BLOCKED: DESIGN-FIRST, user-jóváhagyás kell, autonóm burn UGORJA ÁT], Mátrix per-ág szókészlet: A0 közös, A1+ ágankénti
+
+**User vízió (szó szerint, 2026-06-22, ne tömörítsd, ne javítsd):**
+
+> Minden ágnak külön szavakat akarok. MErt az A0 szint az mindenhol a turista
+> szint, ha beszélni akarod a nyelvet magara akarsz venni néhány szót kifejezést
+> akkor az elég, és utána jön az igaz i nyelvtanulás. ÉS azt vettem észre hogy ez
+> minden nyelvnél más sőt még ang magyarra is más mint magyarról angolra. Ezt
+> kellene lekódolni majd és szavakat keresni ehez.
+
+**Döntés (AskUserQuestion, 2026-06-22):** Mátrix, **bármely pár** a {es, hu, en, de}
+nyelvek közt, **mindkét irány saját A1+ szókészlet** (mert hu→en ≠ en→hu).
+~~A0 = közös „turista" szint, megosztott minden ágon.~~ → **FELÜLÍRVA (#2, 2026-06-22):
+A0 = target-specifikus top-100** (lásd lent).
+
+**User-szabály (szó szerint, 2026-06-22 #2, FONTOS, ne tömörítsd):**
+
+> milyen nyelveken mennyi szavak vannak mátrix kell mindig az a lényeg a mátixnál,
+> hogy amilyen nyelvre tanulunk azon nyelv fontos szavai legyenek benne a 100
+> leggyakorobb szó kifejezés az A0 szinten és A1 től meg azok a szavak amik a
+> nyelvvizsgákhoz kellenek ez egy fontos szabály
+
+**Levezetve:** cél-nyelvenként (mátrix-cella):
+- **A0** = a CÉL-nyelv 100 leggyakoribb szava/kifejezése (frekvencia-alapú, target-specifikus).
+- **A1-től** = a CÉL-nyelv hivatalos **nyelvvizsgáihoz** kellő szókészlet (NEM nyers frekvencia;
+  pl. es=DELE, en=Cambridge/IELTS, de=Goethe, hu=ECL/origó szólisták szintenként). Plafon B2
+  (lásd Q2 ⛔ user-szabály: soha C1/C2).
+
+✅ **FELOLDVA (2026-06-22, AskUserQuestion):** A0 = **target-specifikus top-100**. Minden cél-nyelv
+saját `data/words/<target>/a0.json`-t kap, az adott nyelv VALÓDI 100 leggyakoribb szavával/kifejezésével
+(es ≠ en ≠ de top-100). A korábbi „A0 közös/megosztott" döntés **ELAVULT**. A jelenlegi közös
+`data/words/a0.json` (100, koncept/turista-alapú) → az **es-target A0-jává** migrálandó, és valódi
+es-freq top-100-ra igazítandó (külön task).
+
+**Modell:**
+- **A0** = **target-specifikus** top-100 (a cél-nyelv 100 leggyakoribb szava/kifejezése),
+  `data/words/<target>/a0.json`. Felülírja a korábbi „közös A0" modellt (2026-06-22 döntés).
+- **A1+** = ágankénti (cél-nyelvenkénti) saját tartalom-track, az angol-track
+  precedensét követve: `data/words/<target>/aN.json` (id-offset hogy ne ütközzön),
+  `data/topics/<target>/aN.json` (cél-nyelv grammatika), `data/sublevels/<target>/aN.json`.
+- A tananyag a **párfüggő** (native+target), nem csak target-függő.
+
+**Nyitott design-kérdések (ELŐBB tisztázni user-rel, → ezért BLOCKED):**
+1. Mit jelent pontosan „hu→en ≠ en→hu" a szó-LISTÁN túl? (a target-szavak amúgy is
+   mások, mert más a cél-nyelv; a native csak glossza). Sorrend? Nehézség-súlyozás?
+   Hamis-barát/interferencia-fókusz a native szerint? → ez a tényleges irány-érzékenység.
+2. Szó-sourcing forrás cél-nyelvenként: es=SUBTLEX-ESP (megvan); en/hu/de freq-lista forrás?
+3. Az es jelenleg a MEGOSZTOTT készletben van (A1 882 stb.), átmozgatás `data/words/es/`-be,
+   vagy a megosztott marad az es-kanon és csak en/hu/de kap külön track-et?
+4. Topic-fa mind a 4 cél-nyelvhez (mint en grammar topics), ki/hogyan írja.
+5. `scripts/audit-corpus.mjs` minden cél-nyelvre kiterjesztve.
+
+**Mikor build-elhető:** előbb design-doc (`ITER4.md`) user-rel jóváhagyva (mint FB20/iter3
+doc-driven), CSAK utána per-ág A1 batch-ek. Addig ez az item NEM autonóm-burn-ölhető.
+
+**Acceptance (a tényleges build-höz, később):** `ITER4.md` jóváhagyva; per cél-nyelv
+A0-közös + A1 saját track; `audit-corpus` P1=0 minden track-en; `tsc` tiszta; jest zöld;
+`database.ts` ÉS `database.web.ts` együtt.
+
+---
+
+### Q2. [token-burn, KÉSZ-RE FUTTATHATÓ] Spanyol szóbővítés folytatása
+
+Forrás + pipeline: `project_word_expansion` memória + `feedback_burn_tokens_no_confirm`.
+Trigger-szinonimák: „égesd a tokeneket" / „szavakat generálj" / „töltsd fel a szókészletet".
+
+> ⛔ **USER-SZABÁLY (2026-06-22): SOHA ne generálj C1/C2 kártyát. Plafon = B2.**
+> „C1 szint sehol sem lényeg, soha ne csinálj oda kártyákat, B1 B2 max ezekkel foglalkozz."
+> Bővítés CSAK B1/B2 szintre. C1/C2 befagyasztva (meglévő marad, nem bővül).
+
+- B2 hullám fut volt (freq poz. 1561–2080), maradék jelölt poz. 2081–2537 (C1/C2).
+- Pipeline: `/tmp/claude/filter_words.js` → batch Sonnet agentek 100 szó →
+  `scripts/append_words.py --level X --input ...` → `validate_words.py` + jest + tsc → commit/szint.
+- **FIGYELEM:** ez a JELENLEGI megosztott-készlet modellben bővít. Ha Q1 (mátrix) elfogad,
+  ez REFRAME-elődhet (es külön track). Q1 előtt ez a biztos autonóm munka.
+
+### Q3. [token-burn, user 2026-07-12] hu A0 track (új) + en A1/A2 mélyítés spanyol-szintre
+
+> ⚠️ FRISSÍTVE 2026-07-12: a régi Q3 („hu→en angol-track folytatása", Hátra-lista)
+> ELAVULT, az en-track A0/A1/A2 szókincs+struktúra+exam-gate KÉSZ 2026-07-11-én
+> (lásd Session log). Ez az item a maradék két konkrét user-kérést fedi.
+
+**Sorrend: 3a előbb (kisebb, önálló), utána 3b. Mindkettő egyenként commit+gate.**
+
+#### ✅ 3a. hu A0 track, nulláról, KÉSZ (`076dc9b`, 2026-07-12 éjszakai műszak)
+
+Cél: hu A0 (10 topic / 3 al-szint, 100 szó) parity az es/en A0 mintával (FB21-minta).
+
+- `data/words/hu/a0.json`: 100 kártya, a MAGYAR nyelv 100 leggyakoribb szava/kifejezése
+  turista-szinten (matrix A0-szabály: cél-nyelv-specifikus top-100, `project_word_expansion`
+  memória). id **6100-6199** (a meglévő `data/words/hu/a1.json` 6001-6006 stub-ot NE bántsd,
+  nem ütközik vele). Minden kártya mind 4 nyelv (es/hu/en/de) + 4 `sentence_*` mező kötelező
+  (a `hu` mező a TANULT szó, a másik 3 a lehetséges anyanyelvek fordítása/kontextusa).
+- `data/topics/hu/a0.json` + `data/sublevels/hu/a0.json`: 10 topic / 3 al-szint, es/en A0
+  topic-bontás mintájára (turista alapszókincs: köszönés, számok, színek, bemutatkozás, étel,
+  stb.), saját magyar-specifikus felosztás, nem kell 1:1 másolni az es/en listát.
+- `data/words.ts`: `huWordsByLevel.A0 = hu_a0` (2 sor, az en A0 wiring mintájára).
+- `data/topics.ts`: `huTopicsByLevel.A0` + `huSubLevelsByLevel.A0` (a meglévő
+  `huTopicsByLevel['A1']` minta mellé).
+- Korpusz-gate: `scripts/audit-corpus-hu.mjs`, az `audit-corpus-en.mjs` másolataként
+  (mezőnevek `_hu`-ra), P1=0 követelmény.
+- Megjegyzés: ez CSAK adat+gate; onboarding UI-hoz NE nyúlj, a forrás/cél-nyelv választó
+  (`app/onboarding.tsx`, `lib/languages.ts` `isPairSupported`) már generikus, minden
+  {es,hu,en,de} párt enged; a hu A0 tartalom a meglévő UI-n automatikusan elérhető lesz,
+  amint a fájlok+wiring megvan.
+
+#### ✅ 3b. en A1/A2 mélyítés, KÉSZ az id-blokk plafonjáig (`6037ce9`+`9bd727a`+`36b8d48`+`cef4119`, 2026-07-12 éjszakai műszak)
+
+> ⚠️ Az eredeti +400-500 A1 / +500-700 A2 cél az id-blokkokba NEM fér el (A1 blokk 5001-5399 =
+> 199 szabad id volt, A2 blokk 5400-5799 = 220). A blokkok most majdnem tele: A1 384 kártya
+> (16/topic, 15 tartalék id), A2 390 kártya (26/topic, 10 tartalék). További sűrítéshez
+> user-döntés kell: id-blokk bővítés a validate-en-track.mjs-ben.
+
+Jelenlegi állapot (2026-07-11 lezárva, ELLENŐRIZD indulás előtt `data/topics/en/`-ben,
+mielőtt duplikálsz): en A0 = 100 szó / 10 topic (**10/topic, MÁR PARITÁS** az es A0-hoz,
+NE nyúlj hozzá). en A1 = 200 szó / 24 topic (~8/topic; es A1: 882 szó / 46 topic ~19/topic).
+en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
+
+- **A1**: bővítsd a 24 meglévő topicot, cél ~18-20 szó/topic (es-sűrűség) → nagyságrendileg
+  +400-500 új kártya. Ha a `AGENTS.md` régi Hátra-listájából (this/that, have_got, can,
+  question_words, prepositions, body, house, clothes, jobs, animals, weather, daily_routine)
+  van olyan, ami MÉG nincs topicként lefedve, azt új topicként vedd fel; a többinél a
+  meglévő topicokat mélyítsd.
+- **A2**: bővítsd a 15 meglévő topicot, cél ~40-50 szó/topic → nagyságrendileg +500-700
+  új kártya. Nem kell az es Origó-temario 1:1 leképezés, en-specifikus alszintezés marad.
+- id-tartomány: `scripts/validate-en-track.mjs`-ben rögzített blokkok (A1 5001-5399,
+  A2 5400-5799), jelenlegi max A1 id 5200, A2 max 5579, van hely bőven a blokkon belül.
+  Ha egy blokk betelne, NE találj ki random tartományt: állj meg, jelezd a zárójelentésben.
+- Minden batch után: `scripts/audit-corpus-en.mjs` (P1=0, kumulatív szint-szigorral) +
+  `scripts/validate-en-track.mjs` + tsc + jest.
+- Batch-elve dolgozz (Sonnet subagent, ~100-150 szó/batch, mint a 07-10/07-11 log-minta),
+  COMMIT batchenként, státusz-táblát frissítsd.
+
+**Közös acceptance (3a+3b):**
+- `npx tsc --noEmit` 0 app-hiba; `npx jest` zöld (flaky examBuilder-szabály él: ha csak
+  az bukik, futtasd újra, ne javítsd).
+- Adat CSAK JSON-okba (`CLAUDE.md` szabály), `.ts` fájlokba csak import+wiring sor.
+- `database.ts` / `database.web.ts` nem érintett (nincs új DB-mező ebben a task-ban).
+- Session log + a fájl tetejei % státusz-tábla frissítve minden batch után.
+
+---
+
+## 3. Build contract
+
+- Queue-item = **tiszta kód-írás + offline acceptance** (nincs runtime/eszköz). Runtime → 4. szekció.
+- **Commit item-enként**, a státusz-tábla + queue frissítésével ugyanabban a commitban.
+- Minden zöld mielőtt kész: `npx tsc --noEmit` hibátlan; `jest` zöld; `node scripts/audit-corpus.mjs` P1=0;
+  web-konzisztencia (`lib/database.ts` ÉS `lib/database.web.ts` egyszerre).
+- Adatot a szint-JSON-okba (`data/words/...`), SOHA a `.ts`-be (lásd `CLAUDE.md`).
+- **Nincs push** (local-only). APK = külön „build" trigger, user-flow.
+- Default `lang='es'` viselkedés bájtra ne változzon; csak `lang!=='es'` + létező tartalom térjen el.
+
+## 4. Runtime checklist (csak a user tudja futtatni)
+
+- APK release: „build" trigger → `eas build preview` + Drive-deploy (`deploy_kimacha_apk.py`, maszkolt creds).
+- Telefon-verify: tech-tree vizuál, billentyűzet-stabilitás, FB-fixek élőben, words-only persist.
+- `npx expo prebuild` után `AndroidManifest.xml windowSoftInputMode` ellenőrzés (billentyűzet-fix).
+
+## 5. Session log
+
+- **2026-06-22** (Opus): BUILD.md létrehozva a `feedback_build_manifest_convention` szerint.
+  Per-ág szó-vízió rögzítve = Q1 (DESIGN-FIRST, BLOCKED). Mátrix-döntés (bármely pár, A0 közös)
+  AskUserQuestion-nel pinnelve. Q2/Q3 = meglévő token-burn munkák átemelve. Nincs kód-változás, nincs commit.
+- **2026-06-22** (Opus token-burn): committed Q3 en-track batch 1 (`c52bb10`, 62 szó volt uncommitted).
+  Q2 es-bővítés folytatva: `filter_words.js` → curator agent (1402 jelölt → 448 curated, ~954 junk:
+  tulajdonnév/ragozott alak/angol token kiszűrve) → Sonnet generátor agentek 100/batch.
+  B2 wave: +310 szó (84→394, id 3008-3317, 3 batch), tsc 0 / jest 43 / audit P1=0. C1 batch (96)
+  bukott session-limiten; C2 batch (42) generálva DE user-szabályra ELDOBVA: „C1/C2 soha, B1/B2 max".
+  C1/C2 ezentúl befagyasztva. hu/ stub (6 szó, Q1-mátrix korai start) UNTRACKED hagyva (Q1 BLOCKED).
+- **2026-06-27/28** (Opus): „nézd meg a feedbacket és fejleszd". Feedback-sheet triage: 10 új sor
+  (FB21-30, 06-23/25). 3 design-döntés AskUserQuestion-nel. Token-burn a tiszta fixekre, commit
+  item-enként: FB23 feedback-gomb tree-tabon (`5064ea1`); FB30 I-know-this fehér betű (`83bff68`);
+  FB25 gépelés char-diff LCS piros/fehér (`804669b`); FB28 recognition-fallback helyesírás-variáns
+  disztraktorokkal, új `lib/spellingVariants.ts` + teszt (`ad21b1a`); FB24+26+27 words-only TELJES
+  újratervezés (fázis-tartó flashcard→typing-gate + interleave max-4-run, `d389b52`). FB21 (A0 topic)
+  + FB22/29 (A2 topic) = DOC-FIRST: `docs/TOPICS-A0-A2.md` terv jóváhagyásra (`02f21c7`). Minden
+  commit: tsc 0, jest 49/49 (+6 spellingVariants). Q1/Q2/Q3 érintetlen.
+- **2026-06-28** (Opus): user-döntések a doc 5 kérdésére (A0 10-csoport IGEN, verbos_a0 egyben, A2 =
+  konkrét magyar nyelvvizsga NEM DELE, váltás-jelzés toast, A0 előbb). FB21 A0 topic-build KÉSZ
+  (`4d97224`): 100 szó → 10 topic / 3 al-szint, `data/topics/a0.json` + `data/sublevels/a0.json`,
+  `topics.ts` wiring, `tree.tsx` gate bármely topic-os szintre, A0 szabad-választás, topic-váltás
+  toast (FB21 UX, 4 nyelv). tsc 0, jest 49, audit P1=0, A0-integritás OK.
+- **2026-06-28** (Opus + Sonnet subagentek): FB22/29 A2 topic-build KÉSZ (`b1e6d87`). User-választás:
+  Origó (ITK/ELTE) alapfok szóbeli témalista (hivatalos PDF webről, 15 téma / 5 al-szint). 900 A2
+  szó besorolva 6 párhuzamos Sonnet-ügynökkel (6×150, /tmp chunk+out fájlok, MY-kontextusból kihagyva),
+  merge+validál script: mind 900 pontosan 1 témába, 0 árva, hézagmentes topicOrder. `data/topics/a2.json`
+  + `data/sublevels/a2.json` + words-patch + topics.ts wiring; computeUnlockedTopics szabad-választás
+  bármely topic-os szintre (A0/A1/A2). tsc 0, jest 49, audit P1=0. Eloszlás egyenetlen (trabajo_dia 190).
+- **2026-07-10** (Opus): user-greenlight a Q1 en-track (hu→en) bővítésre a beillesztett 41-topic
+  taxonómiával (design-block feloldva). STRUKTÚRA KÉSZ: `data/topics/en/{a0,a2}.json` (10+15 topic),
+  `data/sublevels/en/{a0,a2}.json` (3+5), `topics/en/a1.json` +16 topic (order 9-24, A1.3-A1.6),
+  `data/sublevels/en/a1.json` +A1.3-A1.6, `topics.ts` A0/A2 en wiring. GATE-INFRA KÉSZ:
+  `scripts/audit-corpus-en.mjs` (en-aware korpusz-audit, sentence_en ⊆ taught en, szint-kumulatív)
+  + `scripts/validate-en-track.mjs` (id-blokk A0 5800-5999 / A1 5001-5399 / A2 5400-5799, cross-level
+  dedup, séma). es flagship `audit-corpus.mjs` bájtra érintetlen. tsc 0, jest 56/56, struct OK,
+  validate OK; audit-en baseline 49 P1 (mind valódi A0-gap szó, az A0 smoke feloldja). Kártya-tartalom
+  NULLA még: Sonnet-burn gated A0(smoke 100)→A1→A2, szintenként audit+validate+tsc+jest gate.
+- **2026-07-10** (Opus + Sonnet subagent): A0 en smoke KÉSZ. `data/words/en/a0.json` = 100 kártya
+  (10 topic × 10, id 5800-5899), `words.ts` A0 en wiring (2 sor). Gate: validate OK, tsc 0, jest 56/56.
+  audit-en P1: 49→37, a maradék 37 MIND A1-örökség (a 62-kártyás batch-1 mondatai tanítatlan szavakra
+  hivatkoznak: student/house/school/office/breakfast/friday/books/... + eat/drink/read/play/love), **0 db
+  A0-kártya P1** (id-vel igazolva). A0 korpusz tiszta. o'clock→time csere (o'clock szám nélkül nem építhető
+  A0-ból). A 37 A1-adósságot az A1 burn oldja fel (16 új topic tanítja a hiányzó szavakat + maradék
+  legacy-mondat átírás). Következő: A1 138 kártya (id 5063-5200).
+- **2026-07-11** (Opus + Sonnet subagent): A1 en burn KÉSZ. +138 kártya (id 5063-5200) a 16 új
+  A1 topicban → `data/words/en/a1.json` 200 kártya. A meglévő 62 (5001-5062) szó-mezői ÉRINTETLENEK
+  (id/es/hu/en/de/topic/topicOrder, git-diff igazolva), csak 15 legacy `sentence_*` átírva a korpusz-
+  tisztaságért. Gate: validate OK (300 total), audit-en **P1=0 GLOBÁLISAN**, tsc 0, jest 56/56.
+  A hu→en korpusz tiszta: minden sentence_en kizárólag tanított angol szóból + funkciószó. A 37
+  A1-örökség P1 feloldva. Következő: A2 180 kártya (id 5400-5579), words.ts A2 wiring.
+- **2026-07-11** (Opus + Sonnet subagent): A2 en burn KÉSZ. `data/words/en/a2.json` = 180 kártya
+  (15 topic × 12, id 5400-5579), `words.ts` A2 en wiring. Gate: validate OK (480 total), audit-en
+  **P1=0**, tsc 0, jest 56/56 (jest direkt binárral, az `npx` az rtk-proxyn elhasalt, nem teszthiba).
+  **en-track A0/A1/A2 szókincs KÉSZ: 480 kártya (100+200+180), 41 topic, hu→en korpusz teljesen tiszta.**
+  Hátra: en A0/A2 placement-exam tartalom (a `data/exams/en/` gap-kérdés path); telefon-verify a
+  hu→en kurzuson (A0/A1/A2 tech-tree + tanulás); es/de/hu mátrix-ágak (Q1 többi cellája) külön.
+- **2026-07-11** (Fable + Sonnet subagent): en A0/A1/A2 exam korpusz-igazítás KÉSZ. `audit-corpus-en.mjs`
+  kiterjesztve az exam-fájlokra (kérdés-mondat + HELYES opció ⊆ tanított szókincs szint-kumulatív;
+  a rossz distractorok mentesülnek, szándékosan hibás alakok, pl. „goed", legálisak). Baseline: 38
+  P1-exam (14 A0 / 7 A1 / 17 A2), mind tanítatlan szóra épült (apple, teacher, film, cinema…).
+  Sonnet átírta mind a 38-at tanított szavakra, grammar-target megtartva; Fable utó-QA: 2 junk
+  „, " zero-article opció → „, " (2005 konvenció), 4 kétértelmű kérdés (2111 in/at hotel, 2112
+  on/at corner, 2208 few/a few, 2209 is/was) egyértelműsítve. Gate: audit P1=0 + P1-exam=0,
+  validate OK (480), exam-séma OK (3×18, 4 opció), tsc 0, jest 56/56. B1/B2 en exam érintetlen.
+  Hátra vált.: examBuilder en↔hu drótozás (gazdag exam, most gap-fallback); telefon-verify.
+- **2026-07-11** (Fable + Sonnet subagent): examBuilder en↔hu drótozás KÉSZ. `lib/examBuilder.ts`
+  (target, counter) paraméterezés: es-kurzus változatlanul (target=es, counter=en, DELE authored
+  blokk csak es-nél); en-target = en-track szavak + native counter (hu→en: en↔hu drillek).
+  `ExamMode.tsx` useGenerated en-re is. Smoke: hu-en A0=17 / A1=20 drill („sarok"→„corner",
+  hu prompt → en tile-rendezés near-miss distractorokkal); es A1=35 mind a 6 kind. Gate: tsc 0,
+  jest 61/61 (+5 en-teszt), audit érintetlen. Hátra: telefon-verify hu→en exam; es/de/hu ágak (Q1).
+- **2026-07-12** (Fable): user-kérés „backup gomb, legyen az 1." → **Q0 queue-item** (export+share
+  + restore, döntések pinnelve AskUserQuestion-nel). Még nincs kód.
+- **2026-07-12** (Fable, éjszakai műszak): **Q0 Backup+Restore KÉSZ (`6d85b75`).** Új `lib/backup.ts`
+  (BackupPayload séma v1, 9 tábla, validátor); `exportAll`/`importAll` MINDKÉT db-fájlban +
+  IDatabase (SQLite: tranzakcióban delete+insert, hibánál rollback = DB érintetlen; web:
+  memória↔️tábla-sor konverzió, platformok közt hordozható payload); Settings 2 új sor:
+  💾 Biztonsági mentés (expo-file-system File+Paths.cache → expo-sharing share sheet; web = Blob
+  letöltés) + ♻️ Visszaállítás (expo-document-picker → validálás → megerősítő dialog → importAll →
+  pendingAction reload; web = window.confirm). i18n ×4 (`backup` blokk). Függőségek (expo-sharing,
+  expo-document-picker, expo-file-system) commitolva, **natív modul → új APK-build kell**. Gate:
+  tsc 0, jest 65/65 (+4 backup-teszt: export→import kör-út memória-db-n + validátor). Eszköz-verify
+  (share sheet + visszatöltés telefonon) = user, következő build.
+- **2026-07-12** (Fable + Sonnet subagent, éjszakai műszak): **Q3a hu A0 track KÉSZ (`076dc9b`).**
+  `data/words/hu/a0.json` = 100 kártya (10 topic × 10, id 6100-6199, turista top-100, mind 4 nyelv
+  + 4 mondat), `data/topics/hu/a0.json` (10 topic, FB21-minta) + `data/sublevels/hu/a0.json` (3
+  al-szint), words.ts + topics.ts hu A0 wiring (4 sor). Új `scripts/audit-corpus-hu.mjs` gate:
+  magyar-tudatos stemmer (toldalék-strip, tő-belseji magánhangzó-rövidülés víz→vizet, epentézis
+  étterem→éttermet, rendhagyó igeparadigmák jövök→jön), CSAK A0 (a hu/a1.json 6-kártyás stub védett,
+  A1+ akkor csatlakozik, ha valódi track lesz). A meglévő `data/exams/hu/a0.json` 13 kérdése tanított
+  szókincsre + helyes magyarra átírva (2 nyelvtani hiba is: „Ő tanár nem.", dupla-állítmányos 3015).
+  Fable utó-QA a Sonnet-korpuszon: „vízet"→„vizet" helyesírás-fix + regiszter-fix (6122). Gate:
+  audit-hu P1=0 + P1-exam=0, audit es/en érintetlen (P1=0), tsc 0, jest 65/65. Hátra a hu-ágból:
+  hu A1+ (Q1 mátrix-cella), telefon-verify.
+- **2026-07-12** (Fable + 4 párhuzamos Sonnet subagent, éjszakai műszak): **Q3b en A1/A2 mélyítés
+  KÉSZ a blokk-plafonig.** A1: +184 kártya 2 batchben (`6037ce9` +96 id 5201-5296, `9bd727a` +88 id
+  5297-5384) → mind a 24 topic 16 kártyás, A1 = 384. A2: +210 kártya 2 batchben (`36b8d48` +112 id
+  5580-5691, `cef4119` +98 id 5692-5789) → mind a 15 topic 26 kártyás, A2 = 390. en-track összesen
+  **874 kártya**. Párhuzamos-batch dup-ok javítva (chicken→goat, camera→cable), Fable utó-QA:
+  nővérem→húgom a younger/youngest mondatokban. Gate minden batch után: validate OK, audit-en
+  P1=0 + P1-exam=0, tsc 0, jest 65/65. ⚠️ Id-blokkok majdnem tele (A1: 15, A2: 10 tartalék);
+  az eredeti +400-500/+500-700 cél NEM fért el, tovább-sűrítés = user-döntés (blokk-bővítés).
