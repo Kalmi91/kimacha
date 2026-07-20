@@ -1,6 +1,7 @@
 .claude/
 .env
 .env.*
+.mcp.json
 
 # Mirror of .gitignore, .easignore REPLACES .gitignore for EAS uploads,
 # so everything below must be listed here too.
