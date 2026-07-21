@@ -678,6 +678,95 @@ magánhangzót, ami a helyes alakban nincs. Teszt: variáns sosem matchel
 
 ---
 
+# 📋 Feedback, 2026-07-16/21 forduló (v3.0.5 telefon-teszt, mind A1 en→es)
+
+Új sorok a `Kimacha Feedback` sheetből (FB51 utáni 11 sor, 07-16 → 07-21). Triage
+2026-07-22 (Opus). Nagyrészt tartalmi/QA (mondat-adat), 1 info, 1 feature-döntés.
+Idézetek a user eredeti megfogalmazásában, ne tömörítsd. Gate: es-audit P1=0, tsc 0,
+jest 76/76, `data/words/a1.json` 7 kártya mondat-mezői módosultak. ⏳ Eszköz-verify.
+
+## ✅ FB52 [P2 adat], EN/ES szám-eltérés „trousers" ↔ „pantalón", KÉSZ (`data`)
+Idézet (07-16, easy:The trousers are dark green.): „itt trousers van és spanyolul meg
+nincs többes szám."
+Kártya id 1251 (`oscuro`, colores). EN „trousers" (pluralia tantum) ↔ es egyes
+„El pantalón". A tile-összerakós kártyán a szám-eltérés zavaró. Fix: es többesre
+igazítva → `Los pantalones son verde oscuro.` (hu „A nadrágok sötétzöldek.", de
+„Die Hosen sind dunkelgrün."). Csak a 4 sentence-mező, szó-mező érintetlen.
+
+## ✅ FB53 [P2 adat], EN/ES szám-eltérés „fresh fruit" ↔ „frutas frescas", KÉSZ (`data`)
+Idézet (07-19, sentence:Ellos venden frutas frescas.): „frutas az többes szám,
+eltérés van a fenti és a lenti között."
+Kártya id 1452 (`ellos venden`, presente_er). es többes „frutas frescas" ↔ en
+megszámlálhatatlan „fresh fruit". Fix: es egyesre → `Ellos venden fruta fresca.`
+(en/hu/de már egyezik). Szó-mező érintetlen.
+
+## ✅ FB54 [P2 adat], EN/ES szám-eltérés „Vegetables" ↔ „la verdura", KÉSZ (`data`)
+Idézet (07-21, easy:Vegetables are healthy.): „vegetables akkor többes szám és akkor
+las versuras nem?"
+Kártya id 1061 (`la verdura`, comida). en többes „Vegetables" ↔ es kollektív egyes
+„La verdura". Fix: es többesre → `Las verduras son sanas.` (hu „A zöldségek
+egészségesek."). A szó-mező (`la verdura`) marad, a mondat a többes alakot mutatja.
+
+## ✅ FB55 [P2 adat], „Mi edad es veinte años" nem természetes, KÉSZ (`data`)
+Idézetek (2×):
+- (07-16, easy:My age is twenty years.): „ezt így mondják?? ellenőrizd le! Szerintem
+  Tengo x años a helyes, vagy mind a kettőt használják?"
+- (07-21, sentence:Mi edad es veinte años.): „ketelyem van hogy ez igy helyes, nem
+  tudom hogy használják e az angolok így, vagy ez csak spanyol át fordítás?"
+Kártya id 1038 (`la edad`, presentacion). A user-nek igaza: a natív az életkort
+`Tengo X años`-szal mondja, nem `Mi edad es X años` (utóbbi értelmes, de idegen).
+A hu/de mezők MÁR természetesek voltak („Húsz éves vagyok." / „Ich bin zwanzig Jahre
+alt."). Fix: es → `Tengo veinte años.`, en → `I am twenty years old.` (mind a 4 nyelv
+így konzisztens + natív). Audit-tiszta (tengo/veinte/años tanított).
+
+## ✅ FB56 [P1 adat], „Estoy casado desde hace dos años" túl nehéz A1-re, KÉSZ (`data`)
+Idézetek (2×, easy:I have been married for two years.):
+- (07-19): „ez sokkal nehezebb mondat mint aminek itt fel kellene jonni"
+- (07-19): „ez túl nehéz még erre a szintre"
+Kártya id 1256 (`casado/casada`, presentacion). A `desde hace + present perfect`
+szerkezet A1 fölött van (mint FB33). Fix: leegyszerűsítve → es `Estoy casado.`,
+en `I am married.`, hu `Házas vagyok.`, de `Ich bin verheiratet.`
+
+## ✅ FB57 [P2 adat], „Delighted" ismeretlen/kitalálhatatlan EN szó, KÉSZ (`data`)
+Idézet (07-21, sentence:Encantado de hablar contigo.): „dilaghted? vagy mi az a szó?
+ilyen fordítása is van? az a baj, ez még nem jött elő és ezt soha nem találnám ki hogy
+ez kell."
+Kártya id 1045 (`encantado`, en-mező „pleased to meet you"). Az es helyes
+(`Encantado de hablar contigo.`), csak az en fordítás obskúrus. Fix: en →
+`Nice to talk with you.` (es/hu/de érintetlen).
+
+## ✅ FB58 [P2 adat], „La fruta es naranja" kétértelmű (szín↔gyümölcs), KÉSZ (`data`)
+Idézet (07-20, sentence:La fruta es naranja.): „ez forditva van nem?? ellenőrizd hogy
+biztos jó."
+Kártya id 1026 (`naranja` = narancssárga SZÍN, colores). A `naranja` szín is +
+gyümölcs is → „La fruta es naranja" félreérthető (a gyümölcs narancssárga VS a
+gyümölcs egy narancs). Fix: nem-gyümölcs alany → es `La casa es naranja.`
+(en „The house is orange.", hu „A ház narancssárga.", de „Das Haus ist orange.").
+
+## 📌 FB59 [info], „¿Dónde vives tú?", kell a „tú"?, NINCS TEENDŐ
+Idézet (07-16, easy:Where do you live?): „ez így biztos jó? kell oda a tú?"
+Kártya id 1032 (`tú vives`, presente_ir). A mondat SZÁNDÉKOSAN tartalmazza a „tú"-t,
+mert a kártya épp a `tú vives` alakot tanítja (a névmás nyomatékosít, nyelvtanilag
+helyes). FB8/FB47-minta: az adat helyes, nincs teendő.
+
+## 📌 FB60 [P2 feature, DÖNTÉSRE VÁR], Gépelős kártya: helyes szó kiírás + requeue
+Idézet (07-19, word:to introduce): „ennél a típusnál, amikor le kell irni a szót, és
+úgy küldi be a szót, a játékos, akkor írja ki a helyes szót, és tegye be a szot a szó
+kártyák, közé újra."
+Lényeg: gépelős szó-kártyán a beküldés után jelenjen meg a HELYES alak, és a szó
+kerüljön vissza a kártyák közé. Részben már fedve: FB25 (rossz betűk piros kiemelése
+a helyes alakkal) + FB43 (üres válasz → requeue) + a `Rating.Again` amúgy is
+visszahozza a due-t. Nyitott: rossz (nem üres) válasznál is MINDIG mutassuk-e a teljes
+helyes szót + azonnali requeue értékelés-felülírással? → egyeztetés (mint FB13/14/20).
+
+## Elfogadási kritérium (FB52–FB60 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld 76/76 ✅ (2026-07-22).
+- `node scripts/audit-corpus.mjs` → P1=0 ✅ (a 7 átírt mondat tanított szókincs).
+- `data/words/a1.json` parseable ✅; csak sentence-mezők változtak, id/es/topic érintetlen.
+- ⏳ Eszköz-verify: a 7 javított mondat + FB60 feature-döntés.
+
+---
+
 # Aktuális feladatok (iter1.2)
 
 Kimacha nyelvtanuló app (Expo/React Native).
