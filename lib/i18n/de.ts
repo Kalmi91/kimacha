@@ -38,6 +38,7 @@ export default {
     active: 'Aktiv',
     settings: 'Einstellungen',
     tree: 'Themen',
+    stats: 'Statistik',
   },
   active: {
     title: 'Aktiver Modus',
@@ -103,5 +104,22 @@ export default {
     send: 'Senden',
     cancel: 'Abbrechen',
     thanks: 'Danke!',
+  },
+  usage: {
+    plusOneMinute: '+1 Minute, juhu!',
+  },
+  stats: {
+    title: 'Statistik',
+    today: 'Heute',
+    thisWeek: 'Diese Woche',
+    allTime: 'Gesamt',
+    bestDay: 'Bester Tag',
+    daysActive: 'Aktive Tage',
+    minutes: (n: number) => `${n} Min.`,
+    last7Days: 'Letzte 7 Tage',
+    noData: 'Noch keine Daten, lern doch was!',
+    learningProgress: 'Lernfortschritt',
+    reviewsToday: 'Wiederholungen Heute',
+    wordsMastered: 'Gemeisterte Wörter',
   },
 };

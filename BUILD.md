@@ -327,3 +327,14 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   nővérem→húgom a younger/youngest mondatokban. Gate minden batch után: validate OK, audit-en
   P1=0 + P1-exam=0, tsc 0, jest 65/65. ⚠️ Id-blokkok majdnem tele (A1: 15, A2: 10 tartalék);
   az eredeti +400-500/+500-700 cél NEM fért el, tovább-sűrítés = user-döntés (blokk-bővítés).
+- **2026-07-22** (Opus): **Aktív-használat statisztika feature KÉSZ + commitolva** (uncommitted
+  WIP volt a fában, befejezve + zöldre hozva). Új `lib/usageStats.ts` (tiszta helper:
+  `localDateString`, `buildDayRange`, `summarizeUsage`) + `lib/usageTimer.ts` (foreground+interakció-
+  kapuzott perc-számláló, AppState-tudatos, idle-timeout 30 s, „+1 perc wauuuuuuuu" toast-listener).
+  Új `usage_minutes (date PK, minutes)` tábla mindkét DB-ben (`addUsageMinute`, `getUsageStats`,
+  IDatabase szinkron), app-szintű (nem pair-scoped). Új `app/(tabs)/stats.tsx` Statisztika tab
+  (ma/hét/összes/legjobb-nap/aktív-napok tile-ok, 7-napos oszlopdiagram, tanulási haladás: streak/
+  elsajátított/mai ismétlések) + `components/UsageToast.tsx` + root-layout timer-wiring (capture-phase
+  `noteInteraction`) + tab regisztráció. i18n ×4 (`tabs.stats`, `usage.plusOneMinute`, `stats.*` blokk).
+  Új tesztek: `usageStats.test.ts` + `usageTimer.test.ts`. Gate: tsc 0, jest **76/76** (65→76, +11).
+  Adat-JSON érintetlen. ⏳ Eszköz-verify a következő buildben (toast + Statisztika tab telefonon).

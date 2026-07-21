@@ -1,5 +1,6 @@
 import { createEmptyCard, type Card } from 'ts-fsrs';
 import { BACKUP_SCHEMA_VERSION, getAppVersion, type BackupPayload } from './backup';
+import { localDateString, summarizeUsage, type UsageStats } from './usageStats';
 
 export interface DB {
   ensureCard(wordId: number, type: string): Promise<void>;
@@ -39,6 +40,8 @@ export interface DB {
   setRandomTopics(v: boolean): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
   setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
+  addUsageMinute(): Promise<void>;
+  getUsageStats(): Promise<UsageStats>;
   exportAll(): Promise<BackupPayload>;
   importAll(payload: BackupPayload): Promise<void>;
 }
@@ -319,6 +322,21 @@ class MemoryDB implements DB {
 
   async setFeedbackBtnSide(side: 'left' | 'right'): Promise<void> {
     this.feedbackBtnSideMap.set(this.activePair, side);
+  }
+
+  // Usage-timer feature: one entry per local calendar day, app-wide (not
+  // scoped to a language pair, unlike cards/level). Web doesn't survive
+  // reload, same known limitation as the other in-memory maps above.
+  private usageMinutes: Map<string, number> = new Map();
+
+  async addUsageMinute(): Promise<void> {
+    const date = localDateString();
+    this.usageMinutes.set(date, (this.usageMinutes.get(date) ?? 0) + 1);
+  }
+
+  async getUsageStats(): Promise<UsageStats> {
+    const rows = [...this.usageMinutes.entries()].map(([date, minutes]) => ({ date, minutes }));
+    return summarizeUsage(rows);
   }
 
   // Q0: full learning-state backup. Memory state is serialized into the same

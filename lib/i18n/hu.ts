@@ -38,6 +38,7 @@ export default {
     active: 'Aktív',
     settings: 'Beállítások',
     tree: 'Témák',
+    stats: 'Statisztika',
   },
   active: {
     title: 'Aktív mód',
@@ -103,5 +104,22 @@ export default {
     send: 'Küldés',
     cancel: 'Mégse',
     thanks: 'Köszönjük!',
+  },
+  usage: {
+    plusOneMinute: '+1 perc wauuuuuuuu',
+  },
+  stats: {
+    title: 'Statisztika',
+    today: 'Ma',
+    thisWeek: 'Ezen a Héten',
+    allTime: 'Összesen',
+    bestDay: 'Legjobb Nap',
+    daysActive: 'Aktív Napok',
+    minutes: (n: number) => `${n} perc`,
+    last7Days: 'Elmúlt 7 Nap',
+    noData: 'Még nincs adat, tanulj valamit!',
+    learningProgress: 'Tanulási Haladás',
+    reviewsToday: 'Mai Ismétlések',
+    wordsMastered: 'Elsajátított Szavak',
   },
 };

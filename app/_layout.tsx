@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { View } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Stack, ThemeProvider as NavThemeProvider, DarkTheme, DefaultTheme, router } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
@@ -8,6 +9,8 @@ import { getDb } from '@/lib/database';
 import { initI18n, setLanguage } from '@/lib/i18n';
 import { sendAnalyticsIfNeeded } from '@/lib/analytics';
 import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
+import { startUsageTimer, stopUsageTimer, noteInteraction } from '@/lib/usageTimer';
+import UsageToast from '@/components/UsageToast';
 
 export { ErrorBoundary } from 'expo-router';
 
@@ -60,13 +63,30 @@ export default function RootLayout() {
 function RootLayoutNav() {
   const { theme } = useTheme();
 
+  // Active-usage timer runs for the whole app lifetime; noteInteraction() is
+  // wired at the root via a capture-phase touch responder below, so no
+  // individual screen/handler needs to be patched.
+  useEffect(() => {
+    startUsageTimer();
+    return () => stopUsageTimer();
+  }, []);
+
   return (
     <NavThemeProvider value={theme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="onboarding" options={{ headerShown: false }} />
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="spelling" options={{ headerShown: false }} />
-      </Stack>
+      <View
+        style={{ flex: 1 }}
+        onStartShouldSetResponderCapture={() => {
+          noteInteraction();
+          return false; // never claim the touch, just observe it
+        }}
+      >
+        <Stack>
+          <Stack.Screen name="onboarding" options={{ headerShown: false }} />
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="spelling" options={{ headerShown: false }} />
+        </Stack>
+        <UsageToast />
+      </View>
     </NavThemeProvider>
   );
 }
