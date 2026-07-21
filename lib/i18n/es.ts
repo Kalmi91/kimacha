@@ -38,6 +38,7 @@ export default {
     active: 'Activo',
     settings: 'Ajustes',
     tree: 'Temas',
+    stats: 'Estadísticas',
   },
   active: {
     title: 'Modo activo',
@@ -103,5 +104,22 @@ export default {
     send: 'Enviar',
     cancel: 'Cancelar',
     thanks: '¡Gracias!',
+  },
+  usage: {
+    plusOneMinute: '¡+1 minuto, guau!',
+  },
+  stats: {
+    title: 'Estadísticas',
+    today: 'Hoy',
+    thisWeek: 'Esta Semana',
+    allTime: 'Total Histórico',
+    bestDay: 'Mejor Día',
+    daysActive: 'Días Activos',
+    minutes: (n: number) => `${n} min`,
+    last7Days: 'Últimos 7 Días',
+    noData: '¡Aún no hay datos, aprende algo!',
+    learningProgress: 'Progreso de Aprendizaje',
+    reviewsToday: 'Repasos de Hoy',
+    wordsMastered: 'Palabras Dominadas',
   },
 };

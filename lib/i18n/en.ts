@@ -38,6 +38,7 @@ export default {
     active: 'Active',
     settings: 'Settings',
     tree: 'Topics',
+    stats: 'Stats',
   },
   active: {
     title: 'Active mode',
@@ -103,5 +104,22 @@ export default {
     send: 'Send',
     cancel: 'Cancel',
     thanks: 'Thank You!',
+  },
+  usage: {
+    plusOneMinute: '+1 minute wooo!',
+  },
+  stats: {
+    title: 'Usage Stats',
+    today: 'Today',
+    thisWeek: 'This Week',
+    allTime: 'All-Time Total',
+    bestDay: 'Best Day',
+    daysActive: 'Days Active',
+    minutes: (n: number) => `${n} min`,
+    last7Days: 'Last 7 Days',
+    noData: 'No usage yet, go learn something!',
+    learningProgress: 'Learning Progress',
+    reviewsToday: 'Reviews Today',
+    wordsMastered: 'Words Mastered',
   },
 };

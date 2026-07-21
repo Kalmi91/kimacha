@@ -1,6 +1,7 @@
 import * as SQLite from 'expo-sqlite';
 import { createEmptyCard, type Card } from 'ts-fsrs';
 import { BACKUP_SCHEMA_VERSION, BACKUP_TABLES, getAppVersion, type BackupPayload } from './backup';
+import { localDateString, summarizeUsage, type UsageStats } from './usageStats';
 
 export interface DB {
   ensureCard(wordId: number, type: string): Promise<void>;
@@ -40,6 +41,8 @@ export interface DB {
   setRandomTopics(v: boolean): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
   setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
+  addUsageMinute(): Promise<void>;
+  getUsageStats(): Promise<UsageStats>;
   exportAll(): Promise<BackupPayload>;
   importAll(payload: BackupPayload): Promise<void>;
 }
@@ -136,6 +139,10 @@ class SQLiteDB implements DB {
         step INTEGER NOT NULL DEFAULT 0,
         due TEXT NOT NULL,
         PRIMARY KEY (pair, word_id)
+      );
+      CREATE TABLE IF NOT EXISTS usage_minutes (
+        date TEXT PRIMARY KEY,
+        minutes INTEGER NOT NULL DEFAULT 0
       );
     `);
     // Migration: add random_topics column (DBs created before the random-topic toggle).
@@ -548,6 +555,23 @@ class SQLiteDB implements DB {
       'INSERT INTO learn_settings (pair, feedback_btn_side) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET feedback_btn_side = excluded.feedback_btn_side',
       [this.activePair, side]
     );
+  }
+
+  // Usage-timer feature: one row per local calendar day, not scoped to a
+  // language pair (it's app-wide active-use time, not learning progress).
+  async addUsageMinute(): Promise<void> {
+    const db = await this.open();
+    const date = localDateString();
+    await db.runAsync(
+      'INSERT INTO usage_minutes (date, minutes) VALUES (?, 1) ON CONFLICT(date) DO UPDATE SET minutes = minutes + 1',
+      [date]
+    );
+  }
+
+  async getUsageStats(): Promise<UsageStats> {
+    const db = await this.open();
+    const rows = await db.getAllAsync<any>('SELECT date, minutes FROM usage_minutes');
+    return summarizeUsage(rows.map((r: any) => ({ date: r.date, minutes: r.minutes })));
   }
 
   // Q0: full learning-state backup, every table across all pairs.
