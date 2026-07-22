@@ -830,8 +830,39 @@ export default function LearnScreen() {
     }
   };
 
+  // FB60: grade a card Again without leaving the current session queue. Mirrors
+  // advance()'s SRS writes but runs them optimistically in the background (FB11/
+  // FB19 pattern) and does NOT step the index, the caller decides where the card
+  // goes (requeueCurrent puts it at the back). One Again write only, no double
+  // penalty for the retry the learner is about to get.
+  const gradeAgainBackground = (item: DueItem, startTime: number) => {
+    const db = getDb();
+    (async () => {
+      try {
+        const updated = f.repeat(item.card, new Date())[Rating.Again].card;
+        await db.updateCard(item.wordId, item.type, updated);
+        await db.recordAttempt(item.wordId, item.type, false, Date.now() - startTime);
+        await db.updateStreak();
+        setKnownWords(await db.getReviewedWordCount(level));
+        await checkLevelChange(false);
+        const streakData = await db.getStreak();
+        setStreak(streakData.current_count);
+      } catch {}
+    })();
+    setReviewed((r) => r + 1);
+  };
+
   const handleTypingNext = () => {
     if (typingResult === 'wrong') {
+      // FB60: a missed typed WORD goes back into this session's deck (not just its
+      // SRS due date) so the learner retries it now. The correct form is already
+      // shown above (the `back` line + FB25 char-diff). Sentence typing keeps the
+      // plain advance.
+      if (current && current.type === 'word') {
+        gradeAgainBackground(current, cardStartTime);
+        requeueCurrent();
+        return;
+      }
       advance(Rating.Again);
     } else {
       advance(Rating.Good);
