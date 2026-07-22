@@ -689,9 +689,12 @@ jest 76/76, `data/words/a1.json` 7 kártya mondat-mezői módosultak. ⏳ Eszkö
 Idézet (07-16, easy:The trousers are dark green.): „itt trousers van és spanyolul meg
 nincs többes szám."
 Kártya id 1251 (`oscuro`, colores). EN „trousers" (pluralia tantum) ↔ es egyes
-„El pantalón". A tile-összerakós kártyán a szám-eltérés zavaró. Fix: es többesre
-igazítva → `Los pantalones son verde oscuro.` (hu „A nadrágok sötétzöldek.", de
-„Die Hosen sind dunkelgrün."). Csak a 4 sentence-mező, szó-mező érintetlen.
+„El pantalón". A tile-összerakós kártyán a szám-eltérés zavaró. **Döntés
+(2026-07-22, AskUserQuestion): ES marad egyes (natív), a szótári kártyához
+(`el pantalón` egyes) igazodva; az EN oldal természetesen többes (trousers), ez
+nem hiba.** A rövid ideig alkalmazott többes átírás visszaállítva egyesre:
+`El pantalón es verde oscuro.` (hu „A nadrág sötétzöld.", de „Die Hose ist
+dunkelgrün."). Csak a 4 sentence-mező mozgott, szó-mező érintetlen.
 
 ## ✅ FB53 [P2 adat], EN/ES szám-eltérés „fresh fruit" ↔ „frutas frescas", KÉSZ (`data`)
 Idézet (07-19, sentence:Ellos venden frutas frescas.): „frutas az többes szám,
@@ -704,8 +707,10 @@ megszámlálhatatlan „fresh fruit". Fix: es egyesre → `Ellos venden fruta fr
 Idézet (07-21, easy:Vegetables are healthy.): „vegetables akkor többes szám és akkor
 las versuras nem?"
 Kártya id 1061 (`la verdura`, comida). en többes „Vegetables" ↔ es kollektív egyes
-„La verdura". Fix: es többesre → `Las verduras son sanas.` (hu „A zöldségek
-egészségesek."). A szó-mező (`la verdura`) marad, a mondat a többes alakot mutatja.
+„La verdura". **Döntés (2026-07-22): ES marad egyes (natív), a szótári kártyához
+(`la verdura` egyes) igazodva**, a rövid ideig alkalmazott többes visszaállítva:
+`La verdura es sana.` (hu „A zöldség egészséges."). Az en oldal marad természetes
+többes. (FB53 `fruta fresca` már egyes = e policyval konzisztens, marad.)
 
 ## ✅ FB55 [P2 adat], „Mi edad es veinte años" nem természetes, KÉSZ (`data`)
 Idézetek (2×):
@@ -761,9 +766,20 @@ helyes szót + azonnali requeue értékelés-felülírással? → egyeztetés (m
 
 ## Elfogadási kritérium (FB52–FB60 forduló)
 - `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld 76/76 ✅ (2026-07-22).
-- `node scripts/audit-corpus.mjs` → P1=0 ✅ (a 7 átírt mondat tanított szókincs).
+- `node scripts/audit-corpus.mjs` → P1=0 ✅ (az átírt mondatok tanított szókincs).
 - `data/words/a1.json` parseable ✅; csak sentence-mezők változtak, id/es/topic érintetlen.
-- ⏳ Eszköz-verify: a 7 javított mondat + FB60 feature-döntés.
+- ⏳ Eszköz-verify: a javított mondatok + FB60 feature-döntés.
+
+## Korpusz-sweep (sentence-qa linter, 2026-07-22)
+A 7 fix mintáiból új linter: `scripts/sentence-qa.mjs` + `/sentence-qa` skill
+(5 osztály: NUM/COLL szám, HARD szint-feletti nyelvtan, AGE „edad es", OBSCURE
+ritka EN, AMBIG szín↔tárgy). a0/a1/a2 söprés eredménye:
+- **HARD/AGE/OBSCURE/AMBIG = 0**, a valódi bug-osztályok (FB55/56/57/58) sehol
+  máshol nem ismétlődnek.
+- NUM/COLL = 3 találat (#1077, #1490 `pantalón`; #702 `verdura`), **mind
+  vocab-konzisztens egyes** → a fenti egyes-policyval helyesek, nincs teendő.
+- A természetesen szám-eltérő ES főnevek (ropa, vacaciones, noticias, deberes,
+  gente) a linterben `natural: true` = kiszűrve, sose flag.
 
 ---
 
