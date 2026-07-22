@@ -754,15 +754,22 @@ Kártya id 1032 (`tú vives`, presente_ir). A mondat SZÁNDÉKOSAN tartalmazza a
 mert a kártya épp a `tú vives` alakot tanítja (a névmás nyomatékosít, nyelvtanilag
 helyes). FB8/FB47-minta: az adat helyes, nincs teendő.
 
-## 📌 FB60 [P2 feature, DÖNTÉSRE VÁR], Gépelős kártya: helyes szó kiírás + requeue
+## ✅ FB60 [P2 feature], Gépelős kártya: helyes szó kiírás + requeue, KÉSZ (`index.tsx`)
 Idézet (07-19, word:to introduce): „ennél a típusnál, amikor le kell irni a szót, és
 úgy küldi be a szót, a játékos, akkor írja ki a helyes szót, és tegye be a szot a szó
 kártyák, közé újra."
-Lényeg: gépelős szó-kártyán a beküldés után jelenjen meg a HELYES alak, és a szó
-kerüljön vissza a kártyák közé. Részben már fedve: FB25 (rossz betűk piros kiemelése
-a helyes alakkal) + FB43 (üres válasz → requeue) + a `Rating.Again` amúgy is
-visszahozza a due-t. Nyitott: rossz (nem üres) válasznál is MINDIG mutassuk-e a teljes
-helyes szót + azonnali requeue értékelés-felülírással? → egyeztetés (mint FB13/14/20).
+**Döntés (2026-07-22, user „menjen"): csak ROSSZ válasznál, session-sor végére
+requeue, Again-értékeléssel (nincs dupla-büntetés).** A „helyes szó kiírás" MÁR
+megvolt: a revealed typing-blokk (`index.tsx` ~1187) rossznál is kiírja a teljes
+`back` helyes alakot + FB25 per-karakter diff. Az egyetlen hiányzó rész a requeue
+volt: rossz gépelt SZÓ-nál eddig `advance(Rating.Again)` = értékel + továbblép,
+a szó csak SRS-due-n jött vissza, nem a session-pakliba.
+Fix: új `gradeAgainBackground(item, startTime)` helper (advance SRS-írásai
+optimista háttérben, index-léptetés NÉLKÜL, FB11/FB19-minta), és `handleTypingNext`
+a rossz + `type==='word'` ágon `gradeAgainBackground(current, cardStartTime)` +
+`requeueCurrent()` (a meglévő FB43/FB46 helper, a kártyát a sor végére teszi). A
+mondat-gépelés (`type==='sentence'`) marad a sima `advance(Rating.Again)`. Egy
+Again-írás / kör, nincs dupla-büntetés a retry-ért. tsc 0, jest 76/76.
 
 ## Elfogadási kritérium (FB52–FB60 forduló)
 - `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld 76/76 ✅ (2026-07-22).
