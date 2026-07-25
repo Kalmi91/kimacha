@@ -65,7 +65,7 @@ pinnelve (2026-07-12): **export-fájl + share sheet** (nem Drive-auth, nem csak-
 memória-db-n (payload minden táblát visszaad, importAll után azonos állapot);
 adat-JSON érintetlen; eszköz-verify (share sheet + visszatöltés) = user, következő build.
 
-### Q1. [BLOCKED: DESIGN-FIRST, user-jóváhagyás kell, autonóm burn UGORJA ÁT], Mátrix per-ág szókészlet: A0 közös, A1+ ágankénti
+### Q1. [UNBLOCKED es-ág (ITER4.md jóváhagyva 2026-07-22); en/hu/de ág még DESIGN-FIRST], Mátrix per-ág szókészlet: A0 közös, A1+ ágankénti
 
 **User vízió (szó szerint, 2026-06-22, ne tömörítsd, ne javítsd):**
 
@@ -107,18 +107,19 @@ es-freq top-100-ra igazítandó (külön task).
   `data/topics/<target>/aN.json` (cél-nyelv grammatika), `data/sublevels/<target>/aN.json`.
 - A tananyag a **párfüggő** (native+target), nem csak target-függő.
 
-**Nyitott design-kérdések (ELŐBB tisztázni user-rel, → ezért BLOCKED):**
-1. Mit jelent pontosan „hu→en ≠ en→hu" a szó-LISTÁN túl? (a target-szavak amúgy is
-   mások, mert más a cél-nyelv; a native csak glossza). Sorrend? Nehézség-súlyozás?
-   Hamis-barát/interferencia-fókusz a native szerint? → ez a tényleges irány-érzékenység.
-2. Szó-sourcing forrás cél-nyelvenként: es=SUBTLEX-ESP (megvan); en/hu/de freq-lista forrás?
-3. Az es jelenleg a MEGOSZTOTT készletben van (A1 882 stb.), átmozgatás `data/words/es/`-be,
-   vagy a megosztott marad az es-kanon és csak en/hu/de kap külön track-et?
-4. Topic-fa mind a 4 cél-nyelvhez (mint en grammar topics), ki/hogyan írja.
-5. `scripts/audit-corpus.mjs` minden cél-nyelvre kiterjesztve.
+**Design-kérdések, es-ágra FELOLDVA (`ITER4.md` D1–D7, 2026-07-22):**
+1. ~~„hu→en ≠ en→hu" jelentése~~ → **hamis-barát fókusz** (D4/D7): native szerinti
+   buktató-szavak distractor-súlyozása; csak distractor, külön kártya nincs.
+2. ~~Szó-sourcing forrás~~ → **SUBTLEX család** (D3); es=SUBTLEX-ESP. A0=freq-rangsorolt
+   TARTALMAS szó top-100 (funkciószó kiszűrve, D5); A1+=Cervantes Plan Curricular, B2 plafon (D6).
+3. ~~es tárolás~~ → **marad megosztott = es-kanon** (D2), zéró migráció.
+4. Topic-fa többi cél-nyelvhez → **HALASZTVA** (D1: csak es-ág; es-nek már van A0/A1/A2 fája).
+5. `audit-corpus.mjs` minden cél-nyelvre → **HALASZTVA** (D1).
 
-**Mikor build-elhető:** előbb design-doc (`ITER4.md`) user-rel jóváhagyva (mint FB20/iter3
-doc-driven), CSAK utána per-ág A1 batch-ek. Addig ez az item NEM autonóm-burn-ölhető.
+**es-ág build-terv (ITER4.md §2):** WP1 A0 top-100 realign (SUBTLEX-ESP, tartalmas szó) ·
+WP2 A1+ bővítés Plan Curricular felé (B2 plafon, meglévő 882 marad) · WP3 hamis-barát
+distractor-réteg. Munkacsomagonként commit + gate. **es-ág mostantól token-burn-ölhető.**
+en/hu/de ág továbbra is DESIGN-FIRST (későbbi ITER doc).
 
 **Acceptance (a tényleges build-höz, később):** `ITER4.md` jóváhagyva; per cél-nyelv
 A0-közös + A1 saját track; `audit-corpus` P1=0 minden track-en; `tsc` tiszta; jest zöld;
