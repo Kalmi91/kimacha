@@ -790,6 +790,83 @@ ritka EN, AMBIG szín↔tárgy). a0/a1/a2 söprés eredménye:
 
 ---
 
+# 📋 Feedback, 2026-07-24/27 forduló (v3.0.6 telefon-teszt, A1 en→es + stats-tab)
+
+## ✅ FB61 [P1], „el arrroz", hármas betű a kamu variánsban, KÉSZ (`spellingVariants.ts`)
+Idézet (07-24, recog:rice): „el arrroz ilyen szó nem létezik ilyet ne rakj bele sose
+3 betű egymás mellett sosincs semmilyen nyelvbe"
+Gyökérok: az `el arroz` már tartalmaz `rr`-t, és két él is triplázhat, a DOUBLABLE
+'r' duplázása és az `r`→`rr` CONFUSIONS-csere. Fix: az `add()` szűrő eldob minden
+variánst, amiben (fold után) 3 azonos betű áll egymás mellett, az FB51 dupla-
+magánhangzó guard mintájára. Teszt: `el arroz`, `el perro`, `la calle`, `la acción`.
+Megjegyzés: az FB64 után úgyis nincs futó fogyasztója, a guard a modul jövőbeni
+újrahasznosítására marad bent.
+
+## 📌 FB62 [info], „Desayuno un yogur natural.", adat HELYES, nincs teendő
+Idézet (07-26, easy:I have a plain yogurt for breakfast.): „és hol van a Tengo meg
+az egész ez kicsit furcsa mondat, vagy így használják a spanyolok?"
+Kártya id 1750 (`el yogur`, comida). Igen, így használják: a `desayunar` maga jelenti
+a „reggelire eszik" jelentést (nincs külön „tengo"), és a szó TANÍTOTT
+(`data/words/a1.json`, `desayunar`), így az FB3-korpuszszabályt sem sérti,
+`audit-corpus.mjs` P1=0. FB47/FB59-minta: az adat helyes, nincs teendő.
+
+## ✅ FB63 [P2 feature], Mérföldkő-gratuláció a tanult nyelven, KÉSZ (`usageTimer.ts` + `UsageToast.tsx`)
+Idézet (07-26, easy:I drink tea with honey.): „legyen már egy olyan szöveg hogy ha 30
+perce használom az appot akkor egy waooooo 30 perce használod nagyon ügyes vagy vagy
+valami hasonló menő szöveg olyan nyelven amilyen nyelven tanulok"
+**Döntés (AskUserQuestion): mindkettő, több lépcső.** `usageTimer` új
+`onUsageMilestone()` eseménye: `session` = 30 aktív perc EBBEN az app-futásban
+(újraindítás nulláz), `daily` = 30 és 60 perc a mai összesenből. A napi lépcső a
+perzisztált napösszeg pontos elérésére tüzel (az előző érték eggyel kisebb volt),
+így naponta pontosan egyszer szól, app-újraindítás után is. Ehhez az
+`addUsageMinute()` mostantól a nap új összegét adja vissza (`Promise<number>`,
+SQLite + web impl is). A meglévő „+1 perc" pill viszi a szöveget: mérföldkőnél
+zöld, szélesebb, 4 mp-ig áll, és a szöveg a TANULT nyelven megy
+(`stringsFor(target)` az i18n-ben, nem a UI-nyelv). i18n ×4: `usage.milestoneSession`
+/ `usage.milestoneDaily` `{min}` helyőrzővel.
+
+## ✅ FB64 [P1 UX], A 4-opciós recog kártya KIVÉVE, KÉSZ (`index.tsx`)
+Idézet (07-26, recog:the pepper): „az a baj, Itt hogy igazából csak kis elgépeléseim
+vannak. Azt akarom, hogy ez a 4 es ne legyen benne, ezt írd ki. vedd ki ez egy
+felesleges funkció valójában nem segít"
+**Döntés (AskUserQuestion): teljes kivétel** (nem küszöb-emelés, nem near-miss
+szűrés). Törölve `app/(tabs)/index.tsx`-ből: `RECOGNITION_AT`, `failsRef`,
+`recogWrongPicks`, `recogResolved`, a `pickRecogRealWords` + `rng32` + `foldStr`
+helyerek, a teljes recog render-blokk és a `recog*` stílusok. Rossz gépelésnél
+mostantól marad a gépelős kártya + FB60 requeue, és az FB32 néma-felolvasás guard
+is megszűnt (a válasz mindig felolvasásra kerül, nincs mit eltakarnia).
+Nyugdíjazva, de a fájlok bent maradnak: `lib/spellingVariants.ts` (+ tesztjei) és a
+`card.pickSpelling` i18n kulcsok, ha a mód valaha visszatér. Ezzel az FB44/45/48–51
+recog-munka kikerül a futó kódútból.
+
+## ✅ FB65 [P2 feature], Heti tanulási cél a statisztikában, KÉSZ (`stats.tsx` + `settings.tsx`)
+Idézet (07-27, stats-tab): „legyen a statisztikába egy last 7day rész ami az összes
+appban töltött időt mutatja, és legyen úgy hogy be kelljen állítani hogy hány órát
+akarok spanyol tanulással tölteni. és legyen úgy hogy az elmúlt 7 napot nézze, azt
+akarom, hogy mutassa ha lemegy ki írt cél. mert be akarom állítani 7 órára, és elérni
+és túlszárnyalni"
+A 7 napos összeg + napi bontás MÁR megvolt (`usage.thisWeek` + a last7Days chart),
+az új rész a CÉL. Settings: „Heti tanulási cél" sor −/+ lépcsőzővel, 1 óra/lépés,
+1–35 óra/hét, alap 7 óra (`DEFAULT_WEEKLY_GOAL_MINUTES = 420`). Tárolás:
+`learn_settings.weekly_goal_minutes` (ALTER-migráció a régi DB-knek) + web-impl
+tükör. Stats: új „Heti Cél" kártya, `4.2 / 7 óra` + progress bar +
+állapotsor (`⚠️ Még X óra a célig` sárgával, `🏆 Heti cél teljesítve!` zölddel).
+Tiszta logika: `weeklyGoalProgress()` a `lib/usageStats.ts`-ben (pct clamp, behind,
+remaining), tesztelve. i18n ×4: `stats.weeklyGoal/goalProgress/goalBehind/goalReached`
++ `settings.weeklyGoal/weeklyGoalHours`.
+
+## Elfogadási kritérium (FB61–FB65 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld 82/82 ✅ (2026-07-28, 76→82: +1
+  spellingVariants triple-guard, +2 usageTimer mérföldkő, +3 weeklyGoalProgress).
+- `npx expo lint`: 18 probléma (8 error, 10 warning), a HEAD-alapvonal 18 (9 error,
+  9 warning) volt, azaz nincs ÚJ hibaosztály (mind a régi `react-hooks/refs`
+  animált-ref minta).
+- `node scripts/audit-corpus.mjs` → P1=0 ✅ (adat nem változott ebben a fordulóban).
+- ⏳ Eszköz-verify: recog eltűnése rossz gépelés után, mérföldkő-toast 30 percnél
+  (spanyolul), heti cél állítás + a stats kártya lemaradás-jelzése.
+
+---
+
 # Aktuális feladatok (iter1.2)
 
 Kimacha nyelvtanuló app (Expo/React Native).

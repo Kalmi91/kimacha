@@ -77,6 +77,8 @@ export default {
     changeLanguage: 'Nyelv Váltás',
     wordsOnly: 'Csak szavak',
     randomTopics: 'Random témák',
+    weeklyGoal: 'Heti tanulási cél',
+    weeklyGoalHours: (h: string) => `${h} óra / hét`,
     spellingPractice: (n: number) => `Helyesírás-gyakorló (${n})`,
   },
   backup: {
@@ -107,6 +109,8 @@ export default {
   },
   usage: {
     plusOneMinute: '+1 perc wauuuuuuuu',
+    milestoneSession: '🔥 Wow, {min} perce nyomod egyhuzamban!',
+    milestoneDaily: '🎉 Ma már {min} perc, nagyon ügyes vagy!',
   },
   stats: {
     title: 'Statisztika',
@@ -117,6 +121,10 @@ export default {
     daysActive: 'Aktív Napok',
     minutes: (n: number) => `${n} perc`,
     last7Days: 'Elmúlt 7 Nap',
+    weeklyGoal: 'Heti Cél',
+    goalProgress: (done: string, goal: string) => `${done} / ${goal} óra`,
+    goalBehind: (left: string) => `⚠️ Még ${left} óra a célig`,
+    goalReached: '🏆 Heti cél teljesítve!',
     noData: 'Még nincs adat, tanulj valamit!',
     learningProgress: 'Tanulási Haladás',
     reviewsToday: 'Mai Ismétlések',

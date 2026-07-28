@@ -1,7 +1,7 @@
 import * as SQLite from 'expo-sqlite';
 import { createEmptyCard, type Card } from 'ts-fsrs';
 import { BACKUP_SCHEMA_VERSION, BACKUP_TABLES, getAppVersion, type BackupPayload } from './backup';
-import { localDateString, summarizeUsage, type UsageStats } from './usageStats';
+import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, type UsageStats } from './usageStats';
 
 export interface DB {
   ensureCard(wordId: number, type: string): Promise<void>;
@@ -39,9 +39,11 @@ export interface DB {
   setWordsOnly(v: boolean): Promise<void>;
   getRandomTopics(): Promise<boolean>;
   setRandomTopics(v: boolean): Promise<void>;
+  getWeeklyGoalMinutes(): Promise<number>;
+  setWeeklyGoalMinutes(minutes: number): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
   setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
-  addUsageMinute(): Promise<void>;
+  addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
   exportAll(): Promise<BackupPayload>;
   importAll(payload: BackupPayload): Promise<void>;
@@ -131,7 +133,8 @@ class SQLiteDB implements DB {
         pair TEXT PRIMARY KEY,
         words_only INTEGER,
         random_topics INTEGER,
-        feedback_btn_side TEXT
+        feedback_btn_side TEXT,
+        weekly_goal_minutes INTEGER
       );
       CREATE TABLE IF NOT EXISTS spelling_list (
         pair TEXT NOT NULL,
@@ -152,6 +155,10 @@ class SQLiteDB implements DB {
     // Migration: add feedback_btn_side column (DBs created before the draggable feedback button, FB41).
     try {
       await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN feedback_btn_side TEXT');
+    } catch {}
+    // Migration: add weekly_goal_minutes column (DBs created before the weekly study goal, FB65).
+    try {
+      await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN weekly_goal_minutes INTEGER');
     } catch {}
     const meta = await this.db.getFirstAsync<any>('SELECT id FROM user_meta WHERE id = 1');
     if (!meta) {
@@ -543,6 +550,23 @@ class SQLiteDB implements DB {
     );
   }
 
+  // FB65: weekly study goal in minutes, compared against the rolling 7-day
+  // usage total on the Stats tab. Stored per pair like the other learn settings
+  // (the measured minutes themselves are app-wide, see usage_minutes).
+  async getWeeklyGoalMinutes(): Promise<number> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT weekly_goal_minutes FROM learn_settings WHERE pair = ?', [this.activePair]);
+    return typeof row?.weekly_goal_minutes === 'number' ? row.weekly_goal_minutes : DEFAULT_WEEKLY_GOAL_MINUTES;
+  }
+
+  async setWeeklyGoalMinutes(minutes: number): Promise<void> {
+    const db = await this.open();
+    await db.runAsync(
+      'INSERT INTO learn_settings (pair, weekly_goal_minutes) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET weekly_goal_minutes = excluded.weekly_goal_minutes',
+      [this.activePair, minutes]
+    );
+  }
+
   async getFeedbackBtnSide(): Promise<'left' | 'right'> {
     const db = await this.open();
     const row = await db.getFirstAsync<any>('SELECT feedback_btn_side FROM learn_settings WHERE pair = ?', [this.activePair]);
@@ -559,13 +583,17 @@ class SQLiteDB implements DB {
 
   // Usage-timer feature: one row per local calendar day, not scoped to a
   // language pair (it's app-wide active-use time, not learning progress).
-  async addUsageMinute(): Promise<void> {
+  // FB63: returns today's new total so the timer can spot a milestone crossing
+  // (30/60 minutes) without re-reading the whole usage table every minute.
+  async addUsageMinute(): Promise<number> {
     const db = await this.open();
     const date = localDateString();
     await db.runAsync(
       'INSERT INTO usage_minutes (date, minutes) VALUES (?, 1) ON CONFLICT(date) DO UPDATE SET minutes = minutes + 1',
       [date]
     );
+    const row = await db.getFirstAsync<any>('SELECT minutes FROM usage_minutes WHERE date = ?', [date]);
+    return row?.minutes ?? 0;
   }
 
   async getUsageStats(): Promise<UsageStats> {

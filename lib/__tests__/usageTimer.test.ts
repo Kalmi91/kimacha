@@ -4,10 +4,11 @@ import {
   stopUsageTimer,
   noteInteraction,
   onActiveMinute,
+  onUsageMilestone,
   __resetForTests,
 } from '../usageTimer';
 
-const mockAddUsageMinute = jest.fn().mockResolvedValue(undefined);
+const mockAddUsageMinute = jest.fn().mockResolvedValue(0);
 jest.mock('../database', () => ({
   getDb: () => ({ addUsageMinute: mockAddUsageMinute }),
 }));
@@ -18,6 +19,7 @@ describe('usageTimer', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     mockAddUsageMinute.mockClear();
+    mockAddUsageMinute.mockResolvedValue(0);
     jest.spyOn(AppState, 'addEventListener').mockImplementation((_event, handler) => {
       changeHandler = handler as (state: string) => void;
       return { remove: jest.fn() } as any;
@@ -105,6 +107,55 @@ describe('usageTimer', () => {
     noteInteraction();
     jest.advanceTimersByTime(1_000); // 10 + 49 + 1 = 60
     expect(onMinute).toHaveBeenCalledTimes(1);
+  });
+
+  // FB63: one full active minute, split so the 30s idle window never lapses.
+  const advanceOneMinute = () => {
+    noteInteraction();
+    jest.advanceTimersByTime(30_000);
+    noteInteraction();
+    jest.advanceTimersByTime(30_000);
+  };
+
+  it('fires the session milestone once at 30 active minutes', () => {
+    // Day total kept away from 30/60 so only the session milestone can fire.
+    mockAddUsageMinute.mockResolvedValue(500);
+    const onMilestone = jest.fn();
+    onUsageMilestone(onMilestone);
+    startUsageTimer();
+
+    for (let i = 0; i < 29; i++) advanceOneMinute();
+    expect(onMilestone).not.toHaveBeenCalled();
+
+    advanceOneMinute();
+    expect(onMilestone).toHaveBeenCalledTimes(1);
+    expect(onMilestone).toHaveBeenCalledWith({ scope: 'session', minutes: 30 });
+
+    // 31st minute must stay quiet, the milestone is a one-shot.
+    advanceOneMinute();
+    expect(onMilestone).toHaveBeenCalledTimes(1);
+  });
+
+  it('fires the daily milestone on the minute that reaches the day total', async () => {
+    const onMilestone = jest.fn();
+    onUsageMilestone(onMilestone);
+    startUsageTimer();
+
+    mockAddUsageMinute.mockResolvedValue(29);
+    advanceOneMinute();
+    await Promise.resolve();
+    expect(onMilestone).not.toHaveBeenCalled();
+
+    mockAddUsageMinute.mockResolvedValue(30);
+    advanceOneMinute();
+    await Promise.resolve();
+    expect(onMilestone).toHaveBeenCalledWith({ scope: 'daily', minutes: 30 });
+
+    // The next minute is past the threshold, so nothing fires again.
+    mockAddUsageMinute.mockResolvedValue(31);
+    advanceOneMinute();
+    await Promise.resolve();
+    expect(onMilestone).toHaveBeenCalledTimes(1);
   });
 
   it('unsubscribe stops further notifications', () => {

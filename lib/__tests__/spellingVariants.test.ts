@@ -72,6 +72,16 @@ describe('spellingVariants', () => {
     }
   });
 
+  // FB61: "el arrroz", a tripled letter occurs in no language, so the option
+  // is unmasked at a glance. Both r-doubling and the r/rr confusion could make one.
+  it('never triples a letter (el arroz, el perro, la calle)', () => {
+    for (const w of ['el arroz', 'el perro', 'la calle', 'la acción', ...words]) {
+      for (const v of spellingVariants(w, 12)) {
+        expect(fold(v)).not.toMatch(/(\p{L})\1\1/u);
+      }
+    }
+  });
+
   // FB44: recognition options are [correct, ...spellingVariants(correct, 1)]
   // plus real words; the whole option set must never look identical to the
   // fold-based matcher, or two tiles would be indistinguishable answers.

@@ -23,3 +23,9 @@ export function t(): Strings {
 export function setLanguage(code: string) {
   current = translations[code] ?? en;
 }
+
+// FB63: strings in a language OTHER than the UI one, the milestone toast greets
+// the learner in the language being learned ("olyan nyelven amilyen nyelven tanulok").
+export function stringsFor(code: string): Strings {
+  return translations[code] ?? en;
+}

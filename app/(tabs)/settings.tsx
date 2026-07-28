@@ -11,6 +11,12 @@ import { LEVELS, type Level, getWordsForLevel } from '@/data/words';
 import { setPendingAction } from '@/lib/pendingAction';
 import { getDb } from '@/lib/database';
 import { validateBackupPayload } from '@/lib/backup';
+import {
+  DEFAULT_WEEKLY_GOAL_MINUTES,
+  MIN_WEEKLY_GOAL_MINUTES,
+  MAX_WEEKLY_GOAL_MINUTES,
+  WEEKLY_GOAL_STEP_MINUTES,
+} from '@/lib/usageStats';
 import FeedbackButton from '@/components/FeedbackModal';
 
 export default function SettingsScreen() {
@@ -27,12 +33,15 @@ export default function SettingsScreen() {
   // FB39: due count for the "Spelling Practice (N)" settings row, refreshed
   // every time Settings gains focus (e.g. after adding words on the Learn tab).
   const [spellingDue, setSpellingDue] = useState(0);
+  // FB65: weekly study goal in minutes (UI shows whole hours).
+  const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
 
   useFocusEffect(
     useCallback(() => {
       const db = getDb();
       db.getWordsOnly().then(setWordsOnly);
       db.getRandomTopics().then(setRandomTopics);
+      db.getWeeklyGoalMinutes().then(setWeeklyGoal);
       db.getOnboarding().then(o => { if (o) { setTarget(o.target); setDirection([o.source, o.target]); } });
       db.getLevel().then(l => setLevel(l.level as Level));
       db.getSpellingDueCount().then(setSpellingDue);
@@ -51,6 +60,17 @@ export default function SettingsScreen() {
     await getDb().setRandomTopics(v);
     setPendingAction({ type: 'selectTopic' });
     router.push('/');
+  };
+
+  // FB65: ± one hour per tap, clamped to the 1..35 h/week range.
+  const handleWeeklyGoalChange = async (deltaMinutes: number) => {
+    const next = Math.min(
+      MAX_WEEKLY_GOAL_MINUTES,
+      Math.max(MIN_WEEKLY_GOAL_MINUTES, weeklyGoal + deltaMinutes)
+    );
+    if (next === weeklyGoal) return;
+    setWeeklyGoal(next);
+    await getDb().setWeeklyGoalMinutes(next);
   };
 
   const themeOptions: { label: string; value: 'system' | 'light' | 'dark' }[] = [
@@ -202,6 +222,28 @@ export default function SettingsScreen() {
       <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.randomTopics}</Text>
         <Switch value={randomTopics} onValueChange={handleRandomTopicsToggle} trackColor={{ true: colors.tint }} />
+      </View>
+
+      {/* FB65: weekly study goal in whole hours, shown on the Stats tab. */}
+      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.weeklyGoal}</Text>
+        <View style={styles.goalStepper}>
+          <Pressable
+            style={[styles.goalBtn, { borderColor: colors.tint }]}
+            onPress={() => handleWeeklyGoalChange(-WEEKLY_GOAL_STEP_MINUTES)}
+          >
+            <Text style={[styles.goalBtnText, { color: colors.tint }]}>−</Text>
+          </Pressable>
+          <Text style={[styles.goalValue, { color: colors.text }]}>
+            {s.settings.weeklyGoalHours(String(Math.round(weeklyGoal / 60)))}
+          </Text>
+          <Pressable
+            style={[styles.goalBtn, { borderColor: colors.tint }]}
+            onPress={() => handleWeeklyGoalChange(WEEKLY_GOAL_STEP_MINUTES)}
+          >
+            <Text style={[styles.goalBtnText, { color: colors.tint }]}>+</Text>
+          </Pressable>
+        </View>
       </View>
 
       {/* FB39: entry point into the spelling-practice trainer screen. */}
@@ -399,5 +441,30 @@ const styles = StyleSheet.create({
   wordsOnlyLabel: {
     fontSize: 16,
     fontWeight: '600',
+  },
+  // FB65: −/+ stepper for the weekly goal row.
+  goalStepper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  goalBtn: {
+    width: 34,
+    height: 34,
+    borderRadius: 17,
+    borderWidth: 1.5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  goalBtnText: {
+    fontSize: 20,
+    fontWeight: '700',
+    lineHeight: 24,
+  },
+  goalValue: {
+    fontSize: 15,
+    fontWeight: '600',
+    minWidth: 96,
+    textAlign: 'center',
   },
 });

@@ -17,7 +17,16 @@ export const IDLE_TIMEOUT_MS = 30_000;
 const TICK_MS = 1000;
 const MINUTE_SECONDS = 60;
 
+// FB63: milestone celebrations on top of the per-minute toast.
+// `session` counts the active minutes of THIS app run (a restart starts over),
+// `daily` reads the persisted day total, so its crossing (previous total was
+// one lower) can only happen once per calendar day even across restarts.
+export type UsageMilestone = { scope: 'session' | 'daily'; minutes: number };
+const SESSION_MILESTONES = [30];
+const DAILY_MILESTONES = [30, 60];
+
 type Listener = () => void;
+type MilestoneListener = (milestone: UsageMilestone) => void;
 
 let running = false;
 let intervalId: ReturnType<typeof setInterval> | null = null;
@@ -25,8 +34,10 @@ let appStateSub: { remove: () => void } | null = null;
 let appState: AppStateStatus = 'active';
 let lastInteractionAt = 0;
 let activeSeconds = 0; // partial progress toward the next full minute (0-59)
+let sessionMinutes = 0; // FB63: full active minutes accrued in this app run
 
 const listeners = new Set<Listener>();
+const milestoneListeners = new Set<MilestoneListener>();
 
 function isCountingNow(): boolean {
   if (appState !== 'active') return false;
@@ -50,12 +61,31 @@ function tick() {
   activeSeconds += 1;
   if (activeSeconds >= MINUTE_SECONDS) {
     activeSeconds -= MINUTE_SECONDS;
-    getDb().addUsageMinute().catch(() => {});
+    sessionMinutes += 1;
+    getDb()
+      .addUsageMinute()
+      .then(todayMinutes => {
+        if (typeof todayMinutes === 'number' && DAILY_MILESTONES.includes(todayMinutes)) {
+          emitMilestone({ scope: 'daily', minutes: todayMinutes });
+        }
+      })
+      .catch(() => {});
+    if (SESSION_MILESTONES.includes(sessionMinutes)) {
+      emitMilestone({ scope: 'session', minutes: sessionMinutes });
+    }
     for (const listener of listeners) {
       try {
         listener();
       } catch {}
     }
+  }
+}
+
+function emitMilestone(milestone: UsageMilestone) {
+  for (const listener of milestoneListeners) {
+    try {
+      listener(milestone);
+    } catch {}
   }
 }
 
@@ -96,11 +126,19 @@ export function onActiveMinute(callback: Listener): () => void {
   return () => listeners.delete(callback);
 }
 
+// FB63: fires when a session (30 min) or daily (30/60 min) milestone is reached.
+export function onUsageMilestone(callback: MilestoneListener): () => void {
+  milestoneListeners.add(callback);
+  return () => milestoneListeners.delete(callback);
+}
+
 // Test-only: resets all module-level state between test cases. Not used by app code.
 export function __resetForTests(): void {
   stopUsageTimer();
   appState = 'active';
   lastInteractionAt = 0;
   activeSeconds = 0;
+  sessionMinutes = 0;
   listeners.clear();
+  milestoneListeners.clear();
 }

@@ -19,6 +19,28 @@ export interface UsageStats {
   daysActive: number;
 }
 
+// FB65: weekly study goal, measured against the rolling 7-day usage total.
+// Default 7 hours a week (the target the user asked for), settable in Settings.
+export const DEFAULT_WEEKLY_GOAL_MINUTES = 420;
+export const MIN_WEEKLY_GOAL_MINUTES = 60;
+export const MAX_WEEKLY_GOAL_MINUTES = 2100; // 35 hours, 5 a day
+export const WEEKLY_GOAL_STEP_MINUTES = 60;
+
+export interface GoalProgress {
+  pct: number; // 0..1, clamped, for the progress bar
+  behind: boolean; // still short of the goal for this 7-day window
+  remaining: number; // minutes left to reach it (0 once reached)
+}
+
+export function weeklyGoalProgress(weekMinutes: number, goalMinutes: number): GoalProgress {
+  if (goalMinutes <= 0) return { pct: 0, behind: false, remaining: 0 };
+  return {
+    pct: Math.min(1, weekMinutes / goalMinutes),
+    behind: weekMinutes < goalMinutes,
+    remaining: Math.max(0, goalMinutes - weekMinutes),
+  };
+}
+
 // Local (not UTC) YYYY-MM-DD, so the day boundary matches the user's own
 // clock rather than jumping at midnight UTC.
 export function localDateString(d: Date = new Date()): string {

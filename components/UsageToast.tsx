@@ -2,14 +2,20 @@ import { useEffect, useRef, useState } from 'react';
 import { Animated, StyleSheet, Text } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
-import { t } from '@/lib/i18n';
-import { onActiveMinute } from '@/lib/usageTimer';
+import { t, stringsFor } from '@/lib/i18n';
+import { getDb } from '@/lib/database';
+import { onActiveMinute, onUsageMilestone } from '@/lib/usageTimer';
 
 // "+1 perc wauuuuuuuu" popup: fires once per full active minute (usageTimer's
 // onActiveMinute), fades/slides in, sits for a couple seconds, fades out.
 // Mounted once in the root layout so it can appear over any screen/tab.
+//
+// FB63: the same pill doubles as the milestone celebration (30 min in one go,
+// 30/60 min today). A milestone stays up longer and is written in the language
+// being LEARNED, not the UI language.
 
 const VISIBLE_MS = 2000;
+const MILESTONE_VISIBLE_MS = 4000;
 const ANIM_MS = 250;
 
 export default function UsageToast() {
@@ -17,13 +23,29 @@ export default function UsageToast() {
   const colors = Colors[theme];
   const s = t();
   const [visible, setVisible] = useState(false);
+  const [message, setMessage] = useState(s.usage.plusOneMinute);
+  const [isMilestone, setIsMilestone] = useState(false);
   const opacity = useRef(new Animated.Value(0)).current;
   const translateY = useRef(new Animated.Value(-16)).current;
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // FB63: language being learned, for the milestone text. Read once on mount,
+  // it only changes on the onboarding screen (before this toast can fire).
+  const learnedLang = useRef<string>('es');
 
   useEffect(() => {
-    const unsubscribe = onActiveMinute(() => {
+    getDb()
+      .getOnboarding()
+      .then(ob => {
+        if (ob?.target) learnedLang.current = ob.target;
+      })
+      .catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    const show = (text: string, milestone: boolean) => {
       if (hideTimer.current) clearTimeout(hideTimer.current);
+      setMessage(text);
+      setIsMilestone(milestone);
       setVisible(true);
       opacity.setValue(0);
       translateY.setValue(-16);
@@ -36,13 +58,21 @@ export default function UsageToast() {
           Animated.timing(opacity, { toValue: 0, duration: ANIM_MS, useNativeDriver: true }),
           Animated.timing(translateY, { toValue: -16, duration: ANIM_MS, useNativeDriver: true }),
         ]).start(() => setVisible(false));
-      }, VISIBLE_MS);
+      }, milestone ? MILESTONE_VISIBLE_MS : VISIBLE_MS);
+    };
+
+    const unsubscribeMinute = onActiveMinute(() => show(s.usage.plusOneMinute, false));
+    const unsubscribeMilestone = onUsageMilestone(({ scope, minutes }) => {
+      const learned = stringsFor(learnedLang.current).usage;
+      const template = scope === 'session' ? learned.milestoneSession : learned.milestoneDaily;
+      show(template.replace('{min}', String(minutes)), true);
     });
     return () => {
-      unsubscribe();
+      unsubscribeMinute();
+      unsubscribeMilestone();
       if (hideTimer.current) clearTimeout(hideTimer.current);
     };
-  }, []);
+  }, [s]);
 
   if (!visible) return null;
 
@@ -51,10 +81,11 @@ export default function UsageToast() {
       pointerEvents="none"
       style={[
         styles.pill,
-        { backgroundColor: colors.tint, opacity, transform: [{ translateY }] },
+        { backgroundColor: isMilestone ? '#22C55E' : colors.tint, opacity, transform: [{ translateY }] },
+        isMilestone && styles.milestonePill,
       ]}
     >
-      <Text style={styles.text}>{s.usage.plusOneMinute}</Text>
+      <Text style={[styles.text, isMilestone && styles.milestoneText]}>{message}</Text>
     </Animated.View>
   );
 }
@@ -77,5 +108,15 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 15,
     fontWeight: '700',
+  },
+  // FB63: a milestone gets a wider, bolder pill than the every-minute toast.
+  milestonePill: {
+    maxWidth: '90%',
+    paddingHorizontal: 24,
+    paddingVertical: 14,
+  },
+  milestoneText: {
+    fontSize: 17,
+    textAlign: 'center',
   },
 });

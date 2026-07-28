@@ -1,4 +1,29 @@
-import { localDateString, buildDayRange, summarizeUsage } from '../usageStats';
+import {
+  localDateString,
+  buildDayRange,
+  summarizeUsage,
+  weeklyGoalProgress,
+  DEFAULT_WEEKLY_GOAL_MINUTES,
+} from '../usageStats';
+
+// FB65: the Stats tab's weekly goal, measured against the rolling 7-day total.
+describe('weeklyGoalProgress', () => {
+  it('flags being short of the goal and reports the minutes left', () => {
+    const p = weeklyGoalProgress(300, DEFAULT_WEEKLY_GOAL_MINUTES); // 5h of 7h
+    expect(p.behind).toBe(true);
+    expect(p.remaining).toBe(120);
+    expect(p.pct).toBeCloseTo(300 / 420);
+  });
+
+  it('clears the flag at the goal and clamps the bar when it is passed', () => {
+    expect(weeklyGoalProgress(420, 420)).toEqual({ pct: 1, behind: false, remaining: 0 });
+    expect(weeklyGoalProgress(900, 420)).toEqual({ pct: 1, behind: false, remaining: 0 });
+  });
+
+  it('treats a zero/absent goal as no goal at all', () => {
+    expect(weeklyGoalProgress(100, 0)).toEqual({ pct: 0, behind: false, remaining: 0 });
+  });
+});
 
 describe('localDateString', () => {
   it('formats as local YYYY-MM-DD, zero-padded', () => {
