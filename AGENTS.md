@@ -46,6 +46,39 @@ days/months, weather, daily_routine…); `scripts/audit-corpus.mjs` **angol-awar
 
 ---
 
+# 🎯 Szókincs-cél MINDEN nyelvre: XLex-sávok, plafon C1 (Kálmán döntése, 2026-07-28)
+
+A kurzus célja szintenként az alábbi **kumulált** (A0-tól összeadott) szókészlet,
+nyelvtől függetlenül. A számok a Meara & Milton XLex-sávjai (receptív lemmák,
+Cambridge-vizsgákhoz kötve, lásd EuroSLA-monográfia); a korábbi „szóbővítés
+plafon B2" szabályt ez FELÜLÍRJA: a plafon **C1**, C2-t nem építünk.
+
+| Szint | Kumulált cél | Sáv (XLex) |
+| ----- | ------------ | ---------- |
+| A1 | ~1 200 | < 1 500 |
+| A2 | ~2 000 | 1 500–2 500 |
+| B1 | ~3 000 | 2 750–3 250 |
+| B2 | ~3 500 | 3 250–3 750 |
+| C1 | ~4 000 | 3 750–4 500 |
+| C2 |, | nem építjük |
+
+**Escape-klauzula (Kálmán szava):** ha egy nyelven a sáv nem reális (nincs annyi
+hasznos szó, a frekvencia-farok már használhatatlanul ritka vagy szakszó lenne),
+akkor NEM kell feltölteni a sávig. Ilyenkor állj meg a sáv alatt, és írd ide le
+egy sorban, melyik szinten és miért.
+
+**Állapot (2026-07-28):**
+- Megosztott (spanyol-központú) készlet: A0 100, A1 882, A2 900, B1 927, B2 394,
+  C1 83 → kumulált C1 = **3 286**, a ~4 000-es célig ≈ **710 szó** hiányzik
+  (a szintek nagyjából sávon belül vannak, a hiány zöme B2/C1).
+- Angol ág (`data/words/en/`): A0 100, A1 384, A2 390 → kumulált **874**, csak
+  A2-ig épül; a B1–C1 sávok még nincsenek megnyitva.
+- A szint = KURRIKULUM-POZÍCIÓ, nem a szó objektív tulajdonsága (a jelentések, nem
+  a szavak kapnak szintet, és a határok ±1 sáv pontossággal fuzzy-k). A besorolás
+  keveréke: frekvencia-rang (SUBTLEX-ESP) + témakör-szükséglet + alaki nehézség.
+
+---
+
 # ✅ P0 BUG — Soft billentyűzet villog (Android IME relayout-hurok) — KÉSZ, eszköz-verify OK
 
 > ✅ Fix commit `2854d77`: KAV `behavior=undefined` Androidon (iOS marad `padding`)
