@@ -132,11 +132,15 @@ A0-közös + A1 saját track; `audit-corpus` P1=0 minden track-en; `tsc` tiszta;
 Forrás + pipeline: `project_word_expansion` memória + `feedback_burn_tokens_no_confirm`.
 Trigger-szinonimák: „égesd a tokeneket" / „szavakat generálj" / „töltsd fel a szókészletet".
 
-> ⛔ **USER-SZABÁLY (2026-06-22): SOHA ne generálj C1/C2 kártyát. Plafon = B2.**
-> „C1 szint sehol sem lényeg, soha ne csinálj oda kártyákat, B1 B2 max ezekkel foglalkozz."
-> Bővítés CSAK B1/B2 szintre. C1/C2 befagyasztva (meglévő marad, nem bővül).
+> 🎯 **USER-SZABÁLY (2026-07-28, FELÜLÍRJA a 2026-06-22-es „plafon = B2" szabályt):**
+> a cél az XLex-sávok kumulált szókészlete MINDEN nyelvre, **plafon C1**
+> (A1 ~1 200, A2 ~2 000, B1 ~3 000, B2 ~3 500, C1 ~4 000), **C2-t nem építünk**.
+> Részletek + escape-klauzula (ha egy szinten nincs annyi hasznos szó, állj meg a
+> sáv alatt és írd le, miért): `AGENTS.md` → „🎯 Szókincs-cél MINDEN nyelvre".
+> Spanyol állapot: kumulált C1 = 3 286, a ~4 000-es célig ≈ 710 szó hiányzik.
 
-- B2 hullám fut volt (freq poz. 1561–2080), maradék jelölt poz. 2081–2537 (C1/C2).
+- B2 hullám fut volt (freq poz. 1561–2080), maradék jelölt poz. 2081–2537 (most már
+  C1-ig építhető).
 - Pipeline: `/tmp/claude/filter_words.js` → batch Sonnet agentek 100 szó →
   `scripts/append_words.py --level X --input ...` → `validate_words.py` + jest + tsc → commit/szint.
 - **FIGYELEM:** ez a JELENLEGI megosztott-készlet modellben bővít. Ha Q1 (mátrix) elfogad,
