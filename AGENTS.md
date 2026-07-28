@@ -68,9 +68,13 @@ akkor NEM kell feltölteni a sávig. Ilyenkor állj meg a sáv alatt, és írd i
 egy sorban, melyik szinten és miért.
 
 **Állapot (2026-07-28):**
-- Megosztott (spanyol-központú) készlet: A0 100, A1 882, A2 900, B1 927, B2 394,
-  C1 83 → kumulált C1 = **3 286**, a ~4 000-es célig ≈ **710 szó** hiányzik
+- Megosztott (spanyol-központú) készlet: A0 100, A1 882, A2 900, B1 927, B2 494,
+  C1 83 → kumulált C1 = **3 386**, a ~4 000-es célig ≈ **610 szó** hiányzik
   (a szintek nagyjából sávon belül vannak, a hiány zöme B2/C1).
+- **Forrás-megjegyzés a bővítéshez:** a SUBTLEX-ESP frekvencia-farok B2 fölött
+  kimerült (a maradék jelöltek tulajdonnevek, vulgarizmusok, ragozott alakok),
+  ezért B2/C1-en a bővítés DELE-sávos szemantikai doménekből megy, a D6-szabály
+  szerint. Részletek: `BUILD.md` Q2.
 - Angol ág (`data/words/en/`): A0 100, A1 384, A2 390 → kumulált **874**, csak
   A2-ig épül; a B1–C1 sávok még nincsenek megnyitva.
 - A szint = KURRIKULUM-POZÍCIÓ, nem a szó objektív tulajdonsága (a jelentések, nem
