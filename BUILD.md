@@ -137,12 +137,28 @@ Trigger-szinonimák: „égesd a tokeneket" / „szavakat generálj" / „tölts
 > (A1 ~1 200, A2 ~2 000, B1 ~3 000, B2 ~3 500, C1 ~4 000), **C2-t nem építünk**.
 > Részletek + escape-klauzula (ha egy szinten nincs annyi hasznos szó, állj meg a
 > sáv alatt és írd le, miért): `AGENTS.md` → „🎯 Szókincs-cél MINDEN nyelvre".
-> Spanyol állapot: kumulált C1 = 3 286, a ~4 000-es célig ≈ 710 szó hiányzik.
+> Spanyol állapot: kumulált C1 = 3 386 (2026-07-28: B2 394→494), a ~4 000-es célig
+> ≈ 610 szó hiányzik: B2 +197, C1 +417.
 
-- B2 hullám fut volt (freq poz. 1561–2080), maradék jelölt poz. 2081–2537 (most már
-  C1-ig építhető).
-- Pipeline: `/tmp/claude/filter_words.js` → batch Sonnet agentek 100 szó →
-  `scripts/append_words.py --level X --input ...` → `validate_words.py` + jest + tsc → commit/szint.
+- **Forrás-váltás (2026-07-28): a SUBTLEX-ESP frekvencia-farok KIMERÜLT.** A teljes
+  `word_batches/` (rang 1406–6604, 5 206 jelölt) szűrése után 907 maradt, és az is
+  túlnyomórészt tulajdonnév (angol keresztnevek a feliratkorpuszból), vulgáris szó,
+  klitikumos felszólító alak (`dame`, `cállate`) vagy már tanított ige ragozott
+  alakja. Ezért B2/C1-en a forrás a **DELE/Plan Curricular sávok szemantikai
+  doméneken** (ez amúgy is az `AGENTS.md` D6 szabálya: A1+ = vizsga-szókészlet,
+  nem nyers frekvencia). A frekvencia-út A0-ra marad érvényes.
+- Pipeline (a /tmp-ből promotálva, hogy túlélje a takarítást):
+  `scripts/filter_words.js` (freq-jelölt szűrő, már csak referencia) →
+  batch Sonnet agentek doménenként, spec: `scripts/word-card-spec.md` →
+  `scripts/merge_word_batches.py`-helyett `scripts/merge_word_batches.js`
+  (kereszt-batch dedup) → `scripts/append_words.py --level X --input ...` →
+  `validate_words.py` + jest + tsc → commit/szint.
+- **Futás 2026-07-28:** 7 agent indult (B2 3×100 domén: gazdaság / társadalom-jog /
+  egészség-tudomány; C1 4×105: pszichológia / hivatalos-akadémiai regiszter /
+  kultúra-történelem / precíz igék-kötőszavak). Session-limit megölte hetet
+  kivéve egyet: **csak a B2 egészség-tudomány batch készült el** (`6203af4`, +100).
+  Hátra: B2 gazdaság 100, B2 társadalom-jog 100 (a padlóhoz ~197 kell), és a
+  4 C1 domén 105-ösével.
 - **FIGYELEM:** ez a JELENLEGI megosztott-készlet modellben bővít. Ha Q1 (mátrix) elfogad,
   ez REFRAME-elődhet (es külön track). Q1 előtt ez a biztos autonóm munka.
 
