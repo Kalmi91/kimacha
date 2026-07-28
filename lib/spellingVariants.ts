@@ -99,6 +99,10 @@ export function spellingVariants(word: string, count: number): string[] {
     for (const m of fold(s).match(/([aeiou])\1/g) ?? []) {
       if (!foldW.includes(m)) return;
     }
+    // FB61: three identical letters in a row ("el arrroz") exist in no language,
+    // so such a variant is spotted as fake at a glance. Doubling an already
+    // doubled letter and the r/rr confusion can both produce one.
+    if (/(\p{L})\1\1/u.test(fold(s))) return;
     cands.add(s);
   };
 

@@ -1,6 +1,6 @@
 import { createEmptyCard, type Card } from 'ts-fsrs';
 import { BACKUP_SCHEMA_VERSION, getAppVersion, type BackupPayload } from './backup';
-import { localDateString, summarizeUsage, type UsageStats } from './usageStats';
+import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, type UsageStats } from './usageStats';
 
 export interface DB {
   ensureCard(wordId: number, type: string): Promise<void>;
@@ -38,9 +38,11 @@ export interface DB {
   setWordsOnly(v: boolean): Promise<void>;
   getRandomTopics(): Promise<boolean>;
   setRandomTopics(v: boolean): Promise<void>;
+  getWeeklyGoalMinutes(): Promise<number>;
+  setWeeklyGoalMinutes(minutes: number): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
   setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
-  addUsageMinute(): Promise<void>;
+  addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
   exportAll(): Promise<BackupPayload>;
   importAll(payload: BackupPayload): Promise<void>;
@@ -314,6 +316,17 @@ class MemoryDB implements DB {
     this.randomTopicsMap.set(this.activePair, v);
   }
 
+  // FB65: weekly study goal in minutes, per pair (mirrors the SQLite side).
+  private weeklyGoalMap: Map<string, number> = new Map();
+
+  async getWeeklyGoalMinutes(): Promise<number> {
+    return this.weeklyGoalMap.get(this.activePair) ?? DEFAULT_WEEKLY_GOAL_MINUTES;
+  }
+
+  async setWeeklyGoalMinutes(minutes: number): Promise<void> {
+    this.weeklyGoalMap.set(this.activePair, minutes);
+  }
+
   private feedbackBtnSideMap: Map<string, 'left' | 'right'> = new Map();
 
   async getFeedbackBtnSide(): Promise<'left' | 'right'> {
@@ -329,9 +342,11 @@ class MemoryDB implements DB {
   // reload, same known limitation as the other in-memory maps above.
   private usageMinutes: Map<string, number> = new Map();
 
-  async addUsageMinute(): Promise<void> {
+  async addUsageMinute(): Promise<number> {
     const date = localDateString();
-    this.usageMinutes.set(date, (this.usageMinutes.get(date) ?? 0) + 1);
+    const total = (this.usageMinutes.get(date) ?? 0) + 1;
+    this.usageMinutes.set(date, total);
+    return total;
   }
 
   async getUsageStats(): Promise<UsageStats> {

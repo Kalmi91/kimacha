@@ -5,7 +5,11 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
-import { type UsageStats } from '@/lib/usageStats';
+import {
+  weeklyGoalProgress,
+  DEFAULT_WEEKLY_GOAL_MINUTES,
+  type UsageStats,
+} from '@/lib/usageStats';
 import FeedbackButton from '@/components/FeedbackModal';
 
 const EMPTY_STATS: UsageStats = {
@@ -26,6 +30,7 @@ export default function StatsScreen() {
   const [streak, setStreak] = useState(0);
   const [mastered, setMastered] = useState(0);
   const [reviewsToday, setReviewsToday] = useState(0);
+  const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
 
   // Refresh every time the tab gains focus (mirrors the Settings tab's
   // spellingDue pattern), so numbers stay current across app-wide activity.
@@ -36,11 +41,19 @@ export default function StatsScreen() {
       db.getStreak().then(r => setStreak(r.current_count));
       db.getMasteredCount().then(setMastered);
       db.getTodayStats().then(r => setReviewsToday(r.totalReviews));
+      db.getWeeklyGoalMinutes().then(setWeeklyGoal);
     }, [])
   );
 
   const maxMinutes = Math.max(1, ...usage.last7Days.map(d => d.minutes));
   const hasChartData = usage.last7Days.some(d => d.minutes > 0);
+  const goal = weeklyGoalProgress(usage.thisWeek, weeklyGoal);
+
+  // Minutes as hours with one decimal, dropping a trailing ".0" (7.0 -> "7").
+  const hours = (minutes: number) => {
+    const value = Math.round((minutes / 60) * 10) / 10;
+    return Number.isInteger(value) ? String(value) : value.toFixed(1);
+  };
 
   // dateStr is local YYYY-MM-DD (see lib/usageStats.ts); a short weekday
   // label for the bar chart, built from Date's own locale formatting so we
@@ -86,6 +99,26 @@ export default function StatsScreen() {
           </Text>
         </View>
       )}
+
+      {/* FB65: weekly goal, the rolling 7-day total measured against the target
+          set in Settings, with an explicit warning while it's still short. */}
+      <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.stats.weeklyGoal}</Text>
+      <View style={[styles.goalCard, { backgroundColor: colors.card }]}>
+        <Text style={[styles.goalValue, { color: colors.text }]}>
+          {s.stats.goalProgress(hours(usage.thisWeek), hours(weeklyGoal))}
+        </Text>
+        <View style={[styles.goalTrack, { backgroundColor: colors.background }]}>
+          <View
+            style={[
+              styles.goalFill,
+              { backgroundColor: goal.behind ? colors.tint : '#22C55E', width: `${Math.round(goal.pct * 100)}%` },
+            ]}
+          />
+        </View>
+        <Text style={[styles.goalStatus, { color: goal.behind ? '#EAB308' : '#22C55E' }]}>
+          {goal.behind ? s.stats.goalBehind(hours(goal.remaining)) : s.stats.goalReached}
+        </Text>
+      </View>
 
       <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.stats.last7Days}</Text>
       {!hasChartData ? (
@@ -189,6 +222,30 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     letterSpacing: 0.5,
     marginBottom: 12,
+  },
+  // FB65: weekly-goal card, value + progress bar + behind/reached status.
+  goalCard: {
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 24,
+    gap: 10,
+  },
+  goalValue: {
+    fontSize: 20,
+    fontWeight: '700',
+  },
+  goalTrack: {
+    height: 10,
+    borderRadius: 5,
+    overflow: 'hidden',
+  },
+  goalFill: {
+    height: '100%',
+    borderRadius: 5,
+  },
+  goalStatus: {
+    fontSize: 13,
+    fontWeight: '600',
   },
   noData: {
     fontSize: 14,

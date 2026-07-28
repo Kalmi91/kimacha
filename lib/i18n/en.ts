@@ -77,6 +77,8 @@ export default {
     changeLanguage: 'Change Language',
     wordsOnly: 'Words Only',
     randomTopics: 'Random Topics',
+    weeklyGoal: 'Weekly study goal',
+    weeklyGoalHours: (h: string) => `${h} hours / week`,
     spellingPractice: (n: number) => `Spelling Practice (${n})`,
   },
   backup: {
@@ -107,6 +109,8 @@ export default {
   },
   usage: {
     plusOneMinute: '+1 minute wooo!',
+    milestoneSession: '🔥 Wow, {min} minutes in one go!',
+    milestoneDaily: '🎉 {min} minutes today, you are doing great!',
   },
   stats: {
     title: 'Usage Stats',
@@ -117,6 +121,10 @@ export default {
     daysActive: 'Days Active',
     minutes: (n: number) => `${n} min`,
     last7Days: 'Last 7 Days',
+    weeklyGoal: 'Weekly Goal',
+    goalProgress: (done: string, goal: string) => `${done} / ${goal} hours`,
+    goalBehind: (left: string) => `⚠️ ${left} hours left to your goal`,
+    goalReached: '🏆 Weekly goal reached!',
     noData: 'No usage yet, go learn something!',
     learningProgress: 'Learning Progress',
     reviewsToday: 'Reviews Today',
