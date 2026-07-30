@@ -904,6 +904,163 @@ remaining), tesztelve. i18n ×4: `stats.weeklyGoal/goalProgress/goalBehind/goalR
 
 ---
 
+# 📋 Feedback, 2026-07-28/30 forduló (v3.0.6 telefon-teszt, A1 en→es + stats/settings)
+
+Új sorok a `Kimacha Feedback` sheetből (FB65 utáni 15 sor, 07-28 09:51 → 07-30 18:19).
+Triage 2026-07-30 (Opus). Döntések AskUserQuestion-nel pinnelve: **info-gomb =
+HIBRID** (auto-szabály + kézi note, és ahol valódi nyelvtani szabály van, ott az
+ellenőrzött szabály szövege); **nehéz téma = napi új-szó limit**, állítható, plusz
+„+5 új szó" gomb. Idézetek a user eredeti megfogalmazásában, ne tömörítsd.
+**MIND KÉSZ 2026-07-30**: tsc 0, jest 92/92 (86→92: +4 capNewWords, +6 cardNotes),
+audit-corpus P1=0.
+
+## 🚫 FB66 [P2 feature], Weekly goal állítása a stats-kártyáról, VISSZAVONVA (user)
+Idézet (07-28 09:51, stats-tab): „csináld neg úgy a Weekly goalt hogy lehessen
+állítani.ha rá kattontok, akkor jöjjön fel egy ablak ahol lehessen állítani"
+Idézet (07-28 12:28, settings-tab): „most látom, hogy a settingsbe lehet beállítani,
+hogy mennyi a heti limit akkor nem kell ez a funkció, egy másik feesback feleslegessé vált"
+A user maga vonta vissza (a Settings-beli stepper, FB65, már megoldja). Nincs teendő.
+
+## ✅ FB67 [P2 adat], „I am hungry, let us eat." nem természetes angol, KÉSZ (`data`)
+Idézet (07-28 21:00, easy:I am hungry, let us eat.): „let us eat?? ez biztos jó fordítás?"
+Kártya id 1464 (`tengo hambre`, tener). Az `es` helyes („Tengo hambre, vamos a comer."),
+csak az en volt könyves: `let us eat` → **`let's eat`**. Többi nyelv érintetlen.
+
+## ✅ FB68 [P1 adat], „Somos amigos desde niños." túl nehéz A1-re, KÉSZ (`data`)
+Idézet (07-29 15:31, sentence:Somos amigos desde niños.): „ez A1 es mondat?"
+Kártya id 1458 (`somos amigos`, ser). Ugyanaz az osztály, mint FB33/FB56 (a
+`desde + gyerekkor` szerkezet és a `We have been friends since childhood.`
+present perfect A1 fölött van). Fix: es `Somos amigos de la escuela.`,
+en `We are friends from school.`, hu `Iskolai barátok vagyunk.`, de `Wir sind
+Freunde aus der Schule.` Audit-tiszta.
+
+## ✅ FB69 [P2 adat], „I make my bed every morning." ↔ „Hago la cama", KÉSZ (`data`)
+Idézet (07-29 21:00, easy:I make my bed every morning.): „my bed az mi came olyan meg
+nem volt ez hibás nem?"
+Kártya id 1470 (`hago la cama`, hacer). Igaza van: a spanyol oldal `la cama`
+(határozott névelő), az angol `my bed` birtokost sugallt, ami a kártyán nem tanított
+alak. Fix: en → `I make the bed every morning.` (es/hu/de érintetlen).
+
+## ✅ FB70 [P1 adat], „No encuentro mi llave." ismeretlen ige + „cannot", KÉSZ (`data`)
+Idézetek (07-30, easy:I cannot find my key.), 2×:
+- (08:45): „cannot az no puedo és ilyen nincs ez itt valami rossz"
+- (08:47): „encontro vagycs csak nem tudom mit jelent"
+Kártya id 1279 (`la llave`, casa). Az `encontrar` az auditban tanítottnak számít
+(paradigma-map), de kártyaként a user tényleg nem találkozott vele, és az angol
+`cannot find` a tagadó szerkezetet is új elemként hozta. Fix: a mondat a kártya saját
+szavára egyszerűsítve → es `Mi llave está en la mesa.`, en `My key is on the table.`,
+hu `A kulcsom az asztalon van.`, de `Mein Schlüssel liegt auf dem Tisch.`
+
+## ✅ FB71 [P2 adat], „I wash in the shower." rossz angol, KÉSZ (`data`)
+Idézet (07-30 18:14, easy:I wash in the shower.): „ez mi ez az angol mondat??? ez faszság xD"
+Kártya id 1666 (`la ducha`, casa). A `Me lavo en la ducha.` visszaható, az angol
+`I wash` tárgy nélkül tényleg hibás. Fix: en → `I wash myself in the shower.`
+
+## ✅ FB72 [P2 UI], Stats: mai perc kiírása, KÉSZ (`stats.tsx`)
+Idézet (07-28 10:08, stats-tab): „legyen egy olyan kiírás itt ami azt mutatja, hogy ma
+mennyit hány percet használtam az appot"
+A „Ma" csempe MÁR megvolt, de csupasz számot mutatott (mértékegység nélkül), ezért nem
+volt egyértelmű, hogy perc. Fix: a csempe értéke `s.stats.minutes(usage.today)` →
+„23 perc". Új adat/DB nem kellett.
+
+## ✅ FB73 [P2 UX], Üres gépelt válasznál is írja ki a helyes szót, KÉSZ (`index.tsx`)
+Idézet (07-29 21:16, word:the floor): „csináld meg, hogy ha nem írok be semmit akkor is
+kiirja mi lett volna a helyes szó"
+Az FB43 óta az üres válasz némán a sor végére tette a kártyát. Fix: új `skipped`
+typing-eredmény, a kártya FELFEDI a helyes alakot (értékelés nélkül, TTS nélkül,
+fails-számláló érintetlen), és a → gomb teszi a sor végére (`requeueCurrent`, FB43
+szemantika megmarad). i18n ×4: `card.skipped`.
+
+## ✅ FB74 [P1 UI BUG], Eredmény megjelenésekor összecsúszik a UI, KÉSZ (`index.tsx`)
+Idézet (07-29 15:31:59, sentence:Somos amigos desde niños.): „hogy ha kijön az eredmény
+a ui feljebb kerül, és így már osszecsuszik"
+Gyökérok: a gépelős képernyő `container`-e `justifyContent: 'center'` + nem görgethető,
+a fejléc viszont `position: absolute`, a felfedéskor megnőtt kártya kitolta a tartalom
+tetejét a fejléc alá. Fix: a kártya + gombok `ScrollView`-ba
+(`keyboardShouldPersistTaps="handled"`, `flexGrow:1` + középre igazítás + 56 px felső
+padding a fejléc alatt), a FeedbackButton a görgetőn kívül marad.
+
+## ✅ FB75 + FB78 + FB79 [P2 feature], „i" info-gomb a kártyán, KÉSZ (`lib/cardNotes.ts`)
+Idézetek:
+- FB75 (07-28 20:55, easy:The trousers are black.): „it nem többes szám van vagy angolul
+  többes számba mondják ha spanyolul nem(ha igen akkor írd bele a kártyába. mármint legyen
+  egy infó kis jel amire ennél a szónál rá kattintok és akkor ki irja ezt az eltérést"
+- FB78 (07-28 21:06, easy:I wear old jeans.): „ide miért kell az unis? olyan kis i nézőben
+  írd bele információ ba legyen egy ilyen funkció is"
+- FB79 (07-29 21:32, word:the curtains): „mitől függ hogy valami las cortinas? hogy többes
+  szám? vagy ez csak random, hogy néhány szó így van néhány meg úgy?"
+**Döntés (AskUserQuestion, 2026-07-30): HIBRID**, „3 kell és ahol tényleg nyelvtani
+szábály van amit leelenőriz az AI egy weboldalon egy nyelvtan könyvből ott azt irja be".
+Megvalósítás:
+- `lib/cardNotes.ts`: (1) a kártya kézi `note_hu/en/es/de` mezője MINDIG nyer;
+  (2) különben explicit listás szabály fut, hogy egyetlen kártya se kapjon kitalált
+  magyarázatot. `pairNoun` = RAE-szabály (a két szimmetrikus részből álló tárgyak neve
+  többes számban is EGY darabot jelölhet: `pantalón(es)`, `gafa(s)`, `tijera(s)`,
+  Nueva gramática § 3.8r-t / § 2.5), az angol párja plural-only („a pair of trousers").
+  `someIndef` = a mondatbeli `unos/unas` a határozatlan névelő többes alakja.
+- UI: „ℹ️" gomb a szó mellett a flashcard ÉS a gépelős kártyán, tap = a note ki/be,
+  a tanuló SAJÁT nyelvén (`direction[0]`). Kártyaváltáskor becsukódik.
+- Kézi note (4 nyelven) egyelőre: id 1658 `las cortinas` (megszámlálható, van egyes
+  száma, a két szárny miatt szokás többesben), id 1061 `la verdura` (gyűjtőnév, ezért
+  angolul többes; `las verduras` is helyes).
+- i18n ×4: `note.title/pairNoun/someIndef`. Teszt: `lib/__tests__/cardNotes.test.ts`.
+
+## ✅ FB76 [P2 feature], Napi első indításkor üdvözlő szöveg, KÉSZ (`UsageToast.tsx`)
+Idézet (07-29 10:39, word:the sneakers): „legyen egy üdvözlő szöveg amikor a nap elsőnek
+megnyitja az ember az appot az a baj, nem tudom, hogyan lehet eldönteni mikor van a nap
+1. megy itása. erre találj ki valamit és csináld meg úgy"
+Megoldás a „mikor a nap 1. megnyitása" kérdésre: `user_meta.last_open_date` (helyi
+naptári nap, `localDateString`). Új DB-metódus `claimDailyGreeting()`: ha a tárolt dátum
+nem a mai, beírja a mait és `true`-t ad, egyetlen írás, tehát naponta pontosan egyszer
+tüzel, app-újraindítás után is. A meglévő usage-pill viszi a szöveget (mérföldkő-stílus,
+4 mp), és a TANULT nyelven szól (FB63 minta). i18n ×4: `usage.dailyGreeting`.
+MINDKÉT db-fájl (SQLite + web memória-tükör).
+
+## ✅ FB77 [P1 feature], Nehéz téma → napi új-szó limit + „+5 új szó", KÉSZ (`lib/newWordBudget.ts`)
+Idézet (07-30 08:38, word:the ceiling/roof): „ha van egy téma ami nehéz, mert sok az új
+szó akkor, azt hogy tudom megtanulni? erre kellene valamit kutalálni még én sem tudom"
+**Döntés (AskUserQuestion, 2026-07-30):** „1 igen legyen az, hogy be lehessen állitani,
+hogy napi hány új szót akarunk és rá lehessen nyomni hogy még 5 új szót és még újat, hogy
+lehessen növelni".
+Megvalósítás:
+- `lib/newWordBudget.ts` `capNewWords(items, remaining)`: a queue-ból csak `remaining`
+  darab ÚJ (reps=0) SZÓ-kártya marad; az ismétlések és a mondat-kártyák sosem esnek ki,
+  a sorrend nem változik. A cadence ELŐTT fut, mindkét queue-építésnél (loadCards +
+  queue-vég rebuild).
+- DB (mindkét impl + interfész): `learn_settings.daily_new_limit` (alap 10, 5–100,
+  5-ös lépés), `new_bonus` + `new_bonus_date` a „+5" kattintásokhoz (a bónusz a
+  naptári nappal lejár), `getNewWordsToday()` = azon szavak száma, amiknek az ELSŐ
+  próbálkozása ma volt (`card_attempts`, pair-független, ez a napi terhelés mérőszáma).
+- UI: Settings stepper („Napi új szó", −/+ 5), és ha a keret elfogyott, a Done-képernyőn
+  „+5 új szó" gomb → bónusz + azonnali queue-újraépítés.
+- i18n ×4: `settings.dailyNewLimit`, `settings.dailyNewLimitWords`, `done.moreNewWords`.
+- Teszt: `lib/__tests__/capNewWords.test.ts` (4 eset).
+
+## 📌 FB80 [info], „El baño está al final del pasillo.", adat HELYES, nincs teendő
+Idézet (07-30 18:19, easy:The bathroom is at the end of the hallway.): „szerintem innen
+hiányzik rgy en, nem?"
+Kártya id 1664 (`el pasillo`, casa). Az `al final del pasillo` (a + el = al) a natív
+szerkezet, `en` nem kell bele; az angol `at the end of the hallway` is helyes.
+FB8/FB47/FB59-minta: nincs teendő.
+
+## 📌 FB81 [info], „hacemos ejercicio" angol oldala, adat HELYES, nincs teendő
+Idézet (07-29 15:43, word:hacemos ejercicio): „itt az angol furcsa ellenőrizd hogy jó e"
+Kártya id 1472 (`hacemos ejercicio` = „we exercise", hacer), mondat
+`Hacemos ejercicio por la mañana.` ↔ `We exercise in the morning.`, mindkettő
+természetes angol. (A szomszédos id 1094 `We do exercise.` mondatát a user maga
+minősítette jónak a 07-01-es fordulóban, ezért az sem változott.)
+
+## Elfogadási kritérium (FB66–FB81 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld 92/92 ✅ (2026-07-30).
+- `node scripts/audit-corpus.mjs` → P1=0, P2=0 ✅ (5 mondat + 2 note-mező változott).
+- `data/words/a1.json` parseable ✅; csak sentence- és új note-mezők mozdultak,
+  id/es/topic érintetlen.
+- ⏳ Eszköz-verify: üres gépelt válasz felfedése, gépelős képernyő görgetése,
+  „i" gomb szövege (trousers / unos vaqueros / las cortinas), napi üdvözlés,
+  napi új-szó limit + „+5 új szó" gomb.
+
+---
+
 # Aktuális feladatok (iter1.2)
 
 Kimacha nyelvtanuló app (Expo/React Native).
