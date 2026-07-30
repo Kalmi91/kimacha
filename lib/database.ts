@@ -19,6 +19,7 @@ export interface DB {
   recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number): Promise<void>;
   getUserMeta(): Promise<{ userId: string; firstUseDate: string; lastSyncDate: string | null }>;
   updateLastSync(date: string): Promise<void>;
+  claimDailyGreeting(): Promise<boolean>;
   getTodayStats(): Promise<{ totalReviews: number; correctCount: number; avgResponseMs: number; flashcardCount: number; typingCount: number; wordCount: number; sentenceCount: number }>;
   getTop5Failed(): Promise<string[]>;
   getMasteredCount(): Promise<number>;
@@ -128,7 +129,8 @@ class SQLiteDB implements DB {
         id INTEGER PRIMARY KEY CHECK (id = 1),
         user_id TEXT NOT NULL,
         first_use_date TEXT NOT NULL,
-        last_sync_date TEXT
+        last_sync_date TEXT,
+        last_open_date TEXT
       );
       CREATE TABLE IF NOT EXISTS selected_topic (
         pair TEXT PRIMARY KEY,
@@ -167,6 +169,10 @@ class SQLiteDB implements DB {
     // Migration: add weekly_goal_minutes column (DBs created before the weekly study goal, FB65).
     try {
       await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN weekly_goal_minutes INTEGER');
+    } catch {}
+    // Migration: last_open_date column (DBs created before the daily greeting, FB76).
+    try {
+      await this.db.execAsync('ALTER TABLE user_meta ADD COLUMN last_open_date TEXT');
     } catch {}
     // Migration: daily new-word budget columns (FB77). daily_new_limit is the
     // standing setting; new_bonus/new_bonus_date carry the "+5 new words" taps,
@@ -392,6 +398,17 @@ class SQLiteDB implements DB {
   async updateLastSync(date: string) {
     const db = await this.open();
     await db.runAsync('UPDATE user_meta SET last_sync_date = ? WHERE id = 1', [date]);
+  }
+
+  // FB76: "first open of the day" marker for the greeting. Claiming it is a
+  // single write, so only the first caller of the day sees `true`.
+  async claimDailyGreeting(): Promise<boolean> {
+    const db = await this.open();
+    const today = localDateString();
+    const row = await db.getFirstAsync<any>('SELECT last_open_date FROM user_meta WHERE id = 1');
+    if (row?.last_open_date === today) return false;
+    await db.runAsync('UPDATE user_meta SET last_open_date = ? WHERE id = 1', [today]);
+    return true;
   }
 
   async getTodayStats() {

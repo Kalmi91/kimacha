@@ -32,11 +32,20 @@ export default function UsageToast() {
   // it only changes on the onboarding screen (before this toast can fire).
   const learnedLang = useRef<string>('es');
 
+  // FB76: greet on the first app open of each calendar day, in the language
+  // being learned (FB63 pattern). claimDailyGreeting() is the day marker, so
+  // the pill shows once a day even if the app is reopened later.
+  const [greeting, setGreeting] = useState<string | null>(null);
+  const greetedRef = useRef(false);
+
   useEffect(() => {
-    getDb()
-      .getOnboarding()
-      .then(ob => {
+    const db = getDb();
+    db.getOnboarding()
+      .then(async ob => {
         if (ob?.target) learnedLang.current = ob.target;
+        if (await db.claimDailyGreeting()) {
+          setGreeting(stringsFor(learnedLang.current).usage.dailyGreeting);
+        }
       })
       .catch(() => {});
   }, []);
@@ -67,12 +76,19 @@ export default function UsageToast() {
       const template = scope === 'session' ? learned.milestoneSession : learned.milestoneDaily;
       show(template.replace('{min}', String(minutes)), true);
     });
+    // FB76: the day's greeting, shown once per app start (greetedRef keeps a
+    // re-subscribe from repeating it).
+    if (greeting && !greetedRef.current) {
+      greetedRef.current = true;
+      show(greeting, true);
+    }
+
     return () => {
       unsubscribeMinute();
       unsubscribeMilestone();
       if (hideTimer.current) clearTimeout(hideTimer.current);
     };
-  }, [s]);
+  }, [s, greeting]);
 
   if (!visible) return null;
 

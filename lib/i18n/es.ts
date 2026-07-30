@@ -115,6 +115,7 @@ export default {
     plusOneMinute: '¡+1 minuto, guau!',
     milestoneSession: '🔥 ¡Guau, {min} minutos seguidos!',
     milestoneDaily: '🎉 ¡{min} minutos hoy, lo estás haciendo genial!',
+    dailyGreeting: '👋 ¡Hola! ¡Empecemos el estudio de hoy!',
   },
   stats: {
     title: 'Estadísticas',

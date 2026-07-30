@@ -18,6 +18,7 @@ export interface DB {
   recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number): Promise<void>;
   getUserMeta(): Promise<{ userId: string; firstUseDate: string; lastSyncDate: string | null }>;
   updateLastSync(date: string): Promise<void>;
+  claimDailyGreeting(): Promise<boolean>;
   getTodayStats(): Promise<{ totalReviews: number; correctCount: number; avgResponseMs: number; flashcardCount: number; typingCount: number; wordCount: number; sentenceCount: number }>;
   getTop5Failed(): Promise<string[]>;
   getMasteredCount(): Promise<number>;
@@ -207,6 +208,16 @@ class MemoryDB implements DB {
 
   async getUserMeta() { return { ...this.meta }; }
   async updateLastSync(date: string) { this.meta.lastSyncDate = date; }
+
+  // FB76: first open of the day (memory mirror; a web reload counts as a new day).
+  private lastOpenDate: string | null = null;
+
+  async claimDailyGreeting(): Promise<boolean> {
+    const today = localDateString();
+    if (this.lastOpenDate === today) return false;
+    this.lastOpenDate = today;
+    return true;
+  }
   async getTodayStats() {
     const today = new Date().toISOString().split('T')[0];
     const todayAttempts = this.attempts.filter(a => a.timestamp >= `${today}T00:00:00`);
