@@ -17,6 +17,7 @@ export default {
     correct: 'Correct!',
     almostCorrect: 'Almost!',
     wrong: 'Wrong',
+    skipped: 'Skipped, the correct form:',
     pickSpelling: 'Pick the correct spelling',
     skip: 'Skip',
   },

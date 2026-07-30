@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
-import { StyleSheet, Text, View, Pressable, ActivityIndicator, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
+import { StyleSheet, Text, View, Pressable, ActivityIndicator, TextInput, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
 
@@ -35,7 +35,7 @@ interface DueItem {
   typingDirection?: TypingDir;
 }
 
-type TypingResult = 'correct' | 'almost' | 'wrong' | null;
+type TypingResult = 'correct' | 'almost' | 'wrong' | 'skipped' | null;
 
 // FB25: char-level diff for typing answers, highlights the mistyped letters.
 // LCS alignment so one missing/extra letter doesn't cascade the whole word red.
@@ -736,9 +736,11 @@ export default function LearnScreen() {
     if (!current) return;
     // FB43: an empty answer isn't a wrong answer, it just means "not now" (too
     // hard / forgotten). Don't grade it, don't touch the fail streak, don't
-    // speak the answer, just send the card to the back of the queue.
+    // speak the answer. FB73: still SHOW what the word would have been, then
+    // the → button sends the card to the back of the queue (handleTypingNext).
     if (typedAnswer.trim().length === 0) {
-      requeueCurrent();
+      setTypingResult('skipped');
+      setRevealed(true);
       return;
     }
     const { back } = getFrontBack(current);
@@ -778,6 +780,11 @@ export default function LearnScreen() {
   };
 
   const handleTypingNext = () => {
+    // FB73: the skipped (empty) answer stays ungraded, it only goes to the back.
+    if (typingResult === 'skipped') {
+      requeueCurrent();
+      return;
+    }
     if (typingResult === 'wrong') {
       // FB60: a missed typed WORD goes back into this session's deck (not just its
       // SRS due date) so the learner retries it now. The correct form is already
@@ -950,8 +957,8 @@ export default function LearnScreen() {
   }
 
   if (current.isTyping) {
-    const resultColor = typingResult === 'correct' ? '#22C55E' : typingResult === 'almost' ? '#EAB308' : '#EF4444';
-    const resultText = typingResult === 'correct' ? s.card.correct : typingResult === 'almost' ? s.card.almostCorrect : s.card.wrong;
+    const resultColor = typingResult === 'correct' ? '#22C55E' : typingResult === 'almost' ? '#EAB308' : typingResult === 'skipped' ? colors.tabIconDefault : '#EF4444';
+    const resultText = typingResult === 'correct' ? s.card.correct : typingResult === 'almost' ? s.card.almostCorrect : typingResult === 'skipped' ? s.card.skipped : s.card.wrong;
 
     return (
       <KeyboardAvoidingView
@@ -967,6 +974,14 @@ export default function LearnScreen() {
             <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>🔥</Text>
           </View>
         </View>
+        {/* FB74: once the result block appears the card grows, and a centered,
+            non-scrolling column pushed the top of the card under the absolute
+            header. Scroll instead, so nothing collides on small screens. */}
+        <ScrollView
+          style={styles.typingScroll}
+          contentContainerStyle={styles.typingScrollContent}
+          keyboardShouldPersistTaps="handled"
+        >
         {topicHeader}
         {progressMeter}
         {examBanner}
@@ -1078,6 +1093,7 @@ export default function LearnScreen() {
         >
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{spellingAdded ? `${s.buttons.spelling} ✓` : s.buttons.spelling}</Text>}
         </Pressable>
+        </ScrollView>
 
         <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`${current.type}:${front}`} />
       </KeyboardAvoidingView>
@@ -1412,6 +1428,16 @@ const styles = StyleSheet.create({
   resultSection: {
     alignItems: 'center',
     marginTop: 12,
+  },
+  typingScroll: {
+    flex: 1,
+    width: '100%',
+  },
+  typingScrollContent: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    paddingTop: 56,
+    paddingBottom: 24,
   },
   resultText: {
     fontSize: 18,
