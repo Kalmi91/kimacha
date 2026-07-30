@@ -33,6 +33,7 @@ export default {
     title: '¡Terminaste por hoy!',
     reviewed: (n: number) => `${n} tarjetas revisadas.`,
     streak: 'racha de días',
+    moreNewWords: '+5 palabras nuevas',
   },
   tabs: {
     learn: 'Aprender',
@@ -80,6 +81,8 @@ export default {
     randomTopics: 'Temas aleatorios',
     weeklyGoal: 'Objetivo semanal de estudio',
     weeklyGoalHours: (h: string) => `${h} horas / semana`,
+    dailyNewLimit: 'Palabras nuevas al día',
+    dailyNewLimitWords: (n: string) => `${n} palabras / día`,
     spellingPractice: (n: number) => `Práctica de Ortografía (${n})`,
   },
   backup: {

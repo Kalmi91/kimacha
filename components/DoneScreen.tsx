@@ -24,9 +24,11 @@ interface Props {
   examAvailable: boolean;
   currentTopic?: TopicDef | null;
   topicProgress?: TopicProgress | null;
+  newWordsLeft?: number;
+  onMoreNewWords?: () => void;
 }
 
-export default function DoneScreen({ reviewed, streak, level, masteredPct, direction, onStartExam, examAvailable, currentTopic, topicProgress }: Props) {
+export default function DoneScreen({ reviewed, streak, level, masteredPct, direction, onStartExam, examAvailable, currentTopic, topicProgress, newWordsLeft, onMoreNewWords }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
@@ -78,6 +80,13 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
       {topicProgress && level === 'A1' && (
         <Pressable style={[styles.chooseTopicBtn, { borderColor: colors.tint }]} onPress={() => router.push('/(tabs)/tree')}>
           <Text style={[styles.chooseTopicText, { color: colors.tint }]}>{s.topic.chooseTopic}</Text>
+        </Pressable>
+      )}
+      {/* FB77: today's new-word budget ran out, offer 5 more instead of ending
+          the session; the standing limit itself lives in Settings. */}
+      {newWordsLeft === 0 && onMoreNewWords && (
+        <Pressable style={[styles.chooseTopicBtn, { borderColor: colors.accent }]} onPress={onMoreNewWords}>
+          <Text style={[styles.chooseTopicText, { color: colors.accent }]}>{s.done.moreNewWords}</Text>
         </Pressable>
       )}
       <View style={[styles.streakBadge, { backgroundColor: colors.card, marginTop: 12 }]}>

@@ -72,7 +72,9 @@ export default function StatsScreen() {
 
       <View style={styles.tileRow}>
         <View style={[styles.tile, { backgroundColor: colors.card }]}>
-          <Text style={[styles.tileValue, { color: colors.tint }]}>{usage.today}</Text>
+          {/* FB72: spell out the unit, a bare number left it unclear that
+              today's app time is counted in minutes. */}
+          <Text style={[styles.tileValue, { color: colors.tint }]}>{s.stats.minutes(usage.today)}</Text>
           <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.stats.today}</Text>
         </View>
         <View style={[styles.tile, { backgroundColor: colors.card }]}>

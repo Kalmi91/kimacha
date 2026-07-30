@@ -33,6 +33,7 @@ export default {
     title: 'Done for today!',
     reviewed: (n: number) => `${n} cards reviewed.`,
     streak: 'day streak',
+    moreNewWords: '+5 new words',
   },
   tabs: {
     learn: 'Learn',
@@ -80,6 +81,8 @@ export default {
     randomTopics: 'Random Topics',
     weeklyGoal: 'Weekly study goal',
     weeklyGoalHours: (h: string) => `${h} hours / week`,
+    dailyNewLimit: 'New words a day',
+    dailyNewLimitWords: (n: string) => `${n} words / day`,
     spellingPractice: (n: number) => `Spelling Practice (${n})`,
   },
   backup: {

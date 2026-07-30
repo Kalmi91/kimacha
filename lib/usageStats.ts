@@ -26,6 +26,15 @@ export const MIN_WEEKLY_GOAL_MINUTES = 60;
 export const MAX_WEEKLY_GOAL_MINUTES = 2100; // 35 hours, 5 a day
 export const WEEKLY_GOAL_STEP_MINUTES = 60;
 
+// FB77: daily new-word budget. A topic full of unknown words is overwhelming,
+// so only this many brand-new WORD cards enter the queue per day; the learner
+// can raise it for today with the "+5 new words" button (bonus, see database).
+export const DEFAULT_DAILY_NEW_LIMIT = 10;
+export const MIN_DAILY_NEW_LIMIT = 5;
+export const MAX_DAILY_NEW_LIMIT = 100;
+export const DAILY_NEW_LIMIT_STEP = 5;
+export const DAILY_NEW_BONUS_STEP = 5;
+
 export interface GoalProgress {
   pct: number; // 0..1, clamped, for the progress bar
   behind: boolean; // still short of the goal for this 7-day window
