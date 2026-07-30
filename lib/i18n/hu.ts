@@ -115,6 +115,7 @@ export default {
     plusOneMinute: '+1 perc wauuuuuuuu',
     milestoneSession: '🔥 Wow, {min} perce nyomod egyhuzamban!',
     milestoneDaily: '🎉 Ma már {min} perc, nagyon ügyes vagy!',
+    dailyGreeting: '👋 Szia! Kezdjük a mai tanulást!',
   },
   stats: {
     title: 'Statisztika',

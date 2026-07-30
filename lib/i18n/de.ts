@@ -115,6 +115,7 @@ export default {
     plusOneMinute: '+1 Minute, juhu!',
     milestoneSession: '🔥 Wow, {min} Minuten am Stück!',
     milestoneDaily: '🎉 Heute schon {min} Minuten, super gemacht!',
+    dailyGreeting: '👋 Hallo! Starten wir das heutige Lernen!',
   },
   stats: {
     title: 'Statistik',
