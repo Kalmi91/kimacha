@@ -17,6 +17,7 @@ export default {
     correct: 'Helyes!',
     almostCorrect: 'Majdnem!',
     wrong: 'Hibás',
+    skipped: 'Kihagyva, a helyes alak:',
     pickSpelling: 'Válaszd a helyes írásmódot',
     skip: 'Kihagyás',
   },

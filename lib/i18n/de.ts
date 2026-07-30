@@ -17,6 +17,7 @@ export default {
     correct: 'Richtig!',
     almostCorrect: 'Fast!',
     wrong: 'Falsch',
+    skipped: 'Übersprungen, die richtige Form:',
     pickSpelling: 'Wähle die richtige Schreibweise',
     skip: 'Überspringen',
   },
