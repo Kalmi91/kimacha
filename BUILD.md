@@ -359,3 +359,15 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   `noteInteraction`) + tab regisztráció. i18n ×4 (`tabs.stats`, `usage.plusOneMinute`, `stats.*` blokk).
   Új tesztek: `usageStats.test.ts` + `usageTimer.test.ts`. Gate: tsc 0, jest **76/76** (65→76, +11).
   Adat-JSON érintetlen. ⏳ Eszköz-verify a következő buildben (toast + Statisztika tab telefonon).
+- **2026-07-30** (Opus): **Feedback-forduló FB66–FB81 KÉSZ** (user: „feedbackok megcsinálása").
+  15 új sheet-sor triage-elve (07-28 → 07-30), 2 döntés AskUserQuestion-nel pinnelve.
+  Commitok: `0b40bb4` 5 A1 mondat-QA (let's eat, somos amigos egyszerűsítve, hago la cama,
+  la llave, me lavo) · `98106ad` üres gépelt válasz felfedi a helyes alakot (`skipped`
+  eredmény) + gépelős képernyő görgethető (fejléc-ütközés vége) · `121832f` napi új-szó
+  keret (`lib/newWordBudget.ts` + `learn_settings.daily_new_limit/new_bonus/new_bonus_date`,
+  Settings stepper, Done-képernyő „+5 új szó") + stats „Ma" perc-egység · `c0c6aa2` napi
+  üdvözlés az első indításkor (`user_meta.last_open_date` + `claimDailyGreeting`) ·
+  `fdcd8ac` kártya „i" info-note (`lib/cardNotes.ts`: kézi note_<lang> nyer, különben RAE
+  pair-noun / unos-unas szabály; kézi note las cortinas + la verdura). FB66 a user által
+  visszavonva, FB80/FB81 info (adat helyes). Gate: tsc 0, jest **92/92** (82→92: +4
+  capNewWords, +6 cardNotes), audit-corpus P1=0/P2=0. ⏳ Eszköz-verify a következő buildben.
