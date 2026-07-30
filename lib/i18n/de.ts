@@ -111,6 +111,11 @@ export default {
     cancel: 'Abbrechen',
     thanks: 'Danke!',
   },
+  note: {
+    title: 'Grammatik-Hinweis',
+    pairNoun: 'Gegenstand aus zwei symmetrischen Teilen: im Spanischen können Singular und Plural EIN Stück bezeichnen (el pantalón = los pantalones, RAE). Im Englischen steht immer der Plural: a pair of trousers.',
+    someIndef: 'unos/unas ist der unbestimmte Artikel im Plural: einige, ein Paar (unos vaqueros = eine Jeans).',
+  },
   usage: {
     plusOneMinute: '+1 Minute, juhu!',
     milestoneSession: '🔥 Wow, {min} Minuten am Stück!',

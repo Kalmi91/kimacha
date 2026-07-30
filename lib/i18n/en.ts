@@ -111,6 +111,11 @@ export default {
     cancel: 'Cancel',
     thanks: 'Thank You!',
   },
+  note: {
+    title: 'Grammar note',
+    pairNoun: 'An object with two symmetric parts: in Spanish both the singular and the plural can mean ONE item (el pantalón = los pantalones, RAE). English keeps it plural: a pair of trousers.',
+    someIndef: 'unos/unas is the plural indefinite article: some, a pair of (unos vaqueros = a pair of jeans).',
+  },
   usage: {
     plusOneMinute: '+1 minute wooo!',
     milestoneSession: '🔥 Wow, {min} minutes in one go!',

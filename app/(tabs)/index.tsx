@@ -14,6 +14,7 @@ import { nearMissDistractors } from '@/lib/distractors';
 import { consumePendingAction } from '@/lib/pendingAction';
 import { DAILY_NEW_BONUS_STEP } from '@/lib/usageStats';
 import { capNewWords } from '@/lib/newWordBudget';
+import { cardNote } from '@/lib/cardNotes';
 import FeedbackButton from '@/components/FeedbackModal';
 import * as Speech from 'expo-speech';
 import ExamMode from '@/components/ExamMode';
@@ -119,6 +120,8 @@ export default function LearnScreen() {
   // FB39: local per-card flag, flips the "Spelling" button to a ✓ state once
   // tapped; resets whenever the card changes (via resetCardState).
   const [spellingAdded, setSpellingAdded] = useState(false);
+  // FB75/FB78/FB79: whether the card's grammar note ("i" button) is expanded.
+  const [noteOpen, setNoteOpen] = useState(false);
   const [level, setLevel] = useState<Level>('A0');
   const [levelUpMsg, setLevelUpMsg] = useState<string | null>(null);
   const [cardStartTime, setCardStartTime] = useState<number>(() => Date.now());
@@ -514,6 +517,7 @@ export default function LearnScreen() {
     setPracticeResult(null);
     setPracticeText('');
     setSpellingAdded(false);
+    setNoteOpen(false);
   };
 
   // Shared by advance() and advanceNoRating(): once the queue is exhausted,
@@ -869,6 +873,31 @@ export default function LearnScreen() {
 
   const topicLang = direction[1] === 'hu' ? 'hu' : direction[1] === 'es' ? 'es' : direction[1] === 'de' ? 'de' : 'en';
 
+  // FB75/FB78/FB79: optional "i" note explaining a grammar quirk of this card
+  // (why "trousers" is plural but "el pantalón" isn't, what "unos" is doing
+  // there). Written in the learner's own language.
+  const note = cardNote(
+    current.word as any,
+    direction[0],
+    direction[1],
+    String(current.word[`sentence_${direction[1]}`] ?? '')
+  );
+  const noteText = !note
+    ? null
+    : note.kind === 'manual'
+      ? note.text
+      : note.kind === 'pairNoun'
+        ? s.note.pairNoun
+        : s.note.someIndef;
+  const noteButton = noteText ? (
+    <Pressable onPress={() => setNoteOpen(o => !o)} style={styles.speakBtn}>
+      <Text style={styles.speakIcon}>ℹ️</Text>
+    </Pressable>
+  ) : null;
+  const noteBlock = noteText && noteOpen ? (
+    <Text style={[styles.noteText, { color: colors.tabIconDefault }]}>{noteText}</Text>
+  ) : null;
+
   const levelBadge = (
     <View style={[styles.levelBadge, { backgroundColor: '#38BDF8' }]}>
       <Text style={styles.levelText}>{level}</Text>
@@ -1015,7 +1044,9 @@ export default function LearnScreen() {
             <Pressable onPress={() => Speech.speak(front, { language: speechLang(frontLang) })} style={styles.speakBtn}>
               <Text style={styles.speakIcon}>🔊</Text>
             </Pressable>
+            {noteButton}
           </View>
+          {noteBlock}
 
           {/* FB5: inline action button — with softwareKeyboardLayoutMode "pan"
               the bottom Check button can sit under the open keyboard, so the
@@ -1155,7 +1186,9 @@ export default function LearnScreen() {
           <Pressable onPress={() => Speech.speak(front, { language: speechLang(frontLang) })} style={styles.speakBtn}>
             <Text style={styles.speakIcon}>🔊</Text>
           </Pressable>
+          {noteButton}
         </View>
+        {noteBlock}
 
         {revealed ? (
           <View style={styles.backSection}>
@@ -1451,6 +1484,14 @@ const styles = StyleSheet.create({
   resultSection: {
     alignItems: 'center',
     marginTop: 12,
+  },
+  // FB75/FB78/FB79: expanded grammar note under the card front.
+  noteText: {
+    fontSize: 13,
+    lineHeight: 18,
+    textAlign: 'center',
+    marginTop: 8,
+    paddingHorizontal: 4,
   },
   typingScroll: {
     flex: 1,
