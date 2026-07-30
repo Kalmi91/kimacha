@@ -111,6 +111,11 @@ export default {
     cancel: 'Cancelar',
     thanks: '¡Gracias!',
   },
+  note: {
+    title: 'Nota gramatical',
+    pairNoun: 'Objeto de dos partes simétricas: en español el singular y el plural pueden designar UNA sola prenda (el pantalón = los pantalones, RAE). En inglés siempre va en plural: a pair of trousers.',
+    someIndef: 'unos/unas es el artículo indefinido en plural: algunos, un par de (unos vaqueros = un pantalón vaquero).',
+  },
   usage: {
     plusOneMinute: '¡+1 minuto, guau!',
     milestoneSession: '🔥 ¡Guau, {min} minutos seguidos!',

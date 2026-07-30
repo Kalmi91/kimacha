@@ -111,6 +111,11 @@ export default {
     cancel: 'Mégse',
     thanks: 'Köszönjük!',
   },
+  note: {
+    title: 'Nyelvtani infó',
+    pairNoun: 'Két szimmetrikus részből álló tárgy: spanyolul az egyes és a többes szám is jelenthet EGY darabot (el pantalón = los pantalones, RAE). Angolul mindig többes szám: a pair of trousers.',
+    someIndef: 'Az unos/unas a határozatlan névelő többes alakja: néhány, egy pár (unos vaqueros = egy farmernadrág).',
+  },
   usage: {
     plusOneMinute: '+1 perc wauuuuuuuu',
     milestoneSession: '🔥 Wow, {min} perce nyomod egyhuzamban!',
