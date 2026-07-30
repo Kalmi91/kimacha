@@ -12,6 +12,8 @@ import { t } from '@/lib/i18n';
 import { strictAnswerMatch } from '@/lib/answerMatch';
 import { nearMissDistractors } from '@/lib/distractors';
 import { consumePendingAction } from '@/lib/pendingAction';
+import { DAILY_NEW_BONUS_STEP } from '@/lib/usageStats';
+import { capNewWords } from '@/lib/newWordBudget';
 import FeedbackButton from '@/components/FeedbackModal';
 import * as Speech from 'expo-speech';
 import ExamMode from '@/components/ExamMode';
@@ -108,6 +110,9 @@ export default function LearnScreen() {
   const [streak, setStreak] = useState(0);
   const [reviewed, setReviewed] = useState(0);
   const [done, setDone] = useState(false);
+  // FB77: how many brand-new words today's budget still allows (0 = the Done
+  // screen offers the "+5 new words" button).
+  const [newWordsLeft, setNewWordsLeft] = useState(0);
   const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
   const [typedAnswer, setTypedAnswer] = useState('');
   const [typingResult, setTypingResult] = useState<TypingResult>(null);
@@ -365,7 +370,11 @@ export default function LearnScreen() {
     const rows = useTopics
       ? await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL)
       : await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
-    const items = applyCadence(buildQueue(rows), wordsOnly);
+    // FB77: today's remaining new-word budget (setting + "+5 new words" taps).
+    const newBudget = (await db.getDailyNewLimit()) + (await db.getNewLimitBonus());
+    const remainingNew = Math.max(0, newBudget - (await db.getNewWordsToday()));
+    setNewWordsLeft(remainingNew);
+    const items = applyCadence(capNewWords(buildQueue(rows), remainingNew), wordsOnly);
 
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
@@ -382,6 +391,15 @@ export default function LearnScreen() {
     setPracticeResult(null);
     setPracticeText('');
     setLoading(false);
+  };
+
+  // FB77: raise today's new-word budget by 5 and rebuild the queue right away,
+  // so the learner can keep going instead of waiting for tomorrow.
+  const handleMoreNewWords = async () => {
+    const db = getDb();
+    await db.addNewLimitBonus(DAILY_NEW_BONUS_STEP);
+    setLoading(true);
+    await loadCards();
   };
 
   useEffect(() => {
@@ -575,7 +593,10 @@ export default function LearnScreen() {
     }
 
     const wordsOnly2 = await db.getWordsOnly();
-    const newItems = applyCadence(buildQueue(newRows), wordsOnly2);
+    const newBudget2 = (await db.getDailyNewLimit()) + (await db.getNewLimitBonus());
+    const remainingNew2 = Math.max(0, newBudget2 - (await db.getNewWordsToday()));
+    setNewWordsLeft(remainingNew2);
+    const newItems = applyCadence(capNewWords(buildQueue(newRows), remainingNew2), wordsOnly2);
 
     if (newItems.length === 0) {
       setDone(true);
@@ -833,6 +854,8 @@ export default function LearnScreen() {
         onStartExam={() => setExamMode(true)}
         currentTopic={currentTopic}
         topicProgress={topicProgress}
+        newWordsLeft={newWordsLeft}
+        onMoreNewWords={handleMoreNewWords}
       />
     );
   }

@@ -1,7 +1,7 @@
 import * as SQLite from 'expo-sqlite';
 import { createEmptyCard, type Card } from 'ts-fsrs';
 import { BACKUP_SCHEMA_VERSION, BACKUP_TABLES, getAppVersion, type BackupPayload } from './backup';
-import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, type UsageStats } from './usageStats';
+import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 
 export interface DB {
   ensureCard(wordId: number, type: string): Promise<void>;
@@ -43,6 +43,11 @@ export interface DB {
   setWeeklyGoalMinutes(minutes: number): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
   setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
+  getDailyNewLimit(): Promise<number>;
+  setDailyNewLimit(limit: number): Promise<void>;
+  getNewLimitBonus(): Promise<number>;
+  addNewLimitBonus(extra: number): Promise<void>;
+  getNewWordsToday(): Promise<number>;
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
   exportAll(): Promise<BackupPayload>;
@@ -134,7 +139,10 @@ class SQLiteDB implements DB {
         words_only INTEGER,
         random_topics INTEGER,
         feedback_btn_side TEXT,
-        weekly_goal_minutes INTEGER
+        weekly_goal_minutes INTEGER,
+        daily_new_limit INTEGER,
+        new_bonus INTEGER,
+        new_bonus_date TEXT
       );
       CREATE TABLE IF NOT EXISTS spelling_list (
         pair TEXT NOT NULL,
@@ -159,6 +167,18 @@ class SQLiteDB implements DB {
     // Migration: add weekly_goal_minutes column (DBs created before the weekly study goal, FB65).
     try {
       await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN weekly_goal_minutes INTEGER');
+    } catch {}
+    // Migration: daily new-word budget columns (FB77). daily_new_limit is the
+    // standing setting; new_bonus/new_bonus_date carry the "+5 new words" taps,
+    // which only count while new_bonus_date is still today.
+    try {
+      await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN daily_new_limit INTEGER');
+    } catch {}
+    try {
+      await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN new_bonus INTEGER');
+    } catch {}
+    try {
+      await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN new_bonus_date TEXT');
     } catch {}
     const meta = await this.db.getFirstAsync<any>('SELECT id FROM user_meta WHERE id = 1');
     if (!meta) {
@@ -565,6 +585,50 @@ class SQLiteDB implements DB {
       'INSERT INTO learn_settings (pair, weekly_goal_minutes) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET weekly_goal_minutes = excluded.weekly_goal_minutes',
       [this.activePair, minutes]
     );
+  }
+
+  // FB77: daily new-word budget. The standing limit lives in learn_settings,
+  // the "+5 new words" taps add a bonus that expires with the calendar day.
+  async getDailyNewLimit(): Promise<number> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT daily_new_limit FROM learn_settings WHERE pair = ?', [this.activePair]);
+    return typeof row?.daily_new_limit === 'number' ? row.daily_new_limit : DEFAULT_DAILY_NEW_LIMIT;
+  }
+
+  async setDailyNewLimit(limit: number): Promise<void> {
+    const db = await this.open();
+    await db.runAsync(
+      'INSERT INTO learn_settings (pair, daily_new_limit) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET daily_new_limit = excluded.daily_new_limit',
+      [this.activePair, limit]
+    );
+  }
+
+  async getNewLimitBonus(): Promise<number> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT new_bonus, new_bonus_date FROM learn_settings WHERE pair = ?', [this.activePair]);
+    if (row?.new_bonus_date !== localDateString()) return 0;
+    return typeof row?.new_bonus === 'number' ? row.new_bonus : 0;
+  }
+
+  async addNewLimitBonus(extra: number): Promise<void> {
+    const db = await this.open();
+    const current = await this.getNewLimitBonus();
+    await db.runAsync(
+      'INSERT INTO learn_settings (pair, new_bonus, new_bonus_date) VALUES (?, ?, ?) ON CONFLICT(pair) DO UPDATE SET new_bonus = excluded.new_bonus, new_bonus_date = excluded.new_bonus_date',
+      [this.activePair, current + extra, localDateString()]
+    );
+  }
+
+  // A word counts as "started today" when its FIRST ever attempt happened today.
+  // card_attempts has no pair column, so this is counted across language pairs,
+  // which matches how the budget is meant to work (per day of study, not per pair).
+  async getNewWordsToday(): Promise<number> {
+    const db = await this.open();
+    const rows = await db.getAllAsync<any>(
+      "SELECT word_id, MIN(timestamp) AS first_ts FROM card_attempts WHERE type = 'word' GROUP BY word_id"
+    );
+    const today = localDateString();
+    return rows.filter(r => localDateString(new Date(r.first_ts)) === today).length;
   }
 
   async getFeedbackBtnSide(): Promise<'left' | 'right'> {

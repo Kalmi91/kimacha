@@ -33,6 +33,7 @@ export default {
     title: 'Fertig für heute!',
     reviewed: (n: number) => `${n} Karten überprüft.`,
     streak: 'Tage Serie',
+    moreNewWords: '+5 neue Wörter',
   },
   tabs: {
     learn: 'Lernen',
@@ -80,6 +81,8 @@ export default {
     randomTopics: 'Zufällige Themen',
     weeklyGoal: 'Wöchentliches Lernziel',
     weeklyGoalHours: (h: string) => `${h} Stunden / Woche`,
+    dailyNewLimit: 'Neue Wörter pro Tag',
+    dailyNewLimitWords: (n: string) => `${n} Wörter / Tag`,
     spellingPractice: (n: number) => `Rechtschreibtraining (${n})`,
   },
   backup: {

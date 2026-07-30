@@ -16,6 +16,10 @@ import {
   MIN_WEEKLY_GOAL_MINUTES,
   MAX_WEEKLY_GOAL_MINUTES,
   WEEKLY_GOAL_STEP_MINUTES,
+  DEFAULT_DAILY_NEW_LIMIT,
+  MIN_DAILY_NEW_LIMIT,
+  MAX_DAILY_NEW_LIMIT,
+  DAILY_NEW_LIMIT_STEP,
 } from '@/lib/usageStats';
 import FeedbackButton from '@/components/FeedbackModal';
 
@@ -35,6 +39,8 @@ export default function SettingsScreen() {
   const [spellingDue, setSpellingDue] = useState(0);
   // FB65: weekly study goal in minutes (UI shows whole hours).
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
+  // FB77: daily budget of brand-new words entering the queue.
+  const [dailyNewLimit, setDailyNewLimit] = useState(DEFAULT_DAILY_NEW_LIMIT);
 
   useFocusEffect(
     useCallback(() => {
@@ -42,6 +48,7 @@ export default function SettingsScreen() {
       db.getWordsOnly().then(setWordsOnly);
       db.getRandomTopics().then(setRandomTopics);
       db.getWeeklyGoalMinutes().then(setWeeklyGoal);
+      db.getDailyNewLimit().then(setDailyNewLimit);
       db.getOnboarding().then(o => { if (o) { setTarget(o.target); setDirection([o.source, o.target]); } });
       db.getLevel().then(l => setLevel(l.level as Level));
       db.getSpellingDueCount().then(setSpellingDue);
@@ -71,6 +78,18 @@ export default function SettingsScreen() {
     if (next === weeklyGoal) return;
     setWeeklyGoal(next);
     await getDb().setWeeklyGoalMinutes(next);
+  };
+
+  // FB77: ± five new words per tap, clamped to the 5..100 a day range.
+  const handleDailyNewLimitChange = async (delta: number) => {
+    const next = Math.min(
+      MAX_DAILY_NEW_LIMIT,
+      Math.max(MIN_DAILY_NEW_LIMIT, dailyNewLimit + delta)
+    );
+    if (next === dailyNewLimit) return;
+    setDailyNewLimit(next);
+    await getDb().setDailyNewLimit(next);
+    setPendingAction({ type: 'selectTopic' });
   };
 
   const themeOptions: { label: string; value: 'system' | 'light' | 'dark' }[] = [
@@ -240,6 +259,28 @@ export default function SettingsScreen() {
           <Pressable
             style={[styles.goalBtn, { borderColor: colors.tint }]}
             onPress={() => handleWeeklyGoalChange(WEEKLY_GOAL_STEP_MINUTES)}
+          >
+            <Text style={[styles.goalBtnText, { color: colors.tint }]}>+</Text>
+          </Pressable>
+        </View>
+      </View>
+
+      {/* FB77: how many brand-new words a day may enter the learning queue. */}
+      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.dailyNewLimit}</Text>
+        <View style={styles.goalStepper}>
+          <Pressable
+            style={[styles.goalBtn, { borderColor: colors.tint }]}
+            onPress={() => handleDailyNewLimitChange(-DAILY_NEW_LIMIT_STEP)}
+          >
+            <Text style={[styles.goalBtnText, { color: colors.tint }]}>−</Text>
+          </Pressable>
+          <Text style={[styles.goalValue, { color: colors.text }]}>
+            {s.settings.dailyNewLimitWords(String(dailyNewLimit))}
+          </Text>
+          <Pressable
+            style={[styles.goalBtn, { borderColor: colors.tint }]}
+            onPress={() => handleDailyNewLimitChange(DAILY_NEW_LIMIT_STEP)}
           >
             <Text style={[styles.goalBtnText, { color: colors.tint }]}>+</Text>
           </Pressable>

@@ -33,6 +33,7 @@ export default {
     title: 'Kész vagy mára!',
     reviewed: (n: number) => `${n} kártyát néztél át.`,
     streak: 'nap streak',
+    moreNewWords: '+5 új szó',
   },
   tabs: {
     learn: 'Tanulás',
@@ -80,6 +81,8 @@ export default {
     randomTopics: 'Random témák',
     weeklyGoal: 'Heti tanulási cél',
     weeklyGoalHours: (h: string) => `${h} óra / hét`,
+    dailyNewLimit: 'Napi új szó',
+    dailyNewLimitWords: (n: string) => `${n} szó / nap`,
     spellingPractice: (n: number) => `Helyesírás-gyakorló (${n})`,
   },
   backup: {

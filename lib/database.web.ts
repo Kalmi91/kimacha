@@ -1,6 +1,6 @@
 import { createEmptyCard, type Card } from 'ts-fsrs';
 import { BACKUP_SCHEMA_VERSION, getAppVersion, type BackupPayload } from './backup';
-import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, type UsageStats } from './usageStats';
+import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 
 export interface DB {
   ensureCard(wordId: number, type: string): Promise<void>;
@@ -42,6 +42,11 @@ export interface DB {
   setWeeklyGoalMinutes(minutes: number): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
   setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
+  getDailyNewLimit(): Promise<number>;
+  setDailyNewLimit(limit: number): Promise<void>;
+  getNewLimitBonus(): Promise<number>;
+  addNewLimitBonus(extra: number): Promise<void>;
+  getNewWordsToday(): Promise<number>;
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
   exportAll(): Promise<BackupPayload>;
@@ -335,6 +340,39 @@ class MemoryDB implements DB {
 
   async setFeedbackBtnSide(side: 'left' | 'right'): Promise<void> {
     this.feedbackBtnSideMap.set(this.activePair, side);
+  }
+
+  // FB77: daily new-word budget (memory mirror of the SQLite columns).
+  private dailyNewLimitMap: Map<string, number> = new Map();
+  private newBonusMap: Map<string, { date: string; bonus: number }> = new Map();
+
+  async getDailyNewLimit(): Promise<number> {
+    return this.dailyNewLimitMap.get(this.activePair) ?? DEFAULT_DAILY_NEW_LIMIT;
+  }
+
+  async setDailyNewLimit(limit: number): Promise<void> {
+    this.dailyNewLimitMap.set(this.activePair, limit);
+  }
+
+  async getNewLimitBonus(): Promise<number> {
+    const entry = this.newBonusMap.get(this.activePair);
+    return entry && entry.date === localDateString() ? entry.bonus : 0;
+  }
+
+  async addNewLimitBonus(extra: number): Promise<void> {
+    const current = await this.getNewLimitBonus();
+    this.newBonusMap.set(this.activePair, { date: localDateString(), bonus: current + extra });
+  }
+
+  async getNewWordsToday(): Promise<number> {
+    const today = localDateString();
+    const first = new Map<number, string>();
+    for (const a of this.attempts) {
+      if (a.type !== 'word') continue;
+      const prev = first.get(a.word_id);
+      if (!prev || a.timestamp < prev) first.set(a.word_id, a.timestamp);
+    }
+    return [...first.values()].filter(ts => localDateString(new Date(ts)) === today).length;
   }
 
   // Usage-timer feature: one entry per local calendar day, app-wide (not
