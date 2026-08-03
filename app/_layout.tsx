@@ -11,6 +11,7 @@ import { sendAnalyticsIfNeeded } from '@/lib/analytics';
 import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
 import { startUsageTimer, stopUsageTimer, noteInteraction } from '@/lib/usageTimer';
 import UsageToast from '@/components/UsageToast';
+import StatusBarStrip from '@/components/StatusBarStrip';
 
 export { ErrorBoundary } from 'expo-router';
 
@@ -80,6 +81,7 @@ function RootLayoutNav() {
           return false; // never claim the touch, just observe it
         }}
       >
+        <StatusBarStrip />
         <Stack>
           <Stack.Screen name="onboarding" options={{ headerShown: false }} />
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />

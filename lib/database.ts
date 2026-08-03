@@ -20,6 +20,8 @@ export interface DB {
   getUserMeta(): Promise<{ userId: string; firstUseDate: string; lastSyncDate: string | null }>;
   updateLastSync(date: string): Promise<void>;
   claimDailyGreeting(): Promise<boolean>;
+  getStatusBarTint(): Promise<number>;
+  setStatusBarTint(index: number): Promise<void>;
   getTodayStats(): Promise<{ totalReviews: number; correctCount: number; avgResponseMs: number; flashcardCount: number; typingCount: number; wordCount: number; sentenceCount: number }>;
   getTop5Failed(): Promise<string[]>;
   getMasteredCount(): Promise<number>;
@@ -130,7 +132,8 @@ class SQLiteDB implements DB {
         user_id TEXT NOT NULL,
         first_use_date TEXT NOT NULL,
         last_sync_date TEXT,
-        last_open_date TEXT
+        last_open_date TEXT,
+        status_bar_tint INTEGER
       );
       CREATE TABLE IF NOT EXISTS selected_topic (
         pair TEXT PRIMARY KEY,
@@ -173,6 +176,10 @@ class SQLiteDB implements DB {
     // Migration: last_open_date column (DBs created before the daily greeting, FB76).
     try {
       await this.db.execAsync('ALTER TABLE user_meta ADD COLUMN last_open_date TEXT');
+    } catch {}
+    // Migration: status-bar tint index (DBs created before the blue strip, FB83).
+    try {
+      await this.db.execAsync('ALTER TABLE user_meta ADD COLUMN status_bar_tint INTEGER');
     } catch {}
     // Migration: daily new-word budget columns (FB77). daily_new_limit is the
     // standing setting; new_bonus/new_bonus_date carry the "+5 new words" taps,
@@ -398,6 +405,19 @@ class SQLiteDB implements DB {
   async updateLastSync(date: string) {
     const db = await this.open();
     await db.runAsync('UPDATE user_meta SET last_sync_date = ? WHERE id = 1', [date]);
+  }
+
+  // FB83: which of the status-bar blues the user picked, as an index into
+  // STATUS_BAR_TINTS. App-wide, so it lives in user_meta, not per language pair.
+  async getStatusBarTint(): Promise<number> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT status_bar_tint FROM user_meta WHERE id = 1');
+    return typeof row?.status_bar_tint === 'number' ? row.status_bar_tint : 0;
+  }
+
+  async setStatusBarTint(index: number): Promise<void> {
+    const db = await this.open();
+    await db.runAsync('UPDATE user_meta SET status_bar_tint = ? WHERE id = 1', [index]);
   }
 
   // FB76: "first open of the day" marker for the greeting. Claiming it is a

@@ -19,6 +19,8 @@ export interface DB {
   getUserMeta(): Promise<{ userId: string; firstUseDate: string; lastSyncDate: string | null }>;
   updateLastSync(date: string): Promise<void>;
   claimDailyGreeting(): Promise<boolean>;
+  getStatusBarTint(): Promise<number>;
+  setStatusBarTint(index: number): Promise<void>;
   getTodayStats(): Promise<{ totalReviews: number; correctCount: number; avgResponseMs: number; flashcardCount: number; typingCount: number; wordCount: number; sentenceCount: number }>;
   getTop5Failed(): Promise<string[]>;
   getMasteredCount(): Promise<number>;
@@ -218,6 +220,12 @@ class MemoryDB implements DB {
     this.lastOpenDate = today;
     return true;
   }
+
+  // FB83: status-bar tint index (memory mirror, like every other web setting).
+  private statusBarTint = 0;
+
+  async getStatusBarTint(): Promise<number> { return this.statusBarTint; }
+  async setStatusBarTint(index: number): Promise<void> { this.statusBarTint = index; }
   async getTodayStats() {
     const today = new Date().toISOString().split('T')[0];
     const todayAttempts = this.attempts.filter(a => a.timestamp >= `${today}T00:00:00`);
