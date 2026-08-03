@@ -22,6 +22,15 @@ describe('cardNote', () => {
     expect(note?.kind).toBe('someIndef');
   });
 
+  // FB85: every ser/estar card explains the difference between the two.
+  it('explains ser vs estar on the copula topics', () => {
+    expect(cardNote({ es: 'yo soy', topic: 'ser' }, 'hu', 'es')?.kind).toBe('serEstar');
+    expect(cardNote({ es: 'ellos están', topic: 'estar' }, 'hu', 'es')?.kind).toBe('serEstar');
+    expect(cardNote({ es: 'El café está frío.', topic: 'ser_vs_estar' }, 'hu', 'es')?.kind).toBe('serEstar');
+    // other target languages have no Spanish copula split
+    expect(cardNote({ es: 'yo soy', topic: 'ser' }, 'hu', 'en')).toBeNull();
+  });
+
   it('stays silent on ordinary cards', () => {
     expect(cardNote({ es: 'la casa', en: 'the house' }, 'hu', 'es', 'La casa es grande.')).toBeNull();
   });
