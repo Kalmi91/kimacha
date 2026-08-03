@@ -1061,6 +1061,111 @@ minősítette jónak a 07-01-es fordulóban, ezért az sem változott.)
 
 ---
 
+# 📋 Feedback, 2026-07-31/08-03 forduló (v3.0.8 telefon-teszt, A1 en→es + settings)
+
+Új sorok a `Kimacha Feedback` sheetből (FB81 utáni 8 sor, 07-31 10:18 → 08-03 13:45).
+Triage 2026-08-03 (Opus). Döntések AskUserQuestion-nel pinnelve: **FB86 = emoji-ikon
++ ℹ️ jegyzet**; **FB83 = csak a státuszsáv-csík** (nem globális akcent-téma).
+Idézetek a user eredeti megfogalmazásában, ne tömörítsd.
+**MIND KÉSZ 2026-08-03**: tsc 0, jest 102/102 (92→102: +6 charDiff, +1 cardNotes,
++3 statusBarTints), audit-corpus P1=0/P2=0, lint 18 probléma (a HEAD-alapvonallal
+azonos, nincs új hibaosztály).
+
+## ✅ FB82 [P2 UI], Verziószám a Settingsben, KÉSZ (`settings.tsx`)
+Idézet (07-31 10:18, settings-tab): „legyen a settingsbe egy szürke kis kiirása, hogy
+mi a verzió száma az appnak hogy lássam"
+Fix: a backup/restore sorok alatt szürke, kicsi sor `v3.0.8 (8)` formában. Az érték
+`Constants.expoConfig` (app.json `version` + `android.versionCode`), így nem tud
+elcsúszni egy külön karbantartott konstanstól. i18n nem kell (csak szám).
+
+## ✅ FB83 [P2 UI], Kékes csík az app tetején, 5 árnyalat körbe, KÉSZ (`StatusBarStrip.tsx`)
+Idézet (07-31 10:19, word:the shelf): „az app tetejére szeretnék egy kékes csíkot hogy
+az óra a töltöttség látható legyen. és legyen a kék úgy hogy ha rá kattintok akkor
+váltson a kékek között legyen 5 különböző változat. és így körbe menjen"
+**Döntés (AskUserQuestion, 2026-08-03): csak a státuszsáv-csík**, a fejléc/tab-bar és
+a globális akcent NEM változik (legkisebb diff, nincs téma-átírás).
+Megvalósítás:
+- `lib/statusBarTints.ts`: 5 kék (`#1D4ED8`, `#0EA5E9`, `#0F4C81`, `#38BDF8`,
+  `#312E81`) + `nextTintIndex` (körbe fordul, tartomány-hibás tárolt indexet is túlél)
+  + `tintColor`. Tiszta logika, tesztelve.
+- `components/StatusBarStrip.tsx`: a navigátor FÖLÖTT ülő sáv, magassága a
+  státuszsáv-inset (`StatusBar.currentHeight` Androidon, iOS 47, weben 0 = nincs sáv),
+  `expo-status-bar` `style="light"` a fehér óra/akku-ikonokhoz. Tap = következő kék.
+- Perzisztálás: `user_meta.status_bar_tint INTEGER` (ALTER-migráció a régi DB-knek) +
+  `getStatusBarTint`/`setStatusBarTint` MINDKÉT db-implementációban + interfészben
+  (web: memória-tükör). App-szintű beállítás, ezért `user_meta`, nem `learn_settings`.
+
+## ✅ FB84 [P1 UX], A hiányzó betűt is jelölje a gépelés-diff, KÉSZ (`lib/charDiff.ts`)
+Idézet (08-02 22:33, word:we have): „valahogy a hiányzó betűt is jelölni kellene hogy
+lássam mi a baj"
+Gyökérok: az LCS-diff a kimaradt betűt CSENDBEN átugrotta (`j++`), így a „we hav" a
+„we have" mellett hibátlannak látszott, és a szó végi hiány sem jelent meg (a ciklus
+`i < m`-ig futott). Fix: a hiányzó karakter is bekerül a kimenetbe `missing: true`
+jelöléssel (a ciklus `i < m || j < n`), a UI borostyán háttér + aláhúzás
+(`diffMissing`) a piros „ezt elgépelted" jelöléstől elkülönítve.
+A `charDiff` mostantól **közös modul** (`lib/charDiff.ts`, `fold` kapcsolóval): a
+tanulókártya folddal hívja (kis/nagybetű + ékezet megbocsátva, FB25), a
+helyesírás-tréner `fold=false`-szal (betűhű értékelés). Eddig két kézzel másolt
+példány élt (`index.tsx` + `spelling.tsx`), ezért kellett volna a fixet kétszer
+megírni. Teszt: `lib/__tests__/charDiff.test.ts` (6 eset).
+
+## ✅ FB85 [P2 feature], Ser/estar magyarázat + példamondatok, KÉSZ (`lib/cardNotes.ts`)
+Idézetek (08-02):
+- (22:41, word:they are (state)): „itt a ser estar nál kellene valami rövid szöveg hogy
+  mi a különbség a ser és az estar között és két példa mondat"
+- (22:42, word:Soy profesor.): „meg a ser és az estar nál ilyen tipik példa mondatok
+  több is lehet, ami kifejezi a különbséget és bizonyítja is a különbséget"
+Fix: új `serEstar` szabály az FB75 ℹ️-motorban, a `ser` / `estar` / `ser_vs_estar`
+topic MINDEN kártyájára (csak `targetLang==='es'`). A szöveg a tanuló saját nyelvén
+(i18n ×4): rövid szabály + KÉT kontraszt-pár, ami bizonyítja a különbséget
+(`Soy profesor.` VS `Estoy en clase.`, `El café es caliente.` VS `El café está frío.`).
+Nyelvtani forrás: RAE, Nueva gramática § 37.6 (ser = azonosság/besorolás,
+estar = állapot, hely, változás eredménye). Teszt: `cardNotes.test.ts` bővítés.
+
+## ✅ FB86 [P2 feature], liszt↔virág (flour/flower) megkülönböztető ikon, KÉSZ (`lib/cardIcons.ts`)
+Idézet (08-02 22:55, word:the flour): „itt mindig keverem a lisztet és a virágot mert
+angolul ugyan az a szó vagy nem ugyan az csak a dyszlexiam miatt annak látom? Csinálj
+erre a szóra valami kártyát ikont hogy meg tudjam különböztetni őket"
+**Döntés (AskUserQuestion, 2026-08-03): emoji-ikon + ℹ️ jegyzet.**
+- `lib/cardIcons.ts`: kézzel karbantartott lemma→emoji map (`harina` 🌾, `flor`/`flores`
+  🌸), csak `es` célnyelvre. Szándékosan rövid lista: ikon csak ott, ahol valódi
+  keveredést old fel, sose generált.
+- UI: az ikon a kártya-front szövege ELŐTT (flashcard + gépelős nézet), mindkét
+  irányban, mert a jelentéshez tartozik, nem az egyik nyelvhez.
+- Kézi jegyzet 4 nyelven az a1 1268 (`la harina`) és 1836 (`la flor`) kártyán: az angol
+  flour/flower majdnem azonos, a spanyol harina/flor semmiben sem hasonlít.
+
+## ✅ FB87 [P1 UI BUG], Easy-mondat kártya is összecsúszik, KÉSZ (`index.tsx`)
+Idézet (08-03 12:14, easy:He is an intelligent and kind person.): „most itt is egybe
+lóg a minden fenn össze csúszik"
+Ugyanaz az osztály, mint FB74, csak a másik kártyatípuson: a hosszú mondat sok
+csempéje kinőtte a középre igazított, nem görgethető oszlopot, és a kártya teteje az
+abszolút pozíciójú fejléc alá csúszott. Fix: az easy-ág is `ScrollView`-ba
+(`typingScroll` + `typingScrollContent` stílusok újrahasználva,
+`keyboardShouldPersistTaps="handled"`), a FeedbackButton a görgetőn kívül marad.
+
+## ✅ FB88 [P2 adat], Miért kell a „lo" a mondatba, KÉSZ (`data`)
+Idézet (08-03 13:45, easy:The coffee is cold, I don't want it.): „ide be lehetne írni
+hogy miért kel a lo bele"
+Kártya a1 1113 (`El café está frío.`, ser_vs_estar). Kézi ℹ️ jegyzet 4 nyelven: a `lo`
+tárgyeseti névmás, hímnemű dolgot helyettesít (`el café` → `no LO quiero`), nőnemben
+`la`, többesben `los/las`, és az ige ELÉ kerül. Mivel a kézi jegyzet felülírja a
+szabályt (FB75 hibrid modell), a jegyzet a ser/estar különbséget is tartalmazza, hogy
+ezen a kártyán se vesszen el az FB85 magyarázat.
+
+## Elfogadási kritérium (FB82–FB88 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld 102/102 ✅ (2026-08-03).
+- `node scripts/audit-corpus.mjs` → P1=0, P2=0 ✅ (csak note-mezők változtak).
+- `npx expo lint`: 18 probléma (8 error, 10 warning) = a HEAD-alapvonal, nincs új
+  hibaosztály ✅.
+- `data/words/a1.json` parseable, 882 kártya ✅; csak note-mezők mozdultak
+  (id 1113, 1268, 1836), mondat/szó/topic érintetlen.
+- ⏳ Eszköz-verify: kék csík + 5 árnyalat körbe, verziószám a Settingsben, hiányzó
+  betű jelölése gépeléskor, ser/estar és „lo" ℹ️ szöveg, 🌾/🌸 ikon, hosszú
+  easy-mondat görgetése.
+
+---
+
 # Aktuális feladatok (iter1.2)
 
 Kimacha nyelvtanuló app (Expo/React Native).
