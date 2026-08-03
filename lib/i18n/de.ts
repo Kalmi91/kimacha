@@ -114,6 +114,7 @@ export default {
   note: {
     title: 'Grammatik-Hinweis',
     pairNoun: 'Gegenstand aus zwei symmetrischen Teilen: im Spanischen können Singular und Plural EIN Stück bezeichnen (el pantalón = los pantalones, RAE). Im Englischen steht immer der Plural: a pair of trousers.',
+    serEstar: 'SER = was etwas IST: Identität, Beruf, Herkunft, dauerhafte Eigenschaft. ESTAR = wie etwas GERADE ist: Zustand, Stimmung, Ort, Ergebnis einer Veränderung.\n• Soy profesor. (mein Beruf) VS Estoy en clase. (gerade jetzt)\n• El café es caliente. (Kaffee ist ein heißes Getränk, immer) VS El café está frío. (dieser Kaffee ist kalt geworden)',
     someIndef: 'unos/unas ist der unbestimmte Artikel im Plural: einige, ein Paar (unos vaqueros = eine Jeans).',
   },
   usage: {

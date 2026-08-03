@@ -28,7 +28,14 @@ export type CardNote =
   // one garment/tool, singular OR plural in Spanish, always plural in English
   | { kind: 'pairNoun' }
   // "unos/unas" in the sentence: the plural indefinite, "some"
-  | { kind: 'someIndef' };
+  | { kind: 'someIndef' }
+  // FB85: ser vs estar, the two "to be" verbs, with contrasting examples
+  | { kind: 'serEstar' };
+
+// FB85: the cards that teach either copula. Grammar source: RAE, Nueva gramática
+// § 37.6 (ser = identity / inherent classification, estar = state, location and
+// the result of a change).
+const SER_ESTAR_TOPICS = ['ser', 'estar', 'ser_vs_estar'];
 
 // Spanish nouns of the RAE "two symmetric parts" class (lemma, no article).
 const ES_PAIR_NOUNS = [
@@ -67,6 +74,10 @@ export function cardNote(word: NoteWord, uiLang: string, targetLang: string, sen
 
   if (sentence && /(^|\s)(unos|unas)\s/i.test(sentence)) {
     return { kind: 'someIndef' };
+  }
+
+  if (SER_ESTAR_TOPICS.includes(String(word.topic ?? ''))) {
+    return { kind: 'serEstar' };
   }
 
   return null;

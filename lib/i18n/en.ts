@@ -115,6 +115,7 @@ export default {
     title: 'Grammar note',
     pairNoun: 'An object with two symmetric parts: in Spanish both the singular and the plural can mean ONE item (el pantalón = los pantalones, RAE). English keeps it plural: a pair of trousers.',
     someIndef: 'unos/unas is the plural indefinite article: some, a pair of (unos vaqueros = a pair of jeans).',
+    serEstar: 'SER = what something IS: identity, job, origin, lasting quality. ESTAR = how something IS right now: state, mood, location, result of a change.\n• Soy profesor. (I am a teacher, my job.) VS Estoy en clase. (I am in class, right now.)\n• El café es caliente. (Coffee is a hot drink, always.) VS El café está frío. (This coffee has gone cold.)',
   },
   usage: {
     plusOneMinute: '+1 minute wooo!',

@@ -1583,7 +1583,11 @@
     "sentence_es": "El café está frío, no lo quiero.",
     "sentence_hu": "A kávé kihűlt, nem kérem.",
     "sentence_en": "The coffee is cold, I don't want it.",
-    "sentence_de": "Der Kaffee ist kalt, ich will ihn nicht."
+    "sentence_de": "Der Kaffee ist kalt, ich will ihn nicht.",
+    "note_hu": "A lo a tárgyeseti névmás: hímnemű dolgot helyettesít, hogy ne kelljen megismételni (el café → no LO quiero = nem kérem AZT). Nőnemben la, többes számban los/las. A névmás az ige ELÉ kerül: no lo quiero.\nSER vs ESTAR: es caliente = a kávé forró ital (állandó), está frío = ez a csésze most kihűlt (állapot).",
+    "note_en": "lo is the direct-object pronoun: it replaces a masculine thing so you do not repeat it (el café → no LO quiero = I do not want IT). Feminine is la, plural los/las. The pronoun goes BEFORE the verb: no lo quiero.\nSER vs ESTAR: es caliente = coffee is a hot drink (always), está frío = this cup has gone cold (a state).",
+    "note_es": "lo es el pronombre de complemento directo: sustituye a una cosa masculina para no repetirla (el café → no LO quiero). En femenino la, en plural los/las. El pronombre va DELANTE del verbo: no lo quiero.\nSER y ESTAR: es caliente = el café es una bebida caliente (siempre), está frío = esta taza se ha enfriado (estado).",
+    "note_de": "lo ist das Akkusativpronomen: es ersetzt eine männliche Sache, damit man sie nicht wiederholt (el café → no LO quiero = ich will ihn nicht). Weiblich la, Plural los/las. Das Pronomen steht VOR dem Verb: no lo quiero.\nSER und ESTAR: es caliente = Kaffee ist ein heißes Getränk (immer), está frío = diese Tasse ist kalt geworden (Zustand)."
   },
   {
     "id": 1114,
@@ -3753,7 +3757,11 @@
     "sentence_es": "Necesito harina para el pastel.",
     "sentence_hu": "Liszt kell a tortához.",
     "sentence_en": "I need flour for the cake.",
-    "sentence_de": "Ich brauche Mehl für den Kuchen."
+    "sentence_de": "Ich brauche Mehl für den Kuchen.",
+    "note_hu": "🌾 la harina = LISZT (angolul flour), amiből a kenyér készül. Ne keverd a 🌸 la flor = VIRÁG szóval (angolul flower): az angol két szó majdnem ugyanúgy néz ki és hangzik, a spanyol kettő viszont teljesen különbözik.",
+    "note_en": "🌾 la harina = FLOUR, what bread is made of. Do not mix it up with 🌸 la flor = FLOWER: the two English words look and sound almost the same, but the Spanish ones are completely different.",
+    "note_es": "🌾 la harina = polvo para hacer pan (en inglés flour). No la confundas con 🌸 la flor (en inglés flower): en inglés las dos palabras se parecen mucho, en español no se parecen nada.",
+    "note_de": "🌾 la harina = MEHL (englisch flour), woraus Brot gemacht wird. Nicht mit 🌸 la flor = BLUME (englisch flower) verwechseln: die beiden englischen Wörter sehen fast gleich aus, die spanischen überhaupt nicht."
   },
   {
     "id": 1269,
@@ -11569,7 +11577,11 @@
     "sentence_es": "Hay flores en el jardín.",
     "sentence_hu": "Virágok vannak a kertben.",
     "sentence_en": "There are flowers in the garden.",
-    "sentence_de": "Im Garten sind Blumen."
+    "sentence_de": "Im Garten sind Blumen.",
+    "note_hu": "🌸 la flor = VIRÁG (angolul flower). Ne keverd a 🌾 la harina = LISZT szóval (angolul flour): az angol flower és flour majdnem ugyanaz, a spanyol flor és harina viszont semmiben sem hasonlít.",
+    "note_en": "🌸 la flor = FLOWER, the one that grows in a garden. Do not mix it up with 🌾 la harina = FLOUR: English flower and flour look almost the same, Spanish flor and harina share nothing.",
+    "note_es": "🌸 la flor = la que crece en el jardín (en inglés flower). No la confundas con 🌾 la harina (en inglés flour): en inglés las dos palabras se parecen mucho, en español no.",
+    "note_de": "🌸 la flor = BLUME (englisch flower), die im Garten wächst. Nicht mit 🌾 la harina = MEHL (englisch flour) verwechseln: die englischen Wörter flower und flour sehen fast gleich aus, flor und harina gar nicht."
   },
   {
     "id": 1837,

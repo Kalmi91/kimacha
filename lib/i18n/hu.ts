@@ -114,6 +114,7 @@ export default {
   note: {
     title: 'Nyelvtani infó',
     pairNoun: 'Két szimmetrikus részből álló tárgy: spanyolul az egyes és a többes szám is jelenthet EGY darabot (el pantalón = los pantalones, RAE). Angolul mindig többes szám: a pair of trousers.',
+    serEstar: 'SER = ami valami TARTÓSAN: azonosság, foglalkozás, származás, állandó tulajdonság. ESTAR = ami ÉPPEN MOST van: állapot, hangulat, hely, változás eredménye.\n• Soy profesor. (Tanár vagyok, ez a foglalkozásom.) VS Estoy en clase. (Órán vagyok, most.)\n• El café es caliente. (A kávé forró ital, mindig.) VS El café está frío. (Ez a kávé kihűlt.)',
     someIndef: 'Az unos/unas a határozatlan névelő többes alakja: néhány, egy pár (unos vaqueros = egy farmernadrág).',
   },
   usage: {

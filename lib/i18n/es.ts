@@ -115,6 +115,7 @@ export default {
     title: 'Nota gramatical',
     pairNoun: 'Objeto de dos partes simétricas: en español el singular y el plural pueden designar UNA sola prenda (el pantalón = los pantalones, RAE). En inglés siempre va en plural: a pair of trousers.',
     someIndef: 'unos/unas es el artículo indefinido en plural: algunos, un par de (unos vaqueros = un pantalón vaquero).',
+    serEstar: 'SER = lo que algo ES: identidad, profesión, origen, cualidad estable. ESTAR = cómo está algo AHORA: estado, ánimo, lugar, resultado de un cambio.\n• Soy profesor. (mi profesión) VS Estoy en clase. (ahora mismo)\n• El café es caliente. (bebida caliente, siempre) VS El café está frío. (este café se ha enfriado)',
   },
   usage: {
     plusOneMinute: '¡+1 minuto, guau!',
