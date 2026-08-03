@@ -22,6 +22,14 @@ import {
   DAILY_NEW_LIMIT_STEP,
 } from '@/lib/usageStats';
 import FeedbackButton from '@/components/FeedbackModal';
+import Constants from 'expo-constants';
+
+// FB82: version line in Settings. expoConfig carries app.json's version and the
+// Android versionCode, so no separate constant can drift out of sync.
+const appVersionLabel = `v${Constants.expoConfig?.version ?? '?'}` +
+  (Constants.expoConfig?.android?.versionCode != null
+    ? ` (${Constants.expoConfig.android.versionCode})`
+    : '');
 
 export default function SettingsScreen() {
   const { theme, override, setOverride } = useTheme();
@@ -313,6 +321,9 @@ export default function SettingsScreen() {
         <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
       </Pressable>
 
+      {/* FB82: app version, small and grey, so the user can tell which build runs. */}
+      <Text style={[styles.versionText, { color: colors.tabIconDefault }]}>{appVersionLabel}</Text>
+
       <Modal visible={masterVisible} transparent animationType="fade">
         <View style={styles.overlay}>
           <View style={[styles.modal, { backgroundColor: colors.card }]}>
@@ -368,6 +379,11 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 24,
     paddingTop: 40,
+  },
+  versionText: {
+    marginTop: 12,
+    fontSize: 12,
+    textAlign: 'center',
   },
   sectionTitle: {
     fontSize: 22,
