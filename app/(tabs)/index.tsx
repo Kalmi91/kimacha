@@ -15,6 +15,8 @@ import { consumePendingAction } from '@/lib/pendingAction';
 import { DAILY_NEW_BONUS_STEP } from '@/lib/usageStats';
 import { capNewWords } from '@/lib/newWordBudget';
 import { cardNote } from '@/lib/cardNotes';
+import { charDiff } from '@/lib/charDiff';
+import { cardIcon } from '@/lib/cardIcons';
 import FeedbackButton from '@/components/FeedbackModal';
 import * as Speech from 'expo-speech';
 import ExamMode from '@/components/ExamMode';
@@ -40,40 +42,8 @@ interface DueItem {
 
 type TypingResult = 'correct' | 'almost' | 'wrong' | 'skipped' | null;
 
-// FB25: char-level diff for typing answers, highlights the mistyped letters.
-// LCS alignment so one missing/extra letter doesn't cascade the whole word red.
-// Comparison folds case + accents (those are forgiven by strictAnswerMatch),
-// but the user's original characters are rendered.
-const foldChar = (ch: string): string =>
-  ch.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-
-function charDiff(typed: string, correct: string): { ch: string; wrong: boolean }[] {
-  const a = [...typed];
-  const b = [...correct];
-  const an = a.map(foldChar);
-  const bn = b.map(foldChar);
-  const m = an.length, n = bn.length;
-  const dp: number[][] = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
-  for (let i = m - 1; i >= 0; i--) {
-    for (let j = n - 1; j >= 0; j--) {
-      dp[i][j] = an[i] === bn[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
-    }
-  }
-  const out: { ch: string; wrong: boolean }[] = [];
-  let i = 0, j = 0;
-  while (i < m) {
-    if (j < n && an[i] === bn[j]) {
-      out.push({ ch: a[i], wrong: false }); i++; j++;
-    } else if (j < n && dp[i + 1][j] >= dp[i][j + 1]) {
-      out.push({ ch: a[i], wrong: true }); i++;       // typed char not in correct
-    } else if (j < n) {
-      j++;                                            // correct has a char typed missed
-    } else {
-      out.push({ ch: a[i], wrong: true }); i++;       // trailing extra typed chars
-    }
-  }
-  return out;
-}
+// FB25/FB84: char diff lives in lib/charDiff.ts now, shared with the spelling
+// trainer, which used to carry a hand-copied twin of it.
 
 // FB26: reorder word cards so no more than `maxRun` of the same kind (flashcard
 // vs typing) appear in a row, keeping a balanced flashcard/typing mix.
@@ -888,7 +858,13 @@ export default function LearnScreen() {
       ? note.text
       : note.kind === 'pairNoun'
         ? s.note.pairNoun
-        : s.note.someIndef;
+        : note.kind === 'serEstar'
+          ? s.note.serEstar
+          : s.note.someIndef;
+  // FB86: picture cue on cards the learner keeps mixing up (flour vs flower),
+  // shown on both sides since it belongs to the meaning, not to one language.
+  const icon = cardIcon(current.word as any, direction[1]);
+  const iconBadge = icon ? <Text style={styles.cardIcon}>{icon}</Text> : null;
   const noteButton = noteText ? (
     <Pressable onPress={() => setNoteOpen(o => !o)} style={styles.speakBtn}>
       <Text style={styles.speakIcon}>ℹ️</Text>
@@ -984,6 +960,14 @@ export default function LearnScreen() {
             <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>🔥</Text>
           </View>
         </View>
+        {/* FB87: same collapse as FB74 on the typing screen, a long sentence
+            with many chips grows past the centered column and slides under the
+            absolute header. Scroll the card instead (shared scroll styles). */}
+        <ScrollView
+          style={styles.typingScroll}
+          contentContainerStyle={styles.typingScrollContent}
+          keyboardShouldPersistTaps="handled"
+        >
         {topicHeader}
         {progressMeter}
         {examBanner}
@@ -1003,6 +987,7 @@ export default function LearnScreen() {
           }}
           onSkip={requeueCurrent}
         />
+        </ScrollView>
         <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`easy:${nativeSentence}`} />
       </View>
     );
@@ -1040,6 +1025,7 @@ export default function LearnScreen() {
 
         <View style={[styles.card, { backgroundColor: colors.card }]}>
           <View style={[styles.frontRow, { marginBottom: 16 }]}>
+            {iconBadge}
             <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
             <Pressable onPress={() => Speech.speak(front, { language: speechLang(frontLang) })} style={styles.speakBtn}>
               <Text style={styles.speakIcon}>🔊</Text>
@@ -1079,7 +1065,12 @@ export default function LearnScreen() {
               {typingResult === 'wrong' && typedAnswer.trim().length > 0 && (
                 <Text style={styles.diffLine}>
                   {charDiff(typedAnswer, back.split(' / ')[0]).map((d, i) => (
-                    <Text key={i} style={d.wrong ? styles.diffWrong : { color: colors.text }}>{d.ch}</Text>
+                    <Text
+                      key={i}
+                      style={d.missing ? styles.diffMissing : d.wrong ? styles.diffWrong : { color: colors.text }}
+                    >
+                      {d.ch}
+                    </Text>
                   ))}
                 </Text>
               )}
@@ -1182,6 +1173,7 @@ export default function LearnScreen() {
         }}
       >
         <View style={styles.frontRow}>
+          {iconBadge}
           <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
           <Pressable onPress={() => Speech.speak(front, { language: speechLang(frontLang) })} style={styles.speakBtn}>
             <Text style={styles.speakIcon}>🔊</Text>
@@ -1421,6 +1413,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '700',
   },
+  cardIcon: {
+    fontSize: 30,
+  },
   frontRow: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -1518,6 +1513,13 @@ const styles = StyleSheet.create({
   diffWrong: {
     backgroundColor: '#EF4444',
     color: '#FFFFFF',
+  },
+  // FB84: amber + underline for a letter that was left out, so it reads apart
+  // from the red "you typed the wrong letter here" marks.
+  diffMissing: {
+    backgroundColor: '#EAB308',
+    color: '#FFFFFF',
+    textDecorationLine: 'underline',
   },
   correctAnswer: {
     fontSize: 22,
