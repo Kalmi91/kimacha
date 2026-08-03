@@ -8,39 +8,14 @@ import { useTheme } from '@/lib/ThemeContext';
 import { getDb } from '@/lib/database';
 import { words } from '@/data/words';
 import { t } from '@/lib/i18n';
+import { charDiff } from '@/lib/charDiff';
 import { speechLang } from '@/lib/languages';
 import { spellingLadderDays } from '@/lib/spellingLadder';
 import FeedbackButton from '@/components/FeedbackModal';
 
-// FB25: char-level diff for wrong answers, highlights the mistyped letters.
-// Copied verbatim from app/(tabs)/index.tsx's charDiff, but WITHOUT the
-// case/accent folding used there, spelling practice is checked byte-for-byte,
-// so every visual difference the grader cares about must show up here too.
-function charDiff(typed: string, correct: string): { ch: string; wrong: boolean }[] {
-  const a = [...typed];
-  const b = [...correct];
-  const m = a.length, n = b.length;
-  const dp: number[][] = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
-  for (let i = m - 1; i >= 0; i--) {
-    for (let j = n - 1; j >= 0; j--) {
-      dp[i][j] = a[i] === b[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
-    }
-  }
-  const out: { ch: string; wrong: boolean }[] = [];
-  let i = 0, j = 0;
-  while (i < m) {
-    if (j < n && a[i] === b[j]) {
-      out.push({ ch: a[i], wrong: false }); i++; j++;
-    } else if (j < n && dp[i + 1][j] >= dp[i][j + 1]) {
-      out.push({ ch: a[i], wrong: true }); i++;       // typed char not in correct
-    } else if (j < n) {
-      j++;                                            // correct has a char typed missed
-    } else {
-      out.push({ ch: a[i], wrong: true }); i++;       // trailing extra typed chars
-    }
-  }
-  return out;
-}
+// FB25/FB84: shared char diff, called with fold=false, spelling practice is
+// graded byte-for-byte, so case and accent differences must stay visible.
+const spellingDiff = (typed: string, correct: string) => charDiff(typed, correct, false);
 
 interface QueueItem {
   wordId: number;
@@ -181,8 +156,13 @@ export default function SpellingScreen() {
             {result === 'wrong' && (
               <>
                 <Text style={styles.diffLine}>
-                  {charDiff(typedAnswer, target).map((d, i) => (
-                    <Text key={i} style={d.wrong ? styles.diffWrong : { color: colors.text }}>{d.ch}</Text>
+                  {spellingDiff(typedAnswer, target).map((d, i) => (
+                    <Text
+                      key={i}
+                      style={d.missing ? styles.diffMissing : d.wrong ? styles.diffWrong : { color: colors.text }}
+                    >
+                      {d.ch}
+                    </Text>
                   ))}
                 </Text>
                 <View style={styles.frontRow}>
@@ -277,6 +257,12 @@ const styles = StyleSheet.create({
   diffWrong: {
     backgroundColor: '#EF4444',
     color: '#FFFFFF',
+  },
+  // FB84: amber + underline marks a letter left out, apart from the red typos.
+  diffMissing: {
+    backgroundColor: '#EAB308',
+    color: '#FFFFFF',
+    textDecorationLine: 'underline',
   },
   correctAnswer: {
     fontSize: 22,
