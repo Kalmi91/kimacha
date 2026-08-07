@@ -371,3 +371,18 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   pair-noun / unos-unas szabály; kézi note las cortinas + la verdura). FB66 a user által
   visszavonva, FB80/FB81 info (adat helyes). Gate: tsc 0, jest **92/92** (82→92: +4
   capNewWords, +6 cardNotes), audit-corpus P1=0/P2=0. ⏳ Eszköz-verify a következő buildben.
+- **2026-08-07** (Opus): **Feedback-forduló FB89–FB96 KÉSZ** (user: „kimacha app feedback
+  értékelés és megnézése és javitása"). 12 új sheet-sor (08-04 → 08-07), 1 döntés
+  AskUserQuestion-nel pinnelve: a mondat egyetlen célja a szó-megerősítés, és a leggyakrabban
+  hibázott szavakhoz tartozzon. FB89 = P1 bug, a mondat-áradat gyökéroka: a pool a szabad
+  helyeket töltötte mondattal, új `lib/sentenceMix.ts` (4:1 slot-cap + leggyengébb-szó-előre
+  rangsor) mindkét db-implementációban. FB90 hibás válasz után magától nyíló ℹ️ jegyzet
+  (gépelős + easy kártya). FB91/92/93/94 adat (testrész-névelő jegyzet 1115+1119, sala↔salón
+  szétbogozás 1835, gyűrű-mondat csere 1687, pizsama alany-elhagyás jegyzet 1685). FB95 info,
+  FB96 stale (FB83 kész, csak nem volt telepítve). **FB97** a user „sala/salón kétszer
+  van benne?" kérdéséből: korpusz-takarítás, 177 azonos jelentésű duplikátum törölve
+  (alacsonyabb szint nyer) + 538 ütköző szó-id feloldva (`scripts/dedupe-words.mjs`,
+  generált `lib/wordMerges.ts`, DB-migráció mindkét implementációban, `pickSurvivor`
+  haladás-összefésülés, őrző teszt). Korpusz 3478 → 3301 kártya, A0/A1 id-k érintetlenek.
+  Gate: tsc 0, jest **117/117** (102→117: +7 sentenceMix, +8 corpusIntegrity),
+  audit-corpus es/en/hu P1=0/P2=0, lint 18 = alapvonal. ⏳ Eszköz-verify + APK.

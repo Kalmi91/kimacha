@@ -1166,6 +1166,155 @@ ezen a kártyán se vesszen el az FB85 magyarázat.
 
 ---
 
+# 📋 Feedback, 2026-08-04/07 forduló (v3.0.9 telefon-teszt, A1 en→es)
+
+Új sorok a `Kimacha Feedback` sheetből (FB88 utáni 12 sor, 08-04 10:44 → 08-07 21:20).
+Triage 2026-08-07 (Opus). Idézetek a user eredeti megfogalmazásában, ne tömörítsd.
+**Pinnelt döntés (AskUserQuestion, 2026-08-07), a mondatok szerepe:** „A mondatoknak
+a célja egyetlen egy dolog, hogy a szavakat segitsék megtanulni. SEMMI MÁS azokból a
+szavakból legyenek mondatok amiket sokat hibázok." Ez felülírja a korábbi „cap vagy
+catch-up" opciókat: a mondat sosem cél, csak szó-megerősítés.
+
+## ✅ FB89 [P1 BUG], Mondat-áradat, a queue csupa mondat lett, KÉSZ (`lib/sentenceMix.ts`)
+Idézetek (mind 08-07, A1 en→es):
+- 20:45 `sentence:Llevo el bañador a la piscina.`: „túl sok a mondat kevés a szó, miért?"
+- 20:46 `sentence:¿Tú vas al mercado?`: „most vagy 60 mondat van benne miért?"
+- 20:48 `sentence:Soy de España, de Madrid.`: „ja hát itt érdekes, dolog történt most
+  csak mondatok vannak és nem tudom miért"
+- 21:20 `sentence:La casa es naranja.`: „megint túl sok mondat, mintha valami be
+  buhosodott volna"
+
+Gyökérok: `getDueCardsForWordIds` a mondat-slotokat a pool MARADÉKÁBÓL töltötte
+(`sentenceSlots = Math.max(3, limit - newCards - reviewWords)`). Amelyik napon kevés
+szó esedékes (mind későbbre ütemezve), ott a 40-es poolból 35+ mondat lett, és az
+`applyCadence` 4:1 ritmusa nem tudott mihez keverni, így a végén hosszú mondat-blokk
+maradt. Nem regresszió, a hiba a kezdetektől benne volt, csak most futott bele a user
+elég érett FSRS-ütemezésbe.
+
+Fix, `lib/sentenceMix.ts` (tiszta logika, tesztelve):
+- `sentenceSlotCount(wordCardCount) = floor(wordCardCount / 4)`, azaz a mondat-szám a
+  4 szó : 1 mondat cadence-hez (FB31/FB36) igazodik, nem a szabad helyhez. 4 esedékes
+  szó alatt 0 mondat: nincs mit megerősíteni, a session véget ér és a Done screen
+  kínálja az új szavakat.
+- `rankSentencesByWordWeakness(cards, weakness)`: a megmaradt slotok a leggyengébb
+  szavakhoz mennek, sorrend `lapses` DESC → FSRS `difficulty` DESC → `due` ASC →
+  bemeneti sorrend (stabil).
+Bekötve MINDKÉT db-implementációba (`database.ts` SQL + `database.web.ts` memória),
+a mondat-lekérdezés innentől LIMIT nélkül hozza a due sorokat, és a rangsor vág.
+
+## ✅ FB90 [P2 UX], Magyarázat magától jöjjön, ha elrontottam, KÉSZ (`index.tsx`, `EasySentenceCard.tsx`)
+Idézet (08-04 10:45, `easy:My arm is broken.`): „inkább ide valami magyarázat kellene
+de csak akkor ha elrontottam"
+Fix: a kártya ℹ️ jegyzete (FB75 hibrid modell) magától kinyílik hibás válasz után.
+Gépelős kártya: `handleCheck` rossz találatnál `setNoteOpen(true)` (helyes válasznál
+nem, marad csendben). Easy mondat-kártya: új `mistakeNote` prop, a helyes mondat alatt
+jelenik meg, csak `result === 'wrong'` esetén.
+
+## ✅ FB91 [adat + info], Testrészek névelővel, nem birtokossal, KÉSZ (`data`, id 1115 + 1119)
+Idézet (08-04 10:44, `easy:My arm is broken.`): „ez mi pierna not? megint mintha
+hiányozna valami de nem vagyok biztos az AI ban. és ha ezt a feedback megkapod akkor
+itd meg hogy igazam volt e vagy nem"
+Idézet (08-04 20:21, `easy:I have pain in my shoulder.`): „ide nem kellene a mi váll?
+mármint, hogy az enyém mint az angolban"
+**Válasz a kérdésre: nem volt igazad**, `el brazo` = kar, `la pierna` = láb, a kártya
+adata helyes. A valós hiány a másik fele: a spanyol a testrész elé NÉVELŐT tesz, nem
+birtokos névmást (`Tengo el brazo roto`, `Tengo dolor en el hombro`), ezért látszott
+úgy, mintha hiányozna valami. Kézi ℹ️ jegyzet 4 nyelven mindkét kártyára (1115 brazo,
+1119 hombro), a brazo-jegyzet a brazo↔pierna párt is kiírja.
+
+## ✅ FB92 [adat], `la sala` és `el salón` is „the living room" volt, KÉSZ (`data`, id 1835)
+Idézet (08-07 19:43, `word:the living room`): „it most nem értem a sala és a salón is
+living room? ez zavaros bogozd ki és csak az egyiket tedd be"
+Gyökérok: két kártya azonos angol oldallal (1096 `el salón`, 1835 `la sala`), így
+native→learned gépelésnél eldönthetetlen volt, melyiket kéri. Fix: a nappali marad
+`el salón`, az 1835 átkerül a valódi jelentésére (`a terem` / `the room (hall)` /
+`der Saal`), mondata `La sala está llena de gente.`, plusz ℹ️ jegyzet a spanyolországi
+vs. latin-amerikai használatról.
+Maradt még két azonos angol oldal az A1-ben (`the menu` = 1129 `el menú` / 1290
+`la carta`, `cold` = 1429 `frío` / 1519 `el resfriado`), ezek NEM ebben a fordulóban
+kértek javítást, de ugyanez a zavar fenyeget.
+
+## ✅ FB93 [adat], Buta mondat a gyűrű-kártyán, KÉSZ (`data`, id 1687)
+Idézet (08-07 20:44, `sentence:Lleva un anillo en la mano.`): „ez egy buta mondat
+veddd ki"
+Fix: `El anillo es de mi madre.` / „A gyűrű anyámé." / `The ring is my mother's.` /
+`Der Ring gehört meiner Mutter.` (az első próba `de oro` volt, de az `oro` a
+audit-corpus szerint még tanítatlan token, ezért esett ki.)
+
+## ✅ FB94 [adat], „minek van I betű" a pizsama-mondatban, KÉSZ (`data`, id 1685)
+Idézet (08-07 20:45, `sentence:Me pongo el pijama por la noche.`): „itt minek va I
+betű???"
+Válasz jegyzetben: az angol `I`-nek nincs spanyol párja, a `pongo` `-o` végződése maga
+jelenti, hogy én, ezért a `yo` elmarad; a `me` a visszaható rész. Mivel a kézi jegyzet
+felülírja a szabály-alapút (FB75), a `pajamas` pair-noun magyarázat is belekerült, hogy
+ne vesszen el.
+
+## 📌 FB95 [info], „Hay un libro aquí.", adat HELYES, nincs teendő
+Idézet (08-07 19:30, `word:Hay un libro aquí.`): „ez biztos jó?"
+A `hay` (haber személytelen alakja) + határozatlan névelő a létezés kifejezése, a
+mondat helyes, a kártya `hay_vs_esta` topichoz tartozik (id 1342).
+
+## 📌 FB96 [stale], „még mindig nincs kék csík", NINCS teendő
+Idézet (08-04 20:28, `word:we exercise`): „még mindig nincs a képernyő tetején egy kék
+csík azért, hogy lássam az időt és a telefon toltottségét. ezt csináld meg"
+FB83 08-03-án elkészült (`StatusBarStrip`, bekötve `app/_layout.tsx:84`), de a 3.0.9
+APK a jelzés idején még nem volt telefonon. Kód-teendő nincs, telepítés kell.
+
+## ✅ FB97 [P1 adat-integritás], Duplikált szavak + ütköző id-k, KÉSZ (`scripts/dedupe-words.mjs`)
+Kérdés (2026-08-07, chat): „az el salón és a la sala az kérszer van benne ugyan olyan
+néven nem?"
+Az `el salón`/`la sala` valójában két külön szó volt (az angol oldaluk ütközött, ez az
+FB92), de a kérdés nyomán a korpusz-átvizsgálás két valódi hibát talált:
+1. **177 azonos jelentésű duplikátum** szintek között (`el brazo` A1+A2, `seis` A1+A2,
+   `los zapatos` A1+A2, `encontrar` A0+A1 ...), azaz szintlépéskor nulláról tanultad
+   újra, amit már tudtál.
+2. **538 ütköző szó-id** a szintfájlok között (a1↔a2: 430, a1↔b1: 94, b1↔b2: 14). Az
+   `id` a `cards.word_id` kulcsa ÉS a megjelenítés kulcsa (`words.find(...)` a lapos,
+   minden szintet összefűző tömbön 3 helyen), így ütközésnél az első (alacsonyabb
+   szintű) találat nyert: az A2-es kártya A1 tartalmat mutatott és KÖZÖS FSRS-sort
+   használt vele. A0 tiszta volt, ezért A1-en ez még nem látszott.
+
+**Döntés (AskUserQuestion, 2026-08-07): alacsonyabb szint nyer, törlés**, plusz az
+id-javítás előre kerül (enélkül a törlés-térkép is találgatna).
+- `scripts/dedupe-words.mjs` (dry-run alapból, `--write` ír): 1. fázis a törlés,
+  2. fázis az újraszámozás CSAK a magasabb szintű fájlban, 3. fázis a `lib/wordMerges.ts`
+  generálása. Jelentés-egyezés = az `en` vagy `hu` oldal normalizált jelentéshalmazának
+  metszete nem üres, így a valódi többjelentésű párok MEGMARADNAK: `la carta` (A1 étlap
+  / A2 levél), `tener` (A0 birtokolni / B1 feltételes), `tender` (A1 kiteregetni / B2
+  hajlamos).
+- Korpusz: 3478 → 3301 kártya. a0 100 (érintetlen), a1 882→881 (csak `encontrar` 1886,
+  az A0-s 39 marad), a2 900→792, b1 927→869, b2 494→486, c1 83→81, c2 92 (érintetlen).
+  **A0/A1 id-k nem mozdultak**, tehát a telefonon lévő haladás érvényes marad.
+- `lib/wordMerges.ts` (generált): 92 egyértelmű `törölt id → megmaradt id` pár. A többi
+  85 törlés kimarad, mert a törölt id-t egy másik szint még használja, ott a migráció
+  nem találgat.
+- DB-migráció mindkét implementációban: app-indításkor (natív, egy indexelt SELECT a
+  szonda) és backup-visszatöltéskor (natív + web) átviszi a haladást. Ha MINDKÉT id-n
+  van haladás, `lib/cardMerge.ts` `pickSurvivor` dönt (több `reps` → nagyobb
+  `stability` → korábbi `due`), a gyengébb sor esik ki. `spelling_list` és
+  `card_attempts` is követi. Csak `%-es` párokra, az en/hu szótrackek külön számoznak.
+- Őrző teszt (`corpusIntegrity.test.ts`): globálisan egyedi id, nincs azonos jelentésű
+  duplikátum, a merge-térkép csak eltűnt id-t képez le, csak élő id-re mutat, és nincs
+  benne lánc.
+
+## Elfogadási kritérium (FB89–FB97 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld 117/117 ✅ (102→117: +7 sentenceMix,
+  +8 corpusIntegrity).
+- `node scripts/audit-corpus.mjs` → P1=0, P2=0 ✅ (a HEAD-alapvonallal azonos).
+- `npx expo lint`: 18 probléma (8 error, 10 warning) = a HEAD-alapvonal, nincs új
+  hibaosztály ✅.
+- `node scripts/audit-corpus-en.mjs`, `-hu.mjs`, `validate-en-track.mjs` → mind OK ✅
+  (az en/hu tracket a takarítás nem érintette).
+- Minden szintfájl parseable ✅, 3301 kártya; A1 881 (csak `encontrar` 1886 esett ki),
+  A1-es note/sentence módosítás id 1115, 1119, 1685, 1687, 1835.
+- A2/B1 topic-lefedettség: nincs 5 szónál kisebb topic ✅ (A1 46, A2 15 topic).
+- ⏳ Eszköz-verify: a session szó-mondat aránya (4:1, nincs mondat-blokk), a mondatok
+  a legtöbbet hibázott szavakhoz tartoznak, hibás válasz után magától nyíló ℹ️ jegyzet
+  (gépelős ÉS easy kártyán), sala/salón kártyák, gyűrű- és pizsama-mondat, valamint
+  hogy a takarítás után a meglévő A1 haladás sértetlenül jön fel a telefonon.
+
+---
+
 # Aktuális feladatok (iter1.2)
 
 Kimacha nyelvtanuló app (Expo/React Native).
