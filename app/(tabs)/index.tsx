@@ -746,6 +746,9 @@ export default function LearnScreen() {
     const ok = strictAnswerMatch(typedAnswer, correct);
     setTypingResult(ok ? 'correct' : 'wrong');
     setRevealed(true);
+    // FB90: the explanation is what a wrong answer needs, so open the "i" note by
+    // itself after a miss (only then, a correct answer keeps the card quiet).
+    if (!ok) setNoteOpen(true);
     // FB64: the recognition fallback is gone, so the answer is always read out
     // loud on reveal (nothing can cover the card any more).
     const { backLang } = getFrontBack(current);
@@ -986,6 +989,7 @@ export default function LearnScreen() {
             advance(Rating.Good);
           }}
           onSkip={requeueCurrent}
+          mistakeNote={noteText}
         />
         </ScrollView>
         <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`easy:${nativeSentence}`} />

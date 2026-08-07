@@ -28,20 +28,6 @@
     "topicOrder": 2
   },
   {
-    "id": 203,
-    "level": "A2",
-    "es": "el aeropuerto",
-    "hu": "repülőtér",
-    "en": "airport",
-    "sentence_es": "Vamos al aeropuerto.",
-    "sentence_hu": "Megyünk a repülőtérre.",
-    "sentence_en": "We're going to the airport.",
-    "de": "Flughafen",
-    "sentence_de": "Wir fahren zum Flughafen.",
-    "topic": "viajes_a2",
-    "topicOrder": 3
-  },
-  {
     "id": 204,
     "level": "A2",
     "es": "la maleta",
@@ -70,76 +56,6 @@
     "topicOrder": 5
   },
   {
-    "id": 206,
-    "level": "A2",
-    "es": "la cuenta",
-    "hu": "számla",
-    "en": "bill / account",
-    "sentence_es": "La cuenta, por favor.",
-    "sentence_hu": "A számlát kérem.",
-    "sentence_en": "The bill, please.",
-    "de": "Rechnung",
-    "sentence_de": "Die Rechnung, bitte.",
-    "topic": "comida_a2",
-    "topicOrder": 1
-  },
-  {
-    "id": 207,
-    "level": "A2",
-    "es": "la propina",
-    "hu": "borravaló",
-    "en": "tip",
-    "sentence_es": "Dejé una propina.",
-    "sentence_hu": "Borravalót hagytam.",
-    "sentence_en": "I left a tip.",
-    "de": "Trinkgeld",
-    "sentence_de": "Ich habe ein Trinkgeld gelassen.",
-    "topic": "comida_a2",
-    "topicOrder": 2
-  },
-  {
-    "id": 208,
-    "level": "A2",
-    "es": "el precio",
-    "hu": "ár",
-    "en": "price",
-    "sentence_es": "Cuál es el precio?",
-    "sentence_hu": "Mennyibe kerül?",
-    "sentence_en": "What's the price?",
-    "de": "Preis",
-    "sentence_de": "Was ist der Preis?",
-    "topic": "compras_servicios",
-    "topicOrder": 1
-  },
-  {
-    "id": 209,
-    "level": "A2",
-    "es": "barato",
-    "hu": "olcsó",
-    "en": "cheap",
-    "sentence_es": "Es muy barato.",
-    "sentence_hu": "Nagyon olcsó.",
-    "sentence_en": "It's very cheap.",
-    "de": "billig / günstig",
-    "sentence_de": "Es ist sehr günstig.",
-    "topic": "compras_servicios",
-    "topicOrder": 2
-  },
-  {
-    "id": 210,
-    "level": "A2",
-    "es": "caro",
-    "hu": "drága",
-    "en": "expensive",
-    "sentence_es": "Es demasiado caro.",
-    "sentence_hu": "Túl drága.",
-    "sentence_en": "It's too expensive.",
-    "de": "teuer",
-    "sentence_de": "Es ist zu teuer.",
-    "topic": "compras_servicios",
-    "topicOrder": 3
-  },
-  {
     "id": 211,
     "level": "A2",
     "es": "el vecino",
@@ -154,20 +70,6 @@
     "topicOrder": 1
   },
   {
-    "id": 212,
-    "level": "A2",
-    "es": "la película",
-    "hu": "film",
-    "en": "movie",
-    "sentence_es": "Vamos a ver una película.",
-    "sentence_hu": "Menjünk filmet nézni.",
-    "sentence_en": "Let's go see a movie.",
-    "de": "Film",
-    "sentence_de": "Lass uns einen Film sehen.",
-    "topic": "ocio_cultura",
-    "topicOrder": 1
-  },
-  {
     "id": 213,
     "level": "A2",
     "es": "la canción",
@@ -179,34 +81,6 @@
     "de": "Lied",
     "sentence_de": "Ich mag dieses Lied.",
     "topic": "ocio_cultura",
-    "topicOrder": 2
-  },
-  {
-    "id": 214,
-    "level": "A2",
-    "es": "cocinar",
-    "hu": "főzni",
-    "en": "to cook",
-    "sentence_es": "Me gusta cocinar.",
-    "sentence_hu": "Szeretek főzni.",
-    "sentence_en": "I like to cook.",
-    "de": "kochen",
-    "sentence_de": "Ich koche gern.",
-    "topic": "comida_a2",
-    "topicOrder": 3
-  },
-  {
-    "id": 215,
-    "level": "A2",
-    "es": "limpiar",
-    "hu": "takarítani",
-    "en": "to clean",
-    "sentence_es": "Necesito limpiar la casa.",
-    "sentence_hu": "Ki kell takarítanom.",
-    "sentence_en": "I need to clean the house.",
-    "de": "putzen / reinigen",
-    "sentence_de": "Ich muss das Haus putzen.",
-    "topic": "hogar_entorno",
     "topicOrder": 2
   },
   {
@@ -266,48 +140,6 @@
     "topicOrder": 1
   },
   {
-    "id": 220,
-    "level": "A2",
-    "es": "las vacaciones",
-    "hu": "nyaralás",
-    "en": "vacation",
-    "sentence_es": "Necesito vacaciones.",
-    "sentence_hu": "Kéne egy kis nyaralás.",
-    "sentence_en": "I need a vacation.",
-    "de": "Urlaub",
-    "sentence_de": "Ich brauche Urlaub.",
-    "topic": "viajes_a2",
-    "topicOrder": 6
-  },
-  {
-    "id": 221,
-    "level": "A2",
-    "es": "la playa",
-    "hu": "strand",
-    "en": "beach",
-    "sentence_es": "Vamos a la playa.",
-    "sentence_hu": "Menjünk a strandra.",
-    "sentence_en": "Let's go to the beach.",
-    "de": "Strand",
-    "sentence_de": "Lass uns zum Strand gehen.",
-    "topic": "viajes_a2",
-    "topicOrder": 7
-  },
-  {
-    "id": 222,
-    "level": "A2",
-    "es": "la montaña",
-    "hu": "hegy",
-    "en": "mountain",
-    "sentence_es": "La montaña es alta.",
-    "sentence_hu": "A hegy magas.",
-    "sentence_en": "The mountain is tall.",
-    "de": "Berg",
-    "sentence_de": "Der Berg ist hoch.",
-    "topic": "naturaleza",
-    "topicOrder": 1
-  },
-  {
     "id": 223,
     "level": "A2",
     "es": "el río",
@@ -320,34 +152,6 @@
     "sentence_de": "Der Fluss ist lang.",
     "topic": "naturaleza",
     "topicOrder": 2
-  },
-  {
-    "id": 224,
-    "level": "A2",
-    "es": "el bosque",
-    "hu": "erdő",
-    "en": "forest",
-    "sentence_es": "Me gusta el bosque.",
-    "sentence_hu": "Szeretem az erdőt.",
-    "sentence_en": "I like the forest.",
-    "de": "Wald",
-    "sentence_de": "Ich mag den Wald.",
-    "topic": "naturaleza",
-    "topicOrder": 3
-  },
-  {
-    "id": 225,
-    "level": "A2",
-    "es": "la flor",
-    "hu": "virág",
-    "en": "flower",
-    "sentence_es": "Qué flor más bonita.",
-    "sentence_hu": "Milyen szép virág.",
-    "sentence_en": "What a beautiful flower.",
-    "de": "Blume",
-    "sentence_de": "Was für eine schöne Blume.",
-    "topic": "naturaleza",
-    "topicOrder": 4
   },
   {
     "id": 226,
@@ -392,20 +196,6 @@
     "topicOrder": 7
   },
   {
-    "id": 229,
-    "level": "A2",
-    "es": "el viento",
-    "hu": "szél",
-    "en": "wind",
-    "sentence_es": "Hace mucho viento.",
-    "sentence_hu": "Nagyon fúj a szél.",
-    "sentence_en": "It's very windy.",
-    "de": "Wind",
-    "sentence_de": "Es ist sehr windig.",
-    "topic": "naturaleza",
-    "topicOrder": 8
-  },
-  {
     "id": 230,
     "level": "A2",
     "es": "la primavera",
@@ -420,20 +210,6 @@
     "topicOrder": 9
   },
   {
-    "id": 231,
-    "level": "A2",
-    "es": "el verano",
-    "hu": "nyár",
-    "en": "summer",
-    "sentence_es": "En verano hace calor.",
-    "sentence_hu": "Nyáron meleg van.",
-    "sentence_en": "It's hot in summer.",
-    "de": "Sommer",
-    "sentence_de": "Im Sommer ist es heiß.",
-    "topic": "naturaleza",
-    "topicOrder": 10
-  },
-  {
     "id": 232,
     "level": "A2",
     "es": "el otoño",
@@ -446,20 +222,6 @@
     "sentence_de": "Der Herbst ist schön.",
     "topic": "naturaleza",
     "topicOrder": 11
-  },
-  {
-    "id": 233,
-    "level": "A2",
-    "es": "el invierno",
-    "hu": "tél",
-    "en": "winter",
-    "sentence_es": "No me gusta el invierno.",
-    "sentence_hu": "Nem szeretem a telet.",
-    "sentence_en": "I don't like winter.",
-    "de": "Winter",
-    "sentence_de": "Ich mag den Winter nicht.",
-    "topic": "naturaleza",
-    "topicOrder": 12
   },
   {
     "id": 234,
@@ -560,20 +322,6 @@
     "topicOrder": 1
   },
   {
-    "id": 241,
-    "level": "A2",
-    "es": "pagar",
-    "hu": "fizetni",
-    "en": "to pay",
-    "sentence_es": "Quiero pagar con tarjeta.",
-    "sentence_hu": "Kártyával fizetnék.",
-    "sentence_en": "I want to pay by card.",
-    "de": "bezahlen",
-    "sentence_de": "Ich will mit Karte bezahlen.",
-    "topic": "compras_servicios",
-    "topicOrder": 4
-  },
-  {
     "id": 242,
     "level": "A2",
     "es": "probar",
@@ -600,20 +348,6 @@
     "sentence_de": "Es ist gefährlich.",
     "topic": "hogar_entorno",
     "topicOrder": 3
-  },
-  {
-    "id": 244,
-    "level": "A2",
-    "es": "tranquilo",
-    "hu": "nyugodt",
-    "en": "calm",
-    "sentence_es": "Este lugar es tranquilo.",
-    "sentence_hu": "Nyugodt hely ez.",
-    "sentence_en": "This place is calm.",
-    "de": "ruhig",
-    "sentence_de": "Dieser Ort ist ruhig.",
-    "topic": "yo_familia",
-    "topicOrder": 4
   },
   {
     "id": 245,
@@ -644,20 +378,6 @@
     "topicOrder": 4
   },
   {
-    "id": 247,
-    "level": "A2",
-    "es": "abierto",
-    "hu": "nyitva",
-    "en": "open",
-    "sentence_es": "La tienda está abierta.",
-    "sentence_hu": "A bolt nyitva van.",
-    "sentence_en": "The shop is open.",
-    "de": "offen / geöffnet",
-    "sentence_de": "Der Laden ist geöffnet.",
-    "topic": "compras_servicios",
-    "topicOrder": 5
-  },
-  {
     "id": 248,
     "level": "A2",
     "es": "cerrado",
@@ -672,90 +392,6 @@
     "topicOrder": 6
   },
   {
-    "id": 249,
-    "level": "A2",
-    "es": "lleno",
-    "hu": "tele",
-    "en": "full",
-    "sentence_es": "El restaurante está lleno.",
-    "sentence_hu": "Az étterem tele van.",
-    "sentence_en": "The restaurant is full.",
-    "de": "voll",
-    "sentence_de": "Das Restaurant ist voll.",
-    "topic": "comida_a2",
-    "topicOrder": 4
-  },
-  {
-    "id": 250,
-    "level": "A2",
-    "es": "vacío",
-    "hu": "üres",
-    "en": "empty",
-    "sentence_es": "La botella está vacía.",
-    "sentence_hu": "Az üveg üres.",
-    "sentence_en": "The bottle is empty.",
-    "de": "leer",
-    "sentence_de": "Die Flasche ist leer.",
-    "topic": "comida_a2",
-    "topicOrder": 5
-  },
-  {
-    "id": 681,
-    "level": "A2",
-    "es": "el cambio",
-    "hu": "változás / visszajáró",
-    "en": "change",
-    "sentence_es": "No tengo cambio.",
-    "sentence_hu": "Nincs visszajáróm.",
-    "sentence_en": "I don't have change.",
-    "de": "Wechselgeld",
-    "sentence_de": "Ich habe kein Wechselgeld.",
-    "topic": "compras_servicios",
-    "topicOrder": 7
-  },
-  {
-    "id": 682,
-    "level": "A2",
-    "es": "el mercado",
-    "hu": "piac",
-    "en": "market",
-    "sentence_es": "He comprado fruta en el mercado.",
-    "sentence_hu": "Gyümölcsöt vettem a piacon.",
-    "sentence_en": "I've bought fruit at the market.",
-    "de": "Markt",
-    "sentence_de": "Ich habe Obst auf dem Markt gekauft.",
-    "topic": "compras_servicios",
-    "topicOrder": 8
-  },
-  {
-    "id": 683,
-    "level": "A2",
-    "es": "la llave",
-    "hu": "kulcs",
-    "en": "key",
-    "sentence_es": "He perdido la llave de casa.",
-    "sentence_hu": "Elvesztettem a kulcsot.",
-    "sentence_en": "I've lost the house key.",
-    "de": "Schlüssel",
-    "sentence_de": "Ich habe den Hausschlüssel verloren.",
-    "topic": "hogar_entorno",
-    "topicOrder": 4
-  },
-  {
-    "id": 684,
-    "level": "A2",
-    "es": "el ruido",
-    "hu": "zaj",
-    "en": "noise",
-    "sentence_es": "Los vecinos hacen mucho ruido.",
-    "sentence_hu": "A szomszédok nagyon zajosak.",
-    "sentence_en": "The neighbours make a lot of noise.",
-    "de": "Lärm",
-    "sentence_de": "Die Nachbarn machen viel Lärm.",
-    "topic": "hogar_entorno",
-    "topicOrder": 5
-  },
-  {
     "id": 685,
     "level": "A2",
     "es": "el piso",
@@ -768,20 +404,6 @@
     "sentence_de": "Ich wohne im dritten Stock.",
     "topic": "hogar_entorno",
     "topicOrder": 6
-  },
-  {
-    "id": 686,
-    "level": "A2",
-    "es": "la escalera",
-    "hu": "lépcső",
-    "en": "stairs / staircase",
-    "sentence_es": "He subido por la escalera.",
-    "sentence_hu": "A lépcsőn mentem fel.",
-    "sentence_en": "I've gone up the stairs.",
-    "de": "Treppe",
-    "sentence_de": "Ich bin die Treppe hinaufgegangen.",
-    "topic": "hogar_entorno",
-    "topicOrder": 7
   },
   {
     "id": 687,
@@ -812,48 +434,6 @@
     "topicOrder": 9
   },
   {
-    "id": 689,
-    "level": "A2",
-    "es": "el semáforo",
-    "hu": "közlekedési lámpa",
-    "en": "traffic light",
-    "sentence_es": "El semáforo está en rojo.",
-    "sentence_hu": "Piros a lámpa.",
-    "sentence_en": "The traffic light is red.",
-    "de": "Ampel",
-    "sentence_de": "Die Ampel ist rot.",
-    "topic": "transporte_a2",
-    "topicOrder": 1
-  },
-  {
-    "id": 690,
-    "level": "A2",
-    "es": "el tren",
-    "hu": "vonat",
-    "en": "train",
-    "sentence_es": "El tren ha llegado con retraso.",
-    "sentence_hu": "Késéssel érkezett a vonat.",
-    "sentence_en": "The train has arrived late.",
-    "de": "Zug",
-    "sentence_de": "Der Zug ist mit Verspätung angekommen.",
-    "topic": "transporte_a2",
-    "topicOrder": 2
-  },
-  {
-    "id": 691,
-    "level": "A2",
-    "es": "el billete",
-    "hu": "jegy",
-    "en": "ticket",
-    "sentence_es": "He comprado el billete por internet.",
-    "sentence_hu": "Neten vettem a jegyet.",
-    "sentence_en": "I've bought the ticket online.",
-    "de": "Fahrkarte",
-    "sentence_de": "Ich habe die Fahrkarte im Internet gekauft.",
-    "topic": "transporte_a2",
-    "topicOrder": 3
-  },
-  {
     "id": 692,
     "level": "A2",
     "es": "el mapa",
@@ -866,48 +446,6 @@
     "sentence_de": "Ich habe die U-Bahn-Karte angeschaut.",
     "topic": "transporte_a2",
     "topicOrder": 4
-  },
-  {
-    "id": 693,
-    "level": "A2",
-    "es": "la plaza",
-    "hu": "tér",
-    "en": "square / plaza",
-    "sentence_es": "Hemos quedado en la plaza.",
-    "sentence_hu": "A téren találkozunk.",
-    "sentence_en": "We've agreed to meet at the square.",
-    "de": "Platz",
-    "sentence_de": "Wir haben uns auf dem Platz verabredet.",
-    "topic": "hogar_entorno",
-    "topicOrder": 10
-  },
-  {
-    "id": 694,
-    "level": "A2",
-    "es": "la iglesia",
-    "hu": "templom",
-    "en": "church",
-    "sentence_es": "La iglesia está al final de la calle.",
-    "sentence_hu": "A templom az utca végén áll.",
-    "sentence_en": "The church is at the end of the street.",
-    "de": "Kirche",
-    "sentence_de": "Die Kirche ist am Ende der Straße.",
-    "topic": "viajes_a2",
-    "topicOrder": 8
-  },
-  {
-    "id": 695,
-    "level": "A2",
-    "es": "la farmacia",
-    "hu": "gyógyszertár",
-    "en": "pharmacy",
-    "sentence_es": "He comprado pastillas en la farmacia.",
-    "sentence_hu": "Vettem gyógyszert a patikában.",
-    "sentence_en": "I've bought pills at the pharmacy.",
-    "de": "Apotheke",
-    "sentence_de": "Ich habe Tabletten in der Apotheke gekauft.",
-    "topic": "salud_deporte",
-    "topicOrder": 1
   },
   {
     "id": 696,
@@ -924,20 +462,6 @@
     "topicOrder": 2
   },
   {
-    "id": 697,
-    "level": "A2",
-    "es": "el dolor",
-    "hu": "fájdalom",
-    "en": "pain / ache",
-    "sentence_es": "Tengo dolor de cabeza.",
-    "sentence_hu": "Fáj a fejem.",
-    "sentence_en": "I have a headache.",
-    "de": "Schmerz",
-    "sentence_de": "Ich habe Kopfschmerzen.",
-    "topic": "salud_deporte",
-    "topicOrder": 3
-  },
-  {
     "id": 698,
     "level": "A2",
     "es": "la receta",
@@ -950,80 +474,6 @@
     "sentence_de": "Der Arzt hat mir ein Rezept gegeben.",
     "topic": "salud_deporte",
     "topicOrder": 4
-  },
-  {
-    "id": 699,
-    "level": "A2",
-    "es": "el plato",
-    "hu": "tányér / étel",
-    "en": "dish / plate",
-    "sentence_es": "He probado un plato típico.",
-    "sentence_hu": "Kipróbáltam egy helyi ételt.",
-    "sentence_en": "I've tried a typical dish.",
-    "de": "Gericht",
-    "sentence_de": "Ich habe ein typisches Gericht probiert.",
-    "topic": "comida_a2",
-    "topicOrder": 6
-  },
-  {
-    "id": 700,
-    "level": "A2",
-    "es": "la carne",
-    "hu": "hús",
-    "en": "meat",
-    "sentence_es": "No como carne los lunes.",
-    "sentence_hu": "Hétfőnként nem eszem húst.",
-    "sentence_en": "I don't eat meat on Mondays.",
-    "de": "Fleisch",
-    "sentence_de": "Montags esse ich kein Fleisch.",
-    "topic": "comida_a2",
-    "topicOrder": 7
-  },
-  {
-    "id": 701,
-    "level": "A2",
-    "es": "el pescado",
-    "hu": "hal",
-    "en": "fish",
-    "sentence_es": "He comprado pescado fresco.",
-    "sentence_hu": "Friss halat vettem.",
-    "sentence_en": "I've bought fresh fish.",
-    "de": "Fisch",
-    "sentence_de": "Ich habe frischen Fisch gekauft.",
-    "topic": "comida_a2",
-    "topicOrder": 8
-  },
-  {
-    "id": 702,
-    "level": "A2",
-    "es": "la verdura",
-    "hu": "zöldség",
-    "en": "vegetable",
-    "sentence_es": "Como verdura todos los días.",
-    "sentence_hu": "Minden nap eszem zöldséget.",
-    "sentence_en": "I eat vegetables every day.",
-    "de": "Gemüse",
-    "sentence_de": "Ich esse jeden Tag Gemüse.",
-    "topic": "comida_a2",
-    "topicOrder": 9,
-    "note_hu": "A la verdura gyűjtőnév: egyes számban is az egész zöldségfélét jelenti, ezért az angol többes számú vegetables felel meg neki. A las verduras alak is helyes, ha több fajtáról van szó.",
-    "note_en": "la verdura is a collective noun: the singular already means vegetables in general, which is why the English side is plural. las verduras is also correct when you mean several kinds.",
-    "note_es": "la verdura es un nombre colectivo: en singular ya designa las verduras en general, por eso el inglés va en plural. las verduras también es correcto si te refieres a varios tipos.",
-    "note_de": "la verdura ist ein Sammelbegriff: schon der Singular meint Gemüse allgemein, deshalb steht das Englische im Plural. las verduras ist ebenfalls korrekt, wenn mehrere Sorten gemeint sind."
-  },
-  {
-    "id": 703,
-    "level": "A2",
-    "es": "el postre",
-    "hu": "desszert",
-    "en": "dessert",
-    "sentence_es": "He pedido un postre de chocolate.",
-    "sentence_hu": "Csokis desszertet kértem.",
-    "sentence_en": "I've ordered a chocolate dessert.",
-    "de": "Nachtisch",
-    "sentence_de": "Ich habe einen Schokoladennachtisch bestellt.",
-    "topic": "comida_a2",
-    "topicOrder": 10
   },
   {
     "id": 704,
@@ -1124,7 +574,7 @@
     "topicOrder": 11
   },
   {
-    "id": 1135,
+    "id": 3418,
     "level": "A2",
     "es": "ver (veremos)",
     "hu": "látni (mi látni fogjuk)",
@@ -1138,7 +588,7 @@
     "topicOrder": 5
   },
   {
-    "id": 1136,
+    "id": 3419,
     "level": "A2",
     "es": "miles",
     "hu": "ezrek",
@@ -1152,7 +602,7 @@
     "topicOrder": 6
   },
   {
-    "id": 1137,
+    "id": 3420,
     "level": "A2",
     "es": "dar (darme)",
     "hu": "adni (nekem adni)",
@@ -1166,7 +616,7 @@
     "topicOrder": 6
   },
   {
-    "id": 1138,
+    "id": 3421,
     "level": "A2",
     "es": "la orden",
     "hu": "a parancs",
@@ -1180,7 +630,7 @@
     "topicOrder": 7
   },
   {
-    "id": 1139,
+    "id": 3422,
     "level": "A2",
     "es": "seguir (sigues)",
     "hu": "folytatni / követni (te folytatod)",
@@ -1194,7 +644,7 @@
     "topicOrder": 1
   },
   {
-    "id": 1140,
+    "id": 3423,
     "level": "A2",
     "es": "correr (corre)",
     "hu": "futni (ő fut)",
@@ -1208,7 +658,7 @@
     "topicOrder": 7
   },
   {
-    "id": 1141,
+    "id": 3424,
     "level": "A2",
     "es": "poder (podido)",
     "hu": "tudni / képesnek lenni (-hat/-het)",
@@ -1222,7 +672,7 @@
     "topicOrder": 8
   },
   {
-    "id": 1142,
+    "id": 3425,
     "level": "A2",
     "es": "dejar (dejes)",
     "hu": "hagyni (ne hagyd)",
@@ -1236,7 +686,7 @@
     "topicOrder": 12
   },
   {
-    "id": 1143,
+    "id": 3426,
     "level": "A2",
     "es": "haber (habéis)",
     "hu": "bírni / -ni (ti …-tatok/-tetek)",
@@ -1250,7 +700,7 @@
     "topicOrder": 11
   },
   {
-    "id": 1144,
+    "id": 3427,
     "level": "A2",
     "es": "dar (darte)",
     "hu": "adni (neked adni)",
@@ -1264,7 +714,7 @@
     "topicOrder": 7
   },
   {
-    "id": 1145,
+    "id": 3428,
     "level": "A2",
     "es": "la salida",
     "hu": "a kijárat / a kimenet",
@@ -1278,7 +728,7 @@
     "topicOrder": 13
   },
   {
-    "id": 1146,
+    "id": 3429,
     "level": "A2",
     "es": "decir (decirlo)",
     "hu": "mondani (elmondani azt)",
@@ -1292,7 +742,7 @@
     "topicOrder": 4
   },
   {
-    "id": 1147,
+    "id": 3430,
     "level": "A2",
     "es": "confiar",
     "hu": "bízni",
@@ -1306,7 +756,7 @@
     "topicOrder": 8
   },
   {
-    "id": 1148,
+    "id": 3431,
     "level": "A2",
     "es": "hacer (hacerte)",
     "hu": "csinálni (neked csinálni)",
@@ -1320,7 +770,7 @@
     "topicOrder": 5
   },
   {
-    "id": 1149,
+    "id": 3432,
     "level": "A2",
     "es": "necesitar (necesitaba)",
     "hu": "szükségelni (szükségem volt rá)",
@@ -1334,7 +784,7 @@
     "topicOrder": 9
   },
   {
-    "id": 1150,
+    "id": 3433,
     "level": "A2",
     "es": "los hermanos",
     "hu": "a testvérek",
@@ -1348,21 +798,7 @@
     "topicOrder": 7
   },
   {
-    "id": 1151,
-    "level": "A2",
-    "es": "los zapatos",
-    "hu": "a cipők",
-    "en": "the shoes",
-    "de": "Schuhe",
-    "sentence_es": "He comprado unos zapatos nuevos.",
-    "sentence_hu": "Vettem új cipőket.",
-    "sentence_en": "I've bought new shoes.",
-    "sentence_de": "Ich habe neue Schuhe gekauft.",
-    "topic": "ocio_moda",
-    "topicOrder": 1
-  },
-  {
-    "id": 1152,
+    "id": 3434,
     "level": "A2",
     "es": "el color",
     "hu": "a szín",
@@ -1376,7 +812,7 @@
     "topicOrder": 2
   },
   {
-    "id": 1153,
+    "id": 3435,
     "level": "A2",
     "es": "el vistazo",
     "hu": "a pillantás",
@@ -1390,7 +826,7 @@
     "topicOrder": 9
   },
   {
-    "id": 1154,
+    "id": 3436,
     "level": "A2",
     "es": "la nena",
     "hu": "a kislány",
@@ -1404,7 +840,7 @@
     "topicOrder": 8
   },
   {
-    "id": 1155,
+    "id": 3437,
     "level": "A2",
     "es": "tratar",
     "hu": "próbálni / kezelni",
@@ -1418,7 +854,7 @@
     "topicOrder": 10
   },
   {
-    "id": 1156,
+    "id": 3438,
     "level": "A2",
     "es": "el juez",
     "hu": "a bíró",
@@ -1432,7 +868,7 @@
     "topicOrder": 10
   },
   {
-    "id": 1157,
+    "id": 3439,
     "level": "A2",
     "es": "próximo",
     "hu": "következő",
@@ -1446,7 +882,7 @@
     "topicOrder": 5
   },
   {
-    "id": 1158,
+    "id": 3440,
     "level": "A2",
     "es": "paciente",
     "hu": "türelmes / a beteg",
@@ -1460,7 +896,7 @@
     "topicOrder": 9
   },
   {
-    "id": 1159,
+    "id": 3441,
     "level": "A2",
     "es": "haber (hayas)",
     "hu": "legyen (kötőmód)",
@@ -1474,21 +910,7 @@
     "topicOrder": 11
   },
   {
-    "id": 1160,
-    "level": "A2",
-    "es": "la bolsa",
-    "hu": "a táska / a zacskó",
-    "en": "the bag",
-    "de": "Tasche / die Tüte",
-    "sentence_es": "He dejado la bolsa en la mesa.",
-    "sentence_hu": "Otthagytam a táskát az asztalon.",
-    "sentence_en": "I've left the bag on the table.",
-    "sentence_de": "Ich habe die Tasche auf dem Tisch gelassen.",
-    "topic": "compras_servicios",
-    "topicOrder": 10
-  },
-  {
-    "id": 1161,
+    "id": 3442,
     "level": "A2",
     "es": "el arte",
     "hu": "a művészet",
@@ -1502,7 +924,7 @@
     "topicOrder": 3
   },
   {
-    "id": 1162,
+    "id": 3443,
     "level": "A2",
     "es": "jugar (jugando)",
     "hu": "játszani (játszva)",
@@ -1516,7 +938,7 @@
     "topicOrder": 3
   },
   {
-    "id": 1163,
+    "id": 3444,
     "level": "A2",
     "es": "llevar (llevas)",
     "hu": "vinni / hordani (te viszel)",
@@ -1530,7 +952,7 @@
     "topicOrder": 4
   },
   {
-    "id": 1164,
+    "id": 3445,
     "level": "A2",
     "es": "alegrar (alegra)",
     "hu": "örülni (örül)",
@@ -1544,21 +966,7 @@
     "topicOrder": 11
   },
   {
-    "id": 1165,
-    "level": "A2",
-    "es": "bailar",
-    "hu": "táncolni",
-    "en": "to dance",
-    "de": "tanzen",
-    "sentence_es": "Hemos bailado toda la noche.",
-    "sentence_hu": "Egész éjjel táncoltunk.",
-    "sentence_en": "We've danced all night.",
-    "sentence_de": "Wir haben die ganze Nacht getanzt.",
-    "topic": "ocio_cultura",
-    "topicOrder": 4
-  },
-  {
-    "id": 1166,
+    "id": 3446,
     "level": "A2",
     "es": "el diablo",
     "hu": "az ördög",
@@ -1572,7 +980,7 @@
     "topicOrder": 5
   },
   {
-    "id": 1167,
+    "id": 3447,
     "level": "A2",
     "es": "oír (oí)",
     "hu": "hallani (hallottam)",
@@ -1586,7 +994,7 @@
     "topicOrder": 6
   },
   {
-    "id": 1168,
+    "id": 3448,
     "level": "A2",
     "es": "saber (sepa)",
     "hu": "tudni (tudja - kötőmód)",
@@ -1600,7 +1008,7 @@
     "topicOrder": 7
   },
   {
-    "id": 1169,
+    "id": 3449,
     "level": "A2",
     "es": "estar (estarás)",
     "hu": "lenni (te leszel)",
@@ -1614,21 +1022,7 @@
     "topicOrder": 10
   },
   {
-    "id": 1170,
-    "level": "A2",
-    "es": "el sur",
-    "hu": "a dél (égtáj)",
-    "en": "the south",
-    "de": "Süden",
-    "sentence_es": "He viajado al sur de España.",
-    "sentence_hu": "Dél-Spanyolországba utaztam.",
-    "sentence_en": "I've traveled to the south of Spain.",
-    "sentence_de": "Ich bin in den Süden Spaniens gereist.",
-    "topic": "paises",
-    "topicOrder": 1
-  },
-  {
-    "id": 1171,
+    "id": 3450,
     "level": "A2",
     "es": "la banda",
     "hu": "a banda / a zenekar",
@@ -1642,7 +1036,7 @@
     "topicOrder": 6
   },
   {
-    "id": 1172,
+    "id": 3451,
     "level": "A2",
     "es": "aprender",
     "hu": "tanulni",
@@ -1656,7 +1050,7 @@
     "topicOrder": 2
   },
   {
-    "id": 1173,
+    "id": 3452,
     "level": "A2",
     "es": "completo",
     "hu": "teljes",
@@ -1670,7 +1064,7 @@
     "topicOrder": 9
   },
   {
-    "id": 1174,
+    "id": 3453,
     "level": "A2",
     "es": "santo",
     "hu": "szent",
@@ -1684,7 +1078,7 @@
     "topicOrder": 2
   },
   {
-    "id": 1175,
+    "id": 3454,
     "level": "A2",
     "es": "las ganas",
     "hu": "a kedv / a vágy",
@@ -1698,7 +1092,7 @@
     "topicOrder": 12
   },
   {
-    "id": 1176,
+    "id": 3455,
     "level": "A2",
     "es": "tener (tuvimos)",
     "hu": "birtokolni (mi birtokoltuk)",
@@ -1712,7 +1106,7 @@
     "topicOrder": 10
   },
   {
-    "id": 1177,
+    "id": 3456,
     "level": "A2",
     "es": "ver (verla)",
     "hu": "látni (látni őt nőnem)",
@@ -1726,7 +1120,7 @@
     "topicOrder": 8
   },
   {
-    "id": 1178,
+    "id": 3457,
     "level": "A2",
     "es": "volver (volvió)",
     "hu": "visszatérni (ő visszatért)",
@@ -1740,7 +1134,7 @@
     "topicOrder": 12
   },
   {
-    "id": 1179,
+    "id": 3458,
     "level": "A2",
     "es": "los libros",
     "hu": "a könyvek",
@@ -1754,7 +1148,7 @@
     "topicOrder": 7
   },
   {
-    "id": 1180,
+    "id": 3459,
     "level": "A2",
     "es": "ser (serán)",
     "hu": "lenni (ők lesznek)",
@@ -1768,7 +1162,7 @@
     "topicOrder": 13
   },
   {
-    "id": 1181,
+    "id": 3460,
     "level": "A2",
     "es": "los cielos",
     "hu": "az egek",
@@ -1782,7 +1176,7 @@
     "topicOrder": 13
   },
   {
-    "id": 1182,
+    "id": 3461,
     "level": "A2",
     "es": "matar (matado)",
     "hu": "ölni (megölve)",
@@ -1796,7 +1190,7 @@
     "topicOrder": 14
   },
   {
-    "id": 1183,
+    "id": 3462,
     "level": "A2",
     "es": "diferentes",
     "hu": "különböző",
@@ -1810,7 +1204,7 @@
     "topicOrder": 15
   },
   {
-    "id": 1184,
+    "id": 3463,
     "level": "A2",
     "es": "ir (irte)",
     "hu": "menni (elmenned)",
@@ -1824,7 +1218,7 @@
     "topicOrder": 11
   },
   {
-    "id": 1185,
+    "id": 3464,
     "level": "A2",
     "es": "el/la comandante",
     "hu": "a parancsnok",
@@ -1838,7 +1232,7 @@
     "topicOrder": 16
   },
   {
-    "id": 1186,
+    "id": 3465,
     "level": "A2",
     "es": "la acción",
     "hu": "a cselekvés / az akció",
@@ -1852,7 +1246,7 @@
     "topicOrder": 17
   },
   {
-    "id": 1187,
+    "id": 3466,
     "level": "A2",
     "es": "las reglas",
     "hu": "a szabályok",
@@ -1866,7 +1260,7 @@
     "topicOrder": 3
   },
   {
-    "id": 1188,
+    "id": 3467,
     "level": "A2",
     "es": "la obra",
     "hu": "a mű / az építkezés",
@@ -1880,7 +1274,7 @@
     "topicOrder": 8
   },
   {
-    "id": 1189,
+    "id": 3468,
     "level": "A2",
     "es": "la esperanza",
     "hu": "a remény",
@@ -1894,7 +1288,7 @@
     "topicOrder": 11
   },
   {
-    "id": 1190,
+    "id": 3469,
     "level": "A2",
     "es": "la cuestión",
     "hu": "a kérdés / az ügy",
@@ -1908,7 +1302,7 @@
     "topicOrder": 8
   },
   {
-    "id": 1191,
+    "id": 3470,
     "level": "A2",
     "es": "molestar (molesta)",
     "hu": "zavarni (zavar)",
@@ -1922,7 +1316,7 @@
     "topicOrder": 13
   },
   {
-    "id": 1192,
+    "id": 3471,
     "level": "A2",
     "es": "tener (teniendo)",
     "hu": "birtokolni (birtokolva)",
@@ -1936,7 +1330,7 @@
     "topicOrder": 18
   },
   {
-    "id": 1193,
+    "id": 3472,
     "level": "A2",
     "es": "el informe",
     "hu": "a jelentés",
@@ -1950,7 +1344,7 @@
     "topicOrder": 19
   },
   {
-    "id": 1194,
+    "id": 3473,
     "level": "A2",
     "es": "bienvenido",
     "hu": "üdvözöljük / isten hozott",
@@ -1964,35 +1358,7 @@
     "topicOrder": 14
   },
   {
-    "id": 1195,
-    "level": "A2",
-    "es": "abrir",
-    "hu": "kinyitni",
-    "en": "to open",
-    "de": "öffnen",
-    "sentence_es": "He abierto las ventanas porque hace calor.",
-    "sentence_hu": "Kinyitottam az ablakokat, mert meleg van.",
-    "sentence_en": "I've opened the windows because it's hot.",
-    "sentence_de": "Ich habe die Fenster geöffnet, weil es heiß ist.",
-    "topic": "hogar_entorno",
-    "topicOrder": 14
-  },
-  {
-    "id": 1196,
-    "level": "A2",
-    "es": "tocar",
-    "hu": "megérinteni / játszani (hangszeren)",
-    "en": "to touch / to play (instrument)",
-    "de": "berühren / spielen (Instrument)",
-    "sentence_es": "He tocado la guitarra toda la tarde.",
-    "sentence_hu": "Egész délután gitároztam.",
-    "sentence_en": "I've played the guitar all afternoon.",
-    "sentence_de": "Ich habe den ganzen Nachmittag Gitarre gespielt.",
-    "topic": "ocio_cultura",
-    "topicOrder": 9
-  },
-  {
-    "id": 1197,
+    "id": 3474,
     "level": "A2",
     "es": "contar",
     "hu": "számolni / mesélni",
@@ -2006,7 +1372,7 @@
     "topicOrder": 9
   },
   {
-    "id": 1198,
+    "id": 3475,
     "level": "A2",
     "es": "seguir (sigo)",
     "hu": "folytatni (én folytatom)",
@@ -2020,7 +1386,7 @@
     "topicOrder": 20
   },
   {
-    "id": 1199,
+    "id": 3476,
     "level": "A2",
     "es": "interior",
     "hu": "belső",
@@ -2034,7 +1400,7 @@
     "topicOrder": 15
   },
   {
-    "id": 1200,
+    "id": 3477,
     "level": "A2",
     "es": "el apartamento",
     "hu": "a lakás / az apartman",
@@ -2048,7 +1414,7 @@
     "topicOrder": 16
   },
   {
-    "id": 1201,
+    "id": 3478,
     "level": "A2",
     "es": "ver (vea)",
     "hu": "látni (lássa - kötőmód)",
@@ -2062,7 +1428,7 @@
     "topicOrder": 10
   },
   {
-    "id": 1202,
+    "id": 3479,
     "level": "A2",
     "es": "los estados",
     "hu": "az államok",
@@ -2076,7 +1442,7 @@
     "topicOrder": 3
   },
   {
-    "id": 1203,
+    "id": 3480,
     "level": "A2",
     "es": "estar (estáis)",
     "hu": "lenni (ti vagytok)",
@@ -2090,7 +1456,7 @@
     "topicOrder": 21
   },
   {
-    "id": 1204,
+    "id": 3481,
     "level": "A2",
     "es": "preocupar (preocupa)",
     "hu": "aggasztani (aggaszt)",
@@ -2104,7 +1470,7 @@
     "topicOrder": 9
   },
   {
-    "id": 1205,
+    "id": 3482,
     "level": "A2",
     "es": "tomar (tomó)",
     "hu": "venni / fogni (ő vette)",
@@ -2118,7 +1484,7 @@
     "topicOrder": 6
   },
   {
-    "id": 1206,
+    "id": 3483,
     "level": "A2",
     "es": "principal",
     "hu": "fő / legfontosabb",
@@ -2132,7 +1498,7 @@
     "topicOrder": 22
   },
   {
-    "id": 1207,
+    "id": 3484,
     "level": "A2",
     "es": "empezar (empieza)",
     "hu": "elkezdeni (ő elkezdi)",
@@ -2146,7 +1512,7 @@
     "topicOrder": 4
   },
   {
-    "id": 1208,
+    "id": 3485,
     "level": "A2",
     "es": "empezar (empezó)",
     "hu": "elkezdeni (ő elkezdte)",
@@ -2160,7 +1526,7 @@
     "topicOrder": 14
   },
   {
-    "id": 1209,
+    "id": 3486,
     "level": "A2",
     "es": "ir (vayan)",
     "hu": "menni (menjenek - kötőmód)",
@@ -2174,7 +1540,7 @@
     "topicOrder": 23
   },
   {
-    "id": 1210,
+    "id": 3487,
     "level": "A2",
     "es": "llamar (llaman)",
     "hu": "hívni (ők hívják)",
@@ -2188,7 +1554,7 @@
     "topicOrder": 11
   },
   {
-    "id": 1211,
+    "id": 3488,
     "level": "A2",
     "es": "ojalá",
     "hu": "bárcsak",
@@ -2202,7 +1568,7 @@
     "topicOrder": 15
   },
   {
-    "id": 1212,
+    "id": 3489,
     "level": "A2",
     "es": "perdonar (perdona)",
     "hu": "megbocsátani (bocsáss meg)",
@@ -2216,7 +1582,7 @@
     "topicOrder": 16
   },
   {
-    "id": 1213,
+    "id": 3490,
     "level": "A2",
     "es": "volver (vuelvo)",
     "hu": "visszatérni (én visszatérek)",
@@ -2230,7 +1596,7 @@
     "topicOrder": 17
   },
   {
-    "id": 1214,
+    "id": 3491,
     "level": "A2",
     "es": "el golpe",
     "hu": "az ütés",
@@ -2244,7 +1610,7 @@
     "topicOrder": 10
   },
   {
-    "id": 1215,
+    "id": 3492,
     "level": "A2",
     "es": "quedar (quedarme)",
     "hu": "maradni (maradnom)",
@@ -2258,7 +1624,7 @@
     "topicOrder": 18
   },
   {
-    "id": 1216,
+    "id": 3493,
     "level": "A2",
     "es": "llamar (llamaré)",
     "hu": "hívni (hívni fogom)",
@@ -2272,7 +1638,7 @@
     "topicOrder": 12
   },
   {
-    "id": 1217,
+    "id": 3494,
     "level": "A2",
     "es": "acabar (acabado)",
     "hu": "befejezni (befejezett)",
@@ -2286,7 +1652,7 @@
     "topicOrder": 5
   },
   {
-    "id": 1218,
+    "id": 3495,
     "level": "A2",
     "es": "el estilo",
     "hu": "a stílus",
@@ -2300,21 +1666,7 @@
     "topicOrder": 5
   },
   {
-    "id": 1219,
-    "level": "A2",
-    "es": "nueve",
-    "hu": "kilenc",
-    "en": "nine",
-    "de": "neun",
-    "sentence_es": "He comprado nueve manzanas en el mercado.",
-    "sentence_hu": "Kilenc almát vettem a piacon.",
-    "sentence_en": "I've bought nine apples at the market.",
-    "sentence_de": "Ich habe neun Äpfel auf dem Markt gekauft.",
-    "topic": "compras_servicios",
-    "topicOrder": 11
-  },
-  {
-    "id": 1220,
+    "id": 3496,
     "level": "A2",
     "es": "definitivamente",
     "hu": "véglegesen / egyértelműen",
@@ -2328,7 +1680,7 @@
     "topicOrder": 24
   },
   {
-    "id": 1221,
+    "id": 3497,
     "level": "A2",
     "es": "quedar",
     "hu": "maradni / találkozni",
@@ -2342,7 +1694,7 @@
     "topicOrder": 17
   },
   {
-    "id": 1222,
+    "id": 3498,
     "level": "A2",
     "es": "las cartas",
     "hu": "a levelek / a kártyák",
@@ -2356,7 +1708,7 @@
     "topicOrder": 13
   },
   {
-    "id": 1223,
+    "id": 3499,
     "level": "A2",
     "es": "la bomba",
     "hu": "a bomba",
@@ -2370,7 +1722,7 @@
     "topicOrder": 25
   },
   {
-    "id": 1224,
+    "id": 3500,
     "level": "A2",
     "es": "el/la guardia",
     "hu": "az őr",
@@ -2384,7 +1736,7 @@
     "topicOrder": 26
   },
   {
-    "id": 1225,
+    "id": 3501,
     "level": "A2",
     "es": "la pistola",
     "hu": "a pisztoly",
@@ -2398,7 +1750,7 @@
     "topicOrder": 27
   },
   {
-    "id": 1226,
+    "id": 3502,
     "level": "A2",
     "es": "la majestad",
     "hu": "a felség",
@@ -2412,21 +1764,7 @@
     "topicOrder": 4
   },
   {
-    "id": 1227,
-    "level": "A2",
-    "es": "traer",
-    "hu": "hozni",
-    "en": "to bring",
-    "de": "bringen",
-    "sentence_es": "¿Has traído el paraguas?",
-    "sentence_hu": "Hoztál esernyőt?",
-    "sentence_en": "Have you brought the umbrella?",
-    "sentence_de": "Hast du den Regenschirm mitgebracht?",
-    "topic": "trabajo_dia",
-    "topicOrder": 28
-  },
-  {
-    "id": 1228,
+    "id": 3503,
     "level": "A2",
     "es": "la marcha",
     "hu": "a menet / az indulás",
@@ -2440,7 +1778,7 @@
     "topicOrder": 7
   },
   {
-    "id": 1229,
+    "id": 3504,
     "level": "A2",
     "es": "parecer (pareces)",
     "hu": "tűnni (te tűnsz)",
@@ -2454,7 +1792,7 @@
     "topicOrder": 18
   },
   {
-    "id": 1230,
+    "id": 3505,
     "level": "A2",
     "es": "común",
     "hu": "közös / gyakori",
@@ -2468,7 +1806,7 @@
     "topicOrder": 19
   },
   {
-    "id": 1231,
+    "id": 3506,
     "level": "A2",
     "es": "aquel",
     "hu": "az (ott, távolra mutató)",
@@ -2482,7 +1820,7 @@
     "topicOrder": 29
   },
   {
-    "id": 1232,
+    "id": 3507,
     "level": "A2",
     "es": "hacer (hacerle)",
     "hu": "csinálni (neki csinálni)",
@@ -2496,7 +1834,7 @@
     "topicOrder": 12
   },
   {
-    "id": 1233,
+    "id": 3508,
     "level": "A2",
     "es": "el vuelo",
     "hu": "a repülőjárat / a repülés",
@@ -2510,7 +1848,7 @@
     "topicOrder": 12
   },
   {
-    "id": 1234,
+    "id": 3509,
     "level": "A2",
     "es": "la nota",
     "hu": "a jegy / a jegyzet",
@@ -2524,7 +1862,7 @@
     "topicOrder": 6
   },
   {
-    "id": 1235,
+    "id": 3510,
     "level": "A2",
     "es": "humano",
     "hu": "emberi",
@@ -2538,7 +1876,7 @@
     "topicOrder": 13
   },
   {
-    "id": 1236,
+    "id": 3511,
     "level": "A2",
     "es": "estar (estaremos)",
     "hu": "lenni (mi leszünk)",
@@ -2552,7 +1890,7 @@
     "topicOrder": 19
   },
   {
-    "id": 1237,
+    "id": 3512,
     "level": "A2",
     "es": "suyo",
     "hu": "övé (hímnem)",
@@ -2566,7 +1904,7 @@
     "topicOrder": 14
   },
   {
-    "id": 1238,
+    "id": 3513,
     "level": "A2",
     "es": "de repente",
     "hu": "hirtelen",
@@ -2580,7 +1918,7 @@
     "topicOrder": 15
   },
   {
-    "id": 1239,
+    "id": 3514,
     "level": "A2",
     "es": "deber (debía)",
     "hu": "kelleni (kellett volna)",
@@ -2594,7 +1932,7 @@
     "topicOrder": 14
   },
   {
-    "id": 1240,
+    "id": 3515,
     "level": "A2",
     "es": "bromear (bromeando)",
     "hu": "viccelni (viccelve)",
@@ -2608,7 +1946,7 @@
     "topicOrder": 20
   },
   {
-    "id": 1241,
+    "id": 3516,
     "level": "A2",
     "es": "ir (irá)",
     "hu": "menni (ő fog menni)",
@@ -2622,7 +1960,7 @@
     "topicOrder": 11
   },
   {
-    "id": 1242,
+    "id": 3517,
     "level": "A2",
     "es": "la entrada",
     "hu": "a bejárat / a belépőjegy",
@@ -2636,7 +1974,7 @@
     "topicOrder": 10
   },
   {
-    "id": 1243,
+    "id": 3518,
     "level": "A2",
     "es": "doble",
     "hu": "dupla / kettős",
@@ -2650,7 +1988,7 @@
     "topicOrder": 13
   },
   {
-    "id": 1244,
+    "id": 3519,
     "level": "A2",
     "es": "dejar (dejaré)",
     "hu": "hagyni (hagyni fogom)",
@@ -2664,7 +2002,7 @@
     "topicOrder": 15
   },
   {
-    "id": 1245,
+    "id": 3520,
     "level": "A2",
     "es": "evitar",
     "hu": "elkerülni",
@@ -2678,7 +2016,7 @@
     "topicOrder": 8
   },
   {
-    "id": 1246,
+    "id": 3521,
     "level": "A2",
     "es": "la máquina",
     "hu": "a gép",
@@ -2692,21 +2030,7 @@
     "topicOrder": 30
   },
   {
-    "id": 1247,
-    "level": "A2",
-    "es": "el cuello",
-    "hu": "a nyak",
-    "en": "the neck",
-    "de": "Hals",
-    "sentence_es": "Me duele el cuello desde ayer.",
-    "sentence_hu": "Tegnap óta fáj a nyakam.",
-    "sentence_en": "My neck has been hurting since yesterday.",
-    "sentence_de": "Mein Hals tut seit gestern weh.",
-    "topic": "salud_deporte",
-    "topicOrder": 12
-  },
-  {
-    "id": 1248,
+    "id": 3522,
     "level": "A2",
     "es": "conocer (conocí)",
     "hu": "megismerni (megismertem)",
@@ -2720,7 +2044,7 @@
     "topicOrder": 21
   },
   {
-    "id": 1249,
+    "id": 3523,
     "level": "A2",
     "es": "los tiempos",
     "hu": "az idők",
@@ -2734,7 +2058,7 @@
     "topicOrder": 31
   },
   {
-    "id": 1250,
+    "id": 3524,
     "level": "A2",
     "es": "tomar (tome)",
     "hu": "venni (vegyen - kötőmód/felszólítás)",
@@ -2748,7 +2072,7 @@
     "topicOrder": 32
   },
   {
-    "id": 1251,
+    "id": 3525,
     "level": "A2",
     "es": "los animales",
     "hu": "az állatok",
@@ -2762,7 +2086,7 @@
     "topicOrder": 16
   },
   {
-    "id": 1252,
+    "id": 3526,
     "level": "A2",
     "es": "acaso",
     "hu": "vajon / esetleg",
@@ -2776,7 +2100,7 @@
     "topicOrder": 16
   },
   {
-    "id": 1253,
+    "id": 3527,
     "level": "A2",
     "es": "tener (tuviera)",
     "hu": "birtokolni (ha birtokolnám - kötőmód)",
@@ -2790,7 +2114,7 @@
     "topicOrder": 14
   },
   {
-    "id": 1254,
+    "id": 3528,
     "level": "A2",
     "es": "la pareja",
     "hu": "a pár / a partner",
@@ -2804,7 +2128,7 @@
     "topicOrder": 22
   },
   {
-    "id": 1255,
+    "id": 3529,
     "level": "A2",
     "es": "escuchar (escuché)",
     "hu": "hallgatni (hallgattam)",
@@ -2818,7 +2142,7 @@
     "topicOrder": 11
   },
   {
-    "id": 1256,
+    "id": 3530,
     "level": "A2",
     "es": "amar (ama)",
     "hu": "szeretni (ő szeret)",
@@ -2832,7 +2156,7 @@
     "topicOrder": 23
   },
   {
-    "id": 1257,
+    "id": 3531,
     "level": "A2",
     "es": "ser (serás)",
     "hu": "lenni (te leszel)",
@@ -2846,7 +2170,7 @@
     "topicOrder": 33
   },
   {
-    "id": 1258,
+    "id": 3532,
     "level": "A2",
     "es": "hacer (hagan)",
     "hu": "csinálni (csináljanak - kötőmód)",
@@ -2860,7 +2184,7 @@
     "topicOrder": 34
   },
   {
-    "id": 1259,
+    "id": 3533,
     "level": "A2",
     "es": "perder (perdí)",
     "hu": "elveszíteni (elveszítettem)",
@@ -2874,7 +2198,7 @@
     "topicOrder": 35
   },
   {
-    "id": 1260,
+    "id": 3534,
     "level": "A2",
     "es": "traer (traído)",
     "hu": "hozni (hozva)",
@@ -2888,7 +2212,7 @@
     "topicOrder": 36
   },
   {
-    "id": 1261,
+    "id": 3535,
     "level": "A2",
     "es": "llegar (llegue)",
     "hu": "megérkezni (megérkezzen - kötőmód)",
@@ -2902,7 +2226,7 @@
     "topicOrder": 9
   },
   {
-    "id": 1262,
+    "id": 3536,
     "level": "A2",
     "es": "preparado",
     "hu": "elkészült / felkészült",
@@ -2916,7 +2240,7 @@
     "topicOrder": 12
   },
   {
-    "id": 1263,
+    "id": 3537,
     "level": "A2",
     "es": "haber (haberlo)",
     "hu": "lenni (megtörténve)",
@@ -2930,7 +2254,7 @@
     "topicOrder": 37
   },
   {
-    "id": 1264,
+    "id": 3538,
     "level": "A2",
     "es": "intentar",
     "hu": "megpróbálni",
@@ -2944,7 +2268,7 @@
     "topicOrder": 17
   },
   {
-    "id": 1265,
+    "id": 3539,
     "level": "A2",
     "es": "ayudar (ayudarme)",
     "hu": "segíteni (nekem segíteni)",
@@ -2958,7 +2282,7 @@
     "topicOrder": 24
   },
   {
-    "id": 1266,
+    "id": 3540,
     "level": "A2",
     "es": "las flores",
     "hu": "a virágok",
@@ -2972,7 +2296,7 @@
     "topicOrder": 17
   },
   {
-    "id": 1267,
+    "id": 3541,
     "level": "A2",
     "es": "dar (dando)",
     "hu": "adni (adva)",
@@ -2986,7 +2310,7 @@
     "topicOrder": 7
   },
   {
-    "id": 1268,
+    "id": 3542,
     "level": "A2",
     "es": "vos",
     "hu": "te (Dél-Amerika)",
@@ -3000,7 +2324,7 @@
     "topicOrder": 18
   },
   {
-    "id": 1269,
+    "id": 3543,
     "level": "A2",
     "es": "la opción",
     "hu": "a lehetőség / az opció",
@@ -3014,7 +2338,7 @@
     "topicOrder": 38
   },
   {
-    "id": 1270,
+    "id": 3544,
     "level": "A2",
     "es": "la isla",
     "hu": "a sziget",
@@ -3028,7 +2352,7 @@
     "topicOrder": 18
   },
   {
-    "id": 1271,
+    "id": 3545,
     "level": "A2",
     "es": "cerrar (cierra)",
     "hu": "bezárni (ő bezárja)",
@@ -3042,21 +2366,7 @@
     "topicOrder": 12
   },
   {
-    "id": 1272,
-    "level": "A2",
-    "es": "la piel",
-    "hu": "a bőr",
-    "en": "the skin",
-    "de": "Haut",
-    "sentence_es": "El sol me ha quemado la piel.",
-    "sentence_hu": "A nap megégette a bőrömet.",
-    "sentence_en": "The sun has burned my skin.",
-    "sentence_de": "Die Sonne hat meine Haut verbrannt.",
-    "topic": "salud_deporte",
-    "topicOrder": 13
-  },
-  {
-    "id": 1273,
+    "id": 3546,
     "level": "A2",
     "es": "el enemigo",
     "hu": "az ellenség",
@@ -3070,7 +2380,7 @@
     "topicOrder": 39
   },
   {
-    "id": 1274,
+    "id": 3547,
     "level": "A2",
     "es": "dejar (dejo)",
     "hu": "hagyni (én hagyom)",
@@ -3084,7 +2394,7 @@
     "topicOrder": 20
   },
   {
-    "id": 1275,
+    "id": 3548,
     "level": "A2",
     "es": "exacto",
     "hu": "pontos / pontosan",
@@ -3098,7 +2408,7 @@
     "topicOrder": 40
   },
   {
-    "id": 1276,
+    "id": 3549,
     "level": "A2",
     "es": "el imbécil",
     "hu": "az idióta",
@@ -3112,7 +2422,7 @@
     "topicOrder": 25
   },
   {
-    "id": 1277,
+    "id": 3550,
     "level": "A2",
     "es": "los jóvenes",
     "hu": "a fiatalok",
@@ -3126,7 +2436,7 @@
     "topicOrder": 26
   },
   {
-    "id": 1278,
+    "id": 3551,
     "level": "A2",
     "es": "pedir (pedido)",
     "hu": "kérni (kérve)",
@@ -3140,7 +2450,7 @@
     "topicOrder": 13
   },
   {
-    "id": 1279,
+    "id": 3552,
     "level": "A2",
     "es": "largo (larga)",
     "hu": "hosszú (nőnem)",
@@ -3154,7 +2464,7 @@
     "topicOrder": 41
   },
   {
-    "id": 1280,
+    "id": 3553,
     "level": "A2",
     "es": "entender (entiende)",
     "hu": "megérteni (ő megérti)",
@@ -3168,7 +2478,7 @@
     "topicOrder": 8
   },
   {
-    "id": 1281,
+    "id": 3554,
     "level": "A2",
     "es": "la justicia",
     "hu": "az igazságszolgáltatás",
@@ -3182,7 +2492,7 @@
     "topicOrder": 42
   },
   {
-    "id": 1282,
+    "id": 3555,
     "level": "A2",
     "es": "nuevos",
     "hu": "újak (hímnem többes)",
@@ -3196,7 +2506,7 @@
     "topicOrder": 43
   },
   {
-    "id": 1283,
+    "id": 3556,
     "level": "A2",
     "es": "obviamente",
     "hu": "nyilvánvalóan",
@@ -3210,7 +2520,7 @@
     "topicOrder": 44
   },
   {
-    "id": 1284,
+    "id": 3557,
     "level": "A2",
     "es": "despertar (despierta)",
     "hu": "felébredni (ébred / ébreszd fel)",
@@ -3224,7 +2534,7 @@
     "topicOrder": 45
   },
   {
-    "id": 1285,
+    "id": 3558,
     "level": "A2",
     "es": "pedir (pido)",
     "hu": "kérni (én kérem)",
@@ -3238,7 +2548,7 @@
     "topicOrder": 27
   },
   {
-    "id": 1286,
+    "id": 3559,
     "level": "A2",
     "es": "el calor",
     "hu": "a meleg / a hőség",
@@ -3252,7 +2562,7 @@
     "topicOrder": 19
   },
   {
-    "id": 1287,
+    "id": 3560,
     "level": "A2",
     "es": "las luces",
     "hu": "a fények",
@@ -3266,7 +2576,7 @@
     "topicOrder": 21
   },
   {
-    "id": 1288,
+    "id": 3561,
     "level": "A2",
     "es": "referir (refiero)",
     "hu": "utalni (utalok)",
@@ -3280,7 +2590,7 @@
     "topicOrder": 19
   },
   {
-    "id": 1289,
+    "id": 3562,
     "level": "A2",
     "es": "ir (fuimos)",
     "hu": "menni (mi mentünk)",
@@ -3294,7 +2604,7 @@
     "topicOrder": 6
   },
   {
-    "id": 1290,
+    "id": 3563,
     "level": "A2",
     "es": "la batalla",
     "hu": "a csata",
@@ -3308,7 +2618,7 @@
     "topicOrder": 46
   },
   {
-    "id": 1291,
+    "id": 3564,
     "level": "A2",
     "es": "dejar (déjalo)",
     "hu": "hagyni (hagyd)",
@@ -3322,7 +2632,7 @@
     "topicOrder": 22
   },
   {
-    "id": 1292,
+    "id": 3565,
     "level": "A2",
     "es": "intentar (intenta)",
     "hu": "megpróbálni (próbáld meg)",
@@ -3336,7 +2646,7 @@
     "topicOrder": 47
   },
   {
-    "id": 1293,
+    "id": 3566,
     "level": "A2",
     "es": "fantástico",
     "hu": "fantasztikus",
@@ -3350,21 +2660,7 @@
     "topicOrder": 28
   },
   {
-    "id": 1294,
-    "level": "A2",
-    "es": "el brazo",
-    "hu": "a kar",
-    "en": "the arm",
-    "de": "Arm",
-    "sentence_es": "Me he roto el brazo jugando al fútbol.",
-    "sentence_hu": "Eltörtem a karomat focizás közben.",
-    "sentence_en": "I've broken my arm playing football.",
-    "sentence_de": "Ich habe mir beim Fußballspielen den Arm gebrochen.",
-    "topic": "salud_deporte",
-    "topicOrder": 14
-  },
-  {
-    "id": 1295,
+    "id": 3567,
     "level": "A2",
     "es": "absolutamente",
     "hu": "abszolút / teljesen",
@@ -3378,7 +2674,7 @@
     "topicOrder": 48
   },
   {
-    "id": 1296,
+    "id": 3568,
     "level": "A2",
     "es": "lleno (llena)",
     "hu": "tele (nőnem)",
@@ -3392,7 +2688,7 @@
     "topicOrder": 23
   },
   {
-    "id": 1297,
+    "id": 3569,
     "level": "A2",
     "es": "hacer (hacerme)",
     "hu": "csinálni (nekem csinálni)",
@@ -3406,7 +2702,7 @@
     "topicOrder": 29
   },
   {
-    "id": 1298,
+    "id": 3570,
     "level": "A2",
     "es": "salir (salga)",
     "hu": "kimenni (menjen ki - kötőmód)",
@@ -3420,7 +2716,7 @@
     "topicOrder": 30
   },
   {
-    "id": 1299,
+    "id": 3571,
     "level": "A2",
     "es": "escapar",
     "hu": "megszökni",
@@ -3434,7 +2730,7 @@
     "topicOrder": 49
   },
   {
-    "id": 1300,
+    "id": 3572,
     "level": "A2",
     "es": "los señores",
     "hu": "az urak / hölgyeim és uraim",
@@ -3448,7 +2744,7 @@
     "topicOrder": 50
   },
   {
-    "id": 1301,
+    "id": 3573,
     "level": "A2",
     "es": "quedar (quedan)",
     "hu": "maradni (ők maradnak)",
@@ -3462,7 +2758,7 @@
     "topicOrder": 12
   },
   {
-    "id": 1302,
+    "id": 3574,
     "level": "A2",
     "es": "las piernas",
     "hu": "a lábak",
@@ -3476,7 +2772,7 @@
     "topicOrder": 15
   },
   {
-    "id": 1303,
+    "id": 3575,
     "level": "A2",
     "es": "la visita",
     "hu": "a látogatás",
@@ -3490,7 +2786,7 @@
     "topicOrder": 15
   },
   {
-    "id": 1304,
+    "id": 3576,
     "level": "A2",
     "es": "usar (usando)",
     "hu": "használni (használva)",
@@ -3504,7 +2800,7 @@
     "topicOrder": 51
   },
   {
-    "id": 1305,
+    "id": 3577,
     "level": "A2",
     "es": "ganar (ganado)",
     "hu": "nyerni (megnyerve)",
@@ -3518,7 +2814,7 @@
     "topicOrder": 16
   },
   {
-    "id": 1306,
+    "id": 3578,
     "level": "A2",
     "es": "el movimiento",
     "hu": "a mozgalom / a mozgás",
@@ -3532,7 +2828,7 @@
     "topicOrder": 10
   },
   {
-    "id": 1307,
+    "id": 3579,
     "level": "A2",
     "es": "blanco (blanca)",
     "hu": "fehér (nőnem)",
@@ -3546,21 +2842,7 @@
     "topicOrder": 24
   },
   {
-    "id": 1308,
-    "level": "A2",
-    "es": "rico",
-    "hu": "gazdag / finom",
-    "en": "rich / delicious",
-    "de": "reich / lecker",
-    "sentence_es": "Este pastel está muy rico.",
-    "sentence_hu": "Ez a sütemény nagyon finom.",
-    "sentence_en": "This cake is very delicious.",
-    "sentence_de": "Dieser Kuchen ist sehr lecker.",
-    "topic": "comida_a2",
-    "topicOrder": 14
-  },
-  {
-    "id": 1309,
+    "id": 3580,
     "level": "A2",
     "es": "inocente",
     "hu": "ártatlan",
@@ -3574,7 +2856,7 @@
     "topicOrder": 52
   },
   {
-    "id": 1310,
+    "id": 3581,
     "level": "A2",
     "es": "a pesar de",
     "hu": "ellenére",
@@ -3588,7 +2870,7 @@
     "topicOrder": 20
   },
   {
-    "id": 1311,
+    "id": 3582,
     "level": "A2",
     "es": "en absoluto",
     "hu": "egyáltalán nem",
@@ -3602,7 +2884,7 @@
     "topicOrder": 53
   },
   {
-    "id": 1312,
+    "id": 3583,
     "level": "A2",
     "es": "mismos",
     "hu": "ugyanazok / maguk",
@@ -3616,7 +2898,7 @@
     "topicOrder": 54
   },
   {
-    "id": 1313,
+    "id": 3584,
     "level": "A2",
     "es": "tomar (tomado)",
     "hu": "venni / fogni (véve)",
@@ -3630,7 +2912,7 @@
     "topicOrder": 55
   },
   {
-    "id": 1314,
+    "id": 3585,
     "level": "A2",
     "es": "haber (habías)",
     "hu": "segédige (te …-tál/-tél volt)",
@@ -3644,7 +2926,7 @@
     "topicOrder": 56
   },
   {
-    "id": 1315,
+    "id": 3586,
     "level": "A2",
     "es": "los planes",
     "hu": "a tervek",
@@ -3658,7 +2940,7 @@
     "topicOrder": 7
   },
   {
-    "id": 1316,
+    "id": 3587,
     "level": "A2",
     "es": "el cine",
     "hu": "a mozi",
@@ -3672,7 +2954,7 @@
     "topicOrder": 13
   },
   {
-    "id": 1317,
+    "id": 3588,
     "level": "A2",
     "es": "tocar (toca)",
     "hu": "megérinteni / játszani (érint / játszik)",
@@ -3686,7 +2968,7 @@
     "topicOrder": 14
   },
   {
-    "id": 1318,
+    "id": 3589,
     "level": "A2",
     "es": "brillante",
     "hu": "ragyogó / kiváló",
@@ -3700,7 +2982,7 @@
     "topicOrder": 57
   },
   {
-    "id": 1319,
+    "id": 3590,
     "level": "A2",
     "es": "vuestro (vuestra)",
     "hu": "a tiétek (nőnem)",
@@ -3714,7 +2996,7 @@
     "topicOrder": 16
   },
   {
-    "id": 1320,
+    "id": 3591,
     "level": "A2",
     "es": "los nombres",
     "hu": "a nevek",
@@ -3728,7 +3010,7 @@
     "topicOrder": 15
   },
   {
-    "id": 1321,
+    "id": 3592,
     "level": "A2",
     "es": "especialmente",
     "hu": "különösen",
@@ -3742,7 +3024,7 @@
     "topicOrder": 15
   },
   {
-    "id": 1322,
+    "id": 3593,
     "level": "A2",
     "es": "embarazada",
     "hu": "terhes / várandós",
@@ -3756,7 +3038,7 @@
     "topicOrder": 17
   },
   {
-    "id": 1323,
+    "id": 3594,
     "level": "A2",
     "es": "esperar (esperen)",
     "hu": "várni (várjanak - kötőmód)",
@@ -3770,7 +3052,7 @@
     "topicOrder": 58
   },
   {
-    "id": 1324,
+    "id": 3595,
     "level": "A2",
     "es": "los pantalones",
     "hu": "a nadrágok",
@@ -3784,7 +3066,7 @@
     "topicOrder": 8
   },
   {
-    "id": 1325,
+    "id": 3596,
     "level": "A2",
     "es": "la defensa",
     "hu": "a védelem",
@@ -3798,7 +3080,7 @@
     "topicOrder": 59
   },
   {
-    "id": 1326,
+    "id": 3597,
     "level": "A2",
     "es": "terminar (terminó)",
     "hu": "befejezni (ő befejezte)",
@@ -3812,7 +3094,7 @@
     "topicOrder": 15
   },
   {
-    "id": 1327,
+    "id": 3598,
     "level": "A2",
     "es": "salir (salido)",
     "hu": "kimenni (kiment)",
@@ -3826,7 +3108,7 @@
     "topicOrder": 18
   },
   {
-    "id": 1328,
+    "id": 3599,
     "level": "A2",
     "es": "estupendo",
     "hu": "nagyszerű / remek",
@@ -3840,7 +3122,7 @@
     "topicOrder": 31
   },
   {
-    "id": 1329,
+    "id": 3600,
     "level": "A2",
     "es": "inmediatamente",
     "hu": "azonnal",
@@ -3854,7 +3136,7 @@
     "topicOrder": 19
   },
   {
-    "id": 1330,
+    "id": 3601,
     "level": "A2",
     "es": "el/la testigo",
     "hu": "a tanú",
@@ -3868,7 +3150,7 @@
     "topicOrder": 60
   },
   {
-    "id": 1331,
+    "id": 3602,
     "level": "A2",
     "es": "deber (deberían)",
     "hu": "kelleni (kellene nekik)",
@@ -3882,7 +3164,7 @@
     "topicOrder": 9
   },
   {
-    "id": 1332,
+    "id": 3603,
     "level": "A2",
     "es": "olvidar (olvidado)",
     "hu": "elfelejteni (elfelejtve)",
@@ -3896,7 +3178,7 @@
     "topicOrder": 20
   },
   {
-    "id": 1333,
+    "id": 3604,
     "level": "A2",
     "es": "los soldados",
     "hu": "a katonák",
@@ -3910,7 +3192,7 @@
     "topicOrder": 61
   },
   {
-    "id": 1334,
+    "id": 3605,
     "level": "A2",
     "es": "resultar (resulta)",
     "hu": "kiderülni (kiderül)",
@@ -3924,7 +3206,7 @@
     "topicOrder": 62
   },
   {
-    "id": 1335,
+    "id": 3606,
     "level": "A2",
     "es": "depender (depende)",
     "hu": "függni (attól függ)",
@@ -3938,7 +3220,7 @@
     "topicOrder": 21
   },
   {
-    "id": 1336,
+    "id": 3607,
     "level": "A2",
     "es": "el inglés",
     "hu": "az angol (nyelv/ember)",
@@ -3952,7 +3234,7 @@
     "topicOrder": 21
   },
   {
-    "id": 1337,
+    "id": 3608,
     "level": "A2",
     "es": "suyo (suya)",
     "hu": "övé (nőnem)",
@@ -3966,7 +3248,7 @@
     "topicOrder": 16
   },
   {
-    "id": 1338,
+    "id": 3609,
     "level": "A2",
     "es": "el estudio",
     "hu": "a tanulmány / a stúdió",
@@ -3980,7 +3262,7 @@
     "topicOrder": 10
   },
   {
-    "id": 1339,
+    "id": 3610,
     "level": "A2",
     "es": "acabar",
     "hu": "befejezni / végezni",
@@ -3994,7 +3276,7 @@
     "topicOrder": 63
   },
   {
-    "id": 1340,
+    "id": 3611,
     "level": "A2",
     "es": "los sentimientos",
     "hu": "az érzelmek",
@@ -4008,7 +3290,7 @@
     "topicOrder": 32
   },
   {
-    "id": 1341,
+    "id": 3612,
     "level": "A2",
     "es": "tomar (tomando)",
     "hu": "venni (véve)",
@@ -4022,7 +3304,7 @@
     "topicOrder": 16
   },
   {
-    "id": 1342,
+    "id": 3613,
     "level": "A2",
     "es": "dar (dieron)",
     "hu": "adni (ők adták)",
@@ -4036,7 +3318,7 @@
     "topicOrder": 22
   },
   {
-    "id": 1343,
+    "id": 3614,
     "level": "A2",
     "es": "parecer (parecen)",
     "hu": "tűnni (ők tűnnek)",
@@ -4050,7 +3332,7 @@
     "topicOrder": 33
   },
   {
-    "id": 1344,
+    "id": 3615,
     "level": "A2",
     "es": "las llaves",
     "hu": "a kulcsok",
@@ -4064,7 +3346,7 @@
     "topicOrder": 11
   },
   {
-    "id": 1345,
+    "id": 3616,
     "level": "A2",
     "es": "los perros",
     "hu": "a kutyák",
@@ -4078,7 +3360,7 @@
     "topicOrder": 22
   },
   {
-    "id": 1346,
+    "id": 3617,
     "level": "A2",
     "es": "el propósito",
     "hu": "a cél / a szándék",
@@ -4092,21 +3374,7 @@
     "topicOrder": 64
   },
   {
-    "id": 1347,
-    "level": "A2",
-    "es": "la noticia",
-    "hu": "a hír",
-    "en": "the news (piece of)",
-    "de": "Nachricht",
-    "sentence_es": "He recibido una buena noticia hoy.",
-    "sentence_hu": "Ma jó hírt kaptam.",
-    "sentence_en": "I've received good news today.",
-    "sentence_de": "Ich habe heute eine gute Nachricht erhalten.",
-    "topic": "comunicacion",
-    "topicOrder": 23
-  },
-  {
-    "id": 1348,
+    "id": 3618,
     "level": "A2",
     "es": "partir",
     "hu": "indulni / elindulni",
@@ -4120,7 +3388,7 @@
     "topicOrder": 17
   },
   {
-    "id": 1349,
+    "id": 3619,
     "level": "A2",
     "es": "vuestro",
     "hu": "a tiétek (hímnem)",
@@ -4134,7 +3402,7 @@
     "topicOrder": 12
   },
   {
-    "id": 1350,
+    "id": 3620,
     "level": "A2",
     "es": "los metros",
     "hu": "a méterek",
@@ -4148,7 +3416,7 @@
     "topicOrder": 25
   },
   {
-    "id": 1351,
+    "id": 3621,
     "level": "A2",
     "es": "santa",
     "hu": "szent (nőnem)",
@@ -4162,7 +3430,7 @@
     "topicOrder": 5
   },
   {
-    "id": 1352,
+    "id": 3622,
     "level": "A2",
     "es": "quedarse",
     "hu": "maradni (ott maradni)",
@@ -4176,7 +3444,7 @@
     "topicOrder": 26
   },
   {
-    "id": 1353,
+    "id": 3623,
     "level": "A2",
     "es": "los clientes",
     "hu": "az ügyfelek / a vásárlók",
@@ -4190,7 +3458,7 @@
     "topicOrder": 13
   },
   {
-    "id": 1354,
+    "id": 3624,
     "level": "A2",
     "es": "poder (podrá)",
     "hu": "tudni (ő tudni fogja)",
@@ -4204,7 +3472,7 @@
     "topicOrder": 34
   },
   {
-    "id": 1355,
+    "id": 3625,
     "level": "A2",
     "es": "cuántas",
     "hu": "hány (nőnem)",
@@ -4218,7 +3486,7 @@
     "topicOrder": 17
   },
   {
-    "id": 1356,
+    "id": 3626,
     "level": "A2",
     "es": "ridículo",
     "hu": "nevetséges",
@@ -4232,7 +3500,7 @@
     "topicOrder": 18
   },
   {
-    "id": 1357,
+    "id": 3627,
     "level": "A2",
     "es": "las damas",
     "hu": "a hölgyek",
@@ -4246,7 +3514,7 @@
     "topicOrder": 35
   },
   {
-    "id": 1358,
+    "id": 3628,
     "level": "A2",
     "es": "estar (estuviste)",
     "hu": "lenni (te voltál)",
@@ -4260,7 +3528,7 @@
     "topicOrder": 65
   },
   {
-    "id": 1359,
+    "id": 3629,
     "level": "A2",
     "es": "tranquilo (tranquila)",
     "hu": "nyugodt (nőnem)",
@@ -4274,7 +3542,7 @@
     "topicOrder": 19
   },
   {
-    "id": 1360,
+    "id": 3630,
     "level": "A2",
     "es": "la operación",
     "hu": "a művelet / a műtét",
@@ -4288,7 +3556,7 @@
     "topicOrder": 20
   },
   {
-    "id": 1361,
+    "id": 3631,
     "level": "A2",
     "es": "comer (come)",
     "hu": "enni (ő eszik / egyél)",
@@ -4302,7 +3570,7 @@
     "topicOrder": 17
   },
   {
-    "id": 1362,
+    "id": 3632,
     "level": "A2",
     "es": "ayudar (ayúdame)",
     "hu": "segíteni (segíts nekem)",
@@ -4316,7 +3584,7 @@
     "topicOrder": 66
   },
   {
-    "id": 1363,
+    "id": 3633,
     "level": "A2",
     "es": "el laboratorio",
     "hu": "a labor / a laboratórium",
@@ -4330,7 +3598,7 @@
     "topicOrder": 11
   },
   {
-    "id": 1364,
+    "id": 3634,
     "level": "A2",
     "es": "la elección",
     "hu": "a választás",
@@ -4344,7 +3612,7 @@
     "topicOrder": 67
   },
   {
-    "id": 1365,
+    "id": 3635,
     "level": "A2",
     "es": "a menudo",
     "hu": "gyakran",
@@ -4358,7 +3626,7 @@
     "topicOrder": 68
   },
   {
-    "id": 1366,
+    "id": 3636,
     "level": "A2",
     "es": "el beso",
     "hu": "a csók",
@@ -4372,7 +3640,7 @@
     "topicOrder": 36
   },
   {
-    "id": 1367,
+    "id": 3637,
     "level": "A2",
     "es": "la copa",
     "hu": "a pohár / a kupa",
@@ -4386,7 +3654,7 @@
     "topicOrder": 18
   },
   {
-    "id": 1368,
+    "id": 3638,
     "level": "A2",
     "es": "la conversación",
     "hu": "a beszélgetés",
@@ -4400,7 +3668,7 @@
     "topicOrder": 24
   },
   {
-    "id": 1369,
+    "id": 3639,
     "level": "A2",
     "es": "los brazos",
     "hu": "a karok",
@@ -4414,7 +3682,7 @@
     "topicOrder": 21
   },
   {
-    "id": 1370,
+    "id": 3640,
     "level": "A2",
     "es": "el espíritu",
     "hu": "a szellem / a lélek",
@@ -4428,7 +3696,7 @@
     "topicOrder": 20
   },
   {
-    "id": 1371,
+    "id": 3641,
     "level": "A2",
     "es": "dejar (dejas)",
     "hu": "hagyni (te hagyod)",
@@ -4442,7 +3710,7 @@
     "topicOrder": 69
   },
   {
-    "id": 1372,
+    "id": 3642,
     "level": "A2",
     "es": "interesar (interesa)",
     "hu": "érdekelni (érdekel)",
@@ -4456,7 +3724,7 @@
     "topicOrder": 16
   },
   {
-    "id": 1373,
+    "id": 3643,
     "level": "A2",
     "es": "referir (refieres)",
     "hu": "utalni (te utalsz)",
@@ -4470,7 +3738,7 @@
     "topicOrder": 25
   },
   {
-    "id": 1374,
+    "id": 3644,
     "level": "A2",
     "es": "casado",
     "hu": "házas / nős",
@@ -4484,7 +3752,7 @@
     "topicOrder": 21
   },
   {
-    "id": 1375,
+    "id": 3645,
     "level": "A2",
     "es": "enorme",
     "hu": "hatalmas",
@@ -4498,7 +3766,7 @@
     "topicOrder": 27
   },
   {
-    "id": 1376,
+    "id": 3646,
     "level": "A2",
     "es": "los asuntos",
     "hu": "az ügyek",
@@ -4512,7 +3780,7 @@
     "topicOrder": 70
   },
   {
-    "id": 1377,
+    "id": 3647,
     "level": "A2",
     "es": "la fe",
     "hu": "a hit",
@@ -4526,7 +3794,7 @@
     "topicOrder": 22
   },
   {
-    "id": 1378,
+    "id": 3648,
     "level": "A2",
     "es": "la muestra",
     "hu": "a minta / a kiállítás",
@@ -4540,7 +3808,7 @@
     "topicOrder": 17
   },
   {
-    "id": 1379,
+    "id": 3649,
     "level": "A2",
     "es": "la trampa",
     "hu": "a csapda",
@@ -4554,7 +3822,7 @@
     "topicOrder": 23
   },
   {
-    "id": 1380,
+    "id": 3650,
     "level": "A2",
     "es": "la memoria",
     "hu": "az emlékezet / a memória",
@@ -4568,7 +3836,7 @@
     "topicOrder": 23
   },
   {
-    "id": 1381,
+    "id": 3651,
     "level": "A2",
     "es": "contrario",
     "hu": "ellentétes / ellenkezője",
@@ -4582,7 +3850,7 @@
     "topicOrder": 24
   },
   {
-    "id": 1382,
+    "id": 3652,
     "level": "A2",
     "es": "el soldado",
     "hu": "a katona",
@@ -4596,7 +3864,7 @@
     "topicOrder": 71
   },
   {
-    "id": 1383,
+    "id": 3653,
     "level": "A2",
     "es": "subir",
     "hu": "felmenni / felszállni",
@@ -4610,7 +3878,7 @@
     "topicOrder": 13
   },
   {
-    "id": 1384,
+    "id": 3654,
     "level": "A2",
     "es": "el turno",
     "hu": "a sor / a műszak",
@@ -4624,7 +3892,7 @@
     "topicOrder": 72
   },
   {
-    "id": 1385,
+    "id": 3655,
     "level": "A2",
     "es": "encantar (encantaría)",
     "hu": "imádni (imádnám)",
@@ -4638,35 +3906,7 @@
     "topicOrder": 18
   },
   {
-    "id": 1386,
-    "level": "A2",
-    "es": "preocupado",
-    "hu": "aggódó / nyugtalan",
-    "en": "worried",
-    "de": "besorgt",
-    "sentence_es": "Estoy preocupado por los resultados.",
-    "sentence_hu": "Aggódom az eredmények miatt.",
-    "sentence_en": "I'm worried about the results.",
-    "sentence_de": "Ich bin wegen der Ergebnisse besorgt.",
-    "topic": "yo_familia",
-    "topicOrder": 25
-  },
-  {
-    "id": 1387,
-    "level": "A2",
-    "es": "el restaurante",
-    "hu": "az étterem",
-    "en": "the restaurant",
-    "de": "Restaurant",
-    "sentence_es": "Hemos cenado en un restaurante nuevo.",
-    "sentence_hu": "Egy új étteremben vacsoráztunk.",
-    "sentence_en": "We've had dinner at a new restaurant.",
-    "sentence_de": "Wir haben in einem neuen Restaurant zu Abend gegessen.",
-    "topic": "comida_a2",
-    "topicOrder": 19
-  },
-  {
-    "id": 1388,
+    "id": 3656,
     "level": "A2",
     "es": "salir (saliendo)",
     "hu": "kimenni (kimenve)",
@@ -4680,7 +3920,7 @@
     "topicOrder": 73
   },
   {
-    "id": 1389,
+    "id": 3657,
     "level": "A2",
     "es": "escribir (escrito)",
     "hu": "írni (írva)",
@@ -4694,7 +3934,7 @@
     "topicOrder": 26
   },
   {
-    "id": 1390,
+    "id": 3658,
     "level": "A2",
     "es": "calmar (cálmate)",
     "hu": "megnyugodni (nyugodj meg)",
@@ -4708,7 +3948,7 @@
     "topicOrder": 26
   },
   {
-    "id": 1391,
+    "id": 3659,
     "level": "A2",
     "es": "bienvenida",
     "hu": "üdvözöljük (nőnem)",
@@ -4722,7 +3962,7 @@
     "topicOrder": 37
   },
   {
-    "id": 1392,
+    "id": 3660,
     "level": "A2",
     "es": "caer",
     "hu": "esni / leesni",
@@ -4736,7 +3976,7 @@
     "topicOrder": 24
   },
   {
-    "id": 1393,
+    "id": 3661,
     "level": "A2",
     "es": "llevar (llevaré)",
     "hu": "vinni (vinni fogom)",
@@ -4750,7 +3990,7 @@
     "topicOrder": 14
   },
   {
-    "id": 1394,
+    "id": 3662,
     "level": "A2",
     "es": "las estrellas",
     "hu": "a csillagok",
@@ -4764,7 +4004,7 @@
     "topicOrder": 25
   },
   {
-    "id": 1395,
+    "id": 3663,
     "level": "A2",
     "es": "preferir (prefiero)",
     "hu": "előnyben részesíteni (én előnyben részesítem)",
@@ -4778,7 +4018,7 @@
     "topicOrder": 20
   },
   {
-    "id": 1396,
+    "id": 3664,
     "level": "A2",
     "es": "la red",
     "hu": "a háló / a hálózat",
@@ -4792,7 +4032,7 @@
     "topicOrder": 27
   },
   {
-    "id": 1397,
+    "id": 3665,
     "level": "A2",
     "es": "viejos",
     "hu": "öregek / régiek",
@@ -4806,7 +4046,7 @@
     "topicOrder": 28
   },
   {
-    "id": 1398,
+    "id": 3666,
     "level": "A2",
     "es": "solamente",
     "hu": "csupán / csak",
@@ -4820,35 +4060,7 @@
     "topicOrder": 27
   },
   {
-    "id": 1449,
-    "level": "A2",
-    "es": "tampoco",
-    "hu": "szintén nem",
-    "en": "neither / not either",
-    "sentence_es": "Yo tampoco quiero ir.",
-    "sentence_hu": "Én sem akarok menni.",
-    "sentence_en": "I don't want to go either.",
-    "de": "auch nicht",
-    "sentence_de": "Ich will auch nicht gehen.",
-    "topic": "yo_familia",
-    "topicOrder": 28
-  },
-  {
-    "id": 1450,
-    "level": "A2",
-    "es": "joven",
-    "hu": "fiatal",
-    "en": "young",
-    "sentence_es": "Ella es muy joven.",
-    "sentence_hu": "Ő nagyon fiatal.",
-    "sentence_en": "She is very young.",
-    "de": "jung",
-    "sentence_de": "Sie ist sehr jung.",
-    "topic": "yo_familia",
-    "topicOrder": 29
-  },
-  {
-    "id": 1451,
+    "id": 3667,
     "level": "A2",
     "es": "simplemente",
     "hu": "egyszerűen",
@@ -4862,7 +4074,7 @@
     "topicOrder": 30
   },
   {
-    "id": 1452,
+    "id": 3668,
     "level": "A2",
     "es": "el sentido",
     "hu": "az értelem / az irány",
@@ -4876,21 +4088,7 @@
     "topicOrder": 31
   },
   {
-    "id": 1453,
-    "level": "A2",
-    "es": "seguro",
-    "hu": "biztonságos / biztos",
-    "en": "safe / sure",
-    "sentence_es": "El camino es seguro.",
-    "sentence_hu": "Az út biztonságos.",
-    "sentence_en": "The road is safe.",
-    "de": "sicher",
-    "sentence_de": "Der Weg ist sicher.",
-    "topic": "yo_familia",
-    "topicOrder": 32
-  },
-  {
-    "id": 1454,
+    "id": 3669,
     "level": "A2",
     "es": "el arma",
     "hu": "a fegyver",
@@ -4904,21 +4102,7 @@
     "topicOrder": 74
   },
   {
-    "id": 1455,
-    "level": "A2",
-    "es": "alto",
-    "hu": "magas",
-    "en": "tall / high",
-    "sentence_es": "Mi hermano es muy alto.",
-    "sentence_hu": "A bátyám nagyon magas.",
-    "sentence_en": "My brother is very tall.",
-    "de": "groß / hoch",
-    "sentence_de": "Mein Bruder ist sehr groß.",
-    "topic": "yo_familia",
-    "topicOrder": 33
-  },
-  {
-    "id": 1456,
+    "id": 3670,
     "level": "A2",
     "es": "la seguridad",
     "hu": "a biztonság",
@@ -4932,21 +4116,7 @@
     "topicOrder": 75
   },
   {
-    "id": 1457,
-    "level": "A2",
-    "es": "la oficina",
-    "hu": "az iroda",
-    "en": "office",
-    "sentence_es": "Trabajo en una oficina.",
-    "sentence_hu": "Irodában dolgozom.",
-    "sentence_en": "I work in an office.",
-    "de": "Büro",
-    "sentence_de": "Ich arbeite in einem Büro.",
-    "topic": "trabajo_dia",
-    "topicOrder": 76
-  },
-  {
-    "id": 1458,
+    "id": 3671,
     "level": "A2",
     "es": "además",
     "hu": "ezenkívül / ráadásul",
@@ -4960,7 +4130,7 @@
     "topicOrder": 34
   },
   {
-    "id": 1459,
+    "id": 3672,
     "level": "A2",
     "es": "el último",
     "hu": "az utolsó",
@@ -4974,7 +4144,7 @@
     "topicOrder": 77
   },
   {
-    "id": 1460,
+    "id": 3673,
     "level": "A2",
     "es": "el oído",
     "hu": "a fül / a hallás",
@@ -4988,7 +4158,7 @@
     "topicOrder": 22
   },
   {
-    "id": 1461,
+    "id": 3674,
     "level": "A2",
     "es": "correcto",
     "hu": "helyes / korrekt",
@@ -5002,21 +4172,7 @@
     "topicOrder": 12
   },
   {
-    "id": 1462,
-    "level": "A2",
-    "es": "el marido",
-    "hu": "a férj",
-    "en": "husband",
-    "sentence_es": "Su marido trabaja mucho.",
-    "sentence_hu": "A férje sokat dolgozik.",
-    "sentence_en": "Her husband works a lot.",
-    "de": "Ehemann",
-    "sentence_de": "Ihr Ehemann arbeitet viel.",
-    "topic": "yo_familia",
-    "topicOrder": 35
-  },
-  {
-    "id": 1463,
+    "id": 3675,
     "level": "A2",
     "es": "la paz",
     "hu": "a béke",
@@ -5030,7 +4186,7 @@
     "topicOrder": 36
   },
   {
-    "id": 1464,
+    "id": 3676,
     "level": "A2",
     "es": "el plan",
     "hu": "a terv",
@@ -5044,7 +4200,7 @@
     "topicOrder": 78
   },
   {
-    "id": 1465,
+    "id": 3677,
     "level": "A2",
     "es": "peor",
     "hu": "rosszabb",
@@ -5058,7 +4214,7 @@
     "topicOrder": 23
   },
   {
-    "id": 1466,
+    "id": 3678,
     "level": "A2",
     "es": "el pueblo",
     "hu": "a falu / a nép",
@@ -5072,7 +4228,7 @@
     "topicOrder": 6
   },
   {
-    "id": 1467,
+    "id": 3679,
     "level": "A2",
     "es": "basta",
     "hu": "elég",
@@ -5086,7 +4242,7 @@
     "topicOrder": 37
   },
   {
-    "id": 1468,
+    "id": 3680,
     "level": "A2",
     "es": "el paso",
     "hu": "a lépés",
@@ -5100,7 +4256,7 @@
     "topicOrder": 79
   },
   {
-    "id": 1469,
+    "id": 3681,
     "level": "A2",
     "es": "anoche",
     "hu": "tegnap este",
@@ -5114,7 +4270,7 @@
     "topicOrder": 80
   },
   {
-    "id": 1470,
+    "id": 3682,
     "level": "A2",
     "es": "el rey",
     "hu": "a király",
@@ -5128,7 +4284,7 @@
     "topicOrder": 7
   },
   {
-    "id": 1471,
+    "id": 3683,
     "level": "A2",
     "es": "la falta",
     "hu": "a hiány / a hiba",
@@ -5142,21 +4298,7 @@
     "topicOrder": 81
   },
   {
-    "id": 1472,
-    "level": "A2",
-    "es": "diez",
-    "hu": "tíz",
-    "en": "ten",
-    "sentence_es": "Tengo diez euros.",
-    "sentence_hu": "Tíz euróm van.",
-    "sentence_en": "I have ten euros.",
-    "de": "zehn",
-    "sentence_de": "Ich habe zehn Euro.",
-    "topic": "compras_servicios",
-    "topicOrder": 14
-  },
-  {
-    "id": 1473,
+    "id": 3684,
     "level": "A2",
     "es": "el fuego",
     "hu": "a tűz",
@@ -5170,7 +4312,7 @@
     "topicOrder": 29
   },
   {
-    "id": 1474,
+    "id": 3685,
     "level": "A2",
     "es": "poner",
     "hu": "tenni / helyezni",
@@ -5184,7 +4326,7 @@
     "topicOrder": 30
   },
   {
-    "id": 1475,
+    "id": 3686,
     "level": "A2",
     "es": "increíble",
     "hu": "hihetetlen",
@@ -5198,7 +4340,7 @@
     "topicOrder": 38
   },
   {
-    "id": 1476,
+    "id": 3687,
     "level": "A2",
     "es": "real",
     "hu": "valódi / igazi",
@@ -5212,7 +4354,7 @@
     "topicOrder": 39
   },
   {
-    "id": 1477,
+    "id": 3688,
     "level": "A2",
     "es": "las semanas",
     "hu": "a hetek",
@@ -5226,7 +4368,7 @@
     "topicOrder": 82
   },
   {
-    "id": 1478,
+    "id": 3689,
     "level": "A2",
     "es": "especial",
     "hu": "különleges",
@@ -5240,21 +4382,7 @@
     "topicOrder": 40
   },
   {
-    "id": 1479,
-    "level": "A2",
-    "es": "duro",
-    "hu": "kemény / nehéz",
-    "en": "hard / tough",
-    "sentence_es": "El trabajo es muy duro.",
-    "sentence_hu": "A munka nagyon nehéz.",
-    "sentence_en": "The work is very hard.",
-    "de": "hart / schwer",
-    "sentence_de": "Die Arbeit ist sehr schwer.",
-    "topic": "trabajo_dia",
-    "topicOrder": 83
-  },
-  {
-    "id": 1480,
+    "id": 3690,
     "level": "A2",
     "es": "afuera",
     "hu": "kint / kifelé",
@@ -5268,7 +4396,7 @@
     "topicOrder": 31
   },
   {
-    "id": 1481,
+    "id": 3691,
     "level": "A2",
     "es": "el cielo",
     "hu": "az ég",
@@ -5282,7 +4410,7 @@
     "topicOrder": 26
   },
   {
-    "id": 1482,
+    "id": 3692,
     "level": "A2",
     "es": "las preguntas",
     "hu": "a kérdések",
@@ -5296,7 +4424,7 @@
     "topicOrder": 13
   },
   {
-    "id": 1483,
+    "id": 3693,
     "level": "A2",
     "es": "buscar",
     "hu": "keresni",
@@ -5310,21 +4438,7 @@
     "topicOrder": 84
   },
   {
-    "id": 1484,
-    "level": "A2",
-    "es": "la ropa",
-    "hu": "a ruha / a ruhák",
-    "en": "clothes",
-    "sentence_es": "Me pongo ropa limpia.",
-    "sentence_hu": "Tiszta ruhát veszek fel.",
-    "sentence_en": "I put on clean clothes.",
-    "de": "Kleidung",
-    "sentence_de": "Ich ziehe saubere Kleidung an.",
-    "topic": "ocio_moda",
-    "topicOrder": 9
-  },
-  {
-    "id": 1485,
+    "id": 3694,
     "level": "A2",
     "es": "el agente",
     "hu": "az ügynök / a rendőr",
@@ -5338,7 +4452,7 @@
     "topicOrder": 85
   },
   {
-    "id": 1486,
+    "id": 3695,
     "level": "A2",
     "es": "la información",
     "hu": "az információ",
@@ -5352,7 +4466,7 @@
     "topicOrder": 28
   },
   {
-    "id": 1487,
+    "id": 3696,
     "level": "A2",
     "es": "raro",
     "hu": "furcsa / ritka",
@@ -5366,7 +4480,7 @@
     "topicOrder": 41
   },
   {
-    "id": 1488,
+    "id": 3697,
     "level": "A2",
     "es": "perfecto",
     "hu": "tökéletes",
@@ -5380,7 +4494,7 @@
     "topicOrder": 42
   },
   {
-    "id": 1489,
+    "id": 3698,
     "level": "A2",
     "es": "el derecho",
     "hu": "a jog / a jobb oldal",
@@ -5394,21 +4508,7 @@
     "topicOrder": 86
   },
   {
-    "id": 1490,
-    "level": "A2",
-    "es": "ayer",
-    "hu": "tegnap",
-    "en": "yesterday",
-    "sentence_es": "Ayer fui al mercado.",
-    "sentence_hu": "Tegnap a piacra mentem.",
-    "sentence_en": "Yesterday I went to the market.",
-    "de": "gestern",
-    "sentence_de": "Gestern bin ich auf den Markt gegangen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 87
-  },
-  {
-    "id": 1491,
+    "id": 3699,
     "level": "A2",
     "es": "las noticias",
     "hu": "a hírek",
@@ -5422,7 +4522,7 @@
     "topicOrder": 29
   },
   {
-    "id": 1492,
+    "id": 3700,
     "level": "A2",
     "es": "el control",
     "hu": "az ellenőrzés",
@@ -5436,7 +4536,7 @@
     "topicOrder": 88
   },
   {
-    "id": 1493,
+    "id": 3701,
     "level": "A2",
     "es": "el daño",
     "hu": "a kár / a sérülés",
@@ -5450,21 +4550,7 @@
     "topicOrder": 89
   },
   {
-    "id": 1494,
-    "level": "A2",
-    "es": "el error",
-    "hu": "a hiba",
-    "en": "error / mistake",
-    "sentence_es": "Cometí un error ayer.",
-    "sentence_hu": "Tegnap hibát követtem el.",
-    "sentence_en": "I made a mistake yesterday.",
-    "de": "Fehler",
-    "sentence_de": "Ich habe gestern einen Fehler gemacht.",
-    "topic": "trabajo_dia",
-    "topicOrder": 90
-  },
-  {
-    "id": 1495,
+    "id": 3702,
     "level": "A2",
     "es": "jamás",
     "hu": "soha",
@@ -5478,7 +4564,7 @@
     "topicOrder": 43
   },
   {
-    "id": 1496,
+    "id": 3703,
     "level": "A2",
     "es": "la voz",
     "hu": "a hang",
@@ -5492,7 +4578,7 @@
     "topicOrder": 30
   },
   {
-    "id": 1497,
+    "id": 3704,
     "level": "A2",
     "es": "el secreto",
     "hu": "a titok",
@@ -5506,7 +4592,7 @@
     "topicOrder": 38
   },
   {
-    "id": 1498,
+    "id": 3705,
     "level": "A2",
     "es": "el futuro",
     "hu": "a jövő",
@@ -5520,7 +4606,7 @@
     "topicOrder": 44
   },
   {
-    "id": 1549,
+    "id": 3706,
     "level": "A2",
     "es": "los dólares",
     "hu": "dollár",
@@ -5534,21 +4620,7 @@
     "topicOrder": 15
   },
   {
-    "id": 1550,
-    "level": "A2",
-    "es": "seis",
-    "hu": "hat",
-    "en": "six",
-    "sentence_es": "Son las seis.",
-    "sentence_hu": "Hat óra van.",
-    "sentence_en": "It is six o'clock.",
-    "de": "sechs",
-    "sentence_de": "Es ist sechs Uhr.",
-    "topic": "trabajo_dia",
-    "topicOrder": 91
-  },
-  {
-    "id": 1551,
+    "id": 3707,
     "level": "A2",
     "es": "el resto",
     "hu": "maradék",
@@ -5562,7 +4634,7 @@
     "topicOrder": 21
   },
   {
-    "id": 1552,
+    "id": 3708,
     "level": "A2",
     "es": "extraño",
     "hu": "furcsa",
@@ -5576,7 +4648,7 @@
     "topicOrder": 45
   },
   {
-    "id": 1553,
+    "id": 3709,
     "level": "A2",
     "es": "el presidente",
     "hu": "elnök",
@@ -5590,35 +4662,7 @@
     "topicOrder": 8
   },
   {
-    "id": 1554,
-    "level": "A2",
-    "es": "la edad",
-    "hu": "kor",
-    "en": "age",
-    "sentence_es": "¿Qué edad tienes?",
-    "sentence_hu": "Hány éves vagy?",
-    "sentence_en": "How old are you?",
-    "de": "Alter",
-    "sentence_de": "Wie alt bist du?",
-    "topic": "yo_familia",
-    "topicOrder": 46
-  },
-  {
-    "id": 1555,
-    "level": "A2",
-    "es": "negro",
-    "hu": "fekete",
-    "en": "black",
-    "sentence_es": "El gato es negro.",
-    "sentence_hu": "A macska fekete.",
-    "sentence_en": "The cat is black.",
-    "de": "schwarz",
-    "sentence_de": "Die Katze ist schwarz.",
-    "topic": "ocio_moda",
-    "topicOrder": 10
-  },
-  {
-    "id": 1556,
+    "id": 3710,
     "level": "A2",
     "es": "ganar",
     "hu": "nyerni / keresni",
@@ -5632,7 +4676,7 @@
     "topicOrder": 24
   },
   {
-    "id": 1557,
+    "id": 3711,
     "level": "A2",
     "es": "el aire",
     "hu": "levegő",
@@ -5646,7 +4690,7 @@
     "topicOrder": 27
   },
   {
-    "id": 1558,
+    "id": 3712,
     "level": "A2",
     "es": "la cita",
     "hu": "találkozó",
@@ -5660,7 +4704,7 @@
     "topicOrder": 25
   },
   {
-    "id": 1559,
+    "id": 3713,
     "level": "A2",
     "es": "el sistema",
     "hu": "rendszer",
@@ -5674,7 +4718,7 @@
     "topicOrder": 92
   },
   {
-    "id": 1560,
+    "id": 3714,
     "level": "A2",
     "es": "el negocio",
     "hu": "üzlet",
@@ -5688,7 +4732,7 @@
     "topicOrder": 93
   },
   {
-    "id": 1561,
+    "id": 3715,
     "level": "A2",
     "es": "la mente",
     "hu": "elme",
@@ -5702,21 +4746,7 @@
     "topicOrder": 47
   },
   {
-    "id": 1562,
-    "level": "A2",
-    "es": "el campo",
-    "hu": "mező / vidék",
-    "en": "field / countryside",
-    "sentence_es": "Vivimos en el campo.",
-    "sentence_hu": "Vidéken élünk.",
-    "sentence_en": "We live in the countryside.",
-    "de": "Land",
-    "sentence_de": "Wir leben auf dem Land.",
-    "topic": "naturaleza",
-    "topicOrder": 28
-  },
-  {
-    "id": 1563,
+    "id": 3716,
     "level": "A2",
     "es": "la situación",
     "hu": "helyzet",
@@ -5730,21 +4760,7 @@
     "topicOrder": 94
   },
   {
-    "id": 1564,
-    "level": "A2",
-    "es": "el hotel",
-    "hu": "szálloda",
-    "en": "hotel",
-    "sentence_es": "El hotel es muy cómodo.",
-    "sentence_hu": "A szálloda nagyon kényelmes.",
-    "sentence_en": "The hotel is very comfortable.",
-    "de": "Hotel",
-    "sentence_de": "Das Hotel ist sehr komfortabel.",
-    "topic": "viajes_a2",
-    "topicOrder": 18
-  },
-  {
-    "id": 1565,
+    "id": 3717,
     "level": "A2",
     "es": "la relación",
     "hu": "kapcsolat",
@@ -5758,21 +4774,7 @@
     "topicOrder": 39
   },
   {
-    "id": 1566,
-    "level": "A2",
-    "es": "la cena",
-    "hu": "vacsora",
-    "en": "dinner",
-    "sentence_es": "La cena estuvo rica.",
-    "sentence_hu": "A vacsora finom volt.",
-    "sentence_en": "Dinner was delicious.",
-    "de": "Abendessen",
-    "sentence_de": "Das Abendessen war lecker.",
-    "topic": "comida_a2",
-    "topicOrder": 22
-  },
-  {
-    "id": 1567,
+    "id": 3718,
     "level": "A2",
     "es": "la caja",
     "hu": "doboz",
@@ -5786,7 +4788,7 @@
     "topicOrder": 32
   },
   {
-    "id": 1568,
+    "id": 3719,
     "level": "A2",
     "es": "la línea",
     "hu": "vonal / sor",
@@ -5800,7 +4802,7 @@
     "topicOrder": 15
   },
   {
-    "id": 1569,
+    "id": 3720,
     "level": "A2",
     "es": "el hambre",
     "hu": "éhség",
@@ -5814,7 +4816,7 @@
     "topicOrder": 23
   },
   {
-    "id": 1570,
+    "id": 3721,
     "level": "A2",
     "es": "la respuesta",
     "hu": "válasz",
@@ -5828,7 +4830,7 @@
     "topicOrder": 14
   },
   {
-    "id": 1571,
+    "id": 3722,
     "level": "A2",
     "es": "la carta",
     "hu": "levél",
@@ -5842,7 +4844,7 @@
     "topicOrder": 31
   },
   {
-    "id": 1572,
+    "id": 3723,
     "level": "A2",
     "es": "el novio",
     "hu": "barát / vőlegény",
@@ -5856,7 +4858,7 @@
     "topicOrder": 40
   },
   {
-    "id": 1573,
+    "id": 3724,
     "level": "A2",
     "es": "normal",
     "hu": "normális",
@@ -5870,77 +4872,7 @@
     "topicOrder": 48
   },
   {
-    "id": 1574,
-    "level": "A2",
-    "es": "la dirección",
-    "hu": "cím / irány",
-    "en": "address / direction",
-    "sentence_es": "¿Cuál es tu dirección?",
-    "sentence_hu": "Mi a címed?",
-    "sentence_en": "What is your address?",
-    "de": "Adresse",
-    "sentence_de": "Wie lautet deine Adresse?",
-    "topic": "hogar_entorno",
-    "topicOrder": 33
-  },
-  {
-    "id": 1575,
-    "level": "A2",
-    "es": "siete",
-    "hu": "hét",
-    "en": "seven",
-    "sentence_es": "Tengo siete libros.",
-    "sentence_hu": "Hét könyvem van.",
-    "sentence_en": "I have seven books.",
-    "de": "sieben",
-    "sentence_de": "Ich habe sieben Bücher.",
-    "topic": "compras_servicios",
-    "topicOrder": 16
-  },
-  {
-    "id": 1576,
-    "level": "A2",
-    "es": "el barco",
-    "hu": "hajó",
-    "en": "ship / boat",
-    "sentence_es": "El barco llegó al puerto.",
-    "sentence_hu": "A hajó megérkezett a kikötőbe.",
-    "sentence_en": "The ship arrived at the port.",
-    "de": "Schiff",
-    "sentence_de": "Das Schiff kam im Hafen an.",
-    "topic": "transporte_a2",
-    "topicOrder": 16
-  },
-  {
-    "id": 1577,
-    "level": "A2",
-    "es": "blanco",
-    "hu": "fehér",
-    "en": "white",
-    "sentence_es": "La pared es blanca.",
-    "sentence_hu": "A fal fehér.",
-    "sentence_en": "The wall is white.",
-    "de": "weiß",
-    "sentence_de": "Die Wand ist weiß.",
-    "topic": "ocio_moda",
-    "topicOrder": 11
-  },
-  {
-    "id": 1578,
-    "level": "A2",
-    "es": "el profesor",
-    "hu": "tanár",
-    "en": "teacher / professor",
-    "sentence_es": "El profesor es muy bueno.",
-    "sentence_hu": "A tanár nagyon jó.",
-    "sentence_en": "The teacher is very good.",
-    "de": "Lehrer",
-    "sentence_de": "Der Lehrer ist sehr gut.",
-    "topic": "estudios",
-    "topicOrder": 15
-  },
-  {
-    "id": 1579,
+    "id": 3725,
     "level": "A2",
     "es": "el servicio",
     "hu": "szolgáltatás",
@@ -5954,7 +4886,7 @@
     "topicOrder": 17
   },
   {
-    "id": 1580,
+    "id": 3726,
     "level": "A2",
     "es": "la reunión",
     "hu": "értekezlet / találkozó",
@@ -5968,7 +4900,7 @@
     "topicOrder": 95
   },
   {
-    "id": 1581,
+    "id": 3727,
     "level": "A2",
     "es": "la universidad",
     "hu": "egyetem",
@@ -5982,7 +4914,7 @@
     "topicOrder": 16
   },
   {
-    "id": 1582,
+    "id": 3728,
     "level": "A2",
     "es": "la boda",
     "hu": "esküvő",
@@ -5996,7 +4928,7 @@
     "topicOrder": 49
   },
   {
-    "id": 1583,
+    "id": 3729,
     "level": "A2",
     "es": "la decisión",
     "hu": "döntés",
@@ -6010,21 +4942,7 @@
     "topicOrder": 96
   },
   {
-    "id": 1584,
-    "level": "A2",
-    "es": "la abuela",
-    "hu": "nagymama",
-    "en": "grandmother",
-    "sentence_es": "Mi abuela cocina muy bien.",
-    "sentence_hu": "A nagymamám nagyon jól főz.",
-    "sentence_en": "My grandmother cooks very well.",
-    "de": "Großmutter",
-    "sentence_de": "Meine Großmutter kocht sehr gut.",
-    "topic": "yo_familia",
-    "topicOrder": 50
-  },
-  {
-    "id": 1585,
+    "id": 3730,
     "level": "A2",
     "es": "la cárcel",
     "hu": "börtön",
@@ -6038,7 +4956,7 @@
     "topicOrder": 97
   },
   {
-    "id": 1586,
+    "id": 3731,
     "level": "A2",
     "es": "terminar",
     "hu": "befejezni",
@@ -6052,7 +4970,7 @@
     "topicOrder": 98
   },
   {
-    "id": 1587,
+    "id": 3732,
     "level": "A2",
     "es": "la broma",
     "hu": "vicc",
@@ -6066,7 +4984,7 @@
     "topicOrder": 41
   },
   {
-    "id": 1588,
+    "id": 3733,
     "level": "A2",
     "es": "la cámara",
     "hu": "fényképezőgép",
@@ -6080,7 +4998,7 @@
     "topicOrder": 19
   },
   {
-    "id": 1589,
+    "id": 3734,
     "level": "A2",
     "es": "la Navidad",
     "hu": "karácsony",
@@ -6094,35 +5012,7 @@
     "topicOrder": 20
   },
   {
-    "id": 1590,
-    "level": "A2",
-    "es": "ocho",
-    "hu": "nyolc",
-    "en": "eight",
-    "sentence_es": "Llegamos a las ocho.",
-    "sentence_hu": "Nyolckor érkeztünk.",
-    "sentence_en": "We arrived at eight.",
-    "de": "acht",
-    "sentence_de": "Wir kamen um acht an.",
-    "topic": "trabajo_dia",
-    "topicOrder": 99
-  },
-  {
-    "id": 1591,
-    "level": "A2",
-    "es": "el avión",
-    "hu": "repülő",
-    "en": "airplane",
-    "sentence_es": "El avión llega tarde.",
-    "sentence_hu": "A repülő késik.",
-    "sentence_en": "The airplane is arriving late.",
-    "de": "Flugzeug",
-    "sentence_de": "Das Flugzeug kommt spät an.",
-    "topic": "transporte_a2",
-    "topicOrder": 17
-  },
-  {
-    "id": 1592,
+    "id": 3735,
     "level": "A2",
     "es": "la investigación",
     "hu": "nyomozás / kutatás",
@@ -6136,7 +5026,7 @@
     "topicOrder": 17
   },
   {
-    "id": 1593,
+    "id": 3736,
     "level": "A2",
     "es": "el ejército",
     "hu": "hadsereg",
@@ -6150,7 +5040,7 @@
     "topicOrder": 100
   },
   {
-    "id": 1594,
+    "id": 3737,
     "level": "A2",
     "es": "el papel",
     "hu": "papír",
@@ -6164,7 +5054,7 @@
     "topicOrder": 18
   },
   {
-    "id": 1595,
+    "id": 3738,
     "level": "A2",
     "es": "el principio",
     "hu": "eleje / kezdet",
@@ -6178,7 +5068,7 @@
     "topicOrder": 51
   },
   {
-    "id": 1596,
+    "id": 3739,
     "level": "A2",
     "es": "el deseo",
     "hu": "kívánság",
@@ -6192,7 +5082,7 @@
     "topicOrder": 52
   },
   {
-    "id": 1597,
+    "id": 3740,
     "level": "A2",
     "es": "el esposo",
     "hu": "férj",
@@ -6206,21 +5096,7 @@
     "topicOrder": 53
   },
   {
-    "id": 1598,
-    "level": "A2",
-    "es": "el abuelo",
-    "hu": "nagyapa",
-    "en": "grandfather",
-    "sentence_es": "El abuelo cuenta historias.",
-    "sentence_hu": "A nagyapa történeteket mesél.",
-    "sentence_en": "Grandfather tells stories.",
-    "de": "Großvater",
-    "sentence_de": "Der Großvater erzählt Geschichten.",
-    "topic": "yo_familia",
-    "topicOrder": 54
-  },
-  {
-    "id": 1654,
+    "id": 3741,
     "level": "A2",
     "es": "trata de esclavos",
     "hu": "rabszolgakereskedelem",
@@ -6234,21 +5110,7 @@
     "topicOrder": 9
   },
   {
-    "id": 1655,
-    "level": "A2",
-    "es": "tener",
-    "hu": "van/vannak",
-    "en": "to have",
-    "sentence_es": "Yo tengo un libro. ¿Tienes tú?",
-    "sentence_hu": "Nekem van egy könyvem. Neked van?",
-    "sentence_en": "I have a book. Do you have?",
-    "de": "haben",
-    "sentence_de": "Ich habe ein Buch. Hast du?",
-    "topic": "yo_familia",
-    "topicOrder": 55
-  },
-  {
-    "id": 1656,
+    "id": 3742,
     "level": "A2",
     "es": "amar",
     "hu": "szeret",
@@ -6262,63 +5124,7 @@
     "topicOrder": 42
   },
   {
-    "id": 1657,
-    "level": "A2",
-    "es": "poder",
-    "hu": "tud/lehet",
-    "en": "can/to be able",
-    "sentence_es": "Puedo ayudarte si quieres.",
-    "sentence_hu": "Tudok segíteni, ha akarsz.",
-    "sentence_en": "I can help you if you want.",
-    "de": "können",
-    "sentence_de": "Ich kann dir helfen, wenn du möchtest.",
-    "topic": "yo_familia",
-    "topicOrder": 56
-  },
-  {
-    "id": 1658,
-    "level": "A2",
-    "es": "hacer",
-    "hu": "csinál",
-    "en": "to do/make",
-    "sentence_es": "Hago mi tarea todos los días.",
-    "sentence_hu": "Minden nap elvégzem a feladatomat.",
-    "sentence_en": "I do my homework every day.",
-    "de": "machen",
-    "sentence_de": "Ich mache meine Hausaufgaben jeden Tag.",
-    "topic": "trabajo_dia",
-    "topicOrder": 101
-  },
-  {
-    "id": 1659,
-    "level": "A2",
-    "es": "decir",
-    "hu": "mond",
-    "en": "to say",
-    "sentence_es": "Mi amigo me dijo un secreto.",
-    "sentence_hu": "A barátom mondott nekem egy titkot.",
-    "sentence_en": "My friend told me a secret.",
-    "de": "sagen",
-    "sentence_de": "Mein Freund sagte mir ein Geheimnis.",
-    "topic": "comunicacion",
-    "topicOrder": 32
-  },
-  {
-    "id": 1660,
-    "level": "A2",
-    "es": "saber",
-    "hu": "tud",
-    "en": "to know",
-    "sentence_es": "Sé la respuesta a tu pregunta.",
-    "sentence_hu": "Tudom a választ a kérdésedre.",
-    "sentence_en": "I know the answer to your question.",
-    "de": "wissen",
-    "sentence_de": "Ich kenne die Antwort auf deine Frage.",
-    "topic": "trabajo_dia",
-    "topicOrder": 102
-  },
-  {
-    "id": 1661,
+    "id": 3743,
     "level": "A2",
     "es": "estar",
     "hu": "van",
@@ -6332,7 +5138,7 @@
     "topicOrder": 103
   },
   {
-    "id": 1662,
+    "id": 3744,
     "level": "A2",
     "es": "preocupar",
     "hu": "aggaszt",
@@ -6346,35 +5152,7 @@
     "topicOrder": 43
   },
   {
-    "id": 1663,
-    "level": "A2",
-    "es": "esperar",
-    "hu": "vár",
-    "en": "to wait/hope",
-    "sentence_es": "Espero en la estación.",
-    "sentence_hu": "Az állomáson várok.",
-    "sentence_en": "I wait at the station.",
-    "de": "warten",
-    "sentence_de": "Ich warte am Bahnhof.",
-    "topic": "transporte_a2",
-    "topicOrder": 18
-  },
-  {
-    "id": 1664,
-    "level": "A2",
-    "es": "ir",
-    "hu": "megy",
-    "en": "to go",
-    "sentence_es": "Voy al cine los viernes.",
-    "sentence_hu": "Pénteken moziba megyek.",
-    "sentence_en": "I go to the cinema on Fridays.",
-    "de": "gehen",
-    "sentence_de": "Ich gehe freitags ins Kino.",
-    "topic": "ocio_cultura",
-    "topicOrder": 21
-  },
-  {
-    "id": 1665,
+    "id": 3745,
     "level": "A2",
     "es": "haber",
     "hu": "van (aux)",
@@ -6388,21 +5166,7 @@
     "topicOrder": 104
   },
   {
-    "id": 1666,
-    "level": "A2",
-    "es": "dar",
-    "hu": "ad",
-    "en": "to give",
-    "sentence_es": "Té doy este regalo.",
-    "sentence_hu": "Ezt az ajándékot adlak neked.",
-    "sentence_en": "I give you this gift.",
-    "de": "geben",
-    "sentence_de": "Ich gebe dir dieses Geschenk.",
-    "topic": "relaciones",
-    "topicOrder": 44
-  },
-  {
-    "id": 1667,
+    "id": 3746,
     "level": "A2",
     "es": "ser",
     "hu": "van",
@@ -6416,49 +5180,7 @@
     "topicOrder": 57
   },
   {
-    "id": 1668,
-    "level": "A2",
-    "es": "ver",
-    "hu": "lát",
-    "en": "to see",
-    "sentence_es": "Veo una película interesante.",
-    "sentence_hu": "Egy érdekes filmet nézek.",
-    "sentence_en": "I watch an interesting film.",
-    "de": "sehen",
-    "sentence_de": "Ich sehe einen interessanten Film.",
-    "topic": "ocio_cultura",
-    "topicOrder": 22
-  },
-  {
-    "id": 1669,
-    "level": "A2",
-    "es": "morir",
-    "hu": "meghal",
-    "en": "to die",
-    "sentence_es": "La flor murió sin agua.",
-    "sentence_hu": "A virág víz nélkül meghalt.",
-    "sentence_en": "The flower died without water.",
-    "de": "sterben",
-    "sentence_de": "Die Blume starb ohne Wasser.",
-    "topic": "salud_deporte",
-    "topicOrder": 26
-  },
-  {
-    "id": 1670,
-    "level": "A2",
-    "es": "venir",
-    "hu": "jön",
-    "en": "to come",
-    "sentence_es": "Mis amigos vienen mañana.",
-    "sentence_hu": "Holnap jönnek a barátaim.",
-    "sentence_en": "My friends come tomorrow.",
-    "de": "kommen",
-    "sentence_de": "Meine Freunde kommen morgen.",
-    "topic": "relaciones",
-    "topicOrder": 45
-  },
-  {
-    "id": 1671,
+    "id": 3747,
     "level": "A2",
     "es": "deber",
     "hu": "kell",
@@ -6472,21 +5194,7 @@
     "topicOrder": 19
   },
   {
-    "id": 1672,
-    "level": "A2",
-    "es": "pensar",
-    "hu": "gondol",
-    "en": "to think",
-    "sentence_es": "Pienso en ti a menudo.",
-    "sentence_hu": "Gyakran gondolok rád.",
-    "sentence_en": "I often think of you.",
-    "de": "denken",
-    "sentence_de": "Ich denke oft an dich.",
-    "topic": "relaciones",
-    "topicOrder": 46
-  },
-  {
-    "id": 1673,
+    "id": 3748,
     "level": "A2",
     "es": "perder",
     "hu": "elveszt",
@@ -6500,63 +5208,7 @@
     "topicOrder": 105
   },
   {
-    "id": 1674,
-    "level": "A2",
-    "es": "llevar",
-    "hu": "visz/hord",
-    "en": "to carry/wear",
-    "sentence_es": "Llevo un uniforme azul.",
-    "sentence_hu": "Kék egyenruhát hordok.",
-    "sentence_en": "I wear a blue uniform.",
-    "de": "tragen",
-    "sentence_de": "Ich trage eine blaue Uniform.",
-    "topic": "ocio_moda",
-    "topicOrder": 12
-  },
-  {
-    "id": 1675,
-    "level": "A2",
-    "es": "llamar",
-    "hu": "hív",
-    "en": "to call",
-    "sentence_es": "Te llamé por teléfono.",
-    "sentence_hu": "Telefonon hívtalak.",
-    "sentence_en": "I called you on the phone.",
-    "de": "rufen",
-    "sentence_de": "Ich rief dich an.",
-    "topic": "comunicacion",
-    "topicOrder": 33
-  },
-  {
-    "id": 1676,
-    "level": "A2",
-    "es": "empezar",
-    "hu": "kezd",
-    "en": "to begin",
-    "sentence_es": "La clase empieza a las nueve.",
-    "sentence_hu": "Az óra kilenckor kezdődik.",
-    "sentence_en": "The class starts at nine.",
-    "de": "beginnen",
-    "sentence_de": "Der Unterricht beginnt um neun Uhr.",
-    "topic": "estudios",
-    "topicOrder": 20
-  },
-  {
-    "id": 1677,
-    "level": "A2",
-    "es": "querer",
-    "hu": "akar",
-    "en": "to want",
-    "sentence_es": "Quiero aprender español.",
-    "sentence_hu": "Spanyolul szeretnék tanulni.",
-    "sentence_en": "I want to learn Spanish.",
-    "de": "wollen",
-    "sentence_de": "Ich möchte Spanisch lernen.",
-    "topic": "relaciones",
-    "topicOrder": 47
-  },
-  {
-    "id": 1678,
+    "id": 3749,
     "level": "A2",
     "es": "entrar",
     "hu": "belép",
@@ -6570,7 +5222,7 @@
     "topicOrder": 34
   },
   {
-    "id": 1679,
+    "id": 3750,
     "level": "A2",
     "es": "suponer",
     "hu": "feltételez",
@@ -6584,21 +5236,7 @@
     "topicOrder": 34
   },
   {
-    "id": 1680,
-    "level": "A2",
-    "es": "solo",
-    "hu": "egyedül",
-    "en": "alone/only",
-    "sentence_es": "Viajo solo a menudo.",
-    "sentence_hu": "Gyakran utazom egyedül.",
-    "sentence_en": "I often travel alone.",
-    "de": "allein",
-    "sentence_de": "Ich reise oft allein.",
-    "topic": "viajes_a2",
-    "topicOrder": 19
-  },
-  {
-    "id": 1681,
+    "id": 3751,
     "level": "A2",
     "es": "único",
     "hu": "egyetlen",
@@ -6612,21 +5250,7 @@
     "topicOrder": 58
   },
   {
-    "id": 1682,
-    "level": "A2",
-    "es": "pequeño",
-    "hu": "kicsi",
-    "en": "small",
-    "sentence_es": "El pueblo es muy pequeño.",
-    "sentence_hu": "A község nagyon kicsi.",
-    "sentence_en": "The village is very small.",
-    "de": "klein",
-    "sentence_de": "Das Dorf ist sehr klein.",
-    "topic": "hogar_entorno",
-    "topicOrder": 35
-  },
-  {
-    "id": 1683,
+    "id": 3752,
     "level": "A2",
     "es": "mucho",
     "hu": "sok",
@@ -6640,21 +5264,7 @@
     "topicOrder": 24
   },
   {
-    "id": 1684,
-    "level": "A2",
-    "es": "grande",
-    "hu": "nagy",
-    "en": "big",
-    "sentence_es": "Nueva York es una ciudad grande.",
-    "sentence_hu": "New York nagy város.",
-    "sentence_en": "New York is a big city.",
-    "de": "groß",
-    "sentence_de": "New York ist eine große Stadt.",
-    "topic": "paises",
-    "topicOrder": 10
-  },
-  {
-    "id": 1685,
+    "id": 3753,
     "level": "A2",
     "es": "otro",
     "hu": "másik",
@@ -6668,21 +5278,7 @@
     "topicOrder": 106
   },
   {
-    "id": 1686,
-    "level": "A2",
-    "es": "detrás",
-    "hu": "mögött",
-    "en": "behind",
-    "sentence_es": "La casa está detrás del parque.",
-    "sentence_hu": "A ház a park mögött van.",
-    "sentence_en": "The house is behind the park.",
-    "de": "dahinter",
-    "sentence_de": "Das Haus ist hinter dem Park.",
-    "topic": "hogar_entorno",
-    "topicOrder": 36
-  },
-  {
-    "id": 1687,
+    "id": 3754,
     "level": "A2",
     "es": "suerte",
     "hu": "szerencse",
@@ -6696,35 +5292,7 @@
     "topicOrder": 13
   },
   {
-    "id": 1688,
-    "level": "A2",
-    "es": "fuerte",
-    "hu": "erős",
-    "en": "strong",
-    "sentence_es": "El café es muy fuerte.",
-    "sentence_hu": "A kávé nagyon erős.",
-    "sentence_en": "The coffee is very strong.",
-    "de": "stark",
-    "sentence_de": "Der Kaffee ist sehr stark.",
-    "topic": "salud_deporte",
-    "topicOrder": 27
-  },
-  {
-    "id": 1689,
-    "level": "A2",
-    "es": "viejo",
-    "hu": "öregséges",
-    "en": "old",
-    "sentence_es": "Mi abuelo es viejo.",
-    "sentence_hu": "A nagypapám öreg.",
-    "sentence_en": "My grandfather is old.",
-    "de": "alt",
-    "sentence_de": "Mein Großvater ist alt.",
-    "topic": "yo_familia",
-    "topicOrder": 59
-  },
-  {
-    "id": 1690,
+    "id": 3755,
     "level": "A2",
     "es": "el par",
     "hu": "pár",
@@ -6738,7 +5306,7 @@
     "topicOrder": 14
   },
   {
-    "id": 1691,
+    "id": 3756,
     "level": "A2",
     "es": "seguir",
     "hu": "követ",
@@ -6752,7 +5320,7 @@
     "topicOrder": 19
   },
   {
-    "id": 1692,
+    "id": 3757,
     "level": "A2",
     "es": "medio",
     "hu": "közepé",
@@ -6766,7 +5334,7 @@
     "topicOrder": 107
   },
   {
-    "id": 1693,
+    "id": 3758,
     "level": "A2",
     "es": "matar",
     "hu": "megöl",
@@ -6780,7 +5348,7 @@
     "topicOrder": 29
   },
   {
-    "id": 1694,
+    "id": 3759,
     "level": "A2",
     "es": "acerca de",
     "hu": "rólról",
@@ -6794,7 +5362,7 @@
     "topicOrder": 35
   },
   {
-    "id": 1695,
+    "id": 3760,
     "level": "A2",
     "es": "cuanto",
     "hu": "mennyi",
@@ -6808,7 +5376,7 @@
     "topicOrder": 18
   },
   {
-    "id": 1696,
+    "id": 3761,
     "level": "A2",
     "es": "vivo",
     "hu": "élő",
@@ -6822,7 +5390,7 @@
     "topicOrder": 28
   },
   {
-    "id": 1697,
+    "id": 3762,
     "level": "A2",
     "es": "la señorita",
     "hu": "kisasszony",
@@ -6836,21 +5404,7 @@
     "topicOrder": 48
   },
   {
-    "id": 1698,
-    "level": "A2",
-    "es": "aquí",
-    "hu": "itt",
-    "en": "here",
-    "sentence_es": "Aquí está tu libro.",
-    "sentence_hu": "Itt a könyved.",
-    "sentence_en": "Here is your book.",
-    "de": "hier",
-    "sentence_de": "Hier ist dein Buch.",
-    "topic": "hogar_entorno",
-    "topicOrder": 37
-  },
-  {
-    "id": 1699,
+    "id": 3763,
     "level": "A2",
     "es": "puesto",
     "hu": "hely",
@@ -6864,21 +5418,7 @@
     "topicOrder": 108
   },
   {
-    "id": 1700,
-    "level": "A2",
-    "es": "cuál",
-    "hu": "melyik",
-    "en": "which",
-    "sentence_es": "¿Cuál prefieres?",
-    "sentence_hu": "Melyiket részesíted?",
-    "sentence_en": "Which one do you prefer?",
-    "de": "welch",
-    "sentence_de": "Welches bevorzugst du?",
-    "topic": "trabajo_dia",
-    "topicOrder": 109
-  },
-  {
-    "id": 1701,
+    "id": 3764,
     "level": "A2",
     "es": "la frente",
     "hu": "homlok",
@@ -6892,7 +5432,7 @@
     "topicOrder": 29
   },
   {
-    "id": 1702,
+    "id": 3765,
     "level": "A2",
     "es": "el trato",
     "hu": "üzlet",
@@ -6906,7 +5446,7 @@
     "topicOrder": 19
   },
   {
-    "id": 1703,
+    "id": 3766,
     "level": "A2",
     "es": "la razón",
     "hu": "ok",
@@ -6928,7 +5468,7 @@
     "sentence_en": "I have a pair of shoes.",
     "de": "Paar",
     "sentence_de": "Ich habe ein Paar Schuhe.",
-    "id": 1754,
+    "id": 3767,
     "level": "A2",
     "topic": "ocio_moda",
     "topicOrder": 15
@@ -6942,7 +5482,7 @@
     "sentence_en": "About five people.",
     "de": "ungefähr",
     "sentence_de": "Ungefähr fünf Personen.",
-    "id": 1755,
+    "id": 3768,
     "level": "A2",
     "topic": "comunicacion",
     "topicOrder": 37
@@ -6956,7 +5496,7 @@
     "sentence_en": "He is lost in the city.",
     "de": "verloren",
     "sentence_de": "Er ist in der Stadt verloren.",
-    "id": 1756,
+    "id": 3769,
     "level": "A2",
     "topic": "viajes_a2",
     "topicOrder": 20
@@ -6970,7 +5510,7 @@
     "sentence_en": "The young lady is young.",
     "de": "Fräulein",
     "sentence_de": "Das Fräulein ist jung.",
-    "id": 1757,
+    "id": 3770,
     "level": "A2",
     "topic": "relaciones",
     "topicOrder": 49
@@ -6984,7 +5524,7 @@
     "sentence_en": "My dear friend.",
     "de": "geliebt",
     "sentence_de": "Mein geliebter Freund.",
-    "id": 1758,
+    "id": 3771,
     "level": "A2",
     "topic": "relaciones",
     "topicOrder": 50
@@ -6998,7 +5538,7 @@
     "sentence_en": "Which do you prefer?",
     "de": "welch",
     "sentence_de": "Welches bevorzugst du?",
-    "id": 1759,
+    "id": 3772,
     "level": "A2",
     "topic": "trabajo_dia",
     "topicOrder": 110
@@ -7012,7 +5552,7 @@
     "sentence_en": "It is in front.",
     "de": "Stirn",
     "sentence_de": "Es ist vorne.",
-    "id": 1760,
+    "id": 3773,
     "level": "A2",
     "topic": "hogar_entorno",
     "topicOrder": 38
@@ -7026,7 +5566,7 @@
     "sentence_en": "Give him the money.",
     "de": "gib",
     "sentence_de": "Gib ihm das Geld.",
-    "id": 1761,
+    "id": 3774,
     "level": "A2",
     "topic": "relaciones",
     "topicOrder": 51
@@ -7040,7 +5580,7 @@
     "sentence_en": "He is right.",
     "de": "Grund",
     "sentence_de": "Er hat recht.",
-    "id": 1762,
+    "id": 3775,
     "level": "A2",
     "topic": "comunicacion",
     "topicOrder": 38
@@ -7054,7 +5594,7 @@
     "sentence_en": "She marries next year.",
     "de": "heiraten",
     "sentence_de": "Sie heiratet nächstes Jahr.",
-    "id": 1763,
+    "id": 3776,
     "level": "A2",
     "topic": "yo_familia",
     "topicOrder": 60
@@ -7068,7 +5608,7 @@
     "sentence_en": "He turns twenty-five.",
     "de": "erfüllen",
     "sentence_de": "Er wird fünfundzwanzig.",
-    "id": 1764,
+    "id": 3777,
     "level": "A2",
     "topic": "yo_familia",
     "topicOrder": 61
@@ -7082,7 +5622,7 @@
     "sentence_en": "I managed to finish.",
     "de": "erreichen",
     "sentence_de": "Ich schaffte es zu beenden.",
-    "id": 1765,
+    "id": 3778,
     "level": "A2",
     "topic": "trabajo_dia",
     "topicOrder": 111
@@ -7096,7 +5636,7 @@
     "sentence_en": "I barely believe it.",
     "de": "kaum",
     "sentence_de": "Ich glaube es kaum.",
-    "id": 1766,
+    "id": 3779,
     "level": "A2",
     "topic": "trabajo_dia",
     "topicOrder": 112
@@ -7110,7 +5650,7 @@
     "sentence_en": "I return soon.",
     "de": "bald",
     "sentence_de": "Ich komme bald zurück.",
-    "id": 1767,
+    "id": 3780,
     "level": "A2",
     "topic": "trabajo_dia",
     "topicOrder": 113
@@ -7124,7 +5664,7 @@
     "sentence_en": "It is my own car.",
     "de": "eigen",
     "sentence_de": "Es ist mein eigenes Auto.",
-    "id": 1768,
+    "id": 3781,
     "level": "A2",
     "topic": "yo_familia",
     "topicOrder": 62
@@ -7138,7 +5678,7 @@
     "sentence_en": "He is by me.",
     "de": "zusammen",
     "sentence_de": "Er ist neben mir.",
-    "id": 1769,
+    "id": 3782,
     "level": "A2",
     "topic": "relaciones",
     "topicOrder": 52
@@ -9090,20 +7630,6 @@
     "topicOrder": 49
   },
   {
-    "es": "sonar",
-    "hu": "hangzik/szól",
-    "en": "to sound / to ring",
-    "sentence_es": "Eso suena como una buena idea.",
-    "sentence_hu": "Ez jó ötletnek hangzik.",
-    "sentence_en": "That sounds like a good idea.",
-    "de": "klingen/läuten",
-    "sentence_de": "Das klingt nach einer guten Idee.",
-    "id": 2032,
-    "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 47
-  },
-  {
     "es": "los millones",
     "hu": "milliók",
     "en": "millions",
@@ -10602,20 +9128,6 @@
     "topicOrder": 24
   },
   {
-    "es": "levantarse",
-    "hu": "felkel",
-    "en": "to get up/to stand up",
-    "sentence_es": "Tienes que levantarte temprano mañana.",
-    "sentence_hu": "Holnap korán kell felkelned.",
-    "sentence_en": "You have to get up early tomorrow.",
-    "de": "aufstehen",
-    "sentence_de": "Du musst morgen früh aufstehen.",
-    "id": 2140,
-    "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 153
-  },
-  {
     "es": "el interés",
     "hu": "érdeklődés/kamat",
     "en": "interest",
@@ -11288,20 +9800,6 @@
     "topicOrder": 91
   },
   {
-    "es": "el bebé",
-    "hu": "baba/csecsemő",
-    "en": "baby",
-    "sentence_es": "El bebé está durmiendo.",
-    "sentence_hu": "A baba alszik.",
-    "sentence_en": "The baby is sleeping.",
-    "de": "Baby",
-    "sentence_de": "Das Baby schläft.",
-    "id": 2189,
-    "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 119
-  },
-  {
     "es": "el papa",
     "hu": "pápa",
     "en": "pope",
@@ -11566,20 +10064,6 @@
     "level": "A2",
     "topic": "trabajo_dia",
     "topicOrder": 174
-  },
-  {
-    "es": "leer",
-    "hu": "olvasni",
-    "en": "to read",
-    "sentence_es": "Me gusta leer libros por la noche.",
-    "sentence_hu": "Szeretek este könyveket olvasni.",
-    "sentence_en": "I like to read books at night.",
-    "de": "lesen",
-    "sentence_de": "Ich lese abends gerne Bücher.",
-    "id": 2209,
-    "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 45
   },
   {
     "es": "unidos",

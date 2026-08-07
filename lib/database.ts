@@ -1,6 +1,9 @@
 import * as SQLite from 'expo-sqlite';
 import { createEmptyCard, type Card } from 'ts-fsrs';
 import { BACKUP_SCHEMA_VERSION, BACKUP_TABLES, getAppVersion, type BackupPayload } from './backup';
+import { pickSurvivor } from './cardMerge';
+import { rankSentencesByWordWeakness, sentenceSlotCount, type WordWeakness } from './sentenceMix';
+import { WORD_MERGES } from './wordMerges';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 
 export interface DB {
@@ -257,7 +260,61 @@ class SQLiteDB implements DB {
         ALTER TABLE user_level_new RENAME TO user_level;
       `);
     }
+    await this.applyWordMerges(this.db);
     return this.db;
+  }
+
+  // Migration: the duplicate cleanup (2026-08-07) removed the higher-level twin
+  // of words that were authored twice, so the progress on a deleted id moves to
+  // the surviving one. Idempotent: after the first run no merged id is left, and
+  // the probe below costs one indexed SELECT per app start. Spanish-target pairs
+  // only, the en/hu word tracks number their words on their own.
+  private async applyWordMerges(db: SQLite.SQLiteDatabase) {
+    const oldIds = Object.keys(WORD_MERGES).map(Number);
+    if (oldIds.length === 0) return;
+    const placeholders = oldIds.map(() => '?').join(',');
+    const stale = await db.getAllAsync<any>(
+      `SELECT * FROM cards WHERE word_id IN (${placeholders}) AND pair LIKE '%-es'`,
+      oldIds
+    );
+    if (stale.length === 0) return;
+
+    for (const row of stale) {
+      const newId = WORD_MERGES[row.word_id];
+      const twin = await db.getFirstAsync<any>(
+        'SELECT * FROM cards WHERE word_id = ? AND type = ? AND pair = ?',
+        [newId, row.type, row.pair]
+      );
+      if (!twin) {
+        await db.runAsync('UPDATE cards SET word_id = ? WHERE id = ?', [newId, row.id]);
+        continue;
+      }
+      // Both sides have history: the stronger one survives, the other is dropped.
+      const survivor = pickSurvivor(row, twin);
+      if (survivor === row) {
+        await db.runAsync('DELETE FROM cards WHERE id = ?', [twin.id]);
+        await db.runAsync('UPDATE cards SET word_id = ? WHERE id = ?', [newId, row.id]);
+      } else {
+        await db.runAsync('DELETE FROM cards WHERE id = ?', [row.id]);
+      }
+    }
+
+    // The spelling list is keyed by (pair, word_id), so a collision there means
+    // the word is already queued under its surviving id, drop the stale row.
+    for (const oldId of oldIds) {
+      const newId = WORD_MERGES[oldId];
+      await db.runAsync(
+        `UPDATE OR REPLACE spelling_list SET word_id = ? WHERE word_id = ? AND pair LIKE '%-es'`,
+        [newId, oldId]
+      );
+    }
+    // Attempt history has no uniqueness constraint, it can just follow the word.
+    await db.runAsync(
+      `UPDATE card_attempts SET word_id = CASE word_id ${oldIds
+        .map((id) => `WHEN ${id} THEN ${WORD_MERGES[id]}`)
+        .join(' ')} ELSE word_id END WHERE word_id IN (${placeholders})`,
+      oldIds
+    );
   }
 
   async ensureCard(wordId: number, type: string) {
@@ -361,15 +418,25 @@ class SQLiteDB implements DB {
     );
     const reviewedSet = new Set(reviewedWordIds.map((r: any) => r.word_id));
 
-    const sentenceSlots = Math.max(3, limit - (newCards as any[]).length - (reviewWords as any[]).length);
+    // FB89: sentences only ever support the words in this session, so their count
+    // follows the 4:1 cadence, and the slots go to the words with the most lapses.
+    const sentenceSlots = sentenceSlotCount((newCards as any[]).length + (reviewWords as any[]).length);
     let sentenceCards: any[] = [];
-    if (reviewedSet.size > 0) {
+    if (reviewedSet.size > 0 && sentenceSlots > 0) {
       const reviewedIds = [...reviewedSet];
       const sentencePlaceholders = reviewedIds.map(() => '?').join(',');
-      sentenceCards = await db.getAllAsync(
-        `SELECT * FROM cards WHERE word_id IN (${sentencePlaceholders}) AND type = 'sentence' AND buried = 0 AND pair = ? AND due <= ? ORDER BY due ASC LIMIT ?`,
-        [...reviewedIds, this.activePair, lookahead, sentenceSlots]
+      const dueSentences = await db.getAllAsync<any>(
+        `SELECT * FROM cards WHERE word_id IN (${sentencePlaceholders}) AND type = 'sentence' AND buried = 0 AND pair = ? AND due <= ? ORDER BY due ASC`,
+        [...reviewedIds, this.activePair, lookahead]
       );
+      const weaknessRows = await db.getAllAsync<any>(
+        `SELECT word_id, lapses, difficulty FROM cards WHERE word_id IN (${sentencePlaceholders}) AND type = 'word' AND pair = ?`,
+        [...reviewedIds, this.activePair]
+      );
+      const weakness = new Map<number, WordWeakness>(
+        weaknessRows.map((r: any) => [r.word_id, { lapses: r.lapses, difficulty: r.difficulty }])
+      );
+      sentenceCards = rankSentencesByWordWeakness(dueSentences, weakness).slice(0, sentenceSlots);
     }
 
     return [...reviewWords, ...sentenceCards, ...newCards];
@@ -738,6 +805,8 @@ class SQLiteDB implements DB {
     // The imported onboarding decides the active pair from here on.
     const ob = await db.getFirstAsync<any>('SELECT source, target FROM onboarding WHERE id = 1');
     if (ob) this.activePair = `${ob.source}-${ob.target}`;
+    // A backup taken before the duplicate cleanup still carries the deleted ids.
+    await this.applyWordMerges(db);
   }
 }
 

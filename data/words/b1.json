@@ -36,18 +36,6 @@
     "sentence_de": "Die Regierung hat entschieden."
   },
   {
-    "id": 304,
-    "level": "B1",
-    "es": "la empresa",
-    "hu": "cég / vállalat",
-    "en": "company",
-    "sentence_es": "Trabajo en una empresa.",
-    "sentence_hu": "Egy cégnél dolgozom.",
-    "sentence_en": "I work at a company.",
-    "de": "Firma / Unternehmen",
-    "sentence_de": "Ich arbeite in einer Firma."
-  },
-  {
     "id": 305,
     "level": "B1",
     "es": "el empleo",
@@ -502,18 +490,6 @@
     "sentence_en": "I'm not guilty.",
     "de": "schuldig",
     "sentence_de": "Ich bin nicht schuldig."
-  },
-  {
-    "id": 343,
-    "level": "B1",
-    "es": "orgulloso",
-    "hu": "büszke",
-    "en": "proud",
-    "sentence_es": "Estoy orgulloso de ti.",
-    "sentence_hu": "Büszke vagyok rád.",
-    "sentence_en": "I'm proud of you.",
-    "de": "stolz",
-    "sentence_de": "Ich bin stolz auf dich."
   },
   {
     "id": 344,
@@ -1128,30 +1104,6 @@
     "sentence_de": "Er zeigte eine große Anpassungsfähigkeit."
   },
   {
-    "id": 755,
-    "level": "B1",
-    "es": "venir",
-    "hu": "jönni",
-    "en": "to come",
-    "sentence_es": "Vendrá mañana.",
-    "sentence_hu": "Holnap jön.",
-    "sentence_en": "He will come tomorrow.",
-    "de": "kommen",
-    "sentence_de": "Er kommt morgen."
-  },
-  {
-    "id": 756,
-    "level": "B1",
-    "es": "sentarse",
-    "hu": "leülni",
-    "en": "to sit down",
-    "sentence_es": "Se sentó rápido.",
-    "sentence_hu": "Gyorsan leült.",
-    "sentence_en": "He sat down quickly.",
-    "de": "sich setzen",
-    "sentence_de": "Er setzte sich schnell."
-  },
-  {
     "id": 757,
     "level": "B1",
     "es": "la señoría",
@@ -1224,30 +1176,6 @@
     "sentence_de": "Eine furchtbare Idee."
   },
   {
-    "id": 763,
-    "level": "B1",
-    "es": "difícil",
-    "hu": "nehéz",
-    "en": "difficult",
-    "sentence_es": "Es muy difícil.",
-    "sentence_hu": "Nagyon nehéz.",
-    "sentence_en": "It is very difficult.",
-    "de": "schwierig",
-    "sentence_de": "Es ist sehr schwierig."
-  },
-  {
-    "id": 764,
-    "level": "B1",
-    "es": "importante",
-    "hu": "fontos",
-    "en": "important",
-    "sentence_es": "Es muy importante.",
-    "sentence_hu": "Nagyon fontos.",
-    "sentence_en": "It is very important.",
-    "de": "wichtig",
-    "sentence_de": "Es ist sehr wichtig."
-  },
-  {
     "id": 765,
     "level": "B1",
     "es": "imposible",
@@ -1258,18 +1186,6 @@
     "sentence_en": "It is impossible.",
     "de": "unmöglich",
     "sentence_de": "Es ist unmöglich."
-  },
-  {
-    "id": 766,
-    "level": "B1",
-    "es": "increíble",
-    "hu": "hihetetlen",
-    "en": "incredible",
-    "sentence_es": "¡Qué increíble!",
-    "sentence_hu": "Szörnyű hihetetlen!",
-    "sentence_en": "How incredible!",
-    "de": "unglaublich",
-    "sentence_de": "Wie unglaublich!"
   },
   {
     "id": 767,
@@ -1284,66 +1200,6 @@
     "sentence_de": "Allgemein."
   },
   {
-    "id": 768,
-    "level": "B1",
-    "es": "normal",
-    "hu": "normális",
-    "en": "normal",
-    "sentence_es": "Es normal.",
-    "sentence_hu": "Normális.",
-    "sentence_en": "It is normal.",
-    "de": "normal",
-    "sentence_de": "Es ist normal."
-  },
-  {
-    "es": "matar",
-    "hu": "megölni",
-    "en": "to kill",
-    "sentence_es": "El villano intentó matar al héroe.",
-    "sentence_hu": "A gonosztevő meg akarta ölni a hőst.",
-    "sentence_en": "The villain tried to kill the hero.",
-    "de": "töten",
-    "sentence_de": "Der Bösewicht versuchte, den Helden zu töten.",
-    "id": 1704,
-    "level": "B1"
-  },
-  {
-    "es": "seguir",
-    "hu": "követni",
-    "en": "to follow",
-    "sentence_es": "Siguieron el camino hasta el bosque.",
-    "sentence_hu": "Követték az utat az erdőig.",
-    "sentence_en": "They followed the path to the forest.",
-    "de": "folgen",
-    "sentence_de": "Sie folgten dem Weg bis zum Wald.",
-    "id": 1705,
-    "level": "B1"
-  },
-  {
-    "es": "llevar",
-    "hu": "viselni, vinni",
-    "en": "to wear, to carry",
-    "sentence_es": "Lleva un abrigo rojo todos los días.",
-    "sentence_hu": "Minden nap egy piros kabátot visel.",
-    "sentence_en": "He wears a red coat every day.",
-    "de": "tragen",
-    "sentence_de": "Er trägt jeden Tag einen roten Mantel.",
-    "id": 1706,
-    "level": "B1"
-  },
-  {
-    "es": "subir",
-    "hu": "felmenni, emelni",
-    "en": "to go up, to climb",
-    "sentence_es": "Subimos la montaña en dos horas.",
-    "sentence_hu": "Két óra alatt felmente a hegyre.",
-    "sentence_en": "We climbed the mountain in two hours.",
-    "de": "hinaufgehen",
-    "sentence_de": "Wir stiegen in zwei Stunden den Berg hinauf.",
-    "id": 1707,
-    "level": "B1"
-  },
-  {
     "es": "cortar",
     "hu": "vágni",
     "en": "to cut",
@@ -1352,7 +1208,7 @@
     "sentence_en": "He cut the bread with a knife.",
     "de": "schneiden",
     "sentence_de": "Er schnitt das Brot mit einem Messer.",
-    "id": 1708,
+    "id": 3783,
     "level": "B1"
   },
   {
@@ -1364,7 +1220,7 @@
     "sentence_en": "The girl shouted because she was scared.",
     "de": "schreien",
     "sentence_de": "Das Mädchen schrie, weil es Angst hatte.",
-    "id": 1709,
+    "id": 3784,
     "level": "B1"
   },
   {
@@ -1376,7 +1232,7 @@
     "sentence_en": "Last night I dreamed about the sea.",
     "de": "träumen",
     "sentence_de": "Letzte Nacht träumte ich vom Meer.",
-    "id": 1710,
+    "id": 3785,
     "level": "B1"
   },
   {
@@ -1388,7 +1244,7 @@
     "sentence_en": "He threw the ball across the field.",
     "de": "werfen",
     "sentence_de": "Er warf den Ball über das Feld.",
-    "id": 1711,
+    "id": 3786,
     "level": "B1"
   },
   {
@@ -1400,7 +1256,7 @@
     "sentence_en": "I was born in Madrid thirty years ago.",
     "de": "geboren werden",
     "sentence_de": "Vor dreißig Jahren wurde ich in Madrid geboren.",
-    "id": 1712,
+    "id": 3787,
     "level": "B1"
   },
   {
@@ -1412,7 +1268,7 @@
     "sentence_en": "Trees grow slowly in this climate.",
     "de": "wachsen",
     "sentence_de": "Bäume wachsen langsam in diesem Klima.",
-    "id": 1713,
+    "id": 3788,
     "level": "B1"
   },
   {
@@ -1424,7 +1280,7 @@
     "sentence_en": "Soldiers obey the general's orders.",
     "de": "gehorchen",
     "sentence_de": "Soldaten gehorchen den Befehlen des Generals.",
-    "id": 1714,
+    "id": 3789,
     "level": "B1"
   },
   {
@@ -1436,7 +1292,7 @@
     "sentence_en": "This book belongs to my brother.",
     "de": "gehören",
     "sentence_de": "Dieses Buch gehört meinem Bruder.",
-    "id": 1715,
+    "id": 3790,
     "level": "B1"
   },
   {
@@ -1448,7 +1304,7 @@
     "sentence_en": "The sun appeared among the clouds.",
     "de": "erscheinen",
     "sentence_de": "Die Sonne erschien zwischen den Wolken.",
-    "id": 1716,
+    "id": 3791,
     "level": "B1"
   },
   {
@@ -1460,7 +1316,7 @@
     "sentence_en": "The magician disappeared on the stage.",
     "de": "verschwinden",
     "sentence_de": "Der Zauberer verschwand auf der Bühne.",
-    "id": 1717,
+    "id": 3792,
     "level": "B1"
   },
   {
@@ -1472,7 +1328,7 @@
     "sentence_en": "It dawned with a clear and beautiful sky.",
     "de": "anbrechen",
     "sentence_de": "Es brach mit klarem und schönem Himmel an.",
-    "id": 1718,
+    "id": 3793,
     "level": "B1"
   },
   {
@@ -1484,7 +1340,7 @@
     "sentence_en": "I managed to convince my father to travel with me.",
     "de": "überzeugen",
     "sentence_de": "Ich schaffte es, meinen Vater zu überzeugen, mit mir zu reisen.",
-    "id": 1719,
+    "id": 3794,
     "level": "B1"
   },
   {
@@ -1496,19 +1352,7 @@
     "sentence_en": "We established new rules for the community.",
     "de": "festlegen",
     "sentence_de": "Wir legten neue Regeln für die Gemeinde fest.",
-    "id": 1720,
-    "level": "B1"
-  },
-  {
-    "es": "agradecer",
-    "hu": "köszönni",
-    "en": "to thank",
-    "sentence_es": "Le agradecí por su ayuda invaluable.",
-    "sentence_hu": "Köszöntem neki a felbecsülhetetlen segítségért.",
-    "sentence_en": "I thanked him for his invaluable help.",
-    "de": "danken",
-    "sentence_de": "Ich dankte ihm für seine unschätzbare Hilfe.",
-    "id": 1721,
+    "id": 3795,
     "level": "B1"
   },
   {
@@ -1520,7 +1364,7 @@
     "sentence_en": "I recognized my old friend in the street.",
     "de": "erkennen",
     "sentence_de": "Ich erkannte meine alte Freundin in der Straße.",
-    "id": 1722,
+    "id": 3796,
     "level": "B1"
   },
   {
@@ -1532,7 +1376,7 @@
     "sentence_en": "The factory produces a thousand units daily.",
     "de": "produzieren",
     "sentence_de": "Die Fabrik produziert täglich tausend Einheiten.",
-    "id": 1723,
+    "id": 3797,
     "level": "B1"
   },
   {
@@ -1544,7 +1388,7 @@
     "sentence_en": "I translated the document from English to Spanish.",
     "de": "übersetzen",
     "sentence_de": "Ich übersetzte das Dokument vom Englischen ins Spanische.",
-    "id": 1724,
+    "id": 3798,
     "level": "B1"
   },
   {
@@ -1556,7 +1400,7 @@
     "sentence_en": "I completely agree with you.",
     "de": "völlig",
     "sentence_de": "Ich stimme dir völlig zu.",
-    "id": 1725,
+    "id": 3799,
     "level": "B1"
   },
   {
@@ -1568,7 +1412,7 @@
     "sentence_en": "He will probably come tomorrow.",
     "de": "wahrscheinlich",
     "sentence_de": "Er wird wahrscheinlich morgen kommen.",
-    "id": 1726,
+    "id": 3800,
     "level": "B1"
   },
   {
@@ -1580,7 +1424,7 @@
     "sentence_en": "Finally we arrived at our destination.",
     "de": "endlich",
     "sentence_de": "Endlich erreichten wir unser Ziel.",
-    "id": 1727,
+    "id": 3801,
     "level": "B1"
   },
   {
@@ -1592,7 +1436,7 @@
     "sentence_en": "That is exactly what I thought.",
     "de": "genau",
     "sentence_de": "Das ist genau das, was ich dachte.",
-    "id": 1728,
+    "id": 3802,
     "level": "B1"
   },
   {
@@ -1604,19 +1448,7 @@
     "sentence_en": "I generally have breakfast at eight.",
     "de": "allgemein",
     "sentence_de": "Ich frühstücke allgemein um acht Uhr.",
-    "id": 1729,
-    "level": "B1"
-  },
-  {
-    "es": "la trampa",
-    "hu": "a csapda",
-    "en": "the trap",
-    "sentence_es": "Cayeron en la trampa del enemigo.",
-    "sentence_hu": "Az ellenség csapdájába estek.",
-    "sentence_en": "They fell into the enemy's trap.",
-    "de": "Falle",
-    "sentence_de": "Sie fielen in die Falle des Feindes.",
-    "id": 1730,
+    "id": 3803,
     "level": "B1"
   },
   {
@@ -1628,7 +1460,7 @@
     "sentence_en": "The witness testified before the court.",
     "de": "Zeuge",
     "sentence_de": "Der Zeuge sagte vor Gericht aus.",
-    "id": 1731,
+    "id": 3804,
     "level": "B1"
   },
   {
@@ -1640,7 +1472,7 @@
     "sentence_en": "I had a terrible nightmare last night.",
     "de": "Albtraum",
     "sentence_de": "Ich hatte letzte Nacht einen furchtbaren Albtraum.",
-    "id": 1732,
+    "id": 3805,
     "level": "B1"
   },
   {
@@ -1652,19 +1484,7 @@
     "sentence_en": "The deadline to submit the project is Friday.",
     "de": "Frist",
     "sentence_de": "Die Frist für die Einreichung des Projekts ist Freitag.",
-    "id": 1733,
-    "level": "B1"
-  },
-  {
-    "es": "el paisaje",
-    "hu": "a táj",
-    "en": "the landscape",
-    "sentence_es": "El paisaje de la región es espectacular.",
-    "sentence_hu": "A régió tája lenyűgöző.",
-    "sentence_en": "The landscape of the region is spectacular.",
-    "de": "Landschaft",
-    "sentence_de": "Die Landschaft der Region ist spektakulär.",
-    "id": 1734,
+    "id": 3806,
     "level": "B1"
   },
   {
@@ -1676,7 +1496,7 @@
     "sentence_en": "The mayor inaugurated the new park.",
     "de": "Bürgermeister",
     "sentence_de": "Der Bürgermeister eröffnete den neuen Park.",
-    "id": 1735,
+    "id": 3807,
     "level": "B1"
   },
   {
@@ -1688,7 +1508,7 @@
     "sentence_en": "I applied for citizenship a year ago.",
     "de": "Staatsbürgerschaft",
     "sentence_de": "Ich habe vor einem Jahr die Staatsbürgerschaft beantragt.",
-    "id": 1736,
+    "id": 3808,
     "level": "B1"
   },
   {
@@ -1700,7 +1520,7 @@
     "sentence_en": "The crime was committed three years ago.",
     "de": "Verbrechen",
     "sentence_de": "Das Verbrechen wurde vor drei Jahren begangen.",
-    "id": 1737,
+    "id": 3809,
     "level": "B1"
   },
   {
@@ -1712,7 +1532,7 @@
     "sentence_en": "Democracy is fundamental for freedom.",
     "de": "Demokratie",
     "sentence_de": "Demokratie ist grundlegend für Freiheit.",
-    "id": 1738,
+    "id": 3810,
     "level": "B1"
   },
   {
@@ -1724,31 +1544,7 @@
     "sentence_en": "I'm in a dilemma about which career to choose.",
     "de": "Dilemma",
     "sentence_de": "Ich bin in einem Dilemma, welchen Beruf ich wählen soll.",
-    "id": 1739,
-    "level": "B1"
-  },
-  {
-    "es": "el enemigo",
-    "hu": "az ellenség",
-    "en": "the enemy",
-    "sentence_es": "Nunca subestimes a tu enemigo.",
-    "sentence_hu": "Soha ne becsüld alá az ellenségedet.",
-    "sentence_en": "Never underestimate your enemy.",
-    "de": "Feind",
-    "sentence_de": "Unterschätze deinen Feind nie.",
-    "id": 1740,
-    "level": "B1"
-  },
-  {
-    "es": "la esperanza",
-    "hu": "a remény",
-    "en": "hope",
-    "sentence_es": "La esperanza es lo último que se pierde.",
-    "sentence_hu": "A remény az utolsó dolog, amit elveszítünk.",
-    "sentence_en": "Hope is the last thing we lose.",
-    "de": "Hoffnung",
-    "sentence_de": "Hoffnung ist das Letzte, das wir verlieren.",
-    "id": 1741,
+    "id": 3811,
     "level": "B1"
   },
   {
@@ -1760,7 +1556,7 @@
     "sentence_en": "He sought fame since he was young.",
     "de": "Ruhm",
     "sentence_de": "Er strebte seit seiner Jugend nach Ruhm.",
-    "id": 1742,
+    "id": 3812,
     "level": "B1"
   },
   {
@@ -1772,7 +1568,7 @@
     "sentence_en": "The fortress defended the kingdom.",
     "de": "Festung",
     "sentence_de": "Die Festung verteidigte das Königreich.",
-    "id": 1743,
+    "id": 3813,
     "level": "B1"
   },
   {
@@ -1784,7 +1580,7 @@
     "sentence_en": "He died in glory and in battle.",
     "de": "Ruhm",
     "sentence_de": "Er starb in Ruhm und Schlacht.",
-    "id": 1744,
+    "id": 3814,
     "level": "B1"
   },
   {
@@ -1796,7 +1592,7 @@
     "sentence_en": "The famine affected the region for years.",
     "de": "Hungersnot",
     "sentence_de": "Die Hungersnot betraf die Region jahrelang.",
-    "id": 1745,
+    "id": 3815,
     "level": "B1"
   },
   {
@@ -1808,7 +1604,7 @@
     "sentence_en": "He accomplished an incredible feat that day.",
     "de": "Heldentat",
     "sentence_de": "Er vollbrachte an diesem Tag eine unglaubliche Heldentat.",
-    "id": 1746,
+    "id": 3816,
     "level": "B1"
   },
   {
@@ -1820,7 +1616,7 @@
     "sentence_en": "He received a large inheritance from his grandfather.",
     "de": "Erbschaft",
     "sentence_de": "Er erhielt eine große Erbschaft von seinem Großvater.",
-    "id": 1747,
+    "id": 3817,
     "level": "B1"
   },
   {
@@ -1832,31 +1628,7 @@
     "sentence_en": "He protested against the injustice of the system.",
     "de": "Ungerechtigkeit",
     "sentence_de": "Er protestierte gegen die Ungerechtigkeit des Systems.",
-    "id": 1748,
-    "level": "B1"
-  },
-  {
-    "es": "el jefe",
-    "hu": "a főnök",
-    "en": "the boss",
-    "sentence_es": "Mi jefe es muy exigente con el trabajo.",
-    "sentence_hu": "A főnököm nagyon igényes a munkával.",
-    "sentence_en": "My boss is very demanding with work.",
-    "de": "Chef",
-    "sentence_de": "Mein Chef ist sehr anspruchsvoll bei der Arbeit.",
-    "id": 1749,
-    "level": "B1"
-  },
-  {
-    "es": "la justicia",
-    "hu": "az igazságosság",
-    "en": "justice",
-    "sentence_es": "La justicia prevaleció al final.",
-    "sentence_hu": "Az igazságosság végül győzött.",
-    "sentence_en": "Justice prevailed in the end.",
-    "de": "Gerechtigkeit",
-    "sentence_de": "Die Gerechtigkeit setzte sich am Ende durch.",
-    "id": 1750,
+    "id": 3818,
     "level": "B1"
   },
   {
@@ -1868,7 +1640,7 @@
     "sentence_en": "Everyone must obey the law.",
     "de": "Gesetz",
     "sentence_de": "Jeder muss das Gesetz befolgen.",
-    "id": 1751,
+    "id": 3819,
     "level": "B1"
   },
   {
@@ -1880,7 +1652,7 @@
     "sentence_en": "His loyalty to the company was unbreakable.",
     "de": "Treue",
     "sentence_de": "Seine Treue zum Unternehmen war unerschütterlich.",
-    "id": 1752,
+    "id": 3820,
     "level": "B1"
   },
   {
@@ -1892,7 +1664,7 @@
     "sentence_en": "Freedom of expression is fundamental.",
     "de": "Freiheit",
     "sentence_de": "Redefreiheit ist grundlegend.",
-    "id": 1753,
+    "id": 3821,
     "level": "B1"
   },
   {
@@ -1904,7 +1676,7 @@
     "sentence_en": "He doubted that he could do it without help.",
     "de": "zweifeln",
     "sentence_de": "Er zweifelte daran, dass er es ohne Hilfe schaffen könnte.",
-    "id": 1806,
+    "id": 3822,
     "level": "B1"
   },
   {
@@ -1916,7 +1688,7 @@
     "sentence_en": "The boss demanded that we finish by Friday.",
     "de": "fordern",
     "sentence_de": "Der Chef forderte, dass wir bis Freitag fertig sind.",
-    "id": 1807,
+    "id": 3823,
     "level": "B1"
   },
   {
@@ -1928,7 +1700,7 @@
     "sentence_en": "He had to overcome his fears to succeed.",
     "de": "überwinden",
     "sentence_de": "Er musste seine Ängste überwinden, um erfolgreich zu sein.",
-    "id": 1808,
+    "id": 3824,
     "level": "B1"
   },
   {
@@ -1940,7 +1712,7 @@
     "sentence_en": "She insisted that it was the truth.",
     "de": "bestehen",
     "sentence_de": "Sie bestand darauf, dass es die Wahrheit war.",
-    "id": 1809,
+    "id": 3825,
     "level": "B1"
   },
   {
@@ -1952,7 +1724,7 @@
     "sentence_en": "I warned you not to go that way.",
     "de": "warnen",
     "sentence_de": "Ich warnte dich, nicht diesen Weg zu gehen.",
-    "id": 1810,
+    "id": 3826,
     "level": "B1"
   },
   {
@@ -1964,7 +1736,7 @@
     "sentence_en": "He apologized for his inappropriate behavior.",
     "de": "entschuldigen",
     "sentence_de": "Er entschuldigte sich für sein unangemessenes Verhalten.",
-    "id": 1811,
+    "id": 3827,
     "level": "B1"
   },
   {
@@ -1976,7 +1748,7 @@
     "sentence_en": "Imagine if we won the lottery tomorrow.",
     "de": "vorstellen",
     "sentence_de": "Stellen Sie sich vor, wir würden morgen die Lotterie gewinnen.",
-    "id": 1812,
+    "id": 3828,
     "level": "B1"
   },
   {
@@ -1988,7 +1760,7 @@
     "sentence_en": "We celebrated the anniversary with a special dinner.",
     "de": "feiern",
     "sentence_de": "Wir feierten den Jahrestag mit einem besonderen Abendessen.",
-    "id": 1813,
+    "id": 3829,
     "level": "B1"
   },
   {
@@ -2000,7 +1772,7 @@
     "sentence_en": "He proved that he was capable of doing the job.",
     "de": "demonstrieren",
     "sentence_de": "Er bewies, dass er den Job tun konnte.",
-    "id": 1814,
+    "id": 3830,
     "level": "B1"
   },
   {
@@ -2012,19 +1784,7 @@
     "sentence_en": "He confessed that he had made a serious mistake.",
     "de": "gestehen",
     "sentence_de": "Er gab zu, dass er einen schwerwiegenden Fehler gemacht hatte.",
-    "id": 1815,
-    "level": "B1"
-  },
-  {
-    "es": "escapar",
-    "hu": "menekülni",
-    "en": "to escape",
-    "sentence_es": "Logró escapar de la prisión durante la noche.",
-    "sentence_hu": "Sikerült menekülnie a börtönből az éjszaka alatt.",
-    "sentence_en": "He managed to escape from prison during the night.",
-    "de": "entkommen",
-    "sentence_de": "Ihm gelang es, während der Nacht aus dem Gefängnis zu fliehen.",
-    "id": 1816,
+    "id": 3831,
     "level": "B1"
   },
   {
@@ -2036,7 +1796,7 @@
     "sentence_en": "She admitted that she did not know the correct answer.",
     "de": "zugeben",
     "sentence_de": "Sie gab zu, dass sie die richtige Antwort nicht kannte.",
-    "id": 1817,
+    "id": 3832,
     "level": "B1"
   },
   {
@@ -2048,7 +1808,7 @@
     "sentence_en": "He abandoned his studies to work for the company.",
     "de": "verlassen",
     "sentence_de": "Er gab sein Studium auf, um für das Unternehmen zu arbeiten.",
-    "id": 1818,
+    "id": 3833,
     "level": "B1"
   },
   {
@@ -2060,7 +1820,7 @@
     "sentence_en": "I would recommend you visit that museum tomorrow.",
     "de": "empfehlen",
     "sentence_de": "Ich würde dir empfehlen, dieses Museum morgen zu besuchen.",
-    "id": 1819,
+    "id": 3834,
     "level": "B1"
   },
   {
@@ -2072,7 +1832,7 @@
     "sentence_en": "He took advantage of the opportunity to improve his career.",
     "de": "nutzen",
     "sentence_de": "Er nutzte die Gelegenheit, um seine Karriere zu verbessern.",
-    "id": 1820,
+    "id": 3835,
     "level": "B1"
   },
   {
@@ -2084,7 +1844,7 @@
     "sentence_en": "He mastered the language after living there for five years.",
     "de": "beherrschen",
     "sentence_de": "Er beherrschte die Sprache, nachdem er fünf Jahre dort gelebt hatte.",
-    "id": 1821,
+    "id": 3836,
     "level": "B1"
   },
   {
@@ -2096,7 +1856,7 @@
     "sentence_en": "His courage inspired everyone else to fight.",
     "de": "inspirieren",
     "sentence_de": "Sein Mut inspirierte alle anderen zum Kampf.",
-    "id": 1822,
+    "id": 3837,
     "level": "B1"
   },
   {
@@ -2108,7 +1868,7 @@
     "sentence_en": "She deceived him to unscrupulously get his money.",
     "de": "täuschen",
     "sentence_de": "Sie täuschte ihn, um sein Geld skrupellos zu bekommen.",
-    "id": 1823,
+    "id": 3838,
     "level": "B1"
   },
   {
@@ -2120,7 +1880,7 @@
     "sentence_en": "She prepared the meal while the children did homework.",
     "de": "vorbereiten",
     "sentence_de": "Sie bereitete das Essen vor, während die Kinder Hausaufgaben machten.",
-    "id": 1824,
+    "id": 3839,
     "level": "B1"
   },
   {
@@ -2132,7 +1892,7 @@
     "sentence_en": "He recovered from the accident after several months.",
     "de": "wiederherstellen",
     "sentence_de": "Er erholte sich nach mehreren Monaten vom Unfall.",
-    "id": 1825,
+    "id": 3840,
     "level": "B1"
   },
   {
@@ -2144,7 +1904,7 @@
     "sentence_en": "They decided to separate because they had irreconcilable differences.",
     "de": "trennen",
     "sentence_de": "Sie beschlossen sich zu trennen, weil sie unversöhnliche Unterschiede hatten.",
-    "id": 1826,
+    "id": 3841,
     "level": "B1"
   },
   {
@@ -2156,7 +1916,7 @@
     "sentence_en": "He was wrong to think it was the correct solution.",
     "de": "irren",
     "sentence_de": "Er irrte sich, als er dachte, es sei die richtige Lösung.",
-    "id": 1827,
+    "id": 3842,
     "level": "B1"
   },
   {
@@ -2168,7 +1928,7 @@
     "sentence_en": "She delivered the package personally to the recipient.",
     "de": "übergeben",
     "sentence_de": "Sie übergab das Paket persönlich an den Empfänger.",
-    "id": 1828,
+    "id": 3843,
     "level": "B1"
   },
   {
@@ -2180,7 +1940,7 @@
     "sentence_en": "She published her novel after ten years of work.",
     "de": "veröffentlichen",
     "sentence_de": "Sie veröffentlichte ihren Roman nach zehn Jahren Arbeit.",
-    "id": 1829,
+    "id": 3844,
     "level": "B1"
   },
   {
@@ -2192,7 +1952,7 @@
     "sentence_en": "He installed the new software on all computers.",
     "de": "installieren",
     "sentence_de": "Er installierte die neue Software auf allen Computern.",
-    "id": 1830,
+    "id": 3845,
     "level": "B1"
   },
   {
@@ -2204,7 +1964,7 @@
     "sentence_en": "As a responsible citizen, he paid his taxes on time.",
     "de": "Bürger",
     "sentence_de": "Als verantwortungsvoller Bürger zahlte er seine Steuern pünktlich.",
-    "id": 1831,
+    "id": 3846,
     "level": "B1"
   },
   {
@@ -2216,7 +1976,7 @@
     "sentence_en": "He committed a serious crime that sent him to prison.",
     "de": "Verbrechen",
     "sentence_de": "Er beging ein schweres Verbrechen, das ihn ins Gefängnis brachte.",
-    "id": 1832,
+    "id": 3847,
     "level": "B1"
   },
   {
@@ -2228,7 +1988,7 @@
     "sentence_en": "The trial lasted three months and was very complicated.",
     "de": "Urteil",
     "sentence_de": "Der Prozess dauerte drei Monate und war sehr kompliziert.",
-    "id": 1833,
+    "id": 3848,
     "level": "B1"
   },
   {
@@ -2240,7 +2000,7 @@
     "sentence_en": "He sought revenge against the man who had betrayed him.",
     "de": "Rache",
     "sentence_de": "Er suchte Rache an dem Mann, der ihn verraten hatte.",
-    "id": 1834,
+    "id": 3849,
     "level": "B1"
   },
   {
@@ -2252,7 +2012,7 @@
     "sentence_en": "He hid in a dark corner of the room.",
     "de": "Ecke",
     "sentence_de": "Er versteckte sich in einer dunklen Ecke des Zimmers.",
-    "id": 1835,
+    "id": 3850,
     "level": "B1"
   },
   {
@@ -2264,7 +2024,7 @@
     "sentence_en": "He crossed the border illegally to seek a better life.",
     "de": "Grenze",
     "sentence_de": "Er überquerte die Grenze illegal, um ein besseres Leben zu suchen.",
-    "id": 1836,
+    "id": 3851,
     "level": "B1"
   },
   {
@@ -2276,7 +2036,7 @@
     "sentence_en": "He found shelter in his best friend's house.",
     "de": "Zuflucht",
     "sentence_de": "Er fand Zuflucht im Haus seines besten Freundes.",
-    "id": 1837,
+    "id": 3852,
     "level": "B1"
   },
   {
@@ -2288,7 +2048,7 @@
     "sentence_en": "He won an important prize for his scientific innovation.",
     "de": "Preis",
     "sentence_de": "Er gewann einen wichtigen Preis für seine wissenschaftliche Innovation.",
-    "id": 1838,
+    "id": 3853,
     "level": "B1"
   },
   {
@@ -2300,7 +2060,7 @@
     "sentence_en": "He accepted his defeat with dignity after the battle.",
     "de": "Niederlage",
     "sentence_de": "Er akzeptierte seine Niederlage würdevoll nach der Schlacht.",
-    "id": 1839,
+    "id": 3854,
     "level": "B1"
   },
   {
@@ -2312,7 +2072,7 @@
     "sentence_en": "He felt pride in his son's small achievements.",
     "de": "Stolz",
     "sentence_de": "Er war stolz auf die Erfolge seines kleinen Sohnes.",
-    "id": 1840,
+    "id": 3855,
     "level": "B1"
   },
   {
@@ -2324,7 +2084,7 @@
     "sentence_en": "His conscience would not let him live with the secret.",
     "de": "Gewissen",
     "sentence_de": "Sein Gewissen erlaubte ihm nicht, mit dem Geheimnis zu leben.",
-    "id": 1841,
+    "id": 3856,
     "level": "B1"
   },
   {
@@ -2336,7 +2096,7 @@
     "sentence_en": "He believed that fate had brought them together there.",
     "de": "Schicksal",
     "sentence_de": "Er glaubte, dass das Schicksal sie dort zusammengebracht hatte.",
-    "id": 1842,
+    "id": 3857,
     "level": "B1"
   },
   {
@@ -2348,7 +2108,7 @@
     "sentence_en": "The shadow of the tree protected him from the scorching sun.",
     "de": "Schatten",
     "sentence_de": "Der Schatten des Baumes schützte ihn vor der sengenden Sonne.",
-    "id": 1843,
+    "id": 3858,
     "level": "B1"
   },
   {
@@ -2360,7 +2120,7 @@
     "sentence_en": "They only saw the surface of the complex problem.",
     "de": "Oberfläche",
     "sentence_de": "Sie sahen nur die Oberfläche des komplexen Problems.",
-    "id": 1844,
+    "id": 3859,
     "level": "B1"
   },
   {
@@ -2372,7 +2132,7 @@
     "sentence_en": "The disciple learned all the secrets of his master.",
     "de": "Jünger",
     "sentence_de": "Der Jünger lernte alle Geheimnisse seines Meisters.",
-    "id": 1845,
+    "id": 3860,
     "level": "B1"
   },
   {
@@ -2384,19 +2144,7 @@
     "sentence_en": "The most important tool was his intelligence.",
     "de": "Werkzeug",
     "sentence_de": "Das wichtigste Werkzeug war seine Intelligenz.",
-    "id": 1846,
-    "level": "B1"
-  },
-  {
-    "es": "el consejo",
-    "hu": "tanács",
-    "en": "advice",
-    "sentence_es": "Siguió el consejo de su padre y no se arrepintió.",
-    "sentence_hu": "Követte apja tanácsát és nem bánta meg.",
-    "sentence_en": "He followed his father's advice and did not regret it.",
-    "de": "Rat",
-    "sentence_de": "Er folgte dem Rat seines Vaters und bereute es nicht.",
-    "id": 1847,
+    "id": 3861,
     "level": "B1"
   },
   {
@@ -2408,19 +2156,7 @@
     "sentence_en": "He filed a formal complaint about the poor quality of service.",
     "de": "Beschwerde",
     "sentence_de": "Er reichte eine formelle Beschwerde über die schlechte Servicequalität ein.",
-    "id": 1848,
-    "level": "B1"
-  },
-  {
-    "es": "el miedo",
-    "hu": "félelem",
-    "en": "fear",
-    "sentence_es": "Sentía un profundo miedo a quedarse solo en la oscuridad.",
-    "sentence_hu": "Mély félelmet érzett egyedül maradni a sötétségben.",
-    "sentence_en": "He felt a deep fear of being left alone in the dark.",
-    "de": "Angst",
-    "sentence_de": "Er hatte große Angst, allein in der Dunkelheit zu bleiben.",
-    "id": 1849,
+    "id": 3862,
     "level": "B1"
   },
   {
@@ -2748,18 +2484,6 @@
     "level": "B1"
   },
   {
-    "es": "decir",
-    "hu": "mond/azt mondja",
-    "en": "to say/tell",
-    "sentence_es": "No me digan que ya se fue.",
-    "sentence_hu": "Ne mondják nekem, hogy már elment.",
-    "sentence_en": "Don't tell me he already left.",
-    "de": "sagen",
-    "sentence_de": "Sagt mir nicht, dass er schon gegangen ist.",
-    "id": 2310,
-    "level": "B1"
-  },
-  {
     "es": "el transporte",
     "hu": "közlekedés/szállítás",
     "en": "transport/transportation",
@@ -2808,18 +2532,6 @@
     "level": "B1"
   },
   {
-    "es": "poder",
-    "hu": "tud/képes",
-    "en": "to be able to/can",
-    "sentence_es": "Ojalá pudieras venir con nosotros.",
-    "sentence_hu": "Bárcsak velünk tudnál jönni.",
-    "sentence_en": "I wish you could come with us.",
-    "de": "können",
-    "sentence_de": "Ich wünschte, du könntest mit uns kommen.",
-    "id": 2315,
-    "level": "B1"
-  },
-  {
     "es": "las operaciones",
     "hu": "műveletek/műtétek",
     "en": "operations/surgeries",
@@ -2841,18 +2553,6 @@
     "de": "Tempel",
     "sentence_de": "Wir besuchten einen alten Tempel in der Stadt.",
     "id": 2317,
-    "level": "B1"
-  },
-  {
-    "es": "adiós",
-    "hu": "viszlát/Isten veled",
-    "en": "goodbye",
-    "sentence_es": "Le dije adiós en la estación de tren.",
-    "sentence_hu": "A vasútállomáson búcsúztam tőle.",
-    "sentence_en": "I said goodbye to him at the train station.",
-    "de": "Auf Wiedersehen",
-    "sentence_de": "Ich verabschiedete mich am Bahnhof von ihm.",
-    "id": 2318,
     "level": "B1"
   },
   {
@@ -2937,18 +2637,6 @@
     "de": "verhaftet",
     "sentence_de": "Der Verdächtige wurde gestern Nacht verhaftet.",
     "id": 2325,
-    "level": "B1"
-  },
-  {
-    "es": "usar",
-    "hu": "használ/visel",
-    "en": "to use/wear",
-    "sentence_es": "Usan uniformes azules en esa escuela.",
-    "sentence_hu": "Kék egyenruhát viselnek abban az iskolában.",
-    "sentence_en": "They wear blue uniforms at that school.",
-    "de": "benutzen/tragen",
-    "sentence_de": "Sie tragen blaue Uniformen in dieser Schule.",
-    "id": 2326,
     "level": "B1"
   },
   {
@@ -3420,18 +3108,6 @@
     "level": "B1"
   },
   {
-    "es": "la canción",
-    "hu": "a dal",
-    "en": "song",
-    "sentence_es": "Esa canción me recuerda a mi infancia.",
-    "sentence_hu": "Ez a dal a gyerekkoromra emlékeztet.",
-    "sentence_en": "That song reminds me of my childhood.",
-    "de": "Lied",
-    "sentence_de": "Dieses Lied erinnert mich an meine Kindheit.",
-    "id": 2366,
-    "level": "B1"
-  },
-  {
     "es": "muchísimo",
     "hu": "rengeteg/nagyon sok",
     "en": "very much / a lot",
@@ -3456,18 +3132,6 @@
     "level": "B1"
   },
   {
-    "es": "poner",
-    "hu": "tenni/helyezni",
-    "en": "to put / to place",
-    "sentence_es": "¿Dónde puedo poner esta caja?",
-    "sentence_hu": "Hová tehetem ezt a dobozt?",
-    "sentence_en": "Where can I put this box?",
-    "de": "legen/stellen",
-    "sentence_de": "Wo kann ich diese Schachtel hinstellen?",
-    "id": 2369,
-    "level": "B1"
-  },
-  {
     "es": "el carro",
     "hu": "az autó",
     "en": "car",
@@ -3477,18 +3141,6 @@
     "de": "Auto",
     "sentence_de": "Mein Auto springt heute Morgen nicht an.",
     "id": 2370,
-    "level": "B1"
-  },
-  {
-    "es": "confiar",
-    "hu": "megbízni/bízni valakiben",
-    "en": "to trust",
-    "sentence_es": "Es difícil confiar en personas nuevas.",
-    "sentence_hu": "Nehéz megbízni ismeretlen emberekben.",
-    "sentence_en": "It's hard to trust new people.",
-    "de": "vertrauen",
-    "sentence_de": "Es ist schwer, neuen Menschen zu vertrauen.",
-    "id": 2371,
     "level": "B1"
   },
   {
@@ -3684,18 +3336,6 @@
     "level": "B1"
   },
   {
-    "es": "amar",
-    "hu": "szeretni/szerelmesnek lenni",
-    "en": "to love",
-    "sentence_es": "Aprendió a amar su trabajo con el tiempo.",
-    "sentence_hu": "Idővel megtanulta szeretni a munkáját.",
-    "sentence_en": "He learned to love his work over time.",
-    "de": "lieben",
-    "sentence_de": "Mit der Zeit lernte er seine Arbeit zu lieben.",
-    "id": 2388,
-    "level": "B1"
-  },
-  {
     "es": "el entrenamiento",
     "hu": "az edzés/tréning",
     "en": "training",
@@ -3717,18 +3357,6 @@
     "de": "Gott",
     "sentence_de": "Die Griechen glaubten an viele Götter.",
     "id": 2390,
-    "level": "B1"
-  },
-  {
-    "es": "el auto",
-    "hu": "az autó",
-    "en": "car",
-    "sentence_es": "Compró un auto nuevo el mes pasado.",
-    "sentence_hu": "Múlt hónapban vett egy új autót.",
-    "sentence_en": "He bought a new car last month.",
-    "de": "Auto",
-    "sentence_de": "Er kaufte letzten Monat ein neues Auto.",
-    "id": 2391,
     "level": "B1"
   },
   {
@@ -3813,18 +3441,6 @@
     "de": "Handy",
     "sentence_de": "Ich habe mein Handy zu Hause vergessen.",
     "id": 2398,
-    "level": "B1"
-  },
-  {
-    "es": "andar",
-    "hu": "járni/menni/működni",
-    "en": "to walk / to go / to work (machine)",
-    "sentence_es": "Me gusta andar por el parque por las mañanas.",
-    "sentence_hu": "Szeretek reggel a parkban sétálni.",
-    "sentence_en": "I like to walk in the park in the mornings.",
-    "de": "gehen/laufen",
-    "sentence_de": "Ich gehe morgens gerne im Park spazieren.",
-    "id": 2399,
     "level": "B1"
   },
   {
@@ -4116,18 +3732,6 @@
     "level": "B1"
   },
   {
-    "es": "la decisión",
-    "hu": "a döntés",
-    "en": "decision",
-    "sentence_es": "Fue una decisión muy difícil de tomar.",
-    "sentence_hu": "Ez egy nagyon nehéz döntés volt.",
-    "sentence_en": "It was a very difficult decision to make.",
-    "de": "Entscheidung",
-    "sentence_de": "Es war eine sehr schwierige Entscheidung.",
-    "id": 2424,
-    "level": "B1"
-  },
-  {
     "es": "salvaje",
     "hu": "vad/vadóc",
     "en": "wild / savage",
@@ -4161,18 +3765,6 @@
     "de": "im Grunde",
     "sentence_de": "Im Grunde musst du nur dieses Formular ausfüllen.",
     "id": 2427,
-    "level": "B1"
-  },
-  {
-    "es": "parar",
-    "hu": "megállni/abbahagyni",
-    "en": "to stop",
-    "sentence_es": "El coche no paró en el semáforo.",
-    "sentence_hu": "Az autó nem állt meg a lámpánál.",
-    "sentence_en": "The car didn't stop at the traffic light.",
-    "de": "anhalten/stoppen",
-    "sentence_de": "Das Auto hielt nicht an der Ampel.",
-    "id": 2428,
     "level": "B1"
   },
   {
@@ -4548,18 +4140,6 @@
     "level": "B1"
   },
   {
-    "es": "el asesino",
-    "hu": "gyilkos",
-    "en": "murderer / killer",
-    "sentence_es": "La policía buscaba al asesino.",
-    "sentence_hu": "A rendőrség kereste a gyilkost.",
-    "sentence_en": "The police were looking for the killer.",
-    "de": "Mörder",
-    "sentence_de": "Die Polizei suchte nach dem Mörder.",
-    "id": 2460,
-    "level": "B1"
-  },
-  {
     "es": "anteriormente",
     "hu": "korábban/előzőleg",
     "en": "previously / formerly",
@@ -4668,18 +4248,6 @@
     "level": "B1"
   },
   {
-    "es": "mentir",
-    "hu": "hazudni",
-    "en": "to lie",
-    "sentence_es": "No deberías mentir a tus amigos.",
-    "sentence_hu": "Nem kellene hazudni a barátaidnak.",
-    "sentence_en": "You should not lie to your friends.",
-    "de": "lügen",
-    "sentence_de": "Du solltest deine Freunde nicht anlügen.",
-    "id": 2470,
-    "level": "B1"
-  },
-  {
     "es": "el arresto",
     "hu": "letartóztatás",
     "en": "arrest",
@@ -4704,18 +4272,6 @@
     "level": "B1"
   },
   {
-    "es": "leer",
-    "hu": "olvasni",
-    "en": "to read",
-    "sentence_es": "Leí ese libro en una semana.",
-    "sentence_hu": "Egy hét alatt elolvastam azt a könyvet.",
-    "sentence_en": "I read that book in one week.",
-    "de": "lesen",
-    "sentence_de": "Ich habe dieses Buch in einer Woche gelesen.",
-    "id": 2473,
-    "level": "B1"
-  },
-  {
     "es": "el virus",
     "hu": "vírus",
     "en": "virus",
@@ -4725,18 +4281,6 @@
     "de": "Virus",
     "sentence_de": "Das Virus verbreitete sich sehr schnell.",
     "id": 2474,
-    "level": "B1"
-  },
-  {
-    "es": "servir",
-    "hu": "szolgálni/felszolgálni",
-    "en": "to serve",
-    "sentence_es": "¿En qué le puedo servir?",
-    "sentence_hu": "Miben segíthetek Önnek?",
-    "sentence_en": "How can I help you?",
-    "de": "dienen",
-    "sentence_de": "Womit kann ich Ihnen dienen?",
-    "id": 2475,
     "level": "B1"
   },
   {
@@ -4761,18 +4305,6 @@
     "de": "Identität",
     "sentence_de": "Sie zeigte ihren Personalausweis vor.",
     "id": 2477,
-    "level": "B1"
-  },
-  {
-    "es": "igual",
-    "hu": "egyenlő/ugyanolyan",
-    "en": "equal / the same",
-    "sentence_es": "Los dos hermanos tienen gustos iguales.",
-    "sentence_hu": "A két testvérnek ugyanolyan ízlése van.",
-    "sentence_en": "The two brothers have the same taste.",
-    "de": "gleich",
-    "sentence_de": "Die beiden Brüder haben den gleichen Geschmack.",
-    "id": 2478,
     "level": "B1"
   },
   {
@@ -5064,18 +4596,6 @@
     "level": "B1"
   },
   {
-    "es": "perder",
-    "hu": "elveszíteni/veszíteni",
-    "en": "to lose",
-    "sentence_es": "Perdimos el partido en el último minuto.",
-    "sentence_hu": "Az utolsó percben veszítettük el a meccset.",
-    "sentence_en": "We lost the match in the last minute.",
-    "de": "verlieren",
-    "sentence_de": "Wir haben das Spiel in der letzten Minute verloren.",
-    "id": 2503,
-    "level": "B1"
-  },
-  {
     "es": "comercial",
     "hu": "kereskedelmi/reklám",
     "en": "commercial",
@@ -5133,18 +4653,6 @@
     "de": "mächtig",
     "sentence_de": "Er ist ein mächtiger und einflussreicher Politiker.",
     "id": 2508,
-    "level": "B1"
-  },
-  {
-    "es": "el asesinato",
-    "hu": "gyilkosság",
-    "en": "murder",
-    "sentence_es": "La policía investigó varios asesinatos.",
-    "sentence_hu": "A rendőrség több gyilkosságot vizsgált.",
-    "sentence_en": "The police investigated several murders.",
-    "de": "Mord",
-    "sentence_de": "Die Polizei untersuchte mehrere Morde.",
-    "id": 2509,
     "level": "B1"
   },
   {
@@ -5889,18 +5397,6 @@
     "de": "zeigen",
     "sentence_de": "Der Reiseführer wollte uns die Wandgemälde im Zentrum zeigen.",
     "id": 2571,
-    "level": "B1"
-  },
-  {
-    "es": "llorar",
-    "hu": "sír",
-    "en": "to cry",
-    "sentence_es": "Empezó a llorar al escuchar la noticia.",
-    "sentence_hu": "Sírni kezdett, amikor meghallotta a hírt.",
-    "sentence_en": "She started to cry when she heard the news.",
-    "de": "weinen",
-    "sentence_de": "Sie fing an zu weinen, als sie die Nachricht hörte.",
-    "id": 2572,
     "level": "B1"
   },
   {
@@ -6660,18 +6156,6 @@
     "level": "B1"
   },
   {
-    "es": "luchar",
-    "hu": "küzd/harcol",
-    "en": "to fight / to struggle",
-    "sentence_es": "Siguió luchando por sus derechos.",
-    "sentence_hu": "Tovább küzdött a jogaiért.",
-    "sentence_en": "She kept fighting for her rights.",
-    "de": "kämpfen/ringen",
-    "sentence_de": "Sie kämpfte weiter für ihre Rechte.",
-    "id": 2636,
-    "level": "B1"
-  },
-  {
     "es": "apestar",
     "hu": "büdös/bűzlik",
     "en": "to stink",
@@ -7116,18 +6600,6 @@
     "level": "B1"
   },
   {
-    "es": "tonto",
-    "hu": "buta/ostoba",
-    "en": "stupid / silly",
-    "sentence_es": "No seas tonto y escucha el consejo.",
-    "sentence_hu": "Ne légy ostoba, és fogadd meg a tanácsot.",
-    "sentence_en": "Don't be silly and listen to the advice.",
-    "de": "dumm",
-    "sentence_de": "Sei nicht dumm und hör auf den Rat.",
-    "id": 2674,
-    "level": "B1"
-  },
-  {
     "es": "la cultura",
     "hu": "kultúra",
     "en": "culture",
@@ -7284,18 +6756,6 @@
     "level": "B1"
   },
   {
-    "es": "callarse",
-    "hu": "elhallgatni/befogni",
-    "en": "to be quiet / to shut up",
-    "sentence_es": "¡Cállate! No puedo concentrarme.",
-    "sentence_hu": "Fogd be! Nem tudok koncentrálni.",
-    "sentence_en": "Be quiet! I can't concentrate.",
-    "de": "schweigen",
-    "sentence_de": "Sei still! Ich kann mich nicht konzentrieren.",
-    "id": 2688,
-    "level": "B1"
-  },
-  {
     "es": "espacial",
     "hu": "űr- / térbeli",
     "en": "spatial / space (adj.)",
@@ -7353,18 +6813,6 @@
     "de": "natürlich",
     "sentence_de": "Natürlich wollen wir alle in Frieden leben.",
     "id": 2693,
-    "level": "B1"
-  },
-  {
-    "es": "ocurrir",
-    "hu": "megtörténni/előfordulni",
-    "en": "to occur / to happen",
-    "sentence_es": "¿Cuándo ocurrió el accidente?",
-    "sentence_hu": "Mikor történt a baleset?",
-    "sentence_en": "When did the accident occur?",
-    "de": "geschehen",
-    "sentence_de": "Wann ist der Unfall passiert?",
-    "id": 2694,
     "level": "B1"
   },
   {
@@ -7668,18 +7116,6 @@
     "level": "B1"
   },
   {
-    "es": "echar",
-    "hu": "dobni/kidobni/önteni",
-    "en": "to throw / to pour / to fire (someone)",
-    "sentence_es": "Le echaron del trabajo por llegar tarde.",
-    "sentence_hu": "Kirúgták a munkahelyéről, mert késett.",
-    "sentence_en": "They fired him from work for arriving late.",
-    "de": "werfen/schütten",
-    "sentence_de": "Sie warfen ihn aus der Arbeit, weil er zu spät kam.",
-    "id": 2720,
-    "level": "B1"
-  },
-  {
     "es": "contestar",
     "hu": "válaszolni",
     "en": "to answer / to reply",
@@ -7689,18 +7125,6 @@
     "de": "antworten",
     "sentence_de": "Bitte nimm das Telefon ab.",
     "id": 2721,
-    "level": "B1"
-  },
-  {
-    "es": "pasar",
-    "hu": "átmenni/megtörténni/eltölteni",
-    "en": "to pass / to happen",
-    "sentence_es": "¿Qué pasará si no llegamos a tiempo?",
-    "sentence_hu": "Mi fog történni, ha nem érünk oda időben?",
-    "sentence_en": "What will happen if we don't arrive on time?",
-    "de": "passieren",
-    "sentence_de": "Was wird passieren, wenn wir nicht rechtzeitig ankommen?",
-    "id": 2722,
     "level": "B1"
   },
   {
@@ -7761,18 +7185,6 @@
     "de": "Durst",
     "sentence_de": "Ich habe großen Durst nach dem Laufen.",
     "id": 2727,
-    "level": "B1"
-  },
-  {
-    "es": "el tío",
-    "hu": "bácsi/fickó",
-    "en": "uncle/guy",
-    "sentence_es": "Mi tío vive en Madrid.",
-    "sentence_hu": "A bácsim Madridban él.",
-    "sentence_en": "My uncle lives in Madrid.",
-    "de": "Onkel",
-    "sentence_de": "Mein Onkel lebt in Madrid.",
-    "id": 2728,
     "level": "B1"
   },
   {
@@ -9132,18 +8544,6 @@
     "level": "B1"
   },
   {
-    "es": "comprender",
-    "hu": "megérteni/felfogni",
-    "en": "to understand",
-    "sentence_es": "No logro comprender por qué hizo eso.",
-    "sentence_hu": "Nem tudom megérteni, miért tette azt.",
-    "sentence_en": "I can't understand why he did that.",
-    "de": "verstehen",
-    "sentence_de": "Ich kann nicht verstehen, warum er das tat.",
-    "id": 2842,
-    "level": "B1"
-  },
-  {
     "es": "la alianza",
     "hu": "szövetség/karikagyűrű",
     "en": "alliance/wedding ring",
@@ -9348,30 +8748,6 @@
     "level": "B1"
   },
   {
-    "es": "empezar",
-    "hu": "elkezdeni",
-    "en": "to start/to begin",
-    "sentence_es": "Vamos a empezar la reunión ahora.",
-    "sentence_hu": "Most kezdjük el a megbeszélést.",
-    "sentence_en": "Let us start the meeting now.",
-    "de": "anfangen",
-    "sentence_de": "Lasst uns jetzt mit dem Meeting anfangen.",
-    "id": 2860,
-    "level": "B1"
-  },
-  {
-    "es": "actuar",
-    "hu": "cselekedni/játszani",
-    "en": "to act/to perform",
-    "sentence_es": "Ella actúa muy bien en el escenario.",
-    "sentence_hu": "Nagyon jól játszik a színpadon.",
-    "sentence_en": "She acts very well on stage.",
-    "de": "auftreten",
-    "sentence_de": "Sie tritt sehr gut auf der Bühne auf.",
-    "id": 2861,
-    "level": "B1"
-  },
-  {
     "es": "apurarse",
     "hu": "sietni/siettni",
     "en": "to hurry up",
@@ -9393,18 +8769,6 @@
     "de": "Indianer",
     "sentence_de": "Die Indianer lebten in Harmonie mit der Natur.",
     "id": 2863,
-    "level": "B1"
-  },
-  {
-    "es": "recibir",
-    "hu": "kapni/fogadni",
-    "en": "to receive",
-    "sentence_es": "Espero recibir una respuesta pronto.",
-    "sentence_hu": "Remélem, hamarosan választ kapok.",
-    "sentence_en": "I hope to receive an answer soon.",
-    "de": "erhalten",
-    "sentence_de": "Ich hoffe, bald eine Antwort zu erhalten.",
-    "id": 2864,
     "level": "B1"
   },
   {
@@ -9684,18 +9048,6 @@
     "level": "B1"
   },
   {
-    "es": "detener",
-    "hu": "megállítani/feltartóztatni",
-    "en": "to stop / to arrest",
-    "sentence_es": "La policía logró detener al sospechoso.",
-    "sentence_hu": "A rendőrségnek sikerült feltartóztatni a gyanúsítottat.",
-    "sentence_en": "The police managed to stop the suspect.",
-    "de": "aufhalten",
-    "sentence_de": "Die Polizei konnte den Verdächtigen aufhalten.",
-    "id": 2888,
-    "level": "B1"
-  },
-  {
     "es": "la infancia",
     "hu": "gyermekkor",
     "en": "childhood",
@@ -9705,18 +9057,6 @@
     "de": "Kindheit",
     "sentence_de": "Sie verbrachte ihre Kindheit in einem kleinen Dorf.",
     "id": 2889,
-    "level": "B1"
-  },
-  {
-    "es": "soler",
-    "hu": "szokni valamit csinálni",
-    "en": "to usually do / to be in the habit of",
-    "sentence_es": "Suele desayunar fruta por las mañanas.",
-    "sentence_hu": "Reggel általában gyümölcsöt eszik reggelire.",
-    "sentence_en": "She usually has fruit for breakfast in the mornings.",
-    "de": "pflegen",
-    "sentence_de": "Sie pflegt morgens Obst zum Frühstück zu essen.",
-    "id": 2890,
     "level": "B1"
   },
   {
@@ -9876,18 +9216,6 @@
     "level": "B1"
   },
   {
-    "es": "romper",
-    "hu": "eltörni/megszakítani",
-    "en": "to break",
-    "sentence_es": "Ten cuidado de no romper el vaso.",
-    "sentence_hu": "Vigyázz, nehogy eltörd a poharat.",
-    "sentence_en": "Be careful not to break the glass.",
-    "de": "zerbrechen",
-    "sentence_de": "Pass auf, das Glas nicht zu zerbrechen.",
-    "id": 2904,
-    "level": "B1"
-  },
-  {
     "es": "el vampiro",
     "hu": "vámpír",
     "en": "vampire",
@@ -9921,18 +9249,6 @@
     "de": "Dutzend",
     "sentence_de": "Ich kaufte heute Morgen ein Dutzend Eier.",
     "id": 2907,
-    "level": "B1"
-  },
-  {
-    "es": "averiguar",
-    "hu": "kideríteni/utánanézni",
-    "en": "to find out / to investigate",
-    "sentence_es": "Necesito averiguar la verdad sobre esto.",
-    "sentence_hu": "Ki kell derítnem az igazságot erről.",
-    "sentence_en": "I need to find out the truth about this.",
-    "de": "herausfinden",
-    "sentence_de": "Ich muss die Wahrheit darüber herausfinden.",
-    "id": 2908,
     "level": "B1"
   },
   {
@@ -10209,18 +9525,6 @@
     "de": "aufpassen",
     "sentence_de": "Pass gut auf, bevor du die Straße überquerst.",
     "id": 2931,
-    "level": "B1"
-  },
-  {
-    "es": "merecer",
-    "hu": "megérdemelni",
-    "en": "to deserve",
-    "sentence_es": "Mereces un descanso después de tanto trabajo.",
-    "sentence_hu": "Megérdemelsz egy pihenést ennyi munka után.",
-    "sentence_en": "You deserve a rest after all that work.",
-    "de": "verdienen",
-    "sentence_de": "Du verdienst eine Pause nach all dieser Arbeit.",
-    "id": 2932,
     "level": "B1"
   },
   {
