@@ -1615,7 +1615,11 @@
     "sentence_es": "Tengo el brazo roto.",
     "sentence_hu": "Eltört a karom.",
     "sentence_en": "My arm is broken.",
-    "sentence_de": "Mein Arm ist gebrochen."
+    "sentence_de": "Mein Arm ist gebrochen.",
+    "note_hu": "A testrészek elé a spanyol névelőt tesz, nem birtokos névmást: »Tengo EL brazo roto«, szó szerint »van a törött karom«. A »mi brazo« csak akkor kell, ha külön hangsúlyozod, kié a kar. Figyelem: brazo = kar, pierna = láb.",
+    "note_en": "Spanish marks body parts with the article, not a possessive: «Tengo EL brazo roto», literally «I have the arm broken». Use «mi brazo» only when you stress whose arm it is. Note: brazo = arm, pierna = leg.",
+    "note_es": "Con las partes del cuerpo se usa el artículo, no el posesivo: «Tengo el brazo roto», no «mi brazo está roto». El posesivo solo si insistes en de quién es. Ojo: brazo = arm, pierna = leg.",
+    "note_de": "Bei Körperteilen steht im Spanischen der Artikel, nicht das Possessivpronomen: «Tengo el brazo roto». «Mi brazo» nur, wenn du betonst, wessen Arm es ist. Achtung: brazo = Arm, pierna = Bein."
   },
   {
     "id": 1116,
@@ -1671,7 +1675,11 @@
     "sentence_es": "Tengo dolor en el hombro.",
     "sentence_hu": "Fáj a vállam.",
     "sentence_en": "I have pain in my shoulder.",
-    "sentence_de": "Ich habe Schmerzen in der Schulter."
+    "sentence_de": "Ich habe Schmerzen in der Schulter.",
+    "note_hu": "Nem kell a »mi«: a spanyol a testrész elé névelőt tesz, a »tengo« már megmondja, hogy az enyém. »Tengo dolor EN EL hombro«, nem »en mi hombro«.",
+    "note_en": "No «mi» here: Spanish puts the article before a body part, and «tengo» already says it is mine. «Tengo dolor en el hombro», not «en mi hombro».",
+    "note_es": "No hace falta «mi»: con las partes del cuerpo va el artículo, y «tengo» ya indica que es tuyo. «Tengo dolor en el hombro», no «en mi hombro».",
+    "note_de": "Kein «mi»: vor Körperteilen steht der Artikel, und «tengo» sagt schon, dass es meine ist. «Tengo dolor en el hombro», nicht «en mi hombro»."
   },
   {
     "id": 1120,
@@ -9463,7 +9471,11 @@
     "sentence_es": "Me pongo el pijama por la noche.",
     "sentence_hu": "Este pizsamát veszek fel.",
     "sentence_en": "I put on pajamas at night.",
-    "sentence_de": "Ich ziehe nachts den Schlafanzug an."
+    "sentence_de": "Ich ziehe nachts den Schlafanzug an.",
+    "note_hu": "Az angol »I« nincs külön a spanyolban: a »pongo« végződése (-o) maga jelenti, hogy én, ezért a »yo« elmarad. A »me« a visszaható rész: magamra veszem. Az angol »pajamas« mindig többes szám, a spanyol »el pijama« egyes.",
+    "note_en": "There is no separate word for «I»: the -o ending of «pongo» already means I, so «yo» is dropped. The «me» is reflexive, put on myself. English «pajamas» is always plural, Spanish «el pijama» is singular.",
+    "note_es": "El inglés necesita «I», el español no: la terminación -o de «pongo» ya dice yo, así que «yo» se omite. «Me» es reflexivo, me lo pongo a mí mismo. «Pajamas» va siempre en plural en inglés, «el pijama» en singular.",
+    "note_de": "Das englische «I» fehlt im Spanischen: die Endung -o von «pongo» heißt schon ich, deshalb entfällt «yo». «Me» ist reflexiv, ich ziehe es mir an. Englisch «pajamas» steht immer im Plural, spanisch «el pijama» im Singular."
   },
   {
     "id": 1686,
@@ -9488,10 +9500,10 @@
     "de": "der Ring",
     "topic": "ropa",
     "topicOrder": 24,
-    "sentence_es": "Lleva un anillo en la mano.",
-    "sentence_hu": "Gyűrűt visel a kezén.",
-    "sentence_en": "They wear a ring on their hand.",
-    "sentence_de": "Sie trägt einen Ring an der Hand."
+    "sentence_es": "El anillo es de mi madre.",
+    "sentence_hu": "A gyűrű anyámé.",
+    "sentence_en": "The ring is my mother's.",
+    "sentence_de": "Der Ring gehört meiner Mutter."
   },
   {
     "id": 1688,
@@ -11555,15 +11567,19 @@
     "id": 1835,
     "level": "A1",
     "es": "la sala",
-    "hu": "a nappali",
-    "en": "the living room",
-    "de": "das Wohnzimmer",
+    "hu": "a terem",
+    "en": "the room (hall)",
+    "de": "der Saal",
     "topic": "casa",
     "topicOrder": 39,
-    "sentence_es": "La familia está en la sala.",
-    "sentence_hu": "A család a nappaliban van.",
-    "sentence_en": "The family is in the living room.",
-    "sentence_de": "Die Familie ist im Wohnzimmer."
+    "sentence_es": "La sala está llena de gente.",
+    "sentence_hu": "A terem tele van emberekkel.",
+    "sentence_en": "The room is full of people.",
+    "sentence_de": "Der Saal ist voller Menschen.",
+    "note_hu": "A nappali Spanyolországban »el salón«. A »sala« nagyobb, nyilvános teret jelent (terem, váró, mozi- vagy kórházi terem), Latin-Amerikában viszont ott is nappalit jelent.",
+    "note_en": "In Spain the living room is «el salón». «La sala» is a bigger, public room (hall, waiting room, cinema or hospital room). In Latin America «la sala» does mean the living room.",
+    "note_es": "En España el cuarto de estar es «el salón». «La sala» es una habitación grande o pública (sala de espera, sala de cine, sala del hospital). En Hispanoamérica «la sala» sí es el salón.",
+    "note_de": "In Spanien heißt das Wohnzimmer «el salón». «La sala» ist ein größerer, öffentlicher Raum (Saal, Wartesaal, Kinosaal). In Lateinamerika bedeutet «la sala» dagegen Wohnzimmer."
   },
   {
     "id": 1836,
@@ -12268,20 +12284,6 @@
     "sentence_hu": "Szeretek ajtót nyitni.",
     "sentence_en": "I like to open the door.",
     "sentence_de": "Ich öffne gern die Tür."
-  },
-  {
-    "id": 1886,
-    "level": "A1",
-    "es": "encontrar",
-    "hu": "találni",
-    "en": "to find",
-    "de": "finden",
-    "topic": "verbos_cotidianos",
-    "topicOrder": 25,
-    "sentence_es": "No encuentro mis gafas.",
-    "sentence_hu": "Nem találom a szemüvegemet.",
-    "sentence_en": "I cannot find my glasses.",
-    "sentence_de": "Ich finde meine Brille nicht."
   },
   {
     "id": 1887,

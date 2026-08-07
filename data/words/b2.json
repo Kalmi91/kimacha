@@ -48,18 +48,6 @@
     "sentence_de": "Es gibt eine wichtige Nuance."
   },
   {
-    "id": 405,
-    "level": "B2",
-    "es": "el plazo",
-    "hu": "határidő",
-    "en": "deadline / term",
-    "sentence_es": "El plazo es mañana.",
-    "sentence_hu": "A határidő holnap van.",
-    "sentence_en": "The deadline is tomorrow.",
-    "de": "Frist",
-    "sentence_de": "Die Frist ist morgen."
-  },
-  {
     "id": 406,
     "level": "B2",
     "es": "la inversión",
@@ -106,18 +94,6 @@
     "sentence_en": "We're going to reach the goal.",
     "de": "erreichen",
     "sentence_de": "Wir werden das Ziel erreichen."
-  },
-  {
-    "id": 410,
-    "level": "B2",
-    "es": "superar",
-    "hu": "leküzdeni / felülmúlni",
-    "en": "to overcome / to surpass",
-    "sentence_es": "Puedes superar esto.",
-    "sentence_hu": "Le tudod küzdeni.",
-    "sentence_en": "You can overcome this.",
-    "de": "überwinden / übertreffen",
-    "sentence_de": "Du kannst das überwinden."
   },
   {
     "id": 411,
@@ -360,18 +336,6 @@
     "sentence_de": "Es ist ein Einwegprodukt."
   },
   {
-    "id": 431,
-    "level": "B2",
-    "es": "aprovechar",
-    "hu": "kihasználni",
-    "en": "to take advantage of",
-    "sentence_es": "Hay que aprovechar la oportunidad.",
-    "sentence_hu": "Ki kell használni a lehetőséget.",
-    "sentence_en": "We must take advantage of the opportunity.",
-    "de": "nutzen / ausnutzen",
-    "sentence_de": "Man muss die Gelegenheit nutzen."
-  },
-  {
     "id": 432,
     "level": "B2",
     "es": "proporcionar",
@@ -492,42 +456,6 @@
     "sentence_de": "Man muss das Problem verhindern."
   },
   {
-    "id": 442,
-    "level": "B2",
-    "es": "convencer",
-    "hu": "meggyőzni",
-    "en": "to convince",
-    "sentence_es": "No puedo convencerte?",
-    "sentence_hu": "Nem tudlak meggyőzni?",
-    "sentence_en": "Can't I convince you?",
-    "de": "überzeugen",
-    "sentence_de": "Kann ich dich nicht überzeugen?"
-  },
-  {
-    "id": 443,
-    "level": "B2",
-    "es": "exigir",
-    "hu": "megkövetelni",
-    "en": "to demand",
-    "sentence_es": "Voy a exigir una explicación.",
-    "sentence_hu": "Magyarázatot fogok követelni.",
-    "sentence_en": "I'm going to demand an explanation.",
-    "de": "fordern / verlangen",
-    "sentence_de": "Ich werde eine Erklärung fordern."
-  },
-  {
-    "id": 444,
-    "level": "B2",
-    "es": "reconocer",
-    "hu": "felismerni / elismerni",
-    "en": "to recognize",
-    "sentence_es": "Hay que reconocer el error.",
-    "sentence_hu": "El kell ismerni a hibát.",
-    "sentence_en": "We must recognize the mistake.",
-    "de": "erkennen / anerkennen",
-    "sentence_de": "Man muss den Fehler anerkennen."
-  },
-  {
     "id": 445,
     "level": "B2",
     "es": "despreciar",
@@ -540,18 +468,6 @@
     "sentence_de": "Du sollst niemanden verachten."
   },
   {
-    "id": 446,
-    "level": "B2",
-    "es": "agradecer",
-    "hu": "hálásnak lenni",
-    "en": "to be grateful",
-    "sentence_es": "Te agradezco mucho.",
-    "sentence_hu": "Nagyon hálás vagyok neked.",
-    "sentence_en": "I'm very grateful to you.",
-    "de": "dankbar sein",
-    "sentence_de": "Ich bin dir sehr dankbar."
-  },
-  {
     "id": 447,
     "level": "B2",
     "es": "arrepentirse",
@@ -562,18 +478,6 @@
     "sentence_en": "I don't regret it.",
     "de": "bereuen",
     "sentence_de": "Ich bereue es nicht."
-  },
-  {
-    "id": 448,
-    "level": "B2",
-    "es": "atreverse",
-    "hu": "merészelni",
-    "en": "to dare",
-    "sentence_es": "No me atrevo.",
-    "sentence_hu": "Nem merem.",
-    "sentence_en": "I don't dare.",
-    "de": "sich trauen / wagen",
-    "sentence_de": "Ich traue mich nicht."
   },
   {
     "id": 449,
@@ -624,7 +528,7 @@
     "sentence_de": "Ich würde bezweifeln, dass dieses Gesetz lange seine Gültigkeit behielte."
   },
   {
-    "id": 757,
+    "id": 3863,
     "level": "B2",
     "es": "el hallazgo",
     "hu": "felfedezés / lelet",
@@ -636,7 +540,7 @@
     "sentence_de": "Es wäre entscheidend, dass sie den Fund vor der Veröffentlichung bestätigten."
   },
   {
-    "id": 758,
+    "id": 3864,
     "level": "B2",
     "es": "la brecha",
     "hu": "szakadék / rés",
@@ -648,7 +552,7 @@
     "sentence_de": "Wenn wir nicht handelten, würde die Kluft weiter wachsen."
   },
   {
-    "id": 759,
+    "id": 3865,
     "level": "B2",
     "es": "el umbral",
     "hu": "küszöb / határ",
@@ -660,7 +564,7 @@
     "sentence_de": "Ich würde hoffen, dass wir die Schwelle der Verschmutzung nicht überschreiten."
   },
   {
-    "id": 760,
+    "id": 3866,
     "level": "B2",
     "es": "la pauta",
     "hu": "iránymutatás / minta",
@@ -672,7 +576,7 @@
     "sentence_de": "Ich möchte, dass sie der vom Ausschuss festgelegten Richtlinie folgten."
   },
   {
-    "id": 761,
+    "id": 3867,
     "level": "B2",
     "es": "el desenlace",
     "hu": "végkifejlet / kimenetel",
@@ -684,7 +588,7 @@
     "sentence_de": "Niemand hatte vorhergesehen, dass der Ausgang so unerwartet sein würde."
   },
   {
-    "id": 762,
+    "id": 3868,
     "level": "B2",
     "es": "la convivencia",
     "hu": "együttélés",
@@ -720,7 +624,7 @@
     "sentence_de": "Es wäre ratsam, den Verschleiß der Ausrüstung zu verhindern."
   },
   {
-    "id": 765,
+    "id": 3869,
     "level": "B2",
     "es": "el dictamen",
     "hu": "szakvélemény / állásfoglalás",
@@ -744,7 +648,7 @@
     "sentence_de": "Ich würde das Dilemma vor der Entscheidung bedenken."
   },
   {
-    "id": 767,
+    "id": 3870,
     "level": "B2",
     "es": "el deterioro",
     "hu": "romlás / leromlás",

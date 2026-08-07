@@ -12,9 +12,11 @@ interface Props {
   onResult: (correct: boolean) => void;
   onBury?: () => void;
   onSkip?: () => void;
+  // FB90: the card's grammar note, shown only after a wrong build.
+  mistakeNote?: string | null;
 }
 
-export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, onBury, onSkip }: Props) {
+export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, onBury, onSkip, mistakeNote }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
@@ -73,6 +75,10 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
       {result === 'wrong' && (
         <Text style={[styles.correctLine, { color: '#22C55E' }]}>{targetWords.join(' ')}</Text>
       )}
+
+      {result === 'wrong' && mistakeNote ? (
+        <Text style={[styles.noteLine, { color: colors.tabIconDefault }]}>{mistakeNote}</Text>
+      ) : null}
 
       <View style={styles.wordRow}>
         {bank.map((w, idx) =>
@@ -138,6 +144,7 @@ const styles = StyleSheet.create({
   chipText: { color: '#FFF', fontSize: 16, fontWeight: '600' },
   resultText: { fontSize: 18, fontWeight: '700' },
   correctLine: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
+  noteLine: { fontSize: 13, lineHeight: 18, textAlign: 'center', paddingHorizontal: 8 },
   checkBtn: { paddingHorizontal: 32, paddingVertical: 12, borderRadius: 14, marginTop: 8 },
   checkBtnPrimary: { paddingHorizontal: 44, paddingVertical: 14, borderRadius: 24, alignSelf: 'center', shadowColor: '#000', shadowOffset: { width: 0, height: 3 }, shadowOpacity: 0.2, shadowRadius: 6, elevation: 4 },
   checkBtnText: { color: '#FFF', fontSize: 16, fontWeight: '700' },

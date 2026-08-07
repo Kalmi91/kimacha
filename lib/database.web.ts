@@ -1,5 +1,8 @@
 import { createEmptyCard, type Card } from 'ts-fsrs';
 import { BACKUP_SCHEMA_VERSION, getAppVersion, type BackupPayload } from './backup';
+import { pickSurvivor } from './cardMerge';
+import { rankSentencesByWordWeakness, sentenceSlotCount, type WordWeakness } from './sentenceMix';
+import { WORD_MERGES } from './wordMerges';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 
 export interface DB {
@@ -180,11 +183,19 @@ class MemoryDB implements DB {
       all.filter(c => c.type === 'word' && (c.reps >= 2 || c.buried)).map(c => c.word_id)
     );
 
-    const sentenceSlots = Math.max(3, limit - newCards.length - reviewWords.length);
-    const sentenceCards = all
-      .filter(c => c.type === 'sentence' && !c.buried && knownWordIds.has(c.word_id) && c.due <= lookahead)
-      .sort((a, b) => a.due.localeCompare(b.due))
-      .slice(0, sentenceSlots);
+    // FB89: same 4:1 cap and weakest-word-first ordering as the native DB.
+    const sentenceSlots = sentenceSlotCount(newCards.length + reviewWords.length);
+    const weakness = new Map<number, WordWeakness>(
+      all
+        .filter(c => c.type === 'word')
+        .map(c => [c.word_id, { lapses: c.lapses, difficulty: c.difficulty }])
+    );
+    const sentenceCards = rankSentencesByWordWeakness(
+      all
+        .filter(c => c.type === 'sentence' && !c.buried && knownWordIds.has(c.word_id) && c.due <= lookahead)
+        .sort((a, b) => a.due.localeCompare(b.due)),
+      weakness
+    ).slice(0, sentenceSlots);
 
     return [...reviewWords, ...sentenceCards, ...newCards];
   }
@@ -476,6 +487,36 @@ class MemoryDB implements DB {
     this.userLevels = new Map(t.user_level.map((r: any) => [r.pair, { level: r.level, correct_streak: r.correct_streak, mistakes_in_window: r.mistakes_in_window, fail_streak: r.fail_streak }]));
     const um = t.user_meta[0];
     if (um) this.meta = { userId: um.user_id, firstUseDate: um.first_use_date, lastSyncDate: um.last_sync_date };
+    this.applyWordMerges();
+  }
+
+  // A backup taken before the duplicate cleanup (2026-08-07) still holds cards
+  // for word ids that no longer exist. Same rule as the native DB: the progress
+  // moves to the surviving twin, and if both sides have history the stronger one
+  // wins. Spanish-target pairs only, the en/hu tracks number their words apart.
+  private applyWordMerges() {
+    for (const [key, card] of [...this.cards]) {
+      const newId = WORD_MERGES[card.word_id];
+      if (!newId || !String(card.pair).endsWith('-es')) continue;
+      this.cards.delete(key);
+      const twinKey = `${card.pair}:${newId}:${card.type}`;
+      const twin = this.cards.get(twinKey);
+      if (twin && pickSurvivor(twin, card) === twin) continue;
+      this.cards.set(twinKey, { ...card, word_id: newId });
+    }
+    for (const [pair, list] of this.spellingLists) {
+      if (!pair.endsWith('-es')) continue;
+      for (const [wordId, entry] of [...list]) {
+        const newId = WORD_MERGES[wordId];
+        if (!newId) continue;
+        list.delete(wordId);
+        if (!list.has(newId)) list.set(newId, entry);
+      }
+    }
+    for (const attempt of this.attempts) {
+      const newId = WORD_MERGES[attempt.word_id];
+      if (newId) attempt.word_id = newId;
+    }
   }
 }
 
