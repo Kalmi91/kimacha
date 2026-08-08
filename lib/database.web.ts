@@ -413,6 +413,13 @@ class MemoryDB implements DB {
     return [...first.values()].filter(ts => localDateString(new Date(ts)) === today).length;
   }
 
+  // FB103: word cards still in the FSRS learning (1) / relearning (3) state.
+  async getUnlearnedWordCount(): Promise<number> {
+    return [...this.cards.values()].filter(
+      c => c.type === 'word' && c.pair === this.activePair && !c.buried && c.reps > 0 && (c.state === 1 || c.state === 3)
+    ).length;
+  }
+
   // Usage-timer feature: one entry per local calendar day, app-wide (not
   // scoped to a language pair, unlike cards/level). Web doesn't survive
   // reload, same known limitation as the other in-memory maps above.
@@ -428,6 +435,16 @@ class MemoryDB implements DB {
   async getUsageStats(): Promise<UsageStats> {
     const rows = [...this.usageMinutes.entries()].map(([date, minutes]) => ({ date, minutes }));
     return summarizeUsage(rows);
+  }
+
+  // FB108: one local calendar day's totals, for the midnight celebration.
+  async getDayStats(date: string): Promise<{ minutes: number; words: number }> {
+    const words = new Set(
+      this.attempts
+        .filter(a => a.type === 'word' && localDateString(new Date(a.timestamp)) === date)
+        .map(a => a.word_id)
+    );
+    return { minutes: this.usageMinutes.get(date) ?? 0, words: words.size };
   }
 
   // Q0: full learning-state backup. Memory state is serialized into the same

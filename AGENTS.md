@@ -1391,6 +1391,119 @@ FeedbackButton a képernyőre rögzítve maradt kívül.
 
 ---
 
+# 📋 Feedback, 2026-08-08 esti forduló (v3.0.11 telefon-teszt, A1 en→es)
+
+Új sorok a `Kimacha Feedback` sheetből (FB101 utáni 7 sor, 08-08 21:11 → 22:00).
+Triage 2026-08-09 (Opus). Idézetek a user eredeti megfogalmazásában, ne tömörítsd.
+**MIND KÉSZ 2026-08-09**: tsc 0, jest 146/146 (135→146: +6 newWordAllowance,
++5 dayRollover), audit-corpus P1=0/P2=0, lint 18 = alapvonal.
+
+## ✅ FB102 [P1 UI bug], Az ℹ️ jegyzet nyitásakor a fejléc rácsúszik, KÉSZ (`index.tsx`)
+Idézet (08-08 21:11, `word:I am from Spain.`): „amikor kijön az I betű és legördül az
+oldal akkor az A1 és a tűz jel a számmal megmarad és jön le és így egybe bugolódik.
+ezt javitsd"
+Ugyanaz az osztály, mint FB74 (gépelős) és FB87 (easy-mondat), csak a harmadik
+nézeten: a szó-flashcard ága fix, középre igazított `View` volt, a fejléc viszont
+`position: absolute`. A nyíló jegyzet megnöveli a kártyát, a tartalom teteje a fejléc
+alá csúszik, így az A1 badge + 🔥 streak a szövegre ül. Fix: a kártya + gombok
+`ScrollView`-ba (`typingScroll`/`typingScrollContent` újrahasználva,
+`keyboardShouldPersistTaps="handled"`), a fejléc és a FeedbackButton a görgetőn kívül.
+
+## ✅ FB103 [P1 UX], Nem látszik, mikor fogy el a napi új-szó keret, KÉSZ (`lib/newWordBudget.ts`, `index.tsx`, mindkét db)
+Idézet (08-08 21:21, `word:to order`): „az új szavakkal kapcsolatban, az a baj, hogy nem
+tudom mikor fogy el a napi 5 új szó. azt kellene hogy mindog 5 új szó legyen benne ha
+nem találom mi őket akkor ne rakjon be 5 új szót, mert akkor torlódik. szt kellene
+valahogy megoldani"
+Két külön kérés, mindkettő megvan:
+- **Láthatóság**: a fejléc kapott egy `🌱 N` badge-et a 🔥 streak mellé (mindhárom
+  kártya-nézeten, közös `headerBadges`), N = a ma még felvehető új szavak száma. Eddig
+  ez az adat csak a Done-képernyőn létezett (FB77 „+5 új szó" gomb).
+- **Torlódás-gát**: az FB77 napi keret mellé egy MÁSODIK plafon, a félig tanult
+  szavak száma. `newWordAllowance({limit, bonus, startedToday, unlearned})` a szűkebbet
+  veszi: `limit+bonus-startedToday` ÉS `limit+bonus-unlearned`. Az `unlearned` =
+  a FSRS learning (1) / relearning (3) állapotú, nem eltemetett szó-kártyák
+  (`getUnlearnedWordCount`, mindkét db-implementációban + interfészben). Amit sokszor
+  elrontasz, az tehát a HOLNAPI új szavakat tartja vissza, nem rakódik rájuk. A „+5 új
+  szó" gomb mindkét plafont áttöri (a user explicit kérése). Teszt: 6 eset.
+
+## ✅ FB104 [P2 adat], „vuestro" hirtelen jött, magyarázat kell, KÉSZ (`data`, id 1161)
+Idézet (08-08 21:25, `word:your (plural) son`): „mi ez a vuestto vagy mi ez a spanyol
+szó ez nagyon új kell ehez I betű"
+Kézi ℹ️ jegyzet 4 nyelven (FB75 hibrid modell, a kézi note nyer): a `vuestro` a
+`vosotros` birtokosa, CSAK Spanyolországban él (Latin-Amerika: `su` / `de ustedes`), és
+nemben-számban egyeztetendő (vuestro hijo / vuestra hija / vuestros hijos / vuestras
+hijas).
+
+## ✅ FB105 [P1 BUG], „Again" után gépelős lett a szó, pedig ismételni akartam, KÉSZ (`index.tsx`)
+Idézet (08-08 21:32, `word:the salary`): „az lehet hogy arra nyomtam, hogy again és
+tovább ment. Marmint akkor lehet hogy magát a szó nem ment tovább, csak átugrott a
+következő formátumba ami most a gépelés és nekem pedig még szó kártyán kellett volna
+ismételgetni."
+Gyökérok: a kártyatípus-fázis (`buildQueue`) a `reps`-ből jött, az FSRS viszont MINDEN
+válaszra növeli a `reps`-et, az Again-re is. Két Again = reps 2 = gépelős kártya, holott
+a szót a tanuló egyszer sem tudta. Fix két rétegben:
+- a fázis mostantól a SIKERES ismétlésekből számol: `passed = reps - lapses` (0 =
+  flashcard L→N, 1 = flashcard N→L, ≥2 = gépelés), tehát minden hiba visszaveszi az
+  előléptetést;
+- az Again a szó-flashcardon már nem lép ki a szóból: `handleWordAgain` az FB60
+  mintáját követi (`gradeAgainBackground` + `requeueCurrent`), a szó a session sor
+  VÉGÉRE kerül, egyetlen Again-írással, és ugyanabban a fázisban jön vissza.
+
+## ✅ FB106 [P1 adat], „Cobro mi sueldo…", tanítatlan ige a mondatban, KÉSZ (`data`, id 1593)
+Idézet (08-08 21:33, `easy:I get my salary at the end of the month.`): „i get ezt nem
+tudom spanyolul és ez eddig nem is volt szóval ez a mondat előtt a get et meg kellett
+volna tanítani"
+Igaza van, bár az audit nem fogta meg: a `cobrar` (id 1552) formálisan tanított, de egy
+MÁSIK topicban (`dinero_banco` 8), és az angol oldala „to charge", ami az „I get"-tel
+nem köthető össze. FB70-minta: a mondat a kártya saját szavára egyszerűsítve →
+es `Mi sueldo es bueno.`, en `My salary is good.`, hu `Jó a fizetésem.`,
+de `Mein Gehalt ist gut.` (mi/es/bueno mind tanított, `bueno` A0 id 18).
+
+## ✅ FB107 [info + adat], „imprimir" és „la impresora", NEM duplikátum, KÉSZ (`data`, id 1598 + 1603)
+Idézet (08-08 21:57, `sentence:La impresora no funciona hoy.`): „most mi a printer mert
+egyszer volt már inimar vagy valami hasonló most meg ez? nem lehet, hogy megint kettő
+van?"
+**Válasz: nincs duplikátum.** Az „inimar" = `imprimir` (id 1598, IGE, nyomtatni), ez itt
+`la impresora` (id 1603, GÉP, a nyomtató); a gép neve az igéből képződik. Az FB97
+dedupe-őr is tiszta (a jelentéshalmazuk nem metsz). A keveredés viszont valós, ezért
+FB86-minta szerint kézi ℹ️ jegyzet 4 nyelven MINDKÉT kártyán, ami kimondja az ige↔gép
+különbséget.
+
+## ✅ FB108 [P2 feature], Éjfél-átfordulás: napi stat + kreatív gratuláció, KÉSZ (`lib/dayRollover.ts`, `usageTimer.ts`, `UsageToast.tsx`)
+Idézet (08-08 22:00, `word:on top of / about`): „legyen olyan, hogy ha éjfélkor játszunk
+a játékkal, és pont átfordul akkor a napi statot írja ki és gratuláljon, a játékosnak,
+valami nagyon menő szöveggel, legyen nagyon kreatív, és irjaon valami nagyon szépet és
+sok különböző szöveg legyen de legyen benne ismétlödes is."
+Megvalósítás:
+- `usageTimer`: a futó tick-hurok minden számolt másodpercnél összeveti a tárolt naptári
+  napot a mostanival; váltásnál `onDayRollover({date, minutes, words})` szól a LEZÁRT
+  napról (és a session-mérföldkő nullázódik). Az app-futás ELSŐ tickje csak felveszi a
+  mai dátumot, tehát újraindítás sosem hazudik ünneplést.
+- `getDayStats(date)` mindkét db-implementációban + interfészben: a nap percei
+  (`usage_minutes`) + az aznap érintett EGYEDI szó-kártyák száma (`card_attempts`), tehát
+  az ötször gyakorolt szó is egy szó.
+- `lib/dayRollover.ts` `pickDayRolloverMessage(variants, totals, random)`: VÉLETLEN
+  választás a szöveg-készletből (a user kért ismétlődés = ez, nem körbe-forgó lista),
+  `{min}` és `{words}` behelyettesítéssel. Tiszta függvény, tesztelve.
+- `UsageToast`: a meglévő pill viszi, mérföldkő-stílusban, 8 mp-ig (számokat kell
+  elolvasni), és a TANULT nyelven (FB63/FB76 minta).
+- i18n ×4: `usage.dayRollover`, nyelvenként 6 szöveg.
+
+## Elfogadási kritérium (FB102–FB108 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **146/146** ✅ (135→146: +6
+  newWordAllowance, +5 dayRollover).
+- `node scripts/audit-corpus.mjs` → P1=0, P2=0 ✅; `audit-corpus-en.mjs`,
+  `audit-corpus-hu.mjs`, `validate-en-track.mjs` mind OK ✅.
+- `npx expo lint`: 18 probléma (8 error, 10 warning) = a HEAD-alapvonal ✅.
+- `data/words/a1.json` parseable, 881 kártya ✅; csak note- és sentence-mezők mozdultak
+  (id 1161, 1593, 1598, 1603).
+- ⏳ Eszköz-verify a következő buildben: nyíló ℹ️ jegyzet nem csúszik a fejléc alá,
+  `🌱 N` badge a fejlécben és fogyása, Again a szó-kártyán ugyanabban a formátumban
+  hozza vissza a szót, sueldo-mondat, vuestro/impresora jegyzetek, és éjfélkor játszva
+  a napi összefoglaló.
+
+---
+
 # Aktuális feladatok (iter1.2)
 
 Kimacha nyelvtanuló app (Expo/React Native).

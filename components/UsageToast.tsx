@@ -4,7 +4,8 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t, stringsFor } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
-import { onActiveMinute, onUsageMilestone } from '@/lib/usageTimer';
+import { onActiveMinute, onUsageMilestone, onDayRollover } from '@/lib/usageTimer';
+import { pickDayRolloverMessage } from '@/lib/dayRollover';
 
 // "+1 perc wauuuuuuuu" popup: fires once per full active minute (usageTimer's
 // onActiveMinute), fades/slides in, sits for a couple seconds, fades out.
@@ -16,6 +17,8 @@ import { onActiveMinute, onUsageMilestone } from '@/lib/usageTimer';
 
 const VISIBLE_MS = 2000;
 const MILESTONE_VISIBLE_MS = 4000;
+// FB108: the midnight line carries the day's numbers, so it needs reading time.
+const ROLLOVER_VISIBLE_MS = 8000;
 const ANIM_MS = 250;
 
 export default function UsageToast() {
@@ -51,7 +54,7 @@ export default function UsageToast() {
   }, []);
 
   useEffect(() => {
-    const show = (text: string, milestone: boolean) => {
+    const show = (text: string, milestone: boolean, visibleMs?: number) => {
       if (hideTimer.current) clearTimeout(hideTimer.current);
       setMessage(text);
       setIsMilestone(milestone);
@@ -67,7 +70,7 @@ export default function UsageToast() {
           Animated.timing(opacity, { toValue: 0, duration: ANIM_MS, useNativeDriver: true }),
           Animated.timing(translateY, { toValue: -16, duration: ANIM_MS, useNativeDriver: true }),
         ]).start(() => setVisible(false));
-      }, milestone ? MILESTONE_VISIBLE_MS : VISIBLE_MS);
+      }, visibleMs ?? (milestone ? MILESTONE_VISIBLE_MS : VISIBLE_MS));
     };
 
     const unsubscribeMinute = onActiveMinute(() => show(s.usage.plusOneMinute, false));
@@ -75,6 +78,12 @@ export default function UsageToast() {
       const learned = stringsFor(learnedLang.current).usage;
       const template = scope === 'session' ? learned.milestoneSession : learned.milestoneDaily;
       show(template.replace('{min}', String(minutes)), true);
+    });
+    // FB108: playing THROUGH midnight, the finished day's stats + a celebration,
+    // in the language being learned (FB63 pattern), one line out of a pool.
+    const unsubscribeRollover = onDayRollover(({ minutes, words }) => {
+      const learned = stringsFor(learnedLang.current).usage;
+      show(pickDayRolloverMessage(learned.dayRollover, { minutes, words }), true, ROLLOVER_VISIBLE_MS);
     });
     // FB76: the day's greeting, shown once per app start (greetedRef keeps a
     // re-subscribe from repeating it).
@@ -86,6 +95,7 @@ export default function UsageToast() {
     return () => {
       unsubscribeMinute();
       unsubscribeMilestone();
+      unsubscribeRollover();
       if (hideTimer.current) clearTimeout(hideTimer.current);
     };
   }, [s, greeting]);

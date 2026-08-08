@@ -13,7 +13,7 @@ import { strictAnswerMatch } from '@/lib/answerMatch';
 import { nearMissDistractors } from '@/lib/distractors';
 import { consumePendingAction } from '@/lib/pendingAction';
 import { DAILY_NEW_BONUS_STEP } from '@/lib/usageStats';
-import { capNewWords } from '@/lib/newWordBudget';
+import { capNewWords, newWordAllowance } from '@/lib/newWordBudget';
 import { capSentencesToCadence } from '@/lib/sentenceMix';
 import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
@@ -123,16 +123,23 @@ export default function LearnScreen() {
       let typingDirection: TypingDir | undefined;
 
       if (isWord) {
-        if (row.reps >= 2) {
+        // FB105: the phase ladder counts SUCCESSFUL reviews, not reviews. FSRS
+        // bumps `reps` on every answer, Again included, so a word the learner
+        // kept missing used to be promoted to the typing card anyway ("arra
+        // nyomtam, hogy again ... átugrott a következő formátumba ... nekem
+        // pedig még szó kártyán kellett volna ismételgetni"). Every lapse takes
+        // its promotion back, so a missed word stays a flashcard.
+        const passed = Math.max(0, (row.reps ?? 0) - (row.lapses ?? 0));
+        if (passed >= 2) {
           // Phase 2: typing native→learned
           isTyping = true;
           typingDirection = 'native-to-learned';
-        } else if (row.reps === 1) {
+        } else if (passed === 1) {
           // Phase 1b: flashcard native→learned (passive)
           isTyping = false;
           typingDirection = 'native-to-learned';
         }
-        // reps === 0: Phase 1a: flashcard learned→native (default direction)
+        // passed === 0: Phase 1a: flashcard learned→native (default direction)
       } else {
         // Sentence: easy (tap-to-order) first time, hard (typing) after
         isTyping = row.reps > 0;
@@ -347,8 +354,13 @@ export default function LearnScreen() {
       ? await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL)
       : await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
     // FB77: today's remaining new-word budget (setting + "+5 new words" taps).
-    const newBudget = (await db.getDailyNewLimit()) + (await db.getNewLimitBonus());
-    const remainingNew = Math.max(0, newBudget - (await db.getNewWordsToday()));
+    // FB103: capped again by the words still half-learned, so nothing piles up.
+    const remainingNew = newWordAllowance({
+      limit: await db.getDailyNewLimit(),
+      bonus: await db.getNewLimitBonus(),
+      startedToday: await db.getNewWordsToday(),
+      unlearned: await db.getUnlearnedWordCount(),
+    });
     setNewWordsLeft(remainingNew);
     const items = applyCadence(capNewWords(buildQueue(rows), remainingNew), wordsOnly);
 
@@ -570,8 +582,12 @@ export default function LearnScreen() {
     }
 
     const wordsOnly2 = await db.getWordsOnly();
-    const newBudget2 = (await db.getDailyNewLimit()) + (await db.getNewLimitBonus());
-    const remainingNew2 = Math.max(0, newBudget2 - (await db.getNewWordsToday()));
+    const remainingNew2 = newWordAllowance({
+      limit: await db.getDailyNewLimit(),
+      bonus: await db.getNewLimitBonus(),
+      startedToday: await db.getNewWordsToday(),
+      unlearned: await db.getUnlearnedWordCount(),
+    });
     setNewWordsLeft(remainingNew2);
     const newItems = applyCadence(capNewWords(buildQueue(newRows), remainingNew2), wordsOnly2);
 
@@ -780,6 +796,18 @@ export default function LearnScreen() {
     setReviewed((r) => r + 1);
   };
 
+  // FB105: Again on a word FLASHCARD means "I still don't know it", so the word
+  // stays in this session's deck instead of only moving its due date (FB60 does
+  // the same for a missed typed word). One Again write, then back of the queue.
+  const handleWordAgain = () => {
+    if (current && current.type === 'word') {
+      gradeAgainBackground(current, cardStartTime);
+      requeueCurrent();
+      return;
+    }
+    advance(Rating.Again);
+  };
+
   const handleTypingNext = () => {
     // FB73: the skipped (empty) answer stays ungraded, it only goes to the back.
     if (typingResult === 'skipped') {
@@ -886,6 +914,21 @@ export default function LearnScreen() {
     </View>
   );
 
+  // FB103: "nem tudom mikor fogy el a napi 5 új szó". The header carries the
+  // count, so the budget is visible while learning, not only on the Done screen.
+  const headerBadges = (
+    <View style={styles.headerBadges}>
+      <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
+        <Text style={[styles.streakNumber, { color: colors.accent }]}>{newWordsLeft}</Text>
+        <Text style={styles.streakLabel}>🌱</Text>
+      </View>
+      <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
+        <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
+        <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>🔥</Text>
+      </View>
+    </View>
+  );
+
   const currentSubLevel = currentTopic ? getSubLevelForTopic(level, currentTopic.id, direction[1]) : null;
   const subLevelTopics = currentSubLevel ? getTopicsForSubLevel(level, currentSubLevel.id, direction[1]) : [];
   const subLevelPos = currentTopic ? subLevelTopics.findIndex((tp) => tp.id === currentTopic.id) + 1 : 0;
@@ -961,10 +1004,7 @@ export default function LearnScreen() {
         {topicCompleteOverlay}
         <View style={styles.header}>
           {levelBadge}
-          <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
-            <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
-            <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>🔥</Text>
-          </View>
+          {headerBadges}
         </View>
         {/* FB87: same collapse as FB74 on the typing screen, a long sentence
             with many chips grows past the centered column and slides under the
@@ -1013,10 +1053,7 @@ export default function LearnScreen() {
         {topicCompleteOverlay}
         <View style={styles.header}>
           {levelBadge}
-          <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
-            <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
-            <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>🔥</Text>
-          </View>
+          {headerBadges}
         </View>
         {/* FB74: once the result block appears the card grows, and a centered,
             non-scrolling column pushed the top of the card under the absolute
@@ -1158,11 +1195,17 @@ export default function LearnScreen() {
       {topicCompleteOverlay}
       <View style={styles.header}>
         {levelBadge}
-        <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
-          <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
-          <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>🔥</Text>
-        </View>
+        {headerBadges}
       </View>
+      {/* FB102: same collapse as FB74/FB87, one screen lower. Opening the ℹ️
+          note grows the card past the centered column, and the fixed content
+          slid under the absolutely positioned header ("az A1 és a tűz jel a
+          számmal megmarad és jön le és így egybe bugolódik"). Scroll instead. */}
+      <ScrollView
+        style={styles.typingScroll}
+        contentContainerStyle={styles.typingScrollContent}
+        keyboardShouldPersistTaps="handled"
+      >
       {topicHeader}
       {progressMeter}
       {examBanner}
@@ -1253,7 +1296,7 @@ export default function LearnScreen() {
         </Pressable>
         <Pressable
           style={[styles.button, { backgroundColor: '#1D4ED8' }]}
-          onPress={() => advance(Rating.Again)}
+          onPress={handleWordAgain}
         >
           <Text style={styles.buttonText}>{s.buttons.again}</Text>
         </Pressable>
@@ -1299,6 +1342,7 @@ export default function LearnScreen() {
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{spellingAdded ? `${s.buttons.spelling} ✓` : s.buttons.spelling}</Text>}
         </Pressable>
       )}
+      </ScrollView>
 
       <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`${current.type}:${front}`} />
     </View>
@@ -1343,6 +1387,11 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '700',
     color: '#FFFFFF',
+  },
+  headerBadges: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
   },
   streakBadge: {
     flexDirection: 'row',

@@ -1,4 +1,4 @@
-import { capNewWords } from '@/lib/newWordBudget';
+import { capNewWords, newWordAllowance } from '@/lib/newWordBudget';
 
 // FB77: the daily new-word budget only trims brand-new WORD cards; reviews and
 // sentence cards must always survive, and the order must not change.
@@ -23,5 +23,33 @@ describe('capNewWords', () => {
 
   it('treats a negative budget as zero', () => {
     expect(capNewWords([item('word', 0, 1)], -5)).toEqual([]);
+  });
+});
+
+// FB103: the daily limit is no longer the only ceiling, words already started
+// but not learned hold the next batch back.
+describe('newWordAllowance', () => {
+  it('gives the full limit on a fresh day with nothing half-learned', () => {
+    expect(newWordAllowance({ limit: 5, bonus: 0, startedToday: 0, unlearned: 0 })).toBe(5);
+  });
+
+  it('subtracts the words already started today', () => {
+    expect(newWordAllowance({ limit: 5, bonus: 0, startedToday: 3, unlearned: 0 })).toBe(2);
+  });
+
+  it('blocks new words while the earlier ones are still unlearned', () => {
+    expect(newWordAllowance({ limit: 5, bonus: 0, startedToday: 0, unlearned: 5 })).toBe(0);
+  });
+
+  it('refills only as fast as the backlog clears', () => {
+    expect(newWordAllowance({ limit: 5, bonus: 0, startedToday: 0, unlearned: 3 })).toBe(2);
+  });
+
+  it('lets the +5 bonus break through a full backlog', () => {
+    expect(newWordAllowance({ limit: 5, bonus: 5, startedToday: 5, unlearned: 5 })).toBe(5);
+  });
+
+  it('never goes negative', () => {
+    expect(newWordAllowance({ limit: 5, bonus: 0, startedToday: 9, unlearned: 40 })).toBe(0);
   });
 });

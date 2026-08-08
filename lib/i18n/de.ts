@@ -122,6 +122,16 @@ export default {
     milestoneSession: '🔥 Wow, {min} Minuten am Stück!',
     milestoneDaily: '🎉 Heute schon {min} Minuten, super gemacht!',
     dailyGreeting: '👋 Hallo! Starten wir das heutige Lernen!',
+    // FB108: Mitternachtswechsel, Bilanz des beendeten Tages + Gratulation.
+    // Zufällig gewählt, die Sätze kommen mit der Zeit wieder.
+    dayRollover: [
+      '🌙 Mitternacht! Gestern: {words} Wörter, {min} Minuten. Wer um Mitternacht lernt, macht das nicht zum Spaß.',
+      '✨ Tag beendet mit {words} Wörtern und {min} Minuten. Die Stadt schläft, du träumst auf Spanisch.',
+      '🕛 Die Uhr ist umgesprungen! {min} Minuten, {words} Wörter, ein ganzer Arbeitstag. Wunderbar.',
+      '🚀 Ein neuer Tag beginnt, der alte endete mit {words} Wörtern und {min} Minuten. Das ist Gewohnheit, kein Glück.',
+      '🏆 {min} Minuten, {words} Wörter, und du bist um Mitternacht noch da. Das ist Ausdauer.',
+      '🌟 Gestern ist fertig: {words} Wörter, {min} Minuten. Jedes Wort ein Ziegel, und du hast wieder gebaut.',
+    ],
   },
   stats: {
     title: 'Statistik',

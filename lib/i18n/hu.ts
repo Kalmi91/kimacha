@@ -122,6 +122,16 @@ export default {
     milestoneSession: '🔥 Wow, {min} perce nyomod egyhuzamban!',
     milestoneDaily: '🎉 Ma már {min} perc, nagyon ügyes vagy!',
     dailyGreeting: '👋 Szia! Kezdjük a mai tanulást!',
+    // FB108: éjfél-átfordulás, a lezárt nap statja + gratuláció. Véletlen
+    // választás a listából, tehát a szövegek idővel vissza-visszatérnek.
+    dayRollover: [
+      '🌙 Éjfél! A tegnapod: {words} szó, {min} perc. Aki éjfélkor is tanul, az nem hobbiból csinálja.',
+      '✨ Nap vége, {words} szó és {min} perc a zsákmány. Alszik a város, te meg spanyolul álmodsz.',
+      '🕛 Átfordult az óra! {min} perc, {words} szó, egy egész nap munkája. Szép volt.',
+      '🚀 Új nap indul, a régi {words} szóval és {min} perccel zárt. Ez már nem szerencse, ez szokás.',
+      '🏆 {min} perc, {words} szó, és még mindig itt vagy éjfélkor. Ez a kitartás.',
+      '🌟 A tegnap kész: {words} szó, {min} perc. Minden szó egy tégla, és te ma is építettél.',
+    ],
   },
   stats: {
     title: 'Statisztika',

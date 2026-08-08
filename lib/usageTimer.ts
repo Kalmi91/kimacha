@@ -1,5 +1,6 @@
 import { AppState, type AppStateStatus } from 'react-native';
 import { getDb } from './database';
+import { localDateString } from './usageStats';
 
 // Active-usage timer backing the "+1 perc wauuuuuuuu" toast + the stats tab.
 //
@@ -25,8 +26,15 @@ export type UsageMilestone = { scope: 'session' | 'daily'; minutes: number };
 const SESSION_MILESTONES = [30];
 const DAILY_MILESTONES = [30, 60];
 
+// FB108, Kálmán 2026-08-08: "ha éjfélkor játszunk a játékkal, és pont átfordul
+// akkor a napi statot írja ki és gratuláljon". The tick loop is already running
+// while the learner plays, so it is also the thing that can notice the calendar
+// day turning over under them; it then reports the FINISHED day's totals.
+export type DayRollover = { date: string; minutes: number; words: number };
+
 type Listener = () => void;
 type MilestoneListener = (milestone: UsageMilestone) => void;
+type DayRolloverListener = (rollover: DayRollover) => void;
 
 let running = false;
 let intervalId: ReturnType<typeof setInterval> | null = null;
@@ -35,9 +43,11 @@ let appState: AppStateStatus = 'active';
 let lastInteractionAt = 0;
 let activeSeconds = 0; // partial progress toward the next full minute (0-59)
 let sessionMinutes = 0; // FB63: full active minutes accrued in this app run
+let currentDay: string | null = null; // FB108: local calendar day the ticks belong to
 
 const listeners = new Set<Listener>();
 const milestoneListeners = new Set<MilestoneListener>();
+const dayRolloverListeners = new Set<DayRolloverListener>();
 
 function isCountingNow(): boolean {
   if (appState !== 'active') return false;
@@ -58,6 +68,7 @@ function stopInterval() {
 
 function tick() {
   if (!isCountingNow()) return;
+  checkDayRollover();
   activeSeconds += 1;
   if (activeSeconds >= MINUTE_SECONDS) {
     activeSeconds -= MINUTE_SECONDS;
@@ -87,6 +98,31 @@ function emitMilestone(milestone: UsageMilestone) {
       listener(milestone);
     } catch {}
   }
+}
+
+// FB108: the first counted second of a new calendar day closes the previous one.
+// The very first tick of an app run only adopts today's date (nothing rolled
+// over, the learner just started), so a restart never fakes a celebration.
+function checkDayRollover() {
+  const today = localDateString();
+  if (currentDay === null) {
+    currentDay = today;
+    return;
+  }
+  if (currentDay === today) return;
+  const finished = currentDay;
+  currentDay = today;
+  sessionMinutes = 0; // the new day starts its own session milestones
+  getDb()
+    .getDayStats(finished)
+    .then(({ minutes, words }) => {
+      for (const listener of dayRolloverListeners) {
+        try {
+          listener({ date: finished, minutes, words });
+        } catch {}
+      }
+    })
+    .catch(() => {});
 }
 
 // Backgrounding stops the tick loop (no point polling while suspended); it
@@ -132,6 +168,13 @@ export function onUsageMilestone(callback: MilestoneListener): () => void {
   return () => milestoneListeners.delete(callback);
 }
 
+// FB108: fires once when the local calendar day turns over mid-play, carrying
+// the finished day's totals.
+export function onDayRollover(callback: DayRolloverListener): () => void {
+  dayRolloverListeners.add(callback);
+  return () => dayRolloverListeners.delete(callback);
+}
+
 // Test-only: resets all module-level state between test cases. Not used by app code.
 export function __resetForTests(): void {
   stopUsageTimer();
@@ -139,6 +182,8 @@ export function __resetForTests(): void {
   lastInteractionAt = 0;
   activeSeconds = 0;
   sessionMinutes = 0;
+  currentDay = null;
   listeners.clear();
   milestoneListeners.clear();
+  dayRolloverListeners.clear();
 }

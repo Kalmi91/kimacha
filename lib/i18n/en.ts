@@ -122,6 +122,16 @@ export default {
     milestoneSession: '🔥 Wow, {min} minutes in one go!',
     milestoneDaily: '🎉 {min} minutes today, you are doing great!',
     dailyGreeting: '👋 Hi! Let\'s start today\'s practice!',
+    // FB108: midnight rollover, the finished day's stats plus a celebration.
+    // Picked at random, so the lines come back around over time.
+    dayRollover: [
+      '🌙 Midnight! Yesterday: {words} words, {min} minutes. People who study at midnight are not doing it for fun.',
+      '✨ Day closed with {words} words and {min} minutes. The city sleeps, you dream in Spanish.',
+      '🕛 The clock turned! {min} minutes, {words} words, a whole day of work. Beautiful.',
+      '🚀 A new day starts, the old one ended with {words} words and {min} minutes. That is a habit, not luck.',
+      '🏆 {min} minutes, {words} words, and still here at midnight. That is persistence.',
+      '🌟 Yesterday is done: {words} words, {min} minutes. Every word is a brick, and you built again.',
+    ],
   },
   stats: {
     title: 'Usage Stats',
