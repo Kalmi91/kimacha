@@ -1315,6 +1315,24 @@ id-javítás előre kerül (enélkül a törlés-térkép is találgatna).
 
 ---
 
+# 📋 Feedback, 2026-08-08 (chat-kérés, v3.0.10 után)
+
+## ✅ FB98 [P2 UX], A mondatvégi pont ne legyen hiba, KÉSZ (`lib/charDiff.ts`, `spelling.tsx`)
+Kérés (2026-08-08, chat): „csináld meg azt hogy a mondatok végén a pont ne legyen hiba"
+Állapot a kérés előtt: a PONTOZÁS már elfogadta pont nélkül is (`strictAnswerMatch`
+minden írásjelet kiszed), a pont két MÁSIK helyen látszott hibának:
+1. a gépelés-diff (FB84 óta) borostyánnal jelölte a kihagyott mondatvégi pontot, így
+   egy apró elgépelés két hibának nézett ki;
+2. a helyesírás-tréner (`spelling.tsx`) betűre pontosan hasonlított, ott a pont bukó volt.
+Fix: `charDiff` a diff ELŐTT leszedi a nyitó (`¡¿"'(`) és záró (`.!?…,;:¡¿"')`)
+írásjeleket mindkét oldalról; amit a tanuló maga írt, az semlegesként (nem hibaként)
+kerül vissza a kimenetbe, amit kihagyott, az meg sem jelenik. A helyesírás-tréner az
+új `stripTrailingPunct`-tal hasonlít, minden más ott betűre szigorú marad.
+Gate: tsc 0, jest **123/123** (117→123: +5 charDiff, +2 stripTrailingPunct), lint 18 =
+alapvonal.
+
+---
+
 # Aktuális feladatok (iter1.2)
 
 Kimacha nyelvtanuló app (Expo/React Native).

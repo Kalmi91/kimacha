@@ -8,7 +8,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { getDb } from '@/lib/database';
 import { words } from '@/data/words';
 import { t } from '@/lib/i18n';
-import { charDiff } from '@/lib/charDiff';
+import { charDiff, stripTrailingPunct } from '@/lib/charDiff';
 import { speechLang } from '@/lib/languages';
 import { spellingLadderDays } from '@/lib/spellingLadder';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -74,7 +74,9 @@ export default function SpellingScreen() {
 
   const handleCheck = async () => {
     if (!current || !currentWord) return;
-    const ok = typedAnswer.trim().toLowerCase() === target.toLowerCase();
+    // FB98: closing punctuation is never the mistake here either, the spelling
+    // trainer grades the letters. Everything else stays byte-for-byte strict.
+    const ok = stripTrailingPunct(typedAnswer.trim().toLowerCase()) === stripTrailingPunct(target.toLowerCase());
     setResult(ok ? 'correct' : 'wrong');
 
     const db = getDb();
