@@ -17,9 +17,29 @@ export interface DiffChar {
 const foldChar = (ch: string): string =>
   ch.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
+// FB98: the closing punctuation of a sentence is never the mistake. The grader
+// already ignores it (strictAnswerMatch strips punctuation), but the diff still
+// painted the dropped "." amber, so an otherwise small slip looked like two
+// errors. Both tails come off before the diff; the one the learner typed is
+// re-appended as a neutral character, the one they left out is simply not shown.
+const LEADING_PUNCT = /^[¡¿"'(]+/;
+const TRAILING_PUNCT = /[.!?…,;:¡¿"')]+$/;
+
+// [leading punctuation, letters, trailing punctuation]
+const splitEdges = (text: string): [string, string, string] => {
+  const lead = text.match(LEADING_PUNCT)?.[0] ?? '';
+  const rest = text.slice(lead.length);
+  const tail = rest.match(TRAILING_PUNCT)?.[0] ?? '';
+  return [lead, tail ? rest.slice(0, -tail.length) : rest, tail];
+};
+
+export const stripTrailingPunct = (text: string): string => text.replace(TRAILING_PUNCT, '');
+
 export function charDiff(typed: string, correct: string, fold = true): DiffChar[] {
-  const a = [...typed];
-  const b = [...correct];
+  const [typedLead, typedCore, typedTail] = splitEdges(typed);
+  const [, correctCore] = splitEdges(correct);
+  const a = [...typedCore];
+  const b = [...correctCore];
   const an = fold ? a.map(foldChar) : a;
   const bn = fold ? b.map(foldChar) : b;
   const m = an.length, n = bn.length;
@@ -31,6 +51,7 @@ export function charDiff(typed: string, correct: string, fold = true): DiffChar[
     }
   }
   const out: DiffChar[] = [];
+  for (const ch of typedLead) out.push({ ch, wrong: false });
   let i = 0, j = 0;
   while (i < m || j < n) {
     if (i < m && j < n && an[i] === bn[j]) {
@@ -41,5 +62,6 @@ export function charDiff(typed: string, correct: string, fold = true): DiffChar[
       out.push({ ch: b[j], wrong: true, missing: true }); j++; // letter left out
     }
   }
+  for (const ch of typedTail) out.push({ ch, wrong: false });
   return out;
 }
