@@ -55,8 +55,10 @@ export interface DB {
   getNewLimitBonus(): Promise<number>;
   addNewLimitBonus(extra: number): Promise<void>;
   getNewWordsToday(): Promise<number>;
+  getUnlearnedWordCount(): Promise<number>;
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
+  getDayStats(date: string): Promise<{ minutes: number; words: number }>;
   exportAll(): Promise<BackupPayload>;
   importAll(payload: BackupPayload): Promise<void>;
 }
@@ -748,6 +750,18 @@ class SQLiteDB implements DB {
     return rows.filter(r => localDateString(new Date(r.first_ts)) === today).length;
   }
 
+  // FB103: words already started but not yet learned, i.e. still in the FSRS
+  // learning (1) or relearning (3) state. They are the "congestion" the learner
+  // sees, so the new-word budget waits for them (see newWordAllowance).
+  async getUnlearnedWordCount(): Promise<number> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>(
+      "SELECT COUNT(*) as cnt FROM cards WHERE type = 'word' AND pair = ? AND buried = 0 AND reps > 0 AND state IN (1, 3)",
+      [this.activePair]
+    );
+    return row?.cnt ?? 0;
+  }
+
   async getFeedbackBtnSide(): Promise<'left' | 'right'> {
     const db = await this.open();
     const row = await db.getFirstAsync<any>('SELECT feedback_btn_side FROM learn_settings WHERE pair = ?', [this.activePair]);
@@ -781,6 +795,21 @@ class SQLiteDB implements DB {
     const db = await this.open();
     const rows = await db.getAllAsync<any>('SELECT date, minutes FROM usage_minutes');
     return summarizeUsage(rows.map((r: any) => ({ date: r.date, minutes: r.minutes })));
+  }
+
+  // FB108: what one local calendar day added up to, for the midnight celebration.
+  // `words` counts DISTINCT word cards touched that day, not raw attempts, so a
+  // word drilled five times still reads as one word learned.
+  async getDayStats(date: string): Promise<{ minutes: number; words: number }> {
+    const db = await this.open();
+    const usage = await db.getFirstAsync<any>('SELECT minutes FROM usage_minutes WHERE date = ?', [date]);
+    const rows = await db.getAllAsync<any>(
+      "SELECT DISTINCT word_id, timestamp FROM card_attempts WHERE type = 'word'"
+    );
+    const words = new Set(
+      rows.filter((r: any) => localDateString(new Date(r.timestamp)) === date).map((r: any) => r.word_id)
+    );
+    return { minutes: usage?.minutes ?? 0, words: words.size };
   }
 
   // Q0: full learning-state backup, every table across all pairs.

@@ -2267,7 +2267,11 @@
     "sentence_es": "Vuestro hijo es muy inteligente.",
     "sentence_hu": "A fiatok nagyon okos.",
     "sentence_en": "Your son is very intelligent.",
-    "sentence_de": "Euer Sohn ist sehr intelligent."
+    "sentence_de": "Euer Sohn ist sehr intelligent.",
+    "note_hu": "A »vuestro« a »vosotros« (ti) birtokosa, és CSAK Spanyolországban használják; Latin-Amerikában helyette »su« (»de ustedes«) áll. Egyeztetni kell: vuestro hijo, vuestra hija, vuestros hijos, vuestras hijas.",
+    "note_en": "«Vuestro» is the possessive of «vosotros» (you plural) and is used ONLY in Spain; Latin America says «su» («de ustedes») instead. It agrees: vuestro hijo, vuestra hija, vuestros hijos, vuestras hijas.",
+    "note_es": "«Vuestro» es el posesivo de «vosotros» y SOLO se usa en España; en Hispanoamérica se dice «su» («de ustedes»). Concuerda en género y número: vuestro hijo, vuestra hija, vuestros hijos, vuestras hijas.",
+    "note_de": "«Vuestro» ist das Possessiv von «vosotros» (ihr) und wird NUR in Spanien benutzt; in Lateinamerika sagt man «su» («de ustedes»). Es wird angeglichen: vuestro hijo, vuestra hija, vuestros hijos, vuestras hijas."
   },
   {
     "id": 1162,
@@ -8176,10 +8180,10 @@
     "de": "das Gehalt",
     "topic": "oficina_trabajo",
     "topicOrder": 1,
-    "sentence_es": "Cobro mi sueldo a fin de mes.",
-    "sentence_hu": "A fizetésemet a hónap végén kapom.",
-    "sentence_en": "I get my salary at the end of the month.",
-    "sentence_de": "Ich bekomme mein Gehalt am Monatsende."
+    "sentence_es": "Mi sueldo es bueno.",
+    "sentence_hu": "Jó a fizetésem.",
+    "sentence_en": "My salary is good.",
+    "sentence_de": "Mein Gehalt ist gut."
   },
   {
     "id": 1594,
@@ -8249,7 +8253,11 @@
     "sentence_es": "Necesito imprimir veinte páginas.",
     "sentence_hu": "Húsz oldalt kell kinyomtatnom.",
     "sentence_en": "I need to print twenty pages.",
-    "sentence_de": "Ich muss zwanzig Seiten drucken."
+    "sentence_de": "Ich muss zwanzig Seiten drucken.",
+    "note_hu": "Nem duplikátum: az »imprimir« az IGE (nyomtatni), a »la impresora« a GÉP (a nyomtató). A gép neve az igéből jön: imprimir → impresora.",
+    "note_en": "Not a duplicate: «imprimir» is the VERB (to print), «la impresora» is the MACHINE (the printer). The machine is named after the verb: imprimir → impresora.",
+    "note_es": "No es un duplicado: «imprimir» es el VERBO y «la impresora» es la MÁQUINA. El nombre de la máquina viene del verbo: imprimir → impresora.",
+    "note_de": "Kein Duplikat: «imprimir» ist das VERB (drucken), «la impresora» ist das GERÄT (der Drucker). Das Gerät ist nach dem Verb benannt: imprimir → impresora."
   },
   {
     "id": 1599,
@@ -8319,7 +8327,11 @@
     "sentence_es": "La impresora no funciona hoy.",
     "sentence_hu": "A nyomtató ma nem működik.",
     "sentence_en": "The printer is not working today.",
-    "sentence_de": "Der Drucker funktioniert heute nicht."
+    "sentence_de": "Der Drucker funktioniert heute nicht.",
+    "note_hu": "Nem ugyanaz a szó kétszer: a korábbi »imprimir« az IGE (nyomtatni), ez itt a GÉP (a nyomtató). imprimir → impresora, mint dolgozni → dolgozó.",
+    "note_en": "Not the same word twice: the earlier «imprimir» is the VERB (to print), this one is the MACHINE (the printer). imprimir → impresora.",
+    "note_es": "No es la misma palabra dos veces: «imprimir» es el VERBO y «la impresora» es la MÁQUINA que imprime. imprimir → impresora.",
+    "note_de": "Nicht zweimal dasselbe Wort: «imprimir» ist das VERB (drucken), das hier ist das GERÄT (der Drucker). imprimir → impresora."
   },
   {
     "id": 1604,

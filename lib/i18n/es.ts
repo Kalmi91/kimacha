@@ -122,6 +122,16 @@ export default {
     milestoneSession: '🔥 ¡Guau, {min} minutos seguidos!',
     milestoneDaily: '🎉 ¡{min} minutos hoy, lo estás haciendo genial!',
     dailyGreeting: '👋 ¡Hola! ¡Empecemos el estudio de hoy!',
+    // FB108: cambio de día a medianoche, resumen del día cerrado + felicitación.
+    // Se elige al azar, así que las frases vuelven a aparecer con el tiempo.
+    dayRollover: [
+      '🌙 ¡Medianoche! Ayer: {words} palabras, {min} minutos. Quien estudia a medianoche no lo hace por casualidad.',
+      '✨ Día cerrado con {words} palabras y {min} minutos. La ciudad duerme y tú sueñas en español.',
+      '🕛 ¡El reloj ha girado! {min} minutos, {words} palabras, un día entero de trabajo. Precioso.',
+      '🚀 Empieza un día nuevo, el anterior cerró con {words} palabras y {min} minutos. Eso es costumbre, no suerte.',
+      '🏆 {min} minutos, {words} palabras, y sigues aquí a medianoche. Eso es constancia.',
+      '🌟 Ayer está hecho: {words} palabras, {min} minutos. Cada palabra es un ladrillo, y hoy también construiste.',
+    ],
   },
   stats: {
     title: 'Estadísticas',

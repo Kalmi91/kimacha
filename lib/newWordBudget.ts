@@ -20,3 +20,26 @@ export function capNewWords<T extends BudgetedItem>(items: T[], remaining: numbe
     return true;
   });
 }
+
+// FB103, Kálmán 2026-08-08: "az a baj, hogy nem tudom mikor fogy el a napi 5 új
+// szó. azt kellene hogy mindig 5 új szó legyen benne ha nem találom mi őket
+// akkor ne rakjon be 5 új szót, mert akkor torlódik."
+//
+// Two ceilings, the tighter one wins:
+//   1. the FB77 daily one, `limit + bonus` new words may START on a given day;
+//   2. a work-in-progress one, at most `limit` words may be half-learned at a
+//      time (FSRS Learning/Relearning state). Words that keep being missed
+//      therefore block tomorrow's intake instead of piling up on top of it.
+// The "+5 new words" bonus overrides both, it is the learner's explicit ask.
+export interface NewWordAllowance {
+  limit: number;
+  bonus: number;
+  startedToday: number;
+  unlearned: number;
+}
+
+export function newWordAllowance({ limit, bonus, startedToday, unlearned }: NewWordAllowance): number {
+  const daily = limit + bonus - startedToday;
+  const inFlight = limit + bonus - unlearned;
+  return Math.max(0, Math.min(daily, inFlight));
+}
