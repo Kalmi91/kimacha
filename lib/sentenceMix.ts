@@ -20,12 +20,34 @@ export interface WordWeakness {
   difficulty: number;
 }
 
+// FB99, Kálmán 2026-08-08: "legyen egy szabály hogy 5 mondatnál több semmi
+// keppen ne legyen. Ez egy szótanulós app nem egy mondat tanulós."
+export const MAX_SENTENCES_PER_SESSION = 5;
+
 // How many sentence cards the 4:1 cadence can carry next to `wordCardCount`
 // word cards. Below four due words no sentence fits, which is intended: with
 // nothing to cement, the session ends and the Done screen offers new words.
+// Never more than the FB99 hard ceiling, however many words are due.
 export function sentenceSlotCount(wordCardCount: number): number {
   if (wordCardCount <= 0) return 0;
-  return Math.floor(wordCardCount / 4);
+  return Math.min(MAX_SENTENCES_PER_SESSION, Math.floor(wordCardCount / 4));
+}
+
+// FB99: the DB sizes the sentence pool from the words it SELECTED, but
+// `capNewWords` (FB77 daily new-word budget) then drops new word cards in the
+// queue layer. On a day whose budget is already spent that left a queue with
+// far more sentences than words, exactly the "csak mondatok vannak" reports.
+// Re-applying the cadence on the FINAL item list closes that gap; the surviving
+// sentences are the first ones, i.e. the weakest words (see ranking above).
+export function capSentencesToCadence<T>(items: T[], isSentence: (item: T) => boolean): T[] {
+  const wordCount = items.reduce((count, item) => (isSentence(item) ? count : count + 1), 0);
+  let slots = sentenceSlotCount(wordCount);
+  return items.filter((item) => {
+    if (!isSentence(item)) return true;
+    if (slots <= 0) return false;
+    slots--;
+    return true;
+  });
 }
 
 // Weakest word first. Ties keep the input order, so a stable upstream sort

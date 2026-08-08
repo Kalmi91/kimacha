@@ -30,6 +30,7 @@ export interface DB {
   getMasteredCount(): Promise<number>;
   getMasteredWordCount(level: string): Promise<number>;
   getReviewedWordCount(level: string): Promise<number>;
+  getScheduledWordDueDates(): Promise<string[]>;
   buryCard(wordId: number, type: string): Promise<void>;
   snoozeCard(wordId: number, type: string, days: number): Promise<void>;
   addToSpellingList(wordId: number): Promise<void>;
@@ -569,6 +570,18 @@ class SQLiteDB implements DB {
       [...wordIds, this.activePair]
     );
     return row?.cnt ?? 0;
+  }
+
+  // FB100: due dates of the word cards already in rotation (a never-studied card
+  // has no schedule yet, and a buried one never comes back), for the Stats tab's
+  // "how many words are put away for how long" report.
+  async getScheduledWordDueDates() {
+    const db = await this.open();
+    const rows = await db.getAllAsync<any>(
+      "SELECT due FROM cards WHERE type = 'word' AND reps > 0 AND buried = 0 AND pair = ?",
+      [this.activePair]
+    );
+    return rows.map((r: any) => String(r.due));
   }
 
   async buryCard(wordId: number, type: string) {

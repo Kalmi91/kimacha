@@ -29,6 +29,7 @@ export interface DB {
   getMasteredCount(): Promise<number>;
   getMasteredWordCount(level: string): Promise<number>;
   getReviewedWordCount(level: string): Promise<number>;
+  getScheduledWordDueDates(): Promise<string[]>;
   buryCard(wordId: number, type: string): Promise<void>;
   snoozeCard(wordId: number, type: string, days: number): Promise<void>;
   addToSpellingList(wordId: number): Promise<void>;
@@ -260,6 +261,13 @@ class MemoryDB implements DB {
     const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
     const wordIds = new Set(levelWords.map((w: any) => w.id));
     return [...this.cards.values()].filter(c => wordIds.has(c.word_id) && c.type === 'word' && (c.reps > 0 || c.buried) && c.pair === this.activePair).length;
+  }
+
+  // FB100: see the native twin, due dates of the word cards still in rotation.
+  async getScheduledWordDueDates() {
+    return [...this.cards.values()]
+      .filter(c => c.type === 'word' && c.reps > 0 && !c.buried && c.pair === this.activePair)
+      .map(c => String(c.due));
   }
 
   async buryCard(wordId: number, type: string) {

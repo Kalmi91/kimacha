@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { StyleSheet, Text, View, Pressable, Modal, Alert, Switch, Platform } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Modal, Alert, Switch, Platform, ScrollView } from 'react-native';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { File, Paths } from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
@@ -207,7 +207,11 @@ export default function SettingsScreen() {
   };
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
+    <View style={[styles.screen, { backgroundColor: colors.background }]}>
+      {/* FB101: the page grew past one screen (the version line at its bottom was
+          unreachable), so the settings list scrolls. The modal and the feedback
+          FAB stay outside, pinned to the screen. */}
+      <ScrollView contentContainerStyle={styles.container}>
       <Text style={[styles.sectionTitle, { color: colors.text }]}>{s.tabs.settings}</Text>
 
       <View style={styles.optionGroup}>
@@ -323,6 +327,7 @@ export default function SettingsScreen() {
 
       {/* FB82: app version, small and grey, so the user can tell which build runs. */}
       <Text style={[styles.versionText, { color: colors.tabIconDefault }]}>{appVersionLabel}</Text>
+      </ScrollView>
 
       <Modal visible={masterVisible} transparent animationType="fade">
         <View style={styles.overlay}>
@@ -375,10 +380,14 @@ export default function SettingsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  screen: {
     flex: 1,
+  },
+  container: {
     padding: 24,
     paddingTop: 40,
+    // room under the last row so the FAB never covers it
+    paddingBottom: 96,
   },
   versionText: {
     marginTop: 12,

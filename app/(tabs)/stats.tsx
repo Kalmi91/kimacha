@@ -10,7 +10,15 @@ import {
   DEFAULT_WEEKLY_GOAL_MINUTES,
   type UsageStats,
 } from '@/lib/usageStats';
+import {
+  buildSchedulePreview,
+  daysUntil,
+  type SchedulePreview,
+  type ScheduleBucketKey,
+} from '@/lib/schedulePreview';
 import FeedbackButton from '@/components/FeedbackModal';
+
+const EMPTY_SCHEDULE: SchedulePreview = { dueNow: 0, buckets: [], scheduled: 0, nextDue: null };
 
 const EMPTY_STATS: UsageStats = {
   today: 0,
@@ -31,6 +39,7 @@ export default function StatsScreen() {
   const [mastered, setMastered] = useState(0);
   const [reviewsToday, setReviewsToday] = useState(0);
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
+  const [schedule, setSchedule] = useState<SchedulePreview>(EMPTY_SCHEDULE);
 
   // Refresh every time the tab gains focus (mirrors the Settings tab's
   // spellingDue pattern), so numbers stay current across app-wide activity.
@@ -42,6 +51,9 @@ export default function StatsScreen() {
       db.getMasteredCount().then(setMastered);
       db.getTodayStats().then(r => setReviewsToday(r.totalReviews));
       db.getWeeklyGoalMinutes().then(setWeeklyGoal);
+      // FB100: the schedule is read on focus like everything else here, so the
+      // buckets match the state the learner just left the session in.
+      db.getScheduledWordDueDates().then(dates => setSchedule(buildSchedulePreview(dates, new Date())));
     }, [])
   );
 
@@ -58,6 +70,25 @@ export default function StatsScreen() {
   // dateStr is local YYYY-MM-DD (see lib/usageStats.ts); a short weekday
   // label for the bar chart, built from Date's own locale formatting so we
   // don't need a new dependency for day names.
+  const bucketLabel: Record<ScheduleBucketKey, string> = {
+    today: s.stats.scheduleToday,
+    tomorrow: s.stats.scheduleTomorrow,
+    days2to3: s.stats.scheduleDays2to3,
+    days4to7: s.stats.scheduleDays4to7,
+    later: s.stats.scheduleLater,
+  };
+
+  // FB100: "mikor frissül" in the learner's own words: a clock time while the
+  // next card is close, a day count once it is further out.
+  const nextRefreshLabel = (iso: string) => {
+    const due = new Date(iso);
+    const days = daysUntil(due, new Date());
+    const time = due.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+    if (days <= 0) return s.stats.scheduleNextToday(time);
+    if (days === 1) return s.stats.scheduleNextTomorrow(time);
+    return s.stats.scheduleNextDays(days);
+  };
+
   const weekdayLabel = (dateStr: string) => {
     const [y, m, d] = dateStr.split('-').map(Number);
     return new Date(y, m - 1, d).toLocaleDateString(undefined, { weekday: 'short' }).slice(0, 2);
@@ -167,6 +198,38 @@ export default function StatsScreen() {
         </View>
       </View>
 
+      {/* FB100: where the words went, how many wait now and how many sit in
+          each distance bucket, plus the moment the queue next refills. */}
+      <Text style={[styles.sectionLabel, { color: colors.tabIconDefault, marginTop: 24 }]}>
+        {s.stats.schedule}
+      </Text>
+      {schedule.dueNow === 0 && schedule.scheduled === 0 ? (
+        <Text style={[styles.noData, { color: colors.tabIconDefault }]}>{s.stats.scheduleEmpty}</Text>
+      ) : (
+        <View style={[styles.scheduleCard, { backgroundColor: colors.card }]}>
+          <View style={styles.scheduleRow}>
+            <Text style={[styles.scheduleLabel, { color: colors.text }]}>{s.stats.scheduleDueNow}</Text>
+            <Text style={[styles.scheduleValue, { color: colors.tint }]}>
+              {s.stats.scheduleWords(schedule.dueNow)}
+            </Text>
+          </View>
+          {schedule.buckets.map(bucket => (
+            <View key={bucket.key} style={styles.scheduleRow}>
+              <Text style={[styles.scheduleLabel, { color: colors.tabIconDefault }]}>
+                {bucketLabel[bucket.key]}
+              </Text>
+              <Text style={[styles.scheduleValue, { color: colors.text }]}>
+                {s.stats.scheduleWords(bucket.count)}
+              </Text>
+            </View>
+          ))}
+          <Text style={[styles.scheduleFooter, { color: colors.tabIconDefault }]}>
+            {s.stats.scheduleWaiting(schedule.scheduled)}
+            {schedule.nextDue ? ` · ${s.stats.scheduleNext(nextRefreshLabel(schedule.nextDue))}` : ''}
+          </Text>
+        </View>
+      )}
+
       <FeedbackButton level="-" languagePair="-" currentCard="stats-tab" />
     </ScrollView>
   );
@@ -252,6 +315,30 @@ const styles = StyleSheet.create({
   noData: {
     fontSize: 14,
     marginBottom: 20,
+  },
+  // FB100: schedule card, one row per distance bucket + a footer summary.
+  scheduleCard: {
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 12,
+    gap: 8,
+  },
+  scheduleRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  scheduleLabel: {
+    fontSize: 14,
+    fontWeight: '600',
+  },
+  scheduleValue: {
+    fontSize: 15,
+    fontWeight: '700',
+  },
+  scheduleFooter: {
+    fontSize: 12,
+    marginTop: 4,
   },
   chart: {
     flexDirection: 'row',
