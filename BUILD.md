@@ -386,3 +386,16 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   haladás-összefésülés, őrző teszt). Korpusz 3478 → 3301 kártya, A0/A1 id-k érintetlenek.
   Gate: tsc 0, jest **117/117** (102→117: +7 sentenceMix, +8 corpusIntegrity),
   audit-corpus es/en/hu P1=0/P2=0, lint 18 = alapvonal. ⏳ Eszköz-verify + APK.
+- **2026-08-08** (Opus): 3.0.10 bump + APK a Drive-ra (00:06-os build), majd **FB98**
+  chat-kérésből (mondatvégi pont ne legyen hiba: `charDiff` írásjel-levágás + helyesírás-
+  tréner `stripTrailingPunct`), utána **feedback-forduló FB99–FB101 KÉSZ** (user:
+  „kimacha app feedback csinálás"), 3 új sheet-sor 05:27–05:41-ből, mind a 3.0.10-en.
+  FB99 = a mondat-torlódás maradék gyökéroka: a DB a lekért szavakhoz mérte a mondat-
+  slotokat, de a `capNewWords` (FB77 napi új-szó keret) utána vette ki a szavakat, így
+  kimerült kereten mondat-túlsúly lett; fix `MAX_SENTENCES_PER_SESSION = 5` plafon +
+  `capSentencesToCadence` a végleges listán. FB100 Stats „Ütemezés" kártya (most
+  esedékes + ma/holnap/2-3/4-7/héten túli sávok + következő frissülés,
+  `lib/schedulePreview.ts` + `getScheduledWordDueDates` mindkét db-ben, 4 nyelven).
+  FB101 a Settings lap `ScrollView`-ba került (az alsó sorok, köztük az FB82 verzió-
+  kiírás, elérhetetlenek voltak). Gate: tsc 0, jest **135/135** (123→135: +5 sentenceMix,
+  +7 schedulePreview), audit-corpus P1=0/P2=0, lint 18 = alapvonal. ⏳ Eszköz-verify + APK.

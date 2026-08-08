@@ -1333,6 +1333,64 @@ alapvonal.
 
 ---
 
+# 📋 Feedback, 2026-08-08 forduló (v3.0.10 telefon-teszt, A1 en→es)
+
+Új sorok a `Kimacha Feedback` sheetből (FB98 utáni 3 sor, 08-08 05:27 → 05:41). Triage
+2026-08-08 (Opus). A telefonon a 08-08 00:06-os build (3.0.10, versionCode 10) futott,
+tehát az FB89 mondat-fix MÁR benne volt, a torlódás mégis visszajött, lásd FB99.
+Idézetek a user eredeti megfogalmazásában, ne tömörítsd.
+
+## ✅ FB99 [P1 UX], Megint feltorlódtak a mondatok, max 5 legyen, KÉSZ (`lib/sentenceMix.ts`, `index.tsx`)
+Idézet (08-08 05:39, `sentence:El cinturón va en la cintura.`): „megint feltorlódtak a
+mondatok legyen egy szabály hogy 5 mondatnál több semmi keppen ne legyen. legyen úgy
+hogy a mondatok ne számítsanak csal a szavak. Ez egy szótanulós app nem egy mondat
+tanulós. egyszer kétszer jó, de amikor így feltorlódnak nagyon idegesítőek és nehezek"
+Gyökérok (amit az FB89 még nyitva hagyott): a mondat-slotok száma a DB-ben dől el, a
+LEKÉRT szavak alapján (`sentenceSlotCount(newCards + reviewWords)`), a queue-réteg
+viszont UTÁNA dobja ki az aznapi új-szó kereten felüli új szavakat (`capNewWords`,
+FB77). Amelyik napon a napi új-szó keret már elfogyott, ott a szavak eltűntek a sorból,
+a hozzájuk mért mondatok viszont bent maradtak, így megint mondat-túlsúly lett.
+Fix két rétegben:
+- `sentenceSlotCount` plafonja `MAX_SENTENCES_PER_SESSION = 5` (a user kért kemény
+  szabálya), a 4 szó : 1 mondat ütem ezen belül marad.
+- új `capSentencesToCadence(items, isSentence)` a VÉGLEGES listára fut (`applyCadence`
+  elején), tehát a capNewWords utáni valódi szószám dönt. A megmaradó mondatok a lista
+  elejéről jönnek, azaz a leggyengébb szavakhoz tartozók (FB89 rangsor).
+A „mondatok ne számítsanak" másik fele már az FB89 óta áll: a session `limit`-je csak
+szavakra megy, a mondatok azon FELÜL jönnek.
+
+## ✅ FB100 [P2 feature], Mennyi szó van hány napra elrakva, KÉSZ (`lib/schedulePreview.ts`, `stats.tsx`)
+Idézet (08-08 05:27, `word:the sweater`): „valahol jeleznie kellene, hogy mennyi szó van
+mennyi napra elrakva, meg higy mikor frissül. ezt akár egy külön fülön is lehetne
+jeleznie"
+Külön fül helyett a Stats tab kapott egy „Ütemezés" kártyát (a fülsor már 5 elemű, egy
+hatodik szűkítené a többit; az adat statisztika-természetű). Tartalma: most esedékes
+szavak, majd távolság-sávok (ma később / holnap / 2-3 nap / 4-7 nap / egy héten túl),
+alul az összes elrakott szó + a következő frissülés ideje (közeli kártyánál óra:perc,
+távolinál nap-szám). Adat: `getScheduledWordDueDates()` (mindkét db-implementációban)
+= a forgásban lévő, nem eltemetett szó-kártyák `due` értékei; a csoportosítás tiszta
+függvényben (`buildSchedulePreview`), 7 teszttel. Négy nyelven feliratozva.
+
+## ✅ FB101 [P1 UI bug], A Settings lap nem görgethető, KÉSZ (`app/(tabs)/settings.tsx`)
+Idézet (08-08 05:41, `settings-tab`): „a settings resznél nem lehet fel le tekerni az
+oldalt"
+A képernyő gyökere fix `View` volt, közben a lap az FB39/FB65/FB77/FB82 sorokkal
+túlnőtt egy kijelzőn, így az alsó rész (köztük az FB82 verziószám, amit a user ma
+keresett) elérhetetlen volt. Fix: a tartalom `ScrollView`-ba került
+(`contentContainerStyle`, alul 96 px hely a lebegő feedback gombnak), a Modal és a
+FeedbackButton a képernyőre rögzítve maradt kívül.
+
+## Elfogadási kritérium (FB99–FB101 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **135/135** ✅ (123→135: +5 sentenceMix
+  cap/capSentencesToCadence, +7 schedulePreview).
+- `node scripts/audit-corpus.mjs` → P1=0, P2=0 ✅ (adat-JSON nem változott).
+- `npx expo lint`: 18 probléma (8 error, 10 warning) = a HEAD-alapvonal ✅.
+- ⏳ Eszköz-verify a következő buildben: session-enként max 5 mondat még kimerített napi
+  új-szó keret mellett is, a Settings lap görgethető (és látszik a verziószám), a Stats
+  tab „Ütemezés" kártyája a valós FSRS-ütemezést mutatja.
+
+---
+
 # Aktuális feladatok (iter1.2)
 
 Kimacha nyelvtanuló app (Expo/React Native).

@@ -14,6 +14,7 @@ import { nearMissDistractors } from '@/lib/distractors';
 import { consumePendingAction } from '@/lib/pendingAction';
 import { DAILY_NEW_BONUS_STEP } from '@/lib/usageStats';
 import { capNewWords } from '@/lib/newWordBudget';
+import { capSentencesToCadence } from '@/lib/sentenceMix';
 import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
 import { cardIcon } from '@/lib/cardIcons';
@@ -168,7 +169,9 @@ export default function LearnScreen() {
     const words: DueItem[] = [];
     const easy: DueItem[] = [];
     const typing: DueItem[] = [];
-    for (const item of items) {
+    // FB99: re-apply the cadence (and its 5-sentence ceiling) to the FINAL list,
+    // after capNewWords removed the new words the daily budget cannot afford.
+    for (const item of capSentencesToCadence(items, (i) => i.type !== 'word')) {
       if (item.type === 'word') words.push(item);
       else if (item.isEasySentence) easy.push(item);
       else typing.push(item);
