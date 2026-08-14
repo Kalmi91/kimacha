@@ -507,12 +507,17 @@ const styles = StyleSheet.create({
   wordsOnlyLabel: {
     fontSize: 16,
     fontWeight: '600',
+    // FB128: Spanish labels ("Objetivo semanal de estudio") are long enough to
+    // push the switch/stepper out of the card, RN text does not shrink on its own.
+    flex: 1,
+    marginRight: 12,
   },
   // FB65: −/+ stepper for the weekly goal row.
   goalStepper: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
+    flexShrink: 0,
   },
   goalBtn: {
     width: 34,

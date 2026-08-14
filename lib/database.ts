@@ -19,6 +19,7 @@ export interface DB {
   getDueCardsForLevel(level: string, limit: number): Promise<any[]>;
   getDueCardsForWordIds(wordIds: number[], limit: number): Promise<any[]>;
   getWordReps(wordIds: number[]): Promise<Map<number, number>>;
+  getWordStates(wordIds: number[]): Promise<Map<number, number>>;
   recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number): Promise<void>;
   getUserMeta(): Promise<{ userId: string; firstUseDate: string; lastSyncDate: string | null }>;
   updateLastSync(date: string): Promise<void>;
@@ -117,6 +118,7 @@ class SQLiteDB implements DB {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         word_id INTEGER NOT NULL,
         type TEXT NOT NULL,
+        pair TEXT,
         correct INTEGER NOT NULL,
         response_time_ms INTEGER NOT NULL,
         timestamp TEXT NOT NULL
@@ -262,6 +264,22 @@ class SQLiteDB implements DB {
         DROP TABLE user_level;
         ALTER TABLE user_level_new RENAME TO user_level;
       `);
+    }
+    // Migration: per-pair attempt history (FB129). Without it the daily new-word
+    // counter was shared by every language pair, so a day spent on one course
+    // left the other with a zero budget and an empty queue.
+    const attemptsPairCol = await this.db.getFirstAsync<any>("SELECT * FROM pragma_table_info('card_attempts') WHERE name = 'pair'");
+    if (!attemptsPairCol) {
+      await this.db.execAsync('ALTER TABLE card_attempts ADD COLUMN pair TEXT');
+      // Existing rows predate the column: a word that only ever had a card in one
+      // pair is tagged with it, anything ambiguous falls back to the active pair.
+      await this.db.runAsync(
+        `UPDATE card_attempts SET pair = COALESCE(
+           (SELECT MIN(c.pair) FROM cards c WHERE c.word_id = card_attempts.word_id AND c.type = card_attempts.type),
+           ?
+         ) WHERE pair IS NULL`,
+        [this.activePair]
+      );
     }
     await this.applyWordMerges(this.db);
     return this.db;
@@ -458,11 +476,26 @@ class SQLiteDB implements DB {
     return map;
   }
 
+  // A szó-kártya FSRS állapota (0 New, 1 Learning, 2 Review, 3 Relearning).
+  // A topic-készültség ebből dől el, nem a reps-ből, lásd lib/topicMastery.ts.
+  async getWordStates(wordIds: number[]): Promise<Map<number, number>> {
+    const db = await this.open();
+    if (wordIds.length === 0) return new Map();
+    const placeholders = wordIds.map(() => '?').join(',');
+    const rows = await db.getAllAsync<any>(
+      `SELECT word_id, state FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND pair = ?`,
+      [...wordIds, this.activePair]
+    );
+    const map = new Map<number, number>();
+    for (const r of rows) map.set(r.word_id, r.state);
+    return map;
+  }
+
   async recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number) {
     const db = await this.open();
     await db.runAsync(
-      'INSERT INTO card_attempts (word_id, type, correct, response_time_ms, timestamp) VALUES (?, ?, ?, ?, ?)',
-      [wordId, type, correct ? 1 : 0, responseTimeMs, new Date().toISOString()]
+      'INSERT INTO card_attempts (word_id, type, pair, correct, response_time_ms, timestamp) VALUES (?, ?, ?, ?, ?, ?)',
+      [wordId, type, this.activePair, correct ? 1 : 0, responseTimeMs, new Date().toISOString()]
     );
   }
 
@@ -552,9 +585,14 @@ class SQLiteDB implements DB {
     if (wordIds.length === 0) return 0;
     const placeholders = wordIds.map(() => '?').join(',');
     const row = await db.getFirstAsync<any>(
+      // FB111: "Egy szó akkor számít megtanultnak ha el tudjuk írni helyesen."
+      // FSRS state >= 2 alone was reached by the two flashcard steps, i.e. before
+      // the word had ever been typed. Mastery now also needs the typing step
+      // passed: three net successes = flashcard, reverse flashcard, spelling
+      // (lib/wordPhase.ts). "I know this" (buried) still counts outright.
       `SELECT COUNT(*) as cnt FROM cards
          WHERE word_id IN (${placeholders}) AND type = 'word' AND pair = ?
-           AND (state >= 2 OR buried = 1)`,
+           AND ((state >= 2 AND reps - lapses >= 3) OR buried = 1)`,
       [...wordIds, this.activePair]
     );
     return row?.cnt ?? 0;
@@ -738,13 +776,14 @@ class SQLiteDB implements DB {
     );
   }
 
-  // A word counts as "started today" when its FIRST ever attempt happened today.
-  // card_attempts has no pair column, so this is counted across language pairs,
-  // which matches how the budget is meant to work (per day of study, not per pair).
+  // A word counts as "started today" when its FIRST attempt IN THIS PAIR happened
+  // today. FB129: counting across pairs meant a day spent on one course left the
+  // other course with a zero budget, i.e. an empty queue and the Done screen.
   async getNewWordsToday(): Promise<number> {
     const db = await this.open();
     const rows = await db.getAllAsync<any>(
-      "SELECT word_id, MIN(timestamp) AS first_ts FROM card_attempts WHERE type = 'word' GROUP BY word_id"
+      "SELECT word_id, MIN(timestamp) AS first_ts FROM card_attempts WHERE type = 'word' AND pair = ? GROUP BY word_id",
+      [this.activePair]
     );
     const today = localDateString();
     return rows.filter(r => localDateString(new Date(r.first_ts)) === today).length;
