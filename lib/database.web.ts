@@ -18,6 +18,7 @@ export interface DB {
   getDueCardsForLevel(level: string, limit: number): Promise<any[]>;
   getDueCardsForWordIds(wordIds: number[], limit: number): Promise<any[]>;
   getWordReps(wordIds: number[]): Promise<Map<number, number>>;
+  getWordStates(wordIds: number[]): Promise<Map<number, number>>;
   recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number): Promise<void>;
   getUserMeta(): Promise<{ userId: string; firstUseDate: string; lastSyncDate: string | null }>;
   updateLastSync(date: string): Promise<void>;
@@ -54,6 +55,7 @@ export interface DB {
   getNewLimitBonus(): Promise<number>;
   addNewLimitBonus(extra: number): Promise<void>;
   getNewWordsToday(): Promise<number>;
+  getUnlearnedWordCount(): Promise<number>;
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
   exportAll(): Promise<BackupPayload>;
@@ -212,10 +214,23 @@ class MemoryDB implements DB {
     return map;
   }
 
-  private attempts: { word_id: number; type: string; correct: boolean; response_time_ms: number; timestamp: string }[] = [];
+  // A szó-kártya FSRS állapota (0 New, 1 Learning, 2 Review, 3 Relearning).
+  // A topic-készültség ebből dől el, nem a reps-ből, lásd lib/topicMastery.ts.
+  async getWordStates(wordIds: number[]): Promise<Map<number, number>> {
+    const idSet = new Set(wordIds);
+    const map = new Map<number, number>();
+    for (const c of this.cards.values()) {
+      if (idSet.has(c.word_id) && c.type === 'word' && c.pair === this.activePair) {
+        map.set(c.word_id, c.state);
+      }
+    }
+    return map;
+  }
+
+  private attempts: { word_id: number; type: string; pair?: string; correct: boolean; response_time_ms: number; timestamp: string }[] = [];
 
   async recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number) {
-    this.attempts.push({ word_id: wordId, type, correct, response_time_ms: responseTimeMs, timestamp: new Date().toISOString() });
+    this.attempts.push({ word_id: wordId, type, pair: this.activePair, correct, response_time_ms: responseTimeMs, timestamp: new Date().toISOString() });
   }
 
   private meta = { userId: crypto.randomUUID?.() ?? Math.random().toString(36), firstUseDate: new Date().toISOString(), lastSyncDate: null as string | null };
@@ -252,8 +267,10 @@ class MemoryDB implements DB {
     const { getWordsForLevel } = require('@/data/words');
     const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
     const wordIds = new Set(levelWords.map((w: any) => w.id));
+    // FB111: mastery needs the typing step passed too, see database.ts.
     return [...this.cards.values()].filter(c =>
-      wordIds.has(c.word_id) && c.type === 'word' && (c.state >= 2 || c.buried === 1) && c.pair === this.activePair
+      wordIds.has(c.word_id) && c.type === 'word' && c.pair === this.activePair &&
+      ((c.state >= 2 && (c.reps ?? 0) - (c.lapses ?? 0) >= 3) || c.buried === 1)
     ).length;
   }
   async getReviewedWordCount(level: string) {
@@ -406,7 +423,8 @@ class MemoryDB implements DB {
     const today = localDateString();
     const first = new Map<number, string>();
     for (const a of this.attempts) {
-      if (a.type !== 'word') continue;
+      // FB129: per-pair, so a day on one course does not exhaust the other's budget.
+      if (a.type !== 'word' || (a.pair ?? this.activePair) !== this.activePair) continue;
       const prev = first.get(a.word_id);
       if (!prev || a.timestamp < prev) first.set(a.word_id, a.timestamp);
     }
