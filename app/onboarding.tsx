@@ -51,6 +51,11 @@ export default function OnboardingScreen() {
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <View style={styles.content}>
+        {/* FB121: the very first screen of the app greets the newcomer, in the
+            phone's own language (initI18n picks the device locale). */}
+        {step === 'source' && (
+          <Text style={[styles.welcome, { color: colors.tint }]}>{s.onboarding.welcome}</Text>
+        )}
         <Text style={[styles.title, { color: colors.text }]}>
           {step === 'source' ? s.onboarding.whatLanguage : s.onboarding.whatLearn}
         </Text>
@@ -96,6 +101,13 @@ const styles = StyleSheet.create({
   },
   content: {
     alignItems: 'center',
+  },
+  welcome: {
+    fontSize: 16,
+    fontWeight: '600',
+    textAlign: 'center',
+    marginBottom: 20,
+    paddingHorizontal: 8,
   },
   title: {
     fontSize: 26,
