@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
-import { StyleSheet, Text, View, Pressable, ActivityIndicator, TextInput, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Pressable, ActivityIndicator, TextInput, KeyboardAvoidingView, Platform, ScrollView, Image } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
 
@@ -20,6 +20,7 @@ import { capSentencesToCadence } from '@/lib/sentenceMix';
 import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
 import { cardIcon } from '@/lib/cardIcons';
+import { cardImage } from '@/lib/cardImages';
 import FeedbackButton from '@/components/FeedbackModal';
 import * as Speech from 'expo-speech';
 import ExamMode from '@/components/ExamMode';
@@ -988,6 +989,11 @@ export default function LearnScreen() {
   // shown on both sides since it belongs to the meaning, not to one language.
   const icon = cardIcon(current.word as any, direction[1]);
   const iconBadge = icon ? <Text style={styles.cardIcon}>{icon}</Text> : null;
+  // FB124/FB127: a photo for words a gloss cannot picture ("the tapa").
+  const photo = cardImage(current.word as any, direction[1]);
+  const photoBlock = photo ? (
+    <Image source={photo} style={styles.cardPhoto} resizeMode="cover" accessible={false} />
+  ) : null;
   const noteButton = noteText ? (
     <Pressable onPress={() => setNoteOpen(o => !o)} style={styles.speakBtn}>
       <Text style={styles.speakIcon}>ℹ️</Text>
@@ -1166,6 +1172,7 @@ export default function LearnScreen() {
             </Pressable>
             {noteButton}
           </View>
+          {photoBlock}
           {noteBlock}
 
           {/* FB5: inline action button — with softwareKeyboardLayoutMode "pan"
@@ -1318,6 +1325,7 @@ export default function LearnScreen() {
           </Pressable>
           {noteButton}
         </View>
+        {photoBlock}
         {noteBlock}
 
         {revealed ? (
@@ -1563,6 +1571,13 @@ const styles = StyleSheet.create({
   },
   cardIcon: {
     fontSize: 30,
+  },
+  // FB124/FB127: bundled photo for words a gloss cannot picture.
+  cardPhoto: {
+    width: '100%',
+    height: 160,
+    borderRadius: 12,
+    marginBottom: 12,
   },
   frontRow: {
     flexDirection: 'row',
