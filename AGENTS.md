@@ -1504,6 +1504,286 @@ Megvalósítás:
 
 ---
 
+# 📋 Feedback, 2026-08-08/13 forduló (v3.0.11 telefon-teszt, A1 en→es)
+
+Új sorok a `Kimacha Feedback` sheetből (FB108 utáni 8 sor, 08-08 23:11 → 08-13 07:39).
+Triage 2026-08-13 (Opus). Idézetek a user eredeti megfogalmazásában, ne tömörítsd.
+**MIND KÉSZ 2026-08-13**: tsc 0, jest 168/168 (154→168: +12 wordPhase, +7 budget),
+audit-corpus P1=0/P2=0, lint 18 = alapvonal.
+
+## ✅ FB109 [P1 bug], Eltűnt a gépelős szó-kártya, KÉSZ (`lib/wordPhase.ts`, `index.tsx`)
+Idézet (08-08 23:11, `word:taller than`): „most nem volt a leírás rész ez véletlen? nem
+volt a begepelos rész miért."
+Ugyanaz a tő, mint FB114 („most a gépelésből csak mondat van"). Gyökérok: a fázis-létra
+(0 = flashcard L→N, 1 = flashcard N→L, 2 = gépelés) a kártya `reps - lapses`-éből jön, de
+az FSRS a második Good után NAPOKRA ütemezi a szót, tehát a 2. fázis (gépelés) csak egy
+későbbi napon jött volna elő, addig a gépelős szlot mindig mondatoké volt.
+Fix: a létrát a session BELÜL járjuk végig. `handleWordGood` (új) a szó-flashcard Good-ját
+maga írja (`gradeBackground`, FB60-minta háttér-írás), és a szót a sor VÉGÉRE teszi a
+KÖVETKEZŐ fázisában (`requeueAtPhase`), tehát: flashcard L→N ✓ → flashcard N→L ✓ →
+gépelés. A szó csak akkor lép ki a sessionből, ha le is írta helyesen. A fázis-szabály
+kiemelve tiszta modulba (`lib/wordPhase.ts`: `wordPhase` + `phaseShape`), amit a
+`buildQueue` és a promóció is ugyanúgy használ. Teszt: 9 eset.
+
+## ✅ FB110 [P2 UI bug], Az ℹ️ kilóg a kártya széléről, KÉSZ (`index.tsx` styles)
+Idézet (08-09 09:15, `sentence:Vuestro hijo es muy inteligente.`): „itt az i betű az
+informatcionak kicsit bele van logv a kép szélére old meg ezt"
+A `frontRow` egy sorba tette az ikont, a 32 pt-os mondat-szöveget, a 🔊-t és az ℹ️-t, de a
+szöveg nem zsugorodott, így hosszú mondatnál a két gomb kicsúszott a kártyából.
+Fix: `frontText` `flexShrink: 1`, a `frontRow` pedig `flexWrap: 'wrap'` +
+`justifyContent: 'center'` + `maxWidth: '100%'`, tehát a szöveg ad helyet, a gombok bent
+maradnak (és nagyon hosszú mondatnál a gombok a következő sorba kerülnek).
+
+## ✅ FB111 [kérdés + logika], „Egy szó akkor számít megtanultnak ha el tudjuk írni helyesen", KÉSZ (mindkét db)
+Idézet (08-09 10:27, `word:wide / broad`): „Egy szó akkor számít megtanultnak ha el tudjuk
+írni helyesen. esdig is így ment? vagy hogy van?"
+**Válasz: eddig NEM így ment.** A „megtanult" (mastered %) eddig az FSRS `state >= 2`
+(Review) volt, amit a két flashcard-lépés is elér, tehát a szó megtanultnak számított
+azelőtt, hogy egyszer is le kellett volna írni. Most a mastery-hez a gépelős lépés is
+kell: `state >= 2 ÉS reps - lapses >= 3` (flashcard + fordított flashcard + helyes
+leírás), az „I know this" (buried) továbbra is önmagában elég. Emiatt a mastered % egyszer
+visszaesik a régi haladáson, de mostantól azt mutatja, amit a user ért alatta. A vizsga-
+kapu (80% mastered) ugyanezt a szigorúbb számot használja.
+
+## ✅ FB112 [P1 bug], Beragadt / ugráló új-szó számláló, KÉSZ (`lib/newWordBudget.ts`, `index.tsx`)
+Idézet (08-09 22:13, `word:the olive oil`): „mintha bugos lenne a számláló hogy mennyi új
+szó van. Mintha 2 szó be lenne ragadva ezt nézd át a kódba, hogy . mert, és jó lenne az is
+ha ezt le tesztelnéd, hogy az legyen aminek lennie kell"
+
+## ✅ FB113 [P1 bug], „9 ből hirtelen 0 lett", KÉSZ (ugyanaz a fix)
+Idézet (08-09 22:20, `word:empty`): „hát igen bugos a számláló 9 ből hirtelen 0 lett nem
+igy egyesével fogyott. hanem csak úgy ugrott egyet"
+
+## ✅ FB114 [P1 rework], „megint 5 ből egy lett", + eltűnt gépelős szavak, KÉSZ (ugyanaz a fix + FB109)
+Idézet (08-09 22:27, `word:credit card`): „megint 5 ből egy lett. ezt át kell dolgozni. Ez
+egy nagy lépés lesz mert nem úgy. ennek a dolgok ahogy akarom. ez a számolás se jó, meg
+ahogy a szavak feljönnek, pl most elmaradtak a gépelős szavak nem ért miért. most a
+gépelésből csak mondat van"
+Gyökérok (FB112-114 egy hiba): az FB103 két plafont EGY számba vont
+(`min(limit+bonus-startedToday, limit+bonus-unlearned)`), és ezt mutatta a `🌱` badge is.
+Az `unlearned` (félig tanult szavak) viszont (a) nem naponta nullázódik, (b) egy sessionben
+többel is nő, tehát a badge nem egyesével fogyott, hanem ugrott (9→0, 5→1), és a napi
+keret sosem érte el a Settings-beli limitet.
+Fix, a két szabály szétválasztva:
+- `newWordsLeftToday({limit, bonus, startedToday})` = a LÁTHATÓ napi visszaszámláló, ez a
+  `🌱` badge, monoton, és a `spendNewWordBadge` minden vadonatúj szó első válaszánál
+  optimista `-1`-et lép (mint a streak), tehát tényleg egyesével fogy, nem a következő
+  sor-újraépítésnél ugrik;
+- `newWordIntake(...)` = mennyi új szót vesz fel a SOR: a napi maradék, kivéve ha a félig
+  tanult készlet elérte a `2 × (limit + bonus)` WIP-plafont, akkor 0 (ez az FB103
+  torlódás-gát, csak már nem hazudik a badge-en). Ha a gát fog, a badge `🌱⏸`-t mutat,
+  hogy látszódjon: van napi keret, de először a félbehagyott szavakat kell lezárni.
+A Done-képernyő „+5 új szó" gombja mostantól akkor is megjelenik, ha a gát fog (nem csak
+elfogyott napi keretnél), különben a tanuló zsákutcába jutna: a bónusz a WIP-plafont is
+emeli (`2 × (limit + bonus)`).
+Teszt: 13 eset (`capNewWords.test.ts`).
+
+## ✅ FB115 [P2 beállítás], „egyszerre mindig 5 szót ad be és kicsi kevés", KÉSZ (ugyanaz a fix)
+Idézet (08-10 08:26, `settings-tab`): „egyszerre mindig 5 szót ad be és kicsi kevés azt
+szeretném állitani"
+Ez az FB112-114 hiba tünete volt: a beállítás LÉTEZIK (Settings → „Napi új szó", 5–100,
+5-ös lépés, alap 10), csak az FB103 WIP-kivonás lenyomta a tényleges felvételt 5-re
+attól függetlenül, mit állított be. A gát szétválasztása után az intake a beállított
+limitet követi, tehát a csúszka mostantól tényleg hat.
+
+## ✅ FB116 [P2 feature], Mondja ki a szót/mondatot mindkét nyelven, üres beküldésnél is, KÉSZ (`index.tsx`)
+Idézet (08-13 07:39, `word:round`): „csináld meg úgy az appot hogy ha bejön egy szó akkor
+kimondja angolul is. vagy ha sapnyolul jön akkor is komondja, meg a mondatokat is. Meg azt
+is írd bele, hogy ha nem irok be semmit de nyomok a következőre akkor is mondja ki a szót
+és a mondatot"
+Eddig az auto-felolvasás csak akkor szólalt meg, ha a kártya eleje épp a TANULT nyelv volt
+(`frontLang === learned`), és a reveal is csak a tanult nyelvű oldalt mondta ki.
+Fix három ponton:
+- auto-felolvasás: a kártya eleje mindig elhangzik, azon a nyelven amin látszik (angol
+  oldal is), szóra és mondatra egyaránt;
+- tap-to-order (easy) kártya: itt a tanult nyelvű mondat maga a MEGOLDÁS, ezért nem azt,
+  hanem a natív nyelvű felszólító mondatot mondja ki (spoiler-mentes, de mondatot is
+  hallgat);
+- flashcard reveal: a hátlap is mindig elhangzik, nem csak ha tanult nyelvű;
+- üres beküldés (skip): `speakSkippedAnswer` kimondja a helyes szót ÉS a hozzá tartozó
+  mondatot a tanult nyelven. Ez az FB43 „a skip maradjon csendben" szabály szándékos
+  visszavonása, a user explicit kérése.
+
+## ✅ FB117 [P1 bug], A topic-szétválasztás elszállt a sor újratöltésénél, KÉSZ (`index.tsx`, v3.0.14)
+Idézet (08-13 chat, v3.0.13 telefon-teszt): „de ezt feltettem, hmm érdekes, nem látom ezt a
+topicoc alapján szét választott dolgot miért?"
+A Témák (tree) tab jól működik (A1.1–A1.7 sávok, 49 csempe), a hiba a tanulós oldalon volt:
+a `loadCards` a kártyákat helyesen szűkíti (aktív topic szavai + a többi feloldott topic
+MÁR ELKEZDETT szavai = ismétlések), de a sor kifogyásakor futó `rebuildQueueAtEnd` az
+ÖSSZES feloldott topic ÖSSZES szavából töltött újra. Tehát a topic-szeparáció csak az első
+sorra élt, utána más topicok vadonatúj szavai is bejöttek, miközben a fejléc továbbra is
+egy topicot mutatott.
+Fix: a refill pontosan ugyanazt a szűkítést használja, mint a `loadCards` (`scopedWords`),
+és a `ensureCard` is csak erre a körre fut.
+
+## Elfogadási kritérium (FB109–FB116 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **168/168** ✅ (154→168: +12 wordPhase,
+  +7 új-szó-keret).
+- `node scripts/audit-corpus.mjs` → P1=0, P2=0 ✅.
+- `npx expo lint`: 18 probléma (8 error, 10 warning) = a HEAD-alapvonal ✅.
+- ⏳ Eszköz-verify a következő buildben: jön-e gépelős SZÓ-kártya ugyanabban a sessionben
+  (2 Good után), `🌱` badge egyesével fogy és `⏸`-t mutat torlódásnál, a Settings-beli napi
+  limit tényleg hat, hosszú mondatnál az ℹ️ bent van, minden kártya-eleje elhangzik
+  (angol is), üres beküldésnél a szó + mondat elhangzik, és a mastered % a szigorúbb
+  (leírás-alapú) szabály szerint áll.
+
+---
+
+# 📋 Feedback, 2026-08-14 forduló (v3.0.11 telefon-teszt, A1 en→es + ELSŐ es→hu teszt)
+
+Új sorok a `Kimacha Feedback` sheetből (FB117 utáni 13 sor, 08-14 09:17 → 21:42). Triage
+2026-08-15 (Opus). A forduló végén a user ELŐSZÖR váltott át a spanyol→magyar párra, és
+ott azonnal falba futott (FB129/FB130), ezért az a két jegy ment elsőként.
+Idézetek a user eredeti megfogalmazásában, ne tömörítsd.
+**MIND KÉSZ 2026-08-15**, kivéve FB127 fele (lásd ott): tsc 0, jest 170/170 (168→170:
++2 pairBudget), audit-corpus P1=0/P2=0, audit-corpus-hu P1=0 + exam P1=0 (most már A1-re
+is), audit-corpus-en + validate-en-track OK, lint 18 = alapvonal.
+
+## ✅ FB129 + FB130 [P0 BUG], Az es→hu kurzust nem lehetett elkezdeni, KÉSZ (`b887c02`)
+Idézetek (08-14, A0, es→hu, `done`):
+- 21:42:12: „Nem tudom elkezdeni a szavakat tanulni spanyol rol magyarra"
+- 21:42:43: „A0 resz bugos nem kezdi el"
+Gyökérok: a `card_attempts` táblának NINCS pair oszlopa, ezért a `getNewWordsToday()`
+minden nyelvpárt EGYBE számolt (ez korábban szándékos volt, „napi terhelés, nem pár
+szerinti"). A user aznap végigtolta az en→es napi új-szó keretét, így az újonnan
+megnyitott es→hu párnál `startedToday >= limit` → `newWordIntake = 0` → a `capNewWords`
+az ÖSSZES új szót kidobta (friss páron minden kártya új), utána a `capSentencesToCadence`
+a mondatokat is (0 szóhoz 0 mondat jár) → üres sor → azonnal a Done-képernyő.
+Fix: `card_attempts.pair` oszlop (ALTER-migráció, a régi sorok a `cards` táblából kapják
+a párjukat, kétes esetben az aktívat), a `recordAttempt` mostantól kiírja, és a
+`getNewWordsToday` az aktív párra szűr. MINDKÉT db-implementáció + a web IDatabase
+interfészéből hiányzó `getUnlearnedWordCount` is bekerült.
+Teszt: `lib/__tests__/pairBudget.test.ts` (a pár-váltás után van keret, és a saját páron
+számol).
+
+## ✅ FB128 [P2 UI], Spanyol nyelven kilógnak a szavak a Settingsben, KÉSZ (`b887c02`)
+Idézet (08-14 21:40, A0 es→hu, settings-tab): „Spanzol nzelven kilognak a szavak fix this"
+A sorok `space-between` flex-sorok, a címke `Text`-je pedig RN-ben alapból NEM zsugorodik,
+így a hosszú spanyol feliratok („Objetivo semanal de estudio") kitolták a kapcsolót /
+steppert a kártyából. Fix: a címke `flex: 1` + jobb margó (tördel), a stepper
+`flexShrink: 0` (méretét tartja).
+
+## ✅ FB118 [P2 UX], Mondja ki a csempét, amit felteszek, KÉSZ (`08c3ba8`)
+Idézet (08-14 09:17, `easy:The traffic light is red.`): „amikor itt rakattintok a szóra,
+és amikor beteszi felulre akkor ki is entse azt a szót amit betettem, hogy a kiejtést
+halljam"
+Fix: `EasySentenceCard` új `speechLocale` propja (a tanult nyelv TTS-locale-ja), és a
+csempe felhelyezésekor CSAK az az egy szó hangzik el (`Speech.stop()` + `speak`), tehát a
+megoldás egésze nem szivárog ki.
+
+## ✅ FB123 [P2 UI], A felső „Learn" sáv felesleges, KÉSZ (`08c3ba8`)
+Idézet (08-14 21:10:57, `easy:The lorry carries many things.`): „meg a fent Learn rész az
+felesleges azt vedd ki van ott egy centi ami nem kell oda."
+Fix: `headerShown: false` a Learn (index) fülre a tab-navigátorban. A képernyő saját
+fejléc-sort rajzol (szint-badge, 🌱, 🔥), a navigátor címe csak helyet vitt el. A többi
+fül fejléce változatlan.
+
+## ✅ FB122 [P2 akadálymentesség], Nagy rendszer-betűnél összelóg a felső sáv, KÉSZ (`08c3ba8`)
+Idézet (08-14 21:10:10): „ha valaki sokkal nagyobb betűkkel használja a telefonját mint én
+akkor neki össze lóg ez a felső progress bár. csináld meg hogy ne lógjon ossze"
+A fejléc-badge-sor abszolút pozíciójú a kártya felett, a ProgressMeter felirat-sora pedig
+két, nem zsugorodó szövegből áll. Fix: `maxFontSizeMultiplier` a badge-eken (1.3) és a
+meter feliratain (1.4), `numberOfLines={1}` + `flexShrink` a feliratokon, tehát a sor
+magassága korlátos marad, a szöveg pedig nem lóg a számláló alá.
+
+## ✅ FB119 + FB125 [P2 adat + konvenció], „He/She" helyett EGY személy, KÉSZ (`072d778`)
+Idézetek (08-14):
+- 21:00 (`word:He/She is an intelligent person.`): „He/She ne legyen benne válasz egyet és
+  az szerint fordítsd le nem kell ez a vagy. csak egyszer ilyen egyszer olyan az is jó"
+- 21:17: „most ide kell egy konvenció hogy most kiirjuk a spanyolba az él vagy ne írjuk ki
+  az elt vagy ha he/She van akkor ne írjuk ki?"
+**Konvenció (ez a válasz a kérdésre):** (1) az ANGOL oldal mindig EGY személyt nevez meg,
+sose `he/she`, és azt, amelyiket a kártya saját példamondata használ (így kártyánként
+váltakozik, ahogy a user kérte); (2) a SPANYOL elhagyja az alanyi névmást, mert az
+igevégződés már megmondja az alanyt (`Es una persona inteligente.`), és az `él/ella` csak
+nyomatékosításnál vagy szembeállításnál kerül ki (`Él es alto, ella es baja`).
+Fix: 16 kártya `en`/`sentence_en` mezője (a1 4 db, a2 12 db), plusz a konvenció kézi ℹ️
+jegyzetként 4 nyelven az a1 1108 kártyán. A spanyol nyelvtani kártyák `es` oldala
+(`él/ella habla`) SZÁNDÉKOSAN marad páros: ott az azonos alak maga a tananyag.
+
+## ✅ FB126 [P2 adat], „There is a cat in the street", hímnem vagy nőnem?, KÉSZ (`072d778`)
+Idézet (08-14 21:18): „legyen úgy, hogy ha ez a mondat akkor legyen oda írva hogy male
+vagy female és akkor annak megfelelően legyen a spanyol mondat is"
+Kártya a1 1124. Az angol `cat` nem árulja el a nemet, a spanyol `un gato` igen, ezért a
+prompt mostantól kiírja: `There is a cat (male) in the street.` + kézi ℹ️ jegyzet 4
+nyelven a gato/gata (perro/perra, niño/niña) párokról.
+
+## ✅ FB120 [P2 adat], A camión egyszer lorry, egyszer truck, KÉSZ (`072d778`)
+Idézet (08-14 21:07, `easy:The lorry carries many things.`): „camion egyszer lorry nak van
+fordítva egyszer meg truck nak"
+Kártya a1 1699: a szó-oldal `the truck`, a mondat viszont `The lorry…` volt. A mondat
+igazodik a kártyához (`The truck carries many things.`), az a2 2237 amúgy is truck.
+
+## ✅ FB121 [P2 feature], Üdvözlő szöveg az első indításnál, KÉSZ (`b818b1b`)
+Idézet (08-14 21:09): „az appot ha 1. nek nyitod meg életedve akkor az az oldal jön fel
+ahol ki tudod választani, hogy milyen nyelven beszélsz és itt legyen egy első üdvözlő
+szöveg ami írja, hogy köszönöm, hogy használod az appot hálás vagyok érte, mindig olyan
+nyelven mint amilyen nyelven van a telefon"
+Fix: az onboarding ELSŐ lépése (anyanyelv-választó) kapott egy köszönő sort. A telefon
+nyelvén megy: az `initI18n()` a `expo-localization` eszköz-locale-jából állítja be a UI
+nyelvet, még az onboarding előtt. i18n ×4 (`onboarding.welcome`).
+
+## ✅ FB124 [P2 feature], Kép a „tapa" szóhoz, KÉSZ (`9112eae`)
+Idézet (08-14 21:12, `word:the tapa`): „erről a szóról legyen egy kép, szedhetsz a netről
+is és bele tehetsz valami jó képet ami leírja, hogy ez mi"
+Fix: `lib/cardImages.ts` (kézzel karbantartott lemma→kép map, az FB86 ikon-modul
+mintájára) + `assets/words/tapa.jpg`, egy CC0 fotó valódi tapas-asztalról (forrás a modul
+fejlécében). A kép a kártya-front szó-sora ALATT jelenik meg, mindkét nézetben és mindkét
+irányban, mert a jelentéshez tartozik.
+
+## 📌 FB127 [P2 feature], Kép a „tálca" (bandeja) szóhoz, RÉSZBEN, jegyzet KÉSZ, kép NINCS
+Idézet (08-14 21:19, `word:the tray`): „ehez is legyen kép"
+A mechanizmus kész (FB124), de a szabadon felhasználható (CC0 / közkincs) találatok között
+nem volt olyan tálca-fotó, ami egyértelműen tanítaná a szót (régi műtárgy-tálcák, iskolai
+menzafotók). Ezért az a1 1725 kártya egyelőre kézi ℹ️ jegyzetet kapott 4 nyelven arról,
+mi a bandeja (és mi nem: plato, mesa). **Teendő:** ha lesz jó kép, elég bemásolni az
+`assets/words/` mappába és felvenni a `cardImages.ts` mapbe, kódot nem kell írni.
+
+## Elfogadási kritérium (FB118–FB130 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **170/170** ✅ (168→170: +2 pairBudget).
+- `node scripts/audit-corpus.mjs` → P1=0, P2=0 ✅.
+- `node scripts/audit-corpus-hu.mjs` → P1=0, exam P1=0 ✅ (A0 **és** A1).
+- `node scripts/audit-corpus-en.mjs` + `validate-en-track.mjs` → OK ✅.
+- `npx expo lint`: 18 probléma (8 error, 10 warning) = a HEAD-alapvonal ✅.
+- ⏳ Eszköz-verify a következő buildben: es→hu pár indítása A0-n (jön-e kártya), spanyol
+  Settings feliratok bent maradnak-e, csempe-koppintás kimondja-e a szót, eltűnt-e a
+  „Learn" fejléc, tapa-kép, és hogy az en→es napi keret nem fogyasztja-e a másik párét.
+
+---
+
+# 🇭🇺 Hungarian-target track (es→hu kurzus), A1 KÉSZ (2026-08-15)
+
+A magyar mint CÉLNYELV ág (`data/words/hu/`, `data/topics/hu/`, `data/sublevels/hu/`,
+`data/exams/hu/`) eddig csak A0-t tudott (100 turista-kártya, 10 topic), az A1 pedig egy
+6 kártyás csonk volt (`letige`, id 6001-6006, „NE bántsd"), tehát a kurzust a turista
+szint után nem lehetett folytatni. Az A1 most **148 kártya / 15 topic / 3 al-szint**
+(a csonk + 142 új kártya, id **6200-6341**; az A0 a 6100-6199 sávot használja).
+
+| Al-szint | Topicok |
+| --- | --- |
+| A1.1 Első Lépések | letige, nevmasok, csalad, tobbes_szam, igeragozas, etel_ital |
+| A1.2 Mindennapok | targyeset, lakas, varos, helyhatarozok, iranyok, napi_rutin, szamok_ido |
+| A1.3 Emberek és Tulajdonságok | melleknevek, munka_iskola |
+
+A nyelvtani topicok MAGYAR nyelvtant tanítanak (nem a spanyol fát másolják): többes szám
+`-k`, tárgyeset `-t`, jelen idő, hol-eset (`-ban/-ben`, `-on/-en/-ön`), hova-eset
+(`-ba/-be`, `-ra/-re`, `-hoz/-hez/-höz`).
+
+**Korpusz-őr:** `scripts/audit-corpus-hu.mjs` mostantól A0 **és** A1 (`LEVELS`), P1=0.
+Két javítás kellett hozzá:
+- a stemmer 2 betűs tövet is elfogad EGY betűs rag után (`jó`→`jók`, `nő`→`nők`), eddig a
+  3 betűs padló miatt a rövid, magánhangzóra végződő címszavak sosem redukálódtak;
+- a vizsga-kérdéseket a KITÖLTÖTT mondaton nézi (`az asztal____` + `on` → `az asztalon`),
+  mert egy toldalék-kérdés két töredékként értelmezhetetlen.
+Glue-lista: `sokat`, `keveset` (a már bent lévő `sok`/`kevés` tárgyesete).
+9 A1 vizsga-kérdés át lett írva a tanított szókincsre (a régiek `mérnök`, `utaznak`,
+`kulcsomat`, `macskám`, `almát` stb. sosem tanított szavakat kértek).
+
+**Hátra:** A1 bővítés az XLex-sávig (~1200 kumulált; most 248 = A0 100 + A1 148),
+A2+ hu tartalom, hu topic-ikonok finomítása, és eszköz-verify a kurzuson.
+
+---
+
 # Aktuális feladatok (iter1.2)
 
 Kimacha nyelvtanuló app (Expo/React Native).
