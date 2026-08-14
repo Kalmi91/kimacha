@@ -1,3 +1,167 @@
 [
-  {"id": "letige", "order": 1, "subLevel": "A1.1", "type": "grammar", "icon": "🪪", "name_hu": "A létige (van)", "name_en": "The verb 'to be' (van)", "name_es": "El verbo 'ser/estar' (van)", "name_de": "Das Verb 'sein' (van)"}
+ {
+  "id": "letige",
+  "order": 1,
+  "subLevel": "A1.1",
+  "type": "grammar",
+  "icon": "🪪",
+  "name_hu": "A létige (van)",
+  "name_en": "The verb 'to be' (van)",
+  "name_es": "El verbo 'ser/estar' (van)",
+  "name_de": "Das Verb 'sein' (van)"
+ },
+ {
+  "id": "nevmasok",
+  "order": 2,
+  "subLevel": "A1.1",
+  "type": "grammar",
+  "icon": "👥",
+  "name_hu": "Névmások",
+  "name_en": "Pronouns",
+  "name_es": "Pronombres",
+  "name_de": "Pronomen"
+ },
+ {
+  "id": "csalad",
+  "order": 3,
+  "subLevel": "A1.1",
+  "type": "vocab",
+  "icon": "👨‍👩‍👧",
+  "name_hu": "Család",
+  "name_en": "Family",
+  "name_es": "Familia",
+  "name_de": "Familie"
+ },
+ {
+  "id": "tobbes_szam",
+  "order": 4,
+  "subLevel": "A1.1",
+  "type": "grammar",
+  "icon": "🔠",
+  "name_hu": "Többes szám (-k)",
+  "name_en": "Plural (-k)",
+  "name_es": "Plural (-k)",
+  "name_de": "Plural (-k)"
+ },
+ {
+  "id": "igeragozas",
+  "order": 5,
+  "subLevel": "A1.1",
+  "type": "grammar",
+  "icon": "🗣️",
+  "name_hu": "Jelen idő",
+  "name_en": "Present tense",
+  "name_es": "Presente",
+  "name_de": "Präsens"
+ },
+ {
+  "id": "etel_ital",
+  "order": 6,
+  "subLevel": "A1.1",
+  "type": "vocab",
+  "icon": "🥘",
+  "name_hu": "Étel és ital",
+  "name_en": "Food & drink",
+  "name_es": "Comida y bebida",
+  "name_de": "Essen und Trinken"
+ },
+ {
+  "id": "targyeset",
+  "order": 7,
+  "subLevel": "A1.2",
+  "type": "grammar",
+  "icon": "🎯",
+  "name_hu": "Tárgyeset (-t)",
+  "name_en": "Accusative (-t)",
+  "name_es": "Acusativo (-t)",
+  "name_de": "Akkusativ (-t)"
+ },
+ {
+  "id": "lakas",
+  "order": 8,
+  "subLevel": "A1.2",
+  "type": "vocab",
+  "icon": "🏠",
+  "name_hu": "Otthon",
+  "name_en": "Home",
+  "name_es": "Casa",
+  "name_de": "Zuhause"
+ },
+ {
+  "id": "varos",
+  "order": 9,
+  "subLevel": "A1.2",
+  "type": "vocab",
+  "icon": "🏙️",
+  "name_hu": "Város és közlekedés",
+  "name_en": "City & transport",
+  "name_es": "Ciudad y transporte",
+  "name_de": "Stadt und Verkehr"
+ },
+ {
+  "id": "helyhatarozok",
+  "order": 10,
+  "subLevel": "A1.2",
+  "type": "grammar",
+  "icon": "📍",
+  "name_hu": "Hol? (-ban, -on)",
+  "name_en": "Where? (-ban, -on)",
+  "name_es": "¿Dónde? (-ban, -on)",
+  "name_de": "Wo? (-ban, -on)"
+ },
+ {
+  "id": "iranyok",
+  "order": 11,
+  "subLevel": "A1.2",
+  "type": "grammar",
+  "icon": "🧭",
+  "name_hu": "Hova? (-ba, -ra, -hoz)",
+  "name_en": "Where to? (-ba, -ra, -hoz)",
+  "name_es": "¿Adónde? (-ba, -ra, -hoz)",
+  "name_de": "Wohin? (-ba, -ra, -hoz)"
+ },
+ {
+  "id": "napi_rutin",
+  "order": 12,
+  "subLevel": "A1.2",
+  "type": "vocab",
+  "icon": "🌅",
+  "name_hu": "Napi rutin",
+  "name_en": "Daily routine",
+  "name_es": "Rutina diaria",
+  "name_de": "Tagesablauf"
+ },
+ {
+  "id": "szamok_ido",
+  "order": 13,
+  "subLevel": "A1.2",
+  "type": "vocab",
+  "icon": "⏰",
+  "name_hu": "Számok és idő",
+  "name_en": "Numbers & time",
+  "name_es": "Números y tiempo",
+  "name_de": "Zahlen und Zeit"
+ },
+ {
+  "id": "melleknevek",
+  "order": 14,
+  "subLevel": "A1.3",
+  "type": "vocab",
+  "icon": "✨",
+  "name_hu": "Melléknevek",
+  "name_en": "Adjectives",
+  "name_es": "Adjetivos",
+  "name_de": "Adjektive"
+ },
+ {
+  "id": "munka_iskola",
+  "order": 15,
+  "subLevel": "A1.3",
+  "type": "vocab",
+  "icon": "💼",
+  "name_hu": "Munka és iskola",
+  "name_en": "Work & school",
+  "name_es": "Trabajo y escuela",
+  "name_de": "Arbeit und Schule"
+ }
 ]
