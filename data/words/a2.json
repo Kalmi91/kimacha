@@ -66,7 +66,7 @@
     "sentence_en": "My neighbor is nice.",
     "de": "Nachbar",
     "sentence_de": "Mein Nachbar ist nett.",
-    "topic": "hogar_entorno",
+    "topic": "hogar_entorno_ubicacion_a2",
     "topicOrder": 1
   },
   {
@@ -80,8 +80,8 @@
     "sentence_en": "I like this song.",
     "de": "Lied",
     "sentence_de": "Ich mag dieses Lied.",
-    "topic": "ocio_cultura",
-    "topicOrder": 2
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 1
   },
   {
     "id": 216,
@@ -94,8 +94,8 @@
     "sentence_en": "I invite you to dinner.",
     "de": "einladen",
     "sentence_de": "Ich lade dich zum Abendessen ein.",
-    "topic": "relaciones",
-    "topicOrder": 1
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 3
   },
   {
     "id": 217,
@@ -108,7 +108,7 @@
     "sentence_en": "It's a gift for you.",
     "de": "Geschenk",
     "sentence_de": "Das ist ein Geschenk für dich.",
-    "topic": "relaciones",
+    "topic": "fiesta_hospitalidad_a2",
     "topicOrder": 2
   },
   {
@@ -122,8 +122,8 @@
     "sentence_en": "Let's go to the party.",
     "de": "Party / Feier",
     "sentence_de": "Lass uns zur Party gehen.",
-    "topic": "relaciones",
-    "topicOrder": 3
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 1
   },
   {
     "id": 219,
@@ -136,8 +136,8 @@
     "sentence_en": "Happy birthday!",
     "de": "Geburtstag",
     "sentence_de": "Alles Gute zum Geburtstag!",
-    "topic": "yo_familia",
-    "topicOrder": 1
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 4
   },
   {
     "id": 223,
@@ -150,8 +150,8 @@
     "sentence_en": "The river is long.",
     "de": "Fluss",
     "sentence_de": "Der Fluss ist lang.",
-    "topic": "naturaleza",
-    "topicOrder": 2
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 1
   },
   {
     "id": 226,
@@ -164,8 +164,8 @@
     "sentence_en": "Look at the stars.",
     "de": "Stern",
     "sentence_de": "Schau dir die Sterne an.",
-    "topic": "naturaleza",
-    "topicOrder": 5
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 2
   },
   {
     "id": 227,
@@ -178,8 +178,8 @@
     "sentence_en": "The moon is big today.",
     "de": "Mond",
     "sentence_de": "Der Mond ist heute groß.",
-    "topic": "naturaleza",
-    "topicOrder": 6
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 3
   },
   {
     "id": 228,
@@ -192,8 +192,8 @@
     "sentence_en": "There are many clouds.",
     "de": "Wolke",
     "sentence_de": "Es gibt viele Wolken.",
-    "topic": "naturaleza",
-    "topicOrder": 7
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 4
   },
   {
     "id": 230,
@@ -206,8 +206,8 @@
     "sentence_en": "I like spring.",
     "de": "Frühling",
     "sentence_de": "Ich mag den Frühling.",
-    "topic": "naturaleza",
-    "topicOrder": 9
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 5
   },
   {
     "id": 232,
@@ -220,8 +220,8 @@
     "sentence_en": "Autumn is beautiful.",
     "de": "Herbst",
     "sentence_de": "Der Herbst ist schön.",
-    "topic": "naturaleza",
-    "topicOrder": 11
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 6
   },
   {
     "id": 234,
@@ -234,7 +234,7 @@
     "sentence_en": "Can you explain?",
     "de": "erklären",
     "sentence_de": "Kannst du es erklären?",
-    "topic": "comunicacion",
+    "topic": "comunicacion_hablar_a2",
     "topicOrder": 1
   },
   {
@@ -248,7 +248,7 @@
     "sentence_en": "Can I ask something?",
     "de": "fragen",
     "sentence_de": "Kann ich etwas fragen?",
-    "topic": "comunicacion",
+    "topic": "comunicacion_hablar_a2",
     "topicOrder": 2
   },
   {
@@ -262,7 +262,7 @@
     "sentence_en": "I can't answer.",
     "de": "antworten",
     "sentence_de": "Ich kann nicht antworten.",
-    "topic": "comunicacion",
+    "topic": "comunicacion_hablar_a2",
     "topicOrder": 3
   },
   {
@@ -276,8 +276,8 @@
     "sentence_en": "I don't want to forget.",
     "de": "vergessen",
     "sentence_de": "Ich will nicht vergessen.",
-    "topic": "yo_familia",
-    "topicOrder": 2
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 3
   },
   {
     "id": 238,
@@ -290,8 +290,8 @@
     "sentence_en": "I can't remember.",
     "de": "sich erinnern",
     "sentence_de": "Ich kann mich nicht erinnern.",
-    "topic": "yo_familia",
-    "topicOrder": 3
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 2
   },
   {
     "id": 239,
@@ -304,7 +304,7 @@
     "sentence_en": "Can you help me?",
     "de": "helfen",
     "sentence_de": "Kannst du mir helfen?",
-    "topic": "relaciones",
+    "topic": "fiesta_hospitalidad_a2",
     "topicOrder": 4
   },
   {
@@ -318,7 +318,7 @@
     "sentence_en": "I want to change the subject.",
     "de": "ändern / wechseln",
     "sentence_de": "Ich will das Thema wechseln.",
-    "topic": "trabajo_dia",
+    "topic": "trabajo_dia_acciones_a2",
     "topicOrder": 1
   },
   {
@@ -332,7 +332,7 @@
     "sentence_en": "I want to try this.",
     "de": "versuchen / probieren",
     "sentence_de": "Ich will das probieren.",
-    "topic": "trabajo_dia",
+    "topic": "trabajo_dia_acciones_a2",
     "topicOrder": 2
   },
   {
@@ -346,8 +346,8 @@
     "sentence_en": "It's dangerous.",
     "de": "gefährlich",
     "sentence_de": "Es ist gefährlich.",
-    "topic": "hogar_entorno",
-    "topicOrder": 3
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 2
   },
   {
     "id": 245,
@@ -360,8 +360,8 @@
     "sentence_en": "I'm very busy.",
     "de": "beschäftigt",
     "sentence_de": "Ich bin sehr beschäftigt.",
-    "topic": "trabajo_dia",
-    "topicOrder": 3
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 1
   },
   {
     "id": 246,
@@ -374,8 +374,8 @@
     "sentence_en": "Are you free tomorrow?",
     "de": "frei",
     "sentence_de": "Bist du morgen frei?",
-    "topic": "trabajo_dia",
-    "topicOrder": 4
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 2
   },
   {
     "id": 248,
@@ -402,8 +402,8 @@
     "sentence_en": "I live on the third floor.",
     "de": "Stockwerk",
     "sentence_de": "Ich wohne im dritten Stock.",
-    "topic": "hogar_entorno",
-    "topicOrder": 6
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 1
   },
   {
     "id": 687,
@@ -416,8 +416,8 @@
     "sentence_en": "The elevator isn't working today.",
     "de": "Aufzug",
     "sentence_de": "Der Aufzug funktioniert heute nicht.",
-    "topic": "hogar_entorno",
-    "topicOrder": 8
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 2
   },
   {
     "id": 688,
@@ -430,8 +430,8 @@
     "sentence_en": "The pharmacy is on the corner.",
     "de": "Ecke",
     "sentence_de": "Die Apotheke ist an der Ecke.",
-    "topic": "hogar_entorno",
-    "topicOrder": 9
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 3
   },
   {
     "id": 692,
@@ -458,8 +458,8 @@
     "sentence_en": "My son has a fever.",
     "de": "Fieber",
     "sentence_de": "Mein Sohn hat Fieber.",
-    "topic": "salud_deporte",
-    "topicOrder": 2
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 1
   },
   {
     "id": 698,
@@ -472,8 +472,8 @@
     "sentence_en": "The doctor has given me a prescription.",
     "de": "Rezept",
     "sentence_de": "Der Arzt hat mir ein Rezept gegeben.",
-    "topic": "salud_deporte",
-    "topicOrder": 4
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 2
   },
   {
     "id": 704,
@@ -500,8 +500,8 @@
     "sentence_en": "He's given me good advice.",
     "de": "Ratschlag",
     "sentence_de": "Er hat mir einen guten Ratschlag gegeben.",
-    "topic": "relaciones",
-    "topicOrder": 5
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 14
   },
   {
     "id": 706,
@@ -514,8 +514,8 @@
     "sentence_en": "It's a very nice custom.",
     "de": "Brauch",
     "sentence_de": "Das ist ein sehr schöner Brauch.",
-    "topic": "yo_familia",
-    "topicOrder": 5
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 17
   },
   {
     "id": 707,
@@ -528,8 +528,8 @@
     "sentence_en": "I exercise three times a week.",
     "de": "Übung",
     "sentence_de": "Ich trainiere dreimal pro Woche.",
-    "topic": "salud_deporte",
-    "topicOrder": 5
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 1
   },
   {
     "id": 708,
@@ -542,8 +542,8 @@
     "sentence_en": "I'm very sleepy.",
     "de": "Schlaf",
     "sentence_de": "Ich bin sehr müde.",
-    "topic": "salud_deporte",
-    "topicOrder": 6
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 3
   },
   {
     "id": 709,
@@ -556,8 +556,8 @@
     "sentence_en": "How lucky you've been!",
     "de": "Glück",
     "sentence_de": "Was für ein Glück du gehabt hast!",
-    "topic": "yo_familia",
-    "topicOrder": 6
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 15
   },
   {
     "id": 710,
@@ -570,8 +570,8 @@
     "sentence_en": "There's no place to park.",
     "de": "Platz",
     "sentence_de": "Es gibt keinen Parkplatz.",
-    "topic": "hogar_entorno",
-    "topicOrder": 11
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 4
   },
   {
     "id": 3418,
@@ -584,8 +584,8 @@
     "sentence_hu": "Meglátjuk, mi történik holnap.",
     "sentence_en": "We'll see what happens tomorrow.",
     "sentence_de": "Wir werden sehen, was morgen passiert.",
-    "topic": "trabajo_dia",
-    "topicOrder": 5
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 11
   },
   {
     "id": 3419,
@@ -598,8 +598,8 @@
     "sentence_hu": "Ezrek érkeztek ma.",
     "sentence_en": "Thousands of people have arrived today.",
     "sentence_de": "Tausende von Menschen sind heute angekommen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 6
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 14
   },
   {
     "id": 3420,
@@ -612,8 +612,8 @@
     "sentence_hu": "Tudsz adni nekem egy pillanatot?",
     "sentence_en": "Can you give me a moment?",
     "sentence_de": "Kannst du mir einen Moment geben?",
-    "topic": "relaciones",
-    "topicOrder": 6
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 8
   },
   {
     "id": 3421,
@@ -626,8 +626,8 @@
     "sentence_hu": "Megkaptam a főnök parancsait.",
     "sentence_en": "I've received the boss's orders.",
     "sentence_de": "Ich habe die Befehle des Chefs erhalten.",
-    "topic": "trabajo_dia",
-    "topicOrder": 7
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 12
   },
   {
     "id": 3422,
@@ -648,14 +648,14 @@
     "level": "A2",
     "es": "correr (corre)",
     "hu": "futni (ő fut)",
-    "en": "to run (he/she runs)",
+    "en": "to run (he runs)",
     "de": "laufen (er/sie läuft)",
     "sentence_es": "Corre todos los días por el parque.",
     "sentence_hu": "Minden nap fut a parkban.",
     "sentence_en": "He runs in the park every day.",
     "sentence_de": "Er läuft jeden Tag im Park.",
-    "topic": "salud_deporte",
-    "topicOrder": 7
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 2
   },
   {
     "id": 3424,
@@ -668,8 +668,8 @@
     "sentence_hu": "Nem tudtam jól aludni ma éjjel.",
     "sentence_en": "I haven't been able to sleep well tonight.",
     "sentence_de": "Ich habe heute Nacht nicht gut schlafen können.",
-    "topic": "trabajo_dia",
-    "topicOrder": 8
+    "topic": "trabajo_dia_ser_estar_a2",
+    "topicOrder": 2
   },
   {
     "id": 3425,
@@ -682,8 +682,8 @@
     "sentence_hu": "Ne hagyd nyitva az ajtót.",
     "sentence_en": "Don't leave the door open.",
     "sentence_de": "Lass die Tür nicht offen.",
-    "topic": "hogar_entorno",
-    "topicOrder": 12
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 3
   },
   {
     "id": 3426,
@@ -710,8 +710,8 @@
     "sentence_hu": "Meg akarlak lepni.",
     "sentence_en": "I want to give you a surprise.",
     "sentence_de": "Ich will dir eine Überraschung machen.",
-    "topic": "relaciones",
-    "topicOrder": 7
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 9
   },
   {
     "id": 3428,
@@ -724,8 +724,8 @@
     "sentence_hu": "Megtaláltam az épület kijáratát.",
     "sentence_en": "I've found the exit of the building.",
     "sentence_de": "Ich habe den Ausgang des Gebäudes gefunden.",
-    "topic": "hogar_entorno",
-    "topicOrder": 13
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 4
   },
   {
     "id": 3429,
@@ -738,7 +738,7 @@
     "sentence_hu": "Most kell elmondanom.",
     "sentence_en": "I need to say it now.",
     "sentence_de": "Ich muss es jetzt sagen.",
-    "topic": "comunicacion",
+    "topic": "comunicacion_hablar_a2",
     "topicOrder": 4
   },
   {
@@ -752,8 +752,8 @@
     "sentence_hu": "Mindig bíztam benned.",
     "sentence_en": "I've always trusted you.",
     "sentence_de": "Ich habe dir immer vertraut.",
-    "topic": "relaciones",
-    "topicOrder": 8
+    "topic": "amor_pareja_a2",
+    "topicOrder": 13
   },
   {
     "id": 3431,
@@ -766,8 +766,8 @@
     "sentence_hu": "Szeretnék feltenni neked egy kérdést.",
     "sentence_en": "I want to ask you a question.",
     "sentence_de": "Ich möchte dir eine Frage stellen.",
-    "topic": "comunicacion",
-    "topicOrder": 5
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 1
   },
   {
     "id": 3432,
@@ -780,8 +780,8 @@
     "sentence_hu": "Tegnap szükségem volt a segítségedre.",
     "sentence_en": "I needed your help yesterday.",
     "sentence_de": "Ich brauchte gestern deine Hilfe.",
-    "topic": "relaciones",
-    "topicOrder": 9
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 2
   },
   {
     "id": 3433,
@@ -794,8 +794,8 @@
     "sentence_hu": "A testvéreim meglátogattak.",
     "sentence_en": "My siblings have come to visit me.",
     "sentence_de": "Meine Geschwister sind mich besuchen gekommen.",
-    "topic": "yo_familia",
-    "topicOrder": 7
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 3
   },
   {
     "id": 3434,
@@ -822,8 +822,8 @@
     "sentence_hu": "Vetettem egy pillantást a jelentésre.",
     "sentence_en": "I've taken a look at the report.",
     "sentence_de": "Ich habe einen Blick auf den Bericht geworfen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 9
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 17
   },
   {
     "id": 3436,
@@ -836,8 +836,8 @@
     "sentence_hu": "A kislány egész éjjel aludt.",
     "sentence_en": "The little girl has slept all night.",
     "sentence_de": "Das kleine Mädchen hat die ganze Nacht geschlafen.",
-    "topic": "yo_familia",
-    "topicOrder": 8
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 14
   },
   {
     "id": 3437,
@@ -850,8 +850,8 @@
     "sentence_hu": "Sokszor próbáltalak felhívni.",
     "sentence_en": "I've tried to call you many times.",
     "sentence_de": "Ich habe versucht, dich oft anzurufen.",
-    "topic": "relaciones",
-    "topicOrder": 10
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 1
   },
   {
     "id": 3438,
@@ -864,8 +864,8 @@
     "sentence_hu": "A bíró döntést hozott.",
     "sentence_en": "The judge has made a decision.",
     "sentence_de": "Der Richter hat eine Entscheidung getroffen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 10
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 17
   },
   {
     "id": 3439,
@@ -892,7 +892,7 @@
     "sentence_hu": "Egész nap türelmes voltam.",
     "sentence_en": "I've been patient all day.",
     "sentence_de": "Ich bin den ganzen Tag geduldig gewesen.",
-    "topic": "yo_familia",
+    "topic": "personas_caracter_a2",
     "topicOrder": 9
   },
   {
@@ -906,8 +906,8 @@
     "sentence_hu": "Remélem, jól aludtál.",
     "sentence_en": "I hope you've slept well.",
     "sentence_de": "Ich hoffe, du hast gut geschlafen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 11
+    "topic": "trabajo_dia_ser_estar_a2",
+    "topicOrder": 3
   },
   {
     "id": 3442,
@@ -920,8 +920,8 @@
     "sentence_hu": "Szeretem a modern művészetet.",
     "sentence_en": "I like modern art.",
     "sentence_de": "Ich mag moderne Kunst.",
-    "topic": "ocio_cultura",
-    "topicOrder": 3
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 2
   },
   {
     "id": 3443,
@@ -962,8 +962,8 @@
     "sentence_hu": "Örülök, hogy újra látlak.",
     "sentence_en": "I'm glad to see you again.",
     "sentence_de": "Es freut mich, dich wiederzusehen.",
-    "topic": "relaciones",
-    "topicOrder": 11
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 4
   },
   {
     "id": 3446,
@@ -976,8 +976,8 @@
     "sentence_hu": "Olvastam egy könyvet az ördögről.",
     "sentence_en": "I've read a book about the devil.",
     "sentence_de": "Ich habe ein Buch über den Teufel gelesen.",
-    "topic": "ocio_cultura",
-    "topicOrder": 5
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 3
   },
   {
     "id": 3447,
@@ -990,8 +990,8 @@
     "sentence_hu": "Nagyon hangos zajt hallottam tegnap éjjel.",
     "sentence_en": "I heard a very loud noise last night.",
     "sentence_de": "Ich habe letzte Nacht ein sehr lautes Geräusch gehört.",
-    "topic": "comunicacion",
-    "topicOrder": 6
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 5
   },
   {
     "id": 3448,
@@ -1004,8 +1004,8 @@
     "sentence_hu": "Nem hiszem, hogy tudja az igazságot.",
     "sentence_en": "I don't think he knows the truth.",
     "sentence_de": "Ich glaube nicht, dass er die Wahrheit weiß.",
-    "topic": "comunicacion",
-    "topicOrder": 7
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 2
   },
   {
     "id": 3449,
@@ -1018,8 +1018,8 @@
     "sentence_hu": "Jól leszel, ne aggódj.",
     "sentence_en": "You'll be fine, don't worry.",
     "sentence_de": "Dir wird es gut gehen, mach dir keine Sorgen.",
-    "topic": "yo_familia",
-    "topicOrder": 10
+    "topic": "personas_caracter_a2",
+    "topicOrder": 21
   },
   {
     "id": 3450,
@@ -1032,8 +1032,8 @@
     "sentence_hu": "A zenekar ma nagyon jól játszott.",
     "sentence_en": "The band has played very well today.",
     "sentence_de": "Die Band hat heute sehr gut gespielt.",
-    "topic": "ocio_cultura",
-    "topicOrder": 6
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 4
   },
   {
     "id": 3451,
@@ -1088,8 +1088,8 @@
     "sentence_hu": "Nagyon vágyom rá, hogy lássalak.",
     "sentence_en": "I really want to see you.",
     "sentence_de": "Ich habe große Lust, dich zu sehen.",
-    "topic": "relaciones",
-    "topicOrder": 12
+    "topic": "amor_pareja_a2",
+    "topicOrder": 14
   },
   {
     "id": 3455,
@@ -1116,21 +1116,21 @@
     "sentence_hu": "Elmentem meglátogatni a kórházban.",
     "sentence_en": "I've gone to see her at the hospital.",
     "sentence_de": "Ich bin ins Krankenhaus gegangen, um sie zu besuchen.",
-    "topic": "salud_deporte",
-    "topicOrder": 8
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 4
   },
   {
     "id": 3457,
     "level": "A2",
     "es": "volver (volvió)",
     "hu": "visszatérni (ő visszatért)",
-    "en": "to return (he/she returned)",
+    "en": "to return (he returned)",
     "de": "zurückkehren (er/sie kehrte zurück)",
     "sentence_es": "Volvió a casa muy tarde anoche.",
     "sentence_hu": "Nagyon későn jött haza tegnap este.",
     "sentence_en": "He came back home very late last night.",
     "sentence_de": "Er ist gestern Abend sehr spät nach Hause gekommen.",
-    "topic": "trabajo_dia",
+    "topic": "trabajo_dia_acciones_a2",
     "topicOrder": 12
   },
   {
@@ -1144,8 +1144,8 @@
     "sentence_hu": "Három könyvet olvastam ebben a hónapban.",
     "sentence_en": "I've read three books this month.",
     "sentence_de": "Ich habe diesen Monat drei Bücher gelesen.",
-    "topic": "ocio_cultura",
-    "topicOrder": 7
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 5
   },
   {
     "id": 3459,
@@ -1158,8 +1158,8 @@
     "sentence_hu": "Nyolc óra lesz, mire megérkeznek.",
     "sentence_en": "It will be eight o'clock when they arrive.",
     "sentence_de": "Es wird acht Uhr sein, wenn sie ankommen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 13
+    "topic": "trabajo_dia_ser_estar_a2",
+    "topicOrder": 4
   },
   {
     "id": 3460,
@@ -1172,8 +1172,8 @@
     "sentence_hu": "Az ég nagyon tiszta ma.",
     "sentence_en": "The skies are very clear today.",
     "sentence_de": "Der Himmel ist heute sehr klar.",
-    "topic": "naturaleza",
-    "topicOrder": 13
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 7
   },
   {
     "id": 3461,
@@ -1186,8 +1186,8 @@
     "sentence_hu": "A rendőrség elkapta a gyilkost.",
     "sentence_en": "The police have caught the one who killed.",
     "sentence_de": "Die Polizei hat den Mörder gefasst.",
-    "topic": "trabajo_dia",
-    "topicOrder": 14
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 13
   },
   {
     "id": 3462,
@@ -1200,8 +1200,8 @@
     "sentence_hu": "Ma különböző ételeket próbáltunk.",
     "sentence_en": "We've tried different dishes today.",
     "sentence_de": "Wir haben heute verschiedene Gerichte probiert.",
-    "topic": "trabajo_dia",
-    "topicOrder": 15
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 18
   },
   {
     "id": 3463,
@@ -1228,8 +1228,8 @@
     "sentence_hu": "A parancsnok új parancsokat adott.",
     "sentence_en": "The commander has given new orders.",
     "sentence_de": "Der Kommandant hat neue Befehle erteilt.",
-    "topic": "trabajo_dia",
-    "topicOrder": 16
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 14
   },
   {
     "id": 3465,
@@ -1242,8 +1242,8 @@
     "sentence_hu": "A rendőrség akciója gyors volt.",
     "sentence_en": "The police action has been swift.",
     "sentence_de": "Die Polizeiaktion war schnell.",
-    "topic": "trabajo_dia",
-    "topicOrder": 17
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 19
   },
   {
     "id": 3466,
@@ -1270,8 +1270,8 @@
     "sentence_hu": "Láttunk egy nagyszerű színdarabot.",
     "sentence_en": "We've seen a great play.",
     "sentence_de": "Wir haben ein tolles Theaterstück gesehen.",
-    "topic": "ocio_cultura",
-    "topicOrder": 8
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 6
   },
   {
     "id": 3468,
@@ -1284,8 +1284,8 @@
     "sentence_hu": "Még nem vesztettem el a reményt.",
     "sentence_en": "I haven't lost hope yet.",
     "sentence_de": "Ich habe die Hoffnung noch nicht verloren.",
-    "topic": "yo_familia",
-    "topicOrder": 11
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 13
   },
   {
     "id": 3469,
@@ -1298,8 +1298,8 @@
     "sentence_hu": "Ez a kérdés nagyon fontos nekem.",
     "sentence_en": "This issue is very important to me.",
     "sentence_de": "Diese Angelegenheit ist mir sehr wichtig.",
-    "topic": "comunicacion",
-    "topicOrder": 8
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 3
   },
   {
     "id": 3470,
@@ -1312,8 +1312,8 @@
     "sentence_hu": "Zavar a zaj?",
     "sentence_en": "Does the noise bother you?",
     "sentence_de": "Stört dich der Lärm?",
-    "topic": "relaciones",
-    "topicOrder": 13
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 3
   },
   {
     "id": 3471,
@@ -1326,8 +1326,8 @@
     "sentence_hu": "Jó napom van.",
     "sentence_en": "I'm having a good day.",
     "sentence_de": "Ich habe einen guten Tag.",
-    "topic": "trabajo_dia",
-    "topicOrder": 18
+    "topic": "trabajo_dia_ser_estar_a2",
+    "topicOrder": 5
   },
   {
     "id": 3472,
@@ -1340,8 +1340,8 @@
     "sentence_hu": "Ma reggel befejeztem a jelentést.",
     "sentence_en": "I've finished the report this morning.",
     "sentence_de": "Ich habe den Bericht heute Morgen fertiggestellt.",
-    "topic": "trabajo_dia",
-    "topicOrder": 19
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 14
   },
   {
     "id": 3473,
@@ -1354,8 +1354,8 @@
     "sentence_hu": "Isten hozott a házunkban.",
     "sentence_en": "Welcome to our home.",
     "sentence_de": "Willkommen in unserem Haus.",
-    "topic": "relaciones",
-    "topicOrder": 14
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 6
   },
   {
     "id": 3474,
@@ -1368,8 +1368,8 @@
     "sentence_hu": "Mindent elmeséltél nekem?",
     "sentence_en": "Have you told me everything?",
     "sentence_de": "Hast du mir alles erzählt?",
-    "topic": "comunicacion",
-    "topicOrder": 9
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 6
   },
   {
     "id": 3475,
@@ -1382,8 +1382,8 @@
     "sentence_hu": "Továbbra is dolgozom a projekten.",
     "sentence_en": "I'm still working on the project.",
     "sentence_de": "Ich arbeite weiter an dem Projekt.",
-    "topic": "trabajo_dia",
-    "topicOrder": 20
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 13
   },
   {
     "id": 3476,
@@ -1396,8 +1396,8 @@
     "sentence_hu": "Kifestettem a ház belső falát.",
     "sentence_en": "I've painted the interior wall of the house.",
     "sentence_de": "Ich habe die Innenwand des Hauses gestrichen.",
-    "topic": "hogar_entorno",
-    "topicOrder": 15
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 5
   },
   {
     "id": 3477,
@@ -1410,8 +1410,8 @@
     "sentence_hu": "Találtunk egy új lakást.",
     "sentence_en": "We've found a new apartment.",
     "sentence_de": "Wir haben eine neue Wohnung gefunden.",
-    "topic": "hogar_entorno",
-    "topicOrder": 16
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 5
   },
   {
     "id": 3478,
@@ -1424,8 +1424,8 @@
     "sentence_hu": "Remélem, látja a problémát.",
     "sentence_en": "I hope you see the problem.",
     "sentence_de": "Ich hoffe, Sie sehen das Problem.",
-    "topic": "comunicacion",
-    "topicOrder": 10
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 7
   },
   {
     "id": 3479,
@@ -1452,8 +1452,8 @@
     "sentence_hu": "Készen álltok indulni?",
     "sentence_en": "Are you all ready to leave?",
     "sentence_de": "Seid ihr bereit zu gehen?",
-    "topic": "trabajo_dia",
-    "topicOrder": 21
+    "topic": "trabajo_dia_ser_estar_a2",
+    "topicOrder": 6
   },
   {
     "id": 3481,
@@ -1466,15 +1466,15 @@
     "sentence_hu": "Aggódom az egészséged miatt.",
     "sentence_en": "Your health worries me.",
     "sentence_de": "Deine Gesundheit macht mir Sorgen.",
-    "topic": "salud_deporte",
-    "topicOrder": 9
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 5
   },
   {
     "id": 3482,
     "level": "A2",
     "es": "tomar (tomó)",
     "hu": "venni / fogni (ő vette)",
-    "en": "to take (he/she took)",
+    "en": "to take (he took)",
     "de": "nehmen (er/sie nahm)",
     "sentence_es": "Tomó el autobús para ir al trabajo.",
     "sentence_hu": "Busszal ment dolgozni.",
@@ -1494,15 +1494,15 @@
     "sentence_hu": "A fő probléma a pénz.",
     "sentence_en": "The main problem is money.",
     "sentence_de": "Das Hauptproblem ist das Geld.",
-    "topic": "trabajo_dia",
-    "topicOrder": 22
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 15
   },
   {
     "id": 3484,
     "level": "A2",
     "es": "empezar (empieza)",
     "hu": "elkezdeni (ő elkezdi)",
-    "en": "to start (he/she starts)",
+    "en": "to start (he starts)",
     "de": "anfangen (er/sie fängt an)",
     "sentence_es": "La clase empieza a las nueve.",
     "sentence_hu": "Az óra kilenckor kezdődik.",
@@ -1516,14 +1516,14 @@
     "level": "A2",
     "es": "empezar (empezó)",
     "hu": "elkezdeni (ő elkezdte)",
-    "en": "to start (he/she started)",
+    "en": "to start (he started)",
     "de": "anfangen (er/sie fing an)",
     "sentence_es": "Empezó a llover por la tarde.",
     "sentence_hu": "Délután elkezdett esni az eső.",
     "sentence_en": "It started to rain in the afternoon.",
     "sentence_de": "Am Nachmittag hat es angefangen zu regnen.",
-    "topic": "naturaleza",
-    "topicOrder": 14
+    "topic": "naturaleza_leirasok_a2",
+    "topicOrder": 1
   },
   {
     "id": 3486,
@@ -1536,8 +1536,8 @@
     "sentence_hu": "Nem akarom, hogy egyedül menjenek.",
     "sentence_en": "I don't want them to go alone.",
     "sentence_de": "Ich möchte nicht, dass sie allein gehen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 23
+    "topic": "trabajo_dia_ser_estar_a2",
+    "topicOrder": 7
   },
   {
     "id": 3487,
@@ -1550,8 +1550,8 @@
     "sentence_hu": "Mindenki a nevemen szólít.",
     "sentence_en": "Everyone calls me by my name.",
     "sentence_de": "Alle nennen mich bei meinem Namen.",
-    "topic": "comunicacion",
-    "topicOrder": 11
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 8
   },
   {
     "id": 3488,
@@ -1564,8 +1564,8 @@
     "sentence_hu": "Bárcsak jól megérkezett volna.",
     "sentence_en": "I hope he's arrived safely.",
     "sentence_de": "Hoffentlich ist er gut angekommen.",
-    "topic": "relaciones",
-    "topicOrder": 15
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 6
   },
   {
     "id": 3489,
@@ -1578,8 +1578,8 @@
     "sentence_hu": "Bocsi, nem láttam az üzeneted.",
     "sentence_en": "Sorry, I haven't seen your message.",
     "sentence_de": "Entschuldigung, ich habe deine Nachricht nicht gesehen.",
-    "topic": "relaciones",
-    "topicOrder": 16
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 5
   },
   {
     "id": 3490,
@@ -1592,8 +1592,8 @@
     "sentence_hu": "Hatkor megyek haza.",
     "sentence_en": "I come back home at six.",
     "sentence_de": "Ich komme um sechs nach Hause zurück.",
-    "topic": "hogar_entorno",
-    "topicOrder": 17
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 6
   },
   {
     "id": 3491,
@@ -1606,8 +1606,8 @@
     "sentence_hu": "Bevertem a fejem.",
     "sentence_en": "I've hit my head.",
     "sentence_de": "Ich habe mir den Kopf gestoßen.",
-    "topic": "salud_deporte",
-    "topicOrder": 10
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 3
   },
   {
     "id": 3492,
@@ -1620,8 +1620,8 @@
     "sentence_hu": "Úgy döntöttem, ma otthon maradok.",
     "sentence_en": "I've decided to stay home today.",
     "sentence_de": "Ich habe beschlossen, heute zu Hause zu bleiben.",
-    "topic": "hogar_entorno",
-    "topicOrder": 18
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 7
   },
   {
     "id": 3493,
@@ -1634,8 +1634,8 @@
     "sentence_hu": "Holnap reggel hívlak.",
     "sentence_en": "I'll call you tomorrow morning.",
     "sentence_de": "Ich rufe dich morgen früh an.",
-    "topic": "comunicacion",
-    "topicOrder": 12
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 9
   },
   {
     "id": 3494,
@@ -1676,8 +1676,8 @@
     "sentence_hu": "Egyértelműen a helyes döntést hoztam.",
     "sentence_en": "I've definitely made the right decision.",
     "sentence_de": "Ich habe definitiv die richtige Entscheidung getroffen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 24
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 15
   },
   {
     "id": 3497,
@@ -1690,8 +1690,8 @@
     "sentence_hu": "Találkozzunk ötkor a parkban?",
     "sentence_en": "Shall we meet at five in the park?",
     "sentence_de": "Treffen wir uns um fünf im Park?",
-    "topic": "relaciones",
-    "topicOrder": 17
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 12
   },
   {
     "id": 3498,
@@ -1704,8 +1704,8 @@
     "sentence_hu": "Három levelet írtam ezen a héten.",
     "sentence_en": "I've written three letters this week.",
     "sentence_de": "Ich habe diese Woche drei Briefe geschrieben.",
-    "topic": "comunicacion",
-    "topicOrder": 13
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 1
   },
   {
     "id": 3499,
@@ -1718,8 +1718,8 @@
     "sentence_hu": "A rendőrség bombát talált.",
     "sentence_en": "The police have found a bomb.",
     "sentence_de": "Die Polizei hat eine Bombe gefunden.",
-    "topic": "trabajo_dia",
-    "topicOrder": 25
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 15
   },
   {
     "id": 3500,
@@ -1732,8 +1732,8 @@
     "sentence_hu": "Az őr bezárta az ajtót.",
     "sentence_en": "The guard has closed the door.",
     "sentence_de": "Der Wächter hat die Tür geschlossen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 26
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 16
   },
   {
     "id": 3501,
@@ -1746,8 +1746,8 @@
     "sentence_hu": "A rendőrség pisztolyt talált.",
     "sentence_en": "The police have found a gun.",
     "sentence_de": "Die Polizei hat eine Pistole gefunden.",
-    "topic": "trabajo_dia",
-    "topicOrder": 27
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 17
   },
   {
     "id": 3502,
@@ -1788,8 +1788,8 @@
     "sentence_hu": "Ma nagyon fáradtnak tűnsz.",
     "sentence_en": "You seem very tired today.",
     "sentence_de": "Du scheinst heute sehr müde zu sein.",
-    "topic": "relaciones",
-    "topicOrder": 18
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 19
   },
   {
     "id": 3505,
@@ -1802,8 +1802,8 @@
     "sentence_hu": "Sok közös barátunk van.",
     "sentence_en": "We have many friends in common.",
     "sentence_de": "Wir haben viele gemeinsame Freunde.",
-    "topic": "relaciones",
-    "topicOrder": 19
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 15
   },
   {
     "id": 3506,
@@ -1816,8 +1816,8 @@
     "sentence_hu": "Az a nap nagyon különleges volt.",
     "sentence_en": "That day was very special.",
     "sentence_de": "Jener Tag war sehr besonders.",
-    "topic": "trabajo_dia",
-    "topicOrder": 29
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 20
   },
   {
     "id": 3507,
@@ -1830,8 +1830,8 @@
     "sentence_hu": "Ajándékot akarok venni anyámnak.",
     "sentence_en": "I want to give my mother a gift.",
     "sentence_de": "Ich möchte meiner Mutter ein Geschenk machen.",
-    "topic": "yo_familia",
-    "topicOrder": 12
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 27
   },
   {
     "id": 3508,
@@ -1872,8 +1872,8 @@
     "sentence_hu": "Az emberi jogok nagyon fontosak.",
     "sentence_en": "Human rights are very important.",
     "sentence_de": "Menschenrechte sind sehr wichtig.",
-    "topic": "yo_familia",
-    "topicOrder": 13
+    "topic": "personas_caracter_a2",
+    "topicOrder": 15
   },
   {
     "id": 3511,
@@ -1886,8 +1886,8 @@
     "sentence_hu": "Nyolcra otthon leszünk.",
     "sentence_en": "We'll be home at eight.",
     "sentence_de": "Wir werden um acht zu Hause sein.",
-    "topic": "hogar_entorno",
-    "topicOrder": 19
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 8
   },
   {
     "id": 3512,
@@ -1900,8 +1900,8 @@
     "sentence_hu": "Ez a könyv az övé, nem az enyém.",
     "sentence_en": "This book is his, not mine.",
     "sentence_de": "Dieses Buch gehört ihm, nicht mir.",
-    "topic": "yo_familia",
-    "topicOrder": 14
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 19
   },
   {
     "id": 3513,
@@ -1914,8 +1914,8 @@
     "sentence_hu": "Hirtelen elkezdett esni az eső.",
     "sentence_en": "Suddenly it started to rain.",
     "sentence_de": "Plötzlich hat es angefangen zu regnen.",
-    "topic": "naturaleza",
-    "topicOrder": 15
+    "topic": "naturaleza_leirasok_a2",
+    "topicOrder": 2
   },
   {
     "id": 3514,
@@ -1928,8 +1928,8 @@
     "sentence_hu": "Fel kellett volna hívjalak, de elfelejtettem.",
     "sentence_en": "I should have called you but I forgot.",
     "sentence_de": "Ich hätte dich anrufen sollen, aber ich habe es vergessen.",
-    "topic": "comunicacion",
-    "topicOrder": 14
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 4
   },
   {
     "id": 3515,
@@ -1942,22 +1942,22 @@
     "sentence_hu": "Csak viccelek, ne haragudj.",
     "sentence_en": "I'm just joking, don't get upset.",
     "sentence_de": "Ich scherze nur, reg dich nicht auf.",
-    "topic": "relaciones",
-    "topicOrder": 20
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 17
   },
   {
     "id": 3516,
     "level": "A2",
     "es": "ir (irá)",
     "hu": "menni (ő fog menni)",
-    "en": "to go (he/she will go)",
+    "en": "to go (he will go)",
     "de": "gehen (er/sie wird gehen)",
     "sentence_es": "Irá al médico mañana por la mañana.",
     "sentence_hu": "Holnap reggel elmegy az orvoshoz.",
     "sentence_en": "He'll go to the doctor tomorrow morning.",
     "sentence_de": "Er wird morgen früh zum Arzt gehen.",
-    "topic": "salud_deporte",
-    "topicOrder": 11
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 4
   },
   {
     "id": 3517,
@@ -1970,8 +1970,8 @@
     "sentence_hu": "Két jegyet vettem a koncertre.",
     "sentence_en": "I've bought two tickets for the concert.",
     "sentence_de": "Ich habe zwei Eintrittskarten für das Konzert gekauft.",
-    "topic": "ocio_cultura",
-    "topicOrder": 10
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 1
   },
   {
     "id": 3518,
@@ -1998,8 +1998,8 @@
     "sentence_hu": "Hagyok neked egy üzenetet az asztalon.",
     "sentence_en": "I'll leave you a message on the table.",
     "sentence_de": "Ich werde dir eine Nachricht auf dem Tisch hinterlassen.",
-    "topic": "comunicacion",
-    "topicOrder": 15
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 5
   },
   {
     "id": 3520,
@@ -2026,8 +2026,8 @@
     "sentence_hu": "A gép ma nem működött jól.",
     "sentence_en": "The machine hasn't worked well today.",
     "sentence_de": "Die Maschine hat heute nicht gut funktioniert.",
-    "topic": "trabajo_dia",
-    "topicOrder": 30
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 16
   },
   {
     "id": 3522,
@@ -2040,8 +2040,8 @@
     "sentence_hu": "Az iskolában ismertem meg a legjobb barátomat.",
     "sentence_en": "I met my best friend at school.",
     "sentence_de": "Ich habe meinen besten Freund in der Schule kennengelernt.",
-    "topic": "relaciones",
-    "topicOrder": 21
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 13
   },
   {
     "id": 3523,
@@ -2054,8 +2054,8 @@
     "sentence_hu": "Az idők nagyon megváltoztak.",
     "sentence_en": "Times have changed a lot.",
     "sentence_de": "Die Zeiten haben sich sehr verändert.",
-    "topic": "trabajo_dia",
-    "topicOrder": 31
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 16
   },
   {
     "id": 3524,
@@ -2068,8 +2068,8 @@
     "sentence_hu": "Foglaljon helyet, kérem.",
     "sentence_en": "Please take a seat.",
     "sentence_de": "Nehmen Sie bitte Platz.",
-    "topic": "trabajo_dia",
-    "topicOrder": 32
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 14
   },
   {
     "id": 3525,
@@ -2082,8 +2082,8 @@
     "sentence_hu": "Sok állatot láttunk az állatkertben.",
     "sentence_en": "We've seen many animals at the zoo.",
     "sentence_de": "Wir haben viele Tiere im Zoo gesehen.",
-    "topic": "naturaleza",
-    "topicOrder": 16
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 8
   },
   {
     "id": 3526,
@@ -2096,8 +2096,8 @@
     "sentence_hu": "Vajon semmit nem értettél meg?",
     "sentence_en": "Haven't you understood anything?",
     "sentence_de": "Hast du etwa nichts verstanden?",
-    "topic": "comunicacion",
-    "topicOrder": 16
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 6
   },
   {
     "id": 3527,
@@ -2124,8 +2124,8 @@
     "sentence_hu": "A párommal moziba mentünk.",
     "sentence_en": "My partner and I have gone to the cinema.",
     "sentence_de": "Mein Partner und ich sind ins Kino gegangen.",
-    "topic": "relaciones",
-    "topicOrder": 22
+    "topic": "amor_pareja_a2",
+    "topicOrder": 1
   },
   {
     "id": 3529,
@@ -2138,22 +2138,22 @@
     "sentence_hu": "Tegnap hallottam egy nagyon szép dalt.",
     "sentence_en": "I listened to a very beautiful song yesterday.",
     "sentence_de": "Ich habe gestern ein sehr schönes Lied gehört.",
-    "topic": "ocio_cultura",
-    "topicOrder": 11
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 7
   },
   {
     "id": 3530,
     "level": "A2",
     "es": "amar (ama)",
     "hu": "szeretni (ő szeret)",
-    "en": "to love (he/she loves)",
+    "en": "to love (she loves)",
     "de": "lieben (er/sie liebt)",
     "sentence_es": "Ella ama a sus hijos con todo el corazón.",
     "sentence_hu": "Ő teljes szívéből szereti a gyerekeit.",
     "sentence_en": "She loves her children with all her heart.",
     "sentence_de": "Sie liebt ihre Kinder von ganzem Herzen.",
-    "topic": "relaciones",
-    "topicOrder": 23
+    "topic": "amor_pareja_a2",
+    "topicOrder": 4
   },
   {
     "id": 3531,
@@ -2166,8 +2166,8 @@
     "sentence_hu": "Egy nap nagyszerű szakember leszel.",
     "sentence_en": "You'll be a great professional someday.",
     "sentence_de": "Du wirst eines Tages ein großartiger Fachmann sein.",
-    "topic": "trabajo_dia",
-    "topicOrder": 33
+    "topic": "trabajo_dia_ser_estar_a2",
+    "topicOrder": 8
   },
   {
     "id": 3532,
@@ -2180,8 +2180,8 @@
     "sentence_hu": "Azt akarom, hogy jól végezzék a munkát.",
     "sentence_en": "I want them to do the job well.",
     "sentence_de": "Ich möchte, dass sie die Arbeit gut machen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 34
+    "topic": "trabajo_dia_ser_estar_a2",
+    "topicOrder": 9
   },
   {
     "id": 3533,
@@ -2194,8 +2194,8 @@
     "sentence_hu": "Tegnap este elvesztettem a kulcsaimat.",
     "sentence_en": "I lost my keys last night.",
     "sentence_de": "Ich habe gestern Abend meine Schlüssel verloren.",
-    "topic": "trabajo_dia",
-    "topicOrder": 35
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 15
   },
   {
     "id": 3534,
@@ -2208,8 +2208,8 @@
     "sentence_hu": "Elhoztál mindent, amire szükségünk van?",
     "sentence_en": "Have you brought everything we need?",
     "sentence_de": "Hast du alles mitgebracht, was wir brauchen?",
-    "topic": "trabajo_dia",
-    "topicOrder": 36
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 16
   },
   {
     "id": 3535,
@@ -2250,8 +2250,8 @@
     "sentence_hu": "Korábban kellett volna megmondanom.",
     "sentence_en": "I should have said it earlier.",
     "sentence_de": "Ich hätte es früher sagen sollen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 37
+    "topic": "trabajo_dia_ser_estar_a2",
+    "topicOrder": 10
   },
   {
     "id": 3538,
@@ -2264,8 +2264,8 @@
     "sentence_hu": "Háromszor próbáltam hívni.",
     "sentence_en": "I've tried to call three times.",
     "sentence_de": "Ich habe dreimal versucht anzurufen.",
-    "topic": "comunicacion",
-    "topicOrder": 17
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 10
   },
   {
     "id": 3539,
@@ -2278,8 +2278,8 @@
     "sentence_hu": "Tudsz nekem segíteni ezzel?",
     "sentence_en": "Can you help me with this?",
     "sentence_de": "Kannst du mir dabei helfen?",
-    "topic": "relaciones",
-    "topicOrder": 24
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 5
   },
   {
     "id": 3540,
@@ -2292,8 +2292,8 @@
     "sentence_hu": "Virágot vettem anyámnak.",
     "sentence_en": "I've bought flowers for my mother.",
     "sentence_de": "Ich habe Blumen für meine Mutter gekauft.",
-    "topic": "naturaleza",
-    "topicOrder": 17
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 9
   },
   {
     "id": 3541,
@@ -2320,8 +2320,8 @@
     "sentence_hu": "Neked van igazad mindenben.",
     "sentence_en": "You are right about everything.",
     "sentence_de": "Du hast in allem recht.",
-    "topic": "comunicacion",
-    "topicOrder": 18
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 7
   },
   {
     "id": 3543,
@@ -2334,8 +2334,8 @@
     "sentence_hu": "Ez a legjobb lehetőségünk.",
     "sentence_en": "This is the best option we have.",
     "sentence_de": "Das ist die beste Möglichkeit, die wir haben.",
-    "topic": "trabajo_dia",
-    "topicOrder": 38
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 17
   },
   {
     "id": 3544,
@@ -2348,15 +2348,15 @@
     "sentence_hu": "Meglátogattunk egy gyönyörű szigetet.",
     "sentence_en": "We've visited a beautiful island.",
     "sentence_de": "Wir haben eine wunderschöne Insel besucht.",
-    "topic": "naturaleza",
-    "topicOrder": 18
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 10
   },
   {
     "id": 3545,
     "level": "A2",
     "es": "cerrar (cierra)",
     "hu": "bezárni (ő bezárja)",
-    "en": "to close (he/she closes)",
+    "en": "to close (he closes)",
     "de": "schließen (er/sie schließt)",
     "sentence_es": "La tienda cierra a las nueve.",
     "sentence_hu": "A bolt kilenckor zár.",
@@ -2376,8 +2376,8 @@
     "sentence_hu": "Az ellenség elmenekült a csatatérről.",
     "sentence_en": "The enemy has fled the battlefield.",
     "sentence_de": "Der Feind ist vom Schlachtfeld geflohen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 39
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 18
   },
   {
     "id": 3547,
@@ -2390,8 +2390,8 @@
     "sentence_hu": "Itt hagyom neked a kulcsokat.",
     "sentence_en": "I'm leaving the keys here for you.",
     "sentence_de": "Ich lasse dir die Schlüssel hier.",
-    "topic": "hogar_entorno",
-    "topicOrder": 20
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 9
   },
   {
     "id": 3548,
@@ -2404,8 +2404,8 @@
     "sentence_hu": "Ez pontosan így van, igazad van.",
     "sentence_en": "That's exactly right, you're correct.",
     "sentence_de": "Das ist genau richtig, du hast recht.",
-    "topic": "trabajo_dia",
-    "topicOrder": 40
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 21
   },
   {
     "id": 3549,
@@ -2418,8 +2418,8 @@
     "sentence_hu": "Ne légy idióta, gondolkozz, mielőtt beszélsz.",
     "sentence_en": "Don't be an idiot, think before you speak.",
     "sentence_de": "Sei kein Idiot, denk nach, bevor du sprichst.",
-    "topic": "relaciones",
-    "topicOrder": 25
+    "topic": "trato_respeto_a2",
+    "topicOrder": 16
   },
   {
     "id": 3550,
@@ -2432,8 +2432,8 @@
     "sentence_hu": "A fiatalok szerveztek egy eseményt.",
     "sentence_en": "The young people have organized an event.",
     "sentence_de": "Die Jugendlichen haben eine Veranstaltung organisiert.",
-    "topic": "relaciones",
-    "topicOrder": 26
+    "topic": "trato_respeto_a2",
+    "topicOrder": 7
   },
   {
     "id": 3551,
@@ -2460,15 +2460,15 @@
     "sentence_hu": "Hosszú várakozás volt.",
     "sentence_en": "It has been a long wait.",
     "sentence_de": "Es war eine lange Wartezeit.",
-    "topic": "trabajo_dia",
-    "topicOrder": 41
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 22
   },
   {
     "id": 3553,
     "level": "A2",
     "es": "entender (entiende)",
     "hu": "megérteni (ő megérti)",
-    "en": "to understand (he/she understands)",
+    "en": "to understand (she understands)",
     "de": "verstehen (er/sie versteht)",
     "sentence_es": "Ella entiende muy bien el español.",
     "sentence_hu": "Ő nagyon jól érti a spanyolt.",
@@ -2488,8 +2488,8 @@
     "sentence_hu": "Az igazságszolgáltatás ebben az ügyben döntött.",
     "sentence_en": "Justice has spoken in this case.",
     "sentence_de": "Die Justiz hat in diesem Fall gesprochen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 42
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 18
   },
   {
     "id": 3555,
@@ -2502,8 +2502,8 @@
     "sentence_hu": "Új alkalmazottakat vettünk fel.",
     "sentence_en": "We've hired new employees.",
     "sentence_de": "Wir haben neue Mitarbeiter eingestellt.",
-    "topic": "trabajo_dia",
-    "topicOrder": 43
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 23
   },
   {
     "id": 3556,
@@ -2516,22 +2516,22 @@
     "sentence_hu": "Nyilvánvalóan hibáztam.",
     "sentence_en": "I've obviously made a mistake.",
     "sentence_de": "Ich habe offensichtlich einen Fehler gemacht.",
-    "topic": "trabajo_dia",
-    "topicOrder": 44
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 17
   },
   {
     "id": 3557,
     "level": "A2",
     "es": "despertar (despierta)",
     "hu": "felébredni (ébred / ébreszd fel)",
-    "en": "to wake up (he/she wakes up)",
+    "en": "to wake up (he wakes up)",
     "de": "aufwachen (er/sie wacht auf)",
     "sentence_es": "Se despierta a las seis todos los días.",
     "sentence_hu": "Minden nap hatkor ébred.",
     "sentence_en": "He wakes up at six every day.",
     "sentence_de": "Er wacht jeden Tag um sechs auf.",
-    "topic": "trabajo_dia",
-    "topicOrder": 45
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 17
   },
   {
     "id": 3558,
@@ -2544,8 +2544,8 @@
     "sentence_hu": "Csak egy kis türelmet kérek.",
     "sentence_en": "I only ask for a little patience.",
     "sentence_de": "Ich bitte nur um ein wenig Geduld.",
-    "topic": "relaciones",
-    "topicOrder": 27
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 11
   },
   {
     "id": 3559,
@@ -2558,8 +2558,8 @@
     "sentence_hu": "Ma nagyon meleg van a városban.",
     "sentence_en": "It's very hot in the city today.",
     "sentence_de": "Heute ist es in der Stadt sehr heiß.",
-    "topic": "naturaleza",
-    "topicOrder": 19
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 11
   },
   {
     "id": 3560,
@@ -2572,8 +2572,8 @@
     "sentence_hu": "Felkapcsoltam a nappali lámpáit.",
     "sentence_en": "I've turned on the living room lights.",
     "sentence_de": "Ich habe die Lichter im Wohnzimmer eingeschaltet.",
-    "topic": "hogar_entorno",
-    "topicOrder": 21
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 10
   },
   {
     "id": 3561,
@@ -2586,8 +2586,8 @@
     "sentence_hu": "A tegnapi problémára utalok.",
     "sentence_en": "I'm referring to yesterday's problem.",
     "sentence_de": "Ich beziehe mich auf das Problem von gestern.",
-    "topic": "comunicacion",
-    "topicOrder": 19
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 11
   },
   {
     "id": 3562,
@@ -2614,8 +2614,8 @@
     "sentence_hu": "A csata ma reggel véget ért.",
     "sentence_en": "The battle has ended this morning.",
     "sentence_de": "Die Schlacht ist heute Morgen zu Ende gegangen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 46
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 19
   },
   {
     "id": 3564,
@@ -2628,8 +2628,8 @@
     "sentence_hu": "Hagyd az asztalon, kérlek.",
     "sentence_en": "Leave it on the table, please.",
     "sentence_de": "Lass es bitte auf dem Tisch.",
-    "topic": "hogar_entorno",
-    "topicOrder": 22
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 11
   },
   {
     "id": 3565,
@@ -2642,8 +2642,8 @@
     "sentence_hu": "Próbáld meg még egyszer.",
     "sentence_en": "Try to do it one more time.",
     "sentence_de": "Versuch es noch einmal.",
-    "topic": "trabajo_dia",
-    "topicOrder": 47
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 18
   },
   {
     "id": 3566,
@@ -2656,8 +2656,8 @@
     "sentence_hu": "Az étel ma fantasztikus volt.",
     "sentence_en": "The food has been fantastic today.",
     "sentence_de": "Das Essen war heute fantastisch.",
-    "topic": "relaciones",
-    "topicOrder": 28
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 13
   },
   {
     "id": 3567,
@@ -2670,8 +2670,8 @@
     "sentence_hu": "Teljesen biztos vagyok benne.",
     "sentence_en": "I'm absolutely sure about that.",
     "sentence_de": "Ich bin mir absolut sicher.",
-    "topic": "trabajo_dia",
-    "topicOrder": 48
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 18
   },
   {
     "id": 3568,
@@ -2684,8 +2684,8 @@
     "sentence_hu": "A terem tele van emberekkel.",
     "sentence_en": "The room is full of people.",
     "sentence_de": "Der Saal ist voller Menschen.",
-    "topic": "hogar_entorno",
-    "topicOrder": 23
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 12
   },
   {
     "id": 3569,
@@ -2698,8 +2698,8 @@
     "sentence_hu": "Nem tudsz meggondoltatni.",
     "sentence_en": "You can't make me change my mind.",
     "sentence_de": "Du kannst mich nicht umstimmen.",
-    "topic": "relaciones",
-    "topicOrder": 29
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 11
   },
   {
     "id": 3570,
@@ -2712,8 +2712,8 @@
     "sentence_hu": "Nem akarom, hogy éjjel egyedül menjen ki.",
     "sentence_en": "I don't want him to go out alone at night.",
     "sentence_de": "Ich möchte nicht, dass er nachts allein ausgeht.",
-    "topic": "relaciones",
-    "topicOrder": 30
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 12
   },
   {
     "id": 3571,
@@ -2726,8 +2726,8 @@
     "sentence_hu": "A macska az ablakon keresztül szökött meg.",
     "sentence_en": "The cat has escaped through the window.",
     "sentence_de": "Die Katze ist durch das Fenster entkommen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 49
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 20
   },
   {
     "id": 3572,
@@ -2740,8 +2740,8 @@
     "sentence_hu": "Uraim, az ülés véget ért.",
     "sentence_en": "Gentlemen, the meeting has ended.",
     "sentence_de": "Meine Herren, die Besprechung ist beendet.",
-    "topic": "trabajo_dia",
-    "topicOrder": 50
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 24
   },
   {
     "id": 3573,
@@ -2754,8 +2754,8 @@
     "sentence_hu": "Már csak két jegy maradt a koncertre.",
     "sentence_en": "There are only two tickets left for the concert.",
     "sentence_de": "Es sind nur noch zwei Eintrittskarten für das Konzert übrig.",
-    "topic": "ocio_cultura",
-    "topicOrder": 12
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 8
   },
   {
     "id": 3574,
@@ -2768,8 +2768,8 @@
     "sentence_hu": "Fáj a lábam a futás után.",
     "sentence_en": "My legs hurt after running.",
     "sentence_de": "Meine Beine tun nach dem Laufen weh.",
-    "topic": "salud_deporte",
-    "topicOrder": 15
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 5
   },
   {
     "id": 3575,
@@ -2796,8 +2796,8 @@
     "sentence_hu": "A számítógépet használom a munkához.",
     "sentence_en": "I'm using the computer to work.",
     "sentence_de": "Ich benutze den Computer zum Arbeiten.",
-    "topic": "trabajo_dia",
-    "topicOrder": 51
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 19
   },
   {
     "id": 3577,
@@ -2810,8 +2810,8 @@
     "sentence_hu": "Megnyertük a focimeccset.",
     "sentence_en": "We've won the football match.",
     "sentence_de": "Wir haben das Fußballspiel gewonnen.",
-    "topic": "salud_deporte",
-    "topicOrder": 16
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 6
   },
   {
     "id": 3578,
@@ -2838,8 +2838,8 @@
     "sentence_hu": "A fehér ház az utca végén van.",
     "sentence_en": "The white house is at the end of the street.",
     "sentence_de": "Das weiße Haus steht am Ende der Straße.",
-    "topic": "hogar_entorno",
-    "topicOrder": 24
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 13
   },
   {
     "id": 3580,
@@ -2852,8 +2852,8 @@
     "sentence_hu": "A bíró ártatlannak nyilvánította a vádlottat.",
     "sentence_en": "The judge has declared the defendant innocent.",
     "sentence_de": "Der Richter hat den Angeklagten für unschuldig erklärt.",
-    "topic": "trabajo_dia",
-    "topicOrder": 52
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 19
   },
   {
     "id": 3581,
@@ -2866,8 +2866,8 @@
     "sentence_hu": "Az eső ellenére sétálni mentünk.",
     "sentence_en": "Despite the rain, we've gone for a walk.",
     "sentence_de": "Trotz des Regens sind wir spazieren gegangen.",
-    "topic": "naturaleza",
-    "topicOrder": 20
+    "topic": "naturaleza_leirasok_a2",
+    "topicOrder": 3
   },
   {
     "id": 3582,
@@ -2880,8 +2880,8 @@
     "sentence_hu": "Egyáltalán nem zavar.",
     "sentence_en": "It doesn't bother me at all.",
     "sentence_de": "Es stört mich überhaupt nicht.",
-    "topic": "trabajo_dia",
-    "topicOrder": 53
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 19
   },
   {
     "id": 3583,
@@ -2894,8 +2894,8 @@
     "sentence_hu": "Mindig ugyanazokra a helyekre járunk.",
     "sentence_en": "We always go to the same places.",
     "sentence_de": "Wir gehen immer an dieselben Orte.",
-    "topic": "trabajo_dia",
-    "topicOrder": 54
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 25
   },
   {
     "id": 3584,
@@ -2908,8 +2908,8 @@
     "sentence_hu": "Fontos döntést hoztam.",
     "sentence_en": "I've made an important decision.",
     "sentence_de": "Ich habe eine wichtige Entscheidung getroffen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 55
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 20
   },
   {
     "id": 3585,
@@ -2922,8 +2922,8 @@
     "sentence_hu": "Nem voltál itt korábban?",
     "sentence_en": "Hadn't you been here before?",
     "sentence_de": "Warst du nicht schon einmal hier gewesen?",
-    "topic": "trabajo_dia",
-    "topicOrder": 56
+    "topic": "trabajo_dia_ser_estar_a2",
+    "topicOrder": 11
   },
   {
     "id": 3586,
@@ -2950,8 +2950,8 @@
     "sentence_hu": "Ma délután moziba mentünk.",
     "sentence_en": "We've gone to the cinema this afternoon.",
     "sentence_de": "Wir sind heute Nachmittag ins Kino gegangen.",
-    "topic": "ocio_cultura",
-    "topicOrder": 13
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 2
   },
   {
     "id": 3588,
@@ -2964,8 +2964,8 @@
     "sentence_hu": "Most te jössz, hogy beszélj.",
     "sentence_en": "Now it's your turn to speak.",
     "sentence_de": "Jetzt bist du dran zu sprechen.",
-    "topic": "ocio_cultura",
-    "topicOrder": 14
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 3
   },
   {
     "id": 3589,
@@ -2978,8 +2978,8 @@
     "sentence_hu": "Ragyogó ötleted volt.",
     "sentence_en": "You've had a brilliant idea.",
     "sentence_de": "Du hattest eine brillante Idee.",
-    "topic": "trabajo_dia",
-    "topicOrder": 57
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 26
   },
   {
     "id": 3590,
@@ -3006,8 +3006,8 @@
     "sentence_hu": "Felírtam az összes nevet a listára.",
     "sentence_en": "I've written down all the names on the list.",
     "sentence_de": "Ich habe alle Namen auf die Liste geschrieben.",
-    "topic": "yo_familia",
-    "topicOrder": 15
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 11
   },
   {
     "id": 3592,
@@ -3034,8 +3034,8 @@
     "sentence_hu": "A húgom három hónapos terhes.",
     "sentence_en": "My sister has been pregnant for three months.",
     "sentence_de": "Meine Schwester ist seit drei Monaten schwanger.",
-    "topic": "salud_deporte",
-    "topicOrder": 17
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 6
   },
   {
     "id": 3594,
@@ -3048,8 +3048,8 @@
     "sentence_hu": "Várjanak egy pillanatot, kérem.",
     "sentence_en": "Wait a moment, please.",
     "sentence_de": "Warten Sie bitte einen Moment.",
-    "topic": "trabajo_dia",
-    "topicOrder": 58
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 21
   },
   {
     "id": 3595,
@@ -3076,22 +3076,22 @@
     "sentence_hu": "A védelem ma nagyon jó volt.",
     "sentence_en": "The defense has been very good today.",
     "sentence_de": "Die Verteidigung war heute sehr gut.",
-    "topic": "trabajo_dia",
-    "topicOrder": 59
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 20
   },
   {
     "id": 3597,
     "level": "A2",
     "es": "terminar (terminó)",
     "hu": "befejezni (ő befejezte)",
-    "en": "to finish (he/she finished)",
+    "en": "to finish (he finished)",
     "de": "beenden (er/sie beendete)",
     "sentence_es": "La película terminó a las once.",
     "sentence_hu": "A film tizenegykor ért véget.",
     "sentence_en": "The movie ended at eleven.",
     "sentence_de": "Der Film endete um elf.",
-    "topic": "ocio_cultura",
-    "topicOrder": 15
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 4
   },
   {
     "id": 3598,
@@ -3104,8 +3104,8 @@
     "sentence_hu": "Ma reggel kimentem futni.",
     "sentence_en": "I've gone out for a run this morning.",
     "sentence_de": "Ich bin heute Morgen laufen gegangen.",
-    "topic": "salud_deporte",
-    "topicOrder": 18
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 7
   },
   {
     "id": 3599,
@@ -3118,8 +3118,8 @@
     "sentence_hu": "A buli nagyszerű volt.",
     "sentence_en": "The party has been wonderful.",
     "sentence_de": "Die Party war großartig.",
-    "topic": "relaciones",
-    "topicOrder": 31
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 14
   },
   {
     "id": 3600,
@@ -3132,8 +3132,8 @@
     "sentence_hu": "Azonnal hívtam az orvost.",
     "sentence_en": "I've called the doctor immediately.",
     "sentence_de": "Ich habe sofort den Arzt angerufen.",
-    "topic": "salud_deporte",
-    "topicOrder": 19
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 7
   },
   {
     "id": 3601,
@@ -3146,8 +3146,8 @@
     "sentence_hu": "A tanú vallomást tett a bíró előtt.",
     "sentence_en": "The witness has testified before the judge.",
     "sentence_de": "Der Zeuge hat vor dem Richter ausgesagt.",
-    "topic": "trabajo_dia",
-    "topicOrder": 60
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 21
   },
   {
     "id": 3602,
@@ -3174,8 +3174,8 @@
     "sentence_hu": "Megint elfelejtettem a jelszavamat.",
     "sentence_en": "I've forgotten my password again.",
     "sentence_de": "Ich habe mein Passwort wieder vergessen.",
-    "topic": "comunicacion",
-    "topicOrder": 20
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 12
   },
   {
     "id": 3604,
@@ -3188,8 +3188,8 @@
     "sentence_hu": "A katonák hazatértek.",
     "sentence_en": "The soldiers have returned home.",
     "sentence_de": "Die Soldaten sind nach Hause zurückgekehrt.",
-    "topic": "trabajo_dia",
-    "topicOrder": 61
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 21
   },
   {
     "id": 3605,
@@ -3202,8 +3202,8 @@
     "sentence_hu": "Kiderült, hogy a kezdetektől igaza volt.",
     "sentence_en": "It turns out he was right from the beginning.",
     "sentence_de": "Es stellt sich heraus, dass er von Anfang an recht hatte.",
-    "topic": "trabajo_dia",
-    "topicOrder": 62
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 22
   },
   {
     "id": 3606,
@@ -3216,8 +3216,8 @@
     "sentence_hu": "Attól függ, milyen idő lesz holnap.",
     "sentence_en": "It depends on the weather tomorrow.",
     "sentence_de": "Es hängt vom Wetter morgen ab.",
-    "topic": "naturaleza",
-    "topicOrder": 21
+    "topic": "naturaleza_leirasok_a2",
+    "topicOrder": 4
   },
   {
     "id": 3607,
@@ -3230,8 +3230,8 @@
     "sentence_hu": "Öt évig tanultam angolul.",
     "sentence_en": "I've studied English for five years.",
     "sentence_de": "Ich habe fünf Jahre lang Englisch gelernt.",
-    "topic": "comunicacion",
-    "topicOrder": 21
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 2
   },
   {
     "id": 3608,
@@ -3244,8 +3244,8 @@
     "sentence_hu": "Ez az ő ötlete, nem az enyém.",
     "sentence_en": "This idea is hers, not mine.",
     "sentence_de": "Diese Idee ist ihre, nicht meine.",
-    "topic": "yo_familia",
-    "topicOrder": 16
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 20
   },
   {
     "id": 3609,
@@ -3272,8 +3272,8 @@
     "sentence_hu": "Most érkeztem haza.",
     "sentence_en": "I've just arrived home.",
     "sentence_de": "Ich bin gerade nach Hause gekommen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 63
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 23
   },
   {
     "id": 3611,
@@ -3286,8 +3286,8 @@
     "sentence_hu": "Megosztottam az érzelmeimet vele.",
     "sentence_en": "I've shared my feelings with her.",
     "sentence_de": "Ich habe meine Gefühle mit ihr geteilt.",
-    "topic": "relaciones",
-    "topicOrder": 32
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 15
   },
   {
     "id": 3612,
@@ -3314,8 +3314,8 @@
     "sentence_hu": "Tegnap reggel közölték velem a hírt.",
     "sentence_en": "They gave me the news yesterday morning.",
     "sentence_de": "Sie haben mir gestern Morgen die Nachricht überbracht.",
-    "topic": "comunicacion",
-    "topicOrder": 22
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 8
   },
   {
     "id": 3614,
@@ -3328,8 +3328,8 @@
     "sentence_hu": "Nagyon elégedettnek tűnnek az eredménnyel.",
     "sentence_en": "They seem very happy with the result.",
     "sentence_de": "Sie scheinen mit dem Ergebnis sehr zufrieden zu sein.",
-    "topic": "relaciones",
-    "topicOrder": 33
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 20
   },
   {
     "id": 3615,
@@ -3356,8 +3356,8 @@
     "sentence_hu": "A kutyák egész délután a kertben játszottak.",
     "sentence_en": "The dogs have played in the garden all afternoon.",
     "sentence_de": "Die Hunde haben den ganzen Nachmittag im Garten gespielt.",
-    "topic": "naturaleza",
-    "topicOrder": 22
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 12
   },
   {
     "id": 3617,
@@ -3370,8 +3370,8 @@
     "sentence_hu": "Szándékosan csináltam.",
     "sentence_en": "I've done it on purpose.",
     "sentence_de": "Ich habe es absichtlich gemacht.",
-    "topic": "trabajo_dia",
-    "topicOrder": 64
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 18
   },
   {
     "id": 3618,
@@ -3412,8 +3412,8 @@
     "sentence_hu": "A park kétszáz méterre van innen.",
     "sentence_en": "The park is two hundred meters from here.",
     "sentence_de": "Der Park ist zweihundert Meter von hier entfernt.",
-    "topic": "hogar_entorno",
-    "topicOrder": 25
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 6
   },
   {
     "id": 3621,
@@ -3440,8 +3440,8 @@
     "sentence_hu": "Úgy döntöttünk, hogy otthon maradunk.",
     "sentence_en": "We've decided to stay at home.",
     "sentence_de": "Wir haben beschlossen, zu Hause zu bleiben.",
-    "topic": "hogar_entorno",
-    "topicOrder": 26
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 14
   },
   {
     "id": 3623,
@@ -3462,14 +3462,14 @@
     "level": "A2",
     "es": "poder (podrá)",
     "hu": "tudni (ő tudni fogja)",
-    "en": "to be able to (he/she will be able to)",
+    "en": "to be able to (he will be able to)",
     "de": "können (er/sie wird können)",
     "sentence_es": "Podrá venir a la fiesta mañana.",
     "sentence_hu": "Holnap el tud jönni a buliba.",
     "sentence_en": "He'll be able to come to the party tomorrow.",
     "sentence_de": "Er wird morgen zur Party kommen können.",
-    "topic": "relaciones",
-    "topicOrder": 34
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 10
   },
   {
     "id": 3625,
@@ -3482,8 +3482,8 @@
     "sentence_hu": "Hány ember jött el?",
     "sentence_en": "How many people have come?",
     "sentence_de": "Wie viele Personen sind gekommen?",
-    "topic": "yo_familia",
-    "topicOrder": 17
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 20
   },
   {
     "id": 3626,
@@ -3496,7 +3496,7 @@
     "sentence_hu": "Az teljesen nevetséges.",
     "sentence_en": "That's absolutely ridiculous.",
     "sentence_de": "Das ist absolut lächerlich.",
-    "topic": "yo_familia",
+    "topic": "personas_caracter_a2",
     "topicOrder": 18
   },
   {
@@ -3510,8 +3510,8 @@
     "sentence_hu": "Jó estét, hölgyeim és uraim.",
     "sentence_en": "Good evening, ladies and gentlemen.",
     "sentence_de": "Guten Abend, meine Damen und Herren.",
-    "topic": "relaciones",
-    "topicOrder": 35
+    "topic": "trato_respeto_a2",
+    "topicOrder": 4
   },
   {
     "id": 3628,
@@ -3524,8 +3524,8 @@
     "sentence_hu": "Ott voltál Juan buliján?",
     "sentence_en": "Were you at Juan's party?",
     "sentence_de": "Warst du auf Juans Party?",
-    "topic": "trabajo_dia",
-    "topicOrder": 65
+    "topic": "trabajo_dia_ser_estar_a2",
+    "topicOrder": 12
   },
   {
     "id": 3629,
@@ -3538,8 +3538,8 @@
     "sentence_hu": "Az éjszaka nagyon nyugodt volt.",
     "sentence_en": "The night has been very quiet.",
     "sentence_de": "Die Nacht war sehr ruhig.",
-    "topic": "yo_familia",
-    "topicOrder": 19
+    "topic": "personas_caracter_a2",
+    "topicOrder": 10
   },
   {
     "id": 3630,
@@ -3552,8 +3552,8 @@
     "sentence_hu": "A műtét nagyon jól sikerült.",
     "sentence_en": "The operation has gone very well.",
     "sentence_de": "Die Operation ist sehr gut verlaufen.",
-    "topic": "salud_deporte",
-    "topicOrder": 20
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 8
   },
   {
     "id": 3631,
@@ -3580,8 +3580,8 @@
     "sentence_hu": "Segíts nekem elmozdítani ezt az asztalt!",
     "sentence_en": "Help me move this table!",
     "sentence_de": "Hilf mir, diesen Tisch zu bewegen!",
-    "topic": "trabajo_dia",
-    "topicOrder": 66
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 24
   },
   {
     "id": 3633,
@@ -3608,8 +3608,8 @@
     "sentence_hu": "Jó választás volt.",
     "sentence_en": "It has been a good choice.",
     "sentence_de": "Es war eine gute Wahl.",
-    "topic": "trabajo_dia",
-    "topicOrder": 67
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 19
   },
   {
     "id": 3635,
@@ -3622,8 +3622,8 @@
     "sentence_hu": "Gyakran járok edzőterembe.",
     "sentence_en": "I go to the gym often.",
     "sentence_de": "Ich gehe oft ins Fitnessstudio.",
-    "topic": "trabajo_dia",
-    "topicOrder": 68
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 20
   },
   {
     "id": 3636,
@@ -3636,8 +3636,8 @@
     "sentence_hu": "Adtam neki egy jó éjt puszit.",
     "sentence_en": "I've given him a goodnight kiss.",
     "sentence_de": "Ich habe ihm einen Gutenachtkuss gegeben.",
-    "topic": "relaciones",
-    "topicOrder": 36
+    "topic": "amor_pareja_a2",
+    "topicOrder": 5
   },
   {
     "id": 3637,
@@ -3664,8 +3664,8 @@
     "sentence_hu": "Nagyon hosszú beszélgetésünk volt.",
     "sentence_en": "We've had a very long conversation.",
     "sentence_de": "Wir haben ein sehr langes Gespräch geführt.",
-    "topic": "comunicacion",
-    "topicOrder": 24
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 13
   },
   {
     "id": 3639,
@@ -3678,8 +3678,8 @@
     "sentence_hu": "Fáj a karom az edzés után.",
     "sentence_en": "My arms hurt after the exercise.",
     "sentence_de": "Meine Arme tun nach dem Training weh.",
-    "topic": "salud_deporte",
-    "topicOrder": 21
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 8
   },
   {
     "id": 3640,
@@ -3692,8 +3692,8 @@
     "sentence_hu": "Nagyon szabad lelke van.",
     "sentence_en": "He has a very free spirit.",
     "sentence_de": "Er hat einen sehr freien Geist.",
-    "topic": "yo_familia",
-    "topicOrder": 20
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 18
   },
   {
     "id": 3641,
@@ -3706,8 +3706,8 @@
     "sentence_hu": "Miért halasztasz mindig mindent holnapra?",
     "sentence_en": "Why do you always leave everything for tomorrow?",
     "sentence_de": "Warum lässt du immer alles auf morgen?",
-    "topic": "trabajo_dia",
-    "topicOrder": 69
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 25
   },
   {
     "id": 3642,
@@ -3720,8 +3720,8 @@
     "sentence_hu": "Nagyon érdekel a történelem.",
     "sentence_en": "I'm very interested in history.",
     "sentence_de": "Mich interessiert Geschichte sehr.",
-    "topic": "ocio_cultura",
-    "topicOrder": 16
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 9
   },
   {
     "id": 3643,
@@ -3734,8 +3734,8 @@
     "sentence_hu": "Pontosan mire gondolsz?",
     "sentence_en": "What exactly are you referring to?",
     "sentence_de": "Worauf beziehst du dich genau?",
-    "topic": "comunicacion",
-    "topicOrder": 25
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 14
   },
   {
     "id": 3644,
@@ -3748,8 +3748,8 @@
     "sentence_hu": "A testvérem idén nyáron házasodott meg.",
     "sentence_en": "My brother got married this summer.",
     "sentence_de": "Mein Bruder hat diesen Sommer geheiratet.",
-    "topic": "yo_familia",
-    "topicOrder": 21
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 7
   },
   {
     "id": 3645,
@@ -3762,8 +3762,8 @@
     "sentence_hu": "Egy hatalmas épületet láttunk a központban.",
     "sentence_en": "We've seen an enormous building in the center.",
     "sentence_de": "Wir haben ein riesiges Gebäude im Zentrum gesehen.",
-    "topic": "hogar_entorno",
-    "topicOrder": 27
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 15
   },
   {
     "id": 3646,
@@ -3776,8 +3776,8 @@
     "sentence_hu": "Elintéztem az összes függő ügyet.",
     "sentence_en": "I've resolved all pending matters.",
     "sentence_de": "Ich habe alle offenen Angelegenheiten erledigt.",
-    "topic": "trabajo_dia",
-    "topicOrder": 70
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 20
   },
   {
     "id": 3647,
@@ -3790,8 +3790,8 @@
     "sentence_hu": "Elvesztettem a hitem ebben a projektben.",
     "sentence_en": "I've lost faith in this project.",
     "sentence_de": "Ich habe den Glauben an dieses Projekt verloren.",
-    "topic": "yo_familia",
-    "topicOrder": 22
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 17
   },
   {
     "id": 3648,
@@ -3804,8 +3804,8 @@
     "sentence_hu": "Megnéztem a művészeti kiállítást a múzeumban.",
     "sentence_en": "I've seen the art exhibition at the museum.",
     "sentence_de": "Ich habe die Kunstausstellung im Museum gesehen.",
-    "topic": "ocio_cultura",
-    "topicOrder": 17
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 10
   },
   {
     "id": 3649,
@@ -3818,8 +3818,8 @@
     "sentence_hu": "Az egér beleesett a csapdába.",
     "sentence_en": "The mouse has fallen into the trap.",
     "sentence_de": "Die Maus ist in die Falle getappt.",
-    "topic": "naturaleza",
-    "topicOrder": 23
+    "topic": "naturaleza_leirasok_a2",
+    "topicOrder": 5
   },
   {
     "id": 3650,
@@ -3832,8 +3832,8 @@
     "sentence_hu": "Nagyon jó a memóriám nevekre.",
     "sentence_en": "I have a very good memory for names.",
     "sentence_de": "Ich habe ein sehr gutes Namensgedächtnis.",
-    "topic": "yo_familia",
-    "topicOrder": 23
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 14
   },
   {
     "id": 3651,
@@ -3846,8 +3846,8 @@
     "sentence_hu": "Az ellenkezőjét csináltam annak, amit mondtál.",
     "sentence_en": "I've done the opposite of what you told me.",
     "sentence_de": "Ich habe das Gegenteil von dem gemacht, was du mir gesagt hast.",
-    "topic": "yo_familia",
-    "topicOrder": 24
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 26
   },
   {
     "id": 3652,
@@ -3860,8 +3860,8 @@
     "sentence_hu": "A katona visszatért a küldetésről.",
     "sentence_en": "The soldier has returned from the mission.",
     "sentence_de": "Der Soldat ist von der Mission zurückgekehrt.",
-    "topic": "trabajo_dia",
-    "topicOrder": 71
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 22
   },
   {
     "id": 3653,
@@ -3888,8 +3888,8 @@
     "sentence_hu": "Most rajtam a sor, hogy beszéljek.",
     "sentence_en": "Now it's my turn to speak.",
     "sentence_de": "Jetzt bin ich an der Reihe zu sprechen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 72
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 21
   },
   {
     "id": 3655,
@@ -3902,8 +3902,8 @@
     "sentence_hu": "Nagyon szívesen mennék veled moziba.",
     "sentence_en": "I would love to go to the cinema with you.",
     "sentence_de": "Ich würde gerne mit dir ins Kino gehen.",
-    "topic": "ocio_cultura",
-    "topicOrder": 18
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 11
   },
   {
     "id": 3656,
@@ -3916,8 +3916,8 @@
     "sentence_hu": "Most jövök el a munkahelyemről.",
     "sentence_en": "I'm leaving work now.",
     "sentence_de": "Ich verlasse gerade die Arbeit.",
-    "topic": "trabajo_dia",
-    "topicOrder": 73
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 26
   },
   {
     "id": 3657,
@@ -3930,8 +3930,8 @@
     "sentence_hu": "Írtam egy e-mailt a tanárnak.",
     "sentence_en": "I've written an email to the teacher.",
     "sentence_de": "Ich habe eine E-Mail an den Lehrer geschrieben.",
-    "topic": "comunicacion",
-    "topicOrder": 26
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 15
   },
   {
     "id": 3658,
@@ -3944,8 +3944,8 @@
     "sentence_hu": "Nyugodj meg, minden rendben lesz.",
     "sentence_en": "Calm down, everything will be fine.",
     "sentence_de": "Beruhige dich, alles wird gut.",
-    "topic": "yo_familia",
-    "topicOrder": 26
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 21
   },
   {
     "id": 3659,
@@ -3958,8 +3958,8 @@
     "sentence_hu": "Üdvözlünk az osztályunkban, María!",
     "sentence_en": "Welcome to our class, María!",
     "sentence_de": "Willkommen in unserer Klasse, María!",
-    "topic": "relaciones",
-    "topicOrder": 37
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 7
   },
   {
     "id": 3660,
@@ -3972,8 +3972,8 @@
     "sentence_hu": "Láttam lehullani a leveleket a fákról.",
     "sentence_en": "I've seen the leaves fall from the trees.",
     "sentence_de": "Ich habe die Blätter von den Bäumen fallen sehen.",
-    "topic": "naturaleza",
-    "topicOrder": 24
+    "topic": "naturaleza_leirasok_a2",
+    "topicOrder": 6
   },
   {
     "id": 3661,
@@ -4000,8 +4000,8 @@
     "sentence_hu": "A teraszról néztük a csillagokat.",
     "sentence_en": "We've seen the stars from the terrace.",
     "sentence_de": "Wir haben die Sterne von der Terrasse aus gesehen.",
-    "topic": "naturaleza",
-    "topicOrder": 25
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 13
   },
   {
     "id": 3663,
@@ -4028,8 +4028,8 @@
     "sentence_hu": "Az interneten találtam meg az információt.",
     "sentence_en": "I've found the information on the internet.",
     "sentence_de": "Ich habe die Information im Internet gefunden.",
-    "topic": "comunicacion",
-    "topicOrder": 27
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 3
   },
   {
     "id": 3665,
@@ -4042,8 +4042,8 @@
     "sentence_hu": "Régi könyveket találtam a padláson.",
     "sentence_en": "I've found some old books in the attic.",
     "sentence_de": "Ich habe alte Bücher auf dem Dachboden gefunden.",
-    "topic": "hogar_entorno",
-    "topicOrder": 28
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 16
   },
   {
     "id": 3666,
@@ -4056,8 +4056,8 @@
     "sentence_hu": "Csak egy pillanatra szeretnék beszélni veled.",
     "sentence_en": "I only want to talk to you for a moment.",
     "sentence_de": "Ich möchte nur einen Moment mit dir sprechen.",
-    "topic": "yo_familia",
-    "topicOrder": 27
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 10
   },
   {
     "id": 3667,
@@ -4070,8 +4070,8 @@
     "sentence_en": "I simply don't understand it.",
     "de": "einfach",
     "sentence_de": "Ich verstehe es einfach nicht.",
-    "topic": "yo_familia",
-    "topicOrder": 30
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 11
   },
   {
     "id": 3668,
@@ -4084,8 +4084,8 @@
     "sentence_en": "It doesn't make sense.",
     "de": "Sinn",
     "sentence_de": "Das ergibt keinen Sinn.",
-    "topic": "yo_familia",
-    "topicOrder": 31
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 23
   },
   {
     "id": 3669,
@@ -4098,8 +4098,8 @@
     "sentence_en": "He left the weapon on the table.",
     "de": "Waffe",
     "sentence_de": "Er ließ die Waffe auf dem Tisch.",
-    "topic": "trabajo_dia",
-    "topicOrder": 74
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 23
   },
   {
     "id": 3670,
@@ -4112,8 +4112,8 @@
     "sentence_en": "Security is important.",
     "de": "Sicherheit",
     "sentence_de": "Sicherheit ist wichtig.",
-    "topic": "trabajo_dia",
-    "topicOrder": 75
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 24
   },
   {
     "id": 3671,
@@ -4126,8 +4126,8 @@
     "sentence_en": "Moreover, he speaks three languages.",
     "de": "außerdem",
     "sentence_de": "Außerdem spricht er drei Sprachen.",
-    "topic": "yo_familia",
-    "topicOrder": 34
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 9
   },
   {
     "id": 3672,
@@ -4140,8 +4140,8 @@
     "sentence_en": "I was the last to arrive.",
     "de": "letzte",
     "sentence_de": "Ich kam als Letzter an.",
-    "topic": "trabajo_dia",
-    "topicOrder": 77
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 27
   },
   {
     "id": 3673,
@@ -4154,8 +4154,8 @@
     "sentence_en": "He has very good hearing.",
     "de": "Gehör / Ohr",
     "sentence_de": "Er hat ein sehr gutes Gehör.",
-    "topic": "salud_deporte",
-    "topicOrder": 22
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 9
   },
   {
     "id": 3674,
@@ -4182,8 +4182,8 @@
     "sentence_en": "I want to live in peace.",
     "de": "Frieden",
     "sentence_de": "Ich möchte in Frieden leben.",
-    "topic": "yo_familia",
-    "topicOrder": 36
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 16
   },
   {
     "id": 3676,
@@ -4196,8 +4196,8 @@
     "sentence_en": "We have a good plan.",
     "de": "Plan",
     "sentence_de": "Wir haben einen guten Plan.",
-    "topic": "trabajo_dia",
-    "topicOrder": 78
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 22
   },
   {
     "id": 3677,
@@ -4210,8 +4210,8 @@
     "sentence_en": "Today I feel worse.",
     "de": "schlechter",
     "sentence_de": "Heute fühle ich mich schlechter.",
-    "topic": "salud_deporte",
-    "topicOrder": 23
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 10
   },
   {
     "id": 3678,
@@ -4238,8 +4238,8 @@
     "sentence_en": "Enough, please!",
     "de": "Genug",
     "sentence_de": "Genug, bitte!",
-    "topic": "yo_familia",
-    "topicOrder": 37
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 19
   },
   {
     "id": 3680,
@@ -4252,8 +4252,8 @@
     "sentence_en": "Take a step forward.",
     "de": "Schritt",
     "sentence_de": "Mach einen Schritt vorwärts.",
-    "topic": "trabajo_dia",
-    "topicOrder": 79
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 23
   },
   {
     "id": 3681,
@@ -4266,8 +4266,8 @@
     "sentence_en": "I didn't sleep well last night.",
     "de": "gestern Abend",
     "sentence_de": "Gestern Abend habe ich nicht gut geschlafen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 80
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 21
   },
   {
     "id": 3682,
@@ -4294,8 +4294,8 @@
     "sentence_en": "There is a lack of time.",
     "de": "Mangel / Fehler",
     "sentence_de": "Es herrscht Zeitmangel.",
-    "topic": "trabajo_dia",
-    "topicOrder": 81
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 22
   },
   {
     "id": 3684,
@@ -4308,8 +4308,8 @@
     "sentence_en": "The fire is hot.",
     "de": "Feuer",
     "sentence_de": "Das Feuer ist heiß.",
-    "topic": "hogar_entorno",
-    "topicOrder": 29
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 17
   },
   {
     "id": 3685,
@@ -4322,8 +4322,8 @@
     "sentence_en": "Where do I put the keys?",
     "de": "legen / stellen",
     "sentence_de": "Wohin lege ich die Schlüssel?",
-    "topic": "hogar_entorno",
-    "topicOrder": 30
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 18
   },
   {
     "id": 3686,
@@ -4336,8 +4336,8 @@
     "sentence_en": "The view is incredible.",
     "de": "unglaublich",
     "sentence_de": "Die Aussicht ist unglaublich.",
-    "topic": "yo_familia",
-    "topicOrder": 38
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 11
   },
   {
     "id": 3687,
@@ -4350,8 +4350,8 @@
     "sentence_en": "It is a real problem.",
     "de": "real / wirklich",
     "sentence_de": "Es ist ein echtes Problem.",
-    "topic": "yo_familia",
-    "topicOrder": 39
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 11
   },
   {
     "id": 3688,
@@ -4364,8 +4364,8 @@
     "sentence_en": "I arrived two weeks ago.",
     "de": "Wochen",
     "sentence_de": "Ich bin vor zwei Wochen angekommen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 82
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 22
   },
   {
     "id": 3689,
@@ -4378,8 +4378,8 @@
     "sentence_en": "Today is a special day.",
     "de": "besonders",
     "sentence_de": "Heute ist ein besonderer Tag.",
-    "topic": "yo_familia",
-    "topicOrder": 40
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 3
   },
   {
     "id": 3690,
@@ -4392,8 +4392,8 @@
     "sentence_en": "The children play outside.",
     "de": "draußen",
     "sentence_de": "Die Kinder spielen draußen.",
-    "topic": "hogar_entorno",
-    "topicOrder": 31
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 7
   },
   {
     "id": 3691,
@@ -4406,8 +4406,8 @@
     "sentence_en": "The sky is blue.",
     "de": "Himmel",
     "sentence_de": "Der Himmel ist blau.",
-    "topic": "naturaleza",
-    "topicOrder": 26
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 14
   },
   {
     "id": 3692,
@@ -4434,8 +4434,8 @@
     "sentence_en": "I'm going to look for my keys.",
     "de": "suchen",
     "sentence_de": "Ich suche meine Schlüssel.",
-    "topic": "trabajo_dia",
-    "topicOrder": 84
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 23
   },
   {
     "id": 3694,
@@ -4448,8 +4448,8 @@
     "sentence_en": "The agent arrived quickly.",
     "de": "Agent",
     "sentence_de": "Der Agent kam schnell an.",
-    "topic": "trabajo_dia",
-    "topicOrder": 85
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 24
   },
   {
     "id": 3695,
@@ -4462,8 +4462,8 @@
     "sentence_en": "I need more information.",
     "de": "Information",
     "sentence_de": "Ich brauche mehr Informationen.",
-    "topic": "comunicacion",
-    "topicOrder": 28
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 4
   },
   {
     "id": 3696,
@@ -4476,8 +4476,8 @@
     "sentence_en": "What a strange situation.",
     "de": "seltsam / selten",
     "sentence_de": "Was für eine seltsame Situation.",
-    "topic": "yo_familia",
-    "topicOrder": 41
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 8
   },
   {
     "id": 3697,
@@ -4490,8 +4490,8 @@
     "sentence_en": "The weather is perfect.",
     "de": "perfekt",
     "sentence_de": "Das Wetter ist perfekt.",
-    "topic": "yo_familia",
-    "topicOrder": 42
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 4
   },
   {
     "id": 3698,
@@ -4504,8 +4504,8 @@
     "sentence_en": "You have the right to know.",
     "de": "Recht",
     "sentence_de": "Du hast das Recht zu wissen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 86
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 25
   },
   {
     "id": 3699,
@@ -4518,8 +4518,8 @@
     "sentence_en": "I watched the afternoon news.",
     "de": "Nachrichten",
     "sentence_de": "Ich habe die Nachrichten gesehen.",
-    "topic": "comunicacion",
-    "topicOrder": 29
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 5
   },
   {
     "id": 3700,
@@ -4532,8 +4532,8 @@
     "sentence_en": "Everything is under control.",
     "de": "Kontrolle",
     "sentence_de": "Alles ist unter Kontrolle.",
-    "topic": "trabajo_dia",
-    "topicOrder": 88
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 24
   },
   {
     "id": 3701,
@@ -4546,8 +4546,8 @@
     "sentence_en": "The damage was very large.",
     "de": "Schaden",
     "sentence_de": "Der Schaden war sehr groß.",
-    "topic": "trabajo_dia",
-    "topicOrder": 89
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 26
   },
   {
     "id": 3702,
@@ -4560,8 +4560,8 @@
     "sentence_en": "I will never forget that day.",
     "de": "niemals",
     "sentence_de": "Ich werde diesen Tag niemals vergessen.",
-    "topic": "yo_familia",
-    "topicOrder": 43
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 14
   },
   {
     "id": 3703,
@@ -4574,8 +4574,8 @@
     "sentence_en": "She has a beautiful voice.",
     "de": "Stimme",
     "sentence_de": "Sie hat eine schöne Stimme.",
-    "topic": "comunicacion",
-    "topicOrder": 30
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 16
   },
   {
     "id": 3704,
@@ -4588,8 +4588,8 @@
     "sentence_en": "It's a secret between us.",
     "de": "Geheimnis",
     "sentence_de": "Es ist ein Geheimnis zwischen uns.",
-    "topic": "relaciones",
-    "topicOrder": 38
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 16
   },
   {
     "id": 3705,
@@ -4602,8 +4602,8 @@
     "sentence_en": "The future is uncertain.",
     "de": "Zukunft",
     "sentence_de": "Die Zukunft ist ungewiss.",
-    "topic": "yo_familia",
-    "topicOrder": 44
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 12
   },
   {
     "id": 3706,
@@ -4644,8 +4644,8 @@
     "sentence_en": "It is a bit strange.",
     "de": "seltsam",
     "sentence_de": "Das ist ein bisschen seltsam.",
-    "topic": "yo_familia",
-    "topicOrder": 45
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 9
   },
   {
     "id": 3709,
@@ -4672,8 +4672,8 @@
     "sentence_en": "I want to win the match.",
     "de": "gewinnen",
     "sentence_de": "Ich will das Spiel gewinnen.",
-    "topic": "salud_deporte",
-    "topicOrder": 24
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 9
   },
   {
     "id": 3711,
@@ -4686,8 +4686,8 @@
     "sentence_en": "The air is fresh.",
     "de": "Luft",
     "sentence_de": "Die Luft ist frisch.",
-    "topic": "naturaleza",
-    "topicOrder": 27
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 15
   },
   {
     "id": 3712,
@@ -4700,8 +4700,8 @@
     "sentence_en": "I have an appointment tomorrow.",
     "de": "Termin",
     "sentence_de": "Ich habe morgen einen Termin.",
-    "topic": "salud_deporte",
-    "topicOrder": 25
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 11
   },
   {
     "id": 3713,
@@ -4714,8 +4714,8 @@
     "sentence_en": "The system is not working.",
     "de": "System",
     "sentence_de": "Das System funktioniert nicht.",
-    "topic": "trabajo_dia",
-    "topicOrder": 92
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 25
   },
   {
     "id": 3714,
@@ -4728,8 +4728,8 @@
     "sentence_en": "He has a small business.",
     "de": "Geschäft",
     "sentence_de": "Er hat ein kleines Geschäft.",
-    "topic": "trabajo_dia",
-    "topicOrder": 93
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 26
   },
   {
     "id": 3715,
@@ -4742,8 +4742,8 @@
     "sentence_en": "She has a quick mind.",
     "de": "Verstand",
     "sentence_de": "Sie hat einen schnellen Verstand.",
-    "topic": "yo_familia",
-    "topicOrder": 47
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 15
   },
   {
     "id": 3716,
@@ -4756,8 +4756,8 @@
     "sentence_en": "The situation is difficult.",
     "de": "Situation",
     "sentence_de": "Die Situation ist schwierig.",
-    "topic": "trabajo_dia",
-    "topicOrder": 94
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 27
   },
   {
     "id": 3717,
@@ -4770,8 +4770,8 @@
     "sentence_en": "They have a good relationship.",
     "de": "Beziehung",
     "sentence_de": "Sie haben eine gute Beziehung.",
-    "topic": "relaciones",
-    "topicOrder": 39
+    "topic": "amor_pareja_a2",
+    "topicOrder": 6
   },
   {
     "id": 3718,
@@ -4784,8 +4784,8 @@
     "sentence_en": "Open the box, please.",
     "de": "Schachtel",
     "sentence_de": "Öffne die Schachtel, bitte.",
-    "topic": "hogar_entorno",
-    "topicOrder": 32
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 19
   },
   {
     "id": 3719,
@@ -4840,8 +4840,8 @@
     "sentence_en": "I wrote a long letter.",
     "de": "Brief",
     "sentence_de": "Ich schrieb einen langen Brief.",
-    "topic": "comunicacion",
-    "topicOrder": 31
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 6
   },
   {
     "id": 3723,
@@ -4854,8 +4854,8 @@
     "sentence_en": "Her boyfriend is nice.",
     "de": "Freund",
     "sentence_de": "Ihr Freund ist nett.",
-    "topic": "relaciones",
-    "topicOrder": 40
+    "topic": "amor_pareja_a2",
+    "topicOrder": 2
   },
   {
     "id": 3724,
@@ -4868,8 +4868,8 @@
     "sentence_en": "It is completely normal.",
     "de": "normal",
     "sentence_de": "Das ist völlig normal.",
-    "topic": "yo_familia",
-    "topicOrder": 48
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 1
   },
   {
     "id": 3725,
@@ -4896,8 +4896,8 @@
     "sentence_en": "The meeting starts at nine.",
     "de": "Besprechung",
     "sentence_de": "Die Besprechung beginnt um neun.",
-    "topic": "trabajo_dia",
-    "topicOrder": 95
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 28
   },
   {
     "id": 3727,
@@ -4924,8 +4924,8 @@
     "sentence_en": "The wedding was beautiful.",
     "de": "Hochzeit",
     "sentence_de": "Die Hochzeit war wunderschön.",
-    "topic": "yo_familia",
-    "topicOrder": 49
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 5
   },
   {
     "id": 3729,
@@ -4938,8 +4938,8 @@
     "sentence_en": "It is a difficult decision.",
     "de": "Entscheidung",
     "sentence_de": "Das ist eine schwierige Entscheidung.",
-    "topic": "trabajo_dia",
-    "topicOrder": 96
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 29
   },
   {
     "id": 3730,
@@ -4952,8 +4952,8 @@
     "sentence_en": "He went to jail.",
     "de": "Gefängnis",
     "sentence_de": "Er kam ins Gefängnis.",
-    "topic": "trabajo_dia",
-    "topicOrder": 97
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 27
   },
   {
     "id": 3731,
@@ -4966,8 +4966,8 @@
     "sentence_en": "I am going to finish soon.",
     "de": "beenden",
     "sentence_de": "Ich werde bald fertig sein.",
-    "topic": "trabajo_dia",
-    "topicOrder": 98
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 27
   },
   {
     "id": 3732,
@@ -4980,8 +4980,8 @@
     "sentence_en": "It is just a joke.",
     "de": "Witz",
     "sentence_de": "Das ist nur ein Witz.",
-    "topic": "relaciones",
-    "topicOrder": 41
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 18
   },
   {
     "id": 3733,
@@ -4994,8 +4994,8 @@
     "sentence_en": "I forgot my camera.",
     "de": "Kamera",
     "sentence_de": "Ich vergaß meine Kamera.",
-    "topic": "ocio_cultura",
-    "topicOrder": 19
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 5
   },
   {
     "id": 3734,
@@ -5008,8 +5008,8 @@
     "sentence_en": "Christmas is in December.",
     "de": "Weihnachten",
     "sentence_de": "Weihnachten ist im Dezember.",
-    "topic": "ocio_cultura",
-    "topicOrder": 20
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 12
   },
   {
     "id": 3735,
@@ -5036,8 +5036,8 @@
     "sentence_en": "The army arrived in the village.",
     "de": "Armee",
     "sentence_de": "Die Armee kam ins Dorf.",
-    "topic": "trabajo_dia",
-    "topicOrder": 100
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 25
   },
   {
     "id": 3737,
@@ -5064,8 +5064,8 @@
     "sentence_en": "At the beginning it was hard.",
     "de": "Anfang",
     "sentence_de": "Am Anfang war es schwer.",
-    "topic": "yo_familia",
-    "topicOrder": 51
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 24
   },
   {
     "id": 3739,
@@ -5078,8 +5078,8 @@
     "sentence_en": "I have a special wish.",
     "de": "Wunsch",
     "sentence_de": "Ich habe einen besonderen Wunsch.",
-    "topic": "yo_familia",
-    "topicOrder": 52
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 16
   },
   {
     "id": 3740,
@@ -5092,8 +5092,8 @@
     "sentence_en": "Her husband works at home.",
     "de": "Ehemann",
     "sentence_de": "Ihr Ehemann arbeitet zu Hause.",
-    "topic": "yo_familia",
-    "topicOrder": 53
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 6
   },
   {
     "id": 3741,
@@ -5120,8 +5120,8 @@
     "sentence_en": "I love my family very much.",
     "de": "lieben",
     "sentence_de": "Ich liebe meine Familie sehr.",
-    "topic": "relaciones",
-    "topicOrder": 42
+    "topic": "amor_pareja_a2",
+    "topicOrder": 3
   },
   {
     "id": 3743,
@@ -5134,8 +5134,8 @@
     "sentence_en": "We are at school now.",
     "de": "sein",
     "sentence_de": "Wir sind jetzt in der Schule.",
-    "topic": "trabajo_dia",
-    "topicOrder": 103
+    "topic": "trabajo_dia_ser_estar_a2",
+    "topicOrder": 13
   },
   {
     "id": 3744,
@@ -5148,8 +5148,8 @@
     "sentence_en": "The future does not worry me.",
     "de": "beunruhigen",
     "sentence_de": "Die Zukunft beunruhigt mich nicht.",
-    "topic": "relaciones",
-    "topicOrder": 43
+    "topic": "amor_pareja_a2",
+    "topicOrder": 15
   },
   {
     "id": 3745,
@@ -5162,8 +5162,8 @@
     "sentence_en": "There have been many changes.",
     "de": "haben",
     "sentence_de": "Es gab viele Veränderungen.",
-    "topic": "trabajo_dia",
-    "topicOrder": 104
+    "topic": "trabajo_dia_ser_estar_a2",
+    "topicOrder": 14
   },
   {
     "id": 3746,
@@ -5176,8 +5176,8 @@
     "sentence_en": "I am an engineer.",
     "de": "sein",
     "sentence_de": "Ich bin Ingenieur.",
-    "topic": "yo_familia",
-    "topicOrder": 57
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 1
   },
   {
     "id": 3747,
@@ -5204,8 +5204,8 @@
     "sentence_en": "I lost my keys yesterday.",
     "de": "verlieren",
     "sentence_de": "Ich verlor gestern meine Schlüssel.",
-    "topic": "trabajo_dia",
-    "topicOrder": 105
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 28
   },
   {
     "id": 3749,
@@ -5218,8 +5218,8 @@
     "sentence_en": "Enter the house, please.",
     "de": "eintreten",
     "sentence_de": "Bitte betreten Sie das Haus.",
-    "topic": "hogar_entorno",
-    "topicOrder": 34
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 20
   },
   {
     "id": 3750,
@@ -5232,8 +5232,8 @@
     "sentence_en": "I suppose you come tomorrow.",
     "de": "annehmen",
     "sentence_de": "Ich nehme an, du kommst morgen.",
-    "topic": "comunicacion",
-    "topicOrder": 34
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 17
   },
   {
     "id": 3751,
@@ -5246,8 +5246,8 @@
     "sentence_en": "He is the only one who knows.",
     "de": "einzig",
     "sentence_de": "Er ist der einzige, der weiß.",
-    "topic": "yo_familia",
-    "topicOrder": 58
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 9
   },
   {
     "id": 3752,
@@ -5274,8 +5274,8 @@
     "sentence_en": "I give you another example.",
     "de": "ander",
     "sentence_de": "Ich gebe dir ein anderes Beispiel.",
-    "topic": "trabajo_dia",
-    "topicOrder": 106
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 28
   },
   {
     "id": 3754,
@@ -5330,8 +5330,8 @@
     "sentence_en": "It is medium-sized.",
     "de": "Mitte",
     "sentence_de": "Es ist mittelgroß.",
-    "topic": "trabajo_dia",
-    "topicOrder": 107
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 29
   },
   {
     "id": 3758,
@@ -5344,8 +5344,8 @@
     "sentence_en": "You must not kill animals.",
     "de": "töten",
     "sentence_de": "Du darfst Tiere nicht töten.",
-    "topic": "naturaleza",
-    "topicOrder": 29
+    "topic": "naturaleza_leirasok_a2",
+    "topicOrder": 7
   },
   {
     "id": 3759,
@@ -5358,8 +5358,8 @@
     "sentence_en": "He talks about his plans.",
     "de": "über",
     "sentence_de": "Er spricht über seine Pläne.",
-    "topic": "comunicacion",
-    "topicOrder": 35
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 9
   },
   {
     "id": 3760,
@@ -5386,8 +5386,8 @@
     "sentence_en": "The animal is alive.",
     "de": "lebendig",
     "sentence_de": "Das Tier lebt noch.",
-    "topic": "salud_deporte",
-    "topicOrder": 28
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 12
   },
   {
     "id": 3762,
@@ -5400,8 +5400,8 @@
     "sentence_en": "The young lady is very kind.",
     "de": "Fräulein",
     "sentence_de": "Das Fräulein ist sehr freundlich.",
-    "topic": "relaciones",
-    "topicOrder": 48
+    "topic": "trato_respeto_a2",
+    "topicOrder": 1
   },
   {
     "id": 3763,
@@ -5414,8 +5414,8 @@
     "sentence_en": "I have a position in the company.",
     "de": "Posten",
     "sentence_de": "Ich habe eine Stelle in der Firma.",
-    "topic": "trabajo_dia",
-    "topicOrder": 108
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 30
   },
   {
     "id": 3764,
@@ -5428,8 +5428,8 @@
     "sentence_en": "He has a scar on his forehead.",
     "de": "Stirn",
     "sentence_de": "Er hat eine Narbe auf der Stirn.",
-    "topic": "salud_deporte",
-    "topicOrder": 29
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 10
   },
   {
     "id": 3765,
@@ -5456,8 +5456,8 @@
     "sentence_en": "I do not understand the reason.",
     "de": "Grund",
     "sentence_de": "Ich verstehe den Grund nicht.",
-    "topic": "comunicacion",
-    "topicOrder": 36
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 10
   },
   {
     "es": "par",
@@ -5484,8 +5484,8 @@
     "sentence_de": "Ungefähr fünf Personen.",
     "id": 3768,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 37
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 11
   },
   {
     "es": "perdido",
@@ -5512,8 +5512,8 @@
     "sentence_de": "Das Fräulein ist jung.",
     "id": 3770,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 49
+    "topic": "trato_respeto_a2",
+    "topicOrder": 2
   },
   {
     "es": "querido",
@@ -5526,8 +5526,8 @@
     "sentence_de": "Mein geliebter Freund.",
     "id": 3771,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 50
+    "topic": "amor_pareja_a2",
+    "topicOrder": 9
   },
   {
     "es": "cual",
@@ -5540,8 +5540,8 @@
     "sentence_de": "Welches bevorzugst du?",
     "id": 3772,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 110
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 30
   },
   {
     "es": "frente",
@@ -5554,8 +5554,8 @@
     "sentence_de": "Es ist vorne.",
     "id": 3773,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 38
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 8
   },
   {
     "es": "dale",
@@ -5568,8 +5568,8 @@
     "sentence_de": "Gib ihm das Geld.",
     "id": 3774,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 51
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 10
   },
   {
     "es": "razón",
@@ -5582,8 +5582,8 @@
     "sentence_de": "Er hat recht.",
     "id": 3775,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 38
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 12
   },
   {
     "es": "casar",
@@ -5596,8 +5596,8 @@
     "sentence_de": "Sie heiratet nächstes Jahr.",
     "id": 3776,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 60
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 9
   },
   {
     "es": "cumplir",
@@ -5610,8 +5610,8 @@
     "sentence_de": "Er wird fünfundzwanzig.",
     "id": 3777,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 61
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 18
   },
   {
     "es": "lograr",
@@ -5624,8 +5624,8 @@
     "sentence_de": "Ich schaffte es zu beenden.",
     "id": 3778,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 111
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 29
   },
   {
     "es": "apenas",
@@ -5638,8 +5638,8 @@
     "sentence_de": "Ich glaube es kaum.",
     "id": 3779,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 112
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 23
   },
   {
     "es": "pronto",
@@ -5652,8 +5652,8 @@
     "sentence_de": "Ich komme bald zurück.",
     "id": 3780,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 113
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 24
   },
   {
     "es": "propio",
@@ -5666,8 +5666,8 @@
     "sentence_de": "Es ist mein eigenes Auto.",
     "id": 3781,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 62
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 25
   },
   {
     "es": "junto",
@@ -5680,8 +5680,8 @@
     "sentence_de": "Er ist neben mir.",
     "id": 3782,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 52
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 16
   },
   {
     "es": "ocurrir",
@@ -5694,8 +5694,8 @@
     "sentence_de": "Was passiert hier?",
     "id": 1893,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 114
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 3
   },
   {
     "es": "la mitad",
@@ -5722,8 +5722,8 @@
     "sentence_de": "Der Offizier unterschrieb das Dokument.",
     "id": 1895,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 115
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 1
   },
   {
     "es": "la compañía",
@@ -5736,8 +5736,8 @@
     "sentence_de": "Ich arbeite bei einem großen Unternehmen.",
     "id": 1896,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 116
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 1
   },
   {
     "es": "el montón",
@@ -5750,8 +5750,8 @@
     "sentence_de": "Es gibt einen Haufen Kleidung auf dem Boden.",
     "id": 1897,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 39
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 21
   },
   {
     "es": "a través de",
@@ -5792,8 +5792,8 @@
     "sentence_de": "Das war ein dummer Fehler.",
     "id": 1900,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 63
+    "topic": "personas_caracter_a2",
+    "topicOrder": 13
   },
   {
     "es": "los caballeros",
@@ -5806,8 +5806,8 @@
     "sentence_de": "Die Herren betraten den Saal.",
     "id": 1901,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 53
+    "topic": "trato_respeto_a2",
+    "topicOrder": 6
   },
   {
     "es": "salvo",
@@ -5820,8 +5820,8 @@
     "sentence_de": "Alle kamen an, außer Juan.",
     "id": 1902,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 117
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 1
   },
   {
     "es": "tonto",
@@ -5834,8 +5834,8 @@
     "sentence_de": "Sei nicht albern, hör mir zu.",
     "id": 1903,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 64
+    "topic": "personas_caracter_a2",
+    "topicOrder": 12
   },
   {
     "es": "el traje",
@@ -5862,8 +5862,8 @@
     "sentence_de": "Es ist ein Vergnügen, dich kennenzulernen.",
     "id": 1905,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 54
+    "topic": "amor_pareja_a2",
+    "topicOrder": 16
   },
   {
     "es": "el muchacho",
@@ -5876,8 +5876,8 @@
     "sentence_de": "Der Junge spielt im Garten.",
     "id": 1906,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 65
+    "topic": "personas_caracter_a2",
+    "topicOrder": 3
   },
   {
     "es": "el programa",
@@ -5890,8 +5890,8 @@
     "sentence_de": "Das Programm beginnt um acht.",
     "id": 1907,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 23
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 6
   },
   {
     "es": "la carrera",
@@ -5918,8 +5918,8 @@
     "sentence_de": "Sie hat ein wunderschönes Lächeln.",
     "id": 1909,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 66
+    "topic": "personas_caracter_a2",
+    "topicOrder": 8
   },
   {
     "es": "sin embargo",
@@ -5932,8 +5932,8 @@
     "sentence_de": "Es ist schwierig; jedoch versuchen wir es.",
     "id": 1910,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 39
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 13
   },
   {
     "es": "el detective",
@@ -5946,8 +5946,8 @@
     "sentence_de": "Der Detektiv sucht einen Hinweis.",
     "id": 1911,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 24
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 7
   },
   {
     "es": "las fotos",
@@ -5988,8 +5988,8 @@
     "sentence_de": "Ich brauche Stille zum Lernen.",
     "id": 1914,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 40
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 22
   },
   {
     "es": "el club",
@@ -6016,8 +6016,8 @@
     "sentence_de": "Ich befürchte, dass du zu spät kommst.",
     "id": 1916,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 55
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 9
   },
   {
     "es": "prometer",
@@ -6030,8 +6030,8 @@
     "sentence_de": "Ich verspreche dir, dass ich bald zurückkomme.",
     "id": 1917,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 56
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 7
   },
   {
     "es": "los muertos",
@@ -6044,8 +6044,8 @@
     "sentence_de": "Wir beten für die Toten.",
     "id": 1918,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 30
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 13
   },
   {
     "es": "el ataque",
@@ -6058,8 +6058,8 @@
     "sentence_de": "Der Angriff geschah nachts.",
     "id": 1919,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 31
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 14
   },
   {
     "es": "jurar",
@@ -6072,8 +6072,8 @@
     "sentence_de": "Ich schwöre, die Wahrheit zu sagen.",
     "id": 1920,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 57
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 8
   },
   {
     "es": "gracioso",
@@ -6086,8 +6086,8 @@
     "sentence_de": "Dieser Witz ist sehr witzig.",
     "id": 1921,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 67
+    "topic": "personas_caracter_a2",
+    "topicOrder": 7
   },
   {
     "es": "el teniente",
@@ -6100,8 +6100,8 @@
     "sentence_de": "Der Leutnant gab die Befehle.",
     "id": 1922,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 118
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 2
   },
   {
     "es": "la nave",
@@ -6128,8 +6128,8 @@
     "sentence_de": "Wir halten Kontakt per Telefon.",
     "id": 1924,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 40
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 18
   },
   {
     "es": "verdadero",
@@ -6142,8 +6142,8 @@
     "sentence_de": "Das ist keine wahre Geschichte.",
     "id": 1925,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 41
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 14
   },
   {
     "es": "el alma",
@@ -6156,8 +6156,8 @@
     "sentence_de": "Sie singt mit ganzer Seele.",
     "id": 1926,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 58
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 17
   },
   {
     "es": "andar",
@@ -6170,8 +6170,8 @@
     "sentence_de": "Ich gehe gerne durch den Park.",
     "id": 1927,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 32
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 11
   },
   {
     "es": "el matrimonio",
@@ -6184,8 +6184,8 @@
     "sentence_de": "Ihre Ehe dauerte zwanzig Jahre.",
     "id": 1928,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 68
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 8
   },
   {
     "es": "la locura",
@@ -6198,8 +6198,8 @@
     "sentence_de": "Das ist totaler Wahnsinn.",
     "id": 1929,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 33
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 15
   },
   {
     "es": "el oro",
@@ -6226,8 +6226,8 @@
     "sentence_de": "Ich brauche eine Erlaubnis zum Eintreten.",
     "id": 1931,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 119
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 2
   },
   {
     "es": "el director",
@@ -6240,8 +6240,8 @@
     "sentence_de": "Der Direktor sprach mit den Eltern.",
     "id": 1932,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 120
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 2
   },
   {
     "es": "el peligro",
@@ -6254,8 +6254,8 @@
     "sentence_de": "Wir sind jetzt in Gefahr.",
     "id": 1933,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 34
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 12
   },
   {
     "es": "los pies",
@@ -6268,8 +6268,8 @@
     "sentence_de": "Mir tun die Füße vom Laufen weh.",
     "id": 1934,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 35
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 13
   },
   {
     "es": "maravilloso",
@@ -6282,8 +6282,8 @@
     "sentence_de": "Das Konzert war wunderbar.",
     "id": 1935,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 25
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 13
   },
   {
     "es": "el espacio",
@@ -6296,8 +6296,8 @@
     "sentence_de": "Im Koffer ist kein Platz mehr.",
     "id": 1936,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 41
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 9
   },
   {
     "es": "el rato",
@@ -6310,8 +6310,8 @@
     "sentence_de": "Warte kurz, ich komme gleich.",
     "id": 1937,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 121
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 1
   },
   {
     "es": "la sorpresa",
@@ -6324,8 +6324,8 @@
     "sentence_de": "Die Party war eine Überraschung für sie.",
     "id": 1938,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 59
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 18
   },
   {
     "es": "el maestro",
@@ -6352,8 +6352,8 @@
     "sentence_de": "Diese Typen sind sehr seltsam.",
     "id": 1940,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 60
+    "topic": "trato_respeto_a2",
+    "topicOrder": 8
   },
   {
     "es": "el crimen",
@@ -6366,8 +6366,8 @@
     "sentence_de": "Wir untersuchen das Verbrechen gemeinsam.",
     "id": 1941,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 26
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 8
   },
   {
     "es": "la escena",
@@ -6380,8 +6380,8 @@
     "sentence_de": "Der Tatort ist abgesperrt.",
     "id": 1942,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 27
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 9
   },
   {
     "es": "la señal",
@@ -6394,8 +6394,8 @@
     "sentence_de": "Hier gibt es kein Handysignal.",
     "id": 1943,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 42
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 7
   },
   {
     "es": "el honor",
@@ -6408,8 +6408,8 @@
     "sentence_de": "Es ist eine Ehre, diesen Preis zu erhalten.",
     "id": 1944,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 61
+    "topic": "trato_respeto_a2",
+    "topicOrder": 14
   },
   {
     "es": "el cerebro",
@@ -6422,8 +6422,8 @@
     "sentence_de": "Das Gehirn braucht Ruhe.",
     "id": 1945,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 36
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 16
   },
   {
     "es": "inteligente",
@@ -6436,8 +6436,8 @@
     "sentence_de": "Sie ist sehr intelligent im Unterricht.",
     "id": 1946,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 69
+    "topic": "personas_caracter_a2",
+    "topicOrder": 6
   },
   {
     "es": "el bar",
@@ -6464,8 +6464,8 @@
     "sentence_de": "Was ist gestern hier passiert?",
     "id": 1948,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 122
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 4
   },
   {
     "es": "adentro",
@@ -6478,8 +6478,8 @@
     "sentence_de": "Die Kinder spielen drinnen.",
     "id": 1949,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 42
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 10
   },
   {
     "es": "las drogas",
@@ -6492,8 +6492,8 @@
     "sentence_de": "Drogen sind sehr gefährlich.",
     "id": 1950,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 37
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 17
   },
   {
     "es": "enseguida",
@@ -6506,8 +6506,8 @@
     "sentence_de": "Ich bin sofort zurück, bleib stehen.",
     "id": 1951,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 123
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 2
   },
   {
     "es": "agradable",
@@ -6520,8 +6520,8 @@
     "sentence_de": "Das Wetter heute ist sehr angenehm.",
     "id": 1952,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 30
+    "topic": "naturaleza_leirasok_a2",
+    "topicOrder": 8
   },
   {
     "es": "el departamento",
@@ -6534,8 +6534,8 @@
     "sentence_de": "Ich arbeite in der Verkaufsabteilung.",
     "id": 1953,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 124
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 3
   },
   {
     "es": "lindo",
@@ -6548,8 +6548,8 @@
     "sentence_de": "Du hast eine sehr niedliche Katze.",
     "id": 1954,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 70
+    "topic": "personas_caracter_a2",
+    "topicOrder": 5
   },
   {
     "es": "la víctima",
@@ -6562,8 +6562,8 @@
     "sentence_de": "Das Opfer sprach mit der Polizei.",
     "id": 1955,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 38
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 18
   },
   {
     "es": "la energía",
@@ -6576,8 +6576,8 @@
     "sentence_de": "Ich habe heute keine Energie.",
     "id": 1956,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 39
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 14
   },
   {
     "es": "la misión",
@@ -6590,8 +6590,8 @@
     "sentence_de": "Wir haben die Mission erfolgreich abgeschlossen.",
     "id": 1957,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 125
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 3
   },
   {
     "es": "listos",
@@ -6604,8 +6604,8 @@
     "sentence_de": "Seid ihr zum Aufbrechen bereit?",
     "id": 1958,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 126
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 3
   },
   {
     "es": "la izquierda",
@@ -6646,8 +6646,8 @@
     "sentence_de": "Die Antwort ist sehr einfach.",
     "id": 1961,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 127
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 4
   },
   {
     "es": "regresar",
@@ -6688,8 +6688,8 @@
     "sentence_de": "Der Dieb ist im Gefängnis.",
     "id": 1964,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 28
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 10
   },
   {
     "es": "el público",
@@ -6702,8 +6702,8 @@
     "sentence_de": "Das Publikum applaudierte am Ende.",
     "id": 1965,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 29
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 11
   },
   {
     "es": "la causa",
@@ -6716,8 +6716,8 @@
     "sentence_de": "Ich kenne den Grund des Problems nicht.",
     "id": 1966,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 128
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 3
   },
   {
     "es": "el sargento",
@@ -6730,8 +6730,8 @@
     "sentence_de": "Der Sergeant gab den Befehl.",
     "id": 1967,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 129
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 4
   },
   {
     "es": "existir",
@@ -6744,8 +6744,8 @@
     "sentence_de": "Glaubst du, dass Außerirdische existieren?",
     "id": 1968,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 31
+    "topic": "naturaleza_leirasok_a2",
+    "topicOrder": 9
   },
   {
     "es": "la zona",
@@ -6758,8 +6758,8 @@
     "sentence_de": "Diese Zone ist sehr gefährlich.",
     "id": 1969,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 43
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 11
   },
   {
     "es": "la base",
@@ -6772,8 +6772,8 @@
     "sentence_de": "Der Militärstützpunkt ist geschlossen.",
     "id": 1970,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 44
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 12
   },
   {
     "es": "soler",
@@ -6786,8 +6786,8 @@
     "sentence_de": "Früher bin ich gewöhnlich zur Arbeit gegangen.",
     "id": 1971,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 130
+    "topic": "trabajo_dia_ser_estar_a2",
+    "topicOrder": 1
   },
   {
     "es": "la pelea",
@@ -6800,8 +6800,8 @@
     "sentence_de": "Auf der Straße gab es eine Schlägerei.",
     "id": 1972,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 62
+    "topic": "crimen_injusticia_a2",
+    "topicOrder": 1
   },
   {
     "es": "así",
@@ -6814,8 +6814,8 @@
     "sentence_de": "Mach es bitte so.",
     "id": 1973,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 131
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 3
   },
   {
     "es": "la vez",
@@ -6828,8 +6828,8 @@
     "sentence_de": "Dieses Mal werde ich gewinnen.",
     "id": 1974,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 132
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 4
   },
   {
     "es": "dios",
@@ -6842,8 +6842,8 @@
     "sentence_de": "Mein Gott, was für eine Überraschung.",
     "id": 1975,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 63
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 19
   },
   {
     "es": "un poco",
@@ -6856,8 +6856,8 @@
     "sentence_de": "Sprich ein bisschen langsamer.",
     "id": 1976,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 133
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 5
   },
   {
     "es": "el momento",
@@ -6870,8 +6870,8 @@
     "sentence_de": "Warte bitte einen Moment.",
     "id": 1977,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 134
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 6
   },
   {
     "es": "vale",
@@ -6884,8 +6884,8 @@
     "sentence_de": "Okay, bis morgen.",
     "id": 1978,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 43
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 15
   },
   {
     "es": "el tipo",
@@ -6898,8 +6898,8 @@
     "sentence_de": "Welchen Typ von Musik magst du?",
     "id": 1979,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 30
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 12
   },
   {
     "es": "mamá",
@@ -6912,8 +6912,8 @@
     "sentence_de": "Meine Mama kocht sehr gut.",
     "id": 1980,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 71
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 1
   },
   {
     "es": "luego",
@@ -6926,8 +6926,8 @@
     "sentence_de": "Wir reden später, okay?",
     "id": 1981,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 135
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 7
   },
   {
     "es": "papá",
@@ -6940,8 +6940,8 @@
     "sentence_de": "Mein Papa arbeitet in einem Büro.",
     "id": 1982,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 72
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 2
   },
   {
     "es": "mal",
@@ -6954,8 +6954,8 @@
     "sentence_de": "Ich fühle mich heute schlecht.",
     "id": 1983,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 40
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 19
   },
   {
     "es": "realmente",
@@ -6968,8 +6968,8 @@
     "sentence_de": "Ich verstehe das Problem wirklich nicht.",
     "id": 1984,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 73
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 10
   },
   {
     "es": "importar",
@@ -6982,8 +6982,8 @@
     "sentence_de": "Das ist mir überhaupt nicht wichtig.",
     "id": 1985,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 74
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 4
   },
   {
     "es": "tanto",
@@ -7010,8 +7010,8 @@
     "sentence_de": "Du meinst das ernst, oder?",
     "id": 1987,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 75
+    "topic": "personas_caracter_a2",
+    "topicOrder": 11
   },
   {
     "es": "la idea",
@@ -7024,8 +7024,8 @@
     "sentence_de": "Ich habe eine sehr gute Idee.",
     "id": 1988,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 76
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 5
   },
   {
     "es": "cierto",
@@ -7038,8 +7038,8 @@
     "sentence_de": "Es stimmt, dass er spät ankam.",
     "id": 1989,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 77
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 6
   },
   {
     "es": "quien",
@@ -7052,8 +7052,8 @@
     "sentence_de": "Sie ist diejenige, die mir geholfen hat.",
     "id": 1990,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 78
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 10
   },
   {
     "es": "demasiado",
@@ -7066,8 +7066,8 @@
     "sentence_de": "Das ist zu schwierig für mich.",
     "id": 1991,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 79
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 4
   },
   {
     "es": "la chica",
@@ -7080,8 +7080,8 @@
     "sentence_de": "Das Mädchen spricht sehr schnell.",
     "id": 1992,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 80
+    "topic": "personas_caracter_a2",
+    "topicOrder": 1
   },
   {
     "es": "los chicos",
@@ -7094,8 +7094,8 @@
     "sentence_de": "Die Jungs spielen im Park.",
     "id": 1993,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 81
+    "topic": "personas_caracter_a2",
+    "topicOrder": 2
   },
   {
     "es": "algún",
@@ -7108,8 +7108,8 @@
     "sentence_de": "Hast du irgendein Problem?",
     "id": 1994,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 82
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 1
   },
   {
     "es": "el cariño",
@@ -7122,8 +7122,8 @@
     "sentence_de": "Ich sage es dir mit Zuneigung.",
     "id": 1995,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 64
+    "topic": "amor_pareja_a2",
+    "topicOrder": 8
   },
   {
     "es": "la forma",
@@ -7136,8 +7136,8 @@
     "sentence_de": "Es gibt keinen Weg, das zu wissen.",
     "id": 1996,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 83
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 13
   },
   {
     "es": "el primero",
@@ -7150,8 +7150,8 @@
     "sentence_de": "Sie war die Erste, die ankam.",
     "id": 1997,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 84
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 2
   },
   {
     "es": "genial",
@@ -7164,8 +7164,8 @@
     "sentence_de": "Das ist eine tolle Idee!",
     "id": 1998,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 85
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 5
   },
   {
     "es": "por supuesto",
@@ -7178,8 +7178,8 @@
     "sentence_de": "Natürlich helfe ich dir.",
     "id": 1999,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 86
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 12
   },
   {
     "es": "la manera",
@@ -7192,8 +7192,8 @@
     "sentence_de": "Es gibt eine bessere Art und Weise.",
     "id": 2000,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 87
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 14
   },
   {
     "es": "la historia",
@@ -7206,8 +7206,8 @@
     "sentence_de": "Er erzählte mir eine sehr traurige Geschichte.",
     "id": 2001,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 31
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 14
   },
   {
     "es": "significar",
@@ -7220,8 +7220,8 @@
     "sentence_de": "Was bedeutet dieses Wort?",
     "id": 2002,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 44
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 19
   },
   {
     "es": "siquiera",
@@ -7234,8 +7234,8 @@
     "sentence_de": "Er hat mich nicht einmal angerufen.",
     "id": 2003,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 88
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 15
   },
   {
     "es": "la muerte",
@@ -7248,8 +7248,8 @@
     "sentence_de": "Der Tod seines Großvaters war traurig.",
     "id": 2004,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 41
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 20
   },
   {
     "es": "la realidad",
@@ -7262,8 +7262,8 @@
     "sentence_de": "In der Realität sind die Dinge schwierig.",
     "id": 2005,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 89
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 22
   },
   {
     "es": "adelante",
@@ -7276,8 +7276,8 @@
     "sentence_de": "Mach weiter, gib nicht auf.",
     "id": 2006,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 90
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 18
   },
   {
     "es": "el cuidado",
@@ -7290,8 +7290,8 @@
     "sentence_de": "Sei vorsichtig beim Überqueren der Straße.",
     "id": 2007,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 42
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 21
   },
   {
     "es": "cerca",
@@ -7304,8 +7304,8 @@
     "sentence_de": "Der Supermarkt ist sehr nah.",
     "id": 2008,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 45
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 13
   },
   {
     "es": "bastante",
@@ -7318,8 +7318,8 @@
     "sentence_de": "Die Prüfung war ziemlich schwierig.",
     "id": 2009,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 91
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 3
   },
   {
     "es": "ningún",
@@ -7332,8 +7332,8 @@
     "sentence_de": "Ich habe kein Problem.",
     "id": 2010,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 92
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 2
   },
   {
     "es": "el punto",
@@ -7346,8 +7346,8 @@
     "sentence_de": "Das ist der wichtigste Punkt.",
     "id": 2011,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 93
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 17
   },
   {
     "es": "incluso",
@@ -7360,8 +7360,8 @@
     "sentence_de": "Sogar er hat einen Fehler gemacht.",
     "id": 2012,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 94
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 8
   },
   {
     "es": "el doctor",
@@ -7374,8 +7374,8 @@
     "sentence_de": "Der Arzt sagt, dass du in Ordnung bist.",
     "id": 2013,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 43
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 22
   },
   {
     "es": "arriba",
@@ -7388,8 +7388,8 @@
     "sentence_de": "Die Katze ist oben auf dem Tisch.",
     "id": 2014,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 46
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 14
   },
   {
     "es": "la tierra",
@@ -7402,8 +7402,8 @@
     "sentence_de": "Pflanzen brauchen gute Erde.",
     "id": 2015,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 32
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 16
   },
   {
     "es": "la guerra",
@@ -7430,8 +7430,8 @@
     "sentence_de": "Es ist mir egal, was sie denken.",
     "id": 2017,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 95
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 12
   },
   {
     "es": "la vuelta",
@@ -7458,8 +7458,8 @@
     "sentence_de": "Sport ist gut für den Körper.",
     "id": 2019,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 44
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 15
   },
   {
     "es": "la oportunidad",
@@ -7472,8 +7472,8 @@
     "sentence_de": "Das ist eine große Chance für dich.",
     "id": 2020,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 136
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 4
   },
   {
     "es": "listo",
@@ -7486,8 +7486,8 @@
     "sentence_de": "Bist du fertig zum Losgehen?",
     "id": 2021,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 96
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 6
   },
   {
     "es": "el auto",
@@ -7514,8 +7514,8 @@
     "sentence_de": "Ist es möglich, die Reservierung zu ändern?",
     "id": 2023,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 97
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 7
   },
   {
     "es": "el número",
@@ -7528,8 +7528,8 @@
     "sentence_de": "Was ist deine Telefonnummer?",
     "id": 2024,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 45
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 8
   },
   {
     "es": "la culpa",
@@ -7542,8 +7542,8 @@
     "sentence_de": "Was passiert ist, ist nicht meine Schuld.",
     "id": 2025,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 65
+    "topic": "crimen_injusticia_a2",
+    "topicOrder": 3
   },
   {
     "es": "abajo",
@@ -7556,8 +7556,8 @@
     "sentence_de": "Die Schlüssel sind unten auf dem Tisch.",
     "id": 2026,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 47
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 15
   },
   {
     "es": "atrás",
@@ -7570,8 +7570,8 @@
     "sentence_de": "Setz dich nach hinten, da ist mehr Platz.",
     "id": 2027,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 48
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 16
   },
   {
     "es": "el capitán",
@@ -7584,8 +7584,8 @@
     "sentence_de": "Der Kapitän spricht mit seinem Team.",
     "id": 2028,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 137
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 5
   },
   {
     "es": "la palabra",
@@ -7598,8 +7598,8 @@
     "sentence_de": "Ich verstehe dieses Wort nicht.",
     "id": 2029,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 46
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 9
   },
   {
     "es": "el idiota",
@@ -7612,8 +7612,8 @@
     "sentence_de": "Sei kein Idiot und hör mir zu.",
     "id": 2030,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 66
+    "topic": "trato_respeto_a2",
+    "topicOrder": 17
   },
   {
     "es": "el cuarto",
@@ -7626,8 +7626,8 @@
     "sentence_de": "Mein Zimmer ist im zweiten Stock.",
     "id": 2031,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 49
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 23
   },
   {
     "es": "los millones",
@@ -7640,8 +7640,8 @@
     "sentence_de": "Millionen von Menschen nutzen die U-Bahn.",
     "id": 2033,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 98
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 17
   },
   {
     "es": "el modo",
@@ -7654,8 +7654,8 @@
     "sentence_de": "Es gibt keine Möglichkeit, es heute zu reparieren.",
     "id": 2034,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 99
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 15
   },
   {
     "es": "los demás",
@@ -7668,8 +7668,8 @@
     "sentence_de": "Die anderen sind schon zu Hause angekommen.",
     "id": 2035,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 67
+    "topic": "trato_respeto_a2",
+    "topicOrder": 9
   },
   {
     "es": "el asesino",
@@ -7682,8 +7682,8 @@
     "sentence_de": "Die Polizei sucht den Mörder.",
     "id": 2036,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 68
+    "topic": "crimen_injusticia_a2",
+    "topicOrder": 6
   },
   {
     "es": "el odio",
@@ -7696,8 +7696,8 @@
     "sentence_de": "Hass löst keine Probleme.",
     "id": 2037,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 69
+    "topic": "crimen_injusticia_a2",
+    "topicOrder": 5
   },
   {
     "es": "el sexo",
@@ -7710,8 +7710,8 @@
     "sentence_de": "Das Formular fragt nach dem Geschlecht.",
     "id": 2038,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 100
+    "topic": "personas_caracter_a2",
+    "topicOrder": 20
   },
   {
     "es": "divertido",
@@ -7724,8 +7724,8 @@
     "sentence_de": "Die Party war sehr lustig.",
     "id": 2039,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 32
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 15
   },
   {
     "es": "el grupo",
@@ -7738,8 +7738,8 @@
     "sentence_de": "Wir arbeiten diese Woche in einer Gruppe.",
     "id": 2040,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 138
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 5
   },
   {
     "es": "el asunto",
@@ -7752,8 +7752,8 @@
     "sentence_de": "Das ist eine sehr komplizierte Angelegenheit.",
     "id": 2041,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 139
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 6
   },
   {
     "es": "el mensaje",
@@ -7766,8 +7766,8 @@
     "sentence_de": "Ich habe dir eine Nachricht auf WhatsApp geschickt.",
     "id": 2042,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 48
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 10
   },
   {
     "es": "encima",
@@ -7780,8 +7780,8 @@
     "sentence_de": "Das Buch liegt oben auf dem Stuhl.",
     "id": 2043,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 50
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 17
   },
   {
     "es": "la atención",
@@ -7808,8 +7808,8 @@
     "sentence_de": "Wir sind sehr verschieden, aber wir sind Freunde.",
     "id": 2045,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 101
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 13
   },
   {
     "es": "callarse",
@@ -7822,8 +7822,8 @@
     "sentence_de": "Bitte sei einen Moment still.",
     "id": 2046,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 70
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 20
   },
   {
     "es": "siguiente",
@@ -7850,8 +7850,8 @@
     "sentence_de": "Es ist nicht blau, sondern grün.",
     "id": 2048,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 102
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 19
   },
   {
     "es": "la pena",
@@ -7864,8 +7864,8 @@
     "sentence_de": "Es ist schade, dass du nicht kommen kannst.",
     "id": 2049,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 71
+    "topic": "crimen_injusticia_a2",
+    "topicOrder": 13
   },
   {
     "es": "la fuerza",
@@ -7878,8 +7878,8 @@
     "sentence_de": "Du brauchst viel Kraft dafür.",
     "id": 2050,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 45
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 16
   },
   {
     "es": "ambos",
@@ -7892,8 +7892,8 @@
     "sentence_de": "Beide wollen dasselbe.",
     "id": 2051,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 103
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 7
   },
   {
     "es": "el pie",
@@ -7906,8 +7906,8 @@
     "sentence_de": "Mein rechter Fuß tut weh.",
     "id": 2052,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 46
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 17
   },
   {
     "es": "lamentar",
@@ -7920,8 +7920,8 @@
     "sentence_de": "Ich bedauere sehr, was passiert ist.",
     "id": 2053,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 72
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 21
   },
   {
     "es": "el asesinato",
@@ -7934,8 +7934,8 @@
     "sentence_de": "Die Polizei untersucht den Mord.",
     "id": 2054,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 73
+    "topic": "crimen_injusticia_a2",
+    "topicOrder": 7
   },
   {
     "es": "adónde",
@@ -7962,8 +7962,8 @@
     "sentence_de": "Ich habe ein Foto vom Sonnenuntergang gemacht.",
     "id": 2056,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 33
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 13
   },
   {
     "es": "alrededor",
@@ -7976,8 +7976,8 @@
     "sentence_de": "Es gibt Bäume um das Haus herum.",
     "id": 2057,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 51
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 18
   },
   {
     "es": "personal",
@@ -7990,8 +7990,8 @@
     "sentence_de": "Das ist eine sehr persönliche Angelegenheit.",
     "id": 2058,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 104
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 20
   },
   {
     "es": "este",
@@ -8004,8 +8004,8 @@
     "sentence_de": "Dieses Buch ist sehr interessant.",
     "id": 2059,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 105
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 16
   },
   {
     "es": "la evidencia",
@@ -8018,8 +8018,8 @@
     "sentence_de": "Es gibt keinen Beweis für seine Schuld.",
     "id": 2060,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 140
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 4
   },
   {
     "es": "la botella",
@@ -8046,8 +8046,8 @@
     "sentence_de": "Ich brauche jetzt deine Unterstützung.",
     "id": 2062,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 74
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 22
   },
   {
     "es": "la bala",
@@ -8060,8 +8060,8 @@
     "sentence_de": "Die Kugel flog sehr nah an ihm vorbei.",
     "id": 2063,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 75
+    "topic": "crimen_injusticia_a2",
+    "topicOrder": 9
   },
   {
     "es": "el tiro",
@@ -8074,8 +8074,8 @@
     "sentence_de": "Ich hörte einen Schuss auf der Straße.",
     "id": 2064,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 76
+    "topic": "crimen_injusticia_a2",
+    "topicOrder": 10
   },
   {
     "es": "la época",
@@ -8088,8 +8088,8 @@
     "sentence_de": "Es war eine sehr schwierige Epoche für alle.",
     "id": 2065,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 106
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 18
   },
   {
     "es": "la distancia",
@@ -8116,8 +8116,8 @@
     "sentence_de": "Ich werfe diesen Brief in den Briefkasten.",
     "id": 2067,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 49
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 16
   },
   {
     "es": "el área",
@@ -8130,8 +8130,8 @@
     "sentence_de": "Dieses Gebiet ist nachts sehr gefährlich.",
     "id": 2068,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 52
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 19
   },
   {
     "es": "el espectáculo",
@@ -8144,8 +8144,8 @@
     "sentence_de": "Die Vorstellung begann um acht Uhr.",
     "id": 2069,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 34
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 14
   },
   {
     "es": "la magia",
@@ -8158,8 +8158,8 @@
     "sentence_de": "Kinder glauben an Magie.",
     "id": 2070,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 35
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 16
   },
   {
     "es": "nacional",
@@ -8186,8 +8186,8 @@
     "sentence_de": "Das Universum ist sehr groß und unendlich.",
     "id": 2072,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 33
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 17
   },
   {
     "es": "la vergüenza",
@@ -8200,8 +8200,8 @@
     "sentence_de": "Ich schäme mich sehr für das, was ich getan habe.",
     "id": 2073,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 77
+    "topic": "crimen_injusticia_a2",
+    "topicOrder": 12
   },
   {
     "es": "el monstruo",
@@ -8214,8 +8214,8 @@
     "sentence_de": "Der Junge hat Angst vor dem Monster.",
     "id": 2074,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 36
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 15
   },
   {
     "es": "la princesa",
@@ -8228,8 +8228,8 @@
     "sentence_de": "Die Prinzessin wohnt in einem großen Schloss.",
     "id": 2075,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 37
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 16
   },
   {
     "es": "cuidar",
@@ -8242,8 +8242,8 @@
     "sentence_de": "Sie kümmert sich liebevoll um ihre Kinder.",
     "id": 2076,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 107
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 8
   },
   {
     "es": "pocos",
@@ -8256,8 +8256,8 @@
     "sentence_de": "Heute sind wenige Schüler in der Klasse.",
     "id": 2077,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 108
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 5
   },
   {
     "es": "los detalles",
@@ -8270,8 +8270,8 @@
     "sentence_de": "Gib mir mehr Details über das Problem.",
     "id": 2078,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 141
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 5
   },
   {
     "es": "la belleza",
@@ -8284,8 +8284,8 @@
     "sentence_de": "Die Schönheit dieses Ortes ist unglaublich.",
     "id": 2079,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 34
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 18
   },
   {
     "es": "enviar",
@@ -8298,8 +8298,8 @@
     "sentence_de": "Ich schicke dir heute Nachmittag eine Nachricht.",
     "id": 2080,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 50
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 11
   },
   {
     "es": "los puntos",
@@ -8340,8 +8340,8 @@
     "sentence_de": "Ich muss seine endgültige Entscheidung akzeptieren.",
     "id": 2083,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 109
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 7
   },
   {
     "es": "borracho",
@@ -8354,8 +8354,8 @@
     "sentence_de": "Fahr nicht, wenn du betrunken bist.",
     "id": 2084,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 47
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 23
   },
   {
     "es": "el animal",
@@ -8368,8 +8368,8 @@
     "sentence_de": "Das größte Tier ist der Elefant.",
     "id": 2085,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 35
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 19
   },
   {
     "es": "los hechos",
@@ -8382,8 +8382,8 @@
     "sentence_de": "Die Fakten zeigen, dass er recht hat.",
     "id": 2086,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 110
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 21
   },
   {
     "es": "el uso",
@@ -8396,8 +8396,8 @@
     "sentence_de": "Die Benutzung des Handys ist hier verboten.",
     "id": 2087,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 51
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 12
   },
   {
     "es": "recibir",
@@ -8410,8 +8410,8 @@
     "sentence_de": "Ich hoffe, morgen deine Antwort zu erhalten.",
     "id": 2088,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 52
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 13
   },
   {
     "es": "agradecer",
@@ -8424,8 +8424,8 @@
     "sentence_de": "Ich möchte dir für deine heutige Hilfe danken.",
     "id": 2089,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 78
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 23
   },
   {
     "es": "despacio",
@@ -8438,8 +8438,8 @@
     "sentence_de": "Bitte sprich langsamer.",
     "id": 2090,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 53
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 17
   },
   {
     "es": "directamente",
@@ -8452,8 +8452,8 @@
     "sentence_de": "Sprich direkt mit dem Direktor.",
     "id": 2091,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 54
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 18
   },
   {
     "es": "inmediato",
@@ -8466,8 +8466,8 @@
     "sentence_de": "Wir brauchen eine sofortige Antwort.",
     "id": 2092,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 142
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 6
   },
   {
     "es": "profesional",
@@ -8480,8 +8480,8 @@
     "sentence_de": "Ich suche einen erfahrenen Facharzt.",
     "id": 2093,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 143
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 7
   },
   {
     "es": "el líder",
@@ -8494,8 +8494,8 @@
     "sentence_de": "Wir brauchen einen guten Anführer für die Gruppe.",
     "id": 2094,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 144
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 8
   },
   {
     "es": "grave",
@@ -8508,8 +8508,8 @@
     "sentence_de": "Seine Lage ist jetzt sehr ernst.",
     "id": 2095,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 48
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 24
   },
   {
     "es": "llegar",
@@ -8522,8 +8522,8 @@
     "sentence_de": "Wann bist du gestern nach Hause gekommen?",
     "id": 2096,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 145
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 5
   },
   {
     "es": "el jurado",
@@ -8536,8 +8536,8 @@
     "sentence_de": "Die Jury entschied, dass er unschuldig ist.",
     "id": 2097,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 146
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 5
   },
   {
     "es": "los casos",
@@ -8550,8 +8550,8 @@
     "sentence_de": "Die Polizei untersucht mehrere schwierige Fälle.",
     "id": 2098,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 147
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 6
   },
   {
     "es": "últimamente",
@@ -8564,8 +8564,8 @@
     "sentence_de": "In letzter Zeit schlafe ich nicht gut.",
     "id": 2099,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 111
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 16
   },
   {
     "es": "la piedra",
@@ -8578,8 +8578,8 @@
     "sentence_de": "Der Junge warf einen Stein in den Fluss.",
     "id": 2100,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 36
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 20
   },
   {
     "es": "la intención",
@@ -8592,8 +8592,8 @@
     "sentence_de": "Es war nicht meine Absicht, dich zu verletzen.",
     "id": 2101,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 79
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 24
   },
   {
     "es": "el humor",
@@ -8606,8 +8606,8 @@
     "sentence_de": "Er ist jeden Tag gut gelaunt.",
     "id": 2102,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 112
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 19
   },
   {
     "es": "asesinar",
@@ -8620,8 +8620,8 @@
     "sentence_de": "Jemand versuchte, den Präsidenten zu ermorden.",
     "id": 2103,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 80
+    "topic": "crimen_injusticia_a2",
+    "topicOrder": 8
   },
   {
     "es": "directo",
@@ -8648,8 +8648,8 @@
     "sentence_de": "Der Hauptbahnhof ist sehr nah.",
     "id": 2105,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 53
+    "topic": "hogar_entorno_ubicacion_a2",
+    "topicOrder": 20
   },
   {
     "es": "la oscuridad",
@@ -8662,8 +8662,8 @@
     "sentence_de": "Ich gehe nicht gerne in der Dunkelheit.",
     "id": 2106,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 37
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 21
   },
   {
     "es": "actuar",
@@ -8676,8 +8676,8 @@
     "sentence_de": "Du musst vorsichtiger handeln.",
     "id": 2107,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 38
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 17
   },
   {
     "es": "comenzar",
@@ -8690,8 +8690,8 @@
     "sentence_de": "Das Meeting beginnt in fünf Minuten.",
     "id": 2108,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 148
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 6
   },
   {
     "es": "privado",
@@ -8704,8 +8704,8 @@
     "sentence_de": "Dieser Strand ist für den Privatgebrauch.",
     "id": 2109,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 54
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 24
   },
   {
     "es": "el demonio",
@@ -8718,8 +8718,8 @@
     "sentence_de": "In dem Film erscheint ein böser Dämon.",
     "id": 2110,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 39
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 18
   },
   {
     "es": "romper",
@@ -8732,8 +8732,8 @@
     "sentence_de": "Pass auf, du kannst das Glas zerbrechen.",
     "id": 2111,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 55
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 25
   },
   {
     "es": "el fiscal",
@@ -8746,8 +8746,8 @@
     "sentence_de": "Der Staatsanwalt präsentierte Beweise beim Prozess.",
     "id": 2112,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 149
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 7
   },
   {
     "es": "gratis",
@@ -8788,8 +8788,8 @@
     "sentence_de": "Was für ein wunderschöner Tag heute.",
     "id": 2115,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 38
+    "topic": "naturaleza_leirasok_a2",
+    "topicOrder": 10
   },
   {
     "es": "sexual",
@@ -8802,8 +8802,8 @@
     "sentence_de": "Sexuelle Bildung ist in Schulen wichtig.",
     "id": 2116,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 113
+    "topic": "opinion_calidad_a2",
+    "topicOrder": 22
   },
   {
     "es": "el acceso",
@@ -8816,8 +8816,8 @@
     "sentence_de": "Ich habe keinen Zugang zu diesem Dokument.",
     "id": 2117,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 55
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 14
   },
   {
     "es": "la necesidad",
@@ -8830,8 +8830,8 @@
     "sentence_de": "Wasser ist ein grundlegendes menschliches Bedürfnis.",
     "id": 2118,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 114
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 20
   },
   {
     "es": "el dueño",
@@ -8844,8 +8844,8 @@
     "sentence_de": "Der Besitzer des Hundes wohnt hier.",
     "id": 2119,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 56
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 26
   },
   {
     "es": "merecer",
@@ -8858,8 +8858,8 @@
     "sentence_de": "Er verdient eine zweite Chance.",
     "id": 2120,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 81
+    "topic": "crimen_injusticia_a2",
+    "topicOrder": 11
   },
   {
     "es": "los rayos",
@@ -8872,8 +8872,8 @@
     "sentence_de": "Heute Nacht gibt es Blitze am Himmel.",
     "id": 2121,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 39
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 22
   },
   {
     "es": "mentir",
@@ -8886,8 +8886,8 @@
     "sentence_de": "Es ist nicht richtig, deine Freunde anzulügen.",
     "id": 2122,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 82
+    "topic": "crimen_injusticia_a2",
+    "topicOrder": 4
   },
   {
     "es": "el fantasma",
@@ -8900,8 +8900,8 @@
     "sentence_de": "Die Kinder glauben, dass es ein Gespenst gibt.",
     "id": 2123,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 40
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 19
   },
   {
     "es": "varios",
@@ -8914,8 +8914,8 @@
     "sentence_de": "Ich habe mehrere Bücher zu diesem Thema.",
     "id": 2124,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 115
+    "topic": "cantidad_frecuencia_a2",
+    "topicOrder": 6
   },
   {
     "es": "el efecto",
@@ -8928,8 +8928,8 @@
     "sentence_de": "Dieses Medikament hat Nebenwirkungen.",
     "id": 2125,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 49
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 25
   },
   {
     "es": "la felicidad",
@@ -8942,8 +8942,8 @@
     "sentence_de": "Glück lässt sich nicht kaufen.",
     "id": 2126,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 83
+    "topic": "amor_pareja_a2",
+    "topicOrder": 10
   },
   {
     "es": "la espada",
@@ -8956,8 +8956,8 @@
     "sentence_de": "Der König hatte ein goldenes Schwert.",
     "id": 2127,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 41
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 20
   },
   {
     "es": "las relaciones",
@@ -8970,8 +8970,8 @@
     "sentence_de": "Die Beziehungen zwischen den beiden Ländern sind gut.",
     "id": 2128,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 84
+    "topic": "amor_pareja_a2",
+    "topicOrder": 7
   },
   {
     "es": "menor",
@@ -8984,8 +8984,8 @@
     "sentence_de": "Er ist zwei Jahre jünger als seine Schwester.",
     "id": 2129,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 116
+    "topic": "personas_caracter_a2",
+    "topicOrder": 16
   },
   {
     "es": "el video",
@@ -8998,8 +8998,8 @@
     "sentence_de": "Ich habe ein sehr lustiges Video auf dem Handy gesehen.",
     "id": 2130,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 42
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 21
   },
   {
     "es": "perfectamente",
@@ -9012,8 +9012,8 @@
     "sentence_de": "Ich verstehe vollkommen, was du sagst.",
     "id": 2131,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 56
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 19
   },
   {
     "es": "local",
@@ -9040,8 +9040,8 @@
     "sentence_de": "Es ist schade, dass du nicht kommen kannst.",
     "id": 2133,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 85
+    "topic": "crimen_injusticia_a2",
+    "topicOrder": 14
   },
   {
     "es": "la búsqueda",
@@ -9054,8 +9054,8 @@
     "sentence_de": "Die Suche nach dem vermissten Kind geht weiter.",
     "id": 2134,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 150
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 8
   },
   {
     "es": "las razones",
@@ -9082,8 +9082,8 @@
     "sentence_de": "Diese Blume riecht sehr gut.",
     "id": 2136,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 40
+    "topic": "naturaleza_leirasok_a2",
+    "topicOrder": 11
   },
   {
     "es": "tantos",
@@ -9096,8 +9096,8 @@
     "sentence_de": "Ich habe nicht mit so vielen Problemen heute gerechnet.",
     "id": 2137,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 151
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 7
   },
   {
     "es": "normalmente",
@@ -9110,8 +9110,8 @@
     "sentence_de": "Normalerweise frühstücke ich um acht Uhr.",
     "id": 2138,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 152
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 8
   },
   {
     "es": "la cinta",
@@ -9152,8 +9152,8 @@
     "sentence_de": "Der Anfang des Buches ist sehr interessant.",
     "id": 2142,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 154
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 9
   },
   {
     "es": "militar",
@@ -9166,8 +9166,8 @@
     "sentence_de": "Mein Onkel arbeitet auf dem Militärstützpunkt.",
     "id": 2143,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 155
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 6
   },
   {
     "es": "el polvo",
@@ -9180,8 +9180,8 @@
     "sentence_de": "In diesem Zimmer ist viel Staub.",
     "id": 2144,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 57
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 27
   },
   {
     "es": "bello",
@@ -9194,8 +9194,8 @@
     "sentence_de": "Die Landschaft dieses Landes ist sehr schön.",
     "id": 2145,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 41
+    "topic": "naturaleza_leirasok_a2",
+    "topicOrder": 12
   },
   {
     "es": "el coronel",
@@ -9208,8 +9208,8 @@
     "sentence_de": "Der Oberst gibt die Befehle.",
     "id": 2146,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 156
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 7
   },
   {
     "es": "apuesto",
@@ -9222,8 +9222,8 @@
     "sentence_de": "Er ist sehr gutaussehend.",
     "id": 2147,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 117
+    "topic": "personas_caracter_a2",
+    "topicOrder": 14
   },
   {
     "es": "excepto",
@@ -9236,8 +9236,8 @@
     "sentence_de": "Alle kamen außer dir.",
     "id": 2148,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 157
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 10
   },
   {
     "es": "la posición",
@@ -9250,8 +9250,8 @@
     "sentence_de": "Ich bin in einer schwierigen Position.",
     "id": 2149,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 158
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 9
   },
   {
     "es": "trasero",
@@ -9278,8 +9278,8 @@
     "sentence_de": "Du hast ausgezeichnete Arbeit geleistet.",
     "id": 2151,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 159
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 8
   },
   {
     "es": "los modos",
@@ -9292,8 +9292,8 @@
     "sentence_de": "Du hast sehr gute Manieren.",
     "id": 2152,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 86
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 25
   },
   {
     "es": "la especie",
@@ -9306,8 +9306,8 @@
     "sentence_de": "Diese Art ist in Gefahr.",
     "id": 2153,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 42
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 23
   },
   {
     "es": "la diferencia",
@@ -9348,8 +9348,8 @@
     "sentence_de": "Ich höre jeden Morgen Radio.",
     "id": 2156,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 57
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 15
   },
   {
     "es": "el hogar",
@@ -9362,8 +9362,8 @@
     "sentence_de": "Mein Zuhause ist klein aber gemütlich.",
     "id": 2157,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 58
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 28
   },
   {
     "es": "el fondo",
@@ -9376,8 +9376,8 @@
     "sentence_de": "Der Meeresgrund ist dunkel.",
     "id": 2158,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 43
+    "topic": "naturaleza_leirasok_a2",
+    "topicOrder": 13
   },
   {
     "es": "el planeta",
@@ -9390,8 +9390,8 @@
     "sentence_de": "Unser Planet ist in Gefahr.",
     "id": 2159,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 44
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 24
   },
   {
     "es": "el respeto",
@@ -9404,8 +9404,8 @@
     "sentence_de": "Man muss anderen Respekt entgegenbringen.",
     "id": 2160,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 87
+    "topic": "trato_respeto_a2",
+    "topicOrder": 13
   },
   {
     "es": "parar",
@@ -9432,8 +9432,8 @@
     "sentence_de": "Gib mir einen Hinweis, ich weiß es nicht.",
     "id": 2162,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 160
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 9
   },
   {
     "es": "las órdenes",
@@ -9446,8 +9446,8 @@
     "sentence_de": "Ich muss die Befehle befolgen.",
     "id": 2163,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 161
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 8
   },
   {
     "es": "el ojo",
@@ -9460,8 +9460,8 @@
     "sentence_de": "Du hast ein sehr schönes Auge.",
     "id": 2164,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 50
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 26
   },
   {
     "es": "el héroe",
@@ -9474,8 +9474,8 @@
     "sentence_de": "Er ist der Held der Geschichte.",
     "id": 2165,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 43
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 22
   },
   {
     "es": "el trago",
@@ -9502,8 +9502,8 @@
     "sentence_de": "Wir werden für unsere Rechte kämpfen.",
     "id": 2167,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 88
+    "topic": "crimen_injusticia_a2",
+    "topicOrder": 2
   },
   {
     "es": "el cabo",
@@ -9516,8 +9516,8 @@
     "sentence_de": "Der Gefreite kam ins Lager.",
     "id": 2168,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 162
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 9
   },
   {
     "es": "averiguar",
@@ -9530,8 +9530,8 @@
     "sentence_de": "Ich muss die Wahrheit herausfinden.",
     "id": 2169,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 163
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 10
   },
   {
     "es": "el sonido",
@@ -9544,8 +9544,8 @@
     "sentence_de": "Ich hörte ein seltsames Geräusch.",
     "id": 2170,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 58
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 16
   },
   {
     "es": "el caballero",
@@ -9558,8 +9558,8 @@
     "sentence_de": "Dieser Herr ist sehr höflich.",
     "id": 2171,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 89
+    "topic": "trato_respeto_a2",
+    "topicOrder": 5
   },
   {
     "es": "el código",
@@ -9572,8 +9572,8 @@
     "sentence_de": "Ich kenne den geheimen Code nicht.",
     "id": 2172,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 59
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 17
   },
   {
     "es": "la imagen",
@@ -9586,8 +9586,8 @@
     "sentence_de": "Dieses Bild ist sehr schön.",
     "id": 2173,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 60
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 18
   },
   {
     "es": "el millón",
@@ -9614,8 +9614,8 @@
     "sentence_de": "Diese Dame ist sehr elegant.",
     "id": 2175,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 90
+    "topic": "trato_respeto_a2",
+    "topicOrder": 3
   },
   {
     "es": "la prensa",
@@ -9628,8 +9628,8 @@
     "sentence_de": "Die Presse berichtete über den Unfall.",
     "id": 2176,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 61
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 19
   },
   {
     "es": "la televisión",
@@ -9642,8 +9642,8 @@
     "sentence_de": "Ich schaue abends fern.",
     "id": 2177,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 44
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 23
   },
   {
     "es": "los momentos",
@@ -9656,8 +9656,8 @@
     "sentence_de": "Es gibt hier sehr glückliche Momente.",
     "id": 2178,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 164
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 11
   },
   {
     "es": "la posibilidad",
@@ -9670,8 +9670,8 @@
     "sentence_de": "Es gibt eine Möglichkeit zu gewinnen.",
     "id": 2179,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 165
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 10
   },
   {
     "es": "herido",
@@ -9684,8 +9684,8 @@
     "sentence_de": "Der Soldat ist verletzt.",
     "id": 2180,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 51
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 18
   },
   {
     "es": "seguramente",
@@ -9698,8 +9698,8 @@
     "sentence_de": "Er kommt sicherlich zu spät.",
     "id": 2181,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 166
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 12
   },
   {
     "es": "el sospechoso",
@@ -9712,8 +9712,8 @@
     "sentence_de": "Die Polizei suchte nach dem Verdächtigen.",
     "id": 2182,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 167
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 11
   },
   {
     "es": "la naturaleza",
@@ -9726,8 +9726,8 @@
     "sentence_de": "Ich wandere gerne in der Natur.",
     "id": 2183,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 45
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 25
   },
   {
     "es": "arreglar",
@@ -9740,8 +9740,8 @@
     "sentence_de": "Ich muss mein Fahrrad reparieren.",
     "id": 2184,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 59
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 29
   },
   {
     "es": "sentado",
@@ -9754,8 +9754,8 @@
     "sentence_de": "Er sitzt auf dem Stuhl.",
     "id": 2185,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 168
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 9
   },
   {
     "es": "el papi",
@@ -9768,8 +9768,8 @@
     "sentence_de": "Papa, ich bin hungrig.",
     "id": 2186,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 118
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 12
   },
   {
     "es": "obtener",
@@ -9782,8 +9782,8 @@
     "sentence_de": "Ich möchte mehr Informationen erhalten.",
     "id": 2187,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 169
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 7
   },
   {
     "es": "felices",
@@ -9796,8 +9796,8 @@
     "sentence_de": "Wir sind heute sehr glücklich.",
     "id": 2188,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 91
+    "topic": "amor_pareja_a2",
+    "topicOrder": 11
   },
   {
     "es": "el papa",
@@ -9824,8 +9824,8 @@
     "sentence_de": "Das Kind fängt an zu weinen.",
     "id": 2191,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 92
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 26
   },
   {
     "es": "familiar",
@@ -9838,8 +9838,8 @@
     "sentence_de": "Dieser Name kommt mir vertraut vor.",
     "id": 2192,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 120
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 10
   },
   {
     "es": "el desastre",
@@ -9852,8 +9852,8 @@
     "sentence_de": "Der Sturm war eine Katastrophe.",
     "id": 2193,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 46
+    "topic": "naturaleza_taj_allatok_a2",
+    "topicOrder": 26
   },
   {
     "es": "la enfermedad",
@@ -9866,8 +9866,8 @@
     "sentence_de": "Diese Krankheit ist sehr gefährlich.",
     "id": 2194,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 52
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 27
   },
   {
     "es": "el colega",
@@ -9880,8 +9880,8 @@
     "sentence_de": "Mein Kollege arbeitet sehr gut.",
     "id": 2195,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 170
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 11
   },
   {
     "es": "el príncipe",
@@ -9894,8 +9894,8 @@
     "sentence_de": "Der Prinz lebt im Schloss.",
     "id": 2196,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 121
+    "topic": "personas_caracter_a2",
+    "topicOrder": 19
   },
   {
     "es": "bajar",
@@ -9922,8 +9922,8 @@
     "sentence_de": "Der Inspektor überprüfte das Gebäude.",
     "id": 2198,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 171
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 12
   },
   {
     "es": "la velocidad",
@@ -9964,8 +9964,8 @@
     "sentence_de": "Sie hat langes Haar.",
     "id": 2201,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 53
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 28
   },
   {
     "es": "suficientemente",
@@ -9978,8 +9978,8 @@
     "sentence_de": "Ich habe heute nicht genug gegessen.",
     "id": 2202,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 172
+    "topic": "trabajo_dia_tiempo_a2",
+    "topicOrder": 13
   },
   {
     "es": "la unidad",
@@ -9992,8 +9992,8 @@
     "sentence_de": "Die Einheit des Teams ist entscheidend.",
     "id": 2203,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 173
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 10
   },
   {
     "es": "quienes",
@@ -10006,8 +10006,8 @@
     "sentence_de": "Die Personen, die ankamen, sind meine Freunde.",
     "id": 2204,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 93
+    "topic": "trato_respeto_a2",
+    "topicOrder": 15
   },
   {
     "es": "las tonterías",
@@ -10020,8 +10020,8 @@
     "sentence_de": "Hör auf, Unsinn zu reden.",
     "id": 2205,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 94
+    "topic": "crimen_injusticia_a2",
+    "topicOrder": 15
   },
   {
     "es": "la emergencia",
@@ -10034,8 +10034,8 @@
     "sentence_de": "Ruf den Arzt, es ist ein Notfall.",
     "id": 2206,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 54
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 29
   },
   {
     "es": "el robo",
@@ -10062,8 +10062,8 @@
     "sentence_de": "Ich will nicht diesen, ich will den da.",
     "id": 2208,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 174
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 10
   },
   {
     "es": "unidos",
@@ -10076,8 +10076,8 @@
     "sentence_de": "Wir sind stärker, wenn wir vereint sind.",
     "id": 2210,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 95
+    "topic": "trato_respeto_a2",
+    "topicOrder": 11
   },
   {
     "es": "el respecto",
@@ -10090,8 +10090,8 @@
     "sentence_de": "Was das betrifft, weiß ich nichts.",
     "id": 2211,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 62
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 20
   },
   {
     "es": "la victoria",
@@ -10104,8 +10104,8 @@
     "sentence_de": "Wir feiern den Sieg des Teams.",
     "id": 2212,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 55
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 19
   },
   {
     "es": "decidido",
@@ -10118,8 +10118,8 @@
     "sentence_de": "Ich bin entschlossen, das zu beenden.",
     "id": 2213,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 122
+    "topic": "personas_caracter_a2",
+    "topicOrder": 17
   },
   {
     "es": "detenerse",
@@ -10146,8 +10146,8 @@
     "sentence_de": "Wir sind seit Kindheit Freundinnen.",
     "id": 2215,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 96
+    "topic": "trato_respeto_a2",
+    "topicOrder": 10
   },
   {
     "es": "servir",
@@ -10174,8 +10174,8 @@
     "sentence_de": "Ich kann von hier nicht gut hören.",
     "id": 2217,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 63
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 20
   },
   {
     "es": "la voluntad",
@@ -10188,8 +10188,8 @@
     "sentence_de": "Sie hat viel Willen zu lernen.",
     "id": 2218,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 123
+    "topic": "personas_caracter_a2",
+    "topicOrder": 22
   },
   {
     "es": "varias",
@@ -10202,8 +10202,8 @@
     "sentence_de": "Ich habe mehrere Fragen für dich.",
     "id": 2219,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 175
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 11
   },
   {
     "es": "la teoría",
@@ -10230,8 +10230,8 @@
     "sentence_de": "Dieses Szenario ist sehr schwierig.",
     "id": 2221,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 46
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 24
   },
   {
     "es": "el diario",
@@ -10244,8 +10244,8 @@
     "sentence_de": "Sie schreibt jeden Abend in ihr Tagebuch.",
     "id": 2222,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 64
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 20
   },
   {
     "es": "la propiedad",
@@ -10258,8 +10258,8 @@
     "sentence_de": "Dieses Eigentum ist sehr groß.",
     "id": 2223,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 60
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 30
   },
   {
     "es": "el agujero",
@@ -10272,8 +10272,8 @@
     "sentence_de": "Es gibt ein Loch in der Wand.",
     "id": 2224,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 61
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 31
   },
   {
     "es": "el campamento",
@@ -10300,8 +10300,8 @@
     "sentence_de": "Sie ist ein Engel, sie hilft immer.",
     "id": 2226,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 97
+    "topic": "trato_respeto_a2",
+    "topicOrder": 18
   },
   {
     "es": "impresionante",
@@ -10314,8 +10314,8 @@
     "sentence_de": "Die Aussicht von hier ist beeindruckend.",
     "id": 2227,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 47
+    "topic": "naturaleza_leirasok_a2",
+    "topicOrder": 14
   },
   {
     "es": "el proceso",
@@ -10328,8 +10328,8 @@
     "sentence_de": "Der Prozess ist lang, aber notwendig.",
     "id": 2228,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 176
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 12
   },
   {
     "es": "el miembro",
@@ -10342,8 +10342,8 @@
     "sentence_de": "Er ist ein Mitglied des Teams.",
     "id": 2229,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 98
+    "topic": "trato_respeto_a2",
+    "topicOrder": 12
   },
   {
     "es": "el periódico",
@@ -10356,8 +10356,8 @@
     "sentence_de": "Ich lese morgens die Zeitung.",
     "id": 2230,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 65
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 21
   },
   {
     "es": "la mami",
@@ -10370,8 +10370,8 @@
     "sentence_de": "Mama, ich habe Hunger.",
     "id": 2231,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 124
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 13
   },
   {
     "es": "crear",
@@ -10384,8 +10384,8 @@
     "sentence_de": "Ich möchte etwas Neues erstellen.",
     "id": 2232,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 177
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 8
   },
   {
     "es": "robar",
@@ -10412,8 +10412,8 @@
     "sentence_de": "Er ist sehr gutaussehend und freundlich.",
     "id": 2234,
     "level": "A2",
-    "topic": "yo_familia",
-    "topicOrder": 125
+    "topic": "personas_caracter_a2",
+    "topicOrder": 4
   },
   {
     "es": "continuar",
@@ -10426,8 +10426,8 @@
     "sentence_de": "Wir werden morgen fortfahren.",
     "id": 2235,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 178
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 9
   },
   {
     "es": "extra",
@@ -10440,8 +10440,8 @@
     "sentence_de": "Ich brauche einen extra Tag zum Fertigstellen.",
     "id": 2236,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 179
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 12
   },
   {
     "es": "manejar",
@@ -10468,8 +10468,8 @@
     "sentence_de": "Es war ein Akt der Tapferkeit.",
     "id": 2238,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 47
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 25
   },
   {
     "es": "los números",
@@ -10496,8 +10496,8 @@
     "sentence_de": "Ich bin heute fünf Kilometer gelaufen.",
     "id": 2240,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 56
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 20
   },
   {
     "es": "el internet",
@@ -10510,8 +10510,8 @@
     "sentence_de": "An diesem Ort gibt es kein Internet.",
     "id": 2241,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 66
+    "topic": "comunicacion_medios_a2",
+    "topicOrder": 22
   },
   {
     "es": "inútil",
@@ -10524,8 +10524,8 @@
     "sentence_de": "Diese Karte ist nutzlos, sie ist falsch.",
     "id": 2242,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 180
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 13
   },
   {
     "es": "la sensación",
@@ -10538,8 +10538,8 @@
     "sentence_de": "Ich habe heute ein seltsames Gefühl.",
     "id": 2243,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 57
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 30
   },
   {
     "es": "el alcohol",
@@ -10566,8 +10566,8 @@
     "sentence_de": "Ich wohne im dritten Stock.",
     "id": 2245,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 62
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 32
   },
   {
     "es": "el ladrón",
@@ -10594,8 +10594,8 @@
     "sentence_de": "Du sprichst sehr schnell, ich verstehe nicht.",
     "id": 2247,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 67
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 21
   },
   {
     "es": "disparar",
@@ -10608,8 +10608,8 @@
     "sentence_de": "Der Polizist musste schießen.",
     "id": 2248,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 181
+    "topic": "trabajo_dia_ejercito_a2",
+    "topicOrder": 11
   },
   {
     "es": "el entrenador",
@@ -10622,8 +10622,8 @@
     "sentence_de": "Der Trainer spricht mit den Spielern.",
     "id": 2249,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 58
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 21
   },
   {
     "es": "entero",
@@ -10664,8 +10664,8 @@
     "sentence_de": "Die Polizei wird den Verdächtigen anhalten.",
     "id": 2252,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 182
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 13
   },
   {
     "es": "el talento",
@@ -10678,8 +10678,8 @@
     "sentence_de": "Sie hat viel Talent für Musik.",
     "id": 2253,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 48
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 17
   },
   {
     "es": "el tribunal",
@@ -10692,8 +10692,8 @@
     "sentence_de": "Der Fall ist jetzt vor Gericht.",
     "id": 2254,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 183
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 14
   },
   {
     "es": "el toque",
@@ -10706,8 +10706,8 @@
     "sentence_de": "Mit einer Berührung funktioniert alles.",
     "id": 2255,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 184
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 14
   },
   {
     "es": "dispuesto",
@@ -10720,8 +10720,8 @@
     "sentence_de": "Ich bin bereit, dir zu helfen.",
     "id": 2256,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 99
+    "topic": "trato_respeto_a2",
+    "topicOrder": 19
   },
   {
     "es": "el tamaño",
@@ -10748,8 +10748,8 @@
     "sentence_de": "Der Zeuge machte eine wichtige Aussage.",
     "id": 2258,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 68
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 21
   },
   {
     "es": "claramente",
@@ -10762,8 +10762,8 @@
     "sentence_de": "Bitte sprich deutlicher.",
     "id": 2259,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 69
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 22
   },
   {
     "es": "profundo",
@@ -10776,8 +10776,8 @@
     "sentence_de": "Der See ist hier sehr tief.",
     "id": 2260,
     "level": "A2",
-    "topic": "naturaleza",
-    "topicOrder": 48
+    "topic": "naturaleza_leirasok_a2",
+    "topicOrder": 15
   },
   {
     "es": "el gas",
@@ -10790,8 +10790,8 @@
     "sentence_de": "Ich rieche Gas in der Küche.",
     "id": 2261,
     "level": "A2",
-    "topic": "hogar_entorno",
-    "topicOrder": 63
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 33
   },
   {
     "es": "el instituto",
@@ -10818,8 +10818,8 @@
     "sentence_de": "Die Polizei fand eine Leiche.",
     "id": 2263,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 59
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 31
   },
   {
     "es": "la gracia",
@@ -10832,8 +10832,8 @@
     "sentence_de": "Sie bewegt sich mit viel Anmut.",
     "id": 2264,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 100
+    "topic": "amor_pareja_a2",
+    "topicOrder": 18
   },
   {
     "es": "la doctora",
@@ -10846,8 +10846,8 @@
     "sentence_de": "Die Ärztin kommt in zehn Minuten.",
     "id": 2265,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 60
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 32
   },
   {
     "es": "el amante",
@@ -10860,8 +10860,8 @@
     "sentence_de": "Er ist ein großer Liebhaber der Musik.",
     "id": 2266,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 101
+    "topic": "amor_pareja_a2",
+    "topicOrder": 17
   },
   {
     "es": "la temporada",
@@ -10874,8 +10874,8 @@
     "sentence_de": "Die neue Saison beginnt nächste Woche.",
     "id": 2267,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 49
+    "topic": "ocio_film_tv_a2",
+    "topicOrder": 26
   },
   {
     "es": "el francés",
@@ -10902,8 +10902,8 @@
     "sentence_de": "Du brauchst Schutz vor der Sonne.",
     "id": 2269,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 61
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 22
   },
   {
     "es": "comprender",
@@ -10916,8 +10916,8 @@
     "sentence_de": "Ich verstehe diese Frage nicht.",
     "id": 2270,
     "level": "A2",
-    "topic": "comunicacion",
-    "topicOrder": 70
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 22
   },
   {
     "es": "superior",
@@ -10930,8 +10930,8 @@
     "sentence_de": "Sprich mit deinem Vorgesetzten.",
     "id": 2271,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 185
+    "topic": "trabajo_dia_oficina_a2",
+    "topicOrder": 13
   },
   {
     "es": "criminal",
@@ -10944,8 +10944,8 @@
     "sentence_de": "Der Kriminelle entkam in der Nacht.",
     "id": 2272,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 186
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 15
   },
   {
     "es": "el bote",
@@ -10972,8 +10972,8 @@
     "sentence_de": "Ich hole die Kinder um drei Uhr ab.",
     "id": 2274,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 187
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 10
   },
   {
     "es": "el truco",
@@ -10986,8 +10986,8 @@
     "sentence_de": "Dieser Trick funktioniert bei mir nicht.",
     "id": 2275,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 188
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 15
   },
   {
     "es": "original",
@@ -11000,8 +11000,8 @@
     "sentence_de": "Ich bevorzuge die Originalversion des Films.",
     "id": 2276,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 50
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 18
   },
   {
     "es": "sobrevivir",
@@ -11014,8 +11014,8 @@
     "sentence_de": "Er schaffte es, den Unfall zu überleben.",
     "id": 2277,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 62
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 33
   },
   {
     "es": "el rostro",
@@ -11028,8 +11028,8 @@
     "sentence_de": "Er hat ein sehr ausdrucksstarkes Gesicht.",
     "id": 2278,
     "level": "A2",
-    "topic": "salud_deporte",
-    "topicOrder": 63
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 34
   },
   {
     "es": "compartir",
@@ -11042,8 +11042,8 @@
     "sentence_de": "Ich teile gerne das Essen mit dir.",
     "id": 2279,
     "level": "A2",
-    "topic": "relaciones",
-    "topicOrder": 102
+    "topic": "amor_pareja_a2",
+    "topicOrder": 12
   },
   {
     "es": "el registro",
@@ -11056,8 +11056,8 @@
     "sentence_de": "Es gibt kein Register dieser Person hier.",
     "id": 2280,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 189
+    "topic": "trabajo_dia_juzgado_a2",
+    "topicOrder": 16
   },
   {
     "es": "grandioso",
@@ -11070,8 +11070,8 @@
     "sentence_de": "Die Show war großartig.",
     "id": 2281,
     "level": "A2",
-    "topic": "ocio_cultura",
-    "topicOrder": 51
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 19
   },
   {
     "es": "primero",
@@ -11084,7 +11084,7 @@
     "sentence_de": "Ich war der Erste, der ankam.",
     "id": 2282,
     "level": "A2",
-    "topic": "trabajo_dia",
-    "topicOrder": 190
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 16
   }
 ]
