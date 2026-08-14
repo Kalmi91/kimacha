@@ -13,7 +13,9 @@ import { strictAnswerMatch } from '@/lib/answerMatch';
 import { nearMissDistractors } from '@/lib/distractors';
 import { consumePendingAction } from '@/lib/pendingAction';
 import { DAILY_NEW_BONUS_STEP } from '@/lib/usageStats';
-import { capNewWords, newWordAllowance } from '@/lib/newWordBudget';
+import { capNewWords, newWordsLeftToday, newWordIntake } from '@/lib/newWordBudget';
+import { wordPhase, phaseShape, type WordPhase } from '@/lib/wordPhase';
+import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
 import { capSentencesToCadence } from '@/lib/sentenceMix';
 import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
@@ -28,6 +30,10 @@ import { languages, speechLang } from '@/lib/languages';
 import { getExamQuestionsFor } from '@/data/exams';
 
 const f = fsrs();
+
+// FB122: the badge row is absolutely positioned over the card, so a very large
+// system font size made it grow into the progress meter below it.
+const HEADER_FONT_SCALE_CAP = 1.3;
 
 type TypingDir = 'learned-to-native' | 'native-to-learned';
 
@@ -85,6 +91,10 @@ export default function LearnScreen() {
   // FB77: how many brand-new words today's budget still allows (0 = the Done
   // screen offers the "+5 new words" button).
   const [newWordsLeft, setNewWordsLeft] = useState(0);
+  // FB114: the daily budget is unspent but the half-learned pile hit the WIP
+  // ceiling, so no new word joins the queue right now. Shown as ⏸ on the badge,
+  // otherwise the countdown would look stuck without saying why.
+  const [newWordsPaused, setNewWordsPaused] = useState(false);
   const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
   const [typedAnswer, setTypedAnswer] = useState('');
   const [typingResult, setTypingResult] = useState<TypingResult>(null);
@@ -123,23 +133,12 @@ export default function LearnScreen() {
       let typingDirection: TypingDir | undefined;
 
       if (isWord) {
-        // FB105: the phase ladder counts SUCCESSFUL reviews, not reviews. FSRS
-        // bumps `reps` on every answer, Again included, so a word the learner
-        // kept missing used to be promoted to the typing card anyway ("arra
-        // nyomtam, hogy again ... átugrott a következő formátumba ... nekem
-        // pedig még szó kártyán kellett volna ismételgetni"). Every lapse takes
-        // its promotion back, so a missed word stays a flashcard.
-        const passed = Math.max(0, (row.reps ?? 0) - (row.lapses ?? 0));
-        if (passed >= 2) {
-          // Phase 2: typing native→learned
-          isTyping = true;
-          typingDirection = 'native-to-learned';
-        } else if (passed === 1) {
-          // Phase 1b: flashcard native→learned (passive)
-          isTyping = false;
-          typingDirection = 'native-to-learned';
-        }
-        // passed === 0: Phase 1a: flashcard learned→native (default direction)
+        // FB105/FB109: the phase ladder (lib/wordPhase.ts) counts SUCCESSFUL
+        // reviews, not reviews, and the same rule drives the in-session
+        // promotion in handleWordGood.
+        const shape = phaseShape(wordPhase(row));
+        isTyping = shape.isTyping;
+        typingDirection = shape.typingDirection;
       } else {
         // Sentence: easy (tap-to-order) first time, hard (typing) after
         isTyping = row.reps > 0;
@@ -217,7 +216,11 @@ export default function LearnScreen() {
     return result;
   };
 
-  const computeUnlockedTopics = (topics: TopicDef[], repsMap: Map<number, number>, currentLevel: Level, selectedTopicId?: string | null, lang: string = 'es', randomPick: boolean = false): { unlocked: TopicDef[]; activeTopic: TopicDef | null; completedCount: number } => {
+  // `stateMap` = szavankénti FSRS állapot. A topic-készültség EBBŐL dől el
+  // (lib/topicMastery.ts), nem a repsMap-ből: egyszer látni egy szót nem tudás,
+  // és az új topic csak akkor indulhat, ha a régi szavai kiléptek a Learningből.
+  // A repsMap marad az "elkezdett-e egyáltalán" jelzésre.
+  const computeUnlockedTopics = (topics: TopicDef[], repsMap: Map<number, number>, stateMap: Map<number, number>, currentLevel: Level, selectedTopicId?: string | null, lang: string = 'es', randomPick: boolean = false): { unlocked: TopicDef[]; activeTopic: TopicDef | null; completedCount: number } => {
     // Any level with a topic taxonomy (A0/A1/A2): all topics freely selectable,
     // no sequential lock. Levels without topics keep the sequential unlock logic.
     let unlocked: TopicDef[];
@@ -241,12 +244,12 @@ export default function LearnScreen() {
       }
     }
 
+    const topicComplete = (topic: TopicDef) =>
+      isTopicMastered(getWordsForTopic(currentLevel, topic.id, lang).map(w => w.id), stateMap);
+
     let completedCount = 0;
     for (const topic of unlocked) {
-      const topicWords = getWordsForTopic(currentLevel, topic.id, lang);
-      if (topicWords.length > 0 && topicWords.every(w => (repsMap.get(w.id) ?? 0) > 0)) {
-        completedCount++;
-      }
+      if (topicComplete(topic)) completedCount++;
     }
 
     // Active topic: use persisted selectedTopic if set and not fully complete,
@@ -254,17 +257,10 @@ export default function LearnScreen() {
     let activeTopic: TopicDef | null = null;
     if (selectedTopicId) {
       const sel = unlocked.find(t => t.id === selectedTopicId);
-      if (sel) {
-        const selWords = getWordsForTopic(currentLevel, sel.id, lang);
-        const selComplete = selWords.length > 0 && selWords.every(w => (repsMap.get(w.id) ?? 0) > 0);
-        if (!selComplete) activeTopic = sel;
-      }
+      if (sel && !topicComplete(sel)) activeTopic = sel;
     }
     if (!activeTopic) {
-      const isIncomplete = (topic: TopicDef) => {
-        const topicWords = getWordsForTopic(currentLevel, topic.id, lang);
-        return topicWords.some(w => (repsMap.get(w.id) ?? 0) === 0);
-      };
+      const isIncomplete = (topic: TopicDef) => !topicComplete(topic);
       if (randomPick) {
         // FB37: instead of always the first incomplete topic by order, draw
         // uniformly among ALL incomplete topics so learning doesn't always
@@ -301,9 +297,10 @@ export default function LearnScreen() {
     if (useTopics) {
       const allWordIds = levelWords.map(w => w.id);
       const repsMap = await db.getWordReps(allWordIds);
+      const stateMap = await db.getWordStates(allWordIds);
       const savedTopic = await db.getSelectedTopic();
       const randomTopics = await db.getRandomTopics();
-      const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel, savedTopic, learned, randomTopics);
+      const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, stateMap, currentLevel, savedTopic, learned, randomTopics);
       // FB37: persist a freshly-drawn random topic so a mid-session reload or
       // queue rebuild doesn't jump again, the next draw only happens once
       // this topic completes.
@@ -316,7 +313,7 @@ export default function LearnScreen() {
         done: completedCount,
         total: topics.length,
         wordsInTopic: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id, learned).length : 0,
-        wordsReviewed: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id, learned).filter(w => (repsMap.get(w.id) ?? 0) > 0).length : 0,
+        wordsReviewed: activeTopic ? masteredCount(getWordsForTopic(currentLevel, activeTopic.id, learned).map(w => w.id), stateMap) : 0,
       });
 
       activeWords = activeTopic
@@ -354,15 +351,19 @@ export default function LearnScreen() {
       ? await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL)
       : await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
     // FB77: today's remaining new-word budget (setting + "+5 new words" taps).
-    // FB103: capped again by the words still half-learned, so nothing piles up.
-    const remainingNew = newWordAllowance({
+    // FB112-115: the badge shows the DAILY countdown, the queue intake pauses
+    // separately when the half-learned pile hits the WIP ceiling.
+    const budget = {
       limit: await db.getDailyNewLimit(),
       bonus: await db.getNewLimitBonus(),
       startedToday: await db.getNewWordsToday(),
       unlearned: await db.getUnlearnedWordCount(),
-    });
-    setNewWordsLeft(remainingNew);
-    const items = applyCadence(capNewWords(buildQueue(rows), remainingNew), wordsOnly);
+    };
+    const leftToday = newWordsLeftToday(budget);
+    const intake = newWordIntake(budget);
+    setNewWordsLeft(leftToday);
+    setNewWordsPaused(intake === 0 && leftToday > 0);
+    const items = applyCadence(capNewWords(buildQueue(rows), intake), wordsOnly);
 
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
@@ -462,18 +463,25 @@ export default function LearnScreen() {
     };
   };
 
+  // FB116: the prompt is read out loud in whatever language it is shown in, not
+  // only when that happens to be the learned one ("csináld meg úgy az appot hogy
+  // ha bejön egy szó akkor kimondja angolul is. vagy ha spanyolul jön akkor is
+  // kimondja, meg a mondatokat is").
   useEffect(() => {
     if (!current || loading || done) return;
-    const [, learned] = direction;
+    const [native] = direction;
     // Easy sentence (tap-to-order): the learned-language sentence IS the answer the
-    // user must assemble, so don't auto-read it aloud, that would reveal the solution.
-    if (current.isEasySentence) return;
-    const { frontLang } = getFrontBack(current);
-    if (frontLang === learned) {
-      const frontText = String(current.word[current.type === 'word' ? learned : `sentence_${learned}`]);
-      Speech.speak(frontText, { language: speechLang(learned) });
+    // user must assemble, so only its native prompt is spoken, never the solution.
+    if (current.isEasySentence) {
+      const prompt = String(current.word[`sentence_${native}`] ?? '');
+      if (prompt) Speech.speak(prompt, { language: speechLang(native) });
+      return;
     }
-  }, [currentIndex, queue.length, loading, done]);
+    const { front, frontLang } = getFrontBack(current);
+    if (front) Speech.speak(front, { language: speechLang(frontLang) });
+    // wordId + phase in the deps: a requeued card (FB109 ladder, FB43 skip) lands
+    // at the SAME index in a same-length queue, so index alone would stay silent.
+  }, [currentIndex, queue.length, loading, done, current?.wordId, current?.isTyping]);
 
   const checkLevelChange = async (wasCorrect: boolean) => {
     const db = getDb();
@@ -530,9 +538,10 @@ export default function LearnScreen() {
     if (useTopics) {
       const allWordIds = lvlWords.map((w: WordEntry) => w.id);
       const repsMap = await db.getWordReps(allWordIds);
+      const stateMap = await db.getWordStates(allWordIds);
       const savedTopic2 = await db.getSelectedTopic();
       const randomTopics2 = await db.getRandomTopics();
-      const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, currentLevel, savedTopic2, learned, randomTopics2);
+      const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, stateMap, currentLevel, savedTopic2, learned, randomTopics2);
       // FB37: persist a freshly-drawn random topic so it stays stable across
       // the rest of this session (next draw only once it completes again).
       if (randomTopics2 && activeTopic && activeTopic.id !== savedTopic2) {
@@ -550,10 +559,9 @@ export default function LearnScreen() {
           // complete (free ordering, cannot rely on "last topic" position).
           const sub = getSubLevelForTopic(currentLevel, prevCompleted.id, learned);
           const subTopics = sub ? getTopicsForSubLevel(currentLevel, sub.id, learned) : [];
-          const closesSubLevel = sub && subTopics.length > 0 && subTopics.every(st => {
-            const stWords = getWordsForTopic(currentLevel, st.id, learned);
-            return stWords.length > 0 && stWords.every(w => (repsMap.get(w.id) ?? 0) > 0);
-          });
+          const closesSubLevel = sub && subTopics.length > 0 && subTopics.every(st =>
+            isTopicMastered(getWordsForTopic(currentLevel, st.id, learned).map(w => w.id), stateMap),
+          );
           setTopicCompleteMsg(
             closesSubLevel
               ? `${s.topic.complete}\n${s.subLevel.complete(sub.id, getSubLevelName(sub, lang))}`
@@ -568,11 +576,26 @@ export default function LearnScreen() {
         done: completedCount,
         total: topics.length,
         wordsInTopic: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id, learned).length : 0,
-        wordsReviewed: activeTopic ? getWordsForTopic(currentLevel, activeTopic.id, learned).filter(w => (repsMap.get(w.id) ?? 0) > 0).length : 0,
+        wordsReviewed: activeTopic ? masteredCount(getWordsForTopic(currentLevel, activeTopic.id, learned).map(w => w.id), stateMap) : 0,
       });
 
-      const activeWordIds = unlocked.flatMap(topic => getWordsForTopic(currentLevel, topic.id, learned)).map(w => w.id);
-      for (const w of unlocked.flatMap(topic => getWordsForTopic(currentLevel, topic.id, learned))) {
+      // FB117: the refill has to be scoped EXACTLY like loadCards, i.e. the active
+      // topic's words plus only the ALREADY STARTED words of the other unlocked
+      // topics (their reviews). It used to pull every unlocked topic's words, so
+      // the topic split held only until the first queue ran out, and from then on
+      // brand-new words from other topics appeared under the current topic header
+      // ("nem látom ezt a topicok alapján szét választott dolgot").
+      const scopedWords = activeTopic
+        ? [
+            ...getWordsForTopic(currentLevel, activeTopic.id, learned),
+            ...unlocked
+              .filter(t => t.id !== activeTopic!.id)
+              .flatMap(t => getWordsForTopic(currentLevel, t.id, learned))
+              .filter((w: WordEntry) => (repsMap.get(w.id) ?? 0) > 0),
+          ]
+        : unlocked.flatMap(t => getWordsForTopic(currentLevel, t.id, learned));
+      const activeWordIds = scopedWords.map((w: WordEntry) => w.id);
+      for (const w of scopedWords) {
         await db.ensureCard(w.id, 'word');
         await db.ensureCard(w.id, 'sentence');
       }
@@ -582,14 +605,17 @@ export default function LearnScreen() {
     }
 
     const wordsOnly2 = await db.getWordsOnly();
-    const remainingNew2 = newWordAllowance({
+    const budget2 = {
       limit: await db.getDailyNewLimit(),
       bonus: await db.getNewLimitBonus(),
       startedToday: await db.getNewWordsToday(),
       unlearned: await db.getUnlearnedWordCount(),
-    });
-    setNewWordsLeft(remainingNew2);
-    const newItems = applyCadence(capNewWords(buildQueue(newRows), remainingNew2), wordsOnly2);
+    };
+    const leftToday2 = newWordsLeftToday(budget2);
+    const intake2 = newWordIntake(budget2);
+    setNewWordsLeft(leftToday2);
+    setNewWordsPaused(intake2 === 0 && leftToday2 > 0);
+    const newItems = applyCadence(capNewWords(buildQueue(newRows), intake2), wordsOnly2);
 
     if (newItems.length === 0) {
       setDone(true);
@@ -600,6 +626,15 @@ export default function LearnScreen() {
     resetCardState();
   };
 
+  // FB112/FB113: the 🌱 badge has to fall by ONE the moment a brand-new word is
+  // answered ("nem így egyesével fogyott. hanem csak úgy ugrott egyet"). The DB
+  // counter behind it (getNewWordsToday) is only re-read on a queue rebuild, so
+  // the badge is stepped optimistically here, exactly like the streak.
+  const spendNewWordBadge = (item: DueItem) => {
+    if (item.type !== 'word' || (item.card.reps ?? 0) > 0) return;
+    setNewWordsLeft((n) => Math.max(0, n - 1));
+  };
+
   const advance = async (rating: Grade) => {
     if (!current || advancingRef.current) return;
     advancingRef.current = true;
@@ -607,6 +642,7 @@ export default function LearnScreen() {
     // Capture the rated card before any optimistic UI change.
     const item = current;
     const startTime = cardStartTime;
+    spendNewWordBadge(item);
     const next = currentIndex + 1;
     const midQueue = next < queue.length;
 
@@ -746,15 +782,28 @@ export default function LearnScreen() {
     setPracticeText('');
   };
 
+  // FB116: a skipped card is still read out loud, the word AND its sentence ("ha
+  // nem irok be semmit de nyomok a következőre akkor is mondja ki a szót és a
+  // mondatot"). This is the one part of FB43 that the learner reversed.
+  const speakSkippedAnswer = (item: DueItem) => {
+    const learned = direction[1];
+    const { back, backLang } = getFrontBack(item);
+    if (back) Speech.speak(back, { language: speechLang(backLang) });
+    if (item.type !== 'word') return;
+    const sentence = String(item.word[`sentence_${learned}`] ?? '');
+    if (sentence) Speech.speak(sentence, { language: speechLang(learned) });
+  };
+
   const handleCheck = () => {
     if (!current) return;
     // FB43: an empty answer isn't a wrong answer, it just means "not now" (too
-    // hard / forgotten). Don't grade it, don't touch the fail streak, don't
-    // speak the answer. FB73: still SHOW what the word would have been, then
-    // the → button sends the card to the back of the queue (handleTypingNext).
+    // hard / forgotten). Don't grade it, don't touch the fail streak. FB73: still
+    // SHOW what the word would have been, then the → button sends the card to the
+    // back of the queue (handleTypingNext). FB116: and read it out loud.
     if (typedAnswer.trim().length === 0) {
       setTypingResult('skipped');
       setRevealed(true);
+      speakSkippedAnswer(current);
       return;
     }
     const { back } = getFrontBack(current);
@@ -779,21 +828,60 @@ export default function LearnScreen() {
   // FB19 pattern) and does NOT step the index, the caller decides where the card
   // goes (requeueCurrent puts it at the back). One Again write only, no double
   // penalty for the retry the learner is about to get.
-  const gradeAgainBackground = (item: DueItem, startTime: number) => {
+  const gradeBackground = (item: DueItem, updated: Card, wasCorrect: boolean, startTime: number) => {
     const db = getDb();
     (async () => {
       try {
-        const updated = f.repeat(item.card, new Date())[Rating.Again].card;
         await db.updateCard(item.wordId, item.type, updated);
-        await db.recordAttempt(item.wordId, item.type, false, Date.now() - startTime);
+        await db.recordAttempt(item.wordId, item.type, wasCorrect, Date.now() - startTime);
         await db.updateStreak();
         setKnownWords(await db.getReviewedWordCount(level));
-        await checkLevelChange(false);
+        await checkLevelChange(wasCorrect);
         const streakData = await db.getStreak();
         setStreak(streakData.current_count);
       } catch {}
     })();
     setReviewed((r) => r + 1);
+  };
+
+  const gradeAgainBackground = (item: DueItem, startTime: number) => {
+    spendNewWordBadge(item);
+    gradeBackground(item, f.repeat(item.card, new Date())[Rating.Again].card, false, startTime);
+  };
+
+  // Replaces the current card with its next-phase twin at the back of the queue
+  // (same index bookkeeping as requeueCurrent, see its comment).
+  const requeueAtPhase = (item: DueItem, card: Card, phase: WordPhase) => {
+    const shape = phaseShape(phase);
+    const nextItem: DueItem = { ...item, card, isTyping: shape.isTyping, typingDirection: shape.typingDirection };
+    const rest = queue.filter((_, i) => i !== currentIndex);
+    setQueue([...rest, nextItem]);
+    if (rest.length === 0) setCurrentIndex(0);
+    resetCardState();
+  };
+
+  // FB109/FB111/FB114: walk the word's phase ladder INSIDE the session. A Good on
+  // a word flashcard used to move the word's due date days out, so the reverse
+  // flashcard and above all the TYPING card only surfaced on some later day ("nem
+  // volt a begepelos rész miért", "most a gépelésből csak mondat van"). The word
+  // now comes back at its next phase at the end of this queue, and leaves the
+  // session only once it has been spelled right (FB111: "egy szó akkor számít
+  // megtanultnak ha el tudjuk írni helyesen").
+  const handleWordGood = () => {
+    if (!current || current.type !== 'word' || current.isTyping || advancingRef.current) {
+      advance(Rating.Good);
+      return;
+    }
+    const item = current;
+    const updated = f.repeat(item.card, new Date())[Rating.Good].card;
+    const nextPhase = wordPhase(updated);
+    if (nextPhase === wordPhase(item.card)) {
+      advance(Rating.Good);
+      return;
+    }
+    spendNewWordBadge(item);
+    gradeBackground(item, updated, true, cardStartTime);
+    requeueAtPhase(item, updated, nextPhase);
   };
 
   // FB105: Again on a word FLASHCARD means "I still don't know it", so the word
@@ -863,6 +951,7 @@ export default function LearnScreen() {
         currentTopic={currentTopic}
         topicProgress={topicProgress}
         newWordsLeft={newWordsLeft}
+        newWordsPaused={newWordsPaused}
         onMoreNewWords={handleMoreNewWords}
       />
     );
@@ -910,7 +999,7 @@ export default function LearnScreen() {
 
   const levelBadge = (
     <View style={[styles.levelBadge, { backgroundColor: '#38BDF8' }]}>
-      <Text style={styles.levelText}>{level}</Text>
+      <Text style={styles.levelText} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>{level}</Text>
     </View>
   );
 
@@ -919,12 +1008,12 @@ export default function LearnScreen() {
   const headerBadges = (
     <View style={styles.headerBadges}>
       <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
-        <Text style={[styles.streakNumber, { color: colors.accent }]}>{newWordsLeft}</Text>
-        <Text style={styles.streakLabel}>🌱</Text>
+        <Text style={[styles.streakNumber, { color: colors.accent }]} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>{newWordsLeft}</Text>
+        <Text style={styles.streakLabel} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>{newWordsPaused ? '🌱⏸' : '🌱'}</Text>
       </View>
       <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
-        <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
-        <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>🔥</Text>
+        <Text style={[styles.streakNumber, { color: colors.accent }]} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>{streak}</Text>
+        <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>🔥</Text>
       </View>
     </View>
   );
@@ -1033,6 +1122,7 @@ export default function LearnScreen() {
           }}
           onSkip={requeueCurrent}
           mistakeNote={noteText}
+          speechLocale={speechLang(learned)}
         />
         </ScrollView>
         <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`easy:${nativeSentence}`} />
@@ -1215,10 +1305,8 @@ export default function LearnScreen() {
         onPress={() => {
           if (!revealed) {
             setRevealed(true);
-            const [, learned] = direction;
-            if (backLang === learned) {
-              Speech.speak(back, { language: speechLang(backLang) });
-            }
+            // FB116: read the answer in whichever language it is, English included.
+            Speech.speak(back, { language: speechLang(backLang) });
           }
         }}
       >
@@ -1290,7 +1378,7 @@ export default function LearnScreen() {
         )}
         <Pressable
           style={[styles.button, { backgroundColor: '#38BDF8' }]}
-          onPress={() => advance(Rating.Good)}
+          onPress={handleWordGood}
         >
           <Text style={styles.buttonText}>{s.buttons.good}</Text>
         </Pressable>
@@ -1427,6 +1515,10 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: '700',
     textAlign: 'center',
+    // FB110: a long sentence used to push the 🔊 and ℹ️ buttons off the card
+    // ("az i betű az informationak kicsit bele van lógva a kép szélére"). The
+    // text yields width instead, the buttons stay inside.
+    flexShrink: 1,
   },
   backSection: {
     alignItems: 'center',
@@ -1475,6 +1567,9 @@ const styles = StyleSheet.create({
   frontRow: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    maxWidth: '100%',
     gap: 8,
     marginBottom: 16,
   },

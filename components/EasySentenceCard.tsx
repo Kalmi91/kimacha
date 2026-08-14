@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { StyleSheet, Text, View, Pressable } from 'react-native';
+import * as Speech from 'expo-speech';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
@@ -14,9 +15,11 @@ interface Props {
   onSkip?: () => void;
   // FB90: the card's grammar note, shown only after a wrong build.
   mistakeNote?: string | null;
+  // FB118: speech locale of the learned language, so a placed tile can be heard.
+  speechLocale?: string;
 }
 
-export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, onBury, onSkip, mistakeNote }: Props) {
+export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, onBury, onSkip, mistakeNote, speechLocale }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
@@ -35,6 +38,13 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   const addWord = (bankIdx: number) => {
     if (result) return;
     setPlaced([...placed, bankIdx]);
+    // FB118, Kálmán 2026-08-14: "amikor beteszi felulre akkor ki is ejtse azt a
+    // szót amit betettem, hogy a kiejtést halljam". Only the single tile is
+    // spoken, so the whole sentence is never given away.
+    if (speechLocale) {
+      Speech.stop();
+      Speech.speak(bank[bankIdx], { language: speechLocale });
+    }
   };
 
   const removeWord = (posInPlaced: number) => {
