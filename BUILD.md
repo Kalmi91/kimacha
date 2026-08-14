@@ -26,7 +26,8 @@ Szám-becslések `project_word_expansion` memóriából (2026-06-13), nem élő-
 | App-motor (SRS, vizsga, tech-tree, UI) v3.0.1 | kész; 3.0.1 telefon-verify build folyamatban | ~95 |
 | hu→es tartalom (spanyol, flagship) | A0 100 / A1 882 / A2 900 / B1 927 / B2 394 / C1 83 / C2 92 (C1/C2 BEFAGYASZTVA) | ~73 |
 | hu→en tartalom (angol-cél) | A0 100 / A1 384 / A2 390 = **874 kártya, 41 topic**, audit P1=0; exam korpusz-tiszta; id-blokkok ~tele (2026-07-12) | ~80 |
-| **Mátrix per-ág modell (A0 közös + A1+ ágankénti)** | en-ág (hu→en) A0/A1/A2 KÉSZ (480 kártya); **hu-ág A0 KÉSZ** (100 kártya, 10 topic, audit-hu gate, 2026-07-12); es/de ágak + hu A1+ hátra | 45 |
+| **Mátrix per-ág modell (A0 közös + A1+ ágankénti)** | en-ág (hu→en) A0/A1/A2 KÉSZ (480 kártya); **hu-ág A0 + A1 KÉSZ** (100 + 148 kártya, 10 + 15 topic, audit-hu gate A0/A1-re, 2026-08-15); de-ág + hu A2+ hátra | 55 |
+| **es→hu kurzus (magyar cél)** | indítható (FB129 pár-szintű napi keret fix); tartalom A0 100 + A1 148 = 248 kártya, XLex A1-cél ~1200 → bővítés hátra | 25 |
 
 ---
 
