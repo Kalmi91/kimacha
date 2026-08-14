@@ -1,5 +1,6 @@
 export default {
   onboarding: {
+    welcome: '¡Bienvenido a Kimacha! Gracias por usar la app, significa mucho.',
     whatLanguage: '¿Qué idioma hablas?',
     selectSource: 'Selecciona tu idioma nativo',
     whatLearn: '¿Qué quieres aprender?',

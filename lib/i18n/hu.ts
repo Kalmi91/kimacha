@@ -1,5 +1,6 @@
 export default {
   onboarding: {
+    welcome: 'Üdv a Kimachában! Köszönöm, hogy használod az appot, sokat jelent.',
     whatLanguage: 'Milyen nyelven beszélsz?',
     selectSource: 'Válaszd ki az anyanyelved',
     whatLearn: 'Mit szeretnél tanulni?',
