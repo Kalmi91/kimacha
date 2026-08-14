@@ -11,9 +11,9 @@
  * stems must stay >= 3 chars, final long vowel is shortened back, e.g.
  * "kávét" -> "kávé"/"kava" variants).
  *
- * Levels: A0 only for now. The hu/a1.json 6-card stub (ids 6001-6006) predates
- * the matrix model and is protected ("NE bántsd"); A1+ joins the audit when a
- * real A1 track is authored. Run: node scripts/audit-corpus-hu.mjs
+ * Levels: A0 + A1. The hu/a1.json 6-card stub (ids 6001-6006) predates the
+ * matrix model and is protected ("NE bántsd"); the authored A1 track (ids
+ * 6200+) sits next to it. Run: node scripts/audit-corpus-hu.mjs
  * Exit 1 if any P1 (untaught token) is found, used as a build gate.
  */
 
@@ -23,7 +23,7 @@ import { dirname, join } from 'path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
-const LEVELS = ['A0'];
+const LEVELS = ['A0', 'A1'];
 
 // ---------------------------------------------------------------------------
 // Glue whitelist, Hungarian function words NOT taught as vocabulary cards.
@@ -45,7 +45,7 @@ const GLUE_WHITELIST = new Set([
   'mi', 'mit', 'ki', 'kit', 'hol', 'hova', 'honnan', 'mikor', 'hogyan', 'miért', 'mennyi', 'melyik', 'hány',
   // negation / affirmation / degree / common particles
   'nem', 'igen', 'ne', 'csak', 'még', 'már', 'nagyon', 'kicsit', 'itt', 'ott',
-  'most', 'majd', 'túl', 'olyan', 'ilyen', 'minden', 'semmi', 'valami', 'sok', 'kevés',
+  'most', 'majd', 'túl', 'olyan', 'ilyen', 'minden', 'semmi', 'valami', 'sok', 'sokat', 'kevés', 'keveset',
   // frequent postpositions / verbal particles that glue simple sentences
   'meg', 'el', 'be', 'ki', 'fel', 'le', 'oda', 'ide', 'után', 'előtt', 'mellett', 'felé',
 ]);
@@ -124,7 +124,9 @@ const IRREGULAR_PARADIGM_MAP = {
 function stemForms(token) {
   const forms = new Set([token]);
   const add = (s) => {
-    if (!s || s.length < 3) return;
+    // 2 is the floor, not 3: jó/nő/fa are real headwords and their plural or
+    // accusative must reduce back to them.
+    if (!s || s.length < 2) return;
     forms.add(s);
     const short = shortenFinalVowel(s);
     if (short) forms.add(short);
@@ -135,7 +137,10 @@ function stemForms(token) {
   };
   add(token);
   for (const suf of HU_SUFFIXES) {
-    if (token.endsWith(suf) && token.length - suf.length >= 3) {
+    // Two-letter stems are allowed for the one-letter suffixes only, otherwise
+    // short vowel-final words never reduce (jó→jók, nő→nők, fa→fát).
+    const minStem = suf.length === 1 ? 2 : 3;
+    if (token.endsWith(suf) && token.length - suf.length >= minStem) {
       add(token.slice(0, -suf.length));
     }
   }
@@ -229,7 +234,12 @@ for (const lvl of LEVELS) {
     if (q.type !== 'gap') continue;
     const correct = q.options?.[q.correctIndex] ?? '';
     const missing = [];
-    for (const tok of tokenizeHu(`${q.sentence ?? ''} ${correct}`)) {
+    // Fill the blank before tokenizing: a suffix question ("az asztal____" +
+    // "on") only makes sense as the finished word, not as two fragments.
+    const filled = String(q.sentence ?? '').includes('____')
+      ? String(q.sentence).replace('____', correct)
+      : `${q.sentence ?? ''} ${correct}`;
+    for (const tok of tokenizeHu(filled)) {
       if (!tokenTaught(tok, taught)) missing.push(tok);
     }
     if (missing.length > 0) {

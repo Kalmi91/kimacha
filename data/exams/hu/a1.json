@@ -4,15 +4,25 @@
     "level": "A1",
     "type": "gap",
     "sentence": "Én minden reggel kávét ____.",
-    "options": ["iszom", "iszik", "iszol", "iszunk"],
+    "options": [
+      "iszom",
+      "iszik",
+      "iszol",
+      "iszunk"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3101,
     "level": "A1",
     "type": "gap",
-    "sentence": "Te mit ____?",
-    "options": ["csinálsz", "csinálok", "csinál", "csinálunk"],
+    "sentence": "Te hol ____?",
+    "options": [
+      "laksz",
+      "lakom",
+      "lakik",
+      "laknak"
+    ],
     "correctIndex": 0
   },
   {
@@ -20,7 +30,12 @@
     "level": "A1",
     "type": "gap",
     "sentence": "A könyv az asztal____ van.",
-    "options": ["on", "ban", "ben", "hoz"],
+    "options": [
+      "on",
+      "ban",
+      "ben",
+      "hoz"
+    ],
     "correctIndex": 0
   },
   {
@@ -28,7 +43,12 @@
     "level": "A1",
     "type": "gap",
     "sentence": "A barátom Budapesten ____ egy iskolában.",
-    "options": ["dolgozik", "dolgozom", "dolgozol", "dolgozunk"],
+    "options": [
+      "dolgozik",
+      "dolgozom",
+      "dolgozol",
+      "dolgozunk"
+    ],
     "correctIndex": 0
   },
   {
@@ -36,15 +56,25 @@
     "level": "A1",
     "type": "gap",
     "sentence": "Látom a ____.",
-    "options": ["házat", "ház", "házban", "házon"],
+    "options": [
+      "házat",
+      "ház",
+      "házban",
+      "házon"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3105,
     "level": "A1",
     "type": "gap",
-    "sentence": "A macskám neve Mici, ez az én ____.",
-    "options": ["macskám", "macskád", "macskája", "macskánk"],
+    "sentence": "Ez a ház jó, ez az én ____.",
+    "options": [
+      "házam",
+      "házad",
+      "háza",
+      "házunk"
+    ],
     "correctIndex": 0
   },
   {
@@ -52,7 +82,12 @@
     "level": "A1",
     "type": "gap",
     "sentence": "Ők az iskolá____ tanulnak.",
-    "options": ["ban", "ra", "tól", "val"],
+    "options": [
+      "ban",
+      "ra",
+      "tól",
+      "val"
+    ],
     "correctIndex": 0
   },
   {
@@ -60,15 +95,25 @@
     "level": "A1",
     "type": "gap",
     "sentence": "Mi nem ____ angolul.",
-    "options": ["beszélünk", "beszélek", "beszélsz", "beszélnek"],
+    "options": [
+      "beszélünk",
+      "beszélek",
+      "beszélsz",
+      "beszélnek"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3108,
     "level": "A1",
     "type": "gap",
-    "sentence": "A gyerek egy almát ____.",
-    "options": ["eszik", "eszel", "eszem", "eszünk"],
+    "sentence": "A gyerek kenyeret ____.",
+    "options": [
+      "eszik",
+      "eszem",
+      "eszel",
+      "esznek"
+    ],
     "correctIndex": 0
   },
   {
@@ -76,7 +121,12 @@
     "level": "A1",
     "type": "gap",
     "sentence": "Éva a parkban ____.",
-    "options": ["sétál", "sétálok", "sétálsz", "sétálunk"],
+    "options": [
+      "sétál",
+      "sétálok",
+      "sétálsz",
+      "sétálunk"
+    ],
     "correctIndex": 0
   },
   {
@@ -84,55 +134,90 @@
     "level": "A1",
     "type": "gap",
     "sentence": "A barátod neve mi? Ez a te ____.",
-    "options": ["barátod", "barátom", "barátja", "barátunk"],
+    "options": [
+      "barátod",
+      "barátom",
+      "barátja",
+      "barátunk"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3111,
     "level": "A1",
     "type": "gap",
-    "sentence": "Ti mit ____ ma este?",
-    "options": ["csináltok", "csinálok", "csinál", "csinálunk"],
+    "sentence": "Ti mit ____ ma?",
+    "options": [
+      "főztök",
+      "főzök",
+      "főz",
+      "főzünk"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3112,
     "level": "A1",
     "type": "gap",
-    "sentence": "Az autó az utcá____ parkol.",
-    "options": ["n", "ban", "ra", "ból"],
+    "sentence": "Az autó az utcá____ van.",
+    "options": [
+      "n",
+      "ban",
+      "ra",
+      "hoz"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3113,
     "level": "A1",
     "type": "gap",
-    "sentence": "Keresem a ____.",
-    "options": ["kulcsomat", "kulcsom", "kulcson", "kulcsba"],
+    "sentence": "A toll az asztal____ van.",
+    "options": [
+      "on",
+      "ba",
+      "hoz",
+      "ról"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3114,
     "level": "A1",
     "type": "gap",
-    "sentence": "A tanár a táblá____ ír.",
-    "options": ["ra", "ban", "val", "hoz"],
+    "sentence": "A tanár a szobá____ megy.",
+    "options": [
+      "ba",
+      "ban",
+      "n",
+      "tól"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3115,
     "level": "A1",
     "type": "gap",
-    "sentence": "Ők minden nap buszon ____.",
-    "options": ["utaznak", "utazok", "utazol", "utazunk"],
+    "sentence": "Ők minden nap ____.",
+    "options": [
+      "dolgoznak",
+      "dolgozom",
+      "dolgozol",
+      "dolgozik"
+    ],
     "correctIndex": 0
   },
   {
     "id": 3116,
     "level": "A1",
     "type": "gap",
-    "sentence": "Az apám mérnök, ez az én ____.",
-    "options": ["apám", "apád", "apja", "apánk"],
+    "sentence": "Az apám orvos, ez az én ____.",
+    "options": [
+      "apám",
+      "anyám",
+      "testvérem",
+      "férjem"
+    ],
     "correctIndex": 0
   },
   {
@@ -140,7 +225,12 @@
     "level": "A1",
     "type": "gap",
     "sentence": "Én a városban ____.",
-    "options": ["lakom", "lakol", "lakik", "lakunk"],
+    "options": [
+      "lakom",
+      "lakol",
+      "lakik",
+      "lakunk"
+    ],
     "correctIndex": 0
   }
 ]

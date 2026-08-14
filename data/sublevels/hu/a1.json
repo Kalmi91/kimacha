@@ -1,3 +1,26 @@
 [
-  {"id": "A1.1", "order": 1, "name_hu": "Első Lépések", "name_en": "First Steps", "name_es": "Primeros Pasos", "name_de": "Erste Schritte"}
+ {
+  "id": "A1.1",
+  "order": 1,
+  "name_hu": "Első Lépések",
+  "name_en": "First Steps",
+  "name_es": "Primeros Pasos",
+  "name_de": "Erste Schritte"
+ },
+ {
+  "id": "A1.2",
+  "order": 2,
+  "name_hu": "Mindennapok",
+  "name_en": "Everyday Life",
+  "name_es": "Vida Diaria",
+  "name_de": "Alltag"
+ },
+ {
+  "id": "A1.3",
+  "order": 3,
+  "name_hu": "Emberek és Tulajdonságok",
+  "name_en": "People & Qualities",
+  "name_es": "Personas y Cualidades",
+  "name_de": "Menschen und Eigenschaften"
+ }
 ]
