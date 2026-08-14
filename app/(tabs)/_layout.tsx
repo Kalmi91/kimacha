@@ -28,6 +28,10 @@ export default function TabLayout() {
         name="index"
         options={{
           title: s.tabs.learn,
+          // FB123: "a fent Learn rész az felesleges azt vedd ki van ott egy centi
+          // ami nem kell oda". The learning screen draws its own header row, so
+          // the navigator title was only eating vertical space.
+          headerShown: false,
           tabBarIcon: ({ color }) => (
             <SymbolView
               name={{ ios: 'book.fill', android: 'book', web: 'book' }}

@@ -14,6 +14,12 @@ interface Props {
 // as the learner masters words. Rarely used vs a plain bar, no extra dependency.
 const MAX_CELLS = 40;
 
+// FB122, Kálmán 2026-08-14: "ha valaki sokkal nagyobb betűkkel használja a
+// telefonját ... összelóg ez a felső progress bár". The caption is a fixed-height
+// row, so its two texts stay on one line and follow the system font size only up
+// to this multiplier.
+const FONT_SCALE_CAP = 1.4;
+
 export default function ProgressMeter({ known, total, langFlag, langName }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -28,10 +34,18 @@ export default function ProgressMeter({ known, total, langFlag, langName }: Prop
   return (
     <View style={styles.wrap}>
       <View style={styles.captionRow}>
-        <Text style={[styles.label, { color: colors.text }]}>
+        <Text
+          style={[styles.label, { color: colors.text }]}
+          numberOfLines={1}
+          maxFontSizeMultiplier={FONT_SCALE_CAP}
+        >
           {langFlag} {s.progress.wordsKnown}
         </Text>
-        <Text style={[styles.count, { color: colors.tint }]}>
+        <Text
+          style={[styles.count, { color: colors.tint }]}
+          numberOfLines={1}
+          maxFontSizeMultiplier={FONT_SCALE_CAP}
+        >
           {known} / {total}
         </Text>
       </View>
@@ -76,10 +90,13 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 14,
     fontWeight: '600',
+    flexShrink: 1,
+    marginRight: 8,
   },
   count: {
     fontSize: 15,
     fontWeight: '800',
+    flexShrink: 0,
   },
   grid: {
     flexDirection: 'row',
