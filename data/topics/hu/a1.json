@@ -328,5 +328,49 @@
   "name_en": "Travel",
   "name_es": "Viajes",
   "name_de": "Reisen"
+ },
+ {
+  "id": "kommunikacio",
+  "order": 31,
+  "subLevel": "A1.8",
+  "type": "vocab",
+  "icon": "📱",
+  "name_hu": "Kommunikáció",
+  "name_en": "Communication",
+  "name_es": "Comunicación",
+  "name_de": "Kommunikation"
+ },
+ {
+  "id": "csalad2",
+  "order": 32,
+  "subLevel": "A1.8",
+  "type": "vocab",
+  "icon": "👵",
+  "name_hu": "Rokonok",
+  "name_en": "Relatives",
+  "name_es": "Parientes",
+  "name_de": "Verwandte"
+ },
+ {
+  "id": "otthon2",
+  "order": 33,
+  "subLevel": "A1.8",
+  "type": "vocab",
+  "icon": "🛋️",
+  "name_hu": "Otthon 2",
+  "name_en": "Home 2",
+  "name_es": "Casa 2",
+  "name_de": "Zuhause 2"
+ },
+ {
+  "id": "iskola2",
+  "order": 34,
+  "subLevel": "A1.8",
+  "type": "vocab",
+  "icon": "📚",
+  "name_hu": "Tanulás",
+  "name_en": "Studying",
+  "name_es": "Estudios",
+  "name_de": "Lernen"
  }
 ]
