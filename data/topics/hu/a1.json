@@ -163,5 +163,170 @@
   "name_en": "Work & school",
   "name_es": "Trabajo y escuela",
   "name_de": "Arbeit und Schule"
+ },
+ {
+  "id": "test",
+  "order": 16,
+  "subLevel": "A1.4",
+  "type": "vocab",
+  "icon": "💪",
+  "name_hu": "Testrészek",
+  "name_en": "Body parts",
+  "name_es": "Partes del cuerpo",
+  "name_de": "Körperteile"
+ },
+ {
+  "id": "egeszseg",
+  "order": 17,
+  "subLevel": "A1.4",
+  "type": "vocab",
+  "icon": "🩺",
+  "name_hu": "Egészség",
+  "name_en": "Health",
+  "name_es": "Salud",
+  "name_de": "Gesundheit"
+ },
+ {
+  "id": "ruhak",
+  "order": 18,
+  "subLevel": "A1.4",
+  "type": "vocab",
+  "icon": "👕",
+  "name_hu": "Ruhák",
+  "name_en": "Clothes",
+  "name_es": "Ropa",
+  "name_de": "Kleidung"
+ },
+ {
+  "id": "szinek",
+  "order": 19,
+  "subLevel": "A1.4",
+  "type": "vocab",
+  "icon": "🎨",
+  "name_hu": "Színek",
+  "name_en": "Colours",
+  "name_es": "Colores",
+  "name_de": "Farben"
+ },
+ {
+  "id": "napok",
+  "order": 20,
+  "subLevel": "A1.5",
+  "type": "vocab",
+  "icon": "📅",
+  "name_hu": "A hét napjai",
+  "name_en": "Days of the week",
+  "name_es": "Días de la semana",
+  "name_de": "Wochentage"
+ },
+ {
+  "id": "honapok",
+  "order": 21,
+  "subLevel": "A1.5",
+  "type": "vocab",
+  "icon": "🗓️",
+  "name_hu": "Hónapok",
+  "name_en": "Months",
+  "name_es": "Meses",
+  "name_de": "Monate"
+ },
+ {
+  "id": "idojaras",
+  "order": 22,
+  "subLevel": "A1.5",
+  "type": "vocab",
+  "icon": "⛅",
+  "name_hu": "Időjárás",
+  "name_en": "Weather",
+  "name_es": "Clima",
+  "name_de": "Wetter"
+ },
+ {
+  "id": "kerdoszavak",
+  "order": 23,
+  "subLevel": "A1.5",
+  "type": "grammar",
+  "icon": "❓",
+  "name_hu": "Kérdőszavak",
+  "name_en": "Question words",
+  "name_es": "Interrogativos",
+  "name_de": "Fragewörter"
+ },
+ {
+  "id": "igek2",
+  "order": 24,
+  "subLevel": "A1.6",
+  "type": "grammar",
+  "icon": "🔁",
+  "name_hu": "Gyakori igék",
+  "name_en": "Everyday verbs",
+  "name_es": "Verbos frecuentes",
+  "name_de": "Häufige Verben"
+ },
+ {
+  "id": "multido",
+  "order": 25,
+  "subLevel": "A1.6",
+  "type": "grammar",
+  "icon": "⏪",
+  "name_hu": "Múlt idő",
+  "name_en": "Past tense",
+  "name_es": "Pasado",
+  "name_de": "Vergangenheit"
+ },
+ {
+  "id": "modalitas",
+  "order": 26,
+  "subLevel": "A1.6",
+  "type": "grammar",
+  "icon": "🙋",
+  "name_hu": "Tudok, akarok, kell",
+  "name_en": "Can, want, must",
+  "name_es": "Poder, querer, deber",
+  "name_de": "Können, wollen, müssen"
+ },
+ {
+  "id": "szamok2",
+  "order": 27,
+  "subLevel": "A1.6",
+  "type": "vocab",
+  "icon": "🔢",
+  "name_hu": "Nagyobb számok",
+  "name_en": "Bigger numbers",
+  "name_es": "Números mayores",
+  "name_de": "Größere Zahlen"
+ },
+ {
+  "id": "vasarlas",
+  "order": 28,
+  "subLevel": "A1.7",
+  "type": "vocab",
+  "icon": "🛒",
+  "name_hu": "Vásárlás",
+  "name_en": "Shopping",
+  "name_es": "Compras",
+  "name_de": "Einkaufen"
+ },
+ {
+  "id": "etterem",
+  "order": 29,
+  "subLevel": "A1.7",
+  "type": "vocab",
+  "icon": "🍽️",
+  "name_hu": "Étterem",
+  "name_en": "Restaurant",
+  "name_es": "Restaurante",
+  "name_de": "Restaurant"
+ },
+ {
+  "id": "utazas",
+  "order": 30,
+  "subLevel": "A1.7",
+  "type": "vocab",
+  "icon": "✈️",
+  "name_hu": "Utazás",
+  "name_en": "Travel",
+  "name_es": "Viajes",
+  "name_de": "Reisen"
  }
 ]
