@@ -39,7 +39,10 @@ export default function SettingsScreen() {
   const [masterVisible, setMasterVisible] = useState(false);
   const [wordsOnly, setWordsOnly] = useState(false);
   const [randomTopics, setRandomTopics] = useState(false);
-  const [target, setTarget] = useState('es');
+  // null until the DB says which course this is: defaulting to Spanish made the
+  // level picker show the Spanish word counts for a second or two after a cold
+  // start, so an es→hu learner saw 881 A1 words instead of 480.
+  const [target, setTarget] = useState<string | null>(null);
   const [level, setLevel] = useState<Level>('A0');
   const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
   // FB39: due count for the "Spelling Practice (N)" settings row, refreshed
@@ -337,7 +340,7 @@ export default function SettingsScreen() {
             <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.master.levels}</Text>
             <View style={styles.levelGrid}>
               {LEVELS.map(lvl => {
-                const wordCount = getWordsForLevel(lvl, target).length;
+                const wordCount = target ? getWordsForLevel(lvl, target).length : null;
                 return (
                   <Pressable
                     key={lvl}
@@ -345,7 +348,7 @@ export default function SettingsScreen() {
                     onPress={() => handleLevelSwitch(lvl)}
                   >
                     <Text style={styles.levelOptionText}>{lvl}</Text>
-                    <Text style={styles.levelWordCount}>{s.master.wordCount(wordCount)}</Text>
+                    <Text style={styles.levelWordCount}>{wordCount === null ? ' ' : s.master.wordCount(wordCount)}</Text>
                   </Pressable>
                 );
               })}
