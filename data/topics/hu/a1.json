@@ -449,5 +449,82 @@
   "name_en": "Work 2",
   "name_es": "Trabajo 2",
   "name_de": "Arbeit 2"
+ },
+ {
+  "id": "birtoklas",
+  "order": 42,
+  "subLevel": "A1.11",
+  "type": "grammar",
+  "icon": "🔑",
+  "name_hu": "Birtoklás (-m, -d, -a)",
+  "name_en": "Possession",
+  "name_es": "Posesión",
+  "name_de": "Besitz"
+ },
+ {
+  "id": "nevutok",
+  "order": 43,
+  "subLevel": "A1.11",
+  "type": "grammar",
+  "icon": "📐",
+  "name_hu": "Névutók",
+  "name_en": "Postpositions",
+  "name_es": "Posposiciones",
+  "name_de": "Postpositionen"
+ },
+ {
+  "id": "gyakorisag",
+  "order": 44,
+  "subLevel": "A1.11",
+  "type": "grammar",
+  "icon": "🔁",
+  "name_hu": "Gyakoriság",
+  "name_en": "Frequency",
+  "name_es": "Frecuencia",
+  "name_de": "Häufigkeit"
+ },
+ {
+  "id": "jovoido",
+  "order": 45,
+  "subLevel": "A1.11",
+  "type": "grammar",
+  "icon": "🔮",
+  "name_hu": "Jövő idő",
+  "name_en": "Future tense",
+  "name_es": "Futuro",
+  "name_de": "Zukunft"
+ },
+ {
+  "id": "orvos",
+  "order": 46,
+  "subLevel": "A1.12",
+  "type": "vocab",
+  "icon": "🏥",
+  "name_hu": "Orvosnál",
+  "name_en": "At the doctor",
+  "name_es": "En el médico",
+  "name_de": "Beim Arzt"
+ },
+ {
+  "id": "hivatal",
+  "order": 47,
+  "subLevel": "A1.12",
+  "type": "vocab",
+  "icon": "🏛️",
+  "name_hu": "Hivatal és posta",
+  "name_en": "Office & post",
+  "name_es": "Trámites y correos",
+  "name_de": "Amt und Post"
+ },
+ {
+  "id": "melleknevek2",
+  "order": 48,
+  "subLevel": "A1.12",
+  "type": "vocab",
+  "icon": "✨",
+  "name_hu": "Melléknevek 2",
+  "name_en": "Adjectives 2",
+  "name_es": "Adjetivos 2",
+  "name_de": "Adjektive 2"
  }
 ]
