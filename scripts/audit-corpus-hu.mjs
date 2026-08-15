@@ -77,7 +77,7 @@ function tokenizeHu(str) {
 const HU_SUFFIXES = [
   'unkat', 'ünket', 'okat', 'eket', 'öket', 'ákat', 'éket',
   'ban', 'ben', 'ból', 'ből', 'nak', 'nek', 'val', 'vel', 'hoz', 'hez', 'höz',
-  'ról', 'ről', 'unk', 'ünk', 'tok', 'tek', 'tök', 'nál', 'nél', 'kor',
+  'ról', 'ről', 'unk', 'ünk', 'tok', 'tek', 'tök', 'nál', 'nél', 'kor', 'tól', 'től',
   'ba', 'be', 'ra', 're', 'on', 'en', 'ön', 'ot', 'et', 'öt', 'at',
   'om', 'em', 'öm', 'am', 'od', 'ed', 'öd', 'ad', 'ja', 'je', 'ok', 'ek', 'ök', 'ak',
   // infinitive and its personal forms: tanul+ni, segít+eni, dolgoz+nom
@@ -118,6 +118,8 @@ function dropEpentheticVowel(s) {
 // Taught dictionary forms whose everyday conjugation is irregular; the taught
 // 1sg form doesn't reduce to the same stem as the other persons.
 const IRREGULAR_PARADIGM_MAP = {
+  'alszom': ['alszik', 'alszol', 'alszunk', 'alszanak', 'aludni'],
+  'adok': ['ad', 'adsz', 'adunk', 'adnak', 'adni'],
   'jövök': ['jön', 'jössz', 'jönnek', 'jövünk', 'jöttök'],
   'megyek': ['megy', 'mész', 'mennek', 'megyünk', 'mentek'],
   'eszem': ['eszik', 'eszel', 'esznek', 'eszünk', 'esztek', 'enni'],
@@ -148,9 +150,11 @@ function stemForms(token) {
   };
   add(token);
   for (const suf of HU_SUFFIXES) {
-    // Two-letter stems are allowed for the one-letter suffixes only, otherwise
-    // short vowel-final words never reduce (jó→jók, nő→nők, fa→fát).
-    const minStem = suf.length === 1 ? 2 : 3;
+    // Two-letter stems are allowed as long as what remains is a plausible word
+    // (a vowel-final root like tó, fa, ló, kő): tó+ban, fa+ról, kő+vel. Longer
+    // suffixes on a consonant-final two-letter stem stay rejected.
+    const stem = token.slice(0, -suf.length);
+    const minStem = suf.length === 1 || /[aeiouáéíóöőúüű]$/.test(stem) ? 2 : 3;
     if (token.endsWith(suf) && token.length - suf.length >= minStem) {
       add(token.slice(0, -suf.length));
     }
