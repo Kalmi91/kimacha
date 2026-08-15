@@ -888,6 +888,12 @@ export default function LearnScreen() {
     <Text style={[styles.noteText, { color: colors.tabIconDefault }]}>{noteText}</Text>
   ) : null;
 
+  // FB131: one place decides what a practice answer is worth, used by both the
+  // keyboard's Enter and the inline ✓ button.
+  const checkPractice = () => {
+    setPracticeResult(strictAnswerMatch(practiceText, back.split(' / ')[0]) ? 'correct' : 'wrong');
+  };
+
   const levelBadge = (
     <View style={[styles.levelBadge, { backgroundColor: '#38BDF8' }]}>
       <Text style={styles.levelText} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>{level}</Text>
@@ -1248,19 +1254,25 @@ export default function LearnScreen() {
             )}
             {practiceTyping && !practiceResult && (
               <View style={styles.practiceSection}>
-                <TextInput
-                  style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }]}
-                  placeholder={s.card.typeTranslation}
-                  placeholderTextColor={colors.tabIconDefault}
-                  value={practiceText}
-                  onChangeText={setPracticeText}
-                  onSubmitEditing={() => {
-                    setPracticeResult(strictAnswerMatch(practiceText, back.split(' / ')[0]) ? 'correct' : 'wrong');
-                  }}
-                  autoFocus
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                />
+                {/* FB131: the open keyboard covers the buttons below the card, so
+                    this practice field carries its own ✓ next to the input, the
+                    same inline row the main typing card got in FB5. */}
+                <View style={styles.inputRow}>
+                  <TextInput
+                    style={[styles.input, { flex: 1, width: 'auto', color: colors.text, borderColor: colors.tabIconDefault }]}
+                    placeholder={s.card.typeTranslation}
+                    placeholderTextColor={colors.tabIconDefault}
+                    value={practiceText}
+                    onChangeText={setPracticeText}
+                    onSubmitEditing={checkPractice}
+                    autoFocus
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                  />
+                  <Pressable style={[styles.inlineCheckBtn, { backgroundColor: '#38BDF8' }]} onPress={checkPractice}>
+                    <Text style={styles.inlineCheckText}>✓</Text>
+                  </Pressable>
+                </View>
               </View>
             )}
             {practiceResult && (
