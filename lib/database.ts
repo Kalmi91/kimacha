@@ -559,11 +559,11 @@ class SQLiteDB implements DB {
     const rows = await db.getAllAsync<any>(
       "SELECT word_id, COUNT(*) as cnt FROM card_attempts WHERE correct = 0 GROUP BY word_id ORDER BY cnt DESC LIMIT 5"
     );
-    const { words } = require('@/data/words');
+    const { findWordById } = require('@/data/words');
     const onboarding = await this.getOnboarding();
     const lang = onboarding?.target ?? 'es';
     return rows.map((r: any) => {
-      const w = words.find((w: any) => w.id === r.word_id);
+      const w = findWordById(r.word_id, lang);
       return w ? String(w[lang] ?? w.es) : String(r.word_id);
     });
   }

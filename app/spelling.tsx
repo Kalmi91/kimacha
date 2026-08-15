@@ -6,7 +6,7 @@ import * as Speech from 'expo-speech';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb } from '@/lib/database';
-import { words } from '@/data/words';
+import { findWordById } from '@/data/words';
 import { t } from '@/lib/i18n';
 import { charDiff, stripTrailingPunct } from '@/lib/charDiff';
 import { speechLang } from '@/lib/languages';
@@ -66,7 +66,7 @@ export default function SpellingScreen() {
   );
 
   const current = queue[currentIndex];
-  const currentWord = current ? words.find((w) => w.id === current.wordId) : undefined;
+  const currentWord = current ? findWordById(current.wordId, direction[1]) : undefined;
 
   const [native, learned] = direction;
   const prompt = currentWord ? String(currentWord[native]) : '';

@@ -52,6 +52,31 @@ export function getWordsForLevel(level: Level, lang: string = 'es'): WordEntry[]
   return words.filter(w => w.level === level);
 }
 
+// Card rows in the DB only carry a word id, and the id spaces of the branches are
+// disjoint by construction (shared Spanish set <= 3007, English track from 5001,
+// Hungarian track from 6001). Look the id up in the branch that is being learned
+// first, then in the shared set. Resolving against the shared set alone dropped
+// every card of a non-Spanish course, which left the learner on the Done screen
+// with an empty queue (FB129 second cause).
+const branchIndex: Partial<Record<string, Map<number, WordEntry>>> = {};
+
+function indexFor(lang: string): Map<number, WordEntry> | undefined {
+  const byLevel = lang === 'en' ? enWordsByLevel : lang === 'hu' ? huWordsByLevel : null;
+  if (!byLevel) return undefined;
+  if (!branchIndex[lang]) {
+    const map = new Map<number, WordEntry>();
+    for (const list of Object.values(byLevel)) {
+      for (const w of list ?? []) map.set(w.id, w);
+    }
+    branchIndex[lang] = map;
+  }
+  return branchIndex[lang];
+}
+
+export function findWordById(id: number, lang: string = 'es'): WordEntry | undefined {
+  return indexFor(lang)?.get(id) ?? words.find(w => w.id === id);
+}
+
 export function getWordsForTopic(level: Level, topicId: string, lang: string = 'es'): WordEntry[] {
   return getWordsForLevel(level, lang)
     .filter(w => w['topic'] === topicId)
