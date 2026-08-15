@@ -24,9 +24,12 @@ const ANIM_MS = 250;
 export default function UsageToast() {
   const { theme } = useTheme();
   const colors = Colors[theme];
-  const s = t();
   const [visible, setVisible] = useState(false);
-  const [message, setMessage] = useState(s.usage.plusOneMinute);
+  // The toast lives in the root layout, so it mounts BEFORE onboarding picks the
+  // native language: reading t() once would freeze the pill in the device locale
+  // (seen on the emulator, Spanish UI with an English "+1 minute" pill). Read the
+  // strings when the toast actually fires instead.
+  const [message, setMessage] = useState(() => t().usage.plusOneMinute);
   const [isMilestone, setIsMilestone] = useState(false);
   const opacity = useRef(new Animated.Value(0)).current;
   const translateY = useRef(new Animated.Value(-16)).current;
@@ -73,7 +76,7 @@ export default function UsageToast() {
       }, visibleMs ?? (milestone ? MILESTONE_VISIBLE_MS : VISIBLE_MS));
     };
 
-    const unsubscribeMinute = onActiveMinute(() => show(s.usage.plusOneMinute, false));
+    const unsubscribeMinute = onActiveMinute(() => show(t().usage.plusOneMinute, false));
     const unsubscribeMilestone = onUsageMilestone(({ scope, minutes }) => {
       const learned = stringsFor(learnedLang.current).usage;
       const template = scope === 'session' ? learned.milestoneSession : learned.milestoneDaily;
@@ -98,7 +101,7 @@ export default function UsageToast() {
       unsubscribeRollover();
       if (hideTimer.current) clearTimeout(hideTimer.current);
     };
-  }, [s, greeting]);
+  }, [greeting]);
 
   if (!visible) return null;
 

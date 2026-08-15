@@ -4,6 +4,7 @@ import { useFocusEffect, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
 import { getDb } from '@/lib/database';
 import { getWordsForTopic, getWordsForLevel, type Level } from '@/data/words';
 import {
@@ -27,6 +28,9 @@ export default function TreeScreen() {
 
   const [level, setLevel] = useState<Level>('A1');
   const [repsMap, setRepsMap] = useState<Map<number, number>>(new Map());
+  // A topic-készültség FSRS-állapotból jön (lib/topicMastery.ts), nem a reps-ből,
+  // hogy a fa ugyanazt a "kész"-t mutassa, mint a tanulási képernyő.
+  const [stateMap, setStateMap] = useState<Map<number, number>>(new Map());
   const [selectedTopicId, setSelectedTopicId] = useState<string | null>(null);
   const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
 
@@ -41,6 +45,7 @@ export default function TreeScreen() {
     const ids = words.map(w => w.id);
     const map = await db.getWordReps(ids);
     setRepsMap(map);
+    setStateMap(await db.getWordStates(ids));
     const saved = await db.getSelectedTopic();
     setSelectedTopicId(saved);
   };
@@ -80,10 +85,9 @@ export default function TreeScreen() {
     >
       {subLevels.map((sub: SubLevelDef, subIdx: number) => {
         const subTopics = getTopicsForSubLevel(level, sub.id, lang);
-        const doneSub = subTopics.filter(t => {
-          const tw = getWordsForTopic(level, t.id, lang);
-          return tw.length > 0 && tw.every(w => (repsMap.get(w.id) ?? 0) > 0);
-        }).length;
+        const doneSub = subTopics.filter(t =>
+          isTopicMastered(getWordsForTopic(level, t.id, lang).map(w => w.id), stateMap)
+        ).length;
 
         // Build rows of 2-3 nodes
         const rows: TopicDef[][] = [];
@@ -113,9 +117,12 @@ export default function TreeScreen() {
                   <View style={[styles.branchStub, { borderColor: colors.tabIconDefault }]} />
                   {row.map((topic: TopicDef) => {
                     const topicWords = getWordsForTopic(level, topic.id, lang);
-                    const reviewedCount = topicWords.filter(w => (repsMap.get(w.id) ?? 0) > 0).length;
+                    // A csempe számlálója a RÖGZÜLT szavakat mutatja (ez a "kész"
+                    // feltétele); "folyamatban" viszont már az is, amit elkezdtél.
+                    const reviewedCount = masteredCount(topicWords.map(w => w.id), stateMap);
+                    const startedCount = topicWords.filter(w => (repsMap.get(w.id) ?? 0) > 0).length;
                     const isComplete = topicWords.length > 0 && reviewedCount === topicWords.length;
-                    const isInProgress = !isComplete && reviewedCount > 0;
+                    const isInProgress = !isComplete && startedCount > 0;
                     const isSelected = topic.id === selectedTopicId;
                     const isGrammar = topic.type === 'grammar';
                     const accentColor = isGrammar ? '#22C55E' : '#38BDF8';
@@ -155,7 +162,13 @@ export default function TreeScreen() {
                         onPress={() => handleSelectTopic(topic)}
                       >
                         <Text style={styles.nodeEmoji}>{topic.icon}</Text>
-                        <Text style={[styles.nodeName, { color: colors.text }]} numberOfLines={2}>
+                        <Text
+                          style={[styles.nodeName, { color: colors.text }]}
+                          numberOfLines={2}
+                          adjustsFontSizeToFit
+                          minimumFontScale={0.8}
+                          maxFontSizeMultiplier={1.2}
+                        >
                           {getTopicName(topic, lang)}
                         </Text>
                         <Text style={[styles.nodeProgress, { color: accentColor }]}>
