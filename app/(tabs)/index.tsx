@@ -6,7 +6,7 @@ import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb, cardFromRow } from '@/lib/database';
-import { words, type WordEntry, getWordsForLevel, getWordsForTopic, getWordTopic, LEVELS, type Level } from '@/data/words';
+import { words, findWordById, type WordEntry, getWordsForLevel, getWordsForTopic, getWordTopic, LEVELS, type Level } from '@/data/words';
 import { getTopicsForLevel, hasTopics, getTopicName, getSubLevelForTopic, getTopicsForSubLevel, getSubLevelName, type TopicDef } from '@/data/topics';
 import { t } from '@/lib/i18n';
 import { strictAnswerMatch } from '@/lib/answerMatch';
@@ -126,7 +126,7 @@ export default function LearnScreen() {
   // (several awaited DB writes) is still running.
   const advancingRef = useRef(false);
 
-  const buildQueue = (rows: any[]): DueItem[] => {
+  const buildQueue = (rows: any[], lang: string): DueItem[] => {
     return rows.map((row: any) => {
       const isWord = row.type === 'word';
       const isSentence = row.type === 'sentence';
@@ -149,7 +149,7 @@ export default function LearnScreen() {
         wordId: row.word_id,
         type: row.type,
         card: cardFromRow(row),
-        word: words.find(w => w.id === row.word_id)!,
+        word: findWordById(row.word_id, lang)!,
         isTyping,
         isEasySentence: isSentence && row.reps === 0,
         typingDirection,
@@ -364,7 +364,7 @@ export default function LearnScreen() {
     const intake = newWordIntake(budget);
     setNewWordsLeft(leftToday);
     setNewWordsPaused(intake === 0 && leftToday > 0);
-    const items = applyCadence(capNewWords(buildQueue(rows), intake), wordsOnly);
+    const items = applyCadence(capNewWords(buildQueue(rows, learned), intake), wordsOnly);
 
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
@@ -616,7 +616,7 @@ export default function LearnScreen() {
     const intake2 = newWordIntake(budget2);
     setNewWordsLeft(leftToday2);
     setNewWordsPaused(intake2 === 0 && leftToday2 > 0);
-    const newItems = applyCadence(capNewWords(buildQueue(newRows), intake2), wordsOnly2);
+    const newItems = applyCadence(capNewWords(buildQueue(newRows, learned), intake2), wordsOnly2);
 
     if (newItems.length === 0) {
       setDone(true);
