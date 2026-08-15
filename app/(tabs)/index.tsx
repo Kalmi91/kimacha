@@ -36,6 +36,13 @@ const f = fsrs();
 // system font size made it grow into the progress meter below it.
 const HEADER_FONT_SCALE_CAP = 1.3;
 
+// The header (level badge, topic row, sub-level line) is absolutely positioned,
+// so the scrolling card has to reserve room for it. A constant 56 was fine at
+// the default font size and too small at font_scale 1.5, where the progress
+// meter rode over the sub-level line (caught on the emulator). The header
+// measures itself instead, so any font size or translation length fits.
+const HEADER_RESERVE_MIN = 56;
+
 type TypingResult = 'correct' | 'almost' | 'wrong' | 'skipped' | null;
 
 // FB25/FB84: char diff lives in lib/charDiff.ts now, shared with the spelling
@@ -61,6 +68,7 @@ export default function LearnScreen() {
   // ceiling, so no new word joins the queue right now. Shown as ⏸ on the badge,
   // otherwise the countdown would look stuck without saying why.
   const [newWordsPaused, setNewWordsPaused] = useState(false);
+  const [headerBottom, setHeaderBottom] = useState(HEADER_RESERVE_MIN);
   const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
   const [typedAnswer, setTypedAnswer] = useState('');
   const [typingResult, setTypingResult] = useState<TypingResult>(null);
@@ -908,15 +916,31 @@ export default function LearnScreen() {
   const topicHeader = currentTopic && topicProgress ? (
     <>
       <Pressable style={styles.topicHeader} onPress={() => router.push('/(tabs)/tree')}>
-        <Text style={[styles.topicIcon, { color: currentTopic.type === 'grammar' ? '#22C55E' : '#38BDF8' }]}>
+        <Text
+          style={[styles.topicIcon, { color: currentTopic.type === 'grammar' ? '#22C55E' : '#38BDF8' }]}
+          maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}
+        >
           {currentTopic.icon ?? (currentTopic.type === 'grammar' ? '📗' : '📘')}
         </Text>
-        <Text style={[styles.topicName, { color: colors.text }]} numberOfLines={1}>
+        <Text
+          style={[styles.topicName, { color: colors.text }]}
+          numberOfLines={1}
+          maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}
+        >
           {getTopicName(currentTopic, topicLang)}
         </Text>
       </Pressable>
       {currentSubLevel && subLevelPos > 0 && (
-        <Text style={[styles.subLevelLine, { color: colors.tabIconDefault }]} numberOfLines={1}>
+        <Text
+          style={[styles.subLevelLine, { color: colors.tabIconDefault }]}
+          numberOfLines={1}
+          maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}
+          onLayout={(e) => {
+            const { y, height } = e.nativeEvent.layout;
+            const bottom = Math.max(HEADER_RESERVE_MIN, Math.ceil(y + height) + 8);
+            setHeaderBottom((prev) => (prev === bottom ? prev : bottom));
+          }}
+        >
           {s.subLevel.progress(currentSubLevel.id, getSubLevelName(currentSubLevel, topicLang), subLevelPos, subLevelTopics.length)}
         </Text>
       )}
@@ -983,7 +1007,7 @@ export default function LearnScreen() {
             absolute header. Scroll the card instead (shared scroll styles). */}
         <ScrollView
           style={styles.typingScroll}
-          contentContainerStyle={styles.typingScrollContent}
+          contentContainerStyle={[styles.typingScrollContent, { paddingTop: headerBottom }]}
           keyboardShouldPersistTaps="handled"
         >
         {topicHeader}
@@ -1033,7 +1057,7 @@ export default function LearnScreen() {
             header. Scroll instead, so nothing collides on small screens. */}
         <ScrollView
           style={styles.typingScroll}
-          contentContainerStyle={styles.typingScrollContent}
+          contentContainerStyle={[styles.typingScrollContent, { paddingTop: headerBottom }]}
           keyboardShouldPersistTaps="handled"
         >
         {topicHeader}
@@ -1177,7 +1201,7 @@ export default function LearnScreen() {
           számmal megmarad és jön le és így egybe bugolódik"). Scroll instead. */}
       <ScrollView
         style={styles.typingScroll}
-        contentContainerStyle={styles.typingScrollContent}
+        contentContainerStyle={[styles.typingScrollContent, { paddingTop: headerBottom }]}
         keyboardShouldPersistTaps="handled"
       >
       {topicHeader}
@@ -1592,10 +1616,11 @@ const styles = StyleSheet.create({
   },
   topicIcon: {
     fontSize: 14,
+    lineHeight: 18,
   },
   subLevelLine: {
     position: 'absolute',
-    top: 64,
+    top: 66,
     left: 20,
     right: 20,
     textAlign: 'center',
@@ -1606,6 +1631,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '600',
     flexShrink: 1,
+    lineHeight: 18,
   },
   topicCount: {
     fontSize: 12,
