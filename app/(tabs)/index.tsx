@@ -5,8 +5,8 @@ import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
-import { getDb, cardFromRow } from '@/lib/database';
-import { words, findWordById, type WordEntry, getWordsForLevel, getWordsForTopic, getWordTopic, LEVELS, type Level } from '@/data/words';
+import { getDb } from '@/lib/database';
+import { type WordEntry, getWordsForLevel, getWordsForTopic, LEVELS, type Level } from '@/data/words';
 import { getTopicsForLevel, hasTopics, getTopicName, getSubLevelForTopic, getTopicsForSubLevel, getSubLevelName, type TopicDef } from '@/data/topics';
 import { t } from '@/lib/i18n';
 import { strictAnswerMatch } from '@/lib/answerMatch';
@@ -16,7 +16,7 @@ import { DAILY_NEW_BONUS_STEP } from '@/lib/usageStats';
 import { capNewWords, newWordsLeftToday, newWordIntake } from '@/lib/newWordBudget';
 import { wordPhase, phaseShape, type WordPhase } from '@/lib/wordPhase';
 import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
-import { capSentencesToCadence } from '@/lib/sentenceMix';
+import { buildQueue, applyCadence, type DueItem } from '@/lib/sessionQueue';
 import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
 import { cardIcon } from '@/lib/cardIcons';
@@ -36,45 +36,10 @@ const f = fsrs();
 // system font size made it grow into the progress meter below it.
 const HEADER_FONT_SCALE_CAP = 1.3;
 
-type TypingDir = 'learned-to-native' | 'native-to-learned';
-
-interface DueItem {
-  wordId: number;
-  type: string;
-  card: Card;
-  word: WordEntry;
-  isTyping: boolean;
-  isEasySentence?: boolean;
-  typingDirection?: TypingDir;
-}
-
 type TypingResult = 'correct' | 'almost' | 'wrong' | 'skipped' | null;
 
 // FB25/FB84: char diff lives in lib/charDiff.ts now, shared with the spelling
 // trainer, which used to carry a hand-copied twin of it.
-
-// FB26: reorder word cards so no more than `maxRun` of the same kind (flashcard
-// vs typing) appear in a row, keeping a balanced flashcard/typing mix.
-function interleaveByType(items: DueItem[], maxRun: number): DueItem[] {
-  const flash = items.filter((i) => !i.isTyping);
-  const typing = items.filter((i) => i.isTyping);
-  const out: DueItem[] = [];
-  let fi = 0, ti = 0;
-  let last: boolean | null = null;
-  let run = 0;
-  while (fi < flash.length || ti < typing.length) {
-    let pullTyping: boolean;
-    if (fi >= flash.length) pullTyping = true;
-    else if (ti >= typing.length) pullTyping = false;
-    else if (last !== null && run >= maxRun) pullTyping = !last; // force a switch
-    else pullTyping = (typing.length - ti) > (flash.length - fi); // pull from the fuller bucket
-    const item: DueItem = pullTyping ? typing[ti++] : flash[fi++];
-    out.push(item);
-    if (item.isTyping === last) run++;
-    else { run = 1; last = item.isTyping; }
-  }
-  return out;
-}
 
 export default function LearnScreen() {
   const { theme } = useTheme();
@@ -126,96 +91,6 @@ export default function LearnScreen() {
   // (several awaited DB writes) is still running.
   const advancingRef = useRef(false);
 
-  const buildQueue = (rows: any[], lang: string): DueItem[] => {
-    return rows.map((row: any) => {
-      const isWord = row.type === 'word';
-      const isSentence = row.type === 'sentence';
-      let isTyping = false;
-      let typingDirection: TypingDir | undefined;
-
-      if (isWord) {
-        // FB105/FB109: the phase ladder (lib/wordPhase.ts) counts SUCCESSFUL
-        // reviews, not reviews, and the same rule drives the in-session
-        // promotion in handleWordGood.
-        const shape = phaseShape(wordPhase(row));
-        isTyping = shape.isTyping;
-        typingDirection = shape.typingDirection;
-      } else {
-        // Sentence: easy (tap-to-order) first time, hard (typing) after
-        isTyping = row.reps > 0;
-      }
-
-      return {
-        wordId: row.word_id,
-        type: row.type,
-        card: cardFromRow(row),
-        word: findWordById(row.word_id, lang)!,
-        isTyping,
-        isEasySentence: isSentence && row.reps === 0,
-        typingDirection,
-      };
-    }).filter((item: DueItem) => !!item.word);
-  };
-
-  const QUEUE_POOL = 40;
-
-  const applyCadence = (items: DueItem[], wordsOnly: boolean): DueItem[] => {
-    if (wordsOnly) {
-      // FB24/26/27: words only, no sentences. Respect each word's natural phase
-      // (flashcard L→N at reps0, flashcard N→L at reps1, typing N→L at reps>=2),
-      // so a word becomes a typing card ONLY after it reached Good in BOTH
-      // flashcard directions. Interleave so no >4 cards of one kind run, and the
-      // first card is always a word flashcard (never a sentence build).
-      const wordItems = items.filter((item) => item.type === 'word');
-      return interleaveByType(wordItems, 4);
-    }
-    // FB31/FB36: repeating 4-words + 1-sentence unit (80% word / 20% sentence).
-    // Sentence slots cycle easy → easy → typing on a counter that runs across
-    // the whole queue, so the 2:1 easy:typing mix survives unit boundaries and
-    // two sentence cards are never adjacent while words remain.
-    const words: DueItem[] = [];
-    const easy: DueItem[] = [];
-    const typing: DueItem[] = [];
-    // FB99: re-apply the cadence (and its 5-sentence ceiling) to the FINAL list,
-    // after capNewWords removed the new words the daily budget cannot afford.
-    for (const item of capSentencesToCadence(items, (i) => i.type !== 'word')) {
-      if (item.type === 'word') words.push(item);
-      else if (item.isEasySentence) easy.push(item);
-      else typing.push(item);
-    }
-    // FB33/FB35: easy sentences come simplest-first (learned-language word
-    // count, then character length; stable). Typing sentences are due FSRS
-    // reviews, so their order stays untouched.
-    const sentOf = (item: DueItem) => String(item.word[`sentence_${direction[1]}`]).trim();
-    easy.sort((a, b) => {
-      const sa = sentOf(a), sb = sentOf(b);
-      const wa = sa.split(/\s+/).filter(Boolean).length;
-      const wb = sb.split(/\s+/).filter(Boolean).length;
-      return wa - wb || sa.length - sb.length;
-    });
-    const result: DueItem[] = [];
-    let wi = 0, ei = 0, ti = 0, slot = 0;
-    while (wi < words.length) {
-      const batch = words.slice(wi, wi + 4);
-      wi += batch.length;
-      result.push(...batch);
-      if (ei >= easy.length && ti >= typing.length) continue; // no sentences left, words go on
-      const wantTyping = slot % 3 === 2;
-      slot++;
-      // an empty scheduled bucket falls back to the other, no due sentence dropped
-      if (wantTyping ? ti < typing.length : ei >= easy.length) { result.push(typing[ti]); ti++; }
-      else { result.push(easy[ei]); ei++; }
-    }
-    // words exhausted: alternate remaining easy/typing so neither kind dumps
-    // in one long run (FB31)
-    let takeEasy = true;
-    while (ei < easy.length || ti < typing.length) {
-      if (takeEasy ? ei < easy.length : ti >= typing.length) { result.push(easy[ei]); ei++; }
-      else { result.push(typing[ti]); ti++; }
-      takeEasy = !takeEasy;
-    }
-    return result;
-  };
 
   // `stateMap` = szavankénti FSRS állapot. A topic-készültség EBBŐL dől el
   // (lib/topicMastery.ts), nem a repsMap-ből: egyszer látni egy szót nem tudás,
@@ -277,6 +152,8 @@ export default function LearnScreen() {
 
     return { unlocked, activeTopic, completedCount };
   };
+
+  const QUEUE_POOL = 40;
 
   const loadCards = async () => {
     const db = getDb();
@@ -364,7 +241,7 @@ export default function LearnScreen() {
     const intake = newWordIntake(budget);
     setNewWordsLeft(leftToday);
     setNewWordsPaused(intake === 0 && leftToday > 0);
-    const items = applyCadence(capNewWords(buildQueue(rows, learned), intake), wordsOnly);
+    const items = applyCadence(capNewWords(buildQueue(rows, learned), intake), wordsOnly, learned);
 
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
@@ -616,7 +493,7 @@ export default function LearnScreen() {
     const intake2 = newWordIntake(budget2);
     setNewWordsLeft(leftToday2);
     setNewWordsPaused(intake2 === 0 && leftToday2 > 0);
-    const newItems = applyCadence(capNewWords(buildQueue(newRows, learned), intake2), wordsOnly2);
+    const newItems = applyCadence(capNewWords(buildQueue(newRows, learned), intake2), wordsOnly2, learned);
 
     if (newItems.length === 0) {
       setDone(true);
