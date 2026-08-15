@@ -52,7 +52,7 @@ const GLUE_WHITELIST = new Set([
 
 // Proper nouns accepted anywhere (transparent names/places, not taught vocab).
 const PROPER_NOUN_LIST = new Set([
-  'budapest', 'magyarország', 'anna', 'péter', 'jános', 'éva',
+  'budapest', 'magyarország', 'spanyolország', 'anna', 'péter', 'jános', 'éva',
 ]);
 
 // ---------------------------------------------------------------------------
@@ -80,7 +80,9 @@ const HU_SUFFIXES = [
   'ról', 'ről', 'unk', 'ünk', 'tok', 'tek', 'tök', 'nál', 'nél', 'kor',
   'ba', 'be', 'ra', 're', 'on', 'en', 'ön', 'ot', 'et', 'öt', 'at',
   'om', 'em', 'öm', 'am', 'od', 'ed', 'öd', 'ad', 'ja', 'je', 'ok', 'ek', 'ök', 'ak',
-  't', 'k', 'm', 'd', 'n', 'i',
+  // infinitive and its personal forms: tanul+ni, segít+eni, dolgoz+nom
+  'ani', 'eni', 'nom', 'nem', 'nöm', 'nod', 'ned', 'nöd', 'nia', 'nie', 'ni',
+  't', 'k', 'm', 'd', 'n', 'i', 'a', 'e',
 ];
 
 /** shorten a final long vowel back (kávé+t → kávét, strip → kávé; almá+t → alma) */
@@ -100,6 +102,13 @@ function shortenLastLongVowel(s) {
   return null;
 }
 
+/** undo the assimilated -val/-vel instrumental: pénzzel→pénz, tanárral→tanár,
+ *  késsel→kés (the v copies the final consonant, so it doubles) */
+function undoAssimilatedInstrumental(s) {
+  const m = s.match(/^(.*?)([bcdfghjklmnprstvzy])\2(al|el)$/);
+  return m ? m[1] + m[2] : null;
+}
+
 /** drop the epenthetic vowel of a C-V-C ending (étterem→étterm, as in éttermet) */
 function dropEpentheticVowel(s) {
   const m = s.match(/^(.*[bcdfghjklmnprstvz])[aeiouöüő]([bcdfghjklmnprstvz])$/);
@@ -111,8 +120,8 @@ function dropEpentheticVowel(s) {
 const IRREGULAR_PARADIGM_MAP = {
   'jövök': ['jön', 'jössz', 'jönnek', 'jövünk', 'jöttök'],
   'megyek': ['megy', 'mész', 'mennek', 'megyünk', 'mentek'],
-  'eszem': ['eszik', 'eszel', 'esznek', 'eszünk', 'esztek'],
-  'iszom': ['iszik', 'iszol', 'isznak', 'iszunk', 'isztok'],
+  'eszem': ['eszik', 'eszel', 'esznek', 'eszünk', 'esztek', 'enni'],
+  'iszom': ['iszik', 'iszol', 'isznak', 'iszunk', 'isztok', 'inni'],
 };
 
 /**
@@ -134,6 +143,8 @@ function stemForms(token) {
     if (internal) forms.add(internal);
     const epenth = dropEpentheticVowel(s);
     if (epenth && epenth.length >= 3) forms.add(epenth);
+    const instr = undoAssimilatedInstrumental(s);
+    if (instr && instr.length >= 2) forms.add(instr);
   };
   add(token);
   for (const suf of HU_SUFFIXES) {
