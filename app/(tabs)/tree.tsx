@@ -60,12 +60,18 @@ export default function TreeScreen() {
     router.push('/');
   };
 
-  const lang = direction[1] === 'hu' ? 'hu' : direction[1] === 'es' ? 'es' : direction[1] === 'de' ? 'de' : 'en';
+  // Two different languages meet on this screen: `contentLang` is the language
+  // being LEARNED, which decides WHICH topic tree and words are shown, while
+  // `uiLang` is the learner's own language, which decides how the names READ.
+  // Sharing one variable showed a Spanish beginner the Hungarian names, and
+  // then (worse) the Spanish topic tree of the wrong course.
+  const contentLang = direction[1];
+  const uiLang = direction[0] === 'hu' ? 'hu' : direction[0] === 'es' ? 'es' : direction[0] === 'de' ? 'de' : 'en';
 
   // Render the tree for any level that has a topic taxonomy (A0, A1); other
   // levels show a placeholder until their topics are authored.
-  const topics = getTopicsForLevel(level, lang);
-  const subLevels = getSubLevelsForLevel(level, lang);
+  const topics = getTopicsForLevel(level, contentLang);
+  const subLevels = getSubLevelsForLevel(level, contentLang);
 
   if (topics.length === 0) {
     return (
@@ -84,9 +90,9 @@ export default function TreeScreen() {
       contentContainerStyle={styles.scrollContent}
     >
       {subLevels.map((sub: SubLevelDef, subIdx: number) => {
-        const subTopics = getTopicsForSubLevel(level, sub.id, lang);
+        const subTopics = getTopicsForSubLevel(level, sub.id, contentLang);
         const doneSub = subTopics.filter(t =>
-          isTopicMastered(getWordsForTopic(level, t.id, lang).map(w => w.id), stateMap)
+          isTopicMastered(getWordsForTopic(level, t.id, contentLang).map(w => w.id), stateMap)
         ).length;
 
         // Build rows of 2-3 nodes
@@ -100,7 +106,7 @@ export default function TreeScreen() {
             {/* Tier header */}
             <View style={[styles.tierHeader, { backgroundColor: colors.card }]}>
               <Text style={[styles.tierId, { color: colors.tint }]}>{sub.id}</Text>
-              <Text style={[styles.tierName, { color: colors.text }]}>{getSubLevelName(sub, lang)}</Text>
+              <Text style={[styles.tierName, { color: colors.text }]}>{getSubLevelName(sub, uiLang)}</Text>
               <Text style={[styles.tierProgress, { color: colors.tabIconDefault }]}>{doneSub}/{subTopics.length}</Text>
             </View>
 
@@ -116,7 +122,7 @@ export default function TreeScreen() {
                   {/* Branch stub from spine to row */}
                   <View style={[styles.branchStub, { borderColor: colors.tabIconDefault }]} />
                   {row.map((topic: TopicDef) => {
-                    const topicWords = getWordsForTopic(level, topic.id, lang);
+                    const topicWords = getWordsForTopic(level, topic.id, contentLang);
                     // A csempe számlálója a RÖGZÜLT szavakat mutatja (ez a "kész"
                     // feltétele); "folyamatban" viszont már az is, amit elkezdtél.
                     const reviewedCount = masteredCount(topicWords.map(w => w.id), stateMap);
@@ -169,7 +175,7 @@ export default function TreeScreen() {
                           minimumFontScale={0.8}
                           maxFontSizeMultiplier={1.2}
                         >
-                          {getTopicName(topic, lang)}
+                          {getTopicName(topic, uiLang)}
                         </Text>
                         <Text style={[styles.nodeProgress, { color: accentColor }]}>
                           {s.topic.wordProgress(reviewedCount, topicWords.length)}

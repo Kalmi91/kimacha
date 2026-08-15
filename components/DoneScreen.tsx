@@ -25,15 +25,21 @@ interface Props {
   currentTopic?: TopicDef | null;
   topicProgress?: TopicProgress | null;
   newWordsLeft?: number;
+  // FB114: the daily budget still has room, but the half-learned pile hit the WIP
+  // ceiling, so no new word can join. The "+5 new words" tap raises both, hence
+  // the button is offered here too, not only at a spent budget.
+  newWordsPaused?: boolean;
   onMoreNewWords?: () => void;
 }
 
-export default function DoneScreen({ reviewed, streak, level, masteredPct, direction, onStartExam, examAvailable, currentTopic, topicProgress, newWordsLeft, onMoreNewWords }: Props) {
+export default function DoneScreen({ reviewed, streak, level, masteredPct, direction, onStartExam, examAvailable, currentTopic, topicProgress, newWordsLeft, newWordsPaused, onMoreNewWords }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
   const router = useRouter();
-  const topicLang = direction[1] === 'hu' ? 'hu' : direction[1] === 'es' ? 'es' : direction[1] === 'de' ? 'de' : 'en';
+  // Topic/sub-level names are interface text: the learner's own language, not
+  // the one being learned (same rule as the Learn header and the topic tree).
+  const topicLang = direction[0] === 'hu' ? 'hu' : direction[0] === 'es' ? 'es' : direction[0] === 'de' ? 'de' : 'en';
 
   // Sub-level progress: topics are unlocked sequentially by order, so the
   // done-count inside the sub-level is the global done-count minus the
@@ -84,7 +90,7 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
       )}
       {/* FB77: today's new-word budget ran out, offer 5 more instead of ending
           the session; the standing limit itself lives in Settings. */}
-      {newWordsLeft === 0 && onMoreNewWords && (
+      {(newWordsLeft === 0 || newWordsPaused) && onMoreNewWords && (
         <Pressable style={[styles.chooseTopicBtn, { borderColor: colors.accent }]} onPress={onMoreNewWords}>
           <Text style={[styles.chooseTopicText, { color: colors.accent }]}>{s.done.moreNewWords}</Text>
         </Pressable>

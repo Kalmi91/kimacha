@@ -316,11 +316,14 @@ export default function LearnScreen() {
           const db = getDb();
           const tid = await db.getSelectedTopic();
           const ob = await db.getOnboarding();
+          // Content comes from the language being learned, the NAME is read by
+          // the learner, so it follows their own language (see topicLang).
           const tlang = ob?.target ?? 'es';
+          const nameLang = ob?.source === 'hu' ? 'hu' : ob?.source === 'es' ? 'es' : ob?.source === 'de' ? 'de' : 'en';
           const lvl = (await db.getLevel()).level as Level;
           const tp = tid ? getTopicsForLevel(lvl, tlang).find((t) => t.id === tid) : null;
           if (tp) {
-            setTopicSwitchMsg(s.topic.switchToast(getTopicName(tp, tlang)));
+            setTopicSwitchMsg(s.topic.switchToast(getTopicName(tp, nameLang)));
             setTimeout(() => setTopicSwitchMsg(null), 3500);
           }
         })();
@@ -850,7 +853,10 @@ export default function LearnScreen() {
     Speech.speak(back, { language: speechLang(backLang) });
   };
 
-  const topicLang = direction[1] === 'hu' ? 'hu' : direction[1] === 'es' ? 'es' : direction[1] === 'de' ? 'de' : 'en';
+  // Topic and sub-level names are interface text, so they follow the learner's
+  // OWN language, like the rest of the UI. They used to follow the language being
+  // learned, which showed a Spanish beginner "Köszönések" instead of "Saludos".
+  const topicLang = direction[0] === 'hu' ? 'hu' : direction[0] === 'es' ? 'es' : direction[0] === 'de' ? 'de' : 'en';
 
   // FB75/FB78/FB79: optional "i" note explaining a grammar quirk of this card
   // (why "trousers" is plural but "el pantalón" isn't, what "unos" is doing
