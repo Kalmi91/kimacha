@@ -372,5 +372,82 @@
   "name_en": "Studying",
   "name_es": "Estudios",
   "name_de": "Lernen"
+ },
+ {
+  "id": "allatok",
+  "order": 35,
+  "subLevel": "A1.9",
+  "type": "vocab",
+  "icon": "🐶",
+  "name_hu": "Állatok",
+  "name_en": "Animals",
+  "name_es": "Animales",
+  "name_de": "Tiere"
+ },
+ {
+  "id": "termeszet",
+  "order": 36,
+  "subLevel": "A1.9",
+  "type": "vocab",
+  "icon": "🌳",
+  "name_hu": "Természet",
+  "name_en": "Nature",
+  "name_es": "Naturaleza",
+  "name_de": "Natur"
+ },
+ {
+  "id": "erzelmek",
+  "order": 37,
+  "subLevel": "A1.9",
+  "type": "vocab",
+  "icon": "😊",
+  "name_hu": "Érzelmek",
+  "name_en": "Feelings",
+  "name_es": "Emociones",
+  "name_de": "Gefühle"
+ },
+ {
+  "id": "konyha",
+  "order": 38,
+  "subLevel": "A1.9",
+  "type": "vocab",
+  "icon": "🧂",
+  "name_hu": "Konyha",
+  "name_en": "Kitchen",
+  "name_es": "Cocina",
+  "name_de": "Küche"
+ },
+ {
+  "id": "sport",
+  "order": 39,
+  "subLevel": "A1.10",
+  "type": "vocab",
+  "icon": "⚽",
+  "name_hu": "Sport",
+  "name_en": "Sport",
+  "name_es": "Deporte",
+  "name_de": "Sport"
+ },
+ {
+  "id": "higienia",
+  "order": 40,
+  "subLevel": "A1.10",
+  "type": "vocab",
+  "icon": "🧼",
+  "name_hu": "Tisztálkodás",
+  "name_en": "Hygiene",
+  "name_es": "Higiene",
+  "name_de": "Hygiene"
+ },
+ {
+  "id": "munka2",
+  "order": 41,
+  "subLevel": "A1.10",
+  "type": "vocab",
+  "icon": "💼",
+  "name_hu": "Munka 2",
+  "name_en": "Work 2",
+  "name_es": "Trabajo 2",
+  "name_de": "Arbeit 2"
  }
 ]

@@ -1,11 +1,11 @@
 # Hungarian-track Corpus Audit
 
-Generated: 2026-08-15T12:20:08.372Z
+Generated: 2026-08-15T13:51:09.523Z
 
 ## Summary
 
 - A0 cards: 100, exam questions: 18
-- A1 cards: 340, exam questions: 18
+- A1 cards: 410, exam questions: 18
 - P1 issues (untaught token in sentence_hu): **0**
 - P1 exam issues (untaught token in question sentence/correct option): **0**
 
