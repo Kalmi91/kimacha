@@ -1751,6 +1751,38 @@ mi a bandeja (és mi nem: plato, mesa). **Teendő:** ha lesz jó kép, elég bem
 
 ---
 
+# 🛠️ Emulátor + release-csapdák (2026-08-15)
+
+**Android emulátor UI-ellenőrzéshez.** AVD `kimacha_test` (Pixel 6, Android 35).
+A `/dev/kvm` az ügynök sandboxából NEM látszik (bwrap saját `/dev`-et ad), ezért az
+emulátort a USER termináljából kell indítani:
+`/home/kalmi/Android/Sdk/emulator/emulator -avd kimacha_test -no-window -no-audio -no-boot-anim -gpu swiftshader_indirect &`
+(egyszer egy gépindulás után: `sudo modprobe kvm_intel && sudo chmod 666 /dev/kvm`).
+Az `adb` viszont működik innen: minden Bash-hívás SAJÁT adb-szervert indít, ezért
+egy parancson belül kell `adb start-server` + `get-state` várakozó ciklus, különben
+a friss szerver `offline` eszközt lát. Nagy betűméret teszt:
+`adb shell settings put system font_scale 1.5`.
+
+**⚠️ Csapda 1, `npx expo run:android` csatlakoztatott eszköz nélkül.** Azonnal kilép
+(„No Android connected device found"), Gradle EL SEM INDUL, viszont a régi APK ott
+marad a kimeneti mappában, tehát sikeres buildnek látszik. Helyette:
+`cd android && ./gradlew assembleRelease`.
+
+**⚠️ Csapda 2, elavult JS bundle csak-adat változásnál.** A Gradle
+`createBundleReleaseJsAndAssets` taskja NEM fut újra, ha csak `data/**.json`
+változott, így a release a MEGELŐZŐ build szavait viszi. Így ment ki a 3.0.21 és a
+3.0.22 is: az app 148 magyar A1 szót mutatott, miközben a repóban 340 volt. Minden
+build előtt:
+`rm -rf android/app/build/generated/assets/react android/app/build/intermediates/assets`
+Ellenőrzés a build után: `output-metadata.json` versionName + a Mester-modal
+szószámai az emulátoron. A `/build-apk` parancsfájl már ezt a sorrendet írja le.
+
+**⚠️ Csapda 3, `android/` gitignore-olt.** A `versionCode`/`versionName` a
+`app/build.gradle`-ben él, prebuild nélkül nem követi az `app.json`-t, kézzel kell
+együtt léptetni a kettőt.
+
+---
+
 # 🇭🇺 Hungarian-target track (es→hu kurzus), A1 KÉSZ (2026-08-15)
 
 A magyar mint CÉLNYELV ág (`data/words/hu/`, `data/topics/hu/`, `data/sublevels/hu/`,
