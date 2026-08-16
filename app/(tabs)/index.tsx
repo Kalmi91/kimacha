@@ -14,6 +14,7 @@ import { nearMissDistractors } from '@/lib/distractors';
 import { consumePendingAction } from '@/lib/pendingAction';
 import { DAILY_NEW_BONUS_STEP } from '@/lib/usageStats';
 import { capNewWords, newWordsLeftToday, newWordIntake } from '@/lib/newWordBudget';
+import { countNewWords, nextTopicWithNewWords } from '@/lib/topicRotation';
 import { wordPhase, phaseShape, type WordPhase } from '@/lib/wordPhase';
 import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
 import { buildQueue, applyCadence, type DueItem } from '@/lib/sessionQueue';
@@ -71,6 +72,11 @@ export default function LearnScreen() {
   // FB132: Settings -> Difficulty, "accents count". Off = the beginner grader
   // forgives a missing á/é/ñ; on = it fails the answer and the diff paints it.
   const [strictAccents, setStrictAccents] = useState(false);
+  // FB135/FB136: how many untouched words the ACTIVE topic still holds, and the
+  // next topic that holds some. Zero here with a topic left to go is the state
+  // where the session ends with nothing on offer, see lib/topicRotation.ts.
+  const [newWordsInTopic, setNewWordsInTopic] = useState(0);
+  const [nextTopicId, setNextTopicId] = useState<string | null>(null);
   const [headerBottom, setHeaderBottom] = useState(HEADER_RESERVE_MIN);
   const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
   const [typedAnswer, setTypedAnswer] = useState('');
@@ -164,6 +170,28 @@ export default function LearnScreen() {
     return { unlocked, activeTopic, completedCount };
   };
 
+  // FB135/FB136: record what is still available AFTER this queue, so the Done
+  // screen can say why the session ended and offer the way on. Runs on both
+  // queue builds (initial load and end-of-queue refill), the same as the topic
+  // progress next to it.
+  const applyTopicSupply = (
+    unlocked: TopicDef[],
+    activeTopic: TopicDef | null,
+    lvl: Level,
+    lang: string,
+    repsMap: Map<number, number>,
+  ) => {
+    const newWordsOf = (topicId: string) =>
+      countNewWords(getWordsForTopic(lvl, topicId, lang).map(w => w.id), repsMap);
+    setNewWordsInTopic(activeTopic ? newWordsOf(activeTopic.id) : 0);
+    setNextTopicId(
+      nextTopicWithNewWords(
+        unlocked.map(t => ({ id: t.id, order: t.order, newWords: newWordsOf(t.id) })),
+        activeTopic?.id ?? null,
+      ),
+    );
+  };
+
   const QUEUE_POOL = 40;
 
   const loadCards = async () => {
@@ -214,6 +242,9 @@ export default function LearnScreen() {
               .filter(w => (repsMap.get(w.id) ?? 0) > 0),
           ]
         : unlocked.flatMap(t => getWordsForTopic(currentLevel, t.id, learned));
+
+      // FB135/FB136: what the Done screen can still offer once this queue runs out.
+      applyTopicSupply(unlocked, activeTopic, currentLevel, learned, repsMap);
     } else {
       setCurrentTopic(null);
       setTopicProgress(null);
@@ -280,6 +311,17 @@ export default function LearnScreen() {
   const handleMoreNewWords = async (extra: number = DAILY_NEW_BONUS_STEP) => {
     const db = getDb();
     await db.addNewLimitBonus(extra);
+    setLoading(true);
+    await loadCards();
+  };
+
+  // FB135/FB136: the active topic has no untouched words left and its remaining
+  // ones are not due yet, so raising the daily budget would change nothing. Move
+  // to the next topic that still has new words and rebuild from there.
+  const handleNextTopicWords = async () => {
+    if (!nextTopicId) return;
+    const db = getDb();
+    await db.setSelectedTopic(nextTopicId);
     setLoading(true);
     await loadCards();
   };
@@ -490,6 +532,8 @@ export default function LearnScreen() {
               .filter((w: WordEntry) => (repsMap.get(w.id) ?? 0) > 0),
           ]
         : unlocked.flatMap(t => getWordsForTopic(currentLevel, t.id, learned));
+      // FB135/FB136: same bookkeeping as in loadCards, for the Done screen.
+      applyTopicSupply(unlocked, activeTopic, currentLevel, learned, repsMap);
       const activeWordIds = scopedWords.map((w: WordEntry) => w.id);
       for (const w of scopedWords) {
         await db.ensureCard(w.id, 'word');
@@ -850,6 +894,8 @@ export default function LearnScreen() {
         newWordsLeft={newWordsLeft}
         newWordsPaused={newWordsPaused}
         onMoreNewWords={handleMoreNewWords}
+        newWordsInTopic={newWordsInTopic}
+        onNextTopicWords={nextTopicId ? handleNextTopicWords : undefined}
       />
     );
   }

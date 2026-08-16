@@ -35,6 +35,8 @@ export default {
     reviewed: (n: number) => `${n} cards reviewed.`,
     streak: 'day streak',
     moreNewWords: (n: number) => `+${n} new words`,
+    nextTopicWords: 'New words from another topic',
+    topicEmpty: 'This topic has no new words left, the rest is scheduled for later.',
   },
   tabs: {
     learn: 'Learn',

@@ -35,6 +35,8 @@ export default {
     reviewed: (n: number) => `${n} Karten überprüft.`,
     streak: 'Tage Serie',
     moreNewWords: (n: number) => `+${n} neue Wörter`,
+    nextTopicWords: 'Neue Wörter aus einem anderen Thema',
+    topicEmpty: 'Dieses Thema hat keine neuen Wörter mehr, der Rest ist für später geplant.',
   },
   tabs: {
     learn: 'Lernen',
