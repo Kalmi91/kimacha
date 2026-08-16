@@ -1,12 +1,12 @@
 [
-  {"id": "basicos", "order": 1, "subLevel": "A0.1", "type": "vocab", "icon": "🧩", "name_hu": "Alapszavak", "name_en": "Core Words", "name_es": "Palabras Básicas", "name_de": "Grundwörter"},
-  {"id": "cortesia", "order": 2, "subLevel": "A0.1", "type": "vocab", "icon": "🤝", "name_hu": "Udvariasság", "name_en": "Courtesy", "name_es": "Cortesía", "name_de": "Höflichkeit"},
-  {"id": "personas", "order": 3, "subLevel": "A0.1", "type": "vocab", "icon": "👨‍👩‍👧", "name_hu": "Emberek és Család", "name_en": "People & Family", "name_es": "Personas y Familia", "name_de": "Menschen und Familie"},
-  {"id": "tiempo_a0", "order": 4, "subLevel": "A0.2", "type": "vocab", "icon": "⏰", "name_hu": "Idő", "name_en": "Time", "name_es": "Tiempo", "name_de": "Zeit"},
-  {"id": "lugar_a0", "order": 5, "subLevel": "A0.2", "type": "vocab", "icon": "🧭", "name_hu": "Hely és Irány", "name_en": "Place & Direction", "name_es": "Lugar y Dirección", "name_de": "Ort und Richtung"},
-  {"id": "verbos_a0", "order": 6, "subLevel": "A0.2", "type": "vocab", "icon": "🔁", "name_hu": "Gyakori Igék", "name_en": "Common Verbs", "name_es": "Verbos Comunes", "name_de": "Häufige Verben"},
-  {"id": "cuerpo_a0", "order": 7, "subLevel": "A0.3", "type": "vocab", "icon": "💪", "name_hu": "Testrészek", "name_en": "Body", "name_es": "Cuerpo", "name_de": "Körper"},
-  {"id": "emociones_a0", "order": 8, "subLevel": "A0.3", "type": "vocab", "icon": "😊", "name_hu": "Érzések", "name_en": "Feelings", "name_es": "Emociones", "name_de": "Gefühle"},
-  {"id": "cualidades", "order": 9, "subLevel": "A0.3", "type": "vocab", "icon": "✨", "name_hu": "Tulajdonságok", "name_en": "Qualities", "name_es": "Cualidades", "name_de": "Eigenschaften"},
-  {"id": "cosas", "order": 10, "subLevel": "A0.3", "type": "vocab", "icon": "📦", "name_hu": "Mindennapi Dolgok", "name_en": "Everyday Things", "name_es": "Cosas Cotidianas", "name_de": "Alltagsdinge"}
+  {"id": "basicos", "order": 1, "subLevel": "A0.1", "type": "vocab", "icon": "🧩", "name_hu": "Alapszavak", "name_en": "Core Words", "name_es": "Palabras Básicas", "name_de": "Grundwörter", "macro": 0},
+  {"id": "cortesia", "order": 2, "subLevel": "A0.1", "type": "vocab", "icon": "🤝", "name_hu": "Udvariasság", "name_en": "Courtesy", "name_es": "Cortesía", "name_de": "Höflichkeit", "macro": 4},
+  {"id": "personas", "order": 3, "subLevel": "A0.1", "type": "vocab", "icon": "👨‍👩‍👧", "name_hu": "Emberek és Család", "name_en": "People & Family", "name_es": "Personas y Familia", "name_de": "Menschen und Familie", "macro": 4},
+  {"id": "tiempo_a0", "order": 4, "subLevel": "A0.2", "type": "vocab", "icon": "⏰", "name_hu": "Idő", "name_en": "Time", "name_es": "Tiempo", "name_de": "Zeit", "macro": 0},
+  {"id": "lugar_a0", "order": 5, "subLevel": "A0.2", "type": "vocab", "icon": "🧭", "name_hu": "Hely és Irány", "name_en": "Place & Direction", "name_es": "Lugar y Dirección", "name_de": "Ort und Richtung", "macro": 0},
+  {"id": "verbos_a0", "order": 6, "subLevel": "A0.2", "type": "vocab", "icon": "🔁", "name_hu": "Gyakori Igék", "name_en": "Common Verbs", "name_es": "Verbos Comunes", "name_de": "Häufige Verben", "macro": 0},
+  {"id": "cuerpo_a0", "order": 7, "subLevel": "A0.3", "type": "vocab", "icon": "💪", "name_hu": "Testrészek", "name_en": "Body", "name_es": "Cuerpo", "name_de": "Körper", "macro": 1},
+  {"id": "emociones_a0", "order": 8, "subLevel": "A0.3", "type": "vocab", "icon": "😊", "name_hu": "Érzések", "name_en": "Feelings", "name_es": "Emociones", "name_de": "Gefühle", "macro": 2},
+  {"id": "cualidades", "order": 9, "subLevel": "A0.3", "type": "vocab", "icon": "✨", "name_hu": "Tulajdonságok", "name_en": "Qualities", "name_es": "Cualidades", "name_de": "Eigenschaften", "macro": 0},
+  {"id": "cosas", "order": 10, "subLevel": "A0.3", "type": "vocab", "icon": "📦", "name_hu": "Mindennapi Dolgok", "name_en": "Everyday Things", "name_es": "Cosas Cotidianas", "name_de": "Alltagsdinge", "macro": 0}
 ]
