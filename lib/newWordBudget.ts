@@ -25,21 +25,42 @@ export function capNewWords<T extends BudgetedItem>(items: T[], remaining: numbe
 // szó. azt kellene hogy mindig 5 új szó legyen benne ha nem találom mi őket
 // akkor ne rakjon be 5 új szót, mert akkor torlódik."
 //
-// Two ceilings, the tighter one wins:
-//   1. the FB77 daily one, `limit + bonus` new words may START on a given day;
-//   2. a work-in-progress one, at most `limit` words may be half-learned at a
-//      time (FSRS Learning/Relearning state). Words that keep being missed
-//      therefore block tomorrow's intake instead of piling up on top of it.
-// The "+5 new words" bonus overrides both, it is the learner's explicit ask.
+// The FB77 daily budget: `limit + bonus` new words may START on a given day.
+// This is what the 🌱 header badge counts down, and it is the ONLY number the
+// learner sees, so it must fall by exactly one per new word started.
 export interface NewWordAllowance {
   limit: number;
   bonus: number;
   startedToday: number;
-  unlearned: number;
+  /** Half-learned words (FSRS Learning/Relearning). Congestion only, see below. */
+  unlearned?: number;
 }
 
-export function newWordAllowance({ limit, bonus, startedToday, unlearned }: NewWordAllowance): number {
-  const daily = limit + bonus - startedToday;
-  const inFlight = limit + bonus - unlearned;
-  return Math.max(0, Math.min(daily, inFlight));
+export function newWordsLeftToday({ limit, bonus, startedToday }: NewWordAllowance): number {
+  return Math.max(0, limit + bonus - startedToday);
+}
+
+// FB112/FB113/FB114/FB115, Kálmán 2026-08-09/10: the badge jumped ("9 ből
+// hirtelen 0 lett nem így egyesével fogyott", "megint 5 ből egy lett"), and the
+// intake stayed at 5 however high the Settings limit was ("egyszerre mindig 5
+// szót ad be és kicsi kevés"). Cause: FB103 subtracted the WHOLE half-learned
+// backlog from the daily budget, so one badge number carried two unrelated
+// counters and the backlog (which grows by several words per session, and
+// survives across days) ate the setting.
+//
+// The two rules are separate now:
+//   * `newWordsLeftToday` = the visible daily countdown (monotone, -1 per word);
+//   * `newWordIntake` = how many new words the QUEUE may carry, which is the
+//     daily countdown unless the half-learned pile has grown past
+//     `WIP_CEILING_FACTOR × (limit + bonus)`, at which point intake pauses so
+//     nothing piles up ("ne rakjon be 5 új szót, mert akkor torlódik").
+export const WIP_CEILING_FACTOR = 2;
+
+export function newWordWipCeiling(limit: number, bonus: number): number {
+  return WIP_CEILING_FACTOR * (limit + bonus);
+}
+
+export function newWordIntake({ limit, bonus, startedToday, unlearned = 0 }: NewWordAllowance): number {
+  if (unlearned >= newWordWipCeiling(limit, bonus)) return 0;
+  return newWordsLeftToday({ limit, bonus, startedToday });
 }
