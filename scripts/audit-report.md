@@ -1,11 +1,11 @@
 # Corpus Audit Report
 
-Generated: 2026-08-16T10:40:21.867Z
+Generated: 2026-08-16T10:45:33.020Z
 
 ## Summary
 
 - Total A0 cards: 100
-- Total A1 cards: 905
+- Total A1 cards: 931
 - P1 issues (untaught token): **0**
 - P2 issues (taught but later): **0**
 
