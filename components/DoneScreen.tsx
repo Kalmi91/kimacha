@@ -32,9 +32,14 @@ interface Props {
   newWordsPaused?: boolean;
   // FB133: the learner picks how many more, not just five.
   onMoreNewWords?: (extra: number) => void;
+  // FB135/FB136: untouched words left in the ACTIVE topic. Zero means a bigger
+  // daily budget would not produce a single card, so the offer has to be the
+  // next topic instead of "+N new words".
+  newWordsInTopic?: number;
+  onNextTopicWords?: () => void;
 }
 
-export default function DoneScreen({ reviewed, streak, level, masteredPct, direction, onStartExam, examAvailable, currentTopic, topicProgress, newWordsLeft, newWordsPaused, onMoreNewWords }: Props) {
+export default function DoneScreen({ reviewed, streak, level, masteredPct, direction, onStartExam, examAvailable, currentTopic, topicProgress, newWordsLeft, newWordsPaused, onMoreNewWords, newWordsInTopic, onNextTopicWords }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
@@ -100,7 +105,24 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
           session; the standing limit itself lives in Settings. FB133: three
           sizes (+5/+10/+15), and filled buttons, because the outlined ones did
           not read as tappable ("legyenek teli gombok"). */}
-      {(newWordsLeft === 0 || newWordsPaused) && onMoreNewWords && (
+      {/* FB135/FB136: the topic ran dry (its remaining words are scheduled for a
+          later day), so say that instead of leaving an empty screen, and offer
+          the next topic that still has untouched words. */}
+      {(newWordsInTopic ?? 0) === 0 && onNextTopicWords && (
+        <>
+          <Text style={[styles.topicEmptyText, { color: colors.tabIconDefault }]}>{s.done.topicEmpty}</Text>
+          <Pressable
+            style={({ pressed }) => [
+              styles.filledBtn,
+              { backgroundColor: colors.accent, marginTop: 12, opacity: pressed ? 0.8 : 1 },
+            ]}
+            onPress={onNextTopicWords}
+          >
+            <Text style={styles.filledBtnText}>{s.done.nextTopicWords}</Text>
+          </Pressable>
+        </>
+      )}
+      {(newWordsLeft === 0 || newWordsPaused) && (newWordsInTopic ?? 0) > 0 && onMoreNewWords && (
         <View style={styles.moreWordsRow}>
           {DAILY_NEW_BONUS_STEPS.map(extra => (
             <Pressable
@@ -155,6 +177,7 @@ const styles = StyleSheet.create({
   examBtnText: { color: '#FFF', fontSize: 18, fontWeight: '700' },
   // FB133: filled buttons, the outlined ones did not read as tappable.
   moreWordsRow: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 8, marginTop: 16 },
+  topicEmptyText: { fontSize: 13, textAlign: 'center', marginTop: 16, paddingHorizontal: 8 },
   filledBtn: { paddingHorizontal: 20, paddingVertical: 11, borderRadius: 12, alignSelf: 'center' },
   filledBtnText: { color: '#FFF', fontSize: 14, fontWeight: '700' },
 });

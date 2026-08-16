@@ -35,6 +35,8 @@ export default {
     reviewed: (n: number) => `${n} kártyát néztél át.`,
     streak: 'nap streak',
     moreNewWords: (n: number) => `+${n} új szó`,
+    nextTopicWords: 'Új szavak másik témából',
+    topicEmpty: 'Ebben a témában most nincs új szó, a többi már későbbre van ütemezve.',
   },
   tabs: {
     learn: 'Tanulás',
