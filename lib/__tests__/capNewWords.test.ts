@@ -1,4 +1,4 @@
-import { capNewWords, newWordAllowance } from '@/lib/newWordBudget';
+import { capNewWords, newWordsLeftToday, newWordIntake, newWordWipCeiling } from '@/lib/newWordBudget';
 
 // FB77: the daily new-word budget only trims brand-new WORD cards; reviews and
 // sentence cards must always survive, and the order must not change.
@@ -26,30 +26,55 @@ describe('capNewWords', () => {
   });
 });
 
-// FB103: the daily limit is no longer the only ceiling, words already started
-// but not learned hold the next batch back.
-describe('newWordAllowance', () => {
-  it('gives the full limit on a fresh day with nothing half-learned', () => {
-    expect(newWordAllowance({ limit: 5, bonus: 0, startedToday: 0, unlearned: 0 })).toBe(5);
+// FB112/FB113/FB114: the 🌱 badge counts the DAILY budget only, so it falls by
+// exactly one per new word started, never in jumps of four ("9 ből hirtelen 0
+// lett nem így egyesével fogyott").
+describe('newWordsLeftToday', () => {
+  it('gives the full limit on a fresh day', () => {
+    expect(newWordsLeftToday({ limit: 10, bonus: 0, startedToday: 0 })).toBe(10);
   });
 
-  it('subtracts the words already started today', () => {
-    expect(newWordAllowance({ limit: 5, bonus: 0, startedToday: 3, unlearned: 0 })).toBe(2);
+  it('subtracts the words already started today, one for one', () => {
+    expect(newWordsLeftToday({ limit: 10, bonus: 0, startedToday: 3 })).toBe(7);
   });
 
-  it('blocks new words while the earlier ones are still unlearned', () => {
-    expect(newWordAllowance({ limit: 5, bonus: 0, startedToday: 0, unlearned: 5 })).toBe(0);
+  it('adds the +5 bonus taps', () => {
+    expect(newWordsLeftToday({ limit: 10, bonus: 5, startedToday: 10 })).toBe(5);
   });
 
-  it('refills only as fast as the backlog clears', () => {
-    expect(newWordAllowance({ limit: 5, bonus: 0, startedToday: 0, unlearned: 3 })).toBe(2);
-  });
-
-  it('lets the +5 bonus break through a full backlog', () => {
-    expect(newWordAllowance({ limit: 5, bonus: 5, startedToday: 5, unlearned: 5 })).toBe(5);
+  it('ignores the half-learned backlog', () => {
+    expect(newWordsLeftToday({ limit: 10, bonus: 0, startedToday: 2, unlearned: 40 })).toBe(8);
   });
 
   it('never goes negative', () => {
-    expect(newWordAllowance({ limit: 5, bonus: 0, startedToday: 9, unlearned: 40 })).toBe(0);
+    expect(newWordsLeftToday({ limit: 5, bonus: 0, startedToday: 9 })).toBe(0);
+  });
+});
+
+// FB114/FB115: intake follows the Settings limit (it used to stall at 5 whatever
+// the setting said), and pauses only when the half-learned pile is genuinely big.
+describe('newWordIntake', () => {
+  it('matches the daily countdown while the backlog is small', () => {
+    expect(newWordIntake({ limit: 10, bonus: 0, startedToday: 0, unlearned: 5 })).toBe(10);
+  });
+
+  it('follows a raised Settings limit instead of stalling at the old default', () => {
+    expect(newWordIntake({ limit: 25, bonus: 0, startedToday: 0, unlearned: 9 })).toBe(25);
+  });
+
+  it('pauses intake once the backlog reaches the WIP ceiling', () => {
+    expect(newWordIntake({ limit: 10, bonus: 0, startedToday: 0, unlearned: 20 })).toBe(0);
+  });
+
+  it('lets the +5 bonus raise the ceiling too', () => {
+    expect(newWordIntake({ limit: 10, bonus: 5, startedToday: 10, unlearned: 25 })).toBe(5);
+  });
+
+  it('treats a missing backlog count as no congestion', () => {
+    expect(newWordIntake({ limit: 10, bonus: 0, startedToday: 4 })).toBe(6);
+  });
+
+  it('exposes the ceiling it uses', () => {
+    expect(newWordWipCeiling(10, 5)).toBe(30);
   });
 });
