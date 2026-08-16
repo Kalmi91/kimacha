@@ -1751,6 +1751,84 @@ mi a bandeja (és mi nem: plato, mesa). **Teendő:** ha lesz jó kép, elég bem
 
 ---
 
+# 📋 Feedback, 2026-08-15/16 forduló (v3.0.27, A1 en→es)
+
+Új sorok a `Kimacha Feedback` sheetből (FB130 utáni 4 sor, 08-15 14:05 → 08-16 09:44,
+a két Done-tabos sor egy jegy). Triage 2026-08-16 (Opus). Idézetek a user eredeti
+megfogalmazásában, ne tömörítsd.
+**MIND KÉSZ 2026-08-16**: tsc 0, jest 190/190 (181→190: +5 answerMatch, +4 charDiff),
+audit-corpus P1=0/P2=0 (es, en, hu), lint 17 probléma (8 error, 9 warning), az
+alapvonal 18 volt, új hibaosztály nincs.
+
+## ✅ FB131 [P2 UX], Inline ✓ a flashcard gyakorló-mezőn, KÉSZ (`6a8ed03`)
+Chat-kérés (v3.0.16 körül, az AGENTS.md-ből eddig kimaradt): a szó-flashcard
+„✏️ Írd le" gyakorló mezőjén a nyitott billentyűzet eltakarta a kártya alatti
+gombokat. Fix: az input saját ✓-t kapott a mező mellé (ugyanaz az inline sor, amit
+a fő gépelős kártya az FB5-ben), és az Enter is ellenőriz (`checkPractice`).
+
+## ✅ FB132 [P1 feature], Nehézségi kapcsolók, elsőként „az ékezetek számítanak", KÉSZ (`d0239d3`)
+Idézet (08-15 14:05, `word:la semana`): „legyen az appba egy olyan lehetőség, hogy
+nehézségi szint, minden nyelven legyen a maga neve ez egy bele mérhető fül legyen és
+ott lehessen ki be kapcsolhatni a nehézségi szinteket. marmitn különböző dolgokat.
+például én most spanyolba szeretném ha mostantól kezdve az ékezetek is hibák lennének,
+pontosan akarom leírni és. ost már van kapacitásom az ékezetek pontos gépelésére, de
+ezt egy ilyen ki be kapcsolható dolognak akarom. 1. kérdés ezt meg lehet e oldani
+2. ha igen akkor csináld meg"
+**Válasz az 1. kérdésre: igen**, az ékezet-megbocsátás egyetlen helyen dől el
+(`lib/answerMatch.ts` NFD-normalizálás), ezért kapcsolhatóvá tehető.
+Megvalósítás:
+- `lib/answerMatch.ts`: `strictAnswerMatch(answer, correct, { strictAccents })`.
+  Bekapcsolva a „como estas" MÁR NEM megy át a „¿Cómo estás?"-ra; a kis/nagybetű, az
+  írásjel (FB98) és a szó-belseji szóköz (FB34) továbbra is megbocsátott, az FB6
+  szigor („she speak" ≠ „she speaks") változatlan.
+- `lib/charDiff.ts`: a `fold` mostantól `boolean | { case, accents }`, tehát a kis/nagybetű
+  és az ékezet külön hajtogatható. Szigorú módban a kimaradt ékezet HIBÁNAK látszik a
+  gépelés-diffben (eddig csendben elnyelte), a helyesírás-tréner `fold=false`-ja változatlan.
+- DB: `learn_settings.strict_accents` (ALTER-migráció + UPSERT setter az FB37 figyelmeztetése
+  szerint), `getStrictAccents`/`setStrictAccents` MINDKÉT implementációban + interfészben
+  (web: memória-tükör). Pár szerint tárolva, mert a spanyolban számít az ékezet, az angolban alig.
+- UI: Settings → új „Nehézség" szekció-fejléc + kapcsoló sor magyarázó alsorral. NEM külön
+  fül lett (a tab-sor tele van, lásd FB100), de saját fejlécet kapott, hogy külön helynek
+  látsszon; a szekció bővíthető további szigorításokkal.
+- i18n ×4: `settings.difficulty`, `settings.strictAccents`, `settings.strictAccentsHint`.
+- Teszt: 5 eset answerMatch (ékezet bukik / átmegy / kis-nagybetű marad megbocsátva /
+  szó-belseji szóköz marad megbocsátva / FB6 szigor él) + 4 eset charDiff.
+Hatókör: a tanulós gépelős kártya, a flashcard gyakorló mező és a diff. A vizsga
+(`ExamSentTypeCard`) egyelőre a megbocsátó grader marad, oda nem vittük be a kapcsolót.
+
+## ✅ FB133 [P2 UX], „+10 / +15 új szó" és teli gombok a Done-képernyőn, KÉSZ (`d0239d3`)
+Idézetek:
+- (08-15 14:21, `done`): „itt lehegyen olyan opció is hogy plusz 10 új szó, és legyenek
+  teli gombok. ebből ahogy most nam nekem mem egyértelmű, hogy kattintható"
+- (08-16 09:44, `done`): „legyen olyan hogy ne csak plusz 5 szót lehessen hozzá adni,
+  hanem plusz 10 vagy 15 ot"
+Fix: `DAILY_NEW_BONUS_STEPS = [5, 10, 15]` (`lib/usageStats.ts`), a Done-képernyő
+mindhármat kínálja egy sorban, `onMoreNewWords(extra)` a kattintott lépéssel
+(`addNewLimitBonus(extra)`, az FB77 bónusz-mechanika változatlan, a naptári nappal lejár).
+A gombok TELI-re váltottak (accent háttér, fehér félkövér szöveg, press-halványítás), és
+ugyanígy a „Válassz új témát" gomb is, mert a keretes változat nem látszott kattinthatónak.
+i18n ×4: `done.moreNewWords` string helyett függvény (`(n) => "+N új szó"`).
+
+## ✅ FB134 [P2 adat], A tapa-kártyához magyarázat is kell, nem csak kép, KÉSZ (`5a7a19b`)
+Idézet (08-16 08:42, `word:the tapa`): „erről még mindig nem tudom mi. tegyél egy i t
+ami angolul elmagyarazza"
+Az FB124 képe önmagában nem tanította meg a szót. Kézi ℹ️ jegyzet 4 nyelven az a1 1727
+(`la tapa`) kártyán: ital mellé adott kis adag étel (olívabogyó, sonka, sajt,
+tortilla-szelet), nem főétel, több tapasból áll össze az étkezés. A jegyzet a tanuló
+saját nyelvén jelenik meg (FB75 hibrid modell, a kézi note nyer), tehát az en→es
+kurzuson angolul. Csak a note-mezők mozdultak, a szó/mondat/topic érintetlen.
+
+## Elfogadási kritérium (FB131–FB134 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **190/190** ✅.
+- `node scripts/audit-corpus.mjs` → P1=0, P2=0 ✅ (csak note-mező változott, id 1727).
+- `npx expo lint`: 17 probléma (8 error, 9 warning), az alapvonal 18 volt ✅.
+- `data/words/a1.json` parseable, 881 kártya ✅.
+- ⏳ Eszköz-verify a következő buildben: Settings → Nehézség kapcsoló, bekapcsolva bukik-e
+  az ékezet nélküli gépelés és pirosan látszik-e a hiányzó ékezet; a Done-képernyőn
+  +5/+10/+15 teli gomb és tényleg annyival nő-e a napi keret; a tapa-kártya ℹ️ szövege.
+
+---
+
 # 🛠️ Emulátor + release-csapdák (2026-08-15)
 
 **Android emulátor UI-ellenőrzéshez.** AVD `kimacha_test` (Pixel 6, Android 35).
