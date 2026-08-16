@@ -34,7 +34,7 @@ export default {
     title: 'Done for today!',
     reviewed: (n: number) => `${n} cards reviewed.`,
     streak: 'day streak',
-    moreNewWords: '+5 new words',
+    moreNewWords: (n: number) => `+${n} new words`,
   },
   tabs: {
     learn: 'Learn',
@@ -85,6 +85,9 @@ export default {
     dailyNewLimit: 'New words a day',
     dailyNewLimitWords: (n: string) => `${n} words / day`,
     spellingPractice: (n: number) => `Spelling Practice (${n})`,
+    difficulty: 'Difficulty',
+    strictAccents: 'Accents count',
+    strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',
   },
   backup: {
     backup: 'Backup',

@@ -34,7 +34,7 @@ export default {
     title: 'Fertig für heute!',
     reviewed: (n: number) => `${n} Karten überprüft.`,
     streak: 'Tage Serie',
-    moreNewWords: '+5 neue Wörter',
+    moreNewWords: (n: number) => `+${n} neue Wörter`,
   },
   tabs: {
     learn: 'Lernen',
@@ -85,6 +85,9 @@ export default {
     dailyNewLimit: 'Neue Wörter pro Tag',
     dailyNewLimitWords: (n: string) => `${n} Wörter / Tag`,
     spellingPractice: (n: number) => `Rechtschreibtraining (${n})`,
+    difficulty: 'Schwierigkeit',
+    strictAccents: 'Akzente zählen',
+    strictAccentsHint: 'Ein fehlender Akzent (á, é, ñ) gilt beim Tippen als Fehler.',
   },
   backup: {
     backup: 'Sicherung',

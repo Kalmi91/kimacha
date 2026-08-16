@@ -68,6 +68,9 @@ export default function LearnScreen() {
   // ceiling, so no new word joins the queue right now. Shown as ⏸ on the badge,
   // otherwise the countdown would look stuck without saying why.
   const [newWordsPaused, setNewWordsPaused] = useState(false);
+  // FB132: Settings -> Difficulty, "accents count". Off = the beginner grader
+  // forgives a missing á/é/ñ; on = it fails the answer and the diff paints it.
+  const [strictAccents, setStrictAccents] = useState(false);
   const [headerBottom, setHeaderBottom] = useState(HEADER_RESERVE_MIN);
   const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
   const [typedAnswer, setTypedAnswer] = useState('');
@@ -232,6 +235,9 @@ export default function LearnScreen() {
     setLevelTotal(totalWords);
 
     const wordsOnly = await db.getWordsOnly();
+    // FB132: read once per queue build, the same moment the other learn settings
+    // are read (the Settings toggle queues a reload, see handleStrictAccentsToggle).
+    setStrictAccents(await db.getStrictAccents());
     const activeWordIds = activeWords.map(w => w.id);
     const rows = useTopics
       ? await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL)
@@ -268,11 +274,12 @@ export default function LearnScreen() {
     setLoading(false);
   };
 
-  // FB77: raise today's new-word budget by 5 and rebuild the queue right away,
-  // so the learner can keep going instead of waiting for tomorrow.
-  const handleMoreNewWords = async () => {
+  // FB77: raise today's new-word budget and rebuild the queue right away, so the
+  // learner can keep going instead of waiting for tomorrow. FB133: by 5, 10 or
+  // 15, whichever button was tapped.
+  const handleMoreNewWords = async (extra: number = DAILY_NEW_BONUS_STEP) => {
     const db = getDb();
-    await db.addNewLimitBonus(DAILY_NEW_BONUS_STEP);
+    await db.addNewLimitBonus(extra);
     setLoading(true);
     await loadCards();
   };
@@ -699,8 +706,9 @@ export default function LearnScreen() {
     const correct = back.split(' / ')[0];
 
     // Strict (FB6): "she speak" must not pass for "She speaks", only case,
-    // punctuation and missing accents are forgiven.
-    const ok = strictAnswerMatch(typedAnswer, correct);
+    // punctuation and missing accents are forgiven. FB132: the accent half of
+    // that is switchable in Settings -> Difficulty.
+    const ok = strictAnswerMatch(typedAnswer, correct, { strictAccents });
     setTypingResult(ok ? 'correct' : 'wrong');
     setRevealed(true);
     // FB90: the explanation is what a wrong answer needs, so open the "i" note by
@@ -897,7 +905,9 @@ export default function LearnScreen() {
   // FB131: one place decides what a practice answer is worth, used by both the
   // keyboard's Enter and the inline ✓ button.
   const checkPractice = () => {
-    setPracticeResult(strictAnswerMatch(practiceText, back.split(' / ')[0]) ? 'correct' : 'wrong');
+    setPracticeResult(
+      strictAnswerMatch(practiceText, back.split(' / ')[0], { strictAccents }) ? 'correct' : 'wrong'
+    );
   };
 
   const levelBadge = (
@@ -1118,7 +1128,9 @@ export default function LearnScreen() {
               <Text style={[styles.resultText, { color: resultColor }]}>{resultText}</Text>
               {typingResult === 'wrong' && typedAnswer.trim().length > 0 && (
                 <Text style={styles.diffLine}>
-                  {charDiff(typedAnswer, back.split(' / ')[0]).map((d, i) => (
+                  {/* FB132: with strict accents on, a dropped tilde is the mistake,
+                      so the diff must paint it instead of folding it away. */}
+                  {charDiff(typedAnswer, back.split(' / ')[0], { accents: !strictAccents }).map((d, i) => (
                     <Text
                       key={i}
                       style={d.missing ? styles.diffMissing : d.wrong ? styles.diffWrong : { color: colors.text }}

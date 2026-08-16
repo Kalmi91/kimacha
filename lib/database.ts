@@ -47,6 +47,8 @@ export interface DB {
   setWordsOnly(v: boolean): Promise<void>;
   getRandomTopics(): Promise<boolean>;
   setRandomTopics(v: boolean): Promise<void>;
+  getStrictAccents(): Promise<boolean>;
+  setStrictAccents(v: boolean): Promise<void>;
   getWeeklyGoalMinutes(): Promise<number>;
   setWeeklyGoalMinutes(minutes: number): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
@@ -151,6 +153,7 @@ class SQLiteDB implements DB {
         pair TEXT PRIMARY KEY,
         words_only INTEGER,
         random_topics INTEGER,
+        strict_accents INTEGER,
         feedback_btn_side TEXT,
         weekly_goal_minutes INTEGER,
         daily_new_limit INTEGER,
@@ -172,6 +175,10 @@ class SQLiteDB implements DB {
     // Migration: add random_topics column (DBs created before the random-topic toggle).
     try {
       await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN random_topics INTEGER');
+    } catch {}
+    // Migration: add strict_accents column (DBs created before the difficulty switches, FB132).
+    try {
+      await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN strict_accents INTEGER');
     } catch {}
     // Migration: add feedback_btn_side column (DBs created before the draggable feedback button, FB41).
     try {
@@ -723,6 +730,22 @@ class SQLiteDB implements DB {
     const db = await this.open();
     await db.runAsync(
       'INSERT INTO learn_settings (pair, random_topics) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET random_topics = excluded.random_topics',
+      [this.activePair, v ? 1 : 0]
+    );
+  }
+
+  // FB132: difficulty switch, per pair (accents matter in Spanish, less so in
+  // English), default off so beginners keep the forgiving grader.
+  async getStrictAccents(): Promise<boolean> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT strict_accents FROM learn_settings WHERE pair = ?', [this.activePair]);
+    return row?.strict_accents === 1;
+  }
+
+  async setStrictAccents(v: boolean): Promise<void> {
+    const db = await this.open();
+    await db.runAsync(
+      'INSERT INTO learn_settings (pair, strict_accents) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET strict_accents = excluded.strict_accents',
       [this.activePair, v ? 1 : 0]
     );
   }

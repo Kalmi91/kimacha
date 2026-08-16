@@ -34,7 +34,7 @@ export default {
     title: '¡Terminaste por hoy!',
     reviewed: (n: number) => `${n} tarjetas revisadas.`,
     streak: 'racha de días',
-    moreNewWords: '+5 palabras nuevas',
+    moreNewWords: (n: number) => `+${n} palabras nuevas`,
   },
   tabs: {
     learn: 'Aprender',
@@ -85,6 +85,9 @@ export default {
     dailyNewLimit: 'Palabras nuevas al día',
     dailyNewLimitWords: (n: string) => `${n} palabras / día`,
     spellingPractice: (n: number) => `Práctica de Ortografía (${n})`,
+    difficulty: 'Dificultad',
+    strictAccents: 'Las tildes cuentan',
+    strictAccentsHint: 'Al escribir, una tilde que falta (á, é, ñ) es un error.',
   },
   backup: {
     backup: 'Copia de seguridad',

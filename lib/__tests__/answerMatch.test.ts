@@ -31,3 +31,31 @@ describe('strictAnswerMatch', () => {
     expect(strictAnswerMatch('Tú hablas muy bien', 'Tú hablas muy bien.')).toBe(true);
   });
 });
+
+// FB132, Kálmán 2026-08-15: "most spanyolba szeretném ha mostantól kezdve az
+// ékezetek is hibák lennének, pontosan akarom leírni ... de ezt egy ilyen ki be
+// kapcsolható dolognak akarom". Only the accents get stricter, case and
+// punctuation stay forgiven either way.
+describe('strictAnswerMatch with strict accents (FB132)', () => {
+  it('fails a missing accent that the default grader forgives', () => {
+    expect(strictAnswerMatch('como estas', '¿Cómo estás?')).toBe(true);
+    expect(strictAnswerMatch('como estas', '¿Cómo estás?', { strictAccents: true })).toBe(false);
+  });
+
+  it('accepts the accented answer', () => {
+    expect(strictAnswerMatch('¿Cómo estás?', '¿Cómo estás?', { strictAccents: true })).toBe(true);
+    expect(strictAnswerMatch('el año', 'El año.', { strictAccents: true })).toBe(true);
+  });
+
+  it('still forgives case and punctuation', () => {
+    expect(strictAnswerMatch('cómo estás', '¿Cómo estás?', { strictAccents: true })).toBe(true);
+  });
+
+  it('still forgives a stray space inside a word (FB34)', () => {
+    expect(strictAnswerMatch('la ofi cina', 'La oficina.', { strictAccents: true })).toBe(true);
+  });
+
+  it('keeps rejecting a wrong letter (FB6)', () => {
+    expect(strictAnswerMatch('she speak', 'She speaks', { strictAccents: true })).toBe(false);
+  });
+});

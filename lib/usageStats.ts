@@ -34,6 +34,10 @@ export const MIN_DAILY_NEW_LIMIT = 5;
 export const MAX_DAILY_NEW_LIMIT = 100;
 export const DAILY_NEW_LIMIT_STEP = 5;
 export const DAILY_NEW_BONUS_STEP = 5;
+// FB133, Kálmán 2026-08-15/16: "itt lehegyen olyan opció is hogy plusz 10 új szó",
+// "ne csak plusz 5 szót lehessen hozzá adni, hanem plusz 10 vagy 15 ot". The Done
+// screen offers all three, the smallest first.
+export const DAILY_NEW_BONUS_STEPS = [5, 10, 15];
 
 export interface GoalProgress {
   pct: number; // 0..1, clamped, for the progress bar
