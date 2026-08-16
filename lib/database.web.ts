@@ -46,6 +46,8 @@ export interface DB {
   setWordsOnly(v: boolean): Promise<void>;
   getRandomTopics(): Promise<boolean>;
   setRandomTopics(v: boolean): Promise<void>;
+  getStrictAccents(): Promise<boolean>;
+  setStrictAccents(v: boolean): Promise<void>;
   getWeeklyGoalMinutes(): Promise<number>;
   setWeeklyGoalMinutes(minutes: number): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
@@ -374,6 +376,17 @@ class MemoryDB implements DB {
 
   async setRandomTopics(v: boolean): Promise<void> {
     this.randomTopicsMap.set(this.activePair, v);
+  }
+
+  // FB132: difficulty switch, per pair (mirrors the SQLite side).
+  private strictAccentsMap: Map<string, boolean> = new Map();
+
+  async getStrictAccents(): Promise<boolean> {
+    return this.strictAccentsMap.get(this.activePair) ?? false;
+  }
+
+  async setStrictAccents(v: boolean): Promise<void> {
+    this.strictAccentsMap.set(this.activePair, v);
   }
 
   // FB65: weekly study goal in minutes, per pair (mirrors the SQLite side).

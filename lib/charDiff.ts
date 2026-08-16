@@ -25,6 +25,27 @@ const foldChar = (ch: string): string =>
 const LEADING_PUNCT = /^[¡¿"'(]+/;
 const TRAILING_PUNCT = /[.!?…,;:¡¿"')]+$/;
 
+// FB132: with strict accents on (Settings -> Difficulty) a dropped tilde IS the
+// mistake, so the diff has to paint it, while case stays forgiven. Case and
+// accents therefore fold independently; `true`/`false` keep meaning "both".
+export interface FoldOptions {
+  case?: boolean;
+  accents?: boolean;
+}
+
+const lowerOnly = (ch: string): string => ch.toLowerCase();
+const accentsOnly = (ch: string): string => ch.normalize('NFD').replace(/\p{M}/gu, '');
+
+const pickFolder = (fold: boolean | FoldOptions): ((ch: string) => string) | null => {
+  const o = typeof fold === 'boolean'
+    ? { case: fold, accents: fold }
+    : { case: fold.case ?? true, accents: fold.accents ?? true };
+  if (o.case && o.accents) return foldChar;
+  if (o.case) return lowerOnly;
+  if (o.accents) return accentsOnly;
+  return null;
+};
+
 // [leading punctuation, letters, trailing punctuation]
 const splitEdges = (text: string): [string, string, string] => {
   const lead = text.match(LEADING_PUNCT)?.[0] ?? '';
@@ -35,13 +56,14 @@ const splitEdges = (text: string): [string, string, string] => {
 
 export const stripTrailingPunct = (text: string): string => text.replace(TRAILING_PUNCT, '');
 
-export function charDiff(typed: string, correct: string, fold = true): DiffChar[] {
+export function charDiff(typed: string, correct: string, fold: boolean | FoldOptions = true): DiffChar[] {
   const [typedLead, typedCore, typedTail] = splitEdges(typed);
   const [, correctCore] = splitEdges(correct);
   const a = [...typedCore];
   const b = [...correctCore];
-  const an = fold ? a.map(foldChar) : a;
-  const bn = fold ? b.map(foldChar) : b;
+  const folder = pickFolder(fold);
+  const an = folder ? a.map(folder) : a;
+  const bn = folder ? b.map(folder) : b;
   const m = an.length, n = bn.length;
   // dp[i][j] = length of the longest common subsequence of a[i:] and b[j:].
   const dp: number[][] = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));

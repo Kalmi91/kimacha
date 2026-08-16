@@ -52,12 +52,16 @@ export default function SettingsScreen() {
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
   // FB77: daily budget of brand-new words entering the queue.
   const [dailyNewLimit, setDailyNewLimit] = useState(DEFAULT_DAILY_NEW_LIMIT);
+  // FB132: difficulty switches. Accents are the first one: off = the beginner
+  // grader forgives a missing á/é/ñ, on = it counts as a mistake.
+  const [strictAccents, setStrictAccents] = useState(false);
 
   useFocusEffect(
     useCallback(() => {
       const db = getDb();
       db.getWordsOnly().then(setWordsOnly);
       db.getRandomTopics().then(setRandomTopics);
+      db.getStrictAccents().then(setStrictAccents);
       db.getWeeklyGoalMinutes().then(setWeeklyGoal);
       db.getDailyNewLimit().then(setDailyNewLimit);
       db.getOnboarding().then(o => { if (o) { setTarget(o.target); setDirection([o.source, o.target]); } });
@@ -76,6 +80,15 @@ export default function SettingsScreen() {
   const handleRandomTopicsToggle = async (v: boolean) => {
     setRandomTopics(v);
     await getDb().setRandomTopics(v);
+    setPendingAction({ type: 'selectTopic' });
+    router.push('/');
+  };
+
+  // FB132: the Learn screen reads the flag when it builds a queue, so the same
+  // reload action as the other learn settings makes the change take effect.
+  const handleStrictAccentsToggle = async (v: boolean) => {
+    setStrictAccents(v);
+    await getDb().setStrictAccents(v);
     setPendingAction({ type: 'selectTopic' });
     router.push('/');
   };
@@ -302,6 +315,18 @@ export default function SettingsScreen() {
         </View>
       </View>
 
+      {/* FB132: difficulty switches, each one raises the bar on its own. Kept
+          as a Settings section rather than a sixth tab (the tab bar is full,
+          see FB100), but headed so it reads as its own place. */}
+      <Text style={[styles.difficultyTitle, { color: colors.tabIconDefault }]}>{s.settings.difficulty}</Text>
+      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
+        <View style={styles.difficultyLabelBox}>
+          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.strictAccents}</Text>
+          <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.strictAccentsHint}</Text>
+        </View>
+        <Switch value={strictAccents} onValueChange={handleStrictAccentsToggle} trackColor={{ true: colors.tint }} />
+      </View>
+
       {/* FB39: entry point into the spelling-practice trainer screen. */}
       <Pressable
         style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}
@@ -497,6 +522,25 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
     fontWeight: '500',
+  },
+  // FB132: section heading above the difficulty switches (sectionTitle above is
+  // the screen title, this one is a small caps sub-heading).
+  difficultyTitle: {
+    fontSize: 13,
+    fontWeight: '700',
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+    marginTop: 24,
+    marginLeft: 4,
+  },
+  sectionHint: {
+    fontSize: 12,
+    fontWeight: '500',
+    marginTop: 2,
+  },
+  // The label inside already carries the right margin (see wordsOnlyLabel).
+  difficultyLabelBox: {
+    flex: 1,
   },
   wordsOnlyRow: {
     flexDirection: 'row',

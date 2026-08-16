@@ -8,7 +8,12 @@
  * passes for "¿Cómo estás?"). A stray space typed inside a word ("ofi cina"
  * for "oficina") is forgiven too (FB34) via a whitespace-free fallback.
  */
-function normalizeWords(text: string): string[] {
+export interface MatchOptions {
+  strictAccents?: boolean;
+}
+
+function normalizeWords(text: string, strictAccents = false): string[] {
+  if (strictAccents) return normalizeKeepingAccents(text);
   return text
     .toLowerCase()
     .normalize('NFD')
@@ -18,9 +23,22 @@ function normalizeWords(text: string): string[] {
     .filter(Boolean);
 }
 
-export function strictAnswerMatch(answer: string, correct: string): boolean {
-  const a = normalizeWords(answer);
-  const c = normalizeWords(correct);
+// FB132: the accent forgiveness above is a beginner crutch (phone keyboards
+// rarely produce á/é/ñ), so it is switchable in Settings -> Difficulty. With
+// strict accents on, "como estas" no longer passes for "Cómo estás"; case and
+// punctuation stay forgiven either way.
+function normalizeKeepingAccents(text: string): string[] {
+  return text
+    .toLowerCase()
+    .normalize('NFC')
+    .replace(/[.,!?;:¡¿"'()]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean);
+}
+
+export function strictAnswerMatch(answer: string, correct: string, opts: MatchOptions = {}): boolean {
+  const a = normalizeWords(answer, opts.strictAccents);
+  const c = normalizeWords(correct, opts.strictAccents);
   if (a.length === c.length && a.every((w, i) => w === c[i])) return true;
   // FB34: a stray space typed inside a word ("ofi cina" for "oficina") must
   // not fail the answer, compare the whitespace-free concatenation instead.

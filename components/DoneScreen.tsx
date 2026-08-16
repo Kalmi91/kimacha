@@ -5,6 +5,7 @@ import { t } from '@/lib/i18n';
 import { type Level } from '@/data/words';
 import { type TopicDef, getTopicName, getSubLevelForTopic, getTopicsForSubLevel, getSubLevelName } from '@/data/topics';
 import FeedbackButton from '@/components/FeedbackModal';
+import { DAILY_NEW_BONUS_STEPS } from '@/lib/usageStats';
 import { useRouter } from 'expo-router';
 
 interface TopicProgress {
@@ -29,7 +30,8 @@ interface Props {
   // ceiling, so no new word can join. The "+5 new words" tap raises both, hence
   // the button is offered here too, not only at a spent budget.
   newWordsPaused?: boolean;
-  onMoreNewWords?: () => void;
+  // FB133: the learner picks how many more, not just five.
+  onMoreNewWords?: (extra: number) => void;
 }
 
 export default function DoneScreen({ reviewed, streak, level, masteredPct, direction, onStartExam, examAvailable, currentTopic, topicProgress, newWordsLeft, newWordsPaused, onMoreNewWords }: Props) {
@@ -84,16 +86,35 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
         </View>
       )}
       {topicProgress && level === 'A1' && (
-        <Pressable style={[styles.chooseTopicBtn, { borderColor: colors.tint }]} onPress={() => router.push('/(tabs)/tree')}>
-          <Text style={[styles.chooseTopicText, { color: colors.tint }]}>{s.topic.chooseTopic}</Text>
+        <Pressable
+          style={({ pressed }) => [
+            styles.filledBtn,
+            { backgroundColor: colors.tint, marginTop: 16, opacity: pressed ? 0.8 : 1 },
+          ]}
+          onPress={() => router.push('/(tabs)/tree')}
+        >
+          <Text style={styles.filledBtnText}>{s.topic.chooseTopic}</Text>
         </Pressable>
       )}
-      {/* FB77: today's new-word budget ran out, offer 5 more instead of ending
-          the session; the standing limit itself lives in Settings. */}
+      {/* FB77: today's new-word budget ran out, offer more instead of ending the
+          session; the standing limit itself lives in Settings. FB133: three
+          sizes (+5/+10/+15), and filled buttons, because the outlined ones did
+          not read as tappable ("legyenek teli gombok"). */}
       {(newWordsLeft === 0 || newWordsPaused) && onMoreNewWords && (
-        <Pressable style={[styles.chooseTopicBtn, { borderColor: colors.accent }]} onPress={onMoreNewWords}>
-          <Text style={[styles.chooseTopicText, { color: colors.accent }]}>{s.done.moreNewWords}</Text>
-        </Pressable>
+        <View style={styles.moreWordsRow}>
+          {DAILY_NEW_BONUS_STEPS.map(extra => (
+            <Pressable
+              key={extra}
+              style={({ pressed }) => [
+                styles.filledBtn,
+                { backgroundColor: colors.accent, opacity: pressed ? 0.8 : 1 },
+              ]}
+              onPress={() => onMoreNewWords(extra)}
+            >
+              <Text style={styles.filledBtnText}>{s.done.moreNewWords(extra)}</Text>
+            </Pressable>
+          ))}
+        </View>
       )}
       <View style={[styles.streakBadge, { backgroundColor: colors.card, marginTop: 12 }]}>
         <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
@@ -132,6 +153,8 @@ const styles = StyleSheet.create({
   topicCounter: { fontSize: 12, fontWeight: '500' },
   examBtn: { paddingHorizontal: 32, paddingVertical: 14, borderRadius: 14, minWidth: 160, alignItems: 'center', alignSelf: 'center' },
   examBtnText: { color: '#FFF', fontSize: 18, fontWeight: '700' },
-  chooseTopicBtn: { marginTop: 16, paddingHorizontal: 24, paddingVertical: 10, borderRadius: 12, borderWidth: 1.5, alignSelf: 'center' },
-  chooseTopicText: { fontSize: 14, fontWeight: '600' },
+  // FB133: filled buttons, the outlined ones did not read as tappable.
+  moreWordsRow: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 8, marginTop: 16 },
+  filledBtn: { paddingHorizontal: 20, paddingVertical: 11, borderRadius: 12, alignSelf: 'center' },
+  filledBtnText: { color: '#FFF', fontSize: 14, fontWeight: '700' },
 });

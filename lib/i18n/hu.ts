@@ -34,7 +34,7 @@ export default {
     title: 'Kész vagy mára!',
     reviewed: (n: number) => `${n} kártyát néztél át.`,
     streak: 'nap streak',
-    moreNewWords: '+5 új szó',
+    moreNewWords: (n: number) => `+${n} új szó`,
   },
   tabs: {
     learn: 'Tanulás',
@@ -85,6 +85,9 @@ export default {
     dailyNewLimit: 'Napi új szó',
     dailyNewLimitWords: (n: string) => `${n} szó / nap`,
     spellingPractice: (n: number) => `Helyesírás-gyakorló (${n})`,
+    difficulty: 'Nehézség',
+    strictAccents: 'Az ékezetek számítanak',
+    strictAccentsHint: 'A hiányzó ékezet (á, é, ñ) hiba gépeléskor.',
   },
   backup: {
     backup: 'Biztonsági mentés',

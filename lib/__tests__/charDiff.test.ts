@@ -68,3 +68,25 @@ describe('stripTrailingPunct', () => {
     expect(stripTrailingPunct('')).toBe('');
   });
 });
+
+// FB132: with the difficulty switch on, the diff must paint the dropped accent
+// instead of folding it away, while case stays forgiven.
+describe('charDiff with accents strict (FB132)', () => {
+  it('marks a missing accent as a mistake', () => {
+    const d = charDiff('estas', 'estás', { accents: false });
+    expect(d.some(c => c.wrong)).toBe(true);
+    expect(d.map(c => c.ch).join('')).toContain('á');
+  });
+
+  it('leaves the accented answer clean', () => {
+    expect(charDiff('estás', 'estás', { accents: false }).every(c => !c.wrong)).toBe(true);
+  });
+
+  it('still forgives case', () => {
+    expect(charDiff('Estás', 'estás', { accents: false }).every(c => !c.wrong)).toBe(true);
+  });
+
+  it('folds accents by default, as the beginner grader does', () => {
+    expect(charDiff('estas', 'estás').every(c => !c.wrong)).toBe(true);
+  });
+});
