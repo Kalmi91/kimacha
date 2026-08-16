@@ -8,6 +8,9 @@ export interface TopicDef {
   name_en: string;
   name_es: string;
   name_de: string;
+  // PCIC makró-téma (Nociones específicas 1-20), 0 = általános fogalom.
+  // Csak a B1+ fákon van kitöltve; az A0-A2 topicok még nem kaptak besorolást.
+  macro?: number;
 }
 
 export interface SubLevelDef {
@@ -25,6 +28,12 @@ import a1 from './topics/a1.json';
 import a1SubLevels from './sublevels/a1.json';
 import a2 from './topics/a2.json';
 import a2SubLevels from './sublevels/a2.json';
+import b1 from './topics/b1.json';
+import b1SubLevels from './sublevels/b1.json';
+import b2 from './topics/b2.json';
+import b2SubLevels from './sublevels/b2.json';
+import c1 from './topics/c1.json';
+import c1SubLevels from './sublevels/c1.json';
 import en_a0 from './topics/en/a0.json';
 import en_a0SubLevels from './sublevels/en/a0.json';
 import en_a1 from './topics/en/a1.json';
@@ -36,8 +45,8 @@ import hu_a0SubLevels from './sublevels/hu/a0.json';
 import hu_a1 from './topics/hu/a1.json';
 import hu_a1SubLevels from './sublevels/hu/a1.json';
 
-const topicsByLevel: Record<string, TopicDef[]> = { A0: a0 as TopicDef[], A1: a1 as TopicDef[], A2: a2 as TopicDef[] };
-const subLevelsByLevel: Record<string, SubLevelDef[]> = { A0: a0SubLevels as SubLevelDef[], A1: a1SubLevels as SubLevelDef[], A2: a2SubLevels as SubLevelDef[] };
+const topicsByLevel: Record<string, TopicDef[]> = { A0: a0 as TopicDef[], A1: a1 as TopicDef[], A2: a2 as TopicDef[], B1: b1 as TopicDef[], B2: b2 as TopicDef[], C1: c1 as TopicDef[] };
+const subLevelsByLevel: Record<string, SubLevelDef[]> = { A0: a0SubLevels as SubLevelDef[], A1: a1SubLevels as SubLevelDef[], A2: a2SubLevels as SubLevelDef[], B1: b1SubLevels as SubLevelDef[], B2: b2SubLevels as SubLevelDef[], C1: c1SubLevels as SubLevelDef[] };
 
 // English-target topic/sub-level taxonomy. Keyed the same way as the Spanish set;
 // `lang` defaults to 'es' so existing callers keep the Spanish grammar topics, and
