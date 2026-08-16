@@ -23,8 +23,8 @@ Szám-becslések `project_word_expansion` memóriából (2026-06-13), nem élő-
 
 | Komponens | Állapot | % |
 |---|---|---|
-| App-motor (SRS, vizsga, tech-tree, UI) v3.0.1 | kész; 3.0.1 telefon-verify build folyamatban | ~95 |
-| hu→es tartalom (spanyol, flagship) | A0 100 / A1 882 / A2 900 / B1 927 / B2 394 / C1 83 / C2 92 (C1/C2 BEFAGYASZTVA) | ~73 |
+| App-motor (SRS, vizsga, tech-tree, UI) v3.0.28 | kész; FB132-134 benne, eszköz-verify hátra | ~95 |
+| hu→es tartalom (spanyol, flagship) | **2026-08-16:** A0 100 / A1 931 / A2 792 / B1 898 / B2 519 / C1 404 / C2 92 (C2 BEFAGYASZTVA), topic-fa MINDEN szinten (B1 38 / B2 22 / C1 18); kumulált C1 = **3 644**, XLex-cél 4 000 → **356 hiány** | ~85 |
 | hu→en tartalom (angol-cél) | A0 100 / A1 384 / A2 390 = **874 kártya, 41 topic**, audit P1=0; exam korpusz-tiszta; id-blokkok ~tele (2026-07-12) | ~80 |
 | **Mátrix per-ág modell (A0 közös + A1+ ágankénti)** | en-ág (hu→en) A0/A1/A2 KÉSZ (480 kártya); **hu-ág A0 + A1 KÉSZ** (100 + 148 kártya, 10 + 15 topic, audit-hu gate A0/A1-re, 2026-08-15); de-ág + hu A2+ hátra | 55 |
 | **es→hu kurzus (magyar cél)** | indítható (FB129 pár-szintű napi keret fix); tartalom A0 100 + A1 148 = 248 kártya, XLex A1-cél ~1200 → bővítés hátra | 25 |
@@ -162,6 +162,24 @@ Trigger-szinonimák: „égesd a tokeneket" / „szavakat generálj" / „tölts
   4 C1 domén 105-ösével.
 - **FIGYELEM:** ez a JELENLEGI megosztott-készlet modellben bővít. Ha Q1 (mátrix) elfogad,
   ez REFRAME-elődhet (es külön track). Q1 előtt ez a biztos autonóm munka.
+
+**Futás 2026-08-16 (Opus, „token égetés"), +165 kártya, 5 commit:**
+A0 100 / A1 931 / A2 792 / B1 898 / B2 519 / C1 404, kumulált C1 3 479 → **3 644**.
+Új eszköz: `scripts/append_level_words.mjs` (szabad id-tartomány, minden szint elleni
+jelentés-dedup, topicOrder-folytatás), ez a `append_words.py` utódja szint-bővítéshez.
+Minden batch a legvékonyabb topicokat célozta (B2 `adverbios_modo_grado` 6 kártyáról
+indult, B1 `sabores_preparacion_comida` 8-ról).
+
+**Két megállapítás a következő futásnak:**
+1. **Az A1/A2 sáv nem új szavakkal zárható.** A1-en a jelöltek ~75%-a (35/45) MÁR
+   tanított valahol, jellemzően A0-n vagy A2-n (padre, hora, siempre, nube…), tehát a
+   maradó ~169-es A1-hiány **szint-újrasúlyozás** kérdése (A2/B1-en ülő, kezdő-gyakoriságú
+   kártyák lehúzása A1-re), nem tartalom-írásé. Ez user-döntés, mert a szintlépés a
+   megjelenített kurrikulumot rendezi át (az FSRS-haladás nem vész el, az id marad).
+2. **Egyes-többes iker-kártyák a B1-ben:** `el objeto`/`los objetos`, `el pedazo`/
+   `los pedazos`, `el producto`/`los productos`, `la ciudadano`/`la discípulo` (rossz
+   névelő). Az FB97 dedupe-őr ezeket nem fogja meg (más az `es` sztring). Külön
+   takarítás-item, a `wordMerges` mintájára.
 
 ### Q3. [token-burn, user 2026-07-12] hu A0 track (új) + en A1/A2 mélyítés spanyol-szintre
 
@@ -400,3 +418,18 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   FB101 a Settings lap `ScrollView`-ba került (az alsó sorok, köztük az FB82 verzió-
   kiírás, elérhetetlenek voltak). Gate: tsc 0, jest **135/135** (123→135: +5 sentenceMix,
   +7 schedulePreview), audit-corpus P1=0/P2=0, lint 18 = alapvonal. ⏳ Eszköz-verify + APK.
+- **2026-08-16** (Opus): három szálon ment a nap. (1) A `feat/placement-exams-progress`
+  ágon állt ~8 300 sornyi nem-commitolt munka (B1/B2/C1 topic-fák, `wordPhase` +
+  `topicMastery` modul, FB112-115 új-szó-keret fix, 3.0.27 bump) — gate zöld volt
+  (tsc 0, jest 181/181, audit P1=0 es/en/hu), négy commitban lezárva (`3c20a8c`,
+  `960fdc4`, `b9113d2`, `46c2fac`); HEAD addig nem is fordult volna, mert az
+  `index.tsx` már a nem-commitolt `newWordBudget`/`wordPhase` API-t hívta.
+  (2) **Feedback-forduló FB131–FB134 KÉSZ** (user: „kimacha app feedbaack building"),
+  4 új sheet-sor 08-15/08-16-ból: FB132 nehézség-kapcsoló (ékezet számít, per pár,
+  `answerMatch` + `charDiff` fold-szétválasztás, Settings „Nehézség" szekció),
+  FB133 Done-képernyő +5/+10/+15 teli gombokkal, FB134 tapa-jegyzet; plusz a korábbi
+  FB131 (`6a8ed03`) visszamenőleg dokumentálva. Gate: tsc 0, jest 190/190, lint 17
+  (alapvonal 18). APK 3.0.28 buildelve + Drive-ra töltve (`kimacha-a1-release.apk`,
+  SIZE_MATCH, a bundle-ben ellenőrizve az új stringek, tehát nem stale JS bundle).
+  (3) **Q2 token-burn +165 kártya** 5 commitban (részletek a Q2 szekcióban), kumulált
+  C1 3 479 → 3 644 a 4 000-es XLex-célból. ⏳ Eszköz-verify: FB132-134 a 3.0.28-on.
