@@ -1818,14 +1818,44 @@ tortilla-szelet), nem főétel, több tapasból áll össze az étkezés. A jegy
 saját nyelvén jelenik meg (FB75 hibrid modell, a kézi note nyer), tehát az en→es
 kurzuson angolul. Csak a note-mezők mozdultak, a szó/mondat/topic érintetlen.
 
-## Elfogadási kritérium (FB131–FB134 forduló)
-- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **190/190** ✅.
+## ✅ FB135 + FB136 [P1 UX], Üres téma → a Done-képernyő zsákutca volt, KÉSZ (`d2debe7`)
+Idézetek (08-16, A1 en→es, `done`):
+- 10:24: „va néhány topic amit nem tudok ki választani, mármint kivalasztom, és
+  nincs benne szó de azt irja 8/9 mint a színek, ez miért van? fix it please."
+- 10:25: „done for today nél vagyok és még több szót akarok, azt akarom, hogy adjon
+  új szavakat, de ilyen opció nincs itt, csináld meg"
+Egy tő, két tünet. A sor az aktív témára van szűkítve (FB117), és CSAK esedékes
+kártyát hoz, tehát ha a téma maradék szavai későbbre vannak ütemezve, a sor üres:
+a session azonnal a Done-ra ugrik, miközben a fán a téma jogosan 8/9 (nyolc szó
+elsajátítva, a kilencedik nem esedékes; a téma nem „kiválaszthatatlan", csak nincs
+mit adnia). A Done ilyenkor semmit nem kínált, mert az FB133 „+N új szó" gombjai
+csak a NAPI KERET kimerülésekor jelennek meg, az pedig nem merült ki.
+Fix:
+- `lib/topicRotation.ts` (tiszta logika, 7 teszt): `countNewWords` + a
+  `nextTopicWithNewWords`, ami a kurrikulum-sorrendben első olyan témát adja,
+  amiben még van érintetlen szó (az aktívat kihagyva).
+- `index.tsx`: mindkét sor-építés (induló `loadCards` + sor-végi újratöltés)
+  feljegyzi, hány érintetlen szó maradt az AKTÍV témában és melyik a következő
+  téma, ami tud adni; `handleNextTopicWords` átállítja a kiválasztott témát és
+  újraépít.
+- `DoneScreen`: ha az aktív témában 0 érintetlen szó van, kiírja MIÉRT ért véget a
+  session, és teli gombbal kínálja a következő témát; a +5/+10/+15 gombok
+  mostantól csak akkor jelennek meg, ha a keret emelése tényleg tud kártyát adni.
+- i18n ×4: `done.nextTopicWords`, `done.topicEmpty`.
+Megjegyzés: a „mikor lesz esedékes" pontos idő a Stats tab „Ütemezés" kártyáján
+van (FB100), ide szándékosan nem duplikáltuk.
+
+## Elfogadási kritérium (FB131–FB136 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **197/197** ✅ (190→197: +7 topicRotation).
 - `node scripts/audit-corpus.mjs` → P1=0, P2=0 ✅ (csak note-mező változott, id 1727).
 - `npx expo lint`: 17 probléma (8 error, 9 warning), az alapvonal 18 volt ✅.
-- `data/words/a1.json` parseable, 881 kártya ✅.
+- `data/words/a1.json` parseable, 931 kártya ✅ (a Q2 szóbővítés külön commitokban).
 - ⏳ Eszköz-verify a következő buildben: Settings → Nehézség kapcsoló, bekapcsolva bukik-e
   az ékezet nélküli gépelés és pirosan látszik-e a hiányzó ékezet; a Done-képernyőn
-  +5/+10/+15 teli gomb és tényleg annyival nő-e a napi keret; a tapa-kártya ℹ️ szövege.
+  +5/+10/+15 teli gomb és tényleg annyival nő-e a napi keret; a tapa-kártya ℹ️ szövege;
+  üres témánál a Done magyarázata + a „Új szavak másik témából" gomb.
+- ⚠️ A 3.0.28 APK az FB135/FB136 ELŐTT készült, tehát ez a két fix csak a következő
+  buildben lesz a telefonon.
 
 ---
 
