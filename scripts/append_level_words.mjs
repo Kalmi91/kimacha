@@ -1,0 +1,151 @@
+#!/usr/bin/env node
+// Append new cards to a Spanish level file, the safe way.
+//
+// `append_words.py` predates the topic trees and the 2026-08-07 dedupe cleanup:
+// it numbers from the global max id (which now runs into the en/hu id blocks),
+// only dedupes the exact `es` string inside one level, and cannot fill in
+// `topic` / `topicOrder`. This script does all four:
+//
+//   * ids come from --start-id upward, skipping every id already used anywhere
+//     in data/words (shared deck + en/hu branch tracks), so no cross-track clash;
+//   * a candidate is dropped if its headword (article stripped) is already in the
+//     deck, or if it shares an en/hu sense with an existing card of the same
+//     headword, i.e. exactly what corpusIntegrity.test.ts guards;
+//   * topicOrder continues the card's own topic;
+//   * field order matches the existing entries, output stays 2-space JSON.
+//
+// Usage:
+//   node scripts/append_level_words.mjs --level A1 --input cards.json --start-id 3871
+//   ... add --dry-run to see what it would do.
+
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const WORDS = path.join(ROOT, 'data', 'words');
+
+const arg = (name, fallback = null) => {
+  const i = process.argv.indexOf(`--${name}`);
+  return i === -1 ? fallback : process.argv[i + 1];
+};
+const level = (arg('level') ?? '').toUpperCase();
+const input = arg('input');
+const startId = Number(arg('start-id'));
+const dryRun = process.argv.includes('--dry-run');
+if (!level || !input || !Number.isFinite(startId)) {
+  console.error('usage: --level A1 --input cards.json --start-id 3871 [--dry-run]');
+  process.exit(2);
+}
+
+const readJson = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
+
+// Every word file that exists, branch tracks included: ids must be unique across
+// all of them, because findWordById falls back to the shared deck.
+const allWordFiles = [];
+const walk = (dir) => {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, entry.name);
+    if (entry.isDirectory()) walk(p);
+    else if (entry.name.endsWith('.json') && !entry.name.includes('backup')) allWordFiles.push(p);
+  }
+};
+walk(WORDS);
+
+const usedIds = new Set();
+for (const file of allWordFiles) for (const w of readJson(file)) usedIds.add(w.id);
+
+const stripArticle = (s) =>
+  String(s ?? '').toLowerCase().trim().replace(/^(el|la|los|las|un|una)\s+/, '');
+// Same normalisation as corpusIntegrity.test.ts: articles off in every language
+// the fields can carry, otherwise "az uzsonna" and "uzsonna" read as two words.
+const senses = (s) =>
+  new Set(
+    String(s ?? '')
+      .split(/[/,]/)
+      .map((x) =>
+        x
+          .toLowerCase()
+          .trim()
+          .replace(/^(the|an|a|az|to)\s+/, '')
+          .replace(/^(el|la|los|las)\s+/, '')
+          .replace(/[.\s]+$/, '')
+      )
+      .filter(Boolean)
+  );
+
+// Shared-deck headwords, for the duplicate rules (the branch tracks teach other
+// languages, a Spanish headword may legitimately repeat there).
+const sharedFiles = allWordFiles.filter((f) => path.dirname(f) === WORDS);
+const existing = [];
+for (const file of sharedFiles) for (const w of readJson(file)) existing.push(w);
+const byHeadword = new Map();
+for (const w of existing) {
+  const key = stripArticle(w.es);
+  if (!byHeadword.has(key)) byHeadword.set(key, []);
+  byHeadword.get(key).push(w);
+}
+
+const levelPath = path.join(WORDS, `${level.toLowerCase()}.json`);
+const levelCards = readJson(levelPath);
+const nextOrder = new Map();
+for (const w of levelCards) {
+  if (!w.topic) continue;
+  nextOrder.set(w.topic, Math.max(nextOrder.get(w.topic) ?? 0, Number(w.topicOrder) || 0));
+}
+
+const REQUIRED = ['es', 'hu', 'en', 'de', 'sentence_es', 'sentence_hu', 'sentence_en', 'sentence_de'];
+const candidates = readJson(path.resolve(input));
+const added = [];
+const skipped = [];
+let id = startId;
+
+for (const c of candidates) {
+  const missing = REQUIRED.filter((f) => !String(c[f] ?? '').trim());
+  if (missing.length) {
+    skipped.push(`${c.es ?? '?'}: missing ${missing.join(', ')}`);
+    continue;
+  }
+  const key = stripArticle(c.es);
+  const clash = (byHeadword.get(key) ?? []).find((w) => {
+    const mine = senses(c.en);
+    for (const s of senses(w.en)) if (mine.has(s)) return true;
+    const mineHu = senses(c.hu);
+    for (const s of senses(w.hu)) if (mineHu.has(s)) return true;
+    return false;
+  });
+  if (clash) {
+    skipped.push(`${c.es}: already taught as ${clash.level} ${clash.id} (${clash.es})`);
+    continue;
+  }
+  if (byHeadword.has(key) && !clash) {
+    console.log(`  NOTE ${c.es}: same headword as an existing card, different sense, keeping it`);
+  }
+  while (usedIds.has(id)) id++;
+  const order = (nextOrder.get(c.topic) ?? 0) + 1;
+  nextOrder.set(c.topic, order);
+  const card = {
+    id,
+    level,
+    es: c.es,
+    hu: c.hu,
+    en: c.en,
+    de: c.de,
+    ...(c.topic ? { topic: c.topic, topicOrder: order } : {}),
+    sentence_es: c.sentence_es,
+    sentence_hu: c.sentence_hu,
+    sentence_en: c.sentence_en,
+    sentence_de: c.sentence_de,
+    ...(c.note_hu ? { note_hu: c.note_hu, note_en: c.note_en, note_es: c.note_es, note_de: c.note_de } : {}),
+  };
+  usedIds.add(id);
+  byHeadword.set(key, [...(byHeadword.get(key) ?? []), card]);
+  added.push(card);
+}
+
+for (const line of skipped) console.log(`  SKIP ${line}`);
+console.log(`\n${dryRun ? 'would add' : 'added'}: ${added.length}, skipped: ${skipped.length}`);
+if (!added.length || dryRun) process.exit(0);
+
+fs.writeFileSync(levelPath, `${JSON.stringify([...levelCards, ...added], null, 2)}\n`, 'utf8');
+console.log(`${level}: ${levelCards.length} -> ${levelCards.length + added.length} cards, ids ${added[0].id}-${added[added.length - 1].id}`);
