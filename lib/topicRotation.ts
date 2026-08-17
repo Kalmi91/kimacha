@@ -35,3 +35,45 @@ export function nextTopicWithNewWords(candidates: TopicNewWords[], activeId: str
     .sort((a, b) => a.order - b.order);
   return usable.length ? usable[0].id : null;
 }
+
+// FB139, Kálmán 2026-08-17 (word:"identity card"): "ha 15 új szót kell beadni ...
+// és a témakörből, nincsen 15 szó akkor szedjen össze a körülötte lévő
+// topicokból ... csak akkor amikor a másik témakör szava van akkor jelezze,
+// hogy melyik szó az."
+//
+// New words only ever come from the active topic (FB117), so asking for +15 while
+// the topic holds three untouched words hands out three. The shortfall is topped
+// up from the NEAREST topics by curriculum order, and every borrowed word carries
+// its own topic back, so the card can name where it came from.
+
+export interface TopicNewWordIds {
+  id: string;
+  order: number;
+  /** Untouched words of the topic (reps === 0), in curriculum order. */
+  newWordIds: number[];
+}
+
+export interface BorrowedWord {
+  wordId: number;
+  topicId: string;
+}
+
+export function borrowNewWords(
+  candidates: TopicNewWordIds[],
+  activeOrder: number,
+  needed: number,
+): BorrowedWord[] {
+  if (needed <= 0) return [];
+  const picked: BorrowedWord[] = [];
+  const byDistance = [...candidates].sort(
+    (a, b) =>
+      Math.abs(a.order - activeOrder) - Math.abs(b.order - activeOrder) || a.order - b.order,
+  );
+  for (const topic of byDistance) {
+    for (const wordId of topic.newWordIds) {
+      if (picked.length >= needed) return picked;
+      picked.push({ wordId, topicId: topic.id });
+    }
+  }
+  return picked;
+}

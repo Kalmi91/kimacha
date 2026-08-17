@@ -21,6 +21,8 @@ export default {
     skipped: 'Kihagyva, a helyes alak:',
     pickSpelling: 'Válaszd a helyes írásmódot',
     skip: 'Kihagyás',
+    // FB139: a kártya másik témából jött, hogy kijöjjön a napi új szó keret.
+    fromTopic: (topic: string) => `Másik témából: ${topic}`,
   },
   buttons: {
     again: 'Újra',
