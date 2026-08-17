@@ -956,6 +956,14 @@ export default function LearnScreen() {
     );
   };
 
+  // FB138, Kálmán 2026-08-17 (word:"the flashlight"): "ha le akarok írni egy szót
+  // akkor tűnjön el a megfejtés ahogy le akarom írni, és lehessen beírni, majd ha
+  // jó vagy ha rossz legyen ugyan az csak irjak ki hogy jó vagy rossz, és lehessen
+  // újra beírni a szót". The solution sat above the practice field, so the exercise
+  // was copying, and a miss closed the field for good. It now hides while the field
+  // is open and comes back once the answer is right.
+  const practiceHidesAnswer = practiceTyping && practiceResult !== 'correct';
+
   const levelBadge = (
     <View style={[styles.levelBadge, { backgroundColor: '#38BDF8' }]}>
       <Text style={styles.levelText} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>{level}</Text>
@@ -1302,12 +1310,14 @@ export default function LearnScreen() {
         {revealed ? (
           <View style={styles.backSection}>
             <View style={[styles.divider, { backgroundColor: '#38BDF8' }]} />
-            <View style={styles.frontRow}>
-              <Text style={[styles.backText, { color: colors.tint }]}>{back}</Text>
-              <Pressable onPress={speakTarget} style={styles.speakBtn}>
-                <Text style={styles.speakIcon}>🔊</Text>
-              </Pressable>
-            </View>
+            {!practiceHidesAnswer && (
+              <View style={styles.frontRow}>
+                <Text style={[styles.backText, { color: colors.tint }]}>{back}</Text>
+                <Pressable onPress={speakTarget} style={styles.speakBtn}>
+                  <Text style={styles.speakIcon}>🔊</Text>
+                </Pressable>
+              </View>
+            )}
             {!practiceTyping && !practiceResult && (
               <Pressable
                 style={[styles.typeItBtn, { borderColor: colors.tabIconDefault }]}
@@ -1316,7 +1326,7 @@ export default function LearnScreen() {
                 <Text style={[styles.typeItText, { color: colors.tabIconDefault }]}>✏️ {s.card.typeIt}</Text>
               </Pressable>
             )}
-            {practiceTyping && !practiceResult && (
+            {practiceHidesAnswer && (
               <View style={styles.practiceSection}>
                 {/* FB131: the open keyboard covers the buttons below the card, so
                     this practice field carries its own ✓ next to the input, the
@@ -1327,7 +1337,12 @@ export default function LearnScreen() {
                     placeholder={s.card.typeTranslation}
                     placeholderTextColor={colors.tabIconDefault}
                     value={practiceText}
-                    onChangeText={setPracticeText}
+                    onChangeText={(v) => {
+                      setPracticeText(v);
+                      // FB138: editing after a miss clears the verdict, so the same
+                      // field can be typed again instead of ending on "wrong".
+                      if (practiceResult) setPracticeResult(null);
+                    }}
                     onSubmitEditing={checkPractice}
                     autoFocus
                     autoCapitalize="none"
