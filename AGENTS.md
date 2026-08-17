@@ -1859,6 +1859,75 @@ van (FB100), ide szándékosan nem duplikáltuk.
 
 ---
 
+# 📋 Feedback, 2026-08-18 forduló (v3.0.30, A1 en→es)
+
+Új sorok a `Kimacha Feedback` sheetből (FB136 utáni 5 sor, 08-16 10:24 → 08-17 22:26).
+A 08-16 10:24 és 10:25 sort az FB135/FB136 már lefedi (ugyanaz a tő, a triage után
+érkeztek), tehát három ÚJ jegy maradt. Triage 2026-08-18 (Opus). Idézetek a user
+eredeti megfogalmazásában, ne tömörítsd.
+**MIND KÉSZ 2026-08-18**: tsc 0, jest 212/212 (197→212: +6 sentenceBuildMatch,
++5 borrowNewWords, +4 borrow-smoke), audit-corpus P1=0/P2=0 (es, en, hu),
+lint 17 probléma (8 error, 9 warning), az alapvonal 18 volt, új hibaosztály nincs.
+
+## ✅ FB137 [P1 BUG], A mondat-összerakós elfogadta a rossz csempét, KÉSZ (`f3a83ab`)
+Idézet (08-16 15:14, `easy:The engine makes a lot of noise.`): „nem hace kellett
+volna?? ide szerintem rosszat raktam be és elfogadta"
+Az adat helyes (`El motor hace mucho ruido.`, a1 id 1705), a bíráló volt engedékeny:
+az `EasySentenceCard` a GÉPELŐS kártyák Levenshtein ≤2 tűrését használta, pedig itt
+nincs gépelés, csak koppintás, tehát a tűrés kizárólag egy valóban rossz csempét
+tudott elfedni („hacen" a „hace" helyett = 1 karakter). Fix: `sentenceBuildMatch`
+(`lib/answerMatch.ts`), csempéről csempére hasonlít, csak a kis/nagybetűt és a
+szélső írásjelet nézi el (a bank a mondat saját nagybetűjét és pontját hordozza).
+6 teszt, köztük a rossz sorrend és a hiányzó/plusz csempe.
+
+## ✅ FB138 [P2 UX], Gyakorláskor eltűnik a megfejtés, és újra beírható, KÉSZ (`c6e79dc`)
+Idézet (08-17 21:53, `word:the flashlight`): „ha le akarok írni egy szót akkor
+tűnjön el a megfejtés ahogy le akarom írni, és lehessen beírni, majd ha jó vagy ha
+rossz legyen ugyan az csak irjak ki hogy jó vagy rossz, és lehessen újra beírni a
+szót"
+A szó-flashcard „✏️ Írd le" mezője a LÁTHATÓ megfejtés alatt ült, tehát a gyakorlás
+másolás volt, és az első hiba után a mező bezárult (a jegy csak „Hibás" maradt).
+Fix (`app/(tabs)/index.tsx`): `practiceHidesAnswer = practiceTyping && practiceResult
+!== 'correct'`, amíg a mező nyitva van, a megfejtés (és a 🔊 gombja) rejtve; a mezőbe
+íráskor a hibás ítélet törlődik, tehát ugyanabban a mezőben újra próbálható; helyes
+válasznál a megfejtés visszajön az ítélettel együtt.
+
+## ✅ FB139 [P1 feature], Új szó kölcsön a szomszéd témákból, KÉSZ (`313d17b`)
+Idézet (08-17 22:26, `word:identity card`): „ha 15 új szót kell beadni, mármint mert
+pont ott járunk, és a témakörből, nincsen 15 szó akkor szedjen össze a körülötte lévő
+topicokból egy egy csomagba adja be akkor a kártyákat, ha 15 szó kell akkor más
+témakörből is lehessenek benne szavak, csak akkor amikor a másik témakör szava van
+akkor jelezze, hogy melyik szó az."
+Új szó eddig KIZÁRÓLAG az aktív témából jött (FB117), tehát a „+15 új szó" annyit
+adott, amennyi érintetlen szó abban a témában maradt (a példában hármat).
+Fix:
+- `lib/topicRotation.ts`: `borrowNewWords(candidates, activeOrder, needed)`, 
+  a hiányt a kurrikulum-sorrendben LEGKÖZELEBBI témákból tölti fel (holtverseny a
+  korábbi témáé), és minden kölcsönzött szó visszahozza a saját `topicId`-ját.
+- `index.tsx`: `withBorrowedNewWords(...)` mindkét sor-építésben (induló `loadCards`
+  + sor-végi újratöltés); ehhez a napi keret olvasása FELJEBB került, a téma-szűrés
+  elé, mert az `intake` dönti el, kell-e kölcsön. A kölcsönzött szavak a
+  `borrowedTopics` state-be kerülnek (szó id → TopicDef).
+- Kártya-jelzés: a `borrowedBanner` sor a fejléc alatt mind a három kártya-nézeten
+  (szó, gépelős, összerakós), i18n ×4 `card.fromTopic(topic)` (hu „Másik témából: X").
+- Ez tudatosan lazítja az FB117 szigorú téma-szűrését: ott az volt a panasz, hogy
+  MÁS téma új szava JELÖLETLENÜL jött az aktív téma fejléce alatt. Most csak akkor
+  jön, ha az aktív téma nem tudja kitölteni a keretet, és meg is van jelölve.
+- 5 egység-teszt + 4 smoke-teszt (`borrowSmoke.test.ts`) az igazi A1 korpuszon:
+  a kölcsönzött szó tényleg létezik, tényleg a megjelölt témában van, és végigmegy
+  a valódi soron (ensureCard → due sorok → buildQueue → napi keret → kadencia).
+
+## Elfogadási kritérium (FB137–FB139 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **212/212** ✅.
+- `node scripts/audit-corpus.mjs` + `-hu` + `-en` → P1=0, P2=0 ✅ (adat nem mozdult).
+- `npx expo lint`: 17 probléma (8 error, 9 warning), alapvonal 18 ✅.
+- ⏳ Eszköz-verify a 3.0.30 APK-n: összerakós kártyán a majdnem-jó csempe MOST bukik;
+  a szó-kártya „✏️ Írd le" mezőjénél eltűnik a megfejtés és hiba után újra beírható;
+  „+15 új szó" a szűk témában is 15 kártyát ad, és a más témából jött kártyák fölött
+  ott a „Másik témából: …" sor.
+
+---
+
 # 🛠️ Emulátor + release-csapdák (2026-08-15)
 
 **Android emulátor UI-ellenőrzéshez.** AVD `kimacha_test` (Pixel 6, Android 35).
