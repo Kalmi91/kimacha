@@ -4,7 +4,7 @@ import * as Speech from 'expo-speech';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
-import { levenshtein } from '@/lib/levenshtein';
+import { sentenceBuildMatch } from '@/lib/answerMatch';
 
 interface Props {
   sourceSentence: string;
@@ -53,12 +53,8 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   };
 
   const handleCheck = () => {
-    // Forgiving (same rule as the typing cards): ignore case + trailing
-    // punctuation, accept up to a 2-character difference as fully correct.
-    const norm = (str: string) => str.toLowerCase().replace(/[.!?¡¿,;:]+$/, '').trim();
-    const builtStr = norm(placed.map(i => bank[i]).join(' '));
-    const targetStr = norm(targetWords.join(' '));
-    const isCorrect = levenshtein(builtStr, targetStr) <= 2;
+    // FB137: tile for tile, no character tolerance, see sentenceBuildMatch.
+    const isCorrect = sentenceBuildMatch(placed.map(i => bank[i]), targetWords);
     setResult(isCorrect ? 'correct' : 'wrong');
   };
 
