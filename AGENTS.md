@@ -1958,6 +1958,25 @@ szószámai az emulátoron. A `/build-apk` parancsfájl már ezt a sorrendet ír
 `app/build.gradle`-ben él, prebuild nélkül nem követi az `app.json`-t, kézzel kell
 együtt léptetni a kettőt.
 
+**⚠️ Csapda 4, `JAVA_HOME` a 11-es JDK-ra mutat (2026-08-18).** A gépen a `java` a
+PATH-on 17-es, de a `JAVA_HOME=/usr/lib/jvm/default-java` → `java-11-openjdk-amd64`,
+és a Gradle a `JAVA_HOME`-ot nézi: „Gradle requires JVM 17 or later to run. Your build
+is currently configured to use JVM 11." A build EL SEM INDUL, a kimeneti mappában
+viszont ott marad a MEGELŐZŐ verzió APK-ja, tehát siker látszatát kelti (mint a
+Csapda 1-nél).
+
+**⚠️ Csapda 5, nincs `ANDROID_HOME` és üres az `android/local.properties`.** Ugyanaz a
+tünet, más ok: „SDK location not found... ANDROID_HOME environment variable or ...
+sdk.dir". Az SDK a `/home/kalmi/Android/Sdk` alatt van, az ügynök shelljébe viszont
+nincs beexportálva.
+
+Ezért a release-build parancs mindig teljes környezettel:
+```
+cd android && ANDROID_HOME=/home/kalmi/Android/Sdk ANDROID_SDK_ROOT=/home/kalmi/Android/Sdk \
+  JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 ./gradlew assembleRelease
+```
+Ellenőrzés utána KÖTELEZŐ: `output-metadata.json` versionName + az APK időbélyege.
+
 ---
 
 # 🇭🇺 Hungarian-target track (es→hu kurzus), A1 KÉSZ (2026-08-15)

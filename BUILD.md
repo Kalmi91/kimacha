@@ -433,3 +433,23 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   SIZE_MATCH, a bundle-ben ellenőrizve az új stringek, tehát nem stale JS bundle).
   (3) **Q2 token-burn +165 kártya** 5 commitban (részletek a Q2 szekcióban), kumulált
   C1 3 479 → 3 644 a 4 000-es XLex-célból. ⏳ Eszköz-verify: FB132-134 a 3.0.28-on.
+- **2026-08-18** (Opus): **Feedback-forduló FB137–FB139 KÉSZ** (user: „kimacha app
+  feedback codeing ... teszteld le ... csinálj egy buildet"). 5 új sheet-sor 08-16
+  10:24 → 08-17 22:26, ebből kettőt (10:24, 10:25) már az FB135/FB136 lefedett, tehát
+  három ÚJ jegy: **FB137** P1 bug, a mondat-összerakós kártya a gépelős kártyák
+  Levenshtein ≤2 tűrését használta, így egy karakternyire lévő csapda-csempét
+  („hacen" a „hace" helyett) jónak fogadott el → `sentenceBuildMatch` csempéről
+  csempére (`f3a83ab`); **FB138** a szó-kártya „✏️ Írd le" mezője a látható megfejtés
+  alatt ült (a gyakorlás másolás volt) és hiba után bezárult → a megfejtés rejtve
+  marad, míg a mező nyitva van, és újra beírható (`c6e79dc`); **FB139** új szó eddig
+  csak az aktív témából jött, tehát a „+15 új szó" annyit adott, amennyi ott maradt →
+  `borrowNewWords` a legközelebbi témákból tölti a hiányt, a kölcsönzött kártya fölött
+  „Másik témából: …" sor, i18n ×4 (`313d17b`). Gate: tsc 0, jest **212/212**
+  (197→212: +6 sentenceBuildMatch, +5 borrowNewWords, +4 borrow-smoke az igazi A1
+  korpuszon), audit-corpus es/en/hu P1=0/P2=0, lint 17 (alapvonal 18).
+  **APK 3.0.30 buildelve** (`android/app/build/outputs/apk/release/app-release.apk`,
+  versionCode 30, 01:26); a bundle friss (`fromTopic` + `sentenceBuildMatch` benne van,
+  tehát nem a 3.0.29 JS-e). Két ÚJ release-csapda dokumentálva az AGENTS.md-ben:
+  `JAVA_HOME` a 11-es JDK-ra mutat (Gradle 17-et kér) és nincs `ANDROID_HOME` /
+  üres `android/local.properties` — mindkettő úgy bukik, hogy a régi APK bent marad,
+  tehát sikernek látszik. ⏳ Drive-deploy + eszköz-verify: FB137-139 a 3.0.30-on.
