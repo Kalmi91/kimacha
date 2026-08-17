@@ -1,4 +1,4 @@
-import { strictAnswerMatch } from '../answerMatch';
+import { sentenceBuildMatch, strictAnswerMatch } from '../answerMatch';
 
 describe('strictAnswerMatch', () => {
   it('rejects a missing verb ending (FB6: "she speak" for "She speaks")', () => {
@@ -57,5 +57,39 @@ describe('strictAnswerMatch with strict accents (FB132)', () => {
 
   it('keeps rejecting a wrong letter (FB6)', () => {
     expect(strictAnswerMatch('she speak', 'She speaks', { strictAccents: true })).toBe(false);
+  });
+});
+
+// FB137, Kálmán 2026-08-16 (easy:"The engine makes a lot of noise."): "nem hace
+// kellett volna?? ide szerintem rosszat raktam be és elfogadta". Tap-to-order has
+// no typing, so the typing cards' 2-character tolerance must not apply here.
+describe('sentenceBuildMatch (FB137)', () => {
+  const target = ['El', 'motor', 'hace', 'mucho', 'ruido.'];
+
+  it('rejects a trap tile one character away from the right one', () => {
+    expect(sentenceBuildMatch(['El', 'motor', 'hacen', 'mucho', 'ruido.'], target)).toBe(false);
+    expect(sentenceBuildMatch(['El', 'motor', 'haces', 'mucho', 'ruido.'], target)).toBe(false);
+  });
+
+  it('rejects a wrong order', () => {
+    expect(sentenceBuildMatch(['El', 'motor', 'mucho', 'hace', 'ruido.'], target)).toBe(false);
+  });
+
+  it('rejects a missing or an extra tile', () => {
+    expect(sentenceBuildMatch(['El', 'motor', 'hace', 'ruido.'], target)).toBe(false);
+    expect(sentenceBuildMatch(['El', 'El', 'motor', 'hace', 'mucho', 'ruido.'], target)).toBe(false);
+  });
+
+  it('accepts the exact build', () => {
+    expect(sentenceBuildMatch(target, target)).toBe(true);
+  });
+
+  it('forgives case and edge punctuation only', () => {
+    expect(sentenceBuildMatch(['el', 'motor', 'hace', 'mucho', 'ruido'], target)).toBe(true);
+    expect(sentenceBuildMatch(['¿Tú', 'hablas?'], ['Tú', 'hablas'])).toBe(true);
+  });
+
+  it('keeps rejecting a missing accent, the tiles carry it (FB132 spirit)', () => {
+    expect(sentenceBuildMatch(['El', 'camion', 'es', 'grande.'], ['El', 'camión', 'es', 'grande.'])).toBe(false);
   });
 });

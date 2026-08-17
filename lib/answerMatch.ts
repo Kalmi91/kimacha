@@ -36,6 +36,21 @@ function normalizeKeepingAccents(text: string): string[] {
     .filter(Boolean);
 }
 
+// FB137, Kálmán 2026-08-16 (easy:"The engine makes a lot of noise."): "nem hace
+// kellett volna?? ide szerintem rosszat raktam be és elfogadta". The tap-to-order
+// card used the typing cards' 2-character Levenshtein tolerance, but a tile is
+// tapped, not typed: there is no typo to forgive, so the tolerance only ever hid
+// a genuinely wrong pick ("hacen" for "hace" is a single character away). Tiles
+// must match the target one for one; case and edge punctuation stay forgiven,
+// because the bank carries the sentence's own capitalisation and full stop.
+const stripEdges = (word: string) =>
+  word.toLowerCase().replace(/^[¡¿"'(]+/, '').replace(/[.,!?;:"')]+$/, '');
+
+export function sentenceBuildMatch(built: string[], target: string[]): boolean {
+  if (built.length !== target.length) return false;
+  return built.every((w, i) => stripEdges(w) === stripEdges(target[i]));
+}
+
 export function strictAnswerMatch(answer: string, correct: string, opts: MatchOptions = {}): boolean {
   const a = normalizeWords(answer, opts.strictAccents);
   const c = normalizeWords(correct, opts.strictAccents);
