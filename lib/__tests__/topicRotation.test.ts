@@ -2,7 +2,7 @@
 // session with an empty queue. These guard the rule that decides what the Done
 // screen can offer instead.
 
-import { countNewWords, nextTopicWithNewWords } from '../topicRotation';
+import { borrowNewWords, countNewWords, nextTopicWithNewWords } from '../topicRotation';
 
 describe('countNewWords', () => {
   it('counts the words never answered', () => {
@@ -47,5 +47,41 @@ describe('nextTopicWithNewWords', () => {
 
   it('works with no active topic', () => {
     expect(nextTopicWithNewWords(topics, null)).toBe('comida');
+  });
+});
+
+// FB139: "+15 új szó" must not stop at the active topic's supply.
+describe('borrowNewWords (FB139)', () => {
+  const candidates = [
+    { id: 'colores', order: 3, newWordIds: [301, 302] },
+    { id: 'comida', order: 7, newWordIds: [701, 702, 703] },
+    { id: 'ropa', order: 6, newWordIds: [601] },
+  ];
+
+  it('takes nothing when the active topic already covers the need', () => {
+    expect(borrowNewWords(candidates, 5, 0)).toEqual([]);
+    expect(borrowNewWords(candidates, 5, -2)).toEqual([]);
+  });
+
+  it('fills the shortfall from the nearest topics first, ties going to the earlier topic', () => {
+    expect(borrowNewWords(candidates, 5, 3)).toEqual([
+      { wordId: 601, topicId: 'ropa' },
+      { wordId: 301, topicId: 'colores' },
+      { wordId: 302, topicId: 'colores' },
+    ]);
+  });
+
+  it('stops exactly at the shortfall', () => {
+    expect(borrowNewWords(candidates, 5, 1)).toEqual([{ wordId: 601, topicId: 'ropa' }]);
+  });
+
+  it('walks on to the farther topics when the near ones run out', () => {
+    expect(borrowNewWords(candidates, 5, 10).map(b => b.wordId)).toEqual([
+      601, 301, 302, 701, 702, 703,
+    ]);
+  });
+
+  it('marks every word with the topic it came from', () => {
+    expect(borrowNewWords(candidates, 5, 6).every(b => b.topicId.length > 0)).toBe(true);
   });
 });

@@ -21,6 +21,8 @@ export default {
     skipped: 'Übersprungen, die richtige Form:',
     pickSpelling: 'Wähle die richtige Schreibweise',
     skip: 'Überspringen',
+    // FB139: die Karte kommt aus einem anderen Thema, um das Tageskontingent zu füllen.
+    fromTopic: (topic: string) => `Aus einem anderen Thema: ${topic}`,
   },
   buttons: {
     again: 'Nochmal',

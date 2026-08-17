@@ -21,6 +21,8 @@ export default {
     skipped: 'Omitido, la forma correcta:',
     pickSpelling: 'Elige la grafía correcta',
     skip: 'Saltar',
+    // FB139: la tarjeta viene de otro tema para completar el cupo de palabras nuevas.
+    fromTopic: (topic: string) => `De otro tema: ${topic}`,
   },
   buttons: {
     again: 'Otra Vez',

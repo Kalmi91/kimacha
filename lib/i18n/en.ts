@@ -21,6 +21,8 @@ export default {
     skipped: 'Skipped, the correct form:',
     pickSpelling: 'Pick the correct spelling',
     skip: 'Skip',
+    // FB139: the card was borrowed from another topic to fill the new-word budget.
+    fromTopic: (topic: string) => `From another topic: ${topic}`,
   },
   buttons: {
     again: 'Again',

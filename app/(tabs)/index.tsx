@@ -14,7 +14,7 @@ import { nearMissDistractors } from '@/lib/distractors';
 import { consumePendingAction } from '@/lib/pendingAction';
 import { DAILY_NEW_BONUS_STEP } from '@/lib/usageStats';
 import { capNewWords, newWordsLeftToday, newWordIntake } from '@/lib/newWordBudget';
-import { countNewWords, nextTopicWithNewWords } from '@/lib/topicRotation';
+import { borrowNewWords, countNewWords, nextTopicWithNewWords } from '@/lib/topicRotation';
 import { wordPhase, phaseShape, type WordPhase } from '@/lib/wordPhase';
 import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
 import { buildQueue, applyCadence, type DueItem } from '@/lib/sessionQueue';
@@ -100,6 +100,9 @@ export default function LearnScreen() {
   const [currentTopic, setCurrentTopic] = useState<TopicDef | null>(null);
   const [topicProgress, setTopicProgress] = useState<{ done: number; total: number; wordsInTopic: number; wordsReviewed: number } | null>(null);
   const [topicCompleteMsg, setTopicCompleteMsg] = useState<string | null>(null);
+  // FB139: words pulled in from a neighbouring topic to fill the new-word budget,
+  // mapped to the topic they came from so the card can name it.
+  const [borrowedTopics, setBorrowedTopics] = useState<Map<number, TopicDef>>(new Map());
   // FB21: transient toast shown after a tech-tree topic switch, signalling that
   // the change affects FUTURE cards, not past progress.
   const [topicSwitchMsg, setTopicSwitchMsg] = useState<string | null>(null);
@@ -192,6 +195,58 @@ export default function LearnScreen() {
     );
   };
 
+  // FB139, Kálmán 2026-08-17: "ha 15 új szót kell beadni ... és a témakörből,
+  // nincsen 15 szó akkor szedjen össze a körülötte lévő topicokból". The queue is
+  // scoped to the active topic, so a raised budget used to hand out only what that
+  // topic still had. The shortfall now comes from the nearest topics, and the
+  // borrowed words are remembered so the card can say which topic they belong to.
+  const withBorrowedNewWords = (
+    scoped: WordEntry[],
+    unlocked: TopicDef[],
+    activeTopic: TopicDef | null,
+    lvl: Level,
+    lang: string,
+    repsMap: Map<number, number>,
+    intake: number,
+  ): WordEntry[] => {
+    if (!activeTopic) {
+      setBorrowedTopics(new Map());
+      return scoped;
+    }
+    const activeNew = countNewWords(
+      getWordsForTopic(lvl, activeTopic.id, lang).map(w => w.id),
+      repsMap,
+    );
+    const others = unlocked.filter(tp => tp.id !== activeTopic.id);
+    const supplies = others.map(tp => ({
+      id: tp.id,
+      order: tp.order,
+      newWordIds: getWordsForTopic(lvl, tp.id, lang)
+        .filter(w => (repsMap.get(w.id) ?? 0) === 0)
+        .map(w => w.id),
+    }));
+    const picked = borrowNewWords(supplies, activeTopic.order, intake - activeNew);
+    if (picked.length === 0) {
+      setBorrowedTopics(new Map());
+      return scoped;
+    }
+    const topicById = new Map(others.map(tp => [tp.id, tp]));
+    const wordById = new Map(
+      others.flatMap(tp => getWordsForTopic(lvl, tp.id, lang)).map(w => [w.id, w]),
+    );
+    const borrowed = new Map<number, TopicDef>();
+    const extra: WordEntry[] = [];
+    for (const p of picked) {
+      const word = wordById.get(p.wordId);
+      const topic = topicById.get(p.topicId);
+      if (!word || !topic) continue;
+      extra.push(word);
+      borrowed.set(word.id, topic);
+    }
+    setBorrowedTopics(borrowed);
+    return [...scoped, ...extra];
+  };
+
   const QUEUE_POOL = 40;
 
   const loadCards = async () => {
@@ -209,6 +264,22 @@ export default function LearnScreen() {
     const levelWords = getWordsForLevel(currentLevel, learned);
     const topics = getTopicsForLevel(currentLevel, learned);
     const useTopics = topics.length > 0 && levelWords.some(w => w['topic']);
+
+    // FB77: today's remaining new-word budget (setting + "+5 new words" taps).
+    // FB112-115: the badge shows the DAILY countdown, the queue intake pauses
+    // separately when the half-learned pile hits the WIP ceiling.
+    // FB139: read before the queue is scoped, because the intake decides whether
+    // the active topic needs a top-up from its neighbours.
+    const budget = {
+      limit: await db.getDailyNewLimit(),
+      bonus: await db.getNewLimitBonus(),
+      startedToday: await db.getNewWordsToday(),
+      unlearned: await db.getUnlearnedWordCount(),
+    };
+    const leftToday = newWordsLeftToday(budget);
+    const intake = newWordIntake(budget);
+    setNewWordsLeft(leftToday);
+    setNewWordsPaused(intake === 0 && leftToday > 0);
 
     let activeWords: WordEntry[];
     if (useTopics) {
@@ -243,11 +314,15 @@ export default function LearnScreen() {
           ]
         : unlocked.flatMap(t => getWordsForTopic(currentLevel, t.id, learned));
 
+      // FB139: top the new-word supply up from the neighbouring topics.
+      activeWords = withBorrowedNewWords(activeWords, unlocked, activeTopic, currentLevel, learned, repsMap, intake);
+
       // FB135/FB136: what the Done screen can still offer once this queue runs out.
       applyTopicSupply(unlocked, activeTopic, currentLevel, learned, repsMap);
     } else {
       setCurrentTopic(null);
       setTopicProgress(null);
+      setBorrowedTopics(new Map());
       activeWords = levelWords;
     }
 
@@ -273,19 +348,6 @@ export default function LearnScreen() {
     const rows = useTopics
       ? await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL)
       : await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
-    // FB77: today's remaining new-word budget (setting + "+5 new words" taps).
-    // FB112-115: the badge shows the DAILY countdown, the queue intake pauses
-    // separately when the half-learned pile hits the WIP ceiling.
-    const budget = {
-      limit: await db.getDailyNewLimit(),
-      bonus: await db.getNewLimitBonus(),
-      startedToday: await db.getNewWordsToday(),
-      unlearned: await db.getUnlearnedWordCount(),
-    };
-    const leftToday = newWordsLeftToday(budget);
-    const intake = newWordIntake(budget);
-    setNewWordsLeft(leftToday);
-    setNewWordsPaused(intake === 0 && leftToday > 0);
     const items = applyCadence(capNewWords(buildQueue(rows, learned), intake), wordsOnly, learned);
 
     const streakData = await db.getStreak();
@@ -472,6 +534,18 @@ export default function LearnScreen() {
     const topics = getTopicsForLevel(currentLevel, learned);
     const useTopics = topics.length > 0 && lvlWords.some((w: WordEntry) => w['topic']);
 
+    // FB139: as in loadCards, the intake is needed before the queue is scoped.
+    const budget2 = {
+      limit: await db.getDailyNewLimit(),
+      bonus: await db.getNewLimitBonus(),
+      startedToday: await db.getNewWordsToday(),
+      unlearned: await db.getUnlearnedWordCount(),
+    };
+    const leftToday2 = newWordsLeftToday(budget2);
+    const intake2 = newWordIntake(budget2);
+    setNewWordsLeft(leftToday2);
+    setNewWordsPaused(intake2 === 0 && leftToday2 > 0);
+
     let newRows: any[];
     if (useTopics) {
       const allWordIds = lvlWords.map((w: WordEntry) => w.id);
@@ -523,15 +597,23 @@ export default function LearnScreen() {
       // the topic split held only until the first queue ran out, and from then on
       // brand-new words from other topics appeared under the current topic header
       // ("nem látom ezt a topicok alapján szét választott dolgot").
-      const scopedWords = activeTopic
-        ? [
-            ...getWordsForTopic(currentLevel, activeTopic.id, learned),
-            ...unlocked
-              .filter(t => t.id !== activeTopic!.id)
-              .flatMap(t => getWordsForTopic(currentLevel, t.id, learned))
-              .filter((w: WordEntry) => (repsMap.get(w.id) ?? 0) > 0),
-          ]
-        : unlocked.flatMap(t => getWordsForTopic(currentLevel, t.id, learned));
+      const scopedWords = withBorrowedNewWords(
+        activeTopic
+          ? [
+              ...getWordsForTopic(currentLevel, activeTopic.id, learned),
+              ...unlocked
+                .filter(t => t.id !== activeTopic!.id)
+                .flatMap(t => getWordsForTopic(currentLevel, t.id, learned))
+                .filter((w: WordEntry) => (repsMap.get(w.id) ?? 0) > 0),
+            ]
+          : unlocked.flatMap(t => getWordsForTopic(currentLevel, t.id, learned)),
+        unlocked,
+        activeTopic,
+        currentLevel,
+        learned,
+        repsMap,
+        intake2,
+      );
       // FB135/FB136: same bookkeeping as in loadCards, for the Done screen.
       applyTopicSupply(unlocked, activeTopic, currentLevel, learned, repsMap);
       const activeWordIds = scopedWords.map((w: WordEntry) => w.id);
@@ -541,20 +623,11 @@ export default function LearnScreen() {
       }
       newRows = await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL);
     } else {
+      setBorrowedTopics(new Map());
       newRows = await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
     }
 
     const wordsOnly2 = await db.getWordsOnly();
-    const budget2 = {
-      limit: await db.getDailyNewLimit(),
-      bonus: await db.getNewLimitBonus(),
-      startedToday: await db.getNewWordsToday(),
-      unlearned: await db.getUnlearnedWordCount(),
-    };
-    const leftToday2 = newWordsLeftToday(budget2);
-    const intake2 = newWordIntake(budget2);
-    setNewWordsLeft(leftToday2);
-    setNewWordsPaused(intake2 === 0 && leftToday2 > 0);
     const newItems = applyCadence(capNewWords(buildQueue(newRows, learned), intake2), wordsOnly2, learned);
 
     if (newItems.length === 0) {
@@ -985,6 +1058,16 @@ export default function LearnScreen() {
     </View>
   );
 
+  // FB139: a card borrowed from a neighbouring topic names its own topic, so the
+  // header above it is not read as the word's home ("csak akkor amikor a másik
+  // témakör szava van akkor jelezze, hogy melyik szó az").
+  const borrowedTopic = borrowedTopics.get(current.wordId) ?? null;
+  const borrowedBanner = borrowedTopic ? (
+    <Text style={[styles.borrowedBanner, { color: colors.accent }]} numberOfLines={1}>
+      {s.card.fromTopic(`${borrowedTopic.icon ?? ''} ${getTopicName(borrowedTopic, topicLang)}`.trim())}
+    </Text>
+  ) : null;
+
   const currentSubLevel = currentTopic ? getSubLevelForTopic(level, currentTopic.id, direction[1]) : null;
   const subLevelTopics = currentSubLevel ? getTopicsForSubLevel(level, currentSubLevel.id, direction[1]) : [];
   const subLevelPos = currentTopic ? subLevelTopics.findIndex((tp) => tp.id === currentTopic.id) + 1 : 0;
@@ -1089,6 +1172,7 @@ export default function LearnScreen() {
         {topicHeader}
         {progressMeter}
         {examBanner}
+        {borrowedBanner}
 
         <EasySentenceCard
           key={`${current.wordId}-${currentIndex}`}
@@ -1139,6 +1223,7 @@ export default function LearnScreen() {
         {topicHeader}
         {progressMeter}
         {examBanner}
+        {borrowedBanner}
 
         <View style={[styles.card, { backgroundColor: colors.card }]}>
           <View style={[styles.frontRow, { marginBottom: 16 }]}>
@@ -1285,6 +1370,7 @@ export default function LearnScreen() {
       {topicHeader}
       {progressMeter}
       {examBanner}
+      {borrowedBanner}
 
       <Pressable
         style={[styles.card, { backgroundColor: colors.card }]}
@@ -1723,6 +1809,13 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     flexShrink: 1,
     lineHeight: 18,
+  },
+  // FB139: the "this word is on loan from another topic" line above the card.
+  borrowedBanner: {
+    fontSize: 12,
+    fontWeight: '600',
+    textAlign: 'center',
+    marginBottom: 6,
   },
   topicCount: {
     fontSize: 12,
