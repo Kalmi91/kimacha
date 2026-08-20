@@ -128,7 +128,7 @@ A0-közös + A1 saját track; `audit-corpus` P1=0 minden track-en; `tsc` tiszta;
 
 ---
 
-### Q2. [token-burn, KÉSZ-RE FUTTATHATÓ] Spanyol szóbővítés folytatása
+### ✅ Q2. [token-burn, CÉL ELÉRVE 2026-08-20] Spanyol szóbővítés
 
 Forrás + pipeline: `project_word_expansion` memória + `feedback_burn_tokens_no_confirm`.
 Trigger-szinonimák: „égesd a tokeneket" / „szavakat generálj" / „töltsd fel a szókészletet".
@@ -180,6 +180,30 @@ indult, B1 `sabores_preparacion_comida` 8-ról).
    `los pedazos`, `el producto`/`los productos`, `la ciudadano`/`la discípulo` (rossz
    névelő). Az FB97 dedupe-őr ezeket nem fogja meg (más az `es` sztring). Külön
    takarítás-item, a `wordMerges` mintájára.
+
+**Futás 2026-08-20 (Opus, „token égetés"), +360 kártya, 3 commit, A CÉL ELÉRVE:**
+A0 100 / A1 931 / A2 792 / B1 898 / B2 **781** / C1 **502**, kumulált B2 **3 502**
+(sáv ~3 500 ✅), kumulált C1 **4 004** (sáv ~4 000 ✅). C2-t a user-szabály szerint
+nem építünk, tehát a spanyol ág szókincs-célja ezzel TELJESÍTVE.
+- B2 +262: a tíz legvékonyabb topic feltöltve (adverbios_modo_grado 11→40,
+  viajes_transporte 15→40, informacion_medios 16→38, verbos_accion_cotidiana 18→38,
+  educacion 19→36, vivienda_hogar 21→34, caracter_comportamiento 21→41,
+  verbos_mentales_abstractos 23→40, tecnologia_digital 23→40,
+  emociones_sentimientos 24→40, sintomas_diagnostico 24→39, trabajo_economia 26→38,
+  naturaleza_medioambiente 28→40).
+- C1 +98: ciencia_investigacion 15→32, salud_avanzada 15→30, tecnologia_digital 17→29,
+  filosofia_etica 20→32, derecho_justicia 21→33, medioambiente 21→31,
+  verbos_proceso_abstracto, economia_mercado, industria_produccion, medios_discurso.
+- Forrás: DELE/Plan Curricular szemantikai domének (a SUBTLEX-farok 2026-07-28 óta
+  kimerült), írás közvetlenül Opusszal, nem batch-agentekkel.
+- Skip-arány ~20%: az `append_level_words.mjs` fogta a más szinten már tanított
+  jelölteket (pl. `profundamente` B1, `la entrevista` A1, `el guion` C1), a hiányt
+  ugyanabban a körben pótoltam. Két rossz névelő (`el hinchazón`, `el placa solar`)
+  kézzel javítva a beszúrás után, a mondat egyeztetésével együtt.
+- Gate: tsc 0, jest 228/228, audit-corpus es/en/hu P1=0/P2=0.
+- **Következő szint-munka NEM új szó**: a 2026-08-16-os megállapítás áll, az A1/A2
+  hiány szint-újrasúlyozás (user-döntés), és a B1 egyes-többes iker-kártyák
+  takarítása külön item.
 
 ### Q3. [token-burn, user 2026-07-12] hu A0 track (új) + en A1/A2 mélyítés spanyol-szintre
 
@@ -479,3 +503,10 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   (`Ebben a körben`, `Nincs telepítve`, `✓ KÉSZ`, `appVersion`), tehát nem a 3.0.30
   JS-e. A `strings` parancs a többbájtos találatokat szétvágja, ezért a bundle-ellenőrzés
   nyers bájt-kereséssel megbízhatóbb (utf-16-le + utf-8). ⏳ Eszköz-verify: FB140-148.
+- **2026-08-20** (Opus, „token égetés"): **Q2 spanyol szóbővítés CÉL ELÉRVE**, +360
+  kártya 3 commitban (`a1e22ce`, `f70370c`, `eed1c35`). B2 519→781, C1 404→502,
+  kumulált B2 3 502 / C1 **4 004**, tehát az XLex-sávok teljesítve, C2 nem épül.
+  Forrás DELE/Plan Curricular domének; a legvékonyabb topicokat töltöttem fel
+  (adverbios_modo_grado 11→40 és társai), a ~20%-nyi más szinten már tanított
+  jelöltet az append-script fogta, a hiányt ugyanabban a körben pótoltam.
+  Gate: tsc 0, jest 228/228, audit-corpus es/en/hu P1=0/P2=0.
