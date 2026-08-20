@@ -1,11 +1,11 @@
 # English-track Corpus Audit
 
-Generated: 2026-08-20T12:09:30.376Z
+Generated: 2026-08-20T12:11:58.972Z
 
 ## Summary
 
 - A0 cards: 100, exam questions: 18
-- A1 cards: 516, exam questions: 18
+- A1 cards: 576, exam questions: 18
 - A2 cards: 390, exam questions: 18
 - P1 issues (untaught token in sentence_en): **0**
 - P1 exam issues (untaught token in question sentence/correct option): **0**
