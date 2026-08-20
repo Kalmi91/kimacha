@@ -16,7 +16,14 @@
 //
 // Usage:
 //   node scripts/append_level_words.mjs --level A1 --input cards.json --start-id 3871
+//   node scripts/append_level_words.mjs --level A1 --branch en --input cards.json --start-id 7600
 //   ... add --dry-run to see what it would do.
+//
+// --branch en|hu appends to the English- or Hungarian-target track
+// (data/words/<branch>/<level>.json) instead of the shared Spanish deck. On a
+// branch the HEADWORD is the language being taught, so the duplicate rules compare
+// English to English (or Hungarian to Hungarian), and only against that track: the
+// same Spanish gloss legitimately appears in every track.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -33,8 +40,17 @@ const level = (arg('level') ?? '').toUpperCase();
 const input = arg('input');
 const startId = Number(arg('start-id'));
 const dryRun = process.argv.includes('--dry-run');
+// Kálmán 2026-08-20: "az en ághoz csináld meg az ág-kapcsolót". Without it the
+// script could only grow the shared Spanish deck (data/words/<level>.json), so the
+// English- and Hungarian-target tracks had no safe append path at all.
+const branch = (arg('branch') ?? '').toLowerCase();
+const BRANCHES = { en: 'en', hu: 'hu' };
+if (branch && !BRANCHES[branch]) {
+  console.error(`unknown branch "${branch}", expected one of: ${Object.keys(BRANCHES).join(', ')}`);
+  process.exit(2);
+}
 if (!level || !input || !Number.isFinite(startId)) {
-  console.error('usage: --level A1 --input cards.json --start-id 3871 [--dry-run]');
+  console.error('usage: --level A1 --input cards.json --start-id 3871 [--branch en|hu] [--dry-run]');
   process.exit(2);
 }
 
@@ -55,8 +71,17 @@ walk(WORDS);
 const usedIds = new Set();
 for (const file of allWordFiles) for (const w of readJson(file)) usedIds.add(w.id);
 
+// The headword of a card is the word being TAUGHT: Spanish on the shared deck,
+// English on the en branch, Hungarian on the hu branch. The duplicate rules below
+// all key on it, so a branch append compares English to English.
+const headwordField = branch ? BRANCHES[branch] : 'es';
+const ARTICLES = {
+  es: /^(el|la|los|las|un|una)\s+/,
+  en: /^(the|a|an|to)\s+/,
+  hu: /^(a|az)\s+/,
+};
 const stripArticle = (s) =>
-  String(s ?? '').toLowerCase().trim().replace(/^(el|la|los|las|un|una)\s+/, '');
+  String(s ?? '').toLowerCase().trim().replace(ARTICLES[headwordField], '');
 // Same normalisation as corpusIntegrity.test.ts: articles off in every language
 // the fields can carry, otherwise "az uzsonna" and "uzsonna" read as two words.
 const senses = (s) =>
@@ -74,19 +99,26 @@ const senses = (s) =>
       .filter(Boolean)
   );
 
-// Shared-deck headwords, for the duplicate rules (the branch tracks teach other
-// languages, a Spanish headword may legitimately repeat there).
-const sharedFiles = allWordFiles.filter((f) => path.dirname(f) === WORDS);
+// The pool a candidate is checked against is the track it joins, and only that
+// track: the shared deck teaches Spanish headwords, the branches teach their own,
+// so "the flashlight" being in the en branch says nothing about the Spanish deck
+// and vice versa. Within a track the rule is unchanged, one headword per sense.
+const wordsDir = branch ? path.join(WORDS, BRANCHES[branch]) : WORDS;
+const trackFiles = allWordFiles.filter((f) => path.dirname(f) === wordsDir);
 const existing = [];
-for (const file of sharedFiles) for (const w of readJson(file)) existing.push(w);
+for (const file of trackFiles) for (const w of readJson(file)) existing.push(w);
 const byHeadword = new Map();
 for (const w of existing) {
-  const key = stripArticle(w.es);
+  const key = stripArticle(w[headwordField]);
   if (!byHeadword.has(key)) byHeadword.set(key, []);
   byHeadword.get(key).push(w);
 }
 
-const levelPath = path.join(WORDS, `${level.toLowerCase()}.json`);
+const levelPath = path.join(wordsDir, `${level.toLowerCase()}.json`);
+if (!fs.existsSync(levelPath)) {
+  console.error(`no such level file: ${path.relative(ROOT, levelPath)}`);
+  process.exit(2);
+}
 const levelCards = readJson(levelPath);
 const nextOrder = new Map();
 for (const w of levelCards) {
@@ -103,23 +135,28 @@ let id = startId;
 for (const c of candidates) {
   const missing = REQUIRED.filter((f) => !String(c[f] ?? '').trim());
   if (missing.length) {
-    skipped.push(`${c.es ?? '?'}: missing ${missing.join(', ')}`);
+    skipped.push(`${c[headwordField] ?? c.es ?? '?'}: missing ${missing.join(', ')}`);
     continue;
   }
-  const key = stripArticle(c.es);
-  const clash = (byHeadword.get(key) ?? []).find((w) => {
-    const mine = senses(c.en);
-    for (const s of senses(w.en)) if (mine.has(s)) return true;
-    const mineHu = senses(c.hu);
-    for (const s of senses(w.hu)) if (mineHu.has(s)) return true;
-    return false;
-  });
+  const key = stripArticle(c[headwordField]);
+  // The sense check runs on the OTHER fields: two cards with the same headword are
+  // the same card only if a meaning repeats. On a branch the headword is already
+  // one of them, so it drops out of the sense pair (en branch: check hu + es).
+  const senseFields = ['en', 'hu', 'es'].filter((f) => f !== headwordField);
+  const clash = (byHeadword.get(key) ?? []).find((w) =>
+    senseFields.some((field) => {
+      const mine = senses(c[field]);
+      for (const s of senses(w[field])) if (mine.has(s)) return true;
+      return false;
+    })
+  );
+  const label = c[headwordField];
   if (clash) {
-    skipped.push(`${c.es}: already taught as ${clash.level} ${clash.id} (${clash.es})`);
+    skipped.push(`${label}: already taught as ${clash.level} ${clash.id} (${clash[headwordField]})`);
     continue;
   }
   if (byHeadword.has(key) && !clash) {
-    console.log(`  NOTE ${c.es}: same headword as an existing card, different sense, keeping it`);
+    console.log(`  NOTE ${label}: same headword as an existing card, different sense, keeping it`);
   }
   while (usedIds.has(id)) id++;
   const order = (nextOrder.get(c.topic) ?? 0) + 1;
@@ -148,4 +185,4 @@ console.log(`\n${dryRun ? 'would add' : 'added'}: ${added.length}, skipped: ${sk
 if (!added.length || dryRun) process.exit(0);
 
 fs.writeFileSync(levelPath, `${JSON.stringify([...levelCards, ...added], null, 2)}\n`, 'utf8');
-console.log(`${level}: ${levelCards.length} -> ${levelCards.length + added.length} cards, ids ${added[0].id}-${added[added.length - 1].id}`);
+console.log(`${branch ? `${branch}/` : ''}${level}: ${levelCards.length} -> ${levelCards.length + added.length} cards, ids ${added[0].id}-${added[added.length - 1].id}`);
