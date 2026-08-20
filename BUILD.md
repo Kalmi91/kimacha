@@ -510,3 +510,16 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   (adverbios_modo_grado 11→40 és társai), a ~20%-nyi más szinten már tanított
   jelöltet az append-script fogta, a hiányt ugyanabban a körben pótoltam.
   Gate: tsc 0, jest 228/228, audit-corpus es/en/hu P1=0/P2=0.
+- **2026-08-20 (folytatás, „égesd tovább, az en ághoz csináld meg az ág-kapcsolót")**:
+  **`--branch en|hu` kapcsoló** az `append_level_words.mjs`-ben (`bc229f3`): ágon a
+  FEJSZÓ a tanított nyelv, a dedup csak az adott ágon belül fut (ugyanaz a spanyol
+  glossza minden ágban jogos), a szintfájl `data/words/<branch>/<level>.json`.
+  Plusz **ismeretlen-topic őr** (`3c67991`): egy kártya „cualidades" topickal ment be
+  (a spanyol fa topicja), ami láthatatlanná tette volna, mert a Learn sor mindig
+  topicra van szűkítve; a script most eldobja az ismeretlen topic-idt.
+  **en A1: 384 → 1105 kártya, 12 batch, kumulált A1 484 → 1 205** (sáv ~1 200 ✅).
+  Az en-audit (`audit-corpus-en.mjs`) minden batchnél fogta a szinten túli szavakat
+  (soft, sweet, wear, cheap, university, backpack…), a mondatok ezért a
+  taught(A0∪A1) halmazon belülre lettek húzva, nem a szó került előrébb.
+  Gate minden batch után: tsc 0, jest 228/228, audit-corpus es/en/hu P1=0/P2=0.
+  **Hátra az en ágon: A2 1 595 → ~2 000 (+405).**
