@@ -1928,6 +1928,144 @@ Fix:
 
 ---
 
+# 📋 Feedback, 2026-08-18/19 forduló (v3.0.30, A1 en→es + ELSŐ hu→en teszt)
+
+Új sorok a `Kimacha Feedback` sheetből (FB139 utáni 9 sor, 08-18 09:50 → 08-19 18:34).
+Triage 2026-08-20 (Opus). Idézetek a user eredeti megfogalmazásában, ne tömörítsd.
+**MIND KÉSZ 2026-08-20**: tsc 0, jest 228/228 (225→228: +10 budget/pause, +6 speech,
+−3 a régi intake-tesztek átfedése helyett smoke), audit-corpus P1=0/P2=0 (es, en, hu),
+lint 17 probléma (8 error, 9 warning), az alapvonal 18 volt.
+
+Ebben a fordulóban külön kérés is jött (nem sheet-sor, chat):
+„állítsd be úgy hogy ha feedbackeket kapsz akkor lásd, hogy melyik kártyáról és
+melyik verziójú kimachaból kapod" → lásd a forduló végén.
+
+## ✅ FB140 [P0 BUG], A „+5 új szó" gomb néma maradt A0-n, KÉSZ
+Idézet (08-18 20:51, `word:the face`): „5 új szóra kattintottak az A0 szinten és nem
+dobott fel többet hanem újra feldobta, mintha ott valami hiba lenne"
+Gyökérok: a WIP-szünet (FB112–FB115) `unlearned >= 2 × (limit + bonus)` küszöbe a
+bónuszt is beleszámolta a PLAFONBA, tehát a „+5" tap egyszerre emelte a keretet és a
+falat: 5-ös limitnél és 20 félkész szónál a plafon 10→20 lett, `20 >= 20`, az intake
+maradt 0, és a sor változatlanul épült újra. Fix (`lib/newWordBudget.ts`): a szünet
+csak az ÁLLÓ limitet tartja vissza, a kifejezett kérés (bonus) átmegy rajta,
+`Math.min(leftToday, bonus)` erejéig; bonus nélkül a viselkedés változatlan.
+
+## ✅ FB141 [P0 BUG], hu→en A0 és A1 „nem dobja ki a szavakat", KÉSZ
+Idézet (08-19 18:27, `done`): „Magyarról angolra tanulok és A0 szinten lett és itt sem
+dobja ki a szavakat mármint az a0 szint bugos." és (18:28, `done`): „A1 és szintnél is
+ugyan ez a hiba"
+Ugyanaz a tő, mint az FB140: friss kurzusban minden szó ÚJ, tehát ha az intake 0
+(WIP-szünet), a `capNewWords` az egész sort kiüríti, és a tanuló azonnal a Done
+képernyőn köt ki, ami „bugos szint"-nek látszik. Az adat és a feloldás rendben volt
+(en A0 10 topic / 100 szó, en A1 24/384, id-terek diszjunktak, `hu→en A1` smoke
+addig is zöld volt). Fix: az FB140 intake-javítás + a Done képernyő MEGMONDJA, miért
+nincs új szó (lásd FB142), és a `hu→en A0` bekerült a `sessionSmoke` kurzuslistájába.
+
+## ✅ FB142 [P1 BUG+feature], Csak ismétlés jön, új szó nem, és nem látszik miért, KÉSZ
+Idézet (08-18 21:29, `word:mushroom`): „valahogy jelölje az app, hogy mennyi szó van és
+mennyi ismétlődik, és ahogy ezek a körök mennek mert pl most nem tudom mi van az
+appal, hogy már rég óta 0 új szót ír de mintha újra és újra régi szavakat bedobna
+ismétlésre. ami am nem baj, de újakat nem tanulok ami viszont baj"
+A WIP-szünet önfenntartó volt (a félkész halom csak akkor apad, ha azok a szavak
+kinőnek), és semmi nem mondta ki. Fix:
+- `newWordPauseReason()` (`lib/newWordBudget.ts`): `none` / `congested` / `daily-limit`.
+- `applyQueueSupply()` (`index.tsx`) mindkét sor-építésnél feljegyzi, miből áll a sor
+  (új szó vs. ismétlés) és mekkora a félkész halom.
+- Done képernyő: „Ebben a körben: N új szó, M ismétlés." + torlódásnál sárga/accent
+  sor: „Most nincs új szó: N félig tanult szó vár még. Ha mégis kérsz, nyomd meg a
+  »+« gombot." (i18n ×4). A „+N új szó" gombok az FB140 után tényleg adnak is.
+
+## ✅ FB143 [P1 BUG], A billentyűzet nem megy le félre-kattintásra, KÉSZ
+Idézet (08-19 18:27, `done`): „Ja és nem megy le a billentyűzet ha félre kattintok"
+A `keyboardShouldPersistTaps="handled"` csak a görgetőn belüli üres területre volt jó,
+a kártya és a feedback-modal elnyelte a koppintást. Fix: a gépelős kártya és a
+helyesírás-kártya kerete `Pressable` → `Keyboard.dismiss()`, a szó-kártyán a gyakorló
+mező nyitva állapotában a kártyakoppintás is ezt teszi (nem fordít újra), a
+feedback-modal sötét háttere szintén, és mind a három tanuló-görgető kapott
+`keyboardDismissMode="on-drag"`-ot.
+
+## ✅ FB144 [P1 BUG], hu→en „brother" kiejtése rossz, KÉSZ
+Idézet (08-19 18:34, `word:brother`): „A fiú testvért nem ejti ki rendesen"
+Az adat („fiútestvér") és a locale (`hu-HU`) is helyes volt: a telefonon nincs magyar
+TTS-hang telepítve, ilyenkor az Android némán az alapértelmezett (angol) hanggal
+olvassa fel a magyar szót. Rossz nyelvű felolvasás rossz kiejtést tanít, ezért:
+- `lib/speech.ts`: egyszer betölti a `getAvailableVoicesAsync()` listát, és ha az adott
+  nyelvhez nincs hang, INKÁBB NEM mond semmit (üres/hibázó lista = minden nyelv oké,
+  vagyis a régi viselkedés); minden felolvasás ezen megy át (12 hívási hely).
+- Beállítások: sárga sor nevesíti a hiányzó hangot („Nincs telepítve hang ehhez a
+  nyelvhez: Magyar…"), mert ez telefon-beállítás, nem app-hiba. 6 teszt.
+
+## ✅ FB145 [P2 UX], A telefon szó-javaslata elárulja a megfejtést, KÉSZ
+Idézet (08-18 20:49, `sentence:Compro un billete de tren.`): „azt meg tudod csinálni,
+hogy az applikációval kikapcsoltatod a telefonom auto complitjét? hogy itt felajálnja
+a szavakat ez zavaro"
+A mezőkön csak `autoCorrect={false}` volt, ami a javítást tiltja, a javaslat-sávot és
+az autofillt nem. Fix: `lib/inputProps.ts` (`autoComplete: 'off'`, `spellCheck: false`,
+`importantForAutofill: 'no'`, `textContentType: 'none'`) mind az 5 válasz-mezőn
+(gépelős kártya, gyakorló mező, helyesírás, 2 vizsga-kártya + a mondat-gyakorlás).
+A `keyboardType: 'visible-password'` minden Gboardon megölné a sávot, de elviszi az
+ékezetes billentyűzetet is, ezért kimaradt.
+
+## ✅ FB146 [P1 feature], A mondatot is le lehessen írni, KÉSZ
+Idézet (08-18 09:50, `sentence:Como una galleta con leche.`): „most ezt is le akarnám
+írni legyen egy ilyen opció a mondatok ál miután feljött"
+Az FB138 gyakorlása (szó-kártya „✏️ Írd le") most az összerakós mondatkártyán is ott
+van: az ellenőrzés UTÁN jelenik meg, nyitott mezőnél elrejti a megoldást (a csempesor
+és a helyes-mondat sor is), hibázás után ugyanabban a mezőben újra próbálható, és a
+`strictAnswerMatch` ugyanazzal az ékezet-szabállyal bírál, mint a gépelős kártyák.
+
+## ✅ FB147 [P2 feature], Heti cél elérve = nagy gratuláció + zöld „kész", KÉSZ
+Idézet (08-18 20:36, `settings-tab`): „legyen egy szöveg ami gratulál, hogy elértem a
+heti limitet ami a cél, valami hatalmas nagy. és a célnál írja is ki hogy kész zölddel"
+- Beállítások: a heti cél sor felett 🏆 + „Megvan a heti célod!" (26 pt, zöld) +
+  „N óra tanulás ezen a héten, a célod M óra volt. Óriási!"; magán a cél-értéken
+  zöld „✓ KÉSZ" címke.
+- Statisztika: az eddigi apró zöld sor helyett 🏆 + 24 pt-os gratuláció. i18n ×4.
+
+## ✅ FB148 [P2 BUG], Felugró üzenetek nyelve, KÉSZ
+Idézet (08-18 21:07, `easy:I wash the dishes after eating.`): „nézd meg, hogy a felugró
+üzenetek, mindog azon a nyelven vannak e amin a játékos tanul"
+Átnézve: a percenkénti/mérföldkő/nap-váltó toast és a napi köszöntés már a TANULT
+nyelven szól (FB63), a téma-váltó tájékoztató szándékosan a felület nyelvén marad.
+Két tényleges hiba volt:
+- a téma-kész / al-szint-kész ünneplő overlay a felület nyelvén jött → `stringsFor(learned)`,
+- a Done képernyőn két BEÉGETETT magyar szöveg („🎓 Vizsga", „(vizsga: 80%)") minden
+  felületi nyelven magyarul látszott → `s.exam.tag` és új `s.exam.threshold(80)` ×4.
+
+## ✅ Feedback-sor: melyik kártya és melyik build (chat-kérés, 2026-08-20)
+„állítsd be úgy hogy ha feedbackeket kapsz akkor lásd, hogy melyik kártyáról és melyik
+verziójú kimachaból kapod". A kártya eddig is ment (`Current Card` oszlop), a build nem.
+- `lib/appBuild.ts`: `appBuildTag()` = `v3.0.30 (30)` az `expoConfig`-ból (a Beállítások
+  FB82-es verzió-sora is ezt használja már, egy forrás).
+- `FeedbackModal`: a build kétszer megy ki. Külön `appVersion` mezőben (arra az esetre,
+  ha az Apps Script kap egy hatodik oszlopot), ÉS a `currentCard` elé fűzve
+  (`v3.0.30 (30) · word:brother`), mert a JELENLEGI sheet-script csak az öt meglévő
+  oszlopot írja, és a triage-nek most kell a verzió.
+- Az Apps Scriptet innen nem tudom szerkeszteni (az OAuth-tokenben nincs script-scope),
+  ezért ha külön „App Version" oszlop kell, a scriptbe kézzel kerüljön be a
+  `e.parameter.appVersion` kiírása.
+
+## Elfogadási kritérium (FB140–FB148 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **228/228** ✅.
+- `node scripts/audit-corpus.mjs` + `-hu` + `-en` → P1=0, P2=0 ✅ (adat nem mozdult).
+- `npx expo lint`: 17 probléma (8 error, 9 warning), alapvonal 18 ✅.
+- ⏳ Eszköz-verify a következő APK-n: a „+5 új szó" torlódás mellett IS ad 5 kártyát;
+  a Done képernyő kiírja a kör összetételét és a torlódás okát; a billentyűzet lemegy
+  félre-koppintásra (kártya, helyesírás, feedback-modal); nincs szó-javaslat a
+  válasz-mezőkben; az összerakós mondat után van „✏️ Írd le"; heti cél elérve = 🏆
+  gratuláció + zöld „✓ KÉSZ"; magyar hang nélküli telefonon a magyar szöveg NÉMA és a
+  Beállítások megmondja, mit kell telepíteni; a feedback-sor `Current Card` oszlopa
+  `v3.0.31 (31) · word:…` alakú.
+
+## 🔎 Megjegyzés (nem hiba, de figyelni kell)
+A `data/words.ts` kommentje szerint az ágak id-terei diszjunktak („shared Spanish set
+<= 3007"), de az `es` C1 lista 6990-ig megy, tehát 266 id ÜTKÖZIK a `hu` ág (6001–7006)
+id-jeivel. Élő hatása most nincs (a kártyák `pair`-re vannak szűrve, és a
+`findWordById` előbb az ág-indexben keres), de ha valaha pair-független lookup kerül a
+kódba, ez azonnal keresztbe tesz. Adatmozgatás nélkül csak a komment pontatlan.
+
+---
+
 # 🛠️ Emulátor + release-csapdák (2026-08-15)
 
 **Android emulátor UI-ellenőrzéshez.** AVD `kimacha_test` (Pixel 6, Android 35).

@@ -40,6 +40,7 @@ const COURSES: [string, string, Level][] = [
   ['es', 'hu', 'A0'],
   ['es', 'hu', 'A1'],
   ['en', 'hu', 'A0'],
+  ['hu', 'en', 'A0'],
   ['hu', 'en', 'A1'],
   ['hu', 'es', 'A1'],
   ['en', 'es', 'A1'],
@@ -60,5 +61,43 @@ describe('a fresh session hands out cards in every course', () => {
     }
     // The learner starts on a word, not on a sentence build (FB24).
     expect(queue[0].type).toBe('word');
+  });
+});
+
+// FB140/FB141/FB142: the half-learned pile parks the intake, and until now the
+// "+N új szó" tap raised the ceiling along with the budget, so the button could
+// leave the queue exactly as it was ("nem dobott fel többet hanem újra
+// feldobta"). Driven through the real pipeline, because the pause is invisible
+// to any single unit.
+describe('a congested course still answers the "+N new words" tap', () => {
+  const CONGESTED = 40; // way past the ceiling of a default 5-word limit
+
+  async function congestedIntake(bonus: number) {
+    const db = getDb();
+    await db.setOnboarding('hu', 'en');
+    const words = getWordsForLevel('A1', 'en');
+    // Half-learn a pile: reps > 0 and FSRS state Learning (1).
+    for (const w of words.slice(0, CONGESTED)) {
+      await db.ensureCard(w.id, 'word');
+      await db.updateCard(w.id, 'word', {
+        due: new Date(Date.now() + 86400000),
+        stability: 1, difficulty: 5, elapsed_days: 0, scheduled_days: 1,
+        learning_steps: 1, reps: 2, lapses: 0, state: 1, last_review: new Date(),
+      } as any);
+    }
+    return newWordIntake({
+      limit: await db.getDailyNewLimit(),
+      bonus,
+      startedToday: 0,
+      unlearned: await db.getUnlearnedWordCount(),
+    });
+  }
+
+  it('pauses on its own', async () => {
+    expect(await congestedIntake(0)).toBe(0);
+  });
+
+  it('hands out exactly the requested bonus once the learner asks', async () => {
+    expect(await congestedIntake(5)).toBe(5);
   });
 });

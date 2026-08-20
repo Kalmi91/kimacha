@@ -5,6 +5,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { strictAnswerMatch } from '@/lib/answerMatch';
 import { type ExamItem } from '@/lib/examBuilder';
+import { answerInputProps } from '@/lib/inputProps';
 
 type SentTypeItem = Extract<ExamItem, { kind: 'sent_type' }>;
 
@@ -46,8 +47,7 @@ export default function ExamSentTypeCard({ item, onResult }: Props) {
         onSubmitEditing={handleCheck}
         editable={!result}
         autoFocus
-        autoCapitalize="none"
-        autoCorrect={false}
+        {...answerInputProps}
         multiline={false}
       />
 

@@ -453,3 +453,24 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   `JAVA_HOME` a 11-es JDK-ra mutat (Gradle 17-et kér) és nincs `ANDROID_HOME` /
   üres `android/local.properties` — mindkettő úgy bukik, hogy a régi APK bent marad,
   tehát sikernek látszik. ⏳ Drive-deploy + eszköz-verify: FB137-139 a 3.0.30-on.
+- **2026-08-20** (Opus): **Feedback-forduló FB140–FB148 KÉSZ** (user: „kimacha app
+  feedback upgrade" + „fix them és állítsd be úgy hogy ha feedbackeket kapsz akkor
+  lásd, hogy melyik kártyáról és melyik verziójú kimachaból kapod"). 9 új sheet-sor
+  08-18 09:50 → 08-19 18:34, köztük az ELSŐ hu→en (angol-célú) teszt-jegyek.
+  Három jegynek EGY gyökéroka volt: a WIP-szünet (`newWordIntake`) a „+N új szó"
+  bónuszt a plafonba is beleszámolta, ezért torlódásnál a gomb semmit sem adott
+  (**FB140**), friss kurzusban ettől üres lett a sor és „bugos szint"-nek látszott
+  (**FB141**), és semmi nem mondta ki, miért csak ismétlés jön (**FB142**) → a
+  bónusz most átmegy a szünetön, a Done képernyő pedig kiírja a kör összetételét
+  („N új szó, M ismétlés") és a torlódás okát. További: **FB143** billentyűzet
+  lemegy félre-koppintásra (kártya + helyesírás + feedback-modal Pressable,
+  `keyboardDismissMode="on-drag"`), **FB144** hiányzó rendszer-TTS-hang esetén az app
+  inkább néma, mint rossz nyelvű felolvasás (`lib/speech.ts` + Beállítás-figyelmeztetés),
+  **FB145** szó-javaslat/autofill kikapcsolva minden válasz-mezőn (`lib/inputProps.ts`),
+  **FB146** az összerakós mondat után is van „✏️ Írd le" gyakorlás, **FB147** heti cél
+  elérve = 🏆 nagy gratuláció + zöld „✓ KÉSZ", **FB148** ünneplő overlay a tanult
+  nyelvre + két beégetett magyar string i18n-be. Plusz a chat-kérés: a feedback-sor
+  mostantól viszi a buildet is (`lib/appBuild.ts`, `v3.0.30 (30) · word:brother`
+  a `Current Card` oszlopban + külön `appVersion` mező a jövőbeli sheet-oszlopnak).
+  Gate: tsc 0, jest **228/228** (212→228), audit-corpus es/en/hu P1=0/P2=0,
+  lint 17 (alapvonal 18). ⏳ APK-build + Drive-deploy + eszköz-verify: FB140-148.

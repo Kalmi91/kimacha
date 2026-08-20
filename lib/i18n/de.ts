@@ -39,6 +39,9 @@ export default {
     moreNewWords: (n: number) => `+${n} neue Wörter`,
     nextTopicWords: 'Neue Wörter aus einem anderen Thema',
     topicEmpty: 'Dieses Thema hat keine neuen Wörter mehr, der Rest ist für später geplant.',
+    sessionMix: (nw: number, rv: number) => `In dieser Runde: ${nw} neue Wörter, ${rv} Wiederholungen.`,
+    newWordsCongested: (n: number) => `Gerade keine neuen Wörter: ${n} halb gelernte Wörter warten noch. Tippe auf "+", wenn du sie trotzdem willst.`,
+    newWordsSpent: 'Das heutige Kontingent an neuen Wörtern ist aufgebraucht.',
   },
   tabs: {
     learn: 'Lernen',
@@ -54,6 +57,7 @@ export default {
   },
   exam: {
     tag: 'Prüfung',
+    threshold: (pct: number) => `(Prüfung: ${pct}%)`,
     unlocked: 'Prüfung freigeschaltet!',
     unlockedCta: 'Prüfung Starten',
   },
@@ -86,6 +90,10 @@ export default {
     randomTopics: 'Zufällige Themen',
     weeklyGoal: 'Wöchentliches Lernziel',
     weeklyGoalHours: (h: string) => `${h} Stunden / Woche`,
+    weeklyGoalDoneTag: '✓ FERTIG',
+    missingVoice: (langs: string) => `⚠️ Keine installierte Stimme für: ${langs}. Lade sie in den Sprachausgabe-Einstellungen des Telefons herunter, bis dahin bleibt die App in dieser Sprache stumm.`,
+    weeklyGoalDone: 'Wochenziel erreicht!',
+    weeklyGoalDoneText: (h: string, goal: string) => `${h} Stunden Lernen diese Woche, dein Ziel waren ${goal}. Riesig!`,
     dailyNewLimit: 'Neue Wörter pro Tag',
     dailyNewLimitWords: (n: string) => `${n} Wörter / Tag`,
     spellingPractice: (n: number) => `Rechtschreibtraining (${n})`,

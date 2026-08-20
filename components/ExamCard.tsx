@@ -6,6 +6,7 @@ import { t } from '@/lib/i18n';
 import { levenshtein } from '@/lib/levenshtein';
 import { shuffleOptions, hashString } from '@/lib/shuffle';
 import { type ExamQuestion, type GapQuestion, type TranslateQuestion } from '@/data/exams';
+import { answerInputProps } from '@/lib/inputProps';
 
 interface Props {
   question: ExamQuestion;
@@ -102,8 +103,7 @@ function TranslateCard({ question, onResult, colors, s }: { question: TranslateQ
         onSubmitEditing={handleCheck}
         editable={!result}
         autoFocus
-        autoCapitalize="none"
-        autoCorrect={false}
+        {...answerInputProps}
       />
 
       {result && (

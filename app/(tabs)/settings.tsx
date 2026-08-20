@@ -22,14 +22,12 @@ import {
   DAILY_NEW_LIMIT_STEP,
 } from '@/lib/usageStats';
 import FeedbackButton from '@/components/FeedbackModal';
-import Constants from 'expo-constants';
+// FB82: version line in Settings, the same tag the feedback rows carry.
+import { appBuildTag } from '@/lib/appBuild';
+import { loadVoices, hasVoiceFor } from '@/lib/speech';
+import { languages } from '@/lib/languages';
 
-// FB82: version line in Settings. expoConfig carries app.json's version and the
-// Android versionCode, so no separate constant can drift out of sync.
-const appVersionLabel = `v${Constants.expoConfig?.version ?? '?'}` +
-  (Constants.expoConfig?.android?.versionCode != null
-    ? ` (${Constants.expoConfig.android.versionCode})`
-    : '');
+const appVersionLabel = appBuildTag();
 
 export default function SettingsScreen() {
   const { theme, override, setOverride } = useTheme();
@@ -55,6 +53,15 @@ export default function SettingsScreen() {
   // FB132: difficulty switches. Accents are the first one: off = the beginner
   // grader forgives a missing á/é/ñ, on = it counts as a mistake.
   const [strictAccents, setStrictAccents] = useState(false);
+  // FB147, Kálmán 2026-08-18: "legyen egy szöveg ami gratulál, hogy elértem a
+  // heti limitet ami a cél, valami hatalmas nagy. és a célnál írja is ki hogy
+  // kész zölddel". The goal stepper never said whether the goal was met, so the
+  // rolling 7-day total is read here too.
+  const [weekMinutes, setWeekMinutes] = useState(0);
+  // FB144: languages of this course the phone has no TTS voice for. Without the
+  // hint the learner only hears a wrong-language reading (or now, silence) and
+  // has no idea it is a missing system voice, not the app.
+  const [missingVoices, setMissingVoices] = useState<string[]>([]);
 
   useFocusEffect(
     useCallback(() => {
@@ -63,8 +70,15 @@ export default function SettingsScreen() {
       db.getRandomTopics().then(setRandomTopics);
       db.getStrictAccents().then(setStrictAccents);
       db.getWeeklyGoalMinutes().then(setWeeklyGoal);
+      db.getUsageStats().then(u => setWeekMinutes(u.thisWeek));
       db.getDailyNewLimit().then(setDailyNewLimit);
-      db.getOnboarding().then(o => { if (o) { setTarget(o.target); setDirection([o.source, o.target]); } });
+      db.getOnboarding().then(async o => {
+        if (!o) return;
+        setTarget(o.target);
+        setDirection([o.source, o.target]);
+        await loadVoices();
+        setMissingVoices([o.source, o.target].filter(code => !hasVoiceFor(code)));
+      });
       db.getLevel().then(l => setLevel(l.level as Level));
       db.getSpellingDueCount().then(setSpellingDue);
     }, [])
@@ -92,6 +106,13 @@ export default function SettingsScreen() {
     setPendingAction({ type: 'selectTopic' });
     router.push('/');
   };
+
+  // FB144: the language's own name for the hint ("Magyar"), not its code.
+  const voiceName = (code: string) => languages.find(l => l.code === code)?.name ?? code;
+
+  // FB147: reached is "this rolling week's minutes are at or over the goal",
+  // the same rule the Stats tab's goal card uses (lib/usageStats.ts).
+  const goalReached = weeklyGoal > 0 && weekMinutes >= weeklyGoal;
 
   // FB65: ± one hour per tap, clamped to the 1..35 h/week range.
   const handleWeeklyGoalChange = async (deltaMinutes: number) => {
@@ -271,6 +292,28 @@ export default function SettingsScreen() {
         <Switch value={randomTopics} onValueChange={handleRandomTopicsToggle} trackColor={{ true: colors.tint }} />
       </View>
 
+      {/* FB144: a course language with no installed voice, named so the fix
+          (install it in the phone's text-to-speech settings) is obvious. */}
+      {missingVoices.length > 0 && (
+        <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
+          <Text style={[styles.missingVoiceText, { color: '#EAB308' }]}>
+            {s.settings.missingVoice(missingVoices.map(voiceName).join(', '))}
+          </Text>
+        </View>
+      )}
+
+      {/* FB147: the congratulation for a reached weekly goal, as big as the
+          screen allows, right above the goal row it belongs to. */}
+      {goalReached && (
+        <View style={[styles.goalDoneCard, { backgroundColor: colors.card }]}>
+          <Text style={styles.goalDoneEmoji}>🏆</Text>
+          <Text style={styles.goalDoneTitle}>{s.settings.weeklyGoalDone}</Text>
+          <Text style={[styles.goalDoneText, { color: colors.text }]}>
+            {s.settings.weeklyGoalDoneText(String(Math.round(weekMinutes / 60)), String(Math.round(weeklyGoal / 60)))}
+          </Text>
+        </View>
+      )}
+
       {/* FB65: weekly study goal in whole hours, shown on the Stats tab. */}
       <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.weeklyGoal}</Text>
@@ -281,8 +324,9 @@ export default function SettingsScreen() {
           >
             <Text style={[styles.goalBtnText, { color: colors.tint }]}>−</Text>
           </Pressable>
-          <Text style={[styles.goalValue, { color: colors.text }]}>
+          <Text style={[styles.goalValue, { color: goalReached ? '#22C55E' : colors.text }]}>
             {s.settings.weeklyGoalHours(String(Math.round(weeklyGoal / 60)))}
+            {goalReached ? ` ${s.settings.weeklyGoalDoneTag}` : ''}
           </Text>
           <Pressable
             style={[styles.goalBtn, { borderColor: colors.tint }]}
@@ -560,6 +604,13 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   // FB65: −/+ stepper for the weekly goal row.
+  // FB147: the reached-goal congratulation, deliberately the biggest block on
+  // the Settings screen.
+  missingVoiceText: { fontSize: 13, lineHeight: 18, flex: 1 },
+  goalDoneCard: { borderRadius: 16, padding: 20, marginBottom: 12, alignItems: 'center', gap: 6 },
+  goalDoneEmoji: { fontSize: 56 },
+  goalDoneTitle: { fontSize: 26, fontWeight: '800', color: '#22C55E', textAlign: 'center' },
+  goalDoneText: { fontSize: 14, textAlign: 'center' },
   goalStepper: {
     flexDirection: 'row',
     alignItems: 'center',

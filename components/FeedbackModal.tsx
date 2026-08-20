@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import { StyleSheet, Text, View, Pressable, TextInput, Modal, PanResponder, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Pressable, TextInput, Modal, PanResponder, Dimensions, Keyboard } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
+import { feedbackBuildTag } from '@/lib/appBuild';
 
 const ENDPOINT = 'https://script.google.com/macros/s/AKfycbz2ziRYVpdLcQO1fI10CpbAO7l3bqUFZMxfwBTNxVsc19tRAfE8mGAg01JJscB2fRt6/exec';
 
@@ -51,12 +52,20 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
     if (!text.trim()) return;
     setSending(true);
 
+    // Kálmán 2026-08-20: "állítsd be úgy hogy ha feedbackeket kapsz akkor lásd,
+    // hogy melyik kártyáról és melyik verziójú kimachaból kapod". The card was
+    // already sent; the build is new. It goes out twice on purpose: `appVersion`
+    // is its own field for when the Apps Script grows a column, and the tag is
+    // prefixed to `currentCard` so it shows up in the CURRENT sheet, whose
+    // script only writes the five existing columns.
+    const build = feedbackBuildTag();
     const params = new URLSearchParams({
       timestamp: new Date().toISOString(),
       level,
       languagePair,
-      currentCard,
+      currentCard: `${build} · ${currentCard}`,
       feedbackText: text.trim(),
+      appVersion: build,
     });
 
     try {
@@ -90,7 +99,10 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
       </Modal>
 
       <Modal visible={visible} transparent animationType="fade">
-        <View style={styles.overlay}>
+        {/* FB143: the dimmed area around the box is the "beside" the learner
+            taps, so it closes the keyboard (the modal itself stays open, Cancel
+            closes that). */}
+        <Pressable style={styles.overlay} onPress={() => Keyboard.dismiss()}>
           <View style={[styles.modal, { backgroundColor: colors.card }]}>
             <Text style={[styles.modalTitle, { color: colors.text }]}>{s.feedback.button}</Text>
 
@@ -122,7 +134,7 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
               </Pressable>
             </View>
           </View>
-        </View>
+        </Pressable>
       </Modal>
     </>
   );

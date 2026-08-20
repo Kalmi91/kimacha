@@ -61,6 +61,25 @@ export function newWordWipCeiling(limit: number, bonus: number): number {
 }
 
 export function newWordIntake({ limit, bonus, startedToday, unlearned = 0 }: NewWordAllowance): number {
-  if (unlearned >= newWordWipCeiling(limit, bonus)) return 0;
-  return newWordsLeftToday({ limit, bonus, startedToday });
+  const left = newWordsLeftToday({ limit, bonus, startedToday });
+  if (unlearned < newWordWipCeiling(limit, bonus)) return left;
+  // FB140/FB142, Kálmán 2026-08-18: "5 új szóra kattintottak az A0 szinten és nem
+  // dobott fel többet hanem újra feldobta", "már rég óta 0 új szót ír de mintha
+  // újra és újra régi szavakat bedobna ismétlésre ... újakat nem tanulok ami
+  // viszont baj". The pause above is silent and self-sustaining: the half-learned
+  // pile only shrinks when those words graduate, and the "+N új szó" tap raised
+  // BOTH the budget and the ceiling, so the button could do nothing at all.
+  // A tap is an explicit demand, so the bonus passes the pause; the standing
+  // limit still waits for the congestion to clear.
+  return Math.min(left, bonus);
+}
+
+export type NewWordPause = 'none' | 'congested' | 'daily-limit';
+
+// Why the queue is not taking new words, for the screens that have to explain it
+// (FB141: the learner read the empty queue as "az a0 szint bugos").
+export function newWordPauseReason(allowance: NewWordAllowance): NewWordPause {
+  if (newWordIntake(allowance) > 0) return 'none';
+  if (newWordsLeftToday(allowance) <= 0) return 'daily-limit';
+  return 'congested';
 }

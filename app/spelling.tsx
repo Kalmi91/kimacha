@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
-import { StyleSheet, Text, View, Pressable, TextInput, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, Pressable, TextInput, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
-import * as Speech from 'expo-speech';
+import { speak as speakIn } from '@/lib/speech';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
@@ -12,6 +12,7 @@ import { charDiff, stripTrailingPunct } from '@/lib/charDiff';
 import { speechLang } from '@/lib/languages';
 import { spellingLadderDays } from '@/lib/spellingLadder';
 import FeedbackButton from '@/components/FeedbackModal';
+import { answerInputProps } from '@/lib/inputProps';
 
 // FB25/FB84: shared char diff, called with fold=false, spelling practice is
 // graded byte-for-byte, so case and accent differences must stay visible.
@@ -131,10 +132,11 @@ export default function SpellingScreen() {
     >
       <Text style={[styles.title, { color: colors.text }]}>{s.spelling.title}</Text>
 
-      <View style={[styles.card, { backgroundColor: colors.card }]}>
+      {/* FB143: tapping the card beside the field closes the keyboard. */}
+      <Pressable style={[styles.card, { backgroundColor: colors.card }]} onPress={() => Keyboard.dismiss()}>
         <View style={styles.frontRow}>
           <Text style={[styles.frontText, { color: colors.text }]}>{prompt}</Text>
-          <Pressable onPress={() => Speech.speak(prompt, { language: speechLang(native) })} style={styles.speakBtn}>
+          <Pressable onPress={() => speakIn(prompt, speechLang(native))} style={styles.speakBtn}>
             <Text style={styles.speakIcon}>🔊</Text>
           </Pressable>
         </View>
@@ -146,8 +148,7 @@ export default function SpellingScreen() {
           onSubmitEditing={result ? handleNext : handleCheck}
           editable={!result}
           autoFocus
-          autoCapitalize="none"
-          autoCorrect={false}
+          {...answerInputProps}
         />
 
         {result && (
@@ -169,7 +170,7 @@ export default function SpellingScreen() {
                 </Text>
                 <View style={styles.frontRow}>
                   <Text style={[styles.correctAnswer, { color: colors.tint }]}>{target}</Text>
-                  <Pressable onPress={() => Speech.speak(target, { language: speechLang(learned) })} style={styles.speakBtn}>
+                  <Pressable onPress={() => speakIn(target, speechLang(learned))} style={styles.speakBtn}>
                     <Text style={styles.speakIcon}>🔊</Text>
                   </Pressable>
                 </View>
@@ -177,7 +178,7 @@ export default function SpellingScreen() {
             )}
           </View>
         )}
-      </View>
+      </Pressable>
 
       <Pressable
         style={[styles.checkBtn, { backgroundColor: result === 'wrong' ? '#1D4ED8' : '#38BDF8' }]}

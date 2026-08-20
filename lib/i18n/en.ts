@@ -39,6 +39,9 @@ export default {
     moreNewWords: (n: number) => `+${n} new words`,
     nextTopicWords: 'New words from another topic',
     topicEmpty: 'This topic has no new words left, the rest is scheduled for later.',
+    sessionMix: (nw: number, rv: number) => `This round: ${nw} new words, ${rv} reviews.`,
+    newWordsCongested: (n: number) => `No new words right now: ${n} half-learned words are still waiting. Tap "+" if you want them anyway.`,
+    newWordsSpent: "Today's new-word budget is used up.",
   },
   tabs: {
     learn: 'Learn',
@@ -54,6 +57,7 @@ export default {
   },
   exam: {
     tag: 'Exam',
+    threshold: (pct: number) => `(exam: ${pct}%)`,
     unlocked: 'Exam unlocked!',
     unlockedCta: 'Start Exam',
   },
@@ -86,6 +90,10 @@ export default {
     randomTopics: 'Random Topics',
     weeklyGoal: 'Weekly study goal',
     weeklyGoalHours: (h: string) => `${h} hours / week`,
+    weeklyGoalDoneTag: '✓ DONE',
+    missingVoice: (langs: string) => `⚠️ No installed voice for: ${langs}. Download it in the phone's text-to-speech settings; until then the app stays silent in that language.`,
+    weeklyGoalDone: 'Weekly goal reached!',
+    weeklyGoalDoneText: (h: string, goal: string) => `${h} hours of study this week, your goal was ${goal}. Huge!`,
     dailyNewLimit: 'New words a day',
     dailyNewLimitWords: (n: string) => `${n} words / day`,
     spellingPractice: (n: number) => `Spelling Practice (${n})`,
