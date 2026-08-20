@@ -126,6 +126,15 @@ for (const w of levelCards) {
   nextOrder.set(w.topic, Math.max(nextOrder.get(w.topic) ?? 0, Number(w.topicOrder) || 0));
 }
 
+// A card whose topic id is not in the level's topic tree is invisible: the Learn
+// tab scopes every queue to a topic, so it would sit in the file forever without
+// ever being taught. Caught the hard way on 2026-08-20 ("cualidades", a typo for
+// a topic that only exists on the Spanish deck).
+const topicsPath = path.join(ROOT, 'data', 'topics', ...(branch ? [BRANCHES[branch]] : []), `${level.toLowerCase()}.json`);
+const knownTopics = fs.existsSync(topicsPath)
+  ? new Set(readJson(topicsPath).map((t) => t.id))
+  : null;
+
 const REQUIRED = ['es', 'hu', 'en', 'de', 'sentence_es', 'sentence_hu', 'sentence_en', 'sentence_de'];
 const candidates = readJson(path.resolve(input));
 const added = [];
@@ -136,6 +145,10 @@ for (const c of candidates) {
   const missing = REQUIRED.filter((f) => !String(c[f] ?? '').trim());
   if (missing.length) {
     skipped.push(`${c[headwordField] ?? c.es ?? '?'}: missing ${missing.join(', ')}`);
+    continue;
+  }
+  if (c.topic && knownTopics && !knownTopics.has(c.topic)) {
+    skipped.push(`${c[headwordField] ?? '?'}: unknown topic "${c.topic}" for ${branch ? `${branch}/` : ''}${level}`);
     continue;
   }
   const key = stripArticle(c[headwordField]);
