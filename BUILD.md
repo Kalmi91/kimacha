@@ -522,4 +522,7 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   (soft, sweet, wear, cheap, university, backpack…), a mondatok ezért a
   taught(A0∪A1) halmazon belülre lettek húzva, nem a szó került előrébb.
   Gate minden batch után: tsc 0, jest 228/228, audit-corpus es/en/hu P1=0/P2=0.
-  **Hátra az en ágon: A2 1 595 → ~2 000 (+405).**
+  **en A2: 390 → 802 kártya, 6 batch, kumulált A2 1 595 → 2 007** (sáv ~2 000 ✅).
+  Ezzel az ANGOL ág mindkét megírt sávja teljesítve: A0 100 / A1 1 105 / A2 802.
+  Hátra az en ágon: B1+ szint egyáltalán nincs megírva (se szó, se topic-fa), az
+  új szint-tervezés, nem szóbővítés.
