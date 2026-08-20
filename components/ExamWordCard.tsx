@@ -5,6 +5,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { levenshtein } from '@/lib/levenshtein';
 import { type ExamItem } from '@/lib/examBuilder';
+import { answerInputProps } from '@/lib/inputProps';
 
 type WordTypeItem = Extract<ExamItem, { kind: 'word_type' }>;
 
@@ -48,8 +49,7 @@ export default function ExamWordCard({ item, onResult }: Props) {
         onSubmitEditing={handleCheck}
         editable={!result}
         autoFocus
-        autoCapitalize="none"
-        autoCorrect={false}
+        {...answerInputProps}
       />
 
       {result && (

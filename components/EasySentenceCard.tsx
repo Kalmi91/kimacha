@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
-import * as Speech from 'expo-speech';
+import { StyleSheet, Text, View, Pressable, TextInput, Keyboard } from 'react-native';
+import { speak as speakIn, stop as stopSpeech } from '@/lib/speech';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
-import { sentenceBuildMatch } from '@/lib/answerMatch';
+import { sentenceBuildMatch, strictAnswerMatch } from '@/lib/answerMatch';
+import { answerInputProps } from '@/lib/inputProps';
 
 interface Props {
   sourceSentence: string;
@@ -17,9 +18,12 @@ interface Props {
   mistakeNote?: string | null;
   // FB118: speech locale of the learned language, so a placed tile can be heard.
   speechLocale?: string;
+  // FB146: the "write it too" practice grades with the same accent rule as the
+  // typing cards (Settings -> Difficulty).
+  strictAccents?: boolean;
 }
 
-export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, onBury, onSkip, mistakeNote, speechLocale }: Props) {
+export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, onBury, onSkip, mistakeNote, speechLocale, strictAccents = false }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
@@ -32,6 +36,16 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   // placed = bank indices, in the order the user tapped them.
   const [placed, setPlaced] = useState<number[]>([]);
   const [result, setResult] = useState<'correct' | 'wrong' | null>(null);
+  // FB146, Kálmán 2026-08-18 (sentence:"Como una galleta con leche."): "most ezt
+  // is le akarnám írni legyen egy ilyen opció a mondatok ál[t]... miután feljött".
+  // The same optional practice the word flashcard got in FB138, one card up: it
+  // opens only after the build was checked, hides the solution while the field is
+  // open, and stays open after a miss so the sentence can be typed again.
+  const [practiceOpen, setPracticeOpen] = useState(false);
+  const [practiceText, setPracticeText] = useState('');
+  const [practiceResult, setPracticeResult] = useState<'correct' | 'wrong' | null>(null);
+  const targetSentence = targetWords.join(' ');
+  const practiceHidesAnswer = practiceOpen && practiceResult !== 'correct';
 
   const usedSet = new Set(placed);
 
@@ -42,8 +56,8 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
     // szót amit betettem, hogy a kiejtést halljam". Only the single tile is
     // spoken, so the whole sentence is never given away.
     if (speechLocale) {
-      Speech.stop();
-      Speech.speak(bank[bankIdx], { language: speechLocale });
+      stopSpeech();
+      speakIn(bank[bankIdx], speechLocale);
     }
   };
 
@@ -60,12 +74,18 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
 
   const canCheck = placed.length > 0;
 
+  const checkPractice = () => {
+    setPracticeResult(strictAnswerMatch(practiceText, targetSentence, { strictAccents }) ? 'correct' : 'wrong');
+  };
+
   return (
     <View style={[styles.card, { backgroundColor: colors.card }]}>
       <Text style={[styles.sourceText, { color: colors.text }]}>{sourceSentence}</Text>
 
       <View style={[styles.placedArea, { borderColor: result === 'correct' ? '#22C55E' : result === 'wrong' ? '#EF4444' : colors.tabIconDefault, borderStyle: result === 'correct' ? 'solid' : 'dashed' }]}>
-        {placed.length === 0 ? (
+        {practiceHidesAnswer ? (
+          <Text style={[styles.placeholder, { color: colors.tabIconDefault }]}>✏️</Text>
+        ) : placed.length === 0 ? (
           <Text style={[styles.placeholder, { color: colors.tabIconDefault }]}>...</Text>
         ) : (
           <View style={styles.wordRow}>
@@ -78,8 +98,8 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
         )}
       </View>
 
-      {result === 'wrong' && (
-        <Text style={[styles.correctLine, { color: '#22C55E' }]}>{targetWords.join(' ')}</Text>
+      {result === 'wrong' && !practiceHidesAnswer && (
+        <Text style={[styles.correctLine, { color: '#22C55E' }]}>{targetSentence}</Text>
       )}
 
       {result === 'wrong' && mistakeNote ? (
@@ -100,6 +120,47 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
           )
         )}
       </View>
+
+      {result && !practiceOpen && (
+        <Pressable
+          style={[styles.typeItBtn, { borderColor: colors.tabIconDefault }]}
+          onPress={() => setPracticeOpen(true)}
+        >
+          <Text style={[styles.typeItText, { color: colors.tabIconDefault }]}>✏️ {s.card.typeIt}</Text>
+        </Pressable>
+      )}
+
+      {practiceOpen && (
+        <View style={styles.practiceRow}>
+          <TextInput
+            style={[styles.practiceInput, { color: colors.text, borderColor: colors.tabIconDefault }]}
+            placeholder={s.card.typeTranslation}
+            placeholderTextColor={colors.tabIconDefault}
+            value={practiceText}
+            onChangeText={(v) => {
+              setPracticeText(v);
+              // Editing after a miss clears the verdict, so the same field takes
+              // another try instead of ending on "wrong" (FB138's rule).
+              if (practiceResult) setPracticeResult(null);
+            }}
+            onSubmitEditing={checkPractice}
+            autoFocus
+            {...answerInputProps}
+          />
+          <Pressable
+            style={[styles.practiceCheckBtn, { backgroundColor: '#38BDF8' }]}
+            onPress={() => { Keyboard.dismiss(); checkPractice(); }}
+          >
+            <Text style={styles.checkBtnText}>✓</Text>
+          </Pressable>
+        </View>
+      )}
+
+      {practiceResult && (
+        <Text style={[styles.practiceResultText, { color: practiceResult === 'correct' ? '#22C55E' : '#EF4444' }]}>
+          {practiceResult === 'correct' ? s.card.correct : s.card.wrong}
+        </Text>
+      )}
 
       {!result ? (
         <Pressable
@@ -157,5 +218,12 @@ const styles = StyleSheet.create({
   nextBtn: { paddingHorizontal: 32, paddingVertical: 12, borderRadius: 14, marginTop: 8, alignSelf: 'center' },
   nextBtnText: { color: '#FFF', fontSize: 16, fontWeight: '700', textAlign: 'center' },
   buryBtn: { marginTop: 12, paddingHorizontal: 16, paddingVertical: 8 },
+  // FB146: the optional "write it too" practice under the tile build.
+  typeItBtn: { borderWidth: 1, borderRadius: 10, paddingHorizontal: 16, paddingVertical: 8, alignSelf: 'center' },
+  typeItText: { fontSize: 13, fontWeight: '600' },
+  practiceRow: { flexDirection: 'row', alignItems: 'center', gap: 8, width: '100%' },
+  practiceInput: { flex: 1, borderWidth: 1, borderRadius: 12, paddingHorizontal: 12, paddingVertical: 10, fontSize: 16 },
+  practiceCheckBtn: { paddingHorizontal: 16, paddingVertical: 10, borderRadius: 12 },
+  practiceResultText: { fontSize: 16, fontWeight: '700' },
   buryText: { fontSize: 13, color: '#94A3B8', fontWeight: '500' },
 });

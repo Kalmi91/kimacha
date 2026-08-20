@@ -148,9 +148,16 @@ export default function StatsScreen() {
             ]}
           />
         </View>
-        <Text style={[styles.goalStatus, { color: goal.behind ? '#EAB308' : '#22C55E' }]}>
-          {goal.behind ? s.stats.goalBehind(hours(goal.remaining)) : s.stats.goalReached}
-        </Text>
+        {/* FB147: a reached goal is the celebration, not a footnote, so it gets
+            the trophy and the big type. */}
+        {goal.behind ? (
+          <Text style={[styles.goalStatus, { color: '#EAB308' }]}>{s.stats.goalBehind(hours(goal.remaining))}</Text>
+        ) : (
+          <>
+            <Text style={styles.goalDoneEmoji}>🏆</Text>
+            <Text style={styles.goalDoneTitle}>{s.stats.goalReached}</Text>
+          </>
+        )}
       </View>
 
       <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.stats.last7Days}</Text>
@@ -308,6 +315,8 @@ const styles = StyleSheet.create({
     height: '100%',
     borderRadius: 5,
   },
+  goalDoneEmoji: { fontSize: 48, textAlign: 'center', marginTop: 4 },
+  goalDoneTitle: { fontSize: 24, fontWeight: '800', color: '#22C55E', textAlign: 'center' },
   goalStatus: {
     fontSize: 13,
     fontWeight: '600',

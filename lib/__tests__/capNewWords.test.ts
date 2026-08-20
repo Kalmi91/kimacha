@@ -1,4 +1,4 @@
-import { capNewWords, newWordsLeftToday, newWordIntake, newWordWipCeiling } from '@/lib/newWordBudget';
+import { capNewWords, newWordsLeftToday, newWordIntake, newWordWipCeiling, newWordPauseReason } from '@/lib/newWordBudget';
 
 // FB77: the daily new-word budget only trims brand-new WORD cards; reviews and
 // sentence cards must always survive, and the order must not change.
@@ -76,5 +76,40 @@ describe('newWordIntake', () => {
 
   it('exposes the ceiling it uses', () => {
     expect(newWordWipCeiling(10, 5)).toBe(30);
+  });
+});
+
+// FB140/FB142: a congested pause used to swallow the "+N új szó" tap as well,
+// so the button could be pressed forever without a single new word arriving.
+describe('newWordIntake under congestion', () => {
+  it('still pauses the standing limit while the backlog is over the ceiling', () => {
+    expect(newWordIntake({ limit: 5, bonus: 0, startedToday: 0, unlearned: 40 })).toBe(0);
+  });
+
+  it('honours an explicit bonus tap even while congested', () => {
+    expect(newWordIntake({ limit: 5, bonus: 5, startedToday: 0, unlearned: 40 })).toBe(5);
+  });
+
+  it('never hands out more than the day still allows', () => {
+    expect(newWordIntake({ limit: 5, bonus: 5, startedToday: 8, unlearned: 40 })).toBe(2);
+  });
+
+  it('the bonus runs out with the day, it does not reopen the pause', () => {
+    expect(newWordIntake({ limit: 5, bonus: 5, startedToday: 10, unlearned: 40 })).toBe(0);
+  });
+});
+
+describe('newWordPauseReason', () => {
+  it('reports no pause while new words flow', () => {
+    expect(newWordPauseReason({ limit: 5, bonus: 0, startedToday: 0, unlearned: 0 })).toBe('none');
+  });
+
+  it('separates the half-learned congestion from a spent daily budget', () => {
+    expect(newWordPauseReason({ limit: 5, bonus: 0, startedToday: 0, unlearned: 40 })).toBe('congested');
+    expect(newWordPauseReason({ limit: 5, bonus: 0, startedToday: 5, unlearned: 0 })).toBe('daily-limit');
+  });
+
+  it('calls a spent budget spent even when the backlog is also over the ceiling', () => {
+    expect(newWordPauseReason({ limit: 5, bonus: 0, startedToday: 5, unlearned: 40 })).toBe('daily-limit');
   });
 });

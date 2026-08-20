@@ -39,6 +39,9 @@ export default {
     moreNewWords: (n: number) => `+${n} palabras nuevas`,
     nextTopicWords: 'Palabras nuevas de otro tema',
     topicEmpty: 'Este tema no tiene palabras nuevas, el resto está programado para más tarde.',
+    sessionMix: (nw: number, rv: number) => `En esta ronda: ${nw} palabras nuevas, ${rv} repasos.`,
+    newWordsCongested: (n: number) => `Ahora no hay palabras nuevas: ${n} palabras a medio aprender siguen esperando. Pulsa "+" si aun así las quieres.`,
+    newWordsSpent: 'El cupo de palabras nuevas de hoy se ha agotado.',
   },
   tabs: {
     learn: 'Aprender',
@@ -54,6 +57,7 @@ export default {
   },
   exam: {
     tag: 'Examen',
+    threshold: (pct: number) => `(examen: ${pct}%)`,
     unlocked: '¡Examen desbloqueado!',
     unlockedCta: 'Comenzar Examen',
   },
@@ -86,6 +90,10 @@ export default {
     randomTopics: 'Temas aleatorios',
     weeklyGoal: 'Objetivo semanal de estudio',
     weeklyGoalHours: (h: string) => `${h} horas / semana`,
+    weeklyGoalDoneTag: '✓ LISTO',
+    missingVoice: (langs: string) => `⚠️ No hay voz instalada para: ${langs}. Descárgala en los ajustes de texto a voz del teléfono; hasta entonces la app no hablará en ese idioma.`,
+    weeklyGoalDone: '¡Meta semanal alcanzada!',
+    weeklyGoalDoneText: (h: string, goal: string) => `${h} horas de estudio esta semana, tu meta era ${goal}. ¡Enorme!`,
     dailyNewLimit: 'Palabras nuevas al día',
     dailyNewLimitWords: (n: string) => `${n} palabras / día`,
     spellingPractice: (n: number) => `Práctica de Ortografía (${n})`,

@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
-import { StyleSheet, Text, View, Pressable, ActivityIndicator, TextInput, KeyboardAvoidingView, Platform, ScrollView, Image } from 'react-native';
+import { StyleSheet, Text, View, Pressable, ActivityIndicator, TextInput, KeyboardAvoidingView, Platform, ScrollView, Image, Keyboard } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
 
@@ -8,12 +8,12 @@ import { useTheme } from '@/lib/ThemeContext';
 import { getDb } from '@/lib/database';
 import { type WordEntry, getWordsForLevel, getWordsForTopic, LEVELS, type Level } from '@/data/words';
 import { getTopicsForLevel, hasTopics, getTopicName, getSubLevelForTopic, getTopicsForSubLevel, getSubLevelName, type TopicDef } from '@/data/topics';
-import { t } from '@/lib/i18n';
+import { t, stringsFor } from '@/lib/i18n';
 import { strictAnswerMatch } from '@/lib/answerMatch';
 import { nearMissDistractors } from '@/lib/distractors';
 import { consumePendingAction } from '@/lib/pendingAction';
 import { DAILY_NEW_BONUS_STEP } from '@/lib/usageStats';
-import { capNewWords, newWordsLeftToday, newWordIntake } from '@/lib/newWordBudget';
+import { capNewWords, newWordsLeftToday, newWordIntake, newWordPauseReason, type NewWordAllowance, type NewWordPause } from '@/lib/newWordBudget';
 import { borrowNewWords, countNewWords, nextTopicWithNewWords } from '@/lib/topicRotation';
 import { wordPhase, phaseShape, type WordPhase } from '@/lib/wordPhase';
 import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
@@ -23,13 +23,14 @@ import { charDiff } from '@/lib/charDiff';
 import { cardIcon } from '@/lib/cardIcons';
 import { cardImage } from '@/lib/cardImages';
 import FeedbackButton from '@/components/FeedbackModal';
-import * as Speech from 'expo-speech';
+import { speak as speakIn, loadVoices } from '@/lib/speech';
 import ExamMode from '@/components/ExamMode';
 import DoneScreen from '@/components/DoneScreen';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import ProgressMeter from '@/components/ProgressMeter';
 import { languages, speechLang } from '@/lib/languages';
 import { getExamQuestionsFor } from '@/data/exams';
+import { answerInputProps } from '@/lib/inputProps';
 
 const f = fsrs();
 
@@ -77,6 +78,14 @@ export default function LearnScreen() {
   // where the session ends with nothing on offer, see lib/topicRotation.ts.
   const [newWordsInTopic, setNewWordsInTopic] = useState(0);
   const [nextTopicId, setNextTopicId] = useState<string | null>(null);
+  // FB142, Kálmán 2026-08-18: "valahogy jelölje az app, hogy mennyi szó van és
+  // mennyi ismétlődik ... már rég óta 0 új szót ír de mintha újra és újra régi
+  // szavakat bedobna ismétlésre". The queue's own split (new vs review), the
+  // half-learned pile behind a pause, and the reason for the pause, so the Done
+  // screen can say what the session was made of and why.
+  const [sessionMix, setSessionMix] = useState<{ newWords: number; reviews: number }>({ newWords: 0, reviews: 0 });
+  const [unlearnedCount, setUnlearnedCount] = useState(0);
+  const [pauseReason, setPauseReason] = useState<NewWordPause>('none');
   const [headerBottom, setHeaderBottom] = useState(HEADER_RESERVE_MIN);
   const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
   const [typedAnswer, setTypedAnswer] = useState('');
@@ -193,6 +202,19 @@ export default function LearnScreen() {
         activeTopic?.id ?? null,
       ),
     );
+  };
+
+  // FB142: what this queue actually holds, and why it holds no new words. Runs
+  // on both queue builds, right after the final item list exists, so the Done
+  // screen never has to recompute it.
+  const applyQueueSupply = (items: DueItem[], budget: NewWordAllowance) => {
+    const isNew = (item: DueItem) => item.type === 'word' && item.card.reps === 0;
+    setSessionMix({
+      newWords: items.filter(isNew).length,
+      reviews: items.filter(item => !isNew(item)).length,
+    });
+    setUnlearnedCount(budget.unlearned ?? 0);
+    setPauseReason(newWordPauseReason(budget));
   };
 
   // FB139, Kálmán 2026-08-17: "ha 15 új szót kell beadni ... és a témakörből,
@@ -349,6 +371,7 @@ export default function LearnScreen() {
       ? await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL)
       : await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
     const items = applyCadence(capNewWords(buildQueue(rows, learned), intake), wordsOnly, learned);
+    applyQueueSupply(items, budget);
 
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
@@ -389,6 +412,9 @@ export default function LearnScreen() {
   };
 
   useEffect(() => {
+    // FB144: learn which voices the phone owns before the first card speaks,
+    // otherwise the opening word can still go out in the wrong voice.
+    loadVoices();
     // eslint-disable-next-line react-hooks/set-state-in-effect
     loadCards();
   }, []);
@@ -474,11 +500,11 @@ export default function LearnScreen() {
     // user must assemble, so only its native prompt is spoken, never the solution.
     if (current.isEasySentence) {
       const prompt = String(current.word[`sentence_${native}`] ?? '');
-      if (prompt) Speech.speak(prompt, { language: speechLang(native) });
+      if (prompt) speakIn(prompt, speechLang(native));
       return;
     }
     const { front, frontLang } = getFrontBack(current);
-    if (front) Speech.speak(front, { language: speechLang(frontLang) });
+    if (front) speakIn(front, speechLang(frontLang));
     // wordId + phase in the deps: a requeued card (FB109 ladder, FB43 skip) lands
     // at the SAME index in a same-length queue, so index alone would stay silent.
   }, [currentIndex, queue.length, loading, done, current?.wordId, current?.isTyping]);
@@ -561,7 +587,6 @@ export default function LearnScreen() {
       }
 
       if (topicProgress && completedCount > topicProgress.done && activeTopic) {
-        const s = t();
         const lang = direction[1] === 'hu' ? 'hu' : direction[1] === 'es' ? 'es' : direction[1] === 'de' ? 'de' : 'en';
         // Free ordering: the just-finished topic is the one the user was
         // studying, not the last one by order.
@@ -574,10 +599,16 @@ export default function LearnScreen() {
           const closesSubLevel = sub && subTopics.length > 0 && subTopics.every(st =>
             isTopicMastered(getWordsForTopic(currentLevel, st.id, learned).map(w => w.id), stateMap),
           );
+          // FB148, Kálmán 2026-08-18: "nézd meg, hogy a felugró üzenetek, mindig
+          // azon a nyelven vannak e amin a játékos tanul". The milestone toasts
+          // already greet in the learned language (FB63); this celebration was
+          // the odd one out, it came in the phone's interface language. The
+          // sub-level NAME keeps whatever language it had here.
+          const celebrate = stringsFor(learned);
           setTopicCompleteMsg(
             closesSubLevel
-              ? `${s.topic.complete}\n${s.subLevel.complete(sub.id, getSubLevelName(sub, lang))}`
-              : s.topic.complete,
+              ? `${celebrate.topic.complete}\n${celebrate.subLevel.complete(sub.id, getSubLevelName(sub, lang))}`
+              : celebrate.topic.complete,
           );
           setTimeout(() => setTopicCompleteMsg(null), 3000);
         }
@@ -629,6 +660,7 @@ export default function LearnScreen() {
 
     const wordsOnly2 = await db.getWordsOnly();
     const newItems = applyCadence(capNewWords(buildQueue(newRows, learned), intake2), wordsOnly2, learned);
+    applyQueueSupply(newItems, budget2);
 
     if (newItems.length === 0) {
       setDone(true);
@@ -801,10 +833,10 @@ export default function LearnScreen() {
   const speakSkippedAnswer = (item: DueItem) => {
     const learned = direction[1];
     const { back, backLang } = getFrontBack(item);
-    if (back) Speech.speak(back, { language: speechLang(backLang) });
+    if (back) speakIn(back, speechLang(backLang));
     if (item.type !== 'word') return;
     const sentence = String(item.word[`sentence_${learned}`] ?? '');
-    if (sentence) Speech.speak(sentence, { language: speechLang(learned) });
+    if (sentence) speakIn(sentence, speechLang(learned));
   };
 
   const handleCheck = () => {
@@ -834,7 +866,7 @@ export default function LearnScreen() {
     // FB64: the recognition fallback is gone, so the answer is always read out
     // loud on reveal (nothing can cover the card any more).
     const { backLang } = getFrontBack(current);
-    Speech.speak(back, { language: speechLang(backLang) });
+    speakIn(back, speechLang(backLang));
   };
 
   // FB60: grade a card Again without leaving the current session queue. Mirrors
@@ -969,6 +1001,9 @@ export default function LearnScreen() {
         onMoreNewWords={handleMoreNewWords}
         newWordsInTopic={newWordsInTopic}
         onNextTopicWords={nextTopicId ? handleNextTopicWords : undefined}
+        sessionMix={sessionMix}
+        unlearnedCount={unlearnedCount}
+        pauseReason={pauseReason}
       />
     );
   }
@@ -977,7 +1012,7 @@ export default function LearnScreen() {
   const isWord = current.type === 'word';
 
   const speakTarget = () => {
-    Speech.speak(back, { language: speechLang(backLang) });
+    speakIn(back, speechLang(backLang));
   };
 
   // Topic and sub-level names are interface text, so they follow the learner's
@@ -1168,6 +1203,7 @@ export default function LearnScreen() {
           style={styles.typingScroll}
           contentContainerStyle={[styles.typingScrollContent, { paddingTop: headerBottom }]}
           keyboardShouldPersistTaps="handled"
+          keyboardDismissMode="on-drag"
         >
         {topicHeader}
         {progressMeter}
@@ -1190,6 +1226,7 @@ export default function LearnScreen() {
           onSkip={requeueCurrent}
           mistakeNote={noteText}
           speechLocale={speechLang(learned)}
+          strictAccents={strictAccents}
         />
         </ScrollView>
         <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`easy:${nativeSentence}`} />
@@ -1219,17 +1256,22 @@ export default function LearnScreen() {
           style={styles.typingScroll}
           contentContainerStyle={[styles.typingScrollContent, { paddingTop: headerBottom }]}
           keyboardShouldPersistTaps="handled"
+          keyboardDismissMode="on-drag"
         >
         {topicHeader}
         {progressMeter}
         {examBanner}
         {borrowedBanner}
 
-        <View style={[styles.card, { backgroundColor: colors.card }]}>
+        {/* FB143, Kálmán 2026-08-19: "nem megy le a billentyűzet ha félre
+            kattintok". The card is the area beside the field, so a tap on it
+            closes the keyboard; the ✓ button and the speaker keep working,
+            they handle their own press. */}
+        <Pressable style={[styles.card, { backgroundColor: colors.card }]} onPress={() => Keyboard.dismiss()}>
           <View style={[styles.frontRow, { marginBottom: 16 }]}>
             {iconBadge}
             <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
-            <Pressable onPress={() => Speech.speak(front, { language: speechLang(frontLang) })} style={styles.speakBtn}>
+            <Pressable onPress={() => speakIn(front, speechLang(frontLang))} style={styles.speakBtn}>
               <Text style={styles.speakIcon}>🔊</Text>
             </Pressable>
             {noteButton}
@@ -1251,8 +1293,7 @@ export default function LearnScreen() {
               onSubmitEditing={revealed ? handleTypingNext : handleCheck}
               editable={!revealed}
               autoFocus
-              autoCapitalize="none"
-              autoCorrect={false}
+              {...answerInputProps}
             />
             <Pressable
               style={[styles.inlineCheckBtn, { backgroundColor: revealed && typingResult === 'wrong' ? '#1D4ED8' : '#38BDF8' }]}
@@ -1287,7 +1328,7 @@ export default function LearnScreen() {
               </View>
             </View>
           )}
-        </View>
+        </Pressable>
 
         {!revealed ? (
           <View style={styles.buttons}>
@@ -1366,6 +1407,7 @@ export default function LearnScreen() {
         style={styles.typingScroll}
         contentContainerStyle={[styles.typingScrollContent, { paddingTop: headerBottom }]}
         keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
       >
       {topicHeader}
       {progressMeter}
@@ -1375,17 +1417,20 @@ export default function LearnScreen() {
       <Pressable
         style={[styles.card, { backgroundColor: colors.card }]}
         onPress={() => {
+          // FB143: a tap beside the practice field closes the keyboard instead
+          // of doing nothing.
+          if (practiceTyping) { Keyboard.dismiss(); return; }
           if (!revealed) {
             setRevealed(true);
             // FB116: read the answer in whichever language it is, English included.
-            Speech.speak(back, { language: speechLang(backLang) });
+            speakIn(back, speechLang(backLang));
           }
         }}
       >
         <View style={styles.frontRow}>
           {iconBadge}
           <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
-          <Pressable onPress={() => Speech.speak(front, { language: speechLang(frontLang) })} style={styles.speakBtn}>
+          <Pressable onPress={() => speakIn(front, speechLang(frontLang))} style={styles.speakBtn}>
             <Text style={styles.speakIcon}>🔊</Text>
           </Pressable>
           {noteButton}
@@ -1431,8 +1476,7 @@ export default function LearnScreen() {
                     }}
                     onSubmitEditing={checkPractice}
                     autoFocus
-                    autoCapitalize="none"
-                    autoCorrect={false}
+                    {...answerInputProps}
                   />
                   <Pressable style={[styles.inlineCheckBtn, { backgroundColor: '#38BDF8' }]} onPress={checkPractice}>
                     <Text style={styles.inlineCheckText}>✓</Text>

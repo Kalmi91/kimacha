@@ -6,6 +6,7 @@ import { type Level } from '@/data/words';
 import { type TopicDef, getTopicName, getSubLevelForTopic, getTopicsForSubLevel, getSubLevelName } from '@/data/topics';
 import FeedbackButton from '@/components/FeedbackModal';
 import { DAILY_NEW_BONUS_STEPS } from '@/lib/usageStats';
+import { type NewWordPause } from '@/lib/newWordBudget';
 import { useRouter } from 'expo-router';
 
 interface TopicProgress {
@@ -37,9 +38,15 @@ interface Props {
   // next topic instead of "+N new words".
   newWordsInTopic?: number;
   onNextTopicWords?: () => void;
+  // FB142: what the finished queue was made of, how many half-learned words are
+  // waiting behind a pause, and why the pause is on. Without this the learner
+  // only saw repeats and read it as a broken level ("az a0 szint bugos", FB141).
+  sessionMix?: { newWords: number; reviews: number };
+  unlearnedCount?: number;
+  pauseReason?: NewWordPause;
 }
 
-export default function DoneScreen({ reviewed, streak, level, masteredPct, direction, onStartExam, examAvailable, currentTopic, topicProgress, newWordsLeft, newWordsPaused, onMoreNewWords, newWordsInTopic, onNextTopicWords }: Props) {
+export default function DoneScreen({ reviewed, streak, level, masteredPct, direction, onStartExam, examAvailable, currentTopic, topicProgress, newWordsLeft, newWordsPaused, onMoreNewWords, newWordsInTopic, onNextTopicWords, sessionMix, unlearnedCount = 0, pauseReason = 'none' }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
@@ -64,6 +71,23 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
       <Text style={[styles.subtitle, { color: colors.tabIconDefault }]}>
         {s.done.reviewed(reviewed)}
       </Text>
+      {/* FB142: name the split instead of leaving "why was this all repeats?"
+          to guesswork, and say what holds the new words back. */}
+      {sessionMix && (
+        <Text style={[styles.mixText, { color: colors.tabIconDefault }]}>
+          {s.done.sessionMix(sessionMix.newWords, sessionMix.reviews)}
+        </Text>
+      )}
+      {pauseReason === 'congested' && (
+        <Text style={[styles.mixText, { color: colors.accent }]}>
+          {s.done.newWordsCongested(unlearnedCount)}
+        </Text>
+      )}
+      {pauseReason === 'daily-limit' && (
+        <Text style={[styles.mixText, { color: colors.tabIconDefault }]}>
+          {s.done.newWordsSpent}
+        </Text>
+      )}
       <View style={[styles.levelBadge, { backgroundColor: '#38BDF8' }]}>
         <Text style={styles.levelText}>{level}</Text>
       </View>
@@ -142,12 +166,14 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
         <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
         <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>{s.done.streak}</Text>
       </View>
+      {/* FB148: these two were hardcoded Hungarian, so an English or Spanish
+          interface still said "vizsga". */}
       <Text style={[styles.masteredText, { color: masteredPct >= 80 ? '#22C55E' : colors.tabIconDefault }]}>
-        {level}: {masteredPct}% {masteredPct < 80 ? '(vizsga: 80%)' : '✓'}
+        {level}: {masteredPct}% {masteredPct < 80 ? s.exam.threshold(80) : '✓'}
       </Text>
       {examAvailable && (
         <Pressable style={[styles.examBtn, { backgroundColor: colors.accent, marginTop: 20 }]} onPress={onStartExam}>
-          <Text style={styles.examBtnText}>🎓 Vizsga</Text>
+          <Text style={styles.examBtnText}>🎓 {s.exam.tag}</Text>
         </Pressable>
       )}
       <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="done" />
@@ -159,7 +185,8 @@ const styles = StyleSheet.create({
   container: { flex: 1, padding: 20, justifyContent: 'center' },
   doneEmoji: { fontSize: 64, textAlign: 'center', marginBottom: 16 },
   title: { fontSize: 28, fontWeight: '700', textAlign: 'center', marginBottom: 8 },
-  subtitle: { fontSize: 16, textAlign: 'center', marginBottom: 24 },
+  subtitle: { fontSize: 16, textAlign: 'center', marginBottom: 8 },
+  mixText: { fontSize: 13, textAlign: 'center', marginBottom: 8, paddingHorizontal: 8 },
   levelBadge: { paddingHorizontal: 20, paddingVertical: 8, borderRadius: 12, alignSelf: 'center' },
   levelText: { color: '#FFF', fontSize: 24, fontWeight: '800' },
   streakBadge: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 12, paddingVertical: 6, borderRadius: 16, gap: 4, alignSelf: 'center' },

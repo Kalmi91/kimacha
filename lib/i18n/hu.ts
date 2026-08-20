@@ -39,6 +39,9 @@ export default {
     moreNewWords: (n: number) => `+${n} új szó`,
     nextTopicWords: 'Új szavak másik témából',
     topicEmpty: 'Ebben a témában most nincs új szó, a többi már későbbre van ütemezve.',
+    sessionMix: (nw: number, rv: number) => `Ebben a körben: ${nw} új szó, ${rv} ismétlés.`,
+    newWordsCongested: (n: number) => `Most nincs új szó: ${n} félig tanult szó vár még. Ha mégis kérsz, nyomd meg a "+" gombot.`,
+    newWordsSpent: 'A mai új szó keret elfogyott.',
   },
   tabs: {
     learn: 'Tanulás',
@@ -54,6 +57,7 @@ export default {
   },
   exam: {
     tag: 'Vizsga',
+    threshold: (pct: number) => `(vizsga: ${pct}%)`,
     unlocked: 'Vizsga feloldva!',
     unlockedCta: 'Vizsga Megkezdése',
   },
@@ -86,6 +90,10 @@ export default {
     randomTopics: 'Random témák',
     weeklyGoal: 'Heti tanulási cél',
     weeklyGoalHours: (h: string) => `${h} óra / hét`,
+    weeklyGoalDoneTag: '✓ KÉSZ',
+    missingVoice: (langs: string) => `⚠️ Nincs telepítve hang ehhez a nyelvhez: ${langs}. A telefon beszéd (TTS) beállításaiban töltsd le, addig ezt a nyelvet nem mondja ki az app.`,
+    weeklyGoalDone: 'Megvan a heti célod!',
+    weeklyGoalDoneText: (h: string, goal: string) => `${h} óra tanulás ezen a héten, a célod ${goal} óra volt. Óriási!`,
     dailyNewLimit: 'Napi új szó',
     dailyNewLimitWords: (n: string) => `${n} szó / nap`,
     spellingPractice: (n: number) => `Helyesírás-gyakorló (${n})`,
