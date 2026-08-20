@@ -473,4 +473,9 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   mostantól viszi a buildet is (`lib/appBuild.ts`, `v3.0.30 (30) · word:brother`
   a `Current Card` oszlopban + külön `appVersion` mező a jövőbeli sheet-oszlopnak).
   Gate: tsc 0, jest **228/228** (212→228), audit-corpus es/en/hu P1=0/P2=0,
-  lint 17 (alapvonal 18). ⏳ APK-build + Drive-deploy + eszköz-verify: FB140-148.
+  lint 17 (alapvonal 18). **APK 3.0.31 (versionCode 31) buildelve + Drive-ra töltve**
+  (`kimacha-a1-release.apk`, 104 207 497 byte, SIZE_MATCH, FILE_ID
+  `1SwZFdG5mLk1-Bh29G6HVQjNKmZTxdCiQ`); a Hermes-bundle friss, benne az új stringek
+  (`Ebben a körben`, `Nincs telepítve`, `✓ KÉSZ`, `appVersion`), tehát nem a 3.0.30
+  JS-e. A `strings` parancs a többbájtos találatokat szétvágja, ezért a bundle-ellenőrzés
+  nyers bájt-kereséssel megbízhatóbb (utf-16-le + utf-8). ⏳ Eszköz-verify: FB140-148.
