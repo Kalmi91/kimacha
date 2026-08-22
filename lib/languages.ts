@@ -23,9 +23,11 @@ export function isPairSupported(source: string, target: string): boolean {
   return supportedPairs.some(([s, t]) => s === source && t === target);
 }
 
-// Full BCP-47 locales for text-to-speech. Native TTS engines (iOS/Android) pick
-// the right voice far more reliably from a region-qualified tag than from a bare
-// 2-letter code, so Hungarian text is read by a Hungarian voice, etc.
+// Full BCP-47 locales for text-to-speech, i.e. what iOS wants. Android cannot
+// take these as they are: expo-speech feeds the string to `Locale(...)`, which
+// reads "hu-HU" as a language named "hu-hu" and then falls back to the device
+// default voice (FB144). `lib/speech.ts` narrows the tag per platform, so speak
+// through that module, never through expo-speech directly.
 const SPEECH_LOCALE: Record<string, string> = {
   es: 'es-ES',
   hu: 'hu-HU',
