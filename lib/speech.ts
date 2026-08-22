@@ -31,7 +31,7 @@ import { Platform } from 'react-native';
 import * as Speech from 'expo-speech';
 
 let voiceLanguages: Set<string> | null = null;
-let voiceByLanguage: Map<string, string> | null = null;
+let voicesByLanguage: Map<string, Speech.Voice[]> | null = null;
 let loading: Promise<void> | null = null;
 const missing = new Set<string>();
 
@@ -40,11 +40,18 @@ function baseLanguage(tag: string): string {
   return tag.toLowerCase().split(/[-_]/)[0].slice(0, 2);
 }
 
-// An enhanced voice beats a default one; among equals the first wins, which is
-// the order the engine itself reports.
-function betterVoice(a: Speech.Voice, b: Speech.Voice): Speech.Voice {
-  const enhanced = (v: Speech.Voice) => String(v.quality ?? '').toLowerCase() === 'enhanced';
-  return enhanced(b) && !enhanced(a) ? b : a;
+// 'hu-HU', 'hu_HU' → 'hu-hu'
+function normalizeTag(tag: string): string {
+  return String(tag ?? '').toLowerCase().replace(/_/g, '-');
+}
+
+function isEnhanced(voice: Speech.Voice): boolean {
+  return String(voice.quality ?? '').toLowerCase() === 'enhanced';
+}
+
+// Enhanced beats default; among equals the engine's own order wins.
+function pickBest(voices: Speech.Voice[]): Speech.Voice | undefined {
+  return voices.find(isEnhanced) ?? voices[0];
 }
 
 export async function loadVoices(): Promise<void> {
@@ -53,25 +60,23 @@ export async function loadVoices(): Promise<void> {
     try {
       const voices = (await Speech.getAvailableVoicesAsync()) ?? [];
       const languages = new Set<string>();
-      const best = new Map<string, Speech.Voice>();
+      const byLanguage = new Map<string, Speech.Voice[]>();
       for (const voice of voices) {
         const lang = baseLanguage(String(voice.language ?? ''));
         if (!lang) continue;
+        // A voice with no identifier still proves the language exists, it just
+        // cannot be pinned, so it counts for hasVoiceFor and not for voiceIdFor.
         languages.add(lang);
-        const current = best.get(lang);
-        best.set(lang, current ? betterVoice(current, voice) : voice);
+        if (String(voice.identifier ?? '')) {
+          byLanguage.set(lang, [...(byLanguage.get(lang) ?? []), voice]);
+        }
       }
       // An empty list means "the platform did not tell us", not "no voices".
       voiceLanguages = languages.size > 0 ? languages : null;
-      const ids = new Map<string, string>();
-      for (const [lang, voice] of best) {
-        const id = String(voice.identifier ?? '');
-        if (id) ids.set(lang, id);
-      }
-      voiceByLanguage = ids.size > 0 ? ids : null;
+      voicesByLanguage = byLanguage.size > 0 ? byLanguage : null;
     } catch {
       voiceLanguages = null;
-      voiceByLanguage = null;
+      voicesByLanguage = null;
     } finally {
       loading = null;
     }
@@ -97,8 +102,16 @@ export function speechTag(locale: string): string {
   return Platform.OS === 'android' ? baseLanguage(locale) : locale;
 }
 
+// The REGION matters as much as the language: a Mexican learner asking for
+// es-MX must not be handed the Castilian voice just because it came first in the
+// list. Exact region wins, then any voice of the same language.
 export function voiceIdFor(locale: string): string | undefined {
-  return voiceByLanguage?.get(baseLanguage(locale));
+  const candidates = voicesByLanguage?.get(baseLanguage(locale));
+  if (!candidates?.length) return undefined;
+  const wanted = normalizeTag(locale);
+  const sameRegion = candidates.filter(v => normalizeTag(String(v.language ?? '')) === wanted);
+  const voice = pickBest(sameRegion.length ? sameRegion : candidates);
+  return voice ? String(voice.identifier) : undefined;
 }
 
 export function speak(text: string, locale: string, options: Speech.SpeechOptions = {}): void {
@@ -122,7 +135,7 @@ export function stop(): void {
 // Tests only: forget the cached voice list.
 export function resetVoiceCache(): void {
   voiceLanguages = null;
-  voiceByLanguage = null;
+  voicesByLanguage = null;
   loading = null;
   missing.clear();
 }
