@@ -39,6 +39,12 @@ describe('languages', () => {
       expect(speechLang('en')).toBe('en-US');
     });
 
+    // Kálmán 2026-08-22: the Spanish course is for Mexico, so the voice must be
+    // Mexican and not Castilian (no "th" for c/z).
+    it('speaks Mexican Spanish, not Castilian', () => {
+      expect(speechLang('es')).toBe('es-MX');
+    });
+
     it('falls back to the bare code when unknown', () => {
       expect(speechLang('xx')).toBe('xx');
     });
