@@ -147,6 +147,17 @@ for (const c of candidates) {
     skipped.push(`${c[headwordField] ?? c.es ?? '?'}: missing ${missing.join(', ')}`);
     continue;
   }
+  // Two language fields carrying the SAME string is almost always a draft slip:
+  // the author left the Hungarian word in the Spanish column (caught on the hu
+  // branch 2026-08-20: "ritkán", "kétezer", "nem szabad"). Real cognates that
+  // repeat across languages are rare enough to fix by hand.
+  const sameFields = ['es', 'hu', 'en', 'de'].flatMap((a, i, all) =>
+    all.slice(i + 1).filter((b) => String(c[a]).trim().toLowerCase() === String(c[b]).trim().toLowerCase()).map((b) => `${a}=${b}`)
+  );
+  if (sameFields.length) {
+    skipped.push(`${c[headwordField] ?? '?'}: identical fields (${sameFields.join(', ')}), likely a wrong-language cell`);
+    continue;
+  }
   if (c.topic && knownTopics && !knownTopics.has(c.topic)) {
     skipped.push(`${c[headwordField] ?? '?'}: unknown topic "${c.topic}" for ${branch ? `${branch}/` : ''}${level}`);
     continue;

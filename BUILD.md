@@ -526,3 +526,18 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   Ezzel az ANGOL ág mindkét megírt sávja teljesítve: A0 100 / A1 1 105 / A2 802.
   Hátra az en ágon: B1+ szint egyáltalán nincs megírva (se szó, se topic-fa), az
   új szint-tervezés, nem szóbővítés.
+- **2026-08-20 (folytatás, „bővítsd a szavakat és tesztelj")**: **magyar ág A1 sáv
+  ZÁRVA**. hu A1 777 → 1 103 kártya, 6 batch, kumulált A1 877 → **1 203** (sáv
+  ~1 200 ✅). A `--branch hu` kapcsoló ugyanazon az úton ment, mint az en ág.
+  Tanulság: az ELSŐ batch 71-ből 42-t eldobott (a hu ág már tanította őket), ezért
+  a második batchtől a teljes tanított hu fejszó-lista (906 szó) elé volt húzva a
+  válogatás, onnantól a skip-arány ~0%. A hu-audit (`sentence_hu ⊆ taught`) 5
+  mondatot fogott (friss, száraz, utazom, kelek, út) — ezek közül a hiányzó szavak
+  egy része külön kártyaként ment be, a többi mondat lett visszahúzva.
+  Adat-higiénia: 3 kártyán magyar szó maradt a SPANYOL mezőben (ritkán, kétezer,
+  nem szabad) — javítva; érdemes a `validate_words.py`-ba egy „es-mező nem lehet
+  azonos a hu-mezővel" ellenőrzés.
+  Gate: tsc 0, jest 228/228, audit-corpus es/en/hu P1=0/P2=0, lint 17 (alapvonal 18).
+  **Állás mindhárom ágon: es kumulált C1 4 004 ✅ / en A1 1 205 + A2 2 007 ✅ /
+  hu A1 1 203 ✅. Hátra: hu A2+ és en B1+ szint-TERVEZÉS (topic-fa nincs), nem
+  szóbővítés.**
