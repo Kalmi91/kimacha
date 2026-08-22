@@ -29,7 +29,11 @@ export function isPairSupported(source: string, target: string): boolean {
 // default voice (FB144). `lib/speech.ts` narrows the tag per platform, so speak
 // through that module, never through expo-speech directly.
 const SPEECH_LOCALE: Record<string, string> = {
-  es: 'es-ES',
+  // Kálmán 2026-08-22: Mexican Spanish, not Castilian. He is learning for CDMX,
+  // and the deck teaches both variants anyway (coche AND carro, móvil AND
+  // celular). A phone without an es-MX voice falls back to the best Spanish
+  // voice it has, see voiceIdFor in lib/speech.ts.
+  es: 'es-MX',
   hu: 'hu-HU',
   en: 'en-US',
   de: 'de-DE',
