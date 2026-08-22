@@ -1995,6 +1995,36 @@ olvassa fel a magyar szót. Rossz nyelvű felolvasás rossz kiejtést tanít, ez
 - Beállítások: sárga sor nevesíti a hiányzó hangot („Nincs telepítve hang ehhez a
   nyelvhez: Magyar…"), mert ez telefon-beállítás, nem app-hiba. 6 teszt.
 
+### ⚠️ FB144 MÁSODIK KÖR (2026-08-22), a fenti diagnózis HIÁNYOS volt
+Kálmán visszakérdezett („a magyar szavakat is angolul ejtette ki, ez javítva lett?"),
+és a valódi ok az `expo-speech` 56.0.3 Android-moduljában van
+(`node_modules/expo-speech/android/.../SpeechModule.kt`, `speakOut`):
+
+    textToSpeech.language = options.language?.let {
+      val locale = Locale(it)                    // Locale("hu-HU"), NEM forLanguageTag!
+      ... isLanguageAvailable(locale) ... else Locale.getDefault()
+
+A `Locale("hu-HU")` nem BCP-47 elemzés: a NYELV maga a `"hu-hu"` string lesz, a
+`getISO3Language()` erre `MissingResourceException`-t dob (JDK 17-en lemérve), az
+Android ebből `LANG_NOT_SUPPORTED`-ot csinál, a modul pedig `Locale.getDefault()`-ra
+esik vissza. **Vagyis az app által küldött MINDEN régiós tag (`hu-HU`, `es-ES`,
+`en-US`) eldobódott Androidon, és a telefon alapértelmezett hangja olvasott fel
+mindent.** iOS-t ez nem érinti: `AVSpeechSynthesisVoice(language:)` BCP-47-et vár.
+Javítás (`0e48287`, `ff6e28e`, `2de521f`):
+- `speechTag()`: Androidon csupasz nyelvkód (`hu`), iOS-en a teljes tag.
+- `voiceIdFor()`: ha az eszköz megnevez konkrét hangot, annak az azonosítója is megy
+  (`setVoice` a locale UTÁN fut, tehát felülírja a találgatást); a választás
+  RÉGIÓ-tudatos (es-MX kérésre nem a kasztíliai hang), azon belül enhanced > default.
+- `speechLang('es')`: **es-ES → es-MX** (user-döntés 2026-08-22, CDMX a cél; a korpusz
+  amúgy is kevert: coche ÉS carro, móvil ÉS celular, ordenador ÉS computadora).
+- Angol marad `en-US` (user-döntés), pedig az en-ág szókincse brit (colour ×8,
+  trousers, lift, flat, chemist, queue, maths) — ha egyszer zavaró lesz, egy sor.
+- Nyelv-audit a 12 felolvasási helyre: mindenhol a szöveg nyelve = az átadott locale
+  (szó-kártya front/back, easy-mondat natív prompt, skip-felolvasás, gyakorló mező,
+  helyesírás-képernyő, csempe-koppintás). Vizsga-képernyők egyáltalán nem beszélnek.
+- Gate: tsc 0, jest **239/239** (+11), lint 17 (alapvonal 18).
+- ⏳ Eszköz-verify: 3.0.32 APK kell hozzá, a Drive-on lévő 3.0.31 még a régi kódot viszi.
+
 ## ✅ FB145 [P2 UX], A telefon szó-javaslata elárulja a megfejtést, KÉSZ
 Idézet (08-18 20:49, `sentence:Compro un billete de tren.`): „azt meg tudod csinálni,
 hogy az applikációval kikapcsoltatod a telefonom auto complitjét? hogy itt felajálnja
