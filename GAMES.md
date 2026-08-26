@@ -1326,8 +1326,8 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 |---|---|---|---|
 | F-1 | szó-metaadat `pos` + `gender` (annotate script + őrző teszt) | ✅ KÉSZ | `cafc0b7` |
 | F0 | keret (registry, pool, gloss, shell, DB, hub) | ✅ KÉSZ | `07fe4e0` |
-| F1 | `memory-pairs` | ✅ KÉSZ | `ac3e3a3` |
-| F1 | `word-search` | 🟨 SPEC-KÉSZ | |
+| F1 | `memory-pairs` | ✅ KÉSZ | `b5f8c16` |
+| F1 | `word-search` | ✅ KÉSZ | `62c9801` |
 | F2 | `word-rain` | 🟨 SPEC-KÉSZ | |
 | F2 | `bubble-pop` | 🟨 SPEC-KÉSZ | |
 | F3 | `grammar-choice` | 🟨 SPEC-KÉSZ (motor + 3 téma; a többi 56 = Q1-Q5) | |
