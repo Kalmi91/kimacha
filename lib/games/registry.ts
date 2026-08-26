@@ -78,7 +78,7 @@ export const GAME_DEFS: GameDef[] = [
     },
     minPoolSize: 20,
     hasSettings: true,
-    soon: true,
+    soon: false, // F2 (GAMES.md 8. szekció): app/games/word-rain.tsx
   },
   {
     id: 'bubble-pop',
