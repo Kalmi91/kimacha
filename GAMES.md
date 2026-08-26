@@ -286,6 +286,54 @@ Ellenőrzi a `data/games/**.json` fájlokat:
 `npx jest` + `npx tsc --noEmit` + `node scripts/audit-games.mjs` (0 P1) = a
 szállítási kapu minden játék-itemre.
 
+> **MEGVALÓSÍTÁSI JEGYZET (F0, 2026-08-26):**
+> - **A `scripts/audit-games.mjs` (3.6) NEM készült el F0-ban, szándékosan.**
+>   `data/games/**.json` egyetlen fájlja sem létezik még (a tartalom-írás F3/F4-
+>   ben kezdődik), egy most megírt audit-script a formátumot csak találgatná.
+>   A script F3/F4 ELSŐ tartalom-batch-ével együtt készül, a valódi JSON ellen
+>   tesztelve. Addig a "kapu" a `lib/games/content.ts`-ben élő TypeScript
+>   típusokkal él (StoryData/ChatData/GrammarTopicData/ConfusablesSet/MythItem),
+>   azok már most kikényszerítik a GAMES.md 4.5/4.6/4.11/4.12/4.13 sémáit.
+> - **`IDatabase` névkorrekció.** A CLAUDE.md és a skill „IDatabase interfész"-t
+>   említ, a kódban ez ténylegesen `export interface DB` (`lib/database.ts` /
+>   `lib/database.web.ts`). Ugyanaz a hármas-szabály vonatkozik rá, csak a neve
+>   más, a jövőbeni fázisok ezt a nevet keressék.
+> - **`getAllWordCards(pair)` explicit `pair` parammal** készült, PONTOSAN a
+>   3.1 szekció aláírása szerint, ez eltér a `DB` interfész többi metódusától
+>   (azok `this.activePair`-t használnak implicit módon, paraméter nélkül).
+>   Szándékos, a spec szövegét követi. A három ÚJ tábla (`game_scores`,
+>   `game_settings`, `game_progress`) metódusai viszont a házi konvenciót
+>   követik (`this.activePair`, nincs `pair` paraméter), mert ott a spec nem
+>   írt elő explicit paramot, és ez illeszkedik a `getSpellingList()`-féle
+>   meglévő mintához.
+> - **A játék neve/blurbja (`lib/games/registry.ts`) a TARTALOM nyelvén jelenik
+>   meg** (a nyelvpár forrás/anyanyelve, `direction[0]`, ugyanaz a minta, mint
+>   a `data/topics.ts` `TopicDef.name_*` mezőié és a `tree.tsx` `uiLang`
+>   változóé), NEM az app-keret `lib/i18n` nyelvén. A hub SAJÁT feliratai
+>   (cím, alcím, gomb-szövegek) viszont a keret-nyelven (`t()`), mint minden
+>   más fül. Ez a GAMES.md 2.2-ben nem volt kimondva, a meglévő `tree.tsx`
+>   precedenst követtem.
+> - **`hasSettings` játékonként** a 4.x szekciók „Beállítás:" alpontja alapján
+>   dőlt el: NINCS ilyen alpontja a `chat`, `grammar-choice`, `confusables`
+>   játéknak, ezért ott `hasSettings: false`.
+> - **`minPoolSize` játékonként** csak ott van explicit spec-szám (word-rain:
+>   20), a többinél a 4.x szekció rácsméret/kérdésszám-mintáiból származtatott,
+>   dokumentált becslés (`lib/games/registry.ts` kommentje); a tartalom-vezérelt
+>   játékoknál (story/chat/grammar-choice/confusables/myth) szándékosan
+>   `undefined`, mert azokat nem szókészlet-méret, hanem tartalom-megléte zárja.
+> - **A `games.tsx` hub kapott egy `FeedbackButton`-t**, bár ezt a GAMES.md
+>   szövege nem mondja ki explicit, az AGENTS.md feedback-előzménye szerint
+>   (FB23/FB40) EZ minden fülön ott van, kihagyása inkonzisztens lenne.
+> - **`lib/shuffle.ts`** kapott egy exportált `shuffleArray<T>(items, seed)`
+>   segédfüggvényt (a már meglévő, most exportált `mulberry32`-re épül), mert
+>   a `vocabPool.ts` determinisztikus keverést igényel, ez általános, minden
+>   jövőbeli játék használhatja, nem csak a pool.
+> - **Tesztek (mind zöld):** `lib/__tests__/vocabPool.test.ts` (a 3.1-ben
+>   előírt KÖTELEZŐ őrző-teszt, a `getLearnedPool` core-garanciájára),
+>   `gameDb.test.ts` (3 új tábla + `getAllWordCards`, export/import round-trip),
+>   `gamesRegistry.test.ts`, `gameScoring.test.ts`, `gloss.test.ts`,
+>   `distract.test.ts`, `gameSession.test.ts`.
+
 ---
 
 ## 4. Játék-specifikációk
@@ -1225,7 +1273,7 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 | Fázis | Item | Státusz | Commit |
 |---|---|---|---|
 | F-1 | szó-metaadat `pos` + `gender` (annotate script + őrző teszt) | ✅ KÉSZ | `cafc0b7` |
-| F0 | keret (registry, pool, gloss, shell, DB, hub) | 🟨 SPEC-KÉSZ | |
+| F0 | keret (registry, pool, gloss, shell, DB, hub) | ✅ KÉSZ | `07fe4e0` |
 | F1 | `memory-pairs` | 🟨 SPEC-KÉSZ | |
 | F1 | `word-search` | 🟨 SPEC-KÉSZ | |
 | F2 | `word-rain` | 🟨 SPEC-KÉSZ | |

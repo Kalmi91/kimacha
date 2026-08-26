@@ -20,6 +20,12 @@ export interface DB {
   getDueCardsForWordIds(wordIds: number[], limit: number): Promise<any[]>;
   getWordReps(wordIds: number[]): Promise<Map<number, number>>;
   getWordStates(wordIds: number[]): Promise<Map<number, number>>;
+  // GAMES.md 3.1 (F0): every non-buried word card of a given pair, for
+  // lib/games/vocabPool.ts. Unlike its siblings above this takes an explicit
+  // `pair` (matches the GAMES.md spec text) rather than using `activePair`,
+  // so a game can in principle read a pool for a pair other than the one
+  // currently active.
+  getAllWordCards(pair: string): Promise<{ word_id: number; reps: number; lapses: number; state: number }[]>;
   recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number): Promise<void>;
   getUserMeta(): Promise<{ userId: string; firstUseDate: string; lastSyncDate: string | null }>;
   updateLastSync(date: string): Promise<void>;
@@ -62,6 +68,14 @@ export interface DB {
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
   getDayStats(date: string): Promise<{ minutes: number; words: number }>;
+  // GAMES.md 3.5 (F0): Game fül tables, scoped to the active pair like every
+  // other per-pair setting/state in this interface.
+  getGameScore(gameId: string): Promise<{ bestScore: number; bestAt: string | null; plays: number; lastPlayed: string | null } | null>;
+  recordGameScore(gameId: string, score: number): Promise<{ isNewBest: boolean; best: number }>;
+  getGameSettings(gameId: string): Promise<Record<string, unknown> | null>;
+  setGameSettings(gameId: string, settings: Record<string, unknown>): Promise<void>;
+  getGameProgress(gameId: string): Promise<{ itemId: string; state: string; data: unknown }[]>;
+  setGameProgress(gameId: string, itemId: string, state: string, data?: unknown): Promise<void>;
   exportAll(): Promise<BackupPayload>;
   importAll(payload: BackupPayload): Promise<void>;
 }
@@ -170,6 +184,29 @@ class SQLiteDB implements DB {
       CREATE TABLE IF NOT EXISTS usage_minutes (
         date TEXT PRIMARY KEY,
         minutes INTEGER NOT NULL DEFAULT 0
+      );
+      CREATE TABLE IF NOT EXISTS game_scores (
+        pair TEXT NOT NULL,
+        game_id TEXT NOT NULL,
+        best_score INTEGER NOT NULL DEFAULT 0,
+        best_at TEXT,
+        plays INTEGER NOT NULL DEFAULT 0,
+        last_played TEXT,
+        PRIMARY KEY (pair, game_id)
+      );
+      CREATE TABLE IF NOT EXISTS game_settings (
+        pair TEXT NOT NULL,
+        game_id TEXT NOT NULL,
+        settings_json TEXT NOT NULL,
+        PRIMARY KEY (pair, game_id)
+      );
+      CREATE TABLE IF NOT EXISTS game_progress (
+        pair TEXT NOT NULL,
+        game_id TEXT NOT NULL,
+        item_id TEXT NOT NULL,
+        state TEXT NOT NULL,
+        data_json TEXT,
+        PRIMARY KEY (pair, game_id, item_id)
       );
     `);
     // Migration: add random_topics column (DBs created before the random-topic toggle).
@@ -496,6 +533,16 @@ class SQLiteDB implements DB {
     const map = new Map<number, number>();
     for (const r of rows) map.set(r.word_id, r.state);
     return map;
+  }
+
+  // GAMES.md 3.1 (F0): every non-buried word card of `pair`, for vocabPool.ts.
+  async getAllWordCards(pair: string) {
+    const db = await this.open();
+    const rows = await db.getAllAsync<any>(
+      "SELECT word_id, reps, lapses, state FROM cards WHERE type = 'word' AND pair = ? AND buried = 0",
+      [pair]
+    );
+    return rows.map((r: any) => ({ word_id: r.word_id, reps: r.reps, lapses: r.lapses, state: r.state }));
   }
 
   async recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number) {
@@ -872,6 +919,91 @@ class SQLiteDB implements DB {
       rows.filter((r: any) => localDateString(new Date(r.timestamp)) === date).map((r: any) => r.word_id)
     );
     return { minutes: usage?.minutes ?? 0, words: words.size };
+  }
+
+  // GAMES.md 3.5 (F0): Game fül rekord/beállítás/haladás táblák.
+  async getGameScore(gameId: string) {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>(
+      'SELECT best_score, best_at, plays, last_played FROM game_scores WHERE pair = ? AND game_id = ?',
+      [this.activePair, gameId]
+    );
+    if (!row) return null;
+    return { bestScore: row.best_score, bestAt: row.best_at, plays: row.plays, lastPlayed: row.last_played };
+  }
+
+  async recordGameScore(gameId: string, score: number) {
+    const db = await this.open();
+    const now = new Date().toISOString();
+    const existing = await db.getFirstAsync<any>(
+      'SELECT best_score, best_at, plays FROM game_scores WHERE pair = ? AND game_id = ?',
+      [this.activePair, gameId]
+    );
+    const prevBest = existing?.best_score ?? 0;
+    const isNewBest = score > prevBest;
+    const best = isNewBest ? score : prevBest;
+    const bestAt = isNewBest ? now : (existing?.best_at ?? now);
+    const plays = (existing?.plays ?? 0) + 1;
+    await db.runAsync(
+      `INSERT INTO game_scores (pair, game_id, best_score, best_at, plays, last_played)
+       VALUES (?, ?, ?, ?, ?, ?)
+       ON CONFLICT(pair, game_id) DO UPDATE SET
+         best_score = excluded.best_score, best_at = excluded.best_at,
+         plays = excluded.plays, last_played = excluded.last_played`,
+      [this.activePair, gameId, best, bestAt, plays, now]
+    );
+    return { isNewBest, best };
+  }
+
+  async getGameSettings(gameId: string) {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>(
+      'SELECT settings_json FROM game_settings WHERE pair = ? AND game_id = ?',
+      [this.activePair, gameId]
+    );
+    if (!row?.settings_json) return null;
+    try {
+      return JSON.parse(row.settings_json);
+    } catch {
+      return null;
+    }
+  }
+
+  async setGameSettings(gameId: string, settings: Record<string, unknown>) {
+    const db = await this.open();
+    await db.runAsync(
+      `INSERT INTO game_settings (pair, game_id, settings_json) VALUES (?, ?, ?)
+       ON CONFLICT(pair, game_id) DO UPDATE SET settings_json = excluded.settings_json`,
+      [this.activePair, gameId, JSON.stringify(settings)]
+    );
+  }
+
+  async getGameProgress(gameId: string) {
+    const db = await this.open();
+    const rows = await db.getAllAsync<any>(
+      'SELECT item_id, state, data_json FROM game_progress WHERE pair = ? AND game_id = ?',
+      [this.activePair, gameId]
+    );
+    return rows.map((r: any) => {
+      let data: unknown = undefined;
+      if (r.data_json) {
+        try {
+          data = JSON.parse(r.data_json);
+        } catch {
+          data = undefined;
+        }
+      }
+      return { itemId: r.item_id, state: r.state, data };
+    });
+  }
+
+  async setGameProgress(gameId: string, itemId: string, state: string, data?: unknown) {
+    const db = await this.open();
+    await db.runAsync(
+      `INSERT INTO game_progress (pair, game_id, item_id, state, data_json) VALUES (?, ?, ?, ?, ?)
+       ON CONFLICT(pair, game_id, item_id) DO UPDATE SET state = excluded.state, data_json = excluded.data_json`,
+      [this.activePair, gameId, itemId, state, data !== undefined ? JSON.stringify(data) : null]
+    );
   }
 
   // Q0: full learning-state backup, every table across all pairs.

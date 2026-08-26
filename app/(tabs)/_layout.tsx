@@ -19,6 +19,11 @@ export default function TabLayout() {
           backgroundColor: colors.background,
           borderTopColor: colors.card,
         },
+        // K1 DÖNTÉS (GAMES.md 2.1): 6 fül fér a sávba, de 360 dp széles
+        // kijelzőn a felirat 6 fülnél tördel a default méretnél.
+        tabBarLabelStyle: {
+          fontSize: 10,
+        },
         headerStyle: {
           backgroundColor: colors.background,
         },
@@ -35,6 +40,21 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => (
             <SymbolView
               name={{ ios: 'book.fill', android: 'book', web: 'book' }}
+              tintColor={color}
+              size={28}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="games"
+        options={{
+          title: s.tabs.games,
+          // A hub saját fejlécet rajzol, mint az index (FB123-minta).
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <SymbolView
+              name={{ ios: 'gamecontroller.fill', android: 'sports_esports', web: 'sports_esports' }}
               tintColor={color}
               size={28}
             />

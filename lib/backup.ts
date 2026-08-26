@@ -8,6 +8,9 @@ export const BACKUP_SCHEMA_VERSION = 1;
 export const BACKUP_TABLES = [
   'cards',
   'card_attempts',
+  'game_progress',
+  'game_scores',
+  'game_settings',
   'learn_settings',
   'onboarding',
   'selected_topic',
