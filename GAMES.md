@@ -395,6 +395,15 @@ szállítási kapu minden játék-itemre.
 >   responseTimeMs)` minden érdemi válasznál (memory-pairs: pár-felfordítás;
 >   word-search: megtalált szó; word-rain: elkapás/elvétés/leesés; bubble-pop:
 >   pukkasztás). Ez csak statisztika, a `cards` táblát egyik játék sem írja.
+> - **`lib/games/bubblePop.ts` új modul**, ugyanabból az okból, mint a
+>   `wordRain.ts`: a 4.2 acceptance ("kategóriánként mindig van legalább 3 jó
+>   és 3 rossz buborék, különben a kör nem indul el") csak akkor
+>   tesztelhető unit-szinten, ha a kategória-választás + kör-összeállítás
+>   NEM a képernyő-komponensbe van égetve. `buildBubbleRound(pool,
+>   categorySet, count, seed, excludeCategoryValue?)` tiszta függvény, null-t
+>   ad vissza, ha egyetlen kategória sem elégíti ki a 3+3 küszöböt (a hívó
+>   ilyenkor másik kategória-készletre esik vissza, vagy véget ér a menet), 7
+>   jest teszttel (`lib/games/__tests__/bubblePop.test.ts`).
 > - **Óvatosság `useRef(...).current`-tel épített `PanResponder`-eknél és
 >   `reanimated` `runOnJS` callback-eknél**: ezek a closure-ök csak EGYSZER
 >   jönnek létre (mountkor), tehát a bennük hivatkozott plain state/const
@@ -1354,7 +1363,7 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 | F1 | `memory-pairs` | ✅ KÉSZ | `b5f8c16` |
 | F1 | `word-search` | ✅ KÉSZ | `62c9801` |
 | F2 | `word-rain` | ✅ KÉSZ | `4c5bac6` |
-| F2 | `bubble-pop` | 🟨 SPEC-KÉSZ | |
+| F2 | `bubble-pop` | ✅ KÉSZ | `aab85f5` |
 | F3 | `grammar-choice` | 🟨 SPEC-KÉSZ (motor + 3 téma; a többi 56 = Q1-Q5) | |
 | F3 | `confusables` | 🟨 SPEC-KÉSZ | |
 | F4 | `myth` | 🟨 SPEC-KÉSZ | |
