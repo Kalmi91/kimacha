@@ -11,7 +11,8 @@
     "de": "nein",
     "sentence_de": "Ich will nicht gehen.",
     "topic": "basicos",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "adv"
   },
   {
     "id": 2,
@@ -25,7 +26,8 @@
     "de": "ja",
     "sentence_de": "Ja, natürlich.",
     "topic": "basicos",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "adv"
   },
   {
     "id": 3,
@@ -39,7 +41,8 @@
     "de": "ich",
     "sentence_de": "Ich bin von hier.",
     "topic": "personas",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "pron"
   },
   {
     "id": 4,
@@ -53,7 +56,8 @@
     "de": "was",
     "sentence_de": "Was ist das?",
     "topic": "basicos",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "pron"
   },
   {
     "id": 5,
@@ -67,7 +71,8 @@
     "de": "ist",
     "sentence_de": "Es ist sehr gut.",
     "topic": "basicos",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 6,
@@ -81,7 +86,8 @@
     "de": "gut",
     "sentence_de": "Mir geht es gut.",
     "topic": "emociones_a0",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "adv"
   },
   {
     "id": 7,
@@ -95,7 +101,8 @@
     "de": "aber",
     "sentence_de": "Aber ich kann nicht.",
     "topic": "basicos",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "adj"
   },
   {
     "id": 8,
@@ -109,7 +116,8 @@
     "de": "hier",
     "sentence_de": "Komm hier.",
     "topic": "lugar_a0",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "adv"
   },
   {
     "id": 9,
@@ -123,7 +131,8 @@
     "de": "sehr",
     "sentence_de": "Es ist sehr groß.",
     "topic": "basicos",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "adv"
   },
   {
     "id": 10,
@@ -137,7 +146,8 @@
     "de": "alles",
     "sentence_de": "Alles ist in Ordnung.",
     "topic": "basicos",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "pron"
   },
   {
     "id": 11,
@@ -151,7 +161,8 @@
     "de": "nichts",
     "sentence_de": "Es gibt nichts.",
     "topic": "basicos",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "pron"
   },
   {
     "id": 12,
@@ -165,7 +176,8 @@
     "de": "jetzt",
     "sentence_de": "Lass uns jetzt gehen.",
     "topic": "tiempo_a0",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "adv"
   },
   {
     "id": 13,
@@ -179,7 +191,9 @@
     "de": "Zeit",
     "sentence_de": "Ich habe keine Zeit.",
     "topic": "tiempo_a0",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 14,
@@ -193,7 +207,9 @@
     "de": "Haus / Zuhause",
     "sentence_de": "Ich gehe nach Hause.",
     "topic": "lugar_a0",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 15,
@@ -207,7 +223,9 @@
     "de": "Leben",
     "sentence_de": "Das Leben ist gut.",
     "topic": "cosas",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 16,
@@ -221,7 +239,9 @@
     "de": "Mann",
     "sentence_de": "Er ist ein guter Mann.",
     "topic": "personas",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 17,
@@ -235,7 +255,9 @@
     "de": "Frau",
     "sentence_de": "Diese Frau ist stark.",
     "topic": "personas",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 18,
@@ -249,7 +271,8 @@
     "de": "gut",
     "sentence_de": "Gut, lass uns gehen.",
     "topic": "cualidades",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "adj"
   },
   {
     "id": 19,
@@ -263,7 +286,8 @@
     "de": "schlecht",
     "sentence_de": "Es ist nicht schlecht.",
     "topic": "cualidades",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "adj"
   },
   {
     "id": 20,
@@ -277,7 +301,8 @@
     "de": "groß",
     "sentence_de": "Der Mann ist groß.",
     "topic": "cualidades",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "adj"
   },
   {
     "id": 21,
@@ -291,7 +316,9 @@
     "de": "Geld",
     "sentence_de": "Ich habe kein Geld.",
     "topic": "cosas",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 22,
@@ -305,7 +332,9 @@
     "de": "Freund",
     "sentence_de": "Er ist mein bester Freund.",
     "topic": "personas",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 23,
@@ -319,7 +348,9 @@
     "de": "Liebe",
     "sentence_de": "Liebe ist alles.",
     "topic": "emociones_a0",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 24,
@@ -333,7 +364,9 @@
     "de": "Wasser",
     "sentence_de": "Ich möchte Wasser.",
     "topic": "cosas",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 25,
@@ -347,7 +380,8 @@
     "de": "essen",
     "sentence_de": "Lass uns essen gehen.",
     "topic": "verbos_a0",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "verb"
   },
   {
     "id": 26,
@@ -361,7 +395,8 @@
     "de": "schlafen",
     "sentence_de": "Ich will schlafen.",
     "topic": "verbos_a0",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "verb"
   },
   {
     "id": 27,
@@ -375,7 +410,8 @@
     "de": "sprechen",
     "sentence_de": "Ich muss mit dir sprechen.",
     "topic": "verbos_a0",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "verb"
   },
   {
     "id": 28,
@@ -389,7 +425,8 @@
     "de": "wissen",
     "sentence_de": "Ich weiß es nicht.",
     "topic": "verbos_a0",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 29,
@@ -403,7 +440,8 @@
     "de": "können",
     "sentence_de": "Kann ich gehen?",
     "topic": "verbos_a0",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "verb"
   },
   {
     "id": 30,
@@ -417,7 +455,8 @@
     "de": "wollen / lieben",
     "sentence_de": "Ich liebe dich sehr.",
     "topic": "verbos_a0",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "verb"
   },
   {
     "id": 31,
@@ -431,7 +470,8 @@
     "de": "gehen",
     "sentence_de": "Ich gehe morgen.",
     "topic": "verbos_a0",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "verb"
   },
   {
     "id": 32,
@@ -445,7 +485,8 @@
     "de": "kommen",
     "sentence_de": "Komm mit mir.",
     "topic": "verbos_a0",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "id": 33,
@@ -459,7 +500,8 @@
     "de": "haben",
     "sentence_de": "Ich habe Hunger.",
     "topic": "verbos_a0",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "id": 34,
@@ -473,7 +515,8 @@
     "de": "machen / tun",
     "sentence_de": "Was wirst du machen?",
     "topic": "verbos_a0",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "verb"
   },
   {
     "id": 35,
@@ -487,7 +530,8 @@
     "de": "sagen",
     "sentence_de": "Was willst du sagen?",
     "topic": "verbos_a0",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 36,
@@ -501,7 +545,8 @@
     "de": "geben",
     "sentence_de": "Ich kann geben.",
     "topic": "verbos_a0",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "verb"
   },
   {
     "id": 37,
@@ -515,7 +560,8 @@
     "de": "sehen",
     "sentence_de": "Ich will das sehen.",
     "topic": "verbos_a0",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "id": 38,
@@ -529,7 +575,8 @@
     "de": "glauben",
     "sentence_de": "Ich kann es nicht glauben.",
     "topic": "verbos_a0",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "verb"
   },
   {
     "id": 39,
@@ -543,7 +590,8 @@
     "de": "finden",
     "sentence_de": "Ich kann das nicht finden.",
     "topic": "verbos_a0",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "verb"
   },
   {
     "id": 40,
@@ -557,7 +605,8 @@
     "de": "anrufen",
     "sentence_de": "Ich werde dich anrufen.",
     "topic": "verbos_a0",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "verb"
   },
   {
     "id": 41,
@@ -571,7 +620,9 @@
     "de": "Name",
     "sentence_de": "Wie heißt du?",
     "topic": "personas",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 42,
@@ -585,7 +636,9 @@
     "de": "Mutter",
     "sentence_de": "Meine Mutter ist gut.",
     "topic": "personas",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 43,
@@ -599,7 +652,9 @@
     "de": "Vater",
     "sentence_de": "Mein Vater arbeitet viel.",
     "topic": "personas",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 44,
@@ -613,7 +668,9 @@
     "de": "Sohn",
     "sentence_de": "Er ist mein Sohn.",
     "topic": "personas",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 45,
@@ -627,7 +684,8 @@
     "de": "neu",
     "sentence_de": "Ich habe einen neuen Job.",
     "topic": "cualidades",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "adj"
   },
   {
     "id": 46,
@@ -641,7 +699,8 @@
     "de": "klein",
     "sentence_de": "Es ist sehr klein.",
     "topic": "cualidades",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "adj"
   },
   {
     "id": 47,
@@ -655,7 +714,8 @@
     "de": "gleich / dasselbe",
     "sentence_de": "Es ist dasselbe.",
     "topic": "basicos",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "adj"
   },
   {
     "id": 48,
@@ -669,7 +729,9 @@
     "de": "Welt",
     "sentence_de": "Er ist der Beste der Welt.",
     "topic": "lugar_a0",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 49,
@@ -683,7 +745,9 @@
     "de": "Tag",
     "sentence_de": "Heute ist ein guter Tag.",
     "topic": "tiempo_a0",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 50,
@@ -697,7 +761,9 @@
     "de": "Nacht",
     "sentence_de": "Gute Nacht.",
     "topic": "tiempo_a0",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 51,
@@ -711,7 +777,8 @@
     "de": "danke",
     "sentence_de": "Vielen Dank.",
     "topic": "cortesia",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "adv"
   },
   {
     "id": 52,
@@ -725,7 +792,8 @@
     "de": "bitte",
     "sentence_de": "Sprich, bitte.",
     "topic": "cortesia",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "phrase"
   },
   {
     "id": 53,
@@ -739,7 +807,8 @@
     "de": "Entschuldigung",
     "sentence_de": "Entschuldigung, ich wusste es nicht.",
     "topic": "cortesia",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "adv"
   },
   {
     "id": 54,
@@ -753,7 +822,8 @@
     "de": "hallo",
     "sentence_de": "Hallo! Wie geht es dir?",
     "topic": "cortesia",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "adv"
   },
   {
     "id": 55,
@@ -767,7 +837,8 @@
     "de": "Tschüss",
     "sentence_de": "Tschüss, Freund.",
     "topic": "cortesia",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "adv"
   },
   {
     "id": 56,
@@ -781,7 +852,8 @@
     "de": "morgen / Morgen",
     "sentence_de": "Wir sehen uns morgen.",
     "topic": "tiempo_a0",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "adv"
   },
   {
     "id": 57,
@@ -795,7 +867,8 @@
     "de": "immer",
     "sentence_de": "Ich werde dich immer lieben.",
     "topic": "tiempo_a0",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "adv"
   },
   {
     "id": 58,
@@ -809,7 +882,8 @@
     "de": "nie",
     "sentence_de": "Sag niemals nie.",
     "topic": "tiempo_a0",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "adv"
   },
   {
     "id": 59,
@@ -823,7 +897,8 @@
     "de": "auch",
     "sentence_de": "Ich auch.",
     "topic": "basicos",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "adv"
   },
   {
     "id": 60,
@@ -837,7 +912,8 @@
     "de": "noch",
     "sentence_de": "Noch nicht.",
     "topic": "tiempo_a0",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "adv"
   },
   {
     "id": 61,
@@ -851,7 +927,8 @@
     "de": "zwischen",
     "sentence_de": "Zwischen dir und mir.",
     "topic": "lugar_a0",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "prep"
   },
   {
     "id": 62,
@@ -865,7 +942,8 @@
     "de": "danach / später",
     "sentence_de": "Wir reden später.",
     "topic": "tiempo_a0",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "adv"
   },
   {
     "id": 63,
@@ -879,7 +957,8 @@
     "de": "vorher",
     "sentence_de": "Wie vorher.",
     "topic": "tiempo_a0",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "adv"
   },
   {
     "id": 64,
@@ -893,7 +972,8 @@
     "de": "draußen",
     "sentence_de": "Lass uns rausgehen.",
     "topic": "lugar_a0",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "adv"
   },
   {
     "id": 65,
@@ -907,7 +987,8 @@
     "de": "drinnen",
     "sentence_de": "Es ist drinnen.",
     "topic": "lugar_a0",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "adv"
   },
   {
     "id": 66,
@@ -921,7 +1002,9 @@
     "de": "Herz",
     "sentence_de": "Mit meinem ganzen Herzen.",
     "topic": "cuerpo_a0",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 67,
@@ -935,7 +1018,9 @@
     "de": "Kopf",
     "sentence_de": "Der Kopf ist wichtig.",
     "topic": "cuerpo_a0",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 68,
@@ -949,7 +1034,9 @@
     "de": "Hand",
     "sentence_de": "Gib mir deine Hand.",
     "topic": "cuerpo_a0",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 69,
@@ -963,7 +1050,9 @@
     "de": "Augen",
     "sentence_de": "Du hast schöne Augen.",
     "topic": "cuerpo_a0",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 70,
@@ -977,7 +1066,9 @@
     "de": "Essen",
     "sentence_de": "Das Essen ist gut.",
     "topic": "cosas",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 71,
@@ -991,7 +1082,8 @@
     "de": "glücklich",
     "sentence_de": "Ich bin glücklich.",
     "topic": "emociones_a0",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "adj"
   },
   {
     "id": 72,
@@ -1005,7 +1097,8 @@
     "de": "traurig",
     "sentence_de": "Ich bin traurig.",
     "topic": "emociones_a0",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "adj"
   },
   {
     "id": 73,
@@ -1019,7 +1112,9 @@
     "de": "Angst",
     "sentence_de": "Ich habe Angst.",
     "topic": "emociones_a0",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 74,
@@ -1033,7 +1128,9 @@
     "de": "Wahrheit / wahr",
     "sentence_de": "Ist das wahr?",
     "topic": "cosas",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 75,
@@ -1047,7 +1144,9 @@
     "de": "Lüge",
     "sentence_de": "Das ist eine Lüge.",
     "topic": "cosas",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 76,
@@ -1061,7 +1160,9 @@
     "de": "Problem",
     "sentence_de": "Kein Problem.",
     "topic": "cosas",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 77,
@@ -1075,7 +1176,9 @@
     "de": "Hilfe",
     "sentence_de": "Ich brauche Hilfe.",
     "topic": "cosas",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 78,
@@ -1089,7 +1192,8 @@
     "de": "denken",
     "sentence_de": "Was denkst du?",
     "topic": "verbos_a0",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "verb"
   },
   {
     "id": 79,
@@ -1103,7 +1207,8 @@
     "de": "fühlen",
     "sentence_de": "Wie fühlst du dich?",
     "topic": "verbos_a0",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "verb"
   },
   {
     "id": 80,
@@ -1117,7 +1222,8 @@
     "de": "warten / hoffen",
     "sentence_de": "Warte bitte.",
     "topic": "verbos_a0",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "verb"
   },
   {
     "id": 81,
@@ -1131,7 +1237,8 @@
     "de": "verstehen",
     "sentence_de": "Ich verstehe nicht.",
     "topic": "verbos_a0",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "verb"
   },
   {
     "id": 82,
@@ -1145,7 +1252,8 @@
     "de": "leben",
     "sentence_de": "Wo lebst du?",
     "topic": "verbos_a0",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "verb"
   },
   {
     "id": 83,
@@ -1159,7 +1267,8 @@
     "de": "sterben",
     "sentence_de": "Ich will nicht sterben.",
     "topic": "verbos_a0",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "verb"
   },
   {
     "id": 84,
@@ -1173,7 +1282,8 @@
     "de": "mögen / gefallen",
     "sentence_de": "Es gefällt mir sehr.",
     "topic": "verbos_a0",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "verb"
   },
   {
     "id": 85,
@@ -1187,7 +1297,8 @@
     "de": "brauchen",
     "sentence_de": "Ich brauche dich.",
     "topic": "verbos_a0",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "verb"
   },
   {
     "id": 86,
@@ -1201,7 +1312,8 @@
     "de": "zusammen",
     "sentence_de": "Lass uns zusammen gehen.",
     "topic": "emociones_a0",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "adj"
   },
   {
     "id": 87,
@@ -1215,7 +1327,8 @@
     "de": "allein / nur",
     "sentence_de": "Ich bin allein.",
     "topic": "basicos",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "adj"
   },
   {
     "id": 88,
@@ -1229,7 +1342,8 @@
     "de": "verrückt",
     "sentence_de": "Du bist verrückt!",
     "topic": "emociones_a0",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "adj"
   },
   {
     "id": 89,
@@ -1243,7 +1357,8 @@
     "de": "sicher",
     "sentence_de": "Bist du sicher?",
     "topic": "emociones_a0",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "adj"
   },
   {
     "id": 90,
@@ -1257,7 +1372,8 @@
     "de": "schnell",
     "sentence_de": "Komm schnell.",
     "topic": "cualidades",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "adv"
   },
   {
     "id": 91,
@@ -1271,7 +1387,8 @@
     "de": "langsam",
     "sentence_de": "Sprich langsamer.",
     "topic": "cualidades",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "adj"
   },
   {
     "id": 92,
@@ -1285,7 +1402,8 @@
     "de": "schön / hübsch",
     "sentence_de": "Wie schön.",
     "topic": "cualidades",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "adj"
   },
   {
     "id": 93,
@@ -1299,7 +1417,8 @@
     "de": "stark",
     "sentence_de": "Du bist sehr stark.",
     "topic": "cualidades",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "adj"
   },
   {
     "id": 94,
@@ -1313,7 +1432,8 @@
     "de": "schwierig",
     "sentence_de": "Es ist sehr schwierig.",
     "topic": "cualidades",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "adj"
   },
   {
     "id": 95,
@@ -1327,7 +1447,8 @@
     "de": "einfach / leicht",
     "sentence_de": "Es ist einfach.",
     "topic": "cualidades",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "adj"
   },
   {
     "id": 96,
@@ -1341,7 +1462,8 @@
     "de": "wichtig",
     "sentence_de": "Es ist sehr wichtig.",
     "topic": "cualidades",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "adj"
   },
   {
     "id": 97,
@@ -1355,7 +1477,9 @@
     "de": "Sache / Ding",
     "sentence_de": "Das ist eine gute Sache.",
     "topic": "cosas",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 98,
@@ -1369,7 +1493,9 @@
     "de": "Ort / Platz",
     "sentence_de": "Das ist ein guter Ort.",
     "topic": "lugar_a0",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 99,
@@ -1383,7 +1509,9 @@
     "de": "Leute / Menschen",
     "sentence_de": "Es gibt viele Leute.",
     "topic": "personas",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 100,
@@ -1397,6 +1525,8 @@
     "de": "Stunde / Uhrzeit",
     "sentence_de": "Wie spät ist es?",
     "topic": "tiempo_a0",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "noun",
+    "gender": "f"
   }
 ]

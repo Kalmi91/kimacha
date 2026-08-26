@@ -2,6 +2,14 @@ export type Level = 'A0' | 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
 
 export const LEVELS: Level[] = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
+// GAMES.md F-1 (K6 DÖNTÉS, 2026-08-26): word-class metadata for the game
+// modules (bubble-pop, odd-one-out, ...). Annotated by scripts/annotate-pos.mjs
+// on the shared Spanish set (a0..c1) and the en/hu branches; c2.json is frozen
+// and intentionally left without this metadata. Both fields are optional so
+// older/unannotated entries (and the frozen c2 set) keep type-checking.
+export type WordPos = 'noun' | 'verb' | 'adj' | 'adv' | 'pron' | 'prep' | 'num' | 'phrase';
+export type WordGender = 'm' | 'f' | 'mf' | '-';
+
 export interface WordEntry {
   id: number;
   level: Level;
@@ -13,7 +21,9 @@ export interface WordEntry {
   sentence_hu: string;
   sentence_en: string;
   sentence_de: string;
-  [key: string]: string | number;
+  pos?: WordPos;
+  gender?: WordGender;
+  [key: string]: string | number | undefined;
 }
 
 import a0 from './words/a0.json';

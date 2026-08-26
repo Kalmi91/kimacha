@@ -11,7 +11,9 @@
     "de": "Erinnerung",
     "sentence_de": "Ich habe eine gute Erinnerung.",
     "topic": "viajes_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 202,
@@ -25,7 +27,9 @@
     "de": "Reise",
     "sentence_de": "Es war eine gute Reise.",
     "topic": "viajes_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 204,
@@ -39,7 +43,9 @@
     "de": "Koffer",
     "sentence_de": "Mein Koffer ist schwer.",
     "topic": "viajes_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 205,
@@ -53,7 +59,9 @@
     "de": "Reservierung",
     "sentence_de": "Ich habe eine Reservierung.",
     "topic": "viajes_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 211,
@@ -67,7 +75,9 @@
     "de": "Nachbar",
     "sentence_de": "Mein Nachbar ist nett.",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 213,
@@ -81,7 +91,9 @@
     "de": "Lied",
     "sentence_de": "Ich mag dieses Lied.",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 216,
@@ -95,7 +107,8 @@
     "de": "einladen",
     "sentence_de": "Ich lade dich zum Abendessen ein.",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "verb"
   },
   {
     "id": 217,
@@ -109,7 +122,9 @@
     "de": "Geschenk",
     "sentence_de": "Das ist ein Geschenk für dich.",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 218,
@@ -123,7 +138,9 @@
     "de": "Party / Feier",
     "sentence_de": "Lass uns zur Party gehen.",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 219,
@@ -137,7 +154,9 @@
     "de": "Geburtstag",
     "sentence_de": "Alles Gute zum Geburtstag!",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 223,
@@ -151,7 +170,9 @@
     "de": "Fluss",
     "sentence_de": "Der Fluss ist lang.",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 226,
@@ -165,7 +186,9 @@
     "de": "Stern",
     "sentence_de": "Schau dir die Sterne an.",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 227,
@@ -179,7 +202,9 @@
     "de": "Mond",
     "sentence_de": "Der Mond ist heute groß.",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 228,
@@ -193,7 +218,9 @@
     "de": "Wolke",
     "sentence_de": "Es gibt viele Wolken.",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 230,
@@ -207,7 +234,9 @@
     "de": "Frühling",
     "sentence_de": "Ich mag den Frühling.",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 232,
@@ -221,7 +250,9 @@
     "de": "Herbst",
     "sentence_de": "Der Herbst ist schön.",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 234,
@@ -235,7 +266,8 @@
     "de": "erklären",
     "sentence_de": "Kannst du es erklären?",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "verb"
   },
   {
     "id": 235,
@@ -249,7 +281,8 @@
     "de": "fragen",
     "sentence_de": "Kann ich etwas fragen?",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "verb"
   },
   {
     "id": 236,
@@ -263,7 +296,8 @@
     "de": "antworten",
     "sentence_de": "Ich kann nicht antworten.",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "verb"
   },
   {
     "id": 237,
@@ -277,7 +311,8 @@
     "de": "vergessen",
     "sentence_de": "Ich will nicht vergessen.",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "verb"
   },
   {
     "id": 238,
@@ -291,7 +326,8 @@
     "de": "sich erinnern",
     "sentence_de": "Ich kann mich nicht erinnern.",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "verb"
   },
   {
     "id": 239,
@@ -305,7 +341,8 @@
     "de": "helfen",
     "sentence_de": "Kannst du mir helfen?",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 240,
@@ -319,7 +356,8 @@
     "de": "ändern / wechseln",
     "sentence_de": "Ich will das Thema wechseln.",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "verb"
   },
   {
     "id": 242,
@@ -333,7 +371,8 @@
     "de": "versuchen / probieren",
     "sentence_de": "Ich will das probieren.",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "verb"
   },
   {
     "id": 243,
@@ -347,7 +386,8 @@
     "de": "gefährlich",
     "sentence_de": "Es ist gefährlich.",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "adj"
   },
   {
     "id": 245,
@@ -361,7 +401,8 @@
     "de": "beschäftigt",
     "sentence_de": "Ich bin sehr beschäftigt.",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "adj"
   },
   {
     "id": 246,
@@ -375,7 +416,8 @@
     "de": "frei",
     "sentence_de": "Bist du morgen frei?",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "adj"
   },
   {
     "id": 248,
@@ -389,7 +431,8 @@
     "de": "geschlossen",
     "sentence_de": "Sonntags ist geschlossen.",
     "topic": "compras_servicios",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "adj"
   },
   {
     "id": 685,
@@ -403,7 +446,9 @@
     "de": "Stockwerk",
     "sentence_de": "Ich wohne im dritten Stock.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 687,
@@ -417,7 +462,9 @@
     "de": "Aufzug",
     "sentence_de": "Der Aufzug funktioniert heute nicht.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 688,
@@ -431,7 +478,9 @@
     "de": "Ecke",
     "sentence_de": "Die Apotheke ist an der Ecke.",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 692,
@@ -445,7 +494,9 @@
     "de": "Karte",
     "sentence_de": "Ich habe die U-Bahn-Karte angeschaut.",
     "topic": "transporte_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 696,
@@ -459,7 +510,9 @@
     "de": "Fieber",
     "sentence_de": "Mein Sohn hat Fieber.",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 698,
@@ -473,7 +526,9 @@
     "de": "Rezept",
     "sentence_de": "Der Arzt hat mir ein Rezept gegeben.",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 704,
@@ -487,7 +542,9 @@
     "de": "Karte",
     "sentence_de": "Kann ich mit Karte zahlen?",
     "topic": "compras_servicios",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 705,
@@ -501,7 +558,9 @@
     "de": "Ratschlag",
     "sentence_de": "Er hat mir einen guten Ratschlag gegeben.",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 706,
@@ -515,7 +574,9 @@
     "de": "Brauch",
     "sentence_de": "Das ist ein sehr schöner Brauch.",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 707,
@@ -529,7 +590,9 @@
     "de": "Übung",
     "sentence_de": "Ich trainiere dreimal pro Woche.",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 708,
@@ -543,7 +606,9 @@
     "de": "Schlaf",
     "sentence_de": "Ich bin sehr müde.",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 709,
@@ -557,7 +622,9 @@
     "de": "Glück",
     "sentence_de": "Was für ein Glück du gehabt hast!",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 710,
@@ -571,7 +638,9 @@
     "de": "Platz",
     "sentence_de": "Es gibt keinen Parkplatz.",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3418,
@@ -585,7 +654,8 @@
     "sentence_en": "We'll see what happens tomorrow.",
     "sentence_de": "Wir werden sehen, was morgen passiert.",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 3419,
@@ -599,7 +669,8 @@
     "sentence_en": "Thousands of people have arrived today.",
     "sentence_de": "Tausende von Menschen sind heute angekommen.",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "adj"
   },
   {
     "id": 3420,
@@ -613,7 +684,8 @@
     "sentence_en": "Can you give me a moment?",
     "sentence_de": "Kannst du mir einen Moment geben?",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "id": 3421,
@@ -627,7 +699,9 @@
     "sentence_en": "I've received the boss's orders.",
     "sentence_de": "Ich habe die Befehle des Chefs erhalten.",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3422,
@@ -641,7 +715,8 @@
     "sentence_en": "Are you still studying Spanish?",
     "sentence_de": "Lernst du immer noch Spanisch?",
     "topic": "estudios",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "verb"
   },
   {
     "id": 3423,
@@ -655,7 +730,8 @@
     "sentence_en": "He runs in the park every day.",
     "sentence_de": "Er läuft jeden Tag im Park.",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "verb"
   },
   {
     "id": 3424,
@@ -669,7 +745,8 @@
     "sentence_en": "I haven't been able to sleep well tonight.",
     "sentence_de": "Ich habe heute Nacht nicht gut schlafen können.",
     "topic": "trabajo_dia_ser_estar_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "verb"
   },
   {
     "id": 3425,
@@ -683,7 +760,8 @@
     "sentence_en": "Don't leave the door open.",
     "sentence_de": "Lass die Tür nicht offen.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "verb"
   },
   {
     "id": 3426,
@@ -697,7 +775,8 @@
     "sentence_en": "Have you all eaten yet?",
     "sentence_de": "Habt ihr schon gegessen?",
     "topic": "comida_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 3427,
@@ -711,7 +790,8 @@
     "sentence_en": "I want to give you a surprise.",
     "sentence_de": "Ich will dir eine Überraschung machen.",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "id": 3428,
@@ -725,7 +805,9 @@
     "sentence_en": "I've found the exit of the building.",
     "sentence_de": "Ich habe den Ausgang des Gebäudes gefunden.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3429,
@@ -739,7 +821,8 @@
     "sentence_en": "I need to say it now.",
     "sentence_de": "Ich muss es jetzt sagen.",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 3430,
@@ -753,7 +836,8 @@
     "sentence_en": "I've always trusted you.",
     "sentence_de": "Ich habe dir immer vertraut.",
     "topic": "amor_pareja_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "id": 3431,
@@ -767,7 +851,8 @@
     "sentence_en": "I want to ask you a question.",
     "sentence_de": "Ich möchte dir eine Frage stellen.",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "verb"
   },
   {
     "id": 3432,
@@ -781,7 +866,8 @@
     "sentence_en": "I needed your help yesterday.",
     "sentence_de": "Ich brauchte gestern deine Hilfe.",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "verb"
   },
   {
     "id": 3433,
@@ -795,7 +881,9 @@
     "sentence_en": "My siblings have come to visit me.",
     "sentence_de": "Meine Geschwister sind mich besuchen gekommen.",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3434,
@@ -809,7 +897,9 @@
     "sentence_en": "I like the color of your shirt.",
     "sentence_de": "Mir gefällt die Farbe deines Hemdes.",
     "topic": "ocio_moda",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3435,
@@ -823,7 +913,9 @@
     "sentence_en": "I've taken a look at the report.",
     "sentence_de": "Ich habe einen Blick auf den Bericht geworfen.",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3436,
@@ -837,7 +929,9 @@
     "sentence_en": "The little girl has slept all night.",
     "sentence_de": "Das kleine Mädchen hat die ganze Nacht geschlafen.",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3437,
@@ -851,7 +945,8 @@
     "sentence_en": "I've tried to call you many times.",
     "sentence_de": "Ich habe versucht, dich oft anzurufen.",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "verb"
   },
   {
     "id": 3438,
@@ -865,7 +960,9 @@
     "sentence_en": "The judge has made a decision.",
     "sentence_de": "Der Richter hat eine Entscheidung getroffen.",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3439,
@@ -879,7 +976,8 @@
     "sentence_en": "The next train leaves at three.",
     "sentence_de": "Der nächste Zug fährt um drei.",
     "topic": "transporte_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "adj"
   },
   {
     "id": 3440,
@@ -893,7 +991,8 @@
     "sentence_en": "I've been patient all day.",
     "sentence_de": "Ich bin den ganzen Tag geduldig gewesen.",
     "topic": "personas_caracter_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "adj"
   },
   {
     "id": 3441,
@@ -907,7 +1006,8 @@
     "sentence_en": "I hope you've slept well.",
     "sentence_de": "Ich hoffe, du hast gut geschlafen.",
     "topic": "trabajo_dia_ser_estar_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "verb"
   },
   {
     "id": 3442,
@@ -921,7 +1021,9 @@
     "sentence_en": "I like modern art.",
     "sentence_de": "Ich mag moderne Kunst.",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3443,
@@ -935,7 +1037,8 @@
     "sentence_en": "The children are playing in the garden.",
     "sentence_de": "Die Kinder spielen im Garten.",
     "topic": "ocio_moda",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "verb"
   },
   {
     "id": 3444,
@@ -949,7 +1052,8 @@
     "sentence_en": "Do you have the keys with you?",
     "sentence_de": "Hast du die Schlüssel bei dir?",
     "topic": "ocio_moda",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 3445,
@@ -963,7 +1067,8 @@
     "sentence_en": "I'm glad to see you again.",
     "sentence_de": "Es freut mich, dich wiederzusehen.",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 3446,
@@ -977,7 +1082,9 @@
     "sentence_en": "I've read a book about the devil.",
     "sentence_de": "Ich habe ein Buch über den Teufel gelesen.",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3447,
@@ -991,7 +1098,8 @@
     "sentence_en": "I heard a very loud noise last night.",
     "sentence_de": "Ich habe letzte Nacht ein sehr lautes Geräusch gehört.",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "verb"
   },
   {
     "id": 3448,
@@ -1005,7 +1113,8 @@
     "sentence_en": "I don't think he knows the truth.",
     "sentence_de": "Ich glaube nicht, dass er die Wahrheit weiß.",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "verb"
   },
   {
     "id": 3449,
@@ -1019,7 +1128,8 @@
     "sentence_en": "You'll be fine, don't worry.",
     "sentence_de": "Dir wird es gut gehen, mach dir keine Sorgen.",
     "topic": "personas_caracter_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "verb"
   },
   {
     "id": 3450,
@@ -1033,7 +1143,9 @@
     "sentence_en": "The band has played very well today.",
     "sentence_de": "Die Band hat heute sehr gut gespielt.",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3451,
@@ -1047,7 +1159,8 @@
     "sentence_en": "I've learned a lot this year.",
     "sentence_de": "Ich habe dieses Jahr viel gelernt.",
     "topic": "estudios",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "verb"
   },
   {
     "id": 3452,
@@ -1061,7 +1174,8 @@
     "sentence_en": "The hotel is fully booked this week.",
     "sentence_de": "Das Hotel ist diese Woche ausgebucht.",
     "topic": "viajes_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "adj"
   },
   {
     "id": 3453,
@@ -1075,7 +1189,8 @@
     "sentence_en": "Today is a famous saint's day.",
     "sentence_de": "Heute ist der Tag eines berühmten Heiligen.",
     "topic": "paises",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "adj"
   },
   {
     "id": 3454,
@@ -1089,7 +1204,9 @@
     "sentence_en": "I really want to see you.",
     "sentence_de": "Ich habe große Lust, dich zu sehen.",
     "topic": "amor_pareja_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3455,
@@ -1103,7 +1220,8 @@
     "sentence_en": "We had a good trip last week.",
     "sentence_de": "Wir hatten letzte Woche eine gute Reise.",
     "topic": "viajes_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "verb"
   },
   {
     "id": 3456,
@@ -1117,7 +1235,8 @@
     "sentence_en": "I've gone to see her at the hospital.",
     "sentence_de": "Ich bin ins Krankenhaus gegangen, um sie zu besuchen.",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 3457,
@@ -1131,7 +1250,8 @@
     "sentence_en": "He came back home very late last night.",
     "sentence_de": "Er ist gestern Abend sehr spät nach Hause gekommen.",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "verb"
   },
   {
     "id": 3458,
@@ -1145,7 +1265,9 @@
     "sentence_en": "I've read three books this month.",
     "sentence_de": "Ich habe diesen Monat drei Bücher gelesen.",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3459,
@@ -1159,7 +1281,8 @@
     "sentence_en": "It will be eight o'clock when they arrive.",
     "sentence_de": "Es wird acht Uhr sein, wenn sie ankommen.",
     "topic": "trabajo_dia_ser_estar_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 3460,
@@ -1173,7 +1296,9 @@
     "sentence_en": "The skies are very clear today.",
     "sentence_de": "Der Himmel ist heute sehr klar.",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3461,
@@ -1187,7 +1312,8 @@
     "sentence_en": "The police have caught the one who killed.",
     "sentence_de": "Die Polizei hat den Mörder gefasst.",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "id": 3462,
@@ -1201,7 +1327,8 @@
     "sentence_en": "We've tried different dishes today.",
     "sentence_de": "Wir haben heute verschiedene Gerichte probiert.",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "adj"
   },
   {
     "id": 3463,
@@ -1215,7 +1342,8 @@
     "sentence_en": "I don't want you to have to leave so soon.",
     "sentence_de": "Ich möchte nicht, dass du so früh gehen musst.",
     "topic": "viajes_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 3464,
@@ -1229,7 +1357,8 @@
     "sentence_en": "The commander has given new orders.",
     "sentence_de": "Der Kommandant hat neue Befehle erteilt.",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "phrase"
   },
   {
     "id": 3465,
@@ -1243,7 +1372,9 @@
     "sentence_en": "The police action has been swift.",
     "sentence_de": "Die Polizeiaktion war schnell.",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3466,
@@ -1257,7 +1388,9 @@
     "sentence_en": "We've learned the rules of the game.",
     "sentence_de": "Wir haben die Spielregeln gelernt.",
     "topic": "estudios",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3467,
@@ -1271,7 +1404,9 @@
     "sentence_en": "We've seen a great play.",
     "sentence_de": "Wir haben ein tolles Theaterstück gesehen.",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3468,
@@ -1285,7 +1420,9 @@
     "sentence_en": "I haven't lost hope yet.",
     "sentence_de": "Ich habe die Hoffnung noch nicht verloren.",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3469,
@@ -1299,7 +1436,9 @@
     "sentence_en": "This issue is very important to me.",
     "sentence_de": "Diese Angelegenheit ist mir sehr wichtig.",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3470,
@@ -1313,7 +1452,8 @@
     "sentence_en": "Does the noise bother you?",
     "sentence_de": "Stört dich der Lärm?",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "verb"
   },
   {
     "id": 3471,
@@ -1327,7 +1467,8 @@
     "sentence_en": "I'm having a good day.",
     "sentence_de": "Ich habe einen guten Tag.",
     "topic": "trabajo_dia_ser_estar_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "verb"
   },
   {
     "id": 3472,
@@ -1341,7 +1482,9 @@
     "sentence_en": "I've finished the report this morning.",
     "sentence_de": "Ich habe den Bericht heute Morgen fertiggestellt.",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3473,
@@ -1355,7 +1498,8 @@
     "sentence_en": "Welcome to our home.",
     "sentence_de": "Willkommen in unserem Haus.",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "adj"
   },
   {
     "id": 3474,
@@ -1369,7 +1513,8 @@
     "sentence_en": "Have you told me everything?",
     "sentence_de": "Hast du mir alles erzählt?",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "verb"
   },
   {
     "id": 3475,
@@ -1383,7 +1528,8 @@
     "sentence_en": "I'm still working on the project.",
     "sentence_de": "Ich arbeite weiter an dem Projekt.",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "id": 3476,
@@ -1397,7 +1543,8 @@
     "sentence_en": "I've painted the interior wall of the house.",
     "sentence_de": "Ich habe die Innenwand des Hauses gestrichen.",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "adj"
   },
   {
     "id": 3477,
@@ -1411,7 +1558,9 @@
     "sentence_en": "We've found a new apartment.",
     "sentence_de": "Wir haben eine neue Wohnung gefunden.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3478,
@@ -1425,7 +1574,8 @@
     "sentence_en": "I hope you see the problem.",
     "sentence_de": "Ich hoffe, Sie sehen das Problem.",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "verb"
   },
   {
     "id": 3479,
@@ -1439,7 +1589,9 @@
     "sentence_en": "I've visited several states of Mexico.",
     "sentence_de": "Ich habe mehrere Bundesstaaten Mexikos besucht.",
     "topic": "paises",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3480,
@@ -1453,7 +1605,8 @@
     "sentence_en": "Are you all ready to leave?",
     "sentence_de": "Seid ihr bereit zu gehen?",
     "topic": "trabajo_dia_ser_estar_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "verb"
   },
   {
     "id": 3481,
@@ -1467,7 +1620,8 @@
     "sentence_en": "Your health worries me.",
     "sentence_de": "Deine Gesundheit macht mir Sorgen.",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "verb"
   },
   {
     "id": 3482,
@@ -1481,7 +1635,8 @@
     "sentence_en": "He took the bus to go to work.",
     "sentence_de": "Er hat den Bus zur Arbeit genommen.",
     "topic": "transporte_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "verb"
   },
   {
     "id": 3483,
@@ -1495,7 +1650,8 @@
     "sentence_en": "The main problem is money.",
     "sentence_de": "Das Hauptproblem ist das Geld.",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adj"
   },
   {
     "id": 3484,
@@ -1509,7 +1665,8 @@
     "sentence_en": "The class starts at nine.",
     "sentence_de": "Der Unterricht beginnt um neun.",
     "topic": "estudios",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 3485,
@@ -1523,7 +1680,8 @@
     "sentence_en": "It started to rain in the afternoon.",
     "sentence_de": "Am Nachmittag hat es angefangen zu regnen.",
     "topic": "naturaleza_leirasok_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "verb"
   },
   {
     "id": 3486,
@@ -1537,7 +1695,8 @@
     "sentence_en": "I don't want them to go alone.",
     "sentence_de": "Ich möchte nicht, dass sie allein gehen.",
     "topic": "trabajo_dia_ser_estar_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "verb"
   },
   {
     "id": 3487,
@@ -1551,7 +1710,8 @@
     "sentence_en": "Everyone calls me by my name.",
     "sentence_de": "Alle nennen mich bei meinem Namen.",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "id": 3488,
@@ -1565,7 +1725,8 @@
     "sentence_en": "I hope he's arrived safely.",
     "sentence_de": "Hoffentlich ist er gut angekommen.",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "adv"
   },
   {
     "id": 3489,
@@ -1579,7 +1740,8 @@
     "sentence_en": "Sorry, I haven't seen your message.",
     "sentence_de": "Entschuldigung, ich habe deine Nachricht nicht gesehen.",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "verb"
   },
   {
     "id": 3490,
@@ -1593,7 +1755,8 @@
     "sentence_en": "I come back home at six.",
     "sentence_de": "Ich komme um sechs nach Hause zurück.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "verb"
   },
   {
     "id": 3491,
@@ -1607,7 +1770,9 @@
     "sentence_en": "I've hit my head.",
     "sentence_de": "Ich habe mir den Kopf gestoßen.",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3492,
@@ -1621,7 +1786,8 @@
     "sentence_en": "I've decided to stay home today.",
     "sentence_de": "Ich habe beschlossen, heute zu Hause zu bleiben.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "verb"
   },
   {
     "id": 3493,
@@ -1635,7 +1801,8 @@
     "sentence_en": "I'll call you tomorrow morning.",
     "sentence_de": "Ich rufe dich morgen früh an.",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "id": 3494,
@@ -1649,7 +1816,8 @@
     "sentence_en": "I've finished all my homework.",
     "sentence_de": "Ich habe alle meine Hausaufgaben erledigt.",
     "topic": "estudios",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "verb"
   },
   {
     "id": 3495,
@@ -1663,7 +1831,9 @@
     "sentence_en": "I like your clothing style.",
     "sentence_de": "Mir gefällt dein Kleidungsstil.",
     "topic": "ocio_moda",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3496,
@@ -1677,7 +1847,8 @@
     "sentence_en": "I've definitely made the right decision.",
     "sentence_de": "Ich habe definitiv die richtige Entscheidung getroffen.",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adv"
   },
   {
     "id": 3497,
@@ -1691,7 +1862,8 @@
     "sentence_en": "Shall we meet at five in the park?",
     "sentence_de": "Treffen wir uns um fünf im Park?",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "verb"
   },
   {
     "id": 3498,
@@ -1705,7 +1877,9 @@
     "sentence_en": "I've written three letters this week.",
     "sentence_de": "Ich habe diese Woche drei Briefe geschrieben.",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3499,
@@ -1719,7 +1893,9 @@
     "sentence_en": "The police have found a bomb.",
     "sentence_de": "Die Polizei hat eine Bombe gefunden.",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3500,
@@ -1733,7 +1909,8 @@
     "sentence_en": "The guard has closed the door.",
     "sentence_de": "Der Wächter hat die Tür geschlossen.",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "phrase"
   },
   {
     "id": 3501,
@@ -1747,7 +1924,9 @@
     "sentence_en": "The police have found a gun.",
     "sentence_de": "Die Polizei hat eine Pistole gefunden.",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3502,
@@ -1761,7 +1940,9 @@
     "sentence_en": "His Majesty has arrived at the palace.",
     "sentence_de": "Seine Majestät ist im Palast angekommen.",
     "topic": "paises",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3503,
@@ -1775,7 +1956,9 @@
     "sentence_en": "The march started at ten.",
     "sentence_de": "Der Marsch hat um zehn begonnen.",
     "topic": "transporte_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3504,
@@ -1789,7 +1972,8 @@
     "sentence_en": "You seem very tired today.",
     "sentence_de": "Du scheinst heute sehr müde zu sein.",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "verb"
   },
   {
     "id": 3505,
@@ -1803,7 +1987,8 @@
     "sentence_en": "We have many friends in common.",
     "sentence_de": "Wir haben viele gemeinsame Freunde.",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adj"
   },
   {
     "id": 3506,
@@ -1817,7 +2002,8 @@
     "sentence_en": "That day was very special.",
     "sentence_de": "Jener Tag war sehr besonders.",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "pron"
   },
   {
     "id": 3507,
@@ -1831,7 +2017,8 @@
     "sentence_en": "I want to give my mother a gift.",
     "sentence_de": "Ich möchte meiner Mutter ein Geschenk machen.",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 27
+    "topicOrder": 27,
+    "pos": "verb"
   },
   {
     "id": 3508,
@@ -1845,7 +2032,9 @@
     "sentence_en": "My flight has departed with a delay.",
     "sentence_de": "Mein Flug ist mit Verspätung abgeflogen.",
     "topic": "viajes_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3509,
@@ -1859,7 +2048,9 @@
     "sentence_en": "I've gotten good grades this term.",
     "sentence_de": "Ich habe dieses Quartal gute Noten bekommen.",
     "topic": "estudios",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3510,
@@ -1873,7 +2064,8 @@
     "sentence_en": "Human rights are very important.",
     "sentence_de": "Menschenrechte sind sehr wichtig.",
     "topic": "personas_caracter_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adj"
   },
   {
     "id": 3511,
@@ -1887,7 +2079,8 @@
     "sentence_en": "We'll be home at eight.",
     "sentence_de": "Wir werden um acht zu Hause sein.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "id": 3512,
@@ -1901,7 +2094,8 @@
     "sentence_en": "This book is his, not mine.",
     "sentence_de": "Dieses Buch gehört ihm, nicht mir.",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "pron"
   },
   {
     "id": 3513,
@@ -1915,7 +2109,8 @@
     "sentence_en": "Suddenly it started to rain.",
     "sentence_de": "Plötzlich hat es angefangen zu regnen.",
     "topic": "naturaleza_leirasok_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "phrase"
   },
   {
     "id": 3514,
@@ -1929,7 +2124,8 @@
     "sentence_en": "I should have called you but I forgot.",
     "sentence_de": "Ich hätte dich anrufen sollen, aber ich habe es vergessen.",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 3515,
@@ -1943,7 +2139,8 @@
     "sentence_en": "I'm just joking, don't get upset.",
     "sentence_de": "Ich scherze nur, reg dich nicht auf.",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "verb"
   },
   {
     "id": 3516,
@@ -1957,7 +2154,8 @@
     "sentence_en": "He'll go to the doctor tomorrow morning.",
     "sentence_de": "Er wird morgen früh zum Arzt gehen.",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 3517,
@@ -1971,7 +2169,9 @@
     "sentence_en": "I've bought two tickets for the concert.",
     "sentence_de": "Ich habe zwei Eintrittskarten für das Konzert gekauft.",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3518,
@@ -1985,7 +2185,8 @@
     "sentence_en": "I've requested a double room.",
     "sentence_de": "Ich habe ein Doppelzimmer bestellt.",
     "topic": "viajes_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "adj"
   },
   {
     "id": 3519,
@@ -1999,7 +2200,8 @@
     "sentence_en": "I'll leave you a message on the table.",
     "sentence_de": "Ich werde dir eine Nachricht auf dem Tisch hinterlassen.",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "verb"
   },
   {
     "id": 3520,
@@ -2013,7 +2215,8 @@
     "sentence_en": "I've avoided the traffic this morning.",
     "sentence_de": "Ich habe heute Morgen den Verkehr vermieden.",
     "topic": "transporte_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "id": 3521,
@@ -2027,7 +2230,9 @@
     "sentence_en": "The machine hasn't worked well today.",
     "sentence_de": "Die Maschine hat heute nicht gut funktioniert.",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3522,
@@ -2041,7 +2246,8 @@
     "sentence_en": "I met my best friend at school.",
     "sentence_de": "Ich habe meinen besten Freund in der Schule kennengelernt.",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "id": 3523,
@@ -2055,7 +2261,9 @@
     "sentence_en": "Times have changed a lot.",
     "sentence_de": "Die Zeiten haben sich sehr verändert.",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3524,
@@ -2069,7 +2277,8 @@
     "sentence_en": "Please take a seat.",
     "sentence_de": "Nehmen Sie bitte Platz.",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "verb"
   },
   {
     "id": 3525,
@@ -2083,7 +2292,9 @@
     "sentence_en": "We've seen many animals at the zoo.",
     "sentence_de": "Wir haben viele Tiere im Zoo gesehen.",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3526,
@@ -2097,7 +2308,8 @@
     "sentence_en": "Haven't you understood anything?",
     "sentence_de": "Hast du etwa nichts verstanden?",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "adj"
   },
   {
     "id": 3527,
@@ -2111,7 +2323,8 @@
     "sentence_en": "If I had more time, I would travel more.",
     "sentence_de": "Wenn ich mehr Zeit hätte, würde ich mehr reisen.",
     "topic": "viajes_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "verb"
   },
   {
     "id": 3528,
@@ -2125,7 +2338,9 @@
     "sentence_en": "My partner and I have gone to the cinema.",
     "sentence_de": "Mein Partner und ich sind ins Kino gegangen.",
     "topic": "amor_pareja_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3529,
@@ -2139,7 +2354,8 @@
     "sentence_en": "I listened to a very beautiful song yesterday.",
     "sentence_de": "Ich habe gestern ein sehr schönes Lied gehört.",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "verb"
   },
   {
     "id": 3530,
@@ -2153,7 +2369,8 @@
     "sentence_en": "She loves her children with all her heart.",
     "sentence_de": "Sie liebt ihre Kinder von ganzem Herzen.",
     "topic": "amor_pareja_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 3531,
@@ -2167,7 +2384,8 @@
     "sentence_en": "You'll be a great professional someday.",
     "sentence_de": "Du wirst eines Tages ein großartiger Fachmann sein.",
     "topic": "trabajo_dia_ser_estar_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "id": 3532,
@@ -2181,7 +2399,8 @@
     "sentence_en": "I want them to do the job well.",
     "sentence_de": "Ich möchte, dass sie die Arbeit gut machen.",
     "topic": "trabajo_dia_ser_estar_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "id": 3533,
@@ -2195,7 +2414,8 @@
     "sentence_en": "I lost my keys last night.",
     "sentence_de": "Ich habe gestern Abend meine Schlüssel verloren.",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "verb"
   },
   {
     "id": 3534,
@@ -2209,7 +2429,8 @@
     "sentence_en": "Have you brought everything we need?",
     "sentence_de": "Hast du alles mitgebracht, was wir brauchen?",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "verb"
   },
   {
     "id": 3535,
@@ -2223,7 +2444,8 @@
     "sentence_en": "Let me know when the package arrives.",
     "sentence_de": "Sag mir Bescheid, wenn das Paket ankommt.",
     "topic": "transporte_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "id": 3536,
@@ -2237,7 +2459,8 @@
     "sentence_en": "I've prepared dinner for everyone.",
     "sentence_de": "Ich habe das Abendessen für alle vorbereitet.",
     "topic": "comida_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "adj"
   },
   {
     "id": 3537,
@@ -2251,7 +2474,8 @@
     "sentence_en": "I should have said it earlier.",
     "sentence_de": "Ich hätte es früher sagen sollen.",
     "topic": "trabajo_dia_ser_estar_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "verb"
   },
   {
     "id": 3538,
@@ -2265,7 +2489,8 @@
     "sentence_en": "I've tried to call three times.",
     "sentence_de": "Ich habe dreimal versucht anzurufen.",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "verb"
   },
   {
     "id": 3539,
@@ -2279,7 +2504,8 @@
     "sentence_en": "Can you help me with this?",
     "sentence_de": "Kannst du mir dabei helfen?",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "verb"
   },
   {
     "id": 3540,
@@ -2293,7 +2519,9 @@
     "sentence_en": "I've bought flowers for my mother.",
     "sentence_de": "Ich habe Blumen für meine Mutter gekauft.",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3541,
@@ -2307,7 +2535,8 @@
     "sentence_en": "I'm giving Spanish classes.",
     "sentence_de": "Ich gebe Spanischunterricht.",
     "topic": "estudios",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "verb"
   },
   {
     "id": 3542,
@@ -2321,7 +2550,8 @@
     "sentence_en": "You are right about everything.",
     "sentence_de": "Du hast in allem recht.",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "adj"
   },
   {
     "id": 3543,
@@ -2335,7 +2565,9 @@
     "sentence_en": "This is the best option we have.",
     "sentence_de": "Das ist die beste Möglichkeit, die wir haben.",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3544,
@@ -2349,7 +2581,9 @@
     "sentence_en": "We've visited a beautiful island.",
     "sentence_de": "Wir haben eine wunderschöne Insel besucht.",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3545,
@@ -2363,7 +2597,8 @@
     "sentence_en": "The shop closes at nine.",
     "sentence_de": "Der Laden schließt um neun.",
     "topic": "compras_servicios",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "verb"
   },
   {
     "id": 3546,
@@ -2377,7 +2612,9 @@
     "sentence_en": "The enemy has fled the battlefield.",
     "sentence_de": "Der Feind ist vom Schlachtfeld geflohen.",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3547,
@@ -2391,7 +2628,8 @@
     "sentence_en": "I'm leaving the keys here for you.",
     "sentence_de": "Ich lasse dir die Schlüssel hier.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "id": 3548,
@@ -2405,7 +2643,8 @@
     "sentence_en": "That's exactly right, you're correct.",
     "sentence_de": "Das ist genau richtig, du hast recht.",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "adj"
   },
   {
     "id": 3549,
@@ -2419,7 +2658,9 @@
     "sentence_en": "Don't be an idiot, think before you speak.",
     "sentence_de": "Sei kein Idiot, denk nach, bevor du sprichst.",
     "topic": "trato_respeto_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3550,
@@ -2433,7 +2674,9 @@
     "sentence_en": "The young people have organized an event.",
     "sentence_de": "Die Jugendlichen haben eine Veranstaltung organisiert.",
     "topic": "trato_respeto_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3551,
@@ -2447,7 +2690,8 @@
     "sentence_en": "I've ordered a pizza for dinner.",
     "sentence_de": "Ich habe eine Pizza zum Abendessen bestellt.",
     "topic": "comida_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "id": 3552,
@@ -2461,7 +2705,8 @@
     "sentence_en": "It has been a long wait.",
     "sentence_de": "Es war eine lange Wartezeit.",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "adj"
   },
   {
     "id": 3553,
@@ -2475,7 +2720,8 @@
     "sentence_en": "She understands Spanish very well.",
     "sentence_de": "Sie versteht Spanisch sehr gut.",
     "topic": "estudios",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "id": 3554,
@@ -2489,7 +2735,9 @@
     "sentence_en": "Justice has spoken in this case.",
     "sentence_de": "Die Justiz hat in diesem Fall gesprochen.",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3555,
@@ -2503,7 +2751,8 @@
     "sentence_en": "We've hired new employees.",
     "sentence_de": "Wir haben neue Mitarbeiter eingestellt.",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "adj"
   },
   {
     "id": 3556,
@@ -2517,7 +2766,8 @@
     "sentence_en": "I've obviously made a mistake.",
     "sentence_de": "Ich habe offensichtlich einen Fehler gemacht.",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "adv"
   },
   {
     "id": 3557,
@@ -2531,7 +2781,8 @@
     "sentence_en": "He wakes up at six every day.",
     "sentence_de": "Er wacht jeden Tag um sechs auf.",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "verb"
   },
   {
     "id": 3558,
@@ -2545,7 +2796,8 @@
     "sentence_en": "I only ask for a little patience.",
     "sentence_de": "Ich bitte nur um ein wenig Geduld.",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 3559,
@@ -2559,7 +2811,9 @@
     "sentence_en": "It's very hot in the city today.",
     "sentence_de": "Heute ist es in der Stadt sehr heiß.",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3560,
@@ -2573,7 +2827,9 @@
     "sentence_en": "I've turned on the living room lights.",
     "sentence_de": "Ich habe die Lichter im Wohnzimmer eingeschaltet.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3561,
@@ -2587,7 +2843,8 @@
     "sentence_en": "I'm referring to yesterday's problem.",
     "sentence_de": "Ich beziehe mich auf das Problem von gestern.",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 3562,
@@ -2601,7 +2858,8 @@
     "sentence_en": "We went to the park yesterday afternoon.",
     "sentence_de": "Wir sind gestern Nachmittag in den Park gegangen.",
     "topic": "ocio_moda",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "verb"
   },
   {
     "id": 3563,
@@ -2615,7 +2873,9 @@
     "sentence_en": "The battle has ended this morning.",
     "sentence_de": "Die Schlacht ist heute Morgen zu Ende gegangen.",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3564,
@@ -2629,7 +2889,8 @@
     "sentence_en": "Leave it on the table, please.",
     "sentence_de": "Lass es bitte auf dem Tisch.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 3565,
@@ -2643,7 +2904,8 @@
     "sentence_en": "Try to do it one more time.",
     "sentence_de": "Versuch es noch einmal.",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "verb"
   },
   {
     "id": 3566,
@@ -2657,7 +2919,8 @@
     "sentence_en": "The food has been fantastic today.",
     "sentence_de": "Das Essen war heute fantastisch.",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "adj"
   },
   {
     "id": 3567,
@@ -2671,7 +2934,8 @@
     "sentence_en": "I'm absolutely sure about that.",
     "sentence_de": "Ich bin mir absolut sicher.",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "adv"
   },
   {
     "id": 3568,
@@ -2685,7 +2949,8 @@
     "sentence_en": "The room is full of people.",
     "sentence_de": "Der Saal ist voller Menschen.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "adj"
   },
   {
     "id": 3569,
@@ -2699,7 +2964,8 @@
     "sentence_en": "You can't make me change my mind.",
     "sentence_de": "Du kannst mich nicht umstimmen.",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 3570,
@@ -2713,7 +2979,8 @@
     "sentence_en": "I don't want him to go out alone at night.",
     "sentence_de": "Ich möchte nicht, dass er nachts allein ausgeht.",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "verb"
   },
   {
     "id": 3571,
@@ -2727,7 +2994,8 @@
     "sentence_en": "The cat has escaped through the window.",
     "sentence_de": "Die Katze ist durch das Fenster entkommen.",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "verb"
   },
   {
     "id": 3572,
@@ -2741,7 +3009,9 @@
     "sentence_en": "Gentlemen, the meeting has ended.",
     "sentence_de": "Meine Herren, die Besprechung ist beendet.",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3573,
@@ -2755,7 +3025,8 @@
     "sentence_en": "There are only two tickets left for the concert.",
     "sentence_de": "Es sind nur noch zwei Eintrittskarten für das Konzert übrig.",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "id": 3574,
@@ -2769,7 +3040,9 @@
     "sentence_en": "My legs hurt after running.",
     "sentence_de": "Meine Beine tun nach dem Laufen weh.",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3575,
@@ -2783,7 +3056,9 @@
     "sentence_en": "The visit to the museum has been very interesting.",
     "sentence_de": "Der Museumsbesuch war sehr interessant.",
     "topic": "viajes_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3576,
@@ -2797,7 +3072,8 @@
     "sentence_en": "I'm using the computer to work.",
     "sentence_de": "Ich benutze den Computer zum Arbeiten.",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "verb"
   },
   {
     "id": 3577,
@@ -2811,7 +3087,8 @@
     "sentence_en": "We've won the football match.",
     "sentence_de": "Wir haben das Fußballspiel gewonnen.",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "verb"
   },
   {
     "id": 3578,
@@ -2825,7 +3102,9 @@
     "sentence_en": "The movement of the train made me dizzy.",
     "sentence_de": "Die Bewegung des Zuges hat mir Übelkeit verursacht.",
     "topic": "transporte_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3579,
@@ -2839,7 +3118,8 @@
     "sentence_en": "The white house is at the end of the street.",
     "sentence_de": "Das weiße Haus steht am Ende der Straße.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "adj"
   },
   {
     "id": 3580,
@@ -2853,7 +3133,8 @@
     "sentence_en": "The judge has declared the defendant innocent.",
     "sentence_de": "Der Richter hat den Angeklagten für unschuldig erklärt.",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "adj"
   },
   {
     "id": 3581,
@@ -2867,7 +3148,8 @@
     "sentence_en": "Despite the rain, we've gone for a walk.",
     "sentence_de": "Trotz des Regens sind wir spazieren gegangen.",
     "topic": "naturaleza_leirasok_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "phrase"
   },
   {
     "id": 3582,
@@ -2881,7 +3163,8 @@
     "sentence_en": "It doesn't bother me at all.",
     "sentence_de": "Es stört mich überhaupt nicht.",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "phrase"
   },
   {
     "id": 3583,
@@ -2895,7 +3178,8 @@
     "sentence_en": "We always go to the same places.",
     "sentence_de": "Wir gehen immer an dieselben Orte.",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "adj"
   },
   {
     "id": 3584,
@@ -2909,7 +3193,8 @@
     "sentence_en": "I've made an important decision.",
     "sentence_de": "Ich habe eine wichtige Entscheidung getroffen.",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "verb"
   },
   {
     "id": 3585,
@@ -2923,7 +3208,8 @@
     "sentence_en": "Hadn't you been here before?",
     "sentence_de": "Warst du nicht schon einmal hier gewesen?",
     "topic": "trabajo_dia_ser_estar_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 3586,
@@ -2937,7 +3223,9 @@
     "sentence_en": "We've made plans for the weekend.",
     "sentence_de": "Wir haben Pläne für das Wochenende gemacht.",
     "topic": "ocio_moda",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3587,
@@ -2951,7 +3239,9 @@
     "sentence_en": "We've gone to the cinema this afternoon.",
     "sentence_de": "Wir sind heute Nachmittag ins Kino gegangen.",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3588,
@@ -2965,7 +3255,8 @@
     "sentence_en": "Now it's your turn to speak.",
     "sentence_de": "Jetzt bist du dran zu sprechen.",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "verb"
   },
   {
     "id": 3589,
@@ -2979,7 +3270,8 @@
     "sentence_en": "You've had a brilliant idea.",
     "sentence_de": "Du hattest eine brillante Idee.",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "adj"
   },
   {
     "id": 3590,
@@ -2993,7 +3285,8 @@
     "sentence_en": "Is this suitcase yours?",
     "sentence_de": "Gehört dieser Koffer euch?",
     "topic": "viajes_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "pron"
   },
   {
     "id": 3591,
@@ -3007,7 +3300,9 @@
     "sentence_en": "I've written down all the names on the list.",
     "sentence_de": "Ich habe alle Namen auf die Liste geschrieben.",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3592,
@@ -3021,7 +3316,8 @@
     "sentence_en": "I like fruits, especially strawberries.",
     "sentence_de": "Ich mag Obst, besonders Erdbeeren.",
     "topic": "comida_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adv"
   },
   {
     "id": 3593,
@@ -3035,7 +3331,8 @@
     "sentence_en": "My sister has been pregnant for three months.",
     "sentence_de": "Meine Schwester ist seit drei Monaten schwanger.",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "adj"
   },
   {
     "id": 3594,
@@ -3049,7 +3346,8 @@
     "sentence_en": "Wait a moment, please.",
     "sentence_de": "Warten Sie bitte einen Moment.",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "verb"
   },
   {
     "id": 3595,
@@ -3063,7 +3361,9 @@
     "sentence_en": "I've bought new trousers.",
     "sentence_de": "Ich habe eine neue Hose gekauft.",
     "topic": "ocio_moda",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3596,
@@ -3077,7 +3377,9 @@
     "sentence_en": "The defense has been very good today.",
     "sentence_de": "Die Verteidigung war heute sehr gut.",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3597,
@@ -3091,7 +3393,8 @@
     "sentence_en": "The movie ended at eleven.",
     "sentence_de": "Der Film endete um elf.",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 3598,
@@ -3105,7 +3408,8 @@
     "sentence_en": "I've gone out for a run this morning.",
     "sentence_de": "Ich bin heute Morgen laufen gegangen.",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "verb"
   },
   {
     "id": 3599,
@@ -3119,7 +3423,8 @@
     "sentence_en": "The party has been wonderful.",
     "sentence_de": "Die Party war großartig.",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "adj"
   },
   {
     "id": 3600,
@@ -3133,7 +3438,8 @@
     "sentence_en": "I've called the doctor immediately.",
     "sentence_de": "Ich habe sofort den Arzt angerufen.",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "adv"
   },
   {
     "id": 3601,
@@ -3147,7 +3453,8 @@
     "sentence_en": "The witness has testified before the judge.",
     "sentence_de": "Der Zeuge hat vor dem Richter ausgesagt.",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "phrase"
   },
   {
     "id": 3602,
@@ -3161,7 +3468,8 @@
     "sentence_en": "They should study more for the exam.",
     "sentence_de": "Sie sollten mehr für die Prüfung lernen.",
     "topic": "estudios",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "id": 3603,
@@ -3175,7 +3483,8 @@
     "sentence_en": "I've forgotten my password again.",
     "sentence_de": "Ich habe mein Passwort wieder vergessen.",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "verb"
   },
   {
     "id": 3604,
@@ -3189,7 +3498,9 @@
     "sentence_en": "The soldiers have returned home.",
     "sentence_de": "Die Soldaten sind nach Hause zurückgekehrt.",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3605,
@@ -3203,7 +3514,8 @@
     "sentence_en": "It turns out he was right from the beginning.",
     "sentence_de": "Es stellt sich heraus, dass er von Anfang an recht hatte.",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "verb"
   },
   {
     "id": 3606,
@@ -3217,7 +3529,8 @@
     "sentence_en": "It depends on the weather tomorrow.",
     "sentence_de": "Es hängt vom Wetter morgen ab.",
     "topic": "naturaleza_leirasok_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 3607,
@@ -3231,7 +3544,9 @@
     "sentence_en": "I've studied English for five years.",
     "sentence_de": "Ich habe fünf Jahre lang Englisch gelernt.",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3608,
@@ -3245,7 +3560,8 @@
     "sentence_en": "This idea is hers, not mine.",
     "sentence_de": "Diese Idee ist ihre, nicht meine.",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "pron"
   },
   {
     "id": 3609,
@@ -3259,7 +3575,9 @@
     "sentence_en": "I've finished the study on the topic.",
     "sentence_de": "Ich habe die Studie zum Thema abgeschlossen.",
     "topic": "estudios",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3610,
@@ -3273,7 +3591,8 @@
     "sentence_en": "I've just arrived home.",
     "sentence_de": "Ich bin gerade nach Hause gekommen.",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "verb"
   },
   {
     "id": 3611,
@@ -3287,7 +3606,9 @@
     "sentence_en": "I've shared my feelings with her.",
     "sentence_de": "Ich habe meine Gefühle mit ihr geteilt.",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3612,
@@ -3301,7 +3622,8 @@
     "sentence_en": "I'm having a coffee on the terrace.",
     "sentence_de": "Ich trinke einen Kaffee auf der Terrasse.",
     "topic": "comida_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "verb"
   },
   {
     "id": 3613,
@@ -3315,7 +3637,8 @@
     "sentence_en": "They gave me the news yesterday morning.",
     "sentence_de": "Sie haben mir gestern Morgen die Nachricht überbracht.",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "id": 3614,
@@ -3329,7 +3652,8 @@
     "sentence_en": "They seem very happy with the result.",
     "sentence_de": "Sie scheinen mit dem Ergebnis sehr zufrieden zu sein.",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "verb"
   },
   {
     "id": 3615,
@@ -3343,7 +3667,9 @@
     "sentence_en": "I've lost the car keys.",
     "sentence_de": "Ich habe die Autoschlüssel verloren.",
     "topic": "transporte_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3616,
@@ -3357,7 +3683,9 @@
     "sentence_en": "The dogs have played in the garden all afternoon.",
     "sentence_de": "Die Hunde haben den ganzen Nachmittag im Garten gespielt.",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3617,
@@ -3371,7 +3699,9 @@
     "sentence_en": "I've done it on purpose.",
     "sentence_de": "Ich habe es absichtlich gemacht.",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3618,
@@ -3385,7 +3715,8 @@
     "sentence_en": "We've departed at six in the morning.",
     "sentence_de": "Wir sind um sechs Uhr morgens aufgebrochen.",
     "topic": "viajes_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "verb"
   },
   {
     "id": 3619,
@@ -3399,7 +3730,8 @@
     "sentence_en": "Is this your new car?",
     "sentence_de": "Ist das euer neues Auto?",
     "topic": "transporte_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "pron"
   },
   {
     "id": 3620,
@@ -3413,7 +3745,9 @@
     "sentence_en": "The park is two hundred meters from here.",
     "sentence_de": "Der Park ist zweihundert Meter von hier entfernt.",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3621,
@@ -3427,7 +3761,8 @@
     "sentence_en": "Today is the feast of Saint Mary.",
     "sentence_de": "Heute ist das Fest der Heiligen Maria.",
     "topic": "paises",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "adj"
   },
   {
     "id": 3622,
@@ -3441,7 +3776,8 @@
     "sentence_en": "We've decided to stay at home.",
     "sentence_de": "Wir haben beschlossen, zu Hause zu bleiben.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "verb"
   },
   {
     "id": 3623,
@@ -3455,7 +3791,9 @@
     "sentence_en": "The clients have arrived early today.",
     "sentence_de": "Die Kunden sind heute früh angekommen.",
     "topic": "compras_servicios",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3624,
@@ -3469,7 +3807,8 @@
     "sentence_en": "He'll be able to come to the party tomorrow.",
     "sentence_de": "Er wird morgen zur Party kommen können.",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "verb"
   },
   {
     "id": 3625,
@@ -3483,7 +3822,8 @@
     "sentence_en": "How many people have come?",
     "sentence_de": "Wie viele Personen sind gekommen?",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "pron"
   },
   {
     "id": 3626,
@@ -3497,7 +3837,8 @@
     "sentence_en": "That's absolutely ridiculous.",
     "sentence_de": "Das ist absolut lächerlich.",
     "topic": "personas_caracter_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "adj"
   },
   {
     "id": 3627,
@@ -3511,7 +3852,9 @@
     "sentence_en": "Good evening, ladies and gentlemen.",
     "sentence_de": "Guten Abend, meine Damen und Herren.",
     "topic": "trato_respeto_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3628,
@@ -3525,7 +3868,8 @@
     "sentence_en": "Were you at Juan's party?",
     "sentence_de": "Warst du auf Juans Party?",
     "topic": "trabajo_dia_ser_estar_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "verb"
   },
   {
     "id": 3629,
@@ -3539,7 +3883,8 @@
     "sentence_en": "The night has been very quiet.",
     "sentence_de": "Die Nacht war sehr ruhig.",
     "topic": "personas_caracter_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "adj"
   },
   {
     "id": 3630,
@@ -3553,7 +3898,9 @@
     "sentence_en": "The operation has gone very well.",
     "sentence_de": "Die Operation ist sehr gut verlaufen.",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3631,
@@ -3567,7 +3914,8 @@
     "sentence_en": "Eat slowly, there's no rush.",
     "sentence_de": "Iss langsam, es gibt keine Eile.",
     "topic": "comida_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "verb"
   },
   {
     "id": 3632,
@@ -3581,7 +3929,8 @@
     "sentence_en": "Help me move this table!",
     "sentence_de": "Hilf mir, diesen Tisch zu bewegen!",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "verb"
   },
   {
     "id": 3633,
@@ -3595,7 +3944,9 @@
     "sentence_en": "I've worked in the laboratory all morning.",
     "sentence_de": "Ich habe den ganzen Morgen im Labor gearbeitet.",
     "topic": "estudios",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3634,
@@ -3609,7 +3960,9 @@
     "sentence_en": "It has been a good choice.",
     "sentence_de": "Es war eine gute Wahl.",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3635,
@@ -3623,7 +3976,8 @@
     "sentence_en": "I go to the gym often.",
     "sentence_de": "Ich gehe oft ins Fitnessstudio.",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "phrase"
   },
   {
     "id": 3636,
@@ -3637,7 +3991,9 @@
     "sentence_en": "I've given him a goodnight kiss.",
     "sentence_de": "Ich habe ihm einen Gutenachtkuss gegeben.",
     "topic": "amor_pareja_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3637,
@@ -3651,7 +4007,9 @@
     "sentence_en": "We've had a glass of wine together.",
     "sentence_de": "Wir haben zusammen ein Glas Wein getrunken.",
     "topic": "comida_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3638,
@@ -3665,7 +4023,9 @@
     "sentence_en": "We've had a very long conversation.",
     "sentence_de": "Wir haben ein sehr langes Gespräch geführt.",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3639,
@@ -3679,7 +4039,9 @@
     "sentence_en": "My arms hurt after the exercise.",
     "sentence_de": "Meine Arme tun nach dem Training weh.",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3640,
@@ -3693,7 +4055,9 @@
     "sentence_en": "He has a very free spirit.",
     "sentence_de": "Er hat einen sehr freien Geist.",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3641,
@@ -3707,7 +4071,8 @@
     "sentence_en": "Why do you always leave everything for tomorrow?",
     "sentence_de": "Warum lässt du immer alles auf morgen?",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "verb"
   },
   {
     "id": 3642,
@@ -3721,7 +4086,8 @@
     "sentence_en": "I'm very interested in history.",
     "sentence_de": "Mich interessiert Geschichte sehr.",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "id": 3643,
@@ -3735,7 +4101,8 @@
     "sentence_en": "What exactly are you referring to?",
     "sentence_de": "Worauf beziehst du dich genau?",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "verb"
   },
   {
     "id": 3644,
@@ -3749,7 +4116,8 @@
     "sentence_en": "My brother got married this summer.",
     "sentence_de": "Mein Bruder hat diesen Sommer geheiratet.",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "adj"
   },
   {
     "id": 3645,
@@ -3763,7 +4131,8 @@
     "sentence_en": "We've seen an enormous building in the center.",
     "sentence_de": "Wir haben ein riesiges Gebäude im Zentrum gesehen.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adj"
   },
   {
     "id": 3646,
@@ -3777,7 +4146,9 @@
     "sentence_en": "I've resolved all pending matters.",
     "sentence_de": "Ich habe alle offenen Angelegenheiten erledigt.",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3647,
@@ -3791,7 +4162,9 @@
     "sentence_en": "I've lost faith in this project.",
     "sentence_de": "Ich habe den Glauben an dieses Projekt verloren.",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3648,
@@ -3805,7 +4178,9 @@
     "sentence_en": "I've seen the art exhibition at the museum.",
     "sentence_de": "Ich habe die Kunstausstellung im Museum gesehen.",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3649,
@@ -3819,7 +4194,9 @@
     "sentence_en": "The mouse has fallen into the trap.",
     "sentence_de": "Die Maus ist in die Falle getappt.",
     "topic": "naturaleza_leirasok_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3650,
@@ -3833,7 +4210,9 @@
     "sentence_en": "I have a very good memory for names.",
     "sentence_de": "Ich habe ein sehr gutes Namensgedächtnis.",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3651,
@@ -3847,7 +4226,8 @@
     "sentence_en": "I've done the opposite of what you told me.",
     "sentence_de": "Ich habe das Gegenteil von dem gemacht, was du mir gesagt hast.",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "adj"
   },
   {
     "id": 3652,
@@ -3861,7 +4241,9 @@
     "sentence_en": "The soldier has returned from the mission.",
     "sentence_de": "Der Soldat ist von der Mission zurückgekehrt.",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3653,
@@ -3875,7 +4257,8 @@
     "sentence_en": "We've gone up to the fifth floor by the stairs.",
     "sentence_de": "Wir sind über die Treppe in den fünften Stock gegangen.",
     "topic": "transporte_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "id": 3654,
@@ -3889,7 +4272,9 @@
     "sentence_en": "Now it's my turn to speak.",
     "sentence_de": "Jetzt bin ich an der Reihe zu sprechen.",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3655,
@@ -3903,7 +4288,8 @@
     "sentence_en": "I would love to go to the cinema with you.",
     "sentence_de": "Ich würde gerne mit dir ins Kino gehen.",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 3656,
@@ -3917,7 +4303,8 @@
     "sentence_en": "I'm leaving work now.",
     "sentence_de": "Ich verlasse gerade die Arbeit.",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "verb"
   },
   {
     "id": 3657,
@@ -3931,7 +4318,8 @@
     "sentence_en": "I've written an email to the teacher.",
     "sentence_de": "Ich habe eine E-Mail an den Lehrer geschrieben.",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "verb"
   },
   {
     "id": 3658,
@@ -3945,7 +4333,8 @@
     "sentence_en": "Calm down, everything will be fine.",
     "sentence_de": "Beruhige dich, alles wird gut.",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "verb"
   },
   {
     "id": 3659,
@@ -3959,7 +4348,8 @@
     "sentence_en": "Welcome to our class, María!",
     "sentence_de": "Willkommen in unserer Klasse, María!",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "adj"
   },
   {
     "id": 3660,
@@ -3973,7 +4363,8 @@
     "sentence_en": "I've seen the leaves fall from the trees.",
     "sentence_de": "Ich habe die Blätter von den Bäumen fallen sehen.",
     "topic": "naturaleza_leirasok_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "verb"
   },
   {
     "id": 3661,
@@ -3987,7 +4378,8 @@
     "sentence_en": "I'll take you to the airport tomorrow.",
     "sentence_de": "Ich bringe dich morgen zum Flughafen.",
     "topic": "transporte_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "verb"
   },
   {
     "id": 3662,
@@ -4001,7 +4393,9 @@
     "sentence_en": "We've seen the stars from the terrace.",
     "sentence_de": "Wir haben die Sterne von der Terrasse aus gesehen.",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3663,
@@ -4015,7 +4409,8 @@
     "sentence_en": "I prefer coffee with milk.",
     "sentence_de": "Ich bevorzuge Kaffee mit Milch.",
     "topic": "comida_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "verb"
   },
   {
     "id": 3664,
@@ -4029,7 +4424,9 @@
     "sentence_en": "I've found the information on the internet.",
     "sentence_de": "Ich habe die Information im Internet gefunden.",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3665,
@@ -4043,7 +4440,8 @@
     "sentence_en": "I've found some old books in the attic.",
     "sentence_de": "Ich habe alte Bücher auf dem Dachboden gefunden.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "adj"
   },
   {
     "id": 3666,
@@ -4057,7 +4455,8 @@
     "sentence_en": "I only want to talk to you for a moment.",
     "sentence_de": "Ich möchte nur einen Moment mit dir sprechen.",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "adv"
   },
   {
     "id": 3667,
@@ -4071,7 +4470,8 @@
     "de": "einfach",
     "sentence_de": "Ich verstehe es einfach nicht.",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "adv"
   },
   {
     "id": 3668,
@@ -4085,7 +4485,9 @@
     "de": "Sinn",
     "sentence_de": "Das ergibt keinen Sinn.",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3669,
@@ -4099,7 +4501,9 @@
     "de": "Waffe",
     "sentence_de": "Er ließ die Waffe auf dem Tisch.",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3670,
@@ -4113,7 +4517,9 @@
     "de": "Sicherheit",
     "sentence_de": "Sicherheit ist wichtig.",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3671,
@@ -4127,7 +4533,8 @@
     "de": "außerdem",
     "sentence_de": "Außerdem spricht er drei Sprachen.",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "adv"
   },
   {
     "id": 3672,
@@ -4141,7 +4548,9 @@
     "de": "letzte",
     "sentence_de": "Ich kam als Letzter an.",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 27
+    "topicOrder": 27,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3673,
@@ -4155,7 +4564,9 @@
     "de": "Gehör / Ohr",
     "sentence_de": "Er hat ein sehr gutes Gehör.",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3674,
@@ -4169,7 +4580,8 @@
     "de": "richtig",
     "sentence_de": "Deine Antwort ist richtig.",
     "topic": "estudios",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "adj"
   },
   {
     "id": 3675,
@@ -4183,7 +4595,9 @@
     "de": "Frieden",
     "sentence_de": "Ich möchte in Frieden leben.",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3676,
@@ -4197,7 +4611,9 @@
     "de": "Plan",
     "sentence_de": "Wir haben einen guten Plan.",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3677,
@@ -4211,7 +4627,8 @@
     "de": "schlechter",
     "sentence_de": "Heute fühle ich mich schlechter.",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "adj"
   },
   {
     "id": 3678,
@@ -4225,7 +4642,9 @@
     "de": "Dorf / Volk",
     "sentence_de": "Ich wohne in einem kleinen Dorf.",
     "topic": "paises",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3679,
@@ -4239,7 +4658,8 @@
     "de": "Genug",
     "sentence_de": "Genug, bitte!",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "adj"
   },
   {
     "id": 3680,
@@ -4253,7 +4673,9 @@
     "de": "Schritt",
     "sentence_de": "Mach einen Schritt vorwärts.",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3681,
@@ -4267,7 +4689,8 @@
     "de": "gestern Abend",
     "sentence_de": "Gestern Abend habe ich nicht gut geschlafen.",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "adv"
   },
   {
     "id": 3682,
@@ -4281,7 +4704,9 @@
     "de": "König",
     "sentence_de": "Der König lebt im Schloss.",
     "topic": "paises",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3683,
@@ -4295,7 +4720,9 @@
     "de": "Mangel / Fehler",
     "sentence_de": "Es herrscht Zeitmangel.",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3684,
@@ -4309,7 +4736,9 @@
     "de": "Feuer",
     "sentence_de": "Das Feuer ist heiß.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3685,
@@ -4323,7 +4752,8 @@
     "de": "legen / stellen",
     "sentence_de": "Wohin lege ich die Schlüssel?",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "verb"
   },
   {
     "id": 3686,
@@ -4337,7 +4767,8 @@
     "de": "unglaublich",
     "sentence_de": "Die Aussicht ist unglaublich.",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "adj"
   },
   {
     "id": 3687,
@@ -4351,7 +4782,8 @@
     "de": "real / wirklich",
     "sentence_de": "Es ist ein echtes Problem.",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "adj"
   },
   {
     "id": 3688,
@@ -4365,7 +4797,9 @@
     "de": "Wochen",
     "sentence_de": "Ich bin vor zwei Wochen angekommen.",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3689,
@@ -4379,7 +4813,8 @@
     "de": "besonders",
     "sentence_de": "Heute ist ein besonderer Tag.",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "adj"
   },
   {
     "id": 3690,
@@ -4393,7 +4828,8 @@
     "de": "draußen",
     "sentence_de": "Die Kinder spielen draußen.",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "adj"
   },
   {
     "id": 3691,
@@ -4407,7 +4843,9 @@
     "de": "Himmel",
     "sentence_de": "Der Himmel ist blau.",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3692,
@@ -4421,7 +4859,9 @@
     "de": "Fragen",
     "sentence_de": "Sie hat viele Fragen.",
     "topic": "estudios",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3693,
@@ -4435,7 +4875,8 @@
     "de": "suchen",
     "sentence_de": "Ich suche meine Schlüssel.",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "verb"
   },
   {
     "id": 3694,
@@ -4449,7 +4890,9 @@
     "de": "Agent",
     "sentence_de": "Der Agent kam schnell an.",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3695,
@@ -4463,7 +4906,9 @@
     "de": "Information",
     "sentence_de": "Ich brauche mehr Informationen.",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3696,
@@ -4477,7 +4922,8 @@
     "de": "seltsam / selten",
     "sentence_de": "Was für eine seltsame Situation.",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "adj"
   },
   {
     "id": 3697,
@@ -4491,7 +4937,8 @@
     "de": "perfekt",
     "sentence_de": "Das Wetter ist perfekt.",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "adj"
   },
   {
     "id": 3698,
@@ -4505,7 +4952,9 @@
     "de": "Recht",
     "sentence_de": "Du hast das Recht zu wissen.",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3699,
@@ -4519,7 +4968,9 @@
     "de": "Nachrichten",
     "sentence_de": "Ich habe die Nachrichten gesehen.",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3700,
@@ -4533,7 +4984,9 @@
     "de": "Kontrolle",
     "sentence_de": "Alles ist unter Kontrolle.",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3701,
@@ -4547,7 +5000,9 @@
     "de": "Schaden",
     "sentence_de": "Der Schaden war sehr groß.",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3702,
@@ -4561,7 +5016,8 @@
     "de": "niemals",
     "sentence_de": "Ich werde diesen Tag niemals vergessen.",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "adv"
   },
   {
     "id": 3703,
@@ -4575,7 +5031,9 @@
     "de": "Stimme",
     "sentence_de": "Sie hat eine schöne Stimme.",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3704,
@@ -4589,7 +5047,9 @@
     "de": "Geheimnis",
     "sentence_de": "Es ist ein Geheimnis zwischen uns.",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3705,
@@ -4603,7 +5063,9 @@
     "de": "Zukunft",
     "sentence_de": "Die Zukunft ist ungewiss.",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3706,
@@ -4617,7 +5079,9 @@
     "de": "Dollar",
     "sentence_de": "Ich habe zehn Dollar.",
     "topic": "compras_servicios",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3707,
@@ -4631,7 +5095,9 @@
     "de": "Rest",
     "sentence_de": "Ich aß den Rest.",
     "topic": "comida_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3708,
@@ -4645,7 +5111,8 @@
     "de": "seltsam",
     "sentence_de": "Das ist ein bisschen seltsam.",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "adj"
   },
   {
     "id": 3709,
@@ -4659,7 +5126,9 @@
     "de": "Präsident",
     "sentence_de": "Der Präsident sprach heute.",
     "topic": "paises",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3710,
@@ -4673,7 +5142,8 @@
     "de": "gewinnen",
     "sentence_de": "Ich will das Spiel gewinnen.",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "id": 3711,
@@ -4687,7 +5157,9 @@
     "de": "Luft",
     "sentence_de": "Die Luft ist frisch.",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3712,
@@ -4701,7 +5173,9 @@
     "de": "Termin",
     "sentence_de": "Ich habe morgen einen Termin.",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3713,
@@ -4715,7 +5189,9 @@
     "de": "System",
     "sentence_de": "Das System funktioniert nicht.",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3714,
@@ -4729,7 +5205,9 @@
     "de": "Geschäft",
     "sentence_de": "Er hat ein kleines Geschäft.",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3715,
@@ -4743,7 +5221,9 @@
     "de": "Verstand",
     "sentence_de": "Sie hat einen schnellen Verstand.",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3716,
@@ -4757,7 +5237,9 @@
     "de": "Situation",
     "sentence_de": "Die Situation ist schwierig.",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 27
+    "topicOrder": 27,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3717,
@@ -4771,7 +5253,9 @@
     "de": "Beziehung",
     "sentence_de": "Sie haben eine gute Beziehung.",
     "topic": "amor_pareja_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3718,
@@ -4785,7 +5269,9 @@
     "de": "Schachtel",
     "sentence_de": "Öffne die Schachtel, bitte.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3719,
@@ -4799,7 +5285,9 @@
     "de": "Linie",
     "sentence_de": "Es gibt eine lange Schlange.",
     "topic": "transporte_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3720,
@@ -4813,7 +5301,9 @@
     "de": "Hunger",
     "sentence_de": "Ich habe großen Hunger.",
     "topic": "comida_a2",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3721,
@@ -4827,7 +5317,9 @@
     "de": "Antwort",
     "sentence_de": "Ich kenne die Antwort nicht.",
     "topic": "estudios",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3722,
@@ -4841,7 +5333,9 @@
     "de": "Brief",
     "sentence_de": "Ich schrieb einen langen Brief.",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3723,
@@ -4855,7 +5349,9 @@
     "de": "Freund",
     "sentence_de": "Ihr Freund ist nett.",
     "topic": "amor_pareja_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3724,
@@ -4869,7 +5365,8 @@
     "de": "normal",
     "sentence_de": "Das ist völlig normal.",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "adj"
   },
   {
     "id": 3725,
@@ -4883,7 +5380,9 @@
     "de": "Service",
     "sentence_de": "Der Service ist ausgezeichnet.",
     "topic": "compras_servicios",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3726,
@@ -4897,7 +5396,9 @@
     "de": "Besprechung",
     "sentence_de": "Die Besprechung beginnt um neun.",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 28
+    "topicOrder": 28,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3727,
@@ -4911,7 +5412,9 @@
     "de": "Universität",
     "sentence_de": "Sie studiert an der Universität.",
     "topic": "estudios",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3728,
@@ -4925,7 +5428,9 @@
     "de": "Hochzeit",
     "sentence_de": "Die Hochzeit war wunderschön.",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3729,
@@ -4939,7 +5444,9 @@
     "de": "Entscheidung",
     "sentence_de": "Das ist eine schwierige Entscheidung.",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 29
+    "topicOrder": 29,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3730,
@@ -4953,7 +5460,9 @@
     "de": "Gefängnis",
     "sentence_de": "Er kam ins Gefängnis.",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 27
+    "topicOrder": 27,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3731,
@@ -4967,7 +5476,8 @@
     "de": "beenden",
     "sentence_de": "Ich werde bald fertig sein.",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 27
+    "topicOrder": 27,
+    "pos": "verb"
   },
   {
     "id": 3732,
@@ -4981,7 +5491,9 @@
     "de": "Witz",
     "sentence_de": "Das ist nur ein Witz.",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3733,
@@ -4995,7 +5507,9 @@
     "de": "Kamera",
     "sentence_de": "Ich vergaß meine Kamera.",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3734,
@@ -5009,7 +5523,9 @@
     "de": "Weihnachten",
     "sentence_de": "Weihnachten ist im Dezember.",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3735,
@@ -5023,7 +5539,9 @@
     "de": "Untersuchung",
     "sentence_de": "Die Untersuchung dauerte Tage.",
     "topic": "estudios",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3736,
@@ -5037,7 +5555,9 @@
     "de": "Armee",
     "sentence_de": "Die Armee kam ins Dorf.",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3737,
@@ -5051,7 +5571,9 @@
     "de": "Papier",
     "sentence_de": "Schreib auf das Papier.",
     "topic": "estudios",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3738,
@@ -5065,7 +5587,9 @@
     "de": "Anfang",
     "sentence_de": "Am Anfang war es schwer.",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3739,
@@ -5079,7 +5603,9 @@
     "de": "Wunsch",
     "sentence_de": "Ich habe einen besonderen Wunsch.",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3740,
@@ -5093,7 +5619,9 @@
     "de": "Ehemann",
     "sentence_de": "Ihr Ehemann arbeitet zu Hause.",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3741,
@@ -5107,7 +5635,8 @@
     "de": "Sklavenhandel",
     "sentence_de": "Der Sklavenhandel ist in allen Ländern illegal.",
     "topic": "paises",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "phrase"
   },
   {
     "id": 3742,
@@ -5121,7 +5650,8 @@
     "de": "lieben",
     "sentence_de": "Ich liebe meine Familie sehr.",
     "topic": "amor_pareja_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "verb"
   },
   {
     "id": 3743,
@@ -5135,7 +5665,8 @@
     "de": "sein",
     "sentence_de": "Wir sind jetzt in der Schule.",
     "topic": "trabajo_dia_ser_estar_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "id": 3744,
@@ -5149,7 +5680,8 @@
     "de": "beunruhigen",
     "sentence_de": "Die Zukunft beunruhigt mich nicht.",
     "topic": "amor_pareja_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "verb"
   },
   {
     "id": 3745,
@@ -5163,7 +5695,8 @@
     "de": "haben",
     "sentence_de": "Es gab viele Veränderungen.",
     "topic": "trabajo_dia_ser_estar_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "verb"
   },
   {
     "id": 3746,
@@ -5177,7 +5710,8 @@
     "de": "sein",
     "sentence_de": "Ich bin Ingenieur.",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "verb"
   },
   {
     "id": 3747,
@@ -5191,7 +5725,8 @@
     "de": "müssen",
     "sentence_de": "Ich muss für die Prüfung lernen.",
     "topic": "estudios",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "verb"
   },
   {
     "id": 3748,
@@ -5205,7 +5740,8 @@
     "de": "verlieren",
     "sentence_de": "Ich verlor gestern meine Schlüssel.",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 28
+    "topicOrder": 28,
+    "pos": "verb"
   },
   {
     "id": 3749,
@@ -5219,7 +5755,8 @@
     "de": "eintreten",
     "sentence_de": "Bitte betreten Sie das Haus.",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "verb"
   },
   {
     "id": 3750,
@@ -5233,7 +5770,8 @@
     "de": "annehmen",
     "sentence_de": "Ich nehme an, du kommst morgen.",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "verb"
   },
   {
     "id": 3751,
@@ -5247,7 +5785,8 @@
     "de": "einzig",
     "sentence_de": "Er ist der einzige, der weiß.",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "adj"
   },
   {
     "id": 3752,
@@ -5261,7 +5800,8 @@
     "de": "viel",
     "sentence_de": "Er isst viel mehr als zuvor.",
     "topic": "comida_a2",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "adv"
   },
   {
     "id": 3753,
@@ -5275,7 +5815,8 @@
     "de": "ander",
     "sentence_de": "Ich gebe dir ein anderes Beispiel.",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 28
+    "topicOrder": 28,
+    "pos": "pron"
   },
   {
     "id": 3754,
@@ -5289,7 +5830,8 @@
     "de": "Glück",
     "sentence_de": "Er hatte Glück im Spiel.",
     "topic": "ocio_moda",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "adj"
   },
   {
     "id": 3755,
@@ -5303,7 +5845,9 @@
     "de": "Paar",
     "sentence_de": "Ich kaufte ein Paar Schuhe.",
     "topic": "ocio_moda",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3756,
@@ -5317,7 +5861,8 @@
     "de": "folgen",
     "sentence_de": "Folge dem richtigen Weg.",
     "topic": "transporte_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "verb"
   },
   {
     "id": 3757,
@@ -5331,7 +5876,8 @@
     "de": "Mitte",
     "sentence_de": "Es ist mittelgroß.",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 29
+    "topicOrder": 29,
+    "pos": "adj"
   },
   {
     "id": 3758,
@@ -5345,7 +5891,8 @@
     "de": "töten",
     "sentence_de": "Du darfst Tiere nicht töten.",
     "topic": "naturaleza_leirasok_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "verb"
   },
   {
     "id": 3759,
@@ -5359,7 +5906,8 @@
     "de": "über",
     "sentence_de": "Er spricht über seine Pläne.",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "phrase"
   },
   {
     "id": 3760,
@@ -5373,7 +5921,8 @@
     "de": "wie viel",
     "sentence_de": "Wie viel kostet es?",
     "topic": "compras_servicios",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "adj"
   },
   {
     "id": 3761,
@@ -5387,7 +5936,8 @@
     "de": "lebendig",
     "sentence_de": "Das Tier lebt noch.",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "adj"
   },
   {
     "id": 3762,
@@ -5401,7 +5951,9 @@
     "de": "Fräulein",
     "sentence_de": "Das Fräulein ist sehr freundlich.",
     "topic": "trato_respeto_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3763,
@@ -5415,7 +5967,8 @@
     "de": "Posten",
     "sentence_de": "Ich habe eine Stelle in der Firma.",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 30
+    "topicOrder": 30,
+    "pos": "adj"
   },
   {
     "id": 3764,
@@ -5429,7 +5982,9 @@
     "de": "Stirn",
     "sentence_de": "Er hat eine Narbe auf der Stirn.",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3765,
@@ -5443,7 +5998,9 @@
     "de": "Handel",
     "sentence_de": "Wir machten einen guten Handel.",
     "topic": "compras_servicios",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3766,
@@ -5457,7 +6014,9 @@
     "de": "Grund",
     "sentence_de": "Ich verstehe den Grund nicht.",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "par",
@@ -5471,7 +6030,9 @@
     "id": 3767,
     "level": "A2",
     "topic": "ocio_moda",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "acerca",
@@ -5485,7 +6046,8 @@
     "id": 3768,
     "level": "A2",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "adj"
   },
   {
     "es": "perdido",
@@ -5499,7 +6061,8 @@
     "id": 3769,
     "level": "A2",
     "topic": "viajes_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "adj"
   },
   {
     "es": "señorita",
@@ -5513,7 +6076,8 @@
     "id": 3770,
     "level": "A2",
     "topic": "trato_respeto_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "adj"
   },
   {
     "es": "querido",
@@ -5527,7 +6091,8 @@
     "id": 3771,
     "level": "A2",
     "topic": "amor_pareja_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "adj"
   },
   {
     "es": "cual",
@@ -5541,7 +6106,8 @@
     "id": 3772,
     "level": "A2",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 30
+    "topicOrder": 30,
+    "pos": "pron"
   },
   {
     "es": "frente",
@@ -5555,7 +6121,8 @@
     "id": 3773,
     "level": "A2",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "adj"
   },
   {
     "es": "dale",
@@ -5569,7 +6136,8 @@
     "id": 3774,
     "level": "A2",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "adj"
   },
   {
     "es": "razón",
@@ -5583,7 +6151,8 @@
     "id": 3775,
     "level": "A2",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "adj"
   },
   {
     "es": "casar",
@@ -5597,7 +6166,8 @@
     "id": 3776,
     "level": "A2",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "es": "cumplir",
@@ -5611,7 +6181,8 @@
     "id": 3777,
     "level": "A2",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "verb"
   },
   {
     "es": "lograr",
@@ -5625,7 +6196,8 @@
     "id": 3778,
     "level": "A2",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 29
+    "topicOrder": 29,
+    "pos": "verb"
   },
   {
     "es": "apenas",
@@ -5639,7 +6211,8 @@
     "id": 3779,
     "level": "A2",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "adv"
   },
   {
     "es": "pronto",
@@ -5653,7 +6226,8 @@
     "id": 3780,
     "level": "A2",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "adv"
   },
   {
     "es": "propio",
@@ -5667,7 +6241,8 @@
     "id": 3781,
     "level": "A2",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "adj"
   },
   {
     "es": "junto",
@@ -5681,7 +6256,8 @@
     "id": 3782,
     "level": "A2",
     "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "adj"
   },
   {
     "es": "ocurrir",
@@ -5695,7 +6271,8 @@
     "id": 1893,
     "level": "A2",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "verb"
   },
   {
     "es": "la mitad",
@@ -5709,7 +6286,9 @@
     "id": 1894,
     "level": "A2",
     "topic": "comida_a2",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "oficial",
@@ -5723,7 +6302,8 @@
     "id": 1895,
     "level": "A2",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "adj"
   },
   {
     "es": "la compañía",
@@ -5737,7 +6317,9 @@
     "id": 1896,
     "level": "A2",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el montón",
@@ -5751,7 +6333,9 @@
     "id": 1897,
     "level": "A2",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "a través de",
@@ -5765,7 +6349,8 @@
     "id": 1898,
     "level": "A2",
     "topic": "viajes_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "phrase"
   },
   {
     "es": "el accidente",
@@ -5779,7 +6364,9 @@
     "id": 1899,
     "level": "A2",
     "topic": "transporte_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "estúpido",
@@ -5793,7 +6380,8 @@
     "id": 1900,
     "level": "A2",
     "topic": "personas_caracter_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "adj"
   },
   {
     "es": "los caballeros",
@@ -5807,7 +6395,9 @@
     "id": 1901,
     "level": "A2",
     "topic": "trato_respeto_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "salvo",
@@ -5821,7 +6411,8 @@
     "id": 1902,
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "adj"
   },
   {
     "es": "tonto",
@@ -5835,7 +6426,8 @@
     "id": 1903,
     "level": "A2",
     "topic": "personas_caracter_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "adj"
   },
   {
     "es": "el traje",
@@ -5849,7 +6441,9 @@
     "id": 1904,
     "level": "A2",
     "topic": "ocio_moda",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el placer",
@@ -5863,7 +6457,9 @@
     "id": 1905,
     "level": "A2",
     "topic": "amor_pareja_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el muchacho",
@@ -5877,7 +6473,9 @@
     "id": 1906,
     "level": "A2",
     "topic": "personas_caracter_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el programa",
@@ -5891,7 +6489,9 @@
     "id": 1907,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la carrera",
@@ -5905,7 +6505,9 @@
     "id": 1908,
     "level": "A2",
     "topic": "estudios",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "hermosa",
@@ -5919,7 +6521,8 @@
     "id": 1909,
     "level": "A2",
     "topic": "personas_caracter_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "adj"
   },
   {
     "es": "sin embargo",
@@ -5933,7 +6536,8 @@
     "id": 1910,
     "level": "A2",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "phrase"
   },
   {
     "es": "el detective",
@@ -5947,7 +6551,9 @@
     "id": 1911,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "las fotos",
@@ -5961,7 +6567,9 @@
     "id": 1912,
     "level": "A2",
     "topic": "viajes_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "vámonos",
@@ -5975,7 +6583,8 @@
     "id": 1913,
     "level": "A2",
     "topic": "viajes_a2",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "adj"
   },
   {
     "es": "el silencio",
@@ -5989,7 +6598,9 @@
     "id": 1914,
     "level": "A2",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el club",
@@ -6003,7 +6614,9 @@
     "id": 1915,
     "level": "A2",
     "topic": "ocio_moda",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "temer",
@@ -6017,7 +6630,8 @@
     "id": 1916,
     "level": "A2",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "es": "prometer",
@@ -6031,7 +6645,8 @@
     "id": 1917,
     "level": "A2",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "verb"
   },
   {
     "es": "los muertos",
@@ -6045,7 +6660,9 @@
     "id": 1918,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el ataque",
@@ -6059,7 +6676,9 @@
     "id": 1919,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "jurar",
@@ -6073,7 +6692,8 @@
     "id": 1920,
     "level": "A2",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "es": "gracioso",
@@ -6087,7 +6707,8 @@
     "id": 1921,
     "level": "A2",
     "topic": "personas_caracter_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "adj"
   },
   {
     "es": "el teniente",
@@ -6101,7 +6722,9 @@
     "id": 1922,
     "level": "A2",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la nave",
@@ -6115,7 +6738,9 @@
     "id": 1923,
     "level": "A2",
     "topic": "transporte_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el contacto",
@@ -6129,7 +6754,9 @@
     "id": 1924,
     "level": "A2",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "verdadero",
@@ -6143,7 +6770,8 @@
     "id": 1925,
     "level": "A2",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "adj"
   },
   {
     "es": "el alma",
@@ -6157,7 +6785,9 @@
     "id": 1926,
     "level": "A2",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "andar",
@@ -6171,7 +6801,8 @@
     "id": 1927,
     "level": "A2",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "es": "el matrimonio",
@@ -6185,7 +6816,9 @@
     "id": 1928,
     "level": "A2",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la locura",
@@ -6199,7 +6832,9 @@
     "id": 1929,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el oro",
@@ -6213,7 +6848,9 @@
     "id": 1930,
     "level": "A2",
     "topic": "compras_servicios",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el permiso",
@@ -6227,7 +6864,9 @@
     "id": 1931,
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el director",
@@ -6241,7 +6880,9 @@
     "id": 1932,
     "level": "A2",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el peligro",
@@ -6255,7 +6896,9 @@
     "id": 1933,
     "level": "A2",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "los pies",
@@ -6269,7 +6912,9 @@
     "id": 1934,
     "level": "A2",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "maravilloso",
@@ -6283,7 +6928,8 @@
     "id": 1935,
     "level": "A2",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "adj"
   },
   {
     "es": "el espacio",
@@ -6297,7 +6943,9 @@
     "id": 1936,
     "level": "A2",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el rato",
@@ -6311,7 +6959,9 @@
     "id": 1937,
     "level": "A2",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la sorpresa",
@@ -6325,7 +6975,9 @@
     "id": 1938,
     "level": "A2",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el maestro",
@@ -6339,7 +6991,9 @@
     "id": 1939,
     "level": "A2",
     "topic": "estudios",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "los tipos",
@@ -6353,7 +7007,9 @@
     "id": 1940,
     "level": "A2",
     "topic": "trato_respeto_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el crimen",
@@ -6367,7 +7023,9 @@
     "id": 1941,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la escena",
@@ -6381,7 +7039,9 @@
     "id": 1942,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la señal",
@@ -6395,7 +7055,9 @@
     "id": 1943,
     "level": "A2",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el honor",
@@ -6409,7 +7071,9 @@
     "id": 1944,
     "level": "A2",
     "topic": "trato_respeto_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el cerebro",
@@ -6423,7 +7087,9 @@
     "id": 1945,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "inteligente",
@@ -6437,7 +7103,8 @@
     "id": 1946,
     "level": "A2",
     "topic": "personas_caracter_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "adj"
   },
   {
     "es": "el bar",
@@ -6451,7 +7118,9 @@
     "id": 1947,
     "level": "A2",
     "topic": "comida_a2",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "suceder",
@@ -6465,7 +7134,8 @@
     "id": 1948,
     "level": "A2",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "es": "adentro",
@@ -6479,7 +7149,8 @@
     "id": 1949,
     "level": "A2",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "adj"
   },
   {
     "es": "las drogas",
@@ -6493,7 +7164,9 @@
     "id": 1950,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "enseguida",
@@ -6507,7 +7180,8 @@
     "id": 1951,
     "level": "A2",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "adj"
   },
   {
     "es": "agradable",
@@ -6521,7 +7195,8 @@
     "id": 1952,
     "level": "A2",
     "topic": "naturaleza_leirasok_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "adj"
   },
   {
     "es": "el departamento",
@@ -6535,7 +7210,9 @@
     "id": 1953,
     "level": "A2",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "lindo",
@@ -6549,7 +7226,8 @@
     "id": 1954,
     "level": "A2",
     "topic": "personas_caracter_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "adj"
   },
   {
     "es": "la víctima",
@@ -6563,7 +7241,9 @@
     "id": 1955,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la energía",
@@ -6577,7 +7257,9 @@
     "id": 1956,
     "level": "A2",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la misión",
@@ -6591,7 +7273,9 @@
     "id": 1957,
     "level": "A2",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "listos",
@@ -6605,7 +7289,8 @@
     "id": 1958,
     "level": "A2",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "adj"
   },
   {
     "es": "la izquierda",
@@ -6619,7 +7304,9 @@
     "id": 1959,
     "level": "A2",
     "topic": "transporte_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "beber",
@@ -6633,7 +7320,8 @@
     "id": 1960,
     "level": "A2",
     "topic": "comida_a2",
-    "topicOrder": 27
+    "topicOrder": 27,
+    "pos": "verb"
   },
   {
     "es": "simple",
@@ -6647,7 +7335,8 @@
     "id": 1961,
     "level": "A2",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "adj"
   },
   {
     "es": "regresar",
@@ -6661,7 +7350,8 @@
     "id": 1962,
     "level": "A2",
     "topic": "viajes_a2",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "verb"
   },
   {
     "es": "la reina",
@@ -6675,7 +7365,9 @@
     "id": 1963,
     "level": "A2",
     "topic": "paises",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la prisión",
@@ -6689,7 +7381,9 @@
     "id": 1964,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el público",
@@ -6703,7 +7397,9 @@
     "id": 1965,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la causa",
@@ -6717,7 +7413,9 @@
     "id": 1966,
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el sargento",
@@ -6731,7 +7429,9 @@
     "id": 1967,
     "level": "A2",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "existir",
@@ -6745,7 +7445,8 @@
     "id": 1968,
     "level": "A2",
     "topic": "naturaleza_leirasok_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "es": "la zona",
@@ -6759,7 +7460,9 @@
     "id": 1969,
     "level": "A2",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la base",
@@ -6773,7 +7476,9 @@
     "id": 1970,
     "level": "A2",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "soler",
@@ -6787,7 +7492,8 @@
     "id": 1971,
     "level": "A2",
     "topic": "trabajo_dia_ser_estar_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "verb"
   },
   {
     "es": "la pelea",
@@ -6801,7 +7507,9 @@
     "id": 1972,
     "level": "A2",
     "topic": "crimen_injusticia_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "así",
@@ -6815,7 +7523,8 @@
     "id": 1973,
     "level": "A2",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "adv"
   },
   {
     "es": "la vez",
@@ -6829,7 +7538,9 @@
     "id": 1974,
     "level": "A2",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "dios",
@@ -6843,7 +7554,8 @@
     "id": 1975,
     "level": "A2",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "adj"
   },
   {
     "es": "un poco",
@@ -6857,7 +7569,9 @@
     "id": 1976,
     "level": "A2",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el momento",
@@ -6871,7 +7585,9 @@
     "id": 1977,
     "level": "A2",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "vale",
@@ -6885,7 +7601,8 @@
     "id": 1978,
     "level": "A2",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adv"
   },
   {
     "es": "el tipo",
@@ -6899,7 +7616,9 @@
     "id": 1979,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "mamá",
@@ -6913,7 +7632,9 @@
     "id": 1980,
     "level": "A2",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "luego",
@@ -6927,7 +7648,8 @@
     "id": 1981,
     "level": "A2",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "adv"
   },
   {
     "es": "papá",
@@ -6941,7 +7663,9 @@
     "id": 1982,
     "level": "A2",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "mal",
@@ -6955,7 +7679,8 @@
     "id": 1983,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "adv"
   },
   {
     "es": "realmente",
@@ -6969,7 +7694,8 @@
     "id": 1984,
     "level": "A2",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "adv"
   },
   {
     "es": "importar",
@@ -6983,7 +7709,8 @@
     "id": 1985,
     "level": "A2",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "es": "tanto",
@@ -6997,7 +7724,8 @@
     "id": 1986,
     "level": "A2",
     "topic": "comida_a2",
-    "topicOrder": 28
+    "topicOrder": 28,
+    "pos": "adv"
   },
   {
     "es": "serio",
@@ -7011,7 +7739,8 @@
     "id": 1987,
     "level": "A2",
     "topic": "personas_caracter_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "adj"
   },
   {
     "es": "la idea",
@@ -7025,7 +7754,9 @@
     "id": 1988,
     "level": "A2",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "cierto",
@@ -7039,7 +7770,8 @@
     "id": 1989,
     "level": "A2",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "adj"
   },
   {
     "es": "quien",
@@ -7053,7 +7785,8 @@
     "id": 1990,
     "level": "A2",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "pron"
   },
   {
     "es": "demasiado",
@@ -7067,7 +7800,8 @@
     "id": 1991,
     "level": "A2",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "adv"
   },
   {
     "es": "la chica",
@@ -7081,7 +7815,9 @@
     "id": 1992,
     "level": "A2",
     "topic": "personas_caracter_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "los chicos",
@@ -7095,7 +7831,9 @@
     "id": 1993,
     "level": "A2",
     "topic": "personas_caracter_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "algún",
@@ -7109,7 +7847,8 @@
     "id": 1994,
     "level": "A2",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "pron"
   },
   {
     "es": "el cariño",
@@ -7123,7 +7862,9 @@
     "id": 1995,
     "level": "A2",
     "topic": "amor_pareja_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la forma",
@@ -7137,7 +7878,9 @@
     "id": 1996,
     "level": "A2",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el primero",
@@ -7151,7 +7894,9 @@
     "id": 1997,
     "level": "A2",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "genial",
@@ -7165,7 +7910,8 @@
     "id": 1998,
     "level": "A2",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "adj"
   },
   {
     "es": "por supuesto",
@@ -7179,7 +7925,8 @@
     "id": 1999,
     "level": "A2",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "phrase"
   },
   {
     "es": "la manera",
@@ -7193,7 +7940,9 @@
     "id": 2000,
     "level": "A2",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la historia",
@@ -7207,7 +7956,9 @@
     "id": 2001,
     "level": "A2",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "significar",
@@ -7221,7 +7972,8 @@
     "id": 2002,
     "level": "A2",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "verb"
   },
   {
     "es": "siquiera",
@@ -7235,7 +7987,8 @@
     "id": 2003,
     "level": "A2",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adj"
   },
   {
     "es": "la muerte",
@@ -7249,7 +8002,9 @@
     "id": 2004,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la realidad",
@@ -7263,7 +8018,9 @@
     "id": 2005,
     "level": "A2",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "adelante",
@@ -7277,7 +8034,8 @@
     "id": 2006,
     "level": "A2",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "adv"
   },
   {
     "es": "el cuidado",
@@ -7291,7 +8049,9 @@
     "id": 2007,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "cerca",
@@ -7305,7 +8065,8 @@
     "id": 2008,
     "level": "A2",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "adv"
   },
   {
     "es": "bastante",
@@ -7319,7 +8080,8 @@
     "id": 2009,
     "level": "A2",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "adv"
   },
   {
     "es": "ningún",
@@ -7333,7 +8095,8 @@
     "id": 2010,
     "level": "A2",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "pron"
   },
   {
     "es": "el punto",
@@ -7347,7 +8110,9 @@
     "id": 2011,
     "level": "A2",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "incluso",
@@ -7361,7 +8126,8 @@
     "id": 2012,
     "level": "A2",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "adv"
   },
   {
     "es": "el doctor",
@@ -7375,7 +8141,9 @@
     "id": 2013,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "arriba",
@@ -7389,7 +8157,8 @@
     "id": 2014,
     "level": "A2",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "adv"
   },
   {
     "es": "la tierra",
@@ -7403,7 +8172,9 @@
     "id": 2015,
     "level": "A2",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la guerra",
@@ -7417,7 +8188,9 @@
     "id": 2016,
     "level": "A2",
     "topic": "paises",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "igual",
@@ -7431,7 +8204,8 @@
     "id": 2017,
     "level": "A2",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "adj"
   },
   {
     "es": "la vuelta",
@@ -7445,7 +8219,9 @@
     "id": 2018,
     "level": "A2",
     "topic": "ocio_moda",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el cuerpo",
@@ -7459,7 +8235,9 @@
     "id": 2019,
     "level": "A2",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la oportunidad",
@@ -7473,7 +8251,9 @@
     "id": 2020,
     "level": "A2",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "listo",
@@ -7487,7 +8267,8 @@
     "id": 2021,
     "level": "A2",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "adj"
   },
   {
     "es": "el auto",
@@ -7501,7 +8282,9 @@
     "id": 2022,
     "level": "A2",
     "topic": "transporte_a2",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "posible",
@@ -7515,7 +8298,8 @@
     "id": 2023,
     "level": "A2",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "adj"
   },
   {
     "es": "el número",
@@ -7529,7 +8313,9 @@
     "id": 2024,
     "level": "A2",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la culpa",
@@ -7543,7 +8329,9 @@
     "id": 2025,
     "level": "A2",
     "topic": "crimen_injusticia_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "abajo",
@@ -7557,7 +8345,8 @@
     "id": 2026,
     "level": "A2",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adv"
   },
   {
     "es": "atrás",
@@ -7571,7 +8360,8 @@
     "id": 2027,
     "level": "A2",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "adv"
   },
   {
     "es": "el capitán",
@@ -7585,7 +8375,9 @@
     "id": 2028,
     "level": "A2",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la palabra",
@@ -7599,7 +8391,9 @@
     "id": 2029,
     "level": "A2",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el idiota",
@@ -7613,7 +8407,9 @@
     "id": 2030,
     "level": "A2",
     "topic": "trato_respeto_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el cuarto",
@@ -7627,7 +8423,9 @@
     "id": 2031,
     "level": "A2",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "los millones",
@@ -7641,7 +8439,9 @@
     "id": 2033,
     "level": "A2",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el modo",
@@ -7655,7 +8455,9 @@
     "id": 2034,
     "level": "A2",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "los demás",
@@ -7669,7 +8471,9 @@
     "id": 2035,
     "level": "A2",
     "topic": "trato_respeto_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el asesino",
@@ -7683,7 +8487,9 @@
     "id": 2036,
     "level": "A2",
     "topic": "crimen_injusticia_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el odio",
@@ -7697,7 +8503,9 @@
     "id": 2037,
     "level": "A2",
     "topic": "crimen_injusticia_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el sexo",
@@ -7711,7 +8519,9 @@
     "id": 2038,
     "level": "A2",
     "topic": "personas_caracter_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "divertido",
@@ -7725,7 +8535,8 @@
     "id": 2039,
     "level": "A2",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adj"
   },
   {
     "es": "el grupo",
@@ -7739,7 +8550,9 @@
     "id": 2040,
     "level": "A2",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el asunto",
@@ -7753,7 +8566,9 @@
     "id": 2041,
     "level": "A2",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el mensaje",
@@ -7767,7 +8582,9 @@
     "id": 2042,
     "level": "A2",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "encima",
@@ -7781,7 +8598,8 @@
     "id": 2043,
     "level": "A2",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "adv"
   },
   {
     "es": "la atención",
@@ -7795,7 +8613,9 @@
     "id": 2044,
     "level": "A2",
     "topic": "estudios",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "diferente",
@@ -7809,7 +8629,8 @@
     "id": 2045,
     "level": "A2",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "adj"
   },
   {
     "es": "callarse",
@@ -7823,7 +8644,8 @@
     "id": 2046,
     "level": "A2",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "verb"
   },
   {
     "es": "siguiente",
@@ -7837,7 +8659,8 @@
     "id": 2047,
     "level": "A2",
     "topic": "transporte_a2",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "adj"
   },
   {
     "es": "sino",
@@ -7851,7 +8674,8 @@
     "id": 2048,
     "level": "A2",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "adj"
   },
   {
     "es": "la pena",
@@ -7865,7 +8689,9 @@
     "id": 2049,
     "level": "A2",
     "topic": "crimen_injusticia_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la fuerza",
@@ -7879,7 +8705,9 @@
     "id": 2050,
     "level": "A2",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "ambos",
@@ -7893,7 +8721,8 @@
     "id": 2051,
     "level": "A2",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "pron"
   },
   {
     "es": "el pie",
@@ -7907,7 +8736,9 @@
     "id": 2052,
     "level": "A2",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "lamentar",
@@ -7921,7 +8752,8 @@
     "id": 2053,
     "level": "A2",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "verb"
   },
   {
     "es": "el asesinato",
@@ -7935,7 +8767,9 @@
     "id": 2054,
     "level": "A2",
     "topic": "crimen_injusticia_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "adónde",
@@ -7949,7 +8783,8 @@
     "id": 2055,
     "level": "A2",
     "topic": "viajes_a2",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "adj"
   },
   {
     "es": "la foto",
@@ -7963,7 +8798,9 @@
     "id": 2056,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "alrededor",
@@ -7977,7 +8814,8 @@
     "id": 2057,
     "level": "A2",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "adj"
   },
   {
     "es": "personal",
@@ -7991,7 +8829,8 @@
     "id": 2058,
     "level": "A2",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "adj"
   },
   {
     "es": "este",
@@ -8005,7 +8844,8 @@
     "id": 2059,
     "level": "A2",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "pron"
   },
   {
     "es": "la evidencia",
@@ -8019,7 +8859,9 @@
     "id": 2060,
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la botella",
@@ -8033,7 +8875,9 @@
     "id": 2061,
     "level": "A2",
     "topic": "comida_a2",
-    "topicOrder": 29
+    "topicOrder": 29,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el apoyo",
@@ -8047,7 +8891,9 @@
     "id": 2062,
     "level": "A2",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la bala",
@@ -8061,7 +8907,9 @@
     "id": 2063,
     "level": "A2",
     "topic": "crimen_injusticia_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el tiro",
@@ -8075,7 +8923,9 @@
     "id": 2064,
     "level": "A2",
     "topic": "crimen_injusticia_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la época",
@@ -8089,7 +8939,9 @@
     "id": 2065,
     "level": "A2",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la distancia",
@@ -8103,7 +8955,9 @@
     "id": 2066,
     "level": "A2",
     "topic": "viajes_a2",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "echar",
@@ -8117,7 +8971,8 @@
     "id": 2067,
     "level": "A2",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "verb"
   },
   {
     "es": "el área",
@@ -8131,7 +8986,9 @@
     "id": 2068,
     "level": "A2",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el espectáculo",
@@ -8145,7 +9002,9 @@
     "id": 2069,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la magia",
@@ -8159,7 +9018,9 @@
     "id": 2070,
     "level": "A2",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "nacional",
@@ -8173,7 +9034,8 @@
     "id": 2071,
     "level": "A2",
     "topic": "paises",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "adj"
   },
   {
     "es": "el universo",
@@ -8187,7 +9049,9 @@
     "id": 2072,
     "level": "A2",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la vergüenza",
@@ -8201,7 +9065,9 @@
     "id": 2073,
     "level": "A2",
     "topic": "crimen_injusticia_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el monstruo",
@@ -8215,7 +9081,9 @@
     "id": 2074,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la princesa",
@@ -8229,7 +9097,9 @@
     "id": 2075,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "cuidar",
@@ -8243,7 +9113,8 @@
     "id": 2076,
     "level": "A2",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "es": "pocos",
@@ -8257,7 +9128,8 @@
     "id": 2077,
     "level": "A2",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "adv"
   },
   {
     "es": "los detalles",
@@ -8271,7 +9143,9 @@
     "id": 2078,
     "level": "A2",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la belleza",
@@ -8285,7 +9159,9 @@
     "id": 2079,
     "level": "A2",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "enviar",
@@ -8299,7 +9175,8 @@
     "id": 2080,
     "level": "A2",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "es": "los puntos",
@@ -8313,7 +9190,9 @@
     "id": 2081,
     "level": "A2",
     "topic": "ocio_moda",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el ministro",
@@ -8327,7 +9206,9 @@
     "id": 2082,
     "level": "A2",
     "topic": "paises",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "aceptar",
@@ -8341,7 +9222,8 @@
     "id": 2083,
     "level": "A2",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "verb"
   },
   {
     "es": "borracho",
@@ -8355,7 +9237,8 @@
     "id": 2084,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "adj"
   },
   {
     "es": "el animal",
@@ -8369,7 +9252,9 @@
     "id": 2085,
     "level": "A2",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "los hechos",
@@ -8383,7 +9268,9 @@
     "id": 2086,
     "level": "A2",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el uso",
@@ -8397,7 +9284,9 @@
     "id": 2087,
     "level": "A2",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "recibir",
@@ -8411,7 +9300,8 @@
     "id": 2088,
     "level": "A2",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "es": "agradecer",
@@ -8425,7 +9315,8 @@
     "id": 2089,
     "level": "A2",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "verb"
   },
   {
     "es": "despacio",
@@ -8439,7 +9330,8 @@
     "id": 2090,
     "level": "A2",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "adv"
   },
   {
     "es": "directamente",
@@ -8453,7 +9345,8 @@
     "id": 2091,
     "level": "A2",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "adv"
   },
   {
     "es": "inmediato",
@@ -8467,7 +9360,8 @@
     "id": 2092,
     "level": "A2",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "adj"
   },
   {
     "es": "profesional",
@@ -8481,7 +9375,8 @@
     "id": 2093,
     "level": "A2",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "adj"
   },
   {
     "es": "el líder",
@@ -8495,7 +9390,9 @@
     "id": 2094,
     "level": "A2",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "grave",
@@ -8509,7 +9406,8 @@
     "id": 2095,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "adj"
   },
   {
     "es": "llegar",
@@ -8523,7 +9421,8 @@
     "id": 2096,
     "level": "A2",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "verb"
   },
   {
     "es": "el jurado",
@@ -8537,7 +9436,9 @@
     "id": 2097,
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "los casos",
@@ -8551,7 +9452,9 @@
     "id": 2098,
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "últimamente",
@@ -8565,7 +9468,8 @@
     "id": 2099,
     "level": "A2",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "adv"
   },
   {
     "es": "la piedra",
@@ -8579,7 +9483,9 @@
     "id": 2100,
     "level": "A2",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la intención",
@@ -8593,7 +9499,9 @@
     "id": 2101,
     "level": "A2",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el humor",
@@ -8607,7 +9515,9 @@
     "id": 2102,
     "level": "A2",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "asesinar",
@@ -8621,7 +9531,8 @@
     "id": 2103,
     "level": "A2",
     "topic": "crimen_injusticia_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "es": "directo",
@@ -8635,7 +9546,8 @@
     "id": 2104,
     "level": "A2",
     "topic": "transporte_a2",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "adj"
   },
   {
     "es": "central",
@@ -8649,7 +9561,8 @@
     "id": 2105,
     "level": "A2",
     "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "adj"
   },
   {
     "es": "la oscuridad",
@@ -8663,7 +9576,9 @@
     "id": 2106,
     "level": "A2",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "actuar",
@@ -8677,7 +9592,8 @@
     "id": 2107,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "verb"
   },
   {
     "es": "comenzar",
@@ -8691,7 +9607,8 @@
     "id": 2108,
     "level": "A2",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "verb"
   },
   {
     "es": "privado",
@@ -8705,7 +9622,8 @@
     "id": 2109,
     "level": "A2",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "adj"
   },
   {
     "es": "el demonio",
@@ -8719,7 +9637,9 @@
     "id": 2110,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "romper",
@@ -8733,7 +9653,8 @@
     "id": 2111,
     "level": "A2",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "verb"
   },
   {
     "es": "el fiscal",
@@ -8747,7 +9668,9 @@
     "id": 2112,
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "gratis",
@@ -8761,7 +9684,8 @@
     "id": 2113,
     "level": "A2",
     "topic": "compras_servicios",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "adj"
   },
   {
     "es": "costar",
@@ -8775,7 +9699,8 @@
     "id": 2114,
     "level": "A2",
     "topic": "compras_servicios",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "verb"
   },
   {
     "es": "precioso",
@@ -8789,7 +9714,8 @@
     "id": 2115,
     "level": "A2",
     "topic": "naturaleza_leirasok_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "adj"
   },
   {
     "es": "sexual",
@@ -8803,7 +9729,8 @@
     "id": 2116,
     "level": "A2",
     "topic": "opinion_calidad_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "adj"
   },
   {
     "es": "el acceso",
@@ -8817,7 +9744,9 @@
     "id": 2117,
     "level": "A2",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la necesidad",
@@ -8831,7 +9760,9 @@
     "id": 2118,
     "level": "A2",
     "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el dueño",
@@ -8845,7 +9776,9 @@
     "id": 2119,
     "level": "A2",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "merecer",
@@ -8859,7 +9792,8 @@
     "id": 2120,
     "level": "A2",
     "topic": "crimen_injusticia_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "es": "los rayos",
@@ -8873,7 +9807,9 @@
     "id": 2121,
     "level": "A2",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "mentir",
@@ -8887,7 +9823,8 @@
     "id": 2122,
     "level": "A2",
     "topic": "crimen_injusticia_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "es": "el fantasma",
@@ -8901,7 +9838,9 @@
     "id": 2123,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "varios",
@@ -8915,7 +9854,8 @@
     "id": 2124,
     "level": "A2",
     "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "pron"
   },
   {
     "es": "el efecto",
@@ -8929,7 +9869,9 @@
     "id": 2125,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la felicidad",
@@ -8943,7 +9885,9 @@
     "id": 2126,
     "level": "A2",
     "topic": "amor_pareja_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la espada",
@@ -8957,7 +9901,9 @@
     "id": 2127,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "las relaciones",
@@ -8971,7 +9917,9 @@
     "id": 2128,
     "level": "A2",
     "topic": "amor_pareja_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "menor",
@@ -8985,7 +9933,8 @@
     "id": 2129,
     "level": "A2",
     "topic": "personas_caracter_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "adj"
   },
   {
     "es": "el video",
@@ -8999,7 +9948,9 @@
     "id": 2130,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "perfectamente",
@@ -9013,7 +9964,8 @@
     "id": 2131,
     "level": "A2",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "adv"
   },
   {
     "es": "local",
@@ -9027,7 +9979,8 @@
     "id": 2132,
     "level": "A2",
     "topic": "compras_servicios",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "adj"
   },
   {
     "es": "la lástima",
@@ -9041,7 +9994,9 @@
     "id": 2133,
     "level": "A2",
     "topic": "crimen_injusticia_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la búsqueda",
@@ -9055,7 +10010,9 @@
     "id": 2134,
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "las razones",
@@ -9069,7 +10026,9 @@
     "id": 2135,
     "level": "A2",
     "topic": "estudios",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "oler",
@@ -9083,7 +10042,8 @@
     "id": 2136,
     "level": "A2",
     "topic": "naturaleza_leirasok_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "es": "tantos",
@@ -9097,7 +10057,8 @@
     "id": 2137,
     "level": "A2",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "adv"
   },
   {
     "es": "normalmente",
@@ -9111,7 +10072,8 @@
     "id": 2138,
     "level": "A2",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "adv"
   },
   {
     "es": "la cinta",
@@ -9125,7 +10087,9 @@
     "id": 2139,
     "level": "A2",
     "topic": "compras_servicios",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el interés",
@@ -9139,7 +10103,9 @@
     "id": 2141,
     "level": "A2",
     "topic": "estudios",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el comienzo",
@@ -9153,7 +10119,9 @@
     "id": 2142,
     "level": "A2",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "militar",
@@ -9167,7 +10135,8 @@
     "id": 2143,
     "level": "A2",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "verb"
   },
   {
     "es": "el polvo",
@@ -9181,7 +10150,9 @@
     "id": 2144,
     "level": "A2",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 27
+    "topicOrder": 27,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "bello",
@@ -9195,7 +10166,8 @@
     "id": 2145,
     "level": "A2",
     "topic": "naturaleza_leirasok_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "adj"
   },
   {
     "es": "el coronel",
@@ -9209,7 +10181,9 @@
     "id": 2146,
     "level": "A2",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "apuesto",
@@ -9223,7 +10197,8 @@
     "id": 2147,
     "level": "A2",
     "topic": "personas_caracter_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "adj"
   },
   {
     "es": "excepto",
@@ -9237,7 +10212,8 @@
     "id": 2148,
     "level": "A2",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "prep"
   },
   {
     "es": "la posición",
@@ -9251,7 +10227,9 @@
     "id": 2149,
     "level": "A2",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "trasero",
@@ -9265,7 +10243,8 @@
     "id": 2150,
     "level": "A2",
     "topic": "transporte_a2",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "adj"
   },
   {
     "es": "excelente",
@@ -9279,7 +10258,8 @@
     "id": 2151,
     "level": "A2",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "adj"
   },
   {
     "es": "los modos",
@@ -9293,7 +10273,9 @@
     "id": 2152,
     "level": "A2",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la especie",
@@ -9307,7 +10289,9 @@
     "id": 2153,
     "level": "A2",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la diferencia",
@@ -9321,7 +10305,9 @@
     "id": 2154,
     "level": "A2",
     "topic": "estudios",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el ejemplo",
@@ -9335,7 +10321,9 @@
     "id": 2155,
     "level": "A2",
     "topic": "estudios",
-    "topicOrder": 27
+    "topicOrder": 27,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el radio",
@@ -9349,7 +10337,9 @@
     "id": 2156,
     "level": "A2",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el hogar",
@@ -9363,7 +10353,9 @@
     "id": 2157,
     "level": "A2",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 28
+    "topicOrder": 28,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el fondo",
@@ -9377,7 +10369,9 @@
     "id": 2158,
     "level": "A2",
     "topic": "naturaleza_leirasok_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el planeta",
@@ -9391,7 +10385,9 @@
     "id": 2159,
     "level": "A2",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el respeto",
@@ -9405,7 +10401,9 @@
     "id": 2160,
     "level": "A2",
     "topic": "trato_respeto_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "parar",
@@ -9419,7 +10417,8 @@
     "id": 2161,
     "level": "A2",
     "topic": "transporte_a2",
-    "topicOrder": 27
+    "topicOrder": 27,
+    "pos": "verb"
   },
   {
     "es": "la pista",
@@ -9433,7 +10432,9 @@
     "id": 2162,
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "las órdenes",
@@ -9447,7 +10448,9 @@
     "id": 2163,
     "level": "A2",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el ojo",
@@ -9461,7 +10464,9 @@
     "id": 2164,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el héroe",
@@ -9475,7 +10480,9 @@
     "id": 2165,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el trago",
@@ -9489,7 +10496,9 @@
     "id": 2166,
     "level": "A2",
     "topic": "comida_a2",
-    "topicOrder": 30
+    "topicOrder": 30,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "luchar",
@@ -9503,7 +10512,8 @@
     "id": 2167,
     "level": "A2",
     "topic": "crimen_injusticia_a2",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "verb"
   },
   {
     "es": "el cabo",
@@ -9517,7 +10527,9 @@
     "id": 2168,
     "level": "A2",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "averiguar",
@@ -9531,7 +10543,8 @@
     "id": 2169,
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "verb"
   },
   {
     "es": "el sonido",
@@ -9545,7 +10558,9 @@
     "id": 2170,
     "level": "A2",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el caballero",
@@ -9559,7 +10574,9 @@
     "id": 2171,
     "level": "A2",
     "topic": "trato_respeto_a2",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el código",
@@ -9573,7 +10590,9 @@
     "id": 2172,
     "level": "A2",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la imagen",
@@ -9587,7 +10606,9 @@
     "id": 2173,
     "level": "A2",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el millón",
@@ -9601,7 +10622,9 @@
     "id": 2174,
     "level": "A2",
     "topic": "compras_servicios",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la dama",
@@ -9615,7 +10638,9 @@
     "id": 2175,
     "level": "A2",
     "topic": "trato_respeto_a2",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la prensa",
@@ -9629,7 +10654,9 @@
     "id": 2176,
     "level": "A2",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la televisión",
@@ -9643,7 +10670,9 @@
     "id": 2177,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "los momentos",
@@ -9657,7 +10686,9 @@
     "id": 2178,
     "level": "A2",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la posibilidad",
@@ -9671,7 +10702,9 @@
     "id": 2179,
     "level": "A2",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "herido",
@@ -9685,7 +10718,8 @@
     "id": 2180,
     "level": "A2",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "adj"
   },
   {
     "es": "seguramente",
@@ -9699,7 +10733,8 @@
     "id": 2181,
     "level": "A2",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "adv"
   },
   {
     "es": "el sospechoso",
@@ -9713,7 +10748,9 @@
     "id": 2182,
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la naturaleza",
@@ -9727,7 +10764,9 @@
     "id": 2183,
     "level": "A2",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "arreglar",
@@ -9741,7 +10780,8 @@
     "id": 2184,
     "level": "A2",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 29
+    "topicOrder": 29,
+    "pos": "verb"
   },
   {
     "es": "sentado",
@@ -9755,7 +10795,8 @@
     "id": 2185,
     "level": "A2",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "adj"
   },
   {
     "es": "el papi",
@@ -9769,7 +10810,9 @@
     "id": 2186,
     "level": "A2",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "obtener",
@@ -9783,7 +10826,8 @@
     "id": 2187,
     "level": "A2",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "verb"
   },
   {
     "es": "felices",
@@ -9797,7 +10841,8 @@
     "id": 2188,
     "level": "A2",
     "topic": "amor_pareja_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "adj"
   },
   {
     "es": "el papa",
@@ -9811,7 +10856,9 @@
     "id": 2190,
     "level": "A2",
     "topic": "paises",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "llorar",
@@ -9825,7 +10872,8 @@
     "id": 2191,
     "level": "A2",
     "topic": "promesa_emociones_a2",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "verb"
   },
   {
     "es": "familiar",
@@ -9839,7 +10887,8 @@
     "id": 2192,
     "level": "A2",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "adj"
   },
   {
     "es": "el desastre",
@@ -9853,7 +10902,9 @@
     "id": 2193,
     "level": "A2",
     "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la enfermedad",
@@ -9867,7 +10918,9 @@
     "id": 2194,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 27
+    "topicOrder": 27,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el colega",
@@ -9881,7 +10934,9 @@
     "id": 2195,
     "level": "A2",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el príncipe",
@@ -9895,7 +10950,9 @@
     "id": 2196,
     "level": "A2",
     "topic": "personas_caracter_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "bajar",
@@ -9909,7 +10966,8 @@
     "id": 2197,
     "level": "A2",
     "topic": "transporte_a2",
-    "topicOrder": 28
+    "topicOrder": 28,
+    "pos": "verb"
   },
   {
     "es": "el inspector",
@@ -9923,7 +10981,9 @@
     "id": 2198,
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la velocidad",
@@ -9937,7 +10997,9 @@
     "id": 2199,
     "level": "A2",
     "topic": "transporte_a2",
-    "topicOrder": 29
+    "topicOrder": 29,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "total",
@@ -9951,7 +11013,8 @@
     "id": 2200,
     "level": "A2",
     "topic": "compras_servicios",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "adj"
   },
   {
     "es": "el cabello",
@@ -9965,7 +11028,9 @@
     "id": 2201,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 28
+    "topicOrder": 28,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "suficientemente",
@@ -9979,7 +11044,8 @@
     "id": 2202,
     "level": "A2",
     "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "adv"
   },
   {
     "es": "la unidad",
@@ -9993,7 +11059,9 @@
     "id": 2203,
     "level": "A2",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "quienes",
@@ -10007,7 +11075,8 @@
     "id": 2204,
     "level": "A2",
     "topic": "trato_respeto_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "pron"
   },
   {
     "es": "las tonterías",
@@ -10021,7 +11090,9 @@
     "id": 2205,
     "level": "A2",
     "topic": "crimen_injusticia_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la emergencia",
@@ -10035,7 +11106,9 @@
     "id": 2206,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 29
+    "topicOrder": 29,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el robo",
@@ -10049,7 +11122,9 @@
     "id": 2207,
     "level": "A2",
     "topic": "compras_servicios",
-    "topicOrder": 27
+    "topicOrder": 27,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "ése",
@@ -10063,7 +11138,8 @@
     "id": 2208,
     "level": "A2",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "adj"
   },
   {
     "es": "unidos",
@@ -10077,7 +11153,8 @@
     "id": 2210,
     "level": "A2",
     "topic": "trato_respeto_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "adj"
   },
   {
     "es": "el respecto",
@@ -10091,7 +11168,9 @@
     "id": 2211,
     "level": "A2",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la victoria",
@@ -10105,7 +11184,9 @@
     "id": 2212,
     "level": "A2",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "decidido",
@@ -10119,7 +11200,8 @@
     "id": 2213,
     "level": "A2",
     "topic": "personas_caracter_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "adj"
   },
   {
     "es": "detenerse",
@@ -10133,7 +11215,8 @@
     "id": 2214,
     "level": "A2",
     "topic": "transporte_a2",
-    "topicOrder": 30
+    "topicOrder": 30,
+    "pos": "verb"
   },
   {
     "es": "nosotras",
@@ -10147,7 +11230,8 @@
     "id": 2215,
     "level": "A2",
     "topic": "trato_respeto_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "pron"
   },
   {
     "es": "servir",
@@ -10161,7 +11245,8 @@
     "id": 2216,
     "level": "A2",
     "topic": "comida_a2",
-    "topicOrder": 31
+    "topicOrder": 31,
+    "pos": "verb"
   },
   {
     "es": "oír",
@@ -10175,7 +11260,8 @@
     "id": 2217,
     "level": "A2",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "verb"
   },
   {
     "es": "la voluntad",
@@ -10189,7 +11275,9 @@
     "id": 2218,
     "level": "A2",
     "topic": "personas_caracter_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "varias",
@@ -10203,7 +11291,8 @@
     "id": 2219,
     "level": "A2",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "pron"
   },
   {
     "es": "la teoría",
@@ -10217,7 +11306,9 @@
     "id": 2220,
     "level": "A2",
     "topic": "estudios",
-    "topicOrder": 28
+    "topicOrder": 28,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el escenario",
@@ -10231,7 +11322,9 @@
     "id": 2221,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el diario",
@@ -10245,7 +11338,9 @@
     "id": 2222,
     "level": "A2",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la propiedad",
@@ -10259,7 +11354,9 @@
     "id": 2223,
     "level": "A2",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 30
+    "topicOrder": 30,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el agujero",
@@ -10273,7 +11370,9 @@
     "id": 2224,
     "level": "A2",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 31
+    "topicOrder": 31,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el campamento",
@@ -10287,7 +11386,9 @@
     "id": 2225,
     "level": "A2",
     "topic": "viajes_a2",
-    "topicOrder": 27
+    "topicOrder": 27,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el ángel",
@@ -10301,7 +11402,9 @@
     "id": 2226,
     "level": "A2",
     "topic": "trato_respeto_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "impresionante",
@@ -10315,7 +11418,8 @@
     "id": 2227,
     "level": "A2",
     "topic": "naturaleza_leirasok_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "adj"
   },
   {
     "es": "el proceso",
@@ -10329,7 +11433,9 @@
     "id": 2228,
     "level": "A2",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el miembro",
@@ -10343,7 +11449,9 @@
     "id": 2229,
     "level": "A2",
     "topic": "trato_respeto_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el periódico",
@@ -10357,7 +11465,9 @@
     "id": 2230,
     "level": "A2",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la mami",
@@ -10371,7 +11481,9 @@
     "id": 2231,
     "level": "A2",
     "topic": "familia_matrimonio_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "crear",
@@ -10385,7 +11497,8 @@
     "id": 2232,
     "level": "A2",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "es": "robar",
@@ -10399,7 +11512,8 @@
     "id": 2233,
     "level": "A2",
     "topic": "compras_servicios",
-    "topicOrder": 28
+    "topicOrder": 28,
+    "pos": "verb"
   },
   {
     "es": "guapo",
@@ -10413,7 +11527,8 @@
     "id": 2234,
     "level": "A2",
     "topic": "personas_caracter_a2",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "adj"
   },
   {
     "es": "continuar",
@@ -10427,7 +11542,8 @@
     "id": 2235,
     "level": "A2",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "es": "extra",
@@ -10441,7 +11557,8 @@
     "id": 2236,
     "level": "A2",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "adj"
   },
   {
     "es": "manejar",
@@ -10455,7 +11572,8 @@
     "id": 2237,
     "level": "A2",
     "topic": "transporte_a2",
-    "topicOrder": 31
+    "topicOrder": 31,
+    "pos": "verb"
   },
   {
     "es": "el acto",
@@ -10469,7 +11587,9 @@
     "id": 2238,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "los números",
@@ -10483,7 +11603,9 @@
     "id": 2239,
     "level": "A2",
     "topic": "estudios",
-    "topicOrder": 29
+    "topicOrder": 29,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "los kilómetros",
@@ -10497,7 +11619,9 @@
     "id": 2240,
     "level": "A2",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el internet",
@@ -10511,7 +11635,9 @@
     "id": 2241,
     "level": "A2",
     "topic": "comunicacion_medios_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "inútil",
@@ -10525,7 +11651,8 @@
     "id": 2242,
     "level": "A2",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "adj"
   },
   {
     "es": "la sensación",
@@ -10539,7 +11666,9 @@
     "id": 2243,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 30
+    "topicOrder": 30,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el alcohol",
@@ -10553,7 +11682,9 @@
     "id": 2244,
     "level": "A2",
     "topic": "comida_a2",
-    "topicOrder": 32
+    "topicOrder": 32,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "tercera",
@@ -10567,7 +11698,8 @@
     "id": 2245,
     "level": "A2",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 32
+    "topicOrder": 32,
+    "pos": "adj"
   },
   {
     "es": "el ladrón",
@@ -10581,7 +11713,9 @@
     "id": 2246,
     "level": "A2",
     "topic": "compras_servicios",
-    "topicOrder": 29
+    "topicOrder": 29,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "deprisa",
@@ -10595,7 +11729,8 @@
     "id": 2247,
     "level": "A2",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "adv"
   },
   {
     "es": "disparar",
@@ -10609,7 +11744,8 @@
     "id": 2248,
     "level": "A2",
     "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "es": "el entrenador",
@@ -10623,7 +11759,9 @@
     "id": 2249,
     "level": "A2",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "entero",
@@ -10637,7 +11775,8 @@
     "id": 2250,
     "level": "A2",
     "topic": "comida_a2",
-    "topicOrder": 33
+    "topicOrder": 33,
+    "pos": "adj"
   },
   {
     "es": "el modelo",
@@ -10651,7 +11790,9 @@
     "id": 2251,
     "level": "A2",
     "topic": "ocio_moda",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "detener",
@@ -10665,7 +11806,8 @@
     "id": 2252,
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "es": "el talento",
@@ -10679,7 +11821,9 @@
     "id": 2253,
     "level": "A2",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el tribunal",
@@ -10693,7 +11837,9 @@
     "id": 2254,
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el toque",
@@ -10707,7 +11853,9 @@
     "id": 2255,
     "level": "A2",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "dispuesto",
@@ -10721,7 +11869,8 @@
     "id": 2256,
     "level": "A2",
     "topic": "trato_respeto_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "adj"
   },
   {
     "es": "el tamaño",
@@ -10735,7 +11884,9 @@
     "id": 2257,
     "level": "A2",
     "topic": "compras_servicios",
-    "topicOrder": 30
+    "topicOrder": 30,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la declaración",
@@ -10749,7 +11900,9 @@
     "id": 2258,
     "level": "A2",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "claramente",
@@ -10763,7 +11916,8 @@
     "id": 2259,
     "level": "A2",
     "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "adv"
   },
   {
     "es": "profundo",
@@ -10777,7 +11931,8 @@
     "id": 2260,
     "level": "A2",
     "topic": "naturaleza_leirasok_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adj"
   },
   {
     "es": "el gas",
@@ -10791,7 +11946,9 @@
     "id": 2261,
     "level": "A2",
     "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 33
+    "topicOrder": 33,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el instituto",
@@ -10805,7 +11962,9 @@
     "id": 2262,
     "level": "A2",
     "topic": "estudios",
-    "topicOrder": 30
+    "topicOrder": 30,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "el cadáver",
@@ -10819,7 +11978,9 @@
     "id": 2263,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 31
+    "topicOrder": 31,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la gracia",
@@ -10833,7 +11994,9 @@
     "id": 2264,
     "level": "A2",
     "topic": "amor_pareja_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "la doctora",
@@ -10847,7 +12010,9 @@
     "id": 2265,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 32
+    "topicOrder": 32,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el amante",
@@ -10861,7 +12026,9 @@
     "id": 2266,
     "level": "A2",
     "topic": "amor_pareja_a2",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la temporada",
@@ -10875,7 +12042,9 @@
     "id": 2267,
     "level": "A2",
     "topic": "ocio_film_tv_a2",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "el francés",
@@ -10889,7 +12058,9 @@
     "id": 2268,
     "level": "A2",
     "topic": "estudios",
-    "topicOrder": 31
+    "topicOrder": 31,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "la protección",
@@ -10903,7 +12074,9 @@
     "id": 2269,
     "level": "A2",
     "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "es": "comprender",
@@ -10917,7 +12090,8 @@
     "id": 2270,
     "level": "A2",
     "topic": "comunicacion_hablar_a2",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "verb"
   },
   {
     "es": "superior",
@@ -10931,7 +12105,8 @@
     "id": 2271,
     "level": "A2",
     "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "adj"
   },
   {
     "es": "criminal",
@@ -10945,7 +12120,8 @@
     "id": 2272,
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adj"
   },
   {
     "es": "el bote",
@@ -10959,7 +12135,9 @@
     "id": 2273,
     "level": "A2",
     "topic": "transporte_a2",
-    "topicOrder": 32
+    "topicOrder": 32,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "recoger",
@@ -10973,7 +12151,8 @@
     "id": 2274,
     "level": "A2",
     "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "verb"
   },
   {
     "es": "el truco",
@@ -10987,7 +12166,9 @@
     "id": 2275,
     "level": "A2",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "original",
@@ -11001,7 +12182,8 @@
     "id": 2276,
     "level": "A2",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "adj"
   },
   {
     "es": "sobrevivir",
@@ -11015,7 +12197,8 @@
     "id": 2277,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 33
+    "topicOrder": 33,
+    "pos": "verb"
   },
   {
     "es": "el rostro",
@@ -11029,7 +12212,9 @@
     "id": 2278,
     "level": "A2",
     "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 34
+    "topicOrder": 34,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "compartir",
@@ -11043,7 +12228,8 @@
     "id": 2279,
     "level": "A2",
     "topic": "amor_pareja_a2",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "verb"
   },
   {
     "es": "el registro",
@@ -11057,7 +12243,9 @@
     "id": 2280,
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "es": "grandioso",
@@ -11071,7 +12259,8 @@
     "id": 2281,
     "level": "A2",
     "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "adj"
   },
   {
     "es": "primero",
@@ -11085,6 +12274,7 @@
     "id": 2282,
     "level": "A2",
     "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "num"
   }
 ]
