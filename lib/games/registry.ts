@@ -126,7 +126,7 @@ export const GAME_DEFS: GameDef[] = [
     },
     minPoolSize: 10,
     hasSettings: true,
-    soon: true,
+    soon: false, // F1 (GAMES.md 8. szekció): app/games/word-search.tsx
   },
   {
     id: 'story',
