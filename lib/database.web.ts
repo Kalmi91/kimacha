@@ -19,6 +19,9 @@ export interface DB {
   getDueCardsForWordIds(wordIds: number[], limit: number): Promise<any[]>;
   getWordReps(wordIds: number[]): Promise<Map<number, number>>;
   getWordStates(wordIds: number[]): Promise<Map<number, number>>;
+  // GAMES.md 3.1 (F0): every non-buried word card of a given pair, for
+  // lib/games/vocabPool.ts. Explicit `pair` param, matches the native twin.
+  getAllWordCards(pair: string): Promise<{ word_id: number; reps: number; lapses: number; state: number }[]>;
   recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number): Promise<void>;
   getUserMeta(): Promise<{ userId: string; firstUseDate: string; lastSyncDate: string | null }>;
   updateLastSync(date: string): Promise<void>;
@@ -60,6 +63,14 @@ export interface DB {
   getUnlearnedWordCount(): Promise<number>;
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
+  // GAMES.md 3.5 (F0): Game fül tables, scoped to the active pair like every
+  // other per-pair setting/state in this interface.
+  getGameScore(gameId: string): Promise<{ bestScore: number; bestAt: string | null; plays: number; lastPlayed: string | null } | null>;
+  recordGameScore(gameId: string, score: number): Promise<{ isNewBest: boolean; best: number }>;
+  getGameSettings(gameId: string): Promise<Record<string, unknown> | null>;
+  setGameSettings(gameId: string, settings: Record<string, unknown>): Promise<void>;
+  getGameProgress(gameId: string): Promise<{ itemId: string; state: string; data: unknown }[]>;
+  setGameProgress(gameId: string, itemId: string, state: string, data?: unknown): Promise<void>;
   exportAll(): Promise<BackupPayload>;
   importAll(payload: BackupPayload): Promise<void>;
 }
@@ -227,6 +238,13 @@ class MemoryDB implements DB {
       }
     }
     return map;
+  }
+
+  // GAMES.md 3.1 (F0): every non-buried word card of `pair`, for vocabPool.ts.
+  async getAllWordCards(pair: string) {
+    return [...this.cards.values()]
+      .filter((c) => c.type === 'word' && c.pair === pair && !c.buried)
+      .map((c) => ({ word_id: c.word_id, reps: c.reps, lapses: c.lapses, state: c.state }));
   }
 
   private attempts: { word_id: number; type: string; pair?: string; correct: boolean; response_time_ms: number; timestamp: string }[] = [];
@@ -478,6 +496,62 @@ class MemoryDB implements DB {
     return { minutes: this.usageMinutes.get(date) ?? 0, words: words.size };
   }
 
+  // GAMES.md 3.5 (F0): Game fül rekord/beállítás/haladás táblák, per-pair
+  // maps like the other web-only state above (session-scoped, doesn't
+  // survive reload, same known limitation as everything else in this file).
+  private gameScores: Map<string, { bestScore: number; bestAt: string | null; plays: number; lastPlayed: string | null }> = new Map();
+  private gameSettingsMap: Map<string, Record<string, unknown>> = new Map();
+  private gameProgressMap: Map<string, Map<string, { state: string; data: unknown }>> = new Map();
+
+  private gameKey(gameId: string) {
+    return `${this.activePair}:${gameId}`;
+  }
+
+  async getGameScore(gameId: string) {
+    return this.gameScores.get(this.gameKey(gameId)) ?? null;
+  }
+
+  async recordGameScore(gameId: string, score: number) {
+    const key = this.gameKey(gameId);
+    const existing = this.gameScores.get(key);
+    const prevBest = existing?.bestScore ?? 0;
+    const isNewBest = score > prevBest;
+    const now = new Date().toISOString();
+    this.gameScores.set(key, {
+      bestScore: isNewBest ? score : prevBest,
+      bestAt: isNewBest ? now : (existing?.bestAt ?? now),
+      plays: (existing?.plays ?? 0) + 1,
+      lastPlayed: now,
+    });
+    return { isNewBest, best: isNewBest ? score : prevBest };
+  }
+
+  async getGameSettings(gameId: string) {
+    return this.gameSettingsMap.get(this.gameKey(gameId)) ?? null;
+  }
+
+  async setGameSettings(gameId: string, settings: Record<string, unknown>) {
+    this.gameSettingsMap.set(this.gameKey(gameId), settings);
+  }
+
+  private gameProgressFor(gameId: string) {
+    const key = this.gameKey(gameId);
+    let m = this.gameProgressMap.get(key);
+    if (!m) {
+      m = new Map();
+      this.gameProgressMap.set(key, m);
+    }
+    return m;
+  }
+
+  async getGameProgress(gameId: string) {
+    return [...this.gameProgressFor(gameId).entries()].map(([itemId, v]) => ({ itemId, state: v.state, data: v.data }));
+  }
+
+  async setGameProgress(gameId: string, itemId: string, state: string, data?: unknown) {
+    this.gameProgressFor(gameId).set(itemId, { state, data });
+  }
+
   // Q0: full learning-state backup. Memory state is serialized into the same
   // table-row shapes as the SQLite implementation, so a backup made on one
   // platform restores on the other.
@@ -506,6 +580,25 @@ class MemoryDB implements DB {
       tables: {
         cards: [...this.cards.values()].map(c => ({ ...c })),
         card_attempts: this.attempts.map(a => ({ ...a, correct: a.correct ? 1 : 0 })),
+        game_progress: [...this.gameProgressMap].flatMap(([key, items]) => {
+          const sep = key.lastIndexOf(':');
+          const pair = key.slice(0, sep), game_id = key.slice(sep + 1);
+          return [...items].map(([item_id, v]) => ({
+            pair, game_id, item_id, state: v.state,
+            data_json: v.data !== undefined ? JSON.stringify(v.data) : null,
+          }));
+        }),
+        game_scores: [...this.gameScores].map(([key, v]) => {
+          const sep = key.lastIndexOf(':');
+          return {
+            pair: key.slice(0, sep), game_id: key.slice(sep + 1),
+            best_score: v.bestScore, best_at: v.bestAt, plays: v.plays, last_played: v.lastPlayed,
+          };
+        }),
+        game_settings: [...this.gameSettingsMap].map(([key, settings]) => {
+          const sep = key.lastIndexOf(':');
+          return { pair: key.slice(0, sep), game_id: key.slice(sep + 1), settings_json: JSON.stringify(settings) };
+        }),
         learn_settings,
         onboarding: this.onboarding ? [{ id: 1, ...this.onboarding }] : [],
         selected_topic: [...this.selectedTopics].map(([pair, topicId]) => ({ pair, topic_id: topicId })),
@@ -522,6 +615,43 @@ class MemoryDB implements DB {
     const t = payload.tables;
     this.cards = new Map(t.cards.map((c: any) => [`${c.pair}:${c.word_id}:${c.type}`, { ...c }]));
     this.attempts = t.card_attempts.map((a: any) => ({ ...a, correct: !!a.correct }));
+    // Re-keyed by `${pair}:${game_id}` directly (not via gameProgressFor,
+    // which keys off the CURRENT activePair, a restore can carry rows for
+    // several pairs at once).
+    this.gameProgressMap = new Map(
+      Object.entries(
+        (t.game_progress as any[]).reduce((acc: Record<string, [string, { state: string; data: unknown }][]>, row) => {
+          const key = `${row.pair}:${row.game_id}`;
+          let data: unknown;
+          if (row.data_json) {
+            try {
+              data = JSON.parse(row.data_json);
+            } catch {
+              data = undefined;
+            }
+          }
+          (acc[key] ??= []).push([row.item_id, { state: row.state, data }]);
+          return acc;
+        }, {})
+      ).map(([key, entries]) => [key, new Map(entries)])
+    );
+    this.gameScores = new Map(
+      (t.game_scores as any[]).map((row) => [
+        `${row.pair}:${row.game_id}`,
+        { bestScore: row.best_score, bestAt: row.best_at, plays: row.plays, lastPlayed: row.last_played },
+      ])
+    );
+    this.gameSettingsMap = new Map(
+      (t.game_settings as any[]).map((row) => {
+        let settings: Record<string, unknown> = {};
+        try {
+          settings = JSON.parse(row.settings_json);
+        } catch {
+          settings = {};
+        }
+        return [`${row.pair}:${row.game_id}`, settings];
+      })
+    );
     this.wordsOnlyMap = new Map();
     this.randomTopicsMap = new Map();
     this.feedbackBtnSideMap = new Map();
