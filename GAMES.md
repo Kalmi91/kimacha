@@ -9,7 +9,7 @@
 > Ez a fájl **nem** helyettesíti őket, hanem egy külön munkaterület: a Game fül
 > minden itemje ITT él, amíg el nem készül.
 >
-> **Verzió:** v1.0 (2026-08-26), státusz: **MINDEN KÉRDÉS ELDŐLT, a Mondat-Tetris kivételével minden item SPEC-KÉSZ, kódolható**.
+> **Verzió:** v1.1 (2026-08-26), státusz: **MINDEN KÉRDÉS ELDŐLT, a Mondat-Tetris kivételével minden item SPEC-KÉSZ, kódolható**.
 > A 29 K-kérdés mind eldőlt (2026-08-26), a döntések a 7. szekcióban vannak. A kódolás indulhat az F-1 fázissal.
 
 ---
@@ -333,6 +333,55 @@ szállítási kapu minden játék-itemre.
 >   `gameDb.test.ts` (3 új tábla + `getAllWordCards`, export/import round-trip),
 >   `gamesRegistry.test.ts`, `gameScoring.test.ts`, `gloss.test.ts`,
 >   `distract.test.ts`, `gameSession.test.ts`.
+
+> **MEGVALÓSÍTÁSI JEGYZET (F1/F2, 2026-08-26):**
+> - **`GlossText.tsx` új props: `disableTap` / `forceOpen` / `onForceClose`.**
+>   Egy elkapható/kipukkasztható csempe saját koppintása MÁR foglalt (catch/pop),
+>   ezért nem nyithatja UGYANAZ a koppintás a gloss-buborékot is (a token-szintű
+>   `onPress` versenyezne a játék saját `Pressable`-jével). A `word-rain` (4.1) új
+>   szó esetén AUTOMATIKUSAN nyitja meg a buborékot (nem koppintásra), a
+>   `memory-pairs` (4.3) az első felfordításkor szintén automatikusan, 2
+>   másodpercre; ez a mechanizmus mindkettőt kiszolgálja anélkül, hogy
+>   párhuzamos gloss-UI-t kellene írni. `disableTap=true` esetén a tokenek nem
+>   kapnak saját `onPress`-t, a buborék láthatóságát a szülő vezérli
+>   (`forceOpen: GlossInfo | null`, `undefined` = a régi, belső-állapotú
+>   viselkedés, tehát a meglévő hívók, semmi F0-ban nem volt még élő hívó, 
+>   érintetlenek). `onForceClose` hívódik a belső `close()` helyett, ha a
+>   buborék kontrollált.
+> - **`lib/games/distract.ts` `pickDistractors` új `field?: 'learned' | 'native'`
+>   opció** (alap `'learned'`, minden meglévő hívó változatlan). A `word-rain`
+>   „irány: tanult→forrás" beállítása (4.1) esér a forrásnyelvi szót ejti, az
+>   elosztóknak is a pool `native` mezőjéből kell jönniük, a korábbi kód
+>   hardkódoltan csak `p.learned`-et nézte.
+> - **`lib/games/wordSearch.ts` új modul** (4.4 szekció szerint): tiszta
+>   `buildGrid(words, size, dirs, rng, lang?)` függvény, gyors véletlen
+>   próbálkozás + determinisztikus backtracking-fallback (garantáltan elhelyez
+>   minden szót, ami geometriailag elfér), jest-tesztekkel
+>   (`lib/games/__tests__/wordSearch.test.ts`, 8 teszt, köztük a 4.4 acceptance
+>   200-futásos próbája).
+> - **`app/games/_layout.tsx`** (új, a `app/(tabs)/_layout.tsx` mintájára): egy
+>   beágyazott Stack `headerShown:false`-szal az egész `games/` csoportra, hogy
+>   ne kelljen képernyőnként Stack.Screen-opciót írni a root layoutba; a root
+>   `app/_layout.tsx` Stack-je egyetlen `<Stack.Screen name="games" .../>`
+>   bejegyzést kapott (a `spelling` minta szerint).
+> - **DB-hármas NEM kellett F1/F2-höz.** A `getGameSettings`/`setGameSettings`/
+>   `getGameScore`/`recordGameScore` (F0-ban már kész, generikus
+>   `Record<string, unknown>` payloaddal) minden F1/F2 játék beállítás- és
+>   rekord-igényét lefedi, új tábla vagy DB-metódus nem kellett.
+> - **`bubble-pop` (4.2) a `pos`/`gender` metaadatot NEM a `vocabPool`
+>   `PoolEntry`-ből kapja** (azt szándékosan nem bővítettük ki, hogy a pool
+>   maradjon a "szó ↔ jelentés" minimál-kontraktus), hanem a `wordId`-n keresztül
+>   közvetlenül `findWordById`-dal olvassa ki a `WordEntry.pos`/`.gender` mezőt
+>   (ugyanaz a forrás, amit a `vocabPool.ts` is használ belül). Ez NEM új
+>   szóforrás (a 0. szekció szent szabálya sértetlen): a szó maga továbbra is
+>   KIZÁRÓLAG a poolból jön, csak a már meglévő kártya extra mezőit olvassuk le.
+> - **`categorySet: 'tense'` (igeidő) NEM épült meg a bubble-pop-ban.** A 4.2
+>   szekció szövege négy kategória-készletet sorol fel (téma / szófaj /
+>   nyelvtani nem / igeidő), de az F-1 metaadat-bővítés (K6) csak `pos`-t és
+>   `gender`-t adott a szavakhoz, igeidő-címke NINCS a korpuszban. Ez adathiány,
+>   nem eldöntendő kérdés, ezért a beállítás három opcióra szűkült (téma / szófaj
+>   / nyelvtani nem); a negyedik akkor építhető, ha egy jövőbeli F-1-szerű
+>   metaadat-menet igeidő-címkét ad a kártyákhoz.
 
 ---
 
@@ -767,44 +816,47 @@ hogy melyik helyes meg legyen úgy, hogy magyarázza is el a nyelvtant."
 téma a cél-készlet. Egy téma = egy JSON-fájl + egy szabály-kártya + 10-15 item.
 A batch-ek token-égetéssel haladnak, a sorrend a tanulási sorrend.
 
-**B1. batch, az INDULÓ négy (a user választása):**
+**SCOPE-DÖNTÉS (2026-08-26).** User: „a nyelvtanos részt csinálj meg 2-3 témakört és
+tedd késznek a többit majd token égetésnek bele tesszük."
+Tehát az F3 fázis akkor **KÉSZ**, ha a motor teljes és **három** témakör tartalma megvan.
+A maradék 56 téma nem vész el: átkerül a 10. szekció token-burn queue-jába, és külön
+menetekben töltődik fel. A motor és az adatformátum már mind az 59 témát elbírja, tehát
+új témát hozzáadni = egy JSON-fájl, nulla kód.
 
-| # | téma-id | Mi ez |
-|---|---|---|
-| 1 | `ser-estar` | állandó tulajdonság vs állapot és hely |
-| 2 | `por-para` | ok vs cél, a magyarban nincs megfelelője |
-| 3 | `indefinido-imperfecto` | befejezett vs folyamatos múlt |
-| 4 | `articulos-genero` | el/la/los/las, un/una, és a nyelvtani nem |
+**Most megépülő három téma:**
 
-**B2. batch, A1-es alapok:** `sustantivo-numero` (többes szám), `adjetivo-concordancia`
-(melléknév-egyeztetés), `presente-regular`, `presente-irregular`, `verbos-diptongo`
-(tőhangváltás e→ie, o→ue, e→i), `hay-estar`, `posesivos`, `demostrativos`
-(este/ese/aquel), `interrogativos`, `negacion` (no, nunca, nada, nadie),
-`gustar`, `ir-a-infinitivo`, `muy-mucho`, `numeros-hora-fecha`,
-`preposiciones-basicas` (a, de, en, con).
+| # | téma-id | Mi ez | Miért ez |
+|---|---|---|---|
+| 1 | `ser-estar` | állandó tulajdonság vs állapot és hely | a legtöbbet hibázott pár, és az appban MÁR van hozzá ellenőrzött magyarázat (FB85), tehát a tartalom fele készen áll |
+| 2 | `articulos-genero` | el/la/los/las, un/una, nyelvtani nem | A1-en minden mondatban ott van, és a `pos`+`gender` metaadat (F-1) most készült el hozzá |
+| 3 | `por-para` | ok vs cél | a user külön nevesítette, és nincs magyar megfelelője, tehát csak sok példával ül le |
 
-**B3. batch, A2:** `verbos-reflexivos`, `pronombres-od` (lo, la, los, las),
-`pronombres-oi` (le, les), `combinacion-pronombres` (se lo), `indefinido-regular`,
-`indefinido-irregular`, `imperfecto`, `perfecto` (he hablado), `estar-gerundio`,
-`imperativo-afirmativo`, `imperativo-negativo`, `comparativos-superlativos`,
-`saber-conocer`, `pedir-preguntar`, `llevar-traer-ir-venir`, `futuro-simple`,
-`indefinidos` (algo, alguien, algún).
+A negyedik választott téma (`indefinido-imperfecto`) a token-burn queue **első** itemje
+lesz, mert a user még A1-en van, a múlt idők pedig A2-től esedékesek.
 
-**B4. batch, B1:** `subjuntivo-presente-forma`, `subjuntivo-disparadores`
-(akarat, érzelem, kétely), `ojala-quizas`, `condicional-simple`,
-`condicionales-tipo1`, `relativos` (que, quien, donde, cuyo),
-`se-impersonal-pasiva`, `perifrasis` (volver a, acabar de, dejar de, ponerse a),
-`por-para-avanzado`, `pluscuamperfecto`, `temporales-subjuntivo` (cuando, hasta que).
+**A teljes cél-készlet (59 téma), a token-burn menetek sorrendjében:**
 
-**B5. batch, B2:** `subjuntivo-imperfecto`, `condicionales-tipo2-3`,
-`estilo-indirecto` (függő beszéd + igeidő-egyeztetés), `pasiva-ser-participio`,
-`concesivas` (aunque + ind/subj), `finales-causales` (para que, porque, ya que),
-`subjuntivo-perfecto`, `lo-neutro` (lo + melléknév, lo que),
-`gerundio-participio-construcciones`.
+**Q1 (A1-es alapok):** `sustantivo-numero`, `adjetivo-concordancia`, `presente-regular`,
+`presente-irregular`, `verbos-diptongo` (e→ie, o→ue, e→i), `hay-estar`, `posesivos`,
+`demostrativos`, `interrogativos`, `negacion`, `gustar`, `ir-a-infinitivo`,
+`muy-mucho`, `numeros-hora-fecha`, `preposiciones-basicas`.
 
-**B6. batch, C1:** `futuro-condicional-perfecto`, `probabilidad-con-tiempos`,
-`relativos-complejos`, `leismo-laismo`, `marcadores-discursivos`
-(sin embargo, no obstante, en cuanto a).
+**Q2 (A2):** `indefinido-imperfecto` (ELSŐ), `verbos-reflexivos`, `pronombres-od`,
+`pronombres-oi`, `combinacion-pronombres`, `indefinido-regular`, `indefinido-irregular`,
+`imperfecto`, `perfecto`, `estar-gerundio`, `imperativo-afirmativo`,
+`imperativo-negativo`, `comparativos-superlativos`, `saber-conocer`, `pedir-preguntar`,
+`llevar-traer-ir-venir`, `futuro-simple`, `indefinidos`.
+
+**Q3 (B1):** `subjuntivo-presente-forma`, `subjuntivo-disparadores`, `ojala-quizas`,
+`condicional-simple`, `condicionales-tipo1`, `relativos`, `se-impersonal-pasiva`,
+`perifrasis`, `por-para-avanzado`, `pluscuamperfecto`, `temporales-subjuntivo`.
+
+**Q4 (B2):** `subjuntivo-imperfecto`, `condicionales-tipo2-3`, `estilo-indirecto`,
+`pasiva-ser-participio`, `concesivas`, `finales-causales`, `subjuntivo-perfecto`,
+`lo-neutro`, `gerundio-participio-construcciones`.
+
+**Q5 (C1):** `futuro-condicional-perfecto`, `probabilidad-con-tiempos`,
+`relativos-complejos`, `leismo-laismo`, `marcadores-discursivos`.
 
 **Nyelvi kiterjeszthetőség:** a motor és a formátum nyelvfüggetlen, a fájlok
 `data/games/grammar/<lang>/<topic>.json` alatt vannak. Az angol és a német ág
@@ -1274,11 +1326,11 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 |---|---|---|---|
 | F-1 | szó-metaadat `pos` + `gender` (annotate script + őrző teszt) | ✅ KÉSZ | `cafc0b7` |
 | F0 | keret (registry, pool, gloss, shell, DB, hub) | ✅ KÉSZ | `07fe4e0` |
-| F1 | `memory-pairs` | 🟨 SPEC-KÉSZ | |
+| F1 | `memory-pairs` | ✅ KÉSZ | `ac3e3a3` |
 | F1 | `word-search` | 🟨 SPEC-KÉSZ | |
 | F2 | `word-rain` | 🟨 SPEC-KÉSZ | |
 | F2 | `bubble-pop` | 🟨 SPEC-KÉSZ | |
-| F3 | `grammar-choice` | 🟨 SPEC-KÉSZ (B1 batch) | |
+| F3 | `grammar-choice` | 🟨 SPEC-KÉSZ (motor + 3 téma; a többi 56 = Q1-Q5) | |
 | F3 | `confusables` | 🟨 SPEC-KÉSZ | |
 | F4 | `myth` | 🟨 SPEC-KÉSZ | |
 | F4 | `story` | 🟨 SPEC-KÉSZ | |
@@ -1304,3 +1356,28 @@ Jelölés: ⬜ TERV → 🟨 SPEC-KÉSZ (kérdések megválaszolva) → 🟦 KÓ
 4. **Kapu.** `npx jest` zöld + `npx tsc --noEmit` nem romlik +
    `node scripts/audit-games.mjs` 0 P1. Enélkül nincs „kész".
 5. **Commit** itemenként, a 8. szekció táblájának frissítésével ugyanabban a commitban.
+
+---
+
+## 10. Token-burn queue (a fázisok UTÁN, külön menetekben)
+
+Ide kerül minden olyan tartalom, ami nem kell a „kész" státuszhoz, de a fül értékét
+sokszorozza. Ezek a `feedback_build_manifest_convention` szerinti égetős itemek:
+a menet elején nem kell tervezni, csak sorban haladni.
+
+| # | Item | Mennyiség | Előfeltétel |
+|---|---|---|---|
+| Q1 | `grammar-choice` A1-es témák | 15 téma × 10-15 item × 4 nyelvű magyarázat | F3 kész |
+| Q2 | `grammar-choice` A2-es témák (élén `indefinido-imperfecto`) | 18 téma | Q1 |
+| Q3 | `grammar-choice` B1-es témák | 11 téma | Q2 |
+| Q4 | `grammar-choice` B2-es témák | 9 téma | Q3 |
+| Q5 | `grammar-choice` C1-es témák | 5 téma | Q4 |
+| Q6 | `myth` tény-bővítés | sávonként +15 item, forrásolva | F4 kész |
+| Q7 | `story` további sztorik | sávonként +2 | F4 kész |
+| Q8 | `chat` további tanácsadó-témák | +5 téma, forrásolt checklisttel | F4 kész |
+| Q9 | `confusables` további csoportok (köztük az ékezetes osztály) | +15 csoport | F3 kész |
+| Q10 | `grammar-choice` angol és német ág | a spanyol formátum újrahasználásával | Q1 |
+
+**Minden égetős itemre ugyanaz a kapu érvényes:** `npx tsc --noEmit` nem romlik,
+`npx jest` zöld, `node scripts/audit-games.mjs` 0 P1, és a tény-alapú tartalom
+(myth, chat-checklist) forrás nélkül nem szállítható.

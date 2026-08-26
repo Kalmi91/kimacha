@@ -110,7 +110,7 @@ export const GAME_DEFS: GameDef[] = [
     },
     minPoolSize: 12,
     hasSettings: true,
-    soon: true,
+    soon: false, // F1 (GAMES.md 8. szekció): app/games/memory-pairs.tsx
   },
   {
     id: 'word-search',

@@ -14,6 +14,12 @@ export interface PickDistractorsOptions {
   mode?: DistractMode; // default 'nearMiss'
   count?: number; // default 3
   seed?: number; // for 'random' mode determinism; default hashString(target)
+  // F2 MEGVALÓSÍTÁSI JEGYZET (word-rain 4.1, "irány: tanult→forrás"): which
+  // PoolEntry field the candidate words come from. Default 'learned' (every
+  // pre-F2 caller, unaffected); word-rain's reversed direction falls the
+  // NATIVE-language form, so its distractor candidates must come from
+  // `p.native` instead, not from the always-target-language `p.learned`.
+  field?: 'learned' | 'native';
 }
 
 /**
@@ -22,8 +28,9 @@ export interface PickDistractorsOptions {
  */
 export function pickDistractors(target: string, pool: PoolEntry[], opts: PickDistractorsOptions): string[] {
   const count = opts.count ?? 3;
+  const field = opts.field ?? 'learned';
   const targetLower = target.toLowerCase();
-  const vocab = [...new Set(pool.map((p) => p.learned).filter((w) => w && w.toLowerCase() !== targetLower))];
+  const vocab = [...new Set(pool.map((p) => p[field]).filter((w) => w && w.toLowerCase() !== targetLower))];
 
   if ((opts.mode ?? 'nearMiss') === 'random') {
     const seed = opts.seed ?? hashString(target);
