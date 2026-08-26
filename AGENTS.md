@@ -2096,6 +2096,103 @@ kódba, ez azonnal keresztbe tesz. Adatmozgatás nélkül csak a komment pontatl
 
 ---
 
+# 📋 Feedback, 2026-08-20/26 forduló (v3.0.31 telefon-teszt)
+
+Forrás: `Kimacha Feedback` sheet, a FB148 óta érkezett 9 sor.
+
+## ✅ FB149 [P2 feature], 1 óra után negyedóránként gratuláció, KÉSZ
+Idézet (08-20 16:55, `settings-tab`): „1 óra után 15 percenként gratuláljon az app és.
+indig más szöveggel. legyen benne valami kreativitás"
+- `lib/usageMilestones.ts` (új): `isDailyMilestone()` = a régi 30/60 + minden 15. perc
+  60 fölött (75, 90, 105 …), `pickMilestoneLine()` = véletlen sor a listából (FB108
+  mintája, tehát ismétlődik is), `{min}` és `{hours}` behelyettesítéssel (90 → „1.5").
+- `usageTimer` a listás `DAILY_MILESTONES.includes()` helyett ezt hívja; a 60 maga
+  marad sima napi mérföldkő, tehát nem ünnepel kétszer.
+- `UsageToast`: 60 fölött a `usage.milestoneLong` poolból húz, nyelvenként 8 sor
+  (hu/en/es/de), a TANULT nyelven, mint az FB63 óta minden mérföldkő.
+- Teszt: `lib/__tests__/usageMilestones.test.ts`, 6 eset (határok, poolok, {hours}).
+
+## ✅ FB150 [P1 feature], Mondat szavára koppintva helyesírás-gyakorlás, KÉSZ
+Idézet (08-22 12:39, `sentence:El calabacín es una verdura verde.`): „ha rákattintok …
+akár arra hogy calabacín akár arra hogy courset … bele tegye az olyan szavak közé, ahol
+ezeknek a helyesírását tudom gyakorolni"
+- `data/words.ts`: `findWordByText(token, field, lang)` + `normalizeWordToken()`. A
+  helyesírás-lista (FB39) szó-id-t tárol, a koppintás viszont folyó szöveg egy tokenjét
+  adja, ezért kell szöveg→kártya feloldás. Elnéző a kis/nagybetűre, a mondat-írásjelekre
+  és a szótári névelőre (`el calabacín` ↔ `calabacín`), és megtalálja a többszavas
+  szócikk utolsó szavát is (`hablas` → `tú hablas`). Az ÉKEZETET nem hagyja figyelmen
+  kívül: pont az a gyakorlás tárgya. Ág-tudatos, mint a `findWordById`.
+- `components/TappableSentence.tsx` (új): szóközönként darabolt, koppintható szöveg,
+  a képernyő dönt és színez (zöld + aláhúzás = listába került, sárga = nincs kártyája).
+- `app/(tabs)/index.tsx`: a gépelős kártya kérdése + megoldása, és a felfedős kártya
+  megoldása + (felfedés UTÁN) a kérdése koppintható. A felfedés előtt szándékosan nem:
+  ott egy koppintás a kártyán még a megoldást nyitja.
+- i18n ×4: `card.spellingTapHint`, `spellingAddedWord`, `spellingNoCardWord`.
+- Teszt: `lib/__tests__/wordLookup.test.ts` +7 eset.
+
+## ✅ FB151 [P2 adat], „black pepper" = `la pimienta`?, KÉSZ
+Idézet (08-23 17:11, `word:black pepper`): „ez nem la pimienta negra?"
+Igaza van annyiban, hogy a két oldal nem fedte egymást: az angol oldal `black pepper`
+volt, a spanyol viszont a sima `la pimienta`, tehát a „negra" hiányzott a megfejtésből.
+A spanyol szó önmagában is a fekete borsot jelenti, a `pimienta negra` csak a fehér
+borssal szembeállítva kell, ezért az angol oldal lett `pepper`, és a kártya kapott egy
+ℹ️ jegyzetet (a `pimienta` / `pimiento` csapdával együtt), nem a spanyol szó változott.
+
+## ✅ FB152 [P2 BUG], `¿Cuándo comes?` kiejtés, a záró „s" lemarad, KÉSZ (eszköz-verify hátra)
+Idézet (08-23 17:16): „itt mint ha nem lenne jó a kiejtés, az s mintha lemaradna"
+Az Android TTS az utolsó fonéma-határon állítja le a hangfolyamot, ezért a réshangra
+végződő mondat („comes", „hablas", „tres") záró /s/-e lecsúszhat. A `lib/speech.ts`
+mostantól Androidon egy szóközzel megtoldva küldi a szöveget, hogy legyen mire
+befejeznie; iOS változatlan. Teszt: `speech.test.ts` +2 eset. Telefonon még hallgatni kell.
+
+## ✅ FB153 [info], `Comemos en la terraza del restaurante.` birtokos, KÉSZ (jegyzet)
+Idézet (08-24 06:15): „itt miért nincs birtokos szerkezet?"
+Van, csak nem `'s` alakú: a spanyolban a birtokviszony mindig `de` + birtokos, és a
+`de + el` mindig `del`. A `la terraza del restaurante` tehát pontosan „az étterem
+teraszát" jelenti. A kártya ℹ️ jegyzetet kapott ×4 nyelven.
+
+## ✅ FB156 [P2], `Jugamos al voleibol` — miért „al"?, KÉSZ (jegyzet)
+Idézet (08-25 17:49, `easy:We play volleyball on the beach.`): „itt használja a l ittle
+legyen egy i betűk hogy miért"
+A `jugar` sportnál `a` elöljárót kap (jugar a + sport), és az `a + el` mindig `al`-lá
+olvad. ℹ️ jegyzet ×4 nyelven, a `tocar la guitarra` szembeállítással.
+
+## 🔁 FB154 + FB155 + FB157 [P1 adat, NAGY], Szó-specifikus és tényadatos mondatok, TESZT-BATCH KÉSZ, a többi jóváhagyásra vár
+Idézetek: „szombaton nem dolgozunk ezzel az a baj hogy vasárnap sem, szóval nem
+specifikus" (08-25, `word:Saturday`); „mennyi a protein 100 gramm csirkehúsban … keresd
+ki az adatot és azzal csináld meg a mondatot és odaírhatod egy ilyen i betűbe hogy mi a
+forrása" (08-25, `easy:Turkey is a white meat.`); „ez is egy eléggé rövid mondat és nem
+specifikus" (08-26, `word:home cooking`).
+
+Közös hiba: a példamondat IGAZ MARAD, ha a célszót testvérre cseréled, tehát nem tanít
+semmit arról a szóról. Ez mérhető: vedd ki a célszót, és nézd meg, hány kártya osztozik
+a maradék kereten.
+- `scripts/sentence-specificity.mjs` (új): SHARED (közös keret), GENERIC (csak kategóriát
+  mond), SHORT (5 szónál rövidebb), ABSENT (a mondat ki sem mondja a szót; igéket kihagy,
+  mert a ragozás elviszi a tövet). A1: 464 kártya a sorban induláskor.
+- `.claude/skills/sentence-facts/SKILL.md` (új): a mondat-szabvány (csere-teszt, kimondja
+  a szót, hordoz információt, szint-tiszta, 4 nyelv egyezik) + hova kerül a tény. A tény a
+  MONDATBA megy, ha a szint szókincse elbírja; ha nem (gramo, proteína), akkor a kártya
+  `note_*` mezőjébe, forrással, és az app ℹ️ gombja mutatja.
+- Teszt-batch (10 A1 kártya): `el pavo`, `sábado`, `la comida casera`, `el guisante`,
+  `el calabacín`, `la lana`, és a „Me duele la #" keret négy kártyája (`la pierna`,
+  `la espalda`, `la rodilla`, `la oreja`). Öt kártya forrásolt tény-jegyzetet is kapott
+  (Britannica, RAE, USDA FoodData Central ×2, FAO FAOSTAT).
+- Kapu a batch után: audit P1=0, P2=0 ✅; `sentence-qa` 0 találat ✅; specificity 464 → 452.
+- Kálmán a batch-et jóváhagyta (2026-08-26, „ez igy jó"), de a queue többi részét
+  KÉSŐBBRE kérte. A maradék ~452 A1 kártya áll, amíg nem kéri a következő szeletet.
+
+## Elfogadási kritérium (FB149–FB157 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **254/254** ✅.
+- `node scripts/audit-corpus.mjs` + `-hu` + `-en` → P1=0, P2=0 ✅.
+- `npx expo lint`: 17 probléma (8 error, 9 warning), változatlan alapvonal ✅.
+- ⏳ Eszköz-verify a következő APK-n: egy órán túl negyedóránként MÁS gratuláció jön;
+  a mondat szavára koppintva zöld lesz a szó és a Beállítások helyesírás-számlálója nő;
+  a `¿Cuándo comes?` végén hallatszik az „s"; a pimienta / terraza / voleibol kártyán
+  ott az ℹ️; a 10 átírt kártya új mondata jelenik meg.
+
+---
+
 # 🛠️ Emulátor + release-csapdák (2026-08-15)
 
 **Android emulátor UI-ellenőrzéshez.** AVD `kimacha_test` (Pixel 6, Android 35).

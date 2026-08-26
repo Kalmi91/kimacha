@@ -23,6 +23,10 @@ export default {
     skip: 'Kihagyás',
     // FB139: a kártya másik témából jött, hogy kijöjjön a napi új szó keret.
     fromTopic: (topic: string) => `Másik témából: ${topic}`,
+    // FB150: a mondat bármelyik szavára koppintva a szó a helyesírás-listába kerül.
+    spellingTapHint: 'Koppints egy szóra: bekerül a helyesírás-gyakorlásba',
+    spellingAddedWord: (word: string) => `✓ „${word}" a helyesírás-listában`,
+    spellingNoCardWord: (word: string) => `„${word}" nincs a szókártyák között`,
   },
   buttons: {
     again: 'Újra',
@@ -137,6 +141,17 @@ export default {
     plusOneMinute: '+1 perc wauuuuuuuu',
     milestoneSession: '🔥 Wow, {min} perce nyomod egyhuzamban!',
     milestoneDaily: '🎉 Ma már {min} perc, nagyon ügyes vagy!',
+    // FB149: az első óra után negyedóránként, véletlen sor a listából.
+    milestoneLong: [
+      '🔥 {hours} óra ma! Ez már nem tanulás, ez edzés.',
+      '💪 {min} perc a mai zsákmány. A nyelv nem tud tovább menekülni.',
+      '🚀 Negyedórával megint többet tudsz. {min} perc, és nem álltál meg.',
+      '🧠 {min} perc egy nap alatt. Az agyad most építi az új huzalozást.',
+      '⚡ {hours} óra! Ilyen tempóban a spanyol pár hét, nem pár év.',
+      '🏔️ {min} perc, és még mindig kapaszkodsz felfelé. Ez a különbség.',
+      '🌊 {min} perc egyvégtében. Ma a szavak jönnek hozzád, nem fordítva.',
+      '🎯 {hours} óra a mai kör. Aki ennyit tesz bele, az ki is veszi.',
+    ],
     dailyGreeting: '👋 Szia! Kezdjük a mai tanulást!',
     // FB108: éjfél-átfordulás, a lezárt nap statja + gratuláció. Véletlen
     // választás a listából, tehát a szövegek idővel vissza-visszatérnek.

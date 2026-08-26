@@ -23,6 +23,10 @@ export default {
     skip: 'Saltar',
     // FB139: la tarjeta viene de otro tema para completar el cupo de palabras nuevas.
     fromTopic: (topic: string) => `De otro tema: ${topic}`,
+    // FB150: al tocar una palabra de la frase, se guarda para practicar la escritura.
+    spellingTapHint: 'Toca una palabra para practicar su escritura',
+    spellingAddedWord: (word: string) => `✓ "${word}" está en tu lista de escritura`,
+    spellingNoCardWord: (word: string) => `"${word}" todavía no tiene tarjeta`,
   },
   buttons: {
     again: 'Otra Vez',
@@ -137,6 +141,17 @@ export default {
     plusOneMinute: '¡+1 minuto, guau!',
     milestoneSession: '🔥 ¡Guau, {min} minutos seguidos!',
     milestoneDaily: '🎉 ¡{min} minutos hoy, lo estás haciendo genial!',
+    // FB149: pasada la primera hora, cada cuarto de hora, línea al azar.
+    milestoneLong: [
+      '🔥 ¡{hours} horas hoy! Esto ya no es estudiar, es entrenar.',
+      '💪 {min} minutos de botín. El idioma ya no puede escaparse.',
+      '🚀 Otro cuarto de hora, otro tramo ganado: {min} minutos sin parar.',
+      '🧠 {min} minutos en un día. Tu cerebro está cableando algo nuevo.',
+      '⚡ ¡{hours} horas! A este ritmo son semanas, no años.',
+      '🏔️ {min} minutos y sigues subiendo. Ahí está la diferencia.',
+      '🌊 {min} minutos seguidos. Hoy las palabras vienen solas.',
+      '🎯 {hours} horas en la sesión de hoy. El que mete tanto, saca tanto.',
+    ],
     dailyGreeting: '👋 ¡Hola! ¡Empecemos el estudio de hoy!',
     // FB108: cambio de día a medianoche, resumen del día cerrado + felicitación.
     // Se elige al azar, así que las frases vuelven a aparecer con el tiempo.

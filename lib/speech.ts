@@ -114,6 +114,16 @@ export function voiceIdFor(locale: string): string | undefined {
   return voice ? String(voice.identifier) : undefined;
 }
 
+// FB152, Kálmán 2026-08-23 (`word:¿Cuándo comes?`): "itt mint ha nem lenne jó a
+// kiejtés, az s mintha lemaradna". Android's TTS stops the audio stream on the
+// last phoneme boundary, so an utterance that ends in a fricative ("comes",
+// "hablas", "tres") gets its final /s/ clipped, the same complaint people file
+// against Google TTS itself. Padding the utterance gives the engine something
+// to end on, and the padding is silent.
+function padForAndroid(text: string): string {
+  return Platform.OS === 'android' ? `${text} ` : text;
+}
+
 export function speak(text: string, locale: string, options: Speech.SpeechOptions = {}): void {
   if (!text) return;
   if (!hasVoiceFor(locale)) {
@@ -121,7 +131,7 @@ export function speak(text: string, locale: string, options: Speech.SpeechOption
     return;
   }
   const voice = voiceIdFor(locale);
-  Speech.speak(text, {
+  Speech.speak(padForAndroid(text), {
     ...options,
     language: speechTag(locale),
     ...(voice ? { voice } : {}),

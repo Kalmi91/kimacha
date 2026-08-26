@@ -87,3 +87,70 @@ export function getWordTopic(w: WordEntry): string | undefined {
   const t = w['topic'];
   return typeof t === 'string' ? t : undefined;
 }
+
+// FB150, Kálmán 2026-08-22 (`sentence:El calabacín es una verdura verde.`):
+// "ha rákattintok ... akár arra hogy calabacín akár arra hogy courset ... bele
+// tegye az olyan szavak közé, ahol ezeknek a helyesírását tudom gyakorolni".
+// A tap lands on a token of running text, the spelling list stores word ids, so
+// the token has to find its card. Matching forgives what running text adds
+// (case, punctuation) and what a headword carries (its article), but never the
+// accents: those ARE the spelling being practised.
+const TOKEN_PUNCTUATION = /[¿?¡!.,;:«»"'“”‘’()…\-–—]/g;
+const LEADING_ARTICLE = /^(el|la|los|las|un|una|unos|unas|the|a|an|to|der|die|das|ein|eine|az|egy)\s+/;
+
+export function normalizeWordToken(raw: string): string {
+  return raw.toLowerCase().replace(TOKEN_PUNCTUATION, '').replace(/\s+/g, ' ').trim();
+}
+
+function allWordsFor(lang: string): WordEntry[] {
+  const byLevel = lang === 'en' ? enWordsByLevel : lang === 'hu' ? huWordsByLevel : null;
+  if (!byLevel) return words;
+  return Object.values(byLevel).flatMap(list => list ?? []);
+}
+
+// A headword field can carry several glosses ("the lorry / the truck"), and each
+// of them is a legitimate tap target, with and without its article.
+function textKeysOf(value: string): string[] {
+  const keys: string[] = [];
+  for (const part of value.split(' / ')) {
+    const norm = normalizeWordToken(part);
+    if (!norm) continue;
+    keys.push(norm);
+    const bare = norm.replace(LEADING_ARTICLE, '');
+    if (bare && bare !== norm) keys.push(bare);
+  }
+  return keys;
+}
+
+const textIndex: Record<string, Map<string, WordEntry>> = {};
+
+function textIndexFor(lang: string, field: string): Map<string, WordEntry> {
+  const cacheKey = `${lang}|${field}`;
+  if (!textIndex[cacheKey]) {
+    const map = new Map<string, WordEntry>();
+    for (const w of allWordsFor(lang)) {
+      const value = w[field];
+      if (typeof value !== 'string') continue;
+      // First card wins, so the lowest level owns a word shared by several cards.
+      for (const key of textKeysOf(value)) if (!map.has(key)) map.set(key, w);
+    }
+    textIndex[cacheKey] = map;
+  }
+  return textIndex[cacheKey];
+}
+
+// `field` is the language the tapped text is written in ('es', 'en', 'hu', 'de'),
+// `lang` the branch being learned, the same branch convention findWordById uses.
+export function findWordByText(token: string, field: string, lang: string = 'es'): WordEntry | undefined {
+  const norm = normalizeWordToken(token);
+  if (!norm) return undefined;
+  const map = textIndexFor(lang, field);
+  const direct = map.get(norm) ?? map.get(norm.replace(LEADING_ARTICLE, ''));
+  if (direct) return direct;
+  // A sentence writes "hablas", the card is headed "tú hablas": a token that is
+  // the last word of a multi-word headword still belongs to that card.
+  for (const [key, entry] of map) {
+    if (key.endsWith(` ${norm}`)) return entry;
+  }
+  return undefined;
+}
