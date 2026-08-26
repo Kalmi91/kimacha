@@ -11,7 +11,9 @@
     "de": "Knappheit / Mangel",
     "sentence_de": "Es herrscht Wassermangel.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 502,
@@ -25,7 +27,9 @@
     "de": "Aufschwung / Boom",
     "sentence_de": "Die Industrie boomt.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 503,
@@ -39,7 +43,9 @@
     "de": "Art / Natur",
     "sentence_de": "Es ist persönlicher Natur.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 504,
@@ -53,7 +59,9 @@
     "de": "Tragweite / Ausmaß",
     "sentence_de": "Ein Projekt von großer Tragweite.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 505,
@@ -67,7 +75,8 @@
     "de": "umfassen",
     "sentence_de": "Der Plan umfasst alles.",
     "topic": "verbos_proceso_abstracto_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "verb"
   },
   {
     "id": 506,
@@ -81,7 +90,8 @@
     "de": "hervorrufen / auslösen",
     "sentence_de": "Die Nachricht löste Kontroversen aus.",
     "topic": "verbos_proceso_abstracto_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "verb"
   },
   {
     "id": 507,
@@ -95,7 +105,8 @@
     "de": "verzichten / absehen von",
     "sentence_de": "Ich kann nicht auf dich verzichten.",
     "topic": "verbos_proceso_abstracto_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "verb"
   },
   {
     "id": 508,
@@ -109,7 +120,8 @@
     "de": "abtrennen / loslösen",
     "sentence_de": "Man muss die Themen trennen.",
     "topic": "verbos_proceso_abstracto_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 509,
@@ -123,7 +135,8 @@
     "de": "beheben / korrigieren",
     "sentence_de": "Der Fehler muss behoben werden.",
     "topic": "verbos_proceso_abstracto_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "verb"
   },
   {
     "id": 510,
@@ -137,7 +150,8 @@
     "de": "mit sich bringen",
     "sentence_de": "Es bringt gewisse Risiken mit sich.",
     "topic": "verbos_proceso_abstracto_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "verb"
   },
   {
     "id": 511,
@@ -151,7 +165,8 @@
     "de": "befolgen / einhalten",
     "sentence_de": "Man muss die Regeln befolgen.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "verb"
   },
   {
     "id": 512,
@@ -165,7 +180,8 @@
     "de": "ablehnen / abweisen",
     "sentence_de": "Sie lehnten den Vorschlag ab.",
     "topic": "verbos_proceso_abstracto_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "verb"
   },
   {
     "id": 513,
@@ -179,7 +195,8 @@
     "de": "schmälern / beeinträchtigen",
     "sentence_de": "Ich will deine Arbeit nicht schmälern.",
     "topic": "verbos_proceso_abstracto_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "id": 514,
@@ -193,7 +210,8 @@
     "de": "anstürmen / angreifen",
     "sentence_de": "Der Stier griff an.",
     "topic": "verbos_proceso_abstracto_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "id": 515,
@@ -207,7 +225,8 @@
     "de": "vorbringen (Argument)",
     "sentence_de": "Er brachte ein gutes Argument vor.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "verb"
   },
   {
     "id": 516,
@@ -221,7 +240,9 @@
     "de": "Schaden / Nachteil",
     "sentence_de": "Unbeschadet des Vorstehenden.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 517,
@@ -235,7 +256,9 @@
     "de": "Euphemismus",
     "sentence_de": "Das ist ein Euphemismus.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 518,
@@ -249,7 +272,9 @@
     "de": "Paradoxon",
     "sentence_de": "Das ist ein interessantes Paradoxon.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 520,
@@ -263,7 +288,9 @@
     "de": "Heuchelei",
     "sentence_de": "Ich ertrage keine Heuchelei.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 521,
@@ -277,7 +304,9 @@
     "de": "Lage / Konjunktur",
     "sentence_de": "Die wirtschaftliche Lage ist schwierig.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 522,
@@ -291,7 +320,9 @@
     "de": "Verwurzelung",
     "sentence_de": "Er ist in der Gemeinschaft verwurzelt.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 523,
@@ -305,7 +336,8 @@
     "de": "nachforschen / ermitteln",
     "sentence_de": "Man muss weiter ermitteln.",
     "topic": "verbos_proceso_abstracto_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "verb"
   },
   {
     "id": 524,
@@ -319,7 +351,8 @@
     "de": "ausweichen / umgehen",
     "sentence_de": "Du kannst der Verantwortung nicht ausweichen.",
     "topic": "verbos_proceso_abstracto_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 525,
@@ -333,7 +366,8 @@
     "de": "einflößen / vermitteln",
     "sentence_de": "Ich will Vertrauen einflößen.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "verb"
   },
   {
     "id": 526,
@@ -347,7 +381,8 @@
     "de": "verwirren / irritieren",
     "sentence_de": "Die Antwort hat mich verwirrt.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "verb"
   },
   {
     "id": 527,
@@ -361,7 +396,8 @@
     "de": "nach sich ziehen / verursachen",
     "sentence_de": "Es kann Probleme nach sich ziehen.",
     "topic": "verbos_proceso_abstracto_c1",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "verb"
   },
   {
     "id": 528,
@@ -375,7 +411,8 @@
     "de": "aufschlüsseln / aufgliedern",
     "sentence_de": "Man muss die Kosten aufschlüsseln.",
     "topic": "verbos_proceso_abstracto_c1",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "id": 529,
@@ -389,7 +426,8 @@
     "de": "zugrunde liegen",
     "sentence_de": "Es gibt ein zugrunde liegendes Problem.",
     "topic": "verbos_proceso_abstracto_c1",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "verb"
   },
   {
     "id": 530,
@@ -403,7 +441,8 @@
     "de": "widerlegen",
     "sentence_de": "Ich kann das nicht widerlegen.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "id": 531,
@@ -417,7 +456,8 @@
     "de": "fehlen / mangeln an",
     "sentence_de": "Es ergibt keinen Sinn.",
     "topic": "verbos_proceso_abstracto_c1",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "verb"
   },
   {
     "id": 532,
@@ -431,7 +471,8 @@
     "de": "umgehen / ausweichen",
     "sentence_de": "Das Thema lässt sich nicht umgehen.",
     "topic": "verbos_proceso_abstracto_c1",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "verb"
   },
   {
     "id": 533,
@@ -445,7 +486,8 @@
     "de": "horten / anhäufen",
     "sentence_de": "Man soll nicht alles horten.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "id": 534,
@@ -459,7 +501,8 @@
     "de": "genau prüfen / durchleuchten",
     "sentence_de": "Man muss die Daten genau prüfen.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 535,
@@ -473,7 +516,8 @@
     "de": "beilegen / klären",
     "sentence_de": "Man muss die Diskussion beilegen.",
     "topic": "verbos_proceso_abstracto_c1",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "verb"
   },
   {
     "id": 536,
@@ -487,7 +531,9 @@
     "de": "Detail / Einzelheit",
     "sentence_de": "Er erklärte jede Einzelheit.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 537,
@@ -501,7 +547,8 @@
     "de": "aufkeimend / beginnend",
     "sentence_de": "Es ist ein aufkeimender Trend.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "adj"
   },
   {
     "id": 538,
@@ -515,7 +562,8 @@
     "de": "knapp / kurz",
     "sentence_de": "Es war eine knappe Antwort.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "adj"
   },
   {
     "id": 539,
@@ -529,7 +577,8 @@
     "de": "glühend / leidenschaftlich",
     "sentence_de": "Er ist ein glühender Verfechter.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "adj"
   },
   {
     "id": 540,
@@ -543,7 +592,8 @@
     "de": "unmittelbar bevorstehend",
     "sentence_de": "Die Veränderung steht unmittelbar bevor.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "adj"
   },
   {
     "id": 541,
@@ -557,7 +607,8 @@
     "de": "geeignet / ideal",
     "sentence_de": "Er ist der geeignete Kandidat.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "adj"
   },
   {
     "id": 542,
@@ -571,7 +622,8 @@
     "de": "eisern / unerschütterlich",
     "sentence_de": "Er hat einen eisernen Willen.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "adj"
   },
   {
     "id": 543,
@@ -585,7 +637,8 @@
     "de": "kategorisch / bestimmt",
     "sentence_de": "Es war eine kategorische Antwort.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "adj"
   },
   {
     "id": 544,
@@ -599,7 +652,8 @@
     "de": "verschwindend gering",
     "sentence_de": "Die Kosten sind verschwindend gering.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "adj"
   },
   {
     "id": 545,
@@ -613,7 +667,8 @@
     "de": "vergänglich / flüchtig",
     "sentence_de": "Ruhm ist vergänglich.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "adj"
   },
   {
     "id": 546,
@@ -627,7 +682,8 @@
     "de": "düster / finster",
     "sentence_de": "Die Aussicht ist düster.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "adj"
   },
   {
     "id": 547,
@@ -641,7 +697,8 @@
     "de": "verhängnisvoll / unheilvoll",
     "sentence_de": "Es war ein verhängnisvoller Tag.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adj"
   },
   {
     "id": 549,
@@ -655,7 +712,8 @@
     "de": "verborgen / abgelegen",
     "sentence_de": "Ein verborgener Ort.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "adj"
   },
   {
     "id": 550,
@@ -669,7 +727,8 @@
     "de": "gewaltig / immens",
     "sentence_de": "Es erfordert eine gewaltige Anstrengung.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "adj"
   },
   {
     "id": 789,
@@ -683,7 +742,9 @@
     "de": "Nuance / die Schattierung",
     "sentence_de": "Seine Antwort hatte eine ironische Nuance.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 790,
@@ -697,7 +758,9 @@
     "de": "Nachteil / die Beeinträchtigung",
     "sentence_de": "Er tat es zum Nachteil seines eigenen Rufs.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 791,
@@ -711,7 +774,9 @@
     "de": "Eifer / das Bestreben",
     "sentence_de": "Ihr Bestreben, sich zu verbessern, brachte sie weit.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 792,
@@ -725,7 +790,9 @@
     "de": "Voreingenommenheit / die Tendenz",
     "sentence_de": "Der Bericht hat eine offensichtliche politische Tendenz.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 793,
@@ -739,7 +806,9 @@
     "de": "Mäßigung / die Besonnenheit",
     "sentence_de": "Er sprach trotz der Provokation besonnen.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 794,
@@ -753,7 +822,9 @@
     "de": "Nachlässigkeit / die Gleichgültigkeit",
     "sentence_de": "Die Nachlässigkeit der Regierung verschärfte die Krise.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 795,
@@ -767,7 +838,9 @@
     "de": "Misstrauen / der Argwohn",
     "sentence_de": "Sie betrachtete ihn vom ersten Tag an mit Argwohn.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 796,
@@ -781,7 +854,9 @@
     "de": "Ablehnung / der Widerspruch",
     "sentence_de": "Sie drückte ihren Widerspruch gegen das Urteil aus.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 797,
@@ -795,7 +870,9 @@
     "de": "Missachtung",
     "sentence_de": "Er wurde wegen Missachtung des Gerichts angeklagt.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 798,
@@ -809,7 +886,9 @@
     "de": "Vorstadt / der Stadtrand",
     "sentence_de": "Er wuchs am Stadtrand auf.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 799,
@@ -823,7 +902,9 @@
     "de": "Gleichstellung / die Gerechtigkeit",
     "sentence_de": "Sie kämpften für die Gleichstellung der Geschlechter.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 800,
@@ -837,7 +918,9 @@
     "de": "Verachtung / die Geringschätzung",
     "sentence_de": "Sie sah ihn verächtlich an und ging.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 801,
@@ -851,7 +934,9 @@
     "de": "Wettstreit / die Auseinandersetzung",
     "sentence_de": "Der Wahlkampf war sehr knapp.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 802,
@@ -865,7 +950,9 @@
     "de": "Wiedergutmachung / die Genugtuung",
     "sentence_de": "Er forderte eine öffentliche Wiedergutmachung für die Beleidigung.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 803,
@@ -879,7 +966,9 @@
     "de": "Großmut / die Großherzigkeit",
     "sentence_de": "Er zeigte Großmut, indem er seinem Rivalen verzieh.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 804,
@@ -893,7 +982,9 @@
     "de": "Häufigkeit / die Auswirkung",
     "sentence_de": "Die Armut hat eine hohe Häufigkeit in ländlichen Gebieten.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 805,
@@ -907,7 +998,9 @@
     "de": "Sorgfalt",
     "sentence_de": "Sie bereitete das Abendessen mit großer Sorgfalt zu.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 806,
@@ -921,7 +1014,9 @@
     "de": "Trugschluss / der Fehlschluss",
     "sentence_de": "Sein Argument beruht auf einem logischen Fehlschluss.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 807,
@@ -935,7 +1030,9 @@
     "de": "Spur / der Anflug",
     "sentence_de": "Es gab nicht einmal einen Anflug von Hoffnung.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 808,
@@ -949,7 +1046,9 @@
     "de": "Befugnis / die Gewalt",
     "sentence_de": "Der Richter hat die Befugnis, ein Urteil zu fällen.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 809,
@@ -963,7 +1062,9 @@
     "de": "Vehemenz / die Heftigkeit",
     "sentence_de": "Sie verteidigte ihre Position mit Vehemenz.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 810,
@@ -977,7 +1078,9 @@
     "de": "Bedeutung / der Wortsinn",
     "sentence_de": "Dieses Wort hat mehrere Bedeutungen.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 811,
@@ -991,7 +1094,9 @@
     "de": "Bedächtigkeit / die Gelassenheit",
     "sentence_de": "Er bewegte sich mit einer ärgerlichen Bedächtigkeit.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 812,
@@ -1005,7 +1110,9 @@
     "de": "Hindernis / die Klippe",
     "sentence_de": "Das größte Hindernis war der Mangel an Finanzierung.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 813,
@@ -1019,7 +1126,9 @@
     "de": "Lebensunterhalt / die Existenz",
     "sentence_de": "Er verdiente kaum genug zum Lebensunterhalt.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 814,
@@ -1033,7 +1142,9 @@
     "de": "Haltung / die Einstellung",
     "sentence_de": "Er begegnete der Krise mit versöhnlicher Haltung.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 815,
@@ -1047,7 +1158,9 @@
     "de": "Lage / die Situation",
     "sentence_de": "Er befand sich in einer sehr komplizierten Lage.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 816,
@@ -1061,7 +1174,9 @@
     "de": "Duldung / die Komplizenschaft",
     "sentence_de": "Sie handelten in Komplizenschaft mit den Behörden.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 817,
@@ -1075,7 +1190,9 @@
     "de": "Gier / die Begier",
     "sentence_de": "Sie las mit unstillbarer Gier.",
     "topic": "caracter_actitud_c1",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 818,
@@ -1089,7 +1206,9 @@
     "de": "Wendung / das Aussehen",
     "sentence_de": "Die Situation nahm eine unerwartete Wendung.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 819,
@@ -1103,7 +1222,9 @@
     "de": "Einwilligung / die Genehmigung",
     "sentence_de": "Sie handelten ohne die Einwilligung des Direktors.",
     "topic": "sociedad_politica_economia_c1",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 820,
@@ -1117,7 +1238,9 @@
     "de": "Schnelligkeit / die Promptheit",
     "sentence_de": "Er antwortete mit bewundernswerter Schnelligkeit.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 821,
@@ -1131,7 +1254,9 @@
     "de": "Substanz / der Gehalt",
     "sentence_de": "Ein Essay von großem intellektuellem Gehalt.",
     "topic": "cualidades_matices_circunstancias_c1",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6578,
@@ -1145,7 +1270,9 @@
     "de": "die Steuer",
     "sentence_de": "Die Regierung erhöhte die Tabaksteuer.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6581,
@@ -1159,7 +1286,9 @@
     "de": "die Inflation",
     "sentence_de": "Die Inflation trifft vor allem die Armen.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6582,
@@ -1173,7 +1302,9 @@
     "de": "das Vermögen",
     "sentence_de": "Er erbte das gesamte Vermögen seiner Familie.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6583,
@@ -1187,7 +1318,9 @@
     "de": "der Konkurs",
     "sentence_de": "Das Unternehmen meldete gestern Konkurs an.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6586,
@@ -1201,7 +1334,9 @@
     "de": "der Aktionär",
     "sentence_de": "Die Aktionäre stimmten in der Jahresversammlung ab.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6588,
@@ -1215,7 +1350,8 @@
     "de": "investieren",
     "sentence_de": "Er beschloss, alle Ersparnisse in Aktien zu investieren.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "verb"
   },
   {
     "id": 6589,
@@ -1229,7 +1365,8 @@
     "de": "finanzieren",
     "sentence_de": "Die Bank beschloss, das neue Projekt zu finanzieren.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "verb"
   },
   {
     "id": 6590,
@@ -1243,7 +1380,8 @@
     "de": "sich verschulden",
     "sentence_de": "Die Familie musste sich verschulden, um zu zahlen.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "id": 6591,
@@ -1257,7 +1395,8 @@
     "de": "notieren",
     "sentence_de": "Dieses Unternehmen notiert an der Börse in Madrid.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "id": 6592,
@@ -1271,7 +1410,8 @@
     "de": "erheben",
     "sentence_de": "Der Staat erhebt vierteljährlich Steuern.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "verb"
   },
   {
     "id": 6593,
@@ -1285,7 +1425,8 @@
     "de": "fusionieren",
     "sentence_de": "Die beiden Unternehmen beschlossen, dieses Jahr zu fusionieren.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 6594,
@@ -1299,7 +1440,8 @@
     "de": "exportieren",
     "sentence_de": "Das Land exportiert Wein in mehrere Kontinente.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "verb"
   },
   {
     "id": 6595,
@@ -1313,7 +1455,8 @@
     "de": "abwerten",
     "sentence_de": "Die Zentralbank beschloss, die Währung abzuwerten.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "id": 6597,
@@ -1327,7 +1470,8 @@
     "de": "solvent",
     "sentence_de": "Das Unternehmen bleibt trotz der Krise solvent.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "adj"
   },
   {
     "id": 6598,
@@ -1341,7 +1485,8 @@
     "de": "lukrativ",
     "sentence_de": "Er fand ein sehr lukratives Geschäft im Internet.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adj"
   },
   {
     "id": 6599,
@@ -1355,7 +1500,8 @@
     "de": "volatil",
     "sentence_de": "Der Preis dieser Aktie ist sehr volatil.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "adj"
   },
   {
     "id": 6600,
@@ -1369,7 +1515,8 @@
     "de": "im Aufwärtstrend",
     "sentence_de": "Die Immobilienpreise befinden sich im Aufwärtstrend.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "phrase"
   },
   {
     "id": 6601,
@@ -1383,7 +1530,8 @@
     "de": "im Abwärtstrend",
     "sentence_de": "Die Verkäufe befinden sich diesen Monat im Abwärtstrend.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "phrase"
   },
   {
     "id": 6602,
@@ -1397,7 +1545,8 @@
     "de": "steuerlich",
     "sentence_de": "Die Regierung kündigte eine neue Steuerreform an.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "adj"
   },
   {
     "id": 6603,
@@ -1411,7 +1560,8 @@
     "de": "börsenbezogen",
     "sentence_de": "Der börsenbezogene Index stieg um zwei Prozent.",
     "topic": "economia_mercado_c1",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "adj"
   },
   {
     "id": 6605,
@@ -1425,7 +1575,9 @@
     "de": "der Rohstoff",
     "sentence_de": "Die Fabrik importiert den Rohstoff aus Asien.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6606,
@@ -1439,7 +1591,9 @@
     "de": "die Maschinen",
     "sentence_de": "Das Unternehmen erneuerte alle seine alten Maschinen.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6607,
@@ -1453,7 +1607,9 @@
     "de": "die Lieferkette",
     "sentence_de": "Die Pandemie unterbrach die globale Lieferkette.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6609,
@@ -1467,7 +1623,9 @@
     "de": "die Ware",
     "sentence_de": "Das Schiff transportiert Ware vom Hafen aus.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6610,
@@ -1481,7 +1639,9 @@
     "de": "die Ernte",
     "sentence_de": "Dieses Jahr war die Weizenernte gut.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6611,
@@ -1495,7 +1655,9 @@
     "de": "der Anbau",
     "sentence_de": "Der Maisanbau erfordert sehr viel Wasser.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6613,
@@ -1509,7 +1671,9 @@
     "de": "die Verpackung",
     "sentence_de": "Die Plastikverpackung wird nicht mehr verwendet.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6614,
@@ -1523,7 +1687,9 @@
     "de": "die Herstellung",
     "sentence_de": "Die Autoherstellung sank in diesem Quartal.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6615,
@@ -1537,7 +1703,9 @@
     "de": "der Arbeiter",
     "sentence_de": "Der Arbeiter arbeitet zehn Stunden in der Fabrik.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6617,
@@ -1551,7 +1719,9 @@
     "de": "der Überschuss",
     "sentence_de": "Sie verkaufen den Ernteüberschuss ins Ausland.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6619,
@@ -1565,7 +1735,8 @@
     "de": "herstellen",
     "sentence_de": "Die Fabrik stellt Teile für Elektroautos her.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 6621,
@@ -1579,7 +1750,8 @@
     "de": "anbauen",
     "sentence_de": "Die Bauern bauen in dieser Region Reis an.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "verb"
   },
   {
     "id": 6622,
@@ -1593,7 +1765,8 @@
     "de": "ernten",
     "sentence_de": "Die Bauern ernten den Weizen im Sommer.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "id": 6624,
@@ -1607,7 +1780,8 @@
     "de": "verpacken",
     "sentence_de": "Die Arbeiter verpacken die Produkte sorgfältig.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "verb"
   },
   {
     "id": 6625,
@@ -1621,7 +1795,8 @@
     "de": "vertreiben",
     "sentence_de": "Das Unternehmen vertreibt seine Produkte landesweit.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "verb"
   },
   {
     "id": 6627,
@@ -1635,7 +1810,8 @@
     "de": "industriell",
     "sentence_de": "Diese industrielle Zone hat zehn große Fabriken.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "adj"
   },
   {
     "id": 6628,
@@ -1649,7 +1825,8 @@
     "de": "handwerklich",
     "sentence_de": "Er bevorzugt handwerkliches Brot gegenüber industriellem.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "adj"
   },
   {
     "id": 6630,
@@ -1663,7 +1840,8 @@
     "de": "verarbeitend",
     "sentence_de": "Der verarbeitende Sektor wuchs um drei Prozent.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "adj"
   },
   {
     "id": 6631,
@@ -1677,7 +1855,8 @@
     "de": "landwirtschaftlich",
     "sentence_de": "Die Region lebt von der landwirtschaftlichen Produktion.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "adj"
   },
   {
     "id": 6632,
@@ -1691,7 +1870,8 @@
     "de": "lose",
     "sentence_de": "Sie kaufen das Getreide lose, um zu sparen.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "phrase"
   },
   {
     "id": 6633,
@@ -1705,7 +1885,8 @@
     "de": "fehlerhaft",
     "sentence_de": "Sie schickten das Produkt zurück, weil es fehlerhaft war.",
     "topic": "industria_produccion_c1",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "adj"
   },
   {
     "id": 6642,
@@ -1719,7 +1900,9 @@
     "de": "die Disziplin",
     "sentence_de": "Die Physik ist eine faszinierende Disziplin.",
     "topic": "ciencia_investigacion_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6643,
@@ -1733,7 +1916,9 @@
     "de": "das Paradigma",
     "sentence_de": "Diese Entdeckung veränderte das wissenschaftliche Paradigma.",
     "topic": "ciencia_investigacion_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6644,
@@ -1747,7 +1932,9 @@
     "de": "die Publikation",
     "sentence_de": "Seine Publikation erschien in einer angesehenen Zeitschrift.",
     "topic": "ciencia_investigacion_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6654,
@@ -1761,7 +1948,8 @@
     "de": "formulieren",
     "sentence_de": "Das Team formulierte eine klare Hypothese.",
     "topic": "ciencia_investigacion_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 6657,
@@ -1775,7 +1963,8 @@
     "de": "ableiten",
     "sentence_de": "Aus den Daten lässt sich ein Trend ableiten.",
     "topic": "ciencia_investigacion_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "verb"
   },
   {
     "id": 6658,
@@ -1789,7 +1978,8 @@
     "de": "rigoros",
     "sentence_de": "Die Methode war rigoros und transparent.",
     "topic": "ciencia_investigacion_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "adj"
   },
   {
     "id": 6660,
@@ -1803,7 +1993,8 @@
     "de": "objektiv",
     "sentence_de": "Der Bericht muss völlig objektiv sein.",
     "topic": "ciencia_investigacion_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "adj"
   },
   {
     "id": 6661,
@@ -1817,7 +2008,8 @@
     "de": "subjektiv",
     "sentence_de": "Seine Interpretation erwies sich als zu subjektiv.",
     "topic": "ciencia_investigacion_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "adj"
   },
   {
     "id": 6662,
@@ -1831,7 +2023,8 @@
     "de": "zuverlässig",
     "sentence_de": "Wir brauchen eine zuverlässigere Quelle.",
     "topic": "ciencia_investigacion_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "adj"
   },
   {
     "id": 6663,
@@ -1845,7 +2038,8 @@
     "de": "schlüssig",
     "sentence_de": "Die Ergebnisse sind noch nicht schlüssig.",
     "topic": "ciencia_investigacion_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "adj"
   },
   {
     "id": 6664,
@@ -1859,7 +2053,8 @@
     "de": "interdisziplinär",
     "sentence_de": "Das Projekt erfordert einen interdisziplinären Ansatz.",
     "topic": "ciencia_investigacion_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "adj"
   },
   {
     "id": 6665,
@@ -1873,7 +2068,8 @@
     "de": "theoretisch",
     "sentence_de": "Seine Ausbildung ist eher theoretisch als praktisch.",
     "topic": "ciencia_investigacion_c1",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "adj"
   },
   {
     "id": 6667,
@@ -1887,7 +2083,9 @@
     "de": "die Hardware",
     "sentence_de": "Die Hardware braucht dringend ein Update.",
     "topic": "tecnologia_digital_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6674,
@@ -1901,7 +2099,9 @@
     "de": "der Server",
     "sentence_de": "Der Server fiel gestern Abend aus.",
     "topic": "tecnologia_digital_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6678,
@@ -1915,7 +2115,9 @@
     "de": "die Schnittstelle",
     "sentence_de": "Die Schnittstelle verwirrt neue Benutzer.",
     "topic": "tecnologia_digital_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6679,
@@ -1929,7 +2131,9 @@
     "de": "der Benutzer",
     "sentence_de": "Jeder Benutzer hat sein eigenes Profil.",
     "topic": "tecnologia_digital_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6683,
@@ -1943,7 +2147,8 @@
     "de": "programmieren",
     "sentence_de": "Er lernte in wenigen Monaten zu programmieren.",
     "topic": "tecnologia_digital_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "verb"
   },
   {
     "id": 6684,
@@ -1957,7 +2162,8 @@
     "de": "verbinden",
     "sentence_de": "Ich kann mein Handy nicht mit dem Router verbinden.",
     "topic": "tecnologia_digital_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "verb"
   },
   {
     "id": 6685,
@@ -1971,7 +2177,8 @@
     "de": "speichern",
     "sentence_de": "Das System kann große Datenmengen speichern.",
     "topic": "tecnologia_digital_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "verb"
   },
   {
     "id": 6686,
@@ -1985,7 +2192,8 @@
     "de": "verschlüsseln",
     "sentence_de": "Das Unternehmen beschloss, alle E-Mails zu verschlüsseln.",
     "topic": "tecnologia_digital_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "id": 6688,
@@ -1999,7 +2207,8 @@
     "de": "digital",
     "sentence_de": "Die digitale Signatur beschleunigt die Verwaltungsabläufe.",
     "topic": "tecnologia_digital_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "adj"
   },
   {
     "id": 6689,
@@ -2013,7 +2222,8 @@
     "de": "virtuell",
     "sentence_de": "Die Besprechung wird komplett virtuell sein.",
     "topic": "tecnologia_digital_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "adj"
   },
   {
     "id": 6691,
@@ -2027,7 +2237,8 @@
     "de": "tragbar",
     "sentence_de": "Ich habe einen leichteren tragbaren Computer gekauft.",
     "topic": "tecnologia_digital_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "adj"
   },
   {
     "id": 6692,
@@ -2041,7 +2252,8 @@
     "de": "kompatibel",
     "sentence_de": "Das Ladegerät ist mit diesem Modell nicht kompatibel.",
     "topic": "tecnologia_digital_c1",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "adj"
   },
   {
     "id": 6693,
@@ -2055,7 +2267,8 @@
     "de": "veraltet",
     "sentence_de": "Dieses Betriebssystem ist bereits veraltet.",
     "topic": "tecnologia_digital_c1",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "adj"
   },
   {
     "id": 6694,
@@ -2069,7 +2282,8 @@
     "de": "intuitiv",
     "sentence_de": "Das neue Design ist viel intuitiver.",
     "topic": "tecnologia_digital_c1",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "adj"
   },
   {
     "id": 6695,
@@ -2083,7 +2297,8 @@
     "de": "remote",
     "sentence_de": "Freitags arbeiten wir remote.",
     "topic": "tecnologia_digital_c1",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adj"
   },
   {
     "id": 6697,
@@ -2097,7 +2312,9 @@
     "de": "der Beamte",
     "sentence_de": "Der Beamte bearbeitete meinen Antrag schnell.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6699,
@@ -2111,7 +2328,9 @@
     "de": "das Ministerium",
     "sentence_de": "Das Ministerium veröffentlichte einen ausführlichen Bericht.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6700,
@@ -2125,7 +2344,9 @@
     "de": "das Mandat",
     "sentence_de": "Sein Mandat endet nächstes Jahr.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6701,
@@ -2139,7 +2360,9 @@
     "de": "das Parlament",
     "sentence_de": "Das Parlament debattiert das neue Gesetz.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6702,
@@ -2153,7 +2376,9 @@
     "de": "der Senat",
     "sentence_de": "Der Senat stimmt morgen über die Reform ab.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6703,
@@ -2167,7 +2392,9 @@
     "de": "der Abgeordnete",
     "sentence_de": "Der Abgeordnete schlug ein neues Gesetz vor.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6705,
@@ -2181,7 +2408,9 @@
     "de": "der Wahlkreis",
     "sentence_de": "Dieser Wahlkreis wählt drei Abgeordnete.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6706,
@@ -2195,7 +2424,9 @@
     "de": "die Volkszählung",
     "sentence_de": "Die Volkszählung findet alle zehn Jahre statt.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6707,
@@ -2209,7 +2440,9 @@
     "de": "die Wahlurne",
     "sentence_de": "Die Stimmen sind in der Wahlurne.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6708,
@@ -2223,7 +2456,9 @@
     "de": "der Sitz",
     "sentence_de": "Seine Partei gewann zehn neue Sitze.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6709,
@@ -2237,7 +2472,9 @@
     "de": "die Wahlenthaltung",
     "sentence_de": "Die Wahlenthaltung war gestern sehr hoch.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6710,
@@ -2251,7 +2488,9 @@
     "de": "das Referendum",
     "sentence_de": "Das Referendum entscheidet über die neue Verfassung.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6711,
@@ -2265,7 +2504,9 @@
     "de": "die Souveränität",
     "sentence_de": "Das Land verteidigt seine volle Souveränität.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6712,
@@ -2279,7 +2520,8 @@
     "de": "regieren",
     "sentence_de": "Der Präsident muss vorsichtig regieren.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "verb"
   },
   {
     "id": 6713,
@@ -2293,7 +2535,8 @@
     "de": "Gesetze erlassen",
     "sentence_de": "Der Kongress erlässt Gesetze zur Umwelt.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "verb"
   },
   {
     "id": 6714,
@@ -2307,7 +2550,8 @@
     "de": "verwalten",
     "sentence_de": "Der Ausschuss verwaltet die öffentlichen Mittel.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "verb"
   },
   {
     "id": 6715,
@@ -2321,7 +2565,8 @@
     "de": "kontrollieren",
     "sentence_de": "Der Rechnungshof kontrolliert die Staatsausgaben.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "verb"
   },
   {
     "id": 6716,
@@ -2335,7 +2580,8 @@
     "de": "absetzen",
     "sentence_de": "Das Parlament entließ den korrupten Minister.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "verb"
   },
   {
     "id": 6718,
@@ -2349,7 +2595,8 @@
     "de": "erlassen",
     "sentence_de": "Der König erließ das neue Gesetz.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "verb"
   },
   {
     "id": 6719,
@@ -2363,7 +2610,8 @@
     "de": "einführen",
     "sentence_de": "Das Land führte ein neues Regime ein.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "verb"
   },
   {
     "id": 6722,
@@ -2377,7 +2625,8 @@
     "de": "städtisch",
     "sentence_de": "Das städtische Wasser ist hier trinkbar.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "adj"
   },
   {
     "id": 6723,
@@ -2391,7 +2640,8 @@
     "de": "regional",
     "sentence_de": "Die Regionalregierung verwaltet das Gesundheitswesen.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "adj"
   },
   {
     "id": 6724,
@@ -2405,7 +2655,8 @@
     "de": "bürokratisch",
     "sentence_de": "Der bürokratische Prozess ist hier langsam.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "adj"
   },
   {
     "id": 6725,
@@ -2419,7 +2670,8 @@
     "de": "institutionell",
     "sentence_de": "Es besteht eine tiefe institutionelle Krise.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "adj"
   },
   {
     "id": 6726,
@@ -2433,7 +2685,8 @@
     "de": "souverän",
     "sentence_de": "Das Volk ist in der Demokratie souverän.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "adj"
   },
   {
     "id": 6727,
@@ -2447,7 +2700,8 @@
     "de": "Wahl-",
     "sentence_de": "Der Wahlkampf beginnt morgen früh.",
     "topic": "estado_instituciones_c1",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "adj"
   },
   {
     "id": 6735,
@@ -2461,7 +2715,9 @@
     "de": "die Kaution",
     "sentence_de": "Der Richter setzte eine hohe Kaution fest.",
     "topic": "derecho_justicia_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6741,
@@ -2475,7 +2731,9 @@
     "de": "die Klausel",
     "sentence_de": "Diese Klausel schützt immer den Käufer.",
     "topic": "derecho_justicia_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6742,
@@ -2489,7 +2747,9 @@
     "de": "die Entschädigung",
     "sentence_de": "Er erhielt eine Entschädigung für den Unfall.",
     "topic": "derecho_justicia_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6743,
@@ -2503,7 +2763,8 @@
     "de": "verklagen",
     "sentence_de": "Er beschloss, seinen früheren Chef zu verklagen.",
     "topic": "derecho_justicia_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 6745,
@@ -2517,7 +2778,8 @@
     "de": "verurteilen",
     "sentence_de": "Der Richter verurteilte den Angeklagten gestern.",
     "topic": "derecho_justicia_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "verb"
   },
   {
     "id": 6746,
@@ -2531,7 +2793,8 @@
     "de": "freisprechen",
     "sentence_de": "Die Jury beschloss, den Angeklagten freizusprechen.",
     "topic": "derecho_justicia_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "verb"
   },
   {
     "id": 6747,
@@ -2545,7 +2808,8 @@
     "de": "aussagen",
     "sentence_de": "Sie wird morgen früh aussagen.",
     "topic": "derecho_justicia_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "verb"
   },
   {
     "id": 6748,
@@ -2559,7 +2823,8 @@
     "de": "Berufung einlegen",
     "sentence_de": "Sein Anwalt legte gestern Berufung ein.",
     "topic": "derecho_justicia_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "id": 6749,
@@ -2573,7 +2838,8 @@
     "de": "verletzen",
     "sentence_de": "Die Firma verletzte den unterschriebenen Vertrag.",
     "topic": "derecho_justicia_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "id": 6750,
@@ -2587,7 +2853,8 @@
     "de": "entschädigen",
     "sentence_de": "Der Versicherer muss den Kunden entschädigen.",
     "topic": "derecho_justicia_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "verb"
   },
   {
     "id": 6754,
@@ -2601,7 +2868,8 @@
     "de": "gerichtlich",
     "sentence_de": "Die Justiz ist hier unabhängig.",
     "topic": "derecho_justicia_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "adj"
   },
   {
     "id": 6755,
@@ -2615,7 +2883,8 @@
     "de": "bindend",
     "sentence_de": "Die Vereinbarung ist rechtlich nicht bindend.",
     "topic": "derecho_justicia_c1",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "adj"
   },
   {
     "id": 6756,
@@ -2629,7 +2898,8 @@
     "de": "betrügerisch",
     "sentence_de": "Sie deckten ein sehr großes betrügerisches System auf.",
     "topic": "derecho_justicia_c1",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "adj"
   },
   {
     "id": 6757,
@@ -2643,7 +2913,8 @@
     "de": "strafbar",
     "sentence_de": "Diese Straftat wird mit Gefängnis bestraft.",
     "topic": "derecho_justicia_c1",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "adj"
   },
   {
     "id": 6758,
@@ -2657,7 +2928,9 @@
     "de": "die Ungleichheit",
     "sentence_de": "Die soziale Ungleichheit wächst hier weiter.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6760,
@@ -2671,7 +2944,9 @@
     "de": "die Demonstration",
     "sentence_de": "Die Demonstration versammelte Tausende von Menschen.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6762,
@@ -2685,7 +2960,9 @@
     "de": "die Repression",
     "sentence_de": "Die polizeiliche Repression war sehr hart.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6763,
@@ -2699,7 +2976,9 @@
     "de": "der Migrant",
     "sentence_de": "Der Migrant überquerte die Grenze allein.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6764,
@@ -2713,7 +2992,9 @@
     "de": "der Flüchtling",
     "sentence_de": "Der Flüchtling floh vor dem Krieg.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6765,
@@ -2727,7 +3008,9 @@
     "de": "das Exil",
     "sentence_de": "Er lebte viele Jahre im Exil.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6766,
@@ -2741,7 +3024,9 @@
     "de": "die Diskriminierung",
     "sentence_de": "Rassistische Diskriminierung ist immer noch schwerwiegend.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6767,
@@ -2755,7 +3040,9 @@
     "de": "das Vorurteil",
     "sentence_de": "Vorurteile erschweren das tägliche Zusammenleben.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6768,
@@ -2769,7 +3056,9 @@
     "de": "die Fremdenfeindlichkeit",
     "sentence_de": "Die Fremdenfeindlichkeit wuchs während der Krise.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6769,
@@ -2783,7 +3072,9 @@
     "de": "die Waffenruhe",
     "sentence_de": "Beide Seiten vereinbarten eine kurze Waffenruhe.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6770,
@@ -2797,7 +3088,9 @@
     "de": "der Waffenstillstand",
     "sentence_de": "Der Waffenstillstand beendete den Krieg.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6772,
@@ -2811,7 +3104,9 @@
     "de": "die Unruhe",
     "sentence_de": "Die Unruhe dauerte die ganze Nacht.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6773,
@@ -2825,7 +3120,8 @@
     "de": "protestieren",
     "sentence_de": "Tausende gingen gestern protestieren.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "id": 6775,
@@ -2839,7 +3135,8 @@
     "de": "unterdrücken",
     "sentence_de": "Die Regierung unterdrückte den friedlichen Protest.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "verb"
   },
   {
     "id": 6776,
@@ -2853,7 +3150,8 @@
     "de": "diskriminieren",
     "sentence_de": "Man darf nicht aufgrund des Alters diskriminieren.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "verb"
   },
   {
     "id": 6777,
@@ -2867,7 +3165,8 @@
     "de": "auswandern",
     "sentence_de": "Er beschloss auszuwandern, weil Arbeit fehlte.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "verb"
   },
   {
     "id": 6778,
@@ -2881,7 +3180,8 @@
     "de": "ins Exil gehen",
     "sentence_de": "Er musste nach dem Putsch ins Exil gehen.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "verb"
   },
   {
     "id": 6779,
@@ -2895,7 +3195,8 @@
     "de": "verhandeln",
     "sentence_de": "Beide Seiten verhandeln lieber über Frieden.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "verb"
   },
   {
     "id": 6780,
@@ -2909,7 +3210,8 @@
     "de": "versöhnen",
     "sentence_de": "Der Prozess soll die Gesellschaft versöhnen.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "verb"
   },
   {
     "id": 6781,
@@ -2923,7 +3225,8 @@
     "de": "ungleich",
     "sentence_de": "Die Landverteilung war sehr ungleich.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "adj"
   },
   {
     "id": 6782,
@@ -2937,7 +3240,8 @@
     "de": "ausgegrenzt",
     "sentence_de": "Dieses Viertel fühlt sich sehr ausgegrenzt.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "adj"
   },
   {
     "id": 6783,
@@ -2951,7 +3255,8 @@
     "de": "fremdenfeindlich",
     "sentence_de": "Diese fremdenfeindliche Rede löste große Empörung aus.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "adj"
   },
   {
     "id": 6784,
@@ -2965,7 +3270,8 @@
     "de": "friedlich",
     "sentence_de": "Die Bewegung bleibt vollkommen friedlich.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "adj"
   },
   {
     "id": 6786,
@@ -2979,7 +3285,8 @@
     "de": "solidarisch",
     "sentence_de": "Die Nachbarschaft war damals sehr solidarisch.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "adj"
   },
   {
     "id": 6787,
@@ -2993,7 +3300,8 @@
     "de": "verletzlich",
     "sentence_de": "Kinder sind die verletzlichste Bevölkerungsgruppe.",
     "topic": "conflicto_sociedad_c1",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "adj"
   },
   {
     "id": 6788,
@@ -3007,7 +3315,9 @@
     "de": "das Meisterwerk",
     "sentence_de": "Dieses Bild ist sein Meisterwerk.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6789,
@@ -3021,7 +3331,9 @@
     "de": "die Leinwand",
     "sentence_de": "Der Maler kaufte eine neue Leinwand.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6792,
@@ -3035,7 +3347,9 @@
     "de": "die Komposition",
     "sentence_de": "Die Komposition des Bildes ist ausgewogen.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6795,
@@ -3049,7 +3363,9 @@
     "de": "der Pinselstrich",
     "sentence_de": "Jeder Pinselstrich zeigt seine Emotion.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6796,
@@ -3063,7 +3379,9 @@
     "de": "die Palette",
     "sentence_de": "Ihre Palette nutzt warme Töne.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6797,
@@ -3077,7 +3395,9 @@
     "de": "die Skizze",
     "sentence_de": "Er zeichnet zuerst eine schnelle Skizze.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6798,
@@ -3091,7 +3411,9 @@
     "de": "der Mäzen",
     "sentence_de": "Ein Mäzen finanzierte die ganze Ausstellung.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6799,
@@ -3105,7 +3427,9 @@
     "de": "die Avantgarde",
     "sentence_de": "Er gehörte zur künstlerischen Avantgarde.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6801,
@@ -3119,7 +3443,9 @@
     "de": "die Installation",
     "sentence_de": "Die Installation füllt den ganzen Raum.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6802,
@@ -3133,7 +3459,9 @@
     "de": "der Kupferstich",
     "sentence_de": "Dieser Kupferstich stammt aus dem neunzehnten Jahrhundert.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6803,
@@ -3147,7 +3475,8 @@
     "de": "meißeln",
     "sentence_de": "Er lernte, Stein zu meißeln.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 6804,
@@ -3161,7 +3490,8 @@
     "de": "darstellen",
     "sentence_de": "Er wollte seine Wut auf Leinwand darstellen.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "verb"
   },
   {
     "id": 6805,
@@ -3175,7 +3505,8 @@
     "de": "ersinnen",
     "sentence_de": "Der Künstler ersann ein ehrgeiziges Projekt.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "id": 6806,
@@ -3189,7 +3520,8 @@
     "de": "skizzieren",
     "sentence_de": "Der Maler skizziert zuerst die Figur.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "verb"
   },
   {
     "id": 6807,
@@ -3203,7 +3535,8 @@
     "de": "restaurieren",
     "sentence_de": "Sie werden das alte Wandbild restaurieren.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "verb"
   },
   {
     "id": 6808,
@@ -3217,7 +3550,8 @@
     "de": "ausstellen",
     "sentence_de": "Die Galerie wird seine Werke ausstellen.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "verb"
   },
   {
     "id": 6809,
@@ -3231,7 +3565,8 @@
     "de": "formen",
     "sentence_de": "Sie formt gern den feuchten Ton.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "verb"
   },
   {
     "id": 6810,
@@ -3245,7 +3580,8 @@
     "de": "sich inspirieren lassen",
     "sentence_de": "Er lässt sich von wilder Natur inspirieren.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "verb"
   },
   {
     "id": 6811,
@@ -3259,7 +3595,8 @@
     "de": "abstrakt",
     "sentence_de": "Er bevorzugt abstrakte Kunst statt realistischer.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "adj"
   },
   {
     "id": 6812,
@@ -3273,7 +3610,8 @@
     "de": "figurativ",
     "sentence_de": "Er kehrte zur klassischen figurativen Malerei zurück.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "adj"
   },
   {
     "id": 6813,
@@ -3287,7 +3625,8 @@
     "de": "avantgardistisch",
     "sentence_de": "Er ist ein sehr avantgardistischer Architekt.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "adj"
   },
   {
     "id": 6814,
@@ -3301,7 +3640,8 @@
     "de": "eklektisch",
     "sentence_de": "Sein Stil ist ziemlich eklektisch.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "adj"
   },
   {
     "id": 6815,
@@ -3315,7 +3655,8 @@
     "de": "akribisch",
     "sentence_de": "Der Kupferstecher ist äußerst akribisch.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "adj"
   },
   {
     "id": 6816,
@@ -3329,7 +3670,8 @@
     "de": "produktiv",
     "sentence_de": "Er war ein äußerst produktiver Bildhauer.",
     "topic": "artes_creacion_c1",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "adj"
   },
   {
     "id": 6818,
@@ -3343,7 +3685,9 @@
     "de": "die Handlung",
     "sentence_de": "Die Handlung hat unerwartete Wendungen.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6819,
@@ -3357,7 +3701,9 @@
     "de": "der Erzähler",
     "sentence_de": "Der Erzähler erzählt die Geschichte in Ich-Form.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6820,
@@ -3371,7 +3717,9 @@
     "de": "die Metapher",
     "sentence_de": "Das Gedicht nutzt eine kühne Metapher.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6821,
@@ -3385,7 +3733,9 @@
     "de": "der Vers",
     "sentence_de": "Jeder Vers des Gedichts reimt sich.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6822,
@@ -3399,7 +3749,9 @@
     "de": "der Reim",
     "sentence_de": "Der Schlussreim überrascht den Leser.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6823,
@@ -3413,7 +3765,9 @@
     "de": "das Drehbuch",
     "sentence_de": "Er schrieb das Drehbuch in zwei Monaten.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6824,
@@ -3427,7 +3781,9 @@
     "de": "die Besetzung",
     "sentence_de": "Die Besetzung erhielt großes Lob.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6826,
@@ -3441,7 +3797,9 @@
     "de": "der Vorhang",
     "sentence_de": "Der Vorhang öffnet sich langsam.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6827,
@@ -3455,7 +3813,9 @@
     "de": "die Premiere",
     "sentence_de": "Die Premiere war ein großer Erfolg.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6829,
@@ -3469,7 +3829,9 @@
     "de": "die Partitur",
     "sentence_de": "Der Pianist folgt der Partitur.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6831,
@@ -3483,7 +3845,9 @@
     "de": "der Monolog",
     "sentence_de": "Der Schauspieler trägt einen langen Monolog vor.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6832,
@@ -3497,7 +3861,9 @@
     "de": "die Satire",
     "sentence_de": "Das Stück ist eine politische Satire.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6833,
@@ -3511,7 +3877,8 @@
     "de": "erzählen",
     "sentence_de": "Er erzählt lieber in der Vergangenheit.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "id": 6834,
@@ -3525,7 +3892,8 @@
     "de": "verkörpern",
     "sentence_de": "Sie wird die Hauptrolle verkörpern.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "verb"
   },
   {
     "id": 6835,
@@ -3539,7 +3907,8 @@
     "de": "proben",
     "sentence_de": "Die Truppe probt jeden Nachmittag.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "verb"
   },
   {
     "id": 6836,
@@ -3553,7 +3922,8 @@
     "de": "improvisieren",
     "sentence_de": "Der Schauspieler musste improvisieren.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "verb"
   },
   {
     "id": 6837,
@@ -3567,7 +3937,8 @@
     "de": "applaudieren",
     "sentence_de": "Das Publikum applaudierte im Stehen.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "verb"
   },
   {
     "id": 6838,
@@ -3581,7 +3952,8 @@
     "de": "uraufführen",
     "sentence_de": "Das Theater wird das Stück uraufführen.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "verb"
   },
   {
     "id": 6840,
@@ -3595,7 +3967,8 @@
     "de": "rezitieren",
     "sentence_de": "Der Junge rezitiert ein ganzes Gedicht.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "verb"
   },
   {
     "id": 6841,
@@ -3609,7 +3982,8 @@
     "de": "ergreifend",
     "sentence_de": "Das Ende war wirklich ergreifend.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "adj"
   },
   {
     "id": 6842,
@@ -3623,7 +3997,8 @@
     "de": "tragisch",
     "sentence_de": "Der Held hat ein tragisches Schicksal.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "adj"
   },
   {
     "id": 6843,
@@ -3637,7 +4012,8 @@
     "de": "komisch",
     "sentence_de": "Die komische Figur rettet die Szene.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "adj"
   },
   {
     "id": 6844,
@@ -3651,7 +4027,8 @@
     "de": "eloquent",
     "sentence_de": "Die Schlussrede war sehr eloquent.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "adj"
   },
   {
     "id": 6845,
@@ -3665,7 +4042,8 @@
     "de": "theatralisch",
     "sentence_de": "Er hat eine sehr theatralische Geste.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "adj"
   },
   {
     "id": 6846,
@@ -3679,7 +4057,8 @@
     "de": "melodisch",
     "sentence_de": "Er hat einen sehr melodischen Gesangsstil.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 25
+    "topicOrder": 25,
+    "pos": "adj"
   },
   {
     "id": 6847,
@@ -3693,7 +4072,8 @@
     "de": "lyrisch",
     "sentence_de": "Seine Poesie hat einen lyrischen Ton.",
     "topic": "literatura_espectaculo_c1",
-    "topicOrder": 26
+    "topicOrder": 26,
+    "pos": "adj"
   },
   {
     "id": 6849,
@@ -3707,7 +4087,9 @@
     "de": "die Überzeugung",
     "sentence_de": "Diese Überzeugung ist in der Region verbreitet.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6850,
@@ -3721,7 +4103,9 @@
     "de": "der Gläubige",
     "sentence_de": "Jeder Gläubige betet auf seine Weise.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6851,
@@ -3735,7 +4119,9 @@
     "de": "die Gottheit",
     "sentence_de": "Sie verehren eine einzige Gottheit.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6853,
@@ -3749,7 +4135,9 @@
     "de": "die Pilgerreise",
     "sentence_de": "Sie machten die Pilgerreise zu Fuß.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6854,
@@ -3763,7 +4151,9 @@
     "de": "der Ritus",
     "sentence_de": "Der Ritus wiederholt sich jedes Jahr.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6857,
@@ -3777,7 +4167,9 @@
     "de": "der Klerus",
     "sentence_de": "Der örtliche Klerus unterstützte das Projekt.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6858,
@@ -3791,7 +4183,9 @@
     "de": "die Lehre",
     "sentence_de": "Die Lehre wird schon Kindern vermittelt.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6859,
@@ -3805,7 +4199,9 @@
     "de": "die Erlösung",
     "sentence_de": "Sie suchen die Erlösung der Seele.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6861,
@@ -3819,7 +4215,9 @@
     "de": "die Gemeinde",
     "sentence_de": "Die Gemeinde versammelt sich sonntags.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6863,
@@ -3833,7 +4231,8 @@
     "de": "verehren",
     "sentence_de": "Sie verehren mehrere örtliche Heilige.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "verb"
   },
   {
     "id": 6864,
@@ -3847,7 +4246,8 @@
     "de": "predigen",
     "sentence_de": "Der Priester predigt jeden Sonntag.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 6865,
@@ -3861,7 +4261,8 @@
     "de": "segnen",
     "sentence_de": "Der Bischof segnet die Gläubigen.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "verb"
   },
   {
     "id": 6866,
@@ -3875,7 +4276,8 @@
     "de": "weihen",
     "sentence_de": "Sie werden die neue Kapelle weihen.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "id": 6870,
@@ -3889,7 +4291,8 @@
     "de": "göttlich",
     "sentence_de": "Sie halten den König für göttlich.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "adj"
   },
   {
     "id": 6871,
@@ -3903,7 +4306,8 @@
     "de": "religiös",
     "sentence_de": "Er stammt aus einer sehr religiösen Familie.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adj"
   },
   {
     "id": 6872,
@@ -3917,7 +4321,8 @@
     "de": "fromm",
     "sentence_de": "Er ist ein frommer Anhänger des Glaubens.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "adj"
   },
   {
     "id": 6874,
@@ -3931,7 +4336,8 @@
     "de": "säkular",
     "sentence_de": "Der Staat ist offiziell säkular.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "adj"
   },
   {
     "id": 6875,
@@ -3945,7 +4351,8 @@
     "de": "prophetisch",
     "sentence_de": "Der Text hat einen prophetischen Ton.",
     "topic": "religion_creencia_c1",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "adj"
   },
   {
     "id": 6876,
@@ -3959,7 +4366,9 @@
     "de": "die Überlegung",
     "sentence_de": "Seine Überlegung ist klar und fundiert.",
     "topic": "filosofia_etica_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6877,
@@ -3973,7 +4382,9 @@
     "de": "die Ethik",
     "sentence_de": "Er studiert Ethik an der Universität.",
     "topic": "filosofia_etica_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6882,
@@ -3987,7 +4398,9 @@
     "de": "das Argument",
     "sentence_de": "Er brachte ein sehr überzeugendes Argument vor.",
     "topic": "filosofia_etica_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6884,
@@ -4001,7 +4414,9 @@
     "de": "das Urteil",
     "sentence_de": "Ich vertraue seinem guten Urteil.",
     "topic": "filosofia_etica_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6885,
@@ -4015,7 +4430,9 @@
     "de": "die Tugend",
     "sentence_de": "Geduld ist eine große Tugend.",
     "topic": "filosofia_etica_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6886,
@@ -4029,7 +4446,9 @@
     "de": "der freie Wille",
     "sentence_de": "Er verteidigt die Idee des freien Willens.",
     "topic": "filosofia_etica_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6889,
@@ -4043,7 +4462,9 @@
     "de": "die Skepsis",
     "sentence_de": "Seine Skepsis bremst jeden Glauben.",
     "topic": "filosofia_etica_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6891,
@@ -4057,7 +4478,8 @@
     "de": "argumentieren",
     "sentence_de": "Er argumentiert sehr logisch.",
     "topic": "filosofia_etica_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "id": 6893,
@@ -4071,7 +4493,8 @@
     "de": "nachdenken",
     "sentence_de": "Er muss über seine Entscheidung nachdenken.",
     "topic": "filosofia_etica_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "id": 6895,
@@ -4085,7 +4508,8 @@
     "de": "unterscheiden",
     "sentence_de": "Er hat Mühe, Gut und Böse zu unterscheiden.",
     "topic": "filosofia_etica_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "verb"
   },
   {
     "id": 6896,
@@ -4099,7 +4523,8 @@
     "de": "widersprechen",
     "sentence_de": "Seine Theorie widerspricht sich selbst.",
     "topic": "filosofia_etica_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 6897,
@@ -4113,7 +4538,8 @@
     "de": "rational",
     "sentence_de": "Er sucht eine rationale Erklärung.",
     "topic": "filosofia_etica_c1",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "adj"
   },
   {
     "id": 6898,
@@ -4127,7 +4553,8 @@
     "de": "ethisch",
     "sentence_de": "Sein Verhalten war nicht ethisch.",
     "topic": "filosofia_etica_c1",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "adj"
   },
   {
     "id": 6901,
@@ -4141,7 +4568,8 @@
     "de": "kohärent",
     "sentence_de": "Seine Rede ist ziemlich kohärent.",
     "topic": "filosofia_etica_c1",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "adj"
   },
   {
     "id": 6902,
@@ -4155,7 +4583,8 @@
     "de": "paradox",
     "sentence_de": "Es ist paradox, das zu verteidigen.",
     "topic": "filosofia_etica_c1",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adj"
   },
   {
     "id": 6903,
@@ -4169,7 +4598,8 @@
     "de": "relativ",
     "sentence_de": "Jeder moralische Wert sei relativ, sagt er.",
     "topic": "filosofia_etica_c1",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "adj"
   },
   {
     "id": 6905,
@@ -4183,7 +4613,9 @@
     "de": "Journalismus",
     "sentence_de": "Guter Journalismus braucht Zeit.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6906,
@@ -4197,7 +4629,9 @@
     "de": "Schlagzeile",
     "sentence_de": "Die Schlagzeile übertrieb die echte Nachricht.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6907,
@@ -4211,7 +4645,9 @@
     "de": "Titelseite",
     "sentence_de": "Sein Foto erschien auf der Titelseite.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6908,
@@ -4225,7 +4661,9 @@
     "de": "öffentliche Meinung",
     "sentence_de": "Die öffentliche Meinung änderte sich nach der Debatte.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6909,
@@ -4239,7 +4677,9 @@
     "de": "Kontroverse",
     "sentence_de": "Die Kontroverse spaltete die Leser.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6910,
@@ -4253,7 +4693,9 @@
     "de": "Zensur",
     "sentence_de": "Die Regierung führte Zensur der Presse ein.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6911,
@@ -4267,7 +4709,9 @@
     "de": "Meinungsfreiheit",
     "sentence_de": "Wir verteidigen immer die Meinungsfreiheit.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6912,
@@ -4281,7 +4725,9 @@
     "de": "Desinformation",
     "sentence_de": "Desinformation verbreitet sich sehr schnell.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6917,
@@ -4295,7 +4741,9 @@
     "de": "Glaubwürdigkeit",
     "sentence_de": "Das Medium verlor an Glaubwürdigkeit beim Publikum.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6918,
@@ -4309,7 +4757,9 @@
     "de": "Pressekonferenz",
     "sentence_de": "Der Minister berief eine Pressekonferenz ein.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6919,
@@ -4323,7 +4773,8 @@
     "de": "veröffentlichen",
     "sentence_de": "Sie beschlossen, die vertraulichen Daten zu veröffentlichen.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 6920,
@@ -4337,7 +4788,8 @@
     "de": "verbreiten",
     "sentence_de": "Soziale Medien helfen, Nachrichten zu verbreiten.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "verb"
   },
   {
     "id": 6921,
@@ -4351,7 +4803,8 @@
     "de": "anprangern",
     "sentence_de": "Der Reporter prangerte die lokale Korruption an.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "verb"
   },
   {
     "id": 6922,
@@ -4365,7 +4818,8 @@
     "de": "sich äußern",
     "sentence_de": "Er äußert sich lieber nicht zur Politik.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "verb"
   },
   {
     "id": 6923,
@@ -4379,7 +4833,8 @@
     "de": "dementieren",
     "sentence_de": "Das Unternehmen wollte das Gerücht dementieren.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "verb"
   },
   {
     "id": 6924,
@@ -4393,7 +4848,8 @@
     "de": "überprüfen",
     "sentence_de": "Man muss die Quelle immer überprüfen.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "verb"
   },
   {
     "id": 6926,
@@ -4407,7 +4863,8 @@
     "de": "durchsickern lassen",
     "sentence_de": "Jemand ließ das Dokument an die Presse durchsickern.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "verb"
   },
   {
     "id": 6927,
@@ -4421,7 +4878,8 @@
     "de": "medienwirksam",
     "sentence_de": "Es war ein sehr medienwirksamer Skandal.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "adj"
   },
   {
     "id": 6928,
@@ -4435,7 +4893,8 @@
     "de": "unparteiisch",
     "sentence_de": "Wir suchen eine unparteiische Analyse der Fakten.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 19
+    "topicOrder": 19,
+    "pos": "adj"
   },
   {
     "id": 6929,
@@ -4449,7 +4908,8 @@
     "de": "voreingenommen",
     "sentence_de": "Der Bericht erwies sich als ziemlich voreingenommen.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 20
+    "topicOrder": 20,
+    "pos": "adj"
   },
   {
     "id": 6930,
@@ -4463,7 +4923,8 @@
     "de": "umstritten",
     "sentence_de": "Er veröffentlichte einen sehr umstrittenen Artikel.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 21
+    "topicOrder": 21,
+    "pos": "adj"
   },
   {
     "id": 6931,
@@ -4477,7 +4938,8 @@
     "de": "wahrheitsgetreu",
     "sentence_de": "Wir fordern wahrheitsgetreue und klare Informationen.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 22
+    "topicOrder": 22,
+    "pos": "adj"
   },
   {
     "id": 6932,
@@ -4491,7 +4953,8 @@
     "de": "anonym",
     "sentence_de": "Der Zeuge blieb lieber anonym.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 23
+    "topicOrder": 23,
+    "pos": "adj"
   },
   {
     "id": 6933,
@@ -4505,7 +4968,8 @@
     "de": "viral",
     "sentence_de": "Das Video wurde sofort viral.",
     "topic": "medios_discurso_c1",
-    "topicOrder": 24
+    "topicOrder": 24,
+    "pos": "adj"
   },
   {
     "id": 6946,
@@ -4519,7 +4983,9 @@
     "de": "Krankengeschichte",
     "sentence_de": "Der Arzt prüfte seine Krankengeschichte.",
     "topic": "salud_avanzada_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6947,
@@ -4533,7 +4999,9 @@
     "de": "Leiden",
     "sentence_de": "Er leidet an einem chronischen Rückenleiden.",
     "topic": "salud_avanzada_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6948,
@@ -4547,7 +5015,8 @@
     "de": "diagnostizieren",
     "sentence_de": "Es dauerte Wochen, die Krankheit zu diagnostizieren.",
     "topic": "salud_avanzada_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "verb"
   },
   {
     "id": 6949,
@@ -4561,7 +5030,8 @@
     "de": "verschreiben",
     "sentence_de": "Der Arzt verschrieb starke Antibiotika.",
     "topic": "salud_avanzada_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 6950,
@@ -4575,7 +5045,8 @@
     "de": "anstecken",
     "sentence_de": "Er wollte seine Familie nicht anstecken.",
     "topic": "salud_avanzada_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "verb"
   },
   {
     "id": 6951,
@@ -4589,7 +5060,8 @@
     "de": "sich impfen lassen",
     "sentence_de": "Er ließ sich vor der Reise impfen.",
     "topic": "salud_avanzada_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "verb"
   },
   {
     "id": 6957,
@@ -4603,7 +5075,8 @@
     "de": "ansteckend",
     "sentence_de": "Das Virus ist sehr ansteckend.",
     "topic": "salud_avanzada_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "adj"
   },
   {
     "id": 6958,
@@ -4617,7 +5090,8 @@
     "de": "leicht",
     "sentence_de": "Es war ein ziemlich leichter Fall.",
     "topic": "salud_avanzada_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "adj"
   },
   {
     "id": 6960,
@@ -4631,7 +5105,8 @@
     "de": "vorbeugend",
     "sentence_de": "Sie empfahlen eine jährliche vorbeugende Untersuchung.",
     "topic": "salud_avanzada_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "adj"
   },
   {
     "id": 6961,
@@ -4645,7 +5120,8 @@
     "de": "immun",
     "sentence_de": "Er ist bereits immun gegen diese Krankheit.",
     "topic": "salud_avanzada_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "adj"
   },
   {
     "id": 6962,
@@ -4659,7 +5135,8 @@
     "de": "ambulant",
     "sentence_de": "Die Behandlung erfolgte vollständig ambulant.",
     "topic": "salud_avanzada_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "adj"
   },
   {
     "id": 6963,
@@ -4673,7 +5150,9 @@
     "de": "Klimawandel",
     "sentence_de": "Der Klimawandel betrifft den ganzen Planeten.",
     "topic": "medioambiente_c1",
-    "topicOrder": 1
+    "topicOrder": 1,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6965,
@@ -4687,7 +5166,9 @@
     "de": "Verschmutzung",
     "sentence_de": "Die Luftverschmutzung verschlimmert sich jedes Jahr.",
     "topic": "medioambiente_c1",
-    "topicOrder": 2
+    "topicOrder": 2,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6968,
@@ -4701,7 +5182,9 @@
     "de": "Recycling",
     "sentence_de": "Recycling reduziert den Müll erheblich.",
     "topic": "medioambiente_c1",
-    "topicOrder": 3
+    "topicOrder": 3,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6969,
@@ -4715,7 +5198,9 @@
     "de": "erneuerbare Energie",
     "sentence_de": "Sie investieren viel in erneuerbare Energie.",
     "topic": "medioambiente_c1",
-    "topicOrder": 4
+    "topicOrder": 4,
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 6973,
@@ -4729,7 +5214,9 @@
     "de": "Auslaufen",
     "sentence_de": "Das Auslaufen verschmutzte den ganzen Fluss.",
     "topic": "medioambiente_c1",
-    "topicOrder": 5
+    "topicOrder": 5,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6975,
@@ -4743,7 +5230,9 @@
     "de": "natürliche Ressource",
     "sentence_de": "Wasser ist eine knappe natürliche Ressource.",
     "topic": "medioambiente_c1",
-    "topicOrder": 6
+    "topicOrder": 6,
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 6978,
@@ -4757,7 +5246,8 @@
     "de": "mildern",
     "sentence_de": "Sie versuchen, die Auswirkungen des Wandels zu mildern.",
     "topic": "medioambiente_c1",
-    "topicOrder": 7
+    "topicOrder": 7,
+    "pos": "verb"
   },
   {
     "id": 6979,
@@ -4771,7 +5261,8 @@
     "de": "bewahren",
     "sentence_de": "Wir müssen die natürlichen Ressourcen bewahren.",
     "topic": "medioambiente_c1",
-    "topicOrder": 8
+    "topicOrder": 8,
+    "pos": "verb"
   },
   {
     "id": 6980,
@@ -4785,7 +5276,8 @@
     "de": "fällen",
     "sentence_de": "Sie verboten das Fällen von Bäumen im Reservat.",
     "topic": "medioambiente_c1",
-    "topicOrder": 9
+    "topicOrder": 9,
+    "pos": "verb"
   },
   {
     "id": 6981,
@@ -4799,7 +5291,8 @@
     "de": "erhalten",
     "sentence_de": "Sie wollen das marine Ökosystem erhalten.",
     "topic": "medioambiente_c1",
-    "topicOrder": 10
+    "topicOrder": 10,
+    "pos": "verb"
   },
   {
     "id": 6982,
@@ -4813,7 +5306,8 @@
     "de": "erschöpfen",
     "sentence_de": "Der Verbrauch kann das Trinkwasser erschöpfen.",
     "topic": "medioambiente_c1",
-    "topicOrder": 11
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 6983,
@@ -4827,7 +5321,8 @@
     "de": "aufforsten",
     "sentence_de": "Sie planen, das verbrannte Gebiet aufzuforsten.",
     "topic": "medioambiente_c1",
-    "topicOrder": 12
+    "topicOrder": 12,
+    "pos": "verb"
   },
   {
     "id": 6985,
@@ -4841,7 +5336,8 @@
     "de": "umweltschädlich",
     "sentence_de": "Dieses Gas ist stark umweltschädlich.",
     "topic": "medioambiente_c1",
-    "topicOrder": 13
+    "topicOrder": 13,
+    "pos": "adj"
   },
   {
     "id": 6986,
@@ -4855,7 +5351,8 @@
     "de": "knapp",
     "sentence_de": "Trinkwasser wird immer knapper.",
     "topic": "medioambiente_c1",
-    "topicOrder": 14
+    "topicOrder": 14,
+    "pos": "adj"
   },
   {
     "id": 6987,
@@ -4869,7 +5366,8 @@
     "de": "irreversibel",
     "sentence_de": "Der Schaden am Ökosystem ist irreversibel.",
     "topic": "medioambiente_c1",
-    "topicOrder": 15
+    "topicOrder": 15,
+    "pos": "adj"
   },
   {
     "id": 6988,
@@ -4883,7 +5381,8 @@
     "de": "ökologisch",
     "sentence_de": "Er kaufte ein ökologischeres Auto.",
     "topic": "medioambiente_c1",
-    "topicOrder": 16
+    "topicOrder": 16,
+    "pos": "adj"
   },
   {
     "id": 6989,
@@ -4897,7 +5396,8 @@
     "de": "giftig",
     "sentence_de": "Das Auslaufen hinterließ giftige Rückstände.",
     "topic": "medioambiente_c1",
-    "topicOrder": 17
+    "topicOrder": 17,
+    "pos": "adj"
   },
   {
     "id": 6990,
@@ -4911,7 +5411,8 @@
     "de": "trinkbar",
     "sentence_de": "Nicht alles Wasser ist trinkbar.",
     "topic": "medioambiente_c1",
-    "topicOrder": 18
+    "topicOrder": 18,
+    "pos": "adj"
   },
   {
     "id": 3921,
@@ -4925,7 +5426,9 @@
     "sentence_es": "El pronóstico del paciente es favorable.",
     "sentence_hu": "A beteg prognózisa kedvező.",
     "sentence_en": "The patient's prognosis is favourable.",
-    "sentence_de": "Die Prognose des Patienten ist günstig."
+    "sentence_de": "Die Prognose des Patienten ist günstig.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3922,
@@ -4939,7 +5442,9 @@
     "sentence_es": "La enfermedad dejó secuelas leves.",
     "sentence_hu": "A betegség enyhe utóhatásokat hagyott.",
     "sentence_en": "The illness left mild after-effects.",
-    "sentence_de": "Die Krankheit hinterließ leichte Folgeschäden."
+    "sentence_de": "Die Krankheit hinterließ leichte Folgeschäden.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3923,
@@ -4953,7 +5458,8 @@
     "sentence_es": "Su estado se agravó durante la noche.",
     "sentence_hu": "Az állapota éjszaka súlyosbodott.",
     "sentence_en": "His condition got worse during the night.",
-    "sentence_de": "Sein Zustand verschlimmerte sich in der Nacht."
+    "sentence_de": "Sein Zustand verschlimmerte sich in der Nacht.",
+    "pos": "verb"
   },
   {
     "id": 3924,
@@ -4967,7 +5473,9 @@
     "sentence_es": "El seguimiento del paciente es mensual.",
     "sentence_hu": "A beteg utánkövetése havonta történik.",
     "sentence_en": "The patient's follow-up is monthly.",
-    "sentence_de": "Die Nachsorge des Patienten erfolgt monatlich."
+    "sentence_de": "Die Nachsorge des Patienten erfolgt monatlich.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3925,
@@ -4981,7 +5489,8 @@
     "sentence_es": "El experimento refuta la teoría anterior.",
     "sentence_hu": "A kísérlet cáfolja a korábbi elméletet.",
     "sentence_en": "The experiment refutes the earlier theory.",
-    "sentence_de": "Das Experiment widerlegt die frühere Theorie."
+    "sentence_de": "Das Experiment widerlegt die frühere Theorie.",
+    "pos": "verb"
   },
   {
     "id": 3926,
@@ -4995,7 +5504,8 @@
     "sentence_es": "Conviene contrastar los datos con otra fuente.",
     "sentence_hu": "Érdemes az adatokat másik forrással összevetni.",
     "sentence_en": "It is worth cross-checking the data with another source.",
-    "sentence_de": "Man sollte die Daten mit einer anderen Quelle gegenprüfen."
+    "sentence_de": "Man sollte die Daten mit einer anderen Quelle gegenprüfen.",
+    "pos": "verb"
   },
   {
     "id": 3927,
@@ -5009,7 +5519,8 @@
     "sentence_es": "Otros equipos no lograron replicar el resultado.",
     "sentence_hu": "Más csoportok nem tudták megismételni az eredményt.",
     "sentence_en": "Other teams could not replicate the result.",
-    "sentence_de": "Andere Teams konnten das Ergebnis nicht replizieren."
+    "sentence_de": "Andere Teams konnten das Ergebnis nicht replizieren.",
+    "pos": "verb"
   },
   {
     "id": 3928,
@@ -5023,7 +5534,9 @@
     "sentence_es": "El abogado presentó un recurso ante el tribunal.",
     "sentence_hu": "Az ügyvéd fellebbezést nyújtott be a bírósághoz.",
     "sentence_en": "The lawyer filed an appeal with the court.",
-    "sentence_de": "Der Anwalt legte beim Gericht ein Rechtsmittel ein."
+    "sentence_de": "Der Anwalt legte beim Gericht ein Rechtsmittel ein.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3929,
@@ -5037,7 +5550,9 @@
     "sentence_es": "El caso sienta un precedente importante.",
     "sentence_hu": "Az ügy fontos precedenst teremt.",
     "sentence_en": "The case sets an important precedent.",
-    "sentence_de": "Der Fall schafft einen wichtigen Präzedenzfall."
+    "sentence_de": "Der Fall schafft einen wichtigen Präzedenzfall.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3930,
@@ -5051,7 +5566,9 @@
     "sentence_es": "La prueba pericial resultó decisiva.",
     "sentence_hu": "A szakértői bizonyíték döntőnek bizonyult.",
     "sentence_en": "The expert evidence proved decisive.",
-    "sentence_de": "Der Sachverständigenbeweis erwies sich als entscheidend."
+    "sentence_de": "Der Sachverständigenbeweis erwies sich als entscheidend.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3931,
@@ -5065,7 +5582,8 @@
     "sentence_es": "El delito prescribe a los diez años.",
     "sentence_hu": "A bűncselekmény tíz év alatt elévül.",
     "sentence_en": "The offence lapses after ten years.",
-    "sentence_de": "Die Straftat verjährt nach zehn Jahren."
+    "sentence_de": "Die Straftat verjährt nach zehn Jahren.",
+    "pos": "verb"
   },
   {
     "id": 3932,
@@ -5079,7 +5597,8 @@
     "sentence_es": "La empresa impugnó la decisión del juez.",
     "sentence_hu": "A cég megtámadta a bíró döntését.",
     "sentence_en": "The company challenged the judge's decision.",
-    "sentence_de": "Das Unternehmen focht die Entscheidung des Richters an."
+    "sentence_de": "Das Unternehmen focht die Entscheidung des Richters an.",
+    "pos": "verb"
   },
   {
     "id": 3933,
@@ -5093,7 +5612,9 @@
     "sentence_es": "El caso queda fuera de nuestra jurisdicción.",
     "sentence_hu": "Az ügy kívül esik a joghatóságunkon.",
     "sentence_en": "The case falls outside our jurisdiction.",
-    "sentence_de": "Der Fall liegt außerhalb unserer Zuständigkeit."
+    "sentence_de": "Der Fall liegt außerhalb unserer Zuständigkeit.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3934,
@@ -5107,7 +5628,9 @@
     "sentence_es": "La normativa cambió el año pasado.",
     "sentence_hu": "A szabályozás tavaly megváltozott.",
     "sentence_en": "The regulations changed last year.",
-    "sentence_de": "Das Regelwerk hat sich letztes Jahr geändert."
+    "sentence_de": "Das Regelwerk hat sich letztes Jahr geändert.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3935,
@@ -5121,7 +5644,9 @@
     "sentence_es": "La brecha digital afecta a los mayores.",
     "sentence_hu": "A digitális szakadék az időseket érinti.",
     "sentence_en": "The digital divide affects older people.",
-    "sentence_de": "Die digitale Kluft betrifft ältere Menschen."
+    "sentence_de": "Die digitale Kluft betrifft ältere Menschen.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3936,
@@ -5135,7 +5660,8 @@
     "sentence_es": "Buscamos una solución escalable y barata.",
     "sentence_hu": "Skálázható és olcsó megoldást keresünk.",
     "sentence_en": "We are looking for a scalable and cheap solution.",
-    "sentence_de": "Wir suchen eine skalierbare und günstige Lösung."
+    "sentence_de": "Wir suchen eine skalierbare und günstige Lösung.",
+    "pos": "adj"
   },
   {
     "id": 3937,
@@ -5149,7 +5675,8 @@
     "sentence_es": "Es sano cuestionar las ideas propias.",
     "sentence_hu": "Egészséges megkérdőjelezni a saját elképzeléseinket.",
     "sentence_en": "It is healthy to question your own ideas.",
-    "sentence_de": "Es ist gesund, die eigenen Ideen zu hinterfragen."
+    "sentence_de": "Es ist gesund, die eigenen Ideen zu hinterfragen.",
+    "pos": "verb"
   },
   {
     "id": 3938,
@@ -5163,7 +5690,9 @@
     "sentence_es": "Su integridad nunca estuvo en duda.",
     "sentence_hu": "A feddhetetlensége soha nem volt kérdéses.",
     "sentence_en": "His integrity was never in doubt.",
-    "sentence_de": "Seine Integrität stand nie in Zweifel."
+    "sentence_de": "Seine Integrität stand nie in Zweifel.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3939,
@@ -5177,7 +5706,8 @@
     "sentence_es": "Su obra trasciende la época en que vivió.",
     "sentence_hu": "A műve meghaladja a korát, amelyben élt.",
     "sentence_en": "His work transcends the era he lived in.",
-    "sentence_de": "Sein Werk transzendiert die Zeit, in der er lebte."
+    "sentence_de": "Sein Werk transzendiert die Zeit, in der er lebte.",
+    "pos": "verb"
   },
   {
     "id": 3940,
@@ -5191,7 +5721,8 @@
     "sentence_es": "El valor intrínseco de la obra es enorme.",
     "sentence_hu": "A mű belső értéke óriási.",
     "sentence_en": "The intrinsic value of the work is enormous.",
-    "sentence_de": "Der intrinsische Wert des Werks ist enorm."
+    "sentence_de": "Der intrinsische Wert des Werks ist enorm.",
+    "pos": "adj"
   },
   {
     "id": 3941,
@@ -5205,7 +5736,8 @@
     "sentence_es": "El problema deriva de una mala decisión.",
     "sentence_hu": "A probléma egy rossz döntésből ered.",
     "sentence_en": "The problem stems from a bad decision.",
-    "sentence_de": "Das Problem rührt von einer schlechten Entscheidung her."
+    "sentence_de": "Das Problem rührt von einer schlechten Entscheidung her.",
+    "pos": "verb"
   },
   {
     "id": 3942,
@@ -5219,7 +5751,8 @@
     "sentence_es": "La empresa consolidó su posición en el mercado.",
     "sentence_hu": "A cég megszilárdította piaci helyzetét.",
     "sentence_en": "The company consolidated its position in the market.",
-    "sentence_de": "Das Unternehmen festigte seine Position auf dem Markt."
+    "sentence_de": "Das Unternehmen festigte seine Position auf dem Markt.",
+    "pos": "verb"
   },
   {
     "id": 3943,
@@ -5233,7 +5766,8 @@
     "sentence_es": "La subida repercute en toda la economía.",
     "sentence_hu": "Az emelés az egész gazdaságra kihat.",
     "sentence_en": "The rise has repercussions on the whole economy.",
-    "sentence_de": "Der Anstieg wirkt sich auf die gesamte Wirtschaft aus."
+    "sentence_de": "Der Anstieg wirkt sich auf die gesamte Wirtschaft aus.",
+    "pos": "verb"
   },
   {
     "id": 3944,
@@ -5247,7 +5781,8 @@
     "sentence_es": "La noticia desencadenó una fuerte reacción.",
     "sentence_hu": "A hír heves reakciót váltott ki.",
     "sentence_en": "The news triggered a strong reaction.",
-    "sentence_de": "Die Nachricht löste eine starke Reaktion aus."
+    "sentence_de": "Die Nachricht löste eine starke Reaktion aus.",
+    "pos": "verb"
   },
   {
     "id": 3945,
@@ -5261,7 +5796,8 @@
     "sentence_es": "El autor plasma su infancia en la novela.",
     "sentence_hu": "A szerző a regényben jeleníti meg a gyerekkorát.",
     "sentence_en": "The author captures his childhood in the novel.",
-    "sentence_de": "Der Autor bringt seine Kindheit im Roman zum Ausdruck."
+    "sentence_de": "Der Autor bringt seine Kindheit im Roman zum Ausdruck.",
+    "pos": "verb"
   },
   {
     "id": 3946,
@@ -5275,7 +5811,8 @@
     "sentence_es": "Hay que acotar el tema antes de escribir.",
     "sentence_hu": "Írás előtt le kell határolni a témát.",
     "sentence_en": "You have to narrow down the topic before writing.",
-    "sentence_de": "Man muss das Thema vor dem Schreiben eingrenzen."
+    "sentence_de": "Man muss das Thema vor dem Schreiben eingrenzen.",
+    "pos": "verb"
   },
   {
     "id": 3947,
@@ -5289,7 +5826,9 @@
     "sentence_es": "Su terquedad complica cualquier acuerdo.",
     "sentence_hu": "A makacssága minden megállapodást megnehezít.",
     "sentence_en": "His stubbornness complicates any agreement.",
-    "sentence_de": "Seine Sturheit erschwert jede Einigung."
+    "sentence_de": "Seine Sturheit erschwert jede Einigung.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3948,
@@ -5303,7 +5842,9 @@
     "sentence_es": "Habla con una altivez que molesta.",
     "sentence_hu": "Bántó gőggel beszél.",
     "sentence_en": "He speaks with a haughtiness that grates.",
-    "sentence_de": "Er spricht mit einem Hochmut, der stört."
+    "sentence_de": "Er spricht mit einem Hochmut, der stört.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3949,
@@ -5317,7 +5858,9 @@
     "sentence_es": "Reaccionó con templanza ante la crítica.",
     "sentence_hu": "Mértéktartással reagált a bírálatra.",
     "sentence_en": "He reacted to the criticism with temperance.",
-    "sentence_de": "Er reagierte besonnen auf die Kritik."
+    "sentence_de": "Er reagierte besonnen auf die Kritik.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3950,
@@ -5331,7 +5874,9 @@
     "sentence_es": "Su tenacidad explica el éxito del proyecto.",
     "sentence_hu": "A kitartása magyarázza a projekt sikerét.",
     "sentence_en": "Her tenacity explains the project's success.",
-    "sentence_de": "Ihre Beharrlichkeit erklärt den Erfolg des Projekts."
+    "sentence_de": "Ihre Beharrlichkeit erklärt den Erfolg des Projekts.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3951,
@@ -5345,7 +5890,8 @@
     "sentence_es": "Es un chico retraído pero muy listo.",
     "sentence_hu": "Visszahúzódó, de nagyon okos fiú.",
     "sentence_en": "He is a withdrawn but very bright boy.",
-    "sentence_de": "Er ist ein zurückgezogener, aber sehr kluger Junge."
+    "sentence_de": "Er ist ein zurückgezogener, aber sehr kluger Junge.",
+    "pos": "adj"
   },
   {
     "id": 3952,
@@ -5359,7 +5905,8 @@
     "sentence_es": "Tomó una decisión altruista y difícil.",
     "sentence_hu": "Önzetlen és nehéz döntést hozott.",
     "sentence_en": "She made an altruistic and difficult decision.",
-    "sentence_de": "Sie traf eine selbstlose und schwierige Entscheidung."
+    "sentence_de": "Sie traf eine selbstlose und schwierige Entscheidung.",
+    "pos": "adj"
   },
   {
     "id": 3953,
@@ -5373,7 +5920,9 @@
     "sentence_es": "Su susceptibilidad dificulta el trabajo en equipo.",
     "sentence_hu": "A sértődékenysége megnehezíti a csapatmunkát.",
     "sentence_en": "His touchiness makes teamwork difficult.",
-    "sentence_de": "Seine Empfindlichkeit erschwert die Teamarbeit."
+    "sentence_de": "Seine Empfindlichkeit erschwert die Teamarbeit.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3954,
@@ -5387,7 +5936,8 @@
     "sentence_es": "El público se mostró apático toda la tarde.",
     "sentence_hu": "A közönség egész délután apatikus volt.",
     "sentence_en": "The audience was apathetic all afternoon.",
-    "sentence_de": "Das Publikum wirkte den ganzen Nachmittag teilnahmslos."
+    "sentence_de": "Das Publikum wirkte den ganzen Nachmittag teilnahmslos.",
+    "pos": "adj"
   },
   {
     "id": 3955,
@@ -5401,7 +5951,9 @@
     "sentence_es": "Nadie discute ese dogma dentro del grupo.",
     "sentence_hu": "A csoporton belül senki nem vitatja ezt a dogmát.",
     "sentence_en": "Nobody questions that dogma inside the group.",
-    "sentence_de": "Niemand stellt dieses Dogma innerhalb der Gruppe infrage."
+    "sentence_de": "Niemand stellt dieses Dogma innerhalb der Gruppe infrage.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3956,
@@ -5415,7 +5967,9 @@
     "sentence_es": "Repitió la plegaria en voz baja.",
     "sentence_hu": "Halkan ismételte a fohászt.",
     "sentence_en": "She repeated the prayer in a low voice.",
-    "sentence_de": "Sie wiederholte das Gebet mit leiser Stimme."
+    "sentence_de": "Sie wiederholte das Gebet mit leiser Stimme.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3957,
@@ -5429,7 +5983,9 @@
     "sentence_es": "El ayuno dura todo un mes.",
     "sentence_hu": "A böjt egy teljes hónapig tart.",
     "sentence_en": "The fasting lasts a whole month.",
-    "sentence_de": "Das Fasten dauert einen ganzen Monat."
+    "sentence_de": "Das Fasten dauert einen ganzen Monat.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3958,
@@ -5443,7 +5999,9 @@
     "sentence_es": "Esa costumbre nace de una vieja superstición.",
     "sentence_hu": "Ez a szokás egy régi babonából ered.",
     "sentence_en": "That custom comes from an old superstition.",
-    "sentence_de": "Dieser Brauch geht auf einen alten Aberglauben zurück."
+    "sentence_de": "Dieser Brauch geht auf einen alten Aberglauben zurück.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3959,
@@ -5457,7 +6015,8 @@
     "sentence_es": "Para ellos ese lugar es sagrado.",
     "sentence_hu": "Számukra az a hely szent.",
     "sentence_en": "For them that place is sacred.",
-    "sentence_de": "Für sie ist dieser Ort heilig."
+    "sentence_de": "Für sie ist dieser Ort heilig.",
+    "pos": "adj"
   },
   {
     "id": 3960,
@@ -5471,7 +6030,9 @@
     "sentence_es": "Se declara ateo desde joven.",
     "sentence_hu": "Fiatal kora óta ateistának vallja magát.",
     "sentence_en": "He has called himself an atheist since he was young.",
-    "sentence_de": "Er bezeichnet sich seit seiner Jugend als Atheist."
+    "sentence_de": "Er bezeichnet sich seit seiner Jugend als Atheist.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3961,
@@ -5485,7 +6046,9 @@
     "sentence_es": "Los residuos acaban en un vertedero cercano.",
     "sentence_hu": "A hulladék egy közeli lerakóban végzi.",
     "sentence_en": "The waste ends up in a nearby landfill.",
-    "sentence_de": "Der Abfall landet auf einer nahen Deponie."
+    "sentence_de": "Der Abfall landet auf einer nahen Deponie.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3962,
@@ -5499,7 +6062,8 @@
     "sentence_es": "La planta depura el agua del río.",
     "sentence_hu": "Az üzem megtisztítja a folyó vizét.",
     "sentence_en": "The plant purifies the river water.",
-    "sentence_de": "Die Anlage klärt das Wasser des Flusses."
+    "sentence_de": "Die Anlage klärt das Wasser des Flusses.",
+    "pos": "verb"
   },
   {
     "id": 3963,
@@ -5513,7 +6077,9 @@
     "sentence_es": "El informe evalúa el impacto ambiental de la obra.",
     "sentence_hu": "A jelentés értékeli a beruházás környezeti hatását.",
     "sentence_en": "The report assesses the environmental impact of the works.",
-    "sentence_de": "Der Bericht bewertet die Umweltauswirkung des Bauvorhabens."
+    "sentence_de": "Der Bericht bewertet die Umweltauswirkung des Bauvorhabens.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3964,
@@ -5527,7 +6093,9 @@
     "sentence_es": "Los partidos alcanzaron un consenso mínimo.",
     "sentence_hu": "A pártok minimális konszenzusra jutottak.",
     "sentence_en": "The parties reached a minimal consensus.",
-    "sentence_de": "Die Parteien erzielten einen minimalen Konsens."
+    "sentence_de": "Die Parteien erzielten einen minimalen Konsens.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3965,
@@ -5541,7 +6109,9 @@
     "sentence_es": "La reivindicación de los vecinos es razonable.",
     "sentence_hu": "A lakók követelése ésszerű.",
     "sentence_en": "The residents' demand is reasonable.",
-    "sentence_de": "Die Forderung der Anwohner ist vernünftig."
+    "sentence_de": "Die Forderung der Anwohner ist vernünftig.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3966,
@@ -5555,7 +6125,9 @@
     "sentence_es": "El programa busca el arraigo social de los recién llegados.",
     "sentence_hu": "A program az újonnan érkezők társadalmi beágyazódását segíti.",
     "sentence_en": "The programme seeks the social rooting of newcomers.",
-    "sentence_de": "Das Programm fördert die soziale Verwurzelung der Neuankömmlinge."
+    "sentence_de": "Das Programm fördert die soziale Verwurzelung der Neuankömmlinge.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3967,
@@ -5569,7 +6141,8 @@
     "sentence_es": "Ese barrio quedó marginado durante años.",
     "sentence_hu": "Az a negyed évekig kirekesztett maradt.",
     "sentence_en": "That neighbourhood was marginalised for years.",
-    "sentence_de": "Dieses Viertel war jahrelang ausgegrenzt."
+    "sentence_de": "Dieses Viertel war jahrelang ausgegrenzt.",
+    "pos": "adj"
   },
   {
     "id": 3968,
@@ -5583,7 +6156,9 @@
     "sentence_es": "La crisis puso a prueba la cohesión del país.",
     "sentence_hu": "A válság próbára tette az ország kohézióját.",
     "sentence_en": "The crisis tested the country's cohesion.",
-    "sentence_de": "Die Krise stellte den Zusammenhalt des Landes auf die Probe."
+    "sentence_de": "Die Krise stellte den Zusammenhalt des Landes auf die Probe.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3969,
@@ -5597,7 +6172,9 @@
     "sentence_es": "La oferta no cubre la demanda actual.",
     "sentence_hu": "A kínálat nem fedezi a jelenlegi keresletet.",
     "sentence_en": "Supply does not cover current demand.",
-    "sentence_de": "Das Angebot deckt die aktuelle Nachfrage nicht."
+    "sentence_de": "Das Angebot deckt die aktuelle Nachfrage nicht.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3970,
@@ -5611,7 +6188,9 @@
     "sentence_es": "El margen de beneficio se redujo este año.",
     "sentence_hu": "A haszonkulcs idén csökkent.",
     "sentence_en": "The profit margin shrank this year.",
-    "sentence_de": "Die Gewinnspanne ist dieses Jahr gesunken."
+    "sentence_de": "Die Gewinnspanne ist dieses Jahr gesunken.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3971,
@@ -5625,7 +6204,9 @@
     "sentence_es": "El subsidio ayuda a las familias sin ingresos.",
     "sentence_hu": "A támogatás segít a jövedelem nélküli családokon.",
     "sentence_en": "The benefit helps families without income.",
-    "sentence_de": "Die Beihilfe hilft Familien ohne Einkommen."
+    "sentence_de": "Die Beihilfe hilft Familien ohne Einkommen.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 3972,
@@ -5639,7 +6220,9 @@
     "sentence_es": "La planta produce mil piezas al día.",
     "sentence_hu": "A gyáregység napi ezer darabot gyárt.",
     "sentence_en": "The plant produces a thousand parts a day.",
-    "sentence_de": "Das Werk produziert tausend Teile pro Tag."
+    "sentence_de": "Das Werk produziert tausend Teile pro Tag.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 3973,
@@ -5653,7 +6236,9 @@
     "sentence_es": "El control de calidad detectó la pieza defectuosa.",
     "sentence_hu": "A minőségellenőrzés kiszúrta a hibás darabot.",
     "sentence_en": "Quality control spotted the defective part.",
-    "sentence_de": "Die Qualitätskontrolle entdeckte das fehlerhafte Teil."
+    "sentence_de": "Die Qualitätskontrolle entdeckte das fehlerhafte Teil.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7360,
@@ -5667,7 +6252,9 @@
     "sentence_es": "El artículo pasó la revisión por pares.",
     "sentence_hu": "A cikk átment a szakértői lektoráláson.",
     "sentence_en": "The article passed peer review.",
-    "sentence_de": "Der Artikel bestand das Peer-Review."
+    "sentence_de": "Der Artikel bestand das Peer-Review.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7361,
@@ -5681,7 +6268,9 @@
     "sentence_es": "Su inferencia no se sostiene con estos datos.",
     "sentence_hu": "A következtetése nem áll meg ezekkel az adatokkal.",
     "sentence_en": "His inference does not hold with this data.",
-    "sentence_de": "Seine Schlussfolgerung hält diesen Daten nicht stand."
+    "sentence_de": "Seine Schlussfolgerung hält diesen Daten nicht stand.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7362,
@@ -5695,7 +6284,9 @@
     "sentence_es": "Nadie esperaba una magnitud semejante.",
     "sentence_hu": "Senki nem számított ekkora nagyságrendre.",
     "sentence_en": "Nobody expected a magnitude like that.",
-    "sentence_de": "Niemand erwartete ein solches Ausmaß."
+    "sentence_de": "Niemand erwartete ein solches Ausmaß.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7363,
@@ -5709,7 +6300,9 @@
     "sentence_es": "El ensayo controlado duró dos años.",
     "sentence_hu": "A kontrollált kísérlet két évig tartott.",
     "sentence_en": "The controlled trial lasted two years.",
-    "sentence_de": "Die kontrollierte Studie dauerte zwei Jahre."
+    "sentence_de": "Die kontrollierte Studie dauerte zwei Jahre.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7364,
@@ -5723,7 +6316,9 @@
     "sentence_es": "Existe consenso científico sobre esa causa.",
     "sentence_hu": "Tudományos konszenzus van arról az okról.",
     "sentence_en": "There is scientific consensus on that cause.",
-    "sentence_de": "Über diese Ursache besteht wissenschaftlicher Konsens."
+    "sentence_de": "Über diese Ursache besteht wissenschaftlicher Konsens.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7365,
@@ -5737,7 +6332,8 @@
     "sentence_es": "Es difícil cuantificar ese efecto.",
     "sentence_hu": "Nehéz számszerűsíteni ezt a hatást.",
     "sentence_en": "That effect is hard to quantify.",
-    "sentence_de": "Dieser Effekt ist schwer zu quantifizieren."
+    "sentence_de": "Dieser Effekt ist schwer zu quantifizieren.",
+    "pos": "verb"
   },
   {
     "id": 7366,
@@ -5751,7 +6347,8 @@
     "sentence_es": "No conviene extrapolar de una sola muestra.",
     "sentence_hu": "Egyetlen mintából nem érdemes extrapolálni.",
     "sentence_en": "One should not extrapolate from a single sample.",
-    "sentence_de": "Man sollte nicht aus einer einzigen Stichprobe extrapolieren."
+    "sentence_de": "Man sollte nicht aus einer einzigen Stichprobe extrapolieren.",
+    "pos": "verb"
   },
   {
     "id": 7367,
@@ -5765,7 +6362,8 @@
     "sentence_es": "Otro laboratorio validó el método.",
     "sentence_hu": "Egy másik labor validálta a módszert.",
     "sentence_en": "Another laboratory validated the method.",
-    "sentence_de": "Ein anderes Labor validierte die Methode."
+    "sentence_de": "Ein anderes Labor validierte die Methode.",
+    "pos": "verb"
   },
   {
     "id": 7368,
@@ -5779,7 +6377,9 @@
     "sentence_es": "El efecto placebo explica parte de la mejora.",
     "sentence_hu": "A placebohatás magyarázza a javulás egy részét.",
     "sentence_en": "The placebo effect explains part of the improvement.",
-    "sentence_de": "Der Placeboeffekt erklärt einen Teil der Besserung."
+    "sentence_de": "Der Placeboeffekt erklärt einen Teil der Besserung.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7369,
@@ -5793,7 +6393,9 @@
     "sentence_es": "La esperanza de vida subió cinco años.",
     "sentence_hu": "A várható élettartam öt évvel nőtt.",
     "sentence_en": "Life expectancy rose by five years.",
-    "sentence_de": "Die Lebenserwartung stieg um fünf Jahre."
+    "sentence_de": "Die Lebenserwartung stieg um fünf Jahre.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7370,
@@ -5807,7 +6409,9 @@
     "sentence_es": "La cobertura sanitaria alcanza a toda la población.",
     "sentence_hu": "Az egészségügyi ellátás az egész lakosságra kiterjed.",
     "sentence_en": "Health coverage reaches the whole population.",
-    "sentence_de": "Die Gesundheitsversorgung erreicht die gesamte Bevölkerung."
+    "sentence_de": "Die Gesundheitsversorgung erreicht die gesamte Bevölkerung.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7371,
@@ -5821,7 +6425,9 @@
     "sentence_es": "La comorbilidad complica el tratamiento.",
     "sentence_hu": "A társbetegség bonyolítja a kezelést.",
     "sentence_en": "The comorbidity complicates the treatment.",
-    "sentence_de": "Die Begleiterkrankung erschwert die Behandlung."
+    "sentence_de": "Die Begleiterkrankung erschwert die Behandlung.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7372,
@@ -5835,7 +6441,9 @@
     "sentence_es": "El brote epidémico se controló en semanas.",
     "sentence_hu": "A járványkitörést hetek alatt megfékezték.",
     "sentence_en": "The outbreak was brought under control in weeks.",
-    "sentence_de": "Der Ausbruch wurde in Wochen unter Kontrolle gebracht."
+    "sentence_de": "Der Ausbruch wurde in Wochen unter Kontrolle gebracht.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7373,
@@ -5849,7 +6457,9 @@
     "sentence_es": "Firmó el consentimiento informado antes de la operación.",
     "sentence_hu": "A műtét előtt aláírta a tájékozott beleegyezést.",
     "sentence_en": "He signed the informed consent before the operation.",
-    "sentence_de": "Er unterschrieb vor der Operation die informierte Einwilligung."
+    "sentence_de": "Er unterschrieb vor der Operation die informierte Einwilligung.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7374,
@@ -5863,7 +6473,9 @@
     "sentence_es": "Notificaron un efecto adverso poco frecuente.",
     "sentence_hu": "Ritka mellékhatást jelentettek.",
     "sentence_en": "They reported a rare adverse effect.",
-    "sentence_de": "Sie meldeten eine seltene Nebenwirkung."
+    "sentence_de": "Sie meldeten eine seltene Nebenwirkung.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7375,
@@ -5877,7 +6489,9 @@
     "sentence_es": "La atención primaria filtra la mayoría de los casos.",
     "sentence_hu": "Az alapellátás szűri az esetek többségét.",
     "sentence_en": "Primary care filters most of the cases.",
-    "sentence_de": "Die Grundversorgung filtert die meisten Fälle."
+    "sentence_de": "Die Grundversorgung filtert die meisten Fälle.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7376,
@@ -5891,7 +6505,9 @@
     "sentence_es": "El deterioro cognitivo avanza despacio.",
     "sentence_hu": "A kognitív hanyatlás lassan halad előre.",
     "sentence_en": "The cognitive decline advances slowly.",
-    "sentence_de": "Der kognitive Abbau schreitet langsam voran."
+    "sentence_de": "Der kognitive Abbau schreitet langsam voran.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7377,
@@ -5905,7 +6521,8 @@
     "sentence_es": "Recibe cuidados paliativos en casa.",
     "sentence_hu": "Otthon kap palliatív ellátást.",
     "sentence_en": "He receives palliative care at home.",
-    "sentence_de": "Er erhält zu Hause palliative Pflege."
+    "sentence_de": "Er erhält zu Hause palliative Pflege.",
+    "pos": "adj"
   },
   {
     "id": 7378,
@@ -5919,7 +6536,8 @@
     "sentence_es": "Un estilo de vida sedentario daña el corazón.",
     "sentence_hu": "Az ülő életmód árt a szívnek.",
     "sentence_en": "A sedentary lifestyle harms the heart.",
-    "sentence_de": "Ein sitzender Lebensstil schadet dem Herzen."
+    "sentence_de": "Ein sitzender Lebensstil schadet dem Herzen.",
+    "pos": "adj"
   },
   {
     "id": 7379,
@@ -5933,7 +6551,8 @@
     "sentence_es": "El trastorno es hereditario en su familia.",
     "sentence_hu": "A rendellenesség örökletes a családjában.",
     "sentence_en": "The disorder is hereditary in his family.",
-    "sentence_de": "Die Störung ist in seiner Familie erblich."
+    "sentence_de": "Die Störung ist in seiner Familie erblich.",
+    "pos": "adj"
   },
   {
     "id": 7380,
@@ -5947,7 +6566,9 @@
     "sentence_es": "El algoritmo predictivo anticipa la demanda.",
     "sentence_hu": "A prediktív algoritmus előre jelzi a keresletet.",
     "sentence_en": "The predictive algorithm anticipates demand.",
-    "sentence_de": "Der Vorhersagealgorithmus antizipiert die Nachfrage."
+    "sentence_de": "Der Vorhersagealgorithmus antizipiert die Nachfrage.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7381,
@@ -5961,7 +6582,9 @@
     "sentence_es": "El cifrado protege los mensajes de extremo a extremo.",
     "sentence_hu": "A titkosítás végponttól végpontig védi az üzeneteket.",
     "sentence_en": "Encryption protects the messages end to end.",
-    "sentence_de": "Die Verschlüsselung schützt die Nachrichten Ende zu Ende."
+    "sentence_de": "Die Verschlüsselung schützt die Nachrichten Ende zu Ende.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7382,
@@ -5975,7 +6598,9 @@
     "sentence_es": "Detectaron una vulnerabilidad grave en el sistema.",
     "sentence_hu": "Súlyos sebezhetőséget találtak a rendszerben.",
     "sentence_en": "They detected a serious vulnerability in the system.",
-    "sentence_de": "Sie entdeckten eine schwere Schwachstelle im System."
+    "sentence_de": "Sie entdeckten eine schwere Schwachstelle im System.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7383,
@@ -5989,7 +6614,9 @@
     "sentence_es": "Publicaron el código fuente del programa.",
     "sentence_hu": "Közzétették a program forráskódját.",
     "sentence_en": "They published the program's source code.",
-    "sentence_de": "Sie veröffentlichten den Quellcode des Programms."
+    "sentence_de": "Sie veröffentlichten den Quellcode des Programms.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7384,
@@ -6003,7 +6630,9 @@
     "sentence_es": "La trazabilidad de los datos es obligatoria.",
     "sentence_hu": "Az adatok nyomonkövethetősége kötelező.",
     "sentence_en": "Traceability of the data is mandatory.",
-    "sentence_de": "Die Rückverfolgbarkeit der Daten ist verpflichtend."
+    "sentence_de": "Die Rückverfolgbarkeit der Daten ist verpflichtend.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7385,
@@ -6017,7 +6646,9 @@
     "sentence_es": "Falta interoperabilidad entre los dos sistemas.",
     "sentence_hu": "Hiányzik az átjárhatóság a két rendszer között.",
     "sentence_en": "There is no interoperability between the two systems.",
-    "sentence_de": "Zwischen beiden Systemen fehlt die Interoperabilität."
+    "sentence_de": "Zwischen beiden Systemen fehlt die Interoperabilität.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7386,
@@ -6031,7 +6662,9 @@
     "sentence_es": "El aprendizaje automático mejora con más datos.",
     "sentence_hu": "A gépi tanulás több adattal javul.",
     "sentence_en": "Machine learning improves with more data.",
-    "sentence_de": "Maschinelles Lernen verbessert sich mit mehr Daten."
+    "sentence_de": "Maschinelles Lernen verbessert sich mit mehr Daten.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7387,
@@ -6045,7 +6678,9 @@
     "sentence_es": "El sesgo algorítmico perjudica a ciertos grupos.",
     "sentence_hu": "Az algoritmikus torzítás bizonyos csoportokat hátráltat.",
     "sentence_en": "Algorithmic bias harms certain groups.",
-    "sentence_de": "Algorithmische Verzerrung benachteiligt bestimmte Gruppen."
+    "sentence_de": "Algorithmische Verzerrung benachteiligt bestimmte Gruppen.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7388,
@@ -6059,7 +6694,9 @@
     "sentence_es": "Protegen la infraestructura crítica del país.",
     "sentence_hu": "Védik az ország kritikus infrastruktúráját.",
     "sentence_en": "They protect the country's critical infrastructure.",
-    "sentence_de": "Sie schützen die kritische Infrastruktur des Landes."
+    "sentence_de": "Sie schützen die kritische Infrastruktur des Landes.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7389,
@@ -6073,7 +6710,8 @@
     "sentence_es": "Usan una red descentralizada para los pagos.",
     "sentence_hu": "Decentralizált hálózatot használnak a fizetésekhez.",
     "sentence_en": "They use a decentralised network for payments.",
-    "sentence_de": "Sie nutzen ein dezentrales Netzwerk für Zahlungen."
+    "sentence_de": "Sie nutzen ein dezentrales Netzwerk für Zahlungen.",
+    "pos": "adj"
   },
   {
     "id": 7390,
@@ -6087,7 +6725,9 @@
     "sentence_es": "El mantenimiento predictivo evita paradas costosas.",
     "sentence_hu": "A prediktív karbantartás elkerüli a költséges leállásokat.",
     "sentence_en": "Predictive maintenance avoids costly downtime.",
-    "sentence_de": "Vorausschauende Wartung vermeidet teure Ausfälle."
+    "sentence_de": "Vorausschauende Wartung vermeidet teure Ausfälle.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7391,
@@ -6101,7 +6741,8 @@
     "sentence_es": "Implementaron el nuevo protocolo en marzo.",
     "sentence_hu": "Márciusban vezették be az új protokollt.",
     "sentence_en": "They implemented the new protocol in March.",
-    "sentence_de": "Sie implementierten das neue Protokoll im März."
+    "sentence_de": "Sie implementierten das neue Protokoll im März.",
+    "pos": "verb"
   },
   {
     "id": 7392,
@@ -6115,7 +6756,9 @@
     "sentence_es": "Actuó según su conciencia moral.",
     "sentence_hu": "Az erkölcsi tudata szerint cselekedett.",
     "sentence_en": "He acted according to his moral conscience.",
-    "sentence_de": "Er handelte nach seinem moralischen Gewissen."
+    "sentence_de": "Er handelte nach seinem moralischen Gewissen.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7393,
@@ -6129,7 +6772,9 @@
     "sentence_es": "La ley protege la dignidad de la persona.",
     "sentence_hu": "A törvény védi a személy méltóságát.",
     "sentence_en": "The law protects the dignity of the person.",
-    "sentence_de": "Das Gesetz schützt die Würde der Person."
+    "sentence_de": "Das Gesetz schützt die Würde der Person.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7394,
@@ -6143,7 +6788,9 @@
     "sentence_es": "El determinismo niega toda elección real.",
     "sentence_hu": "A determinizmus tagad minden valódi választást.",
     "sentence_en": "Determinism denies any real choice.",
-    "sentence_de": "Der Determinismus leugnet jede echte Wahl."
+    "sentence_de": "Der Determinismus leugnet jede echte Wahl.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7395,
@@ -6157,7 +6804,9 @@
     "sentence_es": "Toda lectura tiene algo de subjetividad.",
     "sentence_hu": "Minden olvasatban van némi szubjektivitás.",
     "sentence_en": "Every reading carries some subjectivity.",
-    "sentence_de": "Jede Lesart trägt etwas Subjektivität in sich."
+    "sentence_de": "Jede Lesart trägt etwas Subjektivität in sich.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7396,
@@ -6171,7 +6820,9 @@
     "sentence_es": "Sintió el deber moral de intervenir.",
     "sentence_hu": "Erkölcsi kötelességének érezte a beavatkozást.",
     "sentence_en": "He felt the moral duty to intervene.",
-    "sentence_de": "Er fühlte die moralische Pflicht einzugreifen."
+    "sentence_de": "Er fühlte die moralische Pflicht einzugreifen.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7397,
@@ -6185,7 +6836,8 @@
     "sentence_es": "Le costó refutar un argumento tan sólido.",
     "sentence_hu": "Nehezen tudott megcáfolni egy ilyen szilárd érvet.",
     "sentence_en": "He struggled to refute such a solid argument.",
-    "sentence_de": "Es fiel ihm schwer, ein so solides Argument zu widerlegen."
+    "sentence_de": "Es fiel ihm schwer, ein so solides Argument zu widerlegen.",
+    "pos": "phrase"
   },
   {
     "id": 7398,
@@ -6199,7 +6851,8 @@
     "sentence_es": "Ofreció una respuesta matizada y honesta.",
     "sentence_hu": "Árnyalt és őszinte választ adott.",
     "sentence_en": "He offered a nuanced and honest answer.",
-    "sentence_de": "Er gab eine differenzierte und ehrliche Antwort."
+    "sentence_de": "Er gab eine differenzierte und ehrliche Antwort.",
+    "pos": "adj"
   },
   {
     "id": 7399,
@@ -6213,7 +6866,8 @@
     "sentence_es": "El texto es ambiguo en su punto central.",
     "sentence_hu": "A szöveg kétértelmű a lényegi pontján.",
     "sentence_en": "The text is ambiguous on its central point.",
-    "sentence_de": "Der Text ist an seinem Kernpunkt mehrdeutig."
+    "sentence_de": "Der Text ist an seinem Kernpunkt mehrdeutig.",
+    "pos": "adj"
   },
   {
     "id": 7400,
@@ -6227,7 +6881,8 @@
     "sentence_es": "Su preocupación es legítima y comprensible.",
     "sentence_hu": "Az aggodalma jogos és érthető.",
     "sentence_en": "His concern is legitimate and understandable.",
-    "sentence_de": "Seine Sorge ist legitim und verständlich."
+    "sentence_de": "Seine Sorge ist legitim und verständlich.",
+    "pos": "adj"
   },
   {
     "id": 7401,
@@ -6241,7 +6896,9 @@
     "sentence_es": "Discuten la finalidad última de la norma.",
     "sentence_hu": "A szabály végső céljáról vitatkoznak.",
     "sentence_en": "They debate the ultimate purpose of the rule.",
-    "sentence_de": "Sie diskutieren den letzten Zweck der Norm."
+    "sentence_de": "Sie diskutieren den letzten Zweck der Norm.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7410,
@@ -6255,7 +6912,9 @@
     "sentence_es": "Presentaron una demanda judicial contra la empresa.",
     "sentence_hu": "Keresetet nyújtottak be a cég ellen.",
     "sentence_en": "They filed a lawsuit against the company.",
-    "sentence_de": "Sie reichten eine Klage gegen das Unternehmen ein."
+    "sentence_de": "Sie reichten eine Klage gegen das Unternehmen ein.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7411,
@@ -6269,7 +6928,9 @@
     "sentence_es": "El fallo judicial favoreció al trabajador.",
     "sentence_hu": "A bírósági döntés a munkavállalónak kedvezett.",
     "sentence_en": "The court decision favoured the worker.",
-    "sentence_de": "Der Gerichtsentscheid begünstigte den Arbeitnehmer."
+    "sentence_de": "Der Gerichtsentscheid begünstigte den Arbeitnehmer.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7412,
@@ -6283,7 +6944,9 @@
     "sentence_es": "La fiscalía pidió una pena menor.",
     "sentence_hu": "Az ügyészség enyhébb büntetést kért.",
     "sentence_en": "The prosecution asked for a lighter sentence.",
-    "sentence_de": "Die Staatsanwaltschaft forderte eine geringere Strafe."
+    "sentence_de": "Die Staatsanwaltschaft forderte eine geringere Strafe.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7413,
@@ -6297,7 +6960,9 @@
     "sentence_es": "Tiene derecho a una defensa legal gratuita.",
     "sentence_hu": "Joga van ingyenes jogi védelemhez.",
     "sentence_en": "He has the right to free legal defence.",
-    "sentence_de": "Er hat Anspruch auf kostenlose Rechtsverteidigung."
+    "sentence_de": "Er hat Anspruch auf kostenlose Rechtsverteidigung.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7414,
@@ -6311,7 +6976,9 @@
     "sentence_es": "La presunción de inocencia protege a todos.",
     "sentence_hu": "Az ártatlanság vélelme mindenkit véd.",
     "sentence_en": "The presumption of innocence protects everyone.",
-    "sentence_de": "Die Unschuldsvermutung schützt jeden."
+    "sentence_de": "Die Unschuldsvermutung schützt jeden.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7415,
@@ -6325,7 +6992,9 @@
     "sentence_es": "El litigio se prolongó cuatro años.",
     "sentence_hu": "A jogvita négy évig elhúzódott.",
     "sentence_en": "The litigation dragged on for four years.",
-    "sentence_de": "Der Rechtsstreit zog sich vier Jahre hin."
+    "sentence_de": "Der Rechtsstreit zog sich vier Jahre hin.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7416,
@@ -6339,7 +7008,9 @@
     "sentence_es": "Llegaron a un acuerdo extrajudicial.",
     "sentence_hu": "Peren kívüli egyezségre jutottak.",
     "sentence_en": "They reached an out-of-court settlement.",
-    "sentence_de": "Sie erzielten eine außergerichtliche Einigung."
+    "sentence_de": "Sie erzielten eine außergerichtliche Einigung.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7417,
@@ -6353,7 +7024,9 @@
     "sentence_es": "Le impusieron una multa administrativa alta.",
     "sentence_hu": "Magas közigazgatási bírságot szabtak ki rá.",
     "sentence_en": "They imposed a high administrative fine on him.",
-    "sentence_de": "Sie verhängten ein hohes Bußgeld gegen ihn."
+    "sentence_de": "Sie verhängten ein hohes Bußgeld gegen ihn.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7418,
@@ -6367,7 +7040,8 @@
     "sentence_es": "La medida vulnera un derecho fundamental.",
     "sentence_hu": "Az intézkedés alapjogot sért.",
     "sentence_en": "The measure infringes a fundamental right.",
-    "sentence_de": "Die Maßnahme verletzt ein Grundrecht."
+    "sentence_de": "Die Maßnahme verletzt ein Grundrecht.",
+    "pos": "verb"
   },
   {
     "id": 7419,
@@ -6381,7 +7055,9 @@
     "sentence_es": "La huella hídrica de esa fruta es enorme.",
     "sentence_hu": "Annak a gyümölcsnek óriási a vízlábnyoma.",
     "sentence_en": "The water footprint of that fruit is enormous.",
-    "sentence_de": "Der Wasserfußabdruck dieser Frucht ist enorm."
+    "sentence_de": "Der Wasserfußabdruck dieser Frucht ist enorm.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7420,
@@ -6395,7 +7071,9 @@
     "sentence_es": "La desertificación avanza en el sur.",
     "sentence_hu": "Délen halad az elsivatagosodás.",
     "sentence_en": "Desertification is advancing in the south.",
-    "sentence_de": "Die Wüstenbildung schreitet im Süden voran."
+    "sentence_de": "Die Wüstenbildung schreitet im Süden voran.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7421,
@@ -6409,7 +7087,9 @@
     "sentence_es": "La ciudad busca la neutralidad de carbono.",
     "sentence_hu": "A város karbonsemlegességre törekszik.",
     "sentence_en": "The city aims for carbon neutrality.",
-    "sentence_de": "Die Stadt strebt Klimaneutralität an."
+    "sentence_de": "Die Stadt strebt Klimaneutralität an.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7422,
@@ -6423,7 +7103,9 @@
     "sentence_es": "Los océanos son un sumidero de carbono enorme.",
     "sentence_hu": "Az óceánok hatalmas szénelnyelők.",
     "sentence_en": "The oceans are an enormous carbon sink.",
-    "sentence_de": "Die Ozeane sind eine enorme Kohlenstoffsenke."
+    "sentence_de": "Die Ozeane sind eine enorme Kohlenstoffsenke.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7423,
@@ -6437,7 +7119,9 @@
     "sentence_es": "La resiliencia del bosque sorprendió a los expertos.",
     "sentence_hu": "Az erdő ellenállóképessége meglepte a szakértőket.",
     "sentence_en": "The forest's resilience surprised the experts.",
-    "sentence_de": "Die Resilienz des Waldes überraschte die Experten."
+    "sentence_de": "Die Resilienz des Waldes überraschte die Experten.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7424,
@@ -6451,7 +7135,9 @@
     "sentence_es": "La fauna autóctona sufre con las especies invasoras.",
     "sentence_hu": "Az őshonos állatvilág szenved az inváziós fajoktól.",
     "sentence_en": "The native fauna suffers from invasive species.",
-    "sentence_de": "Die einheimische Tierwelt leidet unter invasiven Arten."
+    "sentence_de": "Die einheimische Tierwelt leidet unter invasiven Arten.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7425,
@@ -6465,7 +7151,9 @@
     "sentence_es": "Una especie invasora desplazó a la local.",
     "sentence_hu": "Egy inváziós faj kiszorította a helyit.",
     "sentence_en": "An invasive species displaced the local one.",
-    "sentence_de": "Eine invasive Art verdrängte die einheimische."
+    "sentence_de": "Eine invasive Art verdrängte die einheimische.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7426,
@@ -6479,7 +7167,9 @@
     "sentence_es": "La cuenca hidrográfica abastece a tres provincias.",
     "sentence_hu": "A vízgyűjtő terület három tartományt lát el.",
     "sentence_en": "The river basin supplies three provinces.",
-    "sentence_de": "Das Einzugsgebiet versorgt drei Provinzen."
+    "sentence_de": "Das Einzugsgebiet versorgt drei Provinzen.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7427,
@@ -6493,7 +7183,9 @@
     "sentence_es": "Regulan el aprovechamiento del agua de riego.",
     "sentence_hu": "Szabályozzák az öntözővíz hasznosítását.",
     "sentence_en": "They regulate the use of irrigation water.",
-    "sentence_de": "Sie regeln die Nutzung des Bewässerungswassers."
+    "sentence_de": "Sie regeln die Nutzung des Bewässerungswassers.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7428,
@@ -6507,7 +7199,9 @@
     "sentence_es": "La emisión neta bajó por primera vez.",
     "sentence_hu": "A nettó kibocsátás először csökkent.",
     "sentence_en": "The net emission fell for the first time.",
-    "sentence_de": "Die Nettoemission sank zum ersten Mal."
+    "sentence_de": "Die Nettoemission sank zum ersten Mal.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7429,
@@ -6521,7 +7215,8 @@
     "sentence_es": "Cuesta sostener el equilibrio del ecosistema.",
     "sentence_hu": "Nehéz fenntartani az ökoszisztéma egyensúlyát.",
     "sentence_en": "It is hard to sustain the balance of the ecosystem.",
-    "sentence_de": "Es ist schwer, das Gleichgewicht des Ökosystems zu erhalten."
+    "sentence_de": "Es ist schwer, das Gleichgewicht des Ökosystems zu erhalten.",
+    "pos": "phrase"
   },
   {
     "id": 7430,
@@ -6535,7 +7230,8 @@
     "sentence_es": "La nueva ley busca propiciar el cambio.",
     "sentence_hu": "Az új törvény a változás előmozdítására törekszik.",
     "sentence_en": "The new law seeks to foster change.",
-    "sentence_de": "Das neue Gesetz will den Wandel fördern."
+    "sentence_de": "Das neue Gesetz will den Wandel fördern.",
+    "pos": "phrase"
   },
   {
     "id": 7431,
@@ -6549,7 +7245,8 @@
     "sentence_es": "Esgrimió razones económicas para negarse.",
     "sentence_hu": "Gazdasági okokat hozott fel az elutasításra.",
     "sentence_en": "He put forward economic reasons for refusing.",
-    "sentence_de": "Er führte wirtschaftliche Gründe für die Ablehnung ins Feld."
+    "sentence_de": "Er führte wirtschaftliche Gründe für die Ablehnung ins Feld.",
+    "pos": "verb"
   },
   {
     "id": 7432,
@@ -6563,7 +7260,8 @@
     "sentence_es": "El proyecto aúna ciencia y arte.",
     "sentence_hu": "A projekt egyesíti a tudományt és a művészetet.",
     "sentence_en": "The project unites science and art.",
-    "sentence_de": "Das Projekt vereint Wissenschaft und Kunst."
+    "sentence_de": "Das Projekt vereint Wissenschaft und Kunst.",
+    "pos": "verb"
   },
   {
     "id": 7433,
@@ -6577,7 +7275,8 @@
     "sentence_es": "Recabaron datos durante todo el invierno.",
     "sentence_hu": "Egész télen át adatokat gyűjtöttek be.",
     "sentence_en": "They gathered data all winter long.",
-    "sentence_de": "Sie holten den ganzen Winter über Daten ein."
+    "sentence_de": "Sie holten den ganzen Winter über Daten ein.",
+    "pos": "verb"
   },
   {
     "id": 7434,
@@ -6591,7 +7290,8 @@
     "sentence_es": "Podemos constatar un avance claro.",
     "sentence_hu": "Egyértelmű előrelépést állapíthatunk meg.",
     "sentence_en": "We can note clear progress.",
-    "sentence_de": "Wir können einen klaren Fortschritt feststellen."
+    "sentence_de": "Wir können einen klaren Fortschritt feststellen.",
+    "pos": "phrase"
   },
   {
     "id": 7435,
@@ -6605,7 +7305,8 @@
     "sentence_es": "El texto incurre en varias contradicciones.",
     "sentence_hu": "A szöveg több ellentmondásba esik.",
     "sentence_en": "The text falls into several contradictions.",
-    "sentence_de": "Der Text begeht mehrere Widersprüche."
+    "sentence_de": "Der Text begeht mehrere Widersprüche.",
+    "pos": "verb"
   },
   {
     "id": 7436,
@@ -6619,7 +7320,8 @@
     "sentence_es": "Supeditan la reforma al presupuesto.",
     "sentence_hu": "A reformot a költségvetésnek rendelik alá.",
     "sentence_en": "They subordinate the reform to the budget.",
-    "sentence_de": "Sie ordnen die Reform dem Budget unter."
+    "sentence_de": "Sie ordnen die Reform dem Budget unter.",
+    "pos": "verb"
   },
   {
     "id": 7437,
@@ -6633,7 +7335,8 @@
     "sentence_es": "El análisis debe trascender lo evidente.",
     "sentence_hu": "Az elemzésnek túl kell lépnie a nyilvánvalón.",
     "sentence_en": "The analysis must go beyond the obvious.",
-    "sentence_de": "Die Analyse muss über das Offensichtliche hinausgehen."
+    "sentence_de": "Die Analyse muss über das Offensichtliche hinausgehen.",
+    "pos": "phrase"
   },
   {
     "id": 7438,
@@ -6647,7 +7350,9 @@
     "sentence_es": "La coyuntura económica frenó la inversión.",
     "sentence_hu": "A gazdasági helyzet lefékezte a beruházást.",
     "sentence_en": "The economic climate slowed investment down.",
-    "sentence_de": "Die Wirtschaftslage bremste die Investition."
+    "sentence_de": "Die Wirtschaftslage bremste die Investition.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7439,
@@ -6661,7 +7366,9 @@
     "sentence_es": "La empresa perdió liquidez en pocos meses.",
     "sentence_hu": "A cég hónapok alatt likviditást vesztett.",
     "sentence_en": "The company lost liquidity within a few months.",
-    "sentence_de": "Das Unternehmen verlor in wenigen Monaten Liquidität."
+    "sentence_de": "Das Unternehmen verlor in wenigen Monaten Liquidität.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7440,
@@ -6675,7 +7382,9 @@
     "sentence_es": "La rentabilidad cayó por debajo del objetivo.",
     "sentence_hu": "A jövedelmezőség a cél alá esett.",
     "sentence_en": "Profitability fell below the target.",
-    "sentence_de": "Die Rentabilität fiel unter das Ziel."
+    "sentence_de": "Die Rentabilität fiel unter das Ziel.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7441,
@@ -6689,7 +7398,9 @@
     "sentence_es": "Un apalancamiento alto multiplica el riesgo.",
     "sentence_hu": "A magas tőkeáttétel megsokszorozza a kockázatot.",
     "sentence_en": "High leverage multiplies the risk.",
-    "sentence_de": "Ein hoher Verschuldungsgrad vervielfacht das Risiko."
+    "sentence_de": "Ein hoher Verschuldungsgrad vervielfacht das Risiko.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7442,
@@ -6703,7 +7414,9 @@
     "sentence_es": "La demanda interna sostuvo el crecimiento.",
     "sentence_hu": "A belső kereslet tartotta fenn a növekedést.",
     "sentence_en": "Domestic demand sustained the growth.",
-    "sentence_de": "Die Binnennachfrage trug das Wachstum."
+    "sentence_de": "Die Binnennachfrage trug das Wachstum.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7443,
@@ -6717,7 +7430,9 @@
     "sentence_es": "El poder adquisitivo se redujo con la inflación.",
     "sentence_hu": "A vásárlóerő az inflációval csökkent.",
     "sentence_en": "Purchasing power shrank with inflation.",
-    "sentence_de": "Die Kaufkraft schrumpfte mit der Inflation."
+    "sentence_de": "Die Kaufkraft schrumpfte mit der Inflation.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7444,
@@ -6731,7 +7446,9 @@
     "sentence_es": "El sector terciario emplea a la mayoría.",
     "sentence_hu": "A szolgáltatási szektor foglalkoztatja a többséget.",
     "sentence_en": "The service sector employs the majority.",
-    "sentence_de": "Der Dienstleistungssektor beschäftigt die Mehrheit."
+    "sentence_de": "Der Dienstleistungssektor beschäftigt die Mehrheit.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7445,
@@ -6745,7 +7462,9 @@
     "sentence_es": "Denunciaron un caso de competencia desleal.",
     "sentence_hu": "Tisztességtelen versenyt jelentettek fel.",
     "sentence_en": "They reported a case of unfair competition.",
-    "sentence_de": "Sie zeigten einen Fall unlauteren Wettbewerbs an."
+    "sentence_de": "Sie zeigten einen Fall unlauteren Wettbewerbs an.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7446,
@@ -6759,7 +7478,9 @@
     "sentence_es": "El país cerró el año con excedente comercial.",
     "sentence_hu": "Az ország kereskedelmi többlettel zárta az évet.",
     "sentence_en": "The country closed the year with a trade surplus.",
-    "sentence_de": "Das Land schloss das Jahr mit einem Handelsüberschuss ab."
+    "sentence_de": "Das Land schloss das Jahr mit einem Handelsüberschuss ab.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7447,
@@ -6773,7 +7494,9 @@
     "sentence_es": "La deslocalización dejó la planta vacía.",
     "sentence_hu": "A termeléskihelyezés üresen hagyta a gyárat.",
     "sentence_en": "Offshoring left the plant empty.",
-    "sentence_de": "Die Verlagerung ließ das Werk leer zurück."
+    "sentence_de": "Die Verlagerung ließ das Werk leer zurück.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7448,
@@ -6787,7 +7510,9 @@
     "sentence_es": "La línea de montaje se paró dos horas.",
     "sentence_hu": "A szerelőszalag két órára megállt.",
     "sentence_en": "The assembly line stopped for two hours.",
-    "sentence_de": "Das Fließband stand zwei Stunden still."
+    "sentence_de": "Das Fließband stand zwei Stunden still.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7449,
@@ -6801,7 +7526,9 @@
     "sentence_es": "El rendimiento industrial creció un tres por ciento.",
     "sentence_hu": "Az ipari teljesítmény három százalékkal nőtt.",
     "sentence_en": "Industrial output grew by three per cent.",
-    "sentence_de": "Die Industrieleistung wuchs um drei Prozent."
+    "sentence_de": "Die Industrieleistung wuchs um drei Prozent.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7450,
@@ -6815,7 +7542,9 @@
     "sentence_es": "Critican la obsolescencia programada de los aparatos.",
     "sentence_hu": "Bírálják a készülékek tervezett elavulását.",
     "sentence_en": "They criticise the planned obsolescence of devices.",
-    "sentence_de": "Sie kritisieren die geplante Obsoleszenz der Geräte."
+    "sentence_de": "Sie kritisieren die geplante Obsoleszenz der Geräte.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7451,
@@ -6829,7 +7558,9 @@
     "sentence_es": "El prototipo funcionó a la tercera prueba.",
     "sentence_hu": "A prototípus a harmadik próbára működött.",
     "sentence_en": "The prototype worked on the third test.",
-    "sentence_de": "Der Prototyp funktionierte beim dritten Test."
+    "sentence_de": "Der Prototyp funktionierte beim dritten Test.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7452,
@@ -6843,7 +7574,9 @@
     "sentence_es": "Tratan el residuo industrial antes de verterlo.",
     "sentence_hu": "Kezelik az ipari hulladékot, mielőtt kiengedik.",
     "sentence_en": "They treat the industrial waste before discharging it.",
-    "sentence_de": "Sie behandeln den Industrieabfall vor der Einleitung."
+    "sentence_de": "Sie behandeln den Industrieabfall vor der Einleitung.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7453,
@@ -6857,7 +7590,9 @@
     "sentence_es": "El almacén logístico abrió cien puestos.",
     "sentence_hu": "A logisztikai raktár száz állást nyitott.",
     "sentence_en": "The logistics warehouse opened a hundred jobs.",
-    "sentence_de": "Das Logistiklager schuf hundert Stellen."
+    "sentence_de": "Das Logistiklager schuf hundert Stellen.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7454,
@@ -6871,7 +7606,9 @@
     "sentence_es": "La trazabilidad del producto llega hasta la granja.",
     "sentence_hu": "A termék nyomonkövetése a farmig tart.",
     "sentence_en": "Product traceability reaches back to the farm.",
-    "sentence_de": "Die Produktrückverfolgung reicht bis zum Hof."
+    "sentence_de": "Die Produktrückverfolgung reicht bis zum Hof.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7455,
@@ -6885,7 +7622,9 @@
     "sentence_es": "El sobrecoste retrasó toda la obra.",
     "sentence_hu": "A többletköltség az egész munkát késleltette.",
     "sentence_en": "The cost overrun delayed the whole project.",
-    "sentence_de": "Die Mehrkosten verzögerten die gesamte Baustelle."
+    "sentence_de": "Die Mehrkosten verzögerten die gesamte Baustelle.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7456,
@@ -6899,7 +7638,9 @@
     "sentence_es": "La automatización redujo los errores humanos.",
     "sentence_hu": "Az automatizálás csökkentette az emberi hibákat.",
     "sentence_en": "Automation reduced human errors.",
-    "sentence_de": "Die Automatisierung verringerte menschliche Fehler."
+    "sentence_de": "Die Automatisierung verringerte menschliche Fehler.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7500,
@@ -6913,7 +7654,9 @@
     "sentence_es": "Su retórica convence más que sus datos.",
     "sentence_hu": "A retorikája jobban meggyőz, mint az adatai.",
     "sentence_en": "His rhetoric convinces more than his data.",
-    "sentence_de": "Seine Rhetorik überzeugt mehr als seine Daten."
+    "sentence_de": "Seine Rhetorik überzeugt mehr als seine Daten.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7501,
@@ -6927,7 +7670,9 @@
     "sentence_es": "Esa palabra tiene una connotación negativa.",
     "sentence_hu": "Annak a szónak negatív mellékjelentése van.",
     "sentence_en": "That word carries a negative connotation.",
-    "sentence_de": "Dieses Wort hat eine negative Konnotation."
+    "sentence_de": "Dieses Wort hat eine negative Konnotation.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7502,
@@ -6941,7 +7686,9 @@
     "sentence_es": "El tono editorial cambió tras la venta.",
     "sentence_hu": "Az eladás után megváltozott a szerkesztőségi hangvétel.",
     "sentence_en": "The editorial tone changed after the sale.",
-    "sentence_de": "Der redaktionelle Ton änderte sich nach dem Verkauf."
+    "sentence_de": "Der redaktionelle Ton änderte sich nach dem Verkauf.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7503,
@@ -6955,7 +7702,9 @@
     "sentence_es": "La desinformación deliberada circula muy rápido.",
     "sentence_hu": "A szándékos dezinformáció nagyon gyorsan terjed.",
     "sentence_en": "Deliberate disinformation spreads very fast.",
-    "sentence_de": "Gezielte Desinformation verbreitet sich sehr schnell."
+    "sentence_de": "Gezielte Desinformation verbreitet sich sehr schnell.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7504,
@@ -6969,7 +7718,9 @@
     "sentence_es": "La verificación de datos desmintió el vídeo.",
     "sentence_hu": "A tényellenőrzés megcáfolta a videót.",
     "sentence_en": "Fact-checking disproved the video.",
-    "sentence_de": "Die Faktenprüfung widerlegte das Video."
+    "sentence_de": "Die Faktenprüfung widerlegte das Video.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7505,
@@ -6983,7 +7734,9 @@
     "sentence_es": "El sesgo informativo se nota en la selección.",
     "sentence_hu": "A hírtorzítás a válogatásban látszik.",
     "sentence_en": "News bias shows in what gets selected.",
-    "sentence_de": "Die Nachrichtenverzerrung zeigt sich in der Auswahl."
+    "sentence_de": "Die Nachrichtenverzerrung zeigt sich in der Auswahl.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7506,
@@ -6997,7 +7750,9 @@
     "sentence_es": "La libertad de prensa retrocedió este año.",
     "sentence_hu": "A sajtószabadság idén visszaesett.",
     "sentence_en": "Freedom of the press declined this year.",
-    "sentence_de": "Die Pressefreiheit ging dieses Jahr zurück."
+    "sentence_de": "Die Pressefreiheit ging dieses Jahr zurück.",
+    "pos": "noun",
+    "gender": "f"
   },
   {
     "id": 7507,
@@ -7011,7 +7766,9 @@
     "sentence_es": "El discurso público se ha endurecido.",
     "sentence_hu": "A közbeszéd keményebbé vált.",
     "sentence_en": "Public discourse has hardened.",
-    "sentence_de": "Der öffentliche Diskurs ist härter geworden."
+    "sentence_de": "Der öffentliche Diskurs ist härter geworden.",
+    "pos": "noun",
+    "gender": "m"
   },
   {
     "id": 7508,
@@ -7025,6 +7782,7 @@
     "sentence_es": "Tergiversaron sus palabras en el titular.",
     "sentence_hu": "Elferdítették a szavait a címben.",
     "sentence_en": "They twisted his words in the headline.",
-    "sentence_de": "Sie verdrehten seine Worte in der Schlagzeile."
+    "sentence_de": "Sie verdrehten seine Worte in der Schlagzeile.",
+    "pos": "verb"
   }
 ]
