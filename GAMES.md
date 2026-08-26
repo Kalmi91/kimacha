@@ -382,6 +382,31 @@ szállítási kapu minden játék-itemre.
 >   nem eldöntendő kérdés, ezért a beállítás három opcióra szűkült (téma / szófaj
 >   / nyelvtani nem); a negyedik akkor építhető, ha egy jövőbeli F-1-szerű
 >   metaadat-menet igeidő-címkét ad a kártyákhoz.
+> - **`lib/games/wordRain.ts` új modul**, a 4.1 acceptance kritériuma ("jest:
+>   wordRain.test.ts, a generátor mindig pontosan 1 helyes választ ad") csak
+>   akkor tesztelhető unit-szinten, ha a kör-generálás NEM a képernyő-
+>   komponensbe van égetve. `buildFallingRound(entry, pool, opts)` tiszta
+>   függvény, `app/games/word-rain.tsx` ezt hívja, 6 jest teszttel
+>   (`lib/games/__tests__/wordRain.test.ts`): pontosan 1 `isTarget`, minden
+>   eső szó a poolból jön, irány szerint helyes prompt/cél-nyelv, nincs
+>   duplikált szöveg egy körön belül.
+> - **`card_attempts` naplózás (K3, `type='game:<id>'`)** mind a négy F1/F2
+>   játékban be van kötve: `getDb().recordAttempt(wordId, 'game:<id>', correct,
+>   responseTimeMs)` minden érdemi válasznál (memory-pairs: pár-felfordítás;
+>   word-search: megtalált szó; word-rain: elkapás/elvétés/leesés; bubble-pop:
+>   pukkasztás). Ez csak statisztika, a `cards` táblát egyik játék sem írja.
+> - **Óvatosság `useRef(...).current`-tel épített `PanResponder`-eknél és
+>   `reanimated` `runOnJS` callback-eknél**: ezek a closure-ök csak EGYSZER
+>   jönnek létre (mountkor), tehát a bennük hivatkozott plain state/const
+>   BEFAGY az első render értékére. A word-search drag-select ezért `useRef`
+>   tükrökön (`placementsRef`/`foundRef`/`sizeRef`) keresztül olvassa a
+>   friss `placements`/`found`/`size` értéket, nem közvetlenül a state-ből; a
+>   `useGameSession` metódusai (`addScore`, `pause`, ...) ellenben BIZTONSÁGOSAK
+>   ilyen frozen closure-ökből hívva, mert `useCallback([])`-pal stabil
+>   referenciák, és belül functional `setState`-et használnak, tehát mindig a
+>   legfrissebb állapotot olvassák be, hívás-időben. Jövőbeli PanResponder-t
+>   vagy reanimated `runOnJS`-t használó játék (pl. `sentence-tetris`, F6)
+>   ugyanezt a mintát kövesse.
 
 ---
 
@@ -1328,7 +1353,7 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 | F0 | keret (registry, pool, gloss, shell, DB, hub) | ✅ KÉSZ | `07fe4e0` |
 | F1 | `memory-pairs` | ✅ KÉSZ | `b5f8c16` |
 | F1 | `word-search` | ✅ KÉSZ | `62c9801` |
-| F2 | `word-rain` | 🟨 SPEC-KÉSZ | |
+| F2 | `word-rain` | ✅ KÉSZ | `4c5bac6` |
 | F2 | `bubble-pop` | 🟨 SPEC-KÉSZ | |
 | F3 | `grammar-choice` | 🟨 SPEC-KÉSZ (motor + 3 téma; a többi 56 = Q1-Q5) | |
 | F3 | `confusables` | 🟨 SPEC-KÉSZ | |
