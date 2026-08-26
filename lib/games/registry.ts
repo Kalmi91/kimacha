@@ -94,7 +94,7 @@ export const GAME_DEFS: GameDef[] = [
     },
     minPoolSize: 16,
     hasSettings: true,
-    soon: true,
+    soon: false, // F2 (GAMES.md 8. szekció): app/games/bubble-pop.tsx
   },
   {
     id: 'memory-pairs',
