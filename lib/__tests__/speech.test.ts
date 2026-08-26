@@ -175,3 +175,30 @@ describe('region-aware voice pick', () => {
     expect(voiceIdFor('hu-HU')).toBeUndefined();
   });
 });
+
+// FB152, Kálmán 2026-08-23 (`word:¿Cuándo comes?`): "az s mintha lemaradna".
+describe('final consonant clipping on android', () => {
+  it('pads the utterance on android so a closing /s/ is not cut off', async () => {
+    await withVoices(['es-MX']);
+    const os = Platform.OS;
+    (Platform as { OS: string }).OS = 'android';
+    try {
+      speak('¿Cuándo comes?', 'es-MX');
+      expect((mocked.speak as jest.Mock).mock.calls[0][0]).toBe('¿Cuándo comes? ');
+    } finally {
+      (Platform as { OS: string }).OS = os;
+    }
+  });
+
+  it('sends the text unchanged on ios, which does not clip', async () => {
+    await withVoices(['es-MX']);
+    const os = Platform.OS;
+    (Platform as { OS: string }).OS = 'ios';
+    try {
+      speak('¿Cuándo comes?', 'es-MX');
+      expect((mocked.speak as jest.Mock).mock.calls[0][0]).toBe('¿Cuándo comes?');
+    } finally {
+      (Platform as { OS: string }).OS = os;
+    }
+  });
+});

@@ -1602,10 +1602,10 @@
     "de": "das Bein",
     "topic": "cuerpo",
     "topicOrder": 1,
-    "sentence_es": "Me duele la pierna.",
-    "sentence_hu": "Fáj a lábam.",
-    "sentence_en": "My leg hurts.",
-    "sentence_de": "Mein Bein tut weh."
+    "sentence_es": "El pantalón va en las piernas.",
+    "sentence_hu": "A nadrág a lábra megy.",
+    "sentence_en": "The trousers go on the legs.",
+    "sentence_de": "Die Hose kommt an die Beine."
   },
   {
     "id": 1115,
@@ -1634,10 +1634,10 @@
     "de": "der Rücken",
     "topic": "cuerpo",
     "topicOrder": 3,
-    "sentence_es": "Me duele la espalda.",
-    "sentence_hu": "Fáj a hátam.",
-    "sentence_en": "My back hurts.",
-    "sentence_de": "Mein Rücken tut weh."
+    "sentence_es": "La espalda está entre los dos brazos.",
+    "sentence_hu": "A hát a két kar között van.",
+    "sentence_en": "The back is between the two arms.",
+    "sentence_de": "Der Rücken ist zwischen den beiden Armen."
   },
   {
     "id": 1117,
@@ -1662,10 +1662,10 @@
     "de": "das Knie",
     "topic": "cuerpo",
     "topicOrder": 5,
-    "sentence_es": "Me duele la rodilla.",
-    "sentence_hu": "Fáj a térdem.",
-    "sentence_en": "My knee hurts.",
-    "sentence_de": "Mein Knie tut weh."
+    "sentence_es": "La rodilla está en la pierna, no en el brazo.",
+    "sentence_hu": "A térd a lábon van, nem a karon.",
+    "sentence_en": "The knee is on the leg, not on the arm.",
+    "sentence_de": "Das Knie ist am Bein, nicht am Arm."
   },
   {
     "id": 1119,
@@ -1736,10 +1736,10 @@
     "de": "das Ohr",
     "topic": "cuerpo",
     "topicOrder": 10,
-    "sentence_es": "Me duele la oreja.",
-    "sentence_hu": "Fáj a fülem.",
-    "sentence_en": "My ear hurts.",
-    "sentence_de": "Mein Ohr tut weh."
+    "sentence_es": "El teléfono está cerca de la oreja, no de la nariz.",
+    "sentence_hu": "A telefon a fülhöz kerül, nem az orrhoz.",
+    "sentence_en": "The phone is next to the ear, not to the nose.",
+    "sentence_de": "Das Telefon ist am Ohr, nicht an der Nase."
   },
   {
     "id": 1124,
@@ -2836,10 +2836,14 @@
     "de": "Samstag",
     "topic": "dias_meses",
     "topicOrder": 6,
-    "sentence_es": "El sábado no trabajo.",
-    "sentence_hu": "Szombaton nem dolgozom.",
-    "sentence_en": "On Saturday I don't work.",
-    "sentence_de": "Am Samstag arbeite ich nicht."
+    "note_hu": "A „sábado\" a héber „sabbat\" (pihenőnap) szóból ered a latin „sabbatum\" közvetítésével, ezért nem bolygónévből képzett, mint a hét többi napja. Forrás: RAE, Diccionario de la lengua española, „sábado\".",
+    "note_en": "\"Sábado\" comes from Hebrew \"shabbat\" (day of rest) through Latin \"sabbatum\", so unlike the other weekdays it is not named after a planet. Source: RAE, Diccionario de la lengua española, \"sábado\".",
+    "note_es": "\"Sábado\" viene del hebreo \"sabbat\" (día de descanso) a través del latín \"sabbatum\", por eso no lleva nombre de planeta como los demás días. Fuente: RAE, Diccionario de la lengua española, \"sábado\".",
+    "note_de": "\"Sábado\" kommt vom hebräischen \"Schabbat\" (Ruhetag) über lateinisch \"sabbatum\", ist also nicht nach einem Planeten benannt wie die übrigen Wochentage. Quelle: RAE, Diccionario de la lengua española, \"sábado\".",
+    "sentence_es": "El sábado viene después del viernes.",
+    "sentence_hu": "A szombat a péntek után jön.",
+    "sentence_en": "Saturday comes after Friday.",
+    "sentence_de": "Der Samstag kommt nach dem Freitag."
   },
   {
     "id": 1202,
@@ -10100,6 +10104,10 @@
     "hu": "a terasz",
     "en": "the terrace",
     "de": "die Terrasse",
+    "note_hu": "A spanyolban nincs „'s\" birtokos: a birtokviszony mindig „de\" + birtokos, és a „de + el\" mindig „del\"-lé olvad. A „la terraza del restaurante\" tehát pontosan az „étterem teraszát\" jelenti.",
+    "note_en": "Spanish has no \"'s\": possession is always \"de\" + owner, and \"de + el\" contracts to \"del\". So \"la terraza del restaurante\" IS the possessive, \"the restaurant's terrace\".",
+    "note_es": "El español no tiene el genitivo \"'s\": la posesión se marca con \"de\" + poseedor, y \"de + el\" se contrae en \"del\".",
+    "note_de": "Spanisch kennt kein \"'s\": Besitz steht immer mit \"de\" + Besitzer, und \"de + el\" wird zu \"del\".",
     "topic": "restaurante",
     "topicOrder": 22,
     "sentence_es": "Comemos en la terraza del restaurante.",
@@ -10646,6 +10654,10 @@
     "hu": "a röplabda",
     "en": "the volleyball",
     "de": "der Volleyball",
+    "note_hu": "A „jugar\" sportnál „a\" elöljárót kap (jugar a + sport), és az „a + el\" mindig „al\"-lá olvad: jugar al voleibol, al fútbol, al tenis. Hangszernél viszont „tocar\" van: tocar la guitarra.",
+    "note_en": "With sports, \"jugar\" takes \"a\" (jugar a + sport), and \"a + el\" always contracts to \"al\": jugar al voleibol, al fútbol, al tenis.",
+    "note_es": "Con deportes, \"jugar\" lleva \"a\" (jugar a + deporte), y \"a + el\" se contrae en \"al\": jugar al voleibol, al fútbol, al tenis.",
+    "note_de": "Bei Sportarten steht \"jugar\" mit \"a\" (jugar a + Sport), und \"a + el\" wird immer zu \"al\": jugar al voleibol, al fútbol, al tenis.",
     "topic": "ocio",
     "topicOrder": 21,
     "sentence_es": "Jugamos al voleibol en la playa.",
@@ -11558,10 +11570,14 @@
     "de": "die Wolle",
     "topic": "ropa",
     "topicOrder": 27,
-    "sentence_es": "El abrigo es de lana.",
-    "sentence_hu": "A kabát gyapjúból van.",
-    "sentence_en": "The coat is made of wool.",
-    "sentence_de": "Der Mantel ist aus Wolle."
+    "note_hu": "A gyapjú a birka szőre. A világ gyapjújának legnagyobb részét Kína és Ausztrália termeli. Forrás: FAO, FAOSTAT.",
+    "note_en": "Wool is sheep's fleece. Most of the world's wool comes from China and Australia. Source: FAO, FAOSTAT.",
+    "note_es": "La lana es el pelo de la oveja. La mayor parte de la lana del mundo viene de China y Australia. Fuente: FAO, FAOSTAT.",
+    "note_de": "Wolle ist das Vlies des Schafs. Der größte Teil der Weltwolle kommt aus China und Australien. Quelle: FAO, FAOSTAT.",
+    "sentence_es": "El jersey y la bufanda son de lana.",
+    "sentence_hu": "A pulóver és a sál gyapjúból van.",
+    "sentence_en": "The sweater and the scarf are made of wool.",
+    "sentence_de": "Der Pullover und der Schal sind aus Wolle."
   },
   {
     "id": 1833,
@@ -12458,8 +12474,12 @@
     "level": "A1",
     "es": "la pimienta",
     "hu": "bors",
-    "en": "black pepper",
+    "en": "pepper",
     "de": "Pfeffer",
+    "note_hu": "A „pimienta\" önmagában is a fekete bors. A „pimienta negra\" csak akkor kell, ha a fehér borssal (pimienta blanca) állítod szembe. Ne keverd: „el pimiento\" = paprika, a zöldség.",
+    "note_en": "\"La pimienta\" on its own already means black pepper; \"pimienta negra\" is only used when contrasting it with white pepper (pimienta blanca). Careful: \"el pimiento\" is the vegetable.",
+    "note_es": "\"La pimienta\" ya es la pimienta negra; \"pimienta negra\" solo se dice al contrastarla con la blanca. Ojo: \"el pimiento\" es la verdura.",
+    "note_de": "\"La pimienta\" ist schon der schwarze Pfeffer; \"pimienta negra\" sagt man nur im Gegensatz zum weißen Pfeffer. Achtung: \"el pimiento\" ist die Paprika.",
     "topic": "comida_alapelelmiszer_a1",
     "topicOrder": 25,
     "sentence_es": "Pongo sal y pimienta en la carne.",
@@ -12574,10 +12594,14 @@
     "de": "Zucchini",
     "topic": "comida_gyumolcs_zoldseg_a1",
     "topicOrder": 26,
-    "sentence_es": "El calabacín es una verdura verde.",
-    "sentence_hu": "A cukkini zöld zöldség.",
-    "sentence_en": "The courgette is a green vegetable.",
-    "sentence_de": "Die Zucchini ist ein grünes Gemüse."
+    "note_hu": "A cukkini a tök fiatalon szedett változata, tömegének kb. 95%-a víz. Forrás: USDA FoodData Central.",
+    "note_en": "The courgette is a squash picked while still young; about 95% of its weight is water. Source: USDA FoodData Central.",
+    "note_es": "El calabacín es una calabaza recogida joven; cerca del 95% de su peso es agua. Fuente: USDA FoodData Central.",
+    "note_de": "Die Zucchini ist ein jung geernteter Kürbis; etwa 95% ihres Gewichts ist Wasser. Quelle: USDA FoodData Central.",
+    "sentence_es": "El calabacín es verde y grande como el pepino.",
+    "sentence_hu": "A cukkini zöld és akkora, mint az uborka.",
+    "sentence_en": "The courgette is green and as big as the cucumber.",
+    "sentence_de": "Die Zucchini ist grün und so groß wie die Gurke."
   },
   {
     "id": 3884,
@@ -12588,10 +12612,14 @@
     "de": "Erbse",
     "topic": "comida_gyumolcs_zoldseg_a1",
     "topicOrder": 27,
-    "sentence_es": "Los guisantes son verdes y pequeños.",
-    "sentence_hu": "A borsó zöld és apró.",
-    "sentence_en": "Peas are green and small.",
-    "sentence_de": "Erbsen sind grün und klein."
+    "note_hu": "100 gramm főtt zöldborsóban kb. 5 gramm fehérje van, ez a zöldségek között kiemelkedően sok. Forrás: USDA FoodData Central.",
+    "note_en": "100 g of cooked green peas carries about 5 g of protein, high for a vegetable. Source: USDA FoodData Central.",
+    "note_es": "100 g de guisantes cocidos tienen unos 5 g de proteína, mucho para una verdura. Fuente: USDA FoodData Central.",
+    "note_de": "100 g gekochte Erbsen enthalten etwa 5 g Eiweiß, viel für ein Gemüse. Quelle: USDA FoodData Central.",
+    "sentence_es": "Los guisantes son verdes y más pequeños que una uva.",
+    "sentence_hu": "A borsószemek zöldek és kisebbek, mint egy szőlőszem.",
+    "sentence_en": "Peas are green and smaller than a grape.",
+    "sentence_de": "Erbsen sind grün und kleiner als eine Weintraube."
   },
   {
     "id": 3885,
@@ -12672,10 +12700,14 @@
     "de": "Pute",
     "topic": "comida_alapelelmiszer_a1",
     "topicOrder": 28,
-    "sentence_es": "El pavo es una carne blanca.",
-    "sentence_hu": "A pulyka fehér hús.",
-    "sentence_en": "Turkey is a white meat.",
-    "sentence_de": "Pute ist ein weißes Fleisch."
+    "note_hu": "A pulykát a mai Mexikó területén háziasították, és a 16. században került Európába. Forrás: Encyclopaedia Britannica, „turkey (bird)\".",
+    "note_en": "The turkey was domesticated in what is now Mexico and reached Europe in the 16th century. Source: Encyclopaedia Britannica, \"turkey (bird)\".",
+    "note_es": "El pavo se domesticó en el actual México y llegó a Europa en el siglo XVI. Fuente: Encyclopaedia Britannica, \"turkey (bird)\".",
+    "note_de": "Der Truthahn wurde im heutigen Mexiko domestiziert und kam im 16. Jahrhundert nach Europa. Quelle: Encyclopaedia Britannica, \"turkey (bird)\".",
+    "sentence_es": "El pavo viene de México y es más grande que el pollo.",
+    "sentence_hu": "A pulyka Mexikóból származik, és nagyobb, mint a csirke.",
+    "sentence_en": "The turkey comes from Mexico and is bigger than the chicken.",
+    "sentence_de": "Der Truthahn kommt aus Mexiko und ist größer als das Huhn."
   },
   {
     "id": 3891,
@@ -12714,10 +12746,10 @@
     "de": "Hausmannskost",
     "topic": "restaurante",
     "topicOrder": 27,
-    "sentence_es": "Aquí hacen comida casera.",
-    "sentence_hu": "Itt házias ételt főznek.",
-    "sentence_en": "They make home cooking here.",
-    "sentence_de": "Hier macht man Hausmannskost."
+    "sentence_es": "La comida casera se hace en casa, no en un restaurante.",
+    "sentence_hu": "A házias étel otthon készül, nem étteremben.",
+    "sentence_en": "Home cooking is made at home, not in a restaurant.",
+    "sentence_de": "Hausmannskost wird zu Hause gemacht, nicht im Restaurant."
   },
   {
     "id": 3894,

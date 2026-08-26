@@ -23,6 +23,10 @@ export default {
     skip: 'Überspringen',
     // FB139: die Karte kommt aus einem anderen Thema, um das Tageskontingent zu füllen.
     fromTopic: (topic: string) => `Aus einem anderen Thema: ${topic}`,
+    // FB150: ein Tippen auf ein Wort des Satzes legt es in die Rechtschreibliste.
+    spellingTapHint: 'Tippe ein Wort an, um seine Schreibung zu üben',
+    spellingAddedWord: (word: string) => `✓ "${word}" ist in deiner Rechtschreibliste`,
+    spellingNoCardWord: (word: string) => `"${word}" hat noch keine Wortkarte`,
   },
   buttons: {
     again: 'Nochmal',
@@ -137,6 +141,17 @@ export default {
     plusOneMinute: '+1 Minute, juhu!',
     milestoneSession: '🔥 Wow, {min} Minuten am Stück!',
     milestoneDaily: '🎉 Heute schon {min} Minuten, super gemacht!',
+    // FB149: nach der ersten Stunde jede Viertelstunde, zufällige Zeile.
+    milestoneLong: [
+      '🔥 {hours} Stunden heute! Das ist kein Lernen mehr, das ist Training.',
+      '💪 {min} Minuten Beute. Die Sprache kann nicht mehr weglaufen.',
+      '🚀 Noch eine Viertelstunde gewonnen: {min} Minuten ohne Pause.',
+      '🧠 {min} Minuten an einem Tag. Dein Gehirn verkabelt gerade etwas Neues.',
+      '⚡ {hours} Stunden! In dem Tempo sind es Wochen, keine Jahre.',
+      '🏔️ {min} Minuten und du steigst weiter. Genau das ist der Unterschied.',
+      '🌊 {min} Minuten am Stück. Heute kommen die Wörter zu dir.',
+      '🎯 {hours} Stunden heute. Wer so viel reinsteckt, holt auch so viel raus.',
+    ],
     dailyGreeting: '👋 Hallo! Starten wir das heutige Lernen!',
     // FB108: Mitternachtswechsel, Bilanz des beendeten Tages + Gratulation.
     // Zufällig gewählt, die Sätze kommen mit der Zeit wieder.

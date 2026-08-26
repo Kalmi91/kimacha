@@ -1,5 +1,6 @@
 import { AppState, type AppStateStatus } from 'react-native';
 import { getDb } from './database';
+import { isDailyMilestone } from './usageMilestones';
 import { localDateString } from './usageStats';
 
 // Active-usage timer backing the "+1 perc wauuuuuuuu" toast + the stats tab.
@@ -22,9 +23,10 @@ const MINUTE_SECONDS = 60;
 // `session` counts the active minutes of THIS app run (a restart starts over),
 // `daily` reads the persisted day total, so its crossing (previous total was
 // one lower) can only happen once per calendar day even across restarts.
+// FB149: past the first hour the daily milestone repeats every 15 minutes, see
+// lib/usageMilestones.ts.
 export type UsageMilestone = { scope: 'session' | 'daily'; minutes: number };
 const SESSION_MILESTONES = [30];
-const DAILY_MILESTONES = [30, 60];
 
 // FB108, Kálmán 2026-08-08: "ha éjfélkor játszunk a játékkal, és pont átfordul
 // akkor a napi statot írja ki és gratuláljon". The tick loop is already running
@@ -76,7 +78,7 @@ function tick() {
     getDb()
       .addUsageMinute()
       .then(todayMinutes => {
-        if (typeof todayMinutes === 'number' && DAILY_MILESTONES.includes(todayMinutes)) {
+        if (typeof todayMinutes === 'number' && isDailyMilestone(todayMinutes)) {
           emitMilestone({ scope: 'daily', minutes: todayMinutes });
         }
       })

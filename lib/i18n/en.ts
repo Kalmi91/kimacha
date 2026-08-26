@@ -23,6 +23,10 @@ export default {
     skip: 'Skip',
     // FB139: the card was borrowed from another topic to fill the new-word budget.
     fromTopic: (topic: string) => `From another topic: ${topic}`,
+    // FB150: tapping any word of the sentence files it into the spelling list.
+    spellingTapHint: 'Tap a word to add it to spelling practice',
+    spellingAddedWord: (word: string) => `✓ "${word}" is in your spelling list`,
+    spellingNoCardWord: (word: string) => `"${word}" has no word card yet`,
   },
   buttons: {
     again: 'Again',
@@ -137,6 +141,17 @@ export default {
     plusOneMinute: '+1 minute wooo!',
     milestoneSession: '🔥 Wow, {min} minutes in one go!',
     milestoneDaily: '🎉 {min} minutes today, you are doing great!',
+    // FB149: past the first hour, every quarter of an hour, random line.
+    milestoneLong: [
+      '🔥 {hours} hours today! This is not studying any more, this is training.',
+      '💪 {min} minutes in the bag. The language cannot run away now.',
+      '🚀 Another quarter hour, another stretch won: {min} minutes and counting.',
+      '🧠 {min} minutes in one day. Your brain is wiring something new right now.',
+      '⚡ {hours} hours! At this pace it is weeks, not years.',
+      '🏔️ {min} minutes and still climbing. That is the whole difference.',
+      '🌊 {min} minutes straight. Today the words come to you.',
+      '🎯 {hours} hours in today. Whoever puts that in, takes it out.',
+    ],
     dailyGreeting: '👋 Hi! Let\'s start today\'s practice!',
     // FB108: midnight rollover, the finished day's stats plus a celebration.
     // Picked at random, so the lines come back around over time.

@@ -6,7 +6,8 @@ import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb } from '@/lib/database';
-import { type WordEntry, getWordsForLevel, getWordsForTopic, LEVELS, type Level } from '@/data/words';
+import { type WordEntry, getWordsForLevel, getWordsForTopic, findWordByText, normalizeWordToken, LEVELS, type Level } from '@/data/words';
+import TappableSentence, { type TokenState } from '@/components/TappableSentence';
 import { getTopicsForLevel, hasTopics, getTopicName, getSubLevelForTopic, getTopicsForSubLevel, getSubLevelName, type TopicDef } from '@/data/topics';
 import { t, stringsFor } from '@/lib/i18n';
 import { strictAnswerMatch } from '@/lib/answerMatch';
@@ -93,6 +94,10 @@ export default function LearnScreen() {
   // FB39: local per-card flag, flips the "Spelling" button to a ✓ state once
   // tapped; resets whenever the card changes (via resetCardState).
   const [spellingAdded, setSpellingAdded] = useState(false);
+  // FB150: words of THIS card tapped into the spelling list, keyed by the
+  // normalized token, so the same word stays marked wherever it appears.
+  const [spellingTokens, setSpellingTokens] = useState<Record<string, TokenState>>({});
+  const [spellingTapMsg, setSpellingTapMsg] = useState<string | null>(null);
   // FB75/FB78/FB79: whether the card's grammar note ("i" button) is expanded.
   const [noteOpen, setNoteOpen] = useState(false);
   const [level, setLevel] = useState<Level>('A0');
@@ -536,6 +541,8 @@ export default function LearnScreen() {
     setPracticeResult(null);
     setPracticeText('');
     setSpellingAdded(false);
+    setSpellingTokens({});
+    setSpellingTapMsg(null);
     setNoteOpen(false);
   };
 
@@ -1015,6 +1022,29 @@ export default function LearnScreen() {
     speakIn(back, speechLang(backLang));
   };
 
+  // FB150: a tap on a word of the card files it into the spelling-practice list.
+  // The list stores word ids, so a token with no card of its own (a conjugated
+  // form, a function word) is reported instead of silently doing nothing.
+  const handleWordTap = (token: string, lang: string) => {
+    const key = normalizeWordToken(token);
+    if (!key) return;
+    const entry = findWordByText(token, lang, direction[1]);
+    if (!entry) {
+      setSpellingTokens(prev => ({ ...prev, [key]: 'missing' }));
+      setSpellingTapMsg(s.card.spellingNoCardWord(token));
+      return;
+    }
+    getDb().addToSpellingList(entry.id).catch(() => {});
+    setSpellingTokens(prev => ({ ...prev, [key]: 'added' }));
+    setSpellingTapMsg(s.card.spellingAddedWord(token));
+  };
+
+  const spellingTapLine = (
+    <Text style={[styles.spellingTapLine, { color: spellingTapMsg ? colors.tint : colors.tabIconDefault }]}>
+      {spellingTapMsg ?? s.card.spellingTapHint}
+    </Text>
+  );
+
   // Topic and sub-level names are interface text, so they follow the learner's
   // OWN language, like the rest of the UI. They used to follow the language being
   // learned, which showed a Spanish beginner "Köszönések" instead of "Saludos".
@@ -1270,7 +1300,13 @@ export default function LearnScreen() {
         <Pressable style={[styles.card, { backgroundColor: colors.card }]} onPress={() => Keyboard.dismiss()}>
           <View style={[styles.frontRow, { marginBottom: 16 }]}>
             {iconBadge}
-            <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
+            {/* FB150: the prompt is tappable word by word, straight into spelling practice. */}
+            <TappableSentence
+              text={front}
+              style={[styles.frontText, { color: colors.text }]}
+              tokenStates={spellingTokens}
+              onWordPress={token => handleWordTap(token, frontLang)}
+            />
             <Pressable onPress={() => speakIn(front, speechLang(frontLang))} style={styles.speakBtn}>
               <Text style={styles.speakIcon}>🔊</Text>
             </Pressable>
@@ -1321,11 +1357,17 @@ export default function LearnScreen() {
                 </Text>
               )}
               <View style={styles.frontRow}>
-                <Text style={[styles.correctAnswer, { color: colors.tint }]}>{back}</Text>
+                <TappableSentence
+                  text={back}
+                  style={[styles.correctAnswer, { color: colors.tint }]}
+                  tokenStates={spellingTokens}
+                  onWordPress={token => handleWordTap(token, backLang)}
+                />
                 <Pressable onPress={speakTarget} style={styles.speakBtn}>
                   <Text style={styles.speakIcon}>🔊</Text>
                 </Pressable>
               </View>
+              {spellingTapLine}
             </View>
           )}
         </Pressable>
@@ -1429,7 +1471,18 @@ export default function LearnScreen() {
       >
         <View style={styles.frontRow}>
           {iconBadge}
-          <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
+          {/* FB150: word-by-word tapping only once the card is open, before that a
+              tap anywhere on the card is what reveals the answer. */}
+          {revealed ? (
+            <TappableSentence
+              text={front}
+              style={[styles.frontText, { color: colors.text }]}
+              tokenStates={spellingTokens}
+              onWordPress={token => handleWordTap(token, frontLang)}
+            />
+          ) : (
+            <Text style={[styles.frontText, { color: colors.text }]}>{front}</Text>
+          )}
           <Pressable onPress={() => speakIn(front, speechLang(frontLang))} style={styles.speakBtn}>
             <Text style={styles.speakIcon}>🔊</Text>
           </Pressable>
@@ -1442,12 +1495,20 @@ export default function LearnScreen() {
           <View style={styles.backSection}>
             <View style={[styles.divider, { backgroundColor: '#38BDF8' }]} />
             {!practiceHidesAnswer && (
-              <View style={styles.frontRow}>
-                <Text style={[styles.backText, { color: colors.tint }]}>{back}</Text>
-                <Pressable onPress={speakTarget} style={styles.speakBtn}>
-                  <Text style={styles.speakIcon}>🔊</Text>
-                </Pressable>
-              </View>
+              <>
+                <View style={styles.frontRow}>
+                  <TappableSentence
+                    text={back}
+                    style={[styles.backText, { color: colors.tint }]}
+                    tokenStates={spellingTokens}
+                    onWordPress={token => handleWordTap(token, backLang)}
+                  />
+                  <Pressable onPress={speakTarget} style={styles.speakBtn}>
+                    <Text style={styles.speakIcon}>🔊</Text>
+                  </Pressable>
+                </View>
+                {spellingTapLine}
+              </>
             )}
             {!practiceTyping && !practiceResult && (
               <Pressable
@@ -1812,6 +1873,12 @@ const styles = StyleSheet.create({
   correctAnswer: {
     fontSize: 22,
     fontWeight: '600',
+  },
+  // FB150: the one line that says what a tap on a word just did.
+  spellingTapLine: {
+    fontSize: 12,
+    textAlign: 'center',
+    marginTop: 8,
   },
   buryBtn: {
     alignSelf: 'center',

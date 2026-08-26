@@ -6,6 +6,7 @@ import { t, stringsFor } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { onActiveMinute, onUsageMilestone, onDayRollover } from '@/lib/usageTimer';
 import { pickDayRolloverMessage } from '@/lib/dayRollover';
+import { isLongHaulMilestone, pickMilestoneLine } from '@/lib/usageMilestones';
 
 // "+1 perc wauuuuuuuu" popup: fires once per full active minute (usageTimer's
 // onActiveMinute), fades/slides in, sits for a couple seconds, fades out.
@@ -79,6 +80,12 @@ export default function UsageToast() {
     const unsubscribeMinute = onActiveMinute(() => show(t().usage.plusOneMinute, false));
     const unsubscribeMilestone = onUsageMilestone(({ scope, minutes }) => {
       const learned = stringsFor(learnedLang.current).usage;
+      // FB149: the quarter-hour crossings past the first hour draw from their own
+      // pool, so an hours-long day never repeats the same congratulation.
+      if (scope === 'daily' && isLongHaulMilestone(minutes)) {
+        show(pickMilestoneLine(learned.milestoneLong, minutes), true);
+        return;
+      }
       const template = scope === 'session' ? learned.milestoneSession : learned.milestoneDaily;
       show(template.replace('{min}', String(minutes)), true);
     });
