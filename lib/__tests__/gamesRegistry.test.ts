@@ -20,8 +20,14 @@ describe('GAME_DEFS (GAMES.md 1. szekció, the approved 13-game list)', () => {
     }
   });
 
-  it('marks every game "soon" in F0 (no game screen exists yet)', () => {
-    expect(GAME_DEFS.every((g) => g.soon)).toBe(true);
+  // GAMES.md 5./8. szekció: F1/F2 ships app/games/<id>.tsx for these ids and
+  // flips their registry `soon` to false; the rest stay "soon" until their own
+  // phase lands.
+  it('flips "soon" to false only for the ids that have a real screen', () => {
+    const live = new Set(['memory-pairs']);
+    for (const game of GAME_DEFS) {
+      expect(game.soon).toBe(!live.has(game.id));
+    }
   });
 
   it('resolves the right localized text, falling back to English', () => {

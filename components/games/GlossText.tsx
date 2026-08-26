@@ -16,6 +16,15 @@ import type { GlossInfo } from '@/lib/games/gloss';
 // K2 DÖNTÉS: a timed game's clock pauses while the bubble is open, this
 // component doesn't own a clock, it just calls onOpenGloss/onCloseGloss, the
 // game screen wires those to its useGameSession().pause()/resume().
+//
+// F2 MEGVALÓSÍTÁSI JEGYZET (word-rain 4.1 / bubble-pop 4.2): a catchable/
+// poppable tile's own tap already means "catch"/"pop", so it can't ALSO open
+// this bubble on tap (word-rain's per-token onPress would fight the game's own
+// Pressable). `disableTap` + `forceOpen` + `onForceClose` let a caller drive
+// this SAME bubble UI from its own gesture instead: word-rain's automatic
+// reveal on a new word's first fall, bubble-pop's long-press. Regular callers
+// (word-search's found-word row) are unaffected, `forceOpen` stays `undefined`
+// and the component works exactly as before.
 
 interface Props {
   text: string;
@@ -24,15 +33,31 @@ interface Props {
   style?: StyleProp<TextStyle>;
   onOpenGloss?: () => void;
   onCloseGloss?: () => void;
+  disableTap?: boolean; // true: tokens render plain, no internal onPress
+  forceOpen?: GlossInfo | null; // externally-controlled bubble (undefined = internal state governs it)
+  onForceClose?: () => void; // called instead of the internal close() while forceOpen is controlled
 }
 
-export default function GlossText({ text, glosses, learnedLang, style, onOpenGloss, onCloseGloss }: Props) {
+export default function GlossText({
+  text,
+  glosses,
+  learnedLang,
+  style,
+  onOpenGloss,
+  onCloseGloss,
+  disableTap = false,
+  forceOpen,
+  onForceClose,
+}: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
 
   const [active, setActive] = useState<GlossInfo | null>(null);
   const [added, setAdded] = useState(false);
+
+  const controlled = forceOpen !== undefined;
+  const shown = controlled ? forceOpen : active;
 
   const open = (info: GlossInfo) => {
     setActive(info);
@@ -41,13 +66,17 @@ export default function GlossText({ text, glosses, learnedLang, style, onOpenGlo
   };
 
   const close = () => {
+    if (controlled) {
+      onForceClose?.();
+      return;
+    }
     setActive(null);
     onCloseGloss?.();
   };
 
   const addToSpelling = () => {
-    if (!active?.wordId) return;
-    getDb().addToSpellingList(active.wordId).catch(() => {});
+    if (!shown?.wordId) return;
+    getDb().addToSpellingList(shown.wordId).catch(() => {});
     setAdded(true);
   };
 
@@ -60,36 +89,37 @@ export default function GlossText({ text, glosses, learnedLang, style, onOpenGlo
           if (!/\S/.test(part)) return part;
           const info = glosses.get(normalizeWordToken(part));
           if (!info) return part;
+          const newStyle = info.isNew
+            ? { color: colors.tabIconDefault, textDecorationLine: 'underline' as const, textDecorationStyle: 'dotted' as const }
+            : undefined;
+          if (disableTap) {
+            return (
+              <Text key={i} style={newStyle}>
+                {part}
+              </Text>
+            );
+          }
           return (
-            <Text
-              key={i}
-              onPress={() => open(info)}
-              suppressHighlighting
-              style={
-                info.isNew
-                  ? { color: colors.tabIconDefault, textDecorationLine: 'underline', textDecorationStyle: 'dotted' }
-                  : undefined
-              }
-            >
+            <Text key={i} onPress={() => open(info)} suppressHighlighting style={newStyle}>
               {part}
             </Text>
           );
         })}
       </Text>
 
-      <Modal visible={!!active} transparent animationType="fade" onRequestClose={close}>
+      <Modal visible={!!shown} transparent animationType="fade" onRequestClose={close}>
         <Pressable style={styles.overlay} onPress={close}>
           <Pressable style={[styles.bubble, { backgroundColor: colors.card }]} onPress={() => {}}>
-            <Text style={[styles.learned, { color: colors.text }]}>{active?.learned}</Text>
-            <Text style={[styles.native, { color: colors.tabIconDefault }]}>{active?.native}</Text>
+            <Text style={[styles.learned, { color: colors.text }]}>{shown?.learned}</Text>
+            <Text style={[styles.native, { color: colors.tabIconDefault }]}>{shown?.native}</Text>
             <View style={styles.row}>
               <Pressable
                 style={[styles.iconBtn, { borderColor: colors.tabIconDefault }]}
-                onPress={() => active && speak(active.learned, speechLang(learnedLang))}
+                onPress={() => shown && speak(shown.learned, speechLang(learnedLang))}
               >
                 <Text style={styles.iconBtnText}>🔊</Text>
               </Pressable>
-              {active?.wordId ? (
+              {shown?.wordId ? (
                 <Pressable
                   style={[styles.spellBtn, { backgroundColor: added ? colors.tint : colors.card, borderColor: colors.tint }]}
                   onPress={addToSpelling}
