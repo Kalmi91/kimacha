@@ -417,6 +417,72 @@ szállítási kapu minden játék-itemre.
 >   vagy reanimated `runOnJS`-t használó játék (pl. `sentence-tetris`, F6)
 >   ugyanezt a mintát kövesse.
 
+> **MEGVALÓSÍTÁSI JEGYZET (F3, grammar-choice, 2026-08-27):**
+> - **`lib/games/content.ts` `GrammarItem` szerkezete eltér a 4.11 illusztratív
+>   JSON-tól.** A `why` ott hu-only string + egy `wrong` alobjektum volt; a K21
+>   döntés és a top-level i18n×4 szabály miatt mindkettő nyelv-kulcsolt lett:
+>   `why[lang]`, `wrong[optionText][lang]`. A topic kapott egy `level: Level`
+>   mezőt is (az illusztratív JSON-ban nem volt), mert az audit-script P1
+>   ellenőrzése ehhez méri a mondat szókincsét (kumulált A0..level). Egy
+>   opcionális `glossary` mező (a `story` `newWords` mintája) fedi az adott
+>   szinten még nem tanított, de a mondatban muszáj szót.
+> - **`lib/games/grammarChoice.ts` (`buildGrammarRound`)**: tiszta függvény,
+>   a `lib/shuffle.ts` már meglévő `shuffleArray`/`shuffleOptions`/`hashString`
+>   segédjeire épül (nem új kód), az item-sorrendet ÉS az egyes item opció-
+>   sorrendjét is seedelt véletlennel kevri (FB2-mintájú pozíció-torzítás
+>   ellen), 4 jest teszttel.
+> - **„Mentsd a szabályt" (4.11 szövege) helyett fejléc-gomb.** A user-kérés
+>   lényege a „visszanézhető szabály-lista"; ahelyett hogy per-item bookmark-
+>   állapotot vezetnénk be (új DB-mező, extra UI), a topic `rule`+`more`
+>   blokkja egy `📋 Szabály` fejléc-gombbal BÁRMIKOR elérhető a kör közben, 
+>   ugyanaz a felhasználói érték, kevesebb új felület.
+> - **`card_attempts` naplózás NEM fut grammar-choice-nál.** A tábla
+>   `word_id INTEGER NOT NULL`-t ír elő, a grammar-item opciói (pl. `soy`/
+>   `estoy`) viszont nem feloldható szótári szavak, nincs természetes
+>   `wordId`. A kör eredménye a meglévő `game_scores`/`game_progress`
+>   táblákba megy (`recordGameResult('grammar-choice', ...)`,
+>   `setGameProgress('grammar-choice', topic.topic, 'done', {correct,
+>   total})`), új DB-metódus nem kellett.
+
+> **MEGVALÓSÍTÁSI JEGYZET (F3, confusables, 2026-08-27):**
+> - **`ConfusablesDrill` kapott egy `type: 'gap' | 'reverse' | 'listening'`
+>   mezőt** (a 4.12 illusztratív JSON csak a gap-alakot mutatta). A `reverse`
+>   dril NEM tárol saját prompt-szöveget: a képernyő futásidőben építi a
+>   „Melyik szó jelenti ezt: …" kérdést a helyes tag `gloss[nativeLang]`
+>   mezőjéből, hogy a jelentés sose duplikálódjon a JSON-ban.
+> - **A hallás-dril (K23) eszköz-tudatos.** A képernyő induláskor
+>   `loadVoices()` + `hasVoiceFor(speechLang(learnedLang))`-tal dönti el, fut-e
+>   TTS a nyelvre (FB144 őr), és `buildDrillRound(set, {allowListening}, seed)`
+>   ez alapján szűri ki a `'listening'` tételeket, hangtalan eszközön a kör
+>   csendben gap/reverse-re esik vissza, nem akad el.
+> - **`card_attempts` naplózás itt sem fut**, ugyanazon okból, mint a
+>   grammar-choice-nál (a hasonló-szó tagok jó része szándékosan ÚJ,
+>   korpuszon kívüli szó, pl. güey, ahorita, , nincs `wordId`-ja). Rekord
+>   `game_scores`/`game_progress` táblákba megy, ugyanúgy mint fent.
+> - **`lib/games/gloss.ts` `overrides` paramétere lett a hordozó mindkét
+>   tartalomtípushoz.** A grammar-choice topic `glossary`-ja és a confusables
+>   set `members[].gloss` + `glossary`-ja is ezen keresztül válik
+>   `GlossText`-ben koppintható jelentéssé; a `lib/games/content.ts` új
+>   `cumulativeCorpusWordIds(level, lang)` segédje adja a `knownWordIds`
+>   halmazt, hogy egy korpuszban MÁR tanított szó ne kapjon "új" pöttyözést
+>   csak azért, mert ez a két játék nem a `vocabPool`-ból húz (lásd alább).
+> - **Miért nem `vocabPool.ts`-ből jön a szókincs.** A 0. szekció szent
+>   szabálya („minden szó a poolból, ami új, az gloss-olt") itt a
+>   `scripts/audit-games.mjs` mechanikus kapuján keresztül érvényesül: minden
+>   tartalom-szó vagy a szint kumulált korpuszában van, vagy explicit
+>   `gloss`/`glossary` mezővel rendelkezik. Ez a `registry.ts` `minPoolSize:
+>   undefined` kommentjében már F0 óta rögzített terv (content-driven játékok
+>   tartalom-megléte, nem szószám-küszöb dönt), az F3 ezt implementálta.
+> - **`scripts/audit-games.mjs` (3.6) most készült el**, a valódi F3 tartalom
+>   ellen tesztelve. Spanyol matcher a `scripts/audit-corpus.mjs` mintáját
+>   követi (glue-lista, plural/gender-variáns, ige-tő), DE szándékosan
+>   EGYSZERŰSÍTVE: nincs kézzel karbantartott rendhagyó-paradigma-map, mert a
+>   tartalom-szerzők a `glossary` mezőt használják bármi igazán rendhagyóra
+>   (ez sokkal karbantarthatóbb, mint egy második paradigma-map szinkronban
+>   tartása). Az ige-tő egyezés küszöbe (3 karakter, nem a corpus-audit 4-e),
+>   mert a rövid `-er` igék (`coser`, `pasar`) 3 betűs tövei így is
+>   egyértelműek maradnak F3 tartalmán belül, és jóval kevesebb hamis P1-et ad.
+
 ---
 
 ## 4. Játék-specifikációk
@@ -1364,7 +1430,7 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 | F1 | `word-search` | ✅ KÉSZ | `62c9801` |
 | F2 | `word-rain` | ✅ KÉSZ | `4c5bac6` |
 | F2 | `bubble-pop` | ✅ KÉSZ | `aab85f5` |
-| F3 | `grammar-choice` | 🟨 SPEC-KÉSZ (motor + 3 téma; a többi 56 = Q1-Q5) | |
+| F3 | `grammar-choice` | ✅ KÉSZ (motor + 3 téma: ser-estar, articulos-genero, por-para; a többi 56 = Q1-Q5, token-burn) | `TBD` |
 | F3 | `confusables` | 🟨 SPEC-KÉSZ | |
 | F4 | `myth` | 🟨 SPEC-KÉSZ | |
 | F4 | `story` | 🟨 SPEC-KÉSZ | |

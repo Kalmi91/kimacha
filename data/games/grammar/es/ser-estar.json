@@ -1,0 +1,276 @@
+{
+  "topic": "ser-estar",
+  "level": "A2",
+  "title": {
+    "hu": "Ser vagy estar?",
+    "en": "Ser or estar?",
+    "es": "¿Ser o estar?",
+    "de": "Ser oder estar?"
+  },
+  "rule": {
+    "hu": "SER = ami valami TARTÓSAN: azonosság, foglalkozás, származás, állandó tulajdonság. ESTAR = ami ÉPPEN MOST van: állapot, hangulat, hely, változás eredménye.",
+    "en": "SER = what something IS: identity, job, origin, lasting quality. ESTAR = how something IS right now: state, mood, location, result of a change.",
+    "es": "SER = lo que algo ES: identidad, profesión, origen, cualidad estable. ESTAR = cómo está algo AHORA: estado, ánimo, lugar, resultado de un cambio.",
+    "de": "SER = was etwas IST: Identität, Beruf, Herkunft, dauerhafte Eigenschaft. ESTAR = wie etwas GERADE ist: Zustand, Stimmung, Ort, Ergebnis einer Veränderung."
+  },
+  "more": {
+    "hu": "Kivételek: 1) Egy ESEMÉNY helyszíne ser (La fiesta es aquí.), egy TÁRGY helye estar (La casa está aquí.). 2) A családi állapot általában estar (estoy casado/soltero), bár néhány vidéken ser is előfordul. 3) Néhány melléknév jelentése megváltozik: ser aburrido (unalmas) vs estar aburrido (unatkozik); ser listo (okos) vs estar listo (kész); ser rico (gazdag) vs estar rico (finom, ízletes).",
+    "en": "Exceptions: 1) An EVENT's location takes ser (La fiesta es aquí.), an OBJECT's location takes estar (La casa está aquí.). 2) Marital status usually takes estar (estoy casado/soltero), though ser appears regionally too. 3) A few adjectives change meaning with the two verbs: ser aburrido (boring) vs estar aburrido (bored); ser listo (clever) vs estar listo (ready); ser rico (rich) vs estar rico (tasty).",
+    "es": "Excepciones: 1) El lugar de un EVENTO lleva ser (La fiesta es aquí.), el de un OBJETO lleva estar (La casa está aquí.). 2) El estado civil suele llevar estar (estoy casado/soltero), aunque en algunas zonas también se usa ser. 3) Algunos adjetivos cambian de sentido: ser aburrido vs estar aburrido; ser listo vs estar listo; ser rico vs estar rico.",
+    "de": "Ausnahmen: 1) Der Ort eines EREIGNISSES steht mit ser (La fiesta es aquí.), der Ort eines OBJEKTS mit estar (La casa está aquí.). 2) Der Familienstand steht meist mit estar (estoy casado/soltero), regional aber auch mit ser. 3) Manche Adjektive ändern die Bedeutung: ser aburrido (langweilig) vs estar aburrido (gelangweilt); ser listo (klug) vs estar listo (bereit); ser rico (reich) vs estar rico (lecker)."
+  },
+  "items": [
+    {
+      "id": "se-01",
+      "sentence": "Yo ___ estudiante.",
+      "options": ["soy", "estoy"],
+      "correct": 0,
+      "why": {
+        "hu": "A foglalkozás/szerep állandó besorolás, ezért ser: yo soy estudiante.",
+        "en": "A job or role is a lasting classification, so use ser: yo soy estudiante.",
+        "es": "La profesión o el papel es una clasificación estable, por eso ser: yo soy estudiante.",
+        "de": "Ein Beruf oder eine Rolle ist eine dauerhafte Einordnung, deshalb ser: yo soy estudiante."
+      },
+      "wrong": {
+        "estoy": {
+          "hu": "Az estoy állapotot vagy helyet jelöl, a diák-lét nem pillanatnyi állapot.",
+          "en": "Estoy marks a state or a location, and being a student is not a momentary state.",
+          "es": "Estoy marca un estado o un lugar, y ser estudiante no es un estado pasajero.",
+          "de": "Estoy bezeichnet einen Zustand oder einen Ort, Student sein ist kein vorübergehender Zustand."
+        }
+      },
+      "examples": ["Mi tío es profesor.", "Somos amigos desde la escuela."]
+    },
+    {
+      "id": "se-02",
+      "sentence": "Tú ___ muy inteligente.",
+      "options": ["eres", "estás"],
+      "correct": 0,
+      "why": {
+        "hu": "Az intelligencia állandó, jellemző tulajdonság, ezért ser: tú eres.",
+        "en": "Intelligence is a lasting personal quality, so ser: tú eres.",
+        "es": "La inteligencia es una cualidad estable de la persona, por eso ser: tú eres.",
+        "de": "Intelligenz ist eine dauerhafte Eigenschaft der Person, deshalb ser: tú eres."
+      },
+      "wrong": {
+        "estás": {
+          "hu": "Az estás pillanatnyi állapotra utalna, mintha az intelligencia jönne-menne.",
+          "en": "Estás would suggest a temporary state, as if intelligence came and went.",
+          "es": "Estás sugeriría un estado pasajero, como si la inteligencia fuera y viniera.",
+          "de": "Estás würde einen vorübergehenden Zustand andeuten, als käme und ginge die Intelligenz."
+        }
+      },
+      "examples": ["Él es muy amable.", "Sois muy amables."]
+    },
+    {
+      "id": "se-03",
+      "sentence": "Ella ___ cansada hoy.",
+      "options": ["está", "es"],
+      "correct": 0,
+      "why": {
+        "hu": "A fáradtság mostani, változó állapot, ezért estar: ella está.",
+        "en": "Being tired is a current, changeable state, so estar: ella está.",
+        "es": "El cansancio es un estado actual y cambiante, por eso estar: ella está.",
+        "de": "Müdigkeit ist ein momentaner, veränderlicher Zustand, deshalb estar: ella está."
+      },
+      "wrong": {
+        "es": {
+          "hu": "Az es állandó tulajdonságot jelölne, mintha örökké fáradt lenne.",
+          "en": "Es would mark a permanent trait, as if she were tired forever.",
+          "es": "Es marcaría una cualidad permanente, como si estuviera cansada para siempre.",
+          "de": "Es würde eine dauerhafte Eigenschaft bezeichnen, als wäre sie für immer müde."
+        }
+      },
+      "examples": ["Estoy enfermo desde ayer.", "Los niños están contentos con el regalo."]
+    },
+    {
+      "id": "se-04",
+      "sentence": "Nosotros ___ de España.",
+      "options": ["somos", "estamos"],
+      "correct": 0,
+      "why": {
+        "hu": "A származás állandó tény, ezért ser: nosotros somos.",
+        "en": "Where you're from is a lasting fact, so ser: nosotros somos.",
+        "es": "El origen es un hecho estable, por eso ser: nosotros somos.",
+        "de": "Die Herkunft ist eine dauerhafte Tatsache, deshalb ser: nosotros somos."
+      },
+      "wrong": {
+        "estamos": {
+          "hu": "Az estamos a jelenlegi tartózkodási helyet jelentené, nem azt, honnan származol.",
+          "en": "Estamos would mean your current location, not where you're originally from.",
+          "es": "Estamos indicaría el lugar donde estás ahora, no de dónde eres.",
+          "de": "Estamos würde den aktuellen Aufenthaltsort bedeuten, nicht die Herkunft."
+        }
+      },
+      "examples": ["Soy de España.", "Mis abuelos son de Alemania."]
+    },
+    {
+      "id": "se-05",
+      "sentence": "La tienda ___ cerca de mi casa.",
+      "options": ["está", "es"],
+      "correct": 0,
+      "why": {
+        "hu": "Egy hely elhelyezkedése mindig estar, még akkor is, ha az a hely maga nem mozog.",
+        "en": "The location of a place always takes estar, even if that place itself never moves.",
+        "es": "La ubicación de un lugar siempre lleva estar, aunque ese lugar nunca se mueva.",
+        "de": "Der Standort eines Ortes steht immer mit estar, auch wenn sich dieser Ort nie bewegt."
+      },
+      "wrong": {
+        "es": {
+          "hu": "Az es a bolt fajtáját vagy tulajdonságát írná le, nem azt, hol van.",
+          "en": "Es would describe what kind of shop it is, not where it is.",
+          "es": "Es describiría qué tipo de tienda es, no dónde está.",
+          "de": "Es würde beschreiben, was für ein Geschäft es ist, nicht wo es liegt."
+        }
+      },
+      "examples": ["El banco está cerca del parque.", "La tienda está en la ciudad."]
+    },
+    {
+      "id": "se-06",
+      "sentence": "El café ___ caliente.",
+      "options": ["es", "está"],
+      "correct": 0,
+      "why": {
+        "hu": "Itt a kávéról mint italfajtáról van szó, ami mindig forró, ez általános tulajdonság, ezért ser.",
+        "en": "This is about coffee as a drink, which is always hot, a general property, so ser.",
+        "es": "Aquí se habla del café como bebida, que siempre es caliente, una propiedad general, por eso ser.",
+        "de": "Hier geht es um Kaffee als Getränk, das immer heiß ist, eine allgemeine Eigenschaft, deshalb ser."
+      },
+      "wrong": {
+        "está": {
+          "hu": "Az está azt jelentené, hogy EZ a konkrét csésze kávé most forró, nem a kávé mint fogalom.",
+          "en": "Está would mean THIS particular cup is hot right now, not coffee as a concept.",
+          "es": "Está significaría que ESTA taza en concreto está caliente ahora, no el café como concepto.",
+          "de": "Está würde bedeuten, dass GENAU DIESE Tasse jetzt heiß ist, nicht Kaffee als Begriff."
+        }
+      },
+      "examples": ["El hielo es frío.", "El fuego es caliente."]
+    },
+    {
+      "id": "se-07",
+      "sentence": "Este café ___ frío ahora.",
+      "options": ["está", "es"],
+      "correct": 0,
+      "why": {
+        "hu": "Itt egy KONKRÉT csésze kávéról van szó, ami kihűlt, ez változás eredménye, ezért estar.",
+        "en": "Here it's about ONE specific cup that has gone cold, the result of a change, so estar.",
+        "es": "Aquí se habla de UNA taza concreta que se ha enfriado, resultado de un cambio, por eso estar.",
+        "de": "Hier geht es um EINE bestimmte Tasse, die kalt geworden ist, Ergebnis einer Veränderung, deshalb estar."
+      },
+      "wrong": {
+        "es": {
+          "hu": "Az es azt állítaná, hogy a kávé mindig hideg, pedig csak most, ebben a csészében hűlt ki.",
+          "en": "Es would claim coffee is always cold, but it's only this cup, right now, that cooled down.",
+          "es": "Es afirmaría que el café siempre es frío, pero solo esta taza se ha enfriado ahora.",
+          "de": "Es würde behaupten, Kaffee sei immer kalt, dabei ist nur diese Tasse gerade kalt geworden."
+        }
+      },
+      "examples": ["La sopa está fría ahora.", "Mi té está frío otra vez."]
+    },
+    {
+      "id": "se-08",
+      "sentence": "___ las tres de la tarde.",
+      "options": ["Son", "Están"],
+      "correct": 0,
+      "why": {
+        "hu": "Az órát mindig ser fejezi ki, sosem estar: son las tres.",
+        "en": "Telling time always uses ser, never estar: son las tres.",
+        "es": "La hora siempre se expresa con ser, nunca con estar: son las tres.",
+        "de": "Die Uhrzeit wird immer mit ser ausgedrückt, nie mit estar: son las tres."
+      },
+      "wrong": {
+        "Están": {
+          "hu": "Az estar sosem fejez ki órát, ez egy rögzült kivétel, amit egyszerűen meg kell jegyezni.",
+          "en": "Estar never expresses time; this is a fixed exception you simply have to remember.",
+          "es": "Estar nunca expresa la hora; es una excepción fija que hay que memorizar.",
+          "de": "Estar drückt niemals die Uhrzeit aus; das ist eine feste Ausnahme, die man sich merken muss."
+        }
+      },
+      "examples": ["Es la una de la tarde.", "Son las diez de la noche."]
+    },
+    {
+      "id": "se-09",
+      "sentence": "Él ___ alto y delgado.",
+      "options": ["es", "está"],
+      "correct": 0,
+      "why": {
+        "hu": "A testalkat (magas, vékony) állandó fizikai jellemző, ezért ser.",
+        "en": "Build (tall, thin) is a lasting physical trait, so ser.",
+        "es": "La complexión (alto, delgado) es un rasgo físico estable, por eso ser.",
+        "de": "Die Statur (groß, schlank) ist ein dauerhaftes körperliches Merkmal, deshalb ser."
+      },
+      "wrong": {
+        "está": {
+          "hu": "Az está azt sugallná, hogy csak most, átmenetileg magas és vékony, ami nem így van.",
+          "en": "Está would suggest he's only tall and thin right now, temporarily, which isn't the case.",
+          "es": "Está sugeriría que solo ahora, de forma pasajera, es alto y delgado, y no es así.",
+          "de": "Está würde andeuten, er sei nur gerade vorübergehend groß und schlank, was nicht stimmt."
+        }
+      },
+      "examples": ["Mi hermana es baja y fuerte.", "Somos altos y delgados."]
+    },
+    {
+      "id": "se-10",
+      "sentence": "Hoy ___ muy feliz.",
+      "options": ["estoy", "soy"],
+      "correct": 0,
+      "why": {
+        "hu": "A hangulat múló állapot, ma boldog vagy, holnap lehet más, ezért estar.",
+        "en": "Mood is a passing state, happy today, could be different tomorrow, so estar.",
+        "es": "El ánimo es un estado pasajero, hoy feliz, mañana puede ser distinto, por eso estar.",
+        "de": "Die Stimmung ist ein vorübergehender Zustand, heute glücklich, morgen vielleicht anders, deshalb estar."
+      },
+      "wrong": {
+        "soy": {
+          "hu": "A soy azt jelentené, hogy alaptermészeted a boldogság, nem a mai hangulatod.",
+          "en": "Soy would mean happiness is your basic nature, not today's mood.",
+          "es": "Soy significaría que la felicidad es tu naturaleza, no tu estado de ánimo de hoy.",
+          "de": "Soy würde bedeuten, Glück sei dein Grundwesen, nicht deine heutige Stimmung."
+        }
+      },
+      "examples": ["Estamos nerviosos antes del examen.", "¿Estás triste?"]
+    },
+    {
+      "id": "se-11",
+      "sentence": "Mis padres ___ médicos.",
+      "options": ["son", "están"],
+      "correct": 0,
+      "why": {
+        "hu": "A foglalkozás állandó besorolás, ezért ser: son médicos.",
+        "en": "A profession is a lasting classification, so ser: son médicos.",
+        "es": "La profesión es una clasificación estable, por eso ser: son médicos.",
+        "de": "Ein Beruf ist eine dauerhafte Einordnung, deshalb ser: son médicos."
+      },
+      "wrong": {
+        "están": {
+          "hu": "Az están állapotot vagy helyet jelentene, az orvosi hivatás viszont nem az.",
+          "en": "Están would mark a state or a location, and being a doctor is neither.",
+          "es": "Están marcaría un estado o un lugar, y ser médico no es ni una cosa ni la otra.",
+          "de": "Están würde einen Zustand oder Ort bezeichnen, Arzt sein ist keines von beidem."
+        }
+      },
+      "examples": ["Mi tío es ingeniero.", "Somos profesores de español."]
+    },
+    {
+      "id": "se-12",
+      "sentence": "La fiesta ___ en mi casa esta noche.",
+      "options": ["es", "está"],
+      "correct": 0,
+      "why": {
+        "hu": "Egy ESEMÉNY helyszínét ser fejezi ki (mikor/hol TARTJÁK), nem estar, ez a leggyakoribb kivétel.",
+        "en": "Where an EVENT takes place uses ser, not estar, the most common exception to remember.",
+        "es": "El lugar donde se celebra un EVENTO se expresa con ser, no con estar, la excepción más común.",
+        "de": "Wo ein EREIGNIS stattfindet, wird mit ser ausgedrückt, nicht mit estar, die häufigste Ausnahme."
+      },
+      "wrong": {
+        "está": {
+          "hu": "Az está egy TÁRGY helyét jelölné, egy esemény helyét viszont ser fejezi ki.",
+          "en": "Está would mark the location of an OBJECT, but an event's location takes ser.",
+          "es": "Está marcaría la ubicación de un OBJETO, pero el lugar de un evento lleva ser.",
+          "de": "Está würde den Standort eines OBJEKTS bezeichnen, aber der Ort eines Ereignisses steht mit ser."
+        }
+      },
+      "examples": ["El concierto es en el parque.", "La boda es en la playa."]
+    }
+  ]
+}
