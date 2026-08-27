@@ -267,7 +267,7 @@ export const GAME_DEFS: GameDef[] = [
     },
     minPoolSize: undefined,
     hasSettings: true,
-    soon: true,
+    soon: false, // F4 (GAMES.md 8. szekció): app/games/myth.tsx
   },
 ];
 

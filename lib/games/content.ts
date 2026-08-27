@@ -287,11 +287,22 @@ export interface MythItem {
   claim: Record<string, string>;
   verdict: 'true' | 'myth';
   explanation: Record<string, string>;
-  source: { label: string; url: string };
+  // GAMES.md source-fegyelem (2026-08-27 forduló): url OPTIONAL. Csak akkor
+  // kerül bele, ha ténylegesen lekért, látott oldalra mutat; egy széles körben
+  // megalapozott, de pontosan nem hivatkozható állításnál a label a szervezetet/
+  // tudásterületet nevezi meg, url nélkül. Kitalált URL rosszabb, mint a hiánya.
+  source: { label: string; url?: string };
   gloss?: { word: string; [lang: string]: string }[];
 }
 
-const mythsByLang: Partial<Record<string, MythItem[]>> = {};
+import mythsEsCommon from '@/data/games/myths/es/common.json';
+import mythsEsBody from '@/data/games/myths/es/body.json';
+import mythsEsMexico from '@/data/games/myths/es/mexico.json';
+import mythsEsLanguage from '@/data/games/myths/es/language.json';
+
+const mythsByLang: Partial<Record<string, MythItem[]>> = {
+  es: [...mythsEsCommon, ...mythsEsBody, ...mythsEsMexico, ...mythsEsLanguage] as MythItem[],
+};
 
 export function getMyths(lang: string): MythItem[] {
   return mythsByLang[lang] ?? [];

@@ -15,19 +15,24 @@
  * P1 (build-blocking, GAMES.md 9. szekció "0 P1"):
  *   - a target-language content word that is neither taught nor glossed
  *   - a Record<lang,string> field (title/rule/more/why/wrong/gloss/hint/
- *     mnemonic) missing one of the 4 active languages (hu/en/es/de), or with
- *     an empty string for one
+ *     mnemonic/explanation) missing one of the 4 active languages
+ *     (hu/en/es/de), or with an empty string for one
  *   - a grammar item whose `correct` index is out of range, or whose
  *     `sentence` has no "___" blank
  *   - a grammar item missing a `wrong[...]` explanation for one of its
  *     non-correct options
  *   - a confusables drill whose `correct` is not one of the set's own
  *     `members[].word`, or a 'gap'/'listening' drill with no `sentence`
+ *   - a myth item missing an id/level/track/claim/verdict, or a `source`
+ *     with no `label` (GAMES.md 4.13 forrás-fegyelem: `label` is required,
+ *     `url` is intentionally OPTIONAL, an absent url is never a P1, a
+ *     fabricated url would be far worse than none, see content.ts's MythItem)
  *
  * P2 (reported, not build-blocking):
- *   - a sentence/example longer than 12 words at level A1 or above
+ *   - a sentence/example/claim longer than 12 words at level A1 or above
  *   - a duplicate item id (grammar items within one topic; confusables set
- *     ids across the whole `confusables/<lang>/` directory)
+ *     ids across the whole `confusables/<lang>/` directory; myth item ids
+ *     across the whole `myths/<lang>/` directory)
  *
  * Run: node scripts/audit-games.mjs
  * Exit 1 if any P1 is found (the F3 kapu, GAMES.md 9. szekció).
@@ -327,6 +332,55 @@ function auditConfusablesSet(set, filePath, seenSetIds) {
 }
 
 // ---------------------------------------------------------------------------
+// myth (data/games/myths/<lang>/<track>.json), GAMES.md 4.13
+// ---------------------------------------------------------------------------
+
+const MYTH_TRACKS = new Set(['common', 'body', 'mexico', 'language']);
+const MYTH_VERDICTS = new Set(['true', 'myth']);
+
+function auditMythItem(item, filePath, seenIds) {
+  const path = `myths/${filePath}#${item.id ?? '?'}`;
+  if (!item.id) p1.push({ path, issue: 'missing item id' });
+  if (seenIds.has(item.id)) p2.push({ path, issue: `duplicate myth item id "${item.id}"` });
+  seenIds.add(item.id);
+  if (!LEVELS.includes(item.level)) p1.push({ path, issue: `missing/unknown level: ${item.level}` });
+  if (!MYTH_TRACKS.has(item.track)) p1.push({ path, issue: `missing/unknown track: ${item.track}` });
+  if (!MYTH_VERDICTS.has(item.verdict)) p1.push({ path, issue: `missing/unknown verdict: ${item.verdict}` });
+  if (!item.source?.label) p1.push({ path, issue: 'source missing a label (url stays optional, never fabricate one)' });
+
+  const claimText = Object.values(item.claim ?? {}).join(' ');
+  if (!claimText.trim()) {
+    p1.push({ path, issue: 'missing claim text' });
+    return;
+  }
+  checkLangs(item.explanation, `${path} explanation`);
+
+  const taughtSet = cumulativeTaught(item.level ?? 'C1');
+  const extra = glossaryTokenSet(item.gloss);
+  for (const tok of tokenize(claimText)) {
+    if (!tokenKnown(tok, taughtSet, extra)) {
+      p1.push({ path, issue: `untaught/unglossed Spanish word: "${tok}"` });
+    }
+  }
+  checkLength(claimText, item.level, path);
+}
+
+function runMyths() {
+  const base = join(ROOT, 'data/games/myths');
+  if (!existsSync(base)) return;
+  const seenIds = new Set();
+  for (const lang of readdirSync(base)) {
+    const dir = join(base, lang);
+    for (const file of jsonFilesIn(dir)) {
+      const items = JSON.parse(readFileSync(join(dir, file), 'utf8'));
+      for (const item of Array.isArray(items) ? items : [items]) {
+        auditMythItem(item, `${lang}/${file}`, seenIds);
+      }
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Directory walkers
 // ---------------------------------------------------------------------------
 
@@ -362,6 +416,7 @@ function runConfusables() {
 
 runGrammar();
 runConfusables();
+runMyths();
 
 // ---------------------------------------------------------------------------
 // Report

@@ -1,0 +1,536 @@
+[
+  {
+    "id": "muralla-china",
+    "level": "A2",
+    "track": "common",
+    "claim": {
+      "es": "La Gran Muralla China se ve desde la Luna."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "Nem látszik. Szabad szemmel a Holdról egyetlen emberi építmény sem látható: a fal ugyan nagyon hosszú, de csak néhány méter széles.",
+      "en": "It doesn't. No human structure is visible from the Moon with the naked eye: the wall is very long, but only a few meters wide.",
+      "es": "No se ve. Ninguna construcción humana se ve desde la Luna a simple vista: el muro es muy largo, pero muy estrecho.",
+      "de": "Das stimmt nicht. Kein menschliches Bauwerk ist vom Mond aus mit bloßem Auge sichtbar: Die Mauer ist zwar sehr lang, aber nur wenige Meter breit."
+    },
+    "source": {
+      "label": "NASA Earth Observatory"
+    },
+    "gloss": [
+      {
+        "word": "muralla",
+        "hu": "fal, várfal",
+        "en": "wall",
+        "de": "Mauer"
+      },
+      {
+        "word": "china",
+        "hu": "kínai",
+        "en": "Chinese",
+        "de": "chinesisch"
+      },
+      {
+        "word": "gran",
+        "hu": "nagy",
+        "en": "great",
+        "de": "groß"
+      },
+      {
+        "word": "ve",
+        "hu": "lát",
+        "en": "sees",
+        "de": "sieht"
+      }
+    ]
+  },
+  {
+    "id": "napoleon-bajo",
+    "level": "A2",
+    "track": "common",
+    "claim": {
+      "es": "Napoleón era un hombre muy bajo."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "Napóleon a korabeli francia átlagnak megfelelő, kb. 168 cm magas volt. A tévhit egy régi mérésegység-váltásból (francia hüvelyk vs. angol hüvelyk) és brit propaganda-karikatúrákból ered.",
+      "en": "Napoleon was about 168 cm tall, roughly average for a Frenchman of his time. The myth comes from an old unit mix-up (French inches vs. English inches) plus British propaganda cartoons.",
+      "es": "Napoleón medía unos 168 cm, la altura media de un francés de su época. El mito viene de una confusión de unidades antiguas y de caricaturas de propaganda británica.",
+      "de": "Napoleon war etwa 168 cm groß, für einen Franzosen seiner Zeit durchschnittlich. Der Mythos stammt aus einer alten Maßeinheiten-Verwechslung und britischer Propaganda."
+    },
+    "source": {
+      "label": "Historia (consenso de historiadores)"
+    },
+    "gloss": [
+      {
+        "word": "napoleón",
+        "hu": "Napóleon",
+        "en": "Napoleon",
+        "de": "Napoleon"
+      },
+      {
+        "word": "era",
+        "hu": "volt",
+        "en": "was",
+        "de": "war"
+      }
+    ]
+  },
+  {
+    "id": "toros-rojo",
+    "level": "A2",
+    "track": "common",
+    "claim": {
+      "es": "Los toros se enfadan cuando ven el color rojo."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "A bikák színvakok a piros-zöld tartományban, tehát a piros színt nem is látják úgy, mint mi. A kendő MOZGÁSÁRA reagálnak dühösen, nem a színére.",
+      "en": "Bulls are red-green colorblind, so they don't see red the way we do. They react to the CAPE'S MOVEMENT, not its color.",
+      "es": "Los toros no distinguen bien el rojo del verde, así que no ven el rojo como nosotros. Reaccionan al MOVIMIENTO de la capa, no a su color.",
+      "de": "Stiere sind rot-grün-farbenblind und sehen Rot daher nicht wie wir. Sie reagieren auf die BEWEGUNG des Umhangs, nicht auf seine Farbe."
+    },
+    "source": {
+      "label": "Zoología (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "toros",
+        "hu": "bikák",
+        "en": "bulls",
+        "de": "Stiere"
+      },
+      {
+        "word": "enfadan",
+        "hu": "megharagszanak",
+        "en": "get angry",
+        "de": "ärgern sich"
+      },
+      {
+        "word": "ven",
+        "hu": "látnak",
+        "en": "they see",
+        "de": "sehen"
+      }
+    ]
+  },
+  {
+    "id": "diez-por-ciento-cerebro",
+    "level": "A2",
+    "track": "common",
+    "claim": {
+      "es": "Las personas usan solo el diez por ciento del cerebro."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "Az agyi képalkotó vizsgálatok (MRI) szerint a nap folyamán az agy szinte minden területe aktív. A 'csak 10%' ötlet egy régi, tudományosan meg nem alapozott mondás, amit filmek terjesztettek tovább.",
+      "en": "Brain scans (MRI) show that nearly all brain areas are active over the course of a day. The '10%' idea is an old, unfounded saying that movies helped spread.",
+      "es": "Los estudios con resonancia magnética muestran que casi todo el cerebro está activo a lo largo del día. La idea del \"diez por ciento\" es un dicho antiguo sin base científica que las películas hicieron popular.",
+      "de": "MRT-Untersuchungen zeigen, dass im Laufe eines Tages fast das gesamte Gehirn aktiv ist. Die Idee der '10 Prozent' ist eine alte, wissenschaftlich unbegründete Redewendung, die durch Filme verbreitet wurde."
+    },
+    "source": {
+      "label": "Neurociencia (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "cerebro",
+        "hu": "agy",
+        "en": "brain",
+        "de": "Gehirn"
+      },
+      {
+        "word": "usan",
+        "hu": "használnak",
+        "en": "they use",
+        "de": "benutzen"
+      }
+    ]
+  },
+  {
+    "id": "vidrio-liquido",
+    "level": "A2",
+    "track": "common",
+    "claim": {
+      "es": "El vidrio de las ventanas antiguas es un líquido muy lento."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "A régi ablaküvegek alul vastagabbak, mert a régi gyártási módszer nem tudott tökéletesen egyenletes üveget készíteni, nem azért, mert az üveg emberi léptékben 'folyik'. A fizika szerint az üveg szilárd anyag.",
+      "en": "Old window panes are thicker at the bottom because the old manufacturing method couldn't make perfectly even glass, not because glass 'flows' on a human timescale. Physics classifies glass as a solid.",
+      "es": "Los vidrios antiguos son más gruesos abajo porque el proceso de fabricación antiguo no lograba un vidrio perfectamente uniforme, no porque el vidrio \"fluya\" a escala humana. La física clasifica el vidrio como un sólido.",
+      "de": "Alte Fensterscheiben sind unten dicker, weil die alte Herstellungsmethode kein perfekt gleichmäßiges Glas erzeugen konnte, nicht weil Glas in menschlichen Zeiträumen 'fließt'. Physikalisch gilt Glas als Feststoff."
+    },
+    "source": {
+      "label": "Física (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "vidrio",
+        "hu": "üveg",
+        "en": "glass",
+        "de": "Glas"
+      },
+      {
+        "word": "ventanas",
+        "hu": "ablakok",
+        "en": "windows",
+        "de": "Fenster"
+      },
+      {
+        "word": "líquido",
+        "hu": "folyékony",
+        "en": "liquid",
+        "de": "flüssig"
+      }
+    ]
+  },
+  {
+    "id": "einstein-matematicas",
+    "level": "A2",
+    "track": "common",
+    "claim": {
+      "es": "Einstein reprobó matemáticas en la escuela."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "Einstein iskolai bizonyítványai fennmaradtak: matematikából és fizikából kiváló volt már gyerekként is. A tévhit egy félreértett, régi svájci osztályzási skálából eredhet.",
+      "en": "Einstein's school records survive: he was excellent at math and physics even as a child. The myth may come from a misread, old Swiss grading scale.",
+      "es": "Se conservan las notas escolares de Einstein: fue excelente en matemáticas y física desde niño. El mito puede venir de una escala de calificación suiza antigua mal interpretada.",
+      "de": "Einsteins Schulzeugnisse sind erhalten: Er war schon als Kind hervorragend in Mathematik und Physik. Der Mythos könnte von einer missverstandenen alten Schweizer Notenskala stammen."
+    },
+    "source": {
+      "label": "Historia de la ciencia"
+    },
+    "gloss": [
+      {
+        "word": "einstein",
+        "hu": "Einstein",
+        "en": "Einstein",
+        "de": "Einstein"
+      },
+      {
+        "word": "reprobó",
+        "hu": "megbukott",
+        "en": "failed",
+        "de": "durchgefallen"
+      },
+      {
+        "word": "matemáticas",
+        "hu": "matematika",
+        "en": "mathematics",
+        "de": "Mathematik"
+      }
+    ]
+  },
+  {
+    "id": "peces-memoria",
+    "level": "A2",
+    "track": "common",
+    "claim": {
+      "es": "Los peces dorados solo recuerdan las cosas durante tres segundos."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "Kísérletek szerint az aranyhalak hónapokig emlékeznek dolgokra: megtanulják az etetés idejét, sőt egyszerű feladatokat is. A '3 másodperces memória' csak egy elterjedt, hamis közhely.",
+      "en": "Studies show goldfish remember things for months: they learn feeding times and even simple tasks. The '3-second memory' is just a widespread false claim.",
+      "es": "Los estudios muestran que los peces dorados recuerdan cosas durante meses: aprenden la hora de la comida e incluso tareas simples. La \"memoria de tres segundos\" es solo un dicho falso muy extendido.",
+      "de": "Studien zeigen, dass sich Goldfische monatelang an Dinge erinnern: Sie lernen Fütterungszeiten und sogar einfache Aufgaben. Das 'Drei-Sekunden-Gedächtnis' ist nur eine weit verbreitete falsche Behauptung."
+    },
+    "source": {
+      "label": "Biología animal (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "peces",
+        "hu": "halak",
+        "en": "fish",
+        "de": "Fische"
+      },
+      {
+        "word": "dorados",
+        "hu": "arany-",
+        "en": "gold",
+        "de": "Gold-"
+      }
+    ]
+  },
+  {
+    "id": "rayos-mismo-lugar",
+    "level": "A2",
+    "track": "common",
+    "claim": {
+      "es": "Un rayo nunca cae dos veces en el mismo lugar."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "A villámok gyakran csapnak ugyanabba a helybe, főleg magas épületekbe. Az Empire State Buildingbe évente sokszor belecsap a villám.",
+      "en": "Lightning often strikes the same place more than once, especially tall buildings. The Empire State Building gets hit many times a year.",
+      "es": "Los rayos caen a menudo en el mismo lugar, sobre todo en edificios altos. El Empire State Building recibe muchos rayos cada año.",
+      "de": "Blitze schlagen oft mehrmals am selben Ort ein, besonders bei hohen Gebäuden. Das Empire State Building wird jedes Jahr viele Male getroffen."
+    },
+    "source": {
+      "label": "Meteorología (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "rayo",
+        "hu": "villám",
+        "en": "lightning bolt",
+        "de": "Blitz"
+      },
+      {
+        "word": "cae",
+        "hu": "esik",
+        "en": "falls",
+        "de": "fällt"
+      }
+    ]
+  },
+  {
+    "id": "zanahorias-vision-nocturna",
+    "level": "A2",
+    "track": "common",
+    "claim": {
+      "es": "Comer muchas zanahorias da visión nocturna especial."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "A sárgarépa A-vitaminban gazdag, ami jó a szemnek, de nem ad éjszakai szuperlátást. A tévhit a II. világháborús brit propagandából ered, ami a radar használatát akarta titokban tartani.",
+      "en": "Carrots are rich in vitamin A, which is good for the eyes, but they don't give super night vision. The myth comes from WWII British propaganda meant to hide the use of radar.",
+      "es": "La zanahoria tiene mucha vitamina A, buena para los ojos, pero no da visión nocturna especial. El mito viene de propaganda británica de la Segunda Guerra Mundial para ocultar el uso del radar.",
+      "de": "Karotten sind reich an Vitamin A, das gut für die Augen ist, geben aber keine besondere Nachtsicht. Der Mythos stammt aus britischer Propaganda im Zweiten Weltkrieg, um den Einsatz von Radar zu verbergen."
+    },
+    "source": {
+      "label": "Historia / nutrición (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "zanahorias",
+        "hu": "sárgarépák",
+        "en": "carrots",
+        "de": "Karotten"
+      },
+      {
+        "word": "nocturna",
+        "hu": "éjszakai",
+        "en": "nocturnal",
+        "de": "nächtlich"
+      },
+      {
+        "word": "da",
+        "hu": "ad",
+        "en": "gives",
+        "de": "gibt"
+      },
+      {
+        "word": "visión",
+        "hu": "látás",
+        "en": "vision",
+        "de": "Sicht"
+      }
+    ]
+  },
+  {
+    "id": "camaleones-camuflaje",
+    "level": "A2",
+    "track": "common",
+    "claim": {
+      "es": "Los camaleones cambian de color solo para esconderse."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "A kaméleonok elsősorban hőmérséklet-szabályozás és kommunikáció (hangulat, párzási jelzés) miatt váltanak színt, nem elrejtőzés céljából. A rejtőzködésük inkább a testformájukból adódik.",
+      "en": "Chameleons mainly change color to regulate temperature and to communicate mood or mating signals, not to hide. Their camouflage comes more from body shape.",
+      "es": "Los camaleones cambian de color sobre todo para regular la temperatura y comunicar su estado de ánimo, no para esconderse. Su camuflaje viene más de la forma de su cuerpo.",
+      "de": "Chamäleons wechseln vor allem zur Temperaturregulierung und um Stimmung oder Paarungssignale zu kommunizieren die Farbe, nicht um sich zu verstecken. Ihre Tarnung kommt eher von ihrer Körperform."
+    },
+    "source": {
+      "label": "Biología animal (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "camaleones",
+        "hu": "kaméleonok",
+        "en": "chameleons",
+        "de": "Chamäleons"
+      },
+      {
+        "word": "esconderse",
+        "hu": "elbújni",
+        "en": "to hide",
+        "de": "sich verstecken"
+      }
+    ]
+  },
+  {
+    "id": "cerebro-izquierdo-derecho",
+    "level": "A2",
+    "track": "common",
+    "claim": {
+      "es": "Las personas creativas usan más el lado derecho del cerebro."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "Az agyi képalkotás szerint kreatív és logikus feladatoknál egyaránt mindkét agyfélteke aktívan dolgozik együtt. A 'jobb agyféltekés/bal agyféltekés személyiség' ötletet a tudomány nem támasztja alá.",
+      "en": "Brain imaging shows both hemispheres work together, actively, on both creative and logical tasks. The 'right-brain/left-brain personality' idea isn't supported by science.",
+      "es": "Los estudios de imagen cerebral muestran que ambos hemisferios trabajan juntos, tanto en tareas creativas como lógicas. La idea de una \"personalidad de cerebro derecho o izquierdo\" no tiene apoyo científico.",
+      "de": "Bildgebende Verfahren zeigen, dass beide Gehirnhälften sowohl bei kreativen als auch bei logischen Aufgaben zusammenarbeiten. Die Idee einer 'rechts- oder linkshirnigen Persönlichkeit' ist wissenschaftlich nicht belegt."
+    },
+    "source": {
+      "label": "Neurociencia (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "creativas",
+        "hu": "kreatívak",
+        "en": "creative",
+        "de": "kreativ"
+      },
+      {
+        "word": "usan",
+        "hu": "használnak",
+        "en": "they use",
+        "de": "benutzen"
+      }
+    ]
+  },
+  {
+    "id": "chicle-siete-anos",
+    "level": "A2",
+    "track": "common",
+    "claim": {
+      "es": "Si tragas un chicle, se queda en el estómago siete años."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "A rágógumit a szervezet ugyan nem tudja megemészteni, de az szinte változatlan formában, néhány nap alatt áthalad az emésztőrendszeren, akárcsak más meg nem emésztett anyagok.",
+      "en": "The body can't digest gum, but it passes through the digestive system almost unchanged in a matter of days, like other undigested material.",
+      "es": "El cuerpo no puede digerir el chicle, pero pasa por el sistema digestivo casi sin cambios en unos pocos días, como otros materiales no digeribles.",
+      "de": "Der Körper kann Kaugummi zwar nicht verdauen, aber er wandert innerhalb weniger Tage fast unverändert durch den Verdauungstrakt, wie andere unverdauliche Stoffe."
+    },
+    "source": {
+      "label": "Medicina (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "chicle",
+        "hu": "rágógumi",
+        "en": "chewing gum",
+        "de": "Kaugummi"
+      },
+      {
+        "word": "tragas",
+        "hu": "lenyeled",
+        "en": "you swallow",
+        "de": "du schluckst"
+      }
+    ]
+  },
+  {
+    "id": "everest-mas-alta",
+    "level": "A1",
+    "track": "common",
+    "claim": {
+      "es": "El Everest es la montaña más alta sobre el nivel del mar."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "A Mount Everest a Föld legmagasabb hegye a tengerszint felett mérve, kb. 8849 méter. (A Föld középpontjától mérve más csúcs, a Chimborazo van legmesszebb, de ezt a tengerszint feletti magasságra nem mondják.)",
+      "en": "Mount Everest is Earth's highest mountain measured above sea level, about 8,849 meters. (Measured from Earth's center, a different peak, Chimborazo, is farthest away, but that's not the same as height above sea level.)",
+      "es": "El Everest es la montaña más alta de la Tierra medida sobre el nivel del mar, unos 8849 metros. (Medido desde el centro de la Tierra, otro pico, el Chimborazo, está más lejos, pero eso no es lo mismo que la altura sobre el nivel del mar.)",
+      "de": "Der Mount Everest ist mit etwa 8849 Metern der höchste Berg der Erde, gemessen über dem Meeresspiegel. (Vom Erdmittelpunkt aus gemessen liegt ein anderer Gipfel, der Chimborazo, weiter entfernt, das ist aber nicht dasselbe wie die Höhe über dem Meeresspiegel.)"
+    },
+    "source": {
+      "label": "Geografía (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "everest",
+        "hu": "Everest",
+        "en": "Everest",
+        "de": "Everest"
+      },
+      {
+        "word": "nivel",
+        "hu": "szint",
+        "en": "level",
+        "de": "Niveau"
+      }
+    ]
+  },
+  {
+    "id": "napoleon-waterloo",
+    "level": "A1",
+    "track": "common",
+    "claim": {
+      "es": "Napoleón perdió la batalla de Waterloo."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen. 1815-ben Napóleon vereséget szenvedett a waterlooi csatában a brit és porosz csapatoktól, ez véget vetett az uralmának.",
+      "en": "Yes. In 1815, Napoleon was defeated at the Battle of Waterloo by British and Prussian forces, ending his rule.",
+      "es": "Sí. En 1815, Napoleón fue derrotado en la batalla de Waterloo por las fuerzas británicas y prusianas, y así terminó su gobierno.",
+      "de": "Ja. 1815 wurde Napoleon in der Schlacht bei Waterloo von britischen und preußischen Truppen besiegt, was seine Herrschaft beendete."
+    },
+    "source": {
+      "label": "Historia (consenso de historiadores)"
+    },
+    "gloss": [
+      {
+        "word": "batalla",
+        "hu": "csata",
+        "en": "battle",
+        "de": "Schlacht"
+      },
+      {
+        "word": "waterloo",
+        "hu": "Waterloo",
+        "en": "Waterloo",
+        "de": "Waterloo"
+      },
+      {
+        "word": "napoleón",
+        "hu": "Napóleon",
+        "en": "Napoleon",
+        "de": "Napoleon"
+      },
+      {
+        "word": "perdió",
+        "hu": "vesztett",
+        "en": "lost",
+        "de": "verlor"
+      }
+    ]
+  },
+  {
+    "id": "bostezo-contagioso",
+    "level": "A1",
+    "track": "common",
+    "claim": {
+      "es": "Bostezar es contagioso entre las personas."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, ez jól dokumentált jelenség: ha valaki ásít a közelünkben, sokkal nagyobb eséllyel ásítunk mi is. A pontos okát még kutatják (talán az empátiával függ össze).",
+      "en": "Yes, this is a well-documented phenomenon: seeing someone yawn nearby makes us much more likely to yawn too. The exact cause is still being studied (it may be linked to empathy).",
+      "es": "Sí, es un fenómeno bien documentado: si alguien cerca de nosotros bosteza, es mucho más probable que nosotros también bostecemos. La causa exacta todavía se estudia (puede estar relacionada con la empatía).",
+      "de": "Ja, das ist ein gut dokumentiertes Phänomen: Wenn jemand in unserer Nähe gähnt, gähnen wir mit viel höherer Wahrscheinlichkeit auch. Die genaue Ursache wird noch erforscht (sie könnte mit Empathie zusammenhängen)."
+    },
+    "source": {
+      "label": "Psicología (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "bostezar",
+        "hu": "ásítani",
+        "en": "to yawn",
+        "de": "gähnen"
+      },
+      {
+        "word": "contagioso",
+        "hu": "ragályos",
+        "en": "contagious",
+        "de": "ansteckend"
+      }
+    ]
+  }
+]
