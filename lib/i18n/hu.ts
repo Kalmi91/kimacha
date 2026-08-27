@@ -133,6 +133,21 @@ export default {
       genderM: 'hímnemű szavak',
       genderF: 'nőnemű szavak',
     },
+    // shared, F3 (grammar-choice 4.11 + confusables 4.12).
+    understood: 'Értem',
+    moreLabel: 'Több',
+    ruleButton: 'Szabály',
+    correctFeedback: 'Helyes!',
+    wrongFeedback: 'Majdnem!',
+    summaryTitle: 'Kész!',
+    summaryScore: (correct: number, total: number) => `${correct} / ${total} helyes`,
+    // F3 (grammar-choice, GAMES.md 4.11).
+    grammarChoice: {
+      pickTopic: 'Válassz témát',
+      topicItemCount: (n: number) => `${n} kérdés`,
+      comingSoon: 'Ehhez a nyelvhez még nincs nyelvtani tartalom.',
+      progress: (current: number, total: number) => `${current} / ${total}`,
+    },
   },
   active: {
     title: 'Aktív mód',

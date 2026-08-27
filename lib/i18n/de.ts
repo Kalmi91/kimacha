@@ -127,6 +127,21 @@ export default {
       genderM: 'männliche Wörter',
       genderF: 'weibliche Wörter',
     },
+    // shared, F3 (grammar-choice 4.11 + confusables 4.12).
+    understood: 'Verstanden',
+    moreLabel: 'Mehr',
+    ruleButton: 'Regel',
+    correctFeedback: 'Richtig!',
+    wrongFeedback: 'Fast!',
+    summaryTitle: 'Fertig!',
+    summaryScore: (correct: number, total: number) => `${correct} / ${total} richtig`,
+    // F3 (grammar-choice, GAMES.md 4.11).
+    grammarChoice: {
+      pickTopic: 'Wähle ein Thema',
+      topicItemCount: (n: number) => `${n} Fragen`,
+      comingSoon: 'Für diese Sprache gibt es noch keinen Grammatik-Inhalt.',
+      progress: (current: number, total: number) => `${current} / ${total}`,
+    },
   },
   active: {
     title: 'Aktiver Modus',

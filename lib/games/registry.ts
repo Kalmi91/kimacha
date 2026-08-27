@@ -236,7 +236,7 @@ export const GAME_DEFS: GameDef[] = [
       de: 'Wähle den richtigen Satz und verstehe, warum.',
     },
     hasSettings: false,
-    soon: true,
+    soon: false, // F3 (GAMES.md 8. szekció): app/games/grammar-choice.tsx
   },
   {
     id: 'confusables',
