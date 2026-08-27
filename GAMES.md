@@ -1432,7 +1432,7 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 | F2 | `bubble-pop` | ✅ KÉSZ | `aab85f5` |
 | F3 | `grammar-choice` | ✅ KÉSZ (motor + 3 téma: ser-estar, articulos-genero, por-para; a többi 56 = Q1-Q5, token-burn) | `7b613b2` (motor) / `cbe7a59` (tartalom) |
 | F3 | `confusables` | ✅ KÉSZ (24 csoport: 8 alaki + 9 kétféle „ugyanaz" + 7 mexikói) | `63bdfaf` |
-| F4 | `myth` | ✅ KÉSZ (4 sáv × 15 item = 60, mind forrásolt label-lel, url nélkül ahol nem lekért) | `7380f2a` |
+| F4 | `myth` | ✅ KÉSZ (4 sáv × 15 item = 60, mind forrásolt label-lel, url nélkül ahol nem lekért) | `6b57c66` |
 | F4 | `story` | 🟨 SPEC-KÉSZ | |
 | F4 | `chat` | 🟨 SPEC-KÉSZ | |
 | F5 | `odd-one-out` | 🟨 SPEC-KÉSZ | |
