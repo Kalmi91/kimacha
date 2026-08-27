@@ -529,6 +529,62 @@ szállítási kapu minden játék-itemre.
 >   paradigma-map). Jövőbeli story-tartalomnak érdemes ugyanezt a mintát
 >   követnie.
 
+> **MEGVALÓSÍTÁSI JEGYZET (F4, chat, 2026-08-27):**
+> - **A `nodes` gráf beállítás-független, az ágazást a `requires` dönti el,
+>   nem külön node-részfák.** A 4.6 illusztratív JSON `next`-láncai semmit nem
+>   kötnek a setup-válaszhoz, ezért a `ChatNodeOption` kapott egy opcionális
+>   `requires?: Record<string,string>` mezőt (`lib/games/content.ts`): egy
+>   opció csak akkor jelenik meg, ha minden `requires` bejegyzése egyezik a
+>   felvett setup-válaszokkal. A `nodes[0]` MINDIG a belépési pont (az NPC
+>   első sora mindenkinek ugyanaz), csak a felkínált KÉRDÉSEK térnek el.
+>   Ez elkerüli, hogy a tartalom-szerzőnek teljes párhuzamos részfákat
+>   kelljen írnia minden setup-kombinációra, és a `lib/games/chat.ts`
+>   `availableOptions(node, context)` tiszta függvénye teszteli.
+> - **`ChatNodeOption.next` opcionális.** Hiánya zárja a beszélgetést azon a
+>   ponton (K14: a rossz válasz nem büntet, csak korábban véget érő, kevesebb
+>   checklist-pontos ághoz vezet). A screen (`app/games/chat.tsx`)
+>   `pickOption`-je ezt (és a védekező esetet, amikor a következő node
+>   `availableOptions`-e üresre szűrne) egyaránt beszélgetés-zárásnak veszi.
+> - **`pickEnding(chat, checklistCount)`** (`lib/games/chat.ts`) a
+>   `chat.endings`-et SZERZŐI SORRENDBEN olvassa, az első illeszkedő
+>   `if`-feltételt választja (tehát a legjobb végkifejletet írd előre,
+>   `checklist>=6` a `checklist>=3` elé), `"default"`-ra vagy az utolsó
+>   authored endingre esik vissza. `if` formátum: `checklist(>=|<=|>|<|==)N`
+>   vagy `"default"`, az `audit-games.mjs` ezt regex-szel ellenőrzi (P1, ha
+>   se nem ez, se nem az).
+> - **`ChatData` kapott egy topic-szintű `glossary?`-t**, pontosan a
+>   grammar-choice/confusables mintája szerint, mert egy valódi tanácsadó
+>   beszélgetés szakszókincse (kilometraje, óxido, revisión independiente,
+>   depósito, compensación, CURP…) rendszeresen túlnő az A2 kumulált
+>   korpuszon, és a szó a beszélgetés SOK pontján visszatér, nem csak egy
+>   node-ban (mint a story `newWords`-nél, ez is teljes-fájl hatókörű az
+>   `audit-games.mjs`-ben, nem node-onkénti).
+> - **`ChatChecklistItem.source.url` OPCIONÁLIS lett** (a JEGYZET-tervezet
+>   eredetileg kötelezőnek írta), pontosan a myth `MythItem.source` mintáját
+>   követve: `label` kötelező, `url` csak akkor, ha ténylegesen lekért és
+>   látott oldalra mutat. Az 5 induló téma checklistjei WHO/HBR/Consumer
+>   Reports/Edmunds/BBVA México/CONDUSEF-forrásra épülnek (a car-buying,
+>   étrend és WhatsApp-csalás témák több pontja valódi, WebSearch-el
+>   ellenőrzött URL-lel, a többi (általános, jól ismert, de pontosan nem
+>   idézhető tanács) csak szervezet-névvel, url nélkül).
+> - **`scripts/audit-games.mjs` numerikus token-allowance**: egy puszta
+>   számjegy-token (opcionális `%`-jellel, pl. `400`, `10%`) mindig ismertnek
+>   számít `tokenKnown()`-ban, mert egy szám nem "spanyol szókincs", ez a
+>   myth/chat valós adatokra (WHO-számok, %-ok) épülő tartalma miatt kellett,
+>   és minden jövőbeli tény-alapú content-fajtának is jár.
+> - **A `whatsapp-sospechoso` témának NINCS setup kérdése** (K13/spec:
+>   „nincs [állapot-változó], egyenes ág"), `setup: []`, a screen ezt
+>   felismeri és rögtön a beszélgetésre lép, setup-képernyő nélkül.
+> - **„Checklist megtekintése" a témalistán** (GAMES.md 4.6 „Ez a kártya
+>   elmenthető és bármikor visszanézhető a témalistából" mondata): egy
+>   befejezett témánál a `game_progress.data_json` megőrzi az elért
+>   checklist-id-kat és a végkifejlet id-jét, a témalista ezekből tudja
+>   újra megrajzolni a záró-képernyőt friss beszélgetés indítása nélkül.
+> - **Nincs `card_attempts` naplózás** (mint grammar-choice-nál/confusables-
+>   nél): a chat-opciók nem szótári szavak, nincs természetes `wordId`. A
+>   haladás `game_progress`/`game_scores`-ba megy, a `cards` tábla érintetlen
+>   (K3).
+
 ---
 
 ## 4. Játék-specifikációk
@@ -1480,7 +1536,7 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 | F3 | `confusables` | ✅ KÉSZ (24 csoport: 8 alaki + 9 kétféle „ugyanaz" + 7 mexikói) | `63bdfaf` |
 | F4 | `myth` | ✅ KÉSZ (4 sáv × 15 item = 60, mind forrásolt label-lel, url nélkül ahol nem lekért) | `6b57c66` |
 | F4 | `story` | ✅ KÉSZ (motor + 6 sztori, 2×3 sáv) | `f5daf38` |
-| F4 | `chat` | 🟨 SPEC-KÉSZ | |
+| F4 | `chat` | ✅ KÉSZ (motor + 5 téma, mind forrásolt) | *(lásd a következő docs-commit)* |
 | F5 | `odd-one-out` | 🟨 SPEC-KÉSZ | |
 | F5 | `conjugation-slot` | 🟨 SPEC-KÉSZ (csak ES) | |
 | F5 | `ccat` | 🟨 SPEC-KÉSZ (térbeli nélkül) | |

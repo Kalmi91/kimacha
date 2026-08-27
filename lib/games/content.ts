@@ -132,11 +132,14 @@ export interface ChatNode {
   options: ChatNodeOption[];
 }
 
+// GAMES.md source-fegyelem (2026-08-27 forduló, chat): `url` OPTIONAL, ugyanaz
+// a szabály, mint a myth MythItem.source-nál (content.ts fentebb): csak akkor
+// kerül bele, ha ténylegesen lekért, látott oldalra mutat.
 export interface ChatChecklistItem {
   id: string;
   why: Record<string, string>;
-  source: { label: string; url: string };
-  [lang: string]: string | Record<string, string> | { label: string; url: string } | undefined;
+  source: { label: string; url?: string };
+  [lang: string]: string | Record<string, string> | { label: string; url?: string } | undefined;
 }
 
 export interface ChatEnding {
@@ -153,9 +156,26 @@ export interface ChatData {
   nodes: ChatNode[];
   checklist: ChatChecklistItem[];
   endings: ChatEnding[];
+  // Same escape hatch as grammar-choice's/confusables' `glossary`: a chat's
+  // professional vocabulary (kilometraje, óxido, revisión…) routinely runs
+  // ahead of the level's general corpus, this is topic-wide (every node,
+  // option, and checklist phrasing), not per-node, because the same domain
+  // word recurs across the whole conversation.
+  glossary?: { word: string; gloss: Record<string, string> }[];
 }
 
-const chatsByLang: Partial<Record<string, ChatData[]>> = {};
+import chatEsCocheUsado from '@/data/games/chats/es/coche-usado.json';
+import chatEsAlquilerCdmx from '@/data/games/chats/es/alquiler-cdmx.json';
+import chatEsAlimentacionSaludable from '@/data/games/chats/es/alimentacion-saludable.json';
+import chatEsConsejoCarrera from '@/data/games/chats/es/consejo-carrera.json';
+import chatEsWhatsappSospechoso from '@/data/games/chats/es/whatsapp-sospechoso.json';
+
+const chatsByLang: Partial<Record<string, ChatData[]>> = {
+  es: [
+    chatEsCocheUsado, chatEsAlquilerCdmx, chatEsAlimentacionSaludable,
+    chatEsConsejoCarrera, chatEsWhatsappSospechoso,
+  ] as unknown as ChatData[],
+};
 
 export function getChats(lang: string): ChatData[] {
   return chatsByLang[lang] ?? [];

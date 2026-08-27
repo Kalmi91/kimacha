@@ -1,0 +1,248 @@
+{
+  "id": "consejo-carrera",
+  "level": "A2",
+  "title": {
+    "hu": "Karrier-tanácsadás",
+    "en": "Career Advice",
+    "es": "Consejo de carrera",
+    "de": "Karriereberatung"
+  },
+  "setup": [
+    {
+      "id": "risk",
+      "prompt": {
+        "hu": "Mit keresel most inkább?",
+        "en": "What are you looking for right now?",
+        "es": "¿Qué buscas ahora?",
+        "de": "Wonach suchst du gerade eher?"
+      },
+      "options": [
+        { "value": "stable", "label": { "es": "Quiero estabilidad." } },
+        { "value": "risky", "label": { "es": "Quiero un cambio grande." } }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "n1",
+      "npc": { "es": "Cuénteme, ¿por qué le interesa este puesto?" },
+      "options": [
+        { "es": "Antes, ¿cuál es el rango salarial para este puesto?", "next": "n2", "good": true, "checklist": "salary-range" },
+        { "es": "Me gusta mucho su empresa.", "next": "n2" }
+      ]
+    },
+    {
+      "id": "n2",
+      "npc": { "es": "Podemos hablar de eso más tarde." },
+      "options": [
+        { "es": "¿Hay oportunidades de ascenso o crecimiento aquí?", "next": "n3", "good": true, "checklist": "growth-path" },
+        { "es": "¿Cuántos empleados tiene la empresa?", "next": "n3" }
+      ]
+    },
+    {
+      "id": "n3",
+      "npc": { "es": "Sí, tenemos varios beneficios." },
+      "options": [
+        { "es": "¿Qué beneficios ofrece la empresa, como seguro médico o vacaciones?", "next": "n4", "good": true, "checklist": "benefits" },
+        { "es": "¿Hay café gratis en la oficina?", "next": "n4" }
+      ]
+    },
+    {
+      "id": "n4",
+      "npc": { "es": "Cada persona busca algo diferente en un trabajo." },
+      "options": [
+        { "es": "¿El salario que ofrecen es similar al promedio del mercado?", "next": "n5", "good": true, "checklist": "market-rate" },
+        { "es": "¿El trabajo es estable a largo plazo?", "next": "n5", "requires": { "risk": "stable" } },
+        { "es": "¿La empresa está creciendo rápido?", "next": "n5", "requires": { "risk": "risky" } }
+      ]
+    },
+    {
+      "id": "n5",
+      "npc": { "es": "Hablemos del día a día." },
+      "options": [
+        { "es": "¿Cómo es un día normal de trabajo en este puesto?", "next": "n6", "good": true, "checklist": "day-to-day" },
+        { "es": "¿Hay estacionamiento gratis?", "next": "n6" }
+      ]
+    },
+    {
+      "id": "n6",
+      "npc": { "es": "El equipo es muy importante para nosotros." },
+      "options": [
+        { "es": "¿Cómo es el equipo y el ambiente de trabajo?", "next": "n7", "good": true, "checklist": "team-culture" },
+        { "es": "¿El jefe es simpático?", "next": "n7" }
+      ]
+    },
+    {
+      "id": "n7",
+      "npc": { "es": "También hacemos evaluaciones cada año." },
+      "options": [
+        { "es": "¿Cómo funciona la evaluación de desempeño?", "next": "n8", "good": true, "checklist": "review-process" },
+        { "es": "¿Hay fiestas en la oficina?", "next": "n8" }
+      ]
+    },
+    {
+      "id": "n8",
+      "npc": { "es": "Entonces, hablemos de la oferta final." },
+      "options": [
+        { "es": "Prefiero hablar de la compensación total, no solo del salario.", "good": true, "checklist": "negotiation-word" },
+        { "es": "Acepto cualquier salario que ofrezcan." }
+      ]
+    }
+  ],
+  "checklist": [
+    {
+      "id": "salary-range",
+      "hu": "Mennyi a fizetési sáv erre a pozícióra?",
+      "en": "What's the salary range for this position?",
+      "es": "¿Cuál es el rango salarial para este puesto?",
+      "de": "Wie ist die Gehaltsspanne für diese Stelle?",
+      "why": {
+        "hu": "A fizetési sávra rákérdezni a legalapvetőbb, legjobban használható kérdés, amikor felmerül a téma.",
+        "en": "Asking for the salary range is the most basic, useful question you can ask when pay comes up.",
+        "es": "Preguntar por el rango salarial es la pregunta más básica y útil cuando surge el tema del dinero.",
+        "de": "Nach der Gehaltsspanne zu fragen ist die grundlegendste, nützlichste Frage, sobald es ums Geld geht."
+      },
+      "source": { "label": "Harvard Business Review, 5 Ways to Talk About Salary", "url": "https://hbr.org/2022/12/5-ways-to-talk-about-salary-during-a-job-interview" }
+    },
+    {
+      "id": "growth-path",
+      "hu": "Van-e itt előrelépési vagy fejlődési lehetőség?",
+      "en": "Are there growth or promotion opportunities here?",
+      "es": "¿Hay oportunidades de ascenso o crecimiento aquí?",
+      "de": "Gibt es hier Aufstiegs- oder Entwicklungsmöglichkeiten?",
+      "why": {
+        "hu": "Ha az előléptetés nem szokás egy cégnél, az azt jelenti, hogy ugyanazt a munkát végzed majd, ugyanannyi fizetésért, hosszú távon is.",
+        "en": "If promotions aren't the norm, you'll likely be doing the same job at the same pay indefinitely.",
+        "es": "Si los ascensos no son comunes, probablemente harás el mismo trabajo por el mismo salario indefinidamente.",
+        "de": "Wenn Beförderungen nicht üblich sind, machst du wahrscheinlich unbegrenzt denselben Job zum gleichen Gehalt."
+      },
+      "source": { "label": "Karrier-tanácsadó cikkek (career-advice guides, askcruit)" }
+    },
+    {
+      "id": "benefits",
+      "hu": "Milyen juttatásokat ad a cég (egészségbiztosítás, szabadság)?",
+      "en": "What benefits does the company offer (health insurance, vacation)?",
+      "es": "¿Qué beneficios ofrece la empresa, como seguro médico o vacaciones?",
+      "de": "Welche Leistungen bietet die Firma (Krankenversicherung, Urlaub)?",
+      "why": {
+        "hu": "A juttatások (biztosítás, szabadság, bónusz) valós pénzt érnek, a fizetés csak a fele a képnek.",
+        "en": "Benefits (insurance, vacation, bonuses) are real money too, salary is only half the picture.",
+        "es": "Los beneficios (seguro, vacaciones, bonos) también valen dinero real, el salario es solo la mitad.",
+        "de": "Leistungen (Versicherung, Urlaub, Boni) sind auch echtes Geld wert, das Gehalt ist nur die halbe Wahrheit."
+      },
+      "source": { "label": "Karrier-tanácsadó cikkek (career-advice guides)" }
+    },
+    {
+      "id": "market-rate",
+      "hu": "A kínált fizetés hasonló a piaci átlaghoz?",
+      "en": "Is the salary offered similar to the market average?",
+      "es": "¿El salario que ofrecen es similar al promedio del mercado?",
+      "de": "Ist das angebotene Gehalt ähnlich dem Marktdurchschnitt?",
+      "why": {
+        "hu": "Érdemes az interjú előtt utánanézni, mennyi a piaci fizetés erre a pozícióra, hogy tényekkel tudj érvelni.",
+        "en": "It's worth researching the market rate for the role before the interview, so you can argue with facts.",
+        "es": "Vale la pena investigar el salario de mercado para el puesto antes de la entrevista, para argumentar con datos.",
+        "de": "Es lohnt sich, vor dem Gespräch den marktüblichen Lohn zu recherchieren, um mit Fakten zu argumentieren."
+      },
+      "source": { "label": "Harvard Business Review, 5 Ways to Talk About Salary", "url": "https://hbr.org/2022/12/5-ways-to-talk-about-salary-during-a-job-interview" }
+    },
+    {
+      "id": "day-to-day",
+      "hu": "Milyen egy átlagos munkanap ezen a pozíción?",
+      "en": "What does a normal day look like in this role?",
+      "es": "¿Cómo es un día normal de trabajo en este puesto?",
+      "de": "Wie sieht ein normaler Arbeitstag in dieser Rolle aus?",
+      "why": {
+        "hu": "A pozíció leírása gyakran szebb, mint a valóság, a napi rutin kérdése ezt tisztázza.",
+        "en": "The job description often sounds nicer than reality, asking about daily routine clears that up.",
+        "es": "La descripción del puesto suele sonar mejor que la realidad, preguntar por la rutina diaria lo aclara.",
+        "de": "Die Stellenbeschreibung klingt oft besser als die Realität, die Frage nach dem Alltag klärt das."
+      },
+      "source": { "label": "Karrier-tanácsadó cikkek (career-advice guides)" }
+    },
+    {
+      "id": "team-culture",
+      "hu": "Milyen a csapat és a munkahelyi légkör?",
+      "en": "What's the team and work environment like?",
+      "es": "¿Cómo es el equipo y el ambiente de trabajo?",
+      "de": "Wie sind das Team und die Arbeitsatmosphäre?",
+      "why": {
+        "hu": "A közvetlen csapat és a főnök napi szinten többet számít, mint a cég neve.",
+        "en": "Your direct team and manager matter more day-to-day than the company's name.",
+        "es": "Tu equipo y jefe directo importan más en el día a día que el nombre de la empresa.",
+        "de": "Dein direktes Team und dein Chef zählen im Alltag mehr als der Name der Firma."
+      },
+      "source": { "label": "Karrier-tanácsadó cikkek (career-advice guides)" }
+    },
+    {
+      "id": "review-process",
+      "hu": "Hogyan működik a teljesítményértékelés?",
+      "en": "How does the performance review process work?",
+      "es": "¿Cómo funciona la evaluación de desempeño?",
+      "de": "Wie funktioniert die Leistungsbeurteilung?",
+      "why": {
+        "hu": "Ha tudod, milyen célok alapján értékelnek, tervezhetsz, és tudod, mire számíthatsz fizetésemelésnél.",
+        "en": "Knowing how you'll be measured lets you plan, and know what to expect at raise time.",
+        "es": "Saber cómo te van a evaluar te permite planear y saber qué esperar al pedir un aumento.",
+        "de": "Zu wissen, woran man gemessen wird, hilft zu planen und zu wissen, was bei Gehaltserhöhungen zu erwarten ist."
+      },
+      "source": { "label": "Karrier-tanácsadó cikkek (career-advice guides, askcruit)" }
+    },
+    {
+      "id": "negotiation-word",
+      "hu": "A teljes juttatáscsomagról beszélsz, nem csak a fizetésről?",
+      "en": "Do you talk about total compensation, not just salary?",
+      "es": "¿Hablas de la compensación total, no solo del salario?",
+      "de": "Sprichst du über die Gesamtvergütung, nicht nur das Gehalt?",
+      "why": {
+        "hu": "A szakértők azt javasolják: használd a 'juttatáscsomag' szót a puszta 'pénz' helyett, és sávban, ne fix számban tárgyalj.",
+        "en": "Experts suggest using the word 'compensation' rather than just 'money', and asking for a range, not a fixed number.",
+        "es": "Los expertos recomiendan usar la palabra 'compensación' en vez de solo 'dinero', y pedir un rango, no un número fijo.",
+        "de": "Experten empfehlen, das Wort 'Vergütung' statt nur 'Geld' zu benutzen und nach einer Spanne statt einer festen Zahl zu fragen."
+      },
+      "source": { "label": "Harvard Business Review, 5 Ways to Talk About Salary", "url": "https://hbr.org/2022/12/5-ways-to-talk-about-salary-during-a-job-interview" }
+    }
+  ],
+  "endings": [
+    { "id": "great-negotiator", "if": "checklist>=6", "title": { "hu": "Nagyon felkészülten mentél az interjúra", "en": "You went into the interview very prepared", "es": "Fuiste a la entrevista muy preparado", "de": "Du warst sehr gut vorbereitet ins Gespräch gegangen" } },
+    { "id": "decent-negotiator", "if": "checklist>=3", "title": { "hu": "Jó úton jársz", "en": "You're on the right track", "es": "Vas por buen camino", "de": "Du bist auf dem richtigen Weg" } },
+    { "id": "underprepared", "if": "default", "title": { "hu": "Legközelebb kérdezz többet", "en": "Ask more next time", "es": "La próxima vez, pregunta más", "de": "Frag beim nächsten Mal mehr" } }
+  ],
+  "glossary": [
+    { "word": "cuénteme", "gloss": { "hu": "meséljen", "en": "tell me", "de": "erzählen Sie mir" } },
+    { "word": "interesa", "gloss": { "hu": "érdekel", "en": "interests", "de": "interessiert" } },
+    { "word": "puesto", "gloss": { "hu": "állás, pozíció", "en": "position", "de": "Stelle" } },
+    { "word": "rango", "gloss": { "hu": "sáv, tartomány", "en": "range", "de": "Spanne" } },
+    { "word": "salarial", "gloss": { "hu": "fizetési (melléknév)", "en": "salary (adj.)", "de": "Gehalts-" } },
+    { "word": "salario", "gloss": { "hu": "fizetés", "en": "salary", "de": "Gehalt" } },
+    { "word": "empresa", "gloss": { "hu": "cég", "en": "company", "de": "Firma" } },
+    { "word": "ascenso", "gloss": { "hu": "előléptetés", "en": "promotion", "de": "Beförderung" } },
+    { "word": "crecimiento", "gloss": { "hu": "növekedés, fejlődés", "en": "growth", "de": "Wachstum" } },
+    { "word": "empleados", "gloss": { "hu": "alkalmazottak", "en": "employees", "de": "Angestellte" } },
+    { "word": "beneficios", "gloss": { "hu": "juttatások", "en": "benefits", "de": "Leistungen" } },
+    { "word": "seguro", "gloss": { "hu": "biztosítás", "en": "insurance", "de": "Versicherung" } },
+    { "word": "médico", "gloss": { "hu": "orvosi", "en": "medical", "de": "medizinisch" } },
+    { "word": "vacaciones", "gloss": { "hu": "szabadság, vakáció", "en": "vacation", "de": "Urlaub" } },
+    { "word": "oficina", "gloss": { "hu": "iroda", "en": "office", "de": "Büro" } },
+    { "word": "promedio", "gloss": { "hu": "átlag", "en": "average", "de": "Durchschnitt" } },
+    { "word": "mercado", "gloss": { "hu": "piac", "en": "market", "de": "Markt" } },
+    { "word": "estable", "gloss": { "hu": "stabil", "en": "stable", "de": "stabil" } },
+    { "word": "creciendo", "gloss": { "hu": "növekszik (gerund)", "en": "growing", "de": "wachsend" } },
+    { "word": "estacionamiento", "gloss": { "hu": "parkoló", "en": "parking lot", "de": "Parkplatz" } },
+    { "word": "ambiente", "gloss": { "hu": "légkör, hangulat", "en": "atmosphere, environment", "de": "Atmosphäre" } },
+    { "word": "jefe", "gloss": { "hu": "főnök", "en": "boss", "de": "Chef" } },
+    { "word": "evaluación", "gloss": { "hu": "értékelés", "en": "evaluation, review", "de": "Beurteilung" } },
+    { "word": "desempeño", "gloss": { "hu": "teljesítmény", "en": "performance", "de": "Leistung" } },
+    { "word": "fiestas", "gloss": { "hu": "bulik", "en": "parties", "de": "Feiern" } },
+    { "word": "oferta", "gloss": { "hu": "ajánlat", "en": "offer", "de": "Angebot" } },
+    { "word": "compensación", "gloss": { "hu": "juttatáscsomag, kompenzáció", "en": "compensation", "de": "Vergütung" } },
+    { "word": "ofrecen", "gloss": { "hu": "kínálnak, ajánlanak", "en": "they offer", "de": "sie bieten" } },
+    { "word": "ofrece", "gloss": { "hu": "kínál, ajánl", "en": "offers", "de": "bietet" } },
+    { "word": "estabilidad", "gloss": { "hu": "stabilitás", "en": "stability", "de": "Stabilität" } },
+    { "word": "cambio", "gloss": { "hu": "változás", "en": "change", "de": "Veränderung" } },
+    { "word": "similar", "gloss": { "hu": "hasonló", "en": "similar", "de": "ähnlich" } },
+    { "word": "entonces", "gloss": { "hu": "akkor, tehát", "en": "so, then", "de": "also, dann" } },
+    { "word": "cualquier", "gloss": { "hu": "bármely", "en": "any", "de": "irgendein" } },
+    { "word": "ofrezcan", "gloss": { "hu": "ajánljanak (kötőmód)", "en": "they might offer", "de": "sie anbieten (Konjunktiv)" } }
+  ]
+}

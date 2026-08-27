@@ -156,7 +156,7 @@ export const GAME_DEFS: GameDef[] = [
       de: 'Triff Entscheidungen in einer echten Situation, lerne, was zu fragen ist.',
     },
     hasSettings: false,
-    soon: true,
+    soon: false, // F4 (GAMES.md 8. szekció): app/games/chat.tsx
   },
   {
     id: 'conjugation-slot',

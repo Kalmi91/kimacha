@@ -203,6 +203,18 @@ export default {
       translationAlways: 'Mindig',
       settingsSpeech: 'Felolvasás jelenetenként',
     },
+    // F4 (chat, GAMES.md 4.6).
+    chat: {
+      comingSoon: 'Ehhez a nyelvhez még nincs beszélgetés.',
+      pickTopic: 'Válassz egy témát',
+      checklistLabel: (n: number) => `${n} pontos checklist`,
+      checklistProgress: (done: number, total: number) => `${done} / ${total}`,
+      endingChecklistHeader: 'Checklist ehhez a témához:',
+      achievedTag: 'Megkérdezted',
+      missedTag: 'Kihagytad',
+      sourceLabel: 'Forrás:',
+      viewChecklistBtn: 'Checklist megtekintése',
+    },
   },
   active: {
     title: 'Aktív mód',

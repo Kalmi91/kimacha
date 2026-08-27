@@ -1,0 +1,246 @@
+{
+  "id": "alquiler-cdmx",
+  "level": "A2",
+  "title": {
+    "hu": "Lakást bérlek CDMX-ben",
+    "en": "Renting an Apartment in CDMX",
+    "es": "Alquilo un departamento en la CDMX",
+    "de": "Ich miete eine Wohnung in CDMX"
+  },
+  "setup": [
+    {
+      "id": "priority",
+      "prompt": {
+        "hu": "Mi a fontosabb neked?",
+        "en": "What matters more to you?",
+        "es": "¿Qué es más importante para ti?",
+        "de": "Was ist dir wichtiger?"
+      },
+      "options": [
+        { "value": "cheap", "label": { "es": "Un precio bajo." } },
+        { "value": "central", "label": { "es": "Estar cerca del centro." } }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "n1",
+      "npc": { "es": "Este departamento es bonito y está libre desde el próximo mes." },
+      "options": [
+        { "es": "¿El contrato de arrendamiento está por escrito?", "next": "n2", "good": true, "checklist": "contract-written" },
+        { "es": "¿El departamento tiene balcón?", "next": "n2" }
+      ]
+    },
+    {
+      "id": "n2",
+      "npc": { "es": "Sí, tenemos un contrato listo para usted." },
+      "options": [
+        { "es": "¿El depósito es de un mes de renta como máximo?", "next": "n3", "good": true, "checklist": "deposit-limit" },
+        { "es": "¿Puedo pintar las paredes?", "next": "n3" }
+      ]
+    },
+    {
+      "id": "n3",
+      "npc": { "es": "El contrato tiene todas las reglas normales de la ciudad." },
+      "options": [
+        { "es": "¿El contrato está registrado en el Registro de Arrendamiento de la CDMX?", "next": "n4", "good": true, "checklist": "registered-contract" },
+        { "es": "¿Cuántas personas vivieron aquí antes?", "next": "n4" }
+      ]
+    },
+    {
+      "id": "n4",
+      "npc": { "es": "Podemos ver el departamento juntos ahora." },
+      "options": [
+        { "es": "¿El contrato describe el estado actual del departamento?", "next": "n5", "good": true, "checklist": "condition-inventory" },
+        { "es": "¿El departamento tiene wifi?", "next": "n5" }
+      ]
+    },
+    {
+      "id": "n5",
+      "npc": { "es": "La renta no incluye todos los servicios." },
+      "options": [
+        { "es": "¿Qué servicios están incluidos: agua, luz, gas, internet?", "next": "n6", "good": true, "checklist": "utilities-included" },
+        { "es": "¿La cocina es grande?", "next": "n6" }
+      ]
+    },
+    {
+      "id": "n6",
+      "npc": { "es": "La zona es muy tranquila." },
+      "options": [
+        { "es": "¿Cómo es el barrio de noche? ¿Hay buen transporte cerca?", "next": "n7", "good": true, "checklist": "neighborhood-safety" },
+        { "es": "¿El precio es fijo, o puedo pagar menos?", "next": "n7", "requires": { "priority": "cheap" } },
+        { "es": "¿Cuántos minutos hay hasta el centro?", "next": "n7", "requires": { "priority": "central" } }
+      ]
+    },
+    {
+      "id": "n7",
+      "npc": { "es": "Yo soy el administrador, no el dueño del edificio." },
+      "options": [
+        { "es": "¿Puedo ver una identificación y un papel que confirma que usted representa al dueño?", "next": "n8", "good": true, "checklist": "landlord-id" },
+        { "es": "¿Usted vive cerca de aquí?", "next": "n8" }
+      ]
+    },
+    {
+      "id": "n8",
+      "npc": { "es": "El contrato dura doce meses." },
+      "options": [
+        { "es": "¿Qué pasa si quiero salir antes? ¿Hay una penalización?", "good": true, "checklist": "exit-clause" },
+        { "es": "Doce meses está bien para mí." }
+      ]
+    }
+  ],
+  "checklist": [
+    {
+      "id": "contract-written",
+      "hu": "Írásos-e a bérleti szerződés?",
+      "en": "Is the lease contract in writing?",
+      "es": "¿El contrato de arrendamiento está por escrito?",
+      "de": "Ist der Mietvertrag schriftlich?",
+      "why": {
+        "hu": "CDMX-ben lakóingatlanra kötelező az írásos szerződés, ez véd mindkét felet.",
+        "en": "In CDMX a written contract is mandatory for residential rentals, it protects both sides.",
+        "es": "En la CDMX el contrato escrito es obligatorio para vivienda, protege a ambas partes.",
+        "de": "In CDMX ist ein schriftlicher Vertrag für Wohnungen Pflicht und schützt beide Seiten."
+      },
+      "source": { "label": "Contrato de arrendamiento en la CDMX (guía legal)", "url": "https://blog.homie.mx/cdmx/guia-para-entender-los-contratos-de-arrendamiento-en-cdmx-lo-que-no-te-pueden-pedir/" }
+    },
+    {
+      "id": "deposit-limit",
+      "hu": "A kaució legfeljebb egyhavi bérleti díj?",
+      "en": "Is the deposit at most one month's rent?",
+      "es": "¿El depósito es de un mes de renta como máximo?",
+      "de": "Ist die Kaution höchstens eine Monatsmiete?",
+      "why": {
+        "hu": "A CDMX Polgári Törvénykönyve a kauciót egy havi bérleti díjban maximálja.",
+        "en": "CDMX's Civil Code caps the security deposit at one month's rent.",
+        "es": "El Código Civil de la CDMX limita el depósito a un mes de renta.",
+        "de": "Das Zivilgesetzbuch von CDMX begrenzt die Kaution auf eine Monatsmiete."
+      },
+      "source": { "label": "Derechos del inquilino en la CDMX (Código Civil)", "url": "https://news.culturacolectiva.com/noticias/mexico/derechos-del-inquilino-cdmx-deposito-aumentos-desalojo/" }
+    },
+    {
+      "id": "registered-contract",
+      "hu": "Regisztrálva van a szerződés a CDMX bérleti nyilvántartásában?",
+      "en": "Is the contract registered in CDMX's rental registry?",
+      "es": "¿El contrato está registrado en el Registro de Arrendamiento de la CDMX?",
+      "de": "Ist der Vertrag im Mietregister von CDMX eingetragen?",
+      "why": {
+        "hu": "A tulajdonos köteles regisztrálni a szerződést a CDMX digitális bérleti nyilvántartásában.",
+        "en": "The landlord is required to register the contract in CDMX's digital rental registry.",
+        "es": "El propietario debe registrar el contrato en el Registro Digital de Arrendamiento de la CDMX.",
+        "de": "Der Vermieter muss den Vertrag im digitalen Mietregister von CDMX eintragen."
+      },
+      "source": { "label": "Contrato de arrendamiento en la CDMX (guía legal)", "url": "https://blog.homie.mx/cdmx/guia-para-entender-los-contratos-de-arrendamiento-en-cdmx-lo-que-no-te-pueden-pedir/" }
+    },
+    {
+      "id": "condition-inventory",
+      "hu": "A szerződés leírja a lakás jelenlegi állapotát?",
+      "en": "Does the contract describe the apartment's current condition?",
+      "es": "¿El contrato describe el estado actual del departamento?",
+      "de": "Beschreibt der Vertrag den aktuellen Zustand der Wohnung?",
+      "why": {
+        "hu": "Ha az állapot le van írva, könnyebb visszakapni a kauciót a szerződés végén.",
+        "en": "With the condition on record, it's easier to get the deposit back at the end.",
+        "es": "Con el estado registrado, es más fácil recuperar el depósito al final del contrato.",
+        "de": "Wenn der Zustand dokumentiert ist, bekommt man die Kaution am Ende leichter zurück."
+      },
+      "source": { "label": "Contrato de arrendamiento en la CDMX (guía legal)", "url": "https://blog.homie.mx/cdmx/guia-para-entender-los-contratos-de-arrendamiento-en-cdmx-lo-que-no-te-pueden-pedir/" }
+    },
+    {
+      "id": "utilities-included",
+      "hu": "Mely szolgáltatások vannak benne a bérleti díjban?",
+      "en": "Which utilities are included in the rent?",
+      "es": "¿Qué servicios están incluidos: agua, luz, gas, internet?",
+      "de": "Welche Nebenkosten sind in der Miete enthalten?",
+      "why": {
+        "hu": "A be nem számított rezsi meglepetés lehet a hónap végén.",
+        "en": "Utilities that aren't included can be a surprise at the end of the month.",
+        "es": "Los servicios no incluidos pueden ser una sorpresa a fin de mes.",
+        "de": "Nicht enthaltene Nebenkosten können am Monatsende überraschen."
+      },
+      "source": { "label": "Általános bérlési útmutatók (rental checklist guides)" }
+    },
+    {
+      "id": "neighborhood-safety",
+      "hu": "Milyen a környék éjjel, és van-e jó közlekedés?",
+      "en": "How is the neighborhood at night, and is there good transit nearby?",
+      "es": "¿Cómo es el barrio de noche? ¿Hay buen transporte cerca?",
+      "de": "Wie ist die Gegend nachts, und gibt es gute Verkehrsanbindung?",
+      "why": {
+        "hu": "Ugyanaz az utca nappal és éjjel egészen máshogy hathat, érdemes mindkettőt megnézni.",
+        "en": "The same street can feel very different by day and by night, worth checking both.",
+        "es": "La misma calle puede sentirse muy distinta de día y de noche, vale la pena ver ambas.",
+        "de": "Dieselbe Straße kann tagsüber und nachts ganz anders wirken, beides anzuschauen lohnt sich."
+      },
+      "source": { "label": "Általános bérlési útmutatók (rental checklist guides)" }
+    },
+    {
+      "id": "landlord-id",
+      "hu": "Igazolható-e, hogy a másik fél tényleg a tulajdonos (vagy annak megbízottja)?",
+      "en": "Can the other side prove they're really the owner (or their agent)?",
+      "es": "¿Puedo ver una identificación y un papel que confirma que representa al dueño?",
+      "de": "Kann die Gegenseite beweisen, dass sie wirklich der Eigentümer (oder dessen Vertreter) ist?",
+      "why": {
+        "hu": "Bérlési csalásoknál gyakran valaki olyan bérel ki egy lakást, ami nem is az övé.",
+        "en": "In rental scams, someone often rents out an apartment that isn't theirs.",
+        "es": "En las estafas de alquiler, a veces alguien renta un departamento que no es suyo.",
+        "de": "Bei Mietbetrug vermietet manchmal jemand eine Wohnung, die ihm gar nicht gehört."
+      },
+      "source": { "label": "Fogyasztóvédelmi útmutatók (rental fraud prevention guides)" }
+    },
+    {
+      "id": "exit-clause",
+      "hu": "Mi történik, ha a szerződés lejárta előtt ki akarsz lépni?",
+      "en": "What happens if you want to leave before the contract ends?",
+      "es": "¿Qué pasa si quieres salir antes de terminar el contrato?",
+      "de": "Was passiert, wenn man vor Vertragsende ausziehen möchte?",
+      "why": {
+        "hu": "A korai kilépés feltételei és esetleges büntetése a szerződésben legyen világos, ne csak szóban.",
+        "en": "The terms and any penalty for leaving early should be clear in writing, not just spoken.",
+        "es": "Las condiciones y la penalización por salir antes deben estar claras por escrito, no solo de palabra.",
+        "de": "Die Bedingungen und eine mögliche Strafe für frühzeitiges Ausziehen sollten schriftlich klar sein."
+      },
+      "source": { "label": "Általános bérlési útmutatók (rental checklist guides)" }
+    }
+  ],
+  "endings": [
+    { "id": "careful-tenant", "if": "checklist>=6", "title": { "hu": "Nagyon alapos bérlő voltál", "en": "You were a very thorough tenant", "es": "Fuiste un inquilino muy cuidadoso", "de": "Du warst ein sehr gründlicher Mieter" } },
+    { "id": "decent-tenant", "if": "checklist>=3", "title": { "hu": "Jó úton jársz", "en": "You're on the right track", "es": "Vas por buen camino", "de": "Du bist auf dem richtigen Weg" } },
+    { "id": "risky-tenant", "if": "default", "title": { "hu": "Ez kockázatos bérlés lett volna", "en": "This would have been a risky rental", "es": "Este habría sido un alquiler arriesgado", "de": "Das wäre eine riskante Miete gewesen" } }
+  ],
+  "glossary": [
+    { "word": "contrato", "gloss": { "hu": "szerződés", "en": "contract", "de": "Vertrag" } },
+    { "word": "arrendamiento", "gloss": { "hu": "bérlet", "en": "lease", "de": "Mietverhältnis" } },
+    { "word": "depósito", "gloss": { "hu": "kaució, letét", "en": "deposit", "de": "Kaution" } },
+    { "word": "registrado", "gloss": { "hu": "regisztrált", "en": "registered", "de": "registriert" } },
+    { "word": "registro", "gloss": { "hu": "nyilvántartás", "en": "registry", "de": "Register" } },
+    { "word": "reglas", "gloss": { "hu": "szabályok", "en": "rules", "de": "Regeln" } },
+    { "word": "estado", "gloss": { "hu": "állapot", "en": "condition, state", "de": "Zustand" } },
+    { "word": "actual", "gloss": { "hu": "jelenlegi", "en": "current", "de": "aktuell" } },
+    { "word": "incluidos", "gloss": { "hu": "beleértve", "en": "included", "de": "enthalten" } },
+    { "word": "incluye", "gloss": { "hu": "tartalmazza", "en": "includes", "de": "beinhaltet" } },
+    { "word": "barrio", "gloss": { "hu": "városrész, negyed", "en": "neighborhood", "de": "Viertel" } },
+    { "word": "zona", "gloss": { "hu": "zóna, körzet", "en": "area, zone", "de": "Gegend" } },
+    { "word": "tranquila", "gloss": { "hu": "nyugodt", "en": "calm, quiet", "de": "ruhig" } },
+    { "word": "identificación", "gloss": { "hu": "igazolvány", "en": "ID", "de": "Ausweis" } },
+    { "word": "confirma", "gloss": { "hu": "megerősíti", "en": "confirms", "de": "bestätigt" } },
+    { "word": "representa", "gloss": { "hu": "képvisel", "en": "represents", "de": "vertritt" } },
+    { "word": "administrador", "gloss": { "hu": "kezelő, gondnok", "en": "property manager", "de": "Verwalter" } },
+    { "word": "dueño", "gloss": { "hu": "tulajdonos", "en": "owner", "de": "Eigentümer" } },
+    { "word": "edificio", "gloss": { "hu": "épület", "en": "building", "de": "Gebäude" } },
+    { "word": "dura", "gloss": { "hu": "tart (időben)", "en": "lasts", "de": "dauert" } },
+    { "word": "penalización", "gloss": { "hu": "büntetés, kötbér", "en": "penalty", "de": "Strafe" } },
+    { "word": "próximo", "gloss": { "hu": "következő", "en": "next", "de": "nächst-" } },
+    { "word": "libre", "gloss": { "hu": "szabad, kiadó", "en": "free, available", "de": "frei" } },
+    { "word": "renta", "gloss": { "hu": "bérleti díj", "en": "rent", "de": "Miete" } },
+    { "word": "fijo", "gloss": { "hu": "rögzített, fix", "en": "fixed", "de": "fest" } },
+    { "word": "wifi", "gloss": { "hu": "wifi", "en": "wifi", "de": "WLAN" } },
+    { "word": "balcón", "gloss": { "hu": "erkély", "en": "balcony", "de": "Balkon" } },
+    { "word": "vivieron", "gloss": { "hu": "laktak (vivir múlt idejű alakja)", "en": "lived (past of vivir)", "de": "wohnten" } },
+    { "word": "máximo", "gloss": { "hu": "maximum, legfeljebb", "en": "maximum, at most", "de": "höchstens" } },
+    { "word": "puedo", "gloss": { "hu": "tudok, -hatok (poder ragozott alakja)", "en": "I can", "de": "ich kann" } },
+    { "word": "describe", "gloss": { "hu": "leír", "en": "describes", "de": "beschreibt" } },
+    { "word": "buen", "gloss": { "hu": "jó (rövidült alak főnév előtt)", "en": "good (short form before a noun)", "de": "gut (Kurzform vor einem Nomen)" } },
+    { "word": "transporte", "gloss": { "hu": "közlekedés", "en": "transport", "de": "Verkehrsmittel" } }
+  ]
+}
