@@ -230,7 +230,7 @@ export const GAME_DEFS: GameDef[] = [
     },
     minPoolSize: 30,
     hasSettings: true,
-    soon: true,
+    soon: false, // F5 (GAMES.md 8. szekció): app/games/ccat.tsx
   },
   {
     id: 'grammar-choice',

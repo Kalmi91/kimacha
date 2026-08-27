@@ -676,6 +676,93 @@ szállítási kapu minden játék-itemre.
 >   `setGameSettings`/`getGameScore`/`recordGameScore`/`recordAttempt` (F0)
 >   lefedi a beállítás- és rekord-igényt, ugyanúgy mint F1/F2-nél.
 
+> **MEGVALÓSÍTÁSI JEGYZET (F5, ccat, 2026-08-27):**
+> - **A motor-megosztás szó szerint**, nem csak elvben: a kakukktojás-item
+>   (`buildCcatOddOneOut`) közvetlenül `buildOddOneOutRound`-ot hívja
+>   (`lib/games/oddOneOut.ts`, ugyanaz a modul, amit az `odd-one-out` játék
+>   is használ), a mondat-kiegészítés-item (`buildSentenceFillItem`)
+>   közvetlenül `buildGrammarRound`-ot hívja a MEGLÉVŐ grammar-choice
+>   témákon (`getGrammarTopics('es')`, a ser-estar/articulos-genero/por-para
+>   3 téma, F3-ból). Egyik sem másodpéldány, mindkettő az első elemet veszi a
+>   már seedelt-kevert eredményből (a hívó saját seedje adja a véletlenséget).
+> - **Analógia NEM kapott saját authored fájlt.** A user által kért
+>   "authored párok" az antonym/synonym fájlokból KÉT PÁR összekapcsolásával
+>   adódik (két azonos relációjú pár → a:b :: c:d), így egy harmadik JSON a
+>   már meglévő 28 pár puszta duplikálása lenne. A disztraktorok az ELSŐ pár
+>   saját, kurátorolt `distractors` mezőjéből jönnek (SOSEM az a/b/c szavak
+>   maguk, mert azok a prompt-ban már látszanak, és sose egy olyan filler,
+>   ami VÉLETLENÜL egy MÁSIK pár helyes válasza, pl. „ganar" filler a
+>   `largo-corto` disztraktorlistájában, de ő maga „c" a `ganar-perder`
+>   analógiánál, , ezt egy jest-teszt bukása fedte fel, és egy explicit
+>   kizárás-halmaz (`exclude`) javítja.
+> - **`data/games/ccat/es/{antonyms,synonyms,word-problems}.json`**: 21
+>   ellentét-pár, 7 szinonima-pár, 8 szöveges feladat. Minden pár szava a
+>   megosztott A0-A2 (néhány A2/B1) korpuszból jön, az `audit-corpus.mjs`-hez
+>   hasonló szó-szintű ellenőrzéssel (`scripts/audit-games.mjs` új
+>   `runCcat()`-ja, a `runMyths()` mintáján, a `content.md`-ben kért módon).
+>   Első próbálkozásra 15 P1 jött ki, mert néhány pár `level` mezője
+>   alacsonyabb volt, mint a saját disztraktor-szavai (pl. `bueno-malo` A0
+>   volt, de a `cerrado` disztraktor A2), a `level` mostantól minden elem
+>   saját szó/correct/disztraktor-halmazának LEGMAGASABB szintje, nem a
+>   fő szópár szintje.
+> - **Szöveges feladat (`wordProblem`) számai szándékosan bele vannak égetve
+>   a mondatba** (nem sablon+behelyettesítés), mert egy `{a}`/`{b}` sablon a
+>   4 nyelv nyelvtanát (egyeztetés, szórend) törné el. A `data/words.ts`
+>   korpuszban nincs „cuatro" (4) szókártya (valódi hiányosság, amit ez a
+>   feladat fedezett fel, DE nem javítja, kívül esik a scope-on), a 8 feladat
+>   ezért csak olyan számokat használ, amiknek van kártyájuk vagy amik puszta
+>   numerikus válasz-opciók (az audit `tokenKnown()`-ja a `/^\d+%?$/` bare
+>   digitet mindig ismertnek veszi, FB89/myth mintája szerint).
+> - **Számsor (`numberSeries`) csak azokból a számszavakból épül, amiknek
+>   TÉNYLEG van kártyája a korpuszban** (`NUMBER_WORDS_ES`, egy szűk
+>   értek→szó lookup, nem új szókincs, csak a pool által már visszaadott
+>   szavak ÉRTÉKÉNEK felismerése). A korpusz számkártyái nem folytonosak
+>   (pl. „cuatro" hiányzik, „diecinueve" hiányzik, „ochenta"/„noventa"
+>   hiányzik), ezért a modul a MEGLÉVŐ számok között keres 4 hosszú,
+>   állandó lépésközű futamokat (1-es lépés az 5-18 tartományban, 10-es
+>   lépés a 20-70 tartományban), és `null`-t ad, ha a pool-ban nincs ilyen, 
+>   ES-only (K18 "a számsoros itemek nyelvfüggetlenek" megjegyzése az
+>   EREDETI numerikus-sorozat elképzelésre vonatkozott, ez az implementáció
+>   szám-SZAVAKAT mutat a 4.10 példamondata szerint, ami nyelvspecifikus).
+> - **Utasítás-követés (`instruction`) EGZAKT egy találatot követel meg**,
+>   nem „legalább egyet": ha a pool-ban 2+ szó is megfelel a téma+nem
+>   kombinációnak, a feladat kétértelmű lenne (több helyes válasz, de csak
+>   egy van megjelölve helyesnek). Ezt egy jest-teszt fogta meg (a kezdeti
+>   `matching.length >= 1` szabály hibás volt), a javítás
+>   `matching.length === 1`.
+> - **ccat NINCS nyelvhez zárva a hub-szinten** (ELTÉR conjugation-slot K15
+>   döntésétől): a `registry.ts`-ben nincs `languages` mező. Mivel az
+>   authored tartalom (antonym/synonym/word-problem/sentenceFill) csak
+>   spanyolra létezik, és a `numberSeries` explicit ES-only, egy nem-spanyol
+>   tanuló körénél ezek a `build*`-fügvények `null`-t adnak, a kör-építő
+>   automatikusan a másik (nyelvfüggetlen: `oddOneOut`, `anagram`,
+>   `instruction`) típusokra esik vissza, ugyanaz a "kevesebb tartalom,
+>   nem hibás játék" elv, mint amit a `grammar-choice`/`confusables`/`myth`/
+>   `story`/`chat` már F3/F4 óta követ (azoknak SINCS `languages` mezőjük,
+>   csak üres `getXxx(lang)` listát adnak vissza más nyelvre).
+> - **K18 nyelv-kapcsoló** (`promptLangSetting`, alap `'learned'`): a
+>   kérdés-KERETSZÖVEG (pl. „Mi a X ellentéte?", a `pos`/`gender` címkék,
+>   a `wordProblem` teljes authored mondata) `stringsFor(célnyelv vagy
+>   forrásnyelv)`-ből jön, a MAGYARÁZAT ugyanezt a nyelvet követi, KIVÉVE a
+>   `sentenceFill`-t, ami a grammar-choice.tsx SAJÁT, kapcsoló nélküli
+>   viselkedését örökli (`why[contentLang]`, mindig az anyanyelven), mert az
+>   ottani magyarázat-mező már eleve nem kapcsolható, és a motor-megosztás a
+>   VISELKEDÉST is örökli, nem csak a kerekítés-logikát. A tesztelt spanyol
+>   szó maga (antonym/synonym/analogy/anagram/numberSeries/sentenceFill
+>   tartalma) mindig spanyol marad a kapcsolótól függetlenül, csak a KÖRÉ
+>   írt szöveg vált nyelvet.
+> - **`card_attempts` naplózás** csak a 3 olyan típusnál fut
+>   (`anagram`/`instruction`/`oddOneOut`), ahol egyetlen valódi `wordId`
+>   természetesen adódik; a többi (antonym/synonym/analogy/sentenceFill/
+>   numberSeries/wordProblem) `game_scores`-ba megy csak, ugyanaz az elv,
+>   mint grammar-choice-nál/confusables-nél.
+> - **21 jest-teszt** (`lib/games/__tests__/ccat.test.ts`): mind a 9
+>   builder-függvény (helyes alak VAGY `null`, sose kitalált/hiányos
+>   válasz), a valódi `es` authored tartalom ellen futtatva ott, ahol van
+>   (antonym/synonym/analogy/sentenceFill/wordProblem), és szintetikus
+>   pool-lal ott, ahol a metaadat-kombináció számít (oddOneOut/instruction/
+>   numberSeries/anagram).
+
 ---
 
 ## 4. Játék-specifikációk
@@ -1630,7 +1717,7 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 | F4 | `chat` | ✅ KÉSZ (motor + 5 téma, mind forrásolt) | `66ff5ea` |
 | F5 | `odd-one-out` | ✅ KÉSZ | `77532c1` |
 | F5 | `conjugation-slot` | ✅ KÉSZ (csak ES) | `f88a592` |
-| F5 | `ccat` | 🟨 SPEC-KÉSZ (térbeli nélkül) | |
+| F5 | `ccat` | ✅ KÉSZ (térbeli nélkül) | |
 | F6 | `sentence-tetris` | ⏸ ELHALASZTVA (K16) | |
 
 Jelölés: ⬜ TERV → 🟨 SPEC-KÉSZ (kérdések megválaszolva) → 🟦 KÓDOLÁS → 🟧 TESZT → ✅ KÉSZ.

@@ -34,12 +34,17 @@
  *     `why`/`source.label`/4-language phrasing (`url` optional, same rule as
  *     myth); an ending with no id or an `if` that isn't `checklist<op>N` or
  *     `default`; a chat with zero endings
+ *   - a ccat antonym/synonym item missing word/correct/distractors (<3), or
+ *     where word/correct/a distractor repeat each other; a ccat word-problem
+ *     with a non-`+`/`-` op, an `answer` that doesn't match `a op b`, <3
+ *     numeric distractors, or a distractor equal to the answer
  *
  * P2 (reported, not build-blocking):
  *   - a sentence/example/claim longer than 12 words at level A1 or above
  *   - a duplicate item id (grammar items within one topic; confusables set
  *     ids across the whole `confusables/<lang>/` directory; myth item ids
- *     across the whole `myths/<lang>/` directory; story/scene ids; chat ids)
+ *     across the whole `myths/<lang>/` directory; story/scene ids; chat ids;
+ *     ccat antonym/synonym/word-problem ids, each within their own file kind)
  *   - a chat option's `requires` referencing an unknown setup question id
  *   - a chat node with >=2 options where none is marked `good:true`
  *
@@ -611,6 +616,90 @@ function runMyths() {
 }
 
 // ---------------------------------------------------------------------------
+// ccat (data/games/ccat/<lang>/{antonyms,synonyms,word-problems}.json), GAMES.md 4.10
+// ---------------------------------------------------------------------------
+
+function auditCcatPair(item, filePath, kind, seenIds) {
+  const path = `ccat/${filePath}#${item.id ?? '?'}`;
+  if (!item.id) p1.push({ path, issue: 'missing item id' });
+  if (seenIds.has(item.id)) p2.push({ path, issue: `duplicate ${kind} item id "${item.id}"` });
+  seenIds.add(item.id);
+  if (!LEVELS.includes(item.level)) p1.push({ path, issue: `missing/unknown level: ${item.level}` });
+  if (!item.word) p1.push({ path, issue: 'missing word' });
+  if (!item.correct) p1.push({ path, issue: 'missing correct' });
+  if (!Array.isArray(item.distractors) || item.distractors.length < 3) {
+    p1.push({ path, issue: 'needs >=3 distractors' });
+  }
+
+  const taughtSet = cumulativeTaught(item.level ?? 'C1');
+  const allWords = [item.word, item.correct, ...(item.distractors ?? [])].filter(Boolean);
+  const dupCheck = new Set(allWords.map((w) => removeAccents(normalize(w))));
+  if (dupCheck.size !== allWords.length) p1.push({ path, issue: 'word/correct/distractors are not all distinct' });
+  for (const w of allWords) {
+    for (const tok of tokenize(w)) {
+      if (!tokenKnown(tok, taughtSet, undefined)) p1.push({ path, issue: `untaught/unglossed Spanish word: "${tok}" (in "${w}")` });
+    }
+  }
+}
+
+function auditCcatWordProblem(item, filePath, seenIds) {
+  const path = `ccat/${filePath}#${item.id ?? '?'}`;
+  if (!item.id) p1.push({ path, issue: 'missing item id' });
+  if (seenIds.has(item.id)) p2.push({ path, issue: `duplicate word-problem item id "${item.id}"` });
+  seenIds.add(item.id);
+  if (!LEVELS.includes(item.level)) p1.push({ path, issue: `missing/unknown level: ${item.level}` });
+  checkLangs(item.prompt, `${path} prompt`);
+
+  if (typeof item.a !== 'number' || typeof item.b !== 'number') {
+    p1.push({ path, issue: 'a/b must be numbers' });
+  }
+  if (item.op !== '+' && item.op !== '-') {
+    p1.push({ path, issue: `op must be "+" or "-", got "${item.op}"` });
+  }
+  const expected = item.op === '+' ? item.a + item.b : item.a - item.b;
+  if (item.answer !== expected) {
+    p1.push({ path, issue: `answer ${item.answer} does not match ${item.a} ${item.op} ${item.b} = ${expected}` });
+  }
+  if (!Array.isArray(item.distractors) || item.distractors.length < 3) {
+    p1.push({ path, issue: 'needs >=3 numeric distractors' });
+  } else if (item.distractors.some((d) => d === item.answer)) {
+    p1.push({ path, issue: 'a distractor equals the correct answer' });
+  }
+
+  const esText = item.prompt?.es;
+  if (typeof esText === 'string') {
+    const taughtSet = cumulativeTaught(item.level ?? 'C1');
+    for (const tok of tokenize(esText)) {
+      if (!tokenKnown(tok, taughtSet, undefined)) p1.push({ path, issue: `untaught/unglossed Spanish word in prompt.es: "${tok}"` });
+    }
+    checkLength(esText, item.level, path);
+  }
+}
+
+function runCcat() {
+  const base = join(ROOT, 'data/games/ccat');
+  if (!existsSync(base)) return;
+  for (const lang of readdirSync(base)) {
+    const dir = join(base, lang);
+    const seenAntonymIds = new Set();
+    for (const file of jsonFilesIn(dir).filter((f) => f === 'antonyms.json')) {
+      const items = JSON.parse(readFileSync(join(dir, file), 'utf8'));
+      for (const item of items) auditCcatPair(item, `${lang}/${file}`, 'antonym', seenAntonymIds);
+    }
+    const seenSynonymIds = new Set();
+    for (const file of jsonFilesIn(dir).filter((f) => f === 'synonyms.json')) {
+      const items = JSON.parse(readFileSync(join(dir, file), 'utf8'));
+      for (const item of items) auditCcatPair(item, `${lang}/${file}`, 'synonym', seenSynonymIds);
+    }
+    const seenWordProblemIds = new Set();
+    for (const file of jsonFilesIn(dir).filter((f) => f === 'word-problems.json')) {
+      const items = JSON.parse(readFileSync(join(dir, file), 'utf8'));
+      for (const item of items) auditCcatWordProblem(item, `${lang}/${file}`, seenWordProblemIds);
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Directory walkers
 // ---------------------------------------------------------------------------
 
@@ -649,6 +738,7 @@ runConfusables();
 runMyths();
 runStories();
 runChats();
+runCcat();
 
 // ---------------------------------------------------------------------------
 // Report
