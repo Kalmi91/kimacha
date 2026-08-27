@@ -362,3 +362,60 @@ const mythsByLang: Partial<Record<string, MythItem[]>> = {
 export function getMyths(lang: string): MythItem[] {
   return mythsByLang[lang] ?? [];
 }
+
+// ---------------------------------------------------------------------------
+// ccat (4.10): antonym / synonym / word-problem authored items.
+//
+// Analogy items are DERIVED from the antonym/synonym pairs at round-build
+// time (lib/games/ccat.ts), not separately authored: two antonym pairs make
+// a perfectly valid A:B::C:D analogy, so a third authored file would just
+// duplicate the first two. Kakukktojás reuses oddOneOut.ts's
+// buildOddOneOutRound, mondat-kiegészítés reuses the EXISTING grammar-choice
+// topics via getGrammarTopics() above, GAMES.md's own words: "Ahol a ccat és
+// az odd-one-out ugyanazt csinálja, OSZD MEG a motort, ne másold."
+// ---------------------------------------------------------------------------
+
+export interface CcatWordPairItem {
+  id: string;
+  level: Level;
+  word: string; // target-language prompt word
+  correct: string; // target-language answer (its antonym/synonym)
+  distractors: string[]; // 3 target-language wrong options
+}
+
+export interface CcatWordProblemItem {
+  id: string;
+  level: Level;
+  prompt: Record<string, string>; // hu/en/es/de, the numbers are already baked into the text
+  a: number;
+  b: number;
+  op: '+' | '-';
+  answer: number;
+  distractors: number[];
+}
+
+import ccatEsAntonyms from '@/data/games/ccat/es/antonyms.json';
+import ccatEsSynonyms from '@/data/games/ccat/es/synonyms.json';
+import ccatEsWordProblems from '@/data/games/ccat/es/word-problems.json';
+
+const ccatAntonymsByLang: Partial<Record<string, CcatWordPairItem[]>> = {
+  es: ccatEsAntonyms as CcatWordPairItem[],
+};
+const ccatSynonymsByLang: Partial<Record<string, CcatWordPairItem[]>> = {
+  es: ccatEsSynonyms as CcatWordPairItem[],
+};
+const ccatWordProblemsByLang: Partial<Record<string, CcatWordProblemItem[]>> = {
+  es: ccatEsWordProblems as CcatWordProblemItem[],
+};
+
+export function getCcatAntonyms(lang: string): CcatWordPairItem[] {
+  return ccatAntonymsByLang[lang] ?? [];
+}
+
+export function getCcatSynonyms(lang: string): CcatWordPairItem[] {
+  return ccatSynonymsByLang[lang] ?? [];
+}
+
+export function getCcatWordProblems(lang: string): CcatWordProblemItem[] {
+  return ccatWordProblemsByLang[lang] ?? [];
+}

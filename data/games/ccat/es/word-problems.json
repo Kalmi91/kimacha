@@ -1,0 +1,90 @@
+[
+  {
+    "id": "manzanas-ana",
+    "level": "A2",
+    "prompt": {
+      "es": "Ana tiene tres manzanas. Compra cinco manzanas. ¿Cuántas manzanas tiene?",
+      "hu": "Anának három almája van. Vesz öt almát. Hány almája van?",
+      "en": "Ana has three apples. She buys five apples. How many apples does she have?",
+      "de": "Ana hat drei Äpfel. Sie kauft fünf Äpfel. Wie viele Äpfel hat sie?"
+    },
+    "a": 3, "b": 5, "op": "+", "answer": 8, "distractors": [7, 9, 10]
+  },
+  {
+    "id": "huevos-ana",
+    "level": "A2",
+    "prompt": {
+      "es": "Ana tiene ocho huevos. Come tres huevos. ¿Cuántos huevos tiene?",
+      "hu": "Anának nyolc tojása van. Megeszik hármat. Hány tojása van?",
+      "en": "Ana has eight eggs. She eats three eggs. How many eggs does she have?",
+      "de": "Ana hat acht Eier. Sie isst drei Eier. Wie viele Eier hat sie?"
+    },
+    "a": 8, "b": 3, "op": "-", "answer": 5, "distractors": [4, 6, 11]
+  },
+  {
+    "id": "libros-luis",
+    "level": "A2",
+    "prompt": {
+      "es": "Luis compra siete libros. Vende dos libros. ¿Cuántos libros tiene?",
+      "hu": "Luisnak hét könyve van. Elad kettőt. Hány könyve van?",
+      "en": "Luis buys seven books. He sells two books. How many books does he have?",
+      "de": "Luis kauft sieben Bücher. Er verkauft zwei Bücher. Wie viele Bücher hat er?"
+    },
+    "a": 7, "b": 2, "op": "-", "answer": 5, "distractors": [9, 4, 6]
+  },
+  {
+    "id": "euros-ana",
+    "level": "A2",
+    "prompt": {
+      "es": "Ana tiene seis euros. Gasta dos euros. ¿Cuántos euros tiene?",
+      "hu": "Anának hat eurója van. Elkölt kettőt. Hány eurója van?",
+      "en": "Ana has six euros. She spends two euros. How many euros does she have?",
+      "de": "Ana hat sechs Euro. Sie gibt zwei Euro aus. Wie viele Euro hat sie?"
+    },
+    "a": 6, "b": 2, "op": "-", "answer": 4, "distractors": [8, 3, 5]
+  },
+  {
+    "id": "sillas-luis",
+    "level": "A2",
+    "prompt": {
+      "es": "Luis tiene cinco sillas. Compra seis sillas. ¿Cuántas sillas tiene?",
+      "hu": "Luisnak öt széke van. Vesz hatot. Hány széke van?",
+      "en": "Luis has five chairs. He buys six chairs. How many chairs does he have?",
+      "de": "Luis hat fünf Stühle. Er kauft sechs Stühle. Wie viele Stühle hat er?"
+    },
+    "a": 5, "b": 6, "op": "+", "answer": 11, "distractors": [9, 10, 12]
+  },
+  {
+    "id": "panes-ana",
+    "level": "A2",
+    "prompt": {
+      "es": "Ana tiene nueve panes. Come tres panes. ¿Cuántos panes tiene?",
+      "hu": "Anának kilenc kenyere van. Megeszik hármat. Hány kenyere van?",
+      "en": "Ana has nine loaves of bread. She eats three. How many does she have?",
+      "de": "Ana hat neun Brote. Sie isst drei davon. Wie viele hat sie?"
+    },
+    "a": 9, "b": 3, "op": "-", "answer": 6, "distractors": [5, 7, 12]
+  },
+  {
+    "id": "minutos-luis",
+    "level": "A2",
+    "prompt": {
+      "es": "Luis tiene quince minutos. Gasta cinco minutos. ¿Cuántos minutos tiene?",
+      "hu": "Luisnak tizenöt perce van. Elhasznál ötöt. Hány perce marad?",
+      "en": "Luis has fifteen minutes. He spends five minutes. How many minutes does he have left?",
+      "de": "Luis hat fünfzehn Minuten. Er verbraucht fünf Minuten. Wie viele Minuten hat er noch?"
+    },
+    "a": 15, "b": 5, "op": "-", "answer": 10, "distractors": [8, 12, 20]
+  },
+  {
+    "id": "gatos-ana",
+    "level": "A2",
+    "prompt": {
+      "es": "Ana tiene dos gatos. Compra seis gatos. ¿Cuántos gatos tiene?",
+      "hu": "Anának két macskája van. Vesz hatot. Hány macskája van?",
+      "en": "Ana has two cats. She buys six cats. How many cats does she have?",
+      "de": "Ana hat zwei Katzen. Sie kauft sechs Katzen. Wie viele Katzen hat sie?"
+    },
+    "a": 2, "b": 6, "op": "+", "answer": 8, "distractors": [7, 9, 4]
+  }
+]

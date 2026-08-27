@@ -1,0 +1,233 @@
+[
+  {
+    "id": "grande-pequeno",
+    "level": "A1",
+    "word": "grande",
+    "correct": "pequeño",
+    "distractors": [
+      "caliente",
+      "triste",
+      "corto"
+    ]
+  },
+  {
+    "id": "caliente-frio",
+    "level": "A1",
+    "word": "caliente",
+    "correct": "frío",
+    "distractors": [
+      "grande",
+      "rápido",
+      "limpio"
+    ]
+  },
+  {
+    "id": "rapido-lento",
+    "level": "A1",
+    "word": "rápido",
+    "correct": "lento",
+    "distractors": [
+      "alto",
+      "barato",
+      "vacío"
+    ]
+  },
+  {
+    "id": "alto-bajo",
+    "level": "A1",
+    "word": "alto",
+    "correct": "bajo",
+    "distractors": [
+      "fácil",
+      "sucio",
+      "fuerte"
+    ]
+  },
+  {
+    "id": "gordo-delgado",
+    "level": "A1",
+    "word": "gordo",
+    "correct": "delgado",
+    "distractors": [
+      "viejo",
+      "malo",
+      "abierto"
+    ]
+  },
+  {
+    "id": "feliz-triste",
+    "level": "A1",
+    "word": "feliz",
+    "correct": "triste",
+    "distractors": [
+      "difícil",
+      "caro",
+      "temprano"
+    ]
+  },
+  {
+    "id": "facil-dificil",
+    "level": "A1",
+    "word": "fácil",
+    "correct": "difícil",
+    "distractors": [
+      "gordo",
+      "lento",
+      "blanco"
+    ]
+  },
+  {
+    "id": "viejo-joven",
+    "level": "A1",
+    "word": "viejo",
+    "correct": "joven",
+    "distractors": [
+      "limpio",
+      "bueno",
+      "entrar"
+    ]
+  },
+  {
+    "id": "limpio-sucio",
+    "level": "A1",
+    "word": "limpio",
+    "correct": "sucio",
+    "distractors": [
+      "largo",
+      "débil",
+      "subir"
+    ]
+  },
+  {
+    "id": "caro-barato",
+    "level": "A1",
+    "word": "caro",
+    "correct": "barato",
+    "distractors": [
+      "lleno",
+      "negro",
+      "comprar"
+    ]
+  },
+  {
+    "id": "bueno-malo",
+    "level": "A2",
+    "word": "bueno",
+    "correct": "malo",
+    "distractors": [
+      "cerrado",
+      "gordo",
+      "vender"
+    ]
+  },
+  {
+    "id": "largo-corto",
+    "level": "A2",
+    "word": "largo",
+    "correct": "corto",
+    "distractors": [
+      "frío",
+      "joven",
+      "ganar"
+    ]
+  },
+  {
+    "id": "lleno-vacio",
+    "level": "A2",
+    "word": "lleno",
+    "correct": "vacío",
+    "distractors": [
+      "alto",
+      "temprano",
+      "perder"
+    ]
+  },
+  {
+    "id": "abierto-cerrado",
+    "level": "A2",
+    "word": "abierto",
+    "correct": "cerrado",
+    "distractors": [
+      "rápido",
+      "delgado",
+      "bajar"
+    ]
+  },
+  {
+    "id": "temprano-tarde",
+    "level": "A1",
+    "word": "temprano",
+    "correct": "tarde",
+    "distractors": [
+      "sucio",
+      "fuerte",
+      "salir"
+    ]
+  },
+  {
+    "id": "fuerte-debil",
+    "level": "A1",
+    "word": "fuerte",
+    "correct": "débil",
+    "distractors": [
+      "pequeño",
+      "caro",
+      "entrar"
+    ]
+  },
+  {
+    "id": "blanco-negro",
+    "level": "A1",
+    "word": "blanco",
+    "correct": "negro",
+    "distractors": [
+      "feliz",
+      "vacío",
+      "comprar"
+    ]
+  },
+  {
+    "id": "comprar-vender",
+    "level": "A2",
+    "word": "comprar",
+    "correct": "vender",
+    "distractors": [
+      "frío",
+      "corto",
+      "ganar"
+    ]
+  },
+  {
+    "id": "ganar-perder",
+    "level": "A2",
+    "word": "ganar",
+    "correct": "perder",
+    "distractors": [
+      "difícil",
+      "abierto",
+      "subir"
+    ]
+  },
+  {
+    "id": "subir-bajar",
+    "level": "A2",
+    "word": "subir",
+    "correct": "bajar",
+    "distractors": [
+      "barato",
+      "malo",
+      "entrar"
+    ]
+  },
+  {
+    "id": "entrar-salir",
+    "level": "B1",
+    "word": "entrar",
+    "correct": "salir",
+    "distractors": [
+      "largo",
+      "bueno",
+      "vender"
+    ]
+  }
+]
