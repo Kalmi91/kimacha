@@ -1717,7 +1717,7 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 | F4 | `chat` | ✅ KÉSZ (motor + 5 téma, mind forrásolt) | `66ff5ea` |
 | F5 | `odd-one-out` | ✅ KÉSZ | `77532c1` |
 | F5 | `conjugation-slot` | ✅ KÉSZ (csak ES) | `f88a592` |
-| F5 | `ccat` | ✅ KÉSZ (térbeli nélkül) | |
+| F5 | `ccat` | ✅ KÉSZ (térbeli nélkül) | `c620e34` |
 | F6 | `sentence-tetris` | ⏸ ELHALASZTVA (K16) | |
 
 Jelölés: ⬜ TERV → 🟨 SPEC-KÉSZ (kérdések megválaszolva) → 🟦 KÓDOLÁS → 🟧 TESZT → ✅ KÉSZ.
