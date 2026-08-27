@@ -1536,7 +1536,7 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 | F3 | `confusables` | ✅ KÉSZ (24 csoport: 8 alaki + 9 kétféle „ugyanaz" + 7 mexikói) | `63bdfaf` |
 | F4 | `myth` | ✅ KÉSZ (4 sáv × 15 item = 60, mind forrásolt label-lel, url nélkül ahol nem lekért) | `6b57c66` |
 | F4 | `story` | ✅ KÉSZ (motor + 6 sztori, 2×3 sáv) | `f5daf38` |
-| F4 | `chat` | ✅ KÉSZ (motor + 5 téma, mind forrásolt) | *(lásd a következő docs-commit)* |
+| F4 | `chat` | ✅ KÉSZ (motor + 5 téma, mind forrásolt) | `66ff5ea` |
 | F5 | `odd-one-out` | 🟨 SPEC-KÉSZ | |
 | F5 | `conjugation-slot` | 🟨 SPEC-KÉSZ (csak ES) | |
 | F5 | `ccat` | 🟨 SPEC-KÉSZ (térbeli nélkül) | |
