@@ -13,12 +13,12 @@
   "scenes": [
     {
       "id": "s1",
-      "text": { "es": "Carlos vive en Coyoacán. Cada mañana toma el metro para ir al trabajo." },
+      "text": { "es": "Carlos vive en Coyoacán. Toma el metro para ir al trabajo." },
       "translation": {
-        "hu": "Carlos Coyoacánban lakik. Minden reggel metróval megy dolgozni.",
-        "en": "Carlos lives in Coyoacán. Every morning he takes the metro to work.",
-        "es": "Carlos vive en Coyoacán. Cada mañana toma el metro para ir al trabajo.",
-        "de": "Carlos wohnt in Coyoacán. Jeden Morgen nimmt er die U-Bahn zur Arbeit."
+        "hu": "Carlos Coyoacánban lakik. Metróval megy dolgozni.",
+        "en": "Carlos lives in Coyoacán. He takes the metro to work.",
+        "es": "Carlos vive en Coyoacán. Toma el metro para ir al trabajo.",
+        "de": "Carlos wohnt in Coyoacán. Er nimmt die U-Bahn zur Arbeit."
       },
       "question": {
         "prompt": {
@@ -62,16 +62,13 @@
     },
     {
       "id": "s3",
-      "text": { "es": "Carlos sale en una estación nueva. No sabe dónde está. Mira a la derecha y a la izquierda." },
+      "text": { "es": "Carlos sale en una estación nueva. No sabe dónde está." },
       "translation": {
-        "hu": "Carlos kiszáll egy ismeretlen állomáson. Nem tudja, hol van. Jobbra és balra néz.",
-        "en": "Carlos gets off at an unfamiliar station. He doesn't know where he is. He looks right and left.",
-        "es": "Carlos sale en una estación nueva. No sabe dónde está. Mira a la derecha y a la izquierda.",
-        "de": "Carlos steigt an einer neuen Station aus. Er weiß nicht, wo er ist. Er schaut nach rechts und nach links."
+        "hu": "Carlos kiszáll egy ismeretlen állomáson. Nem tudja, hol van.",
+        "en": "Carlos gets off at an unfamiliar station. He doesn't know where he is.",
+        "es": "Carlos sale en una estación nueva. No sabe dónde está.",
+        "de": "Carlos steigt an einer neuen Station aus. Er weiß nicht, wo er ist."
       },
-      "newWords": [
-        { "word": "izquierda", "gloss": { "hu": "bal", "en": "left", "de": "links" } }
-      ],
       "question": {
         "prompt": {
           "hu": "Mi történik Carlosszal?",
@@ -88,12 +85,12 @@
     },
     {
       "id": "s4",
-      "text": { "es": "Carlos mira a la derecha. Camina hacia una mujer y habla con ella." },
+      "text": { "es": "Carlos mira a la derecha. Camina hacia una mujer y habla." },
       "translation": {
-        "hu": "Carlos jobbra néz. Odasétál egy nőhöz, és beszélget vele.",
-        "en": "Carlos looks to the right. He walks toward a woman and talks with her.",
-        "es": "Carlos mira a la derecha. Camina hacia una mujer y habla con ella.",
-        "de": "Carlos schaut nach rechts. Er geht auf eine Frau zu und spricht mit ihr."
+        "hu": "Carlos jobbra néz. Odasétál egy nőhöz, és megszólítja.",
+        "en": "Carlos looks to the right. He walks toward a woman and speaks to her.",
+        "es": "Carlos mira a la derecha. Camina hacia una mujer y habla.",
+        "de": "Carlos schaut nach rechts. Er geht auf eine Frau zu und spricht sie an."
       },
       "question": {
         "prompt": {
@@ -111,12 +108,12 @@
     },
     {
       "id": "s5",
-      "text": { "es": "La mujer es muy amable. Ella habla: la estación de tu trabajo está lejos. Toma el metro azul." },
+      "text": { "es": "La mujer es amable. Ella habla: toma el metro azul." },
       "translation": {
-        "hu": "A nő nagyon kedves. Beszélni kezd: A munkahelyed állomása messze van. Szállj fel a kék metróra.",
-        "en": "The woman is very kind. She speaks: Your work station is far. Take the blue metro.",
-        "es": "La mujer es muy amable. Ella habla: la estación de tu trabajo está lejos. Toma el metro azul.",
-        "de": "Die Frau ist sehr nett. Sie spricht: Die Station deiner Arbeit ist weit weg. Nimm die blaue U-Bahn."
+        "hu": "A nő kedves. Beszélni kezd: Szállj fel a kék metróra.",
+        "en": "The woman is kind. She speaks: Take the blue metro.",
+        "es": "La mujer es amable. Ella habla: toma el metro azul.",
+        "de": "Die Frau ist nett. Sie spricht: Nimm die blaue U-Bahn."
       },
       "question": {
         "prompt": {

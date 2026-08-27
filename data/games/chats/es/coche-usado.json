@@ -59,7 +59,7 @@
       "id": "n5",
       "npc": { "es": "Podemos arrancar el coche ahora, si quiere." },
       "options": [
-        { "es": "¿Puedo ver el coche arrancar en frío? ¿De qué color es el humo?", "next": "n6", "good": true, "checklist": "cold-start" },
+        { "es": "¿Puedo ver el coche arrancar en frío? ¿Qué color tiene el humo?", "next": "n6", "good": true, "checklist": "cold-start" },
         { "es": "¿El coche es barato de mantener?", "next": "n6", "requires": { "budget": "low" } },
         { "es": "¿El coche tiene opciones de lujo?", "next": "n6", "requires": { "budget": "high" } }
       ]
