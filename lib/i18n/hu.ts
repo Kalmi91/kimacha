@@ -146,6 +146,25 @@ export default {
       timeLimitLabel: 'Időlimit kérdésenként',
       timeLimitNone: 'Nincs',
     },
+    // F5 (conjugation-slot, GAMES.md 4.7).
+    conjugationSlot: {
+      comingSoon: 'Ez a játék egyelőre csak spanyolul érhető el.',
+      notEnoughVerbs: 'Még nincs elég ige a szókészletedben ehhez a játékhoz.',
+      progress: (current: number, total: number) => `${current} / ${total}`,
+      includeIrregularLabel: 'Rendhagyó igék is',
+      questionCountLabel: 'Kérdésszám',
+      timeLimitLabel: 'Időlimit kérdésenként',
+      timeLimitNone: 'Nincs',
+      explanation: (person: string, tense: string, form: string) => `A(z) "${person}" alak ${tense} időben: ${form}`,
+      tenseNames: {
+        presente: 'jelen idő',
+        indefinido: 'indefinido (múlt)',
+        imperfecto: 'imperfecto (folyamatos múlt)',
+        futuro: 'jövő idő',
+        condicional: 'feltételes mód',
+        subjuntivo_presente: 'kötőmód jelen',
+      },
+    },
     // shared, F3 (grammar-choice 4.11 + confusables 4.12).
     understood: 'Értem',
     moreLabel: 'Több',

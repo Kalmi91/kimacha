@@ -7,7 +7,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { wordPhase } from '@/lib/wordPhase';
-import { GAME_DEFS, gameName, gameBlurb, gameRoute, type GameDef } from '@/lib/games/registry';
+import { GAME_DEFS, gameName, gameBlurb, gameRoute, gameSupportsLanguage, type GameDef } from '@/lib/games/registry';
 import { getGameBest } from '@/lib/games/scoring';
 import FeedbackButton from '@/components/FeedbackModal';
 
@@ -32,6 +32,7 @@ export default function GamesScreen() {
   const [level, setLevel] = useState('A1');
   const [pair, setPair] = useState('hu-es');
   const [contentLang, setContentLang] = useState('hu');
+  const [learnedLang, setLearnedLang] = useState('es');
   const [poolSize, setPoolSize] = useState(0);
   const [bestByGame, setBestByGame] = useState<Map<string, number>>(new Map());
 
@@ -41,6 +42,7 @@ export default function GamesScreen() {
     const source = onboarding?.source ?? 'hu';
     const activePair = onboarding ? `${onboarding.source}-${onboarding.target}` : 'hu-es';
     setPair(activePair);
+    setLearnedLang(onboarding?.target ?? 'es');
     // Same fallback ladder as app/(tabs)/tree.tsx's uiLang: game names/blurbs
     // are content, they read in the learner's own language, not app chrome.
     setContentLang(source === 'hu' ? 'hu' : source === 'es' ? 'es' : source === 'de' ? 'de' : 'en');
@@ -63,7 +65,7 @@ export default function GamesScreen() {
   useFocusEffect(useCallback(() => { load(); }, [load]));
 
   const handlePress = (game: GameDef) => {
-    if (game.soon) return;
+    if (game.soon || !gameSupportsLanguage(game, learnedLang)) return;
     if (game.minPoolSize && poolSize < game.minPoolSize) return;
     router.push(gameRoute(game.id) as never);
   };
@@ -79,8 +81,10 @@ export default function GamesScreen() {
 
         <View style={styles.grid}>
           {GAME_DEFS.map((game) => {
-            const locked = !game.soon && !!game.minPoolSize && poolSize < game.minPoolSize;
-            const disabled = game.soon || locked;
+            const unsupportedLang = !gameSupportsLanguage(game, learnedLang);
+            const locked = !game.soon && !unsupportedLang && !!game.minPoolSize && poolSize < game.minPoolSize;
+            const showSoon = game.soon || unsupportedLang;
+            const disabled = showSoon || locked;
             const best = bestByGame.get(game.id);
 
             return (
@@ -97,7 +101,7 @@ export default function GamesScreen() {
                   {gameBlurb(game, contentLang)}
                 </Text>
                 <View style={styles.cardFooter}>
-                  {game.soon ? (
+                  {showSoon ? (
                     <Text style={[styles.badge, { color: colors.tabIconDefault }]}>{s.games.comingSoon}</Text>
                   ) : locked ? (
                     <Text style={[styles.badge, { color: colors.tabIconDefault }]}>

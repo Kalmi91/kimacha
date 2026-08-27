@@ -24,7 +24,7 @@ describe('GAME_DEFS (GAMES.md 1. szekció, the approved 13-game list)', () => {
   // flips their registry `soon` to false; the rest stay "soon" until their own
   // phase lands.
   it('flips "soon" to false only for the ids that have a real screen', () => {
-    const live = new Set(['memory-pairs', 'word-search', 'word-rain', 'bubble-pop', 'grammar-choice', 'confusables', 'myth', 'story', 'chat', 'odd-one-out']);
+    const live = new Set(['memory-pairs', 'word-search', 'word-rain', 'bubble-pop', 'grammar-choice', 'confusables', 'myth', 'story', 'chat', 'odd-one-out', 'conjugation-slot']);
     for (const game of GAME_DEFS) {
       expect(game.soon).toBe(!live.has(game.id));
     }

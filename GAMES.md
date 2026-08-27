@@ -620,6 +620,62 @@ szállítási kapu minden játék-itemre.
 >   `odd-one-out` bekerült a "van saját képernyője" halmazba, különben a
 >   `soon: false` flip pirosra váltja a meglévő őrző tesztet.
 
+> **MEGVALÓSÍTÁSI JEGYZET (F5, conjugation-slot, 2026-08-27):**
+> - **5 személyes paradigma, vosotros NÉLKÜL.** Az app saját spanyol
+>   nyelvtani témái (`data/topics/a1.json` presente_ar/er/ir, ser, estar…)
+>   már eleve `yo/tú/él-ella/nosotros/ellos-ellas` 5 alakot tanítanak
+>   (vosotros kihagyva, latin-amerikai konvenció), a `lib/games/conjugate.ts`
+>   ugyanezt az 5-alakos mintát követi a konzisztencia miatt, ez egyben
+>   eggyel kevesebb hibalehetőség is (6 helyett 5 alak/igeidő/ige).
+> - **`lib/games/conjugate.ts` a 15 kért rendhagyó igét kézzel táblázott,
+>   ellenőrzött adatként tárolja** (mind a 6 igeidőre, mind az 5 személyre),
+>   a szabályos -ar/-er/-ir igéket viszont SZABÁLYBÓL generálja (végződés-
+>   táblák + a `-car/-gar/-zar` helyesírási szabály az `indefinido` yo-
+>   alakjára és a teljes `subjuntivo_presente`-re + a `creer/leer`-mintájú
+>   magánhangzós tövű `-er` igék `indefinido`-jának `y`-betoldása/ékezete).
+>   Egy `EXCLUDE_INFINITIVES` lista (a teljes `data/words/{a0..c1}.json`
+>   korpusz `pos==='verb'` igéi ellen összeállítva) kizárja a tő-váltó
+>   (`e→ie`/`o→ue`/`e→i`), az `-uir` `y`-betoldásos, az 1. személyben
+>   rendhagyó (`-zco`/`-jo`/`-go`), az ékezet-váltó (`-iar`/`-uar` hiátusos)
+>   és az irreguláris tövű (`andar`) igéket, valamint az irreguláris alapige
+>   összetételeit (`obtener`, `suponer`, `contradecir`…), ezeknél
+>   `conjugate()` `null`-t ad, a kör-építő egyszerűen kihagyja őket
+>   (GAMES.md szó szerint: „ha bizonytalan vagy, hagyd ki"). 54 jest-teszt
+>   (`lib/games/__tests__/conjugate.test.ts`): mind a 15 rendhagyó ige
+>   minden igeidőre, a szabályos generátor (hablar/comer/vivir + a
+>   helyesírási szabályok + creer/leer), és hogy a kockázatos igék tényleg
+>   `null`-t adnak, nem kitalált alakot.
+> - **A kör 3 opciója (GAMES.md 4.7 "3 gomb") a CÉL személy alakja + 2
+>   near-miss disztraktor UGYANANNAK az igének/igeidőnek MÁSIK személyéből**,
+>   nem egy külön disztraktor-generátorból, ez természetesen szöveg-közeli
+>   (a végződések tanítása a cél), és nem igényelte a `lib/games/distract.ts`
+>   újrahasználatát.
+> - **K15 hub-szintű megvalósítás.** A `grammar-choice`/`confusables`/`myth`/
+>   `story`/`chat` konvenciója (`registry.soon` mindig `false`, a "nincs
+>   tartalom ehhez a nyelvhez" üzenet a képernyőn BELÜL jelenik meg) NEM
+>   passzol a K15 szövegére ("a hub-kártya legyen hamarosan"), ezért a
+>   `GameDef` kapott egy opcionális `languages?: string[]` mezőt +
+>   `gameSupportsLanguage()` helper (`lib/games/registry.ts`), amit az
+>   `app/(tabs)/games.tsx` a meglévő `locked`/`soon` logika mellé fűz be
+>   (`unsupportedLang` → „Hamarosan" jelvény, nem „Zárolva", koppintás nem
+>   navigál). Csak a `conjugation-slot` kapott `languages: ['es']`-t, minden
+>   más játék `languages` mezője hiányzik (= minden nyelven fut, viselkedés
+>   változatlan). A képernyő maga is védekezik (`ready` state), ha valaha
+>   deep-linkkel nem-spanyol párral nyitnák meg.
+> - **A pool→infinitivus szűrés a képernyőn fut**, nem a `vocabPool.ts`-ben
+>   (az maradjon a "szó↔jelentés" minimál-kontraktus, az `odd-one-out`
+>   `pos`/`gender` mintáját követve): `pos==='verb'` ÉS egyetlen szóból áll
+>   ÉS `-ar/-er/-ir`-re végződik ÉS nem reflexív (`-arse/-erse/-irse`). Az
+>   `isNew` szavak jelentése mindig látszik a prompt alatt (nem koppintásra,
+>   mert egy időzített drillben a felfedezhetőség lassítana), ez a 0. szekció
+>   „isNew kötelezően gloss-olt" szabályát szolgálja ki e játékra szabva.
+> - **`card_attempts` naplózás fut** (`type='game:conjugation-slot'`,
+>   `word_id` = a kártya, aminek az igéje a poolból jött), a `cards` táblát
+>   a játék nem írja (K3).
+> - **Új DB-metódus nem kellett.** A meglévő `getGameSettings`/
+>   `setGameSettings`/`getGameScore`/`recordGameScore`/`recordAttempt` (F0)
+>   lefedi a beállítás- és rekord-igényt, ugyanúgy mint F1/F2-nél.
+
 ---
 
 ## 4. Játék-specifikációk
@@ -1573,7 +1629,7 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 | F4 | `story` | ✅ KÉSZ (motor + 6 sztori, 2×3 sáv) | `f5daf38` |
 | F4 | `chat` | ✅ KÉSZ (motor + 5 téma, mind forrásolt) | `66ff5ea` |
 | F5 | `odd-one-out` | ✅ KÉSZ | `77532c1` |
-| F5 | `conjugation-slot` | 🟨 SPEC-KÉSZ (csak ES) | |
+| F5 | `conjugation-slot` | ✅ KÉSZ (csak ES) | |
 | F5 | `ccat` | 🟨 SPEC-KÉSZ (térbeli nélkül) | |
 | F6 | `sentence-tetris` | ⏸ ELHALASZTVA (K16) | |
 
