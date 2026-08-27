@@ -1,0 +1,193 @@
+{
+  "id": "el-robot-perdido",
+  "level": "A1",
+  "track": "scifi",
+  "title": {
+    "hu": "Az elveszett robot",
+    "en": "The Lost Robot",
+    "es": "El robot perdido",
+    "de": "Der verlorene Roboter"
+  },
+  "cover": "🤖",
+  "estMinutes": 3,
+  "scenes": [
+    {
+      "id": "s1",
+      "text": { "es": "Marco camina en el parque. Mira un robot pequeño." },
+      "translation": {
+        "hu": "Marco sétál a parkban. Meglát egy kis robotot.",
+        "en": "Marco walks in the park. He sees a small robot.",
+        "es": "Marco camina en el parque. Mira un robot pequeño.",
+        "de": "Marco geht im Park spazieren. Er sieht einen kleinen Roboter."
+      },
+      "newWords": [
+        { "word": "robot", "gloss": { "hu": "robot", "en": "robot", "de": "Roboter" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Mit lát meg Marco a parkban?",
+          "en": "What does Marco see in the park?",
+          "es": "¿Qué mira Marco en el parque?",
+          "de": "Was sieht Marco im Park?"
+        },
+        "options": [
+          { "es": "un robot pequeño", "correct": true },
+          { "es": "un perro grande" },
+          { "es": "una bicicleta vieja" }
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "text": { "es": "El robot no camina bien. Tiene un botón rojo en la pantalla." },
+      "translation": {
+        "hu": "A robot nem jár jól. Van rajta egy piros gomb a kijelzőn.",
+        "en": "The robot isn't walking well. It has a red button on its screen.",
+        "es": "El robot no camina bien. Tiene un botón rojo en la pantalla.",
+        "de": "Der Roboter läuft nicht gut. Er hat einen roten Knopf auf dem Bildschirm."
+      },
+      "newWords": [
+        { "word": "botón", "gloss": { "hu": "gomb", "en": "button", "de": "Knopf" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Mije van a robotnak?",
+          "en": "What does the robot have?",
+          "es": "¿Qué tiene el robot?",
+          "de": "Was hat der Roboter?"
+        },
+        "options": [
+          { "es": "un botón rojo en la pantalla", "correct": true },
+          { "es": "una puerta pequeña" },
+          { "es": "un sombrero azul" }
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "text": { "es": "Marco toca el botón. El robot habla: Yo soy de un planeta." },
+      "translation": {
+        "hu": "Marco megnyomja a gombot. A robot megszólal: Egy bolygóról jövök.",
+        "en": "Marco touches the button. The robot speaks: I am from a planet.",
+        "es": "Marco toca el botón. El robot habla: Yo soy de un planeta.",
+        "de": "Marco drückt den Knopf. Der Roboter spricht: Ich bin von einem Planeten."
+      },
+      "newWords": [
+        { "word": "planeta", "gloss": { "hu": "bolygó", "en": "planet", "de": "Planet" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Honnan való a robot?",
+          "en": "Where is the robot from?",
+          "es": "¿De dónde es el robot?",
+          "de": "Woher kommt der Roboter?"
+        },
+        "options": [
+          { "es": "de un planeta", "correct": true },
+          { "es": "de la ciudad" },
+          { "es": "de un museo" }
+        ]
+      }
+    },
+    {
+      "id": "s4",
+      "text": { "es": "El robot habla de su familia. Ellos están en el cielo, con las estrellas." },
+      "translation": {
+        "hu": "A robot a családjára gondol. Ők az égen vannak, a csillagok között.",
+        "en": "The robot thinks about its family. They are in the sky, with the stars.",
+        "es": "El robot piensa en su familia. Ellos están en el cielo, con las estrellas.",
+        "de": "Der Roboter denkt an seine Familie. Sie sind am Himmel, bei den Sternen."
+      },
+      "newWords": [
+        { "word": "cielo", "gloss": { "hu": "ég", "en": "sky", "de": "Himmel" } },
+        { "word": "estrellas", "gloss": { "hu": "csillagok", "en": "stars", "de": "Sterne" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Hol van a robot családja?",
+          "en": "Where is the robot's family?",
+          "es": "¿Dónde está la familia del robot?",
+          "de": "Wo ist die Familie des Roboters?"
+        },
+        "options": [
+          { "es": "en el cielo, con las estrellas", "correct": true },
+          { "es": "en el mercado" },
+          { "es": "en un hotel" }
+        ]
+      }
+    },
+    {
+      "id": "s5",
+      "text": { "es": "Marco y el robot ya son amigos. Los dos caminan por la ciudad de noche." },
+      "translation": {
+        "hu": "Marco és a robot már barátok. Ketten éjjel sétálnak a városban.",
+        "en": "Marco and the robot are already friends. The two of them walk through the city at night.",
+        "es": "Marco y el robot ya son amigos. Los dos caminan por la ciudad de noche.",
+        "de": "Marco und der Roboter sind schon Freunde. Die beiden gehen nachts durch die Stadt."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Mik Marco és a robot?",
+          "en": "What are Marco and the robot?",
+          "es": "¿Qué son Marco y el robot?",
+          "de": "Was sind Marco und der Roboter?"
+        },
+        "options": [
+          { "es": "amigos", "correct": true },
+          { "es": "hermanos" },
+          { "es": "extraños" }
+        ]
+      }
+    },
+    {
+      "id": "s6",
+      "text": { "es": "De noche, el robot mira las estrellas y hace un sonido extraño." },
+      "translation": {
+        "hu": "Éjszaka a robot a csillagokat nézi, és egy furcsa hangot ad ki.",
+        "en": "At night, the robot looks at the stars and makes a strange sound.",
+        "es": "De noche, el robot mira las estrellas y hace un sonido extraño.",
+        "de": "Nachts schaut der Roboter zu den Sternen und macht ein seltsames Geräusch."
+      },
+      "newWords": [
+        { "word": "sonido", "gloss": { "hu": "hang", "en": "sound", "de": "Geräusch" } },
+        { "word": "extraño", "gloss": { "hu": "furcsa", "en": "strange", "de": "seltsam" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Mit tesz a robot éjszaka?",
+          "en": "What does the robot do at night?",
+          "es": "¿Qué hace el robot de noche?",
+          "de": "Was macht der Roboter nachts?"
+        },
+        "options": [
+          { "es": "Mira las estrellas y hace un sonido extraño", "correct": true },
+          { "es": "Camina a su casa" },
+          { "es": "Come pan" }
+        ]
+      }
+    },
+    {
+      "id": "s7",
+      "text": { "es": "Hay una luz grande en el cielo. Marco y el robot miran, sorprendidos." },
+      "translation": {
+        "hu": "Egy nagy fény jelenik meg az égen. Marco és a robot meglepetten nézik.",
+        "en": "There's a big light in the sky. Marco and the robot look, surprised.",
+        "es": "Hay una luz grande en el cielo. Marco y el robot miran, sorprendidos.",
+        "de": "Da ist ein großes Licht am Himmel. Marco und der Roboter schauen überrascht."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Mi van az égen?",
+          "en": "What's in the sky?",
+          "es": "¿Qué hay en el cielo?",
+          "de": "Was ist am Himmel?"
+        },
+        "options": [
+          { "es": "una luz grande", "correct": true },
+          { "es": "un avión" },
+          { "es": "nada" }
+        ]
+      }
+    }
+  ]
+}

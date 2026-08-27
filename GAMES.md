@@ -483,6 +483,52 @@ szállítási kapu minden játék-itemre.
 >   mert a rövid `-er` igék (`coser`, `pasar`) 3 betűs tövei így is
 >   egyértelműek maradnak F3 tartalmán belül, és jóval kevesebb hamis P1-et ad.
 
+> **MEGVALÓSÍTÁSI JEGYZET (F4, story, 2026-08-27):**
+> - **`StoryData` kapott egy `track: 'cdmx' | 'crime' | 'scifi'` mezőt**, amit
+>   a 4.5 illusztratív JSON nem mutatott, de a K11 három sávja (CDMX-hétköznapok
+>   / krimi-rejtély / sci-fi-kaland) kell valamibe kapaszkodjon a hub
+>   választó-képernyőjén (`app/games/story.tsx` a fát emiatt 3 szekcióba
+>   csoportosítja, nem id-parse-olással találgat).
+> - **A `newWords` gloss a TELJES sztorira érvényes, nem csak a scene-re, ami
+>   bevezeti.** Az `audit-games.mjs` `auditStory()` a story ÖSSZES scene-jének
+>   `newWords`-éből épít egyetlen közös "ismert" halmazt (a `glossary`
+>   topic-szintű mintáját követve, ld. grammar-choice/confusables), mert egy
+>   scene-1-ben bevezetett szó (pl. `collar`) a scene-3-ban újra előfordulhat
+>   anélkül, hogy újra deklarálni kelljen. A képernyő ugyanezt teszi
+>   futásidőben: a `GlossText` overrides-map a story ÖSSZES scene-jének
+>   `newWords`-éből épül, egyszer, nem scene-enként újra.
+> - **`lib/games/story.ts`**: két tiszta függvény, a `wordRain.ts`/`myth.ts`
+>   mintáját követve (a screen-be égetett logika nem tesztelhető unitban).
+>   `collectNewWords(story)` a scene-eken végigmenve dedupelt, első-előfordulás
+>   sorrendű listát ad (a sztori-végi „ezeket tanultad" recap ebből épül,
+>   OLVASÁS-CSAK, K3 miatt NEM ír a `cards`-ba, a régi 4.5-szöveg „SRS insert"
+>   gomb-ötletét a K3 DÖNTÉS felülírja). `shuffledQuestionOptions(scene, seed)`
+>   a meglévő `lib/shuffle.ts` `shuffleOptions`-ára épül (FB2-minta: a helyes
+>   válasz ne legyen mindig ugyanazon a helyen, az illusztratív JSON-ban
+>   mindig az első opció volt helyes).
+> - **`scripts/audit-games.mjs` `runStories()`/`auditStory()`**: minden
+>   scene-szöveg és kérdés-opció szó-szinten ellenőrzött (tanult vagy glosszolt),
+>   a `question.prompt` és a `translation` viszont csak `checkLangs`-ot kap
+>   (4 nyelv megléte), NEM szókincs-ellenőrzést, mert ezek natív-nyelvű,
+>   magyarázó szövegek (mint a myth `explanation`-je), nem célnyelvi tartalom.
+>   A `newWords[].gloss` szándékosan NEM kap `checkLangs`-ot (a myth `gloss`
+>   mezőjének enyhesége, ld. F4 myth-kommentek): egy célnyelven kívüli szó
+>   natív magyarázatához nem kell "önmaga célnyelvi fordítása" mező.
+> - **6 sztori kész** (2/sáv): `el-mercado` + `el-metro` (cdmx, önálló
+>   epizódok), `el-collar-desaparecido` + `la-llamada-de-medianoche` (crime,
+>   mindkettő nyitott szállal zárul), `el-robot-perdido` +
+>   `el-mensaje-del-espacio` (scifi, szintén nyitott szállal zárnak). Mind
+>   A1, 6-7 jelenet, jelenetenként 1 megértés-kérdés. `audit-games.mjs` 0 P1.
+> - **Ismert korpusz-rés, amit a tartalom-írás közben tanultam meg**: az
+>   `audit-games.mjs` ige-tő-egyezése (mint az `audit-corpus.mjs`-é) nem kezeli
+>   a rendhagyó, tő-váltó igéket (`ver`→`ve`, `pensar`→`piensa`, `decir`→`dice`,
+>   `ser` bare infinitive nincs a glue-listán), ezért ezeket a story-mondatokban
+>   következetesen KIKERÜLTEM (pl. `ve` helyett `mira`), nem a scriptet
+>   bővítettem (ugyanaz a szándékos döntés, mint a confusables-nél: a
+>   content author kerülje vagy glosszolja, ne nőjön egy második
+>   paradigma-map). Jövőbeli story-tartalomnak érdemes ugyanezt a mintát
+>   követnie.
+
 ---
 
 ## 4. Játék-specifikációk
@@ -1433,7 +1479,7 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 | F3 | `grammar-choice` | ✅ KÉSZ (motor + 3 téma: ser-estar, articulos-genero, por-para; a többi 56 = Q1-Q5, token-burn) | `7b613b2` (motor) / `cbe7a59` (tartalom) |
 | F3 | `confusables` | ✅ KÉSZ (24 csoport: 8 alaki + 9 kétféle „ugyanaz" + 7 mexikói) | `63bdfaf` |
 | F4 | `myth` | ✅ KÉSZ (4 sáv × 15 item = 60, mind forrásolt label-lel, url nélkül ahol nem lekért) | `6b57c66` |
-| F4 | `story` | 🟨 SPEC-KÉSZ | |
+| F4 | `story` | ✅ KÉSZ (motor + 6 sztori, 2×3 sáv) | *(lásd a következő docs-commit)* |
 | F4 | `chat` | 🟨 SPEC-KÉSZ | |
 | F5 | `odd-one-out` | 🟨 SPEC-KÉSZ | |
 | F5 | `conjugation-slot` | 🟨 SPEC-KÉSZ (csak ES) | |

@@ -141,7 +141,7 @@ export const GAME_DEFS: GameDef[] = [
       de: 'Lies eine Geschichte szenenweise, tippe auf neue Wörter.',
     },
     hasSettings: true,
-    soon: true,
+    soon: false, // F4 (GAMES.md 8. szekció): app/games/story.tsx
   },
   {
     id: 'chat',

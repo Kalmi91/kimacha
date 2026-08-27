@@ -27,12 +27,21 @@
  *     with no `label` (GAMES.md 4.13 forrás-fegyelem: `label` is required,
  *     `url` is intentionally OPTIONAL, an absent url is never a P1, a
  *     fabricated url would be far worse than none, see content.ts's MythItem)
+ *   - a story scene missing text/translation, or a question with <2 options
+ *     or no option marked `correct`
+ *   - a chat node option with a dangling `next` (no such node id in the
+ *     same chat) or an unknown `checklist` ref; a checklist item missing its
+ *     `why`/`source.label`/4-language phrasing (`url` optional, same rule as
+ *     myth); an ending with no id or an `if` that isn't `checklist<op>N` or
+ *     `default`; a chat with zero endings
  *
  * P2 (reported, not build-blocking):
  *   - a sentence/example/claim longer than 12 words at level A1 or above
  *   - a duplicate item id (grammar items within one topic; confusables set
  *     ids across the whole `confusables/<lang>/` directory; myth item ids
- *     across the whole `myths/<lang>/` directory)
+ *     across the whole `myths/<lang>/` directory; story/scene ids; chat ids)
+ *   - a chat option's `requires` referencing an unknown setup question id
+ *   - a chat node with >=2 options where none is marked `good:true`
  *
  * Run: node scripts/audit-games.mjs
  * Exit 1 if any P1 is found (the F3 kapu, GAMES.md 9. szekció).
@@ -82,8 +91,16 @@ const GLUE_WHITELIST = new Set([
 ]);
 const GLUE_STRIPPED = new Set([...GLUE_WHITELIST].map((w) => removeAccents(w)));
 
-// Culturally transparent proper nouns, not taught vocabulary cards.
-const PROPER_NOUNS = new Set(['méxico', 'mexico', 'españa', 'espana', 'madrid', 'barcelona', 'alemania']);
+// Culturally transparent proper nouns, not taught vocabulary cards. The
+// character-name block is story/chat cast (GAMES.md 4.5/4.6): a name is a
+// name in any language, glossing "María" scene after scene would be noise,
+// not a vocabulary lesson.
+const PROPER_NOUNS = new Set([
+  'méxico', 'mexico', 'españa', 'espana', 'madrid', 'barcelona', 'alemania',
+  'cdmx', 'coyoacán', 'coyoacan', 'condesa', 'roma', 'polanco',
+  'maría', 'maria', 'ana', 'rosa', 'carlos', 'elena', 'sofía', 'sofia',
+  'diego', 'luis', 'laura', 'nova', 'rex', 'javier', 'marco', 'lucía', 'lucia',
+]);
 
 function removeAccents(str) {
   return str.normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -332,6 +349,214 @@ function auditConfusablesSet(set, filePath, seenSetIds) {
 }
 
 // ---------------------------------------------------------------------------
+// story (data/games/stories/<lang>/<id>.json), GAMES.md 4.5
+// ---------------------------------------------------------------------------
+
+const STORY_TRACKS = new Set(['cdmx', 'crime', 'scifi']);
+
+function auditStory(story, filePath, seenIds) {
+  const path = `stories/${filePath}`;
+  if (!story.id) p1.push({ path, issue: 'missing story id' });
+  if (seenIds.has(story.id)) p2.push({ path, issue: `duplicate story id "${story.id}"` });
+  seenIds.add(story.id);
+  if (!LEVELS.includes(story.level)) p1.push({ path, issue: `missing/unknown level: ${story.level}` });
+  if (!STORY_TRACKS.has(story.track)) p1.push({ path, issue: `missing/unknown track: ${story.track}` });
+  checkLangs(story.title, `${path} title`);
+  if (!story.cover) p1.push({ path, issue: 'missing cover emoji' });
+  if (!Array.isArray(story.scenes) || story.scenes.length < 1) p1.push({ path, issue: 'needs >=1 scene' });
+
+  const taughtSet = cumulativeTaught(story.level ?? 'C1');
+  const seenSceneIds = new Set();
+
+  // A newWords gloss holds for the REST of the story once introduced (the
+  // screen passes the whole story's merged overrides to every scene's
+  // GlossText, same reasoning as a topic-wide `glossary` elsewhere in this
+  // script), not just the scene that first defines it, so the audit's
+  // "known" set accumulates across scenes instead of resetting per scene.
+  const extra = glossaryTokenSet(story.scenes?.flatMap((sc) => sc.newWords ?? []));
+
+  for (const scene of story.scenes ?? []) {
+    const scenePath = `${path} scene ${scene.id ?? '?'}`;
+    if (!scene.id) p1.push({ path: scenePath, issue: 'missing scene id' });
+    if (seenSceneIds.has(scene.id)) p2.push({ path: scenePath, issue: `duplicate scene id "${scene.id}"` });
+    seenSceneIds.add(scene.id);
+
+    const text = Object.values(scene.text ?? {}).join(' ');
+    if (!text.trim()) {
+      p1.push({ path: scenePath, issue: 'missing scene text' });
+      continue;
+    }
+    checkLangs(scene.translation, `${scenePath} translation`);
+
+    for (const nw of scene.newWords ?? []) {
+      // Leniency matches myth's `gloss` field (not full checkLangs'd there
+      // either): a native-language gloss for a word OUTSIDE the target-
+      // language corpus doesn't need a same-language "translation" of
+      // itself, just a real word and at least one native rendering.
+      if (!nw.word) p1.push({ path: scenePath, issue: 'newWords entry missing word' });
+      if (!nw.gloss || Object.keys(nw.gloss).length === 0) {
+        p1.push({ path: scenePath, issue: `newWords[${nw.word}] missing gloss` });
+      }
+    }
+    for (const tok of tokenize(text)) {
+      if (!tokenKnown(tok, taughtSet, extra)) p1.push({ path: scenePath, issue: `untaught/unglossed Spanish word: "${tok}"` });
+    }
+    checkLength(text, story.level, scenePath);
+
+    if (scene.question) {
+      checkLangs(scene.question.prompt, `${scenePath} question prompt`);
+      const opts = scene.question.options ?? [];
+      if (opts.length < 2) p1.push({ path: scenePath, issue: 'question needs >=2 options' });
+      if (!opts.some((o) => o.correct)) p1.push({ path: scenePath, issue: 'question has no correct option' });
+      for (const opt of opts) {
+        const textEntry = Object.entries(opt).find(([k]) => k !== 'correct');
+        const optText = textEntry?.[1];
+        if (typeof optText !== 'string' || !optText.trim()) {
+          p1.push({ path: scenePath, issue: 'question option missing text' });
+          continue;
+        }
+        for (const tok of tokenize(optText)) {
+          if (!tokenKnown(tok, taughtSet, extra)) {
+            p1.push({ path: scenePath, issue: `untaught/unglossed Spanish word in question option: "${tok}"` });
+          }
+        }
+      }
+    }
+  }
+}
+
+function runStories() {
+  const base = join(ROOT, 'data/games/stories');
+  if (!existsSync(base)) return;
+  const seenIds = new Set();
+  for (const lang of readdirSync(base)) {
+    const dir = join(base, lang);
+    for (const file of jsonFilesIn(dir)) {
+      const story = JSON.parse(readFileSync(join(dir, file), 'utf8'));
+      auditStory(story, `${lang}/${file}`, seenIds);
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// chat (data/games/chats/<lang>/<id>.json), GAMES.md 4.6
+// ---------------------------------------------------------------------------
+
+const CHAT_IF_PATTERN = /^checklist(>=|<=|>|<|==)\d+$|^default$/;
+
+function auditChat(chat, filePath, seenIds) {
+  const path = `chats/${filePath}`;
+  const lang = filePath.split('/')[0];
+  if (!chat.id) p1.push({ path, issue: 'missing chat id' });
+  if (seenIds.has(chat.id)) p2.push({ path, issue: `duplicate chat id "${chat.id}"` });
+  seenIds.add(chat.id);
+  if (!LEVELS.includes(chat.level)) p1.push({ path, issue: `missing/unknown level: ${chat.level}` });
+  checkLangs(chat.title, `${path} title`);
+
+  const taughtSet = cumulativeTaught(chat.level ?? 'C1');
+
+  const setupIds = new Set();
+  for (const q of chat.setup ?? []) {
+    const qPath = `${path} setup[${q.id ?? '?'}]`;
+    if (!q.id) p1.push({ path: qPath, issue: 'missing setup question id' });
+    setupIds.add(q.id);
+    checkLangs(q.prompt, `${qPath} prompt`);
+    if (!Array.isArray(q.options) || q.options.length < 2) p1.push({ path: qPath, issue: 'needs >=2 options' });
+    for (const opt of q.options ?? []) {
+      if (!opt.value) p1.push({ path: qPath, issue: 'setup option missing value' });
+      const text = opt.label?.[lang];
+      if (typeof text !== 'string' || !text.trim()) {
+        p1.push({ path: qPath, issue: `setup option "${opt.value}" missing '${lang}' label text` });
+      } else {
+        for (const tok of tokenize(text)) {
+          if (!tokenKnown(tok, taughtSet, undefined)) p1.push({ path: qPath, issue: `untaught/unglossed Spanish word in setup option: "${tok}"` });
+        }
+      }
+    }
+  }
+
+  const nodeIds = new Set((chat.nodes ?? []).map((n) => n.id));
+  const checklistIds = new Set((chat.checklist ?? []).map((c) => c.id));
+
+  for (const node of chat.nodes ?? []) {
+    const nPath = `${path} node ${node.id ?? '?'}`;
+    if (!node.id) p1.push({ path: nPath, issue: 'missing node id' });
+    const npcText = node.npc?.[lang];
+    if (typeof npcText !== 'string' || !npcText.trim()) {
+      p1.push({ path: nPath, issue: `missing '${lang}' npc text` });
+    } else {
+      for (const tok of tokenize(npcText)) {
+        if (!tokenKnown(tok, taughtSet, undefined)) p1.push({ path: nPath, issue: `untaught/unglossed Spanish word in npc: "${tok}"` });
+      }
+      checkLength(npcText, chat.level, nPath);
+    }
+    if (!Array.isArray(node.options) || node.options.length < 1) p1.push({ path: nPath, issue: 'needs >=1 option' });
+
+    let nodeHasGood = false;
+    for (const opt of node.options ?? []) {
+      const oPath = `${nPath} option`;
+      const text = opt[lang];
+      if (typeof text !== 'string' || !text.trim()) {
+        p1.push({ path: oPath, issue: `missing '${lang}' option text` });
+      } else {
+        for (const tok of tokenize(text)) {
+          if (!tokenKnown(tok, taughtSet, undefined)) p1.push({ path: oPath, issue: `untaught/unglossed Spanish word: "${tok}"` });
+        }
+        checkLength(text, chat.level, oPath);
+      }
+      if (opt.next && !nodeIds.has(opt.next)) p1.push({ path: oPath, issue: `dangling next -> "${opt.next}"` });
+      if (opt.checklist && !checklistIds.has(opt.checklist)) p1.push({ path: oPath, issue: `unknown checklist ref "${opt.checklist}"` });
+      if (opt.requires) {
+        for (const k of Object.keys(opt.requires)) {
+          if (!setupIds.has(k)) p2.push({ path: oPath, issue: `requires references unknown setup id "${k}"` });
+        }
+      }
+      if (opt.good) nodeHasGood = true;
+    }
+    if ((node.options?.length ?? 0) >= 2 && !nodeHasGood) {
+      p2.push({ path: nPath, issue: 'no option marked good:true at a real choice point' });
+    }
+  }
+
+  for (const item of chat.checklist ?? []) {
+    const iPath = `${path} checklist[${item.id ?? '?'}]`;
+    if (!item.id) p1.push({ path: iPath, issue: 'missing checklist item id' });
+    checkLangs(item.why, `${iPath} why`);
+    if (!item.source?.label) p1.push({ path: iPath, issue: 'source missing a label (url stays optional, never fabricate one)' });
+    checkLangs(item, `${iPath} phrasing`);
+    const text = item[lang];
+    if (typeof text === 'string') {
+      for (const tok of tokenize(text)) {
+        if (!tokenKnown(tok, taughtSet, undefined)) p1.push({ path: iPath, issue: `untaught/unglossed Spanish word: "${tok}"` });
+      }
+    }
+  }
+
+  if (!Array.isArray(chat.endings) || chat.endings.length === 0) {
+    p1.push({ path, issue: 'needs >=1 ending' });
+  }
+  for (const end of chat.endings ?? []) {
+    const ePath = `${path} ending ${end.id ?? '?'}`;
+    if (!end.id) p1.push({ path: ePath, issue: 'missing ending id' });
+    checkLangs(end.title, `${ePath} title`);
+    if (!CHAT_IF_PATTERN.test(end.if ?? '')) p1.push({ path: ePath, issue: `invalid if condition: "${end.if}"` });
+  }
+}
+
+function runChats() {
+  const base = join(ROOT, 'data/games/chats');
+  if (!existsSync(base)) return;
+  const seenIds = new Set();
+  for (const lang of readdirSync(base)) {
+    const dir = join(base, lang);
+    for (const file of jsonFilesIn(dir)) {
+      const chat = JSON.parse(readFileSync(join(dir, file), 'utf8'));
+      auditChat(chat, `${lang}/${file}`, seenIds);
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
 // myth (data/games/myths/<lang>/<track>.json), GAMES.md 4.13
 // ---------------------------------------------------------------------------
 
@@ -417,6 +642,8 @@ function runConfusables() {
 runGrammar();
 runConfusables();
 runMyths();
+runStories();
+runChats();
 
 // ---------------------------------------------------------------------------
 // Report
