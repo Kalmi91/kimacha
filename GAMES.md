@@ -1629,7 +1629,7 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 | F4 | `story` | ✅ KÉSZ (motor + 6 sztori, 2×3 sáv) | `f5daf38` |
 | F4 | `chat` | ✅ KÉSZ (motor + 5 téma, mind forrásolt) | `66ff5ea` |
 | F5 | `odd-one-out` | ✅ KÉSZ | `77532c1` |
-| F5 | `conjugation-slot` | ✅ KÉSZ (csak ES) | |
+| F5 | `conjugation-slot` | ✅ KÉSZ (csak ES) | `f88a592` |
 | F5 | `ccat` | 🟨 SPEC-KÉSZ (térbeli nélkül) | |
 | F6 | `sentence-tetris` | ⏸ ELHALASZTVA (K16) | |
 
