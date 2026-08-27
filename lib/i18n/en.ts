@@ -127,6 +127,19 @@ export default {
       genderM: 'masculine words',
       genderF: 'feminine words',
     },
+    // F5 (odd-one-out, GAMES.md 4.8).
+    oddOneOut: {
+      prompt: "Which word doesn't belong?",
+      progress: (current: number, total: number) => `${current} / ${total}`,
+      commonThread: (label: string) => `The rest are all ${label}.`,
+      difficultyLabel: 'Difficulty',
+      difficultyTopic: 'Topic',
+      difficultyPos: 'Part of speech',
+      difficultyMixed: 'Mixed',
+      questionCountLabel: 'Question count',
+      timeLimitLabel: 'Time per question',
+      timeLimitNone: 'None',
+    },
     // shared, F3 (grammar-choice 4.11 + confusables 4.12).
     understood: 'Got it',
     moreLabel: 'More',

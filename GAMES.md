@@ -585,6 +585,41 @@ szállítási kapu minden játék-itemre.
 >   haladás `game_progress`/`game_scores`-ba megy, a `cards` tábla érintetlen
 >   (K3).
 
+> **MEGVALÓSÍTÁSI JEGYZET (F5, odd-one-out, 2026-08-27):**
+> - **`lib/games/oddOneOut.ts`** a `bubblePop.ts` `buildBubbleRound`-jának
+>   testvére: ugyanaz a topic/pos/gender csoportosítás (K6 metaadat), de a
+>   kimenet 4 szó + pontosan 1 `oddIndex`, nem egy jó/rossz buborék-halmaz.
+>   A GAMES.md kérése szerint ("ahol a ccat és az odd-one-out ugyanazt
+>   csinálja, oszd meg a motort") ez a modul a közös motor mindkettőhöz;
+>   a `ccat` (F5, még nem kész) a saját "kakukktojás" item-típusához ezt
+>   fogja hívni, nem másolja újra.
+> - **`categorySet: 'gender'` NEM önálló nehézségi opció a UI-ban.** A 4.8
+>   szöveg Beállítás-sora "téma / szófaj / vegyes" hármast ad meg, nem
+>   négyet, ezért a `difficulty` típus `'topic' | 'pos' | 'mixed'`; a
+>   `'mixed'` minden körben véletlenszerűen választ a topic/pos/gender
+>   motor-szintű 3 kategória közül (`lib/games/oddOneOut.ts`
+>   `OddCategorySet` mind a hármat ismeri), így a "nyelvtani nem szerinti
+>   kilógás" (a 4.8 leíró szövegében említett nehezítés) a vegyes módon
+>   keresztül elérhető, külön gombot nem kapott.
+> - **Nincs `GameShell`/`useGameSession`.** A játék minden válasz UTÁN
+>   MINDIG megmutatja a közös szálat (kőbe vésett elfogadási kritérium),
+>   tehát élet-vesztés/idő-lejárat sosem szakítja félbe a magyarázatot,
+>   ez közelebb áll a `grammar-choice.tsx` kérdés-kör-magyarázat mintájához
+>   (saját fejléc, `screen: 'playing' | 'summary'`), mint a `bubble-pop`
+>   arcade-hurkjához. Az opcionális kérdésenkénti időlimit lejártakor a
+>   kör válasz NÉLKÜL is felfedi a közös szálat (helytelen próbálkozásként
+>   naplózva), a tanulás így sosem marad válasz nélkül.
+> - **`card_attempts` naplózás** a `round.items[oddIndex].wordId`-ra megy
+>   (`type='game:odd-one-out'`), mert az érdemi tudás-teszt maga a kilógó
+>   szó felismerése, a másik 3 csak kontextus.
+> - **Hosszú nyomás (`onLongPress`) nyitja a gloss-buborékot** a koppintás
+>   (= válasz) helyett, a `bubble-pop` mintáját követve (`GlossText`
+>   `disableTap`/`forceOpen`/`onForceClose`), mert a csempe saját tap-je
+>   már foglalt.
+> - **`lib/games/__tests__/gamesRegistry.test.ts` frissült**: az
+>   `odd-one-out` bekerült a "van saját képernyője" halmazba, különben a
+>   `soon: false` flip pirosra váltja a meglévő őrző tesztet.
+
 ---
 
 ## 4. Játék-specifikációk
@@ -1537,7 +1572,7 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 | F4 | `myth` | ✅ KÉSZ (4 sáv × 15 item = 60, mind forrásolt label-lel, url nélkül ahol nem lekért) | `6b57c66` |
 | F4 | `story` | ✅ KÉSZ (motor + 6 sztori, 2×3 sáv) | `f5daf38` |
 | F4 | `chat` | ✅ KÉSZ (motor + 5 téma, mind forrásolt) | `66ff5ea` |
-| F5 | `odd-one-out` | 🟨 SPEC-KÉSZ | |
+| F5 | `odd-one-out` | ✅ KÉSZ | |
 | F5 | `conjugation-slot` | 🟨 SPEC-KÉSZ (csak ES) | |
 | F5 | `ccat` | 🟨 SPEC-KÉSZ (térbeli nélkül) | |
 | F6 | `sentence-tetris` | ⏸ ELHALASZTVA (K16) | |
