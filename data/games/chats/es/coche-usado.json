@@ -1,0 +1,235 @@
+{
+  "id": "coche-usado",
+  "level": "A2",
+  "title": {
+    "hu": "Használt autót veszek",
+    "en": "Buying a Used Car",
+    "es": "Compro un coche usado",
+    "de": "Ich kaufe ein gebrauchtes Auto"
+  },
+  "setup": [
+    {
+      "id": "budget",
+      "prompt": {
+        "hu": "Mekkora a kereted egy használt autóra?",
+        "en": "How big is your budget for a used car?",
+        "es": "¿Cuánto es tu presupuesto para un coche usado?",
+        "de": "Wie groß ist dein Budget für ein gebrauchtes Auto?"
+      },
+      "options": [
+        { "value": "low", "label": { "es": "Tengo poco dinero." } },
+        { "value": "high", "label": { "es": "Tengo suficiente dinero." } }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "n1",
+      "npc": { "es": "Es un buen coche, muy poco usado." },
+      "options": [
+        { "es": "¿Tiene libro de servicio y cuántos dueños ha tenido?", "next": "n2", "good": true, "checklist": "service-book" },
+        { "es": "Me gusta el color.", "next": "n2" }
+      ]
+    },
+    {
+      "id": "n2",
+      "npc": { "es": "Claro, aquí están las llaves. ¿Quiere ver el coche por dentro?" },
+      "options": [
+        { "es": "¿El kilometraje es real? ¿Hay papeles que lo confirman?", "next": "n3", "good": true, "checklist": "km-real" },
+        { "es": "¿El coche tiene radio?", "next": "n3" }
+      ]
+    },
+    {
+      "id": "n3",
+      "npc": { "es": "El coche está en muy buen estado, se lo prometo." },
+      "options": [
+        { "es": "¿El coche tuvo un accidente? ¿La pintura es original?", "next": "n4", "good": true, "checklist": "crash-history" },
+        { "es": "¿Tiene aire acondicionado?", "next": "n4" }
+      ]
+    },
+    {
+      "id": "n4",
+      "npc": { "es": "No, este coche nunca tuvo un accidente." },
+      "options": [
+        { "es": "¿Puedo ver si hay óxido cerca de las puertas o las ruedas?", "next": "n5", "good": true, "checklist": "rust" },
+        { "es": "¿El coche es rápido?", "next": "n5" }
+      ]
+    },
+    {
+      "id": "n5",
+      "npc": { "es": "Podemos arrancar el coche ahora, si quiere." },
+      "options": [
+        { "es": "¿Puedo ver el coche arrancar en frío? ¿De qué color es el humo?", "next": "n6", "good": true, "checklist": "cold-start" },
+        { "es": "¿El coche es barato de mantener?", "next": "n6", "requires": { "budget": "low" } },
+        { "es": "¿El coche tiene opciones de lujo?", "next": "n6", "requires": { "budget": "high" } }
+      ]
+    },
+    {
+      "id": "n6",
+      "npc": { "es": "Sí, claro, podemos ir a la calle." },
+      "options": [
+        { "es": "¿Puedo hacer una prueba de manejo, también en carretera?", "next": "n7", "good": true, "checklist": "test-drive" },
+        { "es": "¿El coche es cómodo?", "next": "n7" }
+      ]
+    },
+    {
+      "id": "n7",
+      "npc": { "es": "Perfecto. Aquí está todo listo para usted." },
+      "options": [
+        { "es": "¿Tiene los papeles en regla? ¿El coche tiene deudas?", "next": "n8", "good": true, "checklist": "papers" },
+        { "es": "¿Cuánto cuesta la gasolina?", "next": "n8" }
+      ]
+    },
+    {
+      "id": "n8",
+      "npc": { "es": "Entonces, ¿qué piensa del coche?" },
+      "options": [
+        { "es": "Antes de comprar, quiero una revisión de un mecánico independiente.", "good": true, "checklist": "inspection" },
+        { "es": "El precio es un poco alto para mí.", "requires": { "budget": "low" } },
+        { "es": "Me gusta mucho, lo compro ahora.", "requires": { "budget": "high" } }
+      ]
+    }
+  ],
+  "checklist": [
+    {
+      "id": "service-book",
+      "hu": "Van szervizkönyv, és hány tulajdonosa volt az autónak?",
+      "en": "Is there a service book, and how many owners has it had?",
+      "es": "¿Tiene libro de servicio y cuántos dueños ha tenido?",
+      "de": "Gibt es ein Serviceheft, und wie viele Besitzer hatte es?",
+      "why": {
+        "hu": "A rendezett szervizkönyv és a kevés tulajdonos azt jelzi, hogy az autót gondosan karbantartották.",
+        "en": "An organized service book and few owners usually mean the car was cared for.",
+        "es": "Un libro de servicio ordenado y pocos dueños suelen indicar que el coche fue bien cuidado.",
+        "de": "Ein ordentliches Serviceheft und wenige Vorbesitzer deuten meist auf ein gut gepflegtes Auto hin."
+      },
+      "source": { "label": "Consumer Reports, How to Buy a Used Car", "url": "https://www.consumerreports.org/cars/buying-a-car/how-to-buy-a-used-car-a5221672417/" }
+    },
+    {
+      "id": "km-real",
+      "hu": "Valós a kilométeróra állása, és van rá papír, ami igazolja?",
+      "en": "Is the mileage real, and is there paperwork confirming it?",
+      "es": "¿El kilometraje es real? ¿Hay papeles que lo confirman?",
+      "de": "Ist der Kilometerstand echt, und gibt es Belege dafür?",
+      "why": {
+        "hu": "Ha az évenkénti futásteljesítmény nagyon eltér az átlagostól, kérdezz rá, miért, és nézd meg a papírokat.",
+        "en": "If the yearly mileage is far from average, ask why, and check the paperwork.",
+        "es": "Si el kilometraje anual está muy lejos del promedio, pregunta por qué y revisa los papeles.",
+        "de": "Wenn die jährliche Laufleistung stark vom Durchschnitt abweicht, frag nach dem Grund und prüfe die Unterlagen."
+      },
+      "source": { "label": "Consumer Reports, How to Buy a Used Car", "url": "https://www.consumerreports.org/cars/buying-a-car/how-to-buy-a-used-car-a5221672417/" }
+    },
+    {
+      "id": "crash-history",
+      "hu": "Volt-e baleset, és eredeti-e a fényezés vastagsága?",
+      "en": "Was there a crash, and is the paint layer original?",
+      "es": "¿El coche tuvo un accidente? ¿La pintura es original?",
+      "de": "Hatte das Auto einen Unfall, und ist die Lackschicht original?",
+      "why": {
+        "hu": "Nem illeszkedő panelek vagy eltérő fényezés régi baleset és rossz javítás jele lehet.",
+        "en": "Misaligned panels or inconsistent paint can signal a past crash and a poor repair.",
+        "es": "Los paneles desalineados o la pintura inconsistente pueden indicar un accidente anterior y una mala reparación.",
+        "de": "Nicht fluchtende Karosserieteile oder ungleichmäßiger Lack können auf einen früheren Unfall und eine schlechte Reparatur hindeuten."
+      },
+      "source": { "label": "Consumer Reports, How to Buy a Used Car", "url": "https://www.consumerreports.org/cars/buying-a-car/how-to-buy-a-used-car-a5221672417/" }
+    },
+    {
+      "id": "rust",
+      "hu": "Van-e rozsda a küszöbnél vagy a kerékjáratnál?",
+      "en": "Is there rust at the sills or wheel arches?",
+      "es": "¿Hay óxido cerca de las puertas o las ruedas?",
+      "de": "Gibt es Rost an den Schwellern oder Radkästen?",
+      "why": {
+        "hu": "A küszöbnél és a kerékjáratnál lévő rozsda gyakran komolyabb, rejtett problémára utal.",
+        "en": "Rust at the sills and wheel arches often points to a bigger, hidden problem.",
+        "es": "El óxido en los umbrales y los pasos de rueda suele indicar un problema más grande y oculto.",
+        "de": "Rost an Schwellern und Radkästen deutet oft auf ein größeres, verstecktes Problem hin."
+      },
+      "source": { "label": "Vásárlói/szerelői átvizsgálási listák (used-car pre-purchase inspection guides)" }
+    },
+    {
+      "id": "cold-start",
+      "hu": "Lehet-e hidegindítást látni, és milyen színű a kipufogó füst?",
+      "en": "Can you see a cold start, and what color is the exhaust smoke?",
+      "es": "¿Puedo ver el coche arrancar en frío? ¿De qué color es el humo?",
+      "de": "Kann man den Kaltstart sehen, und welche Farbe hat der Auspuffrauch?",
+      "why": {
+        "hu": "Hidegindításnál a kékes vagy sűrű fehér füst motorproblémára utalhat.",
+        "en": "At a cold start, bluish or thick white smoke can point to an engine problem.",
+        "es": "En el arranque en frío, el humo azulado o blanco espeso puede indicar un problema del motor.",
+        "de": "Beim Kaltstart kann bläulicher oder dicker weißer Rauch auf ein Motorproblem hinweisen."
+      },
+      "source": { "label": "Szerelői átvizsgálási listák (mechanic pre-purchase inspection guides)" }
+    },
+    {
+      "id": "test-drive",
+      "hu": "Lehet-e próbautat tenni, országúton is?",
+      "en": "Can you take a test drive, including on the highway?",
+      "es": "¿Puedo hacer una prueba de manejo, también en carretera?",
+      "de": "Kann man eine Probefahrt machen, auch auf der Autobahn?",
+      "why": {
+        "hu": "A városi próba nem mutatja meg a magas sebességnél jelentkező zajokat és rezgéseket.",
+        "en": "A short city test won't reveal noises or vibrations that only show up at highway speed.",
+        "es": "Una prueba corta en la ciudad no revela los ruidos o vibraciones que solo aparecen a alta velocidad.",
+        "de": "Eine kurze Stadtfahrt zeigt nicht die Geräusche oder Vibrationen, die erst bei hoher Geschwindigkeit auftreten."
+      },
+      "source": { "label": "Edmunds, Inspect That Used Car Before Buying", "url": "https://www.edmunds.com/car-buying/inspect-that-used-car-before-buying.html" }
+    },
+    {
+      "id": "papers",
+      "hu": "Rendben vannak-e a papírok, és van-e teher (hitel, zálog) az autón?",
+      "en": "Are the papers in order, and is the car free of any lien or debt?",
+      "es": "¿Tiene los papeles en regla? ¿El coche tiene deudas?",
+      "de": "Sind die Papiere in Ordnung, und lastet keine Schuld auf dem Auto?",
+      "why": {
+        "hu": "Ha az autón teher van, azt a vásárló örökli, ha nem néz utána előre.",
+        "en": "If there's a lien on the car, the buyer inherits it unless they check first.",
+        "es": "Si el coche tiene un gravamen, el comprador lo hereda si no lo revisa antes.",
+        "de": "Wenn eine Belastung auf dem Auto liegt, übernimmt der Käufer sie, wenn er es nicht vorher prüft."
+      },
+      "source": { "label": "Fogyasztóvédelmi útmutatók (consumer protection: vehicle title/lien checks)" }
+    },
+    {
+      "id": "inspection",
+      "hu": "Megéri-e egy független szerelői átvizsgálás, mielőtt fizetsz?",
+      "en": "Is it worth an independent mechanic's inspection before you pay?",
+      "es": "¿Vale la pena una revisión de un mecánico independiente antes de pagar?",
+      "de": "Lohnt sich eine unabhängige Werkstattprüfung, bevor man bezahlt?",
+      "why": {
+        "hu": "Egy független átvizsgálás valamennyibe kerül, de a jelentés kimutatja a rejtett problémákat és a javítási költséget, mielőtt a tiéd lesz az autó.",
+        "en": "An independent inspection costs a bit, but its report shows hidden problems and repair costs before the car becomes yours.",
+        "es": "Una revisión independiente cuesta algo, pero el informe muestra problemas ocultos y el costo de reparación antes de que el coche sea tuyo.",
+        "de": "Eine unabhängige Prüfung kostet etwas, aber der Bericht zeigt versteckte Probleme und Reparaturkosten, bevor das Auto dir gehört."
+      },
+      "source": { "label": "Consumer Reports, How to Buy a Used Car", "url": "https://www.consumerreports.org/cars/buying-a-car/how-to-buy-a-used-car-a5221672417/" }
+    }
+  ],
+  "endings": [
+    { "id": "careful-buyer", "if": "checklist>=6", "title": { "hu": "Nagyon alapos vevő voltál", "en": "You were a very thorough buyer", "es": "Fuiste un comprador muy cuidadoso", "de": "Du warst ein sehr gründlicher Käufer" } },
+    { "id": "decent-buyer", "if": "checklist>=3", "title": { "hu": "Jó úton jársz", "en": "You're on the right track", "es": "Vas por buen camino", "de": "Du bist auf dem richtigen Weg" } },
+    { "id": "risky-buyer", "if": "default", "title": { "hu": "Ez kockázatos vásárlás lett volna", "en": "This would have been a risky purchase", "es": "Esta habría sido una compra arriesgada", "de": "Das wäre ein riskanter Kauf gewesen" } }
+  ],
+  "glossary": [
+    { "word": "suficiente", "gloss": { "hu": "elég", "en": "enough", "de": "genug" } },
+    { "word": "buen", "gloss": { "hu": "jó (rövidült alak főnév előtt)", "en": "good (short form before a noun)", "de": "gut (Kurzform vor einem Nomen)" } },
+    { "word": "usado", "gloss": { "hu": "használt", "en": "used", "de": "gebraucht" } },
+    { "word": "tenido", "gloss": { "hu": "volt, birtokolt (tener múlt idejű alakja)", "en": "had (past participle of tener)", "de": "gehabt (Partizip von tener)" } },
+    { "word": "kilometraje", "gloss": { "hu": "futásteljesítmény, km-óra állása", "en": "mileage", "de": "Kilometerstand" } },
+    { "word": "confirman", "gloss": { "hu": "megerősítik", "en": "confirm", "de": "bestätigen" } },
+    { "word": "pintura", "gloss": { "hu": "festék, fényezés", "en": "paint", "de": "Lack" } },
+    { "word": "acondicionado", "gloss": { "hu": "légkondicionált (aire acondicionado = légkondi)", "en": "conditioned (aire acondicionado = A/C)", "de": "klimatisiert (aire acondicionado = Klimaanlage)" } },
+    { "word": "puedo", "gloss": { "hu": "tudok, -hatok (poder ragozott alakja)", "en": "I can", "de": "ich kann" } },
+    { "word": "óxido", "gloss": { "hu": "rozsda", "en": "rust", "de": "Rost" } },
+    { "word": "arrancar", "gloss": { "hu": "beindítani (motort)", "en": "to start (an engine)", "de": "starten (Motor)" } },
+    { "word": "humo", "gloss": { "hu": "füst", "en": "smoke", "de": "Rauch" } },
+    { "word": "mantener", "gloss": { "hu": "karbantartani, fenntartani", "en": "to maintain", "de": "warten, unterhalten" } },
+    { "word": "lujo", "gloss": { "hu": "luxus", "en": "luxury", "de": "Luxus" } },
+    { "word": "prueba", "gloss": { "hu": "próba (prueba de manejo = próbaút)", "en": "test (prueba de manejo = test drive)", "de": "Test (prueba de manejo = Probefahrt)" } },
+    { "word": "cómodo", "gloss": { "hu": "kényelmes", "en": "comfortable", "de": "bequem" } },
+    { "word": "deudas", "gloss": { "hu": "tartozások, terhek", "en": "debts", "de": "Schulden" } },
+    { "word": "entonces", "gloss": { "hu": "akkor, tehát", "en": "so, then", "de": "also, dann" } },
+    { "word": "piensa", "gloss": { "hu": "gondol (pensar ragozott alakja)", "en": "thinks", "de": "denkt" } },
+    { "word": "revisión", "gloss": { "hu": "átvizsgálás", "en": "inspection", "de": "Überprüfung" } },
+    { "word": "independiente", "gloss": { "hu": "független", "en": "independent", "de": "unabhängig" } }
+  ]
+}

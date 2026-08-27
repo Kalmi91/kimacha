@@ -1,0 +1,237 @@
+{
+  "id": "whatsapp-sospechoso",
+  "level": "A2",
+  "title": {
+    "hu": "Gyanús WhatsApp-üzenet",
+    "en": "A Suspicious WhatsApp Message",
+    "es": "Un mensaje sospechoso de WhatsApp",
+    "de": "Eine verdächtige WhatsApp-Nachricht"
+  },
+  "setup": [],
+  "nodes": [
+    {
+      "id": "n1",
+      "npc": { "es": "Hola, somos su banco. Su cuenta tiene un problema urgente." },
+      "options": [
+        { "es": "No conozco este número. ¿Quién es usted?", "next": "n2", "good": true, "checklist": "unknown-sender" },
+        { "es": "¿Qué problema tengo?", "next": "n2" }
+      ]
+    },
+    {
+      "id": "n2",
+      "npc": { "es": "Haga clic en este enlace para resolver el problema ahora." },
+      "options": [
+        { "es": "No hago clic en enlaces de mensajes desconocidos.", "next": "n3", "good": true, "checklist": "dont-click" },
+        { "es": "Está bien, voy a hacer clic.", "next": "n3" }
+      ]
+    },
+    {
+      "id": "n3",
+      "npc": { "es": "Es urgente, su cuenta se va a cerrar en una hora." },
+      "options": [
+        { "es": "La urgencia es una señal de alarma, no me presiono.", "next": "n4", "good": true, "checklist": "urgency-flag" },
+        { "es": "¡Ay no, tengo que actuar rápido!", "next": "n4" }
+      ]
+    },
+    {
+      "id": "n4",
+      "npc": { "es": "Solo necesito su CURP y el número de su tarjeta." },
+      "options": [
+        { "es": "No doy mi CURP ni el número de mi tarjeta por mensaje.", "next": "n5", "good": true, "checklist": "no-personal-data" },
+        { "es": "Bueno, aquí está mi información.", "next": "n5" }
+      ]
+    },
+    {
+      "id": "n5",
+      "npc": { "es": "También tiene un premio especial de la empresa." },
+      "options": [
+        { "es": "Un premio así es demasiado bueno, es sospechoso.", "next": "n6", "good": true, "checklist": "too-good-flag" },
+        { "es": "¡Qué bien, quiero mi premio!", "next": "n6" }
+      ]
+    },
+    {
+      "id": "n6",
+      "npc": { "es": "Puede verificar todo conmigo ahora mismo, aquí en el mensaje." },
+      "options": [
+        { "es": "Prefiero verificar con el número oficial del banco.", "next": "n7", "good": true, "checklist": "verify-official" },
+        { "es": "Está bien, confío en usted.", "next": "n7" }
+      ]
+    },
+    {
+      "id": "n7",
+      "npc": { "es": "Por favor, comparta este mensaje con sus amigos también." },
+      "options": [
+        { "es": "No reenvío mensajes sin verificar primero.", "next": "n8", "good": true, "checklist": "no-forward" },
+        { "es": "Sí, se lo mando a todos mis amigos.", "next": "n8" }
+      ]
+    },
+    {
+      "id": "n8",
+      "npc": { "es": "Entonces, ¿qué hace con este mensaje?" },
+      "options": [
+        { "es": "Bloqueo este número y reporto el mensaje.", "good": true, "checklist": "block-report" },
+        { "es": "No hago nada, solo lo ignoro por ahora." }
+      ]
+    }
+  ],
+  "checklist": [
+    {
+      "id": "unknown-sender",
+      "hu": "Ellenőrzöd, ismered-e az üzenetet küldő számot?",
+      "en": "Do you check whether you know the sending number?",
+      "es": "¿Revisas si conoces el número que envía el mensaje?",
+      "de": "Prüfst du, ob du die Absendernummer kennst?",
+      "why": {
+        "hu": "A bűnözők egyre inkább üzenetküldő appokat (WhatsApp, SMS) használnak, nem a telefonhívást.",
+        "en": "Criminal groups have shifted toward messaging apps (WhatsApp, SMS) instead of phone calls.",
+        "es": "Los grupos criminales migraron hacia apps de mensajería (WhatsApp, SMS) en vez de llamadas.",
+        "de": "Kriminelle Gruppen sind auf Messaging-Apps (WhatsApp, SMS) statt Anrufe umgestiegen."
+      },
+      "source": { "label": "CONDUSEF (México), alerta de fraudes por WhatsApp" }
+    },
+    {
+      "id": "dont-click",
+      "hu": "Nem kattintasz az ismeretlen üzenetben lévő linkre?",
+      "en": "Do you avoid clicking links in unknown messages?",
+      "es": "¿Evitas hacer clic en enlaces de mensajes desconocidos?",
+      "de": "Klickst du nicht auf Links in unbekannten Nachrichten?",
+      "why": {
+        "hu": "A linkre kattintva a felhasználó egy hamis oldalra kerül, ami tökéletesen utánozza a bank felületét.",
+        "en": "Clicking the link redirects to a fake page that perfectly imitates the bank's interface.",
+        "es": "Al hacer clic en el enlace, la persona es redirigida a una página falsa que imita a la perfección la interfaz del banco.",
+        "de": "Ein Klick auf den Link führt zu einer gefälschten Seite, die die Bank-Oberfläche perfekt imitiert."
+      },
+      "source": { "label": "BBVA México, Prevención y acción ante estafas por WhatsApp", "url": "https://www.bbva.mx/personas/centro-de-ayuda/evitar-estafas-por-whatsapp.html" }
+    },
+    {
+      "id": "urgency-flag",
+      "hu": "Felismered a mesterséges sietséget mint vészjelet?",
+      "en": "Do you recognize manufactured urgency as a red flag?",
+      "es": "¿Reconoces la urgencia forzada como una señal de alarma?",
+      "de": "Erkennst du künstliche Dringlichkeit als Warnsignal?",
+      "why": {
+        "hu": "A csalók a napi stresszt és a sietséget használják ki, hogy ne legyen időd gondolkodni.",
+        "en": "Scammers exploit daily stress and urgency so you don't have time to think.",
+        "es": "Los estafadores aprovechan el estrés diario y la urgencia para que no tengas tiempo de pensar.",
+        "de": "Betrüger nutzen Alltagsstress und Dringlichkeit aus, damit du keine Zeit zum Nachdenken hast."
+      },
+      "source": { "label": "CONDUSEF (México), alerta de fraudes por WhatsApp" }
+    },
+    {
+      "id": "no-personal-data",
+      "hu": "Soha nem adod ki a CURP-ot, PIN-t vagy kártyaszámot üzenetben?",
+      "en": "Do you never give out your CURP, PIN, or card number by message?",
+      "es": "¿Nunca das tu CURP, PIN o número de tarjeta por mensaje?",
+      "de": "Gibst du niemals deine CURP, PIN oder Kartennummer per Nachricht heraus?",
+      "why": {
+        "hu": "Egy valódi bank soha nem kér személyes azonosítót vagy PIN-kódot telefonon, SMS-ben vagy WhatsAppon.",
+        "en": "A real bank never asks for personal ID numbers or a PIN by phone, SMS, or WhatsApp.",
+        "es": "Un banco real nunca pide datos personales o PIN por teléfono, SMS o WhatsApp.",
+        "de": "Eine echte Bank fragt nie per Telefon, SMS oder WhatsApp nach persönlichen Daten oder der PIN."
+      },
+      "source": { "label": "CONDUSEF (México), alerta de fraudes por WhatsApp" }
+    },
+    {
+      "id": "too-good-flag",
+      "hu": "Felismered, ha egy ajánlat túl szép ahhoz, hogy igaz legyen?",
+      "en": "Do you recognize an offer that's too good to be true?",
+      "es": "¿Reconoces una oferta demasiado buena para ser verdad?",
+      "de": "Erkennst du ein Angebot, das zu gut ist, um wahr zu sein?",
+      "why": {
+        "hu": "A jóváhagyás nélküli kölcsön, a reálisnál jobb fizetés vagy a hirtelen nyeremény a fő vészjelek.",
+        "en": "Unapproved loans, unrealistic salaries, or promises of quick winnings are the main red flags.",
+        "es": "Los préstamos no solicitados, salarios poco realistas o premios rápidos son las principales señales de alarma.",
+        "de": "Nicht beantragte Kredite, unrealistische Gehälter oder schnelle Gewinne sind die wichtigsten Warnsignale."
+      },
+      "source": { "label": "CONDUSEF (México), alerta de fraudes por WhatsApp" }
+    },
+    {
+      "id": "verify-official",
+      "hu": "A bank hivatalos telefonszámán ellenőrzöl, nem az üzenetben megadotton?",
+      "en": "Do you verify with the bank's official phone number, not the one in the message?",
+      "es": "¿Verificas con el número oficial del banco, no con el del mensaje?",
+      "de": "Prüfst du mit der offiziellen Banknummer, nicht mit der aus der Nachricht?",
+      "why": {
+        "hu": "Mindig a kártyád hátulján vagy a bank hivatalos oldalán található számot hívd, ne az üzenetben kapottat.",
+        "en": "Always use the number on the back of your card or the bank's official site, not the one from the message.",
+        "es": "Usa siempre el número al reverso de tu tarjeta o el sitio oficial del banco, no el del mensaje.",
+        "de": "Nutze immer die Nummer auf der Rückseite deiner Karte oder die offizielle Bank-Website, nicht die aus der Nachricht."
+      },
+      "source": { "label": "BBVA México, Prevención y acción ante estafas por WhatsApp", "url": "https://www.bbva.mx/personas/centro-de-ayuda/evitar-estafas-por-whatsapp.html" }
+    },
+    {
+      "id": "no-forward",
+      "hu": "Nem küldöd tovább az üzenetet, mielőtt ellenőriznéd?",
+      "en": "Do you avoid forwarding the message before checking it?",
+      "es": "¿Evitas reenviar el mensaje antes de verificarlo?",
+      "de": "Verzichtest du darauf, die Nachricht weiterzuleiten, bevor du sie geprüft hast?",
+      "why": {
+        "hu": "A továbbküldött csalás-üzenet a barátaidat és családodat is veszélyezteti, mielőtt bárki ellenőrizné.",
+        "en": "A forwarded scam message puts your friends and family at risk before anyone verifies it.",
+        "es": "Un mensaje de estafa reenviado pone en riesgo a tus amigos y familia antes de que alguien lo verifique.",
+        "de": "Eine weitergeleitete Betrugsnachricht gefährdet Freunde und Familie, bevor sie jemand überprüft."
+      },
+      "source": { "label": "Általános kiberbiztonsági útmutatók (general cybersecurity guidance)" }
+    },
+    {
+      "id": "block-report",
+      "hu": "Blokkolod a számot és jelented az üzenetet?",
+      "en": "Do you block the number and report the message?",
+      "es": "¿Bloqueas el número y reportas el mensaje?",
+      "de": "Blockierst du die Nummer und meldest die Nachricht?",
+      "why": {
+        "hu": "A CONDUSEF (mexikói fogyasztóvédelem) azt javasolja: hagyd figyelmen kívül és blokkold az ismeretlen, riasztó üzeneteket.",
+        "en": "CONDUSEF (Mexico's consumer protection agency) recommends ignoring and blocking alarming messages from unknown senders.",
+        "es": "La CONDUSEF recomienda ignorar y bloquear los mensajes alarmantes de remitentes desconocidos.",
+        "de": "CONDUSEF (mexikanische Verbraucherschutzbehörde) empfiehlt, alarmierende Nachrichten unbekannter Absender zu ignorieren und zu blockieren."
+      },
+      "source": { "label": "CONDUSEF (México), alerta de fraudes por WhatsApp" }
+    }
+  ],
+  "endings": [
+    { "id": "safe", "if": "checklist>=6", "title": { "hu": "Nagyon óvatos voltál, biztonságban maradtál", "en": "You were very careful and stayed safe", "es": "Fuiste muy cuidadoso y estuviste a salvo", "de": "Du warst sehr vorsichtig und bist sicher geblieben" } },
+    { "id": "risky", "if": "checklist>=3", "title": { "hu": "Néhány vészjelet elkaptál, de van hova fejlődni", "en": "You caught some red flags, but there's room to grow", "es": "Detectaste algunas señales, pero puedes mejorar", "de": "Du hast einige Warnsignale erkannt, kannst dich aber noch verbessern" } },
+    { "id": "scammed", "if": "default", "title": { "hu": "Majdnem áldozatul estél a csalásnak", "en": "You nearly fell for the scam", "es": "Casi caes en la estafa", "de": "Du wärst fast auf den Betrug hereingefallen" } }
+  ],
+  "glossary": [
+    { "word": "banco", "gloss": { "hu": "bank", "en": "bank", "de": "Bank" } },
+    { "word": "cuenta", "gloss": { "hu": "számla", "en": "account", "de": "Konto" } },
+    { "word": "urgente", "gloss": { "hu": "sürgős", "en": "urgent", "de": "dringend" } },
+    { "word": "enlace", "gloss": { "hu": "link", "en": "link", "de": "Link" } },
+    { "word": "resolver", "gloss": { "hu": "megoldani", "en": "to solve", "de": "lösen" } },
+    { "word": "desconocidos", "gloss": { "hu": "ismeretlen (többes)", "en": "unknown", "de": "unbekannt" } },
+    { "word": "urgencia", "gloss": { "hu": "sürgősség", "en": "urgency", "de": "Dringlichkeit" } },
+    { "word": "alarma", "gloss": { "hu": "riasztás, vészjel", "en": "alarm", "de": "Alarm" } },
+    { "word": "presiono", "gloss": { "hu": "nyomás alá kerülök (presionarse)", "en": "I let myself be pressured", "de": "ich lasse mich unter Druck setzen" } },
+    { "word": "actuar", "gloss": { "hu": "cselekedni", "en": "to act", "de": "handeln" } },
+    { "word": "curp", "gloss": { "hu": "mexikói személyi azonosító (CURP)", "en": "Mexican personal ID number (CURP)", "de": "mexikanische Personenkennnummer (CURP)" } },
+    { "word": "tarjeta", "gloss": { "hu": "kártya", "en": "card", "de": "Karte" } },
+    { "word": "información", "gloss": { "hu": "információ", "en": "information", "de": "Information" } },
+    { "word": "premio", "gloss": { "hu": "nyeremény", "en": "prize", "de": "Preis, Gewinn" } },
+    { "word": "especial", "gloss": { "hu": "különleges", "en": "special", "de": "besonders" } },
+    { "word": "sospechoso", "gloss": { "hu": "gyanús", "en": "suspicious", "de": "verdächtig" } },
+    { "word": "verificar", "gloss": { "hu": "ellenőrizni", "en": "to verify", "de": "überprüfen" } },
+    { "word": "conmigo", "gloss": { "hu": "velem", "en": "with me", "de": "mit mir" } },
+    { "word": "prefiero", "gloss": { "hu": "inkább szeretem (preferir)", "en": "I prefer", "de": "ich bevorzuge" } },
+    { "word": "oficial", "gloss": { "hu": "hivatalos", "en": "official", "de": "offiziell" } },
+    { "word": "confío", "gloss": { "hu": "bízom (confiar)", "en": "I trust", "de": "ich vertraue" } },
+    { "word": "comparta", "gloss": { "hu": "ossza meg (kötőmód, compartir)", "en": "share (subjunctive)", "de": "teilen Sie (Konjunktiv)" } },
+    { "word": "reenvío", "gloss": { "hu": "továbbküldöm (reenviar)", "en": "I forward", "de": "ich leite weiter" } },
+    { "word": "primero", "gloss": { "hu": "először", "en": "first", "de": "zuerst" } },
+    { "word": "mando", "gloss": { "hu": "elküldöm (mandar)", "en": "I send", "de": "ich schicke" } },
+    { "word": "entonces", "gloss": { "hu": "akkor, tehát", "en": "so, then", "de": "also, dann" } },
+    { "word": "bloqueo", "gloss": { "hu": "blokkolom (bloquear)", "en": "I block", "de": "ich blockiere" } },
+    { "word": "reporto", "gloss": { "hu": "jelentem (reportar)", "en": "I report", "de": "ich melde" } },
+    { "word": "ignoro", "gloss": { "hu": "figyelmen kívül hagyom (ignorar)", "en": "I ignore", "de": "ich ignoriere" } },
+    { "word": "conozco", "gloss": { "hu": "ismerek (conocer)", "en": "I know (a person)", "de": "ich kenne" } },
+    { "word": "clic", "gloss": { "hu": "kattintás", "en": "click", "de": "Klick" } },
+    { "word": "ay", "gloss": { "hu": "jaj", "en": "oh no", "de": "ach" } },
+    { "word": "doy", "gloss": { "hu": "adok (dar)", "en": "I give", "de": "ich gebe" } },
+    { "word": "puede", "gloss": { "hu": "tud, -hat (poder ragozott alakja)", "en": "can, is able to", "de": "kann" } },
+    { "word": "revisas", "gloss": { "hu": "ellenőrzöl (revisar)", "en": "you check", "de": "du prüfst" } },
+    { "word": "reconoces", "gloss": { "hu": "felismersz (reconocer)", "en": "you recognize", "de": "du erkennst" } },
+    { "word": "forzada", "gloss": { "hu": "mesterséges, kikényszerített", "en": "forced, manufactured", "de": "künstlich, erzwungen" } },
+    { "word": "pin", "gloss": { "hu": "PIN-kód", "en": "PIN", "de": "PIN" } },
+    { "word": "verificarlo", "gloss": { "hu": "ellenőrizni azt", "en": "to verify it", "de": "es zu überprüfen" } }
+  ]
+}

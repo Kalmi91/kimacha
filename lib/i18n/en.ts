@@ -197,6 +197,18 @@ export default {
       translationAlways: 'Always',
       settingsSpeech: 'Read scene aloud',
     },
+    // F4 (chat, GAMES.md 4.6).
+    chat: {
+      comingSoon: 'No conversations for this language yet.',
+      pickTopic: 'Pick a topic',
+      checklistLabel: (n: number) => `${n}-point checklist`,
+      checklistProgress: (done: number, total: number) => `${done} / ${total}`,
+      endingChecklistHeader: 'Checklist for this topic:',
+      achievedTag: 'You asked',
+      missedTag: 'You missed',
+      sourceLabel: 'Source:',
+      viewChecklistBtn: 'View checklist',
+    },
   },
   active: {
     title: 'Active mode',

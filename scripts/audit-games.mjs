@@ -181,6 +181,10 @@ function cumulativeTaught(level) {
 
 function tokenKnown(tok, taughtSet, extra) {
   const stripped = removeAccents(tok);
+  // A bare numeral (with an optional trailing %) is a digit, not Spanish
+  // vocabulary, "400" or "10%" needs no gloss in any language. Fact-based
+  // content (chat checklists, myth claims) cites real numbers routinely.
+  if (/^\d+%?$/.test(tok)) return true;
   if (GLUE_WHITELIST.has(tok) || GLUE_STRIPPED.has(stripped)) return true;
   if (PROPER_NOUNS.has(stripped)) return true;
   if (extra?.has(stripped)) return true;
@@ -454,6 +458,7 @@ function auditChat(chat, filePath, seenIds) {
   checkLangs(chat.title, `${path} title`);
 
   const taughtSet = cumulativeTaught(chat.level ?? 'C1');
+  const extra = glossaryTokenSet(chat.glossary);
 
   const setupIds = new Set();
   for (const q of chat.setup ?? []) {
@@ -469,7 +474,7 @@ function auditChat(chat, filePath, seenIds) {
         p1.push({ path: qPath, issue: `setup option "${opt.value}" missing '${lang}' label text` });
       } else {
         for (const tok of tokenize(text)) {
-          if (!tokenKnown(tok, taughtSet, undefined)) p1.push({ path: qPath, issue: `untaught/unglossed Spanish word in setup option: "${tok}"` });
+          if (!tokenKnown(tok, taughtSet, extra)) p1.push({ path: qPath, issue: `untaught/unglossed Spanish word in setup option: "${tok}"` });
         }
       }
     }
@@ -486,7 +491,7 @@ function auditChat(chat, filePath, seenIds) {
       p1.push({ path: nPath, issue: `missing '${lang}' npc text` });
     } else {
       for (const tok of tokenize(npcText)) {
-        if (!tokenKnown(tok, taughtSet, undefined)) p1.push({ path: nPath, issue: `untaught/unglossed Spanish word in npc: "${tok}"` });
+        if (!tokenKnown(tok, taughtSet, extra)) p1.push({ path: nPath, issue: `untaught/unglossed Spanish word in npc: "${tok}"` });
       }
       checkLength(npcText, chat.level, nPath);
     }
@@ -500,7 +505,7 @@ function auditChat(chat, filePath, seenIds) {
         p1.push({ path: oPath, issue: `missing '${lang}' option text` });
       } else {
         for (const tok of tokenize(text)) {
-          if (!tokenKnown(tok, taughtSet, undefined)) p1.push({ path: oPath, issue: `untaught/unglossed Spanish word: "${tok}"` });
+          if (!tokenKnown(tok, taughtSet, extra)) p1.push({ path: oPath, issue: `untaught/unglossed Spanish word: "${tok}"` });
         }
         checkLength(text, chat.level, oPath);
       }
@@ -527,7 +532,7 @@ function auditChat(chat, filePath, seenIds) {
     const text = item[lang];
     if (typeof text === 'string') {
       for (const tok of tokenize(text)) {
-        if (!tokenKnown(tok, taughtSet, undefined)) p1.push({ path: iPath, issue: `untaught/unglossed Spanish word: "${tok}"` });
+        if (!tokenKnown(tok, taughtSet, extra)) p1.push({ path: iPath, issue: `untaught/unglossed Spanish word: "${tok}"` });
       }
     }
   }

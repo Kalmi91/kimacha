@@ -1,0 +1,242 @@
+{
+  "id": "alimentacion-saludable",
+  "level": "A2",
+  "title": {
+    "hu": "Egészségesebben akarok enni",
+    "en": "I Want to Eat Healthier",
+    "es": "Quiero comer más sano",
+    "de": "Ich möchte gesünder essen"
+  },
+  "setup": [
+    {
+      "id": "goal",
+      "prompt": {
+        "hu": "Mi a célod?",
+        "en": "What's your goal?",
+        "es": "¿Cuál es tu objetivo?",
+        "de": "Was ist dein Ziel?"
+      },
+      "options": [
+        { "value": "weight-loss", "label": { "es": "Quiero bajar de peso." } },
+        { "value": "muscle", "label": { "es": "Quiero ganar músculo." } },
+        { "value": "energy", "label": { "es": "Quiero tener más energía." } }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "n1",
+      "npc": { "es": "Hola, soy nutricionista. ¿En qué puedo ayudarte con tu alimentación?" },
+      "options": [
+        { "es": "¿Cuántas frutas y verduras debo comer al día?", "next": "n2", "good": true, "checklist": "veggies-fruit" },
+        { "es": "¿Los postres son malos?", "next": "n2" }
+      ]
+    },
+    {
+      "id": "n2",
+      "npc": { "es": "Muy bien, hablemos del azúcar." },
+      "options": [
+        { "es": "¿Cuánta azúcar añadida es demasiada?", "next": "n3", "good": true, "checklist": "added-sugar" },
+        { "es": "¿El chocolate tiene azúcar?", "next": "n3" }
+      ]
+    },
+    {
+      "id": "n3",
+      "npc": { "es": "También hablemos de la sal." },
+      "options": [
+        { "es": "¿Cuánta sal al día es sana?", "next": "n4", "good": true, "checklist": "salt" },
+        { "es": "¿La sal es mala para los dientes?", "next": "n4" }
+      ]
+    },
+    {
+      "id": "n4",
+      "npc": { "es": "El pan y el arroz también importan." },
+      "options": [
+        { "es": "¿Es mejor comer pan integral que pan blanco?", "next": "n5", "good": true, "checklist": "whole-grains" },
+        { "es": "¿Te gusta el pan?", "next": "n5" }
+      ]
+    },
+    {
+      "id": "n5",
+      "npc": { "es": "Cada persona tiene un objetivo diferente." },
+      "options": [
+        { "es": "¿Cuánta agua debo beber cada día?", "next": "n6", "good": true, "checklist": "water" },
+        { "es": "¿Necesito comer menos para bajar de peso?", "next": "n6", "requires": { "goal": "weight-loss" } },
+        { "es": "¿Necesito comer más proteína para ganar músculo?", "next": "n6", "requires": { "goal": "muscle" } },
+        { "es": "¿Qué como para tener más energía en el día?", "next": "n6", "requires": { "goal": "energy" } }
+      ]
+    },
+    {
+      "id": "n6",
+      "npc": { "es": "La proteína es importante en cada comida." },
+      "options": [
+        { "es": "¿Mi comida necesita una fuente de proteína?", "next": "n7", "good": true, "checklist": "protein-source" },
+        { "es": "¿La carne siempre es sana?", "next": "n7" }
+      ]
+    },
+    {
+      "id": "n7",
+      "npc": { "es": "También hay mucha comida ultraprocesada en el supermercado." },
+      "options": [
+        { "es": "¿Es mejor comer poca comida ultraprocesada?", "next": "n8", "good": true, "checklist": "processed-food" },
+        { "es": "¿La comida rápida es rica?", "next": "n8" }
+      ]
+    },
+    {
+      "id": "n8",
+      "npc": { "es": "Una última pregunta muy común." },
+      "options": [
+        { "es": "¿Es mejor comer tres comidas grandes o cinco comidas pequeñas?", "good": true, "checklist": "meal-frequency" },
+        { "es": "Yo como cuando tengo hambre, sin plan." }
+      ]
+    }
+  ],
+  "checklist": [
+    {
+      "id": "veggies-fruit",
+      "hu": "Legalább 400 gramm gyümölcsöt és zöldséget eszel naponta?",
+      "en": "Do you eat at least 400 grams of fruit and vegetables a day?",
+      "es": "¿Comes al menos 400 gramos de frutas y verduras al día?",
+      "de": "Isst du täglich mindestens 400 Gramm Obst und Gemüse?",
+      "why": {
+        "hu": "A WHO 400 gramm gyümölcsöt és zöldséget javasol naponta, plusz legalább 25 gramm rostot.",
+        "en": "WHO recommends at least 400g of fruit and vegetables a day, plus at least 25g of fibre.",
+        "es": "La OMS recomienda al menos 400 gramos de frutas y verduras al día, más al menos 25 gramos de fibra.",
+        "de": "Die WHO empfiehlt täglich mindestens 400 g Obst und Gemüse sowie mindestens 25 g Ballaststoffe."
+      },
+      "source": { "label": "WHO, Healthy Diet Fact Sheet", "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet" }
+    },
+    {
+      "id": "added-sugar",
+      "hu": "Az energiabeviteled kevesebb mint 10%-a hozzáadott cukorból van?",
+      "en": "Is less than 10% of your energy intake from added sugar?",
+      "es": "¿Menos del 10% de tus calorías vienen de azúcar añadida?",
+      "de": "Kommen weniger als 10 % deiner Energie aus zugesetztem Zucker?",
+      "why": {
+        "hu": "A WHO azt javasolja, hogy a hozzáadott cukor a napi energiabevitel kevesebb mint 10%-a legyen.",
+        "en": "WHO recommends free/added sugars stay under 10% of total daily energy intake.",
+        "es": "La OMS recomienda que el azúcar añadida sea menos del 10% de la energía diaria total.",
+        "de": "Die WHO empfiehlt, dass zugesetzter Zucker unter 10 % der täglichen Energiezufuhr bleibt."
+      },
+      "source": { "label": "WHO, Healthy Diet Fact Sheet", "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet" }
+    },
+    {
+      "id": "salt",
+      "hu": "Kevesebb mint 5 gramm sót eszel naponta?",
+      "en": "Do you eat less than 5 grams of salt a day?",
+      "es": "¿Comes menos de 5 gramos de sal al día?",
+      "de": "Isst du weniger als 5 Gramm Salz pro Tag?",
+      "why": {
+        "hu": "A WHO napi 5 gramm alatti sóbevitelt javasol, lehetőleg jódozott sóból.",
+        "en": "WHO recommends less than 5g of salt a day, ideally iodized salt.",
+        "es": "La OMS recomienda menos de 5 gramos de sal al día, de preferencia yodada.",
+        "de": "Die WHO empfiehlt weniger als 5 g Salz pro Tag, idealerweise jodiert."
+      },
+      "source": { "label": "WHO, Healthy Diet Fact Sheet", "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet" }
+    },
+    {
+      "id": "whole-grains",
+      "hu": "Több teljes kiőrlésű gabonát eszel, mint finomítottat?",
+      "en": "Do you eat more whole grains than refined ones?",
+      "es": "¿Comes más granos integrales que refinados?",
+      "de": "Isst du mehr Vollkorn als raffiniertes Getreide?",
+      "why": {
+        "hu": "A WHO szerint a szénhidrátbevitel elsősorban teljes kiőrlésű gabonából, zöldségből, gyümölcsből és hüvelyesekből jöjjön.",
+        "en": "WHO says carbohydrate intake should mainly come from whole grains, vegetables, fruit, and legumes.",
+        "es": "La OMS dice que los carbohidratos deben venir principalmente de granos integrales, verduras, frutas y legumbres.",
+        "de": "Die WHO sagt, Kohlenhydrate sollten vor allem aus Vollkorn, Gemüse, Obst und Hülsenfrüchten stammen."
+      },
+      "source": { "label": "WHO, Healthy Diet Fact Sheet", "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet" }
+    },
+    {
+      "id": "water",
+      "hu": "Iszol elég vizet a nap folyamán?",
+      "en": "Do you drink enough water during the day?",
+      "es": "¿Bebes suficiente agua durante el día?",
+      "de": "Trinkst du tagsüber genug Wasser?",
+      "why": {
+        "hu": "Az elég vízbevitel alapvető, és sokan édes italokkal helyettesítik, ami több cukrot jelent.",
+        "en": "Enough water is basic, and many people replace it with sugary drinks instead.",
+        "es": "Beber suficiente agua es básico, y muchas personas la reemplazan con bebidas azucaradas.",
+        "de": "Genug Wasser ist grundlegend, viele ersetzen es aber durch gezuckerte Getränke."
+      },
+      "source": { "label": "Általános táplálkozási útmutatók (general nutrition guides)" }
+    },
+    {
+      "id": "protein-source",
+      "hu": "Van fehérjeforrás minden étkezésedben (hús, tojás, bab)?",
+      "en": "Does your meal have a protein source (meat, egg, beans)?",
+      "es": "¿Tu comida tiene una fuente de proteína (carne, huevo, frijol)?",
+      "de": "Hat deine Mahlzeit eine Proteinquelle (Fleisch, Ei, Bohnen)?",
+      "why": {
+        "hu": "A fehérje minden étkezésben segít teltnek maradni és fenntartani az izmokat.",
+        "en": "Protein at every meal helps you stay full and keeps muscle mass up.",
+        "es": "La proteína en cada comida ayuda a sentirte lleno y mantener el músculo.",
+        "de": "Protein bei jeder Mahlzeit hält satt und erhält die Muskelmasse."
+      },
+      "source": { "label": "Általános táplálkozási útmutatók (general nutrition guides)" }
+    },
+    {
+      "id": "processed-food",
+      "hu": "Kevés ultra-feldolgozott ételt eszel?",
+      "en": "Do you eat little ultra-processed food?",
+      "es": "¿Comes poca comida ultraprocesada?",
+      "de": "Isst du wenig hochverarbeitete Lebensmittel?",
+      "why": {
+        "hu": "Az ultra-feldolgozott ételek gyakran sok cukrot, sót és zsírt tartalmaznak, keveset a hasznos rostból.",
+        "en": "Ultra-processed foods are often high in sugar, salt, and fat, and low in useful fibre.",
+        "es": "La comida ultraprocesada suele tener mucha azúcar, sal y grasa, y poca fibra útil.",
+        "de": "Hochverarbeitete Lebensmittel enthalten oft viel Zucker, Salz und Fett, aber wenig nützliche Ballaststoffe."
+      },
+      "source": { "label": "Általános táplálkozási útmutatók (general nutrition guides)" }
+    },
+    {
+      "id": "meal-frequency",
+      "hu": "Vitatott kérdés: 3 nagy vagy 5-6 kis étkezés jobb?",
+      "en": "Disputed question: are 3 big meals or 5-6 small ones better?",
+      "es": "Pregunta discutida: ¿tres comidas grandes o cinco-seis pequeñas son mejores?",
+      "de": "Umstrittene Frage: sind 3 große oder 5-6 kleine Mahlzeiten besser?",
+      "why": {
+        "hu": "Ez a kérdés VITATOTT: nincs egységes tudományos konszenzus, hogy 3 nagy vagy 5-6 kis étkezés jobb-e. A napi összkalória és -fehérje sokkal jobban számít, mint az étkezések száma.",
+        "en": "This one is DISPUTED: there's no single scientific consensus on 3 big meals vs. 5-6 small ones. Total daily calories and protein matter far more than meal count.",
+        "es": "Esta pregunta es DISCUTIDA: no hay un consenso científico único sobre tres comidas grandes o cinco-seis pequeñas. El total diario de calorías y proteína importa mucho más que el número de comidas.",
+        "de": "Diese Frage ist UMSTRITTEN: Es gibt keinen einheitlichen wissenschaftlichen Konsens zu 3 großen vs. 5-6 kleinen Mahlzeiten. Die Tageskalorien und das Protein zählen viel mehr als die Anzahl der Mahlzeiten."
+      },
+      "source": { "label": "Táplálkozástudományi vélemények, nincs egységes konszenzus (nutrition science, disputed)" }
+    }
+  ],
+  "endings": [
+    { "id": "great-eater", "if": "checklist>=6", "title": { "hu": "Nagyon tudatosan kérdeztél", "en": "You asked very mindfully", "es": "Preguntaste de forma muy consciente", "de": "Du hast sehr bewusst gefragt" } },
+    { "id": "decent-eater", "if": "checklist>=3", "title": { "hu": "Jó úton jársz", "en": "You're on the right track", "es": "Vas por buen camino", "de": "Du bist auf dem richtigen Weg" } },
+    { "id": "basic-eater", "if": "default", "title": { "hu": "Ennél többet is megkérdezhetnél", "en": "You could ask a lot more", "es": "Podrías preguntar mucho más", "de": "Du könntest noch viel mehr fragen" } }
+  ],
+  "glossary": [
+    { "word": "nutricionista", "gloss": { "hu": "táplálkozási szakértő", "en": "nutritionist", "de": "Ernährungsberater" } },
+    { "word": "gramos", "gloss": { "hu": "gramm", "en": "grams", "de": "Gramm" } },
+    { "word": "añadida", "gloss": { "hu": "hozzáadott", "en": "added", "de": "zugesetzt" } },
+    { "word": "demasiada", "gloss": { "hu": "túl sok", "en": "too much", "de": "zu viel" } },
+    { "word": "dientes", "gloss": { "hu": "fogak", "en": "teeth", "de": "Zähne" } },
+    { "word": "integral", "gloss": { "hu": "teljes kiőrlésű", "en": "whole-grain", "de": "Vollkorn-" } },
+    { "word": "fuente", "gloss": { "hu": "forrás", "en": "source", "de": "Quelle" } },
+    { "word": "frijol", "gloss": { "hu": "bab", "en": "beans", "de": "Bohne" } },
+    { "word": "proteína", "gloss": { "hu": "fehérje", "en": "protein", "de": "Protein" } },
+    { "word": "ultraprocesada", "gloss": { "hu": "ultra-feldolgozott", "en": "ultra-processed", "de": "hochverarbeitet" } },
+    { "word": "supermercado", "gloss": { "hu": "szupermarket", "en": "supermarket", "de": "Supermarkt" } },
+    { "word": "rica", "gloss": { "hu": "finom, ízletes", "en": "tasty", "de": "lecker" } },
+    { "word": "objetivo", "gloss": { "hu": "cél", "en": "goal", "de": "Ziel" } },
+    { "word": "peso", "gloss": { "hu": "súly", "en": "weight", "de": "Gewicht" } },
+    { "word": "músculo", "gloss": { "hu": "izom", "en": "muscle", "de": "Muskel" } },
+    { "word": "energía", "gloss": { "hu": "energia", "en": "energy", "de": "Energie" } },
+    { "word": "postres", "gloss": { "hu": "desszertek", "en": "desserts", "de": "Nachspeisen" } },
+    { "word": "plan", "gloss": { "hu": "terv", "en": "plan", "de": "Plan" } },
+    { "word": "puedo", "gloss": { "hu": "tudok, -hatok (poder ragozott alakja)", "en": "I can", "de": "ich kann" } },
+    { "word": "ayudarte", "gloss": { "hu": "segíteni neked", "en": "to help you", "de": "dir helfen" } },
+    { "word": "alimentación", "gloss": { "hu": "táplálkozás", "en": "diet, nutrition", "de": "Ernährung" } },
+    { "word": "calorías", "gloss": { "hu": "kalóriák", "en": "calories", "de": "Kalorien" } },
+    { "word": "vienen", "gloss": { "hu": "jönnek (venir ragozott alakja)", "en": "come from", "de": "kommen (von)" } },
+    { "word": "granos", "gloss": { "hu": "gabonaszemek", "en": "grains", "de": "Getreidekörner" } },
+    { "word": "refinados", "gloss": { "hu": "finomított", "en": "refined", "de": "raffiniert" } },
+    { "word": "suficiente", "gloss": { "hu": "elég", "en": "enough", "de": "genug" } },
+    { "word": "discutida", "gloss": { "hu": "vitatott", "en": "disputed", "de": "umstritten" } }
+  ]
+}
