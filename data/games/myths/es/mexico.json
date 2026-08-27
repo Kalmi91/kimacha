@@ -1,0 +1,566 @@
+[
+  {
+    "id": "cdmx-lago",
+    "level": "A1",
+    "track": "mexico",
+    "claim": {
+      "es": "La Ciudad de México está construida sobre un lago antiguo."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, a mai CDMX a régi Texcoco-tó helyén épült, ahol az aztékok Tenochtitlant alapították. Ezért süllyed a talaj a városban, és ezért is erős néhol a földrengés-hatás.",
+      "en": "Yes, today's CDMX was built where the old Lake Texcoco used to be, where the Aztecs founded Tenochtitlan. That's part of why the ground sinks in the city, and why earthquakes can hit hard in places.",
+      "es": "Sí, la CDMX actual está construida donde antes estaba el antiguo lago de Texcoco, donde los aztecas fundaron Tenochtitlan. Por eso el suelo se hunde en la ciudad, y por eso los sismos afectan más en algunas zonas.",
+      "de": "Ja, das heutige CDMX wurde dort gebaut, wo früher der alte Texcoco-See lag, wo die Azteken Tenochtitlan gründeten. Deshalb sinkt der Boden in der Stadt, und deshalb wirken Erdbeben in manchen Gegenden stärker."
+    },
+    "source": {
+      "label": "Geología / historia de México (consenso)"
+    },
+    "gloss": [
+      {
+        "word": "lago",
+        "hu": "tó",
+        "en": "lake",
+        "de": "See"
+      },
+      {
+        "word": "antiguo",
+        "hu": "ősi",
+        "en": "ancient",
+        "de": "alt"
+      },
+      {
+        "word": "construida",
+        "hu": "épített",
+        "en": "built",
+        "de": "gebaut"
+      }
+    ]
+  },
+  {
+    "id": "cdmx-hunde",
+    "level": "A2",
+    "track": "mexico",
+    "claim": {
+      "es": "La Ciudad de México se hunde un poco cada año."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, a város talaja évről évre süllyed, mert a régi tófenéken épült, laza talajból sok vizet szivattyúznak ki. Ez az egyik legnagyobb mérnöki kihívása a városnak.",
+      "en": "Yes, the city's ground sinks year by year, because it's built on soft, former lakebed soil from which a lot of groundwater is pumped out. This is one of the city's biggest engineering challenges.",
+      "es": "Sí, el suelo de la ciudad se hunde año tras año, porque está construido sobre el fondo blando de un antiguo lago del que se saca mucha agua. Es uno de los mayores retos de ingeniería de la ciudad.",
+      "de": "Ja, der Boden der Stadt sinkt Jahr für Jahr, weil sie auf dem weichen Grund eines ehemaligen Sees gebaut ist, aus dem viel Grundwasser gepumpt wird. Das ist eine der größten technischen Herausforderungen der Stadt."
+    },
+    "source": {
+      "label": "Geología (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "hunde",
+        "hu": "süllyed",
+        "en": "sinks",
+        "de": "sinkt"
+      }
+    ]
+  },
+  {
+    "id": "chocolate-chile-mexico",
+    "level": "A1",
+    "track": "mexico",
+    "claim": {
+      "es": "El chocolate y el chile son originarios de México y Centroamérica."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, mindkettőt a mezoamerikai népek (pl. az olmékok, maják, aztékok) termesztették és használták már évezredekkel ezelőtt, innen jutott el a világ többi részébe.",
+      "en": "Yes, both were grown and used by Mesoamerican peoples (like the Olmecs, Maya, Aztecs) thousands of years ago, and spread to the rest of the world from there.",
+      "es": "Sí, ambos fueron cultivados y usados por los pueblos mesoamericanos (como los olmecas, mayas, aztecas) hace miles de años, y desde allí llegaron al resto del mundo.",
+      "de": "Ja, beide wurden von mesoamerikanischen Völkern (wie den Olmeken, Maya, Azteken) schon vor Tausenden von Jahren angebaut und genutzt, und verbreiteten sich von dort in die übrige Welt."
+    },
+    "source": {
+      "label": "Historia / antropología (consenso)"
+    },
+    "gloss": [
+      {
+        "word": "chile",
+        "hu": "chili",
+        "en": "chili",
+        "de": "Chili"
+      },
+      {
+        "word": "originarios",
+        "hu": "eredetűek",
+        "en": "originating from",
+        "de": "stammend aus"
+      },
+      {
+        "word": "centroamérica",
+        "hu": "Közép-Amerika",
+        "en": "Central America",
+        "de": "Mittelamerika"
+      }
+    ]
+  },
+  {
+    "id": "mariachi-jalisco",
+    "level": "A2",
+    "track": "mexico",
+    "claim": {
+      "es": "El mariachi nació en el estado de Jalisco."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "A mariachi hagyomány Jalisco államhoz, főleg a Guadalajara környéki régióhoz köthető. 2011-ben az UNESCO az emberiség szellemi kulturális örökségének nyilvánította.",
+      "en": "The mariachi tradition is tied to the state of Jalisco, especially the region around Guadalajara. In 2011, UNESCO added it to the Intangible Cultural Heritage of Humanity list.",
+      "es": "La tradición del mariachi está ligada al estado de Jalisco, sobre todo a la región de Guadalajara. En 2011, la UNESCO lo declaró Patrimonio Cultural Inmaterial de la Humanidad.",
+      "de": "Die Mariachi-Tradition ist mit dem Bundesstaat Jalisco verbunden, besonders mit der Region um Guadalajara. 2011 erklärte die UNESCO sie zum immateriellen Kulturerbe der Menschheit."
+    },
+    "source": {
+      "label": "UNESCO / cultura mexicana"
+    },
+    "gloss": [
+      {
+        "word": "mariachi",
+        "hu": "mariachi (zenekar)",
+        "en": "mariachi",
+        "de": "Mariachi"
+      },
+      {
+        "word": "jalisco",
+        "hu": "Jalisco",
+        "en": "Jalisco",
+        "de": "Jalisco"
+      },
+      {
+        "word": "nació",
+        "hu": "született",
+        "en": "was born",
+        "de": "wurde geboren"
+      }
+    ]
+  },
+  {
+    "id": "tacos-pastor-libanes",
+    "level": "A2",
+    "track": "mexico",
+    "claim": {
+      "es": "El taco al pastor viene de la comida de inmigrantes libaneses."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, a taco al pastor a libanoni bevándorlók által Mexikóba hozott shawarma (nyárson sült hús) adaptációja, mexikói fűszerekkel és ananásszal kiegészítve.",
+      "en": "Yes, the taco al pastor is an adaptation of shawarma (spit-roasted meat), which Lebanese immigrants brought to Mexico, adapted with Mexican spices and pineapple.",
+      "es": "Sí, el taco al pastor es una adaptación del shawarma (carne asada en trompo) que los inmigrantes libaneses trajeron a México, con especias mexicanas y piña.",
+      "de": "Ja, der Taco al Pastor ist eine Anpassung des Shawarma (am Spieß gebratenes Fleisch), das libanesische Einwanderer nach Mexiko brachten, mit mexikanischen Gewürzen und Ananas."
+    },
+    "source": {
+      "label": "Historia de la gastronomía"
+    },
+    "gloss": [
+      {
+        "word": "pastor",
+        "hu": "pásztor (itt: húsfajta)",
+        "en": "shepherd (here: a meat dish)",
+        "de": "Hirte (hier: Fleischgericht)"
+      },
+      {
+        "word": "libaneses",
+        "hu": "libanoniak",
+        "en": "Lebanese",
+        "de": "Libanesen"
+      },
+      {
+        "word": "inmigrantes",
+        "hu": "bevándorlók",
+        "en": "immigrants",
+        "de": "Einwanderer"
+      },
+      {
+        "word": "taco",
+        "hu": "taco",
+        "en": "taco",
+        "de": "Taco"
+      },
+      {
+        "word": "viene",
+        "hu": "jön",
+        "en": "comes",
+        "de": "kommt"
+      }
+    ]
+  },
+  {
+    "id": "dia-muertos-halloween",
+    "level": "A2",
+    "track": "mexico",
+    "claim": {
+      "es": "El Día de Muertos es solo una copia mexicana de Halloween."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "A Día de Muertos önálló hagyomány, ami az őslakos mezoamerikai halottkultuszt és a katolikus vallást ötvözi. Célja és hangulata is más: az elhunytak emlékezetét, nem a félelmet ünnepli.",
+      "en": "Día de Muertos is its own tradition, blending an indigenous Mesoamerican reverence for the dead with Catholic religion. Its purpose and mood differ too: it celebrates remembering the dead, not fear.",
+      "es": "El Día de Muertos es una tradición propia, que mezcla la veneración indígena mesoamericana a los muertos con la religión católica. Su propósito y ambiente también son distintos: celebra el recuerdo, no el miedo.",
+      "de": "Der Día de Muertos ist eine eigenständige Tradition, die eine indigene mesoamerikanische Totenverehrung mit dem katholischen Glauben verbindet. Zweck und Stimmung unterscheiden sich ebenfalls: Es feiert die Erinnerung, nicht die Angst."
+    },
+    "source": {
+      "label": "UNESCO / antropología cultural"
+    },
+    "gloss": [
+      {
+        "word": "muertos",
+        "hu": "halottak",
+        "en": "the dead",
+        "de": "die Toten"
+      },
+      {
+        "word": "copia",
+        "hu": "másolat",
+        "en": "copy",
+        "de": "Kopie"
+      },
+      {
+        "word": "halloween",
+        "hu": "Halloween",
+        "en": "Halloween",
+        "de": "Halloween"
+      },
+      {
+        "word": "mexicana",
+        "hu": "mexikói",
+        "en": "Mexican",
+        "de": "mexikanisch"
+      }
+    ]
+  },
+  {
+    "id": "cdmx-clima-caliente",
+    "level": "A1",
+    "track": "mexico",
+    "claim": {
+      "es": "Todo México tiene el mismo clima caliente todo el año."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "Mexikónak nagyon változatos éghajlata van: sivatagok, trópusi partvidékek és hideg hegyvidékek is vannak. A CDMX magas fekvése miatt (kb. 2240 m) egész évben mérsékelt, sőt éjszaka hideg is lehet.",
+      "en": "Mexico has very varied climates: deserts, tropical coasts, and cold mountain areas. Because of its high elevation (about 2,240 m), CDMX stays mild all year and can even be cold at night.",
+      "es": "México tiene climas muy variados: desiertos, costas tropicales y zonas de montaña fría. Por su altitud (unos 2240 m), la CDMX se mantiene templada todo el año, e incluso puede hacer frío por la noche.",
+      "de": "Mexiko hat sehr unterschiedliche Klimazonen: Wüsten, tropische Küsten und kalte Bergregionen. Wegen seiner Höhe (etwa 2240 m) bleibt CDMX das ganze Jahr über mild und kann nachts sogar kalt sein."
+    },
+    "source": {
+      "label": "Geografía (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "clima",
+        "hu": "éghajlat",
+        "en": "climate",
+        "de": "Klima"
+      }
+    ]
+  },
+  {
+    "id": "popocatepetl-activo",
+    "level": "A1",
+    "track": "mexico",
+    "claim": {
+      "es": "El Popocatépetl es un volcán activo cerca de la Ciudad de México."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, a Popocatépetl ma is aktív vulkán, ami rendszeresen füstöl és hamut bocsát ki, és a CDMX-hez viszonylag közel, Puebla és Morelos állam határán fekszik.",
+      "en": "Yes, Popocatépetl is still an active volcano that regularly emits smoke and ash, and it sits fairly close to CDMX, on the border of Puebla and Morelos states.",
+      "es": "Sí, el Popocatépetl es un volcán activo que emite humo y ceniza con frecuencia, y está relativamente cerca de la CDMX, en el límite de los estados de Puebla y Morelos.",
+      "de": "Ja, der Popocatépetl ist noch immer ein aktiver Vulkan, der regelmäßig Rauch und Asche ausstößt, und liegt relativ nahe an CDMX, an der Grenze der Bundesstaaten Puebla und Morelos."
+    },
+    "source": {
+      "label": "CENAPRED / geología"
+    },
+    "gloss": [
+      {
+        "word": "volcán",
+        "hu": "vulkán",
+        "en": "volcano",
+        "de": "Vulkan"
+      },
+      {
+        "word": "popocatépetl",
+        "hu": "Popocatépetl",
+        "en": "Popocatépetl",
+        "de": "Popocatépetl"
+      },
+      {
+        "word": "activo",
+        "hu": "aktív",
+        "en": "active",
+        "de": "aktiv"
+      }
+    ]
+  },
+  {
+    "id": "mexico-solo-espanol",
+    "level": "A1",
+    "track": "mexico",
+    "claim": {
+      "es": "En México se habla solo español, ninguna otra lengua."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "Mexikóban több tucat őslakos nyelvet ismernek el hivatalosan, például a nahuatlt és a maját. Sok ember ma is beszéli ezeket a nyelveket a spanyol mellett.",
+      "en": "Mexico officially recognizes dozens of indigenous languages, such as Nahuatl and Maya. Many people still speak these languages today, alongside Spanish.",
+      "es": "México reconoce oficialmente decenas de lenguas indígenas, como el náhuatl y el maya. Muchas personas todavía hablan estas lenguas, además del español.",
+      "de": "Mexiko erkennt offiziell Dutzende indigener Sprachen an, wie Nahuatl und Maya. Viele Menschen sprechen diese Sprachen bis heute, zusätzlich zum Spanischen."
+    },
+    "source": {
+      "label": "INALI (Instituto Nacional de Lenguas Indígenas)"
+    },
+    "gloss": [
+      {
+        "word": "lengua",
+        "hu": "nyelv",
+        "en": "language",
+        "de": "Sprache"
+      },
+      {
+        "word": "ninguna",
+        "hu": "semelyik",
+        "en": "none",
+        "de": "keine"
+      },
+      {
+        "word": "otra",
+        "hu": "másik",
+        "en": "another",
+        "de": "andere"
+      }
+    ]
+  },
+  {
+    "id": "angel-independencia-reforma",
+    "level": "A1",
+    "track": "mexico",
+    "claim": {
+      "es": "El Ángel de la Independencia está en el Paseo de la Reforma."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, ez a jól ismert szobor a Paseo de la Reforma sugárúton áll a CDMX-ben, és Mexikó függetlenségének fontos jelképe.",
+      "en": "Yes, this well-known monument stands on Paseo de la Reforma avenue in CDMX, and it's an important symbol of Mexico's independence.",
+      "es": "Sí, este monumento tan conocido está en el Paseo de la Reforma, en la CDMX, y es un símbolo importante de la independencia de México.",
+      "de": "Ja, dieses bekannte Denkmal steht auf der Prachtstraße Paseo de la Reforma in CDMX und ist ein wichtiges Symbol für Mexikos Unabhängigkeit."
+    },
+    "source": {
+      "label": "Turismo / historia de México"
+    },
+    "gloss": [
+      {
+        "word": "ángel",
+        "hu": "angyal",
+        "en": "angel",
+        "de": "Engel"
+      },
+      {
+        "word": "independencia",
+        "hu": "függetlenség",
+        "en": "independence",
+        "de": "Unabhängigkeit"
+      },
+      {
+        "word": "reforma",
+        "hu": "Reforma (utcanév)",
+        "en": "Reforma (street name)",
+        "de": "Reforma (Straßenname)"
+      }
+    ]
+  },
+  {
+    "id": "metro-cdmx-usado",
+    "level": "A2",
+    "track": "mexico",
+    "claim": {
+      "es": "El metro de la Ciudad de México es muy usado en América."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, a CDMX metrója az egyik legtöbb utast szállító metrórendszer Amerikában, naponta több millió utassal.",
+      "en": "Yes, CDMX's metro is one of the busiest metro systems in the Americas, carrying millions of passengers a day.",
+      "es": "Sí, el metro de la CDMX es uno de los sistemas de metro con más pasajeros de América, con millones de viajes cada día.",
+      "de": "Ja, die Metro von CDMX ist eines der am stärksten genutzten U-Bahn-Systeme Amerikas, mit Millionen Fahrgästen pro Tag."
+    },
+    "source": {
+      "label": "STC Metro / transporte"
+    },
+    "gloss": [
+      {
+        "word": "metro",
+        "hu": "metró",
+        "en": "metro",
+        "de": "U-Bahn"
+      },
+      {
+        "word": "américa",
+        "hu": "Amerika",
+        "en": "America",
+        "de": "Amerika"
+      },
+      {
+        "word": "usados",
+        "hu": "használt",
+        "en": "used",
+        "de": "benutzt"
+      }
+    ]
+  },
+  {
+    "id": "lucha-libre-solo-turistas",
+    "level": "A2",
+    "track": "mexico",
+    "claim": {
+      "es": "La lucha libre mexicana es solo un espectáculo para turistas."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "A lucha libre a 20. század eleje óta mély mexikói kulturális hagyomány, saját sztárokkal és álarcos hősökkel, nemcsak turistáknak szóló bemutató.",
+      "en": "Lucha libre has been a deep Mexican cultural tradition since the early 20th century, with its own stars and masked heroes, not just a show for tourists.",
+      "es": "La lucha libre es una tradición cultural mexicana muy arraigada desde principios del siglo veinte, con sus propias estrellas y héroes enmascarados, no solo un espectáculo para turistas.",
+      "de": "Lucha Libre ist seit dem frühen 20. Jahrhundert eine tief verwurzelte mexikanische Kulturtradition mit eigenen Stars und maskierten Helden, nicht nur eine Show für Touristen."
+    },
+    "source": {
+      "label": "Cultura popular mexicana"
+    },
+    "gloss": [
+      {
+        "word": "lucha",
+        "hu": "birkózás",
+        "en": "wrestling",
+        "de": "Ringkampf"
+      },
+      {
+        "word": "espectáculo",
+        "hu": "show",
+        "en": "show",
+        "de": "Show"
+      },
+      {
+        "word": "mexicana",
+        "hu": "mexikói",
+        "en": "Mexican",
+        "de": "mexikanisch"
+      }
+    ]
+  },
+  {
+    "id": "cdmx-veinte-millones",
+    "level": "A2",
+    "track": "mexico",
+    "claim": {
+      "es": "La Ciudad de México tiene más de veinte millones de personas."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, a CDMX nagyvárosi térsége (a szomszédos önkormányzatokkal együtt) jóval 20 millió fő fölött van, ez az egyik legnépesebb agglomeráció a világon.",
+      "en": "Yes, CDMX's metropolitan area (together with neighboring municipalities) is well above 20 million people, one of the most populous urban areas in the world.",
+      "es": "Sí, el área metropolitana de la CDMX (junto con los municipios vecinos) supera los veinte millones de personas, una de las más pobladas del mundo.",
+      "de": "Ja, das Ballungsgebiet von CDMX (zusammen mit den Nachbargemeinden) liegt deutlich über 20 Millionen Menschen, eines der bevölkerungsreichsten der Welt."
+    },
+    "source": {
+      "label": "INEGI / demografía"
+    },
+    "gloss": [
+      {
+        "word": "metropolitana",
+        "hu": "nagyvárosi",
+        "en": "metropolitan",
+        "de": "Ballungs-"
+      },
+      {
+        "word": "millones",
+        "hu": "milliók",
+        "en": "millions",
+        "de": "Millionen"
+      }
+    ]
+  },
+  {
+    "id": "xochimilco-canales",
+    "level": "A2",
+    "track": "mexico",
+    "claim": {
+      "es": "Xochimilco tiene canales de agua que vienen de los antiguos aztecas."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, Xochimilco a CDMX déli részén az egyetlen hely, ahol az azték 'chinampa' (úszó kert) rendszer csatornái ma is fennmaradtak. Az UNESCO világörökségi helyszín.",
+      "en": "Yes, Xochimilco in southern CDMX is the only place where the Aztec 'chinampa' (floating garden) canal system still survives today. It's a UNESCO World Heritage Site.",
+      "es": "Sí, Xochimilco, en el sur de la CDMX, es el único lugar donde todavía existen los canales del antiguo sistema azteca de \"chinampas\" (jardines flotantes). Es Patrimonio de la Humanidad de la UNESCO.",
+      "de": "Ja, Xochimilco im Süden von CDMX ist der einzige Ort, an dem das aztekische Kanalsystem der 'Chinampas' (schwimmende Gärten) bis heute erhalten ist. Es ist UNESCO-Weltkulturerbe."
+    },
+    "source": {
+      "label": "UNESCO / historia de México"
+    },
+    "gloss": [
+      {
+        "word": "xochimilco",
+        "hu": "Xochimilco",
+        "en": "Xochimilco",
+        "de": "Xochimilco"
+      },
+      {
+        "word": "canales",
+        "hu": "csatornák",
+        "en": "canals",
+        "de": "Kanäle"
+      },
+      {
+        "word": "aztecas",
+        "hu": "aztékok",
+        "en": "Aztecs",
+        "de": "Azteken"
+      },
+      {
+        "word": "vienen",
+        "hu": "jönnek",
+        "en": "come",
+        "de": "kommen"
+      }
+    ]
+  },
+  {
+    "id": "cdmx-terremoto-1985",
+    "level": "A2",
+    "track": "mexico",
+    "claim": {
+      "es": "En 1985 hubo un terremoto muy fuerte en la Ciudad de México."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, az 1985-ös földrengés (szeptember 19.) az egyik legpusztítóbb esemény volt a város történetében, ezért ma is minden évben szeptember 19-én országos gyakorlatot tartanak.",
+      "en": "Yes, the 1985 earthquake (September 19) was one of the most devastating events in the city's history, which is why a nationwide drill is still held every year on September 19.",
+      "es": "Sí, el terremoto de 1985 (19 de septiembre) fue uno de los sucesos más devastadores en la historia de la ciudad, por eso cada 19 de septiembre se hace un simulacro nacional.",
+      "de": "Ja, das Erdbeben von 1985 (19. September) war eines der verheerendsten Ereignisse in der Geschichte der Stadt, weshalb jedes Jahr am 19. September eine landesweite Übung stattfindet."
+    },
+    "source": {
+      "label": "Historia de México (consenso)"
+    },
+    "gloss": [
+      {
+        "word": "terremoto",
+        "hu": "földrengés",
+        "en": "earthquake",
+        "de": "Erdbeben"
+      },
+      {
+        "word": "1985",
+        "hu": "1985",
+        "en": "1985",
+        "de": "1985"
+      },
+      {
+        "word": "hubo",
+        "hu": "volt (történt)",
+        "en": "there was",
+        "de": "gab es"
+      }
+    ]
+  }
+]

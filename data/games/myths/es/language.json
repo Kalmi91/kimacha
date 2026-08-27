@@ -1,0 +1,596 @@
+[
+  {
+    "id": "ene-decoracion",
+    "level": "A2",
+    "track": "language",
+    "claim": {
+      "es": "La letra \"ñ\" es solo una decoración sin ningún origen."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "A 'ñ' a középkori kéziratok rövidítéséből ered: a szerzetesek a dupla 'nn'-t egyetlen 'n' fölé tett hullámvonallal (tilde) rövidítették, hogy papírt spóroljanak.",
+      "en": "The 'ñ' comes from medieval manuscript abbreviation: monks shortened a double 'nn' to a single 'n' with a wavy line (tilde) on top, to save paper.",
+      "es": "La \"ñ\" viene de la abreviación en manuscritos medievales: los monjes acortaban la doble \"nn\" a una sola \"n\" con una raya ondulada (tilde) encima, para ahorrar papel.",
+      "de": "Das 'ñ' stammt aus der Abkürzung in mittelalterlichen Handschriften: Mönche verkürzten ein doppeltes 'nn' zu einem einzelnen 'n' mit einer Wellenlinie (Tilde) darüber, um Papier zu sparen."
+    },
+    "source": {
+      "label": "RAE (Real Academia Española)"
+    },
+    "gloss": [
+      {
+        "word": "letra",
+        "hu": "betű",
+        "en": "letter",
+        "de": "Buchstabe"
+      },
+      {
+        "word": "decoración",
+        "hu": "díszítés",
+        "en": "decoration",
+        "de": "Verzierung"
+      },
+      {
+        "word": "origen",
+        "hu": "eredet",
+        "en": "origin",
+        "de": "Ursprung"
+      },
+      {
+        "word": "ñ",
+        "hu": "az ñ betű",
+        "en": "the letter ñ",
+        "de": "der Buchstabe ñ"
+      }
+    ]
+  },
+  {
+    "id": "espanol-veinte-paises",
+    "level": "A1",
+    "track": "language",
+    "claim": {
+      "es": "El español es la lengua oficial de más de veinte países."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, a spanyol kb. 20 országban hivatalos nyelv, Spanyolországtól Latin-Amerika legtöbb országán át Egyenlítői-Guineáig.",
+      "en": "Yes, Spanish is an official language in about 20 countries, from Spain through most of Latin America to Equatorial Guinea.",
+      "es": "Sí, el español es lengua oficial en unos veinte países, desde España hasta la mayoría de países de Latinoamérica y Guinea Ecuatorial.",
+      "de": "Ja, Spanisch ist in etwa 20 Ländern Amtssprache, von Spanien über die meisten Länder Lateinamerikas bis nach Äquatorialguinea."
+    },
+    "source": {
+      "label": "Instituto Cervantes / RAE"
+    },
+    "gloss": [
+      {
+        "word": "oficial",
+        "hu": "hivatalos",
+        "en": "official",
+        "de": "offiziell"
+      }
+    ]
+  },
+  {
+    "id": "sustantivos-genero",
+    "level": "A1",
+    "track": "language",
+    "claim": {
+      "es": "En español, todos los sustantivos son masculinos o femeninos."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, ez alapvető spanyol nyelvtani szabály: minden főnévnek van nyelvtani neme, hímnemű vagy nőnemű, ami a névelőn (el/la) is látszik.",
+      "en": "Yes, this is a basic Spanish grammar rule: every noun has a grammatical gender, masculine or feminine, which shows in the article (el/la).",
+      "es": "Sí, es una regla básica del español: todos los sustantivos tienen género gramatical, masculino o femenino, que se ve en el artículo (el/la).",
+      "de": "Ja, das ist eine grundlegende spanische Grammatikregel: Jedes Substantiv hat ein grammatisches Geschlecht, männlich oder weiblich, das im Artikel (el/la) sichtbar ist."
+    },
+    "source": {
+      "label": "RAE (gramática)"
+    },
+    "gloss": [
+      {
+        "word": "sustantivos",
+        "hu": "főnevek",
+        "en": "nouns",
+        "de": "Substantive"
+      },
+      {
+        "word": "femeninos",
+        "hu": "nőneműek",
+        "en": "feminine",
+        "de": "weiblich"
+      },
+      {
+        "word": "masculinos",
+        "hu": "hímneműek",
+        "en": "masculine",
+        "de": "männlich"
+      }
+    ]
+  },
+  {
+    "id": "espanol-italiano-misma-lengua",
+    "level": "A1",
+    "track": "language",
+    "claim": {
+      "es": "El español y el italiano son la misma lengua con nombres diferentes."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "Bár mindkettő a latinból származó, rokon nyelv, és sok szó hasonló, a spanyol és az olasz különálló nyelvek, eltérő nyelvtannal és szókinccsel.",
+      "en": "Although both are related languages descended from Latin, with many similar words, Spanish and Italian are separate languages with different grammar and vocabulary.",
+      "es": "Aunque ambas son lenguas hermanas que vienen del latín, con muchas palabras parecidas, el español y el italiano son lenguas distintas, con gramática y vocabulario diferentes.",
+      "de": "Obwohl beide verwandte Sprachen sind, die vom Lateinischen abstammen, mit vielen ähnlichen Wörtern, sind Spanisch und Italienisch eigenständige Sprachen mit unterschiedlicher Grammatik und Wortschatz."
+    },
+    "source": {
+      "label": "Lingüística (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "italiano",
+        "hu": "olasz",
+        "en": "Italian",
+        "de": "Italienisch"
+      },
+      {
+        "word": "diferentes",
+        "hu": "különbözőek",
+        "en": "different",
+        "de": "unterschiedlich"
+      }
+    ]
+  },
+  {
+    "id": "hablantes-nativos-espanol",
+    "level": "A2",
+    "track": "language",
+    "claim": {
+      "es": "Hay más hablantes nativos de español que de inglés en el mundo."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, a legtöbb nyelvi becslés szerint a spanyol anyanyelvi beszélők száma valamivel magasabb, mint az angol anyanyelvieké (az angolnak viszont sokkal több második nyelvi beszélője van összesen).",
+      "en": "Yes, most linguistic estimates put the number of native Spanish speakers slightly higher than native English speakers (English has far more second-language speakers overall, though).",
+      "es": "Sí, la mayoría de las estimaciones lingüísticas dan un número algo mayor de hablantes nativos de español que de inglés (el inglés, en cambio, tiene muchos más hablantes de segunda lengua).",
+      "de": "Ja, die meisten sprachwissenschaftlichen Schätzungen ergeben eine etwas höhere Zahl an spanischen Muttersprachlern als an englischen (Englisch hat allerdings insgesamt viel mehr Zweitsprachler)."
+    },
+    "source": {
+      "label": "Instituto Cervantes / lingüística"
+    },
+    "gloss": [
+      {
+        "word": "hablantes",
+        "hu": "beszélők",
+        "en": "speakers",
+        "de": "Sprecher"
+      },
+      {
+        "word": "nativos",
+        "hu": "anyanyelvi",
+        "en": "native",
+        "de": "Mutter-"
+      }
+    ]
+  },
+  {
+    "id": "cien-cambia-forma",
+    "level": "A1",
+    "track": "language",
+    "claim": {
+      "es": "La palabra \"cien\" cambia de forma antes de un sustantivo."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, 'ciento' főnév előtt 'cien'-re rövidül: 'cien casas' (száz ház), de 'ciento veinte' (százhúsz), ha nem közvetlenül főnév követi.",
+      "en": "Yes, 'ciento' shortens to 'cien' before a noun: 'cien casas' (a hundred houses), but 'ciento veinte' (a hundred twenty) when not directly followed by a noun.",
+      "es": "Sí, \"ciento\" se acorta a \"cien\" antes de un sustantivo: \"cien casas\", pero \"ciento veinte\" cuando no va seguido directamente de un sustantivo.",
+      "de": "Ja, 'ciento' verkürzt sich vor einem Substantiv zu 'cien': 'cien casas' (hundert Häuser), aber 'ciento veinte' (hundertzwanzig), wenn kein Substantiv direkt folgt."
+    },
+    "source": {
+      "label": "RAE (gramática)"
+    },
+    "gloss": [
+      {
+        "word": "cien",
+        "hu": "száz",
+        "en": "hundred",
+        "de": "hundert"
+      },
+      {
+        "word": "forma",
+        "hu": "forma, alak",
+        "en": "form",
+        "de": "Form"
+      },
+      {
+        "word": "palabra",
+        "hu": "szó",
+        "en": "word",
+        "de": "Wort"
+      },
+      {
+        "word": "sustantivo",
+        "hu": "főnév",
+        "en": "noun",
+        "de": "Substantiv"
+      }
+    ]
+  },
+  {
+    "id": "adjetivos-antes-sustantivo",
+    "level": "A1",
+    "track": "language",
+    "claim": {
+      "es": "En español, los adjetivos siempre van antes del sustantivo, como en inglés."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "A spanyolban a melléknevek jellemzően a főnév UTÁN állnak: 'casa roja' (piros ház), nem 'roja casa', ellentétben az angollal, ahol a melléknév a főnév elé kerül.",
+      "en": "In Spanish, adjectives typically come AFTER the noun: 'casa roja' (red house), not 'roja casa', unlike English, where the adjective comes before the noun.",
+      "es": "En español, los adjetivos suelen ir DESPUÉS del sustantivo: \"casa roja\", no \"roja casa\", a diferencia del inglés, donde el adjetivo va antes del sustantivo.",
+      "de": "Im Spanischen stehen Adjektive typischerweise NACH dem Substantiv: 'casa roja' (rotes Haus), nicht 'roja casa', im Gegensatz zum Englischen, wo das Adjektiv vor dem Substantiv steht."
+    },
+    "source": {
+      "label": "RAE (gramática)"
+    },
+    "gloss": [
+      {
+        "word": "adjetivos",
+        "hu": "melléknevek",
+        "en": "adjectives",
+        "de": "Adjektive"
+      },
+      {
+        "word": "inglés",
+        "hu": "angol",
+        "en": "English",
+        "de": "Englisch"
+      },
+      {
+        "word": "sustantivo",
+        "hu": "főnév",
+        "en": "noun",
+        "de": "Substantiv"
+      }
+    ]
+  },
+  {
+    "id": "ser-estar-mismo",
+    "level": "A1",
+    "track": "language",
+    "claim": {
+      "es": "El verbo \"ser\" y el verbo \"estar\" significan exactamente lo mismo."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "A 'ser' a tartós dolgokra (identitás, foglalkozás, eredet) vonatkozik, az 'estar' pedig az éppen aktuális állapotra (hely, hangulat, változás eredménye). A kettő nem cserélhető fel szabadon.",
+      "en": "'Ser' is for lasting things (identity, occupation, origin), while 'estar' is for the current state (location, mood, the result of a change). The two aren't freely interchangeable.",
+      "es": "\"Ser\" se usa para cosas duraderas (identidad, profesión, origen), y \"estar\" para el estado actual (lugar, ánimo, resultado de un cambio). No se pueden intercambiar libremente.",
+      "de": "'Ser' steht für dauerhafte Dinge (Identität, Beruf, Herkunft), 'estar' für den aktuellen Zustand (Ort, Stimmung, Ergebnis einer Veränderung). Die beiden sind nicht frei austauschbar."
+    },
+    "source": {
+      "label": "RAE (gramática)"
+    },
+    "gloss": [
+      {
+        "word": "exactamente",
+        "hu": "pontosan",
+        "en": "exactly",
+        "de": "genau"
+      },
+      {
+        "word": "ser",
+        "hu": "lenni (ige)",
+        "en": "to be (verb)",
+        "de": "sein (Verb)"
+      },
+      {
+        "word": "significan",
+        "hu": "jelentenek",
+        "en": "mean",
+        "de": "bedeuten"
+      },
+      {
+        "word": "verbo",
+        "hu": "ige",
+        "en": "verb",
+        "de": "Verb"
+      }
+    ]
+  },
+  {
+    "id": "espanol-arabe",
+    "level": "A2",
+    "track": "language",
+    "claim": {
+      "es": "El español no tiene ninguna palabra de origen árabe."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "A spanyolban több száz arab eredetű szó van, mint 'aceite' (olaj) vagy 'azúcar' (cukor), az arab uralom hosszú időszakából (Al-Ándalus) örökölve.",
+      "en": "Spanish has hundreds of words of Arabic origin, like 'aceite' (oil) or 'azúcar' (sugar), inherited from the long period of Arab rule (Al-Ándalus).",
+      "es": "El español tiene cientos de palabras de origen árabe, como \"aceite\" o \"azúcar\", heredadas del largo periodo de dominio árabe (Al-Ándalus).",
+      "de": "Spanisch hat Hunderte Wörter arabischer Herkunft, wie 'aceite' (Öl) oder 'azúcar' (Zucker), geerbt aus der langen Zeit arabischer Herrschaft (Al-Andalus)."
+    },
+    "source": {
+      "label": "RAE / historia de la lengua"
+    },
+    "gloss": [
+      {
+        "word": "árabe",
+        "hu": "arab",
+        "en": "Arabic",
+        "de": "arabisch"
+      },
+      {
+        "word": "aceite",
+        "hu": "olaj",
+        "en": "oil",
+        "de": "Öl"
+      },
+      {
+        "word": "ninguna",
+        "hu": "semelyik",
+        "en": "none",
+        "de": "keine"
+      }
+    ]
+  },
+  {
+    "id": "mismas-palabras-todos-paises",
+    "level": "A1",
+    "track": "language",
+    "claim": {
+      "es": "En todos los países de habla hispana se usan las mismas palabras."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "Nagy szókincsbeli eltérések vannak: pl. a szívószálra Mexikóban 'popote', máshol 'pajilla' vagy 'cañita'. Minden spanyol nyelvű ország saját szavakat is használ.",
+      "en": "There are big vocabulary differences: for example, a drinking straw is 'popote' in Mexico, 'pajilla' or 'cañita' elsewhere. Every Spanish-speaking country also uses its own words.",
+      "es": "Hay grandes diferencias de vocabulario: por ejemplo, la pajita para beber es \"popote\" en México, y \"pajilla\" o \"cañita\" en otros países. Cada país de habla hispana usa también sus propias palabras.",
+      "de": "Es gibt große Wortschatzunterschiede: Zum Beispiel heißt der Trinkhalm in Mexiko 'popote', anderswo 'pajilla' oder 'cañita'. Jedes spanischsprachige Land verwendet auch eigene Wörter."
+    },
+    "source": {
+      "label": "RAE / dialectología"
+    },
+    "gloss": [
+      {
+        "word": "hispana",
+        "hu": "spanyol ajkú",
+        "en": "Spanish-speaking",
+        "de": "spanischsprachig"
+      },
+      {
+        "word": "palabras",
+        "hu": "szavak",
+        "en": "words",
+        "de": "Wörter"
+      },
+      {
+        "word": "usan",
+        "hu": "használnak",
+        "en": "they use",
+        "de": "benutzen"
+      }
+    ]
+  },
+  {
+    "id": "hache-muda",
+    "level": "A1",
+    "track": "language",
+    "claim": {
+      "es": "La letra \"h\" casi nunca se pronuncia en español."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, a spanyolban a 'h' betű szinte mindig néma: 'hola' úgy hangzik, mint 'ola', H nélkül. (Ez alól kevés kivétel van, pl. bizonyos idegen szavaknál.)",
+      "en": "Yes, in Spanish the letter 'h' is almost always silent: 'hola' sounds like 'ola', without an H sound. (There are few exceptions, e.g. in some foreign words.)",
+      "es": "Sí, en español la letra \"h\" es casi siempre muda: \"hola\" suena como \"ola\", sin sonido de H. (Hay pocas excepciones, por ejemplo en algunas palabras extranjeras.)",
+      "de": "Ja, im Spanischen ist der Buchstabe 'h' fast immer stumm: 'hola' klingt wie 'ola', ohne H-Laut. (Es gibt wenige Ausnahmen, z. B. bei manchen Fremdwörtern.)"
+    },
+    "source": {
+      "label": "RAE (gramática)"
+    },
+    "gloss": [
+      {
+        "word": "muda",
+        "hu": "néma",
+        "en": "silent",
+        "de": "stumm"
+      },
+      {
+        "word": "casi",
+        "hu": "majdnem",
+        "en": "almost",
+        "de": "fast"
+      },
+      {
+        "word": "h",
+        "hu": "h betű",
+        "en": "the letter h",
+        "de": "der Buchstabe h"
+      },
+      {
+        "word": "letra",
+        "hu": "betű",
+        "en": "letter",
+        "de": "Buchstabe"
+      },
+      {
+        "word": "pronuncia",
+        "hu": "kiejti",
+        "en": "pronounces",
+        "de": "spricht aus"
+      }
+    ]
+  },
+  {
+    "id": "orden-sujeto-verbo-objeto",
+    "level": "A2",
+    "track": "language",
+    "claim": {
+      "es": "En español, el orden común es sujeto-verbo-objeto, como en inglés."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, a spanyol leggyakoribb mondatszórendje ugyanaz, mint az angolé: alany-ige-tárgy ('Yo como pan' = Én eszem kenyeret). A spanyol emellett rugalmasabb is, más szórend is előfordul.",
+      "en": "Yes, Spanish's most common sentence order is the same as English's: subject-verb-object ('Yo como pan' = I eat bread). Spanish is also more flexible, other orders do occur.",
+      "es": "Sí, el orden más común en español es igual que en inglés: sujeto-verbo-objeto (\"Yo como pan\"). El español también es más flexible, y aparecen otros órdenes.",
+      "de": "Ja, die häufigste Satzstellung im Spanischen ist dieselbe wie im Englischen: Subjekt-Verb-Objekt ('Yo como pan' = Ich esse Brot). Spanisch ist zudem flexibler, andere Wortstellungen kommen auch vor."
+    },
+    "source": {
+      "label": "Lingüística (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "sujeto",
+        "hu": "alany",
+        "en": "subject",
+        "de": "Subjekt"
+      },
+      {
+        "word": "objeto",
+        "hu": "tárgy",
+        "en": "object",
+        "de": "Objekt"
+      },
+      {
+        "word": "oración",
+        "hu": "mondat",
+        "en": "sentence",
+        "de": "Satz"
+      },
+      {
+        "word": "verbo",
+        "hu": "ige",
+        "en": "verb",
+        "de": "Verb"
+      }
+    ]
+  },
+  {
+    "id": "todas-palabras-tilde",
+    "level": "A1",
+    "track": "language",
+    "claim": {
+      "es": "Todas las palabras en español llevan tilde escrita."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "A legtöbb spanyol szónak nincs írott ékezete (tilde): csak azoknak kell, amelyek a hangsúlyszabályok alól kivételt jelentenek, pl. 'café' vagy 'rápido'.",
+      "en": "Most Spanish words don't have a written accent mark (tilde): only the ones that break the normal stress rules need one, like 'café' or 'rápido'.",
+      "es": "La mayoría de las palabras en español no llevan tilde escrita: solo la necesitan las que son excepción a las reglas normales de acentuación, como \"café\" o \"rápido\".",
+      "de": "Die meisten spanischen Wörter haben kein geschriebenes Akzentzeichen (Tilde): Nur die, die eine Ausnahme von den normalen Betonungsregeln bilden, brauchen eines, wie 'café' oder 'rápido'."
+    },
+    "source": {
+      "label": "RAE (gramática)"
+    },
+    "gloss": [
+      {
+        "word": "escrita",
+        "hu": "írott",
+        "en": "written",
+        "de": "geschrieben"
+      },
+      {
+        "word": "palabras",
+        "hu": "szavak",
+        "en": "words",
+        "de": "Wörter"
+      },
+      {
+        "word": "tilde",
+        "hu": "ékezet",
+        "en": "accent mark",
+        "de": "Akzent"
+      }
+    ]
+  },
+  {
+    "id": "abecedario-diferente",
+    "level": "A1",
+    "track": "language",
+    "claim": {
+      "es": "El abecedario español no tiene ninguna letra en común con el inglés."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "A spanyol és az angol ábécé szinte teljesen ugyanazokat a latin betűket használja, a fő különbség a spanyol 'ñ' extra betűje.",
+      "en": "The Spanish and English alphabets use almost the exact same Latin letters, the main difference being the extra Spanish letter 'ñ'.",
+      "es": "El abecedario español y el inglés usan casi las mismas letras latinas, la principal diferencia es la letra extra \"ñ\" del español.",
+      "de": "Das spanische und das englische Alphabet verwenden fast dieselben lateinischen Buchstaben, der Hauptunterschied ist der zusätzliche spanische Buchstabe 'ñ'."
+    },
+    "source": {
+      "label": "RAE (gramática)"
+    },
+    "gloss": [
+      {
+        "word": "abecedario",
+        "hu": "ábécé",
+        "en": "alphabet",
+        "de": "Alphabet"
+      },
+      {
+        "word": "común",
+        "hu": "közös",
+        "en": "common",
+        "de": "gemeinsam"
+      },
+      {
+        "word": "inglés",
+        "hu": "angol",
+        "en": "English",
+        "de": "Englisch"
+      },
+      {
+        "word": "letra",
+        "hu": "betű",
+        "en": "letter",
+        "de": "Buchstabe"
+      },
+      {
+        "word": "ninguna",
+        "hu": "semelyik",
+        "en": "none",
+        "de": "keine"
+      }
+    ]
+  },
+  {
+    "id": "preguntas-interrogacion",
+    "level": "A1",
+    "track": "language",
+    "claim": {
+      "es": "En español, las preguntas llevan signo de interrogación al principio y final."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, ez a spanyol írás egyik jellegzetessége: a kérdőmondat elején fordított kérdőjel (¿) áll, a végén pedig a szokásos (?), pl. '¿Cómo estás?'.",
+      "en": "Yes, this is a distinctive feature of written Spanish: a question starts with an inverted question mark (¿) and ends with the usual one (?), e.g. '¿Cómo estás?'.",
+      "es": "Sí, es una característica distintiva del español escrito: la pregunta empieza con un signo de interrogación invertido (¿) y termina con el normal (?), por ejemplo \"¿Cómo estás?\".",
+      "de": "Ja, das ist ein charakteristisches Merkmal der spanischen Schrift: Eine Frage beginnt mit einem umgekehrten Fragezeichen (¿) und endet mit dem üblichen (?), z. B. '¿Cómo estás?'."
+    },
+    "source": {
+      "label": "RAE (gramática)"
+    },
+    "gloss": [
+      {
+        "word": "signo",
+        "hu": "jel",
+        "en": "mark",
+        "de": "Zeichen"
+      },
+      {
+        "word": "interrogación",
+        "hu": "kérdőjel",
+        "en": "question mark",
+        "de": "Fragezeichen"
+      },
+      {
+        "word": "principio",
+        "hu": "kezdet",
+        "en": "beginning",
+        "de": "Anfang"
+      }
+    ]
+  }
+]

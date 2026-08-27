@@ -1,0 +1,476 @@
+[
+  {
+    "id": "azucar-hiperactivos",
+    "level": "A1",
+    "track": "body",
+    "claim": {
+      "es": "El azúcar hace que los niños estén hiperactivos."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "Több kontrollált vizsgálat sem talált összefüggést a cukorbevitel és a gyerekek hiperaktivitása között. A hatás inkább a fejünkben van (elvárás), mint a cukorban.",
+      "en": "Several controlled studies found no link between sugar intake and hyperactivity in children. The effect seems to be more in the observer's expectation than in the sugar.",
+      "es": "Varios estudios controlados no encontraron relación entre el azúcar y la hiperactividad en los niños. El efecto parece estar más en la expectativa de quien observa que en el azúcar.",
+      "de": "Mehrere kontrollierte Studien fanden keinen Zusammenhang zwischen Zuckerkonsum und Hyperaktivität bei Kindern. Der Effekt scheint eher in der Erwartung des Beobachters zu liegen als im Zucker."
+    },
+    "source": {
+      "label": "Pediatría (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "azúcar",
+        "hu": "cukor",
+        "en": "sugar",
+        "de": "Zucker"
+      },
+      {
+        "word": "hiperactivos",
+        "hu": "hiperaktívak",
+        "en": "hyperactive",
+        "de": "hyperaktiv"
+      }
+    ]
+  },
+  {
+    "id": "cafe-crecimiento",
+    "level": "A2",
+    "track": "body",
+    "claim": {
+      "es": "El café frena el crecimiento de los niños."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "Nincs jó bizonyíték arra, hogy a koffein visszafogná a növekedést. A gyerekeknek más okból (alvászavar, idegesség) ajánlott kevés koffeint fogyasztani, nem a magasságuk miatt.",
+      "en": "There's no good evidence that caffeine stunts growth. Limiting caffeine in children is recommended for other reasons (sleep, anxiety), not their height.",
+      "es": "No hay buena evidencia de que la cafeína frene el crecimiento. Se recomienda poca cafeína en los niños por otras razones (sueño, nerviosismo), no por la estatura.",
+      "de": "Es gibt keine guten Belege dafür, dass Koffein das Wachstum bremst. Wenig Koffein wird Kindern aus anderen Gründen empfohlen (Schlaf, Nervosität), nicht wegen der Körpergröße."
+    },
+    "source": {
+      "label": "Nutrición pediátrica (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "frena",
+        "hu": "lassítja",
+        "en": "slows",
+        "de": "bremst"
+      },
+      {
+        "word": "crecimiento",
+        "hu": "növekedés",
+        "en": "growth",
+        "de": "Wachstum"
+      }
+    ]
+  },
+  {
+    "id": "ocho-vasos-agua",
+    "level": "A1",
+    "track": "body",
+    "claim": {
+      "es": "Todas las personas necesitan tomar ocho vasos de agua cada día."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "Nincs egyetlen tudományos szám, ami mindenkire igaz: a folyadékszükséglet függ a testmérettől, hőmérséklettől, mozgástól, és a víz nagy része az ételekből is jön, nemcsak a pohárból.",
+      "en": "There's no single scientific number that applies to everyone: fluid needs depend on body size, temperature, and activity, and much water also comes from food, not just glasses.",
+      "es": "No hay un número científico fijo que valga para todos: la necesidad de líquido depende del tamaño del cuerpo, la temperatura y el ejercicio, y mucha agua también viene de la comida.",
+      "de": "Es gibt keine einzige wissenschaftliche Zahl, die für alle gilt: Der Flüssigkeitsbedarf hängt von Körpergröße, Temperatur und Bewegung ab, und viel Wasser kommt auch aus der Nahrung."
+    },
+    "source": {
+      "label": "Nutrición (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "vasos",
+        "hu": "poharak",
+        "en": "glasses",
+        "de": "Gläser"
+      }
+    ]
+  },
+  {
+    "id": "dormir-memoria",
+    "level": "A1",
+    "track": "body",
+    "claim": {
+      "es": "Dormir bien ayuda a la memoria y a la salud."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, ez nagyon jól alátámasztott: alvás közben az agy rendezi és rögzíti az emlékeket, és a kevés alvás rontja a koncentrációt, a hangulatot és az egészséget általában.",
+      "en": "Yes, this is very well established: during sleep the brain organizes and stores memories, and too little sleep harms concentration, mood, and health overall.",
+      "es": "Sí, esto está muy bien demostrado: durante el sueño el cerebro organiza y guarda los recuerdos, y dormir poco daña la concentración, el humor y la salud en general.",
+      "de": "Ja, das ist sehr gut belegt: Während des Schlafs ordnet und speichert das Gehirn Erinnerungen, und zu wenig Schlaf schadet Konzentration, Stimmung und der Gesundheit insgesamt."
+    },
+    "source": {
+      "label": "Medicina del sueño (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "memoria",
+        "hu": "memória",
+        "en": "memory",
+        "de": "Gedächtnis"
+      }
+    ]
+  },
+  {
+    "id": "chocolate-negro-antioxidantes",
+    "level": "A2",
+    "track": "body",
+    "claim": {
+      "es": "El chocolate negro con mucho cacao tiene antioxidantes buenos."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, a magas kakaótartalmú étcsokoládé flavonoidokban gazdag, ami antioxidáns hatású. Ez nem jelenti, hogy sokat kellene enni belőle, de a tény önmagában igaz.",
+      "en": "Yes, dark chocolate with high cacao content is rich in flavonoids, which have antioxidant effects. That doesn't mean you should eat a lot of it, but the fact itself is true.",
+      "es": "Sí, el chocolate negro con mucho cacao tiene muchos flavonoides, que tienen efecto antioxidante. Eso no significa que haya que comer mucho, pero el hecho en sí es cierto.",
+      "de": "Ja, dunkle Schokolade mit hohem Kakaoanteil ist reich an Flavonoiden, die antioxidativ wirken. Das bedeutet nicht, dass man viel davon essen sollte, aber die Tatsache selbst stimmt."
+    },
+    "source": {
+      "label": "Nutrición (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "cacao",
+        "hu": "kakaó",
+        "en": "cacao",
+        "de": "Kakao"
+      },
+      {
+        "word": "antioxidantes",
+        "hu": "antioxidánsok",
+        "en": "antioxidants",
+        "de": "Antioxidantien"
+      }
+    ]
+  },
+  {
+    "id": "bajar-peso-rapido",
+    "level": "A2",
+    "track": "body",
+    "claim": {
+      "es": "Bajar de peso muy rápido siempre es mejor que bajar despacio."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "A táplálkozási szakemberek szerint a lassú, fenntartható fogyás egészségesebb és tartósabb: a nagyon gyors fogyás gyakran izomvesztéssel jár, és könnyen visszahízik.",
+      "en": "Nutrition experts consider slow, sustainable weight loss healthier and more lasting: very fast weight loss often means losing muscle, and the weight often comes back.",
+      "es": "Los expertos en nutrición consideran más sano y duradero bajar de peso despacio: bajar muy rápido suele significar perder músculo, y el peso suele volver.",
+      "de": "Ernährungsexperten halten langsamen, nachhaltigen Gewichtsverlust für gesünder und dauerhafter: Sehr schneller Gewichtsverlust bedeutet oft Muskelverlust, und das Gewicht kommt oft zurück."
+    },
+    "source": {
+      "label": "Nutrición (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "bajar",
+        "hu": "csökkenteni",
+        "en": "to lose (weight)",
+        "de": "abnehmen"
+      },
+      {
+        "word": "peso",
+        "hu": "súly",
+        "en": "weight",
+        "de": "Gewicht"
+      }
+    ]
+  },
+  {
+    "id": "pastillas-mejores-comida",
+    "level": "A2",
+    "track": "body",
+    "claim": {
+      "es": "Las vitaminas en pastillas son siempre mejores que las de la comida."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "A legtöbb táplálkozási ajánlás szerint az ételből származó vitaminok jobbak, mert az étel más hasznos anyagokat is tartalmaz. Tablettára főleg akkor van szükség, ha valakinek tényleg hiánya van.",
+      "en": "Most nutrition guidance prefers vitamins from food, because food also contains other useful substances. Pills are mainly needed when someone has an actual deficiency.",
+      "es": "La mayoría de las guías de nutrición prefieren las vitaminas de la comida, porque la comida también tiene otras sustancias útiles. Las pastillas se necesitan sobre todo si hay una deficiencia real.",
+      "de": "Die meisten Ernährungsempfehlungen bevorzugen Vitamine aus der Nahrung, da diese auch andere nützliche Stoffe enthält. Pillen werden vor allem bei einem tatsächlichen Mangel benötigt."
+    },
+    "source": {
+      "label": "Nutrición (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "pastillas",
+        "hu": "tabletták",
+        "en": "pills",
+        "de": "Tabletten"
+      },
+      {
+        "word": "vitaminas",
+        "hu": "vitaminok",
+        "en": "vitamins",
+        "de": "Vitamine"
+      }
+    ]
+  },
+  {
+    "id": "ejercicio-dormir",
+    "level": "A1",
+    "track": "body",
+    "claim": {
+      "es": "Hacer ejercicio ayuda a dormir mejor."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, ez jól alátámasztott: a rendszeres testmozgás javítja az alvás minőségét és mennyiségét, bár túl közel a lefekvéshez néhány embernél inkább felpörgető hatású.",
+      "en": "Yes, this is well established: regular exercise improves sleep quality and duration, though very close to bedtime it can be too energizing for some people.",
+      "es": "Sí, esto está bien demostrado: el ejercicio regular mejora la calidad y la cantidad del sueño, aunque muy cerca de la hora de dormir puede activar demasiado a algunas personas.",
+      "de": "Ja, das ist gut belegt: Regelmäßige Bewegung verbessert Schlafqualität und -dauer, kurz vor dem Schlafengehen kann sie manche Menschen aber zu sehr aktivieren."
+    },
+    "source": {
+      "label": "Medicina del sueño (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "ejercicio",
+        "hu": "testmozgás",
+        "en": "exercise",
+        "de": "Sport"
+      }
+    ]
+  },
+  {
+    "id": "tipo-sangre-personalidad",
+    "level": "A2",
+    "track": "body",
+    "claim": {
+      "es": "El tipo de sangre determina el carácter de las personas."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "Nincs tudományos bizonyíték arra, hogy a vércsoport befolyásolná a személyiséget. Ez egy Japánban és Dél-Koreában népszerű, de a tudomány által nem igazolt elmélet.",
+      "en": "There's no scientific evidence that blood type affects personality. This is a theory popular in Japan and South Korea, but not supported by science.",
+      "es": "No hay evidencia científica de que el tipo de sangre afecte al carácter. Es una teoría popular en Japón y Corea del Sur, pero sin respaldo científico.",
+      "de": "Es gibt keine wissenschaftlichen Belege dafür, dass die Blutgruppe die Persönlichkeit beeinflusst. Das ist eine in Japan und Südkorea beliebte, aber wissenschaftlich nicht belegte Theorie."
+    },
+    "source": {
+      "label": "Medicina (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "sangre",
+        "hu": "vér",
+        "en": "blood",
+        "de": "Blut"
+      },
+      {
+        "word": "carácter",
+        "hu": "jellem",
+        "en": "character",
+        "de": "Charakter"
+      },
+      {
+        "word": "determina",
+        "hu": "meghatározza",
+        "en": "determines",
+        "de": "bestimmt"
+      }
+    ]
+  },
+  {
+    "id": "fumar-pulmones",
+    "level": "A1",
+    "track": "body",
+    "claim": {
+      "es": "Fumar es malo para los pulmones y el corazón."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, ez az egyik legjobban alátámasztott orvosi tény: a dohányzás jelentősen növeli a tüdő- és szívbetegségek kockázatát.",
+      "en": "Yes, this is one of the most well-established medical facts: smoking significantly increases the risk of lung and heart disease.",
+      "es": "Sí, es uno de los hechos médicos mejor demostrados: fumar aumenta mucho el riesgo de enfermedades de los pulmones y del corazón.",
+      "de": "Ja, das ist eine der am besten belegten medizinischen Tatsachen: Rauchen erhöht das Risiko für Lungen- und Herzkrankheiten erheblich."
+    },
+    "source": {
+      "label": "OMS (Organización Mundial de la Salud)"
+    },
+    "gloss": [
+      {
+        "word": "fumar",
+        "hu": "dohányozni",
+        "en": "to smoke",
+        "de": "rauchen"
+      },
+      {
+        "word": "pulmones",
+        "hu": "tüdők",
+        "en": "lungs",
+        "de": "Lungen"
+      }
+    ]
+  },
+  {
+    "id": "estres-corazon",
+    "level": "A1",
+    "track": "body",
+    "claim": {
+      "es": "El estrés constante puede afectar la salud del corazón."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, a tartós stressz összefüggésbe hozható a magas vérnyomással és a szív- és érrendszeri betegségek nagyobb kockázatával.",
+      "en": "Yes, chronic stress has been linked to high blood pressure and a higher risk of heart and blood vessel disease.",
+      "es": "Sí, el estrés constante se relaciona con la presión alta y con un mayor riesgo de enfermedades del corazón y de los vasos sanguíneos.",
+      "de": "Ja, dauerhafter Stress wird mit hohem Blutdruck und einem höheren Risiko für Herz-Kreislauf-Erkrankungen in Verbindung gebracht."
+    },
+    "source": {
+      "label": "Medicina (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "estrés",
+        "hu": "stressz",
+        "en": "stress",
+        "de": "Stress"
+      },
+      {
+        "word": "constante",
+        "hu": "állandó",
+        "en": "constant",
+        "de": "ständig"
+      },
+      {
+        "word": "afectar",
+        "hu": "befolyásolni",
+        "en": "to affect",
+        "de": "beeinflussen"
+      },
+      {
+        "word": "puede",
+        "hu": "tud, lehet",
+        "en": "can",
+        "de": "kann"
+      }
+    ]
+  },
+  {
+    "id": "alcohol-calor",
+    "level": "A2",
+    "track": "body",
+    "claim": {
+      "es": "Beber alcohol da más calor de verdad cuando hace mucho frío."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "Az alkohol tágítja a bőr ereit, ezért melegségérzetet ad, de valójában gyorsítja a testhő elvesztését, tehát a testhőmérséklet csökken. Hideg időben veszélyes lehet.",
+      "en": "Alcohol widens the skin's blood vessels, which creates a feeling of warmth, but it actually speeds up heat loss, so core body temperature drops. This can be dangerous in cold weather.",
+      "es": "El alcohol dilata los vasos sanguíneos de la piel, lo que da sensación de calor, pero en realidad acelera la pérdida de calor del cuerpo, así que la temperatura corporal baja. Puede ser peligroso con mucho frío.",
+      "de": "Alkohol erweitert die Blutgefäße der Haut, was ein Wärmegefühl erzeugt, beschleunigt aber tatsächlich den Wärmeverlust, sodass die Körpertemperatur sinkt. Das kann bei Kälte gefährlich sein."
+    },
+    "source": {
+      "label": "Medicina (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "alcohol",
+        "hu": "alkohol",
+        "en": "alcohol",
+        "de": "Alkohol"
+      },
+      {
+        "word": "da",
+        "hu": "ad",
+        "en": "gives",
+        "de": "gibt"
+      }
+    ]
+  },
+  {
+    "id": "reir-salud",
+    "level": "A1",
+    "track": "body",
+    "claim": {
+      "es": "Reír mucho es bueno para la salud."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, a nevetés összefüggésbe hozható a csökkent stresszel és a jobb hangulattal. A pontos élettani mechanizmusokat még kutatják, de a jótékony hatás elfogadott.",
+      "en": "Yes, laughter is linked to lower stress and better mood. The exact physiological mechanisms are still being studied, but the beneficial effect is accepted.",
+      "es": "Sí, reír se relaciona con menos estrés y mejor humor. Los mecanismos exactos aún se estudian, pero el efecto beneficioso está aceptado.",
+      "de": "Ja, Lachen wird mit weniger Stress und besserer Stimmung in Verbindung gebracht. Die genauen physiologischen Mechanismen werden noch erforscht, aber die positive Wirkung ist anerkannt."
+    },
+    "source": {
+      "label": "Psicología (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "reír",
+        "hu": "nevetni",
+        "en": "to laugh",
+        "de": "lachen"
+      }
+    ]
+  },
+  {
+    "id": "musculos-cuerpo",
+    "level": "A2",
+    "track": "body",
+    "claim": {
+      "es": "El cuerpo humano tiene más de seiscientos músculos."
+    },
+    "verdict": "true",
+    "explanation": {
+      "hu": "Igen, a szokásos becslés kb. 600 izom, bár a pontos szám a besorolástól függ (600 és 850 között mozog a szakirodalomban).",
+      "en": "Yes, the usual estimate is about 600 muscles, though the exact number depends on how they're classified (sources range from 600 to 850).",
+      "es": "Sí, la estimación habitual es de unos 600 músculos, aunque el número exacto depende de cómo se clasifiquen (entre 600 y 850 según las fuentes).",
+      "de": "Ja, die übliche Schätzung liegt bei etwa 600 Muskeln, wobei die genaue Zahl von der Klassifizierung abhängt (Quellen nennen 600 bis 850)."
+    },
+    "source": {
+      "label": "Anatomía (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "músculos",
+        "hu": "izmok",
+        "en": "muscles",
+        "de": "Muskeln"
+      },
+      {
+        "word": "seiscientos",
+        "hu": "hatszáz",
+        "en": "six hundred",
+        "de": "sechshundert"
+      }
+    ]
+  },
+  {
+    "id": "picante-daño",
+    "level": "A2",
+    "track": "body",
+    "claim": {
+      "es": "La comida picante causa úlceras en el estómago."
+    },
+    "verdict": "myth",
+    "explanation": {
+      "hu": "A gyomorfekélyt legtöbbször baktérium (Helicobacter pylori) vagy bizonyos gyógyszerek okozzák, nem a csípős étel. A csípős étel a meglévő reflux tüneteit ronthatja, de önmagában nem okoz fekélyt.",
+      "en": "Stomach ulcers are usually caused by bacteria (Helicobacter pylori) or certain medications, not spicy food. Spicy food can worsen existing reflux symptoms, but it doesn't cause ulcers by itself.",
+      "es": "Las úlceras de estómago suelen deberse a una bacteria (Helicobacter pylori) o a ciertos medicamentos, no a la comida picante. La comida picante puede empeorar el reflujo que ya existe, pero no causa úlceras por sí sola.",
+      "de": "Magengeschwüre werden meist durch Bakterien (Helicobacter pylori) oder bestimmte Medikamente verursacht, nicht durch scharfes Essen. Scharfes Essen kann bestehende Refluxsymptome verschlimmern, verursacht aber selbst keine Geschwüre."
+    },
+    "source": {
+      "label": "Gastroenterología (consenso científico)"
+    },
+    "gloss": [
+      {
+        "word": "picante",
+        "hu": "csípős",
+        "en": "spicy",
+        "de": "scharf"
+      },
+      {
+        "word": "úlceras",
+        "hu": "fekélyek",
+        "en": "ulcers",
+        "de": "Geschwüre"
+      }
+    ]
+  }
+]
