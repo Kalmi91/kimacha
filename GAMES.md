@@ -1430,8 +1430,8 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 | F1 | `word-search` | ✅ KÉSZ | `62c9801` |
 | F2 | `word-rain` | ✅ KÉSZ | `4c5bac6` |
 | F2 | `bubble-pop` | ✅ KÉSZ | `aab85f5` |
-| F3 | `grammar-choice` | ✅ KÉSZ (motor + 3 téma: ser-estar, articulos-genero, por-para; a többi 56 = Q1-Q5, token-burn) | `TBD` |
-| F3 | `confusables` | ✅ KÉSZ (24 csoport: 8 alaki + 9 kétféle „ugyanaz" + 7 mexikói) | `TBD` |
+| F3 | `grammar-choice` | ✅ KÉSZ (motor + 3 téma: ser-estar, articulos-genero, por-para; a többi 56 = Q1-Q5, token-burn) | `7b613b2` (motor) / `cbe7a59` (tartalom) |
+| F3 | `confusables` | ✅ KÉSZ (24 csoport: 8 alaki + 9 kétféle „ugyanaz" + 7 mexikói) | `63bdfaf` |
 | F4 | `myth` | 🟨 SPEC-KÉSZ | |
 | F4 | `story` | 🟨 SPEC-KÉSZ | |
 | F4 | `chat` | 🟨 SPEC-KÉSZ | |
