@@ -61,6 +61,14 @@ export interface GameDef {
   // Nincs képernyője még, a hub "hamarosan" állapotban mutatja, koppintás
   // nem navigál. Az F1-től induló fázisok ezt egyenként állítják false-ra.
   soon: boolean;
+  // K15 DÖNTÉS (conjugation-slot, GAMES.md 4.7): "a többi nyelven a hub-kártya
+  // 'hamarosan' állapotú, nem zárolt-de-hibás", ez ELTÉR a content-driven
+  // játékok (grammar-choice/confusables/myth/story/chat) konvenciójától, ahol
+  // a hub-kártya mindig aktív és a képernyő BELÜL mutatja a "nincs tartalom
+  // ehhez a nyelvhez" üzenetet. `languages` hiánya = minden tanult nyelven fut;
+  // ha meg van adva, a hub gameSupportsLanguage()-dzsel "hamarosan"-nak
+  // mutatja a kártyát azon nyelveken, amik nincsenek a listában.
+  languages?: string[];
 }
 
 export const GAME_DEFS: GameDef[] = [
@@ -172,7 +180,8 @@ export const GAME_DEFS: GameDef[] = [
     },
     minPoolSize: 10,
     hasSettings: true,
-    soon: true,
+    soon: false, // F5 (GAMES.md 8. szekció): app/games/conjugation-slot.tsx
+    languages: ['es'], // K15 DÖNTÉS: csak spanyolra épült teljes ragozás-motor
   },
   {
     id: 'odd-one-out',
@@ -299,4 +308,11 @@ export function gameName(game: GameDef, lang: string): string {
 
 export function gameBlurb(game: GameDef, lang: string): string {
   return localized(game.blurb, lang);
+}
+
+// K15 DÖNTÉS: a hub kártya "hamarosan"-t mutat egy nyelvhez kötött játéknál
+// (jelenleg csak conjugation-slot, `languages: ['es']`), ha a jelenleg
+// tanult nyelv nincs a listán. `languages` hiánya = minden nyelven fut.
+export function gameSupportsLanguage(game: GameDef, learnedLang: string): boolean {
+  return !game.languages || game.languages.includes(learnedLang);
 }

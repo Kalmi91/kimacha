@@ -140,6 +140,25 @@ export default {
       timeLimitLabel: 'Time per question',
       timeLimitNone: 'None',
     },
+    // F5 (conjugation-slot, GAMES.md 4.7).
+    conjugationSlot: {
+      comingSoon: 'This game is Spanish-only for now.',
+      notEnoughVerbs: "You don't have enough verbs in your vocabulary yet for this game.",
+      progress: (current: number, total: number) => `${current} / ${total}`,
+      includeIrregularLabel: 'Include irregular verbs',
+      questionCountLabel: 'Question count',
+      timeLimitLabel: 'Time limit per question',
+      timeLimitNone: 'None',
+      explanation: (person: string, tense: string, form: string) => `The "${person}" form in ${tense}: ${form}`,
+      tenseNames: {
+        presente: 'present tense',
+        indefinido: 'preterite (indefinido)',
+        imperfecto: 'imperfect (imperfecto)',
+        futuro: 'future tense',
+        condicional: 'conditional mood',
+        subjuntivo_presente: 'present subjunctive',
+      },
+    },
     // shared, F3 (grammar-choice 4.11 + confusables 4.12).
     understood: 'Got it',
     moreLabel: 'More',

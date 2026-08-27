@@ -140,6 +140,25 @@ export default {
       timeLimitLabel: 'Límite de tiempo por pregunta',
       timeLimitNone: 'Ninguno',
     },
+    // F5 (conjugation-slot, GAMES.md 4.7).
+    conjugationSlot: {
+      comingSoon: 'Este juego solo está disponible en español por ahora.',
+      notEnoughVerbs: 'Todavía no tienes suficientes verbos en tu vocabulario para este juego.',
+      progress: (current: number, total: number) => `${current} / ${total}`,
+      includeIrregularLabel: 'Incluir verbos irregulares',
+      questionCountLabel: 'Número de preguntas',
+      timeLimitLabel: 'Límite de tiempo por pregunta',
+      timeLimitNone: 'Ninguno',
+      explanation: (person: string, tense: string, form: string) => `La forma "${person}" en ${tense}: ${form}`,
+      tenseNames: {
+        presente: 'presente',
+        indefinido: 'pretérito indefinido',
+        imperfecto: 'pretérito imperfecto',
+        futuro: 'futuro',
+        condicional: 'condicional',
+        subjuntivo_presente: 'presente de subjuntivo',
+      },
+    },
     // shared, F3 (grammar-choice 4.11 + confusables 4.12).
     understood: 'Entendido',
     moreLabel: 'Más',
