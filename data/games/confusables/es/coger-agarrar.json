@@ -1,0 +1,38 @@
+{
+  "id": "coger-agarrar",
+  "level": "B1",
+  "members": [
+    {
+      "word": "coger",
+      "gloss": { "hu": "fogni, venni (Spanyolországban); Mexikóban trágár!", "en": "to take, to grab (in Spain); VULGAR in Mexico!", "es": "coger (en España: tomar/agarrar; en México: vulgar, evítalo)", "de": "nehmen, fassen (in Spanien); in Mexiko VULGÄR!" },
+      "hint": {
+        "hu": "Spanyolországban teljesen semleges szó, Mexikóban viszont szexuális töltetű, ismerd fel, de ne használd Mexikóban",
+        "en": "completely neutral in Spain, but sexually loaded in Mexico, recognize it, don't use it there",
+        "es": "neutral en España, pero en México tiene sentido sexual, reconócela, no la uses allí",
+        "de": "in Spanien völlig neutral, in Mexiko aber sexuell konnotiert, erkennen, nicht in Mexiko benutzen"
+      },
+      "examples": ["En España: voy a coger el autobús."]
+    },
+    {
+      "word": "agarrar",
+      "gloss": { "hu": "fogni, megragadni (a biztonságos szó Mexikóban)", "en": "to grab, to take hold of (the safe word in Mexico)", "es": "agarrar (la palabra segura en México)", "de": "greifen, nehmen (das sichere Wort in Mexiko)" },
+      "hint": {
+        "hu": "ezt használd Mexikóban a 'fogni, venni' jelentésre",
+        "en": "use this one in Mexico for 'to take/grab'",
+        "es": "úsala en México para 'tomar algo'",
+        "de": "benutze dieses in Mexiko für 'nehmen/greifen'"
+      },
+      "examples": ["Voy a agarrar el autobús.", "Agarra tu mochila."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "Mexikóban SOSE coger, mindig agarrar (vagy tomar), jegyezd meg: A mint Agarrar, A mint América Latina.",
+    "en": "In Mexico, NEVER coger, always agarrar (or tomar), remember: A for Agarrar, A for América Latina.",
+    "es": "En México, NUNCA coger, siempre agarrar (o tomar), recuerda: A de Agarrar, A de América Latina.",
+    "de": "In Mexiko NIEMALS coger, immer agarrar (oder tomar), merke: A wie Agarrar, A wie América Latina."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "En México, voy a ___ el autobús.", "correct": "agarrar" },
+    { "type": "reverse", "correct": "agarrar" }
+  ]
+}

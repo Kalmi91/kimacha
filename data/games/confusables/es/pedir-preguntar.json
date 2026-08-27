@@ -1,0 +1,39 @@
+{
+  "id": "pedir-preguntar",
+  "level": "A2",
+  "members": [
+    {
+      "word": "pedir",
+      "gloss": { "hu": "kérni (valamit)", "en": "to ask for (something)", "es": "pedir (algo)", "de": "bitten um (etwas)" },
+      "hint": {
+        "hu": "Pido un café., amikor szeretnél kapni valamit",
+        "en": "Pido un café., when you want to receive something",
+        "es": "Pido un café., cuando quieres recibir algo",
+        "de": "Pido un café., wenn du etwas haben möchtest"
+      },
+      "examples": ["Voy a pedir un café.", "Quiero pedir ayuda."]
+    },
+    {
+      "word": "preguntar",
+      "gloss": { "hu": "kérdezni (valamit)", "en": "to ask (a question)", "es": "preguntar (algo, una pregunta)", "de": "fragen (etwas, eine Frage)" },
+      "hint": {
+        "hu": "Pregunto la hora., amikor információt szeretnél tudni",
+        "en": "Pregunto la hora., when you want information",
+        "es": "Pregunto la hora., cuando quieres saber algo",
+        "de": "Pregunto la hora., wenn du etwas wissen möchtest"
+      },
+      "examples": ["Voy a preguntar la hora.", "Quiero preguntar algo."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "pedir = kérsz egy DOLGOT (kávét, segítséget), preguntar = kérdezel egy INFORMÁCIÓT (mennyi az idő).",
+    "en": "pedir = you ask for a THING (coffee, help), preguntar = you ask for INFORMATION (the time).",
+    "es": "pedir = pides una COSA, preguntar = pides una INFORMACIÓN.",
+    "de": "pedir = du bittest um eine SACHE, preguntar = du fragst nach einer INFORMATION."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "Voy a ___ un café.", "correct": "pedir" },
+    { "type": "gap", "sentence": "Quiero ___ la hora.", "correct": "preguntar" },
+    { "type": "reverse", "correct": "pedir" }
+  ]
+}

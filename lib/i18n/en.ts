@@ -142,6 +142,17 @@ export default {
       comingSoon: 'No grammar content for this language yet.',
       progress: (current: number, total: number) => `${current} / ${total}`,
     },
+    // F3 (confusables, GAMES.md 4.12).
+    confusables: {
+      pickSet: 'Choose a word group',
+      setMembersLabel: (n: number) => `${n} words`,
+      startDrill: "Let's drill",
+      comingSoon: 'No content for this language yet.',
+      drillProgress: (current: number, total: number) => `${current} / ${total}`,
+      reversePrompt: 'Which word means:',
+      listenPrompt: 'Which word did you hear?',
+      tapToPlay: 'Tap to play',
+    },
   },
   active: {
     title: 'Active mode',

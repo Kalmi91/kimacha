@@ -1,0 +1,40 @@
+{
+  "id": "ves-vez",
+  "level": "A2",
+  "members": [
+    {
+      "word": "ves",
+      "gloss": { "hu": "látod (ver ige, tú alak)", "en": "you see (from ver, tú form)", "es": "ves (de ver, tú)", "de": "du siehst (von ver, tú-Form)" },
+      "hint": {
+        "hu": "¿Ves eso?, kérdés, hogy látod-e",
+        "en": "¿Ves eso?, asking if you see something",
+        "es": "¿Ves eso?, pregunta si percibes algo",
+        "de": "¿Ves eso?, fragt, ob du etwas siehst"
+      },
+      "examples": ["¿Ves aquella casa?"]
+    },
+    {
+      "word": "vez",
+      "gloss": { "hu": "alkalom, -szor/-szer", "en": "time, occasion (once, twice...)", "es": "vez (una vez, otra vez)", "de": "Mal (einmal, noch einmal)" },
+      "hint": {
+        "hu": "una vez = egyszer, otra vez = még egyszer",
+        "en": "una vez = once, otra vez = once more",
+        "es": "una vez, otra vez, esta vez",
+        "de": "una vez = einmal, otra vez = noch einmal"
+      },
+      "examples": ["Voy una vez a la semana.", "Vamos otra vez al cine."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "Kimondva egyformán hangzik mindkettő. A ves után egy dolgot látsz, a vez után egy szám vagy 'otra/esta' áll.",
+    "en": "Spoken, both sound the same. After ves you usually see a THING, after vez you usually get a number or 'otra/esta'.",
+    "es": "Al hablar, suenan igual. Tras ves suele venir algo que se ve, tras vez suele venir un número u 'otra/esta'.",
+    "de": "Gesprochen klingen beide gleich. Nach ves folgt meist etwas Gesehenes, nach vez meist eine Zahl oder 'otra/esta'."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "¿___ el parque desde aquí?", "correct": "ves" },
+    { "type": "gap", "sentence": "Voy al cine una ___ al mes.", "correct": "vez" },
+    { "type": "reverse", "correct": "vez" },
+    { "type": "listening", "sentence": "Vamos otra vez al cine.", "correct": "vez" }
+  ]
+}

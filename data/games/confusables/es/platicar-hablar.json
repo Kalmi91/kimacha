@@ -1,0 +1,39 @@
+{
+  "id": "platicar-hablar",
+  "level": "B1",
+  "members": [
+    {
+      "word": "platicar",
+      "gloss": { "hu": "beszélgetni (Mexikóban, kötetlenül)", "en": "to chat (in Mexico, casually)", "es": "platicar (en México, charlar de manera informal)", "de": "plaudern (in Mexiko, zwanglos)" },
+      "hint": {
+        "hu": "Mexikóban ez a mindennapi szó a kötetlen csevegésre, Spanyolországban inkább 'charlar'",
+        "en": "in Mexico this is the everyday word for a casual chat, in Spain it's usually 'charlar'",
+        "es": "en México es la palabra cotidiana para charlar, en España se dice más 'charlar'",
+        "de": "in Mexiko das alltägliche Wort für ein zwangloses Gespräch, in Spanien eher 'charlar'"
+      },
+      "examples": ["Vamos a platicar un rato."]
+    },
+    {
+      "word": "hablar",
+      "gloss": { "hu": "beszélni (általánosan, semleges)", "en": "to speak, to talk (general, neutral)", "es": "hablar (general, neutro)", "de": "sprechen (allgemein, neutral)" },
+      "hint": {
+        "hu": "a semleges alapszó, nyelvet beszélsz, telefonon beszélsz, bárhol használható",
+        "en": "the neutral base word, you speak a language, talk on the phone, usable everywhere",
+        "es": "la palabra neutra de base, hablas un idioma, hablas por teléfono, sirve en todas partes",
+        "de": "das neutrale Grundwort, du sprichst eine Sprache, telefonierst, überall verwendbar"
+      },
+      "examples": ["Hablo español.", "Necesito hablar contigo."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "hablar mindenhol jó (beszélni, nyelvet beszélni), platicar Mexikóban a kötetlen csevegés szava, mint amikor leülsz egy kávéra beszélgetni.",
+    "en": "hablar works everywhere (to speak, to speak a language), platicar in Mexico is the casual-chat word, like sitting down for coffee and a talk.",
+    "es": "hablar funciona en todas partes, platicar en México es la palabra para charlar sin prisa, como tomando un café.",
+    "de": "hablar funktioniert überall, platicar ist in Mexiko das Wort für ein zwangloses Gespräch, wie bei einem Kaffee."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "Vamos a ___ un rato en el parque.", "correct": "platicar" },
+    { "type": "gap", "sentence": "Necesito ___ contigo ahora.", "correct": "hablar" },
+    { "type": "reverse", "correct": "platicar" }
+  ]
+}

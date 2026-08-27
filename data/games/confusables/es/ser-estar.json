@@ -1,0 +1,39 @@
+{
+  "id": "ser-estar",
+  "level": "A2",
+  "members": [
+    {
+      "word": "ser",
+      "gloss": { "hu": "lenni (állandó azonosság)", "en": "to be (lasting identity)", "es": "ser (identidad estable)", "de": "sein (dauerhafte Identität)" },
+      "hint": {
+        "hu": "aki/ami valaki VALÓJÁBAN, foglalkozás, származás, jellem",
+        "en": "who/what someone REALLY is, job, origin, character",
+        "es": "quién/qué es alguien de verdad, profesión, origen, carácter",
+        "de": "wer/was jemand WIRKLICH ist, Beruf, Herkunft, Charakter"
+      },
+      "examples": ["Soy de España.", "Es profesor."]
+    },
+    {
+      "word": "estar",
+      "gloss": { "hu": "lenni (állapot, hely)", "en": "to be (state, location)", "es": "estar (estado, lugar)", "de": "sein (Zustand, Ort)" },
+      "hint": {
+        "hu": "hogyan van valaki ÉPPEN MOST, vagy hol van",
+        "en": "how someone IS right now, or where they are",
+        "es": "cómo está alguien ahora, o dónde está",
+        "de": "wie jemand GERADE ist, oder wo er ist"
+      },
+      "examples": ["Estoy cansado.", "Está en casa."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "Ez ugyanaz a pár, mint a nyelvtan-játékban, itt csak magát a két szót kell megkülönböztetni: ser = MI vagy, estar = HOGYAN vagy.",
+    "en": "Same pair as in the grammar game, here you just tell the two words apart: ser = WHAT you are, estar = HOW you are.",
+    "es": "El mismo par que en el juego de gramática, aquí solo distingues las dos palabras: ser = QUÉ eres, estar = CÓMO estás.",
+    "de": "Dasselbe Paar wie im Grammatikspiel, hier unterscheidest du nur die zwei Wörter: ser = WAS du bist, estar = WIE du bist."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "Quiero ___ médico algún día.", "correct": "ser" },
+    { "type": "gap", "sentence": "Necesito ___ tranquilo.", "correct": "estar" },
+    { "type": "reverse", "correct": "ser" }
+  ]
+}

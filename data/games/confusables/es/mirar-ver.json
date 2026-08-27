@@ -1,0 +1,39 @@
+{
+  "id": "mirar-ver",
+  "level": "A2",
+  "members": [
+    {
+      "word": "mirar",
+      "gloss": { "hu": "nézni (szándékosan odafigyelni)", "en": "to look at (deliberately, with attention)", "es": "mirar (con atención, a propósito)", "de": "schauen (bewusst, mit Aufmerksamkeit)" },
+      "hint": {
+        "hu": "Miro la tele., odafordítod a figyelmedet valamire",
+        "en": "Miro la tele., you deliberately direct your attention",
+        "es": "Miro la tele., diriges tu atención a propósito",
+        "de": "Miro la tele., du richtest deine Aufmerksamkeit bewusst"
+      },
+      "examples": ["Me gusta mirar la tele.", "Mira esa casa."]
+    },
+    {
+      "word": "ver",
+      "gloss": { "hu": "látni (érzékelni, akaratlanul is)", "en": "to see (perceive, even without trying)", "es": "ver (percibir, aunque no quieras)", "de": "sehen (wahrnehmen, auch ungewollt)" },
+      "hint": {
+        "hu": "Veo la casa desde aquí., csak érzékeled, nem feltétlenül figyelsz oda",
+        "en": "Veo la casa desde aquí., you simply perceive it, not necessarily paying attention",
+        "es": "Veo la casa desde aquí., simplemente lo percibes, sin necesariamente prestar atención",
+        "de": "Veo la casa desde aquí., du nimmst es einfach wahr, ohne unbedingt aufzupassen"
+      },
+      "examples": ["Veo la casa desde aquí.", "Voy a ver una película."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "mirar = SZÁNDÉKOSAN odanézel (mint egy filmre), ver = csak ÉSZLELED, akkor is, ha nem akarod.",
+    "en": "mirar = you DELIBERATELY look (like at a movie), ver = you just PERCEIVE it, even unintentionally.",
+    "es": "mirar = miras A PROPÓSITO (como una película), ver = simplemente PERCIBES, aunque no quieras.",
+    "de": "mirar = du schaust BEWUSST hin (wie bei einem Film), ver = du NIMMST einfach WAHR, auch ungewollt."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "Me gusta ___ la tele por la noche.", "correct": "mirar" },
+    { "type": "gap", "sentence": "Voy a ___ una película.", "correct": "ver" },
+    { "type": "reverse", "correct": "mirar" }
+  ]
+}

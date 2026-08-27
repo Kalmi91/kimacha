@@ -1,0 +1,62 @@
+{
+  "id": "mx-regional-synonyms",
+  "level": "B1",
+  "members": [
+    {
+      "word": "carro",
+      "gloss": { "hu": "autó (Mexikóban)", "en": "car (in Mexico)", "es": "carro (en México; coche en España)", "de": "Auto (in Mexiko)" },
+      "hint": {
+        "hu": "Mexikóban ezt mondd, nem a coche-t",
+        "en": "say this in Mexico, not coche",
+        "es": "en México se dice así, no coche",
+        "de": "in Mexiko sagt man das, nicht coche"
+      },
+      "examples": ["Mi carro es nuevo."]
+    },
+    {
+      "word": "celular",
+      "gloss": { "hu": "mobiltelefon (Mexikóban)", "en": "cell phone (in Mexico)", "es": "celular (en México; móvil en España)", "de": "Handy (in Mexiko)" },
+      "hint": {
+        "hu": "Mexikóban ezt mondd, nem a móvil-t",
+        "en": "say this in Mexico, not móvil",
+        "es": "en México se dice así, no móvil",
+        "de": "in Mexiko sagt man das, nicht móvil"
+      },
+      "examples": ["¿Tienes tu celular?"]
+    },
+    {
+      "word": "computadora",
+      "gloss": { "hu": "számítógép (Mexikóban)", "en": "computer (in Mexico)", "es": "computadora (en México; ordenador en España)", "de": "Computer (in Mexiko)" },
+      "hint": {
+        "hu": "Mexikóban ezt mondd, nem az ordenador-t",
+        "en": "say this in Mexico, not ordenador",
+        "es": "en México se dice así, no ordenador",
+        "de": "in Mexiko sagt man das, nicht ordenador"
+      },
+      "examples": ["Trabajo en la computadora."]
+    },
+    {
+      "word": "jugo",
+      "gloss": { "hu": "gyümölcslé (Mexikóban)", "en": "juice (in Mexico)", "es": "jugo (en México; zumo en España)", "de": "Saft (in Mexiko)" },
+      "hint": {
+        "hu": "Mexikóban ezt mondd, nem a zumo-t",
+        "en": "say this in Mexico, not zumo",
+        "es": "en México se dice así, no zumo",
+        "de": "in Mexiko sagt man das, nicht zumo"
+      },
+      "examples": ["Quiero un jugo de naranja."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "Négy hétköznapi szó, ahol Mexikó és Spanyolország mást mond ugyanarra: carro/coche, celular/móvil, computadora/ordenador, jugo/zumo. Te Mexikóban vagy, az elsőt tanuld meg jól.",
+    "en": "Four everyday words where Mexico and Spain say something different for the same thing: carro/coche, celular/móvil, computadora/ordenador, jugo/zumo. You're in Mexico, learn the first one well.",
+    "es": "Cuatro palabras cotidianas donde México y España dicen algo distinto: carro/coche, celular/móvil, computadora/ordenador, jugo/zumo.",
+    "de": "Vier Alltagswörter, bei denen Mexiko und Spanien unterschiedliche Begriffe für dieselbe Sache benutzen: carro/coche, celular/móvil, computadora/ordenador, jugo/zumo."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "Voy a comprar un ___ nuevo.", "correct": "carro" },
+    { "type": "gap", "sentence": "Necesito cargar mi ___.", "correct": "celular" },
+    { "type": "reverse", "correct": "jugo" },
+    { "type": "reverse", "correct": "computadora" }
+  ]
+}

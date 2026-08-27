@@ -1,0 +1,50 @@
+{
+  "id": "chingon-chido-padre",
+  "level": "B1",
+  "members": [
+    {
+      "word": "chingón",
+      "gloss": { "hu": "nagyszerű, király (a chingar családból, informális, kicsit nyers)", "en": "awesome, badass (from the chingar family, informal, a bit rough)", "es": "chingón (genial, de la familia de chingar, informal)", "de": "geil, mega (aus der chingar-Familie, informell, etwas derb)" },
+      "hint": {
+        "hu": "a chingar ige (aminek sok, gyakran trágár jelentése van) családjából, felismerd, de óvatosan használd",
+        "en": "from the chingar verb family (which has many, often vulgar meanings), recognize it, use it carefully",
+        "es": "de la familia del verbo chingar (con muchos sentidos, a menudo vulgares), reconócelo, úsalo con cuidado",
+        "de": "aus der Familie des Verbs chingar (das viele, oft vulgäre Bedeutungen hat), erkennen, vorsichtig verwenden"
+      },
+      "examples": ["Está chingón este lugar."]
+    },
+    {
+      "word": "chido",
+      "gloss": { "hu": "király, klassz (semleges, mindenhol mondható)", "en": "cool, great (neutral, safe to say anywhere)", "es": "chido (genial, neutral, se puede decir en cualquier sitio)", "de": "cool, klasse (neutral, überall sagbar)" },
+      "hint": {
+        "hu": "a legbiztonságosabb 'klassz' szó Mexikóban, nincs trágár háttere",
+        "en": "the safest 'cool' word in Mexico, no vulgar background",
+        "es": "la palabra más segura para 'genial' en México, sin trasfondo vulgar",
+        "de": "das sicherste 'cool'-Wort in Mexiko, ohne vulgären Hintergrund"
+      },
+      "examples": ["Qué chido.", "Es un plan muy chido."]
+    },
+    {
+      "word": "padre",
+      "gloss": { "hu": "király, klassz (szó szerint 'apa', de köznyelvben 'nagyszerű')", "en": "great, cool (literally 'father', but colloquially 'awesome')", "es": "padre (literalmente 'papá', pero coloquialmente 'genial')", "de": "klasse, super (wörtlich 'Vater', umgangssprachlich 'toll')" },
+      "hint": {
+        "hu": "'qué padre' = milyen klassz, ne keverd az 'apa' jelentéssel, itt melléknévként áll",
+        "en": "'qué padre' = how cool, don't confuse with the 'father' meaning, here it's an adjective",
+        "es": "'qué padre' = qué genial, no lo confundas con 'papá', aquí es adjetivo",
+        "de": "'qué padre' = wie toll, nicht mit 'Vater' verwechseln, hier ist es ein Adjektiv"
+      },
+      "examples": ["Qué padre está tu casa."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "chido és padre bármikor, bárkinek mondható. A chingón ugyanezt jelenti, de a trágár chingar-családból jön, ezért ismerd fel, mielőtt bátran használnád.",
+    "en": "chido and padre are safe with anyone, anytime. Chingón means the same, but comes from the vulgar chingar family, recognize it before using it freely.",
+    "es": "chido y padre se pueden decir siempre y con cualquiera. Chingón significa lo mismo, pero viene de la familia vulgar de chingar, reconócelo antes de usarlo con confianza.",
+    "de": "chido und padre kann man immer und mit jedem sagen. Chingón bedeutet dasselbe, kommt aber aus der vulgären chingar-Familie, erst erkennen, dann vorsichtig verwenden."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "Qué ___ está esta fiesta.", "correct": "chido" },
+    { "type": "gap", "sentence": "Qué ___ tu casa.", "correct": "padre" },
+    { "type": "reverse", "correct": "chido" }
+  ]
+}

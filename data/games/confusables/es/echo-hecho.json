@@ -1,0 +1,40 @@
+{
+  "id": "echo-hecho",
+  "level": "A2",
+  "members": [
+    {
+      "word": "echo",
+      "gloss": { "hu": "dobok, öntök (echar ige, yo alak)", "en": "I throw / I pour (from echar, yo form)", "es": "echo (de echar, yo)", "de": "ich werfe / ich gieße (von echar, yo-Form)" },
+      "hint": {
+        "hu": "Echo la carta al buzón., bedobom a levelet",
+        "en": "Echo la carta al buzón., I drop the letter in the mailbox",
+        "es": "Echo la carta al buzón., la meto en el correo",
+        "de": "Echo la carta al buzón., ich werfe den Brief in den Briefkasten"
+      },
+      "examples": ["Echo azúcar al café."]
+    },
+    {
+      "word": "hecho",
+      "gloss": { "hu": "megtett, kész; tény", "en": "done, made; a fact", "es": "hecho (participio de hacer; también 'un hecho' = un dato real)", "de": "getan, gemacht; Tatsache" },
+      "hint": {
+        "hu": "a hacer (csinálni) befejezett alakja, a néma 'h' miatt pontosan úgy hangzik, mint az echo",
+        "en": "the past participle of hacer (to do/make), the silent 'h' makes it sound exactly like echo",
+        "es": "el participio de hacer, la 'h' es muda, por eso suena exactamente igual que echo",
+        "de": "das Partizip von hacer (machen), das stumme 'h' macht es lautgleich mit echo"
+      },
+      "examples": ["Ya está hecho.", "Es un hecho importante."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "A néma 'h' miatt az echo és a hecho pontosan ugyanúgy hangzik. Csak a mondat mondja meg, dobásról vagy egy kész dologról van-e szó.",
+    "en": "Because the 'h' is silent, echo and hecho sound exactly the same. Only the sentence tells you if it's about throwing or something done.",
+    "es": "Como la 'h' es muda, echo y hecho suenan exactamente igual. Solo la frase aclara si se trata de echar o de algo hecho.",
+    "de": "Da das 'h' stumm ist, klingen echo und hecho genau gleich. Nur der Satz verrät, ob es ums Werfen oder etwas Fertiges geht."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "Yo ___ la carta al correo.", "correct": "echo" },
+    { "type": "gap", "sentence": "Ya está ___, no te preocupes.", "correct": "hecho" },
+    { "type": "reverse", "correct": "hecho" },
+    { "type": "listening", "sentence": "Ya está hecho, no te preocupes.", "correct": "hecho" }
+  ]
+}

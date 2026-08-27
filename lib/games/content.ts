@@ -230,7 +230,41 @@ export interface ConfusablesSet {
   glossary?: { word: string; gloss: Record<string, string> }[];
 }
 
-const confusablesByLang: Partial<Record<string, ConfusablesSet[]>> = {};
+import confusablesEsSueldo from '@/data/games/confusables/es/sueldo-suelo-suelto.json';
+import confusablesEsPero from '@/data/games/confusables/es/pero-perro.json';
+import confusablesEsCaro from '@/data/games/confusables/es/caro-carro.json';
+import confusablesEsCasa from '@/data/games/confusables/es/casa-caza.json';
+import confusablesEsCocer from '@/data/games/confusables/es/cocer-coser.json';
+import confusablesEsVes from '@/data/games/confusables/es/ves-vez.json';
+import confusablesEsEcho from '@/data/games/confusables/es/echo-hecho.json';
+import confusablesEsPimienta from '@/data/games/confusables/es/pimienta-pimiento.json';
+import confusablesEsSaber from '@/data/games/confusables/es/saber-conocer.json';
+import confusablesEsPedir from '@/data/games/confusables/es/pedir-preguntar.json';
+import confusablesEsLlevar from '@/data/games/confusables/es/llevar-traer.json';
+import confusablesEsIr from '@/data/games/confusables/es/ir-venir.json';
+import confusablesEsSerEstar from '@/data/games/confusables/es/ser-estar.json';
+import confusablesEsHay from '@/data/games/confusables/es/hay-esta.json';
+import confusablesEsVaso from '@/data/games/confusables/es/vaso-copa-taza.json';
+import confusablesEsMirar from '@/data/games/confusables/es/mirar-ver.json';
+import confusablesEsQuedar from '@/data/games/confusables/es/quedar-quedarse.json';
+import confusablesEsCoger from '@/data/games/confusables/es/coger-agarrar.json';
+import confusablesEsAhorita from '@/data/games/confusables/es/ahorita-ahora-ya.json';
+import confusablesEsMande from '@/data/games/confusables/es/mande-que.json';
+import confusablesEsGuey from '@/data/games/confusables/es/guey-cuate-compa.json';
+import confusablesEsChingon from '@/data/games/confusables/es/chingon-chido-padre.json';
+import confusablesEsPlaticar from '@/data/games/confusables/es/platicar-hablar.json';
+import confusablesEsRegional from '@/data/games/confusables/es/mx-regional-synonyms.json';
+
+const confusablesByLang: Partial<Record<string, ConfusablesSet[]>> = {
+  es: [
+    confusablesEsSueldo, confusablesEsPero, confusablesEsCaro, confusablesEsCasa,
+    confusablesEsCocer, confusablesEsVes, confusablesEsEcho, confusablesEsPimienta,
+    confusablesEsSaber, confusablesEsPedir, confusablesEsLlevar, confusablesEsIr,
+    confusablesEsSerEstar, confusablesEsHay, confusablesEsVaso, confusablesEsMirar,
+    confusablesEsQuedar, confusablesEsCoger, confusablesEsAhorita, confusablesEsMande,
+    confusablesEsGuey, confusablesEsChingon, confusablesEsPlaticar, confusablesEsRegional,
+  ] as ConfusablesSet[],
+};
 
 export function getConfusablesSets(lang: string): ConfusablesSet[] {
   return confusablesByLang[lang] ?? [];

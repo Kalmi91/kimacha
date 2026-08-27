@@ -251,7 +251,7 @@ export const GAME_DEFS: GameDef[] = [
       de: 'Lerne, leicht verwechselbare Wörter zu unterscheiden.',
     },
     hasSettings: false,
-    soon: true,
+    soon: false, // F3 (GAMES.md 8. szekció): app/games/confusables.tsx
   },
   {
     id: 'myth',

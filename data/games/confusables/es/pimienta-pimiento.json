@@ -1,0 +1,39 @@
+{
+  "id": "pimienta-pimiento",
+  "level": "A2",
+  "members": [
+    {
+      "word": "pimienta",
+      "gloss": { "hu": "bors (fűszer)", "en": "pepper (the spice)", "es": "pimienta (especia)", "de": "Pfeffer (Gewürz)" },
+      "hint": {
+        "hu": "nőnemű, apró szemcsés fűszer, amit a levesbe szórsz",
+        "en": "feminine, the tiny ground spice you sprinkle on food",
+        "es": "femenino, la especia molida que se echa a la comida",
+        "de": "weiblich, das gemahlene Gewürz, das man über das Essen streut"
+      },
+      "examples": ["Quiero sal y pimienta.", "Me gusta la pimienta negra."]
+    },
+    {
+      "word": "pimiento",
+      "gloss": { "hu": "paprika (zöldség)", "en": "bell pepper (the vegetable)", "es": "pimiento (verdura)", "de": "Paprika (Gemüse)" },
+      "hint": {
+        "hu": "hímnemű, nagy, húsos zöldség, amit szeletelve eszel",
+        "en": "masculine, the big, meaty vegetable you slice up",
+        "es": "masculino, la verdura grande y carnosa que se corta en trozos",
+        "de": "männlich, das große, fleischige Gemüse, das man in Scheiben schneidet"
+      },
+      "examples": ["El pimiento rojo es dulce.", "Compro un pimiento verde."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "pimientA = a fűszer (nőnemű), pimientO = a zöldség (hímnemű), ugyanaz a végződés-szabály, mint sok más szónál.",
+    "en": "pimientA = the spice (feminine), pimientO = the vegetable (masculine), the same -a/-o gender pattern as everywhere else.",
+    "es": "pimientA = la especia, pimientO = la verdura, el mismo patrón de género -a/-o de siempre.",
+    "de": "pimientA = das Gewürz (weiblich), pimientO = das Gemüse (männlich), dasselbe -a/-o-Genusmuster wie sonst auch."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "La sopa necesita sal y ___.", "correct": "pimienta" },
+    { "type": "gap", "sentence": "Voy a cortar un ___ rojo.", "correct": "pimiento" },
+    { "type": "reverse", "correct": "pimiento" }
+  ]
+}

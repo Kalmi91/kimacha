@@ -1,0 +1,52 @@
+{
+  "id": "sueldo-suelo-suelto",
+  "level": "A2",
+  "members": [
+    {
+      "word": "sueldo",
+      "gloss": { "hu": "fizetés", "en": "salary", "es": "sueldo, salario", "de": "Gehalt" },
+      "hint": {
+        "hu": "a pénz, amit havonta kapsz a munkádért",
+        "en": "the money you earn from your job each month",
+        "es": "el dinero que ganas cada mes por tu trabajo",
+        "de": "das Geld, das du jeden Monat für deine Arbeit bekommst"
+      },
+      "examples": ["Mi sueldo es bueno.", "Cobro el sueldo el día quince."]
+    },
+    {
+      "word": "suelo",
+      "gloss": { "hu": "padló, föld", "en": "floor, ground", "es": "suelo (el piso)", "de": "Boden, Fußboden" },
+      "hint": {
+        "hu": "amin állsz. Külön érdekesség: 'suelo' a soler ige 'szoktam' alakja is lehet: suelo comer a las dos.",
+        "en": "what you stand on. Bonus: 'suelo' can also be the verb soler's 'I usually...' form: suelo comer a las dos.",
+        "es": "lo que pisas. Curiosidad: 'suelo' también es forma de soler: suelo comer a las dos.",
+        "de": "worauf du stehst. Extra: 'suelo' kann auch die Verbform von soler sein: suelo comer a las dos = ich esse gewöhnlich um zwei."
+      },
+      "examples": ["El suelo está frío.", "Suelo comer a las dos."]
+    },
+    {
+      "word": "suelto",
+      "gloss": { "hu": "laza; aprópénz", "en": "loose; loose change, coins", "es": "suelto (ropa suelta; dinero suelto)", "de": "locker; Kleingeld" },
+      "hint": {
+        "hu": "a laza ruha, vagy az érmék, amik szétszóródnak a zsebedben",
+        "en": "loose clothing, or the coins that rattle loosely in your pocket",
+        "es": "la ropa que no aprieta, o las monedas que llevas sueltas en el bolsillo",
+        "de": "lockere Kleidung, oder die Münzen, die lose in deiner Tasche klimpern"
+      },
+      "examples": ["¿Tienes suelto para el taxi?", "Llevo el pelo suelto."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "Egy szótag = sueldo (fizetés, a SOLDO szóra hasonlít, a katona zsoldja). Amin a talpad (suela) áll = suelo, a padló. Ami szét van szórva = suelto, laza vagy aprópénz.",
+    "en": "sueldo sounds like 'sold' as in a soldier's pay (salary). suelo is what's under your sole, the floor. suelto is what's scattered loose, loose clothing or coins.",
+    "es": "sueldo suena a 'soldo', la paga del soldado. suelo es lo que pisa tu suela. suelto es lo que anda suelto, sin atar.",
+    "de": "sueldo klingt wie 'Sold', der Lohn des Soldaten. suelo ist, worauf deine Sohle steht, der Boden. suelto ist, was lose herumliegt, lockere Kleidung oder Münzen."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "Cobro mi ___ el día quince.", "correct": "sueldo" },
+    { "type": "gap", "sentence": "El ___ de la cocina está sucio.", "correct": "suelo" },
+    { "type": "gap", "sentence": "¿Tienes ___ para el autobús?", "correct": "suelto" },
+    { "type": "reverse", "correct": "sueldo" },
+    { "type": "listening", "sentence": "Suelo comer a las dos.", "correct": "suelo" }
+  ]
+}

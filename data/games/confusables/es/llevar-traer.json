@@ -1,0 +1,39 @@
+{
+  "id": "llevar-traer",
+  "level": "A2",
+  "members": [
+    {
+      "word": "llevar",
+      "gloss": { "hu": "vinni (odavinni, magaddal vinni)", "en": "to take, to carry (away from here)", "es": "llevar (algo a otro lugar)", "de": "bringen, mitnehmen (weg von hier)" },
+      "hint": {
+        "hu": "innen odaviszel valamit, a beszélőtől távolodik",
+        "en": "you carry something away from where you are",
+        "es": "llevas algo lejos de donde estás",
+        "de": "du bringst etwas weg von hier"
+      },
+      "examples": ["Voy a llevar el pastel a la fiesta.", "Llevo mi libro a la escuela."]
+    },
+    {
+      "word": "traer",
+      "gloss": { "hu": "hozni (idehozni, magaddal hozni)", "en": "to bring (toward here)", "es": "traer (algo a donde estás)", "de": "bringen, mitbringen (hierher)" },
+      "hint": {
+        "hu": "onnan idehozol valamit, a beszélőhöz közeledik",
+        "en": "you bring something toward where you are",
+        "es": "traes algo hacia donde estás",
+        "de": "du bringst etwas hierher, zu dir"
+      },
+      "examples": ["Voy a traer agua.", "Voy a traer el pan a casa."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "llevar = elviszed (távolodik tőled), traer = elhozod (közeledik hozzád), mindig a beszélő nézőpontja dönt.",
+    "en": "llevar = you take it away (moves away from you), traer = you bring it (moves toward you), the speaker's point of view always decides.",
+    "es": "llevar = se aleja de ti, traer = se acerca a ti, siempre decide el punto de vista del hablante.",
+    "de": "llevar = es entfernt sich von dir, traer = es kommt zu dir, der Standpunkt des Sprechers entscheidet immer."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "Voy a ___ el pastel a la fiesta.", "correct": "llevar" },
+    { "type": "gap", "sentence": "Voy a ___ agua a la mesa.", "correct": "traer" },
+    { "type": "reverse", "correct": "llevar" }
+  ]
+}
