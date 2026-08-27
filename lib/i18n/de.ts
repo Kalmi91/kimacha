@@ -127,6 +127,19 @@ export default {
       genderM: 'männliche Wörter',
       genderF: 'weibliche Wörter',
     },
+    // F5 (odd-one-out, GAMES.md 4.8).
+    oddOneOut: {
+      prompt: 'Welches Wort passt nicht?',
+      progress: (current: number, total: number) => `${current} / ${total}`,
+      commonThread: (label: string) => `Der Rest ist alles ${label}.`,
+      difficultyLabel: 'Schwierigkeit',
+      difficultyTopic: 'Thema',
+      difficultyPos: 'Wortart',
+      difficultyMixed: 'Gemischt',
+      questionCountLabel: 'Fragenanzahl',
+      timeLimitLabel: 'Zeitlimit pro Frage',
+      timeLimitNone: 'Kein',
+    },
     // shared, F3 (grammar-choice 4.11 + confusables 4.12).
     understood: 'Verstanden',
     moreLabel: 'Mehr',

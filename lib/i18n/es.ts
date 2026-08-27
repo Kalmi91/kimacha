@@ -127,6 +127,19 @@ export default {
       genderM: 'palabras masculinas',
       genderF: 'palabras femeninas',
     },
+    // F5 (odd-one-out, GAMES.md 4.8).
+    oddOneOut: {
+      prompt: '¿Qué palabra no encaja?',
+      progress: (current: number, total: number) => `${current} / ${total}`,
+      commonThread: (label: string) => `El resto son todos ${label}.`,
+      difficultyLabel: 'Dificultad',
+      difficultyTopic: 'Tema',
+      difficultyPos: 'Categoría gramatical',
+      difficultyMixed: 'Mixta',
+      questionCountLabel: 'Número de preguntas',
+      timeLimitLabel: 'Límite de tiempo por pregunta',
+      timeLimitNone: 'Ninguno',
+    },
     // shared, F3 (grammar-choice 4.11 + confusables 4.12).
     understood: 'Entendido',
     moreLabel: 'Más',

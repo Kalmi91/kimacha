@@ -188,7 +188,7 @@ export const GAME_DEFS: GameDef[] = [
     },
     minPoolSize: 16,
     hasSettings: true,
-    soon: true,
+    soon: false, // F5 (GAMES.md 8. szekció): app/games/odd-one-out.tsx
   },
   {
     id: 'sentence-tetris',

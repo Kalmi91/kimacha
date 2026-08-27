@@ -133,6 +133,19 @@ export default {
       genderM: 'hímnemű szavak',
       genderF: 'nőnemű szavak',
     },
+    // F5 (odd-one-out, GAMES.md 4.8).
+    oddOneOut: {
+      prompt: 'Melyik szó lóg ki?',
+      progress: (current: number, total: number) => `${current} / ${total}`,
+      commonThread: (label: string) => `A többi mind: ${label}`,
+      difficultyLabel: 'Nehézség',
+      difficultyTopic: 'Téma',
+      difficultyPos: 'Szófaj',
+      difficultyMixed: 'Vegyes',
+      questionCountLabel: 'Kérdésszám',
+      timeLimitLabel: 'Időlimit kérdésenként',
+      timeLimitNone: 'Nincs',
+    },
     // shared, F3 (grammar-choice 4.11 + confusables 4.12).
     understood: 'Értem',
     moreLabel: 'Több',
