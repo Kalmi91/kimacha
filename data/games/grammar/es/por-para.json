@@ -1,0 +1,276 @@
+{
+  "topic": "por-para",
+  "level": "A2",
+  "title": {
+    "hu": "Por vagy para?",
+    "en": "Por or para?",
+    "es": "¿Por o para?",
+    "de": "Por oder para?"
+  },
+  "rule": {
+    "hu": "PARA a cél, a rendeltetés vagy a határidő felé mutat (minek? kinek? mikorra?). POR az okot, az időtartamot vagy a csere eszközét fejezi ki (miért? mennyi ideig? mennyiért?).",
+    "en": "PARA points toward a goal, purpose, recipient, or deadline (what for? for whom? by when?). POR expresses a cause, a duration, or an exchange (why? for how long? in exchange for what?).",
+    "es": "PARA apunta hacia una meta, un propósito, un destinatario o un plazo (¿para qué? ¿para quién? ¿para cuándo?). POR expresa una causa, una duración o un intercambio (¿por qué? ¿durante cuánto? ¿a cambio de qué?).",
+    "de": "PARA zeigt auf ein Ziel, einen Zweck, einen Empfänger oder eine Frist (wofür? für wen? bis wann?). POR drückt eine Ursache, eine Dauer oder einen Austausch aus (warum? wie lange? wogegen?)."
+  },
+  "more": {
+    "hu": "Néhány rögzült kifejezés: por la mañana/tarde/noche (reggel/délután/este, ez nem okot fejez ki, hanem napszakot). Mozgásnál: por = keresztül, valahol át (por el parque), para = egy cél FELÉ (para España). Ha bizonytalan vagy, kérdezz: 'miért?' → por, 'minek / kinek / mikorra?' → para.",
+    "en": "A few fixed expressions: por la mañana/tarde/noche (in the morning/afternoon/evening, not a 'cause', just a time of day). With movement: por = through/around a place (por el parque), para = toward a destination (para España). When in doubt, ask: 'why?' → por, 'for what/whom/by when?' → para.",
+    "es": "Algunas expresiones fijas: por la mañana/tarde/noche (no expresan causa, solo un momento del día). Con movimiento: por = a través de un lugar (por el parque), para = hacia un destino (para España). En caso de duda, pregunta: '¿por qué?' → por, '¿para qué/quién/cuándo?' → para.",
+    "de": "Ein paar feste Ausdrücke: por la mañana/tarde/noche (morgens/nachmittags/abends, keine 'Ursache', nur eine Tageszeit). Bei Bewegung: por = durch/um einen Ort (por el parque), para = auf ein Ziel zu (para España). Im Zweifel fragen: 'warum?' → por, 'wofür/für wen/bis wann?' → para."
+  },
+  "items": [
+    {
+      "id": "pp-01",
+      "sentence": "Estudio español ___ viajar a México.",
+      "options": ["para", "por"],
+      "correct": 0,
+      "why": {
+        "hu": "Az infinitivus előtt a cél/szándék kifejezésére para áll: para + főnévi igenév = azért, hogy.",
+        "en": "Before an infinitive expressing purpose or intent, use para: para + infinitive = in order to.",
+        "es": "Ante un infinitivo que expresa propósito, se usa para: para + infinitivo = con el fin de.",
+        "de": "Vor einem Infinitiv, der einen Zweck ausdrückt, steht para: para + Infinitiv = um … zu."
+      },
+      "wrong": {
+        "por": {
+          "hu": "A por okot fejezne ki, itt viszont a CÉL a lényeg: miért tanulok, hogy utazhassak.",
+          "en": "Por would express a cause, but here the point is the GOAL: why I study, in order to travel.",
+          "es": "Por expresaría una causa, pero aquí lo importante es la META: para viajar.",
+          "de": "Por würde eine Ursache ausdrücken, hier geht es aber um das ZIEL: um zu reisen."
+        }
+      },
+      "examples": ["Trabajo para ganar dinero.", "Voy a la escuela para aprender."]
+    },
+    {
+      "id": "pp-02",
+      "sentence": "Este regalo es ___ ti.",
+      "options": ["para", "por"],
+      "correct": 0,
+      "why": {
+        "hu": "A para jelöli a címzettet, akinek valami szánva van.",
+        "en": "Para marks the recipient, who something is intended for.",
+        "es": "Para marca al destinatario, para quien es algo.",
+        "de": "Para bezeichnet den Empfänger, für wen etwas bestimmt ist."
+      },
+      "wrong": {
+        "por": {
+          "hu": "A por nem a címzettet, hanem az okot vagy a cserét jelölné.",
+          "en": "Por would mark a cause or an exchange, not the recipient.",
+          "es": "Por marcaría una causa o un intercambio, no al destinatario.",
+          "de": "Por würde eine Ursache oder einen Austausch bezeichnen, nicht den Empfänger."
+        }
+      },
+      "examples": ["Este libro es para mi hermana.", "Compro flores para mi madre."]
+    },
+    {
+      "id": "pp-03",
+      "sentence": "No trabajo hoy ___ la lluvia.",
+      "options": ["por", "para"],
+      "correct": 0,
+      "why": {
+        "hu": "A por fejezi ki az okot: miért nem dolgozom, az eső miatt.",
+        "en": "Por expresses the cause: why I'm not working, because of the rain.",
+        "es": "Por expresa la causa: por qué no trabajo, a causa de la lluvia.",
+        "de": "Por drückt die Ursache aus: warum ich nicht arbeite, wegen des Regens."
+      },
+      "wrong": {
+        "para": {
+          "hu": "A para célt fejezne ki, az eső viszont nem cél, hanem OK.",
+          "en": "Para would express a goal, but the rain isn't a goal, it's the CAUSE.",
+          "es": "Para expresaría una meta, pero la lluvia no es una meta, es la CAUSA.",
+          "de": "Para würde ein Ziel ausdrücken, der Regen ist aber kein Ziel, sondern die URSACHE."
+        }
+      },
+      "examples": ["No salgo por el frío.", "Estoy cansado por el viaje."]
+    },
+    {
+      "id": "pp-04",
+      "sentence": "Voy a México ___ dos semanas.",
+      "options": ["por", "para"],
+      "correct": 0,
+      "why": {
+        "hu": "A por fejezi ki az időtartamot: mennyi ideig.",
+        "en": "Por expresses duration: for how long.",
+        "es": "Por expresa la duración: durante cuánto tiempo.",
+        "de": "Por drückt die Dauer aus: wie lange."
+      },
+      "wrong": {
+        "para": {
+          "hu": "A para határidőt vagy célt jelölne, nem azt, hogy mennyi ideig tart valami.",
+          "en": "Para would mark a deadline or a goal, not how long something lasts.",
+          "es": "Para marcaría un plazo o una meta, no cuánto dura algo.",
+          "de": "Para würde eine Frist oder ein Ziel bezeichnen, nicht wie lange etwas dauert."
+        }
+      },
+      "examples": ["Vivo en España por un año.", "Esperamos por una hora."]
+    },
+    {
+      "id": "pp-05",
+      "sentence": "Compro esta camisa ___ diez euros.",
+      "options": ["por", "para"],
+      "correct": 0,
+      "why": {
+        "hu": "A por fejezi ki a cserét: mennyiért, mit adok cserébe.",
+        "en": "Por expresses an exchange: how much, what you give in return.",
+        "es": "Por expresa el intercambio: cuánto, qué se da a cambio.",
+        "de": "Por drückt den Austausch aus: wie viel, was man dafür gibt."
+      },
+      "wrong": {
+        "para": {
+          "hu": "A para nem cserét, hanem célt vagy címzettet jelölne.",
+          "en": "Para would mark a purpose or a recipient, not an exchange.",
+          "es": "Para marcaría un propósito o un destinatario, no un intercambio.",
+          "de": "Para würde einen Zweck oder Empfänger bezeichnen, keinen Austausch."
+        }
+      },
+      "examples": ["Compro un libro por diez euros.", "Compro pan por dos euros."]
+    },
+    {
+      "id": "pp-06",
+      "sentence": "Hablamos ___ teléfono.",
+      "options": ["por", "para"],
+      "correct": 0,
+      "why": {
+        "hu": "A por fejezi ki az eszközt, a kommunikáció csatornáját: telefonon keresztül.",
+        "en": "Por expresses the means, the channel of communication: by phone.",
+        "es": "Por expresa el medio, el canal de comunicación: por teléfono.",
+        "de": "Por drückt das Mittel aus, den Kommunikationskanal: per Telefon."
+      },
+      "wrong": {
+        "para": {
+          "hu": "A para nem eszközt, hanem célt vagy címzettet jelölne.",
+          "en": "Para would mark a purpose or a recipient, not a means.",
+          "es": "Para marcaría un propósito o un destinatario, no un medio.",
+          "de": "Para würde einen Zweck oder Empfänger bezeichnen, kein Mittel."
+        }
+      },
+      "examples": ["Escribo por correo.", "Viajamos por avión."]
+    },
+    {
+      "id": "pp-07",
+      "sentence": "Caminamos ___ el parque.",
+      "options": ["por", "para"],
+      "correct": 0,
+      "why": {
+        "hu": "A por fejezi ki a helyen keresztüli mozgást: átsétálunk a parkon.",
+        "en": "Por expresses movement through a place: we walk through the park.",
+        "es": "Por expresa el movimiento a través de un lugar: caminamos por el parque.",
+        "de": "Por drückt die Bewegung durch einen Ort aus: wir gehen durch den Park."
+      },
+      "wrong": {
+        "para": {
+          "hu": "A para egy cél FELÉ mozgást jelölne, nem a helyen keresztüli sétát.",
+          "en": "Para would mark movement TOWARD a destination, not walking through a place.",
+          "es": "Para marcaría el movimiento HACIA un destino, no el paseo a través de un lugar.",
+          "de": "Para würde die Bewegung AUF ein Ziel zu bezeichnen, nicht das Durchqueren eines Ortes."
+        }
+      },
+      "examples": ["Voy a pasar por tu casa.", "Vamos a pasar por el parque."]
+    },
+    {
+      "id": "pp-08",
+      "sentence": "El trabajo es ___ el lunes.",
+      "options": ["para", "por"],
+      "correct": 0,
+      "why": {
+        "hu": "A para fejezi ki a határidőt: mikorra kell kész legyen.",
+        "en": "Para expresses the deadline: by when it must be ready.",
+        "es": "Para expresa el plazo: para cuándo debe estar listo.",
+        "de": "Para drückt die Frist aus: bis wann es fertig sein muss."
+      },
+      "wrong": {
+        "por": {
+          "hu": "A por nem határidőt, hanem okot vagy időtartamot jelölne.",
+          "en": "Por would mark a cause or a duration, not a deadline.",
+          "es": "Por marcaría una causa o una duración, no un plazo.",
+          "de": "Por würde eine Ursache oder Dauer bezeichnen, keine Frist."
+        }
+      },
+      "examples": ["El examen es para mañana.", "Necesito esto para el viernes."]
+    },
+    {
+      "id": "pp-09",
+      "sentence": "___ mí, el español es fácil.",
+      "options": ["Para", "Por"],
+      "correct": 0,
+      "why": {
+        "hu": "A 'para mí' fejezi ki a véleményt: az én szemszögemből.",
+        "en": "'Para mí' expresses an opinion: from my point of view.",
+        "es": "'Para mí' expresa una opinión: desde mi punto de vista.",
+        "de": "'Para mí' drückt eine Meinung aus: aus meiner Sicht."
+      },
+      "wrong": {
+        "Por": {
+          "hu": "A 'por mí' mást jelentene (helyettem, miattam), nem a véleményt.",
+          "en": "'Por mí' would mean something else (on my behalf, because of me), not an opinion.",
+          "es": "'Por mí' significaría otra cosa (en mi lugar, por mi culpa), no una opinión.",
+          "de": "'Por mí' würde etwas anderes bedeuten (an meiner Stelle, meinetwegen), keine Meinung."
+        }
+      },
+      "examples": ["Para mí, este libro es interesante.", "Para nosotros, la playa es el mejor lugar."]
+    },
+    {
+      "id": "pp-10",
+      "sentence": "Vamos a salir ___ España mañana.",
+      "options": ["para", "por"],
+      "correct": 0,
+      "why": {
+        "hu": "A para fejezi ki az úti célt: hova indulunk.",
+        "en": "Para expresses the destination: where you're headed.",
+        "es": "Para expresa el destino: hacia dónde se sale.",
+        "de": "Para drückt das Reiseziel aus: wohin man aufbricht."
+      },
+      "wrong": {
+        "por": {
+          "hu": "A por a helyen keresztüli mozgást jelölné, nem az úti célt.",
+          "en": "Por would mark movement through a place, not the destination.",
+          "es": "Por marcaría el movimiento a través de un lugar, no el destino.",
+          "de": "Por würde die Bewegung durch einen Ort bezeichnen, nicht das Reiseziel."
+        }
+      },
+      "examples": ["Vamos a salir para España.", "Voy a viajar para Alemania."]
+    },
+    {
+      "id": "pp-11",
+      "sentence": "Gracias ___ tu ayuda.",
+      "options": ["por", "para"],
+      "correct": 0,
+      "why": {
+        "hu": "A por fejezi ki az okot: minek köszönhetően mondok köszönetet.",
+        "en": "Por expresses the cause: what you're thanking someone for.",
+        "es": "Por expresa la causa: por qué se dan las gracias.",
+        "de": "Por drückt die Ursache aus: wofür man sich bedankt."
+      },
+      "wrong": {
+        "para": {
+          "hu": "A para célt jelölne, a köszönet viszont a MÁR megtörtént segítségre vonatkozik, ami ok.",
+          "en": "Para would mark a goal, but the thanks is for help ALREADY given, which is a cause.",
+          "es": "Para marcaría una meta, pero el agradecimiento es por la ayuda YA recibida, una causa.",
+          "de": "Para würde ein Ziel bezeichnen, der Dank bezieht sich aber auf die BEREITS erhaltene Hilfe, eine Ursache."
+        }
+      },
+      "examples": ["Gracias por venir.", "Gracias por el regalo."]
+    },
+    {
+      "id": "pp-12",
+      "sentence": "Necesito una taza ___ el café.",
+      "options": ["para", "por"],
+      "correct": 0,
+      "why": {
+        "hu": "A para fejezi ki a tárgy rendeltetését: mire való a csésze.",
+        "en": "Para expresses the object's purpose: what the cup is for.",
+        "es": "Para expresa el uso del objeto: para qué sirve la taza.",
+        "de": "Para drückt den Verwendungszweck des Gegenstands aus: wofür die Tasse da ist."
+      },
+      "wrong": {
+        "por": {
+          "hu": "A por nem rendeltetést, hanem okot vagy cserét jelölne.",
+          "en": "Por would mark a cause or an exchange, not a purpose.",
+          "es": "Por marcaría una causa o un intercambio, no un uso.",
+          "de": "Por würde eine Ursache oder einen Austausch bezeichnen, keinen Zweck."
+        }
+      },
+      "examples": ["Compro un vaso para el agua.", "Necesito una mesa para trabajar."]
+    }
+  ]
+}

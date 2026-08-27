@@ -172,7 +172,18 @@ export interface GrammarTopicData {
   items: GrammarItem[];
 }
 
-const grammarTopicsByLang: Partial<Record<string, GrammarTopicData[]>> = {};
+import grammarEsSerEstar from '@/data/games/grammar/es/ser-estar.json';
+import grammarEsArticulosGenero from '@/data/games/grammar/es/articulos-genero.json';
+import grammarEsPorPara from '@/data/games/grammar/es/por-para.json';
+
+const grammarTopicsByLang: Partial<Record<string, GrammarTopicData[]>> = {
+  // The JSON's per-item literal shape (each `wrong` only has the one key that
+  // item actually needs) is narrower than GrammarWrongExplanation's index
+  // signature, so a direct `as` doesn't overlap; `unknown` first is the
+  // standard escape hatch for "this JSON conforms to the hand-written type,
+  // TS just can't see it structurally".
+  es: [grammarEsSerEstar, grammarEsArticulosGenero, grammarEsPorPara] as unknown as GrammarTopicData[],
+};
 
 export function getGrammarTopics(lang: string): GrammarTopicData[] {
   return grammarTopicsByLang[lang] ?? [];
