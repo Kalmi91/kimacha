@@ -1,0 +1,185 @@
+{
+  "id": "la-llamada-de-medianoche",
+  "level": "A1",
+  "track": "crime",
+  "title": {
+    "hu": "Az éjféli hívás",
+    "en": "The Midnight Call",
+    "es": "La llamada de medianoche",
+    "de": "Der Mitternachtsanruf"
+  },
+  "cover": "🌙",
+  "estMinutes": 3,
+  "scenes": [
+    {
+      "id": "s1",
+      "text": { "es": "Diego está solo en casa. Es muy tarde." },
+      "translation": {
+        "hu": "Diego egyedül van otthon. Nagyon késő van.",
+        "en": "Diego is alone at home. It's very late.",
+        "es": "Diego está solo en casa. Es muy tarde.",
+        "de": "Diego ist allein zu Hause. Es ist sehr spät."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Hogyan van Diego?",
+          "en": "How is Diego?",
+          "es": "¿Cómo está Diego?",
+          "de": "Wie geht es Diego?"
+        },
+        "options": [
+          { "es": "solo en casa", "correct": true },
+          { "es": "con su familia" },
+          { "es": "en el trabajo" }
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "text": { "es": "A medianoche, el teléfono suena. Diego habla, pero no hay nadie." },
+      "translation": {
+        "hu": "Éjfélkor megszólal a telefon. Diego beleszól, de senki sincs a vonalban.",
+        "en": "At midnight, the phone rings. Diego speaks, but there's no one there.",
+        "es": "A medianoche, el teléfono suena. Diego habla, pero no hay nadie.",
+        "de": "Um Mitternacht klingelt das Telefon. Diego spricht, aber es ist niemand da."
+      },
+      "newWords": [
+        { "word": "suena", "gloss": { "hu": "csörög, megszólal", "en": "rings", "de": "klingelt" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Mi történik éjfélkor?",
+          "en": "What happens at midnight?",
+          "es": "¿Qué pasa a medianoche?",
+          "de": "Was passiert um Mitternacht?"
+        },
+        "options": [
+          { "es": "El teléfono suena y no hay nadie", "correct": true },
+          { "es": "Nada pasa" },
+          { "es": "Llega su hermano" }
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "text": { "es": "Diego tiene miedo. Mira por la ventana." },
+      "translation": {
+        "hu": "Diego megijed. Kinéz az ablakon.",
+        "en": "Diego is scared. He looks out the window.",
+        "es": "Diego tiene miedo. Mira por la ventana.",
+        "de": "Diego hat Angst. Er schaut aus dem Fenster."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Mit érez Diego?",
+          "en": "What does Diego feel?",
+          "es": "¿Qué tiene Diego?",
+          "de": "Was hat Diego?"
+        },
+        "options": [
+          { "es": "miedo", "correct": true },
+          { "es": "hambre" },
+          { "es": "frío" }
+        ]
+      }
+    },
+    {
+      "id": "s4",
+      "text": { "es": "En la calle está oscuro. Diego no mira nada." },
+      "translation": {
+        "hu": "Az utcán sötét van. Diego nem lát semmi különöset.",
+        "en": "The street is dark. Diego doesn't see anything.",
+        "es": "En la calle está oscuro. Diego no mira nada.",
+        "de": "Die Straße ist dunkel. Diego sieht nichts."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Milyen az utca?",
+          "en": "How is the street?",
+          "es": "¿Cómo está la calle?",
+          "de": "Wie ist die Straße?"
+        },
+        "options": [
+          { "es": "oscura", "correct": true },
+          { "es": "vacía" },
+          { "es": "amarilla" }
+        ]
+      }
+    },
+    {
+      "id": "s5",
+      "text": { "es": "Diego mira la puerta. Hay una sombra." },
+      "translation": {
+        "hu": "Diego az ajtóra néz. Egy árnyék van ott.",
+        "en": "Diego looks at the door. There's a shadow.",
+        "es": "Diego mira la puerta. Hay una sombra.",
+        "de": "Diego schaut zur Tür. Da ist ein Schatten."
+      },
+      "newWords": [
+        { "word": "sombra", "gloss": { "hu": "árnyék", "en": "shadow", "de": "Schatten" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Mi van az ajtónál?",
+          "en": "What's by the door?",
+          "es": "¿Qué hay cerca de la puerta?",
+          "de": "Was ist an der Tür?"
+        },
+        "options": [
+          { "es": "una sombra", "correct": true },
+          { "es": "un gato" },
+          { "es": "nada" }
+        ]
+      }
+    },
+    {
+      "id": "s6",
+      "text": { "es": "La sombra no habla. Diego abre la puerta." },
+      "translation": {
+        "hu": "Az árnyék nem szól semmit. Diego kinyitja az ajtót.",
+        "en": "The shadow doesn't speak. Diego opens the door.",
+        "es": "La sombra no habla. Diego abre la puerta.",
+        "de": "Der Schatten spricht nicht. Diego öffnet die Tür."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Mit tesz Diego?",
+          "en": "What does Diego do?",
+          "es": "¿Qué hace Diego?",
+          "de": "Was macht Diego?"
+        },
+        "options": [
+          { "es": "Abre la puerta", "correct": true },
+          { "es": "Llama a la policía" },
+          { "es": "Llama a un amigo" }
+        ]
+      }
+    },
+    {
+      "id": "s7",
+      "text": { "es": "Diego mira. No hay nadie. Solo hay una nota en el suelo." },
+      "translation": {
+        "hu": "Diego körülnéz. Senki sincs ott. Csak egy cetli hever a padlón.",
+        "en": "Diego looks. There's no one there. There's only a note on the floor.",
+        "es": "Diego mira. No hay nadie. Solo hay una nota en el suelo.",
+        "de": "Diego schaut. Niemand ist da. Nur ein Zettel liegt auf dem Boden."
+      },
+      "newWords": [
+        { "word": "nota", "gloss": { "hu": "cetli, üzenet", "en": "note", "de": "Zettel" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Mit talál Diego a padlón?",
+          "en": "What does Diego find on the floor?",
+          "es": "¿Qué encuentra Diego en el suelo?",
+          "de": "Was findet Diego auf dem Boden?"
+        },
+        "options": [
+          { "es": "una nota", "correct": true },
+          { "es": "un zapato" },
+          { "es": "dinero" }
+        ]
+      }
+    }
+  ]
+}

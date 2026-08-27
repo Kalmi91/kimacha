@@ -55,16 +55,36 @@ export interface StoryScene {
   };
 }
 
+// F4 MEGVALÓSÍTÁSI JEGYZET (story, 2026-08-27): `track` is a small addition
+// over the pre-existing StoryData shape, K11's three sávok (cdmx/crime/scifi)
+// need SOMETHING to group the picker by, and the illustrative 4.5 JSON never
+// showed one. Kept as its own top-level field (not folded into `id`) so the
+// hub can section the picker without parsing ids.
+export type StoryTrack = 'cdmx' | 'crime' | 'scifi';
+
 export interface StoryData {
   id: string;
   level: Level;
+  track: StoryTrack;
   title: Record<string, string>;
   cover: string; // emoji
   estMinutes: number;
   scenes: StoryScene[];
 }
 
-const storiesByLang: Partial<Record<string, StoryData[]>> = {};
+import storyEsElMercado from '@/data/games/stories/es/el-mercado.json';
+import storyEsElMetro from '@/data/games/stories/es/el-metro.json';
+import storyEsElCollarDesaparecido from '@/data/games/stories/es/el-collar-desaparecido.json';
+import storyEsLaLlamadaDeMedianoche from '@/data/games/stories/es/la-llamada-de-medianoche.json';
+import storyEsElRobotPerdido from '@/data/games/stories/es/el-robot-perdido.json';
+import storyEsElMensajeDelEspacio from '@/data/games/stories/es/el-mensaje-del-espacio.json';
+
+const storiesByLang: Partial<Record<string, StoryData[]>> = {
+  es: [
+    storyEsElMercado, storyEsElMetro, storyEsElCollarDesaparecido,
+    storyEsLaLlamadaDeMedianoche, storyEsElRobotPerdido, storyEsElMensajeDelEspacio,
+  ] as unknown as StoryData[],
+};
 
 export function getStories(lang: string): StoryData[] {
   return storiesByLang[lang] ?? [];
@@ -84,11 +104,26 @@ export interface ChatSetupQuestion {
   options: { value: string; label: Record<string, string> }[];
 }
 
+// F4 MEGVALÓSÍTÁSI JEGYZET (chat, 2026-08-27): the GAMES.md 4.6 illustrative
+// JSON's `nodes` graph has no way for the setup answer (K24: "más kimenetele
+// legyen ha mást mondasz") to actually change anything, its `next` pointers
+// are setup-agnostic. Rather than duplicating whole node subtrees per setup
+// combo (a `start` map keyed by setup-answer-combo -> node id, which would
+// require content authors to hand-write parallel branches), options gained a
+// `requires` gate: `{ [setupQuestionId]: requiredValue }`. An option is only
+// OFFERED when every entry matches the picked setup answers; omitted =
+// always offered. `nodes[0]` is always the entry point (npc line is the
+// same for everyone, only the offered questions differ), so one graph
+// serves every setup combo, and different setup answers still walk a
+// genuinely different subset of nodes via `next`. `next` is optional: its
+// absence ends the conversation at that option (K14: a rossz válasz nem
+// büntet, csak más, korábban véget érő ághoz vezet).
 export interface ChatNodeOption {
-  next: string;
+  next?: string;
   good?: true;
   checklist?: string;
-  [lang: string]: string | true | undefined;
+  requires?: Record<string, string>;
+  [lang: string]: string | true | Record<string, string> | undefined;
 }
 
 export interface ChatNode {

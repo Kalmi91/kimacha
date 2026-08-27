@@ -1,0 +1,153 @@
+{
+  "id": "el-mercado",
+  "level": "A1",
+  "track": "cdmx",
+  "title": {
+    "hu": "A piac",
+    "en": "The Market",
+    "es": "El mercado",
+    "de": "Der Markt"
+  },
+  "cover": "🍅",
+  "estMinutes": 3,
+  "scenes": [
+    {
+      "id": "s1",
+      "text": { "es": "María va al mercado los sábados. Hoy quiere comprar tomates y pan." },
+      "translation": {
+        "hu": "Mária szombatonként piacra megy. Ma paradicsomot és kenyeret akar venni.",
+        "en": "María goes to the market on Saturdays. Today she wants to buy tomatoes and bread.",
+        "es": "María va al mercado los sábados. Hoy quiere comprar tomates y pan.",
+        "de": "María geht samstags auf den Markt. Heute will sie Tomaten und Brot kaufen."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Mit akar venni María?",
+          "en": "What does María want to buy?",
+          "es": "¿Qué quiere comprar María?",
+          "de": "Was will María kaufen?"
+        },
+        "options": [
+          { "es": "tomates y pan", "correct": true },
+          { "es": "zapatos nuevos" },
+          { "es": "un libro grande" }
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "text": { "es": "En el mercado hay mucha gente. María mira a su amiga Rosa." },
+      "translation": {
+        "hu": "A piacon sok ember van. Mária ránéz a barátnőjére, Rosára.",
+        "en": "There are a lot of people at the market. María looks at her friend Rosa.",
+        "es": "En el mercado hay mucha gente. María mira a su amiga Rosa.",
+        "de": "Auf dem Markt sind viele Leute. María schaut ihre Freundin Rosa an."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Kit lát meg María a piacon?",
+          "en": "Who does María see at the market?",
+          "es": "¿A quién ve María en el mercado?",
+          "de": "Wen sieht María auf dem Markt?"
+        },
+        "options": [
+          { "es": "a su amiga Rosa", "correct": true },
+          { "es": "a su hermano" },
+          { "es": "a un perro" }
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "text": { "es": "María y Rosa hablan. Después, María compra tomates, pan y queso." },
+      "translation": {
+        "hu": "Mária és Rosa beszélgetnek. Utána Mária paradicsomot, kenyeret és sajtot vesz.",
+        "en": "María and Rosa talk. Then María buys tomatoes, bread, and cheese.",
+        "es": "María y Rosa hablan. Después, María compra tomates, pan y queso.",
+        "de": "María und Rosa reden. Danach kauft María Tomaten, Brot und Käse."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Mit vesz María?",
+          "en": "What does María buy?",
+          "es": "¿Qué compra María?",
+          "de": "Was kauft María?"
+        },
+        "options": [
+          { "es": "tomates, pan y queso", "correct": true },
+          { "es": "zapatos y ropa" },
+          { "es": "un coche" }
+        ]
+      }
+    },
+    {
+      "id": "s4",
+      "text": { "es": "El vendedor es muy amable. María paga con dinero." },
+      "translation": {
+        "hu": "Az eladó nagyon kedves. Mária pénzzel fizet.",
+        "en": "The vendor is very kind. María pays with cash.",
+        "es": "El vendedor es muy amable. María paga con dinero.",
+        "de": "Der Verkäufer ist sehr nett. María bezahlt mit Geld."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Hogyan fizet María?",
+          "en": "How does María pay?",
+          "es": "¿Cómo paga María?",
+          "de": "Wie bezahlt María?"
+        },
+        "options": [
+          { "es": "con dinero", "correct": true },
+          { "es": "con tarjeta" },
+          { "es": "no paga" }
+        ]
+      }
+    },
+    {
+      "id": "s5",
+      "text": { "es": "María camina a casa con su bolsa de fruta. Está cansada, pero contenta." },
+      "translation": {
+        "hu": "Mária hazasétál a gyümölcsös táskájával. Fáradt, de elégedett.",
+        "en": "María walks home with her bag of fruit. She's tired, but happy.",
+        "es": "María camina a casa con su bolsa de fruta. Está cansada, pero contenta.",
+        "de": "María geht mit ihrer Obsttasche nach Hause. Sie ist müde, aber zufrieden."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Milyen María a végén?",
+          "en": "How is María at the end?",
+          "es": "¿Cómo está María al final?",
+          "de": "Wie geht es María am Ende?"
+        },
+        "options": [
+          { "es": "cansada, pero contenta", "correct": true },
+          { "es": "muy triste" },
+          { "es": "enferma" }
+        ]
+      }
+    },
+    {
+      "id": "s6",
+      "text": { "es": "En casa, su hermano mira la fruta fresca. La familia cena tomates y pan esa noche." },
+      "translation": {
+        "hu": "Otthon a testvére megnézi a friss gyümölcsöt. A család aznap este paradicsomot és kenyeret vacsorázik.",
+        "en": "At home, her brother looks at the fresh fruit. The family has tomatoes and bread for dinner that night.",
+        "es": "En casa, su hermano mira la fruta fresca. La familia cena tomates y pan esa noche.",
+        "de": "Zu Hause schaut ihr Bruder das frische Obst an. Die Familie isst an diesem Abend Tomaten und Brot zum Abendessen."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Mit vacsorázik a család aznap este?",
+          "en": "What does the family have for dinner that night?",
+          "es": "¿Qué cena la familia esa noche?",
+          "de": "Was isst die Familie an diesem Abend zum Abendessen?"
+        },
+        "options": [
+          { "es": "tomates y pan", "correct": true },
+          { "es": "pescado y arroz" },
+          { "es": "leche y huevos" }
+        ]
+      }
+    }
+  ]
+}

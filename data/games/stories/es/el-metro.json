@@ -1,0 +1,159 @@
+{
+  "id": "el-metro",
+  "level": "A1",
+  "track": "cdmx",
+  "title": {
+    "hu": "A metró",
+    "en": "The Metro",
+    "es": "El metro",
+    "de": "Die U-Bahn"
+  },
+  "cover": "🚇",
+  "estMinutes": 3,
+  "scenes": [
+    {
+      "id": "s1",
+      "text": { "es": "Carlos vive en Coyoacán. Cada mañana toma el metro para ir al trabajo." },
+      "translation": {
+        "hu": "Carlos Coyoacánban lakik. Minden reggel metróval megy dolgozni.",
+        "en": "Carlos lives in Coyoacán. Every morning he takes the metro to work.",
+        "es": "Carlos vive en Coyoacán. Cada mañana toma el metro para ir al trabajo.",
+        "de": "Carlos wohnt in Coyoacán. Jeden Morgen nimmt er die U-Bahn zur Arbeit."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Hogyan jár Carlos dolgozni?",
+          "en": "How does Carlos get to work?",
+          "es": "¿Cómo va Carlos al trabajo?",
+          "de": "Wie kommt Carlos zur Arbeit?"
+        },
+        "options": [
+          { "es": "Toma el metro", "correct": true },
+          { "es": "Toma un taxi" },
+          { "es": "Camina" }
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "text": { "es": "Hoy Carlos está muy cansado. Toma el metro equivocado." },
+      "translation": {
+        "hu": "Ma Carlos nagyon fáradt. Rossz metróra száll fel.",
+        "en": "Today Carlos is very tired. He takes the wrong metro.",
+        "es": "Hoy Carlos está muy cansado. Toma el metro equivocado.",
+        "de": "Heute ist Carlos sehr müde. Er nimmt die falsche U-Bahn."
+      },
+      "newWords": [
+        { "word": "equivocado", "gloss": { "hu": "rossz, téves", "en": "wrong", "de": "falsch" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Mit tesz Carlos tévedésből?",
+          "en": "What does Carlos do by mistake?",
+          "es": "¿Qué toma Carlos por error?",
+          "de": "Was macht Carlos aus Versehen?"
+        },
+        "options": [
+          { "es": "el metro equivocado", "correct": true },
+          { "es": "un taxi caro" },
+          { "es": "un autobús viejo" }
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "text": { "es": "Carlos sale en una estación nueva. No sabe dónde está. Mira a la derecha y a la izquierda." },
+      "translation": {
+        "hu": "Carlos kiszáll egy ismeretlen állomáson. Nem tudja, hol van. Jobbra és balra néz.",
+        "en": "Carlos gets off at an unfamiliar station. He doesn't know where he is. He looks right and left.",
+        "es": "Carlos sale en una estación nueva. No sabe dónde está. Mira a la derecha y a la izquierda.",
+        "de": "Carlos steigt an einer neuen Station aus. Er weiß nicht, wo er ist. Er schaut nach rechts und nach links."
+      },
+      "newWords": [
+        { "word": "izquierda", "gloss": { "hu": "bal", "en": "left", "de": "links" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Mi történik Carlosszal?",
+          "en": "What happens to Carlos?",
+          "es": "¿Qué pasa con Carlos?",
+          "de": "Was passiert mit Carlos?"
+        },
+        "options": [
+          { "es": "No sabe dónde está", "correct": true },
+          { "es": "Sabe bien dónde está" },
+          { "es": "Está en su casa" }
+        ]
+      }
+    },
+    {
+      "id": "s4",
+      "text": { "es": "Carlos mira a la derecha. Camina hacia una mujer y habla con ella." },
+      "translation": {
+        "hu": "Carlos jobbra néz. Odasétál egy nőhöz, és beszélget vele.",
+        "en": "Carlos looks to the right. He walks toward a woman and talks with her.",
+        "es": "Carlos mira a la derecha. Camina hacia una mujer y habla con ella.",
+        "de": "Carlos schaut nach rechts. Er geht auf eine Frau zu und spricht mit ihr."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Kivel beszél Carlos?",
+          "en": "Who does Carlos talk to?",
+          "es": "¿Con quién habla Carlos?",
+          "de": "Mit wem spricht Carlos?"
+        },
+        "options": [
+          { "es": "con una mujer", "correct": true },
+          { "es": "con un policía" },
+          { "es": "con su hermano" }
+        ]
+      }
+    },
+    {
+      "id": "s5",
+      "text": { "es": "La mujer es muy amable. Ella habla: la estación de tu trabajo está lejos. Toma el metro azul." },
+      "translation": {
+        "hu": "A nő nagyon kedves. Beszélni kezd: A munkahelyed állomása messze van. Szállj fel a kék metróra.",
+        "en": "The woman is very kind. She speaks: Your work station is far. Take the blue metro.",
+        "es": "La mujer es muy amable. Ella habla: la estación de tu trabajo está lejos. Toma el metro azul.",
+        "de": "Die Frau ist sehr nett. Sie spricht: Die Station deiner Arbeit ist weit weg. Nimm die blaue U-Bahn."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Melyik metróra kell szállnia Carlosnak?",
+          "en": "Which metro should Carlos take?",
+          "es": "¿Qué metro debe tomar Carlos?",
+          "de": "Welche U-Bahn soll Carlos nehmen?"
+        },
+        "options": [
+          { "es": "el metro azul", "correct": true },
+          { "es": "el metro rojo" },
+          { "es": "un taxi" }
+        ]
+      }
+    },
+    {
+      "id": "s6",
+      "text": { "es": "Carlos toma el metro azul. Llega tarde al trabajo, pero llega bien." },
+      "translation": {
+        "hu": "Carlos felszáll a kék metróra. Elkésik a munkából, de épségben megérkezik.",
+        "en": "Carlos takes the blue metro. He arrives late to work, but he arrives fine.",
+        "es": "Carlos toma el metro azul. Llega tarde al trabajo, pero llega bien.",
+        "de": "Carlos nimmt die blaue U-Bahn. Er kommt spät zur Arbeit, aber er kommt gut an."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Hogyan érkezik meg Carlos a munkahelyére?",
+          "en": "How does Carlos arrive at work?",
+          "es": "¿Cómo llega Carlos al trabajo?",
+          "de": "Wie kommt Carlos bei der Arbeit an?"
+        },
+        "options": [
+          { "es": "tarde, pero bien", "correct": true },
+          { "es": "muy temprano" },
+          { "es": "no llega" }
+        ]
+      }
+    }
+  ]
+}

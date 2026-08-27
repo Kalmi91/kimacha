@@ -1,0 +1,194 @@
+{
+  "id": "el-mensaje-del-espacio",
+  "level": "A1",
+  "track": "scifi",
+  "title": {
+    "hu": "Üzenet az űrből",
+    "en": "The Message From Space",
+    "es": "El mensaje del espacio",
+    "de": "Die Nachricht aus dem Weltraum"
+  },
+  "cover": "🛰️",
+  "estMinutes": 3,
+  "scenes": [
+    {
+      "id": "s1",
+      "text": { "es": "Luis mira el cielo cada noche. Le gustan las estrellas." },
+      "translation": {
+        "hu": "Luis minden éjjel az eget nézi. Szereti a csillagokat.",
+        "en": "Luis looks at the sky every night. He likes the stars.",
+        "es": "Luis mira el cielo cada noche. Le gustan las estrellas.",
+        "de": "Luis schaut jede Nacht in den Himmel. Er mag die Sterne."
+      },
+      "newWords": [
+        { "word": "cielo", "gloss": { "hu": "ég", "en": "sky", "de": "Himmel" } },
+        { "word": "estrellas", "gloss": { "hu": "csillagok", "en": "stars", "de": "Sterne" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Mit szeret Luis?",
+          "en": "What does Luis like?",
+          "es": "¿Qué le gusta a Luis?",
+          "de": "Was mag Luis?"
+        },
+        "options": [
+          { "es": "las estrellas", "correct": true },
+          { "es": "los coches" },
+          { "es": "la comida" }
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "text": { "es": "Una noche, Luis mira una luz extraña en el espacio." },
+      "translation": {
+        "hu": "Egy este Luis egy furcsa fényt lát az űrben.",
+        "en": "One night, Luis looks at a strange light in space.",
+        "es": "Una noche, Luis mira una luz extraña en el espacio.",
+        "de": "Eines Nachts betrachtet Luis ein seltsames Licht im Weltraum."
+      },
+      "newWords": [
+        { "word": "extraña", "gloss": { "hu": "furcsa", "en": "strange", "de": "seltsam" } },
+        { "word": "espacio", "gloss": { "hu": "űr", "en": "space", "de": "Weltraum" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Mit néz Luis egy este?",
+          "en": "What does Luis look at one night?",
+          "es": "¿Qué mira Luis una noche?",
+          "de": "Was betrachtet Luis eines Nachts?"
+        },
+        "options": [
+          { "es": "una luz extraña en el espacio", "correct": true },
+          { "es": "un coche rojo" },
+          { "es": "su teléfono" }
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "text": { "es": "La luz tiene una señal. Es un mensaje nuevo para Luis." },
+      "translation": {
+        "hu": "A fény egy jelet hordoz. Ez egy új üzenet Luisnak.",
+        "en": "The light has a signal. It's a new message for Luis.",
+        "es": "La luz tiene una señal. Es un mensaje nuevo para Luis.",
+        "de": "Das Licht trägt ein Signal. Es ist eine neue Nachricht für Luis."
+      },
+      "newWords": [
+        { "word": "señal", "gloss": { "hu": "jel", "en": "signal", "de": "Signal" } },
+        { "word": "mensaje", "gloss": { "hu": "üzenet", "en": "message", "de": "Nachricht" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Mit hordoz a fény?",
+          "en": "What does the light have?",
+          "es": "¿Qué tiene la luz?",
+          "de": "Was hat das Licht?"
+        },
+        "options": [
+          { "es": "una señal", "correct": true },
+          { "es": "una puerta" },
+          { "es": "un teléfono" }
+        ]
+      }
+    },
+    {
+      "id": "s4",
+      "text": { "es": "Luis llama a su amiga Elena. Ella es científica." },
+      "translation": {
+        "hu": "Luis felhívja a barátnőjét, Elenát. Elena tudós.",
+        "en": "Luis calls his friend Elena. She's a scientist.",
+        "es": "Luis llama a su amiga Elena. Ella es científica.",
+        "de": "Luis ruft seine Freundin Elena an. Sie ist Wissenschaftlerin."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Kit hív fel Luis?",
+          "en": "Who does Luis call?",
+          "es": "¿A quién llama Luis?",
+          "de": "Wen ruft Luis an?"
+        },
+        "options": [
+          { "es": "a su amiga Elena", "correct": true },
+          { "es": "a la policía" },
+          { "es": "a su hermano" }
+        ]
+      }
+    },
+    {
+      "id": "s5",
+      "text": { "es": "Elena mira el mensaje en la pantalla. Las dos hablan del mensaje." },
+      "translation": {
+        "hu": "Elena megnézi az üzenetet a kijelzőn. Ketten megbeszélik az üzenetet.",
+        "en": "Elena looks at the message on the screen. The two of them talk about the message.",
+        "es": "Elena mira el mensaje en la pantalla. Las dos hablan del mensaje.",
+        "de": "Elena schaut sich die Nachricht auf dem Bildschirm an. Die beiden reden über die Nachricht."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Mit csinál Elena és Luis?",
+          "en": "What do Elena and Luis do?",
+          "es": "¿Qué hacen Elena y Luis?",
+          "de": "Was machen Elena und Luis?"
+        },
+        "options": [
+          { "es": "Hablan del mensaje", "correct": true },
+          { "es": "Comen pan" },
+          { "es": "Caminan en el parque" }
+        ]
+      }
+    },
+    {
+      "id": "s6",
+      "text": { "es": "El mensaje tiene un código extraño. Es del espacio." },
+      "translation": {
+        "hu": "Az üzenet egy furcsa kódot tartalmaz. Az űrből jön.",
+        "en": "The message has a strange code. It's from space.",
+        "es": "El mensaje tiene un código extraño. Es del espacio.",
+        "de": "Die Nachricht enthält einen seltsamen Code. Sie kommt aus dem Weltraum."
+      },
+      "newWords": [
+        { "word": "código", "gloss": { "hu": "kód", "en": "code", "de": "Code" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Honnan jön az üzenet?",
+          "en": "Where is the message from?",
+          "es": "¿De dónde es el mensaje?",
+          "de": "Woher kommt die Nachricht?"
+        },
+        "options": [
+          { "es": "del espacio", "correct": true },
+          { "es": "de un amigo" },
+          { "es": "de un libro" }
+        ]
+      }
+    },
+    {
+      "id": "s7",
+      "text": { "es": "Luis y Elena miran el cielo. Hay algo grande en el espacio." },
+      "translation": {
+        "hu": "Luis és Elena az eget nézik. Valami nagy dolog van az űrben.",
+        "en": "Luis and Elena look at the sky. There's something big in space.",
+        "es": "Luis y Elena miran el cielo. Hay algo grande en el espacio.",
+        "de": "Luis und Elena schauen zum Himmel. Da ist etwas Großes im Weltraum."
+      },
+      "newWords": [
+        { "word": "algo", "gloss": { "hu": "valami", "en": "something", "de": "etwas" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Mi van az űrben?",
+          "en": "What's in space?",
+          "es": "¿Qué hay en el espacio?",
+          "de": "Was ist im Weltraum?"
+        },
+        "options": [
+          { "es": "algo grande", "correct": true },
+          { "es": "nada" },
+          { "es": "un avión pequeño" }
+        ]
+      }
+    }
+  ]
+}

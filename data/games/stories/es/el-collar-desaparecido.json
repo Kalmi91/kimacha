@@ -1,0 +1,185 @@
+{
+  "id": "el-collar-desaparecido",
+  "level": "A1",
+  "track": "crime",
+  "title": {
+    "hu": "Az eltűnt nyaklánc",
+    "en": "The Missing Necklace",
+    "es": "El collar desaparecido",
+    "de": "Die verschwundene Halskette"
+  },
+  "cover": "🔍",
+  "estMinutes": 3,
+  "scenes": [
+    {
+      "id": "s1",
+      "text": { "es": "Sofía está en un hotel en la Ciudad de México. Tiene un collar de su abuela." },
+      "translation": {
+        "hu": "Sofía egy mexikóvárosi szállodában van. Van egy nyaklánca a nagymamájától.",
+        "en": "Sofía is at a hotel in Mexico City. She has a necklace from her grandmother.",
+        "es": "Sofía está en un hotel en la Ciudad de México. Tiene un collar de su abuela.",
+        "de": "Sofía ist in einem Hotel in Mexiko-Stadt. Sie hat eine Halskette von ihrer Großmutter."
+      },
+      "newWords": [
+        { "word": "collar", "gloss": { "hu": "nyaklánc", "en": "necklace", "de": "Halskette" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Mije van Sofíának?",
+          "en": "What does Sofía have?",
+          "es": "¿Qué tiene Sofía?",
+          "de": "Was hat Sofía?"
+        },
+        "options": [
+          { "es": "un collar de su abuela", "correct": true },
+          { "es": "una pulsera nueva" },
+          { "es": "un teléfono nuevo" }
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "text": { "es": "Por la mañana, el collar no está en la mesa. Sofía mira en la habitación." },
+      "translation": {
+        "hu": "Reggel a nyaklánc nincs az asztalon. Sofía körülnéz a szobában.",
+        "en": "In the morning, the necklace isn't on the table. Sofía looks around the room.",
+        "es": "Por la mañana, el collar no está en la mesa. Sofía mira en la habitación.",
+        "de": "Am Morgen ist die Halskette nicht auf dem Tisch. Sofía schaut sich im Zimmer um."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Hol van a nyaklánc reggel?",
+          "en": "Where is the necklace in the morning?",
+          "es": "¿Dónde está el collar por la mañana?",
+          "de": "Wo ist die Halskette am Morgen?"
+        },
+        "options": [
+          { "es": "No está en la mesa", "correct": true },
+          { "es": "Está en la mesa" },
+          { "es": "Está en la calle" }
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "text": { "es": "Sofía mira en la cama y en el armario. El collar no está." },
+      "translation": {
+        "hu": "Sofía megnézi az ágyat és a szekrényt. A nyaklánc nincs sehol.",
+        "en": "Sofía looks in the bed and in the wardrobe. The necklace isn't there.",
+        "es": "Sofía mira en la cama y en el armario. El collar no está.",
+        "de": "Sofía schaut im Bett und im Schrank nach. Die Halskette ist nicht da."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Hol néz körül Sofía?",
+          "en": "Where does Sofía look?",
+          "es": "¿Dónde mira Sofía?",
+          "de": "Wo schaut Sofía nach?"
+        },
+        "options": [
+          { "es": "en la cama y en el armario", "correct": true },
+          { "es": "en la cocina" },
+          { "es": "en el coche" }
+        ]
+      }
+    },
+    {
+      "id": "s4",
+      "text": { "es": "Sofía está nerviosa. Llama a su amiga Elena por teléfono." },
+      "translation": {
+        "hu": "Sofía ideges. Felhívja a barátnőjét, Elenát telefonon.",
+        "en": "Sofía is nervous. She calls her friend Elena on the phone.",
+        "es": "Sofía está nerviosa. Llama a su amiga Elena por teléfono.",
+        "de": "Sofía ist nervös. Sie ruft ihre Freundin Elena an."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Kit hív fel Sofía?",
+          "en": "Who does Sofía call?",
+          "es": "¿A quién llama Sofía?",
+          "de": "Wen ruft Sofía an?"
+        },
+        "options": [
+          { "es": "a su amiga Elena", "correct": true },
+          { "es": "a la policía" },
+          { "es": "a su hermano" }
+        ]
+      }
+    },
+    {
+      "id": "s5",
+      "text": { "es": "Elena llega al hotel. Las dos miran la habitación de nuevo." },
+      "translation": {
+        "hu": "Elena megérkezik a szállodába. Ketten újra átnézik a szobát.",
+        "en": "Elena arrives at the hotel. The two of them look at the room again.",
+        "es": "Elena llega al hotel. Las dos miran la habitación de nuevo.",
+        "de": "Elena kommt im Hotel an. Die beiden schauen sich das Zimmer noch einmal an."
+      },
+      "question": {
+        "prompt": {
+          "hu": "Ki érkezik meg a szállodába?",
+          "en": "Who arrives at the hotel?",
+          "es": "¿Quién llega al hotel?",
+          "de": "Wer kommt im Hotel an?"
+        },
+        "options": [
+          { "es": "Elena", "correct": true },
+          { "es": "la madre de Sofía" },
+          { "es": "un policía" }
+        ]
+      }
+    },
+    {
+      "id": "s6",
+      "text": { "es": "Elena mira la ventana. Hay una nota pequeña." },
+      "translation": {
+        "hu": "Elena megnézi az ablakot. Van ott egy kis cetli.",
+        "en": "Elena looks at the window. There's a small note.",
+        "es": "Elena mira la ventana. Hay una nota pequeña.",
+        "de": "Elena schaut zum Fenster. Da ist ein kleiner Zettel."
+      },
+      "newWords": [
+        { "word": "nota", "gloss": { "hu": "cetli, üzenet", "en": "note", "de": "Zettel" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Mit talál Elena az ablaknál?",
+          "en": "What does Elena find by the window?",
+          "es": "¿Qué encuentra Elena cerca de la ventana?",
+          "de": "Was findet Elena am Fenster?"
+        },
+        "options": [
+          { "es": "una nota pequeña", "correct": true },
+          { "es": "un zapato viejo" },
+          { "es": "dinero" }
+        ]
+      }
+    },
+    {
+      "id": "s7",
+      "text": { "es": "La nota es un misterio. Sofía y Elena no saben quién tiene el collar." },
+      "translation": {
+        "hu": "A cetli rejtély. Sofía és Elena nem tudja, kinél van a nyaklánc.",
+        "en": "The note is a mystery. Sofía and Elena don't know who has the necklace.",
+        "es": "La nota es un misterio. Sofía y Elena no saben quién tiene el collar.",
+        "de": "Der Zettel ist ein Rätsel. Sofía und Elena wissen nicht, wer die Halskette hat."
+      },
+      "newWords": [
+        { "word": "misterio", "gloss": { "hu": "rejtély, titok", "en": "mystery", "de": "Rätsel" } }
+      ],
+      "question": {
+        "prompt": {
+          "hu": "Mit tudnak Sofía és Elena?",
+          "en": "What do Sofía and Elena know?",
+          "es": "¿Qué saben Sofía y Elena?",
+          "de": "Was wissen Sofía und Elena?"
+        },
+        "options": [
+          { "es": "No saben quién tiene el collar", "correct": true },
+          { "es": "Ya tienen el collar" },
+          { "es": "No hay misterio" }
+        ]
+      }
+    }
+  ]
+}
