@@ -1,0 +1,39 @@
+{
+  "id": "quedar-quedarse",
+  "level": "A2",
+  "members": [
+    {
+      "word": "quedar",
+      "gloss": { "hu": "találkozót beszélni meg; illeni (ruha)", "en": "to arrange to meet; to fit/suit (clothing)", "es": "quedar (citarse con alguien; sentar bien la ropa)", "de": "sich verabreden; passen (Kleidung)" },
+      "hint": {
+        "hu": "Quedamos a las cinco., megbeszéltek egy találkozót",
+        "en": "Quedamos a las cinco., you arrange to meet someone",
+        "es": "Quedamos a las cinco., te citas con alguien",
+        "de": "Quedamos a las cinco., ihr verabredet euch"
+      },
+      "examples": ["Quedamos a las cinco en el parque.", "Esta camisa te queda bien."]
+    },
+    {
+      "word": "quedarse",
+      "gloss": { "hu": "maradni (egy helyen)", "en": "to stay (in a place)", "es": "quedarse (en un lugar)", "de": "bleiben (an einem Ort)" },
+      "hint": {
+        "hu": "Me quedo en casa., nem mész el, ott maradsz",
+        "en": "Me quedo en casa., you don't leave, you remain",
+        "es": "Me quedo en casa., no te vas, permaneces",
+        "de": "Me quedo en casa., du gehst nicht weg, du bleibst"
+      },
+      "examples": ["Me quedo en casa hoy.", "Ana va a quedarse en casa."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "quedar (visszaható névmás nélkül) = megbeszélni/illeni, quedarSE (a -se raggal) = maradni valahol, a -se azt jelzi, hogy veled történik: MARADSZ.",
+    "en": "quedar (no reflexive) = to arrange/to fit, quedarSE (with -se) = to stay somewhere, the -se marks that it happens to you: you STAY.",
+    "es": "quedar (sin -se) = citarse/sentar bien, quedarSE (con -se) = permanecer en un lugar, el -se marca que te pasa a ti: te quedas.",
+    "de": "quedar (ohne -se) = sich verabreden/passen, quedarSE (mit -se) = irgendwo bleiben, das -se zeigt, dass es dir passiert: du bleibst."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "Vamos a ___ a las cinco.", "correct": "quedar" },
+    { "type": "gap", "sentence": "Ana va a ___ en casa hoy.", "correct": "quedarse" },
+    { "type": "reverse", "correct": "quedar" }
+  ]
+}

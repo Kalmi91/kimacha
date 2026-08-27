@@ -1,0 +1,40 @@
+{
+  "id": "cocer-coser",
+  "level": "A2",
+  "members": [
+    {
+      "word": "cocer",
+      "gloss": { "hu": "főzni (vízben)", "en": "to boil, to cook (in water)", "es": "cocer", "de": "kochen (in Wasser)" },
+      "hint": {
+        "hu": "a konyhában, fazékban, a 'cocina' szóból",
+        "en": "in the kitchen, in a pot, related to 'cocina' (kitchen)",
+        "es": "en la cocina, en una olla, de la misma familia que 'cocina'",
+        "de": "in der Küche, im Topf, verwandt mit 'cocina' (Küche)"
+      },
+      "examples": ["Voy a cocer el arroz.", "Necesito cocer más arroz."]
+    },
+    {
+      "word": "coser",
+      "gloss": { "hu": "varrni", "en": "to sew", "es": "coser", "de": "nähen" },
+      "hint": {
+        "hu": "tűvel és cérnával, a 'costura' (varrás) szóból",
+        "en": "with a needle and thread, related to 'costura' (sewing)",
+        "es": "con aguja e hilo, de la misma familia que 'costura'",
+        "de": "mit Nadel und Faden, verwandt mit 'costura' (Näherei)"
+      },
+      "examples": ["Mi madre sabe coser muy bien.", "Necesito coser este pantalón."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "Kimondva teljesen egyformán hangzik mindkettő (koser), csak a mondat dönti el, hogy a konyháról vagy a varrásról van szó.",
+    "en": "Spoken, both sound exactly the same (koser), only the sentence tells you if it's about the kitchen or sewing.",
+    "es": "Al hablar, las dos suenan exactamente igual, solo la frase aclara si es de cocina o de costura.",
+    "de": "Gesprochen klingen beide genau gleich, nur der Satz verrät, ob es um Kochen oder Nähen geht."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "Voy a ___ las verduras en agua.", "correct": "cocer" },
+    { "type": "gap", "sentence": "Mi abuela sabe ___ ropa.", "correct": "coser" },
+    { "type": "reverse", "correct": "coser" },
+    { "type": "listening", "sentence": "Necesito coser este pantalón.", "correct": "coser" }
+  ]
+}

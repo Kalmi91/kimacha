@@ -1,0 +1,38 @@
+{
+  "id": "mande-que",
+  "level": "B1",
+  "members": [
+    {
+      "word": "mande",
+      "gloss": { "hu": "tessék? (udvarias visszakérdezés Mexikóban)", "en": "pardon? (the polite way to ask someone to repeat, in Mexico)", "es": "mande (forma cortés de pedir que repitan, en México)", "de": "wie bitte? (die höfliche Rückfrage in Mexiko)" },
+      "hint": {
+        "hu": "ha nem hallottad jól, ezt mondd Mexikóban, ez a legudvariasabb",
+        "en": "if you didn't hear well, say this in Mexico, it's the politest option",
+        "es": "si no oíste bien, di esto en México, es lo más cortés",
+        "de": "wenn du etwas nicht verstanden hast, sag das in Mexiko, es ist am höflichsten"
+      },
+      "examples": ["¿Mande? No te escuché."]
+    },
+    {
+      "word": "qué",
+      "gloss": { "hu": "mi? (nyersebb visszakérdezésre)", "en": "what? (blunter when asking someone to repeat)", "es": "¿qué? (más brusco para pedir que repitan)", "de": "was? (schroffer als Rückfrage)" },
+      "hint": {
+        "hu": "nyelvtanilag helyes, de Mexikóban visszakérdezésre nyersnek hat, inkább mande",
+        "en": "grammatically fine, but in Mexico it sounds blunt as a 'what did you say?', mande is safer",
+        "es": "gramaticalmente correcto, pero en México suena brusco para pedir que repitan, mejor usa mande",
+        "de": "grammatisch korrekt, aber in Mexiko klingt es als Rückfrage schroff, mande ist sicherer"
+      },
+      "examples": ["¿Qué hora es?"]
+    }
+  ],
+  "mnemonic": {
+    "hu": "Ha valaki nem hallott jól téged Mexikóban, és 'mande'-t mond, ne lepődj meg, ez a normális udvarias visszakérdezés, nem parancs (bár a szó a mandar/parancsolni igéből jön).",
+    "en": "If someone in Mexico didn't hear you and says 'mande', don't be surprised, it's the normal polite way to ask you to repeat, not a command (even though the word comes from mandar, to command).",
+    "es": "Si alguien en México no te oyó y dice 'mande', no te sorprendas, es la forma cortés normal, no una orden.",
+    "de": "Wenn dich jemand in Mexiko nicht gehört hat und 'mande' sagt, wundere dich nicht, das ist die normale höfliche Rückfrage, kein Befehl."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "¿___? No te escuché bien.", "correct": "mande" },
+    { "type": "reverse", "correct": "mande" }
+  ]
+}

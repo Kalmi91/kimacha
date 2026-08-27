@@ -1,0 +1,39 @@
+{
+  "id": "caro-carro",
+  "level": "A2",
+  "members": [
+    {
+      "word": "caro",
+      "gloss": { "hu": "drága", "en": "expensive", "es": "caro", "de": "teuer" },
+      "hint": {
+        "hu": "egy 'r', az ár, ami magas",
+        "en": "one 'r', the price is high",
+        "es": "una erre, cuesta mucho",
+        "de": "ein r, der Preis ist hoch"
+      },
+      "examples": ["Este reloj es muy caro."]
+    },
+    {
+      "word": "carro",
+      "gloss": { "hu": "autó (Mexikóban)", "en": "car (in Mexico)", "es": "carro (coche, en México)", "de": "Auto (in Mexiko)" },
+      "hint": {
+        "hu": "dupla 'rr', Mexikóban ez a leggyakoribb szó az autóra, nem a coche",
+        "en": "double 'rr', in Mexico this is the everyday word for car, not coche",
+        "es": "doble erre, en México es la palabra habitual para coche",
+        "de": "doppeltes r, in Mexiko das übliche Wort für Auto, nicht coche"
+      },
+      "examples": ["Mi carro es nuevo.", "Voy al trabajo en carro."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "Egy r = caro (drága), két r = carro (autó), és egy autó pont elég drága ahhoz, hogy megjegyezd a kettőt.",
+    "en": "One r = caro (expensive), two r's = carro (car), and a car is expensive enough to help you remember both.",
+    "es": "Una erre = caro, dos erres = carro, y un carro sí que es caro.",
+    "de": "Ein r = caro (teuer), zwei r = carro (Auto), und ein Auto ist teuer genug, um sich beides zu merken."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "Este carro es muy ___.", "correct": "caro" },
+    { "type": "gap", "sentence": "Voy a comprar un ___ nuevo.", "correct": "carro" },
+    { "type": "reverse", "correct": "carro" }
+  ]
+}

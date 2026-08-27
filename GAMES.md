@@ -1431,7 +1431,7 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 | F2 | `word-rain` | ✅ KÉSZ | `4c5bac6` |
 | F2 | `bubble-pop` | ✅ KÉSZ | `aab85f5` |
 | F3 | `grammar-choice` | ✅ KÉSZ (motor + 3 téma: ser-estar, articulos-genero, por-para; a többi 56 = Q1-Q5, token-burn) | `TBD` |
-| F3 | `confusables` | 🟨 SPEC-KÉSZ | |
+| F3 | `confusables` | ✅ KÉSZ (24 csoport: 8 alaki + 9 kétféle „ugyanaz" + 7 mexikói) | `TBD` |
 | F4 | `myth` | 🟨 SPEC-KÉSZ | |
 | F4 | `story` | 🟨 SPEC-KÉSZ | |
 | F4 | `chat` | 🟨 SPEC-KÉSZ | |

@@ -1,0 +1,39 @@
+{
+  "id": "hay-esta",
+  "level": "A2",
+  "members": [
+    {
+      "word": "hay",
+      "gloss": { "hu": "van (létezik, általánosan)", "en": "there is / there are (existence)", "es": "hay (existencia, sin artículo definido)", "de": "es gibt (Existenz)" },
+      "hint": {
+        "hu": "Hay un gato en la calle., bemutatod, hogy létezik valami, nem melyik konkrét dolog",
+        "en": "Hay un gato en la calle., introducing that something exists, not a specific known thing",
+        "es": "Hay un gato en la calle., presentas que algo existe, no un objeto ya conocido",
+        "de": "Hay un gato en la calle., du stellst vor, dass etwas existiert, kein bestimmtes Ding"
+      },
+      "examples": ["Hay un gato en la calle.", "¿Hay pan en casa?"]
+    },
+    {
+      "word": "está",
+      "gloss": { "hu": "van (konkrét dolog helye)", "en": "is (location of a specific, known thing)", "es": "está (ubicación de algo ya conocido)", "de": "ist (Ort einer bestimmten, bekannten Sache)" },
+      "hint": {
+        "hu": "El gato está en la mesa., már tudod, MELYIK macskáról van szó, csak a helyét mondod",
+        "en": "El gato está en la mesa., you already know WHICH cat, you're just saying where it is",
+        "es": "El gato está en la mesa., ya sabes CUÁL gato es, solo dices dónde está",
+        "de": "El gato está en la mesa., du weißt schon, WELCHE Katze, du sagst nur wo sie ist"
+      },
+      "examples": ["El gato está en la mesa.", "Mi libro está aquí."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "hay = ismeretlen dolog LÉTEZIK (un/una/számok + hay), está = ismert dolog HOL VAN (el/la/mi + está).",
+    "en": "hay = an unknown thing EXISTS (un/una/numbers + hay), está = a known thing's LOCATION (el/la/mi + está).",
+    "es": "hay = algo desconocido EXISTE (un/una/números + hay), está = algo conocido, su UBICACIÓN (el/la/mi + está).",
+    "de": "hay = etwas Unbekanntes EXISTIERT (un/una/Zahlen + hay), está = etwas Bekanntes, sein ORT (el/la/mi + está)."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "___ un banco cerca de aquí.", "correct": "hay" },
+    { "type": "gap", "sentence": "El banco ___ cerca del parque.", "correct": "está" },
+    { "type": "reverse", "correct": "hay" }
+  ]
+}

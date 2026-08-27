@@ -1,0 +1,40 @@
+{
+  "id": "pero-perro",
+  "level": "A2",
+  "members": [
+    {
+      "word": "pero",
+      "gloss": { "hu": "de (kötőszó)", "en": "but", "es": "pero (conjunción)", "de": "aber" },
+      "hint": {
+        "hu": "egy 'r' betű, ez a kis szócska, ami ellentétet fejez ki",
+        "en": "one 'r', the little word that means 'but'",
+        "es": "una sola 'r', la palabra que marca contraste",
+        "de": "ein 'r', das kleine Wort für 'aber'"
+      },
+      "examples": ["Quiero ir, pero no tengo tiempo."]
+    },
+    {
+      "word": "perro",
+      "gloss": { "hu": "kutya", "en": "dog", "es": "perro", "de": "Hund" },
+      "hint": {
+        "hu": "dupla 'rr', pörgetett r, mint amikor a kutya morog",
+        "en": "double 'rr', a rolled r, like a dog growling",
+        "es": "doble 'rr', la erre fuerte, como cuando gruñe el perro",
+        "de": "doppeltes 'rr', das gerollte r, wie ein knurrender Hund"
+      },
+      "examples": ["Mi perro es muy grande.", "El perro corre en el parque."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "Egy r = pero (de), két r = perro (kutya). A kutyának két füle van, mint a perro két r-je.",
+    "en": "One r = pero (but), two r's = perro (dog). Two ears, two r's.",
+    "es": "Una erre = pero, dos erres = perro. Dos orejas, dos erres.",
+    "de": "Ein r = pero (aber), zwei r = perro (Hund). Zwei Ohren, zwei r."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "Quiero salir, ___ hace frío.", "correct": "pero" },
+    { "type": "gap", "sentence": "Tengo un ___ en casa.", "correct": "perro" },
+    { "type": "reverse", "correct": "perro" },
+    { "type": "listening", "sentence": "Mi perro es grande, pero simpático.", "correct": "perro" }
+  ]
+}

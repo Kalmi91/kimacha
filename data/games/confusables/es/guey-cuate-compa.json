@@ -1,0 +1,53 @@
+{
+  "id": "guey-cuate-compa",
+  "level": "B1",
+  "members": [
+    {
+      "word": "güey",
+      "gloss": { "hu": "haver, csávó (nagyon informális, fiatalok közt)", "en": "dude, bro (very informal, among young friends)", "es": "güey (muy informal, entre amigos jóvenes)", "de": "Alter, Kumpel (sehr informell, unter jungen Freunden)" },
+      "hint": {
+        "hu": "csak közeli barátokkal, sosem idegennel vagy főnökkel",
+        "en": "only with close friends, never with a stranger or your boss",
+        "es": "solo con amigos cercanos, nunca con un desconocido o tu jefe",
+        "de": "nur unter engen Freunden, nie mit Fremden oder dem Chef"
+      },
+      "examples": ["¿Qué onda, güey?"]
+    },
+    {
+      "word": "cuate",
+      "gloss": { "hu": "haver, barát (kicsit kevésbé nyers, mint a güey)", "en": "pal, buddy (a bit less rough than güey)", "es": "cuate (amigo cercano, un poco menos brusco que güey)", "de": "Kumpel, Freund (etwas gesitteter als güey)" },
+      "hint": {
+        "hu": "széles körben elfogadott, kortól függetlenül is használható",
+        "en": "widely accepted, usable across a wider range of ages",
+        "es": "muy aceptado, se usa entre personas de más edades",
+        "de": "weithin akzeptiert, über mehr Altersgruppen hinweg verwendbar"
+      },
+      "examples": ["Es mi cuate desde la escuela."]
+    },
+    {
+      "word": "compa",
+      "gloss": { "hu": "cimbora (a 'compañero' rövidítése)", "en": "buddy (short for 'compañero')", "es": "compa (de 'compañero')", "de": "Kumpel (Kurzform von 'compañero')" },
+      "hint": {
+        "hu": "barátságos, laza megszólítás, boltban, taxiban is hallható",
+        "en": "friendly, casual, you'll hear it from shopkeepers, taxi drivers too",
+        "es": "amistoso, informal, lo oyes también de vendedores o taxistas",
+        "de": "freundlich, locker, hört man auch von Verkäufern oder Taxifahrern"
+      },
+      "examples": ["Gracias, compa."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "Mind a három 'haver'-t jelent, de más a regiszter: güey a legszlengesebb, compa a legsemlegesebb (idegenekhez is mondható), cuate a kettő között.",
+    "en": "All three mean 'buddy', but the register differs: güey is the most slangy, compa the most neutral (fine even with strangers), cuate is in between.",
+    "es": "Las tres significan 'amigo', pero el registro cambia: güey es la más informal, compa la más neutral, cuate está en medio.",
+    "de": "Alle drei bedeuten 'Kumpel', aber das Register unterscheidet sich: güey ist am umgangssprachlichsten, compa am neutralsten, cuate liegt dazwischen."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "¿Qué onda, ___?", "correct": "güey" },
+    { "type": "reverse", "correct": "compa" },
+    { "type": "reverse", "correct": "güey" }
+  ],
+  "glossary": [
+    { "word": "onda", "gloss": { "hu": "'¿qué onda?' = mi a helyzet?, hogy vagy? (szó szerint 'hullám')", "en": "'¿qué onda?' = what's up?, how's it going? (literally 'wave')", "es": "'¿qué onda?' = ¿qué tal?, ¿cómo estás? (literalmente 'onda' es 'wave')", "de": "'¿qué onda?' = was geht?, wie geht's? (wörtlich 'Welle')" } }
+  ]
+}

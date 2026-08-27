@@ -1,0 +1,40 @@
+{
+  "id": "casa-caza",
+  "level": "A2",
+  "members": [
+    {
+      "word": "casa",
+      "gloss": { "hu": "ház", "en": "house", "es": "casa", "de": "Haus" },
+      "hint": {
+        "hu": "az 's' betűvel írod, ott élsz",
+        "en": "spelled with 's', where you live",
+        "es": "se escribe con 's', donde vives",
+        "de": "mit 's' geschrieben, wo du wohnst"
+      },
+      "examples": ["Mi casa es grande."]
+    },
+    {
+      "word": "caza",
+      "gloss": { "hu": "vadászat", "en": "hunting", "es": "caza", "de": "Jagd" },
+      "hint": {
+        "hu": "a 'z' betűvel írod, Mexikóban ugyanúgy ejtik, mint a casa-t (seseo), csak a szövegkörnyezet dönt",
+        "en": "spelled with 'z', in Mexico it sounds IDENTICAL to casa (seseo), only context tells them apart",
+        "es": "se escribe con 'z', en México suena IGUAL que casa (seseo), solo el contexto lo distingue",
+        "de": "mit 'z' geschrieben, in Mexiko klingt es GENAUSO wie casa (Seseo), nur der Kontext hilft"
+      },
+      "examples": ["El gato va de caza.", "No me gusta la caza."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "Írásban az 's'/'z' dönt, de kimondva Mexikóban NEM hallod a különbséget, csak a mondat értelméből tudod, melyikről van szó.",
+    "en": "In writing, 's' vs 'z' decides, but spoken in Mexico you CANNOT hear the difference, only the sentence's meaning tells you.",
+    "es": "En la escritura decide la 's' o la 'z', pero al hablar en México NO se oye la diferencia, solo el sentido de la frase lo aclara.",
+    "de": "Schriftlich entscheidet 's' oder 'z', aber gesprochen hört man in Mexiko KEINEN Unterschied, nur der Sinn des Satzes hilft."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "Vivo en una ___ pequeña.", "correct": "casa" },
+    { "type": "gap", "sentence": "El león va de ___ por la noche.", "correct": "caza" },
+    { "type": "reverse", "correct": "casa" },
+    { "type": "listening", "sentence": "El gato va de caza por la noche.", "correct": "caza" }
+  ]
+}

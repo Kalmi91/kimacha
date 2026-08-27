@@ -1,0 +1,39 @@
+{
+  "id": "saber-conocer",
+  "level": "A2",
+  "members": [
+    {
+      "word": "saber",
+      "gloss": { "hu": "tudni (egy tényt, hogyan kell)", "en": "to know (a fact, how to do something)", "es": "saber (un dato, un idioma, hacer algo)", "de": "wissen (eine Tatsache, wie man etwas macht)" },
+      "hint": {
+        "hu": "Sé tu número. Sé nadar., tényeket és képességeket tudsz",
+        "en": "Sé tu número. Sé nadar., facts and skills",
+        "es": "Sé tu número. Sé nadar., datos y habilidades",
+        "de": "Sé tu número. Sé nadar., Fakten und Fähigkeiten"
+      },
+      "examples": ["Sé hablar español.", "No sé la respuesta."]
+    },
+    {
+      "word": "conocer",
+      "gloss": { "hu": "ismerni (embert, helyet)", "en": "to know, be familiar with (a person, a place)", "es": "conocer (una persona, un lugar)", "de": "kennen (eine Person, einen Ort)" },
+      "hint": {
+        "hu": "Conozco a tu hermano. Conozco México., embereket és helyeket ismersz",
+        "en": "Conozco a tu hermano. Conozco México., people and places",
+        "es": "Conozco a tu hermano. Conozco México., personas y lugares",
+        "de": "Conozco a tu hermano. Conozco México., Menschen und Orte"
+      },
+      "examples": ["Quiero conocer a tu hermano.", "Quiero conocer bien esta ciudad."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "saber = fejben van a tudás (tény, képesség), conocer = a tapasztalattal ismersz valakit, vagy jártál már valahol.",
+    "en": "saber = knowledge in your head (fact, skill), conocer = you've met someone or been somewhere.",
+    "es": "saber = conocimiento en la cabeza, conocer = has estado con esa persona o en ese lugar.",
+    "de": "saber = Wissen im Kopf, conocer = du hast diese Person getroffen oder warst dort."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "Quiero ___ la verdad.", "correct": "saber" },
+    { "type": "gap", "sentence": "Quiero ___ a tu familia.", "correct": "conocer" },
+    { "type": "reverse", "correct": "conocer" }
+  ]
+}

@@ -148,6 +148,17 @@ export default {
       comingSoon: 'Ehhez a nyelvhez még nincs nyelvtani tartalom.',
       progress: (current: number, total: number) => `${current} / ${total}`,
     },
+    // F3 (confusables, GAMES.md 4.12).
+    confusables: {
+      pickSet: 'Válassz szócsoportot',
+      setMembersLabel: (n: number) => `${n} szó`,
+      startDrill: 'Kezdjük a drilt',
+      comingSoon: 'Ehhez a nyelvhez még nincs tartalom.',
+      drillProgress: (current: number, total: number) => `${current} / ${total}`,
+      reversePrompt: 'Melyik szó jelenti ezt:',
+      listenPrompt: 'Melyik szót hallottad?',
+      tapToPlay: 'Koppints a lejátszáshoz',
+    },
   },
   active: {
     title: 'Aktív mód',

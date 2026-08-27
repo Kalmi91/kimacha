@@ -1,0 +1,39 @@
+{
+  "id": "ir-venir",
+  "level": "A2",
+  "members": [
+    {
+      "word": "ir",
+      "gloss": { "hu": "menni (elmenni valahova)", "en": "to go (away from here)", "es": "ir (a otro lugar)", "de": "gehen (weg von hier)" },
+      "hint": {
+        "hu": "elindulsz innen, egy másik hely felé",
+        "en": "you leave here, heading to another place",
+        "es": "sales de aquí hacia otro lugar",
+        "de": "du gehst von hier weg, zu einem anderen Ort"
+      },
+      "examples": ["Voy a ir al cine.", "Vamos a la playa."]
+    },
+    {
+      "word": "venir",
+      "gloss": { "hu": "jönni (idejönni)", "en": "to come (toward here)", "es": "venir (a donde estoy yo)", "de": "kommen (hierher)" },
+      "hint": {
+        "hu": "ide közeledsz, a beszélő felé",
+        "en": "you approach here, toward the speaker",
+        "es": "te acercas a donde está quien habla",
+        "de": "du näherst dich hierher, zum Sprecher"
+      },
+      "examples": ["Voy a venir a tu casa.", "Voy a venir mañana también."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "ir = elmész (távolodsz), venir = jössz (közeledsz), ugyanaz a nézőpont-logika, mint llevar/traer.",
+    "en": "ir = you go (away), venir = you come (toward), the same point-of-view logic as llevar/traer.",
+    "es": "ir = te vas, venir = te acercas, la misma lógica de punto de vista que llevar/traer.",
+    "de": "ir = du gehst weg, venir = du kommst her, dieselbe Logik wie bei llevar/traer."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "Voy a ___ al cine esta noche.", "correct": "ir" },
+    { "type": "gap", "sentence": "Voy a ___ a tu casa mañana.", "correct": "venir" },
+    { "type": "reverse", "correct": "venir" }
+  ]
+}

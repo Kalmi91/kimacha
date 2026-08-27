@@ -1,0 +1,50 @@
+{
+  "id": "vaso-copa-taza",
+  "level": "A2",
+  "members": [
+    {
+      "word": "vaso",
+      "gloss": { "hu": "pohár (víznek, üdítőnek)", "en": "glass (for water, soda)", "es": "vaso (para agua, refresco)", "de": "Glas (für Wasser, Softdrinks)" },
+      "hint": {
+        "hu": "egyenes falú, mindennapi pohár",
+        "en": "a plain, everyday drinking glass",
+        "es": "el vaso normal, de todos los días",
+        "de": "das normale, alltägliche Trinkglas"
+      },
+      "examples": ["Quiero un vaso de agua."]
+    },
+    {
+      "word": "copa",
+      "gloss": { "hu": "talpas pohár (bornak)", "en": "stemmed glass (for wine)", "es": "copa (para vino)", "de": "Stielglas (für Wein)" },
+      "hint": {
+        "hu": "vékony szárú, ünnepi pohár, borhoz",
+        "en": "the thin-stemmed glass you use for wine",
+        "es": "la de tallo fino, para vino",
+        "de": "das dünne Stielglas für Wein"
+      },
+      "examples": ["Quiero una copa de vino."]
+    },
+    {
+      "word": "taza",
+      "gloss": { "hu": "csésze (kávénak, teának)", "en": "cup (for coffee, tea)", "es": "taza (para café, té)", "de": "Tasse (für Kaffee, Tee)" },
+      "hint": {
+        "hu": "füles, meleg italhoz",
+        "en": "has a handle, for hot drinks",
+        "es": "con asa, para bebidas calientes",
+        "de": "mit Henkel, für heiße Getränke"
+      },
+      "examples": ["Quiero una taza de café."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "vaso = víz, copa = bor (ünnepi, szárral), taza = kávé/tea (meleg, füle van).",
+    "en": "vaso = water, copa = wine (fancy stem), taza = coffee/tea (hot, has a handle).",
+    "es": "vaso = agua, copa = vino (con tallo), taza = café/té (caliente, con asa).",
+    "de": "vaso = Wasser, copa = Wein (mit Stiel), taza = Kaffee/Tee (heiß, mit Henkel)."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "Quiero un ___ de agua, por favor.", "correct": "vaso" },
+    { "type": "gap", "sentence": "Quiero una ___ de café, por favor.", "correct": "taza" },
+    { "type": "reverse", "correct": "copa" }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "ahorita-ahora-ya",
+  "level": "B1",
+  "members": [
+    {
+      "word": "ahorita",
+      "gloss": { "hu": "mindjárt (bizonytalan, hogy mikor)", "en": "right now-ish (vague, could mean minutes or hours)", "es": "ahorita (puede significar minutos, horas... o nunca)", "de": "gleich (vage, kann Minuten oder Stunden bedeuten)" },
+      "hint": {
+        "hu": "nagyon mexikói szó, de sose bízz benne pontos időként",
+        "en": "a very Mexican word, but never trust it as a precise time",
+        "es": "muy mexicana, pero nunca la tomes como un tiempo exacto",
+        "de": "ein sehr mexikanisches Wort, aber nie als genaue Zeitangabe vertrauen"
+      },
+      "examples": ["Ahorita voy.", "Ahorita te llamo."]
+    },
+    {
+      "word": "ahora",
+      "gloss": { "hu": "most (ebben a pillanatban)", "en": "now (this exact moment)", "es": "ahora (en este momento)", "de": "jetzt (in diesem Moment)" },
+      "hint": {
+        "hu": "a semleges, standard 'most', minden spanyol nyelvterületen egyértelmű",
+        "en": "the neutral, standard 'now', clear everywhere Spanish is spoken",
+        "es": "el 'ahora' neutro y estándar, claro en todo el mundo hispano",
+        "de": "das neutrale, standard 'jetzt', überall im spanischsprachigen Raum klar"
+      },
+      "examples": ["Ahora no tengo tiempo.", "¿Qué haces ahora?"]
+    },
+    {
+      "word": "ya",
+      "gloss": { "hu": "már, most azonnal", "en": "already, right away", "es": "ya (ahora mismo, en este instante)", "de": "schon, sofort" },
+      "hint": {
+        "hu": "a leggyorsabb, amikor tényleg AZONNAL kell valami",
+        "en": "the fastest one, when you truly need something IMMEDIATELY",
+        "es": "la más rápida, cuando de verdad necesitas algo AHORA MISMO",
+        "de": "das schnellste, wenn du wirklich SOFORT etwas brauchst"
+      },
+      "examples": ["¡Ya voy!", "Ya está listo."]
+    }
+  ],
+  "mnemonic": {
+    "hu": "ya = azonnal, ahora = most, ahorita = 'majd valamikor', talán most, talán soha. Minél kedvesebb hangzású a szó, annál bizonytalanabb az idő.",
+    "en": "ya = right now, ahora = now, ahorita = 'sometime soon', maybe now, maybe never. The cuter the word, the vaguer the timing.",
+    "es": "ya = ahora mismo, ahora = ahora, ahorita = 'en algún momento', tal vez ya, tal vez nunca.",
+    "de": "ya = sofort, ahora = jetzt, ahorita = 'irgendwann bald', vielleicht jetzt, vielleicht nie."
+  },
+  "drills": [
+    { "type": "gap", "sentence": "___ voy, dame un minuto.", "correct": "ahorita" },
+    { "type": "gap", "sentence": "¿Qué haces ___?", "correct": "ahora" },
+    { "type": "gap", "sentence": "¡___ está listo!", "correct": "ya" },
+    { "type": "reverse", "correct": "ya" }
+  ]
+}
