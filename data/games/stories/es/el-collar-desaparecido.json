@@ -13,12 +13,12 @@
   "scenes": [
     {
       "id": "s1",
-      "text": { "es": "Sofía está en un hotel en la Ciudad de México. Tiene un collar de su abuela." },
+      "text": { "es": "Sofía está en un hotel. Tiene un collar de su abuela." },
       "translation": {
-        "hu": "Sofía egy mexikóvárosi szállodában van. Van egy nyaklánca a nagymamájától.",
-        "en": "Sofía is at a hotel in Mexico City. She has a necklace from her grandmother.",
-        "es": "Sofía está en un hotel en la Ciudad de México. Tiene un collar de su abuela.",
-        "de": "Sofía ist in einem Hotel in Mexiko-Stadt. Sie hat eine Halskette von ihrer Großmutter."
+        "hu": "Sofía egy szállodában van. Van egy nyaklánca a nagymamájától.",
+        "en": "Sofía is at a hotel. She has a necklace from her grandmother.",
+        "es": "Sofía está en un hotel. Tiene un collar de su abuela.",
+        "de": "Sofía ist in einem Hotel. Sie hat eine Halskette von ihrer Großmutter."
       },
       "newWords": [
         { "word": "collar", "gloss": { "hu": "nyaklánc", "en": "necklace", "de": "Halskette" } }
@@ -39,12 +39,12 @@
     },
     {
       "id": "s2",
-      "text": { "es": "Por la mañana, el collar no está en la mesa. Sofía mira en la habitación." },
+      "text": { "es": "El collar no está en la mesa. Sofía mira en la habitación." },
       "translation": {
-        "hu": "Reggel a nyaklánc nincs az asztalon. Sofía körülnéz a szobában.",
-        "en": "In the morning, the necklace isn't on the table. Sofía looks around the room.",
-        "es": "Por la mañana, el collar no está en la mesa. Sofía mira en la habitación.",
-        "de": "Am Morgen ist die Halskette nicht auf dem Tisch. Sofía schaut sich im Zimmer um."
+        "hu": "A nyaklánc nincs az asztalon. Sofía körülnéz a szobában.",
+        "en": "The necklace isn't on the table. Sofía looks around the room.",
+        "es": "El collar no está en la mesa. Sofía mira en la habitación.",
+        "de": "Die Halskette ist nicht auf dem Tisch. Sofía schaut sich im Zimmer um."
       },
       "question": {
         "prompt": {
@@ -62,12 +62,12 @@
     },
     {
       "id": "s3",
-      "text": { "es": "Sofía mira en la cama y en el armario. El collar no está." },
+      "text": { "es": "Sofía mira en la cama y el armario. El collar no está." },
       "translation": {
         "hu": "Sofía megnézi az ágyat és a szekrényt. A nyaklánc nincs sehol.",
-        "en": "Sofía looks in the bed and in the wardrobe. The necklace isn't there.",
-        "es": "Sofía mira en la cama y en el armario. El collar no está.",
-        "de": "Sofía schaut im Bett und im Schrank nach. Die Halskette ist nicht da."
+        "en": "Sofía looks in the bed and the wardrobe. The necklace isn't there.",
+        "es": "Sofía mira en la cama y el armario. El collar no está.",
+        "de": "Sofía schaut im Bett und Schrank nach. Die Halskette ist nicht da."
       },
       "question": {
         "prompt": {
@@ -157,12 +157,12 @@
     },
     {
       "id": "s7",
-      "text": { "es": "La nota es un misterio. Sofía y Elena no saben quién tiene el collar." },
+      "text": { "es": "La nota es un misterio. Ellas no saben quién tiene el collar." },
       "translation": {
-        "hu": "A cetli rejtély. Sofía és Elena nem tudja, kinél van a nyaklánc.",
-        "en": "The note is a mystery. Sofía and Elena don't know who has the necklace.",
-        "es": "La nota es un misterio. Sofía y Elena no saben quién tiene el collar.",
-        "de": "Der Zettel ist ein Rätsel. Sofía und Elena wissen nicht, wer die Halskette hat."
+        "hu": "A cetli rejtély. Ők nem tudják, kinél van a nyaklánc.",
+        "en": "The note is a mystery. They don't know who has the necklace.",
+        "es": "La nota es un misterio. Ellas no saben quién tiene el collar.",
+        "de": "Der Zettel ist ein Rätsel. Sie wissen nicht, wer die Halskette hat."
       },
       "newWords": [
         { "word": "misterio", "gloss": { "hu": "rejtély, titok", "en": "mystery", "de": "Rätsel" } }

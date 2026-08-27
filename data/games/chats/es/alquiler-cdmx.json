@@ -76,7 +76,7 @@
       "id": "n7",
       "npc": { "es": "Yo soy el administrador, no el dueño del edificio." },
       "options": [
-        { "es": "¿Puedo ver una identificación y un papel que confirma que usted representa al dueño?", "next": "n8", "good": true, "checklist": "landlord-id" },
+        { "es": "¿Puedo ver una identificación y un papel del dueño?", "next": "n8", "good": true, "checklist": "landlord-id" },
         { "es": "¿Usted vive cerca de aquí?", "next": "n8" }
       ]
     },

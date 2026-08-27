@@ -91,12 +91,12 @@
     },
     {
       "id": "s4",
-      "text": { "es": "El robot habla de su familia. Ellos están en el cielo, con las estrellas." },
+      "text": { "es": "Su familia está en el cielo, con las estrellas." },
       "translation": {
-        "hu": "A robot a családjára gondol. Ők az égen vannak, a csillagok között.",
-        "en": "The robot thinks about its family. They are in the sky, with the stars.",
-        "es": "El robot piensa en su familia. Ellos están en el cielo, con las estrellas.",
-        "de": "Der Roboter denkt an seine Familie. Sie sind am Himmel, bei den Sternen."
+        "hu": "A családja az égen van, a csillagok között.",
+        "en": "His family is in the sky, with the stars.",
+        "es": "Su familia está en el cielo, con las estrellas.",
+        "de": "Seine Familie ist am Himmel, bei den Sternen."
       },
       "newWords": [
         { "word": "cielo", "gloss": { "hu": "ég", "en": "sky", "de": "Himmel" } },
@@ -118,12 +118,12 @@
     },
     {
       "id": "s5",
-      "text": { "es": "Marco y el robot ya son amigos. Los dos caminan por la ciudad de noche." },
+      "text": { "es": "Marco y el robot son amigos. Caminan por la ciudad de noche." },
       "translation": {
-        "hu": "Marco és a robot már barátok. Ketten éjjel sétálnak a városban.",
-        "en": "Marco and the robot are already friends. The two of them walk through the city at night.",
-        "es": "Marco y el robot ya son amigos. Los dos caminan por la ciudad de noche.",
-        "de": "Marco und der Roboter sind schon Freunde. Die beiden gehen nachts durch die Stadt."
+        "hu": "Marco és a robot barátok. Éjjel sétálnak a városban.",
+        "en": "Marco and the robot are friends. They walk through the city at night.",
+        "es": "Marco y el robot son amigos. Caminan por la ciudad de noche.",
+        "de": "Marco und der Roboter sind Freunde. Sie gehen nachts durch die Stadt."
       },
       "question": {
         "prompt": {
@@ -168,12 +168,12 @@
     },
     {
       "id": "s7",
-      "text": { "es": "Hay una luz grande en el cielo. Marco y el robot miran, sorprendidos." },
+      "text": { "es": "Hay una luz en el cielo. Marco y el robot miran, sorprendidos." },
       "translation": {
-        "hu": "Egy nagy fény jelenik meg az égen. Marco és a robot meglepetten nézik.",
-        "en": "There's a big light in the sky. Marco and the robot look, surprised.",
-        "es": "Hay una luz grande en el cielo. Marco y el robot miran, sorprendidos.",
-        "de": "Da ist ein großes Licht am Himmel. Marco und der Roboter schauen überrascht."
+        "hu": "Egy fény jelenik meg az égen. Marco és a robot meglepetten nézik.",
+        "en": "There's a light in the sky. Marco and the robot look, surprised.",
+        "es": "Hay una luz en el cielo. Marco y el robot miran, sorprendidos.",
+        "de": "Da ist ein Licht am Himmel. Marco und der Roboter schauen überrascht."
       },
       "question": {
         "prompt": {

@@ -105,12 +105,12 @@
     },
     {
       "id": "s5",
-      "text": { "es": "María camina a casa con su bolsa de fruta. Está cansada, pero contenta." },
+      "text": { "es": "María camina a casa con fruta. Está cansada, pero contenta." },
       "translation": {
-        "hu": "Mária hazasétál a gyümölcsös táskájával. Fáradt, de elégedett.",
-        "en": "María walks home with her bag of fruit. She's tired, but happy.",
-        "es": "María camina a casa con su bolsa de fruta. Está cansada, pero contenta.",
-        "de": "María geht mit ihrer Obsttasche nach Hause. Sie ist müde, aber zufrieden."
+        "hu": "Mária hazasétál gyümölccsel. Fáradt, de elégedett.",
+        "en": "María walks home with fruit. She's tired, but happy.",
+        "es": "María camina a casa con fruta. Está cansada, pero contenta.",
+        "de": "María geht mit Obst nach Hause. Sie ist müde, aber zufrieden."
       },
       "question": {
         "prompt": {
@@ -128,12 +128,12 @@
     },
     {
       "id": "s6",
-      "text": { "es": "En casa, su hermano mira la fruta fresca. La familia cena tomates y pan esa noche." },
+      "text": { "es": "Su hermano mira la fruta. La familia cena tomates y pan." },
       "translation": {
-        "hu": "Otthon a testvére megnézi a friss gyümölcsöt. A család aznap este paradicsomot és kenyeret vacsorázik.",
-        "en": "At home, her brother looks at the fresh fruit. The family has tomatoes and bread for dinner that night.",
-        "es": "En casa, su hermano mira la fruta fresca. La familia cena tomates y pan esa noche.",
-        "de": "Zu Hause schaut ihr Bruder das frische Obst an. Die Familie isst an diesem Abend Tomaten und Brot zum Abendessen."
+        "hu": "A testvére megnézi a gyümölcsöt. A család paradicsomot és kenyeret vacsorázik.",
+        "en": "Her brother looks at the fruit. The family has tomatoes and bread for dinner.",
+        "es": "Su hermano mira la fruta. La familia cena tomates y pan.",
+        "de": "Ihr Bruder schaut das Obst an. Die Familie isst Tomaten und Brot zum Abendessen."
       },
       "question": {
         "prompt": {
