@@ -117,3 +117,28 @@ export function buildBubbleRound(
 
   return { categorySet, categoryValue, items };
 }
+
+// FB162 (2026-08-28 browser playtest): the screen laid the bubbles out with the
+// word-rain lane helper, which splits the board into `count` columns. At 12-16
+// bubbles that is a ~25px lane for a 68px bubble, so every bubble of the round
+// overlapped in ONE row and the words were clipped to two letters. The board is
+// a grid instead: only as many columns as actually fit, and the extra rows start
+// below the board so the bubbles float up in waves ("12-16 buborék lebeg lassan").
+export const BUBBLE_SIZE = 68;
+export const BUBBLE_GAP = 12;
+
+export interface BubbleSlot {
+  x: number;
+  row: number;
+}
+
+export function bubbleColumns(boardWidth: number): number {
+  return Math.max(1, Math.floor(boardWidth / BUBBLE_SIZE));
+}
+
+export function bubbleSlot(index: number, boardWidth: number): BubbleSlot {
+  const cols = bubbleColumns(boardWidth);
+  const lane = boardWidth / cols;
+  const col = index % cols;
+  return { x: col * lane + (lane - BUBBLE_SIZE) / 2, row: Math.floor(index / cols) };
+}
