@@ -2193,6 +2193,145 @@ a maradék kereten.
 
 ---
 
+# 📋 Feedback, 2026-08-26/28 forduló (v3.0.32 + v3.1.0 telefon-teszt)
+
+Forrás: `Kimacha Feedback` sheet, a FB157 óta érkezett 7 sor.
+
+## ✅ FB158 + FB159 [P1 UX], Nem látszik, hogy új szót tanulok vagy régit ismétlek, KÉSZ (`46ff00c`)
+Idézetek (08-26 12:43, `word:the volleyball`): „kellene valami különbség, hogy tudjam,
+hogy most a régi szavakat ismételem, vagy az újakat tanulom"; majd (08-26 16:44,
+`word:belly`, 3.0.32): „még mindig nem látom, hogy most ismétlek vagy új szavakat
+tanulok. Ezt old meg".
+A 🌱 fejléc-jelvény eddig is ott volt, de az a NAPI KERETET számolja, nem az adott
+kártyáról szól. Most a kártya fölött álló, kitöltött pirula mondja meg:
+- `app/(tabs)/index.tsx`: `newTodayIds` megjegyzi, melyik szó lépett `reps === 0`
+  állapotban a sorba; a szó az egész munkamenetre „új" marad, különben a fázis-1 /
+  fázis-2 requeue (ott már `reps > 0`) félúton átbillentené a címkét.
+- Mindhárom kártyatípus fölött ott a pirula: 🌱 zöld „Új szó" / 🔁 kék „Ismétlés".
+- i18n ×4: `card.newWordTag`, `card.reviewTag`.
+
+## ✅ FB160 [P1 UX], Hosszú Check gomb, hüvelykkel elérhető nyitott billentyűzettel, KÉSZ (`7e5d55a`)
+Idézet (08-26 18:27, `word:son-in-law`): „alakítsd át a check gombot … hogy pont ott
+legyen … felnyílt billentyűzettel is meg lehessen nyomni meg ha egy kicsit jobbra
+lenne, akkor jobban elérném a jobb kezem hüvelyk ujjammal … lehet meg kellene
+csinálni, hogy hosszú legyen a gomb"
+Az FB5 óta a mező MELLETT volt egy kis ✓ négyzet. Most a mező és a gomb egymás alatt
+van: a gomb 82% széles, 54 pt magas, JOBBRA igazított sáv, felirata „✓ Ellenőrzés".
+Mind a két válaszmező kapja (gépelős kártya, ✏️ gyakorló mező), és a helyesírás-képernyő
+gombja is ugyanígy jobbra húzott hosszú sáv lett.
+
+## ✅ FB161 [P2], „Megváltoztattad az angol hangot?", KÉSZ (`9526a1d`)
+Idézet (08-26 18:31, `word:the grandson`): „megváltoztattad az angol hangot, mintha más
+lenne? ha véletlenül igen  változtasd vissza"
+Igen, mellékhatásként. Az FB144 második köre nyelvenként KONKRÉT hang-azonosítót
+tűzött ki (`voiceIdFor`, enhanced > default), hogy a spanyol es-MX legyen és a magyar
+ne angolul szóljon; az angol csak „vitette magát" ezzel, és lecserélődött a megszokott
+rendszerhangra. A `voiceIdFor` mostantól angolra `undefined`-ot ad, tehát a motor a
+saját alapértelmezett hangját használja. A locale-kezelés (FB144 lényege) változatlan.
+
+## ✅ FB162 [P0/P1], „A játékok bugosak, teszteld le őket", 4 HIBA JAVÍTVA (`a3ab54f`, `f624cba`, `85f3614`, `4295ce1`)
+Idézet (08-27 23:08, `word:to water`, v3.1.0): „waoo a jatekokeleggé bugosak wz elsőt
+próbáltam ki. Azt meg tudod csinálni, hogy elinditod a jatekot és játszod, és mint egy
+tesztelő megnézed mi a bug? yes or no"
+
+**Teszt-módszer (ismételhető, nem kell hozzá telefon és emulátor sem):** a repó web
+targete él (`react-native-web` + `database.web.ts`), ezért
+`npx expo export --platform web --output-dir <dir>` → `python3 -m http.server` →
+`agent-browser` (Playwright CLI) hajtja a UI-t. Az onboarding és a szótanulás
+végigkattintható, a `getLearnedPool` gate-je (phase ≥ 1) miatt a játékokhoz ~20-36
+gyakorolt szó kell, ezt a Beállítások „Napi új szó" felhúzása + egy nagy topic
+(Gyakori Igék, Idő) végigtanulása adja. A web DB memóriában él, tehát MINDEN
+böngésző-újratöltés nulláról indul: egy teszt = egy hosszú `agent-browser batch`.
+Korlát: a `PanResponder`-es húzás (szókereső) csak VALÓDI beviteli eseménnyel megy
+(`agent-browser drag`), a szintetikus touch-eseményeket a responder-rendszer eldobja.
+
+**1. hiba, P0, minden élet elfogyása KIFAGYASZTOTTA a képernyőt.** Három rossz
+koppintás a Szó-esőben → „Something went wrong — Cannot access 'X' before
+initialization", játék-vége kártya helyett. Ok: a `useGameSession.loseLife()` a
+`setLives` UPDATER FÜGGVÉNYÉN BELÜL hívta az `onLivesDepleted` visszahívást, a React
+pedig a render fázisban futtatja az updatereket, így a word-rain `() => finishRun()`
+closure-je egy még nem inicializált `const`-hoz nyúlt (TDZ). Az updater most tiszta, a
+játék-vége mellékhatások (`setOver` + callback) render UTÁN, effektben futnak. A
+bubble-pop ugyanezt a callback-alakot használja, azzal együtt javult.
+
+**2. hiba, P1, a buborékok EGY sorban, egymáson lógtak.** A bubble-pop a word-rain
+sáv-számolóját használta, ami a táblát `count` oszlopra osztja: 12-16 buboréknál ez
+~25 px sáv egy 68 px-es buboréknak, tehát az egész kör egy sorba torlódott és a szavak
+két betűre csonkolódtak („pe", „el a", „nece"). Új `bubbleSlot()` rácsra teszi őket
+(annyi oszlop, amennyi tényleg elfér, 390 dp-n 5), a további sorok a tábla ALATT
+indulnak és hullámokban úsznak fel, sor-arányos időtartammal (azonos sebesség).
+
+**3. hiba, P1, az eső szavak kilógtak a tábláról.** A word-rain fix 40 px-es
+fél-szélességgel pozicionált (`index * lane + lane / 2 - 40`), miközben a csempe olyan
+széles, mint a szava: 5-6 eső szónál az első csempe a tábla BAL SZÉLÉN KÍVÜL indult, és
+egy hosszú szó bármelyik beállításnál rálógott a szomszédjára. Most `fallingLane()`
+adja a sáv x-ét és szélességét, a csempe pontosan egy sáv széles, a szöveg középre
+zárt és egy sorra vágott.
+
+**4. hiba, P2, értelmetlen ccat-utasítás.** A „koppints arra, ami X ÉS Y" kérdés a
+bubble-pop TÖBBES SZÁMÚ nem-címkéjét („palabras femeninas") tette egyes számú keretbe:
+„Toca el que es Tiempo Y palabras femeninas." / „Koppints arra, ami Idő ÉS nőnemű
+szavak." Új `genderAdjF`/`genderAdjM` melléknevek ×4 nyelv és mondatnak is jó keret:
+„Toca la palabra del tema „Tiempo" que además sea femenina."
+
+**Végigjátszva, hibátlan:** Szó-eső (kör-lánc, kombó-pontozás, játék vége), Szókereső
+rács (mind a 6 szó BENNE van a rácsban, a húzás pontoz: 300 pont / 1-6), Sztori-mód
+(jelenet-lánc, kérdés-válasz), Tanácsadó beszélgetés (checklist-számláló indul),
+Ragozás-slot, Kakukktojás (10/10 végigjátszva), „Melyik a helyes?", Hasonló szavak
+(magyarázat → 4 kérdéses drill), Igaz vagy kamu? (állítás → forrásolt magyarázat),
+CCAT-felkészítő (kategória- és szöveges-feladat kérdések). Mondat-Tetris szándékosan
+„Hamarosan".
+
+**Nem sikerült végigvinni:** a Memóriapárosítót a bot nem tudta kipörgetni (a lapozás,
+a felfedés és a vissza-fordítás bizonyítottan jó, de a „minden pár megvan" záró
+képernyőt nem láttam) — ez maradt a telefonos ellenőrzésre.
+
+**Két megfigyelés, DÖNTÉSRE VÁR (nem javítottam):**
+- **„Ezt Már Tudom" szavai nem számítanak a játék-poolba.** A `buryCard` `buried = 1`-et
+  ír, a `getAllWordCards` pedig kiszűri a buried lapokat, tehát a Beállítások/fejléc
+  „Ismert Szavak: 20"-at mutat, a Játék fül meg ugyanakkor „1 szó van meg eddig, még 19
+  kell". Aki sokat nyom „Ezt Már Tudom"-ot, annak a játékok zárva maradnak. Kérdés:
+  számítson-e a buried szó ismertnek a játékokban (szerintem igen: pont hogy tudja).
+- **A Ragozás-slot alapból múlt időt is kérdez.** A `conjugation-slot` alapértelmezése
+  `presente: true` ÉS `indefinido: true`, tehát A0/A1-en olyan igeidőt kérdez
+  (`quise / quisiste / quisieron`), amit a kurzus még nem tanított. Kérdés: legyen-e az
+  alapértelmezés csak jelen idő, a többi a ⚙️-ben kapcsolható.
+
+## ✅ FB163 [P1 feature], Ismétlés közben egyesével csorogjanak be az új szavak, KÉSZ (`377e0a9`)
+Idézet (08-28 11:48, `word:the garden`, v3.1.0): „legyen úgy, hogy ha ismétlem a
+szavakat akkor is tegyen bele egy új szót azt nyomja végig a 3 típusát, és kozben
+menjen a régi szavak ismétlése majd közben, tegyen bele új szókat miközben ismételek
+de egyesével"
+- `lib/sessionQueue.ts`: `dripNewWords()` egyenletesen szórja szét az ÚJ szavakat az
+  ismétlések között (eddig a due-lekérdezés sorrendje döntött, ezért vagy a session
+  elején tömbösödtek, vagy minden ismétlés mögé kerültek). A kadencia ELŐTT fut, tehát
+  a 4:1 szó/mondat ritmus érintetlen.
+- `app/(tabs)/index.tsx`: a fázis-létra requeue-ja a sor VÉGE helyett 3 kártyával
+  később ejti vissza a szót, így EGY új szó járja végig a 3 típusát (kártya → fordított
+  kártya → gépelés), közben ismétlések jönnek, nem öt szó lépked párhuzamosan.
+- 5 teszt (`dripNewWords.test.ts`): egyenletes rés, nincs két új szó egymás után,
+  semmi nem vész el, üres esetek.
+
+## ✅ FB164 [info], „A `humid`-ról nem hiányzik a névelő?", KÉSZ (jegyzet, `7f1ba4b`)
+Idézet (08-28 12:16, `word:humid`): „ennek nem hiányzik a nevelője?"
+Nem hiányzik: a `húmedo` MELLÉKNÉV, szótári névelőt csak a főnevek kapnak. A kártya
+ℹ️ jegyzetet kapott ×4 nyelven az egyeztetéssel (`el aire húmedo`, `la ropa húmeda`,
+`los días húmedos`) és a hozzá tartozó főnévvel (`la humedad`).
+
+## Elfogadási kritérium (FB158–FB164 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **448/448** ✅ (429 → 448: +5 drip,
+  +1 game-session TDZ, +4 buborék-rács, +9 word-rain sáv, −0).
+- `node scripts/audit-corpus.mjs` → P1=0, P2=0 ✅ (a `humid` jegyzet nem mozdít adatot).
+- Web-playtest újrafuttatva a javítások után: a Szó-eső élet-vesztésre a játék-vége
+  kártyát mutatja, a buborékok 5 oszlopos rácsban olvashatók, a Szó-eső csempéi a
+  táblán belül maradnak.
+- ⏳ Eszköz-verify a következő APK-n: a kártya fölött ott a 🌱/🔁 pirula; a Check gomb
+  hosszú és jobbra húzott, nyitott billentyűzettel is elérhető; az angol hang a régi;
+  ismétlős körben EGYESÉVEL jön az új szó és végigmegy a 3 típusán; a Memóriapárosító
+  kipörgethető a végéig.
+
+---
+
 # 🛠️ Emulátor + release-csapdák (2026-08-15)
 
 **Android emulátor UI-ellenőrzéshez.** AVD `kimacha_test` (Pixel 6, Android 35).
