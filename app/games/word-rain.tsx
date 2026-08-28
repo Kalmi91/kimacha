@@ -11,7 +11,7 @@ import { normalizeWordToken, type Level } from '@/data/words';
 import { getGameDef, gameName } from '@/lib/games/registry';
 import { getLearnedPool, type PoolEntry } from '@/lib/games/vocabPool';
 import type { DistractMode } from '@/lib/games/distract';
-import { buildFallingRound, type WordRainDirection } from '@/lib/games/wordRain';
+import { buildFallingRound, fallingLane, type WordRainDirection } from '@/lib/games/wordRain';
 import { useGameSession } from '@/lib/games/session';
 import { comboMultiplier, getGameBest, recordGameResult } from '@/lib/games/scoring';
 import { hashString } from '@/lib/shuffle';
@@ -40,11 +40,7 @@ interface FallingTile {
   isTarget: boolean;
   isNew: boolean;
   x: number;
-}
-
-function laneX(index: number, count: number, boardWidth: number): number {
-  const lane = boardWidth / count;
-  return index * lane + lane / 2 - 40;
+  width: number; // FB162: the tile owns its lane, so long words cannot overlap
 }
 
 function FallingWordTile({
@@ -75,9 +71,10 @@ function FallingWordTile({
   const style = useAnimatedStyle(() => ({ transform: [{ translateY: translateY.value }] }));
 
   return (
-    <Animated.View style={[styles.fallingTile, { left: tile.x }, style]}>
+    <Animated.View style={[styles.fallingTile, { left: tile.x, width: tile.width }, style]}>
       <Pressable onPress={() => onTap(tile.id)} hitSlop={6}>
         <Text
+          numberOfLines={1}
           style={[
             styles.fallingText,
             { color: colors.text },
@@ -203,14 +200,18 @@ export default function WordRainScreen() {
         seed: hashString(`${entry.wordId}:${roundKey}`),
       });
 
-      const newTiles: FallingTile[] = round.words.map((w, i) => ({
-        id: `${roundKey}-${i}`,
-        wordId: w.wordId,
-        text: w.text,
-        isTarget: w.isTarget,
-        isNew: w.isTarget && entry.isNew,
-        x: laneX(i, round.words.length, boardWidth),
-      }));
+      const newTiles: FallingTile[] = round.words.map((w, i) => {
+        const lane = fallingLane(i, round.words.length, boardWidth);
+        return {
+          id: `${roundKey}-${i}`,
+          wordId: w.wordId,
+          text: w.text,
+          isTarget: w.isTarget,
+          isNew: w.isTarget && entry.isNew,
+          x: lane.x,
+          width: lane.width,
+        };
+      });
 
       setPrompt(round.prompt);
       setTiles(newTiles);
@@ -516,6 +517,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     paddingHorizontal: 6,
     paddingVertical: 4,
+    textAlign: 'center',
   },
   promptBar: {
     width: '100%',
