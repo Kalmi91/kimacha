@@ -2322,6 +2322,9 @@ Nem hiányzik: a `húmedo` MELLÉKNÉV, szótári névelőt csak a főnevek kapn
 - `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **448/448** ✅ (429 → 448: +5 drip,
   +1 game-session TDZ, +4 buborék-rács, +9 word-rain sáv, −0).
 - `node scripts/audit-corpus.mjs` → P1=0, P2=0 ✅ (a `humid` jegyzet nem mozdít adatot).
+- `npx expo lint`: 70 probléma (46 error, 24 warning) ✅ — ez a 3.1.0 játék-kiadás óta az
+  ALAPVONAL (a régi „18" a Game tab előtti állapot), a forduló javításai 0-t tettek hozzá
+  (`ad626d9`-en lemérve, ugyanaz a 70).
 - Web-playtest újrafuttatva a javítások után: a Szó-eső élet-vesztésre a játék-vége
   kártyát mutatja, a buborékok 5 oszlopos rácsban olvashatók, a Szó-eső csempéi a
   táblán belül maradnak.
