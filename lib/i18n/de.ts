@@ -188,7 +188,9 @@ export default {
       anagramExplanation: (word: string) => `Das richtige Wort ist: ${word}.`,
       numberSeriesPrompt: 'Was kommt als Nächstes in der Reihe?',
       numberSeriesExplanation: (answer: string) => `Die Reihe geht weiter mit: ${answer}.`,
-      instructionPrompt: (topicLabel: string, genderLabel: string) => `Tippe auf das Wort, das ${topicLabel} UND ${genderLabel} ist.`,
+      genderAdjF: 'weiblich',
+      genderAdjM: 'männlich',
+      instructionPrompt: (topicLabel: string, genderAdj: string) => `Tippe auf das Wort aus "${topicLabel}", das außerdem ${genderAdj} ist.`,
       instructionExplanation: (word: string, topicLabel: string, genderLabel: string) => `Das richtige Wort ist: ${word} (${topicLabel}, ${genderLabel}).`,
       wordProblemCalc: (a: number, opSymbol: string, b: number, answer: number) => `${a} ${opSymbol} ${b} = ${answer}`,
       typeLabels: {
