@@ -18,7 +18,7 @@ import { capNewWords, newWordsLeftToday, newWordIntake, newWordPauseReason, type
 import { borrowNewWords, countNewWords, nextTopicWithNewWords } from '@/lib/topicRotation';
 import { wordPhase, phaseShape, type WordPhase } from '@/lib/wordPhase';
 import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
-import { buildQueue, applyCadence, type DueItem } from '@/lib/sessionQueue';
+import { buildQueue, applyCadence, dripNewWords, type DueItem } from '@/lib/sessionQueue';
 import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
 import { cardIcon } from '@/lib/cardIcons';
@@ -388,7 +388,7 @@ export default function LearnScreen() {
     const rows = useTopics
       ? await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL)
       : await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
-    const items = applyCadence(capNewWords(buildQueue(rows, learned), intake), wordsOnly, learned);
+    const items = applyCadence(dripNewWords(capNewWords(buildQueue(rows, learned), intake)), wordsOnly, learned);
     applyQueueSupply(items, budget);
 
     const streakData = await db.getStreak();
@@ -679,7 +679,7 @@ export default function LearnScreen() {
     }
 
     const wordsOnly2 = await db.getWordsOnly();
-    const newItems = applyCadence(capNewWords(buildQueue(newRows, learned), intake2), wordsOnly2, learned);
+    const newItems = applyCadence(dripNewWords(capNewWords(buildQueue(newRows, learned), intake2)), wordsOnly2, learned);
     applyQueueSupply(newItems, budget2);
 
     if (newItems.length === 0) {
@@ -915,13 +915,22 @@ export default function LearnScreen() {
     gradeBackground(item, f.repeat(item.card, new Date())[Rating.Again].card, false, startTime);
   };
 
-  // Replaces the current card with its next-phase twin at the back of the queue
+  // Replaces the current card with its next-phase twin a few cards later
   // (same index bookkeeping as requeueCurrent, see its comment).
+  // FB163: the twin used to go to the very BACK, so with several new words in
+  // flight the learner walked five ladders at once. A short gap of review cards
+  // keeps exactly one new word in progress ("azt nyomja végig a 3 típusát, és
+  // közben menjen a régi szavak ismétlése ... de egyesével") while still putting
+  // real distance between the same word's two sightings.
+  const PHASE_GAP = 3;
   const requeueAtPhase = (item: DueItem, card: Card, phase: WordPhase) => {
     const shape = phaseShape(phase);
     const nextItem: DueItem = { ...item, card, isTyping: shape.isTyping, typingDirection: shape.typingDirection };
     const rest = queue.filter((_, i) => i !== currentIndex);
-    setQueue([...rest, nextItem]);
+    const insertAt = Math.min(rest.length, currentIndex + PHASE_GAP);
+    const next = [...rest];
+    next.splice(insertAt, 0, nextItem);
+    setQueue(next);
     if (rest.length === 0) setCurrentIndex(0);
     resetCardState();
   };
