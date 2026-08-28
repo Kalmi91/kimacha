@@ -313,7 +313,9 @@ export default function CcatScreen() {
       }
       case 'instruction': {
         const tLabel = topicLabel(lvl, target, item.topicId, promptLangDisplay);
-        const gLabel = genderLabel(item.gender);
+        // FB162: the ADJECTIVE ("feminine"), not bubble-pop's plural noun phrase
+        // ("feminine words"), which turned this prompt into a broken sentence.
+        const gLabel = item.gender === 'f' ? promptStrings.genderAdjF : promptStrings.genderAdjM;
         const correct = item.options[item.correctIndex];
         return {
           kind,

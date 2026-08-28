@@ -194,8 +194,12 @@ export default {
       anagramExplanation: (word: string) => `A helyes szó: ${word}.`,
       numberSeriesPrompt: 'Mi jön a sorozatban?',
       numberSeriesExplanation: (answer: string) => `A sorozat folytatása: ${answer}.`,
-      instructionPrompt: (topicLabel: string, genderLabel: string) => `Koppints arra, ami ${topicLabel} ÉS ${genderLabel}.`,
-      instructionExplanation: (word: string, topicLabel: string, genderLabel: string) => `A helyes szó: ${word} (${topicLabel}, ${genderLabel}).`,
+      // FB162: a nem-címke a bubble-pop TÖBBES SZÁMÚ kifejezése volt („nőnemű szavak"),
+      // egyes számú keretbe illesztve értelmetlen mondat lett belőle.
+      genderAdjF: 'nőnemű',
+      genderAdjM: 'hímnemű',
+      instructionPrompt: (topicLabel: string, genderAdj: string) => `Koppints arra a szóra, amelyik „${topicLabel}" témájú ÉS ${genderAdj}.`,
+      instructionExplanation: (word: string, topicLabel: string, genderAdj: string) => `A helyes szó: ${word} (${topicLabel}, ${genderAdj}).`,
       wordProblemCalc: (a: number, opSymbol: string, b: number, answer: number) => `${a} ${opSymbol} ${b} = ${answer}`,
       typeLabels: {
         analogy: 'Analógia',
