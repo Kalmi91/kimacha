@@ -23,6 +23,9 @@ export default {
     skip: 'Überspringen',
     // FB139: die Karte kommt aus einem anderen Thema, um das Tageskontingent zu füllen.
     fromTopic: (topic: string) => `Aus einem anderen Thema: ${topic}`,
+    // FB158/FB159: die Karte sagt, ob es ein NEUES Wort oder eine Wiederholung ist.
+    newWordTag: '🌱 Neues Wort',
+    reviewTag: '🔁 Wiederholung',
     // FB150: ein Tippen auf ein Wort des Satzes legt es in die Rechtschreibliste.
     spellingTapHint: 'Tippe ein Wort an, um seine Schreibung zu üben',
     spellingAddedWord: (word: string) => `✓ "${word}" ist in deiner Rechtschreibliste`,

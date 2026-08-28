@@ -23,6 +23,9 @@ export default {
     skip: 'Saltar',
     // FB139: la tarjeta viene de otro tema para completar el cupo de palabras nuevas.
     fromTopic: (topic: string) => `De otro tema: ${topic}`,
+    // FB158/FB159: la tarjeta dice si es una palabra NUEVA o un repaso.
+    newWordTag: '🌱 Palabra nueva',
+    reviewTag: '🔁 Repaso',
     // FB150: al tocar una palabra de la frase, se guarda para practicar la escritura.
     spellingTapHint: 'Toca una palabra para practicar su escritura',
     spellingAddedWord: (word: string) => `✓ "${word}" está en tu lista de escritura`,

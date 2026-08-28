@@ -23,6 +23,9 @@ export default {
     skip: 'Kihagyás',
     // FB139: a kártya másik témából jött, hogy kijöjjön a napi új szó keret.
     fromTopic: (topic: string) => `Másik témából: ${topic}`,
+    // FB158/FB159: a kártya megmondja, hogy ÚJ szót tanulsz-e vagy régit ismételsz.
+    newWordTag: '🌱 Új szó',
+    reviewTag: '🔁 Ismétlés',
     // FB150: a mondat bármelyik szavára koppintva a szó a helyesírás-listába kerül.
     spellingTapHint: 'Koppints egy szóra: bekerül a helyesírás-gyakorlásba',
     spellingAddedWord: (word: string) => `✓ „${word}" a helyesírás-listában`,
