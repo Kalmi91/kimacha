@@ -85,6 +85,13 @@ export default function LearnScreen() {
   // half-learned pile behind a pause, and the reason for the pause, so the Done
   // screen can say what the session was made of and why.
   const [sessionMix, setSessionMix] = useState<{ newWords: number; reviews: number }>({ newWords: 0, reviews: 0 });
+  // FB158/FB159, Kálmán 2026-08-26 (word:"the volleyball", majd word:"belly"):
+  // "kellene valami különbség, hogy tudjam, hogy most a régi szavakat ismételem,
+  // vagy az újakat tanulom", kétszer kérve. A 🌱 fejléc-jelvény csak a NAPI keretet
+  // számolja, arról nem szól, hogy az ÉPP LÁTOTT kártya új-e. Egy szó, ami reps === 0
+  // állapotban lépett a sorba, az egész munkamenetre "új" marad, különben a fázis-1 /
+  // fázis-2 requeue (ott már reps > 0) félúton átbillentené a címkét.
+  const [newTodayIds, setNewTodayIds] = useState<Set<number>>(() => new Set());
   const [unlearnedCount, setUnlearnedCount] = useState(0);
   const [pauseReason, setPauseReason] = useState<NewWordPause>('none');
   const [headerBottom, setHeaderBottom] = useState(HEADER_RESERVE_MIN);
@@ -217,6 +224,12 @@ export default function LearnScreen() {
     setSessionMix({
       newWords: items.filter(isNew).length,
       reviews: items.filter(item => !isNew(item)).length,
+    });
+    // FB158/FB159: remember which words arrived brand new, the per-card tag reads this.
+    setNewTodayIds((prev) => {
+      const next = new Set(prev);
+      items.filter(isNew).forEach((item) => next.add(item.wordId));
+      return next;
     });
     setUnlearnedCount(budget.unlearned ?? 0);
     setPauseReason(newWordPauseReason(budget));
@@ -1123,6 +1136,17 @@ export default function LearnScreen() {
     </View>
   );
 
+  // FB158/FB159: the tag sits right above the card, in the interface language, so
+  // "am I learning or repeating?" is answered without opening the Done screen.
+  const isNewCard = newTodayIds.has(current.wordId);
+  const modeBanner = (
+    <View style={[styles.modeChip, { backgroundColor: isNewCard ? '#22C55E' : '#38BDF8' }]}>
+      <Text style={styles.modeChipText} numberOfLines={1} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>
+        {isNewCard ? s.card.newWordTag : s.card.reviewTag}
+      </Text>
+    </View>
+  );
+
   // FB139: a card borrowed from a neighbouring topic names its own topic, so the
   // header above it is not read as the word's home ("csak akkor amikor a másik
   // témakör szava van akkor jelezze, hogy melyik szó az").
@@ -1239,6 +1263,7 @@ export default function LearnScreen() {
         {progressMeter}
         {examBanner}
         {borrowedBanner}
+        {modeBanner}
 
         <EasySentenceCard
           key={`${current.wordId}-${currentIndex}`}
@@ -1292,6 +1317,7 @@ export default function LearnScreen() {
         {progressMeter}
         {examBanner}
         {borrowedBanner}
+        {modeBanner}
 
         {/* FB143, Kálmán 2026-08-19: "nem megy le a billentyűzet ha félre
             kattintok". The card is the area beside the field, so a tap on it
@@ -1455,6 +1481,7 @@ export default function LearnScreen() {
       {progressMeter}
       {examBanner}
       {borrowedBanner}
+      {modeBanner}
 
       <Pressable
         style={[styles.card, { backgroundColor: colors.card }]}
@@ -1927,6 +1954,19 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     textAlign: 'center',
     marginBottom: 6,
+  },
+  // FB158/FB159: filled pill, so the new/review state reads at a glance in both themes.
+  modeChip: {
+    alignSelf: 'center',
+    paddingHorizontal: 14,
+    paddingVertical: 5,
+    borderRadius: 999,
+    marginBottom: 10,
+  },
+  modeChipText: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: '#FFFFFF',
   },
   topicCount: {
     fontSize: 12,

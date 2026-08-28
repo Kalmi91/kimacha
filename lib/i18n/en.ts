@@ -23,6 +23,9 @@ export default {
     skip: 'Skip',
     // FB139: the card was borrowed from another topic to fill the new-word budget.
     fromTopic: (topic: string) => `From another topic: ${topic}`,
+    // FB158/FB159: the card says whether this is a NEW word or a review.
+    newWordTag: '🌱 New word',
+    reviewTag: '🔁 Review',
     // FB150: tapping any word of the sentence files it into the spelling list.
     spellingTapHint: 'Tap a word to add it to spelling practice',
     spellingAddedWord: (word: string) => `✓ "${word}" is in your spelling list`,
