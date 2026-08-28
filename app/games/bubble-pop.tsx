@@ -11,7 +11,7 @@ import { findWordById, normalizeWordToken, type Level } from '@/data/words';
 import { getTopicsForLevel, getTopicName } from '@/data/topics';
 import { getGameDef, gameName } from '@/lib/games/registry';
 import { getLearnedPool } from '@/lib/games/vocabPool';
-import { buildBubbleRound, type BubbleCategorySet, type BubbleItem, type BubbleWordMeta } from '@/lib/games/bubblePop';
+import { bubbleSlot, BUBBLE_SIZE, BUBBLE_GAP, buildBubbleRound, type BubbleCategorySet, type BubbleItem, type BubbleWordMeta } from '@/lib/games/bubblePop';
 import { hashString } from '@/lib/shuffle';
 import { useGameSession } from '@/lib/games/session';
 import { comboMultiplier, getGameBest, recordGameResult } from '@/lib/games/scoring';
@@ -36,6 +36,7 @@ const START_LIVES = 5;
 interface BubbleTileState extends BubbleItem {
   id: string;
   x: number;
+  row: number; // FB162: grid row, the bubbles of row N start N rows below the board
 }
 
 function posLabel(pos: string, sPos: { posNoun: string; posVerb: string; posAdj: string; posAdv: string }): string {
@@ -43,11 +44,6 @@ function posLabel(pos: string, sPos: { posNoun: string; posVerb: string; posAdj:
   if (pos === 'verb') return sPos.posVerb;
   if (pos === 'adj') return sPos.posAdj;
   return sPos.posAdv;
-}
-
-function laneX(index: number, count: number, boardWidth: number): number {
-  const lane = boardWidth / count;
-  return index * lane + lane / 2 - 34;
 }
 
 function Bubble({
@@ -69,10 +65,14 @@ function Bubble({
   onReveal: (id: string) => void;
   colors: { card: string; tint: string; text: string; tabIconDefault: string };
 }) {
-  const translateY = useSharedValue(boardHeight - 20);
+  const startY = boardHeight - 20 + bubble.row * (BUBBLE_SIZE + BUBBLE_GAP);
+  const translateY = useSharedValue(startY);
 
   useEffect(() => {
-    translateY.value = withTiming(-50, { duration: durationMs, easing: Easing.linear }, (finished) => {
+    // FB162: a lower row has further to travel, so its duration grows with the
+    // distance and every bubble drifts at the same speed.
+    const duration = Math.round((durationMs * (startY + 50)) / (boardHeight + 30));
+    translateY.value = withTiming(-50, { duration, easing: Easing.linear }, (finished) => {
       if (finished) runOnJS(onReachTop)(bubble.id);
     });
     return () => cancelAnimation(translateY);
@@ -238,7 +238,10 @@ export default function BubblePopScreen() {
     setCategoryLabel(categoryDisplay(built.categorySet, built.categoryValue));
     const items = built.items;
     setBubbles(
-      items.map((item, i) => ({ ...item, id: `${roundKeyRef.current}-${i}`, x: laneX(i, items.length, boardWidth) }))
+      items.map((item, i) => {
+        const slot = bubbleSlot(i, boardWidth);
+        return { ...item, id: `${roundKeyRef.current}-${i}`, x: slot.x, row: slot.row };
+      })
     );
 
     if (timeLimit !== 'none') {
