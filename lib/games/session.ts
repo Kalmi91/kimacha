@@ -67,16 +67,22 @@ export function useGameSession(opts: GameSessionOptions = {}): GameSessionApi {
 
   const addScore = useCallback((points: number) => setScore((v) => v + points), []);
 
+  // FB162, Kálmán 2026-08-27 ("a jatekok eleggé bugosak"): losing the last life
+  // crashed the screen with "Cannot access 'X' before initialization". The
+  // depletion callback used to run INSIDE the setLives updater, and React runs
+  // updaters during the render phase, so `() => finishRun()` reached a `const`
+  // the component body had not initialised yet (TDZ). The updater is pure now
+  // and the game-over side effects happen after the render, in an effect.
   const loseLife = useCallback(() => {
-    setLives((v) => {
-      const next = Math.max(0, v - 1);
-      if (next === 0 && startLives > 0) {
-        setOver(true);
-        onLivesDepletedRef.current?.();
-      }
-      return next;
-    });
-  }, [startLives]);
+    setLives((v) => Math.max(0, v - 1));
+  }, []);
+
+  useEffect(() => {
+    if (startLives > 0 && lives === 0 && !over) {
+      setOver(true);
+      onLivesDepletedRef.current?.();
+    }
+  }, [lives, over, startLives]);
 
   const bumpCombo = useCallback(() => setCombo((v) => v + 1), []);
   const resetCombo = useCallback(() => setCombo(0), []);

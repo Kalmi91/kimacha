@@ -54,6 +54,24 @@ describe('useGameSession', () => {
     expect(onLivesDepleted).toHaveBeenCalledTimes(1);
   });
 
+  // FB162: the screens declare their game-over helper AFTER useGameSession, so the
+  // callback must not run while the component body is still executing.
+  it('runs the depletion callback after the render, not inside the state updater', () => {
+    const seen: string[] = [];
+    const { result } = renderHook(() => {
+      const session = useGameSession({ startLives: 1, onLivesDepleted: () => seen.push(finishRun()) });
+      const finishRun = () => 'finished';
+      return session;
+    });
+
+    act(() => result.current.loseLife());
+    expect(seen).toEqual(['finished']);
+    expect(result.current.over).toBe(true);
+
+    act(() => result.current.loseLife());
+    expect(seen).toEqual(['finished']);
+  });
+
   it('startLives: 0 (untimed/no-fail games) never ends from loseLife', () => {
     const { result } = renderHook(() => useGameSession({ startLives: 0 }));
     act(() => result.current.loseLife());
