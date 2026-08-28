@@ -106,6 +106,13 @@ export function speechTag(locale: string): string {
 // es-MX must not be handed the Castilian voice just because it came first in the
 // list. Exact region wins, then any voice of the same language.
 export function voiceIdFor(locale: string): string | undefined {
+  // FB161, Kálmán 2026-08-26 (`word:the grandson`): "megváltoztattad az angol
+  // hangot, mintha más lenne? ha véletlenül igen változtasd vissza". The FB144
+  // pinning was aimed at Spanish (es-MX, not Castilian) and Hungarian; English
+  // only came along for the ride and swapped the familiar system voice for an
+  // "enhanced" one. English is therefore left to the engine's own default again;
+  // the locale still goes out, so nothing else about FB144 changes.
+  if (baseLanguage(locale) === 'en') return undefined;
   const candidates = voicesByLanguage?.get(baseLanguage(locale));
   if (!candidates?.length) return undefined;
   const wanted = normalizeTag(locale);
