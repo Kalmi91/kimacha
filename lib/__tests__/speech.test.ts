@@ -129,7 +129,9 @@ describe('what actually reaches the engine', () => {
     speak('brother', 'en-US');
     const [first, second] = (mocked.speak as jest.Mock).mock.calls;
     expect(first[1].voice).toBe('es-es-x-eed');
-    expect(second[1].voice).toBe('en-us-x-sfg');
+    // FB161: English is no longer pinned, the LANGUAGE still separates the cards.
+    expect(second[1].voice).toBeUndefined();
+    expect(second[1].language).toBe('en-US');
   });
 });
 
@@ -167,6 +169,17 @@ describe('region-aware voice pick', () => {
       { language: 'es-ES', identifier: 'es-es-enhanced', quality: 'Enhanced' },
     ]);
     expect(voiceIdFor('es-MX')).toBe('es-mx-enhanced');
+  });
+
+  // FB161: English keeps the device's default voice, no pinning.
+  it('never pins an english voice', async () => {
+    await withVoiceList([
+      { language: 'en-US', identifier: 'en-us-enhanced', quality: 'Enhanced' },
+      { language: 'en-GB', identifier: 'en-gb-basic', quality: 'Default' },
+    ]);
+    expect(hasVoiceFor('en-US')).toBe(true);
+    expect(voiceIdFor('en-US')).toBeUndefined();
+    expect(voiceIdFor('en-GB')).toBeUndefined();
   });
 
   it('counts an identifier-less voice as the language being present, but pins nothing', async () => {
