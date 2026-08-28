@@ -78,3 +78,21 @@ export function buildFallingRound(entry: PoolEntry, pool: PoolEntry[], opts: Bui
 
   return { prompt, words };
 }
+
+// FB162 (2026-08-28 browser playtest): the tiles were positioned with a fixed
+// 40px half-width guess (`index * lane + lane / 2 - 40`), while the tile is as
+// wide as its word. At 5-6 falling words the first tile started OUTSIDE the
+// board on the left and long words overlapped their neighbours. A tile now owns
+// its lane: it starts at the lane edge and is exactly one lane wide, so nothing
+// overlaps and nothing leaves the board, whatever the word or the tile count.
+export const LANE_GUTTER = 4;
+
+export interface FallingLane {
+  x: number;
+  width: number;
+}
+
+export function fallingLane(index: number, count: number, boardWidth: number): FallingLane {
+  const lane = boardWidth / Math.max(1, count);
+  return { x: index * lane + LANE_GUTTER, width: Math.max(0, lane - LANE_GUTTER * 2) };
+}
