@@ -1347,7 +1347,7 @@ export default function LearnScreen() {
           <View style={styles.inputRow}>
             <TextInput
               ref={inputRef}
-              style={[styles.input, { flex: 1, width: 'auto', color: colors.text, borderColor: typingResult ? resultColor : colors.tabIconDefault }]}
+              style={[styles.input, { width: '100%', color: colors.text, borderColor: typingResult ? resultColor : colors.tabIconDefault }]}
               placeholder={s.card.typeTranslation}
               placeholderTextColor={colors.tabIconDefault}
               value={typedAnswer}
@@ -1361,7 +1361,7 @@ export default function LearnScreen() {
               style={[styles.inlineCheckBtn, { backgroundColor: revealed && typingResult === 'wrong' ? '#1D4ED8' : '#38BDF8' }]}
               onPress={revealed ? handleTypingNext : handleCheck}
             >
-              <Text style={styles.inlineCheckText}>{revealed ? '→' : '✓'}</Text>
+              <Text style={styles.inlineCheckText}>{revealed ? '→' : `✓ ${s.card.check}`}</Text>
             </Pressable>
           </View>
 
@@ -1552,7 +1552,7 @@ export default function LearnScreen() {
                     same inline row the main typing card got in FB5. */}
                 <View style={styles.inputRow}>
                   <TextInput
-                    style={[styles.input, { flex: 1, width: 'auto', color: colors.text, borderColor: colors.tabIconDefault }]}
+                    style={[styles.input, { width: '100%', color: colors.text, borderColor: colors.tabIconDefault }]}
                     placeholder={s.card.typeTranslation}
                     placeholderTextColor={colors.tabIconDefault}
                     value={practiceText}
@@ -1567,7 +1567,7 @@ export default function LearnScreen() {
                     {...answerInputProps}
                   />
                   <Pressable style={[styles.inlineCheckBtn, { backgroundColor: '#38BDF8' }]} onPress={checkPractice}>
-                    <Text style={styles.inlineCheckText}>✓</Text>
+                    <Text style={styles.inlineCheckText}>{`✓ ${s.card.check}`}</Text>
                   </Pressable>
                 </View>
               </View>
@@ -1833,16 +1833,20 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 8,
   },
+  // FB160, Kálmán 2026-08-26: the field and the check button stack, the button is
+  // a long bar the right thumb reaches with the keyboard open.
   inputRow: {
     width: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: 'column',
+    alignItems: 'stretch',
     gap: 8,
   },
   inlineCheckBtn: {
-    marginTop: 8,
-    borderRadius: 12,
-    paddingVertical: 14,
+    alignSelf: 'flex-end',
+    width: '82%',
+    minHeight: 54,
+    borderRadius: 14,
+    paddingVertical: 16,
     paddingHorizontal: 16,
     alignItems: 'center',
     justifyContent: 'center',
