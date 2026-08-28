@@ -82,6 +82,29 @@ export function buildQueue(rows: any[], lang: string): DueItem[] {
     .filter((item: DueItem) => !!item.word);
 }
 
+// FB163, Kálmán 2026-08-28 (`word:the garden`): "legyen úgy, hogy ha ismétlem a
+// szavakat akkor is tegyen bele egy új szót azt nyomja végig a 3 típusát, és közben
+// menjen a régi szavak ismétlése ... de egyesével". New words arrived in whatever
+// order the due query handed them over, so a session either opened with a block of
+// new words or hid them behind every review. They are now spread evenly through the
+// reviews: one new word, then a stretch of old ones, then the next new word. The
+// ladder itself (phase 0/1/2) is walked in-session by index.tsx.
+export function dripNewWords(items: DueItem[]): DueItem[] {
+  const isNew = (item: DueItem) => item.type === 'word' && (item.card.reps ?? 0) === 0;
+  const fresh = items.filter(isNew);
+  const rest = items.filter((item) => !isNew(item));
+  if (!fresh.length || !rest.length) return items;
+  const gap = Math.max(1, Math.floor(rest.length / fresh.length));
+  const out: DueItem[] = [];
+  let fi = 0;
+  for (let i = 0; i < rest.length; i++) {
+    if (fi < fresh.length && i % gap === 0) out.push(fresh[fi++]);
+    out.push(rest[i]);
+  }
+  while (fi < fresh.length) out.push(fresh[fi++]);
+  return out;
+}
+
 export function applyCadence(items: DueItem[], wordsOnly: boolean, lang: string): DueItem[] {
   if (wordsOnly) {
     // FB24/26/27: words only, no sentences. Respect each word's natural phase
