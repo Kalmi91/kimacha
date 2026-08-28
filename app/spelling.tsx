@@ -271,11 +271,16 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '600',
   },
+  // FB160: long bar, biased right, so the right thumb reaches it with the keyboard up.
   checkBtn: {
+    alignSelf: 'flex-end',
+    width: '82%',
+    minHeight: 54,
     marginTop: 24,
     paddingVertical: 16,
     borderRadius: 14,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   checkBtnText: {
     color: '#FFFFFF',
