@@ -2286,12 +2286,26 @@ CCAT-felkészítő (kategória- és szöveges-feladat kérdések). Mondat-Tetris
 a felfedés és a vissza-fordítás bizonyítottan jó, de a „minden pár megvan" záró
 képernyőt nem láttam) — ez maradt a telefonos ellenőrzésre.
 
-**Két megfigyelés, DÖNTÉSRE VÁR (nem javítottam):**
-- **„Ezt Már Tudom" szavai nem számítanak a játék-poolba.** A `buryCard` `buried = 1`-et
-  ír, a `getAllWordCards` pedig kiszűri a buried lapokat, tehát a Beállítások/fejléc
-  „Ismert Szavak: 20"-at mutat, a Játék fül meg ugyanakkor „1 szó van meg eddig, még 19
-  kell". Aki sokat nyom „Ezt Már Tudom"-ot, annak a játékok zárva maradnak. Kérdés:
-  számítson-e a buried szó ismertnek a játékokban (szerintem igen: pont hogy tudja).
+**Egy megfigyelés MEGOLDVA, egy DÖNTÉSRE VÁR:**
+- ✅ **„Ezt Már Tudom" szavai nem számítottak a játék-poolba** — KÉSZ (`97d599d`).
+  A `buryCard` `buried = 1`-et ír, a `getAllWordCards` pedig kiszűrte a buried lapokat,
+  tehát a fejléc „Ismert Szavak: 20"-at mutatott, a Játék fül meg ugyanakkor „1 szó van
+  meg eddig, még 19 kell". Kálmán döntése (2026-08-28): „kerüljön be de ne azokat
+  priorizálja. Nem baj ha benne van vagy ismert, de pont az lenne a lényege a
+  játékoknak hogy amivel aktuálisan szenvedsz sző azokat hozza fel és azokat
+  gyakorold." Megvalósítás:
+  - `getAllWordCards` visszaadja a buried lapokat is, `buried` jelzővel (natív ÉS web).
+  - `vocabPool`: minden entry kap `known`-t és egy `struggle` súlyt
+    (`struggleWeight`: egy lapse duplán számít, a befejezetlen fázis-létra egyszer,
+    a buried szó 0.25, a még nem látott top-up szó 0.5).
+  - A pool SÚLYOZOTT véletlen sorrendben jön vissza (`weightedShuffle`,
+    Efraimidis-Spirakis), tehát amelyik játék a lista elejéből vesz, az azt gyakoroltatja,
+    amivel a tanuló épp szenved; a word-rain a kör célszavát `pickStruggler`-rel húzza
+    (súly-arányos), nem egyenletesen.
+  - MEGJEGYZÉS a számláláshoz: a fejléc „Ismert Szavak" egy `COUNT(*)` a kártya-sorokon
+    (`(state >= 2 AND reps - lapses >= 3) OR buried = 1`), tehát a másodszori „Ezt Már
+    Tudom" NEM növeli újra ugyanazt a szót, és a buried kártya a due-lekérdezésből is ki
+    van zárva (`buried = 0` szűrő), tehát ismétlésre sem jön vissza.
 - **A Ragozás-slot alapból múlt időt is kérdez.** A `conjugation-slot` alapértelmezése
   `presente: true` ÉS `indefinido: true`, tehát A0/A1-en olyan igeidőt kérdez
   (`quise / quisiste / quisieron`), amit a kurzus még nem tanított. Kérdés: legyen-e az
@@ -2319,8 +2333,8 @@ Nem hiányzik: a `húmedo` MELLÉKNÉV, szótári névelőt csak a főnevek kapn
 `los días húmedos`) és a hozzá tartozó főnévvel (`la humedad`).
 
 ## Elfogadási kritérium (FB158–FB164 forduló)
-- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **448/448** ✅ (429 → 448: +5 drip,
-  +1 game-session TDZ, +4 buborék-rács, +9 word-rain sáv, −0).
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **457/457** ✅ (429 → 457: +5 drip,
+  +1 game-session TDZ, +4 buborék-rács, +9 word-rain sáv, +9 struggle-súlyozás).
 - `node scripts/audit-corpus.mjs` → P1=0, P2=0 ✅ (a `humid` jegyzet nem mozdít adatot).
 - `npx expo lint`: 70 probléma (46 error, 24 warning) ✅ — ez a 3.1.0 játék-kiadás óta az
   ALAPVONAL (a régi „18" a Game tab előtti állapot), a forduló javításai 0-t tettek hozzá
