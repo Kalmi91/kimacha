@@ -2282,6 +2282,17 @@ Ragozás-slot, Kakukktojás (10/10 végigjátszva), „Melyik a helyes?", Hasonl
 CCAT-felkészítő (kategória- és szöveges-feladat kérdések). Mondat-Tetris szándékosan
 „Hamarosan".
 
+**Vizuális átfésülés (2026-08-29, „nekem elég sok össze csúszás volt amit láttam"):**
+a `window.vcheck()` detektor minden LÁTHATÓ szöveg-levél dobozát összeveti (metsző párok
++ a nézeten kívülre lógó elemek), és csak azokat nézi, amik a saját középpontjukban
+tényleg hit-testelhetők (az exportált SPA egyszerre tartja életben a tab-képernyőket,
+enélkül a Tanulás és a Beállítások szövegei „egymáson" lennének). Végigfuttatva 390 és
+320 px szélességen: Tanulás, Játék-hub, mind a 12 játék, Statisztika, Beállítások, Témák
+→ **0 valódi átfedés**. Egyetlen találat maradt: a lebegő 💬 visszajelzés-gomb görgetés
+közben ráül egy játék-csempe szövegére, ez sima FAB-viselkedés, nem nyúltam hozzá.
+A nagy rendszer-betűméret (Android `font_scale`) böngészőben NEM szimulálható
+(a `maxFontSizeMultiplier` natív-only), az emulátoron/telefonon ellenőrizendő.
+
 **Nem sikerült végigvinni:** a Memóriapárosítót a bot nem tudta kipörgetni (a lapozás,
 a felfedés és a vissza-fordítás bizonyítottan jó, de a „minden pár megvan" záró
 képernyőt nem láttam) — ez maradt a telefonos ellenőrzésre.
