@@ -105,13 +105,17 @@ export default function ConjugationSlotScreen() {
     const savedCount = (savedSettings?.questionCount as number) ?? 20;
     const count = QUESTION_COUNTS.includes(savedCount) ? savedCount : 20;
     const savedTenses = (savedSettings?.tenses as Tense[]) ?? undefined;
+    // FB162 follow-up (Kálmán, 2026-08-29): "menjen minden idő". The playtest asked
+    // whether the default should shrink to the present, because A0/A1 has not met the
+    // preterite yet; the answer went the other way, all six tenses are on by default
+    // and the ⚙️ sheet narrows them.
     const flags: Record<Tense, boolean> = {
       presente: savedTenses ? savedTenses.includes('presente') : true,
       indefinido: savedTenses ? savedTenses.includes('indefinido') : true,
-      imperfecto: savedTenses ? savedTenses.includes('imperfecto') : false,
-      futuro: savedTenses ? savedTenses.includes('futuro') : false,
-      condicional: savedTenses ? savedTenses.includes('condicional') : false,
-      subjuntivo_presente: savedTenses ? savedTenses.includes('subjuntivo_presente') : false,
+      imperfecto: savedTenses ? savedTenses.includes('imperfecto') : true,
+      futuro: savedTenses ? savedTenses.includes('futuro') : true,
+      condicional: savedTenses ? savedTenses.includes('condicional') : true,
+      subjuntivo_presente: savedTenses ? savedTenses.includes('subjuntivo_presente') : true,
     };
     const savedIrregular = (savedSettings?.includeIrregular as boolean) ?? true;
     const savedTimeLimit = (savedSettings?.timeLimit as TimeLimit) ?? 'none';

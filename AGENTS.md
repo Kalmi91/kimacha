@@ -2306,10 +2306,14 @@ képernyőt nem láttam) — ez maradt a telefonos ellenőrzésre.
     (`(state >= 2 AND reps - lapses >= 3) OR buried = 1`), tehát a másodszori „Ezt Már
     Tudom" NEM növeli újra ugyanazt a szót, és a buried kártya a due-lekérdezésből is ki
     van zárva (`buried = 0` szűrő), tehát ismétlésre sem jön vissza.
-- **A Ragozás-slot alapból múlt időt is kérdez.** A `conjugation-slot` alapértelmezése
-  `presente: true` ÉS `indefinido: true`, tehát A0/A1-en olyan igeidőt kérdez
-  (`quise / quisiste / quisieron`), amit a kurzus még nem tanított. Kérdés: legyen-e az
-  alapértelmezés csak jelen idő, a többi a ⚙️-ben kapcsolható.
+- ✅ **A Ragozás-slot igeidő-alapértelmezése** — ELDÖNTVE, MIND A HAT MEGY.
+  A felvetés az volt, hogy A0/A1-en a `quise / quisiste / quisieron` olyan igeidő, amit
+  a kurzus még nem tanított, tehát szűküljön-e az alapértelmezés jelen időre. Kálmán
+  döntése (2026-08-29): „menjen minden idő", tehát `presente`, `indefinido`,
+  `imperfecto`, `futuro`, `condicional` és `subjuntivo_presente` mind BE alapból, a ⚙️
+  lapon lehet szűkíteni. A motor (`lib/games/conjugate.ts`) mind a hatot tudja
+  (szabályos végződések + rendhagyó táblák), a web-playtest futuro és imperfecto
+  kérdéseket is adott, a magyarázat megnevezi az igeidőt.
 
 ## ✅ FB163 [P1 feature], Ismétlés közben egyesével csorogjanak be az új szavak, KÉSZ (`377e0a9`)
 Idézet (08-28 11:48, `word:the garden`, v3.1.0): „legyen úgy, hogy ha ismétlem a
