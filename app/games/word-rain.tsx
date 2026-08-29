@@ -9,7 +9,7 @@ import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { normalizeWordToken, type Level } from '@/data/words';
 import { getGameDef, gameName } from '@/lib/games/registry';
-import { getLearnedPool, type PoolEntry } from '@/lib/games/vocabPool';
+import { getLearnedPool, pickStruggler, type PoolEntry } from '@/lib/games/vocabPool';
 import type { DistractMode } from '@/lib/games/distract';
 import { buildFallingRound, fallingLane, type WordRainDirection } from '@/lib/games/wordRain';
 import { useGameSession } from '@/lib/games/session';
@@ -226,10 +226,13 @@ export default function WordRainScreen() {
       introTimerRef.current = null;
     }
     if (pool.length === 0) return;
+    // FB162 follow-up: the target is drawn weight-proportionally, so the words the
+    // learner keeps missing come up most often and the buried "I know this" ones
+    // only now and then (lib/games/vocabPool.ts).
     let entry: PoolEntry;
     let tries = 0;
     do {
-      entry = pool[Math.floor(Math.random() * pool.length)];
+      entry = pickStruggler(pool) ?? pool[0];
       tries++;
     } while (entry.wordId === lastTargetRef.current && pool.length > 1 && tries < 10);
     lastTargetRef.current = entry.wordId;

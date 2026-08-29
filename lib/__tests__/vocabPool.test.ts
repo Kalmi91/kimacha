@@ -28,6 +28,11 @@ describe('getLearnedPool (GAMES.md 3.1, the core guarantee)', () => {
     await db.setOnboarding('hu', 'es');
   });
 
+  // updateCard wants a whole FSRS card; only reps/lapses/state matter here.
+  const card = (reps: number, lapses: number) =>
+    ({ due: new Date(), stability: 1, difficulty: 5, elapsed_days: 0, scheduled_days: 1, learning_steps: 0, reps, lapses, state: 2, last_review: new Date() }) as any;
+
+
   it('never returns a blank gloss: isNew===false or a resolvable learned+native pair', async () => {
     // A mix of practiced (phase>=1) and untouched words, so the pool has to
     // both read real cards AND top up from the level's unseen vocabulary.
@@ -74,6 +79,27 @@ describe('getLearnedPool (GAMES.md 3.1, the core guarantee)', () => {
     // phase-0 card must not surface as an "existing" (isNew:false) entry.
     const existingEntry = pool.find((e) => e.wordId === w.id && !e.isNew);
     expect(existingEntry).toBeUndefined();
+  });
+
+  // FB162 follow-up (Kálmán, 2026-08-28): "kerüljön be de ne azokat priorizálja".
+  it('keeps an "I know this" (buried) word in the pool, flagged and weighed down', async () => {
+    await db.setOnboarding('hu', 'es');
+    const [known, missed] = getWordsForLevel('A1', 'es');
+    for (const w of [known, missed]) {
+      await db.ensureCard(w.id, 'word');
+      await db.updateCard(w.id, 'word', card(3, 0));
+    }
+    // one word the learner keeps missing, one they said they already know
+    await db.updateCard(missed.id, 'word', card(6, 3));
+    await db.buryCard(known.id, 'word');
+
+    const pool = await getLearnedPool({ pair: 'hu-es', learnedLang: 'es', level: 'A1' });
+    const knownEntry = pool.find((e) => e.wordId === known.id);
+    const missedEntry = pool.find((e) => e.wordId === missed.id);
+
+    expect(knownEntry).toBeDefined(); // it counts, the games stay unlocked
+    expect(knownEntry?.known).toBe(true);
+    expect(missedEntry?.struggle ?? 0).toBeGreaterThan(knownEntry?.struggle ?? 0);
   });
 
   it('scopes to a topic when topicId is given', async () => {

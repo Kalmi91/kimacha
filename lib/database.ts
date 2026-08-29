@@ -25,7 +25,7 @@ export interface DB {
   // `pair` (matches the GAMES.md spec text) rather than using `activePair`,
   // so a game can in principle read a pool for a pair other than the one
   // currently active.
-  getAllWordCards(pair: string): Promise<{ word_id: number; reps: number; lapses: number; state: number }[]>;
+  getAllWordCards(pair: string): Promise<{ word_id: number; reps: number; lapses: number; state: number; buried: 0 | 1 }[]>;
   recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number): Promise<void>;
   getUserMeta(): Promise<{ userId: string; firstUseDate: string; lastSyncDate: string | null }>;
   updateLastSync(date: string): Promise<void>;
@@ -536,13 +536,18 @@ class SQLiteDB implements DB {
   }
 
   // GAMES.md 3.1 (F0): every non-buried word card of `pair`, for vocabPool.ts.
+  // FB162 follow-up (Kálmán, 2026-08-28): "kerüljön be de ne azokat priorizálja".
+  // Buried ("I know this") words used to be dropped here, so the header could say
+  // "20 known words" while the Game tab said "1 word so far, 19 more needed" and
+  // kept every game locked. They come back WITH the flag, and the pool orders
+  // them last (lib/games/vocabPool.ts).
   async getAllWordCards(pair: string) {
     const db = await this.open();
     const rows = await db.getAllAsync<any>(
-      "SELECT word_id, reps, lapses, state FROM cards WHERE type = 'word' AND pair = ? AND buried = 0",
+      "SELECT word_id, reps, lapses, state, buried FROM cards WHERE type = 'word' AND pair = ?",
       [pair]
     );
-    return rows.map((r: any) => ({ word_id: r.word_id, reps: r.reps, lapses: r.lapses, state: r.state }));
+    return rows.map((r: any) => ({ word_id: r.word_id, reps: r.reps, lapses: r.lapses, state: r.state, buried: (r.buried ? 1 : 0) as 0 | 1 }));
   }
 
   async recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number) {
