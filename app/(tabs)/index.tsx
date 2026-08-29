@@ -1138,10 +1138,17 @@ export default function LearnScreen() {
         <Text style={[styles.streakNumber, { color: colors.accent }]} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>{newWordsLeft}</Text>
         <Text style={styles.streakLabel} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>{newWordsPaused ? '🌱⏸' : '🌱'}</Text>
       </View>
-      <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
-        <Text style={[styles.streakNumber, { color: colors.accent }]} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>{streak}</Text>
-        <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>🔥</Text>
-      </View>
+      {/* FB165, Kálmán 2026-08-29: "exem unlocked túl nagy legyen itt egy kis jel".
+          The orange full-width banner is now this badge; a tap starts the exam. */}
+      {masteredPct >= 80 && (
+        <Pressable
+          style={[styles.streakBadge, { backgroundColor: '#F59E0B' }]}
+          onPress={() => setExamMode(true)}
+          accessibilityLabel={s.exam.unlocked}
+        >
+          <Text style={styles.streakLabel} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>🎓</Text>
+        </Pressable>
+      )}
     </View>
   );
 
@@ -1214,13 +1221,6 @@ export default function LearnScreen() {
     />
   );
 
-  const examBanner = masteredPct >= 80 ? (
-    <Pressable style={styles.examBanner} onPress={() => setExamMode(true)}>
-      <Text style={styles.examBannerTitle}>{s.exam.unlocked}</Text>
-      <Text style={styles.examBannerCta}>{s.exam.unlockedCta} →</Text>
-    </Pressable>
-  ) : null;
-
   const bannerMsg = topicCompleteMsg ?? topicSwitchMsg;
   const topicCompleteOverlay = bannerMsg ? (
     <Pressable style={[styles.levelUpOverlay, { backgroundColor: topicCompleteMsg ? '#22C55E' : '#2563EB' }]} onPress={() => router.push('/(tabs)/tree')}>
@@ -1270,7 +1270,6 @@ export default function LearnScreen() {
         >
         {topicHeader}
         {progressMeter}
-        {examBanner}
         {borrowedBanner}
         {modeBanner}
 
@@ -1324,7 +1323,6 @@ export default function LearnScreen() {
         >
         {topicHeader}
         {progressMeter}
-        {examBanner}
         {borrowedBanner}
         {modeBanner}
 
@@ -1488,7 +1486,6 @@ export default function LearnScreen() {
       >
       {topicHeader}
       {progressMeter}
-      {examBanner}
       {borrowedBanner}
       {modeBanner}
 
@@ -1850,12 +1847,15 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     gap: 8,
   },
+  // FB167, Kálmán 2026-08-29: "az új check gomb nagyon egyenletlen így, legyen
+  // szűkebb és szélesebb". The 82% right-biased bar left uneven margins; it is
+  // now full width (even on both sides) and lower.
   inlineCheckBtn: {
-    alignSelf: 'flex-end',
-    width: '82%',
-    minHeight: 54,
+    alignSelf: 'stretch',
+    width: '100%',
+    minHeight: 44,
     borderRadius: 14,
-    paddingVertical: 16,
+    paddingVertical: 12,
     paddingHorizontal: 16,
     alignItems: 'center',
     justifyContent: 'center',
@@ -1984,24 +1984,5 @@ const styles = StyleSheet.create({
   topicCount: {
     fontSize: 12,
     fontWeight: '500',
-  },
-  examBanner: {
-    backgroundColor: '#F59E0B',
-    borderRadius: 14,
-    paddingHorizontal: 20,
-    paddingVertical: 12,
-    marginBottom: 12,
-    alignItems: 'center',
-  },
-  examBannerTitle: {
-    color: '#FFFFFF',
-    fontSize: 14,
-    fontWeight: '700',
-    marginBottom: 2,
-  },
-  examBannerCta: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: '800',
   },
 });
