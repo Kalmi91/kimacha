@@ -2364,6 +2364,68 @@ Nem hiányzik: a `húmedo` MELLÉKNÉV, szótári névelőt csak a főnevek kapn
 
 ---
 
+# 📋 Feedback, 2026-08-29 forduló (v3.1.1 telefon-teszt)
+
+Forrás: `Kimacha Feedback` sheet, a FB164 óta érkezett 4 sor (mind v3.1.1 (35)).
+
+## ✅ FB165 [P2 UX], „exam unlocked túl nagy, legyen itt egy kis jel", KÉSZ (`40d3444`)
+Idézet (08-29 10:29, `word:the engine`): „exem unlocked túl nagy legyen itt egy kis jel"
+A 80% mesterszint fölött megjelenő narancs, teljes szélességű sáv („Vizsga feloldva! /
+Vizsga Megkezdése →") a kártya fölött ült, és lejjebb tolta a tanulnivalót. Most a
+fejléc jobb oldalán egy kis narancs 🎓 pirula (`headerBadges`), koppintásra ugyanúgy
+indul a vizsga (`setExamMode(true)`); a `examBanner` blokk és a három render-helye,
+valamint a hozzá tartozó három stílus törölve. Kálmán választása volt a fejléces
+elhelyezés (2026-08-29).
+
+## ✅ FB166 [P2 UX], A 🔥 sorozat-jelvény ráült a kártya képére, KÉSZ (`40d3444`)
+Idézet (08-29 10:30, `word:the engine`): „strike meg ami mellette van rá ragad, a képre
+feleslegesen. ezt vedd ki. nem mell"
+A tanuló-fejléc `position: absolute`, tehát görgetés közben a jelvények a kártya
+fotója fölé kerülnek (FB124 óta van fotó a kártyákon). A 🔥 sorozat-jelvény kikerült a
+fejlécből; a 🌱 napi új-szó számláló marad (FB103), a sorozatot a Done-képernyő
+továbbra is mutatja (`streak` state megmarad, csak a fejléc-jelvény tűnt el).
+
+## ✅ FB167 [P2 UX], A Check gomb egyenetlen, KÉSZ (`40d3444`)
+Idézet (08-29 10:32, `word:the engine`): „az új check gomb nagyon egyenletlen így,
+legyen szűkebb és szélesebb"
+Az FB160-as sáv 82% széles és JOBBRA igazított volt, ezért a bal és a jobb margó
+eltérő („egyenetlen"). Kálmán választása (2026-08-29): **alacsonyabb + teljes
+szélesség**, egyenlő margókkal. `inlineCheckBtn` (gépelős kártya + ✏️ gyakorló mező) és
+`app/spelling.tsx` `checkBtn`: `alignSelf: 'stretch'`, `width: '100%'`, `minHeight` 54 →
+44, `paddingVertical` 16 → 12. A felirat („✓ Ellenőrzés") és a viselkedés változatlan.
+
+## ✅ FB168 [P1 feature], Visszajelző gomb MINDEN játékban, KÉSZ (`394a638`)
+Idézet (08-29 19:51, `word:el puente`): „fejlessz a játékokba momdegyikre egyénileg tedd
+bele a visszajelző rendszert, hogy kozbe tudjak visszajelzést adni. mindegyik játékról,
+és így ki tudod majd javítani"
+- `components/GameFeedback.tsx` (új): kiolvassa a szintet (`getLevel`) és a nyelvpárt
+  (`getOnboarding`), a játék azonosítóját pedig az útvonalból (`usePathname`), így a
+  sheet sora `game:word-rain`, `game:ccat`, … címkével érkezik, nem a hub nevével.
+- `app/games/_layout.tsx`: a Stack köré egy `View flex:1`, alatta a gomb — EGY helyen
+  mountolva mind a 12 játék-képernyő megkapja, és egy jövőbeli 13. játék is örökli
+  (12 fájl módosítása helyett).
+- `draggable` (FB41-viselkedés): a játéktábla kitölti a képernyőt, ezért a gombot át
+  lehet húzni a másik oldalra, és ott is marad (`learn_settings.feedback_btn_side`).
+
+## Elfogadási kritérium (FB165–FB168 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **457/457** ✅ (nincs új teszt: a forduló
+  UI-elhelyezés és egy layout-mount, logikai ág nem változott).
+- `npx expo lint`: 70 probléma (46 error, 24 warning) ✅ — VÁLTOZATLAN alapvonal, az új
+  `GameFeedback.tsx` 0 hibát tett hozzá.
+- `npx expo export --platform web` lefut, mind a 12 játék-útvonal exportálódik, és a
+  `GameFeedback` benne van a web-bundle-ben ✅.
+- ⚠️ Web-playtest NEM futott végig: a statikus szerver az ékezet nélküli útvonalakat
+  404-eli (`/games/word-rain.html` betölt, de onboarding-adat híján az onboardingra
+  irányít), az `agent-browser` munkamenete pedig az első kattintás után üres lapra
+  esett. A FB162-es módszer (egy hosszú `agent-browser batch` egy munkamenetben)
+  legközelebb megismételhető, ez a forduló nem kapott böngészős bizonyítékot.
+- ⏳ Eszköz-verify a következő APK-n: a fejlécben kis 🎓 jel jelenik meg 80% fölött és
+  indítja a vizsgát; nincs több 🔥 jelvény a kártya fotóján; a Check gomb teljes
+  szélességű, egyenlő margóval, alacsonyabb; mind a 12 játékban ott a 💬 gomb, húzható,
+  és a beküldött sor a játék nevével érkezik a sheetbe.
+
+---
+
 # 🛠️ Emulátor + release-csapdák (2026-08-15)
 
 **Android emulátor UI-ellenőrzéshez.** AVD `kimacha_test` (Pixel 6, Android 35).
