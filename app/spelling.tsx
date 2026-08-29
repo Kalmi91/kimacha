@@ -271,13 +271,14 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '600',
   },
-  // FB160: long bar, biased right, so the right thumb reaches it with the keyboard up.
+  // FB160: long bar so the thumb reaches it with the keyboard up. FB167: full
+  // width and lower, the 82% right-biased version read as lopsided.
   checkBtn: {
-    alignSelf: 'flex-end',
-    width: '82%',
-    minHeight: 54,
+    alignSelf: 'stretch',
+    width: '100%',
+    minHeight: 44,
     marginTop: 24,
-    paddingVertical: 16,
+    paddingVertical: 12,
     borderRadius: 14,
     alignItems: 'center',
     justifyContent: 'center',
