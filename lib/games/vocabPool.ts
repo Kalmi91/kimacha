@@ -9,7 +9,7 @@
 import { getDb } from '../database';
 import { findWordById, getWordsForLevel, getWordTopic, type Level, type WordEntry } from '@/data/words';
 import { wordPhase, type WordPhase } from '../wordPhase';
-import { shuffleArray, hashString } from '../shuffle';
+import { shuffleArray, hashString, mulberry32 } from '../shuffle';
 
 export type PoolStrictness = 'seen' | 'practiced' | 'mastered';
 
@@ -23,6 +23,11 @@ export interface PoolEntry {
   sentenceNative?: string;
   phase: WordPhase; // lib/wordPhase.ts
   isNew: boolean; // TRUE = came from the top-up, mandatory gloss in the UI
+  // FB162 follow-up (Kálmán, 2026-08-28): "kerüljön be de ne azokat priorizálja
+  // ... pont az lenne a lényege a játékoknak hogy amivel aktuálisan szenvedsz
+  // azokat hozza fel és azokat gyakorold".
+  known?: boolean; // TRUE = buried with "I know this"
+  struggle?: number; // how much practice this word still wants, see struggleWeight
 }
 
 export interface GetLearnedPoolOptions {
@@ -52,7 +57,47 @@ function sentenceOf(word: WordEntry, lang: string): string | undefined {
   return typeof v === 'string' && v ? v : undefined;
 }
 
-function toPoolEntry(word: WordEntry, learnedLang: string, nativeLang: string, phase: WordPhase, isNew: boolean): PoolEntry {
+// How badly a word wants to come up in a game. A miss (lapse) counts double,
+// an unfinished ladder counts once, a word buried with "I know this" stays in the
+// pool but at the back, and a top-up word the learner has not met yet is filler.
+export function struggleWeight(card: { lapses?: number; buried?: 0 | 1 }, phase: WordPhase, isNew: boolean): number {
+  if (isNew) return 0.5;
+  if (card.buried) return 0.25;
+  return 1 + (card.lapses ?? 0) * 2 + (2 - phase);
+}
+
+// Weighted random permutation (Efraimidis-Spirakis): key = random^(1/weight),
+// highest key first. A heavy word usually lands near the front, but every word
+// keeps a real chance, so a game never drills the same five cards forever.
+export function weightedShuffle<T>(items: T[], weightOf: (item: T) => number, seed: number): T[] {
+  const rng = mulberry32(seed);
+  return items
+    .map((item) => ({ item, key: Math.pow(rng(), 1 / Math.max(0.0001, weightOf(item))) }))
+    .sort((a, b) => b.key - a.key)
+    .map((entry) => entry.item);
+}
+
+// One word for the next round, weight-proportional: the words you keep missing
+// come up most often, the "I know this" ones only now and then.
+export function pickStruggler(pool: PoolEntry[], random: () => number = Math.random): PoolEntry | null {
+  if (!pool.length) return null;
+  const total = pool.reduce((sum, e) => sum + Math.max(0.0001, e.struggle ?? 1), 0);
+  let ticket = random() * total;
+  for (const entry of pool) {
+    ticket -= Math.max(0.0001, entry.struggle ?? 1);
+    if (ticket <= 0) return entry;
+  }
+  return pool[pool.length - 1];
+}
+
+function toPoolEntry(
+  word: WordEntry,
+  learnedLang: string,
+  nativeLang: string,
+  phase: WordPhase,
+  isNew: boolean,
+  card: { lapses?: number; buried?: 0 | 1 } = {}
+): PoolEntry {
   return {
     wordId: word.id,
     learned: fieldOf(word, learnedLang),
@@ -63,6 +108,8 @@ function toPoolEntry(word: WordEntry, learnedLang: string, nativeLang: string, p
     sentenceNative: sentenceOf(word, nativeLang),
     phase,
     isNew,
+    known: !!card.buried,
+    struggle: struggleWeight(card, phase, isNew),
   };
 }
 
@@ -84,7 +131,7 @@ export async function getLearnedPool(opts: GetLearnedPoolOptions): Promise<PoolE
     if (topicId && getWordTopic(word) !== topicId) continue;
     if (seen.has(word.id)) continue;
     seen.add(word.id);
-    entries.push(toPoolEntry(word, learnedLang, nativeLang, phase, false));
+    entries.push(toPoolEntry(word, learnedLang, nativeLang, phase, false, card));
   }
 
   if (minSize && entries.length < minSize) {
@@ -98,6 +145,9 @@ export async function getLearnedPool(opts: GetLearnedPoolOptions): Promise<PoolE
     }
   }
 
+  // FB162 follow-up: struggle-first order, so a game that takes the head of the
+  // pool drills what the learner is actually missing; the buried "I know this"
+  // words are in the list (they unlock the games and fill a round), just last.
   const seed = hashString(`${pair}:${level}:${topicId ?? ''}:${strictness}`);
-  return shuffleArray(entries, seed);
+  return weightedShuffle(entries, (e) => e.struggle ?? 1, seed);
 }

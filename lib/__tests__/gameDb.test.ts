@@ -9,7 +9,9 @@ import { getDb } from '../database.web';
 describe('game_scores / game_settings / game_progress (memory db)', () => {
   const db = getDb();
 
-  it('getAllWordCards returns only non-buried word cards of the given pair', async () => {
+  // FB162 follow-up: buried ("I know this") words stay in the list, flagged, so the
+  // Game tab counts them and the pool can order them last instead of losing them.
+  it('getAllWordCards returns every word card of the pair, buried ones flagged', async () => {
     await db.setOnboarding('hu', 'es');
     await db.ensureCard(9001, 'word');
     await db.ensureCard(9002, 'word');
@@ -18,7 +20,9 @@ describe('game_scores / game_settings / game_progress (memory db)', () => {
 
     const cards = await db.getAllWordCards('hu-es');
     const ids = cards.map((c) => c.word_id).sort();
-    expect(ids).toEqual([9001]);
+    expect(ids).toEqual([9001, 9002]);
+    expect(cards.find((c) => c.word_id === 9002)?.buried).toBe(1);
+    expect(cards.find((c) => c.word_id === 9001)?.buried).toBe(0);
   });
 
   it('tracks the best score and play count across attempts', async () => {

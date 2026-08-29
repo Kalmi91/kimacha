@@ -21,7 +21,7 @@ export interface DB {
   getWordStates(wordIds: number[]): Promise<Map<number, number>>;
   // GAMES.md 3.1 (F0): every non-buried word card of a given pair, for
   // lib/games/vocabPool.ts. Explicit `pair` param, matches the native twin.
-  getAllWordCards(pair: string): Promise<{ word_id: number; reps: number; lapses: number; state: number }[]>;
+  getAllWordCards(pair: string): Promise<{ word_id: number; reps: number; lapses: number; state: number; buried: 0 | 1 }[]>;
   recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number): Promise<void>;
   getUserMeta(): Promise<{ userId: string; firstUseDate: string; lastSyncDate: string | null }>;
   updateLastSync(date: string): Promise<void>;
@@ -241,10 +241,11 @@ class MemoryDB implements DB {
   }
 
   // GAMES.md 3.1 (F0): every non-buried word card of `pair`, for vocabPool.ts.
+  // FB162 follow-up: buried cards stay in the list, flagged (see database.ts).
   async getAllWordCards(pair: string) {
     return [...this.cards.values()]
-      .filter((c) => c.type === 'word' && c.pair === pair && !c.buried)
-      .map((c) => ({ word_id: c.word_id, reps: c.reps, lapses: c.lapses, state: c.state }));
+      .filter((c) => c.type === 'word' && c.pair === pair)
+      .map((c) => ({ word_id: c.word_id, reps: c.reps, lapses: c.lapses, state: c.state, buried: (c.buried ? 1 : 0) as 0 | 1 }));
   }
 
   private attempts: { word_id: number; type: string; pair?: string; correct: boolean; response_time_ms: number; timestamp: string }[] = [];
