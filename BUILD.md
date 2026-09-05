@@ -558,3 +558,12 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   `index.tsx` 336 sorral rövidebb lett (−250/+93). Kapu: tsc 0, jest 457/457,
   lint 70 (alapvonal változatlan), `data/` és mindkét `database` érintetlen.
   Hátra: eszköz-verify a következő APK-n (font_scale 1.5-nél is elférjen a sor).
+- **2026-09-05** (Opus): **Feedback-forduló FB169 KÉSZ** (user: „nezd meg a kimacha
+  app feedbackjét"). 1 új sheet-sor a FB168 óta (09-05 17:39, v3.1.3 (37)): a fejléc
+  haladás-csíkjának kék részéből egy rózsaszín szakasz mutassa, hány szó vár még
+  ismétlésre, és rövidüljön, ahogy fogynak. Kálmán döntése: a rózsaszín A KÉKBŐL vesz
+  el (nem külön szakasz a sáv végén). `LearnChrome` új `reviewLeft` propja + második
+  fill-View a kék jobb szélén; `index.tsx` a hátralévő sorból számolja a distinct,
+  nem-új `wordId`-kat. Kapu: tsc 0, jest 461/461 (+4 új `LearnChrome` teszt), lint 70
+  (alapvonal változatlan). Hátra: eszköz-verify a következő APK-n. Részletek: `AGENTS.md`
+  „Feedback, 2026-09-05 forduló".

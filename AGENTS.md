@@ -2426,6 +2426,39 @@ bele a visszajelző rendszert, hogy kozbe tudjak visszajelzést adni. mindegyik 
 
 ---
 
+# 📋 Feedback, 2026-09-05 forduló (v3.1.3 telefon-teszt)
+
+Forrás: `Kimacha Feedback` sheet, a FB168 óta érkezett 1 sor (v3.1.3 (37)).
+
+## ✅ FB169 [P2 UX], Rózsaszín review-szelet a fejléc-csíkban, KÉSZ
+Idézet (09-05 17:39, `word:to wash the dishes`): „fenn most van egy kek csik ami
+mutatja, hogy mennyi szónál járok, azt akarom, hogy a keknek egy resze legyen
+rozsaszín ami az alapján legyen meghatározva, hogy mekkora a rozsaszin, hogy mennyi
+szot kell review ni. es ahogy egyrw kevesebb lesz legyen egyrw kisebb a rozsaszin rész."
+- Kálmán választása (2026-09-05): a rózsaszín **a kékből vesz el**, nem a sáv jobb
+  végén ül külön szakaszként. Így a csík teljes hossza továbbra is a mesterszintet
+  (`known/total`) jelenti: tömör kék = megtanult és nem esedékes, rózsaszín farok =
+  megtanult, de ebben a munkamenetben ismétlésre vár.
+- `components/LearnChrome.tsx`: új `reviewLeft` prop, `reviewShare = reviewLeft/known
+  * pct`, és egy második `progressFill` View (`testID="reviewFill"`,
+  `REVIEW_COLOR = '#F472B6'`) a kék fill jobb szélén (`left: pct - reviewPct`).
+  `MIN_REVIEW_PCT = 3`, különben egy 400 szavas paklinál az utolsó 1-2 esedékes szó
+  hajszálvékonyra kerekedne; a szelet soha nem lóg túl a kék fillen (`Math.min(pct, …)`).
+- `app/(tabs)/index.tsx`: `reviewLeft` = a `currentIndex`-től hátralévő sor-elemek
+  KÜLÖNBÖZŐ `wordId`-jai, amik nincsenek a `newTodayIds`-ben (FB158 új-szó szabály,
+  egy szónak három kártyája van, ezért distinct). Minden megválaszolt kártyával
+  csökken, a Done-képernyőnél nulla.
+
+## Elfogadási kritérium (FB169 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **461/461** ✅ (+4 új teszt,
+  `components/__tests__/LearnChrome.test.tsx`: nincs szelet 0 review-nál, arány-méret,
+  hajszál-minimum, és hogy nem lóg túl a kéken).
+- `npx expo lint`: 70 probléma (46 error, 24 warning) ✅ — VÁLTOZATLAN alapvonal.
+- ⏳ Eszköz-verify a következő APK-n: a fejléc-csík kék részének jobb végén rózsaszín
+  szakasz látszik, ha van esedékes ismétlés, és minden megválaszolt szó után rövidül.
+
+---
+
 # 🛠️ Emulátor + release-csapdák (2026-08-15)
 
 **Android emulátor UI-ellenőrzéshez.** AVD `kimacha_test` (Pixel 6, Android 35).
