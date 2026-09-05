@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef, useCallback, useMemo } from 'react';
 import { StyleSheet, Text, View, Pressable, ActivityIndicator, TextInput, KeyboardAvoidingView, Platform, ScrollView, Image, Keyboard } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
@@ -479,6 +479,19 @@ export default function LearnScreen() {
   );
 
   const current = queue[currentIndex];
+
+  // FB169, Kálmán 2026-09-05: the pink slice of the header progress bar counts the
+  // words still waiting for review in THIS queue, so it shrinks with every card
+  // answered and reaches zero at the Done screen. "New" here is the FB158 rule
+  // (a word that entered the queue with reps === 0 stays new for the session), and
+  // distinct wordIds are counted, because one word can hold three cards.
+  const reviewLeft = useMemo(() => {
+    const ids = new Set<number>();
+    for (let i = currentIndex; i < queue.length; i++) {
+      if (!newTodayIds.has(queue[i].wordId)) ids.add(queue[i].wordId);
+    }
+    return ids.size;
+  }, [queue, currentIndex, newTodayIds]);
 
   const getFrontBack = (item: DueItem) => {
     const [native, learned] = direction;
@@ -1173,6 +1186,7 @@ export default function LearnScreen() {
       langName={targetLangInfo?.name ?? ''}
       newWordsLeft={newWordsLeft}
       newWordsPaused={newWordsPaused}
+      reviewLeft={reviewLeft}
       examUnlocked={masteredPct >= 80}
       onExamPress={() => setExamMode(true)}
       examLabel={s.exam.unlocked}

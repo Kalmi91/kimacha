@@ -15,6 +15,11 @@ import ProgressMeter from './ProgressMeter';
 // multiplier.
 const FONT_SCALE_CAP = 1.3;
 
+// FB169: the review tail inside the progress fill, and the smallest slice that
+// still reads as a slice on a phone-wide bar.
+const REVIEW_COLOR = '#F472B6';
+const MIN_REVIEW_PCT = 3;
+
 const TOAST_COLORS = {
   success: '#22C55E',
   info: '#2563EB',
@@ -39,6 +44,7 @@ interface Props {
   langName: string;
   newWordsLeft: number;
   newWordsPaused: boolean;
+  reviewLeft: number;
   examUnlocked: boolean;
   onExamPress: () => void;
   examLabel: string;
@@ -56,6 +62,7 @@ export default function LearnChrome({
   langName,
   newWordsLeft,
   newWordsPaused,
+  reviewLeft,
   examUnlocked,
   onExamPress,
   examLabel,
@@ -67,6 +74,14 @@ export default function LearnChrome({
   const [meterOpen, setMeterOpen] = useState(false);
 
   const pct = Math.round(Math.min(known / Math.max(total, 1), 1) * 100);
+  // FB169, Kálmán 2026-09-05: "a keknek egy resze legyen rozsaszín ... hogy mennyi
+  // szot kell review ni. es ahogy egyre kevesebb lesz legyen egyre kisebb". The pink
+  // slice is cut OUT of the blue fill (his choice), so the bar's total length still
+  // reads as mastery: solid blue = mastered and not due, pink tail = mastered but
+  // waiting for review in this session. MIN_REVIEW_PCT keeps the last word or two
+  // visible on a large deck, where the true share would round to a hairline.
+  const reviewShare = known > 0 ? Math.min(reviewLeft / known, 1) * pct : 0;
+  const reviewPct = reviewLeft > 0 ? Math.min(pct, Math.max(reviewShare, MIN_REVIEW_PCT)) : 0;
 
   const ToastWrap = toast?.onPress ? Pressable : View;
   const toastBlock = toast ? (
@@ -126,6 +141,15 @@ export default function LearnChrome({
         <Pressable style={styles.progressLine} onPress={() => setMeterOpen(true)}>
           <View style={[styles.progressTrack, { backgroundColor: colors.tabIconDefault }]} />
           <View style={[styles.progressFill, { width: `${pct}%`, backgroundColor: colors.tint }]} />
+          {reviewPct > 0 && (
+            <View
+              testID="reviewFill"
+              style={[
+                styles.progressFill,
+                { left: `${pct - reviewPct}%`, width: `${reviewPct}%`, backgroundColor: REVIEW_COLOR },
+              ]}
+            />
+          )}
         </Pressable>
       )}
     </View>
