@@ -28,23 +28,16 @@ import { speak as speakIn, loadVoices } from '@/lib/speech';
 import ExamMode from '@/components/ExamMode';
 import DoneScreen from '@/components/DoneScreen';
 import EasySentenceCard from '@/components/EasySentenceCard';
-import ProgressMeter from '@/components/ProgressMeter';
+import LearnChrome from '@/components/LearnChrome';
 import { languages, speechLang } from '@/lib/languages';
 import { getExamQuestionsFor } from '@/data/exams';
 import { answerInputProps } from '@/lib/inputProps';
 
 const f = fsrs();
 
-// FB122: the badge row is absolutely positioned over the card, so a very large
-// system font size made it grow into the progress meter below it.
-const HEADER_FONT_SCALE_CAP = 1.3;
-
-// The header (level badge, topic row, sub-level line) is absolutely positioned,
-// so the scrolling card has to reserve room for it. A constant 56 was fine at
-// the default font size and too small at font_scale 1.5, where the progress
-// meter rode over the sub-level line (caught on the emulator). The header
-// measures itself instead, so any font size or translation length fits.
-const HEADER_RESERVE_MIN = 56;
+// ITER5: the header used to be absolutely positioned, so it needed a measured
+// reserve (HEADER_RESERVE_MIN) and a font-scale cap here. LearnChrome sits in
+// the flow above the scroll view, so neither is needed; the cap lives there.
 
 type TypingResult = 'correct' | 'almost' | 'wrong' | 'skipped' | null;
 
@@ -94,7 +87,6 @@ export default function LearnScreen() {
   const [newTodayIds, setNewTodayIds] = useState<Set<number>>(() => new Set());
   const [unlearnedCount, setUnlearnedCount] = useState(0);
   const [pauseReason, setPauseReason] = useState<NewWordPause>('none');
-  const [headerBottom, setHeaderBottom] = useState(HEADER_RESERVE_MIN);
   const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
   const [typedAnswer, setTypedAnswer] = useState('');
   const [typingResult, setTypingResult] = useState<TypingResult>(null);
@@ -1124,116 +1116,69 @@ export default function LearnScreen() {
   // is open and comes back once the answer is right.
   const practiceHidesAnswer = practiceTyping && practiceResult !== 'correct';
 
-  const levelBadge = (
-    <View style={[styles.levelBadge, { backgroundColor: '#38BDF8' }]}>
-      <Text style={styles.levelText} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>{level}</Text>
-    </View>
-  );
-
-  // FB103: "nem tudom mikor fogy el a napi 5 új szó". The header carries the
-  // count, so the budget is visible while learning, not only on the Done screen.
-  const headerBadges = (
-    <View style={styles.headerBadges}>
-      <View style={[styles.streakBadge, { backgroundColor: colors.card }]}>
-        <Text style={[styles.streakNumber, { color: colors.accent }]} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>{newWordsLeft}</Text>
-        <Text style={styles.streakLabel} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>{newWordsPaused ? '🌱⏸' : '🌱'}</Text>
-      </View>
-      {/* FB165, Kálmán 2026-08-29: "exem unlocked túl nagy legyen itt egy kis jel".
-          The orange full-width banner is now this badge; a tap starts the exam. */}
-      {masteredPct >= 80 && (
-        <Pressable
-          style={[styles.streakBadge, { backgroundColor: '#F59E0B' }]}
-          onPress={() => setExamMode(true)}
-          accessibilityLabel={s.exam.unlocked}
-        >
-          <Text style={styles.streakLabel} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>🎓</Text>
-        </Pressable>
-      )}
-    </View>
-  );
-
-  // FB158/FB159: the tag sits right above the card, in the interface language, so
-  // "am I learning or repeating?" is answered without opening the Done screen.
+  // FB158/FB159: the tag says whether this card is new or a review, in the
+  // interface language. ITER5 moved it onto the card as a chip, next to the
+  // borrowed-topic chip, instead of owning a row of its own above the card.
   const isNewCard = newTodayIds.has(current.wordId);
-  const modeBanner = (
-    <View style={[styles.modeChip, { backgroundColor: isNewCard ? '#22C55E' : '#38BDF8' }]}>
-      <Text style={styles.modeChipText} numberOfLines={1} maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}>
-        {isNewCard ? s.card.newWordTag : s.card.reviewTag}
-      </Text>
-    </View>
-  );
 
   // FB139: a card borrowed from a neighbouring topic names its own topic, so the
-  // header above it is not read as the word's home ("csak akkor amikor a másik
+  // status row above it is not read as the word's home ("csak akkor amikor a másik
   // témakör szava van akkor jelezze, hogy melyik szó az").
   const borrowedTopic = borrowedTopics.get(current.wordId) ?? null;
-  const borrowedBanner = borrowedTopic ? (
-    <Text style={[styles.borrowedBanner, { color: colors.accent }]} numberOfLines={1}>
-      {s.card.fromTopic(`${borrowedTopic.icon ?? ''} ${getTopicName(borrowedTopic, topicLang)}`.trim())}
-    </Text>
-  ) : null;
 
-  const currentSubLevel = currentTopic ? getSubLevelForTopic(level, currentTopic.id, direction[1]) : null;
-  const subLevelTopics = currentSubLevel ? getTopicsForSubLevel(level, currentSubLevel.id, direction[1]) : [];
-  const subLevelPos = currentTopic ? subLevelTopics.findIndex((tp) => tp.id === currentTopic.id) + 1 : 0;
-
-  const topicHeader = currentTopic && topicProgress ? (
-    <>
-      <Pressable style={styles.topicHeader} onPress={() => router.push('/(tabs)/tree')}>
-        <Text
-          style={[styles.topicIcon, { color: currentTopic.type === 'grammar' ? '#22C55E' : '#38BDF8' }]}
-          maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}
-        >
-          {currentTopic.icon ?? (currentTopic.type === 'grammar' ? '📗' : '📘')}
+  const cardChips = (
+    <View style={styles.cardChips}>
+      <View style={[styles.chip, { backgroundColor: isNewCard ? '#22C55E' : '#38BDF8' }]}>
+        <Text style={styles.chipText} numberOfLines={1} maxFontSizeMultiplier={1.3}>
+          {isNewCard ? s.card.newWordTag : s.card.reviewTag}
         </Text>
-        <Text
-          style={[styles.topicName, { color: colors.text }]}
-          numberOfLines={1}
-          maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}
-        >
-          {getTopicName(currentTopic, topicLang)}
-        </Text>
-      </Pressable>
-      {currentSubLevel && subLevelPos > 0 && (
-        <Text
-          style={[styles.subLevelLine, { color: colors.tabIconDefault }]}
-          numberOfLines={1}
-          maxFontSizeMultiplier={HEADER_FONT_SCALE_CAP}
-          onLayout={(e) => {
-            const { y, height } = e.nativeEvent.layout;
-            const bottom = Math.max(HEADER_RESERVE_MIN, Math.ceil(y + height) + 8);
-            setHeaderBottom((prev) => (prev === bottom ? prev : bottom));
-          }}
-        >
-          {s.subLevel.progress(currentSubLevel.id, getSubLevelName(currentSubLevel, topicLang), subLevelPos, subLevelTopics.length)}
-        </Text>
+      </View>
+      {borrowedTopic && (
+        <View style={[styles.chip, styles.chipOutline, { borderColor: colors.accent }]}>
+          <Text style={[styles.chipText, { color: colors.accent }]} numberOfLines={1} maxFontSizeMultiplier={1.3}>
+            {s.card.fromTopic(`${borrowedTopic.icon ?? ''} ${getTopicName(borrowedTopic, topicLang)}`.trim())}
+          </Text>
+        </View>
       )}
-    </>
-  ) : null;
-
+    </View>
+  );
   const targetLangInfo = languages.find(l => l.code === direction[1]);
-  const progressMeter = (
-    <ProgressMeter
+
+  // ITER5: one toast slot instead of two overlays that could stack on each
+  // other. Level change wins over a finished topic, which wins over a switch.
+  const chromeToast = levelUpMsg
+    ? { text: levelUpMsg, tone: levelUpMsg.startsWith('↑') ? ('info' as const) : ('danger' as const) }
+    : topicCompleteMsg
+      ? {
+          text: topicCompleteMsg,
+          tone: 'success' as const,
+          sub: hasTopics(level, direction[1]) ? `${s.topic.chooseTopic} →` : undefined,
+          onPress: () => router.push('/(tabs)/tree'),
+        }
+      : topicSwitchMsg
+        ? { text: topicSwitchMsg, tone: 'info' as const, onPress: () => router.push('/(tabs)/tree') }
+        : null;
+
+  // ITER5: the whole header is one component now, shared by all three render
+  // branches below, so the branches cannot drift apart the way they did.
+  const chrome = (
+    <LearnChrome
+      level={level}
+      topicIcon={currentTopic ? (currentTopic.icon ?? (currentTopic.type === 'grammar' ? '📗' : '📘')) : null}
+      topicName={currentTopic && topicProgress ? getTopicName(currentTopic, topicLang) : null}
+      onTopicPress={() => router.push('/(tabs)/tree')}
       known={knownWords}
       total={levelTotal}
       langFlag={targetLangInfo?.flag ?? ''}
       langName={targetLangInfo?.name ?? ''}
+      newWordsLeft={newWordsLeft}
+      newWordsPaused={newWordsPaused}
+      examUnlocked={masteredPct >= 80}
+      onExamPress={() => setExamMode(true)}
+      examLabel={s.exam.unlocked}
+      toast={chromeToast}
     />
   );
-
-  const bannerMsg = topicCompleteMsg ?? topicSwitchMsg;
-  const topicCompleteOverlay = bannerMsg ? (
-    <Pressable style={[styles.levelUpOverlay, { backgroundColor: topicCompleteMsg ? '#22C55E' : '#2563EB' }]} onPress={() => router.push('/(tabs)/tree')}>
-      <Text style={styles.levelUpText}>{bannerMsg}</Text>
-      {topicCompleteMsg && hasTopics(level, direction[1]) && <Text style={[styles.levelUpText, { fontSize: 11 }]}>{s.topic.chooseTopic} →</Text>}
-    </Pressable>
-  ) : null;
-
-  const levelUpOverlay = levelUpMsg ? (
-    <View style={[styles.levelUpOverlay, { backgroundColor: levelUpMsg.startsWith('↑') ? '#2563EB' : '#EF4444' }]}>
-      <Text style={styles.levelUpText}>{levelUpMsg}</Text>
-    </View>
-  ) : null;
 
   if (current.isEasySentence && !isWord) {
     const [native, learned] = direction;
@@ -1253,27 +1198,17 @@ export default function LearnScreen() {
 
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
-        {levelUpOverlay}
-        {topicCompleteOverlay}
-        <View style={styles.header}>
-          {levelBadge}
-          {headerBadges}
-        </View>
-        {/* FB87: same collapse as FB74 on the typing screen, a long sentence
-            with many chips grows past the centered column and slides under the
-            absolute header. Scroll the card instead (shared scroll styles). */}
+        {chrome}
+        {/* FB87: a long sentence with many chips grows past the centered column,
+            so the card scrolls (shared scroll styles). */}
         <ScrollView
           style={styles.typingScroll}
-          contentContainerStyle={[styles.typingScrollContent, { paddingTop: headerBottom }]}
+          contentContainerStyle={styles.typingScrollContent}
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="on-drag"
         >
-        {topicHeader}
-        {progressMeter}
-        {borrowedBanner}
-        {modeBanner}
-
         <EasySentenceCard
+          chips={cardChips}
           key={`${current.wordId}-${currentIndex}`}
           sourceSentence={nativeSentence}
           targetWords={targetWordList}
@@ -1306,31 +1241,22 @@ export default function LearnScreen() {
         style={[styles.container, { backgroundColor: colors.background }]}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
-        {levelUpOverlay}
-        {topicCompleteOverlay}
-        <View style={styles.header}>
-          {levelBadge}
-          {headerBadges}
-        </View>
-        {/* FB74: once the result block appears the card grows, and a centered,
-            non-scrolling column pushed the top of the card under the absolute
-            header. Scroll instead, so nothing collides on small screens. */}
+        {chrome}
+        {/* FB74: once the result block appears the card grows, so it scrolls
+            instead of colliding with anything on small screens. */}
         <ScrollView
           style={styles.typingScroll}
-          contentContainerStyle={[styles.typingScrollContent, { paddingTop: headerBottom }]}
+          contentContainerStyle={styles.typingScrollContent}
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="on-drag"
         >
-        {topicHeader}
-        {progressMeter}
-        {borrowedBanner}
-        {modeBanner}
 
         {/* FB143, Kálmán 2026-08-19: "nem megy le a billentyűzet ha félre
             kattintok". The card is the area beside the field, so a tap on it
             closes the keyboard; the ✓ button and the speaker keep working,
             they handle their own press. */}
         <Pressable style={[styles.card, { backgroundColor: colors.card }]} onPress={() => Keyboard.dismiss()}>
+          {cardChips}
           <View style={[styles.frontRow, { marginBottom: 16 }]}>
             {iconBadge}
             {/* FB150: the prompt is tappable word by word, straight into spelling practice. */}
@@ -1468,26 +1394,15 @@ export default function LearnScreen() {
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
-      {levelUpOverlay}
-      {topicCompleteOverlay}
-      <View style={styles.header}>
-        {levelBadge}
-        {headerBadges}
-      </View>
+      {chrome}
       {/* FB102: same collapse as FB74/FB87, one screen lower. Opening the ℹ️
-          note grows the card past the centered column, and the fixed content
-          slid under the absolutely positioned header ("az A1 és a tűz jel a
-          számmal megmarad és jön le és így egybe bugolódik"). Scroll instead. */}
+          note grows the card past the centered column, so it scrolls. */}
       <ScrollView
         style={styles.typingScroll}
-        contentContainerStyle={[styles.typingScrollContent, { paddingTop: headerBottom }]}
+        contentContainerStyle={styles.typingScrollContent}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >
-      {topicHeader}
-      {progressMeter}
-      {borrowedBanner}
-      {modeBanner}
 
       <Pressable
         style={[styles.card, { backgroundColor: colors.card }]}
@@ -1502,6 +1417,7 @@ export default function LearnScreen() {
           }
         }}
       >
+        {cardChips}
         <View style={styles.frontRow}>
           {iconBadge}
           {/* FB150: word-by-word tapping only once the card is open, before that a
@@ -1667,61 +1583,31 @@ const styles = StyleSheet.create({
     padding: 20,
     justifyContent: 'center',
   },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    position: 'absolute',
-    top: 16,
-    left: 20,
-    right: 20,
-  },
-  levelBadge: {
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-    borderRadius: 8,
-  },
-  levelText: {
-    color: '#FFFFFF',
-    fontSize: 14,
-    fontWeight: '800',
-  },
-  levelUpOverlay: {
-    position: 'absolute',
-    top: 12,
-    right: 12,
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 10,
-    zIndex: 100,
-  },
-  levelUpText: {
-    fontSize: 14,
-    fontWeight: '700',
-    color: '#FFFFFF',
-  },
-  headerBadges: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  streakBadge: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 16,
-    gap: 4,
-  },
-  streakNumber: {
-    fontSize: 18,
-    fontWeight: '700',
-  },
-  streakLabel: {
-    fontSize: 14,
-  },
   counter: {
     fontSize: 14,
+  },
+  // ITER5: the mode tag and the borrowed-topic line used to be two rows above
+  // the card. They are chips at the top of the card now, in the flow.
+  cardChips: {
+    alignSelf: 'flex-start',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 6,
+    marginBottom: 10,
+  },
+  chip: {
+    paddingHorizontal: 10,
+    paddingVertical: 3,
+    borderRadius: 999,
+  },
+  chipOutline: {
+    backgroundColor: 'transparent',
+    borderWidth: 1,
+  },
+  chipText: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: '#FFFFFF',
   },
   card: {
     borderRadius: 20,
@@ -1884,7 +1770,9 @@ const styles = StyleSheet.create({
   typingScrollContent: {
     flexGrow: 1,
     justifyContent: 'center',
-    paddingTop: 56,
+    // ITER5: was 56, the room the absolute header needed. The chrome sits in
+    // the flow above this scroll view now, so this is plain breathing space.
+    paddingTop: 16,
     paddingBottom: 24,
   },
   resultText: {
@@ -1930,56 +1818,6 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#94A3B8',
     fontWeight: '500',
-  },
-  topicHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    alignSelf: 'center',
-    gap: 6,
-    position: 'absolute',
-    top: 44,
-    left: 20,
-    right: 20,
-    justifyContent: 'center',
-  },
-  topicIcon: {
-    fontSize: 14,
-    lineHeight: 18,
-  },
-  subLevelLine: {
-    position: 'absolute',
-    top: 66,
-    left: 20,
-    right: 20,
-    textAlign: 'center',
-    fontSize: 11,
-    fontWeight: '500',
-  },
-  topicName: {
-    fontSize: 13,
-    fontWeight: '600',
-    flexShrink: 1,
-    lineHeight: 18,
-  },
-  // FB139: the "this word is on loan from another topic" line above the card.
-  borrowedBanner: {
-    fontSize: 12,
-    fontWeight: '600',
-    textAlign: 'center',
-    marginBottom: 6,
-  },
-  // FB158/FB159: filled pill, so the new/review state reads at a glance in both themes.
-  modeChip: {
-    alignSelf: 'center',
-    paddingHorizontal: 14,
-    paddingVertical: 5,
-    borderRadius: 999,
-    marginBottom: 10,
-  },
-  modeChipText: {
-    fontSize: 13,
-    fontWeight: '700',
-    color: '#FFFFFF',
   },
   topicCount: {
     fontSize: 12,
