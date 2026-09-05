@@ -541,3 +541,20 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   **Állás mindhárom ágon: es kumulált C1 4 004 ✅ / en A1 1 205 + A2 2 007 ✅ /
   hu A1 1 203 ✅. Hátra: hu A2+ és en B1+ szint-TERVEZÉS (topic-fa nincs), nem
   szóbővítés.**
+- **2026-09-05 (Opus tervezett, Sonnet kezdte, Opus fejezte be): ITER5, Minimál
+  tanulóképernyő-chrome.** Kálmán panasza: „a UI elkezdett massy lenni". Ok: 168
+  visszajelzés, és majdnem mind saját ÁLLANDÓ UI-elemet kapott, három render-ág
+  kézzel stackelte ugyanazt a fejlécet. Három mockup-változatból (Minimál /
+  Javaslat / Pakli / Hüvelyk) Kálmán a **Minimál**-t választotta.
+  Spec: `ITER5.md`. Terv-lap + névjegyzék: `Kimacha Minimál` és
+  `Kimacha UI-nevek` artifact, plusz `docs/UI-NEVEK.md` a repóban.
+  Eredmény: új `components/LearnChrome.tsx` (egy státusz-sor: szint · témakör ·
+  ismert/összes · 🌱 · 🎓, alatta 5 képpontos haladás-vonal, ami koppintásra a
+  MEGLÉVŐ `ProgressMeter`-t nyitja ki), a mód- és kölcsön-jelzés chipként a
+  kártyára költözött (az `EasySentenceCard` új opcionális `chips` propot kapott),
+  a két overlay egy toast-slot lett, a `subLevelLine` KIESETT (Kálmán döntése, a
+  tech-fán megvan). Törölve: `HEADER_RESERVE_MIN`, `HEADER_FONT_SCALE_CAP`,
+  `headerBottom` + `onLayout` mérés, és 16 elárvult stílus.
+  `index.tsx` 336 sorral rövidebb lett (−250/+93). Kapu: tsc 0, jest 457/457,
+  lint 70 (alapvonal változatlan), `data/` és mindkét `database` érintetlen.
+  Hátra: eszköz-verify a következő APK-n (font_scale 1.5-nél is elférjen a sor).
