@@ -21,9 +21,13 @@ interface Props {
   // FB146: the "write it too" practice grades with the same accent rule as the
   // typing cards (Settings -> Difficulty).
   strictAccents?: boolean;
+  // ITER5: the new/review and borrowed-topic chips, which used to be rows above
+  // the card. They ride at the top of the card, in the flow, so they cannot
+  // slide over the sentence.
+  chips?: React.ReactNode;
 }
 
-export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, onBury, onSkip, mistakeNote, speechLocale, strictAccents = false }: Props) {
+export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, onBury, onSkip, mistakeNote, speechLocale, strictAccents = false, chips }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
@@ -80,6 +84,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
 
   return (
     <View style={[styles.card, { backgroundColor: colors.card }]}>
+      {chips}
       <Text style={[styles.sourceText, { color: colors.text }]}>{sourceSentence}</Text>
 
       <View style={[styles.placedArea, { borderColor: result === 'correct' ? '#22C55E' : result === 'wrong' ? '#EF4444' : colors.tabIconDefault, borderStyle: result === 'correct' ? 'solid' : 'dashed' }]}>
