@@ -143,14 +143,16 @@ export default function LearnChrome({
                 {`🔁${reviewLeft}`}
               </Text>
               {/* FB174: this queue is one batch; the line underneath says how many
-                  more batches of the same size are still due behind it. */}
+                  more batches of the same size are still due behind it. FB175, Kálmán:
+                  "feleslegesen van 2 szer ott a 32 eleg 1 szer" — the batch size is
+                  already the number above, so only the multiplier is left here. */}
               {reviewBatchesLeft > 0 && (
                 <Text
                   testID="reviewBatches"
                   style={[styles.reviewBatches, { color: REVIEW_COLOR }]}
                   maxFontSizeMultiplier={FONT_SCALE_CAP}
                 >
-                  {`${reviewBatchSize}/${reviewBatchesLeft}`}
+                  {`×${reviewBatchesLeft}`}
                 </Text>
               )}
             </View>
