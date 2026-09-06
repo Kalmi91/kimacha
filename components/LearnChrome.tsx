@@ -125,6 +125,19 @@ export default function LearnChrome({
           <Text style={[styles.newWords, { color: colors.text }]} maxFontSizeMultiplier={FONT_SCALE_CAP}>
             {newWordsPaused ? `🌱⏸${newWordsLeft}` : `🌱${newWordsLeft}`}
           </Text>
+          {/* FB171, Kálmán 2026-09-06: "szeretném, ha lenne egy rózsaszín szám ami azt
+              mutatja még mennyi szót kell ismételni". Same pink as the bar's review
+              tail, so the number and the slice read as one thing; hidden at zero,
+              the way the 🎓 badge is. */}
+          {reviewLeft > 0 && (
+            <Text
+              testID="reviewCount"
+              style={[styles.newWords, { color: REVIEW_COLOR }]}
+              maxFontSizeMultiplier={FONT_SCALE_CAP}
+            >
+              {`🔁${reviewLeft}`}
+            </Text>
+          )}
           {examUnlocked && (
             <Pressable style={styles.examBadge} onPress={onExamPress} accessibilityLabel={examLabel}>
               <Text style={styles.examIcon} maxFontSizeMultiplier={FONT_SCALE_CAP}>🎓</Text>

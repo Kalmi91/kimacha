@@ -2483,13 +2483,23 @@ képernyőkép mindkettőt mutatta.
 - Az árván maradt `checkButton` stílus törölve; a `buttons` sor marad, azt a szókártya-ág
   (Good / Again / mondatban) használja.
 
-## Elfogadási kritérium (FB170 forduló)
-- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **461/461** ✅ (nincs új teszt: elrendezés-
-  változás, logikai ág nem változott).
+## ✅ FB171 [P2 UX], Rózsaszín ismétlés-számláló a fejlécben, KÉSZ
+Idézet (09-06): „szeretném, ha lenne gy rózsaszín szám ami azt mutatja még mennyi szót
+kell ismételni"
+A FB169-es rózsaszín sáv-farok mellé a szám is kikerült: a 🌱 napi új-szó jelvény után
+`🔁{reviewLeft}` a fejléc jobb oldalán, ugyanabban a `REVIEW_COLOR` (#F472B6) színben,
+mint a sáv, hogy a kettő egy dolognak látsszon. Nullánál elrejtve (mint a 🎓 jelvény).
+Ugyanaz a `reviewLeft` prop hajtja, mint a sávot, tehát a szám és a rózsaszín hossz
+mindig együtt fogy.
+
+## Elfogadási kritérium (FB170 + FB171 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **463/463** ✅ (+2 teszt a FB171 számlálóra;
+  a FB170 elrendezés-változás, logikai ág nem változott).
 - `npx expo lint`: 70 probléma (46 error, 24 warning) ✅ — VÁLTOZATLAN alapvonal.
 - ⏳ Eszköz-verify a következő APK-n: gépelős kártyán EGY Check látszik, közvetlenül a
   billentyűzet fölött; a billentyűzet becsukásakor a képernyő aljára ül; a kártya alja
-  végiggörgethető mögötte; a billentyűzet nem villog (P0-regresszió-figyelés).
+  végiggörgethető mögötte; a billentyűzet nem villog (P0-regresszió-figyelés); a fejlécben
+  rózsaszín 🔁-szám áll, ami a sáv rózsaszín részével együtt fogy, és nullánál eltűnik.
 
 ---
 

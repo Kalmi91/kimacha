@@ -47,6 +47,17 @@ describe('LearnChrome review slice', () => {
     expect(style.left).toBe('97%');
   });
 
+  // FB171: the pink number beside the 🌱 badge counts the same words as the slice.
+  it('shows the pink review count while words are due', () => {
+    const { getByTestId } = render(<LearnChrome {...base} known={50} reviewLeft={12} />);
+    expect(getByTestId('reviewCount').props.children).toBe('🔁12');
+  });
+
+  it('hides the review count at zero', () => {
+    const { queryByTestId } = render(<LearnChrome {...base} known={50} reviewLeft={0} />);
+    expect(queryByTestId('reviewCount')).toBeNull();
+  });
+
   it('never runs the slice past the blue fill', () => {
     const { getByTestId } = render(<LearnChrome {...base} known={10} reviewLeft={10} />);
     const style = getByTestId('reviewFill').props.style.find((s: any) => s?.width);
