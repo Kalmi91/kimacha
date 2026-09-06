@@ -595,3 +595,11 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   esedékes ismétlés-szó, limit nélkül); az `applyQueueSupply` ebből számol adag-méretet
   és hátralévő adagszámot, a fejlécben a 🔁-szám alatt `{size}/{left}` sor jelenik meg.
   Kapu: tsc 0, jest 465/465, lint 70 (alapvonal változatlan).
+- **2026-09-06** (Opus): **FB175 KÉSZ** (3.1.7 telefon-teszt: „a kek csik belecsúszott
+  ... feleslegesen van 2 szer ott a 32"). A FB172-es mérés képernyő- és ablak-koordinátát
+  kevert (`endCoordinates.screenY` vs `measureInWindow`), ezért a gomb hol lebegett, hol
+  a billentyűzet alá került. Számolás helyett: `app.json` → `softwareKeyboardLayoutMode:
+  "resize"` (a P0 IME-villogás javításának 1. pontja, KAV `behavior` androidon marad
+  `undefined`) + `tabBarHideOnKeyboard: true`, így a `bottom: 0` maga a billentyűzet
+  felső éle. A `32/5` adag-sor `×5`-re rövidült. Kapu: tsc 0, jest 465/465, lint 70.
+  ⚠️ Eszköz-teszten figyelni: a resize a régi villogás egyik résztvevője volt.

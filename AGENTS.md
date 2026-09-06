@@ -2534,7 +2534,27 @@ A sor egyszerre csak EGY adagot tart (`QUEUE_POOL = 40`, abból ~28 ismétlés),
   rózsaszín `{size}/{left}` sor (`reviewStack` oszlop a státusz-sorban). Ha nincs több
   adag (`left === 0`), a második sor nem jelenik meg.
 
-## Elfogadási kritérium (FB170 + FB171 + FB172 + FB173 + FB174 forduló)
+## ✅ FB175 [P1 BUG], A dokkolt Check a billentyűzet ALÁ csúszott + dupla szám, KÉSZ
+Idézet (09-06, 3.1.7 telefon-teszt): „ez igy borzalmas a kek csik belecsúszott ez így
+nem jo es feleslegesen van 2 szer ott a 32 eleg 1 szer"
+1. **A geometriai számolás rossz úton indult.** A FB172-es mérés a billentyűzet
+   `screenY`-ját (KÉPERNYŐ-koordináta) hasonlította a `measureInWindow` értékéhez
+   (ABLAK-koordináta). A kettő között ott a státuszsáv, a navigációs sáv és a tab-sáv,
+   ezért a gomb egyszer lebegett (FB172 előtt), most meg a billentyűzet alá csúszott.
+   Nincs több számolás: az `app.json` visszatért a `softwareKeyboardLayoutMode:
+   "resize"`-ra (ez a P0 IME-villogás javításának ELSŐ pontja: resize + KAV
+   `behavior: undefined`, tehát csak EGY fél méretez), a tab-sáv pedig
+   `tabBarHideOnKeyboard: true`-val félreáll gépelés közben. Így a `bottom: 0` MAGA a
+   billentyűzet felső éle, eszköztől és navigációs módtól függetlenül.
+   ⚠️ Figyelendő a következő eszköz-teszten: a `resize` volt a villogás egyik résztvevője
+   (`behavior: 'height'`-tal együtt). A KAV `behavior` androidon `undefined` maradt, tehát
+   az akkori három méretezőből kettő van, de ha visszatér a Gboard-villogás, ez a commit
+   az első gyanúsított.
+2. **A `32/5` felesleges ismétlés.** A szám a jelvényben már ott van, ezért a második
+   sor `×5`-re rövidült (ugyanaz a rózsaszín, ugyanaz a logika: hány további, ekkora
+   adag van hátra).
+
+## Elfogadási kritérium (FB170–FB175 forduló)
 - `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **465/465** ✅ (+2 teszt a FB171 számlálóra,
   +2 a FB174 adag-sorra; a FB170/FB172/FB173 elrendezés-változás).
 - `npx expo lint`: 70 probléma (46 error, 24 warning) ✅ — VÁLTOZATLAN alapvonal.
@@ -2542,9 +2562,10 @@ A sor egyszerre csak EGY adagot tart (`QUEUE_POOL = 40`, abból ~28 ismétlés),
   billentyűzet fölött; a billentyűzet becsukásakor a képernyő aljára ül; a kártya alja
   végiggörgethető mögötte; a billentyűzet nem villog (P0-regresszió-figyelés); a fejlécben
   rózsaszín 🔁-szám áll, ami a sáv rózsaszín részével együtt fogy, és nullánál eltűnik;
-  a Check a billentyűzet felső élét ÉRINTI (nincs hézag), és a Review chip a kártya
-  tetején ül; a 💬 gomb a sáv FÖLÖTT lebeg, nem rajta; a 🔁-szám alatt ott a `28/2`-féle
-  adag-sor, amíg van hátralévő adag.
+  a Check a billentyűzet felső élét ÉRINTI (se hézag, se takarás), és a Review chip a
+  kártya tetején ül; a 💬 gomb a sáv FÖLÖTT lebeg, nem rajta; a 🔁-szám alatt `×N` áll,
+  amíg van hátralévő adag; a tab-sáv gépelés közben eltűnik és utána visszajön;
+  a billentyűzet NEM villog (P0-regresszió-figyelés a resize miatt).
 
 ---
 

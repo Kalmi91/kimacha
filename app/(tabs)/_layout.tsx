@@ -19,6 +19,10 @@ export default function TabLayout() {
           backgroundColor: colors.background,
           borderTopColor: colors.card,
         },
+        // FB175: with the window resizing for the keyboard, a visible tab bar would
+        // sit between the learn card's docked Check and the keys. It steps aside
+        // while typing and comes back when the keyboard closes.
+        tabBarHideOnKeyboard: true,
         // K1 DÖNTÉS (GAMES.md 2.1): 6 fül fér a sávba, de 360 dp széles
         // kijelzőn a felirat 6 fülnél tördel a default méretnél.
         tabBarLabelStyle: {

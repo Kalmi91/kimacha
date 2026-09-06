@@ -60,12 +60,12 @@ describe('LearnChrome review slice', () => {
     expect(queryByTestId('reviewCount')).toBeNull();
   });
 
-  // FB174: one batch is in the queue, the rest are announced as "size/batches left".
-  it('names the batch size and how many batches are still due', () => {
+  // FB174/FB175: one batch is in the queue, the line under it multiplies the rest.
+  it('says how many batches are still due, without repeating the size', () => {
     const { getByTestId } = render(
       <LearnChrome {...base} known={200} reviewLeft={30} reviewBatchSize={30} reviewBatchesLeft={3} />,
     );
-    expect(getByTestId('reviewBatches').props.children).toBe('30/3');
+    expect(getByTestId('reviewBatches').props.children).toBe('×3');
   });
 
   it('hides the batch line when this queue is the last one', () => {
