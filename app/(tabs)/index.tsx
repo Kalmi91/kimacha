@@ -1259,7 +1259,7 @@ export default function LearnScreen() {
       newWordsLeft={newWordsLeft}
       newWordsPaused={newWordsPaused}
       reviewLeft={reviewLeft}
-      reviewBatchSize={reviewBatch.size}
+      batchLeft={batchLeft}
       reviewBatchesLeft={reviewBatch.left}
       examUnlocked={masteredPct >= 80}
       onExamPress={() => setExamMode(true)}
