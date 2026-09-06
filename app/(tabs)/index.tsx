@@ -35,6 +35,10 @@ import { answerInputProps } from '@/lib/inputProps';
 
 const f = fsrs();
 
+// FB170: height of the docked Check bar (button plus its padding), the room the
+// typing card has to keep free at its bottom.
+const DOCK_RESERVE = 76;
+
 // ITER5: the header used to be absolutely positioned, so it needed a measured
 // reserve (HEADER_RESERVE_MIN) and a font-scale cap here. LearnChrome sits in
 // the flow above the scroll view, so neither is needed; the cap lives there.
@@ -67,6 +71,13 @@ export default function LearnScreen() {
   // FB132: Settings -> Difficulty, "accents count". Off = the beginner grader
   // forgives a missing á/é/ñ; on = it fails the answer and the diff paints it.
   const [strictAccents, setStrictAccents] = useState(false);
+  // FB170, Kálmán 2026-09-06: "azt akarom hogy a check rész az pont a klaviatúrám
+  // felett legyen és nem kell ketto". The typing card had two Check buttons (the
+  // in-card one from FB5 and the older one below the card); there is one now, docked
+  // this many pixels above the bottom edge, i.e. exactly on top of the open keyboard.
+  // Read from the keyboard events because app.json keeps softwareKeyboardLayoutMode
+  // "pan" (the P0 IME-flicker fix), so the window itself does not resize for us.
+  const [kbHeight, setKbHeight] = useState(0);
   // FB135/FB136: how many untouched words the ACTIVE topic still holds, and the
   // next topic that holds some. Zero here with a topic left to go is the state
   // where the session ends with nothing on offer, see lib/topicRotation.ts.
@@ -427,6 +438,14 @@ export default function LearnScreen() {
     loadVoices();
     // eslint-disable-next-line react-hooks/set-state-in-effect
     loadCards();
+  }, []);
+
+  // FB170: track the open keyboard's height so the single Check button can sit
+  // right on top of it. 'Did' events (not 'Will') because Android only fires those.
+  useEffect(() => {
+    const show = Keyboard.addListener('keyboardDidShow', (e) => setKbHeight(e.endCoordinates.height));
+    const hide = Keyboard.addListener('keyboardDidHide', () => setKbHeight(0));
+    return () => { show.remove(); hide.remove(); };
   }, []);
 
   // On returning to the Learn tab, run any action the Settings tab queued:
@@ -1260,7 +1279,9 @@ export default function LearnScreen() {
             instead of colliding with anything on small screens. */}
         <ScrollView
           style={styles.typingScroll}
-          contentContainerStyle={styles.typingScrollContent}
+          // FB170: leave room for the docked Check bar and the keyboard under it,
+          // otherwise the last line of the card would end up behind them.
+          contentContainerStyle={[styles.typingScrollContent, { paddingBottom: 24 + DOCK_RESERVE + kbHeight }]}
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="on-drag"
         >
@@ -1288,9 +1309,9 @@ export default function LearnScreen() {
           {photoBlock}
           {noteBlock}
 
-          {/* FB5: inline action button — with softwareKeyboardLayoutMode "pan"
-              the bottom Check button can sit under the open keyboard, so the
-              input row carries its own always-visible ✓/→. */}
+          {/* FB5, then FB170: the input row used to carry its own ✓/→ because the
+              button below the card could hide under the keyboard. The single Check
+              is docked above the keyboard now, so the row is just the field. */}
           <View style={styles.inputRow}>
             <TextInput
               ref={inputRef}
@@ -1304,12 +1325,6 @@ export default function LearnScreen() {
               autoFocus
               {...answerInputProps}
             />
-            <Pressable
-              style={[styles.inlineCheckBtn, { backgroundColor: revealed && typingResult === 'wrong' ? '#1D4ED8' : '#38BDF8' }]}
-              onPress={revealed ? handleTypingNext : handleCheck}
-            >
-              <Text style={styles.inlineCheckText}>{revealed ? '→' : `✓ ${s.card.check}`}</Text>
-            </Pressable>
           </View>
 
           {revealed && (
@@ -1344,26 +1359,6 @@ export default function LearnScreen() {
             </View>
           )}
         </Pressable>
-
-        {!revealed ? (
-          <View style={styles.buttons}>
-            <Pressable
-              style={[styles.button, styles.checkButton, { backgroundColor: '#38BDF8' }]}
-              onPress={handleCheck}
-            >
-              <Text style={styles.buttonText}>{s.card.check}</Text>
-            </Pressable>
-          </View>
-        ) : (
-          <View style={styles.buttons}>
-            <Pressable
-              style={[styles.button, styles.checkButton, { backgroundColor: typingResult === 'wrong' ? '#1D4ED8' : '#38BDF8' }]}
-              onPress={handleTypingNext}
-            >
-              <Text style={styles.buttonText}>→</Text>
-            </Pressable>
-          </View>
-        )}
 
         <Pressable
           style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
@@ -1400,6 +1395,22 @@ export default function LearnScreen() {
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{spellingAdded ? `${s.buttons.spelling} ✓` : s.buttons.spelling}</Text>}
         </Pressable>
         </ScrollView>
+
+        {/* FB170: the one and only Check/→ of the typing card, pinned to the top
+            edge of the keyboard (or to the bottom of the screen when it is closed). */}
+        <View
+          style={[
+            styles.dockedAction,
+            { bottom: kbHeight, paddingBottom: kbHeight > 0 ? 8 : 20, backgroundColor: colors.background },
+          ]}
+        >
+          <Pressable
+            style={[styles.inlineCheckBtn, { backgroundColor: revealed && typingResult === 'wrong' ? '#1D4ED8' : '#38BDF8' }]}
+            onPress={revealed ? handleTypingNext : handleCheck}
+          >
+            <Text style={styles.inlineCheckText}>{revealed ? '→' : `✓ ${s.card.check}`}</Text>
+          </Pressable>
+        </View>
 
         <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`${current.type}:${front}`} />
       </KeyboardAvoidingView>
@@ -1677,9 +1688,6 @@ const styles = StyleSheet.create({
     minWidth: 90,
     alignItems: 'center',
   },
-  checkButton: {
-    minWidth: 200,
-  },
   buttonText: {
     color: '#FFFFFF',
     fontSize: 16,
@@ -1776,6 +1784,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 8,
     paddingHorizontal: 4,
+  },
+  // FB170: the single Check button of the typing card, docked above the keyboard.
+  dockedAction: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    paddingHorizontal: 20,
+    paddingTop: 8,
   },
   typingScroll: {
     flex: 1,
