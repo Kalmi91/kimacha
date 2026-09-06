@@ -567,3 +567,10 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   nem-új `wordId`-kat. Kapu: tsc 0, jest 461/461 (+4 új `LearnChrome` teszt), lint 70
   (alapvonal változatlan). Hátra: eszköz-verify a következő APK-n. Részletek: `AGENTS.md`
   „Feedback, 2026-09-05 forduló".
+- **2026-09-06** (Opus): **FB170 KÉSZ** (chat-kérés képernyőképpel: „azt akarom hogy a
+  check rész az pont a klaviatúrám felett legyen és nem kell ketto"). A gépelős kártya
+  két Check gombja (FB5 kártyán belüli + régi kártya alatti sáv) helyett EGY dokkolt
+  gomb a billentyűzet felső élén: `styles.dockedAction`, `bottom: kbHeight`, a magasság
+  a `Keyboard` did-show/hide eseményeiből (az app.json `pan` marad, az a P0 IME-villogás
+  javítása). `DOCK_RESERVE = 76` + `kbHeight` a scroll paddingjában. Kapu: tsc 0,
+  jest 461/461, lint 70 (alapvonal változatlan). Hátra: eszköz-verify a következő APK-n.

@@ -2459,6 +2459,40 @@ szot kell review ni. es ahogy egyrw kevesebb lesz legyen egyrw kisebb a rozsaszi
 
 ---
 
+# 📋 Feedback, 2026-09-06 forduló (v3.1.4 telefon-teszt, chat-kérés)
+
+Forrás: chat + képernyőkép (nem sheet-sor), a 3.1.4 (38) APK telefonon.
+
+## ✅ FB170 [P1 UX], EGY Check gomb, pont a billentyűzet fölött, KÉSZ
+Idézet (09-06): „azt akarom hogy a check rész az pont a klaviatúrám felett legyen és
+nem kell ketto"
+A gépelős kártyán KÉT Check gomb volt: a kártyán belüli, a beviteli mező alatt (FB5,
+azért került oda, mert `softwareKeyboardLayoutMode: "pan"` mellett a kártya ALATTI gomb
+a billentyűzet alá csúszhat), és a régi, kártya alatti sáv (`styles.buttons`). A
+képernyőkép mindkettőt mutatta.
+- Mindkettő törölve, helyettük EGY dokkolt gomb (`styles.dockedAction`) a
+  `KeyboardAvoidingView` alján, `position: absolute`, `bottom: kbHeight`, tehát a nyitott
+  billentyűzet felső élén ül, csukott billentyűzetnél a képernyő aljára simul.
+- `kbHeight` a `Keyboard` `keyboardDidShow` / `keyboardDidHide` eseményeiből jön
+  (Androidon csak a „Did" változat sül el). Azért kell kézzel mérni, mert az app.json
+  `pan` módban marad: az a P0-s IME-villogás javítása, `resize`-ra visszatérni tilos.
+- A gomb szerepe változatlan: válasz előtt „✓ Ellenőrzés" (`handleCheck`), felfedés
+  után „→" (`handleTypingNext`), hibás válasznál sötétkék.
+- `DOCK_RESERVE = 76` + `kbHeight` a gépelős `ScrollView` `paddingBottom`-jában, hogy a
+  kártya alja (eredmény-blokk, „I Know This", szundi, helyesírás) ne kerüljön a sáv mögé.
+- Az árván maradt `checkButton` stílus törölve; a `buttons` sor marad, azt a szókártya-ág
+  (Good / Again / mondatban) használja.
+
+## Elfogadási kritérium (FB170 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **461/461** ✅ (nincs új teszt: elrendezés-
+  változás, logikai ág nem változott).
+- `npx expo lint`: 70 probléma (46 error, 24 warning) ✅ — VÁLTOZATLAN alapvonal.
+- ⏳ Eszköz-verify a következő APK-n: gépelős kártyán EGY Check látszik, közvetlenül a
+  billentyűzet fölött; a billentyűzet becsukásakor a képernyő aljára ül; a kártya alja
+  végiggörgethető mögötte; a billentyűzet nem villog (P0-regresszió-figyelés).
+
+---
+
 # 🛠️ Emulátor + release-csapdák (2026-08-15)
 
 **Android emulátor UI-ellenőrzéshez.** AVD `kimacha_test` (Pixel 6, Android 35).
