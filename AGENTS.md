@@ -2554,7 +2554,28 @@ nem jo es feleslegesen van 2 szer ott a 32 eleg 1 szer"
    sor `×5`-re rövidült (ugyanaz a rózsaszín, ugyanaz a logika: hány további, ekkora
    adag van hátra).
 
-## Elfogadási kritérium (FB170–FB175 forduló)
+## ✅ FB176 [P0 BUG], A Check gomb teljesen eltűnt a billentyűzet mögött, KÉSZ
+Idézet (09-06, 3.1.8 telefon-teszt): „hát most teljesen eltünt a chack gomb"
+A FB175-ös `adjustResize` egy EDGE-TO-EDGE ablakon nem méretez: a billentyűzet ott
+ablak-insetként érkezik, az ablak marad teljes képernyős. Így a `bottom: 0`-s sáv a
+képernyő alján, a billentyűzet MÖGÖTT maradt. Vissza `pan`-ra (a P0 IME-fix), a sáv
+pedig újra `bottom: kbHeight` — de most már a FB175-ben bevezetett
+`tabBarHideOnKeyboard: true`-val, és EZ a különbség: a tab-sáv eltűnésével a konténer
+alja = a képernyő alja, márpedig a `keyboardDidShow` magassága is onnan mér, tehát a
+FB170-es „naiv" képlet mostantól pontos. (A FB170-es ~49 dp hézag maga a tab-sáv volt.)
+
+## ✅ FB177 [P1 UX], A rózsaszín a MAI összes ismétlést mutassa, KÉSZ
+Idézet (09-06): „a rozsaszin csik az az ööszes ismételendő szót mutassa ne csak azt a
+30 at amit most tanulok úgy van értelme, az a célja hogy jelezze, hogy még mennyit kell
+ismételni ma"
+A sor egy adagot tart, ezért a FB169/FB171-es szám az adaggal ürült ki, aztán újratöltött.
+Mostantól a fejléc a NAPI halmot mutatja: `reviewLeft = dueToday − (adag − adagból hátra)`,
+ahol a `dueToday` a sor-építéskor lekért teljes esedékes mennyiség (FB174-es
+`countDueReviewWords`). A csík rózsaszín farka ugyanezt az értéket kapja, tehát a
+számmal együtt fogy a nap folyamán; a `×N` adag-sor változatlanul azt mondja, hány
+további adagban jön.
+
+## Elfogadási kritérium (FB170–FB177 forduló)
 - `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **465/465** ✅ (+2 teszt a FB171 számlálóra,
   +2 a FB174 adag-sorra; a FB170/FB172/FB173 elrendezés-változás).
 - `npx expo lint`: 70 probléma (46 error, 24 warning) ✅ — VÁLTOZATLAN alapvonal.
@@ -2562,8 +2583,8 @@ nem jo es feleslegesen van 2 szer ott a 32 eleg 1 szer"
   billentyűzet fölött; a billentyűzet becsukásakor a képernyő aljára ül; a kártya alja
   végiggörgethető mögötte; a billentyűzet nem villog (P0-regresszió-figyelés); a fejlécben
   rózsaszín 🔁-szám áll, ami a sáv rózsaszín részével együtt fogy, és nullánál eltűnik;
-  a Check a billentyűzet felső élét ÉRINTI (se hézag, se takarás), és a Review chip a
-  kártya tetején ül; a 💬 gomb a sáv FÖLÖTT lebeg, nem rajta; a 🔁-szám alatt `×N` áll,
+  a Check a billentyűzet felső élét ÉRINTI (se hézag, se takarás, se eltűnés), és a
+  Review chip a kártya tetején ül; a 🔁-szám a MAI összes ismétlést mutatja; a 💬 gomb a sáv FÖLÖTT lebeg, nem rajta; a 🔁-szám alatt `×N` áll,
   amíg van hátralévő adag; a tab-sáv gépelés közben eltűnik és utána visszajön;
   a billentyűzet NEM villog (P0-regresszió-figyelés a resize miatt).
 
