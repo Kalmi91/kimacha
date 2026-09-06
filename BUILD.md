@@ -603,3 +603,12 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   `undefined`) + `tabBarHideOnKeyboard: true`, így a `bottom: 0` maga a billentyűzet
   felső éle. A `32/5` adag-sor `×5`-re rövidült. Kapu: tsc 0, jest 465/465, lint 70.
   ⚠️ Eszköz-teszten figyelni: a resize a régi villogás egyik résztvevője volt.
+- **2026-09-06** (Opus): **FB176 + FB177 KÉSZ**. FB176 (P0): a FB175-ös `adjustResize`
+  egy edge-to-edge ablakon nem méretez (a billentyűzet insetként jön), ezért a gomb a
+  billentyűzet mögé került. Vissza `pan`-ra + `bottom: kbHeight`, de a FB175-ös
+  `tabBarHideOnKeyboard`-dal együtt: a tab-sáv eltűnésével a konténer alja = képernyő
+  alja, és pont ennyi volt a FB170-es hézag. FB177: a fejléc rózsaszín száma és a sáv
+  farka a MAI összes esedékes ismétlést mutatja (`dueToday − az adagból kész`), nem csak
+  az aktuális adagot. Kapu: tsc 0, jest 465/465, lint 70.
+  ⚠️ Emulátoros verify nem futott le: a sandboxban nincs `/dev/kvm`, a szoftveres
+  emulátor 30 perc alatt sem bootolt be.

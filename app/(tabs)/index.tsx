@@ -76,14 +76,19 @@ export default function LearnScreen() {
   // in-card one from FB5 and the older one below the card); there is one now, docked
   // to the bottom edge of this screen.
   //
-  // FB172 tried to place it by arithmetic on the keyboard's reported height, and
-  // FB175 gave that up: the height counts from the bottom of the SCREEN while a
-  // measured view answers in WINDOW coordinates, and the difference (status bar,
-  // navigation bar, tab bar) is exactly what kept the bar hovering or hiding. The
-  // window resizes for the keyboard again instead (app.json softwareKeyboardLayoutMode
-  // "resize", the first fix listed for the IME-flicker P0, with the KeyboardAvoidingView
-  // behavior left undefined so nothing sizes it twice), and the tab bar hides while
-  // typing, so "bottom: 0" already IS the top edge of the keyboard.
+  // Three tries to place it, and the reason the first two missed was never the
+  // keyboard height, it was what sat under the container:
+  //   FB170 lifted the bar by the reported keyboard height, and the visible TAB BAR
+  //     below the container ate that much of the lift (a ~49 dp gap).
+  //   FB172 measured instead, and mixed window coordinates with the keyboard's screen
+  //     coordinates, so the bar slid under the keys.
+  //   FB175 asked the window to resize, which an edge-to-edge Android window does not
+  //     do (the IME arrives as an inset), so the bar stayed at the screen bottom,
+  //     completely behind the keyboard.
+  // FB176: with `tabBarHideOnKeyboard` (FB175) the container now ends AT the bottom of
+  // the screen while typing, which is exactly where the reported keyboard height is
+  // measured from, so the plain arithmetic is the correct one after all.
+  const [kbHeight, setKbHeight] = useState(0);
   // FB135/FB136: how many untouched words the ACTIVE topic still holds, and the
   // next topic that holds some. Zero here with a topic left to go is the state
   // where the session ends with nothing on offer, see lib/topicRotation.ts.
@@ -99,7 +104,9 @@ export default function LearnScreen() {
   // ismételni kell ... legyen ott egy 30/3 hogy ha meg 3 szor van 30 szo". The queue
   // only ever holds one batch, so the header also names the batch size and how many
   // more batches of that size are waiting behind it.
-  const [reviewBatch, setReviewBatch] = useState<{ size: number; left: number }>({ size: 0, left: 0 });
+  const [reviewBatch, setReviewBatch] = useState<{ size: number; left: number; dueToday: number }>(
+    { size: 0, left: 0, dueToday: 0 },
+  );
   // FB158/FB159, Kálmán 2026-08-26 (word:"the volleyball", majd word:"belly"):
   // "kellene valami különbség, hogy tudjam, hogy most a régi szavakat ismételem,
   // vagy az újakat tanulom", kétszer kérve. A 🌱 fejléc-jelvény csak a NAPI keretet
@@ -246,6 +253,7 @@ export default function LearnScreen() {
     setReviewBatch({
       size: batchSize,
       left: batchSize > 0 ? Math.ceil(beyond / batchSize) : 0,
+      dueToday: dueReviewWords,
     });
     // FB158/FB159: remember which words arrived brand new, the per-card tag reads this.
     setNewTodayIds((prev) => {
@@ -514,18 +522,34 @@ export default function LearnScreen() {
 
   const current = queue[currentIndex];
 
-  // FB169, Kálmán 2026-09-05: the pink slice of the header progress bar counts the
-  // words still waiting for review in THIS queue, so it shrinks with every card
-  // answered and reaches zero at the Done screen. "New" here is the FB158 rule
-  // (a word that entered the queue with reps === 0 stays new for the session), and
-  // distinct wordIds are counted, because one word can hold three cards.
-  const reviewLeft = useMemo(() => {
+  // FB176: 'Did' events, not 'Will': Android only fires those.
+  useEffect(() => {
+    const show = Keyboard.addListener('keyboardDidShow', (e) => setKbHeight(e.endCoordinates.height));
+    const hide = Keyboard.addListener('keyboardDidHide', () => setKbHeight(0));
+    return () => { show.remove(); hide.remove(); };
+  }, []);
+
+  // FB169, Kálmán 2026-09-05: the words still waiting for review in THIS queue, so it
+  // shrinks with every card answered. "New" here is the FB158 rule (a word that entered
+  // the queue with reps === 0 stays new for the session), and distinct wordIds are
+  // counted, because one word can hold three cards.
+  const batchLeft = useMemo(() => {
     const ids = new Set<number>();
     for (let i = currentIndex; i < queue.length; i++) {
       if (!newTodayIds.has(queue[i].wordId)) ids.add(queue[i].wordId);
     }
     return ids.size;
   }, [queue, currentIndex, newTodayIds]);
+
+  // FB177, Kálmán 2026-09-06: "a rozsaszin csik az az ööszes ismételendő szót mutassa
+  // ne csak azt a 30 at amit most tanulok ... jelezze, hogy még mennyit kell ismételni
+  // ma". The queue holds one batch, so the batch counter emptied and refilled. The
+  // header shows the whole day's pile instead: everything that was due when this queue
+  // was built, minus what has been answered out of the batch since.
+  const reviewLeft = useMemo(() => {
+    const doneInBatch = Math.max(0, reviewBatch.size - batchLeft);
+    return Math.max(batchLeft, reviewBatch.dueToday - doneInBatch);
+  }, [reviewBatch, batchLeft]);
 
   const getFrontBack = (item: DueItem) => {
     const [native, learned] = direction;
@@ -1302,7 +1326,7 @@ export default function LearnScreen() {
           style={styles.typingScroll}
           // FB170: leave room for the docked Check bar and the keyboard under it,
           // otherwise the last line of the card would end up behind them.
-          contentContainerStyle={[styles.typingScrollContent, { paddingBottom: 24 + DOCK_RESERVE }]}
+          contentContainerStyle={[styles.typingScrollContent, { paddingBottom: 24 + DOCK_RESERVE + kbHeight }]}
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="on-drag"
         >
@@ -1419,7 +1443,7 @@ export default function LearnScreen() {
 
         {/* FB170: the one and only Check/→ of the typing card, pinned to the top
             edge of the keyboard (or to the bottom of the screen when it is closed). */}
-        <View style={[styles.dockedAction, { backgroundColor: colors.background }]}>
+        <View style={[styles.dockedAction, { bottom: kbHeight, backgroundColor: colors.background }]}>
           <Pressable
             style={[styles.inlineCheckBtn, { backgroundColor: revealed && typingResult === 'wrong' ? '#1D4ED8' : '#38BDF8' }]}
             onPress={revealed ? handleTypingNext : handleCheck}
@@ -1434,7 +1458,7 @@ export default function LearnScreen() {
           level={level}
           languagePair={direction.join('→')}
           currentCard={`${current.type}:${front}`}
-          bottomOffset={DOCK_RESERVE}
+          bottomOffset={DOCK_RESERVE + kbHeight}
         />
       </KeyboardAvoidingView>
     );
