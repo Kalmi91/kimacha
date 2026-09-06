@@ -612,3 +612,8 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   az aktuális adagot. Kapu: tsc 0, jest 465/465, lint 70.
   ⚠️ Emulátoros verify nem futott le: a sandboxban nincs `/dev/kvm`, a szoftveres
   emulátor 30 perc alatt sem bootolt be.
+- **2026-09-06** (Opus): **FB178 KÉSZ** (3.1.10). A `keyboardDidShow` magassága csak a
+  billentyűket méri, a navigációs sáv a billentyűzet alatt van, ezért a dokkolt sáv egy
+  navigációs sávnyival a billentyűzet alá került. `dockLift = kbHeight + insets.bottom`
+  (`useSafeAreaInsets`), csukott billentyűzetnél `insets.bottom`. Kapu: tsc 0,
+  jest 465/465, lint 70. Eszköz-verify továbbra is a telefonon (nincs KVM a sandboxban).

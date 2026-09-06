@@ -2575,7 +2575,21 @@ ahol a `dueToday` a sor-építéskor lekért teljes esedékes mennyiség (FB174-
 számmal együtt fogy a nap folyamán; a `×N` adag-sor változatlanul azt mondja, hány
 további adagban jön.
 
-## Elfogadási kritérium (FB170–FB177 forduló)
+## ✅ FB178 [P0 BUG], A gomb egy navigációs sávnyival a billentyűzet alatt, KÉSZ
+Idézet (09-06, 3.1.9 telefon-teszt): „még mindig ilyen..."
+A `keyboardDidShow` `height` értéke CSAK a billentyűket méri. A telefonon a három-gombos
+navigációs sáv a billentyűzet ALATT van, tehát a billentyűzet teteje a képernyő aljától
+`kbHeight + navigációs sáv` magasságban van. A nyers `kbHeight`-tel a sáv pont ennyivel
+maradt lejjebb, és a billentyűzet mögé került. Mostantól
+`dockLift = kbHeight > 0 ? kbHeight + insets.bottom : insets.bottom`
+(`useSafeAreaInsets`, a providert az expo-router adja), tehát csukott billentyűzetnél a
+navigációs sáv fölé ül, nyitottnál a billentyűk fölé. Ugyanez a `dockLift` megy a
+görgető alsó paddingjébe és a 💬 gomb eltolásába.
+**Mérési nyom (a képernyőképekből):** FB170 (tab-sáv látszott, nyers kbHeight) ≈ 49 dp-vel
+FÖLÖTTE; FB178 előtt (tab-sáv rejtve, nyers kbHeight) ≈ 48 dp-vel ALATTA. A két hiba a
+tab-sáv és a navigációs sáv, korábban véletlenül majdnem kioltották egymást.
+
+## Elfogadási kritérium (FB170–FB178 forduló)
 - `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **465/465** ✅ (+2 teszt a FB171 számlálóra,
   +2 a FB174 adag-sorra; a FB170/FB172/FB173 elrendezés-változás).
 - `npx expo lint`: 70 probléma (46 error, 24 warning) ✅ — VÁLTOZATLAN alapvonal.

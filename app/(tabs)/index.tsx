@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef, useCallback, useMemo } from 'react';
 import { StyleSheet, Text, View, Pressable, ActivityIndicator, TextInput, KeyboardAvoidingView, Platform, ScrollView, Image, Keyboard } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
 
@@ -89,6 +90,11 @@ export default function LearnScreen() {
   // the screen while typing, which is exactly where the reported keyboard height is
   // measured from, so the plain arithmetic is the correct one after all.
   const [kbHeight, setKbHeight] = useState(0);
+  // FB178: the keyboard event reports the height of the KEYS ONLY. On a phone with the
+  // three-button navigation bar the keyboard sits ON TOP of that bar, so its top edge is
+  // kbHeight + the bottom safe-area inset above the screen bottom. Lifting by the raw
+  // height left the bar a navigation bar too low, which is why it stayed behind the keys.
+  const insets = useSafeAreaInsets();
   // FB135/FB136: how many untouched words the ACTIVE topic still holds, and the
   // next topic that holds some. Zero here with a topic left to go is the state
   // where the session ends with nothing on offer, see lib/topicRotation.ts.
@@ -521,6 +527,10 @@ export default function LearnScreen() {
   );
 
   const current = queue[currentIndex];
+
+  // FB178: how far the docked bar has to sit above the bottom of this screen. With the
+  // keyboard closed that is just the navigation bar; with it open, the keys plus the bar.
+  const dockLift = kbHeight > 0 ? kbHeight + insets.bottom : insets.bottom;
 
   // FB176: 'Did' events, not 'Will': Android only fires those.
   useEffect(() => {
@@ -1326,7 +1336,7 @@ export default function LearnScreen() {
           style={styles.typingScroll}
           // FB170: leave room for the docked Check bar and the keyboard under it,
           // otherwise the last line of the card would end up behind them.
-          contentContainerStyle={[styles.typingScrollContent, { paddingBottom: 24 + DOCK_RESERVE + kbHeight }]}
+          contentContainerStyle={[styles.typingScrollContent, { paddingBottom: 24 + DOCK_RESERVE + dockLift }]}
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="on-drag"
         >
@@ -1443,7 +1453,7 @@ export default function LearnScreen() {
 
         {/* FB170: the one and only Check/→ of the typing card, pinned to the top
             edge of the keyboard (or to the bottom of the screen when it is closed). */}
-        <View style={[styles.dockedAction, { bottom: kbHeight, backgroundColor: colors.background }]}>
+        <View style={[styles.dockedAction, { bottom: dockLift, backgroundColor: colors.background }]}>
           <Pressable
             style={[styles.inlineCheckBtn, { backgroundColor: revealed && typingResult === 'wrong' ? '#1D4ED8' : '#38BDF8' }]}
             onPress={revealed ? handleTypingNext : handleCheck}
@@ -1458,7 +1468,7 @@ export default function LearnScreen() {
           level={level}
           languagePair={direction.join('→')}
           currentCard={`${current.type}:${front}`}
-          bottomOffset={DOCK_RESERVE + kbHeight}
+          bottomOffset={DOCK_RESERVE + dockLift}
         />
       </KeyboardAvoidingView>
     );
