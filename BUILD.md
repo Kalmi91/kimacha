@@ -574,3 +574,8 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   a `Keyboard` did-show/hide eseményeiből (az app.json `pan` marad, az a P0 IME-villogás
   javítása). `DOCK_RESERVE = 76` + `kbHeight` a scroll paddingjában. Kapu: tsc 0,
   jest 461/461, lint 70 (alapvonal változatlan). Hátra: eszköz-verify a következő APK-n.
+- **2026-09-06** (Opus): **FB171 KÉSZ** (chat: „szeretném, ha lenne gy rózsaszín szám ami
+  azt mutatja még mennyi szót kell ismételni"). A FB169-es sáv-farok mellé a szám is
+  kikerült: `🔁{reviewLeft}` a fejléc jobb oldalán, `REVIEW_COLOR` (#F472B6), nullánál
+  rejtve, ugyanaz a prop hajtja, mint a sávot. Kapu: tsc 0, jest 463/463 (+2 teszt),
+  lint 70 (alapvonal változatlan). Hátra: eszköz-verify a következő APK-n.
