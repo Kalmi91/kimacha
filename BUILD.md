@@ -587,3 +587,11 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   eszköz- és navigációsáv-független. (2) A gépelős kártya `typingCard` módosítót kapott
   (`minHeight: 0`, `flex-start`, `paddingTop: 18`), így a Review chip a kártya tetején ül.
   Kapu: tsc 0, jest 463/463, lint 70 (alapvonal változatlan).
+- **2026-09-06** (Opus): **FB173 + FB174 KÉSZ** (3.1.6 telefon-teszt: „feedback gomb
+  egybe csúszott" + „azt akarom látni, hogy mennyi van osszesen amit ismételni kell").
+  FB173: a `FeedbackButton` `bottomOffset` propot kapott, a tanuló-képernyő
+  `DOCK_RESERVE + dockOffset`-tel hívja, így a 💬 a dokkolt Check sáv fölé kerül.
+  FB174: új `countDueReviewWords` / `countDueReviewWordsForLevel` a DB-ben (DISTINCT
+  esedékes ismétlés-szó, limit nélkül); az `applyQueueSupply` ebből számol adag-méretet
+  és hátralévő adagszámot, a fejlécben a 🔁-szám alatt `{size}/{left}` sor jelenik meg.
+  Kapu: tsc 0, jest 465/465, lint 70 (alapvonal változatlan).

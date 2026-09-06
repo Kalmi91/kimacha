@@ -15,6 +15,8 @@ const base = {
   langName: 'Español',
   newWordsLeft: 5,
   newWordsPaused: false,
+  reviewBatchSize: 0,
+  reviewBatchesLeft: 0,
   examUnlocked: false,
   onExamPress: () => {},
   examLabel: 'exam',
@@ -56,6 +58,21 @@ describe('LearnChrome review slice', () => {
   it('hides the review count at zero', () => {
     const { queryByTestId } = render(<LearnChrome {...base} known={50} reviewLeft={0} />);
     expect(queryByTestId('reviewCount')).toBeNull();
+  });
+
+  // FB174: one batch is in the queue, the rest are announced as "size/batches left".
+  it('names the batch size and how many batches are still due', () => {
+    const { getByTestId } = render(
+      <LearnChrome {...base} known={200} reviewLeft={30} reviewBatchSize={30} reviewBatchesLeft={3} />,
+    );
+    expect(getByTestId('reviewBatches').props.children).toBe('30/3');
+  });
+
+  it('hides the batch line when this queue is the last one', () => {
+    const { queryByTestId } = render(
+      <LearnChrome {...base} known={200} reviewLeft={12} reviewBatchSize={12} reviewBatchesLeft={0} />,
+    );
+    expect(queryByTestId('reviewBatches')).toBeNull();
   });
 
   it('never runs the slice past the blue fill', () => {

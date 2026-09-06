@@ -45,6 +45,8 @@ interface Props {
   newWordsLeft: number;
   newWordsPaused: boolean;
   reviewLeft: number;
+  reviewBatchSize: number;
+  reviewBatchesLeft: number;
   examUnlocked: boolean;
   onExamPress: () => void;
   examLabel: string;
@@ -63,6 +65,8 @@ export default function LearnChrome({
   newWordsLeft,
   newWordsPaused,
   reviewLeft,
+  reviewBatchSize,
+  reviewBatchesLeft,
   examUnlocked,
   onExamPress,
   examLabel,
@@ -130,13 +134,26 @@ export default function LearnChrome({
               tail, so the number and the slice read as one thing; hidden at zero,
               the way the 🎓 badge is. */}
           {reviewLeft > 0 && (
-            <Text
-              testID="reviewCount"
-              style={[styles.newWords, { color: REVIEW_COLOR }]}
-              maxFontSizeMultiplier={FONT_SCALE_CAP}
-            >
-              {`🔁${reviewLeft}`}
-            </Text>
+            <View style={styles.reviewStack}>
+              <Text
+                testID="reviewCount"
+                style={[styles.newWords, { color: REVIEW_COLOR }]}
+                maxFontSizeMultiplier={FONT_SCALE_CAP}
+              >
+                {`🔁${reviewLeft}`}
+              </Text>
+              {/* FB174: this queue is one batch; the line underneath says how many
+                  more batches of the same size are still due behind it. */}
+              {reviewBatchesLeft > 0 && (
+                <Text
+                  testID="reviewBatches"
+                  style={[styles.reviewBatches, { color: REVIEW_COLOR }]}
+                  maxFontSizeMultiplier={FONT_SCALE_CAP}
+                >
+                  {`${reviewBatchSize}/${reviewBatchesLeft}`}
+                </Text>
+              )}
+            </View>
           )}
           {examUnlocked && (
             <Pressable style={styles.examBadge} onPress={onExamPress} accessibilityLabel={examLabel}>
@@ -247,6 +264,15 @@ const styles = StyleSheet.create({
     borderRadius: 3,
   },
   // Moved from index.tsx: the toast slot, top-right of the chrome.
+  // FB174: the pink count and its batch line share one column in the status row.
+  reviewStack: {
+    alignItems: 'center',
+  },
+  reviewBatches: {
+    fontSize: 9,
+    fontWeight: '700',
+    marginTop: -2,
+  },
   levelUpOverlay: {
     position: 'absolute',
     top: 12,
