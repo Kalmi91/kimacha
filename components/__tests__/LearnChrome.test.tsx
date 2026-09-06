@@ -15,7 +15,7 @@ const base = {
   langName: 'Español',
   newWordsLeft: 5,
   newWordsPaused: false,
-  reviewBatchSize: 0,
+  batchLeft: 0,
   reviewBatchesLeft: 0,
   examUnlocked: false,
   onExamPress: () => {},
@@ -49,30 +49,33 @@ describe('LearnChrome review slice', () => {
     expect(style.left).toBe('97%');
   });
 
-  // FB171: the pink number beside the 🌱 badge counts the same words as the slice.
-  it('shows the pink review count while words are due', () => {
-    const { getByTestId } = render(<LearnChrome {...base} known={50} reviewLeft={12} />);
+  // FB171/FB179: the pink badge counts what is left of the CURRENT batch, and on the
+  // last batch it is the number alone.
+  it('shows the batch count alone on the last batch', () => {
+    const { getByTestId } = render(<LearnChrome {...base} known={50} reviewLeft={12} batchLeft={12} />);
     expect(getByTestId('reviewCount').props.children).toBe('🔁12');
   });
 
-  it('hides the review count at zero', () => {
-    const { queryByTestId } = render(<LearnChrome {...base} known={50} reviewLeft={0} />);
+  it('hides the review badge when the batch is empty', () => {
+    const { queryByTestId } = render(<LearnChrome {...base} known={50} reviewLeft={0} batchLeft={0} />);
     expect(queryByTestId('reviewCount')).toBeNull();
   });
 
-  // FB174/FB175: one batch is in the queue, the line under it multiplies the rest.
-  it('says how many batches are still due, without repeating the size', () => {
+  // FB179: batch count and multiplier on one line, "32×4".
+  it('multiplies the batch count while further batches are waiting', () => {
     const { getByTestId } = render(
-      <LearnChrome {...base} known={200} reviewLeft={30} reviewBatchSize={30} reviewBatchesLeft={3} />,
+      <LearnChrome {...base} known={200} reviewLeft={145} batchLeft={32} reviewBatchesLeft={4} />,
     );
-    expect(getByTestId('reviewBatches').props.children).toBe('×3');
+    expect(getByTestId('reviewCount').props.children).toBe('🔁32×4');
   });
 
-  it('hides the batch line when this queue is the last one', () => {
-    const { queryByTestId } = render(
-      <LearnChrome {...base} known={200} reviewLeft={12} reviewBatchSize={12} reviewBatchesLeft={0} />,
+  // FB177: the pink tail follows the whole day's pile, not the batch in the badge.
+  it('sizes the slice from the day total, not the batch', () => {
+    const { getByTestId } = render(
+      <LearnChrome {...base} known={200} total={200} reviewLeft={50} batchLeft={32} reviewBatchesLeft={1} />,
     );
-    expect(queryByTestId('reviewBatches')).toBeNull();
+    const style = getByTestId('reviewFill').props.style.find((s: any) => s?.width);
+    expect(style.width).toBe('25%');
   });
 
   it('never runs the slice past the blue fill', () => {

@@ -2589,7 +2589,17 @@ görgető alsó paddingjébe és a 💬 gomb eltolásába.
 FÖLÖTTE; FB178 előtt (tab-sáv rejtve, nyers kbHeight) ≈ 48 dp-vel ALATTA. A két hiba a
 tab-sáv és a navigációs sáv, korábban véletlenül majdnem kioltották egymást.
 
-## Elfogadási kritérium (FB170–FB178 forduló)
+## ✅ FB179 [P2 UX], A 🔁 jelvény egy sorban: adag × hátralévő adagok, KÉSZ
+Idézet (09-06): „legyen úgy hogy adagonként mutassa a szám és hogy hány adag van még
+mondjuk 32x4 és egy sorba legyen ne igy egymás alatt az utolsónál pedig csak a számot
+mutassa"
+A kétsoros jelvény (`145` fölött `×4`) egysoros lett: `🔁32×4`, ahol a szám az AKTUÁLIS
+adagból hátralévő szó (fogy, ahogy halad), a szorzó pedig a még hátralévő adagok száma.
+Az utolsó adagnál csak `🔁32`. A LearnChrome új `batchLeft` propot kapott; a `reviewLeft`
+megmaradt, de mostantól CSAK a sáv rózsaszín farkát hajtja (FB177: a mai teljes halom),
+a `reviewBatchSize` prop és a `reviewStack`/`reviewBatches` stílusok törölve.
+
+## Elfogadási kritérium (FB170–FB179 forduló)
 - `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **465/465** ✅ (+2 teszt a FB171 számlálóra,
   +2 a FB174 adag-sorra; a FB170/FB172/FB173 elrendezés-változás).
 - `npx expo lint`: 70 probléma (46 error, 24 warning) ✅ — VÁLTOZATLAN alapvonal.
@@ -2598,7 +2608,8 @@ tab-sáv és a navigációs sáv, korábban véletlenül majdnem kioltották egy
   végiggörgethető mögötte; a billentyűzet nem villog (P0-regresszió-figyelés); a fejlécben
   rózsaszín 🔁-szám áll, ami a sáv rózsaszín részével együtt fogy, és nullánál eltűnik;
   a Check a billentyűzet felső élét ÉRINTI (se hézag, se takarás, se eltűnés), és a
-  Review chip a kártya tetején ül; a 🔁-szám a MAI összes ismétlést mutatja; a 💬 gomb a sáv FÖLÖTT lebeg, nem rajta; a 🔁-szám alatt `×N` áll,
+  Review chip a kártya tetején ül; a 🔁-jelvény egy sorban `32×4`, az utolsó adagnál
+  csak `🔁32`, a sáv rózsaszín farka viszont a MAI teljes halmot mutatja; a 💬 gomb a sáv FÖLÖTT lebeg, nem rajta; a 🔁-szám alatt `×N` áll,
   amíg van hátralévő adag; a tab-sáv gépelés közben eltűnik és utána visszajön;
   a billentyűzet NEM villog (P0-regresszió-figyelés a resize miatt).
 

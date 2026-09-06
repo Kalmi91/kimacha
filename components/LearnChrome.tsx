@@ -44,8 +44,10 @@ interface Props {
   langName: string;
   newWordsLeft: number;
   newWordsPaused: boolean;
+  // FB177: everything still due today, this drives the pink tail of the bar.
   reviewLeft: number;
-  reviewBatchSize: number;
+  // FB179: what is left of the CURRENT batch, this is the number in the badge.
+  batchLeft: number;
   reviewBatchesLeft: number;
   examUnlocked: boolean;
   onExamPress: () => void;
@@ -65,7 +67,7 @@ export default function LearnChrome({
   newWordsLeft,
   newWordsPaused,
   reviewLeft,
-  reviewBatchSize,
+  batchLeft,
   reviewBatchesLeft,
   examUnlocked,
   onExamPress,
@@ -133,29 +135,18 @@ export default function LearnChrome({
               mutatja még mennyi szót kell ismételni". Same pink as the bar's review
               tail, so the number and the slice read as one thing; hidden at zero,
               the way the 🎓 badge is. */}
-          {reviewLeft > 0 && (
-            <View style={styles.reviewStack}>
-              <Text
-                testID="reviewCount"
-                style={[styles.newWords, { color: REVIEW_COLOR }]}
-                maxFontSizeMultiplier={FONT_SCALE_CAP}
-              >
-                {`🔁${reviewLeft}`}
-              </Text>
-              {/* FB174: this queue is one batch; the line underneath says how many
-                  more batches of the same size are still due behind it. FB175, Kálmán:
-                  "feleslegesen van 2 szer ott a 32 eleg 1 szer" — the batch size is
-                  already the number above, so only the multiplier is left here. */}
-              {reviewBatchesLeft > 0 && (
-                <Text
-                  testID="reviewBatches"
-                  style={[styles.reviewBatches, { color: REVIEW_COLOR }]}
-                  maxFontSizeMultiplier={FONT_SCALE_CAP}
-                >
-                  {`×${reviewBatchesLeft}`}
-                </Text>
-              )}
-            </View>
+          {/* FB179, Kálmán 2026-09-06: "legyen úgy hogy adagonként mutassa a szám és
+              hogy hány adag van még mondjuk 32x4 és egy sorba legyen ... az utolsónál
+              pedig csak a számot mutassa". One badge, one line: what is left of this
+              batch, and the batch multiplier only while further batches are waiting. */}
+          {batchLeft > 0 && (
+            <Text
+              testID="reviewCount"
+              style={[styles.newWords, { color: REVIEW_COLOR }]}
+              maxFontSizeMultiplier={FONT_SCALE_CAP}
+            >
+              {reviewBatchesLeft > 0 ? `🔁${batchLeft}×${reviewBatchesLeft}` : `🔁${batchLeft}`}
+            </Text>
           )}
           {examUnlocked && (
             <Pressable style={styles.examBadge} onPress={onExamPress} accessibilityLabel={examLabel}>
@@ -266,15 +257,6 @@ const styles = StyleSheet.create({
     borderRadius: 3,
   },
   // Moved from index.tsx: the toast slot, top-right of the chrome.
-  // FB174: the pink count and its batch line share one column in the status row.
-  reviewStack: {
-    alignItems: 'center',
-  },
-  reviewBatches: {
-    fontSize: 9,
-    fontWeight: '700',
-    marginTop: -2,
-  },
   levelUpOverlay: {
     position: 'absolute',
     top: 12,

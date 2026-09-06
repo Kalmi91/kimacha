@@ -617,3 +617,7 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   navigációs sávnyival a billentyűzet alá került. `dockLift = kbHeight + insets.bottom`
   (`useSafeAreaInsets`), csukott billentyűzetnél `insets.bottom`. Kapu: tsc 0,
   jest 465/465, lint 70. Eszköz-verify továbbra is a telefonon (nincs KVM a sandboxban).
+- **2026-09-06** (Opus): **FB179 KÉSZ**. A 🔁 jelvény egysoros: `🔁32×4` (aktuális adagból
+  hátralévő szó × hátralévő adagok), az utolsó adagnál csak a szám. A sáv rózsaszín farka
+  marad a mai teljes halmon (FB177). Új `batchLeft` prop, `reviewBatchSize` kivezetve.
+  Kapu: tsc 0, jest 465/465 (8 LearnChrome teszt), lint 70.
