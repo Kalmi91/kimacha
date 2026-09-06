@@ -74,10 +74,18 @@ export default function LearnScreen() {
   // FB170, Kálmán 2026-09-06: "azt akarom hogy a check rész az pont a klaviatúrám
   // felett legyen és nem kell ketto". The typing card had two Check buttons (the
   // in-card one from FB5 and the older one below the card); there is one now, docked
-  // this many pixels above the bottom edge, i.e. exactly on top of the open keyboard.
-  // Read from the keyboard events because app.json keeps softwareKeyboardLayoutMode
-  // "pan" (the P0 IME-flicker fix), so the window itself does not resize for us.
-  const [kbHeight, setKbHeight] = useState(0);
+  // this many pixels above its container's bottom edge.
+  //
+  // FB172: the first cut used the keyboard's own height, and left a nav-bar-sized gap,
+  // because the container's bottom edge is not the screen's bottom edge (tab bar,
+  // navigation bar, edge-to-edge insets all sit below it) while the reported keyboard
+  // height counts from the screen bottom. The bar measures itself instead: the
+  // keyboard event gives the top of the keyboard in window coordinates, the layout
+  // gives the bar's own window position, and the offset is simply the difference.
+  const [dockOffset, setDockOffset] = useState(0);
+  const dockRef = useRef<View>(null);
+  const dockOffsetRef = useRef(0);
+  const kbTopRef = useRef<number | null>(null);
   // FB135/FB136: how many untouched words the ACTIVE topic still holds, and the
   // next topic that holds some. Zero here with a topic left to go is the state
   // where the session ends with nothing on offer, see lib/topicRotation.ts.
@@ -440,13 +448,37 @@ export default function LearnScreen() {
     loadCards();
   }, []);
 
-  // FB170: track the open keyboard's height so the single Check button can sit
-  // right on top of it. 'Did' events (not 'Will') because Android only fires those.
-  useEffect(() => {
-    const show = Keyboard.addListener('keyboardDidShow', (e) => setKbHeight(e.endCoordinates.height));
-    const hide = Keyboard.addListener('keyboardDidHide', () => setKbHeight(0));
-    return () => { show.remove(); hide.remove(); };
+  // FB170/FB172: put the docked Check bar's bottom edge exactly on the keyboard's top
+  // edge. Runs on every keyboard event and on the bar's own layout; the second pass
+  // measures the moved bar and finds nothing left to correct, so it settles at once.
+  const syncDock = useCallback(() => {
+    const node = dockRef.current;
+    if (!node) return;
+    node.measureInWindow((_x, y, _w, h) => {
+      if (!h) return;
+      // Where the bar's container ends, independent of how far the bar is lifted now.
+      const containerBottom = y + h + dockOffsetRef.current;
+      const kbTop = kbTopRef.current;
+      const target = kbTop === null ? 0 : Math.max(0, Math.round(containerBottom - kbTop));
+      if (Math.abs(target - dockOffsetRef.current) > 1) {
+        dockOffsetRef.current = target;
+        setDockOffset(target);
+      }
+    });
   }, []);
+
+  // 'Did' events, not 'Will': Android only fires those.
+  useEffect(() => {
+    const show = Keyboard.addListener('keyboardDidShow', (e) => {
+      kbTopRef.current = e.endCoordinates.screenY;
+      syncDock();
+    });
+    const hide = Keyboard.addListener('keyboardDidHide', () => {
+      kbTopRef.current = null;
+      syncDock();
+    });
+    return () => { show.remove(); hide.remove(); };
+  }, [syncDock]);
 
   // On returning to the Learn tab, run any action the Settings tab queued:
   // a full restart, or the exam of a chosen (previous) level.
@@ -1281,7 +1313,7 @@ export default function LearnScreen() {
           style={styles.typingScroll}
           // FB170: leave room for the docked Check bar and the keyboard under it,
           // otherwise the last line of the card would end up behind them.
-          contentContainerStyle={[styles.typingScrollContent, { paddingBottom: 24 + DOCK_RESERVE + kbHeight }]}
+          contentContainerStyle={[styles.typingScrollContent, { paddingBottom: 24 + DOCK_RESERVE + dockOffset }]}
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="on-drag"
         >
@@ -1290,7 +1322,7 @@ export default function LearnScreen() {
             kattintok". The card is the area beside the field, so a tap on it
             closes the keyboard; the ✓ button and the speaker keep working,
             they handle their own press. */}
-        <Pressable style={[styles.card, { backgroundColor: colors.card }]} onPress={() => Keyboard.dismiss()}>
+        <Pressable style={[styles.card, styles.typingCard, { backgroundColor: colors.card }]} onPress={() => Keyboard.dismiss()}>
           {cardChips}
           <View style={[styles.frontRow, { marginBottom: 16 }]}>
             {iconBadge}
@@ -1399,9 +1431,11 @@ export default function LearnScreen() {
         {/* FB170: the one and only Check/→ of the typing card, pinned to the top
             edge of the keyboard (or to the bottom of the screen when it is closed). */}
         <View
+          ref={dockRef}
+          onLayout={syncDock}
           style={[
             styles.dockedAction,
-            { bottom: kbHeight, paddingBottom: kbHeight > 0 ? 8 : 20, backgroundColor: colors.background },
+            { bottom: dockOffset, paddingBottom: dockOffset > 0 ? 8 : 20, backgroundColor: colors.background },
           ]}
         >
           <Pressable
@@ -1784,6 +1818,16 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 8,
     paddingHorizontal: 4,
+  },
+  // FB172, Kálmán 2026-09-06: "fent a review tul messze van a tetejétől". The shared
+  // card centres its content inside a 260 px minimum, so a short typing card (chip,
+  // word, field) floated with a band of empty card above the Review chip. The typing
+  // card hugs its content from the top instead; the flashcard branch keeps the block.
+  typingCard: {
+    minHeight: 0,
+    justifyContent: 'flex-start',
+    paddingTop: 18,
+    paddingBottom: 20,
   },
   // FB170: the single Check button of the typing card, docked above the keyboard.
   dockedAction: {

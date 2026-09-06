@@ -2492,14 +2492,33 @@ mint a sáv, hogy a kettő egy dolognak látsszon. Nullánál elrejtve (mint a �
 Ugyanaz a `reviewLeft` prop hajtja, mint a sávot, tehát a szám és a rózsaszín hossz
 mindig együtt fogy.
 
-## Elfogadási kritérium (FB170 + FB171 forduló)
+## ✅ FB172 [P1 UX], A dokkolt Check a billentyűzet fölött lebegett + kártya-tetői üres sáv, KÉSZ
+Idézet (09-06, 3.1.5 (39) telefon-teszt): „ez lett a megvalósítás hat ez nem jo. a check
+es a klaviatura kozott túl nagy a hely fent a review tul messze van a tetejétől"
+Két hiba egy képernyőn:
+1. **A gomb kb. egy navigációs sávnyival a billentyűzet fölött ült.** A FB170 a
+   `keyboardDidShow` `height` értékét használta `bottom`-ként, csakhogy az a KÉPERNYŐ
+   aljától mér, a dokkolt sáv `bottom: 0`-ja viszont a KONTÉNER aljához igazodik, ami
+   fölötte van a tab-sávnak és a rendszer-navigációnak. A különbség maradt hézagnak.
+   Most a sáv megméri magát: `endCoordinates.screenY` = a billentyűzet teteje ablak-
+   koordinátában, `measureInWindow` = a sáv saját helye, az eltolás a kettő különbsége
+   (`syncDock`, `dockOffsetRef`). A `onLayout` újrafuttatja, a második kör már nem talál
+   korrigálnivalót, tehát nem oszcillál, és nem függ eszköztől/navigációs módtól.
+2. **A Review chip alatt-fölött üres kártya-sáv.** A közös `card` stílus
+   `minHeight: 260` + `justifyContent: 'center'`, így a rövid gépelős kártya (chip, szó,
+   mező) középre úszott. Új `typingCard` módosító: `minHeight: 0`,
+   `justifyContent: 'flex-start'`, `paddingTop: 18`. A szókártya-ág változatlan.
+
+## Elfogadási kritérium (FB170 + FB171 + FB172 forduló)
 - `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **463/463** ✅ (+2 teszt a FB171 számlálóra;
   a FB170 elrendezés-változás, logikai ág nem változott).
 - `npx expo lint`: 70 probléma (46 error, 24 warning) ✅ — VÁLTOZATLAN alapvonal.
 - ⏳ Eszköz-verify a következő APK-n: gépelős kártyán EGY Check látszik, közvetlenül a
   billentyűzet fölött; a billentyűzet becsukásakor a képernyő aljára ül; a kártya alja
   végiggörgethető mögötte; a billentyűzet nem villog (P0-regresszió-figyelés); a fejlécben
-  rózsaszín 🔁-szám áll, ami a sáv rózsaszín részével együtt fogy, és nullánál eltűnik.
+  rózsaszín 🔁-szám áll, ami a sáv rózsaszín részével együtt fogy, és nullánál eltűnik;
+  a Check a billentyűzet felső élét ÉRINTI (nincs hézag), és a Review chip a kártya
+  tetején ül.
 
 ---
 
