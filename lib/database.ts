@@ -18,6 +18,11 @@ export interface DB {
   updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number): Promise<void>;
   getDueCardsForLevel(level: string, limit: number): Promise<any[]>;
   getDueCardsForWordIds(wordIds: number[], limit: number): Promise<any[]>;
+  // FB174: how many DISTINCT words are due for review in a given scope, whether or
+  // not they fit in this session's queue. The header turns it into "one batch of N,
+  // M batches to go".
+  countDueReviewWords(wordIds: number[]): Promise<number>;
+  countDueReviewWordsForLevel(level: string): Promise<number>;
   getWordReps(wordIds: number[]): Promise<Map<number, number>>;
   getWordStates(wordIds: number[]): Promise<Map<number, number>>;
   // GAMES.md 3.1 (F0): every non-buried word card of a given pair, for
@@ -455,6 +460,26 @@ class SQLiteDB implements DB {
     const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
     const wordIds = levelWords.map((w: any) => w.id);
     return this.getDueCardsForWordIds(wordIds, limit);
+  }
+
+  // FB174: same window as the review half of getDueCardsForWordIds (reps > 0, the
+  // ten-minute lookahead), counted over words instead of cards, and unlimited.
+  async countDueReviewWords(wordIds: number[]) {
+    const db = await this.open();
+    if (wordIds.length === 0) return 0;
+    const placeholders = wordIds.map(() => '?').join(',');
+    const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
+    const row = await db.getFirstAsync<any>(
+      `SELECT COUNT(DISTINCT word_id) AS n FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND reps > 0 AND buried = 0 AND pair = ? AND due <= ?`,
+      [...wordIds, this.activePair, lookahead]
+    );
+    return row?.n ?? 0;
+  }
+
+  async countDueReviewWordsForLevel(level: string) {
+    const { getWordsForLevel } = require('@/data/words');
+    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
+    return this.countDueReviewWords(levelWords.map((w: any) => w.id));
   }
 
   async getDueCardsForWordIds(wordIds: number[], limit: number) {

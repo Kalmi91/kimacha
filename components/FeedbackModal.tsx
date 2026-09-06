@@ -15,9 +15,12 @@ interface Props {
   // FB41: tree tab only, lets the user drag the button to the other side of
   // the screen; the chosen side persists (learn_settings.feedback_btn_side).
   draggable?: boolean;
+  // FB173: extra room under the button, for screens that dock something along the
+  // bottom edge (the learn card's Check bar) which the button would otherwise cover.
+  bottomOffset?: number;
 }
 
-export default function FeedbackButton({ level, languagePair, currentCard, draggable = false }: Props) {
+export default function FeedbackButton({ level, languagePair, currentCard, draggable = false, bottomOffset = 0 }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
@@ -82,7 +85,11 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
   return (
     <>
       <Pressable
-        style={[styles.fab, draggable && (side === 'left' ? styles.fabLeft : styles.fabRight)]}
+        style={[
+          styles.fab,
+          draggable && (side === 'left' ? styles.fabLeft : styles.fabRight),
+          bottomOffset > 0 && { bottom: 24 + bottomOffset },
+        ]}
         onPress={() => setVisible(true)}
         {...(draggable ? panResponder.panHandlers : {})}
       >

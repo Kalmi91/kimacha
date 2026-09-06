@@ -97,6 +97,11 @@ export default function LearnScreen() {
   // half-learned pile behind a pause, and the reason for the pause, so the Done
   // screen can say what the session was made of and why.
   const [sessionMix, setSessionMix] = useState<{ newWords: number; reviews: number }>({ newWords: 0, reviews: 0 });
+  // FB174, Kálmán 2026-09-06: "azt akarom látni, hogy mennyi van osszesen amit
+  // ismételni kell ... legyen ott egy 30/3 hogy ha meg 3 szor van 30 szo". The queue
+  // only ever holds one batch, so the header also names the batch size and how many
+  // more batches of that size are waiting behind it.
+  const [reviewBatch, setReviewBatch] = useState<{ size: number; left: number }>({ size: 0, left: 0 });
   // FB158/FB159, Kálmán 2026-08-26 (word:"the volleyball", majd word:"belly"):
   // "kellene valami különbség, hogy tudjam, hogy most a régi szavakat ismételem,
   // vagy az újakat tanulom", kétszer kérve. A 🌱 fejléc-jelvény csak a NAPI keretet
@@ -230,11 +235,19 @@ export default function LearnScreen() {
   // FB142: what this queue actually holds, and why it holds no new words. Runs
   // on both queue builds, right after the final item list exists, so the Done
   // screen never has to recompute it.
-  const applyQueueSupply = (items: DueItem[], budget: NewWordAllowance) => {
+  const applyQueueSupply = (items: DueItem[], budget: NewWordAllowance, dueReviewWords = 0) => {
     const isNew = (item: DueItem) => item.type === 'word' && item.card.reps === 0;
     setSessionMix({
       newWords: items.filter(isNew).length,
       reviews: items.filter(item => !isNew(item)).length,
+    });
+    // FB174: the batch is the review WORDS of this queue (a word can hold three
+    // cards), and what is left over goes on in batches of the same size.
+    const batchSize = new Set(items.filter(item => !isNew(item)).map(item => item.wordId)).size;
+    const beyond = Math.max(0, dueReviewWords - batchSize);
+    setReviewBatch({
+      size: batchSize,
+      left: batchSize > 0 ? Math.ceil(beyond / batchSize) : 0,
     });
     // FB158/FB159: remember which words arrived brand new, the per-card tag reads this.
     setNewTodayIds((prev) => {
@@ -399,8 +412,12 @@ export default function LearnScreen() {
     const rows = useTopics
       ? await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL)
       : await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
+    // FB174: the whole due pile in the same scope, not just what fits in this queue.
+    const dueReviewWords = useTopics
+      ? await db.countDueReviewWords(activeWordIds)
+      : await db.countDueReviewWordsForLevel(currentLevel);
     const items = applyCadence(dripNewWords(capNewWords(buildQueue(rows, learned), intake)), wordsOnly, learned);
-    applyQueueSupply(items, budget);
+    applyQueueSupply(items, budget, dueReviewWords);
 
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
@@ -649,6 +666,8 @@ export default function LearnScreen() {
     setNewWordsPaused(intake2 === 0 && leftToday2 > 0);
 
     let newRows: any[];
+    // FB174: the due pile behind this refill, filled in on both branches below.
+    let dueReviewWords2 = 0;
     if (useTopics) {
       const allWordIds = lvlWords.map((w: WordEntry) => w.id);
       const repsMap = await db.getWordReps(allWordIds);
@@ -729,14 +748,16 @@ export default function LearnScreen() {
         await db.ensureCard(w.id, 'sentence');
       }
       newRows = await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL);
+      dueReviewWords2 = await db.countDueReviewWords(activeWordIds);
     } else {
       setBorrowedTopics(new Map());
       newRows = await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
+      dueReviewWords2 = await db.countDueReviewWordsForLevel(currentLevel);
     }
 
     const wordsOnly2 = await db.getWordsOnly();
     const newItems = applyCadence(dripNewWords(capNewWords(buildQueue(newRows, learned), intake2)), wordsOnly2, learned);
-    applyQueueSupply(newItems, budget2);
+    applyQueueSupply(newItems, budget2, dueReviewWords2);
 
     if (newItems.length === 0) {
       setDone(true);
@@ -1238,6 +1259,8 @@ export default function LearnScreen() {
       newWordsLeft={newWordsLeft}
       newWordsPaused={newWordsPaused}
       reviewLeft={reviewLeft}
+      reviewBatchSize={reviewBatch.size}
+      reviewBatchesLeft={reviewBatch.left}
       examUnlocked={masteredPct >= 80}
       onExamPress={() => setExamMode(true)}
       examLabel={s.exam.unlocked}
@@ -1446,7 +1469,14 @@ export default function LearnScreen() {
           </Pressable>
         </View>
 
-        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`${current.type}:${front}`} />
+        {/* FB173, Kálmán 2026-09-06: "feedback gomb egybe csúszott". The 💬 button sits
+            at bottom: 24, which is inside the docked Check bar; it rides above it. */}
+        <FeedbackButton
+          level={level}
+          languagePair={direction.join('→')}
+          currentCard={`${current.type}:${front}`}
+          bottomOffset={DOCK_RESERVE + dockOffset}
+        />
       </KeyboardAvoidingView>
     );
   }

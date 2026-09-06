@@ -2509,16 +2509,42 @@ Két hiba egy képernyőn:
    mező) középre úszott. Új `typingCard` módosító: `minHeight: 0`,
    `justifyContent: 'flex-start'`, `paddingTop: 18`. A szókártya-ág változatlan.
 
-## Elfogadási kritérium (FB170 + FB171 + FB172 forduló)
-- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **463/463** ✅ (+2 teszt a FB171 számlálóra;
-  a FB170 elrendezés-változás, logikai ág nem változott).
+## ✅ FB173 [P1 UX], A 💬 visszajelző gomb ráült a dokkolt sávra, KÉSZ
+Idézet (09-06, 3.1.6 telefon-teszt): „feedback gomb egybe csúszott."
+A FAB `bottom: 24`-en ül, a FB170-es dokkolt Check sáv viszont a konténer aljától
+indul, tehát a kettő egymásra került. A `FeedbackButton` új `bottomOffset` propot
+kapott; a tanuló-képernyő gépelős ága `DOCK_RESERVE + dockOffset` értékkel hívja, így a
+gomb mindig a sáv fölött lebeg (nyitott billentyűzetnél is). Más képernyők hívása
+változatlan (a prop alapértéke 0).
+
+## ✅ FB174 [P1 feature], Hány ismétlés van MÉG a soron kívül, KÉSZ
+Idézet (09-06): „azt volt most hogy egy adag szot átismételtem és kaptam meg 30 szot.
+azt akarom látni, hogy mennyi van osszesen amit ismételni kell legyen ugy hogy az
+aktuális tanult 30 szo legyen és menjen lejjebb és legyen ott egy 30/3 hogy ha meg 3
+szor van 30 szo vagy ahogy jon"
+A sor egyszerre csak EGY adagot tart (`QUEUE_POOL = 40`, abból ~28 ismétlés), ezért a
+🔁-szám lenullázódott, aztán jött a következő adag: nem látszott, mennyi van összesen.
+- `lib/database.ts`: `countDueReviewWords(wordIds)` + `countDueReviewWordsForLevel(level)`
+  — DISTINCT `word_id`, `reps > 0`, `buried = 0`, ugyanaz a 10 perces lookahead, mint a
+  sor-építés ismétlés-ága, de limit nélkül.
+- `app/(tabs)/index.tsx`: mindkét sor-építés (első betöltés + utántöltés) lekéri a
+  hatókör teljes esedékes mennyiségét, az `applyQueueSupply` pedig ebből számol:
+  `size` = a sor ismétlés-SZAVAI (distinct wordId), `left` = `ceil((összes − size) / size)`.
+- `components/LearnChrome.tsx`: a rózsaszín 🔁-szám alatt egy kisebb, ugyanolyan
+  rózsaszín `{size}/{left}` sor (`reviewStack` oszlop a státusz-sorban). Ha nincs több
+  adag (`left === 0`), a második sor nem jelenik meg.
+
+## Elfogadási kritérium (FB170 + FB171 + FB172 + FB173 + FB174 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **465/465** ✅ (+2 teszt a FB171 számlálóra,
+  +2 a FB174 adag-sorra; a FB170/FB172/FB173 elrendezés-változás).
 - `npx expo lint`: 70 probléma (46 error, 24 warning) ✅ — VÁLTOZATLAN alapvonal.
 - ⏳ Eszköz-verify a következő APK-n: gépelős kártyán EGY Check látszik, közvetlenül a
   billentyűzet fölött; a billentyűzet becsukásakor a képernyő aljára ül; a kártya alja
   végiggörgethető mögötte; a billentyűzet nem villog (P0-regresszió-figyelés); a fejlécben
   rózsaszín 🔁-szám áll, ami a sáv rózsaszín részével együtt fogy, és nullánál eltűnik;
   a Check a billentyűzet felső élét ÉRINTI (nincs hézag), és a Review chip a kártya
-  tetején ül.
+  tetején ül; a 💬 gomb a sáv FÖLÖTT lebeg, nem rajta; a 🔁-szám alatt ott a `28/2`-féle
+  adag-sor, amíg van hátralévő adag.
 
 ---
 
