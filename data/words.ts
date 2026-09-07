@@ -8,7 +8,7 @@ export const LEVELS: Level[] = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 // and intentionally left without this metadata. Both fields are optional so
 // older/unannotated entries (and the frozen c2 set) keep type-checking.
 export type WordPos = 'noun' | 'verb' | 'adj' | 'adv' | 'pron' | 'prep' | 'num' | 'phrase';
-export type WordGender = 'm' | 'f' | 'mf' | '-';
+export type WordGender = 'm' | 'f' | 'mf' | 'n' | '-';
 
 export interface WordEntry {
   id: number;
@@ -96,6 +96,36 @@ export function getWordsForTopic(level: Level, topicId: string, lang: string = '
 export function getWordTopic(w: WordEntry): string | undefined {
   const t = w['topic'];
   return typeof t === 'string' ? t : undefined;
+}
+
+// The `gender` field annotated by scripts/annotate-pos.mjs is the gender of the
+// SPANISH headword ("a só" carries 'f' from "la sal"), so it is simply wrong for
+// any other target: German "das Salz" is neuter, and Spanish has no neuter at
+// all. German writes the gender on the article the headword already carries, so
+// read it from there rather than annotate a second field. Targets with no gender
+// to teach (en, hu) return undefined, which starves the games' gender category
+// and drops it, exactly as an unannotated word already does.
+const DE_ARTICLE_GENDER: Record<string, WordGender> = { der: 'm', die: 'f', das: 'n' };
+
+// "die" is also the plural article for every gender ("die Eltern"), so it only
+// means feminine on a SINGULAR headword. The shared set carries the Spanish
+// headword next to the German one, and its article says which it is: los/las
+// mark the plural, so "die" beside them is a plural, not a feminine.
+const ES_PLURAL_ARTICLE = /^(los|las)\s/;
+
+export function genderOf(word: WordEntry | undefined, targetLang: string): WordGender | undefined {
+  if (!word) return undefined;
+  if (targetLang === 'es') return word.gender;
+  if (targetLang === 'de') {
+    const head = String(word.de ?? '').trim().toLowerCase();
+    const article = head.split(/\s+/)[0];
+    const gender = DE_ARTICLE_GENDER[article];
+    if (gender === 'f' && ES_PLURAL_ARTICLE.test(String(word.es ?? '').trim().toLowerCase())) {
+      return undefined;
+    }
+    return gender;
+  }
+  return undefined;
 }
 
 // FB150, Kálmán 2026-08-22 (`sentence:El calabacín es una verdura verde.`):

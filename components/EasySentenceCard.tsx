@@ -21,13 +21,16 @@ interface Props {
   // FB146: the "write it too" practice grades with the same accent rule as the
   // typing cards (Settings -> Difficulty).
   strictAccents?: boolean;
+  // Language the target sentence is written in, so its own spelling
+  // variants count when the answer is graded (German ß/ss, ä/ae).
+  lang?: string;
   // ITER5: the new/review and borrowed-topic chips, which used to be rows above
   // the card. They ride at the top of the card, in the flow, so they cannot
   // slide over the sentence.
   chips?: React.ReactNode;
 }
 
-export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, onBury, onSkip, mistakeNote, speechLocale, strictAccents = false, chips }: Props) {
+export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, onBury, onSkip, mistakeNote, speechLocale, strictAccents = false, lang, chips }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
@@ -79,7 +82,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   const canCheck = placed.length > 0;
 
   const checkPractice = () => {
-    setPracticeResult(strictAnswerMatch(practiceText, targetSentence, { strictAccents }) ? 'correct' : 'wrong');
+    setPracticeResult(strictAnswerMatch(practiceText, targetSentence, { strictAccents, lang }) ? 'correct' : 'wrong');
   };
 
   return (

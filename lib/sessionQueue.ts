@@ -162,3 +162,41 @@ export function applyCadence(items: DueItem[], wordsOnly: boolean, lang: string)
   }
   return result;
 }
+
+// FB174/FB180: what the 🔁 header badge counts. The batch is the REVIEW WORDS of
+// this queue — a word can hold three cards, so words are counted, not cards —
+// and `left` is how many more batches of that size the day still owes.
+//
+// FB180, Kálmán 2026-09-07 (word:"the bedroom"): „5 szót írt de valójában 8 szó
+// volt benne". New-ness belongs to the WORD, not to one of its cards: a brand-new
+// word arrives with a word card at reps 0 plus sentence/easy cards, and counting
+// only the word card as new left the other two on the review side, inflating the
+// batch against the counter that shrinks as the queue is answered. `newIds` is
+// returned so both sides can read the same set.
+export interface ReviewBatch {
+  size: number;
+  left: number;
+  dueToday: number;
+  newIds: Set<number>;
+}
+
+export function reviewBatchOf(items: DueItem[], dueReviewWords: number): ReviewBatch {
+  const newIds = new Set(
+    items.filter((item) => item.type === 'word' && item.card.reps === 0).map((item) => item.wordId),
+  );
+  const size = new Set(
+    items.filter((item) => !newIds.has(item.wordId)).map((item) => item.wordId),
+  ).size;
+  const beyond = Math.max(0, dueReviewWords - size);
+  return { size, left: size > 0 ? Math.ceil(beyond / size) : 0, dueToday: dueReviewWords, newIds };
+}
+
+// The review words still ahead in `queue` from `index` on, counted the same way
+// the batch was sized, so the badge can never disagree with itself.
+export function reviewWordsLeft(queue: DueItem[], index: number, newIds: Set<number>): number {
+  const ids = new Set<number>();
+  for (let i = index; i < queue.length; i++) {
+    if (!newIds.has(queue[i].wordId)) ids.add(queue[i].wordId);
+  }
+  return ids.size;
+}

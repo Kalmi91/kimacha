@@ -25,7 +25,7 @@ export default function ExamSentTypeCard({ item, onResult }: Props) {
   const handleCheck = () => {
     if (!text.trim()) return;
     // Strict (FB6): every word must match; case/punctuation/accents forgiven.
-    const r = strictAnswerMatch(text, item.answer) ? 'correct' : 'wrong';
+    const r = strictAnswerMatch(text, item.answer, { lang: item.dir[1] }) ? 'correct' : 'wrong';
     setResult(r);
     setTimeout(() => onResult(r === 'correct'), 1500);
   };

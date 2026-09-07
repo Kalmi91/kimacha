@@ -158,6 +158,7 @@ export default function ExamMode({ level, direction, onLevelUp, onExit }: Props)
         <EasySentenceCard
           key={index}
           sourceSentence={item.prompt}
+          lang={direction[1]}
           targetWords={item.answerTokens}
           trapWords={item.distractors}
           onResult={handleResult}

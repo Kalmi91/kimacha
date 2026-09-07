@@ -135,6 +135,7 @@ export default {
       posAdv: 'határozók',
       genderM: 'hímnemű szavak',
       genderF: 'nőnemű szavak',
+      genderN: 'semlegesnemű szavak',
     },
     // F5 (odd-one-out, GAMES.md 4.8).
     oddOneOut: {
@@ -198,6 +199,7 @@ export default {
       // egyes számú keretbe illesztve értelmetlen mondat lett belőle.
       genderAdjF: 'nőnemű',
       genderAdjM: 'hímnemű',
+      genderAdjN: 'semlegesnemű',
       instructionPrompt: (topicLabel: string, genderAdj: string) => `Koppints arra a szóra, amelyik „${topicLabel}" témájú ÉS ${genderAdj}.`,
       instructionExplanation: (word: string, topicLabel: string, genderAdj: string) => `A helyes szó: ${word} (${topicLabel}, ${genderAdj}).`,
       wordProblemCalc: (a: number, opSymbol: string, b: number, answer: number) => `${a} ${opSymbol} ${b} = ${answer}`,

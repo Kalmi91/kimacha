@@ -117,3 +117,49 @@ describe('strictAnswerMatch, parenthetical gloss (BUG-001)', () => {
     expect(strictAnswerMatch('she speak', 'she speaks (now)')).toBe(false);
   });
 });
+
+// German writes ß as ss and an umlaut as vowel+e, and a phone keyboard often
+// produces neither. All three spellings are the same word, so all three pass —
+// but only while accents are forgiven, and never at the cost of an ending.
+describe('strictAnswerMatch, German spellings', () => {
+  const de = { lang: 'de' };
+
+  it('accepts ß typed as ss, and back', () => {
+    expect(strictAnswerMatch('Strasse', 'die Straße'.split(' ')[1], de)).toBe(true);
+    expect(strictAnswerMatch('Straße', 'Straße', de)).toBe(true);
+    expect(strictAnswerMatch('grüßen', 'gruessen', de)).toBe(true);
+  });
+
+  it('accepts the umlaut, its digraph and the bare vowel', () => {
+    for (const typed of ['schön', 'schoen', 'schon']) {
+      expect(strictAnswerMatch(typed, 'schön', de)).toBe(true);
+    }
+    expect(strictAnswerMatch('fuenf Buecher', 'fünf Bücher', de)).toBe(true);
+  });
+
+  it('works on a whole sentence', () => {
+    expect(strictAnswerMatch('Ich moechte eine grosse Tasse.', 'Ich möchte eine große Tasse.', de)).toBe(true);
+  });
+
+  it('does not let the digraph reading eat an ending', () => {
+    expect(strictAnswerMatch('neu', 'neue', de)).toBe(false);
+    expect(strictAnswerMatch('neue', 'neu', de)).toBe(false);
+    expect(strictAnswerMatch('Mutter', 'Mütter', de)).toBe(true); // accents forgiven, as everywhere
+  });
+
+  it('holds every word to FB6 strictness', () => {
+    expect(strictAnswerMatch('Ich gehe Haus', 'Ich gehe nach Hause', de)).toBe(false);
+    expect(strictAnswerMatch('der Tasche', 'die Tasche', de)).toBe(false);
+  });
+
+  it('grades ß and the umlaut when strict accents are on', () => {
+    expect(strictAnswerMatch('Strasse', 'Straße', { lang: 'de', strictAccents: true })).toBe(false);
+    expect(strictAnswerMatch('schoen', 'schön', { lang: 'de', strictAccents: true })).toBe(false);
+    expect(strictAnswerMatch('schön', 'schön', { lang: 'de', strictAccents: true })).toBe(true);
+  });
+
+  it('leaves other languages alone', () => {
+    expect(strictAnswerMatch('schoen', 'schön')).toBe(false);
+    expect(strictAnswerMatch('Strasse', 'Straße', { lang: 'es' })).toBe(false);
+  });
+});

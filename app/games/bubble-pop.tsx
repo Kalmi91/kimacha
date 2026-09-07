@@ -7,7 +7,7 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
-import { findWordById, normalizeWordToken, type Level } from '@/data/words';
+import { findWordById, genderOf, normalizeWordToken, type Level } from '@/data/words';
 import { getTopicsForLevel, getTopicName } from '@/data/topics';
 import { getGameDef, gameName } from '@/lib/games/registry';
 import { getLearnedPool } from '@/lib/games/vocabPool';
@@ -172,7 +172,7 @@ export default function BubblePopScreen() {
     const pool = await getLearnedPool({ pair: activePair, learnedLang: target, level: levelData.level as Level, minSize: 60 });
     const m: BubbleWordMeta[] = pool.map((e) => {
       const word = findWordById(e.wordId, target);
-      return { wordId: e.wordId, learned: e.learned, native: e.native, isNew: e.isNew, topicId: e.topicId, pos: word?.pos, gender: word?.gender };
+      return { wordId: e.wordId, learned: e.learned, native: e.native, isNew: e.isNew, topicId: e.topicId, pos: word?.pos, gender: genderOf(word, target) };
     });
     setMeta(m);
 
@@ -204,7 +204,8 @@ export default function BubblePopScreen() {
       return topic ? getTopicName(topic, contentLang) : value;
     }
     if (set === 'pos') return posLabel(value, s.games.bubblePop);
-    return value === 'm' ? s.games.bubblePop.genderM : s.games.bubblePop.genderF;
+    if (value === 'm') return s.games.bubblePop.genderM;
+    return value === 'n' ? s.games.bubblePop.genderN : s.games.bubblePop.genderF;
   };
 
   const startNextRound = useCallback(() => {

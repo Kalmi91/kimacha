@@ -129,6 +129,7 @@ export default {
       posAdv: 'adverbios',
       genderM: 'palabras masculinas',
       genderF: 'palabras femeninas',
+      genderN: 'palabras neutras',
     },
     // F5 (odd-one-out, GAMES.md 4.8).
     oddOneOut: {
@@ -190,6 +191,7 @@ export default {
       numberSeriesExplanation: (answer: string) => `La secuencia continúa con: ${answer}.`,
       genderAdjF: 'femenina',
       genderAdjM: 'masculino',
+      genderAdjN: 'neutro',
       instructionPrompt: (topicLabel: string, genderAdj: string) => `Toca la palabra del tema "${topicLabel}" que además sea ${genderAdj}.`,
       instructionExplanation: (word: string, topicLabel: string, genderLabel: string) => `La palabra correcta es: ${word} (${topicLabel}, ${genderLabel}).`,
       wordProblemCalc: (a: number, opSymbol: string, b: number, answer: number) => `${a} ${opSymbol} ${b} = ${answer}`,
