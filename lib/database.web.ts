@@ -216,6 +216,25 @@ class MemoryDB implements DB {
     return [...reviewWords, ...sentenceCards, ...newCards];
   }
 
+  async countDueReviewWords(wordIds: number[]) {
+    if (wordIds.length === 0) return 0;
+    const idSet = new Set(wordIds);
+    const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
+    const due = new Set(
+      [...this.cards.values()]
+        .filter(c => idSet.has(c.word_id) && c.type === 'word' && c.reps > 0 && !c.buried
+          && c.pair === this.activePair && c.due <= lookahead)
+        .map(c => c.word_id)
+    );
+    return due.size;
+  }
+
+  async countDueReviewWordsForLevel(level: string) {
+    const { getWordsForLevel } = require('@/data/words');
+    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
+    return this.countDueReviewWords(levelWords.map((w: any) => w.id));
+  }
+
   async getWordReps(wordIds: number[]): Promise<Map<number, number>> {
     const idSet = new Set(wordIds);
     const map = new Map<number, number>();
