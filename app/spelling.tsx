@@ -18,6 +18,14 @@ import { answerInputProps } from '@/lib/inputProps';
 // graded byte-for-byte, so case and accent differences must stay visible.
 const spellingDiff = (typed: string, correct: string) => charDiff(typed, correct, false);
 
+// BUG-001: a card like "ver (veremos)" carries a gloss in brackets, which is an
+// explanation, not letters to spell. Both the full and the bare form count as
+// correctly spelled; the card keeps showing the full form.
+const spellingTargets = (target: string) => {
+  const bare = target.replace(/\([^)]*\)/g, ' ').replace(/\s+/g, ' ').trim();
+  return bare && bare !== target.trim() ? [target, bare] : [target];
+};
+
 interface QueueItem {
   wordId: number;
   step: number;
@@ -75,9 +83,14 @@ export default function SpellingScreen() {
 
   const handleCheck = async () => {
     if (!current || !currentWord) return;
+    // BUG-003: an empty field is not a wrong answer (FB43/FB73 settled the same
+    // for the typing card). Grading it here would reset the word's ladder step
+    // to 0, so a stray tap on Check used to wipe the word's whole progress.
+    if (typedAnswer.trim().length === 0) return;
     // FB98: closing punctuation is never the mistake here either, the spelling
     // trainer grades the letters. Everything else stays byte-for-byte strict.
-    const ok = stripTrailingPunct(typedAnswer.trim().toLowerCase()) === stripTrailingPunct(target.toLowerCase());
+    const typed = stripTrailingPunct(typedAnswer.trim().toLowerCase());
+    const ok = spellingTargets(target).some((form) => stripTrailingPunct(form.toLowerCase()) === typed);
     setResult(ok ? 'correct' : 'wrong');
 
     const db = getDb();

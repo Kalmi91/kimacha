@@ -192,11 +192,17 @@ const EXCLUDE_INFINITIVES = new Set([
   'invertir', 'divertir', 'divertirse', 'mentir', 'preferir', 'sentar', 'sentarse',
   'cerrar', 'comenzar', 'negar', 'calentar', 'temblar', 'despertar', 'despertarse',
   'advertir', 'convertir', 'hervir', 'sugerir', 'requerir', 'referir', 'desmentir',
+  // BUG-002: nevar is e→ie (nieva, not "neva") AND impersonal, so a "yo" slot
+  // would be nonsense even with the right stem.
+  'nevar',
   // o→ue stem change
   'encontrar', 'dormir', 'morir', 'doler', 'volar', 'sonar', 'probar', 'contar',
   'costar', 'devolver', 'colgar', 'jugar', 'resolver', 'soñar', 'demostrar',
   'volver', 'mover', 'mostrar', 'rogar', 'comprobar', 'apostar', 'aprobar',
   'renovar', 'envolver', 'revolver', 'conmover', 'absolver', 'soler', 'llover', 'oler',
+  // BUG-002: almorzar is o→ue on top of the -zar spelling swap (almuerzo,
+  // almuerce), which the two narrow rules below cannot produce.
+  'almorzar',
   // e→i stem change (-ir only)
   'pedir', 'servir', 'seguir', 'conseguir', 'elegir', 'repetir', 'competir',
   'concebir', 'embestir',
@@ -280,11 +286,22 @@ function frontEStem(stem: string): string {
 
 const VOWELS = new Set(['a', 'e', 'i', 'o', 'u']);
 
+// BUG-002: whole verb FAMILIES need a stem change the endings above cannot
+// produce, and a name list only protects the verbs someone remembered to add:
+// ofrecer ("ofreco" for ofrezco), vencer ("venco" for venzo) and subyacer
+// ("subyaco" for subyazco) all slipped through. Every Spanish -cer/-cir verb
+// takes -zco/-zo in the yo form and the whole subjunctive, every -ger/-gir verb
+// swaps g→j there, and -uir (with -guir inside it) inserts a y. None of them is
+// plain-regular, so the family is excluded by shape. The 15 hand-tabled
+// irregulars (hacer, decir…) are answered from IRREGULAR before this runs.
+const RISKY_ENDINGS = ['cer', 'cir', 'ger', 'gir', 'uir'];
+
 export function conjugateRegular(infinitive: string, tense: Tense): ConjugationForm[] | null {
   const cls = verbClass(infinitive);
   if (!cls) return null;
   if (infinitive.endsWith('arse') || infinitive.endsWith('erse') || infinitive.endsWith('irse')) return null; // reflexive, not modeled
   if (EXCLUDE_INFINITIVES.has(infinitive) || IRREGULAR_INFINITIVES.has(infinitive)) return null;
+  if (RISKY_ENDINGS.some((end) => infinitive.endsWith(end))) return null;
 
   const stem = infinitive.slice(0, -2);
   const endings = REGULAR_ENDINGS[tense][cls];

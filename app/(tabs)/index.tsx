@@ -1188,6 +1188,9 @@ export default function LearnScreen() {
   // FB131: one place decides what a practice answer is worth, used by both the
   // keyboard's Enter and the inline ✓ button.
   const checkPractice = () => {
+    // BUG-004: an empty field is not a wrong answer, the same rule the typing
+    // card follows since FB43/FB73. Nothing to judge, so stay quiet.
+    if (practiceText.trim().length === 0) return;
     setPracticeResult(
       strictAnswerMatch(practiceText, back.split(' / ')[0], { strictAccents }) ? 'correct' : 'wrong'
     );
