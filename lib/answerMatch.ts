@@ -51,11 +51,23 @@ export function sentenceBuildMatch(built: string[], target: string[]): boolean {
   return built.every((w, i) => stripEdges(w) === stripEdges(target[i]));
 }
 
+// BUG-001: a parenthetical in the solution is a disambiguating gloss, not part
+// of the answer ("van (ő)", "óra (idő)", "ver (veremos)"). The normalisation
+// above turns "(" and ")" into spaces, so the gloss used to become a REQUIRED
+// word: "van" failed against "van (ő)". Both forms are accepted now, the full
+// one first (the same gloss-stripping the tile bank does since FB12).
+const withoutGloss = (text: string) => text.replace(/\([^)]*\)/g, ' ').trim();
+
 export function strictAnswerMatch(answer: string, correct: string, opts: MatchOptions = {}): boolean {
   const a = normalizeWords(answer, opts.strictAccents);
-  const c = normalizeWords(correct, opts.strictAccents);
-  if (a.length === c.length && a.every((w, i) => w === c[i])) return true;
-  // FB34: a stray space typed inside a word ("ofi cina" for "oficina") must
-  // not fail the answer, compare the whitespace-free concatenation instead.
-  return a.join('') === c.join('');
+  const bare = withoutGloss(correct);
+  const candidates = bare && bare !== correct.trim() ? [correct, bare] : [correct];
+  return candidates.some((candidate) => {
+    const c = normalizeWords(candidate, opts.strictAccents);
+    if (c.length === 0) return false;
+    if (a.length === c.length && a.every((w, i) => w === c[i])) return true;
+    // FB34: a stray space typed inside a word ("ofi cina" for "oficina") must
+    // not fail the answer, compare the whitespace-free concatenation instead.
+    return a.join('') === c.join('');
+  });
 }

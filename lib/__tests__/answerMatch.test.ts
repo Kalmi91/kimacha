@@ -93,3 +93,27 @@ describe('sentenceBuildMatch (FB137)', () => {
     expect(sentenceBuildMatch(['El', 'camion', 'es', 'grande.'], ['El', 'camión', 'es', 'grande.'])).toBe(false);
   });
 });
+
+describe('strictAnswerMatch, parenthetical gloss (BUG-001)', () => {
+  it('accepts the answer without the gloss', () => {
+    expect(strictAnswerMatch('van', 'van (ő)')).toBe(true);
+    expect(strictAnswerMatch('óra', 'óra (idő)')).toBe(true);
+    expect(strictAnswerMatch('én vagyok', 'én vagyok (állapot)')).toBe(true);
+    expect(strictAnswerMatch('ver', 'ver (veremos)')).toBe(true);
+  });
+
+  it('still accepts the full form with the gloss typed out', () => {
+    expect(strictAnswerMatch('van (ő)', 'van (ő)')).toBe(true);
+    expect(strictAnswerMatch('van ő', 'van (ő)')).toBe(true);
+  });
+
+  it('does not turn the gloss into an answer of its own', () => {
+    expect(strictAnswerMatch('ő', 'van (ő)')).toBe(false);
+    expect(strictAnswerMatch('', 'van (ő)')).toBe(false);
+    expect(strictAnswerMatch('vagyok', 'van (ő)')).toBe(false);
+  });
+
+  it('keeps the FB6 strictness inside the bare form', () => {
+    expect(strictAnswerMatch('she speak', 'she speaks (now)')).toBe(false);
+  });
+});

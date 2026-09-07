@@ -260,3 +260,24 @@ describe('buildConjugationRound', () => {
     }
   });
 });
+
+describe('BUG-002: verbs that used to be handed out with a wrong form', () => {
+  // "almorzo/almorce", "neva", "ofreco/ofreca", "venco/venca" and "subyaco" were
+  // all generated and shown as facts, because the exclusion list is a name list
+  // and these names were missing from it.
+  it.each(['almorzar', 'nevar', 'ofrecer', 'vencer', 'subyacer'])('%s: null in every tense', (inf) => {
+    for (const tense of ALL_TENSES) expect(conjugate(inf, tense)).toBeNull();
+  });
+
+  // The shape-based guard covers the families a name list keeps missing:
+  // -cer/-cir take -zco/-zo, -ger/-gir swap g→j, -uir (with -guir) inserts a y.
+  it.each(['mecer', 'coger', 'dirigir', 'distinguir', 'incluir'])('%s: excluded by its ending', (inf) => {
+    expect(conjugate(inf, 'presente')).toBeNull();
+    expect(conjugate(inf, 'subjuntivo_presente')).toBeNull();
+  });
+
+  it('the ending guard does not swallow the hand-tabled hacer and decir', () => {
+    expect(formFor('hacer', 'presente', 'yo')).toBe('hago');
+    expect(formFor('decir', 'subjuntivo_presente', 'yo')).toBe('diga');
+  });
+});
