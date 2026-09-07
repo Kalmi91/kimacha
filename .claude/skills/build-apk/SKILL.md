@@ -1,114 +1,146 @@
 ---
 name: build-apk
 description: >-
-  Autonomous EAS cloud APK build for this Expo app. Pre-flights expo-doctor, a
-  clean git tree, and known native issues (react-native-reanimated / worklets),
-  then triggers an EAS cloud build of the installable `preview` profile, monitors
-  it, and on failure parses the log, applies a known-safe fix, and retries up to
-  3 builds total. Returns a verified, reachable install link. Trigger when the
-  user says: "build apk", "build the app", "make an apk", "eas build",
-  "cloud build", or "/build-apk".
+  Build the installable Kimacha release APK locally with Gradle and upload it to
+  Google Drive, on the stable share link Kálmán installs from. Local is the only
+  path that produces an APK the phone will accept, because the installed app is
+  signed with this repo's debug keystore and an EAS cloud build is signed with a
+  different key. Trigger when the user says: "build", "kimacha build", "build
+  apk", "csináld meg a buildet", "töltsd fel az apk-t", or "/build-apk".
 ---
 
-# build-apk: autonomous EAS cloud APK build
+# build-apk: local release build, then Drive
 
-Goal: hand back one **verified, downloadable install link** for an Android APK,
-having fixed the common things that break the build on the way.
+Goal: one installable APK on the usual Drive link, which installs **over** the
+copy already on the phone without losing the learner's progress.
 
-## Guardrails (read first)
+Every rule below comes from a build round that went wrong on 2026-09-05. Follow
+the order; the verification step in particular is what makes this repeatable.
 
-Cloud builds cost real EAS build minutes and ~10-20 min each, so this skill is
-careful with them:
+## Why local, not EAS
 
-- **Cap: 3 cloud builds per run, total** (first attempt plus at most 2
-  fix-and-retry). After that, stop and report. Never loop forever.
-- **Never `git push`, never `--force`, never rewrite history.** Local only.
-- **Do not auto-commit the user's working changes.** A dirty tree is parked with a
-  labelled `git stash` (recoverable), the build runs off the committed state, and
-  the stash is restored at the end.
-- **Auto-fix only from the known-safe table below.** Any error outside it: stop,
-  show the parsed error plus the EAS log URL, and ask. No guessing fixes on native
-  build failures.
-- **Requires `eas` logged in.** If `eas whoami` fails, stop and ask the user to run
-  `eas login` in their own terminal (interactive, cannot be done from here).
+`eas build` works and produces a valid APK, but EAS signs with its own release
+keystore. The app on Kálmán's phone is signed with `android/app/debug.keystore`
+(this project's `release` buildType points at `signingConfigs.debug`), so the
+phone rejects an EAS build with **"App not installed as package conflicts with
+an existing package"**. The reference fingerprint every good build must carry:
 
-## Step 0: pre-flight (all must pass before the first build)
-
-1. **EAS auth**: `eas whoami`. Empty or error: stop, ask user to `eas login`.
-2. **Versions**: `npx expo-doctor`.
-   - On version-mismatch findings: `npx expo install --check`, then
-     `npx expo install --fix` to align deps to the installed SDK. Re-run
-     `npx expo-doctor`. Still failing: stop and report.
-3. **Native sanity, reanimated / worklets** (this app uses
-   react-native-reanimated 4.x, which needs react-native-worklets plus its babel
-   plugin; a missing plugin is the classic "reanimated linker / worklet" failure):
-   - Confirm `react-native-worklets` is in package.json.
-   - Confirm the babel config lists `react-native-worklets/plugin` as the **last**
-     plugin. Reanimated 4 moved the babel plugin into worklets, so a stale
-     `react-native-reanimated/plugin` entry is wrong for 4.x. Fix if needed.
-4. **Clean tree**: `git status --porcelain`. Non-empty:
-   `git stash push -u -m "build-apk autostash"`. Remember to pop it in Step 5.
-
-## Step 1: trigger the build
-
-Installable APK = the `preview` profile (eas.json: `preview` is internal
-distribution, `buildType: apk`). Production is an `.aab` (Play Store), not directly
-installable, so do not use it for an install link.
-
-```bash
-eas build -p android --profile preview --non-interactive --json
+```
+SHA-256 fac61745dc0903786fb9ede62a962b399f7348f0bb6f899b8332667591033b9c
 ```
 
-Capture the build `id` from the JSON.
+EAS also keeps its own version counter. With `appVersionSource: remote` it
+stamped versionCode 3 over the phone's 36, which Android reports as
+**"App not installed as package appears to be invalid"** (a downgrade, not a
+corrupt file). `eas.json` is back on `"appVersionSource": "local"`; leave it.
 
-## Step 2: monitor
+## Step 1: bump the version in BOTH places
 
-Poll until done:
+The native project is checked in and is **not** regenerated from `app.json`
+(no `expo prebuild` in this flow), so `app.json` alone does not reach the APK.
+Patch-bump both, to the same numbers:
 
-```bash
-eas build:view <id> --json
-```
-
-Read `.status` (`finished` / `errored` / `canceled`) and, when finished,
-`.artifacts.buildUrl`.
-
-## Step 3: on failure, parse + fix + retry (within the 3-build cap)
-
-Pull the error: `eas build:view <id> --json` (`.error`) plus the log URL. Match
-against the known-safe fixes:
-
-| Symptom in log | Fix |
+| File | Fields |
 |---|---|
-| dependency / SDK version mismatch | `npx expo install --fix`, rebuild |
-| reanimated worklet / "Reanimated babel plugin" / linker on reanimated | ensure `react-native-worklets/plugin` is the last babel plugin; remove stale `react-native-reanimated/plugin`; rebuild |
-| `react-native-worklets` missing | `npx expo install react-native-worklets`, rebuild |
-| Gradle OOM / Java heap | add `org.gradle.jvmargs=-Xmx4g` to android gradle.properties (config plugin / app.json if managed), rebuild |
-| stale native dirs after a dep change | `npx expo prebuild --clean`, then rebuild |
+| `app.json` | `expo.version`, `expo.android.versionCode` |
+| `android/app/build.gradle` | `versionCode`, `versionName` |
 
-Apply exactly one fix, then return to Step 1. Anything not in the table, or the
-3rd build still failing: **stop**, report the parsed error plus log URL, restore the
-stash, hand control back.
+The new `versionCode` has to be higher than what the phone has, or Android
+refuses the install. Read the current value from the phone's APK if unsure:
+`aapt2 dump badging <apk>` on the copy currently in Drive.
 
-## Step 4: verify the link
+Commit this as `chore(release): <version> (<code>)`. This repo is public and
+kept free of AI markers, so the commit message carries no `Co-Authored-By`,
+no `Claude-Session`, and no "Generated with" line.
 
-From the finished build's `.artifacts.buildUrl`:
-- Confirm it is non-empty and reachable:
-  `curl -sI -o /dev/null -w '%{http_code}' <url>` should be 2xx or 3xx.
-- Only then report it as the install link.
+## Step 2: build
 
-## Step 5: restore
+Two environment variables are required, and neither is set in the agent's
+shell by default:
 
-If Step 0 stashed: `git stash pop`. Confirm the tree matches the pre-run state.
+```bash
+cd /home/kalmi/ai/kimacha/android
+JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 \
+ANDROID_HOME=/home/kalmi/Android/Sdk \
+ANDROID_SDK_ROOT=/home/kalmi/Android/Sdk \
+./gradlew :app:assembleRelease --console=plain
+```
 
-## Output to the user
+- Without `JAVA_HOME`: `default-java` is JVM 11 and Gradle stops with
+  *"Gradle requires JVM 17 or later"*.
+- Without `ANDROID_HOME`: *"SDK location not found"*.
+- Name the task `:app:assembleRelease`, not bare `assembleRelease`. The bare
+  name resolved only inside the included builds and reported
+  *"28 actionable tasks: 28 up-to-date"* without touching the app module.
+- A real full build reports roughly **529 actionable tasks** and takes 2-15
+  minutes. Run it in the background and wait for the completion notification.
 
-- The verified install link plus the EAS build id / page.
-- Any fixes that were auto-applied, so the diff can be reviewed.
-- If it stopped early: which gate, the parsed error, the log URL.
+Output path: `android/app/build/outputs/apk/release/app-release.apk`
+
+## Step 3: verify the artifact before uploading
+
+This step exists because a stale August APK was verified and nearly shipped:
+Gradle can fail while the background wrapper still reports exit code 0, and the
+previous APK stays on disk looking perfectly valid.
+
+```bash
+APK=/home/kalmi/ai/kimacha/android/app/build/outputs/apk/release/app-release.apk
+ls -l --time-style=+%m-%d_%H:%M "$APK"
+~/Android/Sdk/build-tools/36.0.0/aapt2 dump badging "$APK" | head -1
+~/Android/Sdk/build-tools/36.0.0/apksigner verify --print-certs "$APK" | grep -i 'SHA-256 digest'
+```
+
+All three have to line up before the upload:
+
+1. **Timestamp** is from this build, not an earlier day.
+2. **versionCode / versionName** match what Step 1 set.
+3. **Signer SHA-256** equals `fac61745…033b9c`.
+
+Any mismatch means the build did not actually run. Read the Gradle log the
+wrapper points at (`~/.local/share/rtk/tee/*_gradlew_build.log`), fix the cause,
+and build again; never upload an artifact that fails these three.
+
+## Step 4: upload to Drive
+
+```bash
+python3 ~/.config/personal-auto/deploy_kimacha_apk.py "$APK"
+```
+
+The helper finds-or-creates the `kimacha` folder in My Drive, replaces the
+contents of `kimacha-a1-release.apk`, and keeps the same file ID, so the share
+link Kálmán already has stays valid. It prints `SIZE_MATCH True` plus the
+FILE_ID and view link; treat anything else as a failed upload.
+
+Stable link: https://drive.google.com/file/d/1SwZFdG5mLk1-Bh29G6HVQjNKmZTxdCiQ/view
+
+These credentials work from the agent's sandbox, so there is no need to send
+the user to their own terminal for this.
+
+## Step 5: hand over
+
+Report the Drive link, the version and versionCode, and confirmation that the
+signer matched. Worth adding: the Drive filename never changes, so if a
+download of the previous APK is still in the phone's Downloads folder, Android
+may offer that stale file again; deleting it avoids a confusing repeat of an
+install error that is already fixed.
+
+## Reading an install failure
+
+| Phone says | Cause | Fix |
+|---|---|---|
+| package appears to be invalid | versionCode lower than installed | bump both version fields, rebuild |
+| package conflicts with an existing package | signed with a different key | build locally, never EAS |
+| nothing happens / same error as before | phone reused a cached download | delete the old APK from Downloads |
+
+If a signing key ever has to change on purpose, the learner's data survives via
+the app's own Settings → Backup, uninstall, install, Settings → Restore.
 
 ## Notes
 
-- eas.json profiles: `development` (dev-client apk), `preview` (internal apk, use
-  this one), `production` (aab, store). `appVersionSource: remote`.
-- Related helper, out of scope here: `~/.config/personal-auto/deploy_kimacha_apk.py`
-  pushes an already-built APK onward.
+- Never `git push` and never rewrite history here; the release commit stays local.
+- One shell gotcha: the command wrapper mangles `case … ;;` blocks in bash, so
+  write polling loops with `if` instead.
+- `npx expo-doctor` currently reports an SDK 57 Hermes advisory and patch-level
+  package drift. Both were present for the last several successful releases;
+  they are not blockers, and `expo install --fix` has caused more trouble than
+  it solved in this project.

@@ -10,6 +10,8 @@
  */
 export interface MatchOptions {
   strictAccents?: boolean;
+  /** Language the answer is written in, so its own spelling variants count. */
+  lang?: string;
 }
 
 function normalizeWords(text: string, strictAccents = false): string[] {
@@ -36,6 +38,36 @@ function normalizeKeepingAccents(text: string): string[] {
     .filter(Boolean);
 }
 
+// German writes some letters two legal ways: ß = ss, and an umlaut = its vowel
+// plus e (schön = schoen), the form a keyboard without umlauts produces. The
+// accent stripping above only ever yields the third, bare form ("schon"), so on
+// its own it fails "schoen" and "Strasse", both of which a learner has spelled
+// right. So a German string carries BOTH readings and one agreement is enough.
+// Collapsing "ue" to "u" outright was not an option: it makes "neue" and "neu"
+// the same word, and an adjective ending is exactly what this card grades.
+const DE_DIGRAPH: Record<string, string> = { 'ä': 'ae', 'ö': 'oe', 'ü': 'ue' };
+
+function germanReadings(text: string): string[] {
+  const bare = text.normalize('NFC').replace(/ß/g, 'ss');
+  const digraph = bare.replace(/[äöü]/gi, (ch) => {
+    const mapped = DE_DIGRAPH[ch.toLowerCase()];
+    return ch === ch.toLowerCase() ? mapped : mapped.charAt(0).toUpperCase() + mapped.slice(1);
+  });
+  return digraph === bare ? [bare] : [bare, digraph];
+}
+
+/**
+ * Every word list `text` may legitimately normalise to. One entry for most
+ * languages; German adds its digraph reading, and only while accents are
+ * forgiven — with strict accents on, ß and ä are the spelling being graded.
+ */
+function normalizedForms(text: string, opts: MatchOptions): string[][] {
+  if (opts.lang === 'de' && !opts.strictAccents) {
+    return germanReadings(text).map((reading) => normalizeWords(reading, false));
+  }
+  return [normalizeWords(text, opts.strictAccents)];
+}
+
 // FB137, Kálmán 2026-08-16 (easy:"The engine makes a lot of noise."): "nem hace
 // kellett volna?? ide szerintem rosszat raktam be és elfogadta". The tap-to-order
 // card used the typing cards' 2-character Levenshtein tolerance, but a tile is
@@ -59,15 +91,18 @@ export function sentenceBuildMatch(built: string[], target: string[]): boolean {
 const withoutGloss = (text: string) => text.replace(/\([^)]*\)/g, ' ').trim();
 
 export function strictAnswerMatch(answer: string, correct: string, opts: MatchOptions = {}): boolean {
-  const a = normalizeWords(answer, opts.strictAccents);
+  const answerForms = normalizedForms(answer, opts);
   const bare = withoutGloss(correct);
   const candidates = bare && bare !== correct.trim() ? [correct, bare] : [correct];
-  return candidates.some((candidate) => {
-    const c = normalizeWords(candidate, opts.strictAccents);
-    if (c.length === 0) return false;
-    if (a.length === c.length && a.every((w, i) => w === c[i])) return true;
-    // FB34: a stray space typed inside a word ("ofi cina" for "oficina") must
-    // not fail the answer, compare the whitespace-free concatenation instead.
-    return a.join('') === c.join('');
-  });
+  return candidates.some((candidate) =>
+    normalizedForms(candidate, opts).some((c) => {
+      if (c.length === 0) return false;
+      return answerForms.some((a) => {
+        if (a.length === c.length && a.every((w, i) => w === c[i])) return true;
+        // FB34: a stray space typed inside a word ("ofi cina" for "oficina") must
+        // not fail the answer, compare the whitespace-free concatenation instead.
+        return a.join('') === c.join('');
+      });
+    })
+  );
 }

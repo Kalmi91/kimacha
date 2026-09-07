@@ -38,7 +38,10 @@ const GLUE_WHITELIST = new Set([
   'aunque', 'cuando', 'como', 'donde', 'mientras', 'ni', 'pues',
   'ya', 'tanto', 'tan',
   // demonstratives
-  'este', 'esta', 'estos', 'estas', 'ese', 'esa', 'esos', 'esas',
+  // FB181, Kálmán 2026-09-07 (word:natural): „szerintem most az ese szót nem
+  // tanultam". The demonstratives used to sit here, exempt from the corpus
+  // rule, so a sentence could use "ese" before any card taught it. They are
+  // A0 cards now (basicos 12-15), so the rule covers them like any other word.
   'aquel', 'aquella', 'aquellos', 'aquellas', 'esto', 'eso', 'aquello',
   // auxiliaries / copulas (forms of ser/estar/haber/tener not in vocab)
   'es', 'son', 'somos', 'soy', 'eres', 'sois',
@@ -71,7 +74,7 @@ const GLUE_WHITELIST_STRIPPED = new Set([...GLUE_WHITELIST].map(w => w.normalize
 // ---------------------------------------------------------------------------
 const PROPER_NOUN_LIST = new Set([
   'madrid', 'barcelona', 'espana', 'mexico', 'africa',  // places (accent-stripped)
-  'ana', 'juan', 'garcia',                               // personal names (accent-stripped)
+  'ana', 'juan', 'garcia', 'jennifer',                    // personal names (accent-stripped)
 ]);
 
 // ---------------------------------------------------------------------------

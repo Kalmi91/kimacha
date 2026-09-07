@@ -5,7 +5,9 @@ import { levenshtein } from './levenshtein';
 const ARTICLES: Record<string, string[]> = {
   es: ['el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas'],
   en: ['the', 'a', 'an'],
-  de: ['der', 'die', 'das', 'den', 'dem', 'ein', 'eine', 'einen'],
+  // German declines its articles, and the case endings are the point of the
+  // exercise, so the genitive/dative forms belong in the family too.
+  de: ['der', 'die', 'das', 'den', 'dem', 'des', 'ein', 'eine', 'einen', 'einem', 'einer', 'eines'],
   hu: ['a', 'az', 'egy'],
 };
 
@@ -18,6 +20,16 @@ const AMBIGUOUS_PRONOUN_PAIRS: Record<string, [string, string][]> = {
     ['ellos', 'ellas'],
     ['nosotros', 'nosotras'],
     ['vosotros', 'vosotras'],
+  ],
+  // Hungarian has one third-person pronoun for both genders ("ő megy" is er
+  // geht AND sie geht), so the German counterpart is the same unfair trap the
+  // Spanish list already bars, in the subject, accusative and possessive forms.
+  de: [
+    ['er', 'sie'],
+    ['ihn', 'sie'],
+    ['ihm', 'ihr'],
+    ['sein', 'ihr'],
+    ['seine', 'ihre'],
   ],
 };
 

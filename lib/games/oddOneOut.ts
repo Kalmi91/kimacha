@@ -21,7 +21,9 @@ export type OddCategorySet = 'topic' | 'pos' | 'gender';
 // screens/ccat.ts callers): this module only knows the three real categories.
 
 const POS_CATEGORIES: WordPos[] = ['noun', 'verb', 'adj', 'adv'];
-const GENDER_CATEGORIES: WordGender[] = ['m', 'f'];
+// Neuter belongs here for the German branch; a Spanish pool has none, so the
+// group-size guard drops the category by itself (see bubblePop).
+const GENDER_CATEGORIES: WordGender[] = ['m', 'f', 'n'];
 
 export interface OddWordMeta {
   wordId: number;

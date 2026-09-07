@@ -6,7 +6,7 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t, stringsFor } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
-import { findWordById, type Level, type WordGender } from '@/data/words';
+import { findWordById, genderOf, type Level, type WordGender } from '@/data/words';
 import { getTopicsForLevel, getTopicName } from '@/data/topics';
 import { getGameDef, gameName } from '@/lib/games/registry';
 import { getLearnedPool, type PoolEntry } from '@/lib/games/vocabPool';
@@ -143,7 +143,7 @@ export default function CcatScreen() {
     setPoolEntries(pool);
     const meta: OddWordMeta[] = pool.map((e) => {
       const word = findWordById(e.wordId, target);
-      return { wordId: e.wordId, learned: e.learned, native: e.native, isNew: e.isNew, topicId: e.topicId, pos: word?.pos, gender: word?.gender };
+      return { wordId: e.wordId, learned: e.learned, native: e.native, isNew: e.isNew, topicId: e.topicId, pos: word?.pos, gender: genderOf(word, target) };
     });
     setOddMeta(meta);
 
@@ -230,7 +230,10 @@ export default function CcatScreen() {
       if (pos === 'adj') return promptGameStrings.bubblePop.posAdj;
       return promptGameStrings.bubblePop.posAdv;
     };
-    const genderLabel = (gender: WordGender): string => (gender === 'f' ? promptGameStrings.bubblePop.genderF : promptGameStrings.bubblePop.genderM);
+    const genderLabel = (gender: WordGender): string =>
+      gender === 'f' ? promptGameStrings.bubblePop.genderF
+        : gender === 'n' ? promptGameStrings.bubblePop.genderN
+          : promptGameStrings.bubblePop.genderM;
 
     switch (item.kind) {
       case 'antonym':
@@ -315,7 +318,9 @@ export default function CcatScreen() {
         const tLabel = topicLabel(lvl, target, item.topicId, promptLangDisplay);
         // FB162: the ADJECTIVE ("feminine"), not bubble-pop's plural noun phrase
         // ("feminine words"), which turned this prompt into a broken sentence.
-        const gLabel = item.gender === 'f' ? promptStrings.genderAdjF : promptStrings.genderAdjM;
+        const gLabel = item.gender === 'f' ? promptStrings.genderAdjF
+          : item.gender === 'n' ? promptStrings.genderAdjN
+            : promptStrings.genderAdjM;
         const correct = item.options[item.correctIndex];
         return {
           kind,

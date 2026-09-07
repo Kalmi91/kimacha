@@ -66,4 +66,27 @@ describe('nearMissDistractors', () => {
     );
     expect(out).not.toContain('mil');
   });
+
+  // Hungarian has one third-person pronoun for both genders, so "sie" is as
+  // correct a reading of "ő megy" as "er" is: offering it as a trap is unfair.
+  it('bars the German third-person counterpart (FB50, hu source)', () => {
+    const out = nearMissDistractors(
+      ['er', 'geht', 'nach', 'Hause'],
+      ['sie', 'gehen', 'essen', 'rot'],
+      'de',
+    );
+    expect(out.map((o) => o.toLowerCase())).not.toContain('sie');
+    const out2 = nearMissDistractors(['ihr', 'Buch'], ['sein', 'Haus', 'rot', 'gehen'], 'de');
+    expect(out2.map((o) => o.toLowerCase())).not.toContain('sein');
+  });
+
+  it('offers the declined German articles as a family', () => {
+    const out = nearMissDistractors(
+      ['Ich', 'gebe', 'dem', 'Mann', 'das', 'Buch'],
+      ['Haus', 'rot', 'gehen', 'essen'],
+      'de',
+      3,
+    );
+    expect(out.some((o) => ['der', 'die', 'den', 'des', 'einem', 'einer', 'eines'].includes(o))).toBe(true);
+  });
 });

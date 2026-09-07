@@ -278,7 +278,9 @@ export function buildWordProblemItem(lang: string, seed: number): CcatWordProble
 // "koppints arra, ami étel ÉS nőnemű" (GAMES.md 4.10).
 // ---------------------------------------------------------------------------
 
-const INSTRUCTION_GENDERS: WordGender[] = ['m', 'f'];
+// Neuter belongs here for the German branch; a Spanish pool has none, so no
+// neuter instruction can be built and the combo list skips it (see bubblePop).
+const INSTRUCTION_GENDERS: WordGender[] = ['m', 'f', 'n'];
 
 export function buildInstructionItem(pool: OddWordMeta[], seed: number, optionCount = 5): CcatInstructionItem | null {
   const nouns = pool.filter((p) => p.pos === 'noun' && p.topicId && p.gender && INSTRUCTION_GENDERS.includes(p.gender));

@@ -621,3 +621,69 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   hátralévő szó × hátralévő adagok), az utolsó adagnál csak a szám. A sáv rózsaszín farka
   marad a mai teljes halmon (FB177). Új `batchLeft` prop, `reviewBatchSize` kivezetve.
   Kapu: tsc 0, jest 465/465 (8 LearnChrome teszt), lint 70.
+- **2026-09-07** (Opus): **Német (hu→de) ág kód-fixek KÉSZ.** A de-kurzus a megosztott
+  spanyol készleten fut (Q1 de-cella még DESIGN-FIRST), de a motor több helyen spanyolt
+  feltételezett: (1) **nem**: a `gender` annotáció a SPANYOL fejszó neme („a só" = `f`, de
+  „das Salz" semleges), így a `bubblePop` / `oddOneOut` / `ccat` nem-kategóriája németül
+  rosszat csoportosított. Új `genderOf(word, targetLang)` a `data/words.ts`-ben: es-nél az
+  annotáció, de-nél a fejszó `der/die/das` névelője (plurál-`die` kiszűrve az es `los/las`
+  alapján), máshol `undefined` → a kategória magától kiesik. `WordGender` +`'n'`,
+  `GENDER_CATEGORIES` +neuter, i18n ×4 (`genderN`, `genderAdjN`). (2) **helyesírás-kapu**:
+  a `ß` nem kombináló jel, így „Strasse" bukott „Straße"-n, és az umlaut-digráf („schoen")
+  is. `strictAnswerMatch` új `lang` opciója németre KÉT olvasatot ad (csupasz magánhangzó +
+  digráf, `ß`=`ss`); szigorú-ékezet módban továbbra is grade-eli. A `ue`→`u` összevonás
+  szándékosan KIMARADT: „neue"/„neu" nem lehet ugyanaz. Drótozás: tanuló-kártya, gyakorló
+  mező, `EasySentenceCard` (új `lang` prop), `ExamSentTypeCard` (`item.dir[1]`). (3)
+  **distractorok**: `ARTICLES.de` kiegészítve a ragozott alakokkal (`des/einem/einer/eines`);
+  új `AMBIGUOUS_PRONOUN_PAIRS.de` (er↔sie, ihn↔sie, ihm↔ihr, sein↔ihr, seine↔ihre), mert a
+  magyar „ő" mindkét nemet jelenti, tehát a párja tisztességtelen csapda.
+  Kapu: tsc 0, jest **496/496** (+7 `germanGender.test.ts`, +7 német `answerMatch`, +2 német
+  distractor), lint-regresszió 0.
+  ⚠️ **Nyitva, tartalom-oldal (nem kód):** a német fejszavak CSAK A1-en (511/565) és részben
+  C1-en (89/256) hordoznak névelőt; A0/A2/B1/B2 német főnév = 0 névelő, szemben a spanyollal,
+  ahol minden szinten megvan. Emiatt a nem-kategória németül csak A1-en (m 212 / f 170 /
+  n 118) és C1-en indul el, máshol kiesik. ~1750 főnévhez kell `der/die/das` → külön task.
+  A `lib/spellingVariants.ts` (spanyol-only helyesírás-variánsok) **HALOTT KÓD** FB64 óta
+  (a felismerés-fallback megszűnt, csak a teszt hivatkozik rá), ezért NEM németesítettem.
+- **2026-09-07** (Opus): **Német névelő-kampány KÉSZ + FB180-182.**
+  **(1) `der/die/das` a német fejszavakra.** A tegnapi kód-fixek nyitva hagyott tartalom-
+  adóssága: 1749 német főnév-fejszó névelő nélkül állt (A0/A2/B1/B2 = 0 db, csak A1 és
+  részben C1 volt kész). Forrás: **de.wiktionary** (`action=query&prop=revisions`, nyers
+  wikitext cache-elve, offline parse). Feloldó lánc, mind forrásolt, nulla tippelés:
+  lemma-genus (1885) → megnevezett alaptag Wiktionaryvel igazolva (17) → validált
+  összetétel-bontás, mindkét fél megerősített szó és mindkettő ≥4 betű (27) →
+  főnevesített infinitívusz, csak ha a kisbetűs alak igazolt ige (3) → deverbális `-ung`,
+  csak ha a képző-alap igazolt ige (3). **1739/1749 megvan.** A maradék 10: 7 nem is
+  főnév (`rechts`, `letzte`, `Bestanden`…), 3 pedig hiányzik a Wiktionaryből
+  (`Sponsoring`, `Doktorat`, `Rückverfolgbarkeit`) → **szándékosan névelő nélkül maradt**,
+  nem találtam ki nekik nemet. Két korai, elvetett megközelítés a naplóba: a naiv
+  leghosszabb-utótag keresés kamu tövekre illesztett (`Alterung`→`Rung`), a vak képző-
+  szabály pedig véletlen betűsorra (`Sanitätsraum`→`-um`→semleges); mindkettő eldobva.
+  Hatás: a `genderOf` (tegnapi) most **2209 német szóra** ad nemet (volt 589), minden
+  szinten van ≥3 hím/nő/semleges, tehát a nem-kategória a bubble-pop / odd-one-out /
+  ccat játékokban németül A0-tól C1-ig elindul, nem csak A1-en. ⚠️ C2 kimaradt
+  (befagyasztott készlet, `pos`-annotáció sincs rajta).
+  **(2) FB180** [P1 BUG] a 🔁 jelvény két különböző szabállyal mérte a köteget és a
+  fogyását („5 szót írt de valójában 8 szó volt benne"): az `isNew` csak a `word`
+  kártyát jelöli újnak, így egy vadonatúj szó `sentence`/`easy` kártyája az ismétlés-
+  oldalra esett és felfújta a köteget, míg a visszaszámláló a session-szintű
+  `newTodayIds`-t nézte (FB158 miatt szándékosan session-szintű, de egy per-sor
+  számlálóhoz rossz halmaz). Új tiszta függvények `lib/sessionQueue.ts`-ben
+  (`reviewBatchOf` + `reviewWordsLeft`), egyetlen közös új-szó halmazzal; `index.tsx`
+  erre áll rá. ⚠️ A bejelentés 2. tünete (7×1 → 32×1) eszköz-állapot nélkül nem
+  reprodukálható, a user maga is írta hogy lehet szabályos új adag; NEM javítottam.
+  **(3) FB181** [P1 TARTALOM] „szerintem most az `ese` szót nem tanultam". Igaza volt:
+  a mutató névmások (`este/esta/ese/esa/esto/eso` + többes) az `audit-corpus.mjs`
+  funkciószó-listáján ültek, tehát mentesültek a korpusz-szabály alól, és soha egy
+  kártya sem tanította őket (csak `este`/`aquel` létezett, A2-n, jóval a használatuk
+  után). 4 új A0-kártya a `basicos` topicba (id 101-104: `esto`, `eso`, `este / esta`,
+  `ese / esa`), a mutató névmások **kivéve a whitelistből** → a szabály immár rájuk is
+  áll. A0 = 100 → **104 kártya** (a Q1-spec „top-100" kerek száma sérül, de ezek
+  frekvencia szerint benne is vannak a spanyol top-100-ban).
+  **(4) FB182** a `celoso` (id 1479) mondata a user kérése szerint:
+  „Jennifer es una mujer muy celosa." + hu/en/de; `jennifer` felvéve a
+  `PROPER_NOUN_LIST`-be.
+  Kapu: tsc 0, jest **503/503** (+7 `reviewBatch.test.ts`), `audit-corpus` P1=0/P2=0,
+  audit-en és audit-hu P1=0, lint 48 error / 142 warning = változatlan alapvonal.
+  ⚠️ `scripts/validate-en-track.mjs` id-blokk hibái ELŐZŐLEG is megvoltak (az en-track
+  fájljaihoz nem nyúltam). Eszköz-verify a következő APK-n.

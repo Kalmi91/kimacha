@@ -19,7 +19,7 @@ import { capNewWords, newWordsLeftToday, newWordIntake, newWordPauseReason, type
 import { borrowNewWords, countNewWords, nextTopicWithNewWords } from '@/lib/topicRotation';
 import { wordPhase, phaseShape, type WordPhase } from '@/lib/wordPhase';
 import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
-import { buildQueue, applyCadence, dripNewWords, type DueItem } from '@/lib/sessionQueue';
+import { buildQueue, applyCadence, dripNewWords, reviewBatchOf, reviewWordsLeft, type DueItem } from '@/lib/sessionQueue';
 import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
 import { cardIcon } from '@/lib/cardIcons';
@@ -120,6 +120,14 @@ export default function LearnScreen() {
   // állapotban lépett a sorba, az egész munkamenetre "új" marad, különben a fázis-1 /
   // fázis-2 requeue (ott már reps > 0) félúton átbillentené a címkét.
   const [newTodayIds, setNewTodayIds] = useState<Set<number>>(() => new Set());
+  // FB180, Kálmán 2026-09-07 (word:"the bedroom"): „5 szót írt de valójában 8 szó
+  // volt benne". The 🔁 badge counted the review words of THIS queue with one rule
+  // and sized the batch with another, so the two drifted apart. `newTodayIds` above
+  // is session-wide on purpose (FB158: a word that arrived new stays new for the
+  // 🌱 tag), which is the wrong set for a per-queue counter: a word that arrived new
+  // this morning and is genuinely under review now would never be counted again.
+  // This one holds the new words of the CURRENT queue only, and both sides use it.
+  const [batchNewIds, setBatchNewIds] = useState<Set<number>>(() => new Set());
   const [unlearnedCount, setUnlearnedCount] = useState(0);
   const [pauseReason, setPauseReason] = useState<NewWordPause>('none');
   const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
@@ -252,15 +260,11 @@ export default function LearnScreen() {
       newWords: items.filter(isNew).length,
       reviews: items.filter(item => !isNew(item)).length,
     });
-    // FB174: the batch is the review WORDS of this queue (a word can hold three
-    // cards), and what is left over goes on in batches of the same size.
-    const batchSize = new Set(items.filter(item => !isNew(item)).map(item => item.wordId)).size;
-    const beyond = Math.max(0, dueReviewWords - batchSize);
-    setReviewBatch({
-      size: batchSize,
-      left: batchSize > 0 ? Math.ceil(beyond / batchSize) : 0,
-      dueToday: dueReviewWords,
-    });
+    // FB174/FB180: batch size and the counter that shrinks as it is answered now
+    // share one definition, in lib/sessionQueue.
+    const batch = reviewBatchOf(items, dueReviewWords);
+    setBatchNewIds(batch.newIds);
+    setReviewBatch({ size: batch.size, left: batch.left, dueToday: batch.dueToday });
     // FB158/FB159: remember which words arrived brand new, the per-card tag reads this.
     setNewTodayIds((prev) => {
       const next = new Set(prev);
@@ -543,13 +547,10 @@ export default function LearnScreen() {
   // shrinks with every card answered. "New" here is the FB158 rule (a word that entered
   // the queue with reps === 0 stays new for the session), and distinct wordIds are
   // counted, because one word can hold three cards.
-  const batchLeft = useMemo(() => {
-    const ids = new Set<number>();
-    for (let i = currentIndex; i < queue.length; i++) {
-      if (!newTodayIds.has(queue[i].wordId)) ids.add(queue[i].wordId);
-    }
-    return ids.size;
-  }, [queue, currentIndex, newTodayIds]);
+  const batchLeft = useMemo(
+    () => reviewWordsLeft(queue, currentIndex, batchNewIds),
+    [queue, currentIndex, batchNewIds],
+  );
 
   // FB177, Kálmán 2026-09-06: "a rozsaszin csik az az ööszes ismételendő szót mutassa
   // ne csak azt a 30 at amit most tanulok ... jelezze, hogy még mennyit kell ismételni
@@ -948,13 +949,13 @@ export default function LearnScreen() {
       speakSkippedAnswer(current);
       return;
     }
-    const { back } = getFrontBack(current);
+    const { back, backLang } = getFrontBack(current);
     const correct = back.split(' / ')[0];
 
     // Strict (FB6): "she speak" must not pass for "She speaks", only case,
     // punctuation and missing accents are forgiven. FB132: the accent half of
     // that is switchable in Settings -> Difficulty.
-    const ok = strictAnswerMatch(typedAnswer, correct, { strictAccents });
+    const ok = strictAnswerMatch(typedAnswer, correct, { strictAccents, lang: backLang });
     setTypingResult(ok ? 'correct' : 'wrong');
     setRevealed(true);
     // FB90: the explanation is what a wrong answer needs, so open the "i" note by
@@ -962,7 +963,6 @@ export default function LearnScreen() {
     if (!ok) setNoteOpen(true);
     // FB64: the recognition fallback is gone, so the answer is always read out
     // loud on reveal (nothing can cover the card any more).
-    const { backLang } = getFrontBack(current);
     speakIn(back, speechLang(backLang));
   };
 
@@ -1192,7 +1192,7 @@ export default function LearnScreen() {
     // card follows since FB43/FB73. Nothing to judge, so stay quiet.
     if (practiceText.trim().length === 0) return;
     setPracticeResult(
-      strictAnswerMatch(practiceText, back.split(' / ')[0], { strictAccents }) ? 'correct' : 'wrong'
+      strictAnswerMatch(practiceText, back.split(' / ')[0], { strictAccents, lang: backLang }) ? 'correct' : 'wrong'
     );
   };
 
@@ -1302,6 +1302,7 @@ export default function LearnScreen() {
           chips={cardChips}
           key={`${current.wordId}-${currentIndex}`}
           sourceSentence={nativeSentence}
+          lang={learned}
           targetWords={targetWordList}
           trapWords={traps}
           onResult={(correct) => {

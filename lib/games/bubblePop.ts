@@ -14,7 +14,11 @@ export type BubbleCategorySet = 'topic' | 'pos' | 'gender';
 // are too rare or awkward to build a "pop the X" prompt around, so they're
 // excluded from THIS game (K6/F-1's metadata still has them, just unused here).
 const POS_CATEGORIES: WordPos[] = ['noun', 'verb', 'adj', 'adv'];
-const GENDER_CATEGORIES: WordGender[] = ['m', 'f'];
+// German is a three-gender language, so neuter is a category here too. A
+// Spanish pool simply never produces enough neuter nouns for the round-size
+// guard below, so the category drops itself on that branch and this stays a
+// no-op there.
+const GENDER_CATEGORIES: WordGender[] = ['m', 'f', 'n'];
 
 export interface BubbleWordMeta {
   wordId: number;
