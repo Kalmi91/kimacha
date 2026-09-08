@@ -3559,16 +3559,21 @@
     "id": 1228,
     "level": "A1",
     "es": "correos",
-    "hu": "a posta",
-    "en": "the post office",
-    "de": "das Postamt",
+    "hu": "posta",
+    "en": "post office",
+    "de": "Post",
     "topic": "ciudad",
     "topicOrder": 10,
     "sentence_es": "Correos está cerca de aquí.",
     "sentence_hu": "A posta itt a közelben van.",
     "sentence_en": "The post office is near here.",
     "sentence_de": "Das Postamt ist hier in der Nähe.",
-    "pos": "adj"
+    "pos": "noun",
+    "note_hu": "A Correos névelő nélkül áll, ez az intézmény neve (mint a Posta). Ezért nincs mellette el/la, és a magyar oldalon sincs névelő. A konkrét épület: la oficina de correos.",
+    "note_en": "Correos stands without an article, it is the name of the institution. That is why there is no el/la, and no \"the\" on the English side either. The building itself is la oficina de correos.",
+    "note_es": "Correos va sin artículo, es el nombre de la institución. Por eso no lleva el/la. El edificio concreto es la oficina de correos.",
+    "note_de": "Correos steht ohne Artikel, es ist der Name der Institution. Deshalb kein el/la und auch kein Artikel auf der deutschen Seite. Das Gebäude selbst: la oficina de correos.",
+    "gender": "m"
   },
   {
     "id": 1229,
@@ -6685,7 +6690,11 @@
     "sentence_hu": "A víz hideg.",
     "sentence_en": "The water is cold.",
     "sentence_de": "Das Wasser ist kalt.",
-    "pos": "adj"
+    "pos": "adj",
+    "note_hu": "A frío a HŐMÉRSÉKLET (melléknév): El agua está fría. A megfázás ettől külön szó: el resfriado. Angolul mindkettő \"cold\", spanyolul nem.",
+    "note_en": "frío is the TEMPERATURE (adjective): El agua está fría. The illness is a separate word: el resfriado. English says \"cold\" for both, Spanish does not.",
+    "note_es": "Frío es la TEMPERATURA (adjetivo): El agua está fría. La enfermedad es otra palabra: el resfriado. En inglés ambos son \"cold\".",
+    "note_de": "frío ist die TEMPERATUR (Adjektiv): El agua está fría. Die Erkältung ist ein eigenes Wort: el resfriado. Im Englischen heißt beides \"cold\"."
   },
   {
     "id": 1430,
@@ -7985,7 +7994,11 @@
     "sentence_en": "I have a cold and my throat hurts.",
     "sentence_de": "Ich bin erkältet und mein Hals tut weh.",
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_hu": "Az el resfriado a BETEGSÉG (főnév): Tengo un resfriado. A hideg mint hőmérséklet: frío. Angolul mindkettő \"cold\", spanyolul nem.",
+    "note_en": "el resfriado is the ILLNESS (noun): Tengo un resfriado. Cold as a temperature is frío. English says \"cold\" for both, Spanish does not.",
+    "note_es": "El resfriado es la ENFERMEDAD (sustantivo): Tengo un resfriado. El frío es la temperatura. En inglés ambos son \"cold\".",
+    "note_de": "el resfriado ist die KRANKHEIT (Substantiv): Tengo un resfriado. Kalt als Temperatur ist frío. Im Englischen heißt beides \"cold\"."
   },
   {
     "id": 1520,
@@ -11707,7 +11720,11 @@
     "sentence_en": "The red pepper is very sweet.",
     "sentence_de": "Die rote Paprika ist sehr süß.",
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_hu": "A pimiento a ZÖLDSÉG (paprika), hímnemű: el pimiento. A pimienta a FŰSZER (bors), nőnemű: la pimienta. Két külön szó, nem alakváltozat.",
+    "note_en": "pimiento is the VEGETABLE (bell pepper), masculine: el pimiento. pimienta is the SPICE (black pepper), feminine: la pimienta. Two different words, not two forms of one.",
+    "note_es": "El pimiento es la VERDURA, masculino: el pimiento. La pimienta es la ESPECIA, femenina: la pimienta. Son dos palabras distintas.",
+    "note_de": "pimiento ist das GEMÜSE (Paprika), maskulin: el pimiento. pimienta ist das GEWÜRZ (Pfeffer), feminin: la pimienta. Zwei verschiedene Wörter."
   },
   {
     "id": 1758,

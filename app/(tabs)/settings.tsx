@@ -46,6 +46,10 @@ export default function SettingsScreen() {
   // FB39: due count for the "Spelling Practice (N)" settings row, refreshed
   // every time Settings gains focus (e.g. after adding words on the Learn tab).
   const [spellingDue, setSpellingDue] = useState(0);
+  // FB186, Kálmán 2026-09-08: „a settingsbe látom olyat hogy 522 szó félre van téve
+  // az miért van?" A puszta szám félreérthető volt, félretett szavaknak olvasta.
+  // A sor mostantól kimondja, mi az: ennyi esedékes, ennyi van összesen a listán.
+  const [spellingTotal, setSpellingTotal] = useState(0);
   // FB65: weekly study goal in minutes (UI shows whole hours).
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
   // FB77: daily budget of brand-new words entering the queue.
@@ -81,6 +85,7 @@ export default function SettingsScreen() {
       });
       db.getLevel().then(l => setLevel(l.level as Level));
       db.getSpellingDueCount().then(setSpellingDue);
+      db.getSpellingListCount().then(setSpellingTotal);
     }, [])
   );
 
@@ -376,7 +381,7 @@ export default function SettingsScreen() {
         style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}
         onPress={() => router.push('/spelling')}
       >
-        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.spellingPractice(spellingDue)}</Text>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.spellingPractice(spellingDue, spellingTotal)}</Text>
         <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
       </Pressable>
 

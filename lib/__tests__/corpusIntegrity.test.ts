@@ -92,3 +92,23 @@ describe('pickSurvivor', () => {
     expect(pickSurvivor(card(3, 5, '2026-08-20'), soon)).toBe(soon);
   });
 });
+
+// FB184, Kálmán 2026-09-08 (word:the post office): „ennek van névelője angolba ott a
+// the spanyolba nincs el vagy la? ez hiba? ne legyen ott a the ha nincs el la".
+// A `correos` a spanyol oldalon névelő nélkül állt, a natív oldalon viszont
+// névelővel, ezért a kártya két fele ellentmondott egymásnak. Ez az őr azt tartja
+// fenn, hogy ha a tanult alak nem hoz névelőt, a natív prompt se hozzon.
+describe('article agreement between the two sides of a card', () => {
+  const ES_ARTICLE = /^(el|la|los|las|un|una|unos|unas)[\s/]/i;
+  const EN_ARTICLE = /^(the|a|an)\s/i;
+
+  it('never shows an English article for a Spanish form that has none', () => {
+    const offenders = words
+      .filter((w) => w.pos !== 'verb')
+      .filter((w) => EN_ARTICLE.test(w.en ?? '') && !ES_ARTICLE.test(w.es ?? ''))
+      // `un/una` maga a névelő-kártya, ott a prompt "a / an" a helyes tartalom.
+      .filter((w) => !/^un\/una$/i.test(w.es ?? ''))
+      .map((w) => `${w.id} ${w.es} = ${w.en}`);
+    expect(offenders).toEqual([]);
+  });
+});

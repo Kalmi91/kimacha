@@ -429,7 +429,7 @@ export default {
     weeklyGoalDoneText: (h: string, goal: string) => `${h} hours of study this week, your goal was ${goal}. Huge!`,
     dailyNewLimit: 'New words a day',
     dailyNewLimitWords: (n: string) => `${n} words / day`,
-    spellingPractice: (n: number) => `Spelling Practice (${n})`,
+    spellingPractice: (due: number, total: number) => `Spelling practice · ${due} due, ${total} on the list`,
     difficulty: 'Difficulty',
     strictAccents: 'Accents count',
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',
