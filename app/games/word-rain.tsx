@@ -113,6 +113,12 @@ export default function WordRainScreen() {
   const [started, setStarted] = useState(false);
   const [prompt, setPrompt] = useState('');
   const [tiles, setTiles] = useState<FallingTile[]>([]);
+  // Kept in sync in an effect (not during render), so the landing handler can
+  // read the current board without a render-time ref write.
+  const tilesRef = useRef<FallingTile[]>([]);
+  useEffect(() => {
+    tilesRef.current = tiles;
+  }, [tiles]);
   const [roundKey, setRoundKey] = useState(0);
   const [intro, setIntro] = useState<{ info: GlossInfo } | null>(null);
 
@@ -296,23 +302,22 @@ export default function WordRainScreen() {
     }
   };
 
+  // Losing a life, logging the miss and starting the next round are side
+  // effects, so they run here rather than inside a setTiles updater: React can
+  // call an updater more than once for one event, and a double call would cost
+  // two lives for one missed word (the FB162 crash was this same shape).
   const handleLand = (id: string) => {
-    setTiles((prev) => {
-      const tile = prev.find((tl) => tl.id === id);
-      if (!tile) return prev;
-      if (tile.isTarget) {
-        session.resetCombo();
-        session.loseLife();
-        getDb().recordAttempt(tile.wordId, 'game:word-rain', false, Date.now() - catchStartRef.current).catch(() => {});
-        const rest = prev.filter((tl) => tl.wordId !== tile.wordId);
-        setTimeout(() => {
-          setTiles([]);
-          nextRound();
-        }, 0);
-        return rest;
-      }
-      return prev.filter((tl) => tl.id !== id);
-    });
+    const tile = tilesRef.current.find((tl) => tl.id === id);
+    if (!tile) return;
+    if (!tile.isTarget) {
+      setTiles((prev) => prev.filter((tl) => tl.id !== id));
+      return;
+    }
+    session.resetCombo();
+    session.loseLife();
+    getDb().recordAttempt(tile.wordId, 'game:word-rain', false, Date.now() - catchStartRef.current).catch(() => {});
+    setTiles([]);
+    nextRound();
   };
 
   const settingsFields: SettingField[] = [

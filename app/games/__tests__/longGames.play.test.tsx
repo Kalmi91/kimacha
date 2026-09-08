@@ -68,11 +68,20 @@ describe('long-form games play to the end', () => {
     }
     expect(faces.size).toBe(total);
 
-    // Pass 2: match them. A pair is two positions whose faces belong to the same
-    // word (learned form + native form), which the screen only confirms by
-    // keeping them face up, so the test does what a player does: try, and keep
-    // the ones that stick.
+    // A pair the scan itself turned up stays face up. Count those first and take
+    // them out of the pool, otherwise the search below would pair an
+    // already-matched card with an innocent one and lose count.
     let matched = 0;
+    for (const pos of [...faces.keys()]) {
+      if (cardText(pos) !== '?') {
+        matched += 0.5; // two positions per pair
+        faces.delete(pos);
+      }
+    }
+
+    // Pass 2: match the rest. The screen only confirms a pair by keeping BOTH
+    // cards face up after the flip-back delay, so the test does what a player
+    // does: try, and keep the ones that stick.
     let guard = 0;
     while (faces.size > 0 && guard < 200) {
       guard++;
@@ -83,9 +92,8 @@ describe('long-form games play to the end', () => {
         await flushAsync(1);
         fireEvent.press(screen.getByTestId(`mem-card-${posB}`));
         await flushAsync(1);
-        const stuck = cardText(posA) === faces.get(posA) && cardText(posB) === faces.get(posB);
         await advanceTimers(900);
-        if (stuck && cardText(posA) === faces.get(posA)) {
+        if (cardText(posA) === faces.get(posA) && cardText(posB) === faces.get(posB)) {
           matched++;
           faces.delete(posA);
           faces.delete(posB);
