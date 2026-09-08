@@ -1,0 +1,223 @@
+{
+  "lang": "de",
+  "level": "A1",
+  "reading": [
+    {
+      "id": "de-a1-r1",
+      "kind": "text_mc",
+      "instruction": "TEIL 1. Lesen Sie den Text und beantworten Sie die Fragen. Kreuzen Sie die richtige Lösung an.",
+      "title": "Eine E-Mail von Julia",
+      "text": "Hallo Tom,\n\nich heiße Julia und bin deine neue Kollegin. Ich bin 29 Jahre alt und komme aus Leipzig, aber jetzt wohne ich in München. Ich wohne mit meiner Schwester in einer kleinen Wohnung.\n\nIch arbeite von Montag bis Freitag im Büro, von neun bis siebzehn Uhr. Am Samstag arbeite ich nicht: Am Vormittag gehe ich auf den Markt, am Nachmittag lerne ich Englisch.\n\nMeine Telefonnummer ist 0176 4099018. Wollen wir am Montag zusammen Mittag essen?\n\nViele Grüße,\nJulia",
+      "questions": [
+        { "q": "Woher kommt Julia?", "options": ["Aus Leipzig.", "Aus München.", "Aus England."], "correct": 0 },
+        { "q": "Mit wem wohnt sie?", "options": ["Mit Tom.", "Mit ihrer Schwester.", "Allein."], "correct": 1 },
+        { "q": "Wann arbeitet Julia?", "options": ["Jeden Tag.", "Von Montag bis Freitag.", "Nur am Samstag."], "correct": 1 },
+        { "q": "Was macht sie am Samstagnachmittag?", "options": ["Sie geht auf den Markt.", "Sie arbeitet.", "Sie lernt Englisch."], "correct": 2 },
+        { "q": "Was möchte Julia?", "options": ["Am Montag mit Tom essen.", "Eine neue Wohnung.", "Nach Leipzig fahren."], "correct": 0 }
+      ]
+    },
+    {
+      "id": "de-a1-r2",
+      "kind": "match",
+      "instruction": "TEIL 2. Sechs Personen suchen etwas. Lesen Sie die Anzeigen und ordnen Sie jeder Person die passende Anzeige zu. Es gibt mehr Anzeigen als Personen.",
+      "prompts": [
+        { "id": "p1", "text": "Anna möchte am Samstagvormittag Deutsch lernen." },
+        { "id": "p2", "text": "Peter sucht eine billige Wohnung für eine Person." },
+        { "id": "p3", "text": "Sofia braucht abends einen Arzt." },
+        { "id": "p4", "text": "Jan möchte frisches Obst und Gemüse kaufen." },
+        { "id": "p5", "text": "Lena sucht am Wochenende Arbeit als Kellnerin." },
+        { "id": "p6", "text": "Diego möchte in der Nähe Sport machen." }
+      ],
+      "options": [
+        { "id": "a", "text": "SPRACHSCHULE SONNE. Deutschkurse. Samstag von 9 bis 12 Uhr. Kleine Gruppen." },
+        { "id": "b", "text": "WOCHENMARKT AM PLATZ. Obst und Gemüse, jeden Tag frisch. 7 bis 15 Uhr." },
+        { "id": "c", "text": "FITNESSSTUDIO NORD. Zwei Straßen vom Park. Täglich geöffnet." },
+        { "id": "d", "text": "ZU VERMIETEN. 1-Zimmer-Wohnung, 400 Euro im Monat." },
+        { "id": "e", "text": "CAFÉ ZENTRUM sucht Kellnerin. Samstag und Sonntag, 10 bis 18 Uhr." },
+        { "id": "f", "text": "ABENDPRAXIS DR. WEBER. Von 18 bis 23 Uhr. Telefon: 089 12 34 56." },
+        { "id": "g", "text": "BUCHLADEN BLAU. Bücher auf Deutsch und Englisch. Sonntag geschlossen." },
+        { "id": "h", "text": "FLUGHAFENBUS. Alle 30 Minuten, von 5 bis 23 Uhr." }
+      ],
+      "answer": { "p1": "a", "p2": "d", "p3": "f", "p4": "b", "p5": "e", "p6": "c" }
+    },
+    {
+      "id": "de-a1-r3",
+      "kind": "true_false",
+      "instruction": "TEIL 3. Lesen Sie die Texte. Sind die Sätze richtig (✓) oder falsch (✗)?",
+      "title": "Schilder und Notizen",
+      "text": "1. BÄCKEREI MÜLLER, Montag bis Freitag 6–18 Uhr, Samstag 6–12 Uhr, Sonntag geschlossen.\n\n2. Notiz an der Wohnungstür: „Lieber Nachbar, das Paket für Sie ist bei mir. Bitte klingeln Sie nach 17 Uhr. Frau Klein, Wohnung 3.“\n\n3. Im Zug: „Dieses Abteil ist nur für Reisende mit Fahrrad.“\n\n4. SMS: „Der Kurs am Dienstag fällt aus. Nächster Termin: Donnerstag, 18 Uhr, Raum 2.“",
+      "statements": [
+        { "s": "Die Bäckerei ist am Sonntag geöffnet.", "answer": false },
+        { "s": "Am Samstag schließt die Bäckerei um 12 Uhr.", "answer": true },
+        { "s": "Das Paket ist bei Frau Klein.", "answer": true },
+        { "s": "Man soll vor 17 Uhr klingeln.", "answer": false, "why": "„Bitte klingeln Sie NACH 17 Uhr.“" },
+        { "s": "In dem Abteil dürfen alle Reisenden sitzen.", "answer": false, "why": "Es ist nur für Reisende mit Fahrrad." },
+        { "s": "Der Kurs findet am Dienstag nicht statt.", "answer": true }
+      ]
+    },
+    {
+      "id": "de-a1-r4",
+      "kind": "gap_mc",
+      "instruction": "TEIL 4. Ergänzen Sie den Text. Wählen Sie für jede Lücke die richtige Lösung.",
+      "text": "Hallo, ich ___ Elena und ich ___ Lehrerin. Ich arbeite in einer kleinen Schule ___ dem Park. Jeden Tag stehe ich um sieben Uhr ___ . Mein Haus ist weit von der Schule, ___ fahre ich mit dem Bus. Ich habe zwei Brüder; ___ Brüder wohnen in Hamburg. Am Sonntag ___ wir zusammen in einem Restaurant. ___ Abend lese ich ein Buch.",
+      "gaps": [
+        { "options": ["heiße", "heißt", "heißen"], "correct": 0, "why": "1. Person Singular: ich heiße." },
+        { "options": ["bin", "ist", "habe"], "correct": 0, "why": "Beruf mit „sein“: ich bin Lehrerin." },
+        { "options": ["neben", "nach", "aus"], "correct": 0, "why": "Ort: neben dem Park." },
+        { "options": ["auf", "an", "auf/an"], "correct": 0, "why": "Trennbares Verb: aufstehen → ich stehe … auf." },
+        { "options": ["deshalb", "weil", "und dann"], "correct": 0, "why": "Folge: deshalb fahre ich mit dem Bus." },
+        { "options": ["mein", "meine", "meinen"], "correct": 1, "why": "Plural: meine Brüder." },
+        { "options": ["essen", "esse", "isst"], "correct": 0, "why": "„wir“ → essen." },
+        { "options": ["Am", "In", "Um"], "correct": 0, "why": "Tageszeit: am Abend." }
+      ]
+    }
+  ],
+  "listening": [
+    {
+      "id": "de-a1-l1",
+      "kind": "listen_mc",
+      "instruction": "TEIL 1. Sie hören fünf kurze Texte. Sie hören jeden Text zweimal. Kreuzen Sie die richtige Lösung an.",
+      "audio": [
+        "Guten Morgen. Der Zug um neun Uhr fährt heute von Gleis drei.",
+        "Hallo, hier ist Rosa. Ich komme heute nicht ins Büro, ich bin krank.",
+        "Das Museum ist von Dienstag bis Sonntag von zehn bis achtzehn Uhr geöffnet.",
+        "Das macht zusammen zwölf Euro fünfzig, bitte.",
+        "Entschuldigung, wo ist die Apotheke?, Neben der Bank."
+      ],
+      "questions": [
+        { "q": "Von welchem Gleis fährt der Zug?", "options": ["Von Gleis drei.", "Von Gleis neun.", "Von Gleis zwei."], "correct": 0 },
+        { "q": "Warum kommt Rosa nicht?", "options": ["Sie hat Urlaub.", "Sie ist krank.", "Sie hat keine Arbeit."], "correct": 1 },
+        { "q": "Wann ist das Museum geschlossen?", "options": ["Am Montag.", "Am Sonntag.", "Am Samstag."], "correct": 0 },
+        { "q": "Wie viel kostet es?", "options": ["2,50 Euro.", "12,50 Euro.", "20,50 Euro."], "correct": 1 },
+        { "q": "Wo ist die Apotheke?", "options": ["Neben der Bank.", "Vor dem Museum.", "Im Bahnhof."], "correct": 0 }
+      ]
+    },
+    {
+      "id": "de-a1-l2",
+      "kind": "listen_match",
+      "instruction": "TEIL 2. Sie hören fünf Personen. Wo ist jede Person? Ordnen Sie zu. Es gibt mehr Orte als Personen.",
+      "audio": [
+        "Einen Tisch für zwei Personen, bitte. Bringen Sie uns die Karte?",
+        "Ich hätte gern zwei Kilo Äpfel und ein Kilo Tomaten.",
+        "Haben Sie dieses Hemd auch in Blau und eine Nummer größer?",
+        "Guten Tag, Herr Doktor. Ich habe seit Montag starke Kopfschmerzen.",
+        "Eine Fahrkarte ins Zentrum, bitte. Was kostet das?"
+      ],
+      "prompts": [
+        { "id": "p1", "text": "Person 1" },
+        { "id": "p2", "text": "Person 2" },
+        { "id": "p3", "text": "Person 3" },
+        { "id": "p4", "text": "Person 4" },
+        { "id": "p5", "text": "Person 5" }
+      ],
+      "options": [
+        { "id": "a", "text": "Im Restaurant" },
+        { "id": "b", "text": "Auf dem Markt" },
+        { "id": "c", "text": "Im Kleidergeschäft" },
+        { "id": "d", "text": "Beim Arzt" },
+        { "id": "e", "text": "Am Fahrkartenschalter" },
+        { "id": "f", "text": "In der Bank" },
+        { "id": "g", "text": "In der Schule" }
+      ],
+      "answer": { "p1": "a", "p2": "b", "p3": "c", "p4": "d", "p5": "e" }
+    },
+    {
+      "id": "de-a1-l3",
+      "kind": "listen_dialogue",
+      "instruction": "TEIL 3. Sie hören ein Gespräch zwischen zwei Freunden. Sie hören es zweimal. Beantworten Sie die Fragen.",
+      "audio": [
+        "A: Hallo Anna, was machst du am Samstag?",
+        "B: Am Vormittag arbeite ich, aber am Nachmittag habe ich Zeit.",
+        "A: Gehen wir ins Kino? Es gibt einen neuen Film um achtzehn Uhr.",
+        "B: Um sechs geht leider nicht. Ich habe erst um fünf Feierabend und wohne weit weg.",
+        "A: Dann gehen wir um zwanzig Uhr. Vorher können wir etwas essen.",
+        "B: Super. Wir treffen uns um neunzehn Uhr vor dem Restaurant im Zentrum."
+      ],
+      "questions": [
+        { "q": "Was macht Anna am Samstagvormittag?", "options": ["Sie arbeitet.", "Sie geht ins Kino.", "Sie schläft."], "correct": 0 },
+        { "q": "Wann beginnt der erste Film?", "options": ["Um 17 Uhr.", "Um 18 Uhr.", "Um 20 Uhr."], "correct": 1 },
+        { "q": "Warum kann Anna um 18 Uhr nicht?", "options": ["Der Film gefällt ihr nicht.", "Sie hat erst um 17 Uhr Feierabend und wohnt weit weg.", "Sie hat kein Geld."], "correct": 1 },
+        { "q": "Wann gehen sie ins Kino?", "options": ["Um 18 Uhr.", "Um 19 Uhr.", "Um 20 Uhr."], "correct": 2 },
+        { "q": "Wo treffen sie sich?", "options": ["Vor dem Kino.", "Vor dem Restaurant im Zentrum.", "Bei Anna zu Hause."], "correct": 1 },
+        { "q": "Wann treffen sie sich?", "options": ["Um 17 Uhr.", "Um 19 Uhr.", "Um 20 Uhr."], "correct": 1 }
+      ]
+    },
+    {
+      "id": "de-a1-l4",
+      "kind": "listen_dialogue",
+      "instruction": "TEIL 4. Sie hören eine Nachricht auf dem Anrufbeantworter. Sie hören sie zweimal. Beantworten Sie die Fragen.",
+      "audio": [
+        "Hallo, hier ist Berenice.",
+        "Ich rufe wegen der Party am Freitag an. Sie ist bei mir zu Hause, in der Rébsamenstraße 431.",
+        "Sie beginnt um acht Uhr abends. Du kannst einen Freund mitbringen.",
+        "Das Essen mache ich, aber ich brauche Getränke: Bring bitte Wasser und Orangensaft mit, kein Bier.",
+        "Wenn du später kommst, ist das kein Problem, die Tür ist bis elf Uhr offen.",
+        "Ruf mich bitte am Donnerstag an. Bis dann!"
+      ],
+      "questions": [
+        { "q": "Wann ist die Party?", "options": ["Am Donnerstag.", "Am Freitag.", "Am Samstag."], "correct": 1 },
+        { "q": "Wo ist die Party?", "options": ["Bei Berenice zu Hause.", "In einem Restaurant.", "Im Park."], "correct": 0 },
+        { "q": "Wann beginnt sie?", "options": ["Um 18 Uhr.", "Um 20 Uhr.", "Um 23 Uhr."], "correct": 1 },
+        { "q": "Was soll er mitbringen?", "options": ["Essen.", "Wasser und Saft.", "Bier."], "correct": 1 },
+        { "q": "Bis wann ist die Tür offen?", "options": ["Bis 20 Uhr.", "Bis 23 Uhr.", "Die ganze Nacht."], "correct": 1 },
+        { "q": "Wann soll er anrufen?", "options": ["Am Donnerstag.", "Am Freitag.", "Am Sonntag."], "correct": 0 }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "id": "de-a1-w1",
+      "kind": "form_fill",
+      "instruction": "TEIL 1. Füllen Sie das Formular aus.",
+      "context": "Sie möchten sich für einen Deutschkurs anmelden. Füllen Sie das Anmeldeformular aus.",
+      "fields": [
+        { "id": "name", "label": "Vor- und Nachname", "type": "text" },
+        { "id": "alter", "label": "Alter", "type": "number" },
+        { "id": "land", "label": "Herkunftsland", "type": "text" },
+        { "id": "adresse", "label": "Adresse (Straße und Hausnummer)", "type": "text" },
+        { "id": "telefon", "label": "Telefonnummer", "type": "number" },
+        { "id": "email", "label": "E-Mail", "type": "text" },
+        { "id": "niveau", "label": "Welches Niveau lernen Sie? (A1, A2 …)", "type": "text" }
+      ]
+    },
+    {
+      "id": "de-a1-w2",
+      "kind": "short_message",
+      "instruction": "TEIL 2. Schreiben Sie 30 bis 40 Wörter.",
+      "prompt": "Ein deutscher Freund möchte Sie kennenlernen. Schreiben Sie ihm eine Nachricht: Wie heißen Sie und woher kommen Sie? Wo wohnen Sie jetzt? Was machen Sie am Wochenende? Stellen Sie ihm auch eine Frage.",
+      "minWords": 28,
+      "points": [
+        { "id": "name", "label": "Nennt Namen oder Herkunft", "keywords": ["ich heiße", "ich bin", "ich komme aus"] },
+        { "id": "live", "label": "Sagt, wo er/sie wohnt", "keywords": ["ich wohne", "wohne in"] },
+        { "id": "weekend", "label": "Spricht über das Wochenende", "keywords": ["wochenende", "samstag", "sonntag"] },
+        { "id": "question", "label": "Stellt eine Frage", "keywords": ["?"] }
+      ]
+    }
+  ],
+  "speaking": [
+    {
+      "id": "de-a1-s1",
+      "kind": "speaking_prompt",
+      "instruction": "TEIL 1. Sich vorstellen. Sprechen Sie ein bis zwei Minuten laut. Hören Sie danach das Modell und bewerten Sie sich.",
+      "prompt": "Stellen Sie sich vor: Name, Alter, Land, Wohnort, Familie, Arbeit oder Studium, Sprachen.",
+      "bullets": ["Name und Alter", "Land und Stadt", "Familie", "Arbeit", "Sprachen"],
+      "model": "Ich heiße Kálmán und ich bin vierunddreißig Jahre alt. Ich komme aus Ungarn, aber jetzt wohne ich in Mexiko-Stadt. Ich wohne mit meiner Freundin zusammen. Ich arbeite mit Computern und lerne jeden Tag Spanisch. Ich spreche Ungarisch, Englisch und ein bisschen Deutsch."
+    },
+    {
+      "id": "de-a1-s2",
+      "kind": "speaking_prompt",
+      "instruction": "TEIL 2. Fragen stellen und antworten. Sprechen Sie laut. Hören Sie danach das Modell.",
+      "prompt": "Thema „Wohnen“: Stellen Sie drei Fragen und beantworten Sie sie selbst (Wohnung, Zimmer, Nachbarn, Stadtteil).",
+      "bullets": ["Wo wohnst du?", "Wie ist deine Wohnung?", "Was gibt es in der Nähe?"],
+      "model": "Wo wohnst du?, Ich wohne in Mexiko-Stadt, im Stadtteil Narvarte. Wie ist deine Wohnung?, Sie ist nicht groß: zwei Zimmer, eine Küche und ein Bad. Was gibt es in der Nähe?, In der Nähe gibt es einen Markt, eine Apotheke und einen Park. Die U-Bahn ist zehn Minuten zu Fuß entfernt."
+    },
+    {
+      "id": "de-a1-s3",
+      "kind": "speaking_prompt",
+      "instruction": "TEIL 3. Bitten formulieren. Sprechen Sie laut. Hören Sie danach das Modell.",
+      "prompt": "Sie sind im Restaurant. Bitten Sie um einen Tisch, fragen Sie nach dem Tagesmenü, bestellen Sie Essen und Trinken und bitten Sie um die Rechnung.",
+      "bullets": ["ein Tisch", "das Tagesmenü", "Essen und Trinken", "die Rechnung"],
+      "model": "Guten Tag, haben Sie einen Tisch für zwei Personen? Danke. Was gibt es heute als Tagesmenü? Dann nehme ich bitte eine Suppe und danach Hähnchen mit Reis. Zum Trinken ein Wasser, bitte. Können wir bitte zahlen?"
+    }
+  ]
+}

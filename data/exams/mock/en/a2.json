@@ -1,0 +1,224 @@
+{
+  "lang": "en",
+  "level": "A2",
+  "reading": [
+    {
+      "id": "en-a2-r1",
+      "kind": "text_mc",
+      "instruction": "PART 1. Read the text and answer the questions.",
+      "title": "My first month abroad",
+      "text": "I arrived in September with two suitcases and without knowing anybody. The first days were hard: I did not understand people in the street because they spoke very fast and used words I had never studied.\n\nAt the beginning I always ate at home, because I was embarrassed to order in a restaurant. One day my neighbour Sarah took me to the market. She taught me the names of the vegetables and introduced me to the woman who sells juice. Since then I go to the market every week and I order without fear.\n\nNow, three months later, I still make mistakes, but I can talk to the doctor, to the landlord and to my colleagues. The hardest thing was not the grammar; it was losing my fear of making mistakes.",
+      "questions": [
+        { "q": "When did the writer arrive?", "options": ["In September.", "Three weeks ago.", "In the summer, with family."], "correct": 0 },
+        { "q": "Why did he not understand people at first?", "options": ["They spoke another language.", "They spoke fast and used new words.", "He could not read."], "correct": 1 },
+        { "q": "Why did he eat at home?", "options": ["He liked cooking.", "Restaurants were expensive.", "He was embarrassed to order."], "correct": 2 },
+        { "q": "What did Sarah do?", "options": ["She took him to the market.", "She found him a job.", "She paid for his classes."], "correct": 0 },
+        { "q": "What does he say at the end?", "options": ["He makes no mistakes now.", "Grammar was the hardest thing.", "Losing the fear of mistakes was the hardest thing."], "correct": 2 }
+      ]
+    },
+    {
+      "id": "en-a2-r2",
+      "kind": "match",
+      "instruction": "PART 2. Six people are looking for a course or a service. Match each person with the right advert. There are more adverts than people.",
+      "prompts": [
+        { "id": "p1", "text": "Marta works during the day and wants to study accounting in the evening." },
+        { "id": "p2", "text": "Robert is looking for someone to look after his dog when he travels." },
+        { "id": "p3", "text": "Elena wants to learn to cook at the weekend." },
+        { "id": "p4", "text": "Thomas needs an electrician urgently for his flat." },
+        { "id": "p5", "text": "Clara wants to exercise outdoors and does not like gyms." },
+        { "id": "p6", "text": "Sergio is looking for English classes for his eight-year-old daughter." }
+      ],
+      "options": [
+        { "id": "a", "text": "EVENING COLLEGE. Accounting and administration. Monday to Thursday, 7 to 10 p.m." },
+        { "id": "b", "text": "PARK RUNNING GROUP. Free, Tuesday and Thursday at 7 a.m. All levels welcome." },
+        { "id": "c", "text": "WEEKEND COOKERY WORKSHOP. Saturday and Sunday, four hours, ingredients included." },
+        { "id": "d", "text": "ELECTRICIAN, 24 HOURS. Emergency service in the whole area. Call 020 7946 0233." },
+        { "id": "e", "text": "DOG BOARDING. We look after your dog by the day or the week. Walks included." },
+        { "id": "f", "text": "ENGLISH FOR CHILDREN. Groups of 6 to 10 year olds, Saturday mornings, with games." },
+        { "id": "g", "text": "PIANO LESSONS. Teacher with twenty years of experience. First lesson free." },
+        { "id": "h", "text": "BICYCLE FOR SALE. Hardly used, £120. Weekends only." }
+      ],
+      "answer": { "p1": "a", "p2": "e", "p3": "c", "p4": "d", "p5": "b", "p6": "f" }
+    },
+    {
+      "id": "en-a2-r3",
+      "kind": "true_false",
+      "instruction": "PART 3. Read the text. Are the sentences right (✓) or wrong (✗)?",
+      "title": "The London Underground",
+      "text": "The London Underground opened in 1863 and today it has eleven lines. A single ticket in the central zone costs less with a contactless card than with a paper ticket, and the daily price stops once you reach the daily cap, so extra journeys on the same day are free.\n\nEvery line has its own colour on the map, and that map is famous because it does not show the real distances: it was designed to be easy to read, not to be geographically correct.\n\nIn the rush hour, between seven and nine in the morning, the trains are very full. Most lines close after midnight, but on Friday and Saturday some lines run all night.",
+      "statements": [
+        { "s": "The Underground has eleven lines.", "answer": true },
+        { "s": "After the daily cap, extra journeys cost nothing.", "answer": true },
+        { "s": "The map shows the real distances between stations.", "answer": false, "why": "\"It does not show the real distances.\"" },
+        { "s": "Trains are quiet between seven and nine in the morning.", "answer": false },
+        { "s": "Some lines run all night at the weekend.", "answer": true },
+        { "s": "A paper ticket is cheaper than a contactless card.", "answer": false }
+      ]
+    },
+    {
+      "id": "en-a2-r4",
+      "kind": "gap_mc",
+      "instruction": "PART 4. Complete the text. Choose the correct word for each gap.",
+      "text": "Last Saturday I ___ to the seaside with my friends. It ___ six o'clock in the morning when we left, so there was almost no traffic. When we ___ , the sun was already high and it was very hot.\n\nBefore lunch we ___ two hours in the water. Then we looked for a restaurant ___ was next to the sea. I ordered fish; ___ was delicious.\n\nIn the afternoon there ___ a strong wind, so we decided to go home. We got back at ten and I fell asleep ___ .",
+      "gaps": [
+        { "options": ["went", "go", "was going"], "correct": 0, "why": "A finished action at a definite past time: past simple." },
+        { "options": ["was", "were", "is"], "correct": 0, "why": "\"It was six o'clock.\"" },
+        { "options": ["arrived", "have arrived", "arrive"], "correct": 0 },
+        { "options": ["spent", "have spent", "were spending"], "correct": 0 },
+        { "options": ["which", "who", "where"], "correct": 0, "why": "\"which\" refers to a thing (the restaurant)." },
+        { "options": ["it", "he", "they"], "correct": 0 },
+        { "options": ["was", "were", "is"], "correct": 0, "why": "\"there was a strong wind\"." },
+        { "options": ["immediately", "yet", "never"], "correct": 0 }
+      ]
+    }
+  ],
+  "listening": [
+    {
+      "id": "en-a2-l1",
+      "kind": "listen_mc",
+      "instruction": "PART 1. You will hear five announcements. You hear each one twice. Choose the correct answer.",
+      "audio": [
+        "Attention passengers: the flight to Madrid is delayed by twenty minutes and will leave from gate twelve.",
+        "This is a reminder that your dentist appointment is tomorrow at half past four. If you cannot come, please call before two.",
+        "Today the soup is included in the set menu, but the dessert is extra.",
+        "Your parcel arrived yesterday, but you were not at home. You can collect it from the post office until Friday.",
+        "Wanted: a two-bedroom flat, maximum eight hundred pounds a month, close to the centre."
+      ],
+      "questions": [
+        { "q": "What is happening with the flight?", "options": ["It is cancelled.", "It is delayed.", "It leaves early."], "correct": 1 },
+        { "q": "When is the dentist appointment?", "options": ["Today at two.", "Tomorrow at 4.30.", "On Friday morning."], "correct": 1 },
+        { "q": "What is included in the menu?", "options": ["The soup.", "The dessert.", "The drink."], "correct": 0 },
+        { "q": "Why did the person not get the parcel?", "options": ["The post office was closed.", "They were not at home.", "The address was wrong."], "correct": 1 },
+        { "q": "What is the person looking for?", "options": ["A two-bedroom flat.", "A big house.", "A hotel room."], "correct": 0 }
+      ]
+    },
+    {
+      "id": "en-a2-l2",
+      "kind": "listen_match",
+      "instruction": "PART 2. You will hear five people talking about their work. Match each person with their job. There are more jobs than people.",
+      "audio": [
+        "I bake the bread every day at four in the morning, before the shop opens.",
+        "I teach children of eight; the hardest part is keeping them calm after the break.",
+        "I work nights in a hospital. I give injections and look after the patients.",
+        "I drive around the city for eight hours a day and I know every street in the centre.",
+        "I cut hair and talk to people all day; Saturdays are the busiest."
+      ],
+      "prompts": [
+        { "id": "p1", "text": "Person 1" },
+        { "id": "p2", "text": "Person 2" },
+        { "id": "p3", "text": "Person 3" },
+        { "id": "p4", "text": "Person 4" },
+        { "id": "p5", "text": "Person 5" }
+      ],
+      "options": [
+        { "id": "a", "text": "Baker" },
+        { "id": "b", "text": "Teacher" },
+        { "id": "c", "text": "Nurse" },
+        { "id": "d", "text": "Taxi driver" },
+        { "id": "e", "text": "Hairdresser" },
+        { "id": "f", "text": "Cook" },
+        { "id": "g", "text": "Police officer" }
+      ],
+      "answer": { "p1": "a", "p2": "b", "p3": "c", "p4": "d", "p5": "e" }
+    },
+    {
+      "id": "en-a2-l3",
+      "kind": "listen_dialogue",
+      "instruction": "PART 3. You will hear a conversation in a travel agency. You hear it twice. Answer the questions.",
+      "audio": [
+        "A: Good morning, I would like a ticket to Edinburgh for next weekend.",
+        "B: Train or coach? The train costs twice as much, but it is two hours faster.",
+        "A: How long does the coach take?",
+        "B: Six and a half hours. It leaves at eleven at night and arrives in the morning.",
+        "A: Then I prefer the coach, but not the night one. Is there a daytime coach?",
+        "B: Yes, it leaves at nine in the morning and costs forty-nine pounds return.",
+        "A: Perfect. Can I pay by card?",
+        "B: By card only from fifty pounds. Cash is no problem."
+      ],
+      "questions": [
+        { "q": "Where does the customer want to travel?", "options": ["To Edinburgh.", "To Madrid.", "To Manchester."], "correct": 0 },
+        { "q": "How long does the coach take?", "options": ["Two hours.", "Six and a half hours.", "All night and all day."], "correct": 1 },
+        { "q": "What does he choose?", "options": ["The train.", "The night coach.", "The daytime coach."], "correct": 2 },
+        { "q": "How much is the ticket?", "options": ["£49 return.", "£50 single.", "Twice the train price."], "correct": 0 },
+        { "q": "How does he have to pay?", "options": ["In cash, because it is under fifty pounds.", "By card, always.", "He cannot pay at the agency."], "correct": 0 },
+        { "q": "When does he want to travel?", "options": ["Today.", "Next weekend.", "Next month."], "correct": 1 }
+      ]
+    },
+    {
+      "id": "en-a2-l4",
+      "kind": "listen_dialogue",
+      "instruction": "PART 4. You will hear a voicemail from a friend. You hear it twice. Answer the questions.",
+      "audio": [
+        "Hi, it is Lucy.",
+        "I am calling because we are changing the plan for Sunday.",
+        "We are not going to the museum, because on Sundays it is too crowded and it closes at three.",
+        "We are going to the park instead and taking food. I will bring the sandwiches and the fruit.",
+        "Can you bring something to drink and a blanket to sit on?",
+        "We are meeting at one at the station entrance, not in the park, because it is impossible to find each other there.",
+        "If it rains, we will eat at my place. I will text you before eleven. See you on Sunday!"
+      ],
+      "questions": [
+        { "q": "Why are they not going to the museum?", "options": ["It is expensive.", "It is crowded and closes early.", "It is closed on Sundays."], "correct": 1 },
+        { "q": "What is Lucy bringing?", "options": ["Drinks and a blanket.", "Sandwiches and fruit.", "Nothing, she cannot come."], "correct": 1 },
+        { "q": "What should the other person bring?", "options": ["Drinks and a blanket.", "Sandwiches.", "Museum tickets."], "correct": 0 },
+        { "q": "Where are they meeting?", "options": ["In the park.", "At the station entrance.", "At Lucy's place."], "correct": 1 },
+        { "q": "What time are they meeting?", "options": ["At eleven.", "At one.", "At three."], "correct": 1 },
+        { "q": "What happens if it rains?", "options": ["They eat at Lucy's place.", "They go to the museum.", "They do not meet."], "correct": 0 }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "id": "en-a2-w1",
+      "kind": "short_message",
+      "instruction": "PART 1. Write an email of 50 to 60 words.",
+      "prompt": "A friend has invited you to a party on Saturday, but you cannot go. Write an email: thank your friend for the invitation, explain why you cannot come, say what you did last weekend, and suggest another day to meet.",
+      "minWords": 45,
+      "points": [
+        { "id": "thanks", "label": "Thanks for the invitation", "keywords": ["thank", "thanks"] },
+        { "id": "reason", "label": "Explains why not", "keywords": ["cannot", "can't", "because", "have to", "sorry"] },
+        { "id": "past", "label": "Says something about the past", "keywords": ["went", "was", "were", "had", "worked", "visited", "stayed"] },
+        { "id": "propose", "label": "Suggests another day", "keywords": ["next", "how about", "shall we", "meet", "another day"] }
+      ]
+    },
+    {
+      "id": "en-a2-w2",
+      "kind": "short_message",
+      "instruction": "PART 2. Write a text of 60 to 80 words.",
+      "prompt": "Write about a trip or a special day last year: where you went, who with, what you did there, what you liked most and what you did not like.",
+      "minWords": 55,
+      "points": [
+        { "id": "where", "label": "Says where", "keywords": ["i went to", "i was in", "we visited", "we travelled", "we traveled"] },
+        { "id": "who", "label": "Says who with", "keywords": ["with my", "with a", "alone", "with some"] },
+        { "id": "what", "label": "Says what they did", "keywords": ["we saw", "we ate", "we walked", "we visited", "we went"] },
+        { "id": "opinion", "label": "Says what they liked and did not like", "keywords": ["i liked", "i did not like", "didn't like", "the best", "the worst"] }
+      ]
+    }
+  ],
+  "speaking": [
+    {
+      "id": "en-a2-s1",
+      "kind": "speaking_prompt",
+      "instruction": "PART 1. Talk about yourself for two to three minutes, then compare with the model.",
+      "prompt": "Talk about your routine and how it has changed in the last year: what you used to do, what you do now, and what you want to change.",
+      "bullets": ["before", "now", "plans"],
+      "model": "I used to live in Budapest and I worked in an office from nine to five. At the weekend I met my friends and played football. Now I live in Mexico City, I study Spanish every day and I work from home. I eat more vegetables and I walk much more than before. Next year I want to find a job here and speak without being afraid."
+    },
+    {
+      "id": "en-a2-s2",
+      "kind": "speaking_prompt",
+      "instruction": "PART 2. Describe a picture for two minutes, then compare with the model.",
+      "prompt": "Imagine a photo of a market: describe what you can see, who is there, what they are doing, and what you think of the place.",
+      "bullets": ["what you see", "the people", "what they are doing", "your opinion"],
+      "model": "In the photo I can see a big market and it is quite busy. There are a lot of stalls with fruit and vegetables, and one with flowers. A woman is weighing tomatoes while a customer waits. In the background two men are talking and laughing. I think it is a cheerful place, although it is a bit noisy. I like shopping at the market because the fruit is fresher and cheaper than in the supermarket."
+    },
+    {
+      "id": "en-a2-s3",
+      "kind": "speaking_prompt",
+      "instruction": "PART 3. Deal with a situation. Speak out loud, then compare with the model.",
+      "prompt": "You bought a phone last week and it does not work properly. You go back to the shop: explain the problem, say when you bought it, and ask for a solution.",
+      "bullets": ["the problem", "when you bought it", "what you want"],
+      "model": "Good morning. I bought this phone here last Tuesday and there is a problem: the battery runs out in two hours and sometimes it switches off by itself. Here is the receipt. Could you change it for another one? If that is not possible, I would prefer a refund, because I need the phone for work."
+    }
+  ]
+}

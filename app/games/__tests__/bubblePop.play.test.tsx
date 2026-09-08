@@ -65,7 +65,6 @@ async function popAllGood(topicId: string) {
     if (topicOf(wordId) !== topicId) continue;
     const node = screen.queryByTestId(`bubble-${wordId}`);
     if (node) fireEvent.press(node);
-    // eslint-disable-next-line no-await-in-loop
     await flushAsync(1);
   }
   await flushAsync();
@@ -135,7 +134,6 @@ describe('bubble-pop playthrough (GAMES.md 4.2)', () => {
     for (let round = 0; round < 5; round++) {
       const topicId = announcedTopicId();
       if (!topicId) break;
-      // eslint-disable-next-line no-await-in-loop
       await popAllGood(topicId);
     }
 

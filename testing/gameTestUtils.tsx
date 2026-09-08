@@ -15,7 +15,6 @@ import { getDb } from '@/lib/database.web';
 /** Let queued promises (DB reads inside effects) settle. */
 export async function flushAsync(times = 3): Promise<void> {
   for (let i = 0; i < times; i++) {
-    // eslint-disable-next-line no-await-in-loop
     await act(async () => {
       await Promise.resolve();
     });
