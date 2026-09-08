@@ -1,5 +1,6 @@
 import * as SQLite from 'expo-sqlite';
 import { createEmptyCard, type Card } from 'ts-fsrs';
+import { BACKUP_VERSION, BACKUP_TABLES, type BackupData } from './backupData';
 
 export interface DB {
   ensureCard(wordId: number, type: string): Promise<void>;
@@ -39,6 +40,8 @@ export interface DB {
   setRandomTopics(v: boolean): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
   setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
+  exportAll(): Promise<BackupData>;
+  importAll(data: BackupData): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -545,6 +548,42 @@ class SQLiteDB implements DB {
       'INSERT INTO learn_settings (pair, feedback_btn_side) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET feedback_btn_side = excluded.feedback_btn_side',
       [this.activePair, side]
     );
+  }
+
+  // Full progress dump: SELECT * from every progress table. Used by the
+  // "Save progress" backup button (lib/backup.ts writes this to Downloads).
+  async exportAll(): Promise<BackupData> {
+    const db = await this.open();
+    const tables: Record<string, any[]> = {};
+    for (const t of BACKUP_TABLES) {
+      tables[t] = await db.getAllAsync(`SELECT * FROM ${t}`);
+    }
+    return { app: 'kimacha', version: BACKUP_VERSION, createdAt: new Date().toISOString(), tables };
+  }
+
+  // Replace all progress with a restored backup. Each table is cleared then
+  // re-inserted row-for-row inside one transaction (all-or-nothing).
+  async importAll(data: BackupData): Promise<void> {
+    const db = await this.open();
+    await db.withTransactionAsync(async () => {
+      for (const t of BACKUP_TABLES) {
+        const rows = data.tables[t];
+        if (!Array.isArray(rows)) continue;
+        await db.execAsync(`DELETE FROM ${t}`);
+        for (const row of rows) {
+          const cols = Object.keys(row);
+          if (cols.length === 0) continue;
+          const placeholders = cols.map(() => '?').join(',');
+          await db.runAsync(
+            `INSERT INTO ${t} (${cols.join(',')}) VALUES (${placeholders})`,
+            cols.map(c => row[c])
+          );
+        }
+      }
+    });
+    // Re-sync the active pair from the restored onboarding row.
+    const ob = await db.getFirstAsync<any>('SELECT source, target FROM onboarding WHERE id = 1');
+    if (ob) this.activePair = `${ob.source}-${ob.target}`;
   }
 }
 

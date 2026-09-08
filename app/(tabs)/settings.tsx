@@ -7,6 +7,7 @@ import { t } from '@/lib/i18n';
 import { LEVELS, type Level, getWordsForLevel } from '@/data/words';
 import { setPendingAction } from '@/lib/pendingAction';
 import { getDb } from '@/lib/database';
+import { saveProgress, loadProgress, PermissionError, openAllFilesAccessSettings } from '@/lib/backup';
 import FeedbackButton from '@/components/FeedbackModal';
 
 export default function SettingsScreen() {
@@ -47,6 +48,54 @@ export default function SettingsScreen() {
     await getDb().setRandomTopics(v);
     setPendingAction({ type: 'selectTopic' });
     router.push('/');
+  };
+
+  // Show the one-time "all files access" permission prompt with a shortcut to settings.
+  const promptPermission = () => {
+    Alert.alert(s.backup.permissionTitle, s.backup.permissionMsg, [
+      { text: s.feedback.cancel, style: 'cancel' },
+      { text: s.backup.openSettings, onPress: openAllFilesAccessSettings },
+    ]);
+  };
+
+  // Save current progress to Download/kimacha-progress.json (survives uninstall).
+  const handleSaveProgress = async () => {
+    try {
+      await saveProgress();
+      Alert.alert(s.backup.save, s.backup.saved);
+    } catch (e: any) {
+      if (e instanceof PermissionError) promptPermission();
+      else if (String(e?.message) === 'web-unsupported') Alert.alert(s.backup.save, s.backup.webOnly);
+      else Alert.alert(s.backup.save, String(e?.message ?? e));
+    }
+  };
+
+  // Restore progress from the backup file (overwrites current progress after confirm).
+  const handleLoadProgress = () => {
+    Alert.alert(s.backup.confirmLoadTitle, s.backup.confirmLoadMsg, [
+      { text: s.feedback.cancel, style: 'cancel' },
+      {
+        text: s.backup.confirm,
+        style: 'destructive',
+        onPress: async () => {
+          try {
+            await loadProgress();
+            setPendingAction({ type: 'selectTopic' });
+            Alert.alert(s.backup.load, s.backup.loaded);
+            router.push('/');
+          } catch (e: any) {
+            if (e instanceof PermissionError) { promptPermission(); return; }
+            const msg = String(e?.message);
+            const text =
+              msg === 'no-file' ? s.backup.noFile :
+              msg === 'bad-file' ? s.backup.badFile :
+              msg === 'web-unsupported' ? s.backup.webOnly :
+              String(e?.message ?? e);
+            Alert.alert(s.backup.load, text);
+          }
+        },
+      },
+    ]);
   };
 
   const themeOptions: { label: string; value: 'system' | 'light' | 'dark' }[] = [
@@ -140,6 +189,22 @@ export default function SettingsScreen() {
       >
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.spellingPractice(spellingDue)}</Text>
         <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+      </Pressable>
+
+      {/* Progress backup: save to / load from Download/kimacha-progress.json,
+          which survives an app uninstall. */}
+      <Pressable
+        style={[styles.masterBtn, { backgroundColor: '#1D4ED8', marginTop: 12 }]}
+        onPress={handleSaveProgress}
+      >
+        <Text style={styles.masterBtnText}>💾 {s.backup.save}</Text>
+      </Pressable>
+
+      <Pressable
+        style={[styles.masterBtn, { backgroundColor: '#0891B2', marginTop: 12 }]}
+        onPress={handleLoadProgress}
+      >
+        <Text style={styles.masterBtnText}>♻️ {s.backup.load}</Text>
       </Pressable>
 
       <Modal visible={masterVisible} transparent animationType="fade">
