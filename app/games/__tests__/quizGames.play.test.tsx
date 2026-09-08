@@ -31,11 +31,9 @@ async function answerUntilSummary(pickFirstOption: () => boolean, maxSteps = 60)
   for (let step = 0; step < maxSteps; step++) {
     if (screen.queryByText('Done!')) return step;
     if (!pickFirstOption()) return -1;
-    // eslint-disable-next-line no-await-in-loop
     await flushAsync(1);
     const gotIt = screen.queryByText('Got it');
     if (gotIt) fireEvent.press(gotIt);
-    // eslint-disable-next-line no-await-in-loop
     await flushAsync(1);
   }
   return -2;

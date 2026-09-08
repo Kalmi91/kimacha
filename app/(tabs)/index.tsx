@@ -26,12 +26,12 @@ import { cardIcon } from '@/lib/cardIcons';
 import { cardImage } from '@/lib/cardImages';
 import FeedbackButton from '@/components/FeedbackModal';
 import { speak as speakIn, loadVoices } from '@/lib/speech';
-import ExamMode from '@/components/ExamMode';
+import MockExamMode from '@/components/exam/MockExamMode';
 import DoneScreen from '@/components/DoneScreen';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import LearnChrome from '@/components/LearnChrome';
 import { languages, speechLang } from '@/lib/languages';
-import { getExamQuestionsFor } from '@/data/exams';
+import { buildMockExam } from '@/lib/exam/buildMockExam';
 import { answerInputProps } from '@/lib/inputProps';
 
 const f = fsrs();
@@ -1080,7 +1080,7 @@ export default function LearnScreen() {
 
   if (examMode) {
     return (
-      <ExamMode
+      <MockExamMode
         level={examLevel ?? level}
         direction={direction as [string, string]}
         onLevelUp={(newLevel) => { setLevel(newLevel); setExamLevel(null); }}
@@ -1090,7 +1090,7 @@ export default function LearnScreen() {
   }
 
   if (done) {
-    const examAvailable = getExamQuestionsFor(direction[1], level).length > 0 && masteredPct >= 80;
+    const examAvailable = buildMockExam(direction[1], direction[0], level).sections.length > 0 && masteredPct >= 80;
     return (
       <DoneScreen
         reviewed={reviewed}
