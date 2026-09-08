@@ -1,0 +1,524 @@
+{
+  "topic": "adjetivo-concordancia",
+  "level": "A1",
+  "title": {
+    "hu": "Melléknév-egyeztetés",
+    "en": "Adjective agreement",
+    "es": "Concordancia del adjetivo",
+    "de": "Adjektivangleichung"
+  },
+  "rule": {
+    "hu": "A melléknév a főnév mögé kerül, és felveszi a nemét és a számát. -o végű melléknév négy alakú: alto, alta, altos, altas. Az -e vagy mássalhangzó végű nem különbözik nemben, csak számban: grande, grandes; azul, azules. A nemzetiségek mássalhangzó után nőnemet is kapnak: español, española, españoles, españolas. Ha több főnévre vonatkozik, és legalább egy hímnemű, a melléknév hímnemű többes: el libro y la mesa son nuevos.",
+    "en": "The adjective goes after the noun and takes its gender and number. Adjectives in -o have four forms: alto, alta, altos, altas. Those in -e or a consonant do not change for gender, only for number: grande, grandes; azul, azules. Nationalities do take a feminine form after a consonant: español, española, españoles, españolas. Covering several nouns, if at least one is masculine, the adjective is masculine plural: el libro y la mesa son nuevos.",
+    "es": "El adjetivo va detrás del sustantivo y concuerda en género y número. Los de -o tienen cuatro formas: alto, alta, altos, altas. Los de -e o consonante solo cambian en número: grande, grandes; azul, azules. Las nacionalidades sí tienen femenino: español, española. Con varios sustantivos, si uno es masculino, el adjetivo va en masculino plural.",
+    "de": "Das Adjektiv steht hinter dem Nomen und übernimmt Genus und Numerus. Adjektive auf -o haben vier Formen: alto, alta, altos, altas. Die auf -e oder Konsonant ändern sich nur im Numerus: grande, grandes; azul, azules. Nationalitäten haben eine feminine Form: español, española. Bei mehreren Nomen gilt maskulin Plural, sobald eines maskulin ist."
+  },
+  "more": {
+    "hu": "Néhány melléknév a főnév ELÉ is kerülhet, és akkor mást jelent: un hombre grande (nagy termetű) vs un gran hombre (nagyszerű ember); mi viejo amigo (régi barátom) vs mi amigo viejo (idős barátom). A bueno, malo, grande a hímnemű egyes szám előtt rövidül: un buen día, un mal año, un gran problema. A színek főnévként használva nem egyeztetődnek: camisas naranja, faldas rosa.",
+    "en": "A few adjectives can go BEFORE the noun and change meaning: un hombre grande (a big man) vs un gran hombre (a great man); mi viejo amigo (a long-standing friend) vs mi amigo viejo (an elderly friend). Bueno, malo and grande shorten before a masculine singular noun: un buen día, un mal año, un gran problema. Colours used as nouns do not agree: camisas naranja, faldas rosa.",
+    "es": "Algunos adjetivos van delante y cambian de sentido: un hombre grande y un gran hombre; mi viejo amigo y mi amigo viejo. Bueno, malo y grande se acortan ante masculino singular: un buen día, un mal año, un gran problema. Los colores usados como sustantivo no concuerdan: camisas naranja.",
+    "de": "Einige Adjektive stehen davor und ändern die Bedeutung: un hombre grande und un gran hombre; mi viejo amigo und mi amigo viejo. Bueno, malo und grande verkürzen sich vor maskulinem Singular: un buen día, un mal año, un gran problema. Farben als Nomen gleichen sich nicht an: camisas naranja."
+  },
+  "glossary": [
+    {
+      "word": "españolas",
+      "gloss": {
+        "hu": "spanyol (nőnemű többes)",
+        "en": "Spanish (fem. pl.)",
+        "es": "españolas",
+        "de": "spanische"
+      }
+    },
+    {
+      "word": "azules",
+      "gloss": {
+        "hu": "kékek",
+        "en": "blue (plural)",
+        "es": "azules",
+        "de": "blaue"
+      }
+    },
+    {
+      "word": "trabajadora",
+      "gloss": {
+        "hu": "szorgalmas (nőnem)",
+        "en": "hard-working (fem.)",
+        "es": "trabajadora",
+        "de": "fleißig"
+      }
+    },
+    {
+      "word": "interesantes",
+      "gloss": {
+        "hu": "érdekesek",
+        "en": "interesting (plural)",
+        "es": "interesantes",
+        "de": "interessante"
+      }
+    },
+    {
+      "word": "alemana",
+      "gloss": {
+        "hu": "német (nőnem)",
+        "en": "German (fem.)",
+        "es": "alemana",
+        "de": "deutsche"
+      }
+    },
+    {
+      "word": "buen",
+      "gloss": {
+        "hu": "jó (rövid alak főnév előtt)",
+        "en": "good (short form before a noun)",
+        "es": "buen",
+        "de": "gut (Kurzform)"
+      }
+    },
+    {
+      "word": "cuarto",
+      "gloss": {
+        "hu": "szoba",
+        "en": "room",
+        "es": "el cuarto",
+        "de": "Zimmer"
+      }
+    },
+    {
+      "word": "fue",
+      "gloss": {
+        "hu": "volt, ment (ser/ir múlt)",
+        "en": "was, went",
+        "es": "fue",
+        "de": "war, ging"
+      }
+    },
+    {
+      "word": "gran",
+      "gloss": {
+        "hu": "nagyszerű (rövid alak főnév előtt)",
+        "en": "great (short form before a noun)",
+        "es": "gran",
+        "de": "großartig (Kurzform)"
+      }
+    },
+    {
+      "word": "mexicanos",
+      "gloss": {
+        "hu": "mexikóiak",
+        "en": "Mexicans",
+        "es": "mexicanos",
+        "de": "Mexikaner"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "ac-01",
+      "sentence": "La casa es muy ___ .",
+      "options": [
+        "bonita",
+        "bonito",
+        "bonitos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A casa nőnemű egyes szám, tehát a melléknév is: bonita.",
+        "en": "Casa is feminine singular, so the adjective follows: bonita.",
+        "es": "Casa es femenino singular: bonita.",
+        "de": "Casa ist feminin Singular: bonita."
+      },
+      "wrong": {
+        "bonito": {
+          "hu": "Ez a hímnemű alak.",
+          "en": "That is the masculine form.",
+          "es": "Esa es la forma masculina.",
+          "de": "Das ist die maskuline Form."
+        },
+        "bonitos": {
+          "hu": "Ez hímnemű többes.",
+          "en": "That is masculine plural.",
+          "es": "Eso es masculino plural.",
+          "de": "Das ist maskulin Plural."
+        }
+      },
+      "examples": [
+        "La comida está buena.",
+        "La ciudad es tranquila."
+      ]
+    },
+    {
+      "id": "ac-02",
+      "sentence": "Los coches son ___ .",
+      "options": [
+        "nuevos",
+        "nuevo",
+        "nuevas"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A coches hímnemű többes: nuevos.",
+        "en": "Coches is masculine plural: nuevos.",
+        "es": "Coches es masculino plural: nuevos.",
+        "de": "Coches ist maskulin Plural: nuevos."
+      },
+      "wrong": {
+        "nuevo": {
+          "hu": "Egyes szám.",
+          "en": "Singular.",
+          "es": "Singular.",
+          "de": "Singular."
+        },
+        "nuevas": {
+          "hu": "Nőnemű többes.",
+          "en": "Feminine plural.",
+          "es": "Femenino plural.",
+          "de": "Feminin Plural."
+        }
+      },
+      "examples": [
+        "Los libros son caros.",
+        "Las mesas son pequeñas."
+      ]
+    },
+    {
+      "id": "ac-03",
+      "sentence": "Mi hermana es muy ___ .",
+      "options": [
+        "inteligente",
+        "inteligenta",
+        "inteligentes"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az -e végű melléknév nem változik nem szerint: inteligente.",
+        "en": "An adjective in -e does not change for gender: inteligente.",
+        "es": "El adjetivo en -e no cambia por género: inteligente.",
+        "de": "Ein Adjektiv auf -e ändert sich nicht nach Genus."
+      },
+      "wrong": {
+        "inteligenta": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "inteligentes": {
+          "hu": "Ez többes szám, a hermana viszont egy.",
+          "en": "That is plural, but hermana is one person.",
+          "es": "Eso es plural, y hermana es una.",
+          "de": "Das ist Plural, hermana ist aber eine."
+        }
+      },
+      "examples": [
+        "El libro es interesante.",
+        "La clase es grande."
+      ]
+    },
+    {
+      "id": "ac-04",
+      "sentence": "Las camisas son ___ .",
+      "options": [
+        "azules",
+        "azul",
+        "azulas"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az azul nemben nem változik, de többesben -es-t kap: azules.",
+        "en": "Azul does not change for gender but adds -es in the plural: azules.",
+        "es": "Azul no cambia de género pero hace plural en -es: azules.",
+        "de": "Azul ändert sich nicht nach Genus, im Plural aber -es: azules."
+      },
+      "wrong": {
+        "azul": {
+          "hu": "A camisas többes szám.",
+          "en": "Camisas is plural.",
+          "es": "Camisas es plural.",
+          "de": "Camisas ist Plural."
+        },
+        "azulas": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        }
+      },
+      "examples": [
+        "Los zapatos son grises.",
+        "Las paredes son blancas."
+      ]
+    },
+    {
+      "id": "ac-05",
+      "sentence": "Ella es ___ y trabaja en un hospital.",
+      "options": [
+        "española",
+        "español",
+        "españoles"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A nemzetiségek mássalhangzó után is kapnak nőnemű alakot: española.",
+        "en": "Nationalities take a feminine form even after a consonant: española.",
+        "es": "Las nacionalidades tienen femenino aunque acaben en consonante: española.",
+        "de": "Nationalitäten haben auch nach Konsonant eine feminine Form."
+      },
+      "wrong": {
+        "español": {
+          "hu": "Ez a hímnemű alak.",
+          "en": "That is the masculine form.",
+          "es": "Esa es la forma masculina.",
+          "de": "Das ist die maskuline Form."
+        },
+        "españoles": {
+          "hu": "Ez többes szám.",
+          "en": "That is plural.",
+          "es": "Eso es plural.",
+          "de": "Das ist Plural."
+        }
+      },
+      "examples": [
+        "Mi amiga es alemana.",
+        "Ellos son mexicanos."
+      ]
+    },
+    {
+      "id": "ac-06",
+      "sentence": "El libro y la mesa son ___ .",
+      "options": [
+        "nuevos",
+        "nuevas",
+        "nuevo"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Vegyes nem esetén hímnemű többes: nuevos.",
+        "en": "With mixed genders it goes masculine plural: nuevos.",
+        "es": "Con géneros mezclados, masculino plural: nuevos.",
+        "de": "Bei gemischtem Genus gilt maskulin Plural: nuevos."
+      },
+      "wrong": {
+        "nuevas": {
+          "hu": "Ehhez mindkét főnévnek nőneműnek kellene lennie.",
+          "en": "That needs both nouns to be feminine.",
+          "es": "Para eso los dos deberían ser femeninos.",
+          "de": "Dafür müssten beide feminin sein."
+        },
+        "nuevo": {
+          "hu": "Két dologról van szó.",
+          "en": "There are two things.",
+          "es": "Se habla de dos cosas.",
+          "de": "Es geht um zwei Dinge."
+        }
+      },
+      "examples": [
+        "El padre y la madre están cansados.",
+        "Los niños y las niñas son pequeños."
+      ]
+    },
+    {
+      "id": "ac-07",
+      "sentence": "Hoy es un ___ día.",
+      "options": [
+        "buen",
+        "bueno",
+        "buena"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A bueno hímnemű egyes szám ELŐTT buen-re rövidül.",
+        "en": "Bueno shortens to buen before a masculine singular noun.",
+        "es": "Bueno se acorta a buen ante masculino singular.",
+        "de": "Bueno verkürzt sich vor maskulinem Singular zu buen."
+      },
+      "wrong": {
+        "bueno": {
+          "hu": "A teljes alak a főnév MÖGÖTT áll: un día bueno.",
+          "en": "The full form goes AFTER the noun: un día bueno.",
+          "es": "La forma entera va detrás: un día bueno.",
+          "de": "Die volle Form steht dahinter: un día bueno."
+        },
+        "buena": {
+          "hu": "A día hímnemű.",
+          "en": "Día is masculine.",
+          "es": "Día es masculino.",
+          "de": "Día ist maskulin."
+        }
+      },
+      "examples": [
+        "Fue un mal año.",
+        "Es un gran problema."
+      ]
+    },
+    {
+      "id": "ac-08",
+      "sentence": "Es un ___ hombre: ayuda a todos.",
+      "options": [
+        "gran",
+        "grande",
+        "granda"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A főnév ELŐTT a grande gran-ra rövidül, és „nagyszerűt\" jelent, nem termetet.",
+        "en": "Before the noun grande shortens to gran and means great, not big in size.",
+        "es": "Delante del sustantivo, grande se acorta a gran y significa excelente.",
+        "de": "Vor dem Nomen wird grande zu gran und heißt großartig, nicht groß."
+      },
+      "wrong": {
+        "grande": {
+          "hu": "Mögötte állva termetet jelentene: un hombre grande.",
+          "en": "After the noun it would mean physically big: un hombre grande.",
+          "es": "Detrás significaría de gran tamaño.",
+          "de": "Dahinter hieße es körperlich groß."
+        },
+        "granda": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        }
+      },
+      "examples": [
+        "Es una gran mujer.",
+        "Fue un gran día."
+      ]
+    },
+    {
+      "id": "ac-09",
+      "sentence": "Mis amigas son muy ___ .",
+      "options": [
+        "trabajadoras",
+        "trabajadores",
+        "trabajadora"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Nőnemű többes: trabajadoras.",
+        "en": "Feminine plural: trabajadoras.",
+        "es": "Femenino plural: trabajadoras.",
+        "de": "Feminin Plural: trabajadoras."
+      },
+      "wrong": {
+        "trabajadores": {
+          "hu": "Ez hímnemű többes.",
+          "en": "That is masculine plural.",
+          "es": "Eso es masculino plural.",
+          "de": "Das ist maskulin Plural."
+        },
+        "trabajadora": {
+          "hu": "Egyes szám.",
+          "en": "Singular.",
+          "es": "Singular.",
+          "de": "Singular."
+        }
+      },
+      "examples": [
+        "Las clases son interesantes.",
+        "Los profesores son jóvenes."
+      ]
+    },
+    {
+      "id": "ac-10",
+      "sentence": "Tengo una camisa ___ .",
+      "options": [
+        "blanca",
+        "blanco",
+        "blancas"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A camisa nőnemű egyes szám, és a szín mögé kerül: camisa blanca.",
+        "en": "Camisa is feminine singular, and the colour follows it: camisa blanca.",
+        "es": "Camisa es femenino singular y el color va detrás: camisa blanca.",
+        "de": "Camisa ist feminin Singular, die Farbe steht dahinter."
+      },
+      "wrong": {
+        "blanco": {
+          "hu": "Hímnemű alak.",
+          "en": "The masculine form.",
+          "es": "Forma masculina.",
+          "de": "Maskuline Form."
+        },
+        "blancas": {
+          "hu": "Többes szám.",
+          "en": "Plural.",
+          "es": "Plural.",
+          "de": "Plural."
+        }
+      },
+      "examples": [
+        "Un coche negro.",
+        "Unas flores amarillas."
+      ]
+    },
+    {
+      "id": "ac-11",
+      "sentence": "Los ejercicios son ___ .",
+      "options": [
+        "difíciles",
+        "difícil",
+        "difíciles y difícil"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A difícil nemben nem változik, többesben -es: difíciles.",
+        "en": "Difícil does not change for gender; the plural adds -es: difíciles.",
+        "es": "Difícil no cambia de género; el plural es difíciles.",
+        "de": "Difícil ändert sich nicht nach Genus; Plural: difíciles."
+      },
+      "wrong": {
+        "difícil": {
+          "hu": "Az alany többes szám.",
+          "en": "The subject is plural.",
+          "es": "El sujeto es plural.",
+          "de": "Das Subjekt ist Plural."
+        },
+        "difíciles y difícil": {
+          "hu": "Egy melléknév elég.",
+          "en": "One adjective is enough.",
+          "es": "Basta con un adjetivo.",
+          "de": "Ein Adjektiv genügt."
+        }
+      },
+      "examples": [
+        "Las preguntas son fáciles.",
+        "Los exámenes son largos."
+      ]
+    },
+    {
+      "id": "ac-12",
+      "sentence": "Vivo en una casa ___ cerca del parque.",
+      "options": [
+        "pequeña",
+        "pequeño",
+        "pequeñas"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A casa nőnemű egyes szám: pequeña, és a melléknév a főnév mögött áll.",
+        "en": "Casa is feminine singular: pequeña, and the adjective follows the noun.",
+        "es": "Casa es femenino singular: pequeña, detrás del sustantivo.",
+        "de": "Casa ist feminin Singular: pequeña, hinter dem Nomen."
+      },
+      "wrong": {
+        "pequeño": {
+          "hu": "Hímnemű alak.",
+          "en": "The masculine form.",
+          "es": "Forma masculina.",
+          "de": "Maskuline Form."
+        },
+        "pequeñas": {
+          "hu": "Többes szám.",
+          "en": "Plural.",
+          "es": "Plural.",
+          "de": "Plural."
+        }
+      },
+      "examples": [
+        "Una calle tranquila.",
+        "Un cuarto limpio."
+      ]
+    }
+  ]
+}

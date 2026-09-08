@@ -235,6 +235,17 @@ import grammarEsPresenteRegular from '@/data/games/grammar/es/presente-regular.j
 import grammarEsHayEstar from '@/data/games/grammar/es/hay-estar.json';
 import grammarEsGustar from '@/data/games/grammar/es/gustar.json';
 import grammarEsPosesivos from '@/data/games/grammar/es/posesivos.json';
+import grammarEsSustantivoNumero from '@/data/games/grammar/es/sustantivo-numero.json';
+import grammarEsAdjetivoConcordancia from '@/data/games/grammar/es/adjetivo-concordancia.json';
+import grammarEsPresenteIrregular from '@/data/games/grammar/es/presente-irregular.json';
+import grammarEsVerbosDiptongo from '@/data/games/grammar/es/verbos-diptongo.json';
+// A2, the past and future the course was missing.
+import grammarEsIndefinidoRegular from '@/data/games/grammar/es/indefinido-regular.json';
+import grammarEsIndefinidoIrregular from '@/data/games/grammar/es/indefinido-irregular.json';
+import grammarEsImperfecto from '@/data/games/grammar/es/imperfecto.json';
+import grammarEsIndefinidoImperfecto from '@/data/games/grammar/es/indefinido-imperfecto.json';
+import grammarEsPerfecto from '@/data/games/grammar/es/perfecto.json';
+import grammarEsFuturoSimple from '@/data/games/grammar/es/futuro-simple.json';
 
 const grammarTopicsByLang: Partial<Record<string, GrammarTopicData[]>> = {
   // The JSON's per-item literal shape (each `wrong` only has the one key that
@@ -243,13 +254,25 @@ const grammarTopicsByLang: Partial<Record<string, GrammarTopicData[]>> = {
   // standard escape hatch for "this JSON conforms to the hand-written type,
   // TS just can't see it structurally".
   // A1 topics first (the learner meets them first), then the A2 pair.
+  // Teaching order: A1 first, then A2. lib/grammar/syllabus.ts is the map that
+  // groups these into units and says which ones are still unwritten.
   es: [
-    grammarEsPresenteRegular,
-    grammarEsHayEstar,
-    grammarEsGustar,
-    grammarEsPosesivos,
+    grammarEsSustantivoNumero,
     grammarEsArticulosGenero,
+    grammarEsAdjetivoConcordancia,
+    grammarEsPresenteRegular,
+    grammarEsPresenteIrregular,
+    grammarEsVerbosDiptongo,
     grammarEsSerEstar,
+    grammarEsHayEstar,
+    grammarEsPosesivos,
+    grammarEsGustar,
+    grammarEsIndefinidoRegular,
+    grammarEsIndefinidoIrregular,
+    grammarEsImperfecto,
+    grammarEsIndefinidoImperfecto,
+    grammarEsPerfecto,
+    grammarEsFuturoSimple,
     grammarEsPorPara,
   ] as unknown as GrammarTopicData[],
 };
