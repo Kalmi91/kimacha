@@ -9,15 +9,23 @@ import {
 } from '../usageTimer';
 
 const mockAddUsageMinute = jest.fn().mockResolvedValue(0);
+// A nap-váltás ellenőrzése (checkDayRollover) is a db-t hívja, és óra-függően sül
+// el: ha a futás átlép egy naphatárt, a hiányzó getDayStats szétdobta a tesztet.
+// A mock most a timer MINDKÉT db-hívását fedi, így a fájl nem a futás idejétől függ.
+const mockGetDayStats = jest.fn().mockResolvedValue({ minutes: 0, words: 0 });
 jest.mock('../database', () => ({
-  getDb: () => ({ addUsageMinute: mockAddUsageMinute }),
+  getDb: () => ({ addUsageMinute: mockAddUsageMinute, getDayStats: mockGetDayStats }),
 }));
 
 describe('usageTimer', () => {
   let changeHandler: (state: string) => void = () => {};
 
   beforeEach(() => {
-    jest.useFakeTimers();
+    // A nap-váltás figyelése (FB108) valós naptári dátumot néz, a tesztek pedig
+    // fél órákat léptetnek előre. Rögzített, nap közepi kezdőidő nélkül a
+    // 23:30 után induló futás átlépte az éjfélt, a rollover nullázta a
+    // session-perceket, és a 30 perces mérföldkő sosem sült el.
+    jest.useFakeTimers({ now: new Date(2026, 0, 15, 10, 0, 0) });
     mockAddUsageMinute.mockClear();
     mockAddUsageMinute.mockResolvedValue(0);
     jest.spyOn(AppState, 'addEventListener').mockImplementation((_event, handler) => {
