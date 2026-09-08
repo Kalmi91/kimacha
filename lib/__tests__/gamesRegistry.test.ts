@@ -4,14 +4,15 @@
 
 import { GAME_DEFS, gameName, gameBlurb, gameRoute, getGameDef } from '../games/registry';
 
-// FB187 (2026-09-08) added the two dictation games to the original 13, on
-// Kálmán's request ("szám és dátum gyakorlásra is kell egy játék … legyen két
-// külön"), so the approved list is 15 now.
-describe('GAME_DEFS (GAMES.md 1. szekció + FB187, the approved 15-game list)', () => {
-  it('has 15 unique ids, matching the approved list', () => {
+// FB187 + FB189 (2026-09-08) added the two dictation games and the word-class
+// game to the original 13, on Kálmán's request ("szám és dátum gyakorlásra is
+// kell egy játék … legyen két külön" and "a szófajok megkülönböztetése … erre is
+// helyezz hansúlyt"), so the approved list is 16 now.
+describe('GAME_DEFS (GAMES.md 1. szekció + FB187, the approved 16-game list)', () => {
+  it('has 16 unique ids, matching the approved list', () => {
     const ids = GAME_DEFS.map((g) => g.id);
-    expect(ids).toHaveLength(15);
-    expect(new Set(ids).size).toBe(15);
+    expect(ids).toHaveLength(16);
+    expect(new Set(ids).size).toBe(16);
   });
 
   it('gives every game all four languages in name and blurb', () => {
@@ -27,7 +28,7 @@ describe('GAME_DEFS (GAMES.md 1. szekció + FB187, the approved 15-game list)', 
   // flips their registry `soon` to false; the rest stay "soon" until their own
   // phase lands.
   it('flips "soon" to false only for the ids that have a real screen', () => {
-    const live = new Set(['memory-pairs', 'word-search', 'word-rain', 'bubble-pop', 'grammar-choice', 'confusables', 'myth', 'story', 'chat', 'odd-one-out', 'conjugation-slot', 'ccat', 'number-dictation', 'date-dictation']);
+    const live = new Set(['memory-pairs', 'word-search', 'word-rain', 'bubble-pop', 'grammar-choice', 'confusables', 'myth', 'story', 'chat', 'odd-one-out', 'conjugation-slot', 'ccat', 'number-dictation', 'date-dictation', 'word-class']);
     for (const game of GAME_DEFS) {
       expect(game.soon).toBe(!live.has(game.id));
     }

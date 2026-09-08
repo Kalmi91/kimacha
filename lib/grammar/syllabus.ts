@@ -57,6 +57,18 @@ export const GRAMMAR_UNITS: SyllabusUnit[] = [
 
 export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
   // ========================= A1 =========================
+  // FB189, Kálmán 2026-09-08: „egy fontos része a nyelvtannal az szófajok
+  // megkülönböztetése erre is helyezz hansúlyt." Kálmán a játék MELLÉ a
+  // tananyagba is kérte, ezért a szófaj-áttekintés a tanterv legelső témája:
+  // minden későbbi szabály („a melléknév a főnév után áll", „az ige ragozódik")
+  // feltételezi, hogy ezeket a szó szintjén szét tudja választani.
+  {
+    id: 'clases-de-palabras',
+    level: 'A1',
+    unit: 'a1-nombre',
+    title: { hu: 'Szófajok: mi micsoda', en: 'Word classes: what is what', es: 'Clases de palabras', de: 'Wortarten: was ist was' },
+    blurb: { hu: 'Főnév, ige, melléknév, határozószó: miről ismerni fel, és miért számít.', en: 'Noun, verb, adjective, adverb: how to spot each, and why it matters.', es: 'Sustantivo, verbo, adjetivo, adverbio: cómo reconocerlos y por qué importa.', de: 'Nomen, Verb, Adjektiv, Adverb: woran man sie erkennt und warum das zählt.' },
+  },
   {
     id: 'sustantivo-numero',
     level: 'A1',
