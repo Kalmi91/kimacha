@@ -20,7 +20,9 @@ export type GameId =
   | 'ccat'
   | 'grammar-choice'
   | 'confusables'
-  | 'myth';
+  | 'myth'
+  | 'number-dictation'
+  | 'date-dictation';
 
 export type GameKind =
   | 'arcade'
@@ -34,7 +36,8 @@ export type GameKind =
   | 'test-prep'
   | 'grammar-teaching'
   | 'teaching-drill'
-  | 'content-facts';
+  | 'content-facts'
+  | 'listening-drill';
 
 // GAMES.md 5. szekció (Építési sorrend javaslat).
 export type BuildPhase = 'F1' | 'F2' | 'F3' | 'F4' | 'F5' | 'F6';
@@ -277,6 +280,45 @@ export const GAME_DEFS: GameDef[] = [
     minPoolSize: undefined,
     hasSettings: true,
     soon: false, // F4 (GAMES.md 8. szekció): app/games/myth.tsx
+  },
+  // FB187, Kálmán 2026-09-08: „szám és dátum gyakorlásra is kell egy játék. Olyan
+  // ami mondja spanyolul nekem meg le kell írnom akár a számot akár a dátumot.
+  // legyen két külön." Két bejegyzés, egy motor (components/games/DictationGame).
+  // A tartalom generált (lib/games/spanishNumbers.ts), ezért nincs minPoolSize:
+  // nem a megtanult szavakból dolgozik, a számnevek szabályból állnak elő.
+  {
+    id: 'number-dictation',
+    icon: '🔢',
+    kind: 'listening-drill',
+    phase: 'F6',
+    name: { hu: 'Számdiktálás', en: 'Number Dictation', es: 'Dictado de Números', de: 'Zahlendiktat' },
+    blurb: {
+      hu: 'Hallod spanyolul a számot, leírod. Számjeggyel és betűvel is jó.',
+      en: 'You hear the number in Spanish and write it down. Digits or words both count.',
+      es: 'Escuchas el número en español y lo escribes. Vale en cifras o en letras.',
+      de: 'Du hörst die Zahl auf Spanisch und schreibst sie auf. Ziffern oder Wörter zählen beide.',
+    },
+    minPoolSize: undefined,
+    hasSettings: false,
+    soon: false, // FB187: app/games/number-dictation.tsx
+    languages: ['es'],
+  },
+  {
+    id: 'date-dictation',
+    icon: '📅',
+    kind: 'listening-drill',
+    phase: 'F6',
+    name: { hu: 'Dátumdiktálás', en: 'Date Dictation', es: 'Dictado de Fechas', de: 'Datumsdiktat' },
+    blurb: {
+      hu: 'Hallod spanyolul a dátumot, leírod. Hónapok és a hét napjai is jönnek.',
+      en: 'You hear the date in Spanish and write it down. Months and weekdays included.',
+      es: 'Escuchas la fecha en español y la escribes. Con meses y días de la semana.',
+      de: 'Du hörst das Datum auf Spanisch und schreibst es auf. Mit Monaten und Wochentagen.',
+    },
+    minPoolSize: undefined,
+    hasSettings: false,
+    soon: false, // FB187: app/games/date-dictation.tsx
+    languages: ['es'],
   },
 ];
 

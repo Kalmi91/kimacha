@@ -57,6 +57,9 @@ export default function SettingsScreen() {
   // FB132: difficulty switches. Accents are the first one: off = the beginner
   // grader forgives a missing á/é/ñ, on = it counts as a mistake.
   const [strictAccents, setStrictAccents] = useState(false);
+  // FB188: névelő-gombsor a gépelős spanyol főnév-kártyán. Alapból be, mert
+  // Kálmán kérte; a kapcsoló a visszaút, ha kipróbálva mégsem válik be.
+  const [articlePicker, setArticlePicker] = useState(true);
   // FB147, Kálmán 2026-08-18: "legyen egy szöveg ami gratulál, hogy elértem a
   // heti limitet ami a cél, valami hatalmas nagy. és a célnál írja is ki hogy
   // kész zölddel". The goal stepper never said whether the goal was met, so the
@@ -85,6 +88,7 @@ export default function SettingsScreen() {
       });
       db.getLevel().then(l => setLevel(l.level as Level));
       db.getSpellingDueCount().then(setSpellingDue);
+      db.getArticlePicker().then(setArticlePicker);
       db.getSpellingListCount().then(setSpellingTotal);
     }, [])
   );
@@ -108,6 +112,14 @@ export default function SettingsScreen() {
   const handleStrictAccentsToggle = async (v: boolean) => {
     setStrictAccents(v);
     await getDb().setStrictAccents(v);
+    setPendingAction({ type: 'selectTopic' });
+    router.push('/');
+  };
+
+  // FB188: ugyanaz a betöltési pont, mint a többi tanulási beállításnál.
+  const handleArticlePickerToggle = async (v: boolean) => {
+    setArticlePicker(v);
+    await getDb().setArticlePicker(v);
     setPendingAction({ type: 'selectTopic' });
     router.push('/');
   };
@@ -374,6 +386,15 @@ export default function SettingsScreen() {
           <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.strictAccentsHint}</Text>
         </View>
         <Switch value={strictAccents} onValueChange={handleStrictAccentsToggle} trackColor={{ true: colors.tint }} />
+      </View>
+
+      {/* FB188: névelő-gombsor a gépelős spanyol főnév-kártyákon. */}
+      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
+        <View style={styles.difficultyLabelBox}>
+          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.articlePicker}</Text>
+          <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.articlePickerHint}</Text>
+        </View>
+        <Switch value={articlePicker} onValueChange={handleArticlePickerToggle} trackColor={{ true: colors.tint }} />
       </View>
 
       {/* FB39: entry point into the spelling-practice trainer screen. */}

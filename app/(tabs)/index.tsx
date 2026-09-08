@@ -22,6 +22,7 @@ import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
 import { buildQueue, applyCadence, dripNewWords, reviewBatchOf, reviewWordsLeft, type DueItem } from '@/lib/sessionQueue';
 import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
+import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { cardIcon } from '@/lib/cardIcons';
 import { cardImage } from '@/lib/cardImages';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -72,6 +73,10 @@ export default function LearnScreen() {
   // FB132: Settings -> Difficulty, "accents count". Off = the beginner grader
   // forgives a missing á/é/ñ; on = it fails the answer and the diff paints it.
   const [strictAccents, setStrictAccents] = useState(false);
+  // FB188: a névelő-gombsor kapcsolója (Beállítások) és az aktuális kártyán
+  // választott névelő. Kártyaváltáskor nullázódik, mint a begépelt válasz.
+  const [articlePickerOn, setArticlePickerOn] = useState(true);
+  const [articlePick, setArticlePick] = useState<ArticlePick>('');
   // FB170, Kálmán 2026-09-06: "azt akarom hogy a check rész az pont a klaviatúrám
   // felett legyen és nem kell ketto". The typing card had two Check buttons (the
   // in-card one from FB5 and the older one below the card); there is one now, docked
@@ -424,6 +429,7 @@ export default function LearnScreen() {
     // FB132: read once per queue build, the same moment the other learn settings
     // are read (the Settings toggle queues a reload, see handleStrictAccentsToggle).
     setStrictAccents(await db.getStrictAccents());
+    setArticlePickerOn(await db.getArticlePicker());
     const activeWordIds = activeWords.map(w => w.id);
     const rows = useTopics
       ? await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL)
@@ -442,6 +448,7 @@ export default function LearnScreen() {
     setRevealed(false);
     setReviewed(0);
     setTypedAnswer('');
+    setArticlePick('');
     setTypingResult(null);
     setDone(items.length === 0);
 
@@ -622,6 +629,7 @@ export default function LearnScreen() {
   const resetCardState = () => {
     setRevealed(false);
     setTypedAnswer('');
+    setArticlePick('');
     setTypingResult(null);
     setCardStartTime(Date.now());
     setPracticeTyping(false);
@@ -918,6 +926,7 @@ export default function LearnScreen() {
     setCurrentIndex(insertAt);
     setRevealed(false);
     setTypedAnswer('');
+    setArticlePick('');
     setTypingResult(null);
     setCardStartTime(Date.now());
     setPracticeTyping(false);
@@ -943,7 +952,10 @@ export default function LearnScreen() {
     // hard / forgotten). Don't grade it, don't touch the fail streak. FB73: still
     // SHOW what the word would have been, then the → button sends the card to the
     // back of the queue (handleTypingNext). FB116: and read it out loud.
-    if (typedAnswer.trim().length === 0) {
+    // FB188: a válasz a gombsoron választott névelő ÉS a begépelt szó együtt.
+    // Névelő nélkül (⊘) ez pontosan a régi viselkedés.
+    const answer = composeAnswer(articlePick, typedAnswer);
+    if (answer.length === 0) {
       setTypingResult('skipped');
       setRevealed(true);
       speakSkippedAnswer(current);
@@ -955,7 +967,9 @@ export default function LearnScreen() {
     // Strict (FB6): "she speak" must not pass for "She speaks", only case,
     // punctuation and missing accents are forgiven. FB132: the accent half of
     // that is switchable in Settings -> Difficulty.
-    const ok = strictAnswerMatch(typedAnswer, correct, { strictAccents, lang: backLang });
+    const ok = strictAnswerMatch(answer, correct, { strictAccents, lang: backLang });
+    // Felfedéskor a gombsor a HELYES névelőt mutassa, hogy lássa, mit kellett volna.
+    if (!ok) setArticlePick(articleOf(correct));
     setTypingResult(ok ? 'correct' : 'wrong');
     setRevealed(true);
     // FB90: the explanation is what a wrong answer needs, so open the "i" note by
@@ -1371,6 +1385,36 @@ export default function LearnScreen() {
           {/* FB5, then FB170: the input row used to carry its own ✓/→ because the
               button below the card could hide under the keyboard. The single Check
               is docked above the keyboard now, so the row is just the field. */}
+          {/* FB188: névelő-gombsor. Minden spanyol főnév-kártyán ott van, akkor is,
+              ha a helyes alak névelőtlen, különben a puszta megjelenése elárulná,
+              hogy kell névelő. ⊘ az alapállás, tehát aki nem nyúl hozzá, gépel. */}
+          {articlePickerOn && articlePickerApplies(backLang, current.type === 'word' ? String(current.word.pos ?? '') : '') && (
+            <View style={styles.articleRow}>
+              {([...ARTICLE_OPTIONS, ''] as ArticlePick[]).map((opt) => {
+                const active = articlePick === opt;
+                return (
+                  <Pressable
+                    key={opt || 'none'}
+                    disabled={revealed}
+                    onPress={() => setArticlePick(active ? '' : opt)}
+                    style={[
+                      styles.articleChip,
+                      {
+                        backgroundColor: active ? colors.tint : colors.card,
+                        opacity: revealed ? 0.6 : 1,
+                      },
+                    ]}
+                    accessibilityLabel={opt || 'sin artículo'}
+                  >
+                    <Text style={[styles.articleChipText, { color: active ? colors.background : colors.text }]}>
+                      {opt || '⊘'}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+            </View>
+          )}
+
           <View style={styles.inputRow}>
             <TextInput
               ref={inputRef}
@@ -1389,11 +1433,11 @@ export default function LearnScreen() {
           {revealed && (
             <View style={styles.resultSection}>
               <Text style={[styles.resultText, { color: resultColor }]}>{resultText}</Text>
-              {typingResult === 'wrong' && typedAnswer.trim().length > 0 && (
+              {typingResult === 'wrong' && composeAnswer(articlePick, typedAnswer).length > 0 && (
                 <Text style={styles.diffLine}>
                   {/* FB132: with strict accents on, a dropped tilde is the mistake,
                       so the diff must paint it instead of folding it away. */}
-                  {charDiff(typedAnswer, back.split(' / ')[0], { accents: !strictAccents }).map((d, i) => (
+                  {charDiff(composeAnswer(articlePick, typedAnswer), back.split(' / ')[0], { accents: !strictAccents }).map((d, i) => (
                     <Text
                       key={i}
                       style={d.missing ? styles.diffMissing : d.wrong ? styles.diffWrong : { color: colors.text }}
@@ -1857,6 +1901,24 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   // FB170: the single Check button of the typing card, docked above the keyboard.
+  // FB188: a névelő-gombsor a beviteli mező fölött, egy sorban öt gombbal.
+  articleRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 8,
+    marginBottom: 10,
+  },
+  articleChip: {
+    minWidth: 48,
+    paddingVertical: 8,
+    paddingHorizontal: 10,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  articleChipText: {
+    fontSize: 16,
+    fontWeight: '600',
+  },
   dockedAction: {
     position: 'absolute',
     left: 0,

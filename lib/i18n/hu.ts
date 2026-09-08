@@ -105,6 +105,16 @@ export default {
     paused: 'Szünet',
     resume: 'Folytatás',
     newBest: 'Új rekord!',
+    // FB187: a két diktálós játék közös feliratai (szám- és dátumdiktálás).
+    dictation: {
+      promptNumber: 'Melyik számot hallottad?',
+      promptDate: 'Melyik dátumot hallottad?',
+      placeholder: 'Írd be, amit hallottál',
+      check: 'Ellenőrzés',
+      next: 'Tovább',
+      correct: 'Megvan!',
+      result: (correct: number, total: number) => `${correct} / ${total} találat`,
+    },
     playAgain: 'Újra',
     backToHub: 'Vissza',
     score: 'Pont',
@@ -444,6 +454,8 @@ export default {
     difficulty: 'Nehézség',
     strictAccents: 'Az ékezetek számítanak',
     strictAccentsHint: 'A hiányzó ékezet (á, é, ñ) hiba gépeléskor.',
+    articlePicker: 'Névelő-gombok',
+    articlePickerHint: 'A gépelős spanyol főnév-kártyán az el/la/los/las nem beírandó, hanem választható. A ⊘ a névelőtlen alak.',
   },
   backup: {
     backup: 'Biztonsági mentés',

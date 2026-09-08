@@ -51,6 +51,8 @@ export interface DB {
   setRandomTopics(v: boolean): Promise<void>;
   getStrictAccents(): Promise<boolean>;
   setStrictAccents(v: boolean): Promise<void>;
+  getArticlePicker(): Promise<boolean>;
+  setArticlePicker(v: boolean): Promise<void>;
   getWeeklyGoalMinutes(): Promise<number>;
   setWeeklyGoalMinutes(minutes: number): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
@@ -429,6 +431,17 @@ class MemoryDB implements DB {
 
   async setStrictAccents(v: boolean): Promise<void> {
     this.strictAccentsMap.set(this.activePair, v);
+  }
+
+  // FB188: névelő-gombsor kapcsoló, per pár (a SQLite oldal tükre). Alapból be.
+  private articlePickerMap: Map<string, boolean> = new Map();
+
+  async getArticlePicker(): Promise<boolean> {
+    return this.articlePickerMap.get(this.activePair) ?? true;
+  }
+
+  async setArticlePicker(v: boolean): Promise<void> {
+    this.articlePickerMap.set(this.activePair, v);
   }
 
   // FB65: weekly study goal in minutes, per pair (mirrors the SQLite side).
