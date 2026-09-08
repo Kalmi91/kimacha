@@ -89,6 +89,21 @@ export default function TreeScreen() {
       style={{ backgroundColor: colors.background }}
       contentContainerStyle={styles.scrollContent}
     >
+      {/* The grammar course sits at the top of the topic map: the tree teaches
+          words, the course teaches the rules that hold them together. */}
+      <Pressable
+        testID="grammar-course-entry"
+        style={[styles.grammarEntry, { backgroundColor: colors.card, borderColor: colors.tint }]}
+        onPress={() => router.push('/grammar' as never)}
+      >
+        <Text style={styles.grammarEntryIcon}>📐</Text>
+        <View style={{ flex: 1 }}>
+          <Text style={[styles.grammarEntryTitle, { color: colors.text }]}>{s.grammar.entryTitle}</Text>
+          <Text style={[styles.grammarEntryBlurb, { color: colors.tabIconDefault }]}>{s.grammar.entryBlurb}</Text>
+        </View>
+        <Text style={[styles.grammarEntryArrow, { color: colors.tint }]}>→</Text>
+      </Pressable>
+
       {subLevels.map((sub: SubLevelDef, subIdx: number) => {
         const subTopics = getTopicsForSubLevel(level, sub.id, contentLang);
         const doneSub = subTopics.filter(t =>
@@ -199,6 +214,19 @@ export default function TreeScreen() {
 }
 
 const styles = StyleSheet.create({
+  grammarEntry: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    borderWidth: 1.5,
+    borderRadius: 16,
+    padding: 14,
+    marginBottom: 14,
+  },
+  grammarEntryIcon: { fontSize: 26 },
+  grammarEntryTitle: { fontSize: 16, fontWeight: '700' },
+  grammarEntryBlurb: { fontSize: 12, marginTop: 2, lineHeight: 17 },
+  grammarEntryArrow: { fontSize: 20, fontWeight: '800' },
   container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   scrollContent: { paddingHorizontal: 16, paddingTop: 16 },
   noTree: { fontSize: 16, fontWeight: '600' },
