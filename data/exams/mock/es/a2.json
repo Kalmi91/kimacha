@@ -1,0 +1,244 @@
+{
+  "lang": "es",
+  "level": "A2",
+  "reading": [
+    {
+      "id": "es-a2-r1",
+      "kind": "text_mc",
+      "instruction": "TAREA 1. Lea el texto y conteste a las preguntas. Marque la opción correcta.",
+      "title": "Mi primer mes en la Ciudad de México",
+      "text": "Llegué a la Ciudad de México en septiembre, con dos maletas y sin conocer a nadie. Los primeros días fueron difíciles: no entendía a la gente en la calle porque hablaban muy rápido y usaban palabras que yo no había estudiado nunca.\n\nAl principio comía siempre en casa, porque me daba vergüenza pedir en un restaurante. Un día, mi vecina Berenice me invitó al mercado. Me enseñó los nombres de las verduras y me presentó a la señora de los jugos. Desde entonces voy al mercado cada semana y ya pido sin miedo.\n\nAhora, tres meses después, todavía cometo errores, pero puedo hablar con el médico, con el casero y con los compañeros de trabajo. Lo más difícil no fue la gramática, sino perder el miedo a equivocarme.",
+      "questions": [
+        {
+          "q": "¿Cuándo llegó el autor a México?",
+          "options": ["En septiembre.", "Hace tres semanas.", "En verano, con su familia."],
+          "correct": 0
+        },
+        {
+          "q": "¿Por qué no entendía a la gente al principio?",
+          "options": ["Porque hablaban en inglés.", "Porque hablaban rápido y usaban palabras nuevas para él.", "Porque no sabía leer."],
+          "correct": 1
+        },
+        {
+          "q": "¿Por qué comía siempre en casa?",
+          "options": ["Porque cocinaba muy bien.", "Porque los restaurantes eran caros.", "Porque le daba vergüenza pedir."],
+          "correct": 2
+        },
+        {
+          "q": "¿Qué hizo Berenice por él?",
+          "options": ["Le llevó al mercado y le enseñó palabras nuevas.", "Le buscó un trabajo.", "Le pagó las clases de español."],
+          "correct": 0
+        },
+        {
+          "q": "¿Qué dice el autor al final?",
+          "options": ["Que ya no comete errores.", "Que lo más difícil fue la gramática.", "Que lo más difícil fue perder el miedo a equivocarse."],
+          "correct": 2,
+          "why": "«Lo más difícil no fue la gramática, sino perder el miedo a equivocarme.»"
+        }
+      ]
+    },
+    {
+      "id": "es-a2-r2",
+      "kind": "match",
+      "instruction": "TAREA 2. Seis personas buscan un curso o un servicio. Lea los anuncios y relacione cada persona con el anuncio adecuado. Hay más anuncios que personas.",
+      "prompts": [
+        { "id": "p1", "text": "Marta trabaja de día y quiere estudiar contabilidad por la noche." },
+        { "id": "p2", "text": "Roberto busca a alguien que cuide a su perro cuando viaja." },
+        { "id": "p3", "text": "Elena quiere aprender a cocinar comida mexicana los fines de semana." },
+        { "id": "p4", "text": "Tomás necesita un electricista urgente para su departamento." },
+        { "id": "p5", "text": "Clara quiere hacer ejercicio al aire libre y no le gusta el gimnasio." },
+        { "id": "p6", "text": "Sergio busca clases de español para su hija de ocho años." }
+      ],
+      "options": [
+        { "id": "a", "text": "INSTITUTO NOCTURNO. Contabilidad y administración. Clases de 19 a 22 h, de lunes a jueves." },
+        { "id": "b", "text": "CORRER EN EL PARQUE. Grupo gratuito, martes y jueves a las 7 h. Todos los niveles." },
+        { "id": "c", "text": "TALLER DE COCINA MEXICANA. Sábados y domingos, 4 horas. Incluye ingredientes." },
+        { "id": "d", "text": "ELECTRICISTA 24 HORAS. Servicio urgente en toda la colonia. Llame al 55 88 12 30 45." },
+        { "id": "e", "text": "GUARDERÍA CANINA. Cuidamos a su perro por días o semanas. Paseos incluidos." },
+        { "id": "f", "text": "ESPAÑOL PARA NIÑOS. Grupos de 6 a 10 años, sábados por la mañana, con juegos." },
+        { "id": "g", "text": "CLASES DE PIANO. Profesora con veinte años de experiencia. Primera clase gratis." },
+        { "id": "h", "text": "SE VENDE BICICLETA. Poco uso, 2 500 pesos. Solo fines de semana." }
+      ],
+      "answer": { "p1": "a", "p2": "e", "p3": "c", "p4": "d", "p5": "b", "p6": "f" }
+    },
+    {
+      "id": "es-a2-r3",
+      "kind": "true_false",
+      "instruction": "TAREA 3. Lea el texto y marque si las frases son verdaderas (✓) o falsas (✗).",
+      "title": "El metro de la Ciudad de México",
+      "text": "El metro de la Ciudad de México abrió en 1969 y hoy tiene doce líneas. Es uno de los transportes más baratos del mundo: un viaje cuesta cinco pesos, y con ese boleto se puede cambiar de línea las veces que se quiera sin pagar otra vez.\n\nCada línea tiene un color y cada estación tiene un dibujo. Esto se hizo así porque, cuando el metro abrió, muchas personas no sabían leer y necesitaban reconocer su estación por la imagen.\n\nEn hora punta, entre las siete y las nueve de la mañana, los vagones van llenísimos. Por eso los primeros vagones son solo para mujeres y niños. El metro cierra a medianoche, así que, si sale tarde, es mejor tomar un taxi o pedir un coche por aplicación.",
+      "statements": [
+        { "s": "El metro tiene doce líneas.", "answer": true },
+        { "s": "Hay que pagar otra vez al cambiar de línea.", "answer": false, "why": "«Se puede cambiar de línea las veces que se quiera sin pagar otra vez.»" },
+        { "s": "Los dibujos de las estaciones ayudaban a quien no sabía leer.", "answer": true },
+        { "s": "Los primeros vagones son para todo el mundo.", "answer": false, "why": "Son solo para mujeres y niños." },
+        { "s": "El metro está abierto toda la noche.", "answer": false, "why": "«El metro cierra a medianoche.»" },
+        { "s": "Un viaje en metro es barato.", "answer": true, "why": "«Es uno de los transportes más baratos del mundo.»" }
+      ]
+    },
+    {
+      "id": "es-a2-r4",
+      "kind": "gap_mc",
+      "instruction": "TAREA 4. Complete el texto. Elija la opción correcta para cada hueco.",
+      "text": "El sábado pasado ___ a la playa con mis amigos. ___ las seis de la mañana cuando salimos de casa, así que casi no había tráfico. Cuando ___, el sol ya estaba alto y hacía mucho calor.\n\nAntes de comer ___ dos horas en el agua. Después buscamos un restaurante ___ estaba al lado del mar. Yo pedí pescado; ___ estaba riquísimo.\n\nPor la tarde ___ mucho viento y decidimos volver. Llegamos a casa a las diez y me dormí ___ .",
+      "gaps": [
+        { "options": ["fui", "voy", "iba"], "correct": 0, "why": "Acción terminada en un momento concreto del pasado: pretérito indefinido." },
+        { "options": ["Fueron", "Eran", "Estaban"], "correct": 1, "why": "La hora en el pasado se dice con el imperfecto: «eran las seis»." },
+        { "options": ["llegamos", "llegábamos", "llegaremos"], "correct": 0 },
+        { "options": ["estuvimos", "estábamos", "estaremos"], "correct": 0, "why": "Duración terminada («dos horas») → indefinido." },
+        { "options": ["que", "quien", "donde"], "correct": 0, "why": "El relativo para cosas es «que»." },
+        { "options": ["lo", "le", "la"], "correct": 0, "why": "«El pescado» es masculino singular: lo." },
+        { "options": ["hacía", "hizo", "hacer"], "correct": 0, "why": "Descripción del tiempo en el pasado → imperfecto." },
+        { "options": ["en seguida", "todavía", "ya no"], "correct": 0 }
+      ]
+    }
+  ],
+  "listening": [
+    {
+      "id": "es-a2-l1",
+      "kind": "listen_mc",
+      "instruction": "TAREA 1. Va a escuchar cinco mensajes. Cada uno se escucha dos veces. Marque la opción correcta.",
+      "audio": [
+        "Atención, pasajeros: el vuelo a Madrid sale con veinte minutos de retraso, por la puerta doce.",
+        "Le recuerdo que su cita con el dentista es mañana a las cuatro y media. Si no puede venir, llame antes de las dos.",
+        "Hoy la sopa está incluida en el menú, pero el postre se paga aparte.",
+        "El paquete llegó ayer, pero usted no estaba en casa. Puede recogerlo en la oficina de correos hasta el viernes.",
+        "Se busca departamento en la colonia Roma. Máximo doce mil pesos al mes, con dos habitaciones."
+      ],
+      "questions": [
+        { "q": "¿Qué pasa con el vuelo?", "options": ["Está cancelado.", "Sale con retraso.", "Sale antes de la hora."], "correct": 1 },
+        { "q": "¿Cuándo es la cita con el dentista?", "options": ["Hoy a las dos.", "Mañana a las cuatro y media.", "El viernes por la mañana."], "correct": 1 },
+        { "q": "¿Qué está incluido en el menú?", "options": ["La sopa.", "El postre.", "La bebida."], "correct": 0 },
+        { "q": "¿Por qué no recibió el paquete?", "options": ["Porque la oficina estaba cerrada.", "Porque no estaba en casa.", "Porque cambió de dirección."], "correct": 1 },
+        { "q": "¿Qué busca esa persona?", "options": ["Un departamento de dos habitaciones.", "Una casa grande.", "Una habitación en un hotel."], "correct": 0 }
+      ]
+    },
+    {
+      "id": "es-a2-l2",
+      "kind": "listen_match",
+      "instruction": "TAREA 2. Va a escuchar a cinco personas hablando de su trabajo. Relacione a cada persona con su profesión. Hay más profesiones que personas.",
+      "audio": [
+        "Todos los días preparo el pan a las cuatro de la mañana, antes de abrir la tienda.",
+        "Doy clases a niños de ocho años; lo más difícil es que estén tranquilos después del recreo.",
+        "Trabajo en un hospital por la noche. Pongo inyecciones y cuido a los enfermos.",
+        "Conduzco ocho horas al día por la ciudad y conozco todas las calles del centro.",
+        "Corto el pelo y hablo con la gente todo el día; los sábados son los días más ocupados."
+      ],
+      "prompts": [
+        { "id": "p1", "text": "Persona 1" },
+        { "id": "p2", "text": "Persona 2" },
+        { "id": "p3", "text": "Persona 3" },
+        { "id": "p4", "text": "Persona 4" },
+        { "id": "p5", "text": "Persona 5" }
+      ],
+      "options": [
+        { "id": "a", "text": "Panadero / panadera" },
+        { "id": "b", "text": "Profesor / profesora" },
+        { "id": "c", "text": "Enfermero / enfermera" },
+        { "id": "d", "text": "Taxista" },
+        { "id": "e", "text": "Peluquero / peluquera" },
+        { "id": "f", "text": "Cocinero / cocinera" },
+        { "id": "g", "text": "Policía" }
+      ],
+      "answer": { "p1": "a", "p2": "b", "p3": "c", "p4": "d", "p5": "e" }
+    },
+    {
+      "id": "es-a2-l3",
+      "kind": "listen_dialogue",
+      "instruction": "TAREA 3. Va a escuchar una conversación en una agencia de viajes. Se escucha dos veces. Conteste a las preguntas.",
+      "audio": [
+        "A: Buenos días, quiero un billete para Oaxaca para el próximo fin de semana.",
+        "B: ¿Prefiere autobús o avión? El avión cuesta el doble, pero tarda una hora.",
+        "A: ¿Cuánto tarda el autobús?",
+        "B: Seis horas y media. Sale a las once de la noche y llega por la mañana.",
+        "A: Entonces prefiero el autobús, pero no el nocturno. ¿Hay uno de día?",
+        "B: Sí, sale a las nueve de la mañana y cuesta setecientos pesos, ida y vuelta.",
+        "A: Perfecto. ¿Puedo pagar con tarjeta?",
+        "B: Con tarjeta solo a partir de mil pesos. En efectivo no hay problema."
+      ],
+      "questions": [
+        { "q": "¿Adónde quiere viajar el cliente?", "options": ["A Oaxaca.", "A Madrid.", "A Puebla."], "correct": 0 },
+        { "q": "¿Cuánto tarda el autobús?", "options": ["Una hora.", "Seis horas y media.", "Toda la noche y todo el día."], "correct": 1 },
+        { "q": "¿Qué transporte elige?", "options": ["El avión.", "El autobús de noche.", "El autobús de día."], "correct": 2 },
+        { "q": "¿Cuánto cuesta el billete?", "options": ["700 pesos ida y vuelta.", "1 000 pesos solo ida.", "El doble que el avión."], "correct": 0 },
+        { "q": "¿Cómo tiene que pagar?", "options": ["En efectivo, porque son menos de mil pesos.", "Con tarjeta, siempre.", "No se puede pagar en la agencia."], "correct": 0, "why": "Con tarjeta solo a partir de mil pesos, y el billete cuesta setecientos." },
+        { "q": "¿Cuándo quiere viajar?", "options": ["Hoy.", "El próximo fin de semana.", "El mes que viene."], "correct": 1 }
+      ]
+    },
+    {
+      "id": "es-a2-l4",
+      "kind": "listen_dialogue",
+      "instruction": "TAREA 4. Va a escuchar un mensaje de voz de una amiga. Se escucha dos veces. Conteste a las preguntas.",
+      "audio": [
+        "Hola, soy Lucía. Te llamo porque el domingo cambiamos el plan.",
+        "No vamos a ir al museo, porque los domingos hay demasiada gente y además cierra a las tres.",
+        "Pensamos ir al parque de Chapultepec y llevar comida. Yo llevo las tortas y la fruta.",
+        "¿Puedes traer tú algo de beber y una manta para sentarnos?",
+        "Nos vemos a la una en la entrada del metro, no en el parque, porque allí es imposible encontrarse.",
+        "Si llueve, comemos en mi casa. Te aviso por mensaje antes de las once. ¡Hasta el domingo!"
+      ],
+      "questions": [
+        { "q": "¿Por qué no van al museo?", "options": ["Porque es caro.", "Porque hay mucha gente y cierra pronto.", "Porque está cerrado el domingo."], "correct": 1 },
+        { "q": "¿Qué lleva Lucía?", "options": ["Bebidas y una manta.", "Tortas y fruta.", "Nada, ella no puede ir."], "correct": 1 },
+        { "q": "¿Qué tiene que llevar la otra persona?", "options": ["Bebida y una manta.", "Tortas.", "Los boletos del museo."], "correct": 0 },
+        { "q": "¿Dónde se ven?", "options": ["En el parque.", "En la entrada del metro.", "En casa de Lucía."], "correct": 1 },
+        { "q": "¿A qué hora se ven?", "options": ["A las once.", "A la una.", "A las tres."], "correct": 1 },
+        { "q": "¿Qué pasa si llueve?", "options": ["Comen en casa de Lucía.", "Van al museo.", "No se ven."], "correct": 0 }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "id": "es-a2-w1",
+      "kind": "short_message",
+      "instruction": "TAREA 1. Escriba un correo de 60 a 70 palabras.",
+      "prompt": "Un amigo le invitó a una fiesta el sábado, pero usted no puede ir. Escríbale un correo: dele las gracias por la invitación, explique por qué no puede ir, diga qué hizo el fin de semana pasado y propóngale otro día para verse.",
+      "minWords": 55,
+      "points": [
+        { "id": "thanks", "label": "Da las gracias por la invitación", "keywords": ["gracias", "te agradezco"] },
+        { "id": "reason", "label": "Explica por qué no puede ir", "keywords": ["no puedo", "porque", "tengo que"] },
+        { "id": "past", "label": "Cuenta algo en pasado", "keywords": ["fui", "estuve", "hice", "comí", "trabajé", "salí", "pasé"] },
+        { "id": "propose", "label": "Propone otro día", "keywords": ["podemos", "qué te parece", "nos vemos", "quedamos", "próxim"] }
+      ]
+    },
+    {
+      "id": "es-a2-w2",
+      "kind": "short_message",
+      "instruction": "TAREA 2. Escriba un texto de 70 a 80 palabras.",
+      "prompt": "Escriba sobre un viaje o un día especial del año pasado: adónde fue, con quién, qué hizo allí, qué le gustó más y qué no le gustó.",
+      "minWords": 65,
+      "points": [
+        { "id": "where", "label": "Dice adónde fue", "keywords": ["fui a", "estuve en", "viajé a", "visité"] },
+        { "id": "who", "label": "Dice con quién", "keywords": ["con mi", "con mis", "con un", "con una", "solo", "sola"] },
+        { "id": "what", "label": "Cuenta qué hizo", "keywords": ["visitamos", "comimos", "vimos", "fuimos", "hicimos", "caminamos"] },
+        { "id": "opinion", "label": "Dice qué le gustó y qué no", "keywords": ["me gustó", "no me gustó", "lo mejor", "lo peor"] }
+      ]
+    }
+  ],
+  "speaking": [
+    {
+      "id": "es-a2-s1",
+      "kind": "speaking_prompt",
+      "instruction": "TAREA 1. Monólogo. Hable dos o tres minutos sobre el tema. Después escuche el modelo y valore su respuesta.",
+      "prompt": "Hable de su rutina y de cómo ha cambiado en el último año: qué hacía antes, qué hace ahora y qué quiere cambiar.",
+      "bullets": ["antes", "ahora", "planes"],
+      "model": "Antes vivía en Budapest y trabajaba en una oficina desde las nueve hasta las cinco. Los fines de semana veía a mis amigos y jugaba al fútbol. Ahora vivo en México, estudio español todos los días y trabajo desde casa. Como más verdura y camino mucho más que antes. El año que viene quiero buscar un trabajo aquí y hablar español sin miedo."
+    },
+    {
+      "id": "es-a2-s2",
+      "kind": "speaking_prompt",
+      "instruction": "TAREA 2. Descripción de una situación. Hable dos minutos. Después escuche el modelo y valore su respuesta.",
+      "prompt": "Imagine una foto de un mercado: describa qué ve, quiénes están, qué hacen y qué le parece el lugar.",
+      "bullets": ["qué se ve", "las personas", "qué hacen", "su opinión"],
+      "model": "En la foto se ve un mercado grande y bastante lleno. Hay muchos puestos de fruta y de verdura, y también uno de flores. Una señora está pesando tomates mientras un cliente espera. Al fondo, dos hombres hablan y se ríen. Me parece un lugar alegre, aunque un poco ruidoso. A mí me gusta comprar en el mercado porque la fruta es más fresca y más barata que en el supermercado."
+    },
+    {
+      "id": "es-a2-s3",
+      "kind": "speaking_prompt",
+      "instruction": "TAREA 3. Diálogo. Hable en voz alta como si estuviera en la situación. Después escuche el modelo y valore su respuesta.",
+      "prompt": "Usted compró un teléfono la semana pasada y no funciona bien. Vuelve a la tienda: explique el problema, diga cuándo lo compró y pida una solución.",
+      "bullets": ["el problema", "cuándo lo compró", "qué quiere"],
+      "model": "Buenos días. Compré este teléfono aquí el martes pasado y tengo un problema: la batería se acaba en dos horas y a veces se apaga solo. Aquí tengo el ticket. ¿Pueden cambiarlo por otro? Si no es posible, prefiero que me devuelvan el dinero, porque lo necesito para trabajar."
+    }
+  ]
+}

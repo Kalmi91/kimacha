@@ -1,0 +1,223 @@
+{
+  "lang": "en",
+  "level": "A1",
+  "reading": [
+    {
+      "id": "en-a1-r1",
+      "kind": "text_mc",
+      "instruction": "PART 1. Read the text and answer the questions. Choose the correct answer.",
+      "title": "An email from Julia",
+      "text": "Hi Tom,\n\nMy name is Julia and I am your new colleague. I am 29 years old and I am from Leeds, but now I live in London. I share a small flat with my sister.\n\nI work in the office from Monday to Friday, from nine to five. On Saturdays I do not work: in the morning I go to the market, and in the afternoon I study Spanish at a school near my flat.\n\nMy phone number is 07700 900187. Shall we have lunch together on Monday?\n\nBest wishes,\nJulia",
+      "questions": [
+        { "q": "Where is Julia from?", "options": ["From Leeds.", "From London.", "From Spain."], "correct": 0 },
+        { "q": "Who does she live with?", "options": ["With Tom.", "With her sister.", "Alone."], "correct": 1 },
+        { "q": "When does Julia work?", "options": ["Every day.", "From Monday to Friday.", "Only on Saturdays."], "correct": 1 },
+        { "q": "What does she do on Saturday afternoon?", "options": ["She goes to the market.", "She works in the office.", "She studies Spanish."], "correct": 2 },
+        { "q": "What does Julia want?", "options": ["To have lunch with Tom on Monday.", "A new flat.", "To move back to Leeds."], "correct": 0 }
+      ]
+    },
+    {
+      "id": "en-a1-r2",
+      "kind": "match",
+      "instruction": "PART 2. Six people are looking for something. Read the adverts and match each person with the right advert. There are more adverts than people.",
+      "prompts": [
+        { "id": "p1", "text": "Anna wants to study English on Saturday mornings." },
+        { "id": "p2", "text": "Peter is looking for a cheap flat for one person." },
+        { "id": "p3", "text": "Sofia needs a doctor in the evening." },
+        { "id": "p4", "text": "Jan wants to buy fresh fruit and vegetables." },
+        { "id": "p5", "text": "Lena is looking for weekend work as a waitress." },
+        { "id": "p6", "text": "Diego wants to do sport near his home." }
+      ],
+      "options": [
+        { "id": "a", "text": "SUN LANGUAGE SCHOOL. English classes. Saturdays 9 to 12. Small groups." },
+        { "id": "b", "text": "TOWN MARKET. Fresh fruit and vegetables every day. Open 7 to 3." },
+        { "id": "c", "text": "NORTH GYM. Two streets from the park. Open every day." },
+        { "id": "d", "text": "TO LET. One-bedroom flat, £600 a month." },
+        { "id": "e", "text": "CAFÉ CENTRE needs a waitress. Saturday and Sunday, 10 to 6." },
+        { "id": "f", "text": "EVENING SURGERY. Doctors 6 p.m. to 11 p.m. Phone 020 7946 0102." },
+        { "id": "g", "text": "BLUE BOOKSHOP. Books in English and Spanish. Closed on Sundays." },
+        { "id": "h", "text": "AIRPORT BUS. Every thirty minutes, 5 a.m. to 11 p.m." }
+      ],
+      "answer": { "p1": "a", "p2": "d", "p3": "f", "p4": "b", "p5": "e", "p6": "c" }
+    },
+    {
+      "id": "en-a1-r3",
+      "kind": "true_false",
+      "instruction": "PART 3. Read the text. Are the sentences right (✓) or wrong (✗)?",
+      "title": "Carlos's day",
+      "text": "Carlos is a cook in a restaurant in the city centre. He gets up at six in the morning and has coffee and bread for breakfast. He does not have a car: he goes to work by underground because it is faster.\n\nThe restaurant opens at eight. Carlos prepares the food until four in the afternoon. On Tuesdays the restaurant is closed, and on that day Carlos eats at home with his family.\n\nIn the evening Carlos studies. He wants to be a cookery teacher, but he does not speak English well yet, and his books are in English.",
+      "statements": [
+        { "s": "Carlos works in a restaurant.", "answer": true },
+        { "s": "Carlos drives to work.", "answer": false, "why": "\"He does not have a car: he goes to work by underground.\"" },
+        { "s": "The restaurant opens at eight.", "answer": true },
+        { "s": "Carlos works all day on Tuesdays.", "answer": false, "why": "The restaurant is closed on Tuesdays." },
+        { "s": "Carlos wants to be a cookery teacher.", "answer": true },
+        { "s": "Carlos speaks English very well.", "answer": false }
+      ]
+    },
+    {
+      "id": "en-a1-r4",
+      "kind": "gap_mc",
+      "instruction": "PART 4. Complete the text. Choose the correct word for each gap.",
+      "text": "Hello, my name ___ Elena and I ___ a teacher. I work ___ a small school near the park. Every day I get ___ at seven o'clock. My house is far from the school, ___ I go by bus. I have two brothers; ___ brothers live in Manchester. On Sundays we ___ in a restaurant together. In the evening I ___ a book.",
+      "gaps": [
+        { "options": ["is", "am", "are"], "correct": 0, "why": "\"My name\" is third person singular: my name is." },
+        { "options": ["am", "is", "be"], "correct": 0, "why": "\"I am a teacher.\"" },
+        { "options": ["in", "on", "at"], "correct": 0, "why": "Inside a building or institution: in a school." },
+        { "options": ["up", "on", "in"], "correct": 0, "why": "Phrasal verb: get up." },
+        { "options": ["so", "because", "but"], "correct": 0, "why": "Result: the house is far, SO I take the bus." },
+        { "options": ["my", "mine", "me"], "correct": 0 },
+        { "options": ["eat", "eats", "eating"], "correct": 0, "why": "\"we\" takes the base form: we eat." },
+        { "options": ["read", "reads", "am reading a"], "correct": 0 }
+      ]
+    }
+  ],
+  "listening": [
+    {
+      "id": "en-a1-l1",
+      "kind": "listen_mc",
+      "instruction": "PART 1. You will hear five short texts. You hear each one twice. Choose the correct answer.",
+      "audio": [
+        "Good morning. The nine o'clock train leaves from platform three today.",
+        "Hi, this is Rosa. I am not coming to the office today, I am ill.",
+        "The museum is open from Tuesday to Sunday, from ten to six.",
+        "That is twelve pounds fifty altogether, please.",
+        "Excuse me, where is the chemist's? It is next to the bank."
+      ],
+      "questions": [
+        { "q": "Which platform does the train leave from?", "options": ["Platform three.", "Platform nine.", "Platform two."], "correct": 0 },
+        { "q": "Why is Rosa not coming?", "options": ["She is on holiday.", "She is ill.", "She has no work."], "correct": 1 },
+        { "q": "When is the museum closed?", "options": ["On Mondays.", "On Sundays.", "On Saturdays."], "correct": 0 },
+        { "q": "How much is it?", "options": ["£2.50", "£12.50", "£20.50"], "correct": 1 },
+        { "q": "Where is the chemist's?", "options": ["Next to the bank.", "In front of the museum.", "In the station."], "correct": 0 }
+      ]
+    },
+    {
+      "id": "en-a1-l2",
+      "kind": "listen_match",
+      "instruction": "PART 2. You will hear five people. Where is each person? Match them. There are more places than people.",
+      "audio": [
+        "A table for two, please. Could we see the menu?",
+        "I would like two kilos of apples and one kilo of tomatoes.",
+        "Do you have this shirt in blue and one size bigger?",
+        "Good morning, doctor. I have had a bad headache since Monday.",
+        "A ticket to the city centre, please. How much is it?"
+      ],
+      "prompts": [
+        { "id": "p1", "text": "Person 1" },
+        { "id": "p2", "text": "Person 2" },
+        { "id": "p3", "text": "Person 3" },
+        { "id": "p4", "text": "Person 4" },
+        { "id": "p5", "text": "Person 5" }
+      ],
+      "options": [
+        { "id": "a", "text": "In a restaurant" },
+        { "id": "b", "text": "At the market" },
+        { "id": "c", "text": "In a clothes shop" },
+        { "id": "d", "text": "At the doctor's" },
+        { "id": "e", "text": "At the ticket office" },
+        { "id": "f", "text": "In a bank" },
+        { "id": "g", "text": "At school" }
+      ],
+      "answer": { "p1": "a", "p2": "b", "p3": "c", "p4": "d", "p5": "e" }
+    },
+    {
+      "id": "en-a1-l3",
+      "kind": "listen_dialogue",
+      "instruction": "PART 3. You will hear a conversation between two friends. You hear it twice. Answer the questions.",
+      "audio": [
+        "A: Hi Anna, what are you doing on Saturday?",
+        "B: I work in the morning, but I am free in the afternoon.",
+        "A: Shall we go to the cinema? There is a new film at six.",
+        "B: Six is too early. I finish work at five and I live far away.",
+        "A: Then let us go at eight. We can eat something first.",
+        "B: Great. See you at seven in front of the restaurant in the centre."
+      ],
+      "questions": [
+        { "q": "What does Anna do on Saturday morning?", "options": ["She works.", "She goes to the cinema.", "She sleeps."], "correct": 0 },
+        { "q": "What time is the first film?", "options": ["At five.", "At six.", "At eight."], "correct": 1 },
+        { "q": "Why can Anna not go at six?", "options": ["She does not like the film.", "She finishes work at five and lives far away.", "She has no money."], "correct": 1 },
+        { "q": "What time do they go to the cinema?", "options": ["At six.", "At seven.", "At eight."], "correct": 2 },
+        { "q": "Where do they meet?", "options": ["In front of the cinema.", "In front of the restaurant in the centre.", "At Anna's flat."], "correct": 1 },
+        { "q": "What time do they meet?", "options": ["At seven.", "At eight.", "At five."], "correct": 0 }
+      ]
+    },
+    {
+      "id": "en-a1-l4",
+      "kind": "listen_dialogue",
+      "instruction": "PART 4. You will hear a voicemail message. You hear it twice. Answer the questions.",
+      "audio": [
+        "Hi, it is Berenice.",
+        "I am calling about the party on Friday. It is at my house, at 431 Rebsamen Street.",
+        "It starts at eight in the evening. You can bring a friend.",
+        "I am making the food, but I need drinks: please bring water and orange juice, not beer.",
+        "If you are late, that is fine, the door is open until eleven.",
+        "Please call me on Thursday. See you!"
+      ],
+      "questions": [
+        { "q": "What day is the party?", "options": ["Thursday.", "Friday.", "Saturday."], "correct": 1 },
+        { "q": "Where is the party?", "options": ["At Berenice's house.", "In a restaurant.", "In the park."], "correct": 0 },
+        { "q": "What time does it start?", "options": ["At six.", "At eight.", "At eleven."], "correct": 1 },
+        { "q": "What should he bring?", "options": ["Food.", "Water and juice.", "Beer."], "correct": 1 },
+        { "q": "Until what time is the door open?", "options": ["Until eight.", "Until eleven.", "All night."], "correct": 1 },
+        { "q": "When should he call?", "options": ["On Thursday.", "On Friday.", "On Sunday."], "correct": 0 }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "id": "en-a1-w1",
+      "kind": "form_fill",
+      "instruction": "PART 1. Fill in the form.",
+      "context": "You want to sign up for an English course. Fill in the registration form.",
+      "fields": [
+        { "id": "name", "label": "First name and surname", "type": "text" },
+        { "id": "age", "label": "Age", "type": "number" },
+        { "id": "country", "label": "Country", "type": "text" },
+        { "id": "address", "label": "Address (street and number)", "type": "text" },
+        { "id": "phone", "label": "Phone number", "type": "number" },
+        { "id": "email", "label": "Email", "type": "text" },
+        { "id": "level", "label": "Which level do you study? (A1, A2 ...)", "type": "text" }
+      ]
+    },
+    {
+      "id": "en-a1-w2",
+      "kind": "short_message",
+      "instruction": "PART 2. Write 30 to 40 words.",
+      "prompt": "An English friend wants to get to know you. Write a message: say your name and where you are from, where you live now, what you do at the weekend, and ask your friend a question.",
+      "minWords": 28,
+      "points": [
+        { "id": "name", "label": "Gives a name or where they are from", "keywords": ["my name is", "i am", "i'm", "i come from"] },
+        { "id": "live", "label": "Says where they live", "keywords": ["i live", "live in"] },
+        { "id": "weekend", "label": "Talks about the weekend", "keywords": ["weekend", "saturday", "sunday"] },
+        { "id": "question", "label": "Asks a question", "keywords": ["?"] }
+      ]
+    }
+  ],
+  "speaking": [
+    {
+      "id": "en-a1-s1",
+      "kind": "speaking_prompt",
+      "instruction": "PART 1. Introduce yourself. Speak out loud for one to two minutes, then compare with the model and rate yourself.",
+      "prompt": "Introduce yourself: name, age, country, where you live, who you live with, work or studies, languages.",
+      "bullets": ["name and age", "country and city", "family", "work or studies", "languages"],
+      "model": "My name is Kálmán and I am thirty-four years old. I am from Hungary, but now I live in Mexico City, in the Narvarte area. I live with my girlfriend. I work with computers and I study Spanish every day. I speak Hungarian, English and a little Spanish."
+    },
+    {
+      "id": "en-a1-s2",
+      "kind": "speaking_prompt",
+      "instruction": "PART 2. Describe a place. Speak out loud, then compare with the model.",
+      "prompt": "Describe your home and your area: what the flat is like, what rooms it has, what there is nearby (shops, park, transport).",
+      "bullets": ["the flat", "the rooms", "the area", "what is nearby"],
+      "model": "My flat is not big. It has two bedrooms, a kitchen, a bathroom and a living room. The kitchen is small, but it has a big window. My area is quiet. Nearby there is a market, a chemist's and a park. The underground station is ten minutes away on foot."
+    },
+    {
+      "id": "en-a1-s3",
+      "kind": "speaking_prompt",
+      "instruction": "PART 3. Ask for things in a situation. Speak out loud, then compare with the model.",
+      "prompt": "You are in a restaurant. Ask for a table, ask about the menu of the day, order food and a drink, and ask for the bill.",
+      "bullets": ["a table", "the menu of the day", "food and drink", "the bill"],
+      "model": "Good afternoon, do you have a table for two, please? Thank you. What is the menu of the day? Then I would like a soup and after that chicken with rice. To drink, water, please. Could we have the bill, please?"
+    }
+  ]
+}

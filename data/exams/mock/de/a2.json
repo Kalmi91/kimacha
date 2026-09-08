@@ -1,0 +1,224 @@
+{
+  "lang": "de",
+  "level": "A2",
+  "reading": [
+    {
+      "id": "de-a2-r1",
+      "kind": "text_mc",
+      "instruction": "TEIL 1. Lesen Sie den Text und beantworten Sie die Fragen.",
+      "title": "Mein erster Monat in Berlin",
+      "text": "Ich kam im September nach Berlin, mit zwei Koffern und ohne Freunde. Die ersten Tage waren schwer: Auf der Straße habe ich fast nichts verstanden, weil die Leute schnell gesprochen haben.\n\nAm Anfang habe ich immer zu Hause gegessen, weil ich mich geschämt habe, im Restaurant zu bestellen. Eines Tages hat mich meine Nachbarin Sabine auf den Markt mitgenommen. Sie hat mir die Namen von Gemüse und Obst gezeigt und mich der Verkäuferin vorgestellt. Seitdem gehe ich jede Woche auf den Markt und bestelle ohne Angst.\n\nJetzt, drei Monate später, mache ich immer noch Fehler, aber ich kann mit dem Arzt, mit dem Vermieter und mit den Kollegen sprechen. Das Schwerste war nicht die Grammatik, sondern die Angst vor Fehlern.",
+      "questions": [
+        { "q": "Wann ist der Autor nach Berlin gekommen?", "options": ["Im September.", "Vor drei Wochen.", "Im Sommer mit seiner Familie."], "correct": 0 },
+        { "q": "Warum hat er die Leute am Anfang nicht verstanden?", "options": ["Sie haben Englisch gesprochen.", "Sie haben schnell gesprochen.", "Er konnte nicht lesen."], "correct": 1 },
+        { "q": "Warum hat er zu Hause gegessen?", "options": ["Er hat gern gekocht.", "Die Restaurants waren teuer.", "Er hat sich geschämt zu bestellen."], "correct": 2 },
+        { "q": "Was hat Sabine gemacht?", "options": ["Sie hat ihn auf den Markt mitgenommen.", "Sie hat ihm eine Arbeit gesucht.", "Sie hat seinen Kurs bezahlt."], "correct": 0 },
+        { "q": "Was sagt der Autor am Ende?", "options": ["Er macht keine Fehler mehr.", "Das Schwerste war die Grammatik.", "Das Schwerste war die Angst vor Fehlern."], "correct": 2 }
+      ]
+    },
+    {
+      "id": "de-a2-r2",
+      "kind": "match",
+      "instruction": "TEIL 2. Sechs Personen suchen einen Kurs oder eine Dienstleistung. Ordnen Sie zu. Es gibt mehr Anzeigen als Personen.",
+      "prompts": [
+        { "id": "p1", "text": "Marta arbeitet tagsüber und möchte abends Buchhaltung lernen." },
+        { "id": "p2", "text": "Robert sucht jemanden, der auf seinen Hund aufpasst, wenn er verreist." },
+        { "id": "p3", "text": "Elena möchte am Wochenende deutsch kochen lernen." },
+        { "id": "p4", "text": "Thomas braucht dringend einen Elektriker für seine Wohnung." },
+        { "id": "p5", "text": "Clara möchte draußen Sport machen, ins Fitnessstudio geht sie nicht gern." },
+        { "id": "p6", "text": "Sergio sucht einen Deutschkurs für seine achtjährige Tochter." }
+      ],
+      "options": [
+        { "id": "a", "text": "ABENDSCHULE. Buchhaltung und Verwaltung. Montag bis Donnerstag, 19 bis 22 Uhr." },
+        { "id": "b", "text": "LAUFGRUPPE IM PARK. Kostenlos, Dienstag und Donnerstag um 7 Uhr. Alle Niveaus." },
+        { "id": "c", "text": "KOCHKURS: DEUTSCHE KÜCHE. Samstag und Sonntag, 4 Stunden, Zutaten inklusive." },
+        { "id": "d", "text": "ELEKTRIKER, 24 STUNDEN. Notdienst im ganzen Stadtteil. Tel. 030 88 12 30 45." },
+        { "id": "e", "text": "HUNDEPENSION. Wir betreuen Ihren Hund tage- oder wochenweise, mit Spaziergängen." },
+        { "id": "f", "text": "DEUTSCH FÜR KINDER. Gruppen von 6 bis 10 Jahren, samstags vormittags, mit Spielen." },
+        { "id": "g", "text": "KLAVIERUNTERRICHT. Lehrerin mit 20 Jahren Erfahrung. Erste Stunde gratis." },
+        { "id": "h", "text": "FAHRRAD ZU VERKAUFEN. Wenig gefahren, 250 Euro. Nur am Wochenende." }
+      ],
+      "answer": { "p1": "a", "p2": "e", "p3": "c", "p4": "d", "p5": "b", "p6": "f" }
+    },
+    {
+      "id": "de-a2-r3",
+      "kind": "true_false",
+      "instruction": "TEIL 3. Lesen Sie den Text. Sind die Sätze richtig (✓) oder falsch (✗)?",
+      "title": "Die U-Bahn in Berlin",
+      "text": "Die Berliner U-Bahn fuhr zum ersten Mal 1902 und hat heute neun Linien. Eine Fahrkarte für die Innenstadt kostet 3,80 Euro und gilt zwei Stunden; in dieser Zeit darf man umsteigen, so oft man will.\n\nJede Linie hat eine Nummer und eine Farbe. Viele Stationen haben eigene Farben an den Wänden, damit die Fahrgäste ihre Station schneller erkennen.\n\nIn der Hauptverkehrszeit, zwischen sieben und neun Uhr morgens, sind die Wagen sehr voll. Am Wochenende fahren die meisten Linien die ganze Nacht, unter der Woche jedoch nicht: Dann fahren nachts nur die Nachtbusse.",
+      "statements": [
+        { "s": "Die U-Bahn hat neun Linien.", "answer": true },
+        { "s": "Mit einer Fahrkarte darf man nicht umsteigen.", "answer": false, "why": "„In dieser Zeit darf man umsteigen, so oft man will.“" },
+        { "s": "Die Farben helfen den Fahrgästen, ihre Station zu erkennen.", "answer": true },
+        { "s": "Am Wochenende fahren die meisten Linien die ganze Nacht.", "answer": true },
+        { "s": "Unter der Woche fährt die U-Bahn auch nachts.", "answer": false, "why": "Nachts fahren dann nur die Nachtbusse." },
+        { "s": "Morgens zwischen sieben und neun ist es sehr voll.", "answer": true }
+      ]
+    },
+    {
+      "id": "de-a2-r4",
+      "kind": "gap_mc",
+      "instruction": "TEIL 4. Ergänzen Sie den Text. Wählen Sie für jede Lücke die richtige Lösung.",
+      "text": "Letzten Samstag ___ ich mit meinen Freunden an den See gefahren. Es ___ sechs Uhr morgens, als wir losgefahren sind, deshalb war fast kein Verkehr.\n\nAls wir ___ , stand die Sonne schon hoch und es war sehr warm. Vor dem Essen ___ wir zwei Stunden im Wasser. Danach haben wir ein Restaurant gesucht, ___ direkt am See lag. Ich habe Fisch bestellt; ___ hat wirklich gut geschmeckt.\n\nAm Nachmittag ___ starker Wind, und wir sind zurückgefahren. Wir sind um zehn zu Hause angekommen, und ich bin ___ eingeschlafen.",
+      "gaps": [
+        { "options": ["bin", "habe", "war"], "correct": 0, "why": "Bewegungsverben bilden das Perfekt mit „sein“: ich bin gefahren." },
+        { "options": ["war", "ist", "hat"], "correct": 0, "why": "Uhrzeit in der Vergangenheit: es war sechs Uhr." },
+        { "options": ["angekommen sind", "ankommen", "ankamen wir"], "correct": 0, "why": "Nebensatz mit „als“: das Verb steht am Ende." },
+        { "options": ["waren", "sind", "haben"], "correct": 0, "why": "„wir waren zwei Stunden im Wasser“." },
+        { "options": ["das", "der", "wer"], "correct": 0, "why": "Relativpronomen für „ein Restaurant“ (Neutrum): das." },
+        { "options": ["er", "es", "sie"], "correct": 0, "why": "„der Fisch“ ist maskulin: er." },
+        { "options": ["gab es", "hat es", "war es"], "correct": 0, "why": "„es gab starken Wind“, Präteritum von „es gibt“." },
+        { "options": ["sofort", "noch nicht", "nie"], "correct": 0 }
+      ]
+    }
+  ],
+  "listening": [
+    {
+      "id": "de-a2-l1",
+      "kind": "listen_mc",
+      "instruction": "TEIL 1. Sie hören fünf Ansagen. Sie hören jede zweimal. Kreuzen Sie die richtige Lösung an.",
+      "audio": [
+        "Achtung, Fluggäste: Der Flug nach Madrid hat zwanzig Minuten Verspätung, Ausgang zwölf.",
+        "Ich erinnere Sie an Ihren Zahnarzttermin morgen um halb fünf. Wenn Sie nicht kommen können, rufen Sie bitte vor zwei Uhr an.",
+        "Heute ist die Suppe im Menü enthalten, der Nachtisch kostet extra.",
+        "Ihr Paket kam gestern, aber Sie waren nicht zu Hause. Sie können es bis Freitag in der Postfiliale abholen.",
+        "Wohnung gesucht: zwei Zimmer, höchstens siebenhundert Euro warm, möglichst in der Nähe vom Zentrum."
+      ],
+      "questions": [
+        { "q": "Was ist mit dem Flug?", "options": ["Er fällt aus.", "Er hat Verspätung.", "Er fliegt früher."], "correct": 1 },
+        { "q": "Wann ist der Zahnarzttermin?", "options": ["Heute um zwei.", "Morgen um halb fünf.", "Am Freitag früh."], "correct": 1 },
+        { "q": "Was ist im Menü enthalten?", "options": ["Die Suppe.", "Der Nachtisch.", "Das Getränk."], "correct": 0 },
+        { "q": "Warum hat die Person das Paket nicht bekommen?", "options": ["Die Post war zu.", "Sie war nicht zu Hause.", "Die Adresse war falsch."], "correct": 1 },
+        { "q": "Was sucht die Person?", "options": ["Eine Zwei-Zimmer-Wohnung.", "Ein großes Haus.", "Ein Hotelzimmer."], "correct": 0 }
+      ]
+    },
+    {
+      "id": "de-a2-l2",
+      "kind": "listen_match",
+      "instruction": "TEIL 2. Sie hören fünf Personen über ihre Arbeit. Ordnen Sie jeder Person ihren Beruf zu. Es gibt mehr Berufe als Personen.",
+      "audio": [
+        "Ich backe jeden Tag um vier Uhr morgens das Brot, bevor der Laden aufmacht.",
+        "Ich unterrichte Kinder mit acht Jahren; am schwersten ist es, sie nach der Pause ruhig zu halten.",
+        "Ich arbeite nachts im Krankenhaus. Ich gebe Spritzen und kümmere mich um die Kranken.",
+        "Ich fahre acht Stunden am Tag durch die Stadt und kenne jede Straße im Zentrum.",
+        "Ich schneide Haare und rede den ganzen Tag mit Leuten; samstags ist am meisten los."
+      ],
+      "prompts": [
+        { "id": "p1", "text": "Person 1" },
+        { "id": "p2", "text": "Person 2" },
+        { "id": "p3", "text": "Person 3" },
+        { "id": "p4", "text": "Person 4" },
+        { "id": "p5", "text": "Person 5" }
+      ],
+      "options": [
+        { "id": "a", "text": "Bäcker / Bäckerin" },
+        { "id": "b", "text": "Lehrer / Lehrerin" },
+        { "id": "c", "text": "Krankenpfleger / Krankenschwester" },
+        { "id": "d", "text": "Taxifahrer / Taxifahrerin" },
+        { "id": "e", "text": "Friseur / Friseurin" },
+        { "id": "f", "text": "Koch / Köchin" },
+        { "id": "g", "text": "Polizist / Polizistin" }
+      ],
+      "answer": { "p1": "a", "p2": "b", "p3": "c", "p4": "d", "p5": "e" }
+    },
+    {
+      "id": "de-a2-l3",
+      "kind": "listen_dialogue",
+      "instruction": "TEIL 3. Sie hören ein Gespräch im Reisebüro. Sie hören es zweimal. Beantworten Sie die Fragen.",
+      "audio": [
+        "A: Guten Tag, ich hätte gern eine Fahrkarte nach Dresden für nächstes Wochenende.",
+        "B: Lieber Zug oder Bus? Der Zug kostet das Doppelte, ist aber zwei Stunden schneller.",
+        "A: Wie lange braucht der Bus?",
+        "B: Sechseinhalb Stunden. Er fährt um dreiundzwanzig Uhr ab und kommt morgens an.",
+        "A: Dann lieber den Bus, aber nicht nachts. Gibt es einen am Tag?",
+        "B: Ja, um neun Uhr morgens, und der kostet neunundvierzig Euro hin und zurück.",
+        "A: Perfekt. Kann ich mit Karte zahlen?",
+        "B: Mit Karte erst ab fünfzig Euro. Bar ist kein Problem."
+      ],
+      "questions": [
+        { "q": "Wohin möchte der Kunde fahren?", "options": ["Nach Dresden.", "Nach Madrid.", "Nach Hamburg."], "correct": 0 },
+        { "q": "Wie lange braucht der Bus?", "options": ["Zwei Stunden.", "Sechseinhalb Stunden.", "Die ganze Nacht und den Tag."], "correct": 1 },
+        { "q": "Was wählt er?", "options": ["Den Zug.", "Den Nachtbus.", "Den Bus am Tag."], "correct": 2 },
+        { "q": "Was kostet die Fahrkarte?", "options": ["49 Euro hin und zurück.", "50 Euro einfach.", "Das Doppelte vom Zug."], "correct": 0 },
+        { "q": "Wie muss er zahlen?", "options": ["Bar, weil es unter fünfzig Euro ist.", "Immer mit Karte.", "Er kann im Reisebüro nicht zahlen."], "correct": 0 },
+        { "q": "Wann möchte er fahren?", "options": ["Heute.", "Nächstes Wochenende.", "Nächsten Monat."], "correct": 1 }
+      ]
+    },
+    {
+      "id": "de-a2-l4",
+      "kind": "listen_dialogue",
+      "instruction": "TEIL 4. Sie hören eine Nachricht auf der Mailbox. Sie hören sie zweimal. Beantworten Sie die Fragen.",
+      "audio": [
+        "Hallo, hier ist Lucia.",
+        "Ich rufe an, weil wir den Plan für Sonntag ändern.",
+        "Wir gehen nicht ins Museum, sonntags ist es zu voll und es schließt schon um drei.",
+        "Wir wollen in den Park gehen und Essen mitnehmen. Ich bringe die Brötchen und das Obst mit.",
+        "Kannst du etwas zu trinken und eine Decke mitbringen?",
+        "Wir treffen uns um eins am U-Bahn-Eingang, nicht im Park, dort findet man sich nicht.",
+        "Wenn es regnet, essen wir bei mir. Ich schreibe dir vor elf Uhr. Bis Sonntag!"
+      ],
+      "questions": [
+        { "q": "Warum gehen sie nicht ins Museum?", "options": ["Es ist teuer.", "Es ist zu voll und schließt früh.", "Es ist sonntags geschlossen."], "correct": 1 },
+        { "q": "Was bringt Lucia mit?", "options": ["Getränke und eine Decke.", "Brötchen und Obst.", "Nichts, sie kommt nicht."], "correct": 1 },
+        { "q": "Was soll die andere Person mitbringen?", "options": ["Getränke und eine Decke.", "Brötchen.", "Museumskarten."], "correct": 0 },
+        { "q": "Wo treffen sie sich?", "options": ["Im Park.", "Am U-Bahn-Eingang.", "Bei Lucia."], "correct": 1 },
+        { "q": "Wann treffen sie sich?", "options": ["Um elf.", "Um eins.", "Um drei."], "correct": 1 },
+        { "q": "Was passiert, wenn es regnet?", "options": ["Sie essen bei Lucia.", "Sie gehen ins Museum.", "Sie treffen sich nicht."], "correct": 0 }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "id": "de-a2-w1",
+      "kind": "short_message",
+      "instruction": "TEIL 1. Schreiben Sie eine E-Mail von 50 bis 60 Wörtern.",
+      "prompt": "Ein Freund hat Sie für Samstag zu einer Party eingeladen, aber Sie können nicht kommen. Schreiben Sie ihm: Bedanken Sie sich für die Einladung, erklären Sie, warum Sie nicht kommen können, erzählen Sie, was Sie letztes Wochenende gemacht haben, und schlagen Sie einen anderen Termin vor.",
+      "minWords": 45,
+      "points": [
+        { "id": "thanks", "label": "Bedankt sich für die Einladung", "keywords": ["danke", "vielen dank", "bedanke"] },
+        { "id": "reason", "label": "Erklärt, warum es nicht geht", "keywords": ["kann nicht", "leider", "weil", "muss"] },
+        { "id": "past", "label": "Erzählt etwas in der Vergangenheit", "keywords": ["war", "habe", "bin", "gemacht", "gefahren", "gearbeitet"] },
+        { "id": "propose", "label": "Schlägt einen anderen Termin vor", "keywords": ["nächste", "wie wäre", "treffen", "vielleicht am"] }
+      ]
+    },
+    {
+      "id": "de-a2-w2",
+      "kind": "short_message",
+      "instruction": "TEIL 2. Schreiben Sie einen Text von 60 bis 80 Wörtern.",
+      "prompt": "Schreiben Sie über eine Reise oder einen besonderen Tag im letzten Jahr: Wohin sind Sie gefahren, mit wem, was haben Sie dort gemacht, was hat Ihnen gefallen und was nicht?",
+      "minWords": 55,
+      "points": [
+        { "id": "where", "label": "Sagt, wohin", "keywords": ["ich war in", "ich bin nach", "gefahren", "besucht"] },
+        { "id": "who", "label": "Sagt, mit wem", "keywords": ["mit meiner", "mit meinem", "mit meinen", "allein"] },
+        { "id": "what", "label": "Erzählt, was gemacht wurde", "keywords": ["wir haben", "wir sind", "gegessen", "gesehen", "besichtigt"] },
+        { "id": "opinion", "label": "Sagt, was gefallen hat und was nicht", "keywords": ["hat mir gefallen", "gut gefallen", "nicht gefallen", "am besten", "leider"] }
+      ]
+    }
+  ],
+  "speaking": [
+    {
+      "id": "de-a2-s1",
+      "kind": "speaking_prompt",
+      "instruction": "TEIL 1. Über sich sprechen. Sprechen Sie zwei bis drei Minuten laut. Hören Sie danach das Modell.",
+      "prompt": "Sprechen Sie über Ihren Alltag und wie er sich im letzten Jahr verändert hat: Was war früher, was ist jetzt, was möchten Sie ändern?",
+      "bullets": ["früher", "jetzt", "Pläne"],
+      "model": "Früher habe ich in Budapest gewohnt und von neun bis fünf im Büro gearbeitet. Am Wochenende habe ich Freunde getroffen und Fußball gespielt. Jetzt wohne ich in Mexiko-Stadt, lerne jeden Tag Spanisch und arbeite von zu Hause aus. Ich esse mehr Gemüse und gehe viel mehr zu Fuß als früher. Nächstes Jahr möchte ich hier eine Arbeit finden und ohne Angst sprechen."
+    },
+    {
+      "id": "de-a2-s2",
+      "kind": "speaking_prompt",
+      "instruction": "TEIL 2. Eine Situation beschreiben. Sprechen Sie zwei Minuten laut. Hören Sie danach das Modell.",
+      "prompt": "Beschreiben Sie ein Foto von einem Markt: Was sehen Sie, wer ist da, was machen die Leute, wie finden Sie den Ort?",
+      "bullets": ["was man sieht", "die Personen", "was sie machen", "Ihre Meinung"],
+      "model": "Auf dem Foto sieht man einen großen Markt, und es ist ziemlich voll. Es gibt viele Stände mit Obst und Gemüse und auch einen mit Blumen. Eine Frau wiegt gerade Tomaten, ein Kunde wartet daneben. Im Hintergrund reden zwei Männer und lachen. Ich finde den Ort fröhlich, aber etwas laut. Ich kaufe gern auf dem Markt ein, weil das Obst frischer und billiger ist als im Supermarkt."
+    },
+    {
+      "id": "de-a2-s3",
+      "kind": "speaking_prompt",
+      "instruction": "TEIL 3. Gemeinsam etwas planen oder reklamieren. Sprechen Sie laut. Hören Sie danach das Modell.",
+      "prompt": "Sie haben letzte Woche ein Handy gekauft, das nicht richtig funktioniert. Sie gehen in den Laden zurück: Erklären Sie das Problem, sagen Sie, wann Sie es gekauft haben, und bitten Sie um eine Lösung.",
+      "bullets": ["das Problem", "wann gekauft", "was Sie möchten"],
+      "model": "Guten Tag. Ich habe dieses Handy letzten Dienstag hier gekauft, und es gibt ein Problem: Der Akku ist nach zwei Stunden leer, und manchmal geht das Gerät von allein aus. Hier ist der Kassenbon. Können Sie es umtauschen? Wenn das nicht geht, hätte ich lieber mein Geld zurück, weil ich das Handy für die Arbeit brauche."
+    }
+  ]
+}

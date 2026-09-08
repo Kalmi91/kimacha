@@ -1,0 +1,299 @@
+{
+  "lang": "es",
+  "level": "A1",
+  "reading": [
+    {
+      "id": "es-a1-r1",
+      "kind": "text_mc",
+      "instruction": "TAREA 1. Lea el texto y conteste a las preguntas. Marque la opción correcta.",
+      "title": "Un correo de Marta",
+      "text": "Hola Luis:\n\nMe llamo Marta y soy tu nueva compañera de trabajo. Tengo veintiocho años y soy de Guadalajara, pero ahora vivo en la Ciudad de México, en la colonia Narvarte. Vivo con mi hermana en un departamento pequeño.\n\nTrabajo en la oficina de lunes a viernes, de nueve a seis. Los sábados no trabajo: por la mañana voy al mercado y por la tarde estudio inglés en una escuela cerca de mi casa.\n\nMi teléfono es el 55 4099 0187. ¿Comemos juntos el lunes?\n\nUn saludo,\nMarta",
+      "questions": [
+        {
+          "q": "¿De dónde es Marta?",
+          "options": ["De Guadalajara.", "De la Ciudad de México.", "De la colonia Narvarte."],
+          "correct": 0,
+          "why": "El texto dice «soy de Guadalajara»; en la Ciudad de México solo vive ahora."
+        },
+        {
+          "q": "¿Con quién vive?",
+          "options": ["Con Luis.", "Con su hermana.", "Sola."],
+          "correct": 1,
+          "why": "«Vivo con mi hermana en un departamento pequeño.»"
+        },
+        {
+          "q": "¿Cuándo trabaja Marta?",
+          "options": ["Todos los días.", "De lunes a viernes.", "Solo los sábados."],
+          "correct": 1,
+          "why": "«Trabajo en la oficina de lunes a viernes.»"
+        },
+        {
+          "q": "¿Qué hace los sábados por la tarde?",
+          "options": ["Va al mercado.", "Trabaja en la oficina.", "Estudia inglés."],
+          "correct": 2,
+          "why": "Al mercado va por la mañana; por la tarde estudia inglés."
+        },
+        {
+          "q": "¿Qué quiere Marta?",
+          "options": ["Comer con Luis el lunes.", "Cambiar de trabajo.", "Vivir en Guadalajara."],
+          "correct": 0,
+          "why": "«¿Comemos juntos el lunes?»"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-r2",
+      "kind": "match",
+      "instruction": "TAREA 2. Seis personas buscan algo. Lea los anuncios y relacione cada persona con el anuncio correcto. Hay más anuncios que personas.",
+      "prompts": [
+        { "id": "p1", "text": "Ana quiere estudiar español los sábados por la mañana." },
+        { "id": "p2", "text": "Pedro busca un departamento barato para una persona." },
+        { "id": "p3", "text": "Sofía necesita un médico que trabaje por la noche." },
+        { "id": "p4", "text": "Juan quiere comprar fruta y verdura fresca." },
+        { "id": "p5", "text": "Lucía busca trabajo de camarera los fines de semana." },
+        { "id": "p6", "text": "Diego quiere hacer deporte cerca de su casa, en la colonia Roma." }
+      ],
+      "options": [
+        { "id": "a", "text": "ESCUELA SOL. Clases de español. Sábados de 9 a 12. Grupos pequeños." },
+        { "id": "b", "text": "MERCADO DE LA PLAZA. Fruta y verdura del día. Abierto de 7 a 15." },
+        { "id": "c", "text": "GIMNASIO ROMA. A dos calles del parque. Abierto todos los días." },
+        { "id": "d", "text": "SE RENTA. Departamento de una habitación, 4 000 pesos al mes." },
+        { "id": "e", "text": "CAFÉ CENTRO. Buscamos camarera. Sábado y domingo, de 10 a 18." },
+        { "id": "f", "text": "CLÍNICA NOCHE. Médicos de 20 a 8. Teléfono: 55 12 34 56 78." },
+        { "id": "g", "text": "LIBRERÍA AZUL. Libros en español y en inglés. Cerrado los domingos." },
+        { "id": "h", "text": "AUTOBÚS AL AEROPUERTO. Cada treinta minutos, de 5 a 23." }
+      ],
+      "answer": { "p1": "a", "p2": "d", "p3": "f", "p4": "b", "p5": "e", "p6": "c" }
+    },
+    {
+      "id": "es-a1-r3",
+      "kind": "true_false",
+      "instruction": "TAREA 3. Lea el texto y marque si las frases son verdaderas (✓) o falsas (✗).",
+      "title": "El día de Carlos",
+      "text": "Carlos es cocinero en un restaurante del centro. Se levanta a las seis de la mañana y desayuna café con pan. No tiene coche: va al trabajo en metro porque es más rápido.\n\nEl restaurante abre a las ocho. Carlos prepara la comida hasta las cuatro de la tarde. Los martes el restaurante está cerrado, y ese día Carlos come en casa con su familia.\n\nPor la noche Carlos estudia. Quiere ser profesor de cocina, pero todavía no habla bien inglés, y sus libros están en inglés.",
+      "statements": [
+        { "s": "Carlos trabaja en un restaurante.", "answer": true, "why": "«Carlos es cocinero en un restaurante del centro.»" },
+        { "s": "Carlos va al trabajo en coche.", "answer": false, "why": "«No tiene coche: va al trabajo en metro.»" },
+        { "s": "El restaurante abre a las ocho.", "answer": true, "why": "«El restaurante abre a las ocho.»" },
+        { "s": "Los martes Carlos trabaja todo el día.", "answer": false, "why": "Los martes el restaurante está cerrado." },
+        { "s": "Carlos quiere ser profesor de cocina.", "answer": true, "why": "«Quiere ser profesor de cocina.»" },
+        { "s": "Carlos habla inglés muy bien.", "answer": false, "why": "«Todavía no habla bien inglés.»" }
+      ]
+    },
+    {
+      "id": "es-a1-r4",
+      "kind": "gap_mc",
+      "instruction": "TAREA 4. Complete el texto. Elija la opción correcta para cada hueco.",
+      "text": "Hola, me llamo Elena y ___ profesora. ___ en una escuela pequeña, cerca del parque. Todos los días ___ a las siete de la mañana. Mi casa ___ lejos de la escuela, por eso voy en autobús. Tengo dos hermanos; ___ hermanos viven en Puebla. Los domingos ___ con mi familia en un restaurante. Me ___ mucho la comida mexicana. ___ tarde, hasta las once de la noche, leo un libro.",
+      "gaps": [
+        { "options": ["soy", "estoy", "tengo"], "correct": 0, "why": "La profesión se dice con «ser»: soy profesora." },
+        { "options": ["Trabajo", "Trabajas", "Trabajamos"], "correct": 0, "why": "El sujeto es «yo», por eso «trabajo»." },
+        { "options": ["me levanto", "se levanta", "te levantas"], "correct": 0, "why": "Verbo reflexivo en primera persona: me levanto." },
+        { "options": ["es", "está", "hay"], "correct": 1, "why": "La distancia es una situación: «está lejos»." },
+        { "options": ["mi", "mis", "su"], "correct": 1, "why": "«Hermanos» es plural, por eso «mis hermanos»." },
+        { "options": ["como", "come", "comen"], "correct": 0, "why": "«Yo como con mi familia.»" },
+        { "options": ["gusta", "gustan", "gusto"], "correct": 0, "why": "«La comida» es singular: me gusta." },
+        { "options": ["Por la", "En el", "A la"], "correct": 0, "why": "Las partes del día llevan «por la»: por la tarde." }
+      ]
+    }
+  ],
+  "listening": [
+    {
+      "id": "es-a1-l1",
+      "kind": "listen_mc",
+      "instruction": "TAREA 1. Va a escuchar cinco mensajes cortos. Cada mensaje se escucha dos veces. Marque la opción correcta.",
+      "audio": [
+        "Buenos días. El tren de las nueve sale de la vía tres.",
+        "Hola, soy Rosa. Hoy no voy a la oficina porque estoy enferma.",
+        "El museo abre de martes a domingo, de diez a seis.",
+        "La cuenta es de doscientos cincuenta pesos, por favor.",
+        "Perdone, ¿dónde está la farmacia? Está al lado del banco."
+      ],
+      "questions": [
+        {
+          "q": "¿De qué vía sale el tren?",
+          "options": ["De la vía tres.", "De la vía nueve.", "De la vía dos."],
+          "correct": 0,
+          "why": "«El tren de las nueve sale de la vía tres»: las nueve es la hora."
+        },
+        {
+          "q": "¿Por qué no va Rosa a la oficina?",
+          "options": ["Porque está de vacaciones.", "Porque está enferma.", "Porque no tiene trabajo."],
+          "correct": 1
+        },
+        {
+          "q": "¿Cuándo está cerrado el museo?",
+          "options": ["Los lunes.", "Los domingos.", "Los sábados."],
+          "correct": 0,
+          "why": "Abre de martes a domingo, así que el lunes está cerrado."
+        },
+        {
+          "q": "¿Cuánto es la cuenta?",
+          "options": ["150 pesos.", "250 pesos.", "500 pesos."],
+          "correct": 1
+        },
+        {
+          "q": "¿Dónde está la farmacia?",
+          "options": ["Al lado del banco.", "Delante del museo.", "En la estación."],
+          "correct": 0
+        }
+      ]
+    },
+    {
+      "id": "es-a1-l2",
+      "kind": "listen_match",
+      "instruction": "TAREA 2. Va a escuchar a cinco personas. ¿Dónde está cada una? Relacione a cada persona con un lugar. Hay más lugares que personas.",
+      "audio": [
+        "Una mesa para dos, por favor. ¿Nos trae la carta?",
+        "Quiero dos kilos de manzanas y un kilo de tomates.",
+        "¿Tienen esta camisa en azul y en una talla más grande?",
+        "Buenos días, doctor. Me duele mucho la cabeza desde el lunes.",
+        "Un boleto para el centro, por favor. ¿Cuánto cuesta?"
+      ],
+      "prompts": [
+        { "id": "p1", "text": "Persona 1" },
+        { "id": "p2", "text": "Persona 2" },
+        { "id": "p3", "text": "Persona 3" },
+        { "id": "p4", "text": "Persona 4" },
+        { "id": "p5", "text": "Persona 5" }
+      ],
+      "options": [
+        { "id": "a", "text": "En un restaurante" },
+        { "id": "b", "text": "En el mercado" },
+        { "id": "c", "text": "En una tienda de ropa" },
+        { "id": "d", "text": "En el médico" },
+        { "id": "e", "text": "En el metro" },
+        { "id": "f", "text": "En el banco" },
+        { "id": "g", "text": "En la escuela" }
+      ],
+      "answer": { "p1": "a", "p2": "b", "p3": "c", "p4": "d", "p5": "e" }
+    },
+    {
+      "id": "es-a1-l3",
+      "kind": "listen_dialogue",
+      "instruction": "TAREA 3. Va a escuchar una conversación entre dos amigos. Se escucha dos veces. Conteste a las preguntas.",
+      "audio": [
+        "A: Hola, Ana. ¿Qué haces el sábado?",
+        "B: Por la mañana trabajo, pero por la tarde estoy libre.",
+        "A: ¿Vamos al cine? Hay una película nueva a las seis.",
+        "B: A las seis no puedo. Salgo del trabajo a las cinco y vivo lejos.",
+        "A: Entonces vamos a las ocho. Antes podemos comer algo.",
+        "B: Perfecto. Nos vemos a las siete delante del restaurante del centro."
+      ],
+      "questions": [
+        {
+          "q": "¿Qué hace Ana el sábado por la mañana?",
+          "options": ["Trabaja.", "Va al cine.", "Come con un amigo."],
+          "correct": 0
+        },
+        {
+          "q": "¿A qué hora es la primera película?",
+          "options": ["A las cinco.", "A las seis.", "A las ocho."],
+          "correct": 1
+        },
+        {
+          "q": "¿Por qué no puede Ana ir a las seis?",
+          "options": ["Porque no le gusta la película.", "Porque sale del trabajo a las cinco y vive lejos.", "Porque no tiene dinero."],
+          "correct": 1
+        },
+        {
+          "q": "¿A qué hora van a ver la película?",
+          "options": ["A las seis.", "A las siete.", "A las ocho."],
+          "correct": 2
+        },
+        {
+          "q": "¿Dónde se ven?",
+          "options": ["Delante del cine.", "Delante del restaurante del centro.", "En casa de Ana."],
+          "correct": 1
+        },
+        {
+          "q": "¿A qué hora se ven?",
+          "options": ["A las siete.", "A las ocho.", "A las cinco."],
+          "correct": 0
+        }
+      ]
+    },
+    {
+      "id": "es-a1-l4",
+      "kind": "listen_dialogue",
+      "instruction": "TAREA 4. Va a escuchar un mensaje en el teléfono. Se escucha dos veces. Conteste a las preguntas.",
+      "audio": [
+        "Hola, Kálmán, soy Berenice.",
+        "Te llamo por la fiesta del viernes. Es en mi casa, en la calle Rébsamen, número 431.",
+        "Empieza a las ocho de la noche. Puedes traer a un amigo.",
+        "Yo hago la comida, pero necesito bebidas: por favor, trae agua y jugo de naranja, no traigas cerveza.",
+        "Si llegas tarde, no hay problema, la puerta está abierta hasta las once.",
+        "Llámame el jueves, por favor. Hasta luego."
+      ],
+      "questions": [
+        { "q": "¿Qué día es la fiesta?", "options": ["El jueves.", "El viernes.", "El sábado."], "correct": 1 },
+        { "q": "¿Dónde es la fiesta?", "options": ["En casa de Berenice.", "En un restaurante.", "En la calle, en un parque."], "correct": 0 },
+        { "q": "¿A qué hora empieza?", "options": ["A las seis.", "A las ocho.", "A las once."], "correct": 1 },
+        {
+          "q": "¿Qué tiene que llevar Kálmán?",
+          "options": ["Comida.", "Agua y jugo.", "Cerveza."],
+          "correct": 1,
+          "why": "Berenice hace la comida y pide bebidas, pero no cerveza."
+        },
+        { "q": "¿Hasta qué hora está abierta la puerta?", "options": ["Hasta las ocho.", "Hasta las once.", "Toda la noche."], "correct": 1 },
+        { "q": "¿Qué día tiene que llamar Kálmán?", "options": ["El jueves.", "El viernes.", "El domingo."], "correct": 0 }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "id": "es-a1-w1",
+      "kind": "form_fill",
+      "instruction": "TAREA 1. Complete el formulario con sus datos.",
+      "context": "Usted quiere apuntarse a un curso de español en una escuela de la Ciudad de México. Complete la ficha de inscripción.",
+      "fields": [
+        { "id": "nombre", "label": "Nombre y apellidos", "type": "text" },
+        { "id": "edad", "label": "Edad", "type": "number" },
+        { "id": "nacionalidad", "label": "Nacionalidad", "type": "text" },
+        { "id": "direccion", "label": "Dirección (calle y número)", "type": "text" },
+        { "id": "telefono", "label": "Teléfono", "type": "number" },
+        { "id": "correo", "label": "Correo electrónico", "type": "text" },
+        { "id": "nivel", "label": "¿Qué nivel estudia? (A1, A2...)", "type": "text" }
+      ]
+    },
+    {
+      "id": "es-a1-w2",
+      "kind": "short_message",
+      "instruction": "TAREA 2. Escriba un texto de 30 a 40 palabras.",
+      "prompt": "Un amigo mexicano quiere conocerlo. Escríbale un mensaje y diga: cómo se llama y de dónde es; dónde vive ahora; qué hace los fines de semana; y pregúntele algo a él.",
+      "minWords": 30,
+      "points": [
+        { "id": "name", "label": "Dice su nombre o de dónde es", "keywords": ["me llamo", "soy de", "mi nombre"] },
+        { "id": "live", "label": "Dice dónde vive", "keywords": ["vivo", "vivo en"] },
+        { "id": "weekend", "label": "Habla del fin de semana", "keywords": ["fin de semana", "sábado", "domingo"] },
+        { "id": "question", "label": "Hace una pregunta", "keywords": ["?", "¿"] }
+      ]
+    }
+  ],
+  "speaking": [
+    {
+      "id": "es-a1-s1",
+      "kind": "speaking_prompt",
+      "instruction": "TAREA 1. Presentación personal. Hable en voz alta entre uno y dos minutos. Después escuche el modelo y valore su respuesta.",
+      "prompt": "Preséntese: nombre, edad, nacionalidad, dónde vive, con quién vive, qué hace (trabajo o estudios) y qué idiomas habla.",
+      "bullets": ["nombre y edad", "nacionalidad y ciudad", "familia", "trabajo o estudios", "idiomas"],
+      "model": "Me llamo Kálmán y tengo treinta y cuatro años. Soy húngaro, pero ahora vivo en la Ciudad de México, en la colonia Narvarte. Vivo con mi novia. Trabajo con computadoras y estudio español todos los días. Hablo húngaro, inglés y un poco de español."
+    },
+    {
+      "id": "es-a1-s2",
+      "kind": "speaking_prompt",
+      "instruction": "TAREA 2. Descripción. Hable en voz alta sobre el tema. Después escuche el modelo y valore su respuesta.",
+      "prompt": "Describa su casa y su barrio: cómo es la casa, qué habitaciones tiene, qué hay cerca (tiendas, parque, metro).",
+      "bullets": ["la casa", "las habitaciones", "el barrio", "qué hay cerca"],
+      "model": "Mi casa no es grande. Tiene dos habitaciones, una cocina, un baño y una sala. La cocina es pequeña, pero tiene una ventana grande. Mi barrio es tranquilo. Cerca hay un mercado, una farmacia y un parque. El metro está a diez minutos a pie."
+    },
+    {
+      "id": "es-a1-s3",
+      "kind": "speaking_prompt",
+      "instruction": "TAREA 3. Diálogo en una situación. Hable en voz alta. Después escuche el modelo y valore su respuesta.",
+      "prompt": "Usted está en un restaurante. Pida una mesa, pregunte por el menú del día, pida la comida y la bebida, y pida la cuenta.",
+      "bullets": ["una mesa", "el menú del día", "comida y bebida", "la cuenta"],
+      "model": "Buenas tardes, ¿tiene una mesa para dos personas? Gracias. ¿Cuál es el menú del día? Entonces, de primero quiero una sopa y de segundo, pollo con arroz. Para beber, agua, por favor. ¿Nos trae la cuenta, por favor?"
+    }
+  ]
+}

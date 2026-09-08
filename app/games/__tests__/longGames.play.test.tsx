@@ -146,13 +146,11 @@ describe('long-form games play to the end', () => {
       const options = screen.queryAllByTestId('story-option');
       if (options.length) {
         fireEvent.press(options[0]);
-        // eslint-disable-next-line no-await-in-loop
         await flushAsync(1);
       }
       const cont = screen.queryByTestId('story-continue');
       if (!cont) break;
       fireEvent.press(cont);
-      // eslint-disable-next-line no-await-in-loop
       await flushAsync(1);
     }
 
@@ -177,7 +175,6 @@ describe('long-form games play to the end', () => {
       const setup = screen.queryAllByTestId('chat-setup-option');
       if (!setup.length) break;
       fireEvent.press(setup[0]);
-      // eslint-disable-next-line no-await-in-loop
       await flushAsync(1);
     }
 
@@ -185,7 +182,6 @@ describe('long-form games play to the end', () => {
       const options = screen.queryAllByTestId('chat-option');
       if (!options.length) break;
       fireEvent.press(options[0]);
-      // eslint-disable-next-line no-await-in-loop
       await flushAsync(1);
     }
 
@@ -206,11 +202,9 @@ describe('long-form games play to the end', () => {
       if (!options.length) break;
       fireEvent.press(options[0]);
       answered++;
-      // eslint-disable-next-line no-await-in-loop
       await flushAsync(1);
       const gotIt = screen.queryByText('Got it');
       if (gotIt) fireEvent.press(gotIt);
-      // eslint-disable-next-line no-await-in-loop
       await flushAsync(1);
     }
 
@@ -279,11 +273,9 @@ describe('long-form games play to the end', () => {
       if (!options.length) break;
       fireEvent.press(options[0]);
       answered++;
-      // eslint-disable-next-line no-await-in-loop
       await flushAsync(1);
       const gotIt = screen.queryByText('Got it');
       if (gotIt) fireEvent.press(gotIt);
-      // eslint-disable-next-line no-await-in-loop
       await flushAsync(1);
     }
 
