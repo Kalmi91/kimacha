@@ -31,6 +31,24 @@ Ha egy játék bárhonnan máshonnan szerez szót, az **acceptance-bukás**.
 
 ---
 
+## 0/B. Ez a szabály nem játék-szabály, hanem az app észak-csillaga
+
+A fenti „csak már tanult szóból" kritérium az egész Kimacha tanulási modelljének
+egyik pontja, nem a Game fül helyi szeszélye. Teljes spec: **`AGENTS.md`,
+„🧭 ÉSZAK-CSILLAG" szekció** (a fájl elején). A négy pont:
+
+1. EGY motor, három item-típus (`WORD` / `FORM` / `SENTENCE`), egy SRS, egy ütemező.
+2. Nyelvtan-unlock = a patternhez kellő szavak ismertsége, nem globális szószám-szint.
+3. Váltakozás = ütemező dönt, nem a tanuló vált módot.
+4. **Soha nincs mondat ismeretlen szóval** (a `vocabPool` + `GlossText` ennek a
+   megvalósítása a Game fülön).
+
+Ezért: minden új játék terve mondja meg, melyik item-típusra épül, és melyik
+grammar-patternt gyakoroltatja. Játék, ami csak izolált szót villogtat, nem viszi
+előre a modellt.
+
+---
+
 ## 1. Mi kerül a fülre (a user által jóváhagyott lista)
 
 | # | Játék | id | Típus | Státusz |

@@ -1,0 +1,569 @@
+{
+  "topic": "indefinido-imperfecto",
+  "level": "A2",
+  "title": {
+    "hu": "Indefinido vagy imperfecto?",
+    "en": "Preterite or imperfect?",
+    "es": "¿Indefinido o imperfecto?",
+    "de": "Indefinido oder Imperfekt?"
+  },
+  "rule": {
+    "hu": "Nem az számít, mennyi ideig tartott, hanem hogy HOGYAN nézel rá. INDEFINIDO: a cselekvés egy pont a történet vonalán, megtörtént és lezárult (ayer, el lunes, en 2020, de repente, hace un año). IMPERFECTO: a díszlet a pont körül, szokás, leírás, folyamat (siempre, todos los días, mientras, antes, cuando era niño). Ugyanaz a mondat mindkettővel helyes lehet, csak mást jelent: Ayer comí en casa (egyszer, tény) vs Antes comía en casa (szokás volt).",
+    "en": "It is not about how long it lasted but HOW you look at it. PRETERITE: the action is a point on the story line, done and closed (ayer, el lunes, en 2020, de repente, hace un año). IMPERFECT: the scenery around that point, habit, description, an action in progress (siempre, todos los días, mientras, antes, cuando era niño). The same sentence can be right with either, meaning different things: Ayer comí en casa (once, a fact) vs Antes comía en casa (it was my habit).",
+    "es": "No importa cuánto duró, sino CÓMO lo miras. INDEFINIDO: la acción es un punto cerrado en la línea del relato (ayer, el lunes, en 2020, de repente). IMPERFECTO: el decorado alrededor, costumbre, descripción, acción en curso (siempre, todos los días, mientras, antes). La misma frase puede ir con los dos y cambiar de sentido: Ayer comí en casa y Antes comía en casa.",
+    "de": "Nicht die Dauer zählt, sondern die SICHTWEISE. INDEFINIDO: die Handlung ist ein abgeschlossener Punkt der Erzählung (ayer, el lunes, en 2020, de repente). IMPERFEKT: die Kulisse darum herum, Gewohnheit, Beschreibung, laufende Handlung (siempre, todos los días, mientras, antes). Derselbe Satz kann mit beiden richtig sein und Verschiedenes bedeuten."
+  },
+  "more": {
+    "hu": "A történet-szabály: az imperfecto festi a hátteret, az indefinido viszi előre a cselekményt. „Era de noche y llovía (háttér). De repente, alguien llamó a la puerta (esemény).\" Négy ige jelentése is változik: sabía (tudtam) vs supe (megtudtam); conocía (ismertem) vs conocí (megismerkedtem); podía (képes voltam) vs pude (sikerült); quería (akartam) vs quise (megpróbáltam), no quise (nem voltam hajlandó).",
+    "en": "The storytelling rule: the imperfect paints the background, the preterite moves the plot. \"Era de noche y llovía (background). De repente, alguien llamó a la puerta (event).\" Four verbs even change meaning: sabía (I knew) vs supe (I found out); conocía (I knew someone) vs conocí (I met); podía (I was able) vs pude (I managed); quería (I wanted) vs quise (I tried), no quise (I refused).",
+    "es": "La regla del relato: el imperfecto pinta el fondo y el indefinido hace avanzar la historia. «Era de noche y llovía. De repente, alguien llamó a la puerta.» Cuatro verbos cambian de sentido: sabía/supe, conocía/conocí, podía/pude, quería/quise (y no quise = me negué).",
+    "de": "Die Erzählregel: das Imperfekt malt den Hintergrund, das Indefinido treibt die Handlung. „Era de noche y llovía. De repente, alguien llamó a la puerta.\" Vier Verben ändern die Bedeutung: sabía/supe, conocía/conocí, podía/pude, quería/quise (no quise = ich weigerte mich)."
+  },
+  "glossary": [
+    {
+      "word": "repente",
+      "gloss": {
+        "hu": "de repente = hirtelen",
+        "en": "de repente = suddenly",
+        "es": "de repente",
+        "de": "de repente = plötzlich"
+      }
+    },
+    {
+      "word": "conocí",
+      "gloss": {
+        "hu": "megismerkedtem vele",
+        "en": "I met (for the first time)",
+        "es": "yo conocí",
+        "de": "ich lernte kennen"
+      }
+    },
+    {
+      "word": "conocía",
+      "gloss": {
+        "hu": "ismertem",
+        "en": "I knew (a person, a place)",
+        "es": "yo conocía",
+        "de": "ich kannte"
+      }
+    },
+    {
+      "word": "llovía",
+      "gloss": {
+        "hu": "esett az eső",
+        "en": "it was raining",
+        "es": "llovía",
+        "de": "es regnete"
+      }
+    },
+    {
+      "word": "mientras",
+      "gloss": {
+        "hu": "miközben",
+        "en": "while",
+        "es": "mientras",
+        "de": "während"
+      }
+    },
+    {
+      "word": "quise",
+      "gloss": {
+        "hu": "megpróbáltam (no quise = nem voltam hajlandó)",
+        "en": "I tried (no quise = I refused)",
+        "es": "yo quise",
+        "de": "ich versuchte (no quise = ich weigerte mich)"
+      }
+    },
+    {
+      "word": "apaga",
+      "gloss": {
+        "hu": "kikapcsol, elolt",
+        "en": "turns off",
+        "es": "apagar → apaga",
+        "de": "schaltet aus"
+      }
+    },
+    {
+      "word": "apagaba",
+      "gloss": {
+        "hu": "kikapcsolt (folyamatos)",
+        "en": "used to go out",
+        "es": "apagaba",
+        "de": "ging aus"
+      }
+    },
+    {
+      "word": "apagó",
+      "gloss": {
+        "hu": "kikapcsolt, kialudt",
+        "en": "went out, turned off",
+        "es": "se apagó",
+        "de": "ging aus"
+      }
+    },
+    {
+      "word": "cafetería",
+      "gloss": {
+        "hu": "kávézó",
+        "en": "café",
+        "es": "la cafetería",
+        "de": "Café"
+      }
+    },
+    {
+      "word": "conozco",
+      "gloss": {
+        "hu": "ismerem",
+        "en": "I know (a person, place)",
+        "es": "yo conozco",
+        "de": "ich kenne"
+      }
+    },
+    {
+      "word": "discutir",
+      "gloss": {
+        "hu": "vitatkozni",
+        "en": "to argue",
+        "es": "discutir",
+        "de": "streiten"
+      }
+    },
+    {
+      "word": "entonces",
+      "gloss": {
+        "hu": "akkor, abban az időben",
+        "en": "then, back then",
+        "es": "entonces",
+        "de": "damals, dann"
+      }
+    },
+    {
+      "word": "gritó",
+      "gloss": {
+        "hu": "kiabált, felkiáltott",
+        "en": "shouted",
+        "es": "gritó",
+        "de": "schrie"
+      }
+    },
+    {
+      "word": "prepara",
+      "gloss": {
+        "hu": "készít, elkészíti",
+        "en": "prepares",
+        "es": "prepara",
+        "de": "bereitet zu"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "ii2-01",
+      "sentence": "Ayer ___ (yo) a las siete y desayuné rápido.",
+      "options": [
+        "me levanté",
+        "me levantaba",
+        "me levanto"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az ayer + konkrét óra: egyetlen lezárt esemény, tehát indefinido.",
+        "en": "Ayer plus a specific hour: one closed event, so the preterite.",
+        "es": "Ayer y una hora concreta: un hecho cerrado, indefinido.",
+        "de": "Ayer plus konkrete Uhrzeit: ein abgeschlossenes Ereignis, Indefinido."
+      },
+      "wrong": {
+        "me levantaba": {
+          "hu": "Ez szokást jelentene: akkoriban hétkor szoktam kelni.",
+          "en": "That would mean a habit: back then I used to get up at seven.",
+          "es": "Eso indicaría costumbre: solía levantarme a las siete.",
+          "de": "Das hieße Gewohnheit: damals stand ich um sieben auf."
+        },
+        "me levanto": {
+          "hu": "Jelen idő, a mondat viszont tegnapról szól.",
+          "en": "The present, while the sentence is about yesterday.",
+          "es": "Presente, pero la frase habla de ayer.",
+          "de": "Präsens, der Satz handelt aber von gestern."
+        }
+      },
+      "examples": [
+        "El lunes salí temprano.",
+        "En 2020 cambié de trabajo."
+      ]
+    },
+    {
+      "id": "ii2-02",
+      "sentence": "Cuando era estudiante ___ (yo) en una cafetería.",
+      "options": [
+        "trabajaba",
+        "trabajé",
+        "trabajo"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az egyetemi évek háttere, nem lezárt esemény: imperfecto.",
+        "en": "The background of the student years, not a closed event: the imperfect.",
+        "es": "El fondo de aquella etapa, no un hecho cerrado: imperfecto.",
+        "de": "Der Hintergrund jener Zeit, kein abgeschlossenes Ereignis: Imperfekt."
+      },
+      "wrong": {
+        "trabajé": {
+          "hu": "Ez akkor jó, ha megmondod, meddig: Trabajé allí dos años.",
+          "en": "That works if you say how long: Trabajé allí dos años.",
+          "es": "Vale si dices cuánto tiempo: Trabajé allí dos años.",
+          "de": "Das geht, wenn du die Dauer nennst: Trabajé allí dos años."
+        },
+        "trabajo": {
+          "hu": "Jelen idő.",
+          "en": "The present.",
+          "es": "Presente.",
+          "de": "Präsens."
+        }
+      },
+      "examples": [
+        "Cuando vivía en Budapest, iba en metro.",
+        "De niño jugaba en la calle."
+      ]
+    },
+    {
+      "id": "ii2-03",
+      "sentence": "___ de noche y llovía cuando salimos.",
+      "options": [
+        "Era",
+        "Fue",
+        "Es"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A díszlet festése imperfecto; a salimos viszi előre a történetet.",
+        "en": "Painting the scenery takes the imperfect; salimos moves the story.",
+        "es": "Pintar el decorado va en imperfecto; salimos hace avanzar el relato.",
+        "de": "Die Kulisse steht im Imperfekt; salimos treibt die Handlung."
+      },
+      "wrong": {
+        "Fue": {
+          "hu": "A fue eseményt jelölne, de itt csak a körülményt írod le.",
+          "en": "Fue would mark an event, but here you only describe the setting.",
+          "es": "Fue marcaría un suceso, pero aquí describes el ambiente.",
+          "de": "Fue markierte ein Ereignis, hier beschreibst du nur die Lage."
+        },
+        "Es": {
+          "hu": "Jelen idő.",
+          "en": "The present.",
+          "es": "Presente.",
+          "de": "Präsens."
+        }
+      },
+      "examples": [
+        "Hacía frío y no había nadie.",
+        "La calle estaba oscura."
+      ]
+    },
+    {
+      "id": "ii2-04",
+      "sentence": "Mientras cenábamos, ___ el teléfono.",
+      "options": [
+        "sonó",
+        "sonaba",
+        "suena"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A közbevágó, rövid esemény indefinido: sonó.",
+        "en": "The short interrupting event takes the preterite: sonó.",
+        "es": "El suceso breve que interrumpe va en indefinido: sonó.",
+        "de": "Das kurze, unterbrechende Ereignis steht im Indefinido: sonó."
+      },
+      "wrong": {
+        "sonaba": {
+          "hu": "Ez azt jelentené, hogy végig csörgött, mint háttérzaj.",
+          "en": "That would mean it kept ringing as background noise.",
+          "es": "Eso indicaría que sonaba todo el rato, como fondo.",
+          "de": "Das hieße, es klingelte durchgehend als Hintergrund."
+        },
+        "suena": {
+          "hu": "Jelen idő.",
+          "en": "The present.",
+          "es": "Presente.",
+          "de": "Präsens."
+        }
+      },
+      "examples": [
+        "Mientras leía, alguien tocó la puerta.",
+        "Mientras esperaba, llegó el autobús."
+      ]
+    },
+    {
+      "id": "ii2-05",
+      "sentence": "Anoche ___ (yo) a tu hermana en la fiesta.",
+      "options": [
+        "conocí",
+        "conocía",
+        "conozco"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A conocer indefinidóban megismerkedést jelent: akkor találkoztunk először.",
+        "en": "Conocer in the preterite means meeting for the first time.",
+        "es": "Conocer en indefinido significa el primer encuentro.",
+        "de": "Conocer im Indefinido heißt: zum ersten Mal begegnen."
+      },
+      "wrong": {
+        "conocía": {
+          "hu": "A conocía azt jelenti, hogy már korábban ismertem.",
+          "en": "Conocía means I already knew her before.",
+          "es": "Conocía significa que ya la conocía antes.",
+          "de": "Conocía heißt, ich kannte sie schon vorher."
+        },
+        "conozco": {
+          "hu": "Jelen idő.",
+          "en": "The present.",
+          "es": "Presente.",
+          "de": "Präsens."
+        }
+      },
+      "examples": [
+        "Conocí a mi novia en Madrid.",
+        "No conocía esa palabra."
+      ]
+    },
+    {
+      "id": "ii2-06",
+      "sentence": "___ (yo) la verdad la semana pasada, y me sorprendió.",
+      "options": [
+        "Supe",
+        "Sabía",
+        "Sé"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A saber indefinidóban megtudást jelent: akkor derült ki.",
+        "en": "Saber in the preterite means finding out: that is when I learned it.",
+        "es": "Saber en indefinido significa enterarse.",
+        "de": "Saber im Indefinido heißt erfahren."
+      },
+      "wrong": {
+        "Sabía": {
+          "hu": "A sabía állapot: már tudtam, nem akkor tudtam meg.",
+          "en": "Sabía is a state: I already knew, not I found out.",
+          "es": "Sabía es estado: ya lo sabía.",
+          "de": "Sabía ist ein Zustand: ich wusste es schon."
+        },
+        "Sé": {
+          "hu": "Jelen idő.",
+          "en": "The present.",
+          "es": "Presente.",
+          "de": "Präsens."
+        }
+      },
+      "examples": [
+        "Supimos la noticia por la radio.",
+        "No sabía que estabas aquí."
+      ]
+    },
+    {
+      "id": "ii2-07",
+      "sentence": "Todos los veranos ___ a la playa, pero el año pasado no.",
+      "options": [
+        "íbamos",
+        "fuimos",
+        "vamos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A todos los veranos szokás (imperfecto), a mondat második fele egyszeri esemény (indefinido). A kettő szembeállítása maga a lecke.",
+        "en": "Todos los veranos is a habit (imperfect); the second half is one event (preterite). The contrast is the whole lesson.",
+        "es": "Todos los veranos es costumbre (imperfecto); la segunda parte es un hecho (indefinido).",
+        "de": "Todos los veranos ist Gewohnheit (Imperfekt), die zweite Hälfte ein Ereignis (Indefinido)."
+      },
+      "wrong": {
+        "fuimos": {
+          "hu": "Kétszer ugyanaz az igeidő elmosná a szokás és az egyszeri eset különbségét.",
+          "en": "The same tense twice would erase the habit-versus-once contrast.",
+          "es": "El mismo tiempo dos veces borraría el contraste.",
+          "de": "Zweimal dieselbe Zeit löschte den Kontrast."
+        },
+        "vamos": {
+          "hu": "Jelen idő.",
+          "en": "The present.",
+          "es": "Presente.",
+          "de": "Präsens."
+        }
+      },
+      "examples": [
+        "Antes cocinaba mi madre, ayer cociné yo.",
+        "Siempre llegaba tarde, pero ese día no."
+      ]
+    },
+    {
+      "id": "ii2-08",
+      "sentence": "El niño ___ tres años cuando aprendió a nadar.",
+      "options": [
+        "tenía",
+        "tuvo",
+        "tiene"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A kor a múltban mindig imperfecto: tenía tres años.",
+        "en": "Age in the past always takes the imperfect: tenía tres años.",
+        "es": "La edad en pasado va siempre en imperfecto: tenía tres años.",
+        "de": "Das Alter in der Vergangenheit steht immer im Imperfekt."
+      },
+      "wrong": {
+        "tuvo": {
+          "hu": "A tuvo tres años azt jelentené, hogy három évig birtokolt valamit.",
+          "en": "Tuvo tres años would mean he had something for three years.",
+          "es": "Tuvo tres años significaría que algo le duró tres años.",
+          "de": "Tuvo tres años hieße, er hatte etwas drei Jahre lang."
+        },
+        "tiene": {
+          "hu": "Jelen idő.",
+          "en": "The present.",
+          "es": "Presente.",
+          "de": "Präsens."
+        }
+      },
+      "examples": [
+        "Tenía veinte años cuando se casó.",
+        "Éramos jóvenes entonces."
+      ]
+    },
+    {
+      "id": "ii2-09",
+      "sentence": "De repente, la luz ___ y nos quedamos a oscuras.",
+      "options": [
+        "se apagó",
+        "se apagaba",
+        "se apaga"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A de repente hirtelen, egyszeri eseményt jelöl: indefinido.",
+        "en": "De repente marks a sudden, one-off event: the preterite.",
+        "es": "De repente marca un suceso único y brusco: indefinido.",
+        "de": "De repente markiert ein plötzliches Einzelereignis: Indefinido."
+      },
+      "wrong": {
+        "se apagaba": {
+          "hu": "Ez azt jelentené, hogy rendszeresen kialudt a villany.",
+          "en": "That would mean the light kept going out regularly.",
+          "es": "Eso indicaría que se apagaba a menudo.",
+          "de": "Das hieße, das Licht ging regelmäßig aus."
+        },
+        "se apaga": {
+          "hu": "Jelen idő.",
+          "en": "The present.",
+          "es": "Presente.",
+          "de": "Präsens."
+        }
+      },
+      "examples": [
+        "De repente empezó a llover.",
+        "De pronto alguien gritó."
+      ]
+    },
+    {
+      "id": "ii2-10",
+      "sentence": "___ (yo) llamarte, pero no ___ porque no tenía tu número.",
+      "options": [
+        "Quería / pude",
+        "Quise / podía",
+        "Quiero / puedo"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A quería a szándék (háttér), a pude az egyszeri kudarc (esemény).",
+        "en": "Quería is the intention (background), pude the one-off failure (event).",
+        "es": "Quería es la intención (fondo), pude el intento concreto (suceso).",
+        "de": "Quería ist die Absicht (Hintergrund), pude der konkrete Versuch (Ereignis)."
+      },
+      "wrong": {
+        "Quise / podía": {
+          "hu": "A quise inkább „megpróbáltam\", a podía pedig általános képességet jelentene: itt fordítva van.",
+          "en": "Quise leans to \"I tried\" and podía to a general ability: the pair is the wrong way round.",
+          "es": "Quise es «intenté» y podía es capacidad general: están al revés.",
+          "de": "Quise heißt eher „ich versuchte\", podía allgemeine Fähigkeit: vertauscht."
+        },
+        "Quiero / puedo": {
+          "hu": "Mindkettő jelen idő.",
+          "en": "Both are the present.",
+          "es": "Los dos son presente.",
+          "de": "Beide sind Präsens."
+        }
+      },
+      "examples": [
+        "Quería ir, pero no pude.",
+        "No quise discutir con él."
+      ]
+    },
+    {
+      "id": "ii2-11",
+      "sentence": "La película ___ tres horas y terminó muy tarde.",
+      "options": [
+        "duró",
+        "duraba",
+        "dura"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Megadott, lezárt időtartam: indefinido. A hosszúság önmagában nem tesz imperfectóvá semmit.",
+        "en": "A stated, closed duration takes the preterite. Length alone never makes something imperfect.",
+        "es": "Una duración cerrada va en indefinido. La duración por sí sola no pide imperfecto.",
+        "de": "Eine genannte, abgeschlossene Dauer steht im Indefinido. Länge allein verlangt kein Imperfekt."
+      },
+      "wrong": {
+        "duraba": {
+          "hu": "Ez azt jelentené, hogy általában három órás volt (pl. minden előadás).",
+          "en": "That would mean it generally lasted three hours (every showing).",
+          "es": "Eso indicaría que solía durar tres horas.",
+          "de": "Das hieße, sie dauerte gewöhnlich drei Stunden."
+        },
+        "dura": {
+          "hu": "Jelen idő.",
+          "en": "The present.",
+          "es": "Presente.",
+          "de": "Präsens."
+        }
+      },
+      "examples": [
+        "Viví diez años en México.",
+        "Estuvimos allí dos semanas."
+      ]
+    },
+    {
+      "id": "ii2-12",
+      "sentence": "Mi madre ___ la comida mientras mi padre ___ la mesa.",
+      "options": [
+        "preparaba / ponía",
+        "preparó / puso",
+        "prepara / pone"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Két párhuzamosan futó folyamat: mindkettő imperfecto.",
+        "en": "Two actions running in parallel: both take the imperfect.",
+        "es": "Dos acciones simultáneas: las dos en imperfecto.",
+        "de": "Zwei parallele Handlungen: beide im Imperfekt."
+      },
+      "wrong": {
+        "preparó / puso": {
+          "hu": "Ez két egymás utáni, lezárt eseményt jelentene, nem párhuzamot.",
+          "en": "That would be two closed events one after the other, not parallel ones.",
+          "es": "Eso serían dos hechos sucesivos, no simultáneos.",
+          "de": "Das wären zwei aufeinanderfolgende Ereignisse, nicht parallele."
+        },
+        "prepara / pone": {
+          "hu": "Mindkettő jelen idő.",
+          "en": "Both are the present.",
+          "es": "Los dos son presente.",
+          "de": "Beide sind Präsens."
+        }
+      },
+      "examples": [
+        "Yo leía mientras ella escribía.",
+        "Los niños jugaban mientras nosotros hablábamos."
+      ]
+    }
+  ]
+}

@@ -17,6 +17,24 @@
 
 ---
 
+## 0. ÉSZAK-CSILLAG (minden queue-item ehhez mérendő)
+
+A Kimacha tanulási modelljének végcélja, teljes spec: **`AGENTS.md`, „🧭 ÉSZAK-CSILLAG"
+szekció** (a fájl elején, auto-betöltött). Röviden, hogy a token-burn futás ne sodródjon el:
+
+1. **EGY motor**, nem külön szó-játék + nyelvtan-játék. Három item-típus egy SRS-ben:
+   `WORD` (jelentés), `FORM` (ragozott alak), `SENTENCE` (mondat építés ismert szavakból).
+2. **Nyelvtan-unlock = függőség, nem szint.** A pattern akkor nyílik, ha a hozzá kellő
+   szavak ismertek (pl. `presente_ar` = 5 ismert -ar ige + névmások), nem globális szószámra.
+3. **Váltakozás = ütemező**, nem mód-váltó gomb: egy menet vegyesen adja, ami esedékes.
+4. **Soha nincs mondat ismeretlen szóval.** Ez köti össze a szókincset és a nyelvtant.
+
+Minden új queue-item mellé írd oda, melyik pontot viszi előre. Ami egyiket sem szolgálja,
+az nem kerül a queue-ba. Külön „nyelvtan-fül" javaslat: elutasítva.
+Státusz: a modell **CÉL**, a FORM/SENTENCE/dependency/ütemező még **design-first**, nincs kódolva.
+
+---
+
 ## 1. Státusz (% kész, komponensenként)
 
 Szám-becslések `project_word_expansion` memóriából (2026-06-13), nem élő-verifikált.

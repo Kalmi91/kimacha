@@ -1,0 +1,533 @@
+{
+  "topic": "imperfecto",
+  "level": "A2",
+  "title": {
+    "hu": "Folyamatos múlt (imperfecto)",
+    "en": "The imperfect",
+    "es": "El pretérito imperfecto",
+    "de": "Das Imperfekt"
+  },
+  "rule": {
+    "hu": "Ez a múlt nem lezár, hanem LEÍR: szokás, ismétlődés, háttér, kor, idő, időjárás, érzés. -AR: -aba, -abas, -aba, -ábamos, -abais, -aban (hablaba). -ER és -IR: -ía, -ías, -ía, -íamos, -íais, -ían (comía, vivía). Mindössze HÁROM rendhagyó ige van az egész nyelvben: ser → era, eras, era, éramos, erais, eran; ir → iba, ibas, iba, íbamos, ibais, iban; ver → veía, veías, veía... Kísérő szavak: antes, siempre, todos los días, cuando era niño, mientras.",
+    "en": "This past does not close anything, it DESCRIBES: habit, repetition, background, age, time, weather, feelings. -AR: -aba, -abas, -aba, -ábamos, -abais, -aban (hablaba). -ER and -IR: -ía, -ías, -ía, -íamos, -íais, -ían (comía, vivía). The whole language has only THREE irregular verbs here: ser → era; ir → iba; ver → veía. Companions: antes, siempre, todos los días, cuando era niño, mientras.",
+    "es": "Este pasado no cierra nada, DESCRIBE: costumbre, repetición, fondo, edad, hora, tiempo, sentimientos. -AR: -aba... -ER e -IR: -ía... Solo hay TRES irregulares: ser (era), ir (iba), ver (veía). Marcadores: antes, siempre, todos los días, cuando era niño, mientras.",
+    "de": "Diese Vergangenheit schließt nichts ab, sie BESCHREIBT: Gewohnheit, Wiederholung, Hintergrund, Alter, Uhrzeit, Wetter, Gefühle. -AR: -aba... -ER und -IR: -ía... Es gibt nur DREI unregelmäßige Verben: ser (era), ir (iba), ver (veía). Begleiter: antes, siempre, todos los días, cuando era niño, mientras."
+  },
+  "more": {
+    "hu": "Négy tipikus használat, amit érdemes fejből tudni. 1) Kor és idő a múltban: Tenía diez años. Eran las tres. 2) Leírás: La casa era grande y hacía frío. 3) Szokás: Todos los veranos íbamos al mar. 4) Félbeszakított folyamat: Dormía cuando sonó el teléfono (a hosszú dolog imperfecto, a rövid, közbevágó indefinido). Az „ibas a + főnévi igenév\" a múltbeli szándék: Iba a llamarte (fel akartalak hívni).",
+    "en": "Four uses worth knowing by heart. 1) Age and time in the past: Tenía diez años. Eran las tres. 2) Description: La casa era grande y hacía frío. 3) Habit: Todos los veranos íbamos al mar. 4) An action cut short: Dormía cuando sonó el teléfono (the long thing is imperfect, the short interrupting one is preterite). \"Iba a + infinitive\" is past intention: Iba a llamarte (I was going to call you).",
+    "es": "Cuatro usos que conviene saber de memoria. 1) Edad y hora: Tenía diez años. Eran las tres. 2) Descripción: La casa era grande. 3) Costumbre: Todos los veranos íbamos al mar. 4) Acción interrumpida: Dormía cuando sonó el teléfono. «Iba a + infinitivo» expresa intención pasada.",
+    "de": "Vier Verwendungen zum Auswendiglernen. 1) Alter und Uhrzeit: Tenía diez años. Eran las tres. 2) Beschreibung: La casa era grande. 3) Gewohnheit: Todos los veranos íbamos al mar. 4) Unterbrochene Handlung: Dormía cuando sonó el teléfono. „Iba a + Infinitiv\" ist vergangene Absicht."
+  },
+  "glossary": [
+    {
+      "word": "antes",
+      "gloss": {
+        "hu": "régen, korábban",
+        "en": "before, in the past",
+        "es": "antes",
+        "de": "früher"
+      }
+    },
+    {
+      "word": "mientras",
+      "gloss": {
+        "hu": "miközben",
+        "en": "while",
+        "es": "mientras",
+        "de": "während"
+      }
+    },
+    {
+      "word": "sonó",
+      "gloss": {
+        "hu": "megszólalt, csörgött",
+        "en": "it rang",
+        "es": "sonó",
+        "de": "es klingelte"
+      }
+    },
+    {
+      "word": "veraneábamos",
+      "gloss": {
+        "hu": "nyaraltunk",
+        "en": "we used to spend the summer",
+        "es": "veraneábamos",
+        "de": "wir verbrachten den Sommer"
+      }
+    },
+    {
+      "word": "íbamos",
+      "gloss": {
+        "hu": "jártunk, mentünk (szokás)",
+        "en": "we used to go",
+        "es": "nosotros íbamos",
+        "de": "wir gingen (regelmäßig)"
+      }
+    },
+    {
+      "word": "veía",
+      "gloss": {
+        "hu": "láttam, néztem (szokás)",
+        "en": "I used to see, watch",
+        "es": "yo veía",
+        "de": "ich sah (regelmäßig)"
+      }
+    },
+    {
+      "word": "animados",
+      "gloss": {
+        "hu": "dibujos animados = rajzfilm",
+        "en": "dibujos animados = cartoons",
+        "es": "dibujos animados",
+        "de": "Zeichentrickfilme"
+      }
+    },
+    {
+      "word": "batería",
+      "gloss": {
+        "hu": "elem, akkumulátor",
+        "en": "battery",
+        "es": "la batería",
+        "de": "Batterie, Akku"
+      }
+    },
+    {
+      "word": "calefacción",
+      "gloss": {
+        "hu": "fűtés",
+        "en": "heating",
+        "es": "la calefacción",
+        "de": "Heizung"
+      }
+    },
+    {
+      "word": "fumaba",
+      "gloss": {
+        "hu": "dohányzott (szokás)",
+        "en": "used to smoke",
+        "es": "fumaba",
+        "de": "rauchte"
+      }
+    },
+    {
+      "word": "prepara",
+      "gloss": {
+        "hu": "készít, elkészíti",
+        "en": "prepares",
+        "es": "prepara",
+        "de": "bereitet zu"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "im-01",
+      "sentence": "Cuando ___ (yo) niño, vivía en un pueblo pequeño.",
+      "options": [
+        "era",
+        "fui",
+        "estaba"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A gyerekkor leírás, nem esemény: era. A ser imperfectója rendhagyó.",
+        "en": "Childhood is a description, not an event: era. Ser is irregular here.",
+        "es": "La infancia es descripción, no suceso: era. Ser es irregular.",
+        "de": "Die Kindheit ist Beschreibung, kein Ereignis: era. Ser ist unregelmäßig."
+      },
+      "wrong": {
+        "fui": {
+          "hu": "A fui lezárt eseményt jelöl, a gyerekkor viszont időszak.",
+          "en": "Fui marks a closed event, but childhood is a period.",
+          "es": "Fui marca un hecho cerrado; la infancia es una etapa.",
+          "de": "Fui markiert ein abgeschlossenes Ereignis, die Kindheit ist eine Phase."
+        },
+        "estaba": {
+          "hu": "Az estar állapotot vagy helyet jelöl, a „gyerek lenni\" azonosság.",
+          "en": "Estar marks a state or place; being a child is an identity.",
+          "es": "Estar marca estado o lugar; ser niño es identidad.",
+          "de": "Estar markiert Zustand oder Ort; Kind sein ist Identität."
+        }
+      },
+      "examples": [
+        "Cuando era joven, jugaba al fútbol.",
+        "Antes vivíamos en Budapest."
+      ]
+    },
+    {
+      "id": "im-02",
+      "sentence": "Todos los días ___ (nosotros) café en el mismo bar.",
+      "options": [
+        "tomábamos",
+        "tomamos",
+        "tomaremos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A todos los días ismétlődő szokás: imperfecto.",
+        "en": "Todos los días marks a repeated habit: the imperfect.",
+        "es": "Todos los días indica costumbre: imperfecto.",
+        "de": "Todos los días zeigt Gewohnheit: Imperfekt."
+      },
+      "wrong": {
+        "tomamos": {
+          "hu": "Ez egyetlen alkalmat jelentene (vagy jelen időt).",
+          "en": "That would mean one occasion (or the present).",
+          "es": "Eso indicaría una sola vez, o el presente.",
+          "de": "Das hieße ein einziges Mal oder Präsens."
+        },
+        "tomaremos": {
+          "hu": "A tomaremos jövő idő.",
+          "en": "Tomaremos is the future.",
+          "es": "Tomaremos es futuro.",
+          "de": "Tomaremos ist Futur."
+        }
+      },
+      "examples": [
+        "Siempre comíamos juntos.",
+        "Cada verano visitábamos a mis abuelos."
+      ]
+    },
+    {
+      "id": "im-03",
+      "sentence": "___ las tres de la tarde cuando llegó.",
+      "options": [
+        "Eran",
+        "Fueron",
+        "Son"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A múltbeli óra MINDIG imperfecto: eran las tres.",
+        "en": "Telling the time in the past is ALWAYS the imperfect: eran las tres.",
+        "es": "La hora en pasado va SIEMPRE en imperfecto: eran las tres.",
+        "de": "Die Uhrzeit in der Vergangenheit steht IMMER im Imperfekt."
+      },
+      "wrong": {
+        "Fueron": {
+          "hu": "A fueron itt hibás: az óra nem esemény, hanem háttér.",
+          "en": "Fueron is wrong here: the time is background, not an event.",
+          "es": "Fueron es incorrecto: la hora es fondo, no suceso.",
+          "de": "Fueron ist hier falsch: die Uhrzeit ist Hintergrund."
+        },
+        "Son": {
+          "hu": "A son jelen idő.",
+          "en": "Son is the present.",
+          "es": "Son es presente.",
+          "de": "Son ist Präsens."
+        }
+      },
+      "examples": [
+        "Era la una cuando salimos.",
+        "Eran las diez y todavía llovía."
+      ]
+    },
+    {
+      "id": "im-04",
+      "sentence": "Yo ___ cuando sonó el teléfono.",
+      "options": [
+        "dormía",
+        "dormí",
+        "duermo"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A hosszú, félbeszakított cselekvés imperfecto; a közbevágó (sonó) indefinido.",
+        "en": "The long, interrupted action takes the imperfect; the interrupting one (sonó) the preterite.",
+        "es": "La acción larga interrumpida va en imperfecto; la que interrumpe, en indefinido.",
+        "de": "Die lange, unterbrochene Handlung steht im Imperfekt, die unterbrechende im Indefinido."
+      },
+      "wrong": {
+        "dormí": {
+          "hu": "A dormí lezárt alvást jelentene, nem folyamatot.",
+          "en": "Dormí would mean a completed sleep, not an ongoing one.",
+          "es": "Dormí indicaría un sueño terminado, no en curso.",
+          "de": "Dormí hieße abgeschlossener Schlaf, kein laufender."
+        },
+        "duermo": {
+          "hu": "A duermo jelen idő.",
+          "en": "Duermo is the present.",
+          "es": "Duermo es presente.",
+          "de": "Duermo ist Präsens."
+        }
+      },
+      "examples": [
+        "Comíamos cuando llegó mi hermano.",
+        "Leía un libro cuando me llamaste."
+      ]
+    },
+    {
+      "id": "im-05",
+      "sentence": "De niño ___ (yo) al parque todos los domingos.",
+      "options": [
+        "iba",
+        "fui",
+        "voy"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az ir imperfectója iba, és a todos los domingos szokás.",
+        "en": "Ir's imperfect is iba, and todos los domingos marks a habit.",
+        "es": "El imperfecto de ir es iba, y todos los domingos es costumbre.",
+        "de": "Das Imperfekt von ir ist iba, und todos los domingos zeigt Gewohnheit."
+      },
+      "wrong": {
+        "fui": {
+          "hu": "A fui egyetlen alkalomra utal.",
+          "en": "Fui refers to one occasion.",
+          "es": "Fui se refiere a una sola vez.",
+          "de": "Fui bezieht sich auf ein einziges Mal."
+        },
+        "voy": {
+          "hu": "A voy jelen idő.",
+          "en": "Voy is the present.",
+          "es": "Voy es presente.",
+          "de": "Voy ist Präsens."
+        }
+      },
+      "examples": [
+        "Íbamos a la playa cada agosto.",
+        "Iba en bicicleta al trabajo."
+      ]
+    },
+    {
+      "id": "im-06",
+      "sentence": "La casa ___ vieja y no tenía calefacción.",
+      "options": [
+        "era",
+        "fue",
+        "estuvo"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Leírás a múltban: era. A jellemzés nem esemény.",
+        "en": "A description in the past: era. A characteristic is not an event.",
+        "es": "Descripción en pasado: era. Una cualidad no es un suceso.",
+        "de": "Beschreibung in der Vergangenheit: era."
+      },
+      "wrong": {
+        "fue": {
+          "hu": "A fue lezárt eseményhez való, nem tartós tulajdonsághoz.",
+          "en": "Fue is for a closed event, not a lasting quality.",
+          "es": "Fue es para un hecho cerrado, no para una cualidad.",
+          "de": "Fue ist für ein abgeschlossenes Ereignis, keine Eigenschaft."
+        },
+        "estuvo": {
+          "hu": "Az estar itt nem illik: a régiség állandó tulajdonság.",
+          "en": "Estar does not fit: being old is a lasting quality.",
+          "es": "Estar no encaja: ser vieja es cualidad estable.",
+          "de": "Estar passt nicht: alt sein ist eine feste Eigenschaft."
+        }
+      },
+      "examples": [
+        "El pueblo era tranquilo.",
+        "Mi profesor era muy simpático."
+      ]
+    },
+    {
+      "id": "im-07",
+      "sentence": "Mientras ella ___ la cena, yo ponía la mesa.",
+      "options": [
+        "preparaba",
+        "preparó",
+        "prepara"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A mientras két párhuzamos folyamatot köt össze: mindkettő imperfecto.",
+        "en": "Mientras links two parallel ongoing actions: both take the imperfect.",
+        "es": "Mientras une dos acciones paralelas: las dos en imperfecto.",
+        "de": "Mientras verbindet zwei parallele Handlungen: beide im Imperfekt."
+      },
+      "wrong": {
+        "preparó": {
+          "hu": "A preparó lezárná a cselekvést, a mientras viszont párhuzamot kér.",
+          "en": "Preparó would close the action, but mientras asks for parallel ones.",
+          "es": "Preparó cerraría la acción, y mientras pide simultaneidad.",
+          "de": "Preparó schlösse die Handlung ab, mientras will Gleichzeitigkeit."
+        },
+        "prepara": {
+          "hu": "A prepara jelen idő.",
+          "en": "Prepara is the present.",
+          "es": "Prepara es presente.",
+          "de": "Prepara ist Präsens."
+        }
+      },
+      "examples": [
+        "Mientras yo cocinaba, él limpiaba.",
+        "Mientras esperábamos, hablábamos."
+      ]
+    },
+    {
+      "id": "im-08",
+      "sentence": "Cuando tenía veinte años ___ (yo) más deporte que ahora.",
+      "options": [
+        "hacía",
+        "hice",
+        "haré"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Régebbi szokás, mai állapottal szembeállítva: imperfecto.",
+        "en": "A former habit contrasted with today: the imperfect.",
+        "es": "Costumbre antigua frente al presente: imperfecto.",
+        "de": "Frühere Gewohnheit im Kontrast zu heute: Imperfekt."
+      },
+      "wrong": {
+        "hice": {
+          "hu": "A hice egy alkalomra utalna.",
+          "en": "Hice would refer to one occasion.",
+          "es": "Hice se referiría a una vez.",
+          "de": "Hice bezöge sich auf ein Mal."
+        },
+        "haré": {
+          "hu": "A haré jövő idő.",
+          "en": "Haré is the future.",
+          "es": "Haré es futuro.",
+          "de": "Haré ist Futur."
+        }
+      },
+      "examples": [
+        "Antes fumaba, ahora no.",
+        "De joven trabajaba los fines de semana."
+      ]
+    },
+    {
+      "id": "im-09",
+      "sentence": "___ (nosotros) mucho la televisión cuando éramos pequeños.",
+      "options": [
+        "Veíamos",
+        "Vimos",
+        "Vemos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A ver a harmadik rendhagyó ige: veía, veíamos, mindig í-vel.",
+        "en": "Ver is the third irregular verb here: veía, veíamos, always with í.",
+        "es": "Ver es el tercer irregular: veía, veíamos, siempre con í.",
+        "de": "Ver ist das dritte unregelmäßige Verb: veía, veíamos."
+      },
+      "wrong": {
+        "Vimos": {
+          "hu": "A vimos egy konkrét alkalomra utal.",
+          "en": "Vimos points at one specific occasion.",
+          "es": "Vimos señala una ocasión concreta.",
+          "de": "Vimos zeigt auf einen konkreten Anlass."
+        },
+        "Vemos": {
+          "hu": "A vemos jelen idő.",
+          "en": "Vemos is the present.",
+          "es": "Vemos es presente.",
+          "de": "Vemos ist Präsens."
+        }
+      },
+      "examples": [
+        "Veía dibujos animados cada tarde.",
+        "Veíamos películas los sábados."
+      ]
+    },
+    {
+      "id": "im-10",
+      "sentence": "___ frío y la gente llevaba abrigo.",
+      "options": [
+        "Hacía",
+        "Hizo",
+        "Hace"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az időjárás leírása a múltban imperfecto: hacía frío.",
+        "en": "Describing the weather in the past takes the imperfect: hacía frío.",
+        "es": "Describir el tiempo en pasado va en imperfecto: hacía frío.",
+        "de": "Wetterbeschreibung in der Vergangenheit steht im Imperfekt."
+      },
+      "wrong": {
+        "Hizo": {
+          "hu": "A hizo egy lezárt időszakot jelentene (pl. ayer hizo frío), itt viszont háttér.",
+          "en": "Hizo would mark a closed span (ayer hizo frío); here it is background.",
+          "es": "Hizo marcaría un periodo cerrado; aquí es fondo.",
+          "de": "Hizo markierte einen abgeschlossenen Zeitraum; hier ist es Hintergrund."
+        },
+        "Hace": {
+          "hu": "A hace jelen idő.",
+          "en": "Hace is the present.",
+          "es": "Hace es presente.",
+          "de": "Hace ist Präsens."
+        }
+      },
+      "examples": [
+        "Llovía cuando salimos.",
+        "Hacía calor en la calle."
+      ]
+    },
+    {
+      "id": "im-11",
+      "sentence": "___ (yo) llamarte, pero me quedé sin batería.",
+      "options": [
+        "Iba a",
+        "Fui a",
+        "Voy a"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az „iba a + főnévi igenév\" múltbeli szándék: fel akartalak hívni.",
+        "en": "\"Iba a + infinitive\" is past intention: I was going to call you.",
+        "es": "«Iba a + infinitivo» es intención pasada: iba a llamarte.",
+        "de": "„Iba a + Infinitiv\" ist vergangene Absicht."
+      },
+      "wrong": {
+        "Fui a": {
+          "hu": "A fui a azt jelentené, hogy el is mentem valahova.",
+          "en": "Fui a would mean I actually went somewhere.",
+          "es": "Fui a significaría que fui de verdad.",
+          "de": "Fui a hieße, dass ich wirklich hinging."
+        },
+        "Voy a": {
+          "hu": "A voy a jelen-jövő: most fogom megtenni.",
+          "en": "Voy a is present-future: I am about to.",
+          "es": "Voy a es presente-futuro.",
+          "de": "Voy a ist Gegenwart-Zukunft."
+        }
+      },
+      "examples": [
+        "Iba a decírtelo ayer.",
+        "Íbamos a salir, pero empezó a llover."
+      ]
+    },
+    {
+      "id": "im-12",
+      "sentence": "Mi abuela siempre ___ pan los domingos.",
+      "options": [
+        "hacía",
+        "hizo",
+        "hará"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A siempre + a hét napja ismétlődő szokás: hacía.",
+        "en": "Siempre plus a weekday marks a repeated habit: hacía.",
+        "es": "Siempre y un día de la semana indican costumbre: hacía.",
+        "de": "Siempre plus Wochentag zeigt Gewohnheit: hacía."
+      },
+      "wrong": {
+        "hizo": {
+          "hu": "A hizo egyszeri alkalom lenne.",
+          "en": "Hizo would be a single occasion.",
+          "es": "Hizo sería una sola vez.",
+          "de": "Hizo wäre ein einziges Mal."
+        },
+        "hará": {
+          "hu": "A hará jövő idő.",
+          "en": "Hará is the future.",
+          "es": "Hará es futuro.",
+          "de": "Hará ist Futur."
+        }
+      },
+      "examples": [
+        "Siempre me contaba historias.",
+        "Nunca llegaba tarde."
+      ]
+    }
+  ]
+}

@@ -4,6 +4,69 @@ Read the exact versioned docs at https://docs.expo.dev/versions/v56.0.0/ before 
 
 ---
 
+# 🧭 ÉSZAK-CSILLAG: EGY MOTOR, a szó és a nyelvtan egymást húzza (Kálmán döntése, 2026-09-08)
+
+**Ez a Kimacha tanulási modelljének VÉGCÉLJA.** Minden új funkció, queue-item,
+tartalom-batch és játék ehhez mérendő. Ha egy javaslat ezt nem szolgálja, nem épül meg.
+Ha Kálmán azt mondja „írj valamit a Kimacha appba", a terv ELŐSZÖR ehhez a modellhez
+igazodjon, és a válaszban legyen benne, melyik pontját viszi előre.
+
+## A döntés
+
+**NEM két külön játék** (szó-fül + nyelvtan-fül). **Egy motor**, három item-típussal,
+egy ütemezővel.
+
+Indok: a nyelvtan nem második tartalomtípus, hanem az, amit a szavakkal CSINÁLSZ.
+Két fül = két SRS, két tartalom-pipeline, két UI, és a tanuló a könnyebb fülön parkol le.
+Duplázott munka, nulla plusz tanulás.
+
+## 1. Item-típusok (egy készlet, egy SRS, egy ütemező)
+
+| Típus | Mit kérdez | Belépési feltétel |
+| --- | --- | --- |
+| `WORD` | jelentés-előhívás (a mai kártya) | nincs |
+| `FORM` | a szó ragozott alakja (hablo / hablas / habla) | az alapszó ismert |
+| `SENTENCE` | mondat építése, sorrendje, kiegészítése | a minta MINDEN szava ismert |
+
+## 2. Nyelvtan-unlock = függőség, nem szint
+
+Egy grammar-pattern akkor nyílik, ha a HOZZÁ KELLŐ szavak ismertek, nem akkor, ha a
+tanuló elért egy globális szószám-küszöböt. Minden pattern deklarálja a saját
+függőségét (pl. `presente_ar` = 5 ismert -ar ige + személyes névmások).
+
+Miért: 500 véletlen főnév nulla igével nem jogosít jelen időre, 40 jól választott szó
+viszont igen. A globális szószám rossz metrika.
+
+## 3. Váltakozás = ütemező, nem mód-váltó gomb
+
+A tanuló sosem választ „ma szó-nap, holnap nyelvtan-nap". Egy menet vegyesen adja, amit
+az ütemező esedékesnek lát: új szó, ha a nyelvtan-készlet éhezik, nyelvtan-drill, ha elég
+szó beérett. Az arány magától tolódik.
+
+## 4. Kemény tartalom-szabály
+
+**Soha nem jelenhet meg mondat, amiben ismeretlen szó van.**
+
+Ez az egy szabály kényszeríti ki, hogy a szókincs és a nyelvtan egymást húzza előre.
+Ugyanez a szabály él a Game fülön is (`GAMES.md` 0. szekció: `lib/games/vocabPool.ts`
+az EGYETLEN szóforrás, a nem-tanult token `GlossText`-tel jelölt).
+
+## Mit jelent ez a napi munkára
+
+- **Új feature terve**: mondd meg, melyik item-típust érinti (`WORD` / `FORM` / `SENTENCE`)
+  és milyen függőséget deklarál.
+- **Új szó-batch**: nem csak darabszám, hanem MELYIK pattern függőségét tölti be.
+- **Új játék**: csak ismert szóból dolgozhat, ugyanabból a készletből.
+- **„Nyelvtan-fül" / külön nyelvtan-mód javaslat**: elutasítva, ne épüljön meg.
+
+## Státusz: CÉL, még NINCS lekódolva
+
+A mai app `WORD`-only + topic-unlock. Hátra van: a `FORM` és `SENTENCE` item-típus, a
+pattern-szintű dependency-deklaráció, és a vegyes ütemező. **Design-first**, mint a
+mátrix per-ág szó-modell (`BUILD.md` Q1): előbb terv, utána kód.
+
+---
+
 # 🇬🇧 English-target track (hu→en course), IN PROGRESS (A1 batch 1 KÉSZ)
 
 A `kimacha` egy spanyol-központú app: a szókártyák egyetlen megosztott készlet

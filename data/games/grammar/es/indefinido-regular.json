@@ -1,0 +1,515 @@
+{
+  "topic": "indefinido-regular",
+  "level": "A2",
+  "title": {
+    "hu": "Befejezett múlt: szabályos igék",
+    "en": "Preterite: regular verbs",
+    "es": "Pretérito indefinido: verbos regulares",
+    "de": "Indefinido: regelmäßige Verben"
+  },
+  "rule": {
+    "hu": "Ez a lezárt, befejezett múlt: ami megtörtént és véget ért. -AR: -é, -aste, -ó, -amos, -asteis, -aron (hablé, hablaste, habló). -ER és -IR ugyanaz: -í, -iste, -ió, -imos, -isteis, -ieron (comí, comiste, comió; viví, viviste, vivió). Az ÉKEZET a yo és az él alakon dönt: hablo (most beszélek) vs habló (ő beszélt), hablé (én beszéltem). Tipikus kísérői: ayer, anoche, el año pasado, en 2019, hace dos días.",
+    "en": "This is the finished past: it happened and it is over. -AR: -é, -aste, -ó, -amos, -asteis, -aron (hablé, hablaste, habló). -ER and -IR share one set: -í, -iste, -ió, -imos, -isteis, -ieron (comí, comió; viví, vivió). The ACCENT decides the person: hablo (I speak now) vs habló (he spoke) vs hablé (I spoke). Typical companions: ayer, anoche, el año pasado, en 2019, hace dos días.",
+    "es": "Es el pasado terminado: pasó y se acabó. -AR: -é, -aste, -ó, -amos, -asteis, -aron. -ER e -IR comparten: -í, -iste, -ió, -imos, -isteis, -ieron. La TILDE cambia la persona: hablo, habló, hablé. Marcadores típicos: ayer, anoche, el año pasado, en 2019, hace dos días.",
+    "de": "Das ist die abgeschlossene Vergangenheit: es geschah und ist vorbei. -AR: -é, -aste, -ó, -amos, -asteis, -aron. -ER und -IR teilen sich: -í, -iste, -ió, -imos, -isteis, -ieron. Der AKZENT entscheidet die Person: hablo, habló, hablé. Typische Begleiter: ayer, anoche, el año pasado, en 2019, hace dos días."
+  },
+  "more": {
+    "hu": "Három csapda. 1) Az -ar és az -ir igék mi-alakja jelen és múlt időben AZONOS: hablamos, vivimos (a szövegkörnyezet dönt), az -er igéé viszont különbözik: comemos most, comimos akkor. 2) Az ékezet nem díszítés: olvido (elfelejtem) vs olvidó (elfelejtette). 3) Írásképi váltás a yo alakban: buscar → busqué, llegar → llegué, empezar → empecé, hogy a kiejtés ne változzon.",
+    "en": "Three traps. 1) For -ar and -ir verbs the we-form is IDENTICAL in the present and the preterite: hablamos, vivimos (context decides); for -er verbs it differs: comemos now, comimos then. 2) The accent is not decoration: olvido (I forget) vs olvidó (he forgot). 3) Spelling shifts in the yo form: buscar → busqué, llegar → llegué, empezar → empecé, so the sound stays the same.",
+    "es": "Tres trampas. 1) En -ar e -ir la forma de nosotros es IGUAL en presente y en indefinido: hablamos, vivimos; en -er cambia: comemos y comimos. 2) La tilde no es adorno: olvido y olvidó. 3) Cambios ortográficos en yo: busqué, llegué, empecé.",
+    "de": "Drei Fallen. 1) Bei -ar und -ir ist die wir-Form im Präsens und im Indefinido GLEICH: hablamos, vivimos; bei -er nicht: comemos, comimos. 2) Der Akzent ist keine Zierde: olvido und olvidó. 3) Schreibwechsel in der yo-Form: busqué, llegué, empecé."
+  },
+  "glossary": [
+    {
+      "word": "anoche",
+      "gloss": {
+        "hu": "tegnap este",
+        "en": "last night",
+        "es": "anoche",
+        "de": "gestern Abend"
+      }
+    },
+    {
+      "word": "pasado",
+      "gloss": {
+        "hu": "múlt, elmúlt",
+        "en": "past, last",
+        "es": "pasado",
+        "de": "vergangen, letzter"
+      }
+    },
+    {
+      "word": "regresé",
+      "gloss": {
+        "hu": "visszatértem",
+        "en": "I came back",
+        "es": "yo regresé",
+        "de": "ich kam zurück"
+      }
+    },
+    {
+      "word": "empecé",
+      "gloss": {
+        "hu": "elkezdtem",
+        "en": "I started",
+        "es": "yo empecé",
+        "de": "ich begann"
+      }
+    },
+    {
+      "word": "busqué",
+      "gloss": {
+        "hu": "kerestem",
+        "en": "I looked for",
+        "es": "yo busqué",
+        "de": "ich suchte"
+      }
+    },
+    {
+      "word": "llegué",
+      "gloss": {
+        "hu": "megérkeztem",
+        "en": "I arrived",
+        "es": "yo llegué",
+        "de": "ich kam an"
+      }
+    },
+    {
+      "word": "curso",
+      "gloss": {
+        "hu": "tanfolyam",
+        "en": "course",
+        "es": "el curso",
+        "de": "Kurs"
+      }
+    },
+    {
+      "word": "lección",
+      "gloss": {
+        "hu": "lecke",
+        "en": "lesson",
+        "es": "la lección",
+        "de": "Lektion"
+      }
+    },
+    {
+      "word": "mandé",
+      "gloss": {
+        "hu": "küldtem",
+        "en": "I sent",
+        "es": "yo mandé",
+        "de": "ich schickte"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "ir-01",
+      "sentence": "Ayer ___ con mi madre por teléfono.",
+      "options": [
+        "hablé",
+        "hablo",
+        "hablaba"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az ayer lezárt időpont, ezért befejezett múlt: hablé.",
+        "en": "Ayer is a closed point in time, so the preterite: hablé.",
+        "es": "Ayer es un momento cerrado, por eso indefinido: hablé.",
+        "de": "Ayer ist ein abgeschlossener Zeitpunkt, also Indefinido: hablé."
+      },
+      "wrong": {
+        "hablo": {
+          "hu": "A hablo jelen idő: most beszélek.",
+          "en": "Hablo is the present: I am speaking now.",
+          "es": "Hablo es presente: hablo ahora.",
+          "de": "Hablo ist Präsens: ich spreche jetzt."
+        },
+        "hablaba": {
+          "hu": "A hablaba szokást vagy hátteret jelöl, nem egyszeri befejezett tettet.",
+          "en": "Hablaba marks a habit or background, not one finished act.",
+          "es": "Hablaba marca costumbre o fondo, no un acto terminado.",
+          "de": "Hablaba markiert Gewohnheit oder Hintergrund, keine abgeschlossene Tat."
+        }
+      },
+      "examples": [
+        "Ayer trabajé hasta las ocho.",
+        "Anoche cené con mis amigos."
+      ]
+    },
+    {
+      "id": "ir-02",
+      "sentence": "¿A qué hora ___ (tú) del trabajo ayer?",
+      "options": [
+        "saliste",
+        "sales",
+        "salió"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A tú alakja -ir igénél -iste: saliste.",
+        "en": "The tú form of an -ir verb is -iste: saliste.",
+        "es": "La forma de tú en -ir es -iste: saliste.",
+        "de": "Die tú-Form bei -ir ist -iste: saliste."
+      },
+      "wrong": {
+        "sales": {
+          "hu": "A sales jelen idő.",
+          "en": "Sales is the present.",
+          "es": "Sales es presente.",
+          "de": "Sales ist Präsens."
+        },
+        "salió": {
+          "hu": "A salió az ő alakja, nem a tiéd.",
+          "en": "Salió is the he/she form, not yours.",
+          "es": "Salió es de él/ella, no de tú.",
+          "de": "Salió ist die er/sie-Form, nicht deine."
+        }
+      },
+      "examples": [
+        "¿Cuándo llegaste a México?",
+        "¿Qué comiste ayer?"
+      ]
+    },
+    {
+      "id": "ir-03",
+      "sentence": "Mi hermano ___ la casa el mes pasado.",
+      "options": [
+        "vendió",
+        "vende",
+        "vendí"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Egy személy (él) + -er ige múltban: -ió, ékezettel: vendió.",
+        "en": "One person (él) plus an -er verb in the past: -ió with the accent: vendió.",
+        "es": "Una persona (él) y un verbo -er en pasado: -ió con tilde: vendió.",
+        "de": "Eine Person (él) und ein -er-Verb in der Vergangenheit: -ió mit Akzent."
+      },
+      "wrong": {
+        "vende": {
+          "hu": "A vende jelen idő: most árulja.",
+          "en": "Vende is the present: he is selling now.",
+          "es": "Vende es presente.",
+          "de": "Vende ist Präsens."
+        },
+        "vendí": {
+          "hu": "A vendí azt jelenti, hogy ÉN adtam el.",
+          "en": "Vendí means that I sold it.",
+          "es": "Vendí significa que lo vendí yo.",
+          "de": "Vendí heißt, dass ICH verkauft habe."
+        }
+      },
+      "examples": [
+        "Ella escribió una carta.",
+        "El tren salió a las seis."
+      ]
+    },
+    {
+      "id": "ir-04",
+      "sentence": "Nosotros ___ en un hotel pequeño la semana pasada.",
+      "options": [
+        "comimos",
+        "comemos",
+        "comen"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az -er igék mi-alakja múltban -imos: comimos (jelenben comemos).",
+        "en": "The we-form of an -er verb in the past is -imos: comimos (present: comemos).",
+        "es": "La forma de nosotros en -er en pasado es -imos: comimos.",
+        "de": "Die wir-Form der -er-Verben in der Vergangenheit ist -imos: comimos."
+      },
+      "wrong": {
+        "comemos": {
+          "hu": "A comemos jelen idő, a mondat viszont a múlt hétről szól.",
+          "en": "Comemos is the present, but the sentence is about last week.",
+          "es": "Comemos es presente, pero la frase habla de la semana pasada.",
+          "de": "Comemos ist Präsens, der Satz handelt aber von letzter Woche."
+        },
+        "comen": {
+          "hu": "A comen róluk szól, nem rólunk.",
+          "en": "Comen is about them, not about us.",
+          "es": "Comen habla de ellos, no de nosotros.",
+          "de": "Comen spricht von ihnen, nicht von uns."
+        }
+      },
+      "examples": [
+        "Bebimos café después de la cena.",
+        "Aprendimos mucho ese año."
+      ]
+    },
+    {
+      "id": "ir-05",
+      "sentence": "Ellos ___ la película anoche.",
+      "options": [
+        "vieron",
+        "ven",
+        "vimos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az ellos alakja -er/-ir igénél -ieron; a ver rövid töve miatt vieron (ékezet nélkül).",
+        "en": "The ellos form of an -er/-ir verb is -ieron; ver has a short stem, so vieron (no accent).",
+        "es": "La forma de ellos en -er/-ir es -ieron; ver da vieron, sin tilde.",
+        "de": "Die ellos-Form bei -er/-ir ist -ieron; ver ergibt vieron, ohne Akzent."
+      },
+      "wrong": {
+        "ven": {
+          "hu": "A ven jelen idő.",
+          "en": "Ven is the present.",
+          "es": "Ven es presente.",
+          "de": "Ven ist Präsens."
+        },
+        "vimos": {
+          "hu": "A vimos ránk vonatkozik.",
+          "en": "Vimos is about us.",
+          "es": "Vimos habla de nosotros.",
+          "de": "Vimos spricht von uns."
+        }
+      },
+      "examples": [
+        "Los niños salieron temprano.",
+        "Mis padres vivieron en Puebla."
+      ]
+    },
+    {
+      "id": "ir-06",
+      "sentence": "Yo ___ a la tienda y compré pan.",
+      "options": [
+        "llegué",
+        "llego",
+        "llegé"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A -gar végű igék yo-alakja -gué lesz, hogy a g kemény maradjon: llegué.",
+        "en": "Verbs in -gar take -gué in the yo form so the g stays hard: llegué.",
+        "es": "Los verbos en -gar hacen -gué en yo para mantener el sonido: llegué.",
+        "de": "Verben auf -gar bilden -gué in der yo-Form, damit das g hart bleibt."
+      },
+      "wrong": {
+        "llego": {
+          "hu": "A llego jelen idő.",
+          "en": "Llego is the present.",
+          "es": "Llego es presente.",
+          "de": "Llego ist Präsens."
+        },
+        "llegé": {
+          "hu": "Ilyen alak nincs: a g elé u kell az e előtt.",
+          "en": "That form does not exist: a u is needed before the e.",
+          "es": "Esa forma no existe: hace falta la u ante la e.",
+          "de": "Diese Form gibt es nicht: vor dem e braucht es ein u."
+        }
+      },
+      "examples": [
+        "Busqué las llaves toda la mañana.",
+        "Empecé el curso en enero."
+      ]
+    },
+    {
+      "id": "ir-07",
+      "sentence": "Ella ___ la ventana porque hacía frío.",
+      "options": [
+        "cerró",
+        "cerro",
+        "cierra"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Múlt idejű ő-alak, ékezettel: cerró. A tőhangváltás (cierra) csak jelen időben van.",
+        "en": "Third person preterite with the accent: cerró. The stem change (cierra) only happens in the present.",
+        "es": "Tercera persona del indefinido con tilde: cerró. El diptongo (cierra) es solo del presente.",
+        "de": "3. Person Indefinido mit Akzent: cerró. Der Diphthong (cierra) gehört nur ins Präsens."
+      },
+      "wrong": {
+        "cerro": {
+          "hu": "Ékezet nélkül ez a szó dombot jelent, vagy azt, hogy én zárom be.",
+          "en": "Without the accent it means a hill, or \"I close\".",
+          "es": "Sin tilde es un monte, o «yo cierro».",
+          "de": "Ohne Akzent bedeutet es Hügel oder „ich schließe\"."
+        },
+        "cierra": {
+          "hu": "A cierra jelen idő.",
+          "en": "Cierra is the present.",
+          "es": "Cierra es presente.",
+          "de": "Cierra ist Präsens."
+        }
+      },
+      "examples": [
+        "El niño rompió el vaso.",
+        "El profesor explicó la lección."
+      ]
+    },
+    {
+      "id": "ir-08",
+      "sentence": "¿Ustedes ___ el mensaje que les mandé?",
+      "options": [
+        "recibieron",
+        "reciben",
+        "recibimos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az ustedes mindig többes szám harmadik személy: recibieron.",
+        "en": "Ustedes always takes the third person plural: recibieron.",
+        "es": "Ustedes siempre lleva tercera persona del plural: recibieron.",
+        "de": "Ustedes steht immer in der 3. Person Plural: recibieron."
+      },
+      "wrong": {
+        "reciben": {
+          "hu": "A reciben jelen idő.",
+          "en": "Reciben is the present.",
+          "es": "Reciben es presente.",
+          "de": "Reciben ist Präsens."
+        },
+        "recibimos": {
+          "hu": "A recibimos ránk vonatkozik.",
+          "en": "Recibimos is about us.",
+          "es": "Recibimos habla de nosotros.",
+          "de": "Recibimos spricht von uns."
+        }
+      },
+      "examples": [
+        "¿Ustedes hablaron con el médico?",
+        "Ustedes comieron muy tarde."
+      ]
+    },
+    {
+      "id": "ir-09",
+      "sentence": "En 2019 nosotros ___ a México.",
+      "options": [
+        "viajamos",
+        "viajábamos",
+        "viajaremos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Konkrét év = lezárt esemény: viajamos. (Ez az alak jelenben is így néz ki, itt az évszám dönt.)",
+        "en": "A specific year means a closed event: viajamos. (The form looks the same in the present; the year decides.)",
+        "es": "Un año concreto es un hecho cerrado: viajamos. La forma coincide con el presente y el año lo aclara.",
+        "de": "Ein konkretes Jahr ist ein abgeschlossenes Ereignis: viajamos. Die Form gleicht dem Präsens, das Jahr entscheidet."
+      },
+      "wrong": {
+        "viajábamos": {
+          "hu": "Ez szokást jelentene: régen minden évben utaztunk.",
+          "en": "That would mean a habit: we used to travel every year.",
+          "es": "Eso indicaría costumbre: viajábamos cada año.",
+          "de": "Das hieße Gewohnheit: wir reisten jedes Jahr."
+        },
+        "viajaremos": {
+          "hu": "A viajaremos jövő idő.",
+          "en": "Viajaremos is the future.",
+          "es": "Viajaremos es futuro.",
+          "de": "Viajaremos ist Futur."
+        }
+      },
+      "examples": [
+        "El año pasado cambiamos de casa.",
+        "En marzo empezamos el trabajo."
+      ]
+    },
+    {
+      "id": "ir-10",
+      "sentence": "Yo no ___ nada ayer porque estuve enfermo.",
+      "options": [
+        "comí",
+        "como",
+        "comía"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Tagadásban is ugyanaz a múlt: no comí, egy konkrét naphoz kötve.",
+        "en": "The negative uses the same past: no comí, tied to one specific day.",
+        "es": "En negativo el pasado es el mismo: no comí, atado a un día concreto.",
+        "de": "Verneint gilt dieselbe Vergangenheit: no comí, an einen Tag gebunden."
+      },
+      "wrong": {
+        "como": {
+          "hu": "A como jelen idő.",
+          "en": "Como is the present.",
+          "es": "Como es presente.",
+          "de": "Como ist Präsens."
+        },
+        "comía": {
+          "hu": "A comía azt jelentené, hogy akkoriban általában nem ettem.",
+          "en": "Comía would mean that back then I generally did not eat.",
+          "es": "Comía diría que en aquella época no solía comer.",
+          "de": "Comía hieße, dass ich damals allgemein nicht aß."
+        }
+      },
+      "examples": [
+        "No salí de casa el domingo.",
+        "No recibí tu mensaje."
+      ]
+    },
+    {
+      "id": "ir-11",
+      "sentence": "El concierto ___ a las nueve y terminó a las once.",
+      "options": [
+        "empezó",
+        "empieza",
+        "empezaba"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Pontos kezdet és vég = két lezárt esemény: empezó y terminó.",
+        "en": "A definite start and end are two closed events: empezó y terminó.",
+        "es": "Un principio y un final concretos son hechos cerrados: empezó y terminó.",
+        "de": "Ein klarer Anfang und ein klares Ende sind abgeschlossene Ereignisse."
+      },
+      "wrong": {
+        "empieza": {
+          "hu": "A empieza jelen idő, a mondat másik fele viszont múlt.",
+          "en": "Empieza is the present, while the other half of the sentence is past.",
+          "es": "Empieza es presente, pero la otra mitad de la frase es pasado.",
+          "de": "Empieza ist Präsens, die andere Satzhälfte aber Vergangenheit."
+        },
+        "empezaba": {
+          "hu": "Ez folyamatot vagy szokást írna le, nem egyszeri kezdést.",
+          "en": "That would describe an ongoing habit, not one start.",
+          "es": "Eso describiría una costumbre, no un comienzo único.",
+          "de": "Das beschriebe eine Gewohnheit, keinen einmaligen Beginn."
+        }
+      },
+      "examples": [
+        "La clase terminó a las dos.",
+        "La tienda abrió el lunes."
+      ]
+    },
+    {
+      "id": "ir-12",
+      "sentence": "Hace dos días ___ (yo) a mi hermana en el aeropuerto.",
+      "options": [
+        "esperé",
+        "espero",
+        "esperaba"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A hace dos días lezárt időpontot jelöl: esperé.",
+        "en": "Hace dos días marks a closed moment: esperé.",
+        "es": "Hace dos días marca un momento cerrado: esperé.",
+        "de": "Hace dos días markiert einen abgeschlossenen Moment: esperé."
+      },
+      "wrong": {
+        "espero": {
+          "hu": "Az espero jelen idő: most várok.",
+          "en": "Espero is the present: I am waiting now.",
+          "es": "Espero es presente.",
+          "de": "Espero ist Präsens."
+        },
+        "esperaba": {
+          "hu": "Az esperaba a háttér: éppen vártam, amikor valami történt.",
+          "en": "Esperaba is background: I was waiting when something happened.",
+          "es": "Esperaba es el fondo: estaba esperando cuando pasó algo.",
+          "de": "Esperaba ist Hintergrund: ich wartete gerade, als etwas geschah."
+        }
+      },
+      "examples": [
+        "Hace un mes visité a mi familia.",
+        "Hace tres años cambié de trabajo."
+      ]
+    }
+  ]
+}
