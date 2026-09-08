@@ -129,6 +129,12 @@ export default function BubblePopScreen() {
   const [round, setRound] = useState(0);
   const [categoryLabel, setCategoryLabel] = useState('');
   const [bubbles, setBubbles] = useState<BubbleTileState[]>([]);
+  // Kept in sync in an effect (not during render) so the tap handlers can read
+  // the current board without React Compiler flagging a render-time ref write.
+  const bubblesRef = useRef<BubbleTileState[]>([]);
+  useEffect(() => {
+    bubblesRef.current = bubbles;
+  }, [bubbles]);
   const [flashId, setFlashId] = useState<string | null>(null);
   const [reveal, setReveal] = useState<GlossInfo | null>(null);
   const [roundClock, setRoundClock] = useState<number | null>(null);
@@ -312,36 +318,39 @@ export default function BubblePopScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session.over]);
 
+  // The score, the lives and the attempt log are side effects, so they run
+  // HERE and not inside a setBubbles updater: React may call an updater more
+  // than once for the same event (StrictMode, a re-render it throws away), and
+  // that is exactly the shape of bug that made losing a life crash the screen
+  // in FB162. The updater below only removes a bubble.
   const handlePop = (id: string) => {
     if (session.over || session.paused) return;
-    setBubbles((prev) => {
-      const bubble = prev.find((b) => b.id === id);
-      if (!bubble) return prev;
-      getDb().recordAttempt(bubble.wordId, 'game:bubble-pop', bubble.isGood, 0).catch(() => {});
-      if (bubble.isGood) {
-        session.bumpCombo();
-        session.addScore(Math.round(100 * comboMultiplier(session.combo + 1)));
-        return prev.filter((b) => b.id !== id);
-      }
-      session.resetCombo();
-      session.loseLife();
-      setFlashId(id);
-      setTimeout(() => setFlashId(null), 250);
-      setTimeout(() => setBubbles((cur) => cur.filter((b) => b.id !== id)), 260);
-      return prev;
-    });
+    const bubble = bubblesRef.current.find((b) => b.id === id);
+    if (!bubble) return;
+
+    getDb().recordAttempt(bubble.wordId, 'game:bubble-pop', bubble.isGood, 0).catch(() => {});
+    if (bubble.isGood) {
+      session.bumpCombo();
+      session.addScore(Math.round(100 * comboMultiplier(session.combo + 1)));
+      setBubbles((prev) => prev.filter((b) => b.id !== id));
+      return;
+    }
+    session.resetCombo();
+    session.loseLife();
+    setFlashId(id);
+    setTimeout(() => setFlashId(null), 250);
+    setTimeout(() => setBubbles((prev) => prev.filter((b) => b.id !== id)), 260);
   };
 
   const handleReachTop = (id: string) => {
-    setBubbles((prev) => {
-      const bubble = prev.find((b) => b.id === id);
-      if (!bubble) return prev;
-      if (bubble.isGood) {
-        session.resetCombo();
-        getDb().recordAttempt(bubble.wordId, 'game:bubble-pop', false, 0).catch(() => {});
-      }
-      return prev.filter((b) => b.id !== id);
-    });
+    const bubble = bubblesRef.current.find((b) => b.id === id);
+    if (!bubble) return;
+    if (bubble.isGood) {
+      // A good bubble that floated away is a miss, not a life (K7).
+      session.resetCombo();
+      getDb().recordAttempt(bubble.wordId, 'game:bubble-pop', false, 0).catch(() => {});
+    }
+    setBubbles((prev) => prev.filter((b) => b.id !== id));
   };
 
   const handleReveal = (id: string) => {

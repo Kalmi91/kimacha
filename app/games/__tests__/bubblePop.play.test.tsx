@@ -16,6 +16,8 @@ jest.mock('expo-speech', () => ({
   getAvailableVoicesAsync: jest.fn(async () => []),
 }));
 
+import { StrictMode } from 'react';
+
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { getTopicName, getTopicsForLevel } from '@/data/topics';
@@ -138,6 +140,37 @@ describe('bubble-pop playthrough (GAMES.md 4.2)', () => {
     }
 
     expect(screen.queryByText('Play again')).toBeTruthy();
+
+    view.unmount();
+  });
+});
+
+// The same StrictMode guard as word-rain: a side effect left inside a setState
+// updater would double-charge the life for one wrong pop (FB162 bug class).
+describe('bubble-pop under StrictMode (double-invoked updaters)', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+    resetAnimations();
+  });
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+
+  it('still charges exactly one life for one wrong pop', async () => {
+    await seedPractisedWords({ source: 'hu', target: 'es', level: LEVEL, count: 120 });
+    const view = render(
+      <StrictMode>
+        <BubblePopScreen />
+      </StrictMode>
+    );
+    await flushAsync(6);
+
+    const topicId = announcedTopicId()!;
+    const wrong = bubbleWordIds().find((id) => topicOf(id) !== topicId)!;
+    fireEvent.press(screen.getByTestId(`bubble-${wrong}`));
+    await flushAsync();
+
+    expect(livesShown()).toBe(4);
 
     view.unmount();
   });

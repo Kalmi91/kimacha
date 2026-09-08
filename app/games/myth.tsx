@@ -161,11 +161,12 @@ export default function MythScreen() {
     setGuess(g);
     const correct = g === current.verdict;
     setAnswers((a) => [...a, { item: current, guess: g, correct }]);
-    setStreak((prev) => {
-      const next = correct ? prev + 1 : 0;
-      setLongestStreak((best2) => Math.max(best2, next));
-      return next;
-    });
+    // The streak and its record are computed here, not inside a setStreak
+    // updater calling another setState: an updater can run more than once per
+    // event, and nesting state writes inside one is the FB162 crash shape.
+    const nextStreak = correct ? streak + 1 : 0;
+    setStreak(nextStreak);
+    setLongestStreak((best2) => Math.max(best2, nextStreak));
   };
 
   const next = () => {

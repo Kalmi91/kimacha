@@ -15,6 +15,8 @@ jest.mock('expo-speech', () => ({
   getAvailableVoicesAsync: jest.fn(async () => []),
 }));
 
+import { StrictMode } from 'react';
+
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
 
 import { advanceTimers, flushAsync, learnedFormOf, seedPractisedWords } from '../../../testing/gameTestUtils';
@@ -138,6 +140,38 @@ describe('word-rain playthrough (GAMES.md 4.1)', () => {
     }
 
     expect(screen.queryByText('Play again')).toBeTruthy();
+
+    view.unmount();
+  });
+});
+
+// StrictMode double-invokes state updaters in development. Any side effect
+// left inside one (score, lives, DB write) would therefore fire twice for one
+// tap; this is the FB162 bug class, so the guard is a test, not a comment.
+describe('word-rain under StrictMode (double-invoked updaters)', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+    resetAnimations();
+  });
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+
+  it('still charges exactly one life for one wrong tap', async () => {
+    await seedPractisedWords({ source: 'hu', target: 'es', level: LEVEL, count: 30 });
+    const view = render(
+      <StrictMode>
+        <WordRainScreen />
+      </StrictMode>
+    );
+    await flushAsync();
+    fireEvent.press(screen.getByText('Play'));
+    for (let i = 0; i < 4; i++) await advanceTimers(800);
+    await flushAsync();
+
+    expect(tapWrongTile()).toBe(true);
+    await flushAsync();
+    expect(livesShown()).toBe(2);
 
     view.unmount();
   });
