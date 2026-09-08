@@ -343,6 +343,7 @@ export default function OddOneOutScreen() {
             return (
               <Pressable
                 key={item.wordId}
+                testID="odd-option"
                 style={[styles.tile, { backgroundColor: bg, borderColor: border }]}
                 onPress={() => selectOption(i)}
                 onLongPress={() => handleReveal(item)}

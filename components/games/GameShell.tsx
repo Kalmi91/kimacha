@@ -3,6 +3,7 @@ import { Alert, Platform, Pressable, StyleSheet, Text, View } from 'react-native
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
+import { comboMultiplier } from '@/lib/games/scoring';
 
 // GAMES.md 3. (F0): "közös keret: fejléc, pont, élet, idő, szünet,
 // kilépés-megerősítés". Every game screen wraps its board in this; GameShell
@@ -20,6 +21,10 @@ interface Props {
   title: string;
   score?: number;
   lives?: number;
+  // GAMES.md 4.1 acceptance: "a kombó és az élet a GameShell fejlécében
+  // látszik". The header only showed lives, so the multiplier the score math
+  // already applied was invisible; it now sits next to the hearts from ×1.25 up.
+  combo?: number;
   timeLabel?: string;
   paused?: boolean;
   pauseOverlay?: boolean; // default true
@@ -32,6 +37,7 @@ export default function GameShell({
   title,
   score,
   lives,
+  combo,
   timeLabel,
   paused = false,
   pauseOverlay = true,
@@ -74,10 +80,23 @@ export default function GameShell({
         )}
       </View>
 
-      {score !== undefined || lives !== undefined || timeLabel ? (
+      {score !== undefined || lives !== undefined || combo !== undefined || timeLabel ? (
         <View style={styles.statRow}>
-          {score !== undefined ? <Text style={[styles.stat, { color: colors.text }]}>⭐ {score}</Text> : null}
-          {lives !== undefined ? <Text style={styles.stat}>{'❤️'.repeat(Math.max(0, lives))}</Text> : null}
+          {score !== undefined ? (
+            <Text testID="game-score" style={[styles.stat, { color: colors.text }]}>
+              ⭐ {score}
+            </Text>
+          ) : null}
+          {lives !== undefined ? (
+            <Text testID="game-lives" style={styles.stat}>
+              {'❤️'.repeat(Math.max(0, lives))}
+            </Text>
+          ) : null}
+          {combo !== undefined && combo > 1 ? (
+            <Text testID="game-combo" style={[styles.stat, { color: colors.tint }]}>
+              ×{comboMultiplier(combo)}
+            </Text>
+          ) : null}
           {timeLabel ? <Text style={[styles.stat, { color: colors.text }]}>⏱ {timeLabel}</Text> : null}
         </View>
       ) : null}

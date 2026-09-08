@@ -11,7 +11,7 @@ import { normalizeWordToken, type Level } from '@/data/words';
 import { getGameDef, gameName } from '@/lib/games/registry';
 import { getLearnedPool, pickStruggler, type PoolEntry } from '@/lib/games/vocabPool';
 import type { DistractMode } from '@/lib/games/distract';
-import { buildFallingRound, fallingLane, type WordRainDirection } from '@/lib/games/wordRain';
+import { buildFallingRound, fallingLane, laneFallDurations, type WordRainDirection } from '@/lib/games/wordRain';
 import { useGameSession } from '@/lib/games/session';
 import { comboMultiplier, getGameBest, recordGameResult } from '@/lib/games/scoring';
 import { hashString } from '@/lib/shuffle';
@@ -41,18 +41,17 @@ interface FallingTile {
   isNew: boolean;
   x: number;
   width: number; // FB162: the tile owns its lane, so long words cannot overlap
+  durationMs: number; // GAMES.md 4.1: every lane falls at its own speed
 }
 
 function FallingWordTile({
   tile,
-  durationMs,
   boardHeight,
   onLand,
   onTap,
   colors,
 }: {
   tile: FallingTile;
-  durationMs: number;
   boardHeight: number;
   onLand: (id: string) => void;
   onTap: (id: string) => void;
@@ -61,7 +60,7 @@ function FallingWordTile({
   const translateY = useSharedValue(-30);
 
   useEffect(() => {
-    translateY.value = withTiming(boardHeight, { duration: durationMs, easing: Easing.linear }, (finished) => {
+    translateY.value = withTiming(boardHeight, { duration: tile.durationMs, easing: Easing.linear }, (finished) => {
       if (finished) runOnJS(onLand)(tile.id);
     });
     return () => cancelAnimation(translateY);
@@ -74,6 +73,7 @@ function FallingWordTile({
     <Animated.View style={[styles.fallingTile, { left: tile.x, width: tile.width }, style]}>
       <Pressable onPress={() => onTap(tile.id)} hitSlop={6}>
         <Text
+          testID={`word-rain-tile-${tile.id}`}
           numberOfLines={1}
           style={[
             styles.fallingText,
@@ -200,6 +200,12 @@ export default function WordRainScreen() {
         seed: hashString(`${entry.wordId}:${roundKey}`),
       });
 
+      const durations = laneFallDurations(
+        round.words.length,
+        currentDurationMs(),
+        hashString(`fall:${entry.wordId}:${roundKey}`),
+        MIN_FALL_MS
+      );
       const newTiles: FallingTile[] = round.words.map((w, i) => {
         const lane = fallingLane(i, round.words.length, boardWidth);
         return {
@@ -210,6 +216,7 @@ export default function WordRainScreen() {
           isNew: w.isTarget && entry.isNew,
           x: lane.x,
           width: lane.width,
+          durationMs: durations[i],
         };
       });
 
@@ -217,7 +224,7 @@ export default function WordRainScreen() {
       setTiles(newTiles);
       catchStartRef.current = Date.now();
     },
-    [direction, learnedLang, nativeLang, pool, effectiveDistractorMode, fallingCount, roundKey, boardWidth]
+    [direction, learnedLang, nativeLang, pool, effectiveDistractorMode, currentDurationMs, fallingCount, roundKey, boardWidth]
   );
 
   const nextRound = useCallback(() => {
@@ -354,6 +361,7 @@ export default function WordRainScreen() {
       title={gameName(gameDef, contentLang)}
       score={session.score}
       lives={session.lives}
+      combo={session.combo}
       paused={session.paused}
       pauseOverlay={!intro}
       onExit={() => router.back()}
@@ -381,7 +389,6 @@ export default function WordRainScreen() {
                 <FallingWordTile
                   key={tile.id}
                   tile={tile}
-                  durationMs={currentDurationMs()}
                   boardHeight={boardHeight}
                   onLand={handleLand}
                   onTap={(id) => {
@@ -393,7 +400,9 @@ export default function WordRainScreen() {
               ))}
             </View>
             <View style={[styles.promptBar, { backgroundColor: colors.card }]}>
-              <Text style={[styles.promptText, { color: colors.text }]}>{prompt}</Text>
+              <Text testID="word-rain-prompt" style={[styles.promptText, { color: colors.text }]}>
+                {prompt}
+              </Text>
             </View>
           </>
         )}

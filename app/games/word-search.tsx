@@ -332,6 +332,7 @@ export default function WordSearchScreen() {
                 return (
                   <View
                     key={c}
+                    testID={`ws-cell-${r}-${c}`}
                     style={[
                       styles.cell,
                       { width: cellPx, height: cellPx },
@@ -352,7 +353,7 @@ export default function WordSearchScreen() {
             const norm = normalizeForGrid(entry.learned);
             const isFound = found.has(norm);
             return (
-              <View key={entry.wordId} style={styles.listRow}>
+              <View key={entry.wordId} testID={`ws-target-${entry.wordId}`} style={styles.listRow}>
                 {isFound ? (
                   <GlossText
                     text={entry.learned}

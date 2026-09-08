@@ -205,7 +205,13 @@ export default function GrammarChoiceScreen() {
               border = '#EF4444';
             }
             return (
-              <Pressable key={opt} style={[styles.option, { backgroundColor: bg, borderColor: border }]} onPress={() => selectOption(i)} disabled={answered}>
+              <Pressable
+                key={opt}
+                testID="grammar-option"
+                style={[styles.option, { backgroundColor: bg, borderColor: border }]}
+                onPress={() => selectOption(i)}
+                disabled={answered}
+              >
                 <Text style={[styles.optionText, { color: colors.text }]}>{opt}</Text>
               </Pressable>
             );

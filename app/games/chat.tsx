@@ -203,7 +203,7 @@ export default function ChatScreen() {
             const prog = progressByTopic.get(c.id);
             return (
               <View key={c.id} style={[styles.card, { backgroundColor: colors.card }]}>
-                <Pressable style={styles.cardMain} onPress={() => startTopic(c)}>
+                <Pressable testID="chat-topic" style={styles.cardMain} onPress={() => startTopic(c)}>
                   <Text style={[styles.cardTitle, { color: colors.text }]}>{c.title[contentLang] ?? c.title.en}</Text>
                   <Text style={[styles.cardSub, { color: colors.tabIconDefault }]}>
                     {s.games.chat.checklistLabel(c.checklist.length)}
@@ -253,6 +253,7 @@ export default function ChatScreen() {
           {q.options.map((opt) => (
             <Pressable
               key={opt.value}
+              testID="chat-setup-option"
               style={[styles.setupOption, { borderColor: colors.tint }]}
               onPress={() => pickSetupOption(opt.value)}
             >
@@ -373,6 +374,7 @@ export default function ChatScreen() {
             return (
               <Pressable
                 key={optText + i}
+                testID="chat-option"
                 style={[styles.optionBtn, { borderColor: colors.tint }]}
                 onPress={() => pickOption(optText, opt.checklist, opt.next)}
               >

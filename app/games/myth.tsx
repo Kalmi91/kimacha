@@ -308,10 +308,10 @@ export default function MythScreen() {
 
         {!answered ? (
           <View style={styles.guessButtons}>
-            <Pressable style={[styles.guessBtn, { backgroundColor: '#22C55E' }]} onPress={() => answer('true')}>
+            <Pressable testID="myth-true" style={[styles.guessBtn, { backgroundColor: '#22C55E' }]} onPress={() => answer('true')}>
               <Text style={styles.guessBtnText}>{s.games.myth.trueBtn}</Text>
             </Pressable>
-            <Pressable style={[styles.guessBtn, { backgroundColor: '#EF4444' }]} onPress={() => answer('myth')}>
+            <Pressable testID="myth-myth" style={[styles.guessBtn, { backgroundColor: '#EF4444' }]} onPress={() => answer('myth')}>
               <Text style={styles.guessBtnText}>{s.games.myth.mythBtn}</Text>
             </Pressable>
           </View>

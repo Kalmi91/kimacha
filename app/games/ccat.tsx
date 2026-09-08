@@ -27,6 +27,7 @@ import {
 import { shuffleArray, hashString } from '@/lib/shuffle';
 import { getGameBest, recordGameResult } from '@/lib/games/scoring';
 import GameSettingsSheet, { type SettingField } from '@/components/games/GameSettingsSheet';
+import CountdownStart from '@/components/games/CountdownStart';
 
 // GAMES.md 4.10 (F5, ccat). K17: no spatial items. K18: prompt-chrome
 // language switchable, default the learned language. K19: only the short
@@ -40,12 +41,19 @@ import GameSettingsSheet, { type SettingField } from '@/components/games/GameSet
 // options array, GAMES.md's own words: "Ahol a ccat és az odd-one-out
 // ugyanazt csinálja, OSZD MEG a motort."
 
-type Screen = 'playing' | 'summary';
-type TimeLimit = 'none' | '20' | '15';
+type Screen = 'start' | 'playing' | 'summary';
+// GAMES.md 4.10: the real CCAT is 50 questions in 15 minutes and "a tipikus
+// buktató nem a nehézség, hanem a TEMPÓ", so the clock belongs to the RUN, not
+// to a single question. 'exam' = the real test's pace scaled to the chosen
+// question count, 'none' = the untimed practice mode the spec's settings line
+// asks for ("idő: arányos vagy »nincs idő« gyakorló-mód").
+type TimeLimit = 'none' | 'exam';
 type TypeMix = 'all' | 'verbal' | 'logic';
 type PromptLangSetting = 'learned' | 'native';
 
 const QUESTION_COUNTS = [10, 15, 25]; // K19: no 50Q simulation
+// 50 questions / 15 minutes = 18 s per question, the real CCAT pace.
+const EXAM_SECONDS_PER_QUESTION = 18;
 const VERBAL_KINDS: CcatItemKind[] = ['antonym', 'synonym', 'analogy', 'oddOneOut', 'sentenceFill', 'instruction'];
 const LOGIC_KINDS: CcatItemKind[] = ['anagram', 'numberSeries', 'wordProblem'];
 
@@ -84,7 +92,10 @@ export default function CcatScreen() {
   const [poolEntries, setPoolEntries] = useState<PoolEntry[]>([]);
   const [oddMeta, setOddMeta] = useState<OddWordMeta[]>([]);
   const [best, setBest] = useState(0);
-  const [screen, setScreen] = useState<Screen>('playing');
+  const [screen, setScreen] = useState<Screen>('start');
+  const [countingIn, setCountingIn] = useState(false);
+  const [runSeconds, setRunSeconds] = useState(0); // the run's full budget
+  const [timeUp, setTimeUp] = useState(false);
   const [index, setIndex] = useState(0);
   const [render, setRender] = useState<RenderData | null>(null);
   const [selected, setSelected] = useState<number | null>(null);
@@ -97,6 +108,9 @@ export default function CcatScreen() {
   const [reviewList, setReviewList] = useState<{ kind: CcatItemKind; promptText: string; explanation: string }[]>([]);
 
   const kindQueueRef = useRef<CcatItemKind[]>([]);
+  // The run-clock callback is created once per run, so it needs a ref to read
+  // the score at the moment it fires.
+  const correctCountRef = useRef(0);
   const roundKeyRef = useRef(0);
   const clockIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -125,8 +139,10 @@ export default function CcatScreen() {
     const savedSettings = await db.getGameSettings('ccat');
     const savedCount = (savedSettings?.questionCount as number) ?? 15;
     const count = QUESTION_COUNTS.includes(savedCount) ? savedCount : 15;
-    const savedTimeLimit = (savedSettings?.timeLimit as TimeLimit) ?? 'none';
-    const tl: TimeLimit = ['none', '20', '15'].includes(savedTimeLimit) ? savedTimeLimit : 'none';
+    // Old installs stored a per-question limit ('20' / '15'); both now mean
+    // "timed", i.e. the exam-pace run clock.
+    const savedTimeLimit = String(savedSettings?.timeLimit ?? 'none');
+    const tl: TimeLimit = savedTimeLimit === 'none' ? 'none' : 'exam';
     const savedMix = (savedSettings?.typeMix as TypeMix) ?? 'all';
     const mix: TypeMix = ['all', 'verbal', 'logic'].includes(savedMix) ? savedMix : 'all';
     const savedPromptLang = (savedSettings?.promptLang as PromptLangSetting) ?? 'learned';
@@ -149,11 +165,11 @@ export default function CcatScreen() {
 
     roundKeyRef.current = 0;
     kindQueueRef.current = [];
+    correctCountRef.current = 0;
     setIndex(0);
     setCorrectCount(0);
     setTally({});
     setReviewList([]);
-    setScreen('playing');
     setNoContent(false);
     return { pool, meta, count, tl, mix, pl, lvl, target, source };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -375,26 +391,45 @@ export default function CcatScreen() {
 
       const rd = toRenderData(usedKind, built, pl, lvl, target, source);
       setRender(rd);
-
-      if (tl !== 'none') {
-        startClock(Number(tl), () => handleTimeout());
-      }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     },
     [correctCount, startClock, contentLang]
   );
 
   useEffect(() => {
-    load().then(({ pool, meta, mix, pl, tl, lvl, target, source }) => {
-      if (pool.length > 0) buildNextRound(pool, meta, mix, pl, tl, lvl, target, source);
-      else {
-        setNoContent(true);
-        setScreen('summary');
-      }
-    });
+    load();
     return () => stopClock();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // GAMES.md 4.10 loop: "Indul" -> 3-2-1 -> questions, with the run clock
+  // ticking down at the top. Time out = the run ends where it stands, exactly
+  // as the real test does; there is no going back to a skipped question.
+  const beginRun = useCallback(() => {
+    load().then(({ pool, meta, mix, pl, tl, lvl, target, source, count }) => {
+      if (pool.length === 0) {
+        setNoContent(true);
+        setScreen('summary');
+        return;
+      }
+      setTimeUp(false);
+      setScreen('playing');
+      buildNextRound(pool, meta, mix, pl, tl, lvl, target, source);
+      if (tl !== 'none') {
+        const budget = count * EXAM_SECONDS_PER_QUESTION;
+        setRunSeconds(budget);
+        startClock(budget, () => {
+          setTimeUp(true);
+          setScreen('summary');
+          recordGameResult('ccat', correctCountRef.current).then((r) => setBest(r.best));
+        });
+      } else {
+        setRunSeconds(0);
+        setClock(null);
+      }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [buildNextRound, load, startClock]);
 
   const recordTally = (kind: CcatItemKind, correct: boolean) => {
     setTally((prev) => {
@@ -403,22 +438,16 @@ export default function CcatScreen() {
     });
   };
 
-  const handleTimeout = () => {
-    if (!render) return;
-    setAnswered(true);
-    setSelected(null);
-    recordTally(render.kind, false);
-    setReviewList((prev) => [...prev, { kind: render.kind, promptText: render.promptText, explanation: render.explanation }]);
-    if (render.wordId) getDb().recordAttempt(render.wordId, 'game:ccat', false, 0).catch(() => {});
-  };
-
   const selectOption = (i: number) => {
     if (answered || !render) return;
     stopClock();
     setSelected(i);
     setAnswered(true);
     const correct = i === render.correctIndex;
-    if (correct) setCorrectCount((c) => c + 1);
+    if (correct) {
+      correctCountRef.current += 1;
+      setCorrectCount((c) => c + 1);
+    }
     recordTally(render.kind, correct);
     if (!correct) setReviewList((prev) => [...prev, { kind: render.kind, promptText: render.promptText, explanation: render.explanation }]);
     if (render.wordId) getDb().recordAttempt(render.wordId, 'game:ccat', correct, 0).catch(() => {});
@@ -426,6 +455,7 @@ export default function CcatScreen() {
 
   const next = () => {
     if (index + 1 >= questionCount) {
+      stopClock();
       recordGameResult('ccat', correctCount).then((r) => setBest(r.best));
       setScreen('summary');
       return;
@@ -439,10 +469,9 @@ export default function CcatScreen() {
   };
 
   const restart = () => {
-    load().then(({ pool, meta, mix, pl, tl, lvl, target, source }) => {
-      if (pool.length > 0) buildNextRound(pool, meta, mix, pl, tl, lvl, target, source);
-      else setNoContent(true);
-    });
+    stopClock();
+    setScreen('start');
+    setCountingIn(false);
   };
 
   const settingsFields: SettingField[] = [
@@ -458,8 +487,7 @@ export default function CcatScreen() {
       label: s.games.ccat.timeLimitLabel,
       options: [
         { value: 'none', label: s.games.ccat.timeLimitNone },
-        { value: '20', label: '20s' },
-        { value: '15', label: '15s' },
+        { value: 'exam', label: s.games.ccat.timeLimitExam },
       ],
     },
     {
@@ -510,6 +538,61 @@ export default function CcatScreen() {
   // (updated on every real answer/timeout) is not.
   const totalAnswered = Object.values(tally).reduce((sum, v) => sum + (v?.total ?? 0), 0);
 
+  if (screen === 'start') {
+    return (
+      <View style={[styles.container, { backgroundColor: colors.background }]}>
+        <View style={styles.header}>
+          <Pressable onPress={() => router.back()} hitSlop={12}>
+            <Text style={[styles.back, { color: colors.text }]}>←</Text>
+          </Pressable>
+          <Text style={[styles.title, { color: colors.text }]} numberOfLines={1}>
+            {gameName(gameDef, contentLang)}
+          </Text>
+          <Pressable onPress={() => setSettingsOpen(true)} hitSlop={12}>
+            <Text style={styles.settingsBtnText}>⚙️</Text>
+          </Pressable>
+        </View>
+        <View style={styles.startBody}>
+          <Text style={styles.startEmoji}>{gameDef.icon}</Text>
+          <Text style={[styles.startIntro, { color: colors.text }]}>
+            {s.games.ccat.startIntro(questionCount, Math.round((questionCount * EXAM_SECONDS_PER_QUESTION) / 60))}
+          </Text>
+          <Text style={[styles.cardSub, { color: colors.tabIconDefault }]}>
+            {timeLimit === 'none' ? s.games.ccat.startUntimed : s.games.ccat.startTimed}
+          </Text>
+          <Text style={[styles.cardSub, { color: colors.tabIconDefault }]}>
+            {s.games.best}: {best}
+          </Text>
+          <Pressable
+            testID="ccat-start"
+            style={[styles.btn, { backgroundColor: colors.tint }]}
+            onPress={() => setCountingIn(true)}
+          >
+            <Text style={styles.btnText}>{s.games.go}</Text>
+          </Pressable>
+        </View>
+
+        {countingIn ? (
+          <CountdownStart
+            onDone={() => {
+              setCountingIn(false);
+              beginRun();
+            }}
+          />
+        ) : null}
+
+        <GameSettingsSheet
+          visible={settingsOpen}
+          title={s.games.settings}
+          fields={settingsFields}
+          values={{ questionCount: String(questionCount), timeLimit, typeMix, promptLang: promptLangSetting }}
+          onChange={handleSettingsChange}
+          onClose={() => setSettingsOpen(false)}
+        />
+      </View>
+    );
+  }
+
   if (screen === 'summary') {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
@@ -519,6 +602,7 @@ export default function CcatScreen() {
             <Text style={[styles.emptyText, { color: colors.tabIconDefault }]}>{s.games.ccat.notEnoughContent}</Text>
           ) : (
             <>
+              {timeUp ? <Text style={[styles.cardSub, { color: '#EF4444' }]}>{s.games.ccat.timeUp}</Text> : null}
               <Text style={[styles.summaryScore, { color: colors.tint }]}>{s.games.summaryScore(correctCount, totalAnswered)}</Text>
               <Text style={[styles.cardSub, { color: colors.tabIconDefault }]}>
                 {s.games.best}: {best}
@@ -593,8 +677,20 @@ export default function CcatScreen() {
       <ScrollView contentContainerStyle={styles.playBody}>
         <View style={styles.progressRow}>
           <Text style={[styles.progress, { color: colors.tabIconDefault }]}>{s.games.ccat.progress(index + 1, questionCount)}</Text>
-          {clock !== null ? <Text style={[styles.progress, { color: colors.tint }]}>⏱ {clock}s</Text> : null}
+          {clock !== null ? (
+            <Text testID="ccat-clock" style={[styles.progress, { color: colors.tint }]}>
+              ⏱ {Math.floor(clock / 60)}:{String(clock % 60).padStart(2, '0')}
+            </Text>
+          ) : null}
         </View>
+        {clock !== null && runSeconds > 0 ? (
+          <View style={[styles.timeBarTrack, { backgroundColor: colors.card }]}>
+            <View
+              testID="ccat-time-bar"
+              style={[styles.timeBarFill, { backgroundColor: colors.tint, width: `${Math.max(0, Math.min(100, (clock / runSeconds) * 100))}%` }]}
+            />
+          </View>
+        ) : null}
 
         {render.promptLabel ? <Text style={[styles.promptLabel, { color: colors.tabIconDefault }]}>{render.promptLabel}</Text> : null}
         <Text style={[styles.prompt, { color: colors.text }]}>{render.promptText}</Text>
@@ -613,7 +709,13 @@ export default function CcatScreen() {
               border = '#EF4444';
             }
             return (
-              <Pressable key={`${opt}-${i}`} style={[styles.tile, { backgroundColor: bg, borderColor: border }]} onPress={() => selectOption(i)} disabled={answered}>
+              <Pressable
+                key={`${opt}-${i}`}
+                testID="ccat-option"
+                style={[styles.tile, { backgroundColor: bg, borderColor: border }]}
+                onPress={() => selectOption(i)}
+                disabled={answered}
+              >
                 <Text style={[styles.tileText, { color: colors.text }]} numberOfLines={2}>
                   {opt}
                 </Text>
@@ -651,6 +753,11 @@ export default function CcatScreen() {
 }
 
 const styles = StyleSheet.create({
+  startBody: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12, padding: 24 },
+  startEmoji: { fontSize: 56 },
+  startIntro: { fontSize: 16, textAlign: 'center', lineHeight: 22 },
+  timeBarTrack: { height: 6, borderRadius: 3, overflow: 'hidden', marginBottom: 10 },
+  timeBarFill: { height: 6, borderRadius: 3 },
   container: { flex: 1 },
   header: {
     flexDirection: 'row',

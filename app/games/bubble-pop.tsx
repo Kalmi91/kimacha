@@ -83,7 +83,7 @@ function Bubble({
 
   return (
     <Animated.View style={[styles.bubbleWrap, { left: bubble.x }, style]}>
-      <Pressable onPress={() => onPop(bubble.id)} onLongPress={() => onReveal(bubble.id)} delayLongPress={400}>
+      <Pressable testID={`bubble-${bubble.wordId}`} onPress={() => onPop(bubble.id)} onLongPress={() => onReveal(bubble.id)} delayLongPress={400}>
         <View
           style={[
             styles.bubbleCircle,
@@ -416,6 +416,7 @@ export default function BubblePopScreen() {
       title={gameName(gameDef, contentLang)}
       score={session.score}
       lives={session.lives}
+      combo={session.combo}
       timeLabel={roundClock !== null ? `${roundClock}s` : undefined}
       onExit={() => router.back()}
     >
@@ -424,8 +425,12 @@ export default function BubblePopScreen() {
           <Text style={styles.settingsBtnText}>⚙️</Text>
         </Pressable>
 
-        <Text style={[styles.roundText, { color: colors.tabIconDefault }]}>{s.games.bubblePop.roundOf(Math.min(round + 1, TOTAL_ROUNDS), TOTAL_ROUNDS)}</Text>
-        <Text style={[styles.promptText, { color: colors.text }]}>{s.games.bubblePop.prompt(categoryLabel)}</Text>
+        <Text testID="bubble-pop-round" style={[styles.roundText, { color: colors.tabIconDefault }]}>
+          {s.games.bubblePop.roundOf(Math.min(round + 1, TOTAL_ROUNDS), TOTAL_ROUNDS)}
+        </Text>
+        <Text testID="bubble-pop-prompt" style={[styles.promptText, { color: colors.text }]}>
+          {s.games.bubblePop.prompt(categoryLabel)}
+        </Text>
 
         <View style={[styles.board, { width: boardWidth, height: boardHeight, borderColor: colors.tabIconDefault }]}>
           {bubbles.map((b) => (
