@@ -1,0 +1,46 @@
+name: Bug report
+description: Something in the app behaves wrongly
+labels: [bug]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, what you got instead.
+      placeholder: |
+        1. Opened the Learn tab on A2
+        2. Typed the answer and pressed Check
+        3. Expected the review counter to drop, it stayed at 12
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: Settings screen, bottom line (for example 3.1.15, versionCode 49).
+    validations:
+      required: true
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where
+      options:
+        - Android app (APK)
+        - Web build
+        - Both
+    validations:
+      required: true
+
+  - type: input
+    id: language
+    attributes:
+      label: Language pair
+      description: For example hu → es, A2.
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: Screenshot, log output, or how often it happens.

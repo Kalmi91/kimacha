@@ -1,0 +1,32 @@
+name: Feature request
+description: Something the app should be able to do
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What is hard or impossible today. Describe the situation, not the solution.
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: What you have in mind
+      description: How you imagine it working. A rough sketch is fine.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Learn (flashcards, typing, review)
+        - Games
+        - Exams and placement
+        - Grammar course
+        - Átbeszélő (topic packs)
+        - Settings, languages, UI
+        - Other
+    validations:
+      required: true
