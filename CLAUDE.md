@@ -6,7 +6,8 @@ Minden Kimacha-munka ehhez mérendő, teljes spec: `AGENTS.md` „🧭 ÉSZAK-CS
 Egy motor (`WORD` / `FORM` / `SENTENCE` item-típus, egy SRS, egy ütemező), nyelvtan-unlock
 a patternhez kellő szavak ismertségére (nem globális szószám-szintre), a váltakozást az
 ütemező dönti (nincs mód-gomb), és soha nincs mondat ismeretlen szóval.
-Külön nyelvtan-fül: elutasítva. A modell CÉL, a FORM/SENTENCE/ütemező design-first.
+Külön nyelvtani rész: ENGEDÉLYEZVE (2026-09-08), egy korpusszal és második SRS nélkül.
+A modell CÉL, a FORM/SENTENCE/ütemező design-first.
 
 ## Adat fájlok struktúra
 

@@ -57,7 +57,14 @@ az EGYETLEN szóforrás, a nem-tanult token `GlossText`-tel jelölt).
   és milyen függőséget deklarál.
 - **Új szó-batch**: nem csak darabszám, hanem MELYIK pattern függőségét tölti be.
 - **Új játék**: csak ismert szóból dolgozhat, ugyanabból a készletből.
-- **„Nyelvtan-fül" / külön nyelvtan-mód javaslat**: elutasítva, ne épüljön meg.
+- **Külön nyelvtani rész**: ENGEDÉLYEZVE (Kálmán, 2026-09-08, felülírja a korábbi
+  elutasítást). Megépült: `lib/grammar/syllabus.ts` (61 téma A1-C1) + `app/grammar/`
+  (tanterv-képernyő és lecke: szabály, példák, aztán drill). Feltétel, hogy ne
+  duplázza a rendszert: EGY tartalom-korpusz (`data/games/grammar/`, a nyelvtan-játék
+  is ebből eszik), nincs második SRS (a kurzus csak kész-jelölést és pontszámot ír a
+  `game_progress`-be), és a 4. pont szabálya itt is él (ismeretlen szó csak glosszával).
+  Amikor a `FORM` item-típus és a vegyes ütemező elkészül, a GYAKORLÁS oda költözik, a
+  leckék pedig maradnak szabály-magyarázatnak.
 
 ## Státusz: CÉL, még NINCS lekódolva
 
