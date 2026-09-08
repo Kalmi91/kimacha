@@ -230,6 +230,11 @@ export interface GrammarTopicData {
 import grammarEsSerEstar from '@/data/games/grammar/es/ser-estar.json';
 import grammarEsArticulosGenero from '@/data/games/grammar/es/articulos-genero.json';
 import grammarEsPorPara from '@/data/games/grammar/es/por-para.json';
+// Q1 (A1 alapok), GAMES.md 10. szekció token-burn queue.
+import grammarEsPresenteRegular from '@/data/games/grammar/es/presente-regular.json';
+import grammarEsHayEstar from '@/data/games/grammar/es/hay-estar.json';
+import grammarEsGustar from '@/data/games/grammar/es/gustar.json';
+import grammarEsPosesivos from '@/data/games/grammar/es/posesivos.json';
 
 const grammarTopicsByLang: Partial<Record<string, GrammarTopicData[]>> = {
   // The JSON's per-item literal shape (each `wrong` only has the one key that
@@ -237,7 +242,16 @@ const grammarTopicsByLang: Partial<Record<string, GrammarTopicData[]>> = {
   // signature, so a direct `as` doesn't overlap; `unknown` first is the
   // standard escape hatch for "this JSON conforms to the hand-written type,
   // TS just can't see it structurally".
-  es: [grammarEsSerEstar, grammarEsArticulosGenero, grammarEsPorPara] as unknown as GrammarTopicData[],
+  // A1 topics first (the learner meets them first), then the A2 pair.
+  es: [
+    grammarEsPresenteRegular,
+    grammarEsHayEstar,
+    grammarEsGustar,
+    grammarEsPosesivos,
+    grammarEsArticulosGenero,
+    grammarEsSerEstar,
+    grammarEsPorPara,
+  ] as unknown as GrammarTopicData[],
 };
 
 export function getGrammarTopics(lang: string): GrammarTopicData[] {

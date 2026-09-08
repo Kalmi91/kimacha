@@ -1720,6 +1720,19 @@ A megválaszolt kérdés ide, a kérdés alá kerül **DÖNTÉS** címkével, d�
 | F5 | `ccat` | ✅ KÉSZ (térbeli nélkül) | `c620e34` |
 | F6 | `sentence-tetris` | ⏸ ELHALASZTVA (K16) | |
 
+**Token-burn menetek (10. szekció):**
+
+| # | Item | Státusz | Megjegyzés |
+|---|---|---|---|
+| Q1 | `grammar-choice` A1-es témák | 🟦 FOLYAMATBAN, 4/15 kész | `presente-regular`, `hay-estar`, `gustar`, `posesivos` (12-12 item, 4 nyelvű magyarázat, glosszárium, audit 0 P1). Hátra: `sustantivo-numero`, `adjetivo-concordancia`, `presente-irregular`, `verbos-diptongo`, `demostrativos`, `interrogativos`, `negacion`, `ir-a-infinitivo`, `muy-mucho`, `numeros-hora-fecha`, `preposiciones-basicas`. |
+
+**Játék-simulációs teszt-készlet (2026-09-08).** Mind a 12 játék fejetlenül
+végigjátszható jestből: `testing/reanimatedMock.tsx` (irányítható animáció),
+`testing/gameTestUtils.tsx` (memória-DB gyakorolt szavakkal) és
+`app/games/__tests__/*.play.test.tsx`. Ez a „szimuláld le és nézd meg, mi nem
+a spec szerint megy" kérés gépi változata; a spec-eltéréseket ez találta meg
+(word-rain esési sebességek, kombó a fejlécben, ccat vizsga-óra).
+
 Jelölés: ⬜ TERV → 🟨 SPEC-KÉSZ (kérdések megválaszolva) → 🟦 KÓDOLÁS → 🟧 TESZT → ✅ KÉSZ.
 
 ---
