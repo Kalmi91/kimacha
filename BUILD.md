@@ -729,3 +729,16 @@ en A2 = 180 szó / 15 topic (~12/topic; es A2: 900 szó / 15 topic = 60/topic).
   audit-en és audit-hu P1=0, lint 48 error / 142 warning = változatlan alapvonal.
   ⚠️ `scripts/validate-en-track.mjs` id-blokk hibái ELŐZŐLEG is megvoltak (az en-track
   fájljaihoz nem nyúltam). Eszköz-verify a következő APK-n.
+
+- **2026-09-08** (Opus): Átbeszélő fül (téma × szint) + a `Kimacha Feedback` sheet
+  FB182-189 sorai. A fül: 21 PCIC makró × A1-C1 = 71 cella, szókvíz futásidőben minden
+  cellában, sztori/párbeszéd pakkból (2 kész: 12-es makró A1 + B1), `/kimacha-atbeszelo`
+  skill tölti tovább. A feedback-forduló: pimiento/pimienta és frío/resfriado
+  szétválasztó jegyzetek, `correos` névelő-ellentmondás + korpusz-őr, a Beállítások
+  „522" sora megmondja végre, mit számol, névelő-gombsor a gépelős kártyán (5 gomb +
+  kapcsoló), két diktálós játék (szám, dátum) generált tartalommal, szófaj-játék +
+  `clases-de-palabras` nyelvtani lecke. A Game fül 13 helyett 16 játék.
+  Kapu: tsc 0, jest **642/642**, audit-games P1=0/P2=0, audit-corpus P1=0,
+  lint 69 probléma (44 error) = a 70/46 alapvonal ALATT.
+  Commitok: `bd1fceb`, `d7405e7`, `981884e`. ⏳ Eszköz-verify a következő APK-n:
+  7 fül ikonnal, névelő-gombsor 360 dp-n, spanyol hang a diktáláshoz.

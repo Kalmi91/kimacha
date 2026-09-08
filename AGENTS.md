@@ -3532,3 +3532,107 @@ muszáj (smallest diff).
 - i18n: minden szöveg 4 nyelven (hu, en, es, de)
 - Title Case gomb labeleken
 - NE nyúlj más feature-höz, CSAK ami itt le van írva
+
+---
+
+# 📋 Feedback, 2026-09-07/08 forduló (v3.1.12-v3.1.14 telefon-teszt)
+
+Forrás: `Kimacha Feedback` sheet, a FB181 óta érkezett 8 sor (183-190. sor).
+Triage 2026-09-08 (Opus), Kálmán kérése: „feedbackoket is nézd meg és azokat is
+programozd bele". Három tétel kérdés volt, nem hibajegy, azokra a válasz is itt van.
+
+## ✅ FB182 [adat], „Jennifer nagyon féltékeny nő" mondat, MÁR KÉSZ VOLT
+Idézet (09-07 20:12, `sentence:Él está celoso d`): „erre a szora az legyen a mondat:
+Jennifer nagyon féltékeny nő spanyolul"
+A `celoso` (1479) mondata már `Jennifer es una mujer muy celosa.`, ugyanaznap
+cserélve (`55d27d3`). A visszajelzés a régebbi APK-ról jött, nincs teendő.
+
+## ✅ FB183 [adat], el pimiento vs la pimienta, KÉSZ (`d7405e7`)
+Idézet (09-08 03:24, `word:the pepper`): „egyszer el pimiento másszor la pimienta most
+mikor mi kell?"
+Nem hiba: két KÜLÖN szó, csak az angol glossza ütközik. `el pimiento` = a zöldség
+(paprika, hímnem), `la pimienta` = a fűszer (bors, nőnem). A `pimienta` már hordozott
+erről jegyzetet, a `pimiento` most kapta meg a párját (`note_hu/en/es/de`).
+
+## ✅ FB184 [P2 adat], névelő az egyik oldalon, a másikon nem, KÉSZ (`d7405e7`)
+Idézet (09-08 03:28, `word:the post office`): „ennek van névelője angolba ott a the
+spanyolba nincs el vagy la? ez hiba? ne legyen ott a the ha nincs el la"
+Jogos: a `correos` (1228) spanyolul névelőtlen, az angol/magyar oldal viszont névelőt
+hozott. A natív oldal elvesztette a névelőt (`post office` / `posta` / `Post`), és
+jegyzet mondja meg, miért: a Correos intézménynév. A `pos` is hibás volt (`adj`),
+most `noun` + `gender: m`. Korpusz-őr: `lib/__tests__/corpusIntegrity.test.ts` új
+esete elbukik, ha bármelyik jövőbeli kártya natív oldala olyan névelőt hoz, ami a
+spanyol alakon nincs.
+
+## ✅ FB185 [P2 adat], „cold" két kártyán, KÉSZ (`d7405e7`)
+Idézet (09-08 15:31, `word:cold`): „ez it hogy van? és miért nrm frió? értem, hogy más
+a jelentése de írd ide, hogy miben más"
+A `frío` (hőmérséklet, melléknév) és az `el resfriado` (betegség, főnév) angolul
+mindkettő „cold". Mindkét kártya jegyzetet kapott, ami kimondja, melyik melyik.
+
+## ✅ FB186 [P2 UX], „522 szó félre van téve" — nem volt félretéve, KÉSZ (`d7405e7`)
+Idézet (09-08 16:54, `word:toser`): „a settingsbe látom olyat hogy 522 szó félre van
+téve az miért van?"
+Semmi nem volt félretéve: a szám a helyesírás-lista ESEDÉKES tételeinek száma volt, és
+a puszta „(522)" készletnek olvasódott. A sor mostantól kimondja, mit számol
+(`522 esedékes, N a listán`), mind a négy nyelven. Új `getSpellingListCount()`
+mindkét adatbázis-rétegben.
+
+## ✅ FB187 [P1 feature], Szám- és dátumdiktálás, két új játék, KÉSZ (`981884e`)
+Idézet (09-08 17:31): „szám és dátum gyakorlásra is kell egy játék. Olyan ami mondja
+spanyolul nekem meg le kell írnom akár a számot akár a dátumot. legyen két külön.
+Legyenek benne hónapok és napok is"
+- Két registry-bejegyzés (`number-dictation`, `date-dictation`), egy motor
+  (`components/games/DictationGame.tsx`), két vékony képernyő.
+- A tartalom GENERÁLT, nem JSON: `lib/games/spanishNumbers.ts` a 0-9999 spanyol
+  alakját adja a valódi rendhagyókkal (quince, dieciséis, cien vs ciento, „mil" un
+  nélkül), a dátum nap + hónap + a körök felében a hét napja.
+- Szintfüggő nagyságrend: A1 százig, A2 ezerig, B1+ tízezerig.
+- DÖNTÉS (Kálmán, 2026-09-08, kérdésre): „mindegyiket fogadja el". A dátum átmegy
+  `15.03`, `15/03`, `15 marzo`, `15 de marzo`, `quince de marzo`, hónap-első
+  sorrendben, a hét napjával vagy anélkül; a szám számjeggyel és betűvel is.
+- ⏳ Eszköz-verify a következő APK-n: van-e telepített spanyol hang, és érthető-e a
+  felolvasott szám. Hang nélkül a képernyő írásban mutatja a kimondott alakot.
+
+## ✅ FB188 [P1 UX], Névelő-gombok gépelés helyett, KÉSZ (`981884e`)
+Idézet (09-08 19:08, `word:beef`): „szeretnék egy olyat, hogy amikor ilyen szó van akkor
+ne begépelni kelljen a el la t hanem kiválasztani itt legyen 3 opcio el le vagy none
+mármint egy kor áthúzva. kiváncsi vagyok hogy milyen. a cél az hogy sokszór szó közben
+változtatom meg és egyszerűen akarom változtatgatni"
+- DÖNTÉS (Kálmán, kérdésre): 5 gomb, nem 3, és Beállítások-kapcsolóval. Indok: a
+  korpuszban többes névelő is van (los zapatos, las gafas), és ha a gombsor CSAK a
+  névelős kártyákon jelenne meg, a megjelenése elárulná, hogy kell névelő.
+- `el / la / los / las / ⊘` MINDEN gépelős spanyol főnév-kártyán, `⊘` az alapállás,
+  tehát aki nem nyúl hozzá, ugyanúgy gépel, mint eddig. Hibás válasznál a gombsor
+  megmutatja a helyes névelőt.
+- Logika: `lib/articlePicker.ts` (tiszta függvények + 10 teszt), a kapcsoló
+  `learn_settings.article_picker`, alapból BE.
+- ⏳ Eszköz-verify a következő APK-n: elfér-e az öt gomb 360 dp-n, és nem takarja-e a
+  dokkolt Check sáv.
+
+## ✅ FB189 [P1 feature], Szófajok hangsúlyozása, KÉSZ
+Idézet (09-08 19:19, `word:flu`): „egy fontos része a nyelvtannal az szófajok
+megkülönböztetése erre is helyezz hansúlyt. valahogyan."
+- DÖNTÉS (Kálmán, kérdésre): két helyen, játékban ÉS a nyelvtani leckékben.
+- Játék: `word-class` („Milyen szófaj?"), a MÁR TANULT szavakból kérdez, négy
+  szófajra (főnév / ige / melléknév / határozószó). A kör körbejárja a négy osztályt,
+  hogy ne lehessen „mindenre főnév"-vel átmenni (A1-en 566 főnév áll 8 határozószóval
+  szemben). Névmás, elöljáró, számnév és `phrase` kimarad: vagy túl kevés, vagy nem
+  egy szó szófaja.
+- Lecke: `clases-de-palabras` a tanterv ELSŐ A1-es témája (`lib/grammar/syllabus.ts`),
+  megírt korpusszal (`data/games/grammar/es/clases-de-palabras.json`, 12 item).
+  A drill-forma a szófajt slot-alapon kérdezi: melyik szó fér a lyukba, „El ___ es
+  grande" → perro, nem come. A `more` blokk a kettős szófajokat viszi (rápido
+  melléknévként és határozószóként, mucho egyeztetve vagy nem).
+
+## Elfogadási kritérium (FB182-189 forduló)
+- `npx tsc --noEmit` 0 hiba ✅; `npx jest` zöld **642/642** ✅ (+45 új teszt:
+  articlePicker, dictation, spanishNumbers, wordClass, két diktálós és egy
+  szófaj-playthrough).
+- `node scripts/audit-games.mjs` 0 P1 / 0 P2 ✅ (az új nyelvtani lecke is átment a
+  korpusz-fegyelmen); `node scripts/audit-corpus.mjs` 0 P1 ✅.
+- `npx expo lint`: 69 probléma (44 error) ✅ — a rögzített 70/46 alapvonal ALATT.
+- Mellékesen javítva egy időzóna-függő teszt-flake: a `usageTimer.test.ts` 31
+  virtuális percet léptetett a VALÓS órától, tehát a 23:30 után indult futás átlépte
+  az éjfélt, a nap-váltás nullázta a session-perceket, és a 30 perces mérföldkő nem
+  sült el. Az óra rögzítve, a db-mock kiegészítve `getDayStats`-szel.

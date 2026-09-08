@@ -115,6 +115,15 @@ export default {
       correct: 'Megvan!',
       result: (correct: number, total: number) => `${correct} / ${total} találat`,
     },
+    // FB189: szófaj-játék. A négy szófaj neve a tanuló saját nyelvén.
+    wordClass: {
+      prompt: 'Milyen szófaj ez?',
+      names: { noun: 'Főnév', verb: 'Ige', adj: 'Melléknév', adv: 'Határozószó' },
+      next: 'Tovább',
+      finish: 'Befejezés',
+      result: (correct: number, total: number) => `${correct} / ${total} találat`,
+      empty: 'Még kevés a besorolható szó. Tanulj néhány kártyát, aztán gyere vissza.',
+    },
     playAgain: 'Újra',
     backToHub: 'Vissza',
     score: 'Pont',
