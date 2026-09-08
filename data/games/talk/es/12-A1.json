@@ -1,0 +1,290 @@
+{
+  "macro": 12,
+  "level": "A1",
+  "story": {
+    "id": "talk-12-A1-story",
+    "level": "A1",
+    "track": "cdmx",
+    "title": { "hu": "A ruhaboltban", "en": "At the Clothes Shop", "es": "En la tienda de ropa", "de": "Im Kleidergeschäft" },
+    "cover": "👕",
+    "estMinutes": 3,
+    "scenes": [
+      {
+        "id": "s1",
+        "text": { "es": "Ana quiere una camisa nueva. Hoy va a la tienda." },
+        "translation": {
+          "hu": "Ana új inget szeretne. Ma elmegy a boltba.",
+          "en": "Ana wants a new shirt. Today she goes to the shop.",
+          "es": "Ana quiere una camisa nueva. Hoy va a la tienda.",
+          "de": "Ana möchte ein neues Hemd. Heute geht sie ins Geschäft."
+        },
+        "question": {
+          "prompt": { "hu": "Mit szeretne Ana?", "en": "What does Ana want?", "es": "¿Qué quiere Ana?", "de": "Was möchte Ana?" },
+          "options": [
+            { "es": "una camisa nueva", "correct": true },
+            { "es": "un libro nuevo" },
+            { "es": "una casa grande" }
+          ]
+        }
+      },
+      {
+        "id": "s2",
+        "text": { "es": "En la tienda hay muchas camisas. Ana mira el precio." },
+        "translation": {
+          "hu": "A boltban sok ing van. Ana megnézi az árat.",
+          "en": "There are many shirts in the shop. Ana looks at the price.",
+          "es": "En la tienda hay muchas camisas. Ana mira el precio.",
+          "de": "Im Geschäft gibt es viele Hemden. Ana schaut auf den Preis."
+        },
+        "question": {
+          "prompt": { "hu": "Mit néz meg Ana?", "en": "What does Ana look at?", "es": "¿Qué mira Ana?", "de": "Was schaut Ana an?" },
+          "options": [
+            { "es": "el precio", "correct": true },
+            { "es": "el mercado" },
+            { "es": "la puerta" }
+          ]
+        }
+      },
+      {
+        "id": "s3",
+        "text": { "es": "La camisa es cara. Ana quiere un descuento." },
+        "translation": {
+          "hu": "Az ing drága. Ana kedvezményt szeretne.",
+          "en": "The shirt is expensive. Ana wants a discount.",
+          "es": "La camisa es cara. Ana quiere un descuento.",
+          "de": "Das Hemd ist teuer. Ana möchte einen Rabatt."
+        },
+        "question": {
+          "prompt": { "hu": "Milyen az ing?", "en": "What is the shirt like?", "es": "¿Cómo es la camisa?", "de": "Wie ist das Hemd?" },
+          "options": [
+            { "es": "es cara", "correct": true },
+            { "es": "es barata" },
+            { "es": "es pequeña" }
+          ]
+        }
+      },
+      {
+        "id": "s4",
+        "text": { "es": "Hoy hay una oferta en la tienda. La camisa es barata." },
+        "translation": {
+          "hu": "Ma akció van a boltban. Az ing olcsó.",
+          "en": "Today there is an offer in the shop. The shirt is cheap.",
+          "es": "Hoy hay una oferta en la tienda. La camisa es barata.",
+          "de": "Heute gibt es ein Angebot im Geschäft. Das Hemd ist billig."
+        },
+        "question": {
+          "prompt": { "hu": "Miért olcsó az ing?", "en": "Why is the shirt cheap?", "es": "¿Por qué es barata la camisa?", "de": "Warum ist das Hemd billig?" },
+          "options": [
+            { "es": "hay una oferta", "correct": true },
+            { "es": "es vieja" },
+            { "es": "es pequeña" }
+          ]
+        }
+      },
+      {
+        "id": "s5",
+        "text": { "es": "Ana paga la camisa. El recibo está en la bolsa." },
+        "translation": {
+          "hu": "Ana kifizeti az inget. A blokk a szatyorban van.",
+          "en": "Ana pays for the shirt. The receipt is in the bag.",
+          "es": "Ana paga la camisa. El recibo está en la bolsa.",
+          "de": "Ana bezahlt das Hemd. Der Kassenbon ist in der Tüte."
+        },
+        "question": {
+          "prompt": { "hu": "Hol van a blokk?", "en": "Where is the receipt?", "es": "¿Dónde está el recibo?", "de": "Wo ist der Kassenbon?" },
+          "options": [
+            { "es": "en la bolsa", "correct": true },
+            { "es": "en la tienda" },
+            { "es": "en la mesa" }
+          ]
+        }
+      },
+      {
+        "id": "s6",
+        "text": { "es": "Ana lleva la camisa nueva a casa. Está contenta." },
+        "translation": {
+          "hu": "Ana hazaviszi az új inget. Elégedett.",
+          "en": "Ana takes the new shirt home. She is happy.",
+          "es": "Ana lleva la camisa nueva a casa. Está contenta.",
+          "de": "Ana bringt das neue Hemd nach Hause. Sie ist zufrieden."
+        },
+        "question": {
+          "prompt": { "hu": "Hova viszi Ana az inget?", "en": "Where does Ana take the shirt?", "es": "¿Adónde lleva Ana la camisa?", "de": "Wohin bringt Ana das Hemd?" },
+          "options": [
+            { "es": "a casa", "correct": true },
+            { "es": "al mercado" },
+            { "es": "a la oficina" }
+          ]
+        }
+      }
+    ]
+  },
+  "chat": {
+    "id": "talk-12-A1-chat",
+    "level": "A1",
+    "title": { "hu": "Vásárlás a boltban", "en": "Shopping in the Store", "es": "Comprar en la tienda", "de": "Im Geschäft einkaufen" },
+    "setup": [
+      {
+        "id": "que",
+        "prompt": { "hu": "Mit veszel ma?", "en": "What are you buying today?", "es": "¿Qué compras hoy?", "de": "Was kaufst du heute?" },
+        "options": [
+          { "value": "camisa", "label": { "es": "Una camisa." } },
+          { "value": "zapatos", "label": { "es": "Unos zapatos." } }
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": { "es": "Buenos días. ¿Qué necesita usted?" },
+        "options": [
+          { "es": "Quiero una camisa, por favor.", "next": "n2", "good": true, "checklist": "pedir", "requires": { "que": "camisa" } },
+          { "es": "Quiero unos zapatos, por favor.", "next": "n2", "good": true, "checklist": "pedir", "requires": { "que": "zapatos" } },
+          { "es": "Solo miro, gracias.", "next": "n2" }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": { "es": "Muy bien. ¿Cuál es su talla?" },
+        "options": [
+          { "es": "Mi talla es mediana. ¿Tiene esta talla?", "next": "n3", "good": true, "checklist": "talla" },
+          { "es": "No sé.", "next": "n3" }
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": { "es": "Aquí está. Es de lana, muy buena." },
+        "options": [
+          { "es": "¿Cuál es el precio?", "next": "n4", "good": true, "checklist": "precio" },
+          { "es": "Es bonita.", "next": "n4" }
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": { "es": "Son cuatrocientos pesos. Hoy hay una oferta." },
+        "options": [
+          { "es": "¿Hay un descuento para mí?", "next": "n5", "good": true, "checklist": "descuento" },
+          { "es": "Es caro.", "next": "n5" }
+        ]
+      },
+      {
+        "id": "n5",
+        "npc": { "es": "Perfecto. ¿Paga usted ahora?" },
+        "options": [
+          { "es": "Sí, pago. ¿Me da el recibo, por favor?", "good": true, "checklist": "recibo" },
+          { "es": "Sí, pago. ¿Puedo devolver la camisa mañana?", "good": true, "checklist": "devolver" },
+          { "es": "Sí, gracias." }
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "id": "pedir",
+        "hu": "Kérek egy inget, legyen szíves.",
+        "en": "I want a shirt, please.",
+        "es": "Quiero una camisa, por favor.",
+        "de": "Ich möchte ein Hemd, bitte.",
+        "why": {
+          "hu": "A „quiero + tárgy + por favor\" a legrövidebb udvarias kérés, ez a boltban mindig működik.",
+          "en": "\"Quiero + object + por favor\" is the shortest polite request, it always works in a shop.",
+          "es": "«Quiero + objeto + por favor» es la petición cortés más corta, siempre funciona en una tienda.",
+          "de": "„Quiero + Objekt + por favor\" ist die kürzeste höfliche Bitte, sie funktioniert im Geschäft immer."
+        },
+        "source": { "label": "PCIC A1, Nociones específicas 12: compras" }
+      },
+      {
+        "id": "talla",
+        "hu": "Közepes a méretem. Van ilyen méret?",
+        "en": "My size is medium. Do you have this size?",
+        "es": "Mi talla es mediana. ¿Tiene esta talla?",
+        "de": "Meine Größe ist mittel. Haben Sie diese Größe?",
+        "why": {
+          "hu": "A méret kérdése nélkül nem lehet ruhát venni, a „talla\" a bolti alapszó.",
+          "en": "You cannot buy clothes without asking about the size, \"talla\" is the basic shop word.",
+          "es": "No se puede comprar ropa sin preguntar la talla, «talla» es la palabra básica de la tienda.",
+          "de": "Ohne nach der Größe zu fragen kann man keine Kleidung kaufen, „talla\" ist das Grundwort im Geschäft."
+        },
+        "source": { "label": "PCIC A1, Nociones específicas 12: compras" }
+      },
+      {
+        "id": "precio",
+        "hu": "Mennyibe kerül?",
+        "en": "What is the price?",
+        "es": "¿Cuál es el precio?",
+        "de": "Was ist der Preis?",
+        "why": {
+          "hu": "A „¿cuál es el precio?\" egyszerűbb, mint a „¿cuánto cuesta?\", és A1-en is biztosan érthető.",
+          "en": "\"¿Cuál es el precio?\" is simpler than \"¿cuánto cuesta?\" and is understood at A1 too.",
+          "es": "«¿Cuál es el precio?» es más simple que «¿cuánto cuesta?» y se entiende también en A1.",
+          "de": "„¿Cuál es el precio?\" ist einfacher als „¿cuánto cuesta?\" und wird auch auf A1 verstanden."
+        },
+        "source": { "label": "PCIC A1, Nociones específicas 12: compras" }
+      },
+      {
+        "id": "descuento",
+        "hu": "Van kedvezmény?",
+        "en": "Is there a discount for me?",
+        "es": "¿Hay un descuento para mí?",
+        "de": "Gibt es einen Rabatt für mich?",
+        "why": {
+          "hu": "Mexikói piacon és kis boltban a kedvezményt kérni természetes, nem udvariatlan.",
+          "en": "In a Mexican market or small shop asking for a discount is natural, not rude.",
+          "es": "En un mercado mexicano o una tienda pequeña pedir un descuento es natural, no es descortés.",
+          "de": "Auf einem mexikanischen Markt oder in einem kleinen Laden ist die Frage nach Rabatt normal, nicht unhöflich."
+        },
+        "source": { "label": "PCIC A1, Nociones específicas 12: compras" }
+      },
+      {
+        "id": "recibo",
+        "hu": "Kaphatnék blokkot?",
+        "en": "Can you give me the receipt, please?",
+        "es": "¿Me da el recibo, por favor?",
+        "de": "Geben Sie mir bitte den Kassenbon?",
+        "why": {
+          "hu": "Blokk nélkül nincs csere és nincs visszavét, ezért ezt mindig kérni kell.",
+          "en": "Without a receipt there is no exchange and no return, so always ask for it.",
+          "es": "Sin recibo no hay cambio ni devolución, por eso hay que pedirlo siempre.",
+          "de": "Ohne Kassenbon gibt es keinen Umtausch und keine Rückgabe, deshalb immer danach fragen."
+        },
+        "source": { "label": "PCIC A1, Nociones específicas 12: compras" }
+      },
+      {
+        "id": "devolver",
+        "hu": "Vissza tudom hozni holnap az inget?",
+        "en": "Can I return the shirt tomorrow?",
+        "es": "¿Puedo devolver la camisa mañana?",
+        "de": "Kann ich das Hemd morgen zurückgeben?",
+        "why": {
+          "hu": "A visszavétel szabálya boltonként más, ezért fizetés ELŐTT érdemes megkérdezni.",
+          "en": "The return policy differs from shop to shop, so ask BEFORE you pay.",
+          "es": "La política de devolución cambia de tienda a tienda, por eso pregunta ANTES de pagar.",
+          "de": "Die Rückgaberegel ist in jedem Geschäft anders, frage also VOR dem Bezahlen."
+        },
+        "source": { "label": "PCIC A1, Nociones específicas 12: compras" }
+      }
+    ],
+    "endings": [
+      {
+        "id": "buen-cliente",
+        "if": "checklist>=5",
+        "title": { "hu": "Úgy vásároltál, mint egy helyi", "en": "You shopped like a local", "es": "Compraste como un local", "de": "Du hast eingekauft wie ein Einheimischer" }
+      },
+      {
+        "id": "vas-bien",
+        "if": "checklist>=3",
+        "title": { "hu": "Jó úton jársz", "en": "You are on the right track", "es": "Vas por buen camino", "de": "Du bist auf dem richtigen Weg" }
+      },
+      {
+        "id": "otra-vez",
+        "if": "default",
+        "title": { "hu": "Kérdezz többet legközelebb", "en": "Ask more next time", "es": "Pregunta más la próxima vez", "de": "Frag beim nächsten Mal mehr" }
+      }
+    ],
+    "glossary": [
+      { "word": "mediana", "gloss": { "hu": "közepes (méret)", "en": "medium (size)", "de": "mittel (Größe)" } },
+      { "word": "cuatrocientos", "gloss": { "hu": "négyszáz", "en": "four hundred", "de": "vierhundert" } },
+      { "word": "pesos", "gloss": { "hu": "peso (mexikói pénz)", "en": "pesos (Mexican money)", "de": "Pesos (mexikanisches Geld)" } },
+      { "word": "perfecto", "gloss": { "hu": "tökéletes", "en": "perfect", "de": "perfekt" } }
+    ]
+  }
+}

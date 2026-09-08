@@ -28,6 +28,10 @@ export default function TabLayout() {
         tabBarLabelStyle: {
           fontSize: 10,
         },
+        // Az Átbeszélő a 7. fül (Kálmán döntése, 2026-09-08). 7 feliratot már
+        // nem lehet kiolvasni 360 dp-n, ezért a sáv innentől csak ikon. A
+        // feliratok maguk megmaradnak (s.tabs.*), a képernyők fejlécében.
+        tabBarShowLabel: false,
         headerStyle: {
           backgroundColor: colors.background,
         },
@@ -85,6 +89,21 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => (
             <SymbolView
               name={{ ios: 'square.grid.2x2.fill', android: 'grid_view', web: 'grid_view' }}
+              tintColor={color}
+              size={28}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="talk"
+        options={{
+          title: s.tabs.talk,
+          // Saját fejlécet rajzol, mint az index és a games (FB123-minta).
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <SymbolView
+              name={{ ios: 'bubble.left.and.bubble.right.fill', android: 'forum', web: 'forum' }}
               tintColor={color}
               size={28}
             />
