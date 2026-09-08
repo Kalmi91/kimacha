@@ -1,6 +1,6 @@
 {
   "topic": "articulos-genero",
-  "level": "A2",
+  "level": "A1",
   "title": {
     "hu": "El, la, un, una, névelők és nyelvtani nem",
     "en": "El, la, un, una, articles and gender",
@@ -19,11 +19,43 @@
     "es": "Clases de excepción: 1) Las palabras femeninas que empiezan con a tónica llevan EL en singular por pronunciación (el agua, el aula, el arma), pero vuelven a las en plural (las aguas). 2) Las palabras de origen griego en -ma suelen ser masculinas pese a la -a: el día, el problema, el idioma, el mapa, el planeta, el sistema. 3) Algunas palabras en -o son femeninas: la mano, la foto (de fotografía), la moto.",
     "de": "Ausnahmeklassen: 1) Feminine Wörter, die mit betontem a- beginnen, nehmen im Singular EL aus Aussprachegründen (el agua, el aula, el arma), im Plural aber wieder las (las aguas). 2) Wörter griechischen Ursprungs auf -ma sind trotz -a meist männlich: el día, el problema, el idioma, el mapa, el planeta, el sistema. 3) Ein paar Wörter auf -o sind trotzdem weiblich: la mano, la foto (kurz für fotografía), la moto."
   },
+  "glossary": [
+    {
+      "word": "foto",
+      "gloss": {
+        "hu": "fénykép",
+        "en": "photo",
+        "es": "la foto",
+        "de": "Foto"
+      }
+    },
+    {
+      "word": "mapa",
+      "gloss": {
+        "hu": "térkép",
+        "en": "map",
+        "es": "el mapa",
+        "de": "Karte"
+      }
+    },
+    {
+      "word": "planeta",
+      "gloss": {
+        "hu": "bolygó",
+        "en": "planet",
+        "es": "el planeta",
+        "de": "Planet"
+      }
+    }
+  ],
   "items": [
     {
       "id": "ag-01",
       "sentence": "___ perro es grande.",
-      "options": ["El", "La"],
+      "options": [
+        "El",
+        "La"
+      ],
       "correct": 0,
       "why": {
         "hu": "A perro hímnemű (-o végű), ezért a névelő el.",
@@ -39,12 +71,18 @@
           "de": "La ist der weibliche Artikel, aber perro ist ein männliches Wort."
         }
       },
-      "examples": ["El gato es pequeño.", "El libro está en la mesa."]
+      "examples": [
+        "El gato es pequeño.",
+        "El libro está en la mesa."
+      ]
     },
     {
       "id": "ag-02",
       "sentence": "___ casa es bonita.",
-      "options": ["La", "El"],
+      "options": [
+        "La",
+        "El"
+      ],
       "correct": 0,
       "why": {
         "hu": "A casa nőnemű (-a végű), ezért a névelő la.",
@@ -60,12 +98,18 @@
           "de": "El ist der männliche Artikel, aber casa ist ein weibliches Wort."
         }
       },
-      "examples": ["La camisa es blanca.", "La mesa está cerca de la puerta."]
+      "examples": [
+        "La camisa es blanca.",
+        "La mesa está cerca de la puerta."
+      ]
     },
     {
       "id": "ag-03",
       "sentence": "___ libros son interesantes.",
-      "options": ["Los", "Las"],
+      "options": [
+        "Los",
+        "Las"
+      ],
       "correct": 0,
       "why": {
         "hu": "A libro hímnemű, a többes szám hímnemű névelője los.",
@@ -81,12 +125,18 @@
           "de": "Las ist der weibliche Pluralartikel, aber libro ist männlich."
         }
       },
-      "examples": ["Los coches son caros.", "Los estudiantes trabajan mucho."]
+      "examples": [
+        "Los coches son caros.",
+        "Los estudiantes trabajan mucho."
+      ]
     },
     {
       "id": "ag-04",
       "sentence": "___ mesas son nuevas.",
-      "options": ["Las", "Los"],
+      "options": [
+        "Las",
+        "Los"
+      ],
       "correct": 0,
       "why": {
         "hu": "A mesa nőnemű, a többes szám nőnemű névelője las.",
@@ -102,12 +152,18 @@
           "de": "Los ist der männliche Pluralartikel, aber mesa ist weiblich."
         }
       },
-      "examples": ["Las camisas son blancas.", "Las sillas están cerca de la mesa."]
+      "examples": [
+        "Las camisas son blancas.",
+        "Las sillas están cerca de la mesa."
+      ]
     },
     {
       "id": "ag-05",
       "sentence": "Tengo ___ hermano mayor.",
-      "options": ["un", "una"],
+      "options": [
+        "un",
+        "una"
+      ],
       "correct": 0,
       "why": {
         "hu": "A hermano hímnemű, a határozatlan névelő hímnemben un.",
@@ -123,12 +179,18 @@
           "de": "Una ist der unbestimmte Artikel im Femininum, aber hermano ist männlich."
         }
       },
-      "examples": ["Tengo un amigo en México.", "Es un día muy largo."]
+      "examples": [
+        "Tengo un amigo en México.",
+        "Es un día muy largo."
+      ]
     },
     {
       "id": "ag-06",
       "sentence": "Tengo ___ hermana pequeña.",
-      "options": ["una", "un"],
+      "options": [
+        "una",
+        "un"
+      ],
       "correct": 0,
       "why": {
         "hu": "A hermana nőnemű, a határozatlan névelő nőnemben una.",
@@ -144,12 +206,18 @@
           "de": "Un ist der unbestimmte Artikel im Maskulinum, aber hermana ist weiblich."
         }
       },
-      "examples": ["Tengo una amiga en España.", "Es una casa muy bonita."]
+      "examples": [
+        "Tengo una amiga en España.",
+        "Es una casa muy bonita."
+      ]
     },
     {
       "id": "ag-07",
       "sentence": "___ agua está muy fría.",
-      "options": ["El", "La"],
+      "options": [
+        "El",
+        "La"
+      ],
       "correct": 0,
       "why": {
         "hu": "Az agua nőnemű szó, de hangsúlyos á-val kezdődik, ezért egyes számban kivételesen el-t kap a kiejtés miatt (el agua, de: esta agua fría).",
@@ -165,12 +233,18 @@
           "de": "La wäre grammatisch zu erwarten (agua ist weiblich), aber der Zusammenstoß zweier betonter a-Laute führt dazu, dass el verwendet wird."
         }
       },
-      "examples": ["El agua del mar es salada.", "Bebo mucha agua fría."]
+      "examples": [
+        "El agua del mar es salada.",
+        "Bebo mucha agua fría."
+      ]
     },
     {
       "id": "ag-08",
       "sentence": "___ día es muy largo.",
-      "options": ["El", "La"],
+      "options": [
+        "El",
+        "La"
+      ],
       "correct": 0,
       "why": {
         "hu": "A día görög eredetű, -a végű szó, de hímnemű: el día.",
@@ -186,12 +260,18 @@
           "de": "La würde wegen der -a-Endung logisch erscheinen, aber día ist eine Ausnahme: es ist männlich."
         }
       },
-      "examples": ["El problema es difícil.", "El idioma español es fácil."]
+      "examples": [
+        "El problema es difícil.",
+        "El idioma español es fácil."
+      ]
     },
     {
       "id": "ag-09",
       "sentence": "___ mano es pequeña.",
-      "options": ["La", "El"],
+      "options": [
+        "La",
+        "El"
+      ],
       "correct": 0,
       "why": {
         "hu": "A mano -o végű, de nőnemű: la mano.",
@@ -207,12 +287,18 @@
           "de": "El würde wegen der -o-Endung logisch erscheinen, aber mano ist eine Ausnahme: es ist weiblich."
         }
       },
-      "examples": ["La foto está en la pared.", "La moto es nueva."]
+      "examples": [
+        "La foto está en la pared.",
+        "La moto es nueva."
+      ]
     },
     {
       "id": "ag-10",
       "sentence": "La camisa es ___.",
-      "options": ["blanca", "blanco"],
+      "options": [
+        "blanca",
+        "blanco"
+      ],
       "correct": 0,
       "why": {
         "hu": "A melléknévnek egyeztetnie kell a főnév nemével: camisa nőnemű, ezért blanca.",
@@ -228,12 +314,18 @@
           "de": "Blanco ist die männliche Form, aber camisa ist weiblich, das passt nicht zusammen."
         }
       },
-      "examples": ["La puerta es blanca.", "La casa es pequeña."]
+      "examples": [
+        "La puerta es blanca.",
+        "La casa es pequeña."
+      ]
     },
     {
       "id": "ag-11",
       "sentence": "El coche es ___.",
-      "options": ["nuevo", "nueva"],
+      "options": [
+        "nuevo",
+        "nueva"
+      ],
       "correct": 0,
       "why": {
         "hu": "A melléknévnek egyeztetnie kell a főnév nemével: coche hímnemű, ezért nuevo.",
@@ -249,12 +341,18 @@
           "de": "Nueva ist die weibliche Form, aber coche ist männlich, das passt nicht zusammen."
         }
       },
-      "examples": ["El libro es viejo.", "El perro es pequeño."]
+      "examples": [
+        "El libro es viejo.",
+        "El perro es pequeño."
+      ]
     },
     {
       "id": "ag-12",
       "sentence": "___ idioma español es difícil para mí.",
-      "options": ["El", "La"],
+      "options": [
+        "El",
+        "La"
+      ],
       "correct": 0,
       "why": {
         "hu": "Az idioma görög eredetű -a végű szó, de hímnemű: el idioma.",
@@ -270,7 +368,10 @@
           "de": "La würde wegen der -a-Endung logisch erscheinen, aber idioma ist eine Ausnahme: männlich, wie el mapa oder el planeta."
         }
       },
-      "examples": ["El mapa está en la pared.", "El planeta es muy grande."]
+      "examples": [
+        "El mapa está en la pared.",
+        "El planeta es muy grande."
+      ]
     }
   ]
 }

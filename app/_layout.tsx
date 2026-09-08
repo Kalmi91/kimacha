@@ -87,6 +87,7 @@ function RootLayoutNav() {
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="spelling" options={{ headerShown: false }} />
           <Stack.Screen name="games" options={{ headerShown: false }} />
+          <Stack.Screen name="grammar" options={{ headerShown: false }} />
         </Stack>
         <UsageToast />
       </View>

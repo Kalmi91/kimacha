@@ -6,14 +6,10 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
-import { normalizeWordToken } from '@/data/words';
 import { getGameDef, gameName } from '@/lib/games/registry';
-import { getGrammarTopics, cumulativeCorpusWordIds, type GrammarTopicData } from '@/lib/games/content';
-import { buildGrammarRound, wrongExplanation, type GrammarRoundItem } from '@/lib/games/grammarChoice';
-import { buildGlossMap } from '@/lib/games/gloss';
-import { hashString } from '@/lib/shuffle';
+import { getGrammarTopics, type GrammarTopicData } from '@/lib/games/content';
 import { getGameBest, recordGameResult } from '@/lib/games/scoring';
-import GlossText from '@/components/games/GlossText';
+import GrammarDrill from '@/components/grammar/GrammarDrill';
 
 // GAMES.md 4.11 (F3, grammar-choice): "Melyik a helyes?" plusz magyarázat.
 // K21 DÖNTÉS: a magyarázat szabály + 2 példa + miért rossz a többi opció, a
@@ -40,11 +36,9 @@ export default function GrammarChoiceScreen() {
   const [screen, setScreen] = useState<Screen>('topics');
 
   const [topic, setTopic] = useState<GrammarTopicData | null>(null);
-  const [round, setRound] = useState<GrammarRoundItem[]>([]);
-  const [index, setIndex] = useState(0);
-  const [selected, setSelected] = useState<number | null>(null);
+  const [runKey, setRunKey] = useState(0); // remounts the drill for a fresh run
   const [correctCount, setCorrectCount] = useState(0);
-  const [showMore, setShowMore] = useState(false);
+  const [roundLength, setRoundLength] = useState(0);
   const [ruleOpen, setRuleOpen] = useState(false);
 
   const load = useCallback(async () => {
@@ -66,35 +60,11 @@ export default function GrammarChoiceScreen() {
   }, [load]);
 
   const startTopic = (tp: GrammarTopicData) => {
-    const seed = hashString(`${tp.topic}:${Date.now()}`);
     setTopic(tp);
-    setRound(buildGrammarRound(tp, seed));
-    setIndex(0);
-    setSelected(null);
+    setRunKey((k) => k + 1);
     setCorrectCount(0);
-    setShowMore(false);
+    setRoundLength(0);
     setScreen('playing');
-  };
-
-  const current = round[index];
-
-  const selectOption = (optIdx: number) => {
-    if (selected !== null || !current) return;
-    setSelected(optIdx);
-    if (optIdx === current.correctIndex) setCorrectCount((c) => c + 1);
-  };
-
-  const next = () => {
-    if (!topic) return;
-    if (index + 1 < round.length) {
-      setIndex((i) => i + 1);
-      setSelected(null);
-      setShowMore(false);
-      return;
-    }
-    getDb().setGameProgress('grammar-choice', topic.topic, 'done', { correct: correctCount, total: round.length }).catch(() => {});
-    recordGameResult('grammar-choice', correctCount).then((r) => setBest(r.best));
-    setScreen('summary');
   };
 
   if (topics.length === 0) {
@@ -139,7 +109,7 @@ export default function GrammarChoiceScreen() {
     return (
       <View style={[styles.container, { backgroundColor: colors.background, justifyContent: 'center', alignItems: 'center', gap: 16 }]}>
         <Text style={[styles.summaryTitle, { color: colors.text }]}>{s.games.summaryTitle}</Text>
-        <Text style={[styles.summaryScore, { color: colors.tint }]}>{s.games.summaryScore(correctCount, round.length)}</Text>
+        <Text style={[styles.summaryScore, { color: colors.tint }]}>{s.games.summaryScore(correctCount, roundLength)}</Text>
         <Text style={[styles.cardSub, { color: colors.tabIconDefault }]}>
           {s.games.best}: {best}
         </Text>
@@ -155,15 +125,9 @@ export default function GrammarChoiceScreen() {
     );
   }
 
-  // screen === 'playing'
-  const answered = selected !== null;
-  const isCorrect = answered && selected === current.correctIndex;
-  const pickedText = answered ? current.options[selected] : undefined;
-  const [before, after] = current.item.sentence.split('___');
-
-  const knownIds = cumulativeCorpusWordIds(topic.level, learnedLang);
-  const overrides = Object.fromEntries((topic.glossary ?? []).map((g) => [normalizeWordToken(g.word), g.gloss]));
-
+  // screen === 'playing': the drill itself is components/grammar/GrammarDrill,
+  // shared with the grammar course (app/grammar/[topic].tsx) so the "explain
+  // every answer" behaviour has one implementation, not two.
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <View style={styles.header}>
@@ -178,78 +142,19 @@ export default function GrammarChoiceScreen() {
         </Pressable>
       </View>
 
-      <ScrollView contentContainerStyle={styles.playBody}>
-        <Text style={[styles.progress, { color: colors.tabIconDefault }]}>{s.games.grammarChoice.progress(index + 1, round.length)}</Text>
-
-        <View style={[styles.sentenceCard, { backgroundColor: colors.card }]}>
-          <Text style={[styles.sentence, { color: colors.text }]}>
-            {before}
-            <Text style={{ color: answered ? (isCorrect ? '#22C55E' : '#EF4444') : colors.tint, fontWeight: '700' }}>
-              {answered ? pickedText : '____'}
-            </Text>
-            {after}
-          </Text>
-        </View>
-
-        <View style={styles.options}>
-          {current.options.map((opt, i) => {
-            const isPicked = selected === i;
-            const isRightAnswer = i === current.correctIndex;
-            let bg = colors.card;
-            let border = colors.tabIconDefault;
-            if (answered && isRightAnswer) {
-              bg = '#22C55E22';
-              border = '#22C55E';
-            } else if (answered && isPicked && !isRightAnswer) {
-              bg = '#EF444422';
-              border = '#EF4444';
-            }
-            return (
-              <Pressable
-                key={opt}
-                testID="grammar-option"
-                style={[styles.option, { backgroundColor: bg, borderColor: border }]}
-                onPress={() => selectOption(i)}
-                disabled={answered}
-              >
-                <Text style={[styles.optionText, { color: colors.text }]}>{opt}</Text>
-              </Pressable>
-            );
-          })}
-        </View>
-
-        {answered ? (
-          <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
-            <Text style={[styles.explainHeader, { color: isCorrect ? '#22C55E' : '#EF4444' }]}>
-              {isCorrect ? s.games.correctFeedback : s.games.wrongFeedback}
-            </Text>
-            <Text style={[styles.explainText, { color: colors.text }]}>{current.item.why[contentLang] ?? current.item.why.en}</Text>
-            {!isCorrect && pickedText !== undefined ? (
-              <Text style={[styles.explainText, { color: colors.tabIconDefault }]}>{wrongExplanation(current.item, pickedText, contentLang) ?? ''}</Text>
-            ) : null}
-            {current.item.examples.map((ex, i) => (
-              <GlossText
-                key={i}
-                text={ex}
-                glosses={buildGlossMap(ex, { learnedLang, nativeLang: contentLang, knownWordIds: knownIds, overrides })}
-                learnedLang={learnedLang}
-                style={[styles.example, { color: colors.text }]}
-              />
-            ))}
-            {topic.more ? (
-              <View>
-                <Pressable onPress={() => setShowMore((v) => !v)}>
-                  <Text style={[styles.moreToggle, { color: colors.tint }]}>{showMore ? `▾ ${s.games.moreLabel}` : `▸ ${s.games.moreLabel}`}</Text>
-                </Pressable>
-                {showMore ? <Text style={[styles.explainText, { color: colors.tabIconDefault }]}>{topic.more[contentLang] ?? topic.more.en}</Text> : null}
-              </View>
-            ) : null}
-            <Pressable style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={next}>
-              <Text style={styles.btnText}>{s.games.understood}</Text>
-            </Pressable>
-          </View>
-        ) : null}
-      </ScrollView>
+      <GrammarDrill
+        key={runKey}
+        topic={topic}
+        learnedLang={learnedLang}
+        contentLang={contentLang}
+        onFinish={(correct, total) => {
+          setCorrectCount(correct);
+          setRoundLength(total);
+          getDb().setGameProgress('grammar-choice', topic.topic, 'done', { correct, total }).catch(() => {});
+          recordGameResult('grammar-choice', correct).then((r) => setBest(r.best));
+          setScreen('summary');
+        }}
+      />
 
       <Modal visible={ruleOpen} transparent animationType="fade" onRequestClose={() => setRuleOpen(false)}>
         <Pressable style={styles.overlay} onPress={() => setRuleOpen(false)}>
