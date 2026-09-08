@@ -56,7 +56,34 @@ export default {
     active: 'Aktív',
     settings: 'Beállítások',
     tree: 'Témák',
+    talk: 'Átbeszélő',
     stats: 'Statisztika',
+  },
+  // Átbeszélő fül (Kálmán kérése, 2026-09-08): témát választasz, szintet
+  // választasz, és azon a szinten beszéled át. A témák a PCIC makró-témák
+  // szerint állnak össze (lib/talk/catalog.ts).
+  talk: {
+    title: 'Átbeszélő',
+    subtitle: 'Válassz témát, aztán szintet. Ugyanaz a téma másképp szól A1-en és C1-en.',
+    readyLine: (n: number) => `${n} téma van kész, a többi épül.`,
+    topicsIn: (n: number) => `${n} téma`,
+    pickLevel: 'Milyen szinten beszéljük át?',
+    pickFormat: 'Hogyan gyakorolsz?',
+    levelNoWords: 'Ezen a szinten még nincs szó ehhez a témához.',
+    comingSoon: 'Hamarosan',
+    formatStory: 'Történet',
+    formatStoryBlurb: 'Rövid sztori a témáról, jelenetenként egy kérdéssel.',
+    formatChat: 'Beszélgetés',
+    formatChatBlurb: 'Párbeszéd, ahol te választod a válaszaidat.',
+    formatQuiz: 'Szókvíz',
+    formatQuizBlurb: 'A téma szavai, négy válasz közül egy jó.',
+    quizPrompt: 'Mit jelent?',
+    quizNext: 'Tovább',
+    quizFinish: 'Befejezés',
+    quizResult: (correct: number, total: number) => `${correct} / ${total} találat`,
+    quizAgain: 'Újra',
+    quizBack: 'Vissza',
+    quizEmpty: 'Ehhez a témához ezen a szinten még kevés a szó.',
   },
   // GAMES.md 2.2 + 3. (F0): a Game fül hub képernyője + a közös GameShell/
   // GameOverCard/CountdownStart/GameSettingsSheet keret feliratai.

@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View, Pressable } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
@@ -9,6 +9,7 @@ import { getDb } from '@/lib/database';
 import { normalizeWordToken } from '@/data/words';
 import { getGameDef, gameName } from '@/lib/games/registry';
 import { getStories, cumulativeCorpusWordIds, type StoryData, type StoryTrack } from '@/lib/games/content';
+import { getTalkStory } from '@/lib/talk/packs';
 import { collectNewWords, shuffledQuestionOptions } from '@/lib/games/story';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString } from '@/lib/shuffle';
@@ -39,6 +40,10 @@ export default function StoryScreen() {
   const s = t();
   const router = useRouter();
   const gameDef = getGameDef('story')!;
+  // Átbeszélő fül: a `talk` paraméterrel EGY konkrét pakk-sztorija nyílik meg,
+  // lista nélkül. A Game fül felől a paraméter hiányzik, ott minden a régi.
+  const { talk } = useLocalSearchParams<{ talk?: string }>();
+  const autoOpened = useRef(false);
 
   const [learnedLang, setLearnedLang] = useState('es');
   const [contentLang, setContentLang] = useState('hu');
@@ -69,7 +74,12 @@ export default function StoryScreen() {
     setLearnedLang(target);
     setContentLang(source === 'hu' || source === 'es' || source === 'de' ? source : 'en');
 
-    setStories(getStories(target));
+    if (talk) {
+      const only = getTalkStory(target, talk);
+      setStories(only ? [only] : []);
+    } else {
+      setStories(getStories(target));
+    }
 
     const progress = await db.getGameProgress('story');
     setDoneIds(new Set(progress.filter((p) => p.state === 'done').map((p) => p.itemId)));
@@ -90,7 +100,7 @@ export default function StoryScreen() {
 
     await loadVoices();
     setCanSpeak(hasVoiceFor(speechLang(target)));
-  }, []);
+  }, [talk]);
 
   useEffect(() => {
     load();
@@ -151,6 +161,15 @@ export default function StoryScreen() {
     setAnsweredScenes(0);
     setScreen('reading');
   };
+
+  // Az Átbeszélőből érkezve rögtön az olvasásnál kezdünk, de csak egyszer:
+  // a sztori végén a lista/összegzés képernyő maradjon elérhető.
+  useEffect(() => {
+    if (!talk || autoOpened.current || stories.length !== 1) return;
+    autoOpened.current = true;
+    openStory(stories[0]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [talk, stories]);
 
   const scene = story?.scenes[sceneIndex];
 

@@ -838,12 +838,59 @@ function runConfusables() {
   }
 }
 
+// ---------------------------------------------------------------------------
+// talk (data/games/talk/<lang>/<macro>-<level>.json), Átbeszélő fül
+// ---------------------------------------------------------------------------
+//
+// Egy fájl = egy cella a makró×szint rácsban, benne a cella sztorija és
+// párbeszéde. A tartalom ugyanaz a StoryData / ChatData alak, mint a Game
+// fülön, ezért ugyanaz a két ellenőrző fut rá: a korpusz-fegyelem (csak
+// tanult vagy glosszázott szó) az Átbeszélőben is kötelező.
+
+const TALK_LEVELS = new Set(['A1', 'A2', 'B1', 'B2', 'C1']);
+
+function runTalk() {
+  const base = join(ROOT, 'data/games/talk');
+  if (!existsSync(base)) return;
+  const seenStoryIds = new Set();
+  const seenChatIds = new Set();
+  const seenCells = new Set();
+  for (const lang of readdirSync(base)) {
+    const dir = join(base, lang);
+    for (const file of jsonFilesIn(dir)) {
+      const path = `talk/${lang}/${file}`;
+      const pack = JSON.parse(readFileSync(join(dir, file), 'utf8'));
+      if (typeof pack.macro !== 'number') p1.push({ path, issue: 'missing macro number' });
+      if (!TALK_LEVELS.has(pack.level)) p1.push({ path, issue: `missing/unknown level: ${pack.level}` });
+      const cell = `${lang}|${pack.macro}|${pack.level}`;
+      if (seenCells.has(cell)) p1.push({ path, issue: `duplicate macro+level cell "${cell}"` });
+      seenCells.add(cell);
+      if (file !== `${pack.macro}-${pack.level}.json`) {
+        p2.push({ path, issue: `file name should be ${pack.macro}-${pack.level}.json` });
+      }
+      if (!pack.story) {
+        p1.push({ path, issue: 'missing story' });
+      } else {
+        if (pack.story.level !== pack.level) p1.push({ path, issue: 'story level differs from pack level' });
+        auditStory(pack.story, `${lang}/${file}`, seenStoryIds);
+      }
+      if (!pack.chat) {
+        p1.push({ path, issue: 'missing chat' });
+      } else {
+        if (pack.chat.level !== pack.level) p1.push({ path, issue: 'chat level differs from pack level' });
+        auditChat(pack.chat, `${lang}/${file}`, seenChatIds);
+      }
+    }
+  }
+}
+
 runGrammar();
 runConfusables();
 runMyths();
 runStories();
 runChats();
 runCcat();
+runTalk();
 
 // ---------------------------------------------------------------------------
 // Report
