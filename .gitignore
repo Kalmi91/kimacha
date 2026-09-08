@@ -49,3 +49,6 @@ data/words/backup_*/
 # Word generation work-in-progress files
 todo_*.txt
 word_batches/
+
+# Play Store screenshots (regenerable, 1.5M)
+store/screenshots/
