@@ -233,7 +233,7 @@ export default function StoryScreen() {
                 <Text style={[styles.trackHeader, { color: colors.text }]}>{s.games.story[`track_${tr}` as 'track_cdmx']}</Text>
                 <View style={styles.cardRow}>
                   {items.map((st) => (
-                    <Pressable key={st.id} style={[styles.card, { backgroundColor: colors.card }]} onPress={() => openStory(st)}>
+                    <Pressable key={st.id} testID="story-card" style={[styles.card, { backgroundColor: colors.card }]} onPress={() => openStory(st)}>
                       <Text style={styles.cardCover}>{st.cover}</Text>
                       <Text style={[styles.cardTitle, { color: colors.text }]} numberOfLines={2}>
                         {st.title[contentLang] ?? st.title.en}
@@ -366,6 +366,7 @@ export default function StoryScreen() {
               return (
                 <Pressable
                   key={optText + i}
+                  testID="story-option"
                   style={[styles.optionBtn, { backgroundColor: bg, borderColor: border }]}
                   onPress={() => pickAnswer(optText, isCorrectOpt)}
                   disabled={isAnswered}
@@ -378,6 +379,7 @@ export default function StoryScreen() {
         ) : null}
 
         <Pressable
+          testID="story-continue"
           style={[styles.btn, { backgroundColor: colors.tint, opacity: scene.question && !isAnswered ? 0.5 : 1 }]}
           onPress={nextScene}
           disabled={!!scene.question && !isAnswered}

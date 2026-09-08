@@ -128,7 +128,7 @@ export default function ConfusablesScreen() {
         <Text style={[styles.subtitle, { color: colors.tabIconDefault }]}>{s.games.confusables.pickSet}</Text>
         <ScrollView contentContainerStyle={styles.list}>
           {sets.map((st) => (
-            <Pressable key={st.id} style={[styles.card, { backgroundColor: colors.card }]} onPress={() => openSet(st)}>
+            <Pressable key={st.id} testID="confusables-set" style={[styles.card, { backgroundColor: colors.card }]} onPress={() => openSet(st)}>
               <Text style={[styles.cardTitle, { color: colors.text }]}>{st.members.map((m) => m.word).join(' / ')}</Text>
               <Text style={[styles.cardSub, { color: colors.tabIconDefault }]}>{s.games.confusables.setMembersLabel(st.members.length)}</Text>
             </Pressable>
@@ -179,7 +179,7 @@ export default function ConfusablesScreen() {
               <Text style={[styles.explainText, { color: colors.text }]}>{set.mnemonic[contentLang] ?? set.mnemonic.en}</Text>
             </View>
           ) : null}
-          <Pressable style={[styles.btn, { backgroundColor: colors.tint }]} onPress={startDrill}>
+          <Pressable testID="confusables-start-drill" style={[styles.btn, { backgroundColor: colors.tint }]} onPress={startDrill}>
             <Text style={styles.btnText}>{s.games.confusables.startDrill}</Text>
           </Pressable>
         </ScrollView>
@@ -267,7 +267,13 @@ export default function ConfusablesScreen() {
               border = '#EF4444';
             }
             return (
-              <Pressable key={opt} style={[styles.option, { backgroundColor: bg, borderColor: border }]} onPress={() => pick(opt)} disabled={answered}>
+              <Pressable
+                key={opt}
+                testID="confusables-option"
+                style={[styles.option, { backgroundColor: bg, borderColor: border }]}
+                onPress={() => pick(opt)}
+                disabled={answered}
+              >
                 <Text style={[styles.optionText, { color: colors.text }]}>{opt}</Text>
               </Pressable>
             );

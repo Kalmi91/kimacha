@@ -393,6 +393,7 @@ export default function ConjugationSlotScreen() {
             return (
               <Pressable
                 key={opt}
+                testID="conj-option"
                 style={[styles.optionBtn, { backgroundColor: bg, borderColor: border }]}
                 onPress={() => selectOption(opt)}
                 disabled={answered}

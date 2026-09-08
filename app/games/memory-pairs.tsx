@@ -241,11 +241,12 @@ export default function MemoryPairsScreen() {
         </Pressable>
 
         <View style={[styles.grid, { width: cols * (cellSize + 6) }]}>
-          {cards.map((card) => {
+          {cards.map((card, index) => {
             const faceUp = flipped.includes(card.id) || card.matched;
             return (
               <Pressable
                 key={card.id}
+                testID={`mem-card-${index}`}
                 onPress={() => onCardPress(card)}
                 style={[
                   styles.card,

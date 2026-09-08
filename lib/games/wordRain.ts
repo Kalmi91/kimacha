@@ -87,6 +87,29 @@ export function buildFallingRound(entry: PoolEntry, pool: PoolEntry[], opts: Bui
 // overlaps and nothing leaves the board, whatever the word or the tile count.
 export const LANE_GUTTER = 4;
 
+// GAMES.md 4.1: "Fentről 4-6 szó esik a tanult nyelven, vízszintesen
+// szétszórva, KÜLÖNBÖZŐ SEBESSÉGGEL". Every tile of a round used to get the
+// same duration, so the board fell as one rigid line and the round was over
+// the moment the slowest tile landed. Each lane now gets its own duration,
+// deterministically spread around the base speed, so the words arrive
+// staggered; the spread is symmetric, so the average round length is
+// unchanged and the difficulty curve (4.1: -8% every 10 hits, floor 2.2 s)
+// still governs the base.
+export const FALL_SPREAD = 0.3; // ±30% around the base duration
+
+export function laneFallDurations(count: number, baseMs: number, seed: number, minMs: number): number[] {
+  const n = Math.max(1, count);
+  const out: number[] = [];
+  for (let i = 0; i < n; i++) {
+    // Evenly spaced offsets in [-FALL_SPREAD, +FALL_SPREAD], then rotated by
+    // the seed so the fast lane is not always the same column.
+    const slot = n === 1 ? 0 : ((i + (seed % n)) % n) / (n - 1); // 0..1
+    const factor = 1 - FALL_SPREAD + slot * FALL_SPREAD * 2;
+    out.push(Math.max(minMs, Math.round(baseMs * factor)));
+  }
+  return out;
+}
+
 export interface FallingLane {
   x: number;
   width: number;
