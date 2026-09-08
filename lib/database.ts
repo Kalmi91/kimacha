@@ -63,6 +63,9 @@ export interface DB {
   setRandomTopics(v: boolean): Promise<void>;
   getStrictAccents(): Promise<boolean>;
   setStrictAccents(v: boolean): Promise<void>;
+  // FB188: a névelő-gombsor a gépelős spanyol főnév-kártyán, ki-be kapcsolható.
+  getArticlePicker(): Promise<boolean>;
+  setArticlePicker(v: boolean): Promise<void>;
   getWeeklyGoalMinutes(): Promise<number>;
   setWeeklyGoalMinutes(minutes: number): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
@@ -176,6 +179,7 @@ class SQLiteDB implements DB {
         words_only INTEGER,
         random_topics INTEGER,
         strict_accents INTEGER,
+        article_picker INTEGER,
         feedback_btn_side TEXT,
         weekly_goal_minutes INTEGER,
         daily_new_limit INTEGER,
@@ -224,6 +228,10 @@ class SQLiteDB implements DB {
     // Migration: add strict_accents column (DBs created before the difficulty switches, FB132).
     try {
       await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN strict_accents INTEGER');
+    } catch {}
+    // Migration: add article_picker column (DBs created before the article chips, FB188).
+    try {
+      await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN article_picker INTEGER');
     } catch {}
     // Migration: add feedback_btn_side column (DBs created before the draggable feedback button, FB41).
     try {
@@ -835,6 +843,23 @@ class SQLiteDB implements DB {
     const db = await this.open();
     await db.runAsync(
       'INSERT INTO learn_settings (pair, strict_accents) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET strict_accents = excluded.strict_accents',
+      [this.activePair, v ? 1 : 0]
+    );
+  }
+
+  // FB188, Kálmán 2026-09-08: „ne begépelni kelljen a el la t hanem kiválasztani".
+  // Alapból BE, mert ő kérte; a kapcsoló azért van, hogy vissza tudjon állni
+  // gépelésre, ha mégsem válik be ("kíváncsi vagyok hogy milyen").
+  async getArticlePicker(): Promise<boolean> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT article_picker FROM learn_settings WHERE pair = ?', [this.activePair]);
+    return row?.article_picker !== 0;
+  }
+
+  async setArticlePicker(v: boolean): Promise<void> {
+    const db = await this.open();
+    await db.runAsync(
+      'INSERT INTO learn_settings (pair, article_picker) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET article_picker = excluded.article_picker',
       [this.activePair, v ? 1 : 0]
     );
   }
