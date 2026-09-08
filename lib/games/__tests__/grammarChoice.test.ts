@@ -1,5 +1,5 @@
 import { buildGrammarRound, wrongExplanation } from '../grammarChoice';
-import type { GrammarTopicData } from '../content';
+import { getGrammarTopics, type GrammarTopicData } from '../content';
 
 function makeTopic(): GrammarTopicData {
   return {
@@ -83,5 +83,44 @@ describe('wrongExplanation', () => {
     const item = topic.items[0];
     expect(wrongExplanation(item, 'estoy', 'hu')).toBe('x');
     expect(wrongExplanation(item, 'nope', 'hu')).toBeUndefined();
+  });
+});
+
+// Q1 content batch (GAMES.md 10., token-burn queue): every authored topic has
+// to be complete, or the game shows a half-explained rule to the learner.
+describe('authored grammar topics are complete (Q1 batch)', () => {
+  const topics = getGrammarTopics('es');
+
+  it('offers the A1 topics before the A2 ones', () => {
+    expect(topics.length).toBeGreaterThanOrEqual(7);
+    const firstA2 = topics.findIndex((t) => t.level === 'A2');
+    const lastA1 = topics.map((t) => t.level).lastIndexOf('A1');
+    expect(lastA1).toBeLessThan(firstA2);
+  });
+
+  it.each(topics.map((t) => [t.topic, t] as const))('%s: rule, items and explanations in 4 languages', (_id, topic) => {
+    for (const lang of ['hu', 'en', 'es', 'de']) {
+      expect(topic.title[lang]).toBeTruthy();
+      expect(topic.rule[lang]).toBeTruthy();
+    }
+    expect(topic.items.length).toBeGreaterThanOrEqual(10);
+
+    for (const item of topic.items) {
+      // Exactly one gap, and a correct index that exists.
+      expect(item.sentence.split('___')).toHaveLength(2);
+      expect(item.options[item.correct]).toBeTruthy();
+      expect(item.examples.length).toBeGreaterThan(0);
+      for (const lang of ['hu', 'en', 'es', 'de']) {
+        expect(item.why[lang]).toBeTruthy();
+      }
+      // Every WRONG option must say why it is wrong, in all four languages:
+      // GAMES.md 4.11 promises "miért rossz a többi".
+      for (const option of item.options) {
+        if (option === item.options[item.correct]) continue;
+        for (const lang of ['hu', 'en', 'es', 'de']) {
+          expect(wrongExplanation(item, option, lang)).toBeTruthy();
+        }
+      }
+    }
   });
 });
