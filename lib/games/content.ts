@@ -235,6 +235,7 @@ import grammarEsPresenteRegular from '@/data/games/grammar/es/presente-regular.j
 import grammarEsHayEstar from '@/data/games/grammar/es/hay-estar.json';
 import grammarEsGustar from '@/data/games/grammar/es/gustar.json';
 import grammarEsPosesivos from '@/data/games/grammar/es/posesivos.json';
+import grammarEsClasesDePalabras from '@/data/games/grammar/es/clases-de-palabras.json';
 import grammarEsSustantivoNumero from '@/data/games/grammar/es/sustantivo-numero.json';
 import grammarEsAdjetivoConcordancia from '@/data/games/grammar/es/adjetivo-concordancia.json';
 import grammarEsPresenteIrregular from '@/data/games/grammar/es/presente-irregular.json';
@@ -257,6 +258,9 @@ const grammarTopicsByLang: Partial<Record<string, GrammarTopicData[]>> = {
   // Teaching order: A1 first, then A2. lib/grammar/syllabus.ts is the map that
   // groups these into units and says which ones are still unwritten.
   es: [
+    // FB189: a szófaj-áttekintés a tanterv első témája, minden későbbi szabály
+    // (a melléknév a főnév után áll) ezt feltételezi.
+    grammarEsClasesDePalabras,
     grammarEsSustantivoNumero,
     grammarEsArticulosGenero,
     grammarEsAdjetivoConcordancia,

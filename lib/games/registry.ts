@@ -22,7 +22,8 @@ export type GameId =
   | 'confusables'
   | 'myth'
   | 'number-dictation'
-  | 'date-dictation';
+  | 'date-dictation'
+  | 'word-class';
 
 export type GameKind =
   | 'arcade'
@@ -37,7 +38,8 @@ export type GameKind =
   | 'grammar-teaching'
   | 'teaching-drill'
   | 'content-facts'
-  | 'listening-drill';
+  | 'listening-drill'
+  | 'grammar-sort';
 
 // GAMES.md 5. szekció (Építési sorrend javaslat).
 export type BuildPhase = 'F1' | 'F2' | 'F3' | 'F4' | 'F5' | 'F6';
@@ -319,6 +321,25 @@ export const GAME_DEFS: GameDef[] = [
     hasSettings: false,
     soon: false, // FB187: app/games/date-dictation.tsx
     languages: ['es'],
+  },
+  // FB189, Kálmán 2026-09-08: „egy fontos része a nyelvtannal az szófajok
+  // megkülönböztetése erre is helyezz hansúlyt." A kérdések a MÁR TANULT
+  // szavakból állnak elő, ezért kell hozzá pool-méret, szemben a diktálással.
+  {
+    id: 'word-class',
+    icon: '🏷️',
+    kind: 'grammar-sort',
+    phase: 'F6',
+    name: { hu: 'Milyen szófaj?', en: 'Which Word Class?', es: '¿Qué clase de palabra?', de: 'Welche Wortart?' },
+    blurb: {
+      hu: 'Főnév, ige, melléknév vagy határozószó? Sorold be a tanult szavakat.',
+      en: 'Noun, verb, adjective or adverb? Sort the words you have learned.',
+      es: '¿Sustantivo, verbo, adjetivo o adverbio? Clasifica las palabras aprendidas.',
+      de: 'Nomen, Verb, Adjektiv oder Adverb? Ordne die gelernten Wörter ein.',
+    },
+    minPoolSize: 20,
+    hasSettings: false,
+    soon: false, // FB189: app/games/word-class.tsx
   },
 ];
 
