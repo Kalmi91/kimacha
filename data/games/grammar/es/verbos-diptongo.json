@@ -1,0 +1,668 @@
+{
+  "topic": "verbos-diptongo",
+  "level": "A1",
+  "title": {
+    "hu": "Tőhangváltós igék: e→ie, o→ue, e→i",
+    "en": "Stem-changing verbs: e→ie, o→ue, e→i",
+    "es": "Verbos con cambio de raíz: e→ie, o→ue, e→i",
+    "de": "Verben mit Stammwechsel: e→ie, o→ue, e→i"
+  },
+  "rule": {
+    "hu": "Ezeknél az igéknél a TŐ változik, a végződés viszont teljesen szabályos. Három csoport: e→ie (querer: quiero, quieres, quiere, queremos, quieren), o→ue (poder: puedo, puedes, puede, podemos, pueden), e→i (pedir: pido, pides, pide, pedimos, piden). A változás CSAK ott van, ahová a hangsúly esik, ezért a NOSOTROS alak mindig szabályos marad: queremos, podemos, pedimos. Ezt hívják cipő-szabálynak: a hat alakból a négy sarok változik, a két középső nem.",
+    "en": "In these verbs the STEM changes while the endings stay perfectly regular. Three groups: e→ie (querer: quiero, quieres, quiere, queremos, quieren), o→ue (poder: puedo, puedes, puede, podemos, pueden), e→i (pedir: pido, pides, pide, pedimos, piden). The change happens only where the stress falls, so the NOSOTROS form always stays regular: queremos, podemos, pedimos. This is the boot rule: four corners change, the middle does not.",
+    "es": "En estos verbos cambia la RAÍZ y las terminaciones son regulares. Tres grupos: e→ie (quiero), o→ue (puedo), e→i (pido). El cambio solo ocurre donde cae el acento, por eso nosotros se mantiene regular: queremos, podemos, pedimos. Es la regla de la bota.",
+    "de": "Bei diesen Verben ändert sich der STAMM, die Endungen bleiben regelmäßig. Drei Gruppen: e→ie (quiero), o→ue (puedo), e→i (pido). Der Wechsel geschieht nur dort, wo die Betonung liegt, deshalb bleibt die nosotros-Form regelmäßig: queremos, podemos, pedimos."
+  },
+  "more": {
+    "hu": "Gyakori tagok: e→ie: querer, pensar, empezar, cerrar, entender, preferir, sentir, tener, venir. o→ue: poder, dormir, volver, contar, encontrar, costar, recordar, morir. e→i: pedir, servir, repetir, seguir, vestirse. Két különleges: jugar az egyetlen u→ue ige (juego), és az oler h-t kap (huelo). A szótár mindig az alapalakot adja meg, a változás nem látszik rajta, ezért érdemes a szót az yo alakkal együtt megjegyezni.",
+    "en": "Common members: e→ie: querer, pensar, empezar, cerrar, entender, preferir, sentir, tener, venir. o→ue: poder, dormir, volver, contar, encontrar, costar, recordar, morir. e→i: pedir, servir, repetir, seguir, vestirse. Two oddities: jugar is the only u→ue verb (juego), and oler gains an h (huelo). A dictionary only shows the infinitive, so it pays to learn these verbs together with their yo form.",
+    "es": "Miembros frecuentes: e→ie: querer, pensar, empezar, cerrar, entender, preferir, sentir. o→ue: poder, dormir, volver, contar, encontrar, costar, recordar. e→i: pedir, servir, repetir, seguir. Dos rarezas: jugar es el único u→ue (juego) y oler añade h (huelo). Conviene aprender el verbo con su forma de yo.",
+    "de": "Häufige Mitglieder: e→ie: querer, pensar, empezar, cerrar, entender, preferir, sentir. o→ue: poder, dormir, volver, contar, encontrar, costar, recordar. e→i: pedir, servir, repetir, seguir. Zwei Sonderfälle: jugar ist das einzige u→ue-Verb (juego), oler bekommt ein h (huelo). Lerne diese Verben mit ihrer yo-Form."
+  },
+  "glossary": [
+    {
+      "word": "entiendo",
+      "gloss": {
+        "hu": "értem",
+        "en": "I understand",
+        "es": "yo entiendo",
+        "de": "ich verstehe"
+      }
+    },
+    {
+      "word": "entendemos",
+      "gloss": {
+        "hu": "értjük",
+        "en": "we understand",
+        "es": "nosotros entendemos",
+        "de": "wir verstehen"
+      }
+    },
+    {
+      "word": "prefiero",
+      "gloss": {
+        "hu": "jobban szeretem",
+        "en": "I prefer",
+        "es": "yo prefiero",
+        "de": "ich bevorzuge"
+      }
+    },
+    {
+      "word": "cuesta",
+      "gloss": {
+        "hu": "kerül (árba)",
+        "en": "it costs",
+        "es": "cuesta",
+        "de": "es kostet"
+      }
+    },
+    {
+      "word": "sirven",
+      "gloss": {
+        "hu": "felszolgálnak",
+        "en": "they serve",
+        "es": "ellos sirven",
+        "de": "sie servieren"
+      }
+    },
+    {
+      "word": "recuerdo",
+      "gloss": {
+        "hu": "emlékszem",
+        "en": "I remember",
+        "es": "yo recuerdo",
+        "de": "ich erinnere mich"
+      }
+    },
+    {
+      "word": "empiezan",
+      "gloss": {
+        "hu": "elkezdik, kezdődnek",
+        "en": "they start",
+        "es": "ellos empiezan",
+        "de": "sie beginnen"
+      }
+    },
+    {
+      "word": "bar",
+      "gloss": {
+        "hu": "bár, kocsma",
+        "en": "bar",
+        "es": "el bar",
+        "de": "Bar"
+      }
+    },
+    {
+      "word": "cierra",
+      "gloss": {
+        "hu": "bezár, becsuk",
+        "en": "closes",
+        "es": "cerrar → cierra",
+        "de": "schließt"
+      }
+    },
+    {
+      "word": "curso",
+      "gloss": {
+        "hu": "tanfolyam",
+        "en": "course",
+        "es": "el curso",
+        "de": "Kurs"
+      }
+    },
+    {
+      "word": "dices",
+      "gloss": {
+        "hu": "mondod",
+        "en": "you say",
+        "es": "decir → dices",
+        "de": "du sagst"
+      }
+    },
+    {
+      "word": "mapa",
+      "gloss": {
+        "hu": "térkép",
+        "en": "map",
+        "es": "el mapa",
+        "de": "Karte"
+      }
+    },
+    {
+      "word": "palabra",
+      "gloss": {
+        "hu": "szó",
+        "en": "word",
+        "es": "la palabra",
+        "de": "Wort"
+      }
+    },
+    {
+      "word": "poco",
+      "gloss": {
+        "hu": "kevés, kicsit",
+        "en": "little, a bit",
+        "es": "poco",
+        "de": "wenig"
+      }
+    },
+    {
+      "word": "preferimos",
+      "gloss": {
+        "hu": "jobban szeretjük",
+        "en": "we prefer",
+        "es": "preferir → preferimos",
+        "de": "wir bevorzugen"
+      }
+    },
+    {
+      "word": "prefero",
+      "gloss": {
+        "hu": "nem létező alak",
+        "en": "not a real form",
+        "es": "forma inexistente",
+        "de": "keine reale Form"
+      }
+    },
+    {
+      "word": "repite",
+      "gloss": {
+        "hu": "megismétli",
+        "en": "repeats",
+        "es": "repetir → repite",
+        "de": "wiederholt"
+      }
+    },
+    {
+      "word": "repito",
+      "gloss": {
+        "hu": "megismétlem",
+        "en": "I repeat",
+        "es": "repetir → repito",
+        "de": "ich wiederhole"
+      }
+    },
+    {
+      "word": "serven",
+      "gloss": {
+        "hu": "nem létező alak",
+        "en": "not a real form",
+        "es": "forma inexistente",
+        "de": "keine reale Form"
+      }
+    },
+    {
+      "word": "servimos",
+      "gloss": {
+        "hu": "felszolgálunk",
+        "en": "we serve",
+        "es": "servir → servimos",
+        "de": "wir servieren"
+      }
+    },
+    {
+      "word": "sigo",
+      "gloss": {
+        "hu": "követem, folytatom",
+        "en": "I follow, I keep on",
+        "es": "seguir → sigo",
+        "de": "ich folge"
+      }
+    },
+    {
+      "word": "siguen",
+      "gloss": {
+        "hu": "követik, folytatják",
+        "en": "they follow",
+        "es": "seguir → siguen",
+        "de": "sie folgen"
+      }
+    },
+    {
+      "word": "volvemos",
+      "gloss": {
+        "hu": "visszatérünk",
+        "en": "we come back",
+        "es": "volver → volvemos",
+        "de": "wir kehren zurück"
+      }
+    },
+    {
+      "word": "vuelvemos",
+      "gloss": {
+        "hu": "nem létező alak",
+        "en": "not a real form",
+        "es": "forma inexistente",
+        "de": "keine reale Form"
+      }
+    },
+    {
+      "word": "vuelven",
+      "gloss": {
+        "hu": "visszatérnek",
+        "en": "they come back",
+        "es": "volver → vuelven",
+        "de": "sie kehren zurück"
+      }
+    },
+    {
+      "word": "vuelvo",
+      "gloss": {
+        "hu": "visszatérek",
+        "en": "I come back",
+        "es": "volver → vuelvo",
+        "de": "ich kehre zurück"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "vd-01",
+      "sentence": "Yo ___ un café con leche.",
+      "options": [
+        "quiero",
+        "quero",
+        "queremos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A querer e→ie csoport: quiero.",
+        "en": "Querer is in the e→ie group: quiero.",
+        "es": "Querer es del grupo e→ie: quiero.",
+        "de": "Querer gehört zur e→ie-Gruppe: quiero."
+      },
+      "wrong": {
+        "quero": {
+          "hu": "A tő nem maradhat változatlan a yo alakban.",
+          "en": "The stem cannot stay unchanged in the yo form.",
+          "es": "La raíz no queda igual en la forma de yo.",
+          "de": "Der Stamm bleibt in der yo-Form nicht unverändert."
+        },
+        "queremos": {
+          "hu": "Ez a mi alakunk.",
+          "en": "That is our form.",
+          "es": "Esa es la forma de nosotros.",
+          "de": "Das ist unsere Form."
+        }
+      },
+      "examples": [
+        "Yo pienso mucho.",
+        "Yo empiezo a las ocho."
+      ]
+    },
+    {
+      "id": "vd-02",
+      "sentence": "Nosotros ___ ir al cine esta noche.",
+      "options": [
+        "queremos",
+        "quieremos",
+        "quieren"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A nosotros alak SOSEM változtat tövet: queremos.",
+        "en": "The nosotros form NEVER changes its stem: queremos.",
+        "es": "La forma de nosotros nunca cambia la raíz: queremos.",
+        "de": "Die nosotros-Form ändert den Stamm nie: queremos."
+      },
+      "wrong": {
+        "quieremos": {
+          "hu": "Ilyen alak nincs: ez a leggyakoribb hiba ennél a leckénél.",
+          "en": "No such form: this is the classic slip in this lesson.",
+          "es": "Esa forma no existe: es el error típico aquí.",
+          "de": "Diese Form gibt es nicht: der typische Fehler hier."
+        },
+        "quieren": {
+          "hu": "Ez az ellos alakja.",
+          "en": "That is the ellos form.",
+          "es": "Esa es la forma de ellos.",
+          "de": "Das ist die ellos-Form."
+        }
+      },
+      "examples": [
+        "Nosotros podemos ayudar.",
+        "Nosotros pedimos la cuenta."
+      ]
+    },
+    {
+      "id": "vd-03",
+      "sentence": "¿___ (tú) venir mañana?",
+      "options": [
+        "Puedes",
+        "Podes",
+        "Podemos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A poder o→ue csoport, tú alakban puedes.",
+        "en": "Poder is in the o→ue group; the tú form is puedes.",
+        "es": "Poder es del grupo o→ue: puedes.",
+        "de": "Poder gehört zur o→ue-Gruppe: puedes."
+      },
+      "wrong": {
+        "Podes": {
+          "hu": "Ez a voseo alakja (Argentína), a semleges spanyolban puedes.",
+          "en": "That is the voseo form (Argentina); neutral Spanish uses puedes.",
+          "es": "Esa es forma de voseo; en español neutro, puedes.",
+          "de": "Das ist die Voseo-Form; im neutralen Spanisch puedes."
+        },
+        "Podemos": {
+          "hu": "Ez a mi alakunk.",
+          "en": "That is our form.",
+          "es": "Esa es la forma de nosotros.",
+          "de": "Das ist unsere Form."
+        }
+      },
+      "examples": [
+        "Ella puede llegar tarde.",
+        "Ellos pueden esperar."
+      ]
+    },
+    {
+      "id": "vd-04",
+      "sentence": "El niño ___ ocho horas.",
+      "options": [
+        "duerme",
+        "dorme",
+        "dormimos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A dormir o→ue: duerme.",
+        "en": "Dormir is o→ue: duerme.",
+        "es": "Dormir es o→ue: duerme.",
+        "de": "Dormir ist o→ue: duerme."
+      },
+      "wrong": {
+        "dorme": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "dormimos": {
+          "hu": "Ez a mi alakunk.",
+          "en": "That is our form.",
+          "es": "Esa es la forma de nosotros.",
+          "de": "Das ist unsere Form."
+        }
+      },
+      "examples": [
+        "Yo duermo poco.",
+        "Nosotros dormimos bien."
+      ]
+    },
+    {
+      "id": "vd-05",
+      "sentence": "En el restaurante yo ___ la cuenta.",
+      "options": [
+        "pido",
+        "pedo",
+        "pedimos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A pedir e→i csoport: pido.",
+        "en": "Pedir is in the e→i group: pido.",
+        "es": "Pedir es del grupo e→i: pido.",
+        "de": "Pedir gehört zur e→i-Gruppe: pido."
+      },
+      "wrong": {
+        "pedo": {
+          "hu": "Ilyen igealak nincs, és a szó mást jelent.",
+          "en": "That is not a verb form, and the word means something else.",
+          "es": "No es forma verbal y la palabra significa otra cosa.",
+          "de": "Das ist keine Verbform, das Wort bedeutet etwas anderes."
+        },
+        "pedimos": {
+          "hu": "Ez a mi alakunk.",
+          "en": "That is our form.",
+          "es": "Esa es la forma de nosotros.",
+          "de": "Das ist unsere Form."
+        }
+      },
+      "examples": [
+        "Yo repito la palabra.",
+        "Yo sigo el mapa."
+      ]
+    },
+    {
+      "id": "vd-06",
+      "sentence": "La clase ___ a las nueve.",
+      "options": [
+        "empieza",
+        "empeza",
+        "empezamos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az empezar e→ie: empieza.",
+        "en": "Empezar is e→ie: empieza.",
+        "es": "Empezar es e→ie: empieza.",
+        "de": "Empezar ist e→ie: empieza."
+      },
+      "wrong": {
+        "empeza": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "empezamos": {
+          "hu": "Ez a mi alakunk, és az alany a clase.",
+          "en": "That is our form, but the subject is la clase.",
+          "es": "Esa es la forma de nosotros, y el sujeto es la clase.",
+          "de": "Das ist unsere Form, das Subjekt ist aber la clase."
+        }
+      },
+      "examples": [
+        "La tienda cierra a las seis.",
+        "El curso empieza en enero."
+      ]
+    },
+    {
+      "id": "vd-07",
+      "sentence": "Yo no ___ nada de lo que dices.",
+      "options": [
+        "entiendo",
+        "entendo",
+        "entendemos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az entender e→ie: entiendo.",
+        "en": "Entender is e→ie: entiendo.",
+        "es": "Entender es e→ie: entiendo.",
+        "de": "Entender ist e→ie: entiendo."
+      },
+      "wrong": {
+        "entendo": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "entendemos": {
+          "hu": "Ez a mi alakunk.",
+          "en": "That is our form.",
+          "es": "Esa es la forma de nosotros.",
+          "de": "Das ist unsere Form."
+        }
+      },
+      "examples": [
+        "Nosotros entendemos el problema.",
+        "Ella entiende español."
+      ]
+    },
+    {
+      "id": "vd-08",
+      "sentence": "¿Cuánto ___ este libro?",
+      "options": [
+        "cuesta",
+        "costa",
+        "costamos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A costar o→ue: cuesta.",
+        "en": "Costar is o→ue: cuesta.",
+        "es": "Costar es o→ue: cuesta.",
+        "de": "Costar ist o→ue: cuesta."
+      },
+      "wrong": {
+        "costa": {
+          "hu": "Ez főnév (part), nem igealak itt.",
+          "en": "That is a noun (coast), not this verb form.",
+          "es": "Eso es un sustantivo (costa), no la forma verbal.",
+          "de": "Das ist ein Nomen (Küste), keine Verbform."
+        },
+        "costamos": {
+          "hu": "Az alany a könyv, nem mi.",
+          "en": "The subject is the book, not us.",
+          "es": "El sujeto es el libro, no nosotros.",
+          "de": "Das Subjekt ist das Buch, nicht wir."
+        }
+      },
+      "examples": [
+        "Los zapatos cuestan mucho.",
+        "Recuerdo su nombre."
+      ]
+    },
+    {
+      "id": "vd-09",
+      "sentence": "Yo ___ el té al café.",
+      "options": [
+        "prefiero",
+        "prefero",
+        "preferimos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A preferir e→ie: prefiero.",
+        "en": "Preferir is e→ie: prefiero.",
+        "es": "Preferir es e→ie: prefiero.",
+        "de": "Preferir ist e→ie: prefiero."
+      },
+      "wrong": {
+        "prefero": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "preferimos": {
+          "hu": "Ez a mi alakunk.",
+          "en": "That is our form.",
+          "es": "Esa es la forma de nosotros.",
+          "de": "Das ist unsere Form."
+        }
+      },
+      "examples": [
+        "Nosotros preferimos el tren.",
+        "Ellos prefieren el mar."
+      ]
+    },
+    {
+      "id": "vd-10",
+      "sentence": "Los niños ___ al fútbol en el parque.",
+      "options": [
+        "juegan",
+        "jugan",
+        "jugamos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A jugar az egyetlen u→ue ige: juegan.",
+        "en": "Jugar is the only u→ue verb: juegan.",
+        "es": "Jugar es el único verbo u→ue: juegan.",
+        "de": "Jugar ist das einzige u→ue-Verb: juegan."
+      },
+      "wrong": {
+        "jugan": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "jugamos": {
+          "hu": "Ez a mi alakunk.",
+          "en": "That is our form.",
+          "es": "Esa es la forma de nosotros.",
+          "de": "Das ist unsere Form."
+        }
+      },
+      "examples": [
+        "Yo juego los domingos.",
+        "Nosotros jugamos juntos."
+      ]
+    },
+    {
+      "id": "vd-11",
+      "sentence": "En ese bar ___ (ellos) buena comida.",
+      "options": [
+        "sirven",
+        "serven",
+        "servimos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A servir e→i: sirven.",
+        "en": "Servir is e→i: sirven.",
+        "es": "Servir es e→i: sirven.",
+        "de": "Servir ist e→i: sirven."
+      },
+      "wrong": {
+        "serven": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "servimos": {
+          "hu": "Ez a mi alakunk.",
+          "en": "That is our form.",
+          "es": "Esa es la forma de nosotros.",
+          "de": "Das ist unsere Form."
+        }
+      },
+      "examples": [
+        "Ella repite la pregunta.",
+        "Ellos siguen el camino."
+      ]
+    },
+    {
+      "id": "vd-12",
+      "sentence": "Nosotros ___ a casa a las seis.",
+      "options": [
+        "volvemos",
+        "vuelvemos",
+        "vuelven"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A volver o→ue, de a mi alak szabályos: volvemos.",
+        "en": "Volver is o→ue, but the we-form stays regular: volvemos.",
+        "es": "Volver es o→ue, pero nosotros es regular: volvemos.",
+        "de": "Volver ist o→ue, die wir-Form bleibt regelmäßig: volvemos."
+      },
+      "wrong": {
+        "vuelvemos": {
+          "hu": "A cipő-szabály: a középső alak nem változik.",
+          "en": "The boot rule: the middle form does not change.",
+          "es": "La regla de la bota: la forma central no cambia.",
+          "de": "Die Stiefelregel: die mittlere Form ändert sich nicht."
+        },
+        "vuelven": {
+          "hu": "Ez az ellos alakja.",
+          "en": "That is the ellos form.",
+          "es": "Esa es la forma de ellos.",
+          "de": "Das ist die ellos-Form."
+        }
+      },
+      "examples": [
+        "Yo vuelvo tarde.",
+        "Ellos vuelven mañana."
+      ]
+    }
+  ]
+}
