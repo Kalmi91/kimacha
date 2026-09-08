@@ -429,7 +429,7 @@ export default {
     weeklyGoalDoneText: (h: string, goal: string) => `${h} Stunden Lernen diese Woche, dein Ziel waren ${goal}. Riesig!`,
     dailyNewLimit: 'Neue Wörter pro Tag',
     dailyNewLimitWords: (n: string) => `${n} Wörter / Tag`,
-    spellingPractice: (n: number) => `Rechtschreibtraining (${n})`,
+    spellingPractice: (due: number, total: number) => `Rechtschreibtraining · ${due} fällig, ${total} auf der Liste`,
     difficulty: 'Schwierigkeit',
     strictAccents: 'Akzente zählen',
     strictAccentsHint: 'Ein fehlender Akzent (á, é, ñ) gilt beim Tippen als Fehler.',

@@ -429,7 +429,7 @@ export default {
     weeklyGoalDoneText: (h: string, goal: string) => `${h} horas de estudio esta semana, tu meta era ${goal}. ¡Enorme!`,
     dailyNewLimit: 'Palabras nuevas al día',
     dailyNewLimitWords: (n: string) => `${n} palabras / día`,
-    spellingPractice: (n: number) => `Práctica de Ortografía (${n})`,
+    spellingPractice: (due: number, total: number) => `Práctica de ortografía · ${due} pendientes, ${total} en la lista`,
     difficulty: 'Dificultad',
     strictAccents: 'Las tildes cuentan',
     strictAccentsHint: 'Al escribir, una tilde que falta (á, é, ñ) es un error.',

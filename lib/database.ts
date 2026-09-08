@@ -49,6 +49,9 @@ export interface DB {
   removeFromSpellingList(wordId: number): Promise<void>;
   getSpellingList(): Promise<{ wordId: number; step: number; due: string }[]>;
   getSpellingDueCount(): Promise<number>;
+  // FB186: a lista TELJES mérete, hogy a Beállítások sora meg tudja mondani,
+  // a szám esedékes gyakorlás-e vagy összesen ennyi szó van a listán.
+  getSpellingListCount(): Promise<number>;
   updateSpellingStep(wordId: number, step: number, due: string): Promise<void>;
   isInSpellingList(wordId: number): Promise<boolean>;
   resetAllProgress(): Promise<void>;
@@ -747,6 +750,15 @@ class SQLiteDB implements DB {
     const row = await db.getFirstAsync<any>(
       'SELECT COUNT(*) as cnt FROM spelling_list WHERE pair = ? AND due <= ?',
       [this.activePair, new Date().toISOString()]
+    );
+    return row?.cnt ?? 0;
+  }
+
+  async getSpellingListCount() {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>(
+      'SELECT COUNT(*) as cnt FROM spelling_list WHERE pair = ?',
+      [this.activePair]
     );
     return row?.cnt ?? 0;
   }
