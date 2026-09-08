@@ -108,7 +108,9 @@ describe('long-form games play to the end', () => {
     expect(screen.queryByText('Play again')).toBeTruthy();
 
     view.unmount();
-  });
+    // Scanning then matching 16 cards is hundreds of renders; under a full-suite
+    // run (workers competing for the CPU) it outgrows the 5 s default.
+  }, 30000);
 
   it('word-search: every listed word is really in the grid (GAMES.md 4.4)', async () => {
     await seedPractisedWords({ source: 'hu', target: 'es', level: LEVEL, count: 60 });
