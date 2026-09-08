@@ -116,13 +116,19 @@ export default function WordSearchScreen() {
   // from the render that first created it. Refs, kept in sync every render,
   // are how the handlers see the CURRENT values instead of a stale snapshot.
   const sizeRef = useRef(size);
-  sizeRef.current = size;
   const placementsRef = useRef(placements);
-  placementsRef.current = placements;
   const foundRef = useRef(found);
-  foundRef.current = found;
   const entriesRef = useRef(entries);
-  entriesRef.current = entries;
+  const selStartRef = useRef(selStart);
+  const selPathRef = useRef(selPath);
+  useEffect(() => {
+    sizeRef.current = size;
+    placementsRef.current = placements;
+    foundRef.current = found;
+    entriesRef.current = entries;
+    selStartRef.current = selStart;
+    selPathRef.current = selPath;
+  }, [size, placements, found, entries, selStart, selPath]);
 
   const startRound = useCallback(
     async (p: string, learned: string, lvl: Level, gridKey: GridSizeKey, count: number, directions: WordSearchDirections) => {
@@ -218,31 +224,31 @@ export default function WordSearchScreen() {
         }
       },
       onPanResponderMove: (evt: GestureResponderEvent, _gs: PanResponderGestureState) => {
-        setSelStart((start) => {
-          if (!start) return start;
-          const cell = cellToRowCol(evt.nativeEvent.pageX, evt.nativeEvent.pageY);
-          if (cell) setSelPath(pathFrom(start, cell));
-          return start;
-        });
+        const start = selStartRef.current;
+        if (!start) return;
+        const cell = cellToRowCol(evt.nativeEvent.pageX, evt.nativeEvent.pageY);
+        if (cell) setSelPath(pathFrom(start, cell));
       },
       onPanResponderRelease: () => {
-        setSelPath((path) => {
-          if (path.length > 1) {
-            for (const placement of placementsRef.current) {
-              if (foundRef.current.has(placement.word)) continue;
-              if (matchesPlacement(path, placement)) {
-                setFound((prev) => new Set(prev).add(placement.word));
-                session.addScore(300);
-                const matchedEntry = entriesRef.current.find((e) => normalizeForGrid(e.learned) === placement.word);
-                if (matchedEntry) {
-                  getDb().recordAttempt(matchedEntry.wordId, 'game:word-search', true, 0).catch(() => {});
-                }
-                break;
+        // Scoring a found word is a side effect, so it happens here and not
+        // inside the setSelPath updater: React may run an updater twice for one
+        // gesture, which would score the same word twice.
+        const path = selPathRef.current;
+        if (path.length > 1) {
+          for (const placement of placementsRef.current) {
+            if (foundRef.current.has(placement.word)) continue;
+            if (matchesPlacement(path, placement)) {
+              setFound((prev) => new Set(prev).add(placement.word));
+              session.addScore(300);
+              const matchedEntry = entriesRef.current.find((e) => normalizeForGrid(e.learned) === placement.word);
+              if (matchedEntry) {
+                getDb().recordAttempt(matchedEntry.wordId, 'game:word-search', true, 0).catch(() => {});
               }
+              break;
             }
           }
-          return [];
-        });
+        }
+        setSelPath([]);
         setSelStart(null);
       },
     })
