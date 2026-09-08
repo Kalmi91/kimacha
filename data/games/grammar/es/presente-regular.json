@@ -1,0 +1,497 @@
+{
+  "topic": "presente-regular",
+  "level": "A1",
+  "title": {
+    "hu": "Jelen idő: szabályos igék",
+    "en": "Present tense: regular verbs",
+    "es": "Presente: verbos regulares",
+    "de": "Präsens: regelmäßige Verben"
+  },
+  "rule": {
+    "hu": "A spanyol ige végződése megmondja, KI csinálja, ezért a névmás általában elmarad. Három csoport van a szótári alak vége szerint. -AR: -o, -as, -a, -amos, -áis, -an (hablar). -ER: -o, -es, -e, -emos, -éis, -en (comer). -IR: -o, -es, -e, -imos, -ís, -en (vivir). Az -er és az -ir csak a mi-alakban tér el: comemos vs vivimos.",
+    "en": "A Spanish verb ending tells you WHO does it, so the pronoun is usually dropped. Three groups, by the ending of the dictionary form. -AR: -o, -as, -a, -amos, -áis, -an (hablar). -ER: -o, -es, -e, -emos, -éis, -en (comer). -IR: -o, -es, -e, -imos, -ís, -en (vivir). -er and -ir differ only in the we-form: comemos vs vivimos.",
+    "es": "La terminación dice QUIÉN hace la acción, por eso el pronombre casi siempre se omite. Tres grupos según el infinitivo. -AR: -o, -as, -a, -amos, -áis, -an (hablar). -ER: -o, -es, -e, -emos, -éis, -en (comer). -IR: -o, -es, -e, -imos, -ís, -en (vivir). -er e -ir solo se diferencian en nosotros: comemos y vivimos.",
+    "de": "Die Endung sagt, WER handelt, deshalb fällt das Pronomen meist weg. Drei Gruppen nach dem Infinitiv. -AR: -o, -as, -a, -amos, -áis, -an (hablar). -ER: -o, -es, -e, -emos, -éis, -en (comer). -IR: -o, -es, -e, -imos, -ís, -en (vivir). -er und -ir unterscheiden sich nur in der wir-Form: comemos und vivimos."
+  },
+  "more": {
+    "hu": "Latin-Amerikában (így Mexikóban is) a vosotros-alak (-áis, -éis, -ís) nem használatos: helyette ustedes + a többes szám harmadik személy (hablan, comen, viven). A tú-alak MINDIG -s-re végződik jelen időben, ez a leggyakoribb elgépelés: tú hablas, nem tú habla.",
+    "en": "In Latin America (Mexico included) the vosotros form (-áis, -éis, -ís) is not used: it is ustedes plus the third person plural (hablan, comen, viven). The tú form ALWAYS ends in -s in the present, which is the most common slip: tú hablas, not tú habla.",
+    "es": "En Latinoamérica (también en México) no se usa vosotros (-áis, -éis, -ís): se usa ustedes con la tercera persona del plural (hablan, comen, viven). La forma de tú SIEMPRE termina en -s en presente: tú hablas, no tú habla.",
+    "de": "In Lateinamerika (auch in Mexiko) wird vosotros (-áis, -éis, -ís) nicht benutzt, sondern ustedes mit der 3. Person Plural (hablan, comen, viven). Die tú-Form endet im Präsens IMMER auf -s: tú hablas, nicht tú habla."
+  },
+  "glossary": [
+    {
+      "word": "habláis",
+      "gloss": {
+        "hu": "beszéltek (vosotros, Spanyolország)",
+        "en": "you speak (vosotros, Spain)",
+        "es": "vosotros habláis",
+        "de": "ihr sprecht (vosotros)"
+      }
+    },
+    {
+      "word": "inglés",
+      "gloss": {
+        "hu": "angol",
+        "en": "English",
+        "es": "el inglés",
+        "de": "Englisch"
+      }
+    },
+    {
+      "word": "leemos",
+      "gloss": {
+        "hu": "olvasunk",
+        "en": "we read",
+        "es": "nosotros leemos",
+        "de": "wir lesen"
+      }
+    },
+    {
+      "word": "leo",
+      "gloss": {
+        "hu": "olvasok",
+        "en": "I read",
+        "es": "yo leo",
+        "de": "ich lese"
+      }
+    },
+    {
+      "word": "periódico",
+      "gloss": {
+        "hu": "újság",
+        "en": "newspaper",
+        "es": "el periódico",
+        "de": "Zeitung"
+      }
+    },
+    {
+      "word": "pizarra",
+      "gloss": {
+        "hu": "tábla (iskolai)",
+        "en": "blackboard",
+        "es": "la pizarra",
+        "de": "Tafel"
+      }
+    },
+    {
+      "word": "puebla",
+      "gloss": {
+        "hu": "Puebla (mexikói város)",
+        "en": "Puebla (a Mexican city)",
+        "es": "Puebla (ciudad de México)",
+        "de": "Puebla (mexikanische Stadt)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "pr-01",
+      "sentence": "Yo ___ español todos los días.",
+      "options": [
+        "hablo",
+        "hablas",
+        "habla"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A yo alakja -ar igéknél -o: yo hablo.",
+        "en": "The yo form of an -ar verb ends in -o: yo hablo.",
+        "es": "La forma de yo en los verbos -ar es -o: yo hablo.",
+        "de": "Die yo-Form der -ar-Verben endet auf -o: yo hablo."
+      },
+      "wrong": {
+        "hablas": {
+          "hu": "A -as végződés a tú alakja, nem az enyém.",
+          "en": "The -as ending is the tú form, not the I form.",
+          "es": "La terminación -as es de tú, no de yo.",
+          "de": "Die Endung -as gehört zu tú, nicht zu yo."
+        },
+        "habla": {
+          "hu": "A -a végződés az él/ella/usted alakja.",
+          "en": "The -a ending is the él/ella/usted form.",
+          "es": "La terminación -a es de él/ella/usted.",
+          "de": "Die Endung -a gehört zu él/ella/usted."
+        }
+      },
+      "examples": [
+        "Yo trabajo en una oficina.",
+        "Yo estudio por la noche."
+      ]
+    },
+    {
+      "id": "pr-02",
+      "sentence": "¿Tú ___ carne?",
+      "options": [
+        "comes",
+        "come",
+        "comemos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A tú alakja jelen időben mindig -s-re végződik: -er igénél -es.",
+        "en": "The tú form always ends in -s in the present: -es for an -er verb.",
+        "es": "La forma de tú siempre acaba en -s: en los verbos -er, -es.",
+        "de": "Die tú-Form endet immer auf -s: bei -er-Verben auf -es."
+      },
+      "wrong": {
+        "come": {
+          "hu": "A come az él/ella alakja, nem a tiéd.",
+          "en": "Come is the él/ella form, not yours.",
+          "es": "Come es la forma de él/ella, no de tú.",
+          "de": "Come ist die él/ella-Form, nicht deine."
+        },
+        "comemos": {
+          "hu": "A comemos a nosotros alakja.",
+          "en": "Comemos is the nosotros form.",
+          "es": "Comemos es la forma de nosotros.",
+          "de": "Comemos ist die nosotros-Form."
+        }
+      },
+      "examples": [
+        "¿Tú bebes café?",
+        "¿Tú vives aquí?"
+      ]
+    },
+    {
+      "id": "pr-03",
+      "sentence": "Nosotros ___ en la Ciudad de México.",
+      "options": [
+        "vivimos",
+        "vivís",
+        "viven"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az -ir igék mi-alakja -imos: vivimos.",
+        "en": "The we-form of an -ir verb is -imos: vivimos.",
+        "es": "La forma de nosotros en los verbos -ir es -imos: vivimos.",
+        "de": "Die wir-Form der -ir-Verben ist -imos: vivimos."
+      },
+      "wrong": {
+        "vivís": {
+          "hu": "A vivís a vosotros alakja, amit Mexikóban nem használnak.",
+          "en": "Vivís is the vosotros form, which is not used in Mexico.",
+          "es": "Vivís es la forma de vosotros, que en México no se usa.",
+          "de": "Vivís ist die vosotros-Form, die in Mexiko nicht benutzt wird."
+        },
+        "viven": {
+          "hu": "A viven az ellos/ustedes alakja.",
+          "en": "Viven is the ellos/ustedes form.",
+          "es": "Viven es la forma de ellos/ustedes.",
+          "de": "Viven ist die ellos/ustedes-Form."
+        }
+      },
+      "examples": [
+        "Nosotros comemos a las dos.",
+        "Nosotros trabajamos juntos."
+      ]
+    },
+    {
+      "id": "pr-04",
+      "sentence": "Mi hermana ___ en un hospital.",
+      "options": [
+        "trabaja",
+        "trabajo",
+        "trabajan"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A mi hermana egy személy (ella), ezért -ar igénél -a: trabaja.",
+        "en": "Mi hermana is one person (ella), so the -ar verb takes -a: trabaja.",
+        "es": "Mi hermana es una persona (ella), por eso el verbo -ar lleva -a: trabaja.",
+        "de": "Mi hermana ist eine Person (ella), deshalb -a beim -ar-Verb: trabaja."
+      },
+      "wrong": {
+        "trabajo": {
+          "hu": "A trabajo azt jelenti, hogy ÉN dolgozom.",
+          "en": "Trabajo means I work.",
+          "es": "Trabajo significa que trabajo YO.",
+          "de": "Trabajo heißt, dass ICH arbeite."
+        },
+        "trabajan": {
+          "hu": "A trabajan többes szám, itt viszont egy nővérről van szó.",
+          "en": "Trabajan is plural, but here there is one sister.",
+          "es": "Trabajan es plural, pero aquí hay una hermana.",
+          "de": "Trabajan ist Plural, hier geht es aber um eine Schwester."
+        }
+      },
+      "examples": [
+        "Mi padre habla inglés.",
+        "Ella estudia medicina."
+      ]
+    },
+    {
+      "id": "pr-05",
+      "sentence": "Ellos ___ mucha agua.",
+      "options": [
+        "beben",
+        "bebemos",
+        "bebe"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az ellos alakja -er igénél -en: beben.",
+        "en": "The ellos form of an -er verb is -en: beben.",
+        "es": "La forma de ellos en los verbos -er es -en: beben.",
+        "de": "Die ellos-Form der -er-Verben ist -en: beben."
+      },
+      "wrong": {
+        "bebemos": {
+          "hu": "A bebemos azt jelenti, hogy MI iszunk.",
+          "en": "Bebemos means WE drink.",
+          "es": "Bebemos significa que bebemos NOSOTROS.",
+          "de": "Bebemos heißt, dass WIR trinken."
+        },
+        "bebe": {
+          "hu": "A bebe egy személyre vonatkozik.",
+          "en": "Bebe refers to one person.",
+          "es": "Bebe se refiere a una persona.",
+          "de": "Bebe bezieht sich auf eine Person."
+        }
+      },
+      "examples": [
+        "Ellos comen en casa.",
+        "Ellos viven en Puebla."
+      ]
+    },
+    {
+      "id": "pr-06",
+      "sentence": "Ustedes ___ muy rápido.",
+      "options": [
+        "hablan",
+        "habláis",
+        "hablamos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az ustedes mindig többes szám harmadik személyt kap: hablan.",
+        "en": "Ustedes always takes the third person plural: hablan.",
+        "es": "Ustedes siempre lleva la tercera persona del plural: hablan.",
+        "de": "Ustedes steht immer mit der 3. Person Plural: hablan."
+      },
+      "wrong": {
+        "habláis": {
+          "hu": "A habláis a vosotros alakja (Spanyolország), ustedes mellé nem jó.",
+          "en": "Habláis is the vosotros form (Spain), it does not go with ustedes.",
+          "es": "Habláis es de vosotros (España), no va con ustedes.",
+          "de": "Habláis ist die vosotros-Form (Spanien) und passt nicht zu ustedes."
+        },
+        "hablamos": {
+          "hu": "A hablamos rólunk szól, nem rólatok.",
+          "en": "Hablamos is about us, not about you.",
+          "es": "Hablamos habla de nosotros, no de ustedes.",
+          "de": "Hablamos spricht von uns, nicht von euch."
+        }
+      },
+      "examples": [
+        "Ustedes viven cerca.",
+        "Ustedes comen temprano."
+      ]
+    },
+    {
+      "id": "pr-07",
+      "sentence": "Yo ___ una carta a mi madre.",
+      "options": [
+        "escribo",
+        "escribe",
+        "escribimos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Mind a három csoport yo-alakja -o-ra végződik: escribo.",
+        "en": "All three groups end in -o in the yo form: escribo.",
+        "es": "Los tres grupos terminan en -o en la forma de yo: escribo.",
+        "de": "Alle drei Gruppen enden in der yo-Form auf -o: escribo."
+      },
+      "wrong": {
+        "escribe": {
+          "hu": "Az escribe az ő alakja.",
+          "en": "Escribe is the he/she form.",
+          "es": "Escribe es la forma de él/ella.",
+          "de": "Escribe ist die er/sie-Form."
+        },
+        "escribimos": {
+          "hu": "Az escribimos a mi alakunk.",
+          "en": "Escribimos is our form.",
+          "es": "Escribimos es la forma de nosotros.",
+          "de": "Escribimos ist unsere Form."
+        }
+      },
+      "examples": [
+        "Yo abro la ventana.",
+        "Yo leo el periódico."
+      ]
+    },
+    {
+      "id": "pr-08",
+      "sentence": "¿Dónde ___ ustedes los sábados?",
+      "options": [
+        "comen",
+        "come",
+        "comemos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Kérdésben is ugyanaz a végződés, mint kijelentésben: ustedes comen.",
+        "en": "A question uses the same ending as a statement: ustedes comen.",
+        "es": "En la pregunta la terminación es la misma que en la frase: ustedes comen.",
+        "de": "In der Frage gilt dieselbe Endung wie im Aussagesatz: ustedes comen."
+      },
+      "wrong": {
+        "come": {
+          "hu": "A come egyes számú alak, az ustedes viszont többes.",
+          "en": "Come is singular, but ustedes is plural.",
+          "es": "Come es singular, pero ustedes es plural.",
+          "de": "Come ist Singular, ustedes aber Plural."
+        },
+        "comemos": {
+          "hu": "A comemos ránk vonatkozik, nem rájuk.",
+          "en": "Comemos is about us, not about them.",
+          "es": "Comemos se refiere a nosotros, no a ustedes.",
+          "de": "Comemos bezieht sich auf uns, nicht auf euch."
+        }
+      },
+      "examples": [
+        "¿Dónde trabajan ustedes?",
+        "¿Qué beben ustedes?"
+      ]
+    },
+    {
+      "id": "pr-09",
+      "sentence": "Mis amigos y yo ___ fútbol el domingo.",
+      "options": [
+        "jugamos",
+        "juegan",
+        "juego"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „mis amigos y yo\" = mi (nosotros), ezért -amos: jugamos.",
+        "en": "\"Mis amigos y yo\" means we (nosotros), so -amos: jugamos.",
+        "es": "«Mis amigos y yo» es nosotros, por eso -amos: jugamos.",
+        "de": "„Mis amigos y yo\" ist wir (nosotros), deshalb -amos: jugamos."
+      },
+      "wrong": {
+        "juegan": {
+          "hu": "A juegan őket jelenti, de te is benne vagy a csoportban.",
+          "en": "Juegan means they, but you are part of the group too.",
+          "es": "Juegan es ellos, pero tú también estás en el grupo.",
+          "de": "Juegan heißt sie, aber du gehörst auch zur Gruppe."
+        },
+        "juego": {
+          "hu": "A juego csak rólam szól, itt viszont többen vagyunk.",
+          "en": "Juego is only about me, but here we are several.",
+          "es": "Juego habla solo de mí, pero aquí somos varios.",
+          "de": "Juego spricht nur von mir, hier sind wir aber mehrere."
+        }
+      },
+      "examples": [
+        "Mi hermano y yo comemos juntos.",
+        "Ana y yo estudiamos español."
+      ]
+    },
+    {
+      "id": "pr-10",
+      "sentence": "Tú ___ mucho en el trabajo.",
+      "options": [
+        "aprendes",
+        "aprende",
+        "aprendo"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A tú-alak -er igénél -es: aprendes. Ez az a bizonyos -s, ami mindig kell.",
+        "en": "The tú form of an -er verb is -es: aprendes. That is the -s that must always be there.",
+        "es": "La forma de tú en los verbos -er es -es: aprendes. Esa -s nunca falta.",
+        "de": "Die tú-Form der -er-Verben ist -es: aprendes. Dieses -s fehlt nie."
+      },
+      "wrong": {
+        "aprende": {
+          "hu": "Az aprende az ő alakja; a tiédről hiányzik az -s.",
+          "en": "Aprende is the he/she form; yours is missing the -s.",
+          "es": "Aprende es de él/ella; a la tuya le falta la -s.",
+          "de": "Aprende ist die er/sie-Form; deiner fehlt das -s."
+        },
+        "aprendo": {
+          "hu": "Az aprendo rólam szól.",
+          "en": "Aprendo is about me.",
+          "es": "Aprendo habla de mí.",
+          "de": "Aprendo spricht von mir."
+        }
+      },
+      "examples": [
+        "Tú lees mucho.",
+        "Tú escribes bien."
+      ]
+    },
+    {
+      "id": "pr-11",
+      "sentence": "El niño ___ la puerta.",
+      "options": [
+        "abre",
+        "abro",
+        "abren"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Egy fiú = ő, -ir igénél -e: abre.",
+        "en": "One boy = he, and an -ir verb takes -e: abre.",
+        "es": "Un niño es él, y el verbo -ir lleva -e: abre.",
+        "de": "Ein Junge ist er, und das -ir-Verb bekommt -e: abre."
+      },
+      "wrong": {
+        "abro": {
+          "hu": "Az abro azt jelenti, én nyitom ki.",
+          "en": "Abro means I open it.",
+          "es": "Abro significa que la abro yo.",
+          "de": "Abro heißt, dass ich sie öffne."
+        },
+        "abren": {
+          "hu": "Az abren többes szám.",
+          "en": "Abren is plural.",
+          "es": "Abren es plural.",
+          "de": "Abren ist Plural."
+        }
+      },
+      "examples": [
+        "El profesor escribe en la pizarra.",
+        "La niña vive con su abuela."
+      ]
+    },
+    {
+      "id": "pr-12",
+      "sentence": "Nosotros ___ el menú del día.",
+      "options": [
+        "comemos",
+        "comimos",
+        "comen"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Jelen idő mi-alakja -er igénél -emos: comemos.",
+        "en": "The present we-form of an -er verb is -emos: comemos.",
+        "es": "El presente de nosotros en los verbos -er es -emos: comemos.",
+        "de": "Die Präsens-wir-Form der -er-Verben ist -emos: comemos."
+      },
+      "wrong": {
+        "comimos": {
+          "hu": "A comimos múlt idő (indefinido), az itt még nem téma.",
+          "en": "Comimos is the past (indefinido), which is not the point here.",
+          "es": "Comimos es pasado (indefinido), no es lo que pide la frase.",
+          "de": "Comimos ist Vergangenheit (indefinido), hier nicht gefragt."
+        },
+        "comen": {
+          "hu": "A comen róluk szól, nem rólunk.",
+          "en": "Comen is about them, not about us.",
+          "es": "Comen habla de ellos, no de nosotros.",
+          "de": "Comen spricht von ihnen, nicht von uns."
+        }
+      },
+      "examples": [
+        "Nosotros bebemos té.",
+        "Nosotros leemos el mismo libro."
+      ]
+    }
+  ]
+}
