@@ -30,7 +30,9 @@ szekció** (a fájl elején, auto-betöltött). Röviden, hogy a token-burn fut�
 4. **Soha nincs mondat ismeretlen szóval.** Ez köti össze a szókincset és a nyelvtant.
 
 Minden új queue-item mellé írd oda, melyik pontot viszi előre. Ami egyiket sem szolgálja,
-az nem kerül a queue-ba. Külön „nyelvtan-fül" javaslat: elutasítva.
+az nem kerül a queue-ba. Külön nyelvtani rész: **ENGEDÉLYEZVE** (Kálmán, 2026-09-08),
+azzal a feltétellel, hogy egy korpuszból dolgozik és nincs második SRS; megépült
+(`lib/grammar/syllabus.ts` + `app/grammar/`), a tartalmát a `/kimacha-nyelvtan` skill tölti.
 Státusz: a modell **CÉL**, a FORM/SENTENCE/dependency/ütemező még **design-first**, nincs kódolva.
 
 ---
@@ -50,6 +52,10 @@ Szám-becslések `project_word_expansion` memóriából (2026-06-13), nem élő-
 ---
 
 ## 2. Token-burn queue (sorrendben)
+
+> **Hol égessünk tokent most:** a nyelvtani tanterv feltöltése, `/kimacha-nyelvtan`
+> (61 témából 17 megírva, 2026-09-08). Az itteni queue a MOTOR munkája; a nyelvtan
+> tartalom-munka külön skillben fut, hogy a kettő ne keveredjen.
 
 ### ✅ Q0. [KÉSZ 2026-07-12, éjszakai műszak] Backup + Restore gomb
 

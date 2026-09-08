@@ -1776,9 +1776,14 @@ Ide kerül minden olyan tartalom, ami nem kell a „kész" státuszhoz, de a fü
 sokszorozza. Ezek a `feedback_build_manifest_convention` szerinti égetős itemek:
 a menet elején nem kell tervezni, csak sorban haladni.
 
+> ⚠️ **A Q1-Q5 (nyelvtani témák) átkerült a `/kimacha-nyelvtan` skillhez** (2026-09-08).
+> A tanterv onnantól `lib/grammar/syllabus.ts` (61 téma A1-C1), a leckék ugyanide,
+> a `data/games/grammar/es/` alá íródnak, tehát ez a fül változatlanul látja őket.
+> Itt már csak a Q6-Q9 (myth, story, chat, confusables) a token-burn feladat.
+
 | # | Item | Mennyiség | Előfeltétel |
 |---|---|---|---|
-| Q1 | `grammar-choice` A1-es témák | 15 téma × 10-15 item × 4 nyelvű magyarázat | F3 kész |
+| Q1 | `grammar-choice` A1-es témák → `/kimacha-nyelvtan` | 15 téma × 10-15 item × 4 nyelvű magyarázat | F3 kész |
 | Q2 | `grammar-choice` A2-es témák (élén `indefinido-imperfecto`) | 18 téma | Q1 |
 | Q3 | `grammar-choice` B1-es témák | 11 téma | Q2 |
 | Q4 | `grammar-choice` B2-es témák | 9 téma | Q3 |
