@@ -105,6 +105,7 @@ const PROPER_NOUNS = new Set([
   'cdmx', 'coyoacán', 'coyoacan', 'condesa', 'roma', 'polanco',
   'maría', 'maria', 'ana', 'rosa', 'carlos', 'elena', 'sofía', 'sofia',
   'diego', 'luis', 'laura', 'nova', 'rex', 'javier', 'marco', 'lucía', 'lucia',
+  'budapest', 'guadalajara', 'puebla', 'perú', 'peru', 'oaxaca', 'hungría', 'hungria',
 ]);
 
 function removeAccents(str) {
@@ -119,14 +120,112 @@ function tokenize(str) {
   return normalize(str).split(/\s+/).filter((t) => t.length > 0);
 }
 
-const VERB_ENDINGS = ['amos', 'emos', 'imos', 'áis', 'éis', 'an', 'en', 'is', 'ar', 'er', 'ir', 'as', 'es', 'o', 'a', 'e'];
+// The endings the stem matcher knows. Present tense only until 2026-09-08,
+// which meant every past and future form in a lesson was reported as an
+// untaught word even when its infinitive is in the corpus: the guard was as
+// present-tense-only as the course used to be. The longest ending has to come
+// first, otherwise 'hablaría' would be cut at 'a' instead of 'aría'.
+const VERB_ENDINGS = [
+  // NOTE: verbStem() strips accents BEFORE matching, so every ending here is
+  // written WITHOUT accents; an accented entry would never fire.
+  // conditional and future
+  'ariamos', 'eriamos', 'iriamos', 'aremos', 'eremos', 'iremos',
+  'arian', 'erian', 'irian', 'arias', 'erias', 'irias', 'aria', 'eria', 'iria',
+  'aran', 'eran', 'iran', 'aras', 'eras', 'iras', 'ara', 'era', 'ira', 'are', 'ere', 'ire',
+  // imperfect
+  'abamos', 'iamos', 'abais', 'aban', 'abas', 'aba', 'ian', 'ias', 'ia',
+  // preterite (regular)
+  'asteis', 'isteis', 'aron', 'ieron', 'aste', 'iste', 'amos', 'imos', 'io',
+  // participle and gerund
+  'andose', 'iendose', 'ando', 'iendo', 'ados', 'idos', 'adas', 'idas', 'ado', 'ida', 'ido', 'ada',
+  // present
+  'emos', 'ais', 'eis', 'an', 'en', 'is', 'ar', 'er', 'ir', 'as', 'es', 'o', 'a', 'e', 'i',
+];
 
-function verbStem(token) {
-  const t = removeAccents(token);
-  for (const ending of VERB_ENDINGS) {
-    if (t.endsWith(ending) && t.length - ending.length >= 3) return t.slice(0, t.length - ending.length);
+// Irregular forms the stem matcher cannot reach (a new stem, not a new ending).
+// Each maps to its infinitive and only counts as known when THAT infinitive is
+// taught, so this is a bridge over irregularity, not a free pass.
+const IRREGULAR_FORMS = new Map(Object.entries({
+  // ser / ir (shared preterite) and their imperfects
+  fui: 'ser', fuiste: 'ser', fue: 'ser', fuimos: 'ser', fueron: 'ser',
+  era: 'ser', eras: 'ser', eramos: 'ser', eran: 'ser',
+  iba: 'ir', ibas: 'ir', ibamos: 'ir', iban: 'ir',
+  // preterite stems
+  tuve: 'tener', tuviste: 'tener', tuvo: 'tener', tuvimos: 'tener', tuvieron: 'tener',
+  estuve: 'estar', estuviste: 'estar', estuvo: 'estar', estuvimos: 'estar', estuvieron: 'estar',
+  hice: 'hacer', hiciste: 'hacer', hizo: 'hacer', hicimos: 'hacer', hicieron: 'hacer',
+  dije: 'decir', dijiste: 'decir', dijo: 'decir', dijimos: 'decir', dijeron: 'decir',
+  puse: 'poner', pusiste: 'poner', puso: 'poner', pusimos: 'poner', pusieron: 'poner',
+  pude: 'poder', pudiste: 'poder', pudo: 'poder', pudimos: 'poder', pudieron: 'poder',
+  supe: 'saber', supiste: 'saber', supo: 'saber', supimos: 'saber', supieron: 'saber',
+  quise: 'querer', quisiste: 'querer', quiso: 'querer', quisimos: 'querer', quisieron: 'querer',
+  vine: 'venir', viniste: 'venir', vino: 'venir', vinimos: 'venir', vinieron: 'venir',
+  traje: 'traer', trajiste: 'traer', trajo: 'traer', trajimos: 'traer', trajeron: 'traer',
+  di: 'dar', diste: 'dar', dio: 'dar', dimos: 'dar', dieron: 'dar',
+  vi: 'ver', viste: 'ver', vimos: 'ver', vieron: 'ver',
+  // shortened future / conditional stems
+  tendre: 'tener', tendras: 'tener', tendra: 'tener', tendremos: 'tener', tendran: 'tener',
+  pondre: 'poner', pondras: 'poner', pondra: 'poner', pondremos: 'poner', pondran: 'poner',
+  vendre: 'venir', vendras: 'venir', vendra: 'venir', vendremos: 'venir', vendran: 'venir',
+  saldre: 'salir', saldras: 'salir', saldra: 'salir', saldremos: 'salir', saldran: 'salir',
+  podre: 'poder', podras: 'poder', podra: 'poder', podremos: 'poder', podran: 'poder',
+  sabre: 'saber', sabras: 'saber', sabra: 'saber', sabremos: 'saber', sabran: 'saber',
+  hare: 'hacer', haras: 'hacer', hara: 'hacer', haremos: 'hacer', haran: 'hacer',
+  dire: 'decir', diras: 'decir', dira: 'decir', diremos: 'decir', diran: 'decir',
+  habra: 'haber', habran: 'haber', habre: 'haber', habremos: 'haber',
+  // irregular participles
+  hecho: 'hacer', visto: 'ver', dicho: 'decir', escrito: 'escribir', puesto: 'poner',
+  vuelto: 'volver', abierto: 'abrir', roto: 'romper', muerto: 'morir',
+  sido: 'ser', ido: 'ir', dado: 'dar',
+  // stem-changing present forms (e->ie, o->ue, e->i): the stem itself changes,
+  // so no ending rule can connect them to their infinitive
+  puedo: 'poder', puedes: 'poder', puede: 'poder', pueden: 'poder', pueda: 'poder', puedas: 'poder',
+  tiene: 'tener', tienes: 'tener', tienen: 'tener', tengo: 'tener', tenga: 'tener',
+  viene: 'venir', vienes: 'venir', vienen: 'venir', vengo: 'venir', ven: 'venir',
+  quiero: 'querer', quieres: 'querer', quiere: 'querer', quieren: 'querer',
+  empiezo: 'empezar', empiezas: 'empezar', empieza: 'empezar', empiezan: 'empezar',
+  vuelvo: 'volver', vuelves: 'volver', vuelve: 'volver', vuelven: 'volver',
+  duermo: 'dormir', duermes: 'dormir', duerme: 'dormir', duermen: 'dormir',
+  pienso: 'pensar', piensas: 'pensar', piensa: 'pensar', piensan: 'pensar',
+  juego: 'jugar', juegas: 'jugar', juega: 'jugar', juegan: 'jugar',
+  pido: 'pedir', pides: 'pedir', pide: 'pedir', piden: 'pedir',
+  sigo: 'seguir', sigues: 'seguir', sigue: 'seguir', siguen: 'seguir',
+  cierro: 'cerrar', cierras: 'cerrar', cierra: 'cerrar', cierran: 'cerrar',
+  llueve: 'llover', nieva: 'nevar',
+  // short stems the 3-character floor in verbStem() cannot cut
+  leo: 'leer', lees: 'leer', lee: 'leer', leemos: 'leer', leen: 'leer',
+  leia: 'leer', leias: 'leer', leiamos: 'leer', leian: 'leer', lei: 'leer', leyo: 'leer', leyeron: 'leer',
+  veo: 'ver', ves: 'ver', ve: 'ver', vemos: 'ver', veia: 'ver', veias: 'ver', veiamos: 'ver', veian: 'ver',
+  doy: 'dar', das: 'dar', da: 'dar', damos: 'dar', dan: 'dar', daba: 'dar', dare: 'dar',
+  voy: 'ir', vas: 'ir', va: 'ir', vamos: 'ir', van: 'ir', ire: 'ir', iras: 'ir', ira: 'ir',
+}));
+
+// An infinitive or gerund can carry object pronouns (llamarte, verme,
+// dármelo, levantándose); the verb underneath is what the corpus teaches.
+const ATTACHED_PRONOUNS = ['melo', 'mela', 'selo', 'sela', 'telo', 'tela', 'nos', 'les', 'los', 'las', 'me', 'te', 'se', 'le', 'lo', 'la'];
+
+function stripAttachedPronouns(t) {
+  for (const pron of ATTACHED_PRONOUNS) {
+    if (t.endsWith(pron) && t.length - pron.length >= 4) {
+      const base = t.slice(0, t.length - pron.length);
+      if (/(ar|er|ir|ando|iendo)$/.test(base)) return base;
+    }
   }
-  return null;
+  return t;
+}
+
+// Several endings can fit the same token ("envia" is both envi+a and env+ia),
+// and only one of them is the real one, so every candidate stem is kept and the
+// matcher accepts if ANY of them lines up with a candidate stem of a taught
+// word. Returning just the longest-ending stem used to break tokens that had
+// always matched.
+function verbStems(token) {
+  const t = stripAttachedPronouns(removeAccents(token));
+  const stems = new Set();
+  for (const ending of VERB_ENDINGS) {
+    if (t.endsWith(ending) && t.length - ending.length >= 3) stems.add(t.slice(0, t.length - ending.length));
+  }
+  return stems;
 }
 
 /** Exact match, plural/gender variant (+s/+es, o<->a, os<->as), or shared verb stem. */
@@ -148,10 +247,12 @@ function matches(token, taughtSet) {
     }
   }
 
-  const stem = verbStem(ta);
-  if (stem) {
+  const stems = verbStems(ta);
+  if (stems.size) {
     for (const t of taughtSet) {
-      if (verbStem(t) === stem) return true;
+      for (const other of verbStems(t)) {
+        if (stems.has(other)) return true;
+      }
     }
   }
   return false;
@@ -193,6 +294,10 @@ function tokenKnown(tok, taughtSet, extra) {
   if (GLUE_WHITELIST.has(tok) || GLUE_STRIPPED.has(stripped)) return true;
   if (PROPER_NOUNS.has(stripped)) return true;
   if (extra?.has(stripped)) return true;
+  // An irregular past/future form counts as known exactly when its own
+  // infinitive is taught.
+  const infinitive = IRREGULAR_FORMS.get(stripped);
+  if (infinitive && (taughtSet.has(infinitive) || extra?.has(infinitive))) return true;
   // Glossary/member words can be conjugated forms of each other (a confusables
   // set's own infinitive member used inflected in an example), so stem-match
   // against them too, not just against the corpus.

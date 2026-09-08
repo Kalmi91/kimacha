@@ -1,0 +1,524 @@
+{
+  "topic": "perfecto",
+  "level": "A2",
+  "title": {
+    "hu": "Közelmúlt (pretérito perfecto)",
+    "en": "The present perfect",
+    "es": "El pretérito perfecto",
+    "de": "Das Perfekt"
+  },
+  "rule": {
+    "hu": "Alak: haber ragozva (he, has, ha, hemos, habéis, han) + participio (-ar → -ado, -er/-ir → -ido): he hablado, has comido, ha vivido. Akkor használod, ha az időszak, amiben történt, MÉG TART: hoy, esta semana, este año, siempre, nunca, todavía no, ya. A két rész SOSEM válik szét: nem mondasz „he no comido\"-t, hanem no he comido, és a névmás is elé megy: no lo he visto.",
+    "en": "Form: haber conjugated (he, has, ha, hemos, habéis, han) plus the participle (-ar → -ado, -er/-ir → -ido): he hablado, has comido, ha vivido. You use it when the period it happened in is STILL OPEN: hoy, esta semana, este año, siempre, nunca, todavía no, ya. The two parts NEVER split: not \"he no comido\" but no he comido, and pronouns go in front: no lo he visto.",
+    "es": "Forma: haber (he, has, ha, hemos, habéis, han) más participio (-ado, -ido): he hablado, has comido. Se usa cuando el periodo sigue abierto: hoy, esta semana, este año, siempre, nunca, todavía no, ya. Las dos partes no se separan: no he comido, no lo he visto.",
+    "de": "Form: haber (he, has, ha, hemos, habéis, han) plus Partizip (-ado, -ido): he hablado, has comido. Man nutzt es, wenn der Zeitraum NOCH LÄUFT: hoy, esta semana, este año, siempre, nunca, todavía no, ya. Die zwei Teile trennen sich nie: no he comido, no lo he visto."
+  },
+  "more": {
+    "hu": "Rendhagyó participiók, amiket muszáj tudni: hacer → hecho, ver → visto, decir → dicho, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto. Regionális különbség: Spanyolországban a mai eseményre perfectót mondanak (Hoy he comido tarde), Mexikóban és nagy részén Latin-Amerikának ugyanerre indefinidót (Hoy comí tarde). Mindkettő helyes, csak más vidék. A participio itt SOSEM egyeztetődik: ellas han llegado, nem llegadas.",
+    "en": "Irregular participles you simply have to know: hacer → hecho, ver → visto, decir → dicho, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto. A regional split: Spain uses the perfect for today's events (Hoy he comido tarde), Mexico and most of Latin America use the preterite (Hoy comí tarde). Both are correct, they are different regions. The participle here NEVER agrees: ellas han llegado, not llegadas.",
+    "es": "Participios irregulares imprescindibles: hecho, visto, dicho, escrito, puesto, vuelto, abierto, roto, muerto. Diferencia regional: en España se dice Hoy he comido tarde; en México y casi toda América, Hoy comí tarde. El participio aquí no concuerda: ellas han llegado.",
+    "de": "Unregelmäßige Partizipien, die man können muss: hecho, visto, dicho, escrito, puesto, vuelto, abierto, roto, muerto. Regionaler Unterschied: in Spanien Hoy he comido tarde, in Mexiko und fast ganz Lateinamerika Hoy comí tarde. Das Partizip wird hier nie angeglichen: ellas han llegado."
+  },
+  "glossary": [
+    {
+      "word": "todavía",
+      "gloss": {
+        "hu": "még (todavía no = még nem)",
+        "en": "still (todavía no = not yet)",
+        "es": "todavía",
+        "de": "noch (todavía no = noch nicht)"
+      }
+    },
+    {
+      "word": "ya",
+      "gloss": {
+        "hu": "már",
+        "en": "already",
+        "es": "ya",
+        "de": "schon"
+      }
+    },
+    {
+      "word": "hecho",
+      "gloss": {
+        "hu": "csinált (hacer participiója)",
+        "en": "done, made",
+        "es": "hecho",
+        "de": "gemacht"
+      }
+    },
+    {
+      "word": "visto",
+      "gloss": {
+        "hu": "látott (ver participiója)",
+        "en": "seen",
+        "es": "visto",
+        "de": "gesehen"
+      }
+    },
+    {
+      "word": "dicho",
+      "gloss": {
+        "hu": "mondott (decir participiója)",
+        "en": "said",
+        "es": "dicho",
+        "de": "gesagt"
+      }
+    },
+    {
+      "word": "escrito",
+      "gloss": {
+        "hu": "írott (escribir participiója)",
+        "en": "written",
+        "es": "escrito",
+        "de": "geschrieben"
+      }
+    },
+    {
+      "word": "roto",
+      "gloss": {
+        "hu": "eltört (romper participiója)",
+        "en": "broken",
+        "es": "roto",
+        "de": "kaputt, zerbrochen"
+      }
+    },
+    {
+      "word": "vuelto",
+      "gloss": {
+        "hu": "visszatért (volver participiója)",
+        "en": "come back",
+        "es": "vuelto",
+        "de": "zurückgekommen"
+      }
+    },
+    {
+      "word": "caído",
+      "gloss": {
+        "hu": "leesett (caer participiója)",
+        "en": "fallen",
+        "es": "caído",
+        "de": "gefallen"
+      }
+    },
+    {
+      "word": "tarea",
+      "gloss": {
+        "hu": "házi feladat",
+        "en": "homework",
+        "es": "la tarea",
+        "de": "Hausaufgabe"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "pf-01",
+      "sentence": "Hoy ___ (yo) mucho trabajo.",
+      "options": [
+        "he tenido",
+        "tuve",
+        "tenía"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A hoy még tartó időszak, ezért perfecto (Spanyolországban ez a szabály).",
+        "en": "Hoy is a period that is still open, so the perfect (this is the Spanish norm).",
+        "es": "Hoy es un periodo abierto, por eso perfecto (norma peninsular).",
+        "de": "Hoy ist ein noch offener Zeitraum, also Perfekt (spanische Norm)."
+      },
+      "wrong": {
+        "tuve": {
+          "hu": "Mexikóban ezt mondanák, de ez a lecke a perfectóról szól; a „más regionális\" blokk kimondja.",
+          "en": "Mexico would say this, but this lesson is about the perfect; the notes explain the split.",
+          "es": "En México se diría así, pero esta lección trata del perfecto.",
+          "de": "In Mexiko sagt man das, diese Lektion behandelt aber das Perfekt."
+        },
+        "tenía": {
+          "hu": "A tenía szokást vagy hátteret jelöl.",
+          "en": "Tenía marks a habit or background.",
+          "es": "Tenía marca costumbre o fondo.",
+          "de": "Tenía markiert Gewohnheit oder Hintergrund."
+        }
+      },
+      "examples": [
+        "Esta semana he trabajado mucho.",
+        "Este año hemos viajado poco."
+      ]
+    },
+    {
+      "id": "pf-02",
+      "sentence": "¿___ (tú) la película nueva?",
+      "options": [
+        "Has visto",
+        "Has ver",
+        "Has vido"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A ver participiója rendhagyó: visto.",
+        "en": "Ver has an irregular participle: visto.",
+        "es": "El participio de ver es irregular: visto.",
+        "de": "Das Partizip von ver ist unregelmäßig: visto."
+      },
+      "wrong": {
+        "Has ver": {
+          "hu": "A haber után nem főnévi igenév áll, hanem participio.",
+          "en": "Haber is followed by a participle, not an infinitive.",
+          "es": "Después de haber va participio, no infinitivo.",
+          "de": "Nach haber steht ein Partizip, kein Infinitiv."
+        },
+        "Has vido": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        }
+      },
+      "examples": [
+        "He escrito tres correos.",
+        "Han hecho la tarea."
+      ]
+    },
+    {
+      "id": "pf-03",
+      "sentence": "Todavía no ___ (nosotros) el resultado.",
+      "options": [
+        "hemos recibido",
+        "recibimos",
+        "recibíamos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A todavía no a perfecto tipikus kísérője: még nem történt meg, de a várakozás tart.",
+        "en": "Todavía no is a classic companion of the perfect: it has not happened yet.",
+        "es": "Todavía no acompaña típicamente al perfecto.",
+        "de": "Todavía no ist ein typischer Begleiter des Perfekts."
+      },
+      "wrong": {
+        "recibimos": {
+          "hu": "Lezárt múltat jelentene, a todavía no viszont a mostig tartó időt nézi.",
+          "en": "That would be a closed past, while todavía no looks at the time up to now.",
+          "es": "Sería un pasado cerrado, y todavía no mira hasta ahora.",
+          "de": "Das wäre abgeschlossene Vergangenheit, todavía no blickt bis jetzt."
+        },
+        "recibíamos": {
+          "hu": "Szokást jelentene.",
+          "en": "That would mean a habit.",
+          "es": "Indicaría costumbre.",
+          "de": "Das hieße Gewohnheit."
+        }
+      },
+      "examples": [
+        "Todavía no he comido.",
+        "Ya hemos terminado."
+      ]
+    },
+    {
+      "id": "pf-04",
+      "sentence": "Nunca ___ (yo) en avión.",
+      "options": [
+        "he viajado",
+        "viajé",
+        "viajaba"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A nunca az egész eddigi életre néz, ami még tart: perfecto.",
+        "en": "Nunca looks at your whole life so far, which is still open: the perfect.",
+        "es": "Nunca abarca toda la vida hasta ahora: perfecto.",
+        "de": "Nunca umfasst das ganze bisherige Leben: Perfekt."
+      },
+      "wrong": {
+        "viajé": {
+          "hu": "Ez egy konkrét, lezárt alkalomra utalna.",
+          "en": "That would point at one closed occasion.",
+          "es": "Señalaría una ocasión cerrada.",
+          "de": "Das zeigte auf einen abgeschlossenen Anlass."
+        },
+        "viajaba": {
+          "hu": "Ez azt mondaná, hogy akkoriban nem szoktam repülni.",
+          "en": "That would say I did not use to fly back then.",
+          "es": "Diría que entonces no solía viajar en avión.",
+          "de": "Das hieße, ich flog damals gewöhnlich nicht."
+        }
+      },
+      "examples": [
+        "Nunca he estado en Perú.",
+        "Siempre he vivido aquí."
+      ]
+    },
+    {
+      "id": "pf-05",
+      "sentence": "Ella ___ la puerta y ha salido.",
+      "options": [
+        "ha abierto",
+        "ha abrido",
+        "abrió"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az abrir participiója rendhagyó: abierto.",
+        "en": "Abrir has an irregular participle: abierto.",
+        "es": "El participio de abrir es abierto.",
+        "de": "Das Partizip von abrir ist abierto."
+      },
+      "wrong": {
+        "ha abrido": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "abrió": {
+          "hu": "Nyelvtanilag helyes múlt, de a mondat másik fele perfectóban áll.",
+          "en": "A correct past, but the other half of the sentence is in the perfect.",
+          "es": "Pasado correcto, pero la otra mitad está en perfecto.",
+          "de": "Korrekte Vergangenheit, aber die andere Hälfte steht im Perfekt."
+        }
+      },
+      "examples": [
+        "He puesto la mesa.",
+        "Han vuelto temprano."
+      ]
+    },
+    {
+      "id": "pf-06",
+      "sentence": "No ___ (yo) nada en todo el día.",
+      "options": [
+        "he comido",
+        "comido he",
+        "he no comido"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A tagadószó a haber ELÉ megy, és a két rész nem válik szét: no he comido.",
+        "en": "The negative goes BEFORE haber and the two parts stay together: no he comido.",
+        "es": "La negación va delante de haber y las partes no se separan: no he comido.",
+        "de": "Die Verneinung steht vor haber, die Teile bleiben zusammen: no he comido."
+      },
+      "wrong": {
+        "comido he": {
+          "hu": "A sorrend fordítva van.",
+          "en": "The order is reversed.",
+          "es": "El orden está al revés.",
+          "de": "Die Reihenfolge ist vertauscht."
+        },
+        "he no comido": {
+          "hu": "A no soha nem áll a haber és a participio közé.",
+          "en": "No never goes between haber and the participle.",
+          "es": "El no nunca va entre haber y el participio.",
+          "de": "Das no steht nie zwischen haber und Partizip."
+        }
+      },
+      "examples": [
+        "No he visto a nadie.",
+        "No hemos dicho nada."
+      ]
+    },
+    {
+      "id": "pf-07",
+      "sentence": "Este año mis padres ___ dos veces a México.",
+      "options": [
+        "han venido",
+        "vinieron",
+        "venían"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az este año még tartó időszak, és a többes szám harmadik személy han + participio.",
+        "en": "Este año is still open, and the third person plural is han plus the participle.",
+        "es": "Este año sigue abierto, y la tercera persona del plural es han más participio.",
+        "de": "Este año läuft noch, und die 3. Person Plural ist han plus Partizip."
+      },
+      "wrong": {
+        "vinieron": {
+          "hu": "Lezárt évhez illene: el año pasado vinieron.",
+          "en": "That would fit a closed year: el año pasado vinieron.",
+          "es": "Encajaría con un año cerrado: el año pasado vinieron.",
+          "de": "Das passte zu einem abgeschlossenen Jahr."
+        },
+        "venían": {
+          "hu": "Szokást jelentene.",
+          "en": "That would mean a habit.",
+          "es": "Indicaría costumbre.",
+          "de": "Das hieße Gewohnheit."
+        }
+      },
+      "examples": [
+        "Esta semana he ido tres veces al médico.",
+        "Este mes hemos gastado mucho."
+      ]
+    },
+    {
+      "id": "pf-08",
+      "sentence": "¿Ya ___ (ustedes) la reserva?",
+      "options": [
+        "han hecho",
+        "han hacido",
+        "hicieron ya"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A hacer participiója hecho, és az ustedes han-t kap.",
+        "en": "Hacer's participle is hecho, and ustedes takes han.",
+        "es": "El participio de hacer es hecho, y ustedes lleva han.",
+        "de": "Das Partizip von hacer ist hecho, und ustedes nimmt han."
+      },
+      "wrong": {
+        "han hacido": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "hicieron ya": {
+          "hu": "Latin-Amerikában elhangzik, de itt a perfecto szerkezetét gyakoroljuk.",
+          "en": "You would hear this in Latin America, but this lesson practises the perfect.",
+          "es": "Se oye en América, pero aquí practicamos el perfecto.",
+          "de": "In Amerika hört man das, hier üben wir das Perfekt."
+        }
+      },
+      "examples": [
+        "Ya he hablado con ella.",
+        "¿Ya has terminado?"
+      ]
+    },
+    {
+      "id": "pf-09",
+      "sentence": "El vaso se ___ .",
+      "options": [
+        "ha roto",
+        "ha rompido",
+        "rompía"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A romper participiója roto; a visszaható se a haber elé kerül.",
+        "en": "Romper's participle is roto, and the reflexive se goes before haber.",
+        "es": "El participio de romper es roto, y el se va delante de haber.",
+        "de": "Das Partizip von romper ist roto, das se steht vor haber."
+      },
+      "wrong": {
+        "ha rompido": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "rompía": {
+          "hu": "Folyamatot jelentene, itt viszont egyszeri eredmény van.",
+          "en": "That would be an ongoing action; here there is a single result.",
+          "es": "Sería una acción en curso; aquí hay un resultado.",
+          "de": "Das wäre ein Verlauf; hier gibt es ein Ergebnis."
+        }
+      },
+      "examples": [
+        "Se ha caído el libro.",
+        "Se me ha olvidado el nombre."
+      ]
+    },
+    {
+      "id": "pf-10",
+      "sentence": "Las chicas ___ temprano.",
+      "options": [
+        "han llegado",
+        "han llegadas",
+        "ha llegado"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A participio ebben a szerkezetben SOSEM egyeztetődik: han llegado.",
+        "en": "The participle NEVER agrees in this structure: han llegado.",
+        "es": "El participio nunca concuerda aquí: han llegado.",
+        "de": "Das Partizip wird hier nie angeglichen: han llegado."
+      },
+      "wrong": {
+        "han llegadas": {
+          "hu": "A haber utáni participio nem kap nőnemű végződést.",
+          "en": "The participle after haber takes no feminine ending.",
+          "es": "El participio tras haber no lleva femenino.",
+          "de": "Das Partizip nach haber bekommt keine feminine Endung."
+        },
+        "ha llegado": {
+          "hu": "Az alany többes szám, tehát han kell.",
+          "en": "The subject is plural, so it needs han.",
+          "es": "El sujeto es plural, hace falta han.",
+          "de": "Das Subjekt ist Plural, also han."
+        }
+      },
+      "examples": [
+        "Mis amigas han venido juntas.",
+        "Los niños han comido bien."
+      ]
+    },
+    {
+      "id": "pf-11",
+      "sentence": "Nosotros ___ aquí desde marzo.",
+      "options": [
+        "hemos vivido",
+        "vivimos ayer",
+        "vivíamos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A desde márciustól MOSTIG tartó időt jelöl: perfecto.",
+        "en": "Desde marks a stretch that runs up to now: the perfect.",
+        "es": "Desde marca un periodo que llega hasta ahora: perfecto.",
+        "de": "Desde markiert einen Zeitraum bis jetzt: Perfekt."
+      },
+      "wrong": {
+        "vivimos ayer": {
+          "hu": "Az ayer lezárja az időt, ami ellentmond a desde marzónak.",
+          "en": "Ayer closes the time, which contradicts desde marzo.",
+          "es": "Ayer cierra el tiempo y contradice desde marzo.",
+          "de": "Ayer schließt die Zeit ab und widerspricht desde marzo."
+        },
+        "vivíamos": {
+          "hu": "Ez azt jelentené, hogy régen ott laktunk, de már nem.",
+          "en": "That would mean we lived there once but not any more.",
+          "es": "Indicaría que vivíamos antes y ya no.",
+          "de": "Das hieße, wir wohnten früher dort, jetzt nicht mehr."
+        }
+      },
+      "examples": [
+        "He estudiado español desde enero.",
+        "Ha llovido toda la semana."
+      ]
+    },
+    {
+      "id": "pf-12",
+      "sentence": "¿Qué te ___ el médico?",
+      "options": [
+        "ha dicho",
+        "ha decido",
+        "decía"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A decir participiója dicho, és a névmás (te) a haber elé kerül.",
+        "en": "Decir's participle is dicho, and the pronoun (te) goes before haber.",
+        "es": "El participio de decir es dicho, y el pronombre va delante de haber.",
+        "de": "Das Partizip von decir ist dicho, das Pronomen steht vor haber."
+      },
+      "wrong": {
+        "ha decido": {
+          "hu": "Ilyen alak nincs (a decidir participiója decidido, de az más ige).",
+          "en": "No such form (decidir gives decidido, but that is a different verb).",
+          "es": "Esa forma no existe (decidir da decidido, otro verbo).",
+          "de": "Diese Form gibt es nicht (decidir ergibt decidido, ein anderes Verb)."
+        },
+        "decía": {
+          "hu": "Ismétlődő beszédre utalna.",
+          "en": "That would point at repeated speech.",
+          "es": "Señalaría repetición.",
+          "de": "Das zeigte auf Wiederholung."
+        }
+      },
+      "examples": [
+        "Me ha dicho la verdad.",
+        "Nos han escrito hoy."
+      ]
+    }
+  ]
+}
