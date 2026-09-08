@@ -48,7 +48,21 @@ data/words/backup_*/
 
 # Word generation work-in-progress files
 todo_*.txt
-word_batches/
+word_batches
 
 # Play Store screenshots (regenerable, 1.5M)
 store/screenshots/
+
+# Agent working documents live in the private Kalmi91/ai-workspace repo and
+# are symlinked back into this tree, so the paths stay the same for tooling.
+AGENTS.md
+BUILD.md
+GAMES.md
+BUGS.md
+ITER3.md
+ITER1.1-PLAN.txt
+TASK.md
+skills
+
+# Local Claude Code MCP config (empty stub, not project state)
+.mcp.json
