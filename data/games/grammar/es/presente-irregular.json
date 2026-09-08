@@ -1,0 +1,587 @@
+{
+  "topic": "presente-irregular",
+  "level": "A1",
+  "title": {
+    "hu": "Jelen idő: rendhagyó igék",
+    "en": "Present: irregular verbs",
+    "es": "Presente: verbos irregulares",
+    "de": "Präsens: unregelmäßige Verben"
+  },
+  "rule": {
+    "hu": "A leggyakoribb igék rendhagyók, de a rendetlenség rendszeres. Csak a YO alak lóg ki: hacer → hago, poner → pongo, salir → salgo, traer → traigo, saber → sé, ver → veo, dar → doy, conocer → conozco. Teljesen rendhagyó: ser (soy, eres, es, somos, son), ir (voy, vas, va, vamos, van), haber (he, has, ha...). Kettős rendhagyó (yo-alak + tőváltás): tener (tengo, tienes, tiene, tenemos, tienen), venir (vengo, vienes, viene, venimos, vienen), decir (digo, dices, dice, decimos, dicen).",
+    "en": "The commonest verbs are irregular, but the mess is systematic. Often ONLY the yo form is odd: hacer → hago, poner → pongo, salir → salgo, traer → traigo, saber → sé, ver → veo, dar → doy, conocer → conozco. Fully irregular: ser (soy, eres, es, somos, son), ir (voy, vas, va, vamos, van), haber (he, has, ha...). Doubly irregular (odd yo plus a stem change): tener (tengo, tienes, tiene, tenemos, tienen), venir (vengo, vienes...), decir (digo, dices...).",
+    "es": "Los verbos más frecuentes son irregulares, pero el desorden es sistemático. Muchas veces solo la forma de yo cambia: hago, pongo, salgo, traigo, sé, veo, doy, conozco. Totalmente irregulares: ser, ir, haber. Doblemente irregulares: tener, venir, decir.",
+    "de": "Die häufigsten Verben sind unregelmäßig, aber das Chaos hat System. Oft ist nur die yo-Form anders: hago, pongo, salgo, traigo, sé, veo, doy, conozco. Ganz unregelmäßig: ser, ir, haber. Doppelt unregelmäßig: tener, venir, decir."
+  },
+  "more": {
+    "hu": "Érdemes észrevenni a mintákat, mert így nem tizenöt szabály, hanem három: 1) -go csoport (hago, pongo, salgo, tengo, vengo, digo, traigo, oigo); 2) -zco csoport a -cer/-cir végűeknél (conozco, traduzco, produzco); 3) egyszavas kivételek (soy, voy, doy, sé, he). A nosotros alak szinte MINDIG szabályos, még a rendhagyóknál is: tenemos, venimos, decimos, hacemos. Ez a horgony, ha elbizonytalanodsz.",
+    "en": "Spot the patterns and it stops being fifteen rules and becomes three: 1) the -go group (hago, pongo, salgo, tengo, vengo, digo, traigo, oigo); 2) the -zco group for verbs in -cer/-cir (conozco, traduzco, produzco); 3) one-off oddities (soy, voy, doy, sé, he). The nosotros form is almost ALWAYS regular, even here: tenemos, venimos, decimos, hacemos. That is your anchor when in doubt.",
+    "es": "Si ves los patrones, no son quince reglas sino tres: 1) grupo -go (hago, pongo, salgo, tengo, vengo, digo); 2) grupo -zco en -cer/-cir (conozco, traduzco); 3) rarezas sueltas (soy, voy, doy, sé, he). La forma de nosotros casi siempre es regular: tenemos, venimos, decimos.",
+    "de": "Mit den Mustern sind es statt fünfzehn Regeln nur drei: 1) die -go-Gruppe (hago, pongo, salgo, tengo, vengo, digo); 2) die -zco-Gruppe bei -cer/-cir (conozco); 3) Einzelfälle (soy, voy, doy, sé, he). Die nosotros-Form ist fast immer regelmäßig: tenemos, venimos, decimos."
+  },
+  "glossary": [
+    {
+      "word": "salgo",
+      "gloss": {
+        "hu": "kimegyek, elindulok",
+        "en": "I go out, I leave",
+        "es": "yo salgo",
+        "de": "ich gehe hinaus"
+      }
+    },
+    {
+      "word": "pongo",
+      "gloss": {
+        "hu": "teszek, rakok",
+        "en": "I put",
+        "es": "yo pongo",
+        "de": "ich lege, stelle"
+      }
+    },
+    {
+      "word": "traigo",
+      "gloss": {
+        "hu": "hozok",
+        "en": "I bring",
+        "es": "yo traigo",
+        "de": "ich bringe"
+      }
+    },
+    {
+      "word": "conozco",
+      "gloss": {
+        "hu": "ismerek",
+        "en": "I know (a person, place)",
+        "es": "yo conozco",
+        "de": "ich kenne"
+      }
+    },
+    {
+      "word": "oigo",
+      "gloss": {
+        "hu": "hallok",
+        "en": "I hear",
+        "es": "yo oigo",
+        "de": "ich höre"
+      }
+    },
+    {
+      "word": "digo",
+      "gloss": {
+        "hu": "mondok",
+        "en": "I say",
+        "es": "yo digo",
+        "de": "ich sage"
+      }
+    },
+    {
+      "word": "hago",
+      "gloss": {
+        "hu": "csinálok",
+        "en": "I do, I make",
+        "es": "yo hago",
+        "de": "ich mache"
+      }
+    },
+    {
+      "word": "conoco",
+      "gloss": {
+        "hu": "nem létező alak",
+        "en": "not a real form",
+        "es": "forma inexistente",
+        "de": "keine reale Form"
+      }
+    },
+    {
+      "word": "dice",
+      "gloss": {
+        "hu": "mondja",
+        "en": "he/she says",
+        "es": "decir → dice",
+        "de": "sagt"
+      }
+    },
+    {
+      "word": "dicemos",
+      "gloss": {
+        "hu": "nem létező alak",
+        "en": "not a real form",
+        "es": "forma inexistente",
+        "de": "keine reale Form"
+      }
+    },
+    {
+      "word": "duele",
+      "gloss": {
+        "hu": "fáj",
+        "en": "it hurts",
+        "es": "doler → duele",
+        "de": "tut weh"
+      }
+    },
+    {
+      "word": "oye",
+      "gloss": {
+        "hu": "hall",
+        "en": "he/she hears",
+        "es": "oír → oye",
+        "de": "hört"
+      }
+    },
+    {
+      "word": "oyo",
+      "gloss": {
+        "hu": "nem létező alak",
+        "en": "not a real form",
+        "es": "forma inexistente",
+        "de": "keine reale Form"
+      }
+    },
+    {
+      "word": "regalo",
+      "gloss": {
+        "hu": "ajándék",
+        "en": "gift",
+        "es": "el regalo",
+        "de": "Geschenk"
+      }
+    },
+    {
+      "word": "respuesta",
+      "gloss": {
+        "hu": "válasz",
+        "en": "answer",
+        "es": "la respuesta",
+        "de": "Antwort"
+      }
+    },
+    {
+      "word": "televisión",
+      "gloss": {
+        "hu": "televízió",
+        "en": "television",
+        "es": "la televisión",
+        "de": "Fernsehen"
+      }
+    },
+    {
+      "word": "vayamos",
+      "gloss": {
+        "hu": "menjünk (kötőmód)",
+        "en": "let us go (subjunctive)",
+        "es": "vayamos",
+        "de": "gehen wir (Subjuntivo)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "pi-01",
+      "sentence": "Yo ___ la comida los domingos.",
+      "options": [
+        "hago",
+        "haco",
+        "hace"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A hacer yo-alakja a -go csoportba tartozik: hago.",
+        "en": "Hacer's yo form belongs to the -go group: hago.",
+        "es": "La forma de yo de hacer es del grupo -go: hago.",
+        "de": "Die yo-Form von hacer gehört zur -go-Gruppe: hago."
+      },
+      "wrong": {
+        "haco": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "hace": {
+          "hu": "Ez az ő alakja.",
+          "en": "That is the he/she form.",
+          "es": "Esa es la forma de él/ella.",
+          "de": "Das ist die er/sie-Form."
+        }
+      },
+      "examples": [
+        "Yo pongo la mesa.",
+        "Yo salgo a las ocho."
+      ]
+    },
+    {
+      "id": "pi-02",
+      "sentence": "Tú ___ mucho trabajo esta semana.",
+      "options": [
+        "tienes",
+        "tengas",
+        "tengo"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A tener tú-alakja tőváltós: tienes (e → ie).",
+        "en": "Tener's tú form has a stem change: tienes (e → ie).",
+        "es": "La forma de tú de tener diptonga: tienes.",
+        "de": "Die tú-Form von tener diphthongiert: tienes."
+      },
+      "wrong": {
+        "tengas": {
+          "hu": "Ez kötőmód, nem kijelentő jelen.",
+          "en": "That is the subjunctive, not the plain present.",
+          "es": "Eso es subjuntivo, no presente de indicativo.",
+          "de": "Das ist Subjuntivo, kein Indikativ Präsens."
+        },
+        "tengo": {
+          "hu": "Ez az én alakom.",
+          "en": "That is my form.",
+          "es": "Esa es la forma de yo.",
+          "de": "Das ist meine Form."
+        }
+      },
+      "examples": [
+        "Ella tiene dos hijos.",
+        "Nosotros tenemos tiempo."
+      ]
+    },
+    {
+      "id": "pi-03",
+      "sentence": "Nosotros ___ a la escuela en autobús.",
+      "options": [
+        "vamos",
+        "vayamos",
+        "vais"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az ir teljesen rendhagyó, a mi alakja vamos.",
+        "en": "Ir is fully irregular; the we-form is vamos.",
+        "es": "Ir es totalmente irregular; nosotros: vamos.",
+        "de": "Ir ist ganz unregelmäßig; wir: vamos."
+      },
+      "wrong": {
+        "vayamos": {
+          "hu": "Ez kötőmód.",
+          "en": "That is the subjunctive.",
+          "es": "Eso es subjuntivo.",
+          "de": "Das ist Subjuntivo."
+        },
+        "vais": {
+          "hu": "Ez a vosotros alakja (Spanyolország).",
+          "en": "That is the vosotros form (Spain).",
+          "es": "Esa es la forma de vosotros.",
+          "de": "Das ist die vosotros-Form."
+        }
+      },
+      "examples": [
+        "Yo voy al mercado.",
+        "Ellos van al cine."
+      ]
+    },
+    {
+      "id": "pi-04",
+      "sentence": "Yo ___ a tu hermano del trabajo.",
+      "options": [
+        "conozco",
+        "conoco",
+        "sé"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A -cer végű igék yo-alakja -zco: conozco. Személyt conocer ismer.",
+        "en": "Verbs in -cer take -zco in the yo form: conozco. You know a person with conocer.",
+        "es": "Los verbos en -cer hacen -zco: conozco. A una persona se la conoce.",
+        "de": "Verben auf -cer bilden -zco: conozco. Personen kennt man mit conocer."
+      },
+      "wrong": {
+        "conoco": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "sé": {
+          "hu": "A saber tényt tud, nem személyt ismer.",
+          "en": "Saber knows a fact, not a person.",
+          "es": "Saber es para datos, no para personas.",
+          "de": "Saber ist für Fakten, nicht für Personen."
+        }
+      },
+      "examples": [
+        "Conozco esta ciudad.",
+        "No conozco a nadie aquí."
+      ]
+    },
+    {
+      "id": "pi-05",
+      "sentence": "Yo no ___ la respuesta.",
+      "options": [
+        "sé",
+        "sabo",
+        "conozco"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A saber yo-alakja egyszavas kivétel: sé.",
+        "en": "Saber's yo form is a one-off oddity: sé.",
+        "es": "La forma de yo de saber es una rareza: sé.",
+        "de": "Die yo-Form von saber ist ein Einzelfall: sé."
+      },
+      "wrong": {
+        "sabo": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "conozco": {
+          "hu": "A választ tudni kell, nem ismerni.",
+          "en": "An answer is something you know as a fact.",
+          "es": "La respuesta se sabe, no se conoce.",
+          "de": "Eine Antwort weiß man, man kennt sie nicht."
+        }
+      },
+      "examples": [
+        "Sé que es difícil.",
+        "No sé dónde está."
+      ]
+    },
+    {
+      "id": "pi-06",
+      "sentence": "Ella ___ que llegamos tarde.",
+      "options": [
+        "dice",
+        "dece",
+        "digo"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A decir tőváltós az ő alakjában: dice (e → i).",
+        "en": "Decir has a stem change in the third person: dice (e → i).",
+        "es": "Decir cambia la raíz en tercera persona: dice.",
+        "de": "Decir ändert den Stamm in der 3. Person: dice."
+      },
+      "wrong": {
+        "dece": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "digo": {
+          "hu": "Ez az én alakom.",
+          "en": "That is my form.",
+          "es": "Esa es la forma de yo.",
+          "de": "Das ist meine Form."
+        }
+      },
+      "examples": [
+        "Yo digo la verdad.",
+        "Nosotros decimos que sí."
+      ]
+    },
+    {
+      "id": "pi-07",
+      "sentence": "Yo ___ de casa a las siete.",
+      "options": [
+        "salgo",
+        "salo",
+        "sale"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A salir a -go csoport tagja: salgo.",
+        "en": "Salir belongs to the -go group: salgo.",
+        "es": "Salir es del grupo -go: salgo.",
+        "de": "Salir gehört zur -go-Gruppe: salgo."
+      },
+      "wrong": {
+        "salo": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "sale": {
+          "hu": "Ez az ő alakja.",
+          "en": "That is the he/she form.",
+          "es": "Esa es la forma de él/ella.",
+          "de": "Das ist die er/sie-Form."
+        }
+      },
+      "examples": [
+        "Yo traigo el pan.",
+        "Yo oigo música."
+      ]
+    },
+    {
+      "id": "pi-08",
+      "sentence": "¿De dónde ___ (tú)?",
+      "options": [
+        "eres",
+        "estás",
+        "es"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Származásnál ser: tú eres. A ser tú-alakja rendhagyó.",
+        "en": "Origin takes ser: tú eres. The tú form of ser is irregular.",
+        "es": "El origen va con ser: tú eres.",
+        "de": "Herkunft steht mit ser: tú eres."
+      },
+      "wrong": {
+        "estás": {
+          "hu": "Az estar helyet vagy állapotot jelöl, nem származást.",
+          "en": "Estar marks place or state, not origin.",
+          "es": "Estar marca lugar o estado, no origen.",
+          "de": "Estar markiert Ort oder Zustand, keine Herkunft."
+        },
+        "es": {
+          "hu": "Ez az ő alakja.",
+          "en": "That is the he/she form.",
+          "es": "Esa es la forma de él/ella.",
+          "de": "Das ist die er/sie-Form."
+        }
+      },
+      "examples": [
+        "Yo soy de Hungría.",
+        "Nosotros somos amigos."
+      ]
+    },
+    {
+      "id": "pi-09",
+      "sentence": "Mis padres ___ a visitarnos cada mes.",
+      "options": [
+        "vienen",
+        "venen",
+        "venimos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A venir ellos-alakja tőváltós: vienen.",
+        "en": "Venir's ellos form has a stem change: vienen.",
+        "es": "La forma de ellos de venir diptonga: vienen.",
+        "de": "Die ellos-Form von venir diphthongiert: vienen."
+      },
+      "wrong": {
+        "venen": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "venimos": {
+          "hu": "Ez a mi alakunk.",
+          "en": "That is our form.",
+          "es": "Esa es la forma de nosotros.",
+          "de": "Das ist unsere Form."
+        }
+      },
+      "examples": [
+        "Yo vengo en autobús.",
+        "Nosotros venimos juntos."
+      ]
+    },
+    {
+      "id": "pi-10",
+      "sentence": "Yo le ___ un regalo a mi madre.",
+      "options": [
+        "doy",
+        "do",
+        "da"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A dar yo-alakja doy, egyszavas kivétel.",
+        "en": "Dar's yo form is doy, a one-off oddity.",
+        "es": "La forma de yo de dar es doy.",
+        "de": "Die yo-Form von dar ist doy."
+      },
+      "wrong": {
+        "do": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "da": {
+          "hu": "Ez az ő alakja.",
+          "en": "That is the he/she form.",
+          "es": "Esa es la forma de él/ella.",
+          "de": "Das ist die er/sie-Form."
+        }
+      },
+      "examples": [
+        "Yo veo la televisión.",
+        "Yo estoy en casa."
+      ]
+    },
+    {
+      "id": "pi-11",
+      "sentence": "Nosotros ___ la verdad, aunque duele.",
+      "options": [
+        "decimos",
+        "dicemos",
+        "digamos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A nosotros alak a rendhagyóknál is szabályos: decimos.",
+        "en": "The nosotros form stays regular even in irregular verbs: decimos.",
+        "es": "La forma de nosotros sigue regular: decimos.",
+        "de": "Die nosotros-Form bleibt regelmäßig: decimos."
+      },
+      "wrong": {
+        "dicemos": {
+          "hu": "A tőváltás nem érinti a mi alakot.",
+          "en": "The stem change does not reach the we-form.",
+          "es": "El cambio de raíz no llega a nosotros.",
+          "de": "Der Stammwechsel erreicht die wir-Form nicht."
+        },
+        "digamos": {
+          "hu": "Ez kötőmód.",
+          "en": "That is the subjunctive.",
+          "es": "Eso es subjuntivo.",
+          "de": "Das ist Subjuntivo."
+        }
+      },
+      "examples": [
+        "Nosotros tenemos hambre.",
+        "Nosotros hacemos ejercicio."
+      ]
+    },
+    {
+      "id": "pi-12",
+      "sentence": "Yo ___ música mientras trabajo.",
+      "options": [
+        "oigo",
+        "oyo",
+        "oye"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az oír yo-alakja oigo, szintén a -go csoport.",
+        "en": "Oír's yo form is oigo, also the -go group.",
+        "es": "La forma de yo de oír es oigo.",
+        "de": "Die yo-Form von oír ist oigo."
+      },
+      "wrong": {
+        "oyo": {
+          "hu": "Ilyen alak nincs.",
+          "en": "No such form exists.",
+          "es": "Esa forma no existe.",
+          "de": "Diese Form gibt es nicht."
+        },
+        "oye": {
+          "hu": "Ez az ő alakja.",
+          "en": "That is the he/she form.",
+          "es": "Esa es la forma de él/ella.",
+          "de": "Das ist die er/sie-Form."
+        }
+      },
+      "examples": [
+        "Yo hago la cena.",
+        "Yo traigo agua."
+      ]
+    }
+  ]
+}

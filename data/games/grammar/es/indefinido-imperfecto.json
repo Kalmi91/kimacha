@@ -465,31 +465,31 @@
     },
     {
       "id": "ii2-10",
-      "sentence": "___ (yo) llamarte, pero no ___ porque no tenía tu número.",
+      "sentence": "___ (yo) llamarte, pero no tenía tu número.",
       "options": [
-        "Quería / pude",
-        "Quise / podía",
-        "Quiero / puedo"
+        "Quería",
+        "Quise",
+        "Quiero"
       ],
       "correct": 0,
       "why": {
-        "hu": "A quería a szándék (háttér), a pude az egyszeri kudarc (esemény).",
-        "en": "Quería is the intention (background), pude the one-off failure (event).",
-        "es": "Quería es la intención (fondo), pude el intento concreto (suceso).",
-        "de": "Quería ist die Absicht (Hintergrund), pude der konkrete Versuch (Ereignis)."
+        "hu": "A quería a szándék, a háttér: fel akartalak hívni, de nem lett belőle semmi.",
+        "en": "Quería is the intention, the background: I wanted to call, and it never happened.",
+        "es": "Quería es la intención, el fondo: quería llamarte y no ocurrió.",
+        "de": "Quería ist die Absicht, der Hintergrund: ich wollte anrufen, es geschah nicht."
       },
       "wrong": {
-        "Quise / podía": {
-          "hu": "A quise inkább „megpróbáltam\", a podía pedig általános képességet jelentene: itt fordítva van.",
-          "en": "Quise leans to \"I tried\" and podía to a general ability: the pair is the wrong way round.",
-          "es": "Quise es «intenté» y podía es capacidad general: están al revés.",
-          "de": "Quise heißt eher „ich versuchte\", podía allgemeine Fähigkeit: vertauscht."
+        "Quise": {
+          "hu": "A quise inkább azt jelenti, hogy meg is próbáltam, egyszer, konkrétan.",
+          "en": "Quise leans to \"I actually tried\", once and concretely.",
+          "es": "Quise se acerca a «lo intenté», una vez y en concreto.",
+          "de": "Quise heißt eher „ich versuchte es\", einmal und konkret."
         },
-        "Quiero / puedo": {
-          "hu": "Mindkettő jelen idő.",
-          "en": "Both are the present.",
-          "es": "Los dos son presente.",
-          "de": "Beide sind Präsens."
+        "Quiero": {
+          "hu": "Ez jelen idő.",
+          "en": "That is the present.",
+          "es": "Eso es presente.",
+          "de": "Das ist Präsens."
         }
       },
       "examples": [
@@ -533,36 +533,36 @@
     },
     {
       "id": "ii2-12",
-      "sentence": "Mi madre ___ la comida mientras mi padre ___ la mesa.",
+      "sentence": "Mi madre ___ la comida mientras mi padre ponía la mesa.",
       "options": [
-        "preparaba / ponía",
-        "preparó / puso",
-        "prepara / pone"
+        "preparaba",
+        "preparó",
+        "prepara"
       ],
       "correct": 0,
       "why": {
-        "hu": "Két párhuzamosan futó folyamat: mindkettő imperfecto.",
-        "en": "Two actions running in parallel: both take the imperfect.",
-        "es": "Dos acciones simultáneas: las dos en imperfecto.",
-        "de": "Zwei parallele Handlungen: beide im Imperfekt."
+        "hu": "Két párhuzamosan futó folyamat: a mientras mindkét oldalára imperfecto jár.",
+        "en": "Two actions running in parallel: mientras takes the imperfect on both sides.",
+        "es": "Dos acciones simultáneas: con mientras, imperfecto en los dos lados.",
+        "de": "Zwei parallele Handlungen: mit mientras steht beidseitig das Imperfekt."
       },
       "wrong": {
-        "preparó / puso": {
-          "hu": "Ez két egymás utáni, lezárt eseményt jelentene, nem párhuzamot.",
-          "en": "That would be two closed events one after the other, not parallel ones.",
-          "es": "Eso serían dos hechos sucesivos, no simultáneos.",
-          "de": "Das wären zwei aufeinanderfolgende Ereignisse, nicht parallele."
+        "preparó": {
+          "hu": "Ez lezárná a cselekvést, a mientras viszont párhuzamot kér.",
+          "en": "That closes the action, but mientras asks for a parallel one.",
+          "es": "Eso cierra la acción y mientras pide simultaneidad.",
+          "de": "Das schließt die Handlung ab, mientras will Gleichzeitigkeit."
         },
-        "prepara / pone": {
-          "hu": "Mindkettő jelen idő.",
-          "en": "Both are the present.",
-          "es": "Los dos son presente.",
-          "de": "Beide sind Präsens."
+        "prepara": {
+          "hu": "Ez jelen idő.",
+          "en": "That is the present.",
+          "es": "Eso es presente.",
+          "de": "Das ist Präsens."
         }
       },
       "examples": [
         "Yo leía mientras ella escribía.",
-        "Los niños jugaban mientras nosotros hablábamos."
+        "Los niños jugaban mientras hablábamos."
       ]
     }
   ]
