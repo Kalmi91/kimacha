@@ -1,4 +1,5 @@
 import { createEmptyCard, type Card } from 'ts-fsrs';
+import { BACKUP_VERSION, type BackupData } from './backupData';
 
 export interface DB {
   ensureCard(wordId: number, type: string): Promise<void>;
@@ -38,6 +39,8 @@ export interface DB {
   setRandomTopics(v: boolean): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
   setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
+  exportAll(): Promise<BackupData>;
+  importAll(data: BackupData): Promise<void>;
 }
 
 export function cardFromRow(row: any): Card {
@@ -316,6 +319,89 @@ class MemoryDB implements DB {
 
   async setFeedbackBtnSide(side: 'left' | 'right'): Promise<void> {
     this.feedbackBtnSideMap.set(this.activePair, side);
+  }
+
+  // Flatten the per-pair setting maps into learn_settings rows (SQLite shape),
+  // so a web export uses the same format as a native (phone) export.
+  private learnSettingsRows(): any[] {
+    const pairs = new Set<string>([
+      ...this.wordsOnlyMap.keys(),
+      ...this.randomTopicsMap.keys(),
+      ...this.feedbackBtnSideMap.keys(),
+    ]);
+    return [...pairs].map(pair => ({
+      pair,
+      words_only: this.wordsOnlyMap.has(pair) ? (this.wordsOnlyMap.get(pair) ? 1 : 0) : null,
+      random_topics: this.randomTopicsMap.has(pair) ? (this.randomTopicsMap.get(pair) ? 1 : 0) : null,
+      feedback_btn_side: this.feedbackBtnSideMap.get(pair) ?? null,
+    }));
+  }
+
+  private spellingRows(): any[] {
+    const out: any[] = [];
+    for (const [pair, m] of this.spellingLists.entries()) {
+      for (const [word_id, v] of m.entries()) out.push({ pair, word_id, step: v.step, due: v.due });
+    }
+    return out;
+  }
+
+  async exportAll(): Promise<BackupData> {
+    const tables: Record<string, any[]> = {
+      cards: [...this.cards.values()].map(c => ({ ...c })),
+      streak: [{ id: 1, ...this.streak }],
+      card_attempts: this.attempts.map(a => ({ ...a, correct: a.correct ? 1 : 0 })),
+      onboarding: this.onboarding ? [{ id: 1, source: this.onboarding.source, target: this.onboarding.target }] : [],
+      user_level: [...this.userLevels.entries()].map(([pair, v]) => ({ pair, ...v })),
+      user_meta: [{ id: 1, user_id: this.meta.userId, first_use_date: this.meta.firstUseDate, last_sync_date: this.meta.lastSyncDate }],
+      selected_topic: [...this.selectedTopics.entries()].map(([pair, topic_id]) => ({ pair, topic_id })),
+      learn_settings: this.learnSettingsRows(),
+      spelling_list: this.spellingRows(),
+    };
+    return { app: 'kimacha', version: BACKUP_VERSION, createdAt: new Date().toISOString(), tables };
+  }
+
+  async importAll(data: BackupData): Promise<void> {
+    const t = data.tables ?? {};
+    this.cards = new Map();
+    for (const c of t.cards ?? []) this.cards.set(`${c.pair}:${c.word_id}:${c.type}`, { ...c });
+
+    const s = (t.streak ?? [])[0];
+    this.streak = s
+      ? { current_count: s.current_count ?? 0, last_date: s.last_date ?? null, longest_count: s.longest_count ?? 0 }
+      : { current_count: 0, last_date: null, longest_count: 0 };
+
+    this.attempts = (t.card_attempts ?? []).map((a: any) => ({
+      word_id: a.word_id, type: a.type, correct: !!a.correct, response_time_ms: a.response_time_ms, timestamp: a.timestamp,
+    }));
+
+    const ob = (t.onboarding ?? [])[0];
+    this.onboarding = ob ? { source: ob.source, target: ob.target } : null;
+    if (this.onboarding) this.activePair = `${this.onboarding.source}-${this.onboarding.target}`;
+
+    this.userLevels = new Map();
+    for (const l of t.user_level ?? []) {
+      this.userLevels.set(l.pair, {
+        level: l.level, correct_streak: l.correct_streak, mistakes_in_window: l.mistakes_in_window, fail_streak: l.fail_streak,
+      });
+    }
+
+    const meta = (t.user_meta ?? [])[0];
+    if (meta) this.meta = { userId: meta.user_id, firstUseDate: meta.first_use_date, lastSyncDate: meta.last_sync_date ?? null };
+
+    this.selectedTopics = new Map();
+    for (const r of t.selected_topic ?? []) this.selectedTopics.set(r.pair, r.topic_id ?? null);
+
+    this.wordsOnlyMap = new Map();
+    this.randomTopicsMap = new Map();
+    this.feedbackBtnSideMap = new Map();
+    for (const r of t.learn_settings ?? []) {
+      if (r.words_only != null) this.wordsOnlyMap.set(r.pair, r.words_only === 1);
+      if (r.random_topics != null) this.randomTopicsMap.set(r.pair, r.random_topics === 1);
+      if (r.feedback_btn_side === 'left' || r.feedback_btn_side === 'right') this.feedbackBtnSideMap.set(r.pair, r.feedback_btn_side);
+    }
+
+    this.spellingLists = new Map();
+    for (const r of t.spelling_list ?? []) this.spellingListFor(r.pair).set(r.word_id, { step: r.step, due: r.due });
   }
 }
 
