@@ -1,0 +1,605 @@
+{
+  "macro": 12,
+  "level": "B1",
+  "story": {
+    "id": "talk-12-B1-story",
+    "level": "B1",
+    "track": "cdmx",
+    "title": {
+      "hu": "A garancia",
+      "en": "The Warranty",
+      "es": "La garantía",
+      "de": "Die Garantie"
+    },
+    "cover": "🧾",
+    "estMinutes": 4,
+    "scenes": [
+      {
+        "id": "s1",
+        "text": {
+          "es": "Diego ve una chaqueta de marca en el escaparate del almacén."
+        },
+        "translation": {
+          "hu": "Diego meglát egy márkás dzsekit az áruház kirakatában.",
+          "en": "Diego sees a branded jacket in the department store window.",
+          "es": "Diego ve una chaqueta de marca en el escaparate del almacén.",
+          "de": "Diego sieht eine Markenjacke im Schaufenster des Kaufhauses."
+        },
+        "question": {
+          "prompt": {
+            "hu": "Hol látja meg Diego a dzsekit?",
+            "en": "Where does Diego see the jacket?",
+            "es": "¿Dónde ve Diego la chaqueta?",
+            "de": "Wo sieht Diego die Jacke?"
+          },
+          "options": [
+            {
+              "es": "en el escaparate del almacén",
+              "correct": true
+            },
+            {
+              "es": "en el mercado del barrio"
+            },
+            {
+              "es": "en la casa de su amigo"
+            }
+          ]
+        }
+      },
+      {
+        "id": "s2",
+        "text": {
+          "es": "El producto es caro, pero hoy tiene una oferta especial."
+        },
+        "translation": {
+          "hu": "A termék drága, de ma különleges akció van rá.",
+          "en": "The product is expensive, but today it has a special offer.",
+          "es": "El producto es caro, pero hoy tiene una oferta especial.",
+          "de": "Das Produkt ist teuer, aber heute gibt es ein Sonderangebot."
+        },
+        "question": {
+          "prompt": {
+            "hu": "Miért éri meg ma megvenni?",
+            "en": "Why is it worth buying today?",
+            "es": "¿Por qué vale la pena comprarla hoy?",
+            "de": "Warum lohnt es sich, sie heute zu kaufen?"
+          },
+          "options": [
+            {
+              "es": "porque hay una oferta especial",
+              "correct": true
+            },
+            {
+              "es": "porque el almacén cierra hoy"
+            },
+            {
+              "es": "porque no tiene bolsillos"
+            }
+          ]
+        }
+      },
+      {
+        "id": "s3",
+        "text": {
+          "es": "Diego pregunta por la garantía antes de pagar el producto."
+        },
+        "translation": {
+          "hu": "Diego rákérdez a garanciára, mielőtt kifizeti a terméket.",
+          "en": "Diego asks about the warranty before paying for the product.",
+          "es": "Diego pregunta por la garantía antes de pagar el producto.",
+          "de": "Diego fragt nach der Garantie, bevor er das Produkt bezahlt."
+        },
+        "question": {
+          "prompt": {
+            "hu": "Mikor kérdez rá Diego a garanciára?",
+            "en": "When does Diego ask about the warranty?",
+            "es": "¿Cuándo pregunta Diego por la garantía?",
+            "de": "Wann fragt Diego nach der Garantie?"
+          },
+          "options": [
+            {
+              "es": "antes de pagar",
+              "correct": true
+            },
+            {
+              "es": "después de un mes"
+            },
+            {
+              "es": "nunca pregunta"
+            }
+          ]
+        }
+      },
+      {
+        "id": "s4",
+        "text": {
+          "es": "Una semana después, el cierre de la chaqueta se rompe."
+        },
+        "translation": {
+          "hu": "Egy héttel később eltörik a dzseki cipzárja.",
+          "en": "A week later, the jacket's zip breaks.",
+          "es": "Una semana después, el cierre de la chaqueta se rompe.",
+          "de": "Eine Woche später geht der Reißverschluss der Jacke kaputt."
+        },
+        "question": {
+          "prompt": {
+            "hu": "Mi romlik el?",
+            "en": "What breaks?",
+            "es": "¿Qué se rompe?",
+            "de": "Was geht kaputt?"
+          },
+          "options": [
+            {
+              "es": "el cierre de la chaqueta",
+              "correct": true
+            },
+            {
+              "es": "el bolsillo del pantalón"
+            },
+            {
+              "es": "el botón de la camisa"
+            }
+          ]
+        }
+      },
+      {
+        "id": "s5",
+        "text": {
+          "es": "Diego vuelve al almacén con el recibo y la garantía."
+        },
+        "translation": {
+          "hu": "Diego visszamegy az áruházba a blokkal és a garanciával.",
+          "en": "Diego returns to the store with the receipt and the warranty.",
+          "es": "Diego vuelve al almacén con el recibo y la garantía.",
+          "de": "Diego kehrt mit dem Kassenbon und der Garantie ins Kaufhaus zurück."
+        },
+        "question": {
+          "prompt": {
+            "hu": "Mit visz magával Diego?",
+            "en": "What does Diego take with him?",
+            "es": "¿Qué lleva Diego con él?",
+            "de": "Was nimmt Diego mit?"
+          },
+          "options": [
+            {
+              "es": "el recibo y la garantía",
+              "correct": true
+            },
+            {
+              "es": "solo el carrito"
+            },
+            {
+              "es": "las joyas de su madre"
+            }
+          ]
+        }
+      },
+      {
+        "id": "s6",
+        "text": {
+          "es": "La tienda cambia el producto sin problema. El recibo lo salvó."
+        },
+        "translation": {
+          "hu": "A bolt gond nélkül kicseréli a terméket. A blokk mentette meg.",
+          "en": "The shop replaces the product without any problem. The receipt saved him.",
+          "es": "La tienda cambia el producto sin problema. El recibo lo salvó.",
+          "de": "Das Geschäft tauscht das Produkt problemlos um. Der Kassenbon hat ihn gerettet."
+        },
+        "question": {
+          "prompt": {
+            "hu": "Mi mentette meg Diegót?",
+            "en": "What saved Diego?",
+            "es": "¿Qué salvó a Diego?",
+            "de": "Was hat Diego gerettet?"
+          },
+          "options": [
+            {
+              "es": "el recibo",
+              "correct": true
+            },
+            {
+              "es": "el uniforme"
+            },
+            {
+              "es": "el carrito"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "chat": {
+    "id": "talk-12-B1-chat",
+    "level": "B1",
+    "title": {
+      "hu": "Reklamáció a boltban",
+      "en": "Making a Claim in the Store",
+      "es": "Una reclamación en la tienda",
+      "de": "Eine Reklamation im Geschäft"
+    },
+    "setup": [
+      {
+        "id": "prueba",
+        "prompt": {
+          "hu": "Mi van nálad a vásárlásról?",
+          "en": "What proof of purchase do you have?",
+          "es": "¿Qué prueba de compra tienes?",
+          "de": "Welchen Kaufnachweis hast du?"
+        },
+        "options": [
+          {
+            "value": "recibo",
+            "label": {
+              "es": "Tengo el recibo y la garantía."
+            }
+          },
+          {
+            "value": "nada",
+            "label": {
+              "es": "No tengo ningún papel."
+            }
+          }
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "n1",
+        "npc": {
+          "es": "Buenas tardes. ¿En qué puedo ayudarle?"
+        },
+        "options": [
+          {
+            "es": "El cierre de esta chaqueta se rompió en una semana.",
+            "next": "n2",
+            "good": true,
+            "checklist": "problema"
+          },
+          {
+            "es": "No me gusta esta chaqueta.",
+            "next": "n2"
+          }
+        ]
+      },
+      {
+        "id": "n2",
+        "npc": {
+          "es": "Entiendo. ¿Tiene usted el recibo de compra?"
+        },
+        "options": [
+          {
+            "es": "Sí, aquí están el recibo y la garantía.",
+            "next": "n3",
+            "good": true,
+            "checklist": "recibo",
+            "requires": {
+              "prueba": "recibo"
+            }
+          },
+          {
+            "es": "No, pero pagué con tarjeta. ¿Sirve el movimiento del banco?",
+            "next": "n3",
+            "good": true,
+            "checklist": "alternativa",
+            "requires": {
+              "prueba": "nada"
+            }
+          },
+          {
+            "es": "Creo que lo perdí.",
+            "next": "n3"
+          }
+        ]
+      },
+      {
+        "id": "n3",
+        "npc": {
+          "es": "Bien. La garantía de esta marca dura seis meses."
+        },
+        "options": [
+          {
+            "es": "¿La garantía cubre el cierre o solo la tela?",
+            "next": "n4",
+            "good": true,
+            "checklist": "cubre"
+          },
+          {
+            "es": "Seis meses está bien.",
+            "next": "n4"
+          }
+        ]
+      },
+      {
+        "id": "n4",
+        "npc": {
+          "es": "Cubre el producto entero. Podemos repararlo o cambiarlo."
+        },
+        "options": [
+          {
+            "es": "Prefiero un producto nuevo, no una reparación.",
+            "next": "n5",
+            "good": true,
+            "checklist": "cambio"
+          },
+          {
+            "es": "Me da igual, decida usted.",
+            "next": "n5"
+          }
+        ]
+      },
+      {
+        "id": "n5",
+        "npc": {
+          "es": "De acuerdo. El cambio tarda unos tres días."
+        },
+        "options": [
+          {
+            "es": "¿Me lo puede poner por escrito, por favor?",
+            "good": true,
+            "checklist": "escrito"
+          },
+          {
+            "es": "¿Y si el producto nuevo también falla?",
+            "good": true,
+            "checklist": "otra-vez"
+          },
+          {
+            "es": "Perfecto, muchas gracias."
+          }
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "id": "problema",
+        "hu": "Egy héten belül eltört a dzseki cipzárja.",
+        "en": "The zip of this jacket broke within a week.",
+        "es": "El cierre de esta chaqueta se rompió en una semana.",
+        "de": "Der Reißverschluss dieser Jacke ist in einer Woche kaputtgegangen.",
+        "why": {
+          "hu": "A hibát konkrétan és időponttal mondd, mert így gyári hiba, nem használati kopás.",
+          "en": "State the fault concretely and with a date, that makes it a factory fault, not wear.",
+          "es": "Di el fallo de forma concreta y con fecha, así es un fallo de fábrica, no desgaste.",
+          "de": "Nenne den Fehler konkret und mit Datum, so ist es ein Fabrikfehler, kein Verschleiß."
+        },
+        "source": {
+          "label": "PCIC B1, Nociones específicas 12: compras y productos"
+        }
+      },
+      {
+        "id": "recibo",
+        "hu": "Igen, itt van a blokk és a garancia.",
+        "en": "Yes, here are the receipt and the warranty.",
+        "es": "Sí, aquí están el recibo y la garantía.",
+        "de": "Ja, hier sind der Kassenbon und die Garantie.",
+        "why": {
+          "hu": "A blokk a legerősebb érved, tedd az asztalra rögtön, ne várd meg, hogy kérjék.",
+          "en": "The receipt is your strongest argument, put it on the counter before they ask.",
+          "es": "El recibo es tu mejor argumento, ponlo en el mostrador antes de que lo pidan.",
+          "de": "Der Kassenbon ist dein stärkstes Argument, lege ihn hin, bevor man danach fragt."
+        },
+        "source": {
+          "label": "PCIC B1, Nociones específicas 12: compras y productos"
+        }
+      },
+      {
+        "id": "alternativa",
+        "hu": "Kártyával fizettem, jó a banki tranzakció?",
+        "en": "I paid by card, does the bank transaction work as proof?",
+        "es": "Pagué con tarjeta. ¿Sirve el movimiento del banco?",
+        "de": "Ich habe mit Karte bezahlt. Reicht die Bankbewegung als Nachweis?",
+        "why": {
+          "hu": "Blokk nélkül sincs veszve minden: a kártyás tranzakció is bizonyítja a vásárlást.",
+          "en": "Even without a receipt it is not lost: the card transaction also proves the purchase.",
+          "es": "Sin recibo no está todo perdido: el movimiento de la tarjeta también prueba la compra.",
+          "de": "Auch ohne Kassenbon ist nicht alles verloren: die Kartenbuchung beweist den Kauf ebenfalls."
+        },
+        "source": {
+          "label": "PCIC B1, Nociones específicas 12: compras y productos"
+        }
+      },
+      {
+        "id": "cubre",
+        "hu": "A garancia a cipzárra is vonatkozik, vagy csak az anyagra?",
+        "en": "Does the warranty cover the zip or only the fabric?",
+        "es": "¿La garantía cubre el cierre o solo la tela?",
+        "de": "Deckt die Garantie den Reißverschluss ab oder nur den Stoff?",
+        "why": {
+          "hu": "A garancia gyakran csak egyes részekre szól, ezért kérdezd meg, mire terjed ki.",
+          "en": "A warranty often covers only some parts, so ask what exactly it covers.",
+          "es": "La garantía muchas veces cubre solo algunas partes, pregunta qué cubre exactamente.",
+          "de": "Eine Garantie deckt oft nur bestimmte Teile ab, frage also, was genau gilt."
+        },
+        "source": {
+          "label": "PCIC B1, Nociones específicas 12: compras y productos"
+        }
+      },
+      {
+        "id": "cambio",
+        "hu": "Inkább új terméket kérek, ne javítást.",
+        "en": "I prefer a new product, not a repair.",
+        "es": "Prefiero un producto nuevo, no una reparación.",
+        "de": "Ich möchte lieber ein neues Produkt, keine Reparatur.",
+        "why": {
+          "hu": "A bolt először javítást ajánl, mert az olcsóbb neki. Cserét kérni jogos.",
+          "en": "The shop offers a repair first because it is cheaper for them. Asking for a replacement is fair.",
+          "es": "La tienda ofrece primero una reparación porque le sale más barata. Pedir el cambio es legítimo.",
+          "de": "Das Geschäft bietet zuerst eine Reparatur an, weil sie billiger ist. Umtausch zu verlangen ist legitim."
+        },
+        "source": {
+          "label": "PCIC B1, Nociones específicas 12: compras y productos"
+        }
+      },
+      {
+        "id": "escrito",
+        "hu": "Le tudná írni nekem papíron?",
+        "en": "Can you put it in writing for me, please?",
+        "es": "¿Me lo puede poner por escrito, por favor?",
+        "de": "Können Sie mir das bitte schriftlich geben?",
+        "why": {
+          "hu": "A szóbeli ígéret két hét múlva senkinek nem jut eszébe. Papíron marad meg.",
+          "en": "A spoken promise is forgotten in two weeks. In writing it survives.",
+          "es": "Una promesa oral se olvida en dos semanas. Por escrito queda.",
+          "de": "Ein mündliches Versprechen ist in zwei Wochen vergessen. Schriftlich bleibt es."
+        },
+        "source": {
+          "label": "PCIC B1, Nociones específicas 12: compras y productos"
+        }
+      },
+      {
+        "id": "otra-vez",
+        "hu": "És ha az új termék is elromlik?",
+        "en": "And what if the new product fails too?",
+        "es": "¿Y si el producto nuevo también falla?",
+        "de": "Und wenn das neue Produkt auch kaputtgeht?",
+        "why": {
+          "hu": "Kérdezd meg, újraindul-e a garancia a csereterméken. Sok boltnál nem.",
+          "en": "Ask whether the warranty restarts on the replacement. In many shops it does not.",
+          "es": "Pregunta si la garantía empieza de nuevo con el cambio. En muchas tiendas no.",
+          "de": "Frage, ob die Garantie beim Umtausch neu beginnt. In vielen Geschäften nicht."
+        },
+        "source": {
+          "label": "PCIC B1, Nociones específicas 12: compras y productos"
+        }
+      }
+    ],
+    "endings": [
+      {
+        "id": "cliente-firme",
+        "if": "checklist>=5",
+        "title": {
+          "hu": "Határozott vevő voltál",
+          "en": "You were a firm customer",
+          "es": "Fuiste un cliente firme",
+          "de": "Du warst ein bestimmter Kunde"
+        }
+      },
+      {
+        "id": "vas-bien",
+        "if": "checklist>=3",
+        "title": {
+          "hu": "Megoldottad, de kérdezhettél volna többet",
+          "en": "You solved it, but you could have asked more",
+          "es": "Lo resolviste, pero podías preguntar más",
+          "de": "Du hast es gelöst, hättest aber mehr fragen können"
+        }
+      },
+      {
+        "id": "otra-vez-fin",
+        "if": "default",
+        "title": {
+          "hu": "Legközelebb vidd magaddal a blokkot",
+          "en": "Next time take the receipt with you",
+          "es": "La próxima vez lleva el recibo contigo",
+          "de": "Nimm nächstes Mal den Kassenbon mit"
+        }
+      }
+    ],
+    "glossary": [
+      {
+        "word": "reclamación",
+        "gloss": {
+          "hu": "reklamáció, panasz",
+          "en": "claim, complaint",
+          "de": "Reklamation, Beschwerde"
+        }
+      },
+      {
+        "word": "prueba",
+        "gloss": {
+          "hu": "bizonyíték",
+          "en": "proof",
+          "de": "Nachweis"
+        }
+      },
+      {
+        "word": "movimiento",
+        "gloss": {
+          "hu": "banki tranzakció, tétel",
+          "en": "bank transaction, entry",
+          "de": "Bankbuchung, Posten"
+        }
+      },
+      {
+        "word": "sirve",
+        "gloss": {
+          "hu": "megfelel, jó valamire",
+          "en": "works, is good enough",
+          "de": "taugt, reicht aus"
+        }
+      },
+      {
+        "word": "cubre",
+        "gloss": {
+          "hu": "fedez, kiterjed rá",
+          "en": "covers",
+          "de": "deckt ab"
+        }
+      },
+      {
+        "word": "tela",
+        "gloss": {
+          "hu": "szövet, anyag",
+          "en": "fabric",
+          "de": "Stoff"
+        }
+      },
+      {
+        "word": "reparación",
+        "gloss": {
+          "hu": "javítás",
+          "en": "repair",
+          "de": "Reparatur"
+        }
+      },
+      {
+        "word": "repararlo",
+        "gloss": {
+          "hu": "megjavítani (azt)",
+          "en": "to repair it",
+          "de": "es reparieren"
+        }
+      },
+      {
+        "word": "escrito",
+        "gloss": {
+          "hu": "írásban",
+          "en": "in writing",
+          "de": "schriftlich"
+        }
+      },
+      {
+        "word": "entero",
+        "gloss": {
+          "hu": "egész, teljes",
+          "en": "whole, entire",
+          "de": "ganz, vollständig"
+        }
+      },
+      {
+        "word": "falla",
+        "gloss": {
+          "hu": "meghibásodik",
+          "en": "fails, breaks down",
+          "de": "versagt, geht kaputt"
+        }
+      },
+      {
+        "word": "salvó",
+        "gloss": {
+          "hu": "megmentette",
+          "en": "saved",
+          "de": "rettete"
+        }
+      },
+      {
+        "word": "pagué",
+        "gloss": {
+          "hu": "fizettem (múlt idő)",
+          "en": "I paid (past tense)",
+          "de": "ich bezahlte (Vergangenheit)"
+        }
+      }
+    ]
+  }
+}

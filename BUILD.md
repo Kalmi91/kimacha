@@ -47,6 +47,7 @@ Szám-becslések `project_word_expansion` memóriából (2026-06-13), nem élő-
 | hu→es tartalom (spanyol, flagship) | **2026-08-16:** A0 100 / A1 931 / A2 792 / B1 898 / B2 519 / C1 404 / C2 92 (C2 BEFAGYASZTVA), topic-fa MINDEN szinten (B1 38 / B2 22 / C1 18); kumulált C1 = **3 644**, XLex-cél 4 000 → **356 hiány** | ~85 |
 | hu→en tartalom (angol-cél) | A0 100 / A1 384 / A2 390 = **874 kártya, 41 topic**, audit P1=0; exam korpusz-tiszta; id-blokkok ~tele (2026-07-12) | ~80 |
 | **Mátrix per-ág modell (A0 közös + A1+ ágankénti)** | en-ág (hu→en) A0/A1/A2 KÉSZ (480 kártya); **hu-ág A0 + A1 KÉSZ** (100 + 148 kártya, 10 + 15 topic, audit-hu gate A0/A1-re, 2026-08-15); de-ág + hu A2+ hátra | 55 |
+| **Átbeszélő fül (téma × szint)** | fül + 3 formátum KÉSZ (2026-09-08), tartalom 2/71 cella (12-es makró A1 + B1); szókvíz minden cellában megy, sztori/párbeszéd `/kimacha-atbeszelo` skillből töltendő | 15 |
 | **es→hu kurzus (magyar cél)** | indítható (FB129 pár-szintű napi keret fix); tartalom A0 100 + A1 148 = 248 kártya, XLex A1-cél ~1200 → bővítés hátra | 25 |
 
 ---
@@ -228,6 +229,23 @@ nem építünk, tehát a spanyol ág szókincs-célja ezzel TELJESÍTVE.
 - **Következő szint-munka NEM új szó**: a 2026-08-16-os megállapítás áll, az A1/A2
   hiány szint-újrasúlyozás (user-döntés), és a B1 egyes-többes iker-kártyák
   takarítása külön item.
+
+### Q4. [token-burn, user 2026-09-08] Átbeszélő pakkok (téma × szint)
+
+Kálmán kérése: „legyen egy topic átbeszélő, ahol kiválasztod, hogy milyen szinten
+akarsz a témáról beszélgetni". A fül kész, a rács üres.
+
+- **Rács:** 21 PCIC makró-téma × A1-C1, ahol a fának van szava = **71 cella**.
+  Ebből megírva **2** (12-es makró = Vásárlás és boltok, A1 + B1).
+- **Egy cella = egy fájl:** `data/games/talk/es/<macro>-<level>.json`, benne a cella
+  sztorija (6 jelenet, jelenetenként kérdés) és párbeszéde (4-5 node + checklist).
+- **A szókvíz nem íródik:** `lib/talk/quiz.ts` a cella szavaiból építi futásidőben,
+  ezért minden cella játszható már ma, a pakk csak hozzáad.
+- **Skill:** `/kimacha-atbeszelo` (állás-számoló script + pakk-recept + kapu).
+- **Kapu:** `node scripts/audit-games.mjs` (a pakkokra ugyanaz a korpusz-fegyelem,
+  mint a Game fül tartalmára) + `npx tsc --noEmit` + `npx jest`.
+
+---
 
 ### Q3. [token-burn, user 2026-07-12] hu A0 track (új) + en A1/A2 mélyítés spanyol-szintre
 

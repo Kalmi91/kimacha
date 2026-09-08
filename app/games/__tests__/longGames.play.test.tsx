@@ -8,6 +8,9 @@ jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({
   useRouter: () => ({ back: jest.fn(), push: jest.fn() }),
   usePathname: () => '/games/long',
+  // A Game fül felől nincs `talk` paraméter, ilyenkor a képernyők a saját
+  // listájukat mutatják (az Átbeszélő az egyetlen hívó, ami átad egyet).
+  useLocalSearchParams: () => ({}),
 }));
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),

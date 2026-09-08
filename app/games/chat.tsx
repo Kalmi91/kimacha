@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View, Pressable, Linking } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
@@ -10,6 +10,7 @@ import { normalizeWordToken } from '@/data/words';
 import { getGameDef, gameName } from '@/lib/games/registry';
 import { getChats, cumulativeCorpusWordIds, type ChatData, type ChatEnding } from '@/lib/games/content';
 import { availableOptions, findNode, pickEnding } from '@/lib/games/chat';
+import { getTalkChat } from '@/lib/talk/packs';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { getGameBest, recordGameResult } from '@/lib/games/scoring';
 import { loadVoices, hasVoiceFor, speak } from '@/lib/speech';
@@ -37,6 +38,10 @@ export default function ChatScreen() {
   const s = t();
   const router = useRouter();
   const gameDef = getGameDef('chat')!;
+  // Átbeszélő fül: a `talk` paraméterrel EGY konkrét pakk-párbeszéde nyílik
+  // meg, témalista nélkül. A Game fül felől a paraméter hiányzik.
+  const { talk } = useLocalSearchParams<{ talk?: string }>();
+  const autoStarted = useRef(false);
 
   const [learnedLang, setLearnedLang] = useState('es');
   const [contentLang, setContentLang] = useState('hu');
@@ -67,7 +72,12 @@ export default function ChatScreen() {
     setLearnedLang(target);
     setContentLang(source === 'hu' || source === 'es' || source === 'de' ? source : 'en');
 
-    setChats(getChats(target));
+    if (talk) {
+      const only = getTalkChat(target, talk);
+      setChats(only ? [only] : []);
+    } else {
+      setChats(getChats(target));
+    }
 
     const progress = await db.getGameProgress('chat');
     const map = new Map<string, { achievedIds: string[]; endingId?: string }>();
@@ -82,11 +92,20 @@ export default function ChatScreen() {
 
     await loadVoices();
     setCanSpeak(hasVoiceFor(speechLang(target)));
-  }, []);
+  }, [talk]);
 
   useEffect(() => {
     load();
   }, [load]);
+
+  // Az Átbeszélőből érkezve az egyetlen párbeszéd rögtön indul, egyszer:
+  // a beszélgetés végén a témalista maradjon elérhető.
+  useEffect(() => {
+    if (!talk || autoStarted.current || chats.length !== 1) return;
+    autoStarted.current = true;
+    startTopic(chats[0]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [talk, chats]);
 
   const startTopic = (c: ChatData) => {
     setChat(c);
