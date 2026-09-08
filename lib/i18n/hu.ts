@@ -440,7 +440,7 @@ export default {
     weeklyGoalDoneText: (h: string, goal: string) => `${h} óra tanulás ezen a héten, a célod ${goal} óra volt. Óriási!`,
     dailyNewLimit: 'Napi új szó',
     dailyNewLimitWords: (n: string) => `${n} szó / nap`,
-    spellingPractice: (n: number) => `Helyesírás-gyakorló (${n})`,
+    spellingPractice: (due: number, total: number) => `Helyesírás-gyakorló · ${due} esedékes, ${total} a listán`,
     difficulty: 'Nehézség',
     strictAccents: 'Az ékezetek számítanak',
     strictAccentsHint: 'A hiányzó ékezet (á, é, ñ) hiba gépeléskor.',

@@ -370,6 +370,10 @@ class MemoryDB implements DB {
     return [...this.spellingListFor(this.activePair).values()].filter(v => v.due <= now).length;
   }
 
+  async getSpellingListCount() {
+    return this.spellingListFor(this.activePair).size;
+  }
+
   async updateSpellingStep(wordId: number, step: number, due: string) {
     this.spellingListFor(this.activePair).set(wordId, { step, due });
   }
