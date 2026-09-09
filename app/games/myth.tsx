@@ -267,10 +267,10 @@ export default function MythScreen() {
             </View>
           ) : null}
           <View style={styles.summaryButtons}>
-            <Pressable style={[styles.btn, styles.btnGhost, { borderColor: colors.tint }]} onPress={() => setScreen('start')}>
+            <Pressable style={[styles.btn, styles.btnGhost, styles.summaryBtn, { borderColor: colors.tint }]} onPress={() => setScreen('start')}>
               <Text style={[styles.btnGhostText, { color: colors.tint }]}>{s.games.backToHub}</Text>
             </Pressable>
-            <Pressable style={[styles.btn, { backgroundColor: colors.tint }]} onPress={startRun}>
+            <Pressable style={[styles.btn, styles.summaryBtn, { backgroundColor: colors.tint }]} onPress={startRun}>
               <Text style={styles.btnText}>{s.games.playAgain}</Text>
             </Pressable>
           </View>
@@ -381,6 +381,8 @@ const styles = StyleSheet.create({
   summaryTitle: { fontSize: 28, fontWeight: '800' },
   summaryScore: { fontSize: 22, fontWeight: '700' },
   summaryButtons: { flexDirection: 'row', gap: 12, marginTop: 12 },
+  // Kálmán 2026-09-09: a két gomb egyenlő széles, ne a felirat hossza döntse el.
+  summaryBtn: { flex: 1 },
   wrongList: { width: '100%', gap: 8, marginTop: 12 },
   wrongHeader: { fontSize: 15, fontWeight: '700' },
   wrongCard: { borderRadius: 12, padding: 12, gap: 4 },

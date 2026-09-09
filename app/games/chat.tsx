@@ -337,10 +337,10 @@ export default function ChatScreen() {
           })}
 
           <View style={styles.summaryButtons}>
-            <Pressable style={[styles.btn, styles.btnGhost, { borderColor: colors.tint }]} onPress={() => setScreen('topics')}>
+            <Pressable style={[styles.btn, styles.btnGhost, styles.summaryBtn, { borderColor: colors.tint }]} onPress={() => setScreen('topics')}>
               <Text style={[styles.btnGhostText, { color: colors.tint }]}>{s.games.backToHub}</Text>
             </Pressable>
-            <Pressable style={[styles.btn, { backgroundColor: colors.tint }]} onPress={() => startTopic(chat)}>
+            <Pressable style={[styles.btn, styles.summaryBtn, { backgroundColor: colors.tint }]} onPress={() => startTopic(chat)}>
               <Text style={styles.btnText}>{s.games.playAgain}</Text>
             </Pressable>
           </View>
@@ -457,6 +457,8 @@ const styles = StyleSheet.create({
   checklistWhy: { fontSize: 13, lineHeight: 18 },
   checklistSource: { fontSize: 11, fontStyle: 'italic' },
   summaryButtons: { flexDirection: 'row', gap: 12, marginTop: 16, justifyContent: 'center' },
+  // Kálmán 2026-09-09: a két gomb egyenlő széles, ne a felirat hossza döntse el.
+  summaryBtn: { flex: 1 },
   btn: { paddingVertical: 14, paddingHorizontal: 20, borderRadius: 24, alignItems: 'center' },
   btnGhost: { backgroundColor: 'transparent', borderWidth: 1 },
   btnGhostText: { fontWeight: '600' },

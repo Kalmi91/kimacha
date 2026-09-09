@@ -10,6 +10,7 @@ import {
   hasLesson,
   lessonCoverage,
   lessonFor,
+  nextWrittenTopic,
   orphanLessons,
   syllabusForLevel,
   topicsForUnit,
@@ -98,5 +99,28 @@ describe('grammar syllabus map', () => {
       const lesson = lessonFor('es', topic.id);
       if (lesson) expect(lesson.level).toBe(topic.level);
     }
+  });
+});
+
+describe('nextWrittenTopic', () => {
+  const written = GRAMMAR_SYLLABUS.filter((t) => hasLesson('es', t.id));
+
+  it('skips the topics that are only planned', () => {
+    expect(written.length).toBeGreaterThan(1);
+    expect(nextWrittenTopic('es', written[0].id)?.id).toBe(written[1].id);
+  });
+
+  it('only ever offers a topic that has a lesson, and only forwards', () => {
+    for (const [i, topic] of GRAMMAR_SYLLABUS.entries()) {
+      const next = nextWrittenTopic('es', topic.id);
+      if (!next) continue;
+      expect(hasLesson('es', next.id)).toBe(true);
+      expect(GRAMMAR_SYLLABUS.findIndex((t) => t.id === next.id)).toBeGreaterThan(i);
+    }
+  });
+
+  it('has nothing after the last written lesson, or for an unknown id', () => {
+    expect(nextWrittenTopic('es', written[written.length - 1].id)).toBeUndefined();
+    expect(nextWrittenTopic('es', 'nincs-ilyen-tema')).toBeUndefined();
   });
 });
