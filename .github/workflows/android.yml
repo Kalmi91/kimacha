@@ -1,8 +1,8 @@
 name: Android APK
 
+# Manual only. Releases are built locally and shipped from a v* tag, so a
+# debug APK on every push to main was work nobody collected.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 concurrency:
