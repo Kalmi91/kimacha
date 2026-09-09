@@ -15,7 +15,6 @@ module.exports = [
     rules: {
       'react-hooks/set-state-in-effect': 'warn',
       'react-hooks/refs': 'warn',
-      'react-hooks/preserve-manual-memoization': 'warn',
     },
   },
   {

@@ -65,7 +65,10 @@ export default function SpellingScreen() {
     setTypedAnswer('');
     setResult(null);
     setLoading(false);
-  }, []);
+    // setTypedAnswer is listed because the React Compiler infers it as a
+    // dependency of this async callback; it is stable, so nothing changes at
+    // runtime, but an empty array here counts as broken memoization.
+  }, [setTypedAnswer]);
 
   useFocusEffect(
     useCallback(() => {

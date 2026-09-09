@@ -53,7 +53,10 @@ export default function GrammarChoiceScreen() {
 
     const bestRow = await getGameBest('grammar-choice');
     setBest(bestRow?.bestScore ?? 0);
-  }, []);
+    // setBest is listed because the React Compiler infers it as a dependency of
+    // this async callback; it is stable, so nothing changes at runtime, but an
+    // empty array here counts as broken memoization.
+  }, [setBest]);
 
   useEffect(() => {
     load();

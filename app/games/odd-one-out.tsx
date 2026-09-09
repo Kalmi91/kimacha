@@ -120,7 +120,10 @@ export default function OddOneOutScreen() {
     setScreen('playing');
     setGameOverEarly(false);
     return { m, diff, count, tl };
-  }, []);
+    // The setters are listed because the React Compiler infers them as
+    // dependencies of this async callback; they are stable, so nothing changes
+    // at runtime, but an empty array here counts as broken memoization.
+  }, [setQuestionCount, setDifficulty, setTimeLimit]);
 
   const startClock = useCallback((seconds: number, onExpire: () => void) => {
     stopClock();
