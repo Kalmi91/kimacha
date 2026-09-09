@@ -147,7 +147,7 @@
       "kind": "listen_dialogue",
       "instruction": "TEIL 4. Sie hören eine Nachricht auf dem Anrufbeantworter. Sie hören sie zweimal. Beantworten Sie die Fragen.",
       "audio": [
-        "Hallo, hier ist Berenice.",
+        "Hallo, hier ist Nuria.",
         "Ich rufe wegen der Party am Freitag an. Sie ist bei mir zu Hause, in der Rébsamenstraße 431.",
         "Sie beginnt um acht Uhr abends. Du kannst einen Freund mitbringen.",
         "Das Essen mache ich, aber ich brauche Getränke: Bring bitte Wasser und Orangensaft mit, kein Bier.",
@@ -156,7 +156,7 @@
       ],
       "questions": [
         { "q": "Wann ist die Party?", "options": ["Am Donnerstag.", "Am Freitag.", "Am Samstag."], "correct": 1 },
-        { "q": "Wo ist die Party?", "options": ["Bei Berenice zu Hause.", "In einem Restaurant.", "Im Park."], "correct": 0 },
+        { "q": "Wo ist die Party?", "options": ["Bei Nuria zu Hause.", "In einem Restaurant.", "Im Park."], "correct": 0 },
         { "q": "Wann beginnt sie?", "options": ["Um 18 Uhr.", "Um 20 Uhr.", "Um 23 Uhr."], "correct": 1 },
         { "q": "Was soll er mitbringen?", "options": ["Essen.", "Wasser und Saft.", "Bier."], "correct": 1 },
         { "q": "Bis wann ist die Tür offen?", "options": ["Bis 20 Uhr.", "Bis 23 Uhr.", "Die ganze Nacht."], "correct": 1 },
@@ -201,7 +201,7 @@
       "instruction": "TEIL 1. Sich vorstellen. Sprechen Sie ein bis zwei Minuten laut. Hören Sie danach das Modell und bewerten Sie sich.",
       "prompt": "Stellen Sie sich vor: Name, Alter, Land, Wohnort, Familie, Arbeit oder Studium, Sprachen.",
       "bullets": ["Name und Alter", "Land und Stadt", "Familie", "Arbeit", "Sprachen"],
-      "model": "Ich heiße Kálmán und ich bin vierunddreißig Jahre alt. Ich komme aus Ungarn, aber jetzt wohne ich in Mexiko-Stadt. Ich wohne mit meiner Freundin zusammen. Ich arbeite mit Computern und lerne jeden Tag Spanisch. Ich spreche Ungarisch, Englisch und ein bisschen Deutsch."
+      "model": "Ich heiße Daniel und ich bin vierunddreißig Jahre alt. Ich komme aus Ungarn, aber jetzt wohne ich in Mexiko-Stadt. Ich wohne mit meiner Freundin zusammen. Ich arbeite mit Computern und lerne jeden Tag Spanisch. Ich spreche Ungarisch, Englisch und ein bisschen Deutsch."
     },
     {
       "id": "de-a1-s2",
