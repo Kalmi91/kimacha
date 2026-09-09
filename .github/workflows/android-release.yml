@@ -1,14 +1,21 @@
 name: Android Release
 
 # Signed Android build + release. The keystore + passwords come from repo Secrets
-# (the user generates the keystore once — see docs/DEVOPS.md "Runtime / user
-# inputs"). Runs on demand, or on a v* tag — on a tag it also publishes a GitHub
-# Release with the signed APK + AAB attached and auto-generated notes.
+# (the user generates the keystore once, see docs/DEVOPS.md "Runtime / user
+# inputs"). Runs on demand; on a v* tag it would also publish a GitHub Release
+# with the signed APK + AAB attached and auto-generated notes.
+# KIKAPCSOLVA a tag-indítás (Kálmán, 2026-09-09). Két dolog hiányzik ahhoz, hogy
+# ez a workflow egyáltalán le tudjon futni, és amíg bármelyik hiányzik, a v* tag
+# push csak egy piros pipát tesz a zöld CI mellé:
+#   1. az `/android` mappa nincs a repóban (`.gitignore`, „generated native
+#      folders"), ezért a `setup-java` gradle-cache lépése nem talál .gradle
+#      fájlt, és ott elhal. A kiadás natív oldala kézzel karbantartott, nem
+#      generált: a `prebuild` tiltott, mert felülírná az aláíró keystore-t.
+#   2. a négy aláíró secret (ANDROID_KEYSTORE_*) nincs feltöltve a repóba.
+# Addig a kiadási út a helyi build + Drive-feltöltés (`/build_kimacha` skill).
+# Visszakapcsolás: állítsd vissza a `push: tags: - 'v*'` blokkot.
 on:
   workflow_dispatch:
-  push:
-    tags:
-      - 'v*'
 
 concurrency:
   group: android-release-${{ github.ref }}
