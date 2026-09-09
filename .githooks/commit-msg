@@ -1,0 +1,26 @@
+#!/bin/sh
+# Conventional Commits, the format the whole history already uses.
+# Enable once per clone:  git config core.hooksPath .githooks
+
+subject=$(head -1 "$1")
+
+# Let git's own generated messages through (merge, revert, fixup, squash).
+case "$subject" in
+  "Merge "*|"Revert "*|"fixup!"*|"squash!"*) exit 0 ;;
+esac
+
+if printf '%s' "$subject" | grep -qE '^(feat|fix|chore|docs|test|refactor|build|ci|perf|style|revert)(\([a-z0-9 ._+-]+\))?!?: .+'; then
+  exit 0
+fi
+
+cat >&2 <<EOF
+Commit message must be a Conventional Commit:
+
+  <type>(<scope>): <what it does for the user>
+
+  types: feat fix chore docs test refactor build ci perf style revert
+  e.g.   feat(learn): one Check button, docked above the keyboard
+
+Got: $subject
+EOF
+exit 1

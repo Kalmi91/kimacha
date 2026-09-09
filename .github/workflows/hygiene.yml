@@ -1,0 +1,79 @@
+name: Repo hygiene
+
+# Keeps the repository in the shape it was put into on 2026-09-08: one trunk,
+# no agent working documents, no tracked-but-ignored files, Conventional
+# Commits, and tagged releases. Discipline is not a plan; this job is.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: hygiene-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  hygiene:
+    name: Repository hygiene
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Agent working documents stay out of this repository
+        run: |
+          found=$(git ls-files | grep -E '^(AGENTS\.md|BUILD\.md|GAMES\.md|BUGS\.md|TASK\.md|ITER[^/]*|skills/|word_batches/|todo_[^/]*\.txt)' || true)
+          if [ -n "$found" ]; then
+            echo "::error::These belong in the private ai-workspace repo, not here:"
+            echo "$found"
+            exit 1
+          fi
+          echo "Clean."
+
+      - name: No file is both tracked and ignored
+        run: |
+          found=$(git ls-files -i -c --exclude-standard)
+          if [ -n "$found" ]; then
+            echo "::error::Tracked files matched by .gitignore (either untrack them or drop the ignore rule):"
+            echo "$found"
+            exit 1
+          fi
+          echo "Clean."
+
+      - name: Commit messages follow Conventional Commits
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            range="origin/${{ github.base_ref }}..HEAD"
+          elif [ "${{ github.event.before }}" = "0000000000000000000000000000000000000000" ]; then
+            range="HEAD~1..HEAD"
+          else
+            range="${{ github.event.before }}..${{ github.sha }}"
+          fi
+          git rev-list --no-merges "$range" > /tmp/shas || { echo "Range unavailable, skipping."; exit 0; }
+          bad=0
+          while read -r sha; do
+            [ -z "$sha" ] && continue
+            subject=$(git log -1 --format=%s "$sha")
+            if ! printf '%s' "$subject" | grep -qE '^(feat|fix|chore|docs|test|refactor|build|ci|perf|style|revert)(\([a-z0-9 ._+-]+\))?!?: .+'; then
+              echo "::error::Not a Conventional Commit: $sha $subject"
+              bad=1
+            fi
+          done < /tmp/shas
+          [ "$bad" = "0" ] && echo "Clean."
+          exit $bad
+
+      - name: Releases are tagged
+        run: |
+          missing=0
+          for sha in $(git log --format=%H --grep='^chore(release)' -20); do
+            version=$(git log -1 --format=%s "$sha" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -1)
+            [ -z "$version" ] && continue
+            if ! git rev-parse -q --verify "refs/tags/v$version" >/dev/null; then
+              echo "::warning::Release $version ($sha) has no v$version tag. Push it: git tag -a v$version $sha -m \"Release $version\" && git push origin v$version"
+              missing=1
+            fi
+          done
+          [ "$missing" = "0" ] && echo "Every recent release is tagged."
+          exit 0
