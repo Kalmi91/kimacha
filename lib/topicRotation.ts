@@ -65,11 +65,19 @@ export function borrowNewWords(
 ): BorrowedWord[] {
   if (needed <= 0) return [];
   const picked: BorrowedWord[] = [];
-  const byDistance = [...candidates].sort(
+  // FB195, Kálmán 2026-09-09 (tree-tab): „csak zavar, hogy az elozp A1 es szintből
+  // mindig maradt 1-2 szó egy témakörből". A kölcsönzés eddig a LEGKÖZELEBBI
+  // témától kért, ami a szomszédokat morzsolta, a távolabb rekedt egy-két szavas
+  // maradékokhoz pedig sosem ért el. Mostantól a majdnem kész témák mennek elöl:
+  // kevés maradék előre, és csak azonos maradék esetén dönt a távolság. Így a
+  // szintből tényleg elfogynak a szavak, nem marad témánként egy-kettő.
+  const byLeftover = [...candidates].sort(
     (a, b) =>
-      Math.abs(a.order - activeOrder) - Math.abs(b.order - activeOrder) || a.order - b.order,
+      a.newWordIds.length - b.newWordIds.length ||
+      Math.abs(a.order - activeOrder) - Math.abs(b.order - activeOrder) ||
+      a.order - b.order,
   );
-  for (const topic of byDistance) {
+  for (const topic of byLeftover) {
     for (const wordId of topic.newWordIds) {
       if (picked.length >= needed) return picked;
       picked.push({ wordId, topicId: topic.id });

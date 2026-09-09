@@ -10,6 +10,7 @@ import { t } from '@/lib/i18n';
 import { LEVELS, type Level, getWordsForLevel } from '@/data/words';
 import { setPendingAction } from '@/lib/pendingAction';
 import { getDb } from '@/lib/database';
+import { DEFAULT_REQUEUE_LEVEL, REQUEUE_LEVELS } from '@/lib/requeueGap';
 import { validateBackupPayload } from '@/lib/backup';
 import {
   DEFAULT_WEEKLY_GOAL_MINUTES,
@@ -60,6 +61,8 @@ export default function SettingsScreen() {
   // FB188: névelő-gombsor a gépelős spanyol főnév-kártyán. Alapból be, mert
   // Kálmán kérte; a kapcsoló a visszaút, ha kipróbálva mégsem válik be.
   const [articlePicker, setArticlePicker] = useState(true);
+  // FB198: az elrontott szó visszatérési távolsága, három fokozatban.
+  const [requeueLevel, setRequeueLevel] = useState<string>(DEFAULT_REQUEUE_LEVEL);
   // FB147, Kálmán 2026-08-18: "legyen egy szöveg ami gratulál, hogy elértem a
   // heti limitet ami a cél, valami hatalmas nagy. és a célnál írja is ki hogy
   // kész zölddel". The goal stepper never said whether the goal was met, so the
@@ -89,6 +92,7 @@ export default function SettingsScreen() {
       db.getLevel().then(l => setLevel(l.level as Level));
       db.getSpellingDueCount().then(setSpellingDue);
       db.getArticlePicker().then(setArticlePicker);
+      db.getRequeueLevel().then(setRequeueLevel);
       db.getSpellingListCount().then(setSpellingTotal);
     }, [])
   );
@@ -112,6 +116,14 @@ export default function SettingsScreen() {
   const handleStrictAccentsToggle = async (v: boolean) => {
     setStrictAccents(v);
     await getDb().setStrictAccents(v);
+    setPendingAction({ type: 'selectTopic' });
+    router.push('/');
+  };
+
+  // FB198: a tanuló-képernyő a sor építésekor olvassa, ezért ugyanaz az újratöltés.
+  const handleRequeueLevel = async (v: string) => {
+    setRequeueLevel(v);
+    await getDb().setRequeueLevel(v);
     setPendingAction({ type: 'selectTopic' });
     router.push('/');
   };
@@ -386,6 +398,37 @@ export default function SettingsScreen() {
           <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.strictAccentsHint}</Text>
         </View>
         <Switch value={strictAccents} onValueChange={handleStrictAccentsToggle} trackColor={{ true: colors.tint }} />
+      </View>
+
+      {/* FB198: nehézség = milyen messze kerüljön vissza egy elrontott szó. */}
+      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card, flexDirection: 'column', alignItems: 'stretch', gap: 10 }]}>
+        <View style={styles.difficultyLabelBox}>
+          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.requeueDifficulty}</Text>
+          <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.requeueDifficultyHint}</Text>
+        </View>
+        <View style={{ flexDirection: 'row', gap: 8 }}>
+          {REQUEUE_LEVELS.map((lvl) => {
+            const active = requeueLevel === lvl;
+            const label = lvl === 'easy' ? s.settings.requeueEasy : lvl === 'hard' ? s.settings.requeueHard : s.settings.requeueNormal;
+            return (
+              <Pressable
+                key={lvl}
+                onPress={() => handleRequeueLevel(lvl)}
+                style={{
+                  flex: 1,
+                  paddingVertical: 10,
+                  borderRadius: 10,
+                  alignItems: 'center',
+                  backgroundColor: active ? colors.tint : colors.background,
+                }}
+              >
+                <Text style={{ fontSize: 12, fontWeight: '600', color: active ? colors.background : colors.text }}>
+                  {label}
+                </Text>
+              </Pressable>
+            );
+          })}
+        </View>
       </View>
 
       {/* FB188: névelő-gombsor a gépelős spanyol főnév-kártyákon. */}
