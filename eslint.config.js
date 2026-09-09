@@ -14,7 +14,6 @@ module.exports = [
     // Tracking: https://github.com/Kalmi91/kimacha/issues/1
     rules: {
       'react-hooks/set-state-in-effect': 'warn',
-      'react-hooks/refs': 'warn',
     },
   },
   {

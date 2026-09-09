@@ -212,7 +212,14 @@ export default function WordSearchScreen() {
     return { row, col };
   };
 
-  const panResponder = useRef(
+  // Lazy useState rather than useRef().current: the responder must survive
+  // re-renders, but reading a ref during render is not allowed.
+  // The handlers read the sync refs so a drag sees the current grid instead of
+  // the snapshot from the render that built the responder, and the responder
+  // has to exist on the first render for the spread below, so this one
+  // render-time ref access is deliberate.
+  // eslint-disable-next-line react-hooks/refs
+  const [panResponder] = useState(() =>
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
@@ -252,7 +259,7 @@ export default function WordSearchScreen() {
         setSelStart(null);
       },
     })
-  ).current;
+  );
 
   const allFound = entries.length > 0 && entries.every((e) => found.has(normalizeForGrid(e.learned)));
 

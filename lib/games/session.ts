@@ -49,7 +49,11 @@ export function useGameSession(opts: GameSessionOptions = {}): GameSessionApi {
   const tickMs = opts.tickMs ?? 100;
 
   const onLivesDepletedRef = useRef(opts.onLivesDepleted);
-  onLivesDepletedRef.current = opts.onLivesDepleted;
+  // Kept current from an effect rather than assigned during render: writing to
+  // a ref while rendering is not allowed.
+  useEffect(() => {
+    onLivesDepletedRef.current = opts.onLivesDepleted;
+  });
 
   const [score, setScore] = useState(0);
   const [lives, setLives] = useState(startLives);
