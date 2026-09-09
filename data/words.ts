@@ -70,6 +70,21 @@ export function getWordsForLevel(level: Level, lang: string = 'es'): WordEntry[]
   return words.filter(w => w.level === level);
 }
 
+// FB207, Kálmán 2026-09-09 (word:fish): „most hogy van nekem még A1 es szavakból is
+// új, ez legyen egy ilyen folyamatos lánc a szavakkal, mondog keljen ismételni a
+// régebbi szavakat is". FB206 ugyanez kérdés-alakban: „a másik régi szint A1 es
+// szavakat felhozza? A2 ben vagy egy friss külön lapon van?"
+//
+// Eddig a válasz „nem" volt: a sor a MOSTANI szint szavaira épült, tehát az A2-re
+// lépéssel az A1 ismétlései eltűntek. A szint ettől kezdve csak azt szabja meg, hol
+// jönnek az ÚJ szavak; az ismétlés ezt a kumulált készletet nézi.
+export function getWordsUpToLevel(level: Level, lang: string = 'es'): WordEntry[] {
+  const index = LEVELS.indexOf(level);
+  // Ismeretlen szint: maradjon a régi viselkedés, ne ürüljön ki a sor.
+  if (index < 0) return getWordsForLevel(level, lang);
+  return LEVELS.slice(0, index + 1).flatMap(l => getWordsForLevel(l, lang));
+}
+
 // Card rows in the DB only carry a word id, so the id is looked up in the branch
 // being learned first, then in the shared set.
 //
