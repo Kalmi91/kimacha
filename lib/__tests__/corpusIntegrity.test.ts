@@ -6,7 +6,7 @@
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 
-import { words } from '@/data/words';
+import { LEVELS, getWordsForLevel, words, type WordEntry } from '@/data/words';
 import { WORD_MERGES } from '../wordMerges';
 import { pickSurvivor } from '../cardMerge';
 
@@ -136,5 +136,33 @@ describe('mock exam characters', () => {
       }
     }
     expect(offenders).toEqual([]);
+  });
+});
+
+// Issue #3, 4. szakasz: „`data/words.ts:14` declares es, hu, en, de and the
+// sentence_* fields as required, but every word file is cast with
+// `as WordEntry[]`. A Swedish entry missing es/hu type-checks and then breaks at
+// runtime." A cast nem szüntethető meg, ezért a típus ígéretét itt tartjuk meg.
+// A mai három korpusz (közös spanyol, en-ág, hu-ág) mind teljesíti; egy új
+// nyelvi sáv ugyanezt vállalja, vagy ez a teszt megmondja, hogy nem.
+describe('word entry completeness', () => {
+  const SURFACE_LANGS = ['es', 'hu', 'en', 'de'] as const;
+
+  const corpora: [string, WordEntry[]][] = [
+    ['shared', words],
+    ['en branch', LEVELS.flatMap((l) => getWordsForLevel(l, 'en'))],
+    ['hu branch', LEVELS.flatMap((l) => getWordsForLevel(l, 'hu'))],
+  ];
+
+  it.each(corpora)('every %s entry carries all four languages and sentences', (_label, entries) => {
+    expect(entries.length).toBeGreaterThan(0);
+    const offenders: string[] = [];
+    for (const w of entries) {
+      for (const lang of SURFACE_LANGS) {
+        if (!String(w[lang] ?? '').trim()) offenders.push(`${w.id}: missing ${lang}`);
+        if (!String(w[`sentence_${lang}`] ?? '').trim()) offenders.push(`${w.id}: missing sentence_${lang}`);
+      }
+    }
+    expect(offenders.slice(0, 20)).toEqual([]);
   });
 });
