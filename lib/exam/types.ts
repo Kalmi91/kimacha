@@ -111,6 +111,15 @@ export interface ExamSpeakingTask {
   prompt: string;
   bullets?: string[];
   model: string;
+  /**
+   * Content points the spoken answer has to hit, marked on the transcript the
+   * recognizer produces (lib/speechRecognition.ts). Same shape as the writing
+   * task's points, because a speaking paper is marked the same way: did the
+   * candidate cover what the task asked for.
+   */
+  points?: { id: string; label: string; keywords: string[] }[];
+  /** Words the answer has to reach to earn the "long enough" mark. */
+  minWords?: number;
 }
 
 export type ExamTask =
@@ -166,7 +175,10 @@ export function taskItemCount(task: ExamTask): number {
     case 'short_message':
       return task.points.length + 1; // content points + reaching the word count
     case 'speaking_prompt':
-      return 1; // self-assessed, see lib/exam/score.ts
+      // With content points the paper is marked from the transcript: one mark
+      // per point plus one for reaching the word count, exactly like the
+      // written message. A task with no points is the old self-assessed one.
+      return task.points?.length ? task.points.length + 1 : 1;
     default:
       return 0;
   }

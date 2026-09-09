@@ -39,7 +39,14 @@
       ],
       "expo-localization",
       "expo-sqlite",
-      "expo-sharing"
+      "expo-sharing",
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "A Kimacha a mikrofont a nyelvvizsga szóbeli részéhez használja: leírja, amit mondasz, és az alapján pontoz.",
+          "speechRecognitionPermission": "A Kimacha a beszédfelismerést a nyelvvizsga szóbeli részéhez használja."
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
