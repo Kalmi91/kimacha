@@ -17,7 +17,10 @@ export interface DB {
   getLevel(): Promise<{ level: string; correct_streak: number; mistakes_in_window: number; fail_streak: number }>;
   updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number): Promise<void>;
   getDueCardsForLevel(level: string, limit: number): Promise<any[]>;
-  getDueCardsForWordIds(wordIds: number[], limit: number): Promise<any[]>;
+  // FB207: `wordIds` = honnan jöhet ÚJ szó, `reviewWordIds` = mit szabad ismételni.
+  getDueCardsForWordIds(wordIds: number[], limit: number, reviewWordIds?: number[]): Promise<any[]>;
+  countDueReviewWords(wordIds: number[]): Promise<number>;
+  countDueReviewWordsForLevel(level: string): Promise<number>;
   getPracticeCardsForLevel(level: string, limit: number): Promise<any[]>;
   getWordReps(wordIds: number[]): Promise<Map<number, number>>;
   getWordStates(wordIds: number[]): Promise<Map<number, number>>;
@@ -176,10 +179,13 @@ class MemoryDB implements DB {
   }
 
   async getDueCardsForLevel(level: string, limit: number) {
-    const { getWordsForLevel } = require('@/data/words');
-    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
+    const { getWordsForLevel, getWordsUpToLevel } = require('@/data/words');
+    const lang = this.activePair.split('-')[1];
+    const levelWords = getWordsForLevel(level, lang);
     const wordIds = levelWords.map((w: any) => w.id);
-    return this.getDueCardsForWordIds(wordIds, limit);
+    // FB207: új szó csak erről a szintről, ismételni viszont az alatta lévőkből is.
+    const reviewIds = getWordsUpToLevel(level, lang).map((w: any) => w.id);
+    return this.getDueCardsForWordIds(wordIds, limit, reviewIds);
   }
 
   // FB190: szabad gyakorlás a szint megkezdett szavaiból, esedékesség nélkül
@@ -197,11 +203,17 @@ class MemoryDB implements DB {
     return rows.slice(0, limit);
   }
 
-  async getDueCardsForWordIds(wordIds: number[], limit: number) {
+  async getDueCardsForWordIds(wordIds: number[], limit: number, reviewWordIds?: number[]) {
     const idSet = new Set(wordIds);
+    // FB207: az ismétlés köre tágabb lehet, mint az új szavaké (a régebbi szintek
+    // megkezdett szavai). Ha a hívó nem ad külön kört, marad a régi viselkedés.
+    const reviewIdSet =
+      reviewWordIds && reviewWordIds.length > 0 ? new Set(reviewWordIds) : idSet;
     const now = new Date().toISOString();
     const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
-    const all = [...this.cards.values()].filter(c => idSet.has(c.word_id) && c.pair === this.activePair);
+    const mine = [...this.cards.values()].filter(c => c.pair === this.activePair);
+    const all = mine.filter(c => idSet.has(c.word_id));
+    const reviewable = mine.filter(c => reviewIdSet.has(c.word_id));
 
     const newLimit = Math.max(1, Math.round(limit * 0.3));
     const reviewLimit = limit - newLimit;
@@ -211,24 +223,24 @@ class MemoryDB implements DB {
       .sort((a, b) => a.due.localeCompare(b.due))
       .slice(0, newLimit);
 
-    const reviewWords = all
+    const reviewWords = reviewable
       .filter(c => c.type === 'word' && c.reps > 0 && !c.buried && c.due <= lookahead)
       .sort((a, b) => a.due.localeCompare(b.due))
       .slice(0, reviewLimit);
 
     const knownWordIds = new Set(
-      all.filter(c => c.type === 'word' && (c.reps >= 2 || c.buried)).map(c => c.word_id)
+      reviewable.filter(c => c.type === 'word' && (c.reps >= 2 || c.buried)).map(c => c.word_id)
     );
 
     // FB89: same 4:1 cap and weakest-word-first ordering as the native DB.
     const sentenceSlots = sentenceSlotCount(newCards.length + reviewWords.length);
     const weakness = new Map<number, WordWeakness>(
-      all
+      reviewable
         .filter(c => c.type === 'word')
         .map(c => [c.word_id, { lapses: c.lapses, difficulty: c.difficulty }])
     );
     const sentenceCards = rankSentencesByWordWeakness(
-      all
+      reviewable
         .filter(c => c.type === 'sentence' && !c.buried && knownWordIds.has(c.word_id) && c.due <= lookahead)
         .sort((a, b) => a.due.localeCompare(b.due)),
       weakness
@@ -251,8 +263,9 @@ class MemoryDB implements DB {
   }
 
   async countDueReviewWordsForLevel(level: string) {
-    const { getWordsForLevel } = require('@/data/words');
-    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
+    // FB207: ugyanaz a kumulált kör, amiből az ismétlések jönnek.
+    const { getWordsUpToLevel } = require('@/data/words');
+    const levelWords = getWordsUpToLevel(level, this.activePair.split('-')[1]);
     return this.countDueReviewWords(levelWords.map((w: any) => w.id));
   }
 
