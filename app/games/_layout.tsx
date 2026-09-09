@@ -1,7 +1,7 @@
 import { Stack } from 'expo-router';
 import { View } from 'react-native';
 
-import GameFeedback from '@/components/GameFeedback';
+import RouteFeedback from '@/components/RouteFeedback';
 
 // GAMES.md 3.: "app/games/<id>.tsx, egy képernyő, a tabs-on kívül (mint
 // app/spelling.tsx)". Every game screen draws its own GameShell header, so
@@ -10,11 +10,11 @@ import GameFeedback from '@/components/GameFeedback';
 // per-screen options.
 export default function GamesLayout() {
   // FB168: the 💬 feedback button lives here, so every game screen has it and
-  // the row it sends names the game (components/GameFeedback.tsx).
+  // the row it sends names the game (components/RouteFeedback.tsx).
   return (
     <View style={{ flex: 1 }}>
       <Stack screenOptions={{ headerShown: false }} />
-      <GameFeedback />
+      <RouteFeedback />
     </View>
   );
 }
