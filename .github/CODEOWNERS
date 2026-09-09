@@ -2,7 +2,8 @@
 # not claimed by a language track below.
 *                       @Kalmi91
 
-# The shared corpus and the Spanish course belong to the Spanish track.
+# The Spanish track's own word set (still at the legacy top-level path) and the
+# Spanish course content.
 /data/words/            @Kalmi91
 /data/games/            @Kalmi91
 /lib/i18n/es.ts         @Kalmi91
