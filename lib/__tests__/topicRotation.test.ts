@@ -63,7 +63,7 @@ describe('borrowNewWords (FB139)', () => {
     expect(borrowNewWords(candidates, 5, -2)).toEqual([]);
   });
 
-  it('fills the shortfall from the nearest topics first, ties going to the earlier topic', () => {
+  it('fills the shortfall from the smallest leftovers first, distance breaking ties', () => {
     expect(borrowNewWords(candidates, 5, 3)).toEqual([
       { wordId: 601, topicId: 'ropa' },
       { wordId: 301, topicId: 'colores' },
@@ -78,6 +78,31 @@ describe('borrowNewWords (FB139)', () => {
   it('walks on to the farther topics when the near ones run out', () => {
     expect(borrowNewWords(candidates, 5, 10).map(b => b.wordId)).toEqual([
       601, 301, 302, 701, 702, 703,
+    ]);
+  });
+
+  // FB195, Kálmán 2026-09-09: „csak zavar, hogy az elozp A1 es szintből mindig
+  // maradt 1-2 szó egy témakörből". A majdnem kész témák ürülnek elsőként, akkor is,
+  // ha messzebb vannak, különben a maradékuk örökre ott ragad.
+  it('drains a far topic with one word left before a near topic with many', () => {
+    const spread = [
+      { id: 'cerca', order: 5, newWordIds: [501, 502, 503, 504] },
+      { id: 'lejos', order: 20, newWordIds: [2001] },
+    ];
+    expect(borrowNewWords(spread, 4, 2)).toEqual([
+      { wordId: 2001, topicId: 'lejos' },
+      { wordId: 501, topicId: 'cerca' },
+    ]);
+  });
+
+  it('clears every straggler topic before touching a full one', () => {
+    const stragglers = [
+      { id: 'a', order: 1, newWordIds: [11, 12] },
+      { id: 'b', order: 2, newWordIds: [21] },
+      { id: 'c', order: 3, newWordIds: [31, 32, 33, 34, 35] },
+    ];
+    expect(borrowNewWords(stragglers, 3, 4).map((b2) => b2.topicId)).toEqual([
+      'b', 'a', 'a', 'c',
     ]);
   });
 
