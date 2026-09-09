@@ -130,17 +130,20 @@ const GENERIC_NAMES: Record<string, Record<ExamSkill, string>> = {
  * every level above the ones with a verified published structure falls back to
  * the generic CEFR shape so no learner is shown an invented "official" name.
  */
+// Issue #3: a nyelv + szint párokat tábla tartja, nem egymásba ágyazott `if`-ek.
+// Egy új nyelv hivatalos vizsgaformája így egy új bejegyzés, és amíg nincs
+// ellenőrzött publikált struktúrája, egyszerűen nincs benne a táblában, tehát
+// magától az általános CEFR-alakra esik vissza.
+const PUBLISHED_BLUEPRINTS: Record<string, Record<string, ExamBlueprint>> = {
+  es: { A1: DELE_A1, A2: DELE_A2 },
+  de: { A1: GOETHE_A1, A2: GOETHE_A2 },
+  en: { A2: KEY_A2 },
+};
+
 export function getBlueprint(lang: string, level: string): ExamBlueprint {
   const lvl = level === 'A0' ? 'A1' : level;
-  if (lang === 'es') {
-    if (lvl === 'A1') return DELE_A1;
-    if (lvl === 'A2') return DELE_A2;
-  }
-  if (lang === 'de') {
-    if (lvl === 'A1') return GOETHE_A1;
-    if (lvl === 'A2') return GOETHE_A2;
-  }
-  if (lang === 'en' && lvl === 'A2') return KEY_A2;
+  const published = PUBLISHED_BLUEPRINTS[lang]?.[lvl];
+  if (published) return published;
 
   // No verified published structure for this language/level pair: the generic
   // CEFR shape, named after the level only, so nothing claims to be an official
