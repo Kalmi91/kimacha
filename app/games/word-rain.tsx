@@ -21,6 +21,7 @@ import GlossText from '@/components/games/GlossText';
 import CountdownStart from '@/components/games/CountdownStart';
 import GameSettingsSheet, { type SettingField } from '@/components/games/GameSettingsSheet';
 import type { GlossInfo } from '@/lib/games/gloss';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.1 (F2, word-rain), A-variáns (K4 DÖNTÉS). One prompt at the
 // bottom, several words fall from the top, tap the right one before it (or
@@ -173,12 +174,12 @@ export default function WordRainScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useLoadOnMount(load);
+
   useEffect(() => {
-    load();
     return () => {
       if (introTimerRef.current) clearTimeout(introTimerRef.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const saveSettings = (next: { direction: WordRainDirection; speed: Speed; fallingCount: number; distractorMode: DistractMode }) => {
@@ -320,6 +321,15 @@ export default function WordRainScreen() {
     nextRound();
   };
 
+  // Passed to the tile as a plain reference rather than an inline arrow: a
+  // lambda built inside the tiles.map() render loop looks like render-time work
+  // to the React Compiler, which then flags the Date.now() reaction timing in
+  // handleCatch as an impure render call.
+  const handleTap = (id: string) => {
+    const tile = tilesRef.current.find((tl) => tl.id === id);
+    if (tile) handleCatch(tile.isTarget, tile);
+  };
+
   const settingsFields: SettingField[] = [
     {
       key: 'direction',
@@ -396,10 +406,7 @@ export default function WordRainScreen() {
                   tile={tile}
                   boardHeight={boardHeight}
                   onLand={handleLand}
-                  onTap={(id) => {
-                    const t2 = tiles.find((tl) => tl.id === id);
-                    if (t2) handleCatch(t2.isTarget, t2);
-                  }}
+                  onTap={handleTap}
                   colors={colors}
                 />
               ))}

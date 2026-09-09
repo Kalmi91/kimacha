@@ -10,6 +10,7 @@ import { getGameDef, gameName, type GameId } from '@/lib/games/registry';
 import { getGameBest, recordGameResult } from '@/lib/games/scoring';
 import { loadVoices, hasVoiceFor, speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 import {
   buildDictationItem,
   canonicalAnswer,
@@ -70,9 +71,7 @@ export default function DictationGame({ gameId, mode }: { gameId: GameId; mode: 
     setCanSpeak(hasVoiceFor(speechLang(target)));
   }, [gameId]);
 
-  useEffect(() => {
-    load();
-  }, [load]);
+  useLoadOnMount(load);
 
   const item: DictationItem = buildDictationItem(mode, runSeed + index, range);
 

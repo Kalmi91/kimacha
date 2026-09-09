@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View, Pressable, Linking } from 'react-native';
 import { useRouter } from 'expo-router';
 
@@ -15,6 +15,7 @@ import { hashString } from '@/lib/shuffle';
 import { getGameBest, recordGameResult } from '@/lib/games/scoring';
 import GlossText from '@/components/games/GlossText';
 import GameSettingsSheet, { type SettingField } from '@/components/games/GameSettingsSheet';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.13 (F4, myth): "Igaz vagy kamu?" K26 DÖNTÉS: mind a négy sáv
 // bekapcsolható, sávonként 15 item. K25 DÖNTÉS: a magyarázat forrásnyelven
@@ -94,9 +95,7 @@ export default function MythScreen() {
     }
   }, []);
 
-  useEffect(() => {
-    load();
-  }, [load]);
+  useLoadOnMount(load);
 
   const saveSettings = (nextTracks: Record<MythTrack, boolean>, nextLength: string) => {
     getDb()
