@@ -3,6 +3,9 @@
 // checked here rather than trusted: an id collision makes one card render another
 // card's word, a same-meaning duplicate makes you relearn a known word from zero.
 
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+
 import { words } from '@/data/words';
 import { WORD_MERGES } from '../wordMerges';
 import { pickSurvivor } from '../cardMerge';
@@ -109,6 +112,29 @@ describe('article agreement between the two sides of a card', () => {
       // `un/una` maga a névelő-kártya, ott a prompt "a / an" a helyes tartalom.
       .filter((w) => !/^un\/una$/i.test(w.es ?? ''))
       .map((w) => `${w.id} ${w.es} = ${w.en}`);
+    expect(offenders).toEqual([]);
+  });
+});
+
+// FB193, Kálmán 2026-09-08 (mockexam:DELE A1:list): „miért az én nevemet használja
+// az app?" A próbavizsga hallgatás- és olvasás-feladataiban ő és a menyasszonya
+// szerepelt névvel, ami egy megértés-feladatban félrevezető: az ember azt hiszi,
+// róla szól. Egy valódi DELE-papír kitalált alakokat használ, ez az őr ezt tartja.
+describe('mock exam characters', () => {
+  const OWN_NAMES = ['Kálmán', 'Kalman', 'Berenice'];
+
+  it('uses invented characters, never the learner or their family', () => {
+    const dir = join(__dirname, '../../data/exams/mock');
+    const offenders: string[] = [];
+    for (const lang of readdirSync(dir)) {
+      for (const file of readdirSync(join(dir, lang))) {
+        if (!file.endsWith('.json')) continue;
+        const text = readFileSync(join(dir, lang, file), 'utf8');
+        for (const name of OWN_NAMES) {
+          if (text.includes(name)) offenders.push(`${lang}/${file}: ${name}`);
+        }
+      }
+    }
     expect(offenders).toEqual([]);
   });
 });

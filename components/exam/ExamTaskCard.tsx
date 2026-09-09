@@ -47,12 +47,31 @@ export default function ExamTaskCard({ task, answer, onAnswer, learnedLang, canS
 
   const isListening = task.kind === 'listen_mc' || task.kind === 'listen_dialogue' || task.kind === 'listen_match';
   const audioLines = useMemo(() => ('audio' in task && task.audio ? task.audio : []), [task]);
+  // FB192: a párbeszédben két ember beszél, de egy hangon szólalt meg mind a
+  // kettő, ezért nem lehetett hallani, mikor vált a beszélő. A páratlan sorok
+  // mélyebb hangmagasságot kapnak, és a hang nélküli tartalék-szövegben
+  // beszélő-címke áll a sorok előtt.
+  const isDialogue = task.kind === 'listen_dialogue';
 
   const playAudio = () => {
-    if (plays >= MAX_PLAYS || audioLines.length === 0) return;
+    // FB191: „itt a play az 2 szer lejátszotta egymás után." A gombnak nem volt
+    // zárja, tehát egy dupla koppintás egyszerre indított két lejátszást, és
+    // elhasználta mindkét meghallgatást. Amíg szól a felvétel, a gomb néma.
+    if (playingRef.current || plays >= MAX_PLAYS || audioLines.length === 0) return;
+    playingRef.current = true;
     setPlays((p) => p + 1);
+    stopSpeaking();
+    const release = () => {
+      playingRef.current = false;
+    };
     // One utterance per line keeps the pauses between speakers natural.
-    audioLines.forEach((line) => speak(line, speechLang(learnedLang)));
+    audioLines.forEach((line, i) => {
+      const last = i === audioLines.length - 1;
+      speak(line, speechLang(learnedLang), {
+        ...(isDialogue && i % 2 === 1 ? { pitch: 0.8 } : {}),
+        ...(last ? { onDone: release, onStopped: release, onError: release } : {}),
+      });
+    });
   };
 
   const optionRow = (
@@ -115,7 +134,12 @@ export default function ExamTaskCard({ task, answer, onAnswer, learnedLang, canS
             </>
           )}
           {showTranscript ? (
-            <Text style={[styles.transcript, { color: colors.tabIconDefault }]}>{audioLines.join('\n')}</Text>
+            <Text style={[styles.transcript, { color: colors.tabIconDefault }]}>
+              {(isDialogue
+                ? audioLines.map((line, i) => `${i % 2 === 0 ? s.exam.speakerA : s.exam.speakerB}: ${line}`)
+                : audioLines
+              ).join('\n')}
+            </Text>
           ) : null}
         </View>
       ) : null}

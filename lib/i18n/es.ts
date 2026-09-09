@@ -383,6 +383,8 @@ export default {
     playsLeft: (n: number) => (n > 0 ? `Puedes escucharlo ${n} vez/veces más` : 'Ya lo has escuchado dos veces'),
     noVoice: 'Tu teléfono no tiene voz para este idioma, así que no se puede reproducir la grabación. Puedes leer la transcripción.',
     showTranscript: 'Ver la transcripción',
+    speakerA: 'Primera voz',
+    speakerB: 'Segunda voz',
     hideTranscript: 'Ocultar la transcripción',
     true_: 'Verdadero',
     false_: 'Falso',

@@ -2598,7 +2598,11 @@
     "sentence_de": "Der Laden schließt um neun.",
     "topic": "compras_servicios",
     "topicOrder": 12,
-    "pos": "verb"
+    "pos": "verb",
+    "note_hu": "A cerrar tőhangváltós ige: a hangsúlyos e-ből ie lesz. cierro, cierras, cierra, cerramos, cerráis, cierran. Az i tehát nem elírás, hanem a ragozás: a mi/ti alakban (cerramos, cerráis) nincs hangsúly a tövön, ott marad az e. Ugyanígy megy a pensar → pienso, empezar → empiezo, querer → quiero.",
+    "note_en": "Cerrar is a stem-changing verb: a stressed e becomes ie. cierro, cierras, cierra, cerramos, cerráis, cierran. The i is not a typo, it is the conjugation: in the we/you-plural forms (cerramos, cerráis) the stem is unstressed, so the e stays. Same pattern: pensar → pienso, empezar → empiezo, querer → quiero.",
+    "note_es": "Cerrar es un verbo con cambio vocálico: la e tónica pasa a ie. cierro, cierras, cierra, cerramos, cerráis, cierran. En nosotros y vosotros la raíz no lleva acento, por eso se mantiene la e. Igual: pensar → pienso, empezar → empiezo, querer → quiero.",
+    "note_de": "Cerrar ist ein Verb mit Stammwechsel: betontes e wird zu ie. cierro, cierras, cierra, cerramos, cerráis, cierran. Das i ist kein Tippfehler, sondern die Konjugation: bei nosotros und vosotros ist der Stamm unbetont, dort bleibt das e. Ebenso: pensar → pienso, empezar → empiezo, querer → quiero."
   },
   {
     "id": 3546,
@@ -11886,7 +11890,11 @@
     "topic": "compras_servicios",
     "topicOrder": 30,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_hu": "A tamaño az általános méret: tárgyé, helyiségé, csomagolásé. RUHÁRA és cipőre nem ez jár, ott a talla: ¿Qué talla tienes? Boltban ez a leggyakoribb csere-hiba.",
+    "note_en": "Tamaño is size in general: of an object, a room, a package. It is NOT used for clothes and shoes, those take talla: ¿Qué talla tienes? This is the most common mix-up in a shop.",
+    "note_es": "El tamaño es la medida general: de un objeto, una sala, un envase. Para ROPA y calzado no se usa, ahí va la talla: ¿Qué talla tienes?",
+    "note_de": "Tamaño ist die allgemeine Größe: eines Gegenstands, eines Raums, einer Packung. Für KLEIDUNG und Schuhe gilt es nicht, dort steht talla: ¿Qué talla tienes?"
   },
   {
     "es": "la declaración",
