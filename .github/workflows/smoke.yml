@@ -1,0 +1,102 @@
+name: Smoke
+
+# Kálmán, 2026-09-09: "nézd meg hogy nem bassza-e szét az egész main-t, de
+# nincs kedvem mindegyiket én buildelni". So every pull request answers two
+# questions the unit tests cannot: does the app still bundle, and does it still
+# come up on a device.
+#
+# The launch job builds a RELEASE apk on purpose. A debug apk fetches its
+# JavaScript from a Metro dev server at startup, so on a bare emulator it would
+# fail for a reason that has nothing to do with the change. A release build
+# carries the bundle inside it; `expo prebuild` generates an android project
+# that signs release with the debug keystore, which is fine for a throwaway
+# emulator install.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: smoke-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  bundle:
+    name: JS bundle
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Metro has to resolve every import and every data file for real. A typo
+      # in a require path or a broken JSON pack dies here, minutes before the
+      # emulator job would have found it.
+      - name: Bundle for Android
+        run: npx expo export --platform android --output-dir dist-smoke
+
+  launch:
+    name: Build + launch on emulator
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    needs: bundle
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Install dependencies
+        run: npm ci
+
+      # android/ is gitignored (managed Expo workflow); regenerate it.
+      - name: Prebuild Android project
+        run: npx expo prebuild --platform android --no-install
+
+      - name: Build release APK
+        run: |
+          chmod +x android/gradlew
+          cd android && ./gradlew assembleRelease --no-daemon
+
+      # Without this the emulator falls back to software rendering and the boot
+      # takes longer than the job is allowed to run.
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Install and launch
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: bash .github/scripts/launch-smoke.sh
+
+      - name: Keep the logcat from a failed launch
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: launch-logcat
+          path: launch-logcat.txt
+          if-no-files-found: ignore

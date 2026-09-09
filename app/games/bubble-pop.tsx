@@ -20,6 +20,7 @@ import GameOverCard from '@/components/games/GameOverCard';
 import GlossText from '@/components/games/GlossText';
 import GameSettingsSheet, { type SettingField } from '@/components/games/GameSettingsSheet';
 import type { GlossInfo } from '@/lib/games/gloss';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.2 (F2, bubble-pop). K7 DÖNTÉS: no hard time limit by default,
 // bubbles rise slowly and pop harmlessly at the top; a good bubble lost that
@@ -146,6 +147,10 @@ export default function BubblePopScreen() {
   const roundIndexRef = useRef(0); // 0-based, source of truth; `round` state mirrors it for display only
   const recordedRef = useRef(false);
   const clockIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  // advanceRound() and startNextRound() call each other, so the clock started
+  // inside startNextRound() reaches it through this ref rather than a forward
+  // reference to a value declared further down.
+  const advanceRoundRef = useRef<() => void>(() => {});
 
   const boardHeight = 420;
   const boardWidth = Math.min(windowWidth - 32, 380);
@@ -192,12 +197,12 @@ export default function BubblePopScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useLoadOnMount(load);
+
   useEffect(() => {
-    load();
     return () => {
       if (clockIntervalRef.current) clearInterval(clockIntervalRef.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const saveSettings = (next: { bubbleCount: number; speed: Speed; categorySet: BubbleCategorySet; timeLimit: TimeLimit }) => {
@@ -260,7 +265,7 @@ export default function BubblePopScreen() {
           if (v <= 1) {
             if (clockIntervalRef.current) clearInterval(clockIntervalRef.current);
             clockIntervalRef.current = null;
-            advanceRound();
+            advanceRoundRef.current();
             return null;
           }
           return v - 1;
@@ -294,7 +299,15 @@ export default function BubblePopScreen() {
   }, [startNextRound]);
 
   useEffect(() => {
+    advanceRoundRef.current = advanceRound;
+  }, [advanceRound]);
+
+  useEffect(() => {
     if (meta.length > 0 && round === 0 && bubbles.length === 0 && !session.over && !gameOverEarly) {
+      // The first round can only be built once the word list has arrived, so
+      // this one extra render pass after load() is the point of the effect,
+      // not an accident.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       startNextRound();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -110,7 +110,11 @@ export default function MockExamMode({ level, direction, onLevelUp, onExit }: Pr
     });
   };
 
-  advanceRef.current = nextSection;
+  // Kept current from an effect rather than assigned during render: writing
+  // to a ref while rendering is not allowed.
+  useEffect(() => {
+    advanceRef.current = nextSection;
+  });
 
   const startSection = () => {
     setSecondsLeft(section.minutes * 60);
