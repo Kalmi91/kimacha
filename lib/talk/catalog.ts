@@ -68,11 +68,19 @@ export function getMacro(macro: number): MacroDef | undefined {
   return MACROS.find((m) => m.macro === macro);
 }
 
+// Issue #3: a nyelvenkénti elágazás helyett tábla. Egy új nyelv így egy sor
+// ebben a mapben, nem egy `if` beszúrása egy közös függvénybe, tehát a két
+// nyelvi sáv munkája nem ugyanazokat a sorokat írja.
+const MACRO_NAME_FIELD: Record<string, keyof MacroDef> = {
+  hu: 'name_hu',
+  es: 'name_es',
+  de: 'name_de',
+  en: 'name_en',
+};
+
 export function macroName(m: MacroDef, lang: string): string {
-  if (lang === 'hu') return m.name_hu;
-  if (lang === 'es') return m.name_es;
-  if (lang === 'de') return m.name_de;
-  return m.name_en;
+  const field = MACRO_NAME_FIELD[lang] ?? MACRO_NAME_FIELD.en;
+  return String(m[field]);
 }
 
 /** Egy makró alá eső fa-téma, azzal a szinttel, ahol a fában szerepel. */

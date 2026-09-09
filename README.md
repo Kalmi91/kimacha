@@ -58,9 +58,18 @@ test (`components/__tests__/`). Run locally with `npm test`, in CI with
 
 ### Release process
 
-1. The user adds the signing secrets once — `ANDROID_KEYSTORE_B64`,
-   `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, `ANDROID_KEY_PASSWORD`
-   (Settings → Secrets and variables → Actions).
-2. `git tag v2.0.1 && git push --tags`.
-3. `android-release.yml` builds + signs the AAB/APK and publishes a GitHub
-   Release with auto-generated notes.
+The APK is built locally by the maintainer and distributed by hand. `android/`
+is not in this repository (it is hand-maintained, not generated, because
+`expo prebuild` would replace the signing keystore) and the signing key exists
+on one machine, so `android-release.yml` is manual-dispatch only.
+
+Turning the automated path back on needs two things: the `android/` project in
+the repository, and the four signing secrets (`ANDROID_KEYSTORE_B64`,
+`ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, `ANDROID_KEY_PASSWORD`) under
+Settings, Secrets and variables, Actions. The workflow header says the same.
+
+### Contributing
+
+`.github/CONTRIBUTING.md` has the branch, gate and review rules.
+`docs/NORTH-STAR.md` has the product rules the code is built to, and is worth
+reading before a first change.
