@@ -17,7 +17,6 @@ module.exports = [
       'react-hooks/refs': 'warn',
       'react-hooks/preserve-manual-memoization': 'warn',
       'react-hooks/immutability': 'warn',
-      'react-hooks/purity': 'warn',
     },
   },
   {
