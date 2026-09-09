@@ -54,11 +54,17 @@ Levels follow XLex-style cumulative bands (A1 around 1200 words, C1 around
 - **A word corpus is never regenerated wholesale.** Word data cannot be
   reviewed by eye, so a regenerated file is an unreviewable diff. Add and edit
   entries; do not rewrite the file.
+- **Every direction has its own word set.** There is no corpus shared between
+  tracks. Even A0 is the target language's own hundred most useful words, not a
+  common tourist set: what a beginner needs differs by language, and hu to en is
+  not the same list as en to hu. Above A0 a track's words are the ones its exams
+  ask for.
 - **Language tracks do not touch each other's files.** A track owns
-  `data/**/<lang>/` and `lib/i18n/<lang>.ts`; the shared
-  `data/words/{a0..c2}.json` corpus belongs to the Spanish track. Shared code
-  branches on lookup tables keyed by language code, so adding a language is a
-  table entry rather than an edit inside a function someone else also edits.
+  `data/**/<lang>/` and `lib/i18n/<lang>.ts`. `data/words/{a0..c2}.json` is the
+  Spanish track's set, still at the path it had before the other tracks existed.
+  Shared *code* branches on lookup tables keyed by language code, so adding a
+  language is a table entry rather than an edit inside a function someone else
+  also edits.
 
 ## Releases
 
