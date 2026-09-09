@@ -24,6 +24,8 @@ import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { DEFAULT_REQUEUE_LEVEL, requeueGapFor, requeueIndex } from '@/lib/requeueGap';
+import { filterLockedSentences } from '@/lib/grammar/tenseGate';
+import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { cardIcon } from '@/lib/cardIcons';
 import { cardImage } from '@/lib/cardImages';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -341,6 +343,13 @@ export default function LearnScreen() {
 
   const QUEUE_POOL = 40;
 
+  // FB196: az elvégzett nyelvtani leckék adják a feloldott szerkezeteket
+  // („legyen olyan hogy bizonyos nyelvtani szerkezeteket feloldunk").
+  const doneGrammarTopics = async (): Promise<Set<string>> => {
+    const rows = await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY);
+    return new Set(rows.filter(r => r.state === 'done').map(r => r.itemId));
+  };
+
   const loadCards = async () => {
     const db = getDb();
     const onboarding = await db.getOnboarding();
@@ -451,7 +460,14 @@ export default function LearnScreen() {
     const dueReviewWords = useTopics
       ? await db.countDueReviewWords(activeWordIds)
       : await db.countDueReviewWordsForLevel(currentLevel);
-    const items = applyCadence(dripNewWords(capNewWords(buildQueue(rows, learned), intake)), wordsOnly, learned);
+    // FB196: a mondat-kártyák nem hozhatnak feloldatlan nyelvtant, akármelyik
+    // úton kerültek a sorba (szint, téma, kölcsönzés).
+    const grammarDone = await doneGrammarTopics();
+    const items = filterLockedSentences(
+      applyCadence(dripNewWords(capNewWords(buildQueue(rows, learned), intake)), wordsOnly, learned),
+      currentLevel,
+      grammarDone,
+    );
     applyQueueSupply(items, budget, dueReviewWords);
 
     const streakData = await db.getStreak();
@@ -778,7 +794,11 @@ export default function LearnScreen() {
     }
 
     const wordsOnly2 = await db.getWordsOnly();
-    const newItems = applyCadence(dripNewWords(capNewWords(buildQueue(newRows, learned), intake2)), wordsOnly2, learned);
+    const newItems = filterLockedSentences(
+      applyCadence(dripNewWords(capNewWords(buildQueue(newRows, learned), intake2)), wordsOnly2, learned),
+      currentLevel,
+      await doneGrammarTopics(),
+    );
     applyQueueSupply(newItems, budget2, dueReviewWords2);
 
     if (newItems.length === 0) {
@@ -801,7 +821,11 @@ export default function LearnScreen() {
     const db = getDb();
     const rows = await db.getPracticeCardsForLevel(level, PRACTICE_ROUND);
     const learned = direction[1];
-    const items = applyCadence(buildQueue(rows, learned), await db.getWordsOnly(), learned);
+    const items = filterLockedSentences(
+      applyCadence(buildQueue(rows, learned), await db.getWordsOnly(), learned),
+      level,
+      await doneGrammarTopics(),
+    );
     if (items.length === 0) return;
     setQueue(items);
     setCurrentIndex(0);
