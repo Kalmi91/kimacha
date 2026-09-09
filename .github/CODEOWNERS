@@ -1,2 +1,16 @@
-# Everything in this repository is maintained by the owner.
-*       @Kalmi91
+# Review routing by path (issue #3). The default owner keeps everything that is
+# not claimed by a language track below.
+*                       @Kalmi91
+
+# The shared corpus and the Spanish course belong to the Spanish track.
+/data/words/            @Kalmi91
+/data/games/            @Kalmi91
+/lib/i18n/es.ts         @Kalmi91
+
+# A language track owns its own content and its own interface strings. Add a
+# line here when a track starts, so its pull requests do not wait on a review
+# from someone who does not speak the language.
+# /data/words/sv/       @tibcszal
+# /data/topics/sv/      @tibcszal
+# /data/games/**/sv/    @tibcszal
+# /lib/i18n/sv.ts       @tibcszal
