@@ -2,6 +2,7 @@ import * as SQLite from 'expo-sqlite';
 import { createEmptyCard, type Card } from 'ts-fsrs';
 import { BACKUP_SCHEMA_VERSION, BACKUP_TABLES, getAppVersion, type BackupPayload } from './backup';
 import { pickSurvivor } from './cardMerge';
+import { DEFAULT_REQUEUE_LEVEL } from './requeueGap';
 import { rankSentencesByWordWeakness, sentenceSlotCount, type WordWeakness } from './sentenceMix';
 import { WORD_MERGES } from './wordMerges';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
@@ -18,6 +19,9 @@ export interface DB {
   updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number): Promise<void>;
   getDueCardsForLevel(level: string, limit: number): Promise<any[]>;
   getDueCardsForWordIds(wordIds: number[], limit: number): Promise<any[]>;
+  // FB190: szabad gyakorlás, ha a szinten már nincs új szó. Esedékesség NÉLKÜL
+  // ad vissza megkezdett szókártyákat, véletlen sorrendben.
+  getPracticeCardsForLevel(level: string, limit: number): Promise<any[]>;
   // FB174: how many DISTINCT words are due for review in a given scope, whether or
   // not they fit in this session's queue. The header turns it into "one batch of N,
   // M batches to go".
@@ -66,6 +70,9 @@ export interface DB {
   // FB188: a névelő-gombsor a gépelős spanyol főnév-kártyán, ki-be kapcsolható.
   getArticlePicker(): Promise<boolean>;
   setArticlePicker(v: boolean): Promise<void>;
+  // FB198: hány lap teljen el, mielőtt egy elrontott szó visszajön.
+  getRequeueLevel(): Promise<string>;
+  setRequeueLevel(v: string): Promise<void>;
   getWeeklyGoalMinutes(): Promise<number>;
   setWeeklyGoalMinutes(minutes: number): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
@@ -180,6 +187,7 @@ class SQLiteDB implements DB {
         random_topics INTEGER,
         strict_accents INTEGER,
         article_picker INTEGER,
+        requeue_level TEXT,
         feedback_btn_side TEXT,
         weekly_goal_minutes INTEGER,
         daily_new_limit INTEGER,
@@ -228,6 +236,10 @@ class SQLiteDB implements DB {
     // Migration: add strict_accents column (DBs created before the difficulty switches, FB132).
     try {
       await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN strict_accents INTEGER');
+    } catch {}
+    // Migration: add requeue_level column (DBs created before the difficulty dial, FB198).
+    try {
+      await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN requeue_level TEXT');
     } catch {}
     // Migration: add article_picker column (DBs created before the article chips, FB188).
     try {
@@ -491,6 +503,22 @@ class SQLiteDB implements DB {
     const { getWordsForLevel } = require('@/data/words');
     const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
     return this.countDueReviewWords(levelWords.map((w: any) => w.id));
+  }
+
+  // FB190, Kálmán 2026-09-08: „ha már nincs új szó a szinten akkor kérdezze meg
+  // hogy a szint szavait akarod gyakorolni és random adjon 32 szót a szintből".
+  // Ez szándékosan MEGKERÜLI az esedékességet: nem SRS-kör, hanem szabad
+  // gyakorlás, ezért nem is ír ütemezést (a válaszok a szokásos úton értékelődnek).
+  async getPracticeCardsForLevel(level: string, limit: number) {
+    const { getWordsForLevel } = require('@/data/words');
+    const db = await this.open();
+    const ids = getWordsForLevel(level as any, this.activePair.split('-')[1] ?? 'es').map((w: any) => w.id);
+    if (ids.length === 0) return [];
+    const placeholders = ids.map(() => '?').join(',');
+    return await db.getAllAsync(
+      `SELECT * FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND reps > 0 AND buried = 0 AND pair = ? ORDER BY RANDOM() LIMIT ?`,
+      [...ids, this.activePair, limit]
+    );
   }
 
   async getDueCardsForWordIds(wordIds: number[], limit: number) {
@@ -861,6 +889,23 @@ class SQLiteDB implements DB {
     await db.runAsync(
       'INSERT INTO learn_settings (pair, article_picker) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET article_picker = excluded.article_picker',
       [this.activePair, v ? 1 : 0]
+    );
+  }
+
+  // FB198, Kálmán 2026-09-09: „van hogy túl gyorsan következik igyan az a szó és még
+  // a rövid távú memoriám tárolja". A távolság beállítás, a sor hosszának véletlene
+  // helyett; a skála a lib/requeueGap.ts-ben él.
+  async getRequeueLevel(): Promise<string> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT requeue_level FROM learn_settings WHERE pair = ?', [this.activePair]);
+    return row?.requeue_level ?? DEFAULT_REQUEUE_LEVEL;
+  }
+
+  async setRequeueLevel(v: string): Promise<void> {
+    const db = await this.open();
+    await db.runAsync(
+      'INSERT INTO learn_settings (pair, requeue_level) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET requeue_level = excluded.requeue_level',
+      [this.activePair, v]
     );
   }
 
