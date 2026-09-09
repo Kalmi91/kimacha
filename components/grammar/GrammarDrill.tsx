@@ -10,6 +10,7 @@ import { buildGrammarRound, wrongExplanation } from '@/lib/games/grammarChoice';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
+import MoreBlocks from '@/components/grammar/MoreBlocks';
 
 // The "which one is right, and why" drill, shared by the grammar course
 // (app/grammar/[topic].tsx) and the Game tab's grammar-choice screen. It was
@@ -134,14 +135,16 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             />
           ))}
           {topic.more ? (
-            <View>
-              <Pressable onPress={() => setShowMore((v) => !v)}>
+            <View style={[styles.moreSection, { borderTopColor: colors.tabIconDefault + '33' }]}>
+              <Pressable onPress={() => setShowMore((v) => !v)} hitSlop={8}>
                 <Text style={[styles.moreToggle, { color: colors.tint }]}>
                   {showMore ? `▾ ${s.games.moreLabel}` : `▸ ${s.games.moreLabel}`}
                 </Text>
               </Pressable>
               {showMore ? (
-                <Text style={[styles.explainText, { color: colors.tabIconDefault }]}>{topic.more[contentLang] ?? topic.more.en}</Text>
+                <View style={styles.moreBody}>
+                  <MoreBlocks more={topic.more} contentLang={contentLang} color={colors.tabIconDefault} />
+                </View>
               ) : null}
             </View>
           ) : null}
@@ -167,7 +170,9 @@ const styles = StyleSheet.create({
   explainHeader: { fontSize: 16, fontWeight: '800' },
   explainText: { fontSize: 14, lineHeight: 20 },
   example: { fontSize: 14, fontStyle: 'italic', lineHeight: 20 },
-  moreToggle: { fontSize: 13, fontWeight: '600', marginTop: 4 },
+  moreSection: { borderTopWidth: StyleSheet.hairlineWidth, paddingTop: 10, marginTop: 2 },
+  moreToggle: { fontSize: 13, fontWeight: '700' },
+  moreBody: { marginTop: 10 },
   btn: { paddingVertical: 14, borderRadius: 24, alignItems: 'center' },
   btnText: { color: '#FFFFFF', fontWeight: '700', fontSize: 16 },
 });
