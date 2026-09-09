@@ -117,6 +117,6 @@ Drive-os példány, ezért a kettő nem tud egymásra települni. Ha átállsz:
 | Aláírt AAB (3.1.15 / 49) | `android/app/build/outputs/bundle/release/app-release.aab` |
 | 512×512 ikon | `store/play-icon-512.png` |
 | 1024×500 feature graphic | `store/play-feature-1024x500.png` |
-| 6 db 1080×1920 képernyőkép | `store/screenshots/` |
+| 6 db 1080×1920 képernyőkép | `store/screenshots/` (gitignore-olt, csak ezen a gépen van; a `PLAYSTORE.md` 13. pontja leírja, hogyan generálható újra) |
 | Adatvédelmi nyilatkozat (EN + HU) | `store/privacy-policy.html` |
 | Listing-szövegek, Data safety, content rating, tesztelő-levél | `store/PLAYSTORE.md` |
