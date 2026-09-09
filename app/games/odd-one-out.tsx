@@ -16,6 +16,7 @@ import { getGameBest, recordGameResult } from '@/lib/games/scoring';
 import GlossText from '@/components/games/GlossText';
 import GameSettingsSheet, { type SettingField } from '@/components/games/GameSettingsSheet';
 import type { GlossInfo } from '@/lib/games/gloss';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.8 (F5, odd-one-out). 4 words, tap the one that doesn't belong,
 // the "common thread" is ALWAYS shown after answering (K6's teaching-not-
@@ -187,12 +188,20 @@ export default function OddOneOutScreen() {
     [correctCount, startClock]
   );
 
-  useEffect(() => {
-    load().then(({ m, diff, count, tl }) => {
-      if (m.length > 0) buildNextRound(m, diff, tl);
-    });
-    return () => stopClock();
+  const start = useCallback(
+    () =>
+      load().then(({ m, diff, count, tl }) => {
+        if (m.length > 0) buildNextRound(m, diff, tl);
+      }),
+    // buildNextRound is left out on purpose: the first round is built once, on
+    // mount, and buildNextRound changes with the score.
     // eslint-disable-next-line react-hooks/exhaustive-deps
+    [load]
+  );
+  useLoadOnMount(start);
+
+  useEffect(() => {
+    return () => stopClock();
   }, []);
 
   const selectOption = (i: number) => {

@@ -21,6 +21,7 @@ import {
 import { hashString } from '@/lib/shuffle';
 import { getGameBest, recordGameResult } from '@/lib/games/scoring';
 import GameSettingsSheet, { type SettingField } from '@/components/games/GameSettingsSheet';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.7 (F5, conjugation-slot). K15: Spanish only, the hub card shows
 // "soon" for every other learned language (registry.ts `languages: ['es']`
@@ -209,12 +210,20 @@ export default function ConjugationSlotScreen() {
     [correctCount, startClock]
   );
 
-  useEffect(() => {
-    load().then(({ cands, flags, irregular, count, tl }) => {
-      if (cands.length > 0 && activeTenses(flags).length > 0) buildNextRound(cands, flags, irregular, tl);
-    });
-    return () => stopClock();
+  const start = useCallback(
+    () =>
+      load().then(({ cands, flags, irregular, count, tl }) => {
+        if (cands.length > 0 && activeTenses(flags).length > 0) buildNextRound(cands, flags, irregular, tl);
+      }),
+    // buildNextRound is left out on purpose: the first round is built once, on
+    // mount, and buildNextRound changes with the score.
     // eslint-disable-next-line react-hooks/exhaustive-deps
+    [load]
+  );
+  useLoadOnMount(start);
+
+  useEffect(() => {
+    return () => stopClock();
   }, []);
 
   const selectOption = (opt: string) => {

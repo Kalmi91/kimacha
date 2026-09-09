@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View, Pressable, Modal } from 'react-native';
 import { useRouter } from 'expo-router';
 
@@ -10,6 +10,7 @@ import { getGameDef, gameName } from '@/lib/games/registry';
 import { getGrammarTopics, type GrammarTopicData } from '@/lib/games/content';
 import { getGameBest, recordGameResult } from '@/lib/games/scoring';
 import GrammarDrill from '@/components/grammar/GrammarDrill';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.11 (F3, grammar-choice): "Melyik a helyes?" plusz magyarázat.
 // K21 DÖNTÉS: a magyarázat szabály + 2 példa + miért rossz a többi opció, a
@@ -58,9 +59,7 @@ export default function GrammarChoiceScreen() {
     // empty array here counts as broken memoization.
   }, [setBest]);
 
-  useEffect(() => {
-    load();
-  }, [load]);
+  useLoadOnMount(load);
 
   const startTopic = (tp: GrammarTopicData) => {
     setTopic(tp);

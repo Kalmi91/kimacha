@@ -21,6 +21,7 @@ import GlossText from '@/components/games/GlossText';
 import CountdownStart from '@/components/games/CountdownStart';
 import GameSettingsSheet, { type SettingField } from '@/components/games/GameSettingsSheet';
 import type { GlossInfo } from '@/lib/games/gloss';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.1 (F2, word-rain), A-variáns (K4 DÖNTÉS). One prompt at the
 // bottom, several words fall from the top, tap the right one before it (or
@@ -173,12 +174,12 @@ export default function WordRainScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useLoadOnMount(load);
+
   useEffect(() => {
-    load();
     return () => {
       if (introTimerRef.current) clearTimeout(introTimerRef.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const saveSettings = (next: { direction: WordRainDirection; speed: Speed; fallingCount: number; distractorMode: DistractMode }) => {

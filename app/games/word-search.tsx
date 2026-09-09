@@ -17,6 +17,7 @@ import GameShell from '@/components/games/GameShell';
 import GameOverCard from '@/components/games/GameOverCard';
 import GlossText from '@/components/games/GlossText';
 import GameSettingsSheet, { type SettingField } from '@/components/games/GameSettingsSheet';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.4 (F1, word-search). K9 DÖNTÉS: the side list is always in the
 // SOURCE language (fixed, no toggle). Drag-select via PanResponder, no new
@@ -193,10 +194,7 @@ export default function WordSearchScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    load();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  useLoadOnMount(load);
 
   const saveSettings = (next: { gridSize: GridSizeKey; wordCount: number; dirs: WordSearchDirections }) => {
     getDb().setGameSettings('word-search', next).catch(() => {});

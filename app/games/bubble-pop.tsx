@@ -20,6 +20,7 @@ import GameOverCard from '@/components/games/GameOverCard';
 import GlossText from '@/components/games/GlossText';
 import GameSettingsSheet, { type SettingField } from '@/components/games/GameSettingsSheet';
 import type { GlossInfo } from '@/lib/games/gloss';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.2 (F2, bubble-pop). K7 DÖNTÉS: no hard time limit by default,
 // bubbles rise slowly and pop harmlessly at the top; a good bubble lost that
@@ -196,12 +197,12 @@ export default function BubblePopScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useLoadOnMount(load);
+
   useEffect(() => {
-    load();
     return () => {
       if (clockIntervalRef.current) clearInterval(clockIntervalRef.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const saveSettings = (next: { bubbleCount: number; speed: Speed; categorySet: BubbleCategorySet; timeLimit: TimeLimit }) => {
@@ -303,6 +304,10 @@ export default function BubblePopScreen() {
 
   useEffect(() => {
     if (meta.length > 0 && round === 0 && bubbles.length === 0 && !session.over && !gameOverEarly) {
+      // The first round can only be built once the word list has arrived, so
+      // this one extra render pass after load() is the point of the effect,
+      // not an accident.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       startNextRound();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

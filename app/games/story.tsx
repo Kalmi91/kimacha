@@ -4,6 +4,7 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { normalizeWordToken } from '@/data/words';
@@ -102,9 +103,7 @@ export default function StoryScreen() {
     setCanSpeak(hasVoiceFor(speechLang(target)));
   }, [talk]);
 
-  useEffect(() => {
-    load();
-  }, [load]);
+  useLoadOnMount(load);
 
   const saveSettings = (next: { fontSize: FontSize; translationMode: TranslationMode; speechOn: boolean }) => {
     getDb().setGameSettings('story', next).catch(() => {});

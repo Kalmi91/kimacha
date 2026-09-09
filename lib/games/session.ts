@@ -83,6 +83,10 @@ export function useGameSession(opts: GameSessionOptions = {}): GameSessionApi {
 
   useEffect(() => {
     if (startLives > 0 && lives === 0 && !over) {
+      // The run ends here on purpose: loseLife() only decrements, so that its
+      // updater stays pure (React may call an updater twice), and the game-over
+      // flag plus the callback follow in this effect.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setOver(true);
       onLivesDepletedRef.current?.();
     }

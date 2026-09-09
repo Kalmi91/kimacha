@@ -8,15 +8,6 @@ module.exports = [
     ignores: ['dist/*', 'android/*', '.expo/*', 'word_batches/*', 'scripts/*'],
   },
   {
-    // React Compiler hook rules, arrived with the SDK 56 / React 19 upgrade and
-    // flag 47 pre-existing errors. Kept as warnings so the rest of the lint gate
-    // stays an error gate while the debt is burnt down one rule at a time.
-    // Tracking: https://github.com/Kalmi91/kimacha/issues/1
-    rules: {
-      'react-hooks/set-state-in-effect': 'warn',
-    },
-  },
-  {
     // Test files: jest.mock() calls are hoisted above imports by design, and a
     // module mock is a require() by definition, so the import-order and
     // no-require rules would flag every playthrough test for doing the only

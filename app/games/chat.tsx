@@ -16,6 +16,7 @@ import { getGameBest, recordGameResult } from '@/lib/games/scoring';
 import { loadVoices, hasVoiceFor, speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import GlossText from '@/components/games/GlossText';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.6 (F4, chat): tanácsadó beszélgetés valódi tudással, K24 szerint
 // újratervezve. A setup-kérdések (ha vannak) állapotot adnak (`context`), a
@@ -94,9 +95,7 @@ export default function ChatScreen() {
     setCanSpeak(hasVoiceFor(speechLang(target)));
   }, [talk]);
 
-  useEffect(() => {
-    load();
-  }, [load]);
+  useLoadOnMount(load);
 
   const startTopic = (c: ChatData) => {
     setChat(c);
