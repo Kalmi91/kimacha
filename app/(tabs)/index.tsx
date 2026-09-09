@@ -23,6 +23,9 @@ import { buildQueue, applyCadence, dripNewWords, reviewBatchOf, reviewWordsLeft,
 import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
+import { DEFAULT_REQUEUE_LEVEL, requeueGapFor, requeueIndex } from '@/lib/requeueGap';
+import { filterLockedSentences } from '@/lib/grammar/tenseGate';
+import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { cardIcon } from '@/lib/cardIcons';
 import { cardImage } from '@/lib/cardImages';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -77,6 +80,9 @@ export default function LearnScreen() {
   // választott névelő. Kártyaváltáskor nullázódik, mint a begépelt válasz.
   const [articlePickerOn, setArticlePickerOn] = useState(true);
   const [articlePick, setArticlePick] = useState<ArticlePick>('');
+  // FB198: hány lap teljen el, mielőtt egy elrontott szó visszajön. A sor
+  // hosszának véletlene helyett beállítás (lib/requeueGap.ts).
+  const [requeueLevel, setRequeueLevel] = useState<string>(DEFAULT_REQUEUE_LEVEL);
   // FB170, Kálmán 2026-09-06: "azt akarom hogy a check rész az pont a klaviatúrám
   // felett legyen és nem kell ketto". The typing card had two Check buttons (the
   // in-card one from FB5 and the older one below the card); there is one now, docked
@@ -134,6 +140,9 @@ export default function LearnScreen() {
   // This one holds the new words of the CURRENT queue only, and both sides use it.
   const [batchNewIds, setBatchNewIds] = useState<Set<number>>(() => new Set());
   const [unlearnedCount, setUnlearnedCount] = useState(0);
+  // FB190: hány el nem kezdett szó maradt az EGÉSZ szinten. Nulla = a szint
+  // szókincse elfogyott, a Kész-képernyőnek onnantól más ajánlata van.
+  const [levelNewWordsLeft, setLevelNewWordsLeft] = useState(0);
   const [pauseReason, setPauseReason] = useState<NewWordPause>('none');
   const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
   const [typedAnswer, setTypedAnswer] = useState('');
@@ -334,6 +343,13 @@ export default function LearnScreen() {
 
   const QUEUE_POOL = 40;
 
+  // FB196: az elvégzett nyelvtani leckék adják a feloldott szerkezeteket
+  // („legyen olyan hogy bizonyos nyelvtani szerkezeteket feloldunk").
+  const doneGrammarTopics = async (): Promise<Set<string>> => {
+    const rows = await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY);
+    return new Set(rows.filter(r => r.state === 'done').map(r => r.itemId));
+  };
+
   const loadCards = async () => {
     const db = getDb();
     const onboarding = await db.getOnboarding();
@@ -367,6 +383,11 @@ export default function LearnScreen() {
     setNewWordsPaused(intake === 0 && leftToday > 0);
 
     let activeWords: WordEntry[];
+    // FB190: a szint egészére nézve maradt-e el nem kezdett szó. Ez független a
+    // napi kerettől és az aktív témától: azt mondja meg, van-e MÉG mit tanulni
+    // ezen a szinten egyáltalán.
+    const levelReps = await db.getWordReps(levelWords.map(w => w.id));
+    setLevelNewWordsLeft(levelWords.filter(w => (levelReps.get(w.id) ?? 0) === 0).length);
     if (useTopics) {
       const allWordIds = levelWords.map(w => w.id);
       const repsMap = await db.getWordReps(allWordIds);
@@ -430,6 +451,7 @@ export default function LearnScreen() {
     // are read (the Settings toggle queues a reload, see handleStrictAccentsToggle).
     setStrictAccents(await db.getStrictAccents());
     setArticlePickerOn(await db.getArticlePicker());
+    setRequeueLevel(await db.getRequeueLevel());
     const activeWordIds = activeWords.map(w => w.id);
     const rows = useTopics
       ? await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL)
@@ -438,7 +460,14 @@ export default function LearnScreen() {
     const dueReviewWords = useTopics
       ? await db.countDueReviewWords(activeWordIds)
       : await db.countDueReviewWordsForLevel(currentLevel);
-    const items = applyCadence(dripNewWords(capNewWords(buildQueue(rows, learned), intake)), wordsOnly, learned);
+    // FB196: a mondat-kártyák nem hozhatnak feloldatlan nyelvtant, akármelyik
+    // úton kerültek a sorba (szint, téma, kölcsönzés).
+    const grammarDone = await doneGrammarTopics();
+    const items = filterLockedSentences(
+      applyCadence(dripNewWords(capNewWords(buildQueue(rows, learned), intake)), wordsOnly, learned),
+      currentLevel,
+      grammarDone,
+    );
     applyQueueSupply(items, budget, dueReviewWords);
 
     const streakData = await db.getStreak();
@@ -765,7 +794,11 @@ export default function LearnScreen() {
     }
 
     const wordsOnly2 = await db.getWordsOnly();
-    const newItems = applyCadence(dripNewWords(capNewWords(buildQueue(newRows, learned), intake2)), wordsOnly2, learned);
+    const newItems = filterLockedSentences(
+      applyCadence(dripNewWords(capNewWords(buildQueue(newRows, learned), intake2)), wordsOnly2, learned),
+      currentLevel,
+      await doneGrammarTopics(),
+    );
     applyQueueSupply(newItems, budget2, dueReviewWords2);
 
     if (newItems.length === 0) {
@@ -775,6 +808,40 @@ export default function LearnScreen() {
       setCurrentIndex(0);
     }
     resetCardState();
+  };
+
+  // FB190, Kálmán 2026-09-08: „ha már nincs új szó a szinten akkor kérdezze meg
+  // hogy a szint szavait akarod gyakorolni és random adjon 32 szót a szintből.
+  // vagy hogy a vizsgát megcsinálom, vagy hogy menjünk tovább a következő szint
+  // szavaira". Ez az első a három közül: 32 véletlen, MÁR MEGKEZDETT szó a
+  // szintről, esedékességtől függetlenül.
+  const PRACTICE_ROUND = 32;
+
+  const handlePractiseLevel = async () => {
+    const db = getDb();
+    const rows = await db.getPracticeCardsForLevel(level, PRACTICE_ROUND);
+    const learned = direction[1];
+    const items = filterLockedSentences(
+      applyCadence(buildQueue(rows, learned), await db.getWordsOnly(), learned),
+      level,
+      await doneGrammarTopics(),
+    );
+    if (items.length === 0) return;
+    setQueue(items);
+    setCurrentIndex(0);
+    setReviewed(0);
+    setDone(false);
+    resetCardState();
+  };
+
+  // A harmadik ajánlat: tovább a következő szintre. A vizsga (a második) a
+  // meglévő onStartExam-en megy.
+  const handleNextLevel = async () => {
+    const next = LEVELS[LEVELS.indexOf(level) + 1];
+    if (!next) return;
+    await getDb().updateLevel(next, 0, 0, 0);
+    setLevel(next);
+    await loadCards();
   };
 
   // FB112/FB113: the 🌱 badge has to fall by ONE the moment a brand-new word is
@@ -868,7 +935,10 @@ export default function LearnScreen() {
     }
     const item = current;
     const rest = queue.filter((_, i) => i !== currentIndex);
-    setQueue([...rest, item]);
+    // FB198: nem a sor végére, hanem a beállított távolságra. A vég csak akkor,
+    // ha rövidebb a maradék, mint a távolság.
+    const at = requeueIndex(rest.length, currentIndex, requeueGapFor(requeueLevel));
+    setQueue([...rest.slice(0, at), item, ...rest.slice(at)]);
     resetCardState();
   };
 
@@ -1124,6 +1194,9 @@ export default function LearnScreen() {
         sessionMix={sessionMix}
         unlearnedCount={unlearnedCount}
         pauseReason={pauseReason}
+        levelExhausted={levelNewWordsLeft === 0}
+        onPractiseLevel={handlePractiseLevel}
+        onNextLevel={LEVELS.indexOf(level) + 1 < LEVELS.length ? handleNextLevel : undefined}
       />
     );
   }

@@ -147,7 +147,7 @@
       "kind": "listen_dialogue",
       "instruction": "PART 4. You will hear a voicemail message. You hear it twice. Answer the questions.",
       "audio": [
-        "Hi, it is Berenice.",
+        "Hi, it is Nuria.",
         "I am calling about the party on Friday. It is at my house, at 431 Rebsamen Street.",
         "It starts at eight in the evening. You can bring a friend.",
         "I am making the food, but I need drinks: please bring water and orange juice, not beer.",
@@ -156,7 +156,7 @@
       ],
       "questions": [
         { "q": "What day is the party?", "options": ["Thursday.", "Friday.", "Saturday."], "correct": 1 },
-        { "q": "Where is the party?", "options": ["At Berenice's house.", "In a restaurant.", "In the park."], "correct": 0 },
+        { "q": "Where is the party?", "options": ["At Nuria's house.", "In a restaurant.", "In the park."], "correct": 0 },
         { "q": "What time does it start?", "options": ["At six.", "At eight.", "At eleven."], "correct": 1 },
         { "q": "What should he bring?", "options": ["Food.", "Water and juice.", "Beer."], "correct": 1 },
         { "q": "Until what time is the door open?", "options": ["Until eight.", "Until eleven.", "All night."], "correct": 1 },
@@ -201,7 +201,7 @@
       "instruction": "PART 1. Introduce yourself. Speak out loud for one to two minutes, then compare with the model and rate yourself.",
       "prompt": "Introduce yourself: name, age, country, where you live, who you live with, work or studies, languages.",
       "bullets": ["name and age", "country and city", "family", "work or studies", "languages"],
-      "model": "My name is Kálmán and I am thirty-four years old. I am from Hungary, but now I live in Mexico City, in the Narvarte area. I live with my girlfriend. I work with computers and I study Spanish every day. I speak Hungarian, English and a little Spanish."
+      "model": "My name is Daniel and I am thirty-four years old. I am from Hungary, but now I live in Mexico City, in the Narvarte area. I live with my girlfriend. I work with computers and I study Spanish every day. I speak Hungarian, English and a little Spanish."
     },
     {
       "id": "en-a1-s2",

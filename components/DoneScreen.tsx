@@ -44,9 +44,16 @@ interface Props {
   sessionMix?: { newWords: number; reviews: number };
   unlearnedCount?: number;
   pauseReason?: NewWordPause;
+  // FB190, Kálmán 2026-09-08: „ahh szerintem most elértem ahoz hogy nincs 15 szó
+  // szóval nem tudom kiválasztani, hogy mit csináljak. old meg ilyenkor." Ha a
+  // SZINTEN sincs több el nem kezdett szó, a képernyő nem hallgathat: három út
+  // van, gyakorlás, vizsga, vagy tovább a következő szintre.
+  levelExhausted?: boolean;
+  onPractiseLevel?: () => void;
+  onNextLevel?: () => void;
 }
 
-export default function DoneScreen({ reviewed, streak, level, masteredPct, direction, onStartExam, examAvailable, currentTopic, topicProgress, newWordsLeft, newWordsPaused, onMoreNewWords, newWordsInTopic, onNextTopicWords, sessionMix, unlearnedCount = 0, pauseReason = 'none' }: Props) {
+export default function DoneScreen({ reviewed, streak, level, masteredPct, direction, onStartExam, examAvailable, currentTopic, topicProgress, newWordsLeft, newWordsPaused, onMoreNewWords, newWordsInTopic, onNextTopicWords, sessionMix, unlearnedCount = 0, pauseReason = 'none', levelExhausted = false, onPractiseLevel, onNextLevel }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
@@ -129,6 +136,43 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
           session; the standing limit itself lives in Settings. FB133: three
           sizes (+5/+10/+15), and filled buttons, because the outlined ones did
           not read as tappable ("legyenek teli gombok"). */}
+      {/* FB190: nem a téma fogyott el, hanem a SZINT. Ilyenkor a „következő téma"
+          és a „+N új szó" is üres ígéret lenne, ezért itt a három valódi út áll:
+          gyakorlás a szint szavaiból, vizsga, vagy a következő szint. */}
+      {levelExhausted && (
+        <View style={styles.levelDoneBox}>
+          <Text style={[styles.topicEmptyText, { color: colors.text }]}>{s.done.levelWordsDone}</Text>
+          {onPractiseLevel && (
+            <Pressable
+              style={({ pressed }) => [styles.filledBtn, { backgroundColor: colors.tint, marginTop: 12, opacity: pressed ? 0.8 : 1 }]}
+              onPress={onPractiseLevel}
+            >
+              <Text style={styles.filledBtnText}>{s.done.practiseLevel}</Text>
+            </Pressable>
+          )}
+          <Pressable
+            style={({ pressed }) => [
+              styles.filledBtn,
+              { backgroundColor: examAvailable ? colors.accent : colors.card, marginTop: 10, opacity: pressed ? 0.8 : 1 },
+            ]}
+            disabled={!examAvailable}
+            onPress={onStartExam}
+          >
+            <Text style={[styles.filledBtnText, !examAvailable && { color: colors.tabIconDefault }]}>
+              {examAvailable ? s.done.takeExam : s.done.examLocked(80)}
+            </Text>
+          </Pressable>
+          {onNextLevel && (
+            <Pressable
+              style={({ pressed }) => [styles.outlineBtn, { borderColor: colors.tint, marginTop: 10, opacity: pressed ? 0.8 : 1 }]}
+              onPress={onNextLevel}
+            >
+              <Text style={[styles.outlineBtnText, { color: colors.tint }]}>{s.done.nextLevel}</Text>
+            </Pressable>
+          )}
+        </View>
+      )}
+
       {/* FB135/FB136: the topic ran dry (its remaining words are scheduled for a
           later day), so say that instead of leaving an empty screen, and offer
           the next topic that still has untouched words. */}
@@ -206,5 +250,9 @@ const styles = StyleSheet.create({
   moreWordsRow: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 8, marginTop: 16 },
   topicEmptyText: { fontSize: 13, textAlign: 'center', marginTop: 16, paddingHorizontal: 8 },
   filledBtn: { paddingHorizontal: 20, paddingVertical: 11, borderRadius: 12, alignSelf: 'center' },
+  // FB190: a szint-vége blokk gombjai egymás alatt, közös szélességgel.
+  levelDoneBox: { marginTop: 18, alignSelf: 'stretch', paddingHorizontal: 24 },
+  outlineBtn: { paddingHorizontal: 20, paddingVertical: 11, borderRadius: 12, borderWidth: 1, alignSelf: 'center' },
+  outlineBtnText: { fontSize: 15, fontWeight: '600' },
   filledBtnText: { color: '#FFF', fontSize: 14, fontWeight: '700' },
 });

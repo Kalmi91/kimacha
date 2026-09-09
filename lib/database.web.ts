@@ -1,6 +1,7 @@
 import { createEmptyCard, type Card } from 'ts-fsrs';
 import { BACKUP_SCHEMA_VERSION, getAppVersion, type BackupPayload } from './backup';
 import { pickSurvivor } from './cardMerge';
+import { DEFAULT_REQUEUE_LEVEL } from './requeueGap';
 import { rankSentencesByWordWeakness, sentenceSlotCount, type WordWeakness } from './sentenceMix';
 import { WORD_MERGES } from './wordMerges';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
@@ -17,6 +18,7 @@ export interface DB {
   updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number): Promise<void>;
   getDueCardsForLevel(level: string, limit: number): Promise<any[]>;
   getDueCardsForWordIds(wordIds: number[], limit: number): Promise<any[]>;
+  getPracticeCardsForLevel(level: string, limit: number): Promise<any[]>;
   getWordReps(wordIds: number[]): Promise<Map<number, number>>;
   getWordStates(wordIds: number[]): Promise<Map<number, number>>;
   // GAMES.md 3.1 (F0): every non-buried word card of a given pair, for
@@ -53,6 +55,8 @@ export interface DB {
   setStrictAccents(v: boolean): Promise<void>;
   getArticlePicker(): Promise<boolean>;
   setArticlePicker(v: boolean): Promise<void>;
+  getRequeueLevel(): Promise<string>;
+  setRequeueLevel(v: string): Promise<void>;
   getWeeklyGoalMinutes(): Promise<number>;
   setWeeklyGoalMinutes(minutes: number): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
@@ -176,6 +180,21 @@ class MemoryDB implements DB {
     const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
     const wordIds = levelWords.map((w: any) => w.id);
     return this.getDueCardsForWordIds(wordIds, limit);
+  }
+
+  // FB190: szabad gyakorlás a szint megkezdett szavaiból, esedékesség nélkül
+  // (a SQLite oldal tükre).
+  async getPracticeCardsForLevel(level: string, limit: number) {
+    const { getWordsForLevel } = require('@/data/words');
+    const ids = new Set(getWordsForLevel(level as any, this.activePair.split('-')[1] ?? 'es').map((w: any) => w.id));
+    const rows = [...this.cards.values()].filter(
+      (c: any) => c.type === 'word' && c.pair === this.activePair && c.reps > 0 && !c.buried && ids.has(c.word_id)
+    );
+    for (let i = rows.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [rows[i], rows[j]] = [rows[j], rows[i]];
+    }
+    return rows.slice(0, limit);
   }
 
   async getDueCardsForWordIds(wordIds: number[], limit: number) {
@@ -442,6 +461,17 @@ class MemoryDB implements DB {
 
   async setArticlePicker(v: boolean): Promise<void> {
     this.articlePickerMap.set(this.activePair, v);
+  }
+
+  // FB198: az elrontott szó visszatérési távolsága, per pár (a SQLite oldal tükre).
+  private requeueLevelMap: Map<string, string> = new Map();
+
+  async getRequeueLevel(): Promise<string> {
+    return this.requeueLevelMap.get(this.activePair) ?? DEFAULT_REQUEUE_LEVEL;
+  }
+
+  async setRequeueLevel(v: string): Promise<void> {
+    this.requeueLevelMap.set(this.activePair, v);
   }
 
   // FB65: weekly study goal in minutes, per pair (mirrors the SQLite side).
