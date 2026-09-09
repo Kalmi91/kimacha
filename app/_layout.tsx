@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { useFonts } from 'expo-font';
-import { Stack, ThemeProvider as NavThemeProvider, DarkTheme, DefaultTheme, router } from 'expo-router';
+import { Stack, ThemeProvider as NavThemeProvider, DarkTheme, DefaultTheme, router, useSegments } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import 'react-native-reanimated';
 
+import { bottomGutter } from '@/lib/bottomGutter';
 import { getDb } from '@/lib/database';
 import { initI18n, setLanguage } from '@/lib/i18n';
 import { sendAnalyticsIfNeeded } from '@/lib/analytics';
@@ -63,6 +65,11 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const { theme } = useTheme();
+  // FB202: a rendszer navigációs sávja alá futó képernyők egy helyen kapják meg a
+  // rést, nem képernyőnkénti foltként (lib/bottomGutter.ts).
+  const insets = useSafeAreaInsets();
+  const segments = useSegments();
+  const gutter = bottomGutter(segments as string[], insets.bottom);
 
   // Active-usage timer runs for the whole app lifetime; noteInteraction() is
   // wired at the root via a capture-phase touch responder below, so no
@@ -75,7 +82,7 @@ function RootLayoutNav() {
   return (
     <NavThemeProvider value={theme === 'dark' ? DarkTheme : DefaultTheme}>
       <View
-        style={{ flex: 1 }}
+        style={{ flex: 1, paddingBottom: gutter }}
         onStartShouldSetResponderCapture={() => {
           noteInteraction();
           return false; // never claim the touch, just observe it
