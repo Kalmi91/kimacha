@@ -1,4 +1,5 @@
 import { isPairSupported, speechLang, supportedPairs, languages } from '../languages';
+import { getWordsForLevel } from '@/data/words';
 
 describe('languages', () => {
   it('lists the expected language codes', () => {
@@ -12,8 +13,26 @@ describe('languages', () => {
       expect(supportedPairs.every(([s, t]) => s !== t)).toBe(true);
     });
 
-    it('is the full directed product of the 4 active languages (4×3 = 12)', () => {
+    it('lists the 12 pairs that have content today', () => {
       expect(supportedPairs).toHaveLength(12);
+    });
+
+    it('has no duplicate entry', () => {
+      const seen = supportedPairs.map(([s, t]) => `${s}-${t}`);
+      expect(new Set(seen).size).toBe(seen.length);
+    });
+
+    // Issue #3: a lista azért kézi, hogy egy új nyelvkód NE hirdessen meg
+    // magától olyan irányt, ami mögött nincs szókészlet. Ez az őr akkor bukik,
+    // ha valaki visszateszi a kereszt-szorzatot, vagy felvesz egy párt, aminek
+    // a cél-nyelvéhez nincs korpusz.
+    it('never offers a direction with no vocabulary behind it', () => {
+      const backed = new Set(['es', 'hu', 'en', 'de']);
+      for (const [source, target] of supportedPairs) {
+        expect(backed.has(target)).toBe(true);
+        expect(getWordsForLevel('A1', target).length).toBeGreaterThan(0);
+        expect(backed.has(source)).toBe(true);
+      }
     });
   });
 
