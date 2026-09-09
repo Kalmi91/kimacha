@@ -18,6 +18,18 @@ npm run test:ci        # jest
 CI runs the same three on every push to `main` and on every pull request.
 `main` is protected: no force pushes, no deletion, and the checks must pass.
 
+## First thing after cloning
+
+```bash
+git config core.hooksPath .githooks
+```
+
+That turns on two local guards: agent working documents cannot be committed
+here, no file can be tracked and ignored at the same time, and the commit
+message has to be a Conventional Commit. `Repo hygiene` in CI checks the same
+rules again on every push and pull request, so a missed hook is caught, not
+merged.
+
 ## Commits
 
 [Conventional Commits](https://www.conventionalcommits.org/), which is what the

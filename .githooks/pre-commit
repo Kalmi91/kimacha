@@ -1,0 +1,26 @@
+#!/bin/sh
+# Stops the two mistakes that made this repository messy before 2026-09-08:
+# agent working documents creeping back in, and files that are tracked while
+# .gitignore claims to ignore them.
+#
+# Enable once per clone:  git config core.hooksPath .githooks
+
+staged=$(git diff --cached --name-only --diff-filter=A)
+
+agent_docs=$(printf '%s\n' "$staged" | grep -E '^(AGENTS\.md|BUILD\.md|GAMES\.md|BUGS\.md|TASK\.md|ITER[^/]*|skills/|word_batches/|todo_[^/]*\.txt)' || true)
+if [ -n "$agent_docs" ]; then
+  echo "Agent working documents belong in the private ai-workspace repo:"
+  printf '  %s\n' $agent_docs
+  echo "They are symlinked back under the same paths, so nothing needs to move here."
+  exit 1
+fi
+
+ignored=$(git ls-files -i -c --exclude-standard)
+if [ -n "$ignored" ]; then
+  echo "These files are tracked and ignored at the same time:"
+  printf '  %s\n' $ignored
+  echo "Either 'git rm --cached' them or drop the .gitignore rule."
+  exit 1
+fi
+
+exit 0
