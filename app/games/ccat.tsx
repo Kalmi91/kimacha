@@ -634,10 +634,10 @@ export default function CcatScreen() {
           )}
 
           <View style={styles.summaryButtons}>
-            <Pressable style={[styles.btn, styles.btnGhost, { borderColor: colors.tint }]} onPress={() => router.back()}>
+            <Pressable style={[styles.btn, styles.btnGhost, styles.summaryBtn, { borderColor: colors.tint }]} onPress={() => router.back()}>
               <Text style={[styles.btnGhostText, { color: colors.tint }]}>{s.games.backToHub}</Text>
             </Pressable>
-            <Pressable style={[styles.btn, { backgroundColor: colors.tint }]} onPress={restart}>
+            <Pressable style={[styles.btn, styles.summaryBtn, { backgroundColor: colors.tint }]} onPress={restart}>
               <Text style={styles.btnText}>{s.games.playAgain}</Text>
             </Pressable>
           </View>
@@ -805,6 +805,8 @@ const styles = StyleSheet.create({
   summaryTitle: { fontSize: 28, fontWeight: '800' },
   summaryScore: { fontSize: 22, fontWeight: '700' },
   summaryButtons: { flexDirection: 'row', gap: 12, marginTop: 12 },
+  // Kálmán 2026-09-09: a két gomb egyenlő széles, ne a felirat hossza döntse el.
+  summaryBtn: { flex: 1 },
   emptyText: { fontSize: 15, textAlign: 'center' },
   sectionHeader: { fontSize: 16, fontWeight: '700', alignSelf: 'flex-start', marginTop: 12 },
   breakdownRow: { flexDirection: 'row', justifyContent: 'space-between', width: '100%', paddingVertical: 4 },

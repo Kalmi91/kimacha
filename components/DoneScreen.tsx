@@ -197,6 +197,7 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
               key={extra}
               style={({ pressed }) => [
                 styles.filledBtn,
+                styles.rowBtn,
                 { backgroundColor: colors.accent, opacity: pressed ? 0.8 : 1 },
               ]}
               onPress={() => onMoreNewWords(extra)}
@@ -247,12 +248,33 @@ const styles = StyleSheet.create({
   examBtn: { paddingHorizontal: 32, paddingVertical: 14, borderRadius: 14, minWidth: 160, alignItems: 'center', alignSelf: 'center' },
   examBtnText: { color: '#FFF', fontSize: 18, fontWeight: '700' },
   // FB133: filled buttons, the outlined ones did not read as tappable.
-  moreWordsRow: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 8, marginTop: 16 },
+  moreWordsRow: { flexDirection: 'row', alignSelf: 'stretch', gap: 8, marginTop: 16 },
   topicEmptyText: { fontSize: 13, textAlign: 'center', marginTop: 16, paddingHorizontal: 8 },
-  filledBtn: { paddingHorizontal: 20, paddingVertical: 11, borderRadius: 12, alignSelf: 'center' },
+  // Kálmán 2026-09-09: a gombok eddig a saját feliratukhoz zsugorodtak
+  // (`alignSelf: 'center'`), ezért az egymás alatti gombok más-más szélesek
+  // lettek. Egy alak: azonos szélesség, azonos magasság (a kitöltöttön is ott a
+  // 1 px átlátszó keret) és azonos betűméret.
+  filledBtn: {
+    paddingHorizontal: 20,
+    paddingVertical: 11,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: 'transparent',
+    alignItems: 'center',
+    alignSelf: 'stretch',
+  },
   // FB190: a szint-vége blokk gombjai egymás alatt, közös szélességgel.
   levelDoneBox: { marginTop: 18, alignSelf: 'stretch', paddingHorizontal: 24 },
-  outlineBtn: { paddingHorizontal: 20, paddingVertical: 11, borderRadius: 12, borderWidth: 1, alignSelf: 'center' },
-  outlineBtnText: { fontSize: 15, fontWeight: '600' },
-  filledBtnText: { color: '#FFF', fontSize: 14, fontWeight: '700' },
+  outlineBtn: {
+    paddingHorizontal: 20,
+    paddingVertical: 11,
+    borderRadius: 12,
+    borderWidth: 1,
+    alignItems: 'center',
+    alignSelf: 'stretch',
+  },
+  outlineBtnText: { fontSize: 15, fontWeight: '700' },
+  filledBtnText: { color: '#FFF', fontSize: 15, fontWeight: '700', textAlign: 'center' },
+  // A +5/+10/+15 sor három gombja egyenlő szélességű, nem a felirat hossza dönt.
+  rowBtn: { flex: 1, paddingHorizontal: 8 },
 });

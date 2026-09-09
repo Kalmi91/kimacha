@@ -9,7 +9,7 @@ import { getDb } from '@/lib/database';
 import { normalizeWordToken, type Level } from '@/data/words';
 import { cumulativeCorpusWordIds, type GrammarTopicData } from '@/lib/games/content';
 import { buildGlossMap } from '@/lib/games/gloss';
-import { GRAMMAR_PROGRESS_KEY, lessonFor, syllabusTopic } from '@/lib/grammar/syllabus';
+import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, syllabusTopic } from '@/lib/grammar/syllabus';
 import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import GlossText from '@/components/games/GlossText';
@@ -117,6 +117,9 @@ export default function GrammarLessonScreen() {
 
   if (phase === 'done' && score) {
     const pct = score.total ? Math.round((score.correct / score.total) * 100) : 0;
+    // Kálmán 2026-09-09: a Kész-képernyőről tovább lehessen lépni a következő
+    // témára. Csak megírt leckére kínáljuk fel, üres képernyőre nem viszünk.
+    const next = nextWrittenTopic(learnedLang, String(topicId));
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
@@ -128,18 +131,45 @@ export default function GrammarLessonScreen() {
           <Text style={[styles.doneNote, { color: colors.tabIconDefault }]}>
             {pct >= 80 ? s.grammar.doneGood : s.grammar.doneAgain}
           </Text>
-          <Pressable style={[styles.primaryBtn, { backgroundColor: colors.tint }]} onPress={() => setPhase('lesson')}>
-            <Text style={styles.primaryBtnText}>{s.grammar.backToRule}</Text>
+          {next ? (
+            <Pressable
+              testID="grammar-next-topic"
+              style={[
+                styles.btn,
+                pct >= 80 ? { backgroundColor: colors.tint } : { borderWidth: 1.5, borderColor: colors.tint },
+              ]}
+              onPress={() => router.replace(`/grammar/${next.id}` as never)}
+            >
+              <Text style={[styles.btnText, pct >= 80 ? styles.btnTextOnTint : { color: colors.tint }]}>
+                {s.grammar.nextTopic}
+              </Text>
+            </Pressable>
+          ) : null}
+          <Pressable
+            style={[
+              styles.btn,
+              pct >= 80 && next ? { borderWidth: 1.5, borderColor: colors.tint } : { backgroundColor: colors.tint },
+            ]}
+            onPress={() => setPhase('lesson')}
+          >
+            <Text
+              style={[
+                styles.btnText,
+                pct >= 80 && next ? { color: colors.tint } : styles.btnTextOnTint,
+              ]}
+            >
+              {s.grammar.backToRule}
+            </Text>
           </Pressable>
           <Pressable
             testID="grammar-practice-again"
-            style={[styles.secondaryBtn, { borderColor: colors.tint }]}
+            style={[styles.btn, { borderWidth: 1.5, borderColor: colors.tint }]}
             onPress={() => {
               setScore(null);
               setPhase('drill');
             }}
           >
-            <Text style={[styles.secondaryBtnText, { color: colors.tint }]}>{s.grammar.practiceAgain}</Text>
+            <Text style={[styles.btnText, { color: colors.tint }]}>{s.grammar.practiceAgain}</Text>
           </Pressable>
           <Pressable style={styles.ghostBtn} onPress={() => router.back()}>
             <Text style={[styles.ghostBtnText, { color: colors.tabIconDefault }]}>{s.grammar.backToSyllabus}</Text>
@@ -187,10 +217,10 @@ export default function GrammarLessonScreen() {
 
         <Pressable
           testID="grammar-start-drill"
-          style={[styles.primaryBtn, { backgroundColor: colors.tint }]}
+          style={[styles.btn, styles.startBtn, { backgroundColor: colors.tint }]}
           onPress={() => setPhase('drill')}
         >
-          <Text style={styles.primaryBtnText}>{s.grammar.startDrill(lesson.items.length)}</Text>
+          <Text style={[styles.btnText, styles.btnTextOnTint]}>{s.grammar.startDrill(lesson.items.length)}</Text>
         </Pressable>
       </ScrollView>
       <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:lesson`} />
@@ -219,10 +249,23 @@ const styles = StyleSheet.create({
   exampleText: { fontSize: 17, fontWeight: '600', flex: 1, lineHeight: 25 },
   exampleWhy: { fontSize: 13, lineHeight: 19 },
   speak: { fontSize: 18 },
-  primaryBtn: { marginTop: 18, paddingVertical: 15, borderRadius: 26, alignItems: 'center' },
-  primaryBtnText: { color: '#FFFFFF', fontSize: 16, fontWeight: '700' },
-  secondaryBtn: { marginTop: 10, paddingVertical: 13, borderRadius: 26, borderWidth: 1.5, alignItems: 'center', alignSelf: 'stretch' },
-  secondaryBtnText: { fontSize: 15, fontWeight: '600' },
+  // Kálmán 2026-09-09: „ne legyen ilyen igénytelen a szöveg mező szépe az egyik
+  // pici a másik nagy". Egy gomb-alak az egész képernyőn: azonos szélesség
+  // (`alignSelf: 'stretch'`), azonos magasság (a kitöltött változaton is ott a
+  // 1.5 átlátszó keret) és azonos betűméret. A kitöltött és a keretes gomb már
+  // csak színben tér el.
+  btn: {
+    marginTop: 10,
+    alignSelf: 'stretch',
+    paddingVertical: 14,
+    borderRadius: 26,
+    borderWidth: 1.5,
+    borderColor: 'transparent',
+    alignItems: 'center',
+  },
+  btnText: { fontSize: 16, fontWeight: '700' },
+  startBtn: { marginTop: 18 },
+  btnTextOnTint: { color: '#FFFFFF' },
   ghostBtn: { marginTop: 12, padding: 8 },
   ghostBtnText: { fontSize: 14 },
   empty: { fontSize: 15, textAlign: 'center', marginTop: 60, paddingHorizontal: 30, lineHeight: 22 },

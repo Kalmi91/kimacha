@@ -377,6 +377,7 @@ export default {
     startDrill: (n: number) => `Gyakorlás (${n} kérdés)`,
     backToRule: 'Szabály újraolvasása',
     practiceAgain: 'Újra gyakorlom',
+    nextTopic: 'Következő téma',
     backToSyllabus: 'Vissza a tanfolyamhoz',
     doneGood: 'Ez a szabály ül.',
     doneAgain: 'Érdemes újraolvasni a szabályt, mielőtt továbbmész.',
