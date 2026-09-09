@@ -61,9 +61,17 @@ function germanReadings(text: string): string[] {
  * languages; German adds its digraph reading, and only while accents are
  * forgiven — with strict accents on, ß and ä are the spelling being graded.
  */
+// Issue #3: a nyelvenkénti helyesírás-tolerancia táblából jön. Aminek nincs
+// bejegyzése, az az egy alakját adja vissza; egy új nyelv saját olvasat-
+// függvénnyel jelentkezik be, nem ennek a függvénynek az átírásával.
+const ALTERNATE_READINGS: Record<string, (text: string) => string[]> = {
+  de: germanReadings,
+};
+
 function normalizedForms(text: string, opts: MatchOptions): string[][] {
-  if (opts.lang === 'de' && !opts.strictAccents) {
-    return germanReadings(text).map((reading) => normalizeWords(reading, false));
+  const readings = opts.lang ? ALTERNATE_READINGS[opts.lang] : undefined;
+  if (readings && !opts.strictAccents) {
+    return readings(text).map((reading) => normalizeWords(reading, false));
   }
   return [normalizeWords(text, opts.strictAccents)];
 }

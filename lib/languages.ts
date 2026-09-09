@@ -13,11 +13,20 @@ export const languages: Language[] = [
   { code: 'pt', name: 'Português', flag: '🇵🇹' },
 ];
 
-const activeLangs = ['es', 'hu', 'en', 'de'];
-
-export const supportedPairs: [string, string][] = activeLangs.flatMap(
-  s => activeLangs.filter(t => t !== s).map(t => [s, t] as [string, string])
-);
+// Issue #3: a párok listája KÉZI, nem kereszt-szorzat. A szorzat minden új
+// nyelvkódra nyolc új párt hirdetett meg magától, tartalom nélkül: aki ilyet
+// választott, üres kurzust kapott. Egy nyelv mostantól páronként kerül be,
+// akkor, amikor az adott irányhoz tényleg van szókészlet.
+//
+// A cél-nyelv mögötti tartalom: `es` a közös korpusz, `en` és `hu` a saját
+// ágán (`data/words/<lang>/`), `de` a közös korpusz `de` mezőin. Ha egy új
+// nyelv (pl. `sv`) belép, ide annyi sor kerül, ahány irányban kész a tartalom.
+export const supportedPairs: [string, string][] = [
+  ['es', 'hu'], ['es', 'en'], ['es', 'de'],
+  ['hu', 'es'], ['hu', 'en'], ['hu', 'de'],
+  ['en', 'es'], ['en', 'hu'], ['en', 'de'],
+  ['de', 'es'], ['de', 'hu'], ['de', 'en'],
+];
 
 export function isPairSupported(source: string, target: string): boolean {
   return supportedPairs.some(([s, t]) => s === source && t === target);
