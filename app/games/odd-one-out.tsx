@@ -16,6 +16,7 @@ import { getGameBest, recordGameResult } from '@/lib/games/scoring';
 import GlossText from '@/components/games/GlossText';
 import GameSettingsSheet, { type SettingField } from '@/components/games/GameSettingsSheet';
 import type { GlossInfo } from '@/lib/games/gloss';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.8 (F5, odd-one-out). 4 words, tap the one that doesn't belong,
 // the "common thread" is ALWAYS shown after answering (K6's teaching-not-
@@ -120,8 +121,10 @@ export default function OddOneOutScreen() {
     setScreen('playing');
     setGameOverEarly(false);
     return { m, diff, count, tl };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    // The setters are listed because the React Compiler infers them as
+    // dependencies of this async callback; they are stable, so nothing changes
+    // at runtime, but an empty array here counts as broken memoization.
+  }, [setQuestionCount, setDifficulty, setTimeLimit]);
 
   const startClock = useCallback((seconds: number, onExpire: () => void) => {
     stopClock();
@@ -138,6 +141,13 @@ export default function OddOneOutScreen() {
       });
     }, 1000);
   }, []);
+
+  const handleTimeout = (r: OddRound) => {
+    setAnswered(true);
+    setSelected(null);
+    const oddWordId = r.items[r.oddIndex].wordId;
+    getDb().recordAttempt(oddWordId, 'game:odd-one-out', false, 0).catch(() => {});
+  };
 
   const buildNextRound = useCallback(
     (pool: OddWordMeta[], diff: Difficulty, tl: TimeLimit) => {
@@ -174,25 +184,25 @@ export default function OddOneOutScreen() {
       if (tl !== 'none') {
         startClock(Number(tl), () => handleTimeout(built!));
       }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     },
     [correctCount, startClock]
   );
 
-  useEffect(() => {
-    load().then(({ m, diff, count, tl }) => {
-      if (m.length > 0) buildNextRound(m, diff, tl);
-    });
-    return () => stopClock();
+  const start = useCallback(
+    () =>
+      load().then(({ m, diff, count, tl }) => {
+        if (m.length > 0) buildNextRound(m, diff, tl);
+      }),
+    // buildNextRound is left out on purpose: the first round is built once, on
+    // mount, and buildNextRound changes with the score.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    [load]
+  );
+  useLoadOnMount(start);
 
-  const handleTimeout = (r: OddRound) => {
-    setAnswered(true);
-    setSelected(null);
-    const oddWordId = r.items[r.oddIndex].wordId;
-    getDb().recordAttempt(oddWordId, 'game:odd-one-out', false, 0).catch(() => {});
-  };
+  useEffect(() => {
+    return () => stopClock();
+  }, []);
 
   const selectOption = (i: number) => {
     if (answered || !round) return;

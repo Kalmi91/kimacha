@@ -18,6 +18,7 @@ import GameOverCard from '@/components/games/GameOverCard';
 import GlossText from '@/components/games/GlossText';
 import GameSettingsSheet, { type SettingField } from '@/components/games/GameSettingsSheet';
 import type { GlossInfo } from '@/lib/games/gloss';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.3 (F1, memory-pairs). K8 DÖNTÉS: default 4x4 (8 pairs), word ↔
 // meaning only (sentence-gap / voice pairing not built), TTS on match.
@@ -82,6 +83,24 @@ export default function MemoryPairsScreen() {
 
   const session = useGameSession({ startLives: 0 });
 
+  const startRound = useCallback(async (p: string, learned: string, lvl: Level, grid: keyof typeof GRID_SIZES) => {
+    const pairsNeeded = GRID_SIZES[grid].pairs;
+    const pool: PoolEntry[] = await getLearnedPool({ pair: p, learnedLang: learned, level: lvl, minSize: pairsNeeded });
+    const entries = pool.slice(0, pairsNeeded);
+
+    const deck: MemCard[] = [];
+    for (const entry of entries) {
+      deck.push({ id: `${entry.wordId}-l`, wordId: entry.wordId, side: 'learned', text: entry.learned, isNew: entry.isNew, matched: false });
+      deck.push({ id: `${entry.wordId}-n`, wordId: entry.wordId, side: 'native', text: entry.native, isNew: entry.isNew, matched: false });
+    }
+    setCards(shuffleDeck(deck));
+    setFlipped([]);
+    setMismatches(0);
+    introducedRef.current = new Set();
+    recordedRef.current = false;
+    session.reset();
+  }, [session]);
+
   const load = useCallback(async () => {
     const db = getDb();
     const onboarding = await db.getOnboarding();
@@ -108,30 +127,12 @@ export default function MemoryPairsScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const startRound = useCallback(async (p: string, learned: string, lvl: Level, grid: keyof typeof GRID_SIZES) => {
-    const pairsNeeded = GRID_SIZES[grid].pairs;
-    const pool: PoolEntry[] = await getLearnedPool({ pair: p, learnedLang: learned, level: lvl, minSize: pairsNeeded });
-    const entries = pool.slice(0, pairsNeeded);
-
-    const deck: MemCard[] = [];
-    for (const entry of entries) {
-      deck.push({ id: `${entry.wordId}-l`, wordId: entry.wordId, side: 'learned', text: entry.learned, isNew: entry.isNew, matched: false });
-      deck.push({ id: `${entry.wordId}-n`, wordId: entry.wordId, side: 'native', text: entry.native, isNew: entry.isNew, matched: false });
-    }
-    setCards(shuffleDeck(deck));
-    setFlipped([]);
-    setMismatches(0);
-    introducedRef.current = new Set();
-    recordedRef.current = false;
-    session.reset();
-  }, [session]);
+  useLoadOnMount(load);
 
   useEffect(() => {
-    load();
     return () => {
       if (revealTimer.current) clearTimeout(revealTimer.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const saveSettings = useCallback((next: { gridSize: string; tts: boolean }) => {
