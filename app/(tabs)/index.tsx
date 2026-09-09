@@ -24,6 +24,7 @@ import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { DEFAULT_REQUEUE_LEVEL, requeueGapFor, requeueIndex } from '@/lib/requeueGap';
+import { deferRecent, recentKey, rememberRecent } from '@/lib/recentGuard';
 import { filterLockedSentences } from '@/lib/grammar/tenseGate';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { cardIcon } from '@/lib/cardIcons';
@@ -180,6 +181,10 @@ export default function LearnScreen() {
   // Guards advance() against double-fire on the same card while its persistence
   // (several awaited DB writes) is still running.
   const advancingRef = useRef(false);
+
+  // FB213: a mostanában látott kártyák kulcsai, a sor újraépítésekor ezek
+  // hátra kerülnek (lib/recentGuard.ts). Session-szintű, nem megy DB-be.
+  const recentRef = useRef<string[]>([]);
 
 
   // `stateMap` = szavankénti FSRS állapot. A topic-készültség EBBŐL dől el
@@ -804,7 +809,9 @@ export default function LearnScreen() {
     if (newItems.length === 0) {
       setDone(true);
     } else {
-      setQueue(newItems);
+      // FB213: az imént látott lapok hátra, hogy a nehézség-beállítás a rendes
+      // Good/Again úton is számítson, ne csak a kézi vissza-sorolásnál.
+      setQueue(deferRecent(newItems, recentRef.current));
       setCurrentIndex(0);
     }
     resetCardState();
@@ -861,6 +868,9 @@ export default function LearnScreen() {
     const item = current;
     const startTime = cardStartTime;
     spendNewWordBadge(item);
+    // FB213: a most megválaszolt lap felkerül a „mostanában látott" listára, még a
+    // sor újraépítése előtt, hogy az újraépítés már hátra tudja sorolni.
+    recentRef.current = rememberRecent(recentRef.current, recentKey(item), requeueGapFor(requeueLevel));
     const next = currentIndex + 1;
     const midQueue = next < queue.length;
 
@@ -907,6 +917,9 @@ export default function LearnScreen() {
   const advanceNoRating = async () => {
     if (!current || advancingRef.current) return;
     advancingRef.current = true;
+    // FB213: az elhalasztott lap is „látott", különben az újraépítés azonnal
+    // visszahozza azt, amit a tanuló épp félretett.
+    recentRef.current = rememberRecent(recentRef.current, recentKey(current), requeueGapFor(requeueLevel));
     const next = currentIndex + 1;
     const midQueue = next < queue.length;
     if (midQueue) {
