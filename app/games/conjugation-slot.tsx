@@ -173,6 +173,12 @@ export default function ConjugationSlotScreen() {
     }, 1000);
   }, []);
 
+  const handleTimeout = () => {
+    setAnswered(true);
+    setSelected(null);
+    if (round) getDb().recordAttempt(round.wordId, 'game:conjugation-slot', false, 0).catch(() => {});
+  };
+
   const buildNextRound = useCallback(
     (pool: ConjugationCandidate[], flags: Record<Tense, boolean>, irregular: boolean, tl: TimeLimit) => {
       stopClock();
@@ -196,8 +202,10 @@ export default function ConjugationSlotScreen() {
       if (tl !== 'none') {
         startClock(Number(tl), () => handleTimeout());
       }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     },
+    // handleTimeout is left out on purpose: it is recreated every render, so
+    // listing it would rebuild buildNextRound on every render.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [correctCount, startClock]
   );
 
@@ -208,12 +216,6 @@ export default function ConjugationSlotScreen() {
     return () => stopClock();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const handleTimeout = () => {
-    setAnswered(true);
-    setSelected(null);
-    if (round) getDb().recordAttempt(round.wordId, 'game:conjugation-slot', false, 0).catch(() => {});
-  };
 
   const selectOption = (opt: string) => {
     if (answered || !round) return;

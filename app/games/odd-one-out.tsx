@@ -120,7 +120,6 @@ export default function OddOneOutScreen() {
     setScreen('playing');
     setGameOverEarly(false);
     return { m, diff, count, tl };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const startClock = useCallback((seconds: number, onExpire: () => void) => {
@@ -138,6 +137,13 @@ export default function OddOneOutScreen() {
       });
     }, 1000);
   }, []);
+
+  const handleTimeout = (r: OddRound) => {
+    setAnswered(true);
+    setSelected(null);
+    const oddWordId = r.items[r.oddIndex].wordId;
+    getDb().recordAttempt(oddWordId, 'game:odd-one-out', false, 0).catch(() => {});
+  };
 
   const buildNextRound = useCallback(
     (pool: OddWordMeta[], diff: Difficulty, tl: TimeLimit) => {
@@ -174,7 +180,6 @@ export default function OddOneOutScreen() {
       if (tl !== 'none') {
         startClock(Number(tl), () => handleTimeout(built!));
       }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     },
     [correctCount, startClock]
   );
@@ -186,13 +191,6 @@ export default function OddOneOutScreen() {
     return () => stopClock();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const handleTimeout = (r: OddRound) => {
-    setAnswered(true);
-    setSelected(null);
-    const oddWordId = r.items[r.oddIndex].wordId;
-    getDb().recordAttempt(oddWordId, 'game:odd-one-out', false, 0).catch(() => {});
-  };
 
   const selectOption = (i: number) => {
     if (answered || !round) return;

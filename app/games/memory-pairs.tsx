@@ -82,6 +82,24 @@ export default function MemoryPairsScreen() {
 
   const session = useGameSession({ startLives: 0 });
 
+  const startRound = useCallback(async (p: string, learned: string, lvl: Level, grid: keyof typeof GRID_SIZES) => {
+    const pairsNeeded = GRID_SIZES[grid].pairs;
+    const pool: PoolEntry[] = await getLearnedPool({ pair: p, learnedLang: learned, level: lvl, minSize: pairsNeeded });
+    const entries = pool.slice(0, pairsNeeded);
+
+    const deck: MemCard[] = [];
+    for (const entry of entries) {
+      deck.push({ id: `${entry.wordId}-l`, wordId: entry.wordId, side: 'learned', text: entry.learned, isNew: entry.isNew, matched: false });
+      deck.push({ id: `${entry.wordId}-n`, wordId: entry.wordId, side: 'native', text: entry.native, isNew: entry.isNew, matched: false });
+    }
+    setCards(shuffleDeck(deck));
+    setFlipped([]);
+    setMismatches(0);
+    introducedRef.current = new Set();
+    recordedRef.current = false;
+    session.reset();
+  }, [session]);
+
   const load = useCallback(async () => {
     const db = getDb();
     const onboarding = await db.getOnboarding();
@@ -107,24 +125,6 @@ export default function MemoryPairsScreen() {
     await startRound(activePair, target, levelData.level as Level, (savedGrid in GRID_SIZES ? savedGrid : '4x4') as any);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const startRound = useCallback(async (p: string, learned: string, lvl: Level, grid: keyof typeof GRID_SIZES) => {
-    const pairsNeeded = GRID_SIZES[grid].pairs;
-    const pool: PoolEntry[] = await getLearnedPool({ pair: p, learnedLang: learned, level: lvl, minSize: pairsNeeded });
-    const entries = pool.slice(0, pairsNeeded);
-
-    const deck: MemCard[] = [];
-    for (const entry of entries) {
-      deck.push({ id: `${entry.wordId}-l`, wordId: entry.wordId, side: 'learned', text: entry.learned, isNew: entry.isNew, matched: false });
-      deck.push({ id: `${entry.wordId}-n`, wordId: entry.wordId, side: 'native', text: entry.native, isNew: entry.isNew, matched: false });
-    }
-    setCards(shuffleDeck(deck));
-    setFlipped([]);
-    setMismatches(0);
-    introducedRef.current = new Set();
-    recordedRef.current = false;
-    session.reset();
-  }, [session]);
 
   useEffect(() => {
     load();

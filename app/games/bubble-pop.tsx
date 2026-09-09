@@ -146,6 +146,10 @@ export default function BubblePopScreen() {
   const roundIndexRef = useRef(0); // 0-based, source of truth; `round` state mirrors it for display only
   const recordedRef = useRef(false);
   const clockIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  // advanceRound() and startNextRound() call each other, so the clock started
+  // inside startNextRound() reaches it through this ref rather than a forward
+  // reference to a value declared further down.
+  const advanceRoundRef = useRef<() => void>(() => {});
 
   const boardHeight = 420;
   const boardWidth = Math.min(windowWidth - 32, 380);
@@ -260,7 +264,7 @@ export default function BubblePopScreen() {
           if (v <= 1) {
             if (clockIntervalRef.current) clearInterval(clockIntervalRef.current);
             clockIntervalRef.current = null;
-            advanceRound();
+            advanceRoundRef.current();
             return null;
           }
           return v - 1;
@@ -292,6 +296,10 @@ export default function BubblePopScreen() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [startNextRound]);
+
+  useEffect(() => {
+    advanceRoundRef.current = advanceRound;
+  }, [advanceRound]);
 
   useEffect(() => {
     if (meta.length > 0 && round === 0 && bubbles.length === 0 && !session.over && !gameOverEarly) {
