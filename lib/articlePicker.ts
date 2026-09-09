@@ -13,12 +13,25 @@ export const ARTICLE_OPTIONS = ['el', 'la', 'los', 'las'] as const;
 
 export type ArticlePick = '' | (typeof ARTICLE_OPTIONS)[number];
 
+// Issue #3: melyik nyelven van egyáltalán névelő-gombsor, és milyen alakokkal.
+// A svéd (en/ett) vagy a német (der/die/das) így egy bejegyzés, nem egy újabb
+// `||` ág ebben a függvényben.
+const ARTICLES_BY_LANG: Record<string, readonly string[]> = {
+  es: ARTICLE_OPTIONS,
+};
+
 /**
- * Megjelenik-e a gombsor. Csak akkor, ha a beírandó nyelv a spanyol és a kártya
- * főnevet kérdez: igénél és melléknévnél nincs mit választani.
+ * Megjelenik-e a gombsor. Csak akkor, ha a beírandó nyelvnek van névelő-
+ * készlete, és a kártya főnevet kérdez: igénél és melléknévnél nincs mit
+ * választani.
  */
 export function articlePickerApplies(backLang: string, pos: string | undefined): boolean {
-  return backLang === 'es' && pos === 'noun';
+  return !!ARTICLES_BY_LANG[backLang] && pos === 'noun';
+}
+
+/** Az adott nyelv névelői, üres tömb, ha a nyelvnek nincs gombsora. */
+export function articlesFor(backLang: string): readonly string[] {
+  return ARTICLES_BY_LANG[backLang] ?? [];
 }
 
 /** Amit az értékelő lát: a választott névelő és a begépelt szó egy stringben. */

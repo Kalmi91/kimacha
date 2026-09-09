@@ -1,5 +1,9 @@
 @AGENTS.md
 
+<!-- Issue #3: az `AGENTS.md` symlink egy privát repóba, tehát friss klónban
+     hiányzik, és a fenti import némán elmarad. Ami belőle egy közreműködőnek
+     tényleg kell, az a publikus `docs/NORTH-STAR.md`-ben van. -->
+
 ## Észak-csillag (a tanulási modell végcélja)
 
 Minden Kimacha-munka ehhez mérendő, teljes spec: `AGENTS.md` „🧭 ÉSZAK-CSILLAG" szekció.

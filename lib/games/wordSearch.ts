@@ -53,11 +53,16 @@ const DIRECTION_VECTORS: Record<WordSearchDirections, [number, number][]> = {
 // á, é is bekerül, hogy ne legyen árulkodó)". A rough Spanish frequency table
 // (repeated letters weight more often); any other learned language falls back
 // to a plain, unweighted Latin alphabet.
-const FILLER_ES = 'EEEEAAAAOOOOSSSSRRRRNNNNIIIILLLLDDDDTTTTCCCCUUUUMMMMPPPPBBGGVVYYQQHHFFZZJJÑÁÉÍÓÚ';
 const FILLER_DEFAULT = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
+// Issue #3: nyelvenkénti kitöltő-ábécé táblából. Aminek nincs saját sora, az a
+// sima latin ábécét kapja; egy új nyelv egy bejegyzés, nem egy `if` ág.
+const FILLER_BY_LANG: Record<string, string> = {
+  es: 'EEEEAAAAOOOOSSSSRRRRNNNNIIIILLLLDDDDTTTTCCCCUUUUMMMMPPPPBBGGVVYYQQHHFFZZJJÑÁÉÍÓÚ',
+};
+
 function fillerAlphabet(lang: string): string {
-  return lang === 'es' ? FILLER_ES : FILLER_DEFAULT;
+  return FILLER_BY_LANG[lang] ?? FILLER_DEFAULT;
 }
 
 export function normalizeForGrid(word: string): string {
