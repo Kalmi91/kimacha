@@ -10,6 +10,7 @@ import { getGameDef, gameName } from '@/lib/games/registry';
 import { getGrammarTopics, type GrammarTopicData } from '@/lib/games/content';
 import { getGameBest, recordGameResult } from '@/lib/games/scoring';
 import GrammarDrill from '@/components/grammar/GrammarDrill';
+import MoreBlocks from '@/components/grammar/MoreBlocks';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.11 (F3, grammar-choice): "Melyik a helyes?" plusz magyarázat.
@@ -163,7 +164,11 @@ export default function GrammarChoiceScreen() {
           <Pressable style={[styles.ruleModal, { backgroundColor: colors.card }]} onPress={() => {}}>
             <Text style={[styles.explainHeader, { color: colors.text }]}>{s.games.ruleButton}</Text>
             <Text style={[styles.explainText, { color: colors.text }]}>{topic.rule[contentLang] ?? topic.rule.en}</Text>
-            {topic.more ? <Text style={[styles.explainText, { color: colors.tabIconDefault, marginTop: 8 }]}>{topic.more[contentLang] ?? topic.more.en}</Text> : null}
+            {topic.more ? (
+              <View style={styles.ruleMore}>
+                <MoreBlocks more={topic.more} contentLang={contentLang} color={colors.tabIconDefault} />
+              </View>
+            ) : null}
           </Pressable>
         </Pressable>
       </Modal>
@@ -215,4 +220,5 @@ const styles = StyleSheet.create({
   summaryBtn: { flex: 1 },
   overlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', alignItems: 'center', justifyContent: 'center', padding: 24 },
   ruleModal: { borderRadius: 20, padding: 24, gap: 12, width: '100%', maxWidth: 400 },
+  ruleMore: { marginTop: 4 },
 });

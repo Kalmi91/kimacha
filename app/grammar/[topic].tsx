@@ -14,6 +14,7 @@ import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import GlossText from '@/components/games/GlossText';
 import GrammarDrill from '@/components/grammar/GrammarDrill';
+import MoreBlocks from '@/components/grammar/MoreBlocks';
 import FeedbackButton from '@/components/FeedbackModal';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
@@ -209,7 +210,7 @@ export default function GrammarLessonScreen() {
           <>
             <Text style={[styles.sectionLabel, { color: colors.tint }]}>{s.grammar.exceptionsLabel}</Text>
             <View style={[styles.card, { backgroundColor: colors.card }]}>
-              <Text style={[styles.ruleText, { color: colors.text }]}>{lesson.more[contentLang] ?? lesson.more.en}</Text>
+              <MoreBlocks more={lesson.more} contentLang={contentLang} color={colors.text} />
             </View>
           </>
         ) : null}
