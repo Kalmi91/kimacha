@@ -7,7 +7,7 @@ import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb } from '@/lib/database';
-import { type WordEntry, getWordsForLevel, getWordsForTopic, findWordByText, normalizeWordToken, LEVELS, type Level } from '@/data/words';
+import { type WordEntry, getWordsForLevel, getWordsUpToLevel, getWordsForTopic, findWordByText, normalizeWordToken, LEVELS, type Level } from '@/data/words';
 import TappableSentence, { type TokenState } from '@/components/TappableSentence';
 import { getTopicsForLevel, hasTopics, getTopicName, getSubLevelForTopic, getTopicsForSubLevel, getSubLevelName, type TopicDef } from '@/data/topics';
 import { t, stringsFor } from '@/lib/i18n';
@@ -458,12 +458,16 @@ export default function LearnScreen() {
     setArticlePickerOn(await db.getArticlePicker());
     setRequeueLevel(await db.getRequeueLevel());
     const activeWordIds = activeWords.map(w => w.id);
+    // FB207: az ismétlés köre a szint ALATTI szinteket is tartalmazza, hogy az A1
+    // megkezdett szavai A2-ben is visszajöjjenek. Új szó továbbra is csak az aktív
+    // témából/szintből jön, ezért marad két külön kör.
+    const reviewWordIds = getWordsUpToLevel(currentLevel, learned).map(w => w.id);
     const rows = useTopics
-      ? await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL)
+      ? await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL, reviewWordIds)
       : await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
     // FB174: the whole due pile in the same scope, not just what fits in this queue.
     const dueReviewWords = useTopics
-      ? await db.countDueReviewWords(activeWordIds)
+      ? await db.countDueReviewWords(reviewWordIds)
       : await db.countDueReviewWordsForLevel(currentLevel);
     // FB196: a mondat-kártyák nem hozhatnak feloldatlan nyelvtant, akármelyik
     // úton kerültek a sorba (szint, téma, kölcsönzés).
@@ -790,8 +794,10 @@ export default function LearnScreen() {
         await db.ensureCard(w.id, 'word');
         await db.ensureCard(w.id, 'sentence');
       }
-      newRows = await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL);
-      dueReviewWords2 = await db.countDueReviewWords(activeWordIds);
+      // FB207: ugyanaz a kumulált ismétlés-kör, mint a session eleji építésnél.
+      const reviewWordIds2 = getWordsUpToLevel(currentLevel, learned).map(w => w.id);
+      newRows = await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL, reviewWordIds2);
+      dueReviewWords2 = await db.countDueReviewWords(reviewWordIds2);
     } else {
       setBorrowedTopics(new Map());
       newRows = await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);

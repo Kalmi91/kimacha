@@ -18,7 +18,10 @@ export interface DB {
   getLevel(): Promise<{ level: string; correct_streak: number; mistakes_in_window: number; fail_streak: number }>;
   updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number): Promise<void>;
   getDueCardsForLevel(level: string, limit: number): Promise<any[]>;
-  getDueCardsForWordIds(wordIds: number[], limit: number): Promise<any[]>;
+  // FB207: `wordIds` mondja meg, honnan jöhet ÚJ szó, `reviewWordIds` pedig, mit
+  // szabad ismételni. A kettő azért válik szét, hogy az alacsonyabb szintek
+  // megkezdett szavai visszajöjjenek, új szót viszont továbbra se hozzanak.
+  getDueCardsForWordIds(wordIds: number[], limit: number, reviewWordIds?: number[]): Promise<any[]>;
   // FB190: szabad gyakorlás, ha a szinten már nincs új szó. Esedékesség NÉLKÜL
   // ad vissza megkezdett szókártyákat, véletlen sorrendben.
   getPracticeCardsForLevel(level: string, limit: number): Promise<any[]>;
@@ -479,10 +482,13 @@ class SQLiteDB implements DB {
   }
 
   async getDueCardsForLevel(level: string, limit: number) {
-    const { getWordsForLevel } = require('@/data/words');
-    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
+    const { getWordsForLevel, getWordsUpToLevel } = require('@/data/words');
+    const lang = this.activePair.split('-')[1];
+    const levelWords = getWordsForLevel(level, lang);
     const wordIds = levelWords.map((w: any) => w.id);
-    return this.getDueCardsForWordIds(wordIds, limit);
+    // FB207: új szó csak erről a szintről, ismételni viszont az alatta lévőkből is.
+    const reviewIds = getWordsUpToLevel(level, lang).map((w: any) => w.id);
+    return this.getDueCardsForWordIds(wordIds, limit, reviewIds);
   }
 
   // FB174: same window as the review half of getDueCardsForWordIds (reps > 0, the
@@ -500,8 +506,10 @@ class SQLiteDB implements DB {
   }
 
   async countDueReviewWordsForLevel(level: string) {
-    const { getWordsForLevel } = require('@/data/words');
-    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
+    // FB207: a fejléc „N szó, M adag" száma ugyanazt a kumulált kört nézze, mint
+    // amiből az ismétlések jönnek, különben kevesebbet ígér, mint amit ad.
+    const { getWordsUpToLevel } = require('@/data/words');
+    const levelWords = getWordsUpToLevel(level, this.activePair.split('-')[1]);
     return this.countDueReviewWords(levelWords.map((w: any) => w.id));
   }
 
@@ -521,10 +529,14 @@ class SQLiteDB implements DB {
     );
   }
 
-  async getDueCardsForWordIds(wordIds: number[], limit: number) {
+  async getDueCardsForWordIds(wordIds: number[], limit: number, reviewWordIds?: number[]) {
     const db = await this.open();
     if (wordIds.length === 0) return [];
+    // FB207: az ismétlés köre tágabb lehet, mint az új szavaké (a régebbi szintek
+    // megkezdett szavai). Ha a hívó nem ad külön kört, marad a régi viselkedés.
+    const reviewIds = reviewWordIds && reviewWordIds.length > 0 ? reviewWordIds : wordIds;
     const placeholders = wordIds.map(() => '?').join(',');
+    const reviewPlaceholders = reviewIds.map(() => '?').join(',');
     const now = new Date().toISOString();
     const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
 
@@ -537,13 +549,13 @@ class SQLiteDB implements DB {
     );
 
     const reviewWords = await db.getAllAsync(
-      `SELECT * FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND reps > 0 AND buried = 0 AND pair = ? AND due <= ? ORDER BY due ASC LIMIT ?`,
-      [...wordIds, this.activePair, lookahead, reviewLimit]
+      `SELECT * FROM cards WHERE word_id IN (${reviewPlaceholders}) AND type = 'word' AND reps > 0 AND buried = 0 AND pair = ? AND due <= ? ORDER BY due ASC LIMIT ?`,
+      [...reviewIds, this.activePair, lookahead, reviewLimit]
     );
 
     const reviewedWordIds = await db.getAllAsync<any>(
-      `SELECT DISTINCT word_id FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND pair = ? AND (reps >= 2 OR buried = 1)`,
-      [...wordIds, this.activePair]
+      `SELECT DISTINCT word_id FROM cards WHERE word_id IN (${reviewPlaceholders}) AND type = 'word' AND pair = ? AND (reps >= 2 OR buried = 1)`,
+      [...reviewIds, this.activePair]
     );
     const reviewedSet = new Set(reviewedWordIds.map((r: any) => r.word_id));
 
