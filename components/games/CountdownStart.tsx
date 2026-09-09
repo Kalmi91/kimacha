@@ -21,8 +21,10 @@ export default function CountdownStart({ onDone, stepMs = 700 }: Props) {
 
   const steps = ['3', '2', '1', s.games.go];
   const [index, setIndex] = useState(0);
-  const scale = useRef(new Animated.Value(0.5)).current;
-  const opacity = useRef(new Animated.Value(0)).current;
+  // Lazy useState rather than useRef().current: the animated values must
+  // survive re-renders, but reading a ref during render is not allowed.
+  const [scale] = useState(() => new Animated.Value(0.5));
+  const [opacity] = useState(() => new Animated.Value(0));
   const doneRef = useRef(false);
 
   useEffect(() => {

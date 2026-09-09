@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
@@ -15,6 +15,7 @@ import { speechLang } from '@/lib/languages';
 import GlossText from '@/components/games/GlossText';
 import GrammarDrill from '@/components/grammar/GrammarDrill';
 import FeedbackButton from '@/components/FeedbackModal';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // One grammar lesson: the rule first, then the practice.
 //
@@ -51,9 +52,7 @@ export default function GrammarLessonScreen() {
     setLesson(lessonFor(target, String(topicId)) ?? null);
   }, [topicId]);
 
-  useEffect(() => {
-    load();
-  }, [load]);
+  useLoadOnMount(load);
 
   const entry = syllabusTopic(String(topicId));
 
