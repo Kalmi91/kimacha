@@ -218,7 +218,7 @@
       "kind": "listen_dialogue",
       "instruction": "TAREA 4. Va a escuchar un mensaje en el teléfono. Se escucha dos veces. Conteste a las preguntas.",
       "audio": [
-        "Hola, Kálmán, soy Berenice.",
+        "Hola, Daniel, soy Nuria.",
         "Te llamo por la fiesta del viernes. Es en mi casa, en la calle Rébsamen, número 431.",
         "Empieza a las ocho de la noche. Puedes traer a un amigo.",
         "Yo hago la comida, pero necesito bebidas: por favor, trae agua y jugo de naranja, no traigas cerveza.",
@@ -227,16 +227,16 @@
       ],
       "questions": [
         { "q": "¿Qué día es la fiesta?", "options": ["El jueves.", "El viernes.", "El sábado."], "correct": 1 },
-        { "q": "¿Dónde es la fiesta?", "options": ["En casa de Berenice.", "En un restaurante.", "En la calle, en un parque."], "correct": 0 },
+        { "q": "¿Dónde es la fiesta?", "options": ["En casa de Nuria.", "En un restaurante.", "En la calle, en un parque."], "correct": 0 },
         { "q": "¿A qué hora empieza?", "options": ["A las seis.", "A las ocho.", "A las once."], "correct": 1 },
         {
-          "q": "¿Qué tiene que llevar Kálmán?",
+          "q": "¿Qué tiene que llevar Daniel?",
           "options": ["Comida.", "Agua y jugo.", "Cerveza."],
           "correct": 1,
-          "why": "Berenice hace la comida y pide bebidas, pero no cerveza."
+          "why": "Nuria hace la comida y pide bebidas, pero no cerveza."
         },
         { "q": "¿Hasta qué hora está abierta la puerta?", "options": ["Hasta las ocho.", "Hasta las once.", "Toda la noche."], "correct": 1 },
-        { "q": "¿Qué día tiene que llamar Kálmán?", "options": ["El jueves.", "El viernes.", "El domingo."], "correct": 0 }
+        { "q": "¿Qué día tiene que llamar Daniel?", "options": ["El jueves.", "El viernes.", "El domingo."], "correct": 0 }
       ]
     }
   ],
@@ -277,7 +277,7 @@
       "instruction": "TAREA 1. Presentación personal. Hable en voz alta entre uno y dos minutos. Después escuche el modelo y valore su respuesta.",
       "prompt": "Preséntese: nombre, edad, nacionalidad, dónde vive, con quién vive, qué hace (trabajo o estudios) y qué idiomas habla.",
       "bullets": ["nombre y edad", "nacionalidad y ciudad", "familia", "trabajo o estudios", "idiomas"],
-      "model": "Me llamo Kálmán y tengo treinta y cuatro años. Soy húngaro, pero ahora vivo en la Ciudad de México, en la colonia Narvarte. Vivo con mi novia. Trabajo con computadoras y estudio español todos los días. Hablo húngaro, inglés y un poco de español."
+      "model": "Me llamo Daniel y tengo treinta y cuatro años. Soy húngaro, pero ahora vivo en la Ciudad de México, en la colonia Narvarte. Vivo con mi novia. Trabajo con computadoras y estudio español todos los días. Hablo húngaro, inglés y un poco de español."
     },
     {
       "id": "es-a1-s2",

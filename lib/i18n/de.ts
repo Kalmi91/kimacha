@@ -383,6 +383,8 @@ export default {
     playsLeft: (n: number) => (n > 0 ? `Du kannst es noch ${n}-mal hören` : 'Du hast es schon zweimal gehört'),
     noVoice: 'Dein Handy hat keine Stimme für diese Sprache, die Aufnahme kann nicht abgespielt werden. Du kannst stattdessen den Text lesen.',
     showTranscript: 'Text anzeigen',
+    speakerA: 'Erste Stimme',
+    speakerB: 'Zweite Stimme',
     hideTranscript: 'Text ausblenden',
     true_: 'Richtig',
     false_: 'Falsch',

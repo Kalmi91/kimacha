@@ -396,6 +396,8 @@ export default {
     playsLeft: (n: number) => (n > 0 ? `Még ${n}-szer hallgathatod meg` : 'Kétszer már meghallgattad'),
     noVoice: 'A telefonodon nincs hang ehhez a nyelvhez, ezért a felvétel nem játszható le. Helyette elolvashatod a szöveget.',
     showTranscript: 'Szöveg megjelenítése',
+    speakerA: 'Első hang',
+    speakerB: 'Második hang',
     hideTranscript: 'Szöveg elrejtése',
     true_: 'Igaz',
     false_: 'Hamis',
