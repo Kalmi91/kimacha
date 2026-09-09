@@ -383,6 +383,8 @@ export default {
     playsLeft: (n: number) => (n > 0 ? `You can play it ${n} more time(s)` : 'You have played it twice'),
     noVoice: 'Your phone has no voice for this language, so the recording cannot be played. You can read the script instead.',
     showTranscript: 'Show the script',
+    speakerA: 'First speaker',
+    speakerB: 'Second speaker',
     hideTranscript: 'Hide the script',
     true_: 'True',
     false_: 'False',
