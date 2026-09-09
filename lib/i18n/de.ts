@@ -364,6 +364,7 @@ export default {
     startDrill: (n: number) => `Üben (${n} Fragen)`,
     backToRule: 'Regel noch einmal lesen',
     practiceAgain: 'Noch einmal üben',
+    nextTopic: 'Nächstes Thema',
     backToSyllabus: 'Zurück zum Kurs',
     doneGood: 'Diese Regel sitzt.',
     doneAgain: 'Lies die Regel lieber noch einmal, bevor es weitergeht.',

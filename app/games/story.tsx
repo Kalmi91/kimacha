@@ -310,10 +310,10 @@ export default function StoryScreen() {
           </View>
 
           <View style={styles.summaryButtons}>
-            <Pressable style={[styles.btn, styles.btnGhost, { borderColor: colors.tint }]} onPress={() => setScreen('list')}>
+            <Pressable style={[styles.btn, styles.btnGhost, styles.summaryBtn, { borderColor: colors.tint }]} onPress={() => setScreen('list')}>
               <Text style={[styles.btnGhostText, { color: colors.tint }]}>{s.games.backToHub}</Text>
             </Pressable>
-            <Pressable style={[styles.btn, { backgroundColor: colors.tint }]} onPress={() => openStory(story)}>
+            <Pressable style={[styles.btn, styles.summaryBtn, { backgroundColor: colors.tint }]} onPress={() => openStory(story)}>
               <Text style={styles.btnText}>{s.games.playAgain}</Text>
             </Pressable>
           </View>
@@ -453,6 +453,8 @@ const styles = StyleSheet.create({
   summaryBody: { padding: 24, alignItems: 'center', gap: 10 },
   summaryTitle: { fontSize: 26, fontWeight: '800' },
   summaryButtons: { flexDirection: 'row', gap: 12, marginTop: 16 },
+  // Kálmán 2026-09-09: a két gomb egyenlő széles, ne a felirat hossza döntse el.
+  summaryBtn: { flex: 1 },
   learnedBox: { width: '100%', gap: 8, marginTop: 12 },
   learnedHeader: { fontSize: 15, fontWeight: '700', marginBottom: 4 },
   learnedRow: { flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: StyleSheet.hairlineWidth, paddingVertical: 8, gap: 8 },

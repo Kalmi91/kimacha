@@ -527,6 +527,18 @@ export function syllabusTopic(id: string): SyllabusTopic | undefined {
   return GRAMMAR_SYLLABUS.find((t) => t.id === id);
 }
 
+/**
+ * Kálmán 2026-09-09 (drill Kész-képernyő): „tegyél bele egy gombot, hogy
+ * kovetkező topicot lehessen tanulni". A tanterv sorrendjében a következő téma,
+ * amihez MÁR VAN megírt lecke, tehát a gomb sosem visz üres képernyőre. A szint
+ * határán nem áll meg: a tanterv folytatódik a következő szinten.
+ */
+export function nextWrittenTopic(lang: string, topicId: string): SyllabusTopic | undefined {
+  const at = GRAMMAR_SYLLABUS.findIndex((t) => t.id === topicId);
+  if (at < 0) return undefined;
+  return GRAMMAR_SYLLABUS.slice(at + 1).find((t) => hasLesson(lang, t.id));
+}
+
 /** The authored lesson for a syllabus entry, if it has been written yet. */
 export function lessonFor(lang: string, topicId: string): GrammarTopicData | undefined {
   return getGrammarTopic(lang, topicId);

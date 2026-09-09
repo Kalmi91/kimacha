@@ -114,10 +114,10 @@ export default function GrammarChoiceScreen() {
           {s.games.best}: {best}
         </Text>
         <View style={styles.summaryButtons}>
-          <Pressable style={[styles.btn, styles.btnGhost, { borderColor: colors.tint }]} onPress={() => setScreen('topics')}>
+          <Pressable style={[styles.btn, styles.btnGhost, styles.summaryBtn, { borderColor: colors.tint }]} onPress={() => setScreen('topics')}>
             <Text style={[styles.btnGhostText, { color: colors.tint }]}>{s.games.backToHub}</Text>
           </Pressable>
-          <Pressable style={[styles.btn, { backgroundColor: colors.tint }]} onPress={() => startTopic(topic)}>
+          <Pressable style={[styles.btn, styles.summaryBtn, { backgroundColor: colors.tint }]} onPress={() => startTopic(topic)}>
             <Text style={styles.btnText}>{s.games.playAgain}</Text>
           </Pressable>
         </View>
@@ -209,6 +209,8 @@ const styles = StyleSheet.create({
   summaryTitle: { fontSize: 28, fontWeight: '800' },
   summaryScore: { fontSize: 22, fontWeight: '700' },
   summaryButtons: { flexDirection: 'row', gap: 12 },
+  // Kálmán 2026-09-09: a két gomb egyenlő széles, ne a felirat hossza döntse el.
+  summaryBtn: { flex: 1 },
   overlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', alignItems: 'center', justifyContent: 'center', padding: 24 },
   ruleModal: { borderRadius: 20, padding: 24, gap: 12, width: '100%', maxWidth: 400 },
 });
