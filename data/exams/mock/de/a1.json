@@ -201,7 +201,17 @@
       "instruction": "TEIL 1. Sich vorstellen. Sprechen Sie ein bis zwei Minuten laut. Hören Sie danach das Modell und bewerten Sie sich.",
       "prompt": "Stellen Sie sich vor: Name, Alter, Land, Wohnort, Familie, Arbeit oder Studium, Sprachen.",
       "bullets": ["Name und Alter", "Land und Stadt", "Familie", "Arbeit", "Sprachen"],
-      "model": "Ich heiße Daniel und ich bin vierunddreißig Jahre alt. Ich komme aus Ungarn, aber jetzt wohne ich in Mexiko-Stadt. Ich wohne mit meiner Freundin zusammen. Ich arbeite mit Computern und lerne jeden Tag Spanisch. Ich spreche Ungarisch, Englisch und ein bisschen Deutsch."
+      "model": "Ich heiße Daniel und ich bin vierunddreißig Jahre alt. Ich komme aus Ungarn, aber jetzt wohne ich in Mexiko-Stadt. Ich wohne mit meiner Freundin zusammen. Ich arbeite mit Computern und lerne jeden Tag Spanisch. Ich spreche Ungarisch, Englisch und ein bisschen Deutsch.",
+      "minWords": 35,
+      "points": [
+        { "id": "name", "label": "Sagt den Namen", "keywords": ["ich heiße", "ich heisse", "mein name"] },
+        { "id": "alter", "label": "Sagt das Alter", "keywords": ["jahre alt", "jahre"] },
+        { "id": "land", "label": "Sagt, woher er kommt", "keywords": ["ich komme aus", "ungarn", "ungar", "mexiko"] },
+        { "id": "wohnort", "label": "Sagt, wo er wohnt", "keywords": ["ich wohne in", "wohne in"] },
+        { "id": "familie", "label": "Sagt, mit wem er wohnt", "keywords": ["familie", "ich wohne mit", "meine frau", "meine freundin", "allein"] },
+        { "id": "arbeit", "label": "Sagt, was er macht", "keywords": ["ich arbeite", "ich studiere", "student", "beruf", "büro"] },
+        { "id": "sprachen", "label": "Sagt, welche Sprachen er spricht", "keywords": ["ich spreche", "sprache", "englisch", "deutsch", "ungarisch"] }
+      ]
     },
     {
       "id": "de-a1-s2",
@@ -209,7 +219,15 @@
       "instruction": "TEIL 2. Fragen stellen und antworten. Sprechen Sie laut. Hören Sie danach das Modell.",
       "prompt": "Thema „Wohnen“: Stellen Sie drei Fragen und beantworten Sie sie selbst (Wohnung, Zimmer, Nachbarn, Stadtteil).",
       "bullets": ["Wo wohnst du?", "Wie ist deine Wohnung?", "Was gibt es in der Nähe?"],
-      "model": "Wo wohnst du?, Ich wohne in Mexiko-Stadt, im Stadtteil Narvarte. Wie ist deine Wohnung?, Sie ist nicht groß: zwei Zimmer, eine Küche und ein Bad. Was gibt es in der Nähe?, In der Nähe gibt es einen Markt, eine Apotheke und einen Park. Die U-Bahn ist zehn Minuten zu Fuß entfernt."
+      "model": "Wo wohnst du?, Ich wohne in Mexiko-Stadt, im Stadtteil Narvarte. Wie ist deine Wohnung?, Sie ist nicht groß: zwei Zimmer, eine Küche und ein Bad. Was gibt es in der Nähe?, In der Nähe gibt es einen Markt, eine Apotheke und einen Park. Die U-Bahn ist zehn Minuten zu Fuß entfernt.",
+      "minWords": 35,
+      "points": [
+        { "id": "frage", "label": "Stellt Fragen", "keywords": ["wo wohnst", "wie ist", "was gibt es", "wohnst du", "hast du"] },
+        { "id": "wohnung", "label": "Spricht über die Wohnung", "keywords": ["wohnung", "haus", "zimmer"] },
+        { "id": "zimmer", "label": "Nennt die Zimmer", "keywords": ["küche", "bad", "wohnzimmer", "schlafzimmer", "zimmer"] },
+        { "id": "stadtteil", "label": "Spricht über Nachbarn oder Stadtteil", "keywords": ["nachbarn", "stadtteil", "viertel", "stadt"] },
+        { "id": "naehe", "label": "Sagt, was es in der Nähe gibt", "keywords": ["in der nähe", "es gibt", "supermarkt", "park"] }
+      ]
     },
     {
       "id": "de-a1-s3",
@@ -217,7 +235,16 @@
       "instruction": "TEIL 3. Bitten formulieren. Sprechen Sie laut. Hören Sie danach das Modell.",
       "prompt": "Sie sind im Restaurant. Bitten Sie um einen Tisch, fragen Sie nach dem Tagesmenü, bestellen Sie Essen und Trinken und bitten Sie um die Rechnung.",
       "bullets": ["ein Tisch", "das Tagesmenü", "Essen und Trinken", "die Rechnung"],
-      "model": "Guten Tag, haben Sie einen Tisch für zwei Personen? Danke. Was gibt es heute als Tagesmenü? Dann nehme ich bitte eine Suppe und danach Hähnchen mit Reis. Zum Trinken ein Wasser, bitte. Können wir bitte zahlen?"
+      "model": "Guten Tag, haben Sie einen Tisch für zwei Personen? Danke. Was gibt es heute als Tagesmenü? Dann nehme ich bitte eine Suppe und danach Hähnchen mit Reis. Zum Trinken ein Wasser, bitte. Können wir bitte zahlen?",
+      "minWords": 30,
+      "points": [
+        { "id": "tisch", "label": "Bittet um einen Tisch", "keywords": ["einen tisch", "tisch für"] },
+        { "id": "menue", "label": "Fragt nach dem Tagesmenü", "keywords": ["tagesmenü", "menü", "karte", "tagesgericht"] },
+        { "id": "essen", "label": "Bestellt Essen", "keywords": ["ich möchte", "ich nehme", "ich hätte gern", "bestellen"] },
+        { "id": "trinken", "label": "Bestellt Getränke", "keywords": ["trinken", "wasser", "ein bier", "kaffee", "saft"] },
+        { "id": "rechnung", "label": "Bittet um die Rechnung", "keywords": ["die rechnung", "zahlen", "bezahlen"] },
+        { "id": "hoeflichkeit", "label": "Benutzt Höflichkeitsformeln", "keywords": ["bitte", "danke", "guten tag", "guten abend"] }
+      ]
     }
   ]
 }

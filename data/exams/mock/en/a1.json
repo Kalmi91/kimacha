@@ -201,7 +201,17 @@
       "instruction": "PART 1. Introduce yourself. Speak out loud for one to two minutes, then compare with the model and rate yourself.",
       "prompt": "Introduce yourself: name, age, country, where you live, who you live with, work or studies, languages.",
       "bullets": ["name and age", "country and city", "family", "work or studies", "languages"],
-      "model": "My name is Daniel and I am thirty-four years old. I am from Hungary, but now I live in Mexico City, in the Narvarte area. I live with my girlfriend. I work with computers and I study Spanish every day. I speak Hungarian, English and a little Spanish."
+      "model": "My name is Daniel and I am thirty-four years old. I am from Hungary, but now I live in Mexico City, in the Narvarte area. I live with my girlfriend. I work with computers and I study Spanish every day. I speak Hungarian, English and a little Spanish.",
+      "minWords": 35,
+      "points": [
+        { "id": "name", "label": "Says their name", "keywords": ["my name is", "i am called", "call me"] },
+        { "id": "age", "label": "Says their age", "keywords": ["years old", "age"] },
+        { "id": "country", "label": "Says where they are from", "keywords": ["i am from", "i'm from", "hungary", "hungarian", "mexico"] },
+        { "id": "live", "label": "Says where they live", "keywords": ["i live in", "living in"] },
+        { "id": "family", "label": "Says who they live with", "keywords": ["i live with", "with my", "alone"] },
+        { "id": "work", "label": "Says what they do", "keywords": ["i work", "i study", "student", "my job", "office"] },
+        { "id": "languages", "label": "Says which languages they speak", "keywords": ["i speak", "language", "english", "spanish", "hungarian"] }
+      ]
     },
     {
       "id": "en-a1-s2",
@@ -209,7 +219,15 @@
       "instruction": "PART 2. Describe a place. Speak out loud, then compare with the model.",
       "prompt": "Describe your home and your area: what the flat is like, what rooms it has, what there is nearby (shops, park, transport).",
       "bullets": ["the flat", "the rooms", "the area", "what is nearby"],
-      "model": "My flat is not big. It has two bedrooms, a kitchen, a bathroom and a living room. The kitchen is small, but it has a big window. My area is quiet. Nearby there is a market, a chemist's and a park. The underground station is ten minutes away on foot."
+      "model": "My flat is not big. It has two bedrooms, a kitchen, a bathroom and a living room. The kitchen is small, but it has a big window. My area is quiet. Nearby there is a market, a chemist's and a park. The underground station is ten minutes away on foot.",
+      "minWords": 35,
+      "points": [
+        { "id": "home", "label": "Talks about the home", "keywords": ["my flat", "my house", "my apartment", "i live in a"] },
+        { "id": "rooms", "label": "Says what rooms it has", "keywords": ["rooms", "bedroom", "kitchen", "bathroom", "living room"] },
+        { "id": "area", "label": "Talks about the area", "keywords": ["area", "neighbourhood", "neighborhood", "street", "district"] },
+        { "id": "nearby", "label": "Says what is nearby", "keywords": ["near", "nearby", "close to", "there is a", "there are"] },
+        { "id": "opinion", "label": "Describes what it is like", "keywords": ["it is nice", "it's nice", "quiet", "big", "small", "i like"] }
+      ]
     },
     {
       "id": "en-a1-s3",
@@ -217,7 +235,16 @@
       "instruction": "PART 3. Ask for things in a situation. Speak out loud, then compare with the model.",
       "prompt": "You are in a restaurant. Ask for a table, ask about the menu of the day, order food and a drink, and ask for the bill.",
       "bullets": ["a table", "the menu of the day", "food and drink", "the bill"],
-      "model": "Good afternoon, do you have a table for two, please? Thank you. What is the menu of the day? Then I would like a soup and after that chicken with rice. To drink, water, please. Could we have the bill, please?"
+      "model": "Good afternoon, do you have a table for two, please? Thank you. What is the menu of the day? Then I would like a soup and after that chicken with rice. To drink, water, please. Could we have the bill, please?",
+      "minWords": 30,
+      "points": [
+        { "id": "table", "label": "Asks for a table", "keywords": ["a table", "table for"] },
+        { "id": "menu", "label": "Asks about the menu", "keywords": ["menu", "of the day", "today's"] },
+        { "id": "food", "label": "Orders food", "keywords": ["i would like", "i'd like", "can i have", "i want", "order"] },
+        { "id": "drink", "label": "Orders a drink", "keywords": ["to drink", "water", "coffee", "a beer", "juice"] },
+        { "id": "bill", "label": "Asks for the bill", "keywords": ["the bill", "the check", "pay"] },
+        { "id": "politeness", "label": "Uses polite phrases", "keywords": ["please", "thank you", "good evening", "hello"] }
+      ]
     }
   ]
 }
