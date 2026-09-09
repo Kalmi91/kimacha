@@ -11,6 +11,7 @@ export const languages: Language[] = [
   { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
   { code: 'pt', name: 'Português', flag: '🇵🇹' },
+  { code: 'sv', name: 'Svenska', flag: '🇸🇪' },
 ];
 
 // Issue #3: a párok listája KÉZI, nem kereszt-szorzat. A szorzat minden új
@@ -47,6 +48,7 @@ const SPEECH_LOCALE: Record<string, string> = {
   en: 'en-US',
   de: 'de-DE',
   fr: 'fr-FR',
+  sv: 'sv-SE',
   pt: 'pt-PT',
 };
 
