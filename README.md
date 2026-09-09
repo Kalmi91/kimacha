@@ -45,7 +45,7 @@ flowchart LR
 
 | Workflow | Trigger | What it does |
 | --- | --- | --- |
-| `ci.yml` | push / PR | typecheck (scoped) + lint + **Jest tests** (+ coverage artifact); concurrency-cancels superseded runs |
+| `ci.yml` | push / PR | typecheck (full project) + lint + **Jest tests** (+ coverage artifact); concurrency-cancels superseded runs |
 | `android.yml` | push to `main`, manual | Expo prebuild → **debug APK** via Gradle → artifact |
 | `android-release.yml` | `v*` tag, manual | prebuild → release build → **sign** (apksigner APK + jarsigner AAB) → on a tag, publish a **GitHub Release** with the artifacts |
 | `eas-build.yml` | manual | optional **EAS** cloud build (profile choice); EAS manages signing |
