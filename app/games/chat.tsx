@@ -16,6 +16,7 @@ import { getGameBest, recordGameResult } from '@/lib/games/scoring';
 import { loadVoices, hasVoiceFor, speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import GlossText from '@/components/games/GlossText';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.6 (F4, chat): tanácsadó beszélgetés valódi tudással, K24 szerint
 // újratervezve. A setup-kérdések (ha vannak) állapotot adnak (`context`), a
@@ -94,18 +95,7 @@ export default function ChatScreen() {
     setCanSpeak(hasVoiceFor(speechLang(target)));
   }, [talk]);
 
-  useEffect(() => {
-    load();
-  }, [load]);
-
-  // Az Átbeszélőből érkezve az egyetlen párbeszéd rögtön indul, egyszer:
-  // a beszélgetés végén a témalista maradjon elérhető.
-  useEffect(() => {
-    if (!talk || autoStarted.current || chats.length !== 1) return;
-    autoStarted.current = true;
-    startTopic(chats[0]);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [talk, chats]);
+  useLoadOnMount(load);
 
   const startTopic = (c: ChatData) => {
     setChat(c);
@@ -127,6 +117,15 @@ export default function ChatScreen() {
     setHistory(first ? [{ speaker: 'npc', text: firstText }] : []);
     setScreen('chat');
   };
+
+  // Az Átbeszélőből érkezve az egyetlen párbeszéd rögtön indul, egyszer:
+  // a beszélgetés végén a témalista maradjon elérhető.
+  useEffect(() => {
+    if (!talk || autoStarted.current || chats.length !== 1) return;
+    autoStarted.current = true;
+    startTopic(chats[0]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [talk, chats]);
 
   const pickSetupOption = (value: string) => {
     if (!chat) return;

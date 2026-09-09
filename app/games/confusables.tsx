@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View, Pressable } from 'react-native';
 import { useRouter } from 'expo-router';
 
@@ -16,6 +16,7 @@ import { getGameBest, recordGameResult } from '@/lib/games/scoring';
 import { loadVoices, hasVoiceFor, speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import GlossText from '@/components/games/GlossText';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.12 (F3, confusables): tanító-kártya, aztán vegyes dril.
 // K23 DÖNTÉS: a hallás utáni dril csak akkor kerül a körbe, ha az eszköznek
@@ -61,9 +62,7 @@ export default function ConfusablesScreen() {
     setAllowListening(hasVoiceFor(speechLang(target)));
   }, []);
 
-  useEffect(() => {
-    load();
-  }, [load]);
+  useLoadOnMount(load);
 
   const openSet = (st: ConfusablesSet) => {
     setSet(st);
