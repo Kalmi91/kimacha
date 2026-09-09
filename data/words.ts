@@ -10,6 +10,14 @@ export const LEVELS: Level[] = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 export type WordPos = 'noun' | 'verb' | 'adj' | 'adv' | 'pron' | 'prep' | 'num' | 'phrase';
 export type WordGender = 'm' | 'f' | 'mf' | 'n' | '-';
 
+// Issue #3, 4. szakasz: a mezők KÖTELEZŐEK, de minden szófájl `as WordEntry[]`
+// cast-tal jön be, ezért a fordító nem látja, ha egy bejegyzésből hiányzik
+// valamelyik. Egy hiányos sáv-bejegyzés így csak futásidőben bukna ki, üres
+// kártyaként. A cast nem tüntethető el (a JSON-modulok szerkezete tágabb, mint
+// a kézzel írt típus), ezért az ígéretet TESZT tartja: a
+// `lib/__tests__/corpusIntegrity.test.ts` „every corpus entry carries…" esete
+// minden korpuszra ellenőrzi. Egy új nyelvi sáv ugyanezt vállalja: a mai
+// spanyol, angol és magyar készlet mind a négy felszíni nyelvet hordozza.
 export interface WordEntry {
   id: number;
   level: Level;
