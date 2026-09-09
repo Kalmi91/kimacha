@@ -360,9 +360,12 @@ export function gameRoute(id: GameId): string {
 // lang", see app/(tabs)/tree.tsx's uiLang), not the app-chrome language t()
 // reads, a learner can study Spanish from English on a Hungarian phone, and
 // the game names should read in English, not Hungarian, in that case.
+// Issue #3: nem a nyelvkódokat soroljuk fel, hanem azt kérdezzük, van-e ilyen
+// kulcs a szövegen. Egy új nyelv így a LocalizedText bővítésével jön be, ezt a
+// függvényt nem kell hozzányúlni.
 function localized(text: LocalizedText, lang: string): string {
-  const key = (lang === 'hu' || lang === 'es' || lang === 'de' ? lang : 'en') as keyof LocalizedText;
-  return text[key] ?? text.en;
+  const value = (text as unknown as Record<string, string | undefined>)[lang];
+  return value ?? text.en;
 }
 
 export function gameName(game: GameDef, lang: string): string {
