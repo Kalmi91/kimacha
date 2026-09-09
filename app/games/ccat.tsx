@@ -28,6 +28,7 @@ import { shuffleArray, hashString } from '@/lib/shuffle';
 import { getGameBest, recordGameResult } from '@/lib/games/scoring';
 import GameSettingsSheet, { type SettingField } from '@/components/games/GameSettingsSheet';
 import CountdownStart from '@/components/games/CountdownStart';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.10 (F5, ccat). K17: no spatial items. K18: prompt-chrome
 // language switchable, default the learned language. K19: only the short
@@ -396,10 +397,10 @@ export default function CcatScreen() {
     [correctCount, startClock, contentLang]
   );
 
+  useLoadOnMount(load);
+
   useEffect(() => {
-    load();
     return () => stopClock();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // GAMES.md 4.10 loop: "Indul" -> 3-2-1 -> questions, with the run clock
@@ -428,7 +429,6 @@ export default function CcatScreen() {
         setClock(null);
       }
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [buildNextRound, load, startClock]);
 
   const recordTally = (kind: CcatItemKind, correct: boolean) => {

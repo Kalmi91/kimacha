@@ -17,6 +17,7 @@ import GameShell from '@/components/games/GameShell';
 import GameOverCard from '@/components/games/GameOverCard';
 import GlossText from '@/components/games/GlossText';
 import GameSettingsSheet, { type SettingField } from '@/components/games/GameSettingsSheet';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.4 (F1, word-search). K9 DÖNTÉS: the side list is always in the
 // SOURCE language (fixed, no toggle). Drag-select via PanResponder, no new
@@ -193,10 +194,7 @@ export default function WordSearchScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    load();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  useLoadOnMount(load);
 
   const saveSettings = (next: { gridSize: GridSizeKey; wordCount: number; dirs: WordSearchDirections }) => {
     getDb().setGameSettings('word-search', next).catch(() => {});
@@ -212,7 +210,14 @@ export default function WordSearchScreen() {
     return { row, col };
   };
 
-  const panResponder = useRef(
+  // Lazy useState rather than useRef().current: the responder must survive
+  // re-renders, but reading a ref during render is not allowed.
+  // The handlers read the sync refs so a drag sees the current grid instead of
+  // the snapshot from the render that built the responder, and the responder
+  // has to exist on the first render for the spread below, so this one
+  // render-time ref access is deliberate.
+  // eslint-disable-next-line react-hooks/refs
+  const [panResponder] = useState(() =>
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
@@ -252,7 +257,7 @@ export default function WordSearchScreen() {
         setSelStart(null);
       },
     })
-  ).current;
+  );
 
   const allFound = entries.length > 0 && entries.every((e) => found.has(normalizeForGrid(e.learned)));
 

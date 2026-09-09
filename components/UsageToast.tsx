@@ -32,8 +32,10 @@ export default function UsageToast() {
   // strings when the toast actually fires instead.
   const [message, setMessage] = useState(() => t().usage.plusOneMinute);
   const [isMilestone, setIsMilestone] = useState(false);
-  const opacity = useRef(new Animated.Value(0)).current;
-  const translateY = useRef(new Animated.Value(-16)).current;
+  // Lazy useState rather than useRef().current: the animated values must
+  // survive re-renders, but reading a ref during render is not allowed.
+  const [opacity] = useState(() => new Animated.Value(0));
+  const [translateY] = useState(() => new Animated.Value(-16));
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   // FB63: language being learned, for the milestone text. Read once on mount,
   // it only changes on the onboarding screen (before this toast can fire).
@@ -108,7 +110,9 @@ export default function UsageToast() {
       unsubscribeRollover();
       if (hideTimer.current) clearTimeout(hideTimer.current);
     };
-  }, [greeting]);
+    // opacity and translateY are stable useState values; they are listed only
+    // because show() animates them.
+  }, [greeting, opacity, translateY]);
 
   if (!visible) return null;
 

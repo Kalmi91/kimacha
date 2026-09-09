@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Pressable, TextInput, Modal, PanResponder, Dimensions, Keyboard } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
@@ -36,7 +36,9 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
     getDb().getFeedbackBtnSide().then(setSide);
   }, [draggable]);
 
-  const panResponder = useRef(
+  // Lazy useState rather than useRef().current: the responder must survive
+  // re-renders, but reading a ref during render is not allowed.
+  const [panResponder] = useState(() =>
     PanResponder.create({
       // Only claim the gesture once the finger has actually moved (|dx|>10);
       // small movements/taps fall through to the Pressable's onPress.
@@ -49,7 +51,7 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
         getDb().setFeedbackBtnSide(newSide);
       },
     })
-  ).current;
+  );
 
   const handleSend = async () => {
     if (!text.trim()) return;

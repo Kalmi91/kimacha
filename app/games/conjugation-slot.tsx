@@ -21,6 +21,7 @@ import {
 import { hashString } from '@/lib/shuffle';
 import { getGameBest, recordGameResult } from '@/lib/games/scoring';
 import GameSettingsSheet, { type SettingField } from '@/components/games/GameSettingsSheet';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // GAMES.md 4.7 (F5, conjugation-slot). K15: Spanish only, the hub card shows
 // "soon" for every other learned language (registry.ts `languages: ['es']`
@@ -173,6 +174,12 @@ export default function ConjugationSlotScreen() {
     }, 1000);
   }, []);
 
+  const handleTimeout = () => {
+    setAnswered(true);
+    setSelected(null);
+    if (round) getDb().recordAttempt(round.wordId, 'game:conjugation-slot', false, 0).catch(() => {});
+  };
+
   const buildNextRound = useCallback(
     (pool: ConjugationCandidate[], flags: Record<Tense, boolean>, irregular: boolean, tl: TimeLimit) => {
       stopClock();
@@ -196,24 +203,28 @@ export default function ConjugationSlotScreen() {
       if (tl !== 'none') {
         startClock(Number(tl), () => handleTimeout());
       }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     },
+    // handleTimeout is left out on purpose: it is recreated every render, so
+    // listing it would rebuild buildNextRound on every render.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [correctCount, startClock]
   );
 
-  useEffect(() => {
-    load().then(({ cands, flags, irregular, count, tl }) => {
-      if (cands.length > 0 && activeTenses(flags).length > 0) buildNextRound(cands, flags, irregular, tl);
-    });
-    return () => stopClock();
+  const start = useCallback(
+    () =>
+      load().then(({ cands, flags, irregular, count, tl }) => {
+        if (cands.length > 0 && activeTenses(flags).length > 0) buildNextRound(cands, flags, irregular, tl);
+      }),
+    // buildNextRound is left out on purpose: the first round is built once, on
+    // mount, and buildNextRound changes with the score.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    [load]
+  );
+  useLoadOnMount(start);
 
-  const handleTimeout = () => {
-    setAnswered(true);
-    setSelected(null);
-    if (round) getDb().recordAttempt(round.wordId, 'game:conjugation-slot', false, 0).catch(() => {});
-  };
+  useEffect(() => {
+    return () => stopClock();
+  }, []);
 
   const selectOption = (opt: string) => {
     if (answered || !round) return;

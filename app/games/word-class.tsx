@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
 
@@ -10,6 +10,7 @@ import { findWordById, type WordEntry } from '@/data/words';
 import { getGameDef, gameName } from '@/lib/games/registry';
 import { getLearnedPool } from '@/lib/games/vocabPool';
 import { getGameBest, recordGameResult } from '@/lib/games/scoring';
+import { useLoadOnMount } from '@/lib/useLoadOnMount';
 import {
   CLASS_OPTIONS,
   buildWordClassRound,
@@ -67,9 +68,7 @@ export default function WordClassScreen() {
     setLoaded(true);
   }, []);
 
-  useEffect(() => {
-    load();
-  }, [load]);
+  useLoadOnMount(load);
 
   const nativeLang = contentLang;
   const items: WordClassItem[] = buildWordClassRound(words, 'es', nativeLang, runSeed, ROUND_LENGTH);
