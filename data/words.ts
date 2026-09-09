@@ -70,10 +70,19 @@ export function getWordsForLevel(level: Level, lang: string = 'es'): WordEntry[]
   return words.filter(w => w.level === level);
 }
 
-// Card rows in the DB only carry a word id, and the id spaces of the branches are
-// disjoint by construction (shared Spanish set <= 3007, English track from 5001,
-// Hungarian track from 6001). Look the id up in the branch that is being learned
-// first, then in the shared set. Resolving against the shared set alone dropped
+// Card rows in the DB only carry a word id, so the id is looked up in the branch
+// being learned first, then in the shared set.
+//
+// Issue #3, 2026-09-09: the id spaces are NOT disjoint any more, whatever the
+// old comment here claimed. The shared Spanish set has grown past its stated
+// ceiling and now reaches 9883-adjacent numbers; 266 ids exist in both the
+// shared set and the Hungarian branch. Nothing is broken today, because this
+// branch-first order resolves each track to its own entry and every card query
+// is scoped by `pair`, but the invariant is gone, so do not rely on it. A new
+// language track takes ids from 10001 up, which is free
+// (`lib/__tests__/svCorpus.test.ts` holds that line). Renumbering the existing
+// overlap is not an option: card rows key on these ids, so it would throw away
+// the learner's progress. Resolving against the shared set alone dropped
 // every card of a non-Spanish course, which left the learner on the Done screen
 // with an empty queue (FB129 second cause).
 const branchIndex: Partial<Record<string, Map<number, WordEntry>>> = {};
