@@ -30,6 +30,95 @@ export interface SyllabusUnit {
   title: Record<string, string>;
 }
 
+/**
+ * Mélységi sáv: mennyire fontos egy nyelvtani pont, függetlenül attól, honnan
+ * származik (PCIC, vizsga-blueprint, tankönyv). A súly három jelből áll össze:
+ * hány mondat nem gyártható le nélküle, hány későbbi téma épül rá, és kéri-e a
+ * vizsga. Egy témának egy sávja van, a legalacsonyabb, ahol először kell, és a
+ * sávok kumulatívak: aki 'exam'-ot tanul, a 'core'-t is kapja.
+ *
+ *   core    (lila)  beszélni nem lehet nélküle, ez épül elsőként A1-C1-ig
+ *   exam    (kék)   vizsgához és helyes beszédhez kell, de nem blokkol
+ *   full    (zöld)  PCIC-teljesség, csak a leltár kedvéért
+ *   perfect (sárga) 100% helyesírás és nyelvtani finomság
+ */
+export type GrammarTier = 'core' | 'exam' | 'full' | 'perfect';
+
+/** Sáv témánként. Ami nincs a listán, 'full' (a leltárban benne van, de nem sürgős). */
+export const GRAMMAR_TIER: Record<string, GrammarTier> = {
+  // --- A1 ---
+  'clases-de-palabras': 'exam',
+  'sustantivo-numero': 'core',
+  'articulos-genero': 'exam',
+  'adjetivo-concordancia': 'exam',
+  'presente-regular': 'core',
+  'presente-irregular': 'core',
+  'verbos-diptongo': 'core',
+  'ser-estar': 'core',
+  'hay-estar': 'core',
+  posesivos: 'core',
+  demostrativos: 'exam',
+  interrogativos: 'core',
+  negacion: 'core',
+  gustar: 'core',
+  'ir-a-infinitivo': 'core',
+  'muy-mucho': 'exam',
+  'numeros-hora-fecha': 'core',
+  'preposiciones-basicas': 'core',
+  // --- A2 ---
+  'indefinido-regular': 'core',
+  'indefinido-irregular': 'core',
+  imperfecto: 'core',
+  'indefinido-imperfecto': 'core',
+  perfecto: 'core',
+  'estar-gerundio': 'exam',
+  'futuro-simple': 'exam',
+  'imperativo-afirmativo': 'core',
+  'imperativo-negativo': 'exam',
+  'pronombres-od': 'core',
+  'pronombres-oi': 'core',
+  'combinacion-pronombres': 'exam',
+  'verbos-reflexivos': 'core',
+  'comparativos-superlativos': 'core',
+  indefinidos: 'core',
+  'por-para': 'core',
+  'saber-conocer': 'exam',
+  'pedir-preguntar': 'exam',
+  'llevar-traer-ir-venir': 'exam',
+  // --- B1 ---
+  'subjuntivo-presente-forma': 'core',
+  'subjuntivo-disparadores': 'core',
+  'ojala-quizas': 'exam',
+  'temporales-subjuntivo': 'core',
+  'condicional-simple': 'core',
+  'condicionales-tipo1': 'core',
+  pluscuamperfecto: 'exam',
+  relativos: 'core',
+  'se-impersonal-pasiva': 'exam',
+  perifrasis: 'exam',
+  'por-para-avanzado': 'exam',
+  // --- B2 ---
+  'subjuntivo-imperfecto': 'core',
+  'subjuntivo-perfecto': 'exam',
+  'condicionales-tipo2-3': 'core',
+  'estilo-indirecto': 'core',
+  'pasiva-ser-participio': 'exam',
+  concesivas: 'exam',
+  'finales-causales': 'core',
+  'lo-neutro': 'exam',
+  'gerundio-participio-construcciones': 'exam',
+  // --- C1 ---
+  'futuro-condicional-perfecto': 'exam',
+  'probabilidad-con-tiempos': 'exam',
+  'relativos-complejos': 'exam',
+  'leismo-laismo': 'exam',
+  'marcadores-discursivos': 'core',
+};
+
+export function getGrammarTier(topicId: string): GrammarTier {
+  return GRAMMAR_TIER[topicId] ?? 'full';
+}
+
 export const GRAMMAR_UNITS: SyllabusUnit[] = [
   // --- A1 -----------------------------------------------------------------
   { id: 'a1-nombre', level: 'A1', title: { hu: 'Főnév, névelő, melléknév', en: 'Nouns, articles, adjectives', es: 'Sustantivo, artículo, adjetivo', de: 'Nomen, Artikel, Adjektiv' } },

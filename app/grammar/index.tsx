@@ -12,6 +12,7 @@ import {
   SYLLABUS_LEVELS,
   hasLesson,
   lessonCoverage,
+  getGrammarTier,
   syllabusForLevel,
   topicsForUnit,
   unitsForLevel,
@@ -147,9 +148,16 @@ export default function GrammarSyllabusScreen() {
                             ]}
                           >
                             <View style={{ flex: 1 }}>
-                              <Text style={[styles.topicTitle, { color: colors.text }]}>
-                                {topic.title[contentLang] ?? topic.title.en}
-                              </Text>
+                              <View style={styles.topicTitleRow}>
+                                <Text style={[styles.topicTitle, { color: colors.text }]}>
+                                  {topic.title[contentLang] ?? topic.title.en}
+                                </Text>
+                                {getGrammarTier(topic.id) === 'core' ? (
+                                  <Text testID={`grammar-core-${topic.id}`} style={styles.coreTag}>
+                                    {s.grammar.coreTag}
+                                  </Text>
+                                ) : null}
+                              </View>
                               <Text style={[styles.topicBlurb, { color: colors.tabIconDefault }]} numberOfLines={2}>
                                 {topic.blurb[contentLang] ?? topic.blurb.en}
                               </Text>
@@ -200,7 +208,21 @@ const styles = StyleSheet.create({
   unitBlock: { gap: 6, paddingLeft: 6 },
   unitName: { fontSize: 13, fontWeight: '700', marginTop: 6, textTransform: 'uppercase', letterSpacing: 0.5 },
   topicRow: { flexDirection: 'row', alignItems: 'center', gap: 10, borderRadius: 12, padding: 12 },
+  topicTitleRow: { flexDirection: 'row', alignItems: 'center', gap: 6, flexWrap: 'wrap' },
   topicTitle: { fontSize: 15, fontWeight: '600' },
+  // Lila jelölés: ez a téma kell ahhoz, hogy beszélni tudjon, akkor is látszik,
+  // ha a lecke még nincs megírva.
+  coreTag: {
+    fontSize: 10,
+    fontWeight: '700',
+    textTransform: 'uppercase',
+    color: '#7C3AED',
+    borderColor: '#7C3AED',
+    borderWidth: 1,
+    borderRadius: 6,
+    paddingHorizontal: 5,
+    paddingVertical: 1,
+  },
   topicBlurb: { fontSize: 12, marginTop: 2, lineHeight: 17 },
   topicBadge: { fontSize: 12, fontWeight: '700' },
   footNote: { fontSize: 12, textAlign: 'center', marginTop: 18, lineHeight: 17 },
