@@ -19,7 +19,7 @@ import { capNewWords, newWordsLeftToday, newWordIntake, newWordPauseReason, type
 import { borrowNewWords, countNewWords, nextTopicWithNewWords } from '@/lib/topicRotation';
 import { wordPhase, phaseShape, type WordPhase } from '@/lib/wordPhase';
 import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
-import { buildQueue, applyCadence, dripNewWords, reviewBatchOf, reviewWordsLeft, type DueItem } from '@/lib/sessionQueue';
+import { buildQueue, applyCadence, dripNewWords, mergeCarryover, reviewBatchOf, reviewWordsLeft, type DueItem } from '@/lib/sessionQueue';
 import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
@@ -347,6 +347,10 @@ export default function LearnScreen() {
   };
 
   const QUEUE_POOL = 40;
+  // FB225: ahány ismétlés-hely van a sorban. Ugyanaz az osztás, amit a
+  // getDueCardsForWordIds használ (30% új szó, a maradék ismétlés), itt azért
+  // kell néven, mert a szint és a régi szintek ezen a kereten OSZTOZNAK.
+  const REVIEW_SLOTS = QUEUE_POOL - Math.max(1, Math.round(QUEUE_POOL * 0.3));
 
   // FB196: az elvégzett nyelvtani leckék adják a feloldott szerkezeteket
   // („legyen olyan hogy bizonyos nyelvtani szerkezeteket feloldunk").
@@ -458,13 +462,21 @@ export default function LearnScreen() {
     setArticlePickerOn(await db.getArticlePicker());
     setRequeueLevel(await db.getRequeueLevel());
     const activeWordIds = activeWords.map(w => w.id);
-    const rows = useTopics
+    const levelRows = useTopics
       ? await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL)
       : await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
+    // FB225: a korábban megkezdett, de ezen a szűrésen kívül eső szavak esedékes
+    // ismétlései. Így egy A2-re lépés után az A1 szavai is forgásban maradnak.
+    const carryRows = await db.getDueCarryoverCards(activeWordIds, REVIEW_SLOTS);
+    const rows = mergeCarryover(levelRows, carryRows, REVIEW_SLOTS);
     // FB174: the whole due pile in the same scope, not just what fits in this queue.
-    const dueReviewWords = useTopics
-      ? await db.countDueReviewWords(activeWordIds)
-      : await db.countDueReviewWordsForLevel(currentLevel);
+    // FB225: a jelvény a szinten kívüli esedékeseket is beleszámolja, különben
+    // kevesebbet ígérne, mint amennyi a sorba ténylegesen bekerül.
+    const dueReviewWords =
+      (useTopics
+        ? await db.countDueReviewWords(activeWordIds)
+        : await db.countDueReviewWordsForLevel(currentLevel))
+      + (await db.countDueCarryoverWords(activeWordIds));
     // FB196: a mondat-kártyák nem hozhatnak feloldatlan nyelvtant, akármelyik
     // úton kerültek a sorba (szint, téma, kölcsönzés).
     const grammarDone = await doneGrammarTopics();
@@ -711,6 +723,8 @@ export default function LearnScreen() {
     let newRows: any[];
     // FB174: the due pile behind this refill, filled in on both branches below.
     let dueReviewWords2 = 0;
+    // FB225: amit a szint-ág már besorolt, tehát amit a carryover NEM hozhat újra.
+    let carryExclude: number[] = [];
     if (useTopics) {
       const allWordIds = lvlWords.map((w: WordEntry) => w.id);
       const repsMap = await db.getWordReps(allWordIds);
@@ -792,11 +806,19 @@ export default function LearnScreen() {
       }
       newRows = await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL);
       dueReviewWords2 = await db.countDueReviewWords(activeWordIds);
+      carryExclude = activeWordIds;
     } else {
       setBorrowedTopics(new Map());
       newRows = await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
       dueReviewWords2 = await db.countDueReviewWordsForLevel(currentLevel);
+      carryExclude = lvlWords.map((w: WordEntry) => w.id);
     }
+
+    // FB225: a feltöltés ugyanúgy oszt, mint az első sor-építés, különben a
+    // régi szavak csak a session legelső köréig maradnának benne.
+    const carryRows2 = await db.getDueCarryoverCards(carryExclude, REVIEW_SLOTS);
+    newRows = mergeCarryover(newRows, carryRows2, REVIEW_SLOTS);
+    dueReviewWords2 += await db.countDueCarryoverWords(carryExclude);
 
     const wordsOnly2 = await db.getWordsOnly();
     const newItems = filterLockedSentences(

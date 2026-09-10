@@ -19,6 +19,9 @@ export interface DB {
   getDueCardsForLevel(level: string, limit: number): Promise<any[]>;
   getDueCardsForWordIds(wordIds: number[], limit: number): Promise<any[]>;
   getPracticeCardsForLevel(level: string, limit: number): Promise<any[]>;
+  // FB225: a szint-szűrésen kívül esedékes, megkezdett szó-kártyák (a natív tükre).
+  getDueCarryoverCards(excludeWordIds: number[], limit: number): Promise<any[]>;
+  countDueCarryoverWords(excludeWordIds: number[]): Promise<number>;
   getWordReps(wordIds: number[]): Promise<Map<number, number>>;
   getWordStates(wordIds: number[]): Promise<Map<number, number>>;
   // GAMES.md 3.1 (F0): every non-buried word card of a given pair, for
@@ -254,6 +257,32 @@ class MemoryDB implements DB {
     const { getWordsForLevel } = require('@/data/words');
     const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
     return this.countDueReviewWords(levelWords.map((w: any) => w.id));
+  }
+
+  // FB225: a szinten kívüli, már megkezdett szavak esedékes ismétlései (a
+  // SQLite oldal tükre). A szűrés a hívó által besorolt id-kra megy, nem
+  // szintre, így nem függ a szint-sorrendtől.
+  async getDueCarryoverCards(excludeWordIds: number[], limit: number) {
+    if (limit <= 0) return [];
+    const excluded = new Set(excludeWordIds);
+    const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
+    return [...this.cards.values()]
+      .filter(c => c.type === 'word' && c.reps > 0 && !c.buried && c.pair === this.activePair
+        && c.due <= lookahead && !excluded.has(c.word_id))
+      .sort((a, b) => a.due.localeCompare(b.due))
+      .slice(0, limit);
+  }
+
+  async countDueCarryoverWords(excludeWordIds: number[]) {
+    const excluded = new Set(excludeWordIds);
+    const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
+    const due = new Set(
+      [...this.cards.values()]
+        .filter(c => c.type === 'word' && c.reps > 0 && !c.buried && c.pair === this.activePair
+          && c.due <= lookahead && !excluded.has(c.word_id))
+        .map(c => c.word_id)
+    );
+    return due.size;
   }
 
   async getWordReps(wordIds: number[]): Promise<Map<number, number>> {
