@@ -49,6 +49,9 @@ import grammarEsImperfecto from '@/data/games/grammar/es/imperfecto.json';
 import grammarEsIndefinidoImperfecto from '@/data/games/grammar/es/indefinido-imperfecto.json';
 import grammarEsPerfecto from '@/data/games/grammar/es/perfecto.json';
 import grammarEsFuturoSimple from '@/data/games/grammar/es/futuro-simple.json';
+import grammarEsDemostrativos from '@/data/games/grammar/es/demostrativos.json';
+import grammarEsInterrogativos from '@/data/games/grammar/es/interrogativos.json';
+import grammarEsNegacion from '@/data/games/grammar/es/negacion.json';
 import confusablesEsSueldo from '@/data/games/confusables/es/sueldo-suelo-suelto.json';
 import confusablesEsPero from '@/data/games/confusables/es/pero-perro.json';
 import confusablesEsCaro from '@/data/games/confusables/es/caro-carro.json';
@@ -111,6 +114,9 @@ export const esContent: LanguageContentBundle = {
     grammarEsSerEstar,
     grammarEsHayEstar,
     grammarEsPosesivos,
+    grammarEsDemostrativos,
+    grammarEsInterrogativos,
+    grammarEsNegacion,
     grammarEsGustar,
     grammarEsIndefinidoRegular,
     grammarEsIndefinidoIrregular,
