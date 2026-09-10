@@ -1581,6 +1581,18 @@ export default function LearnScreen() {
           )}
         </Pressable>
 
+        {/* Kálmán 2026-09-10: "Helyes ez így". Az automata ellenőrzés hibásnak
+            mondta, de a gépelt válasz mégis jó (pl. elfogadható szinonima), ezért
+            kézzel Rating.Good. Eltemetés nincs, a kártya marad az ismétlésben. */}
+        {revealed && typingResult === 'wrong' && (
+          <Pressable
+            style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
+            onPress={() => advance(Rating.Good)}
+          >
+            {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.correctAsIs}</Text>}
+          </Pressable>
+        )}
+
         <Pressable
           style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
           onPress={() => {
