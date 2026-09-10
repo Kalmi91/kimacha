@@ -36,6 +36,7 @@ export default {
     good: 'Jó',
     inSentence: 'Mondatban',
     iKnowThis: 'Ezt Már Tudom',
+    correctAsIs: 'Helyes Ez Így',
     snooze: '3 Nap Pihenés',
     spelling: 'Helyesírás',
   },
