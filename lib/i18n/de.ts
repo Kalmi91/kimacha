@@ -367,6 +367,7 @@ export default {
       `${done}/${topics} fertig · ${written} Lektionen verfügbar`,
     yourLevel: 'hier stehst du',
     soon: 'bald',
+    coreTag: 'wichtig',
     started: 'begonnen',
     notStarted: 'neu',
     soonLong: 'Diese Lektion ist noch nicht geschrieben. Sie steht auf der Liste, der Rest der Stufe ist bereits offen.',
