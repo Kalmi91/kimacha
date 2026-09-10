@@ -36,6 +36,7 @@ export default {
     good: 'Bien',
     inSentence: 'En Frase',
     iKnowThis: 'Ya Lo Sé',
+    correctAsIs: 'Así Está Bien',
     snooze: 'Descanso 3 Días',
     spelling: 'Ortografía',
   },
