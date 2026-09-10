@@ -21,12 +21,19 @@ const ARTICLES_BY_LANG: Record<string, readonly string[]> = {
 };
 
 /**
- * Megjelenik-e a gombsor. Csak akkor, ha a beírandó nyelvnek van névelő-
- * készlete, és a kártya főnevet kérdez: igénél és melléknévnél nincs mit
- * választani.
+ * Megjelenik-e a gombsor. Akkor, ha a beírandó nyelvnek van névelő-készlete, és
+ * a kártya egy SZÓT kérdez (mondat-kártyán nincs mit névelőzni).
+ *
+ * FB214, Kálmán 2026-09-09 (word:contrary / opposite): „az a le la los las semmi
+ * rész legyen betéve oda is ahol igég vagy mellékneveket kell irni, mert pl most
+ * is beletettem az el t pesig ide nem kell". A gombsor eddig csak főnév-kártyán
+ * jelent meg, tehát igénél és melléknévnél kézzel gépelte oda a névelőt, és
+ * elbukott vele. Innentől minden szó-kártyán ott a sor, a ⊘ pedig a nem-főnévnél
+ * a HELYES válasz: az „ide nem kell névelő" is tanulnivaló, nem a sor hiánya
+ * mondja meg.
  */
-export function articlePickerApplies(backLang: string, pos: string | undefined): boolean {
-  return !!ARTICLES_BY_LANG[backLang] && pos === 'noun';
+export function articlePickerApplies(backLang: string, isWordCard: boolean): boolean {
+  return !!ARTICLES_BY_LANG[backLang] && isWordCard;
 }
 
 /** Az adott nyelv névelői, üres tömb, ha a nyelvnek nincs gombsora. */

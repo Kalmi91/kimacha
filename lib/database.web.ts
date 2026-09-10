@@ -4,6 +4,7 @@ import { pickSurvivor } from './cardMerge';
 import { DEFAULT_REQUEUE_LEVEL } from './requeueGap';
 import { rankSentencesByWordWeakness, sentenceSlotCount, type WordWeakness } from './sentenceMix';
 import { WORD_MERGES } from './wordMerges';
+import { isLearned } from './wordPhase';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 
 export interface DB {
@@ -360,14 +361,15 @@ class MemoryDB implements DB {
     // FB111: mastery needs the typing step passed too, see database.ts.
     return [...this.cards.values()].filter(c =>
       wordIds.has(c.word_id) && c.type === 'word' && c.pair === this.activePair &&
-      ((c.state >= 2 && (c.reps ?? 0) - (c.lapses ?? 0) >= 3) || c.buried === 1)
+      ((c.state >= 2 && isLearned(c)) || c.buried === 1)
     ).length;
   }
   async getReviewedWordCount(level: string) {
     const { getWordsForLevel } = require('@/data/words');
     const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
     const wordIds = new Set(levelWords.map((w: any) => w.id));
-    return [...this.cards.values()].filter(c => wordIds.has(c.word_id) && c.type === 'word' && (c.reps > 0 || c.buried) && c.pair === this.activePair).length;
+    // FB210: ugyanaz a szabály, mint a natív ágon, megtanult = a létra végigjárva.
+    return [...this.cards.values()].filter(c => wordIds.has(c.word_id) && c.type === 'word' && (isLearned(c) || c.buried) && c.pair === this.activePair).length;
   }
 
   // FB100: see the native twin, due dates of the word cards still in rotation.

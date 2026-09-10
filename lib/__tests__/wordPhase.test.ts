@@ -1,4 +1,4 @@
-import { wordPhase, phaseShape } from '@/lib/wordPhase';
+import { wordPhase, phaseShape, isLearned } from '@/lib/wordPhase';
 
 // FB105: promotion counts SUCCESSFUL reviews, so a lapse takes a step back.
 // FB109/FB111/FB114: the typing step must be reachable, it is the step that
@@ -41,5 +41,27 @@ describe('phaseShape', () => {
 
   it('phase 2 is the typing card native→learned', () => {
     expect(phaseShape(2)).toEqual({ isTyping: true, typingDirection: 'native-to-learned' });
+  });
+});
+
+// FB210: the header's known/total asks this, not `reps > 0`.
+describe('isLearned', () => {
+  it('is false while the typing card is still ahead', () => {
+    expect(isLearned({ reps: 0, lapses: 0 })).toBe(false);
+    expect(isLearned({ reps: 1, lapses: 0 })).toBe(false);
+    expect(isLearned({ reps: 2, lapses: 0 })).toBe(false);
+  });
+
+  it('is true once the typing card has been answered right', () => {
+    expect(isLearned({ reps: 3, lapses: 0 })).toBe(true);
+  });
+
+  it('follows the ladder back down after a lapse', () => {
+    expect(isLearned({ reps: 3, lapses: 1 })).toBe(false);
+    expect(isLearned({ reps: 4, lapses: 1 })).toBe(true);
+  });
+
+  it('tolerates missing counters', () => {
+    expect(isLearned({})).toBe(false);
   });
 });
