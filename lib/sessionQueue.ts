@@ -45,6 +45,36 @@ export function interleaveByType(items: DueItem[], maxRun: number): DueItem[] {
   return out;
 }
 
+// FB225, Kálmán 2026-09-10: „azt szeretném hogy minden szintet ha elkezdek a
+// régi szavak ismétlése legyen benne". A sor eddig a JELENLEGI szint (illetve az
+// aktív téma) szavaira volt szűkítve, így egy A2-re lépés után az A1-en már
+// megkezdett szavak esedékes ismétlései kiesődtek a forgásból: a szint be volt
+// fejezve, a szavak nem. `carryRows` az ezen a szűkítésen KÍVÜL esedékes,
+// már megkezdett szó-kártyák listája (lásd getDueCarryoverCards).
+//
+// Az osztás: az ismétlés-helyek CARRY_SHARE része a régi szavaké, de sosem
+// több, mint amennyit hoztak, és ha az egyik oldalnak kevesebb jut, a másik
+// tölti fel a helyet. Carryover nélkül a sor változatlan.
+export const CARRY_SHARE = 0.4;
+
+const isReviewWord = (row: any) => row.type === 'word' && (row.reps ?? 0) > 0;
+
+export function mergeCarryover(levelRows: any[], carryRows: any[], reviewSlots: number): any[] {
+  if (carryRows.length === 0) return levelRows;
+  const levelReviews = levelRows.filter(isReviewWord);
+  const rest = levelRows.filter((row) => !isReviewWord(row));
+  const total = Math.min(reviewSlots, levelReviews.length + carryRows.length);
+  const carryTake = Math.min(
+    carryRows.length,
+    Math.max(total - levelReviews.length, Math.round(total * CARRY_SHARE)),
+  );
+  const merged = [...levelReviews.slice(0, total - carryTake), ...carryRows.slice(0, carryTake)]
+    .sort((a, b) => String(a.due).localeCompare(String(b.due)));
+  // A sorrend ugyanaz marad, mint a szint-lekérdezésnél: ismétlések elől,
+  // mondatok és új szavak utánuk, a többit az applyCadence rendezi.
+  return [...merged, ...rest];
+}
+
 // Due rows → cards. `lang` is the language being learned: its branch owns the
 // word ids (English from 5001, Hungarian from 6001), the shared Spanish set is
 // the fallback. A row whose word cannot be resolved is dropped, so a wrong

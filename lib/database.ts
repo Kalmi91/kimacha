@@ -27,6 +27,10 @@ export interface DB {
   // M batches to go".
   countDueReviewWords(wordIds: number[]): Promise<number>;
   countDueReviewWordsForLevel(level: string): Promise<number>;
+  // FB225: a szint-szűrésen KÍVÜL esedékes, már megkezdett szó-kártyák. Ezek
+  // tartják forgásban az előző szinteken tanult szavakat, lásd mergeCarryover.
+  getDueCarryoverCards(excludeWordIds: number[], limit: number): Promise<any[]>;
+  countDueCarryoverWords(excludeWordIds: number[]): Promise<number>;
   getWordReps(wordIds: number[]): Promise<Map<number, number>>;
   getWordStates(wordIds: number[]): Promise<Map<number, number>>;
   // GAMES.md 3.1 (F0): every non-buried word card of a given pair, for
@@ -503,6 +507,45 @@ class SQLiteDB implements DB {
     const { getWordsForLevel } = require('@/data/words');
     const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
     return this.countDueReviewWords(levelWords.map((w: any) => w.id));
+  }
+
+  // FB225, Kálmán 2026-09-10: az ismétlés átjár a szintek között. Egy A1-en
+  // megkezdett szó A2-n is esedékes marad, csak a sor addig nem látta, mert a
+  // szint (vagy az aktív téma) szavaira volt szűkítve.
+  //
+  // A szűrés szándékosan NEM szintre megy, hanem a hívó által már besorolt
+  // `excludeWordIds`-ra: ami ezen kívül esik és meg van kezdve (reps > 0), az
+  // definíció szerint korábbi tanulás, akármelyik szinten történt. Így a
+  // lekérdezés nem függ a szint-sorrendtől, és nem kell hozzá több ezer elemű
+  // IN-lista sem (SQLITE_LIMIT_VARIABLE_NUMBER).
+  //
+  // Szó-kártyánként egy sor létezik (ensureCard), ezért a
+  // `limit + excludeWordIds.length` beolvasás garantáltan hoz `limit` darab
+  // kizáráson kívüli sort, ha egyáltalán van annyi.
+  async getDueCarryoverCards(excludeWordIds: number[], limit: number) {
+    const db = await this.open();
+    if (limit <= 0) return [];
+    const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
+    const rows = await db.getAllAsync<any>(
+      `SELECT * FROM cards WHERE type = 'word' AND reps > 0 AND buried = 0 AND pair = ? AND due <= ? ORDER BY due ASC LIMIT ?`,
+      [this.activePair, lookahead, limit + excludeWordIds.length]
+    );
+    const excluded = new Set(excludeWordIds);
+    return rows.filter((r: any) => !excluded.has(r.word_id)).slice(0, limit);
+  }
+
+  // A 🔁 jelvény ugyanazt az ablakot számolja, mint countDueReviewWords, csak a
+  // kizáráson kívüli szavakra: a jelvény így a teljes esedékes halmazt mutatja,
+  // nem csak az aktuális szintét.
+  async countDueCarryoverWords(excludeWordIds: number[]) {
+    const db = await this.open();
+    const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
+    const rows = await db.getAllAsync<any>(
+      `SELECT DISTINCT word_id FROM cards WHERE type = 'word' AND reps > 0 AND buried = 0 AND pair = ? AND due <= ?`,
+      [this.activePair, lookahead]
+    );
+    const excluded = new Set(excludeWordIds);
+    return rows.filter((r: any) => !excluded.has(r.word_id)).length;
   }
 
   // FB190, Kálmán 2026-09-08: „ha már nincs új szó a szinten akkor kérdezze meg
