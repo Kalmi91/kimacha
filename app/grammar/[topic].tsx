@@ -10,7 +10,8 @@ import { normalizeWordToken, type Level } from '@/data/words';
 import { cumulativeCorpusWordIds, isMarkItem, type GrammarGapItem, type GrammarTopicData } from '@/lib/games/content';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, syllabusTopic } from '@/lib/grammar/syllabus';
-import { speak } from '@/lib/speech';
+import { speak, speakSequence } from '@/lib/speech';
+import { splitByLanguage } from '@/lib/mixedSpeech';
 import { speechLang } from '@/lib/languages';
 import GlossText from '@/components/games/GlossText';
 import GrammarDrill from '@/components/grammar/GrammarDrill';
@@ -89,6 +90,18 @@ export default function GrammarLessonScreen() {
       filled: item.sentence.replace('___', item.options[item.correct]),
       why: item.why[contentLang] ?? item.why.en,
     }));
+
+  const ruleText = lesson.rule[contentLang] ?? lesson.rule.en;
+
+  // FB216: nyelv-szakaszokra vágva olvassuk fel, hogy a spanyol példa spanyolul
+  // szóljon a magyar/angol magyarázat közepén is.
+  const readAloud = (text: string) =>
+    speakSequence(
+      splitByLanguage(text, { learnedLang, nativeLang: contentLang }).map((seg) => ({
+        text: seg.text,
+        locale: speechLang(seg.lang),
+      }))
+    );
 
   const finish = async (correct: number, total: number) => {
     setScore({ correct, total });
@@ -190,7 +203,13 @@ export default function GrammarLessonScreen() {
       <ScrollView contentContainerStyle={styles.body}>
         <Text style={[styles.sectionLabel, { color: colors.tint }]}>{s.grammar.ruleLabel}</Text>
         <View style={[styles.card, { backgroundColor: colors.card }]}>
-          <Text style={[styles.ruleText, { color: colors.text }]}>{lesson.rule[contentLang] ?? lesson.rule.en}</Text>
+          <Text style={[styles.ruleText, { color: colors.text }]}>{ruleText}</Text>
+          {/* FB216: a hosszú magyarázatot fel is olvassa, a benne lévő spanyol
+              példákat spanyol hangon (lib/mixedSpeech.ts). */}
+          <Pressable testID="grammar-read-rule" style={styles.readRow} onPress={() => readAloud(ruleText)} hitSlop={10}>
+            <Text style={styles.speak}>🔊</Text>
+            <Text style={[styles.readLabel, { color: colors.tint }]}>{s.grammar.readAloud}</Text>
+          </Pressable>
         </View>
 
         <Text style={[styles.sectionLabel, { color: colors.tint }]}>{s.grammar.examplesLabel}</Text>
@@ -216,6 +235,15 @@ export default function GrammarLessonScreen() {
             <Text style={[styles.sectionLabel, { color: colors.tint }]}>{s.grammar.exceptionsLabel}</Text>
             <View style={[styles.card, { backgroundColor: colors.card }]}>
               <MoreBlocks more={lesson.more} contentLang={contentLang} color={colors.text} />
+              <Pressable
+                testID="grammar-read-more"
+                style={styles.readRow}
+                onPress={() => readAloud(lesson.more?.[contentLang] ?? lesson.more?.en ?? '')}
+                hitSlop={10}
+              >
+                <Text style={styles.speak}>🔊</Text>
+                <Text style={[styles.readLabel, { color: colors.tint }]}>{s.grammar.readAloud}</Text>
+              </Pressable>
             </View>
           </>
         ) : null}
@@ -254,6 +282,8 @@ const styles = StyleSheet.create({
   exampleText: { fontSize: 17, fontWeight: '600', flex: 1, lineHeight: 25 },
   exampleWhy: { fontSize: 13, lineHeight: 19 },
   speak: { fontSize: 18 },
+  readRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 12 },
+  readLabel: { fontSize: 14, fontWeight: '700' },
   // Kálmán 2026-09-09: „ne legyen ilyen igénytelen a szöveg mező szépe az egyik
   // pici a másik nagy". Egy gomb-alak az egész képernyőn: azonos szélesség
   // (`alignSelf: 'stretch'`), azonos magasság (a kitöltött változaton is ott a
