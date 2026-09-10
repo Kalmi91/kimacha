@@ -308,7 +308,10 @@ class SQLiteDB implements DB {
     if (!learnedAtCol) {
       await this.db.execAsync('ALTER TABLE cards ADD COLUMN learned_at TEXT');
       await this.db.runAsync(
-        `UPDATE cards SET learned_at = COALESCE(last_review, ?)
+        // FB226, Kálmán 2026-09-10: a COALESCE a MAI ismétlés dátumát írta be, így a
+        // frissítés utáni első indításkor a mai keret azonnal elfogyott ("azt írja hogy 0").
+        // A régi lapok MINDIG a múltba kerülnek, ahogy a fenti komment ígéri.
+        `UPDATE cards SET learned_at = ?
            WHERE type = 'word' AND reps - lapses >= ${LEARNED_PASSES} AND learned_at IS NULL`,
         [new Date(0).toISOString()]
       );
