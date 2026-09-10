@@ -352,12 +352,13 @@ export default {
       missedTag: 'Kihagytad',
       sourceLabel: 'Forrás:',
       viewChecklistBtn: 'Checklist megtekintése',
+      betterWouldBe: 'Jobb lett volna:',
     },
   },
   active: {
     title: 'Aktív mód',
     comingSoon: 'Hamarosan...',
-    description: 'Beszélgess spanyolul egy NPC-vel.\nIter2-ben érkezik.',
+    description: 'Beszélgess spanyolul egy NPC-vel.\nEgy későbbi frissítésben érkezik.',
   },
   grammar: {
     title: 'Nyelvtani tanfolyam',

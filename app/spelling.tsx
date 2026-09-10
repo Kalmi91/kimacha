@@ -146,7 +146,14 @@ export default function SpellingScreen() {
       style={[styles.container, { backgroundColor: colors.background }]}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
-      <Text style={[styles.title, { color: colors.text }]}>{s.spelling.title}</Text>
+      {/* BUG-007: the practice view had no way out but the system back gesture. */}
+      <View style={styles.headerRow}>
+        <Pressable onPress={() => router.back()} hitSlop={12} style={styles.exitBtn}>
+          <Text style={[styles.exitIcon, { color: colors.text }]}>←</Text>
+        </Pressable>
+        <Text style={[styles.title, styles.titleInRow, { color: colors.text }]}>{s.spelling.title}</Text>
+        <View style={styles.exitBtn} />
+      </View>
 
       {/* FB143: tapping the card beside the field closes the keyboard. */}
       <Pressable style={[styles.card, { backgroundColor: colors.card }]} onPress={() => Keyboard.dismiss()}>
@@ -219,6 +226,23 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textAlign: 'center',
     marginBottom: 20,
+  },
+  headerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  titleInRow: {
+    flex: 1,
+  },
+  exitBtn: {
+    width: 44,
+    height: 44,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  exitIcon: {
+    fontSize: 26,
+    fontWeight: '700',
   },
   card: {
     borderRadius: 20,

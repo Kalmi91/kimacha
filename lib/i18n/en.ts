@@ -339,6 +339,7 @@ export default {
       missedTag: 'You missed',
       sourceLabel: 'Source:',
       viewChecklistBtn: 'View checklist',
+      betterWouldBe: 'A better line would be:',
     },
   },
   active: {

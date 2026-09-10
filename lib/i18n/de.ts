@@ -339,6 +339,7 @@ export default {
       missedTag: 'Verpasst',
       sourceLabel: 'Quelle:',
       viewChecklistBtn: 'Checkliste ansehen',
+      betterWouldBe: 'Besser wäre gewesen:',
     },
   },
   active: {
