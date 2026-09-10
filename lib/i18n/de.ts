@@ -36,6 +36,7 @@ export default {
     good: 'Gut',
     inSentence: 'Im Satz',
     iKnowThis: 'Kann Ich Schon',
+    correctAsIs: 'So Ist Richtig',
     snooze: '3 Tage Pause',
     spelling: 'Rechtschreibung',
   },

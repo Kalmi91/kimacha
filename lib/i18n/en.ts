@@ -36,6 +36,7 @@ export default {
     good: 'Good',
     inSentence: 'In Sentence',
     iKnowThis: 'I Know This',
+    correctAsIs: 'This Is Correct',
     snooze: 'Rest 3 Days',
     spelling: 'Spelling',
   },
