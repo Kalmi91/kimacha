@@ -448,7 +448,11 @@
     "topic": "hogar_entorno_vivienda_a2",
     "topicOrder": 1,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_hu": "Két jelentése van. 1) PADLÓ, a szoba alja: el piso está frío. 2) EMELET, a ház szintje: vivo en el tercer piso. A mondat dönti el: ha szám vagy ház van mellette, emelet.",
+    "note_en": "Two meanings. 1) FLOOR you walk on: el piso está frío. 2) STOREY of a building: vivo en el tercer piso. Context decides: with a number or a building, it is the storey.",
+    "note_es": "Dos sentidos. 1) SUELO de la habitación: el piso está frío. 2) PLANTA del edificio: vivo en el tercer piso. El contexto decide.",
+    "note_de": "Zwei Bedeutungen. 1) FUSSBODEN: el piso está frío. 2) STOCKWERK: vivo en el tercer piso. Der Kontext entscheidet."
   },
   {
     "id": 687,
@@ -608,7 +612,11 @@
     "topic": "salud_deporte_enfermedad_a2",
     "topicOrder": 3,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_hu": "Két jelentése van. 1) ÁLOM, amit alvás közben látsz: he tenido un sueño raro. 2) ÁLMOSSÁG: tengo mucho sueño = álmos vagyok. A tener sueño mindig álmosságot jelent.",
+    "note_en": "Two meanings. 1) DREAM you have while asleep: he tenido un sueño raro. 2) SLEEPINESS: tengo mucho sueño = I am sleepy. Tener sueño always means sleepiness.",
+    "note_es": "Dos sentidos. 1) SUEÑO que se tiene durmiendo: he tenido un sueño raro. 2) GANAS DE DORMIR: tengo mucho sueño. Con tener siempre es lo segundo.",
+    "note_de": "Zwei Bedeutungen. 1) TRAUM im Schlaf: he tenido un sueño raro. 2) MÜDIGKEIT: tengo mucho sueño = ich bin müde. Mit tener immer die Müdigkeit."
   },
   {
     "id": 709,
@@ -716,7 +724,11 @@
     "sentence_de": "Lernst du immer noch Spanisch?",
     "topic": "estudios",
     "topicOrder": 1,
-    "pos": "verb"
+    "pos": "verb",
+    "note_hu": "Két jelentése van. 1) FOLYTATNI: sigo estudiando = tovább tanulok. 2) KÖVETNI: sigue el camino = kövesd az utat. Ha -ndo alak jön utána, a jelentés folytatás.",
+    "note_en": "Two meanings. 1) TO CONTINUE: sigo estudiando = I keep studying. 2) TO FOLLOW: sigue el camino = follow the road. With a -ndo form after it, it means continuing.",
+    "note_es": "Dos sentidos. 1) CONTINUAR: sigo estudiando. 2) IR DETRÁS: sigue el camino. Si va con gerundio, es continuar.",
+    "note_de": "Zwei Bedeutungen. 1) WEITERMACHEN: sigo estudiando. 2) FOLGEN: sigue el camino. Mit einer -ndo-Form heißt es weitermachen."
   },
   {
     "id": 3423,
@@ -946,7 +958,11 @@
     "sentence_de": "Ich habe versucht, dich oft anzurufen.",
     "topic": "promesa_emociones_a2",
     "topicOrder": 1,
-    "pos": "verb"
+    "pos": "verb",
+    "note_hu": "Két jelentése van. 1) PRÓBÁLNI, tratar de + főnévi igenév: trato de llamarte. 2) KEZELNI valakit vagy valamit: el médico trata al paciente. A de elöljáró árulja el az elsőt.",
+    "note_en": "Two meanings. 1) TO TRY, tratar de + infinitive: trato de llamarte. 2) TO TREAT someone or something: el médico trata al paciente. The preposition de marks the first one.",
+    "note_es": "Dos sentidos. 1) INTENTAR, tratar de + infinitivo: trato de llamarte. 2) ATENDER: el médico trata al paciente. La preposición de marca el primero.",
+    "note_de": "Zwei Bedeutungen. 1) VERSUCHEN, tratar de + Infinitiv: trato de llamarte. 2) BEHANDELN: el médico trata al paciente. Die Präposition de zeigt das Erste an."
   },
   {
     "id": 3438,
@@ -1053,7 +1069,11 @@
     "sentence_de": "Hast du die Schlüssel bei dir?",
     "topic": "ocio_moda",
     "topicOrder": 4,
-    "pos": "verb"
+    "pos": "verb",
+    "note_hu": "Két jelentése van. 1) VINNI, magaddal: llevo las llaves. 2) HORDANI ruhát: lleva una camisa blanca. Ha ruha áll utána, viselést jelent.",
+    "note_en": "Two meanings. 1) TO CARRY along: llevo las llaves. 2) TO WEAR: lleva una camisa blanca. With a piece of clothing after it, it means wearing.",
+    "note_es": "Dos sentidos. 1) LLEVAR consigo: llevo las llaves. 2) VESTIR: lleva una camisa blanca. Con ropa detrás, es vestir.",
+    "note_de": "Zwei Bedeutungen. 1) MITNEHMEN: llevo las llaves. 2) TRAGEN (Kleidung): lleva una camisa blanca."
   },
   {
     "id": 3445,
@@ -1145,7 +1165,11 @@
     "topic": "ocio_zene_konyvek_a2",
     "topicOrder": 4,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_hu": "Két jelentése van. 1) ZENEKAR: la banda toca esta noche. 2) BANDA, bűnözői csoport: una banda de ladrones. A zenei környezet dönti el.",
+    "note_en": "Two meanings. 1) BAND, a group of musicians: la banda toca esta noche. 2) GANG of criminals: una banda de ladrones. The musical context decides.",
+    "note_es": "Dos sentidos. 1) GRUPO MUSICAL: la banda toca esta noche. 2) GRUPO DE DELINCUENTES: una banda de ladrones.",
+    "note_de": "Zwei Bedeutungen. 1) MUSIKBAND: la banda toca esta noche. 2) BANDE: una banda de ladrones."
   },
   {
     "id": 3451,
@@ -1406,7 +1430,11 @@
     "topic": "ocio_zene_konyvek_a2",
     "topicOrder": 6,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_hu": "Két jelentése van. 1) MŰ, alkotás: una obra de teatro. 2) ÉPÍTKEZÉS: la calle está en obras. Ha teatro vagy arte áll mellette, alkotás.",
+    "note_en": "Two meanings. 1) WORK of art: una obra de teatro. 2) CONSTRUCTION site: la calle está en obras. With teatro or arte beside it, it is the artwork.",
+    "note_es": "Dos sentidos. 1) CREACIÓN: una obra de teatro. 2) CONSTRUCCIÓN: la calle está en obras.",
+    "note_de": "Zwei Bedeutungen. 1) WERK: una obra de teatro. 2) BAUSTELLE: la calle está en obras."
   },
   {
     "id": 3468,
@@ -1438,7 +1466,11 @@
     "topic": "comunicacion_expresiones_a2",
     "topicOrder": 3,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_hu": "Két jelentése van. 1) KÉRDÉS, felvetett téma: una cuestión difícil. 2) ÜGY, dolog: es cuestión de tiempo = idő kérdése. Konkrét kérdőmondatra a pregunta való, nem ez.",
+    "note_en": "Two meanings. 1) QUESTION as a topic raised: una cuestión difícil. 2) MATTER: es cuestión de tiempo = it is a matter of time. For an actual question you ask, use pregunta, not this.",
+    "note_es": "Dos sentidos. 1) ASUNTO planteado: una cuestión difícil. 2) MATERIA: es cuestión de tiempo. Para la pregunta que se hace, se usa pregunta.",
+    "note_de": "Zwei Bedeutungen. 1) FRAGE als Thema: una cuestión difícil. 2) SACHE: es cuestión de tiempo. Für die gestellte Frage steht pregunta."
   },
   {
     "id": 3470,
@@ -1514,7 +1546,11 @@
     "sentence_de": "Hast du mir alles erzählt?",
     "topic": "comunicacion_hablar_a2",
     "topicOrder": 6,
-    "pos": "verb"
+    "pos": "verb",
+    "note_hu": "Két jelentése van. 1) SZÁMOLNI: cuenta hasta diez. 2) MESÉLNI, elmondani: me ha contado todo. Ha személynek mondasz valamit, a második.",
+    "note_en": "Two meanings. 1) TO COUNT: cuenta hasta diez. 2) TO TELL: me ha contado todo. When you tell something to a person, it is the second.",
+    "note_es": "Dos sentidos. 1) NUMERAR: cuenta hasta diez. 2) NARRAR: me ha contado todo.",
+    "note_de": "Zwei Bedeutungen. 1) ZÄHLEN: cuenta hasta diez. 2) ERZÄHLEN: me ha contado todo."
   },
   {
     "id": 3475,
@@ -1863,7 +1899,11 @@
     "sentence_de": "Treffen wir uns um fünf im Park?",
     "topic": "fiesta_hospitalidad_a2",
     "topicOrder": 12,
-    "pos": "verb"
+    "pos": "verb",
+    "note_hu": "Két jelentése van. 1) MARADNI, valahol: queda poco pan = kevés kenyér maradt. 2) TALÁLKOZÓT BESZÉLNI: quedamos a las cinco = ötkor találkozunk. Ha időpont áll mellette, találkozó.",
+    "note_en": "Two meanings. 1) TO BE LEFT / stay: queda poco pan = there is little bread left. 2) TO ARRANGE TO MEET: quedamos a las cinco = let's meet at five. With a time next to it, it is the meeting.",
+    "note_es": "Dos sentidos. 1) PERMANECER: queda poco pan. 2) CITARSE: quedamos a las cinco.",
+    "note_de": "Zwei Bedeutungen. 1) ÜBRIG BLEIBEN: queda poco pan. 2) SICH VERABREDEN: quedamos a las cinco."
   },
   {
     "id": 3498,
@@ -1879,7 +1919,11 @@
     "topic": "comunicacion_medios_a2",
     "topicOrder": 1,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_hu": "Két jelentése van. 1) LEVELEK, amiket postán küldesz: he escrito tres cartas. 2) KÁRTYÁK, a játékhoz: jugamos a las cartas. Étteremben a carta étlapot jelent.",
+    "note_en": "Two meanings. 1) LETTERS you post: he escrito tres cartas. 2) PLAYING CARDS: jugamos a las cartas. In a restaurant, la carta is the menu.",
+    "note_es": "Dos sentidos. 1) CARTAS que se envían: he escrito tres cartas. 2) NAIPES: jugamos a las cartas. En un restaurante, la carta es el menú.",
+    "note_de": "Zwei Bedeutungen. 1) BRIEFE: he escrito tres cartas. 2) SPIELKARTEN: jugamos a las cartas. Im Restaurant ist la carta die Speisekarte."
   },
   {
     "id": 3499,
@@ -1958,7 +2002,11 @@
     "topic": "transporte_a2",
     "topicOrder": 7,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_hu": "Két jelentése van. 1) MENET, vonulás: la marcha por la paz. 2) INDULÁS, távozás: la marcha del equipo. Az en marcha kifejezés azt jelenti, hogy megy, működik.",
+    "note_en": "Two meanings. 1) MARCH, a procession: la marcha por la paz. 2) DEPARTURE: la marcha del equipo. The phrase en marcha means up and running.",
+    "note_es": "Dos sentidos. 1) DESFILE: la marcha por la paz. 2) SALIDA: la marcha del equipo. En marcha significa en funcionamiento.",
+    "note_de": "Zwei Bedeutungen. 1) MARSCH: la marcha por la paz. 2) WEGGANG: la marcha del equipo."
   },
   {
     "id": 3504,
@@ -2050,7 +2098,11 @@
     "topic": "estudios",
     "topicOrder": 6,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_hu": "Két jelentése van. 1) OSZTÁLYZAT: he sacado buenas notas. 2) JEGYZET, feljegyzés: te dejo una nota. Az iskolai környezet dönti el.",
+    "note_en": "Two meanings. 1) GRADE at school: he sacado buenas notas. 2) NOTE you write down: te dejo una nota. The school context decides.",
+    "note_es": "Dos sentidos. 1) CALIFICACIÓN: he sacado buenas notas. 2) APUNTE: te dejo una nota.",
+    "note_de": "Zwei Bedeutungen. 1) NOTE (Schulnote): he sacado buenas notas. 2) NOTIZ: te dejo una nota."
   },
   {
     "id": 3510,
@@ -2171,7 +2223,11 @@
     "topic": "ocio_film_tv_a2",
     "topicOrder": 1,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_hu": "Két jelentése van. 1) BEJÁRAT: la entrada del edificio. 2) BELÉPŐJEGY: he comprado dos entradas. Ha vásárolni lehet, jegy.",
+    "note_en": "Two meanings. 1) ENTRANCE: la entrada del edificio. 2) TICKET: he comprado dos entradas. If it can be bought, it is the ticket.",
+    "note_es": "Dos sentidos. 1) PUERTA de acceso: la entrada del edificio. 2) BILLETE: he comprado dos entradas.",
+    "note_de": "Zwei Bedeutungen. 1) EINGANG: la entrada del edificio. 2) EINTRITTSKARTE: he comprado dos entradas."
   },
   {
     "id": 3518,
@@ -2340,7 +2396,11 @@
     "topic": "amor_pareja_a2",
     "topicOrder": 1,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_hu": "Két jelentése van. 1) PÁR, két ember együtt: una pareja de baile. 2) PARTNER, az élettársad: mi pareja y yo. Nemtől független, férfira és nőre is ez a szó.",
+    "note_en": "Two meanings. 1) COUPLE, two people together: una pareja de baile. 2) PARTNER, your significant other: mi pareja y yo. It is gender-neutral, used for a man or a woman.",
+    "note_es": "Dos sentidos. 1) DOS PERSONAS juntas: una pareja de baile. 2) NOVIO O NOVIA: mi pareja y yo.",
+    "note_de": "Zwei Bedeutungen. 1) PAAR: una pareja de baile. 2) PARTNER/IN: mi pareja y yo."
   },
   {
     "id": 3529,
@@ -3260,7 +3320,11 @@
     "sentence_de": "Jetzt bist du dran zu sprechen.",
     "topic": "ocio_film_tv_a2",
     "topicOrder": 3,
-    "pos": "verb"
+    "pos": "verb",
+    "note_hu": "Két jelentése van. 1) MEGÉRINTENI: no toques eso. 2) HANGSZEREN JÁTSZANI: toca la guitarra. A tocar a alguien azt is jelenti, hogy valaki sorra kerül: ahora te toca a ti.",
+    "note_en": "Two meanings. 1) TO TOUCH: no toques eso. 2) TO PLAY an instrument: toca la guitarra. Tocarle a alguien also means it is someone's turn: ahora te toca a ti.",
+    "note_es": "Dos sentidos. 1) PALPAR: no toques eso. 2) INTERPRETAR música: toca la guitarra. Tocarle a alguien es también su turno.",
+    "note_de": "Zwei Bedeutungen. 1) BERÜHREN: no toques eso. 2) EIN INSTRUMENT SPIELEN: toca la guitarra."
   },
   {
     "id": 3589,
@@ -3581,7 +3645,11 @@
     "topic": "estudios",
     "topicOrder": 10,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_hu": "Két jelentése van. 1) TANULMÁNY, kutatás: un estudio sobre el tema. 2) STÚDIÓ, műterem vagy garzon: un estudio de música. A tanulás maga estudiar, nem ez.",
+    "note_en": "Two meanings. 1) STUDY, a piece of research: un estudio sobre el tema. 2) STUDIO, a workroom or a small flat: un estudio de música. Studying itself is estudiar, not this word.",
+    "note_es": "Dos sentidos. 1) INVESTIGACIÓN: un estudio sobre el tema. 2) TALLER o apartamento pequeño: un estudio de música.",
+    "note_de": "Zwei Bedeutungen. 1) STUDIE: un estudio sobre el tema. 2) STUDIO: un estudio de música."
   },
   {
     "id": 3610,
@@ -4013,7 +4081,11 @@
     "topic": "comida_a2",
     "topicOrder": 18,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_hu": "Két jelentése van. 1) TALPAS POHÁR, italra: una copa de vino. 2) KUPA, a díj: la copa del mundo. A hétköznapi vizespohár vaso, nem copa.",
+    "note_en": "Two meanings. 1) STEMMED GLASS for a drink: una copa de vino. 2) CUP, the trophy: la copa del mundo. The everyday water glass is vaso, not copa.",
+    "note_es": "Dos sentidos. 1) COPA para beber: una copa de vino. 2) TROFEO: la copa del mundo. El vaso de agua es vaso, no copa.",
+    "note_de": "Zwei Bedeutungen. 1) STIELGLAS: una copa de vino. 2) POKAL: la copa del mundo."
   },
   {
     "id": 3638,
@@ -4184,7 +4256,11 @@
     "topic": "ocio_zene_konyvek_a2",
     "topicOrder": 10,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_hu": "Két jelentése van. 1) MINTA, próbadarab: una muestra de sangre. 2) KIÁLLÍTÁS: una muestra de arte. A művészeti környezet dönti el.",
+    "note_en": "Two meanings. 1) SAMPLE: una muestra de sangre. 2) EXHIBITION: una muestra de arte. The art context decides.",
+    "note_es": "Dos sentidos. 1) PORCIÓN de prueba: una muestra de sangre. 2) EXPOSICIÓN: una muestra de arte.",
+    "note_de": "Zwei Bedeutungen. 1) PROBE: una muestra de sangre. 2) AUSSTELLUNG: una muestra de arte."
   },
   {
     "id": 3649,
@@ -4278,7 +4354,11 @@
     "topic": "trabajo_dia_oficina_a2",
     "topicOrder": 21,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_hu": "Két jelentése van. 1) SOR, hogy ki következik: ahora es mi turno. 2) MŰSZAK a munkahelyen: el turno de noche. A munkahelyi környezet dönti el.",
+    "note_en": "Two meanings. 1) TURN, whose go it is: ahora es mi turno. 2) SHIFT at work: el turno de noche. The workplace context decides.",
+    "note_es": "Dos sentidos. 1) VEZ: ahora es mi turno. 2) JORNADA laboral: el turno de noche.",
+    "note_de": "Zwei Bedeutungen. 1) REIHE: ahora es mi turno. 2) SCHICHT: el turno de noche."
   },
   {
     "id": 3655,
@@ -4430,7 +4510,11 @@
     "topic": "comunicacion_medios_a2",
     "topicOrder": 3,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_hu": "Két jelentése van. 1) HÁLÓ, a tárgy: la red del futbolista. 2) HÁLÓZAT, az internet: lo he visto en la red. Redes sociales = közösségi média.",
+    "note_en": "Two meanings. 1) NET, the object: la red del futbolista. 2) NETWORK, the internet: lo he visto en la red. Redes sociales = social media.",
+    "note_es": "Dos sentidos. 1) MALLA: la red del futbolista. 2) INTERNET: lo he visto en la red.",
+    "note_de": "Zwei Bedeutungen. 1) NETZ: la red del futbolista. 2) NETZWERK, Internet: lo he visto en la red."
   },
   {
     "id": 3665,
@@ -4483,15 +4567,19 @@
     "es": "el sentido",
     "hu": "az értelem / az irány",
     "en": "sense / direction",
-    "sentence_es": "No tiene sentido.",
-    "sentence_hu": "Nincs értelme.",
-    "sentence_en": "It doesn't make sense.",
+    "sentence_es": "Esta idea no tiene sentido.",
+    "sentence_hu": "Ennek az ötletnek nincs értelme.",
+    "sentence_en": "This idea makes no sense.",
     "de": "der Sinn",
-    "sentence_de": "Das ergibt keinen Sinn.",
+    "sentence_de": "Diese Idee ergibt keinen Sinn.",
     "topic": "espiritu_pensamientos_a2",
     "topicOrder": 23,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_hu": "Két jelentése van. 1) ÉRTELEM: no tiene sentido = nincs értelme. 2) IRÁNY: en sentido contrario = az ellenkező irányban. Az öt érzékszerv is los sentidos.",
+    "note_en": "Two meanings. 1) SENSE, meaning: no tiene sentido = it makes no sense. 2) DIRECTION: en sentido contrario = the opposite way. The five senses are also los sentidos.",
+    "note_es": "Dos sentidos. 1) SIGNIFICADO: no tiene sentido. 2) DIRECCIÓN: en sentido contrario. Los cinco sentidos también son sentidos.",
+    "note_de": "Zwei Bedeutungen. 1) SINN: no tiene sentido. 2) RICHTUNG: en sentido contrario."
   },
   {
     "id": 3669,
@@ -4570,7 +4658,11 @@
     "topic": "salud_deporte_enfermedad_a2",
     "topicOrder": 9,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_hu": "Két jelentése van. 1) BELSŐ FÜL és a HALLÁS: tiene buen oído = jó a hallása. 2) A fül külső része oreja. Zenei értelemben az oído a jó hallás.",
+    "note_en": "Two meanings. 1) The INNER EAR and HEARING: tiene buen oído = he has a good ear. 2) The outer ear is oreja. Musically, oído is the good ear.",
+    "note_es": "Dos sentidos. 1) OÍDO interno y audición: tiene buen oído. 2) La parte externa es la oreja.",
+    "note_de": "Zwei Bedeutungen. 1) INNENOHR und GEHÖR: tiene buen oído. 2) Das äußere Ohr heißt oreja."
   },
   {
     "id": 3674,
@@ -4648,7 +4740,11 @@
     "topic": "paises",
     "topicOrder": 6,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_hu": "Két jelentése van. 1) FALU, kis település: vivo en un pueblo pequeño. 2) NÉP, egy ország lakossága: el pueblo español. A méret és a névelő segít.",
+    "note_en": "Two meanings. 1) VILLAGE, a small town: vivo en un pueblo pequeño. 2) THE PEOPLE of a country: el pueblo español. Size and article help you tell.",
+    "note_es": "Dos sentidos. 1) LOCALIDAD pequeña: vivo en un pueblo pequeño. 2) CONJUNTO de habitantes: el pueblo español.",
+    "note_de": "Zwei Bedeutungen. 1) DORF: vivo en un pueblo pequeño. 2) VOLK: el pueblo español."
   },
   {
     "id": 3679,
@@ -4726,7 +4822,11 @@
     "topic": "trabajo_dia_juzgado_a2",
     "topicOrder": 22,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_hu": "Két jelentése van. 1) HIÁNY: hay falta de tiempo = kevés az idő. 2) HIBA, vétség: has cometido una falta. A hacer falta azt jelenti, hogy kell, szükség van rá.",
+    "note_en": "Two meanings. 1) LACK: hay falta de tiempo = there is a lack of time. 2) FAULT, an offence: has cometido una falta. Hacer falta means to be needed.",
+    "note_es": "Dos sentidos. 1) CARENCIA: hay falta de tiempo. 2) ERROR o infracción: has cometido una falta. Hacer falta es ser necesario.",
+    "note_de": "Zwei Bedeutungen. 1) MANGEL: hay falta de tiempo. 2) FEHLER: has cometido una falta."
   },
   {
     "id": 3684,
@@ -4896,7 +4996,11 @@
     "topic": "trabajo_dia_juzgado_a2",
     "topicOrder": 24,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_hu": "Két jelentése van. 1) ÜGYNÖK, képviselő: un agente de viajes. 2) RENDŐR, hivatalos megszólításban: el agente llegó rápido. Mexikóban a rendőrt gyakran agente-nak hívják.",
+    "note_en": "Two meanings. 1) AGENT, a representative: un agente de viajes. 2) OFFICER, in official use: el agente llegó rápido. In Mexico a police officer is often called agente.",
+    "note_es": "Dos sentidos. 1) REPRESENTANTE: un agente de viajes. 2) POLICÍA: el agente llegó rápido.",
+    "note_de": "Zwei Bedeutungen. 1) VERTRETER: un agente de viajes. 2) POLIZIST: el agente llegó rápido."
   },
   {
     "id": 3695,
@@ -4927,7 +5031,11 @@
     "sentence_de": "Was für eine seltsame Situation.",
     "topic": "opinion_calidad_a2",
     "topicOrder": 8,
-    "pos": "adj"
+    "pos": "adj",
+    "note_hu": "Két jelentése van. 1) FURCSA, szokatlan: qué situación tan rara. 2) RITKA: es una planta rara. A hétköznapi beszédben szinte mindig furcsa.",
+    "note_en": "Two meanings. 1) STRANGE: qué situación tan rara. 2) RARE: es una planta rara. In everyday speech it almost always means strange.",
+    "note_es": "Dos sentidos. 1) EXTRAÑO: qué situación tan rara. 2) POCO FRECUENTE: es una planta rara.",
+    "note_de": "Zwei Bedeutungen. 1) SELTSAM: qué situación tan rara. 2) SELTEN: es una planta rara."
   },
   {
     "id": 3697,
@@ -4958,7 +5066,11 @@
     "topic": "trabajo_dia_juzgado_a2",
     "topicOrder": 25,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_hu": "Két jelentése van. 1) JOG: tienes derecho a saber = jogod van tudni. 2) JOBB OLDAL, irány: a la derecha = jobbra. Iskolai tantárgyként a derecho a jogtudomány.",
+    "note_en": "Two meanings. 1) RIGHT you are entitled to: tienes derecho a saber. 2) RIGHT-HAND side: a la derecha = to the right. As a subject of study, derecho is law.",
+    "note_es": "Dos sentidos. 1) FACULTAD: tienes derecho a saber. 2) LADO derecho: a la derecha. Como carrera, derecho es la ley.",
+    "note_de": "Zwei Bedeutungen. 1) RECHT: tienes derecho a saber. 2) RECHTE SEITE: a la derecha."
   },
   {
     "id": 3699,
@@ -5147,7 +5259,11 @@
     "sentence_de": "Ich will das Spiel gewinnen.",
     "topic": "salud_deporte_ejercicio_a2",
     "topicOrder": 9,
-    "pos": "verb"
+    "pos": "verb",
+    "note_hu": "Két jelentése van. 1) NYERNI: quiero ganar el partido. 2) KERESNI, pénzt: gana mil euros al mes. Ha pénz áll mellette, kereset.",
+    "note_en": "Two meanings. 1) TO WIN: quiero ganar el partido. 2) TO EARN money: gana mil euros al mes. With money beside it, it is earning.",
+    "note_es": "Dos sentidos. 1) VENCER: quiero ganar el partido. 2) COBRAR: gana mil euros al mes.",
+    "note_de": "Zwei Bedeutungen. 1) GEWINNEN: quiero ganar el partido. 2) VERDIENEN: gana mil euros al mes."
   },
   {
     "id": 3711,
@@ -5355,7 +5471,11 @@
     "topic": "amor_pareja_a2",
     "topicOrder": 2,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_hu": "Két jelentése van. 1) BARÁT, a párod: su novio es simpático. 2) VŐLEGÉNY az esküvőn: los novios llegaron a la iglesia. Az esküvői környezet dönti el.",
+    "note_en": "Two meanings. 1) BOYFRIEND: su novio es simpático. 2) GROOM at a wedding: los novios llegaron a la iglesia. The wedding context decides.",
+    "note_es": "Dos sentidos. 1) PAREJA: su novio es simpático. 2) EN LA BODA, el que se casa: los novios llegaron a la iglesia.",
+    "note_de": "Zwei Bedeutungen. 1) FREUND: su novio es simpático. 2) BRÄUTIGAM: los novios llegaron a la iglesia."
   },
   {
     "id": 3724,
@@ -5545,7 +5665,11 @@
     "topic": "estudios",
     "topicOrder": 17,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_hu": "Két jelentése van. 1) NYOMOZÁS, rendőrségi: la investigación del caso. 2) KUTATÁS, tudományos: la investigación científica. A jelző dönti el.",
+    "note_en": "Two meanings. 1) INVESTIGATION by the police: la investigación del caso. 2) RESEARCH, scientific: la investigación científica. The adjective decides.",
+    "note_es": "Dos sentidos. 1) PESQUISA policial: la investigación del caso. 2) ESTUDIO científico: la investigación científica.",
+    "note_de": "Zwei Bedeutungen. 1) ERMITTLUNG: la investigación del caso. 2) FORSCHUNG: la investigación científica."
   },
   {
     "id": 3736,
@@ -5593,7 +5717,11 @@
     "topic": "espiritu_pensamientos_a2",
     "topicOrder": 24,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_hu": "Két jelentése van. 1) ELEJE, kezdet: al principio fue difícil. 2) ALAPELV: es una cuestión de principios. Az al principio kifejezés mindig időt jelent.",
+    "note_en": "Two meanings. 1) BEGINNING: al principio fue difícil. 2) PRINCIPLE: es una cuestión de principios. The phrase al principio always means time.",
+    "note_es": "Dos sentidos. 1) COMIENZO: al principio fue difícil. 2) NORMA: es una cuestión de principios.",
+    "note_de": "Zwei Bedeutungen. 1) ANFANG: al principio fue difícil. 2) PRINZIP: es una cuestión de principios."
   },
   {
     "id": 3739,
@@ -11880,21 +12008,21 @@
     "es": "el tamaño",
     "hu": "méret",
     "en": "size",
-    "sentence_es": "¿Qué tamaño necesitas?",
-    "sentence_hu": "Milyen méretre van szükséged?",
-    "sentence_en": "What size do you need?",
+    "sentence_es": "¿De qué tamaño quieres el café?",
+    "sentence_hu": "Milyen méretű kávét kérsz?",
+    "sentence_en": "What size coffee do you want?",
     "de": "die Größe",
-    "sentence_de": "Welche Größe brauchst du?",
+    "sentence_de": "Welche Größe Kaffee möchtest du?",
     "id": 2257,
     "level": "A2",
     "topic": "compras_servicios",
     "topicOrder": 30,
     "pos": "noun",
     "gender": "m",
-    "note_hu": "A tamaño az általános méret: tárgyé, helyiségé, csomagolásé. RUHÁRA és cipőre nem ez jár, ott a talla: ¿Qué talla tienes? Boltban ez a leggyakoribb csere-hiba.",
-    "note_en": "Tamaño is size in general: of an object, a room, a package. It is NOT used for clothes and shoes, those take talla: ¿Qué talla tienes? This is the most common mix-up in a shop.",
-    "note_es": "El tamaño es la medida general: de un objeto, una sala, un envase. Para ROPA y calzado no se usa, ahí va la talla: ¿Qué talla tienes?",
-    "note_de": "Tamaño ist die allgemeine Größe: eines Gegenstands, eines Raums, einer Packung. Für KLEIDUNG und Schuhe gilt es nicht, dort steht talla: ¿Qué talla tienes?"
+    "note_hu": "A tamaño az általános méret: kávé, doboz, szoba, csomagolás. RUHÁRA és cipőre nem ez jár, ott a talla: ¿Qué talla de camisa tienes? Boltban ez a leggyakoribb csere-hiba.",
+    "note_en": "Tamaño is size in general: a coffee, a box, a room, a package. It is NOT used for clothes and shoes, those take talla: ¿Qué talla de camisa tienes? This is the most common mix-up in a shop.",
+    "note_es": "El tamaño es la medida general: de un café, una caja, una sala, un envase. Para ROPA y calzado no se usa, ahí va la talla: ¿Qué talla de camisa tienes?",
+    "note_de": "Tamaño ist die allgemeine Größe: eines Kaffees, einer Schachtel, eines Raums, einer Packung. Für KLEIDUNG und Schuhe gilt es nicht, dort steht talla: ¿Qué talla de camisa tienes?"
   },
   {
     "es": "la declaración",

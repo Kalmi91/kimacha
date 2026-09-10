@@ -163,3 +163,33 @@ describe('strictAnswerMatch, German spellings', () => {
     expect(strictAnswerMatch('Strasse', 'Straße', { lang: 'es' })).toBe(false);
   });
 });
+
+// FB215: két jelentésű kártyán mindkét ág helyes válasz.
+describe('alternative meanings', () => {
+  it('accepts either side of a " / " gloss', () => {
+    expect(strictAnswerMatch('padló', 'padló / emelet')).toBe(true);
+    expect(strictAnswerMatch('emelet', 'padló / emelet')).toBe(true);
+  });
+
+  it('accepts the whole written form as well', () => {
+    expect(strictAnswerMatch('padló / emelet', 'padló / emelet')).toBe(true);
+  });
+
+  it('still rejects a wrong word', () => {
+    expect(strictAnswerMatch('ablak', 'padló / emelet')).toBe(false);
+  });
+
+  it('keeps FB6 strictness inside an alternative', () => {
+    expect(strictAnswerMatch('emelete', 'padló / emelet')).toBe(false);
+  });
+
+  it('combines with the BUG-001 gloss rule', () => {
+    expect(strictAnswerMatch('folytatni', 'folytatni / követni (te folytatod)')).toBe(true);
+    expect(strictAnswerMatch('követni', 'folytatni / követni (te folytatod)')).toBe(true);
+  });
+
+  it('leaves a lone slash-free answer alone', () => {
+    expect(strictAnswerMatch('casa', 'casa')).toBe(true);
+  });
+});
+

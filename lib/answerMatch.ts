@@ -98,10 +98,30 @@ export function sentenceBuildMatch(built: string[], target: string[]): boolean {
 // one first (the same gloss-stripping the tile bank does since FB12).
 const withoutGloss = (text: string) => text.replace(/\([^)]*\)/g, ' ').trim();
 
+// FB215, Kálmán 2026-09-09 (word:la fuerza): „itt a2 ben sok az olyan szó aminek
+// több jelentése van, ez miért van, ezek nagyon zavaróak". Egy szónak tényleg
+// lehet két jelentése (el piso = padló / emelet), és a kártya mindkettőt kiírja,
+// de a gépelés eddig CSAK az elsőt fogadta el (a hívó `back.split(' / ')[0]`-t
+// adott át), tehát a helyes „emelet" hibás lett. A „ / " tehát vagylagos: bármely
+// ága helyes válasz. A kártya továbbra is mindkettőt mutatja.
+const ALTERNATIVE_SEPARATOR = / \/ /;
+
+function answerCandidates(correct: string): string[] {
+  // A teljes leírt alak is helyes marad („padló / emelet" begépelve).
+  const out: string[] = [correct.trim()];
+  for (const part of correct.split(ALTERNATIVE_SEPARATOR)) {
+    const full = part.trim();
+    if (!full) continue;
+    out.push(full);
+    const bare = withoutGloss(full);
+    if (bare && bare !== full) out.push(bare);
+  }
+  return out;
+}
+
 export function strictAnswerMatch(answer: string, correct: string, opts: MatchOptions = {}): boolean {
   const answerForms = normalizedForms(answer, opts);
-  const bare = withoutGloss(correct);
-  const candidates = bare && bare !== correct.trim() ? [correct, bare] : [correct];
+  const candidates = answerCandidates(correct);
   return candidates.some((candidate) =>
     normalizedForms(candidate, opts).some((c) => {
       if (c.length === 0) return false;
