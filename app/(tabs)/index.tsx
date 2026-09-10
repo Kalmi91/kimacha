@@ -15,7 +15,7 @@ import { strictAnswerMatch } from '@/lib/answerMatch';
 import { nearMissDistractors } from '@/lib/distractors';
 import { consumePendingAction } from '@/lib/pendingAction';
 import { DAILY_NEW_BONUS_STEP } from '@/lib/usageStats';
-import { capNewWords, newWordsLeftToday, newWordIntake, newWordPauseReason, type NewWordAllowance, type NewWordPause } from '@/lib/newWordBudget';
+import { badgeNewWordsLeft, capNewWords, newWordsLeftToday, newWordIntake, newWordPauseReason, type NewWordAllowance, type NewWordPause } from '@/lib/newWordBudget';
 import { borrowNewWords, countNewWords, nextTopicWithNewWords } from '@/lib/topicRotation';
 import { isLearned, wordPhase, phaseShape, type WordPhase } from '@/lib/wordPhase';
 import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
@@ -390,15 +390,21 @@ export default function LearnScreen() {
     };
     const leftToday = newWordsLeftToday(budget);
     const intake = newWordIntake(budget);
-    setNewWordsLeft(leftToday);
-    setNewWordsPaused(intake === 0 && leftToday > 0);
 
     let activeWords: WordEntry[];
     // FB190: a szint egészére nézve maradt-e el nem kezdett szó. Ez független a
     // napi kerettől és az aktív témától: azt mondja meg, van-e MÉG mit tanulni
     // ezen a szinten egyáltalán.
     const levelReps = await db.getWordReps(levelWords.map(w => w.id));
-    setLevelNewWordsLeft(levelWords.filter(w => (levelReps.get(w.id) ?? 0) === 0).length);
+    const levelNewLeft = levelWords.filter(w => (levelReps.get(w.id) ?? 0) === 0).length;
+    setLevelNewWordsLeft(levelNewLeft);
+    // FB226, Kálmán 2026-09-10: „az új szavak abból a szintből jöjjenek ahol éppen
+    // állok. Ha nincsen benne új szó akkor jelöljön 0-át." A 🌱 jelvény eddig a napi
+    // keretet mutatta akkor is, amikor ezen a szinten már nem volt el nem kezdett szó,
+    // tehát olyat ígért, amit a sor nem tudott adni. Az ismétlés ettől független:
+    // az továbbra is átjár a szintek között (FB225).
+    setNewWordsLeft(badgeNewWordsLeft(budget, levelNewLeft));
+    setNewWordsPaused(intake === 0 && leftToday > 0 && levelNewLeft > 0);
     if (useTopics) {
       const allWordIds = levelWords.map(w => w.id);
       const repsMap = await db.getWordReps(allWordIds);
@@ -721,8 +727,13 @@ export default function LearnScreen() {
     };
     const leftToday2 = newWordsLeftToday(budget2);
     const intake2 = newWordIntake(budget2);
-    setNewWordsLeft(leftToday2);
-    setNewWordsPaused(intake2 === 0 && leftToday2 > 0);
+    // FB226: ugyanaz a szabály, mint a sor első építésénél, különben a feltöltés
+    // visszaírná a napi keretet egy kifogyott szintre.
+    const lvlReps = await db.getWordReps(lvlWords.map((w: WordEntry) => w.id));
+    const levelNewLeft2 = lvlWords.filter((w: WordEntry) => (lvlReps.get(w.id) ?? 0) === 0).length;
+    setLevelNewWordsLeft(levelNewLeft2);
+    setNewWordsLeft(badgeNewWordsLeft(budget2, levelNewLeft2));
+    setNewWordsPaused(intake2 === 0 && leftToday2 > 0 && levelNewLeft2 > 0);
 
     let newRows: any[];
     // FB174: the due pile behind this refill, filled in on both branches below.

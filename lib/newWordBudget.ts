@@ -75,6 +75,15 @@ export function newWordIntake({ limit, bonus, learnedToday, unlearned = 0 }: New
   return Math.max(inHand, Math.min(left, bonus));
 }
 
+// FB226, Kálmán 2026-09-10: „azt is akarom, hogy az új szavak abból a szintből
+// jöjjenek ahol éppen állok. Ha nincsen benne új szó akkor jelöljön 0 át." A napi
+// keret az egész tanulásra szól, a 🌱 jelvény viszont azt ígéri, hogy MOST kap
+// annyi új szót; ha a szinten már nincs el nem kezdett szó, az ígéret hamis.
+// Az ismétlés ettől független: az továbbra is átjár a szintek között (FB225).
+export function badgeNewWordsLeft(allowance: NewWordAllowance, levelNewWords: number): number {
+  return Math.min(newWordsLeftToday(allowance), Math.max(0, levelNewWords));
+}
+
 export type NewWordPause = 'none' | 'congested' | 'daily-limit';
 
 // Why the queue is not taking new words, for the screens that have to explain it
