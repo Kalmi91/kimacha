@@ -6,17 +6,28 @@
 // correct answer isn't predictably in the JSON's authored slot 0.
 
 import { shuffleArray, shuffleOptions, hashString } from '../shuffle';
-import type { GrammarItem, GrammarTopicData } from './content';
+import { isMarkItem, type GrammarItem, type GrammarTopicData } from './content';
+import { markAnswerIndex, markTokens } from './grammarMark';
 
 export interface GrammarRoundItem {
   item: GrammarItem;
-  options: string[]; // shuffled order
-  correctIndex: number; // index into `options`, after shuffling
+  /** gap: a felkínált opciók kevert sorrendben; mark: a mondat szavai, sorrendben. */
+  options: string[];
+  correctIndex: number; // index into `options`
 }
 
 export function buildGrammarRound(topic: GrammarTopicData, seed: number): GrammarRoundItem[] {
   const orderedItems = shuffleArray(topic.items, seed);
   return orderedItems.map((item) => {
+    // FB219: a jelölős feladatnál a sorrend maga a mondat, tehát nincs mit
+    // keverni; az „opciók" a mondat szavai, a helyes index a keresett szóé.
+    if (isMarkItem(item)) {
+      const tokens = markTokens(item.sentence);
+      const answerToken = markAnswerIndex(item, tokens);
+      const words = tokens.filter((tk) => tk.isWord);
+      const correctIndex = answerToken < 0 ? -1 : words.indexOf(tokens[answerToken]);
+      return { item, options: words.map((tk) => tk.text), correctIndex };
+    }
     const optionSeed = hashString(`${topic.topic}:${item.id}:${seed}`);
     const { options, correctIndex } = shuffleOptions(item.options, item.correct, optionSeed);
     return { item, options, correctIndex };

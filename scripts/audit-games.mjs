@@ -354,6 +354,13 @@ function auditGrammarWord(tok, taughtSet, extra, path) {
   }
 }
 
+const GRAMMAR_WORD_CLASSES = ['noun', 'verb', 'adjective', 'adverb', 'article', 'pronoun', 'preposition'];
+
+// A jelölős mondat szavai, ugyanaz a vágás, mint lib/games/grammarMark.ts-ben.
+function markWords(sentence) {
+  return (sentence.match(/[\p{L}\p{M}\d]+(?:['’-][\p{L}\p{M}\d]+)*/gu) ?? []).map((w) => normalize(w));
+}
+
 function auditGrammarTopic(topic, filePath) {
   const path = `grammar/${filePath}`;
   if (!topic.topic) p1.push({ path, issue: 'missing topic id' });
@@ -372,20 +379,42 @@ function auditGrammarTopic(topic, filePath) {
     if (seenIds.has(item.id)) p2.push({ path: itemPath, issue: `duplicate item id "${item.id}"` });
     seenIds.add(item.id);
 
-    if (!item.sentence?.includes('___')) p1.push({ path: itemPath, issue: 'sentence has no "___" blank' });
-    if (!Array.isArray(item.options) || item.options.length < 2) p1.push({ path: itemPath, issue: 'needs >=2 options' });
-    if (typeof item.correct !== 'number' || item.correct < 0 || item.correct >= (item.options?.length ?? 0)) {
-      p1.push({ path: itemPath, issue: `correct index ${item.correct} out of range` });
+    // FB219: a jelölős tétel kész mondatot ad, és a mondat egyik szavára kell
+    // koppintani, tehát se lyuk, se opció-lista nincs benne.
+    const isMark = item.kind === 'mark';
+    if (isMark) {
+      if (item.sentence?.includes('___')) p1.push({ path: itemPath, issue: 'mark item must not have a "___" blank' });
+      if (!GRAMMAR_WORD_CLASSES.includes(item.target)) {
+        p1.push({ path: itemPath, issue: `unknown mark target "${item.target}"` });
+      }
+      const words = markWords(item.sentence ?? '');
+      const occurrences = words.filter((w) => w === normalize(item.answer ?? ''));
+      const wanted = (item.answerIndex ?? 0) + 1;
+      if (occurrences.length < wanted) {
+        p1.push({ path: itemPath, issue: `mark answer "${item.answer}" not found in the sentence` });
+      }
+    } else {
+      if (!item.sentence?.includes('___')) p1.push({ path: itemPath, issue: 'sentence has no "___" blank' });
+      if (!Array.isArray(item.options) || item.options.length < 2) p1.push({ path: itemPath, issue: 'needs >=2 options' });
+      if (typeof item.correct !== 'number' || item.correct < 0 || item.correct >= (item.options?.length ?? 0)) {
+        p1.push({ path: itemPath, issue: `correct index ${item.correct} out of range` });
+      }
     }
 
     checkLangs(item.why, `${itemPath} why`);
-    for (const opt of item.options ?? []) {
+    for (const opt of isMark ? [] : item.options ?? []) {
       if (opt === item.options[item.correct]) continue;
       if (!item.wrong?.[opt]) {
         p1.push({ path: itemPath, issue: `missing wrong[] explanation for option "${opt}"` });
       } else {
         checkLangs(item.wrong[opt], `${itemPath} wrong[${opt}]`);
       }
+    }
+    // A jelölős tétel `wrong` kulcsai a mondat szavai: ami ott van, annak négy
+    // nyelven kell szólnia, de nem kötelező minden szóra írni (a képernyőnek van
+    // általános tartalék-szövege).
+    for (const key of isMark ? Object.keys(item.wrong ?? {}) : []) {
+      checkLangs(item.wrong[key], `${itemPath} wrong[${key}]`);
     }
 
     for (const tok of tokenize((item.sentence ?? '').replace('___', ''))) {

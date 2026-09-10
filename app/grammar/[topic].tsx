@@ -7,7 +7,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { normalizeWordToken, type Level } from '@/data/words';
-import { cumulativeCorpusWordIds, type GrammarTopicData } from '@/lib/games/content';
+import { cumulativeCorpusWordIds, isMarkItem, type GrammarGapItem, type GrammarTopicData } from '@/lib/games/content';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, syllabusTopic } from '@/lib/grammar/syllabus';
 import { speak } from '@/lib/speech';
@@ -80,10 +80,15 @@ export default function GrammarLessonScreen() {
 
   // Two worked examples from the first items, so the lesson SHOWS the rule
   // before it asks anything.
-  const worked = lesson.items.slice(0, 3).map((item) => ({
-    filled: item.sentence.replace('___', item.options[item.correct]),
-    why: item.why[contentLang] ?? item.why.en,
-  }));
+  // FB219: a jelölős feladat mondata már kész, nincs mit behelyettesíteni, így a
+  // bemutató példák a lyukas tételekből jönnek.
+  const worked = lesson.items
+    .filter((item): item is GrammarGapItem => !isMarkItem(item))
+    .slice(0, 3)
+    .map((item) => ({
+      filled: item.sentence.replace('___', item.options[item.correct]),
+      why: item.why[contentLang] ?? item.why.en,
+    }));
 
   const finish = async (correct: number, total: number) => {
     setScore({ correct, total });

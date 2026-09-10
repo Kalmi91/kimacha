@@ -272,6 +272,17 @@ export default {
       topicItemCount: (n: number) => `${n} Fragen`,
       comingSoon: 'Für diese Sprache gibt es noch keinen Grammatik-Inhalt.',
       progress: (current: number, total: number) => `${current} / ${total}`,
+      markPrompt: (wordClass: string) => `Tippe das ${wordClass} im Satz an.`,
+      wordClass: {
+        noun: 'NOMEN',
+        verb: 'VERB',
+        adjective: 'ADJEKTIV',
+        adverb: 'ADVERB',
+        article: 'ARTIKEL',
+        pronoun: 'PRONOMEN',
+        preposition: 'PRÄPOSITION',
+      } as Record<string, string>,
+      markWrong: 'Das ist es nicht. Suche das Wort, das diese Rolle hat.',
     },
     // F3 (confusables, GAMES.md 4.12).
     confusables: {

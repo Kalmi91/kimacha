@@ -5,7 +5,8 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { normalizeWordToken } from '@/data/words';
-import { cumulativeCorpusWordIds, type GrammarTopicData } from '@/lib/games/content';
+import { cumulativeCorpusWordIds, isMarkItem, type GrammarMarkItem, type GrammarTopicData } from '@/lib/games/content';
+import { markTokens } from '@/lib/games/grammarMark';
 import { buildGrammarRound, wrongExplanation } from '@/lib/games/grammarChoice';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString } from '@/lib/shuffle';
@@ -48,7 +49,15 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const answered = selected !== null;
   const isCorrect = answered && selected === current.correctIndex;
   const pickedText = answered ? current.options[selected] : undefined;
-  const [before, after] = current.item.sentence.split('___');
+  // FB219: a jelölős feladatnál a mondat egészben áll, nincs mit kettévágni. A
+  // koppintható szavak sorszáma a `current.options`-be mutat (a round-építő a
+  // mondat szavait teszi oda), a szóközök és írásjelek kimaradnak belőle.
+  const marking = isMarkItem(current.item);
+  const [before, after] = marking ? ['', ''] : current.item.sentence.split('___');
+  const markParts = marking ? markTokens(current.item.sentence) : [];
+  const wordIndexByToken: number[] = [];
+  let wordCursor = 0;
+  for (const part of markParts) wordIndexByToken.push(part.isWord ? wordCursor++ : -1);
 
   const knownIds = cumulativeCorpusWordIds(topic.level, learnedLang);
   const overrides = Object.fromEntries((topic.glossary ?? []).map((g) => [normalizeWordToken(g.word), g.gloss]));
@@ -77,18 +86,50 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
         {s.games.grammarChoice.progress(index + 1, round.length)}
       </Text>
 
-      <View style={[styles.sentenceCard, { backgroundColor: colors.card }]}>
-        <Text style={[styles.sentence, { color: colors.text }]}>
-          {before}
-          <Text style={{ color: answered ? (isCorrect ? '#22C55E' : '#EF4444') : colors.tint, fontWeight: '700' }}>
-            {answered ? pickedText : '____'}
+      {marking ? (
+        <>
+          <Text style={[styles.markPrompt, { color: colors.text }]}>
+            {s.games.grammarChoice.markPrompt(
+              s.games.grammarChoice.wordClass[(current.item as GrammarMarkItem).target] ??
+                (current.item as GrammarMarkItem).target
+            )}
           </Text>
-          {after}
-        </Text>
-      </View>
+          <View style={[styles.sentenceCard, { backgroundColor: colors.card }]}>
+            <Text style={[styles.sentence, { color: colors.text }]}>
+              {markParts.map((tok, i) => {
+                if (!tok.isWord) return <Text key={`s${i}`}>{tok.text}</Text>;
+                const wordIndex = wordIndexByToken[i];
+                const isRightAnswer = wordIndex === current.correctIndex;
+                const isPicked = selected === wordIndex;
+                const color = answered && isRightAnswer ? '#22C55E' : answered && isPicked ? '#EF4444' : colors.tint;
+                return (
+                  <Text
+                    key={`w${i}`}
+                    testID="grammar-mark-word"
+                    onPress={() => selectOption(wordIndex)}
+                    style={{ color, fontWeight: answered && (isRightAnswer || isPicked) ? '700' : '400' }}
+                  >
+                    {tok.text}
+                  </Text>
+                );
+              })}
+            </Text>
+          </View>
+        </>
+      ) : (
+        <View style={[styles.sentenceCard, { backgroundColor: colors.card }]}>
+          <Text style={[styles.sentence, { color: colors.text }]}>
+            {before}
+            <Text style={{ color: answered ? (isCorrect ? '#22C55E' : '#EF4444') : colors.tint, fontWeight: '700' }}>
+              {answered ? pickedText : '____'}
+            </Text>
+            {after}
+          </Text>
+        </View>
+      )}
 
-      <View style={styles.options}>
-        {current.options.map((opt, i) => {
+      <View style={marking ? styles.hiddenOptions : styles.options}>
+        {(marking ? [] : current.options).map((opt, i) => {
           const isPicked = selected === i;
           const isRightAnswer = i === current.correctIndex;
           let bg = colors.card;
@@ -122,7 +163,10 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
           <Text style={[styles.explainText, { color: colors.text }]}>{current.item.why[contentLang] ?? current.item.why.en}</Text>
           {!isCorrect && pickedText !== undefined ? (
             <Text style={[styles.explainText, { color: colors.tabIconDefault }]}>
-              {wrongExplanation(current.item, pickedText, contentLang) ?? ''}
+              {/* FB219: a mondatban bármelyik szóra koppinthat, tehát a jelölős
+                  feladatnak általános tartalék-indoklása van. */}
+              {wrongExplanation(current.item, pickedText, contentLang) ??
+                (marking ? s.games.grammarChoice.markWrong : '')}
             </Text>
           ) : null}
           {current.item.examples.map((ex, i) => (
@@ -164,6 +208,8 @@ const styles = StyleSheet.create({
   sentenceCard: { borderRadius: 16, padding: 20 },
   sentence: { fontSize: 20, lineHeight: 30, textAlign: 'center' },
   options: { gap: 10 },
+  hiddenOptions: { height: 0 },
+  markPrompt: { fontSize: 15, fontWeight: '700', textAlign: 'center' },
   option: { borderWidth: 1.5, borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
   optionText: { fontSize: 17, fontWeight: '600' },
   explainCard: { borderRadius: 16, padding: 16, gap: 8 },

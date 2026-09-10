@@ -285,6 +285,18 @@ export default {
       topicItemCount: (n: number) => `${n} kérdés`,
       comingSoon: 'Ehhez a nyelvhez még nincs nyelvtani tartalom.',
       progress: (current: number, total: number) => `${current} / ${total}`,
+      // FB219: jelölős feladat, a szófaj nevét a mondat elé tesszük.
+      markPrompt: (wordClass: string) => `Koppints a mondat ${wordClass} szavára.`,
+      wordClass: {
+        noun: 'FŐNÉV',
+        verb: 'IGE',
+        adjective: 'MELLÉKNÉV',
+        adverb: 'HATÁROZÓSZÓ',
+        article: 'NÉVELŐ',
+        pronoun: 'NÉVMÁS',
+        preposition: 'ELÖLJÁRÓSZÓ',
+      } as Record<string, string>,
+      markWrong: 'Nem ez az. Nézd meg, melyik szó tölti be ezt a szerepet.',
     },
     // F3 (confusables, GAMES.md 4.12).
     confusables: {
