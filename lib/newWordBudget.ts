@@ -31,13 +31,21 @@ export function capNewWords<T extends BudgetedItem>(items: T[], remaining: numbe
 export interface NewWordAllowance {
   limit: number;
   bonus: number;
-  startedToday: number;
-  /** Half-learned words (FSRS Learning/Relearning). Congestion only, see below. */
+  /**
+   * FB210, Kálmán 2026-09-09 (word:mind): „csak akkor legyen a számláló kevesebb,
+   * meg akkor jelölje megtanultnak a szót, ha le is tudom írni helyesen", és
+   * 2026-09-10-én kimondta, hogy a 🌱 napi számlálóra is ez vonatkozzon.
+   * Ezért a keretet nem az ELKEZDETT, hanem a MEGTANULT szavak fogyasztják:
+   * megtanult = a létra végigjárva, a gépelős lap is jó volt
+   * (lib/wordPhase.ts isLearned).
+   */
+  learnedToday: number;
+  /** Elkezdett, de még meg nem tanult szavak: ennyi van „kézben". */
   unlearned?: number;
 }
 
-export function newWordsLeftToday({ limit, bonus, startedToday }: NewWordAllowance): number {
-  return Math.max(0, limit + bonus - startedToday);
+export function newWordsLeftToday({ limit, bonus, learnedToday }: NewWordAllowance): number {
+  return Math.max(0, limit + bonus - learnedToday);
 }
 
 // FB112/FB113/FB114/FB115, Kálmán 2026-08-09/10: the badge jumped ("9 ből
@@ -48,30 +56,23 @@ export function newWordsLeftToday({ limit, bonus, startedToday }: NewWordAllowan
 // counters and the backlog (which grows by several words per session, and
 // survives across days) ate the setting.
 //
-// The two rules are separate now:
-//   * `newWordsLeftToday` = the visible daily countdown (monotone, -1 per word);
-//   * `newWordIntake` = how many new words the QUEUE may carry, which is the
-//     daily countdown unless the half-learned pile has grown past
-//     `WIP_CEILING_FACTOR × (limit + bonus)`, at which point intake pauses so
-//     nothing piles up ("ne rakjon be 5 új szót, mert akkor torlódik").
-export const WIP_CEILING_FACTOR = 2;
-
-export function newWordWipCeiling(limit: number, bonus: number): number {
-  return WIP_CEILING_FACTOR * (limit + bonus);
-}
-
-export function newWordIntake({ limit, bonus, startedToday, unlearned = 0 }: NewWordAllowance): number {
-  const left = newWordsLeftToday({ limit, bonus, startedToday });
-  if (unlearned < newWordWipCeiling(limit, bonus)) return left;
+// The two rules stay separate, and FB210 gave each a clean meaning:
+//   * `newWordsLeftToday` = the visible badge: how many new words are still to be
+//     LEARNED today (it falls when a word is spelled right, not when it is met);
+//   * `newWordIntake` = how many new words the QUEUE may hand out now, which is
+//     the badge minus the words already in hand and not yet learned. So the day's
+//     total new words stays at `limit + bonus` however the session goes, and no
+//     pile builds up ("ne rakjon be 5 új szót, mert akkor torlódik").
+export function newWordIntake({ limit, bonus, learnedToday, unlearned = 0 }: NewWordAllowance): number {
+  const left = newWordsLeftToday({ limit, bonus, learnedToday });
+  const inHand = Math.max(0, left - Math.max(0, unlearned));
   // FB140/FB142, Kálmán 2026-08-18: "5 új szóra kattintottak az A0 szinten és nem
   // dobott fel többet hanem újra feldobta", "már rég óta 0 új szót ír de mintha
   // újra és újra régi szavakat bedobna ismétlésre ... újakat nem tanulok ami
-  // viszont baj". The pause above is silent and self-sustaining: the half-learned
-  // pile only shrinks when those words graduate, and the "+N új szó" tap raised
-  // BOTH the budget and the ceiling, so the button could do nothing at all.
-  // A tap is an explicit demand, so the bonus passes the pause; the standing
-  // limit still waits for the congestion to clear.
-  return Math.min(left, bonus);
+  // viszont baj". A "+N új szó" tap is an explicit demand: it delivers even when
+  // the half-learned pile would otherwise hold everything back. The standing
+  // limit still waits for that pile to clear.
+  return Math.max(inHand, Math.min(left, bonus));
 }
 
 export type NewWordPause = 'none' | 'congested' | 'daily-limit';

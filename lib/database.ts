@@ -5,7 +5,7 @@ import { pickSurvivor } from './cardMerge';
 import { DEFAULT_REQUEUE_LEVEL } from './requeueGap';
 import { rankSentencesByWordWeakness, sentenceSlotCount, type WordWeakness } from './sentenceMix';
 import { WORD_MERGES } from './wordMerges';
-import { LEARNED_PASSES } from './wordPhase';
+import { isLearned, LEARNED_PASSES } from './wordPhase';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 
 export interface DB {
@@ -88,6 +88,7 @@ export interface DB {
   addNewLimitBonus(extra: number): Promise<void>;
   getNewWordsToday(): Promise<number>;
   getUnlearnedWordCount(): Promise<number>;
+  getWordsLearnedToday(): Promise<number>;
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
   getDayStats(date: string): Promise<{ minutes: number; words: number }>;
@@ -144,6 +145,9 @@ class SQLiteDB implements DB {
         state INTEGER NOT NULL DEFAULT 0,
         last_review TEXT,
         buried INTEGER NOT NULL DEFAULT 0,
+        -- FB210: mikor járta végig a szó a létrát (a gépelős lapot is), hogy a
+        -- napi új-szó keret a MEGTANULT szavakat számolhassa, ne az elkezdetteket.
+        learned_at TEXT,
         UNIQUE(word_id, type, pair)
       );
       CREATE TABLE IF NOT EXISTS streak (
@@ -296,6 +300,19 @@ class SQLiteDB implements DB {
     if (!buriedCol) {
       await this.db.execAsync('ALTER TABLE cards ADD COLUMN buried INTEGER NOT NULL DEFAULT 0');
     }
+    // Migration: add learned_at (FB210, the daily new-word budget counts learned
+    // words). Cards that already finished the ladder are stamped with a date in
+    // the PAST, not today: they were learned on some earlier day, and dating them
+    // today would eat a whole day's budget at once on the first launch.
+    const learnedAtCol = await this.db.getFirstAsync<any>("SELECT * FROM pragma_table_info('cards') WHERE name = 'learned_at'");
+    if (!learnedAtCol) {
+      await this.db.execAsync('ALTER TABLE cards ADD COLUMN learned_at TEXT');
+      await this.db.runAsync(
+        `UPDATE cards SET learned_at = COALESCE(last_review, ?)
+           WHERE type = 'word' AND reps - lapses >= ${LEARNED_PASSES} AND learned_at IS NULL`,
+        [new Date(0).toISOString()]
+      );
+    }
     // Migration: per-pair cards. Rebuild with UNIQUE(word_id,type,pair); existing
     // rows are tagged with the pair that was active when they were created.
     const cardsPairCol = await this.db.getFirstAsync<any>("SELECT * FROM pragma_table_info('cards') WHERE name = 'pair'");
@@ -435,6 +452,15 @@ class SQLiteDB implements DB {
       [card.due.toISOString(), card.stability, card.difficulty, card.elapsed_days, card.scheduled_days,
        card.learning_steps, card.reps, card.lapses, card.state, card.last_review ? card.last_review.toISOString() : null, wordId, type, this.activePair]
     );
+    // FB210: az ELSŐ alkalom, amikor a szó végigért a létrán, dátumot kap. Csak
+    // egyszer: egy későbbi visszaesés nem írja felül, különben a napi keret
+    // ugyanazzal a szóval kétszer is fogyna.
+    if (type === 'word' && isLearned(card)) {
+      await db.runAsync(
+        'UPDATE cards SET learned_at = ? WHERE word_id = ? AND type = ? AND pair = ? AND learned_at IS NULL',
+        [new Date().toISOString(), wordId, type, this.activePair]
+      );
+    }
   }
 
   async getDueCards(limit: number) {
@@ -1018,16 +1044,31 @@ class SQLiteDB implements DB {
     return rows.filter(r => localDateString(new Date(r.first_ts)) === today).length;
   }
 
-  // FB103: words already started but not yet learned, i.e. still in the FSRS
-  // learning (1) or relearning (3) state. They are the "congestion" the learner
-  // sees, so the new-word budget waits for them (see newWordAllowance).
+  // FB103: words already started but not yet learned. They are the "congestion"
+  // the learner sees, so the new-word budget waits for them (see
+  // newWordAllowance). FB210: the test is the LADDER, not the FSRS state — a word
+  // can graduate to Review after two flashcard passes while its typing card is
+  // still ahead, and that word is very much still in hand.
   async getUnlearnedWordCount(): Promise<number> {
     const db = await this.open();
     const row = await db.getFirstAsync<any>(
-      "SELECT COUNT(*) as cnt FROM cards WHERE type = 'word' AND pair = ? AND buried = 0 AND reps > 0 AND state IN (1, 3)",
+      `SELECT COUNT(*) as cnt FROM cards WHERE type = 'word' AND pair = ? AND buried = 0
+         AND reps > 0 AND reps - lapses < ${LEARNED_PASSES}`,
       [this.activePair]
     );
     return row?.cnt ?? 0;
+  }
+
+  // FB210: a 🌱 napi keretet ez fogyasztja, tehát a szám akkor csökken, amikor egy
+  // szót tényleg meg is tanult (le tudta írni helyesen), nem amikor először látta.
+  async getWordsLearnedToday(): Promise<number> {
+    const db = await this.open();
+    const rows = await db.getAllAsync<any>(
+      "SELECT learned_at FROM cards WHERE type = 'word' AND pair = ? AND learned_at IS NOT NULL",
+      [this.activePair]
+    );
+    const today = localDateString();
+    return rows.filter((r) => localDateString(new Date(r.learned_at)) === today).length;
   }
 
   async getFeedbackBtnSide(): Promise<'left' | 'right'> {
