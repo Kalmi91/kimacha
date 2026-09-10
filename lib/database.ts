@@ -5,6 +5,7 @@ import { pickSurvivor } from './cardMerge';
 import { DEFAULT_REQUEUE_LEVEL } from './requeueGap';
 import { rankSentencesByWordWeakness, sentenceSlotCount, type WordWeakness } from './sentenceMix';
 import { WORD_MERGES } from './wordMerges';
+import { LEARNED_PASSES } from './wordPhase';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 
 export interface DB {
@@ -758,7 +759,7 @@ class SQLiteDB implements DB {
       // (lib/wordPhase.ts). "I know this" (buried) still counts outright.
       `SELECT COUNT(*) as cnt FROM cards
          WHERE word_id IN (${placeholders}) AND type = 'word' AND pair = ?
-           AND ((state >= 2 AND reps - lapses >= 3) OR buried = 1)`,
+           AND ((state >= 2 AND reps - lapses >= ${LEARNED_PASSES}) OR buried = 1)`,
       [...wordIds, this.activePair]
     );
     return row?.cnt ?? 0;
@@ -772,7 +773,10 @@ class SQLiteDB implements DB {
     if (wordIds.length === 0) return 0;
     const placeholders = wordIds.map(() => '?').join(',');
     const row = await db.getFirstAsync<any>(
-      `SELECT COUNT(*) as cnt FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND pair = ? AND (reps > 0 OR buried = 1)`,
+      // FB210: megtanult = a létra végigjárva (LEARNED_PASSES sikeres ismétlés,
+      // a phase-2 gépelős lap is), nem pedig „egyszer már láttam" (reps > 0).
+      `SELECT COUNT(*) as cnt FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND pair = ?
+         AND (reps - lapses >= ${LEARNED_PASSES} OR buried = 1)`,
       [...wordIds, this.activePair]
     );
     return row?.cnt ?? 0;

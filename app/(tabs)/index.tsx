@@ -1493,10 +1493,11 @@ export default function LearnScreen() {
           {/* FB5, then FB170: the input row used to carry its own ✓/→ because the
               button below the card could hide under the keyboard. The single Check
               is docked above the keyboard now, so the row is just the field. */}
-          {/* FB188: névelő-gombsor. Minden spanyol főnév-kártyán ott van, akkor is,
+          {/* FB188: névelő-gombsor. Minden spanyol szó-kártyán ott van, akkor is,
               ha a helyes alak névelőtlen, különben a puszta megjelenése elárulná,
-              hogy kell névelő. ⊘ az alapállás, tehát aki nem nyúl hozzá, gépel. */}
-          {articlePickerOn && articlePickerApplies(backLang, current.type === 'word' ? String(current.word.pos ?? '') : '') && (
+              hogy kell névelő. ⊘ az alapállás, tehát aki nem nyúl hozzá, gépel.
+              FB214: igénél és melléknévnél is ott a sor, ⊘-val a helyes válasz. */}
+          {articlePickerOn && articlePickerApplies(backLang, current.type === 'word') && (
             <View style={styles.articleRow}>
               {([...ARTICLE_OPTIONS, ''] as ArticlePick[]).map((opt) => {
                 const active = articlePick === opt;
