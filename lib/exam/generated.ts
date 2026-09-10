@@ -25,7 +25,12 @@ interface GeneratedStrings {
   messagePrompt: string;
   messagePoints: { id: string; label: string; keywords: string[] }[];
   speakInstruction: string;
-  speakPrompts: { prompt: string; model: string }[];
+  speakPrompts: {
+    prompt: string;
+    model: string;
+    minWords: number;
+    points: { id: string; label: string; keywords: string[] }[];
+  }[];
 }
 
 const STRINGS: Record<string, GeneratedStrings> = {
@@ -52,8 +57,27 @@ const STRINGS: Record<string, GeneratedStrings> = {
     ],
     speakInstruction: 'Hable en voz alta. Después compare su respuesta con el modelo.',
     speakPrompts: [
-      { prompt: 'Preséntese: nombre, edad, país, trabajo o estudios.', model: 'Me llamo Ana. Tengo treinta años. Soy de Hungría y ahora vivo en México. Trabajo en una oficina.' },
-      { prompt: 'Describa su día normal: qué hace por la mañana, por la tarde y por la noche.', model: 'Por la mañana desayuno y voy al trabajo. Por la tarde como con mi familia. Por la noche leo un libro.' },
+      {
+        prompt: 'Preséntese: nombre, edad, país, trabajo o estudios.',
+        model: 'Me llamo Ana. Tengo treinta años. Soy de Hungría y ahora vivo en México. Trabajo en una oficina.',
+        minWords: 25,
+        points: [
+          { id: 'nombre', label: 'Dice cómo se llama', keywords: ['me llamo', 'mi nombre'] },
+          { id: 'edad', label: 'Dice su edad', keywords: ['años', 'edad'] },
+          { id: 'pais', label: 'Dice de dónde es', keywords: ['soy de', 'vivo en', 'nacionalidad'] },
+          { id: 'trabajo', label: 'Dice qué hace', keywords: ['trabajo', 'estudio', 'estudiante'] },
+        ],
+      },
+      {
+        prompt: 'Describa su día normal: qué hace por la mañana, por la tarde y por la noche.',
+        model: 'Por la mañana desayuno y voy al trabajo. Por la tarde como con mi familia. Por la noche leo un libro.',
+        minWords: 25,
+        points: [
+          { id: 'manana', label: 'Habla de la mañana', keywords: ['por la mañana', 'desayuno', 'me levanto'] },
+          { id: 'tarde', label: 'Habla de la tarde', keywords: ['por la tarde', 'como', 'almuerzo'] },
+          { id: 'noche', label: 'Habla de la noche', keywords: ['por la noche', 'ceno', 'duermo'] },
+        ],
+      },
     ],
   },
   en: {
@@ -79,8 +103,27 @@ const STRINGS: Record<string, GeneratedStrings> = {
     ],
     speakInstruction: 'Speak out loud, then compare your answer with the model.',
     speakPrompts: [
-      { prompt: 'Introduce yourself: name, age, country, work or studies.', model: 'My name is Ana. I am thirty years old. I am from Hungary and I live in Mexico now. I work in an office.' },
-      { prompt: 'Describe your normal day: morning, afternoon and evening.', model: 'In the morning I have breakfast and go to work. In the afternoon I eat with my family. In the evening I read a book.' },
+      {
+        prompt: 'Introduce yourself: name, age, country, work or studies.',
+        model: 'My name is Ana. I am thirty years old. I am from Hungary and I live in Mexico now. I work in an office.',
+        minWords: 25,
+        points: [
+          { id: 'name', label: 'Says their name', keywords: ['my name is', 'i am called'] },
+          { id: 'age', label: 'Says their age', keywords: ['years old', 'age'] },
+          { id: 'country', label: 'Says where they are from', keywords: ['i am from', "i'm from", 'i live in'] },
+          { id: 'work', label: 'Says what they do', keywords: ['i work', 'i study', 'student'] },
+        ],
+      },
+      {
+        prompt: 'Describe your normal day: morning, afternoon and evening.',
+        model: 'In the morning I have breakfast and go to work. In the afternoon I eat with my family. In the evening I read a book.',
+        minWords: 25,
+        points: [
+          { id: 'morning', label: 'Talks about the morning', keywords: ['in the morning', 'breakfast', 'get up'] },
+          { id: 'afternoon', label: 'Talks about the afternoon', keywords: ['in the afternoon', 'lunch', 'i eat'] },
+          { id: 'evening', label: 'Talks about the evening', keywords: ['in the evening', 'at night', 'dinner'] },
+        ],
+      },
     ],
   },
   de: {
@@ -106,8 +149,27 @@ const STRINGS: Record<string, GeneratedStrings> = {
     ],
     speakInstruction: 'Sprechen Sie laut, dann vergleichen Sie mit dem Modell.',
     speakPrompts: [
-      { prompt: 'Stellen Sie sich vor: Name, Alter, Land, Arbeit oder Studium.', model: 'Ich heiße Ana. Ich bin dreißig Jahre alt. Ich komme aus Ungarn und wohne jetzt in Mexiko. Ich arbeite in einem Büro.' },
-      { prompt: 'Beschreiben Sie Ihren normalen Tag: morgens, nachmittags und abends.', model: 'Morgens frühstücke ich und fahre zur Arbeit. Nachmittags esse ich mit meiner Familie. Abends lese ich ein Buch.' },
+      {
+        prompt: 'Stellen Sie sich vor: Name, Alter, Land, Arbeit oder Studium.',
+        model: 'Ich heiße Ana. Ich bin dreißig Jahre alt. Ich komme aus Ungarn und wohne jetzt in Mexiko. Ich arbeite in einem Büro.',
+        minWords: 25,
+        points: [
+          { id: 'name', label: 'Sagt den Namen', keywords: ['ich heiße', 'ich heisse', 'mein name'] },
+          { id: 'alter', label: 'Sagt das Alter', keywords: ['jahre alt', 'jahre'] },
+          { id: 'land', label: 'Sagt, woher er kommt', keywords: ['ich komme aus', 'ich wohne in'] },
+          { id: 'arbeit', label: 'Sagt, was er macht', keywords: ['ich arbeite', 'ich studiere', 'student'] },
+        ],
+      },
+      {
+        prompt: 'Beschreiben Sie Ihren normalen Tag: morgens, nachmittags und abends.',
+        model: 'Morgens frühstücke ich und fahre zur Arbeit. Nachmittags esse ich mit meiner Familie. Abends lese ich ein Buch.',
+        minWords: 25,
+        points: [
+          { id: 'morgens', label: 'Spricht über den Morgen', keywords: ['morgens', 'am morgen', 'frühstück'] },
+          { id: 'nachmittags', label: 'Spricht über den Nachmittag', keywords: ['nachmittags', 'am nachmittag', 'mittagessen'] },
+          { id: 'abends', label: 'Spricht über den Abend', keywords: ['abends', 'am abend', 'abendessen'] },
+        ],
+      },
     ],
   },
   hu: {
@@ -133,8 +195,27 @@ const STRINGS: Record<string, GeneratedStrings> = {
     ],
     speakInstruction: 'Mondja el hangosan, aztán hasonlítsa össze a mintával.',
     speakPrompts: [
-      { prompt: 'Mutatkozzon be: név, életkor, ország, munka vagy tanulás.', model: 'A nevem Ana. Harminc éves vagyok. Magyarországról jöttem, most Mexikóban élek. Egy irodában dolgozom.' },
-      { prompt: 'Mesélje el egy átlagos napját: reggel, délután, este.', model: 'Reggel reggelizem és munkába megyek. Délután a családommal ebédelek. Este olvasok egy könyvet.' },
+      {
+        prompt: 'Mutatkozzon be: név, életkor, ország, munka vagy tanulás.',
+        model: 'A nevem Ana. Harminc éves vagyok. Magyarországról jöttem, most Mexikóban élek. Egy irodában dolgozom.',
+        minWords: 25,
+        points: [
+          { id: 'nev', label: 'Megmondja a nevét', keywords: ['a nevem', 'vagyok', 'hívnak'] },
+          { id: 'kor', label: 'Megmondja, hány éves', keywords: ['éves', 'életkor'] },
+          { id: 'orszag', label: 'Megmondja, honnan jött', keywords: ['magyar', 'magyarország', 'élek', 'lakom'] },
+          { id: 'munka', label: 'Megmondja, mit csinál', keywords: ['dolgozom', 'tanulok', 'diák'] },
+        ],
+      },
+      {
+        prompt: 'Mesélje el egy átlagos napját: reggel, délután, este.',
+        model: 'Reggel reggelizem és munkába megyek. Délután a családommal ebédelek. Este olvasok egy könyvet.',
+        minWords: 25,
+        points: [
+          { id: 'reggel', label: 'Beszél a reggelről', keywords: ['reggel', 'reggelizem', 'felkelek'] },
+          { id: 'delutan', label: 'Beszél a délutánról', keywords: ['délután', 'ebédelek', 'ebéd'] },
+          { id: 'este', label: 'Beszél az estéről', keywords: ['este', 'vacsora', 'alszom'] },
+        ],
+      },
     ],
   },
 };
@@ -249,5 +330,7 @@ export function generatedSpeakingTasks(lang: string): ExamSpeakingTask[] {
     instruction: s.speakInstruction,
     prompt: p.prompt,
     model: p.model,
+    minWords: p.minWords,
+    points: p.points,
   }));
 }

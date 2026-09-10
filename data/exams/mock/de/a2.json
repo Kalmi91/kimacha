@@ -202,7 +202,15 @@
       "instruction": "TEIL 1. Über sich sprechen. Sprechen Sie zwei bis drei Minuten laut. Hören Sie danach das Modell.",
       "prompt": "Sprechen Sie über Ihren Alltag und wie er sich im letzten Jahr verändert hat: Was war früher, was ist jetzt, was möchten Sie ändern?",
       "bullets": ["früher", "jetzt", "Pläne"],
-      "model": "Früher habe ich in Budapest gewohnt und von neun bis fünf im Büro gearbeitet. Am Wochenende habe ich Freunde getroffen und Fußball gespielt. Jetzt wohne ich in Mexiko-Stadt, lerne jeden Tag Spanisch und arbeite von zu Hause aus. Ich esse mehr Gemüse und gehe viel mehr zu Fuß als früher. Nächstes Jahr möchte ich hier eine Arbeit finden und ohne Angst sprechen."
+      "model": "Früher habe ich in Budapest gewohnt und von neun bis fünf im Büro gearbeitet. Am Wochenende habe ich Freunde getroffen und Fußball gespielt. Jetzt wohne ich in Mexiko-Stadt, lerne jeden Tag Spanisch und arbeite von zu Hause aus. Ich esse mehr Gemüse und gehe viel mehr zu Fuß als früher. Nächstes Jahr möchte ich hier eine Arbeit finden und ohne Angst sprechen.",
+      "minWords": 45,
+      "points": [
+        { "id": "frueher", "label": "Spricht über früher", "keywords": ["früher", "letztes jahr", "damals", "war ich"] },
+        { "id": "alltag", "label": "Beschreibt den Alltag", "keywords": ["jeden tag", "morgens", "abends", "normalerweise"] },
+        { "id": "jetzt", "label": "Spricht über jetzt", "keywords": ["jetzt", "heute", "im moment", "zurzeit"] },
+        { "id": "veraenderung", "label": "Sagt, was sich verändert hat", "keywords": ["verändert", "anders", "geändert"] },
+        { "id": "plaene", "label": "Sagt, was er ändern möchte", "keywords": ["ich möchte", "ich will", "ich werde", "ändern"] }
+      ]
     },
     {
       "id": "de-a2-s2",
@@ -210,7 +218,15 @@
       "instruction": "TEIL 2. Eine Situation beschreiben. Sprechen Sie zwei Minuten laut. Hören Sie danach das Modell.",
       "prompt": "Beschreiben Sie ein Foto von einem Markt: Was sehen Sie, wer ist da, was machen die Leute, wie finden Sie den Ort?",
       "bullets": ["was man sieht", "die Personen", "was sie machen", "Ihre Meinung"],
-      "model": "Auf dem Foto sieht man einen großen Markt, und es ist ziemlich voll. Es gibt viele Stände mit Obst und Gemüse und auch einen mit Blumen. Eine Frau wiegt gerade Tomaten, ein Kunde wartet daneben. Im Hintergrund reden zwei Männer und lachen. Ich finde den Ort fröhlich, aber etwas laut. Ich kaufe gern auf dem Markt ein, weil das Obst frischer und billiger ist als im Supermarkt."
+      "model": "Auf dem Foto sieht man einen großen Markt, und es ist ziemlich voll. Es gibt viele Stände mit Obst und Gemüse und auch einen mit Blumen. Eine Frau wiegt gerade Tomaten, ein Kunde wartet daneben. Im Hintergrund reden zwei Männer und lachen. Ich finde den Ort fröhlich, aber etwas laut. Ich kaufe gern auf dem Markt ein, weil das Obst frischer und billiger ist als im Supermarkt.",
+      "minWords": 45,
+      "points": [
+        { "id": "sehen", "label": "Sagt, was zu sehen ist", "keywords": ["ich sehe", "man sieht", "auf dem foto", "auf dem bild", "es gibt"] },
+        { "id": "personen", "label": "Spricht über die Personen", "keywords": ["leute", "personen", "mann", "frau", "verkäufer"] },
+        { "id": "machen", "label": "Sagt, was sie machen", "keywords": ["kaufen", "verkaufen", "sprechen", "gehen", "sie machen"] },
+        { "id": "ort", "label": "Spricht über den Ort", "keywords": ["markt", "stand", "obst", "gemüse"] },
+        { "id": "meinung", "label": "Sagt seine Meinung", "keywords": ["ich finde", "ich denke", "meiner meinung", "mir gefällt"] }
+      ]
     },
     {
       "id": "de-a2-s3",
@@ -218,7 +234,15 @@
       "instruction": "TEIL 3. Gemeinsam etwas planen oder reklamieren. Sprechen Sie laut. Hören Sie danach das Modell.",
       "prompt": "Sie haben letzte Woche ein Handy gekauft, das nicht richtig funktioniert. Sie gehen in den Laden zurück: Erklären Sie das Problem, sagen Sie, wann Sie es gekauft haben, und bitten Sie um eine Lösung.",
       "bullets": ["das Problem", "wann gekauft", "was Sie möchten"],
-      "model": "Guten Tag. Ich habe dieses Handy letzten Dienstag hier gekauft, und es gibt ein Problem: Der Akku ist nach zwei Stunden leer, und manchmal geht das Gerät von allein aus. Hier ist der Kassenbon. Können Sie es umtauschen? Wenn das nicht geht, hätte ich lieber mein Geld zurück, weil ich das Handy für die Arbeit brauche."
+      "model": "Guten Tag. Ich habe dieses Handy letzten Dienstag hier gekauft, und es gibt ein Problem: Der Akku ist nach zwei Stunden leer, und manchmal geht das Gerät von allein aus. Hier ist der Kassenbon. Können Sie es umtauschen? Wenn das nicht geht, hätte ich lieber mein Geld zurück, weil ich das Handy für die Arbeit brauche.",
+      "minWords": 40,
+      "points": [
+        { "id": "problem", "label": "Erklärt das Problem", "keywords": ["funktioniert nicht", "problem", "kaputt", "geht nicht"] },
+        { "id": "objekt", "label": "Sagt, um welches Gerät es geht", "keywords": ["handy", "telefon", "smartphone"] },
+        { "id": "wann", "label": "Sagt, wann er es gekauft hat", "keywords": ["letzte woche", "gekauft", "vor einer woche"] },
+        { "id": "loesung", "label": "Bittet um eine Lösung", "keywords": ["ich möchte", "umtauschen", "reparieren", "geld zurück", "können sie"] },
+        { "id": "hoeflichkeit", "label": "Benutzt Höflichkeitsformeln", "keywords": ["bitte", "entschuldigung", "guten tag", "danke"] }
+      ]
     }
   ]
 }

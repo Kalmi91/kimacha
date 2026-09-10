@@ -47,6 +47,23 @@ describe('exam blueprints follow the published structures', () => {
 });
 
 describe('buildMockExam', () => {
+  // FB199: a speaking task without content points falls back to the self-rating,
+  // which is not a mark. Every paper the app can build has to be markable.
+  it('gives every speaking task content points and a word count', () => {
+    const offenders: string[] = [];
+    for (const lang of ['es', 'en', 'de']) {
+      for (const level of ['A0', 'A1', 'A2', 'B1']) {
+        const exam = buildMockExam(lang, 'hu', level);
+        const speaking = exam.sections.find((s) => s.skill === 'speaking');
+        for (const task of speaking?.tasks ?? []) {
+          if (task.kind !== 'speaking_prompt') continue;
+          if (!task.points?.length || !task.minWords) offenders.push(`${lang} ${level} ${task.id}`);
+        }
+      }
+    }
+    expect(offenders).toEqual([]);
+  });
+
   it('builds the four authored Spanish A1 papers', () => {
     const exam = buildMockExam('es', 'hu', 'A1');
     expect(exam.modelName).toBe('DELE A1');
@@ -212,12 +229,38 @@ describe('marking and the pass rule', () => {
     expect(half.correct).toBe(1); // the name counts, the written-out age does not
   });
 
-  it('the speaking paper is a 0/1/2 self-assessment', () => {
+  // FB199: the speaking paper is spoken into the microphone and marked from the
+  // transcript. The 0/1/2 self-rating stays as the fallback, scaled to the same
+  // total, so a paper is worth the same whichever route answered it.
+  it('falls back to the 0/1/2 self-assessment with no transcript', () => {
     const exam = buildMockExam('es', 'hu', 'A1');
     const speaking = exam.sections.find((s) => s.skill === 'speaking')!;
-    expect(scoreTask(speaking.tasks[0], { self: 2 }).correct).toBe(1);
-    expect(scoreTask(speaking.tasks[0], { self: 1 }).correct).toBe(0.5);
-    expect(scoreTask(speaking.tasks[0], {}).correct).toBe(0);
+    const task = speaking.tasks[0];
+    const total = taskItemCount(task);
+    expect(scoreTask(task, { self: 2 }).correct).toBe(total);
+    expect(scoreTask(task, { self: 1 }).correct).toBe(total / 2);
+    expect(scoreTask(task, {}).correct).toBe(0);
+  });
+
+  it('marks the spoken answer on the transcript, point by point', () => {
+    const exam = buildMockExam('es', 'hu', 'A1');
+    const speaking = exam.sections.find((s) => s.skill === 'speaking')!;
+    const task = speaking.tasks[0];
+
+    const full = scoreTask(task, {
+      transcript:
+        'Me llamo Daniel y tengo treinta y cuatro años. Soy de Hungría, pero ahora vivo en la Ciudad de México. Vivo con mi novia. Trabajo con computadoras y estudio español todos los días. Hablo húngaro, inglés y un poco de español.',
+    });
+    expect(full.correct).toBe(full.total); // every content point plus the word count
+
+    // Two content points said, and far too short for the word count.
+    const thin = scoreTask(task, { transcript: 'Me llamo Daniel. Tengo treinta y cuatro años.' });
+    expect(thin.correct).toBe(2);
+    expect(thin.items[thin.items.length - 1].ok).toBe(false);
+
+    // A self-rating cannot rescue a transcript that said nothing.
+    const contradicted = scoreTask(task, { transcript: 'hola', self: 2 });
+    expect(contradicted.correct).toBe(0);
   });
 });
 

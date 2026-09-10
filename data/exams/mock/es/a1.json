@@ -277,7 +277,17 @@
       "instruction": "TAREA 1. Presentación personal. Hable en voz alta entre uno y dos minutos. Después escuche el modelo y valore su respuesta.",
       "prompt": "Preséntese: nombre, edad, nacionalidad, dónde vive, con quién vive, qué hace (trabajo o estudios) y qué idiomas habla.",
       "bullets": ["nombre y edad", "nacionalidad y ciudad", "familia", "trabajo o estudios", "idiomas"],
-      "model": "Me llamo Daniel y tengo treinta y cuatro años. Soy húngaro, pero ahora vivo en la Ciudad de México, en la colonia Narvarte. Vivo con mi novia. Trabajo con computadoras y estudio español todos los días. Hablo húngaro, inglés y un poco de español."
+      "model": "Me llamo Daniel y tengo treinta y cuatro años. Soy húngaro, pero ahora vivo en la Ciudad de México, en la colonia Narvarte. Vivo con mi novia. Trabajo con computadoras y estudio español todos los días. Hablo húngaro, inglés y un poco de español.",
+      "minWords": 35,
+      "points": [
+        { "id": "nombre", "label": "Dice cómo se llama", "keywords": ["me llamo", "mi nombre", "me dicen"] },
+        { "id": "edad", "label": "Dice su edad", "keywords": ["años", "edad"] },
+        { "id": "origen", "label": "Dice de dónde es", "keywords": ["soy de", "húngaro", "hungría", "nacionalidad", "mexicano", "mexicana"] },
+        { "id": "vive", "label": "Dice dónde vive", "keywords": ["vivo en", "vivo ahora", "estoy viviendo"] },
+        { "id": "familia", "label": "Dice con quién vive", "keywords": ["vivo con", "con mi", "con mis"] },
+        { "id": "trabajo", "label": "Dice qué hace: trabajo o estudios", "keywords": ["trabajo", "estudio", "estudiante", "empresa", "oficina"] },
+        { "id": "idiomas", "label": "Dice qué idiomas habla", "keywords": ["hablo", "idioma", "inglés", "español", "húngaro", "alemán"] }
+      ]
     },
     {
       "id": "es-a1-s2",
@@ -285,7 +295,15 @@
       "instruction": "TAREA 2. Descripción. Hable en voz alta sobre el tema. Después escuche el modelo y valore su respuesta.",
       "prompt": "Describa su casa y su barrio: cómo es la casa, qué habitaciones tiene, qué hay cerca (tiendas, parque, metro).",
       "bullets": ["la casa", "las habitaciones", "el barrio", "qué hay cerca"],
-      "model": "Mi casa no es grande. Tiene dos habitaciones, una cocina, un baño y una sala. La cocina es pequeña, pero tiene una ventana grande. Mi barrio es tranquilo. Cerca hay un mercado, una farmacia y un parque. El metro está a diez minutos a pie."
+      "model": "Mi casa no es grande. Tiene dos habitaciones, una cocina, un baño y una sala. La cocina es pequeña, pero tiene una ventana grande. Mi barrio es tranquilo. Cerca hay un mercado, una farmacia y un parque. El metro está a diez minutos a pie.",
+      "minWords": 35,
+      "points": [
+        { "id": "casa", "label": "Habla de su casa", "keywords": ["mi casa", "mi departamento", "mi piso", "el departamento", "vivo en un"] },
+        { "id": "habitaciones", "label": "Dice qué habitaciones tiene", "keywords": ["habitación", "habitaciones", "cuarto", "recámara", "cocina", "baño"] },
+        { "id": "barrio", "label": "Habla de su barrio", "keywords": ["barrio", "colonia", "zona"] },
+        { "id": "cerca", "label": "Dice qué hay cerca", "keywords": ["cerca", "al lado", "hay un", "hay una"] },
+        { "id": "opinion", "label": "Describe cómo es", "keywords": ["es grande", "es pequeña", "tranquilo", "tranquila", "bonito", "bonita"] }
+      ]
     },
     {
       "id": "es-a1-s3",
@@ -293,7 +311,16 @@
       "instruction": "TAREA 3. Diálogo en una situación. Hable en voz alta. Después escuche el modelo y valore su respuesta.",
       "prompt": "Usted está en un restaurante. Pida una mesa, pregunte por el menú del día, pida la comida y la bebida, y pida la cuenta.",
       "bullets": ["una mesa", "el menú del día", "comida y bebida", "la cuenta"],
-      "model": "Buenas tardes, ¿tiene una mesa para dos personas? Gracias. ¿Cuál es el menú del día? Entonces, de primero quiero una sopa y de segundo, pollo con arroz. Para beber, agua, por favor. ¿Nos trae la cuenta, por favor?"
+      "model": "Buenas tardes, ¿tiene una mesa para dos personas? Gracias. ¿Cuál es el menú del día? Entonces, de primero quiero una sopa y de segundo, pollo con arroz. Para beber, agua, por favor. ¿Nos trae la cuenta, por favor?",
+      "minWords": 30,
+      "points": [
+        { "id": "mesa", "label": "Pide una mesa", "keywords": ["una mesa", "mesa para"] },
+        { "id": "menu", "label": "Pregunta por el menú del día", "keywords": ["menú", "carta", "del día"] },
+        { "id": "comida", "label": "Pide comida", "keywords": ["quiero", "de primero", "de segundo", "me trae", "voy a pedir"] },
+        { "id": "bebida", "label": "Pide bebida", "keywords": ["para beber", "agua", "refresco", "cerveza", "un café"] },
+        { "id": "cuenta", "label": "Pide la cuenta", "keywords": ["la cuenta", "cuánto es", "pagar"] },
+        { "id": "cortesia", "label": "Usa fórmulas de cortesía", "keywords": ["por favor", "gracias", "buenas tardes", "buenos días"] }
+      ]
     }
   ]
 }
