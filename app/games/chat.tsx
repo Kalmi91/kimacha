@@ -10,6 +10,7 @@ import { normalizeWordToken } from '@/data/words';
 import { getGameDef, gameName } from '@/lib/games/registry';
 import { getChats, cumulativeCorpusWordIds, type ChatData, type ChatEnding } from '@/lib/games/content';
 import { availableOptions, findNode, pickEnding } from '@/lib/games/chat';
+import { missedHint } from '@/lib/games/chatFeedback';
 import { getTalkChat } from '@/lib/talk/packs';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { getGameBest, recordGameResult } from '@/lib/games/scoring';
@@ -29,8 +30,10 @@ import { useLoadOnMount } from '@/lib/useLoadOnMount';
 type Screen = 'topics' | 'setup' | 'chat' | 'ending' | 'checklistView';
 
 interface HistoryLine {
-  speaker: 'npc' | 'user';
+  speaker: 'npc' | 'user' | 'hint';
   text: string;
+  // FB200: a kihagyott checklist-válasz indoka, csak `hint` sorokon.
+  why?: string;
 }
 
 export default function ChatScreen() {
@@ -163,12 +166,20 @@ export default function ChatScreen() {
     setScreen('ending');
   };
 
-  const pickOption = (optText: string, checklistId: string | undefined, next: string | undefined) => {
+  const pickOption = (optText: string, pickedIndex: number) => {
     if (!chat) return;
+    const checklistId = currentOptions[pickedIndex]?.checklist;
     const nextAchieved = checklistId ? new Set(achieved).add(checklistId) : achieved;
     if (checklistId) setAchieved(nextAchieved);
 
-    const withUser = [...history, { speaker: 'user' as const, text: optText }];
+    // FB200: a gyenge válasz nem büntet, de innentől megmondja, mi lett volna jobb.
+    const hint = missedHint(currentOptions, pickedIndex, achieved, chat.checklist, learnedLang, contentLang);
+    const withUser: HistoryLine[] = [
+      ...history,
+      { speaker: 'user' as const, text: optText },
+      ...(hint ? [{ speaker: 'hint' as const, text: hint.better, why: hint.why }] : []),
+    ];
+    const next = currentOptions[pickedIndex]?.next;
 
     if (next) {
       const nextNode = findNode(chat, next);
@@ -365,6 +376,19 @@ export default function ChatScreen() {
 
       <ScrollView ref={scrollRef} contentContainerStyle={styles.chatBody} onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: true })}>
         {history.map((line, i) => {
+          // FB200: a jegyzet nem buborék, hanem a két fél közé ékelt sárga sáv.
+          if (line.speaker === 'hint') {
+            return (
+              <View key={i} style={[styles.hintBox, { backgroundColor: colors.card }]}>
+                <Text style={[styles.hintLabel, { color: '#F59E0B' }]}>
+                  {s.games.chat.betterWouldBe} {line.text}
+                </Text>
+                {!!line.why && (
+                  <Text style={[styles.hintWhy, { color: colors.tabIconDefault }]}>{line.why}</Text>
+                )}
+              </View>
+            );
+          }
           const isNpc = line.speaker === 'npc';
           return (
             <View key={i} style={[styles.bubbleRow, isNpc ? styles.bubbleRowLeft : styles.bubbleRowRight]}>
@@ -394,7 +418,7 @@ export default function ChatScreen() {
                 key={optText + i}
                 testID="chat-option"
                 style={[styles.optionBtn, { borderColor: colors.tint }]}
-                onPress={() => pickOption(optText, opt.checklist, opt.next)}
+                onPress={() => pickOption(optText, i)}
               >
                 <Text style={[styles.optionText, { color: colors.text }]}>{optText}</Text>
               </Pressable>
@@ -420,6 +444,9 @@ const styles = StyleSheet.create({
   title: { flex: 1, textAlign: 'center', fontSize: 16, fontWeight: '600' },
   subtitle: { fontSize: 14, textAlign: 'center', marginTop: 4, marginBottom: 4 },
   checklistBadge: { fontSize: 14, fontWeight: '700' },
+  hintBox: { borderRadius: 12, borderLeftWidth: 4, borderLeftColor: '#F59E0B', padding: 10, marginVertical: 6, gap: 4 },
+  hintLabel: { fontSize: 13, fontWeight: '700' },
+  hintWhy: { fontSize: 13, lineHeight: 18 },
   emptyBody: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 32 },
   emptyText: { fontSize: 15, textAlign: 'center' },
   list: { padding: 16, gap: 12 },

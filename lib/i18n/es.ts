@@ -339,6 +339,7 @@ export default {
       missedTag: 'Te faltó',
       sourceLabel: 'Fuente:',
       viewChecklistBtn: 'Ver la lista',
+      betterWouldBe: 'Habría sido mejor:',
     },
   },
   active: {
