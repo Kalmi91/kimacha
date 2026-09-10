@@ -146,8 +146,55 @@ export function speak(text: string, locale: string, options: Speech.SpeechOption
 }
 
 export function stop(): void {
+  speakingRun += 1; // egy futó szakasz-lánc se folytassa a stop után
   Speech.stop();
 }
+
+// FB216: a kevert nyelvű szöveg szakaszonként más hanggal szól (lib/mixedSpeech.ts
+// vágja szét). A szakaszok egymás UTÁN mennek: minden utterance `onDone`-jában
+// indul a következő, mert két nyelv két hangja párhuzamosan indítva egymásra
+// beszélne. Egy új felolvasás (vagy egy `stop()`) érvényteleníti az előző láncot.
+let speakingRun = 0;
+
+export interface SpeechRunSegment {
+  text: string;
+  locale: string;
+}
+
+export function speakSequence(segments: SpeechRunSegment[], onEnd?: () => void): void {
+  Speech.stop();
+  speakingRun += 1;
+  const run = speakingRun;
+  const queue = segments.filter((seg) => seg.text.trim());
+
+  const next = (index: number) => {
+    if (run !== speakingRun) return; // közben elindult egy másik felolvasás
+    const segment = queue[index];
+    if (!segment) {
+      onEnd?.();
+      return;
+    }
+    if (!hasVoiceFor(segment.locale)) {
+      // Nincs hang ehhez a nyelvhez: a szakasz kimarad, a többi megy tovább
+      // (a Beállítások a missingVoiceLanguages() alapján ajánlja fel a
+      // telepítést, ugyanúgy, mint az egy-nyelvű speak()-nél).
+      missing.add(baseLanguage(segment.locale));
+      next(index + 1);
+      return;
+    }
+    const voice = voiceIdFor(segment.locale);
+    Speech.speak(padForAndroid(segment.text), {
+      language: speechTag(segment.locale),
+      ...(voice ? { voice } : {}),
+      onDone: () => next(index + 1),
+      onStopped: () => {},
+      onError: () => next(index + 1),
+    });
+  };
+
+  next(0);
+}
+
 
 // Tests only: forget the cached voice list.
 export function resetVoiceCache(): void {
@@ -155,4 +202,5 @@ export function resetVoiceCache(): void {
   voicesByLanguage = null;
   loading = null;
   missing.clear();
+  speakingRun = 0;
 }

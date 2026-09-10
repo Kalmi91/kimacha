@@ -382,6 +382,8 @@ export default {
     doneAgain: 'Lies die Regel lieber noch einmal, bevor es weitergeht.',
     entryTitle: 'Grammatikkurs',
     entryBlurb: 'Jede Regel von A1 bis C1: erst Erklärung, dann Übung.',
+    // FB216: kevert nyelvű felolvasás a lecke-szövegre.
+    readAloud: 'Vorlesen',
   },
   exam: {
     simulationOf: (model: string) => `Simulation der Prüfung ${model}`,

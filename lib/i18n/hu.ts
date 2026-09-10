@@ -396,6 +396,8 @@ export default {
     doneAgain: 'Érdemes újraolvasni a szabályt, mielőtt továbbmész.',
     entryTitle: 'Nyelvtani tanfolyam',
     entryBlurb: 'Minden szabály A1-től C1-ig: előbb magyarázat, aztán gyakorlás.',
+    // FB216: kevert nyelvű felolvasás a lecke-szövegre.
+    readAloud: 'Felolvasás',
   },
   exam: {
     simulationOf: (model: string) => `A ${model} vizsga szimulációja`,
