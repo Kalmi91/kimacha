@@ -18,6 +18,19 @@ export interface PhaseCard {
   lapses?: number;
 }
 
+// FB210, Kálmán 2026-09-09 (word:mind): „csak akkor legyen a számláló kevesebb,
+// meg akkor jelölje megtanultnak a szót, ha le is tudom írni helyesen". A ladder
+// above already said this, but the header's known/total counted a word from its
+// FIRST answer (`reps > 0`), so a word he had only RECOGNISED twice showed up as
+// mastered. Mastery = the whole ladder walked, i.e. the phase-2 typing card
+// answered right, which is the third successful review.
+export const LEARNED_PASSES = 3;
+
+/** Végigment-e a létrán, tehát le is tudta írni legalább egyszer helyesen. */
+export function isLearned(card: PhaseCard): boolean {
+  return Math.max(0, (card.reps ?? 0) - (card.lapses ?? 0)) >= LEARNED_PASSES;
+}
+
 export function wordPhase(card: PhaseCard): WordPhase {
   const passed = Math.max(0, (card.reps ?? 0) - (card.lapses ?? 0));
   if (passed >= 2) return 2;

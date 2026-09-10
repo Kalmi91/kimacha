@@ -7,19 +7,22 @@ import {
 } from '../articlePicker';
 
 describe('articlePickerApplies', () => {
-  it('shows the chips on Spanish noun cards', () => {
-    expect(articlePickerApplies('es', 'noun')).toBe(true);
+  it('shows the chips on Spanish word cards', () => {
+    expect(articlePickerApplies('es', true)).toBe(true);
   });
 
-  it('stays away from verbs, adjectives and unannotated cards', () => {
-    expect(articlePickerApplies('es', 'verb')).toBe(false);
-    expect(articlePickerApplies('es', 'adj')).toBe(false);
-    expect(articlePickerApplies('es', undefined)).toBe(false);
+  it('stays on verb and adjective cards too, where ⊘ is the right answer (FB214)', () => {
+    // A gombsor nem a szófajtól függ: a tanuló dolga eldönteni, kell-e névelő.
+    expect(articlePickerApplies('es', true)).toBe(true);
+  });
+
+  it('stays away from sentence cards', () => {
+    expect(articlePickerApplies('es', false)).toBe(false);
   });
 
   it('stays away from other target languages', () => {
-    expect(articlePickerApplies('en', 'noun')).toBe(false);
-    expect(articlePickerApplies('de', 'noun')).toBe(false);
+    expect(articlePickerApplies('en', true)).toBe(false);
+    expect(articlePickerApplies('de', true)).toBe(false);
   });
 });
 
