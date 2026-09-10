@@ -30,7 +30,7 @@ async function buildSession(source: string, target: string, level: Level) {
   const intake = newWordIntake({
     limit: await db.getDailyNewLimit(),
     bonus: await db.getNewLimitBonus(),
-    startedToday: await db.getNewWordsToday(),
+    learnedToday: await db.getWordsLearnedToday(),
     unlearned: await db.getUnlearnedWordCount(),
   });
   return applyCadence(capNewWords(buildQueue(rows, target), intake), false, target);
@@ -76,7 +76,8 @@ describe('a congested course still answers the "+N new words" tap', () => {
     const db = getDb();
     await db.setOnboarding('hu', 'en');
     const words = getWordsForLevel('A1', 'en');
-    // Half-learn a pile: reps > 0 and FSRS state Learning (1).
+    // Half-learn a pile: started (reps > 0) but the ladder is not finished, so
+    // FB210 counts every one of them as still in hand.
     for (const w of words.slice(0, CONGESTED)) {
       await db.ensureCard(w.id, 'word');
       await db.updateCard(w.id, 'word', {
@@ -88,7 +89,7 @@ describe('a congested course still answers the "+N new words" tap', () => {
     return newWordIntake({
       limit: await db.getDailyNewLimit(),
       bonus,
-      startedToday: 0,
+      learnedToday: 0,
       unlearned: await db.getUnlearnedWordCount(),
     });
   }

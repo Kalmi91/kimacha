@@ -23,7 +23,7 @@ describe('daily new-word budget is per language pair', () => {
     const budget = {
       limit: await db.getDailyNewLimit(),
       bonus: await db.getNewLimitBonus(),
-      startedToday: await db.getNewWordsToday(),
+      learnedToday: await db.getWordsLearnedToday(),
       unlearned: await db.getUnlearnedWordCount(),
     };
     expect(newWordsLeftToday(budget)).toBeGreaterThan(0);
@@ -36,5 +36,22 @@ describe('daily new-word budget is per language pair', () => {
     await db.ensureCard(6100, 'word');
     await db.recordAttempt(6100, 'word', true, 800);
     expect(await db.getNewWordsToday()).toBe(1);
+  });
+
+  // FB210: a keretet innentől a MEGTANULT szavak fogyasztják, tehát a pár-szerinti
+  // elkülönítésnek erre a számra is állnia kell.
+  it('counts the words learned today per pair as well', async () => {
+    const db = getDb();
+    await db.setOnboarding('en', 'es');
+    await db.ensureCard(6200, 'word');
+    await db.updateCard(6200, 'word', {
+      due: new Date(Date.now() + 60_000),
+      stability: 1, difficulty: 5, elapsed_days: 0, scheduled_days: 1,
+      learning_steps: 1, reps: 3, lapses: 0, state: 2, last_review: new Date(),
+    } as any);
+    expect(await db.getWordsLearnedToday()).toBe(1);
+
+    await db.setOnboarding('es', 'hu');
+    expect(await db.getWordsLearnedToday()).toBe(0);
   });
 });

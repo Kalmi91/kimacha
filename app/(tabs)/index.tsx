@@ -17,7 +17,7 @@ import { consumePendingAction } from '@/lib/pendingAction';
 import { DAILY_NEW_BONUS_STEP } from '@/lib/usageStats';
 import { capNewWords, newWordsLeftToday, newWordIntake, newWordPauseReason, type NewWordAllowance, type NewWordPause } from '@/lib/newWordBudget';
 import { borrowNewWords, countNewWords, nextTopicWithNewWords } from '@/lib/topicRotation';
-import { wordPhase, phaseShape, type WordPhase } from '@/lib/wordPhase';
+import { isLearned, wordPhase, phaseShape, type WordPhase } from '@/lib/wordPhase';
 import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
 import { buildQueue, applyCadence, dripNewWords, mergeCarryover, reviewBatchOf, reviewWordsLeft, type DueItem } from '@/lib/sessionQueue';
 import { cardNote } from '@/lib/cardNotes';
@@ -383,7 +383,9 @@ export default function LearnScreen() {
     const budget = {
       limit: await db.getDailyNewLimit(),
       bonus: await db.getNewLimitBonus(),
-      startedToday: await db.getNewWordsToday(),
+      // FB210, Kálmán 2026-09-10: a napi keretet a MEGTANULT szavak fogyasztják,
+      // tehát a 🌱 szám akkor csökken, amikor le is tudta írni helyesen.
+      learnedToday: await db.getWordsLearnedToday(),
       unlearned: await db.getUnlearnedWordCount(),
     };
     const leftToday = newWordsLeftToday(budget);
@@ -712,7 +714,9 @@ export default function LearnScreen() {
     const budget2 = {
       limit: await db.getDailyNewLimit(),
       bonus: await db.getNewLimitBonus(),
-      startedToday: await db.getNewWordsToday(),
+      // FB210, Kálmán 2026-09-10: a napi keretet a MEGTANULT szavak fogyasztják,
+      // tehát a 🌱 szám akkor csökken, amikor le is tudta írni helyesen.
+      learnedToday: await db.getWordsLearnedToday(),
       unlearned: await db.getUnlearnedWordCount(),
     };
     const leftToday2 = newWordsLeftToday(budget2);
@@ -873,12 +877,16 @@ export default function LearnScreen() {
     await loadCards();
   };
 
-  // FB112/FB113: the 🌱 badge has to fall by ONE the moment a brand-new word is
-  // answered ("nem így egyesével fogyott. hanem csak úgy ugrott egyet"). The DB
-  // counter behind it (getNewWordsToday) is only re-read on a queue rebuild, so
-  // the badge is stepped optimistically here, exactly like the streak.
-  const spendNewWordBadge = (item: DueItem) => {
-    if (item.type !== 'word' || (item.card.reps ?? 0) > 0) return;
+  // FB112/FB113: the 🌱 badge has to fall by ONE at the moment it is earned
+  // ("nem így egyesével fogyott. hanem csak úgy ugrott egyet"). The DB counter
+  // behind it is only re-read on a queue rebuild, so the badge is stepped
+  // optimistically here, exactly like the streak.
+  // FB210, Kálmán 2026-09-10: the moment is no longer "a brand-new word was
+  // answered" but "a word finished its ladder", i.e. he spelled it right. A card
+  // that was already learned cannot spend the budget twice.
+  const spendNewWordBadge = (item: DueItem, updated: Card) => {
+    if (item.type !== 'word') return;
+    if (isLearned(item.card) || !isLearned(updated)) return;
     setNewWordsLeft((n) => Math.max(0, n - 1));
   };
 
@@ -889,7 +897,6 @@ export default function LearnScreen() {
     // Capture the rated card before any optimistic UI change.
     const item = current;
     const startTime = cardStartTime;
-    spendNewWordBadge(item);
     // FB213: a most megválaszolt lap felkerül a „mostanában látott" listára, még a
     // sor újraépítése előtt, hogy az újraépítés már hátra tudja sorolni.
     recentRef.current = rememberRecent(recentRef.current, recentKey(item), requeueGapFor(requeueLevel));
@@ -910,6 +917,7 @@ export default function LearnScreen() {
     const result = f.repeat(item.card, new Date());
     const updated = result[rating].card;
     const wasCorrect = rating !== Rating.Again;
+    spendNewWordBadge(item, updated);
 
     const responseTimeMs = Date.now() - startTime;
 
@@ -1108,7 +1116,7 @@ export default function LearnScreen() {
   };
 
   const gradeAgainBackground = (item: DueItem, startTime: number) => {
-    spendNewWordBadge(item);
+    // FB210: az Again sosem tesz megtanulttá egy szót, tehát a 🌱 keretet sem fogyasztja.
     gradeBackground(item, f.repeat(item.card, new Date())[Rating.Again].card, false, startTime);
   };
 
@@ -1151,7 +1159,7 @@ export default function LearnScreen() {
       advance(Rating.Good);
       return;
     }
-    spendNewWordBadge(item);
+    spendNewWordBadge(item, updated);
     gradeBackground(item, updated, true, cardStartTime);
     requeueAtPhase(item, updated, nextPhase);
   };
