@@ -6,6 +6,11 @@ import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { answerInputProps } from '@/lib/inputProps';
 import { speak, stop as stopSpeaking } from '@/lib/speech';
+import {
+  isRecognitionAvailable,
+  startRecognition,
+  type RecognitionSession,
+} from '@/lib/speechRecognition';
 import { speechLang } from '@/lib/languages';
 import { countWords, type TaskAnswer } from '@/lib/exam/score';
 import type { ExamTask } from '@/lib/exam/types';
@@ -35,13 +40,25 @@ export default function ExamTaskCard({ task, answer, onAnswer, learnedLang, canS
   const [showTranscript, setShowTranscript] = useState(false);
   const playingRef = useRef(false);
 
+  // FB199: the speaking paper is spoken into the microphone and marked from what
+  // the device recognizes. `heard` is the live transcript (interim included);
+  // the committed answer lives in `answer.transcript`.
+  const [recording, setRecording] = useState(false);
+  const [heard, setHeard] = useState(String(answer.transcript ?? ''));
+  const [speakError, setSpeakError] = useState<string | null>(null);
+  const sessionRef = useRef<RecognitionSession | null>(null);
+  const canRecognize = useMemo(() => isRecognitionAvailable(), []);
+
   // The screen mounts this card with key={task.id}, so a new task arrives as a
   // fresh component and the play counter starts at zero on its own; the effect
-  // only has to stop any audio still speaking when the card goes away.
+  // only has to stop any audio still speaking (or listening) when the card goes
+  // away. Cancelling drops the session without touching the answer already given.
   useEffect(() => {
     return () => {
       playingRef.current = false;
       stopSpeaking();
+      sessionRef.current?.cancel();
+      sessionRef.current = null;
     };
   }, []);
 
@@ -72,6 +89,44 @@ export default function ExamTaskCard({ task, answer, onAnswer, learnedLang, canS
         ...(last ? { onDone: release, onStopped: release, onError: release } : {}),
       });
     });
+  };
+
+  const startListening = async () => {
+    if (recording) return;
+    setSpeakError(null);
+    setHeard('');
+    onAnswer('transcript', '');
+    stopSpeaking(); // the model answer must not be recognized as the learner's
+    // No `contextualStrings`: biasing the recognizer towards the words the task
+    // expects would inflate the mark, which is the one thing an exam must not do.
+    const session = await startRecognition(speechLang(learnedLang), {
+      onTranscript: (text) => {
+        setHeard(text);
+        onAnswer('transcript', text);
+      },
+      onError: (event) => {
+        setSpeakError(
+          event.error === 'not-allowed' || event.error === 'service-not-allowed'
+            ? s.exam.speakDenied
+            : s.exam.speakFailed,
+        );
+      },
+      onEnd: () => {
+        sessionRef.current = null;
+        setRecording(false);
+      },
+    });
+    if (!session) {
+      setSpeakError(s.exam.speakDenied);
+      return;
+    }
+    sessionRef.current = session;
+    setRecording(true);
+  };
+
+  const stopListening = () => {
+    sessionRef.current?.stop();
+    setRecording(false);
   };
 
   const optionRow = (
@@ -329,6 +384,45 @@ export default function ExamTaskCard({ task, answer, onAnswer, learnedLang, canS
             </View>
           ) : null}
 
+          {canRecognize ? (
+            <>
+              <Pressable
+                testID="exam-speak-toggle"
+                onPress={recording ? stopListening : startListening}
+                style={[
+                  styles.speakBtn,
+                  { borderColor: colors.tint, backgroundColor: recording ? `${colors.tint}22` : colors.card },
+                ]}
+              >
+                <Text style={[styles.speakBtnText, { color: colors.tint }]}>
+                  {recording ? s.exam.speakStop : heard ? s.exam.speakAgain : s.exam.speakStart}
+                </Text>
+              </Pressable>
+
+              {recording ? (
+                <Text style={[styles.fieldLabel, { color: colors.tabIconDefault }]}>{s.exam.speakListening}</Text>
+              ) : null}
+
+              {heard ? (
+                <View style={[styles.textBox, { backgroundColor: colors.card }]}>
+                  <Text style={[styles.fieldLabel, { color: colors.tabIconDefault }]}>{s.exam.speakHeard}</Text>
+                  <Text testID="exam-speak-heard" style={[styles.bodyText, { color: colors.text }]}>
+                    {heard}
+                  </Text>
+                  <Text style={[styles.wordCount, { color: colors.tabIconDefault }]}>
+                    {s.exam.wordCount(countWords(heard), task.minWords ?? 0)}
+                  </Text>
+                </View>
+              ) : null}
+
+              {speakError ? (
+                <Text style={[styles.fieldLabel, { color: colors.tabIconDefault }]}>{speakError}</Text>
+              ) : null}
+            </>
+          ) : (
+            <Text style={[styles.fieldLabel, { color: colors.tabIconDefault }]}>{s.exam.speakUnavailable}</Text>
+          )}
+
           <Pressable
             testID="exam-model-toggle"
             onPress={() => onAnswer('modelShown', true)}
@@ -348,27 +442,33 @@ export default function ExamTaskCard({ task, answer, onAnswer, learnedLang, canS
             </View>
           ) : null}
 
-          <Text style={[styles.fieldLabel, { color: colors.tabIconDefault, marginTop: 12 }]}>{s.exam.selfRate}</Text>
-          <View style={styles.tfRow}>
-            {[2, 1, 0].map((value) => {
-              const picked = Number(answer.self ?? -1) === value;
-              return (
-                <Pressable
-                  key={value}
-                  testID={`exam-self-${value}`}
-                  onPress={() => onAnswer('self', value)}
-                  style={[
-                    styles.tfBtn,
-                    { borderColor: picked ? colors.tint : colors.tabIconDefault, backgroundColor: picked ? `${colors.tint}22` : colors.card },
-                  ]}
-                >
-                  <Text style={[styles.tfText, { color: colors.text }]}>
-                    {value === 2 ? s.exam.selfGood : value === 1 ? s.exam.selfPartly : s.exam.selfNo}
-                  </Text>
-                </Pressable>
-              );
-            })}
-          </View>
+          {/* The self-rating is the fallback route: once there is a transcript
+              to mark, the marking no longer looks at it (lib/exam/score.ts). */}
+          {heard && task.points?.length ? null : (
+            <>
+              <Text style={[styles.fieldLabel, { color: colors.tabIconDefault, marginTop: 12 }]}>{s.exam.selfRate}</Text>
+              <View style={styles.tfRow}>
+                {[2, 1, 0].map((value) => {
+                  const picked = Number(answer.self ?? -1) === value;
+                  return (
+                    <Pressable
+                      key={value}
+                      testID={`exam-self-${value}`}
+                      onPress={() => onAnswer('self', value)}
+                      style={[
+                        styles.tfBtn,
+                        { borderColor: picked ? colors.tint : colors.tabIconDefault, backgroundColor: picked ? `${colors.tint}22` : colors.card },
+                      ]}
+                    >
+                      <Text style={[styles.tfText, { color: colors.text }]}>
+                        {value === 2 ? s.exam.selfGood : value === 1 ? s.exam.selfPartly : s.exam.selfNo}
+                      </Text>
+                    </Pressable>
+                  );
+                })}
+              </View>
+            </>
+          )}
         </>
       ) : null}
     </View>
@@ -406,6 +506,8 @@ const styles = StyleSheet.create({
   wordCount: { fontSize: 12, textAlign: 'right' },
   bullets: { gap: 2, marginTop: 4 },
   bullet: { fontSize: 14 },
+  speakBtn: { alignSelf: 'flex-start', borderWidth: 1.5, borderRadius: 20, paddingHorizontal: 18, paddingVertical: 10, marginTop: 10 },
+  speakBtnText: { fontSize: 15, fontWeight: '700' },
   modelBtn: { alignSelf: 'flex-start', borderWidth: 1.5, borderRadius: 20, paddingHorizontal: 16, paddingVertical: 8, marginTop: 8 },
   modelBtnText: { fontSize: 14, fontWeight: '600' },
   modelSpeak: { alignSelf: 'flex-end' },

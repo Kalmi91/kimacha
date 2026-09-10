@@ -222,7 +222,15 @@
       "instruction": "TAREA 1. Monólogo. Hable dos o tres minutos sobre el tema. Después escuche el modelo y valore su respuesta.",
       "prompt": "Hable de su rutina y de cómo ha cambiado en el último año: qué hacía antes, qué hace ahora y qué quiere cambiar.",
       "bullets": ["antes", "ahora", "planes"],
-      "model": "Antes vivía en Budapest y trabajaba en una oficina desde las nueve hasta las cinco. Los fines de semana veía a mis amigos y jugaba al fútbol. Ahora vivo en México, estudio español todos los días y trabajo desde casa. Como más verdura y camino mucho más que antes. El año que viene quiero buscar un trabajo aquí y hablar español sin miedo."
+      "model": "Antes vivía en Budapest y trabajaba en una oficina desde las nueve hasta las cinco. Los fines de semana veía a mis amigos y jugaba al fútbol. Ahora vivo en México, estudio español todos los días y trabajo desde casa. Como más verdura y camino mucho más que antes. El año que viene quiero buscar un trabajo aquí y hablar español sin miedo.",
+      "minWords": 45,
+      "points": [
+        { "id": "antes", "label": "Habla del pasado", "keywords": ["antes", "el año pasado", "hace un año", "solía"] },
+        { "id": "imperfecto", "label": "Usa el imperfecto", "keywords": ["hacía", "tenía", "vivía", "trabajaba", "estudiaba", "iba"] },
+        { "id": "ahora", "label": "Habla del presente", "keywords": ["ahora", "hoy en día", "actualmente"] },
+        { "id": "cambio", "label": "Dice qué ha cambiado", "keywords": ["ha cambiado", "cambió", "diferente"] },
+        { "id": "planes", "label": "Dice qué quiere cambiar", "keywords": ["quiero", "voy a", "me gustaría", "pienso"] }
+      ]
     },
     {
       "id": "es-a2-s2",
@@ -230,7 +238,15 @@
       "instruction": "TAREA 2. Descripción de una situación. Hable dos minutos. Después escuche el modelo y valore su respuesta.",
       "prompt": "Imagine una foto de un mercado: describa qué ve, quiénes están, qué hacen y qué le parece el lugar.",
       "bullets": ["qué se ve", "las personas", "qué hacen", "su opinión"],
-      "model": "En la foto se ve un mercado grande y bastante lleno. Hay muchos puestos de fruta y de verdura, y también uno de flores. Una señora está pesando tomates mientras un cliente espera. Al fondo, dos hombres hablan y se ríen. Me parece un lugar alegre, aunque un poco ruidoso. A mí me gusta comprar en el mercado porque la fruta es más fresca y más barata que en el supermercado."
+      "model": "En la foto se ve un mercado grande y bastante lleno. Hay muchos puestos de fruta y de verdura, y también uno de flores. Una señora está pesando tomates mientras un cliente espera. Al fondo, dos hombres hablan y se ríen. Me parece un lugar alegre, aunque un poco ruidoso. A mí me gusta comprar en el mercado porque la fruta es más fresca y más barata que en el supermercado.",
+      "minWords": 45,
+      "points": [
+        { "id": "ve", "label": "Dice qué ve", "keywords": ["se ve", "veo", "en la foto", "en la imagen", "hay"] },
+        { "id": "personas", "label": "Habla de las personas", "keywords": ["personas", "gente", "señora", "hombre", "mujer", "vendedor"] },
+        { "id": "acciones", "label": "Dice qué hacen", "keywords": ["están", "comprando", "vendiendo", "hablando", "caminando"] },
+        { "id": "lugar", "label": "Habla del lugar", "keywords": ["mercado", "puesto", "frutas", "verduras"] },
+        { "id": "opinion", "label": "Da su opinión", "keywords": ["me parece", "creo que", "me gusta", "pienso que"] }
+      ]
     },
     {
       "id": "es-a2-s3",
@@ -238,7 +254,15 @@
       "instruction": "TAREA 3. Diálogo. Hable en voz alta como si estuviera en la situación. Después escuche el modelo y valore su respuesta.",
       "prompt": "Usted compró un teléfono la semana pasada y no funciona bien. Vuelve a la tienda: explique el problema, diga cuándo lo compró y pida una solución.",
       "bullets": ["el problema", "cuándo lo compró", "qué quiere"],
-      "model": "Buenos días. Compré este teléfono aquí el martes pasado y tengo un problema: la batería se acaba en dos horas y a veces se apaga solo. Aquí tengo el ticket. ¿Pueden cambiarlo por otro? Si no es posible, prefiero que me devuelvan el dinero, porque lo necesito para trabajar."
+      "model": "Buenos días. Compré este teléfono aquí el martes pasado y tengo un problema: la batería se acaba en dos horas y a veces se apaga solo. Aquí tengo el ticket. ¿Pueden cambiarlo por otro? Si no es posible, prefiero que me devuelvan el dinero, porque lo necesito para trabajar.",
+      "minWords": 40,
+      "points": [
+        { "id": "problema", "label": "Explica el problema", "keywords": ["no funciona", "problema", "está roto", "no sirve", "falla"] },
+        { "id": "objeto", "label": "Dice de qué producto habla", "keywords": ["teléfono", "celular", "móvil"] },
+        { "id": "cuando", "label": "Dice cuándo lo compró", "keywords": ["la semana pasada", "compré", "hace una semana"] },
+        { "id": "solucion", "label": "Pide una solución", "keywords": ["quiero", "puede", "cambiar", "devolver", "reparar", "dinero"] },
+        { "id": "cortesia", "label": "Usa fórmulas de cortesía", "keywords": ["por favor", "disculpe", "buenas tardes", "buenos días"] }
+      ]
     }
   ]
 }

@@ -202,7 +202,15 @@
       "instruction": "PART 1. Talk about yourself for two to three minutes, then compare with the model.",
       "prompt": "Talk about your routine and how it has changed in the last year: what you used to do, what you do now, and what you want to change.",
       "bullets": ["before", "now", "plans"],
-      "model": "I used to live in Budapest and I worked in an office from nine to five. At the weekend I met my friends and played football. Now I live in Mexico City, I study Spanish every day and I work from home. I eat more vegetables and I walk much more than before. Next year I want to find a job here and speak without being afraid."
+      "model": "I used to live in Budapest and I worked in an office from nine to five. At the weekend I met my friends and played football. Now I live in Mexico City, I study Spanish every day and I work from home. I eat more vegetables and I walk much more than before. Next year I want to find a job here and speak without being afraid.",
+      "minWords": 45,
+      "points": [
+        { "id": "before", "label": "Talks about the past", "keywords": ["used to", "before", "last year", "i was"] },
+        { "id": "routine", "label": "Describes the routine", "keywords": ["every day", "in the morning", "in the evening", "usually"] },
+        { "id": "now", "label": "Talks about the present", "keywords": ["now", "these days", "at the moment"] },
+        { "id": "change", "label": "Says what has changed", "keywords": ["has changed", "changed", "different"] },
+        { "id": "plans", "label": "Says what they want to change", "keywords": ["i want to", "going to", "i would like to", "i plan"] }
+      ]
     },
     {
       "id": "en-a2-s2",
@@ -210,7 +218,15 @@
       "instruction": "PART 2. Describe a picture for two minutes, then compare with the model.",
       "prompt": "Imagine a photo of a market: describe what you can see, who is there, what they are doing, and what you think of the place.",
       "bullets": ["what you see", "the people", "what they are doing", "your opinion"],
-      "model": "In the photo I can see a big market and it is quite busy. There are a lot of stalls with fruit and vegetables, and one with flowers. A woman is weighing tomatoes while a customer waits. In the background two men are talking and laughing. I think it is a cheerful place, although it is a bit noisy. I like shopping at the market because the fruit is fresher and cheaper than in the supermarket."
+      "model": "In the photo I can see a big market and it is quite busy. There are a lot of stalls with fruit and vegetables, and one with flowers. A woman is weighing tomatoes while a customer waits. In the background two men are talking and laughing. I think it is a cheerful place, although it is a bit noisy. I like shopping at the market because the fruit is fresher and cheaper than in the supermarket.",
+      "minWords": 45,
+      "points": [
+        { "id": "see", "label": "Says what can be seen", "keywords": ["i can see", "i see", "in the photo", "in the picture", "there is", "there are"] },
+        { "id": "people", "label": "Talks about the people", "keywords": ["people", "man", "woman", "seller", "customers"] },
+        { "id": "doing", "label": "Says what they are doing", "keywords": ["buying", "selling", "talking", "walking", "they are"] },
+        { "id": "place", "label": "Talks about the place", "keywords": ["market", "stall", "fruit", "vegetables"] },
+        { "id": "opinion", "label": "Gives an opinion", "keywords": ["i think", "i like", "it looks", "in my opinion"] }
+      ]
     },
     {
       "id": "en-a2-s3",
@@ -218,7 +234,15 @@
       "instruction": "PART 3. Deal with a situation. Speak out loud, then compare with the model.",
       "prompt": "You bought a phone last week and it does not work properly. You go back to the shop: explain the problem, say when you bought it, and ask for a solution.",
       "bullets": ["the problem", "when you bought it", "what you want"],
-      "model": "Good morning. I bought this phone here last Tuesday and there is a problem: the battery runs out in two hours and sometimes it switches off by itself. Here is the receipt. Could you change it for another one? If that is not possible, I would prefer a refund, because I need the phone for work."
+      "model": "Good morning. I bought this phone here last Tuesday and there is a problem: the battery runs out in two hours and sometimes it switches off by itself. Here is the receipt. Could you change it for another one? If that is not possible, I would prefer a refund, because I need the phone for work.",
+      "minWords": 40,
+      "points": [
+        { "id": "problem", "label": "Explains the problem", "keywords": ["does not work", "doesn't work", "problem", "broken", "not working"] },
+        { "id": "object", "label": "Says what the product is", "keywords": ["phone", "mobile", "smartphone"] },
+        { "id": "when", "label": "Says when it was bought", "keywords": ["last week", "i bought", "a week ago"] },
+        { "id": "solution", "label": "Asks for a solution", "keywords": ["i want", "can you", "replace", "refund", "repair", "money back"] },
+        { "id": "politeness", "label": "Uses polite phrases", "keywords": ["please", "excuse me", "hello", "thank you"] }
+      ]
     }
   ]
 }

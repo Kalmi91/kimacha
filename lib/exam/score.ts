@@ -50,6 +50,9 @@ export function fold(text: string): string {
     .toLowerCase()
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
+    // Speech recognizers write the curly apostrophe ("doesn’t"), keyword lists
+    // are typed with the straight one; without this they never meet.
+    .replace(/[‘’]/g, "'")
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -147,8 +150,31 @@ export function scoreTask(task: ExamTask, answer: TaskAnswer = {}): TaskResult {
       break;
     }
     case 'speaking_prompt': {
-      // Self-assessed: the learner speaks, hears/reads the model answer, and
-      // says how it went. 2 = fully, 1 = partly, 0 = not yet.
+      // Two routes, in this order:
+      // 1. The learner spoke and the device recognized it (FB199). The
+      //    transcript is marked like a written message: one mark per content
+      //    point, one for speaking long enough. This marks CONTENT, not
+      //    pronunciation, see lib/speechRecognition.ts.
+      // 2. No transcript (no recognizer, permission refused, or the learner
+      //    chose to judge it): the old 0/1/2 self-rating, scaled onto the same
+      //    total so a paper is worth the same either way.
+      const transcript = String(answer.transcript ?? '').trim();
+      if (transcript && task.points?.length) {
+        const folded = fold(transcript);
+        for (const point of task.points) {
+          const ok = point.keywords.some((kw) => folded.includes(fold(kw)));
+          items.push({ label: point.label, given: ok ? '✓' : '✗', expected: point.keywords[0], ok });
+        }
+        const words = countWords(transcript);
+        const minWords = task.minWords ?? 0;
+        items.push({
+          label: `≥ ${minWords}`,
+          given: String(words),
+          expected: String(minWords),
+          ok: words >= minWords,
+        });
+        break;
+      }
       const self = Number(answer.self ?? 0);
       items.push({
         label: task.prompt,
@@ -162,12 +188,15 @@ export function scoreTask(task: ExamTask, answer: TaskAnswer = {}): TaskResult {
       break;
   }
 
-  // speaking_prompt carries a 0/1/2 self-rating, so its "correct" is fractional
-  // on purpose: one prompt half-done is half a mark, not nothing.
-  const correct =
-    task.kind === 'speaking_prompt'
-      ? Math.min(1, Number(answer.self ?? 0) / 2)
-      : items.filter((i) => i.ok).length;
+  // A self-rated speaking prompt carries a 0/1/2 rating, so its "correct" is
+  // fractional on purpose: one prompt half-done is half a mark, not nothing.
+  // Scaled to the task's total, a self-rated task is worth what a recognized
+  // one is worth, so the paper's points do not depend on how it was answered.
+  const selfRated =
+    task.kind === 'speaking_prompt' && !(String(answer.transcript ?? '').trim() && task.points?.length);
+  const correct = selfRated
+    ? Math.min(1, Number(answer.self ?? 0) / 2) * taskItemCount(task)
+    : items.filter((i) => i.ok).length;
 
   return { taskId: task.id, correct, total: taskItemCount(task), items };
 }
