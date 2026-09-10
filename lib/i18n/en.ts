@@ -382,6 +382,8 @@ export default {
     doneAgain: 'Worth reading the rule once more before the next one.',
     entryTitle: 'Grammar course',
     entryBlurb: 'Every rule from A1 to C1, explained then practised.',
+    // FB216: kevert nyelvű felolvasás a lecke-szövegre.
+    readAloud: 'Read aloud',
   },
   exam: {
     simulationOf: (model: string) => `Simulation of the ${model} exam`,

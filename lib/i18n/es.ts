@@ -382,6 +382,8 @@ export default {
     doneAgain: 'Conviene releer la regla antes de seguir.',
     entryTitle: 'Curso de gramática',
     entryBlurb: 'Cada regla de A1 a C1: explicación y luego práctica.',
+    // FB216: kevert nyelvű felolvasás a lecke-szövegre.
+    readAloud: 'Leer en voz alta',
   },
   exam: {
     simulationOf: (model: string) => `Simulacro del examen ${model}`,
