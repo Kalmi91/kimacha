@@ -367,6 +367,7 @@ export default {
       `${done}/${topics} done · ${written} lessons available`,
     yourLevel: 'you are here',
     soon: 'coming',
+    coreTag: 'core',
     started: 'started',
     notStarted: 'new',
     soonLong: 'This lesson has not been written yet. It is on the list, and the rest of the level is already open.',

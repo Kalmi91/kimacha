@@ -381,6 +381,7 @@ export default {
       `${done}/${topics} kész · ${written} lecke elérhető`,
     yourLevel: 'itt tartasz',
     soon: 'hamarosan',
+    coreTag: 'fontos',
     started: 'elkezdve',
     notStarted: 'új',
     soonLong: 'Ez a lecke még nincs megírva. Rajta van a listán, a szint többi része viszont már nyitva.',
