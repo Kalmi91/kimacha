@@ -70,6 +70,7 @@ export interface DB {
   getNewLimitBonus(): Promise<number>;
   addNewLimitBonus(extra: number): Promise<void>;
   getNewWordsToday(): Promise<number>;
+  getWordsLearnedToday(): Promise<number>;
   getUnlearnedWordCount(): Promise<number>;
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
@@ -135,6 +136,9 @@ class MemoryDB implements DB {
       reps: card.reps, lapses: card.lapses, state: card.state,
       last_review: card.last_review ? card.last_review.toISOString() : null,
       buried: existing?.buried ?? 0,
+      // FB210: az első alkalom, amikor a szó végigért a létrán (lásd a natív ágat).
+      learned_at:
+        existing?.learned_at ?? (type === 'word' && isLearned(card) ? new Date().toISOString() : null),
     });
   }
 
@@ -562,8 +566,17 @@ class MemoryDB implements DB {
 
   // FB103: word cards still in the FSRS learning (1) / relearning (3) state.
   async getUnlearnedWordCount(): Promise<number> {
+    // FB210: a létra dönt, nem az FSRS állapot, ahogy a natív ágon.
     return [...this.cards.values()].filter(
-      c => c.type === 'word' && c.pair === this.activePair && !c.buried && c.reps > 0 && (c.state === 1 || c.state === 3)
+      c => c.type === 'word' && c.pair === this.activePair && !c.buried && c.reps > 0 && !isLearned(c)
+    ).length;
+  }
+
+  async getWordsLearnedToday(): Promise<number> {
+    const today = localDateString();
+    return [...this.cards.values()].filter(
+      c => c.type === 'word' && c.pair === this.activePair && c.learned_at &&
+           localDateString(new Date(c.learned_at)) === today
     ).length;
   }
 
