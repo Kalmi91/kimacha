@@ -1067,7 +1067,8 @@ export default function LearnScreen() {
       return;
     }
     const { back, backLang } = getFrontBack(current);
-    const correct = back.split(' / ')[0];
+    // FB215: a „ / " vagylagos, a strictAnswerMatch mindkét jelentést elfogadja.
+    const correct = back;
 
     // Strict (FB6): "she speak" must not pass for "She speaks", only case,
     // punctuation and missing accents are forgiven. FB132: the accent half of
@@ -1314,7 +1315,7 @@ export default function LearnScreen() {
     // card follows since FB43/FB73. Nothing to judge, so stay quiet.
     if (practiceText.trim().length === 0) return;
     setPracticeResult(
-      strictAnswerMatch(practiceText, back.split(' / ')[0], { strictAccents, lang: backLang }) ? 'correct' : 'wrong'
+      strictAnswerMatch(practiceText, back, { strictAccents, lang: backLang }) ? 'correct' : 'wrong'
     );
   };
 
