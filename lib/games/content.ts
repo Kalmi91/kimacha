@@ -223,14 +223,49 @@ export interface GrammarWrongExplanation {
   [optionText: string]: Record<string, string>; // per native lang hu/en/es/de
 }
 
-export interface GrammarItem {
+interface GrammarItemBase {
   id: string;
-  sentence: string; // target language, blank marked "___"
-  options: string[]; // target-language option texts
-  correct: number; // index into options
   why: Record<string, string>; // one-sentence "why correct", per native lang
   wrong: GrammarWrongExplanation; // wrong[optionText][lang] = why that option is wrong here
   examples: string[]; // 2 target-language example sentences illustrating the same rule
+}
+
+/** A klasszikus „melyik illik a lyukba" feladat. */
+export interface GrammarGapItem extends GrammarItemBase {
+  kind?: 'gap';
+  sentence: string; // target language, blank marked "___"
+  options: string[]; // target-language option texts
+  correct: number; // index into options
+}
+
+// FB219, Kálmán 2026-09-09 (grammar:clases-de-palabras:drill): „vagy lehetne
+// olyan hogy egy momdat és kijelölni az igét vagy a advarbet vagy hogy egy
+// momdat és akkor hol van benne a mi, vagy valami életszerű feladatot". A
+// lyukas mondat izolált szót kérdez; ez a típus egy KÉSZ mondatot ad, és a
+// tanuló abban koppint rá a kért szófajra, tehát a mondat egészében kell
+// felismernie, nem két felkínált szó közül választ.
+export type GrammarWordClass =
+  | 'noun'
+  | 'verb'
+  | 'adjective'
+  | 'adverb'
+  | 'article'
+  | 'pronoun'
+  | 'preposition';
+
+export interface GrammarMarkItem extends GrammarItemBase {
+  kind: 'mark';
+  sentence: string; // target language, WHOLE sentence, no blank
+  target: GrammarWordClass; // melyik szófajt kell megjelölni
+  answer: string; // a mondat azon szava, amire koppintani kell
+  /** Ha a szó többször szerepel: hányadik előfordulás (0-tól). */
+  answerIndex?: number;
+}
+
+export type GrammarItem = GrammarGapItem | GrammarMarkItem;
+
+export function isMarkItem(item: GrammarItem): item is GrammarMarkItem {
+  return item.kind === 'mark';
 }
 
 export interface GrammarTopicData {

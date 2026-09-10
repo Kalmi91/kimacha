@@ -16,6 +16,7 @@ import { buildOddOneOutRound, type OddCategorySet, type OddRound, type OddWordMe
 import { buildGrammarRound, type GrammarRoundItem } from './grammarChoice';
 import {
   getGrammarTopics,
+  isMarkItem,
   getCcatAntonyms,
   getCcatSynonyms,
   getCcatWordProblems,
@@ -182,7 +183,9 @@ export function buildSentenceFillItem(lang: string, seed: number): CcatSentenceF
   const topics = getGrammarTopics(lang);
   if (topics.length === 0) return null;
   const topic = shuffleArray(topics, seed)[0];
-  const round = buildGrammarRound(topic, seed + 1);
+  // FB219: a nyelvtan-témák között már jelölős tétel is van (kész mondat, nincs
+  // lyuk); a CCAT mondat-kiegészítése csak a lyukasat tudja megjeleníteni.
+  const round = buildGrammarRound(topic, seed + 1).filter((r) => !isMarkItem(r.item));
   if (round.length === 0) return null;
   return { kind: 'sentenceFill', topic, round: round[0] };
 }

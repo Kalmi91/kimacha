@@ -1,5 +1,6 @@
 import { buildGrammarRound, wrongExplanation } from '../grammarChoice';
-import { getGrammarTopics, type GrammarTopicData } from '../content';
+import { markAnswerIndex, markTokens } from '../grammarMark';
+import { getGrammarTopics, isMarkItem, type GrammarTopicData } from '../content';
 
 function makeTopic(): GrammarTopicData {
   return {
@@ -52,6 +53,7 @@ describe('buildGrammarRound', () => {
     for (let seed = 0; seed < 30; seed++) {
       const round = buildGrammarRound(topic, seed);
       for (const r of round) {
+        if (isMarkItem(r.item)) continue;
         const originalCorrectText = r.item.options[r.item.correct];
         expect(r.options[r.correctIndex]).toBe(originalCorrectText);
       }
@@ -106,13 +108,22 @@ describe('authored grammar topics are complete (Q1 batch)', () => {
     expect(topic.items.length).toBeGreaterThanOrEqual(10);
 
     for (const item of topic.items) {
-      // Exactly one gap, and a correct index that exists.
-      expect(item.sentence.split('___')).toHaveLength(2);
-      expect(item.options[item.correct]).toBeTruthy();
       expect(item.examples.length).toBeGreaterThan(0);
       for (const lang of ['hu', 'en', 'es', 'de']) {
         expect(item.why[lang]).toBeTruthy();
       }
+
+      // FB219: a jelölős feladat kész mondatot ad, és a megjelölendő szónak
+      // benne kell lennie, különben a képernyőn nincs helyes válasz.
+      if (isMarkItem(item)) {
+        expect(item.sentence).not.toContain('___');
+        expect(markAnswerIndex(item, markTokens(item.sentence))).toBeGreaterThanOrEqual(0);
+        continue;
+      }
+
+      // Exactly one gap, and a correct index that exists.
+      expect(item.sentence.split('___')).toHaveLength(2);
+      expect(item.options[item.correct]).toBeTruthy();
       // Every WRONG option must say why it is wrong, in all four languages:
       // GAMES.md 4.11 promises "miért rossz a többi".
       for (const option of item.options) {
