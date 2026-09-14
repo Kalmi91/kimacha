@@ -14,6 +14,8 @@ export interface DB {
   startWord(wordId: number): Promise<void>;
   passLap(wordId: number): Promise<Lap>;
   getInHandWordCards(): Promise<{ word_id: number; lap: Lap }[]>;
+  getWordsStartedToday(): Promise<number>;
+  getUntouchedWordIds(wordIds: number[]): Promise<Set<number>>;
   getDueCards(limit: number): Promise<any[]>;
   getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
   updateStreak(): Promise<void>;
@@ -125,8 +127,8 @@ class MemoryDB implements DB {
       learning_steps: empty.learning_steps,
       reps: empty.reps, lapses: empty.lapses, state: empty.state,
       last_review: null,
-      // UTEMEZO 11. szakasz: lásd lib/lap.ts fejléce.
-      lap: 0, in_hand: 0,
+      // UTEMEZO 11. szakasz: lásd lib/lap.ts fejléce. UTEMEZO 2.2: started_at.
+      lap: 0, in_hand: 0, started_at: null,
     });
   }
 
@@ -147,6 +149,7 @@ class MemoryDB implements DB {
       learned_at: existing?.learned_at ?? null,
       lap: existing?.lap ?? 0,
       in_hand: existing?.in_hand ?? 0,
+      started_at: existing?.started_at ?? null,
     });
   }
 
@@ -199,12 +202,12 @@ class MemoryDB implements DB {
   }
 
   // FB190: szabad gyakorlás a szint megkezdett szavaiból, esedékesség nélkül
-  // (a SQLite oldal tükre).
+  // (a SQLite oldal tükre). UTEMEZO 11. szakasz: megtanult = lap >= 3, in_hand = 0.
   async getPracticeCardsForLevel(level: string, limit: number) {
     const { getWordsForLevel } = require('@/data/words');
     const ids = new Set(getWordsForLevel(level as any, this.activePair.split('-')[1] ?? 'es').map((w: any) => w.id));
     const rows = [...this.cards.values()].filter(
-      (c: any) => c.type === 'word' && c.pair === this.activePair && c.reps > 0 && !c.buried && ids.has(c.word_id)
+      (c: any) => c.type === 'word' && c.pair === this.activePair && (c.lap ?? 0) >= 3 && c.in_hand === 0 && !c.buried && ids.has(c.word_id)
     );
     for (let i = rows.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -213,31 +216,26 @@ class MemoryDB implements DB {
     return rows.slice(0, limit);
   }
 
+  // UTEMEZO 11. szakasz: ez a lekérdezés csak ISMÉTLÉST ad (megtanult szó,
+  // lap >= 3, in_hand = 0) plusz a hozzájuk tartozó mondat-kártyákat. Az
+  // érintetlen és a kézben lévő szavak az ütemező `fresh`/`hand` listáján
+  // jönnek, nem ezen a lekérdezésen (lásd a Learn tab loadCards-ját).
   async getDueCardsForWordIds(wordIds: number[], limit: number) {
     const idSet = new Set(wordIds);
-    const now = new Date().toISOString();
     const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
     const all = [...this.cards.values()].filter(c => idSet.has(c.word_id) && c.pair === this.activePair);
 
-    const newLimit = Math.max(1, Math.round(limit * 0.3));
-    const reviewLimit = limit - newLimit;
-
-    const newCards = all
-      .filter(c => c.type === 'word' && c.reps === 0 && !c.buried && c.due <= now)
-      .sort((a, b) => a.due.localeCompare(b.due))
-      .slice(0, newLimit);
-
     const reviewWords = all
-      .filter(c => c.type === 'word' && c.reps > 0 && !c.buried && c.due <= lookahead)
+      .filter(c => c.type === 'word' && (c.lap ?? 0) >= 3 && c.in_hand === 0 && !c.buried && c.due <= lookahead)
       .sort((a, b) => a.due.localeCompare(b.due))
-      .slice(0, reviewLimit);
+      .slice(0, limit);
 
     const knownWordIds = new Set(
-      all.filter(c => c.type === 'word' && (c.reps >= 2 || c.buried)).map(c => c.word_id)
+      all.filter(c => c.type === 'word' && ((c.lap ?? 0) >= 3 || c.buried)).map(c => c.word_id)
     );
 
     // FB89: same 4:1 cap and weakest-word-first ordering as the native DB.
-    const sentenceSlots = sentenceSlotCount(newCards.length + reviewWords.length);
+    const sentenceSlots = sentenceSlotCount(reviewWords.length);
     const weakness = new Map<number, WordWeakness>(
       all
         .filter(c => c.type === 'word')
@@ -250,7 +248,7 @@ class MemoryDB implements DB {
       weakness
     ).slice(0, sentenceSlots);
 
-    return [...reviewWords, ...sentenceCards, ...newCards];
+    return [...reviewWords, ...sentenceCards];
   }
 
   async countDueReviewWords(wordIds: number[]) {
@@ -259,7 +257,7 @@ class MemoryDB implements DB {
     const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
     const due = new Set(
       [...this.cards.values()]
-        .filter(c => idSet.has(c.word_id) && c.type === 'word' && c.reps > 0 && !c.buried
+        .filter(c => idSet.has(c.word_id) && c.type === 'word' && (c.lap ?? 0) >= 3 && c.in_hand === 0 && !c.buried
           && c.pair === this.activePair && c.due <= lookahead)
         .map(c => c.word_id)
     );
@@ -280,7 +278,7 @@ class MemoryDB implements DB {
     const excluded = new Set(excludeWordIds);
     const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
     return [...this.cards.values()]
-      .filter(c => c.type === 'word' && c.reps > 0 && !c.buried && c.pair === this.activePair
+      .filter(c => c.type === 'word' && (c.lap ?? 0) >= 3 && c.in_hand === 0 && !c.buried && c.pair === this.activePair
         && c.due <= lookahead && !excluded.has(c.word_id))
       .sort((a, b) => a.due.localeCompare(b.due))
       .slice(0, limit);
@@ -291,7 +289,7 @@ class MemoryDB implements DB {
     const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
     const due = new Set(
       [...this.cards.values()]
-        .filter(c => c.type === 'word' && c.reps > 0 && !c.buried && c.pair === this.activePair
+        .filter(c => c.type === 'word' && (c.lap ?? 0) >= 3 && c.in_hand === 0 && !c.buried && c.pair === this.activePair
           && c.due <= lookahead && !excluded.has(c.word_id))
         .map(c => c.word_id)
     );
@@ -401,11 +399,15 @@ class MemoryDB implements DB {
     if (card) { card.buried = 1; card.in_hand = 0; }
   }
 
-  // UTEMEZO 11. szakasz: lásd database.ts a szöveges leírásért.
+  // UTEMEZO 11. szakasz: lásd database.ts a szöveges leírásért. UTEMEZO 2.2: a
+  // started_at ekkor kap értéket ("csak egyszer" szabály, COALESCE-szerűen).
   async startWord(wordId: number): Promise<void> {
     await this.ensureCard(wordId, 'word');
     const card = this.cards.get(this.key(wordId, 'word'));
-    if (card && (card.lap ?? 0) < 3) card.in_hand = 1;
+    if (card && (card.lap ?? 0) < 3) {
+      card.in_hand = 1;
+      card.started_at = card.started_at ?? new Date().toISOString();
+    }
   }
 
   async passLap(wordId: number): Promise<Lap> {
@@ -424,6 +426,27 @@ class MemoryDB implements DB {
       .filter(c => c.type === 'word' && c.pair === this.activePair && c.in_hand === 1 && !c.buried)
       .sort((a, b) => a.word_id - b.word_id)
       .map(c => ({ word_id: c.word_id, lap: c.lap as Lap }));
+  }
+
+  // UTEMEZO 2.2: hány szó indult el ma (a SQLite oldal tükre).
+  async getWordsStartedToday(): Promise<number> {
+    const today = localDateString();
+    return [...this.cards.values()].filter(
+      c => c.type === 'word' && c.pair === this.activePair && c.started_at &&
+           localDateString(new Date(c.started_at)) === today
+    ).length;
+  }
+
+  // UTEMEZO 2.4/12.1: `wordIds`-ből az érintetlenek (a SQLite oldal tükre).
+  async getUntouchedWordIds(wordIds: number[]): Promise<Set<number>> {
+    const idSet = new Set(wordIds);
+    const touched = new Set(
+      [...this.cards.values()]
+        .filter(c => idSet.has(c.word_id) && c.type === 'word' && c.pair === this.activePair)
+        .filter(c => !((c.lap ?? 0) === 0 && c.in_hand === 0 && !c.buried))
+        .map(c => c.word_id)
+    );
+    return new Set(wordIds.filter(id => !touched.has(id)));
   }
 
   // FB38: push the card's due date out by `days`, leaving reps/stability untouched
