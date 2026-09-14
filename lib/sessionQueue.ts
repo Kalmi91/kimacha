@@ -9,7 +9,6 @@
 
 import { cardFromRow } from '@/lib/database';
 import { capSentencesToCadence } from '@/lib/sentenceMix';
-import { wordPhase, phaseShape } from '@/lib/wordPhase';
 import { lapShape } from '@/lib/lap';
 import { findWordById, type WordEntry } from '@/data/words';
 import type { Card } from 'ts-fsrs';
@@ -92,10 +91,10 @@ export function buildQueue(rows: any[], lang: string): DueItem[] {
       let typingDirection: TypingDir | undefined;
 
       if (isWord) {
-        // FB105/FB109: the phase ladder (lib/wordPhase.ts) counts SUCCESSFUL
-        // reviews, not reviews, and the same rule drives the in-session
-        // promotion in handleWordGood.
-        const shape = phaseShape(wordPhase(row));
+        // UTEMEZO 11. szakasz: a lenti lekérdezések már csak MEGTANULT szavakat
+        // adnak vissza (lap >= 3, in_hand = 0), egy review-lap tehát mindig a
+        // 3. lap alakját hordozza (lásd lib/lap.ts lapShape).
+        const shape = lapShape(3);
         isTyping = shape.isTyping;
         typingDirection = shape.typingDirection;
       } else {
@@ -114,29 +113,6 @@ export function buildQueue(rows: any[], lang: string): DueItem[] {
       };
     })
     .filter((item: DueItem) => !!item.word);
-}
-
-// FB163, Kálmán 2026-08-28 (`word:the garden`): "legyen úgy, hogy ha ismétlem a
-// szavakat akkor is tegyen bele egy új szót azt nyomja végig a 3 típusát, és közben
-// menjen a régi szavak ismétlése ... de egyesével". New words arrived in whatever
-// order the due query handed them over, so a session either opened with a block of
-// new words or hid them behind every review. They are now spread evenly through the
-// reviews: one new word, then a stretch of old ones, then the next new word. The
-// ladder itself (phase 0/1/2) is walked in-session by index.tsx.
-export function dripNewWords(items: DueItem[]): DueItem[] {
-  const isNew = (item: DueItem) => item.type === 'word' && (item.card.reps ?? 0) === 0;
-  const fresh = items.filter(isNew);
-  const rest = items.filter((item) => !isNew(item));
-  if (!fresh.length || !rest.length) return items;
-  const gap = Math.max(1, Math.floor(rest.length / fresh.length));
-  const out: DueItem[] = [];
-  let fi = 0;
-  for (let i = 0; i < rest.length; i++) {
-    if (fi < fresh.length && i % gap === 0) out.push(fresh[fi++]);
-    out.push(rest[i]);
-  }
-  while (fi < fresh.length) out.push(fresh[fi++]);
-  return out;
 }
 
 export function applyCadence(items: DueItem[], wordsOnly: boolean, lang: string): DueItem[] {
@@ -195,44 +171,6 @@ export function applyCadence(items: DueItem[], wordsOnly: boolean, lang: string)
     takeEasy = !takeEasy;
   }
   return result;
-}
-
-// FB174/FB180: what the 🔁 header badge counts. The batch is the REVIEW WORDS of
-// this queue — a word can hold three cards, so words are counted, not cards —
-// and `left` is how many more batches of that size the day still owes.
-//
-// FB180, Kálmán 2026-09-07 (word:"the bedroom"): „5 szót írt de valójában 8 szó
-// volt benne". New-ness belongs to the WORD, not to one of its cards: a brand-new
-// word arrives with a word card at reps 0 plus sentence/easy cards, and counting
-// only the word card as new left the other two on the review side, inflating the
-// batch against the counter that shrinks as the queue is answered. `newIds` is
-// returned so both sides can read the same set.
-export interface ReviewBatch {
-  size: number;
-  left: number;
-  dueToday: number;
-  newIds: Set<number>;
-}
-
-export function reviewBatchOf(items: DueItem[], dueReviewWords: number): ReviewBatch {
-  const newIds = new Set(
-    items.filter((item) => item.type === 'word' && item.card.reps === 0).map((item) => item.wordId),
-  );
-  const size = new Set(
-    items.filter((item) => !newIds.has(item.wordId)).map((item) => item.wordId),
-  ).size;
-  const beyond = Math.max(0, dueReviewWords - size);
-  return { size, left: size > 0 ? Math.ceil(beyond / size) : 0, dueToday: dueReviewWords, newIds };
-}
-
-// The review words still ahead in `queue` from `index` on, counted the same way
-// the batch was sized, so the badge can never disagree with itself.
-export function reviewWordsLeft(queue: DueItem[], index: number, newIds: Set<number>): number {
-  const ids = new Set<number>();
-  for (let i = index; i < queue.length; i++) {
-    if (!newIds.has(queue[i].wordId)) ids.add(queue[i].wordId);
-  }
-  return ids.size;
 }
 
 // ---------------------------------------------------------------------------
@@ -305,8 +243,11 @@ export interface QueueState {
   stats: QueueStats;
 }
 
+// UTEMEZO 2.2: `answer()` maga sosem ad startWord effectet, mert a keret nem a
+// valaszkor, hanem akkor fogy, amikor egy szo 1. lapja FELJON (startNew, lasd
+// nextLap). A hivo ezert a nextLap() korul dont: ha `header(next).black <
+// header(prev).black`, hivja meg db.startWord-ot az uj kezben-levo szora.
 export type Effect =
-  | { type: 'startWord'; wordId: number } // DB: startWord (in_hand=1)
   | { type: 'passLap'; wordId: number } // DB: passLap
   | { type: 'learned'; wordId: number } // a 3. lap helyes volt: a DB passLap
       // mar lefutott, a hivo adja a szonak az ELSO FSRS-ertekelest (Good)
@@ -570,4 +511,51 @@ export function answer(state: QueueState, correct: boolean): { state: QueueState
     },
     effects,
   };
+}
+
+// UTEMEZO 3.5: a kepernyon levo lap valasz nelkul tavozik (snooze, vagy ures
+// begepelt valasz). Nincs stat, nincs effect. Review-lap: `drop` eseten
+// kikerul a korbol (pink -1, mert mar ugyis kikerult a reviews[]-bol amikor
+// feljott, lasd showReview); kulonben visszakerul R hellyel kesobb, a repair
+// jelzo valtozatlan marad. Kezben-levo lap: `drop` eseten a szo kikerul a
+// `hand`-bol ERRE a korre (a DB in_hand=1 marad, a szo a kovetkezo korben
+// legelsokent jon vissza, UTEMEZO 3.5); kulonben a helyen marad, a lastShown
+// mar erre a lepesre all (showHand), tehat a res utan ujra eselyes lesz.
+export function defer(state: QueueState, opts: { drop: boolean }): QueueState {
+  const shown = state.current;
+  if (!shown) return state;
+
+  if (shown.kind === 'review') {
+    if (opts.drop) {
+      return { ...state, current: null };
+    }
+    const requeued: ReviewLap = {
+      wordId: shown.wordId,
+      type: shown.type,
+      isTyping: shown.isTyping,
+      isEasySentence: shown.isEasySentence,
+      typingDirection: shown.typingDirection,
+      repair: shown.repair,
+    };
+    const at = Math.min(state.config.gap, state.reviews.length);
+    const reviews = [...state.reviews.slice(0, at), requeued, ...state.reviews.slice(at)];
+    return { ...state, reviews, current: null };
+  }
+
+  // kezben-levo lap
+  if (opts.drop) {
+    const hand = state.hand.filter((h) => h.wordId !== shown.wordId);
+    return { ...state, hand, current: null };
+  }
+  return { ...state, current: null };
+}
+
+// UTEMEZO: a "mutasd mondatban" gomb segedje. A hivo elobb answer(state,
+// false)-t hiv a kepernyon levo lapra, majd ezt: az uj lap a reviews[]
+// LEGELEJERE kerul (a kovetkezo nextLap() azt mutatja), miutan minden mas,
+// ugyanerre a szora es tipusra szolo review-lapot kivett a listabol (nem
+// lehet ket varakozo lap ugyanarra a szora/mondatra).
+export function insertNext(state: QueueState, lap: ReviewLap): QueueState {
+  const reviews = state.reviews.filter((r) => !(r.wordId === lap.wordId && r.type === lap.type));
+  return { ...state, reviews: [lap, ...reviews] };
 }

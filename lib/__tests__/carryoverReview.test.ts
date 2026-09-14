@@ -65,7 +65,12 @@ describe('egy A2 session hozza az A1 esedékes szavait', () => {
 
     const a1 = getWordsForLevel('A1', 'es').slice(0, 12);
     for (const w of a1) {
-      await db.ensureCard(w.id, 'word');
+      // UTEMEZO 11. szakasz: a lap-állás a startWord/passLap útján jön, nem az
+      // updateCard reps mezőjéből; az ismétlés-lekérdezés lap >= 3-at néz.
+      await db.startWord(w.id);
+      await db.passLap(w.id);
+      await db.passLap(w.id);
+      await db.passLap(w.id);
       await db.updateCard(w.id, 'word', {
         due: past, stability: 2, difficulty: 5, elapsed_days: 1, scheduled_days: 1,
         learning_steps: 0, reps: 3, lapses: 0, state: 2, last_review: past,
@@ -98,7 +103,10 @@ describe('egy A2 session hozza az A1 esedékes szavait', () => {
     const words = getWordsForLevel('A1', 'en').slice(0, 5);
     const past = new Date(Date.now() - 86400000);
     for (const w of words) {
-      await db.ensureCard(w.id, 'word');
+      await db.startWord(w.id);
+      await db.passLap(w.id);
+      await db.passLap(w.id);
+      await db.passLap(w.id);
       await db.updateCard(w.id, 'word', {
         due: past, stability: 2, difficulty: 5, elapsed_days: 1, scheduled_days: 1,
         learning_steps: 0, reps: 3, lapses: 0, state: 2, last_review: past,
