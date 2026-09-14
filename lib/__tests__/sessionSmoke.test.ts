@@ -76,15 +76,11 @@ describe('a congested course still answers the "+N new words" tap', () => {
     const db = getDb();
     await db.setOnboarding('hu', 'en');
     const words = getWordsForLevel('A1', 'en');
-    // Half-learn a pile: started (reps > 0) but the ladder is not finished, so
-    // FB210 counts every one of them as still in hand.
+    // Half-learn a pile: started (in_hand) but the ladder is not finished, so
+    // FB210/UTEMEZO 11. szakasz counts every one of them as still in hand.
     for (const w of words.slice(0, CONGESTED)) {
-      await db.ensureCard(w.id, 'word');
-      await db.updateCard(w.id, 'word', {
-        due: new Date(Date.now() + 86400000),
-        stability: 1, difficulty: 5, elapsed_days: 0, scheduled_days: 1,
-        learning_steps: 1, reps: 2, lapses: 0, state: 1, last_review: new Date(),
-      } as any);
+      await db.startWord(w.id);
+      await db.passLap(w.id);
     }
     return newWordIntake({
       limit: await db.getDailyNewLimit(),

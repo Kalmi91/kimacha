@@ -35,8 +35,12 @@ describe('the daily budget waits for the word to be learned', () => {
   });
 
   it('a word met but not yet spelled is in hand, not learned', async () => {
+    // UTEMEZO 11. szakasz: a lap-állás most a tárolt lap/in_hand mezőkből jön,
+    // nem az FSRS reps−lapses különbségéből, ezért a haladást startWord/passLap
+    // szimulálja, nem updateCard.
     const db = getDb();
-    await db.updateCard(WORD.id, 'word', card(1));
+    await db.startWord(WORD.id);
+    await db.passLap(WORD.id);
 
     expect(await db.getWordsLearnedToday()).toBe(0);
     expect(await db.getUnlearnedWordCount()).toBe(1);
@@ -46,7 +50,9 @@ describe('the daily budget waits for the word to be learned', () => {
     // This is the case the old FSRS-state test missed: the card can graduate to
     // Review before its typing card has ever been shown.
     const db = getDb();
-    await db.updateCard(WORD.id, 'word', { ...card(2), state: 2 });
+    await db.startWord(WORD.id);
+    await db.passLap(WORD.id);
+    await db.passLap(WORD.id);
 
     expect(await db.getWordsLearnedToday()).toBe(0);
     expect(await db.getUnlearnedWordCount()).toBe(1);
@@ -54,7 +60,10 @@ describe('the daily budget waits for the word to be learned', () => {
 
   it('finishing the ladder spends one of the day\'s new words', async () => {
     const db = getDb();
-    await db.updateCard(WORD.id, 'word', card(3));
+    await db.startWord(WORD.id);
+    await db.passLap(WORD.id);
+    await db.passLap(WORD.id);
+    await db.passLap(WORD.id);
 
     expect(await db.getWordsLearnedToday()).toBe(1);
     expect(await db.getUnlearnedWordCount()).toBe(0);
@@ -62,18 +71,28 @@ describe('the daily budget waits for the word to be learned', () => {
 
   it('a later review of the same word does not spend a second one', async () => {
     const db = getDb();
-    await db.updateCard(WORD.id, 'word', card(3));
+    await db.startWord(WORD.id);
+    await db.passLap(WORD.id);
+    await db.passLap(WORD.id);
+    await db.passLap(WORD.id);
+    // A tanulás utáni FSRS-ismétlés updateCard-on megy, a lap-ot nem érinti.
     await db.updateCard(WORD.id, 'word', card(5));
 
     expect(await db.getWordsLearnedToday()).toBe(1);
   });
 
-  it('a lapse puts the word back in hand without refunding the budget', async () => {
+  it('a later FSRS lapse does not refund the budget or reopen the hand', async () => {
+    // UTEMEZO 3.4: a 3 lap után az FSRS-t a további ismétlések (és lapse-ek)
+    // már nem küldik vissza kézbe, a lap/in_hand csak a laponkénti haladást
+    // tükrözi, nem a napi ismétlő-forgást.
     const db = getDb();
-    await db.updateCard(WORD.id, 'word', card(3));
+    await db.startWord(WORD.id);
+    await db.passLap(WORD.id);
+    await db.passLap(WORD.id);
+    await db.passLap(WORD.id);
     await db.updateCard(WORD.id, 'word', card(4, 2));
 
-    expect(await db.getUnlearnedWordCount()).toBe(1);
+    expect(await db.getUnlearnedWordCount()).toBe(0);
     expect(await db.getWordsLearnedToday()).toBe(1);
   });
 });
