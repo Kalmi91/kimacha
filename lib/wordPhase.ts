@@ -1,3 +1,6 @@
+// @deprecated UTEMEZO 11. szakasz: a reps−lapses származtatás megszűnik. Már csak
+// a régi sor (sessionQueue.ts, index.tsx) használja, a 2. lépés törli. Minden más
+// hívó a lib/lap.ts tárolt lap-mezőjét olvassa.
 // FB109/FB111/FB114: a word walks a three-step ladder before it is "learned":
 //   phase 0 = flashcard learned→native, phase 1 = flashcard native→learned,
 //   phase 2 = typing native→learned.

@@ -43,12 +43,12 @@ describe('daily new-word budget is per language pair', () => {
   it('counts the words learned today per pair as well', async () => {
     const db = getDb();
     await db.setOnboarding('en', 'es');
-    await db.ensureCard(6200, 'word');
-    await db.updateCard(6200, 'word', {
-      due: new Date(Date.now() + 60_000),
-      stability: 1, difficulty: 5, elapsed_days: 0, scheduled_days: 1,
-      learning_steps: 1, reps: 3, lapses: 0, state: 2, last_review: new Date(),
-    } as any);
+    // UTEMEZO 11. szakasz: megtanultság a lap-mezőből jön, startWord/passLap
+    // szimulálja, nem az updateCard-nak adott reps.
+    await db.startWord(6200);
+    await db.passLap(6200);
+    await db.passLap(6200);
+    await db.passLap(6200);
     expect(await db.getWordsLearnedToday()).toBe(1);
 
     await db.setOnboarding('es', 'hu');
