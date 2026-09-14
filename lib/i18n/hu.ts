@@ -518,6 +518,16 @@ export default {
   progress: {
     wordsKnown: 'Ismert Szavak',
   },
+  // UTEMEZO 6. szakasz: a fejléc három számára koppintva megnyíló magyarázó ablak.
+  header: {
+    title: 'A három szám',
+    black: 'Fekete: ma még ennyi új szót indíthatsz ezen a szinten.',
+    blue: 'Kék: a kézben lévő szavak hátralévő lapjai (egy szó = 3 lap).',
+    pink: 'Rózsaszín: a hátralévő ismétlő lapok, mondat-lapokkal együtt.',
+    sum: 'A három szám összege: ennyi lap van hátra a kör végéig, ha nem rontasz.',
+    close: 'Bezár',
+    levelProgress: (known: number, total: number) => `${known} / ${total} szó`,
+  },
   spelling: {
     title: 'Helyesírás-gyakorló',
     empty: 'Nincs esedékes szó',

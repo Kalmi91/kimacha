@@ -126,13 +126,6 @@ export default function LearnScreen() {
   // half-learned pile behind a pause, and the reason for the pause, so the Done
   // screen can say what the session was made of and why.
   const [sessionMix, setSessionMix] = useState<{ newWords: number; reviews: number }>({ newWords: 0, reviews: 0 });
-  // FB174, Kálmán 2026-09-06: "azt akarom látni, hogy mennyi van osszesen amit
-  // ismételni kell ... legyen ott egy 30/3 hogy ha meg 3 szor van 30 szo". The queue
-  // only ever holds one batch, so the header also names the batch size and how many
-  // more batches of that size are waiting behind it.
-  const [reviewBatch, setReviewBatch] = useState<{ size: number; left: number; dueToday: number }>(
-    { size: 0, left: 0, dueToday: 0 },
-  );
   const [unlearnedCount, setUnlearnedCount] = useState(0);
   // FB190: hány el nem kezdett szó maradt az EGÉSZ szinten. Nulla = a szint
   // szókincse elfogyott, a Kész-képernyőnek onnantól más ajánlata van.
@@ -353,7 +346,6 @@ export default function LearnScreen() {
     setUnlearnedCount(state.hand.length);
     setLevelNewWordsLeft(state.fresh.length);
     setSessionMix({ newWords: state.stats.wordsStarted, reviews: state.stats.reviewsAnswered });
-    setReviewBatch({ size: h.pink, left: 0, dueToday: h.pink });
   };
 
   // UTEMEZO: minden allapotvaltas ezen megy at, hogy a React state, a
@@ -627,10 +619,8 @@ export default function LearnScreen() {
     return () => { show.remove(); hide.remove(); };
   }, []);
 
-  // UTEMEZO 6. szakasz: pink mar a TELJES esedekes review-lap-kupacot mutatja
-  // (a kepernyon levot is beleertve), nincs kulon "batch vs egesz nap" kettosseg.
-  const batchLeft = useMemo(() => (qs ? header(qs).pink : 0), [qs]);
-  const reviewLeft = batchLeft;
+  // UTEMEZO 6. szakasz: a fejlec harom szama, 0/0/0 amig a sor meg nem toltodott be.
+  const { black, blue, pink } = useMemo(() => (qs ? header(qs) : { black: 0, blue: 0, pink: 0 }), [qs]);
 
   const getFrontBack = (item: DueItem) => {
     const [native, learned] = direction;
@@ -1277,11 +1267,10 @@ export default function LearnScreen() {
       total={levelTotal}
       langFlag={targetLangInfo?.flag ?? ''}
       langName={targetLangInfo?.name ?? ''}
-      newWordsLeft={newWordsLeft}
-      newWordsPaused={newWordsPaused}
-      reviewLeft={reviewLeft}
-      batchLeft={batchLeft}
-      reviewBatchesLeft={reviewBatch.left}
+      black={black}
+      blue={blue}
+      pink={pink}
+      reviewLeft={pink}
       examUnlocked={masteredPct >= 80}
       onExamPress={() => setExamMode(true)}
       examLabel={s.exam.unlocked}

@@ -1,5 +1,6 @@
-import { render } from '@testing-library/react-native';
+import { render, fireEvent } from '@testing-library/react-native';
 import LearnChrome from '../LearnChrome';
+import { t } from '@/lib/i18n';
 
 jest.mock('@/lib/ThemeContext', () => ({
   useTheme: () => ({ theme: 'light' }),
@@ -13,10 +14,9 @@ const base = {
   total: 100,
   langFlag: '🇪🇸',
   langName: 'Español',
-  newWordsLeft: 5,
-  newWordsPaused: false,
-  batchLeft: 0,
-  reviewBatchesLeft: 0,
+  black: 0,
+  blue: 0,
+  pink: 0,
   examUnlocked: false,
   onExamPress: () => {},
   examLabel: 'exam',
@@ -49,39 +49,30 @@ describe('LearnChrome review slice', () => {
     expect(style.left).toBe('97%');
   });
 
-  // FB171/FB179: the pink badge counts what is left of the CURRENT batch, and on the
-  // last batch it is the number alone.
-  it('shows the batch count alone on the last batch', () => {
-    const { getByTestId } = render(<LearnChrome {...base} known={50} reviewLeft={12} batchLeft={12} />);
-    expect(getByTestId('reviewCount').props.children).toBe('🔁12');
-  });
-
-  it('hides the review badge when the batch is empty', () => {
-    const { queryByTestId } = render(<LearnChrome {...base} known={50} reviewLeft={0} batchLeft={0} />);
-    expect(queryByTestId('reviewCount')).toBeNull();
-  });
-
-  // FB179: batch count and multiplier on one line, "32×4".
-  it('multiplies the batch count while further batches are waiting', () => {
-    const { getByTestId } = render(
-      <LearnChrome {...base} known={200} reviewLeft={145} batchLeft={32} reviewBatchesLeft={4} />,
-    );
-    expect(getByTestId('reviewCount').props.children).toBe('🔁32×4');
-  });
-
-  // FB177: the pink tail follows the whole day's pile, not the batch in the badge.
-  it('sizes the slice from the day total, not the batch', () => {
-    const { getByTestId } = render(
-      <LearnChrome {...base} known={200} total={200} reviewLeft={50} batchLeft={32} reviewBatchesLeft={1} />,
-    );
-    const style = getByTestId('reviewFill').props.style.find((s: any) => s?.width);
-    expect(style.width).toBe('25%');
-  });
-
   it('never runs the slice past the blue fill', () => {
     const { getByTestId } = render(<LearnChrome {...base} known={10} reviewLeft={10} />);
     const style = getByTestId('reviewFill').props.style.find((s: any) => s?.width);
     expect(style.width).toBe('10%');
     expect(style.left).toBe('0%');
+  });
+});
+
+// UTEMEZO 6. szakasz: three plain numbers in the header, no badge, no emoji.
+describe('LearnChrome head numbers', () => {
+  it('renders the spec example round (15 / 0 / 87)', () => {
+    const { getByTestId } = render(
+      <LearnChrome {...base} known={50} reviewLeft={87} black={15} blue={0} pink={87} />,
+    );
+    expect(getByTestId('headBlack').props.children).toBe(15);
+    expect(getByTestId('headBlue').props.children).toBe(0);
+    expect(getByTestId('headPink').props.children).toBe(87);
+  });
+
+  it('opens the explanation window on tap', () => {
+    const { getByTestId, getByText } = render(
+      <LearnChrome {...base} known={50} reviewLeft={0} black={15} blue={0} pink={87} />,
+    );
+    fireEvent.press(getByTestId('headerHelp'));
+    expect(getByText(t().header.title)).toBeTruthy();
   });
 });
