@@ -504,6 +504,16 @@ export default {
   progress: {
     wordsKnown: 'Words Known',
   },
+  // UTEMEZO 6. szakasz: explanation window for the header's three numbers.
+  header: {
+    title: 'The three numbers',
+    black: 'Black: how many new words you can still start today at this level.',
+    blue: 'Blue: the remaining cards of the words you already have in hand (one word = 3 cards).',
+    pink: 'Pink: the remaining review cards, sentence cards included.',
+    sum: 'The three numbers added together: this many cards are left to the end of the round if you get everything right.',
+    close: 'Close',
+    levelProgress: (known: number, total: number) => `${known} / ${total} words`,
+  },
   spelling: {
     title: 'Spelling Practice',
     empty: 'No words due',

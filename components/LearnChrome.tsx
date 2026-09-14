@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Modal } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { t } from '@/lib/i18n';
 import ProgressMeter from './ProgressMeter';
 
 // ITER5, Kálmán 2026-09-04: the learn screen used to stack eight permanent
@@ -42,13 +43,12 @@ interface Props {
   total: number;
   langFlag: string;
   langName: string;
-  newWordsLeft: number;
-  newWordsPaused: boolean;
+  // UTEMEZO 6. szakasz: a fejléc három száma, ld. header() a lib/sessionQueue.ts-ben.
+  black: number;
+  blue: number;
+  pink: number;
   // FB177: everything still due today, this drives the pink tail of the bar.
   reviewLeft: number;
-  // FB179: what is left of the CURRENT batch, this is the number in the badge.
-  batchLeft: number;
-  reviewBatchesLeft: number;
   examUnlocked: boolean;
   onExamPress: () => void;
   examLabel: string;
@@ -64,11 +64,10 @@ export default function LearnChrome({
   total,
   langFlag,
   langName,
-  newWordsLeft,
-  newWordsPaused,
+  black,
+  blue,
+  pink,
   reviewLeft,
-  batchLeft,
-  reviewBatchesLeft,
   examUnlocked,
   onExamPress,
   examLabel,
@@ -76,8 +75,11 @@ export default function LearnChrome({
 }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const s = t();
   // The thin progress line expands into the existing gem-grid meter on tap.
   const [meterOpen, setMeterOpen] = useState(false);
+  // UTEMEZO 6. szakasz: a három számra koppintva megnyíló magyarázó ablak.
+  const [helpOpen, setHelpOpen] = useState(false);
 
   const pct = Math.round(Math.min(known / Math.max(total, 1), 1) * 100);
   // FB169, Kálmán 2026-09-05: "a keknek egy resze legyen rozsaszín ... hogy mennyi
@@ -125,29 +127,22 @@ export default function LearnChrome({
         </TopicWrap>
 
         <View style={styles.right}>
-          <Text style={[styles.knownCount, { color: colors.tint }]} maxFontSizeMultiplier={FONT_SCALE_CAP}>
-            {known}/{total}
-          </Text>
-          <Text style={[styles.newWords, { color: colors.text }]} maxFontSizeMultiplier={FONT_SCALE_CAP}>
-            {newWordsPaused ? `🌱⏸${newWordsLeft}` : `🌱${newWordsLeft}`}
-          </Text>
-          {/* FB171, Kálmán 2026-09-06: "szeretném, ha lenne egy rózsaszín szám ami azt
-              mutatja még mennyi szót kell ismételni". Same pink as the bar's review
-              tail, so the number and the slice read as one thing; hidden at zero,
-              the way the 🎓 badge is. */}
-          {/* FB179, Kálmán 2026-09-06: "legyen úgy hogy adagonként mutassa a szám és
-              hogy hány adag van még mondjuk 32x4 és egy sorba legyen ... az utolsónál
-              pedig csak a számot mutassa". One badge, one line: what is left of this
-              batch, and the batch multiplier only while further batches are waiting. */}
-          {batchLeft > 0 && (
-            <Text
-              testID="reviewCount"
-              style={[styles.newWords, { color: REVIEW_COLOR }]}
-              maxFontSizeMultiplier={FONT_SCALE_CAP}
-            >
-              {reviewBatchesLeft > 0 ? `🔁${batchLeft}×${reviewBatchesLeft}` : `🔁${batchLeft}`}
+          {/* UTEMEZO 6. szakasz: harom sima szam, jelveny es betu nelkul, a napi
+              keret maradeka / a kezben levo lapok / a hatralevo review-lapok.
+              Koppintasra egy kis ablak mondja el, mi szamit bele (lasd lejjebb). */}
+          <Pressable style={styles.headRow} onPress={() => setHelpOpen(true)} testID="headerHelp">
+            <Text testID="headBlack" style={[styles.headNum, { color: colors.text }]} maxFontSizeMultiplier={FONT_SCALE_CAP}>
+              {black}
             </Text>
-          )}
+            <Text style={[styles.headSep, { color: colors.tabIconDefault }]} maxFontSizeMultiplier={FONT_SCALE_CAP}>/</Text>
+            <Text testID="headBlue" style={[styles.headNum, { color: '#38BDF8' }]} maxFontSizeMultiplier={FONT_SCALE_CAP}>
+              {blue}
+            </Text>
+            <Text style={[styles.headSep, { color: colors.tabIconDefault }]} maxFontSizeMultiplier={FONT_SCALE_CAP}>/</Text>
+            <Text testID="headPink" style={[styles.headNum, { color: REVIEW_COLOR }]} maxFontSizeMultiplier={FONT_SCALE_CAP}>
+              {pink}
+            </Text>
+          </Pressable>
           {examUnlocked && (
             <Pressable style={styles.examBadge} onPress={onExamPress} accessibilityLabel={examLabel}>
               <Text style={styles.examIcon} maxFontSizeMultiplier={FONT_SCALE_CAP}>🎓</Text>
@@ -175,6 +170,30 @@ export default function LearnChrome({
           )}
         </Pressable>
       )}
+
+      <Modal visible={helpOpen} transparent animationType="fade">
+        <Pressable style={styles.helpOverlay} onPress={() => setHelpOpen(false)}>
+          <View style={[styles.helpCard, { backgroundColor: colors.card }]}>
+            <Text style={[styles.helpTitle, { color: colors.text }]}>{s.header.title}</Text>
+            <View style={styles.helpRow}>
+              <View style={[styles.helpDot, { backgroundColor: colors.text }]} />
+              <Text style={[styles.helpLine, { color: colors.text }]}>{s.header.black}</Text>
+            </View>
+            <View style={styles.helpRow}>
+              <View style={[styles.helpDot, { backgroundColor: '#38BDF8' }]} />
+              <Text style={[styles.helpLine, { color: colors.text }]}>{s.header.blue}</Text>
+            </View>
+            <View style={styles.helpRow}>
+              <View style={[styles.helpDot, { backgroundColor: REVIEW_COLOR }]} />
+              <Text style={[styles.helpLine, { color: colors.text }]}>{s.header.pink}</Text>
+            </View>
+            <Text style={[styles.helpSum, { color: colors.tabIconDefault }]}>{s.header.sum}</Text>
+            <Pressable style={[styles.helpClose, { backgroundColor: colors.tint }]} onPress={() => setHelpOpen(false)}>
+              <Text style={styles.helpCloseText}>{s.header.close}</Text>
+            </Pressable>
+          </View>
+        </Pressable>
+      </Modal>
     </View>
   );
 }
@@ -215,12 +234,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 6,
   },
-  knownCount: {
-    fontSize: 12,
+  headRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 3,
+  },
+  headNum: {
+    fontSize: 13,
     fontWeight: '700',
     fontVariant: ['tabular-nums'],
   },
-  newWords: {
+  headSep: {
     fontSize: 12,
     fontWeight: '600',
   },
@@ -270,5 +294,58 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '700',
     color: '#FFFFFF',
+  },
+  // UTEMEZO 6. szakasz: a három szám magyarázó ablaka, a FeedbackModal
+  // stílusát követve (dimmelt háttér + lekerekített kártya).
+  helpOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+    padding: 24,
+  },
+  helpCard: {
+    borderRadius: 20,
+    padding: 24,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 16,
+    elevation: 8,
+  },
+  helpTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    marginBottom: 14,
+  },
+  helpRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+    marginBottom: 10,
+  },
+  helpDot: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+  },
+  helpLine: {
+    fontSize: 14,
+    flexShrink: 1,
+  },
+  helpSum: {
+    fontSize: 12,
+    marginTop: 4,
+    marginBottom: 16,
+  },
+  helpClose: {
+    alignSelf: 'center',
+    paddingHorizontal: 24,
+    paddingVertical: 10,
+    borderRadius: 12,
+  },
+  helpCloseText: {
+    color: '#FFFFFF',
+    fontSize: 15,
+    fontWeight: '600',
   },
 });

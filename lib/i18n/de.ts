@@ -504,6 +504,16 @@ export default {
   progress: {
     wordsKnown: 'Bekannte Wörter',
   },
+  // UTEMEZO 6. szakasz: Erklärfenster für die drei Zahlen im Kopfbereich.
+  header: {
+    title: 'Die drei Zahlen',
+    black: 'Schwarz: so viele neue Wörter kannst du heute auf diesem Niveau noch beginnen.',
+    blue: 'Blau: die verbleibenden Karten der Wörter, die du schon begonnen hast (ein Wort = 3 Karten).',
+    pink: 'Pink: die verbleibenden Wiederholungskarten, Satzkarten eingeschlossen.',
+    sum: 'Die Summe der drei Zahlen: so viele Karten bleiben bis zum Ende der Runde, wenn du nichts falsch machst.',
+    close: 'Schließen',
+    levelProgress: (known: number, total: number) => `${known} / ${total} Wörter`,
+  },
   spelling: {
     title: 'Rechtschreibtraining',
     empty: 'Keine fälligen Wörter',
