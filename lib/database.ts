@@ -5,12 +5,17 @@ import { pickSurvivor } from './cardMerge';
 import { DEFAULT_REQUEUE_LEVEL } from './requeueGap';
 import { rankSentencesByWordWeakness, sentenceSlotCount, type WordWeakness } from './sentenceMix';
 import { WORD_MERGES } from './wordMerges';
-import { isLearned, LEARNED_PASSES } from './wordPhase';
+import { LAPS, type Lap } from './lap';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 
 export interface DB {
   ensureCard(wordId: number, type: string): Promise<void>;
   updateCard(wordId: number, type: string, card: Card): Promise<void>;
+  // UTEMEZO 11. szakasz: a lap-állás (lib/lap.ts) a szó laponkénti haladása,
+  // az FSRS-t nem érinti a 3 lap alatt.
+  startWord(wordId: number): Promise<void>;
+  passLap(wordId: number): Promise<Lap>;
+  getInHandWordCards(): Promise<{ word_id: number; lap: Lap }[]>;
   getDueCards(limit: number): Promise<any[]>;
   getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
   updateStreak(): Promise<void>;
@@ -39,7 +44,7 @@ export interface DB {
   // `pair` (matches the GAMES.md spec text) rather than using `activePair`,
   // so a game can in principle read a pool for a pair other than the one
   // currently active.
-  getAllWordCards(pair: string): Promise<{ word_id: number; reps: number; lapses: number; state: number; buried: 0 | 1 }[]>;
+  getAllWordCards(pair: string): Promise<{ word_id: number; reps: number; lapses: number; state: number; buried: 0 | 1; lap: Lap; in_hand: 0 | 1 }[]>;
   recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number): Promise<void>;
   getUserMeta(): Promise<{ userId: string; firstUseDate: string; lastSyncDate: string | null }>;
   updateLastSync(date: string): Promise<void>;
@@ -148,6 +153,10 @@ class SQLiteDB implements DB {
         -- FB210: mikor járta végig a szó a létrát (a gépelős lapot is), hogy a
         -- napi új-szó keret a MEGTANULT szavakat számolhassa, ne az elkezdetteket.
         learned_at TEXT,
+        -- UTEMEZO 11. szakasz: hány lapot (0-3) válaszolt helyesen a szó, és
+        -- hogy éppen kézben van-e (lásd lib/lap.ts fejléce).
+        lap INTEGER NOT NULL DEFAULT 0,
+        in_hand INTEGER NOT NULL DEFAULT 0,
         UNIQUE(word_id, type, pair)
       );
       CREATE TABLE IF NOT EXISTS streak (
@@ -311,8 +320,11 @@ class SQLiteDB implements DB {
         // FB226, Kálmán 2026-09-10: a COALESCE a MAI ismétlés dátumát írta be, így a
         // frissítés utáni első indításkor a mai keret azonnal elfogyott ("azt írja hogy 0").
         // A régi lapok MINDIG a múltba kerülnek, ahogy a fenti komment ígéri.
+        // A 3 itt szám szerint történelmi migráció (UTEMEZO 11. szakasz): a
+        // LEARNED_PASSES konstans megszűnt, ez a hely az utolsó, ahol a régi
+        // reps−lapses származtatás előfordul.
         `UPDATE cards SET learned_at = ?
-           WHERE type = 'word' AND reps - lapses >= ${LEARNED_PASSES} AND learned_at IS NULL`,
+           WHERE type = 'word' AND reps - lapses >= 3 AND learned_at IS NULL`,
         [new Date(0).toISOString()]
       );
     }
@@ -343,6 +355,21 @@ class SQLiteDB implements DB {
           SELECT word_id, type, '${this.activePair}', due, stability, difficulty, elapsed_days, scheduled_days, learning_steps, reps, lapses, state, last_review, buried FROM cards;
         DROP TABLE cards;
         ALTER TABLE cards_new RENAME TO cards;
+      `);
+    }
+    // Migration: UTEMEZO 11. szakasz. Szándékosan a pair-rebuild UTÁN áll: a
+    // rebuild a régi (lap nélküli) táblát másolja, ez a blokk adja hozzá az
+    // oszlopokat és tölti vissza őket. A lap-állás eddig a reps−lapses
+    // különbségből volt származtatva (lib/wordPhase.ts), ez itt az utolsó hely,
+    // ahol ez a származtatás előfordul: egyszeri visszatöltés a spec előtt
+    // létrejött sorokhoz, utána a `lap`/`in_hand` mező a forrás igazság.
+    const lapCol = await this.db.getFirstAsync<any>("SELECT * FROM pragma_table_info('cards') WHERE name = 'lap'");
+    if (!lapCol) {
+      await this.db.execAsync(`
+        ALTER TABLE cards ADD COLUMN lap INTEGER NOT NULL DEFAULT 0;
+        ALTER TABLE cards ADD COLUMN in_hand INTEGER NOT NULL DEFAULT 0;
+        UPDATE cards SET lap = MIN(3, MAX(0, reps - lapses)) WHERE type = 'word';
+        UPDATE cards SET in_hand = 1 WHERE type = 'word' AND buried = 0 AND reps > 0 AND lap < 3;
       `);
     }
     // Migration: per-pair user_level (old singleton id=1 → keyed by pair).
@@ -447,6 +474,49 @@ class SQLiteDB implements DB {
     );
   }
 
+  // UTEMEZO 11. szakasz: a szó 1. lapja most jött fel, kézbe kerül. Idempotens
+  // (egy már kézben lévő vagy megtanult szón nem csinál semmit).
+  async startWord(wordId: number): Promise<void> {
+    await this.ensureCard(wordId, 'word');
+    const db = await this.open();
+    await db.runAsync(
+      "UPDATE cards SET in_hand = 1 WHERE word_id = ? AND type = 'word' AND pair = ? AND lap < 3",
+      [wordId, this.activePair]
+    );
+  }
+
+  // UTEMEZO 3.3/3.4: helyes válasz lépteti a lapot; a 3. lap helyes válasza
+  // után a szó megtanult, kikerül a kézből, és csak EKKOR kap FSRS-értékelést
+  // (learned_at), a lib/wordPhase.ts szerinti "csak egyszer" szabállyal.
+  async passLap(wordId: number): Promise<Lap> {
+    const db = await this.open();
+    await db.runAsync(
+      "UPDATE cards SET lap = MIN(3, lap + 1) WHERE word_id = ? AND type = 'word' AND pair = ?",
+      [wordId, this.activePair]
+    );
+    const row = await db.getFirstAsync<any>(
+      "SELECT lap FROM cards WHERE word_id = ? AND type = 'word' AND pair = ?",
+      [wordId, this.activePair]
+    );
+    const lap = (row?.lap ?? 0) as Lap;
+    if (lap >= LAPS) {
+      await db.runAsync(
+        "UPDATE cards SET in_hand = 0, learned_at = COALESCE(learned_at, ?) WHERE word_id = ? AND type = 'word' AND pair = ?",
+        [new Date().toISOString(), wordId, this.activePair]
+      );
+    }
+    return lap;
+  }
+
+  async getInHandWordCards(): Promise<{ word_id: number; lap: Lap }[]> {
+    const db = await this.open();
+    const rows = await db.getAllAsync<any>(
+      "SELECT word_id, lap FROM cards WHERE type = 'word' AND pair = ? AND in_hand = 1 AND buried = 0 ORDER BY id",
+      [this.activePair]
+    );
+    return rows.map((r: any) => ({ word_id: r.word_id, lap: r.lap as Lap }));
+  }
+
   async updateCard(wordId: number, type: string, card: Card) {
     const db = await this.open();
     await db.runAsync(
@@ -455,15 +525,6 @@ class SQLiteDB implements DB {
       [card.due.toISOString(), card.stability, card.difficulty, card.elapsed_days, card.scheduled_days,
        card.learning_steps, card.reps, card.lapses, card.state, card.last_review ? card.last_review.toISOString() : null, wordId, type, this.activePair]
     );
-    // FB210: az ELSŐ alkalom, amikor a szó végigért a létrán, dátumot kap. Csak
-    // egyszer: egy későbbi visszaesés nem írja felül, különben a napi keret
-    // ugyanazzal a szóval kétszer is fogyna.
-    if (type === 'word' && isLearned(card)) {
-      await db.runAsync(
-        'UPDATE cards SET learned_at = ? WHERE word_id = ? AND type = ? AND pair = ? AND learned_at IS NULL',
-        [new Date().toISOString(), wordId, type, this.activePair]
-      );
-    }
   }
 
   async getDueCards(limit: number) {
@@ -681,10 +742,13 @@ class SQLiteDB implements DB {
   async getAllWordCards(pair: string) {
     const db = await this.open();
     const rows = await db.getAllAsync<any>(
-      "SELECT word_id, reps, lapses, state, buried FROM cards WHERE type = 'word' AND pair = ?",
+      "SELECT word_id, reps, lapses, state, buried, lap, in_hand FROM cards WHERE type = 'word' AND pair = ?",
       [pair]
     );
-    return rows.map((r: any) => ({ word_id: r.word_id, reps: r.reps, lapses: r.lapses, state: r.state, buried: (r.buried ? 1 : 0) as 0 | 1 }));
+    return rows.map((r: any) => ({
+      word_id: r.word_id, reps: r.reps, lapses: r.lapses, state: r.state,
+      buried: (r.buried ? 1 : 0) as 0 | 1, lap: r.lap as Lap, in_hand: (r.in_hand ? 1 : 0) as 0 | 1,
+    }));
   }
 
   async recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number) {
@@ -781,14 +845,11 @@ class SQLiteDB implements DB {
     if (wordIds.length === 0) return 0;
     const placeholders = wordIds.map(() => '?').join(',');
     const row = await db.getFirstAsync<any>(
-      // FB111: "Egy szó akkor számít megtanultnak ha el tudjuk írni helyesen."
-      // FSRS state >= 2 alone was reached by the two flashcard steps, i.e. before
-      // the word had ever been typed. Mastery now also needs the typing step
-      // passed: three net successes = flashcard, reverse flashcard, spelling
-      // (lib/wordPhase.ts). "I know this" (buried) still counts outright.
+      // UTEMEZO 1. szakasz: megtanult = a 3. lap egyszer helyes volt. "I know
+      // this" (buried) still counts outright.
       `SELECT COUNT(*) as cnt FROM cards
          WHERE word_id IN (${placeholders}) AND type = 'word' AND pair = ?
-           AND ((state >= 2 AND reps - lapses >= ${LEARNED_PASSES}) OR buried = 1)`,
+           AND (lap >= 3 OR buried = 1)`,
       [...wordIds, this.activePair]
     );
     return row?.cnt ?? 0;
@@ -802,10 +863,10 @@ class SQLiteDB implements DB {
     if (wordIds.length === 0) return 0;
     const placeholders = wordIds.map(() => '?').join(',');
     const row = await db.getFirstAsync<any>(
-      // FB210: megtanult = a létra végigjárva (LEARNED_PASSES sikeres ismétlés,
-      // a phase-2 gépelős lap is), nem pedig „egyszer már láttam" (reps > 0).
+      // UTEMEZO 1. szakasz: megtanult = a 3. lap egyszer helyes volt, nem pedig
+      // „egyszer már láttam" (reps > 0).
       `SELECT COUNT(*) as cnt FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND pair = ?
-         AND (reps - lapses >= ${LEARNED_PASSES} OR buried = 1)`,
+         AND (lap >= 3 OR buried = 1)`,
       [...wordIds, this.activePair]
     );
     return row?.cnt ?? 0;
@@ -825,7 +886,8 @@ class SQLiteDB implements DB {
 
   async buryCard(wordId: number, type: string) {
     const db = await this.open();
-    await db.runAsync('UPDATE cards SET buried = 1 WHERE word_id = ? AND type = ? AND pair = ?', [wordId, type, this.activePair]);
+    // UTEMEZO 11. szakasz: egy elásott szó kikerül a kézből is.
+    await db.runAsync('UPDATE cards SET buried = 1, in_hand = 0 WHERE word_id = ? AND type = ? AND pair = ?', [wordId, type, this.activePair]);
   }
 
   // FB38: push the card's due date out by `days`, leaving reps/stability untouched
@@ -1049,14 +1111,13 @@ class SQLiteDB implements DB {
 
   // FB103: words already started but not yet learned. They are the "congestion"
   // the learner sees, so the new-word budget waits for them (see
-  // newWordAllowance). FB210: the test is the LADDER, not the FSRS state — a word
-  // can graduate to Review after two flashcard passes while its typing card is
-  // still ahead, and that word is very much still in hand.
+  // newWordAllowance). UTEMEZO 11. szakasz: ez most a "kézben lévő" szavak
+  // száma, a tárolt `in_hand` jelzőből, nem az FSRS-ből származtatva.
   async getUnlearnedWordCount(): Promise<number> {
     const db = await this.open();
     const row = await db.getFirstAsync<any>(
       `SELECT COUNT(*) as cnt FROM cards WHERE type = 'word' AND pair = ? AND buried = 0
-         AND reps > 0 AND reps - lapses < ${LEARNED_PASSES}`,
+         AND in_hand = 1`,
       [this.activePair]
     );
     return row?.cnt ?? 0;

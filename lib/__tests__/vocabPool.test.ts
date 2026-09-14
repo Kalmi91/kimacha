@@ -85,9 +85,12 @@ describe('getLearnedPool (GAMES.md 3.1, the core guarantee)', () => {
   it('keeps an "I know this" (buried) word in the pool, flagged and weighed down', async () => {
     await db.setOnboarding('hu', 'es');
     const [known, missed] = getWordsForLevel('A1', 'es');
+    // UTEMEZO 11. szakasz: a fázis a tárolt lap-mezőből jön, nem az FSRS
+    // reps−lapses különbségéből, a laponkénti haladást startWord/passLap adja.
     for (const w of [known, missed]) {
-      await db.ensureCard(w.id, 'word');
-      await db.updateCard(w.id, 'word', card(3, 0));
+      await db.startWord(w.id);
+      await db.passLap(w.id);
+      await db.passLap(w.id);
     }
     // one word the learner keeps missing, one they said they already know
     await db.updateCard(missed.id, 'word', card(6, 3));

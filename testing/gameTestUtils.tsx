@@ -56,6 +56,11 @@ export async function seedPractisedWords(opts: {
       card = engine.repeat(card, new Date())[Rating.Good].card;
     }
     await db.updateCard(w.id, 'word', card);
+    // UTEMEZO 11. szakasz: a fázis most a tárolt lap-mezőből jön, nem az FSRS
+    // reps−lapses különbségéből, ezért itt is lapot kell léptetni, nem elég a
+    // fenti FSRS-kártyát írni.
+    await db.startWord(w.id);
+    for (let i = 0; i < passes; i++) await db.passLap(w.id);
     ids.push(w.id);
   }
   return ids;

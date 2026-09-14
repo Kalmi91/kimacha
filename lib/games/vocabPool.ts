@@ -8,7 +8,7 @@
 
 import { getDb } from '../database';
 import { findWordById, getWordsForLevel, getWordTopic, type Level, type WordEntry } from '@/data/words';
-import { wordPhase, type WordPhase } from '../wordPhase';
+import { type Lap } from '../lap';
 import { shuffleArray, hashString, mulberry32 } from '../shuffle';
 
 export type PoolStrictness = 'seen' | 'practiced' | 'mastered';
@@ -21,7 +21,7 @@ export interface PoolEntry {
   topicId?: string;
   sentenceLearned?: string;
   sentenceNative?: string;
-  phase: WordPhase; // lib/wordPhase.ts
+  phase: Lap; // lib/lap.ts, laps correctly answered
   isNew: boolean; // TRUE = came from the top-up, mandatory gloss in the UI
   // FB162 follow-up (Kálmán, 2026-08-28): "kerüljön be de ne azokat priorizálja
   // ... pont az lenne a lényege a játékoknak hogy amivel aktuálisan szenvedsz
@@ -41,7 +41,7 @@ export interface GetLearnedPoolOptions {
   topicId?: string | null; // narrow to one topic, if the game scopes to one
 }
 
-const STRICTNESS_MIN_PHASE: Record<PoolStrictness, WordPhase> = {
+const STRICTNESS_MIN_PHASE: Record<PoolStrictness, Lap> = {
   seen: 0,
   practiced: 1,
   mastered: 2,
@@ -60,7 +60,7 @@ function sentenceOf(word: WordEntry, lang: string): string | undefined {
 // How badly a word wants to come up in a game. A miss (lapse) counts double,
 // an unfinished ladder counts once, a word buried with "I know this" stays in the
 // pool but at the back, and a top-up word the learner has not met yet is filler.
-export function struggleWeight(card: { lapses?: number; buried?: 0 | 1 }, phase: WordPhase, isNew: boolean): number {
+export function struggleWeight(card: { lapses?: number; buried?: 0 | 1 }, phase: Lap, isNew: boolean): number {
   if (isNew) return 0.5;
   if (card.buried) return 0.25;
   return 1 + (card.lapses ?? 0) * 2 + (2 - phase);
@@ -94,7 +94,7 @@ function toPoolEntry(
   word: WordEntry,
   learnedLang: string,
   nativeLang: string,
-  phase: WordPhase,
+  phase: Lap,
   isNew: boolean,
   card: { lapses?: number; buried?: 0 | 1 } = {}
 ): PoolEntry {
@@ -124,7 +124,7 @@ export async function getLearnedPool(opts: GetLearnedPoolOptions): Promise<PoolE
   const seen = new Set<number>();
   const entries: PoolEntry[] = [];
   for (const card of cards) {
-    const phase = wordPhase(card);
+    const phase = card.lap;
     if (phase < minPhase) continue;
     const word = findWordById(card.word_id, learnedLang);
     if (!word) continue; // dangling id (merged/removed word), skip defensively
