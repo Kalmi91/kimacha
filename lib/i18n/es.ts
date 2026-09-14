@@ -504,6 +504,16 @@ export default {
   progress: {
     wordsKnown: 'Palabras Conocidas',
   },
+  // UTEMEZO 6. szakasz: ventana explicativa para los tres números del encabezado.
+  header: {
+    title: 'Los tres números',
+    black: 'Negro: cuántas palabras nuevas puedes empezar hoy todavía en este nivel.',
+    blue: 'Azul: las tarjetas que faltan de las palabras que ya empezaste (una palabra = 3 tarjetas).',
+    pink: 'Rosa: las tarjetas de repaso que faltan, incluidas las de frases.',
+    sum: 'La suma de los tres números: tantas tarjetas faltan hasta el final de la ronda si no fallas ninguna.',
+    close: 'Cerrar',
+    levelProgress: (known: number, total: number) => `${known} / ${total} palabras`,
+  },
   spelling: {
     title: 'Práctica de Ortografía',
     empty: 'No hay palabras pendientes',
