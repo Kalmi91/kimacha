@@ -1,3 +1,6 @@
+// UTEMEZO: a sor motorja. Tiszta fuggvenyek, determinisztikus; a DB-t es az
+// FSRS-t a hivo irja az `effects` alapjan.
+//
 // The learning session queue: due card rows in, the ordered card list the
 // learner sees out. Extracted from app/(tabs)/index.tsx so it can be driven by
 // tests without a device, because both halves of FB129 (a pair-blind daily
@@ -7,6 +10,7 @@
 import { cardFromRow } from '@/lib/database';
 import { capSentencesToCadence } from '@/lib/sentenceMix';
 import { wordPhase, phaseShape } from '@/lib/wordPhase';
+import { lapShape } from '@/lib/lap';
 import { findWordById, type WordEntry } from '@/data/words';
 import type { Card } from 'ts-fsrs';
 
@@ -229,4 +233,341 @@ export function reviewWordsLeft(queue: DueItem[], index: number, newIds: Set<num
     if (!newIds.has(queue[i].wordId)) ids.add(queue[i].wordId);
   }
   return ids.size;
+}
+
+// ---------------------------------------------------------------------------
+// UTEMEZO 2-9. szakasz: a kor-motor. Egy "lap" a tanulo elott: vagy egy kezben
+// levo szo kovetkezo lapja (1/2/3), vagy egy esedekes review-lap (mindig a 3.
+// lap, ide ertve a mondat-lapokat is). A motor sosem ir DB-t vagy FSRS-t
+// kozvetlenul: a hivo az `answer()` altal visszaadott `effects` listat irja
+// vissza a DB-be es az FSRS-be.
+
+export type LapNo = 1 | 2 | 3;
+
+// lap = a szo KOVETKEZO felkinalando lapja (1..3); lastShown = a `step`
+// ertek, amikor ennek a szonak egy lapja utoljara feljott (-Infinity, ha meg
+// egyszer sem ebben a korben); repair = ez a lap egy rontas utan jott vissza
+// (cimkeje "javitas").
+export interface HandWord {
+  wordId: number;
+  lap: LapNo;
+  lastShown: number;
+  repair: boolean;
+}
+
+export interface ReviewLap {
+  wordId: number;
+  type: 'word' | 'sentence';
+  isTyping: boolean;
+  isEasySentence?: boolean;
+  typingDirection?: TypingDir;
+  repair: boolean;
+}
+
+export interface QueueConfig {
+  hand: number; // P: hany szo lehet egyszerre kezben (UTEMEZO 3.1)
+  gap: number; // R: minimum res ket lap kozt ugyanabbol a szobol (UTEMEZO 4.2)
+  rhythm: number; // hany review-lap jon egy kezben-levo lap elott (UTEMEZO 4.1)
+}
+
+export interface QueueStats {
+  reviewsAnswered: number;
+  wordsStarted: number;
+  wordsLearned: number;
+  wrongLaps: number;
+}
+
+export interface Shown {
+  kind: 'hand' | 'review';
+  wordId: number;
+  type: 'word' | 'sentence';
+  lap?: LapNo;
+  label: string;
+  isTyping: boolean;
+  typingDirection?: TypingDir;
+  isEasySentence?: boolean;
+  repair: boolean;
+}
+
+export interface QueueState {
+  config: QueueConfig;
+  step: number; // ez idaig feljott lapok szama ebben a korben (a res-ora)
+  black: number; // UTEMEZO 6: ma meg indithato uj szavak szama ezen a szinten
+  hand: HandWord[]; // kezben levo szavak; a sorrend a bekerules sorrendje, a
+  // kivalasztas lastShown szerint rendez
+  reviews: ReviewLap[]; // hatralevo review-lapok sorban (a lista sorrendje
+  // maga hordozza a res-t, lasd answer())
+  fresh: number[]; // a szint erintetlen szo-id-jei, abban a sorrendben, ahogy
+  // a hivo inditani akarja oket (a temasorrend/veletlen az EGYETLEN veletlen,
+  // a hivo dontese)
+  sinceHand: number; // hany review-lap jott a legutobbi kezben-levo lap ota
+  current: Shown | null; // a kepernyon levo lap
+  stats: QueueStats;
+}
+
+export type Effect =
+  | { type: 'startWord'; wordId: number } // DB: startWord (in_hand=1)
+  | { type: 'passLap'; wordId: number } // DB: passLap
+  | { type: 'learned'; wordId: number } // a 3. lap helyes volt: a DB passLap
+      // mar lefutott, a hivo adja a szonak az ELSO FSRS-ertekelest (Good)
+  | { type: 'grade'; wordId: number; cardType: 'word' | 'sentence'; correct: boolean } // review-lap: FSRS-ertekeles
+  | { type: 'attempt'; wordId: number; cardType: 'word' | 'sentence'; correct: boolean }; // stats-sor minden megvalaszolt laphoz
+
+export const DEFAULT_QUEUE_CONFIG: QueueConfig = { hand: 5, gap: 5, rhythm: 4 };
+
+export function createQueue(init: {
+  config?: Partial<QueueConfig>;
+  black: number;
+  hand: { wordId: number; lap: LapNo }[];
+  reviews: ReviewLap[];
+  fresh: number[];
+}): QueueState {
+  return {
+    config: { ...DEFAULT_QUEUE_CONFIG, ...init.config },
+    step: 0,
+    black: init.black,
+    // -Infinity: meg egyik sem jott fel ebben az uj korben, mind azonnal
+    // eselyes (UTEMEZO 3.5/3.6: a kezben levo szavak athozodnak, de a res-ora
+    // az uj korrel ujraindul).
+    hand: init.hand.map((h) => ({ wordId: h.wordId, lap: h.lap, lastShown: -Infinity, repair: false })),
+    reviews: [...init.reviews],
+    fresh: [...init.fresh],
+    sinceHand: 0,
+    current: null,
+    stats: { reviewsAnswered: 0, wordsStarted: 0, wordsLearned: 0, wrongLaps: 0 },
+  };
+}
+
+// UTEMEZO 6. szakasz: a fejlec harom szama. `blue` es `pink` a hatralevo
+// LAPOKAT szamolja, a kepernyon levot is bele ertve; a kezben levo szo `lap`
+// mezeje mar a kepernyon levo lap, ezert a `blue` osszegnek nincs kulon
+// korrekcioja kellene. A `pink` a reviews[] listahoz +1-et ad, ha eppen egy
+// review-lap van a kepernyon (a reviews[] csak a meg fel NEM jott lapokat
+// tartalmazza).
+export function header(state: QueueState): { black: number; blue: number; pink: number } {
+  const blue = state.hand.reduce((sum, h) => sum + (4 - h.lap), 0);
+  const pink = state.reviews.length + (state.current?.kind === 'review' ? 1 : 0);
+  return { black: state.black, blue, pink };
+}
+
+// UTEMEZO 7. szakasz: minden lapon egy cimke.
+export function labelOf(shown: Shown): string {
+  if (shown.kind === 'hand') {
+    return `${shown.repair ? 'javítás' : 'új'} · ${shown.lap}/3`;
+  }
+  if (shown.type === 'sentence') return 'mondat';
+  return shown.repair ? 'javítás' : 'ismétlés';
+}
+
+function shownFromReview(lap: ReviewLap): Shown {
+  const shown: Shown = {
+    kind: 'review',
+    wordId: lap.wordId,
+    type: lap.type,
+    label: '',
+    isTyping: lap.isTyping,
+    typingDirection: lap.typingDirection,
+    isEasySentence: lap.isEasySentence,
+    repair: lap.repair,
+  };
+  shown.label = labelOf(shown);
+  return shown;
+}
+
+function shownFromHand(word: HandWord): Shown {
+  const shape = lapShape(word.lap);
+  const shown: Shown = {
+    kind: 'hand',
+    wordId: word.wordId,
+    type: 'word',
+    lap: word.lap,
+    label: '',
+    isTyping: shape.isTyping,
+    typingDirection: shape.typingDirection,
+    repair: word.repair,
+  };
+  shown.label = labelOf(shown);
+  return shown;
+}
+
+// Review-slot: a legelso review-lap jon, a lista sorrendje hordozza a rest
+// (lasd answer()). `sinceHand` no, akkor is, ha ezt a hivo a kezben-slot
+// helyett hivja (UTEMEZO 4.4c: nincs eselyes kezben-levo lap es nincs uj szo,
+// a review tartja a ritmust).
+function showReview(state: QueueState, newStep: number): QueueState {
+  const [lap, ...rest] = state.reviews;
+  return {
+    ...state,
+    step: newStep,
+    reviews: rest,
+    sinceHand: state.sinceHand + 1,
+    current: shownFromReview(lap),
+  };
+}
+
+// Kezben-slot, egy mar kezben levo szo lapja: `sinceHand` nullazodik, a szo
+// `lastShown` erteke erre a lepesre all.
+function showHand(state: QueueState, newStep: number, idx: number): QueueState {
+  const word = state.hand[idx];
+  const hand = state.hand.map((h, i) => (i === idx ? { ...h, lastShown: newStep } : h));
+  return {
+    ...state,
+    step: newStep,
+    hand,
+    sinceHand: 0,
+    current: shownFromHand(word),
+  };
+}
+
+// Kezben-slot, uj szo inditasa (UTEMEZO 3.2): fekete −1, a szo bekerul kezbe
+// az 1. lapjaval.
+function startNew(state: QueueState, newStep: number): QueueState {
+  const wordId = state.fresh[0];
+  const newWord: HandWord = { wordId, lap: 1, lastShown: newStep, repair: false };
+  return {
+    ...state,
+    step: newStep,
+    black: state.black - 1,
+    hand: [...state.hand, newWord],
+    fresh: state.fresh.slice(1),
+    sinceHand: 0,
+    current: shownFromHand(newWord),
+    stats: { ...state.stats, wordsStarted: state.stats.wordsStarted + 1 },
+  };
+}
+
+// UTEMEZO 4. szakasz: a sor. Determinisztikus, tiszta fuggveny: sosem
+// mutalja a bemenetet, mindig uj allapotot ad vissza. `current === null` a
+// visszateresi ertekben azt jelenti, hogy a kor veget ert (UTEMEZO 4.5).
+export function nextLap(state: QueueState): QueueState {
+  const { config } = state;
+  const newStep = state.step + 1;
+  const wantHand = state.reviews.length === 0 || state.sinceHand >= config.rhythm;
+
+  if (!wantHand) {
+    return showReview(state, newStep);
+  }
+
+  // (a) van-e olyan kezben levo szo, aminek megvan a rese (never shown =
+  // eselyes); a legregebb ota varo (legkisebb lastShown) jon, dontetlennel a
+  // hand[] tomb sorrendje dont.
+  let bestIdx = -1;
+  for (let i = 0; i < state.hand.length; i++) {
+    const w = state.hand[i];
+    if (newStep - w.lastShown > config.gap) {
+      if (bestIdx === -1 || w.lastShown < state.hand[bestIdx].lastShown) bestIdx = i;
+    }
+  }
+  if (bestIdx !== -1) return showHand(state, newStep, bestIdx);
+
+  // (b) nincs eselyes kezben levo lap: uj szo, ha van hely es fekete > 0.
+  if (state.hand.length < config.hand && state.black > 0 && state.fresh.length > 0) {
+    return startNew(state, newStep);
+  }
+
+  // (c) uj szo sem johet: egy review-lap tartja a ritmust, a kezben-slot
+  // legkozelebb ujra probalkozik.
+  if (state.reviews.length > 0) {
+    return showReview(state, newStep);
+  }
+
+  // (d) sem review, sem eselyes kezben-lap, sem uj szo: a legregebb ota varo
+  // kezben levo lap jon, roviddebb ressel.
+  if (state.hand.length > 0) {
+    let idx = 0;
+    for (let i = 1; i < state.hand.length; i++) {
+      if (state.hand[i].lastShown < state.hand[idx].lastShown) idx = i;
+    }
+    return showHand(state, newStep, idx);
+  }
+
+  // (e) minden 0: a kor veget ert.
+  return { ...state, step: newStep, current: null };
+}
+
+// UTEMEZO 3.3/3.4 es 4.2: a valasz alkalmazasa a kepernyon levo lapra.
+// Tiszta fuggveny: uj allapotot ad vissza, `current`-et nullazza, es az
+// `effects` listat, amit a hivo ir vissza a DB-be/FSRS-be.
+export function answer(state: QueueState, correct: boolean): { state: QueueState; effects: Effect[] } {
+  const shown = state.current;
+  if (!shown) return { state, effects: [] };
+
+  if (shown.kind === 'hand') {
+    const idx = state.hand.findIndex((h) => h.wordId === shown.wordId);
+    const word = state.hand[idx];
+    const effects: Effect[] = [{ type: 'attempt', wordId: shown.wordId, cardType: 'word', correct }];
+
+    if (correct) {
+      effects.push({ type: 'passLap', wordId: shown.wordId });
+      if (word.lap < 3) {
+        const hand = state.hand.map((h, i) =>
+          i === idx ? { ...h, lap: (h.lap + 1) as LapNo, repair: false } : h,
+        );
+        return { state: { ...state, hand, current: null }, effects };
+      }
+      // 3. lap helyes: a szo MEGTANULT, kikerul kezbol, elso FSRS-ertekeles.
+      effects.push({ type: 'learned', wordId: shown.wordId });
+      const hand = state.hand.filter((_, i) => i !== idx);
+      return {
+        state: {
+          ...state,
+          hand,
+          current: null,
+          stats: { ...state.stats, wordsLearned: state.stats.wordsLearned + 1 },
+        },
+        effects,
+      };
+    }
+
+    // rontott lap: ugyanaz a lap marad, csak a cimke valt "javitas"-ra.
+    const hand = state.hand.map((h, i) => (i === idx ? { ...h, repair: true } : h));
+    return {
+      state: {
+        ...state,
+        hand,
+        current: null,
+        stats: { ...state.stats, wrongLaps: state.stats.wrongLaps + 1 },
+      },
+      effects,
+    };
+  }
+
+  // review-lap
+  const effects: Effect[] = [
+    { type: 'attempt', wordId: shown.wordId, cardType: shown.type, correct },
+    { type: 'grade', wordId: shown.wordId, cardType: shown.type, correct },
+  ];
+
+  if (correct) {
+    return {
+      state: {
+        ...state,
+        current: null,
+        stats: { ...state.stats, reviewsAnswered: state.stats.reviewsAnswered + 1 },
+      },
+      effects,
+    };
+  }
+
+  // rontott review-lap: visszakerul a sorba R hellyel kesobb (vagy a vegere,
+  // ha rovidebb a lista), UTEMEZO 4.2.
+  const requeued: ReviewLap = {
+    wordId: shown.wordId,
+    type: shown.type,
+    isTyping: shown.isTyping,
+    isEasySentence: shown.isEasySentence,
+    typingDirection: shown.typingDirection,
+    repair: true,
+  };
+  const at = Math.min(state.config.gap, state.reviews.length);
+  const reviews = [...state.reviews.slice(0, at), requeued, ...state.reviews.slice(at)];
+  return {
+    state: {
+      ...state,
+      reviews,
+      current: null,
+      stats: { ...state.stats, wrongLaps: state.stats.wrongLaps + 1 },
+    },
+    effects,
+  };
 }
