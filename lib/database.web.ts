@@ -68,6 +68,8 @@ export interface DB {
   setHandCap(n: number): Promise<void>;
   getGapLaps(): Promise<number>;
   setGapLaps(n: number): Promise<void>;
+  getRepairGap(): Promise<number>;
+  setRepairGap(n: number): Promise<void>;
   getWeeklyGoalMinutes(): Promise<number>;
   setWeeklyGoalMinutes(minutes: number): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
@@ -592,6 +594,17 @@ class MemoryDB implements DB {
 
   async setGapLaps(n: number): Promise<void> {
     this.gapLapsMap.set(this.activePair, Math.min(30, Math.max(1, n)));
+  }
+
+  // UTEMEZO 4.7: R_javítás, a rontott lap rése, per pár (a SQLite oldal tükre).
+  private repairGapMap: Map<string, number> = new Map();
+
+  async getRepairGap(): Promise<number> {
+    return Math.min(10, Math.max(1, this.repairGapMap.get(this.activePair) ?? 2));
+  }
+
+  async setRepairGap(n: number): Promise<void> {
+    this.repairGapMap.set(this.activePair, Math.min(10, Math.max(1, n)));
   }
 
   // UTEMEZO 8 teszt-segéd: a régi FB198-tárcsa értékének beültetése a

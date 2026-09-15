@@ -83,12 +83,15 @@ export interface DB {
   // FB188: a névelő-gombsor a gépelős spanyol főnév-kártyán, ki-be kapcsolható.
   getArticlePicker(): Promise<boolean>;
   setArticlePicker(v: boolean): Promise<void>;
-  // UTEMEZO 8: a „Nehézség" ablak három beállítása. P (3.1) és R (4.2) a
-  // requeue_level tárcsát (FB198) váltja fel, lásd getGapLaps.
+  // UTEMEZO 8: a „Nehézség" ablak beállításai. P (3.1) és R (4.2) a
+  // requeue_level tárcsát (FB198) váltja fel, lásd getGapLaps; R_javítás (4.7)
+  // a rontott lap külön rése.
   getHandCap(): Promise<number>;
   setHandCap(n: number): Promise<void>;
   getGapLaps(): Promise<number>;
   setGapLaps(n: number): Promise<void>;
+  getRepairGap(): Promise<number>;
+  setRepairGap(n: number): Promise<void>;
   getWeeklyGoalMinutes(): Promise<number>;
   setWeeklyGoalMinutes(minutes: number): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
@@ -221,7 +224,8 @@ class SQLiteDB implements DB {
         new_bonus INTEGER,
         new_bonus_date TEXT,
         hand_cap INTEGER,
-        gap_laps INTEGER
+        gap_laps INTEGER,
+        repair_gap INTEGER
       );
       CREATE TABLE IF NOT EXISTS spelling_list (
         pair TEXT NOT NULL,
@@ -309,6 +313,10 @@ class SQLiteDB implements DB {
     } catch {}
     try {
       await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN gap_laps INTEGER');
+    } catch {}
+    // UTEMEZO 4.7: repair_gap (R_javítás), a rontott lap külön, rövid rése.
+    try {
+      await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN repair_gap INTEGER');
     } catch {}
     const meta = await this.db.getFirstAsync<any>('SELECT id FROM user_meta WHERE id = 1');
     if (!meta) {
@@ -1123,6 +1131,24 @@ class SQLiteDB implements DB {
     await db.runAsync(
       'INSERT INTO learn_settings (pair, gap_laps) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET gap_laps = excluded.gap_laps',
       [this.activePair, Math.min(30, Math.max(1, n))]
+    );
+  }
+
+  // UTEMEZO 4.7: R_javítás, hány lap teljen el, mielőtt egy rontott kézben lévő
+  // lap visszajön. Tartomány 1-10, alap 2. A sor ezt R-re vágja: a javítás-rés
+  // sosem nagyobb a sima résnél.
+  async getRepairGap(): Promise<number> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT repair_gap FROM learn_settings WHERE pair = ?', [this.activePair]);
+    const v = typeof row?.repair_gap === 'number' ? row.repair_gap : 2;
+    return Math.min(10, Math.max(1, v));
+  }
+
+  async setRepairGap(n: number): Promise<void> {
+    const db = await this.open();
+    await db.runAsync(
+      'INSERT INTO learn_settings (pair, repair_gap) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET repair_gap = excluded.repair_gap',
+      [this.activePair, Math.min(10, Math.max(1, n))]
     );
   }
 

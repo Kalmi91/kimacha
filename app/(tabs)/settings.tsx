@@ -66,6 +66,9 @@ export default function SettingsScreen() {
   const [difficultyVisible, setDifficultyVisible] = useState(false);
   const [handCap, setHandCap] = useState(5);
   const [gapLaps, setGapLaps] = useState(5);
+  // UTEMEZO 4.7: R_javítás, a rontott lap külön rése (Kálmán kérte állíthatóra,
+  // 2026-09-15). A sor R-re vágja, tehát R alá állítva R_javítás = R.
+  const [repairGap, setRepairGap] = useState(2);
   // FB147, Kálmán 2026-08-18: "legyen egy szöveg ami gratulál, hogy elértem a
   // heti limitet ami a cél, valami hatalmas nagy. és a célnál írja is ki hogy
   // kész zölddel". The goal stepper never said whether the goal was met, so the
@@ -97,6 +100,7 @@ export default function SettingsScreen() {
       db.getArticlePicker().then(setArticlePicker);
       db.getHandCap().then(setHandCap);
       db.getGapLaps().then(setGapLaps);
+      db.getRepairGap().then(setRepairGap);
       db.getSpellingListCount().then(setSpellingTotal);
     }, [])
   );
@@ -140,6 +144,15 @@ export default function SettingsScreen() {
     if (next === gapLaps) return;
     setGapLaps(next);
     await getDb().setGapLaps(next);
+    setPendingAction({ type: 'selectTopic' });
+  };
+
+  // UTEMEZO 4.7: R_javítás, 1-10.
+  const handleRepairGapChange = async (delta: number) => {
+    const next = Math.min(10, Math.max(1, repairGap + delta));
+    if (next === repairGap) return;
+    setRepairGap(next);
+    await getDb().setRepairGap(next);
     setPendingAction({ type: 'selectTopic' });
   };
 
@@ -433,7 +446,7 @@ export default function SettingsScreen() {
         <View style={styles.difficultyLabelBox}>
           <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.difficulty}</Text>
           <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>
-            {s.settings.difficultySummary(handCap, gapLaps, strictAccents)}
+            {s.settings.difficultySummary(handCap, gapLaps, repairGap, strictAccents)}
           </Text>
         </View>
         <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
@@ -578,6 +591,20 @@ export default function SettingsScreen() {
                   </Pressable>
                 );
               })}
+            </View>
+
+            <View style={styles.difficultyLabelBox}>
+              <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.repairGap}</Text>
+              <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.repairGapHint}</Text>
+            </View>
+            <View style={[styles.goalStepper, { justifyContent: 'center', marginTop: 8, marginBottom: 20 }]}>
+              <Pressable style={[styles.goalBtn, { borderColor: colors.tint }]} onPress={() => handleRepairGapChange(-1)}>
+                <Text style={[styles.goalBtnText, { color: colors.tint }]}>−</Text>
+              </Pressable>
+              <Text style={[styles.goalValue, { color: colors.text }]}>{Math.min(repairGap, gapLaps)}</Text>
+              <Pressable style={[styles.goalBtn, { borderColor: colors.tint }]} onPress={() => handleRepairGapChange(1)}>
+                <Text style={[styles.goalBtnText, { color: colors.tint }]}>+</Text>
+              </Pressable>
             </View>
 
             <View style={[styles.wordsOnlyRow, { backgroundColor: colors.background }]}>
