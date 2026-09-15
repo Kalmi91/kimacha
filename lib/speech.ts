@@ -150,6 +150,13 @@ export function stop(): void {
   Speech.stop();
 }
 
+// LECKE-SEMA 3.3: a lecke-képernyő stop gombja ezt hívja (ugyanaz a gomb,
+// ami elindította a felolvasást, play → stop). `stop()`-tól csak a névben
+// tér el, a képernyő oldalán olvashatóbb, mit csinál a gombnyomás.
+export function stopSpeaking(): void {
+  stop();
+}
+
 // FB216: a kevert nyelvű szöveg szakaszonként más hanggal szól (lib/mixedSpeech.ts
 // vágja szét). A szakaszok egymás UTÁN mennek: minden utterance `onDone`-jában
 // indul a következő, mert két nyelv két hangja párhuzamosan indítva egymásra

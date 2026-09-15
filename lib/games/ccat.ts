@@ -13,7 +13,7 @@ import { shuffleArray, mulberry32, hashString } from '../shuffle';
 import { pickDistractors } from './distract';
 import type { PoolEntry } from './vocabPool';
 import { buildOddOneOutRound, type OddCategorySet, type OddRound, type OddWordMeta } from './oddOneOut';
-import { buildGrammarRound, type GrammarRoundItem } from './grammarChoice';
+import { buildGrammarRound, isChoiceRoundItem, type GrammarChoiceRoundItem } from './grammarChoice';
 import {
   getGrammarTopics,
   isMarkItem,
@@ -65,7 +65,7 @@ export interface CcatOddOneOutItem {
 export interface CcatSentenceFillItem {
   kind: 'sentenceFill';
   topic: GrammarTopicData;
-  round: GrammarRoundItem;
+  round: GrammarChoiceRoundItem;
 }
 
 export interface CcatAnagramItem {
@@ -185,7 +185,9 @@ export function buildSentenceFillItem(lang: string, seed: number): CcatSentenceF
   const topic = shuffleArray(topics, seed)[0];
   // FB219: a nyelvtan-témák között már jelölős tétel is van (kész mondat, nincs
   // lyuk); a CCAT mondat-kiegészítése csak a lyukasat tudja megjeleníteni.
-  const round = buildGrammarRound(topic, seed + 1).filter((r) => !isMarkItem(r.item));
+  // LECKE-SEMA 2: a kör match/form tételeket is tartalmazhat, azoknak nincs
+  // opció-listájuk; az `isChoiceRoundItem` szűri ki előbb ezeket.
+  const round = buildGrammarRound(topic, seed + 1).filter(isChoiceRoundItem).filter((r) => !isMarkItem(r.item));
   if (round.length === 0) return null;
   return { kind: 'sentenceFill', topic, round: round[0] };
 }

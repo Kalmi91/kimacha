@@ -117,3 +117,36 @@ export function splitByLanguage(text: string, opts: SplitOptions): SpeechSegment
   flush();
   return segments;
 }
+
+// LECKE-SEMA 3.2: a V2 lecke `speak` mezőjében a spanyol szakaszok «...»
+// jelöléssel vannak megjelölve a szerzőség idején, nem korpusz-találgatással
+// derülnek ki utólag (ez volt FB216/FB234 hibája: ismeretlen szónál rossz
+// hang). A legacy leckéknél nincs ilyen jelölés, azok maradnak a fenti
+// `splitByLanguage`-nél.
+export function splitByMarkers(text: string, opts: SplitOptions): SpeechSegment[] {
+  const segments: SpeechSegment[] = [];
+  let i = 0;
+  while (i < text.length) {
+    const open = text.indexOf('«', i);
+    if (open === -1) {
+      const rest = text.slice(i).trim();
+      if (rest) segments.push({ text: rest, lang: opts.nativeLang });
+      break;
+    }
+    const before = text.slice(i, open).trim();
+    if (before) segments.push({ text: before, lang: opts.nativeLang });
+
+    const close = text.indexOf('»', open + 1);
+    if (close === -1) {
+      // Nincs záró jel: a nyitó jeltől a mondat végéig natívan olvassuk fel
+      // (a jelölés maga nem szöveg, kimarad).
+      const rest = text.slice(open + 1).trim();
+      if (rest) segments.push({ text: rest, lang: opts.nativeLang });
+      break;
+    }
+    const inside = text.slice(open + 1, close).trim();
+    if (inside) segments.push({ text: inside, lang: opts.learnedLang });
+    i = close + 1;
+  }
+  return segments;
+}
