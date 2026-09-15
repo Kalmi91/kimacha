@@ -34,6 +34,14 @@ import chatEsWhatsappSospechoso from '@/data/games/chats/es/whatsapp-sospechoso.
 import grammarEsSerEstar from '@/data/games/grammar/es/ser-estar.json';
 import grammarEsArticulosGenero from '@/data/games/grammar/es/articulos-genero.json';
 import grammarEsPorPara from '@/data/games/grammar/es/por-para.json';
+import grammarEsPerifrasisModales from '@/data/games/grammar/es/perifrasis-modales.json';
+import grammarEsPronombresOd from '@/data/games/grammar/es/pronombres-od.json';
+import grammarEsPronombresOi from '@/data/games/grammar/es/pronombres-oi.json';
+import grammarEsQuienAQuien from '@/data/games/grammar/es/quien-a-quien.json';
+import grammarEsIrAInfinitivo from '@/data/games/grammar/es/ir-a-infinitivo.json';
+import grammarEsEstarGerundio from '@/data/games/grammar/es/estar-gerundio.json';
+import grammarEsVerbosReflexivos from '@/data/games/grammar/es/verbos-reflexivos.json';
+import grammarEsCondicionalSimple from '@/data/games/grammar/es/condicional-simple.json';
 import grammarEsPresenteRegular from '@/data/games/grammar/es/presente-regular.json';
 import grammarEsHayEstar from '@/data/games/grammar/es/hay-estar.json';
 import grammarEsGustar from '@/data/games/grammar/es/gustar.json';
@@ -102,8 +110,8 @@ export const esContent: LanguageContentBundle = {
     // Teaching order: A1 first, then A2. lib/grammar/syllabus.ts is the map that
     // groups these into units and says which ones are still unwritten.
   grammarTopics: [
-    // FB189: a szófaj-áttekintés a tanterv első témája, minden későbbi szabály
-    // (a melléknév a főnév után áll) ezt feltételezi.
+    // Tanulási sorrend = lib/grammar/syllabus.ts sorrendje. A core+ sáv (a
+    // beszéd-mag) témái ebben a sorban jönnek, A1-től B1-ig.
     grammarEsClasesDePalabras,
     grammarEsSustantivoNumero,
     grammarEsArticulosGenero,
@@ -111,20 +119,28 @@ export const esContent: LanguageContentBundle = {
     grammarEsPresenteRegular,
     grammarEsPresenteIrregular,
     grammarEsVerbosDiptongo,
+    grammarEsPerifrasisModales,
     grammarEsSerEstar,
     grammarEsHayEstar,
     grammarEsPosesivos,
     grammarEsDemostrativos,
+    grammarEsPronombresOd,
+    grammarEsPronombresOi,
+    grammarEsQuienAQuien,
     grammarEsInterrogativos,
     grammarEsNegacion,
     grammarEsGustar,
+    grammarEsIrAInfinitivo,
     grammarEsIndefinidoRegular,
     grammarEsIndefinidoIrregular,
     grammarEsImperfecto,
     grammarEsIndefinidoImperfecto,
     grammarEsPerfecto,
+    grammarEsEstarGerundio,
     grammarEsFuturoSimple,
+    grammarEsVerbosReflexivos,
     grammarEsPorPara,
+    grammarEsCondicionalSimple,
   ] as unknown as GrammarTopicData[],
   confusables: [
     confusablesEsSueldo, confusablesEsPero, confusablesEsCaro, confusablesEsCasa,

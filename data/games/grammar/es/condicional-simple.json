@@ -1,0 +1,367 @@
+{
+  "topic": "condicional-simple",
+  "level": "B1",
+  "title": {
+    "hu": "Condicional simple: a spanyol „-nék, kellene, tudnál”",
+    "en": "Condicional simple: the Spanish \"would / should\"",
+    "es": "Condicional simple: el „haría, debería, podría” del español",
+    "de": "Condicional simple: das spanische „würde / sollte”"
+  },
+  "rule": {
+    "hu": "A condicional simple képzése: a TELJES főnévi igenévhez -ía/-ías/-ía/-íamos/-ían végződés jön, ugyanaz mindhárom igeragozásnál (-ar/-er/-ir). Hablar → hablaría, comer → comería, vivir → viviría. Néhány ige rövidebb, szabálytalan tövet kap: tener → tendr-, poder → podr-, haber → habr-, salir → saldr-, venir → vendr-, decir → dir-, hacer → har-, querer → querr-, ezekre ugyanaz a végződés kerül: tendría, podría, haría.",
+    "en": "The condicional simple is formed by adding -ía/-ías/-ía/-íamos/-ían to the WHOLE infinitive, the same endings for all three conjugations (-ar/-er/-ir). Hablar → hablaría, comer → comería, vivir → viviría. A few verbs use a shorter, irregular stem: tener → tendr-, poder → podr-, haber → habr-, salir → saldr-, venir → vendr-, decir → dir-, hacer → har-, querer → querr-, but the same endings still apply: tendría, podría, haría.",
+    "es": "El condicional simple se forma añadiendo -ía/-ías/-ía/-íamos/-ían al infinitivo COMPLETO, las mismas terminaciones para las tres conjugaciones (-ar/-er/-ir). Hablar → hablaría, comer → comería, vivir → viviría. Algunos verbos usan una raíz más corta e irregular: tener → tendr-, poder → podr-, haber → habr-, salir → saldr-, venir → vendr-, decir → dir-, hacer → har-, querer → querr-, pero llevan las mismas terminaciones: tendría, podría, haría.",
+    "de": "Das condicional simple bildet man, indem man an den GANZEN Infinitiv -ía/-ías/-ía/-íamos/-ían anhängt, dieselben Endungen für alle drei Konjugationen (-ar/-er/-ir). Hablar → hablaría, comer → comería, vivir → viviría. Manche Verben haben einen kürzeren, unregelmäßigen Stamm: tener → tendr-, poder → podr-, haber → habr-, salir → saldr-, venir → vendr-, decir → dir-, hacer → har-, querer → querr-, aber mit denselben Endungen: tendría, podría, haría."
+  },
+  "more": {
+    "hu": "A leggyakoribb használat a tanács és az udvarias kérés: deberías = kellene neked (puha tanács), sokkal enyhébb, mint a tienes que (kötelezettség, muszáj). Podrías = tudnál-e, kérés formájában. Me gustaría = szeretnék. Sería = lenne. Mexikóban a condicional simple bolti és hivatali udvarias kéréseknél is nagyon gyakori: ¿Me podría decir la hora? sokkal udvariasabb, mint a ¿Me puede decir la hora?",
+    "en": "The headline use is advice and polite requests: deberías = you should (soft advice), much gentler than tienes que (obligation, you have to). Podrías = could you, phrased as a request. Me gustaría = I would like. Sería = it would be. In Mexico, the condicional simple is also very common for polite requests in shops and offices: ¿Me podría decir la hora? is much more polite than ¿Me puede decir la hora?",
+    "es": "El uso más frecuente es el consejo y la petición cortés: deberías = consejo suave, mucho más leve que tienes que (obligación). Podrías = petición cortés. Me gustaría = deseo suave. Sería = sería. En México, el condicional simple también es muy común en tiendas y oficinas: ¿Me podría decir la hora? es mucho más cortés que ¿Me puede decir la hora?",
+    "de": "Die häufigste Verwendung ist Rat und höfliche Bitte: deberías = du solltest (sanfter Rat), viel milder als tienes que (Verpflichtung, du musst). Podrías = könntest du, als Bitte formuliert. Me gustaría = ich hätte gern. Sería = es wäre. In Mexiko ist das condicional simple auch bei höflichen Bitten in Läden und Ämtern sehr üblich: ¿Me podría decir la hora? ist viel höflicher als ¿Me puede decir la hora?"
+  },
+  "glossary": [
+    { "word": "debería", "gloss": { "hu": "kellene neki/nekem", "en": "should (he/she/I)", "es": "debería", "de": "sollte" } },
+    { "word": "deberías", "gloss": { "hu": "kellene neked", "en": "you should", "es": "deberías", "de": "du solltest" } },
+    { "word": "podría", "gloss": { "hu": "tudna, tudnék", "en": "could (he/she/I)", "es": "podría", "de": "könnte" } },
+    { "word": "podrías", "gloss": { "hu": "tudnál", "en": "you could", "es": "podrías", "de": "du könntest" } },
+    { "word": "podríamos", "gloss": { "hu": "tudnánk", "en": "we could", "es": "podríamos", "de": "wir könnten" } },
+    { "word": "gustaría", "gloss": { "hu": "szeretnék, szeretne", "en": "would like", "es": "gustaría", "de": "würde gern mögen" } },
+    { "word": "sería", "gloss": { "hu": "lenne", "en": "it would be", "es": "sería", "de": "es wäre" } },
+    { "word": "saldríamos", "gloss": { "hu": "elmennénk, kimennénk", "en": "we would leave/go out", "es": "saldríamos", "de": "wir würden losgehen" } },
+    { "word": "haría", "gloss": { "hu": "csinálnék, csinálna", "en": "would do (I/he/she)", "es": "haría", "de": "würde machen" } },
+    { "word": "harías", "gloss": { "hu": "csinálnál", "en": "you would do", "es": "harías", "de": "du würdest machen" } },
+    { "word": "vendrían", "gloss": { "hu": "eljönnének", "en": "they would come", "es": "vendrían", "de": "sie würden kommen" } },
+    { "word": "tendría", "gloss": { "hu": "lenne neki (birtokolna)", "en": "he/she would have", "es": "tendría", "de": "er/sie hätte" } },
+    { "word": "dinero", "gloss": { "hu": "pénz", "en": "money", "es": "el dinero", "de": "Geld" } },
+    { "word": "hora", "gloss": { "hu": "óra, időpont", "en": "time, hour", "es": "la hora", "de": "Uhrzeit" } },
+    { "word": "invitar", "gloss": { "hu": "meghívni", "en": "to invite", "es": "invitar", "de": "einladen" } },
+    { "word": "verte", "gloss": { "hu": "látni téged", "en": "to see you", "es": "verte", "de": "dich sehen" } },
+    { "word": "pudiéramos", "gloss": { "hu": "tudnánk (kötőmód, múlt idejű feltétel)", "en": "we could (subjunctive, used in if-clauses)", "es": "pudiéramos", "de": "wir könnten (Konjunktiv, in Wenn-Sätzen)" } }
+  ],
+  "items": [
+    {
+      "id": "cd-01",
+      "sentence": "___ descansar más.",
+      "options": ["Deberías", "Debes", "Debería"],
+      "correct": 0,
+      "why": {
+        "hu": "Puha tanács tú-nak: deberías, nem kötelezettség.",
+        "en": "Soft advice to tú: deberías, not an obligation.",
+        "es": "Consejo suave para tú: deberías, no una obligación.",
+        "de": "Sanfter Rat für tú: deberías, keine Verpflichtung."
+      },
+      "wrong": {
+        "Debes": {
+          "hu": "A debes jelen idő, kötelezettséget fejez ki, nem tanácsot.",
+          "en": "Debes is present tense, expressing obligation, not advice.",
+          "es": "Debes es presente, expresa obligación, no consejo.",
+          "de": "Debes ist Präsens und drückt Verpflichtung aus, keinen Rat."
+        },
+        "Debería": {
+          "hu": "A debería yo/él/ella/usted alakja, itt tú-nak szól a mondat.",
+          "en": "Debería is the yo/él/ella/usted form, but this sentence addresses tú.",
+          "es": "Debería es la forma de yo/él/ella/usted, pero esta frase se dirige a tú.",
+          "de": "Debería ist die Form von yo/él/ella/usted, dieser Satz richtet sich aber an tú."
+        }
+      },
+      "examples": ["Deberías dormir ocho horas.", "Deberías tomar agua todos los días."]
+    },
+    {
+      "id": "cd-02",
+      "sentence": "¿___ ayudarme con esto?",
+      "options": ["Podrías", "Puedes", "Podía"],
+      "correct": 0,
+      "why": {
+        "hu": "Udvarias kérés condicionalban: podrías.",
+        "en": "A polite request in the conditional: podrías.",
+        "es": "Petición cortés en condicional: podrías.",
+        "de": "Eine höfliche Bitte im Konditional: podrías."
+      },
+      "wrong": {
+        "Puedes": {
+          "hu": "A puedes jelen idő, közvetlenebb, kevésbé udvarias kérés.",
+          "en": "Puedes is present tense, a more direct, less polite request.",
+          "es": "Puedes es presente, una petición más directa, menos cortés.",
+          "de": "Puedes ist Präsens, eine direktere, weniger höfliche Bitte."
+        },
+        "Podía": {
+          "hu": "A podía múlt idő (imperfecto), nem kérés.",
+          "en": "Podía is a past tense (imperfect), not a request.",
+          "es": "Podía es pasado (imperfecto), no una petición.",
+          "de": "Podía ist Vergangenheit (Imperfekt), keine Bitte."
+        }
+      },
+      "examples": ["¿Podrías cerrar la puerta?", "¿Podrías llamarme más tarde?"]
+    },
+    {
+      "id": "cd-03",
+      "sentence": "Me ___ un café, por favor.",
+      "options": ["gustaría", "gusta", "gustaba"],
+      "correct": 0,
+      "why": {
+        "hu": "Udvarias, lágy kívánság: me gustaría.",
+        "en": "A polite, soft wish: me gustaría.",
+        "es": "Deseo cortés y suave: me gustaría.",
+        "de": "Ein höflicher, sanfter Wunsch: me gustaría."
+      },
+      "wrong": {
+        "gusta": {
+          "hu": "A gusta jelen idő, sima kijelentés, nem udvarias kérés.",
+          "en": "Gusta is present tense, a plain statement, not a polite request.",
+          "es": "Gusta es presente, una afirmación simple, no una petición cortés.",
+          "de": "Gusta ist Präsens, eine einfache Aussage, keine höfliche Bitte."
+        },
+        "gustaba": {
+          "hu": "A gustaba múlt idő, valamiről, ami korábban tetszett.",
+          "en": "Gustaba is past tense, about something that used to please.",
+          "es": "Gustaba es pasado, sobre algo que gustaba antes.",
+          "de": "Gustaba ist Vergangenheit, über etwas, das früher gefiel."
+        }
+      },
+      "examples": ["Me gustaría un té, gracias.", "Nos gustaría visitar Oaxaca."]
+    },
+    {
+      "id": "cd-04",
+      "sentence": "___ buena idea invitar a Ana.",
+      "options": ["Sería", "Es", "Era"],
+      "correct": 0,
+      "why": {
+        "hu": "Feltételezett, még meg nem történt dolog: sería buena idea.",
+        "en": "A hypothetical, not-yet-real thing: sería buena idea.",
+        "es": "Algo hipotético, aún no real: sería buena idea.",
+        "de": "Etwas Hypothetisches, noch nicht Reales: sería buena idea."
+      },
+      "wrong": {
+        "Es": {
+          "hu": "Az es jelen idő, tényként állítaná, itt feltételezés van.",
+          "en": "Es is present tense and would state it as a fact, but this is a hypothesis.",
+          "es": "Es es presente y lo afirmaría como hecho, pero aquí es una hipótesis.",
+          "de": "Es ist Präsens und würde es als Tatsache darstellen, hier ist es aber eine Hypothese."
+        },
+        "Era": {
+          "hu": "Az era múlt idő, valamiről, ami korábban volt.",
+          "en": "Era is past tense, about something that used to be.",
+          "es": "Era es pasado, sobre algo que era antes.",
+          "de": "Era ist Vergangenheit, über etwas, das früher war."
+        }
+      },
+      "examples": ["Sería genial verte pronto.", "Sería más fácil con tu ayuda."]
+    },
+    {
+      "id": "cd-05",
+      "sentence": "Nosotros ___ mañana si hay tiempo.",
+      "options": ["saldríamos", "salimos", "saldrán"],
+      "correct": 0,
+      "why": {
+        "hu": "Nosotroshoz -íamos jár, a salir szabálytalan tövével: saldríamos.",
+        "en": "Nosotros takes -íamos, with salir's irregular stem: saldríamos.",
+        "es": "A nosotros le corresponde -íamos, con la raíz irregular de salir: saldríamos.",
+        "de": "Zu nosotros gehört -íamos, mit dem unregelmäßigen Stamm von salir: saldríamos."
+      },
+      "wrong": {
+        "salimos": {
+          "hu": "A salimos jelen (vagy múlt) idő, itt feltételes állítás van.",
+          "en": "Salimos is present (or past) tense, but this is a conditional statement.",
+          "es": "Salimos es presente (o pasado), pero aquí hay una afirmación condicional.",
+          "de": "Salimos ist Präsens (oder Vergangenheit), hier steht aber eine Konditionalaussage."
+        },
+        "saldrán": {
+          "hu": "A saldrán ellos alakja jövő időben, itt nosotros az alany.",
+          "en": "Saldrán is the ellos form in the future, but here the subject is nosotros.",
+          "es": "Saldrán es la forma de ellos en futuro, pero aquí el sujeto es nosotros.",
+          "de": "Saldrán ist die ellos-Form im Futur, hier ist das Subjekt aber nosotros."
+        }
+      },
+      "examples": ["Saldríamos temprano si pudiéramos.", "Nosotros saldríamos contigo con gusto."]
+    },
+    {
+      "id": "cd-06",
+      "sentence": "Yo ___ eso, pero no tengo tiempo.",
+      "options": ["haría", "hago", "hacía"],
+      "correct": 0,
+      "why": {
+        "hu": "Feltételes cselekvés, ami a valóságban nem történik meg: yo haría.",
+        "en": "A conditional action that does not actually happen: yo haría.",
+        "es": "Una acción condicional que no ocurre en realidad: yo haría.",
+        "de": "Eine bedingte Handlung, die tatsächlich nicht passiert: yo haría."
+      },
+      "wrong": {
+        "hago": {
+          "hu": "A hago jelen idő, tényleges cselekvést jelentene.",
+          "en": "Hago is present tense, meaning an actual action.",
+          "es": "Hago es presente, significaría una acción real.",
+          "de": "Hago ist Präsens und würde eine tatsächliche Handlung bedeuten."
+        },
+        "hacía": {
+          "hu": "A hacía múlt idő, valamiről, amit korábban csináltam.",
+          "en": "Hacía is past tense, about something I used to do.",
+          "es": "Hacía es pasado, sobre algo que hacía antes.",
+          "de": "Hacía ist Vergangenheit, über etwas, das ich früher tat."
+        }
+      },
+      "examples": ["Yo haría eso por ti.", "Haría más ejercicio si tuviera tiempo."]
+    },
+    {
+      "id": "cd-07",
+      "sentence": "Ellos ___ venir a la fiesta.",
+      "options": ["vendrían", "vienen", "venían"],
+      "correct": 0,
+      "why": {
+        "hu": "Feltételes szándék, szabálytalan tővel: vendrían.",
+        "en": "A conditional intention, with the irregular stem: vendrían.",
+        "es": "Una intención condicional, con la raíz irregular: vendrían.",
+        "de": "Eine bedingte Absicht, mit dem unregelmäßigen Stamm: vendrían."
+      },
+      "wrong": {
+        "vienen": {
+          "hu": "A vienen jelen idő, tényleges jövetelt jelentene.",
+          "en": "Vienen is present tense, meaning an actual coming.",
+          "es": "Vienen es presente, significaría una venida real.",
+          "de": "Vienen ist Präsens und würde ein tatsächliches Kommen bedeuten."
+        },
+        "venían": {
+          "hu": "A venían múlt idő, arról, hogy korábban jöttek.",
+          "en": "Venían is past tense, about them coming in the past.",
+          "es": "Venían es pasado, sobre que venían antes.",
+          "de": "Venían ist Vergangenheit, darüber, dass sie früher kamen."
+        }
+      },
+      "examples": ["Vendrían si los invitas.", "Ellos vendrían con mucho gusto."]
+    },
+    {
+      "id": "cd-08",
+      "sentence": "¿Qué ___ tú en mi lugar?",
+      "options": ["harías", "haces", "hacías"],
+      "correct": 0,
+      "why": {
+        "hu": "Feltételezett helyzet: mit csinálnál te? harías.",
+        "en": "A hypothetical situation: what would you do? harías.",
+        "es": "Una situación hipotética: ¿qué harías? harías.",
+        "de": "Eine hypothetische Situation: was würdest du tun? harías."
+      },
+      "wrong": {
+        "haces": {
+          "hu": "A haces jelen idő, valós helyzetről kérdezne.",
+          "en": "Haces is present tense, asking about a real situation.",
+          "es": "Haces es presente, preguntaría por una situación real.",
+          "de": "Haces ist Präsens und würde nach einer realen Situation fragen."
+        },
+        "hacías": {
+          "hu": "A hacías múlt idő, arról, mit csináltál régen.",
+          "en": "Hacías is past tense, about what you used to do.",
+          "es": "Hacías es pasado, sobre qué hacías antes.",
+          "de": "Hacías ist Vergangenheit, darüber, was du früher getan hast."
+        }
+      },
+      "examples": ["¿Qué harías tú en mi lugar?", "Yo no sé qué harías tú."]
+    },
+    {
+      "id": "cd-09",
+      "sentence": "Ella ___ mucho dinero con ese trabajo.",
+      "options": ["tendría", "tiene", "tenía"],
+      "correct": 0,
+      "why": {
+        "hu": "Feltételezett eredmény: tendría, szabálytalan tővel.",
+        "en": "A hypothetical outcome: tendría, with the irregular stem.",
+        "es": "Un resultado hipotético: tendría, con la raíz irregular.",
+        "de": "Ein hypothetisches Ergebnis: tendría, mit dem unregelmäßigen Stamm."
+      },
+      "wrong": {
+        "tiene": {
+          "hu": "A tiene jelen idő, tényleges birtoklást jelentene.",
+          "en": "Tiene is present tense, meaning she actually has it.",
+          "es": "Tiene es presente, significaría que ella lo tiene de verdad.",
+          "de": "Tiene ist Präsens und würde bedeuten, dass sie es tatsächlich hat."
+        },
+        "tenía": {
+          "hu": "A tenía múlt idő, arról, amije korábban volt.",
+          "en": "Tenía is past tense, about what she used to have.",
+          "es": "Tenía es pasado, sobre lo que tenía antes.",
+          "de": "Tenía ist Vergangenheit, darüber, was sie früher hatte."
+        }
+      },
+      "examples": ["Ella tendría más dinero con ese trabajo.", "Tendríamos más tiempo libre así."]
+    },
+    {
+      "id": "cd-10",
+      "sentence": "Mi hermano ___ estudiar más.",
+      "options": ["debería", "debe", "debía"],
+      "correct": 0,
+      "why": {
+        "hu": "Harmadik személyű puha tanács: debería.",
+        "en": "Third-person soft advice: debería.",
+        "es": "Consejo suave en tercera persona: debería.",
+        "de": "Sanfter Rat in der dritten Person: debería."
+      },
+      "wrong": {
+        "debe": {
+          "hu": "A debe jelen idő, kötelezettséget fejez ki, nem tanácsot.",
+          "en": "Debe is present tense, expressing obligation, not advice.",
+          "es": "Debe es presente, expresa obligación, no consejo.",
+          "de": "Debe ist Präsens und drückt Verpflichtung aus, keinen Rat."
+        },
+        "debía": {
+          "hu": "A debía múlt idő, arról, aminek korábban kellett volna történnie.",
+          "en": "Debía is past tense, about what he was supposed to do before.",
+          "es": "Debía es pasado, sobre lo que debía hacer antes.",
+          "de": "Debía ist Vergangenheit, darüber, was er früher hätte tun sollen."
+        }
+      },
+      "examples": ["Mi hermano debería descansar más.", "Deberías escucharlo, tiene razón."]
+    },
+    {
+      "id": "cd-11",
+      "sentence": "Nosotros no ___ eso sin ayuda.",
+      "options": ["podríamos", "podemos", "pudimos"],
+      "correct": 0,
+      "why": {
+        "hu": "Feltételezett képesség: podríamos, szabálytalan tővel.",
+        "en": "A hypothetical ability: podríamos, with the irregular stem.",
+        "es": "Una capacidad hipotética: podríamos, con la raíz irregular.",
+        "de": "Eine hypothetische Fähigkeit: podríamos, mit dem unregelmäßigen Stamm."
+      },
+      "wrong": {
+        "podemos": {
+          "hu": "A podemos jelen idő, tényleges képességet jelentene.",
+          "en": "Podemos is present tense, meaning an actual ability.",
+          "es": "Podemos es presente, significaría una capacidad real.",
+          "de": "Podemos ist Präsens und würde eine tatsächliche Fähigkeit bedeuten."
+        },
+        "pudimos": {
+          "hu": "A pudimos múlt idő (indefinido), arról, ami tényleg megtörtént.",
+          "en": "Pudimos is past tense (preterite), about something that actually happened.",
+          "es": "Pudimos es pasado (indefinido), sobre algo que sí ocurrió.",
+          "de": "Pudimos ist Vergangenheit (Indefinido), über etwas, das wirklich geschah."
+        }
+      },
+      "examples": ["No podríamos terminar sin tu ayuda.", "Podríamos intentarlo juntos."]
+    },
+    {
+      "id": "cd-12",
+      "sentence": "¿Me ___ decir la hora, por favor?",
+      "options": ["podría", "puede", "pudo"],
+      "correct": 0,
+      "why": {
+        "hu": "Udvarias hivatalos/boltos kérés usted-nek: me podría decir.",
+        "en": "A polite formal request to usted, common in shops/offices: me podría decir.",
+        "es": "Petición cortés y formal a usted, común en tiendas/oficinas: me podría decir.",
+        "de": "Eine höfliche, formelle Bitte an usted, in Läden/Ämtern üblich: me podría decir."
+      },
+      "wrong": {
+        "puede": {
+          "hu": "A puede jelen idő, közvetlenebb, kevésbé udvarias kérés.",
+          "en": "Puede is present tense, a more direct, less polite request.",
+          "es": "Puede es presente, una petición más directa, menos cortés.",
+          "de": "Puede ist Präsens, eine direktere, weniger höfliche Bitte."
+        },
+        "pudo": {
+          "hu": "A pudo múlt idő, arról, hogy sikerült-e valami korábban.",
+          "en": "Pudo is past tense, about whether something succeeded before.",
+          "es": "Pudo es pasado, sobre si algo se logró antes.",
+          "de": "Pudo ist Vergangenheit, darüber, ob etwas früher gelang."
+        }
+      },
+      "examples": ["¿Me podría ayudar, por favor?", "¿Nos podría traer la cuenta?"]
+    }
+  ]
+}

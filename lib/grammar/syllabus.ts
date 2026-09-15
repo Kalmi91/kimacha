@@ -68,6 +68,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'perifrasis-modales': 'core-plus',
   'pronombres-od': 'core-plus',
   'pronombres-oi': 'core-plus',
+  'quien-a-quien': 'core-plus',
   'muy-mucho': 'exam',
   'numeros-hora-fecha': 'core',
   'preposiciones-basicas': 'core',
@@ -254,6 +255,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'a1-pronombres',
     title: { hu: 'Részeshatározós névmás: me, te, le, nos, les', en: 'Indirect object: me, te, le, nos, les', es: 'Objeto indirecto: me, te, le, nos, les', de: 'Dativpronomen: me, te, le, nos, les' },
     blurb: { hu: 'Kinek adod, kinek mondod: le doy el libro, te digo la verdad.', en: 'Who you give or say it to: le doy el libro, te digo la verdad.', es: 'A quién se lo das o dices: le doy el libro, te digo la verdad.', de: 'Wem du es gibst oder sagst: le doy el libro, te digo la verdad.' },
+  },
+  {
+    id: 'quien-a-quien',
+    level: 'A1',
+    unit: 'a1-pronombres',
+    title: { hu: 'Ki kinek: te amo, me das', en: 'Who does what to whom: te amo, me das', es: 'Quién a quién: te amo, me das', de: 'Wer wem: te amo, me das' },
+    blurb: { hu: 'A végződés mondja meg, ki cselekszik, a névmás azt, kivel.', en: 'The ending says who acts, the pronoun says to whom.', es: 'La terminación dice quién actúa, el pronombre a quién.', de: 'Die Endung sagt, wer handelt, das Pronomen, mit wem.' },
   },
   {
     id: 'interrogativos',
