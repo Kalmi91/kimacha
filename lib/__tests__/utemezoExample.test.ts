@@ -53,10 +53,10 @@ const ROWS: Row[] = [
   { label: 'új · 3/3', wordId: A, correct: false, headerAfter: [10, 8, 0] }, // 17 RONTVA
   { label: 'új · 2/3', wordId: C, correct: true, headerAfter: [10, 7, 0] }, // 18
   { label: 'új · 2/3', wordId: D, correct: true, headerAfter: [10, 6, 0] }, // 19
-  { label: 'új · 2/3', wordId: E, correct: true, headerAfter: [10, 5, 0] }, // 20
-  { label: 'új · 3/3', wordId: B, correct: true, headerAfter: [10, 4, 0] }, // 21 (B megtanult)
-  { label: 'új · 1/3', wordId: F, correct: true, headerAfter: [9, 6, 0] }, // 22
-  { label: 'javítás · 3/3', wordId: A, correct: true, headerAfter: [9, 5, 0] }, // 23 (A megtanult)
+  { label: 'javítás · 3/3', wordId: A, correct: true, headerAfter: [10, 5, 0] }, // 20 (4.7, A megtanult)
+  { label: 'új · 2/3', wordId: E, correct: true, headerAfter: [10, 4, 0] }, // 21
+  { label: 'új · 3/3', wordId: B, correct: true, headerAfter: [10, 3, 0] }, // 22 (B megtanult)
+  { label: 'új · 1/3', wordId: F, correct: true, headerAfter: [9, 5, 0] }, // 23
 ];
 
 function freshQueue(): QueueState {
@@ -121,7 +121,7 @@ describe('UTEMEZO 10. szakasz: a pelda-kor', () => {
     expect(step11 - step7).toBe(4);
   });
 
-  it('a 15. lapnal 5 szo van kezben, F csak a 22.-nel jon eloszor', () => {
+  it('a 15. lapnal 5 szo van kezben, F csak a 23.-nal jon eloszor', () => {
     let state = freshQueue();
     for (let i = 0; i < ROWS.length; i++) {
       state = nextLap(state);
@@ -130,10 +130,10 @@ describe('UTEMEZO 10. szakasz: a pelda-kor', () => {
         expect(state.hand.length).toBe(5);
         expect(state.hand.map((h) => h.wordId).sort()).toEqual([A, B, C, D, E]);
       }
-      if (i < 21) {
+      if (i < 22) {
         expect(state.hand.some((h) => h.wordId === F)).toBe(false);
       }
-      if (i === 21) {
+      if (i === 22) {
         expect(state.current!.wordId).toBe(F);
         expect(state.current!.label).toBe('új · 1/3');
       }
@@ -150,9 +150,10 @@ describe('UTEMEZO 10. szakasz: a pelda-kor', () => {
   });
 
   it('egy megtanult szo effect-listaja: attempt, passLap, learned', () => {
-    // A B szo a 21. lapnal tanul meg (3. lapja helyes).
+    // A B szo a 22. lapnal tanul meg (3. lapja helyes); elotte a 20. lap A
+    // javitas-lapja (4.7), ott tanul meg A.
     let state = freshQueue();
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 21; i++) {
       state = nextLap(state);
       state = answer(state, ROWS[i].correct).state;
     }
@@ -166,7 +167,7 @@ describe('UTEMEZO 10. szakasz: a pelda-kor', () => {
       { type: 'learned', wordId: B },
     ]);
     expect(after.hand.some((h) => h.wordId === B)).toBe(false);
-    expect(after.stats.wordsLearned).toBe(1);
+    expect(after.stats.wordsLearned).toBe(2); // A (20. lap) es B (22. lap)
   });
 
   it('kilepes a 15. lap utan: uj korben a kezben levok jonnek elore, a res tartva, fekete valtozatlan', () => {
