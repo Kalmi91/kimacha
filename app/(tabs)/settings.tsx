@@ -10,7 +10,6 @@ import { t } from '@/lib/i18n';
 import { LEVELS, type Level, getWordsForLevel } from '@/data/words';
 import { setPendingAction } from '@/lib/pendingAction';
 import { getDb } from '@/lib/database';
-import { DEFAULT_REQUEUE_LEVEL, REQUEUE_LEVELS } from '@/lib/requeueGap';
 import { validateBackupPayload } from '@/lib/backup';
 import {
   DEFAULT_WEEKLY_GOAL_MINUTES,
@@ -61,8 +60,12 @@ export default function SettingsScreen() {
   // FB188: névelő-gombsor a gépelős spanyol főnév-kártyán. Alapból be, mert
   // Kálmán kérte; a kapcsoló a visszaút, ha kipróbálva mégsem válik be.
   const [articlePicker, setArticlePicker] = useState(true);
-  // FB198: az elrontott szó visszatérési távolsága, három fokozatban.
-  const [requeueLevel, setRequeueLevel] = useState<string>(DEFAULT_REQUEUE_LEVEL);
+  // UTEMEZO 8: a „Nehézség" ablak, P (kézben lévő szavak) és R (visszatérési
+  // rés). R az FB198-tárcsát (easy/normal/hard) váltja fel ugyanazzal a
+  // jelentéssel, lásd lib/database.ts getGapLaps az áthozatalért.
+  const [difficultyVisible, setDifficultyVisible] = useState(false);
+  const [handCap, setHandCap] = useState(5);
+  const [gapLaps, setGapLaps] = useState(5);
   // FB147, Kálmán 2026-08-18: "legyen egy szöveg ami gratulál, hogy elértem a
   // heti limitet ami a cél, valami hatalmas nagy. és a célnál írja is ki hogy
   // kész zölddel". The goal stepper never said whether the goal was met, so the
@@ -92,7 +95,8 @@ export default function SettingsScreen() {
       db.getLevel().then(l => setLevel(l.level as Level));
       db.getSpellingDueCount().then(setSpellingDue);
       db.getArticlePicker().then(setArticlePicker);
-      db.getRequeueLevel().then(setRequeueLevel);
+      db.getHandCap().then(setHandCap);
+      db.getGapLaps().then(setGapLaps);
       db.getSpellingListCount().then(setSpellingTotal);
     }, [])
   );
@@ -111,20 +115,44 @@ export default function SettingsScreen() {
     router.push('/');
   };
 
-  // FB132: the Learn screen reads the flag when it builds a queue, so the same
-  // reload action as the other learn settings makes the change take effect.
+  // FB132: the Learn screen reads the flag when it builds a queue. Lives in the
+  // Nehézség ablakban (UTEMEZO 8) most, ezért a reload csak az ablak bezárásakor
+  // fut le (closeDifficultyModal), nem minden koppintásnál.
   const handleStrictAccentsToggle = async (v: boolean) => {
     setStrictAccents(v);
     await getDb().setStrictAccents(v);
     setPendingAction({ type: 'selectTopic' });
-    router.push('/');
   };
 
-  // FB198: a tanuló-képernyő a sor építésekor olvassa, ezért ugyanaz az újratöltés.
-  const handleRequeueLevel = async (v: string) => {
-    setRequeueLevel(v);
-    await getDb().setRequeueLevel(v);
+  // UTEMEZO 8/3.1: P, kézben lévő szavak, 1-10.
+  const handleHandCapChange = async (delta: number) => {
+    const next = Math.min(10, Math.max(1, handCap + delta));
+    if (next === handCap) return;
+    setHandCap(next);
+    await getDb().setHandCap(next);
     setPendingAction({ type: 'selectTopic' });
+  };
+
+  // UTEMEZO 8/4.2: R, visszatérési rés, 1-30 (± stepper és a régi FB198
+  // gyors-fokozatok ugyanarra az értékre).
+  const handleGapLapsChange = async (delta: number) => {
+    const next = Math.min(30, Math.max(1, gapLaps + delta));
+    if (next === gapLaps) return;
+    setGapLaps(next);
+    await getDb().setGapLaps(next);
+    setPendingAction({ type: 'selectTopic' });
+  };
+
+  const handleGapLapsPreset = async (v: number) => {
+    setGapLaps(v);
+    await getDb().setGapLaps(v);
+    setPendingAction({ type: 'selectTopic' });
+  };
+
+  // UTEMEZO 8: a Nehézség ablak bezárásakor egyszer töltjük újra a sort, nem
+  // minden egyes P/R/ékezet koppintásnál.
+  const closeDifficultyModal = () => {
+    setDifficultyVisible(false);
     router.push('/');
   };
 
@@ -165,6 +193,13 @@ export default function SettingsScreen() {
     await getDb().setDailyNewLimit(next);
     setPendingAction({ type: 'selectTopic' });
   };
+
+  // UTEMEZO 8: a régi FB198 gyors-fokozatok, most az R-stepper alatti chipek.
+  const gapPresets: { value: number; label: string }[] = [
+    { value: 5, label: s.settings.requeueEasy },
+    { value: 12, label: s.settings.requeueNormal },
+    { value: 25, label: s.settings.requeueHard },
+  ];
 
   const themeOptions: { label: string; value: 'system' | 'light' | 'dark' }[] = [
     { label: '🔄 Auto', value: 'system' },
@@ -388,48 +423,21 @@ export default function SettingsScreen() {
         </View>
       </View>
 
-      {/* FB132: difficulty switches, each one raises the bar on its own. Kept
-          as a Settings section rather than a sixth tab (the tab bar is full,
-          see FB100), but headed so it reads as its own place. */}
-      <Text style={[styles.difficultyTitle, { color: colors.tabIconDefault }]}>{s.settings.difficulty}</Text>
-      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
+      {/* UTEMEZO 8: a „Nehézség" cím pressable sor lett, ami a P/R/ékezet
+          ablakot nyitja (a korábbi külön strict-accents sor és FB198
+          gyors-fokozat sor most ott lakik). */}
+      <Pressable
+        style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}
+        onPress={() => setDifficultyVisible(true)}
+      >
         <View style={styles.difficultyLabelBox}>
-          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.strictAccents}</Text>
-          <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.strictAccentsHint}</Text>
+          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.difficulty}</Text>
+          <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>
+            {s.settings.difficultySummary(handCap, gapLaps, strictAccents)}
+          </Text>
         </View>
-        <Switch value={strictAccents} onValueChange={handleStrictAccentsToggle} trackColor={{ true: colors.tint }} />
-      </View>
-
-      {/* FB198: nehézség = milyen messze kerüljön vissza egy elrontott szó. */}
-      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card, flexDirection: 'column', alignItems: 'stretch', gap: 10 }]}>
-        <View style={styles.difficultyLabelBox}>
-          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.requeueDifficulty}</Text>
-          <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.requeueDifficultyHint}</Text>
-        </View>
-        <View style={{ flexDirection: 'row', gap: 8 }}>
-          {REQUEUE_LEVELS.map((lvl) => {
-            const active = requeueLevel === lvl;
-            const label = lvl === 'easy' ? s.settings.requeueEasy : lvl === 'hard' ? s.settings.requeueHard : s.settings.requeueNormal;
-            return (
-              <Pressable
-                key={lvl}
-                onPress={() => handleRequeueLevel(lvl)}
-                style={{
-                  flex: 1,
-                  paddingVertical: 10,
-                  borderRadius: 10,
-                  alignItems: 'center',
-                  backgroundColor: active ? colors.tint : colors.background,
-                }}
-              >
-                <Text style={{ fontSize: 12, fontWeight: '600', color: active ? colors.background : colors.text }}>
-                  {label}
-                </Text>
-              </Pressable>
-            );
-          })}
-        </View>
-      </View>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+      </Pressable>
 
       {/* FB188: névelő-gombsor a gépelős spanyol főnév-kártyákon. */}
       <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
@@ -510,6 +518,78 @@ export default function SettingsScreen() {
             </Pressable>
             <Pressable onPress={() => setMasterVisible(false)}>
               <Text style={[styles.cancelText, { color: colors.tabIconDefault }]}>{s.feedback.cancel}</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
+
+      {/* UTEMEZO 8: a „Nehézség" ablak, P (kézben lévő szavak), R (visszatérési
+          rés, a régi FB198 gyors-fokozatokkal) és az ékezet-szigor. */}
+      <Modal visible={difficultyVisible} transparent animationType="fade">
+        <View style={styles.overlay}>
+          <View style={[styles.modal, { backgroundColor: colors.card }]}>
+            <Text style={[styles.modalTitle, { color: colors.text }]}>{s.settings.difficulty}</Text>
+
+            <View style={styles.difficultyLabelBox}>
+              <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.handCap}</Text>
+              <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.handCapHint}</Text>
+            </View>
+            <View style={[styles.goalStepper, { justifyContent: 'center', marginTop: 8, marginBottom: 20 }]}>
+              <Pressable style={[styles.goalBtn, { borderColor: colors.tint }]} onPress={() => handleHandCapChange(-1)}>
+                <Text style={[styles.goalBtnText, { color: colors.tint }]}>−</Text>
+              </Pressable>
+              <Text style={[styles.goalValue, { color: colors.text }]}>{handCap}</Text>
+              <Pressable style={[styles.goalBtn, { borderColor: colors.tint }]} onPress={() => handleHandCapChange(1)}>
+                <Text style={[styles.goalBtnText, { color: colors.tint }]}>+</Text>
+              </Pressable>
+            </View>
+
+            <View style={styles.difficultyLabelBox}>
+              <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.gapLaps}</Text>
+              <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.gapLapsHint}</Text>
+            </View>
+            <View style={[styles.goalStepper, { justifyContent: 'center', marginTop: 8 }]}>
+              <Pressable style={[styles.goalBtn, { borderColor: colors.tint }]} onPress={() => handleGapLapsChange(-1)}>
+                <Text style={[styles.goalBtnText, { color: colors.tint }]}>−</Text>
+              </Pressable>
+              <Text style={[styles.goalValue, { color: colors.text }]}>{gapLaps}</Text>
+              <Pressable style={[styles.goalBtn, { borderColor: colors.tint }]} onPress={() => handleGapLapsChange(1)}>
+                <Text style={[styles.goalBtnText, { color: colors.tint }]}>+</Text>
+              </Pressable>
+            </View>
+            <View style={{ flexDirection: 'row', gap: 8, marginTop: 10, marginBottom: 20 }}>
+              {gapPresets.map((preset) => {
+                const active = gapLaps === preset.value;
+                return (
+                  <Pressable
+                    key={preset.value}
+                    onPress={() => handleGapLapsPreset(preset.value)}
+                    style={{
+                      flex: 1,
+                      paddingVertical: 10,
+                      borderRadius: 10,
+                      alignItems: 'center',
+                      backgroundColor: active ? colors.tint : colors.background,
+                    }}
+                  >
+                    <Text style={{ fontSize: 12, fontWeight: '600', color: active ? colors.background : colors.text }}>
+                      {preset.label}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+            </View>
+
+            <View style={[styles.wordsOnlyRow, { backgroundColor: colors.background }]}>
+              <View style={styles.difficultyLabelBox}>
+                <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.strictAccents}</Text>
+                <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.strictAccentsHint}</Text>
+              </View>
+              <Switch value={strictAccents} onValueChange={handleStrictAccentsToggle} trackColor={{ true: colors.tint }} />
+            </View>
+
+            <Pressable onPress={closeDifficultyModal} style={{ marginTop: 16 }}>
+              <Text style={[styles.cancelText, { color: colors.tabIconDefault }]}>{s.header.close}</Text>
             </Pressable>
           </View>
         </View>
