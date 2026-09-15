@@ -15,7 +15,6 @@ import { strictAnswerMatch } from '@/lib/answerMatch';
 import { nearMissDistractors } from '@/lib/distractors';
 import { consumePendingAction } from '@/lib/pendingAction';
 import { DAILY_NEW_BONUS_STEP } from '@/lib/usageStats';
-import { type NewWordPause } from '@/lib/newWordBudget';
 import { borrowNewWords, countNewWords, nextTopicWithNewWords } from '@/lib/topicRotation';
 import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
 import {
@@ -34,7 +33,7 @@ import { cardImage } from '@/lib/cardImages';
 import FeedbackButton from '@/components/FeedbackModal';
 import { speak as speakIn, loadVoices } from '@/lib/speech';
 import MockExamMode from '@/components/exam/MockExamMode';
-import DoneScreen from '@/components/DoneScreen';
+import DoneScreen, { type DoneAsk } from '@/components/DoneScreen';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import LearnChrome from '@/components/LearnChrome';
 import { languages, speechLang } from '@/lib/languages';
@@ -52,6 +51,9 @@ const DOCK_RESERVE = 76;
 // the flow above the scroll view, so neither is needed; the cap lives there.
 
 type TypingResult = 'correct' | 'almost' | 'wrong' | 'skipped' | null;
+
+// UTEMEZO 5. szakasz: a Done-képernyő négy száma, amíg a sor még nem töltődött be.
+const DONE_STATS_ZERO = { reviewsAnswered: 0, wordsStarted: 0, wordsLearned: 0, wrongLaps: 0 };
 
 // FB25/FB84: char diff lives in lib/charDiff.ts now, shared with the spelling
 // trainer, which used to carry a hand-copied twin of it.
@@ -73,15 +75,7 @@ export default function LearnScreen() {
   const cardsRef = useRef<Map<string, Card>>(new Map());
   const [revealed, setRevealed] = useState(false);
   const [streak, setStreak] = useState(0);
-  const [reviewed, setReviewed] = useState(0);
   const [done, setDone] = useState(false);
-  // FB77: how many brand-new words today's budget still allows (0 = the Done
-  // screen offers the "+5 new words" button).
-  const [newWordsLeft, setNewWordsLeft] = useState(0);
-  // FB114: the daily budget is unspent but the half-learned pile hit the WIP
-  // ceiling, so no new word joins the queue right now. Shown as ⏸ on the badge,
-  // otherwise the countdown would look stuck without saying why.
-  const [newWordsPaused, setNewWordsPaused] = useState(false);
   // FB132: Settings -> Difficulty, "accents count". Off = the beginner grader
   // forgives a missing á/é/ñ; on = it fails the answer and the diff paints it.
   const [strictAccents, setStrictAccents] = useState(false);
@@ -120,17 +114,12 @@ export default function LearnScreen() {
   // where the session ends with nothing on offer, see lib/topicRotation.ts.
   const [newWordsInTopic, setNewWordsInTopic] = useState(0);
   const [nextTopicId, setNextTopicId] = useState<string | null>(null);
-  // FB142, Kálmán 2026-08-18: "valahogy jelölje az app, hogy mennyi szó van és
-  // mennyi ismétlődik ... már rég óta 0 új szót ír de mintha újra és újra régi
-  // szavakat bedobna ismétlésre". The queue's own split (new vs review), the
-  // half-learned pile behind a pause, and the reason for the pause, so the Done
-  // screen can say what the session was made of and why.
-  const [sessionMix, setSessionMix] = useState<{ newWords: number; reviews: number }>({ newWords: 0, reviews: 0 });
-  const [unlearnedCount, setUnlearnedCount] = useState(0);
   // FB190: hány el nem kezdett szó maradt az EGÉSZ szinten. Nulla = a szint
   // szókincse elfogyott, a Kész-képernyőnek onnantól más ajánlata van.
   const [levelNewWordsLeft, setLevelNewWordsLeft] = useState(0);
-  const [pauseReason, setPauseReason] = useState<NewWordPause>('none');
+  // UTEMEZO 5. szakasz: a napi új szó beállítás, a Done-képernyő szammezőjének
+  // alapértéke.
+  const [dailyDefault, setDailyDefault] = useState(0);
   const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
   const [typedAnswer, setTypedAnswer] = useState('');
   const [typingResult, setTypingResult] = useState<TypingResult>(null);
@@ -339,13 +328,7 @@ export default function LearnScreen() {
   // UTEMEZO 6. szakasz: a regi badge/Done-allapotok kitoltese a motor
   // allapotabol. Lepesenkent hivva, hogy a fejlec sose csusszon szet a sortol.
   const syncBadges = (state: QueueState) => {
-    const h = header(state);
-    setNewWordsLeft(h.black);
-    setNewWordsPaused(false);
-    setPauseReason('none');
-    setUnlearnedCount(state.hand.length);
     setLevelNewWordsLeft(state.fresh.length);
-    setSessionMix({ newWords: state.stats.wordsStarted, reviews: state.stats.reviewsAnswered });
   };
 
   // UTEMEZO: minden allapotvaltas ezen megy at, hogy a React state, a
@@ -418,6 +401,7 @@ export default function LearnScreen() {
     // (ott ennyi UJ szo kellene); a szo-lista veglegesedese utan lejjebb a
     // tenylegesen erintetlen (fresh) szavak szamara szukul.
     const dailyLimit = await db.getDailyNewLimit();
+    setDailyDefault(dailyLimit);
     const bonus = await db.getNewLimitBonus();
     const startedToday = await db.getWordsStartedToday();
     let black = Math.max(0, dailyLimit + bonus - startedToday);
@@ -520,7 +504,6 @@ export default function LearnScreen() {
 
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
-    setReviewed(0);
 
     const built = advanceQueue(createQueue({ config, black, hand, reviews, fresh }));
     setQueueState(built);
@@ -621,6 +604,15 @@ export default function LearnScreen() {
 
   // UTEMEZO 6. szakasz: a fejlec harom szama, 0/0/0 amig a sor meg nem toltodott be.
   const { black, blue, pink } = useMemo(() => (qs ? header(qs) : { black: 0, blue: 0, pink: 0 }), [qs]);
+
+  // UTEMEZO 7. szakasz: minden lapon egy cimke, a sajat nyelven (a motor
+  // labelOf-ja csak a motor sajat, magyar teszt-cimkeje, ld. lib/sessionQueue.ts).
+  const lapLabelOf = (shown: Shown | null): string | null => {
+    if (!shown) return null;
+    if (shown.type === 'sentence') return s.lap.sentence;
+    if (shown.kind === 'review') return shown.repair ? s.lap.repair : s.lap.review;
+    return shown.repair ? s.lap.repairLap(shown.lap ?? 1) : s.lap.newLap(shown.lap ?? 1);
+  };
 
   const getFrontBack = (item: DueItem) => {
     const [native, learned] = direction;
@@ -833,19 +825,17 @@ export default function LearnScreen() {
   // FB190, Kálmán 2026-09-08: „ha már nincs új szó a szinten akkor kérdezze meg
   // hogy a szint szavait akarod gyakorolni és random adjon 32 szót a szintből.
   // vagy hogy a vizsgát megcsinálom, vagy hogy menjünk tovább a következő szint
-  // szavaira". Ez az első a három közül: 32 véletlen, MÁR MEGKEZDETT szó a
-  // szintről, esedékességtől függetlenül.
-  const PRACTICE_ROUND = 32;
-
-  const handlePractiseLevel = async () => {
+  // szavaira". Ez az első a három közül: N véletlen, MÁR MEGKEZDETT szó a
+  // szintről, esedékességtől függetlenül (UTEMEZO 5, a Done-képernyő kérdése
+  // adja N-et).
+  const handlePractiseLevel = async (n: number) => {
     const db = getDb();
-    const rows = await db.getPracticeCardsForLevel(level, PRACTICE_ROUND);
+    const rows = await db.getPracticeCardsForLevel(level, n);
     const learned = direction[1];
     const reviews = rowsToReviewLaps(rows, learned, await db.getWordsOnly(), level, await doneGrammarTopics());
     if (reviews.length === 0) return;
     const state = qsRef.current;
     const hand = state ? state.hand.map(({ wordId, lap }) => ({ wordId, lap })) : [];
-    setReviewed(0);
     setQueueState(advanceQueue(createQueue({
       config: state?.config ?? DEFAULT_QUEUE_CONFIG,
       black: 0,
@@ -880,7 +870,6 @@ export default function LearnScreen() {
             await checkLevelChange(effect.correct);
             const streakData = await db.getStreak();
             setStreak(streakData.current_count);
-            setReviewed((r) => r + 1);
           } else if (effect.type === 'passLap') {
             await db.passLap(effect.wordId);
           } else if (effect.type === 'learned') {
@@ -1091,9 +1080,16 @@ export default function LearnScreen() {
 
   if (done) {
     const examAvailable = buildMockExam(direction[1], direction[0], level).sections.length > 0 && masteredPct >= 80;
+    // UTEMEZO 5. szakasz: a kor vegi egyetlen kerdes, a motor allapotabol.
+    const doneAsk: DoneAsk = !qs
+      ? 'none'
+      : qs.fresh.length > 0 && qs.black === 0
+        ? 'more-new'
+        : qs.fresh.length === 0
+          ? 'practise'
+          : 'none';
     return (
       <DoneScreen
-        reviewed={reviewed}
         streak={streak}
         level={level}
         masteredPct={masteredPct}
@@ -1102,14 +1098,12 @@ export default function LearnScreen() {
         onStartExam={() => setExamMode(true)}
         currentTopic={currentTopic}
         topicProgress={topicProgress}
-        newWordsLeft={newWordsLeft}
-        newWordsPaused={newWordsPaused}
+        stats={qs?.stats ?? DONE_STATS_ZERO}
+        ask={doneAsk}
+        dailyDefault={dailyDefault}
         onMoreNewWords={handleMoreNewWords}
         newWordsInTopic={newWordsInTopic}
         onNextTopicWords={nextTopicId ? handleNextTopicWords : undefined}
-        sessionMix={sessionMix}
-        unlearnedCount={unlearnedCount}
-        pauseReason={pauseReason}
         levelExhausted={levelNewWordsLeft === 0}
         onPractiseLevel={handlePractiseLevel}
         onNextLevel={LEVELS.indexOf(level) + 1 < LEVELS.length ? handleNextLevel : undefined}
@@ -1275,6 +1269,7 @@ export default function LearnScreen() {
       onExamPress={() => setExamMode(true)}
       examLabel={s.exam.unlocked}
       toast={chromeToast}
+      lapLabel={lapLabelOf(qs?.current ?? null)}
     />
   );
 

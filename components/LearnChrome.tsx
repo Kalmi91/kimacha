@@ -53,6 +53,9 @@ interface Props {
   onExamPress: () => void;
   examLabel: string;
   toast: ToastProps | null;
+  // UTEMEZO 7. szakasz: a lapon lévő kis címke (pl. "új · 1/3"), null = nincs
+  // kártya (Done-képernyő, betöltés).
+  lapLabel: string | null;
 }
 
 export default function LearnChrome({
@@ -72,6 +75,7 @@ export default function LearnChrome({
   onExamPress,
   examLabel,
   toast,
+  lapLabel,
 }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -150,6 +154,14 @@ export default function LearnChrome({
           )}
         </View>
       </View>
+
+      {/* UTEMEZO 7. szakasz: minden lapon egy cimke, hogy a spec telefonon
+          ellenorizheto legyen. */}
+      {lapLabel !== null && (
+        <View style={[styles.lapChip, { backgroundColor: colors.card }]} testID="lapLabel">
+          <Text style={[styles.lapChipText, { color: colors.tabIconDefault }]}>{lapLabel}</Text>
+        </View>
+      )}
 
       {meterOpen ? (
         <Pressable onPress={() => setMeterOpen(false)}>
@@ -245,6 +257,18 @@ const styles = StyleSheet.create({
     fontVariant: ['tabular-nums'],
   },
   headSep: {
+    fontSize: 12,
+    fontWeight: '600',
+  },
+  // UTEMEZO 7. szakasz: a lap-cimke, kis lekerekitett chip a fejlec alatt.
+  lapChip: {
+    alignSelf: 'flex-start',
+    marginTop: 6,
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 8,
+  },
+  lapChipText: {
     fontSize: 12,
     fontWeight: '600',
   },

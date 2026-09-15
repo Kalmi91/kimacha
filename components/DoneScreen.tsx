@@ -1,12 +1,11 @@
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, Text, View, Pressable, TextInput } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { type Level } from '@/data/words';
 import { type TopicDef, getTopicName, getSubLevelForTopic, getTopicsForSubLevel, getSubLevelName } from '@/data/topics';
 import FeedbackButton from '@/components/FeedbackModal';
-import { DAILY_NEW_BONUS_STEPS } from '@/lib/usageStats';
-import { type NewWordPause } from '@/lib/newWordBudget';
 import { useRouter } from 'expo-router';
 
 interface TopicProgress {
@@ -16,8 +15,18 @@ interface TopicProgress {
   wordsReviewed: number;
 }
 
+// UTEMEZO 5. szakasz: a Done-kepernyo negy szama, mind erre a korre.
+interface DoneStats {
+  reviewsAnswered: number;
+  wordsStarted: number;
+  wordsLearned: number;
+  wrongLaps: number;
+}
+
+// UTEMEZO 5. szakasz: a kor vegi egyetlen kerdes, a helyzettol fuggoen.
+export type DoneAsk = 'more-new' | 'practise' | 'none';
+
 interface Props {
-  reviewed: number;
   streak: number;
   level: Level;
   masteredPct: number;
@@ -26,34 +35,26 @@ interface Props {
   examAvailable: boolean;
   currentTopic?: TopicDef | null;
   topicProgress?: TopicProgress | null;
-  newWordsLeft?: number;
-  // FB114: the daily budget still has room, but the half-learned pile hit the WIP
-  // ceiling, so no new word can join. The "+5 new words" tap raises both, hence
-  // the button is offered here too, not only at a spent budget.
-  newWordsPaused?: boolean;
-  // FB133: the learner picks how many more, not just five.
-  onMoreNewWords?: (extra: number) => void;
+  stats: DoneStats;
+  ask: DoneAsk;
+  // A szammezo alapertelmezett erteke (a napi uj szo beallitas).
+  dailyDefault: number;
+  onMoreNewWords?: (n: number) => void;
   // FB135/FB136: untouched words left in the ACTIVE topic. Zero means a bigger
   // daily budget would not produce a single card, so the offer has to be the
   // next topic instead of "+N new words".
   newWordsInTopic?: number;
   onNextTopicWords?: () => void;
-  // FB142: what the finished queue was made of, how many half-learned words are
-  // waiting behind a pause, and why the pause is on. Without this the learner
-  // only saw repeats and read it as a broken level ("az a0 szint bugos", FB141).
-  sessionMix?: { newWords: number; reviews: number };
-  unlearnedCount?: number;
-  pauseReason?: NewWordPause;
   // FB190, Kálmán 2026-09-08: „ahh szerintem most elértem ahoz hogy nincs 15 szó
   // szóval nem tudom kiválasztani, hogy mit csináljak. old meg ilyenkor." Ha a
   // SZINTEN sincs több el nem kezdett szó, a képernyő nem hallgathat: három út
   // van, gyakorlás, vizsga, vagy tovább a következő szintre.
   levelExhausted?: boolean;
-  onPractiseLevel?: () => void;
+  onPractiseLevel?: (n: number) => void;
   onNextLevel?: () => void;
 }
 
-export default function DoneScreen({ reviewed, streak, level, masteredPct, direction, onStartExam, examAvailable, currentTopic, topicProgress, newWordsLeft, newWordsPaused, onMoreNewWords, newWordsInTopic, onNextTopicWords, sessionMix, unlearnedCount = 0, pauseReason = 'none', levelExhausted = false, onPractiseLevel, onNextLevel }: Props) {
+export default function DoneScreen({ streak, level, masteredPct, direction, onStartExam, examAvailable, currentTopic, topicProgress, stats, ask, dailyDefault, onMoreNewWords, newWordsInTopic, onNextTopicWords, levelExhausted = false, onPractiseLevel, onNextLevel }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
@@ -71,30 +72,38 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
     ? Math.min(Math.max(topicProgress.done - ((subTopics[0]?.order ?? 1) - 1), 0), subTopics.length)
     : 0;
 
+  // UTEMEZO 5. szakasz: a kor vegi egyetlen kerdes szammezeje, a napi
+  // alapertekre eloallitva; "Nem" csak elrejti, nem hivja a hivot.
+  const [askInput, setAskInput] = useState(String(dailyDefault));
+  const [askDismissed, setAskDismissed] = useState(false);
+  const askedN = () => {
+    const n = parseInt(askInput, 10);
+    return Number.isFinite(n) && n >= 1 ? n : Math.max(1, dailyDefault);
+  };
+
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <Text style={styles.doneEmoji}>🎉</Text>
       <Text style={[styles.title, { color: colors.text }]}>{s.done.title}</Text>
-      <Text style={[styles.subtitle, { color: colors.tabIconDefault }]}>
-        {s.done.reviewed(reviewed)}
-      </Text>
-      {/* FB142: name the split instead of leaving "why was this all repeats?"
-          to guesswork, and say what holds the new words back. */}
-      {sessionMix && (
-        <Text style={[styles.mixText, { color: colors.tabIconDefault }]}>
-          {s.done.sessionMix(sessionMix.newWords, sessionMix.reviews)}
-        </Text>
-      )}
-      {pauseReason === 'congested' && (
-        <Text style={[styles.mixText, { color: colors.accent }]}>
-          {s.done.newWordsCongested(unlearnedCount)}
-        </Text>
-      )}
-      {pauseReason === 'daily-limit' && (
-        <Text style={[styles.mixText, { color: colors.tabIconDefault }]}>
-          {s.done.newWordsSpent}
-        </Text>
-      )}
+      {/* UTEMEZO 5. szakasz: a kor negy szama. */}
+      <View style={styles.statsGrid}>
+        <View style={styles.statsCell}>
+          <Text style={[styles.statsNumber, { color: colors.text }]}>{stats.reviewsAnswered}</Text>
+          <Text style={[styles.statsLabel, { color: colors.tabIconDefault }]}>{s.done.reviewLaps}</Text>
+        </View>
+        <View style={styles.statsCell}>
+          <Text style={[styles.statsNumber, { color: colors.text }]}>{stats.wordsStarted}</Text>
+          <Text style={[styles.statsLabel, { color: colors.tabIconDefault }]}>{s.done.wordsStarted}</Text>
+        </View>
+        <View style={styles.statsCell}>
+          <Text style={[styles.statsNumber, { color: colors.text }]}>{stats.wordsLearned}</Text>
+          <Text style={[styles.statsLabel, { color: colors.tabIconDefault }]}>{s.done.wordsLearned}</Text>
+        </View>
+        <View style={styles.statsCell}>
+          <Text style={[styles.statsNumber, { color: colors.text }]}>{stats.wrongLaps}</Text>
+          <Text style={[styles.statsLabel, { color: colors.tabIconDefault }]}>{s.done.wrongLaps}</Text>
+        </View>
+      </View>
       <View style={[styles.levelBadge, { backgroundColor: '#38BDF8' }]}>
         <Text style={styles.levelText}>{level}</Text>
       </View>
@@ -132,28 +141,48 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
           <Text style={styles.filledBtnText}>{s.topic.chooseTopic}</Text>
         </Pressable>
       )}
-      {/* FB77: today's new-word budget ran out, offer more instead of ending the
-          session; the standing limit itself lives in Settings. FB133: three
-          sizes (+5/+10/+15), and filled buttons, because the outlined ones did
-          not read as tappable ("legyenek teli gombok"). */}
-      {/* FB190: nem a téma fogyott el, hanem a SZINT. Ilyenkor a „következő téma"
-          és a „+N új szó" is üres ígéret lenne, ezért itt a három valódi út áll:
-          gyakorlás a szint szavaiból, vizsga, vagy a következő szint. */}
+      {/* UTEMEZO 5. szakasz: a kor vegi egyetlen kerdes, a helyzettol fuggoen
+          (fekete=0 review is elfogyott -> tobb uj szo; fekete=0 mert a szinten
+          nincs tobb uj szo -> gyakorlas a szintbol). */}
+      {ask !== 'none' && !askDismissed && (
+        <View style={styles.askBox}>
+          <Text style={[styles.topicEmptyText, { color: colors.text }]}>
+            {ask === 'more-new' ? s.done.askMoreNew : s.done.askPractise}
+          </Text>
+          <TextInput
+            testID="askNumber"
+            style={[styles.askInput, { color: colors.text, borderColor: colors.tabIconDefault }]}
+            keyboardType="number-pad"
+            value={askInput}
+            onChangeText={setAskInput}
+          />
+          <Pressable
+            style={({ pressed }) => [styles.filledBtn, { backgroundColor: colors.tint, marginTop: 12, opacity: pressed ? 0.8 : 1 }]}
+            onPress={() => {
+              const n = askedN();
+              if (ask === 'more-new') onMoreNewWords?.(n);
+              else onPractiseLevel?.(n);
+              setAskDismissed(true);
+            }}
+          >
+            <Text style={styles.filledBtnText}>{ask === 'more-new' ? s.done.yesThisMany : s.done.yesPractise}</Text>
+          </Pressable>
+          <Pressable
+            style={({ pressed }) => [styles.outlineBtn, { borderColor: colors.tint, marginTop: 10, opacity: pressed ? 0.8 : 1 }]}
+            onPress={() => setAskDismissed(true)}
+          >
+            <Text style={[styles.outlineBtnText, { color: colors.tint }]}>{ask === 'more-new' ? s.done.noEnoughToday : s.done.no}</Text>
+          </Pressable>
+        </View>
+      )}
+      {/* FB190: nem a téma fogyott el, hanem a SZINT. A vizsga és a következő
+          szint gomb a kerdes alatt marad ajanlatkent. */}
       {levelExhausted && (
         <View style={styles.levelDoneBox}>
-          <Text style={[styles.topicEmptyText, { color: colors.text }]}>{s.done.levelWordsDone}</Text>
-          {onPractiseLevel && (
-            <Pressable
-              style={({ pressed }) => [styles.filledBtn, { backgroundColor: colors.tint, marginTop: 12, opacity: pressed ? 0.8 : 1 }]}
-              onPress={onPractiseLevel}
-            >
-              <Text style={styles.filledBtnText}>{s.done.practiseLevel}</Text>
-            </Pressable>
-          )}
           <Pressable
             style={({ pressed }) => [
               styles.filledBtn,
-              { backgroundColor: examAvailable ? colors.accent : colors.card, marginTop: 10, opacity: pressed ? 0.8 : 1 },
+              { backgroundColor: examAvailable ? colors.accent : colors.card, opacity: pressed ? 0.8 : 1 },
             ]}
             disabled={!examAvailable}
             onPress={onStartExam}
@@ -190,23 +219,6 @@ export default function DoneScreen({ reviewed, streak, level, masteredPct, direc
           </Pressable>
         </>
       )}
-      {(newWordsLeft === 0 || newWordsPaused) && (newWordsInTopic ?? 0) > 0 && onMoreNewWords && (
-        <View style={styles.moreWordsRow}>
-          {DAILY_NEW_BONUS_STEPS.map(extra => (
-            <Pressable
-              key={extra}
-              style={({ pressed }) => [
-                styles.filledBtn,
-                styles.rowBtn,
-                { backgroundColor: colors.accent, opacity: pressed ? 0.8 : 1 },
-              ]}
-              onPress={() => onMoreNewWords(extra)}
-            >
-              <Text style={styles.filledBtnText}>{s.done.moreNewWords(extra)}</Text>
-            </Pressable>
-          ))}
-        </View>
-      )}
       <View style={[styles.streakBadge, { backgroundColor: colors.card, marginTop: 12 }]}>
         <Text style={[styles.streakNumber, { color: colors.accent }]}>{streak}</Text>
         <Text style={[styles.streakLabel, { color: colors.tabIconDefault }]}>{s.done.streak}</Text>
@@ -230,8 +242,11 @@ const styles = StyleSheet.create({
   container: { flex: 1, padding: 20, justifyContent: 'center' },
   doneEmoji: { fontSize: 64, textAlign: 'center', marginBottom: 16 },
   title: { fontSize: 28, fontWeight: '700', textAlign: 'center', marginBottom: 8 },
-  subtitle: { fontSize: 16, textAlign: 'center', marginBottom: 8 },
-  mixText: { fontSize: 13, textAlign: 'center', marginBottom: 8, paddingHorizontal: 8 },
+  // UTEMEZO 5. szakasz: a kor negy szama, 2x2 racs.
+  statsGrid: { flexDirection: 'row', flexWrap: 'wrap', alignSelf: 'center', marginBottom: 12, width: '80%' },
+  statsCell: { width: '50%', alignItems: 'center', marginBottom: 8 },
+  statsNumber: { fontSize: 22, fontWeight: '700' },
+  statsLabel: { fontSize: 12, marginTop: 2, textAlign: 'center' },
   levelBadge: { paddingHorizontal: 20, paddingVertical: 8, borderRadius: 12, alignSelf: 'center' },
   levelText: { color: '#FFF', fontSize: 24, fontWeight: '800' },
   streakBadge: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 12, paddingVertical: 6, borderRadius: 16, gap: 4, alignSelf: 'center' },
@@ -247,9 +262,20 @@ const styles = StyleSheet.create({
   topicCounter: { fontSize: 12, fontWeight: '500' },
   examBtn: { paddingHorizontal: 32, paddingVertical: 14, borderRadius: 14, minWidth: 160, alignItems: 'center', alignSelf: 'center' },
   examBtnText: { color: '#FFF', fontSize: 18, fontWeight: '700' },
-  // FB133: filled buttons, the outlined ones did not read as tappable.
-  moreWordsRow: { flexDirection: 'row', alignSelf: 'stretch', gap: 8, marginTop: 16 },
   topicEmptyText: { fontSize: 13, textAlign: 'center', marginTop: 16, paddingHorizontal: 8 },
+  // UTEMEZO 5. szakasz: a kor vegi kerdes doboza (szoveg + szammezo + ket gomb).
+  askBox: { marginTop: 18, alignSelf: 'stretch', paddingHorizontal: 24 },
+  askInput: {
+    marginTop: 10,
+    marginBottom: 4,
+    alignSelf: 'center',
+    width: 80,
+    borderWidth: 1,
+    borderRadius: 10,
+    paddingVertical: 8,
+    textAlign: 'center',
+    fontSize: 16,
+  },
   // Kálmán 2026-09-09: a gombok eddig a saját feliratukhoz zsugorodtak
   // (`alignSelf: 'center'`), ezért az egymás alatti gombok más-más szélesek
   // lettek. Egy alak: azonos szélesség, azonos magasság (a kitöltöttön is ott a
@@ -275,6 +301,4 @@ const styles = StyleSheet.create({
   },
   outlineBtnText: { fontSize: 15, fontWeight: '700' },
   filledBtnText: { color: '#FFF', fontSize: 15, fontWeight: '700', textAlign: 'center' },
-  // A +5/+10/+15 sor három gombja egyenlő szélességű, nem a felirat hossza dönt.
-  rowBtn: { flex: 1, paddingHorizontal: 8 },
 });

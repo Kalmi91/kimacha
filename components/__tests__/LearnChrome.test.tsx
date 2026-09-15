@@ -21,6 +21,7 @@ const base = {
   onExamPress: () => {},
   examLabel: 'exam',
   toast: null,
+  lapLabel: null,
 };
 
 // FB169: the pink slice is cut out of the blue fill, so it sits at the fill's
@@ -74,5 +75,21 @@ describe('LearnChrome head numbers', () => {
     );
     fireEvent.press(getByTestId('headerHelp'));
     expect(getByText(t().header.title)).toBeTruthy();
+  });
+});
+
+// UTEMEZO 7. szakasz: a lap-cimke chip.
+describe('LearnChrome lap label', () => {
+  it('renders the chip text when given', () => {
+    const { getByTestId, getByText } = render(
+      <LearnChrome {...base} known={50} reviewLeft={0} lapLabel="új · 1/3" />,
+    );
+    expect(getByTestId('lapLabel')).toBeTruthy();
+    expect(getByText('új · 1/3')).toBeTruthy();
+  });
+
+  it('renders nothing when null', () => {
+    const { queryByTestId } = render(<LearnChrome {...base} known={50} reviewLeft={0} lapLabel={null} />);
+    expect(queryByTestId('lapLabel')).toBeNull();
   });
 });

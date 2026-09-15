@@ -42,19 +42,24 @@ export default {
   },
   done: {
     title: 'Kész vagy mára!',
-    reviewed: (n: number) => `${n} kártyát néztél át.`,
     streak: 'nap streak',
-    moreNewWords: (n: number) => `+${n} új szó`,
     nextTopicWords: 'Új szavak másik témából',
     topicEmpty: 'Ebben a témában most nincs új szó, a többi már későbbre van ütemezve.',
-    levelWordsDone: 'Ezen a szinten minden szót elkezdtél. Innen három út van:',
-    practiseLevel: 'Gyakorlás: 32 szó a szintről',
     takeExam: 'Vizsga',
     examLocked: (pct: number) => `Vizsga (${pct}% készültségtől)`,
     nextLevel: 'Tovább a következő szintre',
-    sessionMix: (nw: number, rv: number) => `Ebben a körben: ${nw} új szó, ${rv} ismétlés.`,
-    newWordsCongested: (n: number) => `Most nincs új szó: ${n} félig tanult szó vár még. Ha mégis kérsz, nyomd meg a "+" gombot.`,
-    newWordsSpent: 'A mai új szó keret elfogyott.',
+    // UTEMEZO 5. szakasz: a Done-képernyő négy száma.
+    reviewLaps: 'ismétlő lap',
+    wordsStarted: 'új szó indult',
+    wordsLearned: 'szó megtanult',
+    wrongLaps: 'rontott lap',
+    // UTEMEZO 5. szakasz: a kör végi egyetlen kérdés, a helyzettől függően.
+    askMoreNew: 'Tanulsz még új szót?',
+    yesThisMany: 'Igen, ennyit',
+    noEnoughToday: 'Nem, mára ennyi',
+    askPractise: 'Gyakorolsz még véletlen szavakat a szintből?',
+    yesPractise: 'Igen',
+    no: 'Nem',
   },
   tabs: {
     learn: 'Tanulás',
@@ -517,6 +522,14 @@ export default {
   },
   progress: {
     wordsKnown: 'Ismert Szavak',
+  },
+  // UTEMEZO 7. szakasz: a lapok tetején álló kis címke.
+  lap: {
+    newLap: (n: number) => `új · ${n}/3`,
+    review: 'ismétlés',
+    repair: 'javítás',
+    repairLap: (n: number) => `javítás · ${n}/3`,
+    sentence: 'mondat',
   },
   // UTEMEZO 6. szakasz: a fejléc három számára koppintva megnyíló magyarázó ablak.
   header: {
