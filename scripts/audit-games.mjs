@@ -361,14 +361,163 @@ function markWords(sentence) {
   return (sentence.match(/[\p{L}\p{M}\d]+(?:['’-][\p{L}\p{M}\d]+)*/gu) ?? []).map((w) => normalize(w));
 }
 
+// ---------------------------------------------------------------------------
+// LECKE-SEMA 4: LessonV2 (schema 2) body/speak/match/form ellenőrzés. A
+// régi (rule/more, gap/mark-only) leckéknél ez a szakasz nem fut; azok
+// pontosan úgy futnak tovább, ahogy eddig.
+// ---------------------------------------------------------------------------
+
+function tableIdsOf(topic) {
+  const ids = new Set();
+  for (const block of topic.body ?? []) {
+    if (block?.kind === 'table' && block.id) ids.add(block.id);
+  }
+  return ids;
+}
+
+function auditExamplePairs(examples, path, minCount) {
+  if (!Array.isArray(examples) || examples.length < minCount) {
+    p1.push({ path, issue: `needs >=${minCount} examples` });
+    return;
+  }
+  for (const ex of examples) {
+    if (!ex?.es) p1.push({ path, issue: 'example missing es' });
+    checkLangs(ex?.tr, `${path} example tr`);
+  }
+}
+
+function auditLessonBody(topic, path) {
+  if (!Array.isArray(topic.body) || topic.body.length === 0) {
+    p1.push({ path, issue: 'V2 lesson missing body blocks' });
+    return;
+  }
+  const seenTableIds = new Set();
+  topic.body.forEach((block, i) => {
+    const blockPath = `${path} body[${i}:${block?.kind ?? '?'}]`;
+    switch (block?.kind) {
+      case 'text':
+      case 'tip':
+        checkLangs(block.text, `${blockPath} text`);
+        break;
+      case 'list':
+      case 'usage': {
+        const points = block.kind === 'list' ? block.items : block.points;
+        if (!Array.isArray(points) || points.length === 0) {
+          p1.push({ path: blockPath, issue: `${block.kind} block has no points` });
+          break;
+        }
+        points.forEach((point, pi) => {
+          checkLangs(point?.text, `${blockPath} point[${pi}] text`);
+          auditExamplePairs(point?.examples, `${blockPath} point[${pi}]`, 2);
+        });
+        break;
+      }
+      case 'examples':
+        auditExamplePairs(block.examples, blockPath, 1);
+        break;
+      case 'table':
+        if (!block.id) p1.push({ path: blockPath, issue: 'table missing id' });
+        else if (seenTableIds.has(block.id)) p1.push({ path: blockPath, issue: `duplicate table id "${block.id}"` });
+        seenTableIds.add(block.id);
+        checkLangs(block.title, `${blockPath} title`);
+        if (!Array.isArray(block.header) || block.header.length === 0) {
+          p1.push({ path: blockPath, issue: 'table missing header' });
+        } else {
+          block.header.forEach((cell, ci) => checkLangs(cell, `${blockPath} header[${ci}]`));
+        }
+        if (!Array.isArray(block.rows) || block.rows.length < 1) {
+          p1.push({ path: blockPath, issue: 'table needs >=1 row' });
+        }
+        break;
+      case 'contrast':
+        if (!Array.isArray(block.pairs) || block.pairs.length === 0) {
+          p1.push({ path: blockPath, issue: 'contrast block has no pairs' });
+          break;
+        }
+        block.pairs.forEach((pair, pi) => {
+          if (!pair?.a || !pair?.b) p1.push({ path: `${blockPath} pair[${pi}]`, issue: 'contrast pair missing a/b' });
+          checkLangs(pair?.note, `${blockPath} pair[${pi}] note`);
+          auditExamplePairs(pair?.examples, `${blockPath} pair[${pi}]`, 2);
+        });
+        break;
+      default:
+        p1.push({ path: blockPath, issue: `unknown body block kind "${block?.kind}"` });
+    }
+  });
+}
+
+function auditLessonSpeak(topic, path) {
+  checkLangs(topic.speak, `${path} speak`);
+  for (const lang of LANGS) {
+    const text = topic.speak?.[lang];
+    if (typeof text !== 'string') continue;
+    const speakPath = `${path} speak[${lang}]`;
+    const opens = (text.match(/«/g) ?? []).length;
+    const closes = (text.match(/»/g) ?? []).length;
+    if (opens === 0) p1.push({ path: speakPath, issue: 'no «...» marked segment (spec: at least one Spanish section)' });
+    if (opens !== closes) p1.push({ path: speakPath, issue: 'unbalanced «» markers' });
+    if (/[0-9]/.test(text)) p1.push({ path: speakPath, issue: 'digits not allowed in speak text' });
+    if (/[()]/.test(text)) p1.push({ path: speakPath, issue: 'parentheses not allowed in speak text' });
+  }
+}
+
+function auditMatchItem(item, itemPath) {
+  const pairs = item.pairs;
+  if (!Array.isArray(pairs) || pairs.length < 5 || pairs.length > 6) {
+    p1.push({ path: itemPath, issue: `match item needs 5-6 pairs, has ${pairs?.length ?? 0}` });
+    return;
+  }
+  const esSeen = new Set();
+  const enSeen = new Set();
+  for (const pair of pairs) {
+    if (!pair?.es) p1.push({ path: itemPath, issue: 'match pair missing es' });
+    if (!pair?.en) p1.push({ path: itemPath, issue: 'match pair missing en' });
+    if (pair?.es) {
+      if (esSeen.has(pair.es)) p1.push({ path: itemPath, issue: `duplicate match es "${pair.es}"` });
+      esSeen.add(pair.es);
+    }
+    if (pair?.en) {
+      if (enSeen.has(pair.en)) p1.push({ path: itemPath, issue: `duplicate match en "${pair.en}"` });
+      enSeen.add(pair.en);
+    }
+  }
+}
+
+function auditFormItem(item, itemPath, topic, tableIds) {
+  if (!item.person) p1.push({ path: itemPath, issue: 'form item missing person' });
+  if (!item.verb) p1.push({ path: itemPath, issue: 'form item missing verb' });
+  if (!item.answer) p1.push({ path: itemPath, issue: 'form item missing answer' });
+  if (!item.table || !tableIds.has(item.table)) {
+    p1.push({ path: itemPath, issue: `form item references unknown table "${item.table}"` });
+    return;
+  }
+  const table = topic.body.find((b) => b.kind === 'table' && b.id === item.table);
+  const row = table?.rows?.find((r) => r[0] === item.person);
+  if (!row) {
+    p1.push({ path: itemPath, issue: `form item person "${item.person}" not found in table "${item.table}"` });
+  } else if (row[1] !== item.answer) {
+    p1.push({ path: itemPath, issue: `form item answer "${item.answer}" does not match table row form "${row[1]}"` });
+  }
+}
+
 function auditGrammarTopic(topic, filePath) {
   const path = `grammar/${filePath}`;
   if (!topic.topic) p1.push({ path, issue: 'missing topic id' });
   if (!LEVELS.includes(topic.level)) p1.push({ path, issue: `missing/unknown level: ${topic.level}` });
 
   checkLangs(topic.title, `${path} title`);
-  checkLangs(topic.rule, `${path} rule`);
-  if (topic.more) checkLangs(topic.more, `${path} more`);
+
+  const isV2 = topic.schema === 2;
+  if (isV2) {
+    if ('rule' in topic) p1.push({ path, issue: 'V2 lesson (schema 2) must not have a rule field' });
+    if ('more' in topic) p1.push({ path, issue: 'V2 lesson (schema 2) must not have a more field' });
+    auditLessonBody(topic, path);
+    auditLessonSpeak(topic, path);
+  } else {
+    checkLangs(topic.rule, `${path} rule`);
+    if (topic.more) checkLangs(topic.more, `${path} more`);
+  }
+  const tableIds = isV2 ? tableIdsOf(topic) : null;
 
   const taughtSet = cumulativeTaught(topic.level ?? 'C1');
   const extra = glossaryTokenSet(topic.glossary);
@@ -378,6 +527,17 @@ function auditGrammarTopic(topic, filePath) {
     const itemPath = `${path} item ${item.id ?? '?'}`;
     if (seenIds.has(item.id)) p2.push({ path: itemPath, issue: `duplicate item id "${item.id}"` });
     seenIds.add(item.id);
+
+    // LECKE-SEMA 2: match/form saját ellenőrzőt kap, a gap/mark-os ág alatta
+    // változatlan (a "mint eddig" spec-ígéret).
+    if (item.kind === 'match') {
+      auditMatchItem(item, itemPath);
+      continue;
+    }
+    if (item.kind === 'form') {
+      auditFormItem(item, itemPath, topic, tableIds ?? new Set());
+      continue;
+    }
 
     // FB219: a jelölős tétel kész mondatot ad, és a mondat egyik szavára kell
     // koppintani, tehát se lyuk, se opció-lista nincs benne.

@@ -6,19 +6,56 @@
 // correct answer isn't predictably in the JSON's authored slot 0.
 
 import { shuffleArray, shuffleOptions, hashString } from '../shuffle';
-import { isMarkItem, type GrammarItem, type GrammarTopicData } from './content';
+import {
+  isFormItem,
+  isMarkItem,
+  isMatchItem,
+  type GrammarGapItem,
+  type GrammarItem,
+  type GrammarMarkItem,
+  type GrammarTopicData,
+} from './content';
+import type { FormItem, MatchItem } from '../grammar/lessonTypes';
 import { markAnswerIndex, markTokens } from './grammarMark';
 
-export interface GrammarRoundItem {
-  item: GrammarItem;
-  /** gap: a felkínált opciók kevert sorrendben; mark: a mondat szavai, sorrendben. */
+// A gap/mark tétel mindig kap opció-listát (gap: a felkínált válaszok kevert
+// sorrendben; mark: a mondat szavai, sorrendben) és egy helyes indexet;
+// match/formnak nincs se opciója, se indexe, azok saját képernyő-ágon
+// (GrammarDrill) rajzolódnak ki. A két alak KÜLÖN típus, nem egy opcionális
+// mezőkkel teletűzdelt közös alak, hogy a `.options`/`.correctIndex` a
+// gap/mark ágon garantáltan jelen legyen (lásd ccat.ts `isChoiceRoundItem`
+// szűrését, ami erre a garanciára épít).
+export interface GrammarChoiceRoundItem {
+  item: GrammarGapItem | GrammarMarkItem;
   options: string[];
   correctIndex: number; // index into `options`
 }
 
+export interface GrammarMatchFormRoundItem {
+  item: MatchItem | FormItem;
+}
+
+export type GrammarRoundItem = GrammarChoiceRoundItem | GrammarMatchFormRoundItem;
+
+export function isChoiceRoundItem(r: GrammarRoundItem): r is GrammarChoiceRoundItem {
+  return 'options' in r;
+}
+
+// LECKE-SEMA 2: a LessonV2 két új item-fajtája (match, form) a lecke szerzői
+// sorrendjében kerül a kör VÉGÉRE, a gap/mark kör után, egymás közt és a
+// gap/mark körrel sem keverve (spec: "no shuffling of kinds"). Hogy egy adott
+// képernyő látja-e ezt a két csoportot, a GrammarDrill dönti el
+// (`includeAllKinds` prop): a lecke-drill igen (step 3-4), a Game fül
+// grammar-choice-a nem, az változatlanul csak a gap/mark kört futtatja.
 export function buildGrammarRound(topic: GrammarTopicData, seed: number): GrammarRoundItem[] {
-  const orderedItems = shuffleArray(topic.items, seed);
-  return orderedItems.map((item) => {
+  // A `topic.items` uniós elem-típusa (LegacyLesson vs LessonV2) a `.filter`
+  // narrowing-jét megzavarja; a `GrammarItem[]` cast egy lapos típusra hozza,
+  // mielőtt a predikátum leszűkít.
+  const allItems = topic.items as GrammarItem[];
+  const choiceItems = allItems.filter(
+    (item): item is GrammarGapItem | GrammarMarkItem => !isMatchItem(item) && !isFormItem(item)
+  );
+  const orderedChoice: GrammarChoiceRoundItem[] = shuffleArray(choiceItems, seed).map((item) => {
     // FB219: a jelölős feladatnál a sorrend maga a mondat, tehát nincs mit
     // keverni; az „opciók" a mondat szavai, a helyes index a keresett szóé.
     if (isMarkItem(item)) {
@@ -32,10 +69,23 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
     const { options, correctIndex } = shuffleOptions(item.options, item.correct, optionSeed);
     return { item, options, correctIndex };
   });
+
+  const matchItems: GrammarMatchFormRoundItem[] = allItems
+    .filter((item): item is MatchItem => isMatchItem(item))
+    .map((item) => ({ item }));
+  const formItems: GrammarMatchFormRoundItem[] = allItems
+    .filter((item): item is FormItem => isFormItem(item))
+    .map((item) => ({ item }));
+
+  return [...orderedChoice, ...matchItems, ...formItems];
 }
 
 // The wrong-answer explanation is keyed by the option's own text (GAMES.md
 // 4.11 JSON: `wrong[optionText][lang]`), unaffected by the render-time shuffle.
-export function wrongExplanation(item: GrammarItem, optionText: string, lang: string): string | undefined {
+export function wrongExplanation(
+  item: GrammarGapItem | GrammarMarkItem,
+  optionText: string,
+  lang: string
+): string | undefined {
   return item.wrong[optionText]?.[lang];
 }

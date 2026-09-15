@@ -13,6 +13,7 @@
 // game screens should need to change.
 
 import { LEVELS, getWordsForLevel, type Level } from '@/data/words';
+import type { FormItem, LessonV2, MatchItem } from '../grammar/lessonTypes';
 
 // Cumulative corpus word ids up to and including `level` (A0..level), used by
 // the content-driven game screens to build GlossText's `knownWordIds`: a
@@ -262,20 +263,44 @@ export interface GrammarMarkItem extends GrammarItemBase {
   answerIndex?: number;
 }
 
-export type GrammarItem = GrammarGapItem | GrammarMarkItem;
+// LECKE-SEMA 1-2. szakasz: match/form a body-blokkos LessonV2 új feladat-
+// fajtái, ide is bekerülnek, hogy egy GrammarItem-fogyasztó (a választós
+// játék köre) minden lecke-item-fajtát ismerjen, még ha egyelőre csak a
+// gap/mark kettőt dolgozza is fel (lib/games/grammarChoice.ts szűri ki a
+// match/form-ot a köréből, azok a lecke-képernyőn jelennek meg, step 3-4).
+export type GrammarItem = GrammarGapItem | GrammarMarkItem | MatchItem | FormItem;
 
 export function isMarkItem(item: GrammarItem): item is GrammarMarkItem {
   return item.kind === 'mark';
 }
 
-export interface GrammarTopicData {
+export function isMatchItem(item: GrammarItem): item is MatchItem {
+  return item.kind === 'match';
+}
+
+export function isFormItem(item: GrammarItem): item is FormItem {
+  return item.kind === 'form';
+}
+
+// A régi (prózás rule/more) lecke-alak. Amíg a 20 másik témát nem migrálják
+// a LessonV2 blokk-sémára (LECKE-SEMA), ez él tovább változatlanul.
+export interface LegacyLesson {
+  schema?: undefined;
   topic: string;
   level: Level;
   title: Record<string, string>; // hu/en/es/de
   rule: Record<string, string>; // hu/en/es/de, the topic's one-sentence rule card
   more?: Record<string, string>; // hu/en/es/de, K21 collapsed "Több" block: exceptions/edge cases
   glossary?: { word: string; gloss: Record<string, string> }[];
-  items: GrammarItem[];
+  items: (GrammarGapItem | GrammarMarkItem)[]; // a régi séma sosem tartalmaz match/form-ot
+}
+
+// LECKE-SEMA: a régi és az új lecke-alak uniója, hogy a két séma egymás
+// mellett élhessen a migráció alatt.
+export type GrammarTopicData = LegacyLesson | LessonV2;
+
+export function isLessonV2(t: GrammarTopicData): t is LessonV2 {
+  return t.schema === 2;
 }
 
 // Q1 (A1 alapok), GAMES.md 10. szekció token-burn queue.
