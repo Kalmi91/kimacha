@@ -2,7 +2,6 @@ import * as SQLite from 'expo-sqlite';
 import { createEmptyCard, type Card } from 'ts-fsrs';
 import { BACKUP_SCHEMA_VERSION, BACKUP_TABLES, getAppVersion, type BackupPayload } from './backup';
 import { pickSurvivor } from './cardMerge';
-import { DEFAULT_REQUEUE_LEVEL } from './requeueGap';
 import { rankSentencesByWordWeakness, sentenceSlotCount, type WordWeakness } from './sentenceMix';
 import { WORD_MERGES } from './wordMerges';
 import { LAPS, type Lap } from './lap';
@@ -84,9 +83,12 @@ export interface DB {
   // FB188: a névelő-gombsor a gépelős spanyol főnév-kártyán, ki-be kapcsolható.
   getArticlePicker(): Promise<boolean>;
   setArticlePicker(v: boolean): Promise<void>;
-  // FB198: hány lap teljen el, mielőtt egy elrontott szó visszajön.
-  getRequeueLevel(): Promise<string>;
-  setRequeueLevel(v: string): Promise<void>;
+  // UTEMEZO 8: a „Nehézség" ablak három beállítása. P (3.1) és R (4.2) a
+  // requeue_level tárcsát (FB198) váltja fel, lásd getGapLaps.
+  getHandCap(): Promise<number>;
+  setHandCap(n: number): Promise<void>;
+  getGapLaps(): Promise<number>;
+  setGapLaps(n: number): Promise<void>;
   getWeeklyGoalMinutes(): Promise<number>;
   setWeeklyGoalMinutes(minutes: number): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
@@ -217,7 +219,9 @@ class SQLiteDB implements DB {
         weekly_goal_minutes INTEGER,
         daily_new_limit INTEGER,
         new_bonus INTEGER,
-        new_bonus_date TEXT
+        new_bonus_date TEXT,
+        hand_cap INTEGER,
+        gap_laps INTEGER
       );
       CREATE TABLE IF NOT EXISTS spelling_list (
         pair TEXT NOT NULL,
@@ -297,6 +301,14 @@ class SQLiteDB implements DB {
     } catch {}
     try {
       await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN new_bonus_date TEXT');
+    } catch {}
+    // UTEMEZO 8: hand_cap (P) and gap_laps (R) columns (DBs created before the
+    // difficulty window, which replaces the FB198 requeue_level dial).
+    try {
+      await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN hand_cap INTEGER');
+    } catch {}
+    try {
+      await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN gap_laps INTEGER');
     } catch {}
     const meta = await this.db.getFirstAsync<any>('SELECT id FROM user_meta WHERE id = 1');
     if (!meta) {
@@ -1072,20 +1084,45 @@ class SQLiteDB implements DB {
     );
   }
 
-  // FB198, Kálmán 2026-09-09: „van hogy túl gyorsan következik igyan az a szó és még
-  // a rövid távú memoriám tárolja". A távolság beállítás, a sor hosszának véletlene
-  // helyett; a skála a lib/requeueGap.ts-ben él.
-  async getRequeueLevel(): Promise<string> {
+  // UTEMEZO 8/3.1: P, hány szó lehet egyszerre kézben. Tartomány 1-10, alap 5.
+  async getHandCap(): Promise<number> {
     const db = await this.open();
-    const row = await db.getFirstAsync<any>('SELECT requeue_level FROM learn_settings WHERE pair = ?', [this.activePair]);
-    return row?.requeue_level ?? DEFAULT_REQUEUE_LEVEL;
+    const row = await db.getFirstAsync<any>('SELECT hand_cap FROM learn_settings WHERE pair = ?', [this.activePair]);
+    const v = typeof row?.hand_cap === 'number' ? row.hand_cap : 5;
+    return Math.min(10, Math.max(1, v));
   }
 
-  async setRequeueLevel(v: string): Promise<void> {
+  async setHandCap(n: number): Promise<void> {
     const db = await this.open();
     await db.runAsync(
-      'INSERT INTO learn_settings (pair, requeue_level) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET requeue_level = excluded.requeue_level',
-      [this.activePair, v]
+      'INSERT INTO learn_settings (pair, hand_cap) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET hand_cap = excluded.hand_cap',
+      [this.activePair, Math.min(10, Math.max(1, n))]
+    );
+  }
+
+  // UTEMEZO 8/4.2: R, hány lap teljen el, mielőtt egy elrontott szó visszajön.
+  // Tartomány 1-30, alap 5. Régen a FB198-tárcsa (easy/normal/hard, lásd a
+  // requeue_level oszlopot) adta ugyanezt a távolságot; ha gap_laps még üres,
+  // de requeue_level be volt állítva, a régi fokozat számértékét vesszük át,
+  // és el is mentjük, hogy legközelebb már sima olvasás legyen.
+  async getGapLaps(): Promise<number> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT gap_laps, requeue_level FROM learn_settings WHERE pair = ?', [this.activePair]);
+    if (typeof row?.gap_laps === 'number') return Math.min(30, Math.max(1, row.gap_laps));
+    if (row?.requeue_level) {
+      const carryOver: Record<string, number> = { easy: 5, normal: 12, hard: 25 };
+      const carried = carryOver[row.requeue_level] ?? 5;
+      await this.setGapLaps(carried);
+      return carried;
+    }
+    return 5;
+  }
+
+  async setGapLaps(n: number): Promise<void> {
+    const db = await this.open();
+    await db.runAsync(
+      'INSERT INTO learn_settings (pair, gap_laps) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET gap_laps = excluded.gap_laps',
+      [this.activePair, Math.min(30, Math.max(1, n))]
     );
   }
 
