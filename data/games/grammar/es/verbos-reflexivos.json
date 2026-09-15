@@ -1,0 +1,371 @@
+{
+  "topic": "verbos-reflexivos",
+  "level": "A2",
+  "title": {
+    "hu": "Visszaható igék: én magamon csinálom",
+    "en": "Reflexive verbs: doing it to yourself",
+    "es": "Verbos reflexivos: lo haces a ti mismo",
+    "de": "Reflexive Verben: du tust es dir selbst"
+  },
+  "rule": {
+    "hu": "A visszaható igénél a cselekvő és az, akire a cselekvés irányul, ugyanaz a személy. Ezért egy névmás mutatja, kire irányul: me/te/se/nos/se, mindig a ragozott ige ELŐTT. Yo me levanto (én magamat felkeltem). Tú te llamas. Él/ella/usted se ducha. Nosotros nos acostamos. Ellos/ellas/ustedes se despiertan. A névmás a SZEMÉLYHEZ igazodik, nem az igéhez.",
+    "en": "With a reflexive verb, the doer and the one affected are the same person, so a pronoun shows who: me/te/se/nos/se, always BEFORE the conjugated verb. Yo me levanto (I get myself up). Tú te llamas. Él/ella/usted se ducha. Nosotros nos acostamos. Ellos/ellas/ustedes se despiertan. The pronoun agrees with the PERSON, not with the verb ending.",
+    "es": "En el verbo reflexivo, quien hace la acción y quien la recibe son la misma persona, por eso un pronombre marca a quién: me/te/se/nos/se, siempre ANTES del verbo conjugado. Yo me levanto. Tú te llamas. Él/ella/usted se ducha. Nosotros nos acostamos. Ellos/ellas/ustedes se despiertan. El pronombre concuerda con la PERSONA, no con la terminación del verbo.",
+    "de": "Beim reflexiven Verb sind Handelnder und Betroffener dieselbe Person, deshalb zeigt ein Pronomen, wer gemeint ist: me/te/se/nos/se, immer VOR dem konjugierten Verb. Yo me levanto. Tú te llamas. Él/ella/usted se ducha. Nosotros nos acostamos. Ellos/ellas/ustedes se despiertan. Das Pronomen richtet sich nach der PERSON, nicht nach der Verbendung."
+  },
+  "more": {
+    "hu": "Sok ige jelentése megváltozik a visszaható -se hozzáadásával: dormir = aludni, de dormirse = elaludni (a pillanat, amikor elalszol). Ir = menni valahova, de irse = elmenni, otthagyni egy helyet. Llamar = hívni valakit (telefonon), de llamarse = úgy hívnak/nevezni magad. Nem ugyanaz az ige két jelentéssel: két külön szó, tanuld párban.",
+    "en": "Many verbs shift meaning when you add the reflexive -se: dormir = to sleep, but dormirse = to fall asleep (the moment sleep starts). Ir = to go somewhere, but irse = to leave, to go away from a place. Llamar = to call someone (on the phone), but llamarse = to be called, to be named. Treat these as two different words, learn them in pairs.",
+    "es": "Muchos verbos cambian de significado al añadir el -se reflexivo: dormir = descansar durmiendo, pero dormirse = empezar a dormir de repente. Ir = desplazarse a un lugar, pero irse = marcharse de un lugar. Llamar = contactar a alguien por teléfono, pero llamarse = tener determinado nombre. Son casi dos palabras distintas, apréndelas en pareja.",
+    "de": "Viele Verben ändern ihre Bedeutung mit dem reflexiven -se: dormir = schlafen, aber dormirse = einschlafen (der Moment, in dem der Schlaf beginnt). Ir = irgendwohin gehen, aber irse = weggehen, einen Ort verlassen. Llamar = jemanden anrufen, aber llamarse = heißen, genannt werden. Lerne sie als zwei getrennte Wörter, im Paar."
+  },
+  "glossary": [
+    { "word": "levantarse", "gloss": { "hu": "felkelni", "en": "to get up", "es": "levantarse", "de": "aufstehen" } },
+    { "word": "llamarse", "gloss": { "hu": "hívnak (valakinek)", "en": "to be called", "es": "llamarse", "de": "heißen" } },
+    { "word": "ducharse", "gloss": { "hu": "zuhanyozni", "en": "to shower", "es": "ducharse", "de": "duschen" } },
+    { "word": "acostarse", "gloss": { "hu": "lefeküdni", "en": "to go to bed", "es": "acostarse", "de": "sich hinlegen" } },
+    { "word": "despertarse", "gloss": { "hu": "felébredni", "en": "to wake up", "es": "despertarse", "de": "aufwachen" } },
+    { "word": "sentirse", "gloss": { "hu": "érezni magát", "en": "to feel", "es": "sentirse", "de": "sich fühlen" } },
+    { "word": "acordarse", "gloss": { "hu": "emlékezni", "en": "to remember", "es": "acordarse", "de": "sich erinnern" } },
+    { "word": "irse", "gloss": { "hu": "elmenni, otthagyni", "en": "to leave, go away", "es": "irse", "de": "weggehen" } },
+    { "word": "dormirse", "gloss": { "hu": "elaludni", "en": "to fall asleep", "es": "dormirse", "de": "einschlafen" } },
+    { "word": "vestirse", "gloss": { "hu": "felöltözni", "en": "to get dressed", "es": "vestirse", "de": "sich anziehen" } },
+    { "word": "lavarse", "gloss": { "hu": "megmosakodni", "en": "to wash oneself", "es": "lavarse", "de": "sich waschen" } },
+    { "word": "cansado", "gloss": { "hu": "fáradt", "en": "tired", "es": "cansado", "de": "müde" } },
+    { "word": "elegante", "gloss": { "hu": "elegáns", "en": "elegant", "es": "elegante", "de": "elegant" } },
+    { "word": "acuesto", "gloss": { "hu": "lefekszem", "en": "I go to bed", "es": "me acuesto", "de": "ich lege mich hin" } },
+    { "word": "acuestan", "gloss": { "hu": "lefekszenek", "en": "they go to bed", "es": "se acuestan", "de": "sie legen sich hin" } },
+    { "word": "siento", "gloss": { "hu": "érzem magam", "en": "I feel", "es": "me siento", "de": "ich fühle mich" } },
+    { "word": "sientes", "gloss": { "hu": "érzed magad", "en": "you feel", "es": "te sientes", "de": "du fühlst dich" } },
+    { "word": "acuerdo", "gloss": { "hu": "emlékszem", "en": "I remember", "es": "me acuerdo", "de": "ich erinnere mich" } },
+    { "word": "acuerdas", "gloss": { "hu": "emlékszel", "en": "you remember", "es": "te acuerdas", "de": "du erinnerst dich" } },
+    { "word": "acuerda", "gloss": { "hu": "emlékszik", "en": "he/she remembers", "es": "se acuerda", "de": "er/sie erinnert sich" } },
+    { "word": "viendo", "gloss": { "hu": "nézve", "en": "watching", "es": "viendo", "de": "sehend" } }
+  ],
+  "items": [
+    {
+      "id": "rf-01",
+      "sentence": "Yo ___ levanto a las siete.",
+      "options": ["me", "se", "te"],
+      "correct": 0,
+      "why": {
+        "hu": "Yo alanyhoz a me névmás tartozik: yo me levanto.",
+        "en": "The subject yo takes the pronoun me: yo me levanto.",
+        "es": "Al sujeto yo le corresponde me: yo me levanto.",
+        "de": "Zum Subjekt yo gehört das Pronomen me: yo me levanto."
+      },
+      "wrong": {
+        "se": {
+          "hu": "A se harmadik személyhez tartozik (él/ella/usted), nem yo-hoz.",
+          "en": "Se belongs to third person (él/ella/usted), not to yo.",
+          "es": "Se es de tercera persona (él/ella/usted), no de yo.",
+          "de": "Se gehört zur dritten Person (él/ella/usted), nicht zu yo."
+        },
+        "te": {
+          "hu": "A te a tú alanyhoz tartozik, itt yo áll.",
+          "en": "Te belongs to the subject tú, but here the subject is yo.",
+          "es": "Te es del sujeto tú, pero aquí el sujeto es yo.",
+          "de": "Te gehört zum Subjekt tú, hier steht aber yo."
+        }
+      },
+      "examples": ["Me levanto temprano.", "¿A qué hora te levantas tú?"]
+    },
+    {
+      "id": "rf-02",
+      "sentence": "¿Cómo ___ llamas?",
+      "options": ["te", "se", "me"],
+      "correct": 0,
+      "why": {
+        "hu": "A tú alanyhoz a te tartozik: ¿cómo te llamas?",
+        "en": "The subject tú takes te: ¿cómo te llamas?",
+        "es": "Al sujeto tú le corresponde te: ¿cómo te llamas?",
+        "de": "Zum Subjekt tú gehört te: ¿cómo te llamas?"
+      },
+      "wrong": {
+        "se": {
+          "hu": "A se udvarias usted-hez illik, nem tegező tú-hoz.",
+          "en": "Se fits the polite usted, not the informal tú.",
+          "es": "Se va con el usted formal, no con el tú informal.",
+          "de": "Se passt zum höflichen usted, nicht zum vertrauten tú."
+        },
+        "me": {
+          "hu": "A me rólam szólna, nem arról, akit kérdezel.",
+          "en": "Me would be about myself, not about the person you ask.",
+          "es": "Me hablaría de mí, no de la persona a quien preguntas.",
+          "de": "Me würde von mir sprechen, nicht von der gefragten Person."
+        }
+      },
+      "examples": ["Me llamo Carlos.", "Se llama Ana."]
+    },
+    {
+      "id": "rf-03",
+      "sentence": "Ana ___ ducha por la mañana.",
+      "options": ["se", "te", "me"],
+      "correct": 0,
+      "why": {
+        "hu": "Ana harmadik személy, hozzá a se tartozik.",
+        "en": "Ana is third person, so she takes se.",
+        "es": "Ana es tercera persona, le corresponde se.",
+        "de": "Ana ist dritte Person, dazu gehört se."
+      },
+      "wrong": {
+        "te": {
+          "hu": "A te a tú alanyhoz tartozik, itt Ana az alany.",
+          "en": "Te belongs to tú, but here the subject is Ana.",
+          "es": "Te es de tú, pero aquí el sujeto es Ana.",
+          "de": "Te gehört zu tú, hier ist aber Ana das Subjekt."
+        },
+        "me": {
+          "hu": "A me rólam szólna, nem Anáról.",
+          "en": "Me would be about me, not about Ana.",
+          "es": "Me hablaría de mí, no de Ana.",
+          "de": "Me würde von mir sprechen, nicht von Ana."
+        }
+      },
+      "examples": ["Ana se ducha rápido.", "Mi hermana se ducha por la noche."]
+    },
+    {
+      "id": "rf-04",
+      "sentence": "Nosotros ___ acostamos tarde.",
+      "options": ["nos", "se", "me"],
+      "correct": 0,
+      "why": {
+        "hu": "Nosotroshoz a nos névmás tartozik.",
+        "en": "Nosotros takes the pronoun nos.",
+        "es": "A nosotros le corresponde nos.",
+        "de": "Zu nosotros gehört nos."
+      },
+      "wrong": {
+        "se": {
+          "hu": "A se harmadik személyre való, nem nosotrosra.",
+          "en": "Se is for third person, not for nosotros.",
+          "es": "Se es de tercera persona, no de nosotros.",
+          "de": "Se ist für die dritte Person, nicht für nosotros."
+        },
+        "me": {
+          "hu": "A me csak egy személyre (yo) vonatkozna.",
+          "en": "Me would refer only to one person (yo).",
+          "es": "Me se referiría solo a una persona (yo).",
+          "de": "Me würde sich nur auf eine Person (yo) beziehen."
+        }
+      },
+      "examples": ["Nos acostamos a las once.", "Mis padres se acuestan temprano."]
+    },
+    {
+      "id": "rf-05",
+      "sentence": "Mis padres ___ despiertan a las seis.",
+      "options": ["se", "nos", "te"],
+      "correct": 0,
+      "why": {
+        "hu": "Mis padres = ellos, hozzá a se tartozik.",
+        "en": "Mis padres = ellos, and ellos takes se.",
+        "es": "Mis padres = ellos, y a ellos les corresponde se.",
+        "de": "Mis padres = ellos, dazu gehört se."
+      },
+      "wrong": {
+        "nos": {
+          "hu": "A nos ránk (nosotros) vonatkozna, nem a szüleimre.",
+          "en": "Nos would refer to us (nosotros), not to my parents.",
+          "es": "Nos se referiría a nosotros, no a mis padres.",
+          "de": "Nos würde sich auf uns (nosotros) beziehen, nicht auf meine Eltern."
+        },
+        "te": {
+          "hu": "A te a tú alanyhoz tartozik, itt többes harmadik személy áll.",
+          "en": "Te belongs to tú, but here the subject is third person plural.",
+          "es": "Te es de tú, pero aquí el sujeto es tercera persona plural.",
+          "de": "Te gehört zu tú, hier steht aber die dritte Person Plural."
+        }
+      },
+      "examples": ["Se despiertan temprano los lunes.", "¿A qué hora te despiertas?"]
+    },
+    {
+      "id": "rf-06",
+      "sentence": "Yo ___ siento cansado hoy.",
+      "options": ["me", "te", "se"],
+      "correct": 0,
+      "why": {
+        "hu": "Yo alanyhoz me tartozik: me siento cansado.",
+        "en": "The subject yo takes me: me siento cansado.",
+        "es": "Al sujeto yo le corresponde me: me siento cansado.",
+        "de": "Zum Subjekt yo gehört me: me siento cansado."
+      },
+      "wrong": {
+        "te": {
+          "hu": "A te a tú alanyhoz tartozik, itt yo áll.",
+          "en": "Te belongs to tú, but here the subject is yo.",
+          "es": "Te es de tú, pero aquí el sujeto es yo.",
+          "de": "Te gehört zu tú, hier steht aber yo."
+        },
+        "se": {
+          "hu": "A se harmadik személyre való, nem yo-ra.",
+          "en": "Se is for third person, not for yo.",
+          "es": "Se es de tercera persona, no de yo.",
+          "de": "Se ist für die dritte Person, nicht für yo."
+        }
+      },
+      "examples": ["Me siento bien ahora.", "¿Cómo te sientes hoy?"]
+    },
+    {
+      "id": "rf-07",
+      "sentence": "¿___ acuerdas de mí?",
+      "options": ["Te", "Me", "Se"],
+      "correct": 0,
+      "why": {
+        "hu": "A kérdés tú-hoz szól, hozzá a te tartozik.",
+        "en": "The question addresses tú, which takes te.",
+        "es": "La pregunta se dirige a tú, que lleva te.",
+        "de": "Die Frage richtet sich an tú, dazu gehört te."
+      },
+      "wrong": {
+        "Me": {
+          "hu": "A me rólam szólna, de itt téged kérdezlek.",
+          "en": "Me would be about me, but here I am asking you.",
+          "es": "Me hablaría de mí, pero aquí te pregunto a ti.",
+          "de": "Me würde von mir sprechen, hier frage ich aber dich."
+        },
+        "Se": {
+          "hu": "A se udvarias usted-hez illik, itt tegező kérdés van.",
+          "en": "Se fits the polite usted, but this is an informal question.",
+          "es": "Se va con el usted formal, pero aquí la pregunta es informal.",
+          "de": "Se passt zum höflichen usted, hier ist die Frage vertraulich."
+        }
+      },
+      "examples": ["Me acuerdo de ti siempre.", "No se acuerda de mi nombre."]
+    },
+    {
+      "id": "rf-08",
+      "sentence": "Ella ___ va temprano del trabajo.",
+      "options": ["se", "me", "nos"],
+      "correct": 0,
+      "why": {
+        "hu": "Ella harmadik személy, hozzá a se tartozik: se va (elmegy).",
+        "en": "Ella is third person, so she takes se: se va (she leaves).",
+        "es": "Ella es tercera persona, le corresponde se: se va.",
+        "de": "Ella ist dritte Person, dazu gehört se: se va (sie geht weg)."
+      },
+      "wrong": {
+        "me": {
+          "hu": "A me rólam szólna, nem őróla.",
+          "en": "Me would be about me, not about her.",
+          "es": "Me hablaría de mí, no de ella.",
+          "de": "Me würde von mir sprechen, nicht von ihr."
+        },
+        "nos": {
+          "hu": "A nos ránk vonatkozna, nem egy személyre.",
+          "en": "Nos would refer to us, not to one person.",
+          "es": "Nos se referiría a nosotros, no a una sola persona.",
+          "de": "Nos würde sich auf uns beziehen, nicht auf eine Person."
+        }
+      },
+      "examples": ["Ella se va a las cinco.", "Me voy ahora, hasta luego."]
+    },
+    {
+      "id": "rf-09",
+      "sentence": "Los niños ___ duermen rápido.",
+      "options": ["se", "le", "te"],
+      "correct": 0,
+      "why": {
+        "hu": "Los niños = ellos, hozzá a se tartozik: se duermen (elalszanak).",
+        "en": "Los niños = ellos, and ellos takes se: se duermen (they fall asleep).",
+        "es": "Los niños = ellos, y a ellos les corresponde se: se duermen.",
+        "de": "Los niños = ellos, dazu gehört se: se duermen (sie schlafen ein)."
+      },
+      "wrong": {
+        "le": {
+          "hu": "A le nem visszaható névmás, más szerkezethez tartozik (pl. gustar).",
+          "en": "Le is not a reflexive pronoun, it belongs to a different structure (like gustar).",
+          "es": "Le no es reflexivo, pertenece a otra estructura (como gustar).",
+          "de": "Le ist kein reflexives Pronomen, es gehört zu einer anderen Struktur (wie gustar)."
+        },
+        "te": {
+          "hu": "A te a tú alanyhoz tartozik, itt többes szám van.",
+          "en": "Te belongs to tú, but here the subject is plural.",
+          "es": "Te es de tú, pero aquí el sujeto es plural.",
+          "de": "Te gehört zu tú, hier ist das Subjekt aber Plural."
+        }
+      },
+      "examples": ["Los niños se duermen a las ocho.", "Me duermo viendo la tele."]
+    },
+    {
+      "id": "rf-10",
+      "sentence": "Nosotros no ___ lavamos las manos.",
+      "options": ["nos", "se", "le"],
+      "correct": 0,
+      "why": {
+        "hu": "Nosotroshoz a nos tartozik, tagadásban is a no elé kerül, az ige elé.",
+        "en": "Nosotros takes nos, and even in the negative it goes before the verb, after no.",
+        "es": "A nosotros le corresponde nos, y en negativo va antes del verbo, después de no.",
+        "de": "Zu nosotros gehört nos, auch verneint steht es vor dem Verb, nach no."
+      },
+      "wrong": {
+        "se": {
+          "hu": "A se harmadik személyre való, nem nosotrosra.",
+          "en": "Se is for third person, not for nosotros.",
+          "es": "Se es de tercera persona, no de nosotros.",
+          "de": "Se ist für die dritte Person, nicht für nosotros."
+        },
+        "le": {
+          "hu": "A le nem visszaható névmás.",
+          "en": "Le is not a reflexive pronoun.",
+          "es": "Le no es un pronombre reflexivo.",
+          "de": "Le ist kein reflexives Pronomen."
+        }
+      },
+      "examples": ["Nos lavamos las manos antes de comer.", "¿Te lavas los dientes?"]
+    },
+    {
+      "id": "rf-11",
+      "sentence": "Usted ___ viste muy elegante hoy.",
+      "options": ["se", "te", "me"],
+      "correct": 0,
+      "why": {
+        "hu": "Az usted nyelvtanilag harmadik személy, hozzá a se tartozik.",
+        "en": "Usted is grammatically third person, so it takes se.",
+        "es": "Usted es gramaticalmente tercera persona, le corresponde se.",
+        "de": "Usted ist grammatisch dritte Person, dazu gehört se."
+      },
+      "wrong": {
+        "te": {
+          "hu": "A te a tegező tú-hoz tartozik, nem az udvarias usted-hez.",
+          "en": "Te belongs to the informal tú, not to the polite usted.",
+          "es": "Te es del tú informal, no del usted formal.",
+          "de": "Te gehört zum vertraulichen tú, nicht zum höflichen usted."
+        },
+        "me": {
+          "hu": "A me rólam szólna, nem arról, akihez beszélek.",
+          "en": "Me would be about me, not about the person I am talking to.",
+          "es": "Me hablaría de mí, no de la persona con quien hablo.",
+          "de": "Me würde von mir sprechen, nicht von der Person, mit der ich rede."
+        }
+      },
+      "examples": ["Usted se viste muy bien.", "Ella se viste rápido por la mañana."]
+    },
+    {
+      "id": "rf-12",
+      "sentence": "Yo nunca ___ acuesto tarde entre semana.",
+      "options": ["me", "te", "nos"],
+      "correct": 0,
+      "why": {
+        "hu": "Yo alanyhoz me tartozik, a nunca után is az ige elé kerül.",
+        "en": "The subject yo takes me, and it still goes before the verb even after nunca.",
+        "es": "Al sujeto yo le corresponde me, y va antes del verbo también después de nunca.",
+        "de": "Zum Subjekt yo gehört me, es steht auch nach nunca vor dem Verb."
+      },
+      "wrong": {
+        "te": {
+          "hu": "A te a tú alanyhoz tartozik, itt yo áll.",
+          "en": "Te belongs to tú, but here the subject is yo.",
+          "es": "Te es de tú, pero aquí el sujeto es yo.",
+          "de": "Te gehört zu tú, hier steht aber yo."
+        },
+        "nos": {
+          "hu": "A nos többes számra (nosotros) vonatkozna, itt yo az alany.",
+          "en": "Nos would refer to a plural (nosotros), but here the subject is yo.",
+          "es": "Nos se referiría a un plural (nosotros), pero aquí el sujeto es yo.",
+          "de": "Nos würde sich auf einen Plural (nosotros) beziehen, hier steht aber yo."
+        }
+      },
+      "examples": ["Nunca me acuesto tarde.", "Entre semana nos acostamos temprano."]
+    }
+  ]
+}
