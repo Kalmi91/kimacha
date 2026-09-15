@@ -391,6 +391,11 @@ export default {
     entryBlurb: 'Cada regla de A1 a C1: explicación y luego práctica.',
     // FB216: kevert nyelvű felolvasás a lecke-szövegre.
     readAloud: 'Leer en voz alta',
+    // LECKE-SEMA 2.1-2.2: match/form feladat-fajták.
+    matchHint: 'Empareja las palabras',
+    formHint: 'Escribe la forma correcta',
+    showTable: 'Tabla',
+    check: 'Comprobar',
   },
   exam: {
     simulationOf: (model: string) => `Simulacro del examen ${model}`,

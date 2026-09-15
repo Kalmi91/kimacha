@@ -1,3 +1,7 @@
+// LECKE-SEMA 1: csak a régi (rule/more) leckékhez, a V2 leckék body-blokkokat
+// hoznak (lib/grammar/lessonTypes.ts, components/grammar/LessonBody.tsx);
+// törlendő, ha az utolsó lecke is átállt a V2 sémára.
+//
 // FB221, Kálmán 2026-09-10 (grammar:ser-estar:drill): „I do not like the structure
 // of the more I want it to be more cleare and organized".
 //

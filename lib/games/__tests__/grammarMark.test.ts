@@ -1,6 +1,11 @@
 import { markAnswerIndex, markTokens } from '../grammarMark';
-import { buildGrammarRound } from '../grammarChoice';
+import { buildGrammarRound, type GrammarChoiceRoundItem } from '../grammarChoice';
 import type { GrammarMarkItem, GrammarTopicData } from '../content';
+
+// LECKE-SEMA 2: buildGrammarRound most a match/form ágat is visszaadhatja
+// (GrammarMatchFormRoundItem, options nélkül); ez a teszt csak jelölős
+// tételekkel dolgozik, tehát a round[0] mindig a choice-ág, a cast ezt fejezi ki.
+const choice = (r: ReturnType<typeof buildGrammarRound>[number]) => r as GrammarChoiceRoundItem;
 
 function markItem(over: Partial<GrammarMarkItem> = {}): GrammarMarkItem {
   return {
@@ -78,18 +83,19 @@ describe('buildGrammarRound with a mark item', () => {
 
   it('offers the sentence words in reading order, not shuffled', () => {
     const round = buildGrammarRound(topic(markItem()), 7);
-    expect(round[0].options).toEqual(['Mi', 'hermana', 'come', 'una', 'manzana']);
+    expect(choice(round[0]).options).toEqual(['Mi', 'hermana', 'come', 'una', 'manzana']);
   });
 
   it('points correctIndex at the word to tap', () => {
     for (let seed = 0; seed < 10; seed++) {
       const round = buildGrammarRound(topic(markItem()), seed);
-      expect(round[0].options[round[0].correctIndex]).toBe('come');
+      const r0 = choice(round[0]);
+      expect(r0.options[r0.correctIndex]).toBe('come');
     }
   });
 
   it('reports -1 rather than a wrong word when the answer is missing', () => {
     const round = buildGrammarRound(topic(markItem({ answer: 'bebe' })), 3);
-    expect(round[0].correctIndex).toBe(-1);
+    expect(choice(round[0]).correctIndex).toBe(-1);
   });
 });
