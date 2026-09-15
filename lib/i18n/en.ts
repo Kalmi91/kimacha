@@ -377,6 +377,7 @@ export default {
     yourLevel: 'you are here',
     soon: 'coming',
     coreTag: 'core',
+    corePlusTag: 'core+',
     started: 'started',
     notStarted: 'new',
     soonLong: 'This lesson has not been written yet. It is on the list, and the rest of the level is already open.',
