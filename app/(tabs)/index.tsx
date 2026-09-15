@@ -2,12 +2,12 @@ import { useEffect, useState, useRef, useCallback, useMemo } from 'react';
 import { StyleSheet, Text, View, Pressable, ActivityIndicator, TextInput, KeyboardAvoidingView, Platform, ScrollView, Image, Keyboard } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useFocusEffect, useRouter } from 'expo-router';
-import { fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
+import { fsrs, Rating, createEmptyCard, type Card, type Grade } from 'ts-fsrs';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb } from '@/lib/database';
-import { type WordEntry, getWordsForLevel, getWordsForTopic, findWordByText, normalizeWordToken, LEVELS, type Level } from '@/data/words';
+import { type WordEntry, getWordsForLevel, getWordsForTopic, findWordById, findWordByText, normalizeWordToken, LEVELS, type Level } from '@/data/words';
 import TappableSentence, { type TokenState } from '@/components/TappableSentence';
 import { getTopicsForLevel, hasTopics, getTopicName, getSubLevelForTopic, getTopicsForSubLevel, getSubLevelName, type TopicDef } from '@/data/topics';
 import { t, stringsFor } from '@/lib/i18n';
@@ -15,16 +15,16 @@ import { strictAnswerMatch } from '@/lib/answerMatch';
 import { nearMissDistractors } from '@/lib/distractors';
 import { consumePendingAction } from '@/lib/pendingAction';
 import { DAILY_NEW_BONUS_STEP } from '@/lib/usageStats';
-import { badgeNewWordsLeft, capNewWords, newWordsLeftToday, newWordIntake, newWordPauseReason, type NewWordAllowance, type NewWordPause } from '@/lib/newWordBudget';
 import { borrowNewWords, countNewWords, nextTopicWithNewWords } from '@/lib/topicRotation';
-import { isLearned, wordPhase, phaseShape, type WordPhase } from '@/lib/wordPhase';
 import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
-import { buildQueue, applyCadence, dripNewWords, mergeCarryover, reviewBatchOf, reviewWordsLeft, type DueItem } from '@/lib/sessionQueue';
+import {
+  buildQueue, applyCadence, mergeCarryover, type DueItem,
+  createQueue, nextLap, answer, defer, insertNext, header, labelOf,
+  DEFAULT_QUEUE_CONFIG, type QueueState, type Shown, type ReviewLap, type LapNo, type Effect,
+} from '@/lib/sessionQueue';
 import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
-import { DEFAULT_REQUEUE_LEVEL, requeueGapFor, requeueIndex } from '@/lib/requeueGap';
-import { deferRecent, recentKey, rememberRecent } from '@/lib/recentGuard';
 import { filterLockedSentences } from '@/lib/grammar/tenseGate';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { cardIcon } from '@/lib/cardIcons';
@@ -32,7 +32,7 @@ import { cardImage } from '@/lib/cardImages';
 import FeedbackButton from '@/components/FeedbackModal';
 import { speak as speakIn, loadVoices } from '@/lib/speech';
 import MockExamMode from '@/components/exam/MockExamMode';
-import DoneScreen from '@/components/DoneScreen';
+import DoneScreen, { type DoneAsk } from '@/components/DoneScreen';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import LearnChrome from '@/components/LearnChrome';
 import { languages, speechLang } from '@/lib/languages';
@@ -51,6 +51,9 @@ const DOCK_RESERVE = 76;
 
 type TypingResult = 'correct' | 'almost' | 'wrong' | 'skipped' | null;
 
+// UTEMEZO 5. szakasz: a Done-képernyő négy száma, amíg a sor még nem töltődött be.
+const DONE_STATS_ZERO = { reviewsAnswered: 0, wordsStarted: 0, wordsLearned: 0, wrongLaps: 0 };
+
 // FB25/FB84: char diff lives in lib/charDiff.ts now, shared with the spelling
 // trainer, which used to carry a hand-copied twin of it.
 
@@ -61,19 +64,17 @@ export default function LearnScreen() {
   const router = useRouter();
 
   const [loading, setLoading] = useState(true);
-  const [queue, setQueue] = useState<DueItem[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // UTEMEZO: a sor motorja EGY QueueState-et hordoz, `current === null` a kor
+  // veget jelenti (UTEMEZO 4.5). A ref a handlerek szamara tartja a legfrissebb
+  // allapotot (React state csak a kovetkezo render-korben all be).
+  const [qs, setQs] = useState<QueueState | null>(null);
+  const qsRef = useRef<QueueState | null>(null);
+  // wordId:type -> a legutobb ismert FSRS Card, hogy egy review-lap (kezben
+  // levo vagy visszatero) mindig a sajat, friss allapotaval ertekelodjon.
+  const cardsRef = useRef<Map<string, Card>>(new Map());
   const [revealed, setRevealed] = useState(false);
   const [streak, setStreak] = useState(0);
-  const [reviewed, setReviewed] = useState(0);
   const [done, setDone] = useState(false);
-  // FB77: how many brand-new words today's budget still allows (0 = the Done
-  // screen offers the "+5 new words" button).
-  const [newWordsLeft, setNewWordsLeft] = useState(0);
-  // FB114: the daily budget is unspent but the half-learned pile hit the WIP
-  // ceiling, so no new word joins the queue right now. Shown as ⏸ on the badge,
-  // otherwise the countdown would look stuck without saying why.
-  const [newWordsPaused, setNewWordsPaused] = useState(false);
   // FB132: Settings -> Difficulty, "accents count". Off = the beginner grader
   // forgives a missing á/é/ñ; on = it fails the answer and the diff paints it.
   const [strictAccents, setStrictAccents] = useState(false);
@@ -81,9 +82,6 @@ export default function LearnScreen() {
   // választott névelő. Kártyaváltáskor nullázódik, mint a begépelt válasz.
   const [articlePickerOn, setArticlePickerOn] = useState(true);
   const [articlePick, setArticlePick] = useState<ArticlePick>('');
-  // FB198: hány lap teljen el, mielőtt egy elrontott szó visszajön. A sor
-  // hosszának véletlene helyett beállítás (lib/requeueGap.ts).
-  const [requeueLevel, setRequeueLevel] = useState<string>(DEFAULT_REQUEUE_LEVEL);
   // FB170, Kálmán 2026-09-06: "azt akarom hogy a check rész az pont a klaviatúrám
   // felett legyen és nem kell ketto". The typing card had two Check buttons (the
   // in-card one from FB5 and the older one below the card); there is one now, docked
@@ -112,39 +110,12 @@ export default function LearnScreen() {
   // where the session ends with nothing on offer, see lib/topicRotation.ts.
   const [newWordsInTopic, setNewWordsInTopic] = useState(0);
   const [nextTopicId, setNextTopicId] = useState<string | null>(null);
-  // FB142, Kálmán 2026-08-18: "valahogy jelölje az app, hogy mennyi szó van és
-  // mennyi ismétlődik ... már rég óta 0 új szót ír de mintha újra és újra régi
-  // szavakat bedobna ismétlésre". The queue's own split (new vs review), the
-  // half-learned pile behind a pause, and the reason for the pause, so the Done
-  // screen can say what the session was made of and why.
-  const [sessionMix, setSessionMix] = useState<{ newWords: number; reviews: number }>({ newWords: 0, reviews: 0 });
-  // FB174, Kálmán 2026-09-06: "azt akarom látni, hogy mennyi van osszesen amit
-  // ismételni kell ... legyen ott egy 30/3 hogy ha meg 3 szor van 30 szo". The queue
-  // only ever holds one batch, so the header also names the batch size and how many
-  // more batches of that size are waiting behind it.
-  const [reviewBatch, setReviewBatch] = useState<{ size: number; left: number; dueToday: number }>(
-    { size: 0, left: 0, dueToday: 0 },
-  );
-  // FB158/FB159, Kálmán 2026-08-26 (word:"the volleyball", majd word:"belly"):
-  // "kellene valami különbség, hogy tudjam, hogy most a régi szavakat ismételem,
-  // vagy az újakat tanulom", kétszer kérve. A 🌱 fejléc-jelvény csak a NAPI keretet
-  // számolja, arról nem szól, hogy az ÉPP LÁTOTT kártya új-e. Egy szó, ami reps === 0
-  // állapotban lépett a sorba, az egész munkamenetre "új" marad, különben a fázis-1 /
-  // fázis-2 requeue (ott már reps > 0) félúton átbillentené a címkét.
-  const [newTodayIds, setNewTodayIds] = useState<Set<number>>(() => new Set());
-  // FB180, Kálmán 2026-09-07 (word:"the bedroom"): „5 szót írt de valójában 8 szó
-  // volt benne". The 🔁 badge counted the review words of THIS queue with one rule
-  // and sized the batch with another, so the two drifted apart. `newTodayIds` above
-  // is session-wide on purpose (FB158: a word that arrived new stays new for the
-  // 🌱 tag), which is the wrong set for a per-queue counter: a word that arrived new
-  // this morning and is genuinely under review now would never be counted again.
-  // This one holds the new words of the CURRENT queue only, and both sides use it.
-  const [batchNewIds, setBatchNewIds] = useState<Set<number>>(() => new Set());
-  const [unlearnedCount, setUnlearnedCount] = useState(0);
   // FB190: hány el nem kezdett szó maradt az EGÉSZ szinten. Nulla = a szint
   // szókincse elfogyott, a Kész-képernyőnek onnantól más ajánlata van.
   const [levelNewWordsLeft, setLevelNewWordsLeft] = useState(0);
-  const [pauseReason, setPauseReason] = useState<NewWordPause>('none');
+  // UTEMEZO 5. szakasz: a napi új szó beállítás, a Done-képernyő szammezőjének
+  // alapértéke.
+  const [dailyDefault, setDailyDefault] = useState(0);
   const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
   const [typedAnswer, setTypedAnswer] = useState('');
   const [typingResult, setTypingResult] = useState<TypingResult>(null);
@@ -178,13 +149,9 @@ export default function LearnScreen() {
   // the change affects FUTURE cards, not past progress.
   const [topicSwitchMsg, setTopicSwitchMsg] = useState<string | null>(null);
   const inputRef = useRef<TextInput>(null);
-  // Guards advance() against double-fire on the same card while its persistence
-  // (several awaited DB writes) is still running.
+  // Guards applyAnswer()/deferCurrent() against double-fire on the same card
+  // while its persistence (several awaited DB writes) is still running.
   const advancingRef = useRef(false);
-
-  // FB213: a mostanában látott kártyák kulcsai, a sor újraépítésekor ezek
-  // hátra kerülnek (lib/recentGuard.ts). Session-szintű, nem megy DB-be.
-  const recentRef = useRef<string[]>([]);
 
 
   // `stateMap` = szavankénti FSRS állapot. A topic-készültség EBBŐL dől el
@@ -270,30 +237,6 @@ export default function LearnScreen() {
     );
   };
 
-  // FB142: what this queue actually holds, and why it holds no new words. Runs
-  // on both queue builds, right after the final item list exists, so the Done
-  // screen never has to recompute it.
-  const applyQueueSupply = (items: DueItem[], budget: NewWordAllowance, dueReviewWords = 0) => {
-    const isNew = (item: DueItem) => item.type === 'word' && item.card.reps === 0;
-    setSessionMix({
-      newWords: items.filter(isNew).length,
-      reviews: items.filter(item => !isNew(item)).length,
-    });
-    // FB174/FB180: batch size and the counter that shrinks as it is answered now
-    // share one definition, in lib/sessionQueue.
-    const batch = reviewBatchOf(items, dueReviewWords);
-    setBatchNewIds(batch.newIds);
-    setReviewBatch({ size: batch.size, left: batch.left, dueToday: batch.dueToday });
-    // FB158/FB159: remember which words arrived brand new, the per-card tag reads this.
-    setNewTodayIds((prev) => {
-      const next = new Set(prev);
-      items.filter(isNew).forEach((item) => next.add(item.wordId));
-      return next;
-    });
-    setUnlearnedCount(budget.unlearned ?? 0);
-    setPauseReason(newWordPauseReason(budget));
-  };
-
   // FB139, Kálmán 2026-08-17: "ha 15 új szót kell beadni ... és a témakörből,
   // nincsen 15 szó akkor szedjen össze a körülötte lévő topicokból". The queue is
   // scoped to the active topic, so a raised budget used to hand out only what that
@@ -346,17 +289,91 @@ export default function LearnScreen() {
     return [...scoped, ...extra];
   };
 
-  const QUEUE_POOL = 40;
-  // FB225: ahány ismétlés-hely van a sorban. Ugyanaz az osztás, amit a
-  // getDueCardsForWordIds használ (30% új szó, a maradék ismétlés), itt azért
-  // kell néven, mert a szint és a régi szintek ezen a kereten OSZTOZNAK.
-  const REVIEW_SLOTS = QUEUE_POOL - Math.max(1, Math.round(QUEUE_POOL * 0.3));
+  // UTEMEZO 11. szakasz: a getDueCardsForWordIds/getDueCardsForLevel mostantól
+  // csak ISMÉTLÉST ad (nincs többé 70/30 új/review osztás), a pink a teljes
+  // esedékes kupacot mutassa (UTEMEZO 6), ezért a pool nagy.
+  const QUEUE_POOL = 400;
+  const REVIEW_SLOTS = QUEUE_POOL;
 
   // FB196: az elvégzett nyelvtani leckék adják a feloldott szerkezeteket
   // („legyen olyan hogy bizonyos nyelvtani szerkezeteket feloldunk").
   const doneGrammarTopics = async (): Promise<Set<string>> => {
     const rows = await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY);
     return new Set(rows.filter(r => r.state === 'done').map(r => r.itemId));
+  };
+
+  const cardKey = (wordId: number, type: string) => `${wordId}:${type}`;
+
+  // UTEMEZO: egy `Shown` (a sor motorjanak lapja) DueItem-me alakitva, a render
+  // es a tobbi kartya-fuggo helper (getFrontBack, cardNote, stb.) ezt olvassa.
+  const toDueItem = (shown: Shown): DueItem => {
+    const learned = direction[1];
+    const word = findWordById(shown.wordId, learned)!;
+    const card = cardsRef.current.get(cardKey(shown.wordId, shown.type)) ?? createEmptyCard<Card>();
+    return {
+      wordId: shown.wordId,
+      type: shown.type,
+      card,
+      word,
+      isTyping: shown.isTyping,
+      isEasySentence: shown.isEasySentence,
+      typingDirection: shown.typingDirection,
+    };
+  };
+
+  // UTEMEZO 6. szakasz: a regi badge/Done-allapotok kitoltese a motor
+  // allapotabol. Lepesenkent hivva, hogy a fejlec sose csusszon szet a sortol.
+  const syncBadges = (state: QueueState) => {
+    setLevelNewWordsLeft(state.fresh.length);
+  };
+
+  // UTEMEZO: minden allapotvaltas ezen megy at, hogy a React state, a
+  // handlerek altal olvasott ref es a fejlec-jelvenyek sose csusszanak szet.
+  // A `done` allapotot NEM ez allitja: a hivo dontese, mert a kor vege utan
+  // (current === null) elobb egy DB-frissitest (finishRound) kell megprobalni.
+  const setQueueState = (next: QueueState) => {
+    qsRef.current = next;
+    setQs(next);
+    syncBadges(next);
+    resetCardState();
+  };
+
+  // UTEMEZO 2.2: a keret a szo INDITASAKOR fogy, ez nextLap() belsejeben
+  // tortenik (startNew). A hivo ebbol csak annyit lat, hogy a fekete szam
+  // csokkent, es ekkor irja a DB-be a startWord-ot (in_hand=1, started_at).
+  const advanceQueue = (state: QueueState): QueueState => {
+    const next = nextLap(state);
+    if (next.current && header(next).black < header(state).black) {
+      getDb().startWord(next.current.wordId).catch(() => {});
+    }
+    return next;
+  };
+
+  // UTEMEZO: nyers DB-sorokbol (mar csak ismetlesek + mondatok) review-lapok;
+  // a loadCards, a finishRound es a handlePractiseLevel is ezt hasznalja.
+  const rowsToReviewLaps = (
+    rows: any[],
+    lang: string,
+    wordsOnly: boolean,
+    lvl: Level,
+    grammarDone: Set<string>,
+  ): ReviewLap[] => {
+    const items = filterLockedSentences(
+      applyCadence(buildQueue(rows, lang), wordsOnly, lang),
+      lvl,
+      grammarDone,
+    );
+    return items.map((item) => {
+      cardsRef.current.set(cardKey(item.wordId, item.type), item.card);
+      return {
+        wordId: item.wordId,
+        type: item.type as 'word' | 'sentence',
+        isTyping: item.isTyping,
+        isEasySentence: item.isEasySentence,
+        typingDirection: item.typingDirection,
+        repair: false,
+      };
+    });
   };
 
   const loadCards = async () => {
@@ -375,36 +392,17 @@ export default function LearnScreen() {
     const topics = getTopicsForLevel(currentLevel, learned);
     const useTopics = topics.length > 0 && levelWords.some(w => w['topic']);
 
-    // FB77: today's remaining new-word budget (setting + "+5 new words" taps).
-    // FB112-115: the badge shows the DAILY countdown, the queue intake pauses
-    // separately when the half-learned pile hits the WIP ceiling.
-    // FB139: read before the queue is scoped, because the intake decides whether
-    // the active topic needs a top-up from its neighbours.
-    const budget = {
-      limit: await db.getDailyNewLimit(),
-      bonus: await db.getNewLimitBonus(),
-      // FB210, Kálmán 2026-09-10: a napi keretet a MEGTANULT szavak fogyasztják,
-      // tehát a 🌱 szám akkor csökken, amikor le is tudta írni helyesen.
-      learnedToday: await db.getWordsLearnedToday(),
-      unlearned: await db.getUnlearnedWordCount(),
-    };
-    const leftToday = newWordsLeftToday(budget);
-    const intake = newWordIntake(budget);
+    // UTEMEZO 2.2/2.4: `black` elobb a napi keret also becslese (mai limit +
+    // bonusz, minusz ami ma mar elindult), ez megy a temakolcsonzesbe is
+    // (ott ennyi UJ szo kellene); a szo-lista veglegesedese utan lejjebb a
+    // tenylegesen erintetlen (fresh) szavak szamara szukul.
+    const dailyLimit = await db.getDailyNewLimit();
+    setDailyDefault(dailyLimit);
+    const bonus = await db.getNewLimitBonus();
+    const startedToday = await db.getWordsStartedToday();
+    let black = Math.max(0, dailyLimit + bonus - startedToday);
 
     let activeWords: WordEntry[];
-    // FB190: a szint egészére nézve maradt-e el nem kezdett szó. Ez független a
-    // napi kerettől és az aktív témától: azt mondja meg, van-e MÉG mit tanulni
-    // ezen a szinten egyáltalán.
-    const levelReps = await db.getWordReps(levelWords.map(w => w.id));
-    const levelNewLeft = levelWords.filter(w => (levelReps.get(w.id) ?? 0) === 0).length;
-    setLevelNewWordsLeft(levelNewLeft);
-    // FB226, Kálmán 2026-09-10: „az új szavak abból a szintből jöjjenek ahol éppen
-    // állok. Ha nincsen benne új szó akkor jelöljön 0-át." A 🌱 jelvény eddig a napi
-    // keretet mutatta akkor is, amikor ezen a szinten már nem volt el nem kezdett szó,
-    // tehát olyat ígért, amit a sor nem tudott adni. Az ismétlés ettől független:
-    // az továbbra is átjár a szintek között (FB225).
-    setNewWordsLeft(badgeNewWordsLeft(budget, levelNewLeft));
-    setNewWordsPaused(intake === 0 && leftToday > 0 && levelNewLeft > 0);
     if (useTopics) {
       const allWordIds = levelWords.map(w => w.id);
       const repsMap = await db.getWordReps(allWordIds);
@@ -438,7 +436,7 @@ export default function LearnScreen() {
         : unlocked.flatMap(t => getWordsForTopic(currentLevel, t.id, learned));
 
       // FB139: top the new-word supply up from the neighbouring topics.
-      activeWords = withBorrowedNewWords(activeWords, unlocked, activeTopic, currentLevel, learned, repsMap, intake);
+      activeWords = withBorrowedNewWords(activeWords, unlocked, activeTopic, currentLevel, learned, repsMap, black);
 
       // FB135/FB136: what the Done screen can still offer once this queue runs out.
       applyTopicSupply(unlocked, activeTopic, currentLevel, learned, repsMap);
@@ -468,8 +466,22 @@ export default function LearnScreen() {
     // are read (the Settings toggle queues a reload, see handleStrictAccentsToggle).
     setStrictAccents(await db.getStrictAccents());
     setArticlePickerOn(await db.getArticlePicker());
-    setRequeueLevel(await db.getRequeueLevel());
+
     const activeWordIds = activeWords.map(w => w.id);
+    // UTEMEZO 2.4/12.1: fresh = a szint (temakor) erintetlen szavai, a mai
+    // activeWords sorrendjet kovetve (Kálmán 12.1 dontese); black innentol
+    // ezekre szukul.
+    const untouched = await db.getUntouchedWordIds(activeWordIds);
+    const fresh = activeWords.map(w => w.id).filter(id => untouched.has(id));
+    black = Math.max(0, Math.min(black, fresh.length));
+
+    // UTEMEZO 3.5: a kezben levo szavak (barmelyik szintrol) minden korben
+    // elore jonnek, meg uj szo elott is; a stored `lap` a mar teljesitett
+    // lapok szama, a motor `lap`-je a KOVETKEZO felkinalando lap.
+    const hand = (await db.getInHandWordCards())
+      .filter(r => findWordById(r.word_id, learned))
+      .map(r => ({ wordId: r.word_id, lap: Math.min(3, r.lap + 1) as LapNo }));
+
     const levelRows = useTopics
       ? await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL)
       : await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
@@ -477,39 +489,20 @@ export default function LearnScreen() {
     // ismétlései. Így egy A2-re lépés után az A1 szavai is forgásban maradnak.
     const carryRows = await db.getDueCarryoverCards(activeWordIds, REVIEW_SLOTS);
     const rows = mergeCarryover(levelRows, carryRows, REVIEW_SLOTS);
-    // FB174: the whole due pile in the same scope, not just what fits in this queue.
-    // FB225: a jelvény a szinten kívüli esedékeseket is beleszámolja, különben
-    // kevesebbet ígérne, mint amennyi a sorba ténylegesen bekerül.
-    const dueReviewWords =
-      (useTopics
-        ? await db.countDueReviewWords(activeWordIds)
-        : await db.countDueReviewWordsForLevel(currentLevel))
-      + (await db.countDueCarryoverWords(activeWordIds));
     // FB196: a mondat-kártyák nem hozhatnak feloldatlan nyelvtant, akármelyik
     // úton kerültek a sorba (szint, téma, kölcsönzés).
     const grammarDone = await doneGrammarTopics();
-    const items = filterLockedSentences(
-      applyCadence(dripNewWords(capNewWords(buildQueue(rows, learned), intake)), wordsOnly, learned),
-      currentLevel,
-      grammarDone,
-    );
-    applyQueueSupply(items, budget, dueReviewWords);
+    const reviews = rowsToReviewLaps(rows, learned, wordsOnly, currentLevel, grammarDone);
+
+    // UTEMEZO 8: P (hand) és R (gap) a Beállítások „Nehézség" ablakából jön.
+    const config = { hand: await db.getHandCap(), gap: await db.getGapLaps(), rhythm: DEFAULT_QUEUE_CONFIG.rhythm };
 
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
-    setQueue(items);
-    setCurrentIndex(0);
-    setRevealed(false);
-    setReviewed(0);
-    setTypedAnswer('');
-    setArticlePick('');
-    setTypingResult(null);
-    setDone(items.length === 0);
 
-    setCardStartTime(Date.now());
-    setPracticeTyping(false);
-    setPracticeResult(null);
-    setPracticeText('');
+    const built = advanceQueue(createQueue({ config, black, hand, reviews, fresh }));
+    setQueueState(built);
+    setDone(built.current === null);
     setLoading(false);
   };
 
@@ -591,7 +584,7 @@ export default function LearnScreen() {
     }, [])
   );
 
-  const current = queue[currentIndex];
+  const current: DueItem | undefined = qs?.current ? toDueItem(qs.current) : undefined;
 
   // FB178: how far the docked bar has to sit above the bottom of this screen. With the
   // keyboard closed that is just the navigation bar; with it open, the keys plus the bar.
@@ -604,24 +597,17 @@ export default function LearnScreen() {
     return () => { show.remove(); hide.remove(); };
   }, []);
 
-  // FB169, Kálmán 2026-09-05: the words still waiting for review in THIS queue, so it
-  // shrinks with every card answered. "New" here is the FB158 rule (a word that entered
-  // the queue with reps === 0 stays new for the session), and distinct wordIds are
-  // counted, because one word can hold three cards.
-  const batchLeft = useMemo(
-    () => reviewWordsLeft(queue, currentIndex, batchNewIds),
-    [queue, currentIndex, batchNewIds],
-  );
+  // UTEMEZO 6. szakasz: a fejlec harom szama, 0/0/0 amig a sor meg nem toltodott be.
+  const { black, blue, pink } = useMemo(() => (qs ? header(qs) : { black: 0, blue: 0, pink: 0 }), [qs]);
 
-  // FB177, Kálmán 2026-09-06: "a rozsaszin csik az az ööszes ismételendő szót mutassa
-  // ne csak azt a 30 at amit most tanulok ... jelezze, hogy még mennyit kell ismételni
-  // ma". The queue holds one batch, so the batch counter emptied and refilled. The
-  // header shows the whole day's pile instead: everything that was due when this queue
-  // was built, minus what has been answered out of the batch since.
-  const reviewLeft = useMemo(() => {
-    const doneInBatch = Math.max(0, reviewBatch.size - batchLeft);
-    return Math.max(batchLeft, reviewBatch.dueToday - doneInBatch);
-  }, [reviewBatch, batchLeft]);
+  // UTEMEZO 7. szakasz: minden lapon egy cimke, a sajat nyelven (a motor
+  // labelOf-ja csak a motor sajat, magyar teszt-cimkeje, ld. lib/sessionQueue.ts).
+  const lapLabelOf = (shown: Shown | null): string | null => {
+    if (!shown) return null;
+    if (shown.type === 'sentence') return s.lap.sentence;
+    if (shown.kind === 'review') return shown.repair ? s.lap.repair : s.lap.review;
+    return shown.repair ? s.lap.repairLap(shown.lap ?? 1) : s.lap.newLap(shown.lap ?? 1);
+  };
 
   const getFrontBack = (item: DueItem) => {
     const [native, learned] = direction;
@@ -660,7 +646,7 @@ export default function LearnScreen() {
     if (front) speakIn(front, speechLang(frontLang));
     // wordId + phase in the deps: a requeued card (FB109 ladder, FB43 skip) lands
     // at the SAME index in a same-length queue, so index alone would stay silent.
-  }, [currentIndex, queue.length, loading, done, current?.wordId, current?.isTyping]);
+  }, [qs?.step, loading, done, current?.wordId, current?.isTyping]);
 
   const checkLevelChange = async (wasCorrect: boolean) => {
     const db = getDb();
@@ -695,17 +681,18 @@ export default function LearnScreen() {
     setNoteOpen(false);
   };
 
-  // Shared by advance() and advanceNoRating(): once the queue is exhausted,
-  // pull a fresh due batch (topic-aware) and rebuild it. Reads only
-  // level/direction/topic state, no dependency on the just-rated card, so
-  // both the rating and no-rating advance paths can reuse it verbatim.
-  const rebuildQueueAtEnd = async () => {
+  // UTEMEZO 4.5: a kor veget ert (nextLap current === null). Ujra le kell
+  // kerdezni az esedekes ismetleseket (egy MEGTANULT szo kozben ujra
+  // esedekesse valhatott), es ha van barmi (review, kezben-levo vagy
+  // erintetlen), a kovetkezo kor onnan folytatodik; kulonben Kesz-kepernyo.
+  // A hand/black/fresh a lezarult `state`-bol oroklodik (UTEMEZO 3.5/3.6: a
+  // kezben levo szavak es a fekete keret athozodnak a kovetkezo korre).
+  const finishRound = async (state: QueueState) => {
     const db = getDb();
     const levelData = await db.getLevel();
     const currentLevel = levelData.level as Level;
     const learned = direction[1];
-    const { getWordsForLevel: gwfl } = require('@/data/words');
-    const lvlWords = gwfl(currentLevel, learned);
+    const lvlWords = getWordsForLevel(currentLevel, learned);
     const rvw = await db.getReviewedWordCount(currentLevel);
     const mst = await db.getMasteredWordCount(currentLevel);
     const newMPct = lvlWords.length > 0 ? Math.round((mst / lvlWords.length) * 100) : 0;
@@ -716,28 +703,7 @@ export default function LearnScreen() {
     const topics = getTopicsForLevel(currentLevel, learned);
     const useTopics = topics.length > 0 && lvlWords.some((w: WordEntry) => w['topic']);
 
-    // FB139: as in loadCards, the intake is needed before the queue is scoped.
-    const budget2 = {
-      limit: await db.getDailyNewLimit(),
-      bonus: await db.getNewLimitBonus(),
-      // FB210, Kálmán 2026-09-10: a napi keretet a MEGTANULT szavak fogyasztják,
-      // tehát a 🌱 szám akkor csökken, amikor le is tudta írni helyesen.
-      learnedToday: await db.getWordsLearnedToday(),
-      unlearned: await db.getUnlearnedWordCount(),
-    };
-    const leftToday2 = newWordsLeftToday(budget2);
-    const intake2 = newWordIntake(budget2);
-    // FB226: ugyanaz a szabály, mint a sor első építésénél, különben a feltöltés
-    // visszaírná a napi keretet egy kifogyott szintre.
-    const lvlReps = await db.getWordReps(lvlWords.map((w: WordEntry) => w.id));
-    const levelNewLeft2 = lvlWords.filter((w: WordEntry) => (lvlReps.get(w.id) ?? 0) === 0).length;
-    setLevelNewWordsLeft(levelNewLeft2);
-    setNewWordsLeft(badgeNewWordsLeft(budget2, levelNewLeft2));
-    setNewWordsPaused(intake2 === 0 && leftToday2 > 0 && levelNewLeft2 > 0);
-
     let newRows: any[];
-    // FB174: the due pile behind this refill, filled in on both branches below.
-    let dueReviewWords2 = 0;
     // FB225: amit a szint-ág már besorolt, tehát amit a carryover NEM hozhat újra.
     let carryExclude: number[] = [];
     if (useTopics) {
@@ -810,7 +776,7 @@ export default function LearnScreen() {
         currentLevel,
         learned,
         repsMap,
-        intake2,
+        state.black,
       );
       // FB135/FB136: same bookkeeping as in loadCards, for the Done screen.
       applyTopicSupply(unlocked, activeTopic, currentLevel, learned, repsMap);
@@ -820,12 +786,10 @@ export default function LearnScreen() {
         await db.ensureCard(w.id, 'sentence');
       }
       newRows = await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL);
-      dueReviewWords2 = await db.countDueReviewWords(activeWordIds);
       carryExclude = activeWordIds;
     } else {
       setBorrowedTopics(new Map());
       newRows = await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
-      dueReviewWords2 = await db.countDueReviewWordsForLevel(currentLevel);
       carryExclude = lvlWords.map((w: WordEntry) => w.id);
     }
 
@@ -833,49 +797,47 @@ export default function LearnScreen() {
     // régi szavak csak a session legelső köréig maradnának benne.
     const carryRows2 = await db.getDueCarryoverCards(carryExclude, REVIEW_SLOTS);
     newRows = mergeCarryover(newRows, carryRows2, REVIEW_SLOTS);
-    dueReviewWords2 += await db.countDueCarryoverWords(carryExclude);
 
     const wordsOnly2 = await db.getWordsOnly();
-    const newItems = filterLockedSentences(
-      applyCadence(dripNewWords(capNewWords(buildQueue(newRows, learned), intake2)), wordsOnly2, learned),
-      currentLevel,
-      await doneGrammarTopics(),
-    );
-    applyQueueSupply(newItems, budget2, dueReviewWords2);
+    const reviews = rowsToReviewLaps(newRows, learned, wordsOnly2, currentLevel, await doneGrammarTopics());
 
-    if (newItems.length === 0) {
+    // UTEMEZO 4.5: a kör akkor ért véget, ha a friss sor sem tud lapot adni
+    // (elfogyott a review, a kéz üres, és a fekete 0 vagy nincs több új szó).
+    const refilled = advanceQueue(createQueue({
+      config: state.config,
+      black: state.black,
+      hand: state.hand.map(({ wordId, lap }) => ({ wordId, lap })),
+      reviews,
+      fresh: state.fresh,
+    }));
+    if (refilled.current === null) {
       setDone(true);
-    } else {
-      // FB213: az imént látott lapok hátra, hogy a nehézség-beállítás a rendes
-      // Good/Again úton is számítson, ne csak a kézi vissza-sorolásnál.
-      setQueue(deferRecent(newItems, recentRef.current));
-      setCurrentIndex(0);
+      return;
     }
-    resetCardState();
+    setQueueState(refilled);
   };
 
   // FB190, Kálmán 2026-09-08: „ha már nincs új szó a szinten akkor kérdezze meg
   // hogy a szint szavait akarod gyakorolni és random adjon 32 szót a szintből.
   // vagy hogy a vizsgát megcsinálom, vagy hogy menjünk tovább a következő szint
-  // szavaira". Ez az első a három közül: 32 véletlen, MÁR MEGKEZDETT szó a
-  // szintről, esedékességtől függetlenül.
-  const PRACTICE_ROUND = 32;
-
-  const handlePractiseLevel = async () => {
+  // szavaira". Ez az első a három közül: N véletlen, MÁR MEGKEZDETT szó a
+  // szintről, esedékességtől függetlenül (UTEMEZO 5, a Done-képernyő kérdése
+  // adja N-et).
+  const handlePractiseLevel = async (n: number) => {
     const db = getDb();
-    const rows = await db.getPracticeCardsForLevel(level, PRACTICE_ROUND);
+    const rows = await db.getPracticeCardsForLevel(level, n);
     const learned = direction[1];
-    const items = filterLockedSentences(
-      applyCadence(buildQueue(rows, learned), await db.getWordsOnly(), learned),
-      level,
-      await doneGrammarTopics(),
-    );
-    if (items.length === 0) return;
-    setQueue(items);
-    setCurrentIndex(0);
-    setReviewed(0);
-    setDone(false);
-    resetCardState();
+    const reviews = rowsToReviewLaps(rows, learned, await db.getWordsOnly(), level, await doneGrammarTopics());
+    if (reviews.length === 0) return;
+    const state = qsRef.current;
+    const hand = state ? state.hand.map(({ wordId, lap }) => ({ wordId, lap })) : [];
+    setQueueState(advanceQueue(createQueue({
+      config: state?.config ?? DEFAULT_QUEUE_CONFIG,
+      black: 0,
+      hand,
+      reviews,
+      fresh: [],
+    })));
   };
 
   // A harmadik ajánlat: tovább a következő szintre. A vizsga (a második) a
@@ -888,112 +850,91 @@ export default function LearnScreen() {
     await loadCards();
   };
 
-  // FB112/FB113: the 🌱 badge has to fall by ONE at the moment it is earned
-  // ("nem így egyesével fogyott. hanem csak úgy ugrott egyet"). The DB counter
-  // behind it is only re-read on a queue rebuild, so the badge is stepped
-  // optimistically here, exactly like the streak.
-  // FB210, Kálmán 2026-09-10: the moment is no longer "a brand-new word was
-  // answered" but "a word finished its ladder", i.e. he spelled it right. A card
-  // that was already learned cannot spend the budget twice.
-  const spendNewWordBadge = (item: DueItem, updated: Card) => {
-    if (item.type !== 'word') return;
-    if (isLearned(item.card) || !isLearned(updated)) return;
-    setNewWordsLeft((n) => Math.max(0, n - 1));
-  };
-
-  const advance = async (rating: Grade) => {
-    if (!current || advancingRef.current) return;
-    advancingRef.current = true;
-
-    // Capture the rated card before any optimistic UI change.
-    const item = current;
-    const startTime = cardStartTime;
-    // FB213: a most megválaszolt lap felkerül a „mostanában látott" listára, még a
-    // sor újraépítése előtt, hogy az újraépítés már hátra tudja sorolni.
-    recentRef.current = rememberRecent(recentRef.current, recentKey(item), requeueGapFor(requeueLevel));
-    const next = currentIndex + 1;
-    const midQueue = next < queue.length;
-
-    // FB11: word-card Good/Again felt dead/slow because ~8 awaited DB writes ran
-    // before the next card appeared. For a mid-queue rating, show the next card
-    // immediately and release the guard so it stays tappable; the SRS persistence
-    // below runs in the background. (End-of-queue must await its batch rebuild.)
-    if (midQueue) {
-      setCurrentIndex(next);
-      resetCardState();
-      advancingRef.current = false;
-    }
-
-    try {
-    const result = f.repeat(item.card, new Date());
-    const updated = result[rating].card;
-    const wasCorrect = rating !== Rating.Again;
-    spendNewWordBadge(item, updated);
-
-    const responseTimeMs = Date.now() - startTime;
-
+  // UTEMEZO: az `effects` DB/FSRS-irasa hatterben fut (FB11 optimista minta),
+  // a kovetkezo kartya mar allhat, mire ez lefut.
+  const runEffects = (effects: Effect[], startTime: number): Promise<void> => {
     const db = getDb();
-    await db.updateCard(item.wordId, item.type, updated);
-    await db.recordAttempt(item.wordId, item.type, wasCorrect, responseTimeMs);
-    await db.updateStreak();
-    setKnownWords(await db.getReviewedWordCount(level));
-    await checkLevelChange(wasCorrect);
-
-    const streakData = await db.getStreak();
-    setStreak(streakData.current_count);
-
-    setReviewed((r) => r + 1);
-
-    if (!midQueue) {
-      await rebuildQueueAtEnd();
-    }
-    } finally {
-      if (!midQueue) advancingRef.current = false;
-    }
-  };
-
-  // FB38: advance to the next card with NO SRS write at all (used by the
-  // snooze button). Mirrors advance()'s optimistic mid-queue step and
-  // queue-end rebuild, minus every rating/persistence call.
-  const advanceNoRating = async () => {
-    if (!current || advancingRef.current) return;
-    advancingRef.current = true;
-    // FB213: az elhalasztott lap is „látott", különben az újraépítés azonnal
-    // visszahozza azt, amit a tanuló épp félretett.
-    recentRef.current = rememberRecent(recentRef.current, recentKey(current), requeueGapFor(requeueLevel));
-    const next = currentIndex + 1;
-    const midQueue = next < queue.length;
-    if (midQueue) {
-      setCurrentIndex(next);
-      resetCardState();
-      advancingRef.current = false;
-    } else {
+    const responseTimeMs = Date.now() - startTime;
+    return (async () => {
       try {
-        await rebuildQueueAtEnd();
-      } finally {
-        advancingRef.current = false;
-      }
-    }
+        for (const effect of effects) {
+          if (effect.type === 'attempt') {
+            await db.recordAttempt(effect.wordId, effect.cardType, effect.correct, responseTimeMs);
+            await db.updateStreak();
+            setKnownWords(await db.getReviewedWordCount(level));
+            await checkLevelChange(effect.correct);
+            const streakData = await db.getStreak();
+            setStreak(streakData.current_count);
+          } else if (effect.type === 'passLap') {
+            await db.passLap(effect.wordId);
+          } else if (effect.type === 'learned') {
+            const key = cardKey(effect.wordId, 'word');
+            const card = cardsRef.current.get(key) ?? createEmptyCard<Card>();
+            const updated = f.repeat(card, new Date())[Rating.Good].card;
+            await db.updateCard(effect.wordId, 'word', updated);
+            cardsRef.current.set(key, updated);
+          } else if (effect.type === 'grade') {
+            const key = cardKey(effect.wordId, effect.cardType);
+            const card = cardsRef.current.get(key) ?? createEmptyCard<Card>();
+            const updated = f.repeat(card, new Date())[effect.correct ? Rating.Good : Rating.Again].card;
+            await db.updateCard(effect.wordId, effect.cardType, updated);
+            cardsRef.current.set(key, updated);
+          }
+        }
+      } catch {}
+    })();
   };
 
-  // FB43/FB46: move the current card to the END of the queue (no rating), then
-  // show whatever now sits at this same index, since removing the current
-  // card shifts everything after it left by one, that's already the "next"
-  // card, so the index itself doesn't move. A single-item queue is a no-op,
-  // there's nowhere to send it, so just reset the card's local UI state.
-  const requeueCurrent = () => {
-    if (!current || advancingRef.current) return;
-    if (queue.length <= 1) {
-      resetCardState();
+  // UTEMEZO 3.3/3.4/4.2: a kepernyon levo lap megvalaszolasa. `answer()` adja
+  // az uj allapotot + az effect-listat (DB/FSRS), `advanceQueue` mutatja a
+  // kovetkezo lapot. Ha a kor veget ert (current === null), a hivo megprobal
+  // ujratolteni (finishRound), mielott Kesz-kepernyore valtana.
+  const applyAnswer = async (correct: boolean) => {
+    const state = qsRef.current;
+    if (!state || !state.current || advancingRef.current) return;
+    advancingRef.current = true;
+    const startTime = cardStartTime;
+    const { state: afterAnswer, effects } = answer(state, correct);
+    const persisted = runEffects(effects, startTime);
+    const advanced = advanceQueue(afterAnswer);
+    setQueueState(advanced);
+    if (advanced.current !== null) {
+      advancingRef.current = false;
       return;
     }
-    const item = current;
-    const rest = queue.filter((_, i) => i !== currentIndex);
-    // FB198: nem a sor végére, hanem a beállított távolságra. A vég csak akkor,
-    // ha rövidebb a maradék, mint a távolság.
-    const at = requeueIndex(rest.length, currentIndex, requeueGapFor(requeueLevel));
-    setQueue([...rest.slice(0, at), item, ...rest.slice(at)]);
-    resetCardState();
+    try {
+      // A kör végén az utolsó válasz DB-írása érjen célba, mielőtt a
+      // finishRound újra lekérdezi az esedékeseket.
+      await persisted;
+      await finishRound(advanced);
+    } finally {
+      advancingRef.current = false;
+    }
+  };
+
+  // UTEMEZO 3.5: a kepernyon levo lap valasz nelkul tavozik (snooze, ures
+  // begepelt valasz, "kihagyom"). Nincs effect, nincs stat.
+  const deferCurrent = async (drop: boolean) => {
+    const state = qsRef.current;
+    if (!state || !state.current || advancingRef.current) return;
+    advancingRef.current = true;
+    const advanced = advanceQueue(defer(state, { drop }));
+    setQueueState(advanced);
+    if (advanced.current !== null) {
+      advancingRef.current = false;
+      return;
+    }
+    try {
+      await finishRound(advanced);
+    } finally {
+      advancingRef.current = false;
+    }
+  };
+
+  // FB43/FB46: a régi requeueCurrent névvel hívott hely (EasySentenceCard
+  // onSkip) marad, csak a defer-en megy át: a lap válasz nélkül megy tovább.
+  const requeueCurrent = () => {
+    deferCurrent(false);
   };
 
   useEffect(() => {
@@ -1007,55 +948,39 @@ export default function LearnScreen() {
       if (!revealed) {
         setRevealed(true);
       } else {
-        advance(Rating.Good);
+        applyAnswer(true);
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
   });
 
+  // FB129 (a "mutasd mondatban" gomb): a kepernyon levo (hand-lap, flashcard-
+  // iranyu) szo rontottnak szamit (UTEMEZO: answer(state,false)), majd a szo
+  // mondat-kartyaja bekerul a reviews[] legelejere (insertNext), hogy
+  // kozvetlenul utana jojjon.
   const handleInSentence = async () => {
-    if (!current) return;
+    const state = qsRef.current;
+    if (!state || !state.current) return;
+    const shown = state.current;
+    const startTime = cardStartTime;
+    const { state: afterAnswer, effects } = answer(state, false);
+    runEffects(effects, startTime);
 
-    const result = f.repeat(current.card, new Date());
-    const updated = result[Rating.Again].card;
+    const key = cardKey(shown.wordId, 'sentence');
+    if (!cardsRef.current.has(key)) {
+      await getDb().ensureCard(shown.wordId, 'sentence');
+      cardsRef.current.set(key, createEmptyCard<Card>());
+    }
 
-    const responseTimeMs = Date.now() - cardStartTime;
-
-    const db = getDb();
-    await db.updateCard(current.wordId, current.type, updated);
-    await db.recordAttempt(current.wordId, current.type, false, responseTimeMs);
-    await db.updateStreak();
-    setKnownWords(await db.getReviewedWordCount(level));
-    await checkLevelChange(false);
-
-    const streakData = await db.getStreak();
-    setStreak(streakData.current_count);
-    setReviewed(reviewed + 1);
-
-    const sentenceCard: DueItem = {
-      wordId: current.wordId,
+    const sentenceLap: ReviewLap = {
+      wordId: shown.wordId,
       type: 'sentence',
-      card: current.card,
-      word: current.word,
       isTyping: false,
+      isEasySentence: true,
+      repair: false,
     };
-
-    const newQueue = queue.filter((item, i) =>
-      i === currentIndex || !(item.wordId === current.wordId && item.type === 'sentence')
-    );
-    const insertAt = newQueue.indexOf(current) + 1;
-    newQueue.splice(insertAt, 0, sentenceCard);
-    setQueue(newQueue);
-    setCurrentIndex(insertAt);
-    setRevealed(false);
-    setTypedAnswer('');
-    setArticlePick('');
-    setTypingResult(null);
-    setCardStartTime(Date.now());
-    setPracticeTyping(false);
-    setPracticeResult(null);
-    setPracticeText('');
+    setQueueState(advanceQueue(insertNext(afterAnswer, sentenceLap)));
   };
 
   // FB116: a skipped card is still read out loud, the word AND its sentence ("ha
@@ -1105,108 +1030,28 @@ export default function LearnScreen() {
     speakIn(back, speechLang(backLang));
   };
 
-  // FB60: grade a card Again without leaving the current session queue. Mirrors
-  // advance()'s SRS writes but runs them optimistically in the background (FB11/
-  // FB19 pattern) and does NOT step the index, the caller decides where the card
-  // goes (requeueCurrent puts it at the back). One Again write only, no double
-  // penalty for the retry the learner is about to get.
-  const gradeBackground = (item: DueItem, updated: Card, wasCorrect: boolean, startTime: number) => {
-    const db = getDb();
-    (async () => {
-      try {
-        await db.updateCard(item.wordId, item.type, updated);
-        await db.recordAttempt(item.wordId, item.type, wasCorrect, Date.now() - startTime);
-        await db.updateStreak();
-        setKnownWords(await db.getReviewedWordCount(level));
-        await checkLevelChange(wasCorrect);
-        const streakData = await db.getStreak();
-        setStreak(streakData.current_count);
-      } catch {}
-    })();
-    setReviewed((r) => r + 1);
-  };
-
-  const gradeAgainBackground = (item: DueItem, startTime: number) => {
-    // FB210: az Again sosem tesz megtanulttá egy szót, tehát a 🌱 keretet sem fogyasztja.
-    gradeBackground(item, f.repeat(item.card, new Date())[Rating.Again].card, false, startTime);
-  };
-
-  // Replaces the current card with its next-phase twin a few cards later
-  // (same index bookkeeping as requeueCurrent, see its comment).
-  // FB163: the twin used to go to the very BACK, so with several new words in
-  // flight the learner walked five ladders at once. A short gap of review cards
-  // keeps exactly one new word in progress ("azt nyomja végig a 3 típusát, és
-  // közben menjen a régi szavak ismétlése ... de egyesével") while still putting
-  // real distance between the same word's two sightings.
-  const PHASE_GAP = 3;
-  const requeueAtPhase = (item: DueItem, card: Card, phase: WordPhase) => {
-    const shape = phaseShape(phase);
-    const nextItem: DueItem = { ...item, card, isTyping: shape.isTyping, typingDirection: shape.typingDirection };
-    const rest = queue.filter((_, i) => i !== currentIndex);
-    const insertAt = Math.min(rest.length, currentIndex + PHASE_GAP);
-    const next = [...rest];
-    next.splice(insertAt, 0, nextItem);
-    setQueue(next);
-    if (rest.length === 0) setCurrentIndex(0);
-    resetCardState();
-  };
-
-  // FB109/FB111/FB114: walk the word's phase ladder INSIDE the session. A Good on
-  // a word flashcard used to move the word's due date days out, so the reverse
-  // flashcard and above all the TYPING card only surfaced on some later day ("nem
-  // volt a begepelos rész miért", "most a gépelésből csak mondat van"). The word
-  // now comes back at its next phase at the end of this queue, and leaves the
-  // session only once it has been spelled right (FB111: "egy szó akkor számít
-  // megtanultnak ha el tudjuk írni helyesen").
+  // UTEMEZO 3.3: a hand-lap Good/Again gombjai egyenesen a motort hivjak, ami
+  // maga donti el, hogy a szo a kovetkezo lapra lep, javitas-cimkevel marad,
+  // vagy (3. lap) megtanult (lasd sessionQueue.ts answer()).
   const handleWordGood = () => {
-    if (!current || current.type !== 'word' || current.isTyping || advancingRef.current) {
-      advance(Rating.Good);
-      return;
-    }
-    const item = current;
-    const updated = f.repeat(item.card, new Date())[Rating.Good].card;
-    const nextPhase = wordPhase(updated);
-    if (nextPhase === wordPhase(item.card)) {
-      advance(Rating.Good);
-      return;
-    }
-    spendNewWordBadge(item, updated);
-    gradeBackground(item, updated, true, cardStartTime);
-    requeueAtPhase(item, updated, nextPhase);
+    applyAnswer(true);
   };
 
-  // FB105: Again on a word FLASHCARD means "I still don't know it", so the word
-  // stays in this session's deck instead of only moving its due date (FB60 does
-  // the same for a missed typed word). One Again write, then back of the queue.
   const handleWordAgain = () => {
-    if (current && current.type === 'word') {
-      gradeAgainBackground(current, cardStartTime);
-      requeueCurrent();
-      return;
-    }
-    advance(Rating.Again);
+    applyAnswer(false);
   };
 
   const handleTypingNext = () => {
     // FB73: the skipped (empty) answer stays ungraded, it only goes to the back.
     if (typingResult === 'skipped') {
-      requeueCurrent();
+      deferCurrent(false);
       return;
     }
     if (typingResult === 'wrong') {
-      // FB60: a missed typed WORD goes back into this session's deck (not just its
-      // SRS due date) so the learner retries it now. The correct form is already
-      // shown above (the `back` line + FB25 char-diff). Sentence typing keeps the
-      // plain advance.
-      if (current && current.type === 'word') {
-        gradeAgainBackground(current, cardStartTime);
-        requeueCurrent();
-        return;
-      }
-      advance(Rating.Again);
-    } else {
-      advance(Rating.Good);
+      applyAnswer(false);
+      return;
     }
+    applyAnswer(true);
   };
 
   if (loading) {
@@ -1230,9 +1075,16 @@ export default function LearnScreen() {
 
   if (done) {
     const examAvailable = buildMockExam(direction[1], direction[0], level).sections.length > 0 && masteredPct >= 80;
+    // UTEMEZO 5. szakasz: a kor vegi egyetlen kerdes, a motor allapotabol.
+    const doneAsk: DoneAsk = !qs
+      ? 'none'
+      : qs.fresh.length > 0 && qs.black === 0
+        ? 'more-new'
+        : qs.fresh.length === 0
+          ? 'practise'
+          : 'none';
     return (
       <DoneScreen
-        reviewed={reviewed}
         streak={streak}
         level={level}
         masteredPct={masteredPct}
@@ -1241,20 +1093,22 @@ export default function LearnScreen() {
         onStartExam={() => setExamMode(true)}
         currentTopic={currentTopic}
         topicProgress={topicProgress}
-        newWordsLeft={newWordsLeft}
-        newWordsPaused={newWordsPaused}
+        stats={qs?.stats ?? DONE_STATS_ZERO}
+        ask={doneAsk}
+        dailyDefault={dailyDefault}
         onMoreNewWords={handleMoreNewWords}
         newWordsInTopic={newWordsInTopic}
         onNextTopicWords={nextTopicId ? handleNextTopicWords : undefined}
-        sessionMix={sessionMix}
-        unlearnedCount={unlearnedCount}
-        pauseReason={pauseReason}
         levelExhausted={levelNewWordsLeft === 0}
         onPractiseLevel={handlePractiseLevel}
         onNextLevel={LEVELS.indexOf(level) + 1 < LEVELS.length ? handleNextLevel : undefined}
       />
     );
   }
+
+  // done === false itt garantalja, hogy qs.current (tehat `current`) nem null
+  // (lasd finishRound/loadCards); ez a TS-nek is kimondja, hogy innentol biztos.
+  if (!current) return null;
 
   const { front, back, frontLang, backLang } = getFrontBack(current);
   const isWord = current.type === 'word';
@@ -1349,7 +1203,8 @@ export default function LearnScreen() {
   // FB158/FB159: the tag says whether this card is new or a review, in the
   // interface language. ITER5 moved it onto the card as a chip, next to the
   // borrowed-topic chip, instead of owning a row of its own above the card.
-  const isNewCard = newTodayIds.has(current.wordId);
+  // UTEMEZO 6: "uj" = kezben-levo lap (hand), "review" = mar megtanult szo.
+  const isNewCard = qs?.current?.kind === 'hand';
 
   // FB139: a card borrowed from a neighbouring topic names its own topic, so the
   // status row above it is not read as the word's home ("csak akkor amikor a másik
@@ -1401,15 +1256,15 @@ export default function LearnScreen() {
       total={levelTotal}
       langFlag={targetLangInfo?.flag ?? ''}
       langName={targetLangInfo?.name ?? ''}
-      newWordsLeft={newWordsLeft}
-      newWordsPaused={newWordsPaused}
-      reviewLeft={reviewLeft}
-      batchLeft={batchLeft}
-      reviewBatchesLeft={reviewBatch.left}
+      black={black}
+      blue={blue}
+      pink={pink}
+      reviewLeft={pink}
       examUnlocked={masteredPct >= 80}
       onExamPress={() => setExamMode(true)}
       examLabel={s.exam.unlocked}
       toast={chromeToast}
+      lapLabel={lapLabelOf(qs?.current ?? null)}
     />
   );
 
@@ -1442,18 +1297,18 @@ export default function LearnScreen() {
         >
         <EasySentenceCard
           chips={cardChips}
-          key={`${current.wordId}-${currentIndex}`}
+          key={`${current.wordId}-${qs?.step ?? 0}`}
           sourceSentence={nativeSentence}
           lang={learned}
           targetWords={targetWordList}
           trapWords={traps}
           onResult={(correct) => {
-            advance(correct ? Rating.Good : Rating.Again);
+            applyAnswer(correct);
           }}
           onBury={() => {
             const db = getDb();
             db.buryCard(current.wordId, current.type).catch(() => {});
-            advance(Rating.Good);
+            applyAnswer(true);
           }}
           onSkip={requeueCurrent}
           mistakeNote={noteText}
@@ -1598,7 +1453,7 @@ export default function LearnScreen() {
         {revealed && typingResult === 'wrong' && (
           <Pressable
             style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
-            onPress={() => advance(Rating.Good)}
+            onPress={() => applyAnswer(true)}
           >
             {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.correctAsIs}</Text>}
           </Pressable>
@@ -1609,7 +1464,7 @@ export default function LearnScreen() {
           onPress={() => {
             const db = getDb();
             db.buryCard(current.wordId, current.type).catch(() => {});
-            advance(Rating.Good);
+            applyAnswer(true);
           }}
         >
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.iKnowThis}</Text>}
@@ -1621,7 +1476,7 @@ export default function LearnScreen() {
           onPress={() => {
             const db = getDb();
             db.snoozeCard(current.wordId, current.type, 3).catch(() => {});
-            advanceNoRating();
+            deferCurrent(true);
           }}
         >
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.snooze}</Text>}
@@ -1807,7 +1662,7 @@ export default function LearnScreen() {
           onPress={() => {
             const db = getDb();
             db.buryCard(current.wordId, current.type).catch(() => {});
-            advance(Rating.Good);
+            applyAnswer(true);
           }}
         >
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.iKnowThis}</Text>}
@@ -1821,7 +1676,7 @@ export default function LearnScreen() {
           onPress={() => {
             const db = getDb();
             db.snoozeCard(current.wordId, current.type, 3).catch(() => {});
-            advanceNoRating();
+            deferCurrent(true);
           }}
         >
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.snooze}</Text>}

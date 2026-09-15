@@ -1,6 +1,4 @@
 import { getDb } from '../database.web';
-import { buildQueue, applyCadence } from '../sessionQueue';
-import { capNewWords } from '../newWordBudget';
 import { borrowNewWords } from '../topicRotation';
 import { getWordsForTopic, type Level } from '@/data/words';
 import { getTopicsForLevel } from '@/data/topics';
@@ -12,7 +10,6 @@ import { getTopicsForLevel } from '@/data/topics';
 // not belong to, fails here rather than on the phone.
 const LEVEL: Level = 'A1';
 const TARGET = 'es';
-const QUEUE_POOL = 40;
 
 describe('borrowed new words reach the queue (FB139)', () => {
   const topics = getTopicsForLevel(LEVEL, TARGET);
@@ -52,7 +49,10 @@ describe('borrowed new words reach the queue (FB139)', () => {
     expect(picked.some(p => p.topicId === active.id)).toBe(false);
   });
 
-  it('hands the borrowed words to the learner as cards', async () => {
+  // UTEMEZO 2.4/12.1: a borrowed word reaches the learner through the engine's
+  // `fresh` list (untouched word ids), not through buildQueue/getDueCardsForWordIds
+  // any more (that query now returns learned reviews only, see database.ts).
+  it('hands the borrowed words to the learner as untouched (fresh) ids', async () => {
     const db = getDb();
     await db.setOnboarding('en', TARGET);
     const ids = picked.map(p => p.wordId);
@@ -60,13 +60,8 @@ describe('borrowed new words reach the queue (FB139)', () => {
       await db.ensureCard(id, 'word');
       await db.ensureCard(id, 'sentence');
     }
-    const rows = await db.getDueCardsForWordIds(ids, QUEUE_POOL);
-    const queue = applyCadence(capNewWords(buildQueue(rows, TARGET), intake), false, TARGET);
-    expect(queue.length).toBeGreaterThan(0);
-    const borrowed = new Set(ids);
-    for (const item of queue) {
-      expect(item.word).toBeDefined();
-      expect(borrowed.has(item.wordId)).toBe(true);
-    }
+    const untouched = await db.getUntouchedWordIds(ids);
+    expect(untouched.size).toBe(ids.length);
+    for (const id of ids) expect(untouched.has(id)).toBe(true);
   });
 });

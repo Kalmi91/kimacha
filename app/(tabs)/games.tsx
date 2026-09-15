@@ -6,7 +6,6 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
-import { wordPhase } from '@/lib/wordPhase';
 import { GAME_DEFS, gameName, gameBlurb, gameRoute, gameSupportsLanguage, type GameDef } from '@/lib/games/registry';
 import { getGameBest } from '@/lib/games/scoring';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -51,7 +50,7 @@ export default function GamesScreen() {
     setLevel(levelData.level);
 
     const cards = await db.getAllWordCards(activePair);
-    setPoolSize(cards.filter((c) => wordPhase(c) >= 1).length);
+    setPoolSize(cards.filter((c) => c.lap >= 1).length);
 
     const entries = await Promise.all(
       GAME_DEFS.filter((g) => !g.soon).map(async (g) => {
