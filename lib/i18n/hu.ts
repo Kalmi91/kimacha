@@ -405,6 +405,11 @@ export default {
     entryBlurb: 'Minden szabály A1-től C1-ig: előbb magyarázat, aztán gyakorlás.',
     // FB216: kevert nyelvű felolvasás a lecke-szövegre.
     readAloud: 'Felolvasás',
+    // LECKE-SEMA 2.1-2.2: match/form feladat-fajták.
+    matchHint: 'Párosítsd a szavakat',
+    formHint: 'Írd be a helyes alakot',
+    showTable: 'Táblázat',
+    check: 'Ellenőrzés',
   },
   exam: {
     simulationOf: (model: string) => `A ${model} vizsga szimulációja`,

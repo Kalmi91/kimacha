@@ -7,7 +7,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { getGameDef, gameName } from '@/lib/games/registry';
-import { getGrammarTopics, type GrammarTopicData } from '@/lib/games/content';
+import { getGrammarTopics, isLessonV2, type GrammarTopicData } from '@/lib/games/content';
 import { getGameBest, recordGameResult } from '@/lib/games/scoring';
 import GrammarDrill from '@/components/grammar/GrammarDrill';
 import MoreBlocks from '@/components/grammar/MoreBlocks';
@@ -99,7 +99,9 @@ export default function GrammarChoiceScreen() {
         <ScrollView contentContainerStyle={styles.list}>
           {topics.map((tp) => (
             <Pressable key={tp.topic} style={[styles.card, { backgroundColor: colors.card }]} onPress={() => startTopic(tp)}>
-              <Text style={[styles.cardTitle, { color: colors.text }]}>{tp.title[contentLang] ?? tp.title.en}</Text>
+              <Text style={[styles.cardTitle, { color: colors.text }]}>
+                {(tp.title as Record<string, string>)[contentLang] ?? tp.title.en}
+              </Text>
               <Text style={[styles.cardSub, { color: colors.tabIconDefault }]}>{s.games.grammarChoice.topicItemCount(tp.items.length)}</Text>
             </Pressable>
           ))}
@@ -138,7 +140,7 @@ export default function GrammarChoiceScreen() {
           <Text style={[styles.back, { color: colors.text }]}>←</Text>
         </Pressable>
         <Text style={[styles.title, { color: colors.text }]} numberOfLines={1}>
-          {topic.title[contentLang] ?? topic.title.en}
+          {(topic.title as Record<string, string>)[contentLang] ?? topic.title.en}
         </Text>
         <Pressable onPress={() => setRuleOpen(true)} hitSlop={12}>
           <Text style={[styles.ruleBtnText, { color: colors.tint }]}>📋</Text>
@@ -163,12 +165,56 @@ export default function GrammarChoiceScreen() {
         <Pressable style={styles.overlay} onPress={() => setRuleOpen(false)}>
           <Pressable style={[styles.ruleModal, { backgroundColor: colors.card }]} onPress={() => {}}>
             <Text style={[styles.explainHeader, { color: colors.text }]}>{s.games.ruleButton}</Text>
-            <Text style={[styles.explainText, { color: colors.text }]}>{topic.rule[contentLang] ?? topic.rule.en}</Text>
-            {topic.more ? (
-              <View style={styles.ruleMore}>
-                <MoreBlocks more={topic.more} contentLang={contentLang} color={colors.tabIconDefault} />
-              </View>
-            ) : null}
+            {isLessonV2(topic) ? (
+              // LECKE-SEMA 6.3 D: V2 lecke rule/more helyett a body text/tip
+              // blokkjait és az első (rövidített) usage blokkot mutatja.
+              // A `Lang4` szűkebb, mint a `contentLang: string` state, innen a cast.
+              (() => {
+                const cLang = contentLang as 'hu' | 'en' | 'es' | 'de';
+                const usage = topic.body.find((b) => b.kind === 'usage');
+                return (
+                  <>
+                    {topic.body
+                      .filter((b): b is Extract<typeof b, { kind: 'text' }> => b.kind === 'text')
+                      .map((b, i) => (
+                        <Text key={`t${i}`} style={[styles.explainText, { color: colors.text }]}>
+                          {b.text[cLang] ?? b.text.en}
+                        </Text>
+                      ))}
+                    {topic.body
+                      .filter((b): b is Extract<typeof b, { kind: 'tip' }> => b.kind === 'tip')
+                      .map((b, i) => (
+                        <Text key={`p${i}`} style={[styles.explainText, { color: colors.text }]}>
+                          💡 {b.text[cLang] ?? b.text.en}
+                        </Text>
+                      ))}
+                    {usage && usage.kind === 'usage' ? (
+                      <View style={styles.ruleMore}>
+                        {usage.title ? (
+                          <Text style={[styles.explainHeader, { color: colors.tint }]}>{usage.title[cLang] ?? usage.title.en}</Text>
+                        ) : null}
+                        {usage.points.map((point, i) => (
+                          <Text key={i} style={[styles.explainText, { color: colors.text }]}>
+                            • {point.text[cLang] ?? point.text.en}
+                          </Text>
+                        ))}
+                      </View>
+                    ) : null}
+                  </>
+                );
+              })()
+            ) : (
+              <>
+                <Text style={[styles.explainText, { color: colors.text }]}>
+                  {'rule' in topic ? topic.rule[contentLang] ?? topic.rule.en : ''}
+                </Text>
+                {'more' in topic && topic.more ? (
+                  <View style={styles.ruleMore}>
+                    <MoreBlocks more={topic.more} contentLang={contentLang} color={colors.tabIconDefault} />
+                  </View>
+                ) : null}
+              </>
+            )}
           </Pressable>
         </Pressable>
       </Modal>
