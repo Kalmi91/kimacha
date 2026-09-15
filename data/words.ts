@@ -10,6 +10,16 @@ export const LEVELS: Level[] = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 export type WordPos = 'noun' | 'verb' | 'adj' | 'adv' | 'pron' | 'prep' | 'num' | 'phrase';
 export type WordGender = 'm' | 'f' | 'mf' | 'n' | '-';
 
+// PROMPT-POLICY 6: egy szó, ami csak Mexikóban él (ahorita, chido...), a
+// kártyán zászló-emojival jelzi, melyik országban használják. Mező nélkül =
+// spanyolországi, zászló nélkül (alapértelmezett).
+export type WordRegion = 'mx' | 'es';
+
+// PROMPT-POLICY 7: külön kártya csak akkor jár egy szónak, ha rendhagyó a
+// többese (el lápiz -> los lápices) vagy a szó csak többesben él (las gafas).
+// Ilyenkor a kártyán egy piktogram-címke jelzi, miért kérdezik külön.
+export type WordPlural = 'irregular' | 'only';
+
 // Issue #3, 4. szakasz: a mezők KÖTELEZŐEK, de minden szófájl `as WordEntry[]`
 // cast-tal jön be, ezért a fordító nem látja, ha egy bejegyzésből hiányzik
 // valamelyik. Egy hiányos sáv-bejegyzés így csak futásidőben bukna ki, üres
@@ -31,6 +41,8 @@ export interface WordEntry {
   sentence_de: string;
   pos?: WordPos;
   gender?: WordGender;
+  region?: WordRegion;
+  plural?: WordPlural;
   [key: string]: string | number | undefined;
 }
 
