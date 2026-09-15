@@ -169,12 +169,13 @@ describe('word entry completeness', () => {
 });
 
 // PROMPT-POLICY 1: "Egy szinten és sávon belül két szónak nem lehet olyan
-// promptja, amelyből nem dönthető el, melyik a kérdezett." A 9. szakasz
-// szerint ez az őr most SKIP-pelve marad: az audit-szkript (scripts/audit-
-// prompts.mjs) listázza a jelenlegi 179+17 (+ hu 24+19, en 11+26) érintett
-// tételt, a korpusz-kör (4. lépés) ezeket zárja majd, és ekkor vált a teszt
-// `it(`-re. A fürt-logika a lib/promptOverlap.ts-ben él, ugyanaz fut itt és
-// a szkriptben (ott duplikálva, mert az .mjs nem importál TS-t).
+// promptja, amelyből nem dönthető el, melyik a kérdezett." A 9.4 szerint a
+// korpusz-menet (2026-09-14/15) után ez az őr ÉLES: új szó nem hozhatja
+// vissza a hibát. A fürt-logika a lib/promptOverlap.ts-ben él, ugyanaz fut
+// itt és a scripts/audit-prompts.mjs-ben (ott duplikálva, mert az .mjs nem
+// importál TS-t). Csak azokat a szinteket nézi, amelyek a sávban tényleg
+// léteznek: a getWordsForLevel a hiányzó hu/en szintekre a spanyol korpuszra
+// esik vissza, és az nem ennek a sávnak a promptja.
 describe('prompt policy (PROMPT-POLICY 1)', () => {
   const BANDS: { label: string; lang: PromptLang; headword: PromptLang; prompt: PromptLang }[] = [
     { label: 'es', lang: 'es', headword: 'es', prompt: 'en' },
@@ -182,10 +183,11 @@ describe('prompt policy (PROMPT-POLICY 1)', () => {
     { label: 'en', lang: 'en', headword: 'en', prompt: 'hu' },
   ];
 
-  it.skip.each(BANDS)('never gives two words of a level an ambiguous $label prompt', ({ lang, headword, prompt }) => {
+  it.each(BANDS)('never gives two words of a level an ambiguous $label prompt', ({ lang, headword, prompt }) => {
     const offenders: string[] = [];
     for (const level of LEVELS) {
       const levelWords = getWordsForLevel(level, lang);
+      if (lang !== 'es' && levelWords.some((w) => w.level === level && getWordsForLevel(level, 'es').includes(w))) continue;
       const clusters = findPromptOverlaps(
         levelWords.map((w) => ({ id: w.id, headword: String(w[headword] ?? ''), prompt: String(w[prompt] ?? '') })),
         prompt

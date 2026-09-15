@@ -244,10 +244,9 @@ for (const band of BANDS) {
     }
   }
 
-  const matchNote =
-    exactTotal === band.expected.exact && partialTotal === band.expected.partial
-      ? 'matches spec'
-      : 'DIFFERS from spec';
+  // PROMPT-POLICY 9.4: a menet után a cél 0 / 0, a fejléc számai csak a
+  // kiindulás voltak.
+  const matchNote = exactTotal === 0 && partialTotal === 0 ? 'OK' : 'P1: ütközés maradt';
   summaryLines.push(`${band.label}: ${exactTotal} exact, ${partialTotal} partial (${matchNote})`);
 }
 
