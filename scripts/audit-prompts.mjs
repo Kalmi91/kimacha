@@ -77,17 +77,22 @@ function findPromptOverlaps(words, lang) {
 
   // 2) PARTIAL, csak azok közt, akik nem már exact-duplikátumok.
   const rest = active.filter((w) => !exactIds.has(w.id));
+  // Három index (lásd lib/promptOverlap.ts): teljes sense, csupasz sense,
+  // zárójeles sense levágott alakja. Két különböző zárójeles alak nem ütközik.
   const keyIndex = new Map();
+  const bareIndex = new Map();
+  const parenIndex = new Map();
+  const push = (index, key, w) => {
+    const list = index.get(key) ?? [];
+    if (!list.includes(w)) list.push(w);
+    index.set(key, list);
+  };
   for (const w of rest) {
-    const keys = new Set();
     for (const sense of promptSenses(w.prompt, lang)) {
-      keys.add(sense);
-      keys.add(bareSense(sense));
-    }
-    for (const key of keys) {
-      const list = keyIndex.get(key) ?? [];
-      list.push(w);
-      keyIndex.set(key, list);
+      push(keyIndex, sense, w);
+      const bare = bareSense(sense);
+      if (bare === sense) push(bareIndex, bare, w);
+      else push(parenIndex, bare, w);
     }
   }
   const indexOf = new Map(rest.map((w, i) => [w.id, i]));
@@ -109,6 +114,13 @@ function findPromptOverlaps(words, lang) {
     const first = indexOf.get(list[0].id);
     for (let j = 1; j < list.length; j++) union(first, indexOf.get(list[j].id));
   }
+  for (const [bare, bareWords] of bareIndex) {
+    const parenWords = parenIndex.get(bare);
+    if (!parenWords) continue;
+    const first = indexOf.get(bareWords[0].id);
+    for (const w of bareWords) union(first, indexOf.get(w.id));
+    for (const w of parenWords) union(first, indexOf.get(w.id));
+  }
   const groups = new Map();
   rest.forEach((w, i) => {
     const r = find(i);
@@ -124,6 +136,15 @@ function findPromptOverlaps(words, lang) {
       if (kwords.filter((w) => groupIds.has(w.id)).length >= 2) {
         sense = key;
         break;
+      }
+    }
+    if (sense === null) {
+      for (const [bare, bareWords] of bareIndex) {
+        const parenWords = parenIndex.get(bare) ?? [];
+        if (bareWords.some((w) => groupIds.has(w.id)) && parenWords.some((w) => groupIds.has(w.id))) {
+          sense = bare;
+          break;
+        }
       }
     }
     clusters.push({ kind: 'partial', sense, words: groupWords });
