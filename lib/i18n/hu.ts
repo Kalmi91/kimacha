@@ -391,6 +391,7 @@ export default {
     yourLevel: 'itt tartasz',
     soon: 'hamarosan',
     coreTag: 'fontos',
+    corePlusTag: 'core+',
     started: 'elkezdve',
     notStarted: 'új',
     soonLong: 'Ez a lecke még nincs megírva. Rajta van a listán, a szint többi része viszont már nyitva.',

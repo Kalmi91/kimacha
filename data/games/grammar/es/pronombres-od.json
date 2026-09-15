@@ -1,0 +1,632 @@
+{
+  "topic": "pronombres-od",
+  "level": "A1",
+  "title": {
+    "hu": "Tárgyeset névmások: lo, la, los, las",
+    "en": "Direct object pronouns: lo, la, los, las",
+    "es": "Pronombres de objeto directo: lo, la, los, las",
+    "de": "Direkte Objektpronomen: lo, la, los, las"
+  },
+  "rule": {
+    "hu": "A tárgyeset névmás (me, te, lo, la, nos, los, las) azt helyettesíti, amit/akit közvetlenül érint a cselekvés, és a RAGOZOTT IGE ELÉ kerül: Te amo (nem Amo te). Főnévi igenév vagy gerundio végéhez viszont hozzátapad: Quiero verte és Te quiero ver egyaránt helyes. A lo/la/los/las nemben és számban egyezik azzal a dologgal, amit helyettesít: El libro → Lo tengo. La casa → La veo. Los libros → Los leo.",
+    "en": "The direct object pronoun (me, te, lo, la, nos, los, las) replaces what or who is directly affected by the action, and it goes BEFORE the conjugated verb: Te amo (not Amo te). With an infinitive or a gerund, though, it attaches to the end: Quiero verte and Te quiero ver are both correct. Lo/la/los/las agree in gender and number with the thing they replace: El libro → Lo tengo. La casa → La veo. Los libros → Los leo.",
+    "es": "El pronombre de objeto directo (me, te, lo, la, nos, los, las) sustituye lo que recibe directamente la acción, y va ANTES del verbo conjugado: Te amo (no Amo te). Con un infinitivo o un gerundio, en cambio, se pega al final: Quiero verte y Te quiero ver son igual de correctas. Lo/la/los/las concuerdan en género y número con lo que sustituyen: El libro → Lo tengo. La casa → La veo. Los libros → Los leo.",
+    "de": "Das direkte Objektpronomen (me, te, lo, la, nos, los, las) ersetzt das, was direkt von der Handlung betroffen ist, und steht VOR dem konjugierten Verb: Te amo (nicht Amo te). Bei einem Infinitiv oder Gerundium hängt es sich dagegen ans Ende: Quiero verte und Te quiero ver sind beide richtig. Lo/la/los/las stimmen in Genus und Numerus mit dem überein, was sie ersetzen: El libro → Lo tengo. La casa → La veo. Los libros → Los leo."
+  },
+  "more": {
+    "hu": "A Te quiero és a Te amo is azt jelenti, „szeretlek”, a nyelvtan pontosan ugyanaz (a névmás a ragozott ige előtt áll). A különbség csak szóválasztás: a te quiero a mindennapi, meleg forma, ezt mondod a családnak, a barátoknak és a párodnak is. A te amo erősebb, romantikusabb vagy ünnepélyesebb. Ugyanígy tapad az igenévhez: Quiero abrazarte / Te quiero abrazar.",
+    "en": "Te quiero and te amo both mean \"I love you\", and the grammar is exactly the same (the pronoun goes before the conjugated verb). The difference is only word choice: te quiero is the everyday, warm one, used with family, friends and partners alike. Te amo is stronger, more romantic or solemn. The same attachment rule applies: Quiero abrazarte / Te quiero abrazar.",
+    "es": "Te quiero y te amo significan los dos «te quiero», y la gramática es exactamente la misma (el pronombre va antes del verbo conjugado). La diferencia es solo de vocabulario: te quiero es la forma cotidiana y cariñosa, se usa con la familia, los amigos y la pareja. Te amo es más fuerte, más romántico o solemne. Se pega igual al infinitivo: Quiero abrazarte / Te quiero abrazar.",
+    "de": "Te quiero und te amo bedeuten beide „ich liebe dich“, und die Grammatik ist genau gleich (das Pronomen steht vor dem konjugierten Verb). Der Unterschied ist reine Wortwahl: te quiero ist die alltägliche, warme Form, die man bei Familie, Freunden und dem Partner benutzt. Te amo ist stärker, romantischer oder feierlicher. Es hängt sich genauso an den Infinitiv: Quiero abrazarte / Te quiero abrazar."
+  },
+  "glossary": [
+    {
+      "word": "Juan",
+      "gloss": {
+        "hu": "Juan (férfinév)",
+        "en": "Juan (male name)",
+        "es": "Juan (nombre de hombre)",
+        "de": "Juan (Männername)"
+      }
+    },
+    {
+      "word": "Pedro",
+      "gloss": {
+        "hu": "Pedro (férfinév)",
+        "en": "Pedro (male name)",
+        "es": "Pedro (nombre de hombre)",
+        "de": "Pedro (Männername)"
+      }
+    },
+    {
+      "word": "pronto",
+      "gloss": {
+        "hu": "hamarosan",
+        "en": "soon",
+        "es": "pronto",
+        "de": "bald"
+      }
+    },
+    {
+      "word": "papás",
+      "gloss": {
+        "hu": "szülők (köznyelvi)",
+        "en": "parents (colloquial)",
+        "es": "papás",
+        "de": "Eltern (umgangssprachlich)"
+      }
+    },
+    {
+      "word": "mamá",
+      "gloss": {
+        "hu": "anya",
+        "en": "mom",
+        "es": "mamá",
+        "de": "Mama"
+      }
+    },
+    {
+      "word": "mochila",
+      "gloss": {
+        "hu": "hátizsák",
+        "en": "backpack",
+        "es": "mochila",
+        "de": "Rucksack"
+      }
+    },
+    {
+      "word": "llevo",
+      "gloss": {
+        "hu": "viszem (llevar)",
+        "en": "I carry (llevar)",
+        "es": "yo llevo",
+        "de": "ich trage (llevar)"
+      }
+    },
+    {
+      "word": "conozco",
+      "gloss": {
+        "hu": "ismerem (conocer)",
+        "en": "I know (conocer, a person)",
+        "es": "yo conozco",
+        "de": "ich kenne (conocer)"
+      }
+    },
+    {
+      "word": "conoces",
+      "gloss": {
+        "hu": "ismered (conocer)",
+        "en": "you know (conocer)",
+        "es": "tú conoces",
+        "de": "du kennst (conocer)"
+      }
+    },
+    {
+      "word": "amo",
+      "gloss": {
+        "hu": "szeretem (amar)",
+        "en": "I love (amar)",
+        "es": "yo amo",
+        "de": "ich liebe (amar)"
+      }
+    },
+    {
+      "word": "amar",
+      "gloss": {
+        "hu": "szeretni (erős)",
+        "en": "to love (strong)",
+        "es": "amar",
+        "de": "lieben (stark)"
+      }
+    },
+    {
+      "word": "ayudar",
+      "gloss": {
+        "hu": "segíteni",
+        "en": "to help",
+        "es": "ayudar",
+        "de": "helfen"
+      }
+    },
+    {
+      "word": "ayudarte",
+      "gloss": {
+        "hu": "segíteni neked",
+        "en": "to help you",
+        "es": "ayudarte",
+        "de": "dir helfen"
+      }
+    },
+    {
+      "word": "llamar",
+      "gloss": {
+        "hu": "hívni, telefonálni",
+        "en": "to call",
+        "es": "llamar",
+        "de": "anrufen"
+      }
+    },
+    {
+      "word": "llamarlo",
+      "gloss": {
+        "hu": "felhívni őt",
+        "en": "to call him",
+        "es": "llamarlo",
+        "de": "ihn anrufen"
+      }
+    },
+    {
+      "word": "comiendo",
+      "gloss": {
+        "hu": "eszem közben (comer, gerundio)",
+        "en": "eating (gerund of comer)",
+        "es": "comiendo",
+        "de": "essend (Gerundium von comer)"
+      }
+    },
+    {
+      "word": "comiéndola",
+      "gloss": {
+        "hu": "eszem őt/azt (tapadó névmás)",
+        "en": "eating it (pronoun attached to gerund)",
+        "es": "comiéndola",
+        "de": "es essend (angehängtes Pronomen)"
+      }
+    },
+    {
+      "word": "comiendola",
+      "gloss": {
+        "hu": "⚠ nem létező alak (hiányzik az ékezet, helyesen: comiéndola)",
+        "en": "⚠ non-existent form (missing accent, correct: comiéndola)",
+        "es": "⚠ forma inexistente (falta el acento, correcto: comiéndola)",
+        "de": "⚠ nicht existierende Form (fehlender Akzent, richtig: comiéndola)"
+      }
+    },
+    {
+      "word": "llaves",
+      "gloss": {
+        "hu": "kulcsok",
+        "en": "keys",
+        "es": "llaves",
+        "de": "Schlüssel"
+      }
+    },
+    {
+      "word": "bolsa",
+      "gloss": {
+        "hu": "táska",
+        "en": "bag",
+        "es": "bolsa",
+        "de": "Tasche"
+      }
+    },
+    {
+      "word": "dudes",
+      "gloss": {
+        "hu": "kételkedj (dudar, kötőmód)",
+        "en": "you doubt (dudar, subjunctive)",
+        "es": "dudes (subjuntivo de dudar)",
+        "de": "du zweifelst (dudar, Konjunktiv)"
+      }
+    },
+    {
+      "word": "dudar",
+      "gloss": {
+        "hu": "kételkedni",
+        "en": "to doubt",
+        "es": "dudar",
+        "de": "zweifeln"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "od-01",
+      "sentence": "¿El libro? ___ tengo aquí.",
+      "options": [
+        "Lo",
+        "La",
+        "Le"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "El libro hímnemű és egyes számú, ezért lo.",
+        "en": "El libro is masculine and singular, so lo.",
+        "es": "El libro es masculino y singular, por eso lo.",
+        "de": "El libro ist maskulin und Singular, also lo."
+      },
+      "wrong": {
+        "La": {
+          "hu": "La a nőnemű dolgokra való, a libro hímnemű.",
+          "en": "La is for feminine things, and libro is masculine.",
+          "es": "La es para cosas femeninas, y libro es masculino.",
+          "de": "La ist für feminine Dinge, libro ist aber maskulin."
+        },
+        "Le": {
+          "hu": "A le a részes esetre való (kinek), nem a tárgyesetre (mit); ez leísmo lenne.",
+          "en": "Le is the indirect object pronoun (to whom), not the direct object (what); that would be leísmo.",
+          "es": "Le es de objeto indirecto (a quién), no de objeto directo (qué); eso sería leísmo.",
+          "de": "Le ist das indirekte Objektpronomen (wem), nicht das direkte (was); das wäre leísmo."
+        }
+      },
+      "examples": [
+        "¿La mesa? La tengo aquí.",
+        "¿Los libros? Los tengo aquí."
+      ]
+    },
+    {
+      "id": "od-02",
+      "sentence": "¿La mochila? ___ llevo yo.",
+      "options": [
+        "La",
+        "Lo",
+        "Las"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "La mochila nőnemű és egyes számú, ezért la.",
+        "en": "La mochila is feminine and singular, so la.",
+        "es": "La mochila es femenina y singular, por eso la.",
+        "de": "La mochila ist feminin und Singular, also la."
+      },
+      "wrong": {
+        "Lo": {
+          "hu": "Lo a hímnemű dolgokra való, a mochila nőnemű.",
+          "en": "Lo is for masculine things, and mochila is feminine.",
+          "es": "Lo es para cosas masculinas, y mochila es femenina.",
+          "de": "Lo ist für maskuline Dinge, mochila ist aber feminin."
+        },
+        "Las": {
+          "hu": "Las többes számú, itt csak egy hátizsákról van szó.",
+          "en": "Las is plural, but here there is only one backpack.",
+          "es": "Las es plural, pero aquí hay solo una mochila.",
+          "de": "Las ist Plural, hier gibt es aber nur einen Rucksack."
+        }
+      },
+      "examples": [
+        "¿El coche? Lo llevo yo.",
+        "¿Las llaves? Las llevo yo."
+      ]
+    },
+    {
+      "id": "od-03",
+      "sentence": "¿Conoces a Juan? Sí, ___ conozco bien.",
+      "options": [
+        "lo",
+        "la",
+        "los"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Juan hímnemű és egy személy, ezért lo.",
+        "en": "Juan is masculine and one person, so lo.",
+        "es": "Juan es masculino y una sola persona, por eso lo.",
+        "de": "Juan ist maskulin und eine Person, also lo."
+      },
+      "wrong": {
+        "la": {
+          "hu": "La a nőnemű személyre való, Juan férfi.",
+          "en": "La is for a feminine person, but Juan is male.",
+          "es": "La es para una persona femenina, y Juan es hombre.",
+          "de": "La ist für eine weibliche Person, Juan ist aber ein Mann."
+        },
+        "los": {
+          "hu": "Los többes szám, itt csak Juanról van szó.",
+          "en": "Los is plural, but here it's only about Juan.",
+          "es": "Los es plural, pero aquí se habla solo de Juan.",
+          "de": "Los ist Plural, hier geht es aber nur um Juan."
+        }
+      },
+      "examples": [
+        "¿Conoces a mi hermano? Sí, lo conozco.",
+        "Lo veo cada semana."
+      ]
+    },
+    {
+      "id": "od-04",
+      "sentence": "¿Conoces a María? Sí, ___ conozco bien.",
+      "options": [
+        "la",
+        "lo",
+        "las"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "María nőnemű és egy személy, ezért la.",
+        "en": "María is feminine and one person, so la.",
+        "es": "María es femenina y una sola persona, por eso la.",
+        "de": "María ist feminin und eine Person, also la."
+      },
+      "wrong": {
+        "lo": {
+          "hu": "Lo a hímnemű személyre való, María nő.",
+          "en": "Lo is for a masculine person, but María is a woman.",
+          "es": "Lo es para una persona masculina, y María es mujer.",
+          "de": "Lo ist für eine männliche Person, María ist aber eine Frau."
+        },
+        "las": {
+          "hu": "Las többes szám, itt csak Maríáról van szó.",
+          "en": "Las is plural, but here it's only about María.",
+          "es": "Las es plural, pero aquí se habla solo de María.",
+          "de": "Las ist Plural, hier geht es aber nur um María."
+        }
+      },
+      "examples": [
+        "¿Conoces a mi hermana? Sí, la conozco.",
+        "La veo cada semana."
+      ]
+    },
+    {
+      "id": "od-05",
+      "sentence": "Yo ___ todos los días.",
+      "options": [
+        "te veo",
+        "veo te",
+        "tú veo"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A névmás a ragozott ige ELÉ kerül: te veo, nem veo te.",
+        "en": "The pronoun goes BEFORE the conjugated verb: te veo, not veo te.",
+        "es": "El pronombre va ANTES del verbo conjugado: te veo, no veo te.",
+        "de": "Das Pronomen steht VOR dem konjugierten Verb: te veo, nicht veo te."
+      },
+      "wrong": {
+        "veo te": {
+          "hu": "A ragozott ige után nem állhat a névmás, csak elé.",
+          "en": "The pronoun cannot follow a conjugated verb, only precede it.",
+          "es": "El pronombre no puede ir después de un verbo conjugado, solo antes.",
+          "de": "Das Pronomen kann nach einem konjugierten Verb nicht stehen, nur davor."
+        },
+        "tú veo": {
+          "hu": "Tú alanyi névmás, itt tárgyeset kell; és az ige sem egyezik (tú → ves, nem veo).",
+          "en": "Tú is a subject pronoun, but an object pronoun is needed here; also the verb doesn't match (tú → ves, not veo).",
+          "es": "Tú es pronombre sujeto, pero aquí hace falta objeto directo; además el verbo no concuerda (tú → ves, no veo).",
+          "de": "Tú ist Subjektpronomen, hier braucht es aber ein Objektpronomen; außerdem passt das Verb nicht (tú → ves, nicht veo)."
+        }
+      },
+      "examples": [
+        "Te veo mañana.",
+        "Los veo a ustedes pronto."
+      ]
+    },
+    {
+      "id": "od-06",
+      "sentence": "¿Necesitas ayuda? Quiero ___.",
+      "options": [
+        "ayudarte",
+        "te ayudar",
+        "ayudando te"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A névmás hozzátapad a főnévi igenévhez: ayudarte.",
+        "en": "The pronoun attaches to the end of the infinitive: ayudarte.",
+        "es": "El pronombre se pega al final del infinitivo: ayudarte.",
+        "de": "Das Pronomen hängt sich ans Ende des Infinitivs: ayudarte."
+      },
+      "wrong": {
+        "te ayudar": {
+          "hu": "A névmás nem állhat magában egy puszta főnévi igenév előtt; tapadjon rá (ayudarte), vagy kerüljön a ragozott ige elé (te quiero ayudar).",
+          "en": "The pronoun can't stand alone right before a bare infinitive; attach it to the infinitive (ayudarte) or put it before the conjugated verb (te quiero ayudar).",
+          "es": "El pronombre no puede ir solo justo antes de un infinitivo suelto; pégalo al infinitivo (ayudarte) o ponlo antes del verbo conjugado (te quiero ayudar).",
+          "de": "Das Pronomen kann nicht allein direkt vor einem bloßen Infinitiv stehen; hänge es an den Infinitiv (ayudarte) oder stelle es vor das konjugierte Verb (te quiero ayudar)."
+        },
+        "ayudando te": {
+          "hu": "Itt főnévi igenév kell a quiero után, nem gerundio; és a tapadó névmás ékezetet is kívánna (ayudándote).",
+          "en": "An infinitive is needed after quiero, not a gerund; and an attached pronoun would also need an accent (ayudándote).",
+          "es": "Después de quiero hace falta infinitivo, no gerundio; y el pronombre pegado también pediría acento (ayudándote).",
+          "de": "Nach quiero braucht es einen Infinitiv, kein Gerundium; und das angehängte Pronomen bräuchte zudem einen Akzent (ayudándote)."
+        }
+      },
+      "examples": [
+        "Quiero ayudarte.",
+        "Te quiero ayudar."
+      ]
+    },
+    {
+      "id": "od-07",
+      "sentence": "¿Vas a llamar a Pedro? Sí, ___ voy a llamar.",
+      "options": [
+        "lo",
+        "le",
+        "los"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Llamar tárgyesettel jár (lo/la), Pedro hímnemű és egy személy.",
+        "en": "Llamar takes a direct object (lo/la), and Pedro is masculine and one person.",
+        "es": "Llamar lleva objeto directo (lo/la), y Pedro es masculino y una sola persona.",
+        "de": "Llamar verlangt ein direktes Objekt (lo/la), Pedro ist maskulin und eine Person."
+      },
+      "wrong": {
+        "le": {
+          "hu": "A le itt leísmo lenne; llamar a alguien tárgyeset névmást kér (lo), nem részes esetet.",
+          "en": "Le here would be leísmo; llamar a alguien takes a direct object pronoun (lo), not an indirect one.",
+          "es": "Le aquí sería leísmo; llamar a alguien pide pronombre de objeto directo (lo), no indirecto.",
+          "de": "Le wäre hier leísmo; llamar a alguien verlangt ein direktes Objektpronomen (lo), kein indirektes."
+        },
+        "los": {
+          "hu": "Los többes szám, Pedro csak egy ember.",
+          "en": "Los is plural, but Pedro is just one person.",
+          "es": "Los es plural, y Pedro es una sola persona.",
+          "de": "Los ist Plural, Pedro ist aber nur eine Person."
+        }
+      },
+      "examples": [
+        "Voy a llamarlo mañana.",
+        "La voy a llamar esta noche."
+      ]
+    },
+    {
+      "id": "od-08",
+      "sentence": "¿La comida? Estoy ___ ahora mismo.",
+      "options": [
+        "comiéndola",
+        "comiendola",
+        "la comiendo"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A gerundio (comiendo) végéhez tapad a névmás, és ékezetet kap: comiéndola.",
+        "en": "The pronoun attaches to the end of the gerund (comiendo) and needs an accent: comiéndola.",
+        "es": "El pronombre se pega al final del gerundio (comiendo) y lleva acento: comiéndola.",
+        "de": "Das Pronomen hängt sich ans Ende des Gerundiums (comiendo) und bekommt einen Akzent: comiéndola."
+      },
+      "wrong": {
+        "comiendola": {
+          "hu": "Ez az alak nem létezik, hiányzik az ékezet; helyesen comiéndola.",
+          "en": "This spelling does not exist, it's missing the accent; correct is comiéndola.",
+          "es": "Esta forma no existe, le falta el acento; lo correcto es comiéndola.",
+          "de": "Diese Form gibt es nicht, ihr fehlt der Akzent; richtig ist comiéndola."
+        },
+        "la comiendo": {
+          "hu": "Az estoy után álló gerundio végéhez kell tapasztani a névmást, nem elé tenni.",
+          "en": "With the gerund right after estoy, the pronoun attaches to the end, it doesn't go before it.",
+          "es": "Con el gerundio justo después de estoy, el pronombre se pega al final, no va antes.",
+          "de": "Beim Gerundium direkt nach estoy hängt sich das Pronomen ans Ende, es steht nicht davor."
+        }
+      },
+      "examples": [
+        "Estoy comiéndolo ahora.",
+        "Lo estoy comiendo."
+      ]
+    },
+    {
+      "id": "od-09",
+      "sentence": "¿Las llaves? ___ tengo en la bolsa.",
+      "options": [
+        "Las",
+        "Los",
+        "La"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Las llaves nőnemű és többes szám, ezért las.",
+        "en": "Las llaves is feminine and plural, so las.",
+        "es": "Las llaves es femenino y plural, por eso las.",
+        "de": "Las llaves ist feminin und Plural, also las."
+      },
+      "wrong": {
+        "Los": {
+          "hu": "Los hímnemű, a llaves nőnemű.",
+          "en": "Los is masculine, but llaves is feminine.",
+          "es": "Los es masculino, y llaves es femenino.",
+          "de": "Los ist maskulin, llaves ist aber feminin."
+        },
+        "La": {
+          "hu": "La egyes szám, itt több kulcsról van szó.",
+          "en": "La is singular, but here there are several keys.",
+          "es": "La es singular, pero aquí hay varias llaves.",
+          "de": "La ist Singular, hier geht es aber um mehrere Schlüssel."
+        }
+      },
+      "examples": [
+        "¿Las llaves? Las tengo aquí.",
+        "¿El libro? Lo tengo aquí."
+      ]
+    },
+    {
+      "id": "od-10",
+      "sentence": "¿Conoces a mis padres? Sí, ___ conozco.",
+      "options": [
+        "los",
+        "las",
+        "les"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Mis padres (vegyes vagy hímnemű csoport) → los, még akkor is, ha nők is vannak köztük.",
+        "en": "Mis padres (a mixed or masculine group) takes los, even if women are included.",
+        "es": "Mis padres (grupo mixto o masculino) lleva los, aunque incluya mujeres.",
+        "de": "Mis padres (gemischte oder maskuline Gruppe) nimmt los, auch wenn Frauen dabei sind."
+      },
+      "wrong": {
+        "las": {
+          "hu": "Las csak tisztán nőnemű csoportra való; a padres alapból hímnemű alakot kap.",
+          "en": "Las is only for a purely feminine group; padres defaults to the masculine form.",
+          "es": "Las es solo para un grupo totalmente femenino; padres lleva por defecto la forma masculina.",
+          "de": "Las ist nur für eine rein weibliche Gruppe; padres bekommt standardmäßig die maskuline Form."
+        },
+        "les": {
+          "hu": "A conocer a alguien tárgyeset névmást kér (los), les a részes esetre való.",
+          "en": "Conocer a alguien takes a direct object pronoun (los); les is for the indirect object.",
+          "es": "Conocer a alguien pide pronombre de objeto directo (los); les es de objeto indirecto.",
+          "de": "Conocer a alguien verlangt ein direktes Objektpronomen (los); les ist für das indirekte Objekt."
+        }
+      },
+      "examples": [
+        "Conozco a tus papás. Los conozco bien.",
+        "A tus papás los veo pronto."
+      ]
+    },
+    {
+      "id": "od-11",
+      "sentence": "___ amo, no lo dudes.",
+      "options": [
+        "Te",
+        "Tú",
+        "Ti"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A ragozott ige elé tárgyeset névmás kell: te amo.",
+        "en": "Before the conjugated verb we need an object pronoun: te amo.",
+        "es": "Antes del verbo conjugado hace falta pronombre de objeto: te amo.",
+        "de": "Vor dem konjugierten Verb braucht es ein Objektpronomen: te amo."
+      },
+      "wrong": {
+        "Tú": {
+          "hu": "Tú alanyi névmás, itt tárgyeset kell.",
+          "en": "Tú is a subject pronoun; an object pronoun is needed here.",
+          "es": "Tú es pronombre sujeto; aquí hace falta uno de objeto.",
+          "de": "Tú ist Subjektpronomen; hier braucht es ein Objektpronomen."
+        },
+        "Ti": {
+          "hu": "Ti csak elöljárószó után áll (a ti, para ti), nem közvetlenül ige előtt.",
+          "en": "Ti only appears after a preposition (a ti, para ti), not directly before a verb.",
+          "es": "Ti solo va después de una preposición (a ti, para ti), no directamente antes del verbo.",
+          "de": "Ti steht nur nach einer Präposition (a ti, para ti), nicht direkt vor einem Verb."
+        }
+      },
+      "examples": [
+        "Te amo, no lo dudes.",
+        "Te quiero mucho."
+      ]
+    },
+    {
+      "id": "od-12",
+      "sentence": "A mis papás ___ quiero mucho.",
+      "options": [
+        "los",
+        "les",
+        "las"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Mis papás → los (tárgyeset, alapból hímnemű alak).",
+        "en": "Mis papás → los (direct object, masculine by default).",
+        "es": "Mis papás → los (objeto directo, forma masculina por defecto).",
+        "de": "Mis papás → los (direktes Objekt, standardmäßig maskuline Form)."
+      },
+      "wrong": {
+        "les": {
+          "hu": "Les részes eset (kinek); a querer a alguien tárgyeset névmást kér.",
+          "en": "Les is the indirect object (to whom); querer a alguien takes a direct object pronoun.",
+          "es": "Les es objeto indirecto (a quién); querer a alguien pide pronombre de objeto directo.",
+          "de": "Les ist das indirekte Objekt (wem); querer a alguien verlangt ein direktes Objektpronomen."
+        },
+        "las": {
+          "hu": "Las csak tisztán nőnemű csoportra való, a papás alapból hímnemű alakot kap.",
+          "en": "Las is only for a purely feminine group; papás defaults to the masculine form.",
+          "es": "Las es solo para un grupo totalmente femenino; papás lleva por defecto la forma masculina.",
+          "de": "Las ist nur für eine rein weibliche Gruppe; papás bekommt standardmäßig die maskuline Form."
+        }
+      },
+      "examples": [
+        "A mis papás los quiero mucho.",
+        "A mi mamá la quiero mucho."
+      ]
+    }
+  ]
+}

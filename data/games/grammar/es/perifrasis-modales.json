@@ -1,0 +1,542 @@
+{
+  "topic": "perifrasis-modales",
+  "level": "A1",
+  "title": {
+    "hu": "Perífrasis modales: tener que, poder, querer",
+    "en": "Modal periphrases: tener que, poder, querer",
+    "es": "Perífrasis modales: tener que, poder, querer",
+    "de": "Modale Periphrasen: tener que, poder, querer"
+  },
+  "rule": {
+    "hu": "Ha két ige áll egymás után, az ELSŐ ragozódik, a MÁSODIK főnévi igenévben marad. Tener que + főnévi igenév = kell (kötelesség): tengo que trabajar. Poder + főnévi igenév = tudok/lehet: puedo salir. Querer + főnévi igenév = akarok: quiero comer. Csak a tener után kell a que, a poder és a querer után nem: puedo salir (nem puedo QUE salir).",
+    "en": "When two verbs appear in a row, the FIRST one is conjugated and the SECOND stays in the infinitive. Tener que + infinitive = must: tengo que trabajar. Poder + infinitive = can: puedo salir. Querer + infinitive = want: quiero comer. Only tener needs que afterward; poder and querer do not: puedo salir (not puedo QUE salir).",
+    "es": "Cuando hay dos verbos seguidos, el PRIMERO se conjuga y el SEGUNDO se queda en infinitivo. Tener que + infinitivo = obligación: tengo que trabajar. Poder + infinitivo = capacidad o permiso: puedo salir. Querer + infinitivo = deseo: quiero comer. Solo tener necesita que después; poder y querer no: puedo salir (no puedo QUE salir).",
+    "de": "Stehen zwei Verben hintereinander, wird das ERSTE konjugiert und das ZWEITE bleibt im Infinitiv. Tener que + Infinitiv = müssen: tengo que trabajar. Poder + Infinitiv = können: puedo salir. Querer + Infinitiv = wollen: quiero comer. Nur nach tener steht que; nach poder und querer nicht: puedo salir (nicht puedo QUE salir)."
+  },
+  "more": {
+    "hu": "A hay que személytelen forma: „az embernek kell\", nincs alanya, sosem ragozódik személyre: Hay que estudiar mucho. Emlékeztető: a négy szerkezet közül CSAK a tener kér que-t utána (tener que), a poder és a querer közvetlenül a főnévi igenevet veszi fel, que nélkül.",
+    "en": "Hay que is the impersonal form, „one must”, it has no subject and never conjugates for person: Hay que estudiar mucho. Reminder: of these structures, ONLY tener takes que afterward (tener que); poder and querer take the bare infinitive directly, without que.",
+    "es": "Hay que es la forma impersonal, \"hace falta\", no tiene sujeto y nunca se conjuga por persona: Hay que estudiar mucho. Recordatorio: de estas estructuras, SOLO tener lleva que después (tener que); poder y querer llevan el infinitivo directo, sin que.",
+    "de": "Hay que ist die unpersönliche Form, „man muss“, hat kein Subjekt und wird nie nach Person konjugiert: Hay que estudiar mucho. Merke: von diesen Strukturen braucht NUR tener danach que (tener que); poder und querer nehmen den bloßen Infinitiv, ohne que."
+  },
+  "glossary": [
+    {
+      "word": "poder",
+      "gloss": {
+        "hu": "tud / lehet (segédige)",
+        "en": "can / to be able to",
+        "es": "poder",
+        "de": "können"
+      }
+    },
+    {
+      "word": "querer",
+      "gloss": {
+        "hu": "akarni",
+        "en": "to want",
+        "es": "querer",
+        "de": "wollen"
+      }
+    },
+    {
+      "word": "venir",
+      "gloss": {
+        "hu": "jönni",
+        "en": "to come",
+        "es": "venir",
+        "de": "kommen"
+      }
+    },
+    {
+      "word": "ir",
+      "gloss": {
+        "hu": "menni",
+        "en": "to go",
+        "es": "ir",
+        "de": "gehen"
+      }
+    },
+    {
+      "word": "ayudar",
+      "gloss": {
+        "hu": "segíteni",
+        "en": "to help",
+        "es": "ayudar",
+        "de": "helfen"
+      }
+    },
+    {
+      "word": "aprender",
+      "gloss": {
+        "hu": "tanulni",
+        "en": "to learn",
+        "es": "aprender",
+        "de": "lernen"
+      }
+    },
+    {
+      "word": "español",
+      "gloss": {
+        "hu": "spanyol (nyelv)",
+        "en": "Spanish (language)",
+        "es": "el español",
+        "de": "Spanisch"
+      }
+    },
+    {
+      "word": "tiempo",
+      "gloss": {
+        "hu": "idő",
+        "en": "time",
+        "es": "el tiempo",
+        "de": "die Zeit"
+      }
+    },
+    {
+      "word": "favor",
+      "gloss": {
+        "hu": "por favor = kérem",
+        "en": "por favor = please",
+        "es": "el favor",
+        "de": "der Gefallen (por favor = bitte)"
+      }
+    },
+    {
+      "word": "juntos",
+      "gloss": {
+        "hu": "együtt",
+        "en": "together",
+        "es": "juntos",
+        "de": "zusammen"
+      }
+    },
+    {
+      "word": "que salir",
+      "gloss": {
+        "hu": "nem létező forma: a poder után nem kell que",
+        "en": "non-existent form: poder does not take que",
+        "es": "forma inexistente: poder no lleva que",
+        "de": "nicht existierende Form: nach poder steht kein que"
+      }
+    },
+    {
+      "word": "que ir",
+      "gloss": {
+        "hu": "nem létező forma: a querer után nem kell que",
+        "en": "non-existent form: querer does not take que",
+        "es": "forma inexistente: querer no lleva que",
+        "de": "nicht existierende Form: nach querer steht kein que"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "pm-01",
+      "sentence": "Yo ___ que trabajar hoy.",
+      "options": [
+        "tengo",
+        "tener",
+        "tiene"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az első ige ragozódik: yo → tengo.",
+        "en": "The first verb is conjugated: yo → tengo.",
+        "es": "El primer verbo se conjuga: yo → tengo.",
+        "de": "Das erste Verb wird konjugiert: yo → tengo."
+      },
+      "wrong": {
+        "tener": {
+          "hu": "A tener főnévi igenév, de itt az ELSŐ igének ragozódnia kell.",
+          "en": "Tener is the infinitive, but here the FIRST verb must be conjugated.",
+          "es": "Tener es el infinitivo, pero aquí el PRIMER verbo debe conjugarse.",
+          "de": "Tener ist der Infinitiv, aber hier muss das ERSTE Verb konjugiert werden."
+        },
+        "tiene": {
+          "hu": "A tiene ő/ön alakja, itt viszont yo (én) az alany.",
+          "en": "Tiene is the he/she form, but here the subject is yo (I).",
+          "es": "Tiene es la forma de él/ella, pero aquí el sujeto es yo.",
+          "de": "Tiene ist die er/sie-Form, hier ist aber yo (ich) das Subjekt."
+        }
+      },
+      "examples": [
+        "Tengo que trabajar hoy.",
+        "Tengo que limpiar la casa."
+      ]
+    },
+    {
+      "id": "pm-02",
+      "sentence": "Tienes que ___ para el examen.",
+      "options": [
+        "estudiar",
+        "estudias",
+        "estudio"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A tener que után a MÁSODIK ige főnévi igenévben marad: estudiar.",
+        "en": "After tener que, the SECOND verb stays in the infinitive: estudiar.",
+        "es": "Después de tener que, el SEGUNDO verbo se queda en infinitivo: estudiar.",
+        "de": "Nach tener que bleibt das ZWEITE Verb im Infinitiv: estudiar."
+      },
+      "wrong": {
+        "estudias": {
+          "hu": "A második ige nem ragozódhat újra, a tienes már hordozza a személyt.",
+          "en": "The second verb cannot be conjugated again; tienes already carries the person.",
+          "es": "El segundo verbo no puede conjugarse otra vez; tienes ya lleva la persona.",
+          "de": "Das zweite Verb kann nicht noch einmal konjugiert werden; tienes trägt die Person schon."
+        },
+        "estudio": {
+          "hu": "Ez a yo alak, de itt tú (te) a beszélgetőpartner, és amúgy is főnévi igenév kell.",
+          "en": "This is the yo form, but here the person is tú, and an infinitive is needed anyway.",
+          "es": "Esta es la forma de yo, pero aquí la persona es tú, y además hace falta el infinitivo.",
+          "de": "Das ist die yo-Form, hier ist aber tú gemeint, und außerdem braucht es den Infinitiv."
+        }
+      },
+      "examples": [
+        "Tienes que estudiar para el examen.",
+        "Tengo que estudiar mucho hoy."
+      ]
+    },
+    {
+      "id": "pm-03",
+      "sentence": "Tengo ___ salir temprano.",
+      "options": [
+        "que",
+        "de",
+        "a"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A tener mindig que-t kér a főnévi igenév előtt: tener que salir.",
+        "en": "Tener always needs que before the infinitive: tener que salir.",
+        "es": "Tener siempre necesita que antes del infinitivo: tener que salir.",
+        "de": "Tener braucht immer que vor dem Infinitiv: tener que salir."
+      },
+      "wrong": {
+        "de": {
+          "hu": "A de más ige után áll (pl. acabar de), a tener után nem.",
+          "en": "De follows other verbs (like acabar de), not tener.",
+          "es": "De va después de otros verbos (como acabar de), no de tener.",
+          "de": "De folgt auf andere Verben (wie acabar de), nicht auf tener."
+        },
+        "a": {
+          "hu": "Az a az ir után áll (ir a), a tener után nem.",
+          "en": "A follows ir (ir a), not tener.",
+          "es": "A va después de ir (ir a), no de tener.",
+          "de": "A folgt auf ir (ir a), nicht auf tener."
+        }
+      },
+      "examples": [
+        "Tengo que salir temprano.",
+        "Tenemos que salir ahora."
+      ]
+    },
+    {
+      "id": "pm-04",
+      "sentence": "Yo no ___ salir contigo hoy.",
+      "options": [
+        "puedo",
+        "poder",
+        "puede"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az első ige ragozódik: yo → puedo.",
+        "en": "The first verb is conjugated: yo → puedo.",
+        "es": "El primer verbo se conjuga: yo → puedo.",
+        "de": "Das erste Verb wird konjugiert: yo → puedo."
+      },
+      "wrong": {
+        "poder": {
+          "hu": "A poder főnévi igenév, itt viszont ragozott alak kell.",
+          "en": "Poder is the infinitive, but here a conjugated form is needed.",
+          "es": "Poder es el infinitivo, pero aquí hace falta una forma conjugada.",
+          "de": "Poder ist der Infinitiv, hier braucht es aber eine konjugierte Form."
+        },
+        "puede": {
+          "hu": "A puede ő/ön alakja, itt viszont yo (én) az alany.",
+          "en": "Puede is the he/she form, but here the subject is yo (I).",
+          "es": "Puede es la forma de él/ella, pero aquí el sujeto es yo.",
+          "de": "Puede ist die er/sie-Form, hier ist aber yo (ich) das Subjekt."
+        }
+      },
+      "examples": [
+        "No puedo salir contigo hoy.",
+        "Puedo ayudarte mañana."
+      ]
+    },
+    {
+      "id": "pm-05",
+      "sentence": "¿Puedes ___ la puerta, por favor?",
+      "options": [
+        "abrir",
+        "abres",
+        "abro"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A poder után a MÁSODIK ige főnévi igenévben marad: abrir.",
+        "en": "After poder, the SECOND verb stays in the infinitive: abrir.",
+        "es": "Después de poder, el SEGUNDO verbo se queda en infinitivo: abrir.",
+        "de": "Nach poder bleibt das ZWEITE Verb im Infinitiv: abrir."
+      },
+      "wrong": {
+        "abres": {
+          "hu": "A második ige nem ragozódhat újra, a puedes már hordozza a személyt.",
+          "en": "The second verb cannot be conjugated again; puedes already carries the person.",
+          "es": "El segundo verbo no puede conjugarse otra vez; puedes ya lleva la persona.",
+          "de": "Das zweite Verb kann nicht noch einmal konjugiert werden; puedes trägt die Person schon."
+        },
+        "abro": {
+          "hu": "Ez a yo alak, de itt tú (te) a beszélgetőpartner, és amúgy is főnévi igenév kell.",
+          "en": "This is the yo form, but here the person is tú, and an infinitive is needed anyway.",
+          "es": "Esta es la forma de yo, pero aquí la persona es tú, y además hace falta el infinitivo.",
+          "de": "Das ist die yo-Form, hier ist aber tú gemeint, und außerdem braucht es den Infinitiv."
+        }
+      },
+      "examples": [
+        "¿Puedes abrir la puerta?",
+        "Puedo abrir la ventana."
+      ]
+    },
+    {
+      "id": "pm-06",
+      "sentence": "Podemos ___ mañana temprano.",
+      "options": [
+        "salir",
+        "que salir",
+        "salimos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A poder közvetlenül a főnévi igenevet veszi fel, que nélkül: podemos salir.",
+        "en": "Poder takes the bare infinitive directly, without que: podemos salir.",
+        "es": "Poder lleva el infinitivo directo, sin que: podemos salir.",
+        "de": "Poder nimmt den bloßen Infinitiv direkt, ohne que: podemos salir."
+      },
+      "wrong": {
+        "que salir": {
+          "hu": "A que csak a tener után kötelező, a poder után nem létező szerkezet.",
+          "en": "Que is only obligatory after tener; this is not a real structure after poder.",
+          "es": "Que solo es obligatorio después de tener; después de poder no existe esta forma.",
+          "de": "Que ist nur nach tener Pflicht; nach poder gibt es diese Form nicht."
+        },
+        "salimos": {
+          "hu": "A második ige nem ragozódhat újra, a podemos már hordozza a személyt.",
+          "en": "The second verb cannot be conjugated again; podemos already carries the person.",
+          "es": "El segundo verbo no puede conjugarse otra vez; podemos ya lleva la persona.",
+          "de": "Das zweite Verb kann nicht noch einmal konjugiert werden; podemos trägt die Person schon."
+        }
+      },
+      "examples": [
+        "Podemos salir mañana temprano.",
+        "Puedes salir cuando quieras."
+      ]
+    },
+    {
+      "id": "pm-07",
+      "sentence": "Yo ___ aprender español este año.",
+      "options": [
+        "quiero",
+        "querer",
+        "quieres"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az első ige ragozódik: yo → quiero.",
+        "en": "The first verb is conjugated: yo → quiero.",
+        "es": "El primer verbo se conjuga: yo → quiero.",
+        "de": "Das erste Verb wird konjugiert: yo → quiero."
+      },
+      "wrong": {
+        "querer": {
+          "hu": "A querer főnévi igenév, itt viszont ragozott alak kell.",
+          "en": "Querer is the infinitive, but here a conjugated form is needed.",
+          "es": "Querer es el infinitivo, pero aquí hace falta una forma conjugada.",
+          "de": "Querer ist der Infinitiv, hier braucht es aber eine konjugierte Form."
+        },
+        "quieres": {
+          "hu": "A quieres tú (te) alakja, itt viszont yo (én) az alany.",
+          "en": "Quieres is the tú form, but here the subject is yo (I).",
+          "es": "Quieres es la forma de tú, pero aquí el sujeto es yo.",
+          "de": "Quieres ist die tú-Form, hier ist aber yo (ich) das Subjekt."
+        }
+      },
+      "examples": [
+        "Quiero aprender español este año.",
+        "Quiero comer algo ahora."
+      ]
+    },
+    {
+      "id": "pm-08",
+      "sentence": "Ellos quieren ___ una pizza grande.",
+      "options": [
+        "comer",
+        "comen",
+        "come"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A querer után a MÁSODIK ige főnévi igenévben marad: comer.",
+        "en": "After querer, the SECOND verb stays in the infinitive: comer.",
+        "es": "Después de querer, el SEGUNDO verbo se queda en infinitivo: comer.",
+        "de": "Nach querer bleibt das ZWEITE Verb im Infinitiv: comer."
+      },
+      "wrong": {
+        "comen": {
+          "hu": "A második ige nem ragozódhat újra, a quieren már hordozza a személyt.",
+          "en": "The second verb cannot be conjugated again; quieren already carries the person.",
+          "es": "El segundo verbo no puede conjugarse otra vez; quieren ya lleva la persona.",
+          "de": "Das zweite Verb kann nicht noch einmal konjugiert werden; quieren trägt die Person schon."
+        },
+        "come": {
+          "hu": "Ez az ő/ön alakja, itt viszont ellos (ők) a beszélgetőpartner, és amúgy is főnévi igenév kell.",
+          "en": "This is the he/she form, but here the subject is ellos (they), and an infinitive is needed anyway.",
+          "es": "Esta es la forma de él/ella, pero aquí el sujeto es ellos, y además hace falta el infinitivo.",
+          "de": "Das ist die er/sie-Form, hier ist aber ellos gemeint, und außerdem braucht es den Infinitiv."
+        }
+      },
+      "examples": [
+        "Quieren comer una pizza grande.",
+        "Quiero comer algo dulce."
+      ]
+    },
+    {
+      "id": "pm-09",
+      "sentence": "Quiero ___ contigo al cine.",
+      "options": [
+        "ir",
+        "que ir",
+        "voy"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A querer közvetlenül a főnévi igenevet veszi fel, que nélkül: quiero ir.",
+        "en": "Querer takes the bare infinitive directly, without que: quiero ir.",
+        "es": "Querer lleva el infinitivo directo, sin que: quiero ir.",
+        "de": "Querer nimmt den bloßen Infinitiv direkt, ohne que: quiero ir."
+      },
+      "wrong": {
+        "que ir": {
+          "hu": "A que csak a tener után kötelező, a querer után nem létező szerkezet.",
+          "en": "Que is only obligatory after tener; this is not a real structure after querer.",
+          "es": "Que solo es obligatorio después de tener; después de querer no existe esta forma.",
+          "de": "Que ist nur nach tener Pflicht; nach querer gibt es diese Form nicht."
+        },
+        "voy": {
+          "hu": "A második ige nem ragozódhat újra, a quiero már hordozza a személyt.",
+          "en": "The second verb cannot be conjugated again; quiero already carries the person.",
+          "es": "El segundo verbo no puede conjugarse otra vez; quiero ya lleva la persona.",
+          "de": "Das zweite Verb kann nicht noch einmal konjugiert werden; quiero trägt die Person schon."
+        }
+      },
+      "examples": [
+        "Quiero ir contigo al cine.",
+        "Quieren ir a la playa."
+      ]
+    },
+    {
+      "id": "pm-10",
+      "sentence": "Nosotros ___ que limpiar la casa hoy.",
+      "options": [
+        "tenemos",
+        "tener",
+        "tienen"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az első ige ragozódik: nosotros → tenemos.",
+        "en": "The first verb is conjugated: nosotros → tenemos.",
+        "es": "El primer verbo se conjuga: nosotros → tenemos.",
+        "de": "Das erste Verb wird konjugiert: nosotros → tenemos."
+      },
+      "wrong": {
+        "tener": {
+          "hu": "A tener főnévi igenév, itt viszont ragozott alak kell.",
+          "en": "Tener is the infinitive, but here a conjugated form is needed.",
+          "es": "Tener es el infinitivo, pero aquí hace falta una forma conjugada.",
+          "de": "Tener ist der Infinitiv, hier braucht es aber eine konjugierte Form."
+        },
+        "tienen": {
+          "hu": "A tienen ellos/ustedes alakja, itt viszont nosotros (mi) az alany.",
+          "en": "Tienen is the ellos/ustedes form, but here the subject is nosotros (we).",
+          "es": "Tienen es la forma de ellos/ustedes, pero aquí el sujeto es nosotros.",
+          "de": "Tienen ist die ellos/ustedes-Form, hier ist aber nosotros (wir) das Subjekt."
+        }
+      },
+      "examples": [
+        "Tenemos que limpiar la casa hoy.",
+        "Tenemos que trabajar juntos."
+      ]
+    },
+    {
+      "id": "pm-11",
+      "sentence": "Ustedes ___ que llegar a tiempo.",
+      "options": [
+        "tienen",
+        "tiene",
+        "tenemos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Mexikóban a vosotros helyett ustedes-t használunk, ehhez a tienen tartozik.",
+        "en": "In Mexico ustedes replaces vosotros, and it takes tienen.",
+        "es": "En México se usa ustedes en vez de vosotros, y le corresponde tienen.",
+        "de": "In Mexiko wird ustedes statt vosotros verwendet, dazu gehört tienen."
+      },
+      "wrong": {
+        "tiene": {
+          "hu": "A tiene egyes szám (usted/él/ella), itt viszont ustedes (többes szám) az alany.",
+          "en": "Tiene is singular (usted/he/she), but here the subject is ustedes (plural).",
+          "es": "Tiene es singular (usted/él/ella), pero aquí el sujeto es ustedes (plural).",
+          "de": "Tiene ist Singular (usted/er/sie), hier ist aber ustedes (Plural) das Subjekt."
+        },
+        "tenemos": {
+          "hu": "A tenemos nosotros alakja, itt viszont ustedes a beszélgetőpartner.",
+          "en": "Tenemos is the nosotros form, but here the subject is ustedes.",
+          "es": "Tenemos es la forma de nosotros, pero aquí el sujeto es ustedes.",
+          "de": "Tenemos ist die nosotros-Form, hier ist aber ustedes gemeint."
+        }
+      },
+      "examples": [
+        "Ustedes tienen que llegar a tiempo.",
+        "Ustedes tienen que estudiar más."
+      ]
+    },
+    {
+      "id": "pm-12",
+      "sentence": "Ella no ___ venir mañana.",
+      "options": [
+        "puede",
+        "puedo",
+        "podemos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az első ige ragozódik: ella → puede.",
+        "en": "The first verb is conjugated: ella → puede.",
+        "es": "El primer verbo se conjuga: ella → puede.",
+        "de": "Das erste Verb wird konjugiert: ella → puede."
+      },
+      "wrong": {
+        "puedo": {
+          "hu": "A puedo yo alakja, itt viszont ella (ő) az alany.",
+          "en": "Puedo is the yo form, but here the subject is ella (she).",
+          "es": "Puedo es la forma de yo, pero aquí el sujeto es ella.",
+          "de": "Puedo ist die yo-Form, hier ist aber ella (sie) das Subjekt."
+        },
+        "podemos": {
+          "hu": "A podemos nosotros alakja, itt viszont ella a beszélgetőpartner.",
+          "en": "Podemos is the nosotros form, but here the subject is ella.",
+          "es": "Podemos es la forma de nosotros, pero aquí el sujeto es ella.",
+          "de": "Podemos ist die nosotros-Form, hier ist aber ella gemeint."
+        }
+      },
+      "examples": [
+        "Ella no puede venir mañana.",
+        "Él puede llegar más tarde."
+      ]
+    }
+  ]
+}
