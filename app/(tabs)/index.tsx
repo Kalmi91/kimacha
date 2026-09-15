@@ -68,6 +68,9 @@ export default function LearnScreen() {
   // veget jelenti (UTEMEZO 4.5). A ref a handlerek szamara tartja a legfrissebb
   // allapotot (React state csak a kovetkezo render-korben all be).
   const [qs, setQs] = useState<QueueState | null>(null);
+  // A képernyőn lévő lap DueItem-ként: setQueueState tölti, a render csak olvassa
+  // (a React Compiler szabálya: render közben nincs ref-olvasás).
+  const [currentItem, setCurrentItem] = useState<DueItem | null>(null);
   const qsRef = useRef<QueueState | null>(null);
   // wordId:type -> a legutobb ismert FSRS Card, hogy egy review-lap (kezben
   // levo vagy visszatero) mindig a sajat, friss allapotaval ertekelodjon.
@@ -302,6 +305,22 @@ export default function LearnScreen() {
     return new Set(rows.filter(r => r.state === 'done').map(r => r.itemId));
   };
 
+  // A setQueueState (lentebb) hívja, ezért előtte áll.
+  const resetCardState = () => {
+    setRevealed(false);
+    setTypedAnswer('');
+    setArticlePick('');
+    setTypingResult(null);
+    setCardStartTime(Date.now());
+    setPracticeTyping(false);
+    setPracticeResult(null);
+    setPracticeText('');
+    setSpellingAdded(false);
+    setSpellingTokens({});
+    setSpellingTapMsg(null);
+    setNoteOpen(false);
+  };
+
   const cardKey = (wordId: number, type: string) => `${wordId}:${type}`;
 
   // UTEMEZO: egy `Shown` (a sor motorjanak lapja) DueItem-me alakitva, a render
@@ -334,6 +353,7 @@ export default function LearnScreen() {
   const setQueueState = (next: QueueState) => {
     qsRef.current = next;
     setQs(next);
+    setCurrentItem(next.current ? toDueItem(next.current) : null);
     syncBadges(next);
     resetCardState();
   };
@@ -584,7 +604,7 @@ export default function LearnScreen() {
     }, [])
   );
 
-  const current: DueItem | undefined = qs?.current ? toDueItem(qs.current) : undefined;
+  const current: DueItem | undefined = currentItem ?? undefined;
 
   // FB178: how far the docked bar has to sit above the bottom of this screen. With the
   // keyboard closed that is just the navigation bar; with it open, the keys plus the bar.
@@ -666,20 +686,6 @@ export default function LearnScreen() {
     await db.updateLevel(currentLevel, correct_streak, mistakes_in_window, fail_streak);
   };
 
-  const resetCardState = () => {
-    setRevealed(false);
-    setTypedAnswer('');
-    setArticlePick('');
-    setTypingResult(null);
-    setCardStartTime(Date.now());
-    setPracticeTyping(false);
-    setPracticeResult(null);
-    setPracticeText('');
-    setSpellingAdded(false);
-    setSpellingTokens({});
-    setSpellingTapMsg(null);
-    setNoteOpen(false);
-  };
 
   // UTEMEZO 4.5: a kor veget ert (nextLap current === null). Ujra le kell
   // kerdezni az esedekes ismetleseket (egy MEGTANULT szo kozben ujra
