@@ -51,7 +51,7 @@ describe('findPromptOverlaps', () => {
     const clusters = findPromptOverlaps(
       [
         { id: 1, headword: 'la hora', prompt: 'time (clock)' },
-        { id: 2, headword: 'la vez', prompt: 'time (occasion)' },
+        { id: 2, headword: 'el tiempo', prompt: 'time' },
       ],
       'en'
     );
@@ -59,6 +59,19 @@ describe('findPromptOverlaps', () => {
     expect(clusters[0].kind).toBe('partial');
     expect(clusters[0].sense).toBe('time');
     expect(clusters[0].words.map((w) => w.id).sort()).toEqual([1, 2]);
+  });
+
+  it('accepts two different parenthesised senses, that is the policy fix itself (PROMPT-POLICY 2)', () => {
+    const clusters = findPromptOverlaps(
+      [
+        { id: 1, headword: 'la hora', prompt: 'time (clock)' },
+        { id: 2, headword: 'la vez', prompt: 'time (occasion)' },
+        { id: 3, headword: 'el resfriado', prompt: 'cold (illness)' },
+        { id: 4, headword: 'frío', prompt: 'cold (temperature)' },
+      ],
+      'en'
+    );
+    expect(clusters).toHaveLength(0);
   });
 
   it('flags a partial overlap through a shared sense inside a " / " prompt', () => {

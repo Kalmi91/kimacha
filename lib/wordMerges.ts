@@ -98,4 +98,16 @@ export const WORD_MERGES: Record<number, number> = {
   2904: 2111, // romper: B1 törölve, marad A2
   2908: 2169, // averiguar: B1 törölve, marad A2
   2932: 2120, // merecer: B1 törölve, marad A2
+
+  // PROMPT-POLICY 3/7 (es A0-A1):
+  3912: 1522, // la venda: A1 törölve, marad A1 (el vendaje / la venda egy kártya, szinoníma)
+
+  // PROMPT-POLICY 3/7 (es A2):
+  3754: 709, // suerte: A2 duplikátum (névelő nélkül), marad "la suerte"
+  3462: 2045, // diferentes: A2 szabályos többes, marad diferente
+  1948: 1893, // suceder: A2 szinonima, marad ocurrir (ocurrir / suceder)
+  3621: 3453, // santa: A2 szabályos nőnem, marad santo
+  1958: 2021, // listos: A2 szabályos többes, marad listo
+  1964: 3730, // prisión: A2 szinonima, marad cárcel (la cárcel / la prisión)
+  3659: 3473, // bienvenida: A2 szabályos nőnem, marad bienvenido
 };

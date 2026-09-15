@@ -97,21 +97,29 @@ export function findPromptOverlaps(words: PromptOverlapWord[], lang: PromptLang)
 
   // 2) PARTIAL, csak azok közt, akik nem már exact-duplikátumok.
   const rest = active.filter((w) => !exactIds.has(w.id));
+  // Három index: a teljes sense (zárójellel együtt), a CSUPASZ sense-ek
+  // (nincs zárójel), és a zárójeles sense-ek levágott alakja. Két szó akkor
+  // ütközik, ha egy teljes sense-ük azonos, VAGY az egyik csupasz sense-e
+  // egyenlő a másik zárójeles sense-ének levágott alakjával ("time" vs
+  // "time (clock)"). Két KÜLÖNBÖZŐ zárójeles alak ("cold (illness)" vs
+  // "cold (temperature)") nem ütközik: pont ez a PROMPT-POLICY 2 megoldása.
   const keyIndex = new Map<string, PromptOverlapWord[]>();
+  const bareIndex = new Map<string, PromptOverlapWord[]>();
+  const parenIndex = new Map<string, PromptOverlapWord[]>();
+  const push = (index: Map<string, PromptOverlapWord[]>, key: string, w: PromptOverlapWord) => {
+    const list = index.get(key) ?? [];
+    if (!list.includes(w)) list.push(w);
+    index.set(key, list);
+  };
   for (const w of rest) {
-    const keys = new Set<string>();
     for (const sense of promptSenses(w.prompt, lang)) {
-      keys.add(sense);
-      keys.add(bareSense(sense));
-    }
-    for (const key of keys) {
-      const list = keyIndex.get(key) ?? [];
-      list.push(w);
-      keyIndex.set(key, list);
+      push(keyIndex, sense, w);
+      const bare = bareSense(sense);
+      if (bare === sense) push(bareIndex, bare, w);
+      else push(parenIndex, bare, w);
     }
   }
-  // Union-find a `rest` listán: két szó egy komponensbe kerül, ha bármelyik
-  // kulcson (sense vagy csupasz sense) összeérnek.
+  // Union-find a `rest` listán.
   const indexOf = new Map(rest.map((w, i) => [w.id, i] as const));
   const parent = rest.map((_, i) => i);
   const find = (i: number): number => {
@@ -131,6 +139,13 @@ export function findPromptOverlaps(words: PromptOverlapWord[], lang: PromptLang)
     const first = indexOf.get(list[0].id)!;
     for (let j = 1; j < list.length; j++) union(first, indexOf.get(list[j].id)!);
   }
+  for (const [bare, bareWords] of bareIndex) {
+    const parenWords = parenIndex.get(bare);
+    if (!parenWords) continue;
+    const first = indexOf.get(bareWords[0].id)!;
+    for (const w of bareWords) union(first, indexOf.get(w.id)!);
+    for (const w of parenWords) union(first, indexOf.get(w.id)!);
+  }
   const groups = new Map<number, PromptOverlapWord[]>();
   rest.forEach((w, i) => {
     const r = find(i);
@@ -146,6 +161,16 @@ export function findPromptOverlaps(words: PromptOverlapWord[], lang: PromptLang)
       if (kwords.filter((w) => groupIds.has(w.id)).length >= 2) {
         sense = key;
         break;
+      }
+    }
+    if (sense === null) {
+      // csupasz vs zárójeles ütközés: a közös levágott alak a címke
+      for (const [bare, bareWords] of bareIndex) {
+        const parenWords = parenIndex.get(bare) ?? [];
+        if (bareWords.some((w) => groupIds.has(w.id)) && parenWords.some((w) => groupIds.has(w.id))) {
+          sense = bare;
+          break;
+        }
       }
     }
     clusters.push({ kind: 'partial', sense, words: groupWords });
