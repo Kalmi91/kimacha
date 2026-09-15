@@ -1,4 +1,5 @@
 {
+  "schema": 2,
   "topic": "presente-regular",
   "level": "A1",
   "title": {
@@ -7,17 +8,373 @@
     "es": "Presente: verbos regulares",
     "de": "Präsens: regelmäßige Verben"
   },
-  "rule": {
-    "hu": "A spanyol ige végződése megmondja, KI csinálja, ezért a névmás általában elmarad. Három csoport van a szótári alak vége szerint. -AR: -o, -as, -a, -amos, -áis, -an (hablar). -ER: -o, -es, -e, -emos, -éis, -en (comer). -IR: -o, -es, -e, -imos, -ís, -en (vivir). Az -er és az -ir csak a mi-alakban tér el: comemos vs vivimos.",
-    "en": "A Spanish verb ending tells you WHO does it, so the pronoun is usually dropped. Three groups, by the ending of the dictionary form. -AR: -o, -as, -a, -amos, -áis, -an (hablar). -ER: -o, -es, -e, -emos, -éis, -en (comer). -IR: -o, -es, -e, -imos, -ís, -en (vivir). -er and -ir differ only in the we-form: comemos vs vivimos.",
-    "es": "La terminación dice QUIÉN hace la acción, por eso el pronombre casi siempre se omite. Tres grupos según el infinitivo. -AR: -o, -as, -a, -amos, -áis, -an (hablar). -ER: -o, -es, -e, -emos, -éis, -en (comer). -IR: -o, -es, -e, -imos, -ís, -en (vivir). -er e -ir solo se diferencian en nosotros: comemos y vivimos.",
-    "de": "Die Endung sagt, WER handelt, deshalb fällt das Pronomen meist weg. Drei Gruppen nach dem Infinitiv. -AR: -o, -as, -a, -amos, -áis, -an (hablar). -ER: -o, -es, -e, -emos, -éis, -en (comer). -IR: -o, -es, -e, -imos, -ís, -en (vivir). -er und -ir unterscheiden sich nur in der wir-Form: comemos und vivimos."
-  },
-  "more": {
-    "hu": "Latin-Amerikában (így Mexikóban is) a vosotros-alak (-áis, -éis, -ís) nem használatos: helyette ustedes + a többes szám harmadik személy (hablan, comen, viven). A tú-alak MINDIG -s-re végződik jelen időben, ez a leggyakoribb elgépelés: tú hablas, nem tú habla.",
-    "en": "In Latin America (Mexico included) the vosotros form (-áis, -éis, -ís) is not used: it is ustedes plus the third person plural (hablan, comen, viven). The tú form ALWAYS ends in -s in the present, which is the most common slip: tú hablas, not tú habla.",
-    "es": "En Latinoamérica (también en México) no se usa vosotros (-áis, -éis, -ís): se usa ustedes con la tercera persona del plural (hablan, comen, viven). La forma de tú SIEMPRE termina en -s en presente: tú hablas, no tú habla.",
-    "de": "In Lateinamerika (auch in Mexiko) wird vosotros (-áis, -éis, -ís) nicht benutzt, sondern ustedes mit der 3. Person Plural (hablan, comen, viven). Die tú-Form endet im Präsens IMMER auf -s: tú hablas, nicht tú habla."
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A spanyol jelen idő megmutatja, mit csinálsz szokás szerint, most éppen, vagy általánosan igaz dologként. Az ige végződése elárulja, ki csinálja, ezért a névmást (yo, tú...) legtöbbször el is hagyhatod beszéd közben.",
+        "en": "The Spanish present tense shows what you do as a habit, right now, or as a general truth. The verb ending tells you who is doing it, so you can usually drop the pronoun (yo, tú...) when speaking.",
+        "es": "El presente en español muestra lo que haces por costumbre, ahora mismo, o como una verdad general. La terminación del verbo dice quién lo hace, por eso normalmente se puede omitir el pronombre (yo, tú...) al hablar.",
+        "de": "Das spanische Präsens zeigt, was du gewohnheitsmäßig tust, gerade jetzt, oder als allgemeine Wahrheit. Die Verbendung sagt, wer es tut, deshalb kannst du das Pronomen (yo, tú...) beim Sprechen meist weglassen."
+      }
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Három csoport végződés szerint",
+        "en": "Three groups by ending",
+        "es": "Tres grupos según la terminación",
+        "de": "Drei Gruppen nach der Endung"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "-AR igék (pl. hablar): yo -o, tú -as, él/ella/usted -a, nosotros -amos, vosotros -áis, ellos/ellas/ustedes -an.",
+            "en": "-AR verbs (e.g. hablar): yo -o, tú -as, él/ella/usted -a, nosotros -amos, vosotros -áis, ellos/ellas/ustedes -an.",
+            "es": "Verbos -AR (p. ej. hablar): yo -o, tú -as, él/ella/usted -a, nosotros -amos, vosotros -áis, ellos/ellas/ustedes -an.",
+            "de": "-AR-Verben (z. B. hablar): yo -o, tú -as, él/ella/usted -a, nosotros -amos, vosotros -áis, ellos/ellas/ustedes -an."
+          },
+          "examples": [
+            {
+              "es": "Hablo inglés.",
+              "tr": {
+                "hu": "Beszélek angolul.",
+                "en": "I speak English.",
+                "es": "Hablo inglés.",
+                "de": "Ich spreche Englisch."
+              }
+            },
+            {
+              "es": "Ellos hablan mucho.",
+              "tr": {
+                "hu": "Ők sokat beszélnek.",
+                "en": "They talk a lot.",
+                "es": "Ellos hablan mucho.",
+                "de": "Sie reden viel."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "-ER igék (pl. comer): yo -o, tú -es, él/ella/usted -e, nosotros -emos, vosotros -éis, ellos/ellas/ustedes -en.",
+            "en": "-ER verbs (e.g. comer): yo -o, tú -es, él/ella/usted -e, nosotros -emos, vosotros -éis, ellos/ellas/ustedes -en.",
+            "es": "Verbos -ER (p. ej. comer): yo -o, tú -es, él/ella/usted -e, nosotros -emos, vosotros -éis, ellos/ellas/ustedes -en.",
+            "de": "-ER-Verben (z. B. comer): yo -o, tú -es, él/ella/usted -e, nosotros -emos, vosotros -éis, ellos/ellas/ustedes -en."
+          },
+          "examples": [
+            {
+              "es": "Como pan por la mañana.",
+              "tr": {
+                "hu": "Reggel kenyeret eszem.",
+                "en": "I eat bread in the morning.",
+                "es": "Como pan por la mañana.",
+                "de": "Ich esse morgens Brot."
+              }
+            },
+            {
+              "es": "Comen juntos los domingos.",
+              "tr": {
+                "hu": "Vasárnaponként együtt esznek.",
+                "en": "They eat together on Sundays.",
+                "es": "Comen juntos los domingos.",
+                "de": "Sie essen sonntags zusammen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "-IR igék (pl. vivir): yo -o, tú -es, él/ella/usted -e, nosotros -imos, vosotros -ís, ellos/ellas/ustedes -en.",
+            "en": "-IR verbs (e.g. vivir): yo -o, tú -es, él/ella/usted -e, nosotros -imos, vosotros -ís, ellos/ellas/ustedes -en.",
+            "es": "Verbos -IR (p. ej. vivir): yo -o, tú -es, él/ella/usted -e, nosotros -imos, vosotros -ís, ellos/ellas/ustedes -en.",
+            "de": "-IR-Verben (z. B. vivir): yo -o, tú -es, él/ella/usted -e, nosotros -imos, vosotros -ís, ellos/ellas/ustedes -en."
+          },
+          "examples": [
+            {
+              "es": "Vivo en Puebla.",
+              "tr": {
+                "hu": "Pueblában élek.",
+                "en": "I live in Puebla.",
+                "es": "Vivo en Puebla.",
+                "de": "Ich lebe in Puebla."
+              }
+            },
+            {
+              "es": "Vivimos cerca del centro.",
+              "tr": {
+                "hu": "A központ közelében élünk.",
+                "en": "We live near the center.",
+                "es": "Vivimos cerca del centro.",
+                "de": "Wir leben in der Nähe vom Zentrum."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "presente-regular",
+      "title": {
+        "hu": "Jelen idő, szabályos igék",
+        "en": "Present tense, regular verbs",
+        "es": "Presente, verbos regulares",
+        "de": "Präsens, regelmäßige Verben"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "hablar",
+          "en": "hablar",
+          "es": "hablar",
+          "de": "hablar"
+        },
+        {
+          "hu": "comer",
+          "en": "comer",
+          "es": "comer",
+          "de": "comer"
+        },
+        {
+          "hu": "vivir",
+          "en": "vivir",
+          "es": "vivir",
+          "de": "vivir"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "hablo",
+          "como",
+          "vivo"
+        ],
+        [
+          "tú",
+          "hablas",
+          "comes",
+          "vives"
+        ],
+        [
+          "él/ella/usted",
+          "habla",
+          "come",
+          "vive"
+        ],
+        [
+          "nosotros",
+          "hablamos",
+          "comemos",
+          "vivimos"
+        ],
+        [
+          "vosotros",
+          "habláis",
+          "coméis",
+          "vivís"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "hablan",
+          "comen",
+          "viven"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Mikor használjuk a jelen időt?",
+        "en": "When do we use the present tense?",
+        "es": "¿Cuándo usamos el presente?",
+        "de": "Wann benutzen wir das Präsens?"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Ismétlődő szokásokra, mindennapi cselekvésekre: amit rendszeresen csinálsz.",
+            "en": "For repeated habits, everyday actions: what you do regularly.",
+            "es": "Para hábitos repetidos, acciones cotidianas: lo que haces con regularidad.",
+            "de": "Für wiederkehrende Gewohnheiten, alltägliche Handlungen: was du regelmäßig tust."
+          },
+          "examples": [
+            {
+              "es": "Trabajo todos los días.",
+              "tr": {
+                "hu": "Minden nap dolgozom.",
+                "en": "I work every day.",
+                "es": "Trabajo todos los días.",
+                "de": "Ich arbeite jeden Tag."
+              }
+            },
+            {
+              "es": "Comemos juntos los domingos.",
+              "tr": {
+                "hu": "Vasárnaponként együtt eszünk.",
+                "en": "We eat together on Sundays.",
+                "es": "Comemos juntos los domingos.",
+                "de": "Wir essen sonntags zusammen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Általános igazságokra, mindig érvényes tényekre.",
+            "en": "For general truths, facts that are always valid.",
+            "es": "Para verdades generales, hechos siempre válidos.",
+            "de": "Für allgemeine Wahrheiten, immer gültige Tatsachen."
+          },
+          "examples": [
+            {
+              "es": "Muchas personas trabajan de lunes a viernes.",
+              "tr": {
+                "hu": "Sokan hétfőtől péntekig dolgoznak.",
+                "en": "Many people work from Monday to Friday.",
+                "es": "Muchas personas trabajan de lunes a viernes.",
+                "de": "Viele Menschen arbeiten von Montag bis Freitag."
+              }
+            },
+            {
+              "es": "Los niños aprenden rápido.",
+              "tr": {
+                "hu": "A gyerekek gyorsan tanulnak.",
+                "en": "Children learn fast.",
+                "es": "Los niños aprenden rápido.",
+                "de": "Kinder lernen schnell."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Közeli jövőre, ha egy időhatározó szó, mint a mañana, egyértelművé teszi.",
+            "en": "For the near future, when a time word such as mañana makes it clear.",
+            "es": "Para el futuro cercano, cuando una palabra de tiempo como mañana lo deja claro.",
+            "de": "Für die nahe Zukunft, wenn ein Zeitwort wie mañana das klarmacht."
+          },
+          "examples": [
+            {
+              "es": "Mañana hablo con el profesor.",
+              "tr": {
+                "hu": "Holnap beszélek a tanárral.",
+                "en": "Tomorrow I talk to the teacher.",
+                "es": "Mañana hablo con el profesor.",
+                "de": "Morgen spreche ich mit dem Lehrer."
+              }
+            },
+            {
+              "es": "La próxima semana viven en su nueva casa.",
+              "tr": {
+                "hu": "Jövő héten az új házukban laknak.",
+                "en": "Next week they live in their new house.",
+                "es": "La próxima semana viven en su nueva casa.",
+                "de": "Nächste Woche wohnen sie in ihrem neuen Haus."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Tartós állapotokra: hol élsz, mivel foglalkozol, mi a munkád.",
+            "en": "For lasting states: where you live, what you do, your job.",
+            "es": "Para estados duraderos: dónde vives, a qué te dedicas, tu trabajo.",
+            "de": "Für dauerhafte Zustände: wo du lebst, was du machst, dein Beruf."
+          },
+          "examples": [
+            {
+              "es": "Vivo en la Ciudad de México.",
+              "tr": {
+                "hu": "Mexikóvárosban élek.",
+                "en": "I live in Mexico City.",
+                "es": "Vivo en la Ciudad de México.",
+                "de": "Ich lebe in Mexiko-Stadt."
+              }
+            },
+            {
+              "es": "Trabajamos en un hospital.",
+              "tr": {
+                "hu": "Kórházban dolgozunk.",
+                "en": "We work at a hospital.",
+                "es": "Trabajamos en un hospital.",
+                "de": "Wir arbeiten in einem Krankenhaus."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "-er és -ir: majdnem ikrek",
+        "en": "-er and -ir: almost twins",
+        "es": "-er e -ir: casi gemelos",
+        "de": "-er und -ir: fast Zwillinge"
+      },
+      "pairs": [
+        {
+          "a": "comemos",
+          "b": "vivimos",
+          "note": {
+            "hu": "Az -er és az -ir igék végződése csak a nosotros (és a vosotros) alakban tér el egymástól, minden más személyben azonos minta.",
+            "en": "-er and -ir verb endings differ only in the nosotros (and vosotros) form, every other person follows the same pattern.",
+            "es": "Las terminaciones de los verbos -er e -ir solo se diferencian en la forma de nosotros (y vosotros), en las demás personas el patrón es igual.",
+            "de": "Die Endungen der -er- und -ir-Verben unterscheiden sich nur in der nosotros-Form (und vosotros), in allen anderen Personen ist das Muster gleich."
+          },
+          "examples": [
+            {
+              "es": "Nosotros comemos a las dos.",
+              "tr": {
+                "hu": "Mi kettőkor eszünk.",
+                "en": "We eat at two.",
+                "es": "Nosotros comemos a las dos.",
+                "de": "Wir essen um zwei."
+              }
+            },
+            {
+              "es": "Nosotros vivimos en Puebla.",
+              "tr": {
+                "hu": "Mi Pueblában élünk.",
+                "en": "We live in Puebla.",
+                "es": "Nosotros vivimos en Puebla.",
+                "de": "Wir leben in Puebla."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A tú-alak jelen időben mindig -s-re végződik, ez a leggyakoribb elgépelés: tú hablas, sosem tú habla.",
+        "en": "The tú form always ends in -s in the present, the most common slip: tú hablas, never tú habla.",
+        "es": "La forma de tú siempre termina en -s en presente, el error más común: tú hablas, nunca tú habla.",
+        "de": "Die tú-Form endet im Präsens immer auf -s, der häufigste Fehler: tú hablas, nie tú habla."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Latin-Amerikában, így Mexikóban is, a vosotros helyett ustedes áll a többes szám harmadik személyével: ustedes hablan, comen, viven, nem habláis, coméis, vivís.",
+        "en": "In Latin America, Mexico included, ustedes replaces vosotros with the third person plural: ustedes hablan, comen, viven, not habláis, coméis, vivís.",
+        "es": "En Latinoamérica, también en México, ustedes sustituye a vosotros con la tercera persona del plural: ustedes hablan, comen, viven, no habláis, coméis, vivís.",
+        "de": "In Lateinamerika, auch in Mexiko, ersetzt ustedes das vosotros mit der dritten Person Plural: ustedes hablan, comen, viven, nicht habláis, coméis, vivís."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A spanyol jelen idő igevégződése megmondja, ki csinálja a cselekvést, ezért a névmást általában el is hagyjuk. Az -ar igék yo-alakja -o-ra végződik, mint a «hablo», a tú-alak pedig mindig -s-re, mint a «hablas». Az -er és az -ir igék szinte ugyanúgy ragozódnak, csak a mi-alakban térnek el egymástól: «comemos» és «vivimos». A jelen idő nemcsak a mostani pillanatra való, hanem szokásokra is, mint «trabajo todos los días», és közeli tervekre egy időhatározóval, mint «mañana hablo con el profesor». Mexikóban a vosotros helyett ustedes jár a többes szám harmadik személyével, tehát «ustedes hablan», sosem «vosotros habláis».",
+    "en": "A Spanish present-tense ending tells you who is doing the action, so the pronoun is usually dropped. The yo-form of -ar verbs ends in -o, like «hablo», and the tú-form always ends in -s, like «hablas». -er and -ir verbs conjugate almost the same way, differing only in the we-form: «comemos» and «vivimos». The present tense is not only for right now, it also covers habits, like «trabajo todos los días», and near-future plans with a time word, like «mañana hablo con el profesor». In Mexico, ustedes replaces vosotros with the third person plural, so «ustedes hablan», never «vosotros habláis».",
+    "es": "La terminación del presente en español dice quién hace la acción, por eso el pronombre casi siempre se omite. La forma de yo en los verbos -ar termina en -o, como «hablo», y la forma de tú siempre termina en -s, como «hablas». Los verbos -er y -ir se conjugan casi igual, solo se diferencian en la forma de nosotros: «comemos» y «vivimos». El presente no es solo para este momento, también sirve para hábitos, como «trabajo todos los días», y para planes cercanos con una palabra de tiempo, como «mañana hablo con el profesor». En México, ustedes sustituye a vosotros con la tercera persona del plural, por eso «ustedes hablan», nunca «vosotros habláis».",
+    "de": "Die Endung des spanischen Präsens sagt dir, wer die Handlung ausführt, deshalb lässt man das Pronomen meist weg. Die yo-Form der -ar-Verben endet auf -o, wie «hablo», und die tú-Form endet immer auf -s, wie «hablas». -er- und -ir-Verben werden fast gleich konjugiert, sie unterscheiden sich nur in der wir-Form: «comemos» und «vivimos». Das Präsens gilt nicht nur für den Moment, sondern auch für Gewohnheiten, wie «trabajo todos los días», und für nahe Zukunftspläne mit einem Zeitwort, wie «mañana hablo con el profesor». In Mexiko ersetzt ustedes das vosotros mit der dritten Person Plural, also «ustedes hablan», nie «vosotros habláis»."
   },
   "glossary": [
     {
@@ -102,16 +459,16 @@
       },
       "wrong": {
         "hablas": {
-          "hu": "A -as végződés a tú alakja, nem az enyém.",
-          "en": "The -as ending is the tú form, not the I form.",
-          "es": "La terminación -as es de tú, no de yo.",
-          "de": "Die Endung -as gehört zu tú, nicht zu yo."
+          "hu": "A 'hablas' a tú-höz tartozó alak: 'Tú hablas español' azt jelentené, hogy TE beszélsz spanyolul, nem hogy én.",
+          "en": "'Hablas' belongs to tú: 'Tú hablas español' would mean YOU speak Spanish, not me.",
+          "es": "'Hablas' es la forma de tú: 'Tú hablas español' significaría que TÚ hablas español, no yo.",
+          "de": "'Hablas' gehört zu tú: 'Tú hablas español' würde heißen, dass DU Spanisch sprichst, nicht ich."
         },
         "habla": {
-          "hu": "A -a végződés az él/ella/usted alakja.",
-          "en": "The -a ending is the él/ella/usted form.",
-          "es": "La terminación -a es de él/ella/usted.",
-          "de": "Die Endung -a gehört zu él/ella/usted."
+          "hu": "A 'habla' az él/ella/usted alakja: 'Él habla español' azt jelentené, hogy Ő beszél spanyolul, nem én.",
+          "en": "'Habla' belongs to él/ella/usted: 'Él habla español' would mean HE speaks Spanish, not me.",
+          "es": "'Habla' es la forma de él/ella/usted: 'Él habla español' significaría que ÉL habla español, no yo.",
+          "de": "'Habla' gehört zu él/ella/usted: 'Él habla español' würde heißen, dass ER Spanisch spricht, nicht ich."
         }
       },
       "examples": [
@@ -136,16 +493,16 @@
       },
       "wrong": {
         "come": {
-          "hu": "A come az él/ella alakja, nem a tiéd.",
-          "en": "Come is the él/ella form, not yours.",
-          "es": "Come es la forma de él/ella, no de tú.",
-          "de": "Come ist die él/ella-Form, nicht deine."
+          "hu": "A 'come' az él/ella/usted alakja: '¿Él come carne?' azt kérdezné, hogy Ő eszik-e húst, nem te.",
+          "en": "'Come' belongs to él/ella/usted: '¿Él come carne?' would ask whether HE eats meat, not you.",
+          "es": "'Come' es la forma de él/ella/usted: '¿Él come carne?' preguntaría si ÉL come carne, no tú.",
+          "de": "'Come' gehört zu él/ella/usted: '¿Él come carne?' würde fragen, ob ER Fleisch isst, nicht du."
         },
         "comemos": {
-          "hu": "A comemos a nosotros alakja.",
-          "en": "Comemos is the nosotros form.",
-          "es": "Comemos es la forma de nosotros.",
-          "de": "Comemos ist die nosotros-Form."
+          "hu": "A 'comemos' a nosotros alakja: '¿Nosotros comemos carne?' azt kérdezné, hogy MI eszünk-e húst, nem te.",
+          "en": "'Comemos' belongs to nosotros: '¿Nosotros comemos carne?' would ask whether WE eat meat, not you.",
+          "es": "'Comemos' es la forma de nosotros: '¿Nosotros comemos carne?' preguntaría si NOSOTROS comemos carne, no tú.",
+          "de": "'Comemos' gehört zu nosotros: '¿Nosotros comemos carne?' würde fragen, ob WIR Fleisch essen, nicht du."
         }
       },
       "examples": [
@@ -170,16 +527,16 @@
       },
       "wrong": {
         "vivís": {
-          "hu": "A vivís a vosotros alakja, amit Mexikóban nem használnak.",
-          "en": "Vivís is the vosotros form, which is not used in Mexico.",
-          "es": "Vivís es la forma de vosotros, que en México no se usa.",
-          "de": "Vivís ist die vosotros-Form, die in Mexiko nicht benutzt wird."
+          "hu": "A 'vivís' a vosotros alakja: 'Vosotros vivís en la Ciudad de México' azt jelentené, hogy TI laktok ott, ráadásul Mexikóban ezt az alakot nem is használják.",
+          "en": "'Vivís' belongs to vosotros: 'Vosotros vivís en la Ciudad de México' would mean YOU ALL live there, and this form is not even used in Mexico.",
+          "es": "'Vivís' es la forma de vosotros: 'Vosotros vivís en la Ciudad de México' significaría que VOSOTROS vivís ahí, y esa forma ni siquiera se usa en México.",
+          "de": "'Vivís' gehört zu vosotros: 'Vosotros vivís en la Ciudad de México' würde heißen, dass IHR dort lebt, und diese Form wird in Mexiko gar nicht benutzt."
         },
         "viven": {
-          "hu": "A viven az ellos/ustedes alakja.",
-          "en": "Viven is the ellos/ustedes form.",
-          "es": "Viven es la forma de ellos/ustedes.",
-          "de": "Viven ist die ellos/ustedes-Form."
+          "hu": "A 'viven' az ellos/ellas/ustedes alakja: 'Ellos viven en la Ciudad de México' azt jelentené, hogy ŐK laknak ott, nem mi.",
+          "en": "'Viven' belongs to ellos/ellas/ustedes: 'Ellos viven en la Ciudad de México' would mean THEY live there, not us.",
+          "es": "'Viven' es la forma de ellos/ellas/ustedes: 'Ellos viven en la Ciudad de México' significaría que ELLOS viven ahí, no nosotros.",
+          "de": "'Viven' gehört zu ellos/ellas/ustedes: 'Ellos viven en la Ciudad de México' würde heißen, dass SIE dort leben, nicht wir."
         }
       },
       "examples": [
@@ -204,16 +561,16 @@
       },
       "wrong": {
         "trabajo": {
-          "hu": "A trabajo azt jelenti, hogy ÉN dolgozom.",
-          "en": "Trabajo means I work.",
-          "es": "Trabajo significa que trabajo YO.",
-          "de": "Trabajo heißt, dass ICH arbeite."
+          "hu": "A 'trabajo' a yo alakja: 'Yo trabajo en un hospital' azt jelentené, hogy ÉN dolgozom kórházban, nem a nővérem.",
+          "en": "'Trabajo' belongs to yo: 'Yo trabajo en un hospital' would mean I work at a hospital, not my sister.",
+          "es": "'Trabajo' es la forma de yo: 'Yo trabajo en un hospital' significaría que YO trabajo en el hospital, no mi hermana.",
+          "de": "'Trabajo' gehört zu yo: 'Yo trabajo en un hospital' würde heißen, dass ICH im Krankenhaus arbeite, nicht meine Schwester."
         },
         "trabajan": {
-          "hu": "A trabajan többes szám, itt viszont egy nővérről van szó.",
-          "en": "Trabajan is plural, but here there is one sister.",
-          "es": "Trabajan es plural, pero aquí hay una hermana.",
-          "de": "Trabajan ist Plural, hier geht es aber um eine Schwester."
+          "hu": "A 'trabajan' többes szám: 'Mis hermanas trabajan en un hospital' azt jelentené, hogy TÖBB nővérem dolgozik ott, itt viszont csak egyről van szó.",
+          "en": "'Trabajan' is plural: 'Mis hermanas trabajan en un hospital' would mean SEVERAL sisters work there, but here there is only one.",
+          "es": "'Trabajan' es plural: 'Mis hermanas trabajan en un hospital' significaría que VARIAS hermanas trabajan ahí, pero aquí hay solo una.",
+          "de": "'Trabajan' ist Plural: 'Mis hermanas trabajan en un hospital' würde heißen, dass MEHRERE Schwestern dort arbeiten, hier gibt es aber nur eine."
         }
       },
       "examples": [
@@ -238,16 +595,16 @@
       },
       "wrong": {
         "bebemos": {
-          "hu": "A bebemos azt jelenti, hogy MI iszunk.",
-          "en": "Bebemos means WE drink.",
-          "es": "Bebemos significa que bebemos NOSOTROS.",
-          "de": "Bebemos heißt, dass WIR trinken."
+          "hu": "A 'bebemos' a nosotros alakja: 'Nosotros bebemos mucha agua' azt jelentené, hogy MI iszunk sok vizet, nem ők.",
+          "en": "'Bebemos' belongs to nosotros: 'Nosotros bebemos mucha agua' would mean WE drink a lot of water, not them.",
+          "es": "'Bebemos' es la forma de nosotros: 'Nosotros bebemos mucha agua' significaría que NOSOTROS bebemos mucha agua, no ellos.",
+          "de": "'Bebemos' gehört zu nosotros: 'Nosotros bebemos mucha agua' würde heißen, dass WIR viel Wasser trinken, nicht sie."
         },
         "bebe": {
-          "hu": "A bebe egy személyre vonatkozik.",
-          "en": "Bebe refers to one person.",
-          "es": "Bebe se refiere a una persona.",
-          "de": "Bebe bezieht sich auf eine Person."
+          "hu": "A 'bebe' egyes számú alak: 'Él bebe mucha agua' azt jelentené, hogy Ő iszik sok vizet, itt viszont többen vannak.",
+          "en": "'Bebe' is singular: 'Él bebe mucha agua' would mean HE drinks a lot of water, but here there are several people.",
+          "es": "'Bebe' es singular: 'Él bebe mucha agua' significaría que ÉL bebe mucha agua, pero aquí son varios.",
+          "de": "'Bebe' ist Singular: 'Él bebe mucha agua' würde heißen, dass ER viel Wasser trinkt, hier sind es aber mehrere."
         }
       },
       "examples": [
@@ -272,16 +629,16 @@
       },
       "wrong": {
         "habláis": {
-          "hu": "A habláis a vosotros alakja (Spanyolország), ustedes mellé nem jó.",
-          "en": "Habláis is the vosotros form (Spain), it does not go with ustedes.",
-          "es": "Habláis es de vosotros (España), no va con ustedes.",
-          "de": "Habláis ist die vosotros-Form (Spanien) und passt nicht zu ustedes."
+          "hu": "A 'habláis' a vosotros alakja (Spanyolország), az ustedes mellett sosem áll: 'Vosotros habláis muy rápido' TI-t jelentene, nem önöket.",
+          "en": "'Habláis' is the vosotros form (Spain), it never goes with ustedes: 'Vosotros habláis muy rápido' would mean YOU ALL (informal), not ustedes.",
+          "es": "'Habláis' es la forma de vosotros (España), nunca va con ustedes: 'Vosotros habláis muy rápido' significaría VOSOTROS, no ustedes.",
+          "de": "'Habláis' ist die vosotros-Form (Spanien), sie steht nie bei ustedes: 'Vosotros habláis muy rápido' würde IHR bedeuten, nicht ustedes."
         },
         "hablamos": {
-          "hu": "A hablamos rólunk szól, nem rólatok.",
-          "en": "Hablamos is about us, not about you.",
-          "es": "Hablamos habla de nosotros, no de ustedes.",
-          "de": "Hablamos spricht von uns, nicht von euch."
+          "hu": "A 'hablamos' a nosotros alakja: 'Nosotros hablamos muy rápido' azt jelentené, hogy MI beszélünk gyorsan, nem önök.",
+          "en": "'Hablamos' belongs to nosotros: 'Nosotros hablamos muy rápido' would mean WE speak fast, not you all.",
+          "es": "'Hablamos' es la forma de nosotros: 'Nosotros hablamos muy rápido' significaría que NOSOTROS hablamos rápido, no ustedes.",
+          "de": "'Hablamos' gehört zu nosotros: 'Nosotros hablamos muy rápido' würde heißen, dass WIR schnell sprechen, nicht Sie."
         }
       },
       "examples": [
@@ -306,16 +663,16 @@
       },
       "wrong": {
         "escribe": {
-          "hu": "Az escribe az ő alakja.",
-          "en": "Escribe is the he/she form.",
-          "es": "Escribe es la forma de él/ella.",
-          "de": "Escribe ist die er/sie-Form."
+          "hu": "Az 'escribe' az él/ella alakja: 'Ella escribe una carta a su madre' azt jelentené, hogy Ő ír levelet, nem én.",
+          "en": "'Escribe' belongs to él/ella: 'Ella escribe una carta a su madre' would mean SHE writes a letter, not me.",
+          "es": "'Escribe' es la forma de él/ella: 'Ella escribe una carta a su madre' significaría que ELLA escribe la carta, no yo.",
+          "de": "'Escribe' gehört zu él/ella: 'Ella escribe una carta a su madre' würde heißen, dass SIE den Brief schreibt, nicht ich."
         },
         "escribimos": {
-          "hu": "Az escribimos a mi alakunk.",
-          "en": "Escribimos is our form.",
-          "es": "Escribimos es la forma de nosotros.",
-          "de": "Escribimos ist unsere Form."
+          "hu": "Az 'escribimos' a nosotros alakja: 'Nosotros escribimos una carta a nuestra madre' azt jelentené, hogy MI írunk levelet, nem csak én.",
+          "en": "'Escribimos' belongs to nosotros: 'Nosotros escribimos una carta a nuestra madre' would mean WE write the letter, not just me.",
+          "es": "'Escribimos' es la forma de nosotros: 'Nosotros escribimos una carta a nuestra madre' significaría que NOSOTROS escribimos la carta, no solo yo.",
+          "de": "'Escribimos' gehört zu nosotros: 'Nosotros escribimos una carta a nuestra madre' würde heißen, dass WIR den Brief schreiben, nicht nur ich."
         }
       },
       "examples": [
@@ -340,16 +697,16 @@
       },
       "wrong": {
         "come": {
-          "hu": "A come egyes számú alak, az ustedes viszont többes.",
-          "en": "Come is singular, but ustedes is plural.",
-          "es": "Come es singular, pero ustedes es plural.",
-          "de": "Come ist Singular, ustedes aber Plural."
+          "hu": "A 'come' egyes szám: '¿Dónde come él los sábados?' azt kérdezné, hogy Ő hol eszik, az ustedes viszont többes szám.",
+          "en": "'Come' is singular: '¿Dónde come él los sábados?' would ask where HE eats, but ustedes is plural.",
+          "es": "'Come' es singular: '¿Dónde come él los sábados?' preguntaría dónde come ÉL, pero ustedes es plural.",
+          "de": "'Come' ist Singular: '¿Dónde come él los sábados?' würde fragen, wo ER isst, ustedes ist aber Plural."
         },
         "comemos": {
-          "hu": "A comemos ránk vonatkozik, nem rájuk.",
-          "en": "Comemos is about us, not about them.",
-          "es": "Comemos se refiere a nosotros, no a ustedes.",
-          "de": "Comemos bezieht sich auf uns, nicht auf euch."
+          "hu": "A 'comemos' a nosotros alakja: '¿Dónde comemos nosotros los sábados?' azt kérdezné, hogy MI hol eszünk, nem önök.",
+          "en": "'Comemos' belongs to nosotros: '¿Dónde comemos nosotros los sábados?' would ask where WE eat, not you all.",
+          "es": "'Comemos' es la forma de nosotros: '¿Dónde comemos nosotros los sábados?' preguntaría dónde comemos NOSOTROS, no ustedes.",
+          "de": "'Comemos' gehört zu nosotros: '¿Dónde comemos nosotros los sábados?' würde fragen, wo WIR essen, nicht Sie."
         }
       },
       "examples": [
@@ -374,16 +731,16 @@
       },
       "wrong": {
         "juegan": {
-          "hu": "A juegan őket jelenti, de te is benne vagy a csoportban.",
-          "en": "Juegan means they, but you are part of the group too.",
-          "es": "Juegan es ellos, pero tú también estás en el grupo.",
-          "de": "Juegan heißt sie, aber du gehörst auch zur Gruppe."
+          "hu": "A 'juegan' az ellos alakja: 'Mis amigos juegan fútbol el domingo' azt jelentené, hogy csak a barátaim játszanak, én nélkülük, itt viszont benne vagyok a csoportban.",
+          "en": "'Juegan' belongs to ellos: 'Mis amigos juegan fútbol el domingo' would mean only my friends play, without me, but here I am part of the group.",
+          "es": "'Juegan' es la forma de ellos: 'Mis amigos juegan fútbol el domingo' significaría que solo juegan mis amigos, sin mí, pero aquí yo también estoy en el grupo.",
+          "de": "'Juegan' gehört zu ellos: 'Mis amigos juegan fútbol el domingo' würde heißen, dass nur meine Freunde spielen, ohne mich, hier gehöre ich aber zur Gruppe."
         },
         "juego": {
-          "hu": "A juego csak rólam szól, itt viszont többen vagyunk.",
-          "en": "Juego is only about me, but here we are several.",
-          "es": "Juego habla solo de mí, pero aquí somos varios.",
-          "de": "Juego spricht nur von mir, hier sind wir aber mehrere."
+          "hu": "A 'juego' csak rólam szól: 'Yo juego fútbol el domingo' azt jelentené, hogy egyedül én játszom, a barátaim nélkül.",
+          "en": "'Juego' is only about me: 'Yo juego fútbol el domingo' would mean I play alone, without my friends.",
+          "es": "'Juego' habla solo de mí: 'Yo juego fútbol el domingo' significaría que juego solo, sin mis amigos.",
+          "de": "'Juego' spricht nur von mir: 'Yo juego fútbol el domingo' würde heißen, dass ich allein spiele, ohne meine Freunde."
         }
       },
       "examples": [
@@ -408,16 +765,16 @@
       },
       "wrong": {
         "aprende": {
-          "hu": "Az aprende az ő alakja; a tiédről hiányzik az -s.",
-          "en": "Aprende is the he/she form; yours is missing the -s.",
-          "es": "Aprende es de él/ella; a la tuya le falta la -s.",
-          "de": "Aprende ist die er/sie-Form; deiner fehlt das -s."
+          "hu": "Az 'aprende' az él/ella alakja: 'Él aprende mucho en el trabajo' azt jelentené, hogy Ő tanul sokat, nem te; a tiédről hiányzik az -s.",
+          "en": "'Aprende' belongs to él/ella: 'Él aprende mucho en el trabajo' would mean HE learns a lot, not you; yours is missing the -s.",
+          "es": "'Aprende' es la forma de él/ella: 'Él aprende mucho en el trabajo' significaría que ÉL aprende mucho, no tú; a la tuya le falta la -s.",
+          "de": "'Aprende' gehört zu él/ella: 'Él aprende mucho en el trabajo' würde heißen, dass ER viel lernt, nicht du; deiner fehlt das -s."
         },
         "aprendo": {
-          "hu": "Az aprendo rólam szól.",
-          "en": "Aprendo is about me.",
-          "es": "Aprendo habla de mí.",
-          "de": "Aprendo spricht von mir."
+          "hu": "Az 'aprendo' rólam szólna: 'Yo aprendo mucho en el trabajo' azt jelentené, hogy ÉN tanulok sokat, nem te.",
+          "en": "'Aprendo' would be about me: 'Yo aprendo mucho en el trabajo' would mean I learn a lot, not you.",
+          "es": "'Aprendo' hablaría de mí: 'Yo aprendo mucho en el trabajo' significaría que YO aprendo mucho, no tú.",
+          "de": "'Aprendo' würde von mir sprechen: 'Yo aprendo mucho en el trabajo' würde heißen, dass ICH viel lerne, nicht du."
         }
       },
       "examples": [
@@ -442,16 +799,16 @@
       },
       "wrong": {
         "abro": {
-          "hu": "Az abro azt jelenti, én nyitom ki.",
-          "en": "Abro means I open it.",
-          "es": "Abro significa que la abro yo.",
-          "de": "Abro heißt, dass ich sie öffne."
+          "hu": "Az 'abro' a yo alakja: 'Yo abro la puerta' azt jelentené, hogy ÉN nyitom ki az ajtót, nem a fiú.",
+          "en": "'Abro' belongs to yo: 'Yo abro la puerta' would mean I open the door, not the boy.",
+          "es": "'Abro' es la forma de yo: 'Yo abro la puerta' significaría que YO abro la puerta, no el niño.",
+          "de": "'Abro' gehört zu yo: 'Yo abro la puerta' würde heißen, dass ICH die Tür öffne, nicht der Junge."
         },
         "abren": {
-          "hu": "Az abren többes szám.",
-          "en": "Abren is plural.",
-          "es": "Abren es plural.",
-          "de": "Abren ist Plural."
+          "hu": "Az 'abren' többes szám: 'Los niños abren la puerta' azt jelentené, hogy TÖBB gyerek nyitja az ajtót, itt viszont csak egy fiúról van szó.",
+          "en": "'Abren' is plural: 'Los niños abren la puerta' would mean SEVERAL children open the door, but here there is only one boy.",
+          "es": "'Abren' es plural: 'Los niños abren la puerta' significaría que VARIOS niños abren la puerta, pero aquí es solo un niño.",
+          "de": "'Abren' ist Plural: 'Los niños abren la puerta' würde heißen, dass MEHRERE Kinder die Tür öffnen, hier ist es aber nur ein Junge."
         }
       },
       "examples": [
@@ -476,22 +833,148 @@
       },
       "wrong": {
         "comimos": {
-          "hu": "A comimos múlt idő (indefinido), az itt még nem téma.",
-          "en": "Comimos is the past (indefinido), which is not the point here.",
-          "es": "Comimos es pasado (indefinido), no es lo que pide la frase.",
-          "de": "Comimos ist Vergangenheit (indefinido), hier nicht gefragt."
+          "hu": "A 'comimos' múlt idő (indefinido): 'Nosotros comimos el menú del día ayer' azt jelentené, hogy TEGNAP ettük meg, nem jelen időben esszük.",
+          "en": "'Comimos' is the past tense (indefinido): 'Nosotros comimos el menú del día ayer' would mean we ate it YESTERDAY, not that we are eating it now.",
+          "es": "'Comimos' es pasado (indefinido): 'Nosotros comimos el menú del día ayer' significaría que lo comimos AYER, no que lo comemos ahora.",
+          "de": "'Comimos' ist Vergangenheit (indefinido): 'Nosotros comimos el menú del día ayer' würde heißen, dass wir es GESTERN gegessen haben, nicht dass wir es jetzt essen."
         },
         "comen": {
-          "hu": "A comen róluk szól, nem rólunk.",
-          "en": "Comen is about them, not about us.",
-          "es": "Comen habla de ellos, no de nosotros.",
-          "de": "Comen spricht von ihnen, nicht von uns."
+          "hu": "A 'comen' az ellos/ustedes alakja: 'Ellos comen el menú del día' azt jelentené, hogy ŐK eszik a napi menüt, nem mi.",
+          "en": "'Comen' belongs to ellos/ustedes: 'Ellos comen el menú del día' would mean THEY eat the daily menu, not us.",
+          "es": "'Comen' es la forma de ellos/ustedes: 'Ellos comen el menú del día' significaría que ELLOS comen el menú, no nosotros.",
+          "de": "'Comen' gehört zu ellos/ustedes: 'Ellos comen el menú del día' würde heißen, dass SIE das Tagesmenü essen, nicht wir."
         }
       },
       "examples": [
         "Nosotros bebemos té.",
         "Nosotros leemos el mismo libro."
       ]
+    },
+    {
+      "id": "pr-match-01",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "hablo español",
+          "en": "I speak Spanish"
+        },
+        {
+          "es": "comes carne",
+          "en": "you eat meat"
+        },
+        {
+          "es": "vive en Puebla",
+          "en": "she lives in Puebla"
+        },
+        {
+          "es": "trabajamos juntos",
+          "en": "we work together"
+        },
+        {
+          "es": "escriben cartas",
+          "en": "they write letters"
+        },
+        {
+          "es": "aprendes rápido",
+          "en": "you learn fast"
+        }
+      ]
+    },
+    {
+      "id": "pr-form-01",
+      "kind": "form",
+      "verb": "hablar",
+      "person": "yo",
+      "answer": "hablo",
+      "table": "presente-regular"
+    },
+    {
+      "id": "pr-form-02",
+      "kind": "form",
+      "verb": "hablar",
+      "person": "tú",
+      "answer": "hablas",
+      "table": "presente-regular"
+    },
+    {
+      "id": "pr-form-03",
+      "kind": "form",
+      "verb": "hablar",
+      "person": "nosotros",
+      "answer": "hablamos",
+      "table": "presente-regular"
+    },
+    {
+      "id": "pr-form-04",
+      "kind": "form",
+      "verb": "hablar",
+      "person": "ellos/ellas/ustedes",
+      "answer": "hablan",
+      "table": "presente-regular"
+    },
+    {
+      "id": "pr-form-05",
+      "kind": "form",
+      "verb": "comer",
+      "person": "tú",
+      "answer": "comes",
+      "table": "presente-regular"
+    },
+    {
+      "id": "pr-form-06",
+      "kind": "form",
+      "verb": "comer",
+      "person": "él/ella/usted",
+      "answer": "come",
+      "table": "presente-regular"
+    },
+    {
+      "id": "pr-form-07",
+      "kind": "form",
+      "verb": "comer",
+      "person": "vosotros",
+      "answer": "coméis",
+      "table": "presente-regular"
+    },
+    {
+      "id": "pr-form-08",
+      "kind": "form",
+      "verb": "comer",
+      "person": "ellos/ellas/ustedes",
+      "answer": "comen",
+      "table": "presente-regular"
+    },
+    {
+      "id": "pr-form-09",
+      "kind": "form",
+      "verb": "vivir",
+      "person": "yo",
+      "answer": "vivo",
+      "table": "presente-regular"
+    },
+    {
+      "id": "pr-form-10",
+      "kind": "form",
+      "verb": "vivir",
+      "person": "él/ella/usted",
+      "answer": "vive",
+      "table": "presente-regular"
+    },
+    {
+      "id": "pr-form-11",
+      "kind": "form",
+      "verb": "vivir",
+      "person": "nosotros",
+      "answer": "vivimos",
+      "table": "presente-regular"
+    },
+    {
+      "id": "pr-form-12",
+      "kind": "form",
+      "verb": "vivir",
+      "person": "vosotros",
+      "answer": "vivís",
+      "table": "presente-regular"
     }
   ]
 }
