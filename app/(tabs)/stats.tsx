@@ -5,6 +5,8 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
+import { getWordsForLevel, type Level } from '@/data/words';
+import { languages } from '@/lib/languages';
 import {
   weeklyGoalProgress,
   DEFAULT_WEEKLY_GOAL_MINUTES,
@@ -17,6 +19,7 @@ import {
   type ScheduleBucketKey,
 } from '@/lib/schedulePreview';
 import FeedbackButton from '@/components/FeedbackModal';
+import ProgressMeter from '@/components/ProgressMeter';
 
 const EMPTY_SCHEDULE: SchedulePreview = { dueNow: 0, buckets: [], scheduled: 0, nextDue: null };
 
@@ -40,6 +43,11 @@ export default function StatsScreen() {
   const [reviewsToday, setReviewsToday] = useState(0);
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
   const [schedule, setSchedule] = useState<SchedulePreview>(EMPTY_SCHEDULE);
+  // UTEMEZO 6. szakasz: a fejlecbol ide koltozott know/total szint-halado.
+  const [level, setLevel] = useState<Level>('A0');
+  const [levelKnown, setLevelKnown] = useState(0);
+  const [levelTotal, setLevelTotal] = useState(0);
+  const [targetLang, setTargetLang] = useState('es');
 
   // Refresh every time the tab gains focus (mirrors the Settings tab's
   // spellingDue pattern), so numbers stay current across app-wide activity.
@@ -54,8 +62,20 @@ export default function StatsScreen() {
       // FB100: the schedule is read on focus like everything else here, so the
       // buckets match the state the learner just left the session in.
       db.getScheduledWordDueDates().then(dates => setSchedule(buildSchedulePreview(dates, new Date())));
+      // UTEMEZO 6. szakasz: a szint-halado, ugyanugy focus-on frissul.
+      db.getLevel().then(({ level: lvl }) => {
+        setLevel(lvl as Level);
+        db.getReviewedWordCount(lvl as Level).then(setLevelKnown);
+        db.getOnboarding().then(ob => {
+          const learned = ob?.target ?? 'es';
+          setTargetLang(learned);
+          setLevelTotal(getWordsForLevel(lvl as Level, learned).length);
+        });
+      });
     }, [])
   );
+
+  const targetLangInfo = languages.find(l => l.code === targetLang);
 
   const maxMinutes = Math.max(1, ...usage.last7Days.map(d => d.minutes));
   const hasChartData = usage.last7Days.some(d => d.minutes > 0);
@@ -100,6 +120,26 @@ export default function StatsScreen() {
       contentContainerStyle={styles.content}
     >
       <Text style={[styles.title, { color: colors.text }]}>{s.stats.title}</Text>
+
+      {/* UTEMEZO 6. szakasz: a fejlecbol ide koltozott know/total szint-halado, a
+          🌱 jelvenyt a fekete szam valtja a Tanulas fulon. */}
+      <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.progress.wordsKnown}</Text>
+      <View style={[styles.levelCard, { backgroundColor: colors.card }]}>
+        <View style={styles.levelCardHead}>
+          <View style={[styles.levelBadge, { backgroundColor: '#38BDF8' }]}>
+            <Text style={styles.levelBadgeText}>{level}</Text>
+          </View>
+          <Text style={[styles.levelCardValue, { color: colors.text }]}>
+            {s.header.levelProgress(levelKnown, levelTotal)}
+          </Text>
+        </View>
+        <ProgressMeter
+          known={levelKnown}
+          total={levelTotal}
+          langFlag={targetLangInfo?.flag ?? ''}
+          langName={targetLangInfo?.name ?? ''}
+        />
+      </View>
 
       <View style={styles.tileRow}>
         <View style={[styles.tile, { backgroundColor: colors.card }]}>
@@ -277,6 +317,32 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     marginTop: 4,
     textAlign: 'center',
+  },
+  // UTEMEZO 6. szakasz: szint-badge + know/total + ProgressMeter kartya.
+  levelCard: {
+    borderRadius: 14,
+    padding: 16,
+    marginBottom: 20,
+  },
+  levelCardHead: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+    marginBottom: 10,
+  },
+  levelBadge: {
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 8,
+  },
+  levelBadgeText: {
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: '800',
+  },
+  levelCardValue: {
+    fontSize: 15,
+    fontWeight: '700',
   },
   bestDayRow: {
     borderRadius: 14,

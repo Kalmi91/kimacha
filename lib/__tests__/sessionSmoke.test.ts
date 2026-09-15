@@ -1,13 +1,11 @@
 import { getDb } from '../database.web';
 import { buildQueue, applyCadence } from '../sessionQueue';
-import { capNewWords, newWordIntake } from '../newWordBudget';
 import { getWordsForLevel } from '@/data/words';
 import type { Level } from '@/data/words';
 
 // A session smoke test for every course: it runs the real pipeline a learner
-// hits on the Learn tab (ensure cards → due rows → buildQueue → daily budget →
-// cadence) against the in-memory database, and asserts the learner actually
-// gets cards.
+// hits on the Learn tab (ensure cards → due rows → buildQueue → cadence)
+// against the in-memory database, and asserts the learner actually gets cards.
 //
 // Both halves of FB129 (the daily new-word budget counted across language
 // pairs, and card ids were resolved only in the shared Spanish set) produced
@@ -22,18 +20,19 @@ async function buildSession(source: string, target: string, level: Level) {
 
   const levelWords = getWordsForLevel(level, target).slice(0, 20);
   for (const w of levelWords) {
-    await db.ensureCard(w.id, 'word');
     await db.ensureCard(w.id, 'sentence');
+    // UTEMEZO 11. szakasz: getDueCardsForWordIds mostantól csak MEGTANULT szót
+    // ad vissza (lap >= 3, in_hand = 0); az érintetlen szavak az ütemező
+    // `fresh` listáján jönnek, nem ezen a lekérdezésen (lásd loadCards). A
+    // pipeline-teszt ezért előbb végigviszi a szavakat a létrán.
+    await db.startWord(w.id);
+    await db.passLap(w.id);
+    await db.passLap(w.id);
+    await db.passLap(w.id);
   }
 
   const rows = await db.getDueCardsForWordIds(levelWords.map((w) => w.id), QUEUE_POOL);
-  const intake = newWordIntake({
-    limit: await db.getDailyNewLimit(),
-    bonus: await db.getNewLimitBonus(),
-    learnedToday: await db.getWordsLearnedToday(),
-    unlearned: await db.getUnlearnedWordCount(),
-  });
-  return applyCadence(capNewWords(buildQueue(rows, target), intake), false, target);
+  return applyCadence(buildQueue(rows, target), false, target);
 }
 
 const COURSES: [string, string, Level][] = [
@@ -61,44 +60,5 @@ describe('a fresh session hands out cards in every course', () => {
     }
     // The learner starts on a word, not on a sentence build (FB24).
     expect(queue[0].type).toBe('word');
-  });
-});
-
-// FB140/FB141/FB142: the half-learned pile parks the intake, and until now the
-// "+N új szó" tap raised the ceiling along with the budget, so the button could
-// leave the queue exactly as it was ("nem dobott fel többet hanem újra
-// feldobta"). Driven through the real pipeline, because the pause is invisible
-// to any single unit.
-describe('a congested course still answers the "+N new words" tap', () => {
-  const CONGESTED = 40; // way past the ceiling of a default 5-word limit
-
-  async function congestedIntake(bonus: number) {
-    const db = getDb();
-    await db.setOnboarding('hu', 'en');
-    const words = getWordsForLevel('A1', 'en');
-    // Half-learn a pile: started (reps > 0) but the ladder is not finished, so
-    // FB210 counts every one of them as still in hand.
-    for (const w of words.slice(0, CONGESTED)) {
-      await db.ensureCard(w.id, 'word');
-      await db.updateCard(w.id, 'word', {
-        due: new Date(Date.now() + 86400000),
-        stability: 1, difficulty: 5, elapsed_days: 0, scheduled_days: 1,
-        learning_steps: 1, reps: 2, lapses: 0, state: 1, last_review: new Date(),
-      } as any);
-    }
-    return newWordIntake({
-      limit: await db.getDailyNewLimit(),
-      bonus,
-      learnedToday: 0,
-      unlearned: await db.getUnlearnedWordCount(),
-    });
-  }
-
-  it('pauses on its own', async () => {
-    expect(await congestedIntake(0)).toBe(0);
-  });
-
-  it('hands out exactly the requested bonus once the learner asks', async () => {
-    expect(await congestedIntake(5)).toBe(5);
   });
 });
