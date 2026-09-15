@@ -1,16 +1,26 @@
 import { useMemo, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { normalizeWordToken } from '@/data/words';
-import { cumulativeCorpusWordIds, isMarkItem, type GrammarMarkItem, type GrammarTopicData } from '@/lib/games/content';
+import {
+  cumulativeCorpusWordIds,
+  isFormItem,
+  isLessonV2,
+  isMarkItem,
+  isMatchItem,
+  type GrammarMarkItem,
+  type GrammarTopicData,
+} from '@/lib/games/content';
+import type { FormItem, LessonBlock, MatchItem } from '@/lib/grammar/lessonTypes';
 import { markTokens } from '@/lib/games/grammarMark';
-import { buildGrammarRound, wrongExplanation } from '@/lib/games/grammarChoice';
+import { buildGrammarRound, isChoiceRoundItem, wrongExplanation } from '@/lib/games/grammarChoice';
 import { buildGlossMap } from '@/lib/games/gloss';
-import { hashString } from '@/lib/shuffle';
+import { hashString, shuffleArray } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
+import LessonBody from '@/components/grammar/LessonBody';
 import MoreBlocks from '@/components/grammar/MoreBlocks';
 
 // The "which one is right, and why" drill, shared by the grammar course
@@ -20,6 +30,10 @@ import MoreBlocks from '@/components/grammar/MoreBlocks';
 //
 // GAMES.md 4.11: the explanation appears after EVERY answer, right or wrong,
 // with the rule, why the picked wrong option is wrong, and two more examples.
+//
+// LECKE-SEMA 2.1-2.2: a lecke-drill (`includeAllKinds`) a match/form
+// tételeket is végigviszi, a Game fül grammar-choice-a nem (az a prop híján
+// a régi gap/mark-only kört kapja, LECKE-SEMA 6.3 D pont).
 
 interface Props {
   topic: GrammarTopicData;
@@ -29,23 +43,259 @@ interface Props {
   onFinish: (correct: number, total: number) => void;
   /** Extra rows under the explanation (e.g. the course's "back to the rule"). */
   footer?: React.ReactNode;
+  /** LECKE-SEMA 2: a lecke-drill igennel adja át, hogy a match/form tételek is bekerüljenek a körbe. */
+  includeAllKinds?: boolean;
 }
 
-export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer }: Props) {
+function findFormTable(topic: GrammarTopicData, tableId: string): Extract<LessonBlock, { kind: 'table' }> | undefined {
+  if (!isLessonV2(topic)) return undefined;
+  return topic.body.find((b): b is Extract<LessonBlock, { kind: 'table' }> => b.kind === 'table' && b.id === tableId);
+}
+
+// LECKE-SEMA 2.1: párosítás. A bal oszlop (angol) az authored sorrendben áll,
+// a jobb oszlop (spanyol) egy seedelt keveréssel, hogy a teszt determinisztikus
+// maradjon (item.id-ból számolt seed, nem Date.now()).
+function MatchDrillItem({
+  item,
+  colors,
+  s,
+  onDone,
+}: {
+  item: MatchItem;
+  colors: (typeof Colors)['light'];
+  s: ReturnType<typeof t>;
+  onDone: (correct: boolean) => void;
+}) {
+  const [rightOrder] = useState(() => shuffleArray(item.pairs.map((_, i) => i), hashString(item.id)));
+  const [selectedLeft, setSelectedLeft] = useState<number | null>(null);
+  const [matched, setMatched] = useState<Set<number>>(new Set());
+  const [wrongPair, setWrongPair] = useState<{ left: number; right: number } | null>(null);
+  const [hadWrong, setHadWrong] = useState(false);
+
+  const done = matched.size === item.pairs.length;
+
+  const pressLeft = (li: number) => {
+    if (matched.has(li) || done) return;
+    setWrongPair(null);
+    setSelectedLeft(li);
+  };
+
+  const pressRight = (pos: number) => {
+    if (done || selectedLeft === null) return;
+    const pairId = rightOrder[pos];
+    if (matched.has(pairId)) return;
+    if (selectedLeft === pairId) {
+      const next = new Set(matched);
+      next.add(pairId);
+      setMatched(next);
+      setSelectedLeft(null);
+      setWrongPair(null);
+    } else {
+      setWrongPair({ left: selectedLeft, right: pos });
+      setHadWrong(true);
+      setSelectedLeft(null);
+    }
+  };
+
+  return (
+    <View style={styles.matchBody}>
+      <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{s.grammar.matchHint}</Text>
+      <View style={styles.matchColumns}>
+        <View style={styles.matchColumn}>
+          {item.pairs.map((p, li) => {
+            const isMatched = matched.has(li);
+            const isSelected = selectedLeft === li;
+            const isWrong = wrongPair?.left === li;
+            const bg = isMatched ? '#22C55E22' : isWrong ? '#EF444422' : isSelected ? colors.tint + '22' : colors.card;
+            const border = isMatched ? '#22C55E' : isWrong ? '#EF4444' : isSelected ? colors.tint : colors.tabIconDefault;
+            return (
+              <Pressable
+                key={li}
+                testID={`match-left-${li}`}
+                style={[styles.matchCell, { backgroundColor: bg, borderColor: border }]}
+                onPress={() => pressLeft(li)}
+                disabled={isMatched}
+              >
+                <Text style={[styles.matchCellText, { color: colors.text }]}>{p.en}</Text>
+              </Pressable>
+            );
+          })}
+        </View>
+        <View style={styles.matchColumn}>
+          {rightOrder.map((pairId, pos) => {
+            const isMatched = matched.has(pairId);
+            const isWrong = wrongPair?.right === pos;
+            const bg = isMatched ? '#22C55E22' : isWrong ? '#EF444422' : colors.card;
+            const border = isMatched ? '#22C55E' : isWrong ? '#EF4444' : colors.tabIconDefault;
+            return (
+              <Pressable
+                key={pos}
+                testID={`match-right-${pos}`}
+                style={[styles.matchCell, { backgroundColor: bg, borderColor: border }]}
+                onPress={() => pressRight(pos)}
+                disabled={isMatched}
+              >
+                <Text style={[styles.matchCellText, { color: colors.text }]}>{item.pairs[pairId].es}</Text>
+              </Pressable>
+            );
+          })}
+        </View>
+      </View>
+      {done ? (
+        <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
+          <Text style={[styles.explainHeader, { color: hadWrong ? '#EF4444' : '#22C55E' }]}>
+            {hadWrong ? s.games.wrongFeedback : s.games.correctFeedback}
+          </Text>
+          <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(!hadWrong)}>
+            <Text style={styles.btnText}>{s.games.understood}</Text>
+          </Pressable>
+        </View>
+      ) : null}
+    </View>
+  );
+}
+
+// LECKE-SEMA 2.2: ragozási drill. A táblázat egy összecsukott segítség (a
+// LessonBody UGYANAZON táblázat-blokkját rajzolja ki), nem a válasz.
+function FormDrillItem({
+  item,
+  table,
+  contentLang,
+  learnedLang,
+  colors,
+  s,
+  onDone,
+}: {
+  item: FormItem;
+  table: Extract<LessonBlock, { kind: 'table' }> | undefined;
+  contentLang: 'hu' | 'en' | 'es' | 'de';
+  learnedLang: string;
+  colors: (typeof Colors)['light'];
+  s: ReturnType<typeof t>;
+  onDone: (correct: boolean) => void;
+}) {
+  const [tableOpen, setTableOpen] = useState(false);
+  const [value, setValue] = useState('');
+  const [checked, setChecked] = useState(false);
+  const [correct, setCorrect] = useState(false);
+
+  const check = () => {
+    const ok = value.trim().toLowerCase() === item.answer.trim().toLowerCase();
+    setCorrect(ok);
+    setChecked(true);
+  };
+
+  return (
+    <View style={styles.formBody}>
+      {table ? (
+        <>
+          <Pressable onPress={() => setTableOpen((v) => !v)} hitSlop={8}>
+            <Text style={[styles.moreToggle, { color: colors.tint }]}>
+              {tableOpen ? `▾ ${s.grammar.showTable}` : `▸ ${s.grammar.showTable}`}
+            </Text>
+          </Pressable>
+          {tableOpen ? <LessonBody blocks={[table]} contentLang={contentLang} learnedLang={learnedLang} /> : null}
+        </>
+      ) : null}
+
+      <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{s.grammar.formHint}</Text>
+      <Text style={[styles.formPrompt, { color: colors.text }]}>
+        {item.verb} · {item.person}
+      </Text>
+      <TextInput
+        testID="formInput"
+        style={[styles.formInput, { color: colors.text, borderColor: colors.tabIconDefault }]}
+        value={value}
+        onChangeText={setValue}
+        editable={!checked}
+        autoCapitalize="none"
+        autoCorrect={false}
+      />
+      {!checked ? (
+        <Pressable testID="formCheck" style={[styles.btn, { backgroundColor: colors.tint }]} onPress={check}>
+          <Text style={styles.btnText}>{s.grammar.check}</Text>
+        </Pressable>
+      ) : (
+        <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
+          <Text style={[styles.explainHeader, { color: correct ? '#22C55E' : '#EF4444' }]}>
+            {correct ? s.games.correctFeedback : s.games.wrongFeedback}
+          </Text>
+          {!correct ? <Text style={[styles.explainText, { color: colors.text }]}>{item.answer}</Text> : null}
+          <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(correct)}>
+            <Text style={styles.btnText}>{s.games.understood}</Text>
+          </Pressable>
+        </View>
+      )}
+    </View>
+  );
+}
+
+export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, includeAllKinds = false }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
 
   const [seed] = useState(() => hashString(`${topic.topic}:${Date.now()}`));
-  const round = useMemo(() => buildGrammarRound(topic, seed), [topic, seed]);
+  const fullRound = useMemo(() => buildGrammarRound(topic, seed), [topic, seed]);
+  const round = useMemo(
+    () => (includeAllKinds ? fullRound : fullRound.filter(isChoiceRoundItem)),
+    [fullRound, includeAllKinds]
+  );
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [correctCount, setCorrectCount] = useState(0);
   const [showMore, setShowMore] = useState(false);
 
-  const current = round[index];
-  if (!current) return null;
+  const roundItem = round[index];
+  if (!roundItem) return null;
 
+  const advance = (finalCorrectCount: number) => {
+    if (index + 1 < round.length) {
+      setIndex((i) => i + 1);
+      setSelected(null);
+      setShowMore(false);
+      return;
+    }
+    onFinish(finalCorrectCount, round.length);
+  };
+
+  // The gap/mark answer that got us here was scored on selection (below), so
+  // correctCount is already final by the time this render exists.
+  const next = () => advance(correctCount);
+
+  // Match/form score at COMPLETION time, in the same event as the "next" tap,
+  // so correctCount's state update has not landed yet; the final tally is
+  // computed locally instead of trusted from the (possibly stale) closure.
+  const completeItem = (wasCorrect: boolean) => {
+    const finalCount = wasCorrect ? correctCount + 1 : correctCount;
+    if (wasCorrect) setCorrectCount(finalCount);
+    advance(finalCount);
+  };
+
+  if (!isChoiceRoundItem(roundItem)) {
+    return (
+      <ScrollView contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled">
+        <Text testID="grammar-drill-progress" style={[styles.progress, { color: colors.tabIconDefault }]}>
+          {s.games.grammarChoice.progress(index + 1, round.length)}
+        </Text>
+        {isMatchItem(roundItem.item) ? (
+          <MatchDrillItem item={roundItem.item} colors={colors} s={s} onDone={completeItem} />
+        ) : isFormItem(roundItem.item) ? (
+          <FormDrillItem
+            item={roundItem.item}
+            table={findFormTable(topic, roundItem.item.table)}
+            contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
+            learnedLang={learnedLang}
+            colors={colors}
+            s={s}
+            onDone={completeItem}
+          />
+        ) : null}
+      </ScrollView>
+    );
+  }
+
+  const current = roundItem;
   const answered = selected !== null;
   const isCorrect = answered && selected === current.correctIndex;
   const pickedText = answered ? current.options[selected] : undefined;
@@ -66,18 +316,6 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     if (answered) return;
     setSelected(optIdx);
     if (optIdx === current.correctIndex) setCorrectCount((c) => c + 1);
-  };
-
-  const next = () => {
-    if (index + 1 < round.length) {
-      setIndex((i) => i + 1);
-      setSelected(null);
-      setShowMore(false);
-      return;
-    }
-    // The answer that got us here was scored on selection, so correctCount is
-    // already final by the time this render exists.
-    onFinish(correctCount, round.length);
   };
 
   return (
@@ -178,7 +416,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
               style={[styles.example, { color: colors.text }]}
             />
           ))}
-          {topic.more ? (
+          {'more' in topic && topic.more ? (
             <View style={[styles.moreSection, { borderTopColor: colors.tabIconDefault + '33' }]}>
               <Pressable onPress={() => setShowMore((v) => !v)} hitSlop={8}>
                 <Text style={[styles.moreToggle, { color: colors.tint }]}>
@@ -221,4 +459,13 @@ const styles = StyleSheet.create({
   moreBody: { marginTop: 10 },
   btn: { paddingVertical: 14, borderRadius: 24, alignItems: 'center' },
   btnText: { color: '#FFFFFF', fontWeight: '700', fontSize: 16 },
+  hint: { fontSize: 13, textAlign: 'center' },
+  matchBody: { gap: 12 },
+  matchColumns: { flexDirection: 'row', gap: 12 },
+  matchColumn: { flex: 1, gap: 8 },
+  matchCell: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 12, paddingHorizontal: 10, alignItems: 'center' },
+  matchCellText: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
+  formBody: { gap: 10 },
+  formPrompt: { fontSize: 18, fontWeight: '700', textAlign: 'center' },
+  formInput: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 10, paddingHorizontal: 14, fontSize: 17, textAlign: 'center' },
 });

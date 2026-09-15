@@ -1,8 +1,8 @@
-import { buildGrammarRound, wrongExplanation } from '../grammarChoice';
+import { buildGrammarRound, isChoiceRoundItem, wrongExplanation } from '../grammarChoice';
 import { markAnswerIndex, markTokens } from '../grammarMark';
-import { getGrammarTopics, isMarkItem, type GrammarTopicData } from '../content';
+import { getGrammarTopics, isLessonV2, isMarkItem, type LegacyLesson } from '../content';
 
-function makeTopic(): GrammarTopicData {
+function makeTopic(): LegacyLesson {
   return {
     topic: 'test-topic',
     level: 'A2',
@@ -51,7 +51,7 @@ describe('buildGrammarRound', () => {
   it('correctIndex always points at the item\'s own correct option text', () => {
     const topic = makeTopic();
     for (let seed = 0; seed < 30; seed++) {
-      const round = buildGrammarRound(topic, seed);
+      const round = buildGrammarRound(topic, seed).filter(isChoiceRoundItem);
       for (const r of round) {
         if (isMarkItem(r.item)) continue;
         const originalCorrectText = r.item.options[r.item.correct];
@@ -62,8 +62,8 @@ describe('buildGrammarRound', () => {
 
   it('is deterministic for a given seed', () => {
     const topic = makeTopic();
-    const a = buildGrammarRound(topic, 7);
-    const b = buildGrammarRound(topic, 7);
+    const a = buildGrammarRound(topic, 7).filter(isChoiceRoundItem);
+    const b = buildGrammarRound(topic, 7).filter(isChoiceRoundItem);
     expect(a.map((r) => r.item.id)).toEqual(b.map((r) => r.item.id));
     expect(a.map((r) => r.options)).toEqual(b.map((r) => r.options));
   });
@@ -72,7 +72,7 @@ describe('buildGrammarRound', () => {
     const topic = makeTopic();
     const positions = new Set<number>();
     for (let seed = 0; seed < 30; seed++) {
-      const round = buildGrammarRound(topic, seed);
+      const round = buildGrammarRound(topic, seed).filter(isChoiceRoundItem);
       for (const r of round) positions.add(r.correctIndex);
     }
     expect(positions.size).toBeGreaterThan(1);
@@ -92,6 +92,10 @@ describe('wrongExplanation', () => {
 // to be complete, or the game shows a half-explained rule to the learner.
 describe('authored grammar topics are complete (Q1 batch)', () => {
   const topics = getGrammarTopics('es');
+  // LECKE-SEMA: a ser-estar pilot már LessonV2 (body-blokkok, nincs rule, és
+  // match/form item is van benne); annak saját alakját a lessonSchema.test.ts
+  // ellenőrzi. Ez a leltár a még régi sémán lévő témákra vonatkozik.
+  const legacyTopics = topics.filter((t): t is LegacyLesson => !isLessonV2(t));
 
   it('offers the A1 topics before the A2 ones', () => {
     expect(topics.length).toBeGreaterThanOrEqual(7);
@@ -100,7 +104,7 @@ describe('authored grammar topics are complete (Q1 batch)', () => {
     expect(lastA1).toBeLessThan(firstA2);
   });
 
-  it.each(topics.map((t) => [t.topic, t] as const))('%s: rule, items and explanations in 4 languages', (_id, topic) => {
+  it.each(legacyTopics.map((t) => [t.topic, t] as const))('%s: rule, items and explanations in 4 languages', (_id, topic) => {
     for (const lang of ['hu', 'en', 'es', 'de']) {
       expect(topic.title[lang]).toBeTruthy();
       expect(topic.rule[lang]).toBeTruthy();
