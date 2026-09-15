@@ -42,19 +42,24 @@ export default {
   },
   done: {
     title: 'Fertig für heute!',
-    reviewed: (n: number) => `${n} Karten überprüft.`,
     streak: 'Tage Serie',
-    moreNewWords: (n: number) => `+${n} neue Wörter`,
     nextTopicWords: 'Neue Wörter aus einem anderen Thema',
     topicEmpty: 'Dieses Thema hat keine neuen Wörter mehr, der Rest ist für später geplant.',
-    levelWordsDone: 'Du hast jedes Wort dieser Stufe begonnen. Es gibt drei Wege:',
-    practiseLevel: 'Üben: 32 Wörter der Stufe',
     takeExam: 'Prüfung ablegen',
     examLocked: (pct: number) => `Prüfung (ab ${pct}%)`,
     nextLevel: 'Weiter zur nächsten Stufe',
-    sessionMix: (nw: number, rv: number) => `In dieser Runde: ${nw} neue Wörter, ${rv} Wiederholungen.`,
-    newWordsCongested: (n: number) => `Gerade keine neuen Wörter: ${n} halb gelernte Wörter warten noch. Tippe auf "+", wenn du sie trotzdem willst.`,
-    newWordsSpent: 'Das heutige Kontingent an neuen Wörtern ist aufgebraucht.',
+    // UTEMEZO 5. szakasz: die vier Zahlen des Done-Bildschirms.
+    reviewLaps: 'Wiederholungen',
+    wordsStarted: 'neue Wörter begonnen',
+    wordsLearned: 'gelernte Wörter',
+    wrongLaps: 'falsche Karten',
+    // UTEMEZO 5. szakasz: die eine Frage am Rundenende, je nach Lage.
+    askMoreNew: 'Lernst du heute noch mehr neue Wörter?',
+    yesThisMany: 'Ja, so viele',
+    noEnoughToday: 'Nein, das reicht für heute',
+    askPractise: 'Übst du noch ein paar zufällige Wörter der Stufe?',
+    yesPractise: 'Ja',
+    no: 'Nein',
   },
   tabs: {
     learn: 'Lernen',
@@ -503,6 +508,14 @@ export default {
   },
   progress: {
     wordsKnown: 'Bekannte Wörter',
+  },
+  // UTEMEZO 7. szakasz: das kleine Etikett oben auf jeder Karte.
+  lap: {
+    newLap: (n: number) => `neu · ${n}/3`,
+    review: 'Wiederholung',
+    repair: 'Korrektur',
+    repairLap: (n: number) => `Korrektur · ${n}/3`,
+    sentence: 'Satz',
   },
   // UTEMEZO 6. szakasz: Erklärfenster für die drei Zahlen im Kopfbereich.
   header: {

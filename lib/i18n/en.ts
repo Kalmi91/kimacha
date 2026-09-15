@@ -42,19 +42,24 @@ export default {
   },
   done: {
     title: 'Done for today!',
-    reviewed: (n: number) => `${n} cards reviewed.`,
     streak: 'day streak',
-    moreNewWords: (n: number) => `+${n} new words`,
     nextTopicWords: 'New words from another topic',
     topicEmpty: 'This topic has no new words left, the rest is scheduled for later.',
-    levelWordsDone: 'You have started every word on this level. Three ways on:',
-    practiseLevel: 'Practise: 32 words from the level',
     takeExam: 'Take the exam',
     examLocked: (pct: number) => `Exam (from ${pct}% mastered)`,
     nextLevel: 'Move on to the next level',
-    sessionMix: (nw: number, rv: number) => `This round: ${nw} new words, ${rv} reviews.`,
-    newWordsCongested: (n: number) => `No new words right now: ${n} half-learned words are still waiting. Tap "+" if you want them anyway.`,
-    newWordsSpent: "Today's new-word budget is used up.",
+    // UTEMEZO 5. szakasz: the Done screen's four numbers.
+    reviewLaps: 'reviews',
+    wordsStarted: 'new words started',
+    wordsLearned: 'words learned',
+    wrongLaps: 'wrong cards',
+    // UTEMEZO 5. szakasz: the one end-of-round question, depending on the situation.
+    askMoreNew: 'Learning more new words today?',
+    yesThisMany: 'Yes, this many',
+    noEnoughToday: "No, that's enough for today",
+    askPractise: 'Practise some random words from this level?',
+    yesPractise: 'Yes',
+    no: 'No',
   },
   tabs: {
     learn: 'Learn',
@@ -503,6 +508,14 @@ export default {
   },
   progress: {
     wordsKnown: 'Words Known',
+  },
+  // UTEMEZO 7. szakasz: the small tag on top of every card.
+  lap: {
+    newLap: (n: number) => `new · ${n}/3`,
+    review: 'review',
+    repair: 'fix',
+    repairLap: (n: number) => `fix · ${n}/3`,
+    sentence: 'sentence',
   },
   // UTEMEZO 6. szakasz: explanation window for the header's three numbers.
   header: {
