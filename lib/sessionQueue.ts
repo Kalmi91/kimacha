@@ -206,6 +206,7 @@ export interface QueueConfig {
   hand: number; // P: hany szo lehet egyszerre kezben (UTEMEZO 3.1)
   gap: number; // R: minimum res ket lap kozt ugyanabbol a szobol (UTEMEZO 4.2)
   rhythm: number; // hany review-lap jon egy kezben-levo lap elott (UTEMEZO 4.1)
+  repairGap: number; // R_javitas: a rontott kezben-levo lap rese (UTEMEZO 4.7)
 }
 
 export interface QueueStats {
@@ -254,11 +255,16 @@ export type Effect =
   | { type: 'grade'; wordId: number; cardType: 'word' | 'sentence'; correct: boolean } // review-lap: FSRS-ertekeles
   | { type: 'attempt'; wordId: number; cardType: 'word' | 'sentence'; correct: boolean }; // stats-sor minden megvalaszolt laphoz
 
-export const DEFAULT_QUEUE_CONFIG: QueueConfig = { hand: 5, gap: 5, rhythm: 4 };
+// UTEMEZO 4.7: a rontott kezben-levo lap resenek alapja. A nehezseg-ablakban
+// allithato (1-10), es a sor R-re vagja: a javitas-res sosem nagyobb R-nel.
+export const DEFAULT_REPAIR_GAP = 2;
 
-// UTEMEZO 4.7: a rontott kezben-levo lap rese. Nem allithato (nem preferencia:
-// a rontas kozeleben kell visszajonni), es sosem nagyobb R-nel.
-export const REPAIR_GAP = 2;
+export const DEFAULT_QUEUE_CONFIG: QueueConfig = {
+  hand: 5,
+  gap: 5,
+  rhythm: 4,
+  repairGap: DEFAULT_REPAIR_GAP,
+};
 
 export function createQueue(init: {
   config?: Partial<QueueConfig>;
@@ -389,7 +395,7 @@ function pickRepairDue(state: QueueState, newStep: number): number {
   // A review-vedo korlat csak akkor ertelmes, ha van meg review-lap; ha elfogyott,
   // a rontott lap a rovid resevel jon (4.4 + 4.7).
   if (state.sinceHand < 1 && state.reviews.length > 0) return -1;
-  const gap = Math.min(REPAIR_GAP, state.config.gap);
+  const gap = Math.min(state.config.repairGap, state.config.gap);
   let bestIdx = -1;
   for (let i = 0; i < state.hand.length; i++) {
     const w = state.hand[i];
