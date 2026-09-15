@@ -1,7 +1,6 @@
 import { createEmptyCard, type Card } from 'ts-fsrs';
 import { BACKUP_SCHEMA_VERSION, getAppVersion, type BackupPayload } from './backup';
 import { pickSurvivor } from './cardMerge';
-import { DEFAULT_REQUEUE_LEVEL } from './requeueGap';
 import { rankSentencesByWordWeakness, sentenceSlotCount, type WordWeakness } from './sentenceMix';
 import { WORD_MERGES } from './wordMerges';
 import { LAPS, type Lap } from './lap';
@@ -65,8 +64,10 @@ export interface DB {
   setStrictAccents(v: boolean): Promise<void>;
   getArticlePicker(): Promise<boolean>;
   setArticlePicker(v: boolean): Promise<void>;
-  getRequeueLevel(): Promise<string>;
-  setRequeueLevel(v: string): Promise<void>;
+  getHandCap(): Promise<number>;
+  setHandCap(n: number): Promise<void>;
+  getGapLaps(): Promise<number>;
+  setGapLaps(n: number): Promise<void>;
   getWeeklyGoalMinutes(): Promise<number>;
   setWeeklyGoalMinutes(minutes: number): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
@@ -558,15 +559,47 @@ class MemoryDB implements DB {
     this.articlePickerMap.set(this.activePair, v);
   }
 
-  // FB198: az elrontott szó visszatérési távolsága, per pár (a SQLite oldal tükre).
-  private requeueLevelMap: Map<string, string> = new Map();
+  // UTEMEZO 8/3.1: P, kézben lévő szavak, per pár (a SQLite oldal tükre).
+  private handCapMap: Map<string, number> = new Map();
 
-  async getRequeueLevel(): Promise<string> {
-    return this.requeueLevelMap.get(this.activePair) ?? DEFAULT_REQUEUE_LEVEL;
+  async getHandCap(): Promise<number> {
+    return Math.min(10, Math.max(1, this.handCapMap.get(this.activePair) ?? 5));
   }
 
-  async setRequeueLevel(v: string): Promise<void> {
-    this.requeueLevelMap.set(this.activePair, v);
+  async setHandCap(n: number): Promise<void> {
+    this.handCapMap.set(this.activePair, Math.min(10, Math.max(1, n)));
+  }
+
+  // UTEMEZO 8/4.2: R, visszatérési rés, per pár (a SQLite oldal tükre). A
+  // requeueLevelMap csak a régi FB198-tárcsa egyszeri áthozatalához él tovább,
+  // lásd getGapLaps és __setRequeueLevelForTest.
+  private gapLapsMap: Map<string, number> = new Map();
+  private requeueLevelMap: Map<string, string> = new Map();
+
+  async getGapLaps(): Promise<number> {
+    if (this.gapLapsMap.has(this.activePair)) {
+      return Math.min(30, Math.max(1, this.gapLapsMap.get(this.activePair)!));
+    }
+    const level = this.requeueLevelMap.get(this.activePair);
+    if (level) {
+      const carryOver: Record<string, number> = { easy: 5, normal: 12, hard: 25 };
+      const carried = carryOver[level] ?? 5;
+      await this.setGapLaps(carried);
+      return carried;
+    }
+    return 5;
+  }
+
+  async setGapLaps(n: number): Promise<void> {
+    this.gapLapsMap.set(this.activePair, Math.min(30, Math.max(1, n)));
+  }
+
+  // UTEMEZO 8 teszt-segéd: a régi FB198-tárcsa értékének beültetése a
+  // getGapLaps áthozatali ágának teszteléséhez, most hogy a nyilvános
+  // setRequeueLevel megszűnt. Nincs a DB interfészen, csak a konkrét
+  // osztályon (lib/__tests__/difficultyWindow.test.ts castol rá).
+  __setRequeueLevelForTest(level: string): void {
+    this.requeueLevelMap.set(this.activePair, level);
   }
 
   // FB65: weekly study goal in minutes, per pair (mirrors the SQLite side).

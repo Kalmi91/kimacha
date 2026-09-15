@@ -25,7 +25,6 @@ import {
 import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
-import { DEFAULT_REQUEUE_LEVEL, requeueGapFor } from '@/lib/requeueGap';
 import { filterLockedSentences } from '@/lib/grammar/tenseGate';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { cardIcon } from '@/lib/cardIcons';
@@ -83,9 +82,6 @@ export default function LearnScreen() {
   // választott névelő. Kártyaváltáskor nullázódik, mint a begépelt válasz.
   const [articlePickerOn, setArticlePickerOn] = useState(true);
   const [articlePick, setArticlePick] = useState<ArticlePick>('');
-  // FB198: hány lap teljen el, mielőtt egy elrontott szó visszajön. A sor
-  // hosszának véletlene helyett beállítás (lib/requeueGap.ts).
-  const [requeueLevel, setRequeueLevel] = useState<string>(DEFAULT_REQUEUE_LEVEL);
   // FB170, Kálmán 2026-09-06: "azt akarom hogy a check rész az pont a klaviatúrám
   // felett legyen és nem kell ketto". The typing card had two Check buttons (the
   // in-card one from FB5 and the older one below the card); there is one now, docked
@@ -470,8 +466,6 @@ export default function LearnScreen() {
     // are read (the Settings toggle queues a reload, see handleStrictAccentsToggle).
     setStrictAccents(await db.getStrictAccents());
     setArticlePickerOn(await db.getArticlePicker());
-    const requeueLvl = await db.getRequeueLevel();
-    setRequeueLevel(requeueLvl);
 
     const activeWordIds = activeWords.map(w => w.id);
     // UTEMEZO 2.4/12.1: fresh = a szint (temakor) erintetlen szavai, a mai
@@ -500,7 +494,8 @@ export default function LearnScreen() {
     const grammarDone = await doneGrammarTopics();
     const reviews = rowsToReviewLaps(rows, learned, wordsOnly, currentLevel, grammarDone);
 
-    const config = { ...DEFAULT_QUEUE_CONFIG, gap: requeueGapFor(requeueLvl) };
+    // UTEMEZO 8: P (hand) és R (gap) a Beállítások „Nehézség" ablakából jön.
+    const config = { hand: await db.getHandCap(), gap: await db.getGapLaps(), rhythm: DEFAULT_QUEUE_CONFIG.rhythm };
 
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
