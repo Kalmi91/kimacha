@@ -25,6 +25,7 @@ import { act, fireEvent, render, screen } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
 import { GRAMMAR_PROGRESS_KEY, lessonFor } from '@/lib/grammar/syllabus';
+import type { LegacyLesson } from '@/lib/games/content';
 import GrammarLessonScreen from '../[topic]';
 import GrammarSyllabusScreen from '../index';
 
@@ -74,7 +75,9 @@ describe('grammar course', () => {
   });
 
   it('teaches the rule first, then drills it, then records the lesson as done', async () => {
-    const lesson = lessonFor('es', 'presente-regular')!;
+    // LECKE-SEMA: presente-regular még a régi (rule/more) sémán van, ezért itt
+    // biztonságos a LegacyLesson-re szűkítés (a pilot ser-estar a LessonV2).
+    const lesson = lessonFor('es', 'presente-regular')! as LegacyLesson;
     const view = render(<GrammarLessonScreen />);
     await flush(4);
 

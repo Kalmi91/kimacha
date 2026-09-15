@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
@@ -7,14 +7,15 @@ import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { normalizeWordToken, type Level } from '@/data/words';
-import { cumulativeCorpusWordIds, isMarkItem, type GrammarGapItem, type GrammarTopicData } from '@/lib/games/content';
+import { cumulativeCorpusWordIds, isLessonV2, type GrammarGapItem, type GrammarItem, type GrammarTopicData } from '@/lib/games/content';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, syllabusTopic } from '@/lib/grammar/syllabus';
-import { speak, speakSequence } from '@/lib/speech';
-import { splitByLanguage } from '@/lib/mixedSpeech';
+import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
+import { splitByLanguage, splitByMarkers } from '@/lib/mixedSpeech';
 import { speechLang } from '@/lib/languages';
 import GlossText from '@/components/games/GlossText';
 import GrammarDrill from '@/components/grammar/GrammarDrill';
+import LessonBody from '@/components/grammar/LessonBody';
 import MoreBlocks from '@/components/grammar/MoreBlocks';
 import FeedbackButton from '@/components/FeedbackModal';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
@@ -41,6 +42,9 @@ export default function GrammarLessonScreen() {
   const [lesson, setLesson] = useState<GrammarTopicData | null>(null);
   const [phase, setPhase] = useState<Phase>('lesson');
   const [score, setScore] = useState<{ correct: number; total: number } | null>(null);
+  // LECKE-SEMA 3.3: a V2 lecke egyetlen (play → stop) gombja a lesson.speak
+  // felolvasásához; leállítás gombnyomásra, fázisváltáskor és unmountkor is.
+  const [speaking, setSpeaking] = useState(false);
 
   const load = useCallback(async () => {
     const db = getDb();
@@ -55,6 +59,17 @@ export default function GrammarLessonScreen() {
   }, [topicId]);
 
   useLoadOnMount(load);
+
+  // LECKE-SEMA 3.3: felolvasás-leállítás fázisváltáskor és unmountkor is,
+  // nem csak a gomb megnyomására. Hook-szabály miatt a `lesson`-null korai
+  // return ELŐTT kell állnia.
+  useEffect(() => {
+    if (phase !== 'lesson') return;
+    return () => {
+      stopSpeaking();
+      setSpeaking(false);
+    };
+  }, [phase]);
 
   const entry = syllabusTopic(String(topicId));
 
@@ -75,7 +90,9 @@ export default function GrammarLessonScreen() {
     );
   }
 
-  const lessonTitle = lesson.title[contentLang] ?? lesson.title.en;
+  // LECKE-SEMA: title mindkét sémában Record<hu/en/es/de,string>-szerű, de a
+  // LessonV2 Lang4-je nem enged tetszőleges string-indexet, innen a cast.
+  const lessonTitle = (lesson.title as Record<string, string>)[contentLang] ?? lesson.title.en;
   const knownIds = cumulativeCorpusWordIds(lesson.level, learnedLang);
   const overrides = Object.fromEntries((lesson.glossary ?? []).map((g) => [normalizeWordToken(g.word), g.gloss]));
 
@@ -83,15 +100,24 @@ export default function GrammarLessonScreen() {
   // before it asks anything.
   // FB219: a jelölős feladat mondata már kész, nincs mit behelyettesíteni, így a
   // bemutató példák a lyukas tételekből jönnek.
-  const worked = lesson.items
-    .filter((item): item is GrammarGapItem => !isMarkItem(item))
+  // LECKE-SEMA: uniós lecke-alak miatt a `.filter` narrowing csak egy lapos
+  // `GrammarItem[]` castra épülve szűkít helyesen rule/more-hoz hasonlóan.
+  // LECKE-SEMA 2: a LessonV2 items tömbje match/form tételeket is tartalmaz,
+  // azoknak nincs `sentence`/`options` mezőjük, tehát itt kifejezetten a
+  // (kind hiányzó vagy 'gap') tételekre kell szűkíteni, nem csak a mark-ot
+  // kizárni.
+  const worked = (lesson.items as GrammarItem[])
+    .filter((item): item is GrammarGapItem => item.kind === undefined || item.kind === 'gap')
     .slice(0, 3)
     .map((item) => ({
       filled: item.sentence.replace('___', item.options[item.correct]),
       why: item.why[contentLang] ?? item.why.en,
     }));
 
-  const ruleText = lesson.rule[contentLang] ?? lesson.rule.en;
+  // LECKE-SEMA: LessonV2-nek nincs rule/more mezője; a body-blokkok
+  // megjelenítése step 3, itt csak annyi kell, hogy a régi séma tovább
+  // fusson és a fordító ne akadjon fenn az únión.
+  const ruleText = 'rule' in lesson ? lesson.rule[contentLang] ?? lesson.rule.en : '';
 
   // FB216: nyelv-szakaszokra vágva olvassuk fel, hogy a spanyol példa spanyolul
   // szóljon a magyar/angol magyarázat közepén is.
@@ -102,6 +128,24 @@ export default function GrammarLessonScreen() {
         locale: speechLang(seg.lang),
       }))
     );
+
+  // LECKE-SEMA 3: a V2 lecke `speak` mezőjét a «...»-jelölés vágja szakaszokra
+  // (nem korpusz-találgatás), és a gomb play<->stop kapcsoló (LECKE-SEMA 3.3).
+  const toggleLessonSpeech = () => {
+    if (speaking) {
+      stopSpeaking();
+      setSpeaking(false);
+      return;
+    }
+    if (!isLessonV2(lesson)) return;
+    const text = lesson.speak[contentLang as 'hu' | 'en' | 'es' | 'de'] ?? lesson.speak.en;
+    const segments = splitByMarkers(text, { learnedLang, nativeLang: contentLang }).map((seg) => ({
+      text: seg.text,
+      locale: speechLang(seg.lang),
+    }));
+    setSpeaking(true);
+    speakSequence(segments, () => setSpeaking(false));
+  };
 
   const finish = async (correct: number, total: number) => {
     setScore({ correct, total });
@@ -127,7 +171,9 @@ export default function GrammarLessonScreen() {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
-        <GrammarDrill topic={lesson} learnedLang={learnedLang} contentLang={contentLang} onFinish={finish} />
+        {/* LECKE-SEMA 2/6.3: a lecke-drill a match/form tételeket is végigviszi,
+            a Game fül grammar-choice-a nem (az `includeAllKinds` alapból false). */}
+        <GrammarDrill topic={lesson} learnedLang={learnedLang} contentLang={contentLang} onFinish={finish} includeAllKinds />
         <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:drill`} />
       </View>
     );
@@ -201,16 +247,31 @@ export default function GrammarLessonScreen() {
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       {header}
       <ScrollView contentContainerStyle={styles.body}>
-        <Text style={[styles.sectionLabel, { color: colors.tint }]}>{s.grammar.ruleLabel}</Text>
-        <View style={[styles.card, { backgroundColor: colors.card }]}>
-          <Text style={[styles.ruleText, { color: colors.text }]}>{ruleText}</Text>
-          {/* FB216: a hosszú magyarázatot fel is olvassa, a benne lévő spanyol
-              példákat spanyol hangon (lib/mixedSpeech.ts). */}
-          <Pressable testID="grammar-read-rule" style={styles.readRow} onPress={() => readAloud(ruleText)} hitSlop={10}>
-            <Text style={styles.speak}>🔊</Text>
-            <Text style={[styles.readLabel, { color: colors.tint }]}>{s.grammar.readAloud}</Text>
-          </Pressable>
-        </View>
+        {isLessonV2(lesson) ? (
+          <>
+            {/* LECKE-SEMA 1+3: a body-blokkok váltják a rule/more prózát, a
+                lesson.speak felolvasása egyetlen play<->stop gombbal. */}
+            <Text style={[styles.sectionLabel, { color: colors.tint }]}>{s.grammar.ruleLabel}</Text>
+            <Pressable testID="speakToggle" style={styles.readRow} onPress={toggleLessonSpeech} hitSlop={10}>
+              <Text style={styles.speak}>{speaking ? '⏹' : '🔊'}</Text>
+              <Text style={[styles.readLabel, { color: colors.tint }]}>{s.grammar.readAloud}</Text>
+            </Pressable>
+            <LessonBody blocks={lesson.body} contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'} learnedLang={learnedLang} />
+          </>
+        ) : (
+          <>
+            <Text style={[styles.sectionLabel, { color: colors.tint }]}>{s.grammar.ruleLabel}</Text>
+            <View style={[styles.card, { backgroundColor: colors.card }]}>
+              <Text style={[styles.ruleText, { color: colors.text }]}>{ruleText}</Text>
+              {/* FB216: a hosszú magyarázatot fel is olvassa, a benne lévő spanyol
+                  példákat spanyol hangon (lib/mixedSpeech.ts). */}
+              <Pressable testID="grammar-read-rule" style={styles.readRow} onPress={() => readAloud(ruleText)} hitSlop={10}>
+                <Text style={styles.speak}>🔊</Text>
+                <Text style={[styles.readLabel, { color: colors.tint }]}>{s.grammar.readAloud}</Text>
+              </Pressable>
+            </View>
+          </>
+        )}
 
         <Text style={[styles.sectionLabel, { color: colors.tint }]}>{s.grammar.examplesLabel}</Text>
         {worked.map((w, i) => (
@@ -230,7 +291,7 @@ export default function GrammarLessonScreen() {
           </View>
         ))}
 
-        {lesson.more ? (
+        {'more' in lesson && lesson.more ? (
           <>
             <Text style={[styles.sectionLabel, { color: colors.tint }]}>{s.grammar.exceptionsLabel}</Text>
             <View style={[styles.card, { backgroundColor: colors.card }]}>
