@@ -116,4 +116,9 @@ export const WORD_MERGES: Record<number, number> = {
   3847: 3809, // la delito: B1 duplikátum hibás nemű cikkel, marad el delito
   2793: 2513, // el trozo: B1 szinonima, marad el pedazo (el pedazo / el trozo)
   2398: 2539, // el celular: B1 regionális duplikátum, marad el móvil (MX-alak a jegyzetben)
+
+  // PROMPT-POLICY 3/7 (es B2-C2):
+  7341: 3399, // la placa solar: B2 szinonima, marad el panel solar (el panel solar / la placa solar)
+  3247: 3226, // semejante: B2 szinonima (választékosabb), marad similar (similar / semejante)
+  530: 3925, // rebatir: C1 szinonima, marad refutar (refutar / rebatir)
 };
