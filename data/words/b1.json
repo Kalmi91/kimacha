@@ -223,7 +223,7 @@
     "level": "B1",
     "es": "discutir",
     "hu": "vitázni",
-    "en": "to discuss / to argue",
+    "en": "to discuss / to argue (debate)",
     "sentence_es": "No quiero discutir.",
     "sentence_hu": "Nem akarok vitázni.",
     "sentence_en": "I don't want to argue.",
@@ -345,7 +345,7 @@
     "level": "B1",
     "es": "el fracaso",
     "hu": "kudarc",
-    "en": "failure",
+    "en": "failure (attempt)",
     "sentence_es": "No fue un fracaso.",
     "sentence_hu": "Nem volt kudarc.",
     "sentence_en": "It wasn't a failure.",
@@ -377,7 +377,7 @@
     "level": "B1",
     "es": "el objetivo",
     "hu": "cél",
-    "en": "objective / goal",
+    "en": "objective / goal (aim)",
     "sentence_es": "Mi objetivo es claro.",
     "sentence_hu": "A célom világos.",
     "sentence_en": "My goal is clear.",
@@ -652,7 +652,7 @@
     "level": "B1",
     "es": "honesto",
     "hu": "őszinte",
-    "en": "honest",
+    "en": "honest (upright)",
     "sentence_es": "Sé honesto conmigo.",
     "sentence_hu": "Légy őszinte velem.",
     "sentence_en": "Be honest with me.",
@@ -934,7 +934,7 @@
     "level": "B1",
     "es": "la cifra",
     "hu": "szám",
-    "en": "figure",
+    "en": "figure (number)",
     "sentence_es": "La cifra superó las expectativas.",
     "sentence_hu": "A szám felülmúlta a várakozásokat.",
     "sentence_en": "The figure exceeded expectations.",
@@ -1142,7 +1142,7 @@
     "level": "B1",
     "es": "la norma",
     "hu": "szabály",
-    "en": "rule",
+    "en": "rule (norm)",
     "sentence_es": "Incumplió la norma varias veces.",
     "sentence_hu": "Többször is megszegte a szabályt.",
     "sentence_en": "He broke the rule several times.",
@@ -1174,7 +1174,7 @@
     "level": "B1",
     "es": "la huella",
     "hu": "nyom",
-    "en": "trace",
+    "en": "trace (footprint)",
     "sentence_es": "Dejó huellas en la arena.",
     "sentence_hu": "Nyomokat hagyott a homokban.",
     "sentence_en": "He left traces in the sand.",
@@ -1302,7 +1302,7 @@
     "level": "B1",
     "es": "la etapa",
     "hu": "szakasz",
-    "en": "stage",
+    "en": "stage (period)",
     "sentence_es": "Fue una etapa difícil de su vida.",
     "sentence_hu": "Nehéz szakasza volt az életének.",
     "sentence_en": "It was a difficult stage of his life.",
@@ -1382,7 +1382,7 @@
     "level": "B1",
     "es": "el tratamiento",
     "hu": "kezelés",
-    "en": "treatment",
+    "en": "treatment (medical)",
     "sentence_es": "El tratamiento duró varios meses.",
     "sentence_hu": "A kezelés több hónapig tartott.",
     "sentence_en": "The treatment lasted several months.",
@@ -1398,7 +1398,7 @@
     "level": "B1",
     "es": "la meta",
     "hu": "cél",
-    "en": "goal",
+    "en": "goal (finish line)",
     "sentence_es": "Alcanzó su meta después de años de trabajo.",
     "sentence_hu": "Kételkedném, hogy az a törvény sokáig érvényes maradna.",
     "sentence_en": "He reached his goal after years of work.",
@@ -1475,7 +1475,7 @@
   {
     "id": 759,
     "level": "B1",
-    "es": "totalmente",
+    "es": "totalmente / completamente",
     "hu": "teljesen",
     "en": "completely",
     "sentence_es": "Estoy totalmente seguro.",
@@ -1485,7 +1485,9 @@
     "sentence_de": "Ich bin völlig sicher.",
     "topic": "adverbios_modo_certeza_b1",
     "topicOrder": 1,
-    "pos": "adv"
+    "pos": "adv",
+    "note_hu": "A „completamente” ugyanígy használható, gyakorlatilag felcserélhető: Estoy completamente de acuerdo contigo. (Teljesen egyetértek veled.)",
+    "note_en": "\"Completamente\" works the same way, essentially interchangeable: Estoy completamente de acuerdo contigo. (I completely agree with you.)"
   },
   {
     "id": 760,
@@ -1804,21 +1806,6 @@
     "pos": "verb"
   },
   {
-    "es": "completamente",
-    "hu": "teljesen",
-    "en": "completely",
-    "sentence_es": "Estoy completamente de acuerdo contigo.",
-    "sentence_hu": "Teljesen egyetértek veled.",
-    "sentence_en": "I completely agree with you.",
-    "de": "völlig",
-    "sentence_de": "Ich stimme dir völlig zu.",
-    "id": 3799,
-    "level": "B1",
-    "topic": "adverbios_modo_certeza_b1",
-    "topicOrder": 2,
-    "pos": "adv"
-  },
-  {
     "es": "probablemente",
     "hu": "valószínűleg",
     "en": "probably",
@@ -1851,7 +1838,7 @@
   {
     "es": "exactamente",
     "hu": "pontosan",
-    "en": "exactly",
+    "en": "exactly (measurement)",
     "sentence_es": "Eso es exactamente lo que pensaba.",
     "sentence_hu": "Ez pontosan az, amit gondoltam.",
     "sentence_en": "That is exactly what I thought.",
@@ -2542,22 +2529,6 @@
     "gender": "f"
   },
   {
-    "es": "la delito",
-    "hu": "bűntény",
-    "en": "crime",
-    "sentence_es": "Cometió un delito grave que lo envió a prisión.",
-    "sentence_hu": "Súlyos bűntétyt követett el, ami börtönbe küldötte.",
-    "sentence_en": "He committed a serious crime that sent him to prison.",
-    "de": "das Verbrechen",
-    "sentence_de": "Er beging ein schweres Verbrechen, das ihn ins Gefängnis brachte.",
-    "id": 3847,
-    "level": "B1",
-    "topic": "delincuencia_justicia_b1",
-    "topicOrder": 5,
-    "pos": "noun",
-    "gender": "f"
-  },
-  {
     "es": "la juicio",
     "hu": "ítélet",
     "en": "trial",
@@ -3205,7 +3176,7 @@
   {
     "es": "honestamente",
     "hu": "őszintén szólva",
-    "en": "honestly",
+    "en": "honestly (uprightly)",
     "sentence_es": "Honestamente, no sé qué decirte.",
     "sentence_hu": "Őszintén szólva, nem tudom, mit mondjak.",
     "sentence_en": "Honestly, I don't know what to tell you.",
@@ -4267,7 +4238,7 @@
   {
     "es": "la cola",
     "hu": "a sor/farok",
-    "en": "queue / tail",
+    "en": "queue (waiting) / tail",
     "sentence_es": "Había una larga cola en el banco.",
     "sentence_hu": "Hosszú sor volt a bankban.",
     "sentence_en": "There was a long queue at the bank.",
@@ -4453,22 +4424,6 @@
     "gender": "f"
   },
   {
-    "es": "el celular",
-    "hu": "a mobiltelefon",
-    "en": "mobile phone / cell phone",
-    "sentence_es": "Se me olvidó el celular en casa.",
-    "sentence_hu": "Otthon hagytam a mobilomat.",
-    "sentence_en": "I forgot my cell phone at home.",
-    "de": "das Handy",
-    "sentence_de": "Ich habe mein Handy zu Hause vergessen.",
-    "id": 2398,
-    "level": "B1",
-    "topic": "medios_comunicacion_digital_b1",
-    "topicOrder": 5,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "es": "el encargo",
     "hu": "a megbízás/feladat",
     "en": "errand / assignment",
@@ -4597,7 +4552,7 @@
   {
     "es": "la regla",
     "hu": "a szabály/vonalzó",
-    "en": "rule / ruler",
+    "en": "rule (game) / ruler",
     "sentence_es": "Hay que respetar las reglas del juego.",
     "sentence_hu": "Be kell tartani a játék szabályait.",
     "sentence_en": "You have to respect the rules of the game.",
@@ -5033,7 +4988,7 @@
   {
     "es": "la marina",
     "hu": "haditengerészet/kikötőnegyed",
-    "en": "navy / marina",
+    "en": "navy (branch) / marina",
     "sentence_es": "Mi hermano sirve en la marina.",
     "sentence_hu": "A bátyám a haditengerészetnél szolgál.",
     "sentence_en": "My brother serves in the navy.",
@@ -5049,7 +5004,7 @@
   {
     "es": "mover",
     "hu": "mozgatni/elmozdítani",
-    "en": "to move",
+    "en": "to move (something)",
     "sentence_es": "Ayúdame a mover este mueble.",
     "sentence_hu": "Segíts nekem elmozdítani ezt a bútort.",
     "sentence_en": "Help me move this piece of furniture.",
@@ -5064,7 +5019,7 @@
   {
     "es": "la coincidencia",
     "hu": "véletlen egybeesés/egybeesés",
-    "en": "coincidence",
+    "en": "coincidence (event)",
     "sentence_es": "¡Qué coincidencia encontrarte aquí!",
     "sentence_hu": "Micsoda véletlen, hogy itt találkozunk!",
     "sentence_en": "What a coincidence to meet you here!",
@@ -5268,7 +5223,7 @@
   {
     "es": "la alerta",
     "hu": "riasztás/figyelmeztetés",
-    "en": "alert / warning",
+    "en": "alert / warning (urgent)",
     "sentence_es": "La alerta sonó a medianoche.",
     "sentence_hu": "A riasztás éjfélkor szólalt meg.",
     "sentence_en": "The alert went off at midnight.",
@@ -5601,7 +5556,7 @@
   {
     "es": "el aviso",
     "hu": "figyelmeztetés/értesítés",
-    "en": "notice / warning",
+    "en": "notice / warning (formal)",
     "sentence_es": "Recibí un aviso del banco.",
     "sentence_hu": "Értesítést kaptam a banktól.",
     "sentence_en": "I received a notice from the bank.",
@@ -5727,7 +5682,7 @@
   {
     "es": "precisamente",
     "hu": "pontosan/éppen",
-    "en": "precisely / exactly",
+    "en": "precisely / exactly (emphasis)",
     "sentence_es": "Eso es precisamente lo que necesitamos.",
     "sentence_hu": "Pontosan erre van szükségünk.",
     "sentence_en": "That is precisely what we need.",
@@ -5773,7 +5728,7 @@
   {
     "es": "la casualidad",
     "hu": "véletlen/véletlenség",
-    "en": "chance / coincidence",
+    "en": "chance / coincidence (by luck)",
     "sentence_es": "Por casualidad encontré su cartera.",
     "sentence_hu": "Véletlenül megtaláltam a pénztárcáját.",
     "sentence_en": "By chance I found his wallet.",
@@ -5851,7 +5806,7 @@
   {
     "es": "el rastro",
     "hu": "nyom/lenyomat",
-    "en": "trail / trace",
+    "en": "trail / trace (followed)",
     "sentence_es": "Los investigadores siguieron el rastro.",
     "sentence_hu": "A nyomozók követték a nyomot.",
     "sentence_en": "The investigators followed the trail.",
@@ -5946,7 +5901,7 @@
   {
     "es": "el personaje",
     "hu": "szereplő/karakter",
-    "en": "character / figure",
+    "en": "character / figure (in a story)",
     "sentence_es": "El personaje principal es muy interesante.",
     "sentence_hu": "A főszereplő nagyon érdekes.",
     "sentence_en": "The main character is very interesting.",
@@ -5962,7 +5917,7 @@
   {
     "es": "los votos",
     "hu": "szavazatok/fogadalmak",
-    "en": "votes / vows",
+    "en": "votes (elections) / vows",
     "sentence_es": "Los votos se contaron durante toda la noche.",
     "sentence_hu": "A szavazatokat egész éjjel számolták.",
     "sentence_en": "The votes were counted throughout the night.",
@@ -6100,7 +6055,7 @@
     "gender": "m"
   },
   {
-    "es": "el pedazo",
+    "es": "el pedazo / el trozo",
     "hu": "darab/falat",
     "en": "piece/chunk",
     "sentence_es": "Comí un pedazo de pan con mantequilla.",
@@ -6113,7 +6068,9 @@
     "topic": "objetos_materiales_b1",
     "topicOrder": 4,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_hu": "A „trozo” ugyanígy használható, gyakorlatilag felcserélhető: Me comí un trozo de pastel delicioso. (Megettem egy darab finom tortát.)",
+    "note_en": "\"Trozo\" works the same way, essentially interchangeable: Me comí un trozo de pastel delicioso. (I ate a delicious piece of cake.)"
   },
   {
     "es": "el olor",
@@ -6520,7 +6477,9 @@
     "topic": "medios_comunicacion_digital_b1",
     "topicOrder": 15,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_hu": "Latin-Amerikában (Mexikóban is) inkább „el celular” a szokásos szó: Se me olvidó el celular en casa. (Otthon hagytam a mobilomat.) Spanyolországban „el móvil” a bevett forma.",
+    "note_en": "In Latin America (including Mexico), \"el celular\" is the everyday word: Se me olvidó el celular en casa. (I forgot my cell phone at home.) In Spain, \"el móvil\" is standard."
   },
   {
     "es": "felicitaciones",
@@ -7009,7 +6968,7 @@
   {
     "es": "mostrar",
     "hu": "megmutat/bemutat",
-    "en": "to show",
+    "en": "to show (display)",
     "sentence_es": "El guía nos quiso mostrar los murales del centro.",
     "sentence_hu": "Az idegenvezetőnk meg akarta mutatni a belváros falfestményeit.",
     "sentence_en": "The guide wanted to show us the murals in the center.",
@@ -7512,7 +7471,7 @@
   {
     "es": "el socorro",
     "hu": "segítség/segélykiáltás",
-    "en": "help / rescue",
+    "en": "help (emergency cry) / rescue (call)",
     "sentence_es": "Pidió socorro cuando se cayó al río.",
     "sentence_hu": "Segítségért kiáltott, amikor a folyóba esett.",
     "sentence_en": "He called for help when he fell into the river.",
@@ -7686,7 +7645,7 @@
   {
     "es": "la competencia",
     "hu": "verseny/versengés",
-    "en": "competition / competence",
+    "en": "competition (rivalry) / competence",
     "sentence_es": "La competencia entre las empresas es muy fuerte.",
     "sentence_hu": "A cégek közötti verseny nagyon erős.",
     "sentence_en": "The competition between companies is very fierce.",
@@ -7702,7 +7661,7 @@
   {
     "es": "la fila",
     "hu": "sor/sorban állás",
-    "en": "line / queue / row",
+    "en": "line / queue (formation) / row",
     "sentence_es": "Hicimos fila durante media hora en el banco.",
     "sentence_hu": "Fél óráig álltunk sorban a bankban.",
     "sentence_en": "We waited in line for half an hour at the bank.",
@@ -7844,7 +7803,7 @@
   {
     "es": "el rescate",
     "hu": "mentés/megmentés",
-    "en": "rescue",
+    "en": "rescue (operation)",
     "sentence_es": "El equipo de rescate llegó a tiempo.",
     "sentence_hu": "A mentőcsapat időben megérkezett.",
     "sentence_en": "The rescue team arrived on time.",
@@ -8078,7 +8037,7 @@
   {
     "es": "enseñar",
     "hu": "tanít/megmutat",
-    "en": "to teach / to show",
+    "en": "to teach / to show (demonstrate)",
     "sentence_es": "Mi abuela me enseñó a cocinar arroz.",
     "sentence_hu": "A nagyanyám megtanított rizzsel főzni.",
     "sentence_en": "My grandmother taught me how to cook rice.",
@@ -8154,7 +8113,7 @@
   {
     "es": "la terapia",
     "hu": "terápia/kezelés",
-    "en": "therapy / treatment",
+    "en": "therapy / treatment (ongoing)",
     "sentence_es": "La terapia le ayudó a superar el estrés.",
     "sentence_hu": "A terápia segített leküzdeni a stresszt.",
     "sentence_en": "The therapy helped him overcome the stress.",
@@ -8375,7 +8334,7 @@
   {
     "es": "la ronda",
     "hu": "kör/forduló/járőrözés",
-    "en": "round / patrol",
+    "en": "round / patrol (walk)",
     "sentence_es": "El guardia hace una ronda cada hora.",
     "sentence_hu": "Az őr óránként körbejár.",
     "sentence_en": "The guard does a round every hour.",
@@ -8817,7 +8776,7 @@
   {
     "es": "el concurso",
     "hu": "verseny/vetélkedő",
-    "en": "competition / contest",
+    "en": "contest / competition (organized)",
     "sentence_es": "Ella ganó el concurso de canto.",
     "sentence_hu": "Ő megnyerte az énekversenyt.",
     "sentence_en": "She won the singing contest.",
@@ -8833,7 +8792,7 @@
   {
     "es": "sincero",
     "hu": "őszinte",
-    "en": "sincere / honest",
+    "en": "sincere / honest (truthful)",
     "sentence_es": "Sé sincero y dime lo que piensas.",
     "sentence_hu": "Légy őszinte, és mondd el, mit gondolsz.",
     "sentence_en": "Be sincere and tell me what you think.",
@@ -9070,7 +9029,7 @@
   {
     "es": "sinceramente",
     "hu": "őszintén",
-    "en": "sincerely / honestly",
+    "en": "sincerely / honestly (truthfully)",
     "sentence_es": "Sinceramente, no entiendo su decisión.",
     "sentence_hu": "Őszintén szólva, nem értem a döntését.",
     "sentence_en": "Honestly, I don't understand his decision.",
@@ -9179,7 +9138,7 @@
   {
     "es": "la frase",
     "hu": "mondat/kifejezés",
-    "en": "sentence / phrase",
+    "en": "sentence (grammar) / phrase",
     "sentence_es": "Escribe una frase con la palabra nueva.",
     "sentence_hu": "Írj mondatot az új szóval.",
     "sentence_en": "Write a sentence with the new word.",
@@ -10367,22 +10326,6 @@
     "gender": "m"
   },
   {
-    "es": "el trozo",
-    "hu": "darab/falat",
-    "en": "piece/chunk",
-    "sentence_es": "Me comí un trozo de pastel delicioso.",
-    "sentence_hu": "Megettem egy darab finom tortát.",
-    "sentence_en": "I ate a delicious piece of cake.",
-    "de": "das Stück",
-    "sentence_de": "Ich aß ein Stück leckeren Kuchen.",
-    "id": 2793,
-    "level": "B1",
-    "topic": "objetos_materiales_b1",
-    "topicOrder": 6,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "es": "la actriz",
     "hu": "színésznő",
     "en": "actress",
@@ -11547,7 +11490,7 @@
   {
     "es": "la figura",
     "hu": "alak/figura",
-    "en": "figure / shape",
+    "en": "figure (shape) / silhouette",
     "sentence_es": "Vi una figura oscura en la ventana.",
     "sentence_hu": "Egy sötét alakot láttam az ablaknál.",
     "sentence_en": "I saw a dark figure at the window.",
@@ -11563,7 +11506,7 @@
   {
     "es": "las voces",
     "hu": "hangok/szavazatok",
-    "en": "voices / votes",
+    "en": "voices / votes (assembly)",
     "sentence_es": "Escuché voces desde el pasillo.",
     "sentence_hu": "Hangokat hallottam a folyosóról.",
     "sentence_en": "I heard voices from the hallway.",
@@ -11626,7 +11569,7 @@
   {
     "es": "notar",
     "hu": "észrevenni/megérezni",
-    "en": "to notice",
+    "en": "to notice (perceive)",
     "sentence_es": "Noté que algo había cambiado.",
     "sentence_hu": "Észrevettem, hogy valami megváltozott.",
     "sentence_en": "I noticed that something had changed.",
@@ -11688,7 +11631,7 @@
   {
     "es": "policial",
     "hu": "rendőrségi/bűnügyi",
-    "en": "police / crime (adj.)",
+    "en": "detective (novel) / police-related",
     "sentence_es": "Es una novela policial muy emocionante.",
     "sentence_hu": "Ez egy nagyon izgalmas bűnügyi regény.",
     "sentence_en": "It is a very exciting crime novel.",
@@ -11703,7 +11646,7 @@
   {
     "es": "la fase",
     "hu": "szakasz/fázis",
-    "en": "phase / stage",
+    "en": "phase / stage (development)",
     "sentence_es": "Estamos en la fase final del proyecto.",
     "sentence_hu": "A projekt utolsó szakaszában vagyunk.",
     "sentence_en": "We are in the final phase of the project.",
@@ -11985,7 +11928,7 @@
   {
     "es": "francamente",
     "hu": "őszintén szólva/nyíltan",
-    "en": "frankly / honestly",
+    "en": "frankly / honestly (bluntly)",
     "sentence_es": "Francamente, no entiendo tu decisión.",
     "sentence_hu": "Őszintén szólva nem értem a döntésedet.",
     "sentence_en": "Frankly, I do not understand your decision.",
@@ -12032,7 +11975,7 @@
   {
     "es": "pelear",
     "hu": "verekedni/veszekedni",
-    "en": "to fight / to argue",
+    "en": "to fight / to argue (physical)",
     "sentence_es": "Los niños estaban peleando en el patio.",
     "sentence_hu": "A gyerekek az udvaron verekedtek.",
     "sentence_en": "The kids were fighting in the yard.",
@@ -12094,7 +12037,7 @@
   {
     "es": "la falla",
     "hu": "hiba/meghibásodás",
-    "en": "fault / failure",
+    "en": "fault / failure (system)",
     "sentence_es": "Hubo una falla en el sistema eléctrico.",
     "sentence_hu": "Hiba volt a villamossági rendszerben.",
     "sentence_en": "There was a fault in the electrical system.",
@@ -12359,7 +12302,7 @@
   {
     "es": "el auxilio",
     "hu": "segítség/segélykiáltás",
-    "en": "help / aid",
+    "en": "help (request) / aid",
     "sentence_es": "Llamó pidiendo auxilio desde el río.",
     "sentence_hu": "A folyótól segítséget kérve kiáltott.",
     "sentence_en": "She called for help from the river.",
@@ -12406,7 +12349,7 @@
   {
     "es": "fijarse",
     "hu": "odafigyelni/észrevenni",
-    "en": "to notice / to pay attention",
+    "en": "to notice (focus) / to pay attention",
     "sentence_es": "Fíjate bien antes de cruzar la calle.",
     "sentence_hu": "Figyelj oda, mielőtt átmész az utcán.",
     "sentence_en": "Pay attention before crossing the street.",
@@ -12452,7 +12395,7 @@
   {
     "es": "la armada",
     "hu": "haditengerészet/flotta",
-    "en": "navy / armada",
+    "en": "navy (fleet) / armada",
     "sentence_es": "Su hijo sirve en la armada nacional.",
     "sentence_hu": "A fia a nemzeti haditengerészetnél szolgál.",
     "sentence_en": "Her son serves in the national navy.",
@@ -13079,7 +13022,7 @@
   {
     "es": "la patrulla",
     "hu": "járőr/járőrözés",
-    "en": "patrol",
+    "en": "patrol (unit)",
     "sentence_es": "La patrulla de policía recorrió el barrio por la noche.",
     "sentence_hu": "A rendőrjárőr éjjel végigjárta a negyedet.",
     "sentence_en": "The police patrol went through the neighborhood at night.",

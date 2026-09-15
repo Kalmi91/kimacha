@@ -110,4 +110,10 @@ export const WORD_MERGES: Record<number, number> = {
   1958: 2021, // listos: A2 szabályos többes, marad listo
   1964: 3730, // prisión: A2 szinonima, marad cárcel (la cárcel / la prisión)
   3659: 3473, // bienvenida: A2 szabályos nőnem, marad bienvenido
+
+  // PROMPT-POLICY 3/7 (es B1):
+  3799: 759, // completamente: B1 szinonima, marad totalmente (totalmente / completamente)
+  3847: 3809, // la delito: B1 duplikátum hibás nemű cikkel, marad el delito
+  2793: 2513, // el trozo: B1 szinonima, marad el pedazo (el pedazo / el trozo)
+  2398: 2539, // el celular: B1 regionális duplikátum, marad el móvil (MX-alak a jegyzetben)
 };
