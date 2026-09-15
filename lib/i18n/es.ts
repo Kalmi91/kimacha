@@ -42,19 +42,24 @@ export default {
   },
   done: {
     title: '¡Terminaste por hoy!',
-    reviewed: (n: number) => `${n} tarjetas revisadas.`,
     streak: 'racha de días',
-    moreNewWords: (n: number) => `+${n} palabras nuevas`,
     nextTopicWords: 'Palabras nuevas de otro tema',
     topicEmpty: 'Este tema no tiene palabras nuevas, el resto está programado para más tarde.',
-    levelWordsDone: 'Ya empezaste todas las palabras de este nivel. Hay tres caminos:',
-    practiseLevel: 'Practicar: 32 palabras del nivel',
     takeExam: 'Hacer el examen',
     examLocked: (pct: number) => `Examen (desde el ${pct}%)`,
     nextLevel: 'Pasar al siguiente nivel',
-    sessionMix: (nw: number, rv: number) => `En esta ronda: ${nw} palabras nuevas, ${rv} repasos.`,
-    newWordsCongested: (n: number) => `Ahora no hay palabras nuevas: ${n} palabras a medio aprender siguen esperando. Pulsa "+" si aun así las quieres.`,
-    newWordsSpent: 'El cupo de palabras nuevas de hoy se ha agotado.',
+    // UTEMEZO 5. szakasz: los cuatro números de la pantalla de Kész.
+    reviewLaps: 'repasos',
+    wordsStarted: 'palabras nuevas iniciadas',
+    wordsLearned: 'palabras aprendidas',
+    wrongLaps: 'tarjetas falladas',
+    // UTEMEZO 5. szakasz: la única pregunta de fin de ronda, según la situación.
+    askMoreNew: '¿Aprendes más palabras nuevas hoy?',
+    yesThisMany: 'Sí, esta cantidad',
+    noEnoughToday: 'No, ya es suficiente por hoy',
+    askPractise: '¿Practicas unas palabras al azar del nivel?',
+    yesPractise: 'Sí',
+    no: 'No',
   },
   tabs: {
     learn: 'Aprender',
@@ -503,6 +508,14 @@ export default {
   },
   progress: {
     wordsKnown: 'Palabras Conocidas',
+  },
+  // UTEMEZO 7. szakasz: la etiqueta pequeña arriba de cada tarjeta.
+  lap: {
+    newLap: (n: number) => `nueva · ${n}/3`,
+    review: 'repaso',
+    repair: 'corrección',
+    repairLap: (n: number) => `corrección · ${n}/3`,
+    sentence: 'frase',
   },
   // UTEMEZO 6. szakasz: ventana explicativa para los tres números del encabezado.
   header: {
