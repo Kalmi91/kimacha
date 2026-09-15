@@ -1,0 +1,368 @@
+{
+  "topic": "estar-gerundio",
+  "level": "A2",
+  "title": {
+    "hu": "Estar + gerundio: mi történik éppen most",
+    "en": "Estar + gerund: what is happening right now",
+    "es": "Estar + gerundio: qué está pasando ahora mismo",
+    "de": "Estar + Gerundium: was gerade jetzt passiert"
+  },
+  "rule": {
+    "hu": "Ha valami éppen most zajlik, az estar ragozott alakja + gerundio szerkezetet használjuk. Az -ar igék -ando, az -er/-ir igék -iendo végződést kapnak: trabajar → trabajando, comer → comiendo, escribir → escribiendo. Csak az estar ragozódik (estoy/estás/está/estamos/están), a gerundio mindig ugyanaz marad.",
+    "en": "When something is happening right now, we use estar conjugated + a gerund. -ar verbs get -ando, -er/-ir verbs get -iendo: trabajar → trabajando, comer → comiendo, escribir → escribiendo. Only estar changes form (estoy/estás/está/estamos/están); the gerund itself never changes.",
+    "es": "Cuando algo está pasando en este momento, usamos estar conjugado + gerundio. Los verbos -ar toman -ando, los -er/-ir toman -iendo: trabajar → trabajando, comer → comiendo, escribir → escribiendo. Solo estar cambia de forma (estoy/estás/está/estamos/están); el gerundio siempre queda igual.",
+    "de": "Wenn gerade jetzt etwas passiert, benutzen wir estar konjugiert + Gerundium. -ar-Verben bekommen -ando, -er/-ir-Verben -iendo: trabajar → trabajando, comer → comiendo, escribir → escribiendo. Nur estar verändert sich (estoy/estás/está/estamos/están), das Gerundium bleibt immer gleich."
+  },
+  "more": {
+    "hu": "Vigyázat, a spanyol NEM használja ezt a szerkezetet jövőbeli tervre, ellentétben az angollal ('I'm going tomorrow'): spanyolul egyszerűen Voy mañana, nem Estoy yendo mañana. A másik gyakori hiba: a gerundiót ragozzák estar helyett (estoy come helyett estoy comiendo). Néhány gerundio szabálytalan: leer → leyendo, dormir → durmiendo, pedir → pidiendo, decir → diciendo.",
+    "en": "Careful: Spanish does NOT use this structure for a planned future, unlike English 'I'm going tomorrow': in Spanish it is simply Voy mañana, not Estoy yendo mañana. The other common mistake is conjugating the gerund instead of estar (estoy come instead of estoy comiendo). A few gerunds are irregular: leer → leyendo, dormir → durmiendo, pedir → pidiendo, decir → diciendo.",
+    "es": "Cuidado: el español NO usa esta estructura para un plan futuro, a diferencia del inglés 'I'm going tomorrow': en español es simplemente Voy mañana, no Estoy yendo mañana. El otro error común es conjugar el gerundio en vez de estar (estoy come en vez de estoy comiendo). Algunos gerundios son irregulares: leer → leyendo, dormir → durmiendo, pedir → pidiendo, decir → diciendo.",
+    "de": "Achtung: Das Spanische benutzt diese Struktur NICHT für einen geplanten zukünftigen Termin, anders als im Englischen 'I'm going tomorrow': auf Spanisch heißt es einfach Voy mañana, nicht Estoy yendo mañana. Der andere häufige Fehler ist, das Gerundium statt estar zu konjugieren (estoy come statt estoy comiendo). Manche Gerundien sind unregelmäßig: leer → leyendo, dormir → durmiendo, pedir → pidiendo, decir → diciendo."
+  },
+  "glossary": [
+    { "word": "leyendo", "gloss": { "hu": "olvasva", "en": "reading", "es": "leyendo", "de": "lesend" } },
+    { "word": "leiendo", "gloss": { "hu": "nem létező alak (helyesen: leyendo)", "en": "non-existent form (correctly: leyendo)", "es": "forma inexistente (correcto: leyendo)", "de": "nicht existierende Form (richtig: leyendo)" } },
+    { "word": "leendo", "gloss": { "hu": "nem létező alak (helyesen: leyendo)", "en": "non-existent form (correctly: leyendo)", "es": "forma inexistente (correcto: leyendo)", "de": "nicht existierende Form (richtig: leyendo)" } },
+    { "word": "durmiendo", "gloss": { "hu": "aludva", "en": "sleeping", "es": "durmiendo", "de": "schlafend" } },
+    { "word": "dormiendo", "gloss": { "hu": "nem létező alak (helyesen: durmiendo)", "en": "non-existent form (correctly: durmiendo)", "es": "forma inexistente (correcto: durmiendo)", "de": "nicht existierende Form (richtig: durmiendo)" } },
+    { "word": "durmendo", "gloss": { "hu": "nem létező alak (helyesen: durmiendo)", "en": "non-existent form (correctly: durmiendo)", "es": "forma inexistente (correcto: durmiendo)", "de": "nicht existierende Form (richtig: durmiendo)" } },
+    { "word": "pidiendo", "gloss": { "hu": "kérve, rendelve", "en": "asking for, ordering", "es": "pidiendo", "de": "bittend, bestellend" } },
+    { "word": "pediendo", "gloss": { "hu": "nem létező alak (helyesen: pidiendo)", "en": "non-existent form (correctly: pidiendo)", "es": "forma inexistente (correcto: pidiendo)", "de": "nicht existierende Form (richtig: pidiendo)" } },
+    { "word": "pidendo", "gloss": { "hu": "nem létező alak (helyesen: pidiendo)", "en": "non-existent form (correctly: pidiendo)", "es": "forma inexistente (correcto: pidiendo)", "de": "nicht existierende Form (richtig: pidiendo)" } },
+    { "word": "diciendo", "gloss": { "hu": "mondva", "en": "saying", "es": "diciendo", "de": "sagend" } },
+    { "word": "deciendo", "gloss": { "hu": "nem létező alak (helyesen: diciendo)", "en": "non-existent form (correctly: diciendo)", "es": "forma inexistente (correcto: diciendo)", "de": "nicht existierende Form (richtig: diciendo)" } },
+    { "word": "dicendo", "gloss": { "hu": "nem létező alak (helyesen: diciendo)", "en": "non-existent form (correctly: diciendo)", "es": "forma inexistente (correcto: diciendo)", "de": "nicht existierende Form (richtig: diciendo)" } },
+    { "word": "profesor", "gloss": { "hu": "tanár", "en": "teacher", "es": "el profesor", "de": "Lehrer" } },
+    { "word": "tarea", "gloss": { "hu": "házi feladat", "en": "homework", "es": "la tarea", "de": "Hausaufgabe" } },
+    { "word": "despierto", "gloss": { "hu": "ébren", "en": "awake", "es": "despierto", "de": "wach" } },
+    { "word": "yendo", "gloss": { "hu": "menve (ir gerundiója)", "en": "going (gerund of ir)", "es": "yendo", "de": "gehend (Gerundium von ir)" } },
+    { "word": "taco", "gloss": { "hu": "taco (étel)", "en": "taco", "es": "el taco", "de": "Taco" } },
+    { "word": "tacos", "gloss": { "hu": "tacók", "en": "tacos", "es": "los tacos", "de": "Tacos" } }
+  ],
+  "items": [
+    {
+      "id": "eg-01",
+      "sentence": "Yo ___ trabajando ahora.",
+      "options": ["estoy", "estás", "está"],
+      "correct": 0,
+      "why": {
+        "hu": "Yo alanyhoz az estoy tartozik: estoy trabajando.",
+        "en": "The subject yo takes estoy: estoy trabajando.",
+        "es": "Al sujeto yo le corresponde estoy: estoy trabajando.",
+        "de": "Zum Subjekt yo gehört estoy: estoy trabajando."
+      },
+      "wrong": {
+        "estás": {
+          "hu": "Az estás a tú alakja, itt yo áll.",
+          "en": "Estás is the tú form, but here the subject is yo.",
+          "es": "Estás es la forma de tú, pero aquí el sujeto es yo.",
+          "de": "Estás ist die tú-Form, hier steht aber yo."
+        },
+        "está": {
+          "hu": "Az está harmadik személy, itt yo áll.",
+          "en": "Está is third person, but here the subject is yo.",
+          "es": "Está es tercera persona, pero aquí el sujeto es yo.",
+          "de": "Está ist dritte Person, hier steht aber yo."
+        }
+      },
+      "examples": ["Estoy trabajando en casa.", "Ahora mismo estoy trabajando."]
+    },
+    {
+      "id": "eg-02",
+      "sentence": "Ella ___ comiendo un taco.",
+      "options": ["está", "estoy", "están"],
+      "correct": 0,
+      "why": {
+        "hu": "Ella egyes szám harmadik személy: está comiendo.",
+        "en": "Ella is third person singular: está comiendo.",
+        "es": "Ella es tercera persona singular: está comiendo.",
+        "de": "Ella ist dritte Person Singular: está comiendo."
+      },
+      "wrong": {
+        "estoy": {
+          "hu": "Az estoy yo-hoz tartozik, nem ellához.",
+          "en": "Estoy belongs to yo, not to ella.",
+          "es": "Estoy es de yo, no de ella.",
+          "de": "Estoy gehört zu yo, nicht zu ella."
+        },
+        "están": {
+          "hu": "Az están többes szám, itt egy személy (ella) az alany.",
+          "en": "Están is plural, but here the subject is one person (ella).",
+          "es": "Están es plural, pero aquí el sujeto es una sola persona (ella).",
+          "de": "Están ist Plural, hier ist das Subjekt aber eine Person (ella)."
+        }
+      },
+      "examples": ["Ella está comiendo ahora.", "Mi hermana está comiendo tacos."]
+    },
+    {
+      "id": "eg-03",
+      "sentence": "Nosotros ___ estudiando español.",
+      "options": ["estamos", "están", "estás"],
+      "correct": 0,
+      "why": {
+        "hu": "Nosotroshoz az estamos tartozik.",
+        "en": "Nosotros takes estamos.",
+        "es": "A nosotros le corresponde estamos.",
+        "de": "Zu nosotros gehört estamos."
+      },
+      "wrong": {
+        "están": {
+          "hu": "Az están ellos/ellas/ustedes alakja, nem nosotrosé.",
+          "en": "Están is the ellos/ellas/ustedes form, not nosotros.",
+          "es": "Están es la forma de ellos/ellas/ustedes, no de nosotros.",
+          "de": "Están ist die Form von ellos/ellas/ustedes, nicht von nosotros."
+        },
+        "estás": {
+          "hu": "Az estás a tú alakja, egy személyre, nem nosotrosra.",
+          "en": "Estás is the tú form, for one person, not for nosotros.",
+          "es": "Estás es la forma de tú, para una persona, no para nosotros.",
+          "de": "Estás ist die tú-Form, für eine Person, nicht für nosotros."
+        }
+      },
+      "examples": ["Estamos estudiando para el examen.", "Nosotros estamos estudiando juntos."]
+    },
+    {
+      "id": "eg-04",
+      "sentence": "¿Qué ___ haciendo tú?",
+      "options": ["estás", "está", "estoy"],
+      "correct": 0,
+      "why": {
+        "hu": "A tú alanyhoz az estás tartozik.",
+        "en": "The subject tú takes estás.",
+        "es": "Al sujeto tú le corresponde estás.",
+        "de": "Zum Subjekt tú gehört estás."
+      },
+      "wrong": {
+        "está": {
+          "hu": "Az está harmadik személy, itt tú a kérdezett alany.",
+          "en": "Está is third person, but here the asked subject is tú.",
+          "es": "Está es tercera persona, pero aquí se pregunta a tú.",
+          "de": "Está ist dritte Person, hier wird aber tú gefragt."
+        },
+        "estoy": {
+          "hu": "Az estoy azt kérdezné, mit csinálok ÉN, nem azt, mit csinálsz te.",
+          "en": "Estoy would ask what I am doing, not what you are doing.",
+          "es": "Estoy preguntaría qué hago yo, no qué haces tú.",
+          "de": "Estoy würde fragen, was ich mache, nicht was du machst."
+        }
+      },
+      "examples": ["¿Qué estás haciendo?", "Estoy haciendo la tarea."]
+    },
+    {
+      "id": "eg-05",
+      "sentence": "Ellos ___ jugando fútbol.",
+      "options": ["están", "está", "estamos"],
+      "correct": 0,
+      "why": {
+        "hu": "Ellos többes harmadik személy: están jugando.",
+        "en": "Ellos is third person plural: están jugando.",
+        "es": "Ellos es tercera persona plural: están jugando.",
+        "de": "Ellos ist dritte Person Plural: están jugando."
+      },
+      "wrong": {
+        "está": {
+          "hu": "Az está egyes szám, itt ellos többes szám.",
+          "en": "Está is singular, but here ellos is plural.",
+          "es": "Está es singular, pero aquí ellos es plural.",
+          "de": "Está ist Singular, hier ist ellos aber Plural."
+        },
+        "estamos": {
+          "hu": "Az estamos nosotroshoz tartozik, nem ellos-hoz.",
+          "en": "Estamos belongs to nosotros, not to ellos.",
+          "es": "Estamos es de nosotros, no de ellos.",
+          "de": "Estamos gehört zu nosotros, nicht zu ellos."
+        }
+      },
+      "examples": ["Están jugando en el parque.", "Los niños están jugando ahora."]
+    },
+    {
+      "id": "eg-06",
+      "sentence": "Estoy ___ un libro interesante.",
+      "options": ["leyendo", "leiendo", "leendo"],
+      "correct": 0,
+      "why": {
+        "hu": "A leer szabálytalan gerundio: leyendo, nem leiendo.",
+        "en": "Leer has an irregular gerund: leyendo, not leiendo.",
+        "es": "Leer tiene gerundio irregular: leyendo, no leiendo.",
+        "de": "Leer hat ein unregelmäßiges Gerundium: leyendo, nicht leiendo."
+      },
+      "wrong": {
+        "leiendo": {
+          "hu": "Ez nem létező alak, a leer gerundiója leyendo.",
+          "en": "This form does not exist; leer's gerund is leyendo.",
+          "es": "Esta forma no existe; el gerundio de leer es leyendo.",
+          "de": "Diese Form gibt es nicht; das Gerundium von leer ist leyendo."
+        },
+        "leendo": {
+          "hu": "Ez sem létező alak, a helyes forma leyendo.",
+          "en": "This is not a real form either; the correct one is leyendo.",
+          "es": "Tampoco existe esta forma; la correcta es leyendo.",
+          "de": "Auch das ist keine echte Form; richtig ist leyendo."
+        }
+      },
+      "examples": ["Estoy leyendo una novela.", "Ella está leyendo el periódico."]
+    },
+    {
+      "id": "eg-07",
+      "sentence": "Los niños están ___ en su cuarto.",
+      "options": ["durmiendo", "dormiendo", "durmendo"],
+      "correct": 0,
+      "why": {
+        "hu": "A dormir szabálytalan gerundiója durmiendo (o→u).",
+        "en": "Dormir has the irregular gerund durmiendo (o→u).",
+        "es": "Dormir tiene el gerundio irregular durmiendo (o→u).",
+        "de": "Dormir hat das unregelmäßige Gerundium durmiendo (o→u)."
+      },
+      "wrong": {
+        "dormiendo": {
+          "hu": "Ez nem létező alak, a helyes forma durmiendo.",
+          "en": "This form does not exist; the correct one is durmiendo.",
+          "es": "Esta forma no existe; la correcta es durmiendo.",
+          "de": "Diese Form gibt es nicht; richtig ist durmiendo."
+        },
+        "durmendo": {
+          "hu": "Ez sem létező alak, hiányzik az i: durmiendo.",
+          "en": "This is not a real form either, it is missing the i: durmiendo.",
+          "es": "Tampoco existe, le falta la i: durmiendo.",
+          "de": "Auch das ist keine echte Form, das i fehlt: durmiendo."
+        }
+      },
+      "examples": ["Los niños están durmiendo ahora.", "El gato está durmiendo en el sofá."]
+    },
+    {
+      "id": "eg-08",
+      "sentence": "Ella está ___ un café.",
+      "options": ["pidiendo", "pediendo", "pidendo"],
+      "correct": 0,
+      "why": {
+        "hu": "A pedir szabálytalan gerundiója pidiendo (e→i).",
+        "en": "Pedir has the irregular gerund pidiendo (e→i).",
+        "es": "Pedir tiene el gerundio irregular pidiendo (e→i).",
+        "de": "Pedir hat das unregelmäßige Gerundium pidiendo (e→i)."
+      },
+      "wrong": {
+        "pediendo": {
+          "hu": "Ez nem létező alak, a helyes forma pidiendo.",
+          "en": "This form does not exist; the correct one is pidiendo.",
+          "es": "Esta forma no existe; la correcta es pidiendo.",
+          "de": "Diese Form gibt es nicht; richtig ist pidiendo."
+        },
+        "pidendo": {
+          "hu": "Ez sem létező alak, hiányzik az i: pidiendo.",
+          "en": "This is not a real form either, it is missing the i: pidiendo.",
+          "es": "Tampoco existe, le falta la i: pidiendo.",
+          "de": "Auch das ist keine echte Form, das i fehlt: pidiendo."
+        }
+      },
+      "examples": ["Está pidiendo un café con leche.", "Estoy pidiendo la cuenta."]
+    },
+    {
+      "id": "eg-09",
+      "sentence": "¿Qué está ___ el profesor?",
+      "options": ["diciendo", "deciendo", "dicendo"],
+      "correct": 0,
+      "why": {
+        "hu": "A decir szabálytalan gerundiója diciendo (e→i).",
+        "en": "Decir has the irregular gerund diciendo (e→i).",
+        "es": "Decir tiene el gerundio irregular diciendo (e→i).",
+        "de": "Decir hat das unregelmäßige Gerundium diciendo (e→i)."
+      },
+      "wrong": {
+        "deciendo": {
+          "hu": "Ez nem létező alak, a helyes forma diciendo.",
+          "en": "This form does not exist; the correct one is diciendo.",
+          "es": "Esta forma no existe; la correcta es diciendo.",
+          "de": "Diese Form gibt es nicht; richtig ist diciendo."
+        },
+        "dicendo": {
+          "hu": "Ez sem létező alak, hiányzik az i: diciendo.",
+          "en": "This is not a real form either, it is missing the i: diciendo.",
+          "es": "Tampoco existe, le falta la i: diciendo.",
+          "de": "Auch das ist keine echte Form, das i fehlt: diciendo."
+        }
+      },
+      "examples": ["El profesor está diciendo la verdad.", "¿Qué estás diciendo?"]
+    },
+    {
+      "id": "eg-10",
+      "sentence": "Mañana ___ al cine con Ana.",
+      "options": ["voy", "estoy yendo", "iba"],
+      "correct": 0,
+      "why": {
+        "hu": "Jövőbeli tervhez a spanyol egyszerű jelen időt használ, nem estar+gerundiót: voy mañana.",
+        "en": "For a planned future, Spanish uses the simple present, not estar+gerund: voy mañana.",
+        "es": "Para un plan futuro, el español usa el presente simple, no estar+gerundio: voy mañana.",
+        "de": "Für einen geplanten Termin nutzt das Spanische das einfache Präsens, nicht estar+Gerundium: voy mañana."
+      },
+      "wrong": {
+        "estoy yendo": {
+          "hu": "Az estar+gerundio a MOST zajló dolgokra való, nem a holnapi tervre.",
+          "en": "Estar+gerund is for what is happening RIGHT NOW, not for tomorrow's plan.",
+          "es": "Estar+gerundio es para lo que pasa AHORA MISMO, no para el plan de mañana.",
+          "de": "Estar+Gerundium ist für das, was JETZT passiert, nicht für den Plan von morgen."
+        },
+        "iba": {
+          "hu": "Az iba múlt idő (imperfecto), itt jövőbeli tervről van szó.",
+          "en": "Iba is a past tense (imperfect), but this is about a future plan.",
+          "es": "Iba es pasado (imperfecto), pero aquí se habla de un plan futuro.",
+          "de": "Iba ist Vergangenheit (Imperfekt), hier geht es aber um einen zukünftigen Plan."
+        }
+      },
+      "examples": ["Mañana voy al cine.", "El sábado voy a la fiesta de Ana."]
+    },
+    {
+      "id": "eg-11",
+      "sentence": "Tú y yo ___ terminando la tarea.",
+      "options": ["estamos", "están", "estoy"],
+      "correct": 0,
+      "why": {
+        "hu": "Tú y yo = nosotros, hozzá az estamos tartozik.",
+        "en": "Tú y yo = nosotros, and nosotros takes estamos.",
+        "es": "Tú y yo = nosotros, y a nosotros le corresponde estamos.",
+        "de": "Tú y yo = nosotros, dazu gehört estamos."
+      },
+      "wrong": {
+        "están": {
+          "hu": "Az están ellos/ustedes alakja, nem nosotrosé.",
+          "en": "Están is the ellos/ustedes form, not nosotros.",
+          "es": "Están es la forma de ellos/ustedes, no de nosotros.",
+          "de": "Están ist die Form von ellos/ustedes, nicht von nosotros."
+        },
+        "estoy": {
+          "hu": "Az estoy csak egy személyre (yo) vonatkozna.",
+          "en": "Estoy would refer only to one person (yo).",
+          "es": "Estoy se referiría solo a una persona (yo).",
+          "de": "Estoy würde sich nur auf eine Person (yo) beziehen."
+        }
+      },
+      "examples": ["Estamos terminando ahora.", "Tú y yo estamos aprendiendo mucho."]
+    },
+    {
+      "id": "eg-12",
+      "sentence": "Yo no ___ durmiendo, estoy despierto.",
+      "options": ["estoy", "estás", "está"],
+      "correct": 0,
+      "why": {
+        "hu": "Yo alanyhoz estoy tartozik, tagadásban is a no után az ige elé.",
+        "en": "The subject yo takes estoy, and even negated it comes after no, before the verb.",
+        "es": "Al sujeto yo le corresponde estoy, y en negativo va después de no, antes del verbo.",
+        "de": "Zum Subjekt yo gehört estoy, auch verneint steht es nach no, vor dem Verb."
+      },
+      "wrong": {
+        "estás": {
+          "hu": "Az estás a tú alakja, itt yo áll.",
+          "en": "Estás is the tú form, but here the subject is yo.",
+          "es": "Estás es la forma de tú, pero aquí el sujeto es yo.",
+          "de": "Estás ist die tú-Form, hier steht aber yo."
+        },
+        "está": {
+          "hu": "Az está harmadik személy, itt yo áll.",
+          "en": "Está is third person, but here the subject is yo.",
+          "es": "Está es tercera persona, pero aquí el sujeto es yo.",
+          "de": "Está ist dritte Person, hier steht aber yo."
+        }
+      },
+      "examples": ["No estoy durmiendo.", "Estoy despierto todavía."]
+    }
+  ]
+}
