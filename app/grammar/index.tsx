@@ -152,7 +152,11 @@ export default function GrammarSyllabusScreen() {
                                 <Text style={[styles.topicTitle, { color: colors.text }]}>
                                   {topic.title[contentLang] ?? topic.title.en}
                                 </Text>
-                                {getGrammarTier(topic.id) === 'core' ? (
+                                {getGrammarTier(topic.id) === 'core-plus' ? (
+                                  <Text testID={`grammar-core-plus-${topic.id}`} style={styles.corePlusTag}>
+                                    {s.grammar.corePlusTag}
+                                  </Text>
+                                ) : getGrammarTier(topic.id) === 'core' ? (
                                   <Text testID={`grammar-core-${topic.id}`} style={styles.coreTag}>
                                     {s.grammar.coreTag}
                                   </Text>
@@ -210,6 +214,17 @@ const styles = StyleSheet.create({
   topicRow: { flexDirection: 'row', alignItems: 'center', gap: 10, borderRadius: 12, padding: 12 },
   topicTitleRow: { flexDirection: 'row', alignItems: 'center', gap: 6, flexWrap: 'wrap' },
   topicTitle: { fontSize: 15, fontWeight: '600' },
+  // Telt lila: a beszéd-mag, ez épül legelőbb.
+  corePlusTag: {
+    fontSize: 10,
+    fontWeight: '700',
+    textTransform: 'uppercase',
+    color: '#FFFFFF',
+    backgroundColor: '#7C3AED',
+    borderRadius: 6,
+    paddingHorizontal: 5,
+    paddingVertical: 1,
+  },
   // Lila jelölés: ez a téma kell ahhoz, hogy beszélni tudjon, akkor is látszik,
   // ha a lecke még nincs megírva.
   coreTag: {
