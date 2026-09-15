@@ -30,6 +30,10 @@ export default {
     spellingTapHint: 'Toca una palabra para practicar su escritura',
     spellingAddedWord: (word: string) => `✓ "${word}" está en tu lista de escritura`,
     spellingNoCardWord: (word: string) => `"${word}" todavía no tiene tarjeta`,
+    // PROMPT-POLICY 6/7: bandera de región + marca de plural irregular, junto al prompt.
+    regionMx: 'Se usa en México',
+    irregularPlural: 'plural irregular',
+    pluralOnly: 'solo en plural',
   },
   buttons: {
     again: 'Otra Vez',
