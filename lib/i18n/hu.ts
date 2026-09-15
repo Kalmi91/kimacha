@@ -30,6 +30,10 @@ export default {
     spellingTapHint: 'Koppints egy szóra: bekerül a helyesírás-gyakorlásba',
     spellingAddedWord: (word: string) => `✓ „${word}" a helyesírás-listában`,
     spellingNoCardWord: (word: string) => `„${word}" nincs a szókártyák között`,
+    // PROMPT-POLICY 6/7: régió-zászló + rendhagyó többes jelző, a prompt mellett.
+    regionMx: 'Mexikóban használt',
+    irregularPlural: 'rendhagyó többes',
+    pluralOnly: 'csak többesben',
   },
   buttons: {
     again: 'Újra',

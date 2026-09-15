@@ -98,4 +98,27 @@ export const WORD_MERGES: Record<number, number> = {
   2904: 2111, // romper: B1 törölve, marad A2
   2908: 2169, // averiguar: B1 törölve, marad A2
   2932: 2120, // merecer: B1 törölve, marad A2
+
+  // PROMPT-POLICY 3/7 (es A0-A1):
+  3912: 1522, // la venda: A1 törölve, marad A1 (el vendaje / la venda egy kártya, szinoníma)
+
+  // PROMPT-POLICY 3/7 (es A2):
+  3754: 709, // suerte: A2 duplikátum (névelő nélkül), marad "la suerte"
+  3462: 2045, // diferentes: A2 szabályos többes, marad diferente
+  1948: 1893, // suceder: A2 szinonima, marad ocurrir (ocurrir / suceder)
+  3621: 3453, // santa: A2 szabályos nőnem, marad santo
+  1958: 2021, // listos: A2 szabályos többes, marad listo
+  1964: 3730, // prisión: A2 szinonima, marad cárcel (la cárcel / la prisión)
+  3659: 3473, // bienvenida: A2 szabályos nőnem, marad bienvenido
+
+  // PROMPT-POLICY 3/7 (es B1):
+  3799: 759, // completamente: B1 szinonima, marad totalmente (totalmente / completamente)
+  3847: 3809, // la delito: B1 duplikátum hibás nemű cikkel, marad el delito
+  2793: 2513, // el trozo: B1 szinonima, marad el pedazo (el pedazo / el trozo)
+  2398: 2539, // el celular: B1 regionális duplikátum, marad el móvil (MX-alak a jegyzetben)
+
+  // PROMPT-POLICY 3/7 (es B2-C2):
+  7341: 3399, // la placa solar: B2 szinonima, marad el panel solar (el panel solar / la placa solar)
+  3247: 3226, // semejante: B2 szinonima (választékosabb), marad similar (similar / semejante)
+  530: 3925, // rebatir: C1 szinonima, marad refutar (refutar / rebatir)
 };

@@ -30,6 +30,10 @@ export default {
     spellingTapHint: 'Tap a word to add it to spelling practice',
     spellingAddedWord: (word: string) => `✓ "${word}" is in your spelling list`,
     spellingNoCardWord: (word: string) => `"${word}" has no word card yet`,
+    // PROMPT-POLICY 6/7: region flag + irregular-plural marker, next to the prompt.
+    regionMx: 'Used in Mexico',
+    irregularPlural: 'irregular plural',
+    pluralOnly: 'plural only',
   },
   buttons: {
     again: 'Again',

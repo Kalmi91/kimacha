@@ -9,6 +9,7 @@ import { join } from 'path';
 import { LEVELS, getWordsForLevel, words, type WordEntry } from '@/data/words';
 import { WORD_MERGES } from '../wordMerges';
 import { pickSurvivor } from '../cardMerge';
+import { findPromptOverlaps, type PromptLang } from '../promptOverlap';
 
 const LEVEL_ORDER = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
@@ -164,5 +165,38 @@ describe('word entry completeness', () => {
       }
     }
     expect(offenders.slice(0, 20)).toEqual([]);
+  });
+});
+
+// PROMPT-POLICY 1: "Egy szinten és sávon belül két szónak nem lehet olyan
+// promptja, amelyből nem dönthető el, melyik a kérdezett." A 9.4 szerint a
+// korpusz-menet (2026-09-14/15) után ez az őr ÉLES: új szó nem hozhatja
+// vissza a hibát. A fürt-logika a lib/promptOverlap.ts-ben él, ugyanaz fut
+// itt és a scripts/audit-prompts.mjs-ben (ott duplikálva, mert az .mjs nem
+// importál TS-t). Csak azokat a szinteket nézi, amelyek a sávban tényleg
+// léteznek: a getWordsForLevel a hiányzó hu/en szintekre a spanyol korpuszra
+// esik vissza, és az nem ennek a sávnak a promptja.
+describe('prompt policy (PROMPT-POLICY 1)', () => {
+  const BANDS: { label: string; lang: PromptLang; headword: PromptLang; prompt: PromptLang }[] = [
+    { label: 'es', lang: 'es', headword: 'es', prompt: 'en' },
+    { label: 'hu', lang: 'hu', headword: 'hu', prompt: 'en' },
+    { label: 'en', lang: 'en', headword: 'en', prompt: 'hu' },
+  ];
+
+  it.each(BANDS)('never gives two words of a level an ambiguous $label prompt', ({ lang, headword, prompt }) => {
+    const offenders: string[] = [];
+    for (const level of LEVELS) {
+      const levelWords = getWordsForLevel(level, lang);
+      if (lang !== 'es' && levelWords.some((w) => w.level === level && getWordsForLevel(level, 'es').includes(w))) continue;
+      const clusters = findPromptOverlaps(
+        levelWords.map((w) => ({ id: w.id, headword: String(w[headword] ?? ''), prompt: String(w[prompt] ?? '') })),
+        prompt
+      );
+      for (const cluster of clusters) {
+        const ids = cluster.words.map((w) => `${w.id}:${w.prompt}`).join(', ');
+        offenders.push(`${level} [${cluster.kind}${cluster.sense ? `: ${cluster.sense}` : ''}] ${ids}`);
+      }
+    }
+    expect(offenders).toEqual([]);
   });
 });

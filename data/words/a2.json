@@ -4,7 +4,7 @@
     "level": "A2",
     "es": "el recuerdo",
     "hu": "emlék",
-    "en": "memory / souvenir",
+    "en": "a memory (recollection, souvenir)",
     "sentence_es": "Tengo un buen recuerdo.",
     "sentence_hu": "Jó emlékem van.",
     "sentence_en": "I have a good memory.",
@@ -364,7 +364,7 @@
     "level": "A2",
     "es": "probar",
     "hu": "megpróbálni",
-    "en": "to try",
+    "en": "to try (test, taste)",
     "sentence_es": "Quiero probar esto.",
     "sentence_hu": "Ki akarom próbálni.",
     "sentence_en": "I want to try this.",
@@ -409,7 +409,7 @@
     "level": "A2",
     "es": "libre",
     "hu": "szabad",
-    "en": "free",
+    "en": "free (available)",
     "sentence_es": "Estás libre mañana?",
     "sentence_hu": "Szabad vagy holnap?",
     "sentence_en": "Are you free tomorrow?",
@@ -632,7 +632,9 @@
     "topic": "familia_matrimonio_a2",
     "topicOrder": 15,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Often used without an article in set phrases: tener suerte (to be lucky), por suerte (luckily). Tuvo suerte en el juego. (He had luck in the game.)",
+    "note_hu": "Gyakran névelő nélkül, állandó szókapcsolatokban: tener suerte (szerencséje van), por suerte (szerencsére). Tuvo suerte en el juego. (Szerencséje volt a játékban.)"
   },
   {
     "id": 710,
@@ -950,7 +952,7 @@
     "level": "A2",
     "es": "tratar",
     "hu": "próbálni / kezelni",
-    "en": "to try / to treat",
+    "en": "to try (tratar de + inf.) / to treat",
     "de": "versuchen / behandeln",
     "sentence_es": "He tratado de llamarte muchas veces.",
     "sentence_hu": "Sokszor próbáltalak felhívni.",
@@ -985,7 +987,7 @@
     "level": "A2",
     "es": "próximo",
     "hu": "következő",
-    "en": "next",
+    "en": "next (upcoming)",
     "de": "nächste",
     "sentence_es": "El próximo tren sale a las tres.",
     "sentence_hu": "A következő vonat háromkor indul.",
@@ -1214,14 +1216,16 @@
     "sentence_de": "Heute ist der Tag eines berühmten Heiligen.",
     "topic": "paises",
     "topicOrder": 2,
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Before a masculine name it shortens to San: San Juan. The feminine form santa stays unchanged before names: Santa María. Hoy es la fiesta de Santa María. (Today is the feast of Saint Mary.)",
+    "note_hu": "Férfinév előtt San-ra rövidül: San Juan. A nőnemű alak santa, nő neve előtt nem rövidül: Santa María. Hoy es la fiesta de Santa María. (Ma van Szent Mária ünnepe.)"
   },
   {
     "id": 3454,
     "level": "A2",
     "es": "las ganas",
     "hu": "a kedv / a vágy",
-    "en": "the desire / the urge",
+    "en": "desire (urge, casual: tener ganas)",
     "de": "die Lust",
     "sentence_es": "Tengo muchas ganas de verte.",
     "sentence_hu": "Nagyon vágyom rá, hogy lássalak.",
@@ -1340,21 +1344,6 @@
     "pos": "verb"
   },
   {
-    "id": 3462,
-    "level": "A2",
-    "es": "diferentes",
-    "hu": "különböző",
-    "en": "different",
-    "de": "verschieden",
-    "sentence_es": "Hemos probado platos diferentes hoy.",
-    "sentence_hu": "Ma különböző ételeket próbáltunk.",
-    "sentence_en": "We've tried different dishes today.",
-    "sentence_de": "Wir haben heute verschiedene Gerichte probiert.",
-    "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 18,
-    "pos": "adj"
-  },
-  {
     "id": 3463,
     "level": "A2",
     "es": "ir (irte)",
@@ -1457,7 +1446,7 @@
     "level": "A2",
     "es": "la cuestión",
     "hu": "a kérdés / az ügy",
-    "en": "the question / the issue",
+    "en": "the question / the issue (topic raised)",
     "de": "die Frage / die Angelegenheit",
     "sentence_es": "Esta cuestión es muy importante para mí.",
     "sentence_hu": "Ez a kérdés nagyon fontos nekem.",
@@ -1531,7 +1520,9 @@
     "sentence_de": "Willkommen in unserem Haus.",
     "topic": "fiesta_hospitalidad_a2",
     "topicOrder": 6,
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Agrees with gender: a woman is welcomed with bienvenida. ¡Bienvenida a nuestra clase, María! (Welcome to our class, María!)",
+    "note_hu": "Nemben egyezik: nőt bienvenida szóval köszöntünk. ¡Bienvenida a nuestra clase, María! (Üdvözlünk az osztályunkban, María!)"
   },
   {
     "id": 3474,
@@ -1679,7 +1670,7 @@
     "level": "A2",
     "es": "principal",
     "hu": "fő / legfontosabb",
-    "en": "main / principal",
+    "en": "main",
     "de": "Haupt- / wichtigste",
     "sentence_es": "El problema principal es el dinero.",
     "sentence_hu": "A fő probléma a pénz.",
@@ -1891,7 +1882,7 @@
     "level": "A2",
     "es": "quedar",
     "hu": "maradni / találkozni",
-    "en": "to stay / to meet up",
+    "en": "to be left / to meet up",
     "de": "bleiben / sich treffen",
     "sentence_es": "¿Quedamos a las cinco en el parque?",
     "sentence_hu": "Találkozzunk ötkor a parkban?",
@@ -2512,7 +2503,7 @@
     "level": "A2",
     "es": "preparado",
     "hu": "elkészült / felkészült",
-    "en": "prepared / ready",
+    "en": "ready (prepared, arranged)",
     "de": "vorbereitet / bereit",
     "sentence_es": "He preparado la cena para todos.",
     "sentence_hu": "Elkészítettem a vacsorát mindenkinek.",
@@ -2542,7 +2533,7 @@
     "level": "A2",
     "es": "intentar",
     "hu": "megpróbálni",
-    "en": "to try",
+    "en": "to try (attempt)",
     "de": "versuchen",
     "sentence_es": "He intentado llamar tres veces.",
     "sentence_hu": "Háromszor próbáltam hívni.",
@@ -2715,7 +2706,7 @@
     "level": "A2",
     "es": "el imbécil",
     "hu": "az idióta",
-    "en": "the idiot / the imbecile",
+    "en": "the idiot (strong insult)",
     "de": "der Idiot / der Dummkopf",
     "sentence_es": "No seas imbécil, piensa antes de hablar.",
     "sentence_hu": "Ne légy idióta, gondolkozz, mielőtt beszélsz.",
@@ -3066,7 +3057,7 @@
     "level": "A2",
     "es": "los señores",
     "hu": "az urak / hölgyeim és uraim",
-    "en": "the gentlemen / ladies and gentlemen",
+    "en": "gentlemen (polite address)",
     "de": "die Herren / die meine Damen und Herren",
     "sentence_es": "Señores, la reunión ha terminado.",
     "sentence_hu": "Uraim, az ülés véget ért.",
@@ -3235,7 +3226,7 @@
     "level": "A2",
     "es": "mismos",
     "hu": "ugyanazok / maguk",
-    "en": "same / themselves",
+    "en": "same (identical)",
     "de": "dieselben / selbst",
     "sentence_es": "Siempre vamos a los mismos sitios.",
     "sentence_hu": "Mindig ugyanazokra a helyekre járunk.",
@@ -3331,7 +3322,7 @@
     "level": "A2",
     "es": "brillante",
     "hu": "ragyogó / kiváló",
-    "en": "brilliant",
+    "en": "brilliant (dazzling; a bright idea)",
     "de": "brillant / glänzend",
     "sentence_es": "Has tenido una idea brillante.",
     "sentence_hu": "Ragyogó ötleted volt.",
@@ -3484,7 +3475,7 @@
     "level": "A2",
     "es": "estupendo",
     "hu": "nagyszerű / remek",
-    "en": "great / wonderful",
+    "en": "terrific (great)",
     "de": "großartig / wunderbar",
     "sentence_es": "La fiesta ha sido estupenda.",
     "sentence_hu": "A buli nagyszerű volt.",
@@ -3499,7 +3490,7 @@
     "level": "A2",
     "es": "inmediatamente",
     "hu": "azonnal",
-    "en": "immediately",
+    "en": "immediately (formal, urgent)",
     "de": "sofort",
     "sentence_es": "He llamado al médico inmediatamente.",
     "sentence_hu": "Azonnal hívtam az orvost.",
@@ -3656,7 +3647,7 @@
     "level": "A2",
     "es": "acabar",
     "hu": "befejezni / végezni",
-    "en": "to finish / to end",
+    "en": "to finish (informal)",
     "de": "beenden / aufhören",
     "sentence_es": "Acabo de llegar a casa.",
     "sentence_hu": "Most érkeztem haza.",
@@ -3664,7 +3655,9 @@
     "sentence_de": "Ich bin gerade nach Hause gekommen.",
     "topic": "trabajo_dia_acciones_a2",
     "topicOrder": 23,
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Acabar de + infinitive means to have just done something: Acabo de llegar a casa. (I've just arrived home.)",
+    "note_hu": "Az acabar de + főnévi igenév azt jelenti: éppen most tett valamit: Acabo de llegar a casa. (Most érkeztem haza.)"
   },
   {
     "id": 3611,
@@ -3820,21 +3813,6 @@
     "topicOrder": 6,
     "pos": "noun",
     "gender": "m"
-  },
-  {
-    "id": 3621,
-    "level": "A2",
-    "es": "santa",
-    "hu": "szent (nőnem)",
-    "en": "saint (feminine)",
-    "de": "heilige (feminin)",
-    "sentence_es": "Hoy es la fiesta de Santa María.",
-    "sentence_hu": "Ma van Szent Mária ünnepe.",
-    "sentence_en": "Today is the feast of Saint Mary.",
-    "sentence_de": "Heute ist das Fest der Heiligen Maria.",
-    "topic": "paises",
-    "topicOrder": 5,
-    "pos": "adj"
   },
   {
     "id": 3622,
@@ -4283,7 +4261,7 @@
     "level": "A2",
     "es": "la memoria",
     "hu": "az emlékezet / a memória",
-    "en": "the memory",
+    "en": "memory (the faculty to remember)",
     "de": "das Gedächtnis / der Speicher",
     "sentence_es": "Tengo muy buena memoria para los nombres.",
     "sentence_hu": "Nagyon jó a memóriám nevekre.",
@@ -4419,21 +4397,6 @@
     "topic": "espiritu_pensamientos_a2",
     "topicOrder": 21,
     "pos": "verb"
-  },
-  {
-    "id": 3659,
-    "level": "A2",
-    "es": "bienvenida",
-    "hu": "üdvözöljük (nőnem)",
-    "en": "welcome (feminine)",
-    "de": "willkommen (feminin)",
-    "sentence_es": "¡Bienvenida a nuestra clase, María!",
-    "sentence_hu": "Üdvözlünk az osztályunkban, María!",
-    "sentence_en": "Welcome to our class, María!",
-    "sentence_de": "Willkommen in unserer Klasse, María!",
-    "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 7,
-    "pos": "adj"
   },
   {
     "id": 3660,
@@ -4751,7 +4714,7 @@
     "level": "A2",
     "es": "basta",
     "hu": "elég",
-    "en": "enough / that's enough",
+    "en": "enough! (that's enough)",
     "sentence_es": "¡Basta, por favor!",
     "sentence_hu": "Elég, kérlek!",
     "sentence_en": "Enough, please!",
@@ -4879,7 +4842,7 @@
     "level": "A2",
     "es": "real",
     "hu": "valódi / igazi",
-    "en": "real",
+    "en": "real (not fictional)",
     "sentence_es": "Es un problema real.",
     "sentence_hu": "Ez egy valódi probléma.",
     "sentence_en": "It is a real problem.",
@@ -4987,7 +4950,7 @@
     "level": "A2",
     "es": "el agente",
     "hu": "az ügynök / a rendőr",
-    "en": "agent / officer",
+    "en": "agent (representative)",
     "sentence_es": "El agente llegó rápido.",
     "sentence_hu": "Az ügynök gyorsan érkezett.",
     "sentence_en": "The agent arrived quickly.",
@@ -5204,7 +5167,7 @@
     "level": "A2",
     "es": "el resto",
     "hu": "maradék",
-    "en": "rest / remainder",
+    "en": "the rest (remainder, of a thing)",
     "sentence_es": "Comí el resto.",
     "sentence_hu": "Megettem a maradékot.",
     "sentence_en": "I ate the rest.",
@@ -5220,7 +5183,7 @@
     "level": "A2",
     "es": "extraño",
     "hu": "furcsa",
-    "en": "strange",
+    "en": "odd (unfamiliar; also: a stranger)",
     "sentence_es": "Es un poco extraño.",
     "sentence_hu": "Ez egy kicsit furcsa.",
     "sentence_en": "It is a bit strange.",
@@ -5575,7 +5538,7 @@
   {
     "id": 3730,
     "level": "A2",
-    "es": "la cárcel",
+    "es": "la cárcel / la prisión",
     "hu": "börtön",
     "en": "prison / jail",
     "sentence_es": "Fue a la cárcel.",
@@ -5586,14 +5549,16 @@
     "topic": "trabajo_dia_juzgado_a2",
     "topicOrder": 27,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also used: la prisión, same meaning. El ladrón está en la prisión. (The thief is in prison.)",
+    "note_hu": "Használatos még: la prisión, ugyanaz a jelentés. El ladrón está en la prisión. (A tolvaj börtönben van.)"
   },
   {
     "id": 3731,
     "level": "A2",
     "es": "terminar",
     "hu": "befejezni",
-    "en": "to finish",
+    "en": "to finish (general, formal)",
     "sentence_es": "Voy a terminar pronto.",
     "sentence_hu": "Hamarosan befejezem.",
     "sentence_en": "I am going to finish soon.",
@@ -5728,7 +5693,7 @@
     "level": "A2",
     "es": "el deseo",
     "hu": "kívánság",
-    "en": "wish / desire",
+    "en": "desire (a wish)",
     "sentence_es": "Tengo un deseo especial.",
     "sentence_hu": "Van egy különleges kívánságom.",
     "sentence_en": "I have a special wish.",
@@ -5835,7 +5800,7 @@
     "level": "A2",
     "es": "ser",
     "hu": "van",
-    "en": "to be",
+    "en": "to be (identity)",
     "sentence_es": "Soy ingeniero.",
     "sentence_hu": "Mérnök vagyok.",
     "sentence_en": "I am an engineer.",
@@ -5949,21 +5914,6 @@
     "topic": "trabajo_dia_adjetivos_a2",
     "topicOrder": 28,
     "pos": "pron"
-  },
-  {
-    "id": 3754,
-    "level": "A2",
-    "es": "suerte",
-    "hu": "szerencse",
-    "en": "luck",
-    "sentence_es": "Tuvo suerte en el juego.",
-    "sentence_hu": "Szerencséje volt a játékban.",
-    "sentence_en": "He had luck in the game.",
-    "de": "Glück",
-    "sentence_de": "Er hatte Glück im Spiel.",
-    "topic": "ocio_moda",
-    "topicOrder": 13,
-    "pos": "adj"
   },
   {
     "id": 3755,
@@ -6139,7 +6089,7 @@
     "level": "A2",
     "es": "la razón",
     "hu": "ok",
-    "en": "reason",
+    "en": "reason (justification; being right)",
     "sentence_es": "No entiendo la razón.",
     "sentence_hu": "Nem értem az okot.",
     "sentence_en": "I do not understand the reason.",
@@ -6392,7 +6342,7 @@
     "pos": "adj"
   },
   {
-    "es": "ocurrir",
+    "es": "ocurrir / suceder",
     "hu": "történik/előfordul",
     "en": "to happen / to occur",
     "sentence_es": "¿Qué ocurre aquí?",
@@ -6404,7 +6354,9 @@
     "level": "A2",
     "topic": "trabajo_dia_acciones_a2",
     "topicOrder": 3,
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also used: suceder, same meaning, slightly more formal. ¿Qué sucedió ayer aquí? (What happened here yesterday?)",
+    "note_hu": "Használatos még: suceder, ugyanaz a jelentés, kicsit választékosabb. ¿Qué sucedió ayer aquí? (Mi történt itt tegnap?)"
   },
   {
     "es": "la mitad",
@@ -6425,7 +6377,7 @@
   {
     "es": "oficial",
     "hu": "hivatalos/tiszt",
-    "en": "official / officer",
+    "en": "officer (rank) / official",
     "sentence_es": "El oficial firmó el documento.",
     "sentence_hu": "A tiszt aláírta a dokumentumot.",
     "sentence_en": "The officer signed the document.",
@@ -6518,7 +6470,7 @@
   {
     "es": "los caballeros",
     "hu": "az urak/lovagok",
-    "en": "gentlemen / knights",
+    "en": "gentlemen (formal; also: knights)",
     "sentence_es": "Los caballeros entraron al salón.",
     "sentence_hu": "Az urak beléptek a terembe.",
     "sentence_en": "The gentlemen entered the hall.",
@@ -6534,7 +6486,7 @@
   {
     "es": "salvo",
     "hu": "kivéve/biztonságban",
-    "en": "except / safe",
+    "en": "except (formal) / safe",
     "sentence_es": "Todos llegaron salvo Juan.",
     "sentence_hu": "Mindenki megérkezett, kivéve Juant.",
     "sentence_en": "Everyone arrived except Juan.",
@@ -6644,7 +6596,7 @@
   {
     "es": "hermosa",
     "hu": "gyönyörű/csodálatos",
-    "en": "beautiful / gorgeous",
+    "en": "beautiful (gorgeous, of people)",
     "sentence_es": "Ella tiene una sonrisa hermosa.",
     "sentence_hu": "Gyönyörű mosolya van.",
     "sentence_en": "She has a beautiful smile.",
@@ -6830,7 +6782,7 @@
   {
     "es": "gracioso",
     "hu": "vicces/mulatságos",
-    "en": "funny / amusing",
+    "en": "funny (witty, makes you laugh)",
     "sentence_es": "Ese chiste es muy gracioso.",
     "sentence_hu": "Ez a vicc nagyon mulatságos.",
     "sentence_en": "That joke is very funny.",
@@ -6893,7 +6845,7 @@
   {
     "es": "verdadero",
     "hu": "igazi/valódi",
-    "en": "true / real / genuine",
+    "en": "true (genuine, not fake)",
     "sentence_es": "Eso no es una historia verdadera.",
     "sentence_hu": "Ez nem egy igaz történet.",
     "sentence_en": "That is not a true story.",
@@ -7003,7 +6955,7 @@
   {
     "es": "el director",
     "hu": "az igazgató/rendező",
-    "en": "director / principal",
+    "en": "director / principal (school head)",
     "sentence_es": "El director habló con los padres.",
     "sentence_hu": "Az igazgató beszélt a szülőkkel.",
     "sentence_en": "The director spoke with the parents.",
@@ -7051,7 +7003,7 @@
   {
     "es": "maravilloso",
     "hu": "csodálatos/remek",
-    "en": "wonderful / marvelous",
+    "en": "marvelous (wonderful)",
     "sentence_es": "El concierto fue maravilloso.",
     "sentence_hu": "A koncert csodálatos volt.",
     "sentence_en": "The concert was wonderful.",
@@ -7066,7 +7018,7 @@
   {
     "es": "el espacio",
     "hu": "a tér/hely/űr",
-    "en": "space / room",
+    "en": "space (room, area)",
     "sentence_es": "No hay espacio en la maleta.",
     "sentence_hu": "Nincs hely a bőröndben.",
     "sentence_en": "There is no space in the suitcase.",
@@ -7082,7 +7034,7 @@
   {
     "es": "el rato",
     "hu": "egy kis idő/pillanat",
-    "en": "a while / a moment",
+    "en": "a while (short period)",
     "sentence_es": "Espera un rato, ya vengo.",
     "sentence_hu": "Várj egy kicsit, mindjárt jövök.",
     "sentence_en": "Wait a while, I'll be right back.",
@@ -7130,7 +7082,7 @@
   {
     "es": "los tipos",
     "hu": "a fickók/típusok",
-    "en": "guys / types",
+    "en": "guys (dudes; also: types)",
     "sentence_es": "Esos tipos son muy raros.",
     "sentence_hu": "Azok a fickók nagyon furák.",
     "sentence_en": "Those guys are very weird.",
@@ -7255,21 +7207,6 @@
     "gender": "m"
   },
   {
-    "es": "suceder",
-    "hu": "történni/következni",
-    "en": "to happen / to occur",
-    "sentence_es": "¿Qué sucedió ayer aquí?",
-    "sentence_hu": "Mi történt itt tegnap?",
-    "sentence_en": "What happened here yesterday?",
-    "de": "passieren / geschehen",
-    "sentence_de": "Was ist gestern hier passiert?",
-    "id": 1948,
-    "level": "A2",
-    "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 4,
-    "pos": "verb"
-  },
-  {
     "es": "adentro",
     "hu": "belül/bent",
     "en": "inside",
@@ -7303,7 +7240,7 @@
   {
     "es": "enseguida",
     "hu": "azonnal/rögtön",
-    "en": "right away / immediately",
+    "en": "right away (casual, soon)",
     "sentence_es": "Vuelvo enseguida, no te muevas.",
     "sentence_hu": "Rögtön visszajövök, ne mozdulj.",
     "sentence_en": "I'll be right back, don't move.",
@@ -7333,7 +7270,7 @@
   {
     "es": "el departamento",
     "hu": "a részleg/lakás/osztály",
-    "en": "department / apartment",
+    "en": "department (office)",
     "sentence_es": "Trabajo en el departamento de ventas.",
     "sentence_hu": "Az értékesítési részlegen dolgozom.",
     "sentence_en": "I work in the sales department.",
@@ -7344,7 +7281,9 @@
     "topic": "trabajo_dia_oficina_a2",
     "topicOrder": 3,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "In Latin America departamento also means apartment/flat. Trabajo en el departamento de ventas. (I work in the sales department.)",
+    "note_hu": "Latin-Amerikában a departamento lakást is jelent. Trabajo en el departamento de ventas. (Az értékesítési részlegen dolgozom.)"
   },
   {
     "es": "lindo",
@@ -7408,21 +7347,6 @@
     "topicOrder": 3,
     "pos": "noun",
     "gender": "f"
-  },
-  {
-    "es": "listos",
-    "hu": "készen/felkészülve",
-    "en": "ready",
-    "sentence_es": "¿Estáis listos para salir?",
-    "sentence_hu": "Készen vagytok az indulásra?",
-    "sentence_en": "Are you ready to leave?",
-    "de": "bereit / fertig",
-    "sentence_de": "Seid ihr zum Aufbrechen bereit?",
-    "id": 1958,
-    "level": "A2",
-    "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 3,
-    "pos": "adj"
   },
   {
     "es": "la izquierda",
@@ -7502,22 +7426,6 @@
     "gender": "f"
   },
   {
-    "es": "la prisión",
-    "hu": "a börtön",
-    "en": "prison",
-    "sentence_es": "El ladrón está en la prisión.",
-    "sentence_hu": "A tolvaj börtönben van.",
-    "sentence_en": "The thief is in prison.",
-    "de": "das Gefängnis",
-    "sentence_de": "Der Dieb ist im Gefängnis.",
-    "id": 1964,
-    "level": "A2",
-    "topic": "ocio_film_tv_a2",
-    "topicOrder": 10,
-    "pos": "noun",
-    "gender": "f"
-  },
-  {
     "es": "el público",
     "hu": "a közönség/nyilvánosság",
     "en": "audience / public",
@@ -7536,7 +7444,7 @@
   {
     "es": "la causa",
     "hu": "az ok/ügy",
-    "en": "cause / reason",
+    "en": "cause (the reason behind something)",
     "sentence_es": "No sé la causa del problema.",
     "sentence_hu": "Nem tudom a probléma okát.",
     "sentence_en": "I don't know the cause of the problem.",
@@ -7583,7 +7491,7 @@
   {
     "es": "la zona",
     "hu": "a zóna/körzet/terület",
-    "en": "zone / area",
+    "en": "zone (district, neighborhood)",
     "sentence_es": "Esta zona es muy peligrosa.",
     "sentence_hu": "Ez a körzet nagyon veszélyes.",
     "sentence_en": "This zone is very dangerous.",
@@ -7708,7 +7616,7 @@
   {
     "es": "el momento",
     "hu": "pillanat",
-    "en": "moment",
+    "en": "a moment (point in time)",
     "sentence_es": "Espera un momento, por favor.",
     "sentence_hu": "Várj egy pillanatot, kérlek.",
     "sentence_en": "Wait a moment, please.",
@@ -7847,7 +7755,7 @@
   {
     "es": "tanto",
     "hu": "annyira/annyi",
-    "en": "so much / so many",
+    "en": "so much (uncountable)",
     "sentence_es": "¿Por qué comes tanto?",
     "sentence_hu": "Miért eszel annyit?",
     "sentence_en": "Why do you eat so much?",
@@ -7893,7 +7801,7 @@
   {
     "es": "cierto",
     "hu": "biztos/igaz/bizonyos",
-    "en": "certain / true",
+    "en": "true (certain, correct)",
     "sentence_es": "Es cierto que llegó tarde.",
     "sentence_hu": "Igaz, hogy késve érkezett.",
     "sentence_en": "It is true that he arrived late.",
@@ -7908,7 +7816,7 @@
   {
     "es": "quien",
     "hu": "aki/akit",
-    "en": "who / whoever",
+    "en": "who (singular relative)",
     "sentence_es": "Ella es quien me ayudó.",
     "sentence_hu": "Ő az, aki segített nekem.",
     "sentence_en": "She is the one who helped me.",
@@ -7954,7 +7862,7 @@
   {
     "es": "los chicos",
     "hu": "srácok/fiúk",
-    "en": "guys / boys",
+    "en": "guys (boys, kids)",
     "sentence_es": "Los chicos juegan en el parque.",
     "sentence_hu": "A fiúk a parkban játszanak.",
     "sentence_en": "The boys play in the park.",
@@ -8001,7 +7909,7 @@
   {
     "es": "la forma",
     "hu": "mód/alak/forma",
-    "en": "way / form / shape",
+    "en": "way (form, shape)",
     "sentence_es": "No hay forma de saberlo.",
     "sentence_hu": "Nincs mód megtudni.",
     "sentence_en": "There is no way to know.",
@@ -8017,7 +7925,7 @@
   {
     "es": "el primero",
     "hu": "első",
-    "en": "first",
+    "en": "the first one",
     "sentence_es": "Ella fue la primera en llegar.",
     "sentence_hu": "Ő érkezett elsőnek.",
     "sentence_en": "She was the first to arrive.",
@@ -8033,7 +7941,7 @@
   {
     "es": "genial",
     "hu": "remek/zseniális",
-    "en": "great / brilliant",
+    "en": "awesome (great, casual)",
     "sentence_es": "¡Eso es una idea genial!",
     "sentence_hu": "Ez egy remek ötlet!",
     "sentence_en": "That is a great idea!",
@@ -8063,7 +7971,7 @@
   {
     "es": "la manera",
     "hu": "mód/módszer",
-    "en": "way / manner",
+    "en": "way (manner, method)",
     "sentence_es": "Hay una mejor manera de hacerlo.",
     "sentence_hu": "Van egy jobb módja ennek.",
     "sentence_en": "There is a better way to do it.",
@@ -8110,7 +8018,7 @@
   {
     "es": "siquiera",
     "hu": "legalább/még csak",
-    "en": "even / at least",
+    "en": "even (in negatives: not even)",
     "sentence_es": "Ni siquiera me llamó.",
     "sentence_hu": "Még csak fel sem hívott.",
     "sentence_en": "He did not even call me.",
@@ -8203,7 +8111,7 @@
   {
     "es": "bastante",
     "hu": "elég/eléggé",
-    "en": "quite / enough",
+    "en": "quite (enough, sufficiently)",
     "sentence_es": "El examen fue bastante difícil.",
     "sentence_hu": "A vizsga elég nehéz volt.",
     "sentence_en": "The exam was quite difficult.",
@@ -8249,7 +8157,7 @@
   {
     "es": "incluso",
     "hu": "még/sőt/akár",
-    "en": "even / including",
+    "en": "even (including; positive)",
     "sentence_es": "Incluso él cometió un error.",
     "sentence_hu": "Még ő is hibázott.",
     "sentence_en": "Even he made a mistake.",
@@ -8280,7 +8188,7 @@
   {
     "es": "arriba",
     "hu": "fent/felfelé",
-    "en": "up / above",
+    "en": "above (up, upward)",
     "sentence_es": "El gato está arriba de la mesa.",
     "sentence_hu": "A macska az asztal fölött van.",
     "sentence_en": "The cat is on top of the table.",
@@ -8327,7 +8235,7 @@
   {
     "es": "igual",
     "hu": "ugyanolyan/mindegy/egyenlő",
-    "en": "same / equal / anyway",
+    "en": "equal (same) / anyway",
     "sentence_es": "Me da igual lo que piensen.",
     "sentence_hu": "Mindegy nekem, mit gondolnak.",
     "sentence_en": "It does not matter to me what they think.",
@@ -8342,7 +8250,7 @@
   {
     "es": "la vuelta",
     "hu": "visszaút/fordulat/séta",
-    "en": "return / turn / walk",
+    "en": "a walk (stroll) / return",
     "sentence_es": "Damos una vuelta por el parque.",
     "sentence_hu": "Egyet sétálunk a parkban.",
     "sentence_en": "We take a walk around the park.",
@@ -8390,7 +8298,7 @@
   {
     "es": "listo",
     "hu": "kész/okos",
-    "en": "ready / clever",
+    "en": "ready (about to; also: clever)",
     "sentence_es": "¿Estás listo para salir?",
     "sentence_hu": "Készen állsz az indulásra?",
     "sentence_en": "Are you ready to leave?",
@@ -8452,7 +8360,7 @@
   {
     "es": "la culpa",
     "hu": "hiba/bűn/felelősség",
-    "en": "fault / blame / guilt",
+    "en": "blame (guilt, fault)",
     "sentence_es": "No es mi culpa lo que pasó.",
     "sentence_hu": "Nem az én hibám, ami történt.",
     "sentence_en": "What happened is not my fault.",
@@ -8530,7 +8438,7 @@
   {
     "es": "el idiota",
     "hu": "idióta/buta",
-    "en": "idiot / fool",
+    "en": "idiot (mild insult)",
     "sentence_es": "No seas idiota y escúchame.",
     "sentence_hu": "Ne légy idióta, és hallgass rám.",
     "sentence_en": "Do not be an idiot and listen to me.",
@@ -8546,7 +8454,7 @@
   {
     "es": "el cuarto",
     "hu": "szoba/negyed",
-    "en": "room / quarter",
+    "en": "room (in a house)",
     "sentence_es": "Mi cuarto está en el segundo piso.",
     "sentence_hu": "A szobám a második emeleten van.",
     "sentence_en": "My room is on the second floor.",
@@ -8578,7 +8486,7 @@
   {
     "es": "el modo",
     "hu": "mód/módszer",
-    "en": "mode / way",
+    "en": "way (mode; formal)",
     "sentence_es": "No hay modo de arreglarlo hoy.",
     "sentence_hu": "Nincs mód ma megjavítani.",
     "sentence_en": "There is no way to fix it today.",
@@ -8594,7 +8502,7 @@
   {
     "es": "los demás",
     "hu": "a többiek/mások",
-    "en": "the others / the rest",
+    "en": "the others (rest of the people)",
     "sentence_es": "Los demás ya llegaron a casa.",
     "sentence_hu": "A többiek már hazaértek.",
     "sentence_en": "The others have already arrived home.",
@@ -8658,7 +8566,7 @@
   {
     "es": "divertido",
     "hu": "szórakoztató/vicces",
-    "en": "fun / funny",
+    "en": "fun (enjoyable, entertaining)",
     "sentence_es": "La fiesta fue muy divertida.",
     "sentence_hu": "A buli nagyon szórakoztató volt.",
     "sentence_en": "The party was very fun.",
@@ -8689,7 +8597,7 @@
   {
     "es": "el asunto",
     "hu": "ügy/dolog",
-    "en": "matter / issue / subject",
+    "en": "matter / issue (subject, affair)",
     "sentence_es": "Es un asunto muy complicado.",
     "sentence_hu": "Ez egy nagyon bonyolult ügy.",
     "sentence_en": "It is a very complicated matter.",
@@ -8721,7 +8629,7 @@
   {
     "es": "encima",
     "hu": "fölött/tetején",
-    "en": "on top / above",
+    "en": "on top (directly above)",
     "sentence_es": "El libro está encima de la silla.",
     "sentence_hu": "A könyv a szék tetején van.",
     "sentence_en": "The book is on top of the chair.",
@@ -8782,7 +8690,7 @@
   {
     "es": "siguiente",
     "hu": "következő",
-    "en": "next / following",
+    "en": "next (following, in sequence)",
     "sentence_es": "El siguiente tren llega en diez minutos.",
     "sentence_hu": "A következő vonat tíz perc múlva érkezik.",
     "sentence_en": "The next train arrives in ten minutes.",
@@ -9109,7 +9017,7 @@
   {
     "es": "el área",
     "hu": "terület",
-    "en": "area",
+    "en": "area (measured space, field)",
     "sentence_es": "Esta área es muy peligrosa de noche.",
     "sentence_hu": "Ez a terület éjjel nagyon veszélyes.",
     "sentence_en": "This area is very dangerous at night.",
@@ -10180,7 +10088,7 @@
   {
     "es": "tantos",
     "hu": "annyi/ennyi sok",
-    "en": "so many",
+    "en": "so many (countable, plural)",
     "sentence_es": "No esperaba tantos problemas hoy.",
     "sentence_hu": "Nem számítottam ennyi problémára ma.",
     "sentence_en": "I didn't expect so many problems today.",
@@ -10289,7 +10197,7 @@
   {
     "es": "bello",
     "hu": "szép/gyönyörű",
-    "en": "beautiful",
+    "en": "beautiful (scenic, literary)",
     "sentence_es": "El paisaje de este país es muy bello.",
     "sentence_hu": "Ennek az országnak a tája nagyon szép.",
     "sentence_en": "The landscape of this country is very beautiful.",
@@ -10335,7 +10243,7 @@
   {
     "es": "excepto",
     "hu": "kivéve",
-    "en": "except",
+    "en": "except (standard, neutral)",
     "sentence_es": "Todos vinieron excepto tú.",
     "sentence_hu": "Mindenki eljött, kivéve te.",
     "sentence_en": "Everyone came except you.",
@@ -10540,7 +10448,7 @@
   {
     "es": "parar",
     "hu": "megállni/abbahagyni",
-    "en": "to stop",
+    "en": "to stop (something, general)",
     "sentence_es": "Por favor, para el coche aquí.",
     "sentence_hu": "Kérlek, állítsd meg itt az autót.",
     "sentence_en": "Please stop the car here.",
@@ -12401,7 +12309,7 @@
   {
     "es": "primero",
     "hu": "első",
-    "en": "first",
+    "en": "first (ordinal)",
     "sentence_es": "Fui el primero en llegar.",
     "sentence_hu": "Én érkeztem elsőként.",
     "sentence_en": "I was the first to arrive.",

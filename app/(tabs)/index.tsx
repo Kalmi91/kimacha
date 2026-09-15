@@ -29,6 +29,7 @@ import { filterLockedSentences } from '@/lib/grammar/tenseGate';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { cardIcon } from '@/lib/cardIcons';
 import { cardImage } from '@/lib/cardImages';
+import { cardMarkers } from '@/lib/cardMarkers';
 import FeedbackButton from '@/components/FeedbackModal';
 import { speak as speakIn, loadVoices } from '@/lib/speech';
 import MockExamMode from '@/components/exam/MockExamMode';
@@ -1173,6 +1174,9 @@ export default function LearnScreen() {
   // shown on both sides since it belongs to the meaning, not to one language.
   const icon = cardIcon(current.word as any, direction[1]);
   const iconBadge = icon ? <Text style={styles.cardIcon}>{icon}</Text> : null;
+  // PROMPT-POLICY 6/7: Mexico-flag + irregular-plural chip, next to the prompt,
+  // shown on every lap of the word (not only after the answer is revealed).
+  const markers = cardMarkers(current.word as any, s);
   // FB124/FB127: a photo for words a gloss cannot picture ("the tapa").
   const photo = cardImage(current.word as any, direction[1]);
   const photoBlock = photo ? (
@@ -1228,6 +1232,18 @@ export default function LearnScreen() {
         <View style={[styles.chip, styles.chipOutline, { borderColor: colors.accent }]}>
           <Text style={[styles.chipText, { color: colors.accent }]} numberOfLines={1} maxFontSizeMultiplier={1.3}>
             {s.card.fromTopic(`${borrowedTopic.icon ?? ''} ${getTopicName(borrowedTopic, topicLang)}`.trim())}
+          </Text>
+        </View>
+      )}
+      {markers.flag && (
+        <Text style={{ fontSize: 16 }} accessibilityLabel={markers.flagLabel} maxFontSizeMultiplier={1.3}>
+          {markers.flag}
+        </Text>
+      )}
+      {markers.chip && (
+        <View style={[styles.chip, styles.chipOutline, { borderColor: colors.accent }]}>
+          <Text style={[styles.chipText, { color: colors.accent }]} numberOfLines={1} maxFontSizeMultiplier={1.3}>
+            {markers.chip}
           </Text>
         </View>
       )}
