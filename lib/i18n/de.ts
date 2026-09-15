@@ -30,6 +30,10 @@ export default {
     spellingTapHint: 'Tippe ein Wort an, um seine Schreibung zu üben',
     spellingAddedWord: (word: string) => `✓ "${word}" ist in deiner Rechtschreibliste`,
     spellingNoCardWord: (word: string) => `"${word}" hat noch keine Wortkarte`,
+    // PROMPT-POLICY 6/7: Regions-Flagge + Markierung für unregelmäßigen Plural, neben dem Prompt.
+    regionMx: 'In Mexiko gebräuchlich',
+    irregularPlural: 'unregelmäßiger Plural',
+    pluralOnly: 'nur im Plural',
   },
   buttons: {
     again: 'Nochmal',
