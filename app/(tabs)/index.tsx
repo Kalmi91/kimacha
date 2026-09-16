@@ -1394,7 +1394,7 @@ export default function LearnScreen() {
               ha a helyes alak névelőtlen, különben a puszta megjelenése elárulná,
               hogy kell névelő. ⊘ az alapállás, tehát aki nem nyúl hozzá, gépel.
               FB214: igénél és melléknévnél is ott a sor, ⊘-val a helyes válasz. */}
-          {articlePickerOn && articlePickerApplies(backLang, current.type === 'word') && (
+          {articlePickerOn && articlePickerApplies(backLang, current.type === 'word', back) && (
             <View style={styles.articleRow}>
               {([...ARTICLE_OPTIONS, ''] as ArticlePick[]).map((opt) => {
                 const active = articlePick === opt;

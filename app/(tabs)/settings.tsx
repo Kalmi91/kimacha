@@ -366,18 +366,8 @@ export default function SettingsScreen() {
         </View>
       )}
 
-      {/* FB147: the congratulation for a reached weekly goal, as big as the
-          screen allows, right above the goal row it belongs to. */}
-      {goalReached && (
-        <View style={[styles.goalDoneCard, { backgroundColor: colors.card }]}>
-          <Text style={styles.goalDoneEmoji}>🏆</Text>
-          <Text style={styles.goalDoneTitle}>{s.settings.weeklyGoalDone}</Text>
-          <Text style={[styles.goalDoneText, { color: colors.text }]}>
-            {s.settings.weeklyGoalDoneText(String(Math.round(weekMinutes / 60)), String(Math.round(weeklyGoal / 60)))}
-          </Text>
-        </View>
-      )}
-
+      {/* FB281: the FB147 "weekly goal reached" card is gone (Kálmán: felesleges);
+          the reached state stays as the green tag on the goal row below. */}
       {/* FB65: weekly study goal in whole hours, shown on the Stats tab. */}
       <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.weeklyGoal}</Text>
@@ -753,13 +743,7 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   // FB65: −/+ stepper for the weekly goal row.
-  // FB147: the reached-goal congratulation, deliberately the biggest block on
-  // the Settings screen.
   missingVoiceText: { fontSize: 13, lineHeight: 18, flex: 1 },
-  goalDoneCard: { borderRadius: 16, padding: 20, marginBottom: 12, alignItems: 'center', gap: 6 },
-  goalDoneEmoji: { fontSize: 56 },
-  goalDoneTitle: { fontSize: 26, fontWeight: '800', color: '#22C55E', textAlign: 'center' },
-  goalDoneText: { fontSize: 14, textAlign: 'center' },
   goalStepper: {
     flexDirection: 'row',
     alignItems: 'center',
