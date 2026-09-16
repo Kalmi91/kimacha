@@ -66,6 +66,28 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
     }
   });
 
+  it('every example translation is a translation, not the Spanish sentence again', () => {
+    const pairs: { es: string; tr: Record<string, string> }[] = [];
+    const collect = (o: unknown) => {
+      if (Array.isArray(o)) o.forEach(collect);
+      else if (o && typeof o === 'object') {
+        const rec = o as Record<string, unknown>;
+        if (typeof rec.es === 'string' && rec.tr && typeof rec.tr === 'object') {
+          pairs.push(rec as { es: string; tr: Record<string, string> });
+        }
+        Object.values(rec).forEach(collect);
+      }
+    };
+    collect(lesson.body);
+    expect(pairs.length).toBeGreaterThan(0);
+    for (const pair of pairs) {
+      for (const lang of ['hu', 'en', 'de'] as const) {
+        expect(pair.tr[lang]).toBeTruthy();
+        expect(pair.tr[lang].trim()).not.toBe(pair.es.trim());
+      }
+    }
+  });
+
   it('every contrast pair has a 4-language note and at least 2 examples', () => {
     for (const block of lesson.body) {
       if (block.kind !== 'contrast') continue;
