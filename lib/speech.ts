@@ -27,7 +27,7 @@
 // throws), every language counts as available and no voice is pinned, i.e. the
 // app behaves exactly as it did before this module.
 
-import { Platform } from 'react-native';
+import { AppState, Platform } from 'react-native';
 import * as Speech from 'expo-speech';
 
 let voiceLanguages: Set<string> | null = null;
@@ -155,6 +155,23 @@ export function stop(): void {
 // tér el, a képernyő oldalán olvashatóbb, mit csinál a gombnyomás.
 export function stopSpeaking(): void {
   stop();
+}
+
+// FB232, Kálmán 2026-09-11 (word:the fish): „ha sokat lépkedek ki-be az appból
+// ... az appnak ment el a hangja". Az Android TTS-motor egy háttérbe küldött,
+// félbehagyott utterance-en meg tud akadni, és utána némán marad. Ezért az app
+// minden állapotváltásánál (háttérbe / vissza előtérbe) leállítjuk a motort:
+// háttérben úgysem szólhat tovább, előtérbe érve pedig tiszta lappal indul a
+// következő speak(). A gyökér-layout köti be, az usageTimer mintájára.
+let appStateSub: { remove(): void } | null = null;
+
+export function watchAppStateForSpeech(): () => void {
+  appStateSub?.remove();
+  appStateSub = AppState.addEventListener('change', () => stop());
+  return () => {
+    appStateSub?.remove();
+    appStateSub = null;
+  };
 }
 
 // FB216: a kevert nyelvű szöveg szakaszonként más hanggal szól (lib/mixedSpeech.ts

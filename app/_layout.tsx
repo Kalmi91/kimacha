@@ -12,6 +12,7 @@ import { initI18n, setLanguage } from '@/lib/i18n';
 import { sendAnalyticsIfNeeded } from '@/lib/analytics';
 import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
 import { startUsageTimer, stopUsageTimer, noteInteraction } from '@/lib/usageTimer';
+import { watchAppStateForSpeech } from '@/lib/speech';
 import UsageToast from '@/components/UsageToast';
 import StatusBarStrip from '@/components/StatusBarStrip';
 
@@ -76,7 +77,12 @@ function RootLayoutNav() {
   // individual screen/handler needs to be patched.
   useEffect(() => {
     startUsageTimer();
-    return () => stopUsageTimer();
+    // FB232: a TTS-motor háttérbe / előtérbe váltásnál leáll, hogy ne akadjon be.
+    const unwatchSpeech = watchAppStateForSpeech();
+    return () => {
+      stopUsageTimer();
+      unwatchSpeech();
+    };
   }, []);
 
   return (
