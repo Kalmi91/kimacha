@@ -1,4 +1,5 @@
 {
+  "schema": 2,
   "topic": "verbos-reflexivos",
   "level": "A2",
   "title": {
@@ -7,17 +8,432 @@
     "es": "Verbos reflexivos: lo haces a ti mismo",
     "de": "Reflexive Verben: du tust es dir selbst"
   },
-  "rule": {
-    "hu": "A visszaható igénél a cselekvő és az, akire a cselekvés irányul, ugyanaz a személy. Ezért egy névmás mutatja, kire irányul: me/te/se/nos/se, mindig a ragozott ige ELŐTT. Yo me levanto (én magamat felkeltem). Tú te llamas. Él/ella/usted se ducha. Nosotros nos acostamos. Ellos/ellas/ustedes se despiertan. A névmás a SZEMÉLYHEZ igazodik, nem az igéhez.",
-    "en": "With a reflexive verb, the doer and the one affected are the same person, so a pronoun shows who: me/te/se/nos/se, always BEFORE the conjugated verb. Yo me levanto (I get myself up). Tú te llamas. Él/ella/usted se ducha. Nosotros nos acostamos. Ellos/ellas/ustedes se despiertan. The pronoun agrees with the PERSON, not with the verb ending.",
-    "es": "En el verbo reflexivo, quien hace la acción y quien la recibe son la misma persona, por eso un pronombre marca a quién: me/te/se/nos/se, siempre ANTES del verbo conjugado. Yo me levanto. Tú te llamas. Él/ella/usted se ducha. Nosotros nos acostamos. Ellos/ellas/ustedes se despiertan. El pronombre concuerda con la PERSONA, no con la terminación del verbo.",
-    "de": "Beim reflexiven Verb sind Handelnder und Betroffener dieselbe Person, deshalb zeigt ein Pronomen, wer gemeint ist: me/te/se/nos/se, immer VOR dem konjugierten Verb. Yo me levanto. Tú te llamas. Él/ella/usted se ducha. Nosotros nos acostamos. Ellos/ellas/ustedes se despiertan. Das Pronomen richtet sich nach der PERSON, nicht nach der Verbendung."
-  },
-  "more": {
-    "hu": "Sok ige jelentése megváltozik a visszaható -se hozzáadásával: dormir = aludni, de dormirse = elaludni (a pillanat, amikor elalszol). Ir = menni valahova, de irse = elmenni, otthagyni egy helyet. Llamar = hívni valakit (telefonon), de llamarse = úgy hívnak/nevezni magad. Nem ugyanaz az ige két jelentéssel: két külön szó, tanuld párban.",
-    "en": "Many verbs shift meaning when you add the reflexive -se: dormir = to sleep, but dormirse = to fall asleep (the moment sleep starts). Ir = to go somewhere, but irse = to leave, to go away from a place. Llamar = to call someone (on the phone), but llamarse = to be called, to be named. Treat these as two different words, learn them in pairs.",
-    "es": "Muchos verbos cambian de significado al añadir el -se reflexivo: dormir = descansar durmiendo, pero dormirse = empezar a dormir de repente. Ir = desplazarse a un lugar, pero irse = marcharse de un lugar. Llamar = contactar a alguien por teléfono, pero llamarse = tener determinado nombre. Son casi dos palabras distintas, apréndelas en pareja.",
-    "de": "Viele Verben ändern ihre Bedeutung mit dem reflexiven -se: dormir = schlafen, aber dormirse = einschlafen (der Moment, in dem der Schlaf beginnt). Ir = irgendwohin gehen, aber irse = weggehen, einen Ort verlassen. Llamar = jemanden anrufen, aber llamarse = heißen, genannt werden. Lerne sie als zwei getrennte Wörter, im Paar."
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A visszaható igénél ugyanaz a személy végzi a cselekvést és kapja is meg: felkelsz, lezuhanyzol, lefekszel saját magadnak. Egy kis névmás (me, te, se, nos, os, se) mutatja, kire irányul a cselekvés, mindig közvetlenül a ragozott ige előtt.",
+        "en": "With a reflexive verb, the same person both does the action and receives it: you get yourself up, shower yourself, put yourself to bed. A small pronoun (me, te, se, nos, os, se) shows who the action is aimed at, always right before the conjugated verb.",
+        "es": "En el verbo reflexivo, la misma persona hace la acción y también la recibe: te levantas, te duchas, te acuestas a ti mismo. Un pequeño pronombre (me, te, se, nos, os, se) muestra a quién va dirigida la acción, siempre justo antes del verbo conjugado.",
+        "de": "Beim reflexiven Verb tut dieselbe Person die Handlung und empfängt sie auch: du stehst dich selbst auf, duschst dich, legst dich hin. Ein kleines Pronomen (me, te, se, nos, os, se) zeigt, an wen die Handlung gerichtet ist, immer direkt vor dem konjugierten Verb."
+      }
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Hol jelenik meg a visszaható ige",
+        "en": "Where reflexive verbs show up",
+        "es": "Dónde aparece el verbo reflexivo",
+        "de": "Wo reflexive Verben vorkommen"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Napi rutin: amit magaddal teszel reggel és este.",
+            "en": "Daily routine: what you do to yourself morning and night.",
+            "es": "Rutina diaria: lo que haces contigo mismo por la mañana y por la noche.",
+            "de": "Tagesablauf: was du morgens und abends mit dir selbst tust."
+          },
+          "examples": [
+            {
+              "es": "Me levanto a las siete.",
+              "tr": {
+                "hu": "Hét órakor kelek fel.",
+                "en": "I get up at seven.",
+                "es": "Me levanto a las siete.",
+                "de": "Ich stehe um sieben auf."
+              }
+            },
+            {
+              "es": "Se ducha antes de desayunar.",
+              "tr": {
+                "hu": "Reggeli előtt lezuhanyzik.",
+                "en": "He showers before breakfast.",
+                "es": "Se ducha antes de desayunar.",
+                "de": "Er duscht vor dem Frühstück."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Néhány ige mást jelent visszaható -se nélkül és -sel: dormir/dormirse, ir/irse, llamar/llamarse.",
+            "en": "Some verbs mean something different without and with the reflexive -se: dormir/dormirse, ir/irse, llamar/llamarse.",
+            "es": "Algunos verbos significan algo distinto sin y con el -se reflexivo: dormir/dormirse, ir/irse, llamar/llamarse.",
+            "de": "Manche Verben bedeuten ohne und mit dem reflexiven -se etwas anderes: dormir/dormirse, ir/irse, llamar/llamarse."
+          },
+          "examples": [
+            {
+              "es": "Duermo bien en mi cama.",
+              "tr": {
+                "hu": "Jól alszom az ágyamban.",
+                "en": "I sleep well in my bed.",
+                "es": "Duermo bien en mi cama.",
+                "de": "Ich schlafe gut in meinem Bett."
+              }
+            },
+            {
+              "es": "Me duermo antes de las diez.",
+              "tr": {
+                "hu": "Tíz előtt elalszom.",
+                "en": "I fall asleep before ten.",
+                "es": "Me duermo antes de las diez.",
+                "de": "Ich schlafe vor zehn ein."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Kölcsönös cselekvés: két vagy több ember csinálja egymással ugyanazt.",
+            "en": "Reciprocal action: two or more people do it to each other.",
+            "es": "Acción recíproca: dos o más personas se la hacen la una a la otra.",
+            "de": "Wechselseitige Handlung: zwei oder mehr Personen tun es sich gegenseitig."
+          },
+          "examples": [
+            {
+              "es": "Mis padres se quieren mucho.",
+              "tr": {
+                "hu": "A szüleim nagyon szeretik egymást.",
+                "en": "My parents love each other a lot.",
+                "es": "Mis padres se quieren mucho.",
+                "de": "Meine Eltern lieben sich sehr."
+              }
+            },
+            {
+              "es": "Nos vemos todos los días.",
+              "tr": {
+                "hu": "Mindennap találkozunk.",
+                "en": "We see each other every day.",
+                "es": "Nos vemos todos los días.",
+                "de": "Wir sehen uns jeden Tag."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Állapotváltozás: valamivé válsz, vagy egy helyen maradsz: ponerse, quedarse.",
+            "en": "Change of state: you become something, or you stay somewhere: ponerse, quedarse.",
+            "es": "Cambio de estado: te vuelves algo, o te quedas en un lugar: ponerse, quedarse.",
+            "de": "Zustandsänderung: du wirst etwas, oder du bleibst irgendwo: ponerse, quedarse."
+          },
+          "examples": [
+            {
+              "es": "Se pone contento con el regalo.",
+              "tr": {
+                "hu": "Megörül az ajándéknak.",
+                "en": "He gets happy about the gift.",
+                "es": "Se pone contento con el regalo.",
+                "de": "Er freut sich über das Geschenk."
+              }
+            },
+            {
+              "es": "Me quedo en casa esta noche.",
+              "tr": {
+                "hu": "Ma este otthon maradok.",
+                "en": "I am staying home tonight.",
+                "es": "Me quedo en casa esta noche.",
+                "de": "Ich bleibe heute Abend zu Hause."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "reflexivos-presente",
+      "title": {
+        "hu": "Visszaható igék, jelen idő",
+        "en": "Reflexive verbs, present tense",
+        "es": "Verbos reflexivos, presente",
+        "de": "Reflexive Verben, Präsens"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "levantarse",
+          "en": "levantarse",
+          "es": "levantarse",
+          "de": "levantarse"
+        },
+        {
+          "hu": "ducharse",
+          "en": "ducharse",
+          "es": "ducharse",
+          "de": "ducharse"
+        },
+        {
+          "hu": "acostarse",
+          "en": "acostarse",
+          "es": "acostarse",
+          "de": "acostarse"
+        }
+      ],
+      "rows": [
+        ["yo", "me levanto", "me ducho", "me acuesto"],
+        ["tú", "te levantas", "te duchas", "te acuestas"],
+        ["él/ella/usted", "se levanta", "se ducha", "se acuesta"],
+        ["nosotros", "nos levantamos", "nos duchamos", "nos acostamos"],
+        ["vosotros", "os levantáis", "os ducháis", "os acostáis"],
+        ["ellos/ellas/ustedes", "se levantan", "se duchan", "se acuestan"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Mikor használjuk a visszaható igét?",
+        "en": "When do we use a reflexive verb?",
+        "es": "¿Cuándo usamos el verbo reflexivo?",
+        "de": "Wann benutzen wir das reflexive Verb?"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Napi, saját magadon végzett cselekvésekre: felkelés, mosakodás, öltözködés, lefekvés.",
+            "en": "For daily actions you do to yourself: getting up, washing, dressing, going to bed.",
+            "es": "Para acciones diarias que haces contigo mismo: levantarte, lavarte, vestirte, acostarte.",
+            "de": "Für tägliche Handlungen, die du an dir selbst vornimmst: aufstehen, waschen, anziehen, ins Bett gehen."
+          },
+          "examples": [
+            {
+              "es": "Me visto rápido por la mañana.",
+              "tr": {
+                "hu": "Reggel gyorsan felöltözöm.",
+                "en": "I get dressed quickly in the morning.",
+                "es": "Me visto rápido por la mañana.",
+                "de": "Ich ziehe mich morgens schnell an."
+              }
+            },
+            {
+              "es": "Nos lavamos antes de comer.",
+              "tr": {
+                "hu": "Evés előtt megmosakodunk.",
+                "en": "We wash up before eating.",
+                "es": "Nos lavamos antes de comer.",
+                "de": "Wir waschen uns vor dem Essen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Kölcsönös cselekvésre, amikor két vagy több ember ugyanazt teszi egymással.",
+            "en": "For reciprocal actions, when two or more people do the same thing to each other.",
+            "es": "Para acciones recíprocas, cuando dos o más personas se hacen lo mismo entre sí.",
+            "de": "Für wechselseitige Handlungen, wenn zwei oder mehr Personen einander dasselbe tun."
+          },
+          "examples": [
+            {
+              "es": "Se escriben cada semana.",
+              "tr": {
+                "hu": "Minden héten írnak egymásnak.",
+                "en": "They write to each other every week.",
+                "es": "Se escriben cada semana.",
+                "de": "Sie schreiben sich jede Woche."
+              }
+            },
+            {
+              "es": "Nos ayudamos siempre.",
+              "tr": {
+                "hu": "Mindig segítünk egymásnak.",
+                "en": "We always help each other.",
+                "es": "Nos ayudamos siempre.",
+                "de": "Wir helfen uns immer."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Egy állapot vagy érzés megváltozására: ponerse + melléknév, quedarse + melléknév vagy hely.",
+            "en": "For a change of state or feeling: ponerse + adjective, quedarse + adjective or place.",
+            "es": "Para un cambio de estado o sentimiento: ponerse + adjetivo, quedarse + adjetivo o lugar.",
+            "de": "Für eine Zustands- oder Gefühlsänderung: ponerse + Adjektiv, quedarse + Adjektiv oder Ort."
+          },
+          "examples": [
+            {
+              "es": "Se pone nervioso antes del examen.",
+              "tr": {
+                "hu": "Ideges lesz a vizsga előtt.",
+                "en": "He gets nervous before the exam.",
+                "es": "Se pone nervioso antes del examen.",
+                "de": "Er wird vor der Prüfung nervös."
+              }
+            },
+            {
+              "es": "Nos quedamos tristes con la noticia.",
+              "tr": {
+                "hu": "Szomorúak leszünk a hírtől.",
+                "en": "We become sad at the news.",
+                "es": "Nos quedamos tristes con la noticia.",
+                "de": "Wir werden traurig über die Nachricht."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A névmás a ragozott ige ELŐTT áll, de főnévi igenévhez vagy gerundiumhoz hozzá is tapadhat: voy a levantarme, me voy a levantar.",
+            "en": "The pronoun goes BEFORE the conjugated verb, but it can also attach to an infinitive or a gerund: voy a levantarme, me voy a levantar.",
+            "es": "El pronombre va ANTES del verbo conjugado, pero también puede pegarse a un infinitivo o a un gerundio: voy a levantarme, me voy a levantar.",
+            "de": "Das Pronomen steht VOR dem konjugierten Verb, kann aber auch an einen Infinitiv oder ein Gerundium angehängt werden: voy a levantarme, me voy a levantar."
+          },
+          "examples": [
+            {
+              "es": "Voy a ducharme ahora.",
+              "tr": {
+                "hu": "Most fogok zuhanyozni.",
+                "en": "I am going to shower now.",
+                "es": "Voy a ducharme ahora.",
+                "de": "Ich werde jetzt duschen."
+              }
+            },
+            {
+              "es": "Está vistiéndose para la fiesta.",
+              "tr": {
+                "hu": "Éppen öltözik a bulira.",
+                "en": "She is getting dressed for the party.",
+                "es": "Está vistiéndose para la fiesta.",
+                "de": "Sie zieht sich gerade für die Party an."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Majdnem ugyanaz, más jelentés",
+        "en": "Almost the same, different meaning",
+        "es": "Casi lo mismo, otro significado",
+        "de": "Fast dasselbe, andere Bedeutung"
+      },
+      "confusables": "quedar-quedarse",
+      "pairs": [
+        {
+          "a": "dormir",
+          "b": "dormirse",
+          "note": {
+            "hu": "A dormir maga az alvás állapota, a dormirse az elalvás pillanata, amikor a hétköznapi éberségből átcsúszol az alvásba.",
+            "en": "Dormir is the state of sleeping itself, dormirse is the moment sleep begins, when you slip from being awake into sleep.",
+            "es": "Dormir es el estado de dormir en sí, dormirse es el momento en que empieza el sueño, cuando pasas de estar despierto a dormir.",
+            "de": "Dormir ist der Schlafzustand selbst, dormirse ist der Moment, in dem der Schlaf beginnt, wenn du vom Wachsein in den Schlaf hinübergleitest."
+          },
+          "examples": [
+            {
+              "es": "Duermo ocho horas cada noche.",
+              "tr": {
+                "hu": "Minden éjjel nyolc órát alszom.",
+                "en": "I sleep eight hours every night.",
+                "es": "Duermo ocho horas cada noche.",
+                "de": "Ich schlafe jede Nacht acht Stunden."
+              }
+            },
+            {
+              "es": "Me duermo viendo la tele.",
+              "tr": {
+                "hu": "Elalszom, miközben a tévét nézem.",
+                "en": "I fall asleep while watching TV.",
+                "es": "Me duermo viendo la tele.",
+                "de": "Ich schlafe beim Fernsehen ein."
+              }
+            }
+          ]
+        },
+        {
+          "a": "ir",
+          "b": "irse",
+          "note": {
+            "hu": "Az ir egy hely felé történő mozgást jelent, az irse magát a távozást hangsúlyozza, mintha otthagynál egy helyet.",
+            "en": "Ir means moving toward a place, irse emphasizes the departure itself, as if you were leaving a place behind.",
+            "es": "Ir significa moverse hacia un lugar, irse pone el énfasis en la partida misma, como si dejaras un lugar atrás.",
+            "de": "Ir bedeutet, sich auf einen Ort zuzubewegen, irse betont das Weggehen selbst, als würdest du einen Ort hinter dir lassen."
+          },
+          "examples": [
+            {
+              "es": "Voy a la escuela todos los días.",
+              "tr": {
+                "hu": "Minden nap iskolába megyek.",
+                "en": "I go to school every day.",
+                "es": "Voy a la escuela todos los días.",
+                "de": "Ich gehe jeden Tag zur Schule."
+              }
+            },
+            {
+              "es": "Me voy ahora, hasta luego.",
+              "tr": {
+                "hu": "Most elmegyek, viszlát.",
+                "en": "I am leaving now, see you later.",
+                "es": "Me voy ahora, hasta luego.",
+                "de": "Ich gehe jetzt, bis später."
+              }
+            }
+          ]
+        },
+        {
+          "a": "quedar",
+          "b": "quedarse",
+          "note": {
+            "hu": "A quedar azt jelenti, találkozót beszélsz meg valakivel, a quedarse azt, hogy te magad maradsz egy helyen; a kettő könnyen összekeveredik.",
+            "en": "Quedar means arranging to meet someone, quedarse means that you yourself stay in a place; the two are easy to mix up.",
+            "es": "Quedar significa quedar con alguien para verse, quedarse significa que tú mismo permaneces en un lugar; los dos se confunden con facilidad.",
+            "de": "Quedar bedeutet, sich mit jemandem zu verabreden, quedarse bedeutet, dass du selbst an einem Ort bleibst; die beiden werden leicht verwechselt."
+          },
+          "examples": [
+            {
+              "es": "Quedamos en el parque a las cinco.",
+              "tr": {
+                "hu": "Öt órakor találkozunk a parkban.",
+                "en": "We are meeting at the park at five.",
+                "es": "Quedamos en el parque a las cinco.",
+                "de": "Wir treffen uns um fünf im Park."
+              }
+            },
+            {
+              "es": "Me quedo en casa esta noche.",
+              "tr": {
+                "hu": "Ma este otthon maradok.",
+                "en": "I am staying home tonight.",
+                "es": "Me quedo en casa esta noche.",
+                "de": "Ich bleibe heute Abend zu Hause."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Latin-Amerikában, Mexikóban is, a vosotros helyett ustedes áll, mindig többes szám harmadik személlyel: se levantan, nem os levantáis.",
+        "en": "In Latin America, Mexico included, ustedes replaces vosotros, always with the third person plural: se levantan, not os levantáis.",
+        "es": "En Latinoamérica, también en México, ustedes sustituye a vosotros, siempre con la tercera persona del plural: se levantan, no os levantáis.",
+        "de": "In Lateinamerika, auch in Mexiko, ersetzt ustedes das vosotros, immer mit der dritten Person Plural: se levantan, nicht os levantáis."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ha a névmás az ige végéhez tapad, főnévi igenévhez, gerundiumhoz vagy felszólító módhoz, az ige gyakran ékezetet kap, hogy a hangsúly a helyén maradjon: levantándome, levántate.",
+        "en": "When the pronoun attaches to the end of the verb, an infinitive, a gerund or an affirmative command, the verb often gets a written accent to keep the stress in place: levantándome, levántate.",
+        "es": "Cuando el pronombre se pega al final del verbo, un infinitivo, un gerundio o un imperativo afirmativo, el verbo suele llevar tilde para mantener el acento en su sitio: levantándome, levántate.",
+        "de": "Wenn das Pronomen ans Ende des Verbs angehängt wird, an einen Infinitiv, ein Gerundium oder einen bejahenden Imperativ, bekommt das Verb oft einen Akzent, damit die Betonung erhalten bleibt: levantándome, levántate."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A visszaható igénél te magad vagy az, akire a cselekvés irányul, ezért egy kis névmás mutatja, kiről van szó, mindig az ige előtt: «me levanto», «te duchas», «se acuesta». Néhány ige egészen mást jelent visszaható alakban: «dormir» azt jelenti, alszol, «dormirse» azt, hogy elalszol. Két ember is csinálhatja egymással ugyanazt: «se quieren», «nos vemos» mindennap. Egy állapot megváltozására is jó ez a forma: «se pone contento», «nos quedamos en casa». A névmás oda tapadhat a főnévi igenévhez vagy a gerundiumhoz is, ilyenkor gyakran ékezetet kap: «voy a levantarme», «está vistiéndose». Mexikóban a vosotros helyett mindig ustedes áll, ezért «se levantan», sosem «os levantáis».",
+    "en": "With a reflexive verb you yourself are the one the action is aimed at, so a small pronoun shows who is meant, always before the verb: «me levanto», «te duchas», «se acuesta». Some verbs mean something quite different in the reflexive form: «dormir» means you sleep, «dormirse» means you fall asleep. Two people can also do the same thing to each other: «se quieren», «nos vemos» every day. This form also works for a change of state: «se pone contento», «nos quedamos en casa». The pronoun can also attach to an infinitive or a gerund, and then it often gets a written accent: «voy a levantarme», «está vistiéndose». In Mexico ustedes always replaces vosotros, so «se levantan», never «os levantáis».",
+    "es": "Con el verbo reflexivo tú mismo eres a quien va dirigida la acción, por eso un pequeño pronombre muestra de quién se trata, siempre antes del verbo: «me levanto», «te duchas», «se acuesta». Algunos verbos significan algo bastante distinto en forma reflexiva: «dormir» significa que duermes, «dormirse» significa que empiezas a dormir. Dos personas también pueden hacerse lo mismo entre sí: «se quieren», «nos vemos» todos los días. Esta forma también sirve para un cambio de estado: «se pone contento», «nos quedamos en casa». El pronombre también puede pegarse a un infinitivo o a un gerundio, y entonces suele llevar tilde: «voy a levantarme», «está vistiéndose». En México ustedes siempre sustituye a vosotros, por eso «se levantan», nunca «os levantáis».",
+    "de": "Beim reflexiven Verb bist du selbst diejenige Person, an die die Handlung gerichtet ist, deshalb zeigt ein kleines Pronomen, um wen es geht, immer vor dem Verb: «me levanto», «te duchas», «se acuesta». Manche Verben bedeuten in der reflexiven Form etwas ganz anderes: «dormir» heißt, du schläfst, «dormirse» heißt, du schläfst ein. Zwei Personen können sich auch gegenseitig dasselbe antun: «se quieren», «nos vemos» jeden Tag. Diese Form eignet sich auch für eine Zustandsänderung: «se pone contento», «nos quedamos en casa». Das Pronomen kann sich auch an einen Infinitiv oder ein Gerundium anhängen, und dann bekommt es oft einen Akzent: «voy a levantarme», «está vistiéndose». In Mexiko ersetzt ustedes immer das vosotros, deshalb «se levantan», nie «os levantáis»."
   },
   "glossary": [
     { "word": "levantarse", "gloss": { "hu": "felkelni", "en": "to get up", "es": "levantarse", "de": "aufstehen" } },
@@ -56,16 +472,16 @@
       },
       "wrong": {
         "se": {
-          "hu": "A se harmadik személyhez tartozik (él/ella/usted), nem yo-hoz.",
-          "en": "Se belongs to third person (él/ella/usted), not to yo.",
-          "es": "Se es de tercera persona (él/ella/usted), no de yo.",
-          "de": "Se gehört zur dritten Person (él/ella/usted), nicht zu yo."
+          "hu": "A 'se' harmadik személyhez tartozik: 'Se levanta a las siete' azt jelentené, hogy Ő vagy Ön kel fel hétkor, nem én; yo alanyhoz a me tartozik, helyesen: me levanto.",
+          "en": "'Se' belongs to third person: 'Se levanta a las siete' would mean HE, SHE or formal YOU gets up at seven, not me; the subject yo takes me, correctly: me levanto.",
+          "es": "'Se' es de tercera persona: 'Se levanta a las siete' significaría que ÉL, ELLA o USTED se levanta a las siete, no yo; al sujeto yo le corresponde me, correctamente: me levanto.",
+          "de": "'Se' gehört zur dritten Person: 'Se levanta a las siete' würde heißen, dass ER, SIE oder das höfliche SIE um sieben aufsteht, nicht ich; zum Subjekt yo gehört me, richtig: me levanto."
         },
         "te": {
-          "hu": "A te a tú alanyhoz tartozik, itt yo áll.",
-          "en": "Te belongs to the subject tú, but here the subject is yo.",
-          "es": "Te es del sujeto tú, pero aquí el sujeto es yo.",
-          "de": "Te gehört zum Subjekt tú, hier steht aber yo."
+          "hu": "A 'te' a tú alanyhoz tartozik: 'Tú te levantas a las siete' azt jelentené, hogy TE kelsz fel hétkor, nem én; yo-val helyesen: me levanto.",
+          "en": "'Te' belongs to the subject tú: 'Tú te levantas a las siete' would mean YOU get up at seven, not me; correctly with yo: me levanto.",
+          "es": "'Te' es del sujeto tú: 'Tú te levantas a las siete' significaría que TÚ te levantas a las siete, no yo; correctamente con yo: me levanto.",
+          "de": "'Te' gehört zum Subjekt tú: 'Tú te levantas a las siete' würde heißen, dass DU um sieben aufstehst, nicht ich; richtig mit yo: me levanto."
         }
       },
       "examples": ["Me levanto temprano.", "¿A qué hora te levantas tú?"]
@@ -83,16 +499,16 @@
       },
       "wrong": {
         "se": {
-          "hu": "A se udvarias usted-hez illik, nem tegező tú-hoz.",
-          "en": "Se fits the polite usted, not the informal tú.",
-          "es": "Se va con el usted formal, no con el tú informal.",
-          "de": "Se passt zum höflichen usted, nicht zum vertrauten tú."
+          "hu": "A 'se' az udvarias usted-hez tartozik: '¿Cómo se llama usted?' azt kérdezné, hogy Önt hogy hívják, nem téged; tú-hoz a te tartozik: ¿cómo te llamas?",
+          "en": "'Se' belongs to the polite usted: '¿Cómo se llama usted?' would ask what your formal name is, not yours informally; tú takes te: ¿cómo te llamas?",
+          "es": "'Se' es del usted formal: '¿Cómo se llama usted?' preguntaría el nombre de usted, no el tuyo; a tú le corresponde te: ¿cómo te llamas?",
+          "de": "'Se' gehört zum höflichen usted: '¿Cómo se llama usted?' würde nach Ihrem höflichen Namen fragen, nicht nach deinem; zu tú gehört te: ¿cómo te llamas?"
         },
         "me": {
-          "hu": "A me rólam szólna, nem arról, akit kérdezel.",
-          "en": "Me would be about myself, not about the person you ask.",
-          "es": "Me hablaría de mí, no de la persona a quien preguntas.",
-          "de": "Me würde von mir sprechen, nicht von der gefragten Person."
+          "hu": "A 'me' rólam szólna: '¿Cómo me llamo?' azt kérdezné, hogy engem hogy hívnak, nem téged; a másik személyhez a te tartozik: ¿cómo te llamas?",
+          "en": "'Me' would be about myself: '¿Cómo me llamo?' would ask what my name is, not yours; the other person takes te: ¿cómo te llamas?",
+          "es": "'Me' hablaría de mí: '¿Cómo me llamo?' preguntaría mi propio nombre, no el tuyo; a la otra persona le corresponde te: ¿cómo te llamas?",
+          "de": "'Me' würde von mir selbst sprechen: '¿Cómo me llamo?' würde nach meinem Namen fragen, nicht nach deinem; zur anderen Person gehört te: ¿cómo te llamas?"
         }
       },
       "examples": ["Me llamo Carlos.", "Se llama Ana."]
@@ -110,16 +526,16 @@
       },
       "wrong": {
         "te": {
-          "hu": "A te a tú alanyhoz tartozik, itt Ana az alany.",
-          "en": "Te belongs to tú, but here the subject is Ana.",
-          "es": "Te es de tú, pero aquí el sujeto es Ana.",
-          "de": "Te gehört zu tú, hier ist aber Ana das Subjekt."
+          "hu": "A 'te' a tú alanyhoz tartozik: 'Tú te duchas por la mañana' Anát tegezné, mintha hozzá beszélnél, nem róla; harmadik személyhez a se tartozik: Ana se ducha.",
+          "en": "'Te' belongs to tú: 'Tú te duchas por la mañana' would address Ana directly, not talk about her; third person takes se: Ana se ducha.",
+          "es": "'Te' es de tú: 'Tú te duchas por la mañana' se dirigiría a Ana directamente, no hablaría de ella; a la tercera persona le corresponde se: Ana se ducha.",
+          "de": "'Te' gehört zu tú: 'Tú te duchas por la mañana' würde Ana direkt ansprechen, nicht über sie sprechen; zur dritten Person gehört se: Ana se ducha."
         },
         "me": {
-          "hu": "A me rólam szólna, nem Anáról.",
-          "en": "Me would be about me, not about Ana.",
-          "es": "Me hablaría de mí, no de Ana.",
-          "de": "Me würde von mir sprechen, nicht von Ana."
+          "hu": "A 'me' rólam szólna: 'Yo me ducho por la mañana' azt jelentené, hogy én zuhanyozom, nem Ana; hozzá a se tartozik: Ana se ducha.",
+          "en": "'Me' would be about myself: 'Yo me ducho por la mañana' would mean I shower, not Ana; she takes se: Ana se ducha.",
+          "es": "'Me' hablaría de mí: 'Yo me ducho por la mañana' significaría que yo me ducho, no Ana; a ella le corresponde se: Ana se ducha.",
+          "de": "'Me' würde von mir sprechen: 'Yo me ducho por la mañana' würde heißen, dass ich dusche, nicht Ana; zu ihr gehört se: Ana se ducha."
         }
       },
       "examples": ["Ana se ducha rápido.", "Mi hermana se ducha por la noche."]
@@ -137,16 +553,16 @@
       },
       "wrong": {
         "se": {
-          "hu": "A se harmadik személyre való, nem nosotrosra.",
-          "en": "Se is for third person, not for nosotros.",
-          "es": "Se es de tercera persona, no de nosotros.",
-          "de": "Se ist für die dritte Person, nicht für nosotros."
+          "hu": "A 'se' harmadik személyre való: 'Se acuestan tarde' azt jelentené, hogy Ők vagy Önök fekszenek le későn, nem mi; nosotroshoz a nos tartozik: nos acostamos.",
+          "en": "'Se' is for third person: 'Se acuestan tarde' would mean they or formal you all go to bed late, not us; nosotros takes nos: nos acostamos.",
+          "es": "'Se' es de tercera persona: 'Se acuestan tarde' significaría que ellos o ustedes se acuestan tarde, no nosotros; a nosotros le corresponde nos: nos acostamos.",
+          "de": "'Se' ist für die dritte Person: 'Se acuestan tarde' würde heißen, dass sie oder das höfliche Sie im Plural spät ins Bett gehen, nicht wir; zu nosotros gehört nos: nos acostamos."
         },
         "me": {
-          "hu": "A me csak egy személyre (yo) vonatkozna.",
-          "en": "Me would refer only to one person (yo).",
-          "es": "Me se referiría solo a una persona (yo).",
-          "de": "Me würde sich nur auf eine Person (yo) beziehen."
+          "hu": "A 'me' csak egy személyre, yo-ra vonatkozna: 'Me acuesto tarde' azt jelentené, hogy én fekszem le későn, nem mi; nosotroshoz a nos tartozik: nos acostamos.",
+          "en": "'Me' would refer to just one person, yo: 'Me acuesto tarde' would mean I go to bed late, not us; nosotros takes nos: nos acostamos.",
+          "es": "'Me' se referiría solo a una persona, yo: 'Me acuesto tarde' significaría que yo me acuesto tarde, no nosotros; a nosotros le corresponde nos: nos acostamos.",
+          "de": "'Me' würde sich nur auf eine Person beziehen, yo: 'Me acuesto tarde' würde heißen, dass ich spät ins Bett gehe, nicht wir; zu nosotros gehört nos: nos acostamos."
         }
       },
       "examples": ["Nos acostamos a las once.", "Mis padres se acuestan temprano."]
@@ -164,16 +580,16 @@
       },
       "wrong": {
         "nos": {
-          "hu": "A nos ránk (nosotros) vonatkozna, nem a szüleimre.",
-          "en": "Nos would refer to us (nosotros), not to my parents.",
-          "es": "Nos se referiría a nosotros, no a mis padres.",
-          "de": "Nos würde sich auf uns (nosotros) beziehen, nicht auf meine Eltern."
+          "hu": "A 'nos' ránk, nosotrosra vonatkozna: 'Nos despertamos a las seis' azt jelentené, hogy mi ébredünk hatkor, nem a szüleim; ellos-hoz a se tartozik: se despiertan.",
+          "en": "'Nos' would refer to us, nosotros: 'Nos despertamos a las seis' would mean we wake up at six, not my parents; ellos takes se: se despiertan.",
+          "es": "'Nos' se referiría a nosotros: 'Nos despertamos a las seis' significaría que nosotros nos despertamos a las seis, no mis padres; a ellos le corresponde se: se despiertan.",
+          "de": "'Nos' würde sich auf uns beziehen, nosotros: 'Nos despertamos a las seis' würde heißen, dass wir um sechs aufwachen, nicht meine Eltern; zu ellos gehört se: se despiertan."
         },
         "te": {
-          "hu": "A te a tú alanyhoz tartozik, itt többes harmadik személy áll.",
-          "en": "Te belongs to tú, but here the subject is third person plural.",
-          "es": "Te es de tú, pero aquí el sujeto es tercera persona plural.",
-          "de": "Te gehört zu tú, hier steht aber die dritte Person Plural."
+          "hu": "A 'te' a tú alanyhoz tartozik: 'Tú te despiertas a las seis' téged szólítana meg, nem a szüleimről szólna; ők többes harmadik személy, hozzájuk a se tartozik: se despiertan.",
+          "en": "'Te' belongs to tú: 'Tú te despiertas a las seis' would address you, not talk about my parents; they are third person plural, which takes se: se despiertan.",
+          "es": "'Te' es de tú: 'Tú te despiertas a las seis' se dirigiría a ti, no hablaría de mis padres; ellos son tercera persona plural, a la que le corresponde se: se despiertan.",
+          "de": "'Te' gehört zu tú: 'Tú te despiertas a las seis' würde dich ansprechen, nicht von meinen Eltern sprechen; sie sind dritte Person Plural, dazu gehört se: se despiertan."
         }
       },
       "examples": ["Se despiertan temprano los lunes.", "¿A qué hora te despiertas?"]
@@ -191,16 +607,16 @@
       },
       "wrong": {
         "te": {
-          "hu": "A te a tú alanyhoz tartozik, itt yo áll.",
-          "en": "Te belongs to tú, but here the subject is yo.",
-          "es": "Te es de tú, pero aquí el sujeto es yo.",
-          "de": "Te gehört zu tú, hier steht aber yo."
+          "hu": "A 'te' a tú alanyhoz tartozik: 'Tú te sientes cansado' téged szólítana meg, nem rólam szólna; yo-hoz a me tartozik: me siento cansado.",
+          "en": "'Te' belongs to tú: 'Tú te sientes cansado' would address you, not me; yo takes me: me siento cansado.",
+          "es": "'Te' es de tú: 'Tú te sientes cansado' se dirigiría a ti, no a mí; a yo le corresponde me: me siento cansado.",
+          "de": "'Te' gehört zu tú: 'Tú te sientes cansado' würde dich ansprechen, nicht mich; zu yo gehört me: me siento cansado."
         },
         "se": {
-          "hu": "A se harmadik személyre való, nem yo-ra.",
-          "en": "Se is for third person, not for yo.",
-          "es": "Se es de tercera persona, no de yo.",
-          "de": "Se ist für die dritte Person, nicht für yo."
+          "hu": "A 'se' harmadik személyre való: 'Él se siente cansado' azt jelentené, hogy Ő érzi magát fáradtnak, nem én; yo-hoz a me tartozik: me siento cansado.",
+          "en": "'Se' is for third person: 'Él se siente cansado' would mean he feels tired, not me; yo takes me: me siento cansado.",
+          "es": "'Se' es de tercera persona: 'Él se siente cansado' significaría que él se siente cansado, no yo; a yo le corresponde me: me siento cansado.",
+          "de": "'Se' ist für die dritte Person: 'Él se siente cansado' würde heißen, dass er sich müde fühlt, nicht ich; zu yo gehört me: me siento cansado."
         }
       },
       "examples": ["Me siento bien ahora.", "¿Cómo te sientes hoy?"]
@@ -218,16 +634,16 @@
       },
       "wrong": {
         "Me": {
-          "hu": "A me rólam szólna, de itt téged kérdezlek.",
-          "en": "Me would be about me, but here I am asking you.",
-          "es": "Me hablaría de mí, pero aquí te pregunto a ti.",
-          "de": "Me würde von mir sprechen, hier frage ich aber dich."
+          "hu": "A 'me' rólam szólna: '¿Me acuerdo de mí?' magamról kérdezne, ami értelmetlen; itt téged kérdezlek, tú-hoz a te tartozik: ¿te acuerdas de mí?",
+          "en": "'Me' would be about myself: '¿Me acuerdo de mí?' would ask about myself, which makes no sense; here I am asking you, and tú takes te: ¿te acuerdas de mí?",
+          "es": "'Me' hablaría de mí: '¿Me acuerdo de mí?' preguntaría por mí mismo, lo cual no tiene sentido; aquí te pregunto a ti, y a tú le corresponde te: ¿te acuerdas de mí?",
+          "de": "'Me' würde von mir sprechen: '¿Me acuerdo de mí?' würde nach mir selbst fragen, was keinen Sinn ergibt; hier frage ich dich, und zu tú gehört te: ¿te acuerdas de mí?"
         },
         "Se": {
-          "hu": "A se udvarias usted-hez illik, itt tegező kérdés van.",
-          "en": "Se fits the polite usted, but this is an informal question.",
-          "es": "Se va con el usted formal, pero aquí la pregunta es informal.",
-          "de": "Se passt zum höflichen usted, hier ist die Frage vertraulich."
+          "hu": "A 'se' az udvarias usted-hez tartozik: '¿Se acuerda usted de mí?' Önt kérdezné, nem a tegező tú-t; tú-hoz a te tartozik: ¿te acuerdas de mí?",
+          "en": "'Se' belongs to the polite usted: '¿Se acuerda usted de mí?' would ask the formal you, not the informal tú; tú takes te: ¿te acuerdas de mí?",
+          "es": "'Se' es del usted formal: '¿Se acuerda usted de mí?' preguntaría al usted, no al tú informal; a tú le corresponde te: ¿te acuerdas de mí?",
+          "de": "'Se' gehört zum höflichen usted: '¿Se acuerda usted de mí?' würde das höfliche Sie fragen, nicht das vertraute tú; zu tú gehört te: ¿te acuerdas de mí?"
         }
       },
       "examples": ["Me acuerdo de ti siempre.", "No se acuerda de mi nombre."]
@@ -245,16 +661,16 @@
       },
       "wrong": {
         "me": {
-          "hu": "A me rólam szólna, nem őróla.",
-          "en": "Me would be about me, not about her.",
-          "es": "Me hablaría de mí, no de ella.",
-          "de": "Me würde von mir sprechen, nicht von ihr."
+          "hu": "A 'me' rólam szólna: 'Yo me voy temprano del trabajo' azt jelentené, hogy én megyek el korán, nem Ella; harmadik személyhez a se tartozik: Ella se va.",
+          "en": "'Me' would be about myself: 'Yo me voy temprano del trabajo' would mean I leave work early, not Ella; third person takes se: Ella se va.",
+          "es": "'Me' hablaría de mí: 'Yo me voy temprano del trabajo' significaría que yo me voy temprano, no Ella; a la tercera persona le corresponde se: Ella se va.",
+          "de": "'Me' würde von mir sprechen: 'Yo me voy temprano del trabajo' würde heißen, dass ich früh gehe, nicht Ella; zur dritten Person gehört se: Ella se va."
         },
         "nos": {
-          "hu": "A nos ránk vonatkozna, nem egy személyre.",
-          "en": "Nos would refer to us, not to one person.",
-          "es": "Nos se referiría a nosotros, no a una sola persona.",
-          "de": "Nos würde sich auf uns beziehen, nicht auf eine Person."
+          "hu": "A 'nos' ránk, nosotrosra vonatkozna: 'Nos vamos temprano del trabajo' azt jelentené, hogy mi megyünk el korán, nem egyetlen személy, Ella; hozzá a se tartozik: Ella se va.",
+          "en": "'Nos' would refer to us, nosotros: 'Nos vamos temprano del trabajo' would mean we leave work early, not one person, Ella; she takes se: Ella se va.",
+          "es": "'Nos' se referiría a nosotros: 'Nos vamos temprano del trabajo' significaría que nosotros nos vamos temprano, no una sola persona, Ella; a ella le corresponde se: Ella se va.",
+          "de": "'Nos' würde sich auf uns beziehen, nosotros: 'Nos vamos temprano del trabajo' würde heißen, dass wir früh gehen, nicht eine einzelne Person, Ella; zu ihr gehört se: Ella se va."
         }
       },
       "examples": ["Ella se va a las cinco.", "Me voy ahora, hasta luego."]
@@ -272,16 +688,16 @@
       },
       "wrong": {
         "le": {
-          "hu": "A le nem visszaható névmás, más szerkezethez tartozik (pl. gustar).",
-          "en": "Le is not a reflexive pronoun, it belongs to a different structure (like gustar).",
-          "es": "Le no es reflexivo, pertenece a otra estructura (como gustar).",
-          "de": "Le ist kein reflexives Pronomen, es gehört zu einer anderen Struktur (wie gustar)."
+          "hu": "A 'le' nem visszaható névmás, más szerkezethez tartozik, mint a gustar; a duermen visszaható alakjához se kell: se duermen.",
+          "en": "'Le' is not a reflexive pronoun, it belongs to a different structure, like gustar; the reflexive form of duermen needs se: se duermen.",
+          "es": "'Le' no es un pronombre reflexivo, pertenece a otra estructura, como gustar; la forma reflexiva de duermen necesita se: se duermen.",
+          "de": "'Le' ist kein reflexives Pronomen, es gehört zu einer anderen Struktur, wie gustar; die reflexive Form von duermen braucht se: se duermen."
         },
         "te": {
-          "hu": "A te a tú alanyhoz tartozik, itt többes szám van.",
-          "en": "Te belongs to tú, but here the subject is plural.",
-          "es": "Te es de tú, pero aquí el sujeto es plural.",
-          "de": "Te gehört zu tú, hier ist das Subjekt aber Plural."
+          "hu": "A 'te' a tú alanyhoz tartozik: 'Tú te duermes rápido' téged szólítana meg, nem a gyerekekről szólna; ők többes harmadik személy, hozzájuk a se tartozik: se duermen.",
+          "en": "'Te' belongs to tú: 'Tú te duermes rápido' would address you, not talk about the children; they are third person plural, which takes se: se duermen.",
+          "es": "'Te' es de tú: 'Tú te duermes rápido' se dirigiría a ti, no hablaría de los niños; ellos son tercera persona plural, a la que le corresponde se: se duermen.",
+          "de": "'Te' gehört zu tú: 'Tú te duermes rápido' würde dich ansprechen, nicht von den Kindern sprechen; sie sind dritte Person Plural, dazu gehört se: se duermen."
         }
       },
       "examples": ["Los niños se duermen a las ocho.", "Me duermo viendo la tele."]
@@ -299,16 +715,16 @@
       },
       "wrong": {
         "se": {
-          "hu": "A se harmadik személyre való, nem nosotrosra.",
-          "en": "Se is for third person, not for nosotros.",
-          "es": "Se es de tercera persona, no de nosotros.",
-          "de": "Se ist für die dritte Person, nicht für nosotros."
+          "hu": "A 'se' harmadik személyre való: 'No se lavan las manos' azt jelentené, hogy ők nem mosnak kezet, nem mi; nosotroshoz a nos tartozik: no nos lavamos las manos.",
+          "en": "'Se' is for third person: 'No se lavan las manos' would mean they do not wash their hands, not us; nosotros takes nos: no nos lavamos las manos.",
+          "es": "'Se' es de tercera persona: 'No se lavan las manos' significaría que ellos no se lavan las manos, no nosotros; a nosotros le corresponde nos: no nos lavamos las manos.",
+          "de": "'Se' ist für die dritte Person: 'No se lavan las manos' würde heißen, dass sie sich nicht die Hände waschen, nicht wir; zu nosotros gehört nos: no nos lavamos las manos."
         },
         "le": {
-          "hu": "A le nem visszaható névmás.",
-          "en": "Le is not a reflexive pronoun.",
-          "es": "Le no es un pronombre reflexivo.",
-          "de": "Le ist kein reflexives Pronomen."
+          "hu": "A 'le' nem visszaható névmás, más szerkezethez tartozik, mint a gustar; nosotroshoz a visszaható nos kell: no nos lavamos las manos.",
+          "en": "'Le' is not a reflexive pronoun, it belongs to a different structure, like gustar; nosotros needs the reflexive nos: no nos lavamos las manos.",
+          "es": "'Le' no es un pronombre reflexivo, pertenece a otra estructura, como gustar; nosotros necesita el reflexivo nos: no nos lavamos las manos.",
+          "de": "'Le' ist kein reflexives Pronomen, es gehört zu einer anderen Struktur, wie gustar; nosotros braucht das reflexive nos: no nos lavamos las manos."
         }
       },
       "examples": ["Nos lavamos las manos antes de comer.", "¿Te lavas los dientes?"]
@@ -326,16 +742,16 @@
       },
       "wrong": {
         "te": {
-          "hu": "A te a tegező tú-hoz tartozik, nem az udvarias usted-hez.",
-          "en": "Te belongs to the informal tú, not to the polite usted.",
-          "es": "Te es del tú informal, no del usted formal.",
-          "de": "Te gehört zum vertraulichen tú, nicht zum höflichen usted."
+          "hu": "A 'te' a tegező tú-hoz tartozik: 'Tú te vistes muy elegante' téged szólítana meg tegezve, nem az udvarias usted-et; hozzá a se tartozik: usted se viste.",
+          "en": "'Te' belongs to the informal tú: 'Tú te vistes muy elegante' would address you informally, not the polite usted; usted takes se: usted se viste.",
+          "es": "'Te' es del tú informal: 'Tú te vistes muy elegante' se dirigiría a ti de forma informal, no al usted formal; a usted le corresponde se: usted se viste.",
+          "de": "'Te' gehört zum vertraulichen tú: 'Tú te vistes muy elegante' würde dich informell ansprechen, nicht das höfliche usted; zu usted gehört se: usted se viste."
         },
         "me": {
-          "hu": "A me rólam szólna, nem arról, akihez beszélek.",
-          "en": "Me would be about me, not about the person I am talking to.",
-          "es": "Me hablaría de mí, no de la persona con quien hablo.",
-          "de": "Me würde von mir sprechen, nicht von der Person, mit der ich rede."
+          "hu": "A 'me' rólam szólna: 'Yo me visto muy elegante' azt jelentené, hogy én öltözöm elegánsan, nem arról, akihez beszélek; usted-hez a se tartozik: usted se viste.",
+          "en": "'Me' would be about myself: 'Yo me visto muy elegante' would mean I dress elegantly, not the person I am talking to; usted takes se: usted se viste.",
+          "es": "'Me' hablaría de mí: 'Yo me visto muy elegante' significaría que yo me visto elegante, no la persona con quien hablo; a usted le corresponde se: usted se viste.",
+          "de": "'Me' würde von mir sprechen: 'Yo me visto muy elegante' würde heißen, dass ich mich elegant kleide, nicht von der Person, mit der ich spreche; zu usted gehört se: usted se viste."
         }
       },
       "examples": ["Usted se viste muy bien.", "Ella se viste rápido por la mañana."]
@@ -353,19 +769,127 @@
       },
       "wrong": {
         "te": {
-          "hu": "A te a tú alanyhoz tartozik, itt yo áll.",
-          "en": "Te belongs to tú, but here the subject is yo.",
-          "es": "Te es de tú, pero aquí el sujeto es yo.",
-          "de": "Te gehört zu tú, hier steht aber yo."
+          "hu": "A 'te' a tú alanyhoz tartozik: 'Tú nunca te acuestas tarde' téged szólítana meg, nem rólam szólna; yo-hoz a me tartozik: nunca me acuesto tarde.",
+          "en": "'Te' belongs to tú: 'Tú nunca te acuestas tarde' would address you, not me; yo takes me: nunca me acuesto tarde.",
+          "es": "'Te' es de tú: 'Tú nunca te acuestas tarde' se dirigiría a ti, no a mí; a yo le corresponde me: nunca me acuesto tarde.",
+          "de": "'Te' gehört zu tú: 'Tú nunca te acuestas tarde' würde dich ansprechen, nicht mich; zu yo gehört me: nunca me acuesto tarde."
         },
         "nos": {
-          "hu": "A nos többes számra (nosotros) vonatkozna, itt yo az alany.",
-          "en": "Nos would refer to a plural (nosotros), but here the subject is yo.",
-          "es": "Nos se referiría a un plural (nosotros), pero aquí el sujeto es yo.",
-          "de": "Nos würde sich auf einen Plural (nosotros) beziehen, hier steht aber yo."
+          "hu": "A 'nos' többünkre, nosotrosra vonatkozna: 'Nunca nos acostamos tarde' azt jelentené, hogy mi sosem fekszünk le későn, nem csak én; yo-hoz a me tartozik: nunca me acuesto tarde.",
+          "en": "'Nos' would refer to several of us, nosotros: 'Nunca nos acostamos tarde' would mean we never go to bed late, not just me; yo takes me: nunca me acuesto tarde.",
+          "es": "'Nos' se referiría a varios, nosotros: 'Nunca nos acostamos tarde' significaría que nosotros nunca nos acostamos tarde, no solo yo; a yo le corresponde me: nunca me acuesto tarde.",
+          "de": "'Nos' würde sich auf mehrere beziehen, nosotros: 'Nunca nos acostamos tarde' würde heißen, dass wir nie spät ins Bett gehen, nicht nur ich; zu yo gehört me: nunca me acuesto tarde."
         }
       },
       "examples": ["Nunca me acuesto tarde.", "Entre semana nos acostamos temprano."]
+    },
+    {
+      "id": "rf-match-01",
+      "kind": "match",
+      "pairs": [
+        { "es": "me levanto temprano", "en": "I get up early" },
+        { "es": "te duchas rápido", "en": "you shower quickly" },
+        { "es": "se acuesta tarde", "en": "he goes to bed late" },
+        { "es": "nos vestimos rápido", "en": "we get dressed quickly" },
+        { "es": "se van temprano", "en": "they leave early" },
+        { "es": "me siento cansado", "en": "I feel tired" }
+      ]
+    },
+    {
+      "id": "rf-form-01",
+      "kind": "form",
+      "verb": "levantarse",
+      "person": "yo",
+      "answer": "me levanto",
+      "table": "reflexivos-presente"
+    },
+    {
+      "id": "rf-form-02",
+      "kind": "form",
+      "verb": "levantarse",
+      "person": "tú",
+      "answer": "te levantas",
+      "table": "reflexivos-presente"
+    },
+    {
+      "id": "rf-form-03",
+      "kind": "form",
+      "verb": "levantarse",
+      "person": "nosotros",
+      "answer": "nos levantamos",
+      "table": "reflexivos-presente"
+    },
+    {
+      "id": "rf-form-04",
+      "kind": "form",
+      "verb": "levantarse",
+      "person": "ellos/ellas/ustedes",
+      "answer": "se levantan",
+      "table": "reflexivos-presente"
+    },
+    {
+      "id": "rf-form-05",
+      "kind": "form",
+      "verb": "ducharse",
+      "person": "yo",
+      "answer": "me ducho",
+      "table": "reflexivos-presente"
+    },
+    {
+      "id": "rf-form-06",
+      "kind": "form",
+      "verb": "ducharse",
+      "person": "él/ella/usted",
+      "answer": "se ducha",
+      "table": "reflexivos-presente"
+    },
+    {
+      "id": "rf-form-07",
+      "kind": "form",
+      "verb": "ducharse",
+      "person": "vosotros",
+      "answer": "os ducháis",
+      "table": "reflexivos-presente"
+    },
+    {
+      "id": "rf-form-08",
+      "kind": "form",
+      "verb": "ducharse",
+      "person": "ellos/ellas/ustedes",
+      "answer": "se duchan",
+      "table": "reflexivos-presente"
+    },
+    {
+      "id": "rf-form-09",
+      "kind": "form",
+      "verb": "acostarse",
+      "person": "tú",
+      "answer": "te acuestas",
+      "table": "reflexivos-presente"
+    },
+    {
+      "id": "rf-form-10",
+      "kind": "form",
+      "verb": "acostarse",
+      "person": "él/ella/usted",
+      "answer": "se acuesta",
+      "table": "reflexivos-presente"
+    },
+    {
+      "id": "rf-form-11",
+      "kind": "form",
+      "verb": "acostarse",
+      "person": "nosotros",
+      "answer": "nos acostamos",
+      "table": "reflexivos-presente"
+    },
+    {
+      "id": "rf-form-12",
+      "kind": "form",
+      "verb": "acostarse",
+      "person": "vosotros",
+      "answer": "os acostáis",
+      "table": "reflexivos-presente"
     }
   ]
 }

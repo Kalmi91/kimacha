@@ -492,11 +492,15 @@ function auditFormItem(item, itemPath, topic, tableIds) {
     return;
   }
   const table = topic.body.find((b) => b.kind === 'table' && b.id === item.table);
+  // Több igés tábla (fejléc: Személy | hablar | comer | vivir): az ige oszlopát a
+  // fejléc `es` cellája adja; egy igés táblánál (Személy | ser) a második oszlop.
+  const verbCol = (table?.header ?? []).findIndex((h, ci) => ci > 0 && h?.es === item.verb);
+  const col = verbCol > 0 ? verbCol : 1;
   const row = table?.rows?.find((r) => r[0] === item.person);
   if (!row) {
     p1.push({ path: itemPath, issue: `form item person "${item.person}" not found in table "${item.table}"` });
-  } else if (row[1] !== item.answer) {
-    p1.push({ path: itemPath, issue: `form item answer "${item.answer}" does not match table row form "${row[1]}"` });
+  } else if (row[col] !== item.answer) {
+    p1.push({ path: itemPath, issue: `form item answer "${item.answer}" does not match table row form "${row[col]}"` });
   }
 }
 
