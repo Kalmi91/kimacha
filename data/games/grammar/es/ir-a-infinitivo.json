@@ -1,4 +1,5 @@
 {
+  "schema": 2,
   "topic": "ir-a-infinitivo",
   "level": "A1",
   "title": {
@@ -7,17 +8,475 @@
     "es": "Ir a + infinitivo: el futuro hablado",
     "de": "Ir a + Infinitiv: die gesprochene Zukunft"
   },
-  "rule": {
-    "hu": "Amikor valaki azt mondja, mit fog csinálni, a mindennapi beszélt nyelvben az ir a + főnévi igenév szerkezetet használja: voy/vas/va/vamos/van a + ige. Voy a trabajar mañana. Vamos a comer tacos. Az ir ragozódik a személyhez, a második ige változatlan főnévi igenévben marad, és az a szócska KÖTELEZŐ közöttük: nem lehet kihagyni (nem voy trabajar, hanem voy A trabajar).",
-    "en": "In everyday spoken Spanish, when people talk about what they are going to do, they use ir a + infinitive: voy/vas/va/vamos/van a + verb. Voy a trabajar mañana. Vamos a comer tacos. Ir is conjugated for the person, the second verb stays in the infinitive, and the a between them is OBLIGATORY: it cannot be dropped (not voy trabajar, but voy A trabajar).",
-    "es": "En el español hablado de todos los días, para hablar de lo que alguien va a hacer se usa ir a + infinitivo: voy/vas/va/vamos/van a + verbo. Voy a trabajar mañana. Vamos a comer tacos. Ir se conjuga según la persona, el segundo verbo se queda en infinitivo, y la a entre los dos es OBLIGATORIA: no se puede omitir (no voy trabajar, sino voy A trabajar).",
-    "de": "Im gesprochenen Alltagsspanisch verwendet man für das, was jemand vorhat zu tun, ir a + Infinitiv: voy/vas/va/vamos/van a + Verb. Voy a trabajar mañana. Vamos a comer tacos. Ir wird nach Person konjugiert, das zweite Verb bleibt im Infinitiv, und das a dazwischen ist PFLICHT: es kann nicht wegfallen (nicht voy trabajar, sondern voy A trabajar)."
-  },
-  "more": {
-    "hu": "Mexikóban a mindennapi életben szinte mindig az ir a + főnévi igenevet használják a jövő kifejezésére, nem az egyszerű jövő időt (pl. trabajaré). Az egyszerű jövő idő formálisabban hangzik, vagy inkább valószínűséget fejez ki (pl. Serán las tres = Talán három óra van). A vamos a + főnévi igenévnek van egy másik jelentése is: felszólítás, „gyerünk, csináljuk\": Vamos a comer! = Együnk!",
-    "en": "In everyday life in Mexico, people almost always use ir a + infinitive to talk about the future, not the simple future tense (like trabajaré). The simple future sounds more formal, or expresses probability instead (e.g. Serán las tres = It's probably three o'clock). Vamos a + infinitive also has another meaning: a suggestion, „let's”: Vamos a comer! = Let's eat!",
-    "es": "En la vida diaria en México, casi siempre se usa ir a + infinitivo para hablar del futuro, no el futuro simple (como trabajaré). El futuro simple suena más formal, o expresa probabilidad (por ejemplo, Serán las tres = Probablemente son las tres). Vamos a + infinitivo también tiene otro significado: una sugerencia, \"hagámoslo\": ¡Vamos a comer! = ¡Comamos!",
-    "de": "Im mexikanischen Alltag verwendet man für die Zukunft fast immer ir a + Infinitiv, nicht das einfache Futur (wie trabajaré). Das einfache Futur klingt formeller oder drückt eher Wahrscheinlichkeit aus (z. B. Serán las tres = Es ist wahrscheinlich drei Uhr). Vamos a + Infinitiv hat noch eine zweite Bedeutung: einen Vorschlag, „lass uns“: ¡Vamos a comer! = Lass uns essen!"
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A mindennapi spanyol beszédben a jövőt szinte mindig az ir a + főnévi igenév szerkezettel fejezik ki: az ir ragozódik a személyhez, utána kötelező az a, a második ige pedig változatlan főnévi igenévben marad.",
+        "en": "In everyday spoken Spanish, the future is almost always expressed with ir a + infinitive: ir is conjugated for the person, the a after it is obligatory, and the second verb stays unchanged in the infinitive.",
+        "es": "En el español hablado de cada día, el futuro casi siempre se expresa con ir a + infinitivo: ir se conjuga según la persona, la a que sigue es obligatoria, y el segundo verbo se queda sin cambios en infinitivo.",
+        "de": "Im gesprochenen Alltagsspanisch wird die Zukunft fast immer mit ir a + Infinitiv ausgedrückt: ir wird nach Person konjugiert, das a danach ist Pflicht, und das zweite Verb bleibt unverändert im Infinitiv."
+      }
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "A szerkezet darabjai",
+        "en": "The pieces of the structure",
+        "es": "Las piezas de la estructura",
+        "de": "Die Teile der Struktur"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Az ir ragozódik a beszélőhöz: yo voy, tú vas, él/ella/usted va, nosotros vamos, vosotros vais, ellos/ellas/ustedes van.",
+            "en": "Ir is conjugated for the speaker: yo voy, tú vas, él/ella/usted va, nosotros vamos, vosotros vais, ellos/ellas/ustedes van.",
+            "es": "Ir se conjuga según quien habla: yo voy, tú vas, él/ella/usted va, nosotros vamos, vosotros vais, ellos/ellas/ustedes van.",
+            "de": "Ir wird nach der sprechenden Person konjugiert: yo voy, tú vas, él/ella/usted va, nosotros vamos, vosotros vais, ellos/ellas/ustedes van."
+          },
+          "examples": [
+            {
+              "es": "Voy a estudiar esta noche.",
+              "tr": {
+                "hu": "Ma este tanulni fogok.",
+                "en": "I am going to study tonight.",
+                "es": "Voy a estudiar esta noche.",
+                "de": "Ich werde heute Abend lernen."
+              }
+            },
+            {
+              "es": "Van a viajar juntos.",
+              "tr": {
+                "hu": "Együtt fognak utazni.",
+                "en": "They are going to travel together.",
+                "es": "Van a viajar juntos.",
+                "de": "Sie werden zusammen reisen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Az ir és a főnévi igenév közé mindig odakerül az a, ez sosem marad el, akkor sem, ha gyorsan beszélünk.",
+            "en": "The a always goes between ir and the infinitive, it never disappears, not even when speaking fast.",
+            "es": "La a siempre va entre ir y el infinitivo, nunca desaparece, ni siquiera al hablar rápido.",
+            "de": "Das a steht immer zwischen ir und dem Infinitiv, es fällt nie weg, auch nicht beim schnellen Sprechen."
+          },
+          "examples": [
+            {
+              "es": "Voy a comer algo.",
+              "tr": {
+                "hu": "Fogok enni valamit.",
+                "en": "I am going to eat something.",
+                "es": "Voy a comer algo.",
+                "de": "Ich werde etwas essen."
+              }
+            },
+            {
+              "es": "Vamos a salir temprano.",
+              "tr": {
+                "hu": "Korán fogunk elindulni.",
+                "en": "We are going to leave early.",
+                "es": "Vamos a salir temprano.",
+                "de": "Wir werden früh losgehen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A második ige mindig változatlan főnévi igenévben áll, sosem ragozzuk újra.",
+            "en": "The second verb always stays an unchanged infinitive, it is never conjugated again.",
+            "es": "El segundo verbo siempre se queda en infinitivo sin cambios, nunca se conjuga otra vez.",
+            "de": "Das zweite Verb bleibt immer ein unveränderter Infinitiv, es wird nie noch einmal konjugiert."
+          },
+          "examples": [
+            {
+              "es": "Va a trabajar mañana.",
+              "tr": {
+                "hu": "Holnap fog dolgozni.",
+                "en": "He is going to work tomorrow.",
+                "es": "Va a trabajar mañana.",
+                "de": "Er wird morgen arbeiten."
+              }
+            },
+            {
+              "es": "Vas a terminar la tarea.",
+              "tr": {
+                "hu": "Be fogod fejezni a házi feladatot.",
+                "en": "You are going to finish the homework.",
+                "es": "Vas a terminar la tarea.",
+                "de": "Du wirst die Hausaufgabe beenden."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Tagadásban a no az ir elé kerül, nem a főnévi igenév elé: no voy a llegar tarde.",
+            "en": "In a negative sentence, no goes before ir, not before the infinitive: no voy a llegar tarde.",
+            "es": "En una frase negativa, no va antes de ir, no antes del infinitivo: no voy a llegar tarde.",
+            "de": "Im verneinten Satz steht no vor ir, nicht vor dem Infinitiv: no voy a llegar tarde."
+          },
+          "examples": [
+            {
+              "es": "No van a venir hoy.",
+              "tr": {
+                "hu": "Ma nem fognak jönni.",
+                "en": "They are not going to come today.",
+                "es": "No van a venir hoy.",
+                "de": "Sie werden heute nicht kommen."
+              }
+            },
+            {
+              "es": "No vamos a terminar a tiempo.",
+              "tr": {
+                "hu": "Nem fogunk időben végezni.",
+                "en": "We are not going to finish on time.",
+                "es": "No vamos a terminar a tiempo.",
+                "de": "Wir werden nicht rechtzeitig fertig."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ir-a-presente",
+      "title": {
+        "hu": "Ir a + főnévi igenév, jelen idő",
+        "en": "Ir a + infinitive, present tense",
+        "es": "Ir a + infinitivo, presente",
+        "de": "Ir a + Infinitiv, Präsens"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "ir a + infinitivo",
+          "en": "ir a + infinitivo",
+          "es": "ir a + infinitivo",
+          "de": "ir a + infinitivo"
+        }
+      ],
+      "rows": [
+        ["yo", "voy a"],
+        ["tú", "vas a"],
+        ["él/ella/usted", "va a"],
+        ["nosotros", "vamos a"],
+        ["vosotros", "vais a"],
+        ["ellos/ellas/ustedes", "van a"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Mikor használjuk",
+        "en": "When do we use it",
+        "es": "Cuándo lo usamos",
+        "de": "Wann benutzen wir es"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Amikor eldöntött tervről vagy szándékról beszélünk, arról, amit meg fogunk csinálni.",
+            "en": "When we talk about a decided plan or intention, something we are going to do.",
+            "es": "Cuando hablamos de un plan o una intención ya decidida, algo que vamos a hacer.",
+            "de": "Wenn wir über einen bereits entschiedenen Plan oder eine Absicht sprechen, etwas, das wir tun werden."
+          },
+          "examples": [
+            {
+              "es": "Voy a estudiar español esta noche.",
+              "tr": {
+                "hu": "Ma este spanyolul fogok tanulni.",
+                "en": "I am going to study Spanish tonight.",
+                "es": "Voy a estudiar español esta noche.",
+                "de": "Ich werde heute Abend Spanisch lernen."
+              }
+            },
+            {
+              "es": "Vamos a visitar a mis abuelos pronto.",
+              "tr": {
+                "hu": "Hamarosan meglátogatjuk a nagyszüleimet.",
+                "en": "We are going to visit my grandparents soon.",
+                "es": "Vamos a visitar a mis abuelos pronto.",
+                "de": "Wir werden bald meine Großeltern besuchen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Amikor valami hamarosan, a közeljövőben fog történni.",
+            "en": "When something is going to happen soon, in the near future.",
+            "es": "Cuando algo va a pasar pronto, en el futuro cercano.",
+            "de": "Wenn etwas bald, in naher Zukunft, passieren wird."
+          },
+          "examples": [
+            {
+              "es": "El autobús va a llegar pronto.",
+              "tr": {
+                "hu": "A busz hamarosan megérkezik.",
+                "en": "The bus is going to arrive soon.",
+                "es": "El autobús va a llegar pronto.",
+                "de": "Der Bus wird bald ankommen."
+              }
+            },
+            {
+              "es": "Va a empezar la película.",
+              "tr": {
+                "hu": "Mindjárt kezdődik a film.",
+                "en": "The movie is about to start.",
+                "es": "Va a empezar la película.",
+                "de": "Der Film wird gleich anfangen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Amikor megkérdezzük, mit fog csinálni valaki.",
+            "en": "When we ask what someone is going to do.",
+            "es": "Cuando preguntamos qué va a hacer alguien.",
+            "de": "Wenn wir fragen, was jemand tun wird."
+          },
+          "examples": [
+            {
+              "es": "¿Qué vas a hacer hoy?",
+              "tr": {
+                "hu": "Mit fogsz csinálni ma?",
+                "en": "What are you going to do today?",
+                "es": "¿Qué vas a hacer hoy?",
+                "de": "Was wirst du heute machen?"
+              }
+            },
+            {
+              "es": "¿A dónde van a viajar ustedes?",
+              "tr": {
+                "hu": "Önök hova fognak utazni?",
+                "en": "Where are you all going to travel?",
+                "es": "¿A dónde van a viajar ustedes?",
+                "de": "Wohin werden Sie reisen?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Az időjárás-jóslásban mindig a személytelen va alakkal.",
+            "en": "In weather predictions, always with the impersonal va form.",
+            "es": "En las predicciones del tiempo, siempre con la forma impersonal va.",
+            "de": "Bei Wettervorhersagen immer mit der unpersönlichen Form va."
+          },
+          "examples": [
+            {
+              "es": "Mañana va a llover mucho.",
+              "tr": {
+                "hu": "Holnap sokat fog esni az eső.",
+                "en": "Tomorrow it is going to rain a lot.",
+                "es": "Mañana va a llover mucho.",
+                "de": "Morgen wird es viel regnen."
+              }
+            },
+            {
+              "es": "Va a hacer mucho calor esta semana.",
+              "tr": {
+                "hu": "Nagy meleg lesz ezen a héten.",
+                "en": "It is going to be very hot this week.",
+                "es": "Va a hacer mucho calor esta semana.",
+                "de": "Diese Woche wird es sehr heiß."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A vamos a + főnévi igenév néha nem tervet jelent, hanem javaslatot: gyerünk, csináljuk együtt.",
+            "en": "Vamos a + infinitive sometimes does not mean a plan but a suggestion: let's do it together.",
+            "es": "Vamos a + infinitivo a veces no es un plan, sino una sugerencia: hagámoslo juntos.",
+            "de": "Vamos a + Infinitiv bedeutet manchmal keinen Plan, sondern einen Vorschlag: lass uns das zusammen machen."
+          },
+          "examples": [
+            {
+              "es": "¡Vamos a comer, tengo hambre!",
+              "tr": {
+                "hu": "Együnk, éhes vagyok!",
+                "en": "Let's eat, I am hungry!",
+                "es": "¡Vamos a comer, tengo hambre!",
+                "de": "Lass uns essen, ich habe Hunger!"
+              }
+            },
+            {
+              "es": "¡Vamos a bailar esta noche!",
+              "tr": {
+                "hu": "Táncoljunk ma este!",
+                "en": "Let's dance tonight!",
+                "es": "¡Vamos a bailar esta noche!",
+                "de": "Lass uns heute Abend tanzen!"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A közeli jövőt néha egyszerű jelen idővel is kifejezhetjük egy időhatározóval, de az ir a egyértelműbb és gyakoribb a beszélt nyelvben.",
+            "en": "The near future can sometimes also be expressed with the simple present plus a time word, but ir a is clearer and more common in spoken language.",
+            "es": "El futuro cercano a veces también se expresa con el presente simple más una palabra de tiempo, pero ir a es más claro y más frecuente en el habla.",
+            "de": "Die nahe Zukunft kann manchmal auch mit dem einfachen Präsens plus einem Zeitwort ausgedrückt werden, aber ir a ist klarer und im gesprochenen Spanisch häufiger."
+          },
+          "examples": [
+            {
+              "es": "Mañana trabajo por la tarde.",
+              "tr": {
+                "hu": "Holnap délután dolgozom (jelen idővel, jövő értelemben).",
+                "en": "Tomorrow I work in the afternoon (present tense, future meaning).",
+                "es": "Mañana trabajo por la tarde.",
+                "de": "Morgen arbeite ich am Nachmittag (Präsens mit Zukunftsbedeutung)."
+              }
+            },
+            {
+              "es": "Mañana voy a trabajar por la tarde.",
+              "tr": {
+                "hu": "Holnap délután fogok dolgozni (ir a szerkezettel).",
+                "en": "Tomorrow I am going to work in the afternoon (with ir a).",
+                "es": "Mañana voy a trabajar por la tarde.",
+                "de": "Morgen werde ich am Nachmittag arbeiten (mit ir a)."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Hasonló, mégis más",
+        "en": "Similar, yet different",
+        "es": "Parecido, pero distinto",
+        "de": "Ähnlich, aber anders"
+      },
+      "pairs": [
+        {
+          "a": "voy a trabajar",
+          "b": "trabajaré",
+          "note": {
+            "hu": "A voy a trabajar a mindennapi, eldöntött tervet fejezi ki; a trabajaré formálisabb, és inkább bizonytalan jóslásra vagy ígéretre való.",
+            "en": "Voy a trabajar expresses an everyday, decided plan; trabajaré is more formal, and leans toward an uncertain prediction or promise.",
+            "es": "Voy a trabajar expresa un plan cotidiano y decidido; trabajaré es más formal, y tiende a una predicción o promesa incierta.",
+            "de": "Voy a trabajar drückt einen alltäglichen, entschiedenen Plan aus; trabajaré ist formeller und eher eine unsichere Vorhersage oder ein Versprechen."
+          },
+          "examples": [
+            {
+              "es": "Voy a trabajar mañana, ya es un plan.",
+              "tr": {
+                "hu": "Holnap fogok dolgozni, ez már egy terv.",
+                "en": "I am going to work tomorrow, it is already a plan.",
+                "es": "Voy a trabajar mañana, ya es un plan.",
+                "de": "Ich werde morgen arbeiten, das ist schon ein Plan."
+              }
+            },
+            {
+              "es": "Trabajaré mucho en el futuro.",
+              "tr": {
+                "hu": "Sokat fogok dolgozni a jövőben.",
+                "en": "I will work a lot in the future.",
+                "es": "Trabajaré mucho en el futuro.",
+                "de": "Ich werde in Zukunft viel arbeiten."
+              }
+            }
+          ]
+        },
+        {
+          "a": "va a llover",
+          "b": "llueve",
+          "note": {
+            "hu": "A va a llover azt jelzi, hogy hamarosan esni fog (közeli jövő); a llueve egy általános, szokásos tényt fejez ki, ami mindig igaz.",
+            "en": "Va a llover signals that it is about to rain (near future); llueve expresses a general, habitual fact, something always true.",
+            "es": "Va a llover indica que está por llover (futuro cercano); llueve expresa un hecho general y habitual, algo siempre cierto.",
+            "de": "Va a llover zeigt an, dass es gleich regnen wird (nahe Zukunft); llueve drückt eine allgemeine, gewohnheitsmäßige Tatsache aus, etwas immer Wahres."
+          },
+          "examples": [
+            {
+              "es": "Mira esas nubes, va a llover.",
+              "tr": {
+                "hu": "Nézd azokat a felhőket, mindjárt esni fog.",
+                "en": "Look at those clouds, it is going to rain.",
+                "es": "Mira esas nubes, va a llover.",
+                "de": "Schau dir diese Wolken an, es wird gleich regnen."
+              }
+            },
+            {
+              "es": "Aquí siempre llueve mucho.",
+              "tr": {
+                "hu": "Itt mindig sokat esik az eső.",
+                "en": "Here it always rains a lot.",
+                "es": "Aquí siempre llueve mucho.",
+                "de": "Hier regnet es immer viel."
+              }
+            }
+          ]
+        },
+        {
+          "a": "vamos a comer",
+          "b": "¡vamos a comer!",
+          "note": {
+            "hu": "Ugyanaz a forma két dolgot jelenthet: kijelentésként tervet (eszünk majd), felkiáltásként pedig javaslatot (együnk most!).",
+            "en": "The same form can mean two things: as a statement it is a plan (we will eat), as an exclamation it is a suggestion (let's eat now!).",
+            "es": "La misma forma puede significar dos cosas: como afirmación es un plan (comeremos), como exclamación es una sugerencia (¡comamos ahora!).",
+            "de": "Dieselbe Form kann zweierlei bedeuten: als Aussage ist es ein Plan (wir werden essen), als Ausruf ist es ein Vorschlag (lass uns jetzt essen!)."
+          },
+          "examples": [
+            {
+              "es": "Vamos a comer a las dos, como siempre.",
+              "tr": {
+                "hu": "Kettőkor fogunk enni, mint mindig.",
+                "en": "We are going to eat at two, as always.",
+                "es": "Vamos a comer a las dos, como siempre.",
+                "de": "Wir werden um zwei essen, wie immer."
+              }
+            },
+            {
+              "es": "¡Vamos a comer, ya tengo hambre!",
+              "tr": {
+                "hu": "Együnk, már éhes vagyok!",
+                "en": "Let's eat, I am already hungry!",
+                "es": "¡Vamos a comer, ya tengo hambre!",
+                "de": "Lass uns essen, ich habe schon Hunger!"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A táblázatban szerepel a vosotros/vais alak, de a mindennapi mexikói beszédben ezt senki sem használja, helyette mindig ustedes/van áll: ustedes van a comer.",
+        "en": "The table includes the vosotros/vais form, but nobody uses it in everyday Mexican speech, ustedes/van stands in its place instead: ustedes van a comer.",
+        "es": "En la tabla aparece la forma vosotros/vais, pero nadie la usa en el habla cotidiana de México, en su lugar siempre está ustedes/van: ustedes van a comer.",
+        "de": "In der Tabelle steht die Form vosotros/vais, aber im mexikanischen Alltag benutzt sie niemand, stattdessen steht immer ustedes/van: ustedes van a comer."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A leggyakoribb kezdő hiba a kihagyott a: nem voy comer, hanem voy A comer, ezt sosem lehet elhagyni.",
+        "en": "The most common beginner mistake is dropping the a: not voy comer, but voy A comer, it can never be left out.",
+        "es": "El error más común de principiante es olvidar la a: no voy comer, sino voy A comer, nunca se puede omitir.",
+        "de": "Der häufigste Anfängerfehler ist das weggelassene a: nicht voy comer, sondern voy A comer, es darf nie fehlen."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Amikor valaki azt mondja, mit fog csinálni a spanyolban, a mindennapi beszédben szinte mindig az «ir a» plusz főnévi igenevet használja. Az «ir» ragozódik a személyhez: «voy», «vas», «va», «vamos», «vais», «van», utána pedig mindig ott az «a», ez sosem marad el. A második ige változatlan marad, mint egy főnévi igenév: «voy a trabajar», «vamos a comer». Ez a szerkezet fejezi ki a terveket és a közeli jövőt, azt is, ami hamarosan történik, mint az «va a llover». A «vamos a» plusz ige néha nem tervet jelent, hanem javaslatot: «vamos a bailar» annyit tesz, gyerünk, táncoljunk. A formálisabb jövő idő, mint a «trabajaré», inkább írásban vagy bizonytalan jóslásra való, a beszélt nyelvben az «ir a» a természetes választás.",
+    "en": "In everyday spoken Spanish, when people talk about what they are going to do, they almost always use «ir a» plus an infinitive. «Ir» is conjugated for the person: «voy», «vas», «va», «vamos», «vais», «van», and the «a» after it never disappears. The second verb stays unchanged, like an infinitive: «voy a trabajar», «vamos a comer». This structure expresses plans and the near future, including things about to happen, like «va a llover». Sometimes «vamos a» plus a verb is not a plan at all but a suggestion: «vamos a bailar» means let us dance, come on. The more formal future tense, like «trabajaré», belongs more to writing or uncertain guesses, while in spoken language «ir a» is the natural choice.",
+    "es": "En el español hablado de cada día, cuando alguien habla de lo que va a hacer, casi siempre usa «ir a» más infinitivo. «Ir» se conjuga según la persona: «voy», «vas», «va», «vamos», «vais», «van», y la «a» después nunca desaparece. El segundo verbo se queda igual, como un infinitivo: «voy a trabajar», «vamos a comer». Esta estructura expresa planes y el futuro cercano, incluso algo que está por pasar, como «va a llover». A veces «vamos a» más un verbo no es un plan, sino una sugerencia: «vamos a bailar» significa que hagámoslo juntos, ahora. El futuro más formal, como «trabajaré», es más de la escritura o de una suposición incierta, mientras que en el habla «ir a» es la opción natural.",
+    "de": "Im gesprochenen Alltagsspanisch benutzt man fast immer «ir a» plus Infinitiv, wenn man sagt, was man vorhat zu tun. «Ir» wird nach der Person konjugiert: «voy», «vas», «va», «vamos», «vais», «van», und das «a» danach fällt nie weg. Das zweite Verb bleibt unverändert, wie ein Infinitiv: «voy a trabajar», «vamos a comer». Diese Struktur drückt Pläne und die nahe Zukunft aus, auch etwas, das gleich passiert, wie «va a llover». Manchmal ist «vamos a» plus Verb kein Plan, sondern ein Vorschlag: «vamos a bailar» heißt so viel wie lass uns tanzen. Die formellere Zukunftsform, wie «trabajaré», gehört eher zur Schriftsprache oder zu einer unsicheren Vermutung, während im gesprochenen Spanisch «ir a» die natürliche Wahl ist."
   },
   "glossary": [
     {
@@ -73,17 +532,103 @@
         "es": "taco",
         "de": "Taco"
       }
+    },
+    {
+      "word": "autobús",
+      "gloss": {
+        "hu": "busz",
+        "en": "bus",
+        "es": "el autobús",
+        "de": "der Bus"
+      }
+    },
+    {
+      "word": "calor",
+      "gloss": {
+        "hu": "hőség, meleg (hace calor = meleg van)",
+        "en": "heat (hace calor = it's hot)",
+        "es": "el calor",
+        "de": "die Hitze"
+      }
+    },
+    {
+      "word": "semana",
+      "gloss": {
+        "hu": "hét (7 nap)",
+        "en": "week",
+        "es": "la semana",
+        "de": "die Woche"
+      }
+    },
+    {
+      "word": "hambre",
+      "gloss": {
+        "hu": "éhség (tener hambre = éhesnek lenni)",
+        "en": "hunger (tener hambre = to be hungry)",
+        "es": "el hambre",
+        "de": "der Hunger"
+      }
+    },
+    {
+      "word": "bailar",
+      "gloss": {
+        "hu": "táncolni",
+        "en": "to dance",
+        "es": "bailar",
+        "de": "tanzen"
+      }
+    },
+    {
+      "word": "pronto",
+      "gloss": {
+        "hu": "hamarosan",
+        "en": "soon",
+        "es": "pronto",
+        "de": "bald"
+      }
+    },
+    {
+      "word": "empezar",
+      "gloss": {
+        "hu": "elkezdeni, kezdődni",
+        "en": "to start, to begin",
+        "es": "empezar",
+        "de": "anfangen, beginnen"
+      }
+    },
+    {
+      "word": "nubes",
+      "gloss": {
+        "hu": "felhők",
+        "en": "clouds",
+        "es": "las nubes",
+        "de": "die Wolken"
+      }
+    },
+    {
+      "word": "plan",
+      "gloss": {
+        "hu": "terv",
+        "en": "plan",
+        "es": "el plan",
+        "de": "der Plan"
+      }
+    },
+    {
+      "word": "futuro",
+      "gloss": {
+        "hu": "jövő",
+        "en": "future",
+        "es": "el futuro",
+        "de": "die Zukunft"
+      }
     }
   ],
   "items": [
     {
       "id": "ir-01",
       "sentence": "Yo ___ comer algo ahora.",
-      "options": [
-        "voy a",
-        "voy",
-        "va a"
-      ],
+      "options": ["voy a", "voy", "va a"],
       "correct": 0,
       "why": {
         "hu": "Az ir a + főnévi igenévben az a szócska kötelező: voy a comer.",
@@ -93,16 +638,16 @@
       },
       "wrong": {
         "voy": {
-          "hu": "Hiányzik a kötelező a: nem voy comer, hanem voy A comer.",
-          "en": "The obligatory a is missing: not voy comer, but voy A comer.",
-          "es": "Falta la a obligatoria: no voy comer, sino voy A comer.",
-          "de": "Das obligatorische a fehlt: nicht voy comer, sondern voy A comer."
+          "hu": "Hiányzik a kötelező a: \"Yo voy comer\" nem áll meg így, helyesen: Yo voy a comer algo ahora.",
+          "en": "The obligatory a is missing: \"Yo voy comer\" does not work this way, correctly: Yo voy a comer algo ahora.",
+          "es": "Falta la a obligatoria: \"Yo voy comer\" no funciona así, correctamente: Yo voy a comer algo ahora.",
+          "de": "Das obligatorische a fehlt: \"Yo voy comer\" funktioniert so nicht, richtig: Yo voy a comer algo ahora."
         },
         "va a": {
-          "hu": "A va ő/ön alakja, itt viszont yo (én) az alany.",
-          "en": "Va is the he/she form, but here the subject is yo (I).",
-          "es": "Va es la forma de él/ella, pero aquí el sujeto es yo.",
-          "de": "Va ist die er/sie-Form, hier ist aber yo (ich) das Subjekt."
+          "hu": "A \"va\" az ő/ön alakja, itt viszont yo (én) az alany, ezért nem illik ide; helyesen: Yo voy a comer algo ahora.",
+          "en": "\"Va\" is the he/she/you-formal form, but here the subject is yo (I), so it does not fit; correctly: Yo voy a comer algo ahora.",
+          "es": "\"Va\" es la forma de él/ella/usted, pero aquí el sujeto es yo, por eso no encaja; correctamente: Yo voy a comer algo ahora.",
+          "de": "\"Va\" ist die er/sie/Sie-Form, hier ist aber yo (ich) das Subjekt, deshalb passt es nicht; richtig: Yo voy a comer algo ahora."
         }
       },
       "examples": [
@@ -113,11 +658,7 @@
     {
       "id": "ir-02",
       "sentence": "Voy a ___ mañana temprano.",
-      "options": [
-        "trabajar",
-        "trabajo",
-        "trabajas"
-      ],
+      "options": ["trabajar", "trabajo", "trabajas"],
       "correct": 0,
       "why": {
         "hu": "Az ir a után a MÁSODIK ige főnévi igenévben marad: trabajar.",
@@ -127,16 +668,16 @@
       },
       "wrong": {
         "trabajo": {
-          "hu": "A második ige nem ragozódhat újra, a voy már hordozza a személyt.",
-          "en": "The second verb cannot be conjugated again; voy already carries the person.",
-          "es": "El segundo verbo no puede conjugarse otra vez; voy ya lleva la persona.",
-          "de": "Das zweite Verb kann nicht noch einmal konjugiert werden; voy trägt die Person schon."
+          "hu": "A második ige nem ragozódhat újra: \"Voy a trabajo\" nem áll meg, a voy már hordozza a személyt; helyesen: Voy a trabajar mañana temprano.",
+          "en": "The second verb cannot be conjugated again: \"Voy a trabajo\" does not work, voy already carries the person; correctly: Voy a trabajar mañana temprano.",
+          "es": "El segundo verbo no puede conjugarse otra vez: \"Voy a trabajo\" no funciona, voy ya lleva la persona; correctamente: Voy a trabajar mañana temprano.",
+          "de": "Das zweite Verb kann nicht noch einmal konjugiert werden: \"Voy a trabajo\" funktioniert nicht, voy trägt die Person schon; richtig: Voy a trabajar mañana temprano."
         },
         "trabajas": {
-          "hu": "Ez a tú alakja, itt viszont yo (én) az alany, és amúgy is főnévi igenév kell.",
-          "en": "This is the tú form, but here the subject is yo (I), and an infinitive is needed anyway.",
-          "es": "Esta es la forma de tú, pero aquí el sujeto es yo, y además hace falta el infinitivo.",
-          "de": "Das ist die tú-Form, hier ist aber yo (ich) das Subjekt, und außerdem braucht es den Infinitiv."
+          "hu": "A \"trabajas\" a tú alakja, itt viszont yo (én) az alany, és a második ige amúgy is mindig főnévi igenév marad; helyesen: Voy a trabajar mañana temprano.",
+          "en": "\"Trabajas\" is the tú form, but here the subject is yo (I), and the second verb always stays an infinitive anyway; correctly: Voy a trabajar mañana temprano.",
+          "es": "\"Trabajas\" es la forma de tú, pero aquí el sujeto es yo, y además el segundo verbo siempre se queda en infinitivo; correctamente: Voy a trabajar mañana temprano.",
+          "de": "\"Trabajas\" ist die tú-Form, hier ist aber yo (ich) das Subjekt, außerdem bleibt das zweite Verb sowieso immer im Infinitiv; richtig: Voy a trabajar mañana temprano."
         }
       },
       "examples": [
@@ -147,11 +688,7 @@
     {
       "id": "ir-03",
       "sentence": "Tú ___ a llegar tarde hoy.",
-      "options": [
-        "vas",
-        "va",
-        "voy"
-      ],
+      "options": ["vas", "va", "voy"],
       "correct": 0,
       "why": {
         "hu": "Az ir ragozódik a személyhez: tú → vas.",
@@ -161,16 +698,16 @@
       },
       "wrong": {
         "va": {
-          "hu": "A va ő/ön alakja, itt viszont tú (te) az alany.",
-          "en": "Va is the he/she form, but here the subject is tú (you).",
-          "es": "Va es la forma de él/ella, pero aquí el sujeto es tú.",
-          "de": "Va ist die er/sie-Form, hier ist aber tú (du) das Subjekt."
+          "hu": "A \"va\" az ő/ön alakja, itt viszont tú (te) az alany; helyesen: Tú vas a llegar tarde hoy.",
+          "en": "\"Va\" is the he/she/you-formal form, but here the subject is tú (you); correctly: Tú vas a llegar tarde hoy.",
+          "es": "\"Va\" es la forma de él/ella/usted, pero aquí el sujeto es tú; correctamente: Tú vas a llegar tarde hoy.",
+          "de": "\"Va\" ist die er/sie/Sie-Form, hier ist aber tú (du) das Subjekt; richtig: Tú vas a llegar tarde hoy."
         },
         "voy": {
-          "hu": "A voy yo alakja, itt viszont tú a beszélgetőpartner.",
-          "en": "Voy is the yo form, but here the subject is tú.",
-          "es": "Voy es la forma de yo, pero aquí el sujeto es tú.",
-          "de": "Voy ist die yo-Form, hier ist aber tú gemeint."
+          "hu": "A \"voy\" a yo alakja, itt viszont tú a beszélgetőpartner, nem én; helyesen: Tú vas a llegar tarde hoy.",
+          "en": "\"Voy\" is the yo form, but here tú is being addressed, not I; correctly: Tú vas a llegar tarde hoy.",
+          "es": "\"Voy\" es la forma de yo, pero aquí se habla de tú, no de mí; correctamente: Tú vas a llegar tarde hoy.",
+          "de": "\"Voy\" ist die yo-Form, hier ist aber tú angesprochen, nicht ich; richtig: Tú vas a llegar tarde hoy."
         }
       },
       "examples": [
@@ -181,11 +718,7 @@
     {
       "id": "ir-04",
       "sentence": "Él ___ a comprar pan hoy.",
-      "options": [
-        "va",
-        "vas",
-        "van"
-      ],
+      "options": ["va", "vas", "van"],
       "correct": 0,
       "why": {
         "hu": "Az ir ragozódik a személyhez: él → va.",
@@ -195,16 +728,16 @@
       },
       "wrong": {
         "vas": {
-          "hu": "A vas tú alakja, itt viszont él (ő) az alany.",
-          "en": "Vas is the tú form, but here the subject is él (he).",
-          "es": "Vas es la forma de tú, pero aquí el sujeto es él.",
-          "de": "Vas ist die tú-Form, hier ist aber él (er) das Subjekt."
+          "hu": "A \"vas\" a tú alakja, itt viszont él (ő) az alany; helyesen: Él va a comprar pan hoy.",
+          "en": "\"Vas\" is the tú form, but here the subject is él (he); correctly: Él va a comprar pan hoy.",
+          "es": "\"Vas\" es la forma de tú, pero aquí el sujeto es él; correctamente: Él va a comprar pan hoy.",
+          "de": "\"Vas\" ist die tú-Form, hier ist aber él (er) das Subjekt; richtig: Él va a comprar pan hoy."
         },
         "van": {
-          "hu": "A van ellos/ustedes alakja, itt viszont él (egyes szám) a beszélgetőpartner.",
-          "en": "Van is the ellos/ustedes form, but here the subject is él (singular).",
-          "es": "Van es la forma de ellos/ustedes, pero aquí el sujeto es él (singular).",
-          "de": "Van ist die ellos/ustedes-Form, hier ist aber él (Singular) gemeint."
+          "hu": "A \"van\" az ellos/ustedes alakja (többes szám), itt viszont él egyes számú alany; helyesen: Él va a comprar pan hoy.",
+          "en": "\"Van\" is the ellos/ustedes form (plural), but here él is a singular subject; correctly: Él va a comprar pan hoy.",
+          "es": "\"Van\" es la forma de ellos/ustedes (plural), pero aquí él es un sujeto singular; correctamente: Él va a comprar pan hoy.",
+          "de": "\"Van\" ist die ellos/ustedes-Form (Plural), hier ist él aber ein Subjekt im Singular; richtig: Él va a comprar pan hoy."
         }
       },
       "examples": [
@@ -215,11 +748,7 @@
     {
       "id": "ir-05",
       "sentence": "Nosotros ___ estudiar juntos esta noche.",
-      "options": [
-        "vamos a",
-        "vamos",
-        "van a"
-      ],
+      "options": ["vamos a", "vamos", "van a"],
       "correct": 0,
       "why": {
         "hu": "A nosotros alakhoz vamos tartozik, és utána kötelező az a: vamos a estudiar.",
@@ -229,16 +758,16 @@
       },
       "wrong": {
         "vamos": {
-          "hu": "Hiányzik a kötelező a: nem vamos estudiar, hanem vamos A estudiar.",
-          "en": "The obligatory a is missing: not vamos estudiar, but vamos A estudiar.",
-          "es": "Falta la a obligatoria: no vamos estudiar, sino vamos A estudiar.",
-          "de": "Das obligatorische a fehlt: nicht vamos estudiar, sondern vamos A estudiar."
+          "hu": "Hiányzik a kötelező a: \"Nosotros vamos estudiar\" nem áll meg így; helyesen: Nosotros vamos a estudiar juntos esta noche.",
+          "en": "The obligatory a is missing: \"Nosotros vamos estudiar\" does not work this way; correctly: Nosotros vamos a estudiar juntos esta noche.",
+          "es": "Falta la a obligatoria: \"Nosotros vamos estudiar\" no funciona así; correctamente: Nosotros vamos a estudiar juntos esta noche.",
+          "de": "Das obligatorische a fehlt: \"Nosotros vamos estudiar\" funktioniert so nicht; richtig: Nosotros vamos a estudiar juntos esta noche."
         },
         "van a": {
-          "hu": "A van ellos/ustedes alakja, itt viszont nosotros (mi) az alany.",
-          "en": "Van is the ellos/ustedes form, but here the subject is nosotros (we).",
-          "es": "Van es la forma de ellos/ustedes, pero aquí el sujeto es nosotros.",
-          "de": "Van ist die ellos/ustedes-Form, hier ist aber nosotros (wir) das Subjekt."
+          "hu": "A \"van\" az ellos/ustedes alakja, itt viszont nosotros (mi) az alany; helyesen: Nosotros vamos a estudiar juntos esta noche.",
+          "en": "\"Van\" is the ellos/ustedes form, but here the subject is nosotros (we); correctly: Nosotros vamos a estudiar juntos esta noche.",
+          "es": "\"Van\" es la forma de ellos/ustedes, pero aquí el sujeto es nosotros; correctamente: Nosotros vamos a estudiar juntos esta noche.",
+          "de": "\"Van\" ist die ellos/ustedes-Form, hier ist aber nosotros (wir) das Subjekt; richtig: Nosotros vamos a estudiar juntos esta noche."
         }
       },
       "examples": [
@@ -249,11 +778,7 @@
     {
       "id": "ir-06",
       "sentence": "Ustedes van a ___ la tarea esta tarde.",
-      "options": [
-        "terminar",
-        "terminan",
-        "termino"
-      ],
+      "options": ["terminar", "terminan", "termino"],
       "correct": 0,
       "why": {
         "hu": "Az ir a után a MÁSODIK ige főnévi igenévben marad: terminar.",
@@ -263,16 +788,16 @@
       },
       "wrong": {
         "terminan": {
-          "hu": "A második ige nem ragozódhat újra, a van már hordozza a személyt.",
-          "en": "The second verb cannot be conjugated again; van already carries the person.",
-          "es": "El segundo verbo no puede conjugarse otra vez; van ya lleva la persona.",
-          "de": "Das zweite Verb kann nicht noch einmal konjugiert werden; van trägt die Person schon."
+          "hu": "A második ige nem ragozódhat újra: \"van a terminan\" nem áll meg, a van már hordozza a személyt; helyesen: Ustedes van a terminar la tarea esta tarde.",
+          "en": "The second verb cannot be conjugated again: \"van a terminan\" does not work, van already carries the person; correctly: Ustedes van a terminar la tarea esta tarde.",
+          "es": "El segundo verbo no puede conjugarse otra vez: \"van a terminan\" no funciona, van ya lleva la persona; correctamente: Ustedes van a terminar la tarea esta tarde.",
+          "de": "Das zweite Verb kann nicht noch einmal konjugiert werden: \"van a terminan\" funktioniert nicht, van trägt die Person schon; richtig: Ustedes van a terminar la tarea esta tarde."
         },
         "termino": {
-          "hu": "Ez a yo alakja, itt viszont ustedes (önök) az alany, és amúgy is főnévi igenév kell.",
-          "en": "This is the yo form, but here the subject is ustedes, and an infinitive is needed anyway.",
-          "es": "Esta es la forma de yo, pero aquí el sujeto es ustedes, y además hace falta el infinitivo.",
-          "de": "Das ist die yo-Form, hier ist aber ustedes gemeint, und außerdem braucht es den Infinitiv."
+          "hu": "A \"termino\" a yo alakja, itt viszont ustedes (önök) az alany, és a második ige amúgy is főnévi igenév marad; helyesen: Ustedes van a terminar la tarea esta tarde.",
+          "en": "\"Termino\" is the yo form, but here the subject is ustedes, and the second verb always stays an infinitive anyway; correctly: Ustedes van a terminar la tarea esta tarde.",
+          "es": "\"Termino\" es la forma de yo, pero aquí el sujeto es ustedes, y además el segundo verbo siempre se queda en infinitivo; correctamente: Ustedes van a terminar la tarea esta tarde.",
+          "de": "\"Termino\" ist die yo-Form, hier ist aber ustedes das Subjekt, außerdem bleibt das zweite Verb sowieso im Infinitiv; richtig: Ustedes van a terminar la tarea esta tarde."
         }
       },
       "examples": [
@@ -283,11 +808,7 @@
     {
       "id": "ir-07",
       "sentence": "Voy a ___ una película nueva.",
-      "options": [
-        "ver",
-        "veo",
-        "ves"
-      ],
+      "options": ["ver", "veo", "ves"],
       "correct": 0,
       "why": {
         "hu": "Az ir a után a MÁSODIK ige főnévi igenévben marad: ver.",
@@ -297,16 +818,16 @@
       },
       "wrong": {
         "veo": {
-          "hu": "A második ige nem ragozódhat újra, a voy már hordozza a személyt.",
-          "en": "The second verb cannot be conjugated again; voy already carries the person.",
-          "es": "El segundo verbo no puede conjugarse otra vez; voy ya lleva la persona.",
-          "de": "Das zweite Verb kann nicht noch einmal konjugiert werden; voy trägt die Person schon."
+          "hu": "A második ige nem ragozódhat újra: \"voy a veo\" nem áll meg, a voy már hordozza a személyt; helyesen: Voy a ver una película nueva.",
+          "en": "The second verb cannot be conjugated again: \"voy a veo\" does not work, voy already carries the person; correctly: Voy a ver una película nueva.",
+          "es": "El segundo verbo no puede conjugarse otra vez: \"voy a veo\" no funciona, voy ya lleva la persona; correctamente: Voy a ver una película nueva.",
+          "de": "Das zweite Verb kann nicht noch einmal konjugiert werden: \"voy a veo\" funktioniert nicht, voy trägt die Person schon; richtig: Voy a ver una película nueva."
         },
         "ves": {
-          "hu": "Ez a tú alakja, itt viszont yo (én) az alany, és amúgy is főnévi igenév kell.",
-          "en": "This is the tú form, but here the subject is yo (I), and an infinitive is needed anyway.",
-          "es": "Esta es la forma de tú, pero aquí el sujeto es yo, y además hace falta el infinitivo.",
-          "de": "Das ist die tú-Form, hier ist aber yo (ich) das Subjekt, und außerdem braucht es den Infinitiv."
+          "hu": "A \"ves\" a tú alakja, itt viszont yo (én) az alany, és a második ige amúgy is főnévi igenév marad; helyesen: Voy a ver una película nueva.",
+          "en": "\"Ves\" is the tú form, but here the subject is yo (I), and the second verb always stays an infinitive anyway; correctly: Voy a ver una película nueva.",
+          "es": "\"Ves\" es la forma de tú, pero aquí el sujeto es yo, y además el segundo verbo siempre se queda en infinitivo; correctamente: Voy a ver una película nueva.",
+          "de": "\"Ves\" ist die tú-Form, hier ist aber yo (ich) das Subjekt, außerdem bleibt das zweite Verb sowieso im Infinitiv; richtig: Voy a ver una película nueva."
         }
       },
       "examples": [
@@ -317,11 +838,7 @@
     {
       "id": "ir-08",
       "sentence": "Tú ___ salir temprano mañana.",
-      "options": [
-        "vas a",
-        "vas",
-        "va a"
-      ],
+      "options": ["vas a", "vas", "va a"],
       "correct": 0,
       "why": {
         "hu": "A tú alakhoz vas tartozik, és utána kötelező az a: vas a salir.",
@@ -331,16 +848,16 @@
       },
       "wrong": {
         "vas": {
-          "hu": "Hiányzik a kötelező a: nem vas salir, hanem vas A salir.",
-          "en": "The obligatory a is missing: not vas salir, but vas A salir.",
-          "es": "Falta la a obligatoria: no vas salir, sino vas A salir.",
-          "de": "Das obligatorische a fehlt: nicht vas salir, sondern vas A salir."
+          "hu": "Hiányzik a kötelező a: \"Tú vas salir\" nem áll meg így; helyesen: Tú vas a salir temprano mañana.",
+          "en": "The obligatory a is missing: \"Tú vas salir\" does not work this way; correctly: Tú vas a salir temprano mañana.",
+          "es": "Falta la a obligatoria: \"Tú vas salir\" no funciona así; correctamente: Tú vas a salir temprano mañana.",
+          "de": "Das obligatorische a fehlt: \"Tú vas salir\" funktioniert so nicht; richtig: Tú vas a salir temprano mañana."
         },
         "va a": {
-          "hu": "A va ő/ön alakja, itt viszont tú (te) az alany.",
-          "en": "Va is the he/she form, but here the subject is tú (you).",
-          "es": "Va es la forma de él/ella, pero aquí el sujeto es tú.",
-          "de": "Va ist die er/sie-Form, hier ist aber tú (du) das Subjekt."
+          "hu": "A \"va\" az ő/ön alakja, itt viszont tú (te) az alany; helyesen: Tú vas a salir temprano mañana.",
+          "en": "\"Va\" is the he/she/you-formal form, but here the subject is tú (you); correctly: Tú vas a salir temprano mañana.",
+          "es": "\"Va\" es la forma de él/ella/usted, pero aquí el sujeto es tú; correctamente: Tú vas a salir temprano mañana.",
+          "de": "\"Va\" ist die er/sie/Sie-Form, hier ist aber tú (du) das Subjekt; richtig: Tú vas a salir temprano mañana."
         }
       },
       "examples": [
@@ -351,11 +868,7 @@
     {
       "id": "ir-09",
       "sentence": "Ella va a ___ a su hermana.",
-      "options": [
-        "visitar",
-        "visita",
-        "visito"
-      ],
+      "options": ["visitar", "visita", "visito"],
       "correct": 0,
       "why": {
         "hu": "Az ir a után a MÁSODIK ige főnévi igenévben marad: visitar.",
@@ -365,16 +878,16 @@
       },
       "wrong": {
         "visita": {
-          "hu": "A második ige nem ragozódhat újra, a va már hordozza a személyt.",
-          "en": "The second verb cannot be conjugated again; va already carries the person.",
-          "es": "El segundo verbo no puede conjugarse otra vez; va ya lleva la persona.",
-          "de": "Das zweite Verb kann nicht noch einmal konjugiert werden; va trägt die Person schon."
+          "hu": "A második ige nem ragozódhat újra: \"va a visita\" nem áll meg, a va már hordozza a személyt; helyesen: Ella va a visitar a su hermana.",
+          "en": "The second verb cannot be conjugated again: \"va a visita\" does not work, va already carries the person; correctly: Ella va a visitar a su hermana.",
+          "es": "El segundo verbo no puede conjugarse otra vez: \"va a visita\" no funciona, va ya lleva la persona; correctamente: Ella va a visitar a su hermana.",
+          "de": "Das zweite Verb kann nicht noch einmal konjugiert werden: \"va a visita\" funktioniert nicht, va trägt die Person schon; richtig: Ella va a visitar a su hermana."
         },
         "visito": {
-          "hu": "Ez a yo alakja, itt viszont ella (ő) az alany, és amúgy is főnévi igenév kell.",
-          "en": "This is the yo form, but here the subject is ella (she), and an infinitive is needed anyway.",
-          "es": "Esta es la forma de yo, pero aquí el sujeto es ella, y además hace falta el infinitivo.",
-          "de": "Das ist die yo-Form, hier ist aber ella (sie) das Subjekt, und außerdem braucht es den Infinitiv."
+          "hu": "A \"visito\" a yo alakja, itt viszont ella (ő) az alany, és a második ige amúgy is főnévi igenév marad; helyesen: Ella va a visitar a su hermana.",
+          "en": "\"Visito\" is the yo form, but here the subject is ella (she), and the second verb always stays an infinitive anyway; correctly: Ella va a visitar a su hermana.",
+          "es": "\"Visito\" es la forma de yo, pero aquí el sujeto es ella, y además el segundo verbo siempre se queda en infinitivo; correctamente: Ella va a visitar a su hermana.",
+          "de": "\"Visito\" ist die yo-Form, hier ist aber ella (sie) das Subjekt, außerdem bleibt das zweite Verb sowieso im Infinitiv; richtig: Ella va a visitar a su hermana."
         }
       },
       "examples": [
@@ -385,11 +898,7 @@
     {
       "id": "ir-10",
       "sentence": "Ellos ___ a viajar a México.",
-      "options": [
-        "van",
-        "va",
-        "vamos"
-      ],
+      "options": ["van", "va", "vamos"],
       "correct": 0,
       "why": {
         "hu": "Az ir ragozódik a személyhez: ellos → van.",
@@ -399,16 +908,16 @@
       },
       "wrong": {
         "va": {
-          "hu": "A va ő/ön alakja, itt viszont ellos (ők) az alany.",
-          "en": "Va is the he/she form, but here the subject is ellos (they).",
-          "es": "Va es la forma de él/ella, pero aquí el sujeto es ellos.",
-          "de": "Va ist die er/sie-Form, hier ist aber ellos (sie) das Subjekt."
+          "hu": "A \"va\" az ő/ön alakja (egyes szám), itt viszont ellos (ők) többes számú alany; helyesen: Ellos van a viajar a México.",
+          "en": "\"Va\" is the he/she/you-formal form (singular), but here the subject is ellos (they, plural); correctly: Ellos van a viajar a México.",
+          "es": "\"Va\" es la forma de él/ella/usted (singular), pero aquí el sujeto es ellos, plural; correctamente: Ellos van a viajar a México.",
+          "de": "\"Va\" ist die er/sie/Sie-Form (Singular), hier ist aber ellos (sie, Plural) das Subjekt; richtig: Ellos van a viajar a México."
         },
         "vamos": {
-          "hu": "A vamos nosotros alakja, itt viszont ellos a beszélgetőpartner.",
-          "en": "Vamos is the nosotros form, but here the subject is ellos.",
-          "es": "Vamos es la forma de nosotros, pero aquí el sujeto es ellos.",
-          "de": "Vamos ist die nosotros-Form, hier ist aber ellos gemeint."
+          "hu": "A \"vamos\" a nosotros alakja, itt viszont ellos a beszélgetőpartner; helyesen: Ellos van a viajar a México.",
+          "en": "\"Vamos\" is the nosotros form, but here ellos is the subject; correctly: Ellos van a viajar a México.",
+          "es": "\"Vamos\" es la forma de nosotros, pero aquí el sujeto es ellos; correctamente: Ellos van a viajar a México.",
+          "de": "\"Vamos\" ist die nosotros-Form, hier ist aber ellos das Subjekt; richtig: Ellos van a viajar a México."
         }
       },
       "examples": [
@@ -419,11 +928,7 @@
     {
       "id": "ir-11",
       "sentence": "Vamos a ___ tacos esta noche.",
-      "options": [
-        "comer",
-        "comemos",
-        "come"
-      ],
+      "options": ["comer", "comemos", "come"],
       "correct": 0,
       "why": {
         "hu": "Az ir a után a MÁSODIK ige főnévi igenévben marad: comer.",
@@ -433,16 +938,16 @@
       },
       "wrong": {
         "comemos": {
-          "hu": "A második ige nem ragozódhat újra, a vamos már hordozza a személyt.",
-          "en": "The second verb cannot be conjugated again; vamos already carries the person.",
-          "es": "El segundo verbo no puede conjugarse otra vez; vamos ya lleva la persona.",
-          "de": "Das zweite Verb kann nicht noch einmal konjugiert werden; vamos trägt die Person schon."
+          "hu": "A második ige nem ragozódhat újra: \"vamos a comemos\" nem áll meg, a vamos már hordozza a személyt; helyesen: Vamos a comer tacos esta noche.",
+          "en": "The second verb cannot be conjugated again: \"vamos a comemos\" does not work, vamos already carries the person; correctly: Vamos a comer tacos esta noche.",
+          "es": "El segundo verbo no puede conjugarse otra vez: \"vamos a comemos\" no funciona, vamos ya lleva la persona; correctamente: Vamos a comer tacos esta noche.",
+          "de": "Das zweite Verb kann nicht noch einmal konjugiert werden: \"vamos a comemos\" funktioniert nicht, vamos trägt die Person schon; richtig: Vamos a comer tacos esta noche."
         },
         "come": {
-          "hu": "Ez az ő/ön alakja, itt viszont nosotros (mi) az alany, és amúgy is főnévi igenév kell.",
-          "en": "This is the he/she form, but here the subject is nosotros (we), and an infinitive is needed anyway.",
-          "es": "Esta es la forma de él/ella, pero aquí el sujeto es nosotros, y además hace falta el infinitivo.",
-          "de": "Das ist die er/sie-Form, hier ist aber nosotros gemeint, und außerdem braucht es den Infinitiv."
+          "hu": "A \"come\" az ő/ön alakja, itt viszont nosotros (mi) az alany, és a második ige amúgy is főnévi igenév marad; helyesen: Vamos a comer tacos esta noche.",
+          "en": "\"Come\" is the he/she/you-formal form, but here the subject is nosotros (we), and the second verb always stays an infinitive anyway; correctly: Vamos a comer tacos esta noche.",
+          "es": "\"Come\" es la forma de él/ella/usted, pero aquí el sujeto es nosotros, y además el segundo verbo siempre se queda en infinitivo; correctamente: Vamos a comer tacos esta noche.",
+          "de": "\"Come\" ist die er/sie/Sie-Form, hier ist aber nosotros das Subjekt, außerdem bleibt das zweite Verb sowieso im Infinitiv; richtig: Vamos a comer tacos esta noche."
         }
       },
       "examples": [
@@ -453,11 +958,7 @@
     {
       "id": "ir-12",
       "sentence": "Mañana ___ a llover mucho.",
-      "options": [
-        "va",
-        "voy",
-        "vamos"
-      ],
+      "options": ["va", "voy", "vamos"],
       "correct": 0,
       "why": {
         "hu": "Az időjárásra a személytelen ő-alak vonatkozik: va a llover.",
@@ -467,22 +968,130 @@
       },
       "wrong": {
         "voy": {
-          "hu": "A voy yo alakja, az időjárásnak viszont nincs yo alanya.",
-          "en": "Voy is the yo form, but weather has no yo subject.",
-          "es": "Voy es la forma de yo, pero el clima no tiene sujeto yo.",
-          "de": "Voy ist die yo-Form, beim Wetter gibt es aber kein yo-Subjekt."
+          "hu": "A \"voy\" a yo alakja, az időjárást viszont mindig a személytelen ő-alak fejezi ki, alany nélkül; helyesen: Mañana va a llover mucho.",
+          "en": "\"Voy\" is the yo form, but weather is always expressed with the impersonal he/she form, without a subject; correctly: Mañana va a llover mucho.",
+          "es": "\"Voy\" es la forma de yo, pero el clima siempre se expresa con la forma impersonal de él/ella, sin sujeto; correctamente: Mañana va a llover mucho.",
+          "de": "\"Voy\" ist die yo-Form, das Wetter wird aber immer mit der unpersönlichen er/sie-Form ausgedrückt, ohne Subjekt; richtig: Mañana va a llover mucho."
         },
         "vamos": {
-          "hu": "A vamos nosotros alakja, az időjárásnak viszont nincs nosotros alanya.",
-          "en": "Vamos is the nosotros form, but weather has no nosotros subject.",
-          "es": "Vamos es la forma de nosotros, pero el clima no tiene sujeto nosotros.",
-          "de": "Vamos ist die nosotros-Form, beim Wetter gibt es aber kein nosotros-Subjekt."
+          "hu": "A \"vamos\" a nosotros alakja, az időjárásnak viszont nincs nosotros alanya, mindig személytelen; helyesen: Mañana va a llover mucho.",
+          "en": "\"Vamos\" is the nosotros form, but weather has no nosotros subject, it is always impersonal; correctly: Mañana va a llover mucho.",
+          "es": "\"Vamos\" es la forma de nosotros, pero el clima no tiene sujeto nosotros, siempre es impersonal; correctamente: Mañana va a llover mucho.",
+          "de": "\"Vamos\" ist die nosotros-Form, beim Wetter gibt es aber kein nosotros-Subjekt, es ist immer unpersönlich; richtig: Mañana va a llover mucho."
         }
       },
       "examples": [
         "Mañana va a llover mucho.",
         "El sábado va a llover también."
       ]
+    },
+    {
+      "id": "ir-match-01",
+      "kind": "match",
+      "pairs": [
+        { "es": "voy a comer", "en": "I am going to eat" },
+        { "es": "vas a estudiar", "en": "you are going to study" },
+        { "es": "va a llover", "en": "it is going to rain" },
+        { "es": "vamos a viajar", "en": "we are going to travel" },
+        { "es": "van a trabajar", "en": "they are going to work" },
+        { "es": "voy a salir temprano", "en": "I am going to leave early" }
+      ]
+    },
+    {
+      "id": "ir-form-01",
+      "kind": "form",
+      "verb": "ir a + infinitivo",
+      "person": "yo",
+      "answer": "voy a",
+      "table": "ir-a-presente"
+    },
+    {
+      "id": "ir-form-02",
+      "kind": "form",
+      "verb": "ir a + infinitivo",
+      "person": "tú",
+      "answer": "vas a",
+      "table": "ir-a-presente"
+    },
+    {
+      "id": "ir-form-03",
+      "kind": "form",
+      "verb": "ir a + infinitivo",
+      "person": "él/ella/usted",
+      "answer": "va a",
+      "table": "ir-a-presente"
+    },
+    {
+      "id": "ir-form-04",
+      "kind": "form",
+      "verb": "ir a + infinitivo",
+      "person": "nosotros",
+      "answer": "vamos a",
+      "table": "ir-a-presente"
+    },
+    {
+      "id": "ir-form-05",
+      "kind": "form",
+      "verb": "ir a + infinitivo",
+      "person": "vosotros",
+      "answer": "vais a",
+      "table": "ir-a-presente"
+    },
+    {
+      "id": "ir-form-06",
+      "kind": "form",
+      "verb": "ir a + infinitivo",
+      "person": "ellos/ellas/ustedes",
+      "answer": "van a",
+      "table": "ir-a-presente"
+    },
+    {
+      "id": "ir-form-07",
+      "kind": "form",
+      "verb": "ir a + infinitivo",
+      "person": "yo",
+      "answer": "voy a",
+      "table": "ir-a-presente"
+    },
+    {
+      "id": "ir-form-08",
+      "kind": "form",
+      "verb": "ir a + infinitivo",
+      "person": "tú",
+      "answer": "vas a",
+      "table": "ir-a-presente"
+    },
+    {
+      "id": "ir-form-09",
+      "kind": "form",
+      "verb": "ir a + infinitivo",
+      "person": "él/ella/usted",
+      "answer": "va a",
+      "table": "ir-a-presente"
+    },
+    {
+      "id": "ir-form-10",
+      "kind": "form",
+      "verb": "ir a + infinitivo",
+      "person": "nosotros",
+      "answer": "vamos a",
+      "table": "ir-a-presente"
+    },
+    {
+      "id": "ir-form-11",
+      "kind": "form",
+      "verb": "ir a + infinitivo",
+      "person": "vosotros",
+      "answer": "vais a",
+      "table": "ir-a-presente"
+    },
+    {
+      "id": "ir-form-12",
+      "kind": "form",
+      "verb": "ir a + infinitivo",
+      "person": "ellos/ellas/ustedes",
+      "answer": "van a",
+      "table": "ir-a-presente"
     }
   ]
 }
