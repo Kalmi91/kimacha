@@ -1024,7 +1024,12 @@ export default function LearnScreen() {
     // Strict (FB6): "she speak" must not pass for "She speaks", only case,
     // punctuation and missing accents are forgiven. FB132: the accent half of
     // that is switchable in Settings -> Difficulty.
-    const ok = strictAnswerMatch(answer, correct, { strictAccents, lang: backLang });
+    const ok = strictAnswerMatch(answer, correct, {
+      strictAccents,
+      lang: backLang,
+      // PROMPT-POLICY 5 / FB285: el guardia áll a kártyán, la guardia is helyes.
+      eitherArticle: current.word.gender === 'mf',
+    });
     // Felfedéskor a gombsor a HELYES névelőt mutassa, hogy lássa, mit kellett volna.
     if (!ok) setArticlePick(articleOf(correct));
     setTypingResult(ok ? 'correct' : 'wrong');
@@ -1198,7 +1203,9 @@ export default function LearnScreen() {
     // card follows since FB43/FB73. Nothing to judge, so stay quiet.
     if (practiceText.trim().length === 0) return;
     setPracticeResult(
-      strictAnswerMatch(practiceText, back, { strictAccents, lang: backLang }) ? 'correct' : 'wrong'
+      strictAnswerMatch(practiceText, back, { strictAccents, lang: backLang, eitherArticle: current.word.gender === 'mf' })
+        ? 'correct'
+        : 'wrong'
     );
   };
 

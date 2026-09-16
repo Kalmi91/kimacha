@@ -1361,7 +1361,7 @@
   {
     "id": 3464,
     "level": "A2",
-    "es": "el/la comandante",
+    "es": "el comandante",
     "hu": "a parancsnok",
     "en": "the commander",
     "de": "Kommandant",
@@ -1371,7 +1371,10 @@
     "sentence_de": "Der Kommandant hat neue Befehle erteilt.",
     "topic": "trabajo_dia_ejercito_a2",
     "topicOrder": 14,
-    "pos": "phrase"
+    "pos": "noun",
+    "gender": "mf",
+    "note_hu": "Nőre: la comandante. A gépelésnél mindkét névelő jó.",
+    "note_en": "For a woman: la comandante. Either article is accepted when typing."
   },
   {
     "id": 3465,
@@ -1935,7 +1938,7 @@
   {
     "id": 3500,
     "level": "A2",
-    "es": "el/la guardia",
+    "es": "el guardia",
     "hu": "az őr",
     "en": "the guard",
     "de": "Wächter / die Wache",
@@ -1945,7 +1948,10 @@
     "sentence_de": "Der Wächter hat die Tür geschlossen.",
     "topic": "trabajo_dia_ejercito_a2",
     "topicOrder": 16,
-    "pos": "phrase"
+    "pos": "noun",
+    "gender": "mf",
+    "note_hu": "Nőre: la guardia. A gépelésnél mindkét névelő jó.",
+    "note_en": "For a woman: la guardia. Either article is accepted when typing."
   },
   {
     "id": 3501,
@@ -3503,7 +3509,7 @@
   {
     "id": 3601,
     "level": "A2",
-    "es": "el/la testigo",
+    "es": "el testigo",
     "hu": "a tanú",
     "en": "the witness",
     "de": "Zeuge / die Zeugin",
@@ -3513,7 +3519,10 @@
     "sentence_de": "Der Zeuge hat vor dem Richter ausgesagt.",
     "topic": "trabajo_dia_juzgado_a2",
     "topicOrder": 21,
-    "pos": "phrase"
+    "pos": "noun",
+    "gender": "mf",
+    "note_hu": "Nőre: la testigo. A gépelésnél mindkét névelő jó.",
+    "note_en": "For a woman: la testigo. Either article is accepted when typing."
   },
   {
     "id": 3602,

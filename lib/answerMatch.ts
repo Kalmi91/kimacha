@@ -12,6 +12,19 @@ export interface MatchOptions {
   strictAccents?: boolean;
   /** Language the answer is written in, so its own spelling variants count. */
   lang?: string;
+  /**
+   * PROMPT-POLICY 5 / FB285: a közös nemű főnév (gender 'mf', el guardia) a
+   * kártyán egy névelővel áll, de gépelve a másik névelő is helyes (la guardia).
+   */
+  eitherArticle?: boolean;
+}
+
+const ARTICLE_SWAP: Record<string, string> = { el: 'la', la: 'el', los: 'las', las: 'los' };
+
+function withSwappedArticle(text: string): string | null {
+  const [first, ...rest] = text.trim().split(/\s+/);
+  const swapped = first ? ARTICLE_SWAP[first.toLowerCase()] : undefined;
+  return swapped && rest.length > 0 ? [swapped, ...rest].join(' ') : null;
 }
 
 function normalizeWords(text: string, strictAccents = false): string[] {
@@ -122,6 +135,12 @@ function answerCandidates(correct: string): string[] {
 export function strictAnswerMatch(answer: string, correct: string, opts: MatchOptions = {}): boolean {
   const answerForms = normalizedForms(answer, opts);
   const candidates = answerCandidates(correct);
+  if (opts.eitherArticle) {
+    for (const c of [...candidates]) {
+      const swapped = withSwappedArticle(c);
+      if (swapped) candidates.push(swapped);
+    }
+  }
   return candidates.some((candidate) =>
     normalizedForms(candidate, opts).some((c) => {
       if (c.length === 0) return false;
