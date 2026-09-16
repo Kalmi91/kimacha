@@ -38,6 +38,8 @@ interface Props {
   level: string;
   topicIcon: string | null;
   topicName: string | null;
+  /** FB228: a szint-jelvény külön koppintható, a szintváltót nyitja. */
+  onLevelPress?: () => void;
   onTopicPress: () => void;
   known: number;
   total: number;
@@ -62,6 +64,7 @@ export default function LearnChrome({
   level,
   topicIcon,
   topicName,
+  onLevelPress,
   onTopicPress,
   known,
   total,
@@ -106,8 +109,10 @@ export default function LearnChrome({
     </ToastWrap>
   ) : null;
 
-  // No topic (A0 or a topic-less level): only the level badge shows, and
-  // there's nowhere to navigate, so the wrapper is a plain View.
+  // FB228 (Kálmán 2026-09-10): „ha a bal felső sarokban az A1-re kattintok
+  // akkor lehessen szintet váltani, ha a topikra akkor topikot". A jelvény és a
+  // téma-név két külön gomb: a jelvény a szintváltót nyitja, a név a fát.
+  const LevelWrap = onLevelPress ? Pressable : View;
   const TopicWrap = topicName ? Pressable : View;
 
   return (
@@ -115,20 +120,25 @@ export default function LearnChrome({
       {toastBlock}
 
       <View style={styles.statusRow}>
-        <TopicWrap style={styles.left} {...(topicName ? { onPress: onTopicPress } : {})}>
-          <View style={[styles.levelBadge, { backgroundColor: '#38BDF8' }]}>
+        <View style={styles.left}>
+          <LevelWrap
+            style={[styles.levelBadge, { backgroundColor: '#38BDF8' }]}
+            {...(onLevelPress ? { onPress: onLevelPress, hitSlop: 6, testID: 'headerLevel' } : {})}
+          >
             <Text style={styles.levelText} maxFontSizeMultiplier={FONT_SCALE_CAP}>{level}</Text>
-          </View>
+          </LevelWrap>
           {topicName && (
-            <Text
-              style={[styles.topicName, { color: colors.text }]}
-              numberOfLines={1}
-              maxFontSizeMultiplier={FONT_SCALE_CAP}
-            >
-              {topicIcon ? `${topicIcon} ` : ''}{topicName}
-            </Text>
+            <TopicWrap style={styles.topicWrap} {...(topicName ? { onPress: onTopicPress, hitSlop: 6 } : {})}>
+              <Text
+                style={[styles.topicName, { color: colors.text }]}
+                numberOfLines={1}
+                maxFontSizeMultiplier={FONT_SCALE_CAP}
+              >
+                {topicIcon ? `${topicIcon} ` : ''}{topicName}
+              </Text>
+            </TopicWrap>
           )}
-        </TopicWrap>
+        </View>
 
         <View style={styles.right}>
           {/* UTEMEZO 6. szakasz: harom sima szam, jelveny es betu nelkul, a napi
@@ -235,6 +245,9 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 14,
     fontWeight: '800',
+  },
+  topicWrap: {
+    flexShrink: 1,
   },
   topicName: {
     fontSize: 12,

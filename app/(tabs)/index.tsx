@@ -36,6 +36,7 @@ import MockExamMode from '@/components/exam/MockExamMode';
 import DoneScreen, { type DoneAsk } from '@/components/DoneScreen';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import LearnChrome from '@/components/LearnChrome';
+import LevelPicker from '@/components/LevelPicker';
 import { languages, speechLang } from '@/lib/languages';
 import { buildMockExam } from '@/lib/exam/buildMockExam';
 import { answerInputProps } from '@/lib/inputProps';
@@ -152,6 +153,8 @@ export default function LearnScreen() {
   // FB21: transient toast shown after a tech-tree topic switch, signalling that
   // the change affects FUTURE cards, not past progress.
   const [topicSwitchMsg, setTopicSwitchMsg] = useState<string | null>(null);
+  // FB228: a fejléc szint-jelvénye nyitja, ugyanaz a váltás, mint a Master ablak.
+  const [levelPickerOpen, setLevelPickerOpen] = useState(false);
   const inputRef = useRef<TextInput>(null);
   // Guards applyAnswer()/deferCurrent() against double-fire on the same card
   // while its persistence (several awaited DB writes) is still running.
@@ -1275,12 +1278,30 @@ export default function LearnScreen() {
 
   // ITER5: the whole header is one component now, shared by all three render
   // branches below, so the branches cannot drift apart the way they did.
+  const handlePickLevel = async (next: Level) => {
+    setLevelPickerOpen(false);
+    if (next === level) return;
+    await getDb().updateLevel(next, 0, 0, 0);
+    setExamMode(false);
+    setExamLevel(null);
+    await loadCards();
+  };
+
   const chrome = (
+    <>
+    <LevelPicker
+      visible={levelPickerOpen}
+      current={level}
+      targetLang={direction[1]}
+      onPick={handlePickLevel}
+      onClose={() => setLevelPickerOpen(false)}
+    />
     <LearnChrome
       level={level}
       topicIcon={currentTopic ? (currentTopic.icon ?? (currentTopic.type === 'grammar' ? '📗' : '📘')) : null}
       topicName={currentTopic && topicProgress ? getTopicName(currentTopic, topicLang) : null}
       onTopicPress={() => router.push('/(tabs)/tree')}
+      onLevelPress={() => setLevelPickerOpen(true)}
       known={knownWords}
       total={levelTotal}
       langFlag={targetLangInfo?.flag ?? ''}
@@ -1295,6 +1316,7 @@ export default function LearnScreen() {
       toast={chromeToast}
       lapLabel={lapLabelOf(qs?.current ?? null)}
     />
+    </>
   );
 
   if (current.isEasySentence && !isWord) {
