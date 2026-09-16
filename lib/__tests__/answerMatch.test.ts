@@ -193,3 +193,15 @@ describe('alternative meanings', () => {
   });
 });
 
+
+describe('eitherArticle (PROMPT-POLICY 5, FB285)', () => {
+  it('accepts the other article on a common-gender noun', () => {
+    expect(strictAnswerMatch('la guardia', 'el guardia', { eitherArticle: true })).toBe(true);
+    expect(strictAnswerMatch('el guardia', 'el guardia', { eitherArticle: true })).toBe(true);
+  });
+
+  it('does not swap articles on ordinary nouns', () => {
+    expect(strictAnswerMatch('la perro', 'el perro')).toBe(false);
+    expect(strictAnswerMatch('la perro', 'el perro', { eitherArticle: false })).toBe(false);
+  });
+});
