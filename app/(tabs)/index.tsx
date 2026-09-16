@@ -36,6 +36,7 @@ import MockExamMode from '@/components/exam/MockExamMode';
 import DoneScreen, { type DoneAsk } from '@/components/DoneScreen';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import LearnChrome from '@/components/LearnChrome';
+import LevelPicker from '@/components/LevelPicker';
 import { languages, speechLang } from '@/lib/languages';
 import { buildMockExam } from '@/lib/exam/buildMockExam';
 import { answerInputProps } from '@/lib/inputProps';
@@ -152,6 +153,8 @@ export default function LearnScreen() {
   // FB21: transient toast shown after a tech-tree topic switch, signalling that
   // the change affects FUTURE cards, not past progress.
   const [topicSwitchMsg, setTopicSwitchMsg] = useState<string | null>(null);
+  // FB228: a fejléc szint-jelvénye nyitja, ugyanaz a váltás, mint a Master ablak.
+  const [levelPickerOpen, setLevelPickerOpen] = useState(false);
   const inputRef = useRef<TextInput>(null);
   // Guards applyAnswer()/deferCurrent() against double-fire on the same card
   // while its persistence (several awaited DB writes) is still running.
@@ -1024,7 +1027,12 @@ export default function LearnScreen() {
     // Strict (FB6): "she speak" must not pass for "She speaks", only case,
     // punctuation and missing accents are forgiven. FB132: the accent half of
     // that is switchable in Settings -> Difficulty.
-    const ok = strictAnswerMatch(answer, correct, { strictAccents, lang: backLang });
+    const ok = strictAnswerMatch(answer, correct, {
+      strictAccents,
+      lang: backLang,
+      // PROMPT-POLICY 5 / FB285: el guardia áll a kártyán, la guardia is helyes.
+      eitherArticle: current.word.gender === 'mf',
+    });
     // Felfedéskor a gombsor a HELYES névelőt mutassa, hogy lássa, mit kellett volna.
     if (!ok) setArticlePick(articleOf(correct));
     setTypingResult(ok ? 'correct' : 'wrong');
@@ -1198,7 +1206,9 @@ export default function LearnScreen() {
     // card follows since FB43/FB73. Nothing to judge, so stay quiet.
     if (practiceText.trim().length === 0) return;
     setPracticeResult(
-      strictAnswerMatch(practiceText, back, { strictAccents, lang: backLang }) ? 'correct' : 'wrong'
+      strictAnswerMatch(practiceText, back, { strictAccents, lang: backLang, eitherArticle: current.word.gender === 'mf' })
+        ? 'correct'
+        : 'wrong'
     );
   };
 
@@ -1268,12 +1278,30 @@ export default function LearnScreen() {
 
   // ITER5: the whole header is one component now, shared by all three render
   // branches below, so the branches cannot drift apart the way they did.
+  const handlePickLevel = async (next: Level) => {
+    setLevelPickerOpen(false);
+    if (next === level) return;
+    await getDb().updateLevel(next, 0, 0, 0);
+    setExamMode(false);
+    setExamLevel(null);
+    await loadCards();
+  };
+
   const chrome = (
+    <>
+    <LevelPicker
+      visible={levelPickerOpen}
+      current={level}
+      targetLang={direction[1]}
+      onPick={handlePickLevel}
+      onClose={() => setLevelPickerOpen(false)}
+    />
     <LearnChrome
       level={level}
       topicIcon={currentTopic ? (currentTopic.icon ?? (currentTopic.type === 'grammar' ? '📗' : '📘')) : null}
       topicName={currentTopic && topicProgress ? getTopicName(currentTopic, topicLang) : null}
       onTopicPress={() => router.push('/(tabs)/tree')}
+      onLevelPress={() => setLevelPickerOpen(true)}
       known={knownWords}
       total={levelTotal}
       langFlag={targetLangInfo?.flag ?? ''}
@@ -1288,6 +1316,7 @@ export default function LearnScreen() {
       toast={chromeToast}
       lapLabel={lapLabelOf(qs?.current ?? null)}
     />
+    </>
   );
 
   if (current.isEasySentence && !isWord) {
@@ -1394,7 +1423,7 @@ export default function LearnScreen() {
               ha a helyes alak névelőtlen, különben a puszta megjelenése elárulná,
               hogy kell névelő. ⊘ az alapállás, tehát aki nem nyúl hozzá, gépel.
               FB214: igénél és melléknévnél is ott a sor, ⊘-val a helyes válasz. */}
-          {articlePickerOn && articlePickerApplies(backLang, current.type === 'word') && (
+          {articlePickerOn && articlePickerApplies(backLang, current.type === 'word', back) && (
             <View style={styles.articleRow}>
               {([...ARTICLE_OPTIONS, ''] as ArticlePick[]).map((opt) => {
                 const active = articlePick === opt;
