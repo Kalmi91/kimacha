@@ -1,4 +1,5 @@
 {
+  "schema": 2,
   "topic": "gustar",
   "level": "A1",
   "title": {
@@ -7,101 +8,356 @@
     "es": "Gustar: ¿qué me gusta?",
     "de": "Gustar: was gefällt mir?"
   },
-  "rule": {
-    "hu": "A gustar fordítva működik, mint a magyar „szeretem\": a MONDAT ALANYA az, ami tetszik, és a személy névmást kap. Me / te / le / nos / les + gusta (egy dolog vagy főnévi igenév) vagy gustan (több dolog). Me gusta el café. Me gustan los libros. Me gusta leer. A gusto alak azt jelentené, hogy én tetszem valakinek.",
-    "en": "Gustar works the other way round from \"I like\": the THING is the subject and the person takes a pronoun. Me / te / le / nos / les + gusta (one thing or an infinitive) or gustan (several things). Me gusta el café. Me gustan los libros. Me gusta leer. The form gusto would mean that I am the one being liked.",
-    "es": "Gustar funciona al revés: el SUJETO es la cosa que gusta y la persona lleva pronombre. Me / te / le / nos / les + gusta (una cosa o un infinitivo) o gustan (varias cosas). Me gusta el café. Me gustan los libros. Me gusta leer. Yo gusto significaría que yo le gusto a alguien.",
-    "de": "Gustar funktioniert umgekehrt wie „ich mag\": das DING ist das Subjekt, die Person bekommt ein Pronomen. Me / te / le / nos / les + gusta (eine Sache oder ein Infinitiv) oder gustan (mehrere Sachen). Me gusta el café. Me gustan los libros. Me gusta leer. Yo gusto hieße, dass ICH jemandem gefalle."
-  },
-  "more": {
-    "hu": "Nyomatékosításhoz elé teheted: A mí me gusta, a ti te gusta, a él le gusta. Ez nem kötelező, de tisztázza, kiről van szó a le-nél (le = neki, férfinak vagy nőnek). Több főnévi igenév után is EGYES szám: Me gusta comer y beber. Ugyanígy működik: encantar (me encanta), doler (me duele), interesar (me interesa).",
-    "en": "For emphasis you can add: a mí me gusta, a ti te gusta, a él le gusta. It is optional, but it clears up who le refers to (him or her). Several infinitives still take the SINGULAR: Me gusta comer y beber. The same pattern: encantar (me encanta), doler (me duele), interesar (me interesa).",
-    "es": "Para enfatizar puedes añadir: a mí me gusta, a ti te gusta, a él le gusta. No es obligatorio, pero aclara a quién se refiere le. Con varios infinitivos se usa el SINGULAR: Me gusta comer y beber. Igual funcionan encantar, doler e interesar.",
-    "de": "Zur Betonung kannst du ergänzen: a mí me gusta, a ti te gusta, a él le gusta. Das ist optional, klärt aber, wer mit le gemeint ist. Mehrere Infinitive stehen weiter im SINGULAR: Me gusta comer y beber. Genauso funktionieren encantar, doler und interesar."
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A gustar fordítva működik, mint a magyar „szeretem\": a mondat alanya az a DOLOG, ami tetszik, a személy pedig csak egy névmást kap. Ezért nem \"yo gusto el café\", hanem \"me gusta el café\", szó szerint: nekem tetszik a kávé.",
+        "en": "Gustar works the other way round from \"I like\": the SUBJECT of the sentence is the thing that pleases, and the person only gets a pronoun. That is why it is not \"yo gusto el café\" but \"me gusta el café\", literally: coffee pleases me.",
+        "es": "Gustar funciona al revés que \"me gusta\" en otros idiomas: el SUJETO de la frase es la cosa que gusta, y la persona solo lleva un pronombre. Por eso no se dice \"yo gusto el café\", sino \"me gusta el café\".",
+        "de": "Gustar funktioniert umgekehrt wie „ich mag\": das SUBJEKT des Satzes ist die Sache, die gefällt, und die Person bekommt nur ein Pronomen. Deshalb heißt es nicht \"yo gusto el café\", sondern \"me gusta el café\", wörtlich: mir gefällt der Kaffee."
+      }
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "A szerkezet elemei",
+        "en": "The parts of the structure",
+        "es": "Las partes de la estructura",
+        "de": "Die Teile der Struktur"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Ha EGY dolog vagy egy tevékenység tetszik, egyes szám: gusta.",
+            "en": "If ONE thing or one activity pleases, use the singular: gusta.",
+            "es": "Si gusta UNA sola cosa o actividad, se usa el singular: gusta.",
+            "de": "Wenn EINE Sache oder eine Tätigkeit gefällt, steht der Singular: gusta."
+          },
+          "examples": [
+            {
+              "es": "Me gusta el café.",
+              "tr": { "hu": "Szeretem a kávét (nekem tetszik a kávé).", "en": "I like coffee.", "es": "Me gusta el café.", "de": "Ich mag Kaffee." }
+            },
+            {
+              "es": "Le gusta la música.",
+              "tr": { "hu": "Ő szereti a zenét.", "en": "He/she likes music.", "es": "Le gusta la música.", "de": "Er/sie mag Musik." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ha TÖBB dolog tetszik, többes szám: gustan.",
+            "en": "If SEVERAL things please, use the plural: gustan.",
+            "es": "Si gustan VARIAS cosas, se usa el plural: gustan.",
+            "de": "Wenn MEHRERE Sachen gefallen, steht der Plural: gustan."
+          },
+          "examples": [
+            {
+              "es": "Me gustan los libros.",
+              "tr": { "hu": "Szeretem a könyveket.", "en": "I like books.", "es": "Me gustan los libros.", "de": "Ich mag Bücher." }
+            },
+            {
+              "es": "Nos gustan las vacaciones.",
+              "tr": { "hu": "Szeretjük a vakációt.", "en": "We like vacations.", "es": "Nos gustan las vacaciones.", "de": "Wir mögen Ferien." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Főnévi igenév(ek) után mindig egyes szám marad, akkor is, ha kettő vagy több áll egymás mellett.",
+            "en": "After one or more infinitives it always stays singular, even with two or more infinitives together.",
+            "es": "Después de uno o varios infinitivos siempre queda en singular, aunque haya dos o más juntos.",
+            "de": "Nach einem oder mehreren Infinitiven bleibt es immer Singular, auch wenn zwei oder mehr zusammenstehen."
+          },
+          "examples": [
+            {
+              "es": "Me gusta leer.",
+              "tr": { "hu": "Szeretek olvasni.", "en": "I like to read.", "es": "Me gusta leer.", "de": "Ich lese gern." }
+            },
+            {
+              "es": "Me gusta comer y beber.",
+              "tr": { "hu": "Szeretek enni és inni.", "en": "I like eating and drinking.", "es": "Me gusta comer y beber.", "de": "Ich esse und trinke gern." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A tetsző SZEMÉLYT névmás jelöli (me/te/le/nos/os/les), nem az alanyi névmás (yo, tú…): a személy nem az alany, csak a mondat célpontja.",
+            "en": "The PERSON who is pleased takes a pronoun (me/te/le/nos/os/les), not a subject pronoun (yo, tú…): the person is not the subject, only the target of the sentence.",
+            "es": "La PERSONA a la que le gusta algo lleva pronombre (me/te/le/nos/os/les), no pronombre de sujeto (yo, tú…): la persona no es el sujeto, solo el destinatario.",
+            "de": "Die PERSON, der etwas gefällt, bekommt ein Pronomen (me/te/le/nos/os/les), kein Subjektpronomen (yo, tú…): die Person ist nicht das Subjekt, nur das Ziel des Satzes."
+          },
+          "examples": [
+            {
+              "es": "Te gusta el chocolate.",
+              "tr": { "hu": "Neked tetszik a csoki.", "en": "You like chocolate.", "es": "Te gusta el chocolate.", "de": "Dir gefällt Schokolade." }
+            },
+            {
+              "es": "A ella le gusta el arte.",
+              "tr": { "hu": "Neki (nőnek) tetszik a művészet.", "en": "She likes art.", "es": "A ella le gusta el arte.", "de": "Ihr gefällt Kunst." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ugyanígy, ugyanezzel a fordított logikával működik: encantar (nagyon tetszik, imád), interesar (érdekel), doler (fáj).",
+            "en": "The same reversed logic works for: encantar (to love, be delighted by), interesar (to interest), doler (to hurt).",
+            "es": "La misma lógica invertida funciona con: encantar, interesar, doler.",
+            "de": "Dieselbe umgekehrte Logik funktioniert bei: encantar (sehr gefallen), interesar (interessieren), doler (wehtun)."
+          },
+          "examples": [
+            {
+              "es": "Me encanta esta canción.",
+              "tr": { "hu": "Nagyon tetszik ez a dal.", "en": "I love this song.", "es": "Me encanta esta canción.", "de": "Ich liebe dieses Lied." }
+            },
+            {
+              "es": "Me interesa la historia.",
+              "tr": { "hu": "Érdekel a történelem.", "en": "History interests me.", "es": "Me interesa la historia.", "de": "Mich interessiert Geschichte." }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "gustar-presente",
+      "title": {
+        "hu": "Gustar, jelen idő",
+        "en": "Gustar, present tense",
+        "es": "Gustar, presente",
+        "de": "Gustar, Präsens"
+      },
+      "header": [
+        { "hu": "Személy", "en": "Person", "es": "Persona", "de": "Person" },
+        { "hu": "gustar + egy dolog", "en": "gustar + one thing", "es": "gustar + una cosa", "de": "gustar + eine Sache" },
+        { "hu": "gustar + több dolog", "en": "gustar + several things", "es": "gustar + varias cosas", "de": "gustar + mehrere Sachen" }
+      ],
+      "rows": [
+        ["yo", "me gusta", "me gustan"],
+        ["tú", "te gusta", "te gustan"],
+        ["él/ella/usted", "le gusta", "le gustan"],
+        ["nosotros", "nos gusta", "nos gustan"],
+        ["vosotros", "os gusta", "os gustan"],
+        ["ellos/ellas/ustedes", "les gusta", "les gustan"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Mikor és hogyan használjuk",
+        "en": "When and how we use it",
+        "es": "Cuándo y cómo se usa",
+        "de": "Wann und wie man es benutzt"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Kifejezhetsz vele tetszést tárgyakra, ételekre, zenére, tevékenységekre egyaránt.",
+            "en": "You can use it for objects, food, music, and activities alike.",
+            "es": "Se usa tanto para objetos, comida, música como para actividades.",
+            "de": "Man benutzt es für Gegenstände, Essen, Musik und Tätigkeiten gleichermaßen."
+          },
+          "examples": [
+            { "es": "Me gusta el café.", "tr": { "hu": "Szeretem a kávét.", "en": "I like coffee.", "es": "Me gusta el café.", "de": "Ich mag Kaffee." } },
+            { "es": "Me gusta bailar.", "tr": { "hu": "Szeretek táncolni.", "en": "I like to dance.", "es": "Me gusta bailar.", "de": "Ich tanze gern." } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Amikor \"le\"-ről van szó, egy névvel vagy \"a él/a ella\"-val pontosítod, kiről beszélsz, mert a le önmagában lehet ő, ő (nő) vagy ön is.",
+            "en": "When you use \"le\", you clarify who you mean with a name or \"a él/a ella\", because le alone could mean him, her, or you (formal).",
+            "es": "Cuando usas \"le\", aclaras con un nombre o \"a él/a ella\" de quién hablas, porque le solo puede ser él, ella o usted.",
+            "de": "Wenn du \"le\" benutzt, klärst du mit einem Namen oder \"a él/a ella\", wer gemeint ist, denn le allein kann er, sie oder Sie sein."
+          },
+          "examples": [
+            { "es": "A Juan le gusta el fútbol.", "tr": { "hu": "Juannak tetszik a foci.", "en": "Juan likes soccer.", "es": "A Juan le gusta el fútbol.", "de": "Juan mag Fußball." } },
+            { "es": "A ella le gusta el arte.", "tr": { "hu": "Neki (nőnek) tetszik a művészet.", "en": "She likes art.", "es": "A ella le gusta el arte.", "de": "Ihr gefällt Kunst." } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Kérdésben ugyanez a szerkezet, csak kérdőjelek közt: ¿te gusta…?, ¿os gusta…?",
+            "en": "In a question it is the same structure, just between question marks: ¿te gusta…?, ¿os gusta…?",
+            "es": "En una pregunta es la misma estructura, solo entre signos de interrogación: ¿te gusta…?, ¿os gusta…?",
+            "de": "In einer Frage ist es dieselbe Struktur, nur zwischen Fragezeichen: ¿te gusta…?, ¿os gusta…?"
+          },
+          "examples": [
+            { "es": "¿Te gusta el chocolate?", "tr": { "hu": "Szereted a csokit?", "en": "Do you like chocolate?", "es": "¿Te gusta el chocolate?", "de": "Magst du Schokolade?" } },
+            { "es": "¿Os gusta la playa?", "tr": { "hu": "Szeretitek a strandot?", "en": "Do you (plural) like the beach?", "es": "¿Os gusta la playa?", "de": "Mögt ihr den Strand?" } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Tagadásban a \"no\" a névmás elé kerül, az ige alakja (gusta/gustan) nem változik.",
+            "en": "In the negative, \"no\" goes before the pronoun; the verb form (gusta/gustan) does not change.",
+            "es": "En negativo, \"no\" va antes del pronombre; la forma del verbo (gusta/gustan) no cambia.",
+            "de": "Bei der Verneinung steht \"no\" vor dem Pronomen; die Verbform (gusta/gustan) ändert sich nicht."
+          },
+          "examples": [
+            { "es": "No me gusta el frío.", "tr": { "hu": "Nem szeretem a hideget.", "en": "I do not like the cold.", "es": "No me gusta el frío.", "de": "Ich mag die Kälte nicht." } },
+            { "es": "No nos gustan los lunes.", "tr": { "hu": "Nem szeretjük a hétfőket.", "en": "We do not like Mondays.", "es": "No nos gustan los lunes.", "de": "Wir mögen Montage nicht." } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Nyomatékosításhoz vagy szembeállításhoz elé teheted: a mí, a ti, a él, a ella, a nosotros, a ustedes. Nem kötelező, csak kiemel vagy tisztáz.",
+            "en": "For emphasis or contrast you can add before it: a mí, a ti, a él, a ella, a nosotros, a ustedes. It is optional, only emphasizing or clarifying.",
+            "es": "Para enfatizar o contrastar puedes añadir delante: a mí, a ti, a él, a ella, a nosotros, a ustedes. No es obligatorio, solo resalta o aclara.",
+            "de": "Zur Betonung oder zum Kontrast kannst du davor setzen: a mí, a ti, a él, a ella, a nosotros, a ustedes. Das ist optional, es betont oder klärt nur."
+          },
+          "examples": [
+            { "es": "A mí me gusta el té, a ella le gusta el café.", "tr": { "hu": "Én a teát szeretem, ő a kávét.", "en": "I like tea, she likes coffee.", "es": "A mí me gusta el té, a ella le gusta el café.", "de": "Ich mag Tee, sie mag Kaffee." } },
+            { "es": "A nosotros nos gusta la playa.", "tr": { "hu": "Mi szeretjük a strandot.", "en": "We like the beach.", "es": "A nosotros nos gusta la playa.", "de": "Wir mögen den Strand." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Hasonló, mégis más",
+        "en": "Similar, yet different",
+        "es": "Parecido, pero distinto",
+        "de": "Ähnlich, aber anders"
+      },
+      "pairs": [
+        {
+          "a": "gusta",
+          "b": "gustan",
+          "note": {
+            "hu": "A gusta/gustan nem a személytől függ, hanem attól, EGY vagy TÖBB dolog tetszik-e; a névmás (me/te/le…) marad ugyanaz.",
+            "en": "Gusta/gustan does not depend on the person, but on whether ONE or SEVERAL things please; the pronoun (me/te/le…) stays the same.",
+            "es": "Gusta/gustan no depende de la persona, sino de si gusta UNA o VARIAS cosas; el pronombre (me/te/le…) se mantiene igual.",
+            "de": "Gusta/gustan hängt nicht von der Person ab, sondern davon, ob EINE oder MEHRERE Sachen gefallen; das Pronomen (me/te/le…) bleibt gleich."
+          },
+          "examples": [
+            { "es": "Me gusta el perro.", "tr": { "hu": "Szeretem a kutyát (ezt az egyet).", "en": "I like the dog.", "es": "Me gusta el perro.", "de": "Ich mag den Hund." } },
+            { "es": "Me gustan los perros.", "tr": { "hu": "Szeretem a kutyákat (általában).", "en": "I like dogs.", "es": "Me gustan los perros.", "de": "Ich mag Hunde." } }
+          ]
+        },
+        {
+          "a": "me gusta",
+          "b": "me gustas",
+          "note": {
+            "hu": "A \"me gusta X\" azt jelenti: X tetszik nekem. A \"me gustas (tú)\" azt jelenti: TE tetszel nekem, itt a másik ember maga az alany, nem egy dolog.",
+            "en": "\"Me gusta X\" means X pleases me. \"Me gustas (tú)\" means YOU please me, here the other person themself is the subject, not a thing.",
+            "es": "\"Me gusta X\" significa que X me gusta a mí. \"Me gustas (tú)\" significa que TÚ me gustas, aquí la otra persona es el sujeto, no una cosa.",
+            "de": "\"Me gusta X\" heißt, X gefällt mir. \"Me gustas (tú)\" heißt, DU gefällst mir, hier ist die andere Person selbst das Subjekt, keine Sache."
+          },
+          "examples": [
+            { "es": "Me gusta esta ciudad.", "tr": { "hu": "Szeretem ezt a várost.", "en": "I like this city.", "es": "Me gusta esta ciudad.", "de": "Ich mag diese Stadt." } },
+            { "es": "Me gustas mucho.", "tr": { "hu": "Nagyon tetszel nekem.", "en": "I like you a lot.", "es": "Me gustas mucho.", "de": "Du gefällst mir sehr." } }
+          ]
+        },
+        {
+          "a": "le gusta",
+          "b": "les gusta",
+          "note": {
+            "hu": "A le EGY embernek tetszést jelöl (ő vagy ön), a les TÖBB embernek, függetlenül attól, hogy maga a dolog egyes vagy többes szám.",
+            "en": "Le marks that it pleases ONE person (him, her, or you formal), les marks SEVERAL people, regardless of whether the thing itself is singular or plural.",
+            "es": "Le marca que le gusta a UNA persona (él, ella o usted), les marca a VARIAS personas, sin importar si la cosa en sí es singular o plural.",
+            "de": "Le zeigt, dass es EINER Person gefällt (ihm, ihr oder Ihnen), les zeigt MEHREREN Personen, unabhängig davon, ob die Sache selbst Singular oder Plural ist."
+          },
+          "examples": [
+            { "es": "A mi hermano le gusta el fútbol.", "tr": { "hu": "A bátyámnak tetszik a foci.", "en": "My brother likes soccer.", "es": "A mi hermano le gusta el fútbol.", "de": "Meinem Bruder gefällt Fußball." } },
+            { "es": "A mis hermanos les gusta el fútbol.", "tr": { "hu": "A testvéreimnek tetszik a foci.", "en": "My siblings like soccer.", "es": "A mis hermanos les gusta el fútbol.", "de": "Meinen Geschwistern gefällt Fußball." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A \"gusto\" (yo gusto) azt jelentené, hogy ÉN tetszem valakinek (pl. Yo le gusto a mi jefe), ne keverd a gusta/gustan alakokkal, amik arról szólnak, mi tetszik NEKED.",
+        "en": "\"Gusto\" (yo gusto) would mean that I please someone (e.g. Yo le gusto a mi jefe), do not confuse it with gusta/gustan, which say what pleases YOU.",
+        "es": "\"Gusto\" (yo gusto) significaría que YO le gusto a alguien (p. ej. Yo le gusto a mi jefe), no lo confundas con gusta/gustan, que dicen qué te gusta a TI.",
+        "de": "\"Gusto\" (yo gusto) würde heißen, dass ICH jemandem gefalle (z. B. Yo le gusto a mi jefe), verwechsle es nicht mit gusta/gustan, die sagen, was DIR gefällt."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Mexikóban a vosotros/os gusta helyett ustedes/les gusta jár, még akkor is, amikor Spanyolországban vosotros lenne a természetes.",
+        "en": "In Mexico, ustedes/les gusta is used instead of vosotros/os gusta, even where Spain would naturally use vosotros.",
+        "es": "En México se usa ustedes/les gusta en vez de vosotros/os gusta, incluso donde en España sería natural vosotros.",
+        "de": "In Mexiko wird ustedes/les gusta statt vosotros/os gusta verwendet, auch dort, wo es in Spanien natürlich vosotros wäre."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A gustar fordítva működik, mint ahogy megszoktad: nem te vagy az alany, hanem a dolog, ami tetszik. Ha egy dolog tetszik, azt mondod: «me gusta el café». Ha több dolog tetszik, átvált többes számra: «me gustan los libros». Ha egy cselekvés tetszik, mindig egyes szám marad, még kettő esetén is: «me gusta leer y escribir». A tetsző személyt sosem alanyi névmás jelöli, hanem me, te, le, nos, os vagy les. Amikor le-t használsz, gyakran hozzáteszed a nevet is, hogy tudjuk, kiről van szó: «a Juan le gusta el fútbol». Ugyanígy működik az encantar és az interesar is.",
+    "en": "Gustar works the opposite way from what you might expect: you are not the subject, the thing that pleases you is. When one thing pleases you, you say «me gusta el café». When several things please you, it switches to the plural: «me gustan los libros». When an action pleases you, it always stays singular, even with two of them: «me gusta leer y escribir». The person who is pleased is never marked by a subject pronoun, but by me, te, le, nos, os, or les. When you use le, you often add the name too, so we know who you mean: «a Juan le gusta el fútbol». Encantar and interesar work exactly the same way.",
+    "es": "Gustar funciona al revés de lo que uno esperaría: tú no eres el sujeto, lo es la cosa que te gusta. Cuando te gusta una sola cosa, dices «me gusta el café». Cuando te gustan varias cosas, cambia a plural: «me gustan los libros». Cuando te gusta una acción, siempre queda en singular, incluso con dos juntas: «me gusta leer y escribir». A la persona a la que le gusta algo nunca la marca un pronombre de sujeto, sino me, te, le, nos, os o les. Cuando usas le, muchas veces añades también el nombre, para que quede claro de quién hablas: «a Juan le gusta el fútbol». Encantar e interesar funcionan exactamente igual.",
+    "de": "Gustar funktioniert umgekehrt, als man erwarten würde: nicht du bist das Subjekt, sondern die Sache, die dir gefällt. Wenn dir eine Sache gefällt, sagst du «me gusta el café». Wenn dir mehrere Sachen gefallen, wechselt es in den Plural: «me gustan los libros». Wenn dir eine Handlung gefällt, bleibt es immer Singular, sogar bei zweien zusammen: «me gusta leer y escribir». Die Person, der etwas gefällt, wird nie durch ein Subjektpronomen markiert, sondern durch me, te, le, nos, os oder les. Wenn du le benutzt, fügst du oft auch den Namen hinzu, damit klar ist, von wem die Rede ist: «a Juan le gusta el fútbol». Encantar und interesar funktionieren genau gleich."
   },
   "glossary": [
     {
       "word": "arte",
-      "gloss": {
-        "hu": "művészet",
-        "en": "art",
-        "es": "el arte",
-        "de": "Kunst"
-      }
+      "gloss": { "hu": "művészet", "en": "art", "es": "el arte", "de": "Kunst" }
     },
     {
       "word": "canción",
-      "gloss": {
-        "hu": "dal",
-        "en": "song",
-        "es": "canción",
-        "de": "Lied"
-      }
+      "gloss": { "hu": "dal", "en": "song", "es": "canción", "de": "Lied" }
     },
     {
       "word": "escuchar",
-      "gloss": {
-        "hu": "hallgatni",
-        "en": "to listen",
-        "es": "escuchar",
-        "de": "hören"
-      }
+      "gloss": { "hu": "hallgatni", "en": "to listen", "es": "escuchar", "de": "hören" }
     },
     {
       "word": "idea",
-      "gloss": {
-        "hu": "ötlet",
-        "en": "idea",
-        "es": "la idea",
-        "de": "Idee"
-      }
+      "gloss": { "hu": "ötlet", "en": "idea", "es": "la idea", "de": "Idee" }
     },
     {
       "word": "leo",
-      "gloss": {
-        "hu": "olvasok",
-        "en": "I read",
-        "es": "yo leo",
-        "de": "ich lese"
-      }
+      "gloss": { "hu": "olvasok", "en": "I read", "es": "yo leo", "de": "ich lese" }
     },
     {
       "word": "leyendo",
-      "gloss": {
-        "hu": "olvasva",
-        "en": "reading",
-        "es": "leyendo",
-        "de": "lesend"
-      }
+      "gloss": { "hu": "olvasva", "en": "reading", "es": "leyendo", "de": "lesend" }
     },
     {
       "word": "mexicana",
-      "gloss": {
-        "hu": "mexikói (nőnem)",
-        "en": "Mexican (fem.)",
-        "es": "mexicana",
-        "de": "mexikanisch"
-      }
+      "gloss": { "hu": "mexikói (nőnem)", "en": "Mexican (fem.)", "es": "mexicana", "de": "mexikanisch" }
     },
     {
       "word": "tacos",
-      "gloss": {
-        "hu": "taco (étel)",
-        "en": "taco",
-        "es": "taco",
-        "de": "Taco"
-      }
+      "gloss": { "hu": "taco (étel)", "en": "taco", "es": "taco", "de": "Taco" }
+    },
+    {
+      "word": "miedo",
+      "gloss": { "hu": "félelem (película de miedo = horrorfilm)", "en": "fear (película de miedo = horror movie)", "es": "el miedo", "de": "Angst" }
+    },
+    {
+      "word": "viajar",
+      "gloss": { "hu": "utazni", "en": "to travel", "es": "viajar", "de": "reisen" }
+    },
+    {
+      "word": "vino",
+      "gloss": { "hu": "bor", "en": "wine", "es": "el vino", "de": "Wein" }
+    },
+    {
+      "word": "deportes",
+      "gloss": { "hu": "sport(ok)", "en": "sports", "es": "los deportes", "de": "Sport" }
+    },
+    {
+      "word": "encantar",
+      "gloss": { "hu": "nagyon tetszeni, imádni", "en": "to love, be delighted by", "es": "encantar", "de": "sehr gefallen" }
+    },
+    {
+      "word": "interesar",
+      "gloss": { "hu": "érdekelni", "en": "to interest", "es": "interesar", "de": "interessieren" }
+    },
+    {
+      "word": "doler",
+      "gloss": { "hu": "fájni", "en": "to hurt", "es": "doler", "de": "wehtun" }
     }
   ],
   "items": [
     {
       "id": "gu-01",
       "sentence": "A mí me ___ el café.",
-      "options": [
-        "gusta",
-        "gustan",
-        "gusto"
-      ],
+      "options": ["gusta", "gustan", "gusto"],
       "correct": 0,
       "why": {
         "hu": "Egy dolog tetszik (el café), tehát egyes szám: gusta.",
@@ -111,31 +367,24 @@
       },
       "wrong": {
         "gustan": {
-          "hu": "A gustan több dologra való: me gustan los cafés.",
-          "en": "Gustan is for several things: me gustan los cafés.",
-          "es": "Gustan es para varias cosas: me gustan los cafés.",
-          "de": "Gustan ist für mehrere Sachen: me gustan los cafés."
+          "hu": "A \"gustan\" itt nem illik \"el café\"-hoz, ami egyes szám; a \"gustan\" olyankor kell, ha több kávé(fajta) tetszik, és akkor így lenne helyes: A mí me gustan los cafés.",
+          "en": "\"Gustan\" does not fit \"el café\" here, which is singular; \"gustan\" is needed when several coffees (or kinds of coffee) please you, and then it would be correct as: A mí me gustan los cafés.",
+          "es": "\"Gustan\" no cabe aquí con \"el café\", que es singular; \"gustan\" hace falta cuando gustan varios cafés (o tipos de café), y entonces sería correcto así: A mí me gustan los cafés.",
+          "de": "\"Gustan\" passt hier nicht zu \"el café\", das Singular ist; \"gustan\" braucht man, wenn mehrere Kaffees (oder Kaffeesorten) gefallen, und dann wäre es richtig so: A mí me gustan los cafés."
         },
         "gusto": {
-          "hu": "A gusto azt jelentené, hogy ÉN tetszem valakinek.",
-          "en": "Gusto would mean that I am the one who pleases someone.",
-          "es": "Gusto significaría que YO le gusto a alguien.",
-          "de": "Gusto hieße, dass ICH jemandem gefalle."
+          "hu": "A \"gusto\" azt jelentené, hogy ÉN tetszem valakinek, nem azt, hogy nekem tetszik valami; helyesen ezzel a jelentéssel: Yo le gusto a mi jefe (tetszem a főnökömnek).",
+          "en": "\"Gusto\" would mean that I am the one who pleases someone, not that something pleases me; correctly with that meaning: Yo le gusto a mi jefe (my boss likes me).",
+          "es": "\"Gusto\" significaría que YO le gusto a alguien, no que algo me gusta a mí; correctamente con ese sentido: Yo le gusto a mi jefe.",
+          "de": "\"Gusto\" würde heißen, dass ICH jemandem gefalle, nicht dass mir etwas gefällt; richtig mit dieser Bedeutung: Yo le gusto a mi jefe (ich gefalle meinem Chef)."
         }
       },
-      "examples": [
-        "Me gusta la música.",
-        "Me gusta esta ciudad."
-      ]
+      "examples": ["Me gusta la música.", "Me gusta esta ciudad."]
     },
     {
       "id": "gu-02",
       "sentence": "Me ___ los tacos de pollo.",
-      "options": [
-        "gustan",
-        "gusta",
-        "gustas"
-      ],
+      "options": ["gustan", "gusta", "gustas"],
       "correct": 0,
       "why": {
         "hu": "Több dolog tetszik (los tacos), tehát többes szám: gustan.",
@@ -145,65 +394,51 @@
       },
       "wrong": {
         "gusta": {
-          "hu": "Az ige a TÁRGYHOZ igazodik, és a tacos többes szám.",
-          "en": "The verb agrees with the THING, and tacos is plural.",
-          "es": "El verbo concuerda con la COSA, y tacos es plural.",
-          "de": "Das Verb richtet sich nach der SACHE, und tacos ist Plural."
+          "hu": "A \"gusta\" egyes számú alanyt kér, \"los tacos\" viszont többes szám; \"gusta\" akkor lenne helyes, ha csak egy tacóról beszélnénk: Me gusta el taco de pollo.",
+          "en": "\"Gusta\" needs a singular subject, but \"los tacos\" is plural; \"gusta\" would be correct only if talking about a single taco: Me gusta el taco de pollo.",
+          "es": "\"Gusta\" pide un sujeto singular, pero \"los tacos\" es plural; \"gusta\" sería correcto solo si habláramos de un único taco: Me gusta el taco de pollo.",
+          "de": "\"Gusta\" verlangt ein Subjekt im Singular, aber \"los tacos\" ist Plural; \"gusta\" wäre nur korrekt, wenn von einem einzigen Taco die Rede wäre: Me gusta el taco de pollo."
         },
         "gustas": {
-          "hu": "A gustas azt jelenti, hogy TE tetszel valakinek.",
-          "en": "Gustas means that YOU are the one being liked.",
-          "es": "Gustas significa que TÚ le gustas a alguien.",
-          "de": "Gustas heißt, dass DU jemandem gefällst."
+          "hu": "A \"gustas\" azt jelentené, hogy TE tetszel valakinek, nem azt, hogy neked tetszenek a tacók; helyesen ezzel a jelentéssel: Tú me gustas (te tetszel nekem).",
+          "en": "\"Gustas\" would mean that YOU are the one being liked, not that the tacos please you; correctly with that meaning: Tú me gustas (I like you).",
+          "es": "\"Gustas\" significaría que TÚ le gustas a alguien, no que a ti te gustan los tacos; correctamente con ese sentido: Tú me gustas.",
+          "de": "\"Gustas\" würde heißen, dass DU jemandem gefällst, nicht dass dir die Tacos gefallen; richtig mit dieser Bedeutung: Tú me gustas (du gefällst mir)."
         }
       },
-      "examples": [
-        "Me gustan los perros.",
-        "Me gustan las películas viejas."
-      ]
+      "examples": ["Me gustan los perros.", "Me gustan las películas viejas."]
     },
     {
       "id": "gu-03",
       "sentence": "¿___ gusta el chocolate?",
-      "options": [
-        "Te",
-        "Tú",
-        "Tu"
-      ],
+      "options": ["Te", "Tú", "Tu"],
       "correct": 0,
       "why": {
-        "hu": "A személy névmást kap: te gusta = neked tetszik.",
-        "en": "The person takes a pronoun: te gusta = it pleases you.",
-        "es": "La persona lleva pronombre: te gusta.",
-        "de": "Die Person bekommt ein Pronomen: te gusta."
+        "hu": "A tetsző személyt névmás jelöli: te gusta = neked tetszik.",
+        "en": "The person who is pleased takes a pronoun: te gusta = it pleases you.",
+        "es": "La persona a la que le gusta algo lleva pronombre: te gusta.",
+        "de": "Die Person, der etwas gefällt, bekommt ein Pronomen: te gusta."
       },
       "wrong": {
         "Tú": {
-          "hu": "A tú alanyi névmás, itt viszont nem te vagy az alany, hanem a csoki.",
-          "en": "Tú is a subject pronoun, but here the chocolate is the subject, not you.",
-          "es": "Tú es pronombre sujeto, pero aquí el sujeto es el chocolate.",
-          "de": "Tú ist Subjektpronomen, hier ist aber die Schokolade das Subjekt."
+          "hu": "A \"Tú\" alanyi névmás, de itt nem te vagy az alany, hanem a csoki; \"Tú\" nélkül marad a mondat a szükséges névmás nélkül, ezért nem alkot helyes mondatot így.",
+          "en": "\"Tú\" is a subject pronoun, but here the chocolate is the subject, not you; with \"Tú\" the sentence is left without the pronoun it needs, so it does not make a correct sentence this way.",
+          "es": "\"Tú\" es pronombre de sujeto, pero aquí el sujeto es el chocolate, no tú; con \"Tú\" la frase se queda sin el pronombre que necesita, así que no es correcta así.",
+          "de": "\"Tú\" ist Subjektpronomen, aber hier ist die Schokolade das Subjekt, nicht du; mit \"Tú\" fehlt dem Satz das nötige Pronomen, so ist er nicht korrekt."
         },
         "Tu": {
-          "hu": "A tu birtokos (a te …-d), nem használható itt.",
-          "en": "Tu is the possessive (your), which does not fit here.",
-          "es": "Tu es posesivo (tu casa), no cabe aquí.",
-          "de": "Tu ist Possessiv (dein), das passt hier nicht."
+          "hu": "A \"Tu\" birtokos névmás (a te …-d), ide nem való; \"Tu\" után főnév kellene, nem ige: pl. tu casa (a te házad).",
+          "en": "\"Tu\" is the possessive (your), which does not fit here; \"Tu\" needs a noun after it, not a verb: e.g. tu casa (your house).",
+          "es": "\"Tu\" es posesivo (tu…), no cabe aquí; después de \"Tu\" hace falta un sustantivo, no un verbo: p. ej. tu casa.",
+          "de": "\"Tu\" ist Possessiv (dein), das passt hier nicht; nach \"Tu\" braucht es ein Substantiv, kein Verb: z. B. tu casa (dein Haus)."
         }
       },
-      "examples": [
-        "¿Te gusta el pescado?",
-        "¿Te gustan los gatos?"
-      ]
+      "examples": ["¿Te gusta el pescado?", "¿Te gustan los gatos?"]
     },
     {
       "id": "gu-04",
       "sentence": "A Ana le ___ bailar.",
-      "options": [
-        "gusta",
-        "gustan",
-        "gustas"
-      ],
+      "options": ["gusta", "gustan", "gustas"],
       "correct": 0,
       "why": {
         "hu": "Főnévi igenév után mindig egyes szám: le gusta bailar.",
@@ -213,31 +448,24 @@
       },
       "wrong": {
         "gustan": {
-          "hu": "A bailar egy cselekvés, nem több dolog.",
-          "en": "Bailar is one action, not several things.",
-          "es": "Bailar es una acción, no varias cosas.",
-          "de": "Bailar ist eine Handlung, nicht mehrere Dinge."
+          "hu": "A \"gustan\" többes alanyt kérne, de \"bailar\" egy cselekvés, ami mindig egyes számmal jár; \"gustan\" csak több DOLOG esetén helyes: A Ana le gustan los bailes (Anának tetszenek a táncok).",
+          "en": "\"Gustan\" would need a plural subject, but \"bailar\" is one action, which always takes the singular; \"gustan\" is only correct with several THINGS: A Ana le gustan los bailes (Ana likes the dances).",
+          "es": "\"Gustan\" pediría sujeto plural, pero \"bailar\" es una acción, que siempre lleva singular; \"gustan\" solo es correcto con varias COSAS: A Ana le gustan los bailes.",
+          "de": "\"Gustan\" bräuchte ein Plural-Subjekt, aber \"bailar\" ist eine Handlung, die immer Singular nimmt; \"gustan\" ist nur bei mehreren SACHEN korrekt: A Ana le gustan los bailes (Ana gefallen die Tänze)."
         },
         "gustas": {
-          "hu": "A gustas rád vonatkozna, nem a táncra.",
-          "en": "Gustas would be about you, not about dancing.",
-          "es": "Gustas hablaría de ti, no de bailar.",
-          "de": "Gustas würde von dir sprechen, nicht vom Tanzen."
+          "hu": "A \"gustas\" a TE-hez tartozik (tú gustas), de itt Anáról van szó, harmadik személyben; helyesen a te-s alakkal: Tú le gustas a Ana (te tetszel Anának).",
+          "en": "\"Gustas\" belongs with YOU (tú gustas), but here it is about Ana, third person; correctly with the tú-form meaning: Tú le gustas a Ana (Ana likes you).",
+          "es": "\"Gustas\" pertenece a TÚ (tú gustas), pero aquí se habla de Ana, tercera persona; correctamente con ese sentido: Tú le gustas a Ana.",
+          "de": "\"Gustas\" gehört zu DU (tú gustas), hier geht es aber um Ana, dritte Person; richtig mit dieser Bedeutung: Tú le gustas a Ana (du gefällst Ana)."
         }
       },
-      "examples": [
-        "Le gusta cocinar.",
-        "Nos gusta viajar en tren."
-      ]
+      "examples": ["Le gusta cocinar.", "Nos gusta viajar en tren."]
     },
     {
       "id": "gu-05",
       "sentence": "A nosotros ___ gusta esta canción.",
-      "options": [
-        "nos",
-        "les",
-        "me"
-      ],
+      "options": ["nos", "les", "me"],
       "correct": 0,
       "why": {
         "hu": "A nosotroshoz a nos névmás tartozik.",
@@ -247,31 +475,24 @@
       },
       "wrong": {
         "les": {
-          "hu": "A les az ellos/ustedes névmása.",
-          "en": "Les belongs to ellos/ustedes.",
-          "es": "Les es de ellos/ustedes.",
-          "de": "Les gehört zu ellos/ustedes."
+          "hu": "A \"les\" az ellos/ustedes névmása, nem a nosotrosé; \"les\" akkor lenne helyes, ha ŐK szeretnék a dalt: A ellos les gusta esta canción.",
+          "en": "\"Les\" is the pronoun for ellos/ustedes, not nosotros; \"les\" would be correct if THEY liked the song: A ellos les gusta esta canción.",
+          "es": "\"Les\" es el pronombre de ellos/ustedes, no de nosotros; \"les\" sería correcto si a ELLOS les gustara la canción: A ellos les gusta esta canción.",
+          "de": "\"Les\" ist das Pronomen für ellos/ustedes, nicht für nosotros; \"les\" wäre korrekt, wenn SIE das Lied mögen würden: A ellos les gusta esta canción."
         },
         "me": {
-          "hu": "A me csak rólam szólna.",
-          "en": "Me would be only about me.",
-          "es": "Me hablaría solo de mí.",
-          "de": "Me würde nur von mir sprechen."
+          "hu": "A \"me\" csak rólam szólna, nem rólunk; \"me\" akkor lenne helyes, ha csak nekem tetszene: A mí me gusta esta canción.",
+          "en": "\"Me\" would be only about me, not about us; \"me\" would be correct if only I liked it: A mí me gusta esta canción.",
+          "es": "\"Me\" hablaría solo de mí, no de nosotros; \"me\" sería correcto si solo a mí me gustara: A mí me gusta esta canción.",
+          "de": "\"Me\" würde nur von mir sprechen, nicht von uns; \"me\" wäre korrekt, wenn es nur mir gefiele: A mí me gusta esta canción."
         }
       },
-      "examples": [
-        "Nos gusta el cine.",
-        "Nos gustan las vacaciones."
-      ]
+      "examples": ["Nos gusta el cine.", "Nos gustan las vacaciones."]
     },
     {
       "id": "gu-06",
       "sentence": "No me ___ las películas de miedo.",
-      "options": [
-        "gustan",
-        "gusta",
-        "gusto"
-      ],
+      "options": ["gustan", "gusta", "gusto"],
       "correct": 0,
       "why": {
         "hu": "Tagadásban is a dologhoz igazodik az ige: las películas többes szám.",
@@ -281,31 +502,24 @@
       },
       "wrong": {
         "gusta": {
-          "hu": "A películas többes szám, ezért gustan kell.",
-          "en": "Películas is plural, so it needs gustan.",
-          "es": "Películas es plural, hace falta gustan.",
-          "de": "Películas ist Plural, deshalb gustan."
+          "hu": "A \"gusta\" egyes számú alanyt kér, de \"películas\" többes szám; \"gusta\" csak egy filmnél lenne helyes: No me gusta la película de miedo.",
+          "en": "\"Gusta\" needs a singular subject, but \"películas\" is plural; \"gusta\" would only be correct with one movie: No me gusta la película de miedo.",
+          "es": "\"Gusta\" pide sujeto singular, pero \"películas\" es plural; \"gusta\" solo sería correcto con una sola película: No me gusta la película de miedo.",
+          "de": "\"Gusta\" verlangt ein Subjekt im Singular, aber \"películas\" ist Plural; \"gusta\" wäre nur bei einem einzigen Film korrekt: No me gusta la película de miedo."
         },
         "gusto": {
-          "hu": "A gusto rólam szólna.",
-          "en": "Gusto would be about me.",
-          "es": "Gusto hablaría de mí.",
-          "de": "Gusto würde von mir sprechen."
+          "hu": "A \"gusto\" azt jelentené, hogy ÉN nem tetszem valakinek, nem azt, hogy nekem nem tetszik valami; helyesen ezzel a jelentéssel: No le gusto a mi suegra (nem tetszem az anyósomnak).",
+          "en": "\"Gusto\" would mean that I am not the one who pleases someone, not that something does not please me; correctly with that meaning: No le gusto a mi suegra (my mother-in-law does not like me).",
+          "es": "\"Gusto\" significaría que YO no le gusto a alguien, no que algo no me gusta a mí; correctamente con ese sentido: No le gusto a mi suegra.",
+          "de": "\"Gusto\" würde heißen, dass ICH jemandem nicht gefalle, nicht dass mir etwas nicht gefällt; richtig mit dieser Bedeutung: No le gusto a mi suegra (ich gefalle meiner Schwiegermutter nicht)."
         }
       },
-      "examples": [
-        "No me gusta el frío.",
-        "No nos gustan los lunes."
-      ]
+      "examples": ["No me gusta el frío.", "No nos gustan los lunes."]
     },
     {
       "id": "gu-07",
       "sentence": "A mis padres ___ gusta viajar.",
-      "options": [
-        "les",
-        "le",
-        "nos"
-      ],
+      "options": ["les", "le", "nos"],
       "correct": 0,
       "why": {
         "hu": "Több személy (mis padres) → les, akkor is, ha az ige egyes számban marad.",
@@ -315,31 +529,24 @@
       },
       "wrong": {
         "le": {
-          "hu": "A le egy személyre való.",
-          "en": "Le is for one person.",
-          "es": "Le es para una persona.",
-          "de": "Le ist für eine Person."
+          "hu": "A \"le\" egy személyre való, de \"mis padres\" ketten vannak; \"le\" csak egy szülőnél lenne helyes: A mi padre le gusta viajar.",
+          "en": "\"Le\" is for one person, but \"mis padres\" is two people; \"le\" would only be correct with one parent: A mi padre le gusta viajar.",
+          "es": "\"Le\" es para una persona, pero \"mis padres\" son dos; \"le\" solo sería correcto con un solo padre: A mi padre le gusta viajar.",
+          "de": "\"Le\" ist für eine Person, aber \"mis padres\" sind zwei; \"le\" wäre nur bei einem Elternteil korrekt: A mi padre le gusta viajar."
         },
         "nos": {
-          "hu": "A nos ránk vonatkozna.",
-          "en": "Nos would be about us.",
-          "es": "Nos hablaría de nosotros.",
-          "de": "Nos würde von uns sprechen."
+          "hu": "A \"nos\" ránk vonatkozna, nem a szüleimre; \"nos\" akkor lenne helyes, ha MI szeretnénk utazni: A nosotros nos gusta viajar.",
+          "en": "\"Nos\" would be about us, not my parents; \"nos\" would be correct if WE liked traveling: A nosotros nos gusta viajar.",
+          "es": "\"Nos\" hablaría de nosotros, no de mis padres; \"nos\" sería correcto si a NOSOTROS nos gustara viajar: A nosotros nos gusta viajar.",
+          "de": "\"Nos\" würde von uns sprechen, nicht von meinen Eltern; \"nos\" wäre korrekt, wenn WIR gerne reisen würden: A nosotros nos gusta viajar."
         }
       },
-      "examples": [
-        "A los niños les gusta el helado.",
-        "A ustedes les gusta el fútbol."
-      ]
+      "examples": ["A los niños les gusta el helado.", "A ustedes les gusta el fútbol."]
     },
     {
       "id": "gu-08",
       "sentence": "Me ___ mucho tu casa.",
-      "options": [
-        "gusta",
-        "gustan",
-        "gustamos"
-      ],
+      "options": ["gusta", "gustan", "gustamos"],
       "correct": 0,
       "why": {
         "hu": "Egy ház tetszik, a mucho csak fokozza: me gusta mucho.",
@@ -349,31 +556,24 @@
       },
       "wrong": {
         "gustan": {
-          "hu": "A casa egyes szám, a mucho ezen nem változtat.",
-          "en": "Casa is singular, and mucho does not change that.",
-          "es": "Casa es singular, y mucho no lo cambia.",
-          "de": "Casa ist Singular, mucho ändert daran nichts."
+          "hu": "A \"gustan\" többes alanyt kérne, de \"tu casa\" egyes szám, és a \"mucho\" ezen nem változtat; \"gustan\" csak több háznál lenne helyes: Me gustan mucho tus casas.",
+          "en": "\"Gustan\" would need a plural subject, but \"tu casa\" is singular, and mucho does not change that; \"gustan\" would only be correct with several houses: Me gustan mucho tus casas.",
+          "es": "\"Gustan\" pediría sujeto plural, pero \"tu casa\" es singular, y mucho no lo cambia; \"gustan\" solo sería correcto con varias casas: Me gustan mucho tus casas.",
+          "de": "\"Gustan\" bräuchte ein Plural-Subjekt, aber \"tu casa\" ist Singular, und mucho ändert daran nichts; \"gustan\" wäre nur bei mehreren Häusern korrekt: Me gustan mucho tus casas."
         },
         "gustamos": {
-          "hu": "A gustamos azt jelentené, hogy MI tetszünk valakinek.",
-          "en": "Gustamos would mean that WE please someone.",
-          "es": "Gustamos significaría que NOSOTROS le gustamos a alguien.",
-          "de": "Gustamos hieße, dass WIR jemandem gefallen."
+          "hu": "A \"gustamos\" azt jelentené, hogy MI tetszünk valakinek, nem azt, hogy nekem tetszik a házad; helyesen ezzel a jelentéssel: Les gustamos mucho a los vecinos (nagyon tetszünk a szomszédoknak).",
+          "en": "\"Gustamos\" would mean that WE please someone, not that your house pleases me; correctly with that meaning: Les gustamos mucho a los vecinos (the neighbors like us a lot).",
+          "es": "\"Gustamos\" significaría que NOSOTROS le gustamos a alguien, no que a mí me gusta tu casa; correctamente con ese sentido: Les gustamos mucho a los vecinos.",
+          "de": "\"Gustamos\" würde heißen, dass WIR jemandem gefallen, nicht dass mir dein Haus gefällt; richtig mit dieser Bedeutung: Les gustamos mucho a los vecinos (die Nachbarn mögen uns sehr)."
         }
       },
-      "examples": [
-        "Me gusta mucho este barrio.",
-        "Nos gusta mucho la comida mexicana."
-      ]
+      "examples": ["Me gusta mucho este barrio.", "Nos gusta mucho la comida mexicana."]
     },
     {
       "id": "gu-09",
       "sentence": "¿A usted ___ gusta el vino?",
-      "options": [
-        "le",
-        "te",
-        "les"
-      ],
+      "options": ["le", "te", "les"],
       "correct": 0,
       "why": {
         "hu": "Az usted udvarias forma, de nyelvtanilag harmadik személy: le.",
@@ -383,31 +583,24 @@
       },
       "wrong": {
         "te": {
-          "hu": "A te tegező forma, ami nem illik az ustedhez.",
-          "en": "Te is the informal form and clashes with usted.",
-          "es": "Te es informal y no combina con usted.",
-          "de": "Te ist die Du-Form und passt nicht zu usted."
+          "hu": "A \"te\" a tegező (tú) formával jár, ami nem illik az udvarias ustedhez; \"te\" akkor lenne helyes, ha tegeznéd az illetőt: ¿Te gusta el vino?",
+          "en": "\"Te\" goes with the informal (tú) form, which clashes with the polite usted; \"te\" would be correct if you were addressing the person informally: ¿Te gusta el vino?",
+          "es": "\"Te\" va con la forma informal (tú), que no combina con el usted cortés; \"te\" sería correcto si tutearas a la persona: ¿Te gusta el vino?",
+          "de": "\"Te\" gehört zur Du-Form (tú), die nicht zum höflichen usted passt; \"te\" wäre korrekt, wenn du die Person duzen würdest: ¿Te gusta el vino?"
         },
         "les": {
-          "hu": "A les többes szám (ustedes).",
-          "en": "Les is plural (ustedes).",
-          "es": "Les es plural (ustedes).",
-          "de": "Les ist Plural (ustedes)."
+          "hu": "A \"les\" több emberre való (ustedes), de itt egyetlen ustedhez szólunk; \"les\" akkor lenne helyes, ha többeket kérdeznénk: ¿A ustedes les gusta el vino?",
+          "en": "\"Les\" is for several people (ustedes), but here we are addressing one usted; \"les\" would be correct if asking several people: ¿A ustedes les gusta el vino?",
+          "es": "\"Les\" es para varias personas (ustedes), pero aquí nos dirigimos a un solo usted; \"les\" sería correcto si preguntáramos a varios: ¿A ustedes les gusta el vino?",
+          "de": "\"Les\" ist für mehrere Personen (ustedes), hier wenden wir uns aber an ein einzelnes usted; \"les\" wäre korrekt, wenn man mehrere fragen würde: ¿A ustedes les gusta el vino?"
         }
       },
-      "examples": [
-        "¿A usted le gusta el café?",
-        "¿A ustedes les gusta la ciudad?"
-      ]
+      "examples": ["¿A usted le gusta el café?", "¿A ustedes les gusta la ciudad?"]
     },
     {
       "id": "gu-10",
       "sentence": "Me gusta ___ y escuchar música.",
-      "options": [
-        "leer",
-        "leo",
-        "leyendo"
-      ],
+      "options": ["leer", "leo", "leyendo"],
       "correct": 0,
       "why": {
         "hu": "A gustar után főnévi igenév áll: me gusta leer.",
@@ -417,31 +610,24 @@
       },
       "wrong": {
         "leo": {
-          "hu": "A leo ragozott alak, ide nem való.",
-          "en": "Leo is a conjugated form and does not fit here.",
-          "es": "Leo es forma conjugada y no cabe aquí.",
-          "de": "Leo ist eine konjugierte Form und passt hier nicht."
+          "hu": "A \"leo\" ragozott alak, gustar után nem állhat; azt így mondanánk, ragozott formában, saját mondatként: Yo leo y escucho música.",
+          "en": "\"Leo\" is a conjugated form and cannot follow gustar; that would be said, conjugated, as its own sentence: Yo leo y escucho música.",
+          "es": "\"Leo\" es forma conjugada y no puede ir después de gustar; eso se diría, conjugado, como frase propia: Yo leo y escucho música.",
+          "de": "\"Leo\" ist eine konjugierte Form und kann nicht nach gustar stehen; das würde man konjugiert, als eigenen Satz, sagen: Yo leo y escucho música."
         },
         "leyendo": {
-          "hu": "A gerundio (leyendo) nem áll a gustar után.",
-          "en": "The gerund (leyendo) does not follow gustar.",
-          "es": "El gerundio (leyendo) no va después de gustar.",
-          "de": "Das Gerundium (leyendo) folgt nicht auf gustar."
+          "hu": "A gerundio (leyendo) estar után áll, nem gustar után; azzal a mondat azt jelentené, hogy ÉPPEN olvasol: Estoy leyendo y escuchando música.",
+          "en": "The gerund (leyendo) follows estar, not gustar; with it the sentence would mean you are reading RIGHT NOW: Estoy leyendo y escuchando música.",
+          "es": "El gerundio (leyendo) va después de estar, no de gustar; con él la frase significaría que estás leyendo AHORA MISMO: Estoy leyendo y escuchando música.",
+          "de": "Das Gerundium (leyendo) folgt auf estar, nicht auf gustar; damit würde der Satz bedeuten, dass du GERADE JETZT liest: Estoy leyendo y escuchando música."
         }
       },
-      "examples": [
-        "Me gusta caminar por el parque.",
-        "Nos gusta cocinar juntos."
-      ]
+      "examples": ["Me gusta caminar por el parque.", "Nos gusta cocinar juntos."]
     },
     {
       "id": "gu-11",
       "sentence": "A él ___ gustan los deportes.",
-      "options": [
-        "le",
-        "lo",
-        "se"
-      ],
+      "options": ["le", "lo", "se"],
       "correct": 0,
       "why": {
         "hu": "A gustar részeshatározós névmást kér: le.",
@@ -451,31 +637,24 @@
       },
       "wrong": {
         "lo": {
-          "hu": "A lo tárgyeset (őt), a gustar mellé nem való.",
-          "en": "Lo is a direct object (him/it) and does not go with gustar.",
-          "es": "Lo es objeto directo y no va con gustar.",
-          "de": "Lo ist direktes Objekt und passt nicht zu gustar."
+          "hu": "A \"lo\" tárgyeset (őt, azt), a gustar mellé nem való; \"lo\" egy másik igével lenne helyes, ami közvetlen tárgyat kér: Lo veo en el parque (látom őt).",
+          "en": "\"Lo\" is a direct object (him/it) and does not go with gustar; \"lo\" would be correct with a different verb that takes a direct object: Lo veo en el parque (I see him).",
+          "es": "\"Lo\" es objeto directo y no va con gustar; \"lo\" sería correcto con otro verbo que pida objeto directo: Lo veo en el parque.",
+          "de": "\"Lo\" ist direktes Objekt und passt nicht zu gustar; \"lo\" wäre bei einem anderen Verb korrekt, das ein direktes Objekt verlangt: Lo veo en el parque (ich sehe ihn)."
         },
         "se": {
-          "hu": "A se visszaható névmás, más szerkezet.",
-          "en": "Se is reflexive, a different structure.",
-          "es": "Se es reflexivo, otra estructura.",
-          "de": "Se ist reflexiv, eine andere Struktur."
+          "hu": "A \"se\" visszaható névmás, más szerkezethez tartozik, mint a gustar; \"se\" egy visszaható igénél lenne helyes: Él se lava las manos (megmossa a kezét).",
+          "en": "\"Se\" is reflexive and belongs to a different structure than gustar; \"se\" would be correct with a reflexive verb: Él se lava las manos (he washes his hands).",
+          "es": "\"Se\" es reflexivo y pertenece a otra estructura distinta de gustar; \"se\" sería correcto con un verbo reflexivo: Él se lava las manos.",
+          "de": "\"Se\" ist reflexiv und gehört zu einer anderen Struktur als gustar; \"se\" wäre bei einem reflexiven Verb korrekt: Él se lava las manos (er wäscht sich die Hände)."
         }
       },
-      "examples": [
-        "A ella le gusta el arte.",
-        "A mi hermano le gustan los coches."
-      ]
+      "examples": ["A ella le gusta el arte.", "A mi hermano le gustan los coches."]
     },
     {
       "id": "gu-12",
       "sentence": "A mí me ___ esta idea, pero a ti no te gusta.",
-      "options": [
-        "gusta",
-        "gustas",
-        "gustan"
-      ],
+      "options": ["gusta", "gustas", "gustan"],
       "correct": 0,
       "why": {
         "hu": "Egy ötlet (esta idea) egyes szám: gusta. A szembeállítás miatt van kitéve a mí és a ti.",
@@ -485,22 +664,127 @@
       },
       "wrong": {
         "gustas": {
-          "hu": "A gustas azt jelentené, hogy te tetszel nekem.",
-          "en": "Gustas would mean that I like you.",
-          "es": "Gustas significaría que tú me gustas.",
-          "de": "Gustas hieße, dass du mir gefällst."
+          "hu": "A \"gustas\" azt jelentené, hogy TE tetszel nekem, nem azt, hogy ez az ötlet tetszik; helyesen ezzel a jelentéssel: A mí me gustas tú (te tetszel nekem).",
+          "en": "\"Gustas\" would mean that YOU please me, not that this idea does; correctly with that meaning: A mí me gustas tú (I like you).",
+          "es": "\"Gustas\" significaría que TÚ me gustas a mí, no que me gusta esta idea; correctamente con ese sentido: A mí me gustas tú.",
+          "de": "\"Gustas\" würde heißen, dass DU mir gefällst, nicht dass mir diese Idee gefällt; richtig mit dieser Bedeutung: A mí me gustas tú (du gefällst mir)."
         },
         "gustan": {
-          "hu": "Az idea egyes szám.",
-          "en": "Idea is singular.",
-          "es": "Idea es singular.",
-          "de": "Idea ist Singular."
+          "hu": "A \"gustan\" többes alanyt kérne, de \"esta idea\" egyes szám; \"gustan\" csak több ötletnél lenne helyes: A mí me gustan estas ideas.",
+          "en": "\"Gustan\" would need a plural subject, but \"esta idea\" is singular; \"gustan\" would only be correct with several ideas: A mí me gustan estas ideas.",
+          "es": "\"Gustan\" pediría sujeto plural, pero \"esta idea\" es singular; \"gustan\" solo sería correcto con varias ideas: A mí me gustan estas ideas.",
+          "de": "\"Gustan\" bräuchte ein Plural-Subjekt, aber \"esta idea\" ist Singular; \"gustan\" wäre nur bei mehreren Ideen korrekt: A mí me gustan estas ideas."
         }
       },
-      "examples": [
-        "A mí me gusta el té, a ella le gusta el café.",
-        "A nosotros nos gusta la playa."
+      "examples": ["A mí me gusta el té, a ella le gusta el café.", "A nosotros nos gusta la playa."]
+    },
+    {
+      "id": "gu-match-01",
+      "kind": "match",
+      "pairs": [
+        { "es": "me gusta el café", "en": "I like coffee" },
+        { "es": "me gustan los libros", "en": "I like books" },
+        { "es": "le gusta bailar", "en": "he/she likes to dance" },
+        { "es": "nos gusta la playa", "en": "we like the beach" },
+        { "es": "les gusta el fútbol", "en": "they like soccer" },
+        { "es": "no me gusta el frío", "en": "I do not like the cold" }
       ]
+    },
+    {
+      "id": "gu-form-01",
+      "kind": "form",
+      "verb": "gustar + una cosa",
+      "person": "yo",
+      "answer": "me gusta",
+      "table": "gustar-presente"
+    },
+    {
+      "id": "gu-form-02",
+      "kind": "form",
+      "verb": "gustar + una cosa",
+      "person": "tú",
+      "answer": "te gusta",
+      "table": "gustar-presente"
+    },
+    {
+      "id": "gu-form-03",
+      "kind": "form",
+      "verb": "gustar + una cosa",
+      "person": "él/ella/usted",
+      "answer": "le gusta",
+      "table": "gustar-presente"
+    },
+    {
+      "id": "gu-form-04",
+      "kind": "form",
+      "verb": "gustar + una cosa",
+      "person": "nosotros",
+      "answer": "nos gusta",
+      "table": "gustar-presente"
+    },
+    {
+      "id": "gu-form-05",
+      "kind": "form",
+      "verb": "gustar + una cosa",
+      "person": "vosotros",
+      "answer": "os gusta",
+      "table": "gustar-presente"
+    },
+    {
+      "id": "gu-form-06",
+      "kind": "form",
+      "verb": "gustar + una cosa",
+      "person": "ellos/ellas/ustedes",
+      "answer": "les gusta",
+      "table": "gustar-presente"
+    },
+    {
+      "id": "gu-form-07",
+      "kind": "form",
+      "verb": "gustar + varias cosas",
+      "person": "yo",
+      "answer": "me gustan",
+      "table": "gustar-presente"
+    },
+    {
+      "id": "gu-form-08",
+      "kind": "form",
+      "verb": "gustar + varias cosas",
+      "person": "tú",
+      "answer": "te gustan",
+      "table": "gustar-presente"
+    },
+    {
+      "id": "gu-form-09",
+      "kind": "form",
+      "verb": "gustar + varias cosas",
+      "person": "él/ella/usted",
+      "answer": "le gustan",
+      "table": "gustar-presente"
+    },
+    {
+      "id": "gu-form-10",
+      "kind": "form",
+      "verb": "gustar + varias cosas",
+      "person": "nosotros",
+      "answer": "nos gustan",
+      "table": "gustar-presente"
+    },
+    {
+      "id": "gu-form-11",
+      "kind": "form",
+      "verb": "gustar + varias cosas",
+      "person": "vosotros",
+      "answer": "os gustan",
+      "table": "gustar-presente"
+    },
+    {
+      "id": "gu-form-12",
+      "kind": "form",
+      "verb": "gustar + varias cosas",
+      "person": "ellos/ellas/ustedes",
+      "answer": "les gustan",
+      "table": "gustar-presente"
     }
   ]
 }

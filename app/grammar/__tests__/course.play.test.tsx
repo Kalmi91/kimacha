@@ -18,7 +18,7 @@ jest.mock('expo-router', () => ({
     const { useEffect } = require('react');
     useEffect(cb, []);
   },
-  useLocalSearchParams: () => ({ topic: 'presente-regular' }),
+  useLocalSearchParams: () => ({ topic: 'posesivos' }),
 }));
 
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
@@ -75,9 +75,9 @@ describe('grammar course', () => {
   });
 
   it('teaches the rule first, then drills it, then records the lesson as done', async () => {
-    // LECKE-SEMA: presente-regular még a régi (rule/more) sémán van, ezért itt
-    // biztonságos a LegacyLesson-re szűkítés (a pilot ser-estar a LessonV2).
-    const lesson = lessonFor('es', 'presente-regular')! as LegacyLesson;
+    // LECKE-SEMA: a core+ leckék (presente-regular is) már LessonV2-n vannak, a
+    // rule/more-os régi utat egy még átíratlan core-lecke, a posesivos játssza.
+    const lesson = lessonFor('es', 'posesivos')! as LegacyLesson;
     const view = render(<GrammarLessonScreen />);
     await flush(4);
 
@@ -106,7 +106,7 @@ describe('grammar course', () => {
     expect(screen.queryByTestId('grammar-practice-again')).toBeTruthy();
     await flush(2);
     const rows = await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY);
-    const row = rows.find((r) => r.itemId === 'presente-regular');
+    const row = rows.find((r) => r.itemId === 'posesivos');
     expect(row?.state).toBe('done');
     expect((row?.data as { total?: number })?.total).toBe(lesson.items.length);
 
