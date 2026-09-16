@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Pressable } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
@@ -19,7 +19,6 @@ import {
   type ScheduleBucketKey,
 } from '@/lib/schedulePreview';
 import FeedbackButton from '@/components/FeedbackModal';
-import ProgressMeter from '@/components/ProgressMeter';
 
 const EMPTY_SCHEDULE: SchedulePreview = { dueNow: 0, buckets: [], scheduled: 0, nextDue: null };
 
@@ -48,6 +47,9 @@ export default function StatsScreen() {
   const [levelKnown, setLevelKnown] = useState(0);
   const [levelTotal, setLevelTotal] = useState(0);
   const [targetLang, setTargetLang] = useState('es');
+  const [sourceLang, setSourceLang] = useState('en');
+  // FB254: a napi oszlop 60 perc fölött órában áll, koppintásra percre vált.
+  const [chartInMinutes, setChartInMinutes] = useState(false);
 
   // Refresh every time the tab gains focus (mirrors the Settings tab's
   // spellingDue pattern), so numbers stay current across app-wide activity.
@@ -69,6 +71,7 @@ export default function StatsScreen() {
         db.getOnboarding().then(ob => {
           const learned = ob?.target ?? 'es';
           setTargetLang(learned);
+          setSourceLang(ob?.source ?? 'en');
           setLevelTotal(getWordsForLevel(lvl as Level, learned).length);
         });
       });
@@ -76,6 +79,7 @@ export default function StatsScreen() {
   );
 
   const targetLangInfo = languages.find(l => l.code === targetLang);
+  const sourceLangInfo = languages.find(l => l.code === sourceLang);
 
   const maxMinutes = Math.max(1, ...usage.last7Days.map(d => d.minutes));
   const hasChartData = usage.last7Days.some(d => d.minutes > 0);
@@ -115,11 +119,9 @@ export default function StatsScreen() {
   };
 
   return (
-    <ScrollView
-      style={[styles.container, { backgroundColor: colors.background }]}
-      contentContainerStyle={styles.content}
-    >
-      <Text style={[styles.title, { color: colors.text }]}>{s.stats.title}</Text>
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+        <Text style={[styles.title, { color: colors.text }]}>{s.stats.title}</Text>
 
       {/* UTEMEZO 6. szakasz: a fejlecbol ide koltozott know/total szint-halado, a
           🌱 jelvenyt a fekete szam valtja a Tanulas fulon. */}
@@ -133,12 +135,12 @@ export default function StatsScreen() {
             {s.header.levelProgress(levelKnown, levelTotal)}
           </Text>
         </View>
-        <ProgressMeter
-          known={levelKnown}
-          total={levelTotal}
-          langFlag={targetLangInfo?.flag ?? ''}
-          langName={targetLangInfo?.name ?? ''}
-        />
+        {/* FB283: no gem grid here, just which language we learn from and to;
+            the count above says how many words the level has and how many stuck. */}
+        <Text style={[styles.levelCardPair, { color: colors.tabIconDefault }]}>
+          {sourceLangInfo?.flag ?? ''} {sourceLangInfo?.name ?? sourceLang} → {targetLangInfo?.flag ?? ''}{' '}
+          {targetLangInfo?.name ?? targetLang}
+        </Text>
       </View>
 
       <View style={styles.tileRow}>
@@ -204,7 +206,7 @@ export default function StatsScreen() {
       {!hasChartData ? (
         <Text style={[styles.noData, { color: colors.tabIconDefault }]}>{s.stats.noData}</Text>
       ) : (
-        <View style={styles.chart}>
+        <Pressable style={styles.chart} onPress={() => setChartInMinutes(v => !v)}>
           {usage.last7Days.map(day => (
             <View key={day.date} style={styles.barColumn}>
               <View style={styles.barTrack}>
@@ -218,11 +220,13 @@ export default function StatsScreen() {
                   ]}
                 />
               </View>
-              <Text style={[styles.barValue, { color: colors.tabIconDefault }]}>{day.minutes}</Text>
+              <Text style={[styles.barValue, { color: colors.tabIconDefault }]}>
+                {!chartInMinutes && day.minutes >= 60 ? `${hours(day.minutes)}h` : day.minutes}
+              </Text>
               <Text style={[styles.barLabel, { color: colors.tabIconDefault }]}>{weekdayLabel(day.date)}</Text>
             </View>
           ))}
-        </View>
+        </Pressable>
       )}
 
       <Text style={[styles.sectionLabel, { color: colors.tabIconDefault, marginTop: 24 }]}>
@@ -276,9 +280,12 @@ export default function StatsScreen() {
           </Text>
         </View>
       )}
+      </ScrollView>
 
-      <FeedbackButton level="-" languagePair="-" currentCard="stats-tab" />
-    </ScrollView>
+      {/* FB282: a gomb a ScrollView-n KÍVÜL lebeg, mint a settings fülön, nem a
+          lista aljára ragadva. */}
+      <FeedbackButton level="-" languagePair="-" currentCard="stats-tab" draggable />
+    </View>
   );
 }
 
@@ -343,6 +350,10 @@ const styles = StyleSheet.create({
   levelCardValue: {
     fontSize: 15,
     fontWeight: '700',
+  },
+  levelCardPair: {
+    fontSize: 13,
+    marginTop: 6,
   },
   bestDayRow: {
     borderRadius: 14,
