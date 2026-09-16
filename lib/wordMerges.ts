@@ -121,4 +121,7 @@ export const WORD_MERGES: Record<number, number> = {
   7341: 3399, // la placa solar: B2 szinonima, marad el panel solar (el panel solar / la placa solar)
   3247: 3226, // semejante: B2 szinonima (választékosabb), marad similar (similar / semejante)
   530: 3925, // rebatir: C1 szinonima, marad refutar (refutar / rebatir)
+  // PROMPT-POLICY 5 / FB285 (el/la -> el, a rejtett ikrek előkerültek):
+  3804: 3601, // el testigo: B1 törölve, marad A2
+  2584: 1854, // el jefe: B1 törölve, marad A1
 };

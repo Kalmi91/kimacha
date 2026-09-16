@@ -1866,22 +1866,6 @@
     "pos": "adv"
   },
   {
-    "es": "el testigo",
-    "hu": "a tanú",
-    "en": "the witness",
-    "sentence_es": "El testigo declaró ante el tribunal.",
-    "sentence_hu": "A tanú tanúskodott a bíróság előtt.",
-    "sentence_en": "The witness testified before the court.",
-    "de": "der Zeuge",
-    "sentence_de": "Der Zeuge sagte vor Gericht aus.",
-    "id": 3804,
-    "level": "B1",
-    "topic": "delincuencia_justicia_b1",
-    "topicOrder": 3,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "es": "la pesadilla",
     "hu": "az éjszakai rettegés",
     "en": "the nightmare",
@@ -4017,7 +4001,7 @@
     "pos": "adj"
   },
   {
-    "es": "el/la asistente",
+    "es": "el asistente",
     "hu": "az asszisztens/segéd",
     "en": "assistant",
     "sentence_es": "El asistente preparó los documentos.",
@@ -4029,7 +4013,10 @@
     "level": "B1",
     "topic": "trabajo_empleo_b1",
     "topicOrder": 8,
-    "pos": "phrase"
+    "pos": "noun",
+    "gender": "mf",
+    "note_hu": "Nőre: la asistente. A gépelésnél mindkét névelő jó.",
+    "note_en": "For a woman: la asistente. Either article is accepted when typing."
   },
   {
     "es": "el carro",
@@ -4346,7 +4333,7 @@
     "gender": "f"
   },
   {
-    "es": "el/la cobarde",
+    "es": "el cobarde",
     "hu": "a gyáva",
     "en": "coward",
     "sentence_es": "No seas cobarde y di la verdad.",
@@ -4358,7 +4345,10 @@
     "level": "B1",
     "topic": "rasgos_personalidad_b1",
     "topicOrder": 8,
-    "pos": "phrase"
+    "pos": "noun",
+    "gender": "mf",
+    "note_hu": "Nőre: la cobarde. A gépelésnél mindkét névelő jó.",
+    "note_en": "For a woman: la cobarde. Either article is accepted when typing."
   },
   {
     "es": "la (escuela) secundaria",
@@ -4846,7 +4836,7 @@
     "pos": "adv"
   },
   {
-    "es": "el/la mentiroso/a",
+    "es": "el mentiroso",
     "hu": "a hazug/hazudós",
     "en": "liar",
     "sentence_es": "No confíes en él, es un mentiroso.",
@@ -4858,7 +4848,10 @@
     "level": "B1",
     "topic": "rasgos_personalidad_b1",
     "topicOrder": 10,
-    "pos": "phrase"
+    "pos": "noun",
+    "gender": "mf",
+    "note_hu": "Nőre: la mentirosa. A gépelésnél mindkét névelő jó.",
+    "note_en": "For a woman: la mentirosa. Either article is accepted when typing."
   },
   {
     "es": "el conocimiento",
@@ -7153,21 +7146,6 @@
     "topicOrder": 10,
     "pos": "noun",
     "gender": "m"
-  },
-  {
-    "es": "el/la jefe/jefa",
-    "hu": "főnök",
-    "en": "boss / chief",
-    "sentence_es": "Mi jefa llega temprano a la oficina.",
-    "sentence_hu": "A főnököm korán érkezik az irodába.",
-    "sentence_en": "My boss arrives early at the office.",
-    "de": "Chef/Chefin",
-    "sentence_de": "Meine Chefin kommt früh ins Büro.",
-    "id": 2584,
-    "level": "B1",
-    "topic": "trabajo_empleo_b1",
-    "topicOrder": 11,
-    "pos": "phrase"
   },
   {
     "es": "el senador",
@@ -12910,7 +12888,7 @@
     "pos": "verb"
   },
   {
-    "es": "el/la adolescente",
+    "es": "el adolescente",
     "hu": "tinédzser/kamasz",
     "en": "teenager, adolescent",
     "sentence_es": "Los adolescentes pasan mucho tiempo en las redes sociales.",
@@ -12922,7 +12900,10 @@
     "level": "B1",
     "topic": "cuerpo_apariencia_vida_muerte_b1",
     "topicOrder": 30,
-    "pos": "phrase"
+    "pos": "noun",
+    "gender": "mf",
+    "note_hu": "Nőre: la adolescente. A gépelésnél mindkét névelő jó.",
+    "note_en": "For a woman: la adolescente. Either article is accepted when typing."
   },
   {
     "es": "el oxígeno",
@@ -13383,7 +13364,7 @@
     "gender": "m"
   },
   {
-    "es": "el/la terrorista",
+    "es": "el terrorista",
     "hu": "terrorista",
     "en": "terrorist",
     "sentence_es": "El terrorista fue capturado por las fuerzas de seguridad.",
@@ -13395,7 +13376,10 @@
     "level": "B1",
     "topic": "ejercito_conflicto_b1",
     "topicOrder": 23,
-    "pos": "phrase"
+    "pos": "noun",
+    "gender": "mf",
+    "note_hu": "Nőre: la terrorista. A gépelésnél mindkét névelő jó.",
+    "note_en": "For a woman: la terrorista. Either article is accepted when typing."
   },
   {
     "es": "los términos",

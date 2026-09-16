@@ -187,6 +187,12 @@ function textKeysOf(value: string): string[] {
     keys.push(norm);
     const bare = norm.replace(LEADING_ARTICLE, '');
     if (bare && bare !== norm) keys.push(bare);
+    // FB273: a ragozott-alak kártya feje „hagan (hacer)", a mondatban „hagan"
+    // áll, tehát a zárójel előtti alak önmagában is kulcs.
+    if (part.includes('(')) {
+      const head = normalizeWordToken(part.replace(/\([^)]*\)/g, ' '));
+      if (head && head !== norm) keys.push(head);
+    }
   }
   return keys;
 }

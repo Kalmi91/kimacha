@@ -77,14 +77,13 @@ export default function TreeScreen() {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         <Text style={[styles.noTree, { color: colors.tabIconDefault }]}>{level}</Text>
-        <View style={styles.feedbackWrap}>
-          <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="tree-tab" draggable />
-        </View>
+        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="tree-tab" draggable />
       </View>
     );
   }
 
   return (
+    <View style={{ flex: 1, backgroundColor: colors.background }}>
     <ScrollView
       style={{ backgroundColor: colors.background }}
       contentContainerStyle={styles.scrollContent}
@@ -205,11 +204,12 @@ export default function TreeScreen() {
           </View>
         );
       })}
-      <View style={styles.feedbackWrap}>
-        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="tree-tab" draggable />
-      </View>
       <View style={styles.bottomPad} />
     </ScrollView>
+      {/* FB284: a gomb a ScrollView-n KÍVÜL lebeg, mint a settings fülön, nem a
+          fa aljára ragadva. */}
+      <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="tree-tab" draggable />
+    </View>
   );
 }
 
@@ -276,6 +276,5 @@ const styles = StyleSheet.create({
   nodeName: { fontSize: 11, fontWeight: '600', textAlign: 'center', marginBottom: 2 },
   nodeProgress: { fontSize: 11, fontWeight: '700' },
   checkMark: { fontSize: 14, color: '#F59E0B', fontWeight: '800', marginTop: 2 },
-  feedbackWrap: { alignItems: 'center', marginTop: 16 },
   bottomPad: { height: 32 },
 });
