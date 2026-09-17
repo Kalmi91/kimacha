@@ -61,6 +61,8 @@ export interface DB {
   getReviewedWordCount(level: string): Promise<number>;
   getScheduledWordDueDates(): Promise<string[]>;
   buryCard(wordId: number, type: string): Promise<void>;
+  // FB293/294: "I know this" a SZORA vonatkozik, nem egy lap-tipusra.
+  buryWord(wordId: number): Promise<void>;
   snoozeCard(wordId: number, type: string, days: number): Promise<void>;
   addToSpellingList(wordId: number): Promise<void>;
   removeFromSpellingList(wordId: number): Promise<void>;
@@ -942,6 +944,13 @@ class SQLiteDB implements DB {
     const db = await this.open();
     // UTEMEZO 11. szakasz: egy elásott szó kikerül a kézből is.
     await db.runAsync('UPDATE cards SET buried = 1, in_hand = 0 WHERE word_id = ? AND type = ? AND pair = ?', [wordId, type, this.activePair]);
+  }
+
+  // FB293/294: "I know this" a SZORA vonatkozik, nem egy lap-tipusra (mint a
+  // buryCard): a szó MINDEN meglévő kártya-típus-sorát temeti.
+  async buryWord(wordId: number) {
+    const db = await this.open();
+    await db.runAsync('UPDATE cards SET buried = 1, in_hand = 0 WHERE word_id = ? AND pair = ?', [wordId, this.activePair]);
   }
 
   // FB38: push the card's due date out by `days`, leaving reps/stability untouched
