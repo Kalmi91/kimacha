@@ -1185,10 +1185,10 @@
   {
     "id": 1078,
     "level": "A1",
-    "es": "los zapatos",
-    "hu": "a cipők",
-    "en": "the shoes",
-    "de": "die Schuhe",
+    "es": "el zapato",
+    "hu": "cipő",
+    "en": "shoe",
+    "de": "der Schuh",
     "topic": "ropa",
     "topicOrder": 3,
     "sentence_es": "Los zapatos son grandes.",
@@ -1292,7 +1292,8 @@
     "sentence_en": "She wears glasses.",
     "sentence_de": "Sie trägt eine Brille.",
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "plural": "only"
   },
   {
     "id": 1085,
@@ -4235,10 +4236,10 @@
   {
     "id": 1271,
     "level": "A1",
-    "es": "las botas",
+    "es": "la bota",
     "hu": "a csizma",
-    "en": "the boots",
-    "de": "die Stiefel",
+    "en": "the boot",
+    "de": "der Stiefel",
     "topic": "ropa",
     "topicOrder": 13,
     "sentence_es": "Llevo botas en invierno.",
@@ -4262,7 +4263,8 @@
     "sentence_en": "The socks are white.",
     "sentence_de": "Die Socken sind weiß.",
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "plural": "irregular"
   },
   {
     "id": 1273,
@@ -9892,10 +9894,10 @@
   {
     "id": 1644,
     "level": "A1",
-    "es": "las patatas",
+    "es": "la patata",
     "hu": "a krumpli",
-    "en": "the potatoes",
-    "de": "die Kartoffeln",
+    "en": "the potato",
+    "de": "die Kartoffel",
     "topic": "comida_gyumolcs_zoldseg_a1",
     "topicOrder": 3,
     "sentence_es": "Las patatas fritas están calientes.",
@@ -10131,7 +10133,8 @@
     "note_es": "cortina es un sustantivo contable y tiene singular (la cortina). Una ventana suele llevar dos paños, por eso en el uso diario se dice en plural: las cortinas.",
     "note_de": "cortina ist ein zählbares Substantiv und hat einen Singular (la cortina). Ein Fenster hat meist zwei Bahnen, deshalb sagt man im Alltag den Plural: las cortinas.",
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "plural": "only"
   },
   {
     "id": 1659,
@@ -10488,10 +10491,10 @@
   {
     "id": 1681,
     "level": "A1",
-    "es": "los guantes",
+    "es": "el guante",
     "hu": "a kesztyű",
-    "en": "the gloves",
-    "de": "die Handschuhe",
+    "en": "the glove",
+    "de": "der Handschuh",
     "topic": "ropa",
     "topicOrder": 18,
     "sentence_es": "Necesito guantes para el frío.",
@@ -10515,15 +10518,20 @@
     "sentence_en": "I wear old jeans.",
     "sentence_de": "Ich trage eine alte Jeans.",
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "plural": "only",
+    "note_hu": "A „los vaqueros” (farmernadrág) általában többes számban hangzik el, mint „unos vaqueros”; az egyes számú „el vaquero” ebben a kurzusban cowboyt jelent.",
+    "note_en": "“los vaqueros” (jeans) is usually said in the plural, like “unos vaqueros”; the singular “el vaquero” on this course means “the cowboy”.",
+    "note_es": "“los vaqueros” (el pantalón vaquero) se suele decir en plural, como “unos vaqueros”; el singular “el vaquero” en este curso significa el cowboy.",
+    "note_de": "“los vaqueros” (Jeans) sagt man meist im Plural, wie “unos vaqueros”; der Singular “el vaquero” bedeutet in diesem Kurs der Cowboy."
   },
   {
     "id": 1683,
     "level": "A1",
-    "es": "las zapatillas",
+    "es": "la zapatilla",
     "hu": "a sportcipő",
-    "en": "the sneakers",
-    "de": "die Turnschuhe",
+    "en": "the sneaker",
+    "de": "der Turnschuh",
     "topic": "ropa",
     "topicOrder": 20,
     "sentence_es": "Corro con mis zapatillas nuevas.",
@@ -11640,10 +11648,10 @@
   {
     "id": 1752,
     "level": "A1",
-    "es": "las gambas",
+    "es": "la gamba",
     "hu": "a garnélarák",
     "en": "the shrimp",
-    "de": "die Garnelen",
+    "de": "die Garnele",
     "topic": "comida_etkezesek_a1",
     "topicOrder": 18,
     "sentence_es": "Las gambas están muy frescas.",
@@ -12825,9 +12833,9 @@
   {
     "id": 1827,
     "level": "A1",
-    "es": "las patatas fritas",
+    "es": "la patata frita",
     "hu": "a sült krumpli",
-    "en": "the french fries",
+    "en": "the french fry",
     "de": "die Pommes",
     "topic": "comida_etkezesek_a1",
     "topicOrder": 22,
@@ -13529,7 +13537,8 @@
     "sentence_en": "The vacation starts tomorrow.",
     "sentence_de": "Der Urlaub beginnt morgen.",
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "plural": "only"
   },
   {
     "id": 1871,
@@ -14560,7 +14569,12 @@
     "sentence_en": "My parents live nearby.",
     "sentence_de": "Meine Eltern wohnen in der Nähe.",
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "plural": "only",
+    "note_hu": "A „los padres” azt jelenti: szülők (anya és apa együtt), nem „apák”; egy apa önmagában „el padre”.",
+    "note_en": "“los padres” means “parents” (mother and father together), not “fathers”; one father alone is “el padre”.",
+    "note_es": "“los padres” significa los progenitores (padre y madre juntos), no varios padres; un padre solo es “el padre”.",
+    "note_de": "“los padres” bedeutet Eltern (Vater und Mutter zusammen), nicht Väter; ein Vater allein heißt “el padre”."
   },
   {
     "id": 3916,

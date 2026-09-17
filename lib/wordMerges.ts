@@ -124,4 +124,11 @@ export const WORD_MERGES: Record<number, number> = {
   // PROMPT-POLICY 5 / FB285 (el/la -> el, a rejtett ikrek előkerültek):
   3804: 3601, // el testigo: B1 törölve, marad A2
   2584: 1854, // el jefe: B1 törölve, marad A1
+
+  // PROMPT-POLICY 7 (es A1, TASK-3 2026-09-17): szabályos többes, marad az
+  // egyes iker; itt az egyes alak MAGASABB szinten élt (B2), ezért az
+  // alacsonyabb szintű többes kártya alakult át egyes számúra, és a
+  // magasabb szintű iker törlődött (a WORD_MERGES-konvenció szerint az
+  // alacsonyabb szint marad meg).
+  3054: 1078, // el zapato: B2 törölve, marad A1 (los zapatos -> el zapato)
 };
