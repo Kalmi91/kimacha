@@ -131,4 +131,47 @@ export const WORD_MERGES: Record<number, number> = {
   // magasabb szintű iker törlődött (a WORD_MERGES-konvenció szerint az
   // alacsonyabb szint marad meg).
   3054: 1078, // el zapato: B2 törölve, marad A1 (los zapatos -> el zapato)
+
+  // PROMPT-POLICY 7 (es A2, TASK-3 2026-09-17): szabályos többes, marad az egyes iker
+  3460: 3691, // el cielo: A2 többes törölve, marad A2
+  3498: 3722, // la carta: A2 többes törölve, marad A2
+  3525: 2085, // el animal: A2 többes törölve, marad A2
+  3540: 1836, // la flor: A2 többes törölve, marad A1
+  3560: 1278, // la luz: A2 többes törölve, marad A1
+  3574: 1114, // la pierna: A2 többes törölve, marad A1
+  3586: 3676, // el plan: A2 többes törölve, marad A2
+  3591: 41, // el nombre: A2 többes törölve, marad A0
+  3595: 1077, // el pantalón: A2 többes törölve, marad A1
+  3604: 3652, // el soldado: A2 többes törölve, marad A2
+  3611: 2314, // el sentimiento: A2 többes törölve, marad B1
+  3615: 1279, // la llave: A2 többes törölve, marad A1
+  3616: 1382, // el perro: A2 többes törölve, marad A1
+  3620: 1168, // el metro: A2 többes törölve, marad A1
+  3623: 1600, // el cliente: A2 többes törölve, marad A1
+  3627: 2175, // la dama: A2 többes törölve, marad A2
+  3639: 1115, // el brazo: A2 többes törölve, marad A1
+  3646: 2041, // el asunto: A2 többes törölve, marad A2
+  3662: 226, // la estrella: A2 többes törölve, marad A2
+  3688: 1314, // la semana: A2 többes törölve, marad A1
+  3692: 1859, // la pregunta: A2 többes törölve, marad A1
+  3699: 1855, // la noticia: A2 többes törölve, marad A1
+  3706: 3018, // el dólar: A2 többes törölve, marad B2
+  1901: 2171, // el caballero: A2 többes törölve, marad A2
+  1912: 2056, // la foto: A2 többes törölve, marad A2
+  1934: 2052, // el pie: A2 többes törölve, marad A2
+  1940: 1979, // el tipo: A2 többes törölve, marad A2
+  1993: 3008, // el chico: A2 többes törölve, marad B2
+  2033: 2174, // el millón: A2 többes törölve, marad A2
+  2078: 3012, // el detalle: A2 többes törölve, marad B2
+  2081: 2011, // el punto: A2 többes törölve, marad A2
+  2121: 2959, // el rayo: A2 többes törölve, marad B1
+  2128: 3717, // la relación: A2 többes törölve, marad A2
+  2135: 3766, // la razón: A2 többes törölve, marad A2
+  2152: 2034, // el modo: A2 többes törölve, marad A2
+  2163: 3421, // la orden: A2 többes törölve, marad A2
+  2178: 1977, // el momento: A2 többes törölve, marad A2
+  2239: 2024, // el número: A2 többes törölve, marad A2
+
+  // PROMPT-POLICY 7 (es A2, TASK-3 2026-09-17): szint-inverzió, a magasabb szintű iker törölve
+  2408: 3466, // la regla: B1 törölve, marad A2 (las reglas -> la regla) [regla A2 játék-tartalomban is]
 };
