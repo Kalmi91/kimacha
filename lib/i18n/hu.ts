@@ -65,6 +65,16 @@ export default {
     yesPractise: 'Igen',
     no: 'Nem',
   },
+  // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): a kör
+  // KÖZBENI kérdés, amint a fekete 0-ra ér és a kéz is kiürül, de review van
+  // még. A Done-képernyő fenti `done.*` kérdésétől külön kulcsok, mert ez a
+  // kártya helyén jön, nem a kör végén.
+  learn: {
+    askMoreTitle: 'Elfogyott a mai új szó',
+    askMoreYes: (n: number) => `+${n} új szó`,
+    askMoreReviewOnly: (k: number) => `Csak ismétlés (${k} lap)`,
+    askMoreDone: 'Mára ennyi',
+  },
   tabs: {
     learn: 'Tanulás',
     games: 'Játék',
@@ -548,6 +558,8 @@ export default {
     repair: 'javítás',
     repairLap: (n: number) => `javítás · ${n}/3`,
     sentence: 'mondat',
+    // UTEMEZO 5. szakasz (FB296/297/298): a kerdes-lap cimkeje.
+    question: 'kérdés',
   },
   // UTEMEZO 6. szakasz: a fejléc három számára koppintva megnyíló magyarázó ablak.
   header: {

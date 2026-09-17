@@ -217,7 +217,10 @@ export interface QueueStats {
 }
 
 export interface Shown {
-  kind: 'hand' | 'review';
+  // FB296/297/298: 'ask-more' a kérdés-lap (lásd nextLap es answerAskMore), a
+  // tobbi mezo ekkor a sentinel ertekevel (wordId -1, type 'word', stb.) all,
+  // a hivo a `kind`-bol dont, nem ezekbol.
+  kind: 'hand' | 'review' | 'ask-more';
   wordId: number;
   type: 'word' | 'sentence';
   lap?: LapNo;
@@ -242,6 +245,8 @@ export interface QueueState {
   sinceHand: number; // hany review-lap jott a legutobbi kezben-levo lap ota
   current: Shown | null; // a kepernyon levo lap
   stats: QueueStats;
+  // FB296/297/298: a kerdes-lap (lasd nextLap) korononkent csak egyszer johet.
+  askedMore: boolean;
 }
 
 // UTEMEZO 2.2: `answer()` maga sosem ad startWord effectet, mert a keret nem a
@@ -277,6 +282,7 @@ export function createQueue(init: {
     sinceHand: 0,
     current: null,
     stats: { reviewsAnswered: 0, wordsStarted: 0, wordsLearned: 0, wrongLaps: 0, buried: 0 },
+    askedMore: false,
   };
 }
 
@@ -294,6 +300,7 @@ export function header(state: QueueState): { black: number; blue: number; pink: 
 
 // UTEMEZO 7. szakasz: minden lapon egy cimke.
 export function labelOf(shown: Shown): string {
+  if (shown.kind === 'ask-more') return 'kérdés';
   if (shown.kind === 'hand') {
     return `${shown.repair ? 'javítás' : 'új'} · ${shown.lap}/3`;
   }
@@ -384,6 +391,20 @@ function startNew(state: QueueState, newStep: number): QueueState {
 export function nextLap(state: QueueState): QueueState {
   const { config } = state;
   const newStep = state.step + 1;
+
+  // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): mielőtt a
+  // sor csendben review-lapot adna, egyszer megkérdi, akar-e még új szót,
+  // amint a fekete keret elfogyott ÉS a kéz is kiürült (a megkezdett szavakat
+  // ez nem szakítja meg, lásd `hand.length === 0`). Körönként csak egyszer.
+  if (state.black === 0 && state.hand.length === 0 && state.reviews.length > 0 && !state.askedMore) {
+    return {
+      ...state,
+      step: newStep,
+      askedMore: true,
+      current: { kind: 'ask-more', wordId: -1, type: 'word', label: 'kérdés', isTyping: false, repair: false },
+    };
+  }
+
   const wantHand = state.reviews.length === 0 || state.sinceHand >= config.rhythm;
 
   if (!wantHand) {
@@ -582,4 +603,19 @@ export function buryWord(state: QueueState, wordId: number): QueueState {
 export function insertNext(state: QueueState, lap: ReviewLap): QueueState {
   const reviews = state.reviews.filter((r) => !(r.wordId === lap.wordId && r.type === lap.type));
   return { ...state, reviews: [lap, ...reviews] };
+}
+
+// UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): a kérdés-lap
+// (lásd nextLap) három válasza. 'more': a fekete a válaszul adott N-re áll (a
+// kérdés pillanatában úgyis 0 volt, tehát ez a "+N"); a hívó `addNewLimitBonus`-a
+// írja a DB-t, hogy újraindítás után is megmaradjon. 'review-only': a sor megy
+// tovább review-val, a fekete marad 0. 'done': a review kiürül, a kör a
+// Done-képernyőre áll (a következő `nextLap` a 4.5 (e) ágán current=null-t ad).
+export type AskMoreChoice = { kind: 'more'; n: number } | { kind: 'review-only' } | { kind: 'done' };
+
+export function answerAskMore(state: QueueState, choice: AskMoreChoice): QueueState {
+  if (state.current?.kind !== 'ask-more') return state;
+  if (choice.kind === 'more') return { ...state, black: choice.n, current: null };
+  if (choice.kind === 'review-only') return { ...state, current: null };
+  return { ...state, reviews: [], current: null };
 }
