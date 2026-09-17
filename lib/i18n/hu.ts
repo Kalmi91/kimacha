@@ -536,6 +536,13 @@ export default {
     requeueEasy: 'Könnyű (5 lap)',
     requeueNormal: 'Közepes (12 lap)',
     requeueHard: 'Nehéz (25 lap)',
+    // FB279, 2026-09-17: nehézség-tárcsa, a napi új szót és P-t együtt állítja.
+    difficultyVeryEasy: 'nagyon könnyű',
+    difficultyEasy: 'könnyű',
+    difficultyNormal: 'alap',
+    difficultyHard: 'nehéz',
+    difficultyVeryHard: 'nagyon nehéz',
+    difficultyCustom: 'egyéni',
   },
   backup: {
     backup: 'Biztonsági mentés',

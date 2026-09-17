@@ -521,6 +521,13 @@ export default {
     requeueEasy: 'Fácil (5 vueltas)',
     requeueNormal: 'Normal (12 vueltas)',
     requeueHard: 'Difícil (25 vueltas)',
+    // FB279, 2026-09-17: tárcsa de dificultad, ajusta las palabras nuevas y P juntas.
+    difficultyVeryEasy: 'muy fácil',
+    difficultyEasy: 'fácil',
+    difficultyNormal: 'normal',
+    difficultyHard: 'difícil',
+    difficultyVeryHard: 'muy difícil',
+    difficultyCustom: 'personalizado',
   },
   backup: {
     backup: 'Copia de seguridad',

@@ -521,6 +521,13 @@ export default {
     requeueEasy: 'Easy (5 laps)',
     requeueNormal: 'Normal (12 laps)',
     requeueHard: 'Hard (25 laps)',
+    // FB279, 2026-09-17: difficulty dial, sets the daily new words and P together.
+    difficultyVeryEasy: 'very easy',
+    difficultyEasy: 'easy',
+    difficultyNormal: 'normal',
+    difficultyHard: 'hard',
+    difficultyVeryHard: 'very hard',
+    difficultyCustom: 'custom',
   },
   backup: {
     backup: 'Backup',
