@@ -20,6 +20,7 @@ import { computeUnlockedTopics } from '@/lib/learn/topicUnlock';
 import { checkLevelChange } from '@/lib/learn/levelStreak';
 import { getFrontBack, lapLabelOf, speakSkippedAnswer } from '@/lib/learn/cardPresentation';
 import EasySentenceScreen from '@/components/learn/EasySentenceScreen';
+import AskMoreScreen from '@/components/learn/AskMoreScreen';
 import {
   buildQueue, applyCadence, mergeCarryover, type DueItem,
   createQueue, nextLap, answer, defer, insertNext, buryWord, answerAskMore, header, labelOf,
@@ -38,7 +39,6 @@ import FeedbackButton from '@/components/FeedbackModal';
 import { speak as speakIn, loadVoices } from '@/lib/speech';
 import MockExamMode from '@/components/exam/MockExamMode';
 import DoneScreen, { type DoneAsk } from '@/components/DoneScreen';
-import AskMoreCard from '@/components/AskMoreCard';
 import LearnChrome from '@/components/LearnChrome';
 import LevelPicker from '@/components/LevelPicker';
 import { languages, speechLang } from '@/lib/languages';
@@ -1127,37 +1127,29 @@ export default function LearnScreen() {
   // kérdés-lap a kártya helyén jön, a fejléc (fekete/kék/rózsaszín + "kérdés"
   // címke) ekkor is látszik, ezért a LearnChrome-ot itt is meghívjuk.
   if (qs?.current?.kind === 'ask-more') {
-    const topicLang = direction[0] === 'hu' ? 'hu' : direction[0] === 'es' ? 'es' : direction[0] === 'de' ? 'de' : 'en';
-    const targetLang = languages.find(l => l.code === direction[1]);
     return (
-      <View style={[styles.container, { backgroundColor: colors.background }]}>
-        <LearnChrome
-          level={level}
-          topicIcon={currentTopic ? (currentTopic.icon ?? (currentTopic.type === 'grammar' ? '📗' : '📘')) : null}
-          topicName={currentTopic && topicProgress ? getTopicName(currentTopic, topicLang) : null}
-          onTopicPress={() => router.push('/(tabs)/tree')}
-          known={knownWords}
-          total={levelTotal}
-          langFlag={targetLang?.flag ?? ''}
-          langName={targetLang?.name ?? ''}
-          black={black}
-          blue={blue}
-          pink={pink}
-          reviewLeft={pink}
-          examUnlocked={masteredPct >= 80}
-          onExamPress={() => setExamMode(true)}
-          examLabel={s.exam.unlocked}
-          toast={null}
-          lapLabel={lapLabelOf(qs.current, s)}
-        />
-        <AskMoreCard
-          dailyDefault={dailyDefault}
-          reviewsLeft={qs.reviews.length}
-          onMore={handleAskMoreNew}
-          onReviewOnly={handleAskMoreReviewOnly}
-          onDone={handleAskMoreDone}
-        />
-      </View>
+      <AskMoreScreen
+        level={level}
+        direction={direction as [string, string]}
+        colors={colors}
+        currentTopic={currentTopic}
+        topicProgress={topicProgress}
+        knownWords={knownWords}
+        levelTotal={levelTotal}
+        black={black}
+        blue={blue}
+        pink={pink}
+        masteredPct={masteredPct}
+        s={s}
+        lapLabel={lapLabelOf(qs.current, s)}
+        onExamPress={() => setExamMode(true)}
+        onTopicPress={() => router.push('/(tabs)/tree')}
+        dailyDefault={dailyDefault}
+        reviewsLeft={qs.reviews.length}
+        onMore={handleAskMoreNew}
+        onReviewOnly={handleAskMoreReviewOnly}
+        onDone={handleAskMoreDone}
+      />
     );
   }
 
