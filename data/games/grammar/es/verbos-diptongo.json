@@ -1281,6 +1281,356 @@
       "person": "ellos/ellas/ustedes",
       "answer": "juegan",
       "table": "presente-diptongo"
+    },
+    {
+      "kind": "why",
+      "id": "vd-why-01",
+      "es": "Quiero un té.",
+      "tr": {
+        "hu": "Teát szeretnék.",
+        "en": "I want a tea.",
+        "es": "Quiero un té.",
+        "de": "Ich möchte einen Tee."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "e→ie tőváltás",
+            "en": "e→ie stem change",
+            "es": "cambio e→ie",
+            "de": "e→ie-Wechsel"
+          }
+        },
+        {
+          "text": {
+            "hu": "o→ue tőváltás",
+            "en": "o→ue stem change",
+            "es": "cambio o→ue",
+            "de": "o→ue-Wechsel"
+          },
+          "wrong": {
+            "hu": "Az o→ue tőváltás olyan igékre vonatkozik, mint poder (puedo); a querer az e→ie csoportba tartozik, ezért quiero, nem quoro.",
+            "en": "The o→ue stem change is for verbs like poder (puedo); querer belongs to the e→ie group, so quiero, not quoro.",
+            "es": "El cambio o→ue es de verbos como poder (puedo); querer es del grupo e→ie, por eso quiero, no quoro.",
+            "de": "Der o→ue-Wechsel gilt für Verben wie poder (puedo); querer gehört zur e→ie-Gruppe, deshalb quiero, nicht quoro."
+          }
+        },
+        {
+          "text": {
+            "hu": "e→i tőváltás",
+            "en": "e→i stem change",
+            "es": "cambio e→i",
+            "de": "e→i-Wechsel"
+          },
+          "wrong": {
+            "hu": "Az e→i tőváltás olyan igékre vonatkozik, mint pedir (pido); a querer e→ie-t vált, ezért quiero, nem quiro.",
+            "en": "The e→i stem change is for verbs like pedir (pido); querer changes e→ie, so quiero, not quiro.",
+            "es": "El cambio e→i es de verbos como pedir (pido); querer cambia e→ie, por eso quiero, no quiro.",
+            "de": "Der e→i-Wechsel gilt für Verben wie pedir (pido); querer wechselt e→ie, deshalb quiero, nicht quiro."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "vd-why-02",
+      "es": "Puedo ayudarte.",
+      "tr": {
+        "hu": "Tudok segíteni neked.",
+        "en": "I can help you.",
+        "es": "Puedo ayudarte.",
+        "de": "Ich kann dir helfen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "e→ie tőváltás",
+            "en": "e→ie stem change",
+            "es": "cambio e→ie",
+            "de": "e→ie-Wechsel"
+          },
+          "wrong": {
+            "hu": "Az e→ie tőváltás olyan igékre vonatkozik, mint querer (quiero); a poder o→ue-t vált, ezért puedo, nem piedo.",
+            "en": "The e→ie stem change is for verbs like querer (quiero); poder changes o→ue, so puedo, not piedo.",
+            "es": "El cambio e→ie es de verbos como querer (quiero); poder cambia o→ue, por eso puedo, no piedo.",
+            "de": "Der e→ie-Wechsel gilt für Verben wie querer (quiero); poder wechselt o→ue, deshalb puedo, nicht piedo."
+          }
+        },
+        {
+          "text": {
+            "hu": "o→ue tőváltás",
+            "en": "o→ue stem change",
+            "es": "cambio o→ue",
+            "de": "o→ue-Wechsel"
+          }
+        },
+        {
+          "text": {
+            "hu": "nosotros/vosotros: nincs tőváltás",
+            "en": "nosotros/vosotros: no stem change",
+            "es": "nosotros/vosotros: sin cambio",
+            "de": "nosotros/vosotros: kein Wechsel"
+          },
+          "wrong": {
+            "hu": "Ez a szabály a nosotros/vosotros alakra vonatkozik (podemos); itt viszont a yo-alak áll, ami hangsúlyos, tehát tőt vált: puedo.",
+            "en": "This rule is about the nosotros/vosotros form (podemos); here it is the yo form, which is stressed, so it changes stem: puedo.",
+            "es": "Esta regla es sobre la forma de nosotros/vosotros (podemos); aquí está la forma de yo, que es tónica, así que cambia de raíz: puedo.",
+            "de": "Diese Regel betrifft die nosotros/vosotros-Form (podemos); hier steht aber die yo-Form, die betont ist, also wechselt der Stamm: puedo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "vd-why-03",
+      "es": "Pido la cuenta.",
+      "tr": {
+        "hu": "Kérem a számlát.",
+        "en": "I ask for the bill.",
+        "es": "Pido la cuenta.",
+        "de": "Ich bitte um die Rechnung."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "e→ie tőváltás",
+            "en": "e→ie stem change",
+            "es": "cambio e→ie",
+            "de": "e→ie-Wechsel"
+          },
+          "wrong": {
+            "hu": "Az e→ie tőváltás olyan igékre vonatkozik, mint querer (quiero); a pedir e→i-t vált, ezért pido, nem piedo.",
+            "en": "The e→ie stem change is for verbs like querer (quiero); pedir changes e→i, so pido, not piedo.",
+            "es": "El cambio e→ie es de verbos como querer (quiero); pedir cambia e→i, por eso pido, no piedo.",
+            "de": "Der e→ie-Wechsel gilt für Verben wie querer (quiero); pedir wechselt e→i, deshalb pido, nicht piedo."
+          }
+        },
+        {
+          "text": {
+            "hu": "o→ue tőváltás",
+            "en": "o→ue stem change",
+            "es": "cambio o→ue",
+            "de": "o→ue-Wechsel"
+          },
+          "wrong": {
+            "hu": "Az o→ue tőváltás olyan igékre vonatkozik, mint poder (puedo); a pedirben nincs is 'o' betű a tövében, ez a szabály rá nem érvényes.",
+            "en": "The o→ue stem change is for verbs like poder (puedo); pedir's stem does not even have an 'o', this rule does not apply to it.",
+            "es": "El cambio o→ue es de verbos como poder (puedo); la raíz de pedir ni siquiera tiene una \"o\", esta regla no le corresponde.",
+            "de": "Der o→ue-Wechsel gilt für Verben wie poder (puedo); der Stamm von pedir hat gar kein \"o\", diese Regel passt nicht zu ihm."
+          }
+        },
+        {
+          "text": {
+            "hu": "e→i tőváltás",
+            "en": "e→i stem change",
+            "es": "cambio e→i",
+            "de": "e→i-Wechsel"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "vd-why-04",
+      "es": "Juega fútbol los sábados.",
+      "tr": {
+        "hu": "Szombatonként focizik.",
+        "en": "He/She plays football on Saturdays.",
+        "es": "Juega fútbol los sábados.",
+        "de": "Er/Sie spielt samstags Fußball."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "o→ue tőváltás",
+            "en": "o→ue stem change",
+            "es": "cambio o→ue",
+            "de": "o→ue-Wechsel"
+          },
+          "wrong": {
+            "hu": "Az o→ue tőváltás olyan igékre vonatkozik, mint poder (puedo); a jugar tövében 'u' van, nem 'o', ezért külön szabálya van: u→ue.",
+            "en": "The o→ue stem change is for verbs like poder (puedo); jugar's stem has a 'u', not an 'o', so it has its own rule: u→ue.",
+            "es": "El cambio o→ue es de verbos como poder (puedo); la raíz de jugar tiene \"u\", no \"o\", por eso tiene su propia regla: u→ue.",
+            "de": "Der o→ue-Wechsel gilt für Verben wie poder (puedo); der Stamm von jugar hat ein \"u\", kein \"o\", deshalb hat es eine eigene Regel: u→ue."
+          }
+        },
+        {
+          "text": {
+            "hu": "u→ue (csak jugar)",
+            "en": "u→ue (jugar only)",
+            "es": "cambio u→ue (solo jugar)",
+            "de": "u→ue (nur jugar)"
+          }
+        },
+        {
+          "text": {
+            "hu": "e→i tőváltás",
+            "en": "e→i stem change",
+            "es": "cambio e→i",
+            "de": "e→i-Wechsel"
+          },
+          "wrong": {
+            "hu": "Az e→i tőváltás olyan igékre vonatkozik, mint pedir (pido); a jugar tövében nincs 'e' betű, ez a szabály rá nem érvényes.",
+            "en": "The e→i stem change is for verbs like pedir (pido); jugar's stem has no 'e', this rule does not apply to it.",
+            "es": "El cambio e→i es de verbos como pedir (pido); la raíz de jugar no tiene \"e\", esta regla no le corresponde.",
+            "de": "Der e→i-Wechsel gilt für Verben wie pedir (pido); der Stamm von jugar hat kein \"e\", diese Regel passt nicht zu ihm."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "vd-why-05",
+      "es": "Queremos café.",
+      "tr": {
+        "hu": "Kávét szeretnénk.",
+        "en": "We want coffee.",
+        "es": "Queremos café.",
+        "de": "Wir möchten Kaffee."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "e→ie tőváltás",
+            "en": "e→ie stem change",
+            "es": "cambio e→ie",
+            "de": "e→ie-Wechsel"
+          },
+          "wrong": {
+            "hu": "Az e→ie tőváltás csak a hangsúlyos alakokra vonatkozik (quiero, quieres...); a mi-alak (nosotros) sose hangsúlyos a tövön, ezért marad szabályos: queremos.",
+            "en": "The e→ie stem change only applies to the stressed forms (quiero, quieres...); the we-form (nosotros) is never stressed on the stem, so it stays regular: queremos.",
+            "es": "El cambio e→ie solo se aplica a las formas tónicas (quiero, quieres...); la forma de nosotros nunca es tónica en la raíz, por eso queda regular: queremos.",
+            "de": "Der e→ie-Wechsel gilt nur für die betonten Formen (quiero, quieres...); die wir-Form ist im Stamm nie betont, deshalb bleibt sie regelmäßig: queremos."
+          }
+        },
+        {
+          "text": {
+            "hu": "o→ue tőváltás",
+            "en": "o→ue stem change",
+            "es": "cambio o→ue",
+            "de": "o→ue-Wechsel"
+          },
+          "wrong": {
+            "hu": "Az o→ue tőváltás a poder-féle igékre vonatkozik; a querer amúgy is e→ie csoportba tartozik, és a mi-alak itt sem tőváltós.",
+            "en": "The o→ue stem change is for poder-type verbs; querer belongs to the e→ie group anyway, and the we-form does not change stem here either.",
+            "es": "El cambio o→ue es de verbos tipo poder; querer es del grupo e→ie de todas formas, y la forma de nosotros tampoco cambia de raíz aquí.",
+            "de": "Der o→ue-Wechsel gilt für Verben wie poder; querer gehört ohnehin zur e→ie-Gruppe, und auch hier ändert die wir-Form nicht den Stamm."
+          }
+        },
+        {
+          "text": {
+            "hu": "nosotros/vosotros: nincs tőváltás",
+            "en": "nosotros/vosotros: no stem change",
+            "es": "nosotros/vosotros: sin cambio",
+            "de": "nosotros/vosotros: kein Wechsel"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "vd-why-06",
+      "es": "Piden ayuda.",
+      "tr": {
+        "hu": "Segítséget kérnek.",
+        "en": "They ask for help.",
+        "es": "Piden ayuda.",
+        "de": "Sie bitten um Hilfe."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "nosotros/vosotros: nincs tőváltás",
+            "en": "nosotros/vosotros: no stem change",
+            "es": "nosotros/vosotros: sin cambio",
+            "de": "nosotros/vosotros: kein Wechsel"
+          },
+          "wrong": {
+            "hu": "Ez a szabály a nosotros/vosotros alakra vonatkozik (pedimos, pedís); az ellos-alak hangsúlyos, tehát tőt vált: piden.",
+            "en": "This rule is about the nosotros/vosotros form (pedimos, pedís); the ellos form is stressed, so it changes stem: piden.",
+            "es": "Esta regla es sobre la forma de nosotros/vosotros (pedimos, pedís); la forma de ellos es tónica, así que cambia de raíz: piden.",
+            "de": "Diese Regel betrifft die nosotros/vosotros-Form (pedimos, pedís); die ellos-Form ist betont, also wechselt der Stamm: piden."
+          }
+        },
+        {
+          "text": {
+            "hu": "u→ue (csak jugar)",
+            "en": "u→ue (jugar only)",
+            "es": "cambio u→ue (solo jugar)",
+            "de": "u→ue (nur jugar)"
+          },
+          "wrong": {
+            "hu": "A u→ue tőváltás csak a jugarra vonatkozik; a pedir tövében nincs 'u' betű, ez a szabály rá nem érvényes.",
+            "en": "The u→ue stem change only applies to jugar; pedir's stem has no 'u', this rule does not apply to it.",
+            "es": "El cambio u→ue solo se aplica a jugar; la raíz de pedir no tiene \"u\", esta regla no le corresponde.",
+            "de": "Der u→ue-Wechsel gilt nur für jugar; der Stamm von pedir hat kein \"u\", diese Regel passt nicht zu ihm."
+          }
+        },
+        {
+          "text": {
+            "hu": "e→i tőváltás",
+            "en": "e→i stem change",
+            "es": "cambio e→i",
+            "de": "e→i-Wechsel"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "vd-why-07",
+      "es": "Vuelve temprano a casa.",
+      "tr": {
+        "hu": "Korán hazatér.",
+        "en": "He/She comes home early.",
+        "es": "Vuelve temprano a casa.",
+        "de": "Er/Sie kommt früh nach Hause."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "e→i tőváltás",
+            "en": "e→i stem change",
+            "es": "cambio e→i",
+            "de": "e→i-Wechsel"
+          },
+          "wrong": {
+            "hu": "Az e→i tőváltás olyan igékre vonatkozik, mint pedir (pido); a volver tövében 'o' van, nem 'e', ezért o→ue a szabálya: vuelve.",
+            "en": "The e→i stem change is for verbs like pedir (pido); volver's stem has an 'o', not an 'e', so its rule is o→ue: vuelve.",
+            "es": "El cambio e→i es de verbos como pedir (pido); la raíz de volver tiene \"o\", no \"e\", por eso su regla es o→ue: vuelve.",
+            "de": "Der e→i-Wechsel gilt für Verben wie pedir (pido); der Stamm von volver hat ein \"o\", kein \"e\", deshalb gilt für ihn o→ue: vuelve."
+          }
+        },
+        {
+          "text": {
+            "hu": "o→ue tőváltás",
+            "en": "o→ue stem change",
+            "es": "cambio o→ue",
+            "de": "o→ue-Wechsel"
+          }
+        },
+        {
+          "text": {
+            "hu": "nosotros/vosotros: nincs tőváltás",
+            "en": "nosotros/vosotros: no stem change",
+            "es": "nosotros/vosotros: sin cambio",
+            "de": "nosotros/vosotros: kein Wechsel"
+          },
+          "wrong": {
+            "hu": "Ez a szabály a nosotros/vosotros alakra vonatkozik (volvemos); az él/ella-alak hangsúlyos, tehát tőt vált: vuelve.",
+            "en": "This rule is about the nosotros/vosotros form (volvemos); the él/ella form is stressed, so it changes stem: vuelve.",
+            "es": "Esta regla es sobre la forma de nosotros/vosotros (volvemos); la forma de él/ella es tónica, así que cambia de raíz: vuelve.",
+            "de": "Diese Regel betrifft die nosotros/vosotros-Form (volvemos); die él/ella-Form ist betont, also wechselt der Stamm: vuelve."
+          }
+        }
+      ],
+      "correctIndex": 1
     }
   ]
 }
