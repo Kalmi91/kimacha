@@ -510,12 +510,14 @@ export default {
     dailyNewLimitWords: (n: string) => `${n} Wörter / Tag`,
     spellingPractice: (due: number, total: number) => `Rechtschreibtraining · ${due} fällig, ${total} auf der Liste`,
     difficulty: 'Schwierigkeit',
-    difficultySummary: (hand: number, gap: number, strict: boolean) =>
-      `In der Hand: ${hand} · Abstand: ${gap} Runden · Akzente: ${strict ? 'an' : 'aus'}`,
+    difficultySummary: (hand: number, gap: number, repair: number, strict: boolean) =>
+      `In der Hand: ${hand} · Abstand: ${gap} Runden · Korrektur: ${Math.min(repair, gap)} Runden · Akzente: ${strict ? 'an' : 'aus'}`,
     handCap: 'Wörter in der Hand',
     handCapHint: 'So viele Wörter können gleichzeitig begonnen sein; ein neues startet erst, wenn Platz ist.',
     gapLaps: 'Rückkehr-Abstand',
     gapLapsHint: 'So viele andere Runden vergehen, bevor dasselbe Wort zurückkommt.',
+    repairGap: 'Korrektur-Abstand',
+    repairGapHint: 'Ein falsch beantwortetes Wort kommt nach so vielen Runden zurück, vor den anderen Wiederholungen. Nie größer als der normale Abstand.',
     strictAccents: 'Akzente zählen',
     strictAccentsHint: 'Ein fehlender Akzent (á, é, ñ) gilt beim Tippen als Fehler.',
     articlePicker: 'Artikel-Knöpfe',

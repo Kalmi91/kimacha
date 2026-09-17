@@ -510,12 +510,14 @@ export default {
     dailyNewLimitWords: (n: string) => `${n} words / day`,
     spellingPractice: (due: number, total: number) => `Spelling practice · ${due} due, ${total} on the list`,
     difficulty: 'Difficulty',
-    difficultySummary: (hand: number, gap: number, strict: boolean) =>
-      `In hand: ${hand} · gap: ${gap} laps · accents: ${strict ? 'on' : 'off'}`,
+    difficultySummary: (hand: number, gap: number, repair: number, strict: boolean) =>
+      `In hand: ${hand} · gap: ${gap} laps · repair: ${Math.min(repair, gap)} laps · accents: ${strict ? 'on' : 'off'}`,
     handCap: 'Words in hand',
     handCapHint: 'This many words can be started at once; a new one only starts once there is room.',
     gapLaps: 'Return gap',
     gapLapsHint: 'This many other laps pass before the same word comes back.',
+    repairGap: 'Repair gap',
+    repairGapHint: 'A word you got wrong comes back after this many laps, ahead of the other reviews. Never longer than the return gap.',
     strictAccents: 'Accents count',
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',
     articlePicker: 'Article buttons',

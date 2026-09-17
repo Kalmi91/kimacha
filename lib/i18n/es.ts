@@ -510,12 +510,14 @@ export default {
     dailyNewLimitWords: (n: string) => `${n} palabras / día`,
     spellingPractice: (due: number, total: number) => `Práctica de ortografía · ${due} pendientes, ${total} en la lista`,
     difficulty: 'Dificultad',
-    difficultySummary: (hand: number, gap: number, strict: boolean) =>
-      `En mano: ${hand} · distancia: ${gap} vueltas · tildes: ${strict ? 'sí' : 'no'}`,
+    difficultySummary: (hand: number, gap: number, repair: number, strict: boolean) =>
+      `En mano: ${hand} · distancia: ${gap} vueltas · corrección: ${Math.min(repair, gap)} vueltas · tildes: ${strict ? 'sí' : 'no'}`,
     handCap: 'Palabras en mano',
     handCapHint: 'Este número de palabras puede estar empezado a la vez; una nueva solo arranca si hay hueco.',
     gapLaps: 'Distancia de retorno',
     gapLapsHint: 'Cuántas otras vueltas pasan antes de que vuelva la misma palabra.',
+    repairGap: 'Distancia de corrección',
+    repairGapHint: 'Una palabra fallada vuelve después de estas vueltas, antes de los demás repasos. Nunca mayor que la distancia normal.',
     strictAccents: 'Las tildes cuentan',
     strictAccentsHint: 'Al escribir, una tilde que falta (á, é, ñ) es un error.',
     articlePicker: 'Botones de artículo',
