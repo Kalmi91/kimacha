@@ -87,3 +87,16 @@ describe('articlePickerApplies with the expected answer (FB262-264)', () => {
     expect(articlePickerApplies('es', true, 'ir a pie / caminar')).toBe(true);
   });
 });
+
+describe('articlePickerApplies on sentence cards (FB291)', () => {
+  it('hides the chips on a full sentence even when it starts with an article', () => {
+    expect(articlePickerApplies('es', true, 'El gato está en la mesa.')).toBe(false);
+    expect(articlePickerApplies('es', true, '¿Dónde está el baño?')).toBe(false);
+  });
+
+  it('keeps the earlier word-level rules (FB262)', () => {
+    expect(articlePickerApplies('es', true, 'el fin de semana')).toBe(true);
+    expect(articlePickerApplies('es', true, 'perro')).toBe(true);
+    expect(articlePickerApplies('es', true, 'voy a viajar')).toBe(false);
+  });
+});
