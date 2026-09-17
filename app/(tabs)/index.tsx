@@ -12,7 +12,6 @@ import TappableSentence, { type TokenState } from '@/components/TappableSentence
 import { getTopicsForLevel, hasTopics, getTopicName, getSubLevelForTopic, getTopicsForSubLevel, getSubLevelName, type TopicDef } from '@/data/topics';
 import { t, stringsFor } from '@/lib/i18n';
 import { strictAnswerMatch } from '@/lib/answerMatch';
-import { nearMissDistractors } from '@/lib/distractors';
 import { consumePendingAction } from '@/lib/pendingAction';
 import { DAILY_NEW_BONUS_STEP } from '@/lib/usageStats';
 import { borrowNewWords, countNewWords, nextTopicWithNewWords } from '@/lib/topicRotation';
@@ -20,6 +19,7 @@ import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
 import { computeUnlockedTopics } from '@/lib/learn/topicUnlock';
 import { checkLevelChange } from '@/lib/learn/levelStreak';
 import { getFrontBack, lapLabelOf, speakSkippedAnswer } from '@/lib/learn/cardPresentation';
+import EasySentenceScreen from '@/components/learn/EasySentenceScreen';
 import {
   buildQueue, applyCadence, mergeCarryover, type DueItem,
   createQueue, nextLap, answer, defer, insertNext, buryWord, answerAskMore, header, labelOf,
@@ -39,7 +39,6 @@ import { speak as speakIn, loadVoices } from '@/lib/speech';
 import MockExamMode from '@/components/exam/MockExamMode';
 import DoneScreen, { type DoneAsk } from '@/components/DoneScreen';
 import AskMoreCard from '@/components/AskMoreCard';
-import EasySentenceCard from '@/components/EasySentenceCard';
 import LearnChrome from '@/components/LearnChrome';
 import LevelPicker from '@/components/LevelPicker';
 import { languages, speechLang } from '@/lib/languages';
@@ -1361,51 +1360,21 @@ export default function LearnScreen() {
   );
 
   if (current.isEasySentence && !isWord) {
-    const [native, learned] = direction;
-    const nativeSentence = String(current.word[`sentence_${native}`]);
-    const learnedSentence = String(current.word[`sentence_${learned}`]);
-    // FB16: lowercase the sentence-initial word in the tile bank, a leading
-    // capital reveals which tile starts the sentence. Grading stays case-insensitive.
-    const rawTargetWords = learnedSentence.replace(/[.!?¡¿,;:]/g, '').split(/\s+/).filter(Boolean);
-    const targetWordList = rawTargetWords.map((w, i) =>
-      i === 0 ? w.charAt(0).toLowerCase() + w.slice(1) : w,
-    );
-    const levelWords = getWordsForLevel(level, learned);
-    // Near-miss distractors (FB1): sibling articles + same-stem/ending forms
-    // instead of random vocab, so the learner practises forms not random noise.
-    const vocab = levelWords.map(w => String(w[learned]).split(' / ')[0]);
-    const traps = nearMissDistractors(targetWordList, vocab, learned);
-
     return (
-      <View style={[styles.container, { backgroundColor: colors.background }]}>
-        {chrome}
-        {/* FB87: a long sentence with many chips grows past the centered column,
-            so the card scrolls (shared scroll styles). */}
-        <ScrollView
-          style={styles.typingScroll}
-          contentContainerStyle={styles.typingScrollContent}
-          keyboardShouldPersistTaps="handled"
-          keyboardDismissMode="on-drag"
-        >
-        <EasySentenceCard
-          chips={cardChips}
-          key={`${current.wordId}-${qs?.step ?? 0}`}
-          sourceSentence={nativeSentence}
-          lang={learned}
-          targetWords={targetWordList}
-          trapWords={traps}
-          onResult={(correct) => {
-            applyAnswer(correct);
-          }}
-          onBury={handleBuryWord}
-          onSkip={requeueCurrent}
-          mistakeNote={noteText}
-          speechLocale={speechLang(learned)}
-          strictAccents={strictAccents}
-        />
-        </ScrollView>
-        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard={`easy:${nativeSentence}`} />
-      </View>
+      <EasySentenceScreen
+        current={current}
+        direction={direction as [string, string]}
+        level={level}
+        colors={colors}
+        chrome={chrome}
+        cardChips={cardChips}
+        noteText={noteText}
+        strictAccents={strictAccents}
+        qsStep={qs?.step ?? 0}
+        onResult={(correct) => applyAnswer(correct)}
+        onBury={handleBuryWord}
+        onSkip={requeueCurrent}
+      />
     );
   }
 
