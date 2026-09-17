@@ -374,9 +374,10 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
           {s.games.grammarChoice.progress(index + 1, round.length)}
         </Text>
         {isMatchItem(roundItem.item) ? (
-          <MatchDrillItem item={roundItem.item} colors={colors} s={s} onDone={completeItem} />
+          <MatchDrillItem key={roundItem.item.id} item={roundItem.item} colors={colors} s={s} onDone={completeItem} />
         ) : isFormItem(roundItem.item) ? (
           <FormDrillItem
+            key={roundItem.item.id}
             item={roundItem.item}
             table={findFormTable(topic, roundItem.item.table)}
             contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
@@ -387,6 +388,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
           />
         ) : isWhyItem(roundItem.item) ? (
           <WhyDrillItem
+            key={roundItem.item.id}
             item={roundItem.item}
             learnedLang={learnedLang}
             contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
