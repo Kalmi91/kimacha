@@ -692,27 +692,27 @@
     },
     {
       "id": "eg-12",
-      "sentence": "Yo no ___ durmiendo, estoy despierto.",
+      "sentence": "Yo no ___ durmiendo, sino despierto.",
       "options": ["estoy", "estás", "está"],
       "correct": 0,
       "why": {
-        "hu": "Yo alanyhoz estoy tartozik, tagadásban is a no után, az ige elé kerül: yo no estoy durmiendo.",
-        "en": "The subject yo takes estoy, and even negated it goes after no, before the verb: yo no estoy durmiendo.",
-        "es": "Al sujeto yo le corresponde estoy, y en negativo va después de no, antes del verbo: yo no estoy durmiendo.",
-        "de": "Zum Subjekt yo gehört estoy, auch verneint steht es nach no, vor dem Verb: yo no estoy durmiendo."
+        "hu": "Yo alanyhoz estoy tartozik, tagadásban is a no után, az ige elé kerül: yo no estoy durmiendo, sino despierto.",
+        "en": "The subject yo takes estoy, and even negated it goes after no, before the verb: yo no estoy durmiendo, sino despierto.",
+        "es": "Al sujeto yo le corresponde estoy, y en negativo va después de no, antes del verbo: yo no estoy durmiendo, sino despierto.",
+        "de": "Zum Subjekt yo gehört estoy, auch verneint steht es nach no, vor dem Verb: yo no estoy durmiendo, sino despierto."
       },
       "wrong": {
         "estás": {
-          "hu": "Az \"estás\" a tú alakja, nem illik a yo alanyhoz; helyesen: Yo no estoy durmiendo, estoy despierto.",
-          "en": "\"Estás\" is the tú form, it does not fit the subject yo; correctly: Yo no estoy durmiendo, estoy despierto.",
-          "es": "\"Estás\" es la forma de tú, no encaja con el sujeto yo; correctamente: Yo no estoy durmiendo, estoy despierto.",
-          "de": "\"Estás\" ist die tú-Form, sie passt nicht zum Subjekt yo; richtig: Yo no estoy durmiendo, estoy despierto."
+          "hu": "Az \"estás\" a tú alakja, nem illik a yo alanyhoz; helyesen: Yo no estoy durmiendo, sino despierto.",
+          "en": "\"Estás\" is the tú form, it does not fit the subject yo; correctly: Yo no estoy durmiendo, sino despierto.",
+          "es": "\"Estás\" es la forma de tú, no encaja con el sujeto yo; correctamente: Yo no estoy durmiendo, sino despierto.",
+          "de": "\"Estás\" ist die tú-Form, sie passt nicht zum Subjekt yo; richtig: Yo no estoy durmiendo, sino despierto."
         },
         "está": {
-          "hu": "Az \"está\" harmadik személy alakja, nem illik a yo alanyhoz; helyesen: Yo no estoy durmiendo, estoy despierto.",
-          "en": "\"Está\" is the third person form, it does not fit the subject yo; correctly: Yo no estoy durmiendo, estoy despierto.",
-          "es": "\"Está\" es la forma de tercera persona, no encaja con el sujeto yo; correctamente: Yo no estoy durmiendo, estoy despierto.",
-          "de": "\"Está\" ist die Form der dritten Person, sie passt nicht zum Subjekt yo; richtig: Yo no estoy durmiendo, estoy despierto."
+          "hu": "Az \"está\" harmadik személy alakja, nem illik a yo alanyhoz; helyesen: Yo no estoy durmiendo, sino despierto.",
+          "en": "\"Está\" is the third person form, it does not fit the subject yo; correctly: Yo no estoy durmiendo, sino despierto.",
+          "es": "\"Está\" es la forma de tercera persona, no encaja con el sujeto yo; correctamente: Yo no estoy durmiendo, sino despierto.",
+          "de": "\"Está\" ist die Form der dritten Person, sie passt nicht zum Subjekt yo; richtig: Yo no estoy durmiendo, sino despierto."
         }
       },
       "examples": ["No estoy durmiendo.", "Estoy despierto todavía."]
