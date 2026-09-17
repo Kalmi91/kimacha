@@ -1034,6 +1034,356 @@
       "person": "vosotros",
       "answer": "vivisteis",
       "table": "indefinido-regular"
+    },
+    {
+      "kind": "why",
+      "id": "ir-why-01",
+      "es": "Comí a las dos.",
+      "tr": {
+        "hu": "Kettőkor ettem.",
+        "en": "I ate at two.",
+        "es": "Comí a las dos.",
+        "de": "Ich habe um zwei gegessen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          }
+        },
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          },
+          "wrong": {
+            "hu": "Ha tú lenne, 'Comiste a las dos' állna, azaz TE ettél kettőkor, nem én.",
+            "en": "If it were tú, it would say 'Comiste a las dos', meaning YOU ate at two, not me.",
+            "es": "Si fuera tú, diría 'Comiste a las dos', o sea que TÚ comiste, no yo.",
+            "de": "Wäre es tú, hieße es 'Comiste a las dos', also hast DU um zwei gegessen, nicht ich."
+          }
+        },
+        {
+          "text": {
+            "hu": "ő / Ön",
+            "en": "he/she/you (usted)",
+            "es": "él/ella/usted",
+            "de": "er/sie/Sie"
+          },
+          "wrong": {
+            "hu": "Ha él/ella lenne, 'Comió a las dos' állna, azaz Ő evett kettőkor, nem én.",
+            "en": "If it were él/ella, it would say 'Comió a las dos', meaning HE/SHE ate at two, not me.",
+            "es": "Si fuera él/ella, diría 'Comió a las dos', o sea que ÉL/ELLA comió, no yo.",
+            "de": "Wäre es él/ella, hieße es 'Comió a las dos', also hat ER/SIE um zwei gegessen, nicht ich."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ir-why-02",
+      "es": "Hablaste con tu madre ayer.",
+      "tr": {
+        "hu": "Tegnap beszéltél anyáddal.",
+        "en": "You talked to your mother yesterday.",
+        "es": "Hablaste con tu madre ayer.",
+        "de": "Du hast gestern mit deiner Mutter gesprochen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          },
+          "wrong": {
+            "hu": "Ha yo lenne, 'Hablé con mi madre ayer' állna, azaz ÉN beszéltem anyámmal, nem te.",
+            "en": "If it were yo, it would say 'Hablé con mi madre ayer', meaning I talked to my mother, not you.",
+            "es": "Si fuera yo, diría 'Hablé con mi madre ayer', o sea que YO hablé con mi madre, no tú.",
+            "de": "Wäre es yo, hieße es 'Hablé con mi madre ayer', also habe ICH mit meiner Mutter gesprochen, nicht du."
+          }
+        },
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ti (vosotros, Spo.)",
+            "en": "you all (vosotros, Spain)",
+            "es": "vosotros",
+            "de": "ihr (vosotros, Spanien)"
+          },
+          "wrong": {
+            "hu": "Ha vosotros lenne, 'Hablasteis con vuestra madre ayer' állna, azaz TI beszéltetek, nem te egyedül.",
+            "en": "If it were vosotros, it would say 'Hablasteis con vuestra madre ayer', meaning YOU ALL talked, not just you.",
+            "es": "Si fuera vosotros, diría 'Hablasteis con vuestra madre ayer', o sea que VOSOTROS hablasteis, no solo tú.",
+            "de": "Wäre es vosotros, hieße es 'Hablasteis con vuestra madre ayer', also habt IHR gesprochen, nicht nur du."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ir-why-03",
+      "es": "Vivió en Puebla.",
+      "tr": {
+        "hu": "Pueblában élt.",
+        "en": "He/She lived in Puebla.",
+        "es": "Vivió en Puebla.",
+        "de": "Er/sie hat in Puebla gelebt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          },
+          "wrong": {
+            "hu": "Ha ellos lenne, 'Vivieron en Puebla' állna, azaz ŐK éltek Pueblában, nem csak ő.",
+            "en": "If it were ellos, it would say 'Vivieron en Puebla', meaning THEY lived in Puebla, not just him/her.",
+            "es": "Si fuera ellos, diría 'Vivieron en Puebla', o sea que ELLOS vivieron ahí, no solo él/ella.",
+            "de": "Wäre es ellos, hieße es 'Vivieron en Puebla', also haben SIE dort gelebt, nicht nur er/sie."
+          }
+        },
+        {
+          "text": {
+            "hu": "ő / Ön",
+            "en": "he/she/you (usted)",
+            "es": "él/ella/usted",
+            "de": "er/sie/Sie"
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Vivimos en Puebla' állna, azaz MI éltünk Pueblában, nem ő.",
+            "en": "If it were nosotros, it would say 'Vivimos en Puebla', meaning WE lived in Puebla, not him/her.",
+            "es": "Si fuera nosotros, diría 'Vivimos en Puebla', o sea que NOSOTROS vivimos ahí, no él/ella.",
+            "de": "Wäre es nosotros, hieße es 'Vivimos en Puebla', also haben WIR dort gelebt, nicht er/sie."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ir-why-04",
+      "es": "Hablamos toda la tarde.",
+      "tr": {
+        "hu": "Egész délután beszéltünk.",
+        "en": "We talked all afternoon.",
+        "es": "Hablamos toda la tarde.",
+        "de": "Wir haben den ganzen Nachmittag geredet."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          },
+          "wrong": {
+            "hu": "Ha yo lenne, 'Hablé toda la tarde' állna, azaz ÉN beszéltem egész délután, nem mi.",
+            "en": "If it were yo, it would say 'Hablé toda la tarde', meaning I talked all afternoon, not us.",
+            "es": "Si fuera yo, diría 'Hablé toda la tarde', o sea que YO hablé toda la tarde, no nosotros.",
+            "de": "Wäre es yo, hieße es 'Hablé toda la tarde', also habe ICH den ganzen Nachmittag geredet, nicht wir."
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          },
+          "wrong": {
+            "hu": "Ha ellos lenne, 'Hablaron toda la tarde' állna, azaz ŐK beszéltek egész délután, nem mi.",
+            "en": "If it were ellos, it would say 'Hablaron toda la tarde', meaning THEY talked all afternoon, not us.",
+            "es": "Si fuera ellos, diría 'Hablaron toda la tarde', o sea que ELLOS hablaron, no nosotros.",
+            "de": "Wäre es ellos, hieße es 'Hablaron toda la tarde', also haben SIE geredet, nicht wir."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ir-why-05",
+      "es": "Comisteis en un restaurante nuevo.",
+      "tr": {
+        "hu": "Egy új étteremben ettetek.",
+        "en": "You all ate at a new restaurant.",
+        "es": "Comisteis en un restaurante nuevo.",
+        "de": "Ihr habt in einem neuen Restaurant gegessen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Comimos en un restaurante nuevo' állna, azaz MI ettünk ott, nem ti.",
+            "en": "If it were nosotros, it would say 'Comimos en un restaurante nuevo', meaning WE ate there, not you all.",
+            "es": "Si fuera nosotros, diría 'Comimos en un restaurante nuevo', o sea que NOSOTROS comimos ahí, no vosotros.",
+            "de": "Wäre es nosotros, hieße es 'Comimos en un restaurante nuevo', also haben WIR dort gegessen, nicht ihr."
+          }
+        },
+        {
+          "text": {
+            "hu": "ti (vosotros, Spo.)",
+            "en": "you all (vosotros, Spain)",
+            "es": "vosotros",
+            "de": "ihr (vosotros, Spanien)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ő / Ön",
+            "en": "he/she/you (usted)",
+            "es": "él/ella/usted",
+            "de": "er/sie/Sie"
+          },
+          "wrong": {
+            "hu": "Ha él/ella lenne, 'Comió en un restaurante nuevo' állna, azaz Ő evett ott, egyedül, nem ti, többen.",
+            "en": "If it were él/ella, it would say 'Comió en un restaurante nuevo', meaning HE/SHE ate there, alone, not you all.",
+            "es": "Si fuera él/ella, diría 'Comió en un restaurante nuevo', o sea que ÉL/ELLA comió ahí, solo, no vosotros.",
+            "de": "Wäre es él/ella, hieße es 'Comió en un restaurante nuevo', also hat ER/SIE allein dort gegessen, nicht ihr."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ir-why-06",
+      "es": "Vivieron en Puebla.",
+      "tr": {
+        "hu": "Pueblában éltek.",
+        "en": "They lived in Puebla.",
+        "es": "Vivieron en Puebla.",
+        "de": "Sie haben in Puebla gelebt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          },
+          "wrong": {
+            "hu": "Ha tú lenne, 'Viviste en Puebla' állna, azaz TE éltél Pueblában, nem ők.",
+            "en": "If it were tú, it would say 'Viviste en Puebla', meaning YOU lived in Puebla, not them.",
+            "es": "Si fuera tú, diría 'Viviste en Puebla', o sea que TÚ viviste ahí, no ellos.",
+            "de": "Wäre es tú, hieße es 'Viviste en Puebla', also hast DU dort gelebt, nicht sie."
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Vivimos en Puebla' állna, azaz MI éltünk Pueblában, nem ők.",
+            "en": "If it were nosotros, it would say 'Vivimos en Puebla', meaning WE lived in Puebla, not them.",
+            "es": "Si fuera nosotros, diría 'Vivimos en Puebla', o sea que NOSOTROS vivimos ahí, no ellos.",
+            "de": "Wäre es nosotros, hieße es 'Vivimos en Puebla', also haben WIR dort gelebt, nicht sie."
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "ir-why-07",
+      "es": "Viví en México dos años.",
+      "tr": {
+        "hu": "Két évig Mexikóban éltem.",
+        "en": "I lived in Mexico for two years.",
+        "es": "Viví en México dos años.",
+        "de": "Ich habe zwei Jahre in Mexiko gelebt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          }
+        },
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          },
+          "wrong": {
+            "hu": "Ha tú lenne, 'Viviste en México dos años' állna, azaz TE éltél két évig Mexikóban, nem én.",
+            "en": "If it were tú, it would say 'Viviste en México dos años', meaning YOU lived in Mexico for two years, not me.",
+            "es": "Si fuera tú, diría 'Viviste en México dos años', o sea que TÚ viviste ahí, no yo.",
+            "de": "Wäre es tú, hieße es 'Viviste en México dos años', also hast DU dort gelebt, nicht ich."
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Vivimos en México dos años' állna, azaz MI éltünk ott, nem csak én.",
+            "en": "If it were nosotros, it would say 'Vivimos en México dos años', meaning WE lived there, not just me.",
+            "es": "Si fuera nosotros, diría 'Vivimos en México dos años', o sea que NOSOTROS vivimos ahí, no solo yo.",
+            "de": "Wäre es nosotros, hieße es 'Vivimos en México dos años', also haben WIR dort gelebt, nicht nur ich."
+          }
+        }
+      ],
+      "correctIndex": 0
     }
   ]
 }
