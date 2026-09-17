@@ -7,7 +7,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { normalizeWordToken, type Level } from '@/data/words';
-import { cumulativeCorpusWordIds, isLessonV2, type GrammarGapItem, type GrammarItem, type GrammarTopicData } from '@/lib/games/content';
+import { cumulativeCorpusWordIds, grammarKindCounts, isLessonV2, type GrammarGapItem, type GrammarItem, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, syllabusTopic } from '@/lib/grammar/syllabus';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
@@ -29,6 +29,10 @@ import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 type Phase = 'lesson' | 'drill' | 'done';
 
+// D3 (FB290, 2026-09-17): a gombok ebben a sorrendben jelennek meg, csak azok
+// a fajták, amikből van item a leckében.
+const KIND_ORDER: GrammarKind[] = ['choice', 'match', 'form', 'why'];
+
 export default function GrammarLessonScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -42,6 +46,9 @@ export default function GrammarLessonScreen() {
   const [lesson, setLesson] = useState<GrammarTopicData | null>(null);
   const [phase, setPhase] = useState<Phase>('lesson');
   const [score, setScore] = useState<{ correct: number; total: number } | null>(null);
+  // D3 (FB290): melyik fajtát indította el a tanuló (a gombja szerint), ez megy
+  // a GrammarDrill `kinds` propjába és a haladás-sor kulcsába is.
+  const [drillKind, setDrillKind] = useState<GrammarKind>('choice');
   // LECKE-SEMA 3.3: a V2 lecke egyetlen (play → stop) gombja a lesson.speak
   // felolvasásához; leállítás gombnyomásra, fázisváltáskor és unmountkor is.
   const [speaking, setSpeaking] = useState(false);
@@ -95,6 +102,10 @@ export default function GrammarLessonScreen() {
   const lessonTitle = (lesson.title as Record<string, string>)[contentLang] ?? lesson.title.en;
   const knownIds = cumulativeCorpusWordIds(lesson.level, learnedLang);
   const overrides = Object.fromEntries((lesson.glossary ?? []).map((g) => [normalizeWordToken(g.word), g.gloss]));
+  // D3 (FB290): csak azokra a fajtákra jön gomb, amikből van item a leckében
+  // (pl. hay-estar nem kap ragozás-gombot, mert nincs benne form item).
+  const kindCounts = grammarKindCounts(lesson);
+  const availableKinds = KIND_ORDER.filter((k) => kindCounts[k] > 0);
 
   // Two worked examples from the first items, so the lesson SHOWS the rule
   // before it asks anything.
@@ -150,9 +161,15 @@ export default function GrammarLessonScreen() {
   const finish = async (correct: number, total: number) => {
     setScore({ correct, total });
     setPhase('done');
-    getDb()
-      .setGameProgress(GRAMMAR_PROGRESS_KEY, String(topicId), 'done', { correct, total })
-      .catch(() => {});
+    // D3 (FB290): a sor kulcsa fajtánként külön (`${topic}:${kind}`), és csak
+    // akkor íródik, ha ez a fajta ezúttal >=80%-ra ment (lásd
+    // doneGrammarTopicProgress: egy fajta csak így számít késznek).
+    const pct = total ? Math.round((correct / total) * 100) : 0;
+    if (pct >= 80) {
+      getDb()
+        .setGameProgress(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:${drillKind}`, 'done', { correct, total })
+        .catch(() => {});
+    }
   };
 
   const header = (
@@ -171,9 +188,10 @@ export default function GrammarLessonScreen() {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
-        {/* LECKE-SEMA 2/6.3: a lecke-drill a match/form tételeket is végigviszi,
-            a Game fül grammar-choice-a nem (az `includeAllKinds` alapból false). */}
-        <GrammarDrill topic={lesson} learnedLang={learnedLang} contentLang={contentLang} onFinish={finish} includeAllKinds />
+        {/* LECKE-SEMA 2/6.3/D3: a lecke-drill a `drillKind` fajtáját viszi végig
+            (a gombok fajtánként külön indítanak), a Game fül grammar-choice-a
+            a `kinds` prop híján változatlanul csak a gap/mark körét kapja. */}
+        <GrammarDrill topic={lesson} learnedLang={learnedLang} contentLang={contentLang} onFinish={finish} kinds={[drillKind]} />
         <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:drill`} />
       </View>
     );
@@ -309,13 +327,29 @@ export default function GrammarLessonScreen() {
           </>
         ) : null}
 
-        <Pressable
-          testID="grammar-start-drill"
-          style={[styles.btn, styles.startBtn, { backgroundColor: colors.tint }]}
-          onPress={() => setPhase('drill')}
-        >
-          <Text style={[styles.btnText, styles.btnTextOnTint]}>{s.grammar.startDrill(lesson.items.length)}</Text>
-        </Pressable>
+        {/* D3 (FB290): egy gomb fajtánként, hogy külön indítható legyen a
+            mondatok / párosítás / ragozás, ne egyszerre az egész lecke. */}
+        {availableKinds.map((kind, i) => (
+          <Pressable
+            key={kind}
+            testID={`grammar-start-${kind}`}
+            style={[styles.btn, i === 0 && styles.startBtn, { backgroundColor: colors.tint }]}
+            onPress={() => {
+              setDrillKind(kind);
+              setPhase('drill');
+            }}
+          >
+            <Text style={[styles.btnText, styles.btnTextOnTint]}>
+              {kind === 'choice'
+                ? s.grammar.startChoice(kindCounts.choice)
+                : kind === 'match'
+                  ? s.grammar.startMatch(kindCounts.match)
+                  : kind === 'form'
+                    ? s.grammar.startForm(kindCounts.form)
+                    : s.grammar.startWhy(kindCounts.why)}
+            </Text>
+          </Pressable>
+        ))}
       </ScrollView>
       <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:lesson`} />
     </View>

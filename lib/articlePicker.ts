@@ -44,9 +44,16 @@ export function articlePickerApplies(backLang: string, isWordCard: boolean, answ
  * névelőzhető, ott a sor csak zaj. Egy szó (perro), vagy névelős több szó
  * (el fin de semana) továbbra is kapja a sort.
  */
+/**
+ * FB291, Kálmán 2026-09-16 (word:The cat is on the table.): „a mondatokhoz nem
+ * kell el la los las sor". Egy mondat-záró írásjellel végződő vagy spanyol nyitó
+ * jellel (¿/¡) kezdődő alak mondat, nem szó, a sor ott zaj marad akkor is, ha
+ * névelővel kezdődik (El gato está en la mesa.).
+ */
 function articleCanApply(answer: string): boolean {
   const trimmed = answer.trim();
   if (!trimmed) return true;
+  if (/[.?!…]$/.test(trimmed) || /^[¿¡]/.test(trimmed)) return false;
   if (articleOf(trimmed)) return true;
   return !/\s/.test(trimmed);
 }

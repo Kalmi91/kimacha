@@ -12,7 +12,7 @@
 // A topic with no file yet is shown as planned-but-not-written; the screen
 // never pretends an empty lesson exists.
 
-import { getGrammarTopic, getGrammarTopics, type GrammarTopicData } from '@/lib/games/content';
+import { getGrammarTopic, getGrammarTopics, grammarKindCounts, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
 import type { Level } from '@/data/words';
 
 export interface SyllabusTopic {
@@ -656,6 +656,63 @@ export function lessonFor(lang: string, topicId: string): GrammarTopicData | und
 
 export function hasLesson(lang: string, topicId: string): boolean {
   return !!getGrammarTopic(lang, topicId);
+}
+
+export interface GrammarTopicProgress {
+  state: 'done';
+  correct: number;
+  total: number;
+}
+
+const GRAMMAR_KINDS: GrammarKind[] = ['choice', 'match', 'form'];
+
+/**
+ * D3 (FB290, 2026-09-17): a lecke feladatai fajtánként külön indíthatók, a
+ * game_progress itemId ezért egy `${topicId}:${kind}` sor (app/grammar/[topic]
+ * csak >=80%-nál ír). A régi, egy-értékű sorok (itemId === topicId, a split
+ * előtti korból) minden fajtát késznek jelentenek, hogy Kálmán meglévő kész
+ * leckéi ne álljanak vissza nyitottra. Egy téma csak akkor kész, ha a
+ * leckéjében LÉTEZŐ összes fajtájából van kész sor.
+ */
+export function doneGrammarTopicProgress(
+  lang: string,
+  rows: { itemId: string; state: string; data: unknown }[]
+): Map<string, GrammarTopicProgress> {
+  const legacy = new Map<string, GrammarTopicProgress>();
+  const perKind = new Map<string, Map<GrammarKind, GrammarTopicProgress>>();
+
+  for (const row of rows) {
+    if (row.state !== 'done') continue;
+    const data = (row.data ?? {}) as { correct?: number; total?: number };
+    const progress: GrammarTopicProgress = { state: 'done', correct: data.correct ?? 0, total: data.total ?? 0 };
+    const sep = row.itemId.indexOf(':');
+    if (sep < 0) {
+      legacy.set(row.itemId, progress);
+      continue;
+    }
+    const topicId = row.itemId.slice(0, sep);
+    const kind = row.itemId.slice(sep + 1) as GrammarKind;
+    const kinds = perKind.get(topicId) ?? new Map<GrammarKind, GrammarTopicProgress>();
+    kinds.set(kind, progress);
+    perKind.set(topicId, kinds);
+  }
+
+  const result = new Map(legacy);
+  for (const [topicId, kinds] of perKind) {
+    if (result.has(topicId)) continue; // a régi sor már minden fajtát késznek jelent
+    const lesson = lessonFor(lang, topicId);
+    const required = lesson ? GRAMMAR_KINDS.filter((k) => grammarKindCounts(lesson)[k] > 0) : [];
+    if (required.length === 0 || !required.every((k) => kinds.has(k))) continue;
+    let correct = 0;
+    let total = 0;
+    for (const k of required) {
+      const p = kinds.get(k)!;
+      correct += p.correct;
+      total += p.total;
+    }
+    result.set(topicId, { state: 'done', correct, total });
+  }
+  return result;
 }
 
 /** How much of the syllabus is written, for the header line. */

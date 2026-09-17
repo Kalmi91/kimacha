@@ -19,14 +19,15 @@ import { borrowNewWords, countNewWords, nextTopicWithNewWords } from '@/lib/topi
 import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
 import {
   buildQueue, applyCadence, mergeCarryover, type DueItem,
-  createQueue, nextLap, answer, defer, insertNext, header, labelOf,
+  createQueue, nextLap, answer, defer, insertNext, buryWord, answerAskMore, header, labelOf,
   DEFAULT_QUEUE_CONFIG, type QueueState, type Shown, type ReviewLap, type LapNo, type Effect,
 } from '@/lib/sessionQueue';
+import { doneAsk } from '@/lib/doneAsk';
 import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { filterLockedSentences } from '@/lib/grammar/tenseGate';
-import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
+import { doneGrammarTopicProgress, GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { cardIcon } from '@/lib/cardIcons';
 import { cardImage } from '@/lib/cardImages';
 import { cardMarkers } from '@/lib/cardMarkers';
@@ -34,6 +35,7 @@ import FeedbackButton from '@/components/FeedbackModal';
 import { speak as speakIn, loadVoices } from '@/lib/speech';
 import MockExamMode from '@/components/exam/MockExamMode';
 import DoneScreen, { type DoneAsk } from '@/components/DoneScreen';
+import AskMoreCard from '@/components/AskMoreCard';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import LearnChrome from '@/components/LearnChrome';
 import LevelPicker from '@/components/LevelPicker';
@@ -161,10 +163,11 @@ export default function LearnScreen() {
   const advancingRef = useRef(false);
 
 
-  // `stateMap` = szavankénti FSRS állapot. A topic-készültség EBBŐL dől el
-  // (lib/topicMastery.ts), nem a repsMap-ből: egyszer látni egy szót nem tudás,
-  // és az új topic csak akkor indulhat, ha a régi szavai kiléptek a Learningből.
-  // A repsMap marad az "elkezdett-e egyáltalán" jelzésre.
+  // `stateMap` = szavankénti "ismert" jelző (UTEMEZO 12/4: lap >= 3 VAGY
+  // eltemetve, ugyanaz a definíció, mint a Stats-kártyáé). A topic-készültség
+  // EBBŐL dől el (lib/topicMastery.ts), nem a repsMap-ből: egyszer látni egy
+  // szót nem tudás, és az új topic csak akkor indulhat, ha a régi szavai
+  // valóban megtanultak. A repsMap marad az "elkezdett-e egyáltalán" jelzésre.
   const computeUnlockedTopics = (topics: TopicDef[], repsMap: Map<number, number>, stateMap: Map<number, number>, currentLevel: Level, selectedTopicId?: string | null, lang: string = 'es', randomPick: boolean = false): { unlocked: TopicDef[]; activeTopic: TopicDef | null; completedCount: number } => {
     // Any level with a topic taxonomy (A0/A1/A2): all topics freely selectable,
     // no sequential lock. Levels without topics keep the sequential unlock logic.
@@ -304,9 +307,11 @@ export default function LearnScreen() {
 
   // FB196: az elvégzett nyelvtani leckék adják a feloldott szerkezeteket
   // („legyen olyan hogy bizonyos nyelvtani szerkezeteket feloldunk").
-  const doneGrammarTopics = async (): Promise<Set<string>> => {
+  // D3 (FB290): egy téma csak akkor számít késznek, ha a leckéjében létező
+  // összes fajtájából van kész sor (doneGrammarTopicProgress, lib/grammar/syllabus.ts).
+  const doneGrammarTopics = async (learned: string): Promise<Set<string>> => {
     const rows = await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY);
-    return new Set(rows.filter(r => r.state === 'done').map(r => r.itemId));
+    return new Set(doneGrammarTopicProgress(learned, rows).keys());
   };
 
   // A setQueueState (lentebb) hívja, ezért előtte áll.
@@ -344,31 +349,33 @@ export default function LearnScreen() {
     };
   };
 
-  // UTEMEZO 6. szakasz: a regi badge/Done-allapotok kitoltese a motor
-  // allapotabol. Lepesenkent hivva, hogy a fejlec sose csusszon szet a sortol.
-  const syncBadges = (state: QueueState) => {
-    setLevelNewWordsLeft(state.fresh.length);
-  };
-
   // UTEMEZO: minden allapotvaltas ezen megy at, hogy a React state, a
   // handlerek altal olvasott ref es a fejlec-jelvenyek sose csusszanak szet.
   // A `done` allapotot NEM ez allitja: a hivo dontese, mert a kor vege utan
   // (current === null) elobb egy DB-frissitest (finishRound) kell megprobalni.
+  // FB296/297/298: a szint-szintu levelNewWordsLeft mar NEM innen szarmazik
+  // (state.fresh a TEMA erintetlen szavai, nem a szinte), azt a loadCards/
+  // finishRound alitja be a szint egeszere, es az advanceQueue csokkenti
+  // szo-inditaskor, lasd ott.
   const setQueueState = (next: QueueState) => {
     qsRef.current = next;
     setQs(next);
-    setCurrentItem(next.current ? toDueItem(next.current) : null);
-    syncBadges(next);
+    // FB296/297/298: a kerdes-lapnak nincs DueItem-je (nem tartozik hozza szo),
+    // a render kulon agon kezeli (qs.current.kind === 'ask-more').
+    setCurrentItem(next.current && next.current.kind !== 'ask-more' ? toDueItem(next.current) : null);
     resetCardState();
   };
 
   // UTEMEZO 2.2: a keret a szo INDITASAKOR fogy, ez nextLap() belsejeben
   // tortenik (startNew). A hivo ebbol csak annyit lat, hogy a fekete szam
   // csokkent, es ekkor irja a DB-be a startWord-ot (in_hand=1, started_at).
+  // FB296/297/298: ugyanez a pillanat fogyasztja a SZINT erintetlen keszletet
+  // is (levelNewWordsLeft), fuggetlenul attol, melyik tema szolgaltatta a szot.
   const advanceQueue = (state: QueueState): QueueState => {
     const next = nextLap(state);
     if (next.current && header(next).black < header(state).black) {
       getDb().startWord(next.current.wordId).catch(() => {});
+      setLevelNewWordsLeft((n) => Math.max(0, n - 1));
     }
     return next;
   };
@@ -493,11 +500,15 @@ export default function LearnScreen() {
 
     const activeWordIds = activeWords.map(w => w.id);
     // UTEMEZO 2.4/12.1: fresh = a szint (temakor) erintetlen szavai, a mai
-    // activeWords sorrendjet kovetve (Kálmán 12.1 dontese); black innentol
-    // ezekre szukul.
-    const untouched = await db.getUntouchedWordIds(activeWordIds);
-    const fresh = activeWords.map(w => w.id).filter(id => untouched.has(id));
-    black = Math.max(0, Math.min(black, fresh.length));
+    // activeWords sorrendjet kovetve (Kálmán 12.1 dontese). FB296/297/298: a
+    // napi keret (black) es a fejlec szint-szama (levelNewWordsLeft) viszont a
+    // SZINT EGESZENEK erintetlen szavaira szukul, nem a temaeva, kulonben egy
+    // majdnem kifogyott tema tevesen lecsokkentette a napi uj-szo keretet is.
+    const levelWordIds = levelWords.map(w => w.id);
+    const levelUntouched = await db.getUntouchedWordIds(levelWordIds);
+    setLevelNewWordsLeft(levelUntouched.size);
+    const fresh = activeWords.map(w => w.id).filter(id => levelUntouched.has(id));
+    black = Math.max(0, Math.min(black, levelUntouched.size));
 
     // UTEMEZO 3.5: a kezben levo szavak (barmelyik szintrol) minden korben
     // elore jonnek, meg uj szo elott is; a stored `lap` a mar teljesitett
@@ -515,7 +526,7 @@ export default function LearnScreen() {
     const rows = mergeCarryover(levelRows, carryRows, REVIEW_SLOTS);
     // FB196: a mondat-kártyák nem hozhatnak feloldatlan nyelvtant, akármelyik
     // úton kerültek a sorba (szint, téma, kölcsönzés).
-    const grammarDone = await doneGrammarTopics();
+    const grammarDone = await doneGrammarTopics(learned);
     const reviews = rowsToReviewLaps(rows, learned, wordsOnly, currentLevel, grammarDone);
 
     // UTEMEZO 8: P (hand) és R (gap) a Beállítások „Nehézség" ablakából jön.
@@ -628,6 +639,7 @@ export default function LearnScreen() {
   // labelOf-ja csak a motor sajat, magyar teszt-cimkeje, ld. lib/sessionQueue.ts).
   const lapLabelOf = (shown: Shown | null): string | null => {
     if (!shown) return null;
+    if (shown.kind === 'ask-more') return s.lap.question;
     if (shown.type === 'sentence') return s.lap.sentence;
     if (shown.kind === 'review') return shown.repair ? s.lap.repair : s.lap.review;
     return shown.repair ? s.lap.repairLap(shown.lap ?? 1) : s.lap.newLap(shown.lap ?? 1);
@@ -716,13 +728,18 @@ export default function LearnScreen() {
     let newRows: any[];
     // FB225: amit a szint-ág már besorolt, tehát amit a carryover NEM hozhat újra.
     let carryExclude: number[] = [];
+    // FB296/297/298: alapertelmezetten valtozatlan marad (mai viselkedes); csak
+    // akkor tolti fel ujra a lenti tema-valtas, ha a tema kifogyott, de a szint
+    // napi kerete meg nem.
+    let fresh = state.fresh;
     if (useTopics) {
       const allWordIds = lvlWords.map((w: WordEntry) => w.id);
       const repsMap = await db.getWordReps(allWordIds);
       const stateMap = await db.getWordStates(allWordIds);
       const savedTopic2 = await db.getSelectedTopic();
       const randomTopics2 = await db.getRandomTopics();
-      const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, stateMap, currentLevel, savedTopic2, learned, randomTopics2);
+      const { unlocked, activeTopic: pickedActiveTopic, completedCount } = computeUnlockedTopics(topics, repsMap, stateMap, currentLevel, savedTopic2, learned, randomTopics2);
+      let activeTopic = pickedActiveTopic;
       // FB37: persist a freshly-drawn random topic so it stays stable across
       // the rest of this session (next draw only once it completes again).
       if (randomTopics2 && activeTopic && activeTopic.id !== savedTopic2) {
@@ -754,6 +771,25 @@ export default function LearnScreen() {
               : celebrate.topic.complete,
           );
           setTimeout(() => setTopicCompleteMsg(null), 3000);
+        }
+      }
+
+      // FB296/297/298: a tema erintetlen keszlete (fresh) hamarabb kifogyhat,
+      // mint a szint napi kerete (black); korabban ez itt vegetert a kort, holott
+      // a kovetkezo temaban meg van uj szo, ugyanaz az ut, mint a Done-kepernyo
+      // "kovetkezo tema" gombja (handleNextTopicWords), csak menet kozben.
+      let switchedTopic = false;
+      const newWordsOf = (topicId: string) =>
+        countNewWords(getWordsForTopic(currentLevel, topicId, learned).map(w => w.id), repsMap);
+      if (state.fresh.length === 0 && state.black > 0 && activeTopic && newWordsOf(activeTopic.id) === 0) {
+        const nextId = nextTopicWithNewWords(
+          unlocked.map(t => ({ id: t.id, order: t.order, newWords: newWordsOf(t.id) })),
+          activeTopic.id,
+        );
+        if (nextId) {
+          await db.setSelectedTopic(nextId);
+          activeTopic = unlocked.find(t => t.id === nextId) ?? activeTopic;
+          switchedTopic = true;
         }
       }
 
@@ -797,6 +833,13 @@ export default function LearnScreen() {
       }
       newRows = await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL);
       carryExclude = activeWordIds;
+      // FB296/297/298: csak a fenti tema-valtaskor toltjuk fel ujra a fresh-t
+      // (az uj tema erintetlen szavaival); kulonben marad a mai viselkedes
+      // (state.fresh, valtozatlanul, esetleg ures).
+      if (switchedTopic) {
+        const untouchedIds = await db.getUntouchedWordIds(activeWordIds);
+        fresh = scopedWords.map((w: WordEntry) => w.id).filter((id: number) => untouchedIds.has(id));
+      }
     } else {
       setBorrowedTopics(new Map());
       newRows = await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
@@ -809,7 +852,7 @@ export default function LearnScreen() {
     newRows = mergeCarryover(newRows, carryRows2, REVIEW_SLOTS);
 
     const wordsOnly2 = await db.getWordsOnly();
-    const reviews = rowsToReviewLaps(newRows, learned, wordsOnly2, currentLevel, await doneGrammarTopics());
+    const reviews = rowsToReviewLaps(newRows, learned, wordsOnly2, currentLevel, await doneGrammarTopics(learned));
 
     // UTEMEZO 4.5: a kör akkor ért véget, ha a friss sor sem tud lapot adni
     // (elfogyott a review, a kéz üres, és a fekete 0 vagy nincs több új szó).
@@ -818,7 +861,7 @@ export default function LearnScreen() {
       black: state.black,
       hand: state.hand.map(({ wordId, lap }) => ({ wordId, lap })),
       reviews,
-      fresh: state.fresh,
+      fresh,
     }));
     if (refilled.current === null) {
       setDone(true);
@@ -837,7 +880,7 @@ export default function LearnScreen() {
     const db = getDb();
     const rows = await db.getPracticeCardsForLevel(level, n);
     const learned = direction[1];
-    const reviews = rowsToReviewLaps(rows, learned, await db.getWordsOnly(), level, await doneGrammarTopics());
+    const reviews = rowsToReviewLaps(rows, learned, await db.getWordsOnly(), level, await doneGrammarTopics(learned));
     if (reviews.length === 0) return;
     const state = qsRef.current;
     const hand = state ? state.hand.map(({ wordId, lap }) => ({ wordId, lap })) : [];
@@ -945,6 +988,88 @@ export default function LearnScreen() {
   // onSkip) marad, csak a defer-en megy át: a lap válasz nélkül megy tovább.
   const requeueCurrent = () => {
     deferCurrent(false);
+  };
+
+  // FB293/294, Kálmán 2026-09-16: "ha bármelyik lapnál mondom, hogy I know this,
+  // akkor a szót tegye bele [a tudottak közé], ne a lapot". A három "I know this"
+  // gomb (szó-flashcard, gépelős, easy-mondat) mind ide fut: a `db.buryWord` a
+  // szó MINDEN kártya-típusát temeti, a motor `buryWord` átmenete veszi ki a
+  // sorból, NEM `applyAnswer(true)` (ami eddig egy lapot helyesnek számított).
+  const handleBuryWord = async () => {
+    const state = qsRef.current;
+    if (!state || !state.current || advancingRef.current) return;
+    advancingRef.current = true;
+    const wordId = state.current.wordId;
+    getDb().buryWord(wordId).catch(() => {});
+    const advanced = advanceQueue(buryWord(state, wordId));
+    setQueueState(advanced);
+    if (advanced.current !== null) {
+      advancingRef.current = false;
+      return;
+    }
+    try {
+      await finishRound(advanced);
+    } finally {
+      advancingRef.current = false;
+    }
+  };
+
+  // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): a
+  // kérdés-lap három válasza. A motor `answerAskMore`-ja dönti el az
+  // állapotot, a hívó csak `advanceQueue`-t futtat utána, mint egy sima válasz
+  // után. A „+N" a mai `handleMoreNewWords` bónusz-útját használja (a napi
+  // bónusz a DB-ben is rögzül), de NEM tölt újra (loadCards), mert a folyó kör
+  // hand/reviews/stats állapotát meg kell tartania.
+  const handleAskMoreNew = async (n: number) => {
+    const state = qsRef.current;
+    if (!state || !state.current || advancingRef.current) return;
+    advancingRef.current = true;
+    await getDb().addNewLimitBonus(n);
+    const advanced = advanceQueue(answerAskMore(state, { kind: 'more', n }));
+    setQueueState(advanced);
+    if (advanced.current !== null) {
+      advancingRef.current = false;
+      return;
+    }
+    try {
+      await finishRound(advanced);
+    } finally {
+      advancingRef.current = false;
+    }
+  };
+
+  const handleAskMoreReviewOnly = async () => {
+    const state = qsRef.current;
+    if (!state || !state.current || advancingRef.current) return;
+    advancingRef.current = true;
+    const advanced = advanceQueue(answerAskMore(state, { kind: 'review-only' }));
+    setQueueState(advanced);
+    if (advanced.current !== null) {
+      advancingRef.current = false;
+      return;
+    }
+    try {
+      await finishRound(advanced);
+    } finally {
+      advancingRef.current = false;
+    }
+  };
+
+  const handleAskMoreDone = async () => {
+    const state = qsRef.current;
+    if (!state || !state.current || advancingRef.current) return;
+    advancingRef.current = true;
+    const advanced = advanceQueue(answerAskMore(state, { kind: 'done' }));
+    setQueueState(advanced);
+    if (advanced.current !== null) {
+      advancingRef.current = false;
+      return;
+    }
+    try {
+      await finishRound(advanced);
+    } finally {
+      advancingRef.current = false;
+    }
   };
 
   useEffect(() => {
@@ -1091,13 +1216,11 @@ export default function LearnScreen() {
   if (done) {
     const examAvailable = buildMockExam(direction[1], direction[0], level).sections.length > 0 && masteredPct >= 80;
     // UTEMEZO 5. szakasz: a kor vegi egyetlen kerdes, a motor allapotabol.
-    const doneAsk: DoneAsk = !qs
+    // FB296/297/298: a szint kifogyasa (levelNewWordsLeft) dont, nem a tema
+    // erintetlen szama (qs.fresh), lasd lib/doneAsk.ts.
+    const doneAskResult: DoneAsk = !qs
       ? 'none'
-      : qs.fresh.length > 0 && qs.black === 0
-        ? 'more-new'
-        : qs.fresh.length === 0
-          ? 'practise'
-          : 'none';
+      : doneAsk({ freshLeft: qs.fresh.length, black: qs.black, levelUntouched: levelNewWordsLeft });
     return (
       <DoneScreen
         streak={streak}
@@ -1109,7 +1232,7 @@ export default function LearnScreen() {
         currentTopic={currentTopic}
         topicProgress={topicProgress}
         stats={qs?.stats ?? DONE_STATS_ZERO}
-        ask={doneAsk}
+        ask={doneAskResult}
         dailyDefault={dailyDefault}
         onMoreNewWords={handleMoreNewWords}
         newWordsInTopic={newWordsInTopic}
@@ -1118,6 +1241,44 @@ export default function LearnScreen() {
         onPractiseLevel={handlePractiseLevel}
         onNextLevel={LEVELS.indexOf(level) + 1 < LEVELS.length ? handleNextLevel : undefined}
       />
+    );
+  }
+
+  // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): a
+  // kérdés-lap a kártya helyén jön, a fejléc (fekete/kék/rózsaszín + "kérdés"
+  // címke) ekkor is látszik, ezért a LearnChrome-ot itt is meghívjuk.
+  if (qs?.current?.kind === 'ask-more') {
+    const topicLang = direction[0] === 'hu' ? 'hu' : direction[0] === 'es' ? 'es' : direction[0] === 'de' ? 'de' : 'en';
+    const targetLang = languages.find(l => l.code === direction[1]);
+    return (
+      <View style={[styles.container, { backgroundColor: colors.background }]}>
+        <LearnChrome
+          level={level}
+          topicIcon={currentTopic ? (currentTopic.icon ?? (currentTopic.type === 'grammar' ? '📗' : '📘')) : null}
+          topicName={currentTopic && topicProgress ? getTopicName(currentTopic, topicLang) : null}
+          onTopicPress={() => router.push('/(tabs)/tree')}
+          known={knownWords}
+          total={levelTotal}
+          langFlag={targetLang?.flag ?? ''}
+          langName={targetLang?.name ?? ''}
+          black={black}
+          blue={blue}
+          pink={pink}
+          reviewLeft={pink}
+          examUnlocked={masteredPct >= 80}
+          onExamPress={() => setExamMode(true)}
+          examLabel={s.exam.unlocked}
+          toast={null}
+          lapLabel={lapLabelOf(qs.current)}
+        />
+        <AskMoreCard
+          dailyDefault={dailyDefault}
+          reviewsLeft={qs.reviews.length}
+          onMore={handleAskMoreNew}
+          onReviewOnly={handleAskMoreReviewOnly}
+          onDone={handleAskMoreDone}
+        />
+      </View>
     );
   }
 
@@ -1356,11 +1517,7 @@ export default function LearnScreen() {
           onResult={(correct) => {
             applyAnswer(correct);
           }}
-          onBury={() => {
-            const db = getDb();
-            db.buryCard(current.wordId, current.type).catch(() => {});
-            applyAnswer(true);
-          }}
+          onBury={handleBuryWord}
           onSkip={requeueCurrent}
           mistakeNote={noteText}
           speechLocale={speechLang(learned)}
@@ -1512,11 +1669,7 @@ export default function LearnScreen() {
 
         <Pressable
           style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
-          onPress={() => {
-            const db = getDb();
-            db.buryCard(current.wordId, current.type).catch(() => {});
-            applyAnswer(true);
-          }}
+          onPress={handleBuryWord}
         >
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.iKnowThis}</Text>}
         </Pressable>
@@ -1710,11 +1863,7 @@ export default function LearnScreen() {
       {revealed && (
         <Pressable
           style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
-          onPress={() => {
-            const db = getDb();
-            db.buryCard(current.wordId, current.type).catch(() => {});
-            applyAnswer(true);
-          }}
+          onPress={handleBuryWord}
         >
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.iKnowThis}</Text>}
         </Pressable>

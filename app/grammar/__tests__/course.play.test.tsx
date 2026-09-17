@@ -26,6 +26,8 @@ import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import { getDb } from '@/lib/database.web';
 import { GRAMMAR_PROGRESS_KEY, lessonFor } from '@/lib/grammar/syllabus';
 import type { LegacyLesson } from '@/lib/games/content';
+import { buildGrammarRound, isChoiceRoundItem } from '@/lib/games/grammarChoice';
+import { hashString } from '@/lib/shuffle';
 import GrammarLessonScreen from '../[topic]';
 import GrammarSyllabusScreen from '../index';
 
@@ -78,6 +80,14 @@ describe('grammar course', () => {
     // LECKE-SEMA: a core+ leckék (presente-regular is) már LessonV2-n vannak, a
     // rule/more-os régi utat egy még átíratlan core-lecke, a posesivos játssza.
     const lesson = lessonFor('es', 'posesivos')! as LegacyLesson;
+    // D3 (FB290): a lecke csak >=80%-nál ír "kész" sort, ezért a teszt mindig
+    // a helyes választ nyomja meg. A GrammarDrill seedje Date.now()-ból jön,
+    // lemockolva előre kiszámítható ugyanazzal a `buildGrammarRound`-dal.
+    const now = 1700000000000;
+    jest.spyOn(Date, 'now').mockReturnValue(now);
+    const seed = hashString(`${lesson.topic}:${now}`);
+    const round = buildGrammarRound(lesson, seed).filter(isChoiceRoundItem);
+
     const view = render(<GrammarLessonScreen />);
     await flush(4);
 
@@ -85,17 +95,14 @@ describe('grammar course', () => {
     expect(screen.queryByText(lesson.rule.hu!)).toBeTruthy();
     expect(screen.queryAllByTestId('grammar-option').length).toBe(0);
 
-    fireEvent.press(screen.getByTestId('grammar-start-drill'));
+    fireEvent.press(screen.getByTestId('grammar-start-choice'));
     await flush(1);
 
     // Answer every item correctly, dismissing the explanation each time.
-    for (let i = 0; i < lesson.items.length; i++) {
+    for (const roundItem of round) {
       const options = screen.queryAllByTestId('grammar-option');
       if (!options.length) break;
-      // The drill shuffles options, so pick by text.
-      const sentence = screen.getByTestId('grammar-drill-progress');
-      expect(sentence).toBeTruthy();
-      fireEvent.press(options[0]);
+      fireEvent.press(options[roundItem.correctIndex]);
       await flush(1);
       const next = screen.queryByTestId('grammar-next');
       if (next) fireEvent.press(next);
@@ -106,10 +113,11 @@ describe('grammar course', () => {
     expect(screen.queryByTestId('grammar-practice-again')).toBeTruthy();
     await flush(2);
     const rows = await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY);
-    const row = rows.find((r) => r.itemId === 'posesivos');
+    const row = rows.find((r) => r.itemId === 'posesivos:choice');
     expect(row?.state).toBe('done');
     expect((row?.data as { total?: number })?.total).toBe(lesson.items.length);
 
+    (Date.now as jest.Mock).mockRestore();
     view.unmount();
   });
 
