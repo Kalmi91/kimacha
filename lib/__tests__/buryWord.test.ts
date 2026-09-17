@@ -49,7 +49,9 @@ describe('buryWord (FB293/294): "I know this" a szora vonatkozik, nem a lapra', 
       { wordId: 9201, type: 'sentence', isTyping: true, repair: false },
       { wordId: 9202, type: 'word', isTyping: true, typingDirection: 'native-to-learned', repair: false },
     ];
-    let state = createQueue({ black: 0, hand: [], reviews, fresh: [] });
+    // FB296/297/298: black > 0, hogy ne a kerdes-lap johjon (fresh ures, tehat
+    // uj szo ugysem indulna, a black erteke itt lenyegtelen a teszt celjahoz).
+    let state = createQueue({ black: 1, hand: [], reviews, fresh: [] });
     state = nextLap(state);
     expect(state.current!.wordId).toBe(9201);
 

@@ -19,7 +19,7 @@ import { borrowNewWords, countNewWords, nextTopicWithNewWords } from '@/lib/topi
 import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
 import {
   buildQueue, applyCadence, mergeCarryover, type DueItem,
-  createQueue, nextLap, answer, defer, insertNext, buryWord, header, labelOf,
+  createQueue, nextLap, answer, defer, insertNext, buryWord, answerAskMore, header, labelOf,
   DEFAULT_QUEUE_CONFIG, type QueueState, type Shown, type ReviewLap, type LapNo, type Effect,
 } from '@/lib/sessionQueue';
 import { doneAsk } from '@/lib/doneAsk';
@@ -35,6 +35,7 @@ import FeedbackButton from '@/components/FeedbackModal';
 import { speak as speakIn, loadVoices } from '@/lib/speech';
 import MockExamMode from '@/components/exam/MockExamMode';
 import DoneScreen, { type DoneAsk } from '@/components/DoneScreen';
+import AskMoreCard from '@/components/AskMoreCard';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import LearnChrome from '@/components/LearnChrome';
 import LevelPicker from '@/components/LevelPicker';
@@ -359,7 +360,9 @@ export default function LearnScreen() {
   const setQueueState = (next: QueueState) => {
     qsRef.current = next;
     setQs(next);
-    setCurrentItem(next.current ? toDueItem(next.current) : null);
+    // FB296/297/298: a kerdes-lapnak nincs DueItem-je (nem tartozik hozza szo),
+    // a render kulon agon kezeli (qs.current.kind === 'ask-more').
+    setCurrentItem(next.current && next.current.kind !== 'ask-more' ? toDueItem(next.current) : null);
     resetCardState();
   };
 
@@ -636,6 +639,7 @@ export default function LearnScreen() {
   // labelOf-ja csak a motor sajat, magyar teszt-cimkeje, ld. lib/sessionQueue.ts).
   const lapLabelOf = (shown: Shown | null): string | null => {
     if (!shown) return null;
+    if (shown.kind === 'ask-more') return s.lap.question;
     if (shown.type === 'sentence') return s.lap.sentence;
     if (shown.kind === 'review') return shown.repair ? s.lap.repair : s.lap.review;
     return shown.repair ? s.lap.repairLap(shown.lap ?? 1) : s.lap.newLap(shown.lap ?? 1);
@@ -1010,6 +1014,64 @@ export default function LearnScreen() {
     }
   };
 
+  // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): a
+  // kérdés-lap három válasza. A motor `answerAskMore`-ja dönti el az
+  // állapotot, a hívó csak `advanceQueue`-t futtat utána, mint egy sima válasz
+  // után. A „+N" a mai `handleMoreNewWords` bónusz-útját használja (a napi
+  // bónusz a DB-ben is rögzül), de NEM tölt újra (loadCards), mert a folyó kör
+  // hand/reviews/stats állapotát meg kell tartania.
+  const handleAskMoreNew = async (n: number) => {
+    const state = qsRef.current;
+    if (!state || !state.current || advancingRef.current) return;
+    advancingRef.current = true;
+    await getDb().addNewLimitBonus(n);
+    const advanced = advanceQueue(answerAskMore(state, { kind: 'more', n }));
+    setQueueState(advanced);
+    if (advanced.current !== null) {
+      advancingRef.current = false;
+      return;
+    }
+    try {
+      await finishRound(advanced);
+    } finally {
+      advancingRef.current = false;
+    }
+  };
+
+  const handleAskMoreReviewOnly = async () => {
+    const state = qsRef.current;
+    if (!state || !state.current || advancingRef.current) return;
+    advancingRef.current = true;
+    const advanced = advanceQueue(answerAskMore(state, { kind: 'review-only' }));
+    setQueueState(advanced);
+    if (advanced.current !== null) {
+      advancingRef.current = false;
+      return;
+    }
+    try {
+      await finishRound(advanced);
+    } finally {
+      advancingRef.current = false;
+    }
+  };
+
+  const handleAskMoreDone = async () => {
+    const state = qsRef.current;
+    if (!state || !state.current || advancingRef.current) return;
+    advancingRef.current = true;
+    const advanced = advanceQueue(answerAskMore(state, { kind: 'done' }));
+    setQueueState(advanced);
+    if (advanced.current !== null) {
+      advancingRef.current = false;
+      return;
+    }
+    try {
+      await finishRound(advanced);
+    } finally {
+      advancingRef.current = false;
+    }
+  };
+
   useEffect(() => {
     if (Platform.OS !== 'web') return;
     const handler = (e: KeyboardEvent) => {
@@ -1179,6 +1241,44 @@ export default function LearnScreen() {
         onPractiseLevel={handlePractiseLevel}
         onNextLevel={LEVELS.indexOf(level) + 1 < LEVELS.length ? handleNextLevel : undefined}
       />
+    );
+  }
+
+  // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): a
+  // kérdés-lap a kártya helyén jön, a fejléc (fekete/kék/rózsaszín + "kérdés"
+  // címke) ekkor is látszik, ezért a LearnChrome-ot itt is meghívjuk.
+  if (qs?.current?.kind === 'ask-more') {
+    const topicLang = direction[0] === 'hu' ? 'hu' : direction[0] === 'es' ? 'es' : direction[0] === 'de' ? 'de' : 'en';
+    const targetLang = languages.find(l => l.code === direction[1]);
+    return (
+      <View style={[styles.container, { backgroundColor: colors.background }]}>
+        <LearnChrome
+          level={level}
+          topicIcon={currentTopic ? (currentTopic.icon ?? (currentTopic.type === 'grammar' ? '📗' : '📘')) : null}
+          topicName={currentTopic && topicProgress ? getTopicName(currentTopic, topicLang) : null}
+          onTopicPress={() => router.push('/(tabs)/tree')}
+          known={knownWords}
+          total={levelTotal}
+          langFlag={targetLang?.flag ?? ''}
+          langName={targetLang?.name ?? ''}
+          black={black}
+          blue={blue}
+          pink={pink}
+          reviewLeft={pink}
+          examUnlocked={masteredPct >= 80}
+          onExamPress={() => setExamMode(true)}
+          examLabel={s.exam.unlocked}
+          toast={null}
+          lapLabel={lapLabelOf(qs.current)}
+        />
+        <AskMoreCard
+          dailyDefault={dailyDefault}
+          reviewsLeft={qs.reviews.length}
+          onMore={handleAskMoreNew}
+          onReviewOnly={handleAskMoreReviewOnly}
+          onDone={handleAskMoreDone}
+        />
+      </View>
     );
   }
 

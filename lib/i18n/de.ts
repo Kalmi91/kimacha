@@ -65,6 +65,16 @@ export default {
     yesPractise: 'Ja',
     no: 'Nein',
   },
+  // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): die Frage
+  // MITTEN in der Runde, sobald Schwarz auf 0 fällt und auch die Hand leer
+  // wird, aber noch Wiederholungen übrig sind. Eigene Schlüssel, getrennt von
+  // `done.*` oben: diese Karte ersetzt die Kartei, nicht das Rundenende.
+  learn: {
+    askMoreTitle: 'Die neuen Wörter für heute sind aufgebraucht',
+    askMoreYes: (n: number) => `+${n} neue Wörter`,
+    askMoreReviewOnly: (k: number) => `Nur Wiederholung (${k} Karten)`,
+    askMoreDone: 'Das reicht für heute',
+  },
   tabs: {
     learn: 'Lernen',
     games: 'Spiel',
@@ -533,6 +543,8 @@ export default {
     repair: 'Korrektur',
     repairLap: (n: number) => `Korrektur · ${n}/3`,
     sentence: 'Satz',
+    // UTEMEZO 5. szakasz (FB296/297/298): das Label der Frage-Karte.
+    question: 'Frage',
   },
   // UTEMEZO 6. szakasz: Erklärfenster für die drei Zahlen im Kopfbereich.
   header: {

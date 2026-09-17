@@ -65,6 +65,16 @@ export default {
     yesPractise: 'Yes',
     no: 'No',
   },
+  // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): the
+  // MID-round question, once black hits 0 and the hand also empties, but
+  // reviews are still left. Separate keys from `done.*` above: this card
+  // takes the card's place, not the round's end.
+  learn: {
+    askMoreTitle: "Today's new words are used up",
+    askMoreYes: (n: number) => `+${n} new words`,
+    askMoreReviewOnly: (k: number) => `Review only (${k} cards)`,
+    askMoreDone: "That's enough for today",
+  },
   tabs: {
     learn: 'Learn',
     games: 'Game',
@@ -533,6 +543,8 @@ export default {
     repair: 'fix',
     repairLap: (n: number) => `fix · ${n}/3`,
     sentence: 'sentence',
+    // UTEMEZO 5. szakasz (FB296/297/298): the ask-more card's label.
+    question: 'question',
   },
   // UTEMEZO 6. szakasz: explanation window for the header's three numbers.
   header: {
