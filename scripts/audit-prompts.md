@@ -1,6 +1,6 @@
 # Prompt policy audit (PROMPT-POLICY 1 + 9)
 
-Generated: 2026-09-15T13:23:17.059Z
+Generated: 2026-09-17T07:16:09.598Z
 
 Ez a riport a PROMPT-POLICY 9.1 "egyszeri korpusz-menet" bemenete: minden
 sor egy szó, ami egy másik szóval megosztja a promptját (egy szinten belül).
