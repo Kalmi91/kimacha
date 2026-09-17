@@ -1251,6 +1251,356 @@
       "person": "ellos/ellas/ustedes",
       "answer": "están",
       "table": "estar-presente"
+    },
+    {
+      "kind": "why",
+      "id": "se-why-01",
+      "es": "Soy profesor.",
+      "tr": {
+        "hu": "Tanár vagyok.",
+        "en": "I am a teacher.",
+        "es": "Soy profesor.",
+        "de": "Ich bin Lehrer."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "foglalkozás, azonosság (ser)",
+            "en": "profession, identity (ser)",
+            "es": "profesión, identidad (ser)",
+            "de": "Beruf, Identität (ser)"
+          }
+        },
+        {
+          "text": {
+            "hu": "hely (estar)",
+            "en": "location (estar)",
+            "es": "ubicación (estar)",
+            "de": "Ort (estar)"
+          },
+          "wrong": {
+            "hu": "Az estar helyet fejezne ki, de a hely után NEM állhat puszta főnév foglalkozásként; a foglalkozás állandó besorolás, ez ser: soy profesor.",
+            "en": "Estar would express location, but a plain noun for a profession never follows it that way; a profession is a lasting classification, that is ser: soy profesor.",
+            "es": "Estar expresaría lugar, pero un sustantivo simple de profesión nunca va así; la profesión es una clasificación estable, eso es ser: soy profesor.",
+            "de": "Estar würde einen Ort ausdrücken, aber ein bloßes Substantiv für einen Beruf steht nie so danach; ein Beruf ist eine dauerhafte Einordnung, das ist ser: soy profesor."
+          }
+        },
+        {
+          "text": {
+            "hu": "múló állapot (estar)",
+            "en": "temporary state (estar)",
+            "es": "estado pasajero (estar)",
+            "de": "vorübergehender Zustand (estar)"
+          },
+          "wrong": {
+            "hu": "Az estar múló állapotot fejezne ki (fáradt, ideges); a foglalkozás nem állapot, hanem tartós besorolás, ezért ser: soy profesor.",
+            "en": "Estar would express a temporary state (tired, nervous); a profession is not a state, it is a lasting classification, so ser: soy profesor.",
+            "es": "Estar expresaría un estado pasajero (cansado, nervioso); la profesión no es un estado, es una clasificación estable, por eso ser: soy profesor.",
+            "de": "Estar würde einen vorübergehenden Zustand ausdrücken (müde, nervös); ein Beruf ist kein Zustand, sondern eine dauerhafte Einordnung, deshalb ser: soy profesor."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "se-why-02",
+      "es": "Somos de España.",
+      "tr": {
+        "hu": "Spanyolországból vagyunk.",
+        "en": "We are from Spain.",
+        "es": "Somos de España.",
+        "de": "Wir sind aus Spanien."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "foglalkozás, azonosság (ser)",
+            "en": "profession, identity (ser)",
+            "es": "profesión, identidad (ser)",
+            "de": "Beruf, Identität (ser)"
+          },
+          "wrong": {
+            "hu": "A foglalkozás/azonosság pont olyan mondatokra vonatkozik, mint \"Somos profesores\"; itt viszont SZÁRMAZÁSRÓL van szó (de España), ez külön ser-pont.",
+            "en": "The profession/identity point applies to sentences like \"Somos profesores\"; here it is about ORIGIN (de España), a separate ser point.",
+            "es": "El punto de profesión/identidad va en frases como \"Somos profesores\"; aquí se trata del ORIGEN (de España), un punto distinto de ser.",
+            "de": "Der Beruf/Identität-Punkt passt zu Sätzen wie \"Somos profesores\"; hier geht es um die HERKUNFT (de España), ein eigener ser-Punkt."
+          }
+        },
+        {
+          "text": {
+            "hu": "származás (ser)",
+            "en": "origin (ser)",
+            "es": "origen (ser)",
+            "de": "Herkunft (ser)"
+          }
+        },
+        {
+          "text": {
+            "hu": "hely (estar)",
+            "en": "location (estar)",
+            "es": "ubicación (estar)",
+            "de": "Ort (estar)"
+          },
+          "wrong": {
+            "hu": "Az estar a JELENLEGI tartózkodási helyet fejezné ki (\"Estamos en España\" = most Spanyolországban vagyunk); itt viszont a SZÁRMAZÁSRÓL van szó, ami mindig ser.",
+            "en": "Estar would express CURRENT whereabouts (\"Estamos en España\" = we are in Spain right now); here it is about ORIGIN, which always takes ser.",
+            "es": "Estar expresaría el paradero ACTUAL (\"Estamos en España\" = ahora estamos en España); aquí se trata del ORIGEN, que siempre lleva ser.",
+            "de": "Estar würde den AKTUELLEN Aufenthaltsort ausdrücken (\"Estamos en España\" = wir sind gerade in Spanien); hier geht es um die HERKUNFT, die immer mit ser steht."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "se-why-03",
+      "es": "Son las tres.",
+      "tr": {
+        "hu": "Három óra van.",
+        "en": "It is three o’clock.",
+        "es": "Son las tres.",
+        "de": "Es ist drei Uhr."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "származás (ser)",
+            "en": "origin (ser)",
+            "es": "origen (ser)",
+            "de": "Herkunft (ser)"
+          },
+          "wrong": {
+            "hu": "A származás-pont olyan mondatokra vonatkozik, mint \"Son de México\"; itt viszont az ÓRÁRÓL van szó, ami külön ser-pont: son las tres.",
+            "en": "The origin point applies to sentences like \"Son de México\"; here it is about the TIME, a separate ser point: son las tres.",
+            "es": "El punto de origen va en frases como \"Son de México\"; aquí se trata de la HORA, un punto distinto de ser: son las tres.",
+            "de": "Der Herkunfts-Punkt passt zu Sätzen wie \"Son de México\"; hier geht es um die UHRZEIT, ein eigener ser-Punkt: son las tres."
+          }
+        },
+        {
+          "text": {
+            "hu": "óra, dátum (ser)",
+            "en": "time, date (ser)",
+            "es": "hora, fecha (ser)",
+            "de": "Uhrzeit, Datum (ser)"
+          }
+        },
+        {
+          "text": {
+            "hu": "változás eredménye (estar)",
+            "en": "result of a change (estar)",
+            "es": "resultado de un cambio (estar)",
+            "de": "Ergebnis einer Veränderung (estar)"
+          },
+          "wrong": {
+            "hu": "Az estar egy változás eredményét fejezné ki (törött, nyitva); az órát viszont sosem estar fejezi ki, ez rögzült kivétel: son las tres.",
+            "en": "Estar would express the result of a change (broken, open); telling time is never done with estar, this is a fixed exception: son las tres.",
+            "es": "Estar expresaría el resultado de un cambio (roto, abierto); la hora nunca se expresa con estar, es una excepción fija: son las tres.",
+            "de": "Estar würde das Ergebnis einer Veränderung ausdrücken (kaputt, offen); die Uhrzeit wird nie mit estar ausgedrückt, das ist eine feste Ausnahme: son las tres."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "se-why-04",
+      "es": "Estoy en casa.",
+      "tr": {
+        "hu": "Otthon vagyok.",
+        "en": "I am at home.",
+        "es": "Estoy en casa.",
+        "de": "Ich bin zu Hause."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "származás (ser)",
+            "en": "origin (ser)",
+            "es": "origen (ser)",
+            "de": "Herkunft (ser)"
+          },
+          "wrong": {
+            "hu": "A ser a származást fejezné ki (\"Soy de casa\" nem is természetes mondat); itt a jelenlegi HELYRŐL van szó, ami mindig estar: estoy en casa.",
+            "en": "Ser would express origin (\"Soy de casa\" is not even a natural sentence); here it is about the current LOCATION, which always takes estar: estoy en casa.",
+            "es": "Ser expresaría el origen (\"Soy de casa\" ni siquiera es una frase natural); aquí se trata de la UBICACIÓN actual, que siempre lleva estar: estoy en casa.",
+            "de": "Ser würde die Herkunft ausdrücken (\"Soy de casa\" ist nicht einmal ein natürlicher Satz); hier geht es um den aktuellen ORT, der immer mit estar steht: estoy en casa."
+          }
+        },
+        {
+          "text": {
+            "hu": "hely (estar)",
+            "en": "location (estar)",
+            "es": "ubicación (estar)",
+            "de": "Ort (estar)"
+          }
+        },
+        {
+          "text": {
+            "hu": "múló állapot (estar)",
+            "en": "temporary state (estar)",
+            "es": "estado pasajero (estar)",
+            "de": "vorübergehender Zustand (estar)"
+          },
+          "wrong": {
+            "hu": "A múló állapot pont olyan mondatokra vonatkozik, mint \"Estoy cansado\"; itt viszont a HELYRŐL van szó (en casa), nem egy hangulatról vagy állapotról.",
+            "en": "The temporary-state point applies to sentences like \"Estoy cansado\"; here it is about LOCATION (en casa), not a mood or state.",
+            "es": "El punto de estado pasajero va en frases como \"Estoy cansado\"; aquí se trata de la UBICACIÓN (en casa), no de un ánimo o estado.",
+            "de": "Der Punkt für vorübergehenden Zustand passt zu Sätzen wie \"Estoy cansado\"; hier geht es um den ORT (en casa), nicht um eine Stimmung oder einen Zustand."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "se-why-05",
+      "es": "Está cansada.",
+      "tr": {
+        "hu": "Fáradt.",
+        "en": "She is tired.",
+        "es": "Está cansada.",
+        "de": "Sie ist müde."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "foglalkozás, azonosság (ser)",
+            "en": "profession, identity (ser)",
+            "es": "profesión, identidad (ser)",
+            "de": "Beruf, Identität (ser)"
+          },
+          "wrong": {
+            "hu": "A ser állandó, tartós tulajdonságot fejezne ki (\"Es cansada\" = FÁRASZTÓ TERMÉSZETŰ, állandó jellemvonás); itt viszont a MOSTANI fáradtságról van szó, ez estar.",
+            "en": "Ser would express a lasting trait (\"Es cansada\" = she IS a tiring, tiresome person); here it is about CURRENT tiredness, that is estar.",
+            "es": "Ser expresaría un rasgo permanente (\"Es cansada\" = ELLA es una persona pesada); aquí se trata del cansancio ACTUAL, eso es estar.",
+            "de": "Ser würde eine dauerhafte Eigenschaft ausdrücken (\"Es cansada\" = sie IST eine anstrengende Person); hier geht es um die AKTUELLE Müdigkeit, das ist estar."
+          }
+        },
+        {
+          "text": {
+            "hu": "múló állapot (estar)",
+            "en": "temporary state (estar)",
+            "es": "estado pasajero (estar)",
+            "de": "vorübergehender Zustand (estar)"
+          }
+        },
+        {
+          "text": {
+            "hu": "változás eredménye (estar)",
+            "en": "result of a change (estar)",
+            "es": "resultado de un cambio (estar)",
+            "de": "Ergebnis einer Veränderung (estar)"
+          },
+          "wrong": {
+            "hu": "A változás eredménye pont olyan mondatokra vonatkozik, mint \"La puerta está rota\" (fizikai állapot); a fáradtság inkább egy MÚLÓ hangulat, ami külön pont.",
+            "en": "The result-of-a-change point applies to sentences like \"La puerta está rota\" (a physical state); tiredness is more of a PASSING mood, a separate point.",
+            "es": "El punto de resultado de un cambio va en frases como \"La puerta está rota\" (estado físico); el cansancio es más bien un ánimo PASAJERO, un punto distinto.",
+            "de": "Der Punkt für das Ergebnis einer Veränderung passt zu Sätzen wie \"La puerta está rota\" (physischer Zustand); Müdigkeit ist eher eine VORÜBERGEHENDE Stimmung, ein eigener Punkt."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "se-why-06",
+      "es": "La puerta está abierta.",
+      "tr": {
+        "hu": "Az ajtó nyitva van.",
+        "en": "The door is open.",
+        "es": "La puerta está abierta.",
+        "de": "Die Tür ist offen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hely (estar)",
+            "en": "location (estar)",
+            "es": "ubicación (estar)",
+            "de": "Ort (estar)"
+          },
+          "wrong": {
+            "hu": "A hely-pont olyankor áll, mint \"La puerta está aquí\" (HOL van az ajtó); itt viszont az ajtó ÁLLAPOTÁRÓL van szó (nyitva, egy változás eredménye), nem a helyéről.",
+            "en": "The location point applies to something like \"La puerta está aquí\" (WHERE the door is); here it is about the door's STATE (open, the result of a change), not its location.",
+            "es": "El punto de ubicación iría en algo como \"La puerta está aquí\" (DÓNDE está la puerta); aquí se trata del ESTADO de la puerta (abierta, resultado de un cambio), no de su lugar.",
+            "de": "Der Orts-Punkt passt zu etwas wie \"La puerta está aquí\" (WO die Tür ist); hier geht es um den ZUSTAND der Tür (offen, Ergebnis einer Veränderung), nicht um ihren Ort."
+          }
+        },
+        {
+          "text": {
+            "hu": "változás eredménye (estar)",
+            "en": "result of a change (estar)",
+            "es": "resultado de un cambio (estar)",
+            "de": "Ergebnis einer Veränderung (estar)"
+          }
+        },
+        {
+          "text": {
+            "hu": "múló állapot (estar)",
+            "en": "temporary state (estar)",
+            "es": "estado pasajero (estar)",
+            "de": "vorübergehender Zustand (estar)"
+          },
+          "wrong": {
+            "hu": "A múló állapot pont hangulatra, egészségre vonatkozik (fáradt, beteg); egy tárgy nyitottsága inkább egy VÁLTOZÁS EREDMÉNYE (valaki kinyitotta), nem hangulat.",
+            "en": "The temporary-state point is about mood or health (tired, sick); an object being open is more the RESULT OF A CHANGE (someone opened it), not a mood.",
+            "es": "El punto de estado pasajero es sobre ánimo o salud (cansado, enfermo); que un objeto esté abierto es más bien el RESULTADO DE UN CAMBIO (alguien lo abrió), no un ánimo.",
+            "de": "Der Punkt für vorübergehenden Zustand betrifft Stimmung oder Gesundheit (müde, krank); dass ein Gegenstand offen ist, ist eher das ERGEBNIS EINER VERÄNDERUNG (jemand hat ihn geöffnet), keine Stimmung."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "se-why-07",
+      "es": "Somos profesores.",
+      "tr": {
+        "hu": "Tanárok vagyunk.",
+        "en": "We are teachers.",
+        "es": "Somos profesores.",
+        "de": "Wir sind Lehrer."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "foglalkozás, azonosság (ser)",
+            "en": "profession, identity (ser)",
+            "es": "profesión, identidad (ser)",
+            "de": "Beruf, Identität (ser)"
+          }
+        },
+        {
+          "text": {
+            "hu": "hely (estar)",
+            "en": "location (estar)",
+            "es": "ubicación (estar)",
+            "de": "Ort (estar)"
+          },
+          "wrong": {
+            "hu": "Az estar helyet fejezne ki, de a foglalkozást puszta főnévvel sosem estar fejezi ki; a foglalkozás állandó besorolás, ez ser: somos profesores.",
+            "en": "Estar would express location, but a profession as a plain noun is never expressed with estar; a profession is a lasting classification, that is ser: somos profesores.",
+            "es": "Estar expresaría lugar, pero la profesión como sustantivo simple nunca lleva estar; la profesión es una clasificación estable, eso es ser: somos profesores.",
+            "de": "Estar würde einen Ort ausdrücken, aber ein Beruf als bloßes Substantiv steht nie mit estar; ein Beruf ist eine dauerhafte Einordnung, das ist ser: somos profesores."
+          }
+        },
+        {
+          "text": {
+            "hu": "múló állapot (estar)",
+            "en": "temporary state (estar)",
+            "es": "estado pasajero (estar)",
+            "de": "vorübergehender Zustand (estar)"
+          },
+          "wrong": {
+            "hu": "Az estar múló állapotot fejezne ki (fáradtak, idegesek); a foglalkozás nem állapot, hanem tartós besorolás, ezért ser: somos profesores.",
+            "en": "Estar would express a temporary state (tired, nervous); a profession is not a state, it is a lasting classification, so ser: somos profesores.",
+            "es": "Estar expresaría un estado pasajero (cansados, nerviosos); la profesión no es un estado, es una clasificación estable, por eso ser: somos profesores.",
+            "de": "Estar würde einen vorübergehenden Zustand ausdrücken (müde, nervös); ein Beruf ist kein Zustand, sondern eine dauerhafte Einordnung, deshalb ser: somos profesores."
+          }
+        }
+      ],
+      "correctIndex": 0
     }
   ]
 }
