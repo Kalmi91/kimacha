@@ -310,14 +310,16 @@ class MemoryDB implements DB {
     return map;
   }
 
-  // A szó-kártya FSRS állapota (0 New, 1 Learning, 2 Review, 3 Relearning).
-  // A topic-készültség ebből dől el, nem a reps-ből, lásd lib/topicMastery.ts.
+  // "Ismert" jelző (1/0) szavanként, UTEMEZO 12/4: EGY definíció a
+  // Stats-kártyával (lap >= 3 OR buried, lásd getMasteredWordCount), nem FSRS
+  // Review-állapot. A topic-készültség ebből dől el, nem a reps-ből, lásd
+  // lib/topicMastery.ts.
   async getWordStates(wordIds: number[]): Promise<Map<number, number>> {
     const idSet = new Set(wordIds);
     const map = new Map<number, number>();
     for (const c of this.cards.values()) {
       if (idSet.has(c.word_id) && c.type === 'word' && c.pair === this.activePair) {
-        map.set(c.word_id, c.state);
+        map.set(c.word_id, ((c.lap ?? 0) >= 3 || c.buried) ? 1 : 0);
       }
     }
     return map;
