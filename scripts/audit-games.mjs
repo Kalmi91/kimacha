@@ -504,6 +504,37 @@ function auditFormItem(item, itemPath, topic, tableIds) {
   }
 }
 
+// TASK-8 (D4, FB288): "miért ez a mondat", correctIndex érvényes, pontosan 3
+// opció, opció-szövegek egyediek (hu-n), minden opció mind a 4 nyelven, a nem
+// jó opciókon van `wrong` mind a 4 nyelven, `es` nem üres és `tr.es` === `es`.
+function auditWhyItem(item, itemPath) {
+  const options = Array.isArray(item.options) ? item.options : [];
+  if (options.length !== 3) {
+    p1.push({ path: itemPath, issue: `why item needs exactly 3 options, has ${options.length}` });
+  }
+  if (typeof item.correctIndex !== 'number' || item.correctIndex < 0 || item.correctIndex >= options.length) {
+    p1.push({ path: itemPath, issue: `why item correctIndex ${item.correctIndex} out of range` });
+  }
+  if (!item.es) p1.push({ path: itemPath, issue: 'why item missing es' });
+  if (item.es && item.tr?.es !== item.es) p1.push({ path: itemPath, issue: 'why item tr.es must equal es' });
+
+  const huSeen = new Set();
+  options.forEach((opt, i) => {
+    checkLangs(opt?.text, `${itemPath} option ${i} text`);
+    if (opt?.text?.hu) {
+      if (huSeen.has(opt.text.hu)) p1.push({ path: itemPath, issue: `duplicate why option text (hu) "${opt.text.hu}"` });
+      huSeen.add(opt.text.hu);
+    }
+    if (i !== item.correctIndex) {
+      if (!opt?.wrong) {
+        p1.push({ path: itemPath, issue: `why option ${i} missing wrong explanation` });
+      } else {
+        checkLangs(opt.wrong, `${itemPath} option ${i} wrong`);
+      }
+    }
+  });
+}
+
 function auditGrammarTopic(topic, filePath) {
   const path = `grammar/${filePath}`;
   if (!topic.topic) p1.push({ path, issue: 'missing topic id' });
@@ -540,6 +571,10 @@ function auditGrammarTopic(topic, filePath) {
     }
     if (item.kind === 'form') {
       auditFormItem(item, itemPath, topic, tableIds ?? new Set());
+      continue;
+    }
+    if (item.kind === 'why') {
+      auditWhyItem(item, itemPath);
       continue;
     }
 

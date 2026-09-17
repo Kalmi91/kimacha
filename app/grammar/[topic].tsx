@@ -31,7 +31,7 @@ type Phase = 'lesson' | 'drill' | 'done';
 
 // D3 (FB290, 2026-09-17): a gombok ebben a sorrendben jelennek meg, csak azok
 // a fajták, amikből van item a leckében.
-const KIND_ORDER: GrammarKind[] = ['choice', 'match', 'form'];
+const KIND_ORDER: GrammarKind[] = ['choice', 'match', 'form', 'why'];
 
 export default function GrammarLessonScreen() {
   const { theme } = useTheme();
@@ -344,7 +344,9 @@ export default function GrammarLessonScreen() {
                 ? s.grammar.startChoice(kindCounts.choice)
                 : kind === 'match'
                   ? s.grammar.startMatch(kindCounts.match)
-                  : s.grammar.startForm(kindCounts.form)}
+                  : kind === 'form'
+                    ? s.grammar.startForm(kindCounts.form)
+                    : s.grammar.startWhy(kindCounts.why)}
             </Text>
           </Pressable>
         ))}
