@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useCallback, useMemo } from 'react';
-import { StyleSheet, Text, View, Pressable, ActivityIndicator, TextInput, KeyboardAvoidingView, Platform, ScrollView, Image, Keyboard } from 'react-native';
+import { StyleSheet, Text, View, Pressable, ActivityIndicator, TextInput, Platform, ScrollView, Image, Keyboard } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { fsrs, Rating, createEmptyCard, type Card, type Grade } from 'ts-fsrs';
@@ -18,9 +18,10 @@ import { borrowNewWords, countNewWords, nextTopicWithNewWords } from '@/lib/topi
 import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
 import { computeUnlockedTopics } from '@/lib/learn/topicUnlock';
 import { checkLevelChange } from '@/lib/learn/levelStreak';
-import { getFrontBack, lapLabelOf, speakSkippedAnswer } from '@/lib/learn/cardPresentation';
+import { getFrontBack, lapLabelOf, speakSkippedAnswer, type TypingResult } from '@/lib/learn/cardPresentation';
 import EasySentenceScreen from '@/components/learn/EasySentenceScreen';
 import AskMoreScreen from '@/components/learn/AskMoreScreen';
+import TypingCardScreen from '@/components/learn/TypingCardScreen';
 import {
   buildQueue, applyCadence, mergeCarryover, type DueItem,
   createQueue, nextLap, answer, defer, insertNext, buryWord, answerAskMore, header, labelOf,
@@ -28,8 +29,7 @@ import {
 } from '@/lib/sessionQueue';
 import { doneAsk } from '@/lib/doneAsk';
 import { cardNote } from '@/lib/cardNotes';
-import { charDiff } from '@/lib/charDiff';
-import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
+import { articleOf, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { filterLockedSentences } from '@/lib/grammar/tenseGate';
 import { doneGrammarTopics } from '@/lib/learn/grammarProgress';
 import { cardIcon } from '@/lib/cardIcons';
@@ -47,15 +47,9 @@ import { answerInputProps } from '@/lib/inputProps';
 
 const f = fsrs();
 
-// FB170: height of the docked Check bar (button plus its padding), the room the
-// typing card has to keep free at its bottom.
-const DOCK_RESERVE = 76;
-
 // ITER5: the header used to be absolutely positioned, so it needed a measured
 // reserve (HEADER_RESERVE_MIN) and a font-scale cap here. LearnChrome sits in
 // the flow above the scroll view, so neither is needed; the cap lives there.
-
-type TypingResult = 'correct' | 'almost' | 'wrong' | 'skipped' | null;
 
 // UTEMEZO 5. szakasz: a Done-képernyő négy száma, amíg a sor még nem töltődött be.
 const DONE_STATS_ZERO = { reviewsAnswered: 0, wordsStarted: 0, wordsLearned: 0, wrongLaps: 0 };
@@ -1371,195 +1365,45 @@ export default function LearnScreen() {
   }
 
   if (current.isTyping) {
-    const resultColor = typingResult === 'correct' ? '#22C55E' : typingResult === 'almost' ? '#EAB308' : typingResult === 'skipped' ? colors.tabIconDefault : '#EF4444';
-    const resultText = typingResult === 'correct' ? s.card.correct : typingResult === 'almost' ? s.card.almostCorrect : typingResult === 'skipped' ? s.card.skipped : s.card.wrong;
-
     return (
-      <KeyboardAvoidingView
-        style={[styles.container, { backgroundColor: colors.background }]}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-      >
-        {chrome}
-        {/* FB74: once the result block appears the card grows, so it scrolls
-            instead of colliding with anything on small screens. */}
-        <ScrollView
-          style={styles.typingScroll}
-          // FB170: leave room for the docked Check bar and the keyboard under it,
-          // otherwise the last line of the card would end up behind them.
-          contentContainerStyle={[styles.typingScrollContent, { paddingBottom: 24 + DOCK_RESERVE + dockLift }]}
-          keyboardShouldPersistTaps="handled"
-          keyboardDismissMode="on-drag"
-        >
-
-        {/* FB143, Kálmán 2026-08-19: "nem megy le a billentyűzet ha félre
-            kattintok". The card is the area beside the field, so a tap on it
-            closes the keyboard; the ✓ button and the speaker keep working,
-            they handle their own press. */}
-        <Pressable style={[styles.card, styles.typingCard, { backgroundColor: colors.card }]} onPress={() => Keyboard.dismiss()}>
-          {cardChips}
-          <View style={[styles.frontRow, { marginBottom: 16 }]}>
-            {iconBadge}
-            {/* FB150: the prompt is tappable word by word, straight into spelling practice. */}
-            <TappableSentence
-              text={front}
-              style={[styles.frontText, { color: colors.text }]}
-              tokenStates={spellingTokens}
-              onWordPress={token => handleWordTap(token, frontLang)}
-            />
-            <Pressable onPress={() => speakIn(front, speechLang(frontLang))} style={styles.speakBtn}>
-              <Text style={styles.speakIcon}>🔊</Text>
-            </Pressable>
-            {noteButton}
-          </View>
-          {photoBlock}
-          {noteBlock}
-
-          {/* FB5, then FB170: the input row used to carry its own ✓/→ because the
-              button below the card could hide under the keyboard. The single Check
-              is docked above the keyboard now, so the row is just the field. */}
-          {/* FB188: névelő-gombsor. Minden spanyol szó-kártyán ott van, akkor is,
-              ha a helyes alak névelőtlen, különben a puszta megjelenése elárulná,
-              hogy kell névelő. ⊘ az alapállás, tehát aki nem nyúl hozzá, gépel.
-              FB214: igénél és melléknévnél is ott a sor, ⊘-val a helyes válasz. */}
-          {articlePickerOn && articlePickerApplies(backLang, current.type === 'word', back) && (
-            <View style={styles.articleRow}>
-              {([...ARTICLE_OPTIONS, ''] as ArticlePick[]).map((opt) => {
-                const active = articlePick === opt;
-                return (
-                  <Pressable
-                    key={opt || 'none'}
-                    disabled={revealed}
-                    onPress={() => setArticlePick(active ? '' : opt)}
-                    style={[
-                      styles.articleChip,
-                      {
-                        backgroundColor: active ? colors.tint : colors.card,
-                        opacity: revealed ? 0.6 : 1,
-                      },
-                    ]}
-                    accessibilityLabel={opt || 'sin artículo'}
-                  >
-                    <Text style={[styles.articleChipText, { color: active ? colors.background : colors.text }]}>
-                      {opt || '⊘'}
-                    </Text>
-                  </Pressable>
-                );
-              })}
-            </View>
-          )}
-
-          <View style={styles.inputRow}>
-            <TextInput
-              ref={inputRef}
-              style={[styles.input, { width: '100%', color: colors.text, borderColor: typingResult ? resultColor : colors.tabIconDefault }]}
-              placeholder={s.card.typeTranslation}
-              placeholderTextColor={colors.tabIconDefault}
-              value={typedAnswer}
-              onChangeText={setTypedAnswer}
-              onSubmitEditing={revealed ? handleTypingNext : handleCheck}
-              editable={!revealed}
-              autoFocus
-              {...answerInputProps}
-            />
-          </View>
-
-          {revealed && (
-            <View style={styles.resultSection}>
-              <Text style={[styles.resultText, { color: resultColor }]}>{resultText}</Text>
-              {typingResult === 'wrong' && composeAnswer(articlePick, typedAnswer).length > 0 && (
-                <Text style={styles.diffLine}>
-                  {/* FB132: with strict accents on, a dropped tilde is the mistake,
-                      so the diff must paint it instead of folding it away. */}
-                  {charDiff(composeAnswer(articlePick, typedAnswer), back.split(' / ')[0], { accents: !strictAccents }).map((d, i) => (
-                    <Text
-                      key={i}
-                      style={d.missing ? styles.diffMissing : d.wrong ? styles.diffWrong : { color: colors.text }}
-                    >
-                      {d.ch}
-                    </Text>
-                  ))}
-                </Text>
-              )}
-              <View style={styles.frontRow}>
-                <TappableSentence
-                  text={back}
-                  style={[styles.correctAnswer, { color: colors.tint }]}
-                  tokenStates={spellingTokens}
-                  onWordPress={token => handleWordTap(token, backLang)}
-                />
-                <Pressable onPress={speakTarget} style={styles.speakBtn}>
-                  <Text style={styles.speakIcon}>🔊</Text>
-                </Pressable>
-              </View>
-              {spellingTapLine}
-            </View>
-          )}
-        </Pressable>
-
-        {/* Kálmán 2026-09-10: "Helyes ez így". Az automata ellenőrzés hibásnak
-            mondta, de a gépelt válasz mégis jó (pl. elfogadható szinonima), ezért
-            kézzel Rating.Good. Eltemetés nincs, a kártya marad az ismétlésben. */}
-        {revealed && typingResult === 'wrong' && (
-          <Pressable
-            style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
-            onPress={() => applyAnswer(true)}
-          >
-            {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.correctAsIs}</Text>}
-          </Pressable>
-        )}
-
-        <Pressable
-          style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
-          onPress={handleBuryWord}
-        >
-          {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.iKnowThis}</Text>}
-        </Pressable>
-
-        {/* FB38: snooze the word 3 days without any SRS write. */}
-        <Pressable
-          style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
-          onPress={() => {
-            const db = getDb();
-            db.snoozeCard(current.wordId, current.type, 3).catch(() => {});
-            deferCurrent(true);
-          }}
-        >
-          {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.snooze}</Text>}
-        </Pressable>
-
-        {/* FB39: add the word to the spelling-practice list, dedup on the DB side. */}
-        <Pressable
-          style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
-          onPress={() => {
-            const db = getDb();
-            db.addToSpellingList(current.wordId).catch(() => {});
-            setSpellingAdded(true);
-          }}
-        >
-          {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{spellingAdded ? `${s.buttons.spelling} ✓` : s.buttons.spelling}</Text>}
-        </Pressable>
-        </ScrollView>
-
-        {/* FB170: the one and only Check/→ of the typing card, pinned to the top
-            edge of the keyboard (or to the bottom of the screen when it is closed). */}
-        <View style={[styles.dockedAction, { bottom: dockLift, backgroundColor: colors.background }]}>
-          <Pressable
-            style={[styles.inlineCheckBtn, { backgroundColor: revealed && typingResult === 'wrong' ? '#1D4ED8' : '#38BDF8' }]}
-            onPress={revealed ? handleTypingNext : handleCheck}
-          >
-            <Text style={styles.inlineCheckText}>{revealed ? '→' : `✓ ${s.card.check}`}</Text>
-          </Pressable>
-        </View>
-
-        {/* FB173, Kálmán 2026-09-06: "feedback gomb egybe csúszott". The 💬 button sits
-            at bottom: 24, which is inside the docked Check bar; it rides above it. */}
-        <FeedbackButton
-          level={level}
-          languagePair={direction.join('→')}
-          currentCard={`${current.type}:${front}`}
-          bottomOffset={DOCK_RESERVE + dockLift}
-        />
-      </KeyboardAvoidingView>
+      <TypingCardScreen
+        current={current}
+        direction={direction as [string, string]}
+        level={level}
+        colors={colors}
+        s={s}
+        chrome={chrome}
+        cardChips={cardChips}
+        iconBadge={iconBadge}
+        photoBlock={photoBlock}
+        noteBlock={noteBlock}
+        noteButton={noteButton}
+        spellingTapLine={spellingTapLine}
+        front={front}
+        back={back}
+        frontLang={frontLang}
+        backLang={backLang}
+        typingResult={typingResult}
+        revealed={revealed}
+        typedAnswer={typedAnswer}
+        setTypedAnswer={setTypedAnswer}
+        articlePick={articlePick}
+        setArticlePick={setArticlePick}
+        articlePickerOn={articlePickerOn}
+        spellingTokens={spellingTokens}
+        spellingAdded={spellingAdded}
+        setSpellingAdded={setSpellingAdded}
+        strictAccents={strictAccents}
+        dockLift={dockLift}
+        inputRef={inputRef}
+        onWordTap={handleWordTap}
+        handleCheck={handleCheck}
+        handleTypingNext={handleTypingNext}
+        applyAnswer={applyAnswer}
+        handleBuryWord={handleBuryWord}
+        deferCurrent={deferCurrent}
+        speakTarget={speakTarget}
+      />
     );
   }
 
