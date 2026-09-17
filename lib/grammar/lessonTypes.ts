@@ -54,6 +54,18 @@ export interface FormItem {
   table: string; // a body egyik `table` blokkjának id-ja
 }
 
+// TASK-8 (PLAN-fb0917 D4, FB288, Kálmán 2026-09-15): "miért ez a mondat", a
+// tanuló nem a hiányzó szót választja, hanem azt, MELYIK SZABÁLY miatt van a
+// mondat úgy, ahogy van (pl. "Soy profesor." → "foglalkozás / identitás").
+export interface WhyItem {
+  kind: 'why';
+  id: string;
+  es: string; // a mondat spanyolul, pl. "Soy profesor."
+  tr: Lang4; // a mondat fordítása; tr.es === es, a felolvasás miatt egységesen
+  options: { text: Lang4; wrong?: Lang4 }[]; // 3 szabály-név; a nem jó opciókon `wrong` kötelező
+  correctIndex: number;
+}
+
 export interface LessonV2 {
   schema: 2;
   topic: string;
@@ -62,5 +74,5 @@ export interface LessonV2 {
   body: LessonBlock[];
   speak: Lang4; // LECKE-SEMA 3: felolvasásra írt szöveg, a spanyol szakaszok «...» közt
   glossary?: { word: string; gloss: Lang4 }[];
-  items: (GrammarGapItem | GrammarMarkItem | MatchItem | FormItem)[];
+  items: (GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem)[];
 }

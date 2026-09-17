@@ -399,6 +399,8 @@ export default {
     startChoice: (n: number) => `Sätze (${n})`,
     startMatch: (n: number) => `Zuordnen (${n})`,
     startForm: (n: number) => `Formen (${n})`,
+    // TASK-8 (D4, FB288): Start-Button für die "Warum dieser Satz"-Aufgabe.
+    startWhy: (n: number) => `Warum? (${n})`,
     backToRule: 'Regel noch einmal lesen',
     practiceAgain: 'Noch einmal üben',
     nextTopic: 'Nächstes Thema',
