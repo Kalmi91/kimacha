@@ -1217,6 +1217,356 @@
       "person": "ellos/ellas/ustedes",
       "answer": "les",
       "table": "pronombres-oi"
+    },
+    {
+      "kind": "why",
+      "id": "poi-why-01",
+      "es": "Me escribe todos los días.",
+      "tr": {
+        "hu": "Mindennap ír nekem.",
+        "en": "He/she writes to me every day.",
+        "es": "Me escribe todos los días.",
+        "de": "Er/sie schreibt mir jeden Tag."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "me: hozzám",
+            "en": "me: to me",
+            "es": "me: a mí",
+            "de": "me: zu mir"
+          }
+        },
+        {
+          "text": {
+            "hu": "te: hozzád",
+            "en": "te: to you",
+            "es": "te: a ti",
+            "de": "te: zu dir"
+          },
+          "wrong": {
+            "hu": "A te a beszélgetőpartneremhez történő cselekvést jelölné (\"Te escribe todos los días\" = neked ír); itt viszont ÉN vagyok a címzett, ezért me.",
+            "en": "Te would mark the action happening to the person I am talking to (\"Te escribe todos los días\" = writes to you); here I am the recipient, so me.",
+            "es": "Te marcaría la acción hacia mi interlocutor (\"Te escribe todos los días\" = te escribe a ti); aquí YO soy el destinatario, por eso me.",
+            "de": "Te würde die Handlung an meinen Gesprächspartner bezeichnen (\"Te escribe todos los días\" = schreibt dir); hier bin ICH der Empfänger, deshalb me."
+          }
+        },
+        {
+          "text": {
+            "hu": "nos: hozzánk",
+            "en": "nos: to us",
+            "es": "nos: a nosotros",
+            "de": "nos: zu uns"
+          },
+          "wrong": {
+            "hu": "A nos azt jelölné, hogy TÖBBEN kapjuk (mi); itt viszont csak ÉN vagyok a címzett, egyes szám, ezért me.",
+            "en": "Nos would mark that SEVERAL of us receive it; here only I am the recipient, singular, so me.",
+            "es": "Nos marcaría que lo recibimos VARIOS (nosotros); aquí solo YO soy el destinatario, singular, por eso me.",
+            "de": "Nos würde bezeichnen, dass MEHRERE von uns es bekommen; hier bin nur ICH der Empfänger, Singular, deshalb me."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "poi-why-02",
+      "es": "Te traigo las llaves.",
+      "tr": {
+        "hu": "Hozom neked a kulcsokat.",
+        "en": "I am bringing you the keys.",
+        "es": "Te traigo las llaves.",
+        "de": "Ich bringe dir die Schlüssel."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "me: hozzám",
+            "en": "me: to me",
+            "es": "me: a mí",
+            "de": "me: zu mir"
+          },
+          "wrong": {
+            "hu": "A me azt jelölné, hogy ÉN kapom a kulcsokat (\"Me traes las llaves\" = te hozod nekem); itt viszont ÉN hozom NEKED, ezért te.",
+            "en": "Me would mark that I receive the keys (\"Me traes las llaves\" = you bring them to me); here I bring them to YOU, so te.",
+            "es": "Me marcaría que YO recibo las llaves (\"Me traes las llaves\" = tú me las traes); aquí YO se las traigo a TI, por eso te.",
+            "de": "Me würde bezeichnen, dass ICH die Schlüssel bekomme (\"Me traes las llaves\" = du bringst sie mir); hier bringe ICH sie DIR, deshalb te."
+          }
+        },
+        {
+          "text": {
+            "hu": "te: hozzád",
+            "en": "te: to you",
+            "es": "te: a ti",
+            "de": "te: zu dir"
+          }
+        },
+        {
+          "text": {
+            "hu": "le: hozzá (ő/Ön)",
+            "en": "le: to him/her/usted",
+            "es": "le: a él/ella/usted",
+            "de": "le: zu ihm/ihr/Ihnen"
+          },
+          "wrong": {
+            "hu": "A le egy HARMADIK személynek (ő/Ön) szólna (\"Le traigo las llaves\" = neki hozom); itt viszont a BESZÉLGETŐPARTNEREMNEK hozom, ezért te.",
+            "en": "Le would be to a THIRD person (him/her/usted) (\"Le traigo las llaves\" = I bring them to him/her); here it is to the person I AM TALKING TO, so te.",
+            "es": "Le sería para una tercera persona (él/ella/usted) (\"Le traigo las llaves\" = se las traigo a él/ella); aquí es para mi INTERLOCUTOR, por eso te.",
+            "de": "Le wäre für eine DRITTE Person (er/sie/Sie) (\"Le traigo las llaves\" = ich bringe sie ihm/ihr); hier ist es für meinen GESPRÄCHSPARTNER, deshalb te."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "poi-why-03",
+      "es": "Le doy el libro a Juan.",
+      "tr": {
+        "hu": "Odaadom Juannak a könyvet.",
+        "en": "I give the book to Juan.",
+        "es": "Le doy el libro a Juan.",
+        "de": "Ich gebe Juan das Buch."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "te: hozzád",
+            "en": "te: to you",
+            "es": "te: a ti",
+            "de": "te: zu dir"
+          },
+          "wrong": {
+            "hu": "A te a beszélgetőpartneremnek szólna (\"Te doy el libro\" = neked adom); itt viszont egy HARMADIK személynek, Juannak adom, ezért le.",
+            "en": "Te would be to the person I am talking to (\"Te doy el libro\" = I give it to you); here it is to a THIRD person, Juan, so le.",
+            "es": "Te sería para mi interlocutor (\"Te doy el libro\" = te lo doy a ti); aquí es para una TERCERA persona, Juan, por eso le.",
+            "de": "Te wäre für meinen Gesprächspartner (\"Te doy el libro\" = ich gebe es dir); hier ist es für eine DRITTE Person, Juan, deshalb le."
+          }
+        },
+        {
+          "text": {
+            "hu": "le: hozzá (ő/Ön)",
+            "en": "le: to him/her/usted",
+            "es": "le: a él/ella/usted",
+            "de": "le: zu ihm/ihr/Ihnen"
+          }
+        },
+        {
+          "text": {
+            "hu": "les: hozzájuk/Önökhöz",
+            "en": "les: to them/you all",
+            "es": "les: a ellos/ellas/ustedes",
+            "de": "les: zu ihnen/Ihnen"
+          },
+          "wrong": {
+            "hu": "A les TÖBB harmadik személyre vonatkozna (ők/Önök); itt viszont EGY személy, Juan a címzett, egyes szám, ezért le.",
+            "en": "Les would refer to SEVERAL third persons (they/you all); here it is ONE person, Juan, singular, so le.",
+            "es": "Les se referiría a VARIAS terceras personas (ellos/ustedes); aquí es UNA sola persona, Juan, singular, por eso le.",
+            "de": "Les würde sich auf MEHRERE dritte Personen beziehen (sie/Sie); hier ist es EINE Person, Juan, Singular, deshalb le."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "poi-why-04",
+      "es": "Nos manda un mensaje cada semana.",
+      "tr": {
+        "hu": "Hetente küld nekünk egy üzenetet.",
+        "en": "He/she sends us a message every week.",
+        "es": "Nos manda un mensaje cada semana.",
+        "de": "Er/sie schickt uns jede Woche eine Nachricht."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "me: hozzám",
+            "en": "me: to me",
+            "es": "me: a mí",
+            "de": "me: zu mir"
+          },
+          "wrong": {
+            "hu": "A me azt jelölné, hogy CSAK ÉN kapom az üzenetet; itt viszont TÖBBEN kapjuk (a beszélő és mások), ezért nos.",
+            "en": "Me would mark that ONLY I receive the message; here SEVERAL of us receive it (the speaker and others), so nos.",
+            "es": "Me marcaría que SOLO YO recibo el mensaje; aquí lo recibimos VARIOS (quien habla y otros), por eso nos.",
+            "de": "Me würde bezeichnen, dass NUR ICH die Nachricht bekomme; hier bekommen es MEHRERE (der Sprecher und andere), deshalb nos."
+          }
+        },
+        {
+          "text": {
+            "hu": "nos: hozzánk",
+            "en": "nos: to us",
+            "es": "nos: a nosotros",
+            "de": "nos: zu uns"
+          }
+        },
+        {
+          "text": {
+            "hu": "les: hozzájuk/Önökhöz",
+            "en": "les: to them/you all",
+            "es": "les: a ellos/ellas/ustedes",
+            "de": "les: zu ihnen/Ihnen"
+          },
+          "wrong": {
+            "hu": "A les TÖBBEKNEK szólna, de a beszélőt KIZÁRVA (ők/Önök); itt viszont a beszélő IS a címzettek közt van, ezért nos, nem les.",
+            "en": "Les would be to several people but EXCLUDING the speaker (they/you all); here the speaker IS among the recipients, so nos, not les.",
+            "es": "Les sería para varias personas pero EXCLUYENDO a quien habla (ellos/ustedes); aquí quien habla SÍ está entre los destinatarios, por eso nos, no les.",
+            "de": "Les wäre für mehrere Personen, aber OHNE den Sprecher (sie/Sie); hier gehört der Sprecher ZU den Empfängern, deshalb nos, nicht les."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "poi-why-05",
+      "es": "Os escribo un mensaje.",
+      "tr": {
+        "hu": "Írok nektek egy üzenetet.",
+        "en": "I am writing you all a message.",
+        "es": "Os escribo un mensaje.",
+        "de": "Ich schreibe euch eine Nachricht."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "te: hozzád",
+            "en": "te: to you",
+            "es": "te: a ti",
+            "de": "te: zu dir"
+          },
+          "wrong": {
+            "hu": "A te EGY beszélgetőpartnernek szólna (\"Te escribo un mensaje\"); itt viszont TÖBB embernek írok Spanyolországi módon, ezért os.",
+            "en": "Te would be to ONE person I am talking to (\"Te escribo un mensaje\"); here I am writing to several people, the Spain way, so os.",
+            "es": "Te sería para UN solo interlocutor (\"Te escribo un mensaje\"); aquí escribo a varias personas, a la manera de España, por eso os.",
+            "de": "Te wäre für EINEN Gesprächspartner (\"Te escribo un mensaje\"); hier schreibe ich mehreren Personen, auf spanische Art, deshalb os."
+          }
+        },
+        {
+          "text": {
+            "hu": "os: hozzátok (Spo.)",
+            "en": "os: to you all (Spain)",
+            "es": "os: a vosotros (España)",
+            "de": "os: zu euch (Spanien)"
+          }
+        },
+        {
+          "text": {
+            "hu": "les: hozzájuk/Önökhöz",
+            "en": "les: to them/you all",
+            "es": "les: a ellos/ellas/ustedes",
+            "de": "les: zu ihnen/Ihnen"
+          },
+          "wrong": {
+            "hu": "A les Latin-Amerikában (Mexikóban) állna ugyanerre a jelentésre (ustedes); Spanyolországban viszont a vosotros-nak megfelelő névmás os.",
+            "en": "Les would be used in Latin America (Mexico) for this same meaning (ustedes); in Spain the pronoun matching vosotros is os.",
+            "es": "Les se usaría en Latinoamérica (México) para este mismo sentido (ustedes); en España el pronombre correspondiente a vosotros es os.",
+            "de": "Les würde in Lateinamerika (Mexiko) für denselben Sinn stehen (ustedes); in Spanien ist das zu vosotros passende Pronomen os."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "poi-why-06",
+      "es": "Les mando un mensaje a mis papás.",
+      "tr": {
+        "hu": "Küldök egy üzenetet a szüleimnek.",
+        "en": "I send a message to my parents.",
+        "es": "Les mando un mensaje a mis papás.",
+        "de": "Ich schicke meinen Eltern eine Nachricht."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "le: hozzá (ő/Ön)",
+            "en": "le: to him/her/usted",
+            "es": "le: a él/ella/usted",
+            "de": "le: zu ihm/ihr/Ihnen"
+          },
+          "wrong": {
+            "hu": "A le EGY harmadik személynek szólna (\"Le mando un mensaje a mi papá\"); itt viszont TÖBB személynek, a szüleimnek küldöm, ezért les.",
+            "en": "Le would be to ONE third person (\"Le mando un mensaje a mi papá\"); here I send it to SEVERAL people, my parents, so les.",
+            "es": "Le sería para UNA sola tercera persona (\"Le mando un mensaje a mi papá\"); aquí se lo mando a VARIAS personas, mis papás, por eso les.",
+            "de": "Le wäre für EINE dritte Person (\"Le mando un mensaje a mi papá\"); hier schicke ich es MEHREREN Personen, meinen Eltern, deshalb les."
+          }
+        },
+        {
+          "text": {
+            "hu": "nos: hozzánk",
+            "en": "nos: to us",
+            "es": "nos: a nosotros",
+            "de": "nos: zu uns"
+          },
+          "wrong": {
+            "hu": "A nos azt jelölné, hogy a beszélő IS a címzettek közt van (mi kapjuk); itt viszont a szüleim kapják, a beszélő nélkül, ezért les.",
+            "en": "Nos would mark that the speaker IS among the recipients (we receive it); here my parents receive it, without the speaker, so les.",
+            "es": "Nos marcaría que quien habla SÍ está entre los destinatarios (lo recibimos nosotros); aquí lo reciben mis papás, sin el hablante, por eso les.",
+            "de": "Nos würde bezeichnen, dass der Sprecher UNTER den Empfängern ist (wir bekommen es); hier bekommen es meine Eltern, ohne den Sprecher, deshalb les."
+          }
+        },
+        {
+          "text": {
+            "hu": "les: hozzájuk/Önökhöz",
+            "en": "les: to them/you all",
+            "es": "les: a ellos/ellas/ustedes",
+            "de": "les: zu ihnen/Ihnen"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "poi-why-07",
+      "es": "Le doy el libro a María.",
+      "tr": {
+        "hu": "Odaadom Maríának a könyvet.",
+        "en": "I give the book to María.",
+        "es": "Le doy el libro a María.",
+        "de": "Ich gebe María das Buch."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "le: hozzá (ő/Ön)",
+            "en": "le: to him/her/usted",
+            "es": "le: a él/ella/usted",
+            "de": "le: zu ihm/ihr/Ihnen"
+          }
+        },
+        {
+          "text": {
+            "hu": "me: hozzám",
+            "en": "me: to me",
+            "es": "me: a mí",
+            "de": "me: zu mir"
+          },
+          "wrong": {
+            "hu": "A me azt jelölné, hogy ÉN kapom a könyvet (\"Me da el libro\" = ő adja nekem); itt viszont ÉN adom Maríának, ezért le.",
+            "en": "Me would mark that I receive the book (\"Me da el libro\" = he/she gives it to me); here I give it to María, so le.",
+            "es": "Me marcaría que YO recibo el libro (\"Me da el libro\" = él/ella me lo da); aquí YO se lo doy a María, por eso le.",
+            "de": "Me würde bezeichnen, dass ICH das Buch bekomme (\"Me da el libro\" = er/sie gibt es mir); hier gebe ICH es María, deshalb le."
+          }
+        },
+        {
+          "text": {
+            "hu": "les: hozzájuk/Önökhöz",
+            "en": "les: to them/you all",
+            "es": "les: a ellos/ellas/ustedes",
+            "de": "les: zu ihnen/Ihnen"
+          },
+          "wrong": {
+            "hu": "A les TÖBB harmadik személyre vonatkozna; itt viszont EGY személy, María a címzett, egyes szám, ezért le.",
+            "en": "Les would refer to SEVERAL third persons; here it is ONE person, María, singular, so le.",
+            "es": "Les se referiría a VARIAS terceras personas; aquí es UNA sola persona, María, singular, por eso le.",
+            "de": "Les würde sich auf MEHRERE dritte Personen beziehen; hier ist es EINE Person, María, Singular, deshalb le."
+          }
+        }
+      ],
+      "correctIndex": 0
     }
   ]
 }
