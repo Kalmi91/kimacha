@@ -65,6 +65,16 @@ export default {
     yesPractise: 'Sí',
     no: 'No',
   },
+  // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): pregunta a
+  // MITAD de la ronda, cuando el negro llega a 0 y la mano también se vacía,
+  // pero aún quedan repasos. Claves separadas de `done.*`: esta tarjeta ocupa
+  // el lugar de la carta, no el final de la ronda.
+  learn: {
+    askMoreTitle: 'Las palabras nuevas de hoy se acabaron',
+    askMoreYes: (n: number) => `+${n} palabras nuevas`,
+    askMoreReviewOnly: (k: number) => `Solo repaso (${k} tarjetas)`,
+    askMoreDone: 'Ya es suficiente por hoy',
+  },
   tabs: {
     learn: 'Aprender',
     games: 'Juego',
@@ -533,6 +543,8 @@ export default {
     repair: 'corrección',
     repairLap: (n: number) => `corrección · ${n}/3`,
     sentence: 'frase',
+    // UTEMEZO 5. szakasz (FB296/297/298): la etiqueta de la tarjeta-pregunta.
+    question: 'pregunta',
   },
   // UTEMEZO 6. szakasz: ventana explicativa para los tres números del encabezado.
   header: {
