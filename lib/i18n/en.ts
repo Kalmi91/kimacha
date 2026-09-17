@@ -385,7 +385,10 @@ export default {
     ruleLabel: 'The rule',
     examplesLabel: 'Examples',
     exceptionsLabel: 'Exceptions and edge cases',
-    startDrill: (n: number) => `Practice (${n} questions)`,
+    // D3 (FB290, 2026-09-17): one button per kind instead of `startDrill` (all at once).
+    startChoice: (n: number) => `Sentences (${n})`,
+    startMatch: (n: number) => `Matching (${n})`,
+    startForm: (n: number) => `Forms (${n})`,
     backToRule: 'Read the rule again',
     practiceAgain: 'Practice again',
     nextTopic: 'Next topic',

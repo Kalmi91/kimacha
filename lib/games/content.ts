@@ -282,6 +282,21 @@ export function isFormItem(item: GrammarItem): item is FormItem {
   return item.kind === 'form';
 }
 
+// LECKE-SEMA D3 (FB290, 2026-09-17): a lecke feladatai fajtánként külön
+// indíthatók (a mondat-feladatok, a párosítás és a ragozás nem egy gombban
+// megy), ehhez kell tudni fajtánként, hány item van egy leckében.
+export type GrammarKind = 'choice' | 'match' | 'form';
+
+export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, number> {
+  const counts: Record<GrammarKind, number> = { choice: 0, match: 0, form: 0 };
+  for (const item of topic.items as GrammarItem[]) {
+    if (isMatchItem(item)) counts.match++;
+    else if (isFormItem(item)) counts.form++;
+    else counts.choice++;
+  }
+  return counts;
+}
+
 // A régi (prózás rule/more) lecke-alak. Amíg a 20 másik témát nem migrálják
 // a LessonV2 blokk-sémára (LECKE-SEMA), ez él tovább változatlanul.
 export interface LegacyLesson {

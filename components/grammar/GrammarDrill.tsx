@@ -11,12 +11,13 @@ import {
   isLessonV2,
   isMarkItem,
   isMatchItem,
+  type GrammarKind,
   type GrammarMarkItem,
   type GrammarTopicData,
 } from '@/lib/games/content';
 import type { FormItem, LessonBlock, MatchItem } from '@/lib/grammar/lessonTypes';
 import { markTokens } from '@/lib/games/grammarMark';
-import { buildGrammarRound, isChoiceRoundItem, wrongExplanation } from '@/lib/games/grammarChoice';
+import { buildGrammarRound, grammarRoundItemKind, isChoiceRoundItem, wrongExplanation } from '@/lib/games/grammarChoice';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString, shuffleArray } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
@@ -31,9 +32,10 @@ import MoreBlocks from '@/components/grammar/MoreBlocks';
 // GAMES.md 4.11: the explanation appears after EVERY answer, right or wrong,
 // with the rule, why the picked wrong option is wrong, and two more examples.
 //
-// LECKE-SEMA 2.1-2.2: a lecke-drill (`includeAllKinds`) a match/form
-// tételeket is végigviszi, a Game fül grammar-choice-a nem (az a prop híján
-// a régi gap/mark-only kört kapja, LECKE-SEMA 6.3 D pont).
+// LECKE-SEMA 2.1-2.2/D3 (FB290, 2026-09-17): a lecke-drill a `kinds` propban
+// felsorolt fajtákat viszi végig, a lecke-oldal fajtánként külön indítja; a
+// Game fül grammar-choice-a a prop híján a régi gap/mark-only (`choice`) kört
+// kapja (LECKE-SEMA 6.3 D pont).
 
 interface Props {
   topic: GrammarTopicData;
@@ -43,9 +45,11 @@ interface Props {
   onFinish: (correct: number, total: number) => void;
   /** Extra rows under the explanation (e.g. the course's "back to the rule"). */
   footer?: React.ReactNode;
-  /** LECKE-SEMA 2: a lecke-drill igennel adja át, hogy a match/form tételek is bekerüljenek a körbe. */
-  includeAllKinds?: boolean;
+  /** LECKE-SEMA D3: mely fajták kerüljenek a körbe; hiányában csak a választós (Game fül). */
+  kinds?: readonly GrammarKind[];
 }
+
+const CHOICE_ONLY: readonly GrammarKind[] = ['choice'];
 
 function findFormTable(topic: GrammarTopicData, tableId: string): Extract<LessonBlock, { kind: 'table' }> | undefined {
   if (!isLessonV2(topic)) return undefined;
@@ -230,7 +234,7 @@ function FormDrillItem({
   );
 }
 
-export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, includeAllKinds = false }: Props) {
+export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, kinds = CHOICE_ONLY }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
@@ -238,8 +242,8 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const [seed] = useState(() => hashString(`${topic.topic}:${Date.now()}`));
   const fullRound = useMemo(() => buildGrammarRound(topic, seed), [topic, seed]);
   const round = useMemo(
-    () => (includeAllKinds ? fullRound : fullRound.filter(isChoiceRoundItem)),
-    [fullRound, includeAllKinds]
+    () => fullRound.filter((r) => kinds.includes(grammarRoundItemKind(r))),
+    [fullRound, kinds]
   );
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
