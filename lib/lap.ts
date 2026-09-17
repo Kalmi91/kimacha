@@ -41,3 +41,17 @@ export function lapShape(lap: 1 | 2 | 3): { isTyping: boolean; typingDirection?:
 export function backfillLap(reps: number, lapses: number): Lap {
   return Math.min(LAPS, Math.max(0, reps - lapses)) as Lap;
 }
+
+// CSAK a fenti backfillLap UTANI, masodik, egyszeri DB-migraciohoz (UTEMEZO
+// 12/4, 2026-09-17): az FSRS egy szot mar 2 helyes valasz utan Review allapotba
+// leptethetett (FB111), a gepeles (3. lap) elott, tehat a reps-lapses szamitas
+// utan is maradhatott olyan sor, ahol az FSRS mar Review (state >= 2), de a lap
+// meg < 3. Innentol a fa csempeje es a tema-lezaras is a Stats-kartyaval egyezo
+// definiciot hasznalja (lap >= 3 VAGY eltemetve), ezert ezeket a sorokat egyszer
+// 3-ra kell allitani, kulonben a mar regen "kesz" temak visszanyilnanak. A
+// nativ SQLite migraciot (lib/database.ts) jesttel nem lehet lefuttatni (kivul
+// dob), ezert a szabalyt itt, tiszta JS-ben teszteljuk; a SQL UPDATE WHERE-je
+// szo szerint ugyanezt a feltetelt irja le.
+export function needsReviewLapBackfill(card: { state: number; lap?: number }): boolean {
+  return card.state >= 2 && (card.lap ?? 0) < LAPS;
+}
