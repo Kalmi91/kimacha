@@ -1170,6 +1170,356 @@
       "person": "ellos/ellas/ustedes",
       "answer": "dieron",
       "table": "indefinido-ser-ir-dar"
+    },
+    {
+      "kind": "why",
+      "id": "ii-why-01",
+      "es": "Tuve una reunión ayer.",
+      "tr": {
+        "hu": "Tegnap volt egy megbeszélésem.",
+        "en": "I had a meeting yesterday.",
+        "es": "Tuve una reunión ayer.",
+        "de": "Ich hatte gestern eine Besprechung."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "erős tő (új tő + ékezet nélküli végződés)",
+            "en": "strong stem (new stem, unaccented ending)",
+            "es": "raíz fuerte (nueva raíz, sin tilde)",
+            "de": "starker Stamm (neuer Stamm, ohne Akzent)"
+          }
+        },
+        {
+          "text": {
+            "hu": "-j- tövű ige: -eron, nem -ieron",
+            "en": "-j- stem: -eron, not -ieron",
+            "es": "raíz en -j-: -eron, no -ieron",
+            "de": "-j-Stamm: -eron, nicht -ieron"
+          },
+          "wrong": {
+            "hu": "A -j- tövű szabály olyan igékre vonatkozik, mint decir (dijeron) vagy traer (trajeron); a tener töve tuv-, nem j-re végződik, ezért ez a szabály nem rá vonatkozik.",
+            "en": "The -j- stem rule is for verbs like decir (dijeron) or traer (trajeron); tener's stem is tuv-, not ending in j, so this rule does not apply to it.",
+            "es": "La regla de raíz en -j- es para verbos como decir (dijeron) o traer (trajeron); la raíz de tener es tuv-, no termina en j, así que esta regla no le corresponde.",
+            "de": "Die -j-Stamm-Regel gilt für Verben wie decir (dijeron) oder traer (trajeron); der Stamm von tener ist tuv-, endet nicht auf j, diese Regel passt nicht zu ihm."
+          }
+        },
+        {
+          "text": {
+            "hu": "hacer: hizo, c helyett z",
+            "en": "hacer: hizo, z instead of c",
+            "es": "hacer: hizo, con z",
+            "de": "hacer: hizo, mit z"
+          },
+          "wrong": {
+            "hu": "A hacer-szabály csak a hacer harmadik személyű alakjára vonatkozik (hizo); a tener yo-alakja (tuve) ehhez nem tartozik, ez erős tő, ékezet nélküli végződéssel.",
+            "en": "The hacer rule only applies to hacer's third-person form (hizo); tener's yo form (tuve) does not belong here, it is a strong stem with an unaccented ending.",
+            "es": "La regla de hacer solo se aplica a la forma de tercera persona de hacer (hizo); la forma de yo de tener (tuve) no pertenece aquí, es raíz fuerte, con terminación sin tilde.",
+            "de": "Die hacer-Regel gilt nur für die dritte Person von hacer (hizo); die yo-Form von tener (tuve) gehört nicht hierher, es ist ein starker Stamm mit unbetonter Endung."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ii-why-02",
+      "es": "Trajeron comida para todos.",
+      "tr": {
+        "hu": "Ételt hoztak mindenkinek.",
+        "en": "They brought food for everyone.",
+        "es": "Trajeron comida para todos.",
+        "de": "Sie brachten Essen für alle."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "erős tő (új tő + ékezet nélküli végződés)",
+            "en": "strong stem (new stem, unaccented ending)",
+            "es": "raíz fuerte (nueva raíz, sin tilde)",
+            "de": "starker Stamm (neuer Stamm, ohne Akzent)"
+          },
+          "wrong": {
+            "hu": "Az erős tövű igék rendes -ieron végződést kapnak többes 3. személyben (tuvieron, estuvieron); a traer töve traj-, ami -j-re végződik, ezért kivételesen -eron jár: trajeron.",
+            "en": "Strong-stem verbs take the regular -ieron ending in the third person plural (tuvieron, estuvieron); traer's stem is traj-, ending in j, so it exceptionally takes -eron: trajeron.",
+            "es": "Los verbos de raíz fuerte llevan la terminación regular -ieron en tercera persona del plural (tuvieron, estuvieron); la raíz de traer es traj-, termina en j, por eso lleva -eron por excepción: trajeron.",
+            "de": "Verben mit starkem Stamm nehmen in der 3. Person Plural die reguläre Endung -ieron (tuvieron, estuvieron); der Stamm von traer ist traj-, endet auf j, deshalb ausnahmsweise -eron: trajeron."
+          }
+        },
+        {
+          "text": {
+            "hu": "-j- tövű ige: -eron, nem -ieron",
+            "en": "-j- stem: -eron, not -ieron",
+            "es": "raíz en -j-: -eron, no -ieron",
+            "de": "-j-Stamm: -eron, nicht -ieron"
+          }
+        },
+        {
+          "text": {
+            "hu": "hacer: hizo, c helyett z",
+            "en": "hacer: hizo, z instead of c",
+            "es": "hacer: hizo, con z",
+            "de": "hacer: hizo, mit z"
+          },
+          "wrong": {
+            "hu": "A hacer-szabály csak a hacer alakjára vonatkozik (hizo); a traer töve j-re végződik, ami külön szabályt kap: -eron, nem -ieron.",
+            "en": "The hacer rule only applies to hacer's form (hizo); traer's stem ends in j, which takes its own rule: -eron, not -ieron.",
+            "es": "La regla de hacer solo se aplica a la forma de hacer (hizo); la raíz de traer termina en j, que lleva su propia regla: -eron, no -ieron.",
+            "de": "Die hacer-Regel gilt nur für die Form von hacer (hizo); der Stamm von traer endet auf j, der eine eigene Regel bekommt: -eron, nicht -ieron."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ii-why-03",
+      "es": "Ella hizo la comida para todos.",
+      "tr": {
+        "hu": "Ő megcsinálta az ételt mindenkinek.",
+        "en": "She made the food for everyone.",
+        "es": "Ella hizo la comida para todos.",
+        "de": "Sie machte das Essen für alle."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "erős tő (új tő + ékezet nélküli végződés)",
+            "en": "strong stem (new stem, unaccented ending)",
+            "es": "raíz fuerte (nueva raíz, sin tilde)",
+            "de": "starker Stamm (neuer Stamm, ohne Akzent)"
+          },
+          "wrong": {
+            "hu": "Az erős tövű igék végződése ékezet nélküli, de a tövük más marad (tuv-, estuv-); a hacer harmadik személye külön szabály: c helyett z, hogy a kiejtés ne változzon.",
+            "en": "Strong-stem verbs have an unaccented ending, but their stem stays different (tuv-, estuv-); hacer's third person is a separate rule: z instead of c, so the pronunciation stays the same.",
+            "es": "Los verbos de raíz fuerte tienen terminación sin tilde, pero su raíz es distinta (tuv-, estuv-); la tercera persona de hacer es una regla aparte: zeta en vez de ce, para que no cambie la pronunciación.",
+            "de": "Verben mit starkem Stamm haben eine unbetonte Endung, aber ihr Stamm bleibt anders (tuv-, estuv-); die dritte Person von hacer ist eine eigene Regel: z statt c, damit sich die Aussprache nicht ändert."
+          }
+        },
+        {
+          "text": {
+            "hu": "hacer: hizo, c helyett z",
+            "en": "hacer: hizo, z instead of c",
+            "es": "hacer: hizo, con z",
+            "de": "hacer: hizo, mit z"
+          }
+        },
+        {
+          "text": {
+            "hu": "dar: -er/-ir végződéseket kap",
+            "en": "dar: takes -er/-ir endings",
+            "es": "dar: lleva terminaciones de -er/-ir",
+            "de": "dar: -er/-ir-Endungen"
+          },
+          "wrong": {
+            "hu": "A dar-szabály arról szól, hogy egy -ar ige -er/-ir végződést kap; a hacer viszont eleve -er ige, itt a c→z csere a lényeg, nem a végződés cseréje.",
+            "en": "The dar rule is about an -ar verb taking -er/-ir endings; hacer is already an -er verb, here the c→z swap is what matters, not a swap of endings.",
+            "es": "La regla de dar habla de que un verbo -ar lleva terminaciones -er/-ir; hacer ya es un verbo -er, aquí lo importante es el cambio c→z, no un cambio de terminación.",
+            "de": "Die dar-Regel besagt, dass ein -ar-Verb -er/-ir-Endungen bekommt; hacer ist bereits ein -er-Verb, hier zählt der Wechsel c→z, nicht ein Endungswechsel."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ii-why-04",
+      "es": "Fui profesor durante diez años.",
+      "tr": {
+        "hu": "Tíz évig tanár voltam.",
+        "en": "I was a teacher for ten years.",
+        "es": "Fui profesor durante diez años.",
+        "de": "Ich war zehn Jahre lang Lehrer."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "dar: -er/-ir végződéseket kap",
+            "en": "dar: takes -er/-ir endings",
+            "es": "dar: lleva terminaciones de -er/-ir",
+            "de": "dar: -er/-ir-Endungen"
+          },
+          "wrong": {
+            "hu": "A dar-szabály olyan mondatra vonatkozik, mint 'Le di las llaves'; itt viszont a ser (vagy ir) alakjáról van szó, ami az ir-rel azonos formákat kap.",
+            "en": "The dar rule applies to a sentence like 'Le di las llaves'; here it is a form of ser (or ir), which shares its forms with ir.",
+            "es": "La regla de dar es para una frase como 'Le di las llaves'; aquí es una forma de ser (o ir), que comparte sus formas con ir.",
+            "de": "Die dar-Regel gilt für einen Satz wie 'Le di las llaves'; hier ist es eine Form von ser (oder ir), die sich die Formen mit ir teilt."
+          }
+        },
+        {
+          "text": {
+            "hu": "ser/ir: azonos alakok",
+            "en": "ser/ir: identical forms",
+            "es": "ser/ir: formas idénticas",
+            "de": "ser/ir: gleiche Formen"
+          }
+        },
+        {
+          "text": {
+            "hu": "erős tő (új tő + ékezet nélküli végződés)",
+            "en": "strong stem (new stem, unaccented ending)",
+            "es": "raíz fuerte (nueva raíz, sin tilde)",
+            "de": "starker Stamm (neuer Stamm, ohne Akzent)"
+          },
+          "wrong": {
+            "hu": "Az erős tövű igék saját, felismerhető tövet kapnak (tuv-, estuv-); a fui alakja viszont a ser ÉS az ir közös, teljesen külön alakja, nem ebbe a mintába illik.",
+            "en": "Strong-stem verbs get their own, recognizable stem (tuv-, estuv-); fui is instead the completely separate, shared form of BOTH ser and ir, it does not fit this pattern.",
+            "es": "Los verbos de raíz fuerte tienen su propia raíz reconocible (tuv-, estuv-); fui es en cambio la forma totalmente aparte, compartida por ser E ir, no encaja en este patrón.",
+            "de": "Verben mit starkem Stamm bekommen einen eigenen, erkennbaren Stamm (tuv-, estuv-); fui ist dagegen die völlig eigene, von ser UND ir geteilte Form, sie passt nicht in dieses Muster."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ii-why-05",
+      "es": "Le di las llaves a mi vecino.",
+      "tr": {
+        "hu": "Odaadtam a kulcsokat a szomszédomnak.",
+        "en": "I gave the keys to my neighbor.",
+        "es": "Le di las llaves a mi vecino.",
+        "de": "Ich gab meinem Nachbarn die Schlüssel."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ser/ir: azonos alakok",
+            "en": "ser/ir: identical forms",
+            "es": "ser/ir: formas idénticas",
+            "de": "ser/ir: gleiche Formen"
+          },
+          "wrong": {
+            "hu": "A ser/ir-szabály olyan mondatra vonatkozik, mint 'Fui al mercado'; itt viszont a dar alakjáról van szó, ami -ar ige létére -er/-ir végződéseket kap: di.",
+            "en": "The ser/ir rule applies to a sentence like 'Fui al mercado'; here it is a form of dar, which, though an -ar verb, takes -er/-ir endings: di.",
+            "es": "La regla de ser/ir es para una frase como 'Fui al mercado'; aquí es una forma de dar, que aunque es -ar, lleva terminaciones de -er/-ir: di.",
+            "de": "Die ser/ir-Regel gilt für einen Satz wie 'Fui al mercado'; hier ist es eine Form von dar, das, obwohl ein -ar-Verb, -er/-ir-Endungen bekommt: di."
+          }
+        },
+        {
+          "text": {
+            "hu": "dar: -er/-ir végződéseket kap",
+            "en": "dar: takes -er/-ir endings",
+            "es": "dar: lleva terminaciones de -er/-ir",
+            "de": "dar: -er/-ir-Endungen"
+          }
+        },
+        {
+          "text": {
+            "hu": "erős tő (új tő + ékezet nélküli végződés)",
+            "en": "strong stem (new stem, unaccented ending)",
+            "es": "raíz fuerte (nueva raíz, sin tilde)",
+            "de": "starker Stamm (neuer Stamm, ohne Akzent)"
+          },
+          "wrong": {
+            "hu": "Az erős tövű igék saját tövet kapnak (tuv-, estuv-); a dar töve viszont változatlan (d-), csak a VÉGZŐDÉSE lesz -er/-ir típusú: di, nem dé.",
+            "en": "Strong-stem verbs get their own new stem (tuv-, estuv-); dar's stem stays unchanged (d-), only its ENDING becomes -er/-ir type: di, not dé.",
+            "es": "Los verbos de raíz fuerte toman una raíz propia (tuv-, estuv-); la raíz de dar en cambio no cambia (d-), solo su TERMINACIÓN se vuelve de tipo -er/-ir: di, no dé.",
+            "de": "Verben mit starkem Stamm bekommen einen eigenen Stamm (tuv-, estuv-); der Stamm von dar bleibt dagegen unverändert (d-), nur seine ENDUNG wird vom -er/-ir-Typ: di, nicht dé."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ii-why-06",
+      "es": "Mis padres dijeron que sí.",
+      "tr": {
+        "hu": "A szüleim azt mondták, igen.",
+        "en": "My parents said yes.",
+        "es": "Mis padres dijeron que sí.",
+        "de": "Meine Eltern sagten ja."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hacer: hizo, c helyett z",
+            "en": "hacer: hizo, z instead of c",
+            "es": "hacer: hizo, con z",
+            "de": "hacer: hizo, mit z"
+          },
+          "wrong": {
+            "hu": "A hacer-szabály a c→z cseréről szól (hizo); a decir töve dij-, ami -j-re végződik, ez a másik, külön szabály: -eron, nem -ieron.",
+            "en": "The hacer rule is about the c→z swap (hizo); decir's stem is dij-, ending in j, that is the other, separate rule: -eron, not -ieron.",
+            "es": "La regla de hacer habla del cambio c→z (hizo); la raíz de decir es dij-, termina en j, esa es la otra regla, aparte: -eron, no -ieron.",
+            "de": "Die hacer-Regel betrifft den Wechsel c→z (hizo); der Stamm von decir ist dij-, endet auf j, das ist die andere, eigene Regel: -eron, nicht -ieron."
+          }
+        },
+        {
+          "text": {
+            "hu": "-j- tövű ige: -eron, nem -ieron",
+            "en": "-j- stem: -eron, not -ieron",
+            "es": "raíz en -j-: -eron, no -ieron",
+            "de": "-j-Stamm: -eron, nicht -ieron"
+          }
+        },
+        {
+          "text": {
+            "hu": "ser/ir: azonos alakok",
+            "en": "ser/ir: identical forms",
+            "es": "ser/ir: formas idénticas",
+            "de": "ser/ir: gleiche Formen"
+          },
+          "wrong": {
+            "hu": "A ser/ir-szabály arról szól, hogy két IGE ugyanazt az alakot kapja; a decir egyetlen igéről szól, aminek a töve -j-re végződik, ezért -eron: dijeron.",
+            "en": "The ser/ir rule is about two VERBS sharing the same form; decir is about a single verb whose stem ends in j, so -eron: dijeron.",
+            "es": "La regla de ser/ir habla de que dos VERBOS comparten la misma forma; decir es sobre un solo verbo cuya raíz termina en j, por eso -eron: dijeron.",
+            "de": "Die ser/ir-Regel besagt, dass zwei VERBEN dieselbe Form teilen; decir betrifft ein einzelnes Verb, dessen Stamm auf j endet, deshalb -eron: dijeron."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ii-why-07",
+      "es": "Estuvimos en Guadalajara el año pasado.",
+      "tr": {
+        "hu": "Tavaly Guadalajarában voltunk.",
+        "en": "We were in Guadalajara last year.",
+        "es": "Estuvimos en Guadalajara el año pasado.",
+        "de": "Wir waren letztes Jahr in Guadalajara."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "dar: -er/-ir végződéseket kap",
+            "en": "dar: takes -er/-ir endings",
+            "es": "dar: lleva terminaciones de -er/-ir",
+            "de": "dar: -er/-ir-Endungen"
+          },
+          "wrong": {
+            "hu": "A dar-szabály egy -ar igéről szól, ami -er/-ir végződést kap (di, diste); az estar töve viszont teljesen megváltozik (estuv-), ez erős tő, nem végződés-csere.",
+            "en": "The dar rule is about an -ar verb taking -er/-ir endings (di, diste); estar's stem instead changes completely (estuv-), that is a strong stem, not an ending swap.",
+            "es": "La regla de dar habla de un verbo -ar que lleva terminaciones -er/-ir (di, diste); la raíz de estar en cambio cambia por completo (estuv-), eso es raíz fuerte, no un cambio de terminación.",
+            "de": "Die dar-Regel betrifft ein -ar-Verb, das -er/-ir-Endungen bekommt (di, diste); der Stamm von estar ändert sich dagegen völlig (estuv-), das ist ein starker Stamm, kein Endungswechsel."
+          }
+        },
+        {
+          "text": {
+            "hu": "-j- tövű ige: -eron, nem -ieron",
+            "en": "-j- stem: -eron, not -ieron",
+            "es": "raíz en -j-: -eron, no -ieron",
+            "de": "-j-Stamm: -eron, nicht -ieron"
+          },
+          "wrong": {
+            "hu": "A -j- tövű szabály olyan igékre vonatkozik, mint decir vagy traer; az estar töve estuv-, nem j-re végződik, ezért a rendes -imos végződést kapja: estuvimos.",
+            "en": "The -j- stem rule is for verbs like decir or traer; estar's stem is estuv-, not ending in j, so it takes the regular -imos ending: estuvimos.",
+            "es": "La regla de raíz en -j- es para verbos como decir o traer; la raíz de estar es estuv-, no termina en j, por eso lleva la terminación regular -imos: estuvimos.",
+            "de": "Die -j-Stamm-Regel gilt für Verben wie decir oder traer; der Stamm von estar ist estuv-, endet nicht auf j, deshalb bekommt es die reguläre Endung -imos: estuvimos."
+          }
+        },
+        {
+          "text": {
+            "hu": "erős tő (új tő + ékezet nélküli végződés)",
+            "en": "strong stem (new stem, unaccented ending)",
+            "es": "raíz fuerte (nueva raíz, sin tilde)",
+            "de": "starker Stamm (neuer Stamm, ohne Akzent)"
+          }
+        }
+      ],
+      "correctIndex": 2
     }
   ]
 }
