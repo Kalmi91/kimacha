@@ -1046,52 +1046,354 @@
       "table": "ir-a-presente"
     },
     {
-      "id": "ir-form-07",
-      "kind": "form",
-      "verb": "ir a + infinitivo",
-      "person": "yo",
-      "answer": "voy a",
-      "table": "ir-a-presente"
+      "kind": "why",
+      "id": "iai-why-01",
+      "es": "Voy a estudiar esta noche.",
+      "tr": {
+        "hu": "Ma este tanulni fogok.",
+        "en": "I am going to study tonight.",
+        "es": "Voy a estudiar esta noche.",
+        "de": "Ich werde heute Abend lernen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          }
+        },
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          },
+          "wrong": {
+            "hu": "Ha tú lenne, 'Vas a estudiar esta noche' állna, azaz TE fogsz tanulni ma este, nem én.",
+            "en": "If it were tú, it would say 'Vas a estudiar esta noche', meaning YOU are going to study tonight, not me.",
+            "es": "Si fuera tú, diría 'Vas a estudiar esta noche', o sea que TÚ vas a estudiar, no yo.",
+            "de": "Wäre es tú, hieße es 'Vas a estudiar esta noche', also wirst DU heute Abend lernen, nicht ich."
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Vamos a estudiar esta noche' állna, azaz TÖBBEN fogunk tanulni, nem csak én.",
+            "en": "If it were nosotros, it would say 'Vamos a estudiar esta noche', meaning WE are going to study, not just me.",
+            "es": "Si fuera nosotros, diría 'Vamos a estudiar esta noche', o sea que vamos a estudiar VARIOS, no solo yo.",
+            "de": "Wäre es nosotros, hieße es 'Vamos a estudiar esta noche', also werden WIR mehrere lernen, nicht nur ich."
+          }
+        }
+      ],
+      "correctIndex": 0
     },
     {
-      "id": "ir-form-08",
-      "kind": "form",
-      "verb": "ir a + infinitivo",
-      "person": "tú",
-      "answer": "vas a",
-      "table": "ir-a-presente"
+      "kind": "why",
+      "id": "iai-why-02",
+      "es": "Vas a terminar la tarea.",
+      "tr": {
+        "hu": "Be fogod fejezni a házi feladatot.",
+        "en": "You are going to finish the homework.",
+        "es": "Vas a terminar la tarea.",
+        "de": "Du wirst die Hausaufgabe beenden."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ő / Ön",
+            "en": "he/she/you (usted)",
+            "es": "él/ella/usted",
+            "de": "er/sie/Sie"
+          },
+          "wrong": {
+            "hu": "Ha él/ella lenne, 'Va a terminar la tarea' állna, azaz Ő fogja befejezni a házi feladatot, nem te.",
+            "en": "If it were él/ella, it would say 'Va a terminar la tarea', meaning HE/SHE is going to finish the homework, not you.",
+            "es": "Si fuera él/ella, diría 'Va a terminar la tarea', o sea que ÉL/ELLA va a terminarla, no tú.",
+            "de": "Wäre es él/ella, hieße es 'Va a terminar la tarea', also wird ER/SIE die Hausaufgabe beenden, nicht du."
+          }
+        },
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          },
+          "wrong": {
+            "hu": "Ha ellos lenne, 'Van a terminar la tarea' állna, azaz ŐK fogják befejezni, nem te egyedül.",
+            "en": "If it were ellos, it would say 'Van a terminar la tarea', meaning THEY are going to finish it, not just you.",
+            "es": "Si fuera ellos, diría 'Van a terminar la tarea', o sea que ELLOS van a terminarla, no solo tú.",
+            "de": "Wäre es ellos, hieße es 'Van a terminar la tarea', also werden SIE sie beenden, nicht nur du."
+          }
+        }
+      ],
+      "correctIndex": 1
     },
     {
-      "id": "ir-form-09",
-      "kind": "form",
-      "verb": "ir a + infinitivo",
-      "person": "él/ella/usted",
-      "answer": "va a",
-      "table": "ir-a-presente"
+      "kind": "why",
+      "id": "iai-why-03",
+      "es": "Va a trabajar mañana.",
+      "tr": {
+        "hu": "Holnap fog dolgozni.",
+        "en": "He is going to work tomorrow.",
+        "es": "Va a trabajar mañana.",
+        "de": "Er wird morgen arbeiten."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          },
+          "wrong": {
+            "hu": "Ha yo lenne, 'Voy a trabajar mañana' állna, azaz ÉN fogok dolgozni holnap, nem ő.",
+            "en": "If it were yo, it would say 'Voy a trabajar mañana', meaning I am going to work tomorrow, not him.",
+            "es": "Si fuera yo, diría 'Voy a trabajar mañana', o sea que YO voy a trabajar, no él.",
+            "de": "Wäre es yo, hieße es 'Voy a trabajar mañana', also werde ICH morgen arbeiten, nicht er."
+          }
+        },
+        {
+          "text": {
+            "hu": "ő / Ön",
+            "en": "he/she/you (usted)",
+            "es": "él/ella/usted",
+            "de": "er/sie/Sie"
+          }
+        },
+        {
+          "text": {
+            "hu": "ti (vosotros, Spo.)",
+            "en": "you all (vosotros, Spain)",
+            "es": "vosotros",
+            "de": "ihr (vosotros, Spanien)"
+          },
+          "wrong": {
+            "hu": "Ha vosotros lenne, 'Vais a trabajar mañana' állna, azaz TI fogtok dolgozni, és ezt az alakot Mexikóban nem is használják.",
+            "en": "If it were vosotros, it would say 'Vais a trabajar mañana', meaning YOU ALL are going to work, and this form is not even used in Mexico.",
+            "es": "Si fuera vosotros, diría 'Vais a trabajar mañana', o sea que VOSOTROS vais a trabajar, y esa forma ni se usa en México.",
+            "de": "Wäre es vosotros, hieße es 'Vais a trabajar mañana', also werdet IHR arbeiten, und diese Form wird in Mexiko gar nicht benutzt."
+          }
+        }
+      ],
+      "correctIndex": 1
     },
     {
-      "id": "ir-form-10",
-      "kind": "form",
-      "verb": "ir a + infinitivo",
-      "person": "nosotros",
-      "answer": "vamos a",
-      "table": "ir-a-presente"
+      "kind": "why",
+      "id": "iai-why-04",
+      "es": "Vamos a salir temprano.",
+      "tr": {
+        "hu": "Korán fogunk elindulni.",
+        "en": "We are going to leave early.",
+        "es": "Vamos a salir temprano.",
+        "de": "Wir werden früh losgehen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          },
+          "wrong": {
+            "hu": "Ha ellos lenne, 'Van a salir temprano' állna, azaz ŐK fognak korán elindulni, nem mi.",
+            "en": "If it were ellos, it would say 'Van a salir temprano', meaning THEY are going to leave early, not us.",
+            "es": "Si fuera ellos, diría 'Van a salir temprano', o sea que ELLOS van a salir, no nosotros.",
+            "de": "Wäre es ellos, hieße es 'Van a salir temprano', also werden SIE früh losgehen, nicht wir."
+          }
+        },
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          },
+          "wrong": {
+            "hu": "Ha yo lenne, 'Voy a salir temprano' állna, azaz ÉN fogok korán elindulni, egyedül, nem mi, többen.",
+            "en": "If it were yo, it would say 'Voy a salir temprano', meaning I am going to leave early, alone, not us.",
+            "es": "Si fuera yo, diría 'Voy a salir temprano', o sea que YO voy a salir, solo, no nosotros.",
+            "de": "Wäre es yo, hieße es 'Voy a salir temprano', also werde ICH allein früh losgehen, nicht wir."
+          }
+        }
+      ],
+      "correctIndex": 0
     },
     {
-      "id": "ir-form-11",
-      "kind": "form",
-      "verb": "ir a + infinitivo",
-      "person": "vosotros",
-      "answer": "vais a",
-      "table": "ir-a-presente"
+      "kind": "why",
+      "id": "iai-why-05",
+      "es": "Vais a llegar tarde.",
+      "tr": {
+        "hu": "El fogtok késni.",
+        "en": "You all are going to arrive late.",
+        "es": "Vais a llegar tarde.",
+        "de": "Ihr werdet zu spät kommen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Vamos a llegar tarde' állna, azaz MI fogunk elkésni, nem ti.",
+            "en": "If it were nosotros, it would say 'Vamos a llegar tarde', meaning WE are going to be late, not you all.",
+            "es": "Si fuera nosotros, diría 'Vamos a llegar tarde', o sea que NOSOTROS vamos a llegar tarde, no vosotros.",
+            "de": "Wäre es nosotros, hieße es 'Vamos a llegar tarde', also werden WIR zu spät kommen, nicht ihr."
+          }
+        },
+        {
+          "text": {
+            "hu": "ti (vosotros, Spo.)",
+            "en": "you all (vosotros, Spain)",
+            "es": "vosotros",
+            "de": "ihr (vosotros, Spanien)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ő / Ön",
+            "en": "he/she/you (usted)",
+            "es": "él/ella/usted",
+            "de": "er/sie/Sie"
+          },
+          "wrong": {
+            "hu": "Ha él/ella lenne, 'Va a llegar tarde' állna, azaz Ő fog elkésni, egyedül, nem ti, többen.",
+            "en": "If it were él/ella, it would say 'Va a llegar tarde', meaning HE/SHE is going to be late, alone, not you all.",
+            "es": "Si fuera él/ella, diría 'Va a llegar tarde', o sea que ÉL/ELLA va a llegar tarde, solo, no vosotros.",
+            "de": "Wäre es él/ella, hieße es 'Va a llegar tarde', also wird ER/SIE allein zu spät kommen, nicht ihr."
+          }
+        }
+      ],
+      "correctIndex": 1
     },
     {
-      "id": "ir-form-12",
-      "kind": "form",
-      "verb": "ir a + infinitivo",
-      "person": "ellos/ellas/ustedes",
-      "answer": "van a",
-      "table": "ir-a-presente"
+      "kind": "why",
+      "id": "iai-why-06",
+      "es": "Van a viajar juntos.",
+      "tr": {
+        "hu": "Együtt fognak utazni.",
+        "en": "They are going to travel together.",
+        "es": "Van a viajar juntos.",
+        "de": "Sie werden zusammen reisen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          },
+          "wrong": {
+            "hu": "Ha tú lenne, 'Vas a viajar juntos' állna, azaz TE fogsz utazni, nem ők.",
+            "en": "If it were tú, it would say 'Vas a viajar juntos', meaning YOU are going to travel, not them.",
+            "es": "Si fuera tú, diría 'Vas a viajar juntos', o sea que TÚ vas a viajar, no ellos.",
+            "de": "Wäre es tú, hieße es 'Vas a viajar juntos', also wirst DU reisen, nicht sie."
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Vamos a viajar juntos' állna, azaz MI fogunk utazni, nem ők.",
+            "en": "If it were nosotros, it would say 'Vamos a viajar juntos', meaning WE are going to travel, not them.",
+            "es": "Si fuera nosotros, diría 'Vamos a viajar juntos', o sea que NOSOTROS vamos a viajar, no ellos.",
+            "de": "Wäre es nosotros, hieße es 'Vamos a viajar juntos', also werden WIR reisen, nicht sie."
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "iai-why-07",
+      "es": "No van a venir hoy.",
+      "tr": {
+        "hu": "Ma nem fognak jönni.",
+        "en": "They are not going to come today.",
+        "es": "No van a venir hoy.",
+        "de": "Sie werden heute nicht kommen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'No vamos a venir hoy' állna, azaz MI nem fogunk jönni, nem ők.",
+            "en": "If it were nosotros, it would say 'No vamos a venir hoy', meaning WE are not going to come, not them.",
+            "es": "Si fuera nosotros, diría 'No vamos a venir hoy', o sea que NOSOTROS no vamos a venir, no ellos.",
+            "de": "Wäre es nosotros, hieße es 'No vamos a venir hoy', also werden WIR nicht kommen, nicht sie."
+          }
+        },
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          },
+          "wrong": {
+            "hu": "Ha yo lenne, 'No voy a venir hoy' állna, azaz ÉN nem fogok jönni, egyedül, nem ők, többen.",
+            "en": "If it were yo, it would say 'No voy a venir hoy', meaning I am not going to come, alone, not them.",
+            "es": "Si fuera yo, diría 'No voy a venir hoy', o sea que YO no voy a venir, solo, no ellos.",
+            "de": "Wäre es yo, hieße es 'No voy a venir hoy', also werde ICH allein nicht kommen, nicht sie."
+          }
+        }
+      ],
+      "correctIndex": 0
     }
   ]
 }

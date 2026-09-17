@@ -692,27 +692,27 @@
     },
     {
       "id": "eg-12",
-      "sentence": "Yo no ___ durmiendo, estoy despierto.",
+      "sentence": "Yo no ___ durmiendo, sino despierto.",
       "options": ["estoy", "estás", "está"],
       "correct": 0,
       "why": {
-        "hu": "Yo alanyhoz estoy tartozik, tagadásban is a no után, az ige elé kerül: yo no estoy durmiendo.",
-        "en": "The subject yo takes estoy, and even negated it goes after no, before the verb: yo no estoy durmiendo.",
-        "es": "Al sujeto yo le corresponde estoy, y en negativo va después de no, antes del verbo: yo no estoy durmiendo.",
-        "de": "Zum Subjekt yo gehört estoy, auch verneint steht es nach no, vor dem Verb: yo no estoy durmiendo."
+        "hu": "Yo alanyhoz estoy tartozik, tagadásban is a no után, az ige elé kerül: yo no estoy durmiendo, sino despierto.",
+        "en": "The subject yo takes estoy, and even negated it goes after no, before the verb: yo no estoy durmiendo, sino despierto.",
+        "es": "Al sujeto yo le corresponde estoy, y en negativo va después de no, antes del verbo: yo no estoy durmiendo, sino despierto.",
+        "de": "Zum Subjekt yo gehört estoy, auch verneint steht es nach no, vor dem Verb: yo no estoy durmiendo, sino despierto."
       },
       "wrong": {
         "estás": {
-          "hu": "Az \"estás\" a tú alakja, nem illik a yo alanyhoz; helyesen: Yo no estoy durmiendo, estoy despierto.",
-          "en": "\"Estás\" is the tú form, it does not fit the subject yo; correctly: Yo no estoy durmiendo, estoy despierto.",
-          "es": "\"Estás\" es la forma de tú, no encaja con el sujeto yo; correctamente: Yo no estoy durmiendo, estoy despierto.",
-          "de": "\"Estás\" ist die tú-Form, sie passt nicht zum Subjekt yo; richtig: Yo no estoy durmiendo, estoy despierto."
+          "hu": "Az \"estás\" a tú alakja, nem illik a yo alanyhoz; helyesen: Yo no estoy durmiendo, sino despierto.",
+          "en": "\"Estás\" is the tú form, it does not fit the subject yo; correctly: Yo no estoy durmiendo, sino despierto.",
+          "es": "\"Estás\" es la forma de tú, no encaja con el sujeto yo; correctamente: Yo no estoy durmiendo, sino despierto.",
+          "de": "\"Estás\" ist die tú-Form, sie passt nicht zum Subjekt yo; richtig: Yo no estoy durmiendo, sino despierto."
         },
         "está": {
-          "hu": "Az \"está\" harmadik személy alakja, nem illik a yo alanyhoz; helyesen: Yo no estoy durmiendo, estoy despierto.",
-          "en": "\"Está\" is the third person form, it does not fit the subject yo; correctly: Yo no estoy durmiendo, estoy despierto.",
-          "es": "\"Está\" es la forma de tercera persona, no encaja con el sujeto yo; correctamente: Yo no estoy durmiendo, estoy despierto.",
-          "de": "\"Está\" ist die Form der dritten Person, sie passt nicht zum Subjekt yo; richtig: Yo no estoy durmiendo, estoy despierto."
+          "hu": "Az \"está\" harmadik személy alakja, nem illik a yo alanyhoz; helyesen: Yo no estoy durmiendo, sino despierto.",
+          "en": "\"Está\" is the third person form, it does not fit the subject yo; correctly: Yo no estoy durmiendo, sino despierto.",
+          "es": "\"Está\" es la forma de tercera persona, no encaja con el sujeto yo; correctamente: Yo no estoy durmiendo, sino despierto.",
+          "de": "\"Está\" ist die Form der dritten Person, sie passt nicht zum Subjekt yo; richtig: Yo no estoy durmiendo, sino despierto."
         }
       },
       "examples": ["No estoy durmiendo.", "Estoy despierto todavía."]
@@ -824,6 +824,356 @@
       "person": "ellos/ellas/ustedes",
       "answer": "están",
       "table": "estar-presente"
+    },
+    {
+      "kind": "why",
+      "id": "eg-why-01",
+      "es": "Estoy hablando por teléfono.",
+      "tr": {
+        "hu": "Éppen telefonálok.",
+        "en": "I am talking on the phone.",
+        "es": "Estoy hablando por teléfono.",
+        "de": "Ich telefoniere gerade."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "-ar ige: -ando",
+            "en": "-ar verb: -ando",
+            "es": "verbo -ar: -ando",
+            "de": "-ar-Verb: -ando"
+          }
+        },
+        {
+          "text": {
+            "hu": "-er/-ir ige: -iendo",
+            "en": "-er/-ir verb: -iendo",
+            "es": "verbo -er/-ir: -iendo",
+            "de": "-er/-ir-Verb: -iendo"
+          },
+          "wrong": {
+            "hu": "A -iendo végződés -er/-ir igékre vonatkozik (comiendo, viviendo); a hablar -ar ige, aminek gerundiója -ando: hablando.",
+            "en": "The -iendo ending is for -er/-ir verbs (comiendo, viviendo); hablar is an -ar verb, whose gerund is -ando: hablando.",
+            "es": "La terminación -iendo es de los verbos -er/-ir (comiendo, viviendo); hablar es un verbo -ar, cuyo gerundio es -ando: hablando.",
+            "de": "Die Endung -iendo gilt für -er/-ir-Verben (comiendo, viviendo); hablar ist ein -ar-Verb, dessen Gerundium -ando ist: hablando."
+          }
+        },
+        {
+          "text": {
+            "hu": "rendhagyó gerundio (y vagy tőváltás)",
+            "en": "irregular gerund (y or stem change)",
+            "es": "gerundio irregular (y o cambio de raíz)",
+            "de": "unregelmäßiges Gerundium (y oder Stammwechsel)"
+          },
+          "wrong": {
+            "hu": "A rendhagyó gerundio olyan igékre vonatkozik, mint leer (leyendo) vagy dormir (durmiendo); a hablar teljesen szabályos: hablando.",
+            "en": "The irregular gerund is for verbs like leer (leyendo) or dormir (durmiendo); hablar is completely regular: hablando.",
+            "es": "El gerundio irregular es de verbos como leer (leyendo) o dormir (durmiendo); hablar es totalmente regular: hablando.",
+            "de": "Das unregelmäßige Gerundium betrifft Verben wie leer (leyendo) oder dormir (durmiendo); hablar ist völlig regelmäßig: hablando."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "eg-why-02",
+      "es": "Están viviendo en México.",
+      "tr": {
+        "hu": "Éppen Mexikóban élnek.",
+        "en": "They are living in Mexico right now.",
+        "es": "Están viviendo en México.",
+        "de": "Sie leben gerade in Mexiko."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "-ar ige: -ando",
+            "en": "-ar verb: -ando",
+            "es": "verbo -ar: -ando",
+            "de": "-ar-Verb: -ando"
+          },
+          "wrong": {
+            "hu": "A -ando végződés -ar igékre vonatkozik (hablando, trabajando); a vivir -ir ige, aminek gerundiója -iendo: viviendo.",
+            "en": "The -ando ending is for -ar verbs (hablando, trabajando); vivir is an -ir verb, whose gerund is -iendo: viviendo.",
+            "es": "La terminación -ando es de los verbos -ar (hablando, trabajando); vivir es un verbo -ir, cuyo gerundio es -iendo: viviendo.",
+            "de": "Die Endung -ando gilt für -ar-Verben (hablando, trabajando); vivir ist ein -ir-Verb, dessen Gerundium -iendo ist: viviendo."
+          }
+        },
+        {
+          "text": {
+            "hu": "-er/-ir ige: -iendo",
+            "en": "-er/-ir verb: -iendo",
+            "es": "verbo -er/-ir: -iendo",
+            "de": "-er/-ir-Verb: -iendo"
+          }
+        },
+        {
+          "text": {
+            "hu": "rendhagyó gerundio (y vagy tőváltás)",
+            "en": "irregular gerund (y or stem change)",
+            "es": "gerundio irregular (y o cambio de raíz)",
+            "de": "unregelmäßiges Gerundium (y oder Stammwechsel)"
+          },
+          "wrong": {
+            "hu": "A rendhagyó gerundio olyan igékre vonatkozik, mint leer (leyendo) vagy decir (diciendo); a vivir teljesen szabályos: viviendo.",
+            "en": "The irregular gerund is for verbs like leer (leyendo) or decir (diciendo); vivir is completely regular: viviendo.",
+            "es": "El gerundio irregular es de verbos como leer (leyendo) o decir (diciendo); vivir es totalmente regular: viviendo.",
+            "de": "Das unregelmäßige Gerundium betrifft Verben wie leer (leyendo) oder decir (diciendo); vivir ist völlig regelmäßig: viviendo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "eg-why-03",
+      "es": "Estoy leyendo un libro.",
+      "tr": {
+        "hu": "Éppen olvasok egy könyvet.",
+        "en": "I am reading a book.",
+        "es": "Estoy leyendo un libro.",
+        "de": "Ich lese gerade ein Buch."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "-ar ige: -ando",
+            "en": "-ar verb: -ando",
+            "es": "verbo -ar: -ando",
+            "de": "-ar-Verb: -ando"
+          },
+          "wrong": {
+            "hu": "A -ando végződés -ar igékre vonatkozik; a leer -er ige, aminek TÖVE két magánhangzó közé egy y-t szúr be, ez rendhagyó: leyendo, nem leando.",
+            "en": "The -ando ending is for -ar verbs; leer is an -er verb whose STEM inserts a y between two vowels, this is irregular: leyendo, not leando.",
+            "es": "La terminación -ando es de los verbos -ar; leer es un verbo -er cuya RAÍZ inserta una y entre dos vocales, esto es irregular: leyendo, no leando.",
+            "de": "Die Endung -ando gilt für -ar-Verben; leer ist ein -er-Verb, dessen STAMM ein y zwischen zwei Vokale einfügt, das ist unregelmäßig: leyendo, nicht leando."
+          }
+        },
+        {
+          "text": {
+            "hu": "-er/-ir ige: -iendo",
+            "en": "-er/-ir verb: -iendo",
+            "es": "verbo -er/-ir: -iendo",
+            "de": "-er/-ir-Verb: -iendo"
+          },
+          "wrong": {
+            "hu": "A sima -iendo végződés olyan igékre vonatkozik, mint comer (comiendo); a leer tövében viszont két magánhangzó találkozik, ezért egy y kerül közéjük: leyendo, nem leiendo.",
+            "en": "The plain -iendo ending is for verbs like comer (comiendo); leer's stem has two vowels meeting, so a y goes between them: leyendo, not leiendo.",
+            "es": "La terminación -iendo simple es de verbos como comer (comiendo); en la raíz de leer se encuentran dos vocales, por eso se inserta una y: leyendo, no leiendo.",
+            "de": "Die einfache Endung -iendo gilt für Verben wie comer (comiendo); im Stamm von leer treffen zwei Vokale aufeinander, deshalb kommt ein y dazwischen: leyendo, nicht leiendo."
+          }
+        },
+        {
+          "text": {
+            "hu": "rendhagyó gerundio (y vagy tőváltás)",
+            "en": "irregular gerund (y or stem change)",
+            "es": "gerundio irregular (y o cambio de raíz)",
+            "de": "unregelmäßiges Gerundium (y oder Stammwechsel)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "eg-why-04",
+      "es": "El bebé está durmiendo.",
+      "tr": {
+        "hu": "A baba éppen alszik.",
+        "en": "The baby is sleeping.",
+        "es": "El bebé está durmiendo.",
+        "de": "Das Baby schläft gerade."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "rendhagyó gerundio (y vagy tőváltás)",
+            "en": "irregular gerund (y or stem change)",
+            "es": "gerundio irregular (y o cambio de raíz)",
+            "de": "unregelmäßiges Gerundium (y oder Stammwechsel)"
+          }
+        },
+        {
+          "text": {
+            "hu": "-er/-ir ige: -iendo",
+            "en": "-er/-ir verb: -iendo",
+            "es": "verbo -er/-ir: -iendo",
+            "de": "-er/-ir-Verb: -iendo"
+          },
+          "wrong": {
+            "hu": "A sima -iendo végződés olyan igékre vonatkozik, mint vivir (viviendo); a dormir töve viszont megváltozik (o→u) a gerundióban, ez rendhagyó: durmiendo, nem dormiendo.",
+            "en": "The plain -iendo ending is for verbs like vivir (viviendo); dormir's stem instead changes (o→u) in the gerund, this is irregular: durmiendo, not dormiendo.",
+            "es": "La terminación -iendo simple es de verbos como vivir (viviendo); la raíz de dormir en cambio cambia (o→u) en el gerundio, esto es irregular: durmiendo, no dormiendo.",
+            "de": "Die einfache Endung -iendo gilt für Verben wie vivir (viviendo); der Stamm von dormir ändert sich dagegen (o→u) im Gerundium, das ist unregelmäßig: durmiendo, nicht dormiendo."
+          }
+        },
+        {
+          "text": {
+            "hu": "-ar ige: -ando",
+            "en": "-ar verb: -ando",
+            "es": "verbo -ar: -ando",
+            "de": "-ar-Verb: -ando"
+          },
+          "wrong": {
+            "hu": "A -ando végződés -ar igékre vonatkozik; a dormir -ir ige, aminek töve o→u tőváltást kap a gerundióban: durmiendo.",
+            "en": "The -ando ending is for -ar verbs; dormir is an -ir verb whose stem takes an o→u change in the gerund: durmiendo.",
+            "es": "La terminación -ando es de los verbos -ar; dormir es un verbo -ir cuya raíz cambia o→u en el gerundio: durmiendo.",
+            "de": "Die Endung -ando gilt für -ar-Verben; dormir ist ein -ir-Verb, dessen Stamm im Gerundium einen o→u-Wechsel bekommt: durmiendo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "eg-why-05",
+      "es": "Estamos trabajando mucho hoy.",
+      "tr": {
+        "hu": "Sokat dolgozunk ma.",
+        "en": "We are working a lot today.",
+        "es": "Estamos trabajando mucho hoy.",
+        "de": "Wir arbeiten heute viel."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "-ar ige: -ando",
+            "en": "-ar verb: -ando",
+            "es": "verbo -ar: -ando",
+            "de": "-ar-Verb: -ando"
+          }
+        },
+        {
+          "text": {
+            "hu": "-er/-ir ige: -iendo",
+            "en": "-er/-ir verb: -iendo",
+            "es": "verbo -er/-ir: -iendo",
+            "de": "-er/-ir-Verb: -iendo"
+          },
+          "wrong": {
+            "hu": "A -iendo végződés -er/-ir igékre vonatkozik (comiendo, viviendo); a trabajar -ar ige, aminek gerundiója -ando: trabajando.",
+            "en": "The -iendo ending is for -er/-ir verbs (comiendo, viviendo); trabajar is an -ar verb, whose gerund is -ando: trabajando.",
+            "es": "La terminación -iendo es de los verbos -er/-ir (comiendo, viviendo); trabajar es un verbo -ar, cuyo gerundio es -ando: trabajando.",
+            "de": "Die Endung -iendo gilt für -er/-ir-Verben (comiendo, viviendo); trabajar ist ein -ar-Verb, dessen Gerundium -ando ist: trabajando."
+          }
+        },
+        {
+          "text": {
+            "hu": "rendhagyó gerundio (y vagy tőváltás)",
+            "en": "irregular gerund (y or stem change)",
+            "es": "gerundio irregular (y o cambio de raíz)",
+            "de": "unregelmäßiges Gerundium (y oder Stammwechsel)"
+          },
+          "wrong": {
+            "hu": "A rendhagyó gerundio olyan igékre vonatkozik, mint leer vagy dormir; a trabajar teljesen szabályos -ar ige: trabajando.",
+            "en": "The irregular gerund is for verbs like leer or dormir; trabajar is a completely regular -ar verb: trabajando.",
+            "es": "El gerundio irregular es de verbos como leer o dormir; trabajar es un verbo -ar totalmente regular: trabajando.",
+            "de": "Das unregelmäßige Gerundium betrifft Verben wie leer oder dormir; trabajar ist ein völlig regelmäßiges -ar-Verb: trabajando."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "eg-why-06",
+      "es": "¿Qué estás diciendo?",
+      "tr": {
+        "hu": "Mit mondasz éppen?",
+        "en": "What are you saying right now?",
+        "es": "¿Qué estás diciendo?",
+        "de": "Was sagst du gerade?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "-er/-ir ige: -iendo",
+            "en": "-er/-ir verb: -iendo",
+            "es": "verbo -er/-ir: -iendo",
+            "de": "-er/-ir-Verb: -iendo"
+          },
+          "wrong": {
+            "hu": "A sima -iendo végződés olyan igékre vonatkozik, mint vivir (viviendo); a decir töve viszont megváltozik (e→i) a gerundióban, ez rendhagyó: diciendo, nem deciendo.",
+            "en": "The plain -iendo ending is for verbs like vivir (viviendo); decir's stem instead changes (e→i) in the gerund, this is irregular: diciendo, not deciendo.",
+            "es": "La terminación -iendo simple es de verbos como vivir (viviendo); la raíz de decir en cambio cambia (e→i) en el gerundio, esto es irregular: diciendo, no deciendo.",
+            "de": "Die einfache Endung -iendo gilt für Verben wie vivir (viviendo); der Stamm von decir ändert sich dagegen (e→i) im Gerundium, das ist unregelmäßig: diciendo, nicht deciendo."
+          }
+        },
+        {
+          "text": {
+            "hu": "-ar ige: -ando",
+            "en": "-ar verb: -ando",
+            "es": "verbo -ar: -ando",
+            "de": "-ar-Verb: -ando"
+          },
+          "wrong": {
+            "hu": "A -ando végződés -ar igékre vonatkozik; a decir -ir ige, aminek töve e→i tőváltást kap a gerundióban: diciendo.",
+            "en": "The -ando ending is for -ar verbs; decir is an -ir verb whose stem takes an e→i change in the gerund: diciendo.",
+            "es": "La terminación -ando es de los verbos -ar; decir es un verbo -ir cuya raíz cambia e→i en el gerundio: diciendo.",
+            "de": "Die Endung -ando gilt für -ar-Verben; decir ist ein -ir-Verb, dessen Stamm im Gerundium einen e→i-Wechsel bekommt: diciendo."
+          }
+        },
+        {
+          "text": {
+            "hu": "rendhagyó gerundio (y vagy tőváltás)",
+            "en": "irregular gerund (y or stem change)",
+            "es": "gerundio irregular (y o cambio de raíz)",
+            "de": "unregelmäßiges Gerundium (y oder Stammwechsel)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "eg-why-07",
+      "es": "Están comiendo.",
+      "tr": {
+        "hu": "Éppen esznek.",
+        "en": "They are eating.",
+        "es": "Están comiendo.",
+        "de": "Sie essen gerade."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "-ar ige: -ando",
+            "en": "-ar verb: -ando",
+            "es": "verbo -ar: -ando",
+            "de": "-ar-Verb: -ando"
+          },
+          "wrong": {
+            "hu": "A -ando végződés -ar igékre vonatkozik (hablando, trabajando); a comer -er ige, aminek gerundiója -iendo: comiendo.",
+            "en": "The -ando ending is for -ar verbs (hablando, trabajando); comer is an -er verb, whose gerund is -iendo: comiendo.",
+            "es": "La terminación -ando es de los verbos -ar (hablando, trabajando); comer es un verbo -er, cuyo gerundio es -iendo: comiendo.",
+            "de": "Die Endung -ando gilt für -ar-Verben (hablando, trabajando); comer ist ein -er-Verb, dessen Gerundium -iendo ist: comiendo."
+          }
+        },
+        {
+          "text": {
+            "hu": "-er/-ir ige: -iendo",
+            "en": "-er/-ir verb: -iendo",
+            "es": "verbo -er/-ir: -iendo",
+            "de": "-er/-ir-Verb: -iendo"
+          }
+        },
+        {
+          "text": {
+            "hu": "rendhagyó gerundio (y vagy tőváltás)",
+            "en": "irregular gerund (y or stem change)",
+            "es": "gerundio irregular (y o cambio de raíz)",
+            "de": "unregelmäßiges Gerundium (y oder Stammwechsel)"
+          },
+          "wrong": {
+            "hu": "A rendhagyó gerundio olyan igékre vonatkozik, mint leer (leyendo) vagy dormir (durmiendo); a comer teljesen szabályos: comiendo.",
+            "en": "The irregular gerund is for verbs like leer (leyendo) or dormir (durmiendo); comer is completely regular: comiendo.",
+            "es": "El gerundio irregular es de verbos como leer (leyendo) o dormir (durmiendo); comer es totalmente regular: comiendo.",
+            "de": "Das unregelmäßige Gerundium betrifft Verben wie leer (leyendo) oder dormir (durmiendo); comer ist völlig regelmäßig: comiendo."
+          }
+        }
+      ],
+      "correctIndex": 1
     }
   ]
 }

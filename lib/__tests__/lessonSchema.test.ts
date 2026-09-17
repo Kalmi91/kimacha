@@ -141,6 +141,48 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
     }
   });
 
+  // TASK-8 (D4, FB288): "miért ez a mondat", a 3. audit-pont szabályai, plusz:
+  // a jó opció szövege nem szerepel szó szerint a mondatban (különben a
+  // feladat elárulná magát).
+  it('why items (once authored) are 6-8, each with 3 unique-hu options and a translated sentence', () => {
+    const whyItems = lesson.items.filter((i) => i.kind === 'why');
+    // TASK-8: a tartalom leckénként, adagolva kerül be a kódot lezáró commit
+    // UTÁN (B szakasz); egy még érintetlen leckén 0 why item van, ez rendben.
+    if (whyItems.length === 0) return;
+    expect(whyItems.length).toBeGreaterThanOrEqual(6);
+    expect(whyItems.length).toBeLessThanOrEqual(8);
+    const seenIds = new Set<string>();
+    for (const item of whyItems) {
+      if (item.kind !== 'why') continue;
+      expect(seenIds.has(item.id)).toBe(false);
+      seenIds.add(item.id);
+
+      expect(item.es.trim().length).toBeGreaterThan(0);
+      expect(item.tr.es).toBe(item.es);
+      for (const lang of LANGS) expect(item.tr[lang]).toBeTruthy();
+
+      expect(item.options).toHaveLength(3);
+      expect(item.correctIndex).toBeGreaterThanOrEqual(0);
+      expect(item.correctIndex).toBeLessThan(3);
+
+      const huTexts = item.options.map((o) => o.text.hu);
+      expect(new Set(huTexts).size).toBe(3);
+
+      const esLower = item.es.toLowerCase();
+      item.options.forEach((opt, i) => {
+        for (const lang of LANGS) expect(opt.text[lang]).toBeTruthy();
+        if (i === item.correctIndex && opt.text.es) {
+          // A jó opció (a szabály neve) ne szerepeljen szó szerint a mondatban.
+          expect(esLower).not.toContain(opt.text.es.toLowerCase());
+        }
+        if (i !== item.correctIndex) {
+          expect(opt.wrong).toBeTruthy();
+          for (const lang of LANGS) expect(opt.wrong?.[lang]).toBeTruthy();
+        }
+      });
+    }
+  });
+
   it("every gap item's wrong explanations are real sentences in 4 languages", () => {
     const gapItems = lesson.items.filter((i): i is GrammarGapItem => i.kind === undefined) as GrammarGapItem[];
     expect(gapItems.length).toBeGreaterThanOrEqual(10);

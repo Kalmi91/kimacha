@@ -1342,6 +1342,356 @@
       "person": "ellos/ellas/ustedes",
       "answer": "van",
       "table": "presente-ser-ir"
+    },
+    {
+      "kind": "why",
+      "id": "pi-why-01",
+      "es": "Hago la comida los domingos.",
+      "tr": {
+        "hu": "Vasárnaponként én készítem az ételt.",
+        "en": "I make the food on Sundays.",
+        "es": "Hago la comida los domingos.",
+        "de": "Ich mache sonntags das Essen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "-go csoport",
+            "en": "-go group",
+            "es": "grupo -go",
+            "de": "-go-Gruppe"
+          }
+        },
+        {
+          "text": {
+            "hu": "-zco csoport",
+            "en": "-zco group",
+            "es": "grupo -zco",
+            "de": "-zco-Gruppe"
+          },
+          "wrong": {
+            "hu": "A -zco csoport a -cer/-cir végű igékre vonatkozik (pl. conozco); a hacer nem ilyen, a yo-alakja \"hago\", a -go csoportba tartozik.",
+            "en": "The -zco group is for verbs ending in -cer/-cir (e.g. conozco); hacer is not one of these, its yo form \"hago\" belongs to the -go group.",
+            "es": "El grupo -zco es para verbos en -cer/-cir (p. ej. conozco); hacer no es de esos, su forma de yo \"hago\" es del grupo -go.",
+            "de": "Die -zco-Gruppe gilt für Verben auf -cer/-cir (z. B. conozco); hacer gehört nicht dazu, seine yo-Form \"hago\" gehört zur -go-Gruppe."
+          }
+        },
+        {
+          "text": {
+            "hu": "kettős rendhagyó",
+            "en": "doubly irregular",
+            "es": "doblemente irregular",
+            "de": "doppelt unregelmäßig"
+          },
+          "wrong": {
+            "hu": "Kettős rendhagyónál más alakok is tőt váltanak (pl. tengo, tienes); a hacernek csak a yo-alakja lóg ki, minden más alak szabályos.",
+            "en": "A doubly irregular verb changes stem in other forms too (e.g. tengo, tienes); hacer only has an odd yo form, every other form is regular.",
+            "es": "Un verbo doblemente irregular cambia de raíz también en otras formas (p. ej. tengo, tienes); hacer solo tiene rara la forma de yo, las demás son regulares.",
+            "de": "Ein doppelt unregelmäßiges Verb ändert den Stamm auch in anderen Formen (z. B. tengo, tienes); bei hacer ist nur die yo-Form anders, alle anderen sind regelmäßig."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pi-why-02",
+      "es": "Conozco a tu hermano.",
+      "tr": {
+        "hu": "Ismerem a testvéredet.",
+        "en": "I know your brother.",
+        "es": "Conozco a tu hermano.",
+        "de": "Ich kenne deinen Bruder."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "-go csoport",
+            "en": "-go group",
+            "es": "grupo -go",
+            "de": "-go-Gruppe"
+          },
+          "wrong": {
+            "hu": "A -go csoport olyan igékre vonatkozik, mint hago vagy salgo; a conocer yo-alakja \"conozco\", -zco-ra végződik, nem -go-ra.",
+            "en": "The -go group is for verbs like hago or salgo; conocer's yo form is \"conozco\", ending in -zco, not -go.",
+            "es": "El grupo -go es para verbos como hago o salgo; la forma de yo de conocer es \"conozco\", termina en -zco, no en -go.",
+            "de": "Die -go-Gruppe gilt für Verben wie hago oder salgo; die yo-Form von conocer ist \"conozco\", sie endet auf -zco, nicht auf -go."
+          }
+        },
+        {
+          "text": {
+            "hu": "-zco csoport",
+            "en": "-zco group",
+            "es": "grupo -zco",
+            "de": "-zco-Gruppe"
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszavas kivétel",
+            "en": "one-off oddity",
+            "es": "rareza suelta",
+            "de": "Einzelfall"
+          },
+          "wrong": {
+            "hu": "Az egyszavas kivétel olyan igékre vonatkozik, mint dar (doy) vagy saber (sé); a conocer szabályos mintát követ a -cer igék körében, nem egyedi kivétel.",
+            "en": "The one-off oddity applies to verbs like dar (doy) or saber (sé); conocer follows a regular pattern among -cer verbs, it is not a unique exception.",
+            "es": "La rareza suelta se aplica a verbos como dar (doy) o saber (sé); conocer sigue un patrón regular entre los verbos en -cer, no es una excepción única.",
+            "de": "Der Einzelfall betrifft Verben wie dar (doy) oder saber (sé); conocer folgt einem regelmäßigen Muster unter den -cer-Verben, es ist keine einzigartige Ausnahme."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pi-why-03",
+      "es": "Tienes mucho trabajo esta semana.",
+      "tr": {
+        "hu": "Sok munkád van ezen a héten.",
+        "en": "You have a lot of work this week.",
+        "es": "Tienes mucho trabajo esta semana.",
+        "de": "Du hast diese Woche viel Arbeit."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "-go csoport",
+            "en": "-go group",
+            "es": "grupo -go",
+            "de": "-go-Gruppe"
+          },
+          "wrong": {
+            "hu": "A -go csoportnál csak a yo-alak lóg ki; a tenernél a tú-alak (tienes) is tőt vált, ez már kettős rendhagyóság.",
+            "en": "In the -go group only the yo form is odd; with tener the tú form (tienes) also changes stem, that is doubly irregular.",
+            "es": "En el grupo -go solo cambia la forma de yo; en tener la forma de tú (tienes) también cambia de raíz, eso es doblemente irregular.",
+            "de": "In der -go-Gruppe ist nur die yo-Form anders; bei tener ändert sich auch die tú-Form (tienes), das ist doppelt unregelmäßig."
+          }
+        },
+        {
+          "text": {
+            "hu": "kettős rendhagyó",
+            "en": "doubly irregular",
+            "es": "doblemente irregular",
+            "de": "doppelt unregelmäßig"
+          }
+        },
+        {
+          "text": {
+            "hu": "nosotros: szabályos marad",
+            "en": "nosotros stays regular",
+            "es": "nosotros sigue regular",
+            "de": "nosotros bleibt regelmäßig"
+          },
+          "wrong": {
+            "hu": "A nosotros-horgony arról szól, hogy a mi-alak szabályos marad (tenemos); ez a mondat viszont a tú-alakról (tienes) szól, ami tőváltós.",
+            "en": "The nosotros anchor is about the we-form staying regular (tenemos); this sentence is about the tú form (tienes), which has a stem change.",
+            "es": "El ancla de nosotros habla de que la forma de nosotros queda regular (tenemos); esta frase es sobre la forma de tú (tienes), que diptonga.",
+            "de": "Der nosotros-Anker besagt, dass die wir-Form regelmäßig bleibt (tenemos); dieser Satz betrifft aber die tú-Form (tienes), die den Stamm wechselt."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pi-why-04",
+      "es": "Vamos a la escuela en autobús.",
+      "tr": {
+        "hu": "Busszal megyünk az iskolába.",
+        "en": "We go to school by bus.",
+        "es": "Vamos a la escuela en autobús.",
+        "de": "Wir fahren mit dem Bus zur Schule."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kettős rendhagyó",
+            "en": "doubly irregular",
+            "es": "doblemente irregular",
+            "de": "doppelt unregelmäßig"
+          },
+          "wrong": {
+            "hu": "Kettős rendhagyónál a szabályos alaphoz képest csak néhány alak tér el; az ir minden alakja teljesen más tövet használ (voy, vas, va, vamos), ez már teljes rendhagyóság.",
+            "en": "A doubly irregular verb only deviates in a few forms from the regular base; every form of ir uses a completely different stem (voy, vas, va, vamos), that is fully irregular.",
+            "es": "Un verbo doblemente irregular solo se aparta en algunas formas de la base regular; todas las formas de ir usan una raíz totalmente distinta (voy, vas, va, vamos), eso es totalmente irregular.",
+            "de": "Ein doppelt unregelmäßiges Verb weicht nur in einigen Formen von der regelmäßigen Basis ab; jede Form von ir hat einen ganz anderen Stamm (voy, vas, va, vamos), das ist ganz unregelmäßig."
+          }
+        },
+        {
+          "text": {
+            "hu": "teljesen rendhagyó",
+            "en": "fully irregular",
+            "es": "totalmente irregular",
+            "de": "ganz unregelmäßig"
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszavas kivétel",
+            "en": "one-off oddity",
+            "es": "rareza suelta",
+            "de": "Einzelfall"
+          },
+          "wrong": {
+            "hu": "Az egyszavas kivétel csak a yo-alakot érinti; az ir viszont MINDEN alakban eltér a szabályos -ir mintától, nem csak egyben.",
+            "en": "The one-off oddity only affects the yo form; ir instead deviates from the regular -ir pattern in EVERY form, not just one.",
+            "es": "La rareza suelta afecta solo a la forma de yo; ir, en cambio, se aparta del patrón regular -ir en TODAS las formas, no solo en una.",
+            "de": "Der Einzelfall betrifft nur die yo-Form; ir weicht dagegen in JEDER Form vom regelmäßigen -ir-Muster ab, nicht nur in einer."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pi-why-05",
+      "es": "No sé la respuesta.",
+      "tr": {
+        "hu": "Nem tudom a választ.",
+        "en": "I don't know the answer.",
+        "es": "No sé la respuesta.",
+        "de": "Ich weiß die Antwort nicht."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "-zco csoport",
+            "en": "-zco group",
+            "es": "grupo -zco",
+            "de": "-zco-Gruppe"
+          },
+          "wrong": {
+            "hu": "A -zco csoport a -cer/-cir végű igékre vonatkozik; a saber nem ilyen végű ige, a yo-alakja \"sé\", ami egyszavas kivétel.",
+            "en": "The -zco group is for verbs ending in -cer/-cir; saber does not end that way, its yo form \"sé\" is a one-off oddity.",
+            "es": "El grupo -zco es para verbos en -cer/-cir; saber no termina así, su forma de yo \"sé\" es una rareza suelta.",
+            "de": "Die -zco-Gruppe gilt für Verben auf -cer/-cir; saber endet nicht so, seine yo-Form \"sé\" ist ein Einzelfall."
+          }
+        },
+        {
+          "text": {
+            "hu": "-go csoport",
+            "en": "-go group",
+            "es": "grupo -go",
+            "de": "-go-Gruppe"
+          },
+          "wrong": {
+            "hu": "A -go csoportnál a yo-alak -go-ra végződik (pl. hago); a saber yo-alakja \"sé\", ami nem illik ebbe a mintába, önálló kivétel.",
+            "en": "In the -go group the yo form ends in -go (e.g. hago); saber's yo form is \"sé\", which does not fit that pattern, a standalone exception.",
+            "es": "En el grupo -go la forma de yo termina en -go (p. ej. hago); la forma de yo de saber es \"sé\", que no encaja en ese patrón, es una excepción propia.",
+            "de": "In der -go-Gruppe endet die yo-Form auf -go (z. B. hago); die yo-Form von saber ist \"sé\", das passt nicht in dieses Muster, eine eigene Ausnahme."
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszavas kivétel",
+            "en": "one-off oddity",
+            "es": "rareza suelta",
+            "de": "Einzelfall"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "pi-why-06",
+      "es": "Decimos la verdad, aunque duele.",
+      "tr": {
+        "hu": "Az igazat mondjuk, még ha fáj is.",
+        "en": "We tell the truth, even though it hurts.",
+        "es": "Decimos la verdad, aunque duele.",
+        "de": "Wir sagen die Wahrheit, auch wenn es wehtut."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kettős rendhagyó",
+            "en": "doubly irregular",
+            "es": "doblemente irregular",
+            "de": "doppelt unregelmäßig"
+          },
+          "wrong": {
+            "hu": "A decir tőváltása (e→i) az én, te és ő alakot érinti (digo, dices, dice); a mi-alak (decimos) viszont visszatér a szabályos tőhöz, ez már a nosotros-horgony esete.",
+            "en": "Decir's stem change (e→i) affects the I, you and he/she forms (digo, dices, dice); the we-form (decimos) returns to the regular stem, that is the nosotros anchor case.",
+            "es": "El cambio de raíz de decir (e→i) afecta a yo, tú y él/ella (digo, dices, dice); la forma de nosotros (decimos) vuelve a la raíz regular, ese es el caso del ancla de nosotros.",
+            "de": "Der Stammwechsel von decir (e→i) betrifft ich, du und er/sie (digo, dices, dice); die wir-Form (decimos) kehrt zum regelmäßigen Stamm zurück, das ist der Fall des nosotros-Ankers."
+          }
+        },
+        {
+          "text": {
+            "hu": "teljesen rendhagyó",
+            "en": "fully irregular",
+            "es": "totalmente irregular",
+            "de": "ganz unregelmäßig"
+          },
+          "wrong": {
+            "hu": "Teljesen rendhagyónál (mint ser vagy ir) MINDEN alak eltér; a decir mi-alakja (decimos) épp azért szabályos, mert a nosotros itt is horgony.",
+            "en": "With a fully irregular verb (like ser or ir) EVERY form deviates; decir's we-form (decimos) is regular precisely because nosotros is an anchor here too.",
+            "es": "En un verbo totalmente irregular (como ser o ir) TODAS las formas se apartan; la forma de nosotros de decir (decimos) es regular precisamente porque nosotros también es un ancla aquí.",
+            "de": "Bei einem ganz unregelmäßigen Verb (wie ser oder ir) weicht JEDE Form ab; die wir-Form von decir (decimos) ist gerade deshalb regelmäßig, weil nosotros auch hier ein Anker ist."
+          }
+        },
+        {
+          "text": {
+            "hu": "nosotros: szabályos marad",
+            "en": "nosotros stays regular",
+            "es": "nosotros sigue regular",
+            "de": "nosotros bleibt regelmäßig"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "pi-why-07",
+      "es": "Le doy un regalo a mi madre.",
+      "tr": {
+        "hu": "Ajándékot adok anyámnak.",
+        "en": "I give my mother a gift.",
+        "es": "Le doy un regalo a mi madre.",
+        "de": "Ich gebe meiner Mutter ein Geschenk."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "-go csoport",
+            "en": "-go group",
+            "es": "grupo -go",
+            "de": "-go-Gruppe"
+          },
+          "wrong": {
+            "hu": "A -go csoport olyan igékre vonatkozik, mint hago vagy salgo; a dar yo-alakja \"doy\", ami önálló, egyszavas kivétel, nem ebbe a csoportba tartozik.",
+            "en": "The -go group is for verbs like hago or salgo; dar's yo form is \"doy\", a standalone, one-off oddity, not part of this group.",
+            "es": "El grupo -go es para verbos como hago o salgo; la forma de yo de dar es \"doy\", una rareza suelta propia, no pertenece a este grupo.",
+            "de": "Die -go-Gruppe gilt für Verben wie hago oder salgo; die yo-Form von dar ist \"doy\", ein eigenständiger Einzelfall, gehört nicht zu dieser Gruppe."
+          }
+        },
+        {
+          "text": {
+            "hu": "kettős rendhagyó",
+            "en": "doubly irregular",
+            "es": "doblemente irregular",
+            "de": "doppelt unregelmäßig"
+          },
+          "wrong": {
+            "hu": "Kettős rendhagyónál más alakok is tőt váltanak (pl. tengo, tienes); a darnál csak a yo-alak (doy) rendhagyó, a többi szabályos: das, da, damos.",
+            "en": "A doubly irregular verb changes stem in other forms too (e.g. tengo, tienes); with dar only the yo form (doy) is irregular, the rest are regular: das, da, damos.",
+            "es": "Un verbo doblemente irregular cambia de raíz también en otras formas (p. ej. tengo, tienes); en dar solo la forma de yo (doy) es irregular, el resto son regulares: das, da, damos.",
+            "de": "Ein doppelt unregelmäßiges Verb ändert den Stamm auch in anderen Formen (z. B. tengo, tienes); bei dar ist nur die yo-Form (doy) unregelmäßig, der Rest ist regelmäßig: das, da, damos."
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszavas kivétel",
+            "en": "one-off oddity",
+            "es": "rareza suelta",
+            "de": "Einzelfall"
+          }
+        }
+      ],
+      "correctIndex": 2
     }
   ]
 }

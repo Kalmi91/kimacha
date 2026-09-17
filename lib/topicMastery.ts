@@ -9,15 +9,16 @@
 // továbblépett a következőre, miközben az előző szavai még FSRS Learning
 // állapotban napokig visszajártak. Innen jött a két téma keveredése.
 //
-// Új mérce: a szó akkor kész, ha KILÉPETT a Learning állapotból.
-// FSRS állapotok: 0 New, 1 Learning, 2 Review, 3 Relearning.
-// A Relearning (3) is beleszámít: az a szó egyszer már felnőtt Review-ra, csak
-// megbotlott. Így egy-két makacs szó nem tudja határozatlan időre befagyasztani a
-// téma lezárását (ezt a felhasználó a "kemény fázis-zár" opció elvetésével kérte).
-export const MASTERED_STATE = 2;
-
+// Korábbi mérce: a szó akkor kész, ha KILÉPETT a Learning állapotból (FSRS
+// state >= 2, Review vagy Relearning).
+//
+// UTEMEZO 12/4 (Kálmán, 2026-09-17): ez a mérce ELTÉRT a Stats-kártyáétól (lap
+// >= 3 OR buried, UTEMEZO 1. szakasz "megtanult"), ezért lehetett a szint
+// 928/931, miközben egy téma 0/10, a fa és a Stats más adatot számolt. Innentől
+// EGY definíció: a `state` paraméter a `db.getWordStates()`-től egy 1/0
+// "ismert" jelzőt kap (lap >= 3 OR buried), nem FSRS-állapotot, lásd ott.
 export function isWordMastered(state: number | undefined): boolean {
-  return (state ?? 0) >= MASTERED_STATE;
+  return (state ?? 0) >= 1;
 }
 
 export function masteredCount(wordIds: number[], stateMap: Map<number, number>): number {

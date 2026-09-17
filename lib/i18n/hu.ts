@@ -65,6 +65,16 @@ export default {
     yesPractise: 'Igen',
     no: 'Nem',
   },
+  // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): a kör
+  // KÖZBENI kérdés, amint a fekete 0-ra ér és a kéz is kiürül, de review van
+  // még. A Done-képernyő fenti `done.*` kérdésétől külön kulcsok, mert ez a
+  // kártya helyén jön, nem a kör végén.
+  learn: {
+    askMoreTitle: 'Elfogyott a mai új szó',
+    askMoreYes: (n: number) => `+${n} új szó`,
+    askMoreReviewOnly: (k: number) => `Csak ismétlés (${k} lap)`,
+    askMoreDone: 'Mára ennyi',
+  },
   tabs: {
     learn: 'Tanulás',
     games: 'Játék',
@@ -399,7 +409,13 @@ export default {
     ruleLabel: 'A szabály',
     examplesLabel: 'Példák',
     exceptionsLabel: 'Kivételek és határesetek',
-    startDrill: (n: number) => `Gyakorlás (${n} kérdés)`,
+    // D3 (FB290, 2026-09-17): fajtánként külön gomb a `startDrill` (mind
+    // egyben) helyett.
+    startChoice: (n: number) => `Mondatok (${n})`,
+    startMatch: (n: number) => `Párosítás (${n})`,
+    startForm: (n: number) => `Ragozás (${n})`,
+    // TASK-8 (D4, FB288): "miért ez a mondat" feladat-fajta indító gombja.
+    startWhy: (n: number) => `Miért? (${n})`,
     backToRule: 'Szabály újraolvasása',
     practiceAgain: 'Újra gyakorlom',
     nextTopic: 'Következő téma',
@@ -522,6 +538,13 @@ export default {
     requeueEasy: 'Könnyű (5 lap)',
     requeueNormal: 'Közepes (12 lap)',
     requeueHard: 'Nehéz (25 lap)',
+    // FB279, 2026-09-17: nehézség-tárcsa, a napi új szót és P-t együtt állítja.
+    difficultyVeryEasy: 'nagyon könnyű',
+    difficultyEasy: 'könnyű',
+    difficultyNormal: 'alap',
+    difficultyHard: 'nehéz',
+    difficultyVeryHard: 'nagyon nehéz',
+    difficultyCustom: 'egyéni',
   },
   backup: {
     backup: 'Biztonsági mentés',
@@ -544,6 +567,8 @@ export default {
     repair: 'javítás',
     repairLap: (n: number) => `javítás · ${n}/3`,
     sentence: 'mondat',
+    // UTEMEZO 5. szakasz (FB296/297/298): a kerdes-lap cimkeje.
+    question: 'kérdés',
   },
   // UTEMEZO 6. szakasz: a fejléc három számára koppintva megnyíló magyarázó ablak.
   header: {

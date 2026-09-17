@@ -65,6 +65,16 @@ export default {
     yesPractise: 'Sí',
     no: 'No',
   },
+  // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): pregunta a
+  // MITAD de la ronda, cuando el negro llega a 0 y la mano también se vacía,
+  // pero aún quedan repasos. Claves separadas de `done.*`: esta tarjeta ocupa
+  // el lugar de la carta, no el final de la ronda.
+  learn: {
+    askMoreTitle: 'Las palabras nuevas de hoy se acabaron',
+    askMoreYes: (n: number) => `+${n} palabras nuevas`,
+    askMoreReviewOnly: (k: number) => `Solo repaso (${k} tarjetas)`,
+    askMoreDone: 'Ya es suficiente por hoy',
+  },
   tabs: {
     learn: 'Aprender',
     games: 'Juego',
@@ -385,7 +395,12 @@ export default {
     ruleLabel: 'La regla',
     examplesLabel: 'Ejemplos',
     exceptionsLabel: 'Excepciones y casos límite',
-    startDrill: (n: number) => `Practicar (${n} preguntas)`,
+    // D3 (FB290, 2026-09-17): un botón por tipo en vez de `startDrill` (todo junto).
+    startChoice: (n: number) => `Frases (${n})`,
+    startMatch: (n: number) => `Emparejar (${n})`,
+    startForm: (n: number) => `Conjugación (${n})`,
+    // TASK-8 (D4, FB288): botón de inicio del tipo de ejercicio "por qué".
+    startWhy: (n: number) => `¿Por qué? (${n})`,
     backToRule: 'Volver a leer la regla',
     practiceAgain: 'Practicar otra vez',
     nextTopic: 'Siguiente tema',
@@ -508,6 +523,13 @@ export default {
     requeueEasy: 'Fácil (5 vueltas)',
     requeueNormal: 'Normal (12 vueltas)',
     requeueHard: 'Difícil (25 vueltas)',
+    // FB279, 2026-09-17: tárcsa de dificultad, ajusta las palabras nuevas y P juntas.
+    difficultyVeryEasy: 'muy fácil',
+    difficultyEasy: 'fácil',
+    difficultyNormal: 'normal',
+    difficultyHard: 'difícil',
+    difficultyVeryHard: 'muy difícil',
+    difficultyCustom: 'personalizado',
   },
   backup: {
     backup: 'Copia de seguridad',
@@ -530,6 +552,8 @@ export default {
     repair: 'corrección',
     repairLap: (n: number) => `corrección · ${n}/3`,
     sentence: 'frase',
+    // UTEMEZO 5. szakasz (FB296/297/298): la etiqueta de la tarjeta-pregunta.
+    question: 'pregunta',
   },
   // UTEMEZO 6. szakasz: ventana explicativa para los tres números del encabezado.
   header: {

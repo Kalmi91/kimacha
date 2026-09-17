@@ -10,6 +10,7 @@ import { t } from '@/lib/i18n';
 import { LEVELS, type Level, getWordsForLevel } from '@/data/words';
 import { setPendingAction } from '@/lib/pendingAction';
 import { getDb } from '@/lib/database';
+import { difficultyPreset, presetValues, type DifficultyLevel } from '@/lib/difficultyPreset';
 import { validateBackupPayload } from '@/lib/backup';
 import {
   DEFAULT_WEEKLY_GOAL_MINUTES,
@@ -149,6 +150,18 @@ export default function SettingsScreen() {
     setPendingAction({ type: 'selectTopic' });
   };
 
+  // FB279, 2026-09-17: nehézség-tárcsa, a napi új szót és P-t (kézben) állítja
+  // együtt (lib/difficultyPreset.ts). A tárcsa csak ír: az aktuális fokozatot a
+  // difficultyPreset() számolja vissza a tárolt párból, nincs külön mentett érték.
+  const handleDifficultyPresetChange = async (level: DifficultyLevel) => {
+    const { dailyNew, hand } = presetValues(level);
+    setDailyNewLimit(dailyNew);
+    setHandCap(hand);
+    await getDb().setDailyNewLimit(dailyNew);
+    await getDb().setHandCap(hand);
+    setPendingAction({ type: 'selectTopic' });
+  };
+
   // UTEMEZO 8: a Nehézség ablak bezárásakor egyszer töltjük újra a sort, nem
   // minden egyes P/R/ékezet koppintásnál.
   const closeDifficultyModal = () => {
@@ -200,6 +213,16 @@ export default function SettingsScreen() {
     { value: 12, label: s.settings.requeueNormal },
     { value: 25, label: s.settings.requeueHard },
   ];
+
+  // UTEMEZO 8/0: a nehézség-tárcsa 5 fokozata (FB279, 2026-09-17).
+  const difficultyLevels: { level: DifficultyLevel; label: string }[] = [
+    { level: 1, label: s.settings.difficultyVeryEasy },
+    { level: 2, label: s.settings.difficultyEasy },
+    { level: 3, label: s.settings.difficultyNormal },
+    { level: 4, label: s.settings.difficultyHard },
+    { level: 5, label: s.settings.difficultyVeryHard },
+  ];
+  const currentDifficultyLevel = difficultyPreset(dailyNewLimit, handCap);
 
   const themeOptions: { label: string; value: 'system' | 'light' | 'dark' }[] = [
     { label: '🔄 Auto', value: 'system' },
@@ -519,6 +542,37 @@ export default function SettingsScreen() {
         <View style={styles.overlay}>
           <View style={[styles.modal, { backgroundColor: colors.card }]}>
             <Text style={[styles.modalTitle, { color: colors.text }]}>{s.settings.difficulty}</Text>
+
+            {/* UTEMEZO 8/0: a tárcsa a napi új szót és P-t együtt állítja; ha a
+                pár nem egyezik egyik fokozattal sem, egyik chip sem aktív, és az
+                "egyéni" felirat jelzi, hogy a két szám külön lett beállítva. */}
+            <View style={{ flexDirection: 'row', gap: 6, marginBottom: 4 }}>
+              {difficultyLevels.map(({ level, label }) => {
+                const active = currentDifficultyLevel === level;
+                return (
+                  <Pressable
+                    key={level}
+                    onPress={() => handleDifficultyPresetChange(level)}
+                    style={{
+                      flex: 1,
+                      paddingVertical: 8,
+                      borderRadius: 10,
+                      alignItems: 'center',
+                      backgroundColor: active ? colors.tint : colors.background,
+                    }}
+                  >
+                    <Text style={{ fontSize: 10, fontWeight: '600', color: active ? colors.background : colors.text }}>
+                      {label}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+            </View>
+            {currentDifficultyLevel === 'custom' && (
+              <Text style={[styles.sectionHint, { color: colors.tabIconDefault, marginBottom: 12 }]}>
+                {s.settings.difficultyCustom}
+              </Text>
+            )}
 
             <View style={styles.difficultyLabelBox}>
               <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.handCap}</Text>

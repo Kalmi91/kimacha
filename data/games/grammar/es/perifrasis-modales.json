@@ -1247,6 +1247,356 @@
       "person": "ellos/ellas/ustedes",
       "answer": "deben",
       "table": "modales-presente"
+    },
+    {
+      "kind": "why",
+      "id": "pm-why-01",
+      "es": "Tengo que trabajar hoy.",
+      "tr": {
+        "hu": "Ma dolgoznom kell.",
+        "en": "I have to work today.",
+        "es": "Tengo que trabajar hoy.",
+        "de": "Ich muss heute arbeiten."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kötelezettség (tener que)",
+            "en": "obligation (tener que)",
+            "es": "obligación (tener que)",
+            "de": "Pflicht (tener que)"
+          }
+        },
+        {
+          "text": {
+            "hu": "erkölcsi kötelesség (deber)",
+            "en": "moral obligation (deber)",
+            "es": "obligación moral (deber)",
+            "de": "moralische Pflicht (deber)"
+          },
+          "wrong": {
+            "hu": "A deber lágyabb, tanácsszerű kötelesség lenne (\"Debo trabajar hoy\" = talán dolgoznom kellene); itt a körülmény kényszeríti ki, ez tener que.",
+            "en": "Deber would be a softer, advice-like obligation (\"Debo trabajar hoy\" = I probably should work); here the circumstances force it, that is tener que.",
+            "es": "Deber sería una obligación más suave, de consejo (\"Debo trabajar hoy\" = quizás debería trabajar); aquí lo exigen las circunstancias, eso es tener que.",
+            "de": "Deber wäre eine sanftere, ratschlagähnliche Pflicht (\"Debo trabajar hoy\" = ich sollte vielleicht arbeiten); hier erzwingen es die Umstände, das ist tener que."
+          }
+        },
+        {
+          "text": {
+            "hu": "személytelen kötelezettség (hay que)",
+            "en": "impersonal obligation (hay que)",
+            "es": "obligación impersonal, sin sujeto",
+            "de": "unpersönliche Pflicht (hay que)"
+          },
+          "wrong": {
+            "hu": "A hay que személytelen lenne (\"Hay que trabajar hoy\" = ma dolgozni kell, akárkinek); itt viszont van alany (yo), tehát tener que a helyes.",
+            "en": "Hay que would be impersonal (\"Hay que trabajar hoy\" = one must work today); here there is a subject (yo), so tener que is correct.",
+            "es": "Hay que sería impersonal (\"Hay que trabajar hoy\" = hay que trabajar, en general); aquí hay sujeto (yo), así que lo correcto es tener que.",
+            "de": "Hay que wäre unpersönlich (\"Hay que trabajar hoy\" = man muss heute arbeiten); hier gibt es aber ein Subjekt (yo), also ist tener que richtig."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pm-why-02",
+      "es": "Puedo nadar muy bien.",
+      "tr": {
+        "hu": "Nagyon jól tudok úszni.",
+        "en": "I can swim very well.",
+        "es": "Puedo nadar muy bien.",
+        "de": "Ich kann sehr gut schwimmen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "képesség/engedély (poder)",
+            "en": "ability/permission (poder)",
+            "es": "capacidad/permiso (poder)",
+            "de": "Fähigkeit/Erlaubnis (poder)"
+          }
+        },
+        {
+          "text": {
+            "hu": "vágy, akarat (querer)",
+            "en": "wish, will (querer)",
+            "es": "deseo, voluntad (querer)",
+            "de": "Wunsch, Wille (querer)"
+          },
+          "wrong": {
+            "hu": "A querer vágyat fejezne ki (\"Quiero nadar muy bien\" = jól akarok úszni, de talán még nem tudok); itt viszont a KÉPESSÉGRŐL van szó, ami poder.",
+            "en": "Querer would express a wish (\"Quiero nadar muy bien\" = I want to swim well, maybe I cannot yet); here it is about ABILITY, that is poder.",
+            "es": "Querer expresaría un deseo (\"Quiero nadar muy bien\" = quiero nadar bien, quizá aún no puedo); aquí se trata de la CAPACIDAD, eso es poder.",
+            "de": "Querer würde einen Wunsch ausdrücken (\"Quiero nadar muy bien\" = ich möchte gut schwimmen, kann es aber vielleicht noch nicht); hier geht es um die FÄHIGKEIT, das ist poder."
+          }
+        },
+        {
+          "text": {
+            "hu": "erkölcsi kötelesség (deber)",
+            "en": "moral obligation (deber)",
+            "es": "obligación moral (deber)",
+            "de": "moralische Pflicht (deber)"
+          },
+          "wrong": {
+            "hu": "A deber kötelességet fejezne ki (\"Debo nadar muy bien\" = jól kellene úsznom); itt viszont arról van szó, hogy TUDOK úszni, nem hogy kellene.",
+            "en": "Deber would express an obligation (\"Debo nadar muy bien\" = I should swim well); here it is about being ABLE to swim, not about having to.",
+            "es": "Deber expresaría una obligación (\"Debo nadar muy bien\" = debería nadar bien); aquí se trata de que PUEDO nadar, no de que deba.",
+            "de": "Deber würde eine Pflicht ausdrücken (\"Debo nadar muy bien\" = ich sollte gut schwimmen); hier geht es aber darum, dass ich schwimmen KANN, nicht darum, dass ich sollte."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pm-why-03",
+      "es": "Quiero aprender español.",
+      "tr": {
+        "hu": "Szeretnék spanyolul tanulni.",
+        "en": "I want to learn Spanish.",
+        "es": "Quiero aprender español.",
+        "de": "Ich möchte Spanisch lernen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "képesség/engedély (poder)",
+            "en": "ability/permission (poder)",
+            "es": "capacidad/permiso (poder)",
+            "de": "Fähigkeit/Erlaubnis (poder)"
+          },
+          "wrong": {
+            "hu": "A poder képességet vagy engedélyt fejezne ki (\"Puedo aprender español\" = tudok spanyolul tanulni); itt viszont a VÁGYRÓL van szó, ami querer.",
+            "en": "Poder would express ability or permission (\"Puedo aprender español\" = I am able to learn Spanish); here it is about a WISH, that is querer.",
+            "es": "Poder expresaría capacidad o permiso (\"Puedo aprender español\" = puedo aprender español); aquí se trata de un DESEO, eso es querer.",
+            "de": "Poder würde Fähigkeit oder Erlaubnis ausdrücken (\"Puedo aprender español\" = ich kann Spanisch lernen); hier geht es um einen WUNSCH, das ist querer."
+          }
+        },
+        {
+          "text": {
+            "hu": "vágy, akarat (querer)",
+            "en": "wish, will (querer)",
+            "es": "deseo, voluntad (querer)",
+            "de": "Wunsch, Wille (querer)"
+          }
+        },
+        {
+          "text": {
+            "hu": "kötelezettség (tener que)",
+            "en": "obligation (tener que)",
+            "es": "obligación (tener que)",
+            "de": "Pflicht (tener que)"
+          },
+          "wrong": {
+            "hu": "A tener que kényszerű kötelezettséget fejezne ki (\"Tengo que aprender español\" = muszáj spanyolul tanulnom); itt viszont saját vágyról van szó, nem kényszerről.",
+            "en": "Tener que would express a forced obligation (\"Tengo que aprender español\" = I have to learn Spanish); here it is about a personal wish, not a compulsion.",
+            "es": "Tener que expresaría una obligación forzosa (\"Tengo que aprender español\" = tengo que aprender español); aquí se trata de un deseo propio, no de una obligación.",
+            "de": "Tener que würde eine erzwungene Pflicht ausdrücken (\"Tengo que aprender español\" = ich muss Spanisch lernen); hier geht es um einen eigenen Wunsch, keinen Zwang."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pm-why-04",
+      "es": "Debo cuidar mi salud.",
+      "tr": {
+        "hu": "Vigyáznom kell az egészségemre.",
+        "en": "I should take care of my health.",
+        "es": "Debo cuidar mi salud.",
+        "de": "Ich sollte auf meine Gesundheit achten."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kötelezettség (tener que)",
+            "en": "obligation (tener que)",
+            "es": "obligación (tener que)",
+            "de": "Pflicht (tener que)"
+          },
+          "wrong": {
+            "hu": "A tener que erősebb, kényszerű kötelezettség lenne (\"Tengo que cuidar mi salud\" = muszáj, a körülmény kényszeríti); itt viszont TANÁCS, lágyabb, ez deber.",
+            "en": "Tener que would be a stronger, forced obligation (\"Tengo que cuidar mi salud\" = I must, forced by circumstance); here it is ADVICE, softer, that is deber.",
+            "es": "Tener que sería una obligación más fuerte y forzosa (\"Tengo que cuidar mi salud\" = me obliga la circunstancia); aquí es un CONSEJO, más suave, eso es deber.",
+            "de": "Tener que wäre eine stärkere, erzwungene Pflicht (\"Tengo que cuidar mi salud\" = die Umstände zwingen mich); hier ist es ein RATSCHLAG, sanfter, das ist deber."
+          }
+        },
+        {
+          "text": {
+            "hu": "erkölcsi kötelesség (deber)",
+            "en": "moral obligation (deber)",
+            "es": "obligación moral (deber)",
+            "de": "moralische Pflicht (deber)"
+          }
+        },
+        {
+          "text": {
+            "hu": "személytelen kötelezettség (hay que)",
+            "en": "impersonal obligation (hay que)",
+            "es": "obligación impersonal, sin sujeto",
+            "de": "unpersönliche Pflicht (hay que)"
+          },
+          "wrong": {
+            "hu": "A hay que személytelen lenne (\"Hay que cuidar la salud\" = az egészségre vigyázni kell, akárkinek); itt viszont van alany (yo), ezért deber.",
+            "en": "Hay que would be impersonal (\"Hay que cuidar la salud\" = one must take care of one's health); here there is a subject (yo), so deber.",
+            "es": "Hay que sería impersonal (\"Hay que cuidar la salud\" = hay que cuidar la salud, en general); aquí hay sujeto (yo), por eso deber.",
+            "de": "Hay que wäre unpersönlich (\"Hay que cuidar la salud\" = man muss auf die Gesundheit achten); hier gibt es aber ein Subjekt (yo), deshalb deber."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pm-why-05",
+      "es": "Hay que estudiar mucho.",
+      "tr": {
+        "hu": "Sokat kell tanulni.",
+        "en": "One must study a lot.",
+        "es": "Hay que estudiar mucho.",
+        "de": "Man muss viel lernen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kötelezettség (tener que)",
+            "en": "obligation (tener que)",
+            "es": "obligación (tener que)",
+            "de": "Pflicht (tener que)"
+          },
+          "wrong": {
+            "hu": "A tener que alanyt kívánna (\"Tengo que estudiar mucho\" = NEKEM kell sokat tanulnom); itt viszont nincs alany, mindenkire vonatkozik, ez hay que.",
+            "en": "Tener que would need a subject (\"Tengo que estudiar mucho\" = I have to study a lot); here there is no subject, it applies to everyone, that is hay que.",
+            "es": "Tener que necesitaría sujeto (\"Tengo que estudiar mucho\" = YO tengo que estudiar mucho); aquí no hay sujeto, vale para todos, eso es hay que.",
+            "de": "Tener que bräuchte ein Subjekt (\"Tengo que estudiar mucho\" = ICH muss viel lernen); hier gibt es kein Subjekt, es gilt für alle, das ist hay que."
+          }
+        },
+        {
+          "text": {
+            "hu": "erkölcsi kötelesség (deber)",
+            "en": "moral obligation (deber)",
+            "es": "obligación moral (deber)",
+            "de": "moralische Pflicht (deber)"
+          },
+          "wrong": {
+            "hu": "A deber is alanyt kívánna (\"Debo estudiar mucho\" = NEKEM kellene sokat tanulnom); itt viszont nincs alany, ez a személytelen hay que.",
+            "en": "Deber would also need a subject (\"Debo estudiar mucho\" = I should study a lot); here there is no subject, that is the impersonal hay que.",
+            "es": "Deber también necesitaría sujeto (\"Debo estudiar mucho\" = YO debería estudiar mucho); aquí no hay sujeto, eso es el impersonal hay que.",
+            "de": "Deber bräuchte ebenfalls ein Subjekt (\"Debo estudiar mucho\" = ICH sollte viel lernen); hier gibt es kein Subjekt, das ist das unpersönliche hay que."
+          }
+        },
+        {
+          "text": {
+            "hu": "személytelen kötelezettség (hay que)",
+            "en": "impersonal obligation (hay que)",
+            "es": "obligación impersonal, sin sujeto",
+            "de": "unpersönliche Pflicht (hay que)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "pm-why-06",
+      "es": "Tenemos que limpiar la casa.",
+      "tr": {
+        "hu": "Ki kell takarítanunk a házat.",
+        "en": "We have to clean the house.",
+        "es": "Tenemos que limpiar la casa.",
+        "de": "Wir müssen das Haus putzen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kötelezettség (tener que)",
+            "en": "obligation (tener que)",
+            "es": "obligación (tener que)",
+            "de": "Pflicht (tener que)"
+          }
+        },
+        {
+          "text": {
+            "hu": "erkölcsi kötelesség (deber)",
+            "en": "moral obligation (deber)",
+            "es": "obligación moral (deber)",
+            "de": "moralische Pflicht (deber)"
+          },
+          "wrong": {
+            "hu": "A deber lágyabb tanács lenne (\"Debemos limpiar la casa\" = talán ki kellene takarítanunk); itt viszont a körülmény kényszeríti ki, ez tener que.",
+            "en": "Deber would be a softer piece of advice (\"Debemos limpiar la casa\" = we probably should clean the house); here the circumstances force it, that is tener que.",
+            "es": "Deber sería un consejo más suave (\"Debemos limpiar la casa\" = quizás deberíamos limpiar la casa); aquí lo exigen las circunstancias, eso es tener que.",
+            "de": "Deber wäre ein sanfterer Ratschlag (\"Debemos limpiar la casa\" = wir sollten vielleicht putzen); hier erzwingen es die Umstände, das ist tener que."
+          }
+        },
+        {
+          "text": {
+            "hu": "képesség/engedély (poder)",
+            "en": "ability/permission (poder)",
+            "es": "capacidad/permiso (poder)",
+            "de": "Fähigkeit/Erlaubnis (poder)"
+          },
+          "wrong": {
+            "hu": "A poder képességet fejezne ki (\"Podemos limpiar la casa\" = ki tudjuk takarítani a házat); itt viszont KÖTELEZETTSÉGRŐL van szó, ami tener que.",
+            "en": "Poder would express ability (\"Podemos limpiar la casa\" = we are able to clean the house); here it is about an OBLIGATION, that is tener que.",
+            "es": "Poder expresaría capacidad (\"Podemos limpiar la casa\" = podemos limpiar la casa); aquí se trata de una OBLIGACIÓN, eso es tener que.",
+            "de": "Poder würde Fähigkeit ausdrücken (\"Podemos limpiar la casa\" = wir können das Haus putzen); hier geht es um eine PFLICHT, das ist tener que."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pm-why-07",
+      "es": "No debemos mentir.",
+      "tr": {
+        "hu": "Nem szabadna hazudnunk.",
+        "en": "We should not lie.",
+        "es": "No debemos mentir.",
+        "de": "Wir sollten nicht lügen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "személytelen kötelezettség (hay que)",
+            "en": "impersonal obligation (hay que)",
+            "es": "obligación impersonal, sin sujeto",
+            "de": "unpersönliche Pflicht (hay que)"
+          },
+          "wrong": {
+            "hu": "A hay que személytelen lenne (\"No hay que mentir\" = nem kell hazudni, akárkinek); itt viszont van alany (nosotros), ezért deber.",
+            "en": "Hay que would be impersonal (\"No hay que mentir\" = one must not lie); here there is a subject (nosotros), so deber.",
+            "es": "Hay que sería impersonal (\"No hay que mentir\" = no hay que mentir, en general); aquí hay sujeto (nosotros), por eso deber.",
+            "de": "Hay que wäre unpersönlich (\"No hay que mentir\" = man darf nicht lügen); hier gibt es aber ein Subjekt (nosotros), deshalb deber."
+          }
+        },
+        {
+          "text": {
+            "hu": "vágy, akarat (querer)",
+            "en": "wish, will (querer)",
+            "es": "deseo, voluntad (querer)",
+            "de": "Wunsch, Wille (querer)"
+          },
+          "wrong": {
+            "hu": "A querer vágyat fejezne ki (\"No queremos mentir\" = nem akarunk hazudni); itt viszont erkölcsi KÖTELESSÉGRŐL van szó, nem akaratról, ez deber.",
+            "en": "Querer would express a wish (\"No queremos mentir\" = we do not want to lie); here it is a moral OBLIGATION, not a wish, that is deber.",
+            "es": "Querer expresaría un deseo (\"No queremos mentir\" = no queremos mentir); aquí es una OBLIGACIÓN moral, no un deseo, eso es deber.",
+            "de": "Querer würde einen Wunsch ausdrücken (\"No queremos mentir\" = wir wollen nicht lügen); hier ist es eine moralische PFLICHT, kein Wunsch, das ist deber."
+          }
+        },
+        {
+          "text": {
+            "hu": "erkölcsi kötelesség (deber)",
+            "en": "moral obligation (deber)",
+            "es": "obligación moral (deber)",
+            "de": "moralische Pflicht (deber)"
+          }
+        }
+      ],
+      "correctIndex": 2
     }
   ]
 }

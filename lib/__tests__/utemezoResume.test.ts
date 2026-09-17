@@ -73,7 +73,9 @@ describe('defer', () => {
       typingDirection: 'native-to-learned',
       repair: false,
     }));
-    let state = createQueue({ black: 0, hand: [], reviews, fresh: [] });
+    // FB296/297/298: black > 0, hogy ne a kerdes-lap johjon (fresh ures, tehat
+    // uj szo ugysem indulna, a black erteke itt lenyegtelen a teszt celjahoz).
+    let state = createQueue({ black: 1, hand: [], reviews, fresh: [] });
     state = nextLap(state);
     const shownWordId = state.current!.wordId;
     const pinkBefore = header(state).pink;
@@ -93,7 +95,9 @@ describe('defer', () => {
       typingDirection: 'native-to-learned',
       repair: false,
     }));
-    let state = createQueue({ black: 0, hand: [], reviews, fresh: [] });
+    // FB296/297/298: black > 0, hogy ne a kerdes-lap johjon (fresh ures, tehat
+    // uj szo ugysem indulna, a black erteke itt lenyegtelen a teszt celjahoz).
+    let state = createQueue({ black: 1, hand: [], reviews, fresh: [] });
     state = nextLap(state);
     const shownWordId = state.current!.wordId;
     const pinkBefore = header(state).pink;
