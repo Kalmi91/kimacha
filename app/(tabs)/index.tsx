@@ -27,7 +27,7 @@ import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { filterLockedSentences } from '@/lib/grammar/tenseGate';
-import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
+import { doneGrammarTopicProgress, GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { cardIcon } from '@/lib/cardIcons';
 import { cardImage } from '@/lib/cardImages';
 import { cardMarkers } from '@/lib/cardMarkers';
@@ -305,9 +305,11 @@ export default function LearnScreen() {
 
   // FB196: az elvégzett nyelvtani leckék adják a feloldott szerkezeteket
   // („legyen olyan hogy bizonyos nyelvtani szerkezeteket feloldunk").
-  const doneGrammarTopics = async (): Promise<Set<string>> => {
+  // D3 (FB290): egy téma csak akkor számít késznek, ha a leckéjében létező
+  // összes fajtájából van kész sor (doneGrammarTopicProgress, lib/grammar/syllabus.ts).
+  const doneGrammarTopics = async (learned: string): Promise<Set<string>> => {
     const rows = await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY);
-    return new Set(rows.filter(r => r.state === 'done').map(r => r.itemId));
+    return new Set(doneGrammarTopicProgress(learned, rows).keys());
   };
 
   // A setQueueState (lentebb) hívja, ezért előtte áll.
@@ -520,7 +522,7 @@ export default function LearnScreen() {
     const rows = mergeCarryover(levelRows, carryRows, REVIEW_SLOTS);
     // FB196: a mondat-kártyák nem hozhatnak feloldatlan nyelvtant, akármelyik
     // úton kerültek a sorba (szint, téma, kölcsönzés).
-    const grammarDone = await doneGrammarTopics();
+    const grammarDone = await doneGrammarTopics(learned);
     const reviews = rowsToReviewLaps(rows, learned, wordsOnly, currentLevel, grammarDone);
 
     // UTEMEZO 8: P (hand) és R (gap) a Beállítások „Nehézség" ablakából jön.
@@ -845,7 +847,7 @@ export default function LearnScreen() {
     newRows = mergeCarryover(newRows, carryRows2, REVIEW_SLOTS);
 
     const wordsOnly2 = await db.getWordsOnly();
-    const reviews = rowsToReviewLaps(newRows, learned, wordsOnly2, currentLevel, await doneGrammarTopics());
+    const reviews = rowsToReviewLaps(newRows, learned, wordsOnly2, currentLevel, await doneGrammarTopics(learned));
 
     // UTEMEZO 4.5: a kör akkor ért véget, ha a friss sor sem tud lapot adni
     // (elfogyott a review, a kéz üres, és a fekete 0 vagy nincs több új szó).
@@ -873,7 +875,7 @@ export default function LearnScreen() {
     const db = getDb();
     const rows = await db.getPracticeCardsForLevel(level, n);
     const learned = direction[1];
-    const reviews = rowsToReviewLaps(rows, learned, await db.getWordsOnly(), level, await doneGrammarTopics());
+    const reviews = rowsToReviewLaps(rows, learned, await db.getWordsOnly(), level, await doneGrammarTopics(learned));
     if (reviews.length === 0) return;
     const state = qsRef.current;
     const hand = state ? state.hand.map(({ wordId, lap }) => ({ wordId, lap })) : [];

@@ -12,6 +12,7 @@ import {
   isMatchItem,
   type GrammarGapItem,
   type GrammarItem,
+  type GrammarKind,
   type GrammarMarkItem,
   type GrammarTopicData,
 } from './content';
@@ -41,12 +42,19 @@ export function isChoiceRoundItem(r: GrammarRoundItem): r is GrammarChoiceRoundI
   return 'options' in r;
 }
 
+// LECKE-SEMA D3 (FB290, 2026-09-17): melyik fajtába tartozik egy round-item,
+// hogy a lecke-drill a kért fajtákra tudja szűrni a kört (`kinds` prop).
+export function grammarRoundItemKind(r: GrammarRoundItem): GrammarKind {
+  if (isChoiceRoundItem(r)) return 'choice';
+  return isMatchItem(r.item) ? 'match' : 'form';
+}
+
 // LECKE-SEMA 2: a LessonV2 két új item-fajtája (match, form) a lecke szerzői
 // sorrendjében kerül a kör VÉGÉRE, a gap/mark kör után, egymás közt és a
 // gap/mark körrel sem keverve (spec: "no shuffling of kinds"). Hogy egy adott
-// képernyő látja-e ezt a két csoportot, a GrammarDrill dönti el
-// (`includeAllKinds` prop): a lecke-drill igen (step 3-4), a Game fül
-// grammar-choice-a nem, az változatlanul csak a gap/mark kört futtatja.
+// képernyő melyik fajtákat látja ebből, a GrammarDrill `kinds` propja dönti
+// el (D3, FB290): a lecke-drill fajtánként külön indítja, a Game fül
+// grammar-choice-a a prop híján változatlanul csak a gap/mark körét kapja.
 export function buildGrammarRound(topic: GrammarTopicData, seed: number): GrammarRoundItem[] {
   // A `topic.items` uniós elem-típusa (LegacyLesson vs LessonV2) a `.filter`
   // narrowing-jét megzavarja; a `GrammarItem[]` cast egy lapos típusra hozza,
