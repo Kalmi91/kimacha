@@ -65,6 +65,16 @@ export default {
     yesPractise: 'Yes',
     no: 'No',
   },
+  // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): the
+  // MID-round question, once black hits 0 and the hand also empties, but
+  // reviews are still left. Separate keys from `done.*` above: this card
+  // takes the card's place, not the round's end.
+  learn: {
+    askMoreTitle: "Today's new words are used up",
+    askMoreYes: (n: number) => `+${n} new words`,
+    askMoreReviewOnly: (k: number) => `Review only (${k} cards)`,
+    askMoreDone: "That's enough for today",
+  },
   tabs: {
     learn: 'Learn',
     games: 'Game',
@@ -377,6 +387,7 @@ export default {
     yourLevel: 'you are here',
     soon: 'coming',
     coreTag: 'core',
+    corePlusTag: 'core+',
     started: 'started',
     notStarted: 'new',
     soonLong: 'This lesson has not been written yet. It is on the list, and the rest of the level is already open.',
@@ -384,7 +395,12 @@ export default {
     ruleLabel: 'The rule',
     examplesLabel: 'Examples',
     exceptionsLabel: 'Exceptions and edge cases',
-    startDrill: (n: number) => `Practice (${n} questions)`,
+    // D3 (FB290, 2026-09-17): one button per kind instead of `startDrill` (all at once).
+    startChoice: (n: number) => `Sentences (${n})`,
+    startMatch: (n: number) => `Matching (${n})`,
+    startForm: (n: number) => `Forms (${n})`,
+    // TASK-8 (D4, FB288): "why this sentence" drill kind start button.
+    startWhy: (n: number) => `Why? (${n})`,
     backToRule: 'Read the rule again',
     practiceAgain: 'Practice again',
     nextTopic: 'Next topic',
@@ -509,6 +525,13 @@ export default {
     requeueEasy: 'Easy (5 laps)',
     requeueNormal: 'Normal (12 laps)',
     requeueHard: 'Hard (25 laps)',
+    // FB279, 2026-09-17: difficulty dial, sets the daily new words and P together.
+    difficultyVeryEasy: 'very easy',
+    difficultyEasy: 'easy',
+    difficultyNormal: 'normal',
+    difficultyHard: 'hard',
+    difficultyVeryHard: 'very hard',
+    difficultyCustom: 'custom',
   },
   backup: {
     backup: 'Backup',
@@ -531,6 +554,8 @@ export default {
     repair: 'fix',
     repairLap: (n: number) => `fix · ${n}/3`,
     sentence: 'sentence',
+    // UTEMEZO 5. szakasz (FB296/297/298): the ask-more card's label.
+    question: 'question',
   },
   // UTEMEZO 6. szakasz: explanation window for the header's three numbers.
   header: {

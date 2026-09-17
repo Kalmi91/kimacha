@@ -1,4 +1,5 @@
 {
+  "schema": 2,
   "topic": "presente-irregular",
   "level": "A1",
   "title": {
@@ -7,17 +8,650 @@
     "es": "Presente: verbos irregulares",
     "de": "Präsens: unregelmäßige Verben"
   },
-  "rule": {
-    "hu": "A leggyakoribb igék rendhagyók, de a rendetlenség rendszeres. Csak a YO alak lóg ki: hacer → hago, poner → pongo, salir → salgo, traer → traigo, saber → sé, ver → veo, dar → doy, conocer → conozco. Teljesen rendhagyó: ser (soy, eres, es, somos, son), ir (voy, vas, va, vamos, van), haber (he, has, ha...). Kettős rendhagyó (yo-alak + tőváltás): tener (tengo, tienes, tiene, tenemos, tienen), venir (vengo, vienes, viene, venimos, vienen), decir (digo, dices, dice, decimos, dicen).",
-    "en": "The commonest verbs are irregular, but the mess is systematic. Often ONLY the yo form is odd: hacer → hago, poner → pongo, salir → salgo, traer → traigo, saber → sé, ver → veo, dar → doy, conocer → conozco. Fully irregular: ser (soy, eres, es, somos, son), ir (voy, vas, va, vamos, van), haber (he, has, ha...). Doubly irregular (odd yo plus a stem change): tener (tengo, tienes, tiene, tenemos, tienen), venir (vengo, vienes...), decir (digo, dices...).",
-    "es": "Los verbos más frecuentes son irregulares, pero el desorden es sistemático. Muchas veces solo la forma de yo cambia: hago, pongo, salgo, traigo, sé, veo, doy, conozco. Totalmente irregulares: ser, ir, haber. Doblemente irregulares: tener, venir, decir.",
-    "de": "Die häufigsten Verben sind unregelmäßig, aber das Chaos hat System. Oft ist nur die yo-Form anders: hago, pongo, salgo, traigo, sé, veo, doy, conozco. Ganz unregelmäßig: ser, ir, haber. Doppelt unregelmäßig: tener, venir, decir."
-  },
-  "more": {
-    "hu": "Érdemes észrevenni a mintákat, mert így nem tizenöt szabály, hanem három: 1) -go csoport (hago, pongo, salgo, tengo, vengo, digo, traigo, oigo); 2) -zco csoport a -cer/-cir végűeknél (conozco, traduzco, produzco); 3) egyszavas kivételek (soy, voy, doy, sé, he). A nosotros alak szinte MINDIG szabályos, még a rendhagyóknál is: tenemos, venimos, decimos, hacemos. Ez a horgony, ha elbizonytalanodsz.",
-    "en": "Spot the patterns and it stops being fifteen rules and becomes three: 1) the -go group (hago, pongo, salgo, tengo, vengo, digo, traigo, oigo); 2) the -zco group for verbs in -cer/-cir (conozco, traduzco, produzco); 3) one-off oddities (soy, voy, doy, sé, he). The nosotros form is almost ALWAYS regular, even here: tenemos, venimos, decimos, hacemos. That is your anchor when in doubt.",
-    "es": "Si ves los patrones, no son quince reglas sino tres: 1) grupo -go (hago, pongo, salgo, tengo, vengo, digo); 2) grupo -zco en -cer/-cir (conozco, traduzco); 3) rarezas sueltas (soy, voy, doy, sé, he). La forma de nosotros casi siempre es regular: tenemos, venimos, decimos.",
-    "de": "Mit den Mustern sind es statt fünfzehn Regeln nur drei: 1) die -go-Gruppe (hago, pongo, salgo, tengo, vengo, digo); 2) die -zco-Gruppe bei -cer/-cir (conozco); 3) Einzelfälle (soy, voy, doy, sé, he). Die nosotros-Form ist fast immer regelmäßig: tenemos, venimos, decimos."
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A leggyakoribb spanyol igék rendhagyók, de a rendetlenség rendszeres, nem véletlenszerű. Ha felismered a mintákat, beszéd közben nem kell darabonként megjegyezned az alakokat, csak azt, melyik csoportba tartozik az ige.",
+        "en": "The commonest Spanish verbs are irregular, but the mess follows a system, it is not random. If you spot the patterns, you will not need to memorize each form one by one while speaking, only which group the verb belongs to.",
+        "es": "Los verbos españoles más frecuentes son irregulares, pero el desorden tiene un sistema, no es aleatorio. Si ves los patrones, no necesitas memorizar cada forma por separado al hablar, solo a qué grupo pertenece el verbo.",
+        "de": "Die häufigsten spanischen Verben sind unregelmäßig, aber das Chaos hat System, es ist nicht zufällig. Wenn du die Muster erkennst, musst du beim Sprechen nicht jede Form einzeln auswendig lernen, sondern nur wissen, zu welcher Gruppe das Verb gehört."
+      }
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "A rendhagyóság fajtái",
+        "en": "Kinds of irregularity",
+        "es": "Tipos de irregularidad",
+        "de": "Arten der Unregelmäßigkeit"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "-go csoport: csak a yo-alak lóg ki, minden más alak szabályos.",
+            "en": "The -go group: only the yo form is odd, every other form is regular.",
+            "es": "Grupo -go: solo la forma de yo cambia, las demás son regulares.",
+            "de": "Die -go-Gruppe: nur die yo-Form ist anders, alle anderen Formen sind regelmäßig."
+          },
+          "examples": [
+            {
+              "es": "Yo hago la comida.",
+              "tr": {
+                "hu": "Én csinálom az ételt.",
+                "en": "I make the food.",
+                "es": "Yo hago la comida.",
+                "de": "Ich mache das Essen."
+              }
+            },
+            {
+              "es": "Yo salgo de casa temprano.",
+              "tr": {
+                "hu": "Korán megyek el otthonról.",
+                "en": "I leave home early.",
+                "es": "Yo salgo de casa temprano.",
+                "de": "Ich gehe früh aus dem Haus."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "-zco csoport: a -cer/-cir végű igék yo-alakja -zco-ra végződik.",
+            "en": "The -zco group: verbs ending in -cer/-cir take -zco in the yo form.",
+            "es": "Grupo -zco: los verbos en -cer/-cir hacen -zco en la forma de yo.",
+            "de": "Die -zco-Gruppe: Verben auf -cer/-cir bilden die yo-Form auf -zco."
+          },
+          "examples": [
+            {
+              "es": "Yo conozco esta ciudad.",
+              "tr": {
+                "hu": "Ismerem ezt a várost.",
+                "en": "I know this city.",
+                "es": "Yo conozco esta ciudad.",
+                "de": "Ich kenne diese Stadt."
+              }
+            },
+            {
+              "es": "No conozco a nadie aquí.",
+              "tr": {
+                "hu": "Nem ismerek itt senkit.",
+                "en": "I don’t know anyone here.",
+                "es": "No conozco a nadie aquí.",
+                "de": "Ich kenne hier niemanden."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Kettős rendhagyó: a yo-alak mellett más alakok is tőt váltanak.",
+            "en": "Doubly irregular: besides the yo form, other forms change stem too.",
+            "es": "Doblemente irregular: además de la forma de yo, otras formas cambian de raíz.",
+            "de": "Doppelt unregelmäßig: neben der yo-Form ändern auch andere Formen den Stamm."
+          },
+          "examples": [
+            {
+              "es": "Tengo hambre, ¿y tú tienes?",
+              "tr": {
+                "hu": "Éhes vagyok, és te?",
+                "en": "I am hungry, and are you?",
+                "es": "Tengo hambre, ¿y tú tienes?",
+                "de": "Ich habe Hunger, und du?"
+              }
+            },
+            {
+              "es": "Yo vengo en autobús, ella viene en coche.",
+              "tr": {
+                "hu": "Én busszal jövök, ő autóval jön.",
+                "en": "I come by bus, she comes by car.",
+                "es": "Yo vengo en autobús, ella viene en coche.",
+                "de": "Ich komme mit dem Bus, sie kommt mit dem Auto."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Teljesen rendhagyó: minden alak eltér a szabályos mintától.",
+            "en": "Fully irregular: every form breaks from the regular pattern.",
+            "es": "Totalmente irregular: todas las formas se apartan del patrón regular.",
+            "de": "Ganz unregelmäßig: alle Formen weichen vom regelmäßigen Muster ab."
+          },
+          "examples": [
+            {
+              "es": "Yo soy de Hungría, ellos son de México.",
+              "tr": {
+                "hu": "Én Magyarországról vagyok, ők Mexikóból.",
+                "en": "I am from Hungary, they are from Mexico.",
+                "es": "Yo soy de Hungría, ellos son de México.",
+                "de": "Ich bin aus Ungarn, sie sind aus Mexiko."
+              }
+            },
+            {
+              "es": "Yo voy al mercado, nosotros vamos juntos.",
+              "tr": {
+                "hu": "Én a piacra megyek, mi együtt megyünk.",
+                "en": "I go to the market, we go together.",
+                "es": "Yo voy al mercado, nosotros vamos juntos.",
+                "de": "Ich gehe zum Markt, wir gehen zusammen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Egyszavas kivételek: egy-egy ige csak a yo-alakjában különleges.",
+            "en": "One-off oddities: a single verb is only special in its yo form.",
+            "es": "Rarezas sueltas: un verbo es especial solo en su forma de yo.",
+            "de": "Einzelfälle: ein Verb ist nur in seiner yo-Form besonders."
+          },
+          "examples": [
+            {
+              "es": "Yo no sé la respuesta.",
+              "tr": {
+                "hu": "Nem tudom a választ.",
+                "en": "I don’t know the answer.",
+                "es": "Yo no sé la respuesta.",
+                "de": "Ich weiß die Antwort nicht."
+              }
+            },
+            {
+              "es": "Yo le doy un regalo.",
+              "tr": {
+                "hu": "Adok neki egy ajándékot.",
+                "en": "I give him/her a gift.",
+                "es": "Yo le doy un regalo.",
+                "de": "Ich gebe ihm/ihr ein Geschenk."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A nosotros alak szinte mindig szabályos marad, ez a horgonyod, ha elbizonytalanodsz.",
+            "en": "The nosotros form almost always stays regular, that is your anchor when in doubt.",
+            "es": "La forma de nosotros casi siempre queda regular, esa es tu ancla cuando dudas.",
+            "de": "Die nosotros-Form bleibt fast immer regelmäßig, das ist dein Anker im Zweifel."
+          },
+          "examples": [
+            {
+              "es": "Nosotros tenemos tiempo.",
+              "tr": {
+                "hu": "Nekünk van időnk.",
+                "en": "We have time.",
+                "es": "Nosotros tenemos tiempo.",
+                "de": "Wir haben Zeit."
+              }
+            },
+            {
+              "es": "Nosotros decimos la verdad.",
+              "tr": {
+                "hu": "Mi mondjuk az igazat.",
+                "en": "We tell the truth.",
+                "es": "Nosotros decimos la verdad.",
+                "de": "Wir sagen die Wahrheit."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "presente-irregular-go",
+      "title": {
+        "hu": "-go csoport, jelen idő",
+        "en": "-go group, present tense",
+        "es": "Grupo -go, presente",
+        "de": "-go-Gruppe, Präsens"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "hacer",
+          "en": "hacer",
+          "es": "hacer",
+          "de": "hacer"
+        },
+        {
+          "hu": "poner",
+          "en": "poner",
+          "es": "poner",
+          "de": "poner"
+        },
+        {
+          "hu": "salir",
+          "en": "salir",
+          "es": "salir",
+          "de": "salir"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "hago",
+          "pongo",
+          "salgo"
+        ],
+        [
+          "tú",
+          "haces",
+          "pones",
+          "sales"
+        ],
+        [
+          "él/ella/usted",
+          "hace",
+          "pone",
+          "sale"
+        ],
+        [
+          "nosotros",
+          "hacemos",
+          "ponemos",
+          "salimos"
+        ],
+        [
+          "vosotros",
+          "hacéis",
+          "ponéis",
+          "salís"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "hacen",
+          "ponen",
+          "salen"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "presente-irregular-fuerte",
+      "title": {
+        "hu": "Kettős rendhagyók, jelen idő",
+        "en": "Doubly irregular verbs, present tense",
+        "es": "Verbos doblemente irregulares, presente",
+        "de": "Doppelt unregelmäßige Verben, Präsens"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "tener",
+          "en": "tener",
+          "es": "tener",
+          "de": "tener"
+        },
+        {
+          "hu": "venir",
+          "en": "venir",
+          "es": "venir",
+          "de": "venir"
+        },
+        {
+          "hu": "decir",
+          "en": "decir",
+          "es": "decir",
+          "de": "decir"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "tengo",
+          "vengo",
+          "digo"
+        ],
+        [
+          "tú",
+          "tienes",
+          "vienes",
+          "dices"
+        ],
+        [
+          "él/ella/usted",
+          "tiene",
+          "viene",
+          "dice"
+        ],
+        [
+          "nosotros",
+          "tenemos",
+          "venimos",
+          "decimos"
+        ],
+        [
+          "vosotros",
+          "tenéis",
+          "venís",
+          "decís"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "tienen",
+          "vienen",
+          "dicen"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "presente-ser-ir",
+      "title": {
+        "hu": "Teljesen rendhagyó: ser és ir, jelen idő",
+        "en": "Fully irregular: ser and ir, present tense",
+        "es": "Totalmente irregulares: ser e ir, presente",
+        "de": "Völlig unregelmäßig: ser und ir, Präsens"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "ser",
+          "en": "ser",
+          "es": "ser",
+          "de": "ser"
+        },
+        {
+          "hu": "ir",
+          "en": "ir",
+          "es": "ir",
+          "de": "ir"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "soy",
+          "voy"
+        ],
+        [
+          "tú",
+          "eres",
+          "vas"
+        ],
+        [
+          "él/ella/usted",
+          "es",
+          "va"
+        ],
+        [
+          "nosotros",
+          "somos",
+          "vamos"
+        ],
+        [
+          "vosotros",
+          "sois",
+          "vais"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "son",
+          "van"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Mikor használjuk?",
+        "en": "When do we use it?",
+        "es": "¿Cuándo se usa?",
+        "de": "Wann benutzen wir es?"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "A tener korral és szükségérzettel is jár: tener + años, tener hambre/sed.",
+            "en": "Tener also goes with age and needs: tener + años, tener hambre/sed.",
+            "es": "Tener también se usa con la edad y necesidades: tener + años, tener hambre/sed.",
+            "de": "Tener wird auch für Alter und Bedürfnisse benutzt: tener + años, tener hambre/sed."
+          },
+          "examples": [
+            {
+              "es": "Tengo treinta años.",
+              "tr": {
+                "hu": "Harminc éves vagyok.",
+                "en": "I am thirty years old.",
+                "es": "Tengo treinta años.",
+                "de": "Ich bin dreißig Jahre alt."
+              }
+            },
+            {
+              "es": "Tenemos mucha hambre.",
+              "tr": {
+                "hu": "Nagyon éhesek vagyunk.",
+                "en": "We are very hungry.",
+                "es": "Tenemos mucha hambre.",
+                "de": "Wir haben großen Hunger."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Tener que + főnévi igenév: kötelezettséget fejez ki.",
+            "en": "Tener que + infinitive expresses obligation.",
+            "es": "Tener que + infinitivo expresa obligación.",
+            "de": "Tener que + Infinitiv drückt eine Verpflichtung aus."
+          },
+          "examples": [
+            {
+              "es": "Tengo que trabajar hoy.",
+              "tr": {
+                "hu": "Ma dolgoznom kell.",
+                "en": "I have to work today.",
+                "es": "Tengo que trabajar hoy.",
+                "de": "Ich muss heute arbeiten."
+              }
+            },
+            {
+              "es": "Tienes que estudiar más.",
+              "tr": {
+                "hu": "Többet kell tanulnod.",
+                "en": "You have to study more.",
+                "es": "Tienes que estudiar más.",
+                "de": "Du musst mehr lernen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A hacer időjárásra és eltelt időre is használatos: hace calor, hace tiempo.",
+            "en": "Hacer is also used for weather and elapsed time: hace calor, hace tiempo.",
+            "es": "Hacer también se usa para el clima y el tiempo transcurrido: hace calor, hace tiempo.",
+            "de": "Hacer wird auch für Wetter und verstrichene Zeit benutzt: hace calor, hace tiempo."
+          },
+          "examples": [
+            {
+              "es": "Hace mucho calor hoy.",
+              "tr": {
+                "hu": "Ma nagyon meleg van.",
+                "en": "It is very hot today.",
+                "es": "Hace mucho calor hoy.",
+                "de": "Heute ist es sehr heiß."
+              }
+            },
+            {
+              "es": "Hace tiempo que vivo aquí.",
+              "tr": {
+                "hu": "Régóta itt élek.",
+                "en": "I have lived here for a while.",
+                "es": "Hace tiempo que vivo aquí.",
+                "de": "Ich lebe schon eine Weile hier."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A salir de/a a kiindulási helyet vagy a célt jelöli.",
+            "en": "Salir de/a marks the starting place or the goal.",
+            "es": "Salir de/a marca el lugar de origen o el destino.",
+            "de": "Salir de/a bezeichnet den Ausgangsort oder das Ziel."
+          },
+          "examples": [
+            {
+              "es": "Salgo de casa a las siete.",
+              "tr": {
+                "hu": "Hét órakor indulok el otthonról.",
+                "en": "I leave home at seven.",
+                "es": "Salgo de casa a las siete.",
+                "de": "Ich verlasse um sieben das Haus."
+              }
+            },
+            {
+              "es": "Salimos a cenar esta noche.",
+              "tr": {
+                "hu": "Ma este elmegyünk vacsorázni.",
+                "en": "We are going out for dinner tonight.",
+                "es": "Salimos a cenar esta noche.",
+                "de": "Wir gehen heute Abend essen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A venir a/de a célt vagy az eredetet jelöli.",
+            "en": "Venir a/de marks the purpose or the origin.",
+            "es": "Venir a/de marca el propósito o el origen.",
+            "de": "Venir a/de bezeichnet den Zweck oder die Herkunft."
+          },
+          "examples": [
+            {
+              "es": "Vengo a ayudarte.",
+              "tr": {
+                "hu": "Azért jövök, hogy segítsek neked.",
+                "en": "I am coming to help you.",
+                "es": "Vengo a ayudarte.",
+                "de": "Ich komme, um dir zu helfen."
+              }
+            },
+            {
+              "es": "Mis padres vienen de México.",
+              "tr": {
+                "hu": "A szüleim Mexikóból jönnek.",
+                "en": "My parents are coming from Mexico.",
+                "es": "Mis padres vienen de México.",
+                "de": "Meine Eltern kommen aus Mexiko."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A decir que idézett vagy jelentett beszédet vezet be.",
+            "en": "Decir que introduces reported or quoted speech.",
+            "es": "Decir que introduce el discurso referido o citado.",
+            "de": "Decir que leitet berichtete oder zitierte Rede ein."
+          },
+          "examples": [
+            {
+              "es": "Ella dice que llegamos tarde.",
+              "tr": {
+                "hu": "Ő azt mondja, hogy elkésünk.",
+                "en": "She says that we are arriving late.",
+                "es": "Ella dice que llegamos tarde.",
+                "de": "Sie sagt, dass wir zu spät kommen."
+              }
+            },
+            {
+              "es": "Yo digo la verdad.",
+              "tr": {
+                "hu": "Én az igazat mondom.",
+                "en": "I tell the truth.",
+                "es": "Yo digo la verdad.",
+                "de": "Ich sage die Wahrheit."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Hasonló, mégis más",
+        "en": "Similar, yet different",
+        "es": "Parecido, pero distinto",
+        "de": "Ähnlich, aber anders"
+      },
+      "confusables": "saber-conocer",
+      "pairs": [
+        {
+          "a": "sé",
+          "b": "conozco",
+          "note": {
+            "hu": "A saber tényt vagy képességet fejez ki, a conocer személyt vagy helyet: sé la respuesta, de conozco a tu hermano.",
+            "en": "Saber expresses a fact or a skill, conocer a person or a place: sé la respuesta, but conozco a tu hermano.",
+            "es": "Saber expresa un dato o una habilidad, conocer a una persona o un lugar: sé la respuesta, pero conozco a tu hermano.",
+            "de": "Saber drückt eine Tatsache oder eine Fähigkeit aus, conocer eine Person oder einen Ort: sé la respuesta, aber conozco a tu hermano."
+          },
+          "examples": [
+            {
+              "es": "Sé nadar.",
+              "tr": {
+                "hu": "Tudok úszni.",
+                "en": "I know how to swim.",
+                "es": "Sé nadar.",
+                "de": "Ich kann schwimmen."
+              }
+            },
+            {
+              "es": "Conozco este restaurante.",
+              "tr": {
+                "hu": "Ismerem ezt az éttermet.",
+                "en": "I know this restaurant.",
+                "es": "Conozco este restaurante.",
+                "de": "Ich kenne dieses Restaurant."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Latin-Amerikában, Mexikóban is, a vosotros helyett mindig ustedes-t használnak; a táblák vosotros-oszlopa csak Spanyolországban él.",
+        "en": "In Latin America, Mexico included, ustedes always replaces vosotros; the vosotros column in the tables only lives on in Spain.",
+        "es": "En Latinoamérica, también en México, siempre se usa ustedes en lugar de vosotros; la columna de vosotros de las tablas solo se usa en España.",
+        "de": "In Lateinamerika, auch in Mexiko, wird immer ustedes statt vosotros verwendet; die vosotros-Spalte der Tabellen lebt nur in Spanien weiter."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A 'sé' (tudom) ékezettel írandó, hogy megkülönböztessük a 'se' visszaható névmástól.",
+        "en": "\"Sé\" (I know) is written with an accent, to tell it apart from the reflexive pronoun \"se\".",
+        "es": "\"Sé\" (yo sé) lleva tilde, para distinguirlo del pronombre reflexivo \"se\".",
+        "de": "\"Sé\" (ich weiß) wird mit Akzent geschrieben, um es vom Reflexivpronomen \"se\" zu unterscheiden."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A leggyakoribb spanyol igék rendhagyók, de a rendetlenség rendszeres. Sok igénél csak a yo-alak lóg ki a sorból: «hago», «pongo», «salgo», «traigo». A cer és cir végű igéknél a yo-alak zco-ra végződik: «conozco». Néhány igénél a yo-alak mellett a többi alak is változik, mint a «tengo, tienes, tiene» vagy a «vengo, vienes, viene». A ser és az ir teljesen kilóg a sorból: «soy, eres, es» és «voy, vas, va». A nosotros alak szinte mindig szabályos marad, ez a horgonyod, ha elbizonytalanodsz: «tenemos, venimos, decimos». A saber és a conocer nem ugyanaz: «sé la respuesta», de «conozco a tu hermano».",
+    "en": "The commonest Spanish verbs are irregular, but the mess follows a system. In many verbs only the yo form is odd: «hago», «pongo», «salgo», «traigo». For verbs ending in cer or cir, the yo form ends in zco: «conozco». In a few verbs the yo form changes and so do the others, like «tengo, tienes, tiene» or «vengo, vienes, viene». Ser and ir stand completely apart: «soy, eres, es» and «voy, vas, va». The nosotros form almost always stays regular, your anchor when in doubt: «tenemos, venimos, decimos». Saber and conocer are not the same: «sé la respuesta», but «conozco a tu hermano».",
+    "es": "Los verbos españoles más frecuentes son irregulares, pero el desorden tiene un sistema. En muchos verbos solo la forma de yo cambia: «hago», «pongo», «salgo», «traigo». En los verbos terminados en cer o cir, la forma de yo acaba en zco: «conozco». En algunos verbos cambia la forma de yo y también las demás, como «tengo, tienes, tiene» o «vengo, vienes, viene». Ser e ir son totalmente distintos: «soy, eres, es» y «voy, vas, va». La forma de nosotros casi siempre queda regular, tu ancla cuando dudas: «tenemos, venimos, decimos». Saber y conocer no son lo mismo: «sé la respuesta», pero «conozco a tu hermano».",
+    "de": "Die häufigsten spanischen Verben sind unregelmäßig, aber das Chaos hat ein System. Bei vielen Verben ist nur die yo-Form anders: «hago», «pongo», «salgo», «traigo». Bei Verben auf cer oder cir endet die yo-Form auf zco: «conozco». Bei manchen Verben ändert sich neben der yo-Form auch der Rest, wie bei «tengo, tienes, tiene» oder «vengo, vienes, viene». Ser und ir fallen völlig aus dem Rahmen: «soy, eres, es» und «voy, vas, va». Die nosotros-Form bleibt fast immer regelmäßig, dein Anker im Zweifel: «tenemos, venimos, decimos». Saber und conocer sind nicht dasselbe: «sé la respuesta», aber «conozco a tu hermano»."
   },
   "glossary": [
     {
@@ -192,16 +826,16 @@
       },
       "wrong": {
         "haco": {
-          "hu": "Ilyen alak nincs.",
-          "en": "No such form exists.",
-          "es": "Esa forma no existe.",
-          "de": "Diese Form gibt es nicht."
+          "hu": "A \"haco\" nem létező spanyol igealak, elírás; a hacer yo-alakja mindig \"hago\", mert a -go csoportba tartozik.",
+          "en": "\"Haco\" is not a real Spanish verb form, it is a typo; hacer's yo form is always \"hago\", because it belongs to the -go group.",
+          "es": "\"Haco\" no es una forma real del español, es un error; la forma de yo de hacer es siempre \"hago\", porque pertenece al grupo -go.",
+          "de": "\"Haco\" ist keine echte spanische Verbform, sondern ein Tippfehler; die yo-Form von hacer ist immer \"hago\", weil es zur -go-Gruppe gehört."
         },
         "hace": {
-          "hu": "Ez az ő alakja.",
-          "en": "That is the he/she form.",
-          "es": "Esa es la forma de él/ella.",
-          "de": "Das ist die er/sie-Form."
+          "hu": "A \"hace\" az ő alakja, nem a yo-é; ha ide kerülne, a mondat alanya és igéje nem egyezne, helyesen csak \"él/ella hace\" formában állna: Él hace la comida.",
+          "en": "\"Hace\" is the he/she form, not yo's; if used here the subject and verb would not agree, it only works as \"él/ella hace\": Él hace la comida.",
+          "es": "\"Hace\" es la forma de él/ella, no de yo; si se usara aquí, sujeto y verbo no concordarían, solo funciona como \"él/ella hace\": Él hace la comida.",
+          "de": "\"Hace\" ist die er/sie-Form, nicht die von yo; würde man sie hier einsetzen, stimmten Subjekt und Verb nicht überein, sie passt nur als \"él/ella hace\": Él hace la comida."
         }
       },
       "examples": [
@@ -226,16 +860,16 @@
       },
       "wrong": {
         "tengas": {
-          "hu": "Ez kötőmód, nem kijelentő jelen.",
-          "en": "That is the subjunctive, not the plain present.",
-          "es": "Eso es subjuntivo, no presente de indicativo.",
-          "de": "Das ist Subjuntivo, kein Indikativ Präsens."
+          "hu": "A \"tengas\" kötőmód, olyan mondatban állna, mint \"ojalá que tengas suerte\"; ide, egyszerű kijelentésbe nem illik, mert nincs előtte kötőmódot kérő szó.",
+          "en": "\"Tengas\" is subjunctive, it belongs in a sentence like \"ojalá que tengas suerte\"; it does not fit here in a plain statement, because nothing before it calls for the subjunctive.",
+          "es": "\"Tengas\" es subjuntivo, encajaría en una frase como \"ojalá que tengas suerte\"; aquí, en una afirmación simple, no cabe porque nada antes pide subjuntivo.",
+          "de": "\"Tengas\" ist Subjuntivo, es würde in einen Satz wie \"ojalá que tengas suerte\" passen; hier, in einer einfachen Aussage, passt es nicht, weil nichts davor den Subjuntivo verlangt."
         },
         "tengo": {
-          "hu": "Ez az én alakom.",
-          "en": "That is my form.",
-          "es": "Esa es la forma de yo.",
-          "de": "Das ist meine Form."
+          "hu": "A \"tengo\" az én alakom; ha ide kerülne, a mondat azt állítaná, hogy ÉN dolgozom sokat, nem te, és az alany-ige egyeztetés is sérülne.",
+          "en": "\"Tengo\" is my (yo) form; if used here, the sentence would claim that I have a lot of work, not you, and subject-verb agreement would break.",
+          "es": "\"Tengo\" es la forma de yo; si se usara aquí, la frase diría que YO tengo mucho trabajo, no tú, y la concordancia sujeto-verbo fallaría.",
+          "de": "\"Tengo\" ist meine (yo) Form; würde man sie hier verwenden, würde der Satz aussagen, dass ICH viel Arbeit habe, nicht du, und Subjekt und Verb stimmten nicht überein."
         }
       },
       "examples": [
@@ -260,16 +894,16 @@
       },
       "wrong": {
         "vayamos": {
-          "hu": "Ez kötőmód.",
-          "en": "That is the subjunctive.",
-          "es": "Eso es subjuntivo.",
-          "de": "Das ist Subjuntivo."
+          "hu": "A \"vayamos\" kötőmód/felszólítás (\"menjünk!\"); ha ide kerülne, a mondat javaslattá válna, nem egyszerű ténymegállapítássá: ¡Vayamos a la escuela!",
+          "en": "\"Vayamos\" is subjunctive/an exhortation (\"let's go!\"); if used here the sentence would turn into a suggestion, not a plain statement: ¡Vayamos a la escuela!",
+          "es": "\"Vayamos\" es subjuntivo/exhortación (\"¡vamos!\"); si se usara aquí, la frase se convertiría en una sugerencia, no en una afirmación: ¡Vayamos a la escuela!",
+          "de": "\"Vayamos\" ist Subjuntivo/Aufforderung (\"gehen wir!\"); würde man es hier einsetzen, würde der Satz zu einem Vorschlag statt zu einer Feststellung: ¡Vayamos a la escuela!"
         },
         "vais": {
-          "hu": "Ez a vosotros alakja (Spanyolország).",
-          "en": "That is the vosotros form (Spain).",
-          "es": "Esa es la forma de vosotros.",
-          "de": "Das ist die vosotros-Form."
+          "hu": "A \"vais\" a vosotros alakja (Spanyolország); ha ide kerülne, a mondat titeket jelentene, nem minket: Vosotros vais a la escuela en autobús.",
+          "en": "\"Vais\" is the vosotros form (Spain); if used here the sentence would mean \"you all go\", not \"we go\": Vosotros vais a la escuela en autobús.",
+          "es": "\"Vais\" es la forma de vosotros (España); si se usara aquí, la frase significaría \"vosotros vais\", no \"nosotros vamos\": Vosotros vais a la escuela en autobús.",
+          "de": "\"Vais\" ist die vosotros-Form (Spanien); würde man sie hier einsetzen, würde der Satz \"ihr geht\" bedeuten, nicht \"wir gehen\": Vosotros vais a la escuela en autobús."
         }
       },
       "examples": [
@@ -294,16 +928,16 @@
       },
       "wrong": {
         "conoco": {
-          "hu": "Ilyen alak nincs.",
-          "en": "No such form exists.",
-          "es": "Esa forma no existe.",
-          "de": "Diese Form gibt es nicht."
+          "hu": "A \"conoco\" nem létező alak, elírás; a conocer yo-alakja mindig \"conozco\", mert a -cer végű igék -zco-ra végződnek.",
+          "en": "\"Conoco\" is not a real form, a typo; conocer's yo form is always \"conozco\", because verbs ending in -cer take -zco.",
+          "es": "\"Conoco\" no es una forma real, es un error; la forma de yo de conocer es siempre \"conozco\", porque los verbos en -cer hacen -zco.",
+          "de": "\"Conoco\" ist keine echte Form, ein Tippfehler; die yo-Form von conocer ist immer \"conozco\", weil Verben auf -cer -zco bilden."
         },
         "sé": {
-          "hu": "A saber tényt tud, nem személyt ismer.",
-          "en": "Saber knows a fact, not a person.",
-          "es": "Saber es para datos, no para personas.",
-          "de": "Saber ist für Fakten, nicht für Personen."
+          "hu": "A \"sé\" a saber alakja, ami tényt vagy képességet fejez ki, nem személy ismeretét; embert megismerni conocer-rel mondunk: conozco a tu hermano.",
+          "en": "\"Sé\" is saber's form, which expresses knowing a fact or a skill, not knowing a person; knowing a person is said with conocer: conozco a tu hermano.",
+          "es": "\"Sé\" es la forma de saber, que expresa conocer un dato o una habilidad, no a una persona; conocer a alguien se dice con conocer: conozco a tu hermano.",
+          "de": "\"Sé\" ist die Form von saber, das bedeutet, eine Tatsache oder Fähigkeit zu kennen, nicht eine Person; eine Person kennt man mit conocer: conozco a tu hermano."
         }
       },
       "examples": [
@@ -328,16 +962,16 @@
       },
       "wrong": {
         "sabo": {
-          "hu": "Ilyen alak nincs.",
-          "en": "No such form exists.",
-          "es": "Esa forma no existe.",
-          "de": "Diese Form gibt es nicht."
+          "hu": "A \"sabo\" nem létező alak; a saber yo-alakja egyszavas kivétel: \"sé\", nem szabályos -o végződés.",
+          "en": "\"Sabo\" is not a real form; saber's yo form is a one-off exception: \"sé\", not the regular -o ending.",
+          "es": "\"Sabo\" no es una forma real; la forma de yo de saber es una excepción: \"sé\", no la terminación regular en -o.",
+          "de": "\"Sabo\" ist keine echte Form; die yo-Form von saber ist eine Ausnahme: \"sé\", nicht die reguläre Endung auf -o."
         },
         "conozco": {
-          "hu": "A választ tudni kell, nem ismerni.",
-          "en": "An answer is something you know as a fact.",
-          "es": "La respuesta se sabe, no se conoce.",
-          "de": "Eine Antwort weiß man, man kennt sie nicht."
+          "hu": "A \"conozco\" a conocer alakja, ami személyt vagy helyet ismer; egy választ tudni kell, nem \"megismerni\", ezért ide nem illik jelentéstanilag.",
+          "en": "\"Conozco\" is conocer's form, used for knowing a person or place; an answer is something you know as a fact, so it does not fit here in meaning.",
+          "es": "\"Conozco\" es la forma de conocer, que se usa para personas o lugares; una respuesta se sabe, no se conoce, así que no encaja aquí en significado.",
+          "de": "\"Conozco\" ist die Form von conocer, für Personen oder Orte; eine Antwort weiß man, man kennt sie nicht, deshalb passt es hier inhaltlich nicht."
         }
       },
       "examples": [
@@ -362,16 +996,16 @@
       },
       "wrong": {
         "dece": {
-          "hu": "Ilyen alak nincs.",
-          "en": "No such form exists.",
-          "es": "Esa forma no existe.",
-          "de": "Diese Form gibt es nicht."
+          "hu": "A \"dece\" nem létező alak; a decir tőváltása e→i, az ő alakja \"dice\", nem \"dece\".",
+          "en": "\"Dece\" is not a real form; decir's stem change is e→i, its he/she form is \"dice\", not \"dece\".",
+          "es": "\"Dece\" no es una forma real; el cambio de raíz de decir es e→i, su forma de él/ella es \"dice\", no \"dece\".",
+          "de": "\"Dece\" ist keine echte Form; der Stammwechsel von decir ist e→i, die er/sie-Form ist \"dice\", nicht \"dece\"."
         },
         "digo": {
-          "hu": "Ez az én alakom.",
-          "en": "That is my form.",
-          "es": "Esa es la forma de yo.",
-          "de": "Das ist meine Form."
+          "hu": "A \"digo\" az én alakom; ha ide kerülne, azt jelentené, hogy ÉN mondom, nem ő, és nem egyezne a mondat alanyával (ella).",
+          "en": "\"Digo\" is my (yo) form; if used here it would mean I say it, not she, and it would not agree with the subject \"ella\".",
+          "es": "\"Digo\" es la forma de yo; si se usara aquí significaría que YO lo digo, no ella, y no concordaría con el sujeto \"ella\".",
+          "de": "\"Digo\" ist meine (yo) Form; würde man sie hier verwenden, hieße es, dass ICH es sage, nicht sie, und es stimmte nicht mit dem Subjekt \"ella\" überein."
         }
       },
       "examples": [
@@ -396,16 +1030,16 @@
       },
       "wrong": {
         "salo": {
-          "hu": "Ilyen alak nincs.",
-          "en": "No such form exists.",
-          "es": "Esa forma no existe.",
-          "de": "Diese Form gibt es nicht."
+          "hu": "A \"salo\" nem létező alak; a salir yo-alakja a -go csoportba tartozik: \"salgo\".",
+          "en": "\"Salo\" is not a real form; salir's yo form belongs to the -go group: \"salgo\".",
+          "es": "\"Salo\" no es una forma real; la forma de yo de salir pertenece al grupo -go: \"salgo\".",
+          "de": "\"Salo\" ist keine echte Form; die yo-Form von salir gehört zur -go-Gruppe: \"salgo\"."
         },
         "sale": {
-          "hu": "Ez az ő alakja.",
-          "en": "That is the he/she form.",
-          "es": "Esa es la forma de él/ella.",
-          "de": "Das ist die er/sie-Form."
+          "hu": "A \"sale\" az ő alakja; ha ide kerülne, azt jelentené, hogy Ő megy el otthonról hétkor, nem én, és nem egyezne a yo alannyal.",
+          "en": "\"Sale\" is the he/she form; if used here it would mean HE/SHE leaves home at seven, not I, and it would not agree with the yo subject.",
+          "es": "\"Sale\" es la forma de él/ella; si se usara aquí significaría que ÉL/ELLA sale de casa a las siete, no yo, y no concordaría con el sujeto yo.",
+          "de": "\"Sale\" ist die er/sie-Form; würde man sie hier verwenden, hieße es, dass ER/SIE um sieben das Haus verlässt, nicht ich, und es stimmte nicht mit dem Subjekt yo überein."
         }
       },
       "examples": [
@@ -430,16 +1064,16 @@
       },
       "wrong": {
         "estás": {
-          "hu": "Az estar helyet vagy állapotot jelöl, nem származást.",
-          "en": "Estar marks place or state, not origin.",
-          "es": "Estar marca lugar o estado, no origen.",
-          "de": "Estar markiert Ort oder Zustand, keine Herkunft."
+          "hu": "Az \"estás\" is helyes mondatot adna, de mást jelentene: \"¿De dónde estás?\" a pillanatnyi tartózkodási helyre kérdezne, nem a származásra.",
+          "en": "\"Estás\" would also make a sentence, but a different one: \"¿De dónde estás?\" would ask about your current whereabouts, not your origin.",
+          "es": "\"Estás\" también formaría una frase, pero distinta: \"¿De dónde estás?\" preguntaría por tu paradero actual, no por tu origen.",
+          "de": "\"Estás\" würde ebenfalls einen Satz ergeben, aber einen anderen: \"¿De dónde estás?\" würde nach deinem aktuellen Aufenthaltsort fragen, nicht nach deiner Herkunft."
         },
         "es": {
-          "hu": "Ez az ő alakja.",
-          "en": "That is the he/she form.",
-          "es": "Esa es la forma de él/ella.",
-          "de": "Das ist die er/sie-Form."
+          "hu": "Az \"es\" az ő alakja; ha ide kerülne, a kérdés azt jelentené: honnan van Ő, nem te, és nem egyezne a tú alannyal.",
+          "en": "\"Es\" is the he/she form; if used here the question would ask where HE/SHE is from, not you, and would not agree with the tú subject.",
+          "es": "\"Es\" es la forma de él/ella; si se usara aquí, la pregunta sería de dónde es ÉL/ELLA, no tú, y no concordaría con el sujeto tú.",
+          "de": "\"Es\" ist die er/sie-Form; würde man sie hier verwenden, würde die Frage lauten, woher ER/SIE kommt, nicht du, und es stimmte nicht mit dem Subjekt tú überein."
         }
       },
       "examples": [
@@ -464,16 +1098,16 @@
       },
       "wrong": {
         "venen": {
-          "hu": "Ilyen alak nincs.",
-          "en": "No such form exists.",
-          "es": "Esa forma no existe.",
-          "de": "Diese Form gibt es nicht."
+          "hu": "A \"venen\" nem létező alak; a venir ellos-alakja tőváltós: \"vienen\", nem \"venen\".",
+          "en": "\"Venen\" is not a real form; venir's ellos form has a stem change: \"vienen\", not \"venen\".",
+          "es": "\"Venen\" no es una forma real; la forma de ellos de venir diptonga: \"vienen\", no \"venen\".",
+          "de": "\"Venen\" ist keine echte Form; die ellos-Form von venir diphthongiert: \"vienen\", nicht \"venen\"."
         },
         "venimos": {
-          "hu": "Ez a mi alakunk.",
-          "en": "That is our form.",
-          "es": "Esa es la forma de nosotros.",
-          "de": "Das ist unsere Form."
+          "hu": "A \"venimos\" a mi alakunk; ha ide kerülne, azt jelentené, hogy MI látogatunk meg minket, ami értelmetlen, és nem egyezne a mis padres alannyal.",
+          "en": "\"Venimos\" is our (nosotros) form; if used here it would mean WE come to visit ourselves, which makes no sense, and would not agree with the subject \"mis padres\".",
+          "es": "\"Venimos\" es la forma de nosotros; si se usara aquí significaría que NOSOTROS venimos a visitarnos a nosotros mismos, lo cual no tiene sentido, y no concordaría con el sujeto \"mis padres\".",
+          "de": "\"Venimos\" ist unsere (nosotros) Form; würde man sie hier verwenden, hieße es, dass WIR uns selbst besuchen kommen, was keinen Sinn ergibt, und es stimmte nicht mit dem Subjekt \"mis padres\" überein."
         }
       },
       "examples": [
@@ -498,16 +1132,16 @@
       },
       "wrong": {
         "do": {
-          "hu": "Ilyen alak nincs.",
-          "en": "No such form exists.",
-          "es": "Esa forma no existe.",
-          "de": "Diese Form gibt es nicht."
+          "hu": "A \"do\" nem létező spanyol igealak; a dar yo-alakja egyszavas kivétel: \"doy\".",
+          "en": "\"Do\" is not a real Spanish verb form; dar's yo form is a one-off exception: \"doy\".",
+          "es": "\"Do\" no es una forma real del español; la forma de yo de dar es una excepción: \"doy\".",
+          "de": "\"Do\" ist keine echte spanische Verbform; die yo-Form von dar ist eine Ausnahme: \"doy\"."
         },
         "da": {
-          "hu": "Ez az ő alakja.",
-          "en": "That is the he/she form.",
-          "es": "Esa es la forma de él/ella.",
-          "de": "Das ist die er/sie-Form."
+          "hu": "A \"da\" az ő alakja; ha ide kerülne, azt jelentené, hogy Ő ad ajándékot anyámnak, nem én, és nem egyezne a yo alannyal.",
+          "en": "\"Da\" is the he/she form; if used here it would mean HE/SHE gives a gift to my mother, not I, and would not agree with the yo subject.",
+          "es": "\"Da\" es la forma de él/ella; si se usara aquí significaría que ÉL/ELLA le da un regalo a mi madre, no yo, y no concordaría con el sujeto yo.",
+          "de": "\"Da\" ist die er/sie-Form; würde man sie hier verwenden, hieße es, dass ER/SIE meiner Mutter ein Geschenk gibt, nicht ich, und es stimmte nicht mit dem Subjekt yo überein."
         }
       },
       "examples": [
@@ -532,16 +1166,16 @@
       },
       "wrong": {
         "dicemos": {
-          "hu": "A tőváltás nem érinti a mi alakot.",
-          "en": "The stem change does not reach the we-form.",
-          "es": "El cambio de raíz no llega a nosotros.",
-          "de": "Der Stammwechsel erreicht die wir-Form nicht."
+          "hu": "A \"dicemos\" nem létező alak; a tőváltás sosem éri el a nosotros alakot, ezért a helyes forma \"decimos\".",
+          "en": "\"Dicemos\" is not a real form; the stem change never reaches the nosotros form, so the correct one is \"decimos\".",
+          "es": "\"Dicemos\" no es una forma real; el cambio de raíz nunca llega a la forma de nosotros, así que la correcta es \"decimos\".",
+          "de": "\"Dicemos\" ist keine echte Form; der Stammwechsel erreicht die nosotros-Form nie, deshalb ist die richtige Form \"decimos\"."
         },
         "digamos": {
-          "hu": "Ez kötőmód.",
-          "en": "That is the subjunctive.",
-          "es": "Eso es subjuntivo.",
-          "de": "Das ist Subjuntivo."
+          "hu": "A \"digamos\" kötőmód/felszólítás (\"mondjuk!\"); ha ide kerülne, a mondat javaslattá válna, nem ténymegállapítássá: ¡Digamos la verdad!",
+          "en": "\"Digamos\" is subjunctive/an exhortation (\"let's say\"); if used here the sentence would turn into a suggestion, not a statement: ¡Digamos la verdad!",
+          "es": "\"Digamos\" es subjuntivo/exhortación (\"digamos\"); si se usara aquí, la frase se convertiría en una sugerencia, no en una afirmación: ¡Digamos la verdad!",
+          "de": "\"Digamos\" ist Subjuntivo/Aufforderung (\"sagen wir\"); würde man es hier einsetzen, würde der Satz zu einem Vorschlag statt zu einer Feststellung: ¡Digamos la verdad!"
         }
       },
       "examples": [
@@ -566,22 +1200,498 @@
       },
       "wrong": {
         "oyo": {
-          "hu": "Ilyen alak nincs.",
-          "en": "No such form exists.",
-          "es": "Esa forma no existe.",
-          "de": "Diese Form gibt es nicht."
+          "hu": "Az \"oyo\" nem létező alak; az oír yo-alakja \"oigo\", a -go csoport tagja.",
+          "en": "\"Oyo\" is not a real form; oír's yo form is \"oigo\", part of the -go group.",
+          "es": "\"Oyo\" no es una forma real; la forma de yo de oír es \"oigo\", del grupo -go.",
+          "de": "\"Oyo\" ist keine echte Form; die yo-Form von oír ist \"oigo\", Teil der -go-Gruppe."
         },
         "oye": {
-          "hu": "Ez az ő alakja.",
-          "en": "That is the he/she form.",
-          "es": "Esa es la forma de él/ella.",
-          "de": "Das ist die er/sie-Form."
+          "hu": "Az \"oye\" az ő alakja; ha ide kerülne, azt jelentené, hogy Ő hallgat zenét, nem én, és nem egyezne a yo alannyal.",
+          "en": "\"Oye\" is the he/she form; if used here it would mean HE/SHE listens to music, not I, and would not agree with the yo subject.",
+          "es": "\"Oye\" es la forma de él/ella; si se usara aquí significaría que ÉL/ELLA oye música, no yo, y no concordaría con el sujeto yo.",
+          "de": "\"Oye\" ist die er/sie-Form; würde man sie hier verwenden, hieße es, dass ER/SIE Musik hört, nicht ich, und es stimmte nicht mit dem Subjekt yo überein."
         }
       },
       "examples": [
         "Yo hago la cena.",
         "Yo traigo agua."
       ]
+    },
+    {
+      "id": "pi-match-01",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "yo salgo temprano",
+          "en": "I leave early"
+        },
+        {
+          "es": "ella tiene razón",
+          "en": "she is right"
+        },
+        {
+          "es": "nosotros hacemos la tarea",
+          "en": "we do the homework"
+        },
+        {
+          "es": "ellos vienen mañana",
+          "en": "they are coming tomorrow"
+        },
+        {
+          "es": "yo no sé nada",
+          "en": "I don’t know anything"
+        },
+        {
+          "es": "él dice la verdad",
+          "en": "he tells the truth"
+        }
+      ]
+    },
+    {
+      "id": "pi-form-01",
+      "kind": "form",
+      "verb": "hacer",
+      "person": "yo",
+      "answer": "hago",
+      "table": "presente-irregular-go"
+    },
+    {
+      "id": "pi-form-02",
+      "kind": "form",
+      "verb": "hacer",
+      "person": "nosotros",
+      "answer": "hacemos",
+      "table": "presente-irregular-go"
+    },
+    {
+      "id": "pi-form-03",
+      "kind": "form",
+      "verb": "poner",
+      "person": "tú",
+      "answer": "pones",
+      "table": "presente-irregular-go"
+    },
+    {
+      "id": "pi-form-04",
+      "kind": "form",
+      "verb": "ir",
+      "person": "yo",
+      "answer": "voy",
+      "table": "presente-ser-ir"
+    },
+    {
+      "id": "pi-form-05",
+      "kind": "form",
+      "verb": "salir",
+      "person": "él/ella/usted",
+      "answer": "sale",
+      "table": "presente-irregular-go"
+    },
+    {
+      "id": "pi-form-06",
+      "kind": "form",
+      "verb": "salir",
+      "person": "ellos/ellas/ustedes",
+      "answer": "salen",
+      "table": "presente-irregular-go"
+    },
+    {
+      "id": "pi-form-07",
+      "kind": "form",
+      "verb": "tener",
+      "person": "yo",
+      "answer": "tengo",
+      "table": "presente-irregular-fuerte"
+    },
+    {
+      "id": "pi-form-08",
+      "kind": "form",
+      "verb": "tener",
+      "person": "ellos/ellas/ustedes",
+      "answer": "tienen",
+      "table": "presente-irregular-fuerte"
+    },
+    {
+      "id": "pi-form-09",
+      "kind": "form",
+      "verb": "venir",
+      "person": "tú",
+      "answer": "vienes",
+      "table": "presente-irregular-fuerte"
+    },
+    {
+      "id": "pi-form-10",
+      "kind": "form",
+      "verb": "venir",
+      "person": "nosotros",
+      "answer": "venimos",
+      "table": "presente-irregular-fuerte"
+    },
+    {
+      "id": "pi-form-11",
+      "kind": "form",
+      "verb": "decir",
+      "person": "él/ella/usted",
+      "answer": "dice",
+      "table": "presente-irregular-fuerte"
+    },
+    {
+      "id": "pi-form-12",
+      "kind": "form",
+      "verb": "ir",
+      "person": "ellos/ellas/ustedes",
+      "answer": "van",
+      "table": "presente-ser-ir"
+    },
+    {
+      "kind": "why",
+      "id": "pi-why-01",
+      "es": "Hago la comida los domingos.",
+      "tr": {
+        "hu": "Vasárnaponként én készítem az ételt.",
+        "en": "I make the food on Sundays.",
+        "es": "Hago la comida los domingos.",
+        "de": "Ich mache sonntags das Essen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "-go csoport",
+            "en": "-go group",
+            "es": "grupo -go",
+            "de": "-go-Gruppe"
+          }
+        },
+        {
+          "text": {
+            "hu": "-zco csoport",
+            "en": "-zco group",
+            "es": "grupo -zco",
+            "de": "-zco-Gruppe"
+          },
+          "wrong": {
+            "hu": "A -zco csoport a -cer/-cir végű igékre vonatkozik (pl. conozco); a hacer nem ilyen, a yo-alakja \"hago\", a -go csoportba tartozik.",
+            "en": "The -zco group is for verbs ending in -cer/-cir (e.g. conozco); hacer is not one of these, its yo form \"hago\" belongs to the -go group.",
+            "es": "El grupo -zco es para verbos en -cer/-cir (p. ej. conozco); hacer no es de esos, su forma de yo \"hago\" es del grupo -go.",
+            "de": "Die -zco-Gruppe gilt für Verben auf -cer/-cir (z. B. conozco); hacer gehört nicht dazu, seine yo-Form \"hago\" gehört zur -go-Gruppe."
+          }
+        },
+        {
+          "text": {
+            "hu": "kettős rendhagyó",
+            "en": "doubly irregular",
+            "es": "doblemente irregular",
+            "de": "doppelt unregelmäßig"
+          },
+          "wrong": {
+            "hu": "Kettős rendhagyónál más alakok is tőt váltanak (pl. tengo, tienes); a hacernek csak a yo-alakja lóg ki, minden más alak szabályos.",
+            "en": "A doubly irregular verb changes stem in other forms too (e.g. tengo, tienes); hacer only has an odd yo form, every other form is regular.",
+            "es": "Un verbo doblemente irregular cambia de raíz también en otras formas (p. ej. tengo, tienes); hacer solo tiene rara la forma de yo, las demás son regulares.",
+            "de": "Ein doppelt unregelmäßiges Verb ändert den Stamm auch in anderen Formen (z. B. tengo, tienes); bei hacer ist nur die yo-Form anders, alle anderen sind regelmäßig."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pi-why-02",
+      "es": "Conozco a tu hermano.",
+      "tr": {
+        "hu": "Ismerem a testvéredet.",
+        "en": "I know your brother.",
+        "es": "Conozco a tu hermano.",
+        "de": "Ich kenne deinen Bruder."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "-go csoport",
+            "en": "-go group",
+            "es": "grupo -go",
+            "de": "-go-Gruppe"
+          },
+          "wrong": {
+            "hu": "A -go csoport olyan igékre vonatkozik, mint hago vagy salgo; a conocer yo-alakja \"conozco\", -zco-ra végződik, nem -go-ra.",
+            "en": "The -go group is for verbs like hago or salgo; conocer's yo form is \"conozco\", ending in -zco, not -go.",
+            "es": "El grupo -go es para verbos como hago o salgo; la forma de yo de conocer es \"conozco\", termina en -zco, no en -go.",
+            "de": "Die -go-Gruppe gilt für Verben wie hago oder salgo; die yo-Form von conocer ist \"conozco\", sie endet auf -zco, nicht auf -go."
+          }
+        },
+        {
+          "text": {
+            "hu": "-zco csoport",
+            "en": "-zco group",
+            "es": "grupo -zco",
+            "de": "-zco-Gruppe"
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszavas kivétel",
+            "en": "one-off oddity",
+            "es": "rareza suelta",
+            "de": "Einzelfall"
+          },
+          "wrong": {
+            "hu": "Az egyszavas kivétel olyan igékre vonatkozik, mint dar (doy) vagy saber (sé); a conocer szabályos mintát követ a -cer igék körében, nem egyedi kivétel.",
+            "en": "The one-off oddity applies to verbs like dar (doy) or saber (sé); conocer follows a regular pattern among -cer verbs, it is not a unique exception.",
+            "es": "La rareza suelta se aplica a verbos como dar (doy) o saber (sé); conocer sigue un patrón regular entre los verbos en -cer, no es una excepción única.",
+            "de": "Der Einzelfall betrifft Verben wie dar (doy) oder saber (sé); conocer folgt einem regelmäßigen Muster unter den -cer-Verben, es ist keine einzigartige Ausnahme."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pi-why-03",
+      "es": "Tienes mucho trabajo esta semana.",
+      "tr": {
+        "hu": "Sok munkád van ezen a héten.",
+        "en": "You have a lot of work this week.",
+        "es": "Tienes mucho trabajo esta semana.",
+        "de": "Du hast diese Woche viel Arbeit."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "-go csoport",
+            "en": "-go group",
+            "es": "grupo -go",
+            "de": "-go-Gruppe"
+          },
+          "wrong": {
+            "hu": "A -go csoportnál csak a yo-alak lóg ki; a tenernél a tú-alak (tienes) is tőt vált, ez már kettős rendhagyóság.",
+            "en": "In the -go group only the yo form is odd; with tener the tú form (tienes) also changes stem, that is doubly irregular.",
+            "es": "En el grupo -go solo cambia la forma de yo; en tener la forma de tú (tienes) también cambia de raíz, eso es doblemente irregular.",
+            "de": "In der -go-Gruppe ist nur die yo-Form anders; bei tener ändert sich auch die tú-Form (tienes), das ist doppelt unregelmäßig."
+          }
+        },
+        {
+          "text": {
+            "hu": "kettős rendhagyó",
+            "en": "doubly irregular",
+            "es": "doblemente irregular",
+            "de": "doppelt unregelmäßig"
+          }
+        },
+        {
+          "text": {
+            "hu": "nosotros: szabályos marad",
+            "en": "nosotros stays regular",
+            "es": "nosotros sigue regular",
+            "de": "nosotros bleibt regelmäßig"
+          },
+          "wrong": {
+            "hu": "A nosotros-horgony arról szól, hogy a mi-alak szabályos marad (tenemos); ez a mondat viszont a tú-alakról (tienes) szól, ami tőváltós.",
+            "en": "The nosotros anchor is about the we-form staying regular (tenemos); this sentence is about the tú form (tienes), which has a stem change.",
+            "es": "El ancla de nosotros habla de que la forma de nosotros queda regular (tenemos); esta frase es sobre la forma de tú (tienes), que diptonga.",
+            "de": "Der nosotros-Anker besagt, dass die wir-Form regelmäßig bleibt (tenemos); dieser Satz betrifft aber die tú-Form (tienes), die den Stamm wechselt."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pi-why-04",
+      "es": "Vamos a la escuela en autobús.",
+      "tr": {
+        "hu": "Busszal megyünk az iskolába.",
+        "en": "We go to school by bus.",
+        "es": "Vamos a la escuela en autobús.",
+        "de": "Wir fahren mit dem Bus zur Schule."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kettős rendhagyó",
+            "en": "doubly irregular",
+            "es": "doblemente irregular",
+            "de": "doppelt unregelmäßig"
+          },
+          "wrong": {
+            "hu": "Kettős rendhagyónál a szabályos alaphoz képest csak néhány alak tér el; az ir minden alakja teljesen más tövet használ (voy, vas, va, vamos), ez már teljes rendhagyóság.",
+            "en": "A doubly irregular verb only deviates in a few forms from the regular base; every form of ir uses a completely different stem (voy, vas, va, vamos), that is fully irregular.",
+            "es": "Un verbo doblemente irregular solo se aparta en algunas formas de la base regular; todas las formas de ir usan una raíz totalmente distinta (voy, vas, va, vamos), eso es totalmente irregular.",
+            "de": "Ein doppelt unregelmäßiges Verb weicht nur in einigen Formen von der regelmäßigen Basis ab; jede Form von ir hat einen ganz anderen Stamm (voy, vas, va, vamos), das ist ganz unregelmäßig."
+          }
+        },
+        {
+          "text": {
+            "hu": "teljesen rendhagyó",
+            "en": "fully irregular",
+            "es": "totalmente irregular",
+            "de": "ganz unregelmäßig"
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszavas kivétel",
+            "en": "one-off oddity",
+            "es": "rareza suelta",
+            "de": "Einzelfall"
+          },
+          "wrong": {
+            "hu": "Az egyszavas kivétel csak a yo-alakot érinti; az ir viszont MINDEN alakban eltér a szabályos -ir mintától, nem csak egyben.",
+            "en": "The one-off oddity only affects the yo form; ir instead deviates from the regular -ir pattern in EVERY form, not just one.",
+            "es": "La rareza suelta afecta solo a la forma de yo; ir, en cambio, se aparta del patrón regular -ir en TODAS las formas, no solo en una.",
+            "de": "Der Einzelfall betrifft nur die yo-Form; ir weicht dagegen in JEDER Form vom regelmäßigen -ir-Muster ab, nicht nur in einer."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pi-why-05",
+      "es": "No sé la respuesta.",
+      "tr": {
+        "hu": "Nem tudom a választ.",
+        "en": "I don't know the answer.",
+        "es": "No sé la respuesta.",
+        "de": "Ich weiß die Antwort nicht."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "-zco csoport",
+            "en": "-zco group",
+            "es": "grupo -zco",
+            "de": "-zco-Gruppe"
+          },
+          "wrong": {
+            "hu": "A -zco csoport a -cer/-cir végű igékre vonatkozik; a saber nem ilyen végű ige, a yo-alakja \"sé\", ami egyszavas kivétel.",
+            "en": "The -zco group is for verbs ending in -cer/-cir; saber does not end that way, its yo form \"sé\" is a one-off oddity.",
+            "es": "El grupo -zco es para verbos en -cer/-cir; saber no termina así, su forma de yo \"sé\" es una rareza suelta.",
+            "de": "Die -zco-Gruppe gilt für Verben auf -cer/-cir; saber endet nicht so, seine yo-Form \"sé\" ist ein Einzelfall."
+          }
+        },
+        {
+          "text": {
+            "hu": "-go csoport",
+            "en": "-go group",
+            "es": "grupo -go",
+            "de": "-go-Gruppe"
+          },
+          "wrong": {
+            "hu": "A -go csoportnál a yo-alak -go-ra végződik (pl. hago); a saber yo-alakja \"sé\", ami nem illik ebbe a mintába, önálló kivétel.",
+            "en": "In the -go group the yo form ends in -go (e.g. hago); saber's yo form is \"sé\", which does not fit that pattern, a standalone exception.",
+            "es": "En el grupo -go la forma de yo termina en -go (p. ej. hago); la forma de yo de saber es \"sé\", que no encaja en ese patrón, es una excepción propia.",
+            "de": "In der -go-Gruppe endet die yo-Form auf -go (z. B. hago); die yo-Form von saber ist \"sé\", das passt nicht in dieses Muster, eine eigene Ausnahme."
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszavas kivétel",
+            "en": "one-off oddity",
+            "es": "rareza suelta",
+            "de": "Einzelfall"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "pi-why-06",
+      "es": "Decimos la verdad, aunque duele.",
+      "tr": {
+        "hu": "Az igazat mondjuk, még ha fáj is.",
+        "en": "We tell the truth, even though it hurts.",
+        "es": "Decimos la verdad, aunque duele.",
+        "de": "Wir sagen die Wahrheit, auch wenn es wehtut."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kettős rendhagyó",
+            "en": "doubly irregular",
+            "es": "doblemente irregular",
+            "de": "doppelt unregelmäßig"
+          },
+          "wrong": {
+            "hu": "A decir tőváltása (e→i) az én, te és ő alakot érinti (digo, dices, dice); a mi-alak (decimos) viszont visszatér a szabályos tőhöz, ez már a nosotros-horgony esete.",
+            "en": "Decir's stem change (e→i) affects the I, you and he/she forms (digo, dices, dice); the we-form (decimos) returns to the regular stem, that is the nosotros anchor case.",
+            "es": "El cambio de raíz de decir (e→i) afecta a yo, tú y él/ella (digo, dices, dice); la forma de nosotros (decimos) vuelve a la raíz regular, ese es el caso del ancla de nosotros.",
+            "de": "Der Stammwechsel von decir (e→i) betrifft ich, du und er/sie (digo, dices, dice); die wir-Form (decimos) kehrt zum regelmäßigen Stamm zurück, das ist der Fall des nosotros-Ankers."
+          }
+        },
+        {
+          "text": {
+            "hu": "teljesen rendhagyó",
+            "en": "fully irregular",
+            "es": "totalmente irregular",
+            "de": "ganz unregelmäßig"
+          },
+          "wrong": {
+            "hu": "Teljesen rendhagyónál (mint ser vagy ir) MINDEN alak eltér; a decir mi-alakja (decimos) épp azért szabályos, mert a nosotros itt is horgony.",
+            "en": "With a fully irregular verb (like ser or ir) EVERY form deviates; decir's we-form (decimos) is regular precisely because nosotros is an anchor here too.",
+            "es": "En un verbo totalmente irregular (como ser o ir) TODAS las formas se apartan; la forma de nosotros de decir (decimos) es regular precisamente porque nosotros también es un ancla aquí.",
+            "de": "Bei einem ganz unregelmäßigen Verb (wie ser oder ir) weicht JEDE Form ab; die wir-Form von decir (decimos) ist gerade deshalb regelmäßig, weil nosotros auch hier ein Anker ist."
+          }
+        },
+        {
+          "text": {
+            "hu": "nosotros: szabályos marad",
+            "en": "nosotros stays regular",
+            "es": "nosotros sigue regular",
+            "de": "nosotros bleibt regelmäßig"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "pi-why-07",
+      "es": "Le doy un regalo a mi madre.",
+      "tr": {
+        "hu": "Ajándékot adok anyámnak.",
+        "en": "I give my mother a gift.",
+        "es": "Le doy un regalo a mi madre.",
+        "de": "Ich gebe meiner Mutter ein Geschenk."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "-go csoport",
+            "en": "-go group",
+            "es": "grupo -go",
+            "de": "-go-Gruppe"
+          },
+          "wrong": {
+            "hu": "A -go csoport olyan igékre vonatkozik, mint hago vagy salgo; a dar yo-alakja \"doy\", ami önálló, egyszavas kivétel, nem ebbe a csoportba tartozik.",
+            "en": "The -go group is for verbs like hago or salgo; dar's yo form is \"doy\", a standalone, one-off oddity, not part of this group.",
+            "es": "El grupo -go es para verbos como hago o salgo; la forma de yo de dar es \"doy\", una rareza suelta propia, no pertenece a este grupo.",
+            "de": "Die -go-Gruppe gilt für Verben wie hago oder salgo; die yo-Form von dar ist \"doy\", ein eigenständiger Einzelfall, gehört nicht zu dieser Gruppe."
+          }
+        },
+        {
+          "text": {
+            "hu": "kettős rendhagyó",
+            "en": "doubly irregular",
+            "es": "doblemente irregular",
+            "de": "doppelt unregelmäßig"
+          },
+          "wrong": {
+            "hu": "Kettős rendhagyónál más alakok is tőt váltanak (pl. tengo, tienes); a darnál csak a yo-alak (doy) rendhagyó, a többi szabályos: das, da, damos.",
+            "en": "A doubly irregular verb changes stem in other forms too (e.g. tengo, tienes); with dar only the yo form (doy) is irregular, the rest are regular: das, da, damos.",
+            "es": "Un verbo doblemente irregular cambia de raíz también en otras formas (p. ej. tengo, tienes); en dar solo la forma de yo (doy) es irregular, el resto son regulares: das, da, damos.",
+            "de": "Ein doppelt unregelmäßiges Verb ändert den Stamm auch in anderen Formen (z. B. tengo, tienes); bei dar ist nur die yo-Form (doy) unregelmäßig, der Rest ist regelmäßig: das, da, damos."
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszavas kivétel",
+            "en": "one-off oddity",
+            "es": "rareza suelta",
+            "de": "Einzelfall"
+          }
+        }
+      ],
+      "correctIndex": 2
     }
   ]
 }

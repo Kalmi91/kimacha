@@ -1,4 +1,5 @@
 {
+  "schema": 2,
   "topic": "hay-estar",
   "level": "A1",
   "title": {
@@ -7,17 +8,588 @@
     "es": "¿Hay o está?",
     "de": "Hay oder está?"
   },
-  "rule": {
-    "hu": "HAY = LÉTEZIK valami, amit még nem ismerünk. Utána soha nincs el/la: hay un banco, hay dos bancos, hay leche. A hay alakja soha nem változik, se szám, se nem szerint. ESTÁ / ESTÁN = egy MÁR ISMERT dolog HOL van. Utána határozott névelő, birtokos vagy tulajdonnév áll: el banco está en la esquina, mi casa está lejos, Ana está en casa.",
-    "en": "HAY = something EXISTS that we do not know yet. It is never followed by el/la: hay un banco, hay dos bancos, hay leche. Hay never changes, not for number, not for gender. ESTÁ / ESTÁN = WHERE an ALREADY KNOWN thing is. It is followed by a definite article, a possessive or a name: el banco está en la esquina, mi casa está lejos, Ana está en casa.",
-    "es": "HAY = algo EXISTE y todavía no lo conocemos. Nunca lleva el/la detrás: hay un banco, hay dos bancos, hay leche. Hay no cambia nunca. ESTÁ / ESTÁN = DÓNDE está algo que YA conocemos, con artículo determinado, posesivo o nombre propio: el banco está en la esquina, mi casa está lejos, Ana está en casa.",
-    "de": "HAY = etwas EXISTIERT, das wir noch nicht kennen. Danach steht nie el/la: hay un banco, hay dos bancos, hay leche. Hay ändert sich nie. ESTÁ / ESTÁN = WO etwas schon Bekanntes ist, mit bestimmtem Artikel, Possessiv oder Eigenname: el banco está en la esquina, mi casa está lejos, Ana está en casa."
-  },
-  "more": {
-    "hu": "Gyors teszt: ha a magyar mondat úgy kezdődik, hogy „van egy…\" vagy „vannak…\", akkor hay. Ha „a … ott van\", akkor está. A hay soha nem áll többes számban: hay tres libros (nem hayn). A hely kérdése ¿Dónde está…?, a létezésé ¿Hay…?",
-    "en": "Quick test: if the sentence starts \"there is a…\" or \"there are…\", it is hay. If it is \"the … is over there\", it is está. Hay has no plural form: hay tres libros. The location question is ¿Dónde está…?, the existence question is ¿Hay…?",
-    "es": "Truco: si la frase empieza «hay un…» o «hay unos…», es hay. Si dices «el … está allí», es está. Hay no tiene plural: hay tres libros. Se pregunta ¿Dónde está…? por el lugar y ¿Hay…? por la existencia.",
-    "de": "Test: Beginnt der Satz mit „es gibt ein…\", ist es hay. Heißt es „der … ist dort\", ist es está. Hay hat keinen Plural: hay tres libros. Man fragt ¿Dónde está…? nach dem Ort und ¿Hay…? nach der Existenz."
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A hay és az está/están mindkettő azt jelentheti magyarul: \"van\", de más-más dologra használjuk őket. A hay egy még ismeretlen dolog LÉTEZÉSÉT mondja be, és soha nem változik, sem számban, sem nemben. Az está/están azt mondja meg, hol van egy MÁR ISMERT dolog vagy személy.",
+        "en": "Hay and está/están can both be translated as \"there is/are\" or \"is/are\", but they are used for different things. Hay states that something not yet known EXISTS, and it never changes, not for number, not for gender. Está/están tell you WHERE an already known thing or person is.",
+        "es": "Hay y está/están se pueden traducir como \"hay\" o \"está\", pero se usan para cosas distintas. Hay dice que algo todavía desconocido EXISTE, y nunca cambia, ni en número ni en género. Está/están dicen DÓNDE está algo o alguien ya conocido.",
+        "de": "Hay und está/están können beide mit \"es gibt\" oder \"ist/sind\" übersetzt werden, werden aber für unterschiedliche Dinge benutzt. Hay sagt, dass etwas noch Unbekanntes EXISTIERT, und ändert sich nie, weder in Zahl noch in Geschlecht. Está/están sagen, WO etwas oder jemand bereits Bekanntes ist."
+      }
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "HAY ezekre",
+        "en": "HAY for these",
+        "es": "HAY para esto",
+        "de": "HAY dafür"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Bemutatsz valami újat, aminek a létét eddig nem ismerted: un/una vagy egy szám áll utána.",
+            "en": "You introduce something new whose existence was not known yet: un/una or a number follows it.",
+            "es": "Presentas algo nuevo cuya existencia no se conocía todavía: le sigue un/una o un número.",
+            "de": "Du stellst etwas Neues vor, dessen Existenz noch nicht bekannt war: danach steht un/una oder eine Zahl."
+          },
+          "examples": [
+            {
+              "es": "Hay un banco cerca de mi casa.",
+              "tr": {
+                "hu": "Van egy bank a házam közelében.",
+                "en": "There is a bank near my house.",
+                "es": "Hay un banco cerca de mi casa.",
+                "de": "Es gibt eine Bank in der Nähe meines Hauses."
+              }
+            },
+            {
+              "es": "Hay dos ventanas en la sala.",
+              "tr": {
+                "hu": "Két ablak van a nappaliban.",
+                "en": "There are two windows in the living room.",
+                "es": "Hay dos ventanas en la sala.",
+                "de": "Es gibt zwei Fenster im Wohnzimmer."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Mennyiséget adsz meg, akkor is, ha az sok vagy kevés.",
+            "en": "You state a quantity, whether it is a lot or a little.",
+            "es": "Indicas una cantidad, sea mucha o poca.",
+            "de": "Du nennst eine Menge, egal ob viel oder wenig."
+          },
+          "examples": [
+            {
+              "es": "Hay mucha gente en el mercado.",
+              "tr": {
+                "hu": "Sok ember van a piacon.",
+                "en": "There are many people at the market.",
+                "es": "Hay mucha gente en el mercado.",
+                "de": "Es gibt viele Leute auf dem Markt."
+              }
+            },
+            {
+              "es": "Hay pocos estudiantes hoy.",
+              "tr": {
+                "hu": "Ma kevés diák van.",
+                "en": "There are few students today.",
+                "es": "Hay pocos estudiantes hoy.",
+                "de": "Es gibt heute wenige Studenten."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Megszámlálhatatlan anyagnevek, névelő nélkül.",
+            "en": "Uncountable nouns, without an article.",
+            "es": "Sustantivos incontables, sin artículo.",
+            "de": "Unzählbare Nomen, ohne Artikel."
+          },
+          "examples": [
+            {
+              "es": "Hay leche en el refrigerador.",
+              "tr": {
+                "hu": "Van tej a hűtőben.",
+                "en": "There is milk in the fridge.",
+                "es": "Hay leche en el refrigerador.",
+                "de": "Es gibt Milch im Kühlschrank."
+              }
+            },
+            {
+              "es": "No hay pan en casa.",
+              "tr": {
+                "hu": "Nincs kenyér otthon.",
+                "en": "There is no bread at home.",
+                "es": "No hay pan en casa.",
+                "de": "Es gibt kein Brot zu Hause."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Kérdés arról, hogy valami egyáltalán létezik-e.",
+            "en": "A question about whether something exists at all.",
+            "es": "Una pregunta sobre si algo existe o no.",
+            "de": "Eine Frage danach, ob etwas überhaupt existiert."
+          },
+          "examples": [
+            {
+              "es": "¿Hay una farmacia cerca?",
+              "tr": {
+                "hu": "Van itt közel egy patika?",
+                "en": "Is there a pharmacy nearby?",
+                "es": "¿Hay una farmacia cerca?",
+                "de": "Gibt es hier in der Nähe eine Apotheke?"
+              }
+            },
+            {
+              "es": "¿Hay agua en la botella?",
+              "tr": {
+                "hu": "Van víz a palackban?",
+                "en": "Is there water in the bottle?",
+                "es": "¿Hay agua en la botella?",
+                "de": "Ist Wasser in der Flasche?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "ESTÁ / ESTÁN ezekre",
+        "en": "ESTÁ / ESTÁN for these",
+        "es": "ESTÁ / ESTÁN para esto",
+        "de": "ESTÁ / ESTÁN dafür"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Egy már ismert, konkrét dolog vagy hely, határozott névelővel.",
+            "en": "An already known, specific thing or place, with a definite article.",
+            "es": "Algo o un lugar concreto y ya conocido, con artículo determinado.",
+            "de": "Etwas oder ein Ort, konkret und bereits bekannt, mit bestimmtem Artikel."
+          },
+          "examples": [
+            {
+              "es": "El banco está en la esquina.",
+              "tr": {
+                "hu": "A bank a sarkon van.",
+                "en": "The bank is on the corner.",
+                "es": "El banco está en la esquina.",
+                "de": "Die Bank ist an der Ecke."
+              }
+            },
+            {
+              "es": "Los libros están en la mesa.",
+              "tr": {
+                "hu": "A könyvek az asztalon vannak.",
+                "en": "The books are on the table.",
+                "es": "Los libros están en la mesa.",
+                "de": "Die Bücher sind auf dem Tisch."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Birtokos szerkezet után.",
+            "en": "After a possessive.",
+            "es": "Después de un posesivo.",
+            "de": "Nach einem Possessiv."
+          },
+          "examples": [
+            {
+              "es": "Mi teléfono está en la mesa.",
+              "tr": {
+                "hu": "A telefonom az asztalon van.",
+                "en": "My phone is on the table.",
+                "es": "Mi teléfono está en la mesa.",
+                "de": "Mein Telefon ist auf dem Tisch."
+              }
+            },
+            {
+              "es": "Tus llaves están en la puerta.",
+              "tr": {
+                "hu": "A kulcsaid az ajtóban vannak.",
+                "en": "Your keys are in the door.",
+                "es": "Tus llaves están en la puerta.",
+                "de": "Deine Schlüssel stecken in der Tür."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Tulajdonnév után.",
+            "en": "After a proper name.",
+            "es": "Después de un nombre propio.",
+            "de": "Nach einem Eigennamen."
+          },
+          "examples": [
+            {
+              "es": "Ana está en el trabajo.",
+              "tr": {
+                "hu": "Ana a munkahelyén van.",
+                "en": "Ana is at work.",
+                "es": "Ana está en el trabajo.",
+                "de": "Ana ist bei der Arbeit."
+              }
+            },
+            {
+              "es": "Juan no está en casa.",
+              "tr": {
+                "hu": "Juan nincs otthon.",
+                "en": "Juan is not at home.",
+                "es": "Juan no está en casa.",
+                "de": "Juan ist nicht zu Hause."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A ¿Dónde…? kérdés egy konkrét, ismert dologra.",
+            "en": "A ¿Dónde…? question about a specific, known thing.",
+            "es": "La pregunta ¿Dónde…? sobre algo concreto y conocido.",
+            "de": "Die Frage ¿Dónde…? nach etwas Bestimmtem, Bekanntem."
+          },
+          "examples": [
+            {
+              "es": "¿Dónde está el baño?",
+              "tr": {
+                "hu": "Hol van a mosdó?",
+                "en": "Where is the bathroom?",
+                "es": "¿Dónde está el baño?",
+                "de": "Wo ist die Toilette?"
+              }
+            },
+            {
+              "es": "¿Dónde están mis zapatos?",
+              "tr": {
+                "hu": "Hol vannak a cipőim?",
+                "en": "Where are my shoes?",
+                "es": "¿Dónde están mis zapatos?",
+                "de": "Wo sind meine Schuhe?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "hay-estar-articulo",
+      "title": {
+        "hu": "Mi áll utána",
+        "en": "What follows it",
+        "es": "Qué va después",
+        "de": "Was danach steht"
+      },
+      "header": [
+        {
+          "hu": "Mi jön utána",
+          "en": "What follows",
+          "es": "Qué sigue",
+          "de": "Was folgt"
+        },
+        {
+          "hu": "hay",
+          "en": "hay",
+          "es": "hay",
+          "de": "hay"
+        },
+        {
+          "hu": "estar",
+          "en": "estar",
+          "es": "estar",
+          "de": "estar"
+        }
+      ],
+      "rows": [
+        [
+          "artículo indefinido / número",
+          "hay un / una / dos …",
+          ""
+        ],
+        [
+          "artículo definido / posesivo / nombre propio",
+          "",
+          "está el / la / mi… / está Ana"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Mikor melyiket?",
+        "en": "When which one?",
+        "es": "¿Cuándo cuál?",
+        "de": "Wann welches?"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Ha valami újat mutatsz be, aminek csak a léte számít, nem a helye: hay.",
+            "en": "If you introduce something new whose existence is what matters, not its location: hay.",
+            "es": "Si presentas algo nuevo cuya existencia importa, no su ubicación: hay.",
+            "de": "Wenn du etwas Neues vorstellst, dessen Existenz zählt, nicht sein Ort: hay."
+          },
+          "examples": [
+            {
+              "es": "Hay una tienda nueva en el centro.",
+              "tr": {
+                "hu": "Van egy új bolt a központban.",
+                "en": "There is a new shop downtown.",
+                "es": "Hay una tienda nueva en el centro.",
+                "de": "Es gibt einen neuen Laden im Zentrum."
+              }
+            },
+            {
+              "es": "Hay tres mensajes en tu teléfono.",
+              "tr": {
+                "hu": "Három üzenet van a telefonodon.",
+                "en": "There are three messages on your phone.",
+                "es": "Hay tres mensajes en tu teléfono.",
+                "de": "Es gibt drei Nachrichten auf deinem Telefon."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ha egy már ismert dolog vagy személy helyéről beszélsz: está / están.",
+            "en": "If you talk about the location of an already known thing or person: está / están.",
+            "es": "Si hablas de la ubicación de algo o alguien ya conocido: está / están.",
+            "de": "Wenn du über den Ort von etwas oder jemandem bereits Bekanntem sprichst: está / están."
+          },
+          "examples": [
+            {
+              "es": "El coche está en la calle.",
+              "tr": {
+                "hu": "Az autó az utcán van.",
+                "en": "The car is on the street.",
+                "es": "El coche está en la calle.",
+                "de": "Das Auto steht auf der Straße."
+              }
+            },
+            {
+              "es": "Mis padres están en casa.",
+              "tr": {
+                "hu": "A szüleim otthon vannak.",
+                "en": "My parents are at home.",
+                "es": "Mis padres están en casa.",
+                "de": "Meine Eltern sind zu Hause."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Mennyiséget mondasz be, akkor is, ha a szám nagy: mindig hay, sosem están.",
+            "en": "You state a quantity, even a large one: always hay, never están.",
+            "es": "Indicas una cantidad, aunque sea grande: siempre hay, nunca están.",
+            "de": "Du nennst eine Menge, auch eine große: immer hay, nie están."
+          },
+          "examples": [
+            {
+              "es": "Hay veinte estudiantes en la clase.",
+              "tr": {
+                "hu": "Húsz diák van az osztályban.",
+                "en": "There are twenty students in the class.",
+                "es": "Hay veinte estudiantes en la clase.",
+                "de": "Es gibt zwanzig Studenten in der Klasse."
+              }
+            },
+            {
+              "es": "Hay muchas tiendas en esta calle.",
+              "tr": {
+                "hu": "Sok bolt van ezen az utcán.",
+                "en": "There are many shops on this street.",
+                "es": "Hay muchas tiendas en esta calle.",
+                "de": "Es gibt viele Geschäfte in dieser Straße."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ha egy határozott névelő, birtokos vagy tulajdonnév azonosítja a dolgot, utána mindig estar jön.",
+            "en": "If a definite article, a possessive, or a proper name identifies the thing, estar always follows.",
+            "es": "Si un artículo determinado, un posesivo o un nombre propio identifica algo, siempre sigue estar.",
+            "de": "Wenn ein bestimmter Artikel, ein Possessiv oder ein Eigenname etwas identifiziert, folgt immer estar."
+          },
+          "examples": [
+            {
+              "es": "La estación está lejos.",
+              "tr": {
+                "hu": "Az állomás messze van.",
+                "en": "The station is far away.",
+                "es": "La estación está lejos.",
+                "de": "Der Bahnhof ist weit weg."
+              }
+            },
+            {
+              "es": "Ana está en el trabajo.",
+              "tr": {
+                "hu": "Ana a munkahelyén van.",
+                "en": "Ana is at work.",
+                "es": "Ana está en el trabajo.",
+                "de": "Ana ist bei der Arbeit."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Megszámlálhatatlan anyagneveknél a létezés vagy a hiány mindig hay, névelő nélkül.",
+            "en": "For uncountable nouns, existence or absence is always hay, with no article.",
+            "es": "Con sustantivos incontables, la existencia o la ausencia siempre lleva hay, sin artículo.",
+            "de": "Bei unzählbaren Nomen steht Existenz oder Fehlen immer mit hay, ohne Artikel."
+          },
+          "examples": [
+            {
+              "es": "No hay dinero en la cuenta.",
+              "tr": {
+                "hu": "Nincs pénz a számlán.",
+                "en": "There is no money in the account.",
+                "es": "No hay dinero en la cuenta.",
+                "de": "Es ist kein Geld auf dem Konto."
+              }
+            },
+            {
+              "es": "Hay azúcar en la cocina.",
+              "tr": {
+                "hu": "Van cukor a konyhában.",
+                "en": "There is sugar in the kitchen.",
+                "es": "Hay azúcar en la cocina.",
+                "de": "Es gibt Zucker in der Küche."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Kérdésben: a ¿Hay…? azt kérdezi, létezik-e egyáltalán valami, a ¿Dónde está…? azt, hogy hol van egy ismert dolog.",
+            "en": "In a question: ¿Hay…? asks whether something exists at all, ¿Dónde está…? asks where a known thing is.",
+            "es": "En una pregunta: ¿Hay…? pregunta si algo existe, ¿Dónde está…? pregunta dónde está algo conocido.",
+            "de": "In einer Frage: ¿Hay…? fragt, ob etwas überhaupt existiert, ¿Dónde está…? fragt, wo etwas Bekanntes ist."
+          },
+          "examples": [
+            {
+              "es": "¿Hay un cajero cerca?",
+              "tr": {
+                "hu": "Van itt közel egy bankautomata?",
+                "en": "Is there an ATM nearby?",
+                "es": "¿Hay un cajero cerca?",
+                "de": "Gibt es hier in der Nähe einen Geldautomaten?"
+              }
+            },
+            {
+              "es": "¿Dónde está el cajero automático?",
+              "tr": {
+                "hu": "Hol van a bankautomata?",
+                "en": "Where is the ATM?",
+                "es": "¿Dónde está el cajero automático?",
+                "de": "Wo ist der Geldautomat?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Hasonló, mégis más",
+        "en": "Similar, yet different",
+        "es": "Parecido, pero distinto",
+        "de": "Ähnlich, aber anders"
+      },
+      "confusables": "hay-esta",
+      "pairs": [
+        {
+          "a": "hay un banco",
+          "b": "el banco está",
+          "note": {
+            "hu": "A \"hay un banco\" egy még be nem azonosított bankot mutat be, a \"el banco está\" egy már ismertnek a helyét mondja meg.",
+            "en": "\"Hay un banco\" introduces a bank not yet identified, while \"el banco está\" states the location of one already known.",
+            "es": "«Hay un banco» presenta un banco todavía no identificado, mientras que «el banco está» dice dónde está uno ya conocido.",
+            "de": "\"Hay un banco\" stellt eine noch nicht identifizierte Bank vor, während \"el banco está\" den Ort einer bereits bekannten nennt."
+          },
+          "examples": [
+            {
+              "es": "Hay un banco en esta calle.",
+              "tr": {
+                "hu": "Van egy bank ezen az utcán.",
+                "en": "There is a bank on this street.",
+                "es": "Hay un banco en esta calle.",
+                "de": "Es gibt eine Bank in dieser Straße."
+              }
+            },
+            {
+              "es": "El banco está en esta calle.",
+              "tr": {
+                "hu": "A bank ezen az utcán van.",
+                "en": "The bank is on this street.",
+                "es": "El banco está en esta calle.",
+                "de": "Die Bank ist in dieser Straße."
+              }
+            }
+          ]
+        },
+        {
+          "a": "hay mucha gente",
+          "b": "están mis amigos",
+          "note": {
+            "hu": "A \"hay mucha gente\" egy meg nem nevezett tömeg méretét mondja, az \"están mis amigos\" egy már ismert, konkrét csoport helyét.",
+            "en": "\"Hay mucha gente\" states the size of an unnamed crowd, while \"están mis amigos\" gives the location of an already known, specific group.",
+            "es": "«Hay mucha gente» dice el tamaño de una multitud sin nombre, mientras que «están mis amigos» da la ubicación de un grupo concreto y conocido.",
+            "de": "\"Hay mucha gente\" nennt die Größe einer unbenannten Menge, während \"están mis amigos\" den Ort einer bereits bekannten, bestimmten Gruppe angibt."
+          },
+          "examples": [
+            {
+              "es": "Hay mucha gente en la fiesta.",
+              "tr": {
+                "hu": "Sok ember van a buliban.",
+                "en": "There are many people at the party.",
+                "es": "Hay mucha gente en la fiesta.",
+                "de": "Es gibt viele Leute auf der Party."
+              }
+            },
+            {
+              "es": "Mis amigos están en la fiesta.",
+              "tr": {
+                "hu": "A barátaim a buliban vannak.",
+                "en": "My friends are at the party.",
+                "es": "Mis amigos están en la fiesta.",
+                "de": "Meine Freunde sind auf der Party."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A hay soha nem változik: hay un libro, hay dos libros, sosem \"hayn\" vagy más alak.",
+        "en": "Hay never changes: hay un libro, hay dos libros, never a form like \"hayn\".",
+        "es": "Hay nunca cambia: hay un libro, hay dos libros, nunca una forma como «hayn».",
+        "de": "Hay ändert sich nie: hay un libro, hay dos libros, nie eine Form wie „hayn\"."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A hay szinte ugyanúgy hangzik, mint az \"ahí\" (ott) és az \"ay\" (jaj), a jelentést csak a mondat dönti el.",
+        "en": "Hay sounds almost the same as \"ahí\" (there) and \"ay\" (ouch), only the sentence tells them apart.",
+        "es": "Hay suena casi igual que «ahí» y «ay», solo la frase distingue el significado.",
+        "de": "Hay klingt fast genauso wie „ahí\" (dort) und „ay\" (autsch), nur der Satz zeigt die Bedeutung."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Mexikóban a hűtőt inkább refrigerador-nak hívják, nem nevera-nak, bár mindkettőt megértik.",
+        "en": "In Mexico the fridge is usually called refrigerador, not nevera, though both are understood.",
+        "es": "En México el refrigerador se llama así, no nevera, aunque las dos formas se entienden.",
+        "de": "In Mexiko heißt der Kühlschrank meist refrigerador, nicht nevera, auch wenn man beides versteht."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A hay és az estar mindkettő azt jelentheti magyarul, hogy \"van\", de más-más dologra használjuk. A hay egy új, még ismeretlen dolog létezését mondja be, mint «Hay un banco cerca de aquí», és soha nem változik, sem számban, sem nemben. Az está és az están azt mondja meg, hol van egy már ismert dolog, mint «El banco está en la esquina» vagy «Mis padres están en casa». Ha névelő nélkül, vagy \"un\" és \"una\" áll a főnév előtt, az hay jele, mint «Hay leche en la nevera». Ha határozott névelő, birtokos vagy név áll előtte, az mindig estar, mint «Mi teléfono está en la mesa» vagy «Ana está en el trabajo». Egy apró csapda: a hay szinte ugyanúgy hangzik, mint az «ahí», ami azt jelenti, hogy ott, szóval figyelj a jelentésre, ne csak a hangzásra.",
+    "en": "Hay and estar can both be translated as there is or is, but they are used for very different things. Hay states that a new, still unknown thing exists, like «Hay un banco cerca de aquí», and it never changes, not for number, not for gender. Está and están tell you where an already known thing is, like «El banco está en la esquina» or «Mis padres están en casa». If there is no article, or un or una stands before the noun, that is the sign for hay, like «Hay leche en la nevera». If a definite article, a possessive, or a name comes before it, it is always estar, like «Mi teléfono está en la mesa» or «Ana está en el trabajo». One small trap: hay sounds almost the same as «ahí», which means there, so listen for the meaning, not just the sound.",
+    "es": "Hay y estar se pueden traducir los dos como hay o está, pero se usan para cosas muy distintas. Hay dice que algo nuevo y todavía desconocido existe, como «Hay un banco cerca de aquí», y nunca cambia, ni en número ni en género. Está y están dicen dónde está algo que ya conoces, como «El banco está en la esquina» o «Mis padres están en casa». Si no hay artículo, o si va un o una delante del sustantivo, esa es la señal de hay, como «Hay leche en la nevera». Si va un artículo determinado, un posesivo o un nombre propio delante, siempre es estar, como «Mi teléfono está en la mesa» o «Ana está en el trabajo». Una pequeña trampa: hay suena casi igual que «ahí», que significa ese lugar, así que presta atención al significado, no solo al sonido.",
+    "de": "Hay und estar können beide mit es gibt oder ist übersetzt werden, werden aber für ganz unterschiedliche Dinge benutzt. Hay sagt, dass etwas Neues, noch Unbekanntes existiert, wie «Hay un banco cerca de aquí», und es ändert sich nie, weder in Zahl noch in Geschlecht. Está und están sagen, wo etwas bereits Bekanntes ist, wie «El banco está en la esquina» oder «Mis padres están en casa». Steht kein Artikel, oder steht un oder una vor dem Nomen, ist das das Zeichen für hay, wie «Hay leche en la nevera». Steht ein bestimmter Artikel, ein Possessiv oder ein Name davor, ist es immer estar, wie «Mi teléfono está en la mesa» oder «Ana está en el trabajo». Eine kleine Falle: hay klingt fast genauso wie «ahí», was dort bedeutet, also achte auf die Bedeutung, nicht nur auf den Klang."
   },
   "glossary": [
     {
@@ -68,23 +640,23 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Új, még nem ismert dolog létezéséről van szó, és „una\" áll utána: hay.",
+        "hu": "Új, még nem ismert dolog létezéséről van szó, és \"una\" áll utána: hay.",
         "en": "This is a new thing being introduced, with \"una\" after it: hay.",
         "es": "Se presenta algo nuevo y va con «una»: hay.",
-        "de": "Etwas Neues wird eingeführt, mit „una\": hay."
+        "de": "Etwas Neues wird eingeführt, mit \"una\": hay."
       },
       "wrong": {
         "está": {
-          "hu": "Az está után határozott dolog áll (la farmacia), nem „una\".",
-          "en": "Está goes with a known thing (la farmacia), not with \"una\".",
-          "es": "Está va con algo conocido (la farmacia), no con «una».",
-          "de": "Está steht mit etwas Bekanntem (la farmacia), nicht mit „una\"."
+          "hu": "Az \"está\" egy már ismert dologra kérdez rá, ezért utána nem állhat \"una\": \"En mi calle está una farmacia\" nem helyes mondat; egy ismert patika helyét így mondanánk: La farmacia está en mi calle.",
+          "en": "Está points to something already known, so it cannot be followed by 'una': 'En mi calle está una farmacia' is not a correct sentence; to say where a known pharmacy is, you would say: La farmacia está en mi calle.",
+          "es": "Está señala algo ya conocido, así que no puede ir con «una»: «En mi calle está una farmacia» no es una frase correcta; para decir dónde está una farmacia conocida dirías: La farmacia está en mi calle.",
+          "de": "Está verweist auf etwas bereits Bekanntes, deshalb kann danach kein „una\" stehen: „En mi calle está una farmacia\" ist kein korrekter Satz; um zu sagen, wo eine bekannte Apotheke ist, würde man sagen: La farmacia está en mi calle."
         },
         "es": {
-          "hu": "Az es azonosít vagy jellemez, nem a létezést fejezi ki.",
-          "en": "Es identifies or describes; it does not express existence.",
-          "es": "Es identifica o describe, no expresa existencia.",
-          "de": "Es identifiziert oder beschreibt, drückt keine Existenz aus."
+          "hu": "Az \"es\" azonosítást vagy leírást fejez ki, nem azt, hogy valami létezik; \"En mi calle es una farmacia\" nem helyes mondat, létezésre mindig hay kell: En mi calle hay una farmacia.",
+          "en": "Es identifies or describes, it does not express that something exists; 'En mi calle es una farmacia' is not correct, existence always needs hay: En mi calle hay una farmacia.",
+          "es": "Es identifica o describe, no expresa que algo exista; «En mi calle es una farmacia» no es correcto, la existencia siempre necesita hay: En mi calle hay una farmacia.",
+          "de": "Es identifiziert oder beschreibt, es drückt nicht aus, dass etwas existiert; „En mi calle es una farmacia\" ist nicht korrekt, für Existenz braucht man immer hay: En mi calle hay una farmacia."
         }
       },
       "examples": [
@@ -109,16 +681,16 @@
       },
       "wrong": {
         "hay": {
-          "hu": "A hay után nem állhat la: „hay la farmacia\" nem létezik.",
-          "en": "Hay cannot be followed by la: \"hay la farmacia\" does not exist.",
-          "es": "Después de hay no va la: «hay la farmacia» no existe.",
-          "de": "Nach hay steht kein la: „hay la farmacia\" gibt es nicht."
+          "hu": "A hay után sosem állhat határozott névelővel ellátott főnév: \"La farmacia hay al lado del banco\" nyelvtanilag hibás, a hay csak új, ismeretlen dolgot vezethet be: Hay una farmacia al lado del banco.",
+          "en": "Hay can never be followed by a definite noun like 'la farmacia': 'La farmacia hay al lado del banco' is ungrammatical, hay only introduces something new: Hay una farmacia al lado del banco.",
+          "es": "Hay nunca puede ir con un sustantivo determinado como «la farmacia»: «La farmacia hay al lado del banco» es agramatical, hay solo presenta algo nuevo: Hay una farmacia al lado del banco.",
+          "de": "Nach hay kann nie ein bestimmtes Nomen wie „la farmacia\" stehen: „La farmacia hay al lado del banco\" ist ungrammatisch, hay führt nur etwas Neues ein: Hay una farmacia al lado del banco."
         },
         "es": {
-          "hu": "A tárgyak helyét estar jelöli, nem ser.",
-          "en": "The location of an object takes estar, not ser.",
-          "es": "El lugar de un objeto lleva estar, no ser.",
-          "de": "Der Ort eines Gegenstands steht mit estar, nicht mit ser."
+          "hu": "Az \"es\" a tárgyak helyét sosem fejezi ki, csak eseményekét; \"La farmacia es al lado del banco\" nem helyes, a patika mint tárgy helyét mindig estar mondja: La farmacia está al lado del banco.",
+          "en": "Es never expresses the location of an object, only of an event; 'La farmacia es al lado del banco' is not correct, a pharmacy as an object always takes estar for location: La farmacia está al lado del banco.",
+          "es": "Es nunca expresa la ubicación de un objeto, solo la de un evento; «La farmacia es al lado del banco» no es correcto, un objeto como la farmacia siempre lleva estar: La farmacia está al lado del banco.",
+          "de": "Es drückt nie den Standort eines Objekts aus, nur den eines Ereignisses; „La farmacia es al lado del banco\" ist nicht korrekt, ein Objekt wie die Apotheke steht für den Ort immer mit estar: La farmacia está al lado del banco."
         }
       },
       "examples": [
@@ -143,16 +715,16 @@
       },
       "wrong": {
         "Está": {
-          "hu": "Az „¿Está un baño?\" hibás; „¿Dónde está el baño?\" a helyes forma.",
-          "en": "\"¿Está un baño?\" is wrong; \"¿Dónde está el baño?\" is the right shape.",
-          "es": "«¿Está un baño?» es incorrecto; se dice «¿Dónde está el baño?».",
-          "de": "„¿Está un baño?\" ist falsch; richtig ist „¿Dónde está el baño?\"."
+          "hu": "Az \"¿Está un baño aquí?\" hibás szórend: az estar mellett a névelő nélküli \"un baño\" nem állhat így; egy konkrét, ismert mosdóról így kérdeznénk: ¿Dónde está el baño?",
+          "en": "'¿Está un baño aquí?' has the wrong shape: estar cannot combine with the article-less 'un baño' like this; asking about a specific, known toilet would be '¿Dónde está el baño?'.",
+          "es": "«¿Está un baño aquí?» tiene una forma incorrecta: estar no puede combinarse así con «un baño» sin artículo definido; para preguntar por un baño concreto y conocido se diría «¿Dónde está el baño?».",
+          "de": "„¿Está un baño aquí?\" hat die falsche Form: estar kann sich so nicht mit dem artikellosen „un baño\" verbinden; nach einer bestimmten, bekannten Toilette würde man fragen: „¿Dónde está el baño?\"."
         },
         "Son": {
-          "hu": "A son többes számú létige, itt egy mosdóról van szó.",
-          "en": "Son is the plural of ser, and here there is one toilet.",
-          "es": "Son es plural de ser, y aquí hay un baño.",
-          "de": "Son ist Plural von ser, hier geht es um eine Toilette."
+          "hu": "A \"Son\" a ser többes száma, itt viszont egyetlen mosdóról kérdezel, ráadásul a ser nem létezést fejez ki; helyesen: ¿Hay un baño aquí?",
+          "en": "'Son' is the plural of ser, but here you are asking about a single toilet, and ser does not express existence anyway; correctly: ¿Hay un baño aquí?",
+          "es": "«Son» es el plural de ser, pero aquí preguntas por un solo baño, y además ser no expresa existencia; correctamente: ¿Hay un baño aquí?",
+          "de": "„Son\" ist der Plural von ser, hier fragst du aber nach einer einzigen Toilette, außerdem drückt ser keine Existenz aus; richtig: ¿Hay un baño aquí?"
         }
       },
       "examples": [
@@ -177,16 +749,16 @@
       },
       "wrong": {
         "hay": {
-          "hu": "A hay után nem áll los: „hay los niños\" nem mondható.",
-          "en": "Hay cannot be followed by los: \"hay los niños\" is impossible.",
-          "es": "Después de hay no va los: «hay los niños» no se dice.",
-          "de": "Nach hay steht kein los: „hay los niños\" geht nicht."
+          "hu": "A hay után sosem állhat határozott névelős többes szám: \"Los niños hay en el jardín\" nyelvtanilag hibás, ismert gyerekek helyét mindig están fejezi ki: Los niños están en el jardín.",
+          "en": "Hay can never be followed by a definite plural like 'los niños': 'Los niños hay en el jardín' is ungrammatical, the location of known children always takes están: Los niños están en el jardín.",
+          "es": "Hay nunca puede ir con un plural determinado como «los niños»: «Los niños hay en el jardín» es agramatical, la ubicación de niños conocidos siempre lleva están: Los niños están en el jardín.",
+          "de": "Nach hay kann nie ein bestimmter Plural wie „los niños\" stehen: „Los niños hay en el jardín\" ist ungrammatisch, der Ort bekannter Kinder steht immer mit están: Los niños están en el jardín."
         },
         "es": {
-          "hu": "Az es egyes szám, és nem helyet jelöl.",
-          "en": "Es is singular and does not mark location.",
-          "es": "Es es singular y no marca lugar.",
-          "de": "Es ist Singular und markiert keinen Ort."
+          "hu": "Az \"es\" egyes számú alak, itt viszont több gyerekről van szó, és a ser amúgy sem fejez ki helyet; helyesen: Los niños están en el jardín.",
+          "en": "Es is a singular form, but here there are several children, and ser does not mark location anyway; correctly: Los niños están en el jardín.",
+          "es": "Es es una forma singular, pero aquí hay varios niños, y además ser no marca lugar; correctamente: Los niños están en el jardín.",
+          "de": "Es ist eine Singularform, hier geht es aber um mehrere Kinder, außerdem markiert ser keinen Ort; richtig: Los niños están en el jardín."
         }
       },
       "examples": [
@@ -211,16 +783,16 @@
       },
       "wrong": {
         "están": {
-          "hu": "Az están konkrét, ismert diákokra utalna (los estudiantes).",
-          "en": "Están would point at specific, known students (los estudiantes).",
-          "es": "Están señalaría a estudiantes concretos (los estudiantes).",
-          "de": "Están würde auf bestimmte Studenten zeigen (los estudiantes)."
+          "hu": "Az \"están\" konkrét, már ismert diákokra utalna, például \"los veinte estudiantes están…\"; itt viszont a létszámot mondod be, ismeretlen csoportról, ezért hay kell.",
+          "en": "Están would point at specific, already known students, e.g. 'los veinte estudiantes están…'; here you are stating a headcount about an unspecified group, so hay is needed.",
+          "es": "Están señalaría a estudiantes concretos y ya conocidos, por ejemplo «los veinte estudiantes están…»; aquí dices una cantidad sobre un grupo sin especificar, por eso hace falta hay.",
+          "de": "Están würde auf bestimmte, bereits bekannte Studenten verweisen, z. B. „los veinte estudiantes están…\"; hier nennst du aber eine Anzahl einer nicht näher bestimmten Gruppe, deshalb braucht es hay."
         },
         "son": {
-          "hu": "A son azt mondaná meg, KIK ők, nem azt, hogy hányan vannak a teremben.",
-          "en": "Son would say WHO they are, not how many are in the room.",
-          "es": "Son diría QUIÉNES son, no cuántos hay en el aula.",
-          "de": "Son würde sagen, WER sie sind, nicht wie viele im Raum sind."
+          "hu": "A \"son\" azt mondaná meg, KIK ők (pl. son mis compañeros), nem azt, hogy hányan vannak a teremben; a mennyiséget mindig hay fejezi ki: En la clase hay veinte estudiantes.",
+          "en": "Son would say WHO they are (e.g. son mis compañeros), not how many are in the room; quantity always takes hay: En la clase hay veinte estudiantes.",
+          "es": "Son diría QUIÉNES son (p. ej. son mis compañeros), no cuántos hay en el aula; la cantidad siempre lleva hay: En la clase hay veinte estudiantes.",
+          "de": "Son würde sagen, WER sie sind (z. B. son mis compañeros), nicht wie viele im Raum sind; die Menge steht immer mit hay: En la clase hay veinte estudiantes."
         }
       },
       "examples": [
@@ -245,16 +817,16 @@
       },
       "wrong": {
         "hay": {
-          "hu": "A hay nem állhat birtokos szerkezettel.",
-          "en": "Hay cannot be used with a possessive.",
-          "es": "Hay no se usa con posesivos.",
-          "de": "Hay steht nicht mit einem Possessiv."
+          "hu": "A hay sosem állhat birtokos szerkezettel, mint \"mi teléfono\": \"Mi teléfono hay en la mesa\" nem helyes mondat, egy ismert, birtokolt tárgy helyét mindig estar fejezi ki: Mi teléfono está en la mesa.",
+          "en": "Hay can never be used with a possessive like 'mi teléfono'; 'Mi teléfono hay en la mesa' is not correct, the location of a known, owned object always takes estar: Mi teléfono está en la mesa.",
+          "es": "Hay nunca se usa con un posesivo como «mi teléfono»; «Mi teléfono hay en la mesa» no es correcto, la ubicación de un objeto conocido y poseído siempre lleva estar: Mi teléfono está en la mesa.",
+          "de": "Hay steht nie mit einem Possessiv wie „mi teléfono\"; „Mi teléfono hay en la mesa\" ist nicht korrekt, der Ort eines bekannten, besessenen Gegenstands steht immer mit estar: Mi teléfono está en la mesa."
         },
         "tiene": {
-          "hu": "A tiene birtoklást fejez ki, nem helyet.",
-          "en": "Tiene expresses possession, not location.",
-          "es": "Tiene expresa posesión, no lugar.",
-          "de": "Tiene drückt Besitz aus, nicht den Ort."
+          "hu": "A \"tiene\" birtoklást fejez ki (ő birtokol valamit), nem helyet; \"Mi teléfono tiene en la mesa\" értelmetlen, mert nincs tárgya, aminek a telefon lenne az alanya.",
+          "en": "Tiene expresses possession (someone owns something), not location; 'Mi teléfono tiene en la mesa' does not make sense, since it has no object for the phone to possess.",
+          "es": "Tiene expresa posesión (alguien posee algo), no lugar; «Mi teléfono tiene en la mesa» no tiene sentido, porque le falta un objeto que el teléfono posea.",
+          "de": "Tiene drückt Besitz aus (jemand besitzt etwas), nicht den Ort; „Mi teléfono tiene en la mesa\" ergibt keinen Sinn, weil ein Objekt fehlt, das das Telefon besitzen würde."
         }
       },
       "examples": [
@@ -279,16 +851,16 @@
       },
       "wrong": {
         "está": {
-          "hu": "Az „no está azúcar\" hibás; az está konkrét dologra utal.",
-          "en": "\"No está azúcar\" is wrong; está refers to a specific thing.",
-          "es": "«No está azúcar» es incorrecto; está se refiere a algo concreto.",
-          "de": "„No está azúcar\" ist falsch; está bezieht sich auf etwas Bestimmtes."
+          "hu": "Az \"está\" egy konkrét, ismert dologra utal; \"No está azúcar en el café\" nem helyes mondat, a cukor mint megszámlálhatatlan anyag hiányát mindig hay fejezi ki: No hay azúcar en el café.",
+          "en": "Está refers to a specific, known thing; 'No está azúcar en el café' is not correct, the absence of sugar as an uncountable substance always takes hay: No hay azúcar en el café.",
+          "es": "Está se refiere a algo concreto y conocido; «No está azúcar en el café» no es correcto, la ausencia de azúcar como sustancia incontable siempre lleva hay: No hay azúcar en el café.",
+          "de": "Está bezieht sich auf etwas Bestimmtes, Bekanntes; „No está azúcar en el café\" ist nicht korrekt, das Fehlen von Zucker als unzählbare Substanz steht immer mit hay: No hay azúcar en el café."
         },
         "es": {
-          "hu": "Az es itt értelmetlen: nem azonosítunk semmit.",
-          "en": "Es makes no sense here: nothing is being identified.",
-          "es": "Es no tiene sentido aquí: no se identifica nada.",
-          "de": "Es ergibt hier keinen Sinn: nichts wird identifiziert."
+          "hu": "Az \"es\" itt értelmetlen, mert nem azonosítasz vagy jellemzel semmit, csak azt mondod, mi hiányzik; a hiányra mindig hay való: No hay azúcar en el café.",
+          "en": "Es makes no sense here, since you are not identifying or describing anything, only saying what is missing; absence always needs hay: No hay azúcar en el café.",
+          "es": "Es no tiene sentido aquí, porque no identificas ni describes nada, solo dices qué falta; la ausencia siempre necesita hay: No hay azúcar en el café.",
+          "de": "Es ergibt hier keinen Sinn, da du nichts identifizierst oder beschreibst, sondern nur sagst, was fehlt; für das Fehlen braucht es immer hay: No hay azúcar en el café."
         }
       },
       "examples": [
@@ -313,16 +885,16 @@
       },
       "wrong": {
         "hay": {
-          "hu": "A „¿Dónde hay…?\" is létezik, de akkor nem la, hanem una jön utána: ¿Dónde hay una estación?",
-          "en": "\"¿Dónde hay…?\" exists too, but then it takes una, not la: ¿Dónde hay una estación?",
-          "es": "«¿Dónde hay…?» existe, pero entonces va una, no la: ¿Dónde hay una estación?",
-          "de": "„¿Dónde hay…?\" gibt es auch, aber dann mit una, nicht la: ¿Dónde hay una estación?"
+          "hu": "A \"¿Dónde hay…?\" forma is létezik, de csak \"una\"-val: \"¿Dónde hay una estación de metro?\" azt kérdezné, hol van EGY (bármelyik) állomás; itt viszont egy konkrét, ismert állomásról kérdezel, ezért está kell: ¿Dónde está la estación de metro?",
+          "en": "'¿Dónde hay…?' exists too, but only with 'una': '¿Dónde hay una estación de metro?' would ask where there is A (any) station; here you are asking about one specific, known station, so it needs está: ¿Dónde está la estación de metro?",
+          "es": "«¿Dónde hay…?» también existe, pero solo con «una»: «¿Dónde hay una estación de metro?» preguntaría dónde hay UNA estación cualquiera; aquí preguntas por una estación concreta y conocida, por eso hace falta está: ¿Dónde está la estación de metro?",
+          "de": "„¿Dónde hay…?\" gibt es auch, aber nur mit „una\": „¿Dónde hay una estación de metro?\" würde fragen, wo es irgendeine Station gibt; hier fragst du nach einer bestimmten, bekannten Station, deshalb braucht es está: ¿Dónde está la estación de metro?"
         },
         "son": {
-          "hu": "A son többes szám, itt egy állomásról van szó.",
-          "en": "Son is plural; here there is one station.",
-          "es": "Son es plural; aquí hay una estación.",
-          "de": "Son ist Plural; hier geht es um eine Station."
+          "hu": "A \"son\" a ser többes száma, itt viszont egyetlen állomásról van szó, és a ser amúgy sem fejez ki helyet; helyesen: ¿Dónde está la estación de metro?",
+          "en": "Son is the plural of ser, but here there is one station, and ser does not mark location anyway; correctly: ¿Dónde está la estación de metro?",
+          "es": "Son es el plural de ser, pero aquí hay una sola estación, y además ser no marca lugar; correctamente: ¿Dónde está la estación de metro?",
+          "de": "Son ist der Plural von ser, hier gibt es aber nur eine Station, außerdem markiert ser keinen Ort; richtig: ¿Dónde está la estación de metro?"
         }
       },
       "examples": [
@@ -347,16 +919,16 @@
       },
       "wrong": {
         "están": {
-          "hu": "Az están ismert dolgokra utalna (los huevos), itt viszont bemutatod őket.",
-          "en": "Están would refer to known things (los huevos), but here you introduce them.",
-          "es": "Están se referiría a cosas conocidas (los huevos), pero aquí las presentas.",
-          "de": "Están würde auf bekannte Dinge zeigen (los huevos), hier führst du sie ein."
+          "hu": "Az \"están\" már ismert dolgokra utalna, például \"los huevos están…\"; itt viszont bemutatod, mi van a hűtőben, egy még meg nem nevezett listát, ezért hay kell: En el refrigerador hay dos huevos.",
+          "en": "Están would refer to already known things, like 'los huevos están…'; here you are introducing what is in the fridge, an as-yet unnamed list, so hay is needed: En el refrigerador hay dos huevos.",
+          "es": "Están se referiría a cosas ya conocidas, como «los huevos están…»; aquí presentas lo que hay en el refrigerador, una lista todavía no nombrada, por eso hace falta hay: En el refrigerador hay dos huevos.",
+          "de": "Están würde sich auf bereits Bekanntes beziehen, wie „los huevos están…\"; hier stellst du vor, was im Kühlschrank ist, eine noch nicht benannte Liste, deshalb braucht es hay: En el refrigerador hay dos huevos."
         },
         "es": {
-          "hu": "Az es egyes szám és nem létezést fejez ki.",
-          "en": "Es is singular and does not express existence.",
-          "es": "Es es singular y no expresa existencia.",
-          "de": "Es ist Singular und drückt keine Existenz aus."
+          "hu": "Az \"es\" egyes számú és nem fejez ki létezést, itt pedig két tojásról és sajtról egyszerre van szó; a felsorolást mindig hay vezeti be: En el refrigerador hay dos huevos y un poco de queso.",
+          "en": "Es is singular and does not express existence, and here there are two eggs and cheese at once; a list is always introduced with hay: En el refrigerador hay dos huevos y un poco de queso.",
+          "es": "Es es singular y no expresa existencia, y aquí hay dos huevos y queso a la vez; una lista siempre se presenta con hay: En el refrigerador hay dos huevos y un poco de queso.",
+          "de": "Es ist Singular und drückt keine Existenz aus, hier geht es außerdem um zwei Eier und Käse gleichzeitig; eine Aufzählung wird immer mit hay eingeleitet: En el refrigerador hay dos huevos y un poco de queso."
         }
       },
       "examples": [
@@ -366,7 +938,7 @@
     },
     {
       "id": "he-10",
-      "sentence": "Ana no ___ en casa, está en el trabajo.",
+      "sentence": "Ana no ___ en casa, sino en el trabajo.",
       "options": [
         "está",
         "hay",
@@ -381,16 +953,16 @@
       },
       "wrong": {
         "hay": {
-          "hu": "A hay soha nem áll névvel: „hay Ana\" nem mondható.",
-          "en": "Hay never goes with a name: \"hay Ana\" is impossible.",
-          "es": "Hay nunca va con un nombre: «hay Ana» no se dice.",
-          "de": "Hay steht nie mit einem Namen: „hay Ana\" geht nicht."
+          "hu": "A hay sosem áll névvel: \"Ana no hay en casa\" nyelvtanilag hibás, egy ismert személy helyét mindig estar fejezi ki: Ana no está en casa.",
+          "en": "Hay never goes with a proper name: 'Ana no hay en casa' is ungrammatical, the location of a known person always takes estar: Ana no está en casa.",
+          "es": "Hay nunca va con un nombre propio: «Ana no hay en casa» es agramatical, la ubicación de una persona conocida siempre lleva estar: Ana no está en casa.",
+          "de": "Hay steht nie mit einem Eigennamen: „Ana no hay en casa\" ist ungrammatisch, der Ort einer bekannten Person steht immer mit estar: Ana no está en casa."
         },
         "es": {
-          "hu": "Az „Ana no es en casa\" hibás: a hely estarral megy.",
-          "en": "\"Ana no es en casa\" is wrong: location takes estar.",
-          "es": "«Ana no es en casa» es incorrecto: el lugar va con estar.",
-          "de": "„Ana no es en casa\" ist falsch: der Ort steht mit estar."
+          "hu": "Az \"Ana no es en casa\" hibás mondat: a hely kifejezésére sosem ser való, hanem estar; helyesen: Ana no está en casa.",
+          "en": "'Ana no es en casa' is an incorrect sentence: location is never expressed with ser, only estar; correctly: Ana no está en casa.",
+          "es": "«Ana no es en casa» es una frase incorrecta: el lugar nunca se expresa con ser, sino con estar; correctamente: Ana no está en casa.",
+          "de": "„Ana no es en casa\" ist ein falscher Satz: der Ort wird nie mit ser ausgedrückt, sondern mit estar; richtig: Ana no está en casa."
         }
       },
       "examples": [
@@ -415,16 +987,16 @@
       },
       "wrong": {
         "están": {
-          "hu": "Az están után ismert csoport állna (la gente del barrio).",
-          "en": "Están would need a known group (la gente del barrio).",
-          "es": "Están pediría un grupo conocido (la gente del barrio).",
-          "de": "Están bräuchte eine bekannte Gruppe (la gente del barrio)."
+          "hu": "Az \"están\" egy már ismert csoportra utalna, például \"la gente del barrio está…\"; itt viszont általánosan mondod, hogy sokan vannak, ismeretlen tömegről, ezért hay kell.",
+          "en": "Están would need a known group, like 'la gente del barrio está…'; here you are stating in general that there are many people, an unspecified crowd, so hay is needed.",
+          "es": "Están necesitaría un grupo conocido, como «la gente del barrio está…»; aquí dices en general que hay mucha gente, una multitud sin especificar, por eso hace falta hay.",
+          "de": "Están bräuchte eine bekannte Gruppe, wie „la gente del barrio está…\"; hier sagst du allgemein, dass es viele Leute gibt, eine nicht näher bestimmte Menge, deshalb braucht es hay."
         },
         "son": {
-          "hu": "A son azt mondaná meg, kik ők, nem azt, hogy sokan vannak.",
-          "en": "Son would say who they are, not that there are many.",
-          "es": "Son diría quiénes son, no que hay muchos.",
-          "de": "Son würde sagen, wer sie sind, nicht dass es viele sind."
+          "hu": "A \"son\" azt mondaná meg, kik ők, nem azt, hogy sokan vannak; a mennyiséget mindig hay fejezi ki: Aquí hay mucha gente los domingos.",
+          "en": "Son would say who they are, not that there are many; quantity always takes hay: Aquí hay mucha gente los domingos.",
+          "es": "Son diría quiénes son, no que hay muchos; la cantidad siempre lleva hay: Aquí hay mucha gente los domingos.",
+          "de": "Son würde sagen, wer sie sind, nicht dass es viele sind; die Menge steht immer mit hay: Aquí hay mucha gente los domingos."
         }
       },
       "examples": [
@@ -449,22 +1021,432 @@
       },
       "wrong": {
         "hay": {
-          "hu": "A hay soha nem áll birtokos szerkezettel.",
-          "en": "Hay never goes with a possessive.",
-          "es": "Hay nunca va con posesivo.",
-          "de": "Hay steht nie mit einem Possessiv."
+          "hu": "A hay sosem állhat birtokos szerkezettel, mint \"tus zapatos\": \"Tus zapatos hay debajo de la cama\" nem helyes mondat, ismert, birtokolt tárgyak helyét mindig están fejezi ki: Tus zapatos están debajo de la cama.",
+          "en": "Hay never goes with a possessive like 'tus zapatos'; 'Tus zapatos hay debajo de la cama' is not correct, the location of known, owned objects always takes están: Tus zapatos están debajo de la cama.",
+          "es": "Hay nunca va con un posesivo como «tus zapatos»; «Tus zapatos hay debajo de la cama» no es correcto, la ubicación de objetos conocidos y poseídos siempre lleva están: Tus zapatos están debajo de la cama.",
+          "de": "Hay steht nie mit einem Possessiv wie „tus zapatos\"; „Tus zapatos hay debajo de la cama\" ist nicht korrekt, der Ort bekannter, besessener Gegenstände steht immer mit están: Tus zapatos están debajo de la cama."
         },
         "es": {
-          "hu": "Az es egyes szám, a zapatos többes.",
-          "en": "Es is singular, zapatos is plural.",
-          "es": "Es es singular y zapatos es plural.",
-          "de": "Es ist Singular, zapatos ist Plural."
+          "hu": "Az \"es\" egyes számú alak, a \"zapatos\" viszont többes szám, és a ser amúgy sem fejez ki helyet; helyesen: Tus zapatos están debajo de la cama.",
+          "en": "Es is a singular form, but 'zapatos' is plural, and ser does not mark location anyway; correctly: Tus zapatos están debajo de la cama.",
+          "es": "Es es una forma singular, pero «zapatos» es plural, y además ser no marca lugar; correctamente: Tus zapatos están debajo de la cama.",
+          "de": "Es ist eine Singularform, „zapatos\" ist aber Plural, außerdem markiert ser keinen Ort; richtig: Tus zapatos están debajo de la cama."
         }
       },
       "examples": [
         "Mis libros están en la mochila.",
         "Sus gafas están en la mesa."
       ]
+    },
+    {
+      "id": "he-match-01",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "hay un banco cerca",
+          "en": "there is a bank nearby"
+        },
+        {
+          "es": "hay mucha gente",
+          "en": "there are many people"
+        },
+        {
+          "es": "no hay leche",
+          "en": "there is no milk"
+        },
+        {
+          "es": "¿hay un baño aquí?",
+          "en": "is there a bathroom here?"
+        },
+        {
+          "es": "hay veinte estudiantes",
+          "en": "there are twenty students"
+        },
+        {
+          "es": "hay dos huevos",
+          "en": "there are two eggs"
+        }
+      ]
+    },
+    {
+      "id": "he-match-02",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "el banco está cerca",
+          "en": "the bank is nearby"
+        },
+        {
+          "es": "mis padres están en casa",
+          "en": "my parents are at home"
+        },
+        {
+          "es": "ana está en el trabajo",
+          "en": "ana is at work"
+        },
+        {
+          "es": "¿dónde está el baño?",
+          "en": "where is the bathroom?"
+        },
+        {
+          "es": "mi teléfono está en la mesa",
+          "en": "my phone is on the table"
+        },
+        {
+          "es": "tus zapatos están aquí",
+          "en": "your shoes are here"
+        }
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "he-why-01",
+      "es": "Hay un banco cerca de mi casa.",
+      "tr": {
+        "hu": "Van egy bank a házam közelében.",
+        "en": "There is a bank near my house.",
+        "es": "Hay un banco cerca de mi casa.",
+        "de": "Es gibt eine Bank in der Nähe meines Hauses."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hay: új/ismeretlen dolog",
+            "en": "hay: new/unknown thing",
+            "es": "hay: algo nuevo",
+            "de": "hay: neu/unbekannt"
+          }
+        },
+        {
+          "text": {
+            "hu": "está: ismert, konkrét dolog",
+            "en": "está: known, specific thing",
+            "es": "está: algo concreto y conocido",
+            "de": "está: bekannt, konkret"
+          },
+          "wrong": {
+            "hu": "Az está egy MÁR ismert bankra vonatkozna (\"El banco está cerca de mi casa\"); itt viszont egy eddig ismeretlen bank LÉTÉT jelentjük be egy un-nal, ez hay.",
+            "en": "Está would refer to an ALREADY known bank (\"El banco está cerca de mi casa\"); here we announce the EXISTENCE of an unknown bank with un, that is hay.",
+            "es": "Está se referiría a un banco YA conocido (\"El banco está cerca de mi casa\"); aquí anunciamos la EXISTENCIA de un banco desconocido con un, eso es hay.",
+            "de": "Está würde sich auf eine BEREITS bekannte Bank beziehen (\"El banco está cerca de mi casa\"); hier kündigen wir mit un die EXISTENZ einer unbekannten Bank an, das ist hay."
+          }
+        },
+        {
+          "text": {
+            "hu": "está: birtokos után",
+            "en": "está: after a possessive",
+            "es": "está: tras un posesivo",
+            "de": "está: nach Possessiv"
+          },
+          "wrong": {
+            "hu": "A birtokos utáni está olyankor áll, mint \"Mi banco está cerca\" (AZ ÉN bankom); itt viszont nincs birtokos, egy általános, új bank létezéséről van szó.",
+            "en": "The possessive-following está applies to something like \"Mi banco está cerca\" (MY bank); here there is no possessive, it is about a general, new bank existing.",
+            "es": "El está tras posesivo iría en algo como \"Mi banco está cerca\" (MI banco); aquí no hay posesivo, se trata de que existe un banco nuevo, en general.",
+            "de": "Das está nach Possessiv passt zu etwas wie \"Mi banco está cerca\" (MEINE Bank); hier gibt es kein Possessiv, es geht um die Existenz einer neuen, allgemeinen Bank."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "he-why-02",
+      "es": "Hay mucha gente en el mercado.",
+      "tr": {
+        "hu": "Sok ember van a piacon.",
+        "en": "There are many people at the market.",
+        "es": "Hay mucha gente en el mercado.",
+        "de": "Es gibt viele Leute auf dem Markt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hay: új/ismeretlen dolog",
+            "en": "hay: new/unknown thing",
+            "es": "hay: algo nuevo",
+            "de": "hay: neu/unbekannt"
+          },
+          "wrong": {
+            "hu": "Az un/una-val bemutatott új dolog szabálya egyetlen, még ismeretlen tárgyra vonatkozik; itt viszont egy MENNYISÉGET (mucha gente) adunk meg, ez külön pont.",
+            "en": "The rule for introducing a new thing with un/una applies to a single, still unknown item; here we state a QUANTITY (mucha gente), a separate point.",
+            "es": "La regla de presentar algo nuevo con un/una es para un solo objeto aún desconocido; aquí damos una CANTIDAD (mucha gente), un punto distinto.",
+            "de": "Die Regel, etwas Neues mit un/una vorzustellen, gilt für ein einzelnes, noch unbekanntes Ding; hier nennen wir eine MENGE (mucha gente), ein eigener Punkt."
+          }
+        },
+        {
+          "text": {
+            "hu": "hay: mennyiség",
+            "en": "hay: quantity",
+            "es": "hay: cantidad",
+            "de": "hay: Menge"
+          }
+        },
+        {
+          "text": {
+            "hu": "está: ismert, konkrét dolog",
+            "en": "está: known, specific thing",
+            "es": "está: algo concreto y conocido",
+            "de": "está: bekannt, konkret"
+          },
+          "wrong": {
+            "hu": "Az está egy KONKRÉT, ismert dologra vonatkozna, határozott névelővel; itt viszont egy MENNYISÉGRŐL van szó (mucha gente), ami hay.",
+            "en": "Está would refer to a SPECIFIC, known thing with a definite article; here it is about a QUANTITY (mucha gente), that is hay.",
+            "es": "Está se referiría a algo CONCRETO y conocido con artículo determinado; aquí se trata de una CANTIDAD (mucha gente), eso es hay.",
+            "de": "Está würde sich auf etwas KONKRETES, Bekanntes mit bestimmtem Artikel beziehen; hier geht es um eine MENGE (mucha gente), das ist hay."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "he-why-03",
+      "es": "Hay leche en el refrigerador.",
+      "tr": {
+        "hu": "Van tej a hűtőben.",
+        "en": "There is milk in the fridge.",
+        "es": "Hay leche en el refrigerador.",
+        "de": "Es gibt Milch im Kühlschrank."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hay: mennyiség",
+            "en": "hay: quantity",
+            "es": "hay: cantidad",
+            "de": "hay: Menge"
+          },
+          "wrong": {
+            "hu": "A mennyiség-pont olyankor áll, mint \"mucha gente\" vagy \"pocos estudiantes\"; itt viszont nincs mennyiségjelző szó, csak a megszámlálhatatlan \"leche\" áll névelő nélkül.",
+            "en": "The quantity point applies to things like \"mucha gente\" or \"pocos estudiantes\"; here there is no quantity word, just the uncountable \"leche\" without an article.",
+            "es": "El punto de cantidad iría en algo como \"mucha gente\" o \"pocos estudiantes\"; aquí no hay palabra de cantidad, solo el incontable \"leche\" sin artículo.",
+            "de": "Der Mengen-Punkt passt zu etwas wie \"mucha gente\" oder \"pocos estudiantes\"; hier gibt es kein Mengenwort, nur das unzählbare \"leche\" ohne Artikel."
+          }
+        },
+        {
+          "text": {
+            "hu": "hay: megszámlálhatatlan",
+            "en": "hay: uncountable",
+            "es": "hay: incontable",
+            "de": "hay: unzählbar"
+          }
+        },
+        {
+          "text": {
+            "hu": "está: birtokos után",
+            "en": "está: after a possessive",
+            "es": "está: tras un posesivo",
+            "de": "está: nach Possessiv"
+          },
+          "wrong": {
+            "hu": "A birtokos utáni está olyankor áll, mint \"Mi leche está en el refrigerador\" (AZ ÉN tejem); itt viszont nincs birtokos, csak a tej LÉTEZÉSÉRŐL van szó.",
+            "en": "The possessive-following está applies to something like \"Mi leche está en el refrigerador\" (MY milk); here there is no possessive, it is just about milk existing.",
+            "es": "El está tras posesivo iría en algo como \"Mi leche está en el refrigerador\" (MI leche); aquí no hay posesivo, solo se trata de que hay leche.",
+            "de": "Das está nach Possessiv passt zu etwas wie \"Mi leche está en el refrigerador\" (MEINE Milch); hier gibt es kein Possessiv, es geht nur darum, dass es Milch gibt."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "he-why-04",
+      "es": "El banco está en la esquina.",
+      "tr": {
+        "hu": "A bank a sarkon van.",
+        "en": "The bank is on the corner.",
+        "es": "El banco está en la esquina.",
+        "de": "Die Bank ist an der Ecke."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hay: új/ismeretlen dolog",
+            "en": "hay: new/unknown thing",
+            "es": "hay: algo nuevo",
+            "de": "hay: neu/unbekannt"
+          },
+          "wrong": {
+            "hu": "A hay egy MÉG ismeretlen bankra vonatkozna, un/una-val (\"Hay un banco en la esquina\"); itt viszont határozott névelővel egy MÁR ismert bankról van szó, ez está.",
+            "en": "Hay would refer to a STILL unknown bank, with un/una (\"Hay un banco en la esquina\"); here it is an ALREADY known bank with a definite article, that is está.",
+            "es": "Hay se referiría a un banco AÚN desconocido, con un/una (\"Hay un banco en la esquina\"); aquí es un banco YA conocido con artículo determinado, eso es está.",
+            "de": "Hay würde sich auf eine NOCH unbekannte Bank beziehen, mit un/una (\"Hay un banco en la esquina\"); hier ist es eine BEREITS bekannte Bank mit bestimmtem Artikel, das ist está."
+          }
+        },
+        {
+          "text": {
+            "hu": "está: ismert, konkrét dolog",
+            "en": "está: known, specific thing",
+            "es": "está: algo concreto y conocido",
+            "de": "está: bekannt, konkret"
+          }
+        },
+        {
+          "text": {
+            "hu": "está: tulajdonnév után",
+            "en": "está: after a proper name",
+            "es": "está: tras un nombre propio",
+            "de": "está: nach Eigennamen"
+          },
+          "wrong": {
+            "hu": "A tulajdonnév utáni está olyankor áll, mint \"Ana está en el trabajo\"; itt viszont \"el banco\" köznév határozott névelővel, nem tulajdonnév.",
+            "en": "The proper-name-following está applies to something like \"Ana está en el trabajo\"; here \"el banco\" is a common noun with a definite article, not a proper name.",
+            "es": "El está tras nombre propio iría en algo como \"Ana está en el trabajo\"; aquí \"el banco\" es un sustantivo común con artículo determinado, no un nombre propio.",
+            "de": "Das está nach Eigennamen passt zu etwas wie \"Ana está en el trabajo\"; hier ist \"el banco\" ein Gattungsname mit bestimmtem Artikel, kein Eigenname."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "he-why-05",
+      "es": "Mi teléfono está en la mesa.",
+      "tr": {
+        "hu": "A telefonom az asztalon van.",
+        "en": "My phone is on the table.",
+        "es": "Mi teléfono está en la mesa.",
+        "de": "Mein Telefon ist auf dem Tisch."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hay: megszámlálhatatlan",
+            "en": "hay: uncountable",
+            "es": "hay: incontable",
+            "de": "hay: unzählbar"
+          },
+          "wrong": {
+            "hu": "A megszámlálhatatlan-pont olyankor áll, mint \"Hay leche\", névelő nélkül; itt viszont \"mi teléfono\" egy konkrét, birtokolt tárgy, ez está.",
+            "en": "The uncountable point applies to something like \"Hay leche\", with no article; here \"mi teléfono\" is a specific, possessed object, that is está.",
+            "es": "El punto de incontable iría en algo como \"Hay leche\", sin artículo; aquí \"mi teléfono\" es un objeto concreto y poseído, eso es está.",
+            "de": "Der Punkt für Unzählbares passt zu etwas wie \"Hay leche\", ohne Artikel; hier ist \"mi teléfono\" ein konkretes, besessenes Objekt, das ist está."
+          }
+        },
+        {
+          "text": {
+            "hu": "está: birtokos után",
+            "en": "está: after a possessive",
+            "es": "está: tras un posesivo",
+            "de": "está: nach Possessiv"
+          }
+        },
+        {
+          "text": {
+            "hu": "está: tulajdonnév után",
+            "en": "está: after a proper name",
+            "es": "está: tras un nombre propio",
+            "de": "está: nach Eigennamen"
+          },
+          "wrong": {
+            "hu": "A tulajdonnév utáni está olyankor áll, mint \"Ana está en el trabajo\"; itt viszont birtokos névmás (mi) áll a főnév előtt, nem tulajdonnév.",
+            "en": "The proper-name-following está applies to something like \"Ana está en el trabajo\"; here a possessive (mi) stands before the noun, not a proper name.",
+            "es": "El está tras nombre propio iría en algo como \"Ana está en el trabajo\"; aquí hay un posesivo (mi) delante del sustantivo, no un nombre propio.",
+            "de": "Das está nach Eigennamen passt zu etwas wie \"Ana está en el trabajo\"; hier steht ein Possessiv (mi) vor dem Nomen, kein Eigenname."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "he-why-06",
+      "es": "Ana está en el trabajo.",
+      "tr": {
+        "hu": "Ana a munkahelyén van.",
+        "en": "Ana is at work.",
+        "es": "Ana está en el trabajo.",
+        "de": "Ana ist bei der Arbeit."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hay: új/ismeretlen dolog",
+            "en": "hay: new/unknown thing",
+            "es": "hay: algo nuevo",
+            "de": "hay: neu/unbekannt"
+          },
+          "wrong": {
+            "hu": "A hay bemutatásra való, un/una-val; egy TULAJDONNÉV (Ana) sosem áll hay után, mert Ana már ismert, nem bemutatandó dolog.",
+            "en": "Hay is for introducing something, with un/una; a PROPER NAME (Ana) never follows hay, because Ana is already known, not something to introduce.",
+            "es": "Hay sirve para presentar algo, con un/una; un NOMBRE PROPIO (Ana) nunca va después de hay, porque Ana ya es conocida, no algo que presentar.",
+            "de": "Hay dient dazu, etwas vorzustellen, mit un/una; ein EIGENNAME (Ana) steht nie nach hay, weil Ana bereits bekannt ist, nichts, was man vorstellt."
+          }
+        },
+        {
+          "text": {
+            "hu": "está: birtokos után",
+            "en": "está: after a possessive",
+            "es": "está: tras un posesivo",
+            "de": "está: nach Possessiv"
+          },
+          "wrong": {
+            "hu": "A birtokos utáni está olyankor áll, mint \"Mi hermana está en el trabajo\"; itt viszont \"Ana\" tulajdonnév, nem birtokos szerkezet.",
+            "en": "The possessive-following está applies to something like \"Mi hermana está en el trabajo\"; here \"Ana\" is a proper name, not a possessive.",
+            "es": "El está tras posesivo iría en algo como \"Mi hermana está en el trabajo\"; aquí \"Ana\" es un nombre propio, no un posesivo.",
+            "de": "Das está nach Possessiv passt zu etwas wie \"Mi hermana está en el trabajo\"; hier ist \"Ana\" ein Eigenname, kein Possessiv."
+          }
+        },
+        {
+          "text": {
+            "hu": "está: tulajdonnév után",
+            "en": "está: after a proper name",
+            "es": "está: tras un nombre propio",
+            "de": "está: nach Eigennamen"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "he-why-07",
+      "es": "¿Dónde está el baño?",
+      "tr": {
+        "hu": "Hol van a mosdó?",
+        "en": "Where is the bathroom?",
+        "es": "¿Dónde está el baño?",
+        "de": "Wo ist die Toilette?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "está: ismert, konkrét dolog",
+            "en": "está: known, specific thing",
+            "es": "está: algo concreto y conocido",
+            "de": "está: bekannt, konkret"
+          }
+        },
+        {
+          "text": {
+            "hu": "hay: új/ismeretlen dolog",
+            "en": "hay: new/unknown thing",
+            "es": "hay: algo nuevo",
+            "de": "hay: neu/unbekannt"
+          },
+          "wrong": {
+            "hu": "A hay azt kérdezné, LÉTEZIK-e egyáltalán mosdó (\"¿Hay un baño?\"); itt viszont \"el baño\" határozott névelővel egy MÁR TUDOTT, konkrét mosdó helyét kérdezzük.",
+            "en": "Hay would ask WHETHER a bathroom exists at all (\"¿Hay un baño?\"); here \"el baño\" with a definite article asks the location of an ALREADY known, specific bathroom.",
+            "es": "Hay preguntaría si EXISTE un baño (\"¿Hay un baño?\"); aquí \"el baño\" con artículo determinado pregunta el lugar de un baño YA conocido y concreto.",
+            "de": "Hay würde fragen, OB es überhaupt eine Toilette gibt (\"¿Hay un baño?\"); hier fragt \"el baño\" mit bestimmtem Artikel nach dem Ort einer BEREITS bekannten, konkreten Toilette."
+          }
+        },
+        {
+          "text": {
+            "hu": "hay: mennyiség",
+            "en": "hay: quantity",
+            "es": "hay: cantidad",
+            "de": "hay: Menge"
+          },
+          "wrong": {
+            "hu": "A mennyiség-pont olyankor áll, mint \"¿Cuántos baños hay?\" (hány mosdó van); itt viszont a HELYÉT kérdezzük egy konkrét mosdónak, ez está.",
+            "en": "The quantity point applies to something like \"¿Cuántos baños hay?\" (how many bathrooms); here we ask the LOCATION of a specific bathroom, that is está.",
+            "es": "El punto de cantidad iría en algo como \"¿Cuántos baños hay?\"; aquí preguntamos el LUGAR de un baño concreto, eso es está.",
+            "de": "Der Mengen-Punkt passt zu etwas wie \"¿Cuántos baños hay?\"; hier fragen wir nach dem ORT einer bestimmten Toilette, das ist está."
+          }
+        }
+      ],
+      "correctIndex": 0
     }
   ]
 }
