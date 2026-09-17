@@ -1,0 +1,713 @@
+{
+  "topic": "quien-a-quien",
+  "level": "A1",
+  "title": {
+    "hu": "Ki kinek: te amo, me das",
+    "en": "Who does what to whom: te amo, me das",
+    "es": "Quién a quién: te amo, me das",
+    "de": "Wer wem: te amo, me das"
+  },
+  "rule": {
+    "hu": "Magyarul a „szeretlek\" egy szó, spanyolul két jel mondja meg ugyanezt. Az IGE VÉGZŐDÉSE mondja meg, KI cselekszik: am-o = én, am-as = te, am-a = ő. Az IGE ELŐTTI NÉVMÁS mondja meg, KIVEL vagy KIT: me = engem/nekem, te = téged/neked, le = neki, nos = minket/nekünk, les = nekik. Ezért te amo = am-o (én) + te (téged) = szeretlek, és me amas = am-as (te) + me (engem) = szeretsz engem. Ugyanígy: te doy = adok neked, me das = adsz nekem. A sorrend kötött: a névmás az ige ELŐTT áll.",
+    "en": "In Hungarian one word can encode I-love-you; Spanish uses two signals. The VERB ENDING says WHO acts: am-o = I, am-as = you, am-a = he or she. The PRONOUN BEFORE THE VERB says to or at WHOM: me, te, le, nos, les. So te amo = am-o (I) + te (you) = I love you, and me amas = am-as (you) + me (me) = you love me. Likewise te doy = I give to you, me das = you give to me. The pronoun always comes BEFORE the verb.",
+    "es": "La TERMINACIÓN del verbo dice QUIÉN actúa: am-o = yo, am-as = tú, am-a = él o ella. El PRONOMBRE ANTES DEL VERBO dice A QUIÉN: me, te, le, nos, les. Por eso te amo = am-o (yo) + te (a ti), y me amas = am-as (tú) + me (a mí). Igual: te doy = yo doy a ti, me das = tú das a mí. El pronombre va SIEMPRE antes del verbo.",
+    "de": "Die VERBENDUNG sagt, WER handelt: am-o = ich, am-as = du, am-a = er oder sie. Das PRONOMEN VOR DEM VERB sagt, WEM oder WEN: me, te, le, nos, les. Daher te amo = am-o (ich) + te (dich), und me amas = am-as (du) + me (mich). Ebenso te doy = ich gebe dir, me das = du gibst mir. Das Pronomen steht immer VOR dem Verb."
+  },
+  "more": {
+    "hu": "Olvasd mindig két lépésben: először a végződés (ki), utána a névmás (kinek). A magyar fejnek ez a fordított sorrend a szokatlan, mert a spanyolban a célpont áll elöl, a cselekvő a szó végén. Ha ki akarod emelni a célpontot, a spanyol megduplázza: a ti te amo, a mí me das agua, a él le escribo. Ez nem hiba, hanem a beszélt nyelv normája. Az alanyt (yo, tú, él) el is lehet hagyni, mert a végződés már elárulja: te llamo mañana. A névmás az ige elé megy, kivéve főnévi igenév vagy gerundio mellett, ott a végére tapadhat: quiero verte = te quiero ver, mindkettő helyes.",
+    "en": "Read it in two steps: first the ending (who), then the pronoun (to whom). Spanish puts the target first and the doer at the end of the word. To stress the target, Spanish doubles it: a ti te amo, a mí me das agua, a él le escribo; this is normal spoken Spanish, not an error. The subject pronoun can be dropped because the ending already says it: te llamo mañana. The pronoun goes before the verb, except with an infinitive or gerund, where it may attach to the end: quiero verte = te quiero ver, both correct.",
+    "es": "Léelo en dos pasos: primero la terminación (quién), luego el pronombre (a quién). Para destacar el destino, el español lo duplica: a ti te amo, a mí me das agua, a él le escribo; es lo normal al hablar. El sujeto se puede omitir porque la terminación ya lo dice: te llamo mañana. El pronombre va antes del verbo, salvo con infinitivo o gerundio, donde puede ir pegado al final: quiero verte = te quiero ver.",
+    "de": "Lies es in zwei Schritten: zuerst die Endung (wer), dann das Pronomen (wem). Zur Betonung verdoppelt das Spanische das Ziel: a ti te amo, a mí me das agua, a él le escribo; das ist normale gesprochene Sprache. Das Subjektpronomen kann wegfallen, weil die Endung es schon sagt: te llamo mañana. Das Pronomen steht vor dem Verb, außer bei Infinitiv oder Gerundium, dort kann es angehängt werden: quiero verte = te quiero ver."
+  },
+  "glossary": [
+    {
+      "word": "amo",
+      "gloss": {
+        "hu": "szeretek (én)",
+        "en": "I love",
+        "es": "yo amo",
+        "de": "ich liebe"
+      }
+    },
+    {
+      "word": "amas",
+      "gloss": {
+        "hu": "szeretsz (te)",
+        "en": "you love",
+        "es": "tú amas",
+        "de": "du liebst"
+      }
+    },
+    {
+      "word": "ama",
+      "gloss": {
+        "hu": "szeret (ő)",
+        "en": "he or she loves",
+        "es": "él o ella ama",
+        "de": "er oder sie liebt"
+      }
+    },
+    {
+      "word": "doy",
+      "gloss": {
+        "hu": "adok (én)",
+        "en": "I give",
+        "es": "yo doy",
+        "de": "ich gebe"
+      }
+    },
+    {
+      "word": "das",
+      "gloss": {
+        "hu": "adsz (te)",
+        "en": "you give",
+        "es": "tú das",
+        "de": "du gibst"
+      }
+    },
+    {
+      "word": "da",
+      "gloss": {
+        "hu": "ad (ő)",
+        "en": "he or she gives",
+        "es": "él o ella da",
+        "de": "er oder sie gibt"
+      }
+    },
+    {
+      "word": "dan",
+      "gloss": {
+        "hu": "adnak (ők)",
+        "en": "they give",
+        "es": "ellos dan",
+        "de": "sie geben"
+      }
+    },
+    {
+      "word": "llamo",
+      "gloss": {
+        "hu": "hívok (én)",
+        "en": "I call",
+        "es": "yo llamo",
+        "de": "ich rufe an"
+      }
+    },
+    {
+      "word": "llamas",
+      "gloss": {
+        "hu": "hívsz (te)",
+        "en": "you call",
+        "es": "tú llamas",
+        "de": "du rufst an"
+      }
+    },
+    {
+      "word": "llama",
+      "gloss": {
+        "hu": "hív (ő)",
+        "en": "he or she calls",
+        "es": "él o ella llama",
+        "de": "er oder sie ruft an"
+      }
+    },
+    {
+      "word": "ayudo",
+      "gloss": {
+        "hu": "segítek (én)",
+        "en": "I help",
+        "es": "yo ayudo",
+        "de": "ich helfe"
+      }
+    },
+    {
+      "word": "ayudas",
+      "gloss": {
+        "hu": "segítesz (te)",
+        "en": "you help",
+        "es": "tú ayudas",
+        "de": "du hilfst"
+      }
+    },
+    {
+      "word": "ayuda",
+      "gloss": {
+        "hu": "segít (ő)",
+        "en": "he or she helps",
+        "es": "él o ella ayuda",
+        "de": "er oder sie hilft"
+      }
+    },
+    {
+      "word": "dice",
+      "gloss": {
+        "hu": "mond (ő)",
+        "en": "he or she says",
+        "es": "él o ella dice",
+        "de": "er oder sie sagt"
+      }
+    },
+    {
+      "word": "veo",
+      "gloss": {
+        "hu": "látok (én)",
+        "en": "I see",
+        "es": "yo veo",
+        "de": "ich sehe"
+      }
+    },
+    {
+      "word": "ves",
+      "gloss": {
+        "hu": "látsz (te)",
+        "en": "you see",
+        "es": "tú ves",
+        "de": "du siehst"
+      }
+    },
+    {
+      "word": "ve",
+      "gloss": {
+        "hu": "lát (ő)",
+        "en": "he or she sees",
+        "es": "él o ella ve",
+        "de": "er oder sie sieht"
+      }
+    },
+    {
+      "word": "escribo",
+      "gloss": {
+        "hu": "írok (én)",
+        "en": "I write",
+        "es": "yo escribo",
+        "de": "ich schreibe"
+      }
+    },
+    {
+      "word": "me",
+      "gloss": {
+        "hu": "engem, nekem",
+        "en": "me, to me",
+        "es": "a mí",
+        "de": "mich, mir"
+      }
+    },
+    {
+      "word": "te",
+      "gloss": {
+        "hu": "téged, neked",
+        "en": "you, to you",
+        "es": "a ti",
+        "de": "dich, dir"
+      }
+    },
+    {
+      "word": "le",
+      "gloss": {
+        "hu": "neki",
+        "en": "to him or her",
+        "es": "a él o a ella",
+        "de": "ihm oder ihr"
+      }
+    },
+    {
+      "word": "lo",
+      "gloss": {
+        "hu": "azt (tárgy)",
+        "en": "it (the thing)",
+        "es": "la cosa",
+        "de": "es (die Sache)"
+      }
+    },
+    {
+      "word": "nos",
+      "gloss": {
+        "hu": "minket, nekünk",
+        "en": "us, to us",
+        "es": "a nosotros",
+        "de": "uns"
+      }
+    },
+    {
+      "word": "les",
+      "gloss": {
+        "hu": "nekik",
+        "en": "to them",
+        "es": "a ellos",
+        "de": "ihnen"
+      }
+    },
+    {
+      "word": "mensaje",
+      "gloss": {
+        "hu": "üzenet",
+        "en": "message",
+        "es": "mensaje",
+        "de": "Nachricht"
+      }
+    },
+    {
+      "word": "foto",
+      "gloss": {
+        "hu": "fénykép",
+        "en": "photo",
+        "es": "foto",
+        "de": "Foto"
+      }
+    },
+    {
+      "word": "verdad",
+      "gloss": {
+        "hu": "igazság",
+        "en": "truth",
+        "es": "verdad",
+        "de": "Wahrheit"
+      }
+    },
+    {
+      "word": "siempre",
+      "gloss": {
+        "hu": "mindig",
+        "en": "always",
+        "es": "siempre",
+        "de": "immer"
+      }
+    },
+    {
+      "word": "ahora",
+      "gloss": {
+        "hu": "most",
+        "en": "now",
+        "es": "ahora",
+        "de": "jetzt"
+      }
+    },
+    {
+      "word": "número",
+      "gloss": {
+        "hu": "szám, telefonszám",
+        "en": "number, phone number",
+        "es": "número, número de teléfono",
+        "de": "Nummer, Telefonnummer"
+      }
+    },
+    {
+      "word": "tarea",
+      "gloss": {
+        "hu": "házi feladat, feladat",
+        "en": "homework, task",
+        "es": "tarea, deberes",
+        "de": "Hausaufgabe, Aufgabe"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "qq-01",
+      "sentence": "A ti ___ amo.",
+      "options": [
+        "te",
+        "me",
+        "le"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az amo végződése (-o) azt mondja: ÉN. A te azt: TÉGED. Együtt: szeretlek.",
+        "en": "The -o in amo says I. The te says you (object). Together: I love you.",
+        "es": "La -o de amo dice YO. El te dice A TI. Juntos: te amo.",
+        "de": "Das -o in amo sagt ICH, das te sagt DICH. Zusammen: ich liebe dich."
+      },
+      "wrong": {
+        "me": {
+          "hu": "A me engem jelentene: me amo = szeretem magam.",
+          "en": "Me would mean myself: me amo = I love myself.",
+          "es": "Me sería a mí mismo: me amo.",
+          "de": "Me hieße mich selbst: me amo."
+        },
+        "le": {
+          "hu": "A le neki: harmadik személy, nem te.",
+          "en": "Le is to him/her, a third person, not you.",
+          "es": "Le es a él o a ella, no a ti.",
+          "de": "Le ist ihm oder ihr, nicht dir."
+        }
+      },
+      "examples": [
+        "A ti te amo.",
+        "Te amo mucho."
+      ]
+    },
+    {
+      "id": "qq-02",
+      "sentence": "Tú me ___.",
+      "options": [
+        "amas",
+        "amo",
+        "ama"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az alany tú, ezért -as végződés. A me azt mondja: engem.",
+        "en": "The subject is tú, so the -as ending. Me says: me.",
+        "es": "El sujeto es tú, por eso -as. Me dice: a mí.",
+        "de": "Das Subjekt ist tú, daher -as. Me sagt: mich."
+      },
+      "wrong": {
+        "amo": {
+          "hu": "Az amo én vagyok: me amo = szeretem magam.",
+          "en": "Amo is I: me amo = I love myself.",
+          "es": "Amo es yo: me amo.",
+          "de": "Amo ist ich: me amo."
+        },
+        "ama": {
+          "hu": "Az ama ő, nem te: él me ama.",
+          "en": "Ama is he or she, not you: él me ama.",
+          "es": "Ama es él o ella: él me ama.",
+          "de": "Ama ist er oder sie: él me ama."
+        }
+      },
+      "examples": [
+        "Tú me amas.",
+        "Tú me ves."
+      ]
+    },
+    {
+      "id": "qq-03",
+      "sentence": "Yo te ___ un libro.",
+      "options": [
+        "doy",
+        "das",
+        "da"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Yo az alany, ezért doy. A te azt mondja: neked.",
+        "en": "Yo is the subject, so doy. Te says: to you.",
+        "es": "Yo es el sujeto, por eso doy. Te dice: a ti.",
+        "de": "Yo ist das Subjekt, daher doy. Te sagt: dir."
+      },
+      "wrong": {
+        "das": {
+          "hu": "A das te vagy: tú me das un libro.",
+          "en": "Das is you: tú me das un libro.",
+          "es": "Das es tú: tú me das un libro.",
+          "de": "Das ist du: tú me das un libro."
+        },
+        "da": {
+          "hu": "A da ő: él te da un libro.",
+          "en": "Da is he or she: él te da un libro.",
+          "es": "Da es él o ella: él te da un libro.",
+          "de": "Da ist er oder sie: él te da un libro."
+        }
+      },
+      "examples": [
+        "Yo te doy un libro.",
+        "Te doy mi número."
+      ]
+    },
+    {
+      "id": "qq-04",
+      "sentence": "Tú me ___ agua.",
+      "options": [
+        "das",
+        "doy",
+        "dan"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Tú az alany: das. A me azt mondja: nekem.",
+        "en": "Tú is the subject: das. Me says: to me.",
+        "es": "Tú es el sujeto: das. Me dice: a mí.",
+        "de": "Tú ist das Subjekt: das. Me sagt: mir."
+      },
+      "wrong": {
+        "doy": {
+          "hu": "A doy én vagyok: yo te doy agua.",
+          "en": "Doy is I: yo te doy agua.",
+          "es": "Doy es yo: yo te doy agua.",
+          "de": "Doy ist ich: yo te doy agua."
+        },
+        "dan": {
+          "hu": "A dan többen: ellos me dan agua.",
+          "en": "Dan is they: ellos me dan agua.",
+          "es": "Dan es ellos: ellos me dan agua.",
+          "de": "Dan ist sie (Plural): ellos me dan agua."
+        }
+      },
+      "examples": [
+        "Tú me das agua.",
+        "Me das la mano."
+      ]
+    },
+    {
+      "id": "qq-05",
+      "sentence": "Ella me ___ todos los días.",
+      "options": [
+        "llama",
+        "llamo",
+        "llamas"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Ella az alany: llama. A me azt mondja: engem.",
+        "en": "Ella is the subject: llama. Me says: me.",
+        "es": "Ella es el sujeto: llama. Me dice: a mí.",
+        "de": "Ella ist das Subjekt: llama. Me sagt: mich."
+      },
+      "wrong": {
+        "llamo": {
+          "hu": "A llamo én vagyok: yo la llamo.",
+          "en": "Llamo is I: yo la llamo.",
+          "es": "Llamo es yo: yo la llamo.",
+          "de": "Llamo ist ich: yo la llamo."
+        },
+        "llamas": {
+          "hu": "A llamas te vagy: tú me llamas.",
+          "en": "Llamas is you: tú me llamas.",
+          "es": "Llamas es tú: tú me llamas.",
+          "de": "Llamas ist du: tú me llamas."
+        }
+      },
+      "examples": [
+        "Ella me llama todos los días.",
+        "Mi madre me llama."
+      ]
+    },
+    {
+      "id": "qq-06",
+      "sentence": "Yo te ___ mañana.",
+      "options": [
+        "llamo",
+        "llamas",
+        "llama"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Yo az alany: llamo. A te azt mondja: téged.",
+        "en": "Yo is the subject: llamo. Te says: you.",
+        "es": "Yo es el sujeto: llamo. Te dice: a ti.",
+        "de": "Yo ist das Subjekt: llamo. Te sagt: dich."
+      },
+      "wrong": {
+        "llamas": {
+          "hu": "A llamas te vagy: tú me llamas mañana.",
+          "en": "Llamas is you: tú me llamas mañana.",
+          "es": "Llamas es tú: tú me llamas mañana.",
+          "de": "Llamas ist du: tú me llamas mañana."
+        },
+        "llama": {
+          "hu": "A llama ő: él te llama mañana.",
+          "en": "Llama is he or she: él te llama mañana.",
+          "es": "Llama es él: él te llama mañana.",
+          "de": "Llama ist er: él te llama mañana."
+        }
+      },
+      "examples": [
+        "Yo te llamo mañana.",
+        "Te llamo en la noche."
+      ]
+    },
+    {
+      "id": "qq-07",
+      "sentence": "¿Tú me ___ con esto?",
+      "options": [
+        "ayudas",
+        "ayudo",
+        "ayuda"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Tú az alany: ayudas. A me azt mondja: nekem.",
+        "en": "Tú is the subject: ayudas. Me says: me.",
+        "es": "Tú es el sujeto: ayudas. Me dice: a mí.",
+        "de": "Tú ist das Subjekt: ayudas. Me sagt: mir."
+      },
+      "wrong": {
+        "ayudo": {
+          "hu": "Az ayudo én vagyok: yo te ayudo.",
+          "en": "Ayudo is I: yo te ayudo.",
+          "es": "Ayudo es yo: yo te ayudo.",
+          "de": "Ayudo ist ich: yo te ayudo."
+        },
+        "ayuda": {
+          "hu": "Az ayuda ő: ella me ayuda.",
+          "en": "Ayuda is he or she: ella me ayuda.",
+          "es": "Ayuda es él o ella: ella me ayuda.",
+          "de": "Ayuda ist er oder sie: ella me ayuda."
+        }
+      },
+      "examples": [
+        "¿Tú me ayudas con esto?",
+        "¿Me ayudas, por favor?"
+      ]
+    },
+    {
+      "id": "qq-08",
+      "sentence": "A ti ___ ayudo siempre.",
+      "options": [
+        "te",
+        "me",
+        "le"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az ayudo már mondja, hogy ÉN. Marad a célpont: te = neked.",
+        "en": "Ayudo already says I. What is left is the target: te = you.",
+        "es": "Ayudo ya dice YO. Falta el destino: te = a ti.",
+        "de": "Ayudo sagt schon ICH. Es fehlt das Ziel: te = dir."
+      },
+      "wrong": {
+        "me": {
+          "hu": "A me engem jelent, de az ayudo már az én cselekvésem.",
+          "en": "Me means me, but ayudo is already my action.",
+          "es": "Me es a mí, pero ayudo ya es mi acción.",
+          "de": "Me heißt mir, aber ayudo ist schon meine Handlung."
+        },
+        "le": {
+          "hu": "A le neki, nem neked: a él le ayudo.",
+          "en": "Le is to him or her, not to you: a él le ayudo.",
+          "es": "Le es a él o a ella: a él le ayudo.",
+          "de": "Le ist ihm oder ihr: a él le ayudo."
+        }
+      },
+      "examples": [
+        "A ti te ayudo siempre.",
+        "Te ayudo con la tarea."
+      ]
+    },
+    {
+      "id": "qq-09",
+      "sentence": "Ella ___ dice la verdad a nosotros.",
+      "options": [
+        "nos",
+        "les",
+        "me"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A célpont nosotros, ezért nos. A dice azt mondja: ő.",
+        "en": "The target is nosotros, so nos. Dice says: he or she.",
+        "es": "El destino es nosotros, por eso nos. Dice dice: él o ella.",
+        "de": "Das Ziel ist nosotros, daher nos. Dice sagt: er oder sie."
+      },
+      "wrong": {
+        "les": {
+          "hu": "A les nekik: ella les dice la verdad a ellos.",
+          "en": "Les is to them: ella les dice la verdad a ellos.",
+          "es": "Les es a ellos: ella les dice la verdad a ellos.",
+          "de": "Les ist ihnen: ella les dice la verdad a ellos."
+        },
+        "me": {
+          "hu": "A me nekem, egy személynek, nem nekünk.",
+          "en": "Me is to me, one person, not to us.",
+          "es": "Me es a mí, una persona, no a nosotros.",
+          "de": "Me ist mir, eine Person, nicht uns."
+        }
+      },
+      "examples": [
+        "Ella nos dice la verdad.",
+        "Nos dice todo."
+      ]
+    },
+    {
+      "id": "qq-10",
+      "sentence": "Yo te ___ en la foto.",
+      "options": [
+        "veo",
+        "ves",
+        "ve"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Yo az alany: veo. A te azt mondja: téged.",
+        "en": "Yo is the subject: veo. Te says: you.",
+        "es": "Yo es el sujeto: veo. Te dice: a ti.",
+        "de": "Yo ist das Subjekt: veo. Te sagt: dich."
+      },
+      "wrong": {
+        "ves": {
+          "hu": "A ves te vagy: tú me ves en la foto.",
+          "en": "Ves is you: tú me ves en la foto.",
+          "es": "Ves es tú: tú me ves en la foto.",
+          "de": "Ves ist du: tú me ves en la foto."
+        },
+        "ve": {
+          "hu": "A ve ő: él te ve en la foto.",
+          "en": "Ve is he or she: él te ve en la foto.",
+          "es": "Ve es él: él te ve en la foto.",
+          "de": "Ve ist er: él te ve en la foto."
+        }
+      },
+      "examples": [
+        "Yo te veo en la foto.",
+        "Te veo mañana."
+      ]
+    },
+    {
+      "id": "qq-11",
+      "sentence": "¿Tú me ___ ahora?",
+      "options": [
+        "ves",
+        "veo",
+        "ve"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Tú az alany: ves. A me azt mondja: engem.",
+        "en": "Tú is the subject: ves. Me says: me.",
+        "es": "Tú es el sujeto: ves. Me dice: a mí.",
+        "de": "Tú ist das Subjekt: ves. Me sagt: mich."
+      },
+      "wrong": {
+        "veo": {
+          "hu": "A veo én vagyok: yo te veo ahora.",
+          "en": "Veo is I: yo te veo ahora.",
+          "es": "Veo es yo: yo te veo ahora.",
+          "de": "Veo ist ich: yo te veo ahora."
+        },
+        "ve": {
+          "hu": "A ve ő: ella me ve ahora.",
+          "en": "Ve is he or she: ella me ve ahora.",
+          "es": "Ve es él o ella: ella me ve ahora.",
+          "de": "Ve ist er oder sie: ella me ve ahora."
+        }
+      },
+      "examples": [
+        "¿Tú me ves ahora?",
+        "¿Me ves bien?"
+      ]
+    },
+    {
+      "id": "qq-12",
+      "sentence": "A él ___ escribo un mensaje.",
+      "options": [
+        "le",
+        "lo",
+        "les"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az escribo mondja: ÉN. A célpont a él, ezért le.",
+        "en": "Escribo says I. The target is a él, so le.",
+        "es": "Escribo dice YO. El destino es a él, por eso le.",
+        "de": "Escribo sagt ICH. Das Ziel ist a él, daher le."
+      },
+      "wrong": {
+        "lo": {
+          "hu": "A lo tárgy: lo escribo = megírom AZT.",
+          "en": "Lo is the thing: lo escribo = I write it.",
+          "es": "Lo es la cosa: lo escribo.",
+          "de": "Lo ist die Sache: lo escribo."
+        },
+        "les": {
+          "hu": "A les többeknek: a ellos les escribo.",
+          "en": "Les is to several people: a ellos les escribo.",
+          "es": "Les es a varias personas: a ellos les escribo.",
+          "de": "Les ist mehreren: a ellos les escribo."
+        }
+      },
+      "examples": [
+        "A él le escribo un mensaje.",
+        "Le escribo a mi madre."
+      ]
+    }
+  ]
+}

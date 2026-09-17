@@ -1,0 +1,1602 @@
+{
+  "schema": 2,
+  "topic": "perifrasis-modales",
+  "level": "A1",
+  "title": {
+    "hu": "Perífrasis modales: tener que, poder, querer",
+    "en": "Modal periphrases: tener que, poder, querer",
+    "es": "Perífrasis modales: tener que, poder, querer",
+    "de": "Modale Periphrasen: tener que, poder, querer"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A spanyolban gyakori, hogy két ige áll egymás mellett: az első megmondja, hogyan viszonyulsz a cselekvéshez (tudsz, akarsz, kell), a második egyszerű főnévi igenévben marad. Ez a perífrasis modal, és nélküle nehéz természetesen beszélni a képességről, a vágyról és a kötelezettségről.",
+        "en": "In Spanish it is common for two verbs to stand together: the first one shows your attitude toward the action, can, want, must, and the second one stays a plain infinitive. This is the modal periphrasis, and without it, it is hard to talk naturally about ability, wish and obligation.",
+        "es": "En español es habitual que dos verbos vayan juntos: el primero muestra tu actitud ante la acción, poder, querer, deber, y el segundo se queda en infinitivo simple. Esto es la perífrasis modal, y sin ella es difícil hablar con naturalidad de la capacidad, el deseo y la obligación.",
+        "de": "Im Spanischen stehen oft zwei Verben zusammen: das erste zeigt deine Haltung zur Handlung, können, wollen, müssen, und das zweite bleibt ein einfacher Infinitiv. Das ist die modale Periphrase, und ohne sie ist es schwer, natürlich über Fähigkeit, Wunsch und Pflicht zu sprechen."
+      }
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "A szerkezetek és a hay que",
+        "en": "The structures, and hay que",
+        "es": "Las estructuras, y hay que",
+        "de": "Die Strukturen, und hay que"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "tener que + főnévi igenév = kötelezettség: valamit muszáj megtenni, mert a körülmények úgy hozzák.",
+            "en": "tener que + infinitive = obligation: you must do something because of the circumstances.",
+            "es": "tener que + infinitivo = obligación: hay que hacer algo por las circunstancias.",
+            "de": "tener que + Infinitiv = Pflicht: man muss etwas tun, weil die Umstände es verlangen."
+          },
+          "examples": [
+            {
+              "es": "Tengo que trabajar hoy.",
+              "tr": {
+                "hu": "Ma dolgoznom kell.",
+                "en": "I have to work today.",
+                "es": "Tengo que trabajar hoy.",
+                "de": "Ich muss heute arbeiten."
+              }
+            },
+            {
+              "es": "Tenemos que limpiar la casa.",
+              "tr": {
+                "hu": "Ki kell takarítanunk a házat.",
+                "en": "We have to clean the house.",
+                "es": "Tenemos que limpiar la casa.",
+                "de": "Wir müssen das Haus putzen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "poder + főnévi igenév = képesség vagy engedély.",
+            "en": "poder + infinitive = ability or permission.",
+            "es": "poder + infinitivo = capacidad o permiso.",
+            "de": "poder + Infinitiv = Fähigkeit oder Erlaubnis."
+          },
+          "examples": [
+            {
+              "es": "Puedo nadar muy bien.",
+              "tr": {
+                "hu": "Nagyon jól tudok úszni.",
+                "en": "I can swim very well.",
+                "es": "Puedo nadar muy bien.",
+                "de": "Ich kann sehr gut schwimmen."
+              }
+            },
+            {
+              "es": "¿Puedo entrar?",
+              "tr": {
+                "hu": "Bemehetek?",
+                "en": "May I come in?",
+                "es": "¿Puedo entrar?",
+                "de": "Darf ich reinkommen?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "querer + főnévi igenév = vágy, akarat.",
+            "en": "querer + infinitive = wish, will.",
+            "es": "querer + infinitivo = deseo, voluntad.",
+            "de": "querer + Infinitiv = Wunsch, Wille."
+          },
+          "examples": [
+            {
+              "es": "Quiero aprender español.",
+              "tr": {
+                "hu": "Szeretnék spanyolul tanulni.",
+                "en": "I want to learn Spanish.",
+                "es": "Quiero aprender español.",
+                "de": "Ich möchte Spanisch lernen."
+              }
+            },
+            {
+              "es": "Quiero ir contigo al cine.",
+              "tr": {
+                "hu": "El akarok veled menni moziba.",
+                "en": "I want to go to the movies with you.",
+                "es": "Quiero ir contigo al cine.",
+                "de": "Ich möchte mit dir ins Kino gehen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "deber + főnévi igenév = erkölcsi kötelesség, tanács, lágyabb mint a tener que.",
+            "en": "deber + infinitive = moral obligation, advice, softer than tener que.",
+            "es": "deber + infinitivo = obligación moral, consejo, más suave que tener que.",
+            "de": "deber + Infinitiv = moralische Pflicht, Rat, sanfter als tener que."
+          },
+          "examples": [
+            {
+              "es": "Debo cuidar mi salud.",
+              "tr": {
+                "hu": "Vigyáznom kell az egészségemre.",
+                "en": "I should take care of my health.",
+                "es": "Debo cuidar mi salud.",
+                "de": "Ich sollte auf meine Gesundheit achten."
+              }
+            },
+            {
+              "es": "No debemos mentir.",
+              "tr": {
+                "hu": "Nem szabadna hazudnunk.",
+                "en": "We should not lie.",
+                "es": "No debemos mentir.",
+                "de": "Wir sollten nicht lügen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "hay que + főnévi igenév = személytelen forma, nincs alanya, mindenkire vonatkozik.",
+            "en": "hay que + infinitive = impersonal form, has no subject, applies to everyone.",
+            "es": "hay que + infinitivo = forma impersonal, no tiene sujeto, vale para todos.",
+            "de": "hay que + Infinitiv = unpersönliche Form, hat kein Subjekt, gilt für alle."
+          },
+          "examples": [
+            {
+              "es": "Hay que estudiar mucho.",
+              "tr": {
+                "hu": "Sokat kell tanulni.",
+                "en": "One must study a lot.",
+                "es": "Hay que estudiar mucho.",
+                "de": "Man muss viel lernen."
+              }
+            },
+            {
+              "es": "Hay que ser puntual.",
+              "tr": {
+                "hu": "Pontosnak kell lenni.",
+                "en": "One must be punctual.",
+                "es": "Hay que ser puntual.",
+                "de": "Man muss pünktlich sein."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "modales-presente",
+      "title": {
+        "hu": "A négy szerkezet, jelen idő",
+        "en": "The four structures, present tense",
+        "es": "Las cuatro estructuras, presente",
+        "de": "Die vier Strukturen, Präsens"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "poder",
+          "en": "poder",
+          "es": "poder",
+          "de": "poder"
+        },
+        {
+          "hu": "querer",
+          "en": "querer",
+          "es": "querer",
+          "de": "querer"
+        },
+        {
+          "hu": "tener que",
+          "en": "tener que",
+          "es": "tener que",
+          "de": "tener que"
+        },
+        {
+          "hu": "deber",
+          "en": "deber",
+          "es": "deber",
+          "de": "deber"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "puedo",
+          "quiero",
+          "tengo que",
+          "debo"
+        ],
+        [
+          "tú",
+          "puedes",
+          "quieres",
+          "tienes que",
+          "debes"
+        ],
+        [
+          "él/ella/usted",
+          "puede",
+          "quiere",
+          "tiene que",
+          "debe"
+        ],
+        [
+          "nosotros",
+          "podemos",
+          "queremos",
+          "tenemos que",
+          "debemos"
+        ],
+        [
+          "vosotros",
+          "podéis",
+          "queréis",
+          "tenéis que",
+          "debéis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "pueden",
+          "quieren",
+          "tienen que",
+          "deben"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Mikor melyiket?",
+        "en": "When which one?",
+        "es": "¿Cuándo cuál?",
+        "de": "Wann welches?"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Képesség vagy engedély kifejezésére: tudsz-e valamit, vagy szabad-e megtenned.",
+            "en": "To express ability or permission: whether you can do something, or whether you are allowed to.",
+            "es": "Para expresar capacidad o permiso: si sabes o puedes hacer algo, o si te dejan hacerlo.",
+            "de": "Um Fähigkeit oder Erlaubnis auszudrücken: ob du etwas kannst, oder ob du es darfst."
+          },
+          "examples": [
+            {
+              "es": "Puedo nadar muy bien.",
+              "tr": {
+                "hu": "Nagyon jól tudok úszni.",
+                "en": "I can swim very well.",
+                "es": "Puedo nadar muy bien.",
+                "de": "Ich kann sehr gut schwimmen."
+              }
+            },
+            {
+              "es": "¿Puedo entrar?",
+              "tr": {
+                "hu": "Bemehetek?",
+                "en": "May I come in?",
+                "es": "¿Puedo entrar?",
+                "de": "Darf ich reinkommen?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Vágy kifejezésére: mit szeretnél csinálni.",
+            "en": "To express a wish: what you want to do.",
+            "es": "Para expresar un deseo: qué quieres hacer.",
+            "de": "Um einen Wunsch auszudrücken: was du tun möchtest."
+          },
+          "examples": [
+            {
+              "es": "Quiero aprender español.",
+              "tr": {
+                "hu": "Szeretnék spanyolul tanulni.",
+                "en": "I want to learn Spanish.",
+                "es": "Quiero aprender español.",
+                "de": "Ich möchte Spanisch lernen."
+              }
+            },
+            {
+              "es": "Quiero ir contigo al cine.",
+              "tr": {
+                "hu": "El akarok veled menni moziba.",
+                "en": "I want to go to the movies with you.",
+                "es": "Quiero ir contigo al cine.",
+                "de": "Ich möchte mit dir ins Kino gehen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Külső kényszerű kötelezettségre: a körülmények, a munka, a szabályok kényszerítenek.",
+            "en": "For an external, forced obligation: the circumstances, your job, the rules make you do it.",
+            "es": "Para una obligación externa, forzada: te obligan las circunstancias, el trabajo, las reglas.",
+            "de": "Für eine äußere, erzwungene Pflicht: die Umstände, die Arbeit, die Regeln zwingen dich dazu."
+          },
+          "examples": [
+            {
+              "es": "Tengo que trabajar hoy.",
+              "tr": {
+                "hu": "Ma dolgoznom kell.",
+                "en": "I have to work today.",
+                "es": "Tengo que trabajar hoy.",
+                "de": "Ich muss heute arbeiten."
+              }
+            },
+            {
+              "es": "Tenemos que limpiar la casa.",
+              "tr": {
+                "hu": "Ki kell takarítanunk a házat.",
+                "en": "We have to clean the house.",
+                "es": "Tenemos que limpiar la casa.",
+                "de": "Wir müssen das Haus putzen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Erkölcsi kötelességre vagy tanácsra: nem kényszer, hanem az, amit helyesnek tartunk.",
+            "en": "For a moral obligation or advice: not a force from outside, but what we consider right.",
+            "es": "Para una obligación moral o un consejo: no es una fuerza externa, sino lo que consideramos correcto.",
+            "de": "Für eine moralische Pflicht oder einen Rat: kein äußerer Zwang, sondern das, was wir für richtig halten."
+          },
+          "examples": [
+            {
+              "es": "Debo cuidar mi salud.",
+              "tr": {
+                "hu": "Vigyáznom kell az egészségemre.",
+                "en": "I should take care of my health.",
+                "es": "Debo cuidar mi salud.",
+                "de": "Ich sollte auf meine Gesundheit achten."
+              }
+            },
+            {
+              "es": "No debemos mentir.",
+              "tr": {
+                "hu": "Nem szabadna hazudnunk.",
+                "en": "We should not lie.",
+                "es": "No debemos mentir.",
+                "de": "Wir sollten nicht lügen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Hasonló, mégis más",
+        "en": "Similar, yet different",
+        "es": "Parecido, pero distinto",
+        "de": "Ähnlich, aber anders"
+      },
+      "pairs": [
+        {
+          "a": "tengo que",
+          "b": "debo",
+          "note": {
+            "hu": "A tengo que külső kényszert jelent: a körülmények miatt muszáj. A debo belső, erkölcsi kötelesség: azt teszem, amit helyesnek tartok, lágyabb felszólítás.",
+            "en": "Tengo que shows an external force: you must because of the circumstances. Debo is an inner, moral obligation: you do what you consider right, a softer push.",
+            "es": "Tengo que muestra una fuerza externa: hay que hacerlo por las circunstancias. Debo es una obligación interna, moral: haces lo que consideras correcto, un empuje más suave.",
+            "de": "Tengo que zeigt einen äußeren Zwang: man muss wegen der Umstände. Debo ist eine innere, moralische Pflicht: man tut, was man für richtig hält, sanfter."
+          },
+          "examples": [
+            {
+              "es": "Tengo que trabajar el sábado, así salió el horario.",
+              "tr": {
+                "hu": "Szombaton dolgoznom kell, így alakult a beosztás.",
+                "en": "I have to work on Saturday, that is how the schedule turned out.",
+                "es": "Tengo que trabajar el sábado, así salió el horario.",
+                "de": "Ich muss am Samstag arbeiten, so ist der Dienstplan."
+              }
+            },
+            {
+              "es": "Debo llamar a mi madre.",
+              "tr": {
+                "hu": "Fel kellene hívnom anyámat.",
+                "en": "I should call my mother.",
+                "es": "Debo llamar a mi madre.",
+                "de": "Ich sollte meine Mutter anrufen."
+              }
+            }
+          ]
+        },
+        {
+          "a": "puedo",
+          "b": "quiero",
+          "note": {
+            "hu": "A puedo képességet vagy engedélyt jelent (tudok, szabad). A quiero vágyat jelent (akarok). A kettő gyakran keveredik kezdőknél.",
+            "en": "Puedo means ability or permission (can, am allowed to). Quiero means a wish (want to). Beginners often mix the two up.",
+            "es": "Puedo indica capacidad o permiso (puedo, me dejan). Quiero indica un deseo (quiero). Los dos se confunden a menudo al empezar.",
+            "de": "Puedo bedeutet Fähigkeit oder Erlaubnis (können, dürfen). Quiero bedeutet einen Wunsch (wollen). Anfänger verwechseln die beiden oft."
+          },
+          "examples": [
+            {
+              "es": "Puedo hablar francés.",
+              "tr": {
+                "hu": "Tudok franciául beszélni.",
+                "en": "I can speak French.",
+                "es": "Puedo hablar francés.",
+                "de": "Ich kann Französisch sprechen."
+              }
+            },
+            {
+              "es": "Quiero hablar contigo.",
+              "tr": {
+                "hu": "Szeretnék veled beszélni.",
+                "en": "I want to talk to you.",
+                "es": "Quiero hablar contigo.",
+                "de": "Ich möchte mit dir sprechen."
+              }
+            }
+          ]
+        },
+        {
+          "a": "tengo que",
+          "b": "hay que",
+          "note": {
+            "hu": "A tengo que személyes: van alanya, konkrétan rólam szól. A hay que személytelen: nincs alanya, általánosan mindenkire vonatkozik.",
+            "en": "Tengo que is personal: it has a subject, it is specifically about me. Hay que is impersonal: it has no subject, it applies to everyone in general.",
+            "es": "Tengo que es personal: tiene sujeto, habla concretamente de mí. Hay que es impersonal: no tiene sujeto, vale para todos en general.",
+            "de": "Tengo que ist persönlich: es hat ein Subjekt, es geht konkret um mich. Hay que ist unpersönlich: es hat kein Subjekt, es gilt allgemein für alle."
+          },
+          "examples": [
+            {
+              "es": "Tengo que estudiar esta noche.",
+              "tr": {
+                "hu": "Ma este tanulnom kell.",
+                "en": "I have to study tonight.",
+                "es": "Tengo que estudiar esta noche.",
+                "de": "Ich muss heute Abend lernen."
+              }
+            },
+            {
+              "es": "Hay que estudiar mucho para aprender un idioma.",
+              "tr": {
+                "hu": "Sokat kell tanulni ahhoz, hogy megtanulj egy nyelvet.",
+                "en": "One must study a lot to learn a language.",
+                "es": "Hay que estudiar mucho para aprender un idioma.",
+                "de": "Man muss viel lernen, um eine Sprache zu lernen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Csak a tener que után áll que; a poder, a querer és a deber közvetlenül a főnévi igenevet veszi fel, que nélkül.",
+        "en": "Only tener que is followed by que; poder, querer and deber take the bare infinitive directly, without que.",
+        "es": "Solo después de tener que va que; poder, querer y deber llevan el infinitivo directo, sin que.",
+        "de": "Nur nach tener que steht que; poder, querer und deber nehmen den bloßen Infinitiv direkt, ohne que."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Mexikóban a vosotros helyett mindig ustedes-t használnak; a vosotros csak Spanyolországban él a hétköznapi beszédben.",
+        "en": "In Mexico ustedes always replaces vosotros; vosotros is only used in everyday speech in Spain.",
+        "es": "En México siempre se usa ustedes en vez de vosotros; el vosotros solo se usa en el habla cotidiana de España.",
+        "de": "In Mexiko wird immer ustedes statt vosotros benutzt; vosotros wird nur im Alltagsspanisch Spaniens verwendet."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A deber + főnévi igenév kötelességet fejez ki (debo estudiar). A deber de + főnévi igenév viszont feltételezést: debe de ser tarde, vagyis valószínűleg késő van.",
+        "en": "Deber + infinitive expresses obligation (debo estudiar). Deber de + infinitive expresses a guess instead: debe de ser tarde, meaning it is probably late.",
+        "es": "Deber + infinitivo expresa obligación (debo estudiar). Deber de + infinitivo expresa en cambio una suposición: debe de ser tarde, es decir, probablemente es tarde.",
+        "de": "Deber + Infinitiv drückt eine Pflicht aus (debo estudiar). Deber de + Infinitiv drückt dagegen eine Vermutung aus: debe de ser tarde, also es ist wahrscheinlich spät."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Amikor két ige áll egymás mellett a spanyolban, az első ragozódik, a második pedig főnévi igenévben marad. A «tener que» azt jelenti, hogy valamit muszáj megtenned, mert a körülmények úgy hozzák: «tengo que trabajar». A «poder» a képességet vagy az engedélyt fejezi ki: «puedo nadar», «¿puedo entrar?». A «querer» a vágyat mondja ki: «quiero aprender español». A «deber» inkább erkölcsi kötelességet vagy tanácsot jelent, lágyabb, mint a «tener que»: «debo cuidar mi salud». A «hay que» személytelen forma, nincs alanya, mindenkire vonatkozik: «hay que estudiar mucho». Csak a «tener que» után kell a «que», a többi ige közvetlenül a főnévi igenevet veszi fel.",
+    "en": "When two verbs stand together in Spanish, the first one is conjugated and the second stays in the infinitive. «Tener que» means you must do something because of the circumstances: «tengo que trabajar». «Poder» expresses ability or permission: «puedo nadar», «¿puedo entrar?». «Querer» expresses a wish: «quiero aprender español». «Deber» is more about moral duty or advice, softer than «tener que»: «debo cuidar mi salud». «Hay que» is the impersonal form, it has no subject and applies to everyone: «hay que estudiar mucho». Only «tener que» takes «que» afterward, the other verbs take the bare infinitive directly.",
+    "es": "Cuando dos verbos van juntos en español, el primero se conjuga y el segundo se queda en infinitivo. «Tener que» significa que debes hacer algo por las circunstancias: «tengo que trabajar». «Poder» expresa capacidad o permiso: «puedo nadar», «¿puedo entrar?». «Querer» expresa un deseo: «quiero aprender español». «Deber» es más bien un deber moral o un consejo, más suave que «tener que»: «debo cuidar mi salud». «Hay que» es la forma impersonal, no tiene sujeto y vale para todos: «hay que estudiar mucho». Solo «tener que» lleva «que» después, los demás verbos llevan el infinitivo directo.",
+    "de": "Wenn im Spanischen zwei Verben zusammenstehen, wird das erste konjugiert und das zweite bleibt im Infinitiv. «Tener que» bedeutet, dass du wegen der Umstände etwas tun musst: «tengo que trabajar». «Poder» drückt Fähigkeit oder Erlaubnis aus: «puedo nadar», «¿puedo entrar?». «Querer» drückt einen Wunsch aus: «quiero aprender español». «Deber» ist eher eine moralische Pflicht oder ein Rat, sanfter als «tener que»: «debo cuidar mi salud». «Hay que» ist die unpersönliche Form, sie hat kein Subjekt und gilt für alle: «hay que estudiar mucho». Nur nach «tener que» steht «que», die anderen Verben nehmen den bloßen Infinitiv."
+  },
+  "glossary": [
+    {
+      "word": "poder",
+      "gloss": {
+        "hu": "tud / lehet (segédige)",
+        "en": "can / to be able to",
+        "es": "poder",
+        "de": "können"
+      }
+    },
+    {
+      "word": "querer",
+      "gloss": {
+        "hu": "akarni",
+        "en": "to want",
+        "es": "querer",
+        "de": "wollen"
+      }
+    },
+    {
+      "word": "deber",
+      "gloss": {
+        "hu": "kell, kellene (erkölcsi kötelesség)",
+        "en": "should, ought to (moral obligation)",
+        "es": "deber",
+        "de": "sollen (moralische Pflicht)"
+      }
+    },
+    {
+      "word": "venir",
+      "gloss": {
+        "hu": "jönni",
+        "en": "to come",
+        "es": "venir",
+        "de": "kommen"
+      }
+    },
+    {
+      "word": "ir",
+      "gloss": {
+        "hu": "menni",
+        "en": "to go",
+        "es": "ir",
+        "de": "gehen"
+      }
+    },
+    {
+      "word": "ayudar",
+      "gloss": {
+        "hu": "segíteni",
+        "en": "to help",
+        "es": "ayudar",
+        "de": "helfen"
+      }
+    },
+    {
+      "word": "aprender",
+      "gloss": {
+        "hu": "tanulni",
+        "en": "to learn",
+        "es": "aprender",
+        "de": "lernen"
+      }
+    },
+    {
+      "word": "español",
+      "gloss": {
+        "hu": "spanyol (nyelv)",
+        "en": "Spanish (language)",
+        "es": "el español",
+        "de": "Spanisch"
+      }
+    },
+    {
+      "word": "tiempo",
+      "gloss": {
+        "hu": "idő",
+        "en": "time",
+        "es": "el tiempo",
+        "de": "die Zeit"
+      }
+    },
+    {
+      "word": "favor",
+      "gloss": {
+        "hu": "por favor = kérem",
+        "en": "por favor = please",
+        "es": "el favor",
+        "de": "der Gefallen (por favor = bitte)"
+      }
+    },
+    {
+      "word": "juntos",
+      "gloss": {
+        "hu": "együtt",
+        "en": "together",
+        "es": "juntos",
+        "de": "zusammen"
+      }
+    },
+    {
+      "word": "nadar",
+      "gloss": {
+        "hu": "úszni",
+        "en": "to swim",
+        "es": "nadar",
+        "de": "schwimmen"
+      }
+    },
+    {
+      "word": "entrar",
+      "gloss": {
+        "hu": "bemenni, belépni",
+        "en": "to enter, to come in",
+        "es": "entrar",
+        "de": "hineingehen, eintreten"
+      }
+    },
+    {
+      "word": "cuidar",
+      "gloss": {
+        "hu": "vigyázni valamire, gondoskodni",
+        "en": "to take care of",
+        "es": "cuidar",
+        "de": "sich kümmern um, achten auf"
+      }
+    },
+    {
+      "word": "salud",
+      "gloss": {
+        "hu": "egészség",
+        "en": "health",
+        "es": "la salud",
+        "de": "die Gesundheit"
+      }
+    },
+    {
+      "word": "mentir",
+      "gloss": {
+        "hu": "hazudni",
+        "en": "to lie",
+        "es": "mentir",
+        "de": "lügen"
+      }
+    },
+    {
+      "word": "puntual",
+      "gloss": {
+        "hu": "pontos, pontosan érkező",
+        "en": "punctual",
+        "es": "puntual",
+        "de": "pünktlich"
+      }
+    },
+    {
+      "word": "llamar",
+      "gloss": {
+        "hu": "hívni, telefonálni",
+        "en": "to call",
+        "es": "llamar",
+        "de": "anrufen"
+      }
+    },
+    {
+      "word": "madre",
+      "gloss": {
+        "hu": "édesanya",
+        "en": "mother",
+        "es": "la madre",
+        "de": "die Mutter"
+      }
+    },
+    {
+      "word": "francés",
+      "gloss": {
+        "hu": "francia (nyelv)",
+        "en": "French (language)",
+        "es": "el francés",
+        "de": "Französisch"
+      }
+    },
+    {
+      "word": "que salir",
+      "gloss": {
+        "hu": "nem létező forma: a poder után nem kell que",
+        "en": "non-existent form: poder does not take que",
+        "es": "forma inexistente: poder no lleva que",
+        "de": "nicht existierende Form: nach poder steht kein que"
+      }
+    },
+    {
+      "word": "que ir",
+      "gloss": {
+        "hu": "nem létező forma: a querer után nem kell que",
+        "en": "non-existent form: querer does not take que",
+        "es": "forma inexistente: querer no lleva que",
+        "de": "nicht existierende Form: nach querer steht kein que"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "pm-01",
+      "sentence": "Yo ___ que trabajar hoy.",
+      "options": [
+        "tengo",
+        "tener",
+        "tiene"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az első ige ragozódik: yo → tengo.",
+        "en": "The first verb is conjugated: yo → tengo.",
+        "es": "El primer verbo se conjuga: yo → tengo.",
+        "de": "Das erste Verb wird konjugiert: yo → tengo."
+      },
+      "wrong": {
+        "tener": {
+          "hu": "A \"tener\" itt nem alkot helyes mondatot: az első igének ragozódnia kell, nem maradhat főnévi igenévben; helyesen: Tengo que trabajar hoy.",
+          "en": "\"Tener\" does not make a correct sentence here: the first verb must be conjugated, it cannot stay in the infinitive; correctly: Tengo que trabajar hoy.",
+          "es": "\"Tener\" no forma una frase correcta aquí: el primer verbo debe conjugarse, no puede quedarse en infinitivo; correctamente: Tengo que trabajar hoy.",
+          "de": "\"Tener\" ergibt hier keinen korrekten Satz: das erste Verb muss konjugiert werden, es kann nicht im Infinitiv bleiben; richtig: Tengo que trabajar hoy."
+        },
+        "tiene": {
+          "hu": "A \"tiene\" ő/ön alakja, itt viszont yo (én) az alany; helyesen: Tengo que trabajar hoy.",
+          "en": "\"Tiene\" is the he/she/you-formal form, but here the subject is yo (I); correctly: Tengo que trabajar hoy.",
+          "es": "\"Tiene\" es la forma de él/ella/usted, pero aquí el sujeto es yo; correctamente: Tengo que trabajar hoy.",
+          "de": "\"Tiene\" ist die er/sie/Sie-Form, hier ist aber yo (ich) das Subjekt; richtig: Tengo que trabajar hoy."
+        }
+      },
+      "examples": [
+        "Tengo que trabajar hoy.",
+        "Tengo que limpiar la casa."
+      ]
+    },
+    {
+      "id": "pm-02",
+      "sentence": "Tienes que ___ para el examen.",
+      "options": [
+        "estudiar",
+        "estudias",
+        "estudio"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A tener que után a MÁSODIK ige főnévi igenévben marad: estudiar.",
+        "en": "After tener que, the SECOND verb stays in the infinitive: estudiar.",
+        "es": "Después de tener que, el SEGUNDO verbo se queda en infinitivo: estudiar.",
+        "de": "Nach tener que bleibt das ZWEITE Verb im Infinitiv: estudiar."
+      },
+      "wrong": {
+        "estudias": {
+          "hu": "Az \"estudias\" újra ragozná a második igét, pedig a \"tienes\" már hordozza a személyt; helyesen: Tienes que estudiar para el examen.",
+          "en": "\"Estudias\" would conjugate the second verb again, but \"tienes\" already carries the person; correctly: Tienes que estudiar para el examen.",
+          "es": "\"Estudias\" conjugaría otra vez el segundo verbo, pero \"tienes\" ya lleva la persona; correctamente: Tienes que estudiar para el examen.",
+          "de": "\"Estudias\" würde das zweite Verb erneut konjugieren, aber \"tienes\" trägt die Person bereits; richtig: Tienes que estudiar para el examen."
+        },
+        "estudio": {
+          "hu": "Az \"estudio\" a yo (én) alakja, itt viszont tú (te) a beszélgetőpartner, és a második igének amúgy is főnévi igenévben kell maradnia: Tienes que estudiar para el examen.",
+          "en": "\"Estudio\" is the yo (I) form, but here the subject is tú (you), and the second verb must stay in the infinitive anyway: Tienes que estudiar para el examen.",
+          "es": "\"Estudio\" es la forma de yo, pero aquí el sujeto es tú, y además el segundo verbo debe quedarse en infinitivo: Tienes que estudiar para el examen.",
+          "de": "\"Estudio\" ist die yo-Form, hier ist aber tú gemeint, und außerdem muss das zweite Verb im Infinitiv bleiben: Tienes que estudiar para el examen."
+        }
+      },
+      "examples": [
+        "Tienes que estudiar para el examen.",
+        "Tengo que estudiar mucho hoy."
+      ]
+    },
+    {
+      "id": "pm-03",
+      "sentence": "Tengo ___ salir temprano.",
+      "options": [
+        "que",
+        "de",
+        "a"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A tener mindig que-t kér a főnévi igenév előtt: tener que salir.",
+        "en": "Tener always needs que before the infinitive: tener que salir.",
+        "es": "Tener siempre necesita que antes del infinitivo: tener que salir.",
+        "de": "Tener braucht immer que vor dem Infinitiv: tener que salir."
+      },
+      "wrong": {
+        "de": {
+          "hu": "A \"de\" más igék után áll (pl. acabar de), a tener que szerkezetben nem; helyesen: Tengo que salir temprano.",
+          "en": "\"De\" follows other verbs (like acabar de), not the tener que structure; correctly: Tengo que salir temprano.",
+          "es": "\"De\" va después de otros verbos (como acabar de), no en la estructura tener que; correctamente: Tengo que salir temprano.",
+          "de": "\"De\" folgt auf andere Verben (wie acabar de), nicht auf die Struktur tener que; richtig: Tengo que salir temprano."
+        },
+        "a": {
+          "hu": "Az \"a\" az ir a + főnévi igenév szerkezetben áll, a tener után nem; helyesen: Tengo que salir temprano.",
+          "en": "\"A\" belongs to the structure ir a + infinitive, not after tener; correctly: Tengo que salir temprano.",
+          "es": "\"A\" pertenece a la estructura ir a + infinitivo, no después de tener; correctamente: Tengo que salir temprano.",
+          "de": "\"A\" gehört zur Struktur ir a + Infinitiv, nicht nach tener; richtig: Tengo que salir temprano."
+        }
+      },
+      "examples": [
+        "Tengo que salir temprano.",
+        "Tenemos que salir ahora."
+      ]
+    },
+    {
+      "id": "pm-04",
+      "sentence": "Yo no ___ salir contigo hoy.",
+      "options": [
+        "puedo",
+        "poder",
+        "puede"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az első ige ragozódik: yo → puedo.",
+        "en": "The first verb is conjugated: yo → puedo.",
+        "es": "El primer verbo se conjuga: yo → puedo.",
+        "de": "Das erste Verb wird konjugiert: yo → puedo."
+      },
+      "wrong": {
+        "poder": {
+          "hu": "A \"poder\" főnévi igenév, itt viszont ragozott alakra van szükség; helyesen: Yo no puedo salir contigo hoy.",
+          "en": "\"Poder\" is the infinitive, but a conjugated form is needed here; correctly: Yo no puedo salir contigo hoy.",
+          "es": "\"Poder\" es el infinitivo, pero aquí hace falta una forma conjugada; correctamente: Yo no puedo salir contigo hoy.",
+          "de": "\"Poder\" ist der Infinitiv, hier braucht es aber eine konjugierte Form; richtig: Yo no puedo salir contigo hoy."
+        },
+        "puede": {
+          "hu": "A \"puede\" ő/ön alakja, itt viszont yo (én) az alany; helyesen: Yo no puedo salir contigo hoy.",
+          "en": "\"Puede\" is the he/she/you-formal form, but here the subject is yo (I); correctly: Yo no puedo salir contigo hoy.",
+          "es": "\"Puede\" es la forma de él/ella/usted, pero aquí el sujeto es yo; correctamente: Yo no puedo salir contigo hoy.",
+          "de": "\"Puede\" ist die er/sie/Sie-Form, hier ist aber yo (ich) das Subjekt; richtig: Yo no puedo salir contigo hoy."
+        }
+      },
+      "examples": [
+        "No puedo salir contigo hoy.",
+        "Puedo ayudarte mañana."
+      ]
+    },
+    {
+      "id": "pm-05",
+      "sentence": "¿Puedes ___ la puerta, por favor?",
+      "options": [
+        "abrir",
+        "abres",
+        "abro"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A poder után a MÁSODIK ige főnévi igenévben marad: abrir.",
+        "en": "After poder, the SECOND verb stays in the infinitive: abrir.",
+        "es": "Después de poder, el SEGUNDO verbo se queda en infinitivo: abrir.",
+        "de": "Nach poder bleibt das ZWEITE Verb im Infinitiv: abrir."
+      },
+      "wrong": {
+        "abres": {
+          "hu": "Az \"abres\" újra ragozná a második igét, pedig a \"puedes\" már hordozza a személyt; helyesen: ¿Puedes abrir la puerta, por favor?",
+          "en": "\"Abres\" would conjugate the second verb again, but \"puedes\" already carries the person; correctly: ¿Puedes abrir la puerta, por favor?",
+          "es": "\"Abres\" conjugaría otra vez el segundo verbo, pero \"puedes\" ya lleva la persona; correctamente: ¿Puedes abrir la puerta, por favor?",
+          "de": "\"Abres\" würde das zweite Verb erneut konjugieren, aber \"puedes\" trägt die Person bereits; richtig: ¿Puedes abrir la puerta, por favor?"
+        },
+        "abro": {
+          "hu": "Az \"abro\" a yo (én) alakja, itt viszont tú (te) a beszélgetőpartner, és a második igének főnévi igenévben kell maradnia: ¿Puedes abrir la puerta, por favor?",
+          "en": "\"Abro\" is the yo (I) form, but here the subject is tú (you), and the second verb must stay in the infinitive: ¿Puedes abrir la puerta, por favor?",
+          "es": "\"Abro\" es la forma de yo, pero aquí el sujeto es tú, y el segundo verbo debe quedarse en infinitivo: ¿Puedes abrir la puerta, por favor?",
+          "de": "\"Abro\" ist die yo-Form, hier ist aber tú gemeint, und das zweite Verb muss im Infinitiv bleiben: ¿Puedes abrir la puerta, por favor?"
+        }
+      },
+      "examples": [
+        "¿Puedes abrir la puerta?",
+        "Puedo abrir la ventana."
+      ]
+    },
+    {
+      "id": "pm-06",
+      "sentence": "Podemos ___ mañana temprano.",
+      "options": [
+        "salir",
+        "que salir",
+        "salimos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A poder közvetlenül a főnévi igenevet veszi fel, que nélkül: podemos salir.",
+        "en": "Poder takes the bare infinitive directly, without que: podemos salir.",
+        "es": "Poder lleva el infinitivo directo, sin que: podemos salir.",
+        "de": "Poder nimmt den bloßen Infinitiv direkt, ohne que: podemos salir."
+      },
+      "wrong": {
+        "que salir": {
+          "hu": "A \"que salir\" nem létező szerkezet: a que csak a tener que után kötelező, a poder közvetlenül a főnévi igenevet veszi; helyesen: Podemos salir mañana temprano.",
+          "en": "\"Que salir\" is not a real structure: que is only obligatory after tener que, poder takes the bare infinitive directly; correctly: Podemos salir mañana temprano.",
+          "es": "\"Que salir\" no es una estructura real: el que solo es obligatorio después de tener que, poder lleva el infinitivo directo; correctamente: Podemos salir mañana temprano.",
+          "de": "\"Que salir\" ist keine reale Struktur: que ist nur nach tener que Pflicht, poder nimmt den bloßen Infinitiv direkt; richtig: Podemos salir mañana temprano."
+        },
+        "salimos": {
+          "hu": "A \"salimos\" újra ragozná a második igét, pedig a \"podemos\" már hordozza a személyt; helyesen: Podemos salir mañana temprano.",
+          "en": "\"Salimos\" would conjugate the second verb again, but \"podemos\" already carries the person; correctly: Podemos salir mañana temprano.",
+          "es": "\"Salimos\" conjugaría otra vez el segundo verbo, pero \"podemos\" ya lleva la persona; correctamente: Podemos salir mañana temprano.",
+          "de": "\"Salimos\" würde das zweite Verb erneut konjugieren, aber \"podemos\" trägt die Person bereits; richtig: Podemos salir mañana temprano."
+        }
+      },
+      "examples": [
+        "Podemos salir mañana temprano.",
+        "Puedes salir cuando quieras."
+      ]
+    },
+    {
+      "id": "pm-07",
+      "sentence": "Yo ___ aprender español este año.",
+      "options": [
+        "quiero",
+        "querer",
+        "quieres"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az első ige ragozódik: yo → quiero.",
+        "en": "The first verb is conjugated: yo → quiero.",
+        "es": "El primer verbo se conjuga: yo → quiero.",
+        "de": "Das erste Verb wird konjugiert: yo → quiero."
+      },
+      "wrong": {
+        "querer": {
+          "hu": "A \"querer\" főnévi igenév, itt viszont ragozott alakra van szükség; helyesen: Yo quiero aprender español este año.",
+          "en": "\"Querer\" is the infinitive, but a conjugated form is needed here; correctly: Yo quiero aprender español este año.",
+          "es": "\"Querer\" es el infinitivo, pero aquí hace falta una forma conjugada; correctamente: Yo quiero aprender español este año.",
+          "de": "\"Querer\" ist der Infinitiv, hier braucht es aber eine konjugierte Form; richtig: Yo quiero aprender español este año."
+        },
+        "quieres": {
+          "hu": "A \"quieres\" tú (te) alakja, itt viszont yo (én) az alany; helyesen: Yo quiero aprender español este año.",
+          "en": "\"Quieres\" is the tú (you) form, but here the subject is yo (I); correctly: Yo quiero aprender español este año.",
+          "es": "\"Quieres\" es la forma de tú, pero aquí el sujeto es yo; correctamente: Yo quiero aprender español este año.",
+          "de": "\"Quieres\" ist die tú-Form, hier ist aber yo (ich) das Subjekt; richtig: Yo quiero aprender español este año."
+        }
+      },
+      "examples": [
+        "Quiero aprender español este año.",
+        "Quiero comer algo ahora."
+      ]
+    },
+    {
+      "id": "pm-08",
+      "sentence": "Ellos quieren ___ una pizza grande.",
+      "options": [
+        "comer",
+        "comen",
+        "come"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A querer után a MÁSODIK ige főnévi igenévben marad: comer.",
+        "en": "After querer, the SECOND verb stays in the infinitive: comer.",
+        "es": "Después de querer, el SEGUNDO verbo se queda en infinitivo: comer.",
+        "de": "Nach querer bleibt das ZWEITE Verb im Infinitiv: comer."
+      },
+      "wrong": {
+        "comen": {
+          "hu": "A \"comen\" újra ragozná a második igét, pedig a \"quieren\" már hordozza a személyt; helyesen: Ellos quieren comer una pizza grande.",
+          "en": "\"Comen\" would conjugate the second verb again, but \"quieren\" already carries the person; correctly: Ellos quieren comer una pizza grande.",
+          "es": "\"Comen\" conjugaría otra vez el segundo verbo, pero \"quieren\" ya lleva la persona; correctamente: Ellos quieren comer una pizza grande.",
+          "de": "\"Comen\" würde das zweite Verb erneut konjugieren, aber \"quieren\" trägt die Person bereits; richtig: Ellos quieren comer una pizza grande."
+        },
+        "come": {
+          "hu": "A \"come\" ő/ön alakja, itt viszont ellos (ők) az alany, és a második igének amúgy is főnévi igenévben kell maradnia: Ellos quieren comer una pizza grande.",
+          "en": "\"Come\" is the he/she/you-formal form, but here the subject is ellos (they), and the second verb must stay in the infinitive anyway: Ellos quieren comer una pizza grande.",
+          "es": "\"Come\" es la forma de él/ella/usted, pero aquí el sujeto es ellos, y además el segundo verbo debe quedarse en infinitivo: Ellos quieren comer una pizza grande.",
+          "de": "\"Come\" ist die er/sie/Sie-Form, hier ist aber ellos gemeint, und außerdem muss das zweite Verb im Infinitiv bleiben: Ellos quieren comer una pizza grande."
+        }
+      },
+      "examples": [
+        "Quieren comer una pizza grande.",
+        "Quiero comer algo dulce."
+      ]
+    },
+    {
+      "id": "pm-09",
+      "sentence": "Quiero ___ contigo al cine.",
+      "options": [
+        "ir",
+        "que ir",
+        "voy"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A querer közvetlenül a főnévi igenevet veszi fel, que nélkül: quiero ir.",
+        "en": "Querer takes the bare infinitive directly, without que: quiero ir.",
+        "es": "Querer lleva el infinitivo directo, sin que: quiero ir.",
+        "de": "Querer nimmt den bloßen Infinitiv direkt, ohne que: quiero ir."
+      },
+      "wrong": {
+        "que ir": {
+          "hu": "A \"que ir\" nem létező szerkezet: a que csak a tener que után kötelező, a querer közvetlenül a főnévi igenevet veszi; helyesen: Quiero ir contigo al cine.",
+          "en": "\"Que ir\" is not a real structure: que is only obligatory after tener que, querer takes the bare infinitive directly; correctly: Quiero ir contigo al cine.",
+          "es": "\"Que ir\" no es una estructura real: el que solo es obligatorio después de tener que, querer lleva el infinitivo directo; correctamente: Quiero ir contigo al cine.",
+          "de": "\"Que ir\" ist keine reale Struktur: que ist nur nach tener que Pflicht, querer nimmt den bloßen Infinitiv direkt; richtig: Quiero ir contigo al cine."
+        },
+        "voy": {
+          "hu": "A \"voy\" újra ragozná a második igét, pedig a \"quiero\" már hordozza a személyt; helyesen: Quiero ir contigo al cine.",
+          "en": "\"Voy\" would conjugate the second verb again, but \"quiero\" already carries the person; correctly: Quiero ir contigo al cine.",
+          "es": "\"Voy\" conjugaría otra vez el segundo verbo, pero \"quiero\" ya lleva la persona; correctamente: Quiero ir contigo al cine.",
+          "de": "\"Voy\" würde das zweite Verb erneut konjugieren, aber \"quiero\" trägt die Person bereits; richtig: Quiero ir contigo al cine."
+        }
+      },
+      "examples": [
+        "Quiero ir contigo al cine.",
+        "Quieren ir a la playa."
+      ]
+    },
+    {
+      "id": "pm-10",
+      "sentence": "Nosotros ___ que limpiar la casa hoy.",
+      "options": [
+        "tenemos",
+        "tener",
+        "tienen"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az első ige ragozódik: nosotros → tenemos.",
+        "en": "The first verb is conjugated: nosotros → tenemos.",
+        "es": "El primer verbo se conjuga: nosotros → tenemos.",
+        "de": "Das erste Verb wird konjugiert: nosotros → tenemos."
+      },
+      "wrong": {
+        "tener": {
+          "hu": "A \"tener\" főnévi igenév, itt viszont ragozott alakra van szükség; helyesen: Nosotros tenemos que limpiar la casa hoy.",
+          "en": "\"Tener\" is the infinitive, but a conjugated form is needed here; correctly: Nosotros tenemos que limpiar la casa hoy.",
+          "es": "\"Tener\" es el infinitivo, pero aquí hace falta una forma conjugada; correctamente: Nosotros tenemos que limpiar la casa hoy.",
+          "de": "\"Tener\" ist der Infinitiv, hier braucht es aber eine konjugierte Form; richtig: Nosotros tenemos que limpiar la casa hoy."
+        },
+        "tienen": {
+          "hu": "A \"tienen\" ellos/ustedes alakja, itt viszont nosotros (mi) az alany; helyesen: Nosotros tenemos que limpiar la casa hoy.",
+          "en": "\"Tienen\" is the ellos/ustedes form, but here the subject is nosotros (we); correctly: Nosotros tenemos que limpiar la casa hoy.",
+          "es": "\"Tienen\" es la forma de ellos/ustedes, pero aquí el sujeto es nosotros; correctamente: Nosotros tenemos que limpiar la casa hoy.",
+          "de": "\"Tienen\" ist die ellos/ustedes-Form, hier ist aber nosotros (wir) das Subjekt; richtig: Nosotros tenemos que limpiar la casa hoy."
+        }
+      },
+      "examples": [
+        "Tenemos que limpiar la casa hoy.",
+        "Tenemos que trabajar juntos."
+      ]
+    },
+    {
+      "id": "pm-11",
+      "sentence": "Ustedes ___ que llegar a tiempo.",
+      "options": [
+        "tienen",
+        "tiene",
+        "tenemos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Mexikóban a vosotros helyett ustedes-t használunk, ehhez a tienen tartozik.",
+        "en": "In Mexico ustedes replaces vosotros, and it takes tienen.",
+        "es": "En México se usa ustedes en vez de vosotros, y le corresponde tienen.",
+        "de": "In Mexiko wird ustedes statt vosotros verwendet, dazu gehört tienen."
+      },
+      "wrong": {
+        "tiene": {
+          "hu": "A \"tiene\" egyes szám (usted/él/ella) alakja, itt viszont ustedes (többes szám) az alany; helyesen: Ustedes tienen que llegar a tiempo.",
+          "en": "\"Tiene\" is singular (usted/he/she), but here the subject is ustedes (plural); correctly: Ustedes tienen que llegar a tiempo.",
+          "es": "\"Tiene\" es singular (usted/él/ella), pero aquí el sujeto es ustedes (plural); correctamente: Ustedes tienen que llegar a tiempo.",
+          "de": "\"Tiene\" ist Singular (usted/er/sie), hier ist aber ustedes (Plural) das Subjekt; richtig: Ustedes tienen que llegar a tiempo."
+        },
+        "tenemos": {
+          "hu": "A \"tenemos\" nosotros alakja, itt viszont ustedes a beszélgetőpartner; helyesen: Ustedes tienen que llegar a tiempo.",
+          "en": "\"Tenemos\" is the nosotros form, but here the subject is ustedes; correctly: Ustedes tienen que llegar a tiempo.",
+          "es": "\"Tenemos\" es la forma de nosotros, pero aquí el sujeto es ustedes; correctamente: Ustedes tienen que llegar a tiempo.",
+          "de": "\"Tenemos\" ist die nosotros-Form, hier ist aber ustedes gemeint; richtig: Ustedes tienen que llegar a tiempo."
+        }
+      },
+      "examples": [
+        "Ustedes tienen que llegar a tiempo.",
+        "Ustedes tienen que estudiar más."
+      ]
+    },
+    {
+      "id": "pm-12",
+      "sentence": "Ella no ___ venir mañana.",
+      "options": [
+        "puede",
+        "puedo",
+        "podemos"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az első ige ragozódik: ella → puede.",
+        "en": "The first verb is conjugated: ella → puede.",
+        "es": "El primer verbo se conjuga: ella → puede.",
+        "de": "Das erste Verb wird konjugiert: ella → puede."
+      },
+      "wrong": {
+        "puedo": {
+          "hu": "A \"puedo\" yo (én) alakja, itt viszont ella (ő) az alany; helyesen: Ella no puede venir mañana.",
+          "en": "\"Puedo\" is the yo (I) form, but here the subject is ella (she); correctly: Ella no puede venir mañana.",
+          "es": "\"Puedo\" es la forma de yo, pero aquí el sujeto es ella; correctamente: Ella no puede venir mañana.",
+          "de": "\"Puedo\" ist die yo-Form, hier ist aber ella (sie) das Subjekt; richtig: Ella no puede venir mañana."
+        },
+        "podemos": {
+          "hu": "A \"podemos\" nosotros alakja, itt viszont ella a beszélgetőpartner; helyesen: Ella no puede venir mañana.",
+          "en": "\"Podemos\" is the nosotros form, but here the subject is ella; correctly: Ella no puede venir mañana.",
+          "es": "\"Podemos\" es la forma de nosotros, pero aquí el sujeto es ella; correctamente: Ella no puede venir mañana.",
+          "de": "\"Podemos\" ist die nosotros-Form, hier ist aber ella gemeint; richtig: Ella no puede venir mañana."
+        }
+      },
+      "examples": [
+        "Ella no puede venir mañana.",
+        "Él puede llegar más tarde."
+      ]
+    },
+    {
+      "id": "pm-match-01",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "tengo que trabajar",
+          "en": "I have to work"
+        },
+        {
+          "es": "puedo nadar",
+          "en": "I can swim"
+        },
+        {
+          "es": "quiero aprender",
+          "en": "I want to learn"
+        },
+        {
+          "es": "debo cuidar mi salud",
+          "en": "I should take care of my health"
+        },
+        {
+          "es": "hay que ser puntual",
+          "en": "one must be punctual"
+        },
+        {
+          "es": "no debemos mentir",
+          "en": "we should not lie"
+        }
+      ]
+    },
+    {
+      "id": "pm-form-01",
+      "kind": "form",
+      "verb": "poder",
+      "person": "yo",
+      "answer": "puedo",
+      "table": "modales-presente"
+    },
+    {
+      "id": "pm-form-02",
+      "kind": "form",
+      "verb": "poder",
+      "person": "tú",
+      "answer": "puedes",
+      "table": "modales-presente"
+    },
+    {
+      "id": "pm-form-03",
+      "kind": "form",
+      "verb": "poder",
+      "person": "él/ella/usted",
+      "answer": "puede",
+      "table": "modales-presente"
+    },
+    {
+      "id": "pm-form-04",
+      "kind": "form",
+      "verb": "tener que",
+      "person": "yo",
+      "answer": "tengo que",
+      "table": "modales-presente"
+    },
+    {
+      "id": "pm-form-05",
+      "kind": "form",
+      "verb": "tener que",
+      "person": "tú",
+      "answer": "tienes que",
+      "table": "modales-presente"
+    },
+    {
+      "id": "pm-form-06",
+      "kind": "form",
+      "verb": "tener que",
+      "person": "él/ella/usted",
+      "answer": "tiene que",
+      "table": "modales-presente"
+    },
+    {
+      "id": "pm-form-07",
+      "kind": "form",
+      "verb": "querer",
+      "person": "nosotros",
+      "answer": "queremos",
+      "table": "modales-presente"
+    },
+    {
+      "id": "pm-form-08",
+      "kind": "form",
+      "verb": "querer",
+      "person": "vosotros",
+      "answer": "queréis",
+      "table": "modales-presente"
+    },
+    {
+      "id": "pm-form-09",
+      "kind": "form",
+      "verb": "querer",
+      "person": "ellos/ellas/ustedes",
+      "answer": "quieren",
+      "table": "modales-presente"
+    },
+    {
+      "id": "pm-form-10",
+      "kind": "form",
+      "verb": "deber",
+      "person": "nosotros",
+      "answer": "debemos",
+      "table": "modales-presente"
+    },
+    {
+      "id": "pm-form-11",
+      "kind": "form",
+      "verb": "deber",
+      "person": "vosotros",
+      "answer": "debéis",
+      "table": "modales-presente"
+    },
+    {
+      "id": "pm-form-12",
+      "kind": "form",
+      "verb": "deber",
+      "person": "ellos/ellas/ustedes",
+      "answer": "deben",
+      "table": "modales-presente"
+    },
+    {
+      "kind": "why",
+      "id": "pm-why-01",
+      "es": "Tengo que trabajar hoy.",
+      "tr": {
+        "hu": "Ma dolgoznom kell.",
+        "en": "I have to work today.",
+        "es": "Tengo que trabajar hoy.",
+        "de": "Ich muss heute arbeiten."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kötelezettség (tener que)",
+            "en": "obligation (tener que)",
+            "es": "obligación (tener que)",
+            "de": "Pflicht (tener que)"
+          }
+        },
+        {
+          "text": {
+            "hu": "erkölcsi kötelesség (deber)",
+            "en": "moral obligation (deber)",
+            "es": "obligación moral (deber)",
+            "de": "moralische Pflicht (deber)"
+          },
+          "wrong": {
+            "hu": "A deber lágyabb, tanácsszerű kötelesség lenne (\"Debo trabajar hoy\" = talán dolgoznom kellene); itt a körülmény kényszeríti ki, ez tener que.",
+            "en": "Deber would be a softer, advice-like obligation (\"Debo trabajar hoy\" = I probably should work); here the circumstances force it, that is tener que.",
+            "es": "Deber sería una obligación más suave, de consejo (\"Debo trabajar hoy\" = quizás debería trabajar); aquí lo exigen las circunstancias, eso es tener que.",
+            "de": "Deber wäre eine sanftere, ratschlagähnliche Pflicht (\"Debo trabajar hoy\" = ich sollte vielleicht arbeiten); hier erzwingen es die Umstände, das ist tener que."
+          }
+        },
+        {
+          "text": {
+            "hu": "személytelen kötelezettség (hay que)",
+            "en": "impersonal obligation (hay que)",
+            "es": "obligación impersonal, sin sujeto",
+            "de": "unpersönliche Pflicht (hay que)"
+          },
+          "wrong": {
+            "hu": "A hay que személytelen lenne (\"Hay que trabajar hoy\" = ma dolgozni kell, akárkinek); itt viszont van alany (yo), tehát tener que a helyes.",
+            "en": "Hay que would be impersonal (\"Hay que trabajar hoy\" = one must work today); here there is a subject (yo), so tener que is correct.",
+            "es": "Hay que sería impersonal (\"Hay que trabajar hoy\" = hay que trabajar, en general); aquí hay sujeto (yo), así que lo correcto es tener que.",
+            "de": "Hay que wäre unpersönlich (\"Hay que trabajar hoy\" = man muss heute arbeiten); hier gibt es aber ein Subjekt (yo), also ist tener que richtig."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pm-why-02",
+      "es": "Puedo nadar muy bien.",
+      "tr": {
+        "hu": "Nagyon jól tudok úszni.",
+        "en": "I can swim very well.",
+        "es": "Puedo nadar muy bien.",
+        "de": "Ich kann sehr gut schwimmen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "képesség/engedély (poder)",
+            "en": "ability/permission (poder)",
+            "es": "capacidad/permiso (poder)",
+            "de": "Fähigkeit/Erlaubnis (poder)"
+          }
+        },
+        {
+          "text": {
+            "hu": "vágy, akarat (querer)",
+            "en": "wish, will (querer)",
+            "es": "deseo, voluntad (querer)",
+            "de": "Wunsch, Wille (querer)"
+          },
+          "wrong": {
+            "hu": "A querer vágyat fejezne ki (\"Quiero nadar muy bien\" = jól akarok úszni, de talán még nem tudok); itt viszont a KÉPESSÉGRŐL van szó, ami poder.",
+            "en": "Querer would express a wish (\"Quiero nadar muy bien\" = I want to swim well, maybe I cannot yet); here it is about ABILITY, that is poder.",
+            "es": "Querer expresaría un deseo (\"Quiero nadar muy bien\" = quiero nadar bien, quizá aún no puedo); aquí se trata de la CAPACIDAD, eso es poder.",
+            "de": "Querer würde einen Wunsch ausdrücken (\"Quiero nadar muy bien\" = ich möchte gut schwimmen, kann es aber vielleicht noch nicht); hier geht es um die FÄHIGKEIT, das ist poder."
+          }
+        },
+        {
+          "text": {
+            "hu": "erkölcsi kötelesség (deber)",
+            "en": "moral obligation (deber)",
+            "es": "obligación moral (deber)",
+            "de": "moralische Pflicht (deber)"
+          },
+          "wrong": {
+            "hu": "A deber kötelességet fejezne ki (\"Debo nadar muy bien\" = jól kellene úsznom); itt viszont arról van szó, hogy TUDOK úszni, nem hogy kellene.",
+            "en": "Deber would express an obligation (\"Debo nadar muy bien\" = I should swim well); here it is about being ABLE to swim, not about having to.",
+            "es": "Deber expresaría una obligación (\"Debo nadar muy bien\" = debería nadar bien); aquí se trata de que PUEDO nadar, no de que deba.",
+            "de": "Deber würde eine Pflicht ausdrücken (\"Debo nadar muy bien\" = ich sollte gut schwimmen); hier geht es aber darum, dass ich schwimmen KANN, nicht darum, dass ich sollte."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pm-why-03",
+      "es": "Quiero aprender español.",
+      "tr": {
+        "hu": "Szeretnék spanyolul tanulni.",
+        "en": "I want to learn Spanish.",
+        "es": "Quiero aprender español.",
+        "de": "Ich möchte Spanisch lernen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "képesség/engedély (poder)",
+            "en": "ability/permission (poder)",
+            "es": "capacidad/permiso (poder)",
+            "de": "Fähigkeit/Erlaubnis (poder)"
+          },
+          "wrong": {
+            "hu": "A poder képességet vagy engedélyt fejezne ki (\"Puedo aprender español\" = tudok spanyolul tanulni); itt viszont a VÁGYRÓL van szó, ami querer.",
+            "en": "Poder would express ability or permission (\"Puedo aprender español\" = I am able to learn Spanish); here it is about a WISH, that is querer.",
+            "es": "Poder expresaría capacidad o permiso (\"Puedo aprender español\" = puedo aprender español); aquí se trata de un DESEO, eso es querer.",
+            "de": "Poder würde Fähigkeit oder Erlaubnis ausdrücken (\"Puedo aprender español\" = ich kann Spanisch lernen); hier geht es um einen WUNSCH, das ist querer."
+          }
+        },
+        {
+          "text": {
+            "hu": "vágy, akarat (querer)",
+            "en": "wish, will (querer)",
+            "es": "deseo, voluntad (querer)",
+            "de": "Wunsch, Wille (querer)"
+          }
+        },
+        {
+          "text": {
+            "hu": "kötelezettség (tener que)",
+            "en": "obligation (tener que)",
+            "es": "obligación (tener que)",
+            "de": "Pflicht (tener que)"
+          },
+          "wrong": {
+            "hu": "A tener que kényszerű kötelezettséget fejezne ki (\"Tengo que aprender español\" = muszáj spanyolul tanulnom); itt viszont saját vágyról van szó, nem kényszerről.",
+            "en": "Tener que would express a forced obligation (\"Tengo que aprender español\" = I have to learn Spanish); here it is about a personal wish, not a compulsion.",
+            "es": "Tener que expresaría una obligación forzosa (\"Tengo que aprender español\" = tengo que aprender español); aquí se trata de un deseo propio, no de una obligación.",
+            "de": "Tener que würde eine erzwungene Pflicht ausdrücken (\"Tengo que aprender español\" = ich muss Spanisch lernen); hier geht es um einen eigenen Wunsch, keinen Zwang."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pm-why-04",
+      "es": "Debo cuidar mi salud.",
+      "tr": {
+        "hu": "Vigyáznom kell az egészségemre.",
+        "en": "I should take care of my health.",
+        "es": "Debo cuidar mi salud.",
+        "de": "Ich sollte auf meine Gesundheit achten."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kötelezettség (tener que)",
+            "en": "obligation (tener que)",
+            "es": "obligación (tener que)",
+            "de": "Pflicht (tener que)"
+          },
+          "wrong": {
+            "hu": "A tener que erősebb, kényszerű kötelezettség lenne (\"Tengo que cuidar mi salud\" = muszáj, a körülmény kényszeríti); itt viszont TANÁCS, lágyabb, ez deber.",
+            "en": "Tener que would be a stronger, forced obligation (\"Tengo que cuidar mi salud\" = I must, forced by circumstance); here it is ADVICE, softer, that is deber.",
+            "es": "Tener que sería una obligación más fuerte y forzosa (\"Tengo que cuidar mi salud\" = me obliga la circunstancia); aquí es un CONSEJO, más suave, eso es deber.",
+            "de": "Tener que wäre eine stärkere, erzwungene Pflicht (\"Tengo que cuidar mi salud\" = die Umstände zwingen mich); hier ist es ein RATSCHLAG, sanfter, das ist deber."
+          }
+        },
+        {
+          "text": {
+            "hu": "erkölcsi kötelesség (deber)",
+            "en": "moral obligation (deber)",
+            "es": "obligación moral (deber)",
+            "de": "moralische Pflicht (deber)"
+          }
+        },
+        {
+          "text": {
+            "hu": "személytelen kötelezettség (hay que)",
+            "en": "impersonal obligation (hay que)",
+            "es": "obligación impersonal, sin sujeto",
+            "de": "unpersönliche Pflicht (hay que)"
+          },
+          "wrong": {
+            "hu": "A hay que személytelen lenne (\"Hay que cuidar la salud\" = az egészségre vigyázni kell, akárkinek); itt viszont van alany (yo), ezért deber.",
+            "en": "Hay que would be impersonal (\"Hay que cuidar la salud\" = one must take care of one's health); here there is a subject (yo), so deber.",
+            "es": "Hay que sería impersonal (\"Hay que cuidar la salud\" = hay que cuidar la salud, en general); aquí hay sujeto (yo), por eso deber.",
+            "de": "Hay que wäre unpersönlich (\"Hay que cuidar la salud\" = man muss auf die Gesundheit achten); hier gibt es aber ein Subjekt (yo), deshalb deber."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pm-why-05",
+      "es": "Hay que estudiar mucho.",
+      "tr": {
+        "hu": "Sokat kell tanulni.",
+        "en": "One must study a lot.",
+        "es": "Hay que estudiar mucho.",
+        "de": "Man muss viel lernen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kötelezettség (tener que)",
+            "en": "obligation (tener que)",
+            "es": "obligación (tener que)",
+            "de": "Pflicht (tener que)"
+          },
+          "wrong": {
+            "hu": "A tener que alanyt kívánna (\"Tengo que estudiar mucho\" = NEKEM kell sokat tanulnom); itt viszont nincs alany, mindenkire vonatkozik, ez hay que.",
+            "en": "Tener que would need a subject (\"Tengo que estudiar mucho\" = I have to study a lot); here there is no subject, it applies to everyone, that is hay que.",
+            "es": "Tener que necesitaría sujeto (\"Tengo que estudiar mucho\" = YO tengo que estudiar mucho); aquí no hay sujeto, vale para todos, eso es hay que.",
+            "de": "Tener que bräuchte ein Subjekt (\"Tengo que estudiar mucho\" = ICH muss viel lernen); hier gibt es kein Subjekt, es gilt für alle, das ist hay que."
+          }
+        },
+        {
+          "text": {
+            "hu": "erkölcsi kötelesség (deber)",
+            "en": "moral obligation (deber)",
+            "es": "obligación moral (deber)",
+            "de": "moralische Pflicht (deber)"
+          },
+          "wrong": {
+            "hu": "A deber is alanyt kívánna (\"Debo estudiar mucho\" = NEKEM kellene sokat tanulnom); itt viszont nincs alany, ez a személytelen hay que.",
+            "en": "Deber would also need a subject (\"Debo estudiar mucho\" = I should study a lot); here there is no subject, that is the impersonal hay que.",
+            "es": "Deber también necesitaría sujeto (\"Debo estudiar mucho\" = YO debería estudiar mucho); aquí no hay sujeto, eso es el impersonal hay que.",
+            "de": "Deber bräuchte ebenfalls ein Subjekt (\"Debo estudiar mucho\" = ICH sollte viel lernen); hier gibt es kein Subjekt, das ist das unpersönliche hay que."
+          }
+        },
+        {
+          "text": {
+            "hu": "személytelen kötelezettség (hay que)",
+            "en": "impersonal obligation (hay que)",
+            "es": "obligación impersonal, sin sujeto",
+            "de": "unpersönliche Pflicht (hay que)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "pm-why-06",
+      "es": "Tenemos que limpiar la casa.",
+      "tr": {
+        "hu": "Ki kell takarítanunk a házat.",
+        "en": "We have to clean the house.",
+        "es": "Tenemos que limpiar la casa.",
+        "de": "Wir müssen das Haus putzen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kötelezettség (tener que)",
+            "en": "obligation (tener que)",
+            "es": "obligación (tener que)",
+            "de": "Pflicht (tener que)"
+          }
+        },
+        {
+          "text": {
+            "hu": "erkölcsi kötelesség (deber)",
+            "en": "moral obligation (deber)",
+            "es": "obligación moral (deber)",
+            "de": "moralische Pflicht (deber)"
+          },
+          "wrong": {
+            "hu": "A deber lágyabb tanács lenne (\"Debemos limpiar la casa\" = talán ki kellene takarítanunk); itt viszont a körülmény kényszeríti ki, ez tener que.",
+            "en": "Deber would be a softer piece of advice (\"Debemos limpiar la casa\" = we probably should clean the house); here the circumstances force it, that is tener que.",
+            "es": "Deber sería un consejo más suave (\"Debemos limpiar la casa\" = quizás deberíamos limpiar la casa); aquí lo exigen las circunstancias, eso es tener que.",
+            "de": "Deber wäre ein sanfterer Ratschlag (\"Debemos limpiar la casa\" = wir sollten vielleicht putzen); hier erzwingen es die Umstände, das ist tener que."
+          }
+        },
+        {
+          "text": {
+            "hu": "képesség/engedély (poder)",
+            "en": "ability/permission (poder)",
+            "es": "capacidad/permiso (poder)",
+            "de": "Fähigkeit/Erlaubnis (poder)"
+          },
+          "wrong": {
+            "hu": "A poder képességet fejezne ki (\"Podemos limpiar la casa\" = ki tudjuk takarítani a házat); itt viszont KÖTELEZETTSÉGRŐL van szó, ami tener que.",
+            "en": "Poder would express ability (\"Podemos limpiar la casa\" = we are able to clean the house); here it is about an OBLIGATION, that is tener que.",
+            "es": "Poder expresaría capacidad (\"Podemos limpiar la casa\" = podemos limpiar la casa); aquí se trata de una OBLIGACIÓN, eso es tener que.",
+            "de": "Poder würde Fähigkeit ausdrücken (\"Podemos limpiar la casa\" = wir können das Haus putzen); hier geht es um eine PFLICHT, das ist tener que."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pm-why-07",
+      "es": "No debemos mentir.",
+      "tr": {
+        "hu": "Nem szabadna hazudnunk.",
+        "en": "We should not lie.",
+        "es": "No debemos mentir.",
+        "de": "Wir sollten nicht lügen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "személytelen kötelezettség (hay que)",
+            "en": "impersonal obligation (hay que)",
+            "es": "obligación impersonal, sin sujeto",
+            "de": "unpersönliche Pflicht (hay que)"
+          },
+          "wrong": {
+            "hu": "A hay que személytelen lenne (\"No hay que mentir\" = nem kell hazudni, akárkinek); itt viszont van alany (nosotros), ezért deber.",
+            "en": "Hay que would be impersonal (\"No hay que mentir\" = one must not lie); here there is a subject (nosotros), so deber.",
+            "es": "Hay que sería impersonal (\"No hay que mentir\" = no hay que mentir, en general); aquí hay sujeto (nosotros), por eso deber.",
+            "de": "Hay que wäre unpersönlich (\"No hay que mentir\" = man darf nicht lügen); hier gibt es aber ein Subjekt (nosotros), deshalb deber."
+          }
+        },
+        {
+          "text": {
+            "hu": "vágy, akarat (querer)",
+            "en": "wish, will (querer)",
+            "es": "deseo, voluntad (querer)",
+            "de": "Wunsch, Wille (querer)"
+          },
+          "wrong": {
+            "hu": "A querer vágyat fejezne ki (\"No queremos mentir\" = nem akarunk hazudni); itt viszont erkölcsi KÖTELESSÉGRŐL van szó, nem akaratról, ez deber.",
+            "en": "Querer would express a wish (\"No queremos mentir\" = we do not want to lie); here it is a moral OBLIGATION, not a wish, that is deber.",
+            "es": "Querer expresaría un deseo (\"No queremos mentir\" = no queremos mentir); aquí es una OBLIGACIÓN moral, no un deseo, eso es deber.",
+            "de": "Querer würde einen Wunsch ausdrücken (\"No queremos mentir\" = wir wollen nicht lügen); hier ist es eine moralische PFLICHT, kein Wunsch, das ist deber."
+          }
+        },
+        {
+          "text": {
+            "hu": "erkölcsi kötelesség (deber)",
+            "en": "moral obligation (deber)",
+            "es": "obligación moral (deber)",
+            "de": "moralische Pflicht (deber)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

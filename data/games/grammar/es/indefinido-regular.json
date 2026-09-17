@@ -1,4 +1,5 @@
 {
+  "schema": 2,
   "topic": "indefinido-regular",
   "level": "A2",
   "title": {
@@ -7,17 +8,414 @@
     "es": "Pretérito indefinido: verbos regulares",
     "de": "Indefinido: regelmäßige Verben"
   },
-  "rule": {
-    "hu": "Ez a lezárt, befejezett múlt: ami megtörtént és véget ért. -AR: -é, -aste, -ó, -amos, -asteis, -aron (hablé, hablaste, habló). -ER és -IR ugyanaz: -í, -iste, -ió, -imos, -isteis, -ieron (comí, comiste, comió; viví, viviste, vivió). Az ÉKEZET a yo és az él alakon dönt: hablo (most beszélek) vs habló (ő beszélt), hablé (én beszéltem). Tipikus kísérői: ayer, anoche, el año pasado, en 2019, hace dos días.",
-    "en": "This is the finished past: it happened and it is over. -AR: -é, -aste, -ó, -amos, -asteis, -aron (hablé, hablaste, habló). -ER and -IR share one set: -í, -iste, -ió, -imos, -isteis, -ieron (comí, comió; viví, vivió). The ACCENT decides the person: hablo (I speak now) vs habló (he spoke) vs hablé (I spoke). Typical companions: ayer, anoche, el año pasado, en 2019, hace dos días.",
-    "es": "Es el pasado terminado: pasó y se acabó. -AR: -é, -aste, -ó, -amos, -asteis, -aron. -ER e -IR comparten: -í, -iste, -ió, -imos, -isteis, -ieron. La TILDE cambia la persona: hablo, habló, hablé. Marcadores típicos: ayer, anoche, el año pasado, en 2019, hace dos días.",
-    "de": "Das ist die abgeschlossene Vergangenheit: es geschah und ist vorbei. -AR: -é, -aste, -ó, -amos, -asteis, -aron. -ER und -IR teilen sich: -í, -iste, -ió, -imos, -isteis, -ieron. Der AKZENT entscheidet die Person: hablo, habló, hablé. Typische Begleiter: ayer, anoche, el año pasado, en 2019, hace dos días."
-  },
-  "more": {
-    "hu": "Három csapda. 1) Az -ar és az -ir igék mi-alakja jelen és múlt időben AZONOS: hablamos, vivimos (a szövegkörnyezet dönt), az -er igéé viszont különbözik: comemos most, comimos akkor. 2) Az ékezet nem díszítés: olvido (elfelejtem) vs olvidó (elfelejtette). 3) Írásképi váltás a yo alakban: buscar → busqué, llegar → llegué, empezar → empecé, hogy a kiejtés ne változzon.",
-    "en": "Three traps. 1) For -ar and -ir verbs the we-form is IDENTICAL in the present and the preterite: hablamos, vivimos (context decides); for -er verbs it differs: comemos now, comimos then. 2) The accent is not decoration: olvido (I forget) vs olvidó (he forgot). 3) Spelling shifts in the yo form: buscar → busqué, llegar → llegué, empezar → empecé, so the sound stays the same.",
-    "es": "Tres trampas. 1) En -ar e -ir la forma de nosotros es IGUAL en presente y en indefinido: hablamos, vivimos; en -er cambia: comemos y comimos. 2) La tilde no es adorno: olvido y olvidó. 3) Cambios ortográficos en yo: busqué, llegué, empecé.",
-    "de": "Drei Fallen. 1) Bei -ar und -ir ist die wir-Form im Präsens und im Indefinido GLEICH: hablamos, vivimos; bei -er nicht: comemos, comimos. 2) Der Akzent ist keine Zierde: olvido und olvidó. 3) Schreibwechsel in der yo-Form: busqué, llegué, empecé."
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Ez a múlt idő egyetlen, lezárt cselekvést fejez ki: megtörtént és véget is ért. A jelen idős tudásodra épül, csak más végződéssel: az -AR igéknél -é, -aste, -ó, -amos, -asteis, -aron, az -ER és az -IR igéknél pedig egy közös készlet: -í, -iste, -ió, -imos, -isteis, -ieron.",
+        "en": "This past tense expresses a single, finished action: it happened and it is over. It builds on the present tense you already know, just with different endings: -AR verbs take -é, -aste, -ó, -amos, -asteis, -aron, while -ER and -IR verbs share one set: -í, -iste, -ió, -imos, -isteis, -ieron.",
+        "es": "Este tiempo pasado expresa una acción única y terminada: pasó y se acabó. Se apoya en el presente que ya conoces, solo con otras terminaciones: los verbos -AR llevan -é, -aste, -ó, -amos, -asteis, -aron, y los verbos -ER e -IR comparten un solo juego: -í, -iste, -ió, -imos, -isteis, -ieron.",
+        "de": "Diese Vergangenheitsform drückt eine einzelne, abgeschlossene Handlung aus: sie geschah und ist vorbei. Sie baut auf dem Präsens auf, das du schon kennst, nur mit anderen Endungen: -AR-Verben nehmen -é, -aste, -ó, -amos, -asteis, -aron, während sich -ER- und -IR-Verben einen Satz teilen: -í, -iste, -ió, -imos, -isteis, -ieron."
+      }
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Két végződés-csoport",
+        "en": "Two ending groups",
+        "es": "Dos grupos de terminaciones",
+        "de": "Zwei Endungsgruppen"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "-AR igék (pl. hablar): yo -é, tú -aste, él/ella/usted -ó, nosotros -amos, vosotros -asteis, ellos/ellas/ustedes -aron.",
+            "en": "-AR verbs (e.g. hablar): yo -é, tú -aste, él/ella/usted -ó, nosotros -amos, vosotros -asteis, ellos/ellas/ustedes -aron.",
+            "es": "Verbos -AR (p. ej. hablar): yo -é, tú -aste, él/ella/usted -ó, nosotros -amos, vosotros -asteis, ellos/ellas/ustedes -aron.",
+            "de": "-AR-Verben (z. B. hablar): yo -é, tú -aste, él/ella/usted -ó, nosotros -amos, vosotros -asteis, ellos/ellas/ustedes -aron."
+          },
+          "examples": [
+            {
+              "es": "Hablé con mi madre ayer.",
+              "tr": {
+                "hu": "Tegnap beszéltem anyámmal.",
+                "en": "I talked to my mother yesterday.",
+                "es": "Hablé con mi madre ayer.",
+                "de": "Ich habe gestern mit meiner Mutter gesprochen."
+              }
+            },
+            {
+              "es": "Hablamos toda la tarde.",
+              "tr": {
+                "hu": "Egész délután beszéltünk.",
+                "en": "We talked all afternoon.",
+                "es": "Hablamos toda la tarde.",
+                "de": "Wir haben den ganzen Nachmittag geredet."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "-ER és -IR igék, közös végződések (pl. comer, vivir): yo -í, tú -iste, él/ella/usted -ió, nosotros -imos, vosotros -isteis, ellos/ellas/ustedes -ieron.",
+            "en": "-ER and -IR verbs, shared endings (e.g. comer, vivir): yo -í, tú -iste, él/ella/usted -ió, nosotros -imos, vosotros -isteis, ellos/ellas/ustedes -ieron.",
+            "es": "Verbos -ER e -IR, terminaciones compartidas (p. ej. comer, vivir): yo -í, tú -iste, él/ella/usted -ió, nosotros -imos, vosotros -isteis, ellos/ellas/ustedes -ieron.",
+            "de": "-ER- und -IR-Verben, gemeinsame Endungen (z. B. comer, vivir): yo -í, tú -iste, él/ella/usted -ió, nosotros -imos, vosotros -isteis, ellos/ellas/ustedes -ieron."
+          },
+          "examples": [
+            {
+              "es": "Comí a las dos.",
+              "tr": {
+                "hu": "Kettőkor ettem.",
+                "en": "I ate at two.",
+                "es": "Comí a las dos.",
+                "de": "Ich habe um zwei gegessen."
+              }
+            },
+            {
+              "es": "Vivieron en Puebla.",
+              "tr": {
+                "hu": "Pueblában éltek.",
+                "en": "They lived in Puebla.",
+                "es": "Vivieron en Puebla.",
+                "de": "Sie haben in Puebla gelebt."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "indefinido-regular",
+      "title": {
+        "hu": "Befejezett múlt, szabályos igék",
+        "en": "Preterite, regular verbs",
+        "es": "Indefinido, verbos regulares",
+        "de": "Indefinido, regelmäßige Verben"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "hablar",
+          "en": "hablar",
+          "es": "hablar",
+          "de": "hablar"
+        },
+        {
+          "hu": "comer",
+          "en": "comer",
+          "es": "comer",
+          "de": "comer"
+        },
+        {
+          "hu": "vivir",
+          "en": "vivir",
+          "es": "vivir",
+          "de": "vivir"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "hablé",
+          "comí",
+          "viví"
+        ],
+        [
+          "tú",
+          "hablaste",
+          "comiste",
+          "viviste"
+        ],
+        [
+          "él/ella/usted",
+          "habló",
+          "comió",
+          "vivió"
+        ],
+        [
+          "nosotros",
+          "hablamos",
+          "comimos",
+          "vivimos"
+        ],
+        [
+          "vosotros",
+          "hablasteis",
+          "comisteis",
+          "vivisteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "hablaron",
+          "comieron",
+          "vivieron"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Mikor használjuk a befejezett múltat?",
+        "en": "When do we use the preterite?",
+        "es": "¿Cuándo usamos el indefinido?",
+        "de": "Wann benutzen wir das Indefinido?"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Egyszeri, befejezett cselekvésre: valami megtörtént, és véget is ért.",
+            "en": "For a single, finished action: something happened and it is over.",
+            "es": "Para una acción única y terminada: algo pasó y se acabó.",
+            "de": "Für eine einzelne, abgeschlossene Handlung: etwas geschah und ist vorbei."
+          },
+          "examples": [
+            {
+              "es": "Ayer hablé con mi madre.",
+              "tr": {
+                "hu": "Tegnap beszéltem anyámmal.",
+                "en": "Yesterday I talked to my mother.",
+                "es": "Ayer hablé con mi madre.",
+                "de": "Gestern sprach ich mit meiner Mutter."
+              }
+            },
+            {
+              "es": "Comimos en un restaurante nuevo.",
+              "tr": {
+                "hu": "Egy új étteremben ettünk.",
+                "en": "We ate at a new restaurant.",
+                "es": "Comimos en un restaurante nuevo.",
+                "de": "Wir aßen in einem neuen Restaurant."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Cselekvések sorozatára, amelyek egymás után történtek.",
+            "en": "For a sequence of actions that happened one after another.",
+            "es": "Para una serie de acciones que pasaron una tras otra.",
+            "de": "Für eine Abfolge von Handlungen, die nacheinander geschahen."
+          },
+          "examples": [
+            {
+              "es": "Llegó, comió y salió.",
+              "tr": {
+                "hu": "Megérkezett, evett, és elment.",
+                "en": "He arrived, ate, and left.",
+                "es": "Llegó, comió y salió.",
+                "de": "Er kam an, aß und ging."
+              }
+            },
+            {
+              "es": "Compré pan y regresé a casa.",
+              "tr": {
+                "hu": "Vettem kenyeret, és hazamentem.",
+                "en": "I bought bread and went back home.",
+                "es": "Compré pan y regresé a casa.",
+                "de": "Ich kaufte Brot und kehrte nach Hause zurück."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Konkrét, lezárt időponthoz kötött eseményre: ayer, anoche, el año pasado, en 2019, hace dos días.",
+            "en": "For an event tied to a specific, closed point in time: ayer, anoche, el año pasado, en 2019, hace dos días.",
+            "es": "Para un hecho ligado a un momento concreto y cerrado: ayer, anoche, el año pasado, en 2019, hace dos días.",
+            "de": "Für ein Ereignis, das an einen konkreten, abgeschlossenen Zeitpunkt gebunden ist: ayer, anoche, el año pasado, en 2019, hace dos días."
+          },
+          "examples": [
+            {
+              "es": "El año pasado viví en Puebla.",
+              "tr": {
+                "hu": "Tavaly Pueblában éltem.",
+                "en": "Last year I lived in Puebla.",
+                "es": "El año pasado viví en Puebla.",
+                "de": "Letztes Jahr lebte ich in Puebla."
+              }
+            },
+            {
+              "es": "Hace dos días llegué a México.",
+              "tr": {
+                "hu": "Két napja érkeztem Mexikóba.",
+                "en": "Two days ago I arrived in Mexico.",
+                "es": "Hace dos días llegué a México.",
+                "de": "Vor zwei Tagen kam ich in Mexiko an."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Egy esemény pontos kezdetére vagy végére, amit meg tudsz nevezni.",
+            "en": "For an event's exact start or end, when you can name it.",
+            "es": "Para el principio o el final exacto de un hecho, cuando lo puedes precisar.",
+            "de": "Für den genauen Anfang oder das Ende eines Ereignisses, wenn du es benennen kannst."
+          },
+          "examples": [
+            {
+              "es": "El concierto empezó a las nueve.",
+              "tr": {
+                "hu": "A koncert kilenckor kezdődött.",
+                "en": "The concert started at nine.",
+                "es": "El concierto empezó a las nueve.",
+                "de": "Das Konzert begann um neun."
+              }
+            },
+            {
+              "es": "La clase terminó a las dos.",
+              "tr": {
+                "hu": "Az óra kettőkor ért véget.",
+                "en": "The class ended at two.",
+                "es": "La clase terminó a las dos.",
+                "de": "Der Unterricht endete um zwei."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Egy ékezet, más idő",
+        "en": "One accent, another tense",
+        "es": "Una tilde, otro tiempo",
+        "de": "Ein Akzent, eine andere Zeit"
+      },
+      "pairs": [
+        {
+          "a": "hablo",
+          "b": "hablé",
+          "note": {
+            "hu": "Az -AR igék yo-alakjában az ékezet dönti el, jelen vagy múlt időről van-e szó: hablo most, hablé korábban.",
+            "en": "For -AR verbs in the yo form, the accent decides present or past: hablo now, hablé earlier.",
+            "es": "En la forma de yo de los verbos -AR, la tilde decide si es presente o pasado: hablo ahora, hablé antes.",
+            "de": "Bei -AR-Verben in der yo-Form entscheidet der Akzent zwischen Präsens und Vergangenheit: hablo jetzt, hablé vorher."
+          },
+          "examples": [
+            {
+              "es": "Hablo español todos los días.",
+              "tr": {
+                "hu": "Minden nap beszélek spanyolul.",
+                "en": "I speak Spanish every day.",
+                "es": "Hablo español todos los días.",
+                "de": "Ich spreche jeden Tag Spanisch."
+              }
+            },
+            {
+              "es": "Hablé con mi madre ayer.",
+              "tr": {
+                "hu": "Tegnap beszéltem anyámmal.",
+                "en": "I talked to my mother yesterday.",
+                "es": "Hablé con mi madre ayer.",
+                "de": "Ich habe gestern mit meiner Mutter gesprochen."
+              }
+            }
+          ]
+        },
+        {
+          "a": "come",
+          "b": "comió",
+          "note": {
+            "hu": "Az -ER igék él/ella/usted-alakjában is az ékezet és a végződés dönti el az időt: come most, comió korábban.",
+            "en": "For -ER verbs in the él/ella/usted form, the ending and accent also decide the tense: come now, comió earlier.",
+            "es": "En la forma de él/ella/usted de los verbos -ER, la terminación y la tilde también deciden el tiempo: come ahora, comió antes.",
+            "de": "Bei -ER-Verben in der er/sie-Form entscheiden Endung und Akzent ebenfalls über die Zeit: come jetzt, comió vorher."
+          },
+          "examples": [
+            {
+              "es": "Ella come mucho normalmente.",
+              "tr": {
+                "hu": "Ő általában sokat eszik.",
+                "en": "She usually eats a lot.",
+                "es": "Ella come mucho normalmente.",
+                "de": "Sie isst normalerweise viel."
+              }
+            },
+            {
+              "es": "Ella comió mucho ayer.",
+              "tr": {
+                "hu": "Tegnap sokat evett.",
+                "en": "She ate a lot yesterday.",
+                "es": "Ella comió mucho ayer.",
+                "de": "Sie hat gestern viel gegessen."
+              }
+            }
+          ]
+        },
+        {
+          "a": "vive",
+          "b": "vivió",
+          "note": {
+            "hu": "Az -IR igéknél ugyanez a minta: vive most, vivió korábban, ugyanaz a szótő, más végződés.",
+            "en": "The same pattern applies to -IR verbs: vive now, vivió earlier, the same stem, a different ending.",
+            "es": "El mismo patrón vale para los verbos -IR: vive ahora, vivió antes, la misma raíz, otra terminación.",
+            "de": "Dasselbe Muster gilt für -IR-Verben: vive jetzt, vivió vorher, derselbe Stamm, eine andere Endung."
+          },
+          "examples": [
+            {
+              "es": "Ana vive en Puebla ahora.",
+              "tr": {
+                "hu": "Ana most Pueblában él.",
+                "en": "Ana lives in Puebla now.",
+                "es": "Ana vive en Puebla ahora.",
+                "de": "Ana wohnt jetzt in Puebla."
+              }
+            },
+            {
+              "es": "Ana vivió en Puebla en 2019.",
+              "tr": {
+                "hu": "Ana 2019-ben Pueblában élt.",
+                "en": "Ana lived in Puebla in 2019.",
+                "es": "Ana vivió en Puebla en 2019.",
+                "de": "Ana hat 2019 in Puebla gewohnt."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Az -AR és az -IR igék mi-alakja jelen és múlt időben azonos (hablamos, vivimos), csak a szövegkörnyezet dönti el, melyikről van szó; az -ER igéké viszont különbözik: comemos most, comimos akkor.",
+        "en": "The we-form of -AR and -IR verbs is the same in the present and the preterite (hablamos, vivimos), only context tells them apart; -ER verbs differ though: comemos now, comimos back then.",
+        "es": "La forma de nosotros en los verbos -AR e -IR es igual en presente y en indefinido (hablamos, vivimos), solo el contexto los distingue; en los verbos -ER cambia: comemos ahora, comimos entonces.",
+        "de": "Die wir-Form der -AR- und -IR-Verben ist im Präsens und im Indefinido gleich (hablamos, vivimos), nur der Kontext unterscheidet sie; bei -ER-Verben ist es anders: comemos jetzt, comimos damals."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Néhány yo-alak írásképe megváltozik, hogy a kiejtés ugyanaz maradjon: buscar → busqué, llegar → llegué, empezar → empecé.",
+        "en": "A few yo-forms change their spelling so the sound stays the same: buscar → busqué, llegar → llegué, empezar → empecé.",
+        "es": "Algunas formas de yo cambian la ortografía para que el sonido no cambie: buscar → busqué, llegar → llegué, empezar → empecé.",
+        "de": "Manche yo-Formen ändern die Schreibweise, damit der Laut gleich bleibt: buscar → busqué, llegar → llegué, empezar → empecé."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Latin-Amerikában, így Mexikóban is, a vosotros helyett ustedes áll a többes szám harmadik személyével: ustedes hablaron, comieron, vivieron, nem hablasteis, comisteis, vivisteis.",
+        "en": "In Latin America, Mexico included, ustedes replaces vosotros with the third person plural: ustedes hablaron, comieron, vivieron, not hablasteis, comisteis, vivisteis.",
+        "es": "En Latinoamérica, también en México, ustedes sustituye a vosotros con la tercera persona del plural: ustedes hablaron, comieron, vivieron, no hablasteis, comisteis, vivisteis.",
+        "de": "In Lateinamerika, auch in Mexiko, ersetzt ustedes das vosotros mit der dritten Person Plural: ustedes hablaron, comieron, vivieron, nicht hablasteis, comisteis, vivisteis."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A befejezett múlt egy olyan cselekvést fejez ki, ami megtörtént és véget is ért. Az -AR igék yo-alakja «hablé»-re végződik, az él-alaké pedig «habló»-ra, csak az ékezet dönti el, melyikről van szó. Az -ER és az -IR igék ugyanazokat a végződéseket kapják, ezért «comí» és «viví» ugyanúgy épül fel. Tipikus időhatározók vezetik be, mint «ayer» vagy «el año pasado». Ha egymás után történt eseményeket mesélsz, mindegyiket ebben az időben mondod, mint «llegó, comió y salió». Mexikóban a többes szám második személye helyett mindig «ustedes hablaron» a helyes forma, sosem «hablasteis».",
+    "en": "The preterite expresses an action that happened and is now over. The yo-form of -AR verbs ends in «hablé», while the he-form ends in «habló», only the accent tells them apart. -ER and -IR verbs share the same endings, so «comí» and «viví» follow the same pattern. Typical time words introduce it, like «ayer» or «el año pasado». When you tell a sequence of events, each one takes this tense, like «llegó, comió y salió». In Mexico, the plural you-form is always «ustedes hablaron», never «hablasteis».",
+    "es": "El indefinido expresa una acción que pasó y ya se acabó. La forma de yo en los verbos -AR termina en «hablé», mientras que la forma de él termina en «habló», solo la tilde los distingue. Los verbos -ER e -IR comparten las mismas terminaciones, por eso «comí» y «viví» siguen el mismo patrón. Marcadores típicos lo introducen, como «ayer» o «el año pasado». Cuando cuentas una serie de eventos, cada uno lleva este tiempo, como «llegó, comió y salió». En México, la forma de ustedes siempre es «ustedes hablaron», nunca «hablasteis».",
+    "de": "Das Indefinido drückt eine Handlung aus, die geschah und jetzt vorbei ist. Die yo-Form der -AR-Verben endet auf «hablé», während die er-Form auf «habló» endet, nur der Akzent unterscheidet sie. -ER- und -IR-Verben teilen sich dieselben Endungen, deshalb folgen «comí» und «viví» demselben Muster. Typische Zeitwörter leiten sie ein, wie «ayer» oder «el año pasado». Wenn du eine Abfolge von Ereignissen erzählst, steht jedes davon in dieser Zeit, wie «llegó, comió y salió». In Mexiko lautet die ihr-Form immer «ustedes hablaron», nie «hablasteis»."
   },
   "glossary": [
     {
@@ -120,16 +518,16 @@
       },
       "wrong": {
         "hablo": {
-          "hu": "A hablo jelen idő: most beszélek.",
-          "en": "Hablo is the present: I am speaking now.",
-          "es": "Hablo es presente: hablo ahora.",
-          "de": "Hablo ist Präsens: ich spreche jetzt."
+          "hu": "A 'hablo' jelen idő: ha ezt választanád, a mondat azt jelentené, hogy most beszélsz anyáddal telefonon, ami nem illik az 'ayer'-hez; helyesen a mai, folyamatban lévő hívásra mondanád: Hablo con mi madre por teléfono.",
+          "en": "'Hablo' is the present: choosing it would mean you are talking to your mother on the phone right now, which clashes with 'ayer'; it would be correct for a call happening today: Hablo con mi madre por teléfono.",
+          "es": "'Hablo' es presente: si lo eligieras, la frase diría que hablas con tu madre por teléfono ahora mismo, lo cual no encaja con 'ayer'; sería correcto para una llamada de hoy: Hablo con mi madre por teléfono.",
+          "de": "'Hablo' ist Präsens: würdest du es wählen, würde der Satz heißen, dass du gerade jetzt mit deiner Mutter telefonierst, was nicht zu 'ayer' passt; richtig wäre es für ein Telefonat von heute: Hablo con mi madre por teléfono."
         },
         "hablaba": {
-          "hu": "A hablaba szokást vagy hátteret jelöl, nem egyszeri befejezett tettet.",
-          "en": "Hablaba marks a habit or background, not one finished act.",
-          "es": "Hablaba marca costumbre o fondo, no un acto terminado.",
-          "de": "Hablaba markiert Gewohnheit oder Hintergrund, keine abgeschlossene Tat."
+          "hu": "A 'hablaba' szokást vagy háttérfolyamatot fejez ki, nem egy konkrét, egyszeri befejezett tettet; azzal a mondat azt jelentené, hogy régen rendszeresen beszéltél anyáddal telefonon, nem azt, hogy tegnap egyszer megtetted. Helyesen szokásra: Hablaba con mi madre por teléfono todos los días.",
+          "en": "'Hablaba' expresses a habit or background action, not one specific finished act; with it the sentence would mean you used to talk to your mother on the phone regularly, not that you did it once yesterday. Correctly for a habit: Hablaba con mi madre por teléfono todos los días.",
+          "es": "'Hablaba' expresa costumbre o una acción de fondo, no un hecho único y terminado; con ella la frase diría que solías hablar con tu madre por teléfono, no que lo hiciste una vez ayer. Correctamente para un hábito: Hablaba con mi madre por teléfono todos los días.",
+          "de": "'Hablaba' drückt eine Gewohnheit oder eine Hintergrundhandlung aus, keine einmalige, abgeschlossene Tat; damit würde der Satz heißen, dass du früher regelmäßig mit deiner Mutter telefoniert hast, nicht dass du es gestern einmal getan hast. Richtig für eine Gewohnheit: Hablaba con mi madre por teléfono todos los días."
         }
       },
       "examples": [
@@ -154,16 +552,16 @@
       },
       "wrong": {
         "sales": {
-          "hu": "A sales jelen idő.",
-          "en": "Sales is the present.",
-          "es": "Sales es presente.",
-          "de": "Sales ist Präsens."
+          "hu": "A 'sales' jelen idő: ezzel a mondat azt kérdezné, hány órakor szoktál kilépni a munkából általában, nem azt, hogy tegnap mikor tetted; a jelenre helyesen: ¿A qué hora sales del trabajo normalmente?",
+          "en": "'Sales' is the present: with it the question would ask what time you usually leave work, not what time you did yesterday; correctly for the present: ¿A qué hora sales del trabajo normalmente?",
+          "es": "'Sales' es presente: con ella la pregunta sería a qué hora sueles salir del trabajo, no a qué hora saliste ayer; correctamente para el presente: ¿A qué hora sales del trabajo normalmente?",
+          "de": "'Sales' ist Präsens: damit würde die Frage lauten, um wie viel Uhr du normalerweise von der Arbeit gehst, nicht wann du es gestern getan hast; richtig für die Gegenwart: ¿A qué hora sales del trabajo normalmente?"
         },
         "salió": {
-          "hu": "A salió az ő alakja, nem a tiéd.",
-          "en": "Salió is the he/she form, not yours.",
-          "es": "Salió es de él/ella, no de tú.",
-          "de": "Salió ist die er/sie-Form, nicht deine."
+          "hu": "A 'salió' az ő alakja: ezzel a mondat azt kérdezné, hány órakor lépett ki Ő a munkából, nem azt, hogy te; helyesen róla: ¿A qué hora salió él del trabajo ayer?",
+          "en": "'Salió' is the he/she form: with it the question would ask what time HE left work, not you; correctly about him: ¿A qué hora salió él del trabajo ayer?",
+          "es": "'Salió' es la forma de él: con ella la pregunta sería a qué hora salió ÉL del trabajo, no tú; correctamente sobre él: ¿A qué hora salió él del trabajo ayer?",
+          "de": "'Salió' ist die er/sie-Form: damit würde die Frage lauten, um wie viel Uhr ER von der Arbeit gegangen ist, nicht du; richtig über ihn: ¿A qué hora salió él del trabajo ayer?"
         }
       },
       "examples": [
@@ -188,16 +586,16 @@
       },
       "wrong": {
         "vende": {
-          "hu": "A vende jelen idő: most árulja.",
-          "en": "Vende is the present: he is selling now.",
-          "es": "Vende es presente.",
-          "de": "Vende ist Präsens."
+          "hu": "A 'vende' jelen idő: ezzel a mondat azt állítaná, hogy a bátyám most, jelenleg árulja a házat, nem azt, hogy el is adta a múlt hónapban; helyesen a jelenre: Mi hermano vende la casa ahora.",
+          "en": "'Vende' is the present: with it the sentence would claim my brother is currently selling the house, not that he already sold it last month; correctly for the present: Mi hermano vende la casa ahora.",
+          "es": "'Vende' es presente: con ella la frase diría que mi hermano está vendiendo la casa ahora mismo, no que ya la vendió el mes pasado; correctamente para el presente: Mi hermano vende la casa ahora.",
+          "de": "'Vende' ist Präsens: damit würde der Satz behaupten, dass mein Bruder das Haus gerade jetzt verkauft, nicht dass er es letzten Monat schon verkauft hat; richtig für die Gegenwart: Mi hermano vende la casa ahora."
         },
         "vendí": {
-          "hu": "A vendí azt jelenti, hogy ÉN adtam el.",
-          "en": "Vendí means that I sold it.",
-          "es": "Vendí significa que lo vendí yo.",
-          "de": "Vendí heißt, dass ICH verkauft habe."
+          "hu": "A 'vendí' az én alakom: ezzel a mondat azt jelentené, hogy ÉN adtam el a házat, nem a bátyám; helyesen rólam: Yo vendí la casa el mes pasado.",
+          "en": "'Vendí' is my own form: with it the sentence would mean that I sold the house, not my brother; correctly about me: Yo vendí la casa el mes pasado.",
+          "es": "'Vendí' es la forma de yo: con ella la frase diría que YO vendí la casa, no mi hermano; correctamente sobre mí: Yo vendí la casa el mes pasado.",
+          "de": "'Vendí' ist meine eigene Form: damit würde der Satz heißen, dass ICH das Haus verkauft habe, nicht mein Bruder; richtig über mich: Yo vendí la casa el mes pasado."
         }
       },
       "examples": [
@@ -222,16 +620,16 @@
       },
       "wrong": {
         "comemos": {
-          "hu": "A comemos jelen idő, a mondat viszont a múlt hétről szól.",
-          "en": "Comemos is the present, but the sentence is about last week.",
-          "es": "Comemos es presente, pero la frase habla de la semana pasada.",
-          "de": "Comemos ist Präsens, der Satz handelt aber von letzter Woche."
+          "hu": "A 'comemos' jelen idő: ezzel a mondat azt állítaná, hogy most, mostanában eszünk egy kis hotelben, nem azt, hogy múlt héten tettük; helyesen a jelenre: Comemos en un hotel pequeño cada verano.",
+          "en": "'Comemos' is the present: with it the sentence would claim we eat at a small hotel these days, not that we did last week; correctly for the present: Comemos en un hotel pequeño cada verano.",
+          "es": "'Comemos' es presente: con ella la frase diría que comemos en un hotel pequeño estos días, no que lo hicimos la semana pasada; correctamente para el presente: Comemos en un hotel pequeño cada verano.",
+          "de": "'Comemos' ist Präsens: damit würde der Satz behaupten, dass wir dieser Tage in einem kleinen Hotel essen, nicht dass wir es letzte Woche taten; richtig für die Gegenwart: Comemos en un hotel pequeño cada verano."
         },
         "comen": {
-          "hu": "A comen róluk szól, nem rólunk.",
-          "en": "Comen is about them, not about us.",
-          "es": "Comen habla de ellos, no de nosotros.",
-          "de": "Comen spricht von ihnen, nicht von uns."
+          "hu": "A 'comen' róluk szól: ezzel a mondat azt jelentené, hogy ŐK ettek a hotelben, nem mi; helyesen róluk: Ellos comieron en un hotel pequeño la semana pasada.",
+          "en": "'Comen' is about them: with it the sentence would mean THEY ate at the hotel, not us; correctly about them: Ellos comieron en un hotel pequeño la semana pasada.",
+          "es": "'Comen' habla de ellos: con ella la frase diría que ELLOS comieron en el hotel, no nosotros; correctamente sobre ellos: Ellos comieron en un hotel pequeño la semana pasada.",
+          "de": "'Comen' spricht von ihnen: damit würde der Satz heißen, dass SIE im Hotel gegessen haben, nicht wir; richtig über sie: Ellos comieron en un hotel pequeño la semana pasada."
         }
       },
       "examples": [
@@ -256,16 +654,16 @@
       },
       "wrong": {
         "ven": {
-          "hu": "A ven jelen idő.",
-          "en": "Ven is the present.",
-          "es": "Ven es presente.",
-          "de": "Ven ist Präsens."
+          "hu": "A 'ven' jelen idő: ezzel a mondat azt állítaná, hogy most nézik a filmet, nem azt, hogy tegnap este megnézték; helyesen a jelenre: Ellos ven la película ahora.",
+          "en": "'Ven' is the present: with it the sentence would claim they are watching the movie now, not that they watched it last night; correctly for the present: Ellos ven la película ahora.",
+          "es": "'Ven' es presente: con ella la frase diría que están viendo la película ahora, no que la vieron anoche; correctamente para el presente: Ellos ven la película ahora.",
+          "de": "'Ven' ist Präsens: damit würde der Satz behaupten, dass sie den Film gerade jetzt sehen, nicht dass sie ihn gestern Abend gesehen haben; richtig für die Gegenwart: Ellos ven la película ahora."
         },
         "vimos": {
-          "hu": "A vimos ránk vonatkozik.",
-          "en": "Vimos is about us.",
-          "es": "Vimos habla de nosotros.",
-          "de": "Vimos spricht von uns."
+          "hu": "A 'vimos' ránk vonatkozik: ezzel a mondat azt jelentené, hogy MI néztük meg a filmet, nem ők; helyesen rólunk: Nosotros vimos la película anoche.",
+          "en": "'Vimos' is about us: with it the sentence would mean WE watched the movie, not them; correctly about us: Nosotros vimos la película anoche.",
+          "es": "'Vimos' habla de nosotros: con ella la frase diría que NOSOTROS vimos la película, no ellos; correctamente sobre nosotros: Nosotros vimos la película anoche.",
+          "de": "'Vimos' spricht von uns: damit würde der Satz heißen, dass WIR den Film gesehen haben, nicht sie; richtig über uns: Nosotros vimos la película anoche."
         }
       },
       "examples": [
@@ -290,16 +688,16 @@
       },
       "wrong": {
         "llego": {
-          "hu": "A llego jelen idő.",
-          "en": "Llego is the present.",
-          "es": "Llego es presente.",
-          "de": "Llego ist Präsens."
+          "hu": "A 'llego' jelen idő: ezzel a mondat azt állítaná, hogy most érkezem a boltba, nem azt, hogy korábban odaértem és kenyeret vettem; helyesen a jelenre: Llego a la tienda ahora.",
+          "en": "'Llego' is the present: with it the sentence would claim I am arriving at the shop right now, not that I got there earlier and bought bread; correctly for the present: Llego a la tienda ahora.",
+          "es": "'Llego' es presente: con ella la frase diría que llego a la tienda ahora mismo, no que llegué antes y compré pan; correctamente para el presente: Llego a la tienda ahora.",
+          "de": "'Llego' ist Präsens: damit würde der Satz behaupten, dass ich gerade jetzt im Laden ankomme, nicht dass ich vorhin dort ankam und Brot kaufte; richtig für die Gegenwart: Llego a la tienda ahora."
         },
         "llegé": {
-          "hu": "Ilyen alak nincs: a g elé u kell az e előtt.",
-          "en": "That form does not exist: a u is needed before the e.",
-          "es": "Esa forma no existe: hace falta la u ante la e.",
-          "de": "Diese Form gibt es nicht: vor dem e braucht es ein u."
+          "hu": "Ilyen alak nem létezik: a -gar végű igék yo-alakjában a g elé u kell az e előtt, hogy a hang kemény maradjon, ezért helyesen: llegué, nem llegé.",
+          "en": "That form does not exist: verbs ending in -gar need a u before the e in the yo form, so the sound stays hard, correctly: llegué, not llegé.",
+          "es": "Esa forma no existe: los verbos en -gar necesitan una u antes de la e en la forma de yo para mantener el sonido duro, correctamente: llegué, no llegé.",
+          "de": "Diese Form gibt es nicht: Verben auf -gar brauchen in der yo-Form ein u vor dem e, damit der Laut hart bleibt, richtig: llegué, nicht llegé."
         }
       },
       "examples": [
@@ -324,16 +722,16 @@
       },
       "wrong": {
         "cerro": {
-          "hu": "Ékezet nélkül ez a szó dombot jelent, vagy azt, hogy én zárom be.",
-          "en": "Without the accent it means a hill, or \"I close\".",
-          "es": "Sin tilde es un monte, o «yo cierro».",
-          "de": "Ohne Akzent bedeutet es Hügel oder „ich schließe\"."
+          "hu": "Ékezet nélkül a 'cerro' egy dombot jelent, vagy azt, hogy ÉN zárom be most; egyik jelentés sem illik ide, helyesen a múlt idejű ő-alak ékezettel: cerró.",
+          "en": "Without the accent, 'cerro' means a hill, or that I close it right now; neither meaning fits here, correctly the accented third-person past: cerró.",
+          "es": "Sin tilde, 'cerro' significa un monte, o que YO cierro ahora; ninguno de los dos encaja aquí, correctamente la tercera persona del pasado con tilde: cerró.",
+          "de": "Ohne Akzent bedeutet 'cerro' ein Hügel, oder dass ICH gerade jetzt schließe; beides passt hier nicht, richtig die betonte dritte Person Vergangenheit: cerró."
         },
         "cierra": {
-          "hu": "A cierra jelen idő.",
-          "en": "Cierra is the present.",
-          "es": "Cierra es presente.",
-          "de": "Cierra ist Präsens."
+          "hu": "A 'cierra' jelen idő: ezzel a mondat azt állítaná, hogy MOST csukja be az ablakot, nem azt, hogy korábban, mert hideg volt, becsukta; helyesen a jelenre: Ella cierra la ventana ahora.",
+          "en": "'Cierra' is the present: with it the sentence would claim she is closing the window right now, not that she closed it earlier because it was cold; correctly for the present: Ella cierra la ventana ahora.",
+          "es": "'Cierra' es presente: con ella la frase diría que ella cierra la ventana ahora mismo, no que la cerró antes porque hacía frío; correctamente para el presente: Ella cierra la ventana ahora.",
+          "de": "'Cierra' ist Präsens: damit würde der Satz behaupten, dass sie das Fenster gerade jetzt schließt, nicht dass sie es vorhin geschlossen hat, weil es kalt war; richtig für die Gegenwart: Ella cierra la ventana ahora."
         }
       },
       "examples": [
@@ -358,16 +756,16 @@
       },
       "wrong": {
         "reciben": {
-          "hu": "A reciben jelen idő.",
-          "en": "Reciben is the present.",
-          "es": "Reciben es presente.",
-          "de": "Reciben ist Präsens."
+          "hu": "A 'reciben' jelen idő: ezzel a kérdés azt tudakolná, hogy önök MOST kapják-e az üzenetet, nem azt, hogy megkapták-e korábban; helyesen a jelenre: ¿Ustedes reciben mis mensajes normalmente?",
+          "en": "'Reciben' is the present: with it the question would ask whether you all are receiving the message right now, not whether you already got it; correctly for the present: ¿Ustedes reciben mis mensajes normalmente?",
+          "es": "'Reciben' es presente: con ella la pregunta sería si ustedes reciben el mensaje ahora mismo, no si ya lo recibieron; correctamente para el presente: ¿Ustedes reciben mis mensajes normalmente?",
+          "de": "'Reciben' ist Präsens: damit würde die Frage lauten, ob Sie die Nachricht gerade jetzt empfangen, nicht ob Sie sie schon erhalten haben; richtig für die Gegenwart: ¿Ustedes reciben mis mensajes normalmente?"
         },
         "recibimos": {
-          "hu": "A recibimos ránk vonatkozik.",
-          "en": "Recibimos is about us.",
-          "es": "Recibimos habla de nosotros.",
-          "de": "Recibimos spricht von uns."
+          "hu": "A 'recibimos' ránk vonatkozik: ezzel a kérdés azt tudakolná, hogy MI kaptuk-e meg az üzenetet, nem önök; helyesen rólunk: ¿Recibimos el mensaje que nos mandaste?",
+          "en": "'Recibimos' is about us: with it the question would ask whether WE received the message, not you all; correctly about us: ¿Recibimos el mensaje que nos mandaste?",
+          "es": "'Recibimos' habla de nosotros: con ella la pregunta sería si NOSOTROS recibimos el mensaje, no ustedes; correctamente sobre nosotros: ¿Recibimos el mensaje que nos mandaste?",
+          "de": "'Recibimos' spricht von uns: damit würde die Frage lauten, ob WIR die Nachricht erhalten haben, nicht Sie; richtig über uns: ¿Recibimos el mensaje que nos mandaste?"
         }
       },
       "examples": [
@@ -392,16 +790,16 @@
       },
       "wrong": {
         "viajábamos": {
-          "hu": "Ez szokást jelentene: régen minden évben utaztunk.",
-          "en": "That would mean a habit: we used to travel every year.",
-          "es": "Eso indicaría costumbre: viajábamos cada año.",
-          "de": "Das hieße Gewohnheit: wir reisten jedes Jahr."
+          "hu": "A 'viajábamos' szokást fejezne ki: ezzel a mondat azt jelentené, hogy régen minden évben szoktunk Mexikóba utazni, nem azt, hogy egyetlen konkrét évben, 2019-ben tettük; helyesen szokásra: Viajábamos a México cada año.",
+          "en": "'Viajábamos' would express a habit: with it the sentence would mean we used to travel to Mexico every year, not that we did it in one specific year, 2019; correctly for a habit: Viajábamos a México cada año.",
+          "es": "'Viajábamos' expresaría costumbre: con ella la frase diría que solíamos viajar a México cada año, no que lo hicimos en un año concreto, 2019; correctamente para un hábito: Viajábamos a México cada año.",
+          "de": "'Viajábamos' würde eine Gewohnheit ausdrücken: damit würde der Satz heißen, dass wir früher jedes Jahr nach Mexiko reisten, nicht dass wir es in einem bestimmten Jahr, 2019, taten; richtig für eine Gewohnheit: Viajábamos a México cada año."
         },
         "viajaremos": {
-          "hu": "A viajaremos jövő idő.",
-          "en": "Viajaremos is the future.",
-          "es": "Viajaremos es futuro.",
-          "de": "Viajaremos ist Futur."
+          "hu": "A 'viajaremos' jövő idő: ezzel a mondat azt állítaná, hogy Mexikóba fogunk utazni, nem azt, hogy 2019-ben már megtörtént; helyesen a jövőre: El año que viene viajaremos a México.",
+          "en": "'Viajaremos' is the future: with it the sentence would claim we will travel to Mexico, not that it already happened in 2019; correctly for the future: El año que viene viajaremos a México.",
+          "es": "'Viajaremos' es futuro: con ella la frase diría que vamos a viajar a México, no que ya pasó en 2019; correctamente para el futuro: El año que viene viajaremos a México.",
+          "de": "'Viajaremos' ist Futur: damit würde der Satz behaupten, dass wir nach Mexiko reisen werden, nicht dass es 2019 bereits geschah; richtig für die Zukunft: El año que viene viajaremos a México."
         }
       },
       "examples": [
@@ -426,16 +824,16 @@
       },
       "wrong": {
         "como": {
-          "hu": "A como jelen idő.",
-          "en": "Como is the present.",
-          "es": "Como es presente.",
-          "de": "Como ist Präsens."
+          "hu": "A 'como' jelen idő: ezzel a mondat azt állítaná, hogy most, általában nem eszem semmit, nem azt, hogy tegnap nem ettem, mert beteg voltam; helyesen a jelenre: No como nada por la mañana.",
+          "en": "'Como' is the present: with it the sentence would claim I generally do not eat anything now, not that I did not eat yesterday because I was sick; correctly for the present: No como nada por la mañana.",
+          "es": "'Como' es presente: con ella la frase diría que en general no como nada ahora, no que ayer no comí porque estuve enfermo; correctamente para el presente: No como nada por la mañana.",
+          "de": "'Como' ist Präsens: damit würde der Satz behaupten, dass ich allgemein gerade nichts esse, nicht dass ich gestern nichts gegessen habe, weil ich krank war; richtig für die Gegenwart: No como nada por la mañana."
         },
         "comía": {
-          "hu": "A comía azt jelentené, hogy akkoriban általában nem ettem.",
-          "en": "Comía would mean that back then I generally did not eat.",
-          "es": "Comía diría que en aquella época no solía comer.",
-          "de": "Comía hieße, dass ich damals allgemein nicht aß."
+          "hu": "A 'comía' azt jelentené, hogy akkoriban általában nem szoktam enni, egy régi szokást írna le, nem egyetlen konkrét napot; helyesen szokásra: De niño no comía verduras.",
+          "en": "'Comía' would mean that back then I generally did not use to eat, describing an old habit, not one specific day; correctly for a habit: De niño no comía verduras.",
+          "es": "'Comía' diría que en aquella época en general no solía comer, describiría una costumbre antigua, no un día concreto; correctamente para un hábito: De niño no comía verduras.",
+          "de": "'Comía' würde heißen, dass ich damals allgemein nicht zu essen pflegte, das beschriebe eine alte Gewohnheit, keinen bestimmten Tag; richtig für eine Gewohnheit: De niño no comía verduras."
         }
       },
       "examples": [
@@ -460,16 +858,16 @@
       },
       "wrong": {
         "empieza": {
-          "hu": "A empieza jelen idő, a mondat másik fele viszont múlt.",
-          "en": "Empieza is the present, while the other half of the sentence is past.",
-          "es": "Empieza es presente, pero la otra mitad de la frase es pasado.",
-          "de": "Empieza ist Präsens, die andere Satzhälfte aber Vergangenheit."
+          "hu": "Az 'empieza' jelen idő: ezzel a mondat azt állítaná, hogy a koncert most kezdődik, miközben a mondat másik fele, 'terminó', már múlt időben van, ez ellentmondás; helyesen a jelenre: El concierto empieza a las nueve hoy.",
+          "en": "'Empieza' is the present: with it the sentence would claim the concert is starting now, while the other half, 'terminó', is already in the past, which is a contradiction; correctly for the present: El concierto empieza a las nueve hoy.",
+          "es": "'Empieza' es presente: con ella la frase diría que el concierto empieza ahora, mientras la otra mitad, 'terminó', ya está en pasado, lo cual es una contradicción; correctamente para el presente: El concierto empieza a las nueve hoy.",
+          "de": "'Empieza' ist Präsens: damit würde der Satz behaupten, dass das Konzert jetzt beginnt, während die andere Hälfte, 'terminó', schon in der Vergangenheit steht, was ein Widerspruch ist; richtig für die Gegenwart: El concierto empieza a las nueve hoy."
         },
         "empezaba": {
-          "hu": "Ez folyamatot vagy szokást írna le, nem egyszeri kezdést.",
-          "en": "That would describe an ongoing habit, not one start.",
-          "es": "Eso describiría una costumbre, no un comienzo único.",
-          "de": "Das beschriebe eine Gewohnheit, keinen einmaligen Beginn."
+          "hu": "Az 'empezaba' folyamatos háttérfolyamatot vagy szokást írna le, nem egy pontosan megjelölt, egyszeri kezdést; helyesen háttérre: El concierto empezaba cuando llegamos.",
+          "en": "'Empezaba' would describe an ongoing background action or habit, not one precisely marked, single start; correctly for background: El concierto empezaba cuando llegamos.",
+          "es": "'Empezaba' describiría una acción de fondo continua o una costumbre, no un comienzo único y preciso; correctamente para el fondo: El concierto empezaba cuando llegamos.",
+          "de": "'Empezaba' würde eine andauernde Hintergrundhandlung oder Gewohnheit beschreiben, keinen genau markierten, einmaligen Beginn; richtig für den Hintergrund: El concierto empezaba cuando llegamos."
         }
       },
       "examples": [
@@ -494,22 +892,498 @@
       },
       "wrong": {
         "espero": {
-          "hu": "Az espero jelen idő: most várok.",
-          "en": "Espero is the present: I am waiting now.",
-          "es": "Espero es presente.",
-          "de": "Espero ist Präsens."
+          "hu": "Az 'espero' jelen idő: ezzel a mondat azt állítaná, hogy MOST várom a nővéremet a reptéren, nem azt, hogy két napja megtörtént; helyesen a jelenre: Espero a mi hermana en el aeropuerto ahora.",
+          "en": "'Espero' is the present: with it the sentence would claim I am waiting for my sister at the airport right now, not that it happened two days ago; correctly for the present: Espero a mi hermana en el aeropuerto ahora.",
+          "es": "'Espero' es presente: con ella la frase diría que espero a mi hermana en el aeropuerto ahora mismo, no que pasó hace dos días; correctamente para el presente: Espero a mi hermana en el aeropuerto ahora.",
+          "de": "'Espero' ist Präsens: damit würde der Satz behaupten, dass ich gerade jetzt am Flughafen auf meine Schwester warte, nicht dass es vor zwei Tagen geschah; richtig für die Gegenwart: Espero a mi hermana en el aeropuerto ahora."
         },
         "esperaba": {
-          "hu": "Az esperaba a háttér: éppen vártam, amikor valami történt.",
-          "en": "Esperaba is background: I was waiting when something happened.",
-          "es": "Esperaba es el fondo: estaba esperando cuando pasó algo.",
-          "de": "Esperaba ist Hintergrund: ich wartete gerade, als etwas geschah."
+          "hu": "Az 'esperaba' a háttérfolyamatot jelöli: ezzel a mondat azt jelentené, hogy éppen vártam, amikor valami más történt, nem azt, hogy a várakozás maga egy lezárt, egyszeri esemény volt; helyesen háttérre: La esperaba cuando llegó su vuelo.",
+          "en": "'Esperaba' marks a background action: with it the sentence would mean I was waiting when something else happened, not that the waiting itself was one finished event; correctly for background: La esperaba cuando llegó su vuelo.",
+          "es": "'Esperaba' marca una acción de fondo: con ella la frase diría que estaba esperando cuando pasó algo más, no que la espera misma fue un hecho terminado; correctamente para el fondo: La esperaba cuando llegó su vuelo.",
+          "de": "'Esperaba' markiert eine Hintergrundhandlung: damit würde der Satz heißen, dass ich gerade wartete, als etwas anderes geschah, nicht dass das Warten selbst ein abgeschlossenes Ereignis war; richtig für den Hintergrund: La esperaba cuando llegó su vuelo."
         }
       },
       "examples": [
         "Hace un mes visité a mi familia.",
         "Hace tres años cambié de trabajo."
       ]
+    },
+    {
+      "id": "ir-match-01",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "hablé con mi madre",
+          "en": "I talked to my mother"
+        },
+        {
+          "es": "comimos en un restaurante",
+          "en": "we ate at a restaurant"
+        },
+        {
+          "es": "vivieron en Puebla",
+          "en": "they lived in Puebla"
+        },
+        {
+          "es": "llegué tarde",
+          "en": "I arrived late"
+        },
+        {
+          "es": "saliste temprano",
+          "en": "you left early"
+        },
+        {
+          "es": "compró pan",
+          "en": "she bought bread"
+        }
+      ]
+    },
+    {
+      "id": "ir-form-01",
+      "kind": "form",
+      "verb": "hablar",
+      "person": "yo",
+      "answer": "hablé",
+      "table": "indefinido-regular"
+    },
+    {
+      "id": "ir-form-02",
+      "kind": "form",
+      "verb": "hablar",
+      "person": "tú",
+      "answer": "hablaste",
+      "table": "indefinido-regular"
+    },
+    {
+      "id": "ir-form-03",
+      "kind": "form",
+      "verb": "hablar",
+      "person": "nosotros",
+      "answer": "hablamos",
+      "table": "indefinido-regular"
+    },
+    {
+      "id": "ir-form-04",
+      "kind": "form",
+      "verb": "hablar",
+      "person": "ellos/ellas/ustedes",
+      "answer": "hablaron",
+      "table": "indefinido-regular"
+    },
+    {
+      "id": "ir-form-05",
+      "kind": "form",
+      "verb": "comer",
+      "person": "tú",
+      "answer": "comiste",
+      "table": "indefinido-regular"
+    },
+    {
+      "id": "ir-form-06",
+      "kind": "form",
+      "verb": "comer",
+      "person": "él/ella/usted",
+      "answer": "comió",
+      "table": "indefinido-regular"
+    },
+    {
+      "id": "ir-form-07",
+      "kind": "form",
+      "verb": "comer",
+      "person": "vosotros",
+      "answer": "comisteis",
+      "table": "indefinido-regular"
+    },
+    {
+      "id": "ir-form-08",
+      "kind": "form",
+      "verb": "comer",
+      "person": "ellos/ellas/ustedes",
+      "answer": "comieron",
+      "table": "indefinido-regular"
+    },
+    {
+      "id": "ir-form-09",
+      "kind": "form",
+      "verb": "vivir",
+      "person": "yo",
+      "answer": "viví",
+      "table": "indefinido-regular"
+    },
+    {
+      "id": "ir-form-10",
+      "kind": "form",
+      "verb": "vivir",
+      "person": "él/ella/usted",
+      "answer": "vivió",
+      "table": "indefinido-regular"
+    },
+    {
+      "id": "ir-form-11",
+      "kind": "form",
+      "verb": "vivir",
+      "person": "nosotros",
+      "answer": "vivimos",
+      "table": "indefinido-regular"
+    },
+    {
+      "id": "ir-form-12",
+      "kind": "form",
+      "verb": "vivir",
+      "person": "vosotros",
+      "answer": "vivisteis",
+      "table": "indefinido-regular"
+    },
+    {
+      "kind": "why",
+      "id": "ir-why-01",
+      "es": "Comí a las dos.",
+      "tr": {
+        "hu": "Kettőkor ettem.",
+        "en": "I ate at two.",
+        "es": "Comí a las dos.",
+        "de": "Ich habe um zwei gegessen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          }
+        },
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          },
+          "wrong": {
+            "hu": "Ha tú lenne, 'Comiste a las dos' állna, azaz TE ettél kettőkor, nem én.",
+            "en": "If it were tú, it would say 'Comiste a las dos', meaning YOU ate at two, not me.",
+            "es": "Si fuera tú, diría 'Comiste a las dos', o sea que TÚ comiste, no yo.",
+            "de": "Wäre es tú, hieße es 'Comiste a las dos', also hast DU um zwei gegessen, nicht ich."
+          }
+        },
+        {
+          "text": {
+            "hu": "ő / Ön",
+            "en": "he/she/you (usted)",
+            "es": "él/ella/usted",
+            "de": "er/sie/Sie"
+          },
+          "wrong": {
+            "hu": "Ha él/ella lenne, 'Comió a las dos' állna, azaz Ő evett kettőkor, nem én.",
+            "en": "If it were él/ella, it would say 'Comió a las dos', meaning HE/SHE ate at two, not me.",
+            "es": "Si fuera él/ella, diría 'Comió a las dos', o sea que ÉL/ELLA comió, no yo.",
+            "de": "Wäre es él/ella, hieße es 'Comió a las dos', also hat ER/SIE um zwei gegessen, nicht ich."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ir-why-02",
+      "es": "Hablaste con tu madre ayer.",
+      "tr": {
+        "hu": "Tegnap beszéltél anyáddal.",
+        "en": "You talked to your mother yesterday.",
+        "es": "Hablaste con tu madre ayer.",
+        "de": "Du hast gestern mit deiner Mutter gesprochen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          },
+          "wrong": {
+            "hu": "Ha yo lenne, 'Hablé con mi madre ayer' állna, azaz ÉN beszéltem anyámmal, nem te.",
+            "en": "If it were yo, it would say 'Hablé con mi madre ayer', meaning I talked to my mother, not you.",
+            "es": "Si fuera yo, diría 'Hablé con mi madre ayer', o sea que YO hablé con mi madre, no tú.",
+            "de": "Wäre es yo, hieße es 'Hablé con mi madre ayer', also habe ICH mit meiner Mutter gesprochen, nicht du."
+          }
+        },
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ti (vosotros, Spo.)",
+            "en": "you all (vosotros, Spain)",
+            "es": "vosotros",
+            "de": "ihr (vosotros, Spanien)"
+          },
+          "wrong": {
+            "hu": "Ha vosotros lenne, 'Hablasteis con vuestra madre ayer' állna, azaz TI beszéltetek, nem te egyedül.",
+            "en": "If it were vosotros, it would say 'Hablasteis con vuestra madre ayer', meaning YOU ALL talked, not just you.",
+            "es": "Si fuera vosotros, diría 'Hablasteis con vuestra madre ayer', o sea que VOSOTROS hablasteis, no solo tú.",
+            "de": "Wäre es vosotros, hieße es 'Hablasteis con vuestra madre ayer', also habt IHR gesprochen, nicht nur du."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ir-why-03",
+      "es": "Vivió en Puebla.",
+      "tr": {
+        "hu": "Pueblában élt.",
+        "en": "He/She lived in Puebla.",
+        "es": "Vivió en Puebla.",
+        "de": "Er/sie hat in Puebla gelebt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          },
+          "wrong": {
+            "hu": "Ha ellos lenne, 'Vivieron en Puebla' állna, azaz ŐK éltek Pueblában, nem csak ő.",
+            "en": "If it were ellos, it would say 'Vivieron en Puebla', meaning THEY lived in Puebla, not just him/her.",
+            "es": "Si fuera ellos, diría 'Vivieron en Puebla', o sea que ELLOS vivieron ahí, no solo él/ella.",
+            "de": "Wäre es ellos, hieße es 'Vivieron en Puebla', also haben SIE dort gelebt, nicht nur er/sie."
+          }
+        },
+        {
+          "text": {
+            "hu": "ő / Ön",
+            "en": "he/she/you (usted)",
+            "es": "él/ella/usted",
+            "de": "er/sie/Sie"
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Vivimos en Puebla' állna, azaz MI éltünk Pueblában, nem ő.",
+            "en": "If it were nosotros, it would say 'Vivimos en Puebla', meaning WE lived in Puebla, not him/her.",
+            "es": "Si fuera nosotros, diría 'Vivimos en Puebla', o sea que NOSOTROS vivimos ahí, no él/ella.",
+            "de": "Wäre es nosotros, hieße es 'Vivimos en Puebla', also haben WIR dort gelebt, nicht er/sie."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ir-why-04",
+      "es": "Hablamos toda la tarde.",
+      "tr": {
+        "hu": "Egész délután beszéltünk.",
+        "en": "We talked all afternoon.",
+        "es": "Hablamos toda la tarde.",
+        "de": "Wir haben den ganzen Nachmittag geredet."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          },
+          "wrong": {
+            "hu": "Ha yo lenne, 'Hablé toda la tarde' állna, azaz ÉN beszéltem egész délután, nem mi.",
+            "en": "If it were yo, it would say 'Hablé toda la tarde', meaning I talked all afternoon, not us.",
+            "es": "Si fuera yo, diría 'Hablé toda la tarde', o sea que YO hablé toda la tarde, no nosotros.",
+            "de": "Wäre es yo, hieße es 'Hablé toda la tarde', also habe ICH den ganzen Nachmittag geredet, nicht wir."
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          },
+          "wrong": {
+            "hu": "Ha ellos lenne, 'Hablaron toda la tarde' állna, azaz ŐK beszéltek egész délután, nem mi.",
+            "en": "If it were ellos, it would say 'Hablaron toda la tarde', meaning THEY talked all afternoon, not us.",
+            "es": "Si fuera ellos, diría 'Hablaron toda la tarde', o sea que ELLOS hablaron, no nosotros.",
+            "de": "Wäre es ellos, hieße es 'Hablaron toda la tarde', also haben SIE geredet, nicht wir."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ir-why-05",
+      "es": "Comisteis en un restaurante nuevo.",
+      "tr": {
+        "hu": "Egy új étteremben ettetek.",
+        "en": "You all ate at a new restaurant.",
+        "es": "Comisteis en un restaurante nuevo.",
+        "de": "Ihr habt in einem neuen Restaurant gegessen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Comimos en un restaurante nuevo' állna, azaz MI ettünk ott, nem ti.",
+            "en": "If it were nosotros, it would say 'Comimos en un restaurante nuevo', meaning WE ate there, not you all.",
+            "es": "Si fuera nosotros, diría 'Comimos en un restaurante nuevo', o sea que NOSOTROS comimos ahí, no vosotros.",
+            "de": "Wäre es nosotros, hieße es 'Comimos en un restaurante nuevo', also haben WIR dort gegessen, nicht ihr."
+          }
+        },
+        {
+          "text": {
+            "hu": "ti (vosotros, Spo.)",
+            "en": "you all (vosotros, Spain)",
+            "es": "vosotros",
+            "de": "ihr (vosotros, Spanien)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ő / Ön",
+            "en": "he/she/you (usted)",
+            "es": "él/ella/usted",
+            "de": "er/sie/Sie"
+          },
+          "wrong": {
+            "hu": "Ha él/ella lenne, 'Comió en un restaurante nuevo' állna, azaz Ő evett ott, egyedül, nem ti, többen.",
+            "en": "If it were él/ella, it would say 'Comió en un restaurante nuevo', meaning HE/SHE ate there, alone, not you all.",
+            "es": "Si fuera él/ella, diría 'Comió en un restaurante nuevo', o sea que ÉL/ELLA comió ahí, solo, no vosotros.",
+            "de": "Wäre es él/ella, hieße es 'Comió en un restaurante nuevo', also hat ER/SIE allein dort gegessen, nicht ihr."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ir-why-06",
+      "es": "Vivieron en Puebla.",
+      "tr": {
+        "hu": "Pueblában éltek.",
+        "en": "They lived in Puebla.",
+        "es": "Vivieron en Puebla.",
+        "de": "Sie haben in Puebla gelebt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          },
+          "wrong": {
+            "hu": "Ha tú lenne, 'Viviste en Puebla' állna, azaz TE éltél Pueblában, nem ők.",
+            "en": "If it were tú, it would say 'Viviste en Puebla', meaning YOU lived in Puebla, not them.",
+            "es": "Si fuera tú, diría 'Viviste en Puebla', o sea que TÚ viviste ahí, no ellos.",
+            "de": "Wäre es tú, hieße es 'Viviste en Puebla', also hast DU dort gelebt, nicht sie."
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Vivimos en Puebla' állna, azaz MI éltünk Pueblában, nem ők.",
+            "en": "If it were nosotros, it would say 'Vivimos en Puebla', meaning WE lived in Puebla, not them.",
+            "es": "Si fuera nosotros, diría 'Vivimos en Puebla', o sea que NOSOTROS vivimos ahí, no ellos.",
+            "de": "Wäre es nosotros, hieße es 'Vivimos en Puebla', also haben WIR dort gelebt, nicht sie."
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "ir-why-07",
+      "es": "Viví en México dos años.",
+      "tr": {
+        "hu": "Két évig Mexikóban éltem.",
+        "en": "I lived in Mexico for two years.",
+        "es": "Viví en México dos años.",
+        "de": "Ich habe zwei Jahre in Mexiko gelebt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          }
+        },
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          },
+          "wrong": {
+            "hu": "Ha tú lenne, 'Viviste en México dos años' állna, azaz TE éltél két évig Mexikóban, nem én.",
+            "en": "If it were tú, it would say 'Viviste en México dos años', meaning YOU lived in Mexico for two years, not me.",
+            "es": "Si fuera tú, diría 'Viviste en México dos años', o sea que TÚ viviste ahí, no yo.",
+            "de": "Wäre es tú, hieße es 'Viviste en México dos años', also hast DU dort gelebt, nicht ich."
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Vivimos en México dos años' állna, azaz MI éltünk ott, nem csak én.",
+            "en": "If it were nosotros, it would say 'Vivimos en México dos años', meaning WE lived there, not just me.",
+            "es": "Si fuera nosotros, diría 'Vivimos en México dos años', o sea que NOSOTROS vivimos ahí, no solo yo.",
+            "de": "Wäre es nosotros, hieße es 'Vivimos en México dos años', also haben WIR dort gelebt, nicht nur ich."
+          }
+        }
+      ],
+      "correctIndex": 0
     }
   ]
 }

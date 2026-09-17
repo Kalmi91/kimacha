@@ -1,0 +1,1572 @@
+{
+  "schema": 2,
+  "topic": "pronombres-oi",
+  "level": "A1",
+  "title": {
+    "hu": "Részes eset névmások: le, les",
+    "en": "Indirect object pronouns: le, les",
+    "es": "Pronombres de objeto indirecto: le, les",
+    "de": "Indirekte Objektpronomen: le, les"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A részes eset névmás (me, te, le, nos, os, les) azt fejezi ki, KINEK vagy KI SZÁMÁRA történik a cselekvés: kire irányul az adás, mondás, írás, küldés. Nem azt jelöli, MIT csinálsz (az a tárgyeset névmás dolga), hanem azt, hogy KI a címzett.",
+        "en": "The indirect object pronoun (me, te, le, nos, os, les) expresses TO WHOM or FOR WHOM the action happens: who receives the giving, telling, writing, sending. It does not mark WHAT you do (that is the direct object pronoun's job), but WHO the recipient is.",
+        "es": "El pronombre de objeto indirecto (me, te, le, nos, os, les) expresa A QUIÉN o PARA QUIÉN pasa la acción: quién recibe el dar, decir, escribir, mandar. No marca QUÉ haces, eso es el objeto directo, sino QUIÉN es el destinatario.",
+        "de": "Das indirekte Objektpronomen (me, te, le, nos, os, les) drückt aus, WEM oder FÜR WEN die Handlung geschieht: wer das Geben, Sagen, Schreiben, Schicken empfängt. Es zeigt nicht, WAS du tust, das macht das direkte Objektpronomen, sondern WER der Empfänger ist."
+      }
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Melyik névmás mire",
+        "en": "Which pronoun for what",
+        "es": "Qué pronombre para qué",
+        "de": "Welches Pronomen wofür"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Én vagyok a beszélő, hozzám történik valami: me.",
+            "en": "I am the speaker, something happens to me: me.",
+            "es": "Yo soy quien habla, algo me pasa a mí: me.",
+            "de": "Ich bin der Sprecher, mir geschieht etwas: me."
+          },
+          "examples": [
+            {
+              "es": "Me escribe todos los días.",
+              "tr": {
+                "hu": "Mindennap ír nekem.",
+                "en": "He/she writes to me every day.",
+                "es": "Me escribe todos los días.",
+                "de": "Er/sie schreibt mir jeden Tag."
+              }
+            },
+            {
+              "es": "¿Me traes un café?",
+              "tr": {
+                "hu": "Hozol nekem egy kávét?",
+                "en": "Will you bring me a coffee?",
+                "es": "¿Me traes un café?",
+                "de": "Bringst du mir einen Kaffee?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A beszélgetőpartneremhez történik valami: te.",
+            "en": "Something happens to the person I am talking to: te.",
+            "es": "Algo le pasa a la persona con la que hablo: te.",
+            "de": "Der Person, mit der ich spreche, geschieht etwas: te."
+          },
+          "examples": [
+            {
+              "es": "Te traigo las llaves.",
+              "tr": {
+                "hu": "Hozom neked a kulcsokat.",
+                "en": "I am bringing you the keys.",
+                "es": "Te traigo las llaves.",
+                "de": "Ich bringe dir die Schlüssel."
+              }
+            },
+            {
+              "es": "Te escribo mañana.",
+              "tr": {
+                "hu": "Írok neked holnap.",
+                "en": "I will write to you tomorrow.",
+                "es": "Te escribo mañana.",
+                "de": "Ich schreibe dir morgen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Egy harmadik személy, ő vagy Ön, nemtől függetlenül: le.",
+            "en": "A third person, him, her or usted, regardless of gender: le.",
+            "es": "Una tercera persona, él, ella o usted, sin importar el género: le.",
+            "de": "Eine dritte Person, er, sie oder Sie, unabhängig vom Geschlecht: le."
+          },
+          "examples": [
+            {
+              "es": "Le doy el libro a Juan.",
+              "tr": {
+                "hu": "Odaadom Juannak a könyvet.",
+                "en": "I give the book to Juan.",
+                "es": "Le doy el libro a Juan.",
+                "de": "Ich gebe Juan das Buch."
+              }
+            },
+            {
+              "es": "Le doy el libro a María.",
+              "tr": {
+                "hu": "Odaadom Maríának a könyvet.",
+                "en": "I give the book to María.",
+                "es": "Le doy el libro a María.",
+                "de": "Ich gebe María das Buch."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Mi, a beszélő és mások együtt: nos.",
+            "en": "We, the speaker and others together: nos.",
+            "es": "Nosotros, quien habla y otros juntos: nos.",
+            "de": "Wir, der Sprecher und andere zusammen: nos."
+          },
+          "examples": [
+            {
+              "es": "Nuestros abuelos nos cuentan historias.",
+              "tr": {
+                "hu": "A nagyszüleink meséket mesélnek nekünk.",
+                "en": "Our grandparents tell us stories.",
+                "es": "Nuestros abuelos nos cuentan historias.",
+                "de": "Unsere Großeltern erzählen uns Geschichten."
+              }
+            },
+            {
+              "es": "Nos manda un mensaje cada semana.",
+              "tr": {
+                "hu": "Hetente küld nekünk egy üzenetet.",
+                "en": "He/she sends us a message every week.",
+                "es": "Nos manda un mensaje cada semana.",
+                "de": "Er/sie schickt uns jede Woche eine Nachricht."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ti, Spanyolországban: os. Mexikóban ehelyett ustedes jár, tehát a névmás les lesz.",
+            "en": "You all, in Spain: os. In Mexico ustedes is used instead, so the pronoun becomes les.",
+            "es": "Vosotros, en España: os. En México se usa ustedes en su lugar, así que el pronombre es les.",
+            "de": "Ihr, in Spanien: os. In Mexiko wird stattdessen ustedes benutzt, also wird das Pronomen les."
+          },
+          "examples": [
+            {
+              "es": "Os escribo un mensaje.",
+              "tr": {
+                "hu": "Írok nektek egy üzenetet.",
+                "en": "I am writing you all a message.",
+                "es": "Os escribo un mensaje.",
+                "de": "Ich schreibe euch eine Nachricht."
+              }
+            },
+            {
+              "es": "¿Os traigo algo?",
+              "tr": {
+                "hu": "Hozzak nektek valamit?",
+                "en": "Shall I bring you all something?",
+                "es": "¿Os traigo algo?",
+                "de": "Soll ich euch etwas bringen?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ők vagy Önök, nemtől függetlenül: les.",
+            "en": "They or you all (formal), regardless of gender: les.",
+            "es": "Ellos, ellas o ustedes, sin importar el género: les.",
+            "de": "Sie (Plural) oder Sie (formell), unabhängig vom Geschlecht: les."
+          },
+          "examples": [
+            {
+              "es": "Les mando un mensaje a mis papás.",
+              "tr": {
+                "hu": "Küldök egy üzenetet a szüleimnek.",
+                "en": "I send a message to my parents.",
+                "es": "Les mando un mensaje a mis papás.",
+                "de": "Ich schicke meinen Eltern eine Nachricht."
+              }
+            },
+            {
+              "es": "A los estudiantes les explico la lección.",
+              "tr": {
+                "hu": "A diákoknak elmagyarázom a leckét.",
+                "en": "I explain the lesson to the students.",
+                "es": "A los estudiantes les explico la lección.",
+                "de": "Ich erkläre den Studenten die Lektion."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "pronombres-oi",
+      "title": {
+        "hu": "Részes eset névmások",
+        "en": "Indirect object pronouns",
+        "es": "Pronombres de objeto indirecto",
+        "de": "Indirekte Objektpronomen"
+      },
+      "header": [
+        {
+          "hu": "Alany",
+          "en": "Subject",
+          "es": "Sujeto",
+          "de": "Subjekt"
+        },
+        {
+          "hu": "részes eset névmás",
+          "en": "indirect object pronoun",
+          "es": "pronombre de objeto indirecto",
+          "de": "indirektes Objektpronomen"
+        }
+      ],
+      "rows": [
+        ["yo", "me"],
+        ["tú", "te"],
+        ["él/ella/usted", "le"],
+        ["nosotros", "nos"],
+        ["vosotros", "os"],
+        ["ellos/ellas/ustedes", "les"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Hová kerül a névmás",
+        "en": "Where the pronoun goes",
+        "es": "Dónde va el pronombre",
+        "de": "Wohin das Pronomen kommt"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Alapeset: a ragozott ige elé kerül.",
+            "en": "Default case: it goes before the conjugated verb.",
+            "es": "Caso general: va antes del verbo conjugado.",
+            "de": "Grundfall: es steht vor dem konjugierten Verb."
+          },
+          "examples": [
+            {
+              "es": "Le doy el libro.",
+              "tr": {
+                "hu": "Odaadom neki a könyvet.",
+                "en": "I give him/her the book.",
+                "es": "Le doy el libro.",
+                "de": "Ich gebe ihm/ihr das Buch."
+              }
+            },
+            {
+              "es": "Te traigo un café.",
+              "tr": {
+                "hu": "Hozok neked egy kávét.",
+                "en": "I bring you a coffee.",
+                "es": "Te traigo un café.",
+                "de": "Ich bringe dir einen Kaffee."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Főnévi igenév végéhez is tapadhat, vagy maradhat a ragozott ige előtt is: mindkettő helyes.",
+            "en": "It can also attach to the end of an infinitive, or stay before the conjugated verb: both are correct.",
+            "es": "También puede pegarse al final de un infinitivo, o quedarse antes del verbo conjugado: las dos son correctas.",
+            "de": "Es kann sich auch ans Ende eines Infinitivs hängen, oder vor dem konjugierten Verb bleiben: beides ist korrekt."
+          },
+          "examples": [
+            {
+              "es": "Quiero escribirle.",
+              "tr": {
+                "hu": "Írni akarok neki.",
+                "en": "I want to write to him/her.",
+                "es": "Quiero escribirle.",
+                "de": "Ich möchte ihm/ihr schreiben."
+              }
+            },
+            {
+              "es": "Le quiero escribir.",
+              "tr": {
+                "hu": "Írni akarok neki.",
+                "en": "I want to write to him/her.",
+                "es": "Le quiero escribir.",
+                "de": "Ich möchte ihm/ihr schreiben."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Gerundio végéhez tapad, és ékezetet kap.",
+            "en": "It attaches to the end of a gerund, and gets a written accent.",
+            "es": "Se pega al final de un gerundio, y lleva tilde.",
+            "de": "Es hängt sich ans Ende eines Gerundiums und bekommt einen Akzent."
+          },
+          "examples": [
+            {
+              "es": "Estoy mandándole un mensaje.",
+              "tr": {
+                "hu": "Éppen küldök neki egy üzenetet.",
+                "en": "I am sending him/her a message.",
+                "es": "Estoy mandándole un mensaje.",
+                "de": "Ich schicke ihm/ihr gerade eine Nachricht."
+              }
+            },
+            {
+              "es": "Estamos explicándoles la tarea.",
+              "tr": {
+                "hu": "Éppen elmagyarázzuk nekik a házi feladatot.",
+                "en": "We are explaining the homework to them.",
+                "es": "Estamos explicándoles la tarea.",
+                "de": "Wir erklären ihnen gerade die Hausaufgabe."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Igenlő felszólító mód végéhez is tapad, ékezettel.",
+            "en": "It also attaches to the end of an affirmative command, with a written accent.",
+            "es": "También se pega al final de un imperativo afirmativo, con tilde.",
+            "de": "Es hängt sich auch ans Ende eines bejahenden Imperativs, mit Akzent."
+          },
+          "examples": [
+            {
+              "es": "Escríbele hoy.",
+              "tr": {
+                "hu": "Írj neki ma.",
+                "en": "Write to him/her today.",
+                "es": "Escríbele hoy.",
+                "de": "Schreib ihm/ihr heute."
+              }
+            },
+            {
+              "es": "Cuéntanos la historia.",
+              "tr": {
+                "hu": "Meséld el nekünk a történetet.",
+                "en": "Tell us the story.",
+                "es": "Cuéntanos la historia.",
+                "de": "Erzähl uns die Geschichte."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Tagadásban a \"no\" a névmás elé kerül, a névmás pedig az ige elé; ilyenkor sosem tapad az igéhez.",
+            "en": "In the negative, \"no\" goes before the pronoun, and the pronoun goes before the verb; it never attaches in this case.",
+            "es": "En negativo, \"no\" va antes del pronombre, y el pronombre antes del verbo; en este caso nunca se pega al verbo.",
+            "de": "Bei der Verneinung steht \"no\" vor dem Pronomen, und das Pronomen vor dem Verb; dabei hängt es sich nie ans Verb."
+          },
+          "examples": [
+            {
+              "es": "No le escribo.",
+              "tr": {
+                "hu": "Nem írok neki.",
+                "en": "I do not write to him/her.",
+                "es": "No le escribo.",
+                "de": "Ich schreibe ihm/ihr nicht."
+              }
+            },
+            {
+              "es": "No nos cuenta nada.",
+              "tr": {
+                "hu": "Nem mesél nekünk semmit.",
+                "en": "He/she does not tell us anything.",
+                "es": "No nos cuenta nada.",
+                "de": "Er/sie erzählt uns nichts."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ha a személy neve is szerepel a mondatban (\"a + személy\"), a névmás akkor is kötelező marad; ez a kettőzés a spanyolban normális, nem hiba.",
+            "en": "Even when the person is also named in the sentence (\"a + person\"), the pronoun is still required; this doubling is normal in Spanish, not a mistake.",
+            "es": "Aunque la persona también esté nombrada en la frase (\"a + persona\"), el pronombre sigue siendo obligatorio; esta duplicación es normal en español, no un error.",
+            "de": "Auch wenn die Person im Satz zusätzlich genannt wird (\"a + Person\"), bleibt das Pronomen trotzdem Pflicht; diese Verdopplung ist im Spanischen normal, kein Fehler."
+          },
+          "examples": [
+            {
+              "es": "A mi hermano le compro un regalo.",
+              "tr": {
+                "hu": "A bátyámnak veszek egy ajándékot.",
+                "en": "I am buying my brother a gift.",
+                "es": "A mi hermano le compro un regalo.",
+                "de": "Ich kaufe meinem Bruder ein Geschenk."
+              }
+            },
+            {
+              "es": "A mis papás les mando flores.",
+              "tr": {
+                "hu": "A szüleimnek virágot küldök.",
+                "en": "I am sending my parents flowers.",
+                "es": "A mis papás les mando flores.",
+                "de": "Ich schicke meinen Eltern Blumen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Hasonló, mégis más",
+        "en": "Similar, yet different",
+        "es": "Parecido, pero distinto",
+        "de": "Ähnlich, aber anders"
+      },
+      "pairs": [
+        {
+          "a": "le / les",
+          "b": "se",
+          "note": {
+            "hu": "Ha egy le vagy les ugyanabban a mondatban egy lo, la, los vagy las mellé kerülne, kötelezően se lesz belőle, hogy ne álljon egymás mellett két l-lel kezdődő névmás.",
+            "en": "If a le or les would stand next to a lo, la, los or las in the same sentence, it must turn into se, so that two pronouns starting with l do not stand side by side.",
+            "es": "Si un le o les fuera a estar junto a un lo, la, los o las en la misma frase, se convierte obligatoriamente en se, para que no queden dos pronombres con l seguidos.",
+            "de": "Wenn ein le oder les in demselben Satz neben einem lo, la, los oder las stehen würde, wird daraus zwingend se, damit nicht zwei mit l beginnende Pronomen nebeneinanderstehen."
+          },
+          "examples": [
+            {
+              "es": "Se lo doy a María.",
+              "tr": {
+                "hu": "Odaadom neki (María-nak).",
+                "en": "I give it to her (María).",
+                "es": "Se lo doy a María.",
+                "de": "Ich gebe es ihr (María)."
+              }
+            },
+            {
+              "es": "Se las mando a mis papás.",
+              "tr": {
+                "hu": "Elküldöm nekik (a szüleimnek).",
+                "en": "I send them to my parents.",
+                "es": "Se las mando a mis papás.",
+                "de": "Ich schicke sie ihnen (meinen Eltern)."
+              }
+            }
+          ]
+        },
+        {
+          "a": "le doy",
+          "b": "a él le doy / a ella le doy",
+          "note": {
+            "hu": "A le önmagában nem árulja el, hogy férfiról, nőről vagy Önről van szó; ha ez félreérthető, a mondat kiegészíthető \"a él\", \"a ella\" vagy \"a usted\" résszel a névmás mellett.",
+            "en": "Le alone does not reveal whether it means a man, a woman or usted; when that is unclear, the sentence can be filled out with \"a él\", \"a ella\" or \"a usted\" next to the pronoun.",
+            "es": "Le por sí solo no dice si se trata de un hombre, una mujer o usted; cuando eso es ambiguo, la frase se puede completar con \"a él\", \"a ella\" o \"a usted\" junto al pronombre.",
+            "de": "Le allein zeigt nicht, ob ein Mann, eine Frau oder usted gemeint ist; wenn das unklar ist, kann der Satz mit \"a él\", \"a ella\" oder \"a usted\" neben dem Pronomen ergänzt werden."
+          },
+          "examples": [
+            {
+              "es": "Le doy el libro.",
+              "tr": {
+                "hu": "Odaadom neki a könyvet.",
+                "en": "I give him/her the book.",
+                "es": "Le doy el libro.",
+                "de": "Ich gebe ihm/ihr das Buch."
+              }
+            },
+            {
+              "es": "A ella le doy el libro, no a él.",
+              "tr": {
+                "hu": "Neki (nőnek) adom a könyvet, nem neki (férfinak).",
+                "en": "I give the book to her, not to him.",
+                "es": "A ella le doy el libro, no a él.",
+                "de": "Ich gebe das Buch ihr, nicht ihm."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Mexikóban a vosotros/os helyett ustedes/les jár, még ott is, ahol Spanyolországban vosotros/os lenne a természetes.",
+        "en": "In Mexico, ustedes/les is used instead of vosotros/os, even where Spain would naturally use vosotros/os.",
+        "es": "En México se usa ustedes/les en vez de vosotros/os, incluso donde en España sería natural vosotros/os.",
+        "de": "In Mexiko wird ustedes/les statt vosotros/os verwendet, auch dort, wo es in Spanien natürlich vosotros/os wäre."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A le és les soha nem válik la-vá vagy las-szá, még nőnemű címzettnél sem; ez gyakori tanulói hiba, ne kövesd el.",
+        "en": "Le and les never turn into la or las, not even for a feminine recipient; this is a common learner mistake, avoid it.",
+        "es": "Le y les nunca se convierten en la o las, ni siquiera con un destinatario femenino; es un error frecuente entre estudiantes, evítalo.",
+        "de": "Le und les werden nie zu la oder las, auch nicht bei einer weiblichen Empfängerin; das ist ein häufiger Lernfehler, vermeide ihn."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A részes eset névmás azt mondja meg, kinek vagy ki számára történik valami. Amikor adok, mondok, írok vagy küldök valamit valakinek, ez a névmás jelöli meg a címzettet: «le doy el libro», «les mando un mensaje». A le és a les nem változik nemben, akkor sem, ha a címzett nő: «le escribo a mi hermana» ugyanúgy le, mint «le escribo a mi hermano». Nagyon gyakori, hogy a névmás mellett a személyt is kimondjuk «a» szóval, még akkor is, ha ez ismétlésnek tűnik: «a mi jefa le mando el reporte». A névmás a ragozott ige elé kerül, de a főnévi igenévhez vagy a gerundióhoz hozzá is tapadhat: «quiero escribirle» vagy «estoy mandándole un mensaje». Ha a le vagy les egy lo, la, los vagy las mellett állna, mindig se lesz belőle: «se lo doy», sosem «le lo doy».",
+    "en": "The indirect object pronoun tells you who or for whom something happens. When I give, tell, write or send something to someone, this pronoun marks the recipient: «le doy el libro», «les mando un mensaje». Le and les never change for gender, even when the recipient is a woman: «le escribo a mi hermana» stays le, just like «le escribo a mi hermano». It is very common to also name the person with «a», even though it can feel repetitive: «a mi jefa le mando el reporte». The pronoun goes before the conjugated verb, but it can also attach to the end of an infinitive or a gerund: «quiero escribirle» or «estoy mandándole un mensaje». If le or les stood next to lo, la, los or las, it always turns into se: «se lo doy», never «le lo doy».",
+    "es": "El pronombre de objeto indirecto dice a quién o para quién pasa algo. Cuando doy, digo, escribo o mando algo a alguien, este pronombre marca al destinatario: «le doy el libro», «les mando un mensaje». Le y les nunca cambian de género, aunque el destinatario sea mujer: «le escribo a mi hermana» se queda en le, igual que «le escribo a mi hermano». Es muy común nombrar también a la persona con «a», aunque parezca repetición: «a mi jefa le mando el reporte». El pronombre va antes del verbo conjugado, pero también puede pegarse al final de un infinitivo o de un gerundio: «quiero escribirle» o «estoy mandándole un mensaje». Si le o les estuviera junto a lo, la, los o las, siempre se convierte en se: «se lo doy», nunca «le lo doy».",
+    "de": "Das indirekte Objektpronomen sagt, wem oder für wen etwas geschieht. Wenn ich jemandem etwas gebe, sage, schreibe oder schicke, markiert dieses Pronomen den Empfänger: «le doy el libro», «les mando un mensaje». Le und les ändern sich nie nach Geschlecht, auch wenn der Empfänger eine Frau ist: «le escribo a mi hermana» bleibt le, genau wie «le escribo a mi hermano». Es ist sehr üblich, die Person zusätzlich mit «a» zu nennen, auch wenn es wie eine Wiederholung wirkt: «a mi jefa le mando el reporte». Das Pronomen steht vor dem konjugierten Verb, kann sich aber auch ans Ende eines Infinitivs oder eines Gerundiums hängen: «quiero escribirle» oder «estoy mandándole un mensaje». Steht le oder les neben lo, la, los oder las, wird daraus immer se: «se lo doy», nie «le lo doy»."
+  },
+  "glossary": [
+    {
+      "word": "Juan",
+      "gloss": {
+        "hu": "Juan (férfinév)",
+        "en": "Juan (male name)",
+        "es": "Juan (nombre de hombre)",
+        "de": "Juan (Männername)"
+      }
+    },
+    {
+      "word": "papás",
+      "gloss": {
+        "hu": "szülők (köznyelvi)",
+        "en": "parents (colloquial)",
+        "es": "papás",
+        "de": "Eltern (umgangssprachlich)"
+      }
+    },
+    {
+      "word": "mamá",
+      "gloss": {
+        "hu": "anya",
+        "en": "mom",
+        "es": "mamá",
+        "de": "Mama"
+      }
+    },
+    {
+      "word": "papá",
+      "gloss": {
+        "hu": "apa",
+        "en": "dad",
+        "es": "papá",
+        "de": "Papa"
+      }
+    },
+    {
+      "word": "escribeme",
+      "gloss": {
+        "hu": "⚠ nem létező alak (hiányzik az ékezet, helyesen: escríbeme)",
+        "en": "⚠ non-existent form (missing accent, correct: escríbeme)",
+        "es": "⚠ forma inexistente (falta el acento, correcto: escríbeme)",
+        "de": "⚠ nicht existierende Form (fehlender Akzent, richtig: escríbeme)"
+      }
+    },
+    {
+      "word": "tarea",
+      "gloss": {
+        "hu": "házi feladat",
+        "en": "homework",
+        "es": "tarea",
+        "de": "Hausaufgabe"
+      }
+    },
+    {
+      "word": "cuentos",
+      "gloss": {
+        "hu": "mesék",
+        "en": "tales",
+        "es": "cuentos",
+        "de": "Märchen"
+      }
+    },
+    {
+      "word": "beso",
+      "gloss": {
+        "hu": "csók",
+        "en": "kiss",
+        "es": "beso",
+        "de": "Kuss"
+      }
+    },
+    {
+      "word": "reporte",
+      "gloss": {
+        "hu": "jelentés",
+        "en": "report",
+        "es": "reporte",
+        "de": "Bericht"
+      }
+    },
+    {
+      "word": "jefa",
+      "gloss": {
+        "hu": "főnök (nő)",
+        "en": "boss (fem.)",
+        "es": "jefa",
+        "de": "Chefin"
+      }
+    },
+    {
+      "word": "jefe",
+      "gloss": {
+        "hu": "főnök",
+        "en": "boss",
+        "es": "jefe",
+        "de": "Chef"
+      }
+    },
+    {
+      "word": "mando",
+      "gloss": {
+        "hu": "küldök (mandar)",
+        "en": "I send (mandar)",
+        "es": "yo mando",
+        "de": "ich schicke (mandar)"
+      }
+    },
+    {
+      "word": "mandar",
+      "gloss": {
+        "hu": "küldeni",
+        "en": "to send",
+        "es": "mandar",
+        "de": "schicken"
+      }
+    },
+    {
+      "word": "explico",
+      "gloss": {
+        "hu": "elmagyarázom (explicar)",
+        "en": "I explain (explicar)",
+        "es": "yo explico",
+        "de": "ich erkläre (explicar)"
+      }
+    },
+    {
+      "word": "explicar",
+      "gloss": {
+        "hu": "elmagyarázni",
+        "en": "to explain",
+        "es": "explicar",
+        "de": "erklären"
+      }
+    },
+    {
+      "word": "lección",
+      "gloss": {
+        "hu": "lecke",
+        "en": "lesson",
+        "es": "lección",
+        "de": "Lektion"
+      }
+    },
+    {
+      "word": "estudiantes",
+      "gloss": {
+        "hu": "diákok",
+        "en": "students",
+        "es": "estudiantes",
+        "de": "Studenten"
+      }
+    },
+    {
+      "word": "alumnos",
+      "gloss": {
+        "hu": "tanulók",
+        "en": "students, pupils",
+        "es": "alumnos",
+        "de": "Schüler"
+      }
+    },
+    {
+      "word": "traigo",
+      "gloss": {
+        "hu": "hozok (traer)",
+        "en": "I bring (traer)",
+        "es": "yo traigo",
+        "de": "ich bringe (traer)"
+      }
+    },
+    {
+      "word": "traer",
+      "gloss": {
+        "hu": "hozni",
+        "en": "to bring",
+        "es": "traer",
+        "de": "bringen"
+      }
+    },
+    {
+      "word": "cuentan",
+      "gloss": {
+        "hu": "mesélnek (contar)",
+        "en": "they tell (contar)",
+        "es": "ellos cuentan",
+        "de": "sie erzählen (contar)"
+      }
+    },
+    {
+      "word": "contar",
+      "gloss": {
+        "hu": "mesélni, számolni",
+        "en": "to tell, to count",
+        "es": "contar",
+        "de": "erzählen, zählen"
+      }
+    },
+    {
+      "word": "historias",
+      "gloss": {
+        "hu": "történetek",
+        "en": "stories",
+        "es": "historias",
+        "de": "Geschichten"
+      }
+    },
+    {
+      "word": "correo",
+      "gloss": {
+        "hu": "e-mail, posta",
+        "en": "mail, email",
+        "es": "correo",
+        "de": "E-Mail, Post"
+      }
+    },
+    {
+      "word": "mensaje",
+      "gloss": {
+        "hu": "üzenet",
+        "en": "message",
+        "es": "mensaje",
+        "de": "Nachricht"
+      }
+    },
+    {
+      "word": "mandándole",
+      "gloss": {
+        "hu": "küldve neki (tapadó névmás)",
+        "en": "sending to him/her (pronoun attached to gerund)",
+        "es": "mandándole",
+        "de": "ihm/ihr sendend (angehängtes Pronomen)"
+      }
+    },
+    {
+      "word": "mandandole",
+      "gloss": {
+        "hu": "⚠ nem létező alak (hiányzik az ékezet, helyesen: mandándole)",
+        "en": "⚠ non-existent form (missing accent, correct: mandándole)",
+        "es": "⚠ forma inexistente (falta el acento, correcto: mandándole)",
+        "de": "⚠ nicht existierende Form (fehlender Akzent, richtig: mandándole)"
+      }
+    },
+    {
+      "word": "mandarle",
+      "gloss": {
+        "hu": "küldeni neki (főnévi igenév + névmás)",
+        "en": "to send to him/her (infinitive + pronoun)",
+        "es": "mandarle",
+        "de": "ihm/ihr senden (Infinitiv + Pronomen)"
+      }
+    },
+    {
+      "word": "flores",
+      "gloss": {
+        "hu": "virágok",
+        "en": "flowers",
+        "es": "flores",
+        "de": "Blumen"
+      }
+    },
+    {
+      "word": "cumpleaños",
+      "gloss": {
+        "hu": "születésnap",
+        "en": "birthday",
+        "es": "cumpleaños",
+        "de": "Geburtstag"
+      }
+    },
+    {
+      "word": "regalo",
+      "gloss": {
+        "hu": "ajándék / ajándékozok",
+        "en": "gift / I gift",
+        "es": "regalo",
+        "de": "Geschenk / ich schenke"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "oi-01",
+      "sentence": "___ doy el libro a María.",
+      "options": ["Le", "La", "Lo"],
+      "correct": 0,
+      "why": {
+        "hu": "A dar mellett a kapó fél mindig részes esetet kap, María nő létére is le: Le doy el libro a María.",
+        "en": "With dar, the receiver always takes the indirect object, and even though María is a woman, it is le: Le doy el libro a María.",
+        "es": "Con dar, quien recibe siempre lleva objeto indirecto, y aunque María es mujer, es le: Le doy el libro a María.",
+        "de": "Bei dar bekommt der Empfänger immer das indirekte Objekt, und obwohl María eine Frau ist, heißt es le: Le doy el libro a María."
+      },
+      "wrong": {
+        "La": {
+          "hu": "\"La\" tárgyeset névmás lenne, ami nőnemű dologra vagy személyre utalna mint az ige közvetlen célpontjára; itt viszont María a KAPÓ fél, nem a közvetlen tárgy, ezért a részes eset kell, ami sosem válik la-vá: Le doy el libro a María.",
+          "en": "\"La\" would be a direct object pronoun, pointing to a feminine thing or person as the verb's direct target; here María is the RECEIVER, not the direct target, so the indirect object is needed, which never turns into la: Le doy el libro a María.",
+          "es": "\"La\" sería un pronombre de objeto directo, que señalaría a una cosa o persona femenina como blanco directo del verbo; aquí María es quien RECIBE, no el blanco directo, por eso hace falta el objeto indirecto, que nunca se vuelve la: Le doy el libro a María.",
+          "de": "\"La\" wäre ein direktes Objektpronomen, das auf eine feminine Sache oder Person als direktes Ziel des Verbs zeigen würde; hier ist María die EMPFÄNGERIN, nicht das direkte Ziel, deshalb braucht es das indirekte Objekt, das nie zu la wird: Le doy el libro a María."
+        },
+        "Lo": {
+          "hu": "\"Lo\" tárgyeset névmás lenne, ami magára a könyvre (el libro) utalna mint közvetlen célpontra; itt viszont nem a könyvet nevezzük meg névmással, hanem a kapó felet, ami mindig le: Le doy el libro a María.",
+          "en": "\"Lo\" would be a direct object pronoun, referring to the book itself (el libro) as the direct target; here it is not the book we are naming with a pronoun, but the receiver, which is always le: Le doy el libro a María.",
+          "es": "\"Lo\" sería un pronombre de objeto directo, que se referiría al propio libro (el libro) como blanco directo; aquí no nombramos al libro con el pronombre, sino a quien recibe, que siempre es le: Le doy el libro a María.",
+          "de": "\"Lo\" wäre ein direktes Objektpronomen, das sich auf das Buch selbst (el libro) als direktes Ziel bezieht; hier benennen wir mit dem Pronomen nicht das Buch, sondern den Empfänger, der immer le heißt: Le doy el libro a María."
+        }
+      },
+      "examples": [
+        "Le doy el libro a Juan.",
+        "Le doy las llaves a mi amigo."
+      ]
+    },
+    {
+      "id": "oi-02",
+      "sentence": "Voy a ___ un mensaje a mis papás.",
+      "options": ["escribirles", "les escribir", "escribirlos"],
+      "correct": 0,
+      "why": {
+        "hu": "A névmás hozzátapad a főnévi igenévhez, ha az áll az ige után: escribirles.",
+        "en": "The pronoun attaches to the end of the infinitive when it follows the conjugated verb: escribirles.",
+        "es": "El pronombre se pega al final del infinitivo cuando este va después del verbo conjugado: escribirles.",
+        "de": "Das Pronomen hängt sich ans Ende des Infinitivs, wenn dieser nach dem konjugierten Verb steht: escribirles."
+      },
+      "wrong": {
+        "les escribir": {
+          "hu": "A névmás nem állhat önmagában egy csupasz főnévi igenév előtt; ha ezt a szórendet akarnád, a névmásnak a ragozott ige (voy) elé kellene kerülnie: Les voy a escribir un mensaje a mis papás.",
+          "en": "The pronoun cannot stand alone right before a bare infinitive; to use this word order, it would need to go before the conjugated verb (voy): Les voy a escribir un mensaje a mis papás.",
+          "es": "El pronombre no puede ir solo justo antes de un infinitivo suelto; para este orden, tendría que ir antes del verbo conjugado (voy): Les voy a escribir un mensaje a mis papás.",
+          "de": "Das Pronomen kann nicht allein direkt vor einem bloßen Infinitiv stehen; für diese Wortstellung müsste es vor dem konjugierten Verb (voy) stehen: Les voy a escribir un mensaje a mis papás."
+        },
+        "escribirlos": {
+          "hu": "A \"los\" tárgyeset névmás, ami hímnemű dolgokra vagy emberekre utalna mint közvetlen célpontra; itt viszont a levél CÍMZETTJEiről van szó, ami mindig részes eset: escribirles.",
+          "en": "\"Los\" is a direct object pronoun, pointing to masculine things or people as the direct target; here it is about the letter's RECIPIENTS, which always takes the indirect object: escribirles.",
+          "es": "\"Los\" es un pronombre de objeto directo, que señalaría a cosas o personas masculinas como blanco directo; aquí se trata de los DESTINATARIOS del mensaje, que siempre llevan objeto indirecto: escribirles.",
+          "de": "\"Los\" ist ein direktes Objektpronomen, das auf maskuline Dinge oder Personen als direktes Ziel zeigen würde; hier geht es um die EMPFÄNGER der Nachricht, die immer das indirekte Objekt bekommen: escribirles."
+        }
+      },
+      "examples": [
+        "Les voy a escribir mañana.",
+        "Quiero escribirle un mensaje a mi hermano."
+      ]
+    },
+    {
+      "id": "oi-03",
+      "sentence": "Yo ___ doy un regalo a mi hermana.",
+      "options": ["le", "lo", "la"],
+      "correct": 0,
+      "why": {
+        "hu": "A kapó fél (mi hermana) mindig részes esetet kap, nemtől függetlenül: le.",
+        "en": "The receiver (mi hermana) always takes the indirect object, regardless of gender: le.",
+        "es": "Quien recibe (mi hermana) siempre lleva objeto indirecto, sin importar el género: le.",
+        "de": "Der Empfänger (mi hermana) bekommt immer das indirekte Objekt, unabhängig vom Geschlecht: le."
+      },
+      "wrong": {
+        "lo": {
+          "hu": "\"Lo\" tárgyeset névmás, ami magára az ajándékra (el regalo) utalna mint közvetlen célpontra; itt viszont a kapó felet nevezzük meg névmással, ami mindig le, akkor is, ha nő: Le doy un regalo a mi hermana.",
+          "en": "\"Lo\" is a direct object pronoun, pointing to the gift itself (el regalo) as the direct target; here we are naming the receiver with the pronoun, which is always le, even for a woman: Le doy un regalo a mi hermana.",
+          "es": "\"Lo\" es un pronombre de objeto directo, que se referiría al propio regalo (el regalo) como blanco directo; aquí nombramos con el pronombre a quien recibe, que siempre es le, aunque sea mujer: Le doy un regalo a mi hermana.",
+          "de": "\"Lo\" ist ein direktes Objektpronomen, das sich auf das Geschenk selbst (el regalo) als direktes Ziel bezieht; hier benennen wir mit dem Pronomen den Empfänger, der immer le heißt, auch bei einer Frau: Le doy un regalo a mi hermana."
+        },
+        "la": {
+          "hu": "\"La\" tárgyeset névmás, ami azt jelentené, hogy magát a nővéredet adnád oda mint közvetlen célpontot; a kapó félre viszont mindig le jár, ez sosem válik la-vá: Le doy un regalo a mi hermana.",
+          "en": "\"La\" is a direct object pronoun, which would mean giving away your sister herself as the direct target; the receiver always takes le, and this never turns into la: Le doy un regalo a mi hermana.",
+          "es": "\"La\" es un pronombre de objeto directo, que significaría entregar a tu propia hermana como blanco directo; quien recibe siempre lleva le, y esto nunca se vuelve la: Le doy un regalo a mi hermana.",
+          "de": "\"La\" ist ein direktes Objektpronomen, das bedeuten würde, deine Schwester selbst als direktes Ziel wegzugeben; der Empfänger bekommt immer le, das wird nie zu la: Le doy un regalo a mi hermana."
+        }
+      },
+      "examples": [
+        "Le doy un regalo a mi hermano.",
+        "Le doy flores a mi mamá."
+      ]
+    },
+    {
+      "id": "oi-04",
+      "sentence": "Ella ___ todos los días.",
+      "options": ["me escribe", "escribe me", "escribeme"],
+      "correct": 0,
+      "why": {
+        "hu": "A névmás a ragozott ige ELÉ kerül: me escribe.",
+        "en": "The pronoun goes BEFORE the conjugated verb: me escribe.",
+        "es": "El pronombre va ANTES del verbo conjugado: me escribe.",
+        "de": "Das Pronomen steht VOR dem konjugierten Verb: me escribe."
+      },
+      "wrong": {
+        "escribe me": {
+          "hu": "Ebben a szórendben a névmás a ragozott ige UTÁN állna; ez a spanyolban csak felszólító módban megengedett, kijelentő módban a névmás mindig az ige előtt áll: Me escribe todos los días.",
+          "en": "In this word order the pronoun would come AFTER the conjugated verb; Spanish only allows that in the imperative, in a statement the pronoun always goes before the verb: Me escribe todos los días.",
+          "es": "En este orden el pronombre iría DESPUÉS del verbo conjugado; el español solo lo permite en imperativo, en una afirmación el pronombre va siempre antes del verbo: Me escribe todos los días.",
+          "de": "In dieser Wortstellung stünde das Pronomen NACH dem konjugierten Verb; das erlaubt das Spanische nur im Imperativ, in einer Aussage steht das Pronomen immer vor dem Verb: Me escribe todos los días."
+        },
+        "escribeme": {
+          "hu": "Ez az alak helyesírásilag hibás lenne felszólító módban is (hiányzik az ékezet, helyesen escríbeme), de itt egyáltalán nem felszólításról van szó, hanem kijelentésről, ahol a névmás az ige elé kerül: Me escribe todos los días.",
+          "en": "This spelling would be wrong even as an imperative (missing accent, correctly escríbeme), but this is not an imperative at all, it is a statement, where the pronoun goes before the verb: Me escribe todos los días.",
+          "es": "Esta forma sería incorrecta incluso como imperativo (falta el acento, correcto escríbeme), pero aquí no es un imperativo, sino una afirmación, donde el pronombre va antes del verbo: Me escribe todos los días.",
+          "de": "Diese Schreibweise wäre selbst als Imperativ falsch (fehlender Akzent, richtig escríbeme), aber hier ist es gar kein Imperativ, sondern eine Aussage, bei der das Pronomen vor dem Verb steht: Me escribe todos los días."
+        }
+      },
+      "examples": [
+        "Me escribe cada semana.",
+        "Nos escribe desde México."
+      ]
+    },
+    {
+      "id": "oi-05",
+      "sentence": "A mi hermano ___ un regalo.",
+      "options": ["le compro", "compro", "les compro"],
+      "correct": 0,
+      "why": {
+        "hu": "Bár a személy meg van nevezve (a mi hermano), a le névmás akkor is kötelező, ez a spanyolos kettőzés.",
+        "en": "Even though the person is named (a mi hermano), the pronoun le is still required, this is the normal Spanish doubling.",
+        "es": "Aunque la persona esté nombrada (a mi hermano), el pronombre le sigue siendo obligatorio, es la duplicación normal del español.",
+        "de": "Auch wenn die Person genannt wird (a mi hermano), ist das Pronomen le trotzdem Pflicht, das ist die normale spanische Verdopplung."
+      },
+      "wrong": {
+        "compro": {
+          "hu": "A puszta \"compro\" azt jelentené, hogy csak veszel valamit, anélkül hogy megneveznéd, KINEK; a spanyol a névmást akkor is kiteszi, ha a személy neve már ott áll a mondatban: A mi hermano le compro un regalo.",
+          "en": "A bare \"compro\" would mean you are just buying something, without saying TO WHOM; Spanish still adds the pronoun even when the person is already named in the sentence: A mi hermano le compro un regalo.",
+          "es": "Un simple \"compro\" significaría solo que compras algo, sin decir A QUIÉN; el español sigue poniendo el pronombre aunque la persona ya esté nombrada: A mi hermano le compro un regalo.",
+          "de": "Ein bloßes \"compro\" würde nur bedeuten, dass du etwas kaufst, ohne zu sagen, FÜR WEN; das Spanische setzt das Pronomen trotzdem, auch wenn die Person im Satz schon genannt wird: A mi hermano le compro un regalo."
+        },
+        "les compro": {
+          "hu": "A \"les\" többes számú részes eset lenne, de \"mi hermano\" csak egy ember; egyes számban a névmás le: A mi hermano le compro un regalo.",
+          "en": "\"Les\" would be the plural indirect object, but \"mi hermano\" is just one person; in the singular the pronoun is le: A mi hermano le compro un regalo.",
+          "es": "\"Les\" sería el objeto indirecto plural, pero \"mi hermano\" es una sola persona; en singular el pronombre es le: A mi hermano le compro un regalo.",
+          "de": "\"Les\" wäre das indirekte Objekt im Plural, aber \"mi hermano\" ist nur eine Person; im Singular heißt das Pronomen le: A mi hermano le compro un regalo."
+        }
+      },
+      "examples": [
+        "A mi hermana le compro un regalo.",
+        "A mis amigos les compro un café."
+      ]
+    },
+    {
+      "id": "oi-06",
+      "sentence": "A mi jefa ___ mando el reporte.",
+      "options": ["le", "la", "les"],
+      "correct": 0,
+      "why": {
+        "hu": "A le nem változik nemben, a jefa nő létére is le marad.",
+        "en": "Le does not change for gender; even though jefa is feminine, it stays le.",
+        "es": "Le no cambia de género; aunque jefa es femenino, se queda en le.",
+        "de": "Le ändert sich nicht nach Geschlecht; obwohl jefa feminin ist, bleibt es le."
+      },
+      "wrong": {
+        "la": {
+          "hu": "\"La\" tárgyeset névmás, ami azt jelentené, hogy magát a jefát küldenéd el mint közvetlen célpontot; itt viszont ő a jelentés CÍMZETTJE, ami mindig le, még nőnemű személynél is: A mi jefa le mando el reporte.",
+          "en": "\"La\" is a direct object pronoun, which would mean sending the boss herself as the direct target; here she is the RECIPIENT of the report, which is always le, even for a feminine person: A mi jefa le mando el reporte.",
+          "es": "\"La\" es un pronombre de objeto directo, que significaría enviar a la propia jefa como blanco directo; aquí ella es la DESTINATARIA del reporte, que siempre lleva le, aunque sea mujer: A mi jefa le mando el reporte.",
+          "de": "\"La\" ist ein direktes Objektpronomen, das bedeuten würde, die Chefin selbst als direktes Ziel zu schicken; hier ist sie die EMPFÄNGERIN des Berichts, was immer le heißt, auch bei einer weiblichen Person: A mi jefa le mando el reporte."
+        },
+        "les": {
+          "hu": "A \"les\" többes szám lenne, de \"mi jefa\" csak egy ember; egyes számban a névmás le: A mi jefa le mando el reporte.",
+          "en": "\"Les\" would be plural, but \"mi jefa\" is just one person; in the singular the pronoun is le: A mi jefa le mando el reporte.",
+          "es": "\"Les\" sería plural, pero \"mi jefa\" es una sola persona; en singular el pronombre es le: A mi jefa le mando el reporte.",
+          "de": "\"Les\" wäre Plural, aber \"mi jefa\" ist nur eine Person; im Singular heißt das Pronomen le: A mi jefa le mando el reporte."
+        }
+      },
+      "examples": [
+        "A mi jefe le mando el reporte.",
+        "Le mando un mensaje a mi jefa."
+      ]
+    },
+    {
+      "id": "oi-07",
+      "sentence": "A los estudiantes ___ explico la lección.",
+      "options": ["les", "le", "los"],
+      "correct": 0,
+      "why": {
+        "hu": "Los estudiantes többes szám, ezért les.",
+        "en": "Los estudiantes is plural, so les.",
+        "es": "Los estudiantes es plural, por eso les.",
+        "de": "Los estudiantes ist Plural, also les."
+      },
+      "wrong": {
+        "le": {
+          "hu": "\"Le\" egyes számú részes eset lenne, itt viszont több diákról van szó; többes számban a névmás les: A los estudiantes les explico la lección.",
+          "en": "\"Le\" would be the singular indirect object, but here there are several students; in the plural the pronoun is les: A los estudiantes les explico la lección.",
+          "es": "\"Le\" sería el objeto indirecto singular, pero aquí hay varios estudiantes; en plural el pronombre es les: A los estudiantes les explico la lección.",
+          "de": "\"Le\" wäre das indirekte Objekt im Singular, hier geht es aber um mehrere Studenten; im Plural heißt das Pronomen les: A los estudiantes les explico la lección."
+        },
+        "los": {
+          "hu": "\"Los\" tárgyeset névmás, ami azt jelentené, hogy magukat a diákokat magyaráznád el mint közvetlen célpontot; itt viszont ők a magyarázat CÍMZETTJEI, ami mindig les: A los estudiantes les explico la lección.",
+          "en": "\"Los\" is a direct object pronoun, which would mean explaining the students themselves as the direct target; here they are the RECIPIENTS of the explanation, which is always les: A los estudiantes les explico la lección.",
+          "es": "\"Los\" es un pronombre de objeto directo, que significaría explicar a los propios estudiantes como blanco directo; aquí ellos son los DESTINATARIOS de la explicación, que siempre lleva les: A los estudiantes les explico la lección.",
+          "de": "\"Los\" ist ein direktes Objektpronomen, das bedeuten würde, die Studenten selbst als direktes Ziel zu erklären; hier sind sie die EMPFÄNGER der Erklärung, was immer les heißt: A los estudiantes les explico la lección."
+        }
+      },
+      "examples": [
+        "A mis alumnos les explico todo.",
+        "Les explico la tarea a los niños."
+      ]
+    },
+    {
+      "id": "oi-08",
+      "sentence": "¿___ traigo un café?",
+      "options": ["Te", "Tu", "Ti"],
+      "correct": 0,
+      "why": {
+        "hu": "A ragozott ige elé részes eset névmás kell: te traigo.",
+        "en": "Before the conjugated verb we need an indirect object pronoun: te traigo.",
+        "es": "Antes del verbo conjugado hace falta pronombre de objeto indirecto: te traigo.",
+        "de": "Vor dem konjugierten Verb braucht es ein indirektes Objektpronomen: te traigo."
+      },
+      "wrong": {
+        "Tu": {
+          "hu": "\"Tu\" birtokos névmás (a te kávéd), nem személyes névmás, ezért nem állhat itt az ige előtt tárgy/részes esetként; helyesen: ¿Te traigo un café?",
+          "en": "\"Tu\" is a possessive (your coffee), not a personal pronoun, so it cannot stand here before the verb as an object; correctly: ¿Te traigo un café?",
+          "es": "\"Tu\" es posesivo (tu café), no pronombre personal, así que no puede ir aquí antes del verbo como objeto; correctamente: ¿Te traigo un café?",
+          "de": "\"Tu\" ist ein Possessiv (dein Kaffee), kein Personalpronomen, deshalb kann es hier nicht vor dem Verb als Objekt stehen; richtig: ¿Te traigo un café?"
+        },
+        "Ti": {
+          "hu": "\"Ti\" csak elöljárószó után áll (a ti, para ti), sosem közvetlenül ige előtt; ha hangsúlyoznád, a mondat így nézne ki: ¿A ti te traigo un café?",
+          "en": "\"Ti\" only appears after a preposition (a ti, para ti), never directly before a verb; if you wanted emphasis, the sentence would be: ¿A ti te traigo un café?",
+          "es": "\"Ti\" solo va después de una preposición (a ti, para ti), nunca directamente antes del verbo; si quisieras énfasis, la frase sería: ¿A ti te traigo un café?",
+          "de": "\"Ti\" steht nur nach einer Präposition (a ti, para ti), nie direkt vor einem Verb; für eine Betonung hieße der Satz: ¿A ti te traigo un café?"
+        }
+      },
+      "examples": [
+        "¿Le traigo un café?",
+        "Te traigo las llaves."
+      ]
+    },
+    {
+      "id": "oi-09",
+      "sentence": "Nuestros abuelos ___ cuentan historias.",
+      "options": ["nos", "les", "me"],
+      "correct": 0,
+      "why": {
+        "hu": "Nosotros (mi) → nos.",
+        "en": "Nosotros (we) → nos.",
+        "es": "Nosotros → nos.",
+        "de": "Nosotros (wir) → nos."
+      },
+      "wrong": {
+        "les": {
+          "hu": "\"Les\" az ellos/ustedes névmása, ami azt jelentené, hogy a nagyszülők ŐNEKIK mesélnek, nem nekünk; a mi hallgatóinkra nos jár: Nuestros abuelos nos cuentan historias.",
+          "en": "\"Les\" belongs to ellos/ustedes, which would mean the grandparents tell stories to THEM, not to us; for us as listeners it is nos: Nuestros abuelos nos cuentan historias.",
+          "es": "\"Les\" es de ellos/ustedes, y significaría que los abuelos les cuentan A ELLOS, no a nosotros; para nosotros como oyentes es nos: Nuestros abuelos nos cuentan historias.",
+          "de": "\"Les\" gehört zu ellos/ustedes und würde bedeuten, dass die Großeltern IHNEN Geschichten erzählen, nicht uns; für uns als Zuhörer heißt es nos: Nuestros abuelos nos cuentan historias."
+        },
+        "me": {
+          "hu": "\"Me\" csak rólam szólna egyedül, azt jelentené, hogy csak énnekem mesélnek; itt viszont többünkről van szó, ezért nos: Nuestros abuelos nos cuentan historias.",
+          "en": "\"Me\" would only be about me alone, meaning the stories are told only to me; here it is about several of us, so nos: Nuestros abuelos nos cuentan historias.",
+          "es": "\"Me\" hablaría solo de mí, significando que solo a mí me cuentan; aquí se trata de varios de nosotros, por eso nos: Nuestros abuelos nos cuentan historias.",
+          "de": "\"Me\" würde nur von mir allein sprechen, also dass nur mir erzählt wird; hier geht es aber um mehrere von uns, deshalb nos: Nuestros abuelos nos cuentan historias."
+        }
+      },
+      "examples": [
+        "Nos cuentan historias los fines de semana.",
+        "Mi abuela nos cuenta cuentos."
+      ]
+    },
+    {
+      "id": "oi-10",
+      "sentence": "___ escribo un correo a mi jefe.",
+      "options": ["Le", "Lo", "Los"],
+      "correct": 0,
+      "why": {
+        "hu": "A címzett (mi jefe) részes esetet kap: le.",
+        "en": "The recipient (mi jefe) takes the indirect object: le.",
+        "es": "El destinatario (mi jefe) lleva objeto indirecto: le.",
+        "de": "Der Empfänger (mi jefe) bekommt das indirekte Objekt: le."
+      },
+      "wrong": {
+        "Lo": {
+          "hu": "\"Lo\" tárgyeset névmás, ami azt jelentené, hogy magát a jefét küldenéd el mint közvetlen célpontot; itt viszont ő a levél CÍMZETTJE, ami mindig le: Le escribo un correo a mi jefe.",
+          "en": "\"Lo\" is a direct object pronoun, which would mean sending the boss himself as the direct target; here he is the RECIPIENT of the email, which is always le: Le escribo un correo a mi jefe.",
+          "es": "\"Lo\" es un pronombre de objeto directo, que significaría enviar al propio jefe como blanco directo; aquí él es el DESTINATARIO del correo, que siempre lleva le: Le escribo un correo a mi jefe.",
+          "de": "\"Lo\" ist ein direktes Objektpronomen, das bedeuten würde, den Chef selbst als direktes Ziel zu schicken; hier ist er der EMPFÄNGER der E-Mail, was immer le heißt: Le escribo un correo a mi jefe."
+        },
+        "Los": {
+          "hu": "\"Los\" többes szám lenne, itt viszont csak egy főnökről van szó; egyes számban a névmás le: Le escribo un correo a mi jefe.",
+          "en": "\"Los\" would be plural, but here there is only one boss; in the singular the pronoun is le: Le escribo un correo a mi jefe.",
+          "es": "\"Los\" sería plural, pero aquí hay un solo jefe; en singular el pronombre es le: Le escribo un correo a mi jefe.",
+          "de": "\"Los\" wäre Plural, hier gibt es aber nur einen Chef; im Singular heißt das Pronomen le: Le escribo un correo a mi jefe."
+        }
+      },
+      "examples": [
+        "Le escribo un correo a mi jefa.",
+        "Le mando un mensaje a mi amigo."
+      ]
+    },
+    {
+      "id": "oi-11",
+      "sentence": "Estoy ___ un mensaje a mi amiga.",
+      "options": ["mandándole", "mandandole", "mandarle"],
+      "correct": 0,
+      "why": {
+        "hu": "Az estoy után gerundio kell, és a névmás a végéhez tapad, ékezettel: mandándole.",
+        "en": "After estoy a gerund is needed, and the pronoun attaches to the end, with an accent: mandándole.",
+        "es": "Después de estoy hace falta gerundio, y el pronombre se pega al final, con acento: mandándole.",
+        "de": "Nach estoy braucht es ein Gerundium, das Pronomen hängt sich ans Ende, mit Akzent: mandándole."
+      },
+      "wrong": {
+        "mandandole": {
+          "hu": "Ez az alak helyesírásilag nem létezik: a tapadó névmás miatt a hangsúlyos szótagra ékezet kerül; helyesen: mandándole.",
+          "en": "This spelling does not exist: attaching the pronoun shifts the stress, so it needs a written accent; correctly: mandándole.",
+          "es": "Esta forma no existe en la ortografía: al pegar el pronombre, la sílaba tónica necesita tilde; correctamente: mandándole.",
+          "de": "Diese Schreibweise gibt es nicht: durch das angehängte Pronomen verschiebt sich die Betonung, deshalb braucht es einen Akzent; richtig: mandándole."
+        },
+        "mandarle": {
+          "hu": "Az estoy után gerundio kell (mandando), nem főnévi igenév; a főnévi igenév + névmás alak más szerkezetben állna helyesen, pl. \"Voy a mandarle un mensaje\".",
+          "en": "After estoy a gerund is needed (mandando), not an infinitive; the infinitive + pronoun form would be correct in a different structure, like \"Voy a mandarle un mensaje\".",
+          "es": "Después de estoy hace falta gerundio (mandando), no infinitivo; la forma infinitivo + pronombre sería correcta en otra estructura, como \"Voy a mandarle un mensaje\".",
+          "de": "Nach estoy braucht es ein Gerundium (mandando), keinen Infinitiv; die Form Infinitiv + Pronomen wäre in einer anderen Struktur korrekt, wie \"Voy a mandarle un mensaje\"."
+        }
+      },
+      "examples": [
+        "Estoy mandándole un correo a mi papá.",
+        "Le estoy mandando un mensaje."
+      ]
+    },
+    {
+      "id": "oi-12",
+      "sentence": "___ regalo unas flores a mi mamá en su cumpleaños.",
+      "options": ["Le", "La", "Les"],
+      "correct": 0,
+      "why": {
+        "hu": "A le nem változik nemben, a mamá nő létére is le marad.",
+        "en": "Le does not change for gender; even though mamá is feminine, it stays le.",
+        "es": "Le no cambia de género; aunque mamá es femenino, se queda en le.",
+        "de": "Le ändert sich nicht nach Geschlecht; obwohl mamá feminin ist, bleibt es le."
+      },
+      "wrong": {
+        "La": {
+          "hu": "\"La\" tárgyeset névmás, ami azt jelentené, hogy magát az anyádat adnád oda mint közvetlen célpontot; itt viszont ő a virágok CÍMZETTJE, ami mindig le, még nőnemű személynél is: Le regalo unas flores a mi mamá.",
+          "en": "\"La\" is a direct object pronoun, which would mean giving away your mother herself as the direct target; here she is the RECIPIENT of the flowers, which is always le, even for a feminine person: Le regalo unas flores a mi mamá.",
+          "es": "\"La\" es un pronombre de objeto directo, que significaría entregar a tu propia mamá como blanco directo; aquí ella es la DESTINATARIA de las flores, que siempre lleva le, aunque sea mujer: Le regalo unas flores a mi mamá.",
+          "de": "\"La\" ist ein direktes Objektpronomen, das bedeuten würde, deine Mutter selbst als direktes Ziel wegzugeben; hier ist sie die EMPFÄNGERIN der Blumen, was immer le heißt, auch bei einer weiblichen Person: Le regalo unas flores a mi mamá."
+        },
+        "Les": {
+          "hu": "\"Les\" többes szám lenne, mamá viszont csak egy ember; egyes számban a névmás le: Le regalo unas flores a mi mamá.",
+          "en": "\"Les\" would be plural, but mamá is just one person; in the singular the pronoun is le: Le regalo unas flores a mi mamá.",
+          "es": "\"Les\" sería plural, pero mamá es una sola persona; en singular el pronombre es le: Le regalo unas flores a mi mamá.",
+          "de": "\"Les\" wäre Plural, mamá ist aber nur eine Person; im Singular heißt das Pronomen le: Le regalo unas flores a mi mamá."
+        }
+      },
+      "examples": [
+        "Le regalo flores a mi abuela.",
+        "Le doy un beso a mi mamá."
+      ]
+    },
+    {
+      "id": "oi-match-01",
+      "kind": "match",
+      "pairs": [
+        { "es": "le doy el libro", "en": "I give him/her the book" },
+        { "es": "les mando un mensaje", "en": "I send them a message" },
+        { "es": "me traes un café", "en": "you bring me a coffee" },
+        { "es": "te compro un regalo", "en": "I buy you a gift" },
+        { "es": "nos cuenta historias", "en": "he/she tells us stories" },
+        { "es": "os escribo pronto", "en": "I'll write to you all soon" }
+      ]
+    },
+    {
+      "id": "oi-match-02",
+      "kind": "match",
+      "pairs": [
+        { "es": "quiero escribirle", "en": "I want to write to him/her" },
+        { "es": "estoy mandándole un correo", "en": "I'm sending him/her an email" },
+        { "es": "escríbele hoy", "en": "write to him/her today" },
+        { "es": "no le digo nada", "en": "I don't tell him/her anything" },
+        { "es": "cuéntanos la historia", "en": "tell us the story" },
+        { "es": "les explico la tarea", "en": "I explain the homework to them" }
+      ]
+    },
+    {
+      "id": "oi-form-01",
+      "kind": "form",
+      "verb": "pronombre de objeto indirecto",
+      "person": "yo",
+      "answer": "me",
+      "table": "pronombres-oi"
+    },
+    {
+      "id": "oi-form-02",
+      "kind": "form",
+      "verb": "pronombre de objeto indirecto",
+      "person": "tú",
+      "answer": "te",
+      "table": "pronombres-oi"
+    },
+    {
+      "id": "oi-form-03",
+      "kind": "form",
+      "verb": "pronombre de objeto indirecto",
+      "person": "él/ella/usted",
+      "answer": "le",
+      "table": "pronombres-oi"
+    },
+    {
+      "id": "oi-form-04",
+      "kind": "form",
+      "verb": "pronombre de objeto indirecto",
+      "person": "nosotros",
+      "answer": "nos",
+      "table": "pronombres-oi"
+    },
+    {
+      "id": "oi-form-05",
+      "kind": "form",
+      "verb": "pronombre de objeto indirecto",
+      "person": "vosotros",
+      "answer": "os",
+      "table": "pronombres-oi"
+    },
+    {
+      "id": "oi-form-06",
+      "kind": "form",
+      "verb": "pronombre de objeto indirecto",
+      "person": "ellos/ellas/ustedes",
+      "answer": "les",
+      "table": "pronombres-oi"
+    },
+    {
+      "kind": "why",
+      "id": "poi-why-01",
+      "es": "Me escribe todos los días.",
+      "tr": {
+        "hu": "Mindennap ír nekem.",
+        "en": "He/she writes to me every day.",
+        "es": "Me escribe todos los días.",
+        "de": "Er/sie schreibt mir jeden Tag."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "me: hozzám",
+            "en": "me: to me",
+            "es": "me: a mí",
+            "de": "me: zu mir"
+          }
+        },
+        {
+          "text": {
+            "hu": "te: hozzád",
+            "en": "te: to you",
+            "es": "te: a ti",
+            "de": "te: zu dir"
+          },
+          "wrong": {
+            "hu": "A te a beszélgetőpartneremhez történő cselekvést jelölné (\"Te escribe todos los días\" = neked ír); itt viszont ÉN vagyok a címzett, ezért me.",
+            "en": "Te would mark the action happening to the person I am talking to (\"Te escribe todos los días\" = writes to you); here I am the recipient, so me.",
+            "es": "Te marcaría la acción hacia mi interlocutor (\"Te escribe todos los días\" = te escribe a ti); aquí YO soy el destinatario, por eso me.",
+            "de": "Te würde die Handlung an meinen Gesprächspartner bezeichnen (\"Te escribe todos los días\" = schreibt dir); hier bin ICH der Empfänger, deshalb me."
+          }
+        },
+        {
+          "text": {
+            "hu": "nos: hozzánk",
+            "en": "nos: to us",
+            "es": "nos: a nosotros",
+            "de": "nos: zu uns"
+          },
+          "wrong": {
+            "hu": "A nos azt jelölné, hogy TÖBBEN kapjuk (mi); itt viszont csak ÉN vagyok a címzett, egyes szám, ezért me.",
+            "en": "Nos would mark that SEVERAL of us receive it; here only I am the recipient, singular, so me.",
+            "es": "Nos marcaría que lo recibimos VARIOS (nosotros); aquí solo YO soy el destinatario, singular, por eso me.",
+            "de": "Nos würde bezeichnen, dass MEHRERE von uns es bekommen; hier bin nur ICH der Empfänger, Singular, deshalb me."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "poi-why-02",
+      "es": "Te traigo las llaves.",
+      "tr": {
+        "hu": "Hozom neked a kulcsokat.",
+        "en": "I am bringing you the keys.",
+        "es": "Te traigo las llaves.",
+        "de": "Ich bringe dir die Schlüssel."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "me: hozzám",
+            "en": "me: to me",
+            "es": "me: a mí",
+            "de": "me: zu mir"
+          },
+          "wrong": {
+            "hu": "A me azt jelölné, hogy ÉN kapom a kulcsokat (\"Me traes las llaves\" = te hozod nekem); itt viszont ÉN hozom NEKED, ezért te.",
+            "en": "Me would mark that I receive the keys (\"Me traes las llaves\" = you bring them to me); here I bring them to YOU, so te.",
+            "es": "Me marcaría que YO recibo las llaves (\"Me traes las llaves\" = tú me las traes); aquí YO se las traigo a TI, por eso te.",
+            "de": "Me würde bezeichnen, dass ICH die Schlüssel bekomme (\"Me traes las llaves\" = du bringst sie mir); hier bringe ICH sie DIR, deshalb te."
+          }
+        },
+        {
+          "text": {
+            "hu": "te: hozzád",
+            "en": "te: to you",
+            "es": "te: a ti",
+            "de": "te: zu dir"
+          }
+        },
+        {
+          "text": {
+            "hu": "le: hozzá (ő/Ön)",
+            "en": "le: to him/her/usted",
+            "es": "le: a él/ella/usted",
+            "de": "le: zu ihm/ihr/Ihnen"
+          },
+          "wrong": {
+            "hu": "A le egy HARMADIK személynek (ő/Ön) szólna (\"Le traigo las llaves\" = neki hozom); itt viszont a BESZÉLGETŐPARTNEREMNEK hozom, ezért te.",
+            "en": "Le would be to a THIRD person (him/her/usted) (\"Le traigo las llaves\" = I bring them to him/her); here it is to the person I AM TALKING TO, so te.",
+            "es": "Le sería para una tercera persona (él/ella/usted) (\"Le traigo las llaves\" = se las traigo a él/ella); aquí es para mi INTERLOCUTOR, por eso te.",
+            "de": "Le wäre für eine DRITTE Person (er/sie/Sie) (\"Le traigo las llaves\" = ich bringe sie ihm/ihr); hier ist es für meinen GESPRÄCHSPARTNER, deshalb te."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "poi-why-03",
+      "es": "Le doy el libro a Juan.",
+      "tr": {
+        "hu": "Odaadom Juannak a könyvet.",
+        "en": "I give the book to Juan.",
+        "es": "Le doy el libro a Juan.",
+        "de": "Ich gebe Juan das Buch."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "te: hozzád",
+            "en": "te: to you",
+            "es": "te: a ti",
+            "de": "te: zu dir"
+          },
+          "wrong": {
+            "hu": "A te a beszélgetőpartneremnek szólna (\"Te doy el libro\" = neked adom); itt viszont egy HARMADIK személynek, Juannak adom, ezért le.",
+            "en": "Te would be to the person I am talking to (\"Te doy el libro\" = I give it to you); here it is to a THIRD person, Juan, so le.",
+            "es": "Te sería para mi interlocutor (\"Te doy el libro\" = te lo doy a ti); aquí es para una TERCERA persona, Juan, por eso le.",
+            "de": "Te wäre für meinen Gesprächspartner (\"Te doy el libro\" = ich gebe es dir); hier ist es für eine DRITTE Person, Juan, deshalb le."
+          }
+        },
+        {
+          "text": {
+            "hu": "le: hozzá (ő/Ön)",
+            "en": "le: to him/her/usted",
+            "es": "le: a él/ella/usted",
+            "de": "le: zu ihm/ihr/Ihnen"
+          }
+        },
+        {
+          "text": {
+            "hu": "les: hozzájuk/Önökhöz",
+            "en": "les: to them/you all",
+            "es": "les: a ellos/ellas/ustedes",
+            "de": "les: zu ihnen/Ihnen"
+          },
+          "wrong": {
+            "hu": "A les TÖBB harmadik személyre vonatkozna (ők/Önök); itt viszont EGY személy, Juan a címzett, egyes szám, ezért le.",
+            "en": "Les would refer to SEVERAL third persons (they/you all); here it is ONE person, Juan, singular, so le.",
+            "es": "Les se referiría a VARIAS terceras personas (ellos/ustedes); aquí es UNA sola persona, Juan, singular, por eso le.",
+            "de": "Les würde sich auf MEHRERE dritte Personen beziehen (sie/Sie); hier ist es EINE Person, Juan, Singular, deshalb le."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "poi-why-04",
+      "es": "Nos manda un mensaje cada semana.",
+      "tr": {
+        "hu": "Hetente küld nekünk egy üzenetet.",
+        "en": "He/she sends us a message every week.",
+        "es": "Nos manda un mensaje cada semana.",
+        "de": "Er/sie schickt uns jede Woche eine Nachricht."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "me: hozzám",
+            "en": "me: to me",
+            "es": "me: a mí",
+            "de": "me: zu mir"
+          },
+          "wrong": {
+            "hu": "A me azt jelölné, hogy CSAK ÉN kapom az üzenetet; itt viszont TÖBBEN kapjuk (a beszélő és mások), ezért nos.",
+            "en": "Me would mark that ONLY I receive the message; here SEVERAL of us receive it (the speaker and others), so nos.",
+            "es": "Me marcaría que SOLO YO recibo el mensaje; aquí lo recibimos VARIOS (quien habla y otros), por eso nos.",
+            "de": "Me würde bezeichnen, dass NUR ICH die Nachricht bekomme; hier bekommen es MEHRERE (der Sprecher und andere), deshalb nos."
+          }
+        },
+        {
+          "text": {
+            "hu": "nos: hozzánk",
+            "en": "nos: to us",
+            "es": "nos: a nosotros",
+            "de": "nos: zu uns"
+          }
+        },
+        {
+          "text": {
+            "hu": "les: hozzájuk/Önökhöz",
+            "en": "les: to them/you all",
+            "es": "les: a ellos/ellas/ustedes",
+            "de": "les: zu ihnen/Ihnen"
+          },
+          "wrong": {
+            "hu": "A les TÖBBEKNEK szólna, de a beszélőt KIZÁRVA (ők/Önök); itt viszont a beszélő IS a címzettek közt van, ezért nos, nem les.",
+            "en": "Les would be to several people but EXCLUDING the speaker (they/you all); here the speaker IS among the recipients, so nos, not les.",
+            "es": "Les sería para varias personas pero EXCLUYENDO a quien habla (ellos/ustedes); aquí quien habla SÍ está entre los destinatarios, por eso nos, no les.",
+            "de": "Les wäre für mehrere Personen, aber OHNE den Sprecher (sie/Sie); hier gehört der Sprecher ZU den Empfängern, deshalb nos, nicht les."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "poi-why-05",
+      "es": "Os escribo un mensaje.",
+      "tr": {
+        "hu": "Írok nektek egy üzenetet.",
+        "en": "I am writing you all a message.",
+        "es": "Os escribo un mensaje.",
+        "de": "Ich schreibe euch eine Nachricht."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "te: hozzád",
+            "en": "te: to you",
+            "es": "te: a ti",
+            "de": "te: zu dir"
+          },
+          "wrong": {
+            "hu": "A te EGY beszélgetőpartnernek szólna (\"Te escribo un mensaje\"); itt viszont TÖBB embernek írok Spanyolországi módon, ezért os.",
+            "en": "Te would be to ONE person I am talking to (\"Te escribo un mensaje\"); here I am writing to several people, the Spain way, so os.",
+            "es": "Te sería para UN solo interlocutor (\"Te escribo un mensaje\"); aquí escribo a varias personas, a la manera de España, por eso os.",
+            "de": "Te wäre für EINEN Gesprächspartner (\"Te escribo un mensaje\"); hier schreibe ich mehreren Personen, auf spanische Art, deshalb os."
+          }
+        },
+        {
+          "text": {
+            "hu": "os: hozzátok (Spo.)",
+            "en": "os: to you all (Spain)",
+            "es": "os: a vosotros (España)",
+            "de": "os: zu euch (Spanien)"
+          }
+        },
+        {
+          "text": {
+            "hu": "les: hozzájuk/Önökhöz",
+            "en": "les: to them/you all",
+            "es": "les: a ellos/ellas/ustedes",
+            "de": "les: zu ihnen/Ihnen"
+          },
+          "wrong": {
+            "hu": "A les Latin-Amerikában (Mexikóban) állna ugyanerre a jelentésre (ustedes); Spanyolországban viszont a vosotros-nak megfelelő névmás os.",
+            "en": "Les would be used in Latin America (Mexico) for this same meaning (ustedes); in Spain the pronoun matching vosotros is os.",
+            "es": "Les se usaría en Latinoamérica (México) para este mismo sentido (ustedes); en España el pronombre correspondiente a vosotros es os.",
+            "de": "Les würde in Lateinamerika (Mexiko) für denselben Sinn stehen (ustedes); in Spanien ist das zu vosotros passende Pronomen os."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "poi-why-06",
+      "es": "Les mando un mensaje a mis papás.",
+      "tr": {
+        "hu": "Küldök egy üzenetet a szüleimnek.",
+        "en": "I send a message to my parents.",
+        "es": "Les mando un mensaje a mis papás.",
+        "de": "Ich schicke meinen Eltern eine Nachricht."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "le: hozzá (ő/Ön)",
+            "en": "le: to him/her/usted",
+            "es": "le: a él/ella/usted",
+            "de": "le: zu ihm/ihr/Ihnen"
+          },
+          "wrong": {
+            "hu": "A le EGY harmadik személynek szólna (\"Le mando un mensaje a mi papá\"); itt viszont TÖBB személynek, a szüleimnek küldöm, ezért les.",
+            "en": "Le would be to ONE third person (\"Le mando un mensaje a mi papá\"); here I send it to SEVERAL people, my parents, so les.",
+            "es": "Le sería para UNA sola tercera persona (\"Le mando un mensaje a mi papá\"); aquí se lo mando a VARIAS personas, mis papás, por eso les.",
+            "de": "Le wäre für EINE dritte Person (\"Le mando un mensaje a mi papá\"); hier schicke ich es MEHREREN Personen, meinen Eltern, deshalb les."
+          }
+        },
+        {
+          "text": {
+            "hu": "nos: hozzánk",
+            "en": "nos: to us",
+            "es": "nos: a nosotros",
+            "de": "nos: zu uns"
+          },
+          "wrong": {
+            "hu": "A nos azt jelölné, hogy a beszélő IS a címzettek közt van (mi kapjuk); itt viszont a szüleim kapják, a beszélő nélkül, ezért les.",
+            "en": "Nos would mark that the speaker IS among the recipients (we receive it); here my parents receive it, without the speaker, so les.",
+            "es": "Nos marcaría que quien habla SÍ está entre los destinatarios (lo recibimos nosotros); aquí lo reciben mis papás, sin el hablante, por eso les.",
+            "de": "Nos würde bezeichnen, dass der Sprecher UNTER den Empfängern ist (wir bekommen es); hier bekommen es meine Eltern, ohne den Sprecher, deshalb les."
+          }
+        },
+        {
+          "text": {
+            "hu": "les: hozzájuk/Önökhöz",
+            "en": "les: to them/you all",
+            "es": "les: a ellos/ellas/ustedes",
+            "de": "les: zu ihnen/Ihnen"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "poi-why-07",
+      "es": "Le doy el libro a María.",
+      "tr": {
+        "hu": "Odaadom Maríának a könyvet.",
+        "en": "I give the book to María.",
+        "es": "Le doy el libro a María.",
+        "de": "Ich gebe María das Buch."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "le: hozzá (ő/Ön)",
+            "en": "le: to him/her/usted",
+            "es": "le: a él/ella/usted",
+            "de": "le: zu ihm/ihr/Ihnen"
+          }
+        },
+        {
+          "text": {
+            "hu": "me: hozzám",
+            "en": "me: to me",
+            "es": "me: a mí",
+            "de": "me: zu mir"
+          },
+          "wrong": {
+            "hu": "A me azt jelölné, hogy ÉN kapom a könyvet (\"Me da el libro\" = ő adja nekem); itt viszont ÉN adom Maríának, ezért le.",
+            "en": "Me would mark that I receive the book (\"Me da el libro\" = he/she gives it to me); here I give it to María, so le.",
+            "es": "Me marcaría que YO recibo el libro (\"Me da el libro\" = él/ella me lo da); aquí YO se lo doy a María, por eso le.",
+            "de": "Me würde bezeichnen, dass ICH das Buch bekomme (\"Me da el libro\" = er/sie gibt es mir); hier gebe ICH es María, deshalb le."
+          }
+        },
+        {
+          "text": {
+            "hu": "les: hozzájuk/Önökhöz",
+            "en": "les: to them/you all",
+            "es": "les: a ellos/ellas/ustedes",
+            "de": "les: zu ihnen/Ihnen"
+          },
+          "wrong": {
+            "hu": "A les TÖBB harmadik személyre vonatkozna; itt viszont EGY személy, María a címzett, egyes szám, ezért le.",
+            "en": "Les would refer to SEVERAL third persons; here it is ONE person, María, singular, so le.",
+            "es": "Les se referiría a VARIAS terceras personas; aquí es UNA sola persona, María, singular, por eso le.",
+            "de": "Les würde sich auf MEHRERE dritte Personen beziehen; hier ist es EINE Person, María, Singular, deshalb le."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

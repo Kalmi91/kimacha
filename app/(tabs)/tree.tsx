@@ -28,7 +28,8 @@ export default function TreeScreen() {
 
   const [level, setLevel] = useState<Level>('A1');
   const [repsMap, setRepsMap] = useState<Map<number, number>>(new Map());
-  // A topic-készültség FSRS-állapotból jön (lib/topicMastery.ts), nem a reps-ből,
+  // A topic-készültség "ismert" jelzőből jön (UTEMEZO 12/4: lap >= 3 VAGY
+  // eltemetve, lib/topicMastery.ts), ugyanaz a definíció, mint a Stats-kártyáé,
   // hogy a fa ugyanazt a "kész"-t mutassa, mint a tanulási képernyő.
   const [stateMap, setStateMap] = useState<Map<number, number>>(new Map());
   const [selectedTopicId, setSelectedTopicId] = useState<string | null>(null);
@@ -77,14 +78,13 @@ export default function TreeScreen() {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         <Text style={[styles.noTree, { color: colors.tabIconDefault }]}>{level}</Text>
-        <View style={styles.feedbackWrap}>
-          <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="tree-tab" draggable />
-        </View>
+        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="tree-tab" draggable />
       </View>
     );
   }
 
   return (
+    <View style={{ flex: 1, backgroundColor: colors.background }}>
     <ScrollView
       style={{ backgroundColor: colors.background }}
       contentContainerStyle={styles.scrollContent}
@@ -205,11 +205,12 @@ export default function TreeScreen() {
           </View>
         );
       })}
-      <View style={styles.feedbackWrap}>
-        <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="tree-tab" draggable />
-      </View>
       <View style={styles.bottomPad} />
     </ScrollView>
+      {/* FB284: a gomb a ScrollView-n KÍVÜL lebeg, mint a settings fülön, nem a
+          fa aljára ragadva. */}
+      <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="tree-tab" draggable />
+    </View>
   );
 }
 
@@ -276,6 +277,5 @@ const styles = StyleSheet.create({
   nodeName: { fontSize: 11, fontWeight: '600', textAlign: 'center', marginBottom: 2 },
   nodeProgress: { fontSize: 11, fontWeight: '700' },
   checkMark: { fontSize: 14, color: '#F59E0B', fontWeight: '800', marginTop: 2 },
-  feedbackWrap: { alignItems: 'center', marginTop: 16 },
   bottomPad: { height: 32 },
 });

@@ -13,7 +13,7 @@
 // game screens should need to change.
 
 import { LEVELS, getWordsForLevel, type Level } from '@/data/words';
-import type { FormItem, LessonV2, MatchItem } from '../grammar/lessonTypes';
+import type { FormItem, LessonV2, MatchItem, WhyItem } from '../grammar/lessonTypes';
 
 // Cumulative corpus word ids up to and including `level` (A0..level), used by
 // the content-driven game screens to build GlossText's `knownWordIds`: a
@@ -268,7 +268,7 @@ export interface GrammarMarkItem extends GrammarItemBase {
 // játék köre) minden lecke-item-fajtát ismerjen, még ha egyelőre csak a
 // gap/mark kettőt dolgozza is fel (lib/games/grammarChoice.ts szűri ki a
 // match/form-ot a köréből, azok a lecke-képernyőn jelennek meg, step 3-4).
-export type GrammarItem = GrammarGapItem | GrammarMarkItem | MatchItem | FormItem;
+export type GrammarItem = GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem;
 
 export function isMarkItem(item: GrammarItem): item is GrammarMarkItem {
   return item.kind === 'mark';
@@ -280,6 +280,27 @@ export function isMatchItem(item: GrammarItem): item is MatchItem {
 
 export function isFormItem(item: GrammarItem): item is FormItem {
   return item.kind === 'form';
+}
+
+// TASK-8 (D4, FB288): a "miért ez a mondat" feladat-fajta.
+export function isWhyItem(item: GrammarItem): item is WhyItem {
+  return item.kind === 'why';
+}
+
+// LECKE-SEMA D3 (FB290, 2026-09-17): a lecke feladatai fajtánként külön
+// indíthatók (a mondat-feladatok, a párosítás és a ragozás nem egy gombban
+// megy), ehhez kell tudni fajtánként, hány item van egy leckében.
+export type GrammarKind = 'choice' | 'match' | 'form' | 'why';
+
+export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, number> {
+  const counts: Record<GrammarKind, number> = { choice: 0, match: 0, form: 0, why: 0 };
+  for (const item of topic.items as GrammarItem[]) {
+    if (isMatchItem(item)) counts.match++;
+    else if (isFormItem(item)) counts.form++;
+    else if (isWhyItem(item)) counts.why++;
+    else counts.choice++;
+  }
+  return counts;
 }
 
 // A régi (prózás rule/more) lecke-alak. Amíg a 20 másik témát nem migrálják

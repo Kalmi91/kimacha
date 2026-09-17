@@ -11,12 +11,16 @@ import {
   isLessonV2,
   isMarkItem,
   isMatchItem,
+  isWhyItem,
+  type GrammarKind,
   type GrammarMarkItem,
   type GrammarTopicData,
 } from '@/lib/games/content';
-import type { FormItem, LessonBlock, MatchItem } from '@/lib/grammar/lessonTypes';
+import type { FormItem, LessonBlock, MatchItem, WhyItem } from '@/lib/grammar/lessonTypes';
 import { markTokens } from '@/lib/games/grammarMark';
-import { buildGrammarRound, isChoiceRoundItem, wrongExplanation } from '@/lib/games/grammarChoice';
+import { speak } from '@/lib/speech';
+import { speechLang } from '@/lib/languages';
+import { buildGrammarRound, grammarRoundItemKind, isChoiceRoundItem, wrongExplanation } from '@/lib/games/grammarChoice';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString, shuffleArray } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
@@ -31,9 +35,10 @@ import MoreBlocks from '@/components/grammar/MoreBlocks';
 // GAMES.md 4.11: the explanation appears after EVERY answer, right or wrong,
 // with the rule, why the picked wrong option is wrong, and two more examples.
 //
-// LECKE-SEMA 2.1-2.2: a lecke-drill (`includeAllKinds`) a match/form
-// tételeket is végigviszi, a Game fül grammar-choice-a nem (az a prop híján
-// a régi gap/mark-only kört kapja, LECKE-SEMA 6.3 D pont).
+// LECKE-SEMA 2.1-2.2/D3 (FB290, 2026-09-17): a lecke-drill a `kinds` propban
+// felsorolt fajtákat viszi végig, a lecke-oldal fajtánként külön indítja; a
+// Game fül grammar-choice-a a prop híján a régi gap/mark-only (`choice`) kört
+// kapja (LECKE-SEMA 6.3 D pont).
 
 interface Props {
   topic: GrammarTopicData;
@@ -43,9 +48,11 @@ interface Props {
   onFinish: (correct: number, total: number) => void;
   /** Extra rows under the explanation (e.g. the course's "back to the rule"). */
   footer?: React.ReactNode;
-  /** LECKE-SEMA 2: a lecke-drill igennel adja át, hogy a match/form tételek is bekerüljenek a körbe. */
-  includeAllKinds?: boolean;
+  /** LECKE-SEMA D3: mely fajták kerüljenek a körbe; hiányában csak a választós (Game fül). */
+  kinds?: readonly GrammarKind[];
 }
+
+const CHOICE_ONLY: readonly GrammarKind[] = ['choice'];
 
 function findFormTable(topic: GrammarTopicData, tableId: string): Extract<LessonBlock, { kind: 'table' }> | undefined {
   if (!isLessonV2(topic)) return undefined;
@@ -230,7 +237,95 @@ function FormDrillItem({
   );
 }
 
-export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, includeAllKinds = false }: Props) {
+// TASK-8 (D4, FB288): "Miért ez a mondat?", a tanuló nem a hiányzó szót
+// választja, hanem a szabályt, ami miatt a mondat úgy van, ahogy van. Egy
+// próbálkozás, mint a választós tételnél (2.3): jó → zöld + „következő"; rossz
+// → a választott piros, a jó zöld, alatta a választott opció `wrong` szövege.
+function WhyDrillItem({
+  item,
+  learnedLang,
+  contentLang,
+  colors,
+  s,
+  onDone,
+}: {
+  item: WhyItem;
+  learnedLang: string;
+  contentLang: 'hu' | 'en' | 'es' | 'de';
+  colors: (typeof Colors)['light'];
+  s: ReturnType<typeof t>;
+  onDone: (correct: boolean) => void;
+}) {
+  const [selected, setSelected] = useState<number | null>(null);
+  const answered = selected !== null;
+  const isCorrect = answered && selected === item.correctIndex;
+
+  const select = (i: number) => {
+    if (answered) return;
+    setSelected(i);
+  };
+
+  return (
+    <View style={styles.whyBody}>
+      <View style={[styles.sentenceCard, { backgroundColor: colors.card }]}>
+        <View style={styles.whySentenceRow}>
+          <Text style={[styles.sentence, { color: colors.text }]}>{item.es}</Text>
+          <Pressable onPress={() => speak(item.es, speechLang(learnedLang))} hitSlop={10}>
+            <Text style={styles.speak}>🔊</Text>
+          </Pressable>
+        </View>
+        <Text style={[styles.whyTranslation, { color: colors.tabIconDefault }]}>
+          {item.tr[contentLang] ?? item.tr.en}
+        </Text>
+      </View>
+
+      <View style={styles.options}>
+        {item.options.map((opt, i) => {
+          const isPicked = selected === i;
+          const isRightAnswer = i === item.correctIndex;
+          let bg = colors.card;
+          let border = colors.tabIconDefault;
+          if (answered && isRightAnswer) {
+            bg = '#22C55E22';
+            border = '#22C55E';
+          } else if (answered && isPicked && !isRightAnswer) {
+            bg = '#EF444422';
+            border = '#EF4444';
+          }
+          return (
+            <Pressable
+              key={i}
+              testID="grammar-option"
+              style={[styles.option, { backgroundColor: bg, borderColor: border }]}
+              onPress={() => select(i)}
+              disabled={answered}
+            >
+              <Text style={[styles.optionText, { color: colors.text }]}>{opt.text[contentLang] ?? opt.text.en}</Text>
+            </Pressable>
+          );
+        })}
+      </View>
+
+      {answered ? (
+        <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
+          <Text style={[styles.explainHeader, { color: isCorrect ? '#22C55E' : '#EF4444' }]}>
+            {isCorrect ? s.games.correctFeedback : s.games.wrongFeedback}
+          </Text>
+          {!isCorrect ? (
+            <Text style={[styles.explainText, { color: colors.text }]}>
+              {item.options[selected].wrong?.[contentLang] ?? item.options[selected].wrong?.en ?? ''}
+            </Text>
+          ) : null}
+          <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(isCorrect)}>
+            <Text style={styles.btnText}>{s.games.understood}</Text>
+          </Pressable>
+        </View>
+      ) : null}
+    </View>
+  );
+}
+
+export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, kinds = CHOICE_ONLY }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
@@ -238,8 +333,8 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const [seed] = useState(() => hashString(`${topic.topic}:${Date.now()}`));
   const fullRound = useMemo(() => buildGrammarRound(topic, seed), [topic, seed]);
   const round = useMemo(
-    () => (includeAllKinds ? fullRound : fullRound.filter(isChoiceRoundItem)),
-    [fullRound, includeAllKinds]
+    () => fullRound.filter((r) => kinds.includes(grammarRoundItemKind(r))),
+    [fullRound, kinds]
   );
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
@@ -279,13 +374,24 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
           {s.games.grammarChoice.progress(index + 1, round.length)}
         </Text>
         {isMatchItem(roundItem.item) ? (
-          <MatchDrillItem item={roundItem.item} colors={colors} s={s} onDone={completeItem} />
+          <MatchDrillItem key={roundItem.item.id} item={roundItem.item} colors={colors} s={s} onDone={completeItem} />
         ) : isFormItem(roundItem.item) ? (
           <FormDrillItem
+            key={roundItem.item.id}
             item={roundItem.item}
             table={findFormTable(topic, roundItem.item.table)}
             contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
             learnedLang={learnedLang}
+            colors={colors}
+            s={s}
+            onDone={completeItem}
+          />
+        ) : isWhyItem(roundItem.item) ? (
+          <WhyDrillItem
+            key={roundItem.item.id}
+            item={roundItem.item}
+            learnedLang={learnedLang}
+            contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
             colors={colors}
             s={s}
             onDone={completeItem}
@@ -468,4 +574,8 @@ const styles = StyleSheet.create({
   formBody: { gap: 10 },
   formPrompt: { fontSize: 18, fontWeight: '700', textAlign: 'center' },
   formInput: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 10, paddingHorizontal: 14, fontSize: 17, textAlign: 'center' },
+  whyBody: { gap: 12 },
+  whySentenceRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10 },
+  whyTranslation: { fontSize: 14, textAlign: 'center', marginTop: 6 },
+  speak: { fontSize: 18 },
 });

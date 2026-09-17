@@ -12,7 +12,7 @@
 // A topic with no file yet is shown as planned-but-not-written; the screen
 // never pretends an empty lesson exists.
 
-import { getGrammarTopic, getGrammarTopics, type GrammarTopicData } from '@/lib/games/content';
+import { getGrammarTopic, getGrammarTopics, grammarKindCounts, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
 import type { Level } from '@/data/words';
 
 export interface SyllabusTopic {
@@ -37,12 +37,15 @@ export interface SyllabusUnit {
  * vizsga. Egy témának egy sávja van, a legalacsonyabb, ahol először kell, és a
  * sávok kumulatívak: aki 'exam'-ot tanul, a 'core'-t is kapja.
  *
+ *   core+   (telt lila) a beszéd-mag: ser/estar, jelen, a két múlt és a
+ *                   szembeállításuk, ir a + inf, modálok, névmások, condicional.
+ *                   Ez épül LEGELŐBB, ez tömi be a beszéd-lyukat (Kálmán, 2026-09-15)
  *   core    (lila)  beszélni nem lehet nélküle, ez épül elsőként A1-C1-ig
  *   exam    (kék)   vizsgához és helyes beszédhez kell, de nem blokkol
  *   full    (zöld)  PCIC-teljesség, csak a leltár kedvéért
  *   perfect (sárga) 100% helyesírás és nyelvtani finomság
  */
-export type GrammarTier = 'core' | 'exam' | 'full' | 'perfect';
+export type GrammarTier = 'core-plus' | 'core' | 'exam' | 'full' | 'perfect';
 
 /** Sáv témánként. Ami nincs a listán, 'full' (a leltárban benne van, de nem sürgős). */
 export const GRAMMAR_TIER: Record<string, GrammarTier> = {
@@ -51,34 +54,38 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'sustantivo-numero': 'core',
   'articulos-genero': 'exam',
   'adjetivo-concordancia': 'exam',
-  'presente-regular': 'core',
-  'presente-irregular': 'core',
-  'verbos-diptongo': 'core',
-  'ser-estar': 'core',
-  'hay-estar': 'core',
+  'presente-regular': 'core-plus',
+  'presente-irregular': 'core-plus',
+  'verbos-diptongo': 'core-plus',
+  'ser-estar': 'core-plus',
+  'hay-estar': 'core-plus',
   posesivos: 'core',
   demostrativos: 'exam',
   interrogativos: 'core',
   negacion: 'core',
-  gustar: 'core',
-  'ir-a-infinitivo': 'core',
+  gustar: 'core-plus',
+  'ir-a-infinitivo': 'core-plus',
+  'perifrasis-modales': 'core-plus',
+  'pronombres-od': 'core-plus',
+  'pronombres-oi': 'core-plus',
+  'quien-a-quien': 'core-plus',
   'muy-mucho': 'exam',
   'numeros-hora-fecha': 'core',
   'preposiciones-basicas': 'core',
   // --- A2 ---
-  'indefinido-regular': 'core',
-  'indefinido-irregular': 'core',
-  imperfecto: 'core',
-  'indefinido-imperfecto': 'core',
-  perfecto: 'core',
-  'estar-gerundio': 'exam',
+  'indefinido-regular': 'core-plus',
+  'indefinido-irregular': 'core-plus',
+  imperfecto: 'core-plus',
+  'indefinido-imperfecto': 'core-plus',
+  // Mexikóban a beszélt nyelv a pretéritót használja a perfecto helyett
+  // (comí, nem he comido), ezért nem a beszéd-magban van. Kálmán, 2026-09-15.
+  perfecto: 'exam',
+  'estar-gerundio': 'core-plus',
   'futuro-simple': 'exam',
   'imperativo-afirmativo': 'core',
   'imperativo-negativo': 'exam',
-  'pronombres-od': 'core',
-  'pronombres-oi': 'core',
   'combinacion-pronombres': 'exam',
-  'verbos-reflexivos': 'core',
+  'verbos-reflexivos': 'core-plus',
   'comparativos-superlativos': 'core',
   indefinidos: 'core',
   'por-para': 'core',
@@ -90,7 +97,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'subjuntivo-disparadores': 'core',
   'ojala-quizas': 'exam',
   'temporales-subjuntivo': 'core',
-  'condicional-simple': 'core',
+  'condicional-simple': 'core-plus',
   'condicionales-tipo1': 'core',
   pluscuamperfecto: 'exam',
   relativos: 'core',
@@ -201,6 +208,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     blurb: { hu: 'querer, poder, pedir: a tő változik, a végződés nem.', en: 'querer, poder, pedir: the stem changes, the ending does not.', es: 'querer, poder, pedir: cambia la raíz, no la terminación.', de: 'querer, poder, pedir: der Stamm ändert sich, nicht die Endung.' },
   },
   {
+    id: 'perifrasis-modales',
+    level: 'A1',
+    unit: 'a1-presente',
+    title: { hu: 'Tener que, poder, querer + főnévi igenév', en: 'Tener que, poder, querer + infinitive', es: 'Tener que, poder, querer + infinitivo', de: 'Tener que, poder, querer + Infinitiv' },
+    blurb: { hu: 'Muszáj, tudok, akarok: két ige egymás mellett, a második ragozatlan.', en: 'Must, can, want: two verbs in a row, the second one unconjugated.', es: 'Tengo que, puedo, quiero: dos verbos seguidos, el segundo en infinitivo.', de: 'Muss, kann, will: zwei Verben, das zweite im Infinitiv.' },
+  },
+  {
     id: 'ser-estar',
     level: 'A1',
     unit: 'a1-ser-estar',
@@ -227,6 +241,27 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'a1-pronombres',
     title: { hu: 'Mutató névmások: este, ese, aquel', en: 'Demonstratives: este, ese, aquel', es: 'Demostrativos: este, ese, aquel', de: 'Demonstrativa: este, ese, aquel' },
     blurb: { hu: 'Három távolság: itt, ott, amott.', en: 'Three distances: here, there, over there.', es: 'Tres distancias: aquí, ahí, allí.', de: 'Drei Entfernungen: hier, da, dort.' },
+  },
+  {
+    id: 'pronombres-od',
+    level: 'A1',
+    unit: 'a1-pronombres',
+    title: { hu: 'Tárgyeseti névmás: me, te, lo, la, nos, los, las', en: 'Direct object: me, te, lo, la, nos, los, las', es: 'Objeto directo: me, te, lo, la, nos, los, las', de: 'Akkusativpronomen: me, te, lo, la, nos, los, las' },
+    blurb: { hu: 'A névmás az ige ELÉ megy: Te amo. ¿El libro? Lo tengo.', en: 'The pronoun goes BEFORE the verb: Te amo. ¿El libro? Lo tengo.', es: 'El pronombre va ANTES del verbo: Te amo. ¿El libro? Lo tengo.', de: 'Das Pronomen steht VOR dem Verb: Te amo. ¿El libro? Lo tengo.' },
+  },
+  {
+    id: 'pronombres-oi',
+    level: 'A1',
+    unit: 'a1-pronombres',
+    title: { hu: 'Részeshatározós névmás: me, te, le, nos, les', en: 'Indirect object: me, te, le, nos, les', es: 'Objeto indirecto: me, te, le, nos, les', de: 'Dativpronomen: me, te, le, nos, les' },
+    blurb: { hu: 'Kinek adod, kinek mondod: le doy el libro, te digo la verdad.', en: 'Who you give or say it to: le doy el libro, te digo la verdad.', es: 'A quién se lo das o dices: le doy el libro, te digo la verdad.', de: 'Wem du es gibst oder sagst: le doy el libro, te digo la verdad.' },
+  },
+  {
+    id: 'quien-a-quien',
+    level: 'A1',
+    unit: 'a1-pronombres',
+    title: { hu: 'Ki kinek: te amo, me das', en: 'Who does what to whom: te amo, me das', es: 'Quién a quién: te amo, me das', de: 'Wer wem: te amo, me das' },
+    blurb: { hu: 'A végződés mondja meg, ki cselekszik, a névmás azt, kivel.', en: 'The ending says who acts, the pronoun says to whom.', es: 'La terminación dice quién actúa, el pronombre a quién.', de: 'Die Endung sagt, wer handelt, das Pronomen, mit wem.' },
   },
   {
     id: 'interrogativos',
@@ -340,20 +375,6 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'a2-futuro',
     title: { hu: 'Felszólítás: tiltó alak', en: 'Imperative: negative', es: 'Imperativo negativo', de: 'Imperativ: verneint' },
     blurb: { hu: 'No hables, no comas: a tiltás kötőmódot használ.', en: 'No hables, no comas: the negative uses the subjunctive.', es: 'No hables, no comas: la prohibición usa subjuntivo.', de: 'No hables, no comas: das Verbot nutzt den Subjuntivo.' },
-  },
-  {
-    id: 'pronombres-od',
-    level: 'A2',
-    unit: 'a2-pronombres',
-    title: { hu: 'Tárgyeseti névmás: lo, la, los, las', en: 'Direct object: lo, la, los, las', es: 'Objeto directo: lo, la, los, las', de: 'Akkusativpronomen: lo, la, los, las' },
-    blurb: { hu: 'Ne ismételd a főnevet: ¿El libro? Lo tengo.', en: 'Do not repeat the noun: ¿El libro? Lo tengo.', es: 'No repitas el sustantivo: ¿El libro? Lo tengo.', de: 'Wiederhole das Nomen nicht: ¿El libro? Lo tengo.' },
-  },
-  {
-    id: 'pronombres-oi',
-    level: 'A2',
-    unit: 'a2-pronombres',
-    title: { hu: 'Részeshatározós névmás: me, te, le, nos, les', en: 'Indirect object: me, te, le, nos, les', es: 'Objeto indirecto: me, te, le, nos, les', de: 'Dativpronomen: me, te, le, nos, les' },
-    blurb: { hu: 'Kinek adod, kinek mondod: le doy el libro.', en: 'Who you give it to: le doy el libro.', es: 'A quién se lo das: le doy el libro.', de: 'Wem du es gibst: le doy el libro.' },
   },
   {
     id: 'combinacion-pronombres',
@@ -635,6 +656,63 @@ export function lessonFor(lang: string, topicId: string): GrammarTopicData | und
 
 export function hasLesson(lang: string, topicId: string): boolean {
   return !!getGrammarTopic(lang, topicId);
+}
+
+export interface GrammarTopicProgress {
+  state: 'done';
+  correct: number;
+  total: number;
+}
+
+const GRAMMAR_KINDS: GrammarKind[] = ['choice', 'match', 'form'];
+
+/**
+ * D3 (FB290, 2026-09-17): a lecke feladatai fajtánként külön indíthatók, a
+ * game_progress itemId ezért egy `${topicId}:${kind}` sor (app/grammar/[topic]
+ * csak >=80%-nál ír). A régi, egy-értékű sorok (itemId === topicId, a split
+ * előtti korból) minden fajtát késznek jelentenek, hogy Kálmán meglévő kész
+ * leckéi ne álljanak vissza nyitottra. Egy téma csak akkor kész, ha a
+ * leckéjében LÉTEZŐ összes fajtájából van kész sor.
+ */
+export function doneGrammarTopicProgress(
+  lang: string,
+  rows: { itemId: string; state: string; data: unknown }[]
+): Map<string, GrammarTopicProgress> {
+  const legacy = new Map<string, GrammarTopicProgress>();
+  const perKind = new Map<string, Map<GrammarKind, GrammarTopicProgress>>();
+
+  for (const row of rows) {
+    if (row.state !== 'done') continue;
+    const data = (row.data ?? {}) as { correct?: number; total?: number };
+    const progress: GrammarTopicProgress = { state: 'done', correct: data.correct ?? 0, total: data.total ?? 0 };
+    const sep = row.itemId.indexOf(':');
+    if (sep < 0) {
+      legacy.set(row.itemId, progress);
+      continue;
+    }
+    const topicId = row.itemId.slice(0, sep);
+    const kind = row.itemId.slice(sep + 1) as GrammarKind;
+    const kinds = perKind.get(topicId) ?? new Map<GrammarKind, GrammarTopicProgress>();
+    kinds.set(kind, progress);
+    perKind.set(topicId, kinds);
+  }
+
+  const result = new Map(legacy);
+  for (const [topicId, kinds] of perKind) {
+    if (result.has(topicId)) continue; // a régi sor már minden fajtát késznek jelent
+    const lesson = lessonFor(lang, topicId);
+    const required = lesson ? GRAMMAR_KINDS.filter((k) => grammarKindCounts(lesson)[k] > 0) : [];
+    if (required.length === 0 || !required.every((k) => kinds.has(k))) continue;
+    let correct = 0;
+    let total = 0;
+    for (const k of required) {
+      const p = kinds.get(k)!;
+      correct += p.correct;
+      total += p.total;
+    }
+    result.set(topicId, { state: 'done', correct, total });
+  }
+  return result;
 }
 
 /** How much of the syllabus is written, for the header line. */
