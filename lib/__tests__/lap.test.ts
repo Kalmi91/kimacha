@@ -2,9 +2,10 @@
 // startWord/passLap/getInHandWordCards/getMasteredWordCount/buryCard
 // lap-alapú viselkedése.
 
-import { isLearned, nextLap, lapShape, backfillLap } from '../lap';
+import { isLearned, nextLap, lapShape, backfillLap, needsReviewLapBackfill } from '../lap';
 import { getDb } from '../database.web';
 import { getWordsForLevel } from '@/data/words';
+import { isTopicMastered, masteredCount, isWordMastered } from '../topicMastery';
 
 const WORD = getWordsForLevel('A1', 'es')[0];
 
@@ -35,6 +36,17 @@ describe('lib/lap.ts pure helpers', () => {
     expect(backfillLap(2, 0)).toBe(2);
     expect(backfillLap(5, 0)).toBe(3);
     expect(backfillLap(2, 5)).toBe(0); // lapses > reps must never go negative
+  });
+
+  // UTEMEZO 12/4: a masodik, utolagos migracio szabalya (lib/database.ts UPDATE
+  // szo szerint ugyanezt a felteteltet futtatja SQL-ben).
+  it('needsReviewLapBackfill flags an FSRS-Review word stuck below lap 3', () => {
+    expect(needsReviewLapBackfill({ state: 2, lap: 0 })).toBe(true);
+    expect(needsReviewLapBackfill({ state: 2, lap: 2 })).toBe(true);
+    expect(needsReviewLapBackfill({ state: 3, lap: 1 })).toBe(true); // Relearning is also >= 2
+    expect(needsReviewLapBackfill({ state: 2, lap: 3 })).toBe(false); // already caught up
+    expect(needsReviewLapBackfill({ state: 1, lap: 2 })).toBe(false); // Learning, not Review
+    expect(needsReviewLapBackfill({ state: 0 })).toBe(false);
   });
 });
 
@@ -109,6 +121,40 @@ describe('database.web lap-tracking (UTEMEZO 11. szakasz)', () => {
     await db.passLap(inProgress.id); // lap 1
 
     expect(await db.getMasteredWordCount('A1')).toBe(2);
+  });
+
+  // UTEMEZO 12/4: EGY "ismert"-definíció. A fa csempéje (getWordStates +
+  // lib/topicMastery.ts) és a Stats-kártya (getMasteredWordCount) UGYANABBÓL az
+  // adatból számol, tehát sose térhet el (a 928/931 vs 0/10 hiba gyökere).
+  it('getWordStates agrees with getMasteredWordCount: lap-3 and buried known, lap-2 not', async () => {
+    const db = getDb();
+    const buried = getWordsForLevel('A1', 'es')[1];
+    const inProgress = getWordsForLevel('A1', 'es')[2];
+
+    await db.startWord(WORD.id);
+    await db.passLap(WORD.id);
+    await db.passLap(WORD.id);
+    await db.passLap(WORD.id); // (a) lap 3
+
+    await db.ensureCard(buried.id, 'word');
+    await db.buryCard(buried.id, 'word'); // (b) eltemetve
+
+    await db.startWord(inProgress.id);
+    await db.passLap(inProgress.id);
+    await db.passLap(inProgress.id); // (d) lap 2
+
+    const ids = [WORD.id, buried.id, inProgress.id];
+    const known = await db.getWordStates(ids);
+
+    expect(isWordMastered(known.get(WORD.id))).toBe(true);
+    expect(isWordMastered(known.get(buried.id))).toBe(true);
+    expect(isWordMastered(known.get(inProgress.id))).toBe(false);
+    expect(masteredCount(ids, known)).toBe(2);
+    expect(isTopicMastered([WORD.id, buried.id], known)).toBe(true);
+    expect(isTopicMastered(ids, known)).toBe(false);
+
+    // A fa és a Stats-kártya ugyanazt a számot adja.
+    expect(await db.getMasteredWordCount('A1')).toBe(masteredCount(ids, known));
   });
 
   it('buryCard clears in_hand', async () => {

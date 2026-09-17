@@ -890,6 +890,356 @@
       "person": "vosotros",
       "answer": "os acostáis",
       "table": "reflexivos-presente"
+    },
+    {
+      "kind": "why",
+      "id": "vr-why-01",
+      "es": "Me levanto a las siete.",
+      "tr": {
+        "hu": "Hét órakor kelek fel.",
+        "en": "I get up at seven.",
+        "es": "Me levanto a las siete.",
+        "de": "Ich stehe um sieben auf."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "me (yo)",
+            "en": "me (yo)",
+            "es": "me (yo)",
+            "de": "me (yo)"
+          }
+        },
+        {
+          "text": {
+            "hu": "te (tú)",
+            "en": "te (tú)",
+            "es": "te (tú)",
+            "de": "te (tú)"
+          },
+          "wrong": {
+            "hu": "Ha te lenne, 'Te levantas a las siete' állna, azaz TE kelsz fel hétkor, nem én.",
+            "en": "If it were te, it would say 'Te levantas a las siete', meaning YOU get up at seven, not me.",
+            "es": "Si fuera te, diría 'Te levantas a las siete', o sea que TÚ te levantas, no yo.",
+            "de": "Wäre es te, hieße es 'Te levantas a las siete', also stehst DU auf, nicht ich."
+          }
+        },
+        {
+          "text": {
+            "hu": "se (él/ella/usted)",
+            "en": "se (él/ella/usted)",
+            "es": "se (él/ella/usted)",
+            "de": "se (er/sie/Sie)"
+          },
+          "wrong": {
+            "hu": "Ha se (él/ella) lenne, 'Se levanta a las siete' állna, azaz Ő kel fel hétkor, nem én.",
+            "en": "If it were se (él/ella), it would say 'Se levanta a las siete', meaning HE/SHE gets up at seven, not me.",
+            "es": "Si fuera se (él/ella), diría 'Se levanta a las siete', o sea que ÉL/ELLA se levanta, no yo.",
+            "de": "Wäre es se (él/ella), hieße es 'Se levanta a las siete', also steht ER/SIE auf, nicht ich."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "vr-why-02",
+      "es": "Se ducha antes de desayunar.",
+      "tr": {
+        "hu": "Reggeli előtt lezuhanyzik.",
+        "en": "He showers before breakfast.",
+        "es": "Se ducha antes de desayunar.",
+        "de": "Er duscht vor dem Frühstück."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "se (ellos/ellas/ustedes)",
+            "en": "se (ellos/ellas/ustedes)",
+            "es": "se (ellos/ellas/ustedes)",
+            "de": "se (sie/Sie)"
+          },
+          "wrong": {
+            "hu": "Ha se (ellos) lenne, 'Se duchan antes de desayunar' állna, TÖBBES számú végződéssel; itt viszont 'ducha' egyes számú alak, ezért egy személyről van szó.",
+            "en": "If it were se (ellos), it would say 'Se duchan antes de desayunar', with a PLURAL ending; here 'ducha' is a singular form, so it is one person.",
+            "es": "Si fuera se (ellos), diría 'Se duchan antes de desayunar', con terminación PLURAL; aquí 'ducha' es una forma singular, así que es una sola persona.",
+            "de": "Wäre es se (ellos), hieße es 'Se duchan antes de desayunar', mit PLURAL-Endung; hier ist 'ducha' eine Singularform, also ist es eine Person."
+          }
+        },
+        {
+          "text": {
+            "hu": "se (él/ella/usted)",
+            "en": "se (él/ella/usted)",
+            "es": "se (él/ella/usted)",
+            "de": "se (er/sie/Sie)"
+          }
+        },
+        {
+          "text": {
+            "hu": "me (yo)",
+            "en": "me (yo)",
+            "es": "me (yo)",
+            "de": "me (yo)"
+          },
+          "wrong": {
+            "hu": "Ha me lenne, 'Me ducho antes de desayunar' állna, azaz ÉN zuhanyzom, nem ő.",
+            "en": "If it were me, it would say 'Me ducho antes de desayunar', meaning I shower, not him.",
+            "es": "Si fuera me, diría 'Me ducho antes de desayunar', o sea que YO me ducho, no él.",
+            "de": "Wäre es me, hieße es 'Me ducho antes de desayunar', also dusche ICH, nicht er."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "vr-why-03",
+      "es": "Nos vemos todos los días.",
+      "tr": {
+        "hu": "Mindennap találkozunk.",
+        "en": "We see each other every day.",
+        "es": "Nos vemos todos los días.",
+        "de": "Wir sehen uns jeden Tag."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "nos (nosotros)",
+            "en": "nos (nosotros)",
+            "es": "nos (nosotros)",
+            "de": "nos (wir)"
+          }
+        },
+        {
+          "text": {
+            "hu": "se (él/ella/usted)",
+            "en": "se (él/ella/usted)",
+            "es": "se (él/ella/usted)",
+            "de": "se (er/sie/Sie)"
+          },
+          "wrong": {
+            "hu": "Ha se (él/ella) lenne, 'Se ve todos los días' állna, azaz Ő látja saját magát, ami itt nem is illik; a kölcsönös 'egymást látjuk' jelentéshez nos kell, mert MI vagyunk ketten.",
+            "en": "If it were se (él/ella), it would say 'Se ve todos los días', meaning HE/SHE sees himself/herself, which does not even fit here; the reciprocal 'we see each other' needs nos, because it is US, two people.",
+            "es": "Si fuera se (él/ella), diría 'Se ve todos los días', o sea que ÉL/ELLA se ve a sí mismo, lo cual ni encaja aquí; el recíproco 'nos vemos' necesita nos, porque somos NOSOTROS, dos personas.",
+            "de": "Wäre es se (él/ella), hieße es 'Se ve todos los días', also sieht ER/SIE sich selbst, was hier gar nicht passt; das wechselseitige 'wir sehen uns' braucht nos, weil WIR zu zweit sind."
+          }
+        },
+        {
+          "text": {
+            "hu": "os (vosotros)",
+            "en": "os (vosotros)",
+            "es": "os (vosotros)",
+            "de": "os (ihr)"
+          },
+          "wrong": {
+            "hu": "Ha os lenne, 'Os veis todos los días' állna, azaz TI látjátok egymást, de a beszélő (én) kimaradna a mondatból; itt viszont a beszélő IS benne van, ezért nos.",
+            "en": "If it were os, it would say 'Os veis todos los días', meaning YOU ALL see each other, leaving the speaker (me) out; here the speaker IS included, so nos.",
+            "es": "Si fuera os, diría 'Os veis todos los días', o sea que VOSOTROS os veis, dejando fuera a quien habla (yo); aquí quien habla SÍ está incluido, por eso nos.",
+            "de": "Wäre es os, hieße es 'Os veis todos los días', also seht IHR euch, ohne den Sprecher (mich); hier ist der Sprecher ABER dabei, deshalb nos."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "vr-why-04",
+      "es": "Se acuestan tarde los fines de semana.",
+      "tr": {
+        "hu": "Hétvégén későn fekszenek le.",
+        "en": "They go to bed late on weekends.",
+        "es": "Se acuestan tarde los fines de semana.",
+        "de": "Am Wochenende gehen sie spät ins Bett."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "se (él/ella/usted)",
+            "en": "se (él/ella/usted)",
+            "es": "se (él/ella/usted)",
+            "de": "se (er/sie/Sie)"
+          },
+          "wrong": {
+            "hu": "Ha se (él/ella) lenne, 'Se acuesta tarde los fines de semana' állna, EGYES számú végződéssel; itt viszont 'acuestan' többes számú alak, ezért TÖBB emberről van szó.",
+            "en": "If it were se (él/ella), it would say 'Se acuesta tarde los fines de semana', with a SINGULAR ending; here 'acuestan' is a plural form, so it is SEVERAL people.",
+            "es": "Si fuera se (él/ella), diría 'Se acuesta tarde los fines de semana', con terminación SINGULAR; aquí 'acuestan' es una forma plural, así que son VARIAS personas.",
+            "de": "Wäre es se (él/ella), hieße es 'Se acuesta tarde los fines de semana', mit SINGULAR-Endung; hier ist 'acuestan' eine Pluralform, also sind es MEHRERE Personen."
+          }
+        },
+        {
+          "text": {
+            "hu": "se (ellos/ellas/ustedes)",
+            "en": "se (ellos/ellas/ustedes)",
+            "es": "se (ellos/ellas/ustedes)",
+            "de": "se (sie/Sie)"
+          }
+        },
+        {
+          "text": {
+            "hu": "nos (nosotros)",
+            "en": "nos (nosotros)",
+            "es": "nos (nosotros)",
+            "de": "nos (wir)"
+          },
+          "wrong": {
+            "hu": "Ha nos lenne, 'Nos acostamos tarde los fines de semana' állna, azaz MI fekszünk le későn, a beszélővel együtt, nem ők, kívülről nézve.",
+            "en": "If it were nos, it would say 'Nos acostamos tarde los fines de semana', meaning WE go to bed late, including the speaker, not them, seen from outside.",
+            "es": "Si fuera nos, diría 'Nos acostamos tarde los fines de semana', o sea que NOSOTROS nos acostamos, con el hablante, no ellos, visto desde fuera.",
+            "de": "Wäre es nos, hieße es 'Nos acostamos tarde los fines de semana', also gehen WIR spät ins Bett, mit dem Sprecher, nicht sie, von außen betrachtet."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "vr-why-05",
+      "es": "Te duchas muy rápido.",
+      "tr": {
+        "hu": "Nagyon gyorsan zuhanyzol.",
+        "en": "You shower very fast.",
+        "es": "Te duchas muy rápido.",
+        "de": "Du duschst sehr schnell."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "me (yo)",
+            "en": "me (yo)",
+            "es": "me (yo)",
+            "de": "me (yo)"
+          },
+          "wrong": {
+            "hu": "Ha me lenne, 'Me ducho muy rápido' állna, azaz ÉN zuhanyzom gyorsan, nem te.",
+            "en": "If it were me, it would say 'Me ducho muy rápido', meaning I shower fast, not you.",
+            "es": "Si fuera me, diría 'Me ducho muy rápido', o sea que YO me ducho, no tú.",
+            "de": "Wäre es me, hieße es 'Me ducho muy rápido', also dusche ICH schnell, nicht du."
+          }
+        },
+        {
+          "text": {
+            "hu": "te (tú)",
+            "en": "te (tú)",
+            "es": "te (tú)",
+            "de": "te (tú)"
+          }
+        },
+        {
+          "text": {
+            "hu": "se (él/ella/usted)",
+            "en": "se (él/ella/usted)",
+            "es": "se (él/ella/usted)",
+            "de": "se (er/sie/Sie)"
+          },
+          "wrong": {
+            "hu": "Ha se (él/ella) lenne, 'Se ducha muy rápido' állna, azaz Ő zuhanyzik gyorsan, nem te.",
+            "en": "If it were se (él/ella), it would say 'Se ducha muy rápido', meaning HE/SHE showers fast, not you.",
+            "es": "Si fuera se (él/ella), diría 'Se ducha muy rápido', o sea que ÉL/ELLA se ducha, no tú.",
+            "de": "Wäre es se (él/ella), hieße es 'Se ducha muy rápido', also duscht ER/SIE schnell, nicht du."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "vr-why-06",
+      "es": "Os levantáis temprano.",
+      "tr": {
+        "hu": "Korán keltek.",
+        "en": "You all get up early.",
+        "es": "Os levantáis temprano.",
+        "de": "Ihr steht früh auf."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "nos (nosotros)",
+            "en": "nos (nosotros)",
+            "es": "nos (nosotros)",
+            "de": "nos (wir)"
+          },
+          "wrong": {
+            "hu": "Ha nos lenne, 'Nos levantamos temprano' állna, azaz MI kelünk korán, a beszélővel együtt, nem ti.",
+            "en": "If it were nos, it would say 'Nos levantamos temprano', meaning WE get up early, including the speaker, not you all.",
+            "es": "Si fuera nos, diría 'Nos levantamos temprano', o sea que NOSOTROS nos levantamos, con el hablante, no vosotros.",
+            "de": "Wäre es nos, hieße es 'Nos levantamos temprano', also stehen WIR früh auf, mit dem Sprecher, nicht ihr."
+          }
+        },
+        {
+          "text": {
+            "hu": "os (vosotros)",
+            "en": "os (vosotros)",
+            "es": "os (vosotros)",
+            "de": "os (ihr)"
+          }
+        },
+        {
+          "text": {
+            "hu": "se (ellos/ellas/ustedes)",
+            "en": "se (ellos/ellas/ustedes)",
+            "es": "se (ellos/ellas/ustedes)",
+            "de": "se (sie/Sie)"
+          },
+          "wrong": {
+            "hu": "Ha se (ellos) lenne, 'Se levantan temprano' állna, azaz ŐK kelnek korán, és ez az alak Mexikóban járná a vosotros helyett; itt viszont a spanyolországi vosotros-alak áll: os levantáis.",
+            "en": "If it were se (ellos), it would say 'Se levantan temprano', meaning THEY get up early, the form used in Mexico instead of vosotros; here it is the Spain vosotros form: os levantáis.",
+            "es": "Si fuera se (ellos), diría 'Se levantan temprano', o sea que ELLOS se levantan, la forma que se usaría en México en vez de vosotros; aquí está la forma de España: os levantáis.",
+            "de": "Wäre es se (ellos), hieße es 'Se levantan temprano', also stehen SIE auf, die Form, die in Mexiko statt vosotros benutzt wird; hier steht die spanische vosotros-Form: os levantáis."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "vr-why-07",
+      "es": "Me quedo en casa esta noche.",
+      "tr": {
+        "hu": "Ma este otthon maradok.",
+        "en": "I am staying home tonight.",
+        "es": "Me quedo en casa esta noche.",
+        "de": "Ich bleibe heute Abend zu Hause."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "me (yo)",
+            "en": "me (yo)",
+            "es": "me (yo)",
+            "de": "me (yo)"
+          }
+        },
+        {
+          "text": {
+            "hu": "te (tú)",
+            "en": "te (tú)",
+            "es": "te (tú)",
+            "de": "te (tú)"
+          },
+          "wrong": {
+            "hu": "Ha te lenne, 'Te quedas en casa esta noche' állna, azaz TE maradsz otthon, nem én.",
+            "en": "If it were te, it would say 'Te quedas en casa esta noche', meaning YOU are staying home, not me.",
+            "es": "Si fuera te, diría 'Te quedas en casa esta noche', o sea que TÚ te quedas, no yo.",
+            "de": "Wäre es te, hieße es 'Te quedas en casa esta noche', also bleibst DU zu Hause, nicht ich."
+          }
+        },
+        {
+          "text": {
+            "hu": "nos (nosotros)",
+            "en": "nos (nosotros)",
+            "es": "nos (nosotros)",
+            "de": "nos (wir)"
+          },
+          "wrong": {
+            "hu": "Ha nos lenne, 'Nos quedamos en casa esta noche' állna, azaz MI maradunk otthon, nem csak én.",
+            "en": "If it were nos, it would say 'Nos quedamos en casa esta noche', meaning WE are staying home, not just me.",
+            "es": "Si fuera nos, diría 'Nos quedamos en casa esta noche', o sea que NOSOTROS nos quedamos, no solo yo.",
+            "de": "Wäre es nos, hieße es 'Nos quedamos en casa esta noche', also bleiben WIR zu Hause, nicht nur ich."
+          }
+        }
+      ],
+      "correctIndex": 0
     }
   ]
 }

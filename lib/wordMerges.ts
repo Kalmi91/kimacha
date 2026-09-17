@@ -124,4 +124,113 @@ export const WORD_MERGES: Record<number, number> = {
   // PROMPT-POLICY 5 / FB285 (el/la -> el, a rejtett ikrek előkerültek):
   3804: 3601, // el testigo: B1 törölve, marad A2
   2584: 1854, // el jefe: B1 törölve, marad A1
+
+  // PROMPT-POLICY 7 (es A1, TASK-3 2026-09-17): szabályos többes, marad az
+  // egyes iker; itt az egyes alak MAGASABB szinten élt (B2), ezért az
+  // alacsonyabb szintű többes kártya alakult át egyes számúra, és a
+  // magasabb szintű iker törlődött (a WORD_MERGES-konvenció szerint az
+  // alacsonyabb szint marad meg).
+  3054: 1078, // el zapato: B2 törölve, marad A1 (los zapatos -> el zapato)
+
+  // PROMPT-POLICY 7 (es A2, TASK-3 2026-09-17): szabályos többes, marad az egyes iker
+  3460: 3691, // el cielo: A2 többes törölve, marad A2
+  3498: 3722, // la carta: A2 többes törölve, marad A2
+  3525: 2085, // el animal: A2 többes törölve, marad A2
+  3540: 1836, // la flor: A2 többes törölve, marad A1
+  3560: 1278, // la luz: A2 többes törölve, marad A1
+  3574: 1114, // la pierna: A2 többes törölve, marad A1
+  3586: 3676, // el plan: A2 többes törölve, marad A2
+  3591: 41, // el nombre: A2 többes törölve, marad A0
+  3595: 1077, // el pantalón: A2 többes törölve, marad A1
+  3604: 3652, // el soldado: A2 többes törölve, marad A2
+  3611: 2314, // el sentimiento: A2 többes törölve, marad B1
+  3615: 1279, // la llave: A2 többes törölve, marad A1
+  3616: 1382, // el perro: A2 többes törölve, marad A1
+  3620: 1168, // el metro: A2 többes törölve, marad A1
+  3623: 1600, // el cliente: A2 többes törölve, marad A1
+  3627: 2175, // la dama: A2 többes törölve, marad A2
+  3639: 1115, // el brazo: A2 többes törölve, marad A1
+  3646: 2041, // el asunto: A2 többes törölve, marad A2
+  3662: 226, // la estrella: A2 többes törölve, marad A2
+  3688: 1314, // la semana: A2 többes törölve, marad A1
+  3692: 1859, // la pregunta: A2 többes törölve, marad A1
+  3699: 1855, // la noticia: A2 többes törölve, marad A1
+  3706: 3018, // el dólar: A2 többes törölve, marad B2
+  1901: 2171, // el caballero: A2 többes törölve, marad A2
+  1912: 2056, // la foto: A2 többes törölve, marad A2
+  1934: 2052, // el pie: A2 többes törölve, marad A2
+  1940: 1979, // el tipo: A2 többes törölve, marad A2
+  1993: 3008, // el chico: A2 többes törölve, marad B2
+  2033: 2174, // el millón: A2 többes törölve, marad A2
+  2078: 3012, // el detalle: A2 többes törölve, marad B2
+  2081: 2011, // el punto: A2 többes törölve, marad A2
+  2121: 2959, // el rayo: A2 többes törölve, marad B1
+  2128: 3717, // la relación: A2 többes törölve, marad A2
+  2135: 3766, // la razón: A2 többes törölve, marad A2
+  2152: 2034, // el modo: A2 többes törölve, marad A2
+  2163: 3421, // la orden: A2 többes törölve, marad A2
+  2178: 1977, // el momento: A2 többes törölve, marad A2
+  2239: 2024, // el número: A2 többes törölve, marad A2
+
+  // PROMPT-POLICY 7 (es A2, TASK-3 2026-09-17): szint-inverzió, a magasabb szintű iker törölve
+  2408: 3466, // la regla: B1 törölve, marad A2 (las reglas -> la regla) [regla A2 játék-tartalomban is]
+
+  // PROMPT-POLICY 7 (es B1, TASK-3 2026-09-17): szabályos többes, marad az egyes iker
+  2292: 1385, // el pez: B1 többes törölve, marad A1
+  2313: 2337, // la habilidad: B1 többes törölve, marad B1
+  2316: 3630, // la operación: B1 többes törölve, marad A2
+  2329: 1575, // la habitación: B1 többes törölve, marad A1
+  2330: 3872, // la galleta: B1 többes törölve, marad A1
+  2348: 2246, // el ladrón: B1 többes törölve, marad A2
+  2358: 3085, // el rumor: B1 többes törölve, marad B2
+  2447: 2179, // la posibilidad: B1 többes törölve, marad A2
+  2449: 2280, // el registro: B1 többes törölve, marad A2
+  2455: 1943, // la señal: B1 többes törölve, marad A2
+  2457: 2173, // la imagen: B1 többes törölve, marad A2
+  2482: 3543, // la opción: B1 többes törölve, marad A2
+  2502: 2507, // el voto: B1 többes törölve, marad B1
+  2546: 2497, // la condición: B1 többes törölve, marad B1
+  2551: 3465, // la acción: B1 többes törölve, marad A2
+  2554: 2484, // el archivo: B1 többes törölve, marad B1
+  2594: 2346, // el pensamiento: B1 többes törölve, marad B1
+  2638: 2230, // el periódico: B1 többes törölve, marad A2
+  2655: 2158, // el fondo: B1 többes törölve, marad A2
+  2666: 2939, // el empleado: B1 többes törölve, marad B1
+  2669: 2708, // el prisionero: B1 többes törölve, marad B1
+  2672: 1941, // el crimen: B1 többes törölve, marad A2
+  2679: 2945, // el adulto: B1 többes törölve, marad B1
+  2687: 7168, // el subtítulo: B1 többes törölve, marad B2
+  2702: 1164, // el avión: B1 többes törölve, marad A1
+  2711: 2808, // la emoción: B1 többes törölve, marad B1
+  2735: 2125, // el efecto: B1 többes törölve, marad A2
+  2756: 3150, // el diamante: B1 többes törölve, marad B2
+  2757: 2203, // la unidad: B1 többes törölve, marad A2
+  2773: 2040, // el grupo: B1 többes törölve, marad A2
+  2789: 3634, // la elección: B1 többes törölve, marad A2
+  2845: 2552, // el siglo: B1 többes törölve, marad B1
+  2854: 2074, // el monstruo: B1 többes törölve, marad A2
+  2871: 3726, // la reunión: B1 többes törölve, marad A2
+  2873: 3703, // la voz: B1 többes törölve, marad A2
+  2879: 2263, // el cadáver: B1 többes törölve, marad A2
+  2891: 2786, // el producto: B1 többes törölve, marad B1
+  2917: 2020, // la oportunidad: B1 többes törölve, marad A2
+  2924: 2578, // el socio: B1 többes törölve, marad B1
+  2927: 2268, // el francés: B1 többes törölve, marad A2
+  2954: 2658, // el cigarrillo: B1 többes törölve, marad B1
+  2978: 2649, // la autoridad: B1 többes törölve, marad B1
+  2985: 2608, // el jugador: B1 többes törölve, marad B1
+  2997: 2332, // el objeto: B1 többes törölve, marad B1
+  2999: 3141, // el término: B1 többes törölve, marad B2
+
+  // PROMPT-POLICY 7 (es B1, TASK-3 2026-09-17): szint-inverzió, a magasabb szintű iker törölve
+  6578: 2633, // el impuesto: C1 törölve, marad B1 (los impuestos -> el impuesto) [impuestos B1 mondatban is]
+
+  // PROMPT-POLICY 7 (es B2, TASK-3 2026-09-17): szabályos többes, marad az egyes iker
+  3010: 213, // la canción: B2 többes törölve, marad A2
+  3011: 3729, // la decisión: B2 többes törölve, marad A2
+  3035: 2101, // la intención: B2 többes törölve, marad A2
+  3058: 3350, // la célula: B2 többes törölve, marad B2
+  3075: 1857, // el examen: B2 többes törölve, marad A1
+  3185: 3638, // la conversación: B2 többes törölve, marad A2
+  3186: 2378, // la lección: B2 többes törölve, marad B1
 };

@@ -1035,6 +1035,356 @@
       "person": "vosotros",
       "answer": "vivíais",
       "table": "imperfecto-regular"
+    },
+    {
+      "kind": "why",
+      "id": "im-why-01",
+      "es": "Hablaba español en el trabajo.",
+      "tr": {
+        "hu": "Spanyolul beszéltem a munkahelyemen.",
+        "en": "I used to speak Spanish at work.",
+        "es": "Hablaba español en el trabajo.",
+        "de": "Ich sprach bei der Arbeit Spanisch."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          }
+        },
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          },
+          "wrong": {
+            "hu": "Ha tú lenne, 'Hablabas español en el trabajo' állna, azaz TE beszéltél spanyolul, nem én.",
+            "en": "If it were tú, it would say 'Hablabas español en el trabajo', meaning YOU used to speak Spanish, not me.",
+            "es": "Si fuera tú, diría 'Hablabas español en el trabajo', o sea que TÚ hablabas, no yo.",
+            "de": "Wäre es tú, hieße es 'Hablabas español en el trabajo', also hast DU gesprochen, nicht ich."
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Hablábamos español en el trabajo' állna, azaz TÖBBEN beszéltünk, nem csak én.",
+            "en": "If it were nosotros, it would say 'Hablábamos español en el trabajo', meaning WE used to speak, not just me.",
+            "es": "Si fuera nosotros, diría 'Hablábamos español en el trabajo', o sea que hablábamos VARIOS, no solo yo.",
+            "de": "Wäre es nosotros, hieße es 'Hablábamos español en el trabajo', also sprachen WIR mehrere, nicht nur ich."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "im-why-02",
+      "es": "Comías fruta cada mañana.",
+      "tr": {
+        "hu": "Minden reggel gyümölcsöt ettél.",
+        "en": "You used to eat fruit every morning.",
+        "es": "Comías fruta cada mañana.",
+        "de": "Du hast jeden Morgen Obst gegessen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          },
+          "wrong": {
+            "hu": "Ha yo lenne, 'Comía fruta cada mañana' állna, azaz ÉN ettem gyümölcsöt, nem te.",
+            "en": "If it were yo, it would say 'Comía fruta cada mañana', meaning I used to eat fruit, not you.",
+            "es": "Si fuera yo, diría 'Comía fruta cada mañana', o sea que YO comía fruta, no tú.",
+            "de": "Wäre es yo, hieße es 'Comía fruta cada mañana', also aß ICH Obst, nicht du."
+          }
+        },
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          },
+          "wrong": {
+            "hu": "Ha ellos lenne, 'Comían fruta cada mañana' állna, azaz ŐK ettek gyümölcsöt, nem te.",
+            "en": "If it were ellos, it would say 'Comían fruta cada mañana', meaning THEY used to eat fruit, not you.",
+            "es": "Si fuera ellos, diría 'Comían fruta cada mañana', o sea que ELLOS comían fruta, no tú.",
+            "de": "Wäre es ellos, hieße es 'Comían fruta cada mañana', also aßen SIE Obst, nicht du."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "im-why-03",
+      "es": "Vivía en Puebla.",
+      "tr": {
+        "hu": "Pueblában élt.",
+        "en": "He/She used to live in Puebla.",
+        "es": "Vivía en Puebla.",
+        "de": "Er/sie lebte in Puebla."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          },
+          "wrong": {
+            "hu": "Ha tú lenne, 'Vivías en Puebla' állna, azaz TE éltél Pueblában, nem ő.",
+            "en": "If it were tú, it would say 'Vivías en Puebla', meaning YOU used to live in Puebla, not him/her.",
+            "es": "Si fuera tú, diría 'Vivías en Puebla', o sea que TÚ vivías ahí, no él/ella.",
+            "de": "Wäre es tú, hieße es 'Vivías en Puebla', also hast DU dort gelebt, nicht er/sie."
+          }
+        },
+        {
+          "text": {
+            "hu": "ő / Ön",
+            "en": "he/she/you (usted)",
+            "es": "él/ella/usted",
+            "de": "er/sie/Sie"
+          }
+        },
+        {
+          "text": {
+            "hu": "ti (vosotros, Spo.)",
+            "en": "you all (vosotros, Spain)",
+            "es": "vosotros",
+            "de": "ihr (vosotros, Spanien)"
+          },
+          "wrong": {
+            "hu": "Ha vosotros lenne, 'Vivíais en Puebla' állna, azaz TI éltetek Pueblában, nem csak ő.",
+            "en": "If it were vosotros, it would say 'Vivíais en Puebla', meaning YOU ALL used to live in Puebla, not just him/her.",
+            "es": "Si fuera vosotros, diría 'Vivíais en Puebla', o sea que VOSOTROS vivíais ahí, no solo él/ella.",
+            "de": "Wäre es vosotros, hieße es 'Vivíais en Puebla', also habt IHR dort gelebt, nicht nur er/sie."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "im-why-04",
+      "es": "Hablábamos todos los días.",
+      "tr": {
+        "hu": "Minden nap beszéltünk.",
+        "en": "We used to talk every day.",
+        "es": "Hablábamos todos los días.",
+        "de": "Wir sprachen jeden Tag miteinander."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          },
+          "wrong": {
+            "hu": "Ha yo lenne, 'Hablaba todos los días' állna, azaz ÉN beszéltem minden nap, nem mi.",
+            "en": "If it were yo, it would say 'Hablaba todos los días', meaning I used to talk every day, not us.",
+            "es": "Si fuera yo, diría 'Hablaba todos los días', o sea que YO hablaba, no nosotros.",
+            "de": "Wäre es yo, hieße es 'Hablaba todos los días', also sprach ICH jeden Tag, nicht wir."
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          },
+          "wrong": {
+            "hu": "Ha ellos lenne, 'Hablaban todos los días' állna, azaz ŐK beszéltek minden nap, nem mi.",
+            "en": "If it were ellos, it would say 'Hablaban todos los días', meaning THEY used to talk every day, not us.",
+            "es": "Si fuera ellos, diría 'Hablaban todos los días', o sea que ELLOS hablaban, no nosotros.",
+            "de": "Wäre es ellos, hieße es 'Hablaban todos los días', also sprachen SIE jeden Tag, nicht wir."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "im-why-05",
+      "es": "Vivíais en Puebla.",
+      "tr": {
+        "hu": "Pueblában éltetek.",
+        "en": "You all used to live in Puebla.",
+        "es": "Vivíais en Puebla.",
+        "de": "Ihr habt in Puebla gelebt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Vivíamos en Puebla' állna, azaz MI éltünk Pueblában, nem ti.",
+            "en": "If it were nosotros, it would say 'Vivíamos en Puebla', meaning WE used to live in Puebla, not you all.",
+            "es": "Si fuera nosotros, diría 'Vivíamos en Puebla', o sea que NOSOTROS vivíamos ahí, no vosotros.",
+            "de": "Wäre es nosotros, hieße es 'Vivíamos en Puebla', also haben WIR dort gelebt, nicht ihr."
+          }
+        },
+        {
+          "text": {
+            "hu": "ti (vosotros, Spo.)",
+            "en": "you all (vosotros, Spain)",
+            "es": "vosotros",
+            "de": "ihr (vosotros, Spanien)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ő / Ön",
+            "en": "he/she/you (usted)",
+            "es": "él/ella/usted",
+            "de": "er/sie/Sie"
+          },
+          "wrong": {
+            "hu": "Ha él/ella lenne, 'Vivía en Puebla' állna, azaz Ő élt Pueblában, egyedül, nem ti, többen.",
+            "en": "If it were él/ella, it would say 'Vivía en Puebla', meaning HE/SHE used to live in Puebla, alone, not you all.",
+            "es": "Si fuera él/ella, diría 'Vivía en Puebla', o sea que ÉL/ELLA vivía ahí, solo, no vosotros.",
+            "de": "Wäre es él/ella, hieße es 'Vivía en Puebla', also hat ER/SIE allein dort gelebt, nicht ihr."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "im-why-06",
+      "es": "Iban al mar cada verano.",
+      "tr": {
+        "hu": "Minden nyáron a tengerhez jártak.",
+        "en": "They used to go to the sea every summer.",
+        "es": "Iban al mar cada verano.",
+        "de": "Sie fuhren jeden Sommer ans Meer."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Íbamos al mar cada verano' állna, azaz MI jártunk a tengerhez, nem ők.",
+            "en": "If it were nosotros, it would say 'Íbamos al mar cada verano', meaning WE used to go to the sea, not them.",
+            "es": "Si fuera nosotros, diría 'Íbamos al mar cada verano', o sea que NOSOTROS íbamos, no ellos.",
+            "de": "Wäre es nosotros, hieße es 'Íbamos al mar cada verano', also fuhren WIR ans Meer, nicht sie."
+          }
+        },
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          },
+          "wrong": {
+            "hu": "Ha tú lenne, 'Ibas al mar cada verano' állna, azaz TE jártál a tengerhez, nem ők.",
+            "en": "If it were tú, it would say 'Ibas al mar cada verano', meaning YOU used to go to the sea, not them.",
+            "es": "Si fuera tú, diría 'Ibas al mar cada verano', o sea que TÚ ibas, no ellos.",
+            "de": "Wäre es tú, hieße es 'Ibas al mar cada verano', also fuhrst DU ans Meer, nicht sie."
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "im-why-07",
+      "es": "Veíamos la tele todas las tardes.",
+      "tr": {
+        "hu": "Minden délután tévéztünk.",
+        "en": "We used to watch TV every afternoon.",
+        "es": "Veíamos la tele todas las tardes.",
+        "de": "Wir haben jeden Nachmittag ferngesehen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          }
+        },
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          },
+          "wrong": {
+            "hu": "Ha yo lenne, 'Veía la tele todas las tardes' állna, azaz ÉN néztem a tévét, nem mi.",
+            "en": "If it were yo, it would say 'Veía la tele todas las tardes', meaning I used to watch TV, not us.",
+            "es": "Si fuera yo, diría 'Veía la tele todas las tardes', o sea que YO veía la tele, no nosotros.",
+            "de": "Wäre es yo, hieße es 'Veía la tele todas las tardes', also sah ICH fern, nicht wir."
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          },
+          "wrong": {
+            "hu": "Ha ellos lenne, 'Veían la tele todas las tardes' állna, azaz ŐK nézték a tévét, nem mi.",
+            "en": "If it were ellos, it would say 'Veían la tele todas las tardes', meaning THEY used to watch TV, not us.",
+            "es": "Si fuera ellos, diría 'Veían la tele todas las tardes', o sea que ELLOS veían la tele, no nosotros.",
+            "de": "Wäre es ellos, hieße es 'Veían la tele todas las tardes', also sahen SIE fern, nicht wir."
+          }
+        }
+      ],
+      "correctIndex": 0
     }
   ]
 }

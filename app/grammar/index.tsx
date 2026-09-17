@@ -8,6 +8,7 @@ import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { LEVELS, type Level } from '@/data/words';
 import {
+  doneGrammarTopicProgress,
   GRAMMAR_PROGRESS_KEY,
   SYLLABUS_LEVELS,
   hasLesson,
@@ -60,13 +61,10 @@ export default function GrammarSyllabusScreen() {
     setLevel(lvl);
     setOpenLevel((current) => current ?? (LEVELS.includes(lvl) && lvl !== 'A0' ? lvl : 'A1'));
 
+    // D3 (FB290): egy téma csak akkor "kész", ha a leckéjében létező összes
+    // fajtájából van kész sor (doneGrammarTopicProgress, lib/grammar/syllabus.ts).
     const rows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
-    const map = new Map<string, TopicProgress>();
-    for (const row of rows) {
-      const data = (row.data ?? {}) as { correct?: number; total?: number };
-      map.set(row.itemId, { state: row.state, correct: data.correct, total: data.total });
-    }
-    setProgress(map);
+    setProgress(doneGrammarTopicProgress(target, rows));
   }, []);
 
   useFocusEffect(

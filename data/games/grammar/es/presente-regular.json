@@ -975,6 +975,356 @@
       "person": "vosotros",
       "answer": "vivís",
       "table": "presente-regular"
+    },
+    {
+      "kind": "why",
+      "id": "pr-why-01",
+      "es": "Hablo tres idiomas.",
+      "tr": {
+        "hu": "Három nyelven beszélek.",
+        "en": "I speak three languages.",
+        "es": "Hablo tres idiomas.",
+        "de": "Ich spreche drei Sprachen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          }
+        },
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          },
+          "wrong": {
+            "hu": "Ha tú lenne, a mondat 'Tú hablas tres idiomas' lenne, ami azt jelentené, hogy TE beszélsz három nyelven, nem én.",
+            "en": "If it were tú, the sentence would be 'Tú hablas tres idiomas', meaning YOU speak three languages, not me.",
+            "es": "Si fuera tú, la frase sería 'Tú hablas tres idiomas', es decir que hablas TÚ tres idiomas, no yo.",
+            "de": "Wäre es tú, hieße der Satz 'Tú hablas tres idiomas', also sprichst DU drei Sprachen, nicht ich."
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Hablamos tres idiomas' állna, azaz TÖBBEN beszélünk három nyelven, nem csak én.",
+            "en": "If it were nosotros, it would say 'Hablamos tres idiomas', meaning WE speak three languages, not just me.",
+            "es": "Si fuera nosotros, diría 'Hablamos tres idiomas', o sea que hablamos VARIOS, no solo yo.",
+            "de": "Wäre es nosotros, hieße es 'Hablamos tres idiomas', also sprechen WIR mehrere, nicht nur ich."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pr-why-02",
+      "es": "Comes mucha fruta.",
+      "tr": {
+        "hu": "Sok gyümölcsöt eszel.",
+        "en": "You eat a lot of fruit.",
+        "es": "Comes mucha fruta.",
+        "de": "Du isst viel Obst."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ő / Ön",
+            "en": "he/she/you (usted)",
+            "es": "él/ella/usted",
+            "de": "er/sie/Sie"
+          },
+          "wrong": {
+            "hu": "Ha él/ella lenne, 'Come mucha fruta' állna, azaz Ő eszik sok gyümölcsöt, nem te.",
+            "en": "If it were él/ella, it would say 'Come mucha fruta', meaning HE/SHE eats a lot of fruit, not you.",
+            "es": "Si fuera él/ella, diría 'Come mucha fruta', o sea que ÉL/ELLA come mucha fruta, no tú.",
+            "de": "Wäre es él/ella, hieße es 'Come mucha fruta', also isst ER/SIE viel Obst, nicht du."
+          }
+        },
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          },
+          "wrong": {
+            "hu": "Ha ellos lenne, 'Comen mucha fruta' állna, azaz ŐK esznek sok gyümölcsöt, nem te egyedül.",
+            "en": "If it were ellos, it would say 'Comen mucha fruta', meaning THEY eat a lot of fruit, not just you.",
+            "es": "Si fuera ellos, diría 'Comen mucha fruta', o sea que ELLOS comen mucha fruta, no solo tú.",
+            "de": "Wäre es ellos, hieße es 'Comen mucha fruta', also essen SIE viel Obst, nicht nur du."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pr-why-03",
+      "es": "Vive en Puebla.",
+      "tr": {
+        "hu": "Pueblában él.",
+        "en": "He/She lives in Puebla.",
+        "es": "Vive en Puebla.",
+        "de": "Er/Sie lebt in Puebla."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          },
+          "wrong": {
+            "hu": "Ha yo lenne, 'Vivo en Puebla' állna, azaz ÉN élek Pueblában, nem ő.",
+            "en": "If it were yo, it would say 'Vivo en Puebla', meaning I live in Puebla, not him/her.",
+            "es": "Si fuera yo, diría 'Vivo en Puebla', o sea que YO vivo en Puebla, no él/ella.",
+            "de": "Wäre es yo, hieße es 'Vivo en Puebla', also lebe ICH in Puebla, nicht er/sie."
+          }
+        },
+        {
+          "text": {
+            "hu": "ő / Ön",
+            "en": "he/she/you (usted)",
+            "es": "él/ella/usted",
+            "de": "er/sie/Sie"
+          }
+        },
+        {
+          "text": {
+            "hu": "ti (vosotros, Spo.)",
+            "en": "you all (vosotros, Spain)",
+            "es": "vosotros",
+            "de": "ihr (vosotros, Spanien)"
+          },
+          "wrong": {
+            "hu": "Ha vosotros lenne, 'Vivís en Puebla' állna, azaz TI éltek Pueblában, és ezt az alakot Mexikóban nem is használják.",
+            "en": "If it were vosotros, it would say 'Vivís en Puebla', meaning YOU ALL live in Puebla, and this form is not even used in Mexico.",
+            "es": "Si fuera vosotros, diría 'Vivís en Puebla', o sea que VOSOTROS vivís en Puebla, y esa forma ni se usa en México.",
+            "de": "Wäre es vosotros, hieße es 'Vivís en Puebla', also lebt IHR in Puebla, und diese Form wird in Mexiko gar nicht benutzt."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pr-why-04",
+      "es": "Trabajamos los sábados.",
+      "tr": {
+        "hu": "Szombatonként dolgozunk.",
+        "en": "We work on Saturdays.",
+        "es": "Trabajamos los sábados.",
+        "de": "Wir arbeiten samstags."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          },
+          "wrong": {
+            "hu": "Ha yo lenne, 'Trabajo los sábados' állna, azaz ÉN dolgozom szombatonként, nem mi.",
+            "en": "If it were yo, it would say 'Trabajo los sábados', meaning I work on Saturdays, not us.",
+            "es": "Si fuera yo, diría 'Trabajo los sábados', o sea que YO trabajo los sábados, no nosotros.",
+            "de": "Wäre es yo, hieße es 'Trabajo los sábados', also arbeite ICH samstags, nicht wir."
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          },
+          "wrong": {
+            "hu": "Ha ellos lenne, 'Trabajan los sábados' állna, azaz ŐK dolgoznak szombatonként, nem mi.",
+            "en": "If it were ellos, it would say 'Trabajan los sábados', meaning THEY work on Saturdays, not us.",
+            "es": "Si fuera ellos, diría 'Trabajan los sábados', o sea que ELLOS trabajan los sábados, no nosotros.",
+            "de": "Wäre es ellos, hieße es 'Trabajan los sábados', also arbeiten SIE samstags, nicht wir."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pr-why-05",
+      "es": "Coméis temprano.",
+      "tr": {
+        "hu": "Korán esztek.",
+        "en": "You all eat early.",
+        "es": "Coméis temprano.",
+        "de": "Ihr esst früh."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Comemos temprano' állna, azaz MI eszünk korán, nem ti.",
+            "en": "If it were nosotros, it would say 'Comemos temprano', meaning WE eat early, not you all.",
+            "es": "Si fuera nosotros, diría 'Comemos temprano', o sea que NOSOTROS comemos temprano, no vosotros.",
+            "de": "Wäre es nosotros, hieße es 'Comemos temprano', also essen WIR früh, nicht ihr."
+          }
+        },
+        {
+          "text": {
+            "hu": "ti (vosotros, Spo.)",
+            "en": "you all (vosotros, Spain)",
+            "es": "vosotros",
+            "de": "ihr (vosotros, Spanien)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ő / Ön",
+            "en": "he/she/you (usted)",
+            "es": "él/ella/usted",
+            "de": "er/sie/Sie"
+          },
+          "wrong": {
+            "hu": "Ha él/ella lenne, 'Come temprano' állna, azaz Ő eszik korán, egyedül, nem ti, többen.",
+            "en": "If it were él/ella, it would say 'Come temprano', meaning HE/SHE eats early, alone, not you all.",
+            "es": "Si fuera él/ella, diría 'Come temprano', o sea que ÉL/ELLA come temprano, solo, no vosotros.",
+            "de": "Wäre es él/ella, hieße es 'Come temprano', also isst ER/SIE allein früh, nicht ihr, mehrere."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pr-why-06",
+      "es": "Escriben cartas.",
+      "tr": {
+        "hu": "Leveleket írnak.",
+        "en": "They write letters.",
+        "es": "Escriben cartas.",
+        "de": "Sie schreiben Briefe."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          },
+          "wrong": {
+            "hu": "Ha tú lenne, 'Escribes cartas' állna, azaz TE írsz leveleket, nem ők.",
+            "en": "If it were tú, it would say 'Escribes cartas', meaning YOU write letters, not them.",
+            "es": "Si fuera tú, diría 'Escribes cartas', o sea que TÚ escribes cartas, no ellos.",
+            "de": "Wäre es tú, hieße es 'Escribes cartas', also schreibst DU Briefe, nicht sie."
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Escribimos cartas' állna, azaz MI írunk leveleket, nem ők.",
+            "en": "If it were nosotros, it would say 'Escribimos cartas', meaning WE write letters, not them.",
+            "es": "Si fuera nosotros, diría 'Escribimos cartas', o sea que NOSOTROS escribimos cartas, no ellos.",
+            "de": "Wäre es nosotros, hieße es 'Escribimos cartas', also schreiben WIR Briefe, nicht sie."
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "pr-why-07",
+      "es": "Comemos temprano los domingos.",
+      "tr": {
+        "hu": "Vasárnaponként korán eszünk.",
+        "en": "On Sundays we eat early.",
+        "es": "Comemos temprano los domingos.",
+        "de": "Sonntags essen wir früh."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ti (vosotros, Spo.)",
+            "en": "you all (vosotros, Spain)",
+            "es": "vosotros",
+            "de": "ihr (vosotros, Spanien)"
+          },
+          "wrong": {
+            "hu": "Ha vosotros lenne, 'Coméis temprano los domingos' állna, azaz TI esztek korán, nem mi.",
+            "en": "If it were vosotros, it would say 'Coméis temprano los domingos', meaning YOU ALL eat early, not us.",
+            "es": "Si fuera vosotros, diría 'Coméis temprano los domingos', o sea que VOSOTROS coméis temprano, no nosotros.",
+            "de": "Wäre es vosotros, hieße es 'Coméis temprano los domingos', also esst IHR früh, nicht wir."
+          }
+        },
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          },
+          "wrong": {
+            "hu": "Ha yo lenne, 'Como temprano los domingos' állna, azaz ÉN eszem korán, egyedül, nem mi, többen.",
+            "en": "If it were yo, it would say 'Como temprano los domingos', meaning I eat early, alone, not us.",
+            "es": "Si fuera yo, diría 'Como temprano los domingos', o sea que YO como temprano, solo, no nosotros.",
+            "de": "Wäre es yo, hieße es 'Como temprano los domingos', also esse ICH allein früh, nicht wir."
+          }
+        }
+      ],
+      "correctIndex": 0
     }
   ]
 }

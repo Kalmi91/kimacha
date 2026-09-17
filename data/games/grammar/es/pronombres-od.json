@@ -1077,6 +1077,356 @@
       "person": "ellas / ustedes (femenino)",
       "answer": "las",
       "table": "pronombres-od"
+    },
+    {
+      "kind": "why",
+      "id": "pod-why-01",
+      "es": "Lo tengo aquí.",
+      "tr": {
+        "hu": "Itt van nálam.",
+        "en": "I have it here.",
+        "es": "Lo tengo aquí.",
+        "de": "Ich habe es hier."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lo: hímnemű egyes szám",
+            "en": "lo: masculine singular",
+            "es": "lo: masculino singular",
+            "de": "lo: maskulin Singular"
+          }
+        },
+        {
+          "text": {
+            "hu": "la: nőnemű egyes szám",
+            "en": "la: feminine singular",
+            "es": "la: femenino singular",
+            "de": "la: feminin Singular"
+          },
+          "wrong": {
+            "hu": "A la nőnemű dolgot helyettesítene (\"¿La mochila? La tengo aquí\"); itt viszont \"el libro\" hímnemű, ezért lo.",
+            "en": "La would replace a feminine thing (\"¿La mochila? La tengo aquí\"); here \"el libro\" is masculine, so lo.",
+            "es": "La sustituiría algo femenino (\"¿La mochila? La tengo aquí\"); aquí \"el libro\" es masculino, por eso lo.",
+            "de": "La würde etwas Feminines ersetzen (\"¿La mochila? La tengo aquí\"); hier ist \"el libro\" maskulin, deshalb lo."
+          }
+        },
+        {
+          "text": {
+            "hu": "los: hímnemű/vegyes többes",
+            "en": "los: masc./mixed plural",
+            "es": "los: masculino/mixto plural",
+            "de": "los: mask./gemischt Plural"
+          },
+          "wrong": {
+            "hu": "A los TÖBBES számú hímnemű dolgot helyettesítene (\"¿Los libros? Los tengo aquí\"); itt viszont egyetlen könyvről van szó, ezért egyes szám: lo.",
+            "en": "Los would replace PLURAL masculine things (\"¿Los libros? Los tengo aquí\"); here it is a single book, so singular: lo.",
+            "es": "Los sustituiría cosas masculinas PLURALES (\"¿Los libros? Los tengo aquí\"); aquí es un solo libro, por eso singular: lo.",
+            "de": "Los würde PLURALE maskuline Dinge ersetzen (\"¿Los libros? Los tengo aquí\"); hier ist es ein einziges Buch, deshalb Singular: lo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pod-why-02",
+      "es": "La llevo yo.",
+      "tr": {
+        "hu": "Én viszem.",
+        "en": "I'll carry it.",
+        "es": "La llevo yo.",
+        "de": "Ich trage ihn."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lo: hímnemű egyes szám",
+            "en": "lo: masculine singular",
+            "es": "lo: masculino singular",
+            "de": "lo: maskulin Singular"
+          },
+          "wrong": {
+            "hu": "A lo hímnemű dolgot helyettesítene (\"¿El libro? Lo llevo yo\"); itt viszont \"la mochila\" nőnemű, ezért la.",
+            "en": "Lo would replace a masculine thing (\"¿El libro? Lo llevo yo\"); here \"la mochila\" is feminine, so la.",
+            "es": "Lo sustituiría algo masculino (\"¿El libro? Lo llevo yo\"); aquí \"la mochila\" es femenino, por eso la.",
+            "de": "Lo würde etwas Maskulines ersetzen (\"¿El libro? Lo llevo yo\"); hier ist \"la mochila\" feminin, deshalb la."
+          }
+        },
+        {
+          "text": {
+            "hu": "la: nőnemű egyes szám",
+            "en": "la: feminine singular",
+            "es": "la: femenino singular",
+            "de": "la: feminin Singular"
+          }
+        },
+        {
+          "text": {
+            "hu": "las: nőnemű többes szám",
+            "en": "las: feminine plural",
+            "es": "las: femenino plural",
+            "de": "las: feminin Plural"
+          },
+          "wrong": {
+            "hu": "A las TÖBBES számú nőnemű dolgot helyettesítene (\"¿Las llaves? Las llevo yo\"); itt viszont egyetlen hátizsákról van szó, ezért egyes szám: la.",
+            "en": "Las would replace PLURAL feminine things (\"¿Las llaves? Las llevo yo\"); here it is a single backpack, so singular: la.",
+            "es": "Las sustituiría cosas femeninas PLURALES (\"¿Las llaves? Las llevo yo\"); aquí es una sola mochila, por eso singular: la.",
+            "de": "Las würde PLURALE feminine Dinge ersetzen (\"¿Las llaves? Las llevo yo\"); hier ist es ein einziger Rucksack, deshalb Singular: la."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pod-why-03",
+      "es": "Los tengo aquí.",
+      "tr": {
+        "hu": "Itt vannak nálam.",
+        "en": "I have them here.",
+        "es": "Los tengo aquí.",
+        "de": "Ich habe sie hier."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lo: hímnemű egyes szám",
+            "en": "lo: masculine singular",
+            "es": "lo: masculino singular",
+            "de": "lo: maskulin Singular"
+          },
+          "wrong": {
+            "hu": "A lo EGYES számú hímnemű dolgot helyettesítene (\"¿El libro? Lo tengo aquí\"); itt viszont TÖBB könyvről van szó, ezért többes szám: los.",
+            "en": "Lo would replace a SINGULAR masculine thing (\"¿El libro? Lo tengo aquí\"); here it is SEVERAL books, so plural: los.",
+            "es": "Lo sustituiría algo masculino SINGULAR (\"¿El libro? Lo tengo aquí\"); aquí son VARIOS libros, por eso plural: los.",
+            "de": "Lo würde ein SINGULARES maskulines Ding ersetzen (\"¿El libro? Lo tengo aquí\"); hier sind es MEHRERE Bücher, deshalb Plural: los."
+          }
+        },
+        {
+          "text": {
+            "hu": "los: hímnemű/vegyes többes",
+            "en": "los: masc./mixed plural",
+            "es": "los: masculino/mixto plural",
+            "de": "los: mask./gemischt Plural"
+          }
+        },
+        {
+          "text": {
+            "hu": "las: nőnemű többes szám",
+            "en": "las: feminine plural",
+            "es": "las: femenino plural",
+            "de": "las: feminin Plural"
+          },
+          "wrong": {
+            "hu": "A las nőnemű, többes számú dolgot helyettesítene (\"¿Las llaves? Las tengo aquí\"); itt viszont \"los libros\" hímnemű, ezért los.",
+            "en": "Las would replace feminine, plural things (\"¿Las llaves? Las tengo aquí\"); here \"los libros\" is masculine, so los.",
+            "es": "Las sustituiría cosas femeninas y plurales (\"¿Las llaves? Las tengo aquí\"); aquí \"los libros\" es masculino, por eso los.",
+            "de": "Las würde feminine, plurale Dinge ersetzen (\"¿Las llaves? Las tengo aquí\"); hier ist \"los libros\" maskulin, deshalb los."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pod-why-04",
+      "es": "Las tengo en la bolsa.",
+      "tr": {
+        "hu": "Nálam vannak a táskában.",
+        "en": "I have them in the bag.",
+        "es": "Las tengo en la bolsa.",
+        "de": "Ich habe sie in der Tasche."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "los: hímnemű/vegyes többes",
+            "en": "los: masc./mixed plural",
+            "es": "los: masculino/mixto plural",
+            "de": "los: mask./gemischt Plural"
+          },
+          "wrong": {
+            "hu": "A los hímnemű vagy vegyes csoportot helyettesítene (\"¿Los libros? Los tengo en la bolsa\"); itt viszont \"las llaves\" csupa nőnemű dolog, ezért las.",
+            "en": "Los would replace a masculine or mixed group (\"¿Los libros? Los tengo en la bolsa\"); here \"las llaves\" are all feminine, so las.",
+            "es": "Los sustituiría un grupo masculino o mixto (\"¿Los libros? Los tengo en la bolsa\"); aquí \"las llaves\" son todas femeninas, por eso las.",
+            "de": "Los würde eine maskuline oder gemischte Gruppe ersetzen (\"¿Los libros? Los tengo en la bolsa\"); hier ist \"las llaves\" rein feminin, deshalb las."
+          }
+        },
+        {
+          "text": {
+            "hu": "las: nőnemű többes szám",
+            "en": "las: feminine plural",
+            "es": "las: femenino plural",
+            "de": "las: feminin Plural"
+          }
+        },
+        {
+          "text": {
+            "hu": "1./2. személy (me/te/nos/os)",
+            "en": "1st/2nd person (me/te/nos/os)",
+            "es": "1.ª/2.ª persona (me/te/nos/os)",
+            "de": "1./2. Person (me/te/nos/os)"
+          },
+          "wrong": {
+            "hu": "A me/te/nos/os saját magamat vagy a beszélgetőpartneremet jelölné (\"Me tienes en la bolsa\" értelmetlen lenne); itt egy TÁRGYAT (las llaves) helyettesítünk, ezért las.",
+            "en": "Me/te/nos/os would mark myself or the person I am talking to (\"Me tienes en la bolsa\" would make no sense); here we replace a THING (las llaves), so las.",
+            "es": "Me/te/nos/os marcaría a mí mismo o a mi interlocutor (\"Me tienes en la bolsa\" no tendría sentido); aquí sustituimos una COSA (las llaves), por eso las.",
+            "de": "Me/te/nos/os würde mich selbst oder meinen Gesprächspartner bezeichnen (\"Me tienes en la bolsa\" würde keinen Sinn ergeben); hier ersetzen wir eine SACHE (las llaves), deshalb las."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pod-why-05",
+      "es": "Te veo mañana.",
+      "tr": {
+        "hu": "Holnap találkozunk.",
+        "en": "I'll see you tomorrow.",
+        "es": "Te veo mañana.",
+        "de": "Ich sehe dich morgen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lo: hímnemű egyes szám",
+            "en": "lo: masculine singular",
+            "es": "lo: masculino singular",
+            "de": "lo: maskulin Singular"
+          },
+          "wrong": {
+            "hu": "A lo hímnemű TÁRGYAT vagy harmadik személyt helyettesítene (\"Lo veo mañana\" = őt/azt); itt viszont a BESZÉLGETŐPARTNEREMET jelölöm, ezért te.",
+            "en": "Lo would replace a masculine THING or third person (\"Lo veo mañana\" = him/it); here I am marking the PERSON I AM TALKING TO, so te.",
+            "es": "Lo sustituiría una COSA masculina o una tercera persona (\"Lo veo mañana\" = a él); aquí marco a mi INTERLOCUTOR, por eso te.",
+            "de": "Lo würde eine maskuline SACHE oder eine dritte Person ersetzen (\"Lo veo mañana\" = ihn/es); hier bezeichne ich meinen GESPRÄCHSPARTNER, deshalb te."
+          }
+        },
+        {
+          "text": {
+            "hu": "los: hímnemű/vegyes többes",
+            "en": "los: masc./mixed plural",
+            "es": "los: masculino/mixto plural",
+            "de": "los: mask./gemischt Plural"
+          },
+          "wrong": {
+            "hu": "A los TÖBBES számú hímnemű dolgot vagy csoportot helyettesítene; itt viszont EGY beszélgetőpartnert szólítok meg, egyes számban, ezért te.",
+            "en": "Los would replace PLURAL masculine things or a group; here I am addressing ONE person I am talking to, singular, so te.",
+            "es": "Los sustituiría cosas masculinas PLURALES o un grupo; aquí me dirijo a UN interlocutor, en singular, por eso te.",
+            "de": "Los würde PLURALE maskuline Dinge oder eine Gruppe ersetzen; hier spreche ich EINEN Gesprächspartner an, im Singular, deshalb te."
+          }
+        },
+        {
+          "text": {
+            "hu": "1./2. személy (me/te/nos/os)",
+            "en": "1st/2nd person (me/te/nos/os)",
+            "es": "1.ª/2.ª persona (me/te/nos/os)",
+            "de": "1./2. Person (me/te/nos/os)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "pod-why-06",
+      "es": "Nos ayuda mucho.",
+      "tr": {
+        "hu": "Sokat segít nekünk.",
+        "en": "He/she helps us a lot.",
+        "es": "Nos ayuda mucho.",
+        "de": "Er/sie hilft uns sehr."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "los: hímnemű/vegyes többes",
+            "en": "los: masc./mixed plural",
+            "es": "los: masculino/mixto plural",
+            "de": "los: mask./gemischt Plural"
+          },
+          "wrong": {
+            "hu": "A los hímnemű dolgokat vagy embereket helyettesítene, nem- és számegyeztetéssel; a mi (nosotros) esetén viszont a névmás nos, nem- és számjelölés nélkül.",
+            "en": "Los would replace masculine things or people, with gender/number agreement; for us (nosotros) the pronoun is nos, with no gender or number marking.",
+            "es": "Los sustituiría cosas o personas masculinas, con concordancia de género y número; para nosotros el pronombre es nos, sin marca de género ni número.",
+            "de": "Los würde maskuline Dinge oder Personen mit Genus-/Numerus-Angleichung ersetzen; für uns (nosotros) lautet das Pronomen nos, ohne Genus- oder Numerus-Kennzeichnung."
+          }
+        },
+        {
+          "text": {
+            "hu": "1./2. személy (me/te/nos/os)",
+            "en": "1st/2nd person (me/te/nos/os)",
+            "es": "1.ª/2.ª persona (me/te/nos/os)",
+            "de": "1./2. Person (me/te/nos/os)"
+          }
+        },
+        {
+          "text": {
+            "hu": "las: nőnemű többes szám",
+            "en": "las: feminine plural",
+            "es": "las: femenino plural",
+            "de": "las: feminin Plural"
+          },
+          "wrong": {
+            "hu": "A las nőnemű, többes számú dolgokat helyettesítene, nem-egyeztetéssel; a mi (nosotros) esetén viszont a névmás nos, nem-egyeztetés nélkül.",
+            "en": "Las would replace feminine, plural things, with gender agreement; for us (nosotros) the pronoun is nos, with no gender agreement.",
+            "es": "Las sustituiría cosas femeninas y plurales, con concordancia de género; para nosotros el pronombre es nos, sin concordancia de género.",
+            "de": "Las würde feminine, plurale Dinge mit Genus-Angleichung ersetzen; für uns (nosotros) lautet das Pronomen nos, ohne Genus-Angleichung."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pod-why-07",
+      "es": "La conozco.",
+      "tr": {
+        "hu": "Ismerem őt.",
+        "en": "I know her.",
+        "es": "La conozco.",
+        "de": "Ich kenne sie."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lo: hímnemű egyes szám",
+            "en": "lo: masculine singular",
+            "es": "lo: masculino singular",
+            "de": "lo: maskulin Singular"
+          },
+          "wrong": {
+            "hu": "A lo hímnemű személyt helyettesítene (\"¿Conoces a Juan? Sí, lo conozco\"); itt viszont egy NŐNEMŰ személyről van szó, ezért la.",
+            "en": "Lo would replace a masculine person (\"¿Conoces a Juan? Sí, lo conozco\"); here it is a FEMININE person, so la.",
+            "es": "Lo sustituiría a una persona masculina (\"¿Conoces a Juan? Sí, lo conozco\"); aquí es una persona FEMENINA, por eso la.",
+            "de": "Lo würde eine maskuline Person ersetzen (\"¿Conoces a Juan? Sí, lo conozco\"); hier ist es eine FEMININE Person, deshalb la."
+          }
+        },
+        {
+          "text": {
+            "hu": "la: nőnemű egyes szám",
+            "en": "la: feminine singular",
+            "es": "la: femenino singular",
+            "de": "la: feminin Singular"
+          }
+        },
+        {
+          "text": {
+            "hu": "los: hímnemű/vegyes többes",
+            "en": "los: masc./mixed plural",
+            "es": "los: masculino/mixto plural",
+            "de": "los: mask./gemischt Plural"
+          },
+          "wrong": {
+            "hu": "A los TÖBBES számú, hímnemű vagy vegyes csoportot helyettesítene; itt viszont EGY nőnemű személyről van szó, ezért egyes szám: la.",
+            "en": "Los would replace a PLURAL, masculine or mixed group; here it is ONE feminine person, so singular: la.",
+            "es": "Los sustituiría un grupo PLURAL, masculino o mixto; aquí es UNA persona femenina, por eso singular: la.",
+            "de": "Los würde eine PLURALE, maskuline oder gemischte Gruppe ersetzen; hier ist es EINE feminine Person, deshalb Singular: la."
+          }
+        }
+      ],
+      "correctIndex": 1
     }
   ]
 }

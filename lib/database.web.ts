@@ -46,6 +46,8 @@ export interface DB {
   getReviewedWordCount(level: string): Promise<number>;
   getScheduledWordDueDates(): Promise<string[]>;
   buryCard(wordId: number, type: string): Promise<void>;
+  // FB293/294: "I know this" a SZORA vonatkozik, nem egy lap-tipusra.
+  buryWord(wordId: number): Promise<void>;
   snoozeCard(wordId: number, type: string, days: number): Promise<void>;
   addToSpellingList(wordId: number): Promise<void>;
   removeFromSpellingList(wordId: number): Promise<void>;
@@ -308,14 +310,16 @@ class MemoryDB implements DB {
     return map;
   }
 
-  // A szó-kártya FSRS állapota (0 New, 1 Learning, 2 Review, 3 Relearning).
-  // A topic-készültség ebből dől el, nem a reps-ből, lásd lib/topicMastery.ts.
+  // "Ismert" jelző (1/0) szavanként, UTEMEZO 12/4: EGY definíció a
+  // Stats-kártyával (lap >= 3 OR buried, lásd getMasteredWordCount), nem FSRS
+  // Review-állapot. A topic-készültség ebből dől el, nem a reps-ből, lásd
+  // lib/topicMastery.ts.
   async getWordStates(wordIds: number[]): Promise<Map<number, number>> {
     const idSet = new Set(wordIds);
     const map = new Map<number, number>();
     for (const c of this.cards.values()) {
       if (idSet.has(c.word_id) && c.type === 'word' && c.pair === this.activePair) {
-        map.set(c.word_id, c.state);
+        map.set(c.word_id, ((c.lap ?? 0) >= 3 || c.buried) ? 1 : 0);
       }
     }
     return map;
@@ -398,6 +402,15 @@ class MemoryDB implements DB {
     const card = this.cards.get(k);
     // UTEMEZO 11. szakasz: egy elásott szó kikerül a kézből is.
     if (card) { card.buried = 1; card.in_hand = 0; }
+  }
+
+  // FB293/294: "I know this" a SZORA vonatkozik, nem egy lap-tipusra (mint a
+  // buryCard): a szó MINDEN meglévő kártya-típus-sorát temeti.
+  async buryWord(wordId: number) {
+    const prefix = `${this.activePair}:${wordId}:`;
+    for (const [k, card] of this.cards) {
+      if (k.startsWith(prefix)) { card.buried = 1; card.in_hand = 0; }
+    }
   }
 
   // UTEMEZO 11. szakasz: lásd database.ts a szöveges leírásért. UTEMEZO 2.2: a
