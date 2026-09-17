@@ -393,6 +393,18 @@ class SQLiteDB implements DB {
         UPDATE cards SET in_hand = 1 WHERE type = 'word' AND buried = 0 AND reps > 0 AND lap < 3;
       `);
     }
+    // Migration: UTEMEZO 12/4 (Kálmán, 2026-09-17), egy "ismert"-definíció. A fa
+    // csempéje és a téma-lezárás eddig FSRS Review-t (state >= 2) nézte, a
+    // Stats-kártya a fenti lap-oszlopot (lap >= 3 OR buried); ezért lehetett a
+    // szint 928/931, miközben egy téma 0/10. Innentől mindkettő a lap-oszlopot
+    // nézi (lib/topicMastery.ts), de a fenti reps-lapses visszatöltés nem
+    // találja meg azt a szót, ami az FSRS szerint már Review, mert a gépelős (3.)
+    // lap előtt is Review-ba léphetett (FB111). Idempotens (a WHERE a második
+    // futástól üres), a `applyWordMerges` mintája szerint minden induláskor fut.
+    // A feltétel tiszta JS tükre + tesztje: lib/lap.ts needsReviewLapBackfill.
+    await this.db.runAsync(
+      "UPDATE cards SET lap = 3 WHERE type = 'word' AND state >= 2 AND lap < 3"
+    );
     // Migration: UTEMEZO 2.2, started_at oszlop (DBs created before the daily
     // keret az 1. lap feljovetelekor fogy, nem a megtanuláskor).
     const startedAtCol = await this.db.getFirstAsync<any>("SELECT * FROM pragma_table_info('cards') WHERE name = 'started_at'");
@@ -774,18 +786,21 @@ class SQLiteDB implements DB {
     return map;
   }
 
-  // A szó-kártya FSRS állapota (0 New, 1 Learning, 2 Review, 3 Relearning).
-  // A topic-készültség ebből dől el, nem a reps-ből, lásd lib/topicMastery.ts.
+  // "Ismert" jelző (1/0) szavanként, UTEMEZO 12/4: EGY definíció a
+  // Stats-kártyával (lap >= 3 OR buried, lásd getMasteredWordCount), nem FSRS
+  // Review-állapot. A topic-készültség ebből dől el, nem a reps-ből, lásd
+  // lib/topicMastery.ts.
   async getWordStates(wordIds: number[]): Promise<Map<number, number>> {
     const db = await this.open();
     if (wordIds.length === 0) return new Map();
     const placeholders = wordIds.map(() => '?').join(',');
     const rows = await db.getAllAsync<any>(
-      `SELECT word_id, state FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND pair = ?`,
+      `SELECT word_id, CASE WHEN lap >= 3 OR buried = 1 THEN 1 ELSE 0 END AS known
+         FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND pair = ?`,
       [...wordIds, this.activePair]
     );
     const map = new Map<number, number>();
-    for (const r of rows) map.set(r.word_id, r.state);
+    for (const r of rows) map.set(r.word_id, r.known);
     return map;
   }
 

@@ -162,10 +162,11 @@ export default function LearnScreen() {
   const advancingRef = useRef(false);
 
 
-  // `stateMap` = szavankénti FSRS állapot. A topic-készültség EBBŐL dől el
-  // (lib/topicMastery.ts), nem a repsMap-ből: egyszer látni egy szót nem tudás,
-  // és az új topic csak akkor indulhat, ha a régi szavai kiléptek a Learningből.
-  // A repsMap marad az "elkezdett-e egyáltalán" jelzésre.
+  // `stateMap` = szavankénti "ismert" jelző (UTEMEZO 12/4: lap >= 3 VAGY
+  // eltemetve, ugyanaz a definíció, mint a Stats-kártyáé). A topic-készültség
+  // EBBŐL dől el (lib/topicMastery.ts), nem a repsMap-ből: egyszer látni egy
+  // szót nem tudás, és az új topic csak akkor indulhat, ha a régi szavai
+  // valóban megtanultak. A repsMap marad az "elkezdett-e egyáltalán" jelzésre.
   const computeUnlockedTopics = (topics: TopicDef[], repsMap: Map<number, number>, stateMap: Map<number, number>, currentLevel: Level, selectedTopicId?: string | null, lang: string = 'es', randomPick: boolean = false): { unlocked: TopicDef[]; activeTopic: TopicDef | null; completedCount: number } => {
     // Any level with a topic taxonomy (A0/A1/A2): all topics freely selectable,
     // no sequential lock. Levels without topics keep the sequential unlock logic.

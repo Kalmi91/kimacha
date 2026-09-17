@@ -28,7 +28,8 @@ export default function TreeScreen() {
 
   const [level, setLevel] = useState<Level>('A1');
   const [repsMap, setRepsMap] = useState<Map<number, number>>(new Map());
-  // A topic-készültség FSRS-állapotból jön (lib/topicMastery.ts), nem a reps-ből,
+  // A topic-készültség "ismert" jelzőből jön (UTEMEZO 12/4: lap >= 3 VAGY
+  // eltemetve, lib/topicMastery.ts), ugyanaz a definíció, mint a Stats-kártyáé,
   // hogy a fa ugyanazt a "kész"-t mutassa, mint a tanulási képernyő.
   const [stateMap, setStateMap] = useState<Map<number, number>>(new Map());
   const [selectedTopicId, setSelectedTopicId] = useState<string | null>(null);
