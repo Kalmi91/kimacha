@@ -890,6 +890,356 @@
       "person": "nosotros",
       "answer": "diríamos",
       "table": "condicional-irregular"
+    },
+    {
+      "kind": "why",
+      "id": "cs-why-01",
+      "es": "Hablaría contigo si tuviera tiempo.",
+      "tr": {
+        "hu": "Beszélnék veled, ha lenne időm.",
+        "en": "I would talk to you if I had time.",
+        "es": "Hablaría contigo si tuviera tiempo.",
+        "de": "Ich würde mit dir sprechen, wenn ich Zeit hätte."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          }
+        },
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          },
+          "wrong": {
+            "hu": "Ha tú lenne, 'Hablarías conmigo si tuvieras tiempo' állna, azaz TE beszélnél velem, nem én veled.",
+            "en": "If it were tú, it would say 'Hablarías conmigo si tuvieras tiempo', meaning YOU would talk to me, not me to you.",
+            "es": "Si fuera tú, diría 'Hablarías conmigo si tuvieras tiempo', o sea que TÚ hablarías conmigo, no yo contigo.",
+            "de": "Wäre es tú, hieße es 'Hablarías conmigo si tuvieras tiempo', also würdest DU mit mir sprechen, nicht ich mit dir."
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Hablaríamos contigo si tuviéramos tiempo' állna, azaz TÖBBEN beszélnénk veled, nem csak én.",
+            "en": "If it were nosotros, it would say 'Hablaríamos contigo si tuviéramos tiempo', meaning WE would talk to you, not just me.",
+            "es": "Si fuera nosotros, diría 'Hablaríamos contigo si tuviéramos tiempo', o sea que hablaríamos VARIOS, no solo yo.",
+            "de": "Wäre es nosotros, hieße es 'Hablaríamos contigo si tuviéramos tiempo', also würden WIR mehrere sprechen, nicht nur ich."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "cs-why-02",
+      "es": "¿Podrías cerrar la ventana?",
+      "tr": {
+        "hu": "Be tudnád csukni az ablakot?",
+        "en": "Could you close the window?",
+        "es": "¿Podrías cerrar la ventana?",
+        "de": "Könntest du das Fenster schließen?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          },
+          "wrong": {
+            "hu": "Ha yo lenne, '¿Podría cerrar la ventana?' állna, azaz ÉN kérdezném, be tudom-e csukni, nem tőled kérném.",
+            "en": "If it were yo, it would say '¿Podría cerrar la ventana?', meaning I would be asking whether I can close it, not asking you.",
+            "es": "Si fuera yo, diría '¿Podría cerrar la ventana?', o sea que preguntaría si YO puedo cerrarla, no te lo pediría a ti.",
+            "de": "Wäre es yo, hieße es '¿Podría cerrar la ventana?', also würde ICH fragen, ob ich es kann, nicht dich bitten."
+          }
+        },
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, '¿Podríamos cerrar la ventana?' állna, azaz MI kérdeznénk, be tudjuk-e csukni, nem egyedül tőled kérném.",
+            "en": "If it were nosotros, it would say '¿Podríamos cerrar la ventana?', meaning WE would be asking whether we can close it, not asking just you.",
+            "es": "Si fuera nosotros, diría '¿Podríamos cerrar la ventana?', o sea que preguntaríamos si NOSOTROS podemos cerrarla, no te lo pediría solo a ti.",
+            "de": "Wäre es nosotros, hieße es '¿Podríamos cerrar la ventana?', also würden WIR fragen, ob wir es können, nicht dich allein bitten."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "cs-why-03",
+      "es": "Mi hermana tendría más tiempo si trabajara menos.",
+      "tr": {
+        "hu": "A nővérem több ideje lenne, ha kevesebbet dolgozna.",
+        "en": "My sister would have more time if she worked less.",
+        "es": "Mi hermana tendría más tiempo si trabajara menos.",
+        "de": "Meine Schwester hätte mehr Zeit, wenn sie weniger arbeiten würde."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          },
+          "wrong": {
+            "hu": "Ha yo lenne, a mondat alanya 'yo' lenne, nem 'mi hermana'; itt viszont kifejezetten a nővéremről van szó, harmadik személyben.",
+            "en": "If it were yo, the sentence's subject would be 'yo', not 'mi hermana'; here it is explicitly about my sister, in the third person.",
+            "es": "Si fuera yo, el sujeto de la frase sería 'yo', no 'mi hermana'; aquí se habla explícitamente de mi hermana, en tercera persona.",
+            "de": "Wäre es yo, wäre das Subjekt des Satzes 'yo', nicht 'mi hermana'; hier ist explizit von meiner Schwester die Rede, in der dritten Person."
+          }
+        },
+        {
+          "text": {
+            "hu": "ő / Ön",
+            "en": "he/she/you (usted)",
+            "es": "él/ella/usted",
+            "de": "er/sie/Sie"
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Tendríamos más tiempo' állna, azaz MI, a nővéremmel együtt; itt viszont CSAK a nővéremről van szó, egyedül.",
+            "en": "If it were nosotros, it would say 'Tendríamos más tiempo', meaning WE, together with my sister; here it is ONLY about my sister, alone.",
+            "es": "Si fuera nosotros, diría 'Tendríamos más tiempo', o sea NOSOTROS, junto con mi hermana; aquí se habla SOLO de mi hermana, sola.",
+            "de": "Wäre es nosotros, hieße es 'Tendríamos más tiempo', also WIR, zusammen mit meiner Schwester; hier geht es NUR um meine Schwester, allein."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "cs-why-04",
+      "es": "Viviríamos más cerca del centro.",
+      "tr": {
+        "hu": "Közelebb élnénk a központhoz.",
+        "en": "We would live closer to downtown.",
+        "es": "Viviríamos más cerca del centro.",
+        "de": "Wir würden näher am Zentrum wohnen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          },
+          "wrong": {
+            "hu": "Ha yo lenne, 'Viviría más cerca del centro' állna, azaz ÉN élnék közelebb, nem mi.",
+            "en": "If it were yo, it would say 'Viviría más cerca del centro', meaning I would live closer, not us.",
+            "es": "Si fuera yo, diría 'Viviría más cerca del centro', o sea que YO viviría, no nosotros.",
+            "de": "Wäre es yo, hieße es 'Viviría más cerca del centro', also würde ICH näher wohnen, nicht wir."
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          },
+          "wrong": {
+            "hu": "Ha ellos lenne, 'Vivirían más cerca del centro' állna, azaz ŐK élnének közelebb, nem mi.",
+            "en": "If it were ellos, it would say 'Vivirían más cerca del centro', meaning THEY would live closer, not us.",
+            "es": "Si fuera ellos, diría 'Vivirían más cerca del centro', o sea que ELLOS vivirían, no nosotros.",
+            "de": "Wäre es ellos, hieße es 'Vivirían más cerca del centro', also würden SIE näher wohnen, nicht wir."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "cs-why-05",
+      "es": "Saldríais más con más dinero.",
+      "tr": {
+        "hu": "Több pénzzel gyakrabban mennétek szórakozni.",
+        "en": "With more money, you all would go out more.",
+        "es": "Saldríais más con más dinero.",
+        "de": "Mit mehr Geld würdet ihr öfter ausgehen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Saldríamos más con más dinero' állna, azaz MI mennénk gyakrabban szórakozni, nem ti.",
+            "en": "If it were nosotros, it would say 'Saldríamos más con más dinero', meaning WE would go out more, not you all.",
+            "es": "Si fuera nosotros, diría 'Saldríamos más con más dinero', o sea que NOSOTROS saldríamos más, no vosotros.",
+            "de": "Wäre es nosotros, hieße es 'Saldríamos más con más dinero', also würden WIR öfter ausgehen, nicht ihr."
+          }
+        },
+        {
+          "text": {
+            "hu": "ti (vosotros, Spo.)",
+            "en": "you all (vosotros, Spain)",
+            "es": "vosotros",
+            "de": "ihr (vosotros, Spanien)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          },
+          "wrong": {
+            "hu": "Ha ellos lenne, 'Saldrían más con más dinero' állna, és ez az alak Mexikóban az ustedes-szel is állna; itt viszont a spanyolországi vosotros-alak van: saldríais.",
+            "en": "If it were ellos, it would say 'Saldrían más con más dinero', the form also used with ustedes in Mexico; here it is the Spain vosotros form: saldríais.",
+            "es": "Si fuera ellos, diría 'Saldrían más con más dinero', la forma que en México también iría con ustedes; aquí está la forma de España: saldríais.",
+            "de": "Wäre es ellos, hieße es 'Saldrían más con más dinero', die Form, die in Mexiko auch mit ustedes stünde; hier steht die spanische vosotros-Form: saldríais."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "cs-why-06",
+      "es": "Ellos vendrían si los invitas.",
+      "tr": {
+        "hu": "Eljönnének, ha meghívod őket.",
+        "en": "They would come if you invite them.",
+        "es": "Ellos vendrían si los invitas.",
+        "de": "Sie würden kommen, wenn du sie einlädst."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "yo (én)",
+            "en": "yo (I)",
+            "es": "yo",
+            "de": "yo (ich)"
+          },
+          "wrong": {
+            "hu": "Ha yo lenne, 'Yo vendría si me invitas' állna, azaz ÉN jönnék, nem ők.",
+            "en": "If it were yo, it would say 'Yo vendría si me invitas', meaning I would come, not them.",
+            "es": "Si fuera yo, diría 'Yo vendría si me invitas', o sea que YO vendría, no ellos.",
+            "de": "Wäre es yo, hieße es 'Yo vendría si me invitas', also würde ICH kommen, nicht sie."
+          }
+        },
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, 'Nosotros vendríamos si nos invitas' állna, azaz MI jönnénk, nem ők.",
+            "en": "If it were nosotros, it would say 'Nosotros vendríamos si nos invitas', meaning WE would come, not them.",
+            "es": "Si fuera nosotros, diría 'Nosotros vendríamos si nos invitas', o sea que NOSOTROS vendríamos, no ellos.",
+            "de": "Wäre es nosotros, hieße es 'Nosotros vendríamos si nos invitas', also würden WIR kommen, nicht sie."
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "cs-why-07",
+      "es": "¿Qué dirías en mi lugar?",
+      "tr": {
+        "hu": "Te mit mondanál a helyemben?",
+        "en": "What would you say in my place?",
+        "es": "¿Qué dirías en mi lugar?",
+        "de": "Was würdest du an meiner Stelle sagen?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "mi (nosotros)",
+            "en": "we (nosotros)",
+            "es": "nosotros",
+            "de": "wir (nosotros)"
+          },
+          "wrong": {
+            "hu": "Ha nosotros lenne, '¿Qué diríamos en mi lugar?' állna, azaz MI mondanánk, nem te egyedül.",
+            "en": "If it were nosotros, it would say '¿Qué diríamos en mi lugar?', meaning WE would say it, not just you.",
+            "es": "Si fuera nosotros, diría '¿Qué diríamos en mi lugar?', o sea que NOSOTROS diríamos, no solo tú.",
+            "de": "Wäre es nosotros, hieße es '¿Qué diríamos en mi lugar?', also würden WIR es sagen, nicht nur du."
+          }
+        },
+        {
+          "text": {
+            "hu": "tú (te)",
+            "en": "tú (you)",
+            "es": "tú",
+            "de": "tú (du)"
+          }
+        },
+        {
+          "text": {
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
+          },
+          "wrong": {
+            "hu": "Ha ellos lenne, '¿Qué dirían en mi lugar?' állna, azaz ŐK mondanák, nem te.",
+            "en": "If it were ellos, it would say '¿Qué dirían en mi lugar?', meaning THEY would say it, not you.",
+            "es": "Si fuera ellos, diría '¿Qué dirían en mi lugar?', o sea que ELLOS dirían, no tú.",
+            "de": "Wäre es ellos, hieße es '¿Qué dirían en mi lugar?', also würden SIE es sagen, nicht du."
+          }
+        }
+      ],
+      "correctIndex": 1
     }
   ]
 }
