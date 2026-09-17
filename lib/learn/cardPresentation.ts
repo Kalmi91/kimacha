@@ -5,6 +5,9 @@ import type { stringsFor } from '@/lib/i18n';
 
 type Strings = ReturnType<typeof stringsFor>;
 
+// Moved from app/(tabs)/index.tsx, structural extraction only.
+export type TypingResult = 'correct' | 'almost' | 'wrong' | 'skipped' | null;
+
 // UTEMEZO 7. szakasz (moved from app/(tabs)/index.tsx, structural extraction
 // only): minden lapon egy cimke, a sajat nyelven (a motor labelOf-ja csak a
 // motor sajat, magyar teszt-cimkeje, ld. lib/sessionQueue.ts).
