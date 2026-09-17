@@ -174,4 +174,54 @@ export const WORD_MERGES: Record<number, number> = {
 
   // PROMPT-POLICY 7 (es A2, TASK-3 2026-09-17): szint-inverzió, a magasabb szintű iker törölve
   2408: 3466, // la regla: B1 törölve, marad A2 (las reglas -> la regla) [regla A2 játék-tartalomban is]
+
+  // PROMPT-POLICY 7 (es B1, TASK-3 2026-09-17): szabályos többes, marad az egyes iker
+  2292: 1385, // el pez: B1 többes törölve, marad A1
+  2313: 2337, // la habilidad: B1 többes törölve, marad B1
+  2316: 3630, // la operación: B1 többes törölve, marad A2
+  2329: 1575, // la habitación: B1 többes törölve, marad A1
+  2330: 3872, // la galleta: B1 többes törölve, marad A1
+  2348: 2246, // el ladrón: B1 többes törölve, marad A2
+  2358: 3085, // el rumor: B1 többes törölve, marad B2
+  2447: 2179, // la posibilidad: B1 többes törölve, marad A2
+  2449: 2280, // el registro: B1 többes törölve, marad A2
+  2455: 1943, // la señal: B1 többes törölve, marad A2
+  2457: 2173, // la imagen: B1 többes törölve, marad A2
+  2482: 3543, // la opción: B1 többes törölve, marad A2
+  2502: 2507, // el voto: B1 többes törölve, marad B1
+  2546: 2497, // la condición: B1 többes törölve, marad B1
+  2551: 3465, // la acción: B1 többes törölve, marad A2
+  2554: 2484, // el archivo: B1 többes törölve, marad B1
+  2594: 2346, // el pensamiento: B1 többes törölve, marad B1
+  2638: 2230, // el periódico: B1 többes törölve, marad A2
+  2655: 2158, // el fondo: B1 többes törölve, marad A2
+  2666: 2939, // el empleado: B1 többes törölve, marad B1
+  2669: 2708, // el prisionero: B1 többes törölve, marad B1
+  2672: 1941, // el crimen: B1 többes törölve, marad A2
+  2679: 2945, // el adulto: B1 többes törölve, marad B1
+  2687: 7168, // el subtítulo: B1 többes törölve, marad B2
+  2702: 1164, // el avión: B1 többes törölve, marad A1
+  2711: 2808, // la emoción: B1 többes törölve, marad B1
+  2735: 2125, // el efecto: B1 többes törölve, marad A2
+  2756: 3150, // el diamante: B1 többes törölve, marad B2
+  2757: 2203, // la unidad: B1 többes törölve, marad A2
+  2773: 2040, // el grupo: B1 többes törölve, marad A2
+  2789: 3634, // la elección: B1 többes törölve, marad A2
+  2845: 2552, // el siglo: B1 többes törölve, marad B1
+  2854: 2074, // el monstruo: B1 többes törölve, marad A2
+  2871: 3726, // la reunión: B1 többes törölve, marad A2
+  2873: 3703, // la voz: B1 többes törölve, marad A2
+  2879: 2263, // el cadáver: B1 többes törölve, marad A2
+  2891: 2786, // el producto: B1 többes törölve, marad B1
+  2917: 2020, // la oportunidad: B1 többes törölve, marad A2
+  2924: 2578, // el socio: B1 többes törölve, marad B1
+  2927: 2268, // el francés: B1 többes törölve, marad A2
+  2954: 2658, // el cigarrillo: B1 többes törölve, marad B1
+  2978: 2649, // la autoridad: B1 többes törölve, marad B1
+  2985: 2608, // el jugador: B1 többes törölve, marad B1
+  2997: 2332, // el objeto: B1 többes törölve, marad B1
+  2999: 3141, // el término: B1 többes törölve, marad B2
+
+  // PROMPT-POLICY 7 (es B1, TASK-3 2026-09-17): szint-inverzió, a magasabb szintű iker törölve
+  6578: 2633, // el impuesto: C1 törölve, marad B1 (los impuestos -> el impuesto) [impuestos B1 mondatban is]
 };
