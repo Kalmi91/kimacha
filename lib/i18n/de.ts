@@ -65,6 +65,16 @@ export default {
     yesPractise: 'Ja',
     no: 'Nein',
   },
+  // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): die Frage
+  // MITTEN in der Runde, sobald Schwarz auf 0 fällt und auch die Hand leer
+  // wird, aber noch Wiederholungen übrig sind. Eigene Schlüssel, getrennt von
+  // `done.*` oben: diese Karte ersetzt die Kartei, nicht das Rundenende.
+  learn: {
+    askMoreTitle: 'Die neuen Wörter für heute sind aufgebraucht',
+    askMoreYes: (n: number) => `+${n} neue Wörter`,
+    askMoreReviewOnly: (k: number) => `Nur Wiederholung (${k} Karten)`,
+    askMoreDone: 'Das reicht für heute',
+  },
   tabs: {
     learn: 'Lernen',
     games: 'Spiel',
@@ -377,6 +387,7 @@ export default {
     yourLevel: 'hier stehst du',
     soon: 'bald',
     coreTag: 'wichtig',
+    corePlusTag: 'core+',
     started: 'begonnen',
     notStarted: 'neu',
     soonLong: 'Diese Lektion ist noch nicht geschrieben. Sie steht auf der Liste, der Rest der Stufe ist bereits offen.',
@@ -384,7 +395,12 @@ export default {
     ruleLabel: 'Die Regel',
     examplesLabel: 'Beispiele',
     exceptionsLabel: 'Ausnahmen und Grenzfälle',
-    startDrill: (n: number) => `Üben (${n} Fragen)`,
+    // D3 (FB290, 2026-09-17): ein Button pro Art statt `startDrill` (alles auf einmal).
+    startChoice: (n: number) => `Sätze (${n})`,
+    startMatch: (n: number) => `Zuordnen (${n})`,
+    startForm: (n: number) => `Formen (${n})`,
+    // TASK-8 (D4, FB288): Start-Button für die "Warum dieser Satz"-Aufgabe.
+    startWhy: (n: number) => `Warum? (${n})`,
     backToRule: 'Regel noch einmal lesen',
     practiceAgain: 'Noch einmal üben',
     nextTopic: 'Nächstes Thema',
@@ -509,6 +525,13 @@ export default {
     requeueEasy: 'Leicht (5 Runden)',
     requeueNormal: 'Normal (12 Runden)',
     requeueHard: 'Schwer (25 Runden)',
+    // FB279, 2026-09-17: Schwierigkeits-Regler, stellt neue Wörter und P zusammen ein.
+    difficultyVeryEasy: 'sehr leicht',
+    difficultyEasy: 'leicht',
+    difficultyNormal: 'normal',
+    difficultyHard: 'schwer',
+    difficultyVeryHard: 'sehr schwer',
+    difficultyCustom: 'eigene',
   },
   backup: {
     backup: 'Sicherung',
@@ -531,6 +554,8 @@ export default {
     repair: 'Korrektur',
     repairLap: (n: number) => `Korrektur · ${n}/3`,
     sentence: 'Satz',
+    // UTEMEZO 5. szakasz (FB296/297/298): das Label der Frage-Karte.
+    question: 'Frage',
   },
   // UTEMEZO 6. szakasz: Erklärfenster für die drei Zahlen im Kopfbereich.
   header: {

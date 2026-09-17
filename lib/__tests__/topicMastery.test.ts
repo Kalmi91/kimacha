@@ -1,42 +1,41 @@
-import { isWordMastered, masteredCount, isTopicMastered, MASTERED_STATE } from '../topicMastery';
+import { isWordMastered, masteredCount, isTopicMastered } from '../topicMastery';
 
+// UTEMEZO 12/4 (2026-09-17): a `state`/`stateMap` paraméter mostantól a
+// db.getWordStates()-től egy 1/0 "ismert" jelzőt kap (lap >= 3 OR buried),
+// nem FSRS-állapotot. A régi FSRS-based teszteket (Review=2, Learning=1)
+// felváltja az egyesített definíció.
 describe('topicMastery', () => {
-  it('New (0) and Learning (1) are not mastered', () => {
+  it('not-known (0) is not mastered', () => {
     expect(isWordMastered(0)).toBe(false);
-    expect(isWordMastered(1)).toBe(false);
   });
 
-  it('Review (2) and Relearning (3) count as mastered', () => {
-    expect(isWordMastered(2)).toBe(true);
-    expect(isWordMastered(3)).toBe(true);
+  it('known (1) counts as mastered', () => {
+    expect(isWordMastered(1)).toBe(true);
   });
 
   it('a word with no card yet is not mastered', () => {
     expect(isWordMastered(undefined)).toBe(false);
   });
 
-  it('counts only mastered words', () => {
-    const states = new Map([[1, 2], [2, 1], [3, 3], [4, 0]]);
-    expect(masteredCount([1, 2, 3, 4], states)).toBe(2);
+  it('counts only known words', () => {
+    const known = new Map([[1, 1], [2, 0], [3, 1], [4, 0]]);
+    expect(masteredCount([1, 2, 3, 4], known)).toBe(2);
   });
 
-  it('a topic is complete only when every word left Learning', () => {
-    const states = new Map([[1, 2], [2, 2]]);
-    expect(isTopicMastered([1, 2], states)).toBe(true);
-    expect(isTopicMastered([1, 2, 3], states)).toBe(false);
+  it('a topic is complete only when every word is known', () => {
+    const known = new Map([[1, 1], [2, 1]]);
+    expect(isTopicMastered([1, 2], known)).toBe(true);
+    expect(isTopicMastered([1, 2, 3], known)).toBe(false);
   });
 
   it('the old reps>0 rule would have passed where the new one does not', () => {
-    // Minden szó látva egyszer (reps>0), de mind Learning-ben => NEM kész.
-    const states = new Map([[1, 1], [2, 1], [3, 1]]);
-    expect(isTopicMastered([1, 2, 3], states)).toBe(false);
+    // Minden szó látva egyszer (reps>0), de egyik sem ismert (lap < 3, nem
+    // eltemetve) => NEM kész.
+    const known = new Map([[1, 0], [2, 0], [3, 0]]);
+    expect(isTopicMastered([1, 2, 3], known)).toBe(false);
   });
 
   it('an empty topic is never complete', () => {
     expect(isTopicMastered([], new Map())).toBe(false);
-  });
-
-  it('MASTERED_STATE is the FSRS Review state', () => {
-    expect(MASTERED_STATE).toBe(2);
   });
 });

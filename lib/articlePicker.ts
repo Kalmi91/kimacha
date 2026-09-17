@@ -32,8 +32,30 @@ const ARTICLES_BY_LANG: Record<string, readonly string[]> = {
  * a HELYES válasz: az „ide nem kell névelő" is tanulnivaló, nem a sor hiánya
  * mondja meg.
  */
-export function articlePickerApplies(backLang: string, isWordCard: boolean): boolean {
-  return !!ARTICLES_BY_LANG[backLang] && isWordCard;
+export function articlePickerApplies(backLang: string, isWordCard: boolean, answer?: string): boolean {
+  if (!ARTICLES_BY_LANG[backLang] || !isWordCard) return false;
+  return answer === undefined || answer.split('/').some((alt) => articleCanApply(alt));
+}
+
+/**
+ * FB262-264, Kálmán 2026-09-12 (word:I am going to travel / you are going to eat):
+ * „ennél nem kell az el la los las rész mert több szó van. itt nem lehet
+ * használni". Egy több szavas, névelőtlen alak (voy a viajar, van a llegar) nem
+ * névelőzhető, ott a sor csak zaj. Egy szó (perro), vagy névelős több szó
+ * (el fin de semana) továbbra is kapja a sort.
+ */
+/**
+ * FB291, Kálmán 2026-09-16 (word:The cat is on the table.): „a mondatokhoz nem
+ * kell el la los las sor". Egy mondat-záró írásjellel végződő vagy spanyol nyitó
+ * jellel (¿/¡) kezdődő alak mondat, nem szó, a sor ott zaj marad akkor is, ha
+ * névelővel kezdődik (El gato está en la mesa.).
+ */
+function articleCanApply(answer: string): boolean {
+  const trimmed = answer.trim();
+  if (!trimmed) return true;
+  if (/[.?!…]$/.test(trimmed) || /^[¿¡]/.test(trimmed)) return false;
+  if (articleOf(trimmed)) return true;
+  return !/\s/.test(trimmed);
 }
 
 /** Az adott nyelv névelői, üres tömb, ha a nyelvnek nincs gombsora. */

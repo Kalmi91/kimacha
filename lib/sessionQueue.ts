@@ -214,10 +214,14 @@ export interface QueueStats {
   wordsStarted: number;
   wordsLearned: number;
   wrongLaps: number;
+  buried: number; // FB293/294: "I know this" a szora vonatkozik, nem szamit helyes valasznak
 }
 
 export interface Shown {
-  kind: 'hand' | 'review';
+  // FB296/297/298: 'ask-more' a kérdés-lap (lásd nextLap es answerAskMore), a
+  // tobbi mezo ekkor a sentinel ertekevel (wordId -1, type 'word', stb.) all,
+  // a hivo a `kind`-bol dont, nem ezekbol.
+  kind: 'hand' | 'review' | 'ask-more';
   wordId: number;
   type: 'word' | 'sentence';
   lap?: LapNo;
@@ -242,6 +246,8 @@ export interface QueueState {
   sinceHand: number; // hany review-lap jott a legutobbi kezben-levo lap ota
   current: Shown | null; // a kepernyon levo lap
   stats: QueueStats;
+  // FB296/297/298: a kerdes-lap (lasd nextLap) korononkent csak egyszer johet.
+  askedMore: boolean;
 }
 
 // UTEMEZO 2.2: `answer()` maga sosem ad startWord effectet, mert a keret nem a
@@ -285,7 +291,8 @@ export function createQueue(init: {
     fresh: [...init.fresh],
     sinceHand: 0,
     current: null,
-    stats: { reviewsAnswered: 0, wordsStarted: 0, wordsLearned: 0, wrongLaps: 0 },
+    stats: { reviewsAnswered: 0, wordsStarted: 0, wordsLearned: 0, wrongLaps: 0, buried: 0 },
+    askedMore: false,
   };
 }
 
@@ -303,6 +310,7 @@ export function header(state: QueueState): { black: number; blue: number; pink: 
 
 // UTEMEZO 7. szakasz: minden lapon egy cimke.
 export function labelOf(shown: Shown): string {
+  if (shown.kind === 'ask-more') return 'kérdés';
   if (shown.kind === 'hand') {
     return `${shown.repair ? 'javítás' : 'új'} · ${shown.lap}/3`;
   }
@@ -419,6 +427,19 @@ export function nextLap(state: QueueState): QueueState {
   // kezben-levo lap kozt, hogy a javitas-drill ne nyomja ki a review-t.
   const repairIdx = pickRepairDue(state, newStep);
   if (repairIdx !== -1) return showHand(state, newStep, repairIdx);
+
+  // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): mielőtt a
+  // sor csendben review-lapot adna, egyszer megkérdi, akar-e még új szót,
+  // amint a fekete keret elfogyott ÉS a kéz is kiürült (a megkezdett szavakat
+  // ez nem szakítja meg, lásd `hand.length === 0`). Körönként csak egyszer.
+  if (state.black === 0 && state.hand.length === 0 && state.reviews.length > 0 && !state.askedMore) {
+    return {
+      ...state,
+      step: newStep,
+      askedMore: true,
+      current: { kind: 'ask-more', wordId: -1, type: 'word', label: 'kérdés', isTyping: false, repair: false },
+    };
+  }
 
   const wantHand = state.reviews.length === 0 || state.sinceHand >= config.rhythm;
 
@@ -587,6 +608,29 @@ export function defer(state: QueueState, opts: { drop: boolean }): QueueState {
   return { ...state, current: null };
 }
 
+// UTEMEZO: FB293/294, Kálmán 2026-09-16: "ha bármelyik lapnál mondom, hogy I know
+// this, akkor a szót tegye bele [a tudottak közé], ne a lapot", "a 3 szám közül a
+// kék beragad". Eddig `db.buryCard` egy LAP-tipust temetett (a hivo `applyAnswer
+// (true)`-t hivott utana), a szo a maradek lapjaival kezben maradt, es a lap
+// helyesnek szamitott (a kek szam ezert nem csokkent). Ez az atmenet a SZOT veszi
+// ki a korbol EGESZBEN: kikerul a kezbol es minden hatralevo review-lapjabol
+// (barmelyik tipus, szo VAGY mondat), a fresh-bol is (nem valoszinu, de
+// determinisztikus legyen). A fekete NEM valtozik (a keret a szo INDITASAKOR
+// fogyott, UTEMEZO 2.2), a `sinceHand` erintetlen marad (ugyanugy, ahogy egy
+// helyes kezben-levo valasz utan is, lasd answer()), es nem szamit helyes
+// valasznak: a hivo `advanceQueue`-ja adja a kovetkezo lapot, ugyanazon az uton,
+// mint egy valasz utan.
+export function buryWord(state: QueueState, wordId: number): QueueState {
+  return {
+    ...state,
+    hand: state.hand.filter((h) => h.wordId !== wordId),
+    reviews: state.reviews.filter((r) => r.wordId !== wordId),
+    fresh: state.fresh.filter((id) => id !== wordId),
+    current: null,
+    stats: { ...state.stats, buried: state.stats.buried + 1 },
+  };
+}
+
 // UTEMEZO: a "mutasd mondatban" gomb segedje. A hivo elobb answer(state,
 // false)-t hiv a kepernyon levo lapra, majd ezt: az uj lap a reviews[]
 // LEGELEJERE kerul (a kovetkezo nextLap() azt mutatja), miutan minden mas,
@@ -595,4 +639,19 @@ export function defer(state: QueueState, opts: { drop: boolean }): QueueState {
 export function insertNext(state: QueueState, lap: ReviewLap): QueueState {
   const reviews = state.reviews.filter((r) => !(r.wordId === lap.wordId && r.type === lap.type));
   return { ...state, reviews: [lap, ...reviews] };
+}
+
+// UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): a kérdés-lap
+// (lásd nextLap) három válasza. 'more': a fekete a válaszul adott N-re áll (a
+// kérdés pillanatában úgyis 0 volt, tehát ez a "+N"); a hívó `addNewLimitBonus`-a
+// írja a DB-t, hogy újraindítás után is megmaradjon. 'review-only': a sor megy
+// tovább review-val, a fekete marad 0. 'done': a review kiürül, a kör a
+// Done-képernyőre áll (a következő `nextLap` a 4.5 (e) ágán current=null-t ad).
+export type AskMoreChoice = { kind: 'more'; n: number } | { kind: 'review-only' } | { kind: 'done' };
+
+export function answerAskMore(state: QueueState, choice: AskMoreChoice): QueueState {
+  if (state.current?.kind !== 'ask-more') return state;
+  if (choice.kind === 'more') return { ...state, black: choice.n, current: null };
+  if (choice.kind === 'review-only') return { ...state, current: null };
+  return { ...state, reviews: [], current: null };
 }
