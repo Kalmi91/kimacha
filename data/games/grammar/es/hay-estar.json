@@ -1097,6 +1097,356 @@
           "en": "your shoes are here"
         }
       ]
+    },
+    {
+      "kind": "why",
+      "id": "he-why-01",
+      "es": "Hay un banco cerca de mi casa.",
+      "tr": {
+        "hu": "Van egy bank a házam közelében.",
+        "en": "There is a bank near my house.",
+        "es": "Hay un banco cerca de mi casa.",
+        "de": "Es gibt eine Bank in der Nähe meines Hauses."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hay: új/ismeretlen dolog",
+            "en": "hay: new/unknown thing",
+            "es": "hay: algo nuevo",
+            "de": "hay: neu/unbekannt"
+          }
+        },
+        {
+          "text": {
+            "hu": "está: ismert, konkrét dolog",
+            "en": "está: known, specific thing",
+            "es": "está: algo concreto y conocido",
+            "de": "está: bekannt, konkret"
+          },
+          "wrong": {
+            "hu": "Az está egy MÁR ismert bankra vonatkozna (\"El banco está cerca de mi casa\"); itt viszont egy eddig ismeretlen bank LÉTÉT jelentjük be egy un-nal, ez hay.",
+            "en": "Está would refer to an ALREADY known bank (\"El banco está cerca de mi casa\"); here we announce the EXISTENCE of an unknown bank with un, that is hay.",
+            "es": "Está se referiría a un banco YA conocido (\"El banco está cerca de mi casa\"); aquí anunciamos la EXISTENCIA de un banco desconocido con un, eso es hay.",
+            "de": "Está würde sich auf eine BEREITS bekannte Bank beziehen (\"El banco está cerca de mi casa\"); hier kündigen wir mit un die EXISTENZ einer unbekannten Bank an, das ist hay."
+          }
+        },
+        {
+          "text": {
+            "hu": "está: birtokos után",
+            "en": "está: after a possessive",
+            "es": "está: tras un posesivo",
+            "de": "está: nach Possessiv"
+          },
+          "wrong": {
+            "hu": "A birtokos utáni está olyankor áll, mint \"Mi banco está cerca\" (AZ ÉN bankom); itt viszont nincs birtokos, egy általános, új bank létezéséről van szó.",
+            "en": "The possessive-following está applies to something like \"Mi banco está cerca\" (MY bank); here there is no possessive, it is about a general, new bank existing.",
+            "es": "El está tras posesivo iría en algo como \"Mi banco está cerca\" (MI banco); aquí no hay posesivo, se trata de que existe un banco nuevo, en general.",
+            "de": "Das está nach Possessiv passt zu etwas wie \"Mi banco está cerca\" (MEINE Bank); hier gibt es kein Possessiv, es geht um die Existenz einer neuen, allgemeinen Bank."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "he-why-02",
+      "es": "Hay mucha gente en el mercado.",
+      "tr": {
+        "hu": "Sok ember van a piacon.",
+        "en": "There are many people at the market.",
+        "es": "Hay mucha gente en el mercado.",
+        "de": "Es gibt viele Leute auf dem Markt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hay: új/ismeretlen dolog",
+            "en": "hay: new/unknown thing",
+            "es": "hay: algo nuevo",
+            "de": "hay: neu/unbekannt"
+          },
+          "wrong": {
+            "hu": "Az un/una-val bemutatott új dolog szabálya egyetlen, még ismeretlen tárgyra vonatkozik; itt viszont egy MENNYISÉGET (mucha gente) adunk meg, ez külön pont.",
+            "en": "The rule for introducing a new thing with un/una applies to a single, still unknown item; here we state a QUANTITY (mucha gente), a separate point.",
+            "es": "La regla de presentar algo nuevo con un/una es para un solo objeto aún desconocido; aquí damos una CANTIDAD (mucha gente), un punto distinto.",
+            "de": "Die Regel, etwas Neues mit un/una vorzustellen, gilt für ein einzelnes, noch unbekanntes Ding; hier nennen wir eine MENGE (mucha gente), ein eigener Punkt."
+          }
+        },
+        {
+          "text": {
+            "hu": "hay: mennyiség",
+            "en": "hay: quantity",
+            "es": "hay: cantidad",
+            "de": "hay: Menge"
+          }
+        },
+        {
+          "text": {
+            "hu": "está: ismert, konkrét dolog",
+            "en": "está: known, specific thing",
+            "es": "está: algo concreto y conocido",
+            "de": "está: bekannt, konkret"
+          },
+          "wrong": {
+            "hu": "Az está egy KONKRÉT, ismert dologra vonatkozna, határozott névelővel; itt viszont egy MENNYISÉGRŐL van szó (mucha gente), ami hay.",
+            "en": "Está would refer to a SPECIFIC, known thing with a definite article; here it is about a QUANTITY (mucha gente), that is hay.",
+            "es": "Está se referiría a algo CONCRETO y conocido con artículo determinado; aquí se trata de una CANTIDAD (mucha gente), eso es hay.",
+            "de": "Está würde sich auf etwas KONKRETES, Bekanntes mit bestimmtem Artikel beziehen; hier geht es um eine MENGE (mucha gente), das ist hay."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "he-why-03",
+      "es": "Hay leche en el refrigerador.",
+      "tr": {
+        "hu": "Van tej a hűtőben.",
+        "en": "There is milk in the fridge.",
+        "es": "Hay leche en el refrigerador.",
+        "de": "Es gibt Milch im Kühlschrank."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hay: mennyiség",
+            "en": "hay: quantity",
+            "es": "hay: cantidad",
+            "de": "hay: Menge"
+          },
+          "wrong": {
+            "hu": "A mennyiség-pont olyankor áll, mint \"mucha gente\" vagy \"pocos estudiantes\"; itt viszont nincs mennyiségjelző szó, csak a megszámlálhatatlan \"leche\" áll névelő nélkül.",
+            "en": "The quantity point applies to things like \"mucha gente\" or \"pocos estudiantes\"; here there is no quantity word, just the uncountable \"leche\" without an article.",
+            "es": "El punto de cantidad iría en algo como \"mucha gente\" o \"pocos estudiantes\"; aquí no hay palabra de cantidad, solo el incontable \"leche\" sin artículo.",
+            "de": "Der Mengen-Punkt passt zu etwas wie \"mucha gente\" oder \"pocos estudiantes\"; hier gibt es kein Mengenwort, nur das unzählbare \"leche\" ohne Artikel."
+          }
+        },
+        {
+          "text": {
+            "hu": "hay: megszámlálhatatlan",
+            "en": "hay: uncountable",
+            "es": "hay: incontable",
+            "de": "hay: unzählbar"
+          }
+        },
+        {
+          "text": {
+            "hu": "está: birtokos után",
+            "en": "está: after a possessive",
+            "es": "está: tras un posesivo",
+            "de": "está: nach Possessiv"
+          },
+          "wrong": {
+            "hu": "A birtokos utáni está olyankor áll, mint \"Mi leche está en el refrigerador\" (AZ ÉN tejem); itt viszont nincs birtokos, csak a tej LÉTEZÉSÉRŐL van szó.",
+            "en": "The possessive-following está applies to something like \"Mi leche está en el refrigerador\" (MY milk); here there is no possessive, it is just about milk existing.",
+            "es": "El está tras posesivo iría en algo como \"Mi leche está en el refrigerador\" (MI leche); aquí no hay posesivo, solo se trata de que hay leche.",
+            "de": "Das está nach Possessiv passt zu etwas wie \"Mi leche está en el refrigerador\" (MEINE Milch); hier gibt es kein Possessiv, es geht nur darum, dass es Milch gibt."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "he-why-04",
+      "es": "El banco está en la esquina.",
+      "tr": {
+        "hu": "A bank a sarkon van.",
+        "en": "The bank is on the corner.",
+        "es": "El banco está en la esquina.",
+        "de": "Die Bank ist an der Ecke."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hay: új/ismeretlen dolog",
+            "en": "hay: new/unknown thing",
+            "es": "hay: algo nuevo",
+            "de": "hay: neu/unbekannt"
+          },
+          "wrong": {
+            "hu": "A hay egy MÉG ismeretlen bankra vonatkozna, un/una-val (\"Hay un banco en la esquina\"); itt viszont határozott névelővel egy MÁR ismert bankról van szó, ez está.",
+            "en": "Hay would refer to a STILL unknown bank, with un/una (\"Hay un banco en la esquina\"); here it is an ALREADY known bank with a definite article, that is está.",
+            "es": "Hay se referiría a un banco AÚN desconocido, con un/una (\"Hay un banco en la esquina\"); aquí es un banco YA conocido con artículo determinado, eso es está.",
+            "de": "Hay würde sich auf eine NOCH unbekannte Bank beziehen, mit un/una (\"Hay un banco en la esquina\"); hier ist es eine BEREITS bekannte Bank mit bestimmtem Artikel, das ist está."
+          }
+        },
+        {
+          "text": {
+            "hu": "está: ismert, konkrét dolog",
+            "en": "está: known, specific thing",
+            "es": "está: algo concreto y conocido",
+            "de": "está: bekannt, konkret"
+          }
+        },
+        {
+          "text": {
+            "hu": "está: tulajdonnév után",
+            "en": "está: after a proper name",
+            "es": "está: tras un nombre propio",
+            "de": "está: nach Eigennamen"
+          },
+          "wrong": {
+            "hu": "A tulajdonnév utáni está olyankor áll, mint \"Ana está en el trabajo\"; itt viszont \"el banco\" köznév határozott névelővel, nem tulajdonnév.",
+            "en": "The proper-name-following está applies to something like \"Ana está en el trabajo\"; here \"el banco\" is a common noun with a definite article, not a proper name.",
+            "es": "El está tras nombre propio iría en algo como \"Ana está en el trabajo\"; aquí \"el banco\" es un sustantivo común con artículo determinado, no un nombre propio.",
+            "de": "Das está nach Eigennamen passt zu etwas wie \"Ana está en el trabajo\"; hier ist \"el banco\" ein Gattungsname mit bestimmtem Artikel, kein Eigenname."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "he-why-05",
+      "es": "Mi teléfono está en la mesa.",
+      "tr": {
+        "hu": "A telefonom az asztalon van.",
+        "en": "My phone is on the table.",
+        "es": "Mi teléfono está en la mesa.",
+        "de": "Mein Telefon ist auf dem Tisch."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hay: megszámlálhatatlan",
+            "en": "hay: uncountable",
+            "es": "hay: incontable",
+            "de": "hay: unzählbar"
+          },
+          "wrong": {
+            "hu": "A megszámlálhatatlan-pont olyankor áll, mint \"Hay leche\", névelő nélkül; itt viszont \"mi teléfono\" egy konkrét, birtokolt tárgy, ez está.",
+            "en": "The uncountable point applies to something like \"Hay leche\", with no article; here \"mi teléfono\" is a specific, possessed object, that is está.",
+            "es": "El punto de incontable iría en algo como \"Hay leche\", sin artículo; aquí \"mi teléfono\" es un objeto concreto y poseído, eso es está.",
+            "de": "Der Punkt für Unzählbares passt zu etwas wie \"Hay leche\", ohne Artikel; hier ist \"mi teléfono\" ein konkretes, besessenes Objekt, das ist está."
+          }
+        },
+        {
+          "text": {
+            "hu": "está: birtokos után",
+            "en": "está: after a possessive",
+            "es": "está: tras un posesivo",
+            "de": "está: nach Possessiv"
+          }
+        },
+        {
+          "text": {
+            "hu": "está: tulajdonnév után",
+            "en": "está: after a proper name",
+            "es": "está: tras un nombre propio",
+            "de": "está: nach Eigennamen"
+          },
+          "wrong": {
+            "hu": "A tulajdonnév utáni está olyankor áll, mint \"Ana está en el trabajo\"; itt viszont birtokos névmás (mi) áll a főnév előtt, nem tulajdonnév.",
+            "en": "The proper-name-following está applies to something like \"Ana está en el trabajo\"; here a possessive (mi) stands before the noun, not a proper name.",
+            "es": "El está tras nombre propio iría en algo como \"Ana está en el trabajo\"; aquí hay un posesivo (mi) delante del sustantivo, no un nombre propio.",
+            "de": "Das está nach Eigennamen passt zu etwas wie \"Ana está en el trabajo\"; hier steht ein Possessiv (mi) vor dem Nomen, kein Eigenname."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "he-why-06",
+      "es": "Ana está en el trabajo.",
+      "tr": {
+        "hu": "Ana a munkahelyén van.",
+        "en": "Ana is at work.",
+        "es": "Ana está en el trabajo.",
+        "de": "Ana ist bei der Arbeit."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hay: új/ismeretlen dolog",
+            "en": "hay: new/unknown thing",
+            "es": "hay: algo nuevo",
+            "de": "hay: neu/unbekannt"
+          },
+          "wrong": {
+            "hu": "A hay bemutatásra való, un/una-val; egy TULAJDONNÉV (Ana) sosem áll hay után, mert Ana már ismert, nem bemutatandó dolog.",
+            "en": "Hay is for introducing something, with un/una; a PROPER NAME (Ana) never follows hay, because Ana is already known, not something to introduce.",
+            "es": "Hay sirve para presentar algo, con un/una; un NOMBRE PROPIO (Ana) nunca va después de hay, porque Ana ya es conocida, no algo que presentar.",
+            "de": "Hay dient dazu, etwas vorzustellen, mit un/una; ein EIGENNAME (Ana) steht nie nach hay, weil Ana bereits bekannt ist, nichts, was man vorstellt."
+          }
+        },
+        {
+          "text": {
+            "hu": "está: birtokos után",
+            "en": "está: after a possessive",
+            "es": "está: tras un posesivo",
+            "de": "está: nach Possessiv"
+          },
+          "wrong": {
+            "hu": "A birtokos utáni está olyankor áll, mint \"Mi hermana está en el trabajo\"; itt viszont \"Ana\" tulajdonnév, nem birtokos szerkezet.",
+            "en": "The possessive-following está applies to something like \"Mi hermana está en el trabajo\"; here \"Ana\" is a proper name, not a possessive.",
+            "es": "El está tras posesivo iría en algo como \"Mi hermana está en el trabajo\"; aquí \"Ana\" es un nombre propio, no un posesivo.",
+            "de": "Das está nach Possessiv passt zu etwas wie \"Mi hermana está en el trabajo\"; hier ist \"Ana\" ein Eigenname, kein Possessiv."
+          }
+        },
+        {
+          "text": {
+            "hu": "está: tulajdonnév után",
+            "en": "está: after a proper name",
+            "es": "está: tras un nombre propio",
+            "de": "está: nach Eigennamen"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "he-why-07",
+      "es": "¿Dónde está el baño?",
+      "tr": {
+        "hu": "Hol van a mosdó?",
+        "en": "Where is the bathroom?",
+        "es": "¿Dónde está el baño?",
+        "de": "Wo ist die Toilette?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "está: ismert, konkrét dolog",
+            "en": "está: known, specific thing",
+            "es": "está: algo concreto y conocido",
+            "de": "está: bekannt, konkret"
+          }
+        },
+        {
+          "text": {
+            "hu": "hay: új/ismeretlen dolog",
+            "en": "hay: new/unknown thing",
+            "es": "hay: algo nuevo",
+            "de": "hay: neu/unbekannt"
+          },
+          "wrong": {
+            "hu": "A hay azt kérdezné, LÉTEZIK-e egyáltalán mosdó (\"¿Hay un baño?\"); itt viszont \"el baño\" határozott névelővel egy MÁR TUDOTT, konkrét mosdó helyét kérdezzük.",
+            "en": "Hay would ask WHETHER a bathroom exists at all (\"¿Hay un baño?\"); here \"el baño\" with a definite article asks the location of an ALREADY known, specific bathroom.",
+            "es": "Hay preguntaría si EXISTE un baño (\"¿Hay un baño?\"); aquí \"el baño\" con artículo determinado pregunta el lugar de un baño YA conocido y concreto.",
+            "de": "Hay würde fragen, OB es überhaupt eine Toilette gibt (\"¿Hay un baño?\"); hier fragt \"el baño\" mit bestimmtem Artikel nach dem Ort einer BEREITS bekannten, konkreten Toilette."
+          }
+        },
+        {
+          "text": {
+            "hu": "hay: mennyiség",
+            "en": "hay: quantity",
+            "es": "hay: cantidad",
+            "de": "hay: Menge"
+          },
+          "wrong": {
+            "hu": "A mennyiség-pont olyankor áll, mint \"¿Cuántos baños hay?\" (hány mosdó van); itt viszont a HELYÉT kérdezzük egy konkrét mosdónak, ez está.",
+            "en": "The quantity point applies to something like \"¿Cuántos baños hay?\" (how many bathrooms); here we ask the LOCATION of a specific bathroom, that is está.",
+            "es": "El punto de cantidad iría en algo como \"¿Cuántos baños hay?\"; aquí preguntamos el LUGAR de un baño concreto, eso es está.",
+            "de": "Der Mengen-Punkt passt zu etwas wie \"¿Cuántos baños hay?\"; hier fragen wir nach dem ORT einer bestimmten Toilette, das ist está."
+          }
+        }
+      ],
+      "correctIndex": 0
     }
   ]
 }
