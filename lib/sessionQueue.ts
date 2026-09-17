@@ -206,6 +206,7 @@ export interface QueueConfig {
   hand: number; // P: hany szo lehet egyszerre kezben (UTEMEZO 3.1)
   gap: number; // R: minimum res ket lap kozt ugyanabbol a szobol (UTEMEZO 4.2)
   rhythm: number; // hany review-lap jon egy kezben-levo lap elott (UTEMEZO 4.1)
+  repairGap: number; // R_javitas: a rontott kezben-levo lap rese (UTEMEZO 4.7)
 }
 
 export interface QueueStats {
@@ -260,7 +261,16 @@ export type Effect =
   | { type: 'grade'; wordId: number; cardType: 'word' | 'sentence'; correct: boolean } // review-lap: FSRS-ertekeles
   | { type: 'attempt'; wordId: number; cardType: 'word' | 'sentence'; correct: boolean }; // stats-sor minden megvalaszolt laphoz
 
-export const DEFAULT_QUEUE_CONFIG: QueueConfig = { hand: 5, gap: 5, rhythm: 4 };
+// UTEMEZO 4.7: a rontott kezben-levo lap resenek alapja. A nehezseg-ablakban
+// allithato (1-10), es a sor R-re vagja: a javitas-res sosem nagyobb R-nel.
+export const DEFAULT_REPAIR_GAP = 2;
+
+export const DEFAULT_QUEUE_CONFIG: QueueConfig = {
+  hand: 5,
+  gap: 5,
+  rhythm: 4,
+  repairGap: DEFAULT_REPAIR_GAP,
+};
 
 export function createQueue(init: {
   config?: Partial<QueueConfig>;
@@ -385,12 +395,38 @@ function startNew(state: QueueState, newStep: number): QueueState {
   };
 }
 
+// UTEMEZO 4.7: melyik rontott kezben-levo lap esedekes ezen a lepesen, -1 ha
+// egyik sem. Harom feltetel: a lap rontott, letelt a rovid rese, es jott mar
+// legalabb egy review-lap a legutobbi kezben-levo lap ota. Tobb esedekes kozul
+// a legregebb ota varakozo jon (4.3 tie-break).
+function pickRepairDue(state: QueueState, newStep: number): number {
+  // A review-vedo korlat csak akkor ertelmes, ha van meg review-lap; ha elfogyott,
+  // a rontott lap a rovid resevel jon (4.4 + 4.7).
+  if (state.sinceHand < 1 && state.reviews.length > 0) return -1;
+  const gap = Math.min(state.config.repairGap, state.config.gap);
+  let bestIdx = -1;
+  for (let i = 0; i < state.hand.length; i++) {
+    const w = state.hand[i];
+    if (!w.repair) continue;
+    if (newStep - w.lastShown <= gap) continue;
+    if (bestIdx === -1 || w.lastShown < state.hand[bestIdx].lastShown) bestIdx = i;
+  }
+  return bestIdx;
+}
+
 // UTEMEZO 4. szakasz: a sor. Determinisztikus, tiszta fuggveny: sosem
 // mutalja a bemenetet, mindig uj allapotot ad vissza. `current === null` a
 // visszateresi ertekben azt jelenti, hogy a kor veget ert (UTEMEZO 4.5).
 export function nextLap(state: QueueState): QueueState {
   const { config } = state;
   const newStep = state.step + 1;
+
+  // UTEMEZO 4.7: rontott kezben-levo lap elsobbsege. A rontott lap R_javitas
+  // (= min(REPAIR_GAP, R)) lap utan esedekes, es ekkor megelozi a review-lapokat,
+  // nem varja ki a 4.1 negyes ritmust. Korlat: legalabb 1 review-lap ket
+  // kezben-levo lap kozt, hogy a javitas-drill ne nyomja ki a review-t.
+  const repairIdx = pickRepairDue(state, newStep);
+  if (repairIdx !== -1) return showHand(state, newStep, repairIdx);
 
   // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): mielőtt a
   // sor csendben review-lapot adna, egyszer megkérdi, akar-e még új szót,

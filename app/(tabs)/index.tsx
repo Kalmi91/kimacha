@@ -529,8 +529,14 @@ export default function LearnScreen() {
     const grammarDone = await doneGrammarTopics(learned);
     const reviews = rowsToReviewLaps(rows, learned, wordsOnly, currentLevel, grammarDone);
 
-    // UTEMEZO 8: P (hand) és R (gap) a Beállítások „Nehézség" ablakából jön.
-    const config = { hand: await db.getHandCap(), gap: await db.getGapLaps(), rhythm: DEFAULT_QUEUE_CONFIG.rhythm };
+    // UTEMEZO 8: P (hand), R (gap) és R_javítás (repairGap, 4.7) a Beállítások
+    // „Nehézség" ablakából jön.
+    const config = {
+      hand: await db.getHandCap(),
+      gap: await db.getGapLaps(),
+      repairGap: await db.getRepairGap(),
+      rhythm: DEFAULT_QUEUE_CONFIG.rhythm,
+    };
 
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
