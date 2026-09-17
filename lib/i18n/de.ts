@@ -521,6 +521,13 @@ export default {
     requeueEasy: 'Leicht (5 Runden)',
     requeueNormal: 'Normal (12 Runden)',
     requeueHard: 'Schwer (25 Runden)',
+    // FB279, 2026-09-17: Schwierigkeits-Regler, stellt neue Wörter und P zusammen ein.
+    difficultyVeryEasy: 'sehr leicht',
+    difficultyEasy: 'leicht',
+    difficultyNormal: 'normal',
+    difficultyHard: 'schwer',
+    difficultyVeryHard: 'sehr schwer',
+    difficultyCustom: 'eigene',
   },
   backup: {
     backup: 'Sicherung',
