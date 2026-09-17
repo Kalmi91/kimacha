@@ -785,6 +785,356 @@
       "person": "ellos/ellas/ustedes",
       "answer": "les gustan",
       "table": "gustar-presente"
+    },
+    {
+      "kind": "why",
+      "id": "gu-why-01",
+      "es": "Me gusta el café.",
+      "tr": {
+        "hu": "Szeretem a kávét.",
+        "en": "I like coffee.",
+        "es": "Me gusta el café.",
+        "de": "Ich mag Kaffee."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "gusta: egy dolog/tevékenység",
+            "en": "gusta: one thing/activity",
+            "es": "gusta: una cosa/actividad",
+            "de": "gusta: eine Sache/Tätigkeit"
+          }
+        },
+        {
+          "text": {
+            "hu": "gustan: több dolog",
+            "en": "gustan: several things",
+            "es": "gustan: varias cosas",
+            "de": "gustan: mehrere Sachen"
+          },
+          "wrong": {
+            "hu": "A gustan TÖBB dologra vonatkozna (\"Me gustan los cafés\" = többféle kávét szeretek); itt viszont EGY dolog, el café, ezért egyes szám: gusta.",
+            "en": "Gustan would apply to SEVERAL things (\"Me gustan los cafés\" = I like several coffees); here it is ONE thing, el café, so singular: gusta.",
+            "es": "Gustan se aplicaría a VARIAS cosas (\"Me gustan los cafés\" = me gustan varios cafés); aquí es UNA sola cosa, el café, por eso singular: gusta.",
+            "de": "Gustan würde für MEHRERE Dinge gelten (\"Me gustan los cafés\" = ich mag mehrere Kaffeesorten); hier ist es EINE Sache, el café, deshalb Singular: gusta."
+          }
+        },
+        {
+          "text": {
+            "hu": "gusta: főnévi igenév(ek) után mindig egyes szám",
+            "en": "gusta: always singular after infinitive(s)",
+            "es": "gusta: siempre singular tras infinitivo(s)",
+            "de": "gusta: nach Infinitiv(en) immer Singular"
+          },
+          "wrong": {
+            "hu": "Ez a szabály főnévi igenévre vonatkozik (\"Me gusta tomar café\"); itt viszont \"el café\" főnév, nem ige, de véletlenül szintén egyes számot kap, mert egy dolog.",
+            "en": "This rule applies to an infinitive (\"Me gusta tomar café\"); here \"el café\" is a noun, not a verb, though it also happens to take the singular because it is one thing.",
+            "es": "Esta regla es para un infinitivo (\"Me gusta tomar café\"); aquí \"el café\" es un sustantivo, no un verbo, aunque también lleva singular porque es una sola cosa.",
+            "de": "Diese Regel gilt für einen Infinitiv (\"Me gusta tomar café\"); hier ist \"el café\" ein Substantiv, kein Verb, auch wenn es zufällig ebenfalls Singular bekommt, weil es eine Sache ist."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "gu-why-02",
+      "es": "Me gustan los libros.",
+      "tr": {
+        "hu": "Szeretem a könyveket.",
+        "en": "I like books.",
+        "es": "Me gustan los libros.",
+        "de": "Ich mag Bücher."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "gusta: egy dolog/tevékenység",
+            "en": "gusta: one thing/activity",
+            "es": "gusta: una cosa/actividad",
+            "de": "gusta: eine Sache/Tätigkeit"
+          },
+          "wrong": {
+            "hu": "A gusta EGY dologra vonatkozna (\"Me gusta el libro\" = azt az egy könyvet szeretem); itt viszont TÖBB könyvről van szó, ezért többes szám: gustan.",
+            "en": "Gusta would apply to ONE thing (\"Me gusta el libro\" = I like that one book); here it is SEVERAL books, so plural: gustan.",
+            "es": "Gusta se aplicaría a UNA sola cosa (\"Me gusta el libro\" = me gusta ese libro); aquí son VARIOS libros, por eso plural: gustan.",
+            "de": "Gusta würde für EINE Sache gelten (\"Me gusta el libro\" = ich mag dieses eine Buch); hier sind es MEHRERE Bücher, deshalb Plural: gustan."
+          }
+        },
+        {
+          "text": {
+            "hu": "gustan: több dolog",
+            "en": "gustan: several things",
+            "es": "gustan: varias cosas",
+            "de": "gustan: mehrere Sachen"
+          }
+        },
+        {
+          "text": {
+            "hu": "gusta: főnévi igenév(ek) után mindig egyes szám",
+            "en": "gusta: always singular after infinitive(s)",
+            "es": "gusta: siempre singular tras infinitivo(s)",
+            "de": "gusta: nach Infinitiv(en) immer Singular"
+          },
+          "wrong": {
+            "hu": "Ez a szabály főnévi igenévre vonatkozik, ami MINDIG egyes szám marad (\"Me gusta leer\"); itt viszont \"los libros\" TÖBBES számú főnév, ami gustant kap.",
+            "en": "This rule applies to an infinitive, which ALWAYS stays singular (\"Me gusta leer\"); here \"los libros\" is a PLURAL noun, which takes gustan.",
+            "es": "Esta regla es para un infinitivo, que SIEMPRE queda en singular (\"Me gusta leer\"); aquí \"los libros\" es un sustantivo PLURAL, que lleva gustan.",
+            "de": "Diese Regel gilt für einen Infinitiv, der IMMER Singular bleibt (\"Me gusta leer\"); hier ist \"los libros\" ein PLURALES Substantiv, das gustan bekommt."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "gu-why-03",
+      "es": "Me gusta leer.",
+      "tr": {
+        "hu": "Szeretek olvasni.",
+        "en": "I like to read.",
+        "es": "Me gusta leer.",
+        "de": "Ich lese gern."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "gusta: egy dolog/tevékenység",
+            "en": "gusta: one thing/activity",
+            "es": "gusta: una cosa/actividad",
+            "de": "gusta: eine Sache/Tätigkeit"
+          },
+          "wrong": {
+            "hu": "Az \"egy dolog\" szabály olyan főnevekre vonatkozik, mint \"el café\"; itt viszont egy FŐNÉVI IGENÉV (leer) áll, aminek külön, saját szabálya van, bár a végeredmény ugyanaz: gusta.",
+            "en": "The \"one thing\" rule applies to nouns like \"el café\"; here there is an INFINITIVE (leer), which has its own separate rule, even though the result is the same: gusta.",
+            "es": "La regla de \"una cosa\" es para sustantivos como \"el café\"; aquí hay un INFINITIVO (leer), que tiene su propia regla, aunque el resultado sea el mismo: gusta.",
+            "de": "Die Regel \"eine Sache\" gilt für Substantive wie \"el café\"; hier steht ein INFINITIV (leer), der eine eigene Regel hat, auch wenn das Ergebnis gleich ist: gusta."
+          }
+        },
+        {
+          "text": {
+            "hu": "gustan: több dolog",
+            "en": "gustan: several things",
+            "es": "gustan: varias cosas",
+            "de": "gustan: mehrere Sachen"
+          },
+          "wrong": {
+            "hu": "A gustan mindig többes számú FŐNÉVRE vonatkozik (los libros); a leer viszont egy főnévi igenév, ami sosem kap többes számot, marad gusta.",
+            "en": "Gustan always applies to a plural NOUN (los libros); leer is an infinitive, which never takes the plural, it stays gusta.",
+            "es": "Gustan siempre se aplica a un SUSTANTIVO plural (los libros); leer es un infinitivo, que nunca lleva plural, queda gusta.",
+            "de": "Gustan gilt immer für ein plurales SUBSTANTIV (los libros); leer ist ein Infinitiv, der nie den Plural bekommt, es bleibt gusta."
+          }
+        },
+        {
+          "text": {
+            "hu": "gusta: főnévi igenév(ek) után mindig egyes szám",
+            "en": "gusta: always singular after infinitive(s)",
+            "es": "gusta: siempre singular tras infinitivo(s)",
+            "de": "gusta: nach Infinitiv(en) immer Singular"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "gu-why-04",
+      "es": "Me gusta comer y beber.",
+      "tr": {
+        "hu": "Szeretek enni és inni.",
+        "en": "I like eating and drinking.",
+        "es": "Me gusta comer y beber.",
+        "de": "Ich esse und trinke gern."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "gustan: több dolog",
+            "en": "gustan: several things",
+            "es": "gustan: varias cosas",
+            "de": "gustan: mehrere Sachen"
+          },
+          "wrong": {
+            "hu": "A gustan olyankor állna, ha KÉT FŐNÉV lenne egymás mellett (\"Me gustan el té y el café\"); itt viszont KÉT FŐNÉVI IGENÉV áll (comer y beber), ami mindig egyes számot kap.",
+            "en": "Gustan would apply if there were TWO NOUNS side by side (\"Me gustan el té y el café\"); here there are TWO INFINITIVES (comer y beber), which always take the singular.",
+            "es": "Gustan se aplicaría si hubiera DOS SUSTANTIVOS juntos (\"Me gustan el té y el café\"); aquí hay DOS INFINITIVOS (comer y beber), que siempre llevan singular.",
+            "de": "Gustan würde gelten, wenn ZWEI SUBSTANTIVE nebeneinanderstünden (\"Me gustan el té y el café\"); hier stehen ZWEI INFINITIVE (comer y beber), die immer den Singular bekommen."
+          }
+        },
+        {
+          "text": {
+            "hu": "gusta: egy dolog/tevékenység",
+            "en": "gusta: one thing/activity",
+            "es": "gusta: una cosa/actividad",
+            "de": "gusta: eine Sache/Tätigkeit"
+          },
+          "wrong": {
+            "hu": "Az \"egy dolog\" szabály egyetlen FŐNÉVRE vonatkozik; itt viszont KÉT FŐNÉVI IGENÉV áll egymás mellett, amire külön szabály él: mindig egyes szám marad, bár a végeredmény ugyanaz.",
+            "en": "The \"one thing\" rule applies to a single NOUN; here TWO INFINITIVES stand side by side, which have their own separate rule: it always stays singular, even though the result is the same.",
+            "es": "La regla de \"una cosa\" es para un solo SUSTANTIVO; aquí hay DOS INFINITIVOS juntos, que tienen su propia regla: siempre queda singular, aunque el resultado sea el mismo.",
+            "de": "Die Regel \"eine Sache\" gilt für ein einzelnes SUBSTANTIV; hier stehen ZWEI INFINITIVE nebeneinander, die eine eigene Regel haben: es bleibt immer Singular, auch wenn das Ergebnis gleich ist."
+          }
+        },
+        {
+          "text": {
+            "hu": "gusta: főnévi igenév(ek) után mindig egyes szám",
+            "en": "gusta: always singular after infinitive(s)",
+            "es": "gusta: siempre singular tras infinitivo(s)",
+            "de": "gusta: nach Infinitiv(en) immer Singular"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "gu-why-05",
+      "es": "Nos gustan las vacaciones.",
+      "tr": {
+        "hu": "Szeretjük a vakációt.",
+        "en": "We like vacations.",
+        "es": "Nos gustan las vacaciones.",
+        "de": "Wir mögen Ferien."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "gusta: egy dolog/tevékenység",
+            "en": "gusta: one thing/activity",
+            "es": "gusta: una cosa/actividad",
+            "de": "gusta: eine Sache/Tätigkeit"
+          },
+          "wrong": {
+            "hu": "A gusta EGY dologra vonatkozna (\"Nos gusta la vacación\" = azt az egy vakációt szeretjük); itt viszont \"las vacaciones\" TÖBBES számú főnév, ezért gustan.",
+            "en": "Gusta would apply to ONE thing (\"Nos gusta la vacación\" = we like that one vacation); here \"las vacaciones\" is a PLURAL noun, so gustan.",
+            "es": "Gusta se aplicaría a UNA sola cosa (\"Nos gusta la vacación\" = nos gusta esa vacación); aquí \"las vacaciones\" es un sustantivo PLURAL, por eso gustan.",
+            "de": "Gusta würde für EINE Sache gelten (\"Nos gusta la vacación\" = wir mögen diesen einen Urlaub); hier ist \"las vacaciones\" ein PLURALES Substantiv, deshalb gustan."
+          }
+        },
+        {
+          "text": {
+            "hu": "gustan: több dolog",
+            "en": "gustan: several things",
+            "es": "gustan: varias cosas",
+            "de": "gustan: mehrere Sachen"
+          }
+        },
+        {
+          "text": {
+            "hu": "gusta: főnévi igenév(ek) után mindig egyes szám",
+            "en": "gusta: always singular after infinitive(s)",
+            "es": "gusta: siempre singular tras infinitivo(s)",
+            "de": "gusta: nach Infinitiv(en) immer Singular"
+          },
+          "wrong": {
+            "hu": "Ez a szabály főnévi igenévre vonatkozik (\"Nos gusta viajar\"); itt viszont \"las vacaciones\" TÖBBES számú FŐNÉV, ami gustant kap, nem ige.",
+            "en": "This rule applies to an infinitive (\"Nos gusta viajar\"); here \"las vacaciones\" is a PLURAL NOUN, which takes gustan, not a verb.",
+            "es": "Esta regla es para un infinitivo (\"Nos gusta viajar\"); aquí \"las vacaciones\" es un SUSTANTIVO plural, que lleva gustan, no un verbo.",
+            "de": "Diese Regel gilt für einen Infinitiv (\"Nos gusta viajar\"); hier ist \"las vacaciones\" ein PLURALES SUBSTANTIV, das gustan bekommt, kein Verb."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "gu-why-06",
+      "es": "Le gusta la música.",
+      "tr": {
+        "hu": "Ő szereti a zenét.",
+        "en": "He/she likes music.",
+        "es": "Le gusta la música.",
+        "de": "Er/sie mag Musik."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "gusta: egy dolog/tevékenység",
+            "en": "gusta: one thing/activity",
+            "es": "gusta: una cosa/actividad",
+            "de": "gusta: eine Sache/Tätigkeit"
+          }
+        },
+        {
+          "text": {
+            "hu": "gustan: több dolog",
+            "en": "gustan: several things",
+            "es": "gustan: varias cosas",
+            "de": "gustan: mehrere Sachen"
+          },
+          "wrong": {
+            "hu": "A gustan TÖBB dologra vonatkozna (\"Le gustan las canciones\" = több dalt szeret); itt viszont EGY dolog, la música, ezért egyes szám: gusta.",
+            "en": "Gustan would apply to SEVERAL things (\"Le gustan las canciones\" = he/she likes several songs); here it is ONE thing, la música, so singular: gusta.",
+            "es": "Gustan se aplicaría a VARIAS cosas (\"Le gustan las canciones\" = le gustan varias canciones); aquí es UNA sola cosa, la música, por eso singular: gusta.",
+            "de": "Gustan würde für MEHRERE Dinge gelten (\"Le gustan las canciones\" = er/sie mag mehrere Lieder); hier ist es EINE Sache, la música, deshalb Singular: gusta."
+          }
+        },
+        {
+          "text": {
+            "hu": "gusta: főnévi igenév(ek) után mindig egyes szám",
+            "en": "gusta: always singular after infinitive(s)",
+            "es": "gusta: siempre singular tras infinitivo(s)",
+            "de": "gusta: nach Infinitiv(en) immer Singular"
+          },
+          "wrong": {
+            "hu": "Ez a szabály főnévi igenévre vonatkozik (\"Le gusta cantar\"); itt viszont \"la música\" főnév, nem ige, de véletlenül szintén egyes számot kap, mert egy dolog.",
+            "en": "This rule applies to an infinitive (\"Le gusta cantar\"); here \"la música\" is a noun, not a verb, though it also happens to take the singular because it is one thing.",
+            "es": "Esta regla es para un infinitivo (\"Le gusta cantar\"); aquí \"la música\" es un sustantivo, no un verbo, aunque también lleva singular porque es una sola cosa.",
+            "de": "Diese Regel gilt für einen Infinitiv (\"Le gusta cantar\"); hier ist \"la música\" ein Substantiv, kein Verb, auch wenn es zufällig ebenfalls Singular bekommt, weil es eine Sache ist."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "gu-why-07",
+      "es": "No nos gustan los lunes.",
+      "tr": {
+        "hu": "Nem szeretjük a hétfőket.",
+        "en": "We do not like Mondays.",
+        "es": "No nos gustan los lunes.",
+        "de": "Wir mögen Montage nicht."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "gusta: egy dolog/tevékenység",
+            "en": "gusta: one thing/activity",
+            "es": "gusta: una cosa/actividad",
+            "de": "gusta: eine Sache/Tätigkeit"
+          },
+          "wrong": {
+            "hu": "A gusta EGY dologra vonatkozna (\"No nos gusta el lunes\" = azt az egy hétfőt nem szeretjük); itt viszont \"los lunes\" TÖBBES számú főnév, ezért gustan.",
+            "en": "Gusta would apply to ONE thing (\"No nos gusta el lunes\" = we do not like that one Monday); here \"los lunes\" is a PLURAL noun, so gustan.",
+            "es": "Gusta se aplicaría a UNA sola cosa (\"No nos gusta el lunes\" = no nos gusta ese lunes); aquí \"los lunes\" es un sustantivo PLURAL, por eso gustan.",
+            "de": "Gusta würde für EINE Sache gelten (\"No nos gusta el lunes\" = wir mögen diesen einen Montag nicht); hier ist \"los lunes\" ein PLURALES Substantiv, deshalb gustan."
+          }
+        },
+        {
+          "text": {
+            "hu": "gustan: több dolog",
+            "en": "gustan: several things",
+            "es": "gustan: varias cosas",
+            "de": "gustan: mehrere Sachen"
+          }
+        },
+        {
+          "text": {
+            "hu": "gusta: főnévi igenév(ek) után mindig egyes szám",
+            "en": "gusta: always singular after infinitive(s)",
+            "es": "gusta: siempre singular tras infinitivo(s)",
+            "de": "gusta: nach Infinitiv(en) immer Singular"
+          },
+          "wrong": {
+            "hu": "Ez a szabály főnévi igenévre vonatkozik; a tagadás (no) sem változtat ezen, de itt \"los lunes\" TÖBBES számú FŐNÉV, nem ige, ezért gustan.",
+            "en": "This rule applies to an infinitive; the negation (no) does not change that either, but here \"los lunes\" is a PLURAL NOUN, not a verb, so gustan.",
+            "es": "Esta regla es para un infinitivo; la negación (no) tampoco cambia eso, pero aquí \"los lunes\" es un SUSTANTIVO plural, no un verbo, por eso gustan.",
+            "de": "Diese Regel gilt für einen Infinitiv; die Verneinung (no) ändert daran nichts, aber hier ist \"los lunes\" ein PLURALES SUBSTANTIV, kein Verb, deshalb gustan."
+          }
+        }
+      ],
+      "correctIndex": 1
     }
   ]
 }
