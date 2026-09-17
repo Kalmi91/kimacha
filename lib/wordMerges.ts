@@ -224,4 +224,13 @@ export const WORD_MERGES: Record<number, number> = {
 
   // PROMPT-POLICY 7 (es B1, TASK-3 2026-09-17): szint-inverzió, a magasabb szintű iker törölve
   6578: 2633, // el impuesto: C1 törölve, marad B1 (los impuestos -> el impuesto) [impuestos B1 mondatban is]
+
+  // PROMPT-POLICY 7 (es B2, TASK-3 2026-09-17): szabályos többes, marad az egyes iker
+  3010: 213, // la canción: B2 többes törölve, marad A2
+  3011: 3729, // la decisión: B2 többes törölve, marad A2
+  3035: 2101, // la intención: B2 többes törölve, marad A2
+  3058: 3350, // la célula: B2 többes törölve, marad B2
+  3075: 1857, // el examen: B2 többes törölve, marad A1
+  3185: 3638, // la conversación: B2 többes törölve, marad A2
+  3186: 2378, // la lección: B2 többes törölve, marad B1
 };

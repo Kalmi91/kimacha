@@ -1212,38 +1212,6 @@
     "gender": "m"
   },
   {
-    "es": "las canciones",
-    "hu": "dalok",
-    "en": "songs",
-    "de": "die Lieder",
-    "sentence_es": "Las canciones de ese álbum me emocionan mucho.",
-    "sentence_hu": "Az album dalai nagyon meghatnak.",
-    "sentence_en": "The songs on that album move me deeply.",
-    "sentence_de": "Die Lieder dieses Albums bewegen mich sehr.",
-    "id": 3010,
-    "level": "B2",
-    "topic": "arte_religion_pensamiento_b2",
-    "topicOrder": 2,
-    "pos": "noun",
-    "gender": "f"
-  },
-  {
-    "es": "las decisiones",
-    "hu": "döntések",
-    "en": "decisions",
-    "de": "die Entscheidungen",
-    "sentence_es": "Las decisiones difíciles definen nuestro carácter.",
-    "sentence_hu": "A nehéz döntések meghatározzák jellemünket.",
-    "sentence_en": "Difficult decisions define our character.",
-    "sentence_de": "Schwierige Entscheidungen formen unseren Charakter.",
-    "id": 3011,
-    "level": "B2",
-    "topic": "caracter_comportamiento_b2",
-    "topicOrder": 2,
-    "pos": "noun",
-    "gender": "f"
-  },
-  {
     "es": "el detalle",
     "hu": "részlet",
     "en": "detail",
@@ -1321,7 +1289,12 @@
     "topic": "ciencia_investigacion_b2",
     "topicOrder": 2,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "plural": "only",
+    "note_hu": "Az angol „mathematics”-hoz hasonlóan ezt a tantárgyat spanyolul is általában többes számban mondják: „las matemáticas”.",
+    "note_en": "Like English “mathematics”, this school subject is normally said in the plural in Spanish too: “las matemáticas”.",
+    "note_es": "Como en inglés “mathematics”, esta asignatura también se suele decir en plural en español: “las matemáticas”.",
+    "note_de": "Wie im Englischen “mathematics” sagt man dieses Schulfach auch im Spanischen meist im Plural: “las matemáticas”."
   },
   {
     "es": "la función",
@@ -1468,10 +1441,10 @@
     "gender": "m"
   },
   {
-    "es": "los pasajeros",
-    "hu": "utasok",
-    "en": "passengers",
-    "de": "die Passagiere",
+    "es": "el pasajero",
+    "hu": "utas",
+    "en": "passenger",
+    "de": "der Passagier",
     "sentence_es": "Los pasajeros esperaron dos horas en el aeropuerto.",
     "sentence_hu": "Az utasok két órát vártak a reptéren.",
     "sentence_en": "The passengers waited two hours at the airport.",
@@ -1610,22 +1583,6 @@
     "topicOrder": 21,
     "pos": "noun",
     "gender": "m"
-  },
-  {
-    "es": "las intenciones",
-    "hu": "szándékok",
-    "en": "intentions",
-    "de": "die Absichten",
-    "sentence_es": "Sus intenciones eran buenas, aunque el resultado fue malo.",
-    "sentence_hu": "Szándékai jók voltak, bár az eredmény rossz lett.",
-    "sentence_en": "His intentions were good, even if the outcome was bad.",
-    "sentence_de": "Seine Absichten waren gut, auch wenn das Ergebnis schlecht war.",
-    "id": 3035,
-    "level": "B2",
-    "topic": "caracter_comportamiento_b2",
-    "topicOrder": 4,
-    "pos": "noun",
-    "gender": "f"
   },
   {
     "es": "la jaula",
@@ -1884,10 +1841,10 @@
     "gender": "f"
   },
   {
-    "es": "los beneficios",
-    "hu": "haszon / előnyök",
-    "en": "benefits / profits",
-    "de": "die Vorteile / die Gewinne",
+    "es": "el beneficio",
+    "hu": "haszon / előny",
+    "en": "benefit / profit",
+    "de": "der Vorteil / der Gewinn",
     "sentence_es": "Los beneficios del ejercicio físico son innegables.",
     "sentence_hu": "A testmozgás előnyei tagadhatatlanok.",
     "sentence_en": "The benefits of physical exercise are undeniable.",
@@ -1948,10 +1905,10 @@
     "gender": "f"
   },
   {
-    "es": "los muebles",
-    "hu": "bútorok",
-    "en": "furniture",
-    "de": "das Möbel",
+    "es": "el mueble",
+    "hu": "bútordarab",
+    "en": "piece of furniture",
+    "de": "das Möbelstück",
     "sentence_es": "Los muebles del apartamento eran modernos y funcionales.",
     "sentence_hu": "A lakás bútorai modernek és praktikusak voltak.",
     "sentence_en": "The apartment's furniture was modern and functional.",
@@ -1962,22 +1919,6 @@
     "topicOrder": 3,
     "pos": "noun",
     "gender": "m"
-  },
-  {
-    "es": "las células",
-    "hu": "sejtek",
-    "en": "cells",
-    "de": "die Zellen",
-    "sentence_es": "Las células del cuerpo se renuevan constantemente.",
-    "sentence_hu": "A test sejtjei folyamatosan megújulnak.",
-    "sentence_en": "The body's cells renew themselves constantly.",
-    "sentence_de": "Die Zellen des Körpers erneuern sich ständig.",
-    "id": 3058,
-    "level": "B2",
-    "topic": "ciencia_investigacion_b2",
-    "topicOrder": 5,
-    "pos": "noun",
-    "gender": "f"
   },
   {
     "es": "el motel",
@@ -1996,9 +1937,9 @@
     "gender": "m"
   },
   {
-    "es": "los alimentos",
-    "hu": "élelmiszerek / táplálékok",
-    "en": "foods / foodstuffs",
+    "es": "el alimento",
+    "hu": "élelmiszer/táplálék",
+    "en": "food (item)",
     "de": "das Lebensmittel",
     "sentence_es": "Los alimentos frescos son fundamentales para una dieta equilibrada.",
     "sentence_hu": "A friss élelmiszerek alapvetőek az egyensúlyos étrendhez.",
@@ -2236,22 +2177,6 @@
     "gender": "m"
   },
   {
-    "es": "los exámenes",
-    "hu": "vizsgák",
-    "en": "exams / examinations",
-    "de": "die Prüfungen",
-    "sentence_es": "Los exámenes finales empiezan la semana que viene.",
-    "sentence_hu": "A záróvizsgák jövő héten kezdődnek.",
-    "sentence_en": "The final exams start next week.",
-    "sentence_de": "Die Abschlussprüfungen beginnen nächste Woche.",
-    "id": 3075,
-    "level": "B2",
-    "topic": "educacion_b2",
-    "topicOrder": 4,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "es": "el brindis",
     "hu": "koccintás / pohárköszöntő",
     "en": "toast (drink)",
@@ -2281,7 +2206,8 @@
     "topic": "emociones_sentimientos_b2",
     "topicOrder": 9,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "plural": "only"
   },
   {
     "es": "la sospecha",
@@ -2332,9 +2258,9 @@
     "gender": "f"
   },
   {
-    "es": "las cenizas",
+    "es": "la ceniza",
     "hu": "hamu",
-    "en": "ashes",
+    "en": "ash",
     "de": "die Asche",
     "sentence_es": "Las cenizas del incendio cubrieron el vecindario.",
     "sentence_hu": "A tűzvész hamuja beborította a környéket.",
@@ -2428,10 +2354,10 @@
     "gender": "m"
   },
   {
-    "es": "los alumnos",
-    "hu": "tanulók / diákok",
-    "en": "students / pupils",
-    "de": "der Schüler / die Studenten",
+    "es": "el alumno",
+    "hu": "tanuló/diák",
+    "en": "student/pupil",
+    "de": "der Schüler",
     "sentence_es": "Los alumnos aprobaron el examen con muy buenas notas.",
     "sentence_hu": "A diákok nagyon jó jegyekkel tették le a vizsgát.",
     "sentence_en": "The students passed the exam with very good grades.",
@@ -2489,7 +2415,8 @@
     "topic": "aspecto_fisico_identidad_b2",
     "topicOrder": 5,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "plural": "irregular"
   },
   {
     "es": "el productor",
@@ -2601,7 +2528,8 @@
     "topic": "naturaleza_medioambiente_b2",
     "topicOrder": 7,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "plural": "irregular"
   },
   {
     "es": "la perspectiva",
@@ -2620,10 +2548,10 @@
     "gender": "f"
   },
   {
-    "es": "los medicamentos",
-    "hu": "gyógyszerek",
-    "en": "medications / medicines",
-    "de": "die Medikamente",
+    "es": "el medicamento",
+    "hu": "gyógyszer",
+    "en": "medication/medicine",
+    "de": "das Medikament",
     "sentence_es": "Debes tomar los medicamentos a la misma hora cada día.",
     "sentence_hu": "A gyógyszereket minden nap ugyanabban az időben kell bevenned.",
     "sentence_en": "You should take your medications at the same time every day.",
@@ -2748,10 +2676,10 @@
     "gender": "f"
   },
   {
-    "es": "los parientes",
-    "hu": "rokonok",
-    "en": "relatives / family members",
-    "de": "die Verwandten",
+    "es": "el pariente",
+    "hu": "rokon",
+    "en": "relative/family member",
+    "de": "der Verwandte",
     "sentence_es": "Visité a mis parientes durante las vacaciones.",
     "sentence_hu": "A nyaralás alatt meglátogattam a rokonaimat.",
     "sentence_en": "I visited my relatives during the holidays.",
@@ -2780,10 +2708,10 @@
     "gender": "f"
   },
   {
-    "es": "los elementos",
-    "hu": "elemek",
-    "en": "elements",
-    "de": "die Elemente",
+    "es": "el elemento",
+    "hu": "elem",
+    "en": "element",
+    "de": "das Element",
     "sentence_es": "Los elementos de la tabla periódica son más de cien.",
     "sentence_hu": "A periódusos rendszer több mint száz elemet tartalmaz.",
     "sentence_en": "There are more than a hundred elements in the periodic table.",
@@ -3116,10 +3044,10 @@
     "gender": "f"
   },
   {
-    "es": "los cuentos",
-    "hu": "a mesék / az elbeszélések",
-    "en": "the stories / the tales",
-    "de": "die Geschichten / die Märchen",
+    "es": "el cuento",
+    "hu": "a mese / az elbeszélés",
+    "en": "the story / the tale",
+    "de": "die Geschichte / das Märchen",
     "sentence_es": "Los cuentos de su abuela la acompañaron toda la vida.",
     "sentence_hu": "A nagymamájától hallott mesék egész életén végigkísérték.",
     "sentence_en": "Her grandmother's tales stayed with her throughout life.",
@@ -3260,10 +3188,10 @@
     "gender": "m"
   },
   {
-    "es": "las hadas",
-    "hu": "a tündérek",
-    "en": "the fairies",
-    "de": "die Feen",
+    "es": "el hada",
+    "hu": "a tündér",
+    "en": "the fairy",
+    "de": "die Fee",
     "sentence_es": "El niño creía que las hadas vivían en el bosque.",
     "sentence_hu": "A kisfiú azt hitte, hogy tündérek élnek az erdőben.",
     "sentence_en": "The boy believed that fairies lived in the forest.",
@@ -3273,7 +3201,7 @@
     "topic": "arte_religion_pensamiento_b2",
     "topicOrder": 12,
     "pos": "noun",
-    "gender": "f"
+    "gender": "m"
   },
   {
     "es": "el vidrio",
@@ -3996,38 +3924,6 @@
     "gender": "f"
   },
   {
-    "es": "las conversaciones",
-    "hu": "a beszélgetések",
-    "en": "the conversations",
-    "de": "die Gespräche",
-    "sentence_es": "Las conversaciones entre los líderes duraron toda la tarde.",
-    "sentence_hu": "A vezetők közötti beszélgetések egész délután tartottak.",
-    "sentence_en": "The conversations between the leaders lasted all afternoon.",
-    "sentence_de": "Die Gespräche zwischen den Führern dauerten den ganzen Nachmittag.",
-    "id": 3185,
-    "level": "B2",
-    "topic": "informacion_medios_b2",
-    "topicOrder": 10,
-    "pos": "noun",
-    "gender": "f"
-  },
-  {
-    "es": "las lecciones",
-    "hu": "a leckék / a tanulságok",
-    "en": "the lessons",
-    "de": "die Lektionen / die Stunden",
-    "sentence_es": "Las lecciones de esa experiencia le sirvieron mucho.",
-    "sentence_hu": "Az abból a tapasztalatból levont tanulságok sokat segítettek neki.",
-    "sentence_en": "The lessons from that experience proved very useful to him.",
-    "sentence_de": "Die Lektionen aus dieser Erfahrung waren für ihn sehr wertvoll.",
-    "id": 3186,
-    "level": "B2",
-    "topic": "educacion_b2",
-    "topicOrder": 11,
-    "pos": "noun",
-    "gender": "f"
-  },
-  {
     "es": "la mansión",
     "hu": "a villa / a kastély",
     "en": "the mansion",
@@ -4172,10 +4068,10 @@
     "gender": "m"
   },
   {
-    "es": "los aliados",
-    "hu": "a szövetségesek",
-    "en": "the allies",
-    "de": "die Verbündeten",
+    "es": "el aliado",
+    "hu": "a szövetséges",
+    "en": "the ally",
+    "de": "der Verbündete",
     "sentence_es": "Los aliados coordinaron sus fuerzas para defender la región.",
     "sentence_hu": "A szövetségesek összehangolták erőiket a régió védelmére.",
     "sentence_en": "The allies coordinated their forces to defend the region.",
@@ -4252,10 +4148,10 @@
     "gender": "m"
   },
   {
-    "es": "los rebeldes",
-    "hu": "a lázadók",
-    "en": "the rebels",
-    "de": "die Rebellen",
+    "es": "el rebelde",
+    "hu": "a lázadó",
+    "en": "the rebel",
+    "de": "der Rebell",
     "sentence_es": "Los rebeldes tomaron el control de varias ciudades del norte.",
     "sentence_hu": "A lázadók több északi várost is elfoglaltak.",
     "sentence_en": "The rebels took control of several northern cities.",
@@ -7448,7 +7344,8 @@
     "topic": "vivienda_hogar_b2",
     "topicOrder": 11,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "plural": "only"
   },
   {
     "es": "la calefacción",
