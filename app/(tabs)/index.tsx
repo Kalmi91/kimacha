@@ -17,6 +17,9 @@ import { consumePendingAction } from '@/lib/pendingAction';
 import { DAILY_NEW_BONUS_STEP } from '@/lib/usageStats';
 import { borrowNewWords, countNewWords, nextTopicWithNewWords } from '@/lib/topicRotation';
 import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
+import { computeUnlockedTopics } from '@/lib/learn/topicUnlock';
+import { checkLevelChange } from '@/lib/learn/levelStreak';
+import { getFrontBack, lapLabelOf, speakSkippedAnswer } from '@/lib/learn/cardPresentation';
 import {
   buildQueue, applyCadence, mergeCarryover, type DueItem,
   createQueue, nextLap, answer, defer, insertNext, buryWord, answerAskMore, header, labelOf,
@@ -27,7 +30,7 @@ import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { filterLockedSentences } from '@/lib/grammar/tenseGate';
-import { doneGrammarTopicProgress, GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
+import { doneGrammarTopics } from '@/lib/learn/grammarProgress';
 import { cardIcon } from '@/lib/cardIcons';
 import { cardImage } from '@/lib/cardImages';
 import { cardMarkers } from '@/lib/cardMarkers';
@@ -163,68 +166,6 @@ export default function LearnScreen() {
   const advancingRef = useRef(false);
 
 
-  // `stateMap` = szavankénti "ismert" jelző (UTEMEZO 12/4: lap >= 3 VAGY
-  // eltemetve, ugyanaz a definíció, mint a Stats-kártyáé). A topic-készültség
-  // EBBŐL dől el (lib/topicMastery.ts), nem a repsMap-ből: egyszer látni egy
-  // szót nem tudás, és az új topic csak akkor indulhat, ha a régi szavai
-  // valóban megtanultak. A repsMap marad az "elkezdett-e egyáltalán" jelzésre.
-  const computeUnlockedTopics = (topics: TopicDef[], repsMap: Map<number, number>, stateMap: Map<number, number>, currentLevel: Level, selectedTopicId?: string | null, lang: string = 'es', randomPick: boolean = false): { unlocked: TopicDef[]; activeTopic: TopicDef | null; completedCount: number } => {
-    // Any level with a topic taxonomy (A0/A1/A2): all topics freely selectable,
-    // no sequential lock. Levels without topics keep the sequential unlock logic.
-    let unlocked: TopicDef[];
-    if (topics.length > 0) {
-      unlocked = [...topics];
-    } else {
-      unlocked = [];
-      for (const topic of topics) {
-        if (unlocked.length === 0) {
-          unlocked.push(topic);
-        } else {
-          const prevTopic = topics[topics.indexOf(topic) - 1];
-          const prevWords = getWordsForTopic(currentLevel, prevTopic.id, lang);
-          const allReviewed = prevWords.length > 0 && prevWords.every(w => (repsMap.get(w.id) ?? 0) > 0);
-          if (allReviewed) {
-            unlocked.push(topic);
-          } else {
-            break;
-          }
-        }
-      }
-    }
-
-    const topicComplete = (topic: TopicDef) =>
-      isTopicMastered(getWordsForTopic(currentLevel, topic.id, lang).map(w => w.id), stateMap);
-
-    let completedCount = 0;
-    for (const topic of unlocked) {
-      if (topicComplete(topic)) completedCount++;
-    }
-
-    // Active topic: use persisted selectedTopic if set and not fully complete,
-    // otherwise fall back to first incomplete topic by order.
-    let activeTopic: TopicDef | null = null;
-    if (selectedTopicId) {
-      const sel = unlocked.find(t => t.id === selectedTopicId);
-      if (sel && !topicComplete(sel)) activeTopic = sel;
-    }
-    if (!activeTopic) {
-      const isIncomplete = (topic: TopicDef) => !topicComplete(topic);
-      if (randomPick) {
-        // FB37: instead of always the first incomplete topic by order, draw
-        // uniformly among ALL incomplete topics so learning doesn't always
-        // fall back to the same "start of the queue" topic.
-        const incomplete = unlocked.filter(isIncomplete);
-        activeTopic = incomplete.length > 0
-          ? incomplete[Math.floor(Math.random() * incomplete.length)]
-          : unlocked[unlocked.length - 1] ?? null;
-      } else {
-        activeTopic = unlocked.find(isIncomplete) ?? unlocked[unlocked.length - 1] ?? null;
-      }
-    }
-
-    return { unlocked, activeTopic, completedCount };
-  };
-
   // FB135/FB136: record what is still available AFTER this queue, so the Done
   // screen can say why the session ended and offer the way on. Runs on both
   // queue builds (initial load and end-of-queue refill), the same as the topic
@@ -304,15 +245,6 @@ export default function LearnScreen() {
   // esedékes kupacot mutassa (UTEMEZO 6), ezért a pool nagy.
   const QUEUE_POOL = 400;
   const REVIEW_SLOTS = QUEUE_POOL;
-
-  // FB196: az elvégzett nyelvtani leckék adják a feloldott szerkezeteket
-  // („legyen olyan hogy bizonyos nyelvtani szerkezeteket feloldunk").
-  // D3 (FB290): egy téma csak akkor számít késznek, ha a leckéjében létező
-  // összes fajtájából van kész sor (doneGrammarTopicProgress, lib/grammar/syllabus.ts).
-  const doneGrammarTopics = async (learned: string): Promise<Set<string>> => {
-    const rows = await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY);
-    return new Set(doneGrammarTopicProgress(learned, rows).keys());
-  };
 
   // A setQueueState (lentebb) hívja, ezért előtte áll.
   const resetCardState = () => {
@@ -641,35 +573,6 @@ export default function LearnScreen() {
   // UTEMEZO 6. szakasz: a fejlec harom szama, 0/0/0 amig a sor meg nem toltodott be.
   const { black, blue, pink } = useMemo(() => (qs ? header(qs) : { black: 0, blue: 0, pink: 0 }), [qs]);
 
-  // UTEMEZO 7. szakasz: minden lapon egy cimke, a sajat nyelven (a motor
-  // labelOf-ja csak a motor sajat, magyar teszt-cimkeje, ld. lib/sessionQueue.ts).
-  const lapLabelOf = (shown: Shown | null): string | null => {
-    if (!shown) return null;
-    if (shown.kind === 'ask-more') return s.lap.question;
-    if (shown.type === 'sentence') return s.lap.sentence;
-    if (shown.kind === 'review') return shown.repair ? s.lap.repair : s.lap.review;
-    return shown.repair ? s.lap.repairLap(shown.lap ?? 1) : s.lap.newLap(shown.lap ?? 1);
-  };
-
-  const getFrontBack = (item: DueItem) => {
-    const [native, learned] = direction;
-    const isWord = item.type === 'word';
-
-    let frontLang = learned;
-    let backLang = native;
-    if (item.typingDirection === 'native-to-learned') {
-      frontLang = native;
-      backLang = learned;
-    }
-
-    return {
-      front: String(isWord ? item.word[frontLang] : item.word[`sentence_${frontLang}`]),
-      back: String(isWord ? item.word[backLang] : item.word[`sentence_${backLang}`]),
-      frontLang,
-      backLang,
-    };
-  };
-
   // FB116: the prompt is read out loud in whatever language it is shown in, not
   // only when that happens to be the learned one ("csináld meg úgy az appot hogy
   // ha bejön egy szó akkor kimondja angolul is. vagy ha spanyolul jön akkor is
@@ -684,29 +587,12 @@ export default function LearnScreen() {
       if (prompt) speakIn(prompt, speechLang(native));
       return;
     }
-    const { front, frontLang } = getFrontBack(current);
+    const { front, frontLang } = getFrontBack(current, direction);
     if (front) speakIn(front, speechLang(frontLang));
     // wordId + phase in the deps: a requeued card (FB109 ladder, FB43 skip) lands
     // at the SAME index in a same-length queue, so index alone would stay silent.
   }, [qs?.step, loading, done, current?.wordId, current?.isTyping]);
 
-  const checkLevelChange = async (wasCorrect: boolean) => {
-    const db = getDb();
-    const levelData = await db.getLevel();
-    let { correct_streak, mistakes_in_window, fail_streak } = levelData;
-    const currentLevel = levelData.level as Level;
-    const levelIdx = LEVELS.indexOf(currentLevel);
-
-    if (wasCorrect) {
-      correct_streak += 1;
-      fail_streak = 0;
-    } else {
-      fail_streak += 1;
-      mistakes_in_window += 1;
-      correct_streak = 0;
-    }
-    await db.updateLevel(currentLevel, correct_streak, mistakes_in_window, fail_streak);
-  };
 
 
   // UTEMEZO 4.5: a kor veget ert (nextLap current === null). Ujra le kell
@@ -1124,18 +1010,6 @@ export default function LearnScreen() {
     setQueueState(advanceQueue(insertNext(afterAnswer, sentenceLap)));
   };
 
-  // FB116: a skipped card is still read out loud, the word AND its sentence ("ha
-  // nem irok be semmit de nyomok a következőre akkor is mondja ki a szót és a
-  // mondatot"). This is the one part of FB43 that the learner reversed.
-  const speakSkippedAnswer = (item: DueItem) => {
-    const learned = direction[1];
-    const { back, backLang } = getFrontBack(item);
-    if (back) speakIn(back, speechLang(backLang));
-    if (item.type !== 'word') return;
-    const sentence = String(item.word[`sentence_${learned}`] ?? '');
-    if (sentence) speakIn(sentence, speechLang(learned));
-  };
-
   const handleCheck = () => {
     if (!current) return;
     // FB43: an empty answer isn't a wrong answer, it just means "not now" (too
@@ -1148,10 +1022,10 @@ export default function LearnScreen() {
     if (answer.length === 0) {
       setTypingResult('skipped');
       setRevealed(true);
-      speakSkippedAnswer(current);
+      speakSkippedAnswer(current, direction);
       return;
     }
-    const { back, backLang } = getFrontBack(current);
+    const { back, backLang } = getFrontBack(current, direction);
     // FB215: a „ / " vagylagos, a strictAnswerMatch mindkét jelentést elfogadja.
     const correct = back;
 
@@ -1275,7 +1149,7 @@ export default function LearnScreen() {
           onExamPress={() => setExamMode(true)}
           examLabel={s.exam.unlocked}
           toast={null}
-          lapLabel={lapLabelOf(qs.current)}
+          lapLabel={lapLabelOf(qs.current, s)}
         />
         <AskMoreCard
           dailyDefault={dailyDefault}
@@ -1292,7 +1166,7 @@ export default function LearnScreen() {
   // (lasd finishRound/loadCards); ez a TS-nek is kimondja, hogy innentol biztos.
   if (!current) return null;
 
-  const { front, back, frontLang, backLang } = getFrontBack(current);
+  const { front, back, frontLang, backLang } = getFrontBack(current, direction);
   const isWord = current.type === 'word';
 
   const speakTarget = () => {
@@ -1481,7 +1355,7 @@ export default function LearnScreen() {
       onExamPress={() => setExamMode(true)}
       examLabel={s.exam.unlocked}
       toast={chromeToast}
-      lapLabel={lapLabelOf(qs?.current ?? null)}
+      lapLabel={lapLabelOf(qs?.current ?? null, s)}
     />
     </>
   );
