@@ -19,7 +19,7 @@ import { borrowNewWords, countNewWords, nextTopicWithNewWords } from '@/lib/topi
 import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
 import {
   buildQueue, applyCadence, mergeCarryover, type DueItem,
-  createQueue, nextLap, answer, defer, insertNext, header, labelOf,
+  createQueue, nextLap, answer, defer, insertNext, buryWord, header, labelOf,
   DEFAULT_QUEUE_CONFIG, type QueueState, type Shown, type ReviewLap, type LapNo, type Effect,
 } from '@/lib/sessionQueue';
 import { doneAsk } from '@/lib/doneAsk';
@@ -983,6 +983,30 @@ export default function LearnScreen() {
     deferCurrent(false);
   };
 
+  // FB293/294, Kálmán 2026-09-16: "ha bármelyik lapnál mondom, hogy I know this,
+  // akkor a szót tegye bele [a tudottak közé], ne a lapot". A három "I know this"
+  // gomb (szó-flashcard, gépelős, easy-mondat) mind ide fut: a `db.buryWord` a
+  // szó MINDEN kártya-típusát temeti, a motor `buryWord` átmenete veszi ki a
+  // sorból, NEM `applyAnswer(true)` (ami eddig egy lapot helyesnek számított).
+  const handleBuryWord = async () => {
+    const state = qsRef.current;
+    if (!state || !state.current || advancingRef.current) return;
+    advancingRef.current = true;
+    const wordId = state.current.wordId;
+    getDb().buryWord(wordId).catch(() => {});
+    const advanced = advanceQueue(buryWord(state, wordId));
+    setQueueState(advanced);
+    if (advanced.current !== null) {
+      advancingRef.current = false;
+      return;
+    }
+    try {
+      await finishRound(advanced);
+    } finally {
+      advancingRef.current = false;
+    }
+  };
+
   useEffect(() => {
     if (Platform.OS !== 'web') return;
     const handler = (e: KeyboardEvent) => {
@@ -1390,11 +1414,7 @@ export default function LearnScreen() {
           onResult={(correct) => {
             applyAnswer(correct);
           }}
-          onBury={() => {
-            const db = getDb();
-            db.buryCard(current.wordId, current.type).catch(() => {});
-            applyAnswer(true);
-          }}
+          onBury={handleBuryWord}
           onSkip={requeueCurrent}
           mistakeNote={noteText}
           speechLocale={speechLang(learned)}
@@ -1546,11 +1566,7 @@ export default function LearnScreen() {
 
         <Pressable
           style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
-          onPress={() => {
-            const db = getDb();
-            db.buryCard(current.wordId, current.type).catch(() => {});
-            applyAnswer(true);
-          }}
+          onPress={handleBuryWord}
         >
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.iKnowThis}</Text>}
         </Pressable>
@@ -1744,11 +1760,7 @@ export default function LearnScreen() {
       {revealed && (
         <Pressable
           style={({ pressed }) => [styles.buryBtn, pressed && { backgroundColor: '#22C55E', borderRadius: 8 }]}
-          onPress={() => {
-            const db = getDb();
-            db.buryCard(current.wordId, current.type).catch(() => {});
-            applyAnswer(true);
-          }}
+          onPress={handleBuryWord}
         >
           {({ pressed }) => <Text style={[styles.buryText, pressed && { color: '#FFFFFF' }]}>{s.buttons.iKnowThis}</Text>}
         </Pressable>

@@ -213,6 +213,7 @@ export interface QueueStats {
   wordsStarted: number;
   wordsLearned: number;
   wrongLaps: number;
+  buried: number; // FB293/294: "I know this" a szora vonatkozik, nem szamit helyes valasznak
 }
 
 export interface Shown {
@@ -275,7 +276,7 @@ export function createQueue(init: {
     fresh: [...init.fresh],
     sinceHand: 0,
     current: null,
-    stats: { reviewsAnswered: 0, wordsStarted: 0, wordsLearned: 0, wrongLaps: 0 },
+    stats: { reviewsAnswered: 0, wordsStarted: 0, wordsLearned: 0, wrongLaps: 0, buried: 0 },
   };
 }
 
@@ -548,6 +549,29 @@ export function defer(state: QueueState, opts: { drop: boolean }): QueueState {
     return { ...state, hand, current: null };
   }
   return { ...state, current: null };
+}
+
+// UTEMEZO: FB293/294, Kálmán 2026-09-16: "ha bármelyik lapnál mondom, hogy I know
+// this, akkor a szót tegye bele [a tudottak közé], ne a lapot", "a 3 szám közül a
+// kék beragad". Eddig `db.buryCard` egy LAP-tipust temetett (a hivo `applyAnswer
+// (true)`-t hivott utana), a szo a maradek lapjaival kezben maradt, es a lap
+// helyesnek szamitott (a kek szam ezert nem csokkent). Ez az atmenet a SZOT veszi
+// ki a korbol EGESZBEN: kikerul a kezbol es minden hatralevo review-lapjabol
+// (barmelyik tipus, szo VAGY mondat), a fresh-bol is (nem valoszinu, de
+// determinisztikus legyen). A fekete NEM valtozik (a keret a szo INDITASAKOR
+// fogyott, UTEMEZO 2.2), a `sinceHand` erintetlen marad (ugyanugy, ahogy egy
+// helyes kezben-levo valasz utan is, lasd answer()), es nem szamit helyes
+// valasznak: a hivo `advanceQueue`-ja adja a kovetkezo lapot, ugyanazon az uton,
+// mint egy valasz utan.
+export function buryWord(state: QueueState, wordId: number): QueueState {
+  return {
+    ...state,
+    hand: state.hand.filter((h) => h.wordId !== wordId),
+    reviews: state.reviews.filter((r) => r.wordId !== wordId),
+    fresh: state.fresh.filter((id) => id !== wordId),
+    current: null,
+    stats: { ...state.stats, buried: state.stats.buried + 1 },
+  };
 }
 
 // UTEMEZO: a "mutasd mondatban" gomb segedje. A hivo elobb answer(state,
