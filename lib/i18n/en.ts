@@ -399,6 +399,8 @@ export default {
     startChoice: (n: number) => `Sentences (${n})`,
     startMatch: (n: number) => `Matching (${n})`,
     startForm: (n: number) => `Forms (${n})`,
+    // TASK-8 (D4, FB288): "why this sentence" drill kind start button.
+    startWhy: (n: number) => `Why? (${n})`,
     backToRule: 'Read the rule again',
     practiceAgain: 'Practice again',
     nextTopic: 'Next topic',

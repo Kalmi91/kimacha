@@ -399,6 +399,8 @@ export default {
     startChoice: (n: number) => `Frases (${n})`,
     startMatch: (n: number) => `Emparejar (${n})`,
     startForm: (n: number) => `Conjugación (${n})`,
+    // TASK-8 (D4, FB288): botón de inicio del tipo de ejercicio "por qué".
+    startWhy: (n: number) => `¿Por qué? (${n})`,
     backToRule: 'Volver a leer la regla',
     practiceAgain: 'Practicar otra vez',
     nextTopic: 'Siguiente tema',

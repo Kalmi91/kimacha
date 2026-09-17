@@ -11,12 +11,15 @@ import {
   isLessonV2,
   isMarkItem,
   isMatchItem,
+  isWhyItem,
   type GrammarKind,
   type GrammarMarkItem,
   type GrammarTopicData,
 } from '@/lib/games/content';
-import type { FormItem, LessonBlock, MatchItem } from '@/lib/grammar/lessonTypes';
+import type { FormItem, LessonBlock, MatchItem, WhyItem } from '@/lib/grammar/lessonTypes';
 import { markTokens } from '@/lib/games/grammarMark';
+import { speak } from '@/lib/speech';
+import { speechLang } from '@/lib/languages';
 import { buildGrammarRound, grammarRoundItemKind, isChoiceRoundItem, wrongExplanation } from '@/lib/games/grammarChoice';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString, shuffleArray } from '@/lib/shuffle';
@@ -234,6 +237,94 @@ function FormDrillItem({
   );
 }
 
+// TASK-8 (D4, FB288): "Miért ez a mondat?", a tanuló nem a hiányzó szót
+// választja, hanem a szabályt, ami miatt a mondat úgy van, ahogy van. Egy
+// próbálkozás, mint a választós tételnél (2.3): jó → zöld + „következő"; rossz
+// → a választott piros, a jó zöld, alatta a választott opció `wrong` szövege.
+function WhyDrillItem({
+  item,
+  learnedLang,
+  contentLang,
+  colors,
+  s,
+  onDone,
+}: {
+  item: WhyItem;
+  learnedLang: string;
+  contentLang: 'hu' | 'en' | 'es' | 'de';
+  colors: (typeof Colors)['light'];
+  s: ReturnType<typeof t>;
+  onDone: (correct: boolean) => void;
+}) {
+  const [selected, setSelected] = useState<number | null>(null);
+  const answered = selected !== null;
+  const isCorrect = answered && selected === item.correctIndex;
+
+  const select = (i: number) => {
+    if (answered) return;
+    setSelected(i);
+  };
+
+  return (
+    <View style={styles.whyBody}>
+      <View style={[styles.sentenceCard, { backgroundColor: colors.card }]}>
+        <View style={styles.whySentenceRow}>
+          <Text style={[styles.sentence, { color: colors.text }]}>{item.es}</Text>
+          <Pressable onPress={() => speak(item.es, speechLang(learnedLang))} hitSlop={10}>
+            <Text style={styles.speak}>🔊</Text>
+          </Pressable>
+        </View>
+        <Text style={[styles.whyTranslation, { color: colors.tabIconDefault }]}>
+          {item.tr[contentLang] ?? item.tr.en}
+        </Text>
+      </View>
+
+      <View style={styles.options}>
+        {item.options.map((opt, i) => {
+          const isPicked = selected === i;
+          const isRightAnswer = i === item.correctIndex;
+          let bg = colors.card;
+          let border = colors.tabIconDefault;
+          if (answered && isRightAnswer) {
+            bg = '#22C55E22';
+            border = '#22C55E';
+          } else if (answered && isPicked && !isRightAnswer) {
+            bg = '#EF444422';
+            border = '#EF4444';
+          }
+          return (
+            <Pressable
+              key={i}
+              testID="grammar-option"
+              style={[styles.option, { backgroundColor: bg, borderColor: border }]}
+              onPress={() => select(i)}
+              disabled={answered}
+            >
+              <Text style={[styles.optionText, { color: colors.text }]}>{opt.text[contentLang] ?? opt.text.en}</Text>
+            </Pressable>
+          );
+        })}
+      </View>
+
+      {answered ? (
+        <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
+          <Text style={[styles.explainHeader, { color: isCorrect ? '#22C55E' : '#EF4444' }]}>
+            {isCorrect ? s.games.correctFeedback : s.games.wrongFeedback}
+          </Text>
+          {!isCorrect ? (
+            <Text style={[styles.explainText, { color: colors.text }]}>
+              {item.options[selected].wrong?.[contentLang] ?? item.options[selected].wrong?.en ?? ''}
+            </Text>
+          ) : null}
+          <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(isCorrect)}>
+            <Text style={styles.btnText}>{s.games.understood}</Text>
+          </Pressable>
+        </View>
+      ) : null}
+    </View>
+  );
+}
+
 export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, kinds = CHOICE_ONLY }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -290,6 +381,15 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             table={findFormTable(topic, roundItem.item.table)}
             contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
             learnedLang={learnedLang}
+            colors={colors}
+            s={s}
+            onDone={completeItem}
+          />
+        ) : isWhyItem(roundItem.item) ? (
+          <WhyDrillItem
+            item={roundItem.item}
+            learnedLang={learnedLang}
+            contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
             colors={colors}
             s={s}
             onDone={completeItem}
@@ -472,4 +572,8 @@ const styles = StyleSheet.create({
   formBody: { gap: 10 },
   formPrompt: { fontSize: 18, fontWeight: '700', textAlign: 'center' },
   formInput: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 10, paddingHorizontal: 14, fontSize: 17, textAlign: 'center' },
+  whyBody: { gap: 12 },
+  whySentenceRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10 },
+  whyTranslation: { fontSize: 14, textAlign: 'center', marginTop: 6 },
+  speak: { fontSize: 18 },
 });

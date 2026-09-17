@@ -414,6 +414,8 @@ export default {
     startChoice: (n: number) => `Mondatok (${n})`,
     startMatch: (n: number) => `Párosítás (${n})`,
     startForm: (n: number) => `Ragozás (${n})`,
+    // TASK-8 (D4, FB288): "miért ez a mondat" feladat-fajta indító gombja.
+    startWhy: (n: number) => `Miért? (${n})`,
     backToRule: 'Szabály újraolvasása',
     practiceAgain: 'Újra gyakorlom',
     nextTopic: 'Következő téma',
