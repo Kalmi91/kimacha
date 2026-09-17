@@ -525,12 +525,14 @@ export default {
     dailyNewLimitWords: (n: string) => `${n} szó / nap`,
     spellingPractice: (due: number, total: number) => `Helyesírás-gyakorló · ${due} esedékes, ${total} a listán`,
     difficulty: 'Nehézség',
-    difficultySummary: (hand: number, gap: number, strict: boolean) =>
-      `Kézben: ${hand} · rés: ${gap} lap · ékezet: ${strict ? 'be' : 'ki'}`,
+    difficultySummary: (hand: number, gap: number, repair: number, strict: boolean) =>
+      `Kézben: ${hand} · rés: ${gap} lap · javítás: ${Math.min(repair, gap)} lap · ékezet: ${strict ? 'be' : 'ki'}`,
     handCap: 'Kézben lévő szavak',
     handCapHint: 'Ennyi szó lehet egyszerre elkezdve; új csak akkor indul, ha van hely.',
     gapLaps: 'Visszatérési rés',
     gapLapsHint: 'Ennyi másik lap teljen el, mielőtt ugyanaz a szó visszajön.',
+    repairGap: 'Javítás-rés',
+    repairGapHint: 'Egy elrontott, kézben lévő szó ennyi lap után jön vissza, a többi ismétlés előtt. A visszatérési résnél sosem nagyobb.',
     strictAccents: 'Az ékezetek számítanak',
     strictAccentsHint: 'A hiányzó ékezet (á, é, ñ) hiba gépeléskor.',
     articlePicker: 'Névelő-gombok',
