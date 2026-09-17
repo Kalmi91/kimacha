@@ -1262,6 +1262,356 @@
       "person": "ellos/ellas/ustedes",
       "answer": "hablaban",
       "table": "ind-imp-hablar"
+    },
+    {
+      "kind": "why",
+      "id": "iii-why-01",
+      "es": "El lunes salí temprano.",
+      "tr": {
+        "hu": "Hétfőn korán elindultam.",
+        "en": "On Monday I left early.",
+        "es": "El lunes salí temprano.",
+        "de": "Am Montag ging ich früh los."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "egyszeri, lezárt esemény (indefinido)",
+            "en": "one-time, closed event (indefinido)",
+            "es": "hecho único y cerrado (indefinido)",
+            "de": "einmaliges, abgeschlossenes Ereignis (indefinido)"
+          }
+        },
+        {
+          "text": {
+            "hu": "szokás, ismétlődés a múltban (imperfecto)",
+            "en": "habit, repeated in the past (imperfecto)",
+            "es": "costumbre repetida (imperfecto)",
+            "de": "Gewohnheit, wiederholt (imperfecto)"
+          },
+          "wrong": {
+            "hu": "A szokás azt jelentené, hogy MINDEN hétfőn korán indultam (\"Los lunes salía temprano\"); itt viszont EGY konkrét hétfőről van szó, ami lezárt esemény.",
+            "en": "A habit would mean I left early EVERY Monday (\"Los lunes salía temprano\"); here it is ONE specific Monday, a closed event.",
+            "es": "La costumbre significaría que salía temprano TODOS los lunes (\"Los lunes salía temprano\"); aquí es UN lunes concreto, un hecho cerrado.",
+            "de": "Die Gewohnheit würde bedeuten, dass ich JEDEN Montag früh ging (\"Los lunes salía temprano\"); hier ist es EIN bestimmter Montag, ein abgeschlossenes Ereignis."
+          }
+        },
+        {
+          "text": {
+            "hu": "leírás: háttér, körülmény (imperfecto)",
+            "en": "description: background, circumstance (imperfecto)",
+            "es": "descripción: fondo, circunstancia (imperfecto)",
+            "de": "Beschreibung: Hintergrund, Umstand (imperfecto)"
+          },
+          "wrong": {
+            "hu": "A leírás olyankor állna, mint \"Hacía frío el lunes\" (milyen volt a hétfő); itt viszont egy KONKRÉT LEZÁRT cselekvésről van szó, hogy mit tettem, nem milyen volt a nap.",
+            "en": "Description would apply to something like \"Hacía frío el lunes\" (what Monday was like); here it is about a SPECIFIC CLOSED action, what I did, not what the day was like.",
+            "es": "La descripción iría en algo como \"Hacía frío el lunes\" (cómo era el lunes); aquí se trata de una acción CONCRETA y CERRADA, qué hice, no cómo era el día.",
+            "de": "Die Beschreibung passt zu etwas wie \"Hacía frío el lunes\" (wie der Montag war); hier geht es um eine KONKRETE, ABGESCHLOSSENE Handlung, was ich tat, nicht wie der Tag war."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "iii-why-02",
+      "es": "De repente empezó a llover.",
+      "tr": {
+        "hu": "Hirtelen esni kezdett.",
+        "en": "Suddenly it started to rain.",
+        "es": "De repente empezó a llover.",
+        "de": "Plötzlich fing es an zu regnen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "leírás: háttér, körülmény (imperfecto)",
+            "en": "description: background, circumstance (imperfecto)",
+            "es": "descripción: fondo, circunstancia (imperfecto)",
+            "de": "Beschreibung: Hintergrund, Umstand (imperfecto)"
+          },
+          "wrong": {
+            "hu": "A leírás olyankor állna, mint \"Llovía\" (esett, háttér-állapot); itt viszont a \"de repente\" (hirtelen) egy RÖVID, VÁRATLAN eseményt jelez, ami megszakít valamit, ez indefinido.",
+            "en": "Description would apply to something like \"Llovía\" (it was raining, background); here \"de repente\" (suddenly) marks a SHORT, UNEXPECTED event that interrupts something, that is the preterite.",
+            "es": "La descripción iría en algo como \"Llovía\" (fondo); aquí \"de repente\" marca un suceso CORTO e INESPERADO que interrumpe algo, eso es indefinido.",
+            "de": "Die Beschreibung passt zu etwas wie \"Llovía\" (Hintergrund); hier markiert \"de repente\" (plötzlich) ein KURZES, UNERWARTETES Ereignis, das etwas unterbricht, das ist Indefinido."
+          }
+        },
+        {
+          "text": {
+            "hu": "hirtelen esemény, megszakítja a hátteret (indefinido)",
+            "en": "sudden event, interrupts the background (indefinido)",
+            "es": "suceso repentino que interrumpe (indefinido)",
+            "de": "plötzliches Ereignis, unterbricht (indefinido)"
+          }
+        },
+        {
+          "text": {
+            "hu": "szokás, ismétlődés a múltban (imperfecto)",
+            "en": "habit, repeated in the past (imperfecto)",
+            "es": "costumbre repetida (imperfecto)",
+            "de": "Gewohnheit, wiederholt (imperfecto)"
+          },
+          "wrong": {
+            "hu": "A szokás azt jelentené, hogy RENDSZERESEN esett (\"Llovía todos los días\"); itt viszont a \"de repente\" EGYSZERI, hirtelen kezdetet jelez, nem ismétlődést.",
+            "en": "A habit would mean it USED TO rain regularly (\"Llovía todos los días\"); here \"de repente\" marks a SINGLE, sudden start, not a repetition.",
+            "es": "La costumbre significaría que llovía CON REGULARIDAD (\"Llovía todos los días\"); aquí \"de repente\" marca un comienzo ÚNICO y repentino, no una repetición.",
+            "de": "Die Gewohnheit würde bedeuten, dass es REGELMÄSSIG regnete (\"Llovía todos los días\"); hier markiert \"de repente\" einen EINMALIGEN, plötzlichen Beginn, keine Wiederholung."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "iii-why-03",
+      "es": "De niño jugaba en la calle.",
+      "tr": {
+        "hu": "Gyerekkoromban az utcán játszottam.",
+        "en": "As a child I used to play in the street.",
+        "es": "De niño jugaba en la calle.",
+        "de": "Als Kind spielte ich auf der Straße."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szokás, ismétlődés a múltban (imperfecto)",
+            "en": "habit, repeated in the past (imperfecto)",
+            "es": "costumbre repetida (imperfecto)",
+            "de": "Gewohnheit, wiederholt (imperfecto)"
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszeri, lezárt esemény (indefinido)",
+            "en": "one-time, closed event (indefinido)",
+            "es": "hecho único y cerrado (indefinido)",
+            "de": "einmaliges, abgeschlossenes Ereignis (indefinido)"
+          },
+          "wrong": {
+            "hu": "Az egyszeri esemény azt jelentené, hogy EGY alkalommal játszottam az utcán (\"Un día jugué en la calle\"); itt viszont \"de niño\" (gyerekként) ISMÉTLŐDŐ szokásra utal.",
+            "en": "A one-time event would mean I played in the street ON ONE OCCASION (\"Un día jugué en la calle\"); here \"de niño\" (as a child) points to a REPEATED habit.",
+            "es": "El hecho único significaría que jugué en la calle UNA vez (\"Un día jugué en la calle\"); aquí \"de niño\" apunta a una costumbre REPETIDA.",
+            "de": "Das einmalige Ereignis würde bedeuten, dass ich EIN Mal auf der Straße spielte (\"Un día jugué en la calle\"); hier weist \"de niño\" (als Kind) auf eine WIEDERHOLTE Gewohnheit hin."
+          }
+        },
+        {
+          "text": {
+            "hu": "kor és idő a múltban (imperfecto)",
+            "en": "age and time in the past (imperfecto)",
+            "es": "edad y hora en el pasado (imperfecto)",
+            "de": "Alter und Uhrzeit (imperfecto)"
+          },
+          "wrong": {
+            "hu": "A kor/idő pont olyan mondatokra vonatkozik, mint \"Tenía diez años\"; itt viszont egy ISMÉTLŐDŐ CSELEKVÉSRŐL van szó (játszottam), nem az életkor megadásáról.",
+            "en": "The age/time point applies to sentences like \"Tenía diez años\"; here it is about a REPEATED ACTION (playing), not stating an age.",
+            "es": "El punto de edad/hora es para frases como \"Tenía diez años\"; aquí se trata de una ACCIÓN REPETIDA (jugaba), no de dar la edad.",
+            "de": "Der Alter/Zeit-Punkt passt zu Sätzen wie \"Tenía diez años\"; hier geht es um eine WIEDERHOLTE HANDLUNG (spielen), nicht um eine Altersangabe."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "iii-why-04",
+      "es": "La calle estaba oscura.",
+      "tr": {
+        "hu": "Az utca sötét volt.",
+        "en": "The street was dark.",
+        "es": "La calle estaba oscura.",
+        "de": "Die Straße war dunkel."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "egyszeri, lezárt esemény (indefinido)",
+            "en": "one-time, closed event (indefinido)",
+            "es": "hecho único y cerrado (indefinido)",
+            "de": "einmaliges, abgeschlossenes Ereignis (indefinido)"
+          },
+          "wrong": {
+            "hu": "Az egyszeri esemény egy LEZÁRT cselekvésre vonatkozna (\"La calle se oscureció\" = besötétedett, egy pillanat); itt viszont a HÁTTÉR leírásáról van szó, milyen volt az utca, ez imperfecto.",
+            "en": "A one-time event would apply to a CLOSED action (\"La calle se oscureció\" = it got dark, a moment); here it is a BACKGROUND description of what the street was like, that is the imperfect.",
+            "es": "El hecho único sería una acción CERRADA (\"La calle se oscureció\" = un momento); aquí es una descripción del FONDO, cómo era la calle, eso es imperfecto.",
+            "de": "Das einmalige Ereignis wäre eine ABGESCHLOSSENE Handlung (\"La calle se oscureció\" = ein Moment); hier ist es eine HINTERGRUND-Beschreibung, wie die Straße war, das ist Imperfekt."
+          }
+        },
+        {
+          "text": {
+            "hu": "leírás: háttér, körülmény (imperfecto)",
+            "en": "description: background, circumstance (imperfecto)",
+            "es": "descripción: fondo, circunstancia (imperfecto)",
+            "de": "Beschreibung: Hintergrund, Umstand (imperfecto)"
+          }
+        },
+        {
+          "text": {
+            "hu": "hirtelen esemény, megszakítja a hátteret (indefinido)",
+            "en": "sudden event, interrupts the background (indefinido)",
+            "es": "suceso repentino que interrumpe (indefinido)",
+            "de": "plötzliches Ereignis, unterbricht (indefinido)"
+          },
+          "wrong": {
+            "hu": "A hirtelen, megszakító esemény egy RÖVID cselekvésre vonatkozna (\"De repente se apagó la luz\"); itt viszont egy ÁLLAPOT leírásáról van szó, nem egy váratlan eseményről.",
+            "en": "A sudden, interrupting event would apply to a SHORT action (\"De repente se apagó la luz\"); here it is a description of a STATE, not an unexpected event.",
+            "es": "Un suceso repentino sería una acción CORTA (\"De repente se apagó la luz\"); aquí es la descripción de un ESTADO, no un suceso inesperado.",
+            "de": "Ein plötzliches, unterbrechendes Ereignis wäre eine KURZE Handlung (\"De repente se apagó la luz\"); hier ist es die Beschreibung eines ZUSTANDS, kein unerwartetes Ereignis."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "iii-why-05",
+      "es": "Tenía veinte años cuando se casó.",
+      "tr": {
+        "hu": "Húszéves volt, amikor megházasodott.",
+        "en": "He was twenty when he got married.",
+        "es": "Tenía veinte años cuando se casó.",
+        "de": "Er war zwanzig, als er heiratete."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szokás, ismétlődés a múltban (imperfecto)",
+            "en": "habit, repeated in the past (imperfecto)",
+            "es": "costumbre repetida (imperfecto)",
+            "de": "Gewohnheit, wiederholt (imperfecto)"
+          },
+          "wrong": {
+            "hu": "A szokás ismétlődő cselekvésre vonatkozna (\"Todos los años cumplía años\"); itt viszont egy ÉLETKOR megadásáról van szó egy adott pillanatban, ez külön pont.",
+            "en": "A habit would apply to a repeated action (\"Todos los años cumplía años\"); here it is stating an AGE at a given moment, a separate point.",
+            "es": "La costumbre sería una acción repetida (\"Todos los años cumplía años\"); aquí se da una EDAD en un momento dado, un punto distinto.",
+            "de": "Die Gewohnheit wäre eine wiederholte Handlung (\"Todos los años cumplía años\"); hier wird ein ALTER zu einem bestimmten Zeitpunkt genannt, ein eigener Punkt."
+          }
+        },
+        {
+          "text": {
+            "hu": "kor és idő a múltban (imperfecto)",
+            "en": "age and time in the past (imperfecto)",
+            "es": "edad y hora en el pasado (imperfecto)",
+            "de": "Alter und Uhrzeit (imperfecto)"
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszeri, lezárt esemény (indefinido)",
+            "en": "one-time, closed event (indefinido)",
+            "es": "hecho único y cerrado (indefinido)",
+            "de": "einmaliges, abgeschlossenes Ereignis (indefinido)"
+          },
+          "wrong": {
+            "hu": "Az egyszeri esemény egy LEZÁRT cselekvésre vonatkozna; a \"tenía veinte años\" viszont az ÉLETKORT írja le, ami a lezárt esemény (se casó) HÁTTERE, nem maga a cselekvés.",
+            "en": "A one-time event would apply to a CLOSED action; \"tenía veinte años\" instead describes the AGE, the BACKGROUND of the closed event (se casó), not the action itself.",
+            "es": "El hecho único sería una acción CERRADA; \"tenía veinte años\" en cambio describe la EDAD, el FONDO del hecho cerrado (se casó), no la acción misma.",
+            "de": "Das einmalige Ereignis wäre eine ABGESCHLOSSENE Handlung; \"tenía veinte años\" beschreibt dagegen das ALTER, den HINTERGRUND des abgeschlossenen Ereignisses (se casó), nicht die Handlung selbst."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "iii-why-06",
+      "es": "En 2020 cambié de trabajo.",
+      "tr": {
+        "hu": "2020-ban munkahelyet váltottam.",
+        "en": "In 2020 I changed jobs.",
+        "es": "En 2020 cambié de trabajo.",
+        "de": "2020 wechselte ich den Job."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "egyszeri, lezárt esemény (indefinido)",
+            "en": "one-time, closed event (indefinido)",
+            "es": "hecho único y cerrado (indefinido)",
+            "de": "einmaliges, abgeschlossenes Ereignis (indefinido)"
+          }
+        },
+        {
+          "text": {
+            "hu": "szokás, ismétlődés a múltban (imperfecto)",
+            "en": "habit, repeated in the past (imperfecto)",
+            "es": "costumbre repetida (imperfecto)",
+            "de": "Gewohnheit, wiederholt (imperfecto)"
+          },
+          "wrong": {
+            "hu": "A szokás azt jelentené, hogy RENDSZERESEN váltottam munkát (\"Cada año cambiaba de trabajo\"); itt viszont EGY konkrét évben, egyszer történt, ez lezárt esemény.",
+            "en": "A habit would mean I used to change jobs REGULARLY (\"Cada año cambiaba de trabajo\"); here it happened ONCE, in a specific year, a closed event.",
+            "es": "La costumbre significaría que cambiaba de trabajo CON REGULARIDAD (\"Cada año cambiaba de trabajo\"); aquí pasó UNA vez, en un año concreto, un hecho cerrado.",
+            "de": "Die Gewohnheit würde bedeuten, dass ich REGELMÄSSIG den Job wechselte (\"Cada año cambiaba de trabajo\"); hier geschah es EINMAL, in einem bestimmten Jahr, ein abgeschlossenes Ereignis."
+          }
+        },
+        {
+          "text": {
+            "hu": "kor és idő a múltban (imperfecto)",
+            "en": "age and time in the past (imperfecto)",
+            "es": "edad y hora en el pasado (imperfecto)",
+            "de": "Alter und Uhrzeit (imperfecto)"
+          },
+          "wrong": {
+            "hu": "A kor/idő pont olyan mondatokra vonatkozik, mint \"Tenía treinta años\"; itt viszont egy LEZÁRT ESEMÉNYRŐL van szó (munkahelyet váltottam), nem az életkor megadásáról.",
+            "en": "The age/time point applies to sentences like \"Tenía treinta años\"; here it is about a CLOSED EVENT (changing jobs), not stating an age.",
+            "es": "El punto de edad/hora es para frases como \"Tenía treinta años\"; aquí se trata de un HECHO CERRADO (cambié de trabajo), no de dar la edad.",
+            "de": "Der Alter/Zeit-Punkt passt zu Sätzen wie \"Tenía treinta años\"; hier geht es um ein ABGESCHLOSSENES EREIGNIS (Jobwechsel), nicht um eine Altersangabe."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "iii-why-07",
+      "es": "Todos los veranos íbamos a la playa.",
+      "tr": {
+        "hu": "Minden nyáron a strandra jártunk.",
+        "en": "Every summer we used to go to the beach.",
+        "es": "Todos los veranos íbamos a la playa.",
+        "de": "Jeden Sommer gingen wir an den Strand."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "egyszeri, lezárt esemény (indefinido)",
+            "en": "one-time, closed event (indefinido)",
+            "es": "hecho único y cerrado (indefinido)",
+            "de": "einmaliges, abgeschlossenes Ereignis (indefinido)"
+          },
+          "wrong": {
+            "hu": "Az egyszeri esemény azt jelentené, hogy EGYETLEN nyáron mentünk a strandra (\"Un verano fuimos a la playa\"); itt viszont \"todos los veranos\" (minden nyáron) ISMÉTLŐDŐ szokásra utal.",
+            "en": "A one-time event would mean we went to the beach in ONE summer (\"Un verano fuimos a la playa\"); here \"todos los veranos\" (every summer) points to a REPEATED habit.",
+            "es": "El hecho único significaría que fuimos a la playa UN verano (\"Un verano fuimos a la playa\"); aquí \"todos los veranos\" apunta a una costumbre REPETIDA.",
+            "de": "Das einmalige Ereignis würde bedeuten, dass wir EINEN Sommer an den Strand gingen (\"Un verano fuimos a la playa\"); hier weist \"todos los veranos\" auf eine WIEDERHOLTE Gewohnheit hin."
+          }
+        },
+        {
+          "text": {
+            "hu": "szokás, ismétlődés a múltban (imperfecto)",
+            "en": "habit, repeated in the past (imperfecto)",
+            "es": "costumbre repetida (imperfecto)",
+            "de": "Gewohnheit, wiederholt (imperfecto)"
+          }
+        },
+        {
+          "text": {
+            "hu": "hirtelen esemény, megszakítja a hátteret (indefinido)",
+            "en": "sudden event, interrupts the background (indefinido)",
+            "es": "suceso repentino que interrumpe (indefinido)",
+            "de": "plötzliches Ereignis, unterbricht (indefinido)"
+          },
+          "wrong": {
+            "hu": "A hirtelen, megszakító esemény egy RÖVID, VÁRATLAN cselekvésre vonatkozna; itt viszont \"todos los veranos\" (minden nyáron) egy hosszan ISMÉTLŐDŐ szokásra utal, nem egy váratlan eseményre.",
+            "en": "A sudden, interrupting event would apply to a SHORT, UNEXPECTED action; here \"todos los veranos\" (every summer) points to a long-REPEATED habit, not an unexpected event.",
+            "es": "Un suceso repentino sería una acción CORTA e INESPERADA; aquí \"todos los veranos\" apunta a una costumbre REPETIDA durante mucho tiempo, no un suceso inesperado.",
+            "de": "Ein plötzliches, unterbrechendes Ereignis wäre eine KURZE, UNERWARTETE Handlung; hier weist \"todos los veranos\" auf eine lange WIEDERHOLTE Gewohnheit hin, kein unerwartetes Ereignis."
+          }
+        }
+      ],
+      "correctIndex": 1
     }
   ]
 }
