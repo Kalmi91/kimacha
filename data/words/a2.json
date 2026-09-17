@@ -897,7 +897,12 @@
     "topic": "familia_matrimonio_a2",
     "topicOrder": 3,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "plural": "only",
+    "note_hu": "A „los hermanos” általában testvéreket jelent (fiú- és lánytestvérek együtt), nem csak fivéreket; egy fivér önmagában „el hermano”.",
+    "note_en": "“los hermanos” usually means “siblings” (brothers and sisters together), not just “brothers”; one brother alone is “el hermano”.",
+    "note_es": "“los hermanos” suele significar hermanos y hermanas juntos, no solo hermanos varones; un hermano solo es “el hermano”.",
+    "note_de": "“los hermanos” bedeutet meist Geschwister (Brüder und Schwestern zusammen), nicht nur Brüder; ein Bruder allein heißt “el hermano”."
   },
   {
     "id": 3434,
@@ -1234,7 +1239,8 @@
     "topic": "amor_pareja_a2",
     "topicOrder": 14,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "plural": "only"
   },
   {
     "id": 3455,
@@ -1284,10 +1290,10 @@
   {
     "id": 3458,
     "level": "A2",
-    "es": "los libros",
-    "hu": "a könyvek",
-    "en": "the books",
-    "de": "die Bücher",
+    "es": "el libro",
+    "hu": "a könyv",
+    "en": "the book",
+    "de": "das Buch",
     "sentence_es": "He leído tres libros este mes.",
     "sentence_hu": "Három könyvet olvastam ebben a hónapban.",
     "sentence_en": "I've read three books this month.",
@@ -1311,22 +1317,6 @@
     "topic": "trabajo_dia_ser_estar_a2",
     "topicOrder": 4,
     "pos": "verb"
-  },
-  {
-    "id": 3460,
-    "level": "A2",
-    "es": "los cielos",
-    "hu": "az egek",
-    "en": "the skies / the heavens",
-    "de": "der Himmel",
-    "sentence_es": "Los cielos están muy claros hoy.",
-    "sentence_hu": "Az ég nagyon tiszta ma.",
-    "sentence_en": "The skies are very clear today.",
-    "sentence_de": "Der Himmel ist heute sehr klar.",
-    "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 7,
-    "pos": "noun",
-    "gender": "m"
   },
   {
     "id": 3461,
@@ -1395,10 +1385,10 @@
   {
     "id": 3466,
     "level": "A2",
-    "es": "las reglas",
-    "hu": "a szabályok",
-    "en": "the rules",
-    "de": "die Regeln",
+    "es": "la regla",
+    "hu": "a szabály/vonalzó",
+    "en": "rule (game) / ruler",
+    "de": "die Regel",
     "sentence_es": "Hemos aprendido las reglas del juego.",
     "sentence_hu": "Megtanultuk a játék szabályait.",
     "sentence_en": "We've learned the rules of the game.",
@@ -1621,7 +1611,12 @@
     "topic": "paises",
     "topicOrder": 3,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "plural": "only",
+    "note_hu": "Itt a „los estados” államokat jelent (országok, pl. az Egyesült Államok); az „el estado” önmagában inkább állapotot jelent.",
+    "note_en": "Here “los estados” means “the states” (countries/political states, like the United States); “el estado” alone more often means “state, condition”.",
+    "note_es": "Aquí “los estados” significa los países o entidades políticas (p. ej. los Estados Unidos); “el estado” solo suele significar condición, estado de ánimo.",
+    "note_de": "Hier bedeutet “los estados” die Staaten (Länder, z. B. die Vereinigten Staaten); “el estado” allein bedeutet eher Zustand."
   },
   {
     "id": 3480,
@@ -1898,26 +1893,6 @@
     "note_en": "Two meanings. 1) TO BE LEFT / stay: queda poco pan = there is little bread left. 2) TO ARRANGE TO MEET: quedamos a las cinco = let's meet at five. With a time next to it, it is the meeting.",
     "note_es": "Dos sentidos. 1) PERMANECER: queda poco pan. 2) CITARSE: quedamos a las cinco.",
     "note_de": "Zwei Bedeutungen. 1) ÜBRIG BLEIBEN: queda poco pan. 2) SICH VERABREDEN: quedamos a las cinco."
-  },
-  {
-    "id": 3498,
-    "level": "A2",
-    "es": "las cartas",
-    "hu": "a levelek / a kártyák",
-    "en": "the letters / the cards",
-    "de": "die Briefe / die Karten",
-    "sentence_es": "He escrito tres cartas esta semana.",
-    "sentence_hu": "Három levelet írtam ezen a héten.",
-    "sentence_en": "I've written three letters this week.",
-    "sentence_de": "Ich habe diese Woche drei Briefe geschrieben.",
-    "topic": "comunicacion_medios_a2",
-    "topicOrder": 1,
-    "pos": "noun",
-    "gender": "f",
-    "note_hu": "Két jelentése van. 1) LEVELEK, amiket postán küldesz: he escrito tres cartas. 2) KÁRTYÁK, a játékhoz: jugamos a las cartas. Étteremben a carta étlapot jelent.",
-    "note_en": "Two meanings. 1) LETTERS you post: he escrito tres cartas. 2) PLAYING CARDS: jugamos a las cartas. In a restaurant, la carta is the menu.",
-    "note_es": "Dos sentidos. 1) CARTAS que se envían: he escrito tres cartas. 2) NAIPES: jugamos a las cartas. En un restaurante, la carta es el menú.",
-    "note_de": "Zwei Bedeutungen. 1) BRIEFE: he escrito tres cartas. 2) SPIELKARTEN: jugamos a las cartas. Im Restaurant ist la carta die Speisekarte."
   },
   {
     "id": 3499,
@@ -2316,7 +2291,12 @@
     "topic": "trabajo_dia_tiempo_a2",
     "topicOrder": 16,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "plural": "only",
+    "note_hu": "Itt a „los tiempos” idők-et jelent (korszakok, igeidők); az „el tiempo” önmagában inkább idő vagy időjárás.",
+    "note_en": "Here “los tiempos” means “the times” (eras, verb tenses); “el tiempo” alone usually means “time” or “weather”.",
+    "note_es": "Aquí “los tiempos” significa las épocas o los tiempos verbales; “el tiempo” solo suele significar tiempo o el clima.",
+    "note_de": "Hier bedeutet “los tiempos” die Zeiten (Epochen, Verbzeiten); “el tiempo” allein bedeutet meist Zeit oder Wetter."
   },
   {
     "id": 3524,
@@ -2332,22 +2312,6 @@
     "topic": "trabajo_dia_acciones_a2",
     "topicOrder": 14,
     "pos": "verb"
-  },
-  {
-    "id": 3525,
-    "level": "A2",
-    "es": "los animales",
-    "hu": "az állatok",
-    "en": "the animals",
-    "de": "die Tiere",
-    "sentence_es": "Hemos visto muchos animales en el zoo.",
-    "sentence_hu": "Sok állatot láttunk az állatkertben.",
-    "sentence_en": "We've seen many animals at the zoo.",
-    "sentence_de": "Wir haben viele Tiere im Zoo gesehen.",
-    "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 8,
-    "pos": "noun",
-    "gender": "m"
   },
   {
     "id": 3526,
@@ -2565,22 +2529,6 @@
     "pos": "verb"
   },
   {
-    "id": 3540,
-    "level": "A2",
-    "es": "las flores",
-    "hu": "a virágok",
-    "en": "the flowers",
-    "de": "die Blumen",
-    "sentence_es": "He comprado flores para mi madre.",
-    "sentence_hu": "Virágot vettem anyámnak.",
-    "sentence_en": "I've bought flowers for my mother.",
-    "sentence_de": "Ich habe Blumen für meine Mutter gekauft.",
-    "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 9,
-    "pos": "noun",
-    "gender": "f"
-  },
-  {
     "id": 3541,
     "level": "A2",
     "es": "dando (dar)",
@@ -2737,7 +2685,8 @@
     "topic": "trato_respeto_a2",
     "topicOrder": 7,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "plural": "irregular"
   },
   {
     "id": 3551,
@@ -2875,22 +2824,6 @@
     "topicOrder": 11,
     "pos": "noun",
     "gender": "m"
-  },
-  {
-    "id": 3560,
-    "level": "A2",
-    "es": "las luces",
-    "hu": "a fények",
-    "en": "the lights",
-    "de": "die Lichter",
-    "sentence_es": "He encendido las luces del salón.",
-    "sentence_hu": "Felkapcsoltam a nappali lámpáit.",
-    "sentence_en": "I've turned on the living room lights.",
-    "sentence_de": "Ich habe die Lichter im Wohnzimmer eingeschaltet.",
-    "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 10,
-    "pos": "noun",
-    "gender": "f"
   },
   {
     "id": 3561,
@@ -3061,10 +2994,10 @@
   {
     "id": 3572,
     "level": "A2",
-    "es": "los señores",
-    "hu": "az urak / hölgyeim és uraim",
-    "en": "gentlemen (polite address)",
-    "de": "die Herren / die meine Damen und Herren",
+    "es": "el señor",
+    "hu": "az úr",
+    "en": "sir / gentleman",
+    "de": "der Herr",
     "sentence_es": "Señores, la reunión ha terminado.",
     "sentence_hu": "Uraim, az ülés véget ért.",
     "sentence_en": "Gentlemen, the meeting has ended.",
@@ -3088,22 +3021,6 @@
     "topic": "ocio_zene_konyvek_a2",
     "topicOrder": 8,
     "pos": "verb"
-  },
-  {
-    "id": 3574,
-    "level": "A2",
-    "es": "las piernas",
-    "hu": "a lábak",
-    "en": "the legs",
-    "de": "die Beine",
-    "sentence_es": "Me duelen las piernas después de correr.",
-    "sentence_hu": "Fáj a lábam a futás után.",
-    "sentence_en": "My legs hurt after running.",
-    "sentence_de": "Meine Beine tun nach dem Laufen weh.",
-    "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 5,
-    "pos": "noun",
-    "gender": "f"
   },
   {
     "id": 3575,
@@ -3273,22 +3190,6 @@
     "pos": "verb"
   },
   {
-    "id": 3586,
-    "level": "A2",
-    "es": "los planes",
-    "hu": "a tervek",
-    "en": "the plans",
-    "de": "die Pläne",
-    "sentence_es": "Hemos hecho planes para el fin de semana.",
-    "sentence_hu": "Terveket csináltunk a hétvégére.",
-    "sentence_en": "We've made plans for the weekend.",
-    "sentence_de": "Wir haben Pläne für das Wochenende gemacht.",
-    "topic": "ocio_moda",
-    "topicOrder": 7,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "id": 3587,
     "level": "A2",
     "es": "el cine",
@@ -3354,22 +3255,6 @@
     "pos": "pron"
   },
   {
-    "id": 3591,
-    "level": "A2",
-    "es": "los nombres",
-    "hu": "a nevek",
-    "en": "the names",
-    "de": "der Namen",
-    "sentence_es": "He apuntado todos los nombres en la lista.",
-    "sentence_hu": "Felírtam az összes nevet a listára.",
-    "sentence_en": "I've written down all the names on the list.",
-    "sentence_de": "Ich habe alle Namen auf die Liste geschrieben.",
-    "topic": "familia_matrimonio_a2",
-    "topicOrder": 11,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "id": 3592,
     "level": "A2",
     "es": "especialmente",
@@ -3413,22 +3298,6 @@
     "topic": "trabajo_dia_acciones_a2",
     "topicOrder": 21,
     "pos": "verb"
-  },
-  {
-    "id": 3595,
-    "level": "A2",
-    "es": "los pantalones",
-    "hu": "a nadrágok",
-    "en": "the pants / the trousers",
-    "de": "die Hosen",
-    "sentence_es": "He comprado unos pantalones nuevos.",
-    "sentence_hu": "Vettem egy új nadrágot.",
-    "sentence_en": "I've bought new trousers.",
-    "sentence_de": "Ich habe eine neue Hose gekauft.",
-    "topic": "ocio_moda",
-    "topicOrder": 8,
-    "pos": "noun",
-    "gender": "m"
   },
   {
     "id": 3596,
@@ -3555,22 +3424,6 @@
     "pos": "verb"
   },
   {
-    "id": 3604,
-    "level": "A2",
-    "es": "los soldados",
-    "hu": "a katonák",
-    "en": "the soldiers",
-    "de": "die Soldaten",
-    "sentence_es": "Los soldados han vuelto a casa.",
-    "sentence_hu": "A katonák hazatértek.",
-    "sentence_en": "The soldiers have returned home.",
-    "sentence_de": "Die Soldaten sind nach Hause zurückgekehrt.",
-    "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 21,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "id": 3605,
     "level": "A2",
     "es": "resulta (resultar)",
@@ -3669,22 +3522,6 @@
     "note_hu": "Az acabar de + főnévi igenév azt jelenti: éppen most tett valamit: Acabo de llegar a casa. (Most érkeztem haza.)"
   },
   {
-    "id": 3611,
-    "level": "A2",
-    "es": "los sentimientos",
-    "hu": "az érzelmek",
-    "en": "the feelings",
-    "de": "die Gefühle",
-    "sentence_es": "He compartido mis sentimientos con ella.",
-    "sentence_hu": "Megosztottam az érzelmeimet vele.",
-    "sentence_en": "I've shared my feelings with her.",
-    "sentence_de": "Ich habe meine Gefühle mit ihr geteilt.",
-    "topic": "promesa_emociones_a2",
-    "topicOrder": 15,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "id": 3612,
     "level": "A2",
     "es": "tomando (tomar)",
@@ -3728,38 +3565,6 @@
     "topic": "fiesta_hospitalidad_a2",
     "topicOrder": 20,
     "pos": "verb"
-  },
-  {
-    "id": 3615,
-    "level": "A2",
-    "es": "las llaves",
-    "hu": "a kulcsok",
-    "en": "the keys",
-    "de": "der Schlüssel",
-    "sentence_es": "He perdido las llaves del coche.",
-    "sentence_hu": "Elvesztettem az autó kulcsait.",
-    "sentence_en": "I've lost the car keys.",
-    "sentence_de": "Ich habe die Autoschlüssel verloren.",
-    "topic": "transporte_a2",
-    "topicOrder": 11,
-    "pos": "noun",
-    "gender": "f"
-  },
-  {
-    "id": 3616,
-    "level": "A2",
-    "es": "los perros",
-    "hu": "a kutyák",
-    "en": "the dogs",
-    "de": "die Hunde",
-    "sentence_es": "Los perros han jugado en el jardín toda la tarde.",
-    "sentence_hu": "A kutyák egész délután a kertben játszottak.",
-    "sentence_en": "The dogs have played in the garden all afternoon.",
-    "sentence_de": "Die Hunde haben den ganzen Nachmittag im Garten gespielt.",
-    "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 12,
-    "pos": "noun",
-    "gender": "m"
   },
   {
     "id": 3617,
@@ -3808,22 +3613,6 @@
     "pos": "pron"
   },
   {
-    "id": 3620,
-    "level": "A2",
-    "es": "los metros",
-    "hu": "a méterek",
-    "en": "the meters",
-    "de": "der Meter",
-    "sentence_es": "El parque está a doscientos metros de aquí.",
-    "sentence_hu": "A park kétszáz méterre van innen.",
-    "sentence_en": "The park is two hundred meters from here.",
-    "sentence_de": "Der Park ist zweihundert Meter von hier entfernt.",
-    "topic": "hogar_entorno_ubicacion_a2",
-    "topicOrder": 6,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "id": 3622,
     "level": "A2",
     "es": "quedarse",
@@ -3837,22 +3626,6 @@
     "topic": "hogar_entorno_vivienda_a2",
     "topicOrder": 14,
     "pos": "verb"
-  },
-  {
-    "id": 3623,
-    "level": "A2",
-    "es": "los clientes",
-    "hu": "az ügyfelek / a vásárlók",
-    "en": "the clients / the customers",
-    "de": "die Kunden",
-    "sentence_es": "Los clientes han llegado temprano hoy.",
-    "sentence_hu": "Az ügyfelek ma korán érkeztek.",
-    "sentence_en": "The clients have arrived early today.",
-    "sentence_de": "Die Kunden sind heute früh angekommen.",
-    "topic": "compras_servicios",
-    "topicOrder": 13,
-    "pos": "noun",
-    "gender": "m"
   },
   {
     "id": 3624,
@@ -3898,22 +3671,6 @@
     "topic": "personas_caracter_a2",
     "topicOrder": 18,
     "pos": "adj"
-  },
-  {
-    "id": 3627,
-    "level": "A2",
-    "es": "las damas",
-    "hu": "a hölgyek",
-    "en": "the ladies",
-    "de": "die Damen",
-    "sentence_es": "Buenas noches, damas y caballeros.",
-    "sentence_hu": "Jó estét, hölgyeim és uraim.",
-    "sentence_en": "Good evening, ladies and gentlemen.",
-    "sentence_de": "Guten Abend, meine Damen und Herren.",
-    "topic": "trato_respeto_a2",
-    "topicOrder": 4,
-    "pos": "noun",
-    "gender": "f"
   },
   {
     "id": 3628,
@@ -4091,22 +3848,6 @@
     "gender": "f"
   },
   {
-    "id": 3639,
-    "level": "A2",
-    "es": "los brazos",
-    "hu": "a karok",
-    "en": "the arms",
-    "de": "die Arme",
-    "sentence_es": "Me duelen los brazos después del ejercicio.",
-    "sentence_hu": "Fáj a karom az edzés után.",
-    "sentence_en": "My arms hurt after the exercise.",
-    "sentence_de": "Meine Arme tun nach dem Training weh.",
-    "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 8,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "id": 3640,
     "level": "A2",
     "es": "el espíritu",
@@ -4196,22 +3937,6 @@
     "topic": "hogar_entorno_vivienda_a2",
     "topicOrder": 15,
     "pos": "adj"
-  },
-  {
-    "id": 3646,
-    "level": "A2",
-    "es": "los asuntos",
-    "hu": "az ügyek",
-    "en": "the matters / the affairs",
-    "de": "die Angelegenheiten",
-    "sentence_es": "He resuelto todos los asuntos pendientes.",
-    "sentence_hu": "Elintéztem az összes függő ügyet.",
-    "sentence_en": "I've resolved all pending matters.",
-    "sentence_de": "Ich habe alle offenen Angelegenheiten erledigt.",
-    "topic": "trabajo_dia_oficina_a2",
-    "topicOrder": 20,
-    "pos": "noun",
-    "gender": "m"
   },
   {
     "id": 3647,
@@ -4436,22 +4161,6 @@
     "topic": "transporte_a2",
     "topicOrder": 14,
     "pos": "verb"
-  },
-  {
-    "id": 3662,
-    "level": "A2",
-    "es": "las estrellas",
-    "hu": "a csillagok",
-    "en": "the stars",
-    "de": "die Sterne",
-    "sentence_es": "Hemos visto las estrellas desde la terraza.",
-    "sentence_hu": "A teraszról néztük a csillagokat.",
-    "sentence_en": "We've seen the stars from the terrace.",
-    "sentence_de": "Wir haben die Sterne von der Terrasse aus gesehen.",
-    "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 13,
-    "pos": "noun",
-    "gender": "f"
   },
   {
     "id": 3663,
@@ -4862,22 +4571,6 @@
     "pos": "adj"
   },
   {
-    "id": 3688,
-    "level": "A2",
-    "es": "las semanas",
-    "hu": "a hetek",
-    "en": "weeks",
-    "sentence_es": "Hace dos semanas llegué.",
-    "sentence_hu": "Két hete érkeztem meg.",
-    "sentence_en": "I arrived two weeks ago.",
-    "de": "die Wochen",
-    "sentence_de": "Ich bin vor zwei Wochen angekommen.",
-    "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 22,
-    "pos": "noun",
-    "gender": "f"
-  },
-  {
     "id": 3689,
     "level": "A2",
     "es": "especial",
@@ -4922,22 +4615,6 @@
     "topicOrder": 14,
     "pos": "noun",
     "gender": "m"
-  },
-  {
-    "id": 3692,
-    "level": "A2",
-    "es": "las preguntas",
-    "hu": "a kérdések",
-    "en": "questions",
-    "sentence_es": "Tiene muchas preguntas.",
-    "sentence_hu": "Sok kérdése van.",
-    "sentence_en": "She has many questions.",
-    "de": "die Fragen",
-    "sentence_de": "Sie hat viele Fragen.",
-    "topic": "estudios",
-    "topicOrder": 13,
-    "pos": "noun",
-    "gender": "f"
   },
   {
     "id": 3693,
@@ -5045,22 +4722,6 @@
     "note_de": "Zwei Bedeutungen. 1) RECHT: tienes derecho a saber. 2) RECHTE SEITE: a la derecha."
   },
   {
-    "id": 3699,
-    "level": "A2",
-    "es": "las noticias",
-    "hu": "a hírek",
-    "en": "news",
-    "sentence_es": "Vi las noticias de la tarde.",
-    "sentence_hu": "Megnéztem a délutáni híreket.",
-    "sentence_en": "I watched the afternoon news.",
-    "de": "die Nachrichten",
-    "sentence_de": "Ich habe die Nachrichten gesehen.",
-    "topic": "comunicacion_medios_a2",
-    "topicOrder": 5,
-    "pos": "noun",
-    "gender": "f"
-  },
-  {
     "id": 3700,
     "level": "A2",
     "es": "el control",
@@ -5152,22 +4813,6 @@
     "sentence_de": "Die Zukunft ist ungewiss.",
     "topic": "espiritu_pensamientos_a2",
     "topicOrder": 12,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
-    "id": 3706,
-    "level": "A2",
-    "es": "los dólares",
-    "hu": "dollár",
-    "en": "dollars",
-    "sentence_es": "Tengo diez dólares.",
-    "sentence_hu": "Van tíz dollárom.",
-    "sentence_en": "I have ten dollars.",
-    "de": "der Dollar",
-    "sentence_de": "Ich habe zehn Dollar.",
-    "topic": "compras_servicios",
-    "topicOrder": 15,
     "pos": "noun",
     "gender": "m"
   },
@@ -6477,22 +6122,6 @@
     "pos": "adj"
   },
   {
-    "es": "los caballeros",
-    "hu": "az urak/lovagok",
-    "en": "gentlemen (formal; also: knights)",
-    "sentence_es": "Los caballeros entraron al salón.",
-    "sentence_hu": "Az urak beléptek a terembe.",
-    "sentence_en": "The gentlemen entered the hall.",
-    "de": "die Herren / der Ritter",
-    "sentence_de": "Die Herren betraten den Saal.",
-    "id": 1901,
-    "level": "A2",
-    "topic": "trato_respeto_a2",
-    "topicOrder": 6,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "es": "salvo",
     "hu": "kivéve/biztonságban",
     "en": "except (formal) / safe",
@@ -6649,22 +6278,6 @@
     "gender": "m"
   },
   {
-    "es": "las fotos",
-    "hu": "a fotók/képek",
-    "en": "photos",
-    "sentence_es": "Saqué fotos en la playa.",
-    "sentence_hu": "Fotókat készítettem a tengerparton.",
-    "sentence_en": "I took photos at the beach.",
-    "de": "die Fotos",
-    "sentence_de": "Ich machte Fotos am Strand.",
-    "id": 1912,
-    "level": "A2",
-    "topic": "viajes_a2",
-    "topicOrder": 22,
-    "pos": "noun",
-    "gender": "f"
-  },
-  {
     "es": "vámonos",
     "hu": "menjünk/gyerünk",
     "en": "let's go",
@@ -6742,13 +6355,13 @@
     "pos": "verb"
   },
   {
-    "es": "los muertos",
-    "hu": "a holtak/halottak",
-    "en": "the dead",
+    "es": "el muerto",
+    "hu": "a holt/halott",
+    "en": "the dead man",
     "sentence_es": "Rezamos por los muertos.",
     "sentence_hu": "Imádkozunk a holtakért.",
     "sentence_en": "We pray for the dead.",
-    "de": "die Toten",
+    "de": "der Tote",
     "sentence_de": "Wir beten für die Toten.",
     "id": 1918,
     "level": "A2",
@@ -6994,22 +6607,6 @@
     "gender": "m"
   },
   {
-    "es": "los pies",
-    "hu": "a lábak (talpak)",
-    "en": "feet",
-    "sentence_es": "Me duelen los pies de caminar.",
-    "sentence_hu": "Fáj a lábam a sok sétától.",
-    "sentence_en": "My feet hurt from walking.",
-    "de": "die Füße",
-    "sentence_de": "Mir tun die Füße vom Laufen weh.",
-    "id": 1934,
-    "level": "A2",
-    "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 13,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "es": "maravilloso",
     "hu": "csodálatos/remek",
     "en": "marvelous (wonderful)",
@@ -7085,22 +6682,6 @@
     "level": "A2",
     "topic": "estudios",
     "topicOrder": 22,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
-    "es": "los tipos",
-    "hu": "a fickók/típusok",
-    "en": "guys (dudes; also: types)",
-    "sentence_es": "Esos tipos son muy raros.",
-    "sentence_hu": "Azok a fickók nagyon furák.",
-    "sentence_en": "Those guys are very weird.",
-    "de": "die Typen / der Kerle",
-    "sentence_de": "Diese Typen sind sehr seltsam.",
-    "id": 1940,
-    "level": "A2",
-    "topic": "trato_respeto_a2",
-    "topicOrder": 8,
     "pos": "noun",
     "gender": "m"
   },
@@ -7231,13 +6812,13 @@
     "pos": "adj"
   },
   {
-    "es": "las drogas",
-    "hu": "a drogok/kábítószerek",
-    "en": "drugs",
+    "es": "la droga",
+    "hu": "a drog/kábítószer",
+    "en": "drug",
     "sentence_es": "Las drogas son muy peligrosas.",
     "sentence_hu": "A drogok nagyon veszélyesek.",
     "sentence_en": "Drugs are very dangerous.",
-    "de": "die Drogen",
+    "de": "die Droge",
     "sentence_de": "Drogen sind sehr gefährlich.",
     "id": 1950,
     "level": "A2",
@@ -7869,22 +7450,6 @@
     "gender": "f"
   },
   {
-    "es": "los chicos",
-    "hu": "srácok/fiúk",
-    "en": "guys (boys, kids)",
-    "sentence_es": "Los chicos juegan en el parque.",
-    "sentence_hu": "A fiúk a parkban játszanak.",
-    "sentence_en": "The boys play in the park.",
-    "de": "die Jungs",
-    "sentence_de": "Die Jungs spielen im Park.",
-    "id": 1993,
-    "level": "A2",
-    "topic": "personas_caracter_a2",
-    "topicOrder": 2,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "es": "algún",
     "hu": "valamely/valami",
     "en": "some / any",
@@ -8477,22 +8042,6 @@
     "gender": "m"
   },
   {
-    "es": "los millones",
-    "hu": "milliók",
-    "en": "millions",
-    "sentence_es": "Millones de personas usan el metro.",
-    "sentence_hu": "Milliók használják a metrót.",
-    "sentence_en": "Millions of people use the metro.",
-    "de": "die Millionen",
-    "sentence_de": "Millionen von Menschen nutzen die U-Bahn.",
-    "id": 2033,
-    "level": "A2",
-    "topic": "cantidad_frecuencia_a2",
-    "topicOrder": 17,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "es": "el modo",
     "hu": "mód/módszer",
     "en": "way (mode; formal)",
@@ -8522,7 +8071,8 @@
     "topic": "trato_respeto_a2",
     "topicOrder": 9,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "plural": "only"
   },
   {
     "es": "el asesino",
@@ -9181,22 +8731,6 @@
     "pos": "adv"
   },
   {
-    "es": "los detalles",
-    "hu": "részletek",
-    "en": "details",
-    "sentence_es": "Dame más detalles sobre el problema.",
-    "sentence_hu": "Mondj több részletet a problémáról.",
-    "sentence_en": "Give me more details about the problem.",
-    "de": "die Details",
-    "sentence_de": "Gib mir mehr Details über das Problem.",
-    "id": 2078,
-    "level": "A2",
-    "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 5,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "es": "la belleza",
     "hu": "szépség",
     "en": "beauty",
@@ -9226,22 +8760,6 @@
     "topic": "comunicacion_medios_a2",
     "topicOrder": 11,
     "pos": "verb"
-  },
-  {
-    "es": "los puntos",
-    "hu": "pontok",
-    "en": "points",
-    "sentence_es": "Tengo veinte puntos en el juego.",
-    "sentence_hu": "Húsz pontom van a játékban.",
-    "sentence_en": "I have twenty points in the game.",
-    "de": "die Punkte",
-    "sentence_de": "Ich habe zwanzig Punkte im Spiel.",
-    "id": 2081,
-    "level": "A2",
-    "topic": "ocio_moda",
-    "topicOrder": 19,
-    "pos": "noun",
-    "gender": "m"
   },
   {
     "es": "el ministro",
@@ -9306,13 +8824,13 @@
     "gender": "m"
   },
   {
-    "es": "los hechos",
-    "hu": "tények",
-    "en": "facts",
+    "es": "el hecho",
+    "hu": "tény",
+    "en": "fact",
     "sentence_es": "Los hechos demuestran que él tiene razón.",
     "sentence_hu": "A tények bizonyítják, hogy igaza van.",
     "sentence_en": "The facts show that he is right.",
-    "de": "die Fakten/die Tatsachen",
+    "de": "die Tatsache",
     "sentence_de": "Die Fakten zeigen, dass er recht hat.",
     "id": 2086,
     "level": "A2",
@@ -9490,13 +9008,13 @@
     "gender": "m"
   },
   {
-    "es": "los casos",
-    "hu": "esetek/ügyek",
-    "en": "cases",
+    "es": "el caso",
+    "hu": "eset/ügy",
+    "en": "case",
     "sentence_es": "La policía investiga varios casos difíciles.",
     "sentence_hu": "A rendőrség több nehéz ügyet vizsgál.",
     "sentence_en": "The police investigate several difficult cases.",
-    "de": "die Fälle",
+    "de": "der Fall",
     "sentence_de": "Die Polizei untersucht mehrere schwierige Fälle.",
     "id": 2098,
     "level": "A2",
@@ -9845,22 +9363,6 @@
     "pos": "verb"
   },
   {
-    "es": "los rayos",
-    "hu": "villámlás/sugarak",
-    "en": "lightning/rays",
-    "sentence_es": "Hay rayos en el cielo esta noche.",
-    "sentence_hu": "Ma este villámlás látható az égen.",
-    "sentence_en": "There is lightning in the sky tonight.",
-    "de": "die Blitze/die Strahlen",
-    "sentence_de": "Heute Nacht gibt es Blitze am Himmel.",
-    "id": 2121,
-    "level": "A2",
-    "topic": "naturaleza_taj_allatok_a2",
-    "topicOrder": 22,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "es": "mentir",
     "hu": "hazudik",
     "en": "to lie",
@@ -9955,22 +9457,6 @@
     "gender": "f"
   },
   {
-    "es": "las relaciones",
-    "hu": "kapcsolatok/viszonyok",
-    "en": "relationships/relations",
-    "sentence_es": "Las relaciones entre los dos países son buenas.",
-    "sentence_hu": "A két ország közötti kapcsolatok jók.",
-    "sentence_en": "Relations between the two countries are good.",
-    "de": "die Beziehungen",
-    "sentence_de": "Die Beziehungen zwischen den beiden Ländern sind gut.",
-    "id": 2128,
-    "level": "A2",
-    "topic": "amor_pareja_a2",
-    "topicOrder": 7,
-    "pos": "noun",
-    "gender": "f"
-  },
-  {
     "es": "menor",
     "hu": "kisebb/kiskorú",
     "en": "minor/younger/smaller",
@@ -10060,22 +9546,6 @@
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
     "topicOrder": 8,
-    "pos": "noun",
-    "gender": "f"
-  },
-  {
-    "es": "las razones",
-    "hu": "okok/indokok",
-    "en": "reasons",
-    "sentence_es": "Hay muchas razones para estudiar español.",
-    "sentence_hu": "Sok oka van a spanyol tanulásának.",
-    "sentence_en": "There are many reasons to study Spanish.",
-    "de": "die Gründe",
-    "sentence_de": "Es gibt viele Gründe, Spanisch zu lernen.",
-    "id": 2135,
-    "level": "A2",
-    "topic": "estudios",
-    "topicOrder": 24,
     "pos": "noun",
     "gender": "f"
   },
@@ -10311,22 +9781,6 @@
     "pos": "adj"
   },
   {
-    "es": "los modos",
-    "hu": "modor/viselkedés",
-    "en": "manners",
-    "sentence_es": "Tienes muy buenos modos.",
-    "sentence_hu": "Nagyon jó modored van.",
-    "sentence_en": "You have very good manners.",
-    "de": "die Manieren",
-    "sentence_de": "Du hast sehr gute Manieren.",
-    "id": 2152,
-    "level": "A2",
-    "topic": "promesa_emociones_a2",
-    "topicOrder": 25,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "es": "la especie",
     "hu": "faj/féle",
     "en": "species/kind",
@@ -10482,22 +9936,6 @@
     "level": "A2",
     "topic": "trabajo_dia_juzgado_a2",
     "topicOrder": 9,
-    "pos": "noun",
-    "gender": "f"
-  },
-  {
-    "es": "las órdenes",
-    "hu": "parancsok/utasítások",
-    "en": "orders",
-    "sentence_es": "Tengo que seguir las órdenes.",
-    "sentence_hu": "Követnem kell az utasításokat.",
-    "sentence_en": "I have to follow the orders.",
-    "de": "die Befehle",
-    "sentence_de": "Ich muss die Befehle befolgen.",
-    "id": 2163,
-    "level": "A2",
-    "topic": "trabajo_dia_ejercito_a2",
-    "topicOrder": 8,
     "pos": "noun",
     "gender": "f"
   },
@@ -10722,22 +10160,6 @@
     "topicOrder": 23,
     "pos": "noun",
     "gender": "f"
-  },
-  {
-    "es": "los momentos",
-    "hu": "pillanatok",
-    "en": "moments",
-    "sentence_es": "Hay momentos muy felices aquí.",
-    "sentence_hu": "Nagyon boldog pillanatok vannak itt.",
-    "sentence_en": "There are very happy moments here.",
-    "de": "die Momente",
-    "sentence_de": "Es gibt hier sehr glückliche Momente.",
-    "id": 2178,
-    "level": "A2",
-    "topic": "trabajo_dia_tiempo_a2",
-    "topicOrder": 11,
-    "pos": "noun",
-    "gender": "m"
   },
   {
     "es": "la posibilidad",
@@ -11128,13 +10550,13 @@
     "pos": "pron"
   },
   {
-    "es": "las tonterías",
-    "hu": "ostobaságok/hülyeségek",
-    "en": "nonsense/silly things",
+    "es": "la tontería",
+    "hu": "ostobaság/hülyeség",
+    "en": "a silly thing",
     "sentence_es": "Para de decir tonterías.",
     "sentence_hu": "Hagyd abba a hülyeségeket.",
     "sentence_en": "Stop saying nonsense.",
-    "de": "der Unsinn/die Dummheiten",
+    "de": "die Dummheit",
     "sentence_de": "Hör auf, Unsinn zu reden.",
     "id": 2205,
     "level": "A2",
@@ -11641,25 +11063,9 @@
     "gender": "m"
   },
   {
-    "es": "los números",
-    "hu": "számok",
-    "en": "numbers",
-    "sentence_es": "Los números son difíciles para mí.",
-    "sentence_hu": "A számok nehezek nekem.",
-    "sentence_en": "Numbers are difficult for me.",
-    "de": "die Zahlen",
-    "sentence_de": "Zahlen sind schwierig für mich.",
-    "id": 2239,
-    "level": "A2",
-    "topic": "estudios",
-    "topicOrder": 29,
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
-    "es": "los kilómetros",
-    "hu": "kilométerek",
-    "en": "kilometers",
+    "es": "el kilómetro",
+    "hu": "kilométer",
+    "en": "kilometer",
     "sentence_es": "Corrí cinco kilómetros hoy.",
     "sentence_hu": "Ma öt kilométert futottam.",
     "sentence_en": "I ran five kilometers today.",
