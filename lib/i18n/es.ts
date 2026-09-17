@@ -385,7 +385,10 @@ export default {
     ruleLabel: 'La regla',
     examplesLabel: 'Ejemplos',
     exceptionsLabel: 'Excepciones y casos límite',
-    startDrill: (n: number) => `Practicar (${n} preguntas)`,
+    // D3 (FB290, 2026-09-17): un botón por tipo en vez de `startDrill` (todo junto).
+    startChoice: (n: number) => `Frases (${n})`,
+    startMatch: (n: number) => `Emparejar (${n})`,
+    startForm: (n: number) => `Conjugación (${n})`,
     backToRule: 'Volver a leer la regla',
     practiceAgain: 'Practicar otra vez',
     nextTopic: 'Siguiente tema',

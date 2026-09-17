@@ -385,7 +385,10 @@ export default {
     ruleLabel: 'Die Regel',
     examplesLabel: 'Beispiele',
     exceptionsLabel: 'Ausnahmen und Grenzfälle',
-    startDrill: (n: number) => `Üben (${n} Fragen)`,
+    // D3 (FB290, 2026-09-17): ein Button pro Art statt `startDrill` (alles auf einmal).
+    startChoice: (n: number) => `Sätze (${n})`,
+    startMatch: (n: number) => `Zuordnen (${n})`,
+    startForm: (n: number) => `Formen (${n})`,
     backToRule: 'Regel noch einmal lesen',
     practiceAgain: 'Noch einmal üben',
     nextTopic: 'Nächstes Thema',

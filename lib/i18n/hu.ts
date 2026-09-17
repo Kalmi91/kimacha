@@ -399,7 +399,11 @@ export default {
     ruleLabel: 'A szabály',
     examplesLabel: 'Példák',
     exceptionsLabel: 'Kivételek és határesetek',
-    startDrill: (n: number) => `Gyakorlás (${n} kérdés)`,
+    // D3 (FB290, 2026-09-17): fajtánként külön gomb a `startDrill` (mind
+    // egyben) helyett.
+    startChoice: (n: number) => `Mondatok (${n})`,
+    startMatch: (n: number) => `Párosítás (${n})`,
+    startForm: (n: number) => `Ragozás (${n})`,
     backToRule: 'Szabály újraolvasása',
     practiceAgain: 'Újra gyakorlom',
     nextTopic: 'Következő téma',
