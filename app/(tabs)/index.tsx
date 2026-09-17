@@ -22,6 +22,7 @@ import {
   createQueue, nextLap, answer, defer, insertNext, header, labelOf,
   DEFAULT_QUEUE_CONFIG, type QueueState, type Shown, type ReviewLap, type LapNo, type Effect,
 } from '@/lib/sessionQueue';
+import { doneAsk } from '@/lib/doneAsk';
 import { cardNote } from '@/lib/cardNotes';
 import { charDiff } from '@/lib/charDiff';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
@@ -344,31 +345,31 @@ export default function LearnScreen() {
     };
   };
 
-  // UTEMEZO 6. szakasz: a regi badge/Done-allapotok kitoltese a motor
-  // allapotabol. Lepesenkent hivva, hogy a fejlec sose csusszon szet a sortol.
-  const syncBadges = (state: QueueState) => {
-    setLevelNewWordsLeft(state.fresh.length);
-  };
-
   // UTEMEZO: minden allapotvaltas ezen megy at, hogy a React state, a
   // handlerek altal olvasott ref es a fejlec-jelvenyek sose csusszanak szet.
   // A `done` allapotot NEM ez allitja: a hivo dontese, mert a kor vege utan
   // (current === null) elobb egy DB-frissitest (finishRound) kell megprobalni.
+  // FB296/297/298: a szint-szintu levelNewWordsLeft mar NEM innen szarmazik
+  // (state.fresh a TEMA erintetlen szavai, nem a szinte), azt a loadCards/
+  // finishRound alitja be a szint egeszere, es az advanceQueue csokkenti
+  // szo-inditaskor, lasd ott.
   const setQueueState = (next: QueueState) => {
     qsRef.current = next;
     setQs(next);
     setCurrentItem(next.current ? toDueItem(next.current) : null);
-    syncBadges(next);
     resetCardState();
   };
 
   // UTEMEZO 2.2: a keret a szo INDITASAKOR fogy, ez nextLap() belsejeben
   // tortenik (startNew). A hivo ebbol csak annyit lat, hogy a fekete szam
   // csokkent, es ekkor irja a DB-be a startWord-ot (in_hand=1, started_at).
+  // FB296/297/298: ugyanez a pillanat fogyasztja a SZINT erintetlen keszletet
+  // is (levelNewWordsLeft), fuggetlenul attol, melyik tema szolgaltatta a szot.
   const advanceQueue = (state: QueueState): QueueState => {
     const next = nextLap(state);
     if (next.current && header(next).black < header(state).black) {
       getDb().startWord(next.current.wordId).catch(() => {});
+      setLevelNewWordsLeft((n) => Math.max(0, n - 1));
     }
     return next;
   };
@@ -493,11 +494,15 @@ export default function LearnScreen() {
 
     const activeWordIds = activeWords.map(w => w.id);
     // UTEMEZO 2.4/12.1: fresh = a szint (temakor) erintetlen szavai, a mai
-    // activeWords sorrendjet kovetve (Kálmán 12.1 dontese); black innentol
-    // ezekre szukul.
-    const untouched = await db.getUntouchedWordIds(activeWordIds);
-    const fresh = activeWords.map(w => w.id).filter(id => untouched.has(id));
-    black = Math.max(0, Math.min(black, fresh.length));
+    // activeWords sorrendjet kovetve (Kálmán 12.1 dontese). FB296/297/298: a
+    // napi keret (black) es a fejlec szint-szama (levelNewWordsLeft) viszont a
+    // SZINT EGESZENEK erintetlen szavaira szukul, nem a temaeva, kulonben egy
+    // majdnem kifogyott tema tevesen lecsokkentette a napi uj-szo keretet is.
+    const levelWordIds = levelWords.map(w => w.id);
+    const levelUntouched = await db.getUntouchedWordIds(levelWordIds);
+    setLevelNewWordsLeft(levelUntouched.size);
+    const fresh = activeWords.map(w => w.id).filter(id => levelUntouched.has(id));
+    black = Math.max(0, Math.min(black, levelUntouched.size));
 
     // UTEMEZO 3.5: a kezben levo szavak (barmelyik szintrol) minden korben
     // elore jonnek, meg uj szo elott is; a stored `lap` a mar teljesitett
@@ -716,13 +721,18 @@ export default function LearnScreen() {
     let newRows: any[];
     // FB225: amit a szint-ág már besorolt, tehát amit a carryover NEM hozhat újra.
     let carryExclude: number[] = [];
+    // FB296/297/298: alapertelmezetten valtozatlan marad (mai viselkedes); csak
+    // akkor tolti fel ujra a lenti tema-valtas, ha a tema kifogyott, de a szint
+    // napi kerete meg nem.
+    let fresh = state.fresh;
     if (useTopics) {
       const allWordIds = lvlWords.map((w: WordEntry) => w.id);
       const repsMap = await db.getWordReps(allWordIds);
       const stateMap = await db.getWordStates(allWordIds);
       const savedTopic2 = await db.getSelectedTopic();
       const randomTopics2 = await db.getRandomTopics();
-      const { unlocked, activeTopic, completedCount } = computeUnlockedTopics(topics, repsMap, stateMap, currentLevel, savedTopic2, learned, randomTopics2);
+      const { unlocked, activeTopic: pickedActiveTopic, completedCount } = computeUnlockedTopics(topics, repsMap, stateMap, currentLevel, savedTopic2, learned, randomTopics2);
+      let activeTopic = pickedActiveTopic;
       // FB37: persist a freshly-drawn random topic so it stays stable across
       // the rest of this session (next draw only once it completes again).
       if (randomTopics2 && activeTopic && activeTopic.id !== savedTopic2) {
@@ -754,6 +764,25 @@ export default function LearnScreen() {
               : celebrate.topic.complete,
           );
           setTimeout(() => setTopicCompleteMsg(null), 3000);
+        }
+      }
+
+      // FB296/297/298: a tema erintetlen keszlete (fresh) hamarabb kifogyhat,
+      // mint a szint napi kerete (black); korabban ez itt vegetert a kort, holott
+      // a kovetkezo temaban meg van uj szo, ugyanaz az ut, mint a Done-kepernyo
+      // "kovetkezo tema" gombja (handleNextTopicWords), csak menet kozben.
+      let switchedTopic = false;
+      const newWordsOf = (topicId: string) =>
+        countNewWords(getWordsForTopic(currentLevel, topicId, learned).map(w => w.id), repsMap);
+      if (state.fresh.length === 0 && state.black > 0 && activeTopic && newWordsOf(activeTopic.id) === 0) {
+        const nextId = nextTopicWithNewWords(
+          unlocked.map(t => ({ id: t.id, order: t.order, newWords: newWordsOf(t.id) })),
+          activeTopic.id,
+        );
+        if (nextId) {
+          await db.setSelectedTopic(nextId);
+          activeTopic = unlocked.find(t => t.id === nextId) ?? activeTopic;
+          switchedTopic = true;
         }
       }
 
@@ -797,6 +826,13 @@ export default function LearnScreen() {
       }
       newRows = await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL);
       carryExclude = activeWordIds;
+      // FB296/297/298: csak a fenti tema-valtaskor toltjuk fel ujra a fresh-t
+      // (az uj tema erintetlen szavaival); kulonben marad a mai viselkedes
+      // (state.fresh, valtozatlanul, esetleg ures).
+      if (switchedTopic) {
+        const untouchedIds = await db.getUntouchedWordIds(activeWordIds);
+        fresh = scopedWords.map((w: WordEntry) => w.id).filter((id: number) => untouchedIds.has(id));
+      }
     } else {
       setBorrowedTopics(new Map());
       newRows = await db.getDueCardsForLevel(currentLevel, QUEUE_POOL);
@@ -818,7 +854,7 @@ export default function LearnScreen() {
       black: state.black,
       hand: state.hand.map(({ wordId, lap }) => ({ wordId, lap })),
       reviews,
-      fresh: state.fresh,
+      fresh,
     }));
     if (refilled.current === null) {
       setDone(true);
@@ -1091,13 +1127,11 @@ export default function LearnScreen() {
   if (done) {
     const examAvailable = buildMockExam(direction[1], direction[0], level).sections.length > 0 && masteredPct >= 80;
     // UTEMEZO 5. szakasz: a kor vegi egyetlen kerdes, a motor allapotabol.
-    const doneAsk: DoneAsk = !qs
+    // FB296/297/298: a szint kifogyasa (levelNewWordsLeft) dont, nem a tema
+    // erintetlen szama (qs.fresh), lasd lib/doneAsk.ts.
+    const doneAskResult: DoneAsk = !qs
       ? 'none'
-      : qs.fresh.length > 0 && qs.black === 0
-        ? 'more-new'
-        : qs.fresh.length === 0
-          ? 'practise'
-          : 'none';
+      : doneAsk({ freshLeft: qs.fresh.length, black: qs.black, levelUntouched: levelNewWordsLeft });
     return (
       <DoneScreen
         streak={streak}
@@ -1109,7 +1143,7 @@ export default function LearnScreen() {
         currentTopic={currentTopic}
         topicProgress={topicProgress}
         stats={qs?.stats ?? DONE_STATS_ZERO}
-        ask={doneAsk}
+        ask={doneAskResult}
         dailyDefault={dailyDefault}
         onMoreNewWords={handleMoreNewWords}
         newWordsInTopic={newWordsInTopic}
