@@ -356,6 +356,10 @@ function auditGrammarWord(tok, taughtSet, extra, path) {
 
 const GRAMMAR_WORD_CLASSES = ['noun', 'verb', 'adjective', 'adverb', 'article', 'pronoun', 'preposition'];
 
+// TASK-9: object/reflexive pronouns and the bare negator are exempt from the
+// self-revealing check below, see the comment at its call site.
+const OBJECT_PRONOUN_WORDS = new Set(['me', 'te', 'se', 'nos', 'os', 'le', 'les', 'lo', 'los', 'la', 'las', 'no']);
+
 // A jelölős mondat szavai, ugyanaz a vágás, mint lib/games/grammarMark.ts-ben.
 function markWords(sentence) {
   return (sentence.match(/[\p{L}\p{M}\d]+(?:['’-][\p{L}\p{M}\d]+)*/gu) ?? []).map((w) => normalize(w));
@@ -480,11 +484,23 @@ function auditMatchItem(item, itemPath) {
       if (enSeen.has(pair.en)) p1.push({ path: itemPath, issue: `duplicate match en "${pair.en}"` });
       enSeen.add(pair.en);
     }
+    if (pair?.es && pair?.en && pair.es.toLowerCase() === pair.en.toLowerCase()) {
+      p1.push({ path: itemPath, issue: `match pair es and en are identical: "${pair.es}"` });
+    }
   }
 }
 
+// TASK-9 (12. lépés): a pilot 3-tagú összevont személy ("él/ella/usted",
+// "ellos/ellas/ustedes") mindig szóköz nélkül áll a "/" körül; egy 2-tagú,
+// nemek szerint szétválasztott címke (pronombres-od "él / usted (masculino)")
+// szándékosan más alak, azt ez a minta nem érinti.
+const FORM_PILOT_TRIO_TYPO = /\bél\s*\/\s*ella\s*\/\s*usted\b|\bellos\s*\/\s*ellas\s*\/\s*ustedes\b/i;
+
 function auditFormItem(item, itemPath, topic, tableIds) {
   if (!item.person) p1.push({ path: itemPath, issue: 'form item missing person' });
+  else if (FORM_PILOT_TRIO_TYPO.test(item.person) && !['él/ella/usted', 'ellos/ellas/ustedes'].includes(item.person)) {
+    p1.push({ path: itemPath, issue: `form item person "${item.person}" must use the pilot label with no spaces around "/"` });
+  }
   if (!item.verb) p1.push({ path: itemPath, issue: 'form item missing verb' });
   if (!item.answer) p1.push({ path: itemPath, issue: 'form item missing answer' });
   if (!item.table || !tableIds.has(item.table)) {
@@ -593,10 +609,32 @@ function auditGrammarTopic(topic, filePath) {
         p1.push({ path: itemPath, issue: `mark answer "${item.answer}" not found in the sentence` });
       }
     } else {
-      if (!item.sentence?.includes('___')) p1.push({ path: itemPath, issue: 'sentence has no "___" blank' });
+      if (!item.sentence?.trim()) p1.push({ path: itemPath, issue: 'empty sentence' });
+      else if (!item.sentence.includes('___')) p1.push({ path: itemPath, issue: 'sentence has no "___" blank' });
       if (!Array.isArray(item.options) || item.options.length < 2) p1.push({ path: itemPath, issue: 'needs >=2 options' });
       if (typeof item.correct !== 'number' || item.correct < 0 || item.correct >= (item.options?.length ?? 0)) {
         p1.push({ path: itemPath, issue: `correct index ${item.correct} out of range` });
+      }
+      if (Array.isArray(item.options)) {
+        const seenOpts = new Set();
+        for (const opt of item.options) {
+          if (seenOpts.has(opt)) p1.push({ path: itemPath, issue: `duplicate option "${opt}"` });
+          seenOpts.add(opt);
+        }
+        // TASK-9 (12. lépés, 2.3): önmagát eláruló tétel, ha a jó válasz
+        // szövege szó szerint (egész szóként, nem más szó részeként, pl.
+        // "nos" a "nosotros"-ban) ott áll a mondatban a lyukon kívül. A
+        // tárgy-/részeshatározó névmások (lo/la/los/las/le/les/me/te/se/
+        // nos/os) és a puszta "no" kimaradnak: ezek a determinánsokkal
+        // alakilag egyeznek (pl. pronombres-od "¿La mochila? La llevo
+        // yo."), vagy a negáció lecke tárgya maga ("No, no como carne."),
+        // ez a lecke szándékos mintája, nem hiba.
+        const correctText = item.options[item.correct];
+        const correctNorm = normalize(correctText ?? '');
+        const restOfSentence = (item.sentence ?? '').replace('___', '');
+        if (correctText && !OBJECT_PRONOUN_WORDS.has(correctNorm) && tokenize(restOfSentence).includes(correctNorm)) {
+          p1.push({ path: itemPath, issue: `self-revealing: correct answer "${correctText}" appears literally in the prompt` });
+        }
       }
     }
 
