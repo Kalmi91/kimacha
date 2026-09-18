@@ -664,7 +664,7 @@ export interface GrammarTopicProgress {
   total: number;
 }
 
-const GRAMMAR_KINDS: GrammarKind[] = ['choice', 'match', 'form'];
+const GRAMMAR_KINDS: GrammarKind[] = ['choice', 'match', 'form', 'transform'];
 
 /**
  * D3 (FB290, 2026-09-17): a lecke feladatai fajtánként külön indíthatók, a

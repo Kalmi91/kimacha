@@ -423,6 +423,14 @@ export default {
     unlockedMeta: (have: number, need: number) => `desbloqueado, ${have}/${need} palabras`,
     unlockedBanner: (title: string) => `Nueva parte de gramática desbloqueada: ${title}`,
     dismiss: 'Cerrar',
+    // NY3 (NYELVTAN.md "Első szelet"): drill de reescritura de tiempo verbal.
+    startTransform: (n: number) => `Reescribir (${n})`,
+    rewriteTo: (tense: string) => `Reescribe en ${tense}`,
+    showTranslation: 'Mostrar traducción',
+    correct: 'Correcto',
+    correctAnswer: 'Respuesta correcta',
+    next: 'Siguiente',
+    accentHint: 'Se acepta sin tildes, se muestran las que faltan',
   },
   exam: {
     simulationOf: (model: string) => `Simulacro del examen ${model}`,

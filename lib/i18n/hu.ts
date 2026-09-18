@@ -438,6 +438,14 @@ export default {
     unlockedMeta: (have: number, need: number) => `feloldva, ${have}/${need} szó megvan`,
     unlockedBanner: (title: string) => `Új nyelvtani rész feloldva: ${title}`,
     dismiss: 'Bezár',
+    // NY3 (NYELVTAN.md "Első szelet"): igeidő-átírás drill.
+    startTransform: (n: number) => `Átírás (${n})`,
+    rewriteTo: (tense: string) => `Írd át: ${tense}`,
+    showTranslation: 'Fordítás mutatása',
+    correct: 'Helyes',
+    correctAnswer: 'Helyes válasz',
+    next: 'Következő',
+    accentHint: 'Ékezet nélkül is elfogadja, a hiányzó ékezetet megmutatja',
   },
   exam: {
     simulationOf: (model: string) => `A ${model} vizsga szimulációja`,

@@ -423,6 +423,14 @@ export default {
     unlockedMeta: (have: number, need: number) => `unlocked, ${have}/${need} words known`,
     unlockedBanner: (title: string) => `New grammar part unlocked: ${title}`,
     dismiss: 'Dismiss',
+    // NY3 (NYELVTAN.md "Első szelet"): tense rewrite drill.
+    startTransform: (n: number) => `Rewrite (${n})`,
+    rewriteTo: (tense: string) => `Rewrite in the ${tense}`,
+    showTranslation: 'Show translation',
+    correct: 'Correct',
+    correctAnswer: 'Correct answer',
+    next: 'Next',
+    accentHint: 'Accepted without accents, missing accents are shown',
   },
   exam: {
     simulationOf: (model: string) => `Simulation of the ${model} exam`,
