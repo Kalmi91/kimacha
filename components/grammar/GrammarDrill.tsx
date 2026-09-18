@@ -1,22 +1,26 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { normalizeWordToken } from '@/data/words';
+import { getDb } from '@/lib/database';
+import { strictAnswerMatch } from '@/lib/answerMatch';
+import { answerInputProps } from '@/lib/inputProps';
 import {
   cumulativeCorpusWordIds,
   isFormItem,
   isLessonV2,
   isMarkItem,
   isMatchItem,
+  isTransformItem,
   isWhyItem,
   type GrammarKind,
   type GrammarMarkItem,
   type GrammarTopicData,
 } from '@/lib/games/content';
-import type { FormItem, LessonBlock, MatchItem, WhyItem } from '@/lib/grammar/lessonTypes';
+import { TENSE_NAMES, type FormItem, type LessonBlock, type MatchItem, type TenseId, type TransformItem, type WhyItem } from '@/lib/grammar/lessonTypes';
 import { markTokens } from '@/lib/games/grammarMark';
 import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
@@ -194,6 +198,7 @@ function FormDrillItem({
 
   return (
     <View style={styles.formBody}>
+      {item.tense ? <TenseBadge tense={item.tense} colors={colors} /> : null}
       {table ? (
         <>
           <Pressable onPress={() => setTableOpen((v) => !v)} hitSlop={8}>
@@ -267,6 +272,7 @@ function WhyDrillItem({
 
   return (
     <View style={styles.whyBody}>
+      {item.tense ? <TenseBadge tense={item.tense} colors={colors} /> : null}
       <View style={[styles.sentenceCard, { backgroundColor: colors.card }]}>
         <View style={styles.whySentenceRow}>
           <Text style={[styles.sentence, { color: colors.text }]}>{item.es}</Text>
@@ -325,6 +331,124 @@ function WhyDrillItem({
   );
 }
 
+// NY3 (NYELVTAN.md "Első szelet"): igeidő-jelvény, minden fajtán megjelenik,
+// ahol az itemnek van `tense` mezője (choice/form/why/transform).
+function TenseBadge({ tense, colors }: { tense: { from: TenseId; to: TenseId }; colors: (typeof Colors)['light'] }) {
+  return (
+    <View style={[styles.tenseBadge, { backgroundColor: colors.tint + '22' }]}>
+      <Text style={[styles.tenseBadgeText, { color: colors.tint }]}>
+        {TENSE_NAMES[tense.from].es} → {TENSE_NAMES[tense.to].es}
+      </Text>
+    </View>
+  );
+}
+
+// NY3 (NYELVTAN.md "Első szelet"): mondat-átírás egyik igeidőből a másikba.
+// A `key={item.id}` a hívó oldalon van (FB299 mintája, mint a többi ágnál),
+// hogy a beviteli mező üresen induljon a következő itemen.
+function TransformDrillItem({
+  item,
+  contentLang,
+  strictAccents,
+  colors,
+  s,
+  onDone,
+}: {
+  item: TransformItem;
+  contentLang: 'hu' | 'en' | 'es' | 'de';
+  strictAccents: boolean;
+  colors: (typeof Colors)['light'];
+  s: ReturnType<typeof t>;
+  onDone: (correct: boolean) => void;
+}) {
+  const [showF, setShowF] = useState(false);
+  const [input, setInput] = useState('');
+  const [result, setResult] = useState<'ok' | 'bad' | null>(null);
+
+  const check = () => {
+    const candidates = [item.answer, ...(item.accept ?? [])];
+    const ok = candidates.some((c) => strictAnswerMatch(input, c, { strictAccents }));
+    setResult(ok ? 'ok' : 'bad');
+  };
+
+  const inputBorder = result === 'ok' ? '#22C55E' : result === 'bad' ? '#EF4444' : colors.tabIconDefault;
+
+  return (
+    <View style={styles.transformBody}>
+      <TenseBadge tense={item.tense} colors={colors} />
+
+      <View style={[styles.transformCard, { backgroundColor: colors.card }]}>
+        <View style={styles.transformCardRow}>
+          <Text style={[styles.transformSentence, { color: colors.text }]}>{item.prompt.es}</Text>
+          <Pressable
+            testID="transform-f"
+            accessibilityLabel={s.grammar.showTranslation}
+            onPress={() => setShowF((v) => !v)}
+            style={[styles.fButton, { borderColor: colors.tint, backgroundColor: showF ? colors.tint : 'transparent' }]}
+          >
+            <Text style={[styles.fButtonText, { color: showF ? '#FFFFFF' : colors.tint }]}>F</Text>
+          </Pressable>
+        </View>
+        {showF ? (
+          <Text style={[styles.transformTranslation, { color: colors.tabIconDefault }]}>
+            {item.prompt[contentLang] ?? item.prompt.en}
+          </Text>
+        ) : null}
+      </View>
+
+      <Text style={[styles.transformLabel, { color: colors.text }]}>
+        {s.grammar.rewriteTo(TENSE_NAMES[item.tense.to][contentLang] ?? TENSE_NAMES[item.tense.to].en)}
+      </Text>
+      <TextInput
+        testID="transform-input"
+        {...answerInputProps}
+        style={[styles.transformInput, { color: colors.text, borderColor: inputBorder }]}
+        value={input}
+        onChangeText={setInput}
+        editable={result === null}
+      />
+
+      {result === null ? (
+        <Pressable testID="transform-check" style={[styles.btn, { backgroundColor: colors.tint }]} onPress={check}>
+          <Text style={styles.btnText}>{s.grammar.check}</Text>
+        </Pressable>
+      ) : (
+        <View
+          style={[
+            styles.transformResultBox,
+            result === 'ok'
+              ? { backgroundColor: '#22C55E22', borderColor: '#22C55E' }
+              : { backgroundColor: '#EF444422', borderColor: '#EF4444' },
+          ]}
+        >
+          {result === 'ok' ? (
+            <>
+              <Text style={[styles.explainHeader, { color: '#22C55E' }]}>{s.grammar.correct}</Text>
+              <Text style={[styles.explainText, { color: colors.text }]}>{item.why[contentLang] ?? item.why.en}</Text>
+            </>
+          ) : (
+            <>
+              <Text style={[styles.explainHeader, { color: '#EF4444' }]}>{s.grammar.correctAnswer}</Text>
+              <Text style={[styles.transformAnswer, { color: colors.text }]}>{item.answer}</Text>
+              <Text style={[styles.explainText, { color: colors.text }]}>{item.why[contentLang] ?? item.why.en}</Text>
+            </>
+          )}
+        </View>
+      )}
+
+      {result !== null ? (
+        <Pressable testID="transform-next" style={[styles.btn, { backgroundColor: colors.text }]} onPress={() => onDone(result === 'ok')}>
+          <Text style={styles.btnText}>{s.grammar.next}</Text>
+        </Pressable>
+      ) : null}
+
+      {!strictAccents ? (
+        <Text style={[styles.accentHint, { color: colors.tabIconDefault }]}>{s.grammar.accentHint}</Text>
+      ) : null}
+    </View>
+  );
+}
+
 export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, kinds = CHOICE_ONLY }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -340,6 +464,14 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const [selected, setSelected] = useState<number | null>(null);
   const [correctCount, setCorrectCount] = useState(0);
   const [showMore, setShowMore] = useState(false);
+  // NY3: a Beállítások ékezet-szigor kapcsolója, egyszer lekérve, csak ha a
+  // körben van transform tétel (a többi ágnak nincs rá szüksége).
+  const [strictAccents, setStrictAccents] = useState(false);
+  const hasTransform = kinds.includes('transform');
+  useEffect(() => {
+    if (!hasTransform) return;
+    getDb().getStrictAccents().then(setStrictAccents).catch(() => {});
+  }, [hasTransform]);
 
   const roundItem = round[index];
   if (!roundItem) return null;
@@ -396,6 +528,16 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             s={s}
             onDone={completeItem}
           />
+        ) : isTransformItem(roundItem.item) ? (
+          <TransformDrillItem
+            key={roundItem.item.id}
+            item={roundItem.item}
+            contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
+            strictAccents={strictAccents}
+            colors={colors}
+            s={s}
+            onDone={completeItem}
+          />
         ) : null}
       </ScrollView>
     );
@@ -424,11 +566,16 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     if (optIdx === current.correctIndex) setCorrectCount((c) => c + 1);
   };
 
+  // NY3: a jelvény csak a gap-ágon (choice) jelenik meg, a jelölős tételnek
+  // nincs `tense` mezője (lessonTypes.ts).
+  const badgeTense = !marking && !isMarkItem(current.item) ? current.item.tense : undefined;
+
   return (
     <ScrollView contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled">
       <Text testID="grammar-drill-progress" style={[styles.progress, { color: colors.tabIconDefault }]}>
         {s.games.grammarChoice.progress(index + 1, round.length)}
       </Text>
+      {badgeTense ? <TenseBadge tense={badgeTense} colors={colors} /> : null}
 
       {marking ? (
         <>
@@ -578,4 +725,19 @@ const styles = StyleSheet.create({
   whySentenceRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10 },
   whyTranslation: { fontSize: 14, textAlign: 'center', marginTop: 6 },
   speak: { fontSize: 18 },
+  // NY3 (NYELVTAN.md "Első szelet"): igeidő-jelvény + mondat-átírás drill.
+  tenseBadge: { alignSelf: 'flex-start', paddingVertical: 6, paddingHorizontal: 12, borderRadius: 999 },
+  tenseBadgeText: { fontSize: 13, fontWeight: '700' },
+  transformBody: { gap: 12 },
+  transformCard: { borderRadius: 16, padding: 18, gap: 10 },
+  transformCardRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 12 },
+  transformSentence: { flex: 1, fontSize: 22, fontWeight: '600', lineHeight: 28 },
+  fButton: { width: 44, height: 44, borderRadius: 12, borderWidth: 2, alignItems: 'center', justifyContent: 'center' },
+  fButtonText: { fontSize: 20, fontWeight: '700' },
+  transformTranslation: { fontSize: 15, fontStyle: 'italic' },
+  transformLabel: { fontSize: 14, fontWeight: '700' },
+  transformInput: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 12, paddingHorizontal: 14, fontSize: 17 },
+  transformResultBox: { borderRadius: 14, borderWidth: 1, padding: 16, gap: 8 },
+  transformAnswer: { fontSize: 20, fontWeight: '700' },
+  accentHint: { fontSize: 12, textAlign: 'center' },
 });

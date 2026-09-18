@@ -10,6 +10,7 @@ import {
   isFormItem,
   isMarkItem,
   isMatchItem,
+  isTransformItem,
   isWhyItem,
   type GrammarGapItem,
   type GrammarItem,
@@ -17,7 +18,7 @@ import {
   type GrammarMarkItem,
   type GrammarTopicData,
 } from './content';
-import type { FormItem, MatchItem, WhyItem } from '../grammar/lessonTypes';
+import type { FormItem, MatchItem, TransformItem, WhyItem } from '../grammar/lessonTypes';
 import { markAnswerIndex, markTokens } from './grammarMark';
 
 // A gap/mark tétel mindig kap opció-listát (gap: a felkínált válaszok kevert
@@ -44,7 +45,17 @@ export interface GrammarWhyRoundItem {
   item: WhyItem;
 }
 
-export type GrammarRoundItem = GrammarChoiceRoundItem | GrammarMatchFormRoundItem | GrammarWhyRoundItem;
+// NY3 (NYELVTAN.md): az igeidő-drill mondat-átírás tétele saját round-item
+// alakban, a why/match/form mintáját követve.
+export interface GrammarTransformRoundItem {
+  item: TransformItem;
+}
+
+export type GrammarRoundItem =
+  | GrammarChoiceRoundItem
+  | GrammarMatchFormRoundItem
+  | GrammarWhyRoundItem
+  | GrammarTransformRoundItem;
 
 export function isChoiceRoundItem(r: GrammarRoundItem): r is GrammarChoiceRoundItem {
   return 'options' in r;
@@ -55,7 +66,8 @@ export function isChoiceRoundItem(r: GrammarRoundItem): r is GrammarChoiceRoundI
 export function grammarRoundItemKind(r: GrammarRoundItem): GrammarKind {
   if (isChoiceRoundItem(r)) return 'choice';
   if (isMatchItem(r.item)) return 'match';
-  return isFormItem(r.item) ? 'form' : 'why';
+  if (isFormItem(r.item)) return 'form';
+  return isTransformItem(r.item) ? 'transform' : 'why';
 }
 
 // LECKE-SEMA 2: a LessonV2 két új item-fajtája (match, form) a lecke szerzői
@@ -71,7 +83,7 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
   const allItems = topic.items as GrammarItem[];
   const choiceItems = allItems.filter(
     (item): item is GrammarGapItem | GrammarMarkItem =>
-      !isMatchItem(item) && !isFormItem(item) && !isWhyItem(item)
+      !isMatchItem(item) && !isFormItem(item) && !isWhyItem(item) && !isTransformItem(item)
   );
   const orderedChoice: GrammarChoiceRoundItem[] = shuffleArray(choiceItems, seed).map((item) => {
     // FB219: a jelölős feladatnál a sorrend maga a mondat, tehát nincs mit
@@ -99,8 +111,13 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
   const whyItems: GrammarWhyRoundItem[] = allItems
     .filter((item): item is WhyItem => isWhyItem(item))
     .map((item) => ({ item }));
+  // NY3: a transform tételek is a kör VÉGÉRE kerülnek, szerzői sorrendben,
+  // a why mintáját követve.
+  const transformItems: GrammarTransformRoundItem[] = allItems
+    .filter((item): item is TransformItem => isTransformItem(item))
+    .map((item) => ({ item }));
 
-  return [...orderedChoice, ...matchItems, ...formItems, ...whyItems];
+  return [...orderedChoice, ...matchItems, ...formItems, ...whyItems, ...transformItems];
 }
 
 // The wrong-answer explanation is keyed by the option's own text (GAMES.md
