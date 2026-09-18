@@ -674,5 +674,6 @@ export default {
     resetConfirmTitle: 'Haladás törlése',
     resetConfirmMessage: 'Ez törli az összes PCIC-haladást. Biztos vagy benne?',
     resetConfirmYes: 'Törlés',
+    undo: 'Visszavonás',
   },
 };
