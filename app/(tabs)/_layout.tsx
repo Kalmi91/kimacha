@@ -55,6 +55,21 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="pcic"
+        options={{
+          title: s.tabs.pcic,
+          // Saját fejlécet rajzol, mint az index (FB123-minta).
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <SymbolView
+              name={{ ios: 'list.bullet', android: 'list', web: 'list' }}
+              tintColor={color}
+              size={28}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="games"
         options={{
           title: s.tabs.games,
