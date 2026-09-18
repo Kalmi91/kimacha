@@ -6,6 +6,7 @@ import { rankSentencesByWordWeakness, sentenceSlotCount, type WordWeakness } fro
 import { WORD_MERGES } from './wordMerges';
 import { LAPS, type Lap } from './lap';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
+import type { Sm2Card } from './sm2';
 
 export interface DB {
   ensureCard(wordId: number, type: string): Promise<void>;
@@ -116,6 +117,11 @@ export interface DB {
   setGameSettings(gameId: string, settings: Record<string, unknown>): Promise<void>;
   getGameProgress(gameId: string): Promise<{ itemId: string; state: string; data: unknown }[]>;
   setGameProgress(gameId: string, itemId: string, state: string, data?: unknown): Promise<void>;
+  // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól
+  getPcicCards(): Promise<Sm2Card[]>;
+  upsertPcicCard(card: Sm2Card): Promise<void>;
+  getPcicStats(today: string): Promise<{ total: number; newIntroducedToday: number; dueToday: number; learned: number }>;
+  resetPcicCards(): Promise<void>;
   exportAll(): Promise<BackupPayload>;
   importAll(payload: BackupPayload): Promise<void>;
 }
@@ -262,6 +268,18 @@ class SQLiteDB implements DB {
         state TEXT NOT NULL,
         data_json TEXT,
         PRIMARY KEY (pair, game_id, item_id)
+      );
+      CREATE TABLE IF NOT EXISTS pcic_cards (
+        item_id TEXT PRIMARY KEY,
+        state TEXT NOT NULL DEFAULT 'new',
+        step INTEGER NOT NULL DEFAULT 0,
+        ease REAL NOT NULL DEFAULT 2.5,
+        interval INTEGER NOT NULL DEFAULT 0,
+        reps INTEGER NOT NULL DEFAULT 0,
+        lapses INTEGER NOT NULL DEFAULT 0,
+        due TEXT NOT NULL DEFAULT '',
+        last_review TEXT,
+        introduced_at TEXT
       );
     `);
     // Migration: add random_topics column (DBs created before the random-topic toggle).
@@ -1397,6 +1415,65 @@ class SQLiteDB implements DB {
        ON CONFLICT(pair, game_id, item_id) DO UPDATE SET state = excluded.state, data_json = excluded.data_json`,
       [this.activePair, gameId, itemId, state, data !== undefined ? JSON.stringify(data) : null]
     );
+  }
+
+  // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól. Nem
+  // pair-hez kötött (a fül csak es→en tételekkel dolgozik).
+  async getPcicCards(): Promise<Sm2Card[]> {
+    const db = await this.open();
+    const rows = await db.getAllAsync<any>('SELECT * FROM pcic_cards');
+    return rows.map((r: any) => ({
+      itemId: r.item_id,
+      state: r.state,
+      step: r.step,
+      ease: r.ease,
+      interval: r.interval,
+      reps: r.reps,
+      lapses: r.lapses,
+      due: r.due,
+      lastReview: r.last_review,
+      introducedAt: r.introduced_at,
+    }));
+  }
+
+  async upsertPcicCard(card: Sm2Card): Promise<void> {
+    const db = await this.open();
+    await db.runAsync(
+      `INSERT INTO pcic_cards (item_id, state, step, ease, interval, reps, lapses, due, last_review, introduced_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+       ON CONFLICT(item_id) DO UPDATE SET
+         state = excluded.state, step = excluded.step, ease = excluded.ease,
+         interval = excluded.interval, reps = excluded.reps, lapses = excluded.lapses,
+         due = excluded.due, last_review = excluded.last_review, introduced_at = excluded.introduced_at`,
+      [card.itemId, card.state, card.step, card.ease, card.interval, card.reps, card.lapses, card.due, card.lastReview, card.introducedAt]
+    );
+  }
+
+  async getPcicStats(today: string): Promise<{ total: number; newIntroducedToday: number; dueToday: number; learned: number }> {
+    const db = await this.open();
+    const total = await db.getFirstAsync<any>('SELECT COUNT(*) as c FROM pcic_cards');
+    const newIntroducedToday = await db.getFirstAsync<any>(
+      'SELECT COUNT(*) as c FROM pcic_cards WHERE introduced_at = ?',
+      [today]
+    );
+    const dueToday = await db.getFirstAsync<any>(
+      "SELECT COUNT(*) as c FROM pcic_cards WHERE (state = 'review' OR state = 'learning') AND due <= ?",
+      [today]
+    );
+    const learned = await db.getFirstAsync<any>(
+      "SELECT COUNT(*) as c FROM pcic_cards WHERE state = 'review' AND interval >= 21"
+    );
+    return {
+      total: total?.c ?? 0,
+      newIntroducedToday: newIntroducedToday?.c ?? 0,
+      dueToday: dueToday?.c ?? 0,
+      learned: learned?.c ?? 0,
+    };
+  }
+
+  async resetPcicCards(): Promise<void> {
+    const db = await this.open();
+    await db.runAsync('DELETE FROM pcic_cards');
   }
 
   // Q0: full learning-state backup, every table across all pairs.
