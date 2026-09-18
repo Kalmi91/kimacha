@@ -649,9 +649,9 @@ export default {
   // PLAN-pcic step 5: the PCIC tab (English -> Spanish typing, Anki buttons).
   pcic: {
     header: (due: number, newCount: number, doneToday: number) => `due ${due} · new ${newCount} · done today ${doneToday}`,
-    again: 'Again',
+    again: "Didn't know",
     hard: 'Hard',
-    good: 'Good',
+    good: 'Knew it',
     easy: 'Easy',
     doneTitle: 'Done for today',
     summary: (answered: number, newCount: number, again: number) => `You answered ${answered} cards: ${newCount} new, ${again} again.`,
