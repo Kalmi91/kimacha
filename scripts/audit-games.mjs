@@ -551,6 +551,79 @@ function auditWhyItem(item, itemPath) {
   });
 }
 
+// NY1 (NYELVTAN.md "Adatformátum"): a lessonTypes.ts TENSE_IDS másolata, mert
+// ez a script nem tudja importálni a TS fájlt.
+const TENSE_IDS = [
+  'presente',
+  'indefinido',
+  'imperfecto',
+  'perfecto',
+  'futuro-simple',
+  'ir-a',
+  'condicional',
+  'subjuntivo-presente',
+];
+
+// Kártya-id (string) -> szint, a hat words-fájlból egyszer felépítve, a
+// transform item `wordIds` szint-ellenőrzéséhez.
+const wordLevelById = new Map();
+for (const lvl of LEVELS) {
+  for (const card of loadLevelWords(lvl)) {
+    wordLevelById.set(String(card.id), lvl);
+  }
+}
+
+function auditTenseField(tense, itemPath) {
+  if (!tense || typeof tense !== 'object') {
+    p1.push({ path: itemPath, issue: 'missing tense field' });
+    return;
+  }
+  if (!TENSE_IDS.includes(tense.from)) p1.push({ path: itemPath, issue: `unknown tense.from "${tense.from}"` });
+  if (!TENSE_IDS.includes(tense.to)) p1.push({ path: itemPath, issue: `unknown tense.to "${tense.to}"` });
+  if (tense.from === tense.to) p1.push({ path: itemPath, issue: 'tense.from must differ from tense.to' });
+}
+
+// NY1: az igeidő-drill mondat-átírás item-fajtája. `wordIds` a mondat
+// kártyáira mutat (ez hajtja az NY2 unlockot), mindegyiknek léteznie kell és
+// a lecke szintjénél nem lehet magasabb szintű.
+function auditTransformItem(item, itemPath, topic) {
+  auditTenseField(item.tense, itemPath);
+  checkLangs(item.prompt, `${itemPath} prompt`);
+  if (!item.answer) p1.push({ path: itemPath, issue: 'transform item missing answer' });
+  if (item.prompt?.es && item.answer && item.prompt.es === item.answer) {
+    p1.push({ path: itemPath, issue: 'transform prompt.es must differ from answer' });
+  }
+  if (item.accept !== undefined) {
+    if (!Array.isArray(item.accept)) {
+      p1.push({ path: itemPath, issue: 'transform accept must be an array' });
+    } else {
+      for (const alt of item.accept) {
+        if (alt === item.answer) p1.push({ path: itemPath, issue: `transform accept entry equals answer: "${alt}"` });
+        if (item.prompt?.es && alt === item.prompt.es) {
+          p1.push({ path: itemPath, issue: `transform accept entry equals prompt.es: "${alt}"` });
+        }
+      }
+    }
+  }
+  if (!Array.isArray(item.wordIds) || item.wordIds.length === 0) {
+    p1.push({ path: itemPath, issue: 'transform wordIds must be a non-empty array' });
+  } else {
+    const levelIdx = LEVELS.indexOf(topic.level);
+    for (const id of item.wordIds) {
+      const wordLevel = wordLevelById.get(String(id));
+      if (wordLevel === undefined) {
+        p1.push({ path: itemPath, issue: `wordIds references unknown card id "${id}"` });
+      } else if (levelIdx !== -1 && LEVELS.indexOf(wordLevel) > levelIdx) {
+        p1.push({
+          path: itemPath,
+          issue: `wordIds card "${id}" is level ${wordLevel}, above the lesson's level ${topic.level}`,
+        });
+      }
+    }
+  }
+  checkLangs(item.why, `${itemPath} why`);
+}
+
 function auditGrammarTopic(topic, filePath) {
   const path = `grammar/${filePath}`;
   if (!topic.topic) p1.push({ path, issue: 'missing topic id' });
@@ -579,6 +652,10 @@ function auditGrammarTopic(topic, filePath) {
     if (seenIds.has(item.id)) p2.push({ path: itemPath, issue: `duplicate item id "${item.id}"` });
     seenIds.add(item.id);
 
+    // NY1: a `tense` mező choice/form/why itemen is megjelenhet (a jelvényhez);
+    // ahol van, ugyanaz a from/to ellenőrzés fut, mint a transform itemen.
+    if (item.kind !== 'transform' && item.tense) auditTenseField(item.tense, itemPath);
+
     // LECKE-SEMA 2: match/form saját ellenőrzőt kap, a gap/mark-os ág alatta
     // változatlan (a "mint eddig" spec-ígéret).
     if (item.kind === 'match') {
@@ -591,6 +668,10 @@ function auditGrammarTopic(topic, filePath) {
     }
     if (item.kind === 'why') {
       auditWhyItem(item, itemPath);
+      continue;
+    }
+    if (item.kind === 'transform') {
+      auditTransformItem(item, itemPath, topic);
       continue;
     }
 
