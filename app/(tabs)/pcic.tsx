@@ -13,6 +13,7 @@ import { localDateString } from '@/lib/usageStats';
 import { PCIC_ITEMS, findPcicItem } from '@/data/pcic';
 import { gradePcicAnswer, type PcicGrade } from '@/lib/pcicMatch';
 import { sm2Review, sm2Preview, pickSm2Session, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
+import { requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
 import { answerInputProps } from '@/lib/inputProps';
 
@@ -28,6 +29,18 @@ const GRADES: Sm2Grade[] = ['again', 'good'];
 // SZ1, Kálmán döntése 2026-09-18: near is Tudtam, ő nyomja le Nem tudtam-ra.
 const PRESELECT: Record<PcicGrade['match'], Sm2Grade> = { exact: 'good', near: 'good', wrong: 'again' };
 
+// SZ2 (SZAVAK.md): egy visszavonható értékelés pillanatképe. `counted` = a
+// számlálókat is léptette-e (SZ3 „Ezt nem tanulom" gombja majd false-t ír ide).
+interface UndoEntry {
+  before: Sm2Card;
+  after: Sm2Card;
+  typed: string;
+  grade: PcicGrade | null;
+  wasNew: boolean;
+  g: Sm2Grade;
+  counted: boolean;
+}
+
 export default function PcicScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -42,6 +55,7 @@ export default function PcicScreen() {
   const [sessionAnswered, setSessionAnswered] = useState(0);
   const [sessionNew, setSessionNew] = useState(0);
   const [sessionAgain, setSessionAgain] = useState(0);
+  const [lastGraded, setLastGraded] = useState<UndoEntry | null>(null);
 
   const load = useCallback(async () => {
     const db = getDb();
@@ -55,6 +69,7 @@ export default function PcicScreen() {
     setSessionAnswered(0);
     setSessionNew(0);
     setSessionAgain(0);
+    setLastGraded(null);
     setLoading(false);
     // setTypedAnswer is listed because the React Compiler infers it as a
     // dependency of this async callback (FB minta, lásd app/spelling.tsx); it
@@ -84,20 +99,34 @@ export default function PcicScreen() {
   const handleGrade = async (g: Sm2Grade) => {
     if (!current) return;
     const wasNew = current.state === 'new';
+    const before = { ...current };
     const next = sm2Review(current, g, today);
     await getDb().upsertPcicCard(next);
 
     setAllCards((prev) => new Map(prev).set(next.itemId, next));
-    setQueue((prev) => {
-      const rest = prev.slice(1);
-      // Learning kártya (still due today) a menet végére kerül vissza.
-      return next.due === today ? [...rest, next] : rest;
-    });
+    setQueue((prev) => requeueAfterGrade(prev, next, today));
+    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew, g, counted: true });
     setSessionAnswered((n) => n + 1);
     if (wasNew) setSessionNew((n) => n + 1);
     if (g === 'again') setSessionAgain((n) => n + 1);
     setTypedAnswer('');
     setGrade(null);
+  };
+
+  const handleUndo = async () => {
+    if (!lastGraded) return;
+    await getDb().upsertPcicCard(lastGraded.before);
+    setAllCards((prev) => new Map(prev).set(lastGraded.before.itemId, lastGraded.before));
+    setQueue((prev) => requeueAfterUndo(prev, lastGraded.before, lastGraded.after, today));
+    // A padló 0, mert a session-reset (load) közben is lehet nyomni.
+    if (lastGraded.counted) {
+      setSessionAnswered((n) => Math.max(0, n - 1));
+      if (lastGraded.wasNew) setSessionNew((n) => Math.max(0, n - 1));
+      if (lastGraded.g === 'again') setSessionAgain((n) => Math.max(0, n - 1));
+    }
+    setTypedAnswer(lastGraded.typed);
+    setGrade(lastGraded.grade);
+    setLastGraded(null);
   };
 
   const handleReset = () => {
@@ -121,6 +150,11 @@ export default function PcicScreen() {
       <Text style={[styles.headerText, { color: colors.tabIconDefault }]}>
         {s.pcic.header(dueRemaining, newRemaining, doneToday)}
       </Text>
+      {lastGraded && (
+        <Pressable onPress={handleUndo} hitSlop={12} style={styles.resetBtn} accessibilityLabel={s.pcic.undo}>
+          <Text style={styles.resetIcon}>↶</Text>
+        </Pressable>
+      )}
       <Pressable onPress={handleReset} hitSlop={12} style={styles.resetBtn}>
         <Text style={styles.resetIcon}>🗑️</Text>
       </Pressable>

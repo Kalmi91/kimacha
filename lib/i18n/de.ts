@@ -659,5 +659,6 @@ export default {
     resetConfirmTitle: 'Fortschritt zurücksetzen',
     resetConfirmMessage: 'Das löscht den gesamten PCIC-Fortschritt. Bist du sicher?',
     resetConfirmYes: 'Zurücksetzen',
+    undo: 'Rückgängig',
   },
 };

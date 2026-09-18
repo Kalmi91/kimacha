@@ -659,5 +659,6 @@ export default {
     resetConfirmTitle: 'Reset progress',
     resetConfirmMessage: 'This clears all PCIC progress. Are you sure?',
     resetConfirmYes: 'Reset',
+    undo: 'Undo',
   },
 };
