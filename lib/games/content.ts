@@ -13,7 +13,7 @@
 // game screens should need to change.
 
 import { LEVELS, getWordsForLevel, type Level } from '@/data/words';
-import type { FormItem, LessonV2, MatchItem, WhyItem } from '../grammar/lessonTypes';
+import type { FormItem, LessonV2, MatchItem, TenseId, WhyItem } from '../grammar/lessonTypes';
 
 // Cumulative corpus word ids up to and including `level` (A0..level), used by
 // the content-driven game screens to build GlossText's `knownWordIds`: a
@@ -237,6 +237,7 @@ export interface GrammarGapItem extends GrammarItemBase {
   sentence: string; // target language, blank marked "___"
   options: string[]; // target-language option texts
   correct: number; // index into options
+  tense?: { from: TenseId; to: TenseId };
 }
 
 // FB219, Kálmán 2026-09-09 (grammar:clases-de-palabras:drill): „vagy lehetne

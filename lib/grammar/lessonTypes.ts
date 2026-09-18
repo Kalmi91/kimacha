@@ -15,6 +15,47 @@ import type { GrammarGapItem, GrammarMarkItem } from '../games/content';
 
 export type Lang4 = Record<'hu' | 'en' | 'es' | 'de', string>;
 
+// NY1 (NYELVTAN.md "Adatformátum"): az igeidő-drill 8 igeideje. A sorrend
+// itt a TENSE_IDS forrása, ne cseréld fel.
+export type TenseId =
+  | 'presente'
+  | 'indefinido'
+  | 'imperfecto'
+  | 'perfecto'
+  | 'futuro-simple'
+  | 'ir-a'
+  | 'condicional'
+  | 'subjuntivo-presente';
+
+export const TENSE_IDS: readonly TenseId[] = [
+  'presente',
+  'indefinido',
+  'imperfecto',
+  'perfecto',
+  'futuro-simple',
+  'ir-a',
+  'condicional',
+  'subjuntivo-presente',
+];
+
+// A jelvényen mutatott igeidő-név; `es` a spanyol nyelvtani terminus, a többi
+// a hétköznapi név (mint a syllabus témacímekben).
+export const TENSE_NAMES: Record<TenseId, Lang4> = {
+  presente: { hu: 'jelen idő', en: 'present tense', es: 'Presente', de: 'Präsens' },
+  indefinido: { hu: 'befejezett múlt', en: 'preterite', es: 'Pretérito indefinido', de: 'Indefinido' },
+  imperfecto: { hu: 'folyamatos múlt', en: 'imperfect', es: 'Pretérito imperfecto', de: 'Imperfekt' },
+  perfecto: { hu: 'közelmúlt', en: 'present perfect', es: 'Pretérito perfecto', de: 'Perfekt' },
+  'futuro-simple': { hu: 'egyszerű jövő', en: 'simple future', es: 'Futuro simple', de: 'einfaches Futur' },
+  'ir-a': { hu: '„ir a" jövő', en: '"ir a" future', es: 'Ir a + infinitivo', de: '„ir a"-Zukunft' },
+  condicional: { hu: 'feltételes mód', en: 'conditional', es: 'Condicional simple', de: 'Konditional' },
+  'subjuntivo-presente': {
+    hu: 'kötőmód jelen',
+    en: 'present subjunctive',
+    es: 'Presente de subjuntivo',
+    de: 'Subjuntivo Präsens',
+  },
+};
+
 // spanyol mondat + fordítás; `es` maga a mondat (vagy egy parafrázisa, ha a
 // blokk-pont maga nem mondat, hanem egy jelenség leírása).
 export interface ExamplePair {
@@ -52,6 +93,7 @@ export interface FormItem {
   person: string;
   answer: string;
   table: string; // a body egyik `table` blokkjának id-ja
+  tense?: { from: TenseId; to: TenseId };
 }
 
 // TASK-8 (PLAN-fb0917 D4, FB288, Kálmán 2026-09-15): "miért ez a mondat", a
@@ -64,6 +106,21 @@ export interface WhyItem {
   tr: Lang4; // a mondat fordítása; tr.es === es, a felolvasás miatt egységesen
   options: { text: Lang4; wrong?: Lang4 }[]; // 3 szabály-név; a nem jó opciókon `wrong` kötelező
   correctIndex: number;
+  tense?: { from: TenseId; to: TenseId };
+}
+
+// NY1: az igeidő-drill item-fajtája, mondat-átírás egyik igeidőből a
+// másikba (NYELVTAN.md "Adatformátum"). A `wordIds` a mondat kártyáira
+// hivatkozik, ez hajtja az NY2 unlockot.
+export interface TransformItem {
+  kind: 'transform';
+  id: string;
+  tense: { from: TenseId; to: TenseId };
+  prompt: Lang4;
+  answer: string;
+  accept?: string[];
+  wordIds: string[];
+  why: Lang4;
 }
 
 export interface LessonV2 {
@@ -74,5 +131,5 @@ export interface LessonV2 {
   body: LessonBlock[];
   speak: Lang4; // LECKE-SEMA 3: felolvasásra írt szöveg, a spanyol szakaszok «...» közt
   glossary?: { word: string; gloss: Lang4 }[];
-  items: (GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem)[];
+  items: (GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem | TransformItem)[];
 }
