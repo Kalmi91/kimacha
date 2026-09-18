@@ -661,5 +661,6 @@ export default {
     resetConfirmYes: 'Reset',
     undo: 'Undo',
     dontLearn: "Don't learn this",
+    next: 'Next',
   },
 };

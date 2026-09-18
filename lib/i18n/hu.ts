@@ -676,5 +676,6 @@ export default {
     resetConfirmYes: 'Törlés',
     undo: 'Visszavonás',
     dontLearn: 'Ezt nem tanulom',
+    next: 'Tovább',
   },
 };
