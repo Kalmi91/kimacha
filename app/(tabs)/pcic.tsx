@@ -56,6 +56,10 @@ export default function PcicScreen() {
   const [sessionNew, setSessionNew] = useState(0);
   const [sessionAgain, setSessionAgain] = useState(0);
   const [lastGraded, setLastGraded] = useState<UndoEntry | null>(null);
+  // SZ5 (SZAVAK.md): üres beküldés a szót azonnal Nem tudtam-ként értékeli;
+  // ilyenkor a kártya a képernyőn marad felfedve, és a gradesRow helyett egy
+  // "Tovább" gomb lépteti a sort (advance() csak akkor fut).
+  const [autoGraded, setAutoGraded] = useState(false);
 
   const load = useCallback(async () => {
     const db = getDb();
@@ -91,33 +95,65 @@ export default function PcicScreen() {
   const newRemaining = queue.filter((c) => c.state === 'new').length;
   const doneToday = [...allCards.values()].filter((c) => c.lastReview === today).length;
 
-  const handleCheck = () => {
-    if (!current || !currentItem || typedAnswer.trim().length === 0) return;
-    setGrade(gradePcicAnswer(typedAnswer, currentItem.es));
-  };
-
-  const handleGrade = async (g: Sm2Grade) => {
-    if (!current) return;
+  // SZ5: a DB-írás + számlálók külön függvényben, hogy a queue-léptetés
+  // (advance) nélkül is meghívható legyen (üres beküldésnél a kártya a
+  // képernyőn marad, csak a "Tovább" gomb léptet). A `revealed` a lastGraded
+  // felfedésének értéke; alapból a képernyőn látszó `grade`, de az
+  // auto-értékelésnél a handleCheck a frissen számolt objektumot adja át,
+  // mert a `grade` state a setGrade hívás után még nem frissült a closure-ben.
+  const commitGrade = async (g: Sm2Grade, revealed: PcicGrade | null = grade): Promise<Sm2Card | null> => {
+    if (!current) return null;
     const wasNew = current.state === 'new';
     const before = { ...current };
     const next = sm2Review(current, g, today);
     await getDb().upsertPcicCard(next);
 
     setAllCards((prev) => new Map(prev).set(next.itemId, next));
-    setQueue((prev) => requeueAfterGrade(prev, next, today));
-    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew, g, counted: true });
+    setLastGraded({ before, after: next, typed: typedAnswer, grade: revealed, wasNew, g, counted: true });
     setSessionAnswered((n) => n + 1);
     if (wasNew) setSessionNew((n) => n + 1);
     if (g === 'again') setSessionAgain((n) => n + 1);
+    return next;
+  };
+
+  const advance = (next: Sm2Card) => {
+    setQueue((prev) => requeueAfterGrade(prev, next, today));
     setTypedAnswer('');
     setGrade(null);
+    setAutoGraded(false);
+  };
+
+  const handleCheck = async () => {
+    if (!current || !currentItem) return;
+    if (typedAnswer.trim().length === 0) {
+      // SZ5 (SZAVAK.md): üres beküldés = Nem tudtam automatikusan; felfedi a
+      // helyes alakot és felolvassa. Mondatot most nem olvas fel (SZ6 PARKOL,
+      // nincs mondat-adat a PCIC-tételekhez).
+      const g = gradePcicAnswer('', currentItem.es);
+      const revealed: PcicGrade = { ...g, match: 'wrong' };
+      setGrade(revealed);
+      speak(g.best, speechLang('es'));
+      const next = await commitGrade('again', revealed);
+      if (next) setAutoGraded(true);
+      return;
+    }
+    setGrade(gradePcicAnswer(typedAnswer, currentItem.es));
+  };
+
+  const handleGrade = async (g: Sm2Grade) => {
+    const next = await commitGrade(g);
+    if (next) advance(next);
   };
 
   const handleUndo = async () => {
     if (!lastGraded) return;
     await getDb().upsertPcicCard(lastGraded.before);
     setAllCards((prev) => new Map(prev).set(lastGraded.before.itemId, lastGraded.before));
-    setQueue((prev) => requeueAfterUndo(prev, lastGraded.before, lastGraded.after, today));
+    // SZ5: auto-graded üres beküldésnél a kártya még nem lépett a sor
+    // végére (nincs advance() hívás), tehát a sorhoz sem kell nyúlni.
+    if (!autoGraded) {
+      setQueue((prev) => requeueAfterUndo(prev, lastGraded.before, lastGraded.after, today));
+    }
     // A padló 0, mert a session-reset (load) közben is lehet nyomni.
     if (lastGraded.counted) {
       setSessionAnswered((n) => Math.max(0, n - 1));
@@ -126,6 +162,7 @@ export default function PcicScreen() {
     }
     setTypedAnswer(lastGraded.typed);
     setGrade(lastGraded.grade);
+    setAutoGraded(false);
     setLastGraded(null);
   };
 
@@ -254,6 +291,13 @@ export default function PcicScreen() {
       {!grade ? (
         <Pressable style={[styles.checkBtn, { backgroundColor: colors.tint }]} onPress={handleCheck}>
           <Text style={styles.checkBtnText}>{s.card.check}</Text>
+        </Pressable>
+      ) : autoGraded ? (
+        <Pressable
+          style={[styles.checkBtn, { backgroundColor: colors.tint }]}
+          onPress={() => lastGraded && advance(lastGraded.after)}
+        >
+          <Text style={styles.checkBtnText}>{s.pcic.next}</Text>
         </Pressable>
       ) : (
         <View style={styles.gradesRow}>
