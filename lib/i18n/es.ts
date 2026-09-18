@@ -83,6 +83,7 @@ export default {
     tree: 'Temas',
     talk: 'Hablar',
     stats: 'Estadísticas',
+    pcic: 'PCIC',
   },
   talk: {
     title: 'Hablar',
@@ -644,5 +645,19 @@ export default {
     scheduleNextTomorrow: (time: string) => `mañana ${time}`,
     scheduleNextDays: (days: number) => `en ${days} días`,
     scheduleEmpty: 'Todavía no hay palabras guardadas, ¡aprende unas cuantas!',
+  },
+  // PLAN-pcic paso 5: la pestaña PCIC (inglés -> español escrito, botones Anki).
+  pcic: {
+    header: (due: number, newCount: number, doneToday: number) => `pendientes ${due} · nuevas ${newCount} · hechas hoy ${doneToday}`,
+    again: 'Otra vez',
+    hard: 'Difícil',
+    good: 'Bien',
+    easy: 'Fácil',
+    doneTitle: 'Listo por hoy',
+    summary: (answered: number, newCount: number, again: number) => `Respondiste ${answered} tarjetas: ${newCount} nuevas, ${again} otra vez.`,
+    resetLabel: 'Restablecer progreso',
+    resetConfirmTitle: 'Restablecer progreso',
+    resetConfirmMessage: 'Esto borra todo el progreso de PCIC. ¿Estás seguro?',
+    resetConfirmYes: 'Restablecer',
   },
 };

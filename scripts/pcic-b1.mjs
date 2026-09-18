@@ -1,4 +1,4 @@
-// PCIC B1 corpus extraction (PLAN-pcic.md 2. lepes, 2. kor, 2026-09-17).
+// PCIC B1 corpus extraction (PLAN-pcic.md 2. lepes, 3. kor, 2026-09-18).
 //
 // 2. kor: az elso kor a .clean.md fajlokra epult, de azok elvesztettek a
 // cimszo/peldamondat es a tilde/vesszo szerkezetet (ket bug: "cualidad Es
@@ -7,8 +7,15 @@
 // pandoc-markdown, ahol a szerkezet HTML <table>/<td>/<ul>/<li>/<br/>/<em>
 // formaban megvan.
 //
+// 3. kor: stabil, tartalom-alapu id (sha1(es) elso 8 hex-je) es `order` mezo,
+// mert a pcic_cards.item_id majd erre mutat, es a szabaly-javitasok nem
+// tolhatjak el a sorszamos id-kat. Tobbszoros tilde (Descartes-szorzat) a
+// "tener ~ una buena/una mala ~ actitud" tipusu darabokhoz; az egy-tildes
+// eset valtozatlan.
+//
 // Usage: node scripts/pcic-b1.mjs
 
+import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
 
 const SOURCES = [
@@ -129,6 +136,50 @@ function splitTildePiece(piece) {
   return tail.split('/').map((t) => `${head} ${t.trim()}`.replace(/\s+/g, ' ').trim());
 }
 
+// Multiple tildes in one piece ("tener ~ una buena/una mala ~ actitud",
+// "ser ~ bueno/malo ~ en/para/con"): split on every "~" into segments, split
+// each segment on "/" into alternatives (no "/" -> one alternative); a
+// parenthesised group with more than one alternative loses its outer parens
+// ("(de Interior/de Defensa)" -> "de Interior", "de Defensa"), but a single-
+// alternative parenthesised segment keeps them ("(de)" stays "(de)"). The
+// result is the Cartesian product of all segments' alternatives, space-joined.
+const MAX_TILDE_PRODUCT = 12;
+const tildeProductTruncations = [];
+
+function splitAltSegment(segment) {
+  const trimmed = segment.trim();
+  if (trimmed.startsWith('(') && trimmed.endsWith(')')) {
+    const inner = trimmed.slice(1, -1).trim();
+    if (inner.includes('/')) return inner.split('/').map((a) => a.trim());
+    return [trimmed];
+  }
+  if (trimmed.includes('/')) return trimmed.split('/').map((a) => a.trim());
+  return [trimmed];
+}
+
+function splitMultiTildePiece(piece) {
+  const segments = piece
+    .split('~')
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0);
+  let combos = [''];
+  for (const segment of segments) {
+    const alts = splitAltSegment(segment);
+    const next = [];
+    for (const combo of combos) {
+      for (const alt of alts) {
+        next.push(combo ? `${combo} ${alt}` : alt);
+      }
+    }
+    combos = next;
+  }
+  if (combos.length > MAX_TILDE_PRODUCT) {
+    tildeProductTruncations.push({ piece, total: combos.length });
+    combos = combos.slice(0, MAX_TILDE_PRODUCT);
+  }
+  return combos;
+}
+
 // Rule 3: no tilde -> split on "/" only when every side is a single word.
 function splitSlashPiece(piece) {
   if (piece.includes('/')) {
@@ -160,7 +211,15 @@ function processHeadwordText(naked) {
   for (const piece of splitOutsideParens(naked)) {
     const trimmed = piece.trim();
     if (!trimmed) continue;
-    const variants = trimmed.includes('~') ? splitTildePiece(trimmed) : splitSlashPiece(trimmed);
+    const tildeCount = (trimmed.match(/~/g) || []).length;
+    let variants;
+    if (tildeCount >= 2) {
+      variants = splitMultiTildePiece(trimmed);
+    } else if (tildeCount === 1) {
+      variants = splitTildePiece(trimmed);
+    } else {
+      variants = splitSlashPiece(trimmed);
+    }
     for (const variant of variants) {
       const item = finalizeHeadword(variant);
       if (item) out.push(item);
@@ -259,25 +318,31 @@ for (const { tag, path } of SOURCES) {
   }
 }
 
+// Stable, content-based id: sha1 of the lowercased/trimmed `es`, first 8 hex
+// chars. Keeps pcic_cards.item_id valid across re-runs and rule fixes.
+function stableId(es) {
+  return `b1-${createHash('sha1').update(es.toLowerCase().trim()).digest('hex').slice(0, 8)}`;
+}
+
 // Global dedup, first occurrence wins (kisbetus `es` szerint).
 const idMap = new Map();
-let idCounter = 0;
+let order = 0;
 const all = [];
 
 for (const item of collected) {
   const key = item.es.toLowerCase();
   if (idMap.has(key)) continue;
-  idCounter++;
-  const id = `b1-${String(idCounter).padStart(4, '0')}`;
+  const id = stableId(item.es);
   idMap.set(key, id);
 
-  const entry = { id, es: item.es, kind: item.kind, source: item.source, section: item.section };
+  const entry = { id, order, es: item.es, kind: item.kind, source: item.source, section: item.section };
   if (item.headwordEs != null) {
     const headwordId = idMap.get(item.headwordEs.toLowerCase());
     if (headwordId) entry.headword = headwordId;
   }
   entry._liGroup = item.liGroup;
   all.push(entry);
+  order++;
 }
 
 const sample = all.filter((item) => item._liGroup % 5 === 0);
@@ -294,3 +359,5 @@ console.log(`b1-all.json: ${all.length} items`);
 console.log(`b1-sample.json: ${sample.length} items`);
 console.log(`skipped tables: ${skippedTables.length}`);
 if (skippedTables.length) console.log(skippedTables);
+console.log(`tilde-product truncated to ${MAX_TILDE_PRODUCT}: ${tildeProductTruncations.length}`);
+if (tildeProductTruncations.length) console.log(tildeProductTruncations);
