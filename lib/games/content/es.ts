@@ -53,6 +53,7 @@ import grammarEsPresenteIrregular from '@/data/games/grammar/es/presente-irregul
 import grammarEsVerbosDiptongo from '@/data/games/grammar/es/verbos-diptongo.json';
 import grammarEsIndefinidoRegular from '@/data/games/grammar/es/indefinido-regular.json';
 import grammarEsIndefinidoIrregular from '@/data/games/grammar/es/indefinido-irregular.json';
+import grammarEsIndefinido10Verbos from '@/data/games/grammar/es/indefinido-10-verbos.json';
 import grammarEsImperfecto from '@/data/games/grammar/es/imperfecto.json';
 import grammarEsIndefinidoImperfecto from '@/data/games/grammar/es/indefinido-imperfecto.json';
 import grammarEsPerfecto from '@/data/games/grammar/es/perfecto.json';
@@ -133,6 +134,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsIrAInfinitivo,
     grammarEsIndefinidoRegular,
     grammarEsIndefinidoIrregular,
+    grammarEsIndefinido10Verbos,
     grammarEsImperfecto,
     grammarEsIndefinidoImperfecto,
     grammarEsPerfecto,

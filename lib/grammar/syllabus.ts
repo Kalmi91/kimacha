@@ -75,6 +75,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   // --- A2 ---
   'indefinido-regular': 'core-plus',
   'indefinido-irregular': 'core-plus',
+  'indefinido-10-verbos': 'core-plus',
   imperfecto: 'core-plus',
   'indefinido-imperfecto': 'core-plus',
   // Mexikóban a beszélt nyelv a pretéritót használja a perfecto helyett
@@ -326,6 +327,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'a2-pasado',
     title: { hu: 'Befejezett múlt: rendhagyó igék', en: 'Preterite: irregular verbs', es: 'Pretérito indefinido: irregulares', de: 'Indefinido: unregelmäßige Verben' },
     blurb: { hu: 'fui, tuve, hice, dije, estuve, pude, quise.', en: 'fui, tuve, hice, dije, estuve, pude, quise.', es: 'fui, tuve, hice, dije, estuve, pude, quise.', de: 'fui, tuve, hice, dije, estuve, pude, quise.' },
+  },
+  {
+    id: 'indefinido-10-verbos',
+    level: 'A2',
+    unit: 'a2-pasado',
+    title: { hu: 'Befejezett múlt, a 10 leggyakoribb ige', en: 'Preterite, the 10 most frequent verbs', es: 'Indefinido, los 10 verbos más frecuentes', de: 'Indefinido, die 10 häufigsten Verben' },
+    blurb: { hu: 'Presente → indefinido átírás a 10 leggyakoribb igével.', en: 'Present → preterite rewrite drill with the 10 most frequent verbs.', es: 'Reescritura presente → indefinido con los 10 verbos más frecuentes.', de: 'Präsens-→-Indefinido-Umschreibung mit den 10 häufigsten Verben.' },
   },
   {
     id: 'imperfecto',
