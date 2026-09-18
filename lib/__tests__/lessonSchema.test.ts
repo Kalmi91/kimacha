@@ -10,6 +10,7 @@
 import fs from 'fs';
 import path from 'path';
 import type { LessonV2, LessonBlock } from '@/lib/grammar/lessonTypes';
+import { TENSE_IDS, TENSE_NAMES } from '@/lib/grammar/lessonTypes';
 import type { GrammarGapItem } from '@/lib/games/content';
 
 const LANGS = ['hu', 'en', 'es', 'de'] as const;
@@ -36,6 +37,18 @@ describe('schema 2 lessons', () => {
     const names = lessons.map(([f]) => f);
     expect(names).toContain('ser-estar.json');
     expect(names).toContain('presente-regular.json');
+  });
+});
+
+// NY1 (NYELVTAN.md "Adatformátum"): a jelvény-név minden igeidőre, mind a 4
+// nyelven, hogy a TENSE_NAMES ne legyen csendben hiányos.
+describe('TENSE_NAMES', () => {
+  it('gives all 4 non-empty languages for every tense', () => {
+    for (const tense of TENSE_IDS) {
+      for (const lang of ['hu', 'en', 'es', 'de'] as const) {
+        expect(TENSE_NAMES[tense][lang]?.trim()).toBeTruthy();
+      }
+    }
   });
 });
 
@@ -180,6 +193,17 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
           for (const lang of LANGS) expect(opt.wrong?.[lang]).toBeTruthy();
         }
       });
+    }
+  });
+
+  // NY1: a transform item (üres korpuszon most 0/0, NY4 után éles).
+  it('every transform item has a real prompt/answer pair and known words', () => {
+    const transformItems = lesson.items.filter((i) => i.kind === 'transform');
+    for (const item of transformItems) {
+      if (item.kind !== 'transform') continue;
+      expect(item.prompt.es.trim()).not.toBe(item.answer.trim());
+      expect(item.tense.from).not.toBe(item.tense.to);
+      expect(item.wordIds.length).toBeGreaterThan(0);
     }
   });
 
