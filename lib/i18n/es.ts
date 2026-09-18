@@ -661,5 +661,6 @@ export default {
     resetConfirmYes: 'Restablecer',
     undo: 'Deshacer',
     dontLearn: 'No aprender esta',
+    next: 'Siguiente',
   },
 };
