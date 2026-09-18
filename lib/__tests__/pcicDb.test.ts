@@ -20,6 +20,14 @@ describe('pcic_cards (memory db)', () => {
     expect(cards2.find(c => c.itemId === 'b1-0001')).toEqual(updated);
   });
 
+  it('SZ3: known:true kártya known:true-ként jön vissza', async () => {
+    await db.resetPcicCards();
+    const card = { ...sm2NewCard('b1-0002'), state: 'review' as const, interval: 60, due: '2026-11-17', introducedAt: '2026-09-18', known: true };
+    await db.upsertPcicCard(card);
+    const cards = await db.getPcicCards();
+    expect(cards.find(c => c.itemId === 'b1-0002')).toEqual(card);
+  });
+
   it('getPcicStats számol total/newIntroducedToday/dueToday/learned', async () => {
     await db.resetPcicCards();
     await db.upsertPcicCard({ ...sm2NewCard('s1'), state: 'review', interval: 25, due: '2026-09-18', introducedAt: '2026-08-01' });

@@ -12,7 +12,7 @@ import { speechLang } from '@/lib/languages';
 import { localDateString } from '@/lib/usageStats';
 import { PCIC_ITEMS, findPcicItem } from '@/data/pcic';
 import { gradePcicAnswer, type PcicGrade } from '@/lib/pcicMatch';
-import { sm2Review, sm2Preview, pickSm2Session, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
+import { sm2Review, sm2Preview, pickSm2Session, sm2MarkKnown, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
 import { answerInputProps } from '@/lib/inputProps';
@@ -129,6 +129,18 @@ export default function PcicScreen() {
     setLastGraded(null);
   };
 
+  const handleDontLearn = async () => {
+    if (!current) return;
+    const before = { ...current };
+    const next = sm2MarkKnown(current, today);
+    await getDb().upsertPcicCard(next);
+    setAllCards((prev) => new Map(prev).set(next.itemId, next));
+    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew: false, g: 'good', counted: false });
+    setQueue((prev) => requeueAfterGrade(prev, next, today));
+    setTypedAnswer('');
+    setGrade(null);
+  };
+
   const handleReset = () => {
     const doReset = async () => {
       await getDb().resetPcicCards();
@@ -227,6 +239,10 @@ export default function PcicScreen() {
             </View>
           </View>
         )}
+      </Pressable>
+
+      <Pressable onPress={handleDontLearn} hitSlop={8}>
+        <Text style={[styles.dontLearn, { color: colors.tabIconDefault }]}>{s.pcic.dontLearn}</Text>
       </Pressable>
 
       {!grade ? (
@@ -360,6 +376,11 @@ const styles = StyleSheet.create({
   correctAnswer: {
     fontSize: 22,
     fontWeight: '600',
+  },
+  dontLearn: {
+    fontSize: 13,
+    textAlign: 'right',
+    marginBottom: 8,
   },
   checkBtn: {
     alignSelf: 'stretch',

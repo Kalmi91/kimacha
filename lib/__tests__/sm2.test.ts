@@ -1,6 +1,6 @@
 // PLAN-pcic 4. lépés: SM-2 (Anki-módszerű) ütemező tiszta függvényei.
 
-import { sm2NewCard, sm2Review, sm2Preview, pickSm2Session, addDays, type Sm2Card } from '../sm2';
+import { sm2NewCard, sm2Review, sm2Preview, pickSm2Session, sm2MarkKnown, addDays, KNOWN_INTERVAL_DAYS, type Sm2Card } from '../sm2';
 
 const TODAY = '2026-09-18';
 const TOMORROW = addDays(TODAY, 1);
@@ -177,6 +177,29 @@ describe('pickSm2Session', () => {
     const earlier = reviewCard({ itemId: 'r-earlier', due: addDays(TODAY, -3) });
     const session = pickSm2Session([later, earlier], [], TODAY, 20);
     expect(session.map(c => c.itemId)).toEqual(['r-earlier', 'r-later']);
+  });
+});
+
+describe('sm2MarkKnown', () => {
+  it('new kártyát review-ra állítja, interval KNOWN_INTERVAL_DAYS, ease változatlan, known true', () => {
+    const c0 = sm2NewCard('b1-0001');
+    const known = sm2MarkKnown(c0, TODAY);
+    expect(known.state).toBe('review');
+    expect(known.step).toBe(0);
+    expect(known.interval).toBe(KNOWN_INTERVAL_DAYS);
+    expect(known.due).toBe(addDays(TODAY, KNOWN_INTERVAL_DAYS));
+    expect(known.ease).toBe(2.5);
+    expect(known.known).toBe(true);
+    expect(known.introducedAt).toBe(TODAY);
+  });
+
+  it('review kártyánál az ease marad', () => {
+    const c0 = reviewCard({ ease: 2.1 });
+    const known = sm2MarkKnown(c0, TODAY);
+    expect(known.ease).toBe(2.1);
+    expect(known.state).toBe('review');
+    expect(known.interval).toBe(KNOWN_INTERVAL_DAYS);
+    expect(known.known).toBe(true);
   });
 });
 

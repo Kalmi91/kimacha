@@ -660,5 +660,6 @@ export default {
     resetConfirmMessage: 'Das löscht den gesamten PCIC-Fortschritt. Bist du sicher?',
     resetConfirmYes: 'Zurücksetzen',
     undo: 'Rückgängig',
+    dontLearn: 'Nicht lernen',
   },
 };
