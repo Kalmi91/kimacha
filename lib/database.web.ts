@@ -5,6 +5,7 @@ import { rankSentencesByWordWeakness, sentenceSlotCount, type WordWeakness } fro
 import { WORD_MERGES } from './wordMerges';
 import { LAPS, type Lap } from './lap';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
+import type { Sm2Card } from './sm2';
 
 export interface DB {
   ensureCard(wordId: number, type: string): Promise<void>;
@@ -93,6 +94,11 @@ export interface DB {
   setGameSettings(gameId: string, settings: Record<string, unknown>): Promise<void>;
   getGameProgress(gameId: string): Promise<{ itemId: string; state: string; data: unknown }[]>;
   setGameProgress(gameId: string, itemId: string, state: string, data?: unknown): Promise<void>;
+  // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól
+  getPcicCards(): Promise<Sm2Card[]>;
+  upsertPcicCard(card: Sm2Card): Promise<void>;
+  getPcicStats(today: string): Promise<{ total: number; newIntroducedToday: number; dueToday: number; learned: number }>;
+  resetPcicCards(): Promise<void>;
   exportAll(): Promise<BackupPayload>;
   importAll(payload: BackupPayload): Promise<void>;
 }
@@ -780,6 +786,33 @@ class MemoryDB implements DB {
 
   async setGameProgress(gameId: string, itemId: string, state: string, data?: unknown) {
     this.gameProgressFor(gameId).set(itemId, { state, data });
+  }
+
+  // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól. Nem
+  // pair-hez kötött (a fül csak es→en tételekkel dolgozik), session-scoped
+  // Map, mint a többi web-only állapot ebben a fájlban.
+  private pcicCards: Map<string, Sm2Card> = new Map();
+
+  async getPcicCards(): Promise<Sm2Card[]> {
+    return [...this.pcicCards.values()].map(c => ({ ...c }));
+  }
+
+  async upsertPcicCard(card: Sm2Card): Promise<void> {
+    this.pcicCards.set(card.itemId, { ...card });
+  }
+
+  async getPcicStats(today: string): Promise<{ total: number; newIntroducedToday: number; dueToday: number; learned: number }> {
+    const cards = [...this.pcicCards.values()];
+    return {
+      total: cards.length,
+      newIntroducedToday: cards.filter(c => c.introducedAt === today).length,
+      dueToday: cards.filter(c => (c.state === 'review' || c.state === 'learning') && c.due <= today).length,
+      learned: cards.filter(c => c.state === 'review' && c.interval >= 21).length,
+    };
+  }
+
+  async resetPcicCards(): Promise<void> {
+    this.pcicCards.clear();
   }
 
   // Q0: full learning-state backup. Memory state is serialized into the same

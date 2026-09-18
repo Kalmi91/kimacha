@@ -1,0 +1,3597 @@
+[
+  {
+    "id": "b1-c303fda0",
+    "order": 0,
+    "es": "vida",
+    "kind": "word",
+    "source": "08",
+    "section": "1.1. Existencia, inexistencia"
+  },
+  {
+    "id": "b1-bcebd602",
+    "order": 1,
+    "es": "muerte",
+    "kind": "word",
+    "source": "08",
+    "section": "1.1. Existencia, inexistencia"
+  },
+  {
+    "id": "b1-be08bced",
+    "order": 11,
+    "es": "producir",
+    "kind": "word",
+    "source": "08",
+    "section": "1.1. Existencia, inexistencia"
+  },
+  {
+    "id": "b1-f23d6c0a",
+    "order": 12,
+    "es": "producir zapatillas",
+    "kind": "phrase",
+    "source": "08",
+    "section": "1.1. Existencia, inexistencia",
+    "headword": "b1-be08bced"
+  },
+  {
+    "id": "b1-49a6d530",
+    "order": 20,
+    "es": "(des)aparecer",
+    "kind": "word",
+    "source": "08",
+    "section": "1.2. Presencia, ausencia"
+  },
+  {
+    "id": "b1-8af628d0",
+    "order": 32,
+    "es": "ponerse/estar al teléfono",
+    "kind": "phrase",
+    "source": "08",
+    "section": "1.3. Disponibilidad, no disponibilidad"
+  },
+  {
+    "id": "b1-3dc1c4d7",
+    "order": 33,
+    "es": "Ahora mismo no se puede poner, ¿quieres dejar algún recado?",
+    "kind": "sentence",
+    "source": "08",
+    "section": "1.3. Disponibilidad, no disponibilidad",
+    "headword": "b1-8af628d0"
+  },
+  {
+    "id": "b1-291fb1b8",
+    "order": 46,
+    "es": "parecer",
+    "kind": "word",
+    "source": "08",
+    "section": "1.4. Cualidad general"
+  },
+  {
+    "id": "b1-afd0e612",
+    "order": 47,
+    "es": "Este libro parece interesante.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "1.4. Cualidad general",
+    "headword": "b1-291fb1b8"
+  },
+  {
+    "id": "b1-24b18775",
+    "order": 59,
+    "es": "cancelar una visita",
+    "kind": "phrase",
+    "source": "08",
+    "section": "1.5. Acontecimiento",
+    "headword": "b1-62b1466c"
+  },
+  {
+    "id": "b1-642f399b",
+    "order": 66,
+    "es": "estar claro",
+    "kind": "phrase",
+    "source": "08",
+    "section": "1.6. Certeza, incertidumbre"
+  },
+  {
+    "id": "b1-e40cb318",
+    "order": 78,
+    "es": "realista",
+    "kind": "word",
+    "source": "08",
+    "section": "1.7. Realidad, ficción"
+  },
+  {
+    "id": "b1-b61e6b6b",
+    "order": 84,
+    "es": "depender de",
+    "kind": "phrase",
+    "source": "08",
+    "section": "1.8. Necesidad, contingencia, obligación"
+  },
+  {
+    "id": "b1-d73ef924",
+    "order": 91,
+    "es": "original",
+    "kind": "word",
+    "source": "08",
+    "section": "1.9. Generalidad, especificidad"
+  },
+  {
+    "id": "b1-1ce19627",
+    "order": 92,
+    "es": "Es una novela muy original.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "1.9. Generalidad, especificidad",
+    "headword": "b1-d73ef924"
+  },
+  {
+    "id": "b1-2f855c0d",
+    "order": 102,
+    "es": "en total",
+    "kind": "phrase",
+    "source": "08",
+    "section": "2.1. Cantidad numérica"
+  },
+  {
+    "id": "b1-25185f6c",
+    "order": 103,
+    "es": "¿Cuánto es en total?",
+    "kind": "sentence",
+    "source": "08",
+    "section": "2.1. Cantidad numérica",
+    "headword": "b1-2f855c0d"
+  },
+  {
+    "id": "b1-17dfb06a",
+    "order": 104,
+    "es": "Había 150 personas en total.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "2.1. Cantidad numérica",
+    "headword": "b1-2f855c0d"
+  },
+  {
+    "id": "b1-ac520f61",
+    "order": 117,
+    "es": "aumentar",
+    "kind": "word",
+    "source": "08",
+    "section": "2.2. Cantidad relativa"
+  },
+  {
+    "id": "b1-40a15edd",
+    "order": 118,
+    "es": "disminuir",
+    "kind": "word",
+    "source": "08",
+    "section": "2.2. Cantidad relativa"
+  },
+  {
+    "id": "b1-1149294f",
+    "order": 131,
+    "es": "subida",
+    "kind": "word",
+    "source": "08",
+    "section": "2.3. Aumento, disminución"
+  },
+  {
+    "id": "b1-04d84545",
+    "order": 132,
+    "es": "bajada",
+    "kind": "word",
+    "source": "08",
+    "section": "2.3. Aumento, disminución"
+  },
+  {
+    "id": "b1-1feea27e",
+    "order": 133,
+    "es": "una subida de los precios",
+    "kind": "phrase",
+    "source": "08",
+    "section": "2.3. Aumento, disminución",
+    "headword": "b1-1149294f"
+  },
+  {
+    "id": "b1-84ea39ca",
+    "order": 144,
+    "es": "equilibrado",
+    "kind": "word",
+    "source": "08",
+    "section": "2.4. Proporción"
+  },
+  {
+    "id": "b1-488b5ebd",
+    "order": 145,
+    "es": "una dieta equilibrada",
+    "kind": "phrase",
+    "source": "08",
+    "section": "2.4. Proporción",
+    "headword": "b1-84ea39ca"
+  },
+  {
+    "id": "b1-ff3b50b1",
+    "order": 155,
+    "es": "medida",
+    "kind": "word",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "b1-d2b85aff",
+    "order": 156,
+    "es": "Tiene las mismas medidas.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "2.6. Medidas",
+    "headword": "b1-ff3b50b1"
+  },
+  {
+    "id": "b1-c1d6feff",
+    "order": 170,
+    "es": "menor",
+    "kind": "word",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "b1-e6a04b67",
+    "order": 171,
+    "es": "mayor",
+    "kind": "word",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "b1-bf7e1133",
+    "order": 180,
+    "es": "de tamaño grande",
+    "kind": "phrase",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "b1-d66d448f",
+    "order": 181,
+    "es": "de tamaño pequeño",
+    "kind": "phrase",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "b1-c81d776f",
+    "order": 182,
+    "es": "de tamaño mediano",
+    "kind": "phrase",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "b1-1ad2e6ae",
+    "order": 183,
+    "es": "de tamaño normal",
+    "kind": "phrase",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "b1-04af73a0",
+    "order": 194,
+    "es": "poco a poco",
+    "kind": "phrase",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "b1-a44fd074",
+    "order": 202,
+    "es": "medir + [número cardinal] + metros cuadrados",
+    "kind": "pattern",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "b1-da53fee8",
+    "order": 203,
+    "es": "El jardín mide 200 metros cuadrados.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "2.6. Medidas",
+    "headword": "b1-a44fd074"
+  },
+  {
+    "id": "b1-28d9e3a7",
+    "order": 215,
+    "es": "(des)congelar",
+    "kind": "word",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "b1-69ac05d5",
+    "order": 216,
+    "es": "hervir",
+    "kind": "word",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "b1-5185794d",
+    "order": 217,
+    "es": "cocer",
+    "kind": "word",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "b1-a3eacb0c",
+    "order": 218,
+    "es": "Hay que descongelar el pescado.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "2.6. Medidas",
+    "headword": "b1-28d9e3a7"
+  },
+  {
+    "id": "b1-67c92510",
+    "order": 219,
+    "es": "La leche está a punto de hervir.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "2.6. Medidas",
+    "headword": "b1-28d9e3a7"
+  },
+  {
+    "id": "b1-ef8afea3",
+    "order": 227,
+    "es": "del tiempo",
+    "kind": "phrase",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "b1-9dd0dcb6",
+    "order": 228,
+    "es": "un agua del tiempo",
+    "kind": "phrase",
+    "source": "08",
+    "section": "2.6. Medidas",
+    "headword": "b1-ef8afea3"
+  },
+  {
+    "id": "b1-53ce7a91",
+    "order": 233,
+    "es": "en/por ninguna parte",
+    "kind": "phrase",
+    "source": "08",
+    "section": "3.1. Localización"
+  },
+  {
+    "id": "b1-07905604",
+    "order": 234,
+    "es": "No lo he visto en ninguna parte.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "3.1. Localización",
+    "headword": "b1-53ce7a91"
+  },
+  {
+    "id": "b1-016009a8",
+    "order": 242,
+    "es": "izquierdo",
+    "kind": "word",
+    "source": "08",
+    "section": "3.3. Posición relativa"
+  },
+  {
+    "id": "b1-47207a68",
+    "order": 243,
+    "es": "derecho",
+    "kind": "word",
+    "source": "08",
+    "section": "3.3. Posición relativa"
+  },
+  {
+    "id": "b1-c9944071",
+    "order": 244,
+    "es": "el lado izquierdo",
+    "kind": "phrase",
+    "source": "08",
+    "section": "3.3. Posición relativa",
+    "headword": "b1-016009a8"
+  },
+  {
+    "id": "b1-970789ac",
+    "order": 252,
+    "es": "en el medio (de)",
+    "kind": "phrase",
+    "source": "08",
+    "section": "3.3. Posición relativa"
+  },
+  {
+    "id": "b1-efb6c818",
+    "order": 260,
+    "es": "Está a 300 metros.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "3.4. Distancia",
+    "headword": "b1-78cc903c"
+  },
+  {
+    "id": "b1-1664f86f",
+    "order": 261,
+    "es": "¿A cuánto está Sevilla de Madrid?",
+    "kind": "sentence",
+    "source": "08",
+    "section": "3.4. Distancia",
+    "headword": "b1-78cc903c"
+  },
+  {
+    "id": "b1-0b38ae75",
+    "order": 266,
+    "es": "salida",
+    "kind": "word",
+    "source": "08",
+    "section": "3.5. Movimiento, estabilidad"
+  },
+  {
+    "id": "b1-3cdb5693",
+    "order": 267,
+    "es": "llegada",
+    "kind": "word",
+    "source": "08",
+    "section": "3.5. Movimiento, estabilidad"
+  },
+  {
+    "id": "b1-1a823e72",
+    "order": 276,
+    "es": "caer(se)",
+    "kind": "word",
+    "source": "08",
+    "section": "3.5. Movimiento, estabilidad"
+  },
+  {
+    "id": "b1-1e592062",
+    "order": 277,
+    "es": "levantar(se)",
+    "kind": "word",
+    "source": "08",
+    "section": "3.5. Movimiento, estabilidad"
+  },
+  {
+    "id": "b1-fbf48b4c",
+    "order": 284,
+    "es": "hacer una pausa",
+    "kind": "phrase",
+    "source": "08",
+    "section": "3.5. Movimiento, estabilidad"
+  },
+  {
+    "id": "b1-d22aed21",
+    "order": 291,
+    "es": "enviar",
+    "kind": "word",
+    "source": "08",
+    "section": "3.6. Orientación, dirección"
+  },
+  {
+    "id": "b1-1aec2faf",
+    "order": 292,
+    "es": "mandar",
+    "kind": "word",
+    "source": "08",
+    "section": "3.6. Orientación, dirección"
+  },
+  {
+    "id": "b1-8868234f",
+    "order": 301,
+    "es": "orden",
+    "kind": "word",
+    "source": "08",
+    "section": "3.7. Orden"
+  },
+  {
+    "id": "b1-7ff2f15b",
+    "order": 302,
+    "es": "cola",
+    "kind": "word",
+    "source": "08",
+    "section": "3.7. Orden"
+  },
+  {
+    "id": "b1-27b523b5",
+    "order": 303,
+    "es": "una cola de gente",
+    "kind": "phrase",
+    "source": "08",
+    "section": "3.7. Orden",
+    "headword": "b1-8868234f"
+  },
+  {
+    "id": "b1-9fd313fc",
+    "order": 316,
+    "es": "finalmente",
+    "kind": "word",
+    "source": "08",
+    "section": "3.7. Orden"
+  },
+  {
+    "id": "b1-c6e77fea",
+    "order": 317,
+    "es": "por último",
+    "kind": "phrase",
+    "source": "08",
+    "section": "3.7. Orden"
+  },
+  {
+    "id": "b1-d899f3b9",
+    "order": 325,
+    "es": "segundo",
+    "kind": "word",
+    "source": "08",
+    "section": "4.1. Referencias generales"
+  },
+  {
+    "id": "b1-33d0ce99",
+    "order": 326,
+    "es": "década",
+    "kind": "word",
+    "source": "08",
+    "section": "4.1. Referencias generales"
+  },
+  {
+    "id": "b1-9b78b020",
+    "order": 327,
+    "es": "siglo",
+    "kind": "word",
+    "source": "08",
+    "section": "4.1. Referencias generales"
+  },
+  {
+    "id": "b1-416a8b90",
+    "order": 328,
+    "es": "La Edad Media duró varios siglos.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "4.1. Referencias generales",
+    "headword": "b1-d899f3b9"
+  },
+  {
+    "id": "b1-9400f497",
+    "order": 329,
+    "es": "Fue en el siglo xx .",
+    "kind": "sentence",
+    "source": "08",
+    "section": "4.1. Referencias generales",
+    "headword": "b1-d899f3b9"
+  },
+  {
+    "id": "b1-4af42a81",
+    "order": 342,
+    "es": "estar a + [fecha]",
+    "kind": "pattern",
+    "source": "08",
+    "section": "4.1. Referencias generales"
+  },
+  {
+    "id": "b1-8a065c24",
+    "order": 343,
+    "es": "¿A qué estamos hoy?",
+    "kind": "sentence",
+    "source": "08",
+    "section": "4.1. Referencias generales",
+    "headword": "b1-4af42a81"
+  },
+  {
+    "id": "b1-b7de8708",
+    "order": 344,
+    "es": "Estamos a 14 de febrero.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "4.1. Referencias generales",
+    "headword": "b1-4af42a81"
+  },
+  {
+    "id": "b1-53c4a067",
+    "order": 356,
+    "es": "en mitad de la noche",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.1. Referencias generales"
+  },
+  {
+    "id": "b1-3abd8346",
+    "order": 357,
+    "es": "Me desperté en mitad de la noche.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "4.1. Referencias generales",
+    "headword": "b1-53c4a067"
+  },
+  {
+    "id": "b1-79a9ae2c",
+    "order": 368,
+    "es": "actualmente",
+    "kind": "word",
+    "source": "08",
+    "section": "4.2. Localización en el tiempo"
+  },
+  {
+    "id": "b1-13861fd8",
+    "order": 380,
+    "es": "pasado",
+    "kind": "word",
+    "source": "08",
+    "section": "4.2. Localización en el tiempo"
+  },
+  {
+    "id": "b1-64c2b8d9",
+    "order": 381,
+    "es": "historia",
+    "kind": "word",
+    "source": "08",
+    "section": "4.2. Localización en el tiempo"
+  },
+  {
+    "id": "b1-53f00206",
+    "order": 382,
+    "es": "tradición",
+    "kind": "word",
+    "source": "08",
+    "section": "4.2. Localización en el tiempo"
+  },
+  {
+    "id": "b1-256580b2",
+    "order": 395,
+    "es": "entonces",
+    "kind": "word",
+    "source": "08",
+    "section": "4.2. Localización en el tiempo"
+  },
+  {
+    "id": "b1-1c2ca078",
+    "order": 396,
+    "es": "Entonces no existían los teléfonos móviles.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "4.2. Localización en el tiempo",
+    "headword": "b1-256580b2"
+  },
+  {
+    "id": "b1-fe790e03",
+    "order": 410,
+    "es": "estar a punto de + infinitivo",
+    "kind": "pattern",
+    "source": "08",
+    "section": "4.2. Localización en el tiempo"
+  },
+  {
+    "id": "b1-528a33f8",
+    "order": 411,
+    "es": "pensar + infinitivo",
+    "kind": "pattern",
+    "source": "08",
+    "section": "4.2. Localización en el tiempo"
+  },
+  {
+    "id": "b1-82e89c1c",
+    "order": 412,
+    "es": "Están a punto de llegar.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "4.2. Localización en el tiempo",
+    "headword": "b1-fe790e03"
+  },
+  {
+    "id": "b1-92b8b933",
+    "order": 413,
+    "es": "Este año pienso hacer un curso de fotografía.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "4.2. Localización en el tiempo",
+    "headword": "b1-fe790e03"
+  },
+  {
+    "id": "b1-518d6664",
+    "order": 418,
+    "es": "al mismo tiempo",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "b1-9f7873ed",
+    "order": 419,
+    "es": "Estudio y trabajo al mismo tiempo.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo",
+    "headword": "b1-518d6664"
+  },
+  {
+    "id": "b1-f46ba926",
+    "order": 441,
+    "es": "un rato después",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "b1-dabb4dc6",
+    "order": 442,
+    "es": "un rato más tarde",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "b1-9c45b360",
+    "order": 443,
+    "es": "un tiempo después",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "b1-2444ad2e",
+    "order": 444,
+    "es": "un tiempo más tarde",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "b1-066bcaeb",
+    "order": 445,
+    "es": "poco rato después",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "b1-12c5a005",
+    "order": 446,
+    "es": "poco rato más tarde",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "b1-7b5a2aa7",
+    "order": 447,
+    "es": "poco tiempo después",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "b1-93b5de42",
+    "order": 448,
+    "es": "poco tiempo más tarde",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "b1-982b70a3",
+    "order": 471,
+    "es": "inmediatamente",
+    "kind": "word",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "b1-0e7b6237",
+    "order": 472,
+    "es": "Salió inmediatamente.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo",
+    "headword": "b1-982b70a3"
+  },
+  {
+    "id": "b1-249156c7",
+    "order": 476,
+    "es": "tardar",
+    "kind": "word",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "b1-79e5b838",
+    "order": 477,
+    "es": "Has tardado mucho.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo",
+    "headword": "b1-249156c7"
+  },
+  {
+    "id": "b1-bde1e39d",
+    "order": 484,
+    "es": "llegar/salir/venir con retraso",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "b1-7b3604e5",
+    "order": 485,
+    "es": "El avión salió con retraso.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo",
+    "headword": "b1-bde1e39d"
+  },
+  {
+    "id": "b1-2f137e76",
+    "order": 493,
+    "es": "al principio",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "b1-14467afb",
+    "order": 494,
+    "es": "Al principio no me di cuenta.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo",
+    "headword": "b1-2f137e76"
+  },
+  {
+    "id": "b1-45fc0d21",
+    "order": 500,
+    "es": "cancelar una cuenta",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo",
+    "headword": "b1-62b1466c"
+  },
+  {
+    "id": "b1-74aa37b1",
+    "order": 509,
+    "es": "al final",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "b1-5ac040c0",
+    "order": 510,
+    "es": "Al final no vino a la fiesta.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo",
+    "headword": "b1-74aa37b1"
+  },
+  {
+    "id": "b1-5cea5d9f",
+    "order": 518,
+    "es": "sin parar",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "b1-cd725836",
+    "order": 519,
+    "es": "Trabaja sin parar.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo",
+    "headword": "b1-5cea5d9f"
+  },
+  {
+    "id": "b1-d7d88964",
+    "order": 533,
+    "es": "plano",
+    "kind": "word",
+    "source": "08",
+    "section": "5.1. Formas y figuras"
+  },
+  {
+    "id": "b1-1e07b9ee",
+    "order": 534,
+    "es": "recto",
+    "kind": "word",
+    "source": "08",
+    "section": "5.1. Formas y figuras"
+  },
+  {
+    "id": "b1-877857ae",
+    "order": 535,
+    "es": "Es plano.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "5.1. Formas y figuras",
+    "headword": "b1-d7d88964"
+  },
+  {
+    "id": "b1-e1100d98",
+    "order": 543,
+    "es": "sólido",
+    "kind": "word",
+    "source": "08",
+    "section": "5.3. Consistencia, resistencia"
+  },
+  {
+    "id": "b1-a553649f",
+    "order": 544,
+    "es": "líquido",
+    "kind": "word",
+    "source": "08",
+    "section": "5.3. Consistencia, resistencia"
+  },
+  {
+    "id": "b1-5536cde8",
+    "order": 550,
+    "es": "suave",
+    "kind": "word",
+    "source": "08",
+    "section": "5.4. Textura"
+  },
+  {
+    "id": "b1-6efb2f76",
+    "order": 556,
+    "es": "pintar",
+    "kind": "word",
+    "source": "08",
+    "section": "5.5. Acabado"
+  },
+  {
+    "id": "b1-1f19332c",
+    "order": 564,
+    "es": "secar(se)",
+    "kind": "word",
+    "source": "08",
+    "section": "5.6. Humedad, sequedad"
+  },
+  {
+    "id": "b1-458bd749",
+    "order": 565,
+    "es": "mojar(se)",
+    "kind": "word",
+    "source": "08",
+    "section": "5.6. Humedad, sequedad"
+  },
+  {
+    "id": "b1-5286c004",
+    "order": 581,
+    "es": "sintético",
+    "kind": "word",
+    "source": "08",
+    "section": "5.7. Materia"
+  },
+  {
+    "id": "b1-11e60b0e",
+    "order": 582,
+    "es": "natural",
+    "kind": "word",
+    "source": "08",
+    "section": "5.7. Materia"
+  },
+  {
+    "id": "b1-ba9dab5e",
+    "order": 586,
+    "es": "luminoso",
+    "kind": "word",
+    "source": "08",
+    "section": "5.8. Visibilidad, visión"
+  },
+  {
+    "id": "b1-c22b7617",
+    "order": 587,
+    "es": "El salón es muy luminoso.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "5.8. Visibilidad, visión",
+    "headword": "b1-ba9dab5e"
+  },
+  {
+    "id": "b1-d2d8d018",
+    "order": 600,
+    "es": "silencioso",
+    "kind": "word",
+    "source": "08",
+    "section": "5.9. Audibilidad, audición"
+  },
+  {
+    "id": "b1-6b03007a",
+    "order": 601,
+    "es": "ruidoso",
+    "kind": "word",
+    "source": "08",
+    "section": "5.9. Audibilidad, audición"
+  },
+  {
+    "id": "b1-c07679c2",
+    "order": 612,
+    "es": "estar/hablar/sonar alto",
+    "kind": "phrase",
+    "source": "08",
+    "section": "5.9. Audibilidad, audición"
+  },
+  {
+    "id": "b1-f320949d",
+    "order": 613,
+    "es": "estar/hablar/sonar bajo",
+    "kind": "phrase",
+    "source": "08",
+    "section": "5.9. Audibilidad, audición"
+  },
+  {
+    "id": "b1-e01a8565",
+    "order": 614,
+    "es": "¿Puedes hablar más bajo?",
+    "kind": "sentence",
+    "source": "08",
+    "section": "5.9. Audibilidad, audición",
+    "headword": "b1-c07679c2"
+  },
+  {
+    "id": "b1-e8fe3fd2",
+    "order": 615,
+    "es": "La tele está demasiado alta.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "5.9. Audibilidad, audición",
+    "headword": "b1-c07679c2"
+  },
+  {
+    "id": "b1-68a24467",
+    "order": 626,
+    "es": "saber bien",
+    "kind": "phrase",
+    "source": "08",
+    "section": "5.10. Sabor"
+  },
+  {
+    "id": "b1-7c9c3454",
+    "order": 627,
+    "es": "saber mal",
+    "kind": "phrase",
+    "source": "08",
+    "section": "5.10. Sabor"
+  },
+  {
+    "id": "b1-11205882",
+    "order": 628,
+    "es": "saber fenomenal",
+    "kind": "phrase",
+    "source": "08",
+    "section": "5.10. Sabor"
+  },
+  {
+    "id": "b1-6e272c59",
+    "order": 629,
+    "es": "saber fatal",
+    "kind": "phrase",
+    "source": "08",
+    "section": "5.10. Sabor"
+  },
+  {
+    "id": "b1-71ea58aa",
+    "order": 637,
+    "es": "perfume",
+    "kind": "word",
+    "source": "08",
+    "section": "5.11. Olor"
+  },
+  {
+    "id": "b1-bdf3680b",
+    "order": 644,
+    "es": "pintado de + [color]",
+    "kind": "pattern",
+    "source": "08",
+    "section": "5.12. Color"
+  },
+  {
+    "id": "b1-728a34f1",
+    "order": 645,
+    "es": "La cocina está pintada de verde",
+    "kind": "phrase",
+    "source": "08",
+    "section": "5.12. Color",
+    "headword": "b1-bdf3680b"
+  },
+  {
+    "id": "b1-b538fc18",
+    "order": 652,
+    "es": "atasco",
+    "kind": "word",
+    "source": "08",
+    "section": "5.14. Accesibilidad"
+  },
+  {
+    "id": "b1-c45d3aea",
+    "order": 666,
+    "es": "parecerle algo (a alguien)",
+    "kind": "phrase",
+    "source": "08",
+    "section": "6.1. Evaluación general"
+  },
+  {
+    "id": "b1-6398f7cd",
+    "order": 667,
+    "es": "Me parece muy divertido.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "6.1. Evaluación general",
+    "headword": "b1-c45d3aea"
+  },
+  {
+    "id": "b1-9aab5ba7",
+    "order": 678,
+    "es": "pagar en metálico",
+    "kind": "phrase",
+    "source": "08",
+    "section": "6.2. Valor, precio"
+  },
+  {
+    "id": "b1-d37d277d",
+    "order": 679,
+    "es": "pagar con cheque",
+    "kind": "phrase",
+    "source": "08",
+    "section": "6.2. Valor, precio"
+  },
+  {
+    "id": "b1-b4dd5f50",
+    "order": 687,
+    "es": "estar/parecerle (a alguien) mal",
+    "kind": "phrase",
+    "source": "08",
+    "section": "6.5. Aceptabilidad"
+  },
+  {
+    "id": "b1-5c39abea",
+    "order": 688,
+    "es": "estar/parecerle (a alguien) bien",
+    "kind": "phrase",
+    "source": "08",
+    "section": "6.5. Aceptabilidad"
+  },
+  {
+    "id": "b1-816f2469",
+    "order": 689,
+    "es": "estar/parecerle (a alguien) perfecto",
+    "kind": "phrase",
+    "source": "08",
+    "section": "6.5. Aceptabilidad"
+  },
+  {
+    "id": "b1-01287a6b",
+    "order": 698,
+    "es": "repasar",
+    "kind": "word",
+    "source": "08",
+    "section": "6.8. Corrección"
+  },
+  {
+    "id": "b1-eced8cc0",
+    "order": 704,
+    "es": "interés",
+    "kind": "word",
+    "source": "08",
+    "section": "6.10. Interés"
+  },
+  {
+    "id": "b1-b4bf50d7",
+    "order": 714,
+    "es": "intentar",
+    "kind": "word",
+    "source": "08",
+    "section": "6.11. Éxito, logro"
+  },
+  {
+    "id": "b1-6fc45319",
+    "order": 715,
+    "es": "conseguir",
+    "kind": "word",
+    "source": "08",
+    "section": "6.11. Éxito, logro"
+  },
+  {
+    "id": "b1-5d38ad0c",
+    "order": 721,
+    "es": "ser bueno en",
+    "kind": "phrase",
+    "source": "08",
+    "section": "6.13. Capacidad, competencia"
+  },
+  {
+    "id": "b1-3183e864",
+    "order": 722,
+    "es": "ser bueno para",
+    "kind": "phrase",
+    "source": "08",
+    "section": "6.13. Capacidad, competencia"
+  },
+  {
+    "id": "b1-6ebdfd55",
+    "order": 723,
+    "es": "ser bueno con",
+    "kind": "phrase",
+    "source": "08",
+    "section": "6.13. Capacidad, competencia"
+  },
+  {
+    "id": "b1-d121611e",
+    "order": 724,
+    "es": "ser malo en",
+    "kind": "phrase",
+    "source": "08",
+    "section": "6.13. Capacidad, competencia"
+  },
+  {
+    "id": "b1-6067dc58",
+    "order": 725,
+    "es": "ser malo para",
+    "kind": "phrase",
+    "source": "08",
+    "section": "6.13. Capacidad, competencia"
+  },
+  {
+    "id": "b1-38b8888d",
+    "order": 726,
+    "es": "ser malo con",
+    "kind": "phrase",
+    "source": "08",
+    "section": "6.13. Capacidad, competencia"
+  },
+  {
+    "id": "b1-f5f73317",
+    "order": 732,
+    "es": "¡Me da igual!",
+    "kind": "phrase",
+    "source": "08",
+    "section": "6.14. Importancia"
+  },
+  {
+    "id": "b1-76625061",
+    "order": 741,
+    "es": "idea",
+    "kind": "word",
+    "source": "08",
+    "section": "7.1. Reflexión, conocimiento"
+  },
+  {
+    "id": "b1-6877183a",
+    "order": 742,
+    "es": "duda",
+    "kind": "word",
+    "source": "08",
+    "section": "7.1. Reflexión, conocimiento"
+  },
+  {
+    "id": "b1-b05f8bb9",
+    "order": 743,
+    "es": "sueño",
+    "kind": "word",
+    "source": "08",
+    "section": "7.1. Reflexión, conocimiento"
+  },
+  {
+    "id": "b1-8abfee8b",
+    "order": 744,
+    "es": "cambiar de idea",
+    "kind": "phrase",
+    "source": "08",
+    "section": "7.1. Reflexión, conocimiento",
+    "headword": "b1-76625061"
+  },
+  {
+    "id": "b1-6af79e4f",
+    "order": 752,
+    "es": "creer en",
+    "kind": "phrase",
+    "source": "08",
+    "section": "7.1. Reflexión, conocimiento"
+  },
+  {
+    "id": "b1-18f79971",
+    "order": 763,
+    "es": "redacción",
+    "kind": "word",
+    "source": "08",
+    "section": "7.2. Expresión verbal"
+  },
+  {
+    "id": "b1-cdd74e19",
+    "order": 764,
+    "es": "resumen",
+    "kind": "word",
+    "source": "08",
+    "section": "7.2. Expresión verbal"
+  },
+  {
+    "id": "b1-f98fdb1a",
+    "order": 771,
+    "es": "entrevistar",
+    "kind": "word",
+    "source": "08",
+    "section": "7.2. Expresión verbal"
+  },
+  {
+    "id": "b1-d296b93c",
+    "order": 781,
+    "es": "músculo",
+    "kind": "word",
+    "source": "09",
+    "section": "1.1. Partes del cuerpo"
+  },
+  {
+    "id": "b1-e7d715d8",
+    "order": 782,
+    "es": "hueso",
+    "kind": "word",
+    "source": "09",
+    "section": "1.1. Partes del cuerpo"
+  },
+  {
+    "id": "b1-1824d6bc",
+    "order": 783,
+    "es": "piel",
+    "kind": "word",
+    "source": "09",
+    "section": "1.1. Partes del cuerpo"
+  },
+  {
+    "id": "b1-f9857bd4",
+    "order": 797,
+    "es": "parecerse a su padre",
+    "kind": "phrase",
+    "source": "09",
+    "section": "1.2. Características físicas"
+  },
+  {
+    "id": "b1-7379aa93",
+    "order": 798,
+    "es": "parecerse a su hermano",
+    "kind": "phrase",
+    "source": "09",
+    "section": "1.2. Características físicas"
+  },
+  {
+    "id": "b1-a41867de",
+    "order": 799,
+    "es": "parecerse entre ellos",
+    "kind": "phrase",
+    "source": "09",
+    "section": "1.2. Características físicas"
+  },
+  {
+    "id": "b1-851c2e6d",
+    "order": 815,
+    "es": "caminar",
+    "kind": "word",
+    "source": "09",
+    "section": "1.3. Acciones y posiciones que se realizan con el cuerpo"
+  },
+  {
+    "id": "b1-9a2487ca",
+    "order": 816,
+    "es": "dar un paseo",
+    "kind": "phrase",
+    "source": "09",
+    "section": "1.3. Acciones y posiciones que se realizan con el cuerpo"
+  },
+  {
+    "id": "b1-6516e054",
+    "order": 824,
+    "es": "levantar/bajar/mover las manos",
+    "kind": "phrase",
+    "source": "09",
+    "section": "1.3. Acciones y posiciones que se realizan con el cuerpo"
+  },
+  {
+    "id": "b1-85e68be3",
+    "order": 825,
+    "es": "levantar/bajar/mover los brazos",
+    "kind": "phrase",
+    "source": "09",
+    "section": "1.3. Acciones y posiciones que se realizan con el cuerpo"
+  },
+  {
+    "id": "b1-582609bd",
+    "order": 826,
+    "es": "levantar/bajar/mover la cabeza",
+    "kind": "phrase",
+    "source": "09",
+    "section": "1.3. Acciones y posiciones que se realizan con el cuerpo"
+  },
+  {
+    "id": "b1-28072304",
+    "order": 833,
+    "es": "tomar la píldora",
+    "kind": "phrase",
+    "source": "09",
+    "section": "1.4. Ciclo de la vida y reproducción"
+  },
+  {
+    "id": "b1-bdadcd93",
+    "order": 834,
+    "es": "usar preservativos",
+    "kind": "phrase",
+    "source": "09",
+    "section": "1.4. Ciclo de la vida y reproducción"
+  },
+  {
+    "id": "b1-88bae8b4",
+    "order": 850,
+    "es": "tener mucho carácter",
+    "kind": "phrase",
+    "source": "09",
+    "section": "2.1. Carácter y personalidad"
+  },
+  {
+    "id": "b1-289cd4df",
+    "order": 851,
+    "es": "tener poco carácter",
+    "kind": "phrase",
+    "source": "09",
+    "section": "2.1. Carácter y personalidad"
+  },
+  {
+    "id": "b1-fd2a067a",
+    "order": 852,
+    "es": "tener mal carácter",
+    "kind": "phrase",
+    "source": "09",
+    "section": "2.1. Carácter y personalidad"
+  },
+  {
+    "id": "b1-0a3dd583",
+    "order": 872,
+    "es": "aburrirse",
+    "kind": "word",
+    "source": "09",
+    "section": "2.2. Sentimientos y estados de ánimo"
+  },
+  {
+    "id": "b1-9a75bad3",
+    "order": 873,
+    "es": "deprimirse",
+    "kind": "word",
+    "source": "09",
+    "section": "2.2. Sentimientos y estados de ánimo"
+  },
+  {
+    "id": "b1-bc97e299",
+    "order": 874,
+    "es": "enfadarse",
+    "kind": "word",
+    "source": "09",
+    "section": "2.2. Sentimientos y estados de ánimo"
+  },
+  {
+    "id": "b1-d50e95d9",
+    "order": 885,
+    "es": "tocar/sentir calor",
+    "kind": "phrase",
+    "source": "09",
+    "section": "2.3. Sensaciones y percepciones físicas"
+  },
+  {
+    "id": "b1-beaed712",
+    "order": 886,
+    "es": "tocar/sentir frío",
+    "kind": "phrase",
+    "source": "09",
+    "section": "2.3. Sensaciones y percepciones físicas"
+  },
+  {
+    "id": "b1-0ecb3207",
+    "order": 887,
+    "es": "tocar/sentir sueño",
+    "kind": "phrase",
+    "source": "09",
+    "section": "2.3. Sensaciones y percepciones físicas"
+  },
+  {
+    "id": "b1-1e53b466",
+    "order": 888,
+    "es": "tocar/sentir sed",
+    "kind": "phrase",
+    "source": "09",
+    "section": "2.3. Sensaciones y percepciones físicas"
+  },
+  {
+    "id": "b1-da132554",
+    "order": 889,
+    "es": "tocar/sentir hambre",
+    "kind": "phrase",
+    "source": "09",
+    "section": "2.3. Sensaciones y percepciones físicas"
+  },
+  {
+    "id": "b1-872e2c0c",
+    "order": 905,
+    "es": "varón",
+    "kind": "word",
+    "source": "09",
+    "section": "3.1. Datos personales"
+  },
+  {
+    "id": "b1-05944245",
+    "order": 906,
+    "es": "hembra",
+    "kind": "word",
+    "source": "09",
+    "section": "3.1. Datos personales"
+  },
+  {
+    "id": "b1-8e485043",
+    "order": 917,
+    "es": "divorcio",
+    "kind": "word",
+    "source": "09",
+    "section": "3.1. Datos personales"
+  },
+  {
+    "id": "b1-0f65a52e",
+    "order": 918,
+    "es": "separación",
+    "kind": "word",
+    "source": "09",
+    "section": "3.1. Datos personales"
+  },
+  {
+    "id": "b1-8dee3d65",
+    "order": 925,
+    "es": "tener/solicitar/renovar/perder un documento",
+    "kind": "phrase",
+    "source": "09",
+    "section": "3.2. Documentación"
+  },
+  {
+    "id": "b1-875cd542",
+    "order": 935,
+    "es": "adoptar un niño",
+    "kind": "phrase",
+    "source": "09",
+    "section": "4.1. Relaciones familiares"
+  },
+  {
+    "id": "b1-97039d56",
+    "order": 936,
+    "es": "educar a un hijo",
+    "kind": "phrase",
+    "source": "09",
+    "section": "4.1. Relaciones familiares"
+  },
+  {
+    "id": "b1-cb2f153b",
+    "order": 947,
+    "es": "crecer feliz",
+    "kind": "phrase",
+    "source": "09",
+    "section": "4.1. Relaciones familiares"
+  },
+  {
+    "id": "b1-bc1cf455",
+    "order": 948,
+    "es": "crecer fuerte",
+    "kind": "phrase",
+    "source": "09",
+    "section": "4.1. Relaciones familiares"
+  },
+  {
+    "id": "b1-35257946",
+    "order": 949,
+    "es": "crecer sano",
+    "kind": "phrase",
+    "source": "09",
+    "section": "4.1. Relaciones familiares"
+  },
+  {
+    "id": "b1-c716728e",
+    "order": 961,
+    "es": "empezar/acabar/terminar una relación",
+    "kind": "phrase",
+    "source": "09",
+    "section": "4.2. Relaciones sociales"
+  },
+  {
+    "id": "b1-ea676d9e",
+    "order": 970,
+    "es": "abrazarse",
+    "kind": "word",
+    "source": "09",
+    "section": "4.2. Relaciones sociales"
+  },
+  {
+    "id": "b1-1dc6e4da",
+    "order": 971,
+    "es": "besarse",
+    "kind": "word",
+    "source": "09",
+    "section": "4.2. Relaciones sociales"
+  },
+  {
+    "id": "b1-ea12e0e7",
+    "order": 981,
+    "es": "despedida de soltero",
+    "kind": "phrase",
+    "source": "09",
+    "section": "4.3. Celebraciones y actos familiares, sociales y religiosos"
+  },
+  {
+    "id": "b1-497cc59c",
+    "order": 982,
+    "es": "boda",
+    "kind": "word",
+    "source": "09",
+    "section": "4.3. Celebraciones y actos familiares, sociales y religiosos"
+  },
+  {
+    "id": "b1-c678534f",
+    "order": 989,
+    "es": "hacer un regalo",
+    "kind": "phrase",
+    "source": "09",
+    "section": "4.3. Celebraciones y actos familiares, sociales y religiosos"
+  },
+  {
+    "id": "b1-1749d7a5",
+    "order": 996,
+    "es": "tener una buena actitud",
+    "kind": "phrase",
+    "source": "09",
+    "section": "4.4. Actitudes y formas de comportarse"
+  },
+  {
+    "id": "b1-8e8e4620",
+    "order": 997,
+    "es": "tener una mala actitud",
+    "kind": "phrase",
+    "source": "09",
+    "section": "4.4. Actitudes y formas de comportarse"
+  },
+  {
+    "id": "b1-3b09c4c1",
+    "order": 1008,
+    "es": "alimentar(se)",
+    "kind": "word",
+    "source": "09",
+    "section": "5.1. Dieta y nutrición"
+  },
+  {
+    "id": "b1-03bd8995",
+    "order": 1017,
+    "es": "tomar una copa",
+    "kind": "phrase",
+    "source": "09",
+    "section": "5.2. Bebida"
+  },
+  {
+    "id": "b1-16c96436",
+    "order": 1022,
+    "es": "embutido",
+    "kind": "word",
+    "source": "09",
+    "section": "5.3. Alimentos"
+  },
+  {
+    "id": "b1-c56e8e71",
+    "order": 1023,
+    "es": "lomo",
+    "kind": "word",
+    "source": "09",
+    "section": "5.3. Alimentos"
+  },
+  {
+    "id": "b1-c31b095b",
+    "order": 1024,
+    "es": "salchichón",
+    "kind": "word",
+    "source": "09",
+    "section": "5.3. Alimentos"
+  },
+  {
+    "id": "b1-8b4b08b8",
+    "order": 1025,
+    "es": "chorizo",
+    "kind": "word",
+    "source": "09",
+    "section": "5.3. Alimentos"
+  },
+  {
+    "id": "b1-1248f592",
+    "order": 1038,
+    "es": "leche entera",
+    "kind": "phrase",
+    "source": "09",
+    "section": "5.3. Alimentos"
+  },
+  {
+    "id": "b1-e956b78f",
+    "order": 1039,
+    "es": "leche descremada",
+    "kind": "phrase",
+    "source": "09",
+    "section": "5.3. Alimentos"
+  },
+  {
+    "id": "b1-03f09ed0",
+    "order": 1040,
+    "es": "leche desnatada",
+    "kind": "phrase",
+    "source": "09",
+    "section": "5.3. Alimentos"
+  },
+  {
+    "id": "b1-d683c820",
+    "order": 1041,
+    "es": "nata",
+    "kind": "word",
+    "source": "09",
+    "section": "5.3. Alimentos"
+  },
+  {
+    "id": "b1-9a3c60ab",
+    "order": 1042,
+    "es": "margarina",
+    "kind": "word",
+    "source": "09",
+    "section": "5.3. Alimentos"
+  },
+  {
+    "id": "b1-7c712919",
+    "order": 1055,
+    "es": "receta",
+    "kind": "word",
+    "source": "09",
+    "section": "5.4. Recetas"
+  },
+  {
+    "id": "b1-0acdff85",
+    "order": 1056,
+    "es": "ingredientes",
+    "kind": "word",
+    "source": "09",
+    "section": "5.4. Recetas"
+  },
+  {
+    "id": "b1-60e6db91",
+    "order": 1057,
+    "es": "modo de preparación",
+    "kind": "phrase",
+    "source": "09",
+    "section": "5.4. Recetas"
+  },
+  {
+    "id": "b1-e1723285",
+    "order": 1065,
+    "es": "aliñar",
+    "kind": "word",
+    "source": "09",
+    "section": "5.4. Recetas"
+  },
+  {
+    "id": "b1-1a5d9784",
+    "order": 1066,
+    "es": "condimentar",
+    "kind": "word",
+    "source": "09",
+    "section": "5.4. Recetas"
+  },
+  {
+    "id": "b1-77c8cb0b",
+    "order": 1088,
+    "es": "sentar bien",
+    "kind": "phrase",
+    "source": "09",
+    "section": "5.5. Platos"
+  },
+  {
+    "id": "b1-abd77a7d",
+    "order": 1089,
+    "es": "sentar mal",
+    "kind": "phrase",
+    "source": "09",
+    "section": "5.5. Platos"
+  },
+  {
+    "id": "b1-c1a4ee8d",
+    "order": 1104,
+    "es": "recoger la cocina",
+    "kind": "phrase",
+    "source": "09",
+    "section": "5.6. Utensilios de cocina y mesa"
+  },
+  {
+    "id": "b1-448e7a95",
+    "order": 1105,
+    "es": "recoger la mesa",
+    "kind": "phrase",
+    "source": "09",
+    "section": "5.6. Utensilios de cocina y mesa"
+  },
+  {
+    "id": "b1-597e4a6b",
+    "order": 1115,
+    "es": "cocina india",
+    "kind": "phrase",
+    "source": "09",
+    "section": "5.7. Restaurante"
+  },
+  {
+    "id": "b1-202c22fa",
+    "order": 1116,
+    "es": "cocina andaluza",
+    "kind": "phrase",
+    "source": "09",
+    "section": "5.7. Restaurante"
+  },
+  {
+    "id": "b1-7d836e63",
+    "order": 1117,
+    "es": "cocina internacional",
+    "kind": "phrase",
+    "source": "09",
+    "section": "5.7. Restaurante"
+  },
+  {
+    "id": "b1-9bedd88b",
+    "order": 1128,
+    "es": "para tomar (aquí)",
+    "kind": "phrase",
+    "source": "09",
+    "section": "5.7. Restaurante"
+  },
+  {
+    "id": "b1-53a8103a",
+    "order": 1129,
+    "es": "para llevar",
+    "kind": "phrase",
+    "source": "09",
+    "section": "5.7. Restaurante"
+  },
+  {
+    "id": "b1-22daa529",
+    "order": 1140,
+    "es": "asignatura/clase teórica",
+    "kind": "phrase",
+    "source": "09",
+    "section": "6.3. Sistema educativo"
+  },
+  {
+    "id": "b1-765046b8",
+    "order": 1141,
+    "es": "asignatura/clase práctica",
+    "kind": "phrase",
+    "source": "09",
+    "section": "6.3. Sistema educativo"
+  },
+  {
+    "id": "b1-bd0f1eb7",
+    "order": 1147,
+    "es": "pedir/dar/ganar una beca",
+    "kind": "phrase",
+    "source": "09",
+    "section": "6.3. Sistema educativo"
+  },
+  {
+    "id": "b1-a94a8fe5",
+    "order": 1155,
+    "es": "test",
+    "kind": "word",
+    "source": "09",
+    "section": "6.5. Exámenes y calificaciones"
+  },
+  {
+    "id": "b1-2aeede80",
+    "order": 1156,
+    "es": "control",
+    "kind": "word",
+    "source": "09",
+    "section": "6.5. Exámenes y calificaciones"
+  },
+  {
+    "id": "b1-feb4e61d",
+    "order": 1165,
+    "es": "aprobar/repetir el curso",
+    "kind": "phrase",
+    "source": "09",
+    "section": "6.5. Exámenes y calificaciones"
+  },
+  {
+    "id": "b1-7d8414fd",
+    "order": 1177,
+    "es": "equivocarse",
+    "kind": "word",
+    "source": "09",
+    "section": "6.7. Lenguaje de aula"
+  },
+  {
+    "id": "b1-089d6e20",
+    "order": 1188,
+    "es": "escoger/elegir un tema",
+    "kind": "phrase",
+    "source": "09",
+    "section": "6.7. Lenguaje de aula"
+  },
+  {
+    "id": "b1-a31875e9",
+    "order": 1189,
+    "es": "escoger/elegir un compañero",
+    "kind": "phrase",
+    "source": "09",
+    "section": "6.7. Lenguaje de aula"
+  },
+  {
+    "id": "b1-7e285c5d",
+    "order": 1190,
+    "es": "escoger/elegir un libro",
+    "kind": "phrase",
+    "source": "09",
+    "section": "6.7. Lenguaje de aula"
+  },
+  {
+    "id": "b1-f0c10a5b",
+    "order": 1201,
+    "es": "hablar/charlar sobre un tema",
+    "kind": "phrase",
+    "source": "09",
+    "section": "6.7. Lenguaje de aula"
+  },
+  {
+    "id": "b1-6c5df139",
+    "order": 1211,
+    "es": "folio",
+    "kind": "word",
+    "source": "09",
+    "section": "6.8. Material educativo y mobiliario de aula"
+  },
+  {
+    "id": "b1-3d28330a",
+    "order": 1212,
+    "es": "papel reciclado",
+    "kind": "phrase",
+    "source": "09",
+    "section": "6.8. Material educativo y mobiliario de aula"
+  },
+  {
+    "id": "b1-825ebd10",
+    "order": 1213,
+    "es": "papel de impresora",
+    "kind": "phrase",
+    "source": "09",
+    "section": "6.8. Material educativo y mobiliario de aula"
+  },
+  {
+    "id": "b1-1ca6fb7d",
+    "order": 1222,
+    "es": "sustituto",
+    "kind": "word",
+    "source": "09",
+    "section": "7.1. Profesiones y cargos"
+  },
+  {
+    "id": "b1-75f75da4",
+    "order": 1223,
+    "es": "ayudante",
+    "kind": "word",
+    "source": "09",
+    "section": "7.1. Profesiones y cargos"
+  },
+  {
+    "id": "b1-082a314e",
+    "order": 1224,
+    "es": "estudiante en prácticas",
+    "kind": "phrase",
+    "source": "09",
+    "section": "7.1. Profesiones y cargos"
+  },
+  {
+    "id": "b1-d94853a8",
+    "order": 1234,
+    "es": "planos",
+    "kind": "word",
+    "source": "09",
+    "section": "7.2. Lugares, herramientas y ropa de trabajo"
+  },
+  {
+    "id": "b1-e0524ac3",
+    "order": 1235,
+    "es": "programa informático",
+    "kind": "phrase",
+    "source": "09",
+    "section": "7.2. Lugares, herramientas y ropa de trabajo"
+  },
+  {
+    "id": "b1-d7e4635f",
+    "order": 1236,
+    "es": "Ropa de trabajo",
+    "kind": "phrase",
+    "source": "09",
+    "section": "7.2. Lugares, herramientas y ropa de trabajo",
+    "headword": "b1-d94853a8"
+  },
+  {
+    "id": "b1-1329a2ba",
+    "order": 1244,
+    "es": "clasificar/archivar documentos",
+    "kind": "phrase",
+    "source": "09",
+    "section": "7.3. Actividad laboral"
+  },
+  {
+    "id": "b1-3cc4a6d2",
+    "order": 1250,
+    "es": "entrevistado",
+    "kind": "word",
+    "source": "09",
+    "section": "7.4. Desempleo y búsqueda de trabajo"
+  },
+  {
+    "id": "b1-7577989e",
+    "order": 1251,
+    "es": "entrevistador",
+    "kind": "word",
+    "source": "09",
+    "section": "7.4. Desempleo y búsqueda de trabajo"
+  },
+  {
+    "id": "b1-80d20ed4",
+    "order": 1257,
+    "es": "hacer/realizar una entrevista (de trabajo)",
+    "kind": "phrase",
+    "source": "09",
+    "section": "7.4. Desempleo y búsqueda de trabajo"
+  },
+  {
+    "id": "b1-05f29129",
+    "order": 1262,
+    "es": "(total) disponibilidad",
+    "kind": "phrase",
+    "source": "09",
+    "section": "7.5. Derechos y obligaciones laborales"
+  },
+  {
+    "id": "b1-d461800d",
+    "order": 1267,
+    "es": "posibilidad de promoción",
+    "kind": "phrase",
+    "source": "09",
+    "section": "7.5. Derechos y obligaciones laborales"
+  },
+  {
+    "id": "b1-0e8c9fe4",
+    "order": 1272,
+    "es": "hacer huelga",
+    "kind": "phrase",
+    "source": "09",
+    "section": "7.5. Derechos y obligaciones laborales"
+  },
+  {
+    "id": "b1-e916c323",
+    "order": 1279,
+    "es": "ir de camping",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.1. Tiempo libre y entretenimiento"
+  },
+  {
+    "id": "b1-2dea20d2",
+    "order": 1280,
+    "es": "hacer un picnic",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.1. Tiempo libre y entretenimiento"
+  },
+  {
+    "id": "b1-931489b1",
+    "order": 1281,
+    "es": "hacer turismo",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.1. Tiempo libre y entretenimiento"
+  },
+  {
+    "id": "b1-647fd103",
+    "order": 1293,
+    "es": "pasar(se)lo bien",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.1. Tiempo libre y entretenimiento"
+  },
+  {
+    "id": "b1-1abee471",
+    "order": 1294,
+    "es": "pasar(se)lo mal",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.1. Tiempo libre y entretenimiento"
+  },
+  {
+    "id": "b1-8634ac4e",
+    "order": 1301,
+    "es": "asiento/fila de un cine",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.2. Espectáculos y exposiciones"
+  },
+  {
+    "id": "b1-05d6e684",
+    "order": 1302,
+    "es": "asiento/fila de un teatro",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.2. Espectáculos y exposiciones"
+  },
+  {
+    "id": "b1-727cb964",
+    "order": 1309,
+    "es": "ser un éxito",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.2. Espectáculos y exposiciones"
+  },
+  {
+    "id": "b1-2c410d1a",
+    "order": 1320,
+    "es": "partido/equipo de fútbol",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.3. Deportes"
+  },
+  {
+    "id": "b1-7e3994c4",
+    "order": 1321,
+    "es": "partido/equipo de baloncesto",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.3. Deportes"
+  },
+  {
+    "id": "b1-89d873a5",
+    "order": 1322,
+    "es": "carrera ciclista",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.3. Deportes"
+  },
+  {
+    "id": "b1-2a38cce3",
+    "order": 1323,
+    "es": "carrera de motos",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.3. Deportes"
+  },
+  {
+    "id": "b1-cbf95886",
+    "order": 1324,
+    "es": "carrera de coches",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.3. Deportes"
+  },
+  {
+    "id": "b1-66ddcb3b",
+    "order": 1335,
+    "es": "campo de fútbol",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.3. Deportes"
+  },
+  {
+    "id": "b1-4883cba2",
+    "order": 1336,
+    "es": "pista de tenis",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.3. Deportes"
+  },
+  {
+    "id": "b1-5c0557ee",
+    "order": 1353,
+    "es": "medios de comunicación",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.1. Información y comunicación"
+  },
+  {
+    "id": "b1-e4fa2cad",
+    "order": 1354,
+    "es": "medios de información",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.1. Información y comunicación"
+  },
+  {
+    "id": "b1-493e27ae",
+    "order": 1360,
+    "es": "estar bien informado",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.1. Información y comunicación"
+  },
+  {
+    "id": "b1-d2baa612",
+    "order": 1361,
+    "es": "estar mal informado",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.1. Información y comunicación"
+  },
+  {
+    "id": "b1-05447cf0",
+    "order": 1362,
+    "es": "mantenerse bien informado",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.1. Información y comunicación"
+  },
+  {
+    "id": "b1-dc96ea5f",
+    "order": 1363,
+    "es": "mantenerse mal informado",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.1. Información y comunicación"
+  },
+  {
+    "id": "b1-bddbd677",
+    "order": 1370,
+    "es": "remitente",
+    "kind": "word",
+    "source": "09",
+    "section": "9.2. Correspondencia escrita"
+  },
+  {
+    "id": "b1-91f6a375",
+    "order": 1371,
+    "es": "destinatario",
+    "kind": "word",
+    "source": "09",
+    "section": "9.2. Correspondencia escrita"
+  },
+  {
+    "id": "b1-ba5a1356",
+    "order": 1381,
+    "es": "mandar por correo",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.2. Correspondencia escrita"
+  },
+  {
+    "id": "b1-1118639b",
+    "order": 1389,
+    "es": "batería/tarjeta de teléfono",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.3. Teléfono"
+  },
+  {
+    "id": "b1-25612dce",
+    "order": 1395,
+    "es": "quedarse sin batería",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.3. Teléfono"
+  },
+  {
+    "id": "b1-43234b5e",
+    "order": 1396,
+    "es": "quedarse sin saldo",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.3. Teléfono"
+  },
+  {
+    "id": "b1-70e08af1",
+    "order": 1406,
+    "es": "agencia de prensa",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.4. Prensa escrita"
+  },
+  {
+    "id": "b1-c85b508a",
+    "order": 1407,
+    "es": "agencia de fotografía",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.4. Prensa escrita"
+  },
+  {
+    "id": "b1-c185a8e8",
+    "order": 1417,
+    "es": "cadena/canal público",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.5. Televisión y radio"
+  },
+  {
+    "id": "b1-1da128ea",
+    "order": 1418,
+    "es": "cadena/canal privado",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.5. Televisión y radio"
+  },
+  {
+    "id": "b1-7c77bb8a",
+    "order": 1419,
+    "es": "cadena/canal regional",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.5. Televisión y radio"
+  },
+  {
+    "id": "b1-6811e821",
+    "order": 1420,
+    "es": "cadena/canal nacional",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.5. Televisión y radio"
+  },
+  {
+    "id": "b1-7e914efc",
+    "order": 1431,
+    "es": "película en versión original",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.5. Televisión y radio"
+  },
+  {
+    "id": "b1-1b7a2122",
+    "order": 1432,
+    "es": "película con subtítulos",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.5. Televisión y radio"
+  },
+  {
+    "id": "b1-2d83f9e5",
+    "order": 1441,
+    "es": "ratón",
+    "kind": "word",
+    "source": "09",
+    "section": "9.6. Internet"
+  },
+  {
+    "id": "b1-e7d92c1f",
+    "order": 1442,
+    "es": "programa",
+    "kind": "word",
+    "source": "09",
+    "section": "9.6. Internet"
+  },
+  {
+    "id": "b1-b1597eb8",
+    "order": 1443,
+    "es": "antivirus",
+    "kind": "word",
+    "source": "09",
+    "section": "9.6. Internet"
+  },
+  {
+    "id": "b1-1c0a49ae",
+    "order": 1444,
+    "es": "línea ADSL",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.6. Internet"
+  },
+  {
+    "id": "b1-993f2b37",
+    "order": 1461,
+    "es": "conectarse a/tener conexión a Internet",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.6. Internet"
+  },
+  {
+    "id": "b1-13799406",
+    "order": 1468,
+    "es": "casero",
+    "kind": "word",
+    "source": "09",
+    "section": "10.1. Acciones relacionadas con la vivienda"
+  },
+  {
+    "id": "b1-3ed65aec",
+    "order": 1469,
+    "es": "propietario",
+    "kind": "word",
+    "source": "09",
+    "section": "10.1. Acciones relacionadas con la vivienda"
+  },
+  {
+    "id": "b1-62f4ef7b",
+    "order": 1481,
+    "es": "empresa/camión de mudanzas",
+    "kind": "phrase",
+    "source": "09",
+    "section": "10.1. Acciones relacionadas con la vivienda"
+  },
+  {
+    "id": "b1-321555f1",
+    "order": 1488,
+    "es": "dueño",
+    "kind": "word",
+    "source": "09",
+    "section": "10.2. Características de la vivienda"
+  },
+  {
+    "id": "b1-440520b9",
+    "order": 1500,
+    "es": "decoración",
+    "kind": "word",
+    "source": "09",
+    "section": "10.3. Actividades domésticas"
+  },
+  {
+    "id": "b1-e7c93042",
+    "order": 1508,
+    "es": "florero",
+    "kind": "word",
+    "source": "09",
+    "section": "10.4. Objetos domésticos"
+  },
+  {
+    "id": "b1-430c3d6a",
+    "order": 1509,
+    "es": "póster",
+    "kind": "word",
+    "source": "09",
+    "section": "10.4. Objetos domésticos"
+  },
+  {
+    "id": "b1-0b2d106d",
+    "order": 1510,
+    "es": "espejo",
+    "kind": "word",
+    "source": "09",
+    "section": "10.4. Objetos domésticos"
+  },
+  {
+    "id": "b1-c93413e2",
+    "order": 1520,
+    "es": "encender/apagar/poner/ quitar/conectar/ programar/(des)enchufar un electrodoméstico",
+    "kind": "phrase",
+    "source": "09",
+    "section": "10.4. Objetos domésticos"
+  },
+  {
+    "id": "b1-88c3078c",
+    "order": 1527,
+    "es": "meter/poner dinero de la cuenta",
+    "kind": "phrase",
+    "source": "09",
+    "section": "11.3. Servicios financieros"
+  },
+  {
+    "id": "b1-755b6c90",
+    "order": 1528,
+    "es": "sacar dinero de la cuenta",
+    "kind": "phrase",
+    "source": "09",
+    "section": "11.3. Servicios financieros"
+  },
+  {
+    "id": "b1-25c1365f",
+    "order": 1533,
+    "es": "ir de/estar en urgencias",
+    "kind": "phrase",
+    "source": "09",
+    "section": "11.4. Servicios sanitarios"
+  },
+  {
+    "id": "b1-17e84e2c",
+    "order": 1540,
+    "es": "psicólogo",
+    "kind": "word",
+    "source": "09",
+    "section": "11.7. Servicios sociales"
+  },
+  {
+    "id": "b1-9dfb4683",
+    "order": 1541,
+    "es": "voluntario de ONG",
+    "kind": "phrase",
+    "source": "09",
+    "section": "11.7. Servicios sociales"
+  },
+  {
+    "id": "b1-f2b946b7",
+    "order": 1556,
+    "es": "garantía",
+    "kind": "word",
+    "source": "09",
+    "section": "12.1. Lugares, personas y actividades"
+  },
+  {
+    "id": "b1-4ef4b2bc",
+    "order": 1561,
+    "es": "estar de oferta",
+    "kind": "phrase",
+    "source": "09",
+    "section": "12.1. Lugares, personas y actividades"
+  },
+  {
+    "id": "b1-f6485f91",
+    "order": 1570,
+    "es": "zapatos planos",
+    "kind": "phrase",
+    "source": "09",
+    "section": "12.2. Ropa, calzado y complementos"
+  },
+  {
+    "id": "b1-27f42b18",
+    "order": 1571,
+    "es": "zapatos de tacón",
+    "kind": "phrase",
+    "source": "09",
+    "section": "12.2. Ropa, calzado y complementos"
+  },
+  {
+    "id": "b1-0423c25a",
+    "order": 1572,
+    "es": "zapatillas de deporte",
+    "kind": "phrase",
+    "source": "09",
+    "section": "12.2. Ropa, calzado y complementos"
+  },
+  {
+    "id": "b1-58dafedb",
+    "order": 1581,
+    "es": "quedar bien",
+    "kind": "phrase",
+    "source": "09",
+    "section": "12.2. Ropa, calzado y complementos"
+  },
+  {
+    "id": "b1-29c3f3b5",
+    "order": 1582,
+    "es": "quedar mal",
+    "kind": "phrase",
+    "source": "09",
+    "section": "12.2. Ropa, calzado y complementos"
+  },
+  {
+    "id": "b1-89a88d7f",
+    "order": 1583,
+    "es": "quedar ancho",
+    "kind": "phrase",
+    "source": "09",
+    "section": "12.2. Ropa, calzado y complementos"
+  },
+  {
+    "id": "b1-229d5708",
+    "order": 1584,
+    "es": "quedar estrecho",
+    "kind": "phrase",
+    "source": "09",
+    "section": "12.2. Ropa, calzado y complementos"
+  },
+  {
+    "id": "b1-89bbbfed",
+    "order": 1585,
+    "es": "quedar grande",
+    "kind": "phrase",
+    "source": "09",
+    "section": "12.2. Ropa, calzado y complementos"
+  },
+  {
+    "id": "b1-75f78448",
+    "order": 1586,
+    "es": "quedar pequeño",
+    "kind": "phrase",
+    "source": "09",
+    "section": "12.2. Ropa, calzado y complementos"
+  },
+  {
+    "id": "b1-9fc279f3",
+    "order": 1587,
+    "es": "quedar largo",
+    "kind": "phrase",
+    "source": "09",
+    "section": "12.2. Ropa, calzado y complementos"
+  },
+  {
+    "id": "b1-c0b06606",
+    "order": 1588,
+    "es": "quedar corto",
+    "kind": "phrase",
+    "source": "09",
+    "section": "12.2. Ropa, calzado y complementos"
+  },
+  {
+    "id": "b1-0735353d",
+    "order": 1598,
+    "es": "estar malo",
+    "kind": "phrase",
+    "source": "09",
+    "section": "12.3. Alimentación"
+  },
+  {
+    "id": "b1-205bf8ca",
+    "order": 1599,
+    "es": "estar caducado",
+    "kind": "phrase",
+    "source": "09",
+    "section": "12.3. Alimentación"
+  },
+  {
+    "id": "b1-39e39c21",
+    "order": 1606,
+    "es": "seguro de enfermedad",
+    "kind": "phrase",
+    "source": "09",
+    "section": "13.1. Salud y enfermedades"
+  },
+  {
+    "id": "b1-89bcd671",
+    "order": 1607,
+    "es": "seguro público",
+    "kind": "phrase",
+    "source": "09",
+    "section": "13.1. Salud y enfermedades"
+  },
+  {
+    "id": "b1-16006c16",
+    "order": 1608,
+    "es": "seguro privado",
+    "kind": "phrase",
+    "source": "09",
+    "section": "13.1. Salud y enfermedades"
+  },
+  {
+    "id": "b1-9fcd75ad",
+    "order": 1618,
+    "es": "hacer (un) régimen",
+    "kind": "phrase",
+    "source": "09",
+    "section": "13.1. Salud y enfermedades"
+  },
+  {
+    "id": "b1-961dede0",
+    "order": 1627,
+    "es": "hacerse una herida",
+    "kind": "phrase",
+    "source": "09",
+    "section": "13.2. Heridas y traumatismos"
+  },
+  {
+    "id": "b1-62773da3",
+    "order": 1628,
+    "es": "romperse una pierna",
+    "kind": "phrase",
+    "source": "09",
+    "section": "13.2. Heridas y traumatismos"
+  },
+  {
+    "id": "b1-2824521d",
+    "order": 1629,
+    "es": "romperse un brazo",
+    "kind": "phrase",
+    "source": "09",
+    "section": "13.2. Heridas y traumatismos"
+  },
+  {
+    "id": "b1-8cb3cacd",
+    "order": 1637,
+    "es": "médico/hospital/farmacia de guardia",
+    "kind": "phrase",
+    "source": "09",
+    "section": "13.4. Centros de asistencia sanitaria"
+  },
+  {
+    "id": "b1-e154eaa5",
+    "order": 1647,
+    "es": "hacerse una revisión",
+    "kind": "phrase",
+    "source": "09",
+    "section": "13.4. Centros de asistencia sanitaria"
+  },
+  {
+    "id": "b1-859e0eca",
+    "order": 1648,
+    "es": "hacerse unas pruebas/un control/un análisis de sangre",
+    "kind": "phrase",
+    "source": "09",
+    "section": "13.4. Centros de asistencia sanitaria"
+  },
+  {
+    "id": "b1-fe54e247",
+    "order": 1649,
+    "es": "hacerse unas pruebas/un control/un análisis de orina",
+    "kind": "phrase",
+    "source": "09",
+    "section": "13.4. Centros de asistencia sanitaria"
+  },
+  {
+    "id": "b1-29ba0487",
+    "order": 1665,
+    "es": "darse una crema",
+    "kind": "phrase",
+    "source": "09",
+    "section": "13.5. Medicina y medicamentos"
+  },
+  {
+    "id": "b1-4cba3121",
+    "order": 1673,
+    "es": "zapatillas",
+    "kind": "word",
+    "source": "09",
+    "section": "13.6. Higiene"
+  },
+  {
+    "id": "b1-d4d72380",
+    "order": 1674,
+    "es": "gorro de ducha",
+    "kind": "phrase",
+    "source": "09",
+    "section": "13.6. Higiene"
+  },
+  {
+    "id": "b1-50489394",
+    "order": 1675,
+    "es": "gorro de baño",
+    "kind": "phrase",
+    "source": "09",
+    "section": "13.6. Higiene"
+  },
+  {
+    "id": "b1-2e0493bd",
+    "order": 1681,
+    "es": "pintarse los ojos",
+    "kind": "phrase",
+    "source": "09",
+    "section": "13.7. Estética"
+  },
+  {
+    "id": "b1-12514b81",
+    "order": 1682,
+    "es": "pintarse los labios",
+    "kind": "phrase",
+    "source": "09",
+    "section": "13.7. Estética"
+  },
+  {
+    "id": "b1-1149d092",
+    "order": 1688,
+    "es": "equipaje",
+    "kind": "word",
+    "source": "09",
+    "section": "14.1. Viajes"
+  },
+  {
+    "id": "b1-d7f1ebe3",
+    "order": 1696,
+    "es": "facturar/perder el equipaje",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.1. Viajes"
+  },
+  {
+    "id": "b1-2c689443",
+    "order": 1697,
+    "es": "facturar/perder las maletas",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.1. Viajes"
+  },
+  {
+    "id": "b1-d5a36692",
+    "order": 1708,
+    "es": "hacer/contratar un viaje organizado",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.1. Viajes"
+  },
+  {
+    "id": "b1-de9e3821",
+    "order": 1715,
+    "es": "sombrilla",
+    "kind": "word",
+    "source": "09",
+    "section": "14.1. Viajes"
+  },
+  {
+    "id": "b1-ad661a0f",
+    "order": 1716,
+    "es": "pelota",
+    "kind": "word",
+    "source": "09",
+    "section": "14.1. Viajes"
+  },
+  {
+    "id": "b1-c2a333e8",
+    "order": 1722,
+    "es": "montañero",
+    "kind": "word",
+    "source": "09",
+    "section": "14.1. Viajes"
+  },
+  {
+    "id": "b1-d619c197",
+    "order": 1723,
+    "es": "senderista",
+    "kind": "word",
+    "source": "09",
+    "section": "14.1. Viajes"
+  },
+  {
+    "id": "b1-ec36bb26",
+    "order": 1724,
+    "es": "escalador",
+    "kind": "word",
+    "source": "09",
+    "section": "14.1. Viajes"
+  },
+  {
+    "id": "b1-a78b6ea3",
+    "order": 1725,
+    "es": "cazador",
+    "kind": "word",
+    "source": "09",
+    "section": "14.1. Viajes"
+  },
+  {
+    "id": "b1-da14a04e",
+    "order": 1734,
+    "es": "recepción",
+    "kind": "word",
+    "source": "09",
+    "section": "14.2. Alojamiento"
+  },
+  {
+    "id": "b1-a9df7a76",
+    "order": 1735,
+    "es": "entrada",
+    "kind": "word",
+    "source": "09",
+    "section": "14.2. Alojamiento"
+  },
+  {
+    "id": "b1-cc4101fc",
+    "order": 1746,
+    "es": "estar completo",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.2. Alojamiento"
+  },
+  {
+    "id": "b1-610e0c52",
+    "order": 1747,
+    "es": "haber plazas libres",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.2. Alojamiento"
+  },
+  {
+    "id": "b1-3fe89f60",
+    "order": 1759,
+    "es": "ir/salir/llegar con retraso",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.3. Sistema de transporte"
+  },
+  {
+    "id": "b1-9c1d9676",
+    "order": 1760,
+    "es": "parar",
+    "kind": "word",
+    "source": "09",
+    "section": "14.3. Sistema de transporte"
+  },
+  {
+    "id": "b1-7f44657f",
+    "order": 1770,
+    "es": "girar",
+    "kind": "word",
+    "source": "09",
+    "section": "14.3. Sistema de transporte"
+  },
+  {
+    "id": "b1-7547408e",
+    "order": 1790,
+    "es": "sala de llegadas",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.3. Sistema de transporte"
+  },
+  {
+    "id": "b1-8a90a940",
+    "order": 1791,
+    "es": "sala de embarque",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.3. Sistema de transporte"
+  },
+  {
+    "id": "b1-c4e12a58",
+    "order": 1798,
+    "es": "circulación",
+    "kind": "word",
+    "source": "09",
+    "section": "14.3. Sistema de transporte"
+  },
+  {
+    "id": "b1-c7facba2",
+    "order": 1799,
+    "es": "tráfico",
+    "kind": "word",
+    "source": "09",
+    "section": "14.3. Sistema de transporte"
+  },
+  {
+    "id": "b1-6a0e72f3",
+    "order": 1805,
+    "es": "gasolina sin plomo",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.3. Sistema de transporte"
+  },
+  {
+    "id": "b1-064f57a4",
+    "order": 1806,
+    "es": "gasolina normal",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.3. Sistema de transporte"
+  },
+  {
+    "id": "b1-51b9c370",
+    "order": 1807,
+    "es": "gasolina súper",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.3. Sistema de transporte"
+  },
+  {
+    "id": "b1-e700773e",
+    "order": 1808,
+    "es": "gasoil",
+    "kind": "word",
+    "source": "09",
+    "section": "14.3. Sistema de transporte"
+  },
+  {
+    "id": "b1-c8607f2d",
+    "order": 1816,
+    "es": "pobreza",
+    "kind": "word",
+    "source": "09",
+    "section": "15.1. Finanzas y bolsa"
+  },
+  {
+    "id": "b1-19d29a26",
+    "order": 1817,
+    "es": "riqueza",
+    "kind": "word",
+    "source": "09",
+    "section": "15.1. Finanzas y bolsa"
+  },
+  {
+    "id": "b1-b593155c",
+    "order": 1826,
+    "es": "subir/bajar los intereses",
+    "kind": "phrase",
+    "source": "09",
+    "section": "15.1. Finanzas y bolsa"
+  },
+  {
+    "id": "b1-2997df0f",
+    "order": 1836,
+    "es": "márquetin",
+    "kind": "word",
+    "source": "09",
+    "section": "15.3. Comercio"
+  },
+  {
+    "id": "b1-f9f011a5",
+    "order": 1845,
+    "es": "empleado",
+    "kind": "word",
+    "source": "09",
+    "section": "15.4. Entidades y empresas"
+  },
+  {
+    "id": "b1-261f0b82",
+    "order": 1851,
+    "es": "industria",
+    "kind": "word",
+    "source": "09",
+    "section": "15.5. Industria y energía"
+  },
+  {
+    "id": "b1-e67cebf9",
+    "order": 1859,
+    "es": "pescador",
+    "kind": "word",
+    "source": "09",
+    "section": "15.5. Industria y energía"
+  },
+  {
+    "id": "b1-0f71f0f4",
+    "order": 1865,
+    "es": "invento",
+    "kind": "word",
+    "source": "09",
+    "section": "16.1. Cuestiones generales"
+  },
+  {
+    "id": "b1-88be6328",
+    "order": 1866,
+    "es": "descubrimiento",
+    "kind": "word",
+    "source": "09",
+    "section": "16.1. Cuestiones generales"
+  },
+  {
+    "id": "b1-5bca22e0",
+    "order": 1872,
+    "es": "biólogo",
+    "kind": "word",
+    "source": "09",
+    "section": "16.2. Biología"
+  },
+  {
+    "id": "b1-cd55a1d5",
+    "order": 1873,
+    "es": "veterinario",
+    "kind": "word",
+    "source": "09",
+    "section": "16.2. Biología"
+  },
+  {
+    "id": "b1-aa01b7ef",
+    "order": 1875,
+    "es": "teclado",
+    "kind": "word",
+    "source": "09",
+    "section": "16.4. Informática y nuevas tecnologías"
+  },
+  {
+    "id": "b1-4bb73815",
+    "order": 1876,
+    "es": "tecla",
+    "kind": "word",
+    "source": "09",
+    "section": "16.4. Informática y nuevas tecnologías"
+  },
+  {
+    "id": "b1-9435ae34",
+    "order": 1877,
+    "es": "pantalla",
+    "kind": "word",
+    "source": "09",
+    "section": "16.4. Informática y nuevas tecnologías"
+  },
+  {
+    "id": "b1-e442de80",
+    "order": 1883,
+    "es": "abrir/cerrar/guardar/eliminar un documento",
+    "kind": "phrase",
+    "source": "09",
+    "section": "16.4. Informática y nuevas tecnologías"
+  },
+  {
+    "id": "b1-997db3b0",
+    "order": 1888,
+    "es": "física",
+    "kind": "word",
+    "source": "09",
+    "section": "16.5. Física y química"
+  },
+  {
+    "id": "b1-1a13a359",
+    "order": 1889,
+    "es": "química",
+    "kind": "word",
+    "source": "09",
+    "section": "16.5. Física y química"
+  },
+  {
+    "id": "b1-afaad792",
+    "order": 1896,
+    "es": "símbolo/elemento químico",
+    "kind": "phrase",
+    "source": "09",
+    "section": "16.5. Física y química"
+  },
+  {
+    "id": "b1-2d3e9a4b",
+    "order": 1906,
+    "es": "ciudadano",
+    "kind": "word",
+    "source": "09",
+    "section": "17.1. Sociedad"
+  },
+  {
+    "id": "b1-58b01ddb",
+    "order": 1907,
+    "es": "comunidad",
+    "kind": "word",
+    "source": "09",
+    "section": "17.1. Sociedad"
+  },
+  {
+    "id": "b1-e9933e8a",
+    "order": 1908,
+    "es": "club",
+    "kind": "word",
+    "source": "09",
+    "section": "17.1. Sociedad"
+  },
+  {
+    "id": "b1-a4132372",
+    "order": 1928,
+    "es": "ministro de Interior",
+    "kind": "phrase",
+    "source": "09",
+    "section": "17.2. Política y gobierno"
+  },
+  {
+    "id": "b1-f101ec7b",
+    "order": 1929,
+    "es": "ministro de Defensa",
+    "kind": "phrase",
+    "source": "09",
+    "section": "17.2. Política y gobierno"
+  },
+  {
+    "id": "b1-12a5a409",
+    "order": 1930,
+    "es": "ministro de Educación",
+    "kind": "phrase",
+    "source": "09",
+    "section": "17.2. Política y gobierno"
+  },
+  {
+    "id": "b1-eb0d925c",
+    "order": 1931,
+    "es": "ministro de Asuntos Exteriores",
+    "kind": "phrase",
+    "source": "09",
+    "section": "17.2. Política y gobierno"
+  },
+  {
+    "id": "b1-973419df",
+    "order": 1932,
+    "es": "jefe de Estado",
+    "kind": "phrase",
+    "source": "09",
+    "section": "17.2. Política y gobierno"
+  },
+  {
+    "id": "b1-4f4cc915",
+    "order": 1933,
+    "es": "vicepresidente",
+    "kind": "word",
+    "source": "09",
+    "section": "17.2. Política y gobierno"
+  },
+  {
+    "id": "b1-df45d389",
+    "order": 1934,
+    "es": "alcalde",
+    "kind": "word",
+    "source": "09",
+    "section": "17.2. Política y gobierno"
+  },
+  {
+    "id": "b1-377a51fe",
+    "order": 1949,
+    "es": "partido de izquierdas",
+    "kind": "phrase",
+    "source": "09",
+    "section": "17.2. Política y gobierno"
+  },
+  {
+    "id": "b1-defc9a30",
+    "order": 1950,
+    "es": "partido de derechas",
+    "kind": "phrase",
+    "source": "09",
+    "section": "17.2. Política y gobierno"
+  },
+  {
+    "id": "b1-5b164b24",
+    "order": 1951,
+    "es": "partido de centro",
+    "kind": "phrase",
+    "source": "09",
+    "section": "17.2. Política y gobierno"
+  },
+  {
+    "id": "b1-52692f62",
+    "order": 1952,
+    "es": "partido de la oposición",
+    "kind": "phrase",
+    "source": "09",
+    "section": "17.2. Política y gobierno"
+  },
+  {
+    "id": "b1-dfe2db74",
+    "order": 1967,
+    "es": "general",
+    "kind": "word",
+    "source": "09",
+    "section": "17.4. Ejército"
+  },
+  {
+    "id": "b1-1707e920",
+    "order": 1968,
+    "es": "militar",
+    "kind": "word",
+    "source": "09",
+    "section": "17.4. Ejército"
+  },
+  {
+    "id": "b1-18d44db7",
+    "order": 1969,
+    "es": "soldado",
+    "kind": "word",
+    "source": "09",
+    "section": "17.4. Ejército"
+  },
+  {
+    "id": "b1-ca669800",
+    "order": 1976,
+    "es": "obra/galería de arte",
+    "kind": "phrase",
+    "source": "09",
+    "section": "18.1. Disciplinas y cualidades artísticas"
+  },
+  {
+    "id": "b1-b78f4021",
+    "order": 1982,
+    "es": "ser un genio",
+    "kind": "phrase",
+    "source": "09",
+    "section": "18.1. Disciplinas y cualidades artísticas"
+  },
+  {
+    "id": "b1-8378a1d3",
+    "order": 2004,
+    "es": "poeta",
+    "kind": "word",
+    "source": "09",
+    "section": "18.4. Literatura"
+  },
+  {
+    "id": "b1-89723e5f",
+    "order": 2005,
+    "es": "novelista",
+    "kind": "word",
+    "source": "09",
+    "section": "18.4. Literatura"
+  },
+  {
+    "id": "b1-b4c5be00",
+    "order": 2006,
+    "es": "traductor",
+    "kind": "word",
+    "source": "09",
+    "section": "18.4. Literatura"
+  },
+  {
+    "id": "b1-82e86540",
+    "order": 2018,
+    "es": "contar (la historia de)",
+    "kind": "phrase",
+    "source": "09",
+    "section": "18.4. Literatura"
+  },
+  {
+    "id": "b1-52885557",
+    "order": 2019,
+    "es": "tratar de",
+    "kind": "phrase",
+    "source": "09",
+    "section": "18.4. Literatura"
+  },
+  {
+    "id": "b1-069f5c59",
+    "order": 2029,
+    "es": "día del espectador",
+    "kind": "phrase",
+    "source": "09",
+    "section": "18.6. Cine y teatro"
+  },
+  {
+    "id": "b1-48d2864a",
+    "order": 2033,
+    "es": "película policiaca",
+    "kind": "phrase",
+    "source": "09",
+    "section": "18.6. Cine y teatro"
+  },
+  {
+    "id": "b1-c0bc58c0",
+    "order": 2034,
+    "es": "película romántica",
+    "kind": "phrase",
+    "source": "09",
+    "section": "18.6. Cine y teatro"
+  },
+  {
+    "id": "b1-012061f7",
+    "order": 2035,
+    "es": "película de amor",
+    "kind": "phrase",
+    "source": "09",
+    "section": "18.6. Cine y teatro"
+  },
+  {
+    "id": "b1-318301df",
+    "order": 2036,
+    "es": "película de terror",
+    "kind": "phrase",
+    "source": "09",
+    "section": "18.6. Cine y teatro"
+  },
+  {
+    "id": "b1-4fd34635",
+    "order": 2037,
+    "es": "película de risa",
+    "kind": "phrase",
+    "source": "09",
+    "section": "18.6. Cine y teatro"
+  },
+  {
+    "id": "b1-2dbb309c",
+    "order": 2038,
+    "es": "película de ciencia ficción",
+    "kind": "phrase",
+    "source": "09",
+    "section": "18.6. Cine y teatro"
+  },
+  {
+    "id": "b1-dba3b0ab",
+    "order": 2039,
+    "es": "película de acción",
+    "kind": "phrase",
+    "source": "09",
+    "section": "18.6. Cine y teatro"
+  },
+  {
+    "id": "b1-654a81f0",
+    "order": 2040,
+    "es": "película de aventuras",
+    "kind": "phrase",
+    "source": "09",
+    "section": "18.6. Cine y teatro"
+  },
+  {
+    "id": "b1-093561d1",
+    "order": 2041,
+    "es": "película de guerra",
+    "kind": "phrase",
+    "source": "09",
+    "section": "18.6. Cine y teatro"
+  },
+  {
+    "id": "b1-c3206f35",
+    "order": 2042,
+    "es": "película de dibujos animados",
+    "kind": "phrase",
+    "source": "09",
+    "section": "18.6. Cine y teatro"
+  },
+  {
+    "id": "b1-a6857167",
+    "order": 2055,
+    "es": "ir a misa",
+    "kind": "phrase",
+    "source": "09",
+    "section": "19.1. Religión"
+  },
+  {
+    "id": "b1-5358698e",
+    "order": 2068,
+    "es": "practicar la religión",
+    "kind": "phrase",
+    "source": "09",
+    "section": "19.1. Religión"
+  },
+  {
+    "id": "b1-24fe072e",
+    "order": 2072,
+    "es": "universo",
+    "kind": "word",
+    "source": "09",
+    "section": "20.1. Universo y espacio"
+  },
+  {
+    "id": "b1-86bd8e40",
+    "order": 2081,
+    "es": "comunidad autónoma",
+    "kind": "phrase",
+    "source": "09",
+    "section": "20.2. Geografía"
+  },
+  {
+    "id": "b1-a63747ab",
+    "order": 2087,
+    "es": "oriental",
+    "kind": "word",
+    "source": "09",
+    "section": "20.2. Geografía"
+  },
+  {
+    "id": "b1-e5984713",
+    "order": 2088,
+    "es": "occidental",
+    "kind": "word",
+    "source": "09",
+    "section": "20.2. Geografía"
+  },
+  {
+    "id": "b1-62bb0c89",
+    "order": 2096,
+    "es": "continente",
+    "kind": "word",
+    "source": "09",
+    "section": "20.2. Geografía"
+  },
+  {
+    "id": "b1-1ce5f5f0",
+    "order": 2097,
+    "es": "península",
+    "kind": "word",
+    "source": "09",
+    "section": "20.2. Geografía"
+  },
+  {
+    "id": "b1-c7c813cb",
+    "order": 2098,
+    "es": "valle",
+    "kind": "word",
+    "source": "09",
+    "section": "20.2. Geografía"
+  },
+  {
+    "id": "b1-4e68e95b",
+    "order": 2099,
+    "es": "lago",
+    "kind": "word",
+    "source": "09",
+    "section": "20.2. Geografía"
+  },
+  {
+    "id": "b1-540e358b",
+    "order": 2100,
+    "es": "selva",
+    "kind": "word",
+    "source": "09",
+    "section": "20.2. Geografía"
+  },
+  {
+    "id": "b1-ddd057c6",
+    "order": 2115,
+    "es": "comisaría de policía",
+    "kind": "phrase",
+    "source": "09",
+    "section": "20.3. Espacios urbanos o rústicos"
+  },
+  {
+    "id": "b1-88696260",
+    "order": 2116,
+    "es": "parque de bomberos",
+    "kind": "phrase",
+    "source": "09",
+    "section": "20.3. Espacios urbanos o rústicos"
+  },
+  {
+    "id": "b1-888b4cb3",
+    "order": 2122,
+    "es": "huerta",
+    "kind": "word",
+    "source": "09",
+    "section": "20.3. Espacios urbanos o rústicos"
+  },
+  {
+    "id": "b1-cd53d996",
+    "order": 2123,
+    "es": "prado",
+    "kind": "word",
+    "source": "09",
+    "section": "20.3. Espacios urbanos o rústicos"
+  },
+  {
+    "id": "b1-c3402d39",
+    "order": 2130,
+    "es": "huracán",
+    "kind": "word",
+    "source": "09",
+    "section": "20.4. Clima y tiempo atmosférico"
+  },
+  {
+    "id": "b1-a4e19820",
+    "order": 2137,
+    "es": "mamífero",
+    "kind": "word",
+    "source": "09",
+    "section": "20.5. Fauna"
+  },
+  {
+    "id": "b1-dd901e4c",
+    "order": 2138,
+    "es": "insecto",
+    "kind": "word",
+    "source": "09",
+    "section": "20.5. Fauna"
+  },
+  {
+    "id": "b1-5745cb29",
+    "order": 2139,
+    "es": "ave",
+    "kind": "word",
+    "source": "09",
+    "section": "20.5. Fauna"
+  },
+  {
+    "id": "b1-6d7ed28b",
+    "order": 2140,
+    "es": "reptil",
+    "kind": "word",
+    "source": "09",
+    "section": "20.5. Fauna"
+  },
+  {
+    "id": "b1-8d410ded",
+    "order": 2155,
+    "es": "hierba",
+    "kind": "word",
+    "source": "09",
+    "section": "20.6. Flora"
+  },
+  {
+    "id": "b1-338cf917",
+    "order": 2156,
+    "es": "césped",
+    "kind": "word",
+    "source": "09",
+    "section": "20.6. Flora"
+  },
+  {
+    "id": "b1-eac4c477",
+    "order": 2165,
+    "es": "regar el jardín",
+    "kind": "phrase",
+    "source": "09",
+    "section": "20.6. Flora"
+  },
+  {
+    "id": "b1-a2c2ae8c",
+    "order": 2170,
+    "es": "terremoto",
+    "kind": "word",
+    "source": "09",
+    "section": "20.7. Problemas medioambientales y desastres naturales"
+  },
+  {
+    "id": "b1-221a00cf",
+    "order": 2176,
+    "es": "cambio climático",
+    "kind": "phrase",
+    "source": "09",
+    "section": "20.7. Problemas medioambientales y desastres naturales"
+  },
+  {
+    "id": "b1-55902fd0",
+    "order": 2177,
+    "es": "energía alternativa",
+    "kind": "phrase",
+    "source": "09",
+    "section": "20.7. Problemas medioambientales y desastres naturales"
+  },
+  {
+    "id": "b1-fd67333b",
+    "order": 2178,
+    "es": "recursos naturales",
+    "kind": "phrase",
+    "source": "09",
+    "section": "20.7. Problemas medioambientales y desastres naturales"
+  }
+]

@@ -83,6 +83,7 @@ export default {
     tree: 'Témák',
     talk: 'Átbeszélő',
     stats: 'Statisztika',
+    pcic: 'PCIC',
   },
   // Átbeszélő fül (Kálmán kérése, 2026-09-08): témát választasz, szintet
   // választasz, és azon a szinten beszéled át. A témák a PCIC makró-témák
@@ -659,5 +660,19 @@ export default {
     scheduleNextTomorrow: (time: string) => `holnap ${time}`,
     scheduleNextDays: (days: number) => `${days} nap múlva`,
     scheduleEmpty: 'Még nincs elrakott szó, tanulj párat!',
+  },
+  // PLAN-pcic 5. lépés: a PCIC fül (angol -> spanyol gépelés, Anki-gombok).
+  pcic: {
+    header: (due: number, newCount: number, doneToday: number) => `esedékes ${due} · új ${newCount} · ma kész ${doneToday}`,
+    again: 'Újra',
+    hard: 'Nehéz',
+    good: 'Jó',
+    easy: 'Könnyű',
+    doneTitle: 'Kész mára',
+    summary: (answered: number, newCount: number, again: number) => `Válaszoltál ${answered} lapra: ${newCount} új, ${again} again.`,
+    resetLabel: 'Haladás törlése',
+    resetConfirmTitle: 'Haladás törlése',
+    resetConfirmMessage: 'Ez törli az összes PCIC-haladást. Biztos vagy benne?',
+    resetConfirmYes: 'Törlés',
   },
 };
