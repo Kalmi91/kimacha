@@ -543,23 +543,25 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Estoy en casa.",
-        "hu": "Otthon vagyok.",
-        "en": "I am at home.",
-        "de": "Ich bin zu Hause."
+        "es": "Hoy estoy en la playa.",
+        "hu": "Ma a strandon vagyok.",
+        "en": "Today I am at the beach.",
+        "de": "Heute bin ich am Strand."
       },
-      "answer": "Estuve en casa.",
+      "answer": "Hoy estuve en la playa.",
       "accept": [
-        "Yo estuve en casa."
+        "Hoy yo estuve en la playa."
       ],
       "wordIds": [
-        "1051"
+        "1312",
+        "1051",
+        "1869"
       ],
       "why": {
-        "hu": "Lezárt múltbeli állapot: indefinido. Estar rendhagyó, yo: estuve.",
-        "en": "A closed past state: indefinido. Estar is irregular, yo: estuve.",
-        "es": "Un estado pasado y terminado: indefinido. Estar es irregular, yo: estuve.",
-        "de": "Ein abgeschlossener Zustand in der Vergangenheit: indefinido. Estar ist unregelmäßig, yo: estuve."
+        "hu": "Lezárt múltbeli állapot: indefinido. A hoy megmarad, mert a nap még nem telt el. Estar rendhagyó, yo: estuve.",
+        "en": "A closed past state: indefinido. Hoy still works because the day isn't over yet. Estar is irregular, yo: estuve.",
+        "es": "Un estado pasado y terminado: indefinido. Hoy sigue funcionando porque el día no ha terminado. Estar es irregular, yo: estuve.",
+        "de": "Ein abgeschlossener Zustand in der Vergangenheit: indefinido. Hoy passt noch, weil der Tag nicht vorbei ist. Estar ist unregelmäßig, yo: estuve."
       }
     },
     {
@@ -580,7 +582,8 @@
         "Tú fuiste al cine."
       ],
       "wordIds": [
-        "1087"
+        "1087",
+        "3587"
       ],
       "why": {
         "hu": "Egyszeri, lezárt cselekvés: indefinido. Ir rendhagyó (mint a ser), tú: fuiste.",
@@ -597,18 +600,18 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Tiene mucho tiempo.",
-        "hu": "Sok ideje van.",
-        "en": "He has a lot of time.",
-        "de": "Er hat viel Zeit."
+        "es": "Tiene un problema.",
+        "hu": "Van egy problémája.",
+        "en": "He has a problem.",
+        "de": "Er hat ein Problem."
       },
-      "answer": "Tuvo mucho tiempo.",
+      "answer": "Tuvo un problema.",
       "accept": [
-        "Él tuvo mucho tiempo."
+        "Él tuvo un problema."
       ],
       "wordIds": [
         "1073",
-        "3752"
+        "76"
       ],
       "why": {
         "hu": "Lezárt múltbeli állapot: indefinido. Tener rendhagyó, él: tuvo.",
@@ -635,13 +638,14 @@
         "Yo supe la verdad."
       ],
       "wordIds": [
-        "28"
+        "28",
+        "74"
       ],
       "why": {
-        "hu": "Egyszeri felismerés pillanata: indefinido. Saber rendhagyó, yo: supe.",
-        "en": "The moment something became known: indefinido. Saber is irregular, yo: supe.",
-        "es": "El momento en que algo se supo: indefinido. Saber es irregular, yo: supe.",
-        "de": "Der Moment, in dem etwas bekannt wurde: indefinido. Saber ist unregelmäßig, yo: supe."
+        "hu": "Indefinidóban a saber jelentése megváltozik: nem 'tudni', hanem 'megtudni' egy adott pillanatban. Rendhagyó, yo: supe.",
+        "en": "In the preterite, saber shifts meaning from 'to know' to 'to find out' at a specific moment. Irregular, yo: supe.",
+        "es": "En indefinido, saber cambia de sentido: no es 'saber' sino 'enterarse' en un momento concreto. Es irregular, yo: supe.",
+        "de": "Im Indefinido bedeutet saber nicht 'wissen', sondern 'erfahren' in einem bestimmten Moment. Unregelmäßig, yo: supe."
       }
     },
     {
@@ -652,24 +656,25 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Puedo terminar temprano.",
-        "hu": "Korán tudok végezni.",
-        "en": "I can finish early.",
-        "de": "Ich kann früh fertig werden."
+        "es": "Puedo ir a la fiesta.",
+        "hu": "El tudok menni a buliba.",
+        "en": "I can go to the party.",
+        "de": "Ich kann zur Party gehen."
       },
-      "answer": "Pude terminar temprano.",
+      "answer": "Pude ir a la fiesta.",
       "accept": [
-        "Yo pude terminar temprano."
+        "Yo pude ir a la fiesta."
       ],
       "wordIds": [
         "29",
-        "1239"
+        "31",
+        "218"
       ],
       "why": {
-        "hu": "Lezárt, egyszeri képesség vagy lehetőség: indefinido. Poder rendhagyó, yo: pude.",
-        "en": "A finished, one-time ability or chance: indefinido. Poder is irregular, yo: pude.",
-        "es": "Una capacidad o posibilidad puntual y terminada: indefinido. Poder es irregular, yo: pude.",
-        "de": "Eine abgeschlossene, einmalige Fähigkeit oder Möglichkeit: indefinido. Poder ist unregelmäßig, yo: pude."
+        "hu": "Indefinidóban a poder jelentése 'sikerült megtenni valamit'. Rendhagyó, yo: pude.",
+        "en": "In the preterite, poder means 'managed to' do something. Irregular, yo: pude.",
+        "es": "En indefinido, poder significa que algo se logró hacer. Es irregular, yo: pude.",
+        "de": "Im Indefinido bedeutet poder, dass etwas gelungen ist. Unregelmäßig, yo: pude."
       }
     },
     {
@@ -680,24 +685,25 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Miro despacio.",
-        "hu": "Lassan nézem.",
-        "en": "I look slowly.",
-        "de": "Ich schaue langsam."
+        "es": "Miras la película tarde.",
+        "hu": "Későn nézed a filmet.",
+        "en": "You watch the movie late.",
+        "de": "Du schaust dir den Film spät an."
       },
-      "answer": "Miré despacio.",
+      "answer": "Miraste la película tarde.",
       "accept": [
-        "Yo miré despacio."
+        "Tú miraste la película tarde."
       ],
       "wordIds": [
         "1880",
-        "2090"
+        "1875",
+        "1240"
       ],
       "why": {
-        "hu": "Lezárt cselekvés: indefinido. Mirar szabályos -ar ige, yo: miré (ékezettel, nem miro).",
-        "en": "A finished action: indefinido. Mirar is a regular -ar verb, yo: miré (with an accent, not miro).",
-        "es": "Una acción terminada: indefinido. Mirar es un verbo regular en -ar, yo: miré (con tilde, no miro).",
-        "de": "Eine abgeschlossene Handlung: indefinido. Mirar ist ein regelmäßiges -ar-Verb, yo: miré (mit Akzent, nicht miro)."
+        "hu": "Lezárt cselekvés: indefinido. Mirar szabályos -ar ige, tú: miraste.",
+        "en": "A finished action: indefinido. Mirar is a regular -ar verb, tú: miraste.",
+        "es": "Una acción terminada: indefinido. Mirar es un verbo regular en -ar, tú: miraste.",
+        "de": "Eine abgeschlossene Handlung: indefinido. Mirar ist ein regelmäßiges -ar-Verb, tú: miraste."
       }
     },
     {
@@ -708,25 +714,24 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Paso mucho tiempo aquí.",
-        "hu": "Sok időt töltök itt.",
-        "en": "I spend a lot of time here.",
-        "de": "Ich verbringe hier viel Zeit."
+        "es": "Pasa por la tienda.",
+        "hu": "Benéz a boltba.",
+        "en": "He stops by the store.",
+        "de": "Er schaut im Laden vorbei."
       },
-      "answer": "Pasé mucho tiempo aquí.",
+      "answer": "Pasó por la tienda.",
       "accept": [
-        "Yo pasé mucho tiempo aquí."
+        "Él pasó por la tienda."
       ],
       "wordIds": [
         "1887",
-        "3752",
-        "8"
+        "1400"
       ],
       "why": {
-        "hu": "Lezárt időtartam a múltban: indefinido. Pasar szabályos -ar ige, yo: pasé.",
-        "en": "A closed span of time in the past: indefinido. Pasar is a regular -ar verb, yo: pasé.",
-        "es": "Un periodo de tiempo terminado en el pasado: indefinido. Pasar es un verbo regular en -ar, yo: pasé.",
-        "de": "Ein abgeschlossener Zeitraum in der Vergangenheit: indefinido. Pasar ist ein regelmäßiges -ar-Verb, yo: pasé."
+        "hu": "Lezárt, egyszeri esemény: indefinido. Pasar szabályos -ar ige, él: pasó.",
+        "en": "A finished, one-time event: indefinido. Pasar is a regular -ar verb, él: pasó.",
+        "es": "Un hecho único y terminado: indefinido. Pasar es un verbo regular en -ar, él: pasó.",
+        "de": "Ein abgeschlossenes, einmaliges Ereignis: indefinido. Pasar ist ein regelmäßiges -ar-Verb, er: pasó."
       }
     },
     {
@@ -737,24 +742,24 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Esperas mucho.",
-        "hu": "Sokat vársz.",
-        "en": "You wait a lot.",
-        "de": "Du wartest viel."
+        "es": "Esperan en el parque.",
+        "hu": "A parkban várnak.",
+        "en": "They wait in the park.",
+        "de": "Sie warten im Park."
       },
-      "answer": "Esperaste mucho.",
+      "answer": "Esperaron en el parque.",
       "accept": [
-        "Tú esperaste mucho."
+        "Ellos esperaron en el parque."
       ],
       "wordIds": [
         "80",
-        "3752"
+        "1224"
       ],
       "why": {
-        "hu": "Lezárt várakozás: indefinido. Esperar szabályos -ar ige, tú: esperaste.",
-        "en": "A finished period of waiting: indefinido. Esperar is a regular -ar verb, tú: esperaste.",
-        "es": "Una espera terminada: indefinido. Esperar es un verbo regular en -ar, tú: esperaste.",
-        "de": "Ein abgeschlossenes Warten: indefinido. Esperar ist ein regelmäßiges -ar-Verb, tú: esperaste."
+        "hu": "Lezárt várakozás: indefinido. Esperar szabályos -ar ige, ellos: esperaron.",
+        "en": "A finished period of waiting: indefinido. Esperar is a regular -ar verb, ellos: esperaron.",
+        "es": "Una espera terminada: indefinido. Esperar es un verbo regular en -ar, ellos: esperaron.",
+        "de": "Ein abgeschlossenes Warten: indefinido. Esperar ist ein regelmäßiges -ar-Verb, sie: esperaron."
       }
     },
     {
@@ -765,25 +770,25 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Necesito estar aquí.",
-        "hu": "Itt kell lennem.",
-        "en": "I need to be here.",
-        "de": "Ich muss hier sein."
+        "es": "Necesitas dinero para el viaje.",
+        "hu": "Pénz kell az utazáshoz.",
+        "en": "You need money for the trip.",
+        "de": "Du brauchst Geld für die Reise."
       },
-      "answer": "Necesité estar aquí.",
+      "answer": "Necesitaste dinero para el viaje.",
       "accept": [
-        "Yo necesité estar aquí."
+        "Tú necesitaste dinero para el viaje."
       ],
       "wordIds": [
         "85",
-        "3743",
-        "8"
+        "21",
+        "202"
       ],
       "why": {
-        "hu": "Lezárt, konkrét szükséglet a múltban: indefinido. Necesitar szabályos -ar ige, yo: necesité.",
-        "en": "A finished, specific need in the past: indefinido. Necesitar is a regular -ar verb, yo: necesité.",
-        "es": "Una necesidad concreta y terminada en el pasado: indefinido. Necesitar es un verbo regular en -ar, yo: necesité.",
-        "de": "Ein abgeschlossenes, konkretes Bedürfnis in der Vergangenheit: indefinido. Necesitar ist ein regelmäßiges -ar-Verb, yo: necesité."
+        "hu": "Lezárt, konkrét szükséglet a múltban: indefinido. Necesitar szabályos -ar ige, tú: necesitaste.",
+        "en": "A finished, specific need in the past: indefinido. Necesitar is a regular -ar verb, tú: necesitaste.",
+        "es": "Una necesidad concreta y terminada en el pasado: indefinido. Necesitar es un verbo regular en -ar, tú: necesitaste.",
+        "de": "Ein abgeschlossenes, konkretes Bedürfnis in der Vergangenheit: indefinido. Necesitar ist ein regelmäßiges -ar-Verb, tú: necesitaste."
       }
     },
     {
@@ -794,25 +799,24 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Me gusta mucho aquí.",
-        "hu": "Nagyon tetszik itt.",
-        "en": "I like it a lot here.",
-        "de": "Es gefällt mir hier sehr."
+        "es": "Me gusta la música.",
+        "hu": "Szeretem a zenét.",
+        "en": "I like the music.",
+        "de": "Ich mag die Musik."
       },
-      "answer": "Me gustó mucho aquí.",
+      "answer": "Me gustó la música.",
       "accept": [
-        "A mí me gustó mucho aquí."
+        "A mí me gustó la música."
       ],
       "wordIds": [
         "1229",
-        "3752",
-        "8"
+        "1566"
       ],
       "why": {
-        "hu": "Egyszeri, lezárt tetszés-élmény: indefinido. Gustar személytelen ige, egyes szám 3.: gustó.",
-        "en": "A single, finished moment of liking something: indefinido. Gustar is impersonal, third person singular: gustó.",
-        "es": "Un momento único y terminado de que algo gustó: indefinido. Gustar es impersonal, tercera persona singular: gustó.",
-        "de": "Ein einzelner, abgeschlossener Moment des Gefallens: indefinido. Gustar ist unpersönlich, dritte Person Singular: gustó."
+        "hu": "Egyszeri, lezárt tetszés-élmény: indefinido. Gustar személytelen ige, alanya „la música”, ezért egyes szám 3.: gustó.",
+        "en": "A single, finished moment of liking something: indefinido. Gustar is impersonal, its subject is 'la música', so third person singular: gustó.",
+        "es": "Un momento único y terminado de que algo gustó: indefinido. Gustar es impersonal, su sujeto es 'la música', tercera persona singular: gustó.",
+        "de": "Ein einzelner, abgeschlossener Moment des Gefallens: indefinido. Gustar ist unpersönlich, Subjekt ist 'la música', daher dritte Person Singular: gustó."
       }
     },
     {
@@ -823,23 +827,23 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Están aquí temprano.",
-        "hu": "Korán itt vannak.",
-        "en": "They are here early.",
-        "de": "Sie sind früh hier."
+        "es": "Están en la ciudad hoy.",
+        "hu": "Ma a városban vannak.",
+        "en": "They are in the city today.",
+        "de": "Sie sind heute in der Stadt."
       },
-      "answer": "Estuvieron aquí temprano.",
+      "answer": "Estuvieron en la ciudad hoy.",
       "accept": [
-        "Ellos estuvieron aquí temprano."
+        "Ellos estuvieron en la ciudad hoy."
       ],
       "wordIds": [
         "1055",
-        "8",
-        "1239"
+        "1851",
+        "1312"
       ],
       "why": {
-        "hu": "Lezárt múltbeli állapot: indefinido. Estar rendhagyó, ők: estuvieron.",
-        "en": "A closed past state: indefinido. Estar is irregular, they: estuvieron.",
+        "hu": "Lezárt múltbeli állapot: indefinido. Estar rendhagyó, ellos: estuvieron.",
+        "en": "A closed past state: indefinido. Estar is irregular, ellos: estuvieron.",
         "es": "Un estado pasado y terminado: indefinido. Estar es irregular, ellos: estuvieron.",
         "de": "Ein abgeschlossener Zustand in der Vergangenheit: indefinido. Estar ist unregelmäßig, sie: estuvieron."
       }
@@ -852,23 +856,22 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Tenemos mucho tiempo aquí.",
-        "hu": "Sok időnk van itt.",
-        "en": "We have a lot of time here.",
-        "de": "Wir haben hier viel Zeit."
+        "es": "Tenemos un examen.",
+        "hu": "Van egy vizsgánk.",
+        "en": "We have an exam.",
+        "de": "Wir haben eine Prüfung."
       },
-      "answer": "Tuvimos mucho tiempo aquí.",
+      "answer": "Tuvimos un examen.",
       "accept": [
-        "Nosotros tuvimos mucho tiempo aquí."
+        "Nosotros tuvimos un examen."
       ],
       "wordIds": [
         "1074",
-        "3752",
-        "8"
+        "1857"
       ],
       "why": {
-        "hu": "Lezárt múltbeli állapot: indefinido. Tener rendhagyó, mi: tuvimos.",
-        "en": "A closed past state: indefinido. Tener is irregular, we: tuvimos.",
+        "hu": "Lezárt múltbeli állapot: indefinido. Tener rendhagyó, nosotros: tuvimos.",
+        "en": "A closed past state: indefinido. Tener is irregular, nosotros: tuvimos.",
         "es": "Un estado pasado y terminado: indefinido. Tener es irregular, nosotros: tuvimos.",
         "de": "Ein abgeschlossener Zustand in der Vergangenheit: indefinido. Tener ist unregelmäßig, wir: tuvimos."
       }
