@@ -21,11 +21,12 @@ import { answerInputProps } from '@/lib/inputProps';
 // Nem a FSRS `cards`/`sessionQueue` ütemezőt használja, azt nem érinti.
 
 const NEW_ORDER = PCIC_ITEMS.map((i) => i.id);
-const GRADES: Sm2Grade[] = ['again', 'hard', 'good', 'easy'];
+const GRADES: Sm2Grade[] = ['again', 'good'];
 
 // FB minta (pcicMatch.ts): exact -> Good, near -> Hard, wrong -> Again van
 // előre kijelölve, Easy sosem.
-const PRESELECT: Record<PcicGrade['match'], Sm2Grade> = { exact: 'good', near: 'hard', wrong: 'again' };
+// SZ1, Kálmán döntése 2026-09-18: near is Tudtam, ő nyomja le Nem tudtam-ra.
+const PRESELECT: Record<PcicGrade['match'], Sm2Grade> = { exact: 'good', near: 'good', wrong: 'again' };
 
 export default function PcicScreen() {
   const { theme } = useTheme();
