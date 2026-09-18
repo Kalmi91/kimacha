@@ -1,0 +1,877 @@
+{
+  "schema": 2,
+  "topic": "indefinido-10-verbos",
+  "level": "A2",
+  "title": {
+    "hu": "Befejezett múlt, a 10 leggyakoribb ige",
+    "en": "Preterite, the 10 most frequent verbs",
+    "es": "Indefinido, los 10 verbos más frecuentes",
+    "de": "Indefinido, die 10 häufigsten Verben"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Ez a tíz ige a beszélt spanyol gerince: leggyakrabban ezekkel mondasz el egy lezárt, befejezett eseményt a múltban. Öt rendhagyó (estar, ir, tener, saber, poder) és öt szabályos -ar ige (mirar, pasar, esperar, necesitar, gustar) teljes ragozását mutatja a tíz tábla.",
+        "en": "These ten verbs are the backbone of spoken Spanish: they are the ones you reach for most when telling a finished, closed event in the past. The ten tables below show the full conjugation of five irregular verbs (estar, ir, tener, saber, poder) and five regular -ar verbs (mirar, pasar, esperar, necesitar, gustar).",
+        "es": "Estos diez verbos son la columna vertebral del español hablado: son los que más usas para contar un hecho terminado en el pasado. Las diez tablas siguientes muestran la conjugación completa de cinco verbos irregulares (estar, ir, tener, saber, poder) y cinco verbos regulares en -ar (mirar, pasar, esperar, necesitar, gustar).",
+        "de": "Diese zehn Verben sind das Rückgrat des gesprochenen Spanisch: Mit ihnen erzählst du am häufigsten von einem abgeschlossenen Ereignis in der Vergangenheit. Die folgenden zehn Tabellen zeigen die vollständige Konjugation von fünf unregelmäßigen Verben (estar, ir, tener, saber, poder) und fünf regelmäßigen -ar-Verben (mirar, pasar, esperar, necesitar, gustar)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "ind10-estar",
+      "title": {
+        "hu": "estar (indefinido)",
+        "en": "estar (preterite)",
+        "es": "estar (indefinido)",
+        "de": "estar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "estar",
+          "en": "estar",
+          "es": "estar",
+          "de": "estar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "estuve"
+        ],
+        [
+          "tú",
+          "estuviste"
+        ],
+        [
+          "él/ella/usted",
+          "estuvo"
+        ],
+        [
+          "nosotros",
+          "estuvimos"
+        ],
+        [
+          "vosotros",
+          "estuvisteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "estuvieron"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind10-ir",
+      "title": {
+        "hu": "ir (indefinido)",
+        "en": "ir (preterite)",
+        "es": "ir (indefinido)",
+        "de": "ir (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "ir",
+          "en": "ir",
+          "es": "ir",
+          "de": "ir"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "fui"
+        ],
+        [
+          "tú",
+          "fuiste"
+        ],
+        [
+          "él/ella/usted",
+          "fue"
+        ],
+        [
+          "nosotros",
+          "fuimos"
+        ],
+        [
+          "vosotros",
+          "fuisteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "fueron"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind10-tener",
+      "title": {
+        "hu": "tener (indefinido)",
+        "en": "tener (preterite)",
+        "es": "tener (indefinido)",
+        "de": "tener (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "tener",
+          "en": "tener",
+          "es": "tener",
+          "de": "tener"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "tuve"
+        ],
+        [
+          "tú",
+          "tuviste"
+        ],
+        [
+          "él/ella/usted",
+          "tuvo"
+        ],
+        [
+          "nosotros",
+          "tuvimos"
+        ],
+        [
+          "vosotros",
+          "tuvisteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "tuvieron"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind10-saber",
+      "title": {
+        "hu": "saber (indefinido)",
+        "en": "saber (preterite)",
+        "es": "saber (indefinido)",
+        "de": "saber (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "saber",
+          "en": "saber",
+          "es": "saber",
+          "de": "saber"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "supe"
+        ],
+        [
+          "tú",
+          "supiste"
+        ],
+        [
+          "él/ella/usted",
+          "supo"
+        ],
+        [
+          "nosotros",
+          "supimos"
+        ],
+        [
+          "vosotros",
+          "supisteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "supieron"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind10-poder",
+      "title": {
+        "hu": "poder (indefinido)",
+        "en": "poder (preterite)",
+        "es": "poder (indefinido)",
+        "de": "poder (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "poder",
+          "en": "poder",
+          "es": "poder",
+          "de": "poder"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "pude"
+        ],
+        [
+          "tú",
+          "pudiste"
+        ],
+        [
+          "él/ella/usted",
+          "pudo"
+        ],
+        [
+          "nosotros",
+          "pudimos"
+        ],
+        [
+          "vosotros",
+          "pudisteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "pudieron"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind10-mirar",
+      "title": {
+        "hu": "mirar (indefinido)",
+        "en": "mirar (preterite)",
+        "es": "mirar (indefinido)",
+        "de": "mirar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "mirar",
+          "en": "mirar",
+          "es": "mirar",
+          "de": "mirar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "miré"
+        ],
+        [
+          "tú",
+          "miraste"
+        ],
+        [
+          "él/ella/usted",
+          "miró"
+        ],
+        [
+          "nosotros",
+          "miramos"
+        ],
+        [
+          "vosotros",
+          "mirasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "miraron"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind10-pasar",
+      "title": {
+        "hu": "pasar (indefinido)",
+        "en": "pasar (preterite)",
+        "es": "pasar (indefinido)",
+        "de": "pasar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "pasar",
+          "en": "pasar",
+          "es": "pasar",
+          "de": "pasar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "pasé"
+        ],
+        [
+          "tú",
+          "pasaste"
+        ],
+        [
+          "él/ella/usted",
+          "pasó"
+        ],
+        [
+          "nosotros",
+          "pasamos"
+        ],
+        [
+          "vosotros",
+          "pasasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "pasaron"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind10-esperar",
+      "title": {
+        "hu": "esperar (indefinido)",
+        "en": "esperar (preterite)",
+        "es": "esperar (indefinido)",
+        "de": "esperar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "esperar",
+          "en": "esperar",
+          "es": "esperar",
+          "de": "esperar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "esperé"
+        ],
+        [
+          "tú",
+          "esperaste"
+        ],
+        [
+          "él/ella/usted",
+          "esperó"
+        ],
+        [
+          "nosotros",
+          "esperamos"
+        ],
+        [
+          "vosotros",
+          "esperasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "esperaron"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind10-necesitar",
+      "title": {
+        "hu": "necesitar (indefinido)",
+        "en": "necesitar (preterite)",
+        "es": "necesitar (indefinido)",
+        "de": "necesitar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "necesitar",
+          "en": "necesitar",
+          "es": "necesitar",
+          "de": "necesitar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "necesité"
+        ],
+        [
+          "tú",
+          "necesitaste"
+        ],
+        [
+          "él/ella/usted",
+          "necesitó"
+        ],
+        [
+          "nosotros",
+          "necesitamos"
+        ],
+        [
+          "vosotros",
+          "necesitasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "necesitaron"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind10-gustar",
+      "title": {
+        "hu": "gustar (indefinido)",
+        "en": "gustar (preterite)",
+        "es": "gustar (indefinido)",
+        "de": "gustar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "gustar",
+          "en": "gustar",
+          "es": "gustar",
+          "de": "gustar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "gusté"
+        ],
+        [
+          "tú",
+          "gustaste"
+        ],
+        [
+          "él/ella/usted",
+          "gustó"
+        ],
+        [
+          "nosotros",
+          "gustamos"
+        ],
+        [
+          "vosotros",
+          "gustasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "gustaron"
+        ]
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A szabályos -ar igéknél az ékezet dönt: yo-alak -é-re, ő-alak -ó-ra végződik (miré/miró). A rendhagyóknál (estuve, fui, tuve, supe, pude) nincs ékezet egyik alakon sem.",
+        "en": "For regular -ar verbs, the accent makes the difference: the yo-form ends in -é, the he-form in -ó (miré/miró). The irregulars (estuve, fui, tuve, supe, pude) carry no accent at all.",
+        "es": "En los verbos regulares en -ar, la tilde marca la diferencia: la forma de yo termina en -é, la de él en -ó (miré/miró). Los irregulares (estuve, fui, tuve, supe, pude) no llevan tilde en ninguna forma.",
+        "de": "Bei regelmäßigen -ar-Verben entscheidet der Akzent: die yo-Form endet auf -é, die er-Form auf -ó (miré/miró). Die unregelmäßigen Formen (estuve, fui, tuve, supe, pude) tragen gar keinen Akzent."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Ez a lecke a tíz leggyakoribb spanyol ige befejezett múlt idejű alakját gyakorolja. Van köztük öt rendhagyó: «estar», «ir», «tener», «saber» és «poder», ezeknél nincs ékezet az alakokon, mint «estuve», «fui», «tuve», «supe» és «pude». Az öt szabályos -ar ige, «mirar», «pasar», «esperar», «necesitar» és «gustar», a megszokott -é, -aste, -ó, -amos, -asteis, -aron végződéseket kapja. A yo-alak és az él-alak közti különbséget gyakran csak az ékezet mutatja, ezért «miré» és «miró» kiejtése is eltér. Minden mondatban a jelen idejű alakot kell átírnod a megfelelő múlt idejű formára. Mexikóban a többes szám második személyt sosem használjuk, helyette mindig «ustedes» alakot mondunk.",
+    "en": "This lesson drills the preterite forms of the ten most frequent Spanish verbs. Five of them are irregular: «estar», «ir», «tener», «saber» and «poder», and their forms carry no accent mark, like «estuve», «fui», «tuve», «supe» and «pude». The other five, «mirar», «pasar», «esperar», «necesitar» and «gustar», are regular -ar verbs and take the usual -é, -aste, -ó, -amos, -asteis, -aron endings. The yo-form and the he-form are often told apart only by the accent, so «miré» and «miró» sound different too. In every sentence you rewrite the present-tense verb into its matching past form. In Mexico the vosotros form is never used, «ustedes» covers that person instead.",
+    "es": "Esta lección practica el pretérito indefinido de los diez verbos más frecuentes del español. Cinco son irregulares: «estar», «ir», «tener», «saber» y «poder», y sus formas no llevan tilde, como «estuve», «fui», «tuve», «supe» y «pude». Los otros cinco, «mirar», «pasar», «esperar», «necesitar» y «gustar», son verbos regulares en -ar y llevan las terminaciones de siempre: -é, -aste, -ó, -amos, -asteis, -aron. La forma de yo y la de él suelen distinguirse solo por la tilde, por eso «miré» y «miró» también suenan distinto. En cada oración conviertes el verbo en presente a su forma de pasado correspondiente. En México nunca se usa la forma de vosotros, siempre se dice «ustedes».",
+    "de": "Diese Lektion übt die Vergangenheitsform der zehn häufigsten spanischen Verben. Fünf davon sind unregelmäßig: «estar», «ir», «tener», «saber» und «poder», ihre Formen tragen keinen Akzent, wie «estuve», «fui», «tuve», «supe» und «pude». Die anderen fünf, «mirar», «pasar», «esperar», «necesitar» und «gustar», sind regelmäßige -ar-Verben mit den gewohnten Endungen -é, -aste, -ó, -amos, -asteis, -aron. Die yo-Form und die er-Form unterscheiden sich oft nur durch den Akzent, deshalb klingen «miré» und «miró» auch verschieden. In jedem Satz schreibst du das Präsensverb in die passende Vergangenheitsform um. In Mexiko wird die vosotros-Form nie benutzt, stattdessen sagt man immer «ustedes»."
+  },
+  "items": [
+    {
+      "id": "i10-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Estoy en casa.",
+        "hu": "Otthon vagyok.",
+        "en": "I am at home.",
+        "de": "Ich bin zu Hause."
+      },
+      "answer": "Estuve en casa.",
+      "accept": [
+        "Yo estuve en casa."
+      ],
+      "wordIds": [
+        "1051"
+      ],
+      "why": {
+        "hu": "Lezárt múltbeli állapot: indefinido. Estar rendhagyó, yo: estuve.",
+        "en": "A closed past state: indefinido. Estar is irregular, yo: estuve.",
+        "es": "Un estado pasado y terminado: indefinido. Estar es irregular, yo: estuve.",
+        "de": "Ein abgeschlossener Zustand in der Vergangenheit: indefinido. Estar ist unregelmäßig, yo: estuve."
+      }
+    },
+    {
+      "id": "i10-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Vas al cine.",
+        "hu": "Moziba mész.",
+        "en": "You are going to the movies.",
+        "de": "Du gehst ins Kino."
+      },
+      "answer": "Fuiste al cine.",
+      "accept": [
+        "Tú fuiste al cine."
+      ],
+      "wordIds": [
+        "1087"
+      ],
+      "why": {
+        "hu": "Egyszeri, lezárt cselekvés: indefinido. Ir rendhagyó (mint a ser), tú: fuiste.",
+        "en": "A single, finished action: indefinido. Ir is irregular (like ser), tú: fuiste.",
+        "es": "Una acción única y terminada: indefinido. Ir es irregular (como ser), tú: fuiste.",
+        "de": "Eine einzelne, abgeschlossene Handlung: indefinido. Ir ist unregelmäßig (wie ser), tú: fuiste."
+      }
+    },
+    {
+      "id": "i10-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Tiene mucho tiempo.",
+        "hu": "Sok ideje van.",
+        "en": "He has a lot of time.",
+        "de": "Er hat viel Zeit."
+      },
+      "answer": "Tuvo mucho tiempo.",
+      "accept": [
+        "Él tuvo mucho tiempo."
+      ],
+      "wordIds": [
+        "1073",
+        "3752"
+      ],
+      "why": {
+        "hu": "Lezárt múltbeli állapot: indefinido. Tener rendhagyó, él: tuvo.",
+        "en": "A closed past state: indefinido. Tener is irregular, él: tuvo.",
+        "es": "Un estado pasado y terminado: indefinido. Tener es irregular, él: tuvo.",
+        "de": "Ein abgeschlossener Zustand in der Vergangenheit: indefinido. Tener ist unregelmäßig, er: tuvo."
+      }
+    },
+    {
+      "id": "i10-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Sé la verdad.",
+        "hu": "Tudom az igazságot.",
+        "en": "I know the truth.",
+        "de": "Ich weiß die Wahrheit."
+      },
+      "answer": "Supe la verdad.",
+      "accept": [
+        "Yo supe la verdad."
+      ],
+      "wordIds": [
+        "28"
+      ],
+      "why": {
+        "hu": "Egyszeri felismerés pillanata: indefinido. Saber rendhagyó, yo: supe.",
+        "en": "The moment something became known: indefinido. Saber is irregular, yo: supe.",
+        "es": "El momento en que algo se supo: indefinido. Saber es irregular, yo: supe.",
+        "de": "Der Moment, in dem etwas bekannt wurde: indefinido. Saber ist unregelmäßig, yo: supe."
+      }
+    },
+    {
+      "id": "i10-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Puedo terminar temprano.",
+        "hu": "Korán tudok végezni.",
+        "en": "I can finish early.",
+        "de": "Ich kann früh fertig werden."
+      },
+      "answer": "Pude terminar temprano.",
+      "accept": [
+        "Yo pude terminar temprano."
+      ],
+      "wordIds": [
+        "29",
+        "1239"
+      ],
+      "why": {
+        "hu": "Lezárt, egyszeri képesség vagy lehetőség: indefinido. Poder rendhagyó, yo: pude.",
+        "en": "A finished, one-time ability or chance: indefinido. Poder is irregular, yo: pude.",
+        "es": "Una capacidad o posibilidad puntual y terminada: indefinido. Poder es irregular, yo: pude.",
+        "de": "Eine abgeschlossene, einmalige Fähigkeit oder Möglichkeit: indefinido. Poder ist unregelmäßig, yo: pude."
+      }
+    },
+    {
+      "id": "i10-tr-06",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Miro despacio.",
+        "hu": "Lassan nézem.",
+        "en": "I look slowly.",
+        "de": "Ich schaue langsam."
+      },
+      "answer": "Miré despacio.",
+      "accept": [
+        "Yo miré despacio."
+      ],
+      "wordIds": [
+        "1880",
+        "2090"
+      ],
+      "why": {
+        "hu": "Lezárt cselekvés: indefinido. Mirar szabályos -ar ige, yo: miré (ékezettel, nem miro).",
+        "en": "A finished action: indefinido. Mirar is a regular -ar verb, yo: miré (with an accent, not miro).",
+        "es": "Una acción terminada: indefinido. Mirar es un verbo regular en -ar, yo: miré (con tilde, no miro).",
+        "de": "Eine abgeschlossene Handlung: indefinido. Mirar ist ein regelmäßiges -ar-Verb, yo: miré (mit Akzent, nicht miro)."
+      }
+    },
+    {
+      "id": "i10-tr-07",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Paso mucho tiempo aquí.",
+        "hu": "Sok időt töltök itt.",
+        "en": "I spend a lot of time here.",
+        "de": "Ich verbringe hier viel Zeit."
+      },
+      "answer": "Pasé mucho tiempo aquí.",
+      "accept": [
+        "Yo pasé mucho tiempo aquí."
+      ],
+      "wordIds": [
+        "1887",
+        "3752",
+        "8"
+      ],
+      "why": {
+        "hu": "Lezárt időtartam a múltban: indefinido. Pasar szabályos -ar ige, yo: pasé.",
+        "en": "A closed span of time in the past: indefinido. Pasar is a regular -ar verb, yo: pasé.",
+        "es": "Un periodo de tiempo terminado en el pasado: indefinido. Pasar es un verbo regular en -ar, yo: pasé.",
+        "de": "Ein abgeschlossener Zeitraum in der Vergangenheit: indefinido. Pasar ist ein regelmäßiges -ar-Verb, yo: pasé."
+      }
+    },
+    {
+      "id": "i10-tr-08",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Esperas mucho.",
+        "hu": "Sokat vársz.",
+        "en": "You wait a lot.",
+        "de": "Du wartest viel."
+      },
+      "answer": "Esperaste mucho.",
+      "accept": [
+        "Tú esperaste mucho."
+      ],
+      "wordIds": [
+        "80",
+        "3752"
+      ],
+      "why": {
+        "hu": "Lezárt várakozás: indefinido. Esperar szabályos -ar ige, tú: esperaste.",
+        "en": "A finished period of waiting: indefinido. Esperar is a regular -ar verb, tú: esperaste.",
+        "es": "Una espera terminada: indefinido. Esperar es un verbo regular en -ar, tú: esperaste.",
+        "de": "Ein abgeschlossenes Warten: indefinido. Esperar ist ein regelmäßiges -ar-Verb, tú: esperaste."
+      }
+    },
+    {
+      "id": "i10-tr-09",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Necesito estar aquí.",
+        "hu": "Itt kell lennem.",
+        "en": "I need to be here.",
+        "de": "Ich muss hier sein."
+      },
+      "answer": "Necesité estar aquí.",
+      "accept": [
+        "Yo necesité estar aquí."
+      ],
+      "wordIds": [
+        "85",
+        "3743",
+        "8"
+      ],
+      "why": {
+        "hu": "Lezárt, konkrét szükséglet a múltban: indefinido. Necesitar szabályos -ar ige, yo: necesité.",
+        "en": "A finished, specific need in the past: indefinido. Necesitar is a regular -ar verb, yo: necesité.",
+        "es": "Una necesidad concreta y terminada en el pasado: indefinido. Necesitar es un verbo regular en -ar, yo: necesité.",
+        "de": "Ein abgeschlossenes, konkretes Bedürfnis in der Vergangenheit: indefinido. Necesitar ist ein regelmäßiges -ar-Verb, yo: necesité."
+      }
+    },
+    {
+      "id": "i10-tr-10",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Me gusta mucho aquí.",
+        "hu": "Nagyon tetszik itt.",
+        "en": "I like it a lot here.",
+        "de": "Es gefällt mir hier sehr."
+      },
+      "answer": "Me gustó mucho aquí.",
+      "accept": [
+        "A mí me gustó mucho aquí."
+      ],
+      "wordIds": [
+        "1229",
+        "3752",
+        "8"
+      ],
+      "why": {
+        "hu": "Egyszeri, lezárt tetszés-élmény: indefinido. Gustar személytelen ige, egyes szám 3.: gustó.",
+        "en": "A single, finished moment of liking something: indefinido. Gustar is impersonal, third person singular: gustó.",
+        "es": "Un momento único y terminado de que algo gustó: indefinido. Gustar es impersonal, tercera persona singular: gustó.",
+        "de": "Ein einzelner, abgeschlossener Moment des Gefallens: indefinido. Gustar ist unpersönlich, dritte Person Singular: gustó."
+      }
+    },
+    {
+      "id": "i10-tr-11",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Están aquí temprano.",
+        "hu": "Korán itt vannak.",
+        "en": "They are here early.",
+        "de": "Sie sind früh hier."
+      },
+      "answer": "Estuvieron aquí temprano.",
+      "accept": [
+        "Ellos estuvieron aquí temprano."
+      ],
+      "wordIds": [
+        "1055",
+        "8",
+        "1239"
+      ],
+      "why": {
+        "hu": "Lezárt múltbeli állapot: indefinido. Estar rendhagyó, ők: estuvieron.",
+        "en": "A closed past state: indefinido. Estar is irregular, they: estuvieron.",
+        "es": "Un estado pasado y terminado: indefinido. Estar es irregular, ellos: estuvieron.",
+        "de": "Ein abgeschlossener Zustand in der Vergangenheit: indefinido. Estar ist unregelmäßig, sie: estuvieron."
+      }
+    },
+    {
+      "id": "i10-tr-12",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Tenemos mucho tiempo aquí.",
+        "hu": "Sok időnk van itt.",
+        "en": "We have a lot of time here.",
+        "de": "Wir haben hier viel Zeit."
+      },
+      "answer": "Tuvimos mucho tiempo aquí.",
+      "accept": [
+        "Nosotros tuvimos mucho tiempo aquí."
+      ],
+      "wordIds": [
+        "1074",
+        "3752",
+        "8"
+      ],
+      "why": {
+        "hu": "Lezárt múltbeli állapot: indefinido. Tener rendhagyó, mi: tuvimos.",
+        "en": "A closed past state: indefinido. Tener is irregular, we: tuvimos.",
+        "es": "Un estado pasado y terminado: indefinido. Tener es irregular, nosotros: tuvimos.",
+        "de": "Ein abgeschlossener Zustand in der Vergangenheit: indefinido. Tener ist unregelmäßig, wir: tuvimos."
+      }
+    }
+  ]
+}
