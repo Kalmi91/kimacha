@@ -92,12 +92,10 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
       }
     };
     collect(lesson.body);
-    // NY4: a transform-only lecke (indefinido-10-verbos) body-ja text+table+tip,
-    // nincs list/usage/examples/contrast blokk, tehát nincs is példapár.
-    const hasExampleBearingBlock = lesson.body.some((b) =>
-      ['list', 'usage', 'examples', 'contrast'].includes(b.kind),
-    );
-    if (!hasExampleBearingBlock) return;
+    // NY4: a transform-lecke (pl. indefinido-10-verbos) body-ja text+table+tip,
+    // nincs list/usage/examples/contrast blokk, tehát nincs is példapár. Csak a
+    // transform itemet tartalmazó leckéken engedünk, a régi leckéken a szigor marad.
+    if (lesson.items.some((i) => i.kind === 'transform')) return;
     expect(pairs.length).toBeGreaterThan(0);
     for (const pair of pairs) {
       for (const lang of ['hu', 'en', 'de'] as const) {
@@ -135,9 +133,9 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
   });
 
   it('has 1-2 match items with 5-6 unique es/en pairs', () => {
-    // NY4: a transform-only lecke (indefinido-10-verbos) nem gap-alapú, nincs match párja.
-    const gapItemCount = lesson.items.filter((i) => i.kind === undefined).length;
-    if (gapItemCount === 0) return;
+    // NY4: a transform-leckén (pl. indefinido-10-verbos) nincs gap-alapú tartalom,
+    // ezért nincs match pár sem; a régi leckéken a szigor marad.
+    if (lesson.items.some((i) => i.kind === 'transform')) return;
     const matchItems = lesson.items.filter((i) => i.kind === 'match');
     expect(matchItems.length).toBeGreaterThanOrEqual(1);
     expect(matchItems.length).toBeLessThanOrEqual(2);
@@ -218,8 +216,9 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
 
   it("every gap item's wrong explanations are real sentences in 4 languages", () => {
     const gapItems = lesson.items.filter((i): i is GrammarGapItem => i.kind === undefined) as GrammarGapItem[];
-    // NY4: a transform-only lecke (indefinido-10-verbos) nem gap-alapú, 0 elemen is rendben.
-    if (gapItems.length === 0) return;
+    // NY4: a transform-leckén (pl. indefinido-10-verbos) nincs gap-alapú tartalom;
+    // a régi leckéken (nincs transform item) a szigor marad.
+    if (lesson.items.some((i) => i.kind === 'transform')) return;
     expect(gapItems.length).toBeGreaterThanOrEqual(10);
     const bareWrong = /^(wrong|rossz|falsch|incorrecto)\.?$/i;
     for (const item of gapItems) {
