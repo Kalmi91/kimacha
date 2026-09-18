@@ -17,6 +17,7 @@ export interface Sm2Card {
   due: string; // 'YYYY-MM-DD', new kártyánál üres string
   lastReview: string | null;
   introducedAt: string | null; // melyik napon lett először kérdezve
+  known?: boolean; // SZ3: Kálmán kézzel »tudott«-nak jelölte; ritka ellenőrzés, a statisztikában ismert
 }
 
 // Anki alapértékek: 2 learning lépés, mindkettő ugyanabban a menetben kerül
@@ -28,6 +29,7 @@ export const DEFAULT_EASE = 2.5;
 const GRADUATE_INTERVAL_DAYS = 1;
 const EASY_LEARNING_INTERVAL_DAYS = 4;
 export const DEFAULT_NEW_LIMIT = 20;
+export const KNOWN_INTERVAL_DAYS = 60;
 
 export function addDays(ymd: string, n: number): string {
   const [y, m, d] = ymd.split('-').map(Number);
@@ -184,4 +186,19 @@ export function pickSm2Session(
   }
 
   return [...dueReview, ...learning, ...newCards];
+}
+
+/** SZ3 (SZAVAK.md, Kálmán döntése 2026-09-18, (b) változat): a szó ismertnek számít,
+ *  ritkán (KNOWN_INTERVAL_DAYS) mégis visszajön ellenőrzésre. Ease érintetlen. */
+export function sm2MarkKnown(card: Sm2Card, today: string): Sm2Card {
+  return {
+    ...card,
+    state: 'review',
+    step: 0,
+    interval: KNOWN_INTERVAL_DAYS,
+    due: addDays(today, KNOWN_INTERVAL_DAYS),
+    lastReview: today,
+    introducedAt: card.introducedAt ?? today,
+    known: true,
+  };
 }

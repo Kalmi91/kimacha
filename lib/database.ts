@@ -279,7 +279,8 @@ class SQLiteDB implements DB {
         lapses INTEGER NOT NULL DEFAULT 0,
         due TEXT NOT NULL DEFAULT '',
         last_review TEXT,
-        introduced_at TEXT
+        introduced_at TEXT,
+        known INTEGER NOT NULL DEFAULT 0
       );
     `);
     // Migration: add random_topics column (DBs created before the random-topic toggle).
@@ -337,6 +338,10 @@ class SQLiteDB implements DB {
     // UTEMEZO 4.7: repair_gap (R_javítás), a rontott lap külön, rövid rése.
     try {
       await this.db.execAsync('ALTER TABLE learn_settings ADD COLUMN repair_gap INTEGER');
+    } catch {}
+    // Migration: pcic_cards.known column (DBs created before "Ezt nem tanulom", SZ3).
+    try {
+      await this.db.execAsync('ALTER TABLE pcic_cards ADD COLUMN known INTEGER');
     } catch {}
     const meta = await this.db.getFirstAsync<any>('SELECT id FROM user_meta WHERE id = 1');
     if (!meta) {
@@ -1433,19 +1438,21 @@ class SQLiteDB implements DB {
       due: r.due,
       lastReview: r.last_review,
       introducedAt: r.introduced_at,
+      known: !!r.known,
     }));
   }
 
   async upsertPcicCard(card: Sm2Card): Promise<void> {
     const db = await this.open();
     await db.runAsync(
-      `INSERT INTO pcic_cards (item_id, state, step, ease, interval, reps, lapses, due, last_review, introduced_at)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `INSERT INTO pcic_cards (item_id, state, step, ease, interval, reps, lapses, due, last_review, introduced_at, known)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
        ON CONFLICT(item_id) DO UPDATE SET
          state = excluded.state, step = excluded.step, ease = excluded.ease,
          interval = excluded.interval, reps = excluded.reps, lapses = excluded.lapses,
-         due = excluded.due, last_review = excluded.last_review, introduced_at = excluded.introduced_at`,
-      [card.itemId, card.state, card.step, card.ease, card.interval, card.reps, card.lapses, card.due, card.lastReview, card.introducedAt]
+         due = excluded.due, last_review = excluded.last_review, introduced_at = excluded.introduced_at,
+         known = excluded.known`,
+      [card.itemId, card.state, card.step, card.ease, card.interval, card.reps, card.lapses, card.due, card.lastReview, card.introducedAt, card.known ? 1 : 0]
     );
   }
 
