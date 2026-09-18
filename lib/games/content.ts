@@ -13,7 +13,7 @@
 // game screens should need to change.
 
 import { LEVELS, getWordsForLevel, type Level } from '@/data/words';
-import type { FormItem, LessonV2, MatchItem, TenseId, WhyItem } from '../grammar/lessonTypes';
+import type { FormItem, LessonV2, MatchItem, TenseId, TransformItem, WhyItem } from '../grammar/lessonTypes';
 
 // Cumulative corpus word ids up to and including `level` (A0..level), used by
 // the content-driven game screens to build GlossText's `knownWordIds`: a
@@ -269,7 +269,7 @@ export interface GrammarMarkItem extends GrammarItemBase {
 // játék köre) minden lecke-item-fajtát ismerjen, még ha egyelőre csak a
 // gap/mark kettőt dolgozza is fel (lib/games/grammarChoice.ts szűri ki a
 // match/form-ot a köréből, azok a lecke-képernyőn jelennek meg, step 3-4).
-export type GrammarItem = GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem;
+export type GrammarItem = GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem | TransformItem;
 
 export function isMarkItem(item: GrammarItem): item is GrammarMarkItem {
   return item.kind === 'mark';
@@ -288,17 +288,23 @@ export function isWhyItem(item: GrammarItem): item is WhyItem {
   return item.kind === 'why';
 }
 
+// NY3 (NYELVTAN.md): az igeidő-drill mondat-átírás feladat-fajtája.
+export function isTransformItem(item: GrammarItem): item is TransformItem {
+  return item.kind === 'transform';
+}
+
 // LECKE-SEMA D3 (FB290, 2026-09-17): a lecke feladatai fajtánként külön
 // indíthatók (a mondat-feladatok, a párosítás és a ragozás nem egy gombban
 // megy), ehhez kell tudni fajtánként, hány item van egy leckében.
-export type GrammarKind = 'choice' | 'match' | 'form' | 'why';
+export type GrammarKind = 'choice' | 'match' | 'form' | 'why' | 'transform';
 
 export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, number> {
-  const counts: Record<GrammarKind, number> = { choice: 0, match: 0, form: 0, why: 0 };
+  const counts: Record<GrammarKind, number> = { choice: 0, match: 0, form: 0, why: 0, transform: 0 };
   for (const item of topic.items as GrammarItem[]) {
     if (isMatchItem(item)) counts.match++;
     else if (isFormItem(item)) counts.form++;
     else if (isWhyItem(item)) counts.why++;
+    else if (isTransformItem(item)) counts.transform++;
     else counts.choice++;
   }
   return counts;

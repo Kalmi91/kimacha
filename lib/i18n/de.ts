@@ -423,6 +423,14 @@ export default {
     unlockedMeta: (have: number, need: number) => `freigeschaltet, ${have}/${need} Wörter bekannt`,
     unlockedBanner: (title: string) => `Neuer Grammatikteil freigeschaltet: ${title}`,
     dismiss: 'Schließen',
+    // NY3 (NYELVTAN.md "Első szelet"): Zeitform-Umschreib-Drill.
+    startTransform: (n: number) => `Umschreiben (${n})`,
+    rewriteTo: (tense: string) => `Schreibe um: ${tense}`,
+    showTranslation: 'Übersetzung zeigen',
+    correct: 'Richtig',
+    correctAnswer: 'Richtige Antwort',
+    next: 'Weiter',
+    accentHint: 'Auch ohne Akzente akzeptiert, fehlende Akzente werden gezeigt',
   },
   exam: {
     simulationOf: (model: string) => `Simulation der Prüfung ${model}`,
