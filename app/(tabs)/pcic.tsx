@@ -225,7 +225,13 @@ export default function PcicScreen() {
               {charDiff(typedAnswer, grade.best, { case: true, accents: false }).map((d, i) => (
                 <Text
                   key={i}
-                  style={d.missing ? styles.diffMissing : d.wrong ? styles.diffWrong : { color: colors.text }}
+                  style={
+                    d.missing
+                      ? styles.diffMissing
+                      : d.wrong
+                        ? styles.diffWrong
+                        : { color: grade.match === 'exact' ? '#22C55E' : colors.text }
+                  }
                 >
                   {d.ch}
                 </Text>
@@ -256,14 +262,24 @@ export default function PcicScreen() {
             return (
               <Pressable
                 key={g}
-                style={[
+                style={({ pressed }) => [
                   styles.gradeBtn,
-                  { backgroundColor: colors.card, borderColor: isPre ? colors.tint : 'transparent', borderWidth: isPre ? 3 : 1 },
+                  {
+                    backgroundColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : colors.card,
+                    borderColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : isPre ? colors.tint : 'transparent',
+                    borderWidth: isPre ? 3 : 1,
+                  },
                 ]}
                 onPress={() => handleGrade(g)}
               >
-                <Text style={[styles.gradeLabel, { color: colors.text }]}>{s.pcic[g]}</Text>
-                <Text style={[styles.gradePreview, { color: colors.tabIconDefault }]}>{previews[g]}</Text>
+                {({ pressed }) => (
+                  <>
+                    <Text style={[styles.gradeLabel, { color: pressed ? '#FFFFFF' : colors.text }]}>{s.pcic[g]}</Text>
+                    <Text style={[styles.gradePreview, { color: pressed ? '#FFFFFF' : colors.tabIconDefault }]}>
+                      {previews[g]}
+                    </Text>
+                  </>
+                )}
               </Pressable>
             );
           })}
