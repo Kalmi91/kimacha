@@ -417,6 +417,12 @@ export default {
     formHint: 'Gib die richtige Form ein',
     showTable: 'Tabelle',
     check: 'Prüfen',
+    // NY2 (NYELVTAN.md "Unlock-modell"): wortabhängige Lektionssperre in der Liste.
+    locked: 'Gesperrt',
+    lockedMeta: (have: number, need: number) => `gesperrt, ${have}/${need} Wörter bekannt · tippen öffnet trotzdem`,
+    unlockedMeta: (have: number, need: number) => `freigeschaltet, ${have}/${need} Wörter bekannt`,
+    unlockedBanner: (title: string) => `Neuer Grammatikteil freigeschaltet: ${title}`,
+    dismiss: 'Schließen',
   },
   exam: {
     simulationOf: (model: string) => `Simulation der Prüfung ${model}`,
