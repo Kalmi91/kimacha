@@ -12,7 +12,9 @@ Becslés: ~120-180K token (Sonnet `iro` agentek), ~2 óra agent-idő. Fable: ter
 - [x] 3. Angol fordítás Sonnet-adagokban (150/adag) a mintára, `en` mező; audit: nincs üres `en`, nincs dupla `es` → kész, ha: audit 0 hiba [2026-09-18]
 - [x] 4. SM-2 ütemező `lib/sm2.ts` (Anki alap: 1 nap → 6 nap → ×ease, ease 2,5-ről indul, Again = lapse, újra 1 nap, ease −0,2; Hard ×1,2, ease −0,15; Easy ×1,3, ease +0,15; 20 új/nap) + `pcic_cards` tábla a `lib/database.ts`-ben, a FSRS `cards` táblától független → kész, ha: jest az intervallum-lépcsőre + lapse-re zöld [2026-09-18]
 - [x] 5. Fül `app/(tabs)/pcic.tsx` + `_layout.tsx` bejegyzés: angol fent, spanyol gépelés, felfedés után betű-diff (`lib/charDiff.ts`) + 4 Anki-gomb (találat szerint előre kijelölve: pontos = Good, 1 betű = Hard, más = Again), nap végén összesítő → kész, ha: tsc 0, lint 0, jest zöld [2026-09-18, jest 1023/0]
-- [~] 6. APK a branchről + Drive → kész, ha: Kálmán a telefonon látja a fület
-- [ ] 7. Kálmán ítélete (jobb-e a PCIC-szó): ha igen, maradék 80% + PR mainbe; ha nem, ág marad, nem merge → kész, ha: döntés a PLAN-ba írva
+- [x] 6. APK a branchről + Drive → kész, ha: Kálmán a telefonon látja a fület [2026-09-18, 4.0.17 (67) a Drive-on, tartalom-verify OK, gradle versionName/Code a fő munkafában 4.0.17/67-re állítva]
+- [~] 7. Kálmán ítélete (jobb-e a PCIC-szó): ha igen, maradék 80% + PR mainbe; ha nem, ág marad, nem merge → kész, ha: döntés a PLAN-ba írva
 
 Önellenőrzés (menet végén): subagentek száma, Fable-válaszok száma lépésenként.
+
+Önellenőrzés 2026-09-18: 4 Sonnet `iro` agent futott (kinyerő 3 kör, fordítás, SM-2, fül), ~640K subagent-token; Fable-válaszok: 2. lépésre 3 (két szabály-kör, forrásváltás a clean.md-ről a nyersre, ez instrukció-hiba volt: előbb kellett volna a nyers fájlt megnézni), a többi lépésre 1-1. A build a fő munkafában detached HEAD-en futott (a branch a worktree-ben van kicsekkolva), utána vissza main-re.
