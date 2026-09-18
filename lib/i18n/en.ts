@@ -83,6 +83,7 @@ export default {
     tree: 'Topics',
     talk: 'Talk',
     stats: 'Stats',
+    pcic: 'PCIC',
   },
   talk: {
     title: 'Talk',
@@ -644,5 +645,19 @@ export default {
     scheduleNextTomorrow: (time: string) => `tomorrow ${time}`,
     scheduleNextDays: (days: number) => `in ${days} days`,
     scheduleEmpty: 'Nothing put away yet, learn a few words!',
+  },
+  // PLAN-pcic step 5: the PCIC tab (English -> Spanish typing, Anki buttons).
+  pcic: {
+    header: (due: number, newCount: number, doneToday: number) => `due ${due} · new ${newCount} · done today ${doneToday}`,
+    again: 'Again',
+    hard: 'Hard',
+    good: 'Good',
+    easy: 'Easy',
+    doneTitle: 'Done for today',
+    summary: (answered: number, newCount: number, again: number) => `You answered ${answered} cards: ${newCount} new, ${again} again.`,
+    resetLabel: 'Reset progress',
+    resetConfirmTitle: 'Reset progress',
+    resetConfirmMessage: 'This clears all PCIC progress. Are you sure?',
+    resetConfirmYes: 'Reset',
   },
 };
