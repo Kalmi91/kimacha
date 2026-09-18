@@ -417,6 +417,12 @@ export default {
     formHint: 'Type the correct form',
     showTable: 'Table',
     check: 'Check',
+    // NY2 (NYELVTAN.md "Unlock-modell"): word-gated lesson lock on the list.
+    locked: 'Locked',
+    lockedMeta: (have: number, need: number) => `locked, ${have}/${need} words known · tap to open anyway`,
+    unlockedMeta: (have: number, need: number) => `unlocked, ${have}/${need} words known`,
+    unlockedBanner: (title: string) => `New grammar part unlocked: ${title}`,
+    dismiss: 'Dismiss',
   },
   exam: {
     simulationOf: (model: string) => `Simulation of the ${model} exam`,
