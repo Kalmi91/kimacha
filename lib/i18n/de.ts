@@ -83,6 +83,7 @@ export default {
     tree: 'Themen',
     talk: 'Reden',
     stats: 'Statistik',
+    pcic: 'PCIC',
   },
   talk: {
     title: 'Reden',
@@ -644,5 +645,19 @@ export default {
     scheduleNextTomorrow: (time: string) => `morgen ${time}`,
     scheduleNextDays: (days: number) => `in ${days} Tagen`,
     scheduleEmpty: 'Noch nichts weggelegt, lerne ein paar Wörter!',
+  },
+  // PLAN-pcic Schritt 5: der PCIC-Tab (Englisch -> Spanisch tippen, Anki-Knöpfe).
+  pcic: {
+    header: (due: number, newCount: number, doneToday: number) => `fällig ${due} · neu ${newCount} · heute fertig ${doneToday}`,
+    again: 'Nochmal',
+    hard: 'Schwer',
+    good: 'Gut',
+    easy: 'Einfach',
+    doneTitle: 'Fertig für heute',
+    summary: (answered: number, newCount: number, again: number) => `Du hast ${answered} Karten beantwortet: ${newCount} neu, ${again} nochmal.`,
+    resetLabel: 'Fortschritt zurücksetzen',
+    resetConfirmTitle: 'Fortschritt zurücksetzen',
+    resetConfirmMessage: 'Das löscht den gesamten PCIC-Fortschritt. Bist du sicher?',
+    resetConfirmYes: 'Zurücksetzen',
   },
 };
