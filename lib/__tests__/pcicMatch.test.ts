@@ -38,4 +38,10 @@ describe('gradePcicAnswer', () => {
   it('ignores a missing trailing period', () => {
     expect(gradePcicAnswer('Buenos días', 'Buenos días.').match).toBe('exact');
   });
+
+  it('grades an empty answer as wrong, revealing the correct word (SZ5)', () => {
+    const g = gradePcicAnswer('', 'hola');
+    expect(g.match).toBe('wrong');
+    expect(g.best).toBe('hola');
+  });
 });
