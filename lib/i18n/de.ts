@@ -425,6 +425,9 @@ export default {
     dismiss: 'Schließen',
     // NY3 (NYELVTAN.md "Első szelet"): Zeitform-Umschreib-Drill.
     startTransform: (n: number) => `Umschreiben (${n})`,
+    // FB316 (NYELVTAN.md NY10): Satz-umformen-Drill in 10er-Runden bei großen Lektionen.
+    startTransformRound: (n: number, total: number) => `Satz umformen (${n} von ${total})`,
+    moreRound: (n: number) => `Noch ${n}`,
     rewriteTo: (tense: string) => `Schreibe um: ${tense}`,
     showTranslation: 'Übersetzung zeigen',
     correct: 'Richtig',

@@ -440,6 +440,9 @@ export default {
     dismiss: 'Bezár',
     // NY3 (NYELVTAN.md "Első szelet"): igeidő-átírás drill.
     startTransform: (n: number) => `Átírás (${n})`,
+    // FB316 (NYELVTAN.md NY10): 10-es körös mondat-átírás nagy leckéken.
+    startTransformRound: (n: number, total: number) => `Mondat-átírás (${n} / ${total})`,
+    moreRound: (n: number) => `Még ${n}`,
     rewriteTo: (tense: string) => `Írd át: ${tense}`,
     showTranslation: 'Fordítás mutatása',
     correct: 'Helyes',

@@ -425,6 +425,9 @@ export default {
     dismiss: 'Dismiss',
     // NY3 (NYELVTAN.md "Első szelet"): tense rewrite drill.
     startTransform: (n: number) => `Rewrite (${n})`,
+    // FB316 (NYELVTAN.md NY10): sentence-rewrite drill in rounds of 10 on big lessons.
+    startTransformRound: (n: number, total: number) => `Sentence rewrite (${n} of ${total})`,
+    moreRound: (n: number) => `${n} more`,
     rewriteTo: (tense: string) => `Rewrite in the ${tense}`,
     showTranslation: 'Show translation',
     correct: 'Correct',

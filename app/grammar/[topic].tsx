@@ -11,6 +11,7 @@ import { cumulativeCorpusWordIds, grammarKindCounts, isLessonV2, type GrammarGap
 import { buildGlossMap } from '@/lib/games/gloss';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, syllabusTopic } from '@/lib/grammar/syllabus';
 import { lockState, transformWordIds, type LockState } from '@/lib/grammar/lockState';
+import { TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import { setFocusWords } from '@/lib/focusWords';
 import { setPendingAction } from '@/lib/pendingAction';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
@@ -58,6 +59,9 @@ export default function GrammarLessonScreen() {
   // FB315 (NY9): a lecke transform-szavainak zár-állapota, az "Ezen szavak
   // tanulása" gomb N-jéhez (need - have).
   const [lock, setLock] = useState<LockState>({ state: 'unlocked', have: 0, need: 0 });
+  // FB316 (NY10): hányszor gyakorolt már egy-egy transform item (itemId -> n),
+  // ez dönti el a következő 10-es kör sorrendjét (legkevésbé gyakorolt elöl).
+  const [transformSeen, setTransformSeen] = useState<Record<string, number>>({});
 
   const load = useCallback(async () => {
     const db = getDb();
@@ -77,8 +81,14 @@ export default function GrammarLessonScreen() {
       const knownIds = new Set<string>();
       for (const [id, known] of wordStates) if (known === 1) knownIds.add(String(id));
       setLock(lockState(loadedLesson, knownIds));
+      // FB316 (NY10): a kör indítása előtt betöltjük, melyik transform item
+      // hányszor gyakorolt, hogy a legkevésbé gyakorolt kerülhessen elöre.
+      const progressRows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
+      const seenRow = progressRows.find((r) => r.itemId === `${String(topicId)}:transform:seen`);
+      setTransformSeen((seenRow?.data as Record<string, number>) ?? {});
     } else {
       setLock({ state: 'unlocked', have: 0, need: 0 });
+      setTransformSeen({});
     }
   }, [topicId]);
 
@@ -175,7 +185,7 @@ export default function GrammarLessonScreen() {
     speakSequence(segments, () => setSpeaking(false));
   };
 
-  const finish = async (correct: number, total: number) => {
+  const finish = async (correct: number, total: number, roundItemIds?: string[]) => {
     setScore({ correct, total });
     setPhase('done');
     // D3 (FB290): a sor kulcsa fajtánként külön (`${topic}:${kind}`), és csak
@@ -185,6 +195,16 @@ export default function GrammarLessonScreen() {
     if (pct >= 80) {
       getDb()
         .setGameProgress(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:${drillKind}`, 'done', { correct, total })
+        .catch(() => {});
+    }
+    // FB316 (NY10): a kör itemjei "gyakoroltak" lesznek, jó és rossz válasz is
+    // számít; egy írás a kör végén, nem itemenként.
+    if (drillKind === 'transform' && roundItemIds && roundItemIds.length) {
+      const updated = { ...transformSeen };
+      for (const id of roundItemIds) updated[id] = (updated[id] ?? 0) + 1;
+      setTransformSeen(updated);
+      getDb()
+        .setGameProgress(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:transform:seen`, 'seen', updated)
         .catch(() => {});
     }
   };
@@ -208,7 +228,14 @@ export default function GrammarLessonScreen() {
         {/* LECKE-SEMA 2/6.3/D3: a lecke-drill a `drillKind` fajtáját viszi végig
             (a gombok fajtánként külön indítanak), a Game fül grammar-choice-a
             a `kinds` prop híján változatlanul csak a gap/mark körét kapja. */}
-        <GrammarDrill topic={lesson} learnedLang={learnedLang} contentLang={contentLang} onFinish={finish} kinds={[drillKind]} />
+        <GrammarDrill
+          topic={lesson}
+          learnedLang={learnedLang}
+          contentLang={contentLang}
+          onFinish={finish}
+          kinds={[drillKind]}
+          transformSeen={transformSeen}
+        />
         <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:drill`} />
       </View>
     );
@@ -270,6 +297,21 @@ export default function GrammarLessonScreen() {
           >
             <Text style={[styles.btnText, { color: colors.tint }]}>{s.grammar.practiceAgain}</Text>
           </Pressable>
+          {/* FB316 (NY10): nagy (>10 itemes) transform-leckén egy külön gomb a
+              következő 10-es körre, ugyanaz a kézzelfogható lépés, mint a
+              "Gyakorlás újra", csak a friss `transformSeen` térkép jelzi is. */}
+          {drillKind === 'transform' && kindCounts.transform > TRANSFORM_ROUND_SIZE ? (
+            <Pressable
+              testID="grammar-more-round"
+              style={[styles.btn, { backgroundColor: colors.tint }]}
+              onPress={() => {
+                setScore(null);
+                setPhase('drill');
+              }}
+            >
+              <Text style={[styles.btnText, styles.btnTextOnTint]}>{s.grammar.moreRound(TRANSFORM_ROUND_SIZE)}</Text>
+            </Pressable>
+          ) : null}
           <Pressable style={styles.ghostBtn} onPress={() => router.back()}>
             <Text style={[styles.ghostBtnText, { color: colors.tabIconDefault }]}>{s.grammar.backToSyllabus}</Text>
           </Pressable>
@@ -382,7 +424,9 @@ export default function GrammarLessonScreen() {
                     ? s.grammar.startForm(kindCounts.form)
                     : kind === 'why'
                       ? s.grammar.startWhy(kindCounts.why)
-                      : s.grammar.startTransform(kindCounts.transform)}
+                      : kindCounts.transform > TRANSFORM_ROUND_SIZE
+                        ? s.grammar.startTransformRound(TRANSFORM_ROUND_SIZE, kindCounts.transform)
+                        : s.grammar.startTransform(kindCounts.transform)}
             </Text>
           </Pressable>
         ))}
