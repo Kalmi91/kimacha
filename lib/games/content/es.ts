@@ -43,6 +43,7 @@ import grammarEsNumerosHoraFecha from '@/data/games/grammar/es/numeros-hora-fech
 import grammarEsPreposicionesBasicas from '@/data/games/grammar/es/preposiciones-basicas.json';
 import grammarEsEstarGerundio from '@/data/games/grammar/es/estar-gerundio.json';
 import grammarEsVerbosReflexivos from '@/data/games/grammar/es/verbos-reflexivos.json';
+import grammarEsSubjuntivoPresenteForma from '@/data/games/grammar/es/subjuntivo-presente-forma.json';
 import grammarEsCondicionalSimple from '@/data/games/grammar/es/condicional-simple.json';
 import grammarEsCondicionalesTipo1 from '@/data/games/grammar/es/condicionales-tipo1.json';
 import grammarEsCondicionalesTipo23 from '@/data/games/grammar/es/condicionales-tipo2-3.json';
@@ -154,6 +155,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsImperativoAfirmativo,
     grammarEsVerbosReflexivos,
     grammarEsPorPara,
+    grammarEsSubjuntivoPresenteForma,
     grammarEsCondicionalSimple,
     grammarEsCondicionalesTipo1,
     grammarEsCondicionalesTipo23,
