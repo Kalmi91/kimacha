@@ -662,7 +662,7 @@ export default {
   },
   // PLAN-pcic paso 5: la pestaña PCIC (inglés -> español escrito, botones Anki).
   pcic: {
-    header: (due: number, newCount: number, doneToday: number) => `pendientes ${due} · nuevas ${newCount} · hechas hoy ${doneToday}`,
+    header: (due: number, newCount: number, doneToday: number, total: number) => `${total} palabras · pendientes ${due} · nuevas ${newCount} · hechas hoy ${doneToday}`,
     again: 'No la sabía',
     hard: 'Difícil',
     good: 'La sabía',

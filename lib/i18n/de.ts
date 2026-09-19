@@ -662,7 +662,7 @@ export default {
   },
   // PLAN-pcic Schritt 5: der PCIC-Tab (Englisch -> Spanisch tippen, Anki-Knöpfe).
   pcic: {
-    header: (due: number, newCount: number, doneToday: number) => `fällig ${due} · neu ${newCount} · heute fertig ${doneToday}`,
+    header: (due: number, newCount: number, doneToday: number, total: number) => `${total} Wörter · fällig ${due} · neu ${newCount} · heute fertig ${doneToday}`,
     again: 'Wusste ich nicht',
     hard: 'Schwer',
     good: 'Wusste ich',

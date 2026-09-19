@@ -197,7 +197,7 @@ export default function PcicScreen() {
   const headerRow = (
     <View style={styles.headerRow}>
       <Text style={[styles.headerText, { color: colors.tabIconDefault }]}>
-        {s.pcic.header(dueRemaining, newRemaining, doneToday)}
+        {s.pcic.header(dueRemaining, newRemaining, doneToday, PCIC_ITEMS.length)}
       </Text>
       {lastGraded && (
         <Pressable onPress={handleUndo} hitSlop={12} style={styles.resetBtn} accessibilityLabel={s.pcic.undo}>
