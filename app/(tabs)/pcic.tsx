@@ -12,6 +12,7 @@ import { speechLang } from '@/lib/languages';
 import { localDateString } from '@/lib/usageStats';
 import { PCIC_ITEMS, findPcicItem } from '@/data/pcic';
 import { gradePcicAnswer, type PcicGrade } from '@/lib/pcicMatch';
+import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { sm2Review, sm2Preview, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, DEFAULT_NEW_LIMIT, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -51,6 +52,7 @@ export default function PcicScreen() {
   const [allCards, setAllCards] = useState<Map<string, Sm2Card>>(new Map());
   const [queue, setQueue] = useState<Sm2Card[]>([]);
   const [typedAnswer, setTypedAnswer] = useState('');
+  const [articlePick, setArticlePick] = useState<ArticlePick>('');
   const [grade, setGrade] = useState<PcicGrade | null>(null);
   const [sessionAnswered, setSessionAnswered] = useState(0);
   const [sessionNew, setSessionNew] = useState(0);
@@ -134,27 +136,32 @@ export default function PcicScreen() {
   const advance = (next: Sm2Card) => {
     setQueue((prev) => requeueAfterGrade(prev, next, today));
     setTypedAnswer('');
+    setArticlePick('');
     setGrade(null);
     setAutoGraded(false);
   };
 
   const handleCheck = async () => {
     if (!current || !currentItem) return;
-    if (typedAnswer.trim().length === 0) {
+    const answer = composeAnswer(articlePick, typedAnswer);
+    if (answer.trim().length === 0) {
       // SZ5 (SZAVAK.md): üres beküldés = Nem tudtam automatikusan; felfedi a
       // helyes alakot és felolvassa. Mondatot most nem olvas fel (SZ6 PARKOL,
       // nincs mondat-adat a PCIC-tételekhez).
       const g = gradePcicAnswer('', currentItem.es);
       const revealed: PcicGrade = { ...g, match: 'wrong' };
       setGrade(revealed);
+      if (revealed.match !== 'exact') setArticlePick(articleOf(revealed.best));
       speak(g.best, speechLang('es'));
       const next = await commitGrade('again', revealed);
       if (next) setAutoGraded(true);
       return;
     }
     // FB321: felfedéskor mindig szóljon a helyes spanyol alak.
-    const g = gradePcicAnswer(typedAnswer, currentItem.es);
+    const g = gradePcicAnswer(answer, currentItem.es);
+    setTypedAnswer(answer);
     setGrade(g);
+    if (g.match !== 'exact') setArticlePick(articleOf(g.best));
     speak(g.best, speechLang('es'));
   };
 
@@ -179,6 +186,7 @@ export default function PcicScreen() {
       if (lastGraded.g === 'again') setSessionAgain((n) => Math.max(0, n - 1));
     }
     setTypedAnswer(lastGraded.typed);
+    setArticlePick('');
     setGrade(lastGraded.grade);
     setAutoGraded(false);
     setLastGraded(null);
@@ -193,6 +201,7 @@ export default function PcicScreen() {
     setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew: false, g: 'good', counted: false });
     setQueue((prev) => requeueAfterGrade(prev, next, today));
     setTypedAnswer('');
+    setArticlePick('');
     setGrade(null);
   };
 
@@ -317,6 +326,31 @@ export default function PcicScreen() {
             <Text style={[styles.stepBadge, { color: colors.tabIconDefault }]}>{s.pcic.newBadge}</Text>
           )}
         </View>
+
+        {/* SZ7 (SZAVAK.md): FB188 névelő-gombsor a Learn fülről, ⊘ az alapállás. */}
+        {articlePickerApplies('es', currentItem.kind !== 'sentence', currentItem.es) && (
+          <View style={styles.articleRow}>
+            {([...ARTICLE_OPTIONS, ''] as ArticlePick[]).map((opt) => {
+              const active = articlePick === opt;
+              return (
+                <Pressable
+                  key={opt || 'none'}
+                  disabled={!!grade}
+                  onPress={() => setArticlePick(active ? '' : opt)}
+                  style={[
+                    styles.articleChip,
+                    { backgroundColor: active ? colors.tint : colors.background, opacity: grade ? 0.6 : 1 },
+                  ]}
+                  accessibilityLabel={opt || 'sin artículo'}
+                >
+                  <Text style={[styles.articleChipText, { color: active ? colors.background : colors.text }]}>
+                    {opt || '⊘'}
+                  </Text>
+                </Pressable>
+              );
+            })}
+          </View>
+        )}
 
         <TextInput
           style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }]}
@@ -547,6 +581,23 @@ const styles = StyleSheet.create({
   },
   speakIcon: {
     fontSize: 22,
+  },
+  articleRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 8,
+    marginBottom: 10,
+  },
+  articleChip: {
+    minWidth: 48,
+    paddingVertical: 8,
+    paddingHorizontal: 10,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  articleChipText: {
+    fontSize: 16,
+    fontWeight: '600',
   },
   input: {
     width: '100%',
