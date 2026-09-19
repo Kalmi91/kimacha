@@ -144,7 +144,11 @@
       "examples": [
         "Esta semana he trabajado mucho.",
         "Este año hemos viajado poco."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
     },
     {
       "id": "pf-02",
@@ -178,7 +182,11 @@
       "examples": [
         "He escrito tres correos.",
         "Han hecho la tarea."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
     },
     {
       "id": "pf-03",
@@ -212,7 +220,11 @@
       "examples": [
         "Todavía no he comido.",
         "Ya hemos terminado."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
     },
     {
       "id": "pf-04",
@@ -246,7 +258,11 @@
       "examples": [
         "Nunca he estado en Perú.",
         "Siempre he vivido aquí."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
     },
     {
       "id": "pf-05",
@@ -280,7 +296,11 @@
       "examples": [
         "He puesto la mesa.",
         "Han vuelto temprano."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
     },
     {
       "id": "pf-06",
@@ -314,7 +334,11 @@
       "examples": [
         "No he visto a nadie.",
         "No hemos dicho nada."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
     },
     {
       "id": "pf-07",
@@ -348,7 +372,11 @@
       "examples": [
         "Esta semana he ido tres veces al médico.",
         "Este mes hemos gastado mucho."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
     },
     {
       "id": "pf-08",
@@ -382,7 +410,11 @@
       "examples": [
         "Ya he hablado con ella.",
         "¿Ya has terminado?"
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
     },
     {
       "id": "pf-09",
@@ -416,7 +448,11 @@
       "examples": [
         "Se ha caído el libro.",
         "Se me ha olvidado el nombre."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
     },
     {
       "id": "pf-10",
@@ -450,7 +486,11 @@
       "examples": [
         "Mis amigas han venido juntas.",
         "Los niños han comido bien."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
     },
     {
       "id": "pf-11",
@@ -484,7 +524,11 @@
       "examples": [
         "He estudiado español desde enero.",
         "Ha llovido toda la semana."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
     },
     {
       "id": "pf-12",
@@ -518,7 +562,11 @@
       "examples": [
         "Me ha dicho la verdad.",
         "Nos han escrito hoy."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
     }
   ]
 }
