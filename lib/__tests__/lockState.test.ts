@@ -1,9 +1,11 @@
 // NY2 (NYELVTAN.md "Unlock-modell"): a téma zár-állapota a transform itemek
 // wordId-uniójából és a hívó által adott "ismert szó" halmazból dől el.
 
-import { lockState, transformWordIds } from '@/lib/grammar/lockState';
+import { lessonWordIds, lockState, transformWordIds } from '@/lib/grammar/lockState';
 import type { LessonV2, TransformItem } from '@/lib/grammar/lessonTypes';
 import type { LegacyLesson } from '@/lib/games/content';
+import { lessonFor } from '@/lib/grammar/syllabus';
+import { getWordsForTopic } from '@/data/words';
 
 const lang4 = (v: string) => ({ hu: v, en: v, es: v, de: v });
 
@@ -54,7 +56,35 @@ describe('transformWordIds', () => {
   });
 });
 
+// FB318: a valódi indefinido-10-verbos lecke `focusTopic`-os, a szó-halmaza a
+// transform-szavak ÉS a témakör 60 kártyájának uniója.
+describe('lessonWordIds', () => {
+  it('unions the transform words and the focusTopic cards on the real lesson', () => {
+    const lesson = lessonFor('es', 'indefinido-10-verbos');
+    if (!lesson) throw new Error('indefinido-10-verbos lesson not found');
+    const ids = lessonWordIds(lesson);
+    const transformIds = transformWordIds(lesson);
+    const topicIds = getWordsForTopic('A2', 'indefinido_10_verbos').map((w) => String(w.id));
+    for (const id of transformIds) expect(ids).toContain(id);
+    for (const id of topicIds) expect(ids).toContain(id);
+    expect(topicIds).toHaveLength(60);
+    expect(new Set(ids).size).toBe(ids.length);
+  });
+
+  it('equals transformWordIds for a lesson without focusTopic', () => {
+    const lesson = lessonV2([transformItem('t1', ['1', '2']), transformItem('t2', ['2', '3'])]);
+    expect(lessonWordIds(lesson)).toEqual(transformWordIds(lesson));
+  });
+});
+
 describe('lockState', () => {
+  it('need equals the union size on the real focusTopic lesson', () => {
+    const lesson = lessonFor('es', 'indefinido-10-verbos');
+    if (!lesson) throw new Error('indefinido-10-verbos lesson not found');
+    expect(lockState(lesson, new Set()).need).toBe(lessonWordIds(lesson).length);
+  });
+
+
   it('locked when only some of the needed words are known', () => {
     const lesson = lessonV2([transformItem('t1', ['1', '2', '3'])]);
     const known = new Set(['1']);

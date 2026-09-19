@@ -2,8 +2,11 @@
 // (transform) itemjeinek szavai zárnak fel, nem egy globális szószám-szint.
 // Tiszta modul, React nélkül: az "ismert szó" halmazát a hívó adja (a
 // meglévő db.getWordStates definíciója, lap >= 3 VAGY buried), itt nem dől el.
+// FB318: a `focusTopic` mezőjű leckéknél a szó-halmaz a transform-szavak ÉS
+// a témakör kártyáinak uniója (lásd lessonWordIds), nem csak a transform-szavak.
 
 import { isLessonV2, type GrammarTopicData } from '../games/content';
+import { getWordsForTopic } from '@/data/words';
 
 /** A lecke transform itemjeinek wordId-uniója, első előfordulás sorrendjében. */
 export function transformWordIds(lesson: GrammarTopicData): string[] {
@@ -21,15 +24,40 @@ export function transformWordIds(lesson: GrammarTopicData): string[] {
   return ids;
 }
 
+/**
+ * A lecke teljes szó-halmaza: a transform-szavak, utána (ha van `focusTopic`)
+ * a témakör kártyái, duplikátum nélkül, első előfordulás sorrendjében. Ezt
+ * használja a zár (lockState) ÉS a "Ezen szavak tanulása" gomb, EGY szám.
+ */
+export function lessonWordIds(lesson: GrammarTopicData): string[] {
+  if (!isLessonV2(lesson)) return [];
+  const seen = new Set<string>();
+  const ids: string[] = [];
+  for (const id of transformWordIds(lesson)) {
+    if (seen.has(id)) continue;
+    seen.add(id);
+    ids.push(id);
+  }
+  if (lesson.focusTopic) {
+    for (const w of getWordsForTopic(lesson.level, lesson.focusTopic)) {
+      const id = String(w.id);
+      if (seen.has(id)) continue;
+      seen.add(id);
+      ids.push(id);
+    }
+  }
+  return ids;
+}
+
 export type LockState = { state: 'locked' | 'unlocked'; have: number; need: number };
 
 /**
- * A téma zár-állapota: `need` a transform-szavak uniójának mérete, `have`
- * ebből az ismert szavak száma. `need === 0` (nincs transform item, vagy nem
- * V2 lecke) mindig `unlocked`.
+ * A téma zár-állapota: `need` a lecke szó-halmazának mérete (lessonWordIds),
+ * `have` ebből az ismert szavak száma. `need === 0` (nincs transform item, vagy
+ * nem V2 lecke) mindig `unlocked`.
  */
 export function lockState(lesson: GrammarTopicData, knownIds: Set<string>): LockState {
-  const wordIds = transformWordIds(lesson);
+  const wordIds = lessonWordIds(lesson);
   const need = wordIds.length;
   if (need === 0) return { state: 'unlocked', have: 0, need: 0 };
   const have = wordIds.filter((id) => knownIds.has(id)).length;
