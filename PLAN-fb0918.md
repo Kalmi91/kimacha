@@ -1,6 +1,6 @@
 # PLAN, 2026-09-18, Feedback-kör sheet FB300-316, v4.0.15-4.0.18 telefon-teszt
 
-Státusz: FUT, 1-8. lépés KÉSZ, 9. lépés (FB316) Sonnet-agentnél, utána 10-12 (sheet + AGENTS.md + PR + önellenőrzés).
+Státusz: KÉSZ 12/12 (2026-09-18), PR #22 nyitva, mainbe Kálmán szavára, build külön. Telefon-verify hátra: PCIC gombok/jelvény/+10, fókusz-menet, 10-es körök, az átírt promptok.
 Ág: `fix/fb-round-0918` (saját worktree `~/ai/kimacha-wt-fb0918`, ÁG-SZABÁLY szerint), PR mainbe Kálmán szavára, build külön.
 Becslés (korrigált 2026-09-18, a 09-17-es menet önellenőrzése után: ott a terv 350-480K-t mondott, a tény 2,7M subagent-token volt): ~2-3M token, ~6-10 óra agent-idő. Bontás: PCIC 2-4. lépés ~200-350K (Sonnet `iro`), korpusz 6-7. lépés ~650K-1M (script + audit-őr ~150-250K, ~1000 prompt Sonnet-átnézése adagonként + alkalmazás ~500-800K), nyelvtan 8-9. lépés ~800K-1,2M (fókusz-menet az index.tsx 62K-s fájlján ~400-600K, 38 új mondat + kör-mechanika ~400-600K), doksik + sheet + PR ~100K, orkesztráció ~200K.
 Sheet-sorok = FB-számok (F oszlop `státusz` a menet végén töltődik).
@@ -50,10 +50,10 @@ Sheet-sorok = FB-számok (F oszlop `státusz` a menet végén töltődik).
 - [x] 6. (KÉSZ 2026-09-18, 9f5153f; 83 en mező, audit-prompts 0/0, corpusIntegrity 16/16; a 12. szakasz audit-őre (spanyol címszó az en promptban) a 7. lépés alkalmazásával együtt megy Sonnetnek; nyitott: `tratar` „to try (to do something)" vs `intentar` „to try (attempt)" = PROMPT-POLICY 3. szakasz kérdés, Kálmán dönt) Adat-javítás scripttel + kézzel: 7 spanyol-a-promptban (tratar, ganas, respecto, 4 haber), 74 ragozott `(to X)` + 3 `I/he`, 2 `also:` → kész, ha: `audit-prompts` 0 ütközés, corpusIntegrity + jest zöld
 - [x] 7. (KÉSZ 2026-09-18; őr-agent 138K token. ADAT: 1099 prompt 11 batchben, 2 Sonnet `iro` (1-6: 309K, 7-11: 268K token), 286 prompt átírva (ebből 85 „/"-szétbontás egy fő jelentésre, a másik jegyzetbe), 227 jegyzet-kiegészítés (note_en + note_hu), 22 kézi javítás ütközésre / szófaj-csúszásra; commitok 91b5b5e (B1-C2) + 917a7b5 (A0-B1); audit-prompts 0/0, corpusIntegrity 16/16, audit-corpus 0/0. Kalibrációs kérdés Kálmánnak: a „/"-szétbontás igéknél is (hacer: „to do" / „to make" → a mondat szerinti egy; querer, llevar, tomar, tocar…), ez a 15. szakasz betű szerinti alkalmazása, a másik jelentés a jegyzetben. a 12. szakasz audit-őre KÉSZ a3fe8fd (`headwordLeaks` a `lib/promptOverlap.ts`-ben + corpusIntegrity eset + audit-prompts `leak` sor, 0 találat; 10 cognate téves riasztás az őrben szűrve, adat érintetlen)) Korpusz-átnézés: ~376 zárójeles + ~642 „/"-es prompt Sonnet-adagokban (100/adag, sentence_en-nel), javaslat-fájl → alkalmazás → kész, ha: minden adag lefutott, audit 0, jest zöld
 - [x] 8. (KÉSZ 2026-09-18, b2f066e; tsc 0, lint 0 error (22 warning = alap), jest 1097/1097; +3 teszt: focusWords, focusSmoke (lib-szintű, a React-ág nincs tiszta függvényben), learnWordsButton; agent 276K token; Sonnet `iro`, brief `TASK-8.md`; a 7. lépés 7-11. batche közben alkalmazva: 91b5b5e, 110 prompt + 95 jegyzet, 1 ütközés kézzel (6813 vanguardista), audit 0/0; agent 7-11: 268K token) FB315 fókusz-menet (képernyő-leírás jóváhagyása után): lecke-gomb + Learn fül fókusz-mód (store/route param, `scoped` = lecke-szavak, kölcsönzés ki, sáv) → kész, ha: tsc + jest zöld, új teszt a fókusz-sorra
-- [~] 9. (FUT 2026-09-18, Sonnet `iro`, brief `TASK-9.md`, két commit: tartalom, kód) FB316 50 mondat + 10-es körök: 38 új transform item Sonnet-adagokban (NY1 validátor 0 hiba), kör-mechanika + számláló → kész, ha: validátor 0, jest zöld
-- [ ] 10. Sheet F oszlop FB300-316 + AGENTS.md B) sorok + NYELVTAN.md NY9/NY10 + SZAVAK.md SZ6-jegyzet (FB311 külön session) → kész, ha: sheet kitöltve, számok = sheet sorok, ai-workspace commit
-- [ ] 11. PR `fix/fb-round-0918` → main → kész, ha: PR nyitva, mainbe Kálmán szavára; build külön
-- [ ] 12. Önellenőrzés (subagent-szám, válasz-szám) → kész, ha: a fájl alján
+- [x] 9. (KÉSZ 2026-09-18, 0238181 tartalom + 752e0fd kód; audit-games 0/0, tsc 0, lint 0 error, jest 1110/1110; lefedettség: estar/ir/tener/saber/poder 5/6 (5 fő személy), gustar 5/5, mirar/pasar/esperar/necesitar 5/6 nosotros helyett vosotros (-ar: `miramos` = `miramos`, prompt = válasz lenne); agent 302K token) FB316 50 mondat + 10-es körök: 38 új transform item Sonnet-adagokban (NY1 validátor 0 hiba), kör-mechanika + számláló → kész, ha: validátor 0, jest zöld
+- [x] 10. (KÉSZ 2026-09-18: sheet F300:F316 írva (16 kész, FB311 „külön session (SZ6)"), ai-workspace 324b6f7 (NY5/NY8 kész, NY9/NY10 felvéve, SZ6 jegyzet) + 44cf72c (AGENTS.md menet-szakasz, NY9/NY10 kész)) Sheet F oszlop FB300-316 + AGENTS.md B) sorok + NYELVTAN.md NY9/NY10 + SZAVAK.md SZ6-jegyzet (FB311 külön session) → kész, ha: sheet kitöltve, számok = sheet sorok, ai-workspace commit
+- [x] 11. (KÉSZ 2026-09-18, PR #22, https://github.com/Kalmi91/kimacha/pull/22) PR `fix/fb-round-0918` → main → kész, ha: PR nyitva, mainbe Kálmán szavára; build külön
+- [x] 12. Önellenőrzés → lent
 
 ## Tények (2026-09-18 felmérés)
 
@@ -63,3 +63,10 @@ Sheet-sorok = FB-számok (F oszlop `státusz` a menet végén töltődik).
 - Korpusz (3990 szó): 376 zárójeles en, 2 `also:`, 74 ragozott `(to X)` az en-ben, 3 `I/he`, ~7 valódi spanyol a promptban, 642 „ / " szinonima-prompt.
 - Napi új keret: `DEFAULT_NEW_LIMIT = 20` (`lib/sm2.ts`), csak az új lapokat korlátozza.
 - indefinido-10-verbos: 12 transform item, 28 egyedi wordId (numerikus string, `data/words` id-k); a Learn fül témakör-alapú (`getWordsForTopic`), szólistás menet nincs még.
+
+## Önellenőrzés (MODEL.md, menet vége 2026-09-18)
+
+- Subagent: 6 Sonnet `iro`, egymás után vagy legfeljebb kettő párhuzamosan (2-4 · 7 batch 1-6 · 7 batch 7-11 · 7b őr · 8 · 9), mind zöld kapuval, javító kör egyiknél sem kellett (a 2-4. lépésnél egy belső piros→zöld). Subagent-token: ~1,45M (162K + 309K + 268K + 138K + 276K + 302K).
+- Opus-válasz: ~12 (terv 2, döntés-kör 4, státusz-sor 6); kód-változás nélküli 3+ válasz egy lépésre nem volt. Az orkesztrátor maga csak adat-scriptet és doksit írt (6. lépés script, 7. lépés alkalmazás + 22 kézi javítás), app-kódot nem.
+- Becslés vs tény: az első becslés (350-500K) 3×-os alulmérés lett volna; a korrigált 2-3M (a 09-17-es 2,7M-ből) ~1,5×-ös túlmérés. A jó irány a kettő között: a Sonnet-átnézés (1099 prompt, 577K) és a két nyelvtan-lépés (578K) vitte a felét.
+- Nyitva Kálmánnak (nem blokkol): `tratar`/`intentar` egy vagy két kártya (PROMPT-POLICY 3); a „/"-szétbontás igéknél (15. szakasz betű szerint); telefon-verify a következő buildben.
