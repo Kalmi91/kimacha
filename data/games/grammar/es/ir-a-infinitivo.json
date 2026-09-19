@@ -653,7 +653,8 @@
       "examples": [
         "Voy a comer algo ahora.",
         "Va a comer con nosotros."
-      ]
+      ],
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-02",
@@ -683,7 +684,8 @@
       "examples": [
         "Voy a trabajar mañana temprano.",
         "Vas a trabajar mucho este mes."
-      ]
+      ],
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-03",
@@ -713,7 +715,8 @@
       "examples": [
         "Tú vas a llegar tarde hoy.",
         "Vas a llegar temprano mañana."
-      ]
+      ],
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-04",
@@ -743,7 +746,8 @@
       "examples": [
         "Él va a comprar pan hoy.",
         "Ella va a comprar fruta."
-      ]
+      ],
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-05",
@@ -773,7 +777,8 @@
       "examples": [
         "Vamos a estudiar juntos esta noche.",
         "Van a estudiar sin mí."
-      ]
+      ],
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-06",
@@ -803,7 +808,8 @@
       "examples": [
         "Ustedes van a terminar la tarea esta tarde.",
         "Vamos a terminar hoy."
-      ]
+      ],
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-07",
@@ -833,7 +839,8 @@
       "examples": [
         "Voy a ver una película nueva.",
         "Vamos a ver una película nueva también."
-      ]
+      ],
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-08",
@@ -863,7 +870,8 @@
       "examples": [
         "Vas a salir temprano mañana.",
         "Voy a salir tarde hoy."
-      ]
+      ],
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-09",
@@ -893,7 +901,8 @@
       "examples": [
         "Ella va a visitar a su hermana.",
         "Voy a visitar a mis padres."
-      ]
+      ],
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-10",
@@ -923,7 +932,8 @@
       "examples": [
         "Ellos van a viajar a México.",
         "Vamos a viajar juntos."
-      ]
+      ],
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-11",
@@ -953,7 +963,8 @@
       "examples": [
         "Vamos a comer tacos esta noche.",
         "Van a comer pizza mañana."
-      ]
+      ],
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-12",
@@ -983,7 +994,8 @@
       "examples": [
         "Mañana va a llover mucho.",
         "El sábado va a llover también."
-      ]
+      ],
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-match-01",
@@ -995,7 +1007,8 @@
         { "es": "vamos a viajar", "en": "we are going to travel" },
         { "es": "van a trabajar", "en": "they are going to work" },
         { "es": "voy a salir temprano", "en": "I am going to leave early" }
-      ]
+      ],
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-form-01",
@@ -1003,7 +1016,8 @@
       "verb": "ir a + infinitivo",
       "person": "yo",
       "answer": "voy a",
-      "table": "ir-a-presente"
+      "table": "ir-a-presente",
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-form-02",
@@ -1011,7 +1025,8 @@
       "verb": "ir a + infinitivo",
       "person": "tú",
       "answer": "vas a",
-      "table": "ir-a-presente"
+      "table": "ir-a-presente",
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-form-03",
@@ -1019,7 +1034,8 @@
       "verb": "ir a + infinitivo",
       "person": "él/ella/usted",
       "answer": "va a",
-      "table": "ir-a-presente"
+      "table": "ir-a-presente",
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-form-04",
@@ -1027,7 +1043,8 @@
       "verb": "ir a + infinitivo",
       "person": "nosotros",
       "answer": "vamos a",
-      "table": "ir-a-presente"
+      "table": "ir-a-presente",
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-form-05",
@@ -1035,7 +1052,8 @@
       "verb": "ir a + infinitivo",
       "person": "vosotros",
       "answer": "vais a",
-      "table": "ir-a-presente"
+      "table": "ir-a-presente",
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "id": "ir-form-06",
@@ -1043,7 +1061,8 @@
       "verb": "ir a + infinitivo",
       "person": "ellos/ellas/ustedes",
       "answer": "van a",
-      "table": "ir-a-presente"
+      "table": "ir-a-presente",
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "kind": "why",
@@ -1093,7 +1112,8 @@
           }
         }
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "kind": "why",
@@ -1143,7 +1163,8 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "kind": "why",
@@ -1193,7 +1214,8 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "kind": "why",
@@ -1243,7 +1265,8 @@
           }
         }
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "kind": "why",
@@ -1293,7 +1316,8 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "kind": "why",
@@ -1343,7 +1367,8 @@
           }
         }
       ],
-      "correctIndex": 2
+      "correctIndex": 2,
+      "tense": { "from": "presente", "to": "ir-a" }
     },
     {
       "kind": "why",
@@ -1393,7 +1418,1008 @@
           }
         }
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "tense": { "from": "presente", "to": "ir-a" }
+    },
+    {
+      "id": "iai-tr-01",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Como aquí.",
+        "hu": "Itt eszem.",
+        "en": "I eat here.",
+        "de": "Ich esse hier."
+      },
+      "answer": "Voy a comer aquí.",
+      "accept": ["Yo voy a comer aquí."],
+      "wordIds": ["31", "25", "8"],
+      "why": {
+        "hu": "Eldöntött terv: ir a + főnévi igenév fejezi ki a jövőt. Ir rendhagyó, yo: voy.",
+        "en": "A decided plan: ir a + infinitive expresses the future. Ir is irregular, yo: voy.",
+        "es": "Un plan decidido: ir a + infinitivo expresa el futuro. Ir es irregular, yo: voy.",
+        "de": "Ein entschiedener Plan: ir a + Infinitiv drückt die Zukunft aus. Ir ist unregelmäßig, yo: voy."
+      }
+    },
+    {
+      "id": "iai-tr-02",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Comemos juntos.",
+        "hu": "Együtt eszünk.",
+        "en": "We eat together.",
+        "de": "Wir essen zusammen."
+      },
+      "answer": "Vamos a comer juntos.",
+      "accept": ["Nosotros vamos a comer juntos."],
+      "wordIds": ["31", "25", "86"],
+      "why": {
+        "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
+        "en": "A plan in the plural: ir a + infinitive. Ir is irregular, nosotros: vamos.",
+        "es": "Un plan en plural: ir a + infinitivo. Ir es irregular, nosotros: vamos.",
+        "de": "Ein Plan in der Mehrzahl: ir a + Infinitiv. Ir ist unregelmäßig, nosotros: vamos."
+      }
+    },
+    {
+      "id": "iai-tr-03",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Comen temprano.",
+        "hu": "Korán esznek.",
+        "en": "They eat early.",
+        "de": "Sie essen früh."
+      },
+      "answer": "Van a comer temprano.",
+      "accept": ["Ellos van a comer temprano."],
+      "wordIds": ["31", "25", "1239"],
+      "why": {
+        "hu": "Terv ellos-ra: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
+        "en": "A plan for ellos: ir a + infinitive. Ir is irregular, ellos: van.",
+        "es": "Un plan para ellos: ir a + infinitivo. Ir es irregular, ellos: van.",
+        "de": "Ein Plan für ellos: ir a + Infinitiv. Ir ist unregelmäßig, ellos: van."
+      }
+    },
+    {
+      "id": "iai-tr-04",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "No comes nada.",
+        "hu": "Nem eszel semmit.",
+        "en": "You do not eat anything.",
+        "de": "Du isst nichts."
+      },
+      "answer": "No vas a comer nada.",
+      "accept": ["Tú no vas a comer nada."],
+      "wordIds": ["31", "25", "11", "1"],
+      "why": {
+        "hu": "Tagadás: a no az ir elé kerül, nem a főnévi igenév elé. Ir rendhagyó, tú: vas.",
+        "en": "Negation: no goes before ir, not before the infinitive. Ir is irregular, tú: vas.",
+        "es": "Negación: no va antes de ir, no antes del infinitivo. Ir es irregular, tú: vas.",
+        "de": "Verneinung: no steht vor ir, nicht vor dem Infinitiv. Ir ist unregelmäßig, tú: vas."
+      }
+    },
+    {
+      "id": "iai-tr-05",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "¿Come mañana?",
+        "hu": "Holnap eszik?",
+        "en": "Is he eating tomorrow?",
+        "de": "Isst er morgen?"
+      },
+      "answer": "¿Va a comer mañana?",
+      "accept": ["¿Él va a comer mañana?"],
+      "wordIds": ["31", "25", "56"],
+      "why": {
+        "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, él: va.",
+        "en": "A question about a planned action: ir a + infinitive. Ir is irregular, él: va.",
+        "es": "Una pregunta sobre una acción planeada: ir a + infinitivo. Ir es irregular, él: va.",
+        "de": "Eine Frage zu einer geplanten Handlung: ir a + Infinitiv. Ir ist unregelmäßig, él: va."
+      }
+    },
+    {
+      "id": "iai-tr-06",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Van juntos.",
+        "hu": "Együtt mennek.",
+        "en": "They go together.",
+        "de": "Sie gehen zusammen."
+      },
+      "answer": "Van a ir juntos.",
+      "accept": ["Ellos van a ir juntos."],
+      "wordIds": ["31", "86"],
+      "why": {
+        "hu": "Eldöntött terv, itt a második ige maga az ir: ir a + ir. Ir rendhagyó, ellos: van.",
+        "en": "A decided plan, here the second verb is ir itself: ir a + ir. Ir is irregular, ellos: van.",
+        "es": "Un plan decidido, aquí el segundo verbo es ir mismo: ir a + ir. Ir es irregular, ellos: van.",
+        "de": "Ein entschiedener Plan, hier ist das zweite Verb ir selbst: ir a + ir. Ir ist unregelmäßig, ellos: van."
+      }
+    },
+    {
+      "id": "iai-tr-07",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Voy solo.",
+        "hu": "Egyedül megyek.",
+        "en": "I go alone.",
+        "de": "Ich gehe allein."
+      },
+      "answer": "Voy a ir solo.",
+      "accept": ["Yo voy a ir solo."],
+      "wordIds": ["31", "87"],
+      "why": {
+        "hu": "Eldöntött terv, itt a második ige maga az ir: ir a + ir. Ir rendhagyó, yo: voy.",
+        "en": "A decided plan, here the second verb is ir itself: ir a + ir. Ir is irregular, yo: voy.",
+        "es": "Un plan decidido, aquí el segundo verbo es ir mismo: ir a + ir. Ir es irregular, yo: voy.",
+        "de": "Ein entschiedener Plan, hier ist das zweite Verb ir selbst: ir a + ir. Ir ist unregelmäßig, yo: voy."
+      }
+    },
+    {
+      "id": "iai-tr-08",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Vamos tarde.",
+        "hu": "Későn megyünk.",
+        "en": "We go late.",
+        "de": "Wir gehen spät."
+      },
+      "answer": "Vamos a ir tarde.",
+      "accept": ["Nosotros vamos a ir tarde."],
+      "wordIds": ["31", "1240"],
+      "why": {
+        "hu": "Terv többes számban, itt a második ige maga az ir: ir a + ir. Ir rendhagyó, nosotros: vamos.",
+        "en": "A plan in the plural, here the second verb is ir itself: ir a + ir. Ir is irregular, nosotros: vamos.",
+        "es": "Un plan en plural, aquí el segundo verbo es ir mismo: ir a + ir. Ir es irregular, nosotros: vamos.",
+        "de": "Ein Plan in der Mehrzahl, hier ist das zweite Verb ir selbst: ir a + ir. Ir ist unregelmäßig, nosotros: vamos."
+      }
+    },
+    {
+      "id": "iai-tr-09",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "No vas temprano.",
+        "hu": "Nem mész korán.",
+        "en": "You do not go early.",
+        "de": "Du gehst nicht früh."
+      },
+      "answer": "No vas a ir temprano.",
+      "accept": ["Tú no vas a ir temprano."],
+      "wordIds": ["31", "1239", "1"],
+      "why": {
+        "hu": "Tagadás, itt a második ige maga az ir: a no az ir elé kerül. Ir rendhagyó, tú: vas.",
+        "en": "Negation, here the second verb is ir itself: no goes before ir. Ir is irregular, tú: vas.",
+        "es": "Negación, aquí el segundo verbo es ir mismo: no va antes de ir. Ir es irregular, tú: vas.",
+        "de": "Verneinung, hier ist das zweite Verb ir selbst: no steht vor ir. Ir ist unregelmäßig, tú: vas."
+      }
+    },
+    {
+      "id": "iai-tr-10",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "¿Vais el domingo?",
+        "hu": "Vasárnap mentek?",
+        "en": "Are you all going on Sunday?",
+        "de": "Geht ihr am Sonntag?"
+      },
+      "answer": "¿Vais a ir el domingo?",
+      "accept": ["¿Vosotros vais a ir el domingo?"],
+      "wordIds": ["31", "1202"],
+      "why": {
+        "hu": "Kérdés, itt a második ige maga az ir: ir a + ir. Ir rendhagyó, vosotros: vais.",
+        "en": "A question, here the second verb is ir itself: ir a + ir. Ir is irregular, vosotros: vais.",
+        "es": "Una pregunta, aquí el segundo verbo es ir mismo: ir a + ir. Ir es irregular, vosotros: vais.",
+        "de": "Eine Frage, hier ist das zweite Verb ir selbst: ir a + ir. Ir ist unregelmäßig, vosotros: vais."
+      }
+    },
+    {
+      "id": "iai-tr-11",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Hago esto.",
+        "hu": "Ezt csinálom.",
+        "en": "I do this.",
+        "de": "Ich mache das."
+      },
+      "answer": "Voy a hacer esto.",
+      "accept": ["Yo voy a hacer esto."],
+      "wordIds": ["31", "34", "101"],
+      "why": {
+        "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
+        "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
+        "es": "Un plan decidido: ir a + infinitivo. Ir es irregular, yo: voy.",
+        "de": "Ein entschiedener Plan: ir a + Infinitiv. Ir ist unregelmäßig, yo: voy."
+      }
+    },
+    {
+      "id": "iai-tr-12",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "También hace esto.",
+        "hu": "Ő is ezt csinálja.",
+        "en": "She also does this.",
+        "de": "Sie macht das auch."
+      },
+      "answer": "También va a hacer esto.",
+      "accept": ["Ella también va a hacer esto."],
+      "wordIds": ["31", "34", "101", "59"],
+      "why": {
+        "hu": "Terv ella-ra: ir a + főnévi igenév. Ir rendhagyó, ella: va.",
+        "en": "A plan for ella: ir a + infinitive. Ir is irregular, ella: va.",
+        "es": "Un plan para ella: ir a + infinitivo. Ir es irregular, ella: va.",
+        "de": "Ein Plan für ella: ir a + Infinitiv. Ir ist unregelmäßig, ella: va."
+      }
+    },
+    {
+      "id": "iai-tr-13",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Hacen esto juntos.",
+        "hu": "Ezt együtt csinálják.",
+        "en": "They do this together.",
+        "de": "Sie machen das zusammen."
+      },
+      "answer": "Van a hacer esto juntos.",
+      "accept": ["Ellos van a hacer esto juntos."],
+      "wordIds": ["31", "34", "101", "86"],
+      "why": {
+        "hu": "Terv ellos-ra: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
+        "en": "A plan for ellos: ir a + infinitive. Ir is irregular, ellos: van.",
+        "es": "Un plan para ellos: ir a + infinitivo. Ir es irregular, ellos: van.",
+        "de": "Ein Plan für ellos: ir a + Infinitiv. Ir ist unregelmäßig, ellos: van."
+      }
+    },
+    {
+      "id": "iai-tr-14",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "No haces nada.",
+        "hu": "Nem csinálsz semmit.",
+        "en": "You do not do anything.",
+        "de": "Du machst nichts."
+      },
+      "answer": "No vas a hacer nada.",
+      "accept": ["Tú no vas a hacer nada."],
+      "wordIds": ["31", "34", "11", "1"],
+      "why": {
+        "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, tú: vas.",
+        "en": "Negation: no goes before ir. Ir is irregular, tú: vas.",
+        "es": "Negación: no va antes de ir. Ir es irregular, tú: vas.",
+        "de": "Verneinung: no steht vor ir. Ir ist unregelmäßig, tú: vas."
+      }
+    },
+    {
+      "id": "iai-tr-15",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "¿Hacen eso mañana?",
+        "hu": "Holnap csinálják azt?",
+        "en": "Are they doing that tomorrow?",
+        "de": "Machen sie das morgen?"
+      },
+      "answer": "¿Van a hacer eso mañana?",
+      "accept": ["¿Ellas van a hacer eso mañana?"],
+      "wordIds": ["31", "34", "102", "56"],
+      "why": {
+        "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ellas: van.",
+        "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ellas: van.",
+        "es": "Una pregunta sobre una acción planeada: ir a + infinitivo. Ir es irregular, ellas: van.",
+        "de": "Eine Frage zu einer geplanten Handlung: ir a + Infinitiv. Ir ist unregelmäßig, ellas: van."
+      }
+    },
+    {
+      "id": "iai-tr-16",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Veo eso.",
+        "hu": "Azt látom.",
+        "en": "I see that.",
+        "de": "Ich sehe das."
+      },
+      "answer": "Voy a ver eso.",
+      "accept": ["Yo voy a ver eso."],
+      "wordIds": ["31", "37", "102"],
+      "why": {
+        "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
+        "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
+        "es": "Un plan decidido: ir a + infinitivo. Ir es irregular, yo: voy.",
+        "de": "Ein entschiedener Plan: ir a + Infinitiv. Ir ist unregelmäßig, yo: voy."
+      }
+    },
+    {
+      "id": "iai-tr-17",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Vemos eso también.",
+        "hu": "Azt is látjuk.",
+        "en": "We see that too.",
+        "de": "Wir sehen das auch."
+      },
+      "answer": "Vamos a ver eso también.",
+      "accept": ["Nosotros vamos a ver eso también."],
+      "wordIds": ["31", "37", "102", "59"],
+      "why": {
+        "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
+        "en": "A plan in the plural: ir a + infinitive. Ir is irregular, nosotros: vamos.",
+        "es": "Un plan en plural: ir a + infinitivo. Ir es irregular, nosotros: vamos.",
+        "de": "Ein Plan in der Mehrzahl: ir a + Infinitiv. Ir ist unregelmäßig, nosotros: vamos."
+      }
+    },
+    {
+      "id": "iai-tr-18",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Ve temprano.",
+        "hu": "Korán néz.",
+        "en": "He watches early.",
+        "de": "Er schaut früh."
+      },
+      "answer": "Va a ver temprano.",
+      "accept": ["Él va a ver temprano."],
+      "wordIds": ["31", "37", "1239"],
+      "why": {
+        "hu": "Terv él-re: ir a + főnévi igenév. Ir rendhagyó, él: va.",
+        "en": "A plan for él: ir a + infinitive. Ir is irregular, él: va.",
+        "es": "Un plan para él: ir a + infinitivo. Ir es irregular, él: va.",
+        "de": "Ein Plan für él: ir a + Infinitiv. Ir ist unregelmäßig, él: va."
+      }
+    },
+    {
+      "id": "iai-tr-19",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "No ves nada.",
+        "hu": "Nem látsz semmit.",
+        "en": "You do not see anything.",
+        "de": "Du siehst nichts."
+      },
+      "answer": "No vas a ver nada.",
+      "accept": ["Tú no vas a ver nada."],
+      "wordIds": ["31", "37", "11", "1"],
+      "why": {
+        "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, tú: vas.",
+        "en": "Negation: no goes before ir. Ir is irregular, tú: vas.",
+        "es": "Negación: no va antes de ir. Ir es irregular, tú: vas.",
+        "de": "Verneinung: no steht vor ir. Ir ist unregelmäßig, tú: vas."
+      }
+    },
+    {
+      "id": "iai-tr-20",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "¿Veis el domingo?",
+        "hu": "Vasárnap néztek?",
+        "en": "Do you all watch on Sunday?",
+        "de": "Schaut ihr am Sonntag?"
+      },
+      "answer": "¿Vais a ver el domingo?",
+      "accept": ["¿Vosotros vais a ver el domingo?"],
+      "wordIds": ["31", "37", "1202"],
+      "why": {
+        "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, vosotros: vais.",
+        "en": "A question about a planned action: ir a + infinitive. Ir is irregular, vosotros: vais.",
+        "es": "Una pregunta sobre una acción planeada: ir a + infinitivo. Ir es irregular, vosotros: vais.",
+        "de": "Eine Frage zu einer geplanten Handlung: ir a + Infinitiv. Ir ist unregelmäßig, vosotros: vais."
+      }
+    },
+    {
+      "id": "iai-tr-21",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Estudio bien.",
+        "hu": "Jól tanulok.",
+        "en": "I study well.",
+        "de": "Ich lerne gut."
+      },
+      "answer": "Voy a estudiar bien.",
+      "accept": ["Yo voy a estudiar bien."],
+      "wordIds": ["31", "1410", "6"],
+      "why": {
+        "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
+        "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
+        "es": "Un plan decidido: ir a + infinitivo. Ir es irregular, yo: voy.",
+        "de": "Ein entschiedener Plan: ir a + Infinitiv. Ir ist unregelmäßig, yo: voy."
+      }
+    },
+    {
+      "id": "iai-tr-22",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Estudias rápido.",
+        "hu": "Gyorsan tanulsz.",
+        "en": "You study fast.",
+        "de": "Du lernst schnell."
+      },
+      "answer": "Vas a estudiar rápido.",
+      "accept": ["Tú vas a estudiar rápido."],
+      "wordIds": ["31", "1410", "90"],
+      "why": {
+        "hu": "Terv tú-ra: ir a + főnévi igenév. Ir rendhagyó, tú: vas.",
+        "en": "A plan for tú: ir a + infinitive. Ir is irregular, tú: vas.",
+        "es": "Un plan para tú: ir a + infinitivo. Ir es irregular, tú: vas.",
+        "de": "Ein Plan für tú: ir a + Infinitiv. Ir ist unregelmäßig, tú: vas."
+      }
+    },
+    {
+      "id": "iai-tr-23",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Estudiamos dentro.",
+        "hu": "Bent tanulunk.",
+        "en": "We study inside.",
+        "de": "Wir lernen drinnen."
+      },
+      "answer": "Vamos a estudiar dentro.",
+      "accept": ["Nosotros vamos a estudiar dentro."],
+      "wordIds": ["31", "1410", "65"],
+      "why": {
+        "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
+        "en": "A plan in the plural: ir a + infinitive. Ir is irregular, nosotros: vamos.",
+        "es": "Un plan en plural: ir a + infinitivo. Ir es irregular, nosotros: vamos.",
+        "de": "Ein Plan in der Mehrzahl: ir a + Infinitiv. Ir ist unregelmäßig, nosotros: vamos."
+      }
+    },
+    {
+      "id": "iai-tr-24",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "No estudia tampoco.",
+        "hu": "Ő sem tanul.",
+        "en": "She does not study either.",
+        "de": "Sie lernt auch nicht."
+      },
+      "answer": "No va a estudiar tampoco.",
+      "accept": ["Ella no va a estudiar tampoco."],
+      "wordIds": ["31", "1410", "1317", "1"],
+      "why": {
+        "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, ella: va.",
+        "en": "Negation: no goes before ir. Ir is irregular, ella: va.",
+        "es": "Negación: no va antes de ir. Ir es irregular, ella: va.",
+        "de": "Verneinung: no steht vor ir. Ir ist unregelmäßig, ella: va."
+      }
+    },
+    {
+      "id": "iai-tr-25",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "¿Estudian antes?",
+        "hu": "Előtte tanulnak?",
+        "en": "Do they study before?",
+        "de": "Lernen sie vorher?"
+      },
+      "answer": "¿Van a estudiar antes?",
+      "accept": ["¿Ellos van a estudiar antes?"],
+      "wordIds": ["31", "1410", "63"],
+      "why": {
+        "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
+        "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ellos: van.",
+        "es": "Una pregunta sobre una acción planeada: ir a + infinitivo. Ir es irregular, ellos: van.",
+        "de": "Eine Frage zu einer geplanten Handlung: ir a + Infinitiv. Ir ist unregelmäßig, ellos: van."
+      }
+    },
+    {
+      "id": "iai-tr-26",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Trabajo fuera.",
+        "hu": "Kint dolgozom.",
+        "en": "I work outside.",
+        "de": "Ich arbeite draußen."
+      },
+      "answer": "Voy a trabajar fuera.",
+      "accept": ["Yo voy a trabajar fuera."],
+      "wordIds": ["31", "1409", "64"],
+      "why": {
+        "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
+        "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
+        "es": "Un plan decidido: ir a + infinitivo. Ir es irregular, yo: voy.",
+        "de": "Ein entschiedener Plan: ir a + Infinitiv. Ir ist unregelmäßig, yo: voy."
+      }
+    },
+    {
+      "id": "iai-tr-27",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Trabaja lento.",
+        "hu": "Lassan dolgozik.",
+        "en": "He works slowly.",
+        "de": "Er arbeitet langsam."
+      },
+      "answer": "Va a trabajar lento.",
+      "accept": ["Él va a trabajar lento."],
+      "wordIds": ["31", "1409", "91"],
+      "why": {
+        "hu": "Terv él-re: ir a + főnévi igenév. Ir rendhagyó, él: va.",
+        "en": "A plan for él: ir a + infinitive. Ir is irregular, él: va.",
+        "es": "Un plan para él: ir a + infinitivo. Ir es irregular, él: va.",
+        "de": "Ein Plan für él: ir a + Infinitiv. Ir ist unregelmäßig, él: va."
+      }
+    },
+    {
+      "id": "iai-tr-28",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Trabajamos después.",
+        "hu": "Utána dolgozunk.",
+        "en": "We work afterward.",
+        "de": "Wir arbeiten danach."
+      },
+      "answer": "Vamos a trabajar después.",
+      "accept": ["Nosotros vamos a trabajar después."],
+      "wordIds": ["31", "1409", "62"],
+      "why": {
+        "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
+        "en": "A plan in the plural: ir a + infinitive. Ir is irregular, nosotros: vamos.",
+        "es": "Un plan en plural: ir a + infinitivo. Ir es irregular, nosotros: vamos.",
+        "de": "Ein Plan in der Mehrzahl: ir a + Infinitiv. Ir ist unregelmäßig, nosotros: vamos."
+      }
+    },
+    {
+      "id": "iai-tr-29",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "No trabajas mañana.",
+        "hu": "Nem dolgozol holnap.",
+        "en": "You do not work tomorrow.",
+        "de": "Du arbeitest morgen nicht."
+      },
+      "answer": "No vas a trabajar mañana.",
+      "accept": ["Tú no vas a trabajar mañana."],
+      "wordIds": ["31", "1409", "56", "1"],
+      "why": {
+        "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, tú: vas.",
+        "en": "Negation: no goes before ir. Ir is irregular, tú: vas.",
+        "es": "Negación: no va antes de ir. Ir es irregular, tú: vas.",
+        "de": "Verneinung: no steht vor ir. Ir ist unregelmäßig, tú: vas."
+      }
+    },
+    {
+      "id": "iai-tr-30",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "¿Trabajan el domingo?",
+        "hu": "Vasárnap dolgoznak?",
+        "en": "Do you all work on Sunday?",
+        "de": "Arbeiten Sie am Sonntag?"
+      },
+      "answer": "¿Van a trabajar el domingo?",
+      "accept": ["¿Ustedes van a trabajar el domingo?"],
+      "wordIds": ["31", "1409", "1202"],
+      "why": {
+        "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ustedes: van.",
+        "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ustedes: van.",
+        "es": "Una pregunta sobre una acción planeada: ir a + infinitivo. Ir es irregular, ustedes: van.",
+        "de": "Eine Frage zu einer geplanten Handlung: ir a + Infinitiv. Ir ist unregelmäßig, ustedes: van."
+      }
+    },
+    {
+      "id": "iai-tr-31",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Compro bien.",
+        "hu": "Jól vásárolok.",
+        "en": "I shop well.",
+        "de": "Ich kaufe gut ein."
+      },
+      "answer": "Voy a comprar bien.",
+      "accept": ["Yo voy a comprar bien."],
+      "wordIds": ["31", "1394", "6"],
+      "why": {
+        "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
+        "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
+        "es": "Un plan decidido: ir a + infinitivo. Ir es irregular, yo: voy.",
+        "de": "Ein entschiedener Plan: ir a + Infinitiv. Ir ist unregelmäßig, yo: voy."
+      }
+    },
+    {
+      "id": "iai-tr-32",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Compras rápido.",
+        "hu": "Gyorsan vásárolsz.",
+        "en": "You shop fast.",
+        "de": "Du kaufst schnell ein."
+      },
+      "answer": "Vas a comprar rápido.",
+      "accept": ["Tú vas a comprar rápido."],
+      "wordIds": ["31", "1394", "90"],
+      "why": {
+        "hu": "Terv tú-ra: ir a + főnévi igenév. Ir rendhagyó, tú: vas.",
+        "en": "A plan for tú: ir a + infinitive. Ir is irregular, tú: vas.",
+        "es": "Un plan para tú: ir a + infinitivo. Ir es irregular, tú: vas.",
+        "de": "Ein Plan für tú: ir a + Infinitiv. Ir ist unregelmäßig, tú: vas."
+      }
+    },
+    {
+      "id": "iai-tr-33",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Compra aquí.",
+        "hu": "Itt vásárol.",
+        "en": "She shops here.",
+        "de": "Sie kauft hier ein."
+      },
+      "answer": "Va a comprar aquí.",
+      "accept": ["Ella va a comprar aquí."],
+      "wordIds": ["31", "1394", "8"],
+      "why": {
+        "hu": "Terv ella-ra: ir a + főnévi igenév. Ir rendhagyó, ella: va.",
+        "en": "A plan for ella: ir a + infinitive. Ir is irregular, ella: va.",
+        "es": "Un plan para ella: ir a + infinitivo. Ir es irregular, ella: va.",
+        "de": "Ein Plan für ella: ir a + Infinitiv. Ir ist unregelmäßig, ella: va."
+      }
+    },
+    {
+      "id": "iai-tr-34",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "No compramos tarde.",
+        "hu": "Nem vásárolunk későn.",
+        "en": "We do not shop late.",
+        "de": "Wir kaufen nicht spät ein."
+      },
+      "answer": "No vamos a comprar tarde.",
+      "accept": ["Nosotros no vamos a comprar tarde."],
+      "wordIds": ["31", "1394", "1240", "1"],
+      "why": {
+        "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, nosotros: vamos.",
+        "en": "Negation: no goes before ir. Ir is irregular, nosotros: vamos.",
+        "es": "Negación: no va antes de ir. Ir es irregular, nosotros: vamos.",
+        "de": "Verneinung: no steht vor ir. Ir ist unregelmäßig, nosotros: vamos."
+      }
+    },
+    {
+      "id": "iai-tr-35",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "¿Compran también?",
+        "hu": "Ők is vásárolnak?",
+        "en": "Are they shopping too?",
+        "de": "Kaufen sie auch ein?"
+      },
+      "answer": "¿Van a comprar también?",
+      "accept": ["¿Ellos van a comprar también?"],
+      "wordIds": ["31", "1394", "59"],
+      "why": {
+        "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
+        "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ellos: van.",
+        "es": "Una pregunta sobre una acción planeada: ir a + infinitivo. Ir es irregular, ellos: van.",
+        "de": "Eine Frage zu einer geplanten Handlung: ir a + Infinitiv. Ir ist unregelmäßig, ellos: van."
+      }
+    },
+    {
+      "id": "iai-tr-36",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Hablo bien.",
+        "hu": "Jól beszélek.",
+        "en": "I speak well.",
+        "de": "Ich spreche gut."
+      },
+      "answer": "Voy a hablar bien.",
+      "accept": ["Yo voy a hablar bien."],
+      "wordIds": ["31", "27", "6"],
+      "why": {
+        "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
+        "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
+        "es": "Un plan decidido: ir a + infinitivo. Ir es irregular, yo: voy.",
+        "de": "Ein entschiedener Plan: ir a + Infinitiv. Ir ist unregelmäßig, yo: voy."
+      }
+    },
+    {
+      "id": "iai-tr-37",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Hablas rápido.",
+        "hu": "Gyorsan beszélsz.",
+        "en": "You speak fast.",
+        "de": "Du sprichst schnell."
+      },
+      "answer": "Vas a hablar rápido.",
+      "accept": ["Tú vas a hablar rápido."],
+      "wordIds": ["31", "27", "90"],
+      "why": {
+        "hu": "Terv tú-ra: ir a + főnévi igenév. Ir rendhagyó, tú: vas.",
+        "en": "A plan for tú: ir a + infinitive. Ir is irregular, tú: vas.",
+        "es": "Un plan para tú: ir a + infinitivo. Ir es irregular, tú: vas.",
+        "de": "Ein Plan für tú: ir a + Infinitiv. Ir ist unregelmäßig, tú: vas."
+      }
+    },
+    {
+      "id": "iai-tr-38",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Hablamos después.",
+        "hu": "Utána beszélünk.",
+        "en": "We speak afterward.",
+        "de": "Wir sprechen danach."
+      },
+      "answer": "Vamos a hablar después.",
+      "accept": ["Nosotros vamos a hablar después."],
+      "wordIds": ["31", "27", "62"],
+      "why": {
+        "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
+        "en": "A plan in the plural: ir a + infinitive. Ir is irregular, nosotros: vamos.",
+        "es": "Un plan en plural: ir a + infinitivo. Ir es irregular, nosotros: vamos.",
+        "de": "Ein Plan in der Mehrzahl: ir a + Infinitiv. Ir ist unregelmäßig, nosotros: vamos."
+      }
+    },
+    {
+      "id": "iai-tr-39",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "No habla tampoco.",
+        "hu": "Ő sem beszél.",
+        "en": "He does not speak either.",
+        "de": "Er spricht auch nicht."
+      },
+      "answer": "No va a hablar tampoco.",
+      "accept": ["Él no va a hablar tampoco."],
+      "wordIds": ["31", "27", "1317", "1"],
+      "why": {
+        "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, él: va.",
+        "en": "Negation: no goes before ir. Ir is irregular, él: va.",
+        "es": "Negación: no va antes de ir. Ir es irregular, él: va.",
+        "de": "Verneinung: no steht vor ir. Ir ist unregelmäßig, él: va."
+      }
+    },
+    {
+      "id": "iai-tr-40",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "¿Habláis dentro?",
+        "hu": "Bent beszéltek?",
+        "en": "Do you all talk inside?",
+        "de": "Sprecht ihr drinnen?"
+      },
+      "answer": "¿Vais a hablar dentro?",
+      "accept": ["¿Vosotros vais a hablar dentro?"],
+      "wordIds": ["31", "27", "65"],
+      "why": {
+        "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, vosotros: vais.",
+        "en": "A question about a planned action: ir a + infinitive. Ir is irregular, vosotros: vais.",
+        "es": "Una pregunta sobre una acción planeada: ir a + infinitivo. Ir es irregular, vosotros: vais.",
+        "de": "Eine Frage zu einer geplanten Handlung: ir a + Infinitiv. Ir ist unregelmäßig, vosotros: vais."
+      }
+    },
+    {
+      "id": "iai-tr-41",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Vivo solo.",
+        "hu": "Egyedül élek.",
+        "en": "I live alone.",
+        "de": "Ich lebe allein."
+      },
+      "answer": "Voy a vivir solo.",
+      "accept": ["Yo voy a vivir solo."],
+      "wordIds": ["31", "82", "87"],
+      "why": {
+        "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
+        "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
+        "es": "Un plan decidido: ir a + infinitivo. Ir es irregular, yo: voy.",
+        "de": "Ein entschiedener Plan: ir a + Infinitiv. Ir ist unregelmäßig, yo: voy."
+      }
+    },
+    {
+      "id": "iai-tr-42",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Vive aquí.",
+        "hu": "Itt él.",
+        "en": "She lives here.",
+        "de": "Sie lebt hier."
+      },
+      "answer": "Va a vivir aquí.",
+      "accept": ["Ella va a vivir aquí."],
+      "wordIds": ["31", "82", "8"],
+      "why": {
+        "hu": "Terv ella-ra: ir a + főnévi igenév. Ir rendhagyó, ella: va.",
+        "en": "A plan for ella: ir a + infinitive. Ir is irregular, ella: va.",
+        "es": "Un plan para ella: ir a + infinitivo. Ir es irregular, ella: va.",
+        "de": "Ein Plan für ella: ir a + Infinitiv. Ir ist unregelmäßig, ella: va."
+      }
+    },
+    {
+      "id": "iai-tr-43",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Vivimos fuera.",
+        "hu": "Kint élünk.",
+        "en": "We live outside.",
+        "de": "Wir leben draußen."
+      },
+      "answer": "Vamos a vivir fuera.",
+      "accept": ["Nosotros vamos a vivir fuera."],
+      "wordIds": ["31", "82", "64"],
+      "why": {
+        "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
+        "en": "A plan in the plural: ir a + infinitive. Ir is irregular, nosotros: vamos.",
+        "es": "Un plan en plural: ir a + infinitivo. Ir es irregular, nosotros: vamos.",
+        "de": "Ein Plan in der Mehrzahl: ir a + Infinitiv. Ir ist unregelmäßig, nosotros: vamos."
+      }
+    },
+    {
+      "id": "iai-tr-44",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "No vives tranquilo.",
+        "hu": "Nem élsz nyugodtan.",
+        "en": "You do not live peacefully.",
+        "de": "Du lebst nicht ruhig."
+      },
+      "answer": "No vas a vivir tranquilo.",
+      "accept": ["Tú no vas a vivir tranquilo."],
+      "wordIds": ["31", "82", "1367", "1"],
+      "why": {
+        "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, tú: vas.",
+        "en": "Negation: no goes before ir. Ir is irregular, tú: vas.",
+        "es": "Negación: no va antes de ir. Ir es irregular, tú: vas.",
+        "de": "Verneinung: no steht vor ir. Ir ist unregelmäßig, tú: vas."
+      }
+    },
+    {
+      "id": "iai-tr-45",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "¿Viven contentos?",
+        "hu": "Elégedetten élnek?",
+        "en": "Do they live happily?",
+        "de": "Leben sie zufrieden?"
+      },
+      "answer": "¿Van a vivir contentos?",
+      "accept": ["¿Ellos van a vivir contentos?"],
+      "wordIds": ["31", "82", "1360"],
+      "why": {
+        "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
+        "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ellos: van.",
+        "es": "Una pregunta sobre una acción planeada: ir a + infinitivo. Ir es irregular, ellos: van.",
+        "de": "Eine Frage zu einer geplanten Handlung: ir a + Infinitiv. Ir ist unregelmäßig, ellos: van."
+      }
+    },
+    {
+      "id": "iai-tr-46",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Leo antes.",
+        "hu": "Előtte olvasok.",
+        "en": "I read before.",
+        "de": "Ich lese vorher."
+      },
+      "answer": "Voy a leer antes.",
+      "accept": ["Yo voy a leer antes."],
+      "wordIds": ["31", "1411", "63"],
+      "why": {
+        "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
+        "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
+        "es": "Un plan decidido: ir a + infinitivo. Ir es irregular, yo: voy.",
+        "de": "Ein entschiedener Plan: ir a + Infinitiv. Ir ist unregelmäßig, yo: voy."
+      }
+    },
+    {
+      "id": "iai-tr-47",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Lees después.",
+        "hu": "Utána olvasol.",
+        "en": "You read afterward.",
+        "de": "Du liest danach."
+      },
+      "answer": "Vas a leer después.",
+      "accept": ["Tú vas a leer después."],
+      "wordIds": ["31", "1411", "62"],
+      "why": {
+        "hu": "Terv tú-ra: ir a + főnévi igenév. Ir rendhagyó, tú: vas.",
+        "en": "A plan for tú: ir a + infinitive. Ir is irregular, tú: vas.",
+        "es": "Un plan para tú: ir a + infinitivo. Ir es irregular, tú: vas.",
+        "de": "Ein Plan für tú: ir a + Infinitiv. Ir ist unregelmäßig, tú: vas."
+      }
+    },
+    {
+      "id": "iai-tr-48",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "Leemos dentro.",
+        "hu": "Bent olvasunk.",
+        "en": "We read inside.",
+        "de": "Wir lesen drinnen."
+      },
+      "answer": "Vamos a leer dentro.",
+      "accept": ["Nosotros vamos a leer dentro."],
+      "wordIds": ["31", "1411", "65"],
+      "why": {
+        "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
+        "en": "A plan in the plural: ir a + infinitive. Ir is irregular, nosotros: vamos.",
+        "es": "Un plan en plural: ir a + infinitivo. Ir es irregular, nosotros: vamos.",
+        "de": "Ein Plan in der Mehrzahl: ir a + Infinitiv. Ir ist unregelmäßig, nosotros: vamos."
+      }
+    },
+    {
+      "id": "iai-tr-49",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "No lee tampoco.",
+        "hu": "Ő sem olvas.",
+        "en": "She does not read either.",
+        "de": "Sie liest auch nicht."
+      },
+      "answer": "No va a leer tampoco.",
+      "accept": ["Ella no va a leer tampoco."],
+      "wordIds": ["31", "1411", "1317", "1"],
+      "why": {
+        "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, ella: va.",
+        "en": "Negation: no goes before ir. Ir is irregular, ella: va.",
+        "es": "Negación: no va antes de ir. Ir es irregular, ella: va.",
+        "de": "Verneinung: no steht vor ir. Ir ist unregelmäßig, ella: va."
+      }
+    },
+    {
+      "id": "iai-tr-50",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": {
+        "es": "¿Leen fuera?",
+        "hu": "Kint olvasnak?",
+        "en": "Do they read outside?",
+        "de": "Lesen sie draußen?"
+      },
+      "answer": "¿Van a leer fuera?",
+      "accept": ["¿Ellos van a leer fuera?"],
+      "wordIds": ["31", "1411", "64"],
+      "why": {
+        "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
+        "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ellos: van.",
+        "es": "Una pregunta sobre una acción planeada: ir a + infinitivo. Ir es irregular, ellos: van.",
+        "de": "Eine Frage zu einer geplanten Handlung: ir a + Infinitiv. Ir ist unregelmäßig, ellos: van."
+      }
     }
   ]
 }
