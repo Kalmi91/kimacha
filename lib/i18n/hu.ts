@@ -691,5 +691,8 @@ export default {
     undo: 'Visszavonás',
     dontLearn: 'Ezt nem tanulom',
     next: 'Tovább',
+    learningStep: (step: number, total: number) => `${step}/${total}. lépés`,
+    newBadge: 'új',
+    moreNew: (n: number) => `+${n} új szó`,
   },
 };

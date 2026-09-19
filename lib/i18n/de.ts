@@ -676,5 +676,8 @@ export default {
     undo: 'Rückgängig',
     dontLearn: 'Nicht lernen',
     next: 'Weiter',
+    learningStep: (step: number, total: number) => `Schritt ${step}/${total}`,
+    newBadge: 'neu',
+    moreNew: (n: number) => `+${n} neue Wörter`,
   },
 };

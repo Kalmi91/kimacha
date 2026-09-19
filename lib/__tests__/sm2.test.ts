@@ -1,6 +1,6 @@
 // PLAN-pcic 4. lépés: SM-2 (Anki-módszerű) ütemező tiszta függvényei.
 
-import { sm2NewCard, sm2Review, sm2Preview, pickSm2Session, sm2MarkKnown, addDays, KNOWN_INTERVAL_DAYS, type Sm2Card } from '../sm2';
+import { sm2NewCard, sm2Review, sm2Preview, pickSm2Session, sm2MarkKnown, addDays, KNOWN_INTERVAL_DAYS, DEFAULT_NEW_LIMIT, type Sm2Card } from '../sm2';
 
 const TODAY = '2026-09-18';
 const TOMORROW = addDays(TODAY, 1);
@@ -177,6 +177,39 @@ describe('pickSm2Session', () => {
     const earlier = reviewCard({ itemId: 'r-earlier', due: addDays(TODAY, -3) });
     const session = pickSm2Session([later, earlier], [], TODAY, 20);
     expect(session.map(c => c.itemId)).toEqual(['r-earlier', 'r-later']);
+  });
+});
+
+// FB314: a "+10 új szó" gomb a newLimit paramétert emeli meg futásidőben.
+describe('pickSm2Session, newLimit határeset (FB314)', () => {
+  it('25 új tétel, 20 ma bevezetett: alap keret 0 új, newLimit 30 az 5 maradékot adja, a 20 learning a sor elején marad', () => {
+    const newOrder = Array.from({ length: 25 }, (_, i) => `n${i}`);
+    // az első 20 newOrder-tétel ma már bevezetve (learning), az utolsó 5 (n20..n24) még valódi új
+    const introduced: Sm2Card[] = newOrder.slice(0, 20).map((id) => ({
+      ...sm2NewCard(id),
+      state: 'learning',
+      due: TODAY,
+      introducedAt: TODAY,
+    }));
+
+    const atDefault = pickSm2Session(introduced, newOrder, TODAY, DEFAULT_NEW_LIMIT);
+    expect(atDefault.filter(c => c.state === 'new').length).toBe(0);
+
+    const atThirty = pickSm2Session(introduced, newOrder, TODAY, 30);
+    expect(atThirty.filter(c => c.state === 'new').length).toBe(5);
+    expect(atThirty.slice(0, 20).every(c => c.state === 'learning')).toBe(true);
+  });
+
+  it('ha minden újként megjelölt tétel már be van vezetve, nagy newLimit sem ad új lapot', () => {
+    const newOrder = Array.from({ length: 25 }, (_, i) => `n${i}`);
+    const allIntroduced: Sm2Card[] = newOrder.map((id) => ({
+      ...sm2NewCard(id),
+      state: 'learning',
+      due: TODAY,
+      introducedAt: addDays(TODAY, -1),
+    }));
+    const session = pickSm2Session(allIntroduced, newOrder, TODAY, 30);
+    expect(session.filter(c => c.state === 'new').length).toBe(0);
   });
 });
 
