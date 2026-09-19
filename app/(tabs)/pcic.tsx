@@ -256,6 +256,12 @@ export default function PcicScreen() {
           {...answerInputProps}
         />
 
+        {!grade && (
+          <Pressable style={[styles.inlineCheckBtn, { backgroundColor: '#38BDF8' }]} onPress={handleCheck}>
+            <Text style={styles.inlineCheckText}>{`✓ ${s.card.check}`}</Text>
+          </Pressable>
+        )}
+
         {grade && (
           <View style={styles.resultSection}>
             <Text style={styles.diffLine}>
@@ -288,18 +294,14 @@ export default function PcicScreen() {
         <Text style={[styles.dontLearn, { color: colors.tabIconDefault }]}>{s.pcic.dontLearn}</Text>
       </Pressable>
 
-      {!grade ? (
-        <Pressable style={[styles.checkBtn, { backgroundColor: colors.tint }]} onPress={handleCheck}>
-          <Text style={styles.checkBtnText}>{s.card.check}</Text>
-        </Pressable>
-      ) : autoGraded ? (
+      {autoGraded ? (
         <Pressable
           style={[styles.checkBtn, { backgroundColor: colors.tint }]}
           onPress={() => lastGraded && advance(lastGraded.after)}
         >
           <Text style={styles.checkBtnText}>{s.pcic.next}</Text>
         </Pressable>
-      ) : (
+      ) : grade ? (
         <View style={styles.gradesRow}>
           {GRADES.map((g) => {
             const isPre = PRESELECT[grade.match] === g;
@@ -309,26 +311,20 @@ export default function PcicScreen() {
                 style={({ pressed }) => [
                   styles.gradeBtn,
                   {
-                    backgroundColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : colors.card,
-                    borderColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : isPre ? colors.tint : 'transparent',
+                    backgroundColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : g === 'good' ? '#38BDF8' : '#1D4ED8',
+                    borderColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : isPre ? '#FFFFFF' : 'transparent',
                     borderWidth: isPre ? 3 : 1,
                   },
                 ]}
                 onPress={() => handleGrade(g)}
               >
-                {({ pressed }) => (
-                  <>
-                    <Text style={[styles.gradeLabel, { color: pressed ? '#FFFFFF' : colors.text }]}>{s.pcic[g]}</Text>
-                    <Text style={[styles.gradePreview, { color: pressed ? '#FFFFFF' : colors.tabIconDefault }]}>
-                      {previews[g]}
-                    </Text>
-                  </>
-                )}
+                <Text style={styles.gradeLabel}>{s.pcic[g]}</Text>
+                <Text style={styles.gradePreview}>{previews[g]}</Text>
               </Pressable>
             );
           })}
         </View>
-      )}
+      ) : null}
 
       <FeedbackButton level="B1" languagePair="es-en" currentCard="pcic" />
     </KeyboardAvoidingView>
@@ -413,6 +409,22 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
   },
+  inlineCheckBtn: {
+    alignSelf: 'stretch',
+    width: '100%',
+    minHeight: 44,
+    marginTop: 10,
+    borderRadius: 14,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inlineCheckText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: '700',
+  },
   resultSection: {
     alignItems: 'center',
     marginTop: 16,
@@ -472,9 +484,11 @@ const styles = StyleSheet.create({
   gradeLabel: {
     fontSize: 14,
     fontWeight: '700',
+    color: '#FFFFFF',
   },
   gradePreview: {
     fontSize: 11,
     marginTop: 2,
+    color: '#FFFFFF',
   },
 });
