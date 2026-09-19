@@ -9,7 +9,7 @@ import { join } from 'path';
 import { LEVELS, getWordsForLevel, words, type WordEntry } from '@/data/words';
 import { WORD_MERGES } from '../wordMerges';
 import { pickSurvivor } from '../cardMerge';
-import { findPromptOverlaps, type PromptLang } from '../promptOverlap';
+import { findPromptOverlaps, headwordLeaks, type PromptLang } from '../promptOverlap';
 
 const LEVEL_ORDER = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
@@ -196,6 +196,23 @@ describe('prompt policy (PROMPT-POLICY 1)', () => {
         const ids = cluster.words.map((w) => `${w.id}:${w.prompt}`).join(', ');
         offenders.push(`${level} [${cluster.kind}${cluster.sense ? `: ${cluster.sense}` : ''}] ${ids}`);
       }
+    }
+    expect(offenders).toEqual([]);
+  });
+
+  // PROMPT-POLICY 12: az angol prompt sosem tartalmazhatja a spanyol
+  // címszót, mert elárulja a választ. A fürt-logikától független őr, csak
+  // az es-sávra értelmes (headword = es, prompt = en); a headwordLeaks()
+  // maga dönti el, mi számít cognate-nak (PROMPT-POLICY 11/6), nem itt.
+  it('never leaks the Spanish headword into an English prompt (PROMPT-POLICY 12)', () => {
+    const offenders: string[] = [];
+    for (const level of LEVELS) {
+      const levelWords = getWordsForLevel(level, 'es');
+      const leaks = headwordLeaks(
+        levelWords.map((w) => ({ id: w.id, headword: String(w.es ?? ''), prompt: String(w.en ?? '') })),
+        'en'
+      );
+      for (const leak of leaks) offenders.push(`${level} ${leak.id}: ${leak.headword} in "${leak.prompt}"`);
     }
     expect(offenders).toEqual([]);
   });

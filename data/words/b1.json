@@ -163,7 +163,7 @@
     "level": "B1",
     "es": "conseguir",
     "hu": "megszerezni",
-    "en": "to get / to achieve",
+    "en": "to get",
     "sentence_es": "Voy a conseguirlo.",
     "sentence_hu": "Meg fogom szerezni.",
     "sentence_en": "I'm going to get it.",
@@ -171,7 +171,9 @@
     "sentence_de": "Ich werde es bekommen.",
     "topic": "resultado_exito_fracaso_b1",
     "topicOrder": 4,
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to achieve (voy a conseguir mi objetivo = I'm going to achieve my goal).",
+    "note_hu": "Jelenti azt is: elérni, egy célt (voy a conseguir mi objetivo = elérem a célomat)."
   },
   {
     "id": 313,
@@ -223,7 +225,7 @@
     "level": "B1",
     "es": "discutir",
     "hu": "vitázni",
-    "en": "to discuss / to argue (debate)",
+    "en": "to argue (debate)",
     "sentence_es": "No quiero discutir.",
     "sentence_hu": "Nem akarok vitázni.",
     "sentence_en": "I don't want to argue.",
@@ -231,7 +233,9 @@
     "sentence_de": "Ich will nicht streiten.",
     "topic": "comunicacion_expresion_b1",
     "topicOrder": 2,
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to discuss, neutral (vamos a discutir el tema = let's discuss the topic).",
+    "note_hu": "Jelenti azt is: megbeszélni, semlegesen (vamos a discutir el tema = beszéljük meg a témát)."
   },
   {
     "id": 317,
@@ -1838,7 +1842,7 @@
   {
     "es": "exactamente",
     "hu": "pontosan",
-    "en": "exactly (measurement)",
+    "en": "exactly",
     "sentence_es": "Eso es exactamente lo que pensaba.",
     "sentence_hu": "Ez pontosan az, amit gondoltam.",
     "sentence_en": "That is exactly what I thought.",
@@ -2755,7 +2759,7 @@
   {
     "es": "prometido",
     "hu": "ígért/vőlegény",
-    "en": "promised/fiancé",
+    "en": "fiancé",
     "sentence_es": "Mi prometido llegará mañana.",
     "sentence_hu": "A vőlegényem holnap érkezik.",
     "sentence_en": "My fiancé will arrive tomorrow.",
@@ -2765,7 +2769,9 @@
     "level": "B1",
     "topic": "relaciones_personales_vinculos_b1",
     "topicOrder": 8,
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Also: promised, as an adjective (un regalo prometido = a promised gift).",
+    "note_hu": "Jelenti azt is: megígért (un regalo prometido = egy megígért ajándék)."
   },
   {
     "es": "mental",
@@ -2785,7 +2791,7 @@
   {
     "es": "el extranjero",
     "hu": "külföldi/idegen",
-    "en": "foreigner/abroad",
+    "en": "abroad",
     "sentence_es": "Vivió en el extranjero por cinco años.",
     "sentence_hu": "Öt évig élt külföldön.",
     "sentence_en": "He lived abroad for five years.",
@@ -2796,7 +2802,9 @@
     "topic": "ciudadania_nacionalidades_b1",
     "topicOrder": 3,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: a foreigner (habla con un extranjero = he's talking to a foreigner).",
+    "note_hu": "Jelenti azt is: külföldi, mint személy (habla con un extranjero = egy külföldivel beszél)."
   },
   {
     "es": "dirigir",
@@ -2877,7 +2885,7 @@
   {
     "es": "el cristal",
     "hu": "üveg/kristály",
-    "en": "glass/crystal",
+    "en": "glass (window)",
     "sentence_es": "El cristal de la ventana estaba roto.",
     "sentence_hu": "Az ablak üvege törött volt.",
     "sentence_en": "The window glass was broken.",
@@ -2888,7 +2896,9 @@
     "topic": "vivienda_barrio_b1",
     "topicOrder": 5,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: crystal, fine glass (una copa de cristal = a crystal glass).",
+    "note_hu": "Jelenti azt is: kristály (una copa de cristal = egy kristálypohár)."
   },
   {
     "es": "literalmente",
@@ -2924,7 +2934,7 @@
   {
     "es": "la fotografía",
     "hu": "fénykép/fotózás",
-    "en": "photograph/photography",
+    "en": "photography",
     "sentence_es": "La fotografía en blanco y negro es clásica.",
     "sentence_hu": "A fekete-fehér fotózás klasszikus.",
     "sentence_en": "Black and white photography is classic.",
@@ -2935,12 +2945,14 @@
     "topic": "cine_literatura_fantasia_b1",
     "topicOrder": 1,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: a photograph, one picture (una fotografía antigua = an old photograph).",
+    "note_hu": "Jelenti azt is: fénykép, egy darab (una fotografía antigua = egy régi fénykép)."
   },
   {
     "es": "el patrón",
     "hu": "minta/főnök",
-    "en": "pattern/boss",
+    "en": "pattern",
     "sentence_es": "Notamos un patrón en sus acciones.",
     "sentence_hu": "Mintát fedeztünk fel a tetteiben.",
     "sentence_en": "We noticed a pattern in his actions.",
@@ -2951,7 +2963,9 @@
     "topic": "trabajo_empleo_b1",
     "topicOrder": 5,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: a boss, employer (el patrón pagó el salario = the boss paid the salary).",
+    "note_hu": "Jelenti azt is: főnök (el patrón pagó el salario = a főnök kifizette a fizetést)."
   },
   {
     "es": "asombroso",
@@ -3065,7 +3079,7 @@
   {
     "es": "el anuncio",
     "hu": "bejelentés/hirdetés",
-    "en": "announcement/advertisement",
+    "en": "announcement",
     "sentence_es": "Hicieron un anuncio importante esta mañana.",
     "sentence_hu": "Fontos bejelentést tettek ma reggel.",
     "sentence_en": "They made an important announcement this morning.",
@@ -3076,7 +3090,9 @@
     "topic": "medios_comunicacion_digital_b1",
     "topicOrder": 2,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: an advertisement, commercial (un anuncio de televisión = a TV advertisement).",
+    "note_hu": "Jelenti azt is: reklám (un anuncio de televisión = egy tévéreklám)."
   },
   {
     "es": "la física",
@@ -3253,7 +3269,7 @@
   {
     "es": "civil",
     "hu": "polgári/civil",
-    "en": "civil/civilian",
+    "en": "civil",
     "sentence_es": "El gobierno civil tomó el control de la ciudad.",
     "sentence_hu": "A polgári kormány átvette a város irányítását.",
     "sentence_en": "The civil government took control of the city.",
@@ -3263,12 +3279,14 @@
     "level": "B1",
     "topic": "sociedad_nacion_tradiciones_b1",
     "topicOrder": 7,
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Also: a civilian, a person (los civiles huyeron = the civilians fled).",
+    "note_hu": "Jelenti azt is: civil, mint személy (los civiles huyeron = a civilek elmenekültek)."
   },
   {
     "es": "sabio",
     "hu": "bölcs",
-    "en": "wise/wise person",
+    "en": "wise",
     "sentence_es": "La anciana era sabia y todos la respetaban.",
     "sentence_hu": "Az idős nő bölcs volt, és mindenki tisztelte.",
     "sentence_en": "The old woman was wise and everyone respected her.",
@@ -3278,7 +3296,9 @@
     "level": "B1",
     "topic": "rasgos_personalidad_b1",
     "topicOrder": 7,
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Also: a wise person, a sage (el sabio explicó todo = the wise man explained everything).",
+    "note_hu": "Jelenti azt is: bölcs ember (el sabio explicó todo = a bölcs ember mindent elmagyarázott)."
   },
   {
     "es": "el judío",
@@ -3423,7 +3443,7 @@
   {
     "es": "la violación",
     "hu": "jogsértés/erőszak",
-    "en": "violation/rape",
+    "en": "violation",
     "sentence_es": "Fue una clara violación de sus derechos.",
     "sentence_hu": "Ez nyilvánvaló jogsértés volt.",
     "sentence_en": "It was a clear violation of their rights.",
@@ -3434,7 +3454,9 @@
     "topic": "delincuencia_justicia_b1",
     "topicOrder": 9,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: rape, a serious crime (fue víctima de una violación = she was a victim of rape).",
+    "note_hu": "Jelenti azt is: nemi erőszak (fue víctima de una violación = nemi erőszak áldozata lett)."
   },
   {
     "es": "sufrir",
@@ -3501,7 +3523,7 @@
   {
     "es": "tener",
     "hu": "lenne/kellene",
-    "en": "would have/should",
+    "en": "should",
     "sentence_es": "Tendrías que hablar con ella directamente.",
     "sentence_hu": "Közvetlenül kellene beszélned vele.",
     "sentence_en": "You should talk to her directly.",
@@ -3957,7 +3979,7 @@
   {
     "es": "asegurar",
     "hu": "biztosítani/szavatolni",
-    "en": "to assure / to ensure",
+    "en": "to assure",
     "sentence_es": "Te aseguro que todo saldrá bien.",
     "sentence_hu": "Biztosítalak, hogy minden rendben lesz.",
     "sentence_en": "I assure you that everything will be fine.",
@@ -3967,7 +3989,9 @@
     "level": "B1",
     "topic": "verbos_accion_control_b1",
     "topicOrder": 5,
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to ensure, make certain (esto asegura el éxito = this ensures success).",
+    "note_hu": "Jelenti azt is: biztosítani, garantálni (esto asegura el éxito = ez biztosítja a sikert)."
   },
   {
     "es": "la ira",
@@ -4098,7 +4122,7 @@
   {
     "es": "el artículo",
     "hu": "a cikk/árucikk",
-    "en": "article / item",
+    "en": "article",
     "sentence_es": "Leí un artículo sobre el cambio climático.",
     "sentence_hu": "Olvastam egy cikket az éghajlatváltozásról.",
     "sentence_en": "I read an article about climate change.",
@@ -4109,12 +4133,14 @@
     "topic": "medios_comunicacion_digital_b1",
     "topicOrder": 4,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: an item, a product (un artículo de la tienda = an item from the store).",
+    "note_hu": "Jelenti azt is: árucikk (un artículo de la tienda = egy árucikk a boltból)."
   },
   {
     "es": "la cola",
     "hu": "a sor/farok",
-    "en": "queue (waiting) / tail",
+    "en": "queue (waiting)",
     "sentence_es": "Había una larga cola en el banco.",
     "sentence_hu": "Hosszú sor volt a bankban.",
     "sentence_en": "There was a long queue at the bank.",
@@ -4125,7 +4151,9 @@
     "topic": "servicios_asistencia_b1",
     "topicOrder": 2,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: a tail, of an animal (el perro mueve la cola = the dog wags its tail).",
+    "note_hu": "Jelenti azt is: farok (el perro mueve la cola = a kutya csóválja a farkát)."
   },
   {
     "es": "el whisky",
@@ -4573,7 +4601,7 @@
   {
     "es": "el comisario",
     "hu": "a rendőrfelügyelő/biztos",
-    "en": "police commissioner / commissar",
+    "en": "police commissioner",
     "sentence_es": "El comisario dirigió la investigación.",
     "sentence_hu": "A rendőrfelügyelő vezette a nyomozást.",
     "sentence_en": "The commissioner led the investigation.",
@@ -4584,7 +4612,9 @@
     "topic": "servicios_asistencia_b1",
     "topicOrder": 3,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: a commissar, political officer (el comisario político = the political commissar).",
+    "note_hu": "Jelenti azt is: politikai biztos (el comisario político = a politikai biztos)."
   },
   {
     "es": "alejarse",
@@ -4651,7 +4681,7 @@
   {
     "es": "levantar",
     "hu": "felemelni/felkelni",
-    "en": "to lift / to raise / to get up",
+    "en": "to lift (raise)",
     "sentence_es": "No pudo levantar esa caja tan pesada.",
     "sentence_hu": "Nem tudta felemelni azt a nehéz dobozt.",
     "sentence_en": "He couldn't lift that heavy box.",
@@ -4661,7 +4691,9 @@
     "level": "B1",
     "topic": "cuerpo_apariencia_vida_muerte_b1",
     "topicOrder": 6,
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to get up, oneself (me levanto a las siete = I get up at seven).",
+    "note_hu": "Jelenti azt is: felkelni, magunkról (me levanto a las siete = hétkor kelek fel)."
   },
   {
     "es": "salvaje",
@@ -4823,7 +4855,7 @@
   {
     "es": "la arena",
     "hu": "a homok/aréna",
-    "en": "sand / arena",
+    "en": "sand",
     "sentence_es": "Los niños jugaron en la arena de la playa.",
     "sentence_hu": "A gyerekek a tengerpart homokján játszottak.",
     "sentence_en": "The children played in the beach sand.",
@@ -4834,7 +4866,9 @@
     "topic": "paisaje_naturaleza_geografia_b1",
     "topicOrder": 14,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: an arena, for bullfighting or sports (la arena de toros = the bullring).",
+    "note_hu": "Jelenti azt is: aréna, porond (la arena de toros = a bikaviadal aréna)."
   },
   {
     "es": "la licencia",
@@ -4855,7 +4889,7 @@
   {
     "es": "la marina",
     "hu": "haditengerészet/kikötőnegyed",
-    "en": "navy (branch) / marina",
+    "en": "navy (branch)",
     "sentence_es": "Mi hermano sirve en la marina.",
     "sentence_hu": "A bátyám a haditengerészetnél szolgál.",
     "sentence_en": "My brother serves in the navy.",
@@ -4866,7 +4900,9 @@
     "topic": "ejercito_conflicto_b1",
     "topicOrder": 7,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: a marina, for boats (el yate está en la marina = the yacht is at the marina).",
+    "note_hu": "Jelenti azt is: kikötő, jachtkikötő (el yate está en la marina = a jacht a kikötőben van)."
   },
   {
     "es": "mover",
@@ -5043,7 +5079,7 @@
   {
     "es": "particular",
     "hu": "különleges/magán-/különös",
-    "en": "particular / private",
+    "en": "particular",
     "sentence_es": "Tiene un estilo muy particular.",
     "sentence_hu": "Nagyon különleges stílusa van.",
     "sentence_en": "She has a very particular style.",
@@ -5053,7 +5089,9 @@
     "level": "B1",
     "topic": "adjetivos_descriptivos_b1",
     "topicOrder": 2,
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Also: private (una clase particular = a private lesson).",
+    "note_hu": "Jelenti azt is: magán (una clase particular = egy magánóra)."
   },
   {
     "es": "la alerta",
@@ -5106,7 +5144,7 @@
   {
     "es": "el canal",
     "hu": "csatorna",
-    "en": "channel / canal",
+    "en": "channel (TV)",
     "sentence_es": "Cambia a otro canal, por favor.",
     "sentence_hu": "Kérlek, válts másik csatornára.",
     "sentence_en": "Please switch to another channel.",
@@ -5117,7 +5155,9 @@
     "topic": "medios_comunicacion_digital_b1",
     "topicOrder": 11,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: a canal, waterway (el canal de Panamá = the Panama Canal).",
+    "note_hu": "Jelenti azt is: csatorna, vízi (el canal de Panamá = a Panama-csatorna)."
   },
   {
     "es": "la paciencia",
@@ -5169,7 +5209,7 @@
   {
     "es": "la cuerda",
     "hu": "kötél/húr",
-    "en": "rope / string",
+    "en": "rope",
     "sentence_es": "Usaron una cuerda para escalar la pared.",
     "sentence_hu": "Kötelet használtak a fal megmászásához.",
     "sentence_en": "They used a rope to climb the wall.",
@@ -5180,7 +5220,9 @@
     "topic": "objetos_materiales_b1",
     "topicOrder": 9,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: string, thinner (atar con una cuerda fina = to tie with a thin string).",
+    "note_hu": "Jelenti azt is: zsineg, vékonyabb (atar con una cuerda fina = vékony zsineggel megkötni)."
   },
   {
     "es": "despierto",
@@ -5248,7 +5290,7 @@
   {
     "es": "la impresión",
     "hu": "benyomás/nyomtatás",
-    "en": "impression / printing",
+    "en": "impression",
     "sentence_es": "Me causó muy buena impresión.",
     "sentence_hu": "Nagyon jó benyomást tett rám.",
     "sentence_en": "He made a very good impression on me.",
@@ -5259,7 +5301,9 @@
     "topic": "pensamiento_percepcion_b1",
     "topicOrder": 12,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: printing (la impresión del documento = the printing of the document).",
+    "note_hu": "Jelenti azt is: nyomtatás (la impresión del documento = a dokumentum nyomtatása)."
   },
   {
     "es": "la torre",
@@ -5453,7 +5497,7 @@
   {
     "es": "la criatura",
     "hu": "lény/teremtmény/kisgyerek",
-    "en": "creature / little one",
+    "en": "creature",
     "sentence_es": "Era una criatura del bosque muy extraña.",
     "sentence_hu": "Nagyon furcsa erdei lény volt.",
     "sentence_en": "It was a very strange creature of the forest.",
@@ -5464,12 +5508,14 @@
     "topic": "paisaje_naturaleza_geografia_b1",
     "topicOrder": 17,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: a little one, a baby (qué criatura tan bonita = what a beautiful little one).",
+    "note_hu": "Jelenti azt is: kicsi, csecsemő (qué criatura tan bonita = milyen szép kicsi)."
   },
   {
     "es": "precisamente",
     "hu": "pontosan/éppen",
-    "en": "precisely / exactly (emphasis)",
+    "en": "precisely (emphasis)",
     "sentence_es": "Eso es precisamente lo que necesitamos.",
     "sentence_hu": "Pontosan erre van szükségünk.",
     "sentence_en": "That is precisely what we need.",
@@ -5750,7 +5796,7 @@
   {
     "es": "el voto",
     "hu": "szavazat/fogadalom",
-    "en": "vote / vow",
+    "en": "vote",
     "sentence_es": "Cada voto cuenta en las elecciones.",
     "sentence_hu": "A választásokon minden szavazat számít.",
     "sentence_en": "Every vote counts in elections.",
@@ -5761,7 +5807,9 @@
     "topic": "gobierno_politica_b1",
     "topicOrder": 11,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: a vow, a promise (los votos matrimoniales = the wedding vows).",
+    "note_hu": "Jelenti azt is: fogadalom (los votos matrimoniales = a házassági fogadalmak)."
   },
   {
     "es": "poderoso",
@@ -5987,7 +6035,7 @@
   {
     "es": "el disco",
     "hu": "lemez/korong",
-    "en": "disc/record/disk",
+    "en": "record (music)",
     "sentence_es": "Ese grupo sacó un disco nuevo este año.",
     "sentence_hu": "Az együttes idén új lemezt adott ki.",
     "sentence_en": "That band released a new record this year.",
@@ -5998,7 +6046,9 @@
     "topic": "cine_literatura_fantasia_b1",
     "topicOrder": 8,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: a disk, a disc (el disco duro = the hard disk).",
+    "note_hu": "Jelenti azt is: lemez, korong (el disco duro = a merevlemez)."
   },
   {
     "es": "probable",
@@ -6097,7 +6147,7 @@
   {
     "es": "la pintura",
     "hu": "festmény/festék/festés",
-    "en": "painting/paint",
+    "en": "painting",
     "sentence_es": "Esa pintura cuelga en el museo desde hace años.",
     "sentence_hu": "Az a festmény évek óta lóg a múzeumban.",
     "sentence_en": "That painting has been hanging in the museum for years.",
@@ -6108,12 +6158,14 @@
     "topic": "cine_literatura_fantasia_b1",
     "topicOrder": 9,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: paint, the material (necesito pintura azul = I need blue paint).",
+    "note_hu": "Jelenti azt is: festék (necesito pintura azul = kék festékre van szükségem)."
   },
   {
     "es": "quieto",
     "hu": "mozdulatlan/csendes",
-    "en": "still/quiet",
+    "en": "still (motionless)",
     "sentence_es": "El niño se quedó quieto durante la foto.",
     "sentence_hu": "A gyerek mozdulatlanul állt a fotó alatt.",
     "sentence_en": "The child stayed still during the photo.",
@@ -6123,7 +6175,9 @@
     "level": "B1",
     "topic": "adjetivos_descriptivos_b1",
     "topicOrder": 7,
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Also: quiet, calm (el bebé está quieto = the baby is calm/settled).",
+    "note_hu": "Jelenti azt is: csendes, nyugodt (el bebé está quieto = a baba nyugodt)."
   },
   {
     "es": "falso",
@@ -6175,7 +6229,7 @@
   {
     "es": "felicidades",
     "hu": "gratulálok/boldog születésnapot",
-    "en": "congratulations/happy birthday",
+    "en": "congratulations (achievement)",
     "sentence_es": "¡Felicidades por tu nuevo trabajo!",
     "sentence_hu": "Gratulálok az új munkahelyedhez!",
     "sentence_en": "Congratulations on your new job!",
@@ -6185,12 +6239,14 @@
     "level": "B1",
     "topic": "relaciones_personales_vinculos_b1",
     "topicOrder": 14,
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Also: happy birthday (¡felicidades en tu cumpleaños! = happy birthday!).",
+    "note_hu": "Jelenti azt is: boldog születésnapot (¡felicidades en tu cumpleaños! = boldog születésnapot!)."
   },
   {
     "es": "la camioneta",
     "hu": "terepjáró/furgon/kisteherautó",
-    "en": "van/pickup truck/SUV",
+    "en": "van",
     "sentence_es": "Cargamos todas las cajas en la camioneta.",
     "sentence_hu": "Beraktuk az összes dobozt a furgonba.",
     "sentence_en": "We loaded all the boxes into the van.",
@@ -6201,7 +6257,9 @@
     "topic": "transporte_viajes_b1",
     "topicOrder": 6,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: a pickup truck, or an SUV (compró una camioneta nueva = he bought a new pickup truck).",
+    "note_hu": "Jelenti azt is: kisteherautó, vagy terepjáró (compró una camioneta nueva = vett egy új kisteherautót)."
   },
   {
     "es": "aparte",
@@ -6255,7 +6313,7 @@
   {
     "es": "felicitaciones",
     "hu": "gratulálok/üdvözletek",
-    "en": "congratulations/greetings",
+    "en": "congratulations (formal)",
     "sentence_es": "Recibió felicitaciones de todo el equipo.",
     "sentence_hu": "Gratulációkat kapott az egész csapattól.",
     "sentence_en": "She received congratulations from the whole team.",
@@ -6265,7 +6323,9 @@
     "level": "B1",
     "topic": "relaciones_personales_vinculos_b1",
     "topicOrder": 15,
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Also: greetings, general (felicitaciones por año nuevo = New Year greetings).",
+    "note_hu": "Jelenti azt is: üdvözlet, jókívánság (felicitaciones por año nuevo = boldog új évet kívánok)."
   },
   {
     "es": "la computadora",
@@ -6393,7 +6453,7 @@
   {
     "es": "el sujeto",
     "hu": "alany/személy/alak",
-    "en": "subject/person",
+    "en": "subject (grammar)",
     "sentence_es": "El sujeto del verbo está al inicio de la frase.",
     "sentence_hu": "A mondat alanya a mondat elején van.",
     "sentence_en": "The subject of the verb is at the beginning of the sentence.",
@@ -6404,7 +6464,9 @@
     "topic": "vida_trabajo_desarrollo_b1",
     "topicOrder": 25,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: a person, sometimes suspicious (un sujeto extraño = a strange character).",
+    "note_hu": "Jelenti azt is: alak, személy (un sujeto extraño = egy furcsa alak)."
   },
   {
     "es": "el siglo",
@@ -6425,7 +6487,7 @@
   {
     "es": "la fortuna",
     "hu": "vagyon/szerencse",
-    "en": "fortune/luck",
+    "en": "fortune (wealth)",
     "sentence_es": "Heredó una gran fortuna de su abuelo.",
     "sentence_hu": "Nagy vagyont örökölt a nagyapjától.",
     "sentence_en": "He inherited a great fortune from his grandfather.",
@@ -6436,7 +6498,9 @@
     "topic": "economia_industria_b1",
     "topicOrder": 11,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: luck (tuvo la fortuna de ganar = he had the luck to win).",
+    "note_hu": "Jelenti azt is: szerencse (tuvo la fortuna de ganar = szerencséje volt nyerni)."
   },
   {
     "es": "la presencia",
@@ -6457,7 +6521,7 @@
   {
     "es": "el oficial",
     "hu": "tiszt/tisztviselő",
-    "en": "officer/official",
+    "en": "officer",
     "sentence_es": "Los oficiales del ejército llegaron temprano.",
     "sentence_hu": "A hadsereg tisztjei korán érkeztek.",
     "sentence_en": "The army officers arrived early.",
@@ -6468,7 +6532,9 @@
     "topic": "ejercito_conflicto_b1",
     "topicOrder": 9,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: an official, representative (un oficial del gobierno = a government official).",
+    "note_hu": "Jelenti azt is: tisztviselő (un oficial del gobierno = egy kormánytisztviselő)."
   },
   {
     "es": "la aventura",
@@ -6630,7 +6696,7 @@
   {
     "es": "la clave",
     "hu": "kulcs/kód/kulcsfontosságú",
-    "en": "key/code/clue",
+    "en": "key (crucial factor)",
     "sentence_es": "El trabajo en equipo es la clave del éxito.",
     "sentence_hu": "A csapatmunka a siker kulcsa.",
     "sentence_en": "Teamwork is the key to success.",
@@ -6641,7 +6707,9 @@
     "topic": "vida_trabajo_desarrollo_b1",
     "topicOrder": 28,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: a code, or a clue (la clave secreta = the secret code).",
+    "note_hu": "Jelenti azt is: kód, vagy nyom (la clave secreta = a titkos kód)."
   },
   {
     "es": "aparentemente",
@@ -6676,7 +6744,7 @@
   {
     "es": "controlar",
     "hu": "irányít/ellenőriz/kézben tart",
-    "en": "to control/to check",
+    "en": "to control",
     "sentence_es": "Es difícil controlar las emociones en momentos difíciles.",
     "sentence_hu": "Nehéz kézben tartani az érzelmeket nehéz pillanatokban.",
     "sentence_en": "It is difficult to control emotions in hard moments.",
@@ -6686,7 +6754,9 @@
     "level": "B1",
     "topic": "verbos_accion_control_b1",
     "topicOrder": 8,
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to check, verify (voy a controlar la presión = I'm going to check the pressure).",
+    "note_hu": "Jelenti azt is: ellenőrizni (voy a controlar la presión = ellenőrzöm a nyomást)."
   },
   {
     "es": "mostrar",
@@ -7069,7 +7139,7 @@
   {
     "es": "el veneno",
     "hu": "méreg",
-    "en": "poison / venom",
+    "en": "venom (animal)",
     "sentence_es": "La serpiente inyectó su veneno rápidamente.",
     "sentence_hu": "A kígyó gyorsan befecskendezi a mérgét.",
     "sentence_en": "The snake injected its venom quickly.",
@@ -7080,7 +7150,9 @@
     "topic": "salud_enfermedades_b1",
     "topicOrder": 13,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: poison, general (el veneno mató a la planta = the poison killed the plant).",
+    "note_hu": "Jelenti azt is: méreg, általánosan (el veneno mató a la planta = a méreg megölte a növényt)."
   },
   {
     "es": "súper",
@@ -7115,7 +7187,7 @@
   {
     "es": "la virgen",
     "hu": "szűz/szűzies",
-    "en": "virgin / the Virgin (Mary)",
+    "en": "the Virgin (Mary)",
     "sentence_es": "La imagen de la virgen estaba en el altar.",
     "sentence_hu": "A Szűz képe az oltáron volt.",
     "sentence_en": "The image of the Virgin was on the altar.",
@@ -7126,7 +7198,9 @@
     "topic": "religion_fe_b1",
     "topicOrder": 9,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: a virgin, general (es virgen = she is a virgin).",
+    "note_hu": "Jelenti azt is: szűz, általánosan (es virgen = ő szűz)."
   },
   {
     "es": "el distrito",
@@ -7163,7 +7237,7 @@
   {
     "es": "el socorro",
     "hu": "segítség/segélykiáltás",
-    "en": "help (emergency cry) / rescue (call)",
+    "en": "help (emergency cry)",
     "sentence_es": "Pidió socorro cuando se cayó al río.",
     "sentence_hu": "Segítségért kiáltott, amikor a folyóba esett.",
     "sentence_en": "He called for help when he fell into the river.",
@@ -7195,7 +7269,7 @@
   {
     "es": "el límite",
     "hu": "határ/korlát",
-    "en": "limit / boundary",
+    "en": "limit",
     "sentence_es": "Hay que respetar el límite de velocidad.",
     "sentence_hu": "Be kell tartani a sebességhatárt.",
     "sentence_en": "You have to respect the speed limit.",
@@ -7206,12 +7280,14 @@
     "topic": "movimiento_direccion_espacio_b1",
     "topicOrder": 22,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: boundary (el límite entre los dos países = the boundary between the two countries).",
+    "note_hu": "Jelenti azt is: határvonal (el límite entre los dos países = a két ország közötti határ)."
   },
   {
     "es": "la audiencia",
     "hu": "közönség/tárgyalás",
-    "en": "audience / hearing",
+    "en": "audience",
     "sentence_es": "La audiencia aplaudió al final del concierto.",
     "sentence_hu": "A közönség a koncert végén tapsolt.",
     "sentence_en": "The audience applauded at the end of the concert.",
@@ -7222,7 +7298,9 @@
     "topic": "gobierno_politica_b1",
     "topicOrder": 15,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: hearing (una audiencia pública = a public hearing).",
+    "note_hu": "Jelenti azt is: meghallgatás, tárgyalás (una audiencia pública = egy nyilvános meghallgatás)."
   },
   {
     "es": "el jugador",
@@ -7290,7 +7368,7 @@
   {
     "es": "conocer",
     "hu": "megismer/ismer",
-    "en": "to know / to meet",
+    "en": "to meet",
     "sentence_es": "Nos conocimos en una fiesta hace tres años.",
     "sentence_hu": "Három évvel ezelőtt egy bulin ismertük meg egymást.",
     "sentence_en": "We met at a party three years ago.",
@@ -7300,7 +7378,9 @@
     "level": "B1",
     "topic": "pensamiento_percepcion_b1",
     "topicOrder": 17,
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to know, to be acquainted with (no lo conozco = I don't know him).",
+    "note_hu": "Jelenti azt is: ismerni valakit (no lo conozco = nem ismerem őt)."
   },
   {
     "es": "la tropa",
@@ -7337,7 +7417,7 @@
   {
     "es": "la competencia",
     "hu": "verseny/versengés",
-    "en": "competition (rivalry) / competence",
+    "en": "competition (rivalry)",
     "sentence_es": "La competencia entre las empresas es muy fuerte.",
     "sentence_hu": "A cégek közötti verseny nagyon erős.",
     "sentence_en": "The competition between companies is very fierce.",
@@ -7348,12 +7428,14 @@
     "topic": "ocio_deporte_competicion_b1",
     "topicOrder": 9,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: competence, skill (tiene la competencia necesaria = he has the necessary competence).",
+    "note_hu": "Jelenti azt is: hozzáértés (tiene la competencia necesaria = megvan hozzá a szükséges hozzáértése)."
   },
   {
     "es": "la fila",
     "hu": "sor/sorban állás",
-    "en": "line / queue (formation) / row",
+    "en": "line / queue (formation)",
     "sentence_es": "Hicimos fila durante media hora en el banco.",
     "sentence_hu": "Fél óráig álltunk sorban a bankban.",
     "sentence_en": "We waited in line for half an hour at the bank.",
@@ -7364,7 +7446,9 @@
     "topic": "movimiento_direccion_espacio_b1",
     "topicOrder": 19,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: row (fila 5 = row 5, e.g. cinema seats).",
+    "note_hu": "Jelenti azt is: sor (fila 5 = 5. sor, pl. moziban)."
   },
   {
     "es": "el misterio",
@@ -7417,7 +7501,7 @@
   {
     "es": "el patio",
     "hu": "udvar/belső udvar",
-    "en": "courtyard / patio / schoolyard",
+    "en": "schoolyard",
     "sentence_es": "Los niños jugaron en el patio durante el recreo.",
     "sentence_hu": "A gyerekek szünetben az udvaron játszottak.",
     "sentence_en": "The children played in the schoolyard during recess.",
@@ -7428,7 +7512,9 @@
     "topic": "vivienda_barrio_b1",
     "topicOrder": 10,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: courtyard, patio (el patio de la casa = the courtyard of the house).",
+    "note_hu": "Jelenti azt is: udvar (el patio de la casa = a ház udvara)."
   },
   {
     "es": "golpear",
@@ -7480,7 +7566,7 @@
   {
     "es": "emocionante",
     "hu": "izgalmas/megható",
-    "en": "exciting / moving",
+    "en": "exciting",
     "sentence_es": "El partido fue muy emocionante hasta el final.",
     "sentence_hu": "A mérkőzés a végéig nagyon izgalmas volt.",
     "sentence_en": "The match was very exciting until the end.",
@@ -7490,7 +7576,9 @@
     "level": "B1",
     "topic": "emociones_estados_animo_b1",
     "topicOrder": 10,
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Also: moving, touching (un discurso emocionante = a moving speech).",
+    "note_hu": "Jelenti azt is: megható (un discurso emocionante = egy megható beszéd)."
   },
   {
     "es": "el rescate",
@@ -7682,7 +7770,7 @@
   {
     "es": "curioso",
     "hu": "kíváncsi/furcsa",
-    "en": "curious / strange",
+    "en": "curious",
     "sentence_es": "El niño curioso preguntó muchas cosas.",
     "sentence_hu": "A kíváncsi gyerek sok mindent kérdezett.",
     "sentence_en": "The curious child asked many things.",
@@ -7692,7 +7780,9 @@
     "level": "B1",
     "topic": "rasgos_personalidad_b1",
     "topicOrder": 16,
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Also: strange, odd (es curioso que llegara tarde = it's strange that he arrived late).",
+    "note_hu": "Jelenti azt is: furcsa (es curioso que llegara tarde = furcsa, hogy elkésett)."
   },
   {
     "es": "el asco",
@@ -7713,7 +7803,7 @@
   {
     "es": "enseñar",
     "hu": "tanít/megmutat",
-    "en": "to teach / to show (demonstrate)",
+    "en": "to teach",
     "sentence_es": "Mi abuela me enseñó a cocinar arroz.",
     "sentence_hu": "A nagyanyám megtanított rizzsel főzni.",
     "sentence_en": "My grandmother taught me how to cook rice.",
@@ -7723,7 +7813,9 @@
     "level": "B1",
     "topic": "escuela_aprendizaje_b1",
     "topicOrder": 8,
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to show (enséñame tu casa = show me your house).",
+    "note_hu": "Jelenti azt is: megmutatni (enséñame tu casa = mutasd meg a házad)."
   },
   {
     "es": "el océano",
@@ -7789,7 +7881,7 @@
   {
     "es": "la terapia",
     "hu": "terápia/kezelés",
-    "en": "therapy / treatment (ongoing)",
+    "en": "therapy",
     "sentence_es": "La terapia le ayudó a superar el estrés.",
     "sentence_hu": "A terápia segített leküzdeni a stresszt.",
     "sentence_en": "The therapy helped him overcome the stress.",
@@ -7821,7 +7913,7 @@
   {
     "es": "el terreno",
     "hu": "terület/telek",
-    "en": "terrain / land / plot",
+    "en": "land / plot",
     "sentence_es": "Compraron un terreno para construir su casa.",
     "sentence_hu": "Telket vásároltak, hogy házat építsenek.",
     "sentence_en": "They bought a plot of land to build their house.",
@@ -7832,7 +7924,9 @@
     "topic": "paisaje_naturaleza_geografia_b1",
     "topicOrder": 20,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: terrain (terreno difícil = difficult terrain).",
+    "note_hu": "Jelenti azt is: terep (terreno difícil = nehéz terep)."
   },
   {
     "es": "la autoridad",
@@ -7869,7 +7963,7 @@
   {
     "es": "la cubierta",
     "hu": "fedélzet/borító",
-    "en": "deck / cover",
+    "en": "deck",
     "sentence_es": "Los pasajeros subieron a la cubierta del barco.",
     "sentence_hu": "Az utasok felmentek a hajó fedélzetére.",
     "sentence_en": "The passengers went up to the ship's deck.",
@@ -7880,7 +7974,9 @@
     "topic": "transporte_viajes_b1",
     "topicOrder": 9,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: cover (la cubierta del libro = the book cover).",
+    "note_hu": "Jelenti azt is: borító (la cubierta del libro = a könyv borítója)."
   },
   {
     "es": "el guarda",
@@ -7932,7 +8028,7 @@
   {
     "es": "montar",
     "hu": "felszállni/megülni/összeszerelni",
-    "en": "to ride / to assemble",
+    "en": "to ride",
     "sentence_es": "Aprendí a montar en bicicleta de niño.",
     "sentence_hu": "Gyerekkoromban tanultam meg biciklizni.",
     "sentence_en": "I learned to ride a bicycle as a child.",
@@ -7942,7 +8038,9 @@
     "level": "B1",
     "topic": "transporte_viajes_b1",
     "topicOrder": 10,
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to assemble, to set up (montar un mueble = to assemble a piece of furniture).",
+    "note_hu": "Jelenti azt is: összeszerelni (montar un mueble = összeszerelni egy bútort)."
   },
   {
     "es": "el emperador",
@@ -8026,7 +8124,7 @@
   {
     "es": "el cierre",
     "hu": "bezárás/zárás/cipzár",
-    "en": "closure / zip fastener",
+    "en": "closure",
     "sentence_es": "El cierre de la tienda está programado para las nueve.",
     "sentence_hu": "Az üzlet zárása kilenc órára van tervezve.",
     "sentence_en": "The store closure is scheduled for nine o'clock.",
@@ -8037,7 +8135,9 @@
     "topic": "compras_productos_b1",
     "topicOrder": 6,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: zipper, zip fastener (el cierre de la chaqueta = the jacket's zipper).",
+    "note_hu": "Jelenti azt is: cipzár (el cierre de la chaqueta = a kabát cipzárja)."
   },
   {
     "es": "el botón",
@@ -8154,7 +8254,7 @@
   {
     "es": "igualmente",
     "hu": "szintén/ugyanúgy",
-    "en": "likewise / equally",
+    "en": "likewise",
     "sentence_es": "Muchas gracias. —Igualmente.",
     "sentence_hu": "Köszönöm szépen. —Szintén.",
     "sentence_en": "Thank you very much. —Likewise.",
@@ -8164,7 +8264,9 @@
     "level": "B1",
     "topic": "adverbios_modo_certeza_b1",
     "topicOrder": 18,
-    "pos": "adv"
+    "pos": "adv",
+    "note_en": "Also: equally (son igualmente importantes = they are equally important).",
+    "note_hu": "Jelenti azt is: egyformán (son igualmente importantes = egyformán fontosak)."
   },
   {
     "es": "la cultura",
@@ -8294,7 +8396,7 @@
   {
     "es": "la placa",
     "hu": "tábla/rendszámtábla/emléktábla",
-    "en": "plate / plaque / license plate",
+    "en": "license plate",
     "sentence_es": "El policía anotó la placa del coche.",
     "sentence_hu": "A rendőr feljegyezte az autó rendszámát.",
     "sentence_en": "The police officer noted the car's license plate.",
@@ -8305,7 +8407,9 @@
     "topic": "transporte_viajes_b1",
     "topicOrder": 11,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: plaque (una placa conmemorativa = a commemorative plaque).",
+    "note_hu": "Jelenti azt is: emléktábla (una placa conmemorativa = egy emléktábla)."
   },
   {
     "es": "afortunado",
@@ -8341,7 +8445,7 @@
   {
     "es": "espacial",
     "hu": "űr- / térbeli",
-    "en": "spatial / space (adj.)",
+    "en": "space",
     "sentence_es": "La misión espacial duró seis meses.",
     "sentence_hu": "Az űrmisszió hat hónapig tartott.",
     "sentence_en": "The space mission lasted six months.",
@@ -8351,7 +8455,9 @@
     "level": "B1",
     "topic": "paisaje_naturaleza_geografia_b1",
     "topicOrder": 22,
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Also: spatial (percepción espacial = spatial perception).",
+    "note_hu": "Jelenti azt is: térbeli (percepción espacial = térbeli észlelés)."
   },
   {
     "es": "el concurso",
@@ -8439,7 +8545,7 @@
   {
     "es": "la raza",
     "hu": "faj/rassz",
-    "en": "race / breed",
+    "en": "race",
     "sentence_es": "Esa ley prohíbe la discriminación por raza.",
     "sentence_hu": "Ez a törvény tiltja a faji megkülönböztetést.",
     "sentence_en": "That law prohibits discrimination based on race.",
@@ -8450,7 +8556,9 @@
     "topic": "sociedad_nacion_tradiciones_b1",
     "topicOrder": 15,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: breed, for animals (una raza de perro = a dog breed).",
+    "note_hu": "Jelenti azt is: fajta, állatoknál (una raza de perro = egy kutyafajta)."
   },
   {
     "es": "la imaginación",
@@ -8487,7 +8595,7 @@
   {
     "es": "el almacén",
     "hu": "raktár/áruház",
-    "en": "warehouse / department store",
+    "en": "warehouse",
     "sentence_es": "Los productos están guardados en el almacén.",
     "sentence_hu": "A termékek a raktárban vannak tárolva.",
     "sentence_en": "The products are stored in the warehouse.",
@@ -8498,7 +8606,9 @@
     "topic": "compras_productos_b1",
     "topicOrder": 8,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: department store (los grandes almacenes = the department store).",
+    "note_hu": "Jelenti azt is: áruház (los grandes almacenes = az áruház)."
   },
   {
     "es": "el sabor",
@@ -8691,7 +8801,7 @@
   {
     "es": "la frase",
     "hu": "mondat/kifejezés",
-    "en": "sentence (grammar) / phrase",
+    "en": "sentence (grammar)",
     "sentence_es": "Escribe una frase con la palabra nueva.",
     "sentence_hu": "Írj mondatot az új szóval.",
     "sentence_en": "Write a sentence with the new word.",
@@ -8702,7 +8812,9 @@
     "topic": "medios_comunicacion_digital_b1",
     "topicOrder": 19,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: phrase (una frase hecha = a set phrase).",
+    "note_hu": "Jelenti azt is: kifejezés, szólás (una frase hecha = egy szólás)."
   },
   {
     "es": "la excelencia",
@@ -8723,7 +8835,7 @@
   {
     "es": "la moral",
     "hu": "erkölcs/morál",
-    "en": "morality / morale",
+    "en": "morality",
     "sentence_es": "Esa decisión plantea un problema de moral.",
     "sentence_hu": "Ez a döntés erkölcsi kérdést vet fel.",
     "sentence_en": "That decision raises a moral problem.",
@@ -8734,7 +8846,9 @@
     "topic": "religion_fe_b1",
     "topicOrder": 13,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: morale (la moral del equipo = the team's morale).",
+    "note_hu": "Jelenti azt is: hangulat, morál (la moral del equipo = a csapat morálja)."
   },
   {
     "es": "salvar",
@@ -8831,7 +8945,7 @@
   {
     "es": "la discusión",
     "hu": "vita/veszekedés",
-    "en": "argument/discussion",
+    "en": "argument",
     "sentence_es": "Tuvimos una discusión sobre el dinero.",
     "sentence_hu": "Vitánk volt a pénz miatt.",
     "sentence_en": "We had an argument about money.",
@@ -8842,7 +8956,9 @@
     "topic": "relaciones_personales_vinculos_b1",
     "topicOrder": 19,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: discussion (una discusión formal = a formal discussion).",
+    "note_hu": "Jelenti azt is: megbeszélés (una discusión formal = egy formális megbeszélés)."
   },
   {
     "es": "la comunicación",
@@ -8926,7 +9042,7 @@
   {
     "es": "la letra",
     "hu": "betű/dalszöveg",
-    "en": "letter/lyrics",
+    "en": "lyrics",
     "sentence_es": "No recuerdo la letra de esa canción.",
     "sentence_hu": "Nem emlékszem az a dal szövegére.",
     "sentence_en": "I don't remember the lyrics of that song.",
@@ -8937,12 +9053,14 @@
     "topic": "cine_literatura_fantasia_b1",
     "topicOrder": 16,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: letter, as in the alphabet (la letra A = the letter A).",
+    "note_hu": "Jelenti azt is: betű (la letra A = az A betű)."
   },
   {
     "es": "la vía",
     "hu": "út/sín/módszer",
-    "en": "way/track/route",
+    "en": "track",
     "sentence_es": "El tren llegó por la vía principal.",
     "sentence_hu": "A vonat a főpályán érkezett.",
     "sentence_en": "The train arrived on the main track.",
@@ -8953,7 +9071,9 @@
     "topic": "transporte_viajes_b1",
     "topicOrder": 14,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: way, route (por vía aérea = by air).",
+    "note_hu": "Jelenti azt is: út, útvonal (por vía aérea = légi úton)."
   },
   {
     "es": "el sacerdote",
@@ -9067,7 +9187,7 @@
   {
     "es": "el depósito",
     "hu": "tartály/raktár/letét",
-    "en": "tank/deposit/warehouse",
+    "en": "tank",
     "sentence_es": "El depósito de agua está casi vacío.",
     "sentence_hu": "A víztartály majdnem üres.",
     "sentence_en": "The water tank is almost empty.",
@@ -9078,7 +9198,9 @@
     "topic": "servicios_asistencia_b1",
     "topicOrder": 16,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: deposit, money (un depósito bancario = a bank deposit).",
+    "note_hu": "Jelenti azt is: letét, betét (un depósito bancario = egy banki betét)."
   },
   {
     "es": "comprobar",
@@ -9098,7 +9220,7 @@
   {
     "es": "forense",
     "hu": "törvényszéki/igazságügyi orvos",
-    "en": "forensic/forensic expert",
+    "en": "forensic",
     "sentence_es": "El médico forense examinó el cuerpo.",
     "sentence_hu": "Az igazságügyi orvos megvizsgálta a testet.",
     "sentence_en": "The forensic doctor examined the body.",
@@ -9108,7 +9230,9 @@
     "level": "B1",
     "topic": "delincuencia_justicia_b1",
     "topicOrder": 19,
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Also: forensic expert, coroner (el forense confirmó la causa = the coroner confirmed the cause).",
+    "note_hu": "Jelenti azt is: halottkém (el forense confirmó la causa = a halottkém megerősítette az okot)."
   },
   {
     "es": "la tensión",
@@ -9207,7 +9331,7 @@
   {
     "es": "la limpieza",
     "hu": "takarítás/tisztaság",
-    "en": "cleaning/cleanliness",
+    "en": "cleaning",
     "sentence_es": "La limpieza del piso tardó dos horas.",
     "sentence_hu": "A lakás takarítása két óráig tartott.",
     "sentence_en": "Cleaning the apartment took two hours.",
@@ -9218,7 +9342,9 @@
     "topic": "salud_enfermedades_b1",
     "topicOrder": 19,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: cleanliness (la limpieza es importante = cleanliness is important).",
+    "note_hu": "Jelenti azt is: tisztaság (la limpieza es importante = a tisztaság fontos)."
   },
   {
     "es": "magnífico",
@@ -9349,7 +9475,7 @@
   {
     "es": "el ensayo",
     "hu": "próba/esszé",
-    "en": "rehearsal/essay",
+    "en": "rehearsal",
     "sentence_es": "El ensayo de la obra fue muy largo.",
     "sentence_hu": "A darab próbája nagyon hosszú volt.",
     "sentence_en": "The rehearsal for the play was very long.",
@@ -9360,7 +9486,9 @@
     "topic": "escuela_aprendizaje_b1",
     "topicOrder": 9,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: essay (un ensayo sobre la historia = an essay about history).",
+    "note_hu": "Jelenti azt is: esszé (un ensayo sobre la historia = egy esszé a történelemről)."
   },
   {
     "es": "el familiar",
@@ -9412,7 +9540,7 @@
   {
     "es": "el palo",
     "hu": "bot/rúd",
-    "en": "stick/pole",
+    "en": "stick",
     "sentence_es": "El niño golpeó el árbol con un palo.",
     "sentence_hu": "A kisfiú egy bottal megütötte a fát.",
     "sentence_en": "The boy hit the tree with a stick.",
@@ -9910,7 +10038,7 @@
   {
     "es": "el grano",
     "hu": "szem/pattanás/gabona",
-    "en": "grain/pimple",
+    "en": "pimple",
     "sentence_es": "Le salió un grano en la frente.",
     "sentence_hu": "Pattanás jelent meg a homlokán.",
     "sentence_en": "A pimple appeared on his forehead.",
@@ -9921,7 +10049,9 @@
     "topic": "salud_enfermedades_b1",
     "topicOrder": 20,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: grain (un grano de arroz = a grain of rice).",
+    "note_hu": "Jelenti azt is: (gabona)szem (un grano de arroz = egy szem rizs)."
   },
   {
     "es": "la piedad",
@@ -10027,7 +10157,7 @@
   {
     "es": "la emoción",
     "hu": "érzelem/izgalom",
-    "en": "emotion/excitement",
+    "en": "emotion",
     "sentence_es": "Sentía una emoción enorme al ver a su familia.",
     "sentence_hu": "Hatalmas érzelem fogta el, amikor meglátta a családját.",
     "sentence_en": "He felt enormous emotion when he saw his family.",
@@ -10038,7 +10168,9 @@
     "topic": "emociones_estados_animo_b1",
     "topicOrder": 23,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: excitement (¡qué emoción! = how exciting!).",
+    "note_hu": "Jelenti azt is: izgalom (¡qué emoción! = de izgalmas!)."
   },
   {
     "es": "oficialmente",
@@ -10169,7 +10301,7 @@
   {
     "es": "la heroína",
     "hu": "hősnő/heroin",
-    "en": "heroine/heroin",
+    "en": "heroine",
     "sentence_es": "La heroína de la novela es muy valiente.",
     "sentence_hu": "A regény hősnője nagyon bátor.",
     "sentence_en": "The heroine of the novel is very brave.",
@@ -10180,7 +10312,9 @@
     "topic": "cine_literatura_fantasia_b1",
     "topicOrder": 19,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: heroin, the drug (el tráfico de heroína = heroin trafficking).",
+    "note_hu": "Jelenti azt is: heroin, a kábítószer (el tráfico de heroína = heroinkereskedelem)."
   },
   {
     "es": "el caos",
@@ -10278,7 +10412,7 @@
   {
     "es": "enhorabuena",
     "hu": "gratulálok/gratulációm",
-    "en": "congratulations",
+    "en": "congratulations (well done)",
     "sentence_es": "¡Enhorabuena por tu nuevo trabajo!",
     "sentence_hu": "Gratulálok az új munkádhoz!",
     "sentence_en": "Congratulations on your new job!",
@@ -10293,7 +10427,7 @@
   {
     "es": "el ánimo",
     "hu": "kedv/bátorítás",
-    "en": "spirit/encouragement",
+    "en": "spirit",
     "sentence_es": "Le di ánimo para que no se rindiera.",
     "sentence_hu": "Bátorítottam, hogy ne adja fel.",
     "sentence_en": "I encouraged him so he wouldn't give up.",
@@ -10304,7 +10438,9 @@
     "topic": "emociones_estados_animo_b1",
     "topicOrder": 25,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: encouragement (dar ánimo a alguien = to give someone encouragement).",
+    "note_hu": "Jelenti azt is: bátorítás (dar ánimo a alguien = bátorítást adni valakinek)."
   },
   {
     "es": "el lujo",
@@ -10513,7 +10649,7 @@
   {
     "es": "el clima",
     "hu": "éghajlat/időjárás",
-    "en": "climate/weather",
+    "en": "climate",
     "sentence_es": "El clima en esta región es muy agradable.",
     "sentence_hu": "Ebben a régióban nagyon kellemes az éghajlat.",
     "sentence_en": "The climate in this region is very pleasant.",
@@ -10524,7 +10660,9 @@
     "topic": "paisaje_naturaleza_geografia_b1",
     "topicOrder": 28,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: weather, day-to-day (¿cómo está el clima hoy? = how's the weather today?).",
+    "note_hu": "Jelenti azt is: időjárás (¿cómo está el clima hoy? = milyen ma az idő?)."
   },
   {
     "es": "el carácter",
@@ -10561,7 +10699,7 @@
   {
     "es": "la alianza",
     "hu": "szövetség/karikagyűrű",
-    "en": "alliance/wedding ring",
+    "en": "alliance",
     "sentence_es": "Los dos países formaron una alianza militar.",
     "sentence_hu": "A két ország katonai szövetséget kötött.",
     "sentence_en": "The two countries formed a military alliance.",
@@ -10572,7 +10710,9 @@
     "topic": "relaciones_personales_vinculos_b1",
     "topicOrder": 27,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: wedding ring (se puso la alianza = he put on the wedding ring).",
+    "note_hu": "Jelenti azt is: jegygyűrű (se puso la alianza = felvette a jegygyűrűt)."
   },
   {
     "es": "positivo",
@@ -10654,7 +10794,7 @@
   {
     "es": "la masa",
     "hu": "tömeg/tészta",
-    "en": "mass/dough",
+    "en": "dough",
     "sentence_es": "Preparó una masa para hacer el pan.",
     "sentence_hu": "Tésztát készített a kenyérhez.",
     "sentence_en": "She prepared dough to make bread.",
@@ -10665,7 +10805,9 @@
     "topic": "sabores_preparacion_comida_b1",
     "topicOrder": 7,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: mass (la masa del objeto = the object's mass).",
+    "note_hu": "Jelenti azt is: tömeg (la masa del objeto = a tárgy tömege)."
   },
   {
     "es": "la existencia",
@@ -10888,7 +11030,7 @@
   {
     "es": "el pastor",
     "hu": "lelkész/pásztor",
-    "en": "pastor / shepherd",
+    "en": "pastor",
     "sentence_es": "El pastor habló ante toda la congregación.",
     "sentence_hu": "A lelkész az egész gyülekezet előtt szólt.",
     "sentence_en": "The pastor spoke to the whole congregation.",
@@ -10899,12 +11041,14 @@
     "topic": "religion_fe_b1",
     "topicOrder": 18,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: shepherd (el pastor cuida las ovejas = the shepherd looks after the sheep).",
+    "note_hu": "Jelenti azt is: pásztor (el pastor cuida las ovejas = a pásztor vigyáz a juhokra)."
   },
   {
     "es": "la batería",
     "hu": "akkumulátor/dob",
-    "en": "battery / drum kit",
+    "en": "battery",
     "sentence_es": "La batería del teléfono se agotó.",
     "sentence_hu": "A telefon akkumulátora lemerült.",
     "sentence_en": "The phone battery ran out.",
@@ -10915,7 +11059,9 @@
     "topic": "ciencia_tecnologia_b1",
     "topicOrder": 14,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: drums, drum kit (toca la batería = he plays the drums).",
+    "note_hu": "Jelenti azt is: dob, dobfelszerelés (toca la batería = dobol)."
   },
   {
     "es": "la figura",
@@ -11029,7 +11175,7 @@
   {
     "es": "policial",
     "hu": "rendőrségi/bűnügyi",
-    "en": "detective (novel) / police-related",
+    "en": "police-related",
     "sentence_es": "Es una novela policial muy emocionante.",
     "sentence_hu": "Ez egy nagyon izgalmas bűnügyi regény.",
     "sentence_en": "It is a very exciting crime novel.",
@@ -11217,7 +11363,7 @@
   {
     "es": "la hoja",
     "hu": "levél/lap",
-    "en": "leaf / sheet (of paper)",
+    "en": "leaf",
     "sentence_es": "Las hojas del árbol son de color naranja.",
     "sentence_hu": "A fa levelei narancssárgák.",
     "sentence_en": "The tree leaves are orange.",
@@ -11228,7 +11374,9 @@
     "topic": "paisaje_naturaleza_geografia_b1",
     "topicOrder": 30,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: sheet of paper (una hoja en blanco = a blank sheet of paper).",
+    "note_hu": "Jelenti azt is: papírlap (una hoja en blanco = egy üres papírlap)."
   },
   {
     "es": "hallar",
@@ -11357,7 +11505,7 @@
   {
     "es": "pelear",
     "hu": "verekedni/veszekedni",
-    "en": "to fight / to argue (physical)",
+    "en": "to fight",
     "sentence_es": "Los niños estaban peleando en el patio.",
     "sentence_hu": "A gyerekek az udvaron verekedtek.",
     "sentence_en": "The kids were fighting in the yard.",
@@ -11367,7 +11515,9 @@
     "level": "B1",
     "topic": "relaciones_personales_vinculos_b1",
     "topicOrder": 28,
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to argue, to quarrel verbally (los hermanos siempre pelean por tonterías = the siblings always argue over silly things).",
+    "note_hu": "Jelenti azt is: veszekedni, szóban (los hermanos siempre pelean por tonterías = a testvérek mindig veszekednek butaságokon)."
   },
   {
     "es": "la docena",
@@ -11388,7 +11538,7 @@
   {
     "es": "el lanzamiento",
     "hu": "dobás/indítás/bevezetés",
-    "en": "launch / throw / release",
+    "en": "launch",
     "sentence_es": "El lanzamiento del nuevo producto fue exitoso.",
     "sentence_hu": "Az új termék bevezetése sikeres volt.",
     "sentence_en": "The launch of the new product was successful.",
@@ -11399,7 +11549,9 @@
     "topic": "ocio_deporte_competicion_b1",
     "topicOrder": 16,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: throw, sports (el lanzamiento de la jabalina = the javelin throw).",
+    "note_hu": "Jelenti azt is: dobás, sportban (el lanzamiento de la jabalina = a gerelyhajítás)."
   },
   {
     "es": "moverse",
@@ -11450,7 +11602,7 @@
   {
     "es": "dejar",
     "hu": "hagyni/abbahagyni",
-    "en": "to let / to leave / to stop",
+    "en": "to let",
     "sentence_es": "Me dejó entrar sin decir nada.",
     "sentence_hu": "Engedett be, anélkül hogy szólt volna.",
     "sentence_en": "He let me in without saying anything.",
@@ -11460,7 +11612,9 @@
     "level": "B1",
     "topic": "verbos_accion_control_b1",
     "topicOrder": 29,
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to leave (dejé el libro en la mesa = I left the book on the table) and to stop (dejó de llover = it stopped raining).",
+    "note_hu": "Jelenti azt is: otthagyni (dejé el libro en la mesa = otthagytam a könyvet az asztalon), valamint abbahagyni (dejó de llover = elállt az eső)."
   },
   {
     "es": "la multitud",
@@ -11667,7 +11821,7 @@
   {
     "es": "el cañón",
     "hu": "kanyon/ágyú",
-    "en": "canyon / cannon",
+    "en": "canyon",
     "sentence_es": "El cañón del río es muy profundo.",
     "sentence_hu": "A folyó kanyonja nagyon mély.",
     "sentence_en": "The river canyon is very deep.",
@@ -11678,7 +11832,9 @@
     "topic": "paisaje_naturaleza_geografia_b1",
     "topicOrder": 31,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: cannon, weapon (el cañón disparó al amanecer = the cannon fired at dawn).",
+    "note_hu": "Jelenti azt is: ágyú (el cañón disparó al amanecer = az ágyú hajnalban tüzelt)."
   },
   {
     "es": "fijarse",
@@ -11698,7 +11854,7 @@
   {
     "es": "infantil",
     "hu": "gyerekes/gyermeki",
-    "en": "childish / children's",
+    "en": "childish",
     "sentence_es": "Ese comportamiento me parece infantil.",
     "sentence_hu": "Ez a viselkedés gyerekesnek tűnik számomra.",
     "sentence_en": "That behavior seems childish to me.",
@@ -11708,7 +11864,9 @@
     "level": "B1",
     "topic": "cuerpo_apariencia_vida_muerte_b1",
     "topicOrder": 26,
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Also: children's, for kids (un programa infantil = a children's program).",
+    "note_hu": "Jelenti azt is: gyermek-, gyerekeknek szóló (un programa infantil = egy gyerekműsor)."
   },
   {
     "es": "el estacionamiento",
@@ -11855,7 +12013,7 @@
   {
     "es": "cerebral",
     "hu": "agyi/szellemi",
-    "en": "cerebral, brain (adj.)",
+    "en": "cerebral",
     "sentence_es": "El médico detectó una lesión cerebral.",
     "sentence_hu": "Az orvos agyi sérülést mutatott ki.",
     "sentence_en": "The doctor detected a brain injury.",

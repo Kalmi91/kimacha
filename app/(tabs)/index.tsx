@@ -13,6 +13,7 @@ import { getTopicsForLevel, hasTopics, getTopicName, getSubLevelForTopic, getTop
 import { t, stringsFor } from '@/lib/i18n';
 import { strictAnswerMatch } from '@/lib/answerMatch';
 import { consumePendingAction } from '@/lib/pendingAction';
+import { clearFocusWords, focusProgress, getFocusWords, type FocusWords } from '@/lib/focusWords';
 import { DAILY_NEW_BONUS_STEP } from '@/lib/usageStats';
 import { borrowNewWords, countNewWords, nextTopicWithNewWords } from '@/lib/topicRotation';
 import { isTopicMastered, masteredCount } from '@/lib/topicMastery';
@@ -143,6 +144,9 @@ export default function LearnScreen() {
   const [levelTotal, setLevelTotal] = useState(0);
   const [currentTopic, setCurrentTopic] = useState<TopicDef | null>(null);
   const [topicProgress, setTopicProgress] = useState<{ done: number; total: number; wordsInTopic: number; wordsReviewed: number } | null>(null);
+  // FB315 (NY9): a grammar-lecke "Ezen szavak tanulása" gombja állítja be
+  // (lib/focusWords.ts); a sáv adatai (known/total) minden sor-építésnél frissülnek.
+  const [focusBanner, setFocusBanner] = useState<{ topicId: string; label: string; known: number; total: number; done: boolean } | null>(null);
   const [topicCompleteMsg, setTopicCompleteMsg] = useState<string | null>(null);
   // FB139: words pulled in from a neighbouring topic to fill the new-word budget,
   // mapped to the topic they came from so the card can name it.
@@ -331,6 +335,19 @@ export default function LearnScreen() {
     });
   };
 
+  // FB315 (NY9): a fókusz-sáv "N/M ismert" száma; loadCards és finishRound is
+  // meghívja, hogy a szám a kör végén (lapváltáskor) is frissüljön.
+  const refreshFocusProgress = async (focus: FocusWords | null) => {
+    if (!focus) {
+      setFocusBanner(null);
+      return;
+    }
+    const states = await getDb().getWordStates(focus.wordIds);
+    const knownIds = new Set<number>();
+    for (const [id, known] of states) if (known === 1) knownIds.add(id);
+    setFocusBanner({ topicId: focus.topicId, label: focus.label, ...focusProgress(focus.wordIds, knownIds) });
+  };
+
   const loadCards = async () => {
     const db = getDb();
     const onboarding = await db.getOnboarding();
@@ -357,8 +374,16 @@ export default function LearnScreen() {
     const startedToday = await db.getWordsStartedToday();
     let black = Math.max(0, dailyLimit + bonus - startedToday);
 
+    const focus = getFocusWords();
     let activeWords: WordEntry[];
-    if (useTopics) {
+    if (focus) {
+      // FB315 (NY9): fókusz-menet, a grammar-lecke szavaira szűkítve; se
+      // témakör-kölcsönzés, se topic-bookkeeping.
+      activeWords = focus.wordIds.map((id) => findWordById(id, learned)).filter((w): w is WordEntry => !!w);
+      setCurrentTopic(null);
+      setTopicProgress(null);
+      setBorrowedTopics(new Map());
+    } else if (useTopics) {
       const allWordIds = levelWords.map(w => w.id);
       const repsMap = await db.getWordReps(allWordIds);
       const stateMap = await db.getWordStates(allWordIds);
@@ -431,8 +456,12 @@ export default function LearnScreen() {
     const levelWordIds = levelWords.map(w => w.id);
     const levelUntouched = await db.getUntouchedWordIds(levelWordIds);
     setLevelNewWordsLeft(levelUntouched.size);
-    const fresh = activeWords.map(w => w.id).filter(id => levelUntouched.has(id));
-    black = Math.max(0, Math.min(black, levelUntouched.size));
+    // FB315 (NY9): fókuszban a "fekete" keret és a friss-lista a fókusz-szavak
+    // érintetlen halmazára szűkül, mert a lecke szavai bármelyik szintről
+    // jöhetnek, nem csak a mostani `currentLevel`-ről.
+    const untouchedForFresh = focus ? await db.getUntouchedWordIds(focus.wordIds) : levelUntouched;
+    const fresh = activeWords.map(w => w.id).filter(id => untouchedForFresh.has(id));
+    black = Math.max(0, Math.min(black, untouchedForFresh.size));
 
     // UTEMEZO 3.5: a kezben levo szavak (barmelyik szintrol) minden korben
     // elore jonnek, meg uj szo elott is; a stored `lap` a mar teljesitett
@@ -465,6 +494,7 @@ export default function LearnScreen() {
     const streakData = await db.getStreak();
     setStreak(streakData.current_count);
 
+    await refreshFocusProgress(focus);
     const built = advanceQueue(createQueue({ config, black, hand, reviews, fresh }));
     setQueueState(built);
     setDone(built.current === null);
@@ -545,6 +575,10 @@ export default function LearnScreen() {
             setTimeout(() => setTopicSwitchMsg(null), 3500);
           }
         })();
+      } else if (p.type === 'focusWords') {
+        // FB315 (NY9): a grammar-lecke gombja már beírta a focusWords
+        // singletont (lib/focusWords.ts), ez a jel csak a sor-újraépítést kéri.
+        loadCards();
       }
     }, [])
   );
@@ -598,6 +632,9 @@ export default function LearnScreen() {
     const levelData = await db.getLevel();
     const currentLevel = levelData.level as Level;
     const learned = direction[1];
+    // FB315 (NY9): a fókusz-sáv "N/M ismert" száma a kör végén (lapváltáskor) is frissül.
+    const focus = getFocusWords();
+    await refreshFocusProgress(focus);
     const lvlWords = getWordsForLevel(currentLevel, learned);
     const rvw = await db.getReviewedWordCount(currentLevel);
     const mst = await db.getMasteredWordCount(currentLevel);
@@ -616,7 +653,21 @@ export default function LearnScreen() {
     // akkor tolti fel ujra a lenti tema-valtas, ha a tema kifogyott, de a szint
     // napi kerete meg nem.
     let fresh = state.fresh;
-    if (useTopics) {
+    if (focus) {
+      // FB315 (NY9): fókusz-menet, ugyanúgy szűkítve, mint loadCards-ban; nincs
+      // témakör-bookkeeping, `fresh` a fenti alapértékből (state.fresh) marad.
+      setCurrentTopic(null);
+      setTopicProgress(null);
+      setBorrowedTopics(new Map());
+      const scopedWords = focus.wordIds.map((id) => findWordById(id, learned)).filter((w): w is WordEntry => !!w);
+      const activeWordIds = scopedWords.map((w: WordEntry) => w.id);
+      for (const w of scopedWords) {
+        await db.ensureCard(w.id, 'word');
+        await db.ensureCard(w.id, 'sentence');
+      }
+      newRows = await db.getDueCardsForWordIds(activeWordIds, QUEUE_POOL);
+      carryExclude = activeWordIds;
+    } else if (useTopics) {
       const allWordIds = lvlWords.map((w: WordEntry) => w.id);
       const repsMap = await db.getWordReps(allWordIds);
       const stateMap = await db.getWordStates(allWordIds);
@@ -1066,6 +1117,40 @@ export default function LearnScreen() {
     applyAnswer(true);
   };
 
+  // FB315 (NY9): a fókusz-sáv a fejléc alatt, mind a kártya-nézetben (`chrome`),
+  // mind a Done-képernyőn. A jobb szélen lévő ✕ mindig kilép (clear + loadCards);
+  // "kész" állapotban a szöveg maga navigál vissza a leckéhez (router.push).
+  const focusBannerRow = focusBanner ? (
+    <View style={[styles.focusBanner, { backgroundColor: colors.card }]}>
+      <Pressable
+        testID="focus-banner-label"
+        style={styles.focusBannerLabel}
+        disabled={!focusBanner.done}
+        onPress={() => {
+          clearFocusWords();
+          router.push(`/grammar/${focusBanner.topicId}` as never);
+        }}
+      >
+        <Text style={[styles.focusBannerText, { color: colors.text }]} numberOfLines={1}>
+          {focusBanner.done
+            ? s.header.focusDone
+            : s.header.focusBanner(focusBanner.label, focusBanner.known, focusBanner.total)}
+        </Text>
+      </Pressable>
+      <Pressable
+        testID="focus-banner-exit"
+        accessibilityLabel={s.header.focusExit}
+        hitSlop={10}
+        onPress={() => {
+          clearFocusWords();
+          loadCards();
+        }}
+      >
+        <Text style={[styles.focusBannerClose, { color: colors.tabIconDefault }]}>✕</Text>
+      </Pressable>
+    </View>
+  ) : null;
+
   if (loading) {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
@@ -1094,25 +1179,29 @@ export default function LearnScreen() {
       ? 'none'
       : doneAsk({ freshLeft: qs.fresh.length, black: qs.black, levelUntouched: levelNewWordsLeft });
     return (
-      <DoneScreen
-        streak={streak}
-        level={level}
-        masteredPct={masteredPct}
-        direction={direction as [string, string]}
-        examAvailable={examAvailable}
-        onStartExam={() => setExamMode(true)}
-        currentTopic={currentTopic}
-        topicProgress={topicProgress}
-        stats={qs?.stats ?? DONE_STATS_ZERO}
-        ask={doneAskResult}
-        dailyDefault={dailyDefault}
-        onMoreNewWords={handleMoreNewWords}
-        newWordsInTopic={newWordsInTopic}
-        onNextTopicWords={nextTopicId ? handleNextTopicWords : undefined}
-        levelExhausted={levelNewWordsLeft === 0}
-        onPractiseLevel={handlePractiseLevel}
-        onNextLevel={LEVELS.indexOf(level) + 1 < LEVELS.length ? handleNextLevel : undefined}
-      />
+      <View style={{ flex: 1 }}>
+        {focusBannerRow}
+        <DoneScreen
+          streak={streak}
+          level={level}
+          masteredPct={masteredPct}
+          direction={direction as [string, string]}
+          examAvailable={examAvailable}
+          onStartExam={() => setExamMode(true)}
+          currentTopic={currentTopic}
+          topicProgress={topicProgress}
+          stats={qs?.stats ?? DONE_STATS_ZERO}
+          ask={doneAskResult}
+          dailyDefault={dailyDefault}
+          onMoreNewWords={handleMoreNewWords}
+          newWordsInTopic={newWordsInTopic}
+          onNextTopicWords={nextTopicId ? handleNextTopicWords : undefined}
+          // FB315 (NY9): fókuszban a szint kifogyása nem ez, csak a fókusz-lista fogyott el.
+          levelExhausted={focusBanner ? false : levelNewWordsLeft === 0}
+          onPractiseLevel={handlePractiseLevel}
+          onNextLevel={LEVELS.indexOf(level) + 1 < LEVELS.length ? handleNextLevel : undefined}
+        />
+      </View>
     );
   }
 
@@ -1333,6 +1422,7 @@ export default function LearnScreen() {
       toast={chromeToast}
       lapLabel={lapLabelOf(qs?.current ?? null, s)}
     />
+    {focusBannerRow}
     </>
   );
 
@@ -1506,4 +1596,17 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '500',
   },
+  // FB315 (NY9): a fókusz-sáv a fejléc alatt, amíg a Learn fül egy lecke
+  // szavaira van szűkítve.
+  focusBanner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    gap: 8,
+  },
+  focusBannerLabel: { flex: 1 },
+  focusBannerText: { fontSize: 13, fontWeight: '600' },
+  focusBannerClose: { fontSize: 16, fontWeight: '700', paddingHorizontal: 4 },
 });

@@ -6,7 +6,10 @@ export type PendingAction =
   | { type: 'restart' }
   | { type: 'exam'; examLevel: Level }
   | { type: 'setLevel'; level: Level }
-  | { type: 'selectTopic' };
+  | { type: 'selectTopic' }
+  // FB315 (NY9): a grammar-lecke "Ezen szavak tanulása" gombja; a payload a
+  // focusWords singletonban van (lib/focusWords.ts), ez a jel csak a reload-ot kéri.
+  | { type: 'focusWords' };
 
 let pending: PendingAction | null = null;
 
