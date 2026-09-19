@@ -63,7 +63,9 @@ Státusz-jelek: `[ ]` nyitott, `[~]` fut, `[x]` kész, `[!]` elakadt.
   minta: «El ___ es grande.» = perro | «Ella canta ___.» = bien | form: rápido → rápidamente
 - [x] 22. `demostrativos` (A1 full) V1→V2 → KÉSZ 2026-09-19, commit 56b2d96, audit 0/0, jest 1323/1323, tsc 0, lint 0 error; 32 item (12 choice, 1 match, 12 form, 7 why), glossza üres; a semleges esto/eso/aquello a body-ban, nem a táblában
   minta: «___ libro es mío, lo tengo aquí.» = Este | «___ montañas están muy lejos.» = Aquellas | form: ese × nő egyes → esa
-- [~] 23. `interrogativos` (A1 full) V1→V2 → kész, ha: ugyanaz
+- [x] 23. `interrogativos` (A1 full) V1→V2 → KÉSZ 2026-09-19, commit 49814f3, audit 0/0, jest 1333/1333, tsc 0, lint 0 error; 32 item (12 choice, 1 match, 12 form, 7 why), glossza: cansado ki
+  minta: «¿___ vives?» = Dónde | «¿___ no vienes con nosotros?» = Por qué
+  ⚠ HIBA, a következő menet ELSŐ teendője: a 12 form item itt „kérdőszó → magyar jelentés" (person=dónde, answer=hol), nem spanyol gyártás; a brief táblája rossz irányú volt (row[0] = kérdőszó). Javítás: tábla átfordítva (row[0] = válasz/kontextus, pl. «En Narvarte.», oszlop = kérdőszó, cella = Dónde), 12 form újra, kapu, commit `fix(grammar): interrogativos form items (nyelvtan)`. Ugyanez a minta-hiba a 12. lépésben (marcadores), ott is átfordítandó.
 - [ ] 24. `negacion` (A1 full) V1→V2 → kész, ha: ugyanaz
 - [ ] 25. `posesivos` (A1 full) V1→V2 → kész, ha: ugyanaz
 - [ ] 26. `por-para` (A2 core) V1→V2 → kész, ha: ugyanaz
@@ -71,6 +73,8 @@ Státusz-jelek: `[ ]` nyitott, `[~]` fut, `[x]` kész, `[!]` elakadt.
 - …és a probe szerinti folytatás: D exam 17, E full 5.
 
 Adag = 3 lecke; adag után push a `nyelvtan` ágra, első adag után PR.
+Szakasz kezdete: 2026-09-19T05:10Z (a cap-szabály előtt indult, cap nélkül). Szakasz vége: 2026-09-19T17:56Z, 23 lecke kész, 4 hátra a C-sorból (24 negacion, 25 posesivos, 26 por-para, 27 perfecto) + D exam 17 + E full 5; folytatás: `/eget-nyelvtan` ÚJ sessionben, első teendő a 23. és 12. lépés form-tábla átfordítása (⚠ sorok), a briefek 24-27 készen a scratchpadból újraírandók a PLAN-ba. Megállás oka: a skill 2026-09-19-i Szakasz-cap szabálya (Kálmán: „15 lehet a max", 6h), ez a menet 23 leckét és ~12,7 órát ment, mielőtt a szabály látszott.
+8. adag (23) pusholva 2026-09-19, PR #25 frissül.
 7. adag (20-22) pusholva 2026-09-19, PR #25 frissül.
 6. adag (16-19) pusholva 2026-09-19, PR #25 frissül.
 5. adag (13-15) pusholva 2026-09-19, PR #25 frissül.
@@ -1364,3 +1368,16 @@ Nem pusholsz.
 - 3 minta (2 választós `sentence` + `correct`, 1 új `form`)
 - glossza-változás egy sorban; elakadás egy mondatban, ha volt
 Nincs diff, nincs fájltartalom, nincs narratíva.
+
+
+---
+
+## Önellenőrzés (MODEL.md, menet vége 2026-09-19T17:56Z)
+
+- Agent futott: 23 (mind `iro`, Sonnet, sorban, 1 lecke = 1 agent). Piros kapu miatti SendMessage-javítás: 0 (minden agent maga zöldre hozta, legfeljebb 1 belső újrafutással).
+- Orkesztrátor-válasz: ~50 (lecke-jelentés feldolgozás + következő brief kiadás párban, plusz 8 push/PR-kör). Lépés 3+ válasszal kód-változás nélkül: nincs.
+- Token: becslés 150-300K / lecke; tény 5,18 M Sonnet / 23 lecke = átlag 225K (min 84K NY7, max 286K subjuntivo-presente-forma 50 transformmal). Az Opus orkesztrátor-kontextus ~300K-ig hízott.
+- Brief-hiba, amit a menet tanult: (1) az `auditFormItem` a form itemet a tábla row[0] × header-oszlop cellához köti, ezért a nem-ige tábla irányát a briefben kell megtervezni (row[0] = a helyzet/kiváltó/válasz, oszlop = a gyártandó kategória), különben a form item felismerés lesz gyártás helyett (12. és 23. lépés hibás, 14-15. már jó); (2) a glossary-ba ragozott alakok kerülnek, mert az audit IRREGULAR_FORMS térképe nem ismeri a kötőmód/feltételes alakokat (9., 16., 17. lépés), ez kód-igény; (3) a kiváltó-csere transform recept (13. lépés) szabály-illusztráló mondatokat szül, Kálmán telefonon dönt.
+- Scope-eltérés: 1 (5. lépés, `lib/games/ccat.ts` 10 sor, látens null-hiba a transform-only témák miatt; Kálmán vétózhat).
+- Kártya-kérés az `/eget-szavak`-nak: A1: cuatro, uno, veintiuno/veintiún, ochenta, noventa, ciento, diecinueve, hora, cuarto, media, primero, peso, costar (4. lépés).
+- Kód-igény a `/kimacha_nyelvtan`-nak: TenseId `imperativo` és `subjuntivo-imperfecto` (transform-drill); IRREGULAR_FORMS bővítése kötőmód/feltételes alakokkal; a form-item `accept` mező vagy tiltása a sémában, vagy támogatása.
