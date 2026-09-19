@@ -48,6 +48,7 @@ import grammarEsSubjuntivoDisparadores from '@/data/games/grammar/es/subjuntivo-
 import grammarEsTemporalesSubjuntivo from '@/data/games/grammar/es/temporales-subjuntivo.json';
 import grammarEsCondicionalSimple from '@/data/games/grammar/es/condicional-simple.json';
 import grammarEsCondicionalesTipo1 from '@/data/games/grammar/es/condicionales-tipo1.json';
+import grammarEsSubjuntivoImperfecto from '@/data/games/grammar/es/subjuntivo-imperfecto.json';
 import grammarEsCondicionalesTipo23 from '@/data/games/grammar/es/condicionales-tipo2-3.json';
 import grammarEsEstiloIndirecto from '@/data/games/grammar/es/estilo-indirecto.json';
 import grammarEsComparativosSuperlativos from '@/data/games/grammar/es/comparativos-superlativos.json';
@@ -162,6 +163,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsTemporalesSubjuntivo,
     grammarEsCondicionalSimple,
     grammarEsCondicionalesTipo1,
+    grammarEsSubjuntivoImperfecto,
     grammarEsCondicionalesTipo23,
     grammarEsEstiloIndirecto,
     grammarEsComparativosSuperlativos,
