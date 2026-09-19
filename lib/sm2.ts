@@ -23,7 +23,7 @@ export interface Sm2Card {
 // Anki alapértékek: 2 learning lépés, mindkettő ugyanabban a menetben kerül
 // újra elő (percben itt nem mérünk, a menetsor végére kerül a "step" logika
 // helyett a hívó oldal sorrendjén múlik, lásd pickSm2Session).
-const LEARNING_STEPS = 2;
+export const LEARNING_STEPS = 2;
 const EASE_FLOOR = 1.3;
 export const DEFAULT_EASE = 2.5;
 const GRADUATE_INTERVAL_DAYS = 1;

@@ -12,7 +12,7 @@ import { speechLang } from '@/lib/languages';
 import { localDateString } from '@/lib/usageStats';
 import { PCIC_ITEMS, findPcicItem } from '@/data/pcic';
 import { gradePcicAnswer, type PcicGrade } from '@/lib/pcicMatch';
-import { sm2Review, sm2Preview, pickSm2Session, sm2MarkKnown, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
+import { sm2Review, sm2Preview, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, DEFAULT_NEW_LIMIT, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
 import { answerInputProps } from '@/lib/inputProps';
@@ -60,6 +60,9 @@ export default function PcicScreen() {
   // ilyenkor a kártya a képernyőn marad felfedve, és a gradesRow helyett egy
   // "Tovább" gomb lépteti a sort (advance() csak akkor fut).
   const [autoGraded, setAutoGraded] = useState(false);
+  // FB314: a "+10 új szó" gombbal bővített napi keret; load() (fókusz-váltás,
+  // új nap) nullázza, a menet közbeni értékelések nem érintik.
+  const [extraNew, setExtraNew] = useState(0);
 
   const load = useCallback(async () => {
     const db = getDb();
@@ -74,6 +77,7 @@ export default function PcicScreen() {
     setSessionNew(0);
     setSessionAgain(0);
     setLastGraded(null);
+    setExtraNew(0);
     setLoading(false);
     // setTypedAnswer is listed because the React Compiler infers it as a
     // dependency of this async callback (FB minta, lásd app/spelling.tsx); it
@@ -194,6 +198,14 @@ export default function PcicScreen() {
     }
   };
 
+  // FB314: nincs több esedékes/új lap, de a témakörben van még be nem
+  // vezetett tétel; ez a napi keretet bővíti +10-zel és újraépíti a sort.
+  const handleMoreNew = () => {
+    const next = extraNew + 10;
+    setExtraNew(next);
+    setQueue(pickSm2Session([...allCards.values()], NEW_ORDER, today, DEFAULT_NEW_LIMIT + next));
+  };
+
   const headerRow = (
     <View style={styles.headerRow}>
       <Text style={[styles.headerText, { color: colors.tabIconDefault }]}>
@@ -228,6 +240,11 @@ export default function PcicScreen() {
             {s.pcic.summary(sessionAnswered, sessionNew, sessionAgain)}
           </Text>
         )}
+        {NEW_ORDER.some((id) => !allCards.has(id) || allCards.get(id)!.state === 'new') && (
+          <Pressable style={[styles.checkBtn, { backgroundColor: '#38BDF8' }]} onPress={handleMoreNew}>
+            <Text style={styles.checkBtnText}>{s.pcic.moreNew(10)}</Text>
+          </Pressable>
+        )}
         <FeedbackButton level="B1" languagePair="es-en" currentCard="pcic" />
       </View>
     );
@@ -244,7 +261,17 @@ export default function PcicScreen() {
 
       <Pressable style={[styles.card, { backgroundColor: colors.card }]} onPress={() => Keyboard.dismiss()}>
         <Text style={[styles.frontText, { color: colors.text }]}>{currentItem.en}</Text>
-        <Text style={[styles.sectionText, { color: colors.tabIconDefault }]}>{currentItem.section}</Text>
+        <View style={styles.sectionRow}>
+          <Text style={[styles.sectionText, { color: colors.tabIconDefault }]}>{currentItem.section}</Text>
+          {current.state === 'learning' && (
+            <Text style={[styles.stepBadge, { color: colors.tabIconDefault }]}>
+              {s.pcic.learningStep(current.step + 1, LEARNING_STEPS)}
+            </Text>
+          )}
+          {current.state === 'new' && (
+            <Text style={[styles.stepBadge, { color: colors.tabIconDefault }]}>{s.pcic.newBadge}</Text>
+          )}
+        </View>
 
         <TextInput
           style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }]}
@@ -389,11 +416,20 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textAlign: 'center',
   },
+  sectionRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+    marginTop: 4,
+    marginBottom: 16,
+  },
   sectionText: {
     fontSize: 12,
     textAlign: 'center',
-    marginTop: 4,
-    marginBottom: 16,
+  },
+  stepBadge: {
+    fontSize: 12,
   },
   speakBtn: {
     padding: 4,
