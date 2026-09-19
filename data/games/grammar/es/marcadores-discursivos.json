@@ -1,0 +1,1361 @@
+{
+  "schema": 2,
+  "topic": "marcadores-discursivos",
+  "level": "C1",
+  "title": {
+    "hu": "Szövegkötő elemek",
+    "en": "Discourse markers",
+    "es": "Marcadores discursivos",
+    "de": "Diskursmarker"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A szövegkötő elemek (marcadores discursivos) hosszabb beszédet és írást fűznek össze: megmutatják, hogy a következő gondolat ellentmond, következik, egy előzőhöz hozzáad, egy sorban következik, témát vált vagy egy előzőt magyaráz. Fontosak érvelésben, e-mailben, vizsga-fogalmazásban és prezentációban, ahol a mondatok közti viszonyt nem hagyhatjuk a hallgatóra vagy olvasóra.",
+        "en": "Discourse markers (marcadores discursivos) connect longer speech and writing: they show that the next idea contrasts, follows as a consequence, adds to the previous one, comes next in a sequence, changes topic, or explains something already said. They matter in argumentation, emails, exam essays and presentations, where the relationship between sentences can't be left for the listener or reader to guess.",
+        "es": "Los marcadores discursivos conectan un discurso o un texto más largo: muestran que la siguiente idea contrasta, es una consecuencia, se suma a la anterior, sigue en un orden, cambia de tema o explica algo ya dicho. Son importantes en la argumentación, en un correo, en una redacción de examen y en una presentación, donde la relación entre las oraciones no se puede dejar a que el oyente o el lector la adivine.",
+        "de": "Diskursmarker (marcadores discursivos) verbinden längere Rede und Schrift: sie zeigen, dass der nächste Gedanke im Gegensatz steht, eine Folge ist, zum vorigen hinzufügt, als Nächstes in einer Reihenfolge kommt, das Thema wechselt oder etwas bereits Gesagtes erklärt. Sie sind wichtig in der Argumentation, in E-Mails, in Prüfungsaufsätzen und in Präsentationen, wo die Beziehung zwischen den Sätzen nicht dem Zuhörer oder Leser überlassen werden darf."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "A hat funkció",
+        "en": "The six functions",
+        "es": "Las seis funciones",
+        "de": "Die sechs Funktionen"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Ellentét vagy megszorítás: sin embargo, no obstante, en cambio, aun así, ahora bien. Mind azt jelzi, hogy a következő gondolat szembemegy az előzővel.",
+            "en": "Contrast or concession: sin embargo, no obstante, en cambio, aun así, ahora bien. All of them signal that the next idea goes against the previous one.",
+            "es": "Contraste o concesión: sin embargo, no obstante, en cambio, aun así, ahora bien. Todos indican que la siguiente idea va en contra de la anterior.",
+            "de": "Gegensatz oder Einschränkung: sin embargo, no obstante, en cambio, aun así, ahora bien. Alle zeigen an, dass der nächste Gedanke dem vorigen widerspricht."
+          },
+          "examples": [
+            {
+              "es": "El vuelo era caro; sin embargo, lo compramos.",
+              "tr": {
+                "hu": "A repülőjegy drága volt, mégis megvettük.",
+                "en": "The flight was expensive; however, we bought it.",
+                "es": "El vuelo era caro; sin embargo, lo compramos.",
+                "de": "Der Flug war teuer, wir haben ihn trotzdem gekauft."
+              }
+            },
+            {
+              "es": "Hacía frío; aun así, salimos a correr.",
+              "tr": {
+                "hu": "Hideg volt, mégis kimentünk futni.",
+                "en": "It was cold; even so, we went out for a run.",
+                "es": "Hacía frío; aun así, salimos a correr.",
+                "de": "Es war kalt, trotzdem gingen wir joggen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Következmény: por lo tanto, por consiguiente, así que (beszélt nyelvben), de ahí que + kötőmód. Egy előzőleg elmondott okból von le következtetést.",
+            "en": "Consequence: por lo tanto, por consiguiente, así que (in spoken language), de ahí que + subjunctive. It draws a conclusion from a cause already stated.",
+            "es": "Consecuencia: por lo tanto, por consiguiente, así que (en el habla), de ahí que + subjuntivo. Saca una conclusión de una causa ya mencionada.",
+            "de": "Folge: por lo tanto, por consiguiente, así que (in der gesprochenen Sprache), de ahí que + Subjuntivo. Zieht eine Schlussfolgerung aus einem bereits genannten Grund."
+          },
+          "examples": [
+            {
+              "es": "No estudió nada; por lo tanto, no aprobó.",
+              "tr": {
+                "hu": "Semmit sem tanult, ezért nem ment át.",
+                "en": "He didn't study at all; therefore, he didn't pass.",
+                "es": "No estudió nada; por lo tanto, no aprobó.",
+                "de": "Er hat gar nicht gelernt, deshalb hat er nicht bestanden."
+              }
+            },
+            {
+              "es": "Llovía mucho, de ahí que cancelaran el partido.",
+              "tr": {
+                "hu": "Nagyon esett, ezért mondták le a meccset.",
+                "en": "It was raining a lot, which is why they cancelled the match.",
+                "es": "Llovía mucho, de ahí que cancelaran el partido.",
+                "de": "Es regnete stark, deshalb sagten sie das Spiel ab."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Hozzáadás vagy erősítés: además, asimismo, es más, incluso. Egy újabb, gyakran erősebb érvet told hozzá az előzőhöz.",
+            "en": "Addition or reinforcement: además, asimismo, es más, incluso. It adds another, often stronger, argument to the previous one.",
+            "es": "Adición o refuerzo: además, asimismo, es más, incluso. Añade otro argumento, a menudo más fuerte, al anterior.",
+            "de": "Hinzufügung oder Verstärkung: además, asimismo, es más, incluso. Fügt ein weiteres, oft stärkeres Argument zum vorigen hinzu."
+          },
+          "examples": [
+            {
+              "es": "El piso es grande; además, está bien ubicado.",
+              "tr": {
+                "hu": "A lakás nagy, ráadásul jó helyen van.",
+                "en": "The apartment is big; moreover, it's well located.",
+                "es": "El piso es grande; además, está bien ubicado.",
+                "de": "Die Wohnung ist groß, außerdem liegt sie gut."
+              }
+            },
+            {
+              "es": "No contestó el correo; es más, ni siquiera lo abrió.",
+              "tr": {
+                "hu": "Nem válaszolt az e-mailre, sőt, meg sem nyitotta.",
+                "en": "He didn't answer the email; what's more, he didn't even open it.",
+                "es": "No contestó el correo; es más, ni siquiera lo abrió.",
+                "de": "Er hat die E-Mail nicht beantwortet, mehr noch, er hat sie nicht einmal geöffnet."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Rendezés: en primer lugar, por un lado / por otro (lado), por último, en resumen, en definitiva. A gondolatokat sorba rakja, vagy összefoglalja őket.",
+            "en": "Ordering: en primer lugar, por un lado / por otro (lado), por último, en resumen, en definitiva. It puts ideas in sequence, or sums them up.",
+            "es": "Ordenación: en primer lugar, por un lado / por otro (lado), por último, en resumen, en definitiva. Pone las ideas en orden, o las resume.",
+            "de": "Gliederung: en primer lugar, por un lado / por otro (lado), por último, en resumen, en definitiva. Ordnet die Gedanken oder fasst sie zusammen."
+          },
+          "examples": [
+            {
+              "es": "En primer lugar, hay que revisar el presupuesto.",
+              "tr": {
+                "hu": "Először is, át kell nézni a költségvetést.",
+                "en": "First of all, the budget needs to be reviewed.",
+                "es": "En primer lugar, hay que revisar el presupuesto.",
+                "de": "Zunächst muss das Budget überprüft werden."
+              }
+            },
+            {
+              "es": "Por último, quiero agradecer a todo el equipo.",
+              "tr": {
+                "hu": "Végül szeretnék köszönetet mondani az egész csapatnak.",
+                "en": "Lastly, I want to thank the whole team.",
+                "es": "Por último, quiero agradecer a todo el equipo.",
+                "de": "Zum Schluss möchte ich dem ganzen Team danken."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Téma-váltás vagy vonatkozás: en cuanto a, respecto a, por lo que se refiere a. Egy új témára vagy szempontra tér át.",
+            "en": "Topic shift or reference: en cuanto a, respecto a, por lo que se refiere a. It moves to a new topic or aspect.",
+            "es": "Cambio de tema o referencia: en cuanto a, respecto a, por lo que se refiere a. Pasa a un nuevo tema o aspecto.",
+            "de": "Themenwechsel oder Bezug: en cuanto a, respecto a, por lo que se refiere a. Geht zu einem neuen Thema oder Aspekt über."
+          },
+          "examples": [
+            {
+              "es": "En cuanto a los precios, subieron este año.",
+              "tr": {
+                "hu": "Ami az árakat illeti, idén emelkedtek.",
+                "en": "As for prices, they went up this year.",
+                "es": "En cuanto a los precios, subieron este año.",
+                "de": "Was die Preise betrifft, sind sie dieses Jahr gestiegen."
+              }
+            },
+            {
+              "es": "Respecto a la reunión, todavía no hay fecha.",
+              "tr": {
+                "hu": "Ami a megbeszélést illeti, még nincs időpont.",
+                "en": "As for the meeting, there's no date yet.",
+                "es": "Respecto a la reunión, todavía no hay fecha.",
+                "de": "Was das Treffen betrifft, gibt es noch kein Datum."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Magyarázat vagy példa: es decir, o sea (beszélt nyelvben), por ejemplo, en concreto. Az előző gondolatot más szavakkal mondja el, vagy egy konkrét esetet ad hozzá.",
+            "en": "Explanation or example: es decir, o sea (in spoken language), por ejemplo, en concreto. It restates the previous idea in other words, or gives a concrete case.",
+            "es": "Explicación o ejemplo: es decir, o sea (en el habla), por ejemplo, en concreto. Reformula la idea anterior con otras palabras, o añade un caso concreto.",
+            "de": "Erklärung oder Beispiel: es decir, o sea (in der gesprochenen Sprache), por ejemplo, en concreto. Formuliert den vorigen Gedanken mit anderen Worten um, oder nennt einen konkreten Fall."
+          },
+          "examples": [
+            {
+              "es": "Trabaja por su cuenta, es decir, es autónomo.",
+              "tr": {
+                "hu": "A saját szakállára dolgozik, azaz önálló vállalkozó.",
+                "en": "He works on his own, that is, he's self-employed.",
+                "es": "Trabaja por su cuenta, es decir, es autónomo.",
+                "de": "Er arbeitet auf eigene Rechnung, das heißt, er ist selbstständig."
+              }
+            },
+            {
+              "es": "Llegamos tarde, o sea, después de las nueve.",
+              "tr": {
+                "hu": "Későn érkeztünk, vagyis kilenc után.",
+                "en": "We arrived late, that is, after nine.",
+                "es": "Llegamos tarde, o sea, después de las nueve.",
+                "de": "Wir kamen spät an, das heißt, nach neun."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Írásjel és hely: a legtöbb kötőelem a mondat elején áll vesszővel, néhány mondat belsejében is állhat, két vessző közé zárva (sin embargo, además, por lo tanto). A beszélt regiszter (o sea, así que, bueno, pues) lazább, mint az írott (no obstante, por consiguiente, asimismo), amely inkább hivatalos szövegekben, esszékben jelenik meg.",
+            "en": "Punctuation and position: most connectors stand at the start of the sentence with a comma, some can also stand inside it, set off by two commas (sin embargo, además, por lo tanto). The spoken register (o sea, así que, bueno, pues) is looser than the written one (no obstante, por consiguiente, asimismo), which appears more in formal texts and essays.",
+            "es": "Puntuación y posición: la mayoría de los nexos van al principio de la oración con coma, algunos también pueden ir dentro de ella, entre dos comas (sin embargo, además, por lo tanto). El registro hablado (o sea, así que, bueno, pues) es más suelto que el escrito (no obstante, por consiguiente, asimismo), que aparece más en textos formales y ensayos.",
+            "de": "Zeichensetzung und Position: die meisten Konnektoren stehen am Satzanfang mit Komma, manche können auch mitten im Satz stehen, zwischen zwei Kommas (sin embargo, además, por lo tanto). Das gesprochene Register (o sea, así que, bueno, pues) ist lockerer als das geschriebene (no obstante, por consiguiente, asimismo), das eher in formellen Texten und Aufsätzen vorkommt."
+          },
+          "examples": [
+            {
+              "es": "El examen, sin embargo, fue más fácil de lo esperado.",
+              "tr": {
+                "hu": "A vizsga azonban könnyebb volt, mint vártuk.",
+                "en": "The exam, however, was easier than expected.",
+                "es": "El examen, sin embargo, fue más fácil de lo esperado.",
+                "de": "Die Prüfung war jedoch leichter als erwartet."
+              }
+            },
+            {
+              "es": "Bueno, o sea, no fue tan grave al final.",
+              "tr": {
+                "hu": "Hát, vagyis nem is volt olyan súlyos a végén.",
+                "en": "Well, I mean, it wasn't that serious in the end.",
+                "es": "Bueno, o sea, no fue tan grave al final.",
+                "de": "Na ja, das heißt, es war am Ende nicht so schlimm."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "marcadores",
+      "title": {
+        "hu": "Kötőelemek: funkció és regiszter",
+        "en": "Connectors: function and register",
+        "es": "Nexos: función y registro",
+        "de": "Konnektoren: Funktion und Register"
+      },
+      "header": [
+        {
+          "hu": "kötőelem",
+          "en": "connector",
+          "es": "conector",
+          "de": "Konnektor"
+        },
+        {
+          "hu": "funkció",
+          "en": "function",
+          "es": "función",
+          "de": "Funktion"
+        },
+        {
+          "hu": "regiszter",
+          "en": "register",
+          "es": "registro",
+          "de": "Register"
+        },
+        {
+          "hu": "példa",
+          "en": "example",
+          "es": "ejemplo",
+          "de": "Beispiel"
+        }
+      ],
+      "rows": [
+        [
+          "sin embargo",
+          "contraste",
+          "escrito",
+          "Llovía mucho; sin embargo, salimos a caminar."
+        ],
+        [
+          "no obstante",
+          "contraste",
+          "escrito",
+          "El proyecto es caro; no obstante, lo aprobaron."
+        ],
+        [
+          "en cambio",
+          "contraste",
+          "ambos",
+          "Carlos estudia mucho; su hermano, en cambio, no estudia nada."
+        ],
+        [
+          "aun así",
+          "contraste",
+          "ambos",
+          "No tenía dinero; aun así, hizo el viaje."
+        ],
+        [
+          "por lo tanto",
+          "consecuencia",
+          "escrito",
+          "No estudió nada; por lo tanto, no aprobó el examen."
+        ],
+        [
+          "por consiguiente",
+          "consecuencia",
+          "escrito",
+          "Llegó tarde; por consiguiente, perdió el tren."
+        ],
+        [
+          "así que",
+          "consecuencia",
+          "hablado",
+          "No tenía trabajo, así que buscó otro."
+        ],
+        [
+          "además",
+          "adición",
+          "ambos",
+          "El piso es grande; además, está muy bien ubicado."
+        ],
+        [
+          "es más",
+          "adición",
+          "escrito",
+          "El coche es caro; es más, gasta mucha gasolina."
+        ],
+        [
+          "en primer lugar",
+          "orden",
+          "ambos",
+          "En primer lugar, hay que revisar el presupuesto."
+        ],
+        [
+          "por último",
+          "orden",
+          "ambos",
+          "Por último, quiero agradecer a todo el equipo."
+        ],
+        [
+          "en cuanto a",
+          "tema",
+          "ambos",
+          "En cuanto a los precios, subieron mucho este año."
+        ],
+        [
+          "es decir",
+          "explicación",
+          "ambos",
+          "Trabaja por su cuenta, es decir, es autónomo."
+        ],
+        [
+          "o sea",
+          "explicación",
+          "hablado",
+          "Llegamos a las nueve, o sea, media hora tarde."
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Megszorítás vs szembeállítás, írott vs beszélt",
+        "en": "Concession vs opposition, written vs spoken",
+        "es": "Concesión vs oposición, escrito vs hablado",
+        "de": "Einschränkung vs Gegenüberstellung, geschrieben vs gesprochen"
+      },
+      "pairs": [
+        {
+          "a": "sin embargo",
+          "b": "en cambio",
+          "note": {
+            "hu": "Mindkettő ellentétet fejez ki, de a „sin embargo” egy megszorítást mond (mégis így van), a „en cambio” két dolgot állít szembe egymással (az egyik így, a másik úgy).",
+            "en": "Both express contrast, but sin embargo states a concession (still, it's this way), while en cambio directly opposes two things to each other (one is like this, the other like that).",
+            "es": "Los dos expresan contraste, pero sin embargo indica una concesión (aun así, es de esta manera), mientras que en cambio opone directamente dos cosas entre sí (una es así, la otra de otra forma).",
+            "de": "Beide drücken einen Gegensatz aus, aber sin embargo drückt eine Einschränkung aus (trotzdem ist es so), während en cambio zwei Dinge direkt einander gegenüberstellt (das eine ist so, das andere anders)."
+          },
+          "examples": [
+            {
+              "es": "Llovía mucho; sin embargo, salimos.",
+              "tr": {
+                "hu": "Nagyon esett, mégis kimentünk.",
+                "en": "It was raining a lot; however, we went out.",
+                "es": "Llovía mucho; sin embargo, salimos.",
+                "de": "Es regnete stark, wir gingen trotzdem raus."
+              }
+            },
+            {
+              "es": "Carlos estudia mucho; su hermano, en cambio, no estudia nada.",
+              "tr": {
+                "hu": "Carlos sokat tanul, a testvére viszont egyáltalán nem.",
+                "en": "Carlos studies a lot; his brother, on the other hand, doesn't study at all.",
+                "es": "Carlos estudia mucho; su hermano, en cambio, no estudia nada.",
+                "de": "Carlos lernt viel, sein Bruder dagegen lernt gar nicht."
+              }
+            }
+          ]
+        },
+        {
+          "a": "es decir",
+          "b": "o sea",
+          "note": {
+            "hu": "Ugyanazt jelentik (azaz, vagyis), de az „es decir” írott és beszélt nyelvben egyaránt semleges, az „o sea” inkább a beszélt nyelv jellemzője.",
+            "en": "They mean the same thing (that is to say), but es decir is neutral in both writing and speech, while o sea is more typical of spoken language.",
+            "es": "Significan lo mismo (es decir, o sea), pero es decir es neutro tanto en lo escrito como en lo hablado, mientras que o sea es más propio del habla.",
+            "de": "Sie bedeuten dasselbe (das heißt), aber es decir ist sowohl in der Schrift als auch in der gesprochenen Sprache neutral, während o sea eher typisch für die gesprochene Sprache ist."
+          },
+          "examples": [
+            {
+              "es": "Trabaja por su cuenta, es decir, es autónomo.",
+              "tr": {
+                "hu": "A saját szakállára dolgozik, azaz önálló vállalkozó.",
+                "en": "He works on his own, that is, he's self-employed.",
+                "es": "Trabaja por su cuenta, es decir, es autónomo.",
+                "de": "Er arbeitet auf eigene Rechnung, das heißt, er ist selbstständig."
+              }
+            },
+            {
+              "es": "Llegamos tarde, o sea, después de las nueve.",
+              "tr": {
+                "hu": "Későn érkeztünk, vagyis kilenc után.",
+                "en": "We arrived late, that is, after nine.",
+                "es": "Llegamos tarde, o sea, después de las nueve.",
+                "de": "Wir kamen spät an, das heißt, nach neun."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Egy bekezdésben egy funkcióból egy kötőelem elég: az „además, además, además” olyan, mint a magyar „és, és, és”, fárasztó és gyerekes hatást kelt.",
+        "en": "One connector per function is enough within a paragraph: \"además, además, además\" is like the Hungarian \"és, és, és\" (and, and, and), it sounds tiring and childish.",
+        "es": "Con un nexo por función basta dentro de un párrafo: «además, además, además» es como el húngaro «és, és, és», suena cansado e infantil.",
+        "de": "Ein Konnektor pro Funktion reicht innerhalb eines Absatzes: „además, además, además” ist wie das ungarische „és, és, és”, es wirkt ermüdend und kindlich."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A szövegkötő elemek segítenek összefűzni a mondatokat. Ha ellentétet akarsz kifejezni, mondhatod, hogy «sin embargo» vagy «no obstante». Ha egy okból következtetést vonsz le, jöhet a «por lo tanto», beszélt nyelvben inkább az «así que». Ha hozzá akarsz tenni valamit, használd az «además»-t, egy erősebb érvnél az «es más»-t. A gondolatok sorba rendezésére jó az «en primer lugar» és a «por último». Ha témát váltasz, mondd azt, hogy «en cuanto a» vagy «respecto a». Ha más szavakkal magyarázod ugyanazt, jó az «es decir», beszélt nyelvben az «o sea». Egy bekezdésben egy funkcióból elég egy kötőelem.",
+    "en": "Discourse markers help connect sentences. If you want to express contrast, you can say «sin embargo» or «no obstante». If you're drawing a conclusion from a cause, use «por lo tanto», or in spoken language «así que». If you want to add something, use «además», or for a stronger point «es más». To put ideas in order, «en primer lugar» and «por último» work well. If you're changing topic, say «en cuanto a» or «respecto a». If you're explaining the same thing in other words, «es decir» works, or in spoken language «o sea». One connector per function is enough within a paragraph.",
+    "es": "Los marcadores discursivos ayudan a conectar las oraciones. Si quieres expresar contraste, puedes decir «sin embargo» o «no obstante». Si sacas una conclusión de una causa, usa «por lo tanto», o en el habla «así que». Si quieres añadir algo, usa «además», o para un argumento más fuerte «es más». Para ordenar las ideas, funcionan bien «en primer lugar» y «por último». Si cambias de tema, di «en cuanto a» o «respecto a». Si explicas lo mismo con otras palabras, sirve «es decir», o en el habla «o sea». Con un nexo por función basta dentro de un párrafo.",
+    "de": "Diskursmarker helfen, Sätze zu verbinden. Willst du einen Gegensatz ausdrücken, kannst du «sin embargo» oder «no obstante» sagen. Ziehst du eine Schlussfolgerung aus einem Grund, nimm «por lo tanto», oder in der gesprochenen Sprache «así que». Willst du etwas hinzufügen, nimm «además», oder für ein stärkeres Argument «es más». Um Gedanken zu ordnen, eignen sich «en primer lugar» und «por último». Wechselst du das Thema, sag «en cuanto a» oder «respecto a». Erklärst du dasselbe mit anderen Worten, passt «es decir», oder in der gesprochenen Sprache «o sea». Ein Konnektor pro Funktion reicht innerhalb eines Absatzes."
+  },
+  "glossary": [
+    {
+      "word": "obstante",
+      "gloss": {
+        "hu": "„no obstante” = mindazonáltal, ellenben (önmagában nem használt szó)",
+        "en": "part of \"no obstante\" = nevertheless (not used alone)",
+        "es": "parte de «no obstante» = sin embargo (no se usa solo)",
+        "de": "Teil von „no obstante” = dennoch (wird nicht allein verwendet)"
+      }
+    },
+    {
+      "word": "aun",
+      "gloss": {
+        "hu": "„aun así” = mégis, annak ellenére (ékezet nélkül, nem tévesztendő össze az „aún” = még szóval)",
+        "en": "part of \"aun así\" = even so (without an accent, not to be confused with \"aún\" = still)",
+        "es": "parte de «aun así» = incluso así (sin tilde, no confundir con «aún» = todavía)",
+        "de": "Teil von „aun así” = dennoch (ohne Akzent, nicht zu verwechseln mit „aún” = noch)"
+      }
+    },
+    {
+      "word": "consiguiente",
+      "gloss": {
+        "hu": "„por consiguiente” = következésképpen (önmagában nem használt szó)",
+        "en": "part of \"por consiguiente\" = consequently (not used alone)",
+        "es": "parte de «por consiguiente» = como consecuencia (no se usa solo)",
+        "de": "Teil von „por consiguiente” = folglich (wird nicht allein verwendet)"
+      }
+    },
+    {
+      "word": "sea",
+      "gloss": {
+        "hu": "„o sea” = vagyis, azaz (a ser kötőmódú alakja, itt kötőszóként rögzült)",
+        "en": "part of \"o sea\" = that is to say (a subjunctive form of ser, fixed here as a connector)",
+        "es": "parte de «o sea» = es decir (forma de subjuntivo de ser, fijada aquí como nexo)",
+        "de": "Teil von „o sea” = das heißt (eine Subjuntivo-Form von ser, hier als Konnektor fest verwendet)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "md-01",
+      "sentence": "Estudió mucho; ___, no aprobó el examen.",
+      "options": [
+        "sin embargo",
+        "por lo tanto",
+        "es decir"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Ellentét: sokat tanult, DE mégsem ment át, a „sin embargo” ezt a szembenállást fejezi ki.",
+        "en": "Contrast: he studied a lot, BUT still didn't pass, \"sin embargo\" expresses this opposition.",
+        "es": "Contraste: estudió mucho, PERO aun así no aprobó, «sin embargo» expresa esta oposición.",
+        "de": "Gegensatz: er hat viel gelernt, ABER trotzdem nicht bestanden, „sin embargo” drückt diesen Widerspruch aus."
+      },
+      "wrong": {
+        "por lo tanto": {
+          "hu": "A „por lo tanto” következményt vezetne be, itt viszont ellentét áll (tanult, mégis megbukott), helyesen: sin embargo.",
+          "en": "\"Por lo tanto\" would introduce a consequence, but here there is a contrast (he studied, yet failed), correctly: sin embargo.",
+          "es": "«Por lo tanto» introduciría una consecuencia, pero aquí hay un contraste (estudió, pero reprobó), correcto: sin embargo.",
+          "de": "„Por lo tanto” würde eine Folge einleiten, hier steht aber ein Gegensatz (er lernte, bestand aber trotzdem nicht), richtig: sin embargo."
+        },
+        "es decir": {
+          "hu": "Az „es decir” magyarázatot adna ugyanarra, itt viszont ellentétes kimenetel áll, helyesen: sin embargo.",
+          "en": "\"Es decir\" would give an explanation of the same thing, but here there is an opposite outcome, correctly: sin embargo.",
+          "es": "«Es decir» daría una explicación de lo mismo, pero aquí hay un resultado contrario, correcto: sin embargo.",
+          "de": "„Es decir” würde eine Erklärung desselben geben, hier steht aber ein gegenteiliges Ergebnis, richtig: sin embargo."
+        }
+      },
+      "examples": [
+        "El coche era caro; sin embargo, lo compraron.",
+        "Tenía mucho trabajo; sin embargo, hizo el viaje."
+      ]
+    },
+    {
+      "id": "md-02",
+      "sentence": "El plan era caro; ___, lo aprobaron.",
+      "options": [
+        "no obstante",
+        "además",
+        "por último"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Ellentét: drága volt, DE mégis jóváhagyták, a „no obstante” ezt fejezi ki, akárcsak a „sin embargo”.",
+        "en": "Contrast: it was expensive, BUT they approved it anyway, \"no obstante\" expresses this, like \"sin embargo\".",
+        "es": "Contraste: era caro, PERO lo aprobaron de todos modos, «no obstante» expresa esto, igual que «sin embargo».",
+        "de": "Gegensatz: es war teuer, ABER sie genehmigten es trotzdem, „no obstante” drückt dies aus, wie „sin embargo”."
+      },
+      "wrong": {
+        "además": {
+          "hu": "Az „además” egy újabb érvet tenne hozzá, itt viszont ellentét áll (drága volt, mégis jóváhagyták), helyesen: no obstante.",
+          "en": "\"Además\" would add another argument, but here there is a contrast (it was expensive, yet approved), correctly: no obstante.",
+          "es": "«Además» añadiría otro argumento, pero aquí hay un contraste (era caro, pero lo aprobaron), correcto: no obstante.",
+          "de": "„Además” würde ein weiteres Argument hinzufügen, hier steht aber ein Gegensatz (es war teuer, wurde aber trotzdem genehmigt), richtig: no obstante."
+        },
+        "por último": {
+          "hu": "A „por último” egy felsorolás utolsó pontját vezetné be, itt viszont ellentét áll, helyesen: no obstante.",
+          "en": "\"Por último\" would introduce the last point of a list, but here there is a contrast, correctly: no obstante.",
+          "es": "«Por último» introduciría el último punto de una lista, pero aquí hay un contraste, correcto: no obstante.",
+          "de": "„Por último” würde den letzten Punkt einer Aufzählung einleiten, hier steht aber ein Gegensatz, richtig: no obstante."
+        }
+      },
+      "examples": [
+        "El presupuesto era pequeño; no obstante, hicieron el proyecto.",
+        "Llovía mucho ese día; no obstante, salieron a caminar."
+      ]
+    },
+    {
+      "id": "md-03",
+      "sentence": "Carlos estudia mucho; su hermano, ___, no estudia nada.",
+      "options": [
+        "en cambio",
+        "así que",
+        "en cuanto a"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Ellentét, két alany szembeállítva: Carlos sokat tanul, a testvére viszont semmit, erre a szembeállításra jó az „en cambio”.",
+        "en": "Contrast, two subjects opposed: Carlos studies a lot, but his brother doesn't study at all, \"en cambio\" fits this opposition.",
+        "es": "Contraste, dos sujetos opuestos: Carlos estudia mucho, pero su hermano no estudia nada, «en cambio» encaja en esta oposición.",
+        "de": "Gegensatz, zwei Subjekte gegenübergestellt: Carlos lernt viel, sein Bruder aber gar nicht, „en cambio” passt zu diesem Gegensatz."
+      },
+      "wrong": {
+        "así que": {
+          "hu": "Az „así que” következményt vezetne be, itt viszont két személy áll szemben egymással, helyesen: en cambio.",
+          "en": "\"Así que\" would introduce a consequence, but here two people are set against each other, correctly: en cambio.",
+          "es": "«Así que» introduciría una consecuencia, pero aquí dos personas se contraponen, correcto: en cambio.",
+          "de": "„Así que” würde eine Folge einleiten, hier stehen sich aber zwei Personen gegenüber, richtig: en cambio."
+        },
+        "en cuanto a": {
+          "hu": "Az „en cuanto a” témát nyitna, itt viszont két alany áll szemben egymással, helyesen: en cambio.",
+          "en": "\"En cuanto a\" would open a topic, but here two subjects are set against each other, correctly: en cambio.",
+          "es": "«En cuanto a» abriría un tema, pero aquí dos sujetos se contraponen, correcto: en cambio.",
+          "de": "„En cuanto a” würde ein Thema eröffnen, hier stehen sich aber zwei Subjekte gegenüber, richtig: en cambio."
+        }
+      },
+      "examples": [
+        "Ana llega temprano; su hermana, en cambio, siempre llega tarde.",
+        "El coche es caro; el otro, en cambio, es barato."
+      ]
+    },
+    {
+      "id": "md-04",
+      "sentence": "No tenía dinero; ___, hizo el viaje.",
+      "options": [
+        "aun así",
+        "por consiguiente",
+        "es más"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Ellentét, megszorítás: nem volt pénze, DE mégis elutazott, az „aun así” ezt a megszorítást fejezi ki.",
+        "en": "Contrast, concession: he had no money, BUT he took the trip anyway, \"aun así\" expresses this concession.",
+        "es": "Contraste, concesión: no tenía dinero, PERO hizo el viaje de todos modos, «aun así» expresa esta concesión.",
+        "de": "Gegensatz, Einschränkung: er hatte kein Geld, ABER machte die Reise trotzdem, „aun así” drückt diese Einschränkung aus."
+      },
+      "wrong": {
+        "por consiguiente": {
+          "hu": "A „por consiguiente” következményt vezetne be, itt viszont a hiány ellenére történt meg a dolog, helyesen: aun así.",
+          "en": "\"Por consiguiente\" would introduce a consequence, but here it happened despite the lack, correctly: aun así.",
+          "es": "«Por consiguiente» introduciría una consecuencia, pero aquí ocurrió a pesar de la carencia, correcto: aun así.",
+          "de": "„Por consiguiente” würde eine Folge einleiten, hier geschah es aber trotz des Mangels, richtig: aun así."
+        },
+        "es más": {
+          "hu": "Az „es más” egy erősebb érvet tenne hozzá, itt viszont ellentét/megszorítás áll, helyesen: aun así.",
+          "en": "\"Es más\" would add a stronger argument, but here there is a contrast/concession, correctly: aun así.",
+          "es": "«Es más» añadiría un argumento más fuerte, pero aquí hay un contraste o concesión, correcto: aun así.",
+          "de": "„Es más” würde ein stärkeres Argument hinzufügen, hier steht aber ein Gegensatz/eine Einschränkung, richtig: aun así."
+        }
+      },
+      "examples": [
+        "No tenía tiempo; aun así, terminó el proyecto.",
+        "Hacía mucho frío; aun así, salieron a caminar."
+      ]
+    },
+    {
+      "id": "md-05",
+      "sentence": "No estudió nada; ___, no aprobó el examen.",
+      "options": [
+        "por lo tanto",
+        "sin embargo",
+        "es decir"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Következmény: nem tanult semmit, EZÉRT nem ment át, a „por lo tanto” ezt az ok-okozati viszonyt fejezi ki.",
+        "en": "Consequence: he didn't study at all, THEREFORE he didn't pass, \"por lo tanto\" expresses this cause-effect relationship.",
+        "es": "Consecuencia: no estudió nada, POR ESO no aprobó, «por lo tanto» expresa esta relación de causa-efecto.",
+        "de": "Folge: er hat gar nicht gelernt, DESHALB hat er nicht bestanden, „por lo tanto” drückt diese Ursache-Wirkung-Beziehung aus."
+      },
+      "wrong": {
+        "sin embargo": {
+          "hu": "A „sin embargo” ellentétet fejezne ki, itt viszont logikus következmény áll (nem tanult, ezért bukott), helyesen: por lo tanto.",
+          "en": "\"Sin embargo\" would express contrast, but here there is a logical consequence (he didn't study, so he failed), correctly: por lo tanto.",
+          "es": "«Sin embargo» expresaría contraste, pero aquí hay una consecuencia lógica (no estudió, por eso reprobó), correcto: por lo tanto.",
+          "de": "„Sin embargo” würde einen Gegensatz ausdrücken, hier steht aber eine logische Folge (er lernte nicht, deshalb bestand er nicht), richtig: por lo tanto."
+        },
+        "es decir": {
+          "hu": "Az „es decir” ugyanazt magyarázná más szavakkal, itt viszont egy okból következő tény áll, helyesen: por lo tanto.",
+          "en": "\"Es decir\" would explain the same thing in other words, but here there is a fact following from a cause, correctly: por lo tanto.",
+          "es": "«Es decir» explicaría lo mismo con otras palabras, pero aquí hay un hecho que resulta de una causa, correcto: por lo tanto.",
+          "de": "„Es decir” würde dasselbe mit anderen Worten erklären, hier steht aber eine Tatsache, die aus einem Grund folgt, richtig: por lo tanto."
+        }
+      },
+      "examples": [
+        "No trabajó nada; por lo tanto, no ganó dinero.",
+        "No tenía tiempo; por lo tanto, no terminó la tarea."
+      ]
+    },
+    {
+      "id": "md-06",
+      "sentence": "Llegó tarde al examen; ___, perdió su turno.",
+      "options": [
+        "por consiguiente",
+        "en cambio",
+        "por último"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Következmény, írott regiszter: elkésett, KÖVETKEZÉSKÉPPEN elvesztette a sorát, a „por consiguiente” ezt fejezi ki.",
+        "en": "Consequence, written register: he arrived late, CONSEQUENTLY he lost his turn, \"por consiguiente\" expresses this.",
+        "es": "Consecuencia, registro escrito: llegó tarde, POR CONSIGUIENTE perdió su turno, «por consiguiente» expresa esto.",
+        "de": "Folge, geschriebenes Register: er kam zu spät, FOLGLICH verlor er seinen Termin, „por consiguiente” drückt dies aus."
+      },
+      "wrong": {
+        "en cambio": {
+          "hu": "Az „en cambio” két dolgot állítana szembe, itt viszont egy okból következő tény áll, helyesen: por consiguiente.",
+          "en": "\"En cambio\" would oppose two things, but here there is a fact following from a cause, correctly: por consiguiente.",
+          "es": "«En cambio» opondría dos cosas, pero aquí hay un hecho que resulta de una causa, correcto: por consiguiente.",
+          "de": "„En cambio” würde zwei Dinge gegenüberstellen, hier steht aber eine Tatsache, die aus einem Grund folgt, richtig: por consiguiente."
+        },
+        "por último": {
+          "hu": "A „por último” egy felsorolás végét jelezné, itt viszont következmény áll, helyesen: por consiguiente.",
+          "en": "\"Por último\" would signal the end of a list, but here there is a consequence, correctly: por consiguiente.",
+          "es": "«Por último» señalaría el final de una lista, pero aquí hay una consecuencia, correcto: por consiguiente.",
+          "de": "„Por último” würde das Ende einer Aufzählung anzeigen, hier steht aber eine Folge, richtig: por consiguiente."
+        }
+      },
+      "examples": [
+        "No hizo la tarea; por consiguiente, perdió puntos.",
+        "Gastó todo el dinero; por consiguiente, no pudo viajar."
+      ]
+    },
+    {
+      "id": "md-07",
+      "sentence": "No tenía trabajo, ___ buscó otro en la ciudad.",
+      "options": [
+        "así que",
+        "no obstante",
+        "en cuanto a"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Következmény, beszélt regiszter: nem volt munkája, ÍGY másikat keresett, az „así que” a beszélt nyelv következmény-kötője.",
+        "en": "Consequence, spoken register: he had no job, SO he looked for another one, \"así que\" is the spoken-language consequence connector.",
+        "es": "Consecuencia, registro hablado: no tenía trabajo, ASÍ QUE buscó otro, «así que» es el nexo de consecuencia del habla.",
+        "de": "Folge, gesprochenes Register: er hatte keine Arbeit, ALSO suchte er eine andere, „así que” ist der Folge-Konnektor der gesprochenen Sprache."
+      },
+      "wrong": {
+        "no obstante": {
+          "hu": "A „no obstante” ellentétet fejezne ki, itt viszont egy okból következő cselekvés áll, helyesen: así que.",
+          "en": "\"No obstante\" would express contrast, but here there is an action following from a cause, correctly: así que.",
+          "es": "«No obstante» expresaría contraste, pero aquí hay una acción que resulta de una causa, correcto: así que.",
+          "de": "„No obstante” würde einen Gegensatz ausdrücken, hier steht aber eine Handlung, die aus einem Grund folgt, richtig: así que."
+        },
+        "en cuanto a": {
+          "hu": "Az „en cuanto a” témát nyitna, itt viszont következmény áll, helyesen: así que.",
+          "en": "\"En cuanto a\" would open a topic, but here there is a consequence, correctly: así que.",
+          "es": "«En cuanto a» abriría un tema, pero aquí hay una consecuencia, correcto: así que.",
+          "de": "„En cuanto a” würde ein Thema eröffnen, hier steht aber eine Folge, richtig: así que."
+        }
+      },
+      "examples": [
+        "No tenía coche, así que caminó al trabajo.",
+        "No tenía dinero, así que buscó trabajo."
+      ]
+    },
+    {
+      "id": "md-08",
+      "sentence": "El piso es grande; ___, está muy cerca del trabajo.",
+      "options": [
+        "además",
+        "por lo tanto",
+        "o sea"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Hozzáadás: nagy a lakás, ÉS EZENFELÜL közel van a munkahelyhez, az „además” egy újabb pozitívumot told hozzá.",
+        "en": "Addition: the apartment is big, AND ON TOP OF THAT it's close to work, \"además\" adds another positive point.",
+        "es": "Adición: el piso es grande, Y ADEMÁS está cerca del trabajo, «además» añade otro punto positivo.",
+        "de": "Hinzufügung: die Wohnung ist groß, UND AUßERDEM liegt sie nah an der Arbeit, „además” fügt einen weiteren positiven Punkt hinzu."
+      },
+      "wrong": {
+        "por lo tanto": {
+          "hu": "A „por lo tanto” következményt vezetne be, itt viszont egy újabb tulajdonság áll hozzáadva, helyesen: además.",
+          "en": "\"Por lo tanto\" would introduce a consequence, but here another feature is being added, correctly: además.",
+          "es": "«Por lo tanto» introduciría una consecuencia, pero aquí se añade otra cualidad, correcto: además.",
+          "de": "„Por lo tanto” würde eine Folge einleiten, hier wird aber eine weitere Eigenschaft hinzugefügt, richtig: además."
+        },
+        "o sea": {
+          "hu": "Az „o sea” ugyanazt magyarázná más szavakkal, itt viszont egy új, önálló tény áll hozzáadva, helyesen: además.",
+          "en": "\"O sea\" would explain the same thing in other words, but here a new, separate fact is being added, correctly: además.",
+          "es": "«O sea» explicaría lo mismo con otras palabras, pero aquí se añade un hecho nuevo e independiente, correcto: además.",
+          "de": "„O sea” würde dasselbe mit anderen Worten erklären, hier wird aber eine neue, eigenständige Tatsache hinzugefügt, richtig: además."
+        }
+      },
+      "examples": [
+        "La casa es pequeña; además, tiene mucha luz.",
+        "El plan es bueno; además, es barato."
+      ]
+    },
+    {
+      "id": "md-09",
+      "sentence": "El coche es caro; ___, gasta mucha gasolina.",
+      "options": [
+        "es más",
+        "aun así",
+        "por último"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Hozzáadás, erősítés: drága a kocsi, SŐT sok benzint is fogyaszt, az „es más” egy erősebb érvet told hozzá.",
+        "en": "Addition, reinforcement: the car is expensive, WHAT'S MORE it uses a lot of fuel, \"es más\" adds a stronger point.",
+        "es": "Adición, refuerzo: el coche es caro, ES MÁS gasta mucha gasolina, «es más» añade un argumento más fuerte.",
+        "de": "Hinzufügung, Verstärkung: das Auto ist teuer, MEHR NOCH verbraucht es viel Benzin, „es más” fügt ein stärkeres Argument hinzu."
+      },
+      "wrong": {
+        "aun así": {
+          "hu": "Az „aun así” ellentétet/megszorítást fejezne ki, itt viszont egy erősebb érv van hozzátéve, helyesen: es más.",
+          "en": "\"Aun así\" would express contrast/concession, but here a stronger argument is being added, correctly: es más.",
+          "es": "«Aun así» expresaría contraste o concesión, pero aquí se añade un argumento más fuerte, correcto: es más.",
+          "de": "„Aun así” würde einen Gegensatz/eine Einschränkung ausdrücken, hier wird aber ein stärkeres Argument hinzugefügt, richtig: es más."
+        },
+        "por último": {
+          "hu": "A „por último” egy felsorolás végét jelezné, itt viszont egy erősebb érv áll hozzáadva, helyesen: es más.",
+          "en": "\"Por último\" would signal the end of a list, but here a stronger argument is being added, correctly: es más.",
+          "es": "«Por último» señalaría el final de una lista, pero aquí se añade un argumento más fuerte, correcto: es más.",
+          "de": "„Por último” würde das Ende einer Aufzählung anzeigen, hier wird aber ein stärkeres Argument hinzugefügt, richtig: es más."
+        }
+      },
+      "examples": [
+        "El piso es caro; es más, es pequeño.",
+        "El plan es difícil; es más, es caro."
+      ]
+    },
+    {
+      "id": "md-10",
+      "sentence": "___, quiero agradecer a todo el equipo del proyecto.",
+      "options": [
+        "por último",
+        "en cambio",
+        "es decir"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Rendezés: ez egy felsorolás záró pontja, a „por último” jelzi, hogy ez az utolsó gondolat.",
+        "en": "Ordering: this is the closing point of a list, \"por último\" signals that this is the last idea.",
+        "es": "Ordenación: este es el punto final de una lista, «por último» señala que es la última idea.",
+        "de": "Gliederung: dies ist der abschließende Punkt einer Aufzählung, „por último” zeigt an, dass dies der letzte Gedanke ist."
+      },
+      "wrong": {
+        "en cambio": {
+          "hu": "Az „en cambio” két dolgot állítana szembe, itt viszont egy felsorolás lezárása áll, helyesen: por último.",
+          "en": "\"En cambio\" would oppose two things, but here a list is being closed, correctly: por último.",
+          "es": "«En cambio» opondría dos cosas, pero aquí se cierra una lista, correcto: por último.",
+          "de": "„En cambio” würde zwei Dinge gegenüberstellen, hier wird aber eine Aufzählung abgeschlossen, richtig: por último."
+        },
+        "es decir": {
+          "hu": "Az „es decir” ugyanazt magyarázná más szavakkal, itt viszont egy felsorolás lezárása áll, helyesen: por último.",
+          "en": "\"Es decir\" would explain the same thing in other words, but here a list is being closed, correctly: por último.",
+          "es": "«Es decir» explicaría lo mismo con otras palabras, pero aquí se cierra una lista, correcto: por último.",
+          "de": "„Es decir” würde dasselbe mit anderen Worten erklären, hier wird aber eine Aufzählung abgeschlossen, richtig: por último."
+        }
+      },
+      "examples": [
+        "Primero hablamos del presupuesto; por último, decidimos el plan.",
+        "Empezamos temprano; por último, terminamos el proyecto."
+      ]
+    },
+    {
+      "id": "md-11",
+      "sentence": "___ los precios, subieron mucho este año.",
+      "options": [
+        "en cuanto a",
+        "sin embargo",
+        "así que"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Téma-váltás/vonatkozás: az árakra térünk át, az „en cuanto a” egy szempontot vagy témát vezet be.",
+        "en": "Topic shift/reference: we're moving to the topic of prices, \"en cuanto a\" introduces an aspect or topic.",
+        "es": "Cambio de tema/referencia: pasamos al tema de los precios, «en cuanto a» introduce un aspecto o tema.",
+        "de": "Themenwechsel/Bezug: wir gehen zum Thema Preise über, „en cuanto a” leitet einen Aspekt oder ein Thema ein."
+      },
+      "wrong": {
+        "sin embargo": {
+          "hu": "A „sin embargo” ellentétet fejezne ki, itt viszont egy témára térünk át, helyesen: en cuanto a.",
+          "en": "\"Sin embargo\" would express contrast, but here we're moving to a topic, correctly: en cuanto a.",
+          "es": "«Sin embargo» expresaría contraste, pero aquí pasamos a un tema, correcto: en cuanto a.",
+          "de": "„Sin embargo” würde einen Gegensatz ausdrücken, hier gehen wir aber zu einem Thema über, richtig: en cuanto a."
+        },
+        "así que": {
+          "hu": "Az „así que” következményt vezetne be, itt viszont egy témára térünk át, helyesen: en cuanto a.",
+          "en": "\"Así que\" would introduce a consequence, but here we're moving to a topic, correctly: en cuanto a.",
+          "es": "«Así que» introduciría una consecuencia, pero aquí pasamos a un tema, correcto: en cuanto a.",
+          "de": "„Así que” würde eine Folge einleiten, hier gehen wir aber zu einem Thema über, richtig: en cuanto a."
+        }
+      },
+      "examples": [
+        "En cuanto al presupuesto, es muy pequeño.",
+        "En cuanto al plan, todavía no está claro."
+      ]
+    },
+    {
+      "id": "md-12",
+      "sentence": "Trabaja por su cuenta, ___, es autónomo en su empresa.",
+      "options": [
+        "es decir",
+        "no obstante",
+        "además"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Magyarázat: „a saját szakállára dolgozik” AZAZ önálló vállalkozó, az „es decir” ugyanazt mondja el más szavakkal.",
+        "en": "Explanation: \"he works on his own\", THAT IS TO SAY he's self-employed, \"es decir\" restates the same thing in other words.",
+        "es": "Explicación: «trabaja por su cuenta», ES DECIR es autónomo, «es decir» dice lo mismo con otras palabras.",
+        "de": "Erklärung: „er arbeitet auf eigene Rechnung”, DAS HEISST er ist selbstständig, „es decir” sagt dasselbe mit anderen Worten."
+      },
+      "wrong": {
+        "no obstante": {
+          "hu": "A „no obstante” ellentétet fejezne ki, itt viszont ugyanannak a ténynek a más szavakkal való elmondása áll, helyesen: es decir.",
+          "en": "\"No obstante\" would express contrast, but here the same fact is being restated in other words, correctly: es decir.",
+          "es": "«No obstante» expresaría contraste, pero aquí se dice el mismo hecho con otras palabras, correcto: es decir.",
+          "de": "„No obstante” würde einen Gegensatz ausdrücken, hier wird aber dieselbe Tatsache mit anderen Worten gesagt, richtig: es decir."
+        },
+        "además": {
+          "hu": "Az „además” egy újabb tényt tenne hozzá, itt viszont ugyanannak a ténynek az átfogalmazása áll, helyesen: es decir.",
+          "en": "\"Además\" would add another fact, but here the same fact is being rephrased, correctly: es decir.",
+          "es": "«Además» añadiría otro hecho, pero aquí se reformula el mismo hecho, correcto: es decir.",
+          "de": "„Además” würde eine weitere Tatsache hinzufügen, hier wird aber dieselbe Tatsache umformuliert, richtig: es decir."
+        }
+      },
+      "examples": [
+        "Vive solo, es decir, no vive con su familia.",
+        "Estudia por la tarde, es decir, después del trabajo."
+      ]
+    },
+    {
+      "id": "md-match-01",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "sin embargo",
+          "en": "however (contrast)"
+        },
+        {
+          "es": "por lo tanto",
+          "en": "therefore (consequence)"
+        },
+        {
+          "es": "además",
+          "en": "moreover (addition)"
+        },
+        {
+          "es": "por último",
+          "en": "lastly (order)"
+        },
+        {
+          "es": "en cuanto a",
+          "en": "as for (topic shift)"
+        },
+        {
+          "es": "es decir",
+          "en": "that is to say (explanation)"
+        }
+      ]
+    },
+    {
+      "id": "md-form-01",
+      "kind": "form",
+      "verb": "función",
+      "person": "sin embargo",
+      "answer": "contraste",
+      "table": "marcadores"
+    },
+    {
+      "id": "md-form-02",
+      "kind": "form",
+      "verb": "función",
+      "person": "no obstante",
+      "answer": "contraste",
+      "table": "marcadores"
+    },
+    {
+      "id": "md-form-03",
+      "kind": "form",
+      "verb": "registro",
+      "person": "en cambio",
+      "answer": "ambos",
+      "table": "marcadores"
+    },
+    {
+      "id": "md-form-04",
+      "kind": "form",
+      "verb": "función",
+      "person": "aun así",
+      "answer": "contraste",
+      "table": "marcadores"
+    },
+    {
+      "id": "md-form-05",
+      "kind": "form",
+      "verb": "función",
+      "person": "por lo tanto",
+      "answer": "consecuencia",
+      "table": "marcadores"
+    },
+    {
+      "id": "md-form-06",
+      "kind": "form",
+      "verb": "registro",
+      "person": "por consiguiente",
+      "answer": "escrito",
+      "table": "marcadores"
+    },
+    {
+      "id": "md-form-07",
+      "kind": "form",
+      "verb": "registro",
+      "person": "así que",
+      "answer": "hablado",
+      "table": "marcadores"
+    },
+    {
+      "id": "md-form-08",
+      "kind": "form",
+      "verb": "función",
+      "person": "además",
+      "answer": "adición",
+      "table": "marcadores"
+    },
+    {
+      "id": "md-form-09",
+      "kind": "form",
+      "verb": "función",
+      "person": "es más",
+      "answer": "adición",
+      "table": "marcadores"
+    },
+    {
+      "id": "md-form-10",
+      "kind": "form",
+      "verb": "función",
+      "person": "en primer lugar",
+      "answer": "orden",
+      "table": "marcadores"
+    },
+    {
+      "id": "md-form-11",
+      "kind": "form",
+      "verb": "registro",
+      "person": "por último",
+      "answer": "ambos",
+      "table": "marcadores"
+    },
+    {
+      "id": "md-form-12",
+      "kind": "form",
+      "verb": "función",
+      "person": "en cuanto a",
+      "answer": "tema",
+      "table": "marcadores"
+    },
+    {
+      "kind": "why",
+      "id": "md-why-01",
+      "es": "Llovía mucho; sin embargo, salimos a caminar.",
+      "tr": {
+        "hu": "Nagyon esett, mégis kimentünk sétálni.",
+        "en": "It was raining a lot; however, we went out for a walk.",
+        "es": "Llovía mucho; sin embargo, salimos a caminar.",
+        "de": "Es regnete stark, wir gingen trotzdem spazieren."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ellentét: sin embargo, no obstante",
+            "en": "contrast: sin embargo, no obstante",
+            "es": "contraste: sin embargo, no obstante",
+            "de": "Gegensatz: sin embargo, no obstante"
+          }
+        },
+        {
+          "text": {
+            "hu": "következmény: por lo tanto, así que",
+            "en": "consequence: por lo tanto, así que",
+            "es": "consecuencia: por lo tanto, así que",
+            "de": "Folge: por lo tanto, así que"
+          },
+          "wrong": {
+            "hu": "A mondat nem egy okból von le következtetést, hanem szembenállást vagy magyarázatot fejez ki.",
+            "en": "The sentence doesn't draw a conclusion from a cause, but expresses an opposition or an explanation.",
+            "es": "La oración no saca una conclusión de una causa, sino que expresa una oposición o una explicación.",
+            "de": "Der Satz zieht keine Schlussfolgerung aus einem Grund, sondern drückt einen Gegensatz oder eine Erklärung aus."
+          }
+        },
+        {
+          "text": {
+            "hu": "téma-váltás vagy magyarázat: en cuanto a, es decir",
+            "en": "topic shift or explanation: en cuanto a, es decir",
+            "es": "cambio de tema o explicación: en cuanto a, es decir",
+            "de": "Themenwechsel oder Erklärung: en cuanto a, es decir"
+          },
+          "wrong": {
+            "hu": "A mondat nem témát vált és nem magyaráz, hanem szembenállást vagy következményt fejez ki.",
+            "en": "The sentence doesn't shift topic or explain, but expresses an opposition or a consequence.",
+            "es": "La oración no cambia de tema ni explica, sino que expresa una oposición o una consecuencia.",
+            "de": "Der Satz wechselt weder das Thema noch erklärt er, sondern drückt einen Gegensatz oder eine Folge aus."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "md-why-02",
+      "es": "No estudió nada; por lo tanto, no aprobó el examen.",
+      "tr": {
+        "hu": "Semmit sem tanult, ezért nem ment át a vizsgán.",
+        "en": "He didn't study at all; therefore, he didn't pass the exam.",
+        "es": "No estudió nada; por lo tanto, no aprobó el examen.",
+        "de": "Er hat gar nicht gelernt, deshalb hat er die Prüfung nicht bestanden."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ellentét: sin embargo, no obstante",
+            "en": "contrast: sin embargo, no obstante",
+            "es": "contraste: sin embargo, no obstante",
+            "de": "Gegensatz: sin embargo, no obstante"
+          },
+          "wrong": {
+            "hu": "A mondat nem egy szembenállást fejez ki, hanem egy tényt vagy annak következményét/magyarázatát.",
+            "en": "The sentence doesn't express an opposition, but a fact or its consequence/explanation.",
+            "es": "La oración no expresa una oposición, sino un hecho o su consecuencia/explicación.",
+            "de": "Der Satz drückt keinen Gegensatz aus, sondern eine Tatsache oder ihre Folge/Erklärung."
+          }
+        },
+        {
+          "text": {
+            "hu": "következmény: por lo tanto, así que",
+            "en": "consequence: por lo tanto, así que",
+            "es": "consecuencia: por lo tanto, así que",
+            "de": "Folge: por lo tanto, así que"
+          }
+        },
+        {
+          "text": {
+            "hu": "téma-váltás vagy magyarázat: en cuanto a, es decir",
+            "en": "topic shift or explanation: en cuanto a, es decir",
+            "es": "cambio de tema o explicación: en cuanto a, es decir",
+            "de": "Themenwechsel oder Erklärung: en cuanto a, es decir"
+          },
+          "wrong": {
+            "hu": "A mondat nem témát vált és nem magyaráz, hanem szembenállást vagy következményt fejez ki.",
+            "en": "The sentence doesn't shift topic or explain, but expresses an opposition or a consequence.",
+            "es": "La oración no cambia de tema ni explica, sino que expresa una oposición o una consecuencia.",
+            "de": "Der Satz wechselt weder das Thema noch erklärt er, sondern drückt einen Gegensatz oder eine Folge aus."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "md-why-03",
+      "es": "En cuanto a los precios, subieron mucho este año.",
+      "tr": {
+        "hu": "Ami az árakat illeti, idén nagyon emelkedtek.",
+        "en": "As for prices, they went up a lot this year.",
+        "es": "En cuanto a los precios, subieron mucho este año.",
+        "de": "Was die Preise betrifft, sind sie dieses Jahr stark gestiegen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ellentét: sin embargo, no obstante",
+            "en": "contrast: sin embargo, no obstante",
+            "es": "contraste: sin embargo, no obstante",
+            "de": "Gegensatz: sin embargo, no obstante"
+          },
+          "wrong": {
+            "hu": "A mondat nem egy szembenállást fejez ki, hanem egy tényt vagy annak következményét/magyarázatát.",
+            "en": "The sentence doesn't express an opposition, but a fact or its consequence/explanation.",
+            "es": "La oración no expresa una oposición, sino un hecho o su consecuencia/explicación.",
+            "de": "Der Satz drückt keinen Gegensatz aus, sondern eine Tatsache oder ihre Folge/Erklärung."
+          }
+        },
+        {
+          "text": {
+            "hu": "következmény: por lo tanto, así que",
+            "en": "consequence: por lo tanto, así que",
+            "es": "consecuencia: por lo tanto, así que",
+            "de": "Folge: por lo tanto, así que"
+          },
+          "wrong": {
+            "hu": "A mondat nem egy okból von le következtetést, hanem szembenállást vagy magyarázatot fejez ki.",
+            "en": "The sentence doesn't draw a conclusion from a cause, but expresses an opposition or an explanation.",
+            "es": "La oración no saca una conclusión de una causa, sino que expresa una oposición o una explicación.",
+            "de": "Der Satz zieht keine Schlussfolgerung aus einem Grund, sondern drückt einen Gegensatz oder eine Erklärung aus."
+          }
+        },
+        {
+          "text": {
+            "hu": "téma-váltás vagy magyarázat: en cuanto a, es decir",
+            "en": "topic shift or explanation: en cuanto a, es decir",
+            "es": "cambio de tema o explicación: en cuanto a, es decir",
+            "de": "Themenwechsel oder Erklärung: en cuanto a, es decir"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "md-why-04",
+      "es": "El proyecto es caro; no obstante, lo aprobaron.",
+      "tr": {
+        "hu": "A projekt drága, mégis jóváhagyták.",
+        "en": "The project is expensive; however, they approved it.",
+        "es": "El proyecto es caro; no obstante, lo aprobaron.",
+        "de": "Das Projekt ist teuer, sie haben es trotzdem genehmigt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ellentét: sin embargo, no obstante",
+            "en": "contrast: sin embargo, no obstante",
+            "es": "contraste: sin embargo, no obstante",
+            "de": "Gegensatz: sin embargo, no obstante"
+          }
+        },
+        {
+          "text": {
+            "hu": "következmény: por lo tanto, así que",
+            "en": "consequence: por lo tanto, así que",
+            "es": "consecuencia: por lo tanto, así que",
+            "de": "Folge: por lo tanto, así que"
+          },
+          "wrong": {
+            "hu": "A mondat nem egy okból von le következtetést, hanem szembenállást vagy magyarázatot fejez ki.",
+            "en": "The sentence doesn't draw a conclusion from a cause, but expresses an opposition or an explanation.",
+            "es": "La oración no saca una conclusión de una causa, sino que expresa una oposición o una explicación.",
+            "de": "Der Satz zieht keine Schlussfolgerung aus einem Grund, sondern drückt einen Gegensatz oder eine Erklärung aus."
+          }
+        },
+        {
+          "text": {
+            "hu": "téma-váltás vagy magyarázat: en cuanto a, es decir",
+            "en": "topic shift or explanation: en cuanto a, es decir",
+            "es": "cambio de tema o explicación: en cuanto a, es decir",
+            "de": "Themenwechsel oder Erklärung: en cuanto a, es decir"
+          },
+          "wrong": {
+            "hu": "A mondat nem témát vált és nem magyaráz, hanem szembenállást vagy következményt fejez ki.",
+            "en": "The sentence doesn't shift topic or explain, but expresses an opposition or a consequence.",
+            "es": "La oración no cambia de tema ni explica, sino que expresa una oposición o una consecuencia.",
+            "de": "Der Satz wechselt weder das Thema noch erklärt er, sondern drückt einen Gegensatz oder eine Folge aus."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "md-why-05",
+      "es": "No tenía trabajo, así que buscó otro.",
+      "tr": {
+        "hu": "Nem volt munkája, ezért másikat keresett.",
+        "en": "He had no job, so he looked for another one.",
+        "es": "No tenía trabajo, así que buscó otro.",
+        "de": "Er hatte keine Arbeit, also suchte er eine andere."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ellentét: sin embargo, no obstante",
+            "en": "contrast: sin embargo, no obstante",
+            "es": "contraste: sin embargo, no obstante",
+            "de": "Gegensatz: sin embargo, no obstante"
+          },
+          "wrong": {
+            "hu": "A mondat nem egy szembenállást fejez ki, hanem egy tényt vagy annak következményét/magyarázatát.",
+            "en": "The sentence doesn't express an opposition, but a fact or its consequence/explanation.",
+            "es": "La oración no expresa una oposición, sino un hecho o su consecuencia/explicación.",
+            "de": "Der Satz drückt keinen Gegensatz aus, sondern eine Tatsache oder ihre Folge/Erklärung."
+          }
+        },
+        {
+          "text": {
+            "hu": "következmény: por lo tanto, así que",
+            "en": "consequence: por lo tanto, así que",
+            "es": "consecuencia: por lo tanto, así que",
+            "de": "Folge: por lo tanto, así que"
+          }
+        },
+        {
+          "text": {
+            "hu": "téma-váltás vagy magyarázat: en cuanto a, es decir",
+            "en": "topic shift or explanation: en cuanto a, es decir",
+            "es": "cambio de tema o explicación: en cuanto a, es decir",
+            "de": "Themenwechsel oder Erklärung: en cuanto a, es decir"
+          },
+          "wrong": {
+            "hu": "A mondat nem témát vált és nem magyaráz, hanem szembenállást vagy következményt fejez ki.",
+            "en": "The sentence doesn't shift topic or explain, but expresses an opposition or a consequence.",
+            "es": "La oración no cambia de tema ni explica, sino que expresa una oposición o una consecuencia.",
+            "de": "Der Satz wechselt weder das Thema noch erklärt er, sondern drückt einen Gegensatz oder eine Folge aus."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "md-why-06",
+      "es": "Trabaja por su cuenta, es decir, es autónomo.",
+      "tr": {
+        "hu": "A saját szakállára dolgozik, azaz önálló vállalkozó.",
+        "en": "He works on his own, that is, he's self-employed.",
+        "es": "Trabaja por su cuenta, es decir, es autónomo.",
+        "de": "Er arbeitet auf eigene Rechnung, das heißt, er ist selbstständig."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ellentét: sin embargo, no obstante",
+            "en": "contrast: sin embargo, no obstante",
+            "es": "contraste: sin embargo, no obstante",
+            "de": "Gegensatz: sin embargo, no obstante"
+          },
+          "wrong": {
+            "hu": "A mondat nem egy szembenállást fejez ki, hanem egy tényt vagy annak következményét/magyarázatát.",
+            "en": "The sentence doesn't express an opposition, but a fact or its consequence/explanation.",
+            "es": "La oración no expresa una oposición, sino un hecho o su consecuencia/explicación.",
+            "de": "Der Satz drückt keinen Gegensatz aus, sondern eine Tatsache oder ihre Folge/Erklärung."
+          }
+        },
+        {
+          "text": {
+            "hu": "következmény: por lo tanto, así que",
+            "en": "consequence: por lo tanto, así que",
+            "es": "consecuencia: por lo tanto, así que",
+            "de": "Folge: por lo tanto, así que"
+          },
+          "wrong": {
+            "hu": "A mondat nem egy okból von le következtetést, hanem szembenállást vagy magyarázatot fejez ki.",
+            "en": "The sentence doesn't draw a conclusion from a cause, but expresses an opposition or an explanation.",
+            "es": "La oración no saca una conclusión de una causa, sino que expresa una oposición o una explicación.",
+            "de": "Der Satz zieht keine Schlussfolgerung aus einem Grund, sondern drückt einen Gegensatz oder eine Erklärung aus."
+          }
+        },
+        {
+          "text": {
+            "hu": "téma-váltás vagy magyarázat: en cuanto a, es decir",
+            "en": "topic shift or explanation: en cuanto a, es decir",
+            "es": "cambio de tema o explicación: en cuanto a, es decir",
+            "de": "Themenwechsel oder Erklärung: en cuanto a, es decir"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "md-why-07",
+      "es": "Carlos estudia mucho; su hermano, en cambio, no estudia nada.",
+      "tr": {
+        "hu": "Carlos sokat tanul, a testvére viszont egyáltalán nem.",
+        "en": "Carlos studies a lot; his brother, on the other hand, doesn't study at all.",
+        "es": "Carlos estudia mucho; su hermano, en cambio, no estudia nada.",
+        "de": "Carlos lernt viel, sein Bruder dagegen lernt gar nicht."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ellentét: sin embargo, no obstante",
+            "en": "contrast: sin embargo, no obstante",
+            "es": "contraste: sin embargo, no obstante",
+            "de": "Gegensatz: sin embargo, no obstante"
+          }
+        },
+        {
+          "text": {
+            "hu": "következmény: por lo tanto, así que",
+            "en": "consequence: por lo tanto, así que",
+            "es": "consecuencia: por lo tanto, así que",
+            "de": "Folge: por lo tanto, así que"
+          },
+          "wrong": {
+            "hu": "A mondat nem egy okból von le következtetést, hanem szembenállást vagy magyarázatot fejez ki.",
+            "en": "The sentence doesn't draw a conclusion from a cause, but expresses an opposition or an explanation.",
+            "es": "La oración no saca una conclusión de una causa, sino que expresa una oposición o una explicación.",
+            "de": "Der Satz zieht keine Schlussfolgerung aus einem Grund, sondern drückt einen Gegensatz oder eine Erklärung aus."
+          }
+        },
+        {
+          "text": {
+            "hu": "téma-váltás vagy magyarázat: en cuanto a, es decir",
+            "en": "topic shift or explanation: en cuanto a, es decir",
+            "es": "cambio de tema o explicación: en cuanto a, es decir",
+            "de": "Themenwechsel oder Erklärung: en cuanto a, es decir"
+          },
+          "wrong": {
+            "hu": "A mondat nem témát vált és nem magyaráz, hanem szembenállást vagy következményt fejez ki.",
+            "en": "The sentence doesn't shift topic or explain, but expresses an opposition or a consequence.",
+            "es": "La oración no cambia de tema ni explica, sino que expresa una oposición o una consecuencia.",
+            "de": "Der Satz wechselt weder das Thema noch erklärt er, sondern drückt einen Gegensatz oder eine Folge aus."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}
