@@ -1,4 +1,5 @@
 {
+  "schema": 2,
   "topic": "futuro-simple",
   "level": "A2",
   "title": {
@@ -7,17 +8,586 @@
     "es": "El futuro simple",
     "de": "Das einfache Futur"
   },
-  "rule": {
-    "hu": "A legkönnyebb igeidő: a végződés a TELJES főnévi igenévhez tapad, mind a három csoportnál ugyanaz: -é, -ás, -á, -emos, -éis, -án. hablar → hablaré, hablarás, hablará, hablaremos, hablarán; comer → comeré; vivir → viviré. Csak az yo és a nosotros alak nem visel ékezetet a végén: hablaré (igen), hablaremos (nem). Használat: ígéret, jóslat, terv, és nagyon gyakran VALÓSZÍNŰSÉG a jelenre: ¿Dónde está Ana? Estará en casa (biztos otthon van).",
-    "en": "The easiest tense: the ending attaches to the WHOLE infinitive, the same for all three groups: -é, -ás, -á, -emos, -éis, -án. hablar → hablaré; comer → comeré; vivir → viviré. Every form carries an accent except nosotros: hablaremos. Uses: promise, prediction, plan, and very often PROBABILITY about the present: ¿Dónde está Ana? Estará en casa (she must be at home).",
-    "es": "El tiempo más fácil: la terminación se añade al infinitivo entero, igual en los tres grupos: -é, -ás, -á, -emos, -éis, -án. Todas llevan tilde menos nosotros. Usos: promesa, predicción, plan y, muy a menudo, probabilidad sobre el presente: Estará en casa.",
-    "de": "Die einfachste Zeit: die Endung hängt am ganzen Infinitiv, in allen drei Gruppen gleich: -é, -ás, -á, -emos, -éis, -án. Alle Formen tragen einen Akzent außer nosotros. Verwendung: Versprechen, Vorhersage, Plan und sehr oft WAHRSCHEINLICHKEIT über die Gegenwart: Estará en casa."
-  },
-  "more": {
-    "hu": "Tizenkét ige rövidíti a tövet, a végződés viszont ugyanaz marad: tener → tendré, poner → pondré, venir → vendré, salir → saldré, poder → podré, saber → sabré, haber → habré, hacer → haré, decir → diré, querer → querré, caber → cabré, valer → valdré. A beszédben viszont a jövőt legtöbbször „ir a + főnévi igenév\" viszi (Voy a comer), a futuro simple inkább írott, hivatalos vagy nyomatékos. A hay jövő alakja habrá: Mañana habrá una reunión.",
-    "en": "Twelve verbs shorten the stem while keeping the same endings: tener → tendré, poner → pondré, venir → vendré, salir → saldré, poder → podré, saber → sabré, haber → habré, hacer → haré, decir → diré, querer → querré, caber → cabré, valer → valdré. In speech the future is usually carried by \"ir a + infinitive\" (Voy a comer); the simple future sounds more written, formal or emphatic. Hay becomes habrá: Mañana habrá una reunión.",
-    "es": "Doce verbos acortan la raíz y mantienen las terminaciones: tendré, pondré, vendré, saldré, podré, sabré, habré, haré, diré, querré, cabré, valdré. Al hablar, el futuro suele expresarse con «ir a + infinitivo»; el futuro simple suena más escrito o enfático. Hay hace habrá.",
-    "de": "Zwölf Verben kürzen den Stamm, die Endungen bleiben: tendré, pondré, vendré, saldré, podré, sabré, habré, haré, diré, querré, cabré, valdré. Gesprochen nutzt man meist „ir a + Infinitiv\"; das einfache Futur klingt schriftlicher oder betonter. Hay wird zu habrá."
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A futuro simple a legkönnyebb spanyol igeidő: a végződés a teljes főnévi igenévhez tapad, mind a három igecsoportnál ugyanaz. Ígéretre, jóslatra, tervre és nagyon gyakran a jelenre vonatkozó valószínűségre használjuk: «¿Dónde está Ana? Estará en casa.»",
+        "en": "The futuro simple is the easiest Spanish tense: the ending attaches to the whole infinitive, the same for all three verb groups. We use it for promises, predictions, plans, and very often for probability about the present: «¿Dónde está Ana? Estará en casa.»",
+        "es": "El futuro simple es el tiempo más fácil del español: la terminación se añade al infinitivo entero, igual en los tres grupos de verbos. Se usa para promesas, predicciones, planes y, muy a menudo, para la probabilidad sobre el presente: «¿Dónde está Ana? Estará en casa.»",
+        "de": "Das futuro simple ist die einfachste spanische Zeitform: die Endung hängt am ganzen Infinitiv, in allen drei Verbgruppen gleich. Wir benutzen es für Versprechen, Vorhersagen, Pläne und sehr oft für Wahrscheinlichkeit über die Gegenwart: «¿Dónde está Ana? Estará en casa.»"
+      }
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "A ragozás szabályai",
+        "en": "The rules of conjugation",
+        "es": "Las reglas de la conjugación",
+        "de": "Die Regeln der Konjugation"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A végződés a TELJES főnévi igenévhez tapad, mind a három csoportnál ugyanaz: -é, -ás, -á, -emos, -éis, -án.",
+            "en": "The ending attaches to the WHOLE infinitive, the same for all three groups: -é, -ás, -á, -emos, -éis, -án.",
+            "es": "La terminación se añade al infinitivo ENTERO, igual en los tres grupos: -é, -ás, -á, -emos, -éis, -án.",
+            "de": "Die Endung hängt am GANZEN Infinitiv, in allen drei Gruppen gleich: -é, -ás, -á, -emos, -éis, -án."
+          },
+          "examples": [
+            {
+              "es": "Hablaré con ella mañana.",
+              "tr": {
+                "hu": "Beszélni fogok vele holnap.",
+                "en": "I will talk to her tomorrow.",
+                "es": "Hablaré con ella mañana.",
+                "de": "Ich werde morgen mit ihr sprechen."
+              }
+            },
+            {
+              "es": "Comeremos juntos el domingo.",
+              "tr": {
+                "hu": "Vasárnap együtt fogunk enni.",
+                "en": "We will eat together on Sunday.",
+                "es": "Comeremos juntos el domingo.",
+                "de": "Wir werden am Sonntag zusammen essen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Minden alak ékezetet visel, kivéve a nosotros formát: hablaré (igen), hablaremos (nem).",
+            "en": "Every form carries an accent except the nosotros form: hablaré (yes), hablaremos (no).",
+            "es": "Todas las formas llevan tilde menos la de nosotros: hablaré (sí), hablaremos (no).",
+            "de": "Jede Form trägt einen Akzent außer der nosotros-Form: hablaré (ja), hablaremos (nein)."
+          },
+          "examples": [
+            {
+              "es": "Viajaremos a España el año que viene.",
+              "tr": {
+                "hu": "Jövőre Spanyolországba utazunk.",
+                "en": "Next year we will travel to Spain.",
+                "es": "Viajaremos a España el año que viene.",
+                "de": "Nächstes Jahr werden wir nach Spanien reisen."
+              }
+            },
+            {
+              "es": "Viajarás con tus amigos pronto.",
+              "tr": {
+                "hu": "Hamarosan a barátaiddal fogsz utazni.",
+                "en": "You will travel with your friends soon.",
+                "es": "Viajarás con tus amigos pronto.",
+                "de": "Du wirst bald mit deinen Freunden reisen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Tizenkét ige rövidíti a tövet, a végződés viszont ugyanaz marad: tener → tendré, hacer → haré, decir → diré.",
+            "en": "Twelve verbs shorten the stem while keeping the same endings: tener → tendré, hacer → haré, decir → diré.",
+            "es": "Doce verbos acortan la raíz y mantienen las terminaciones: tener → tendré, hacer → haré, decir → diré.",
+            "de": "Zwölf Verben kürzen den Stamm, die Endungen bleiben gleich: tener → tendré, hacer → haré, decir → diré."
+          },
+          "examples": [
+            {
+              "es": "Tendremos una reunión mañana.",
+              "tr": {
+                "hu": "Holnap lesz egy megbeszélésünk.",
+                "en": "We will have a meeting tomorrow.",
+                "es": "Tendremos una reunión mañana.",
+                "de": "Wir werden morgen ein Treffen haben."
+              }
+            },
+            {
+              "es": "Haré la cena esta noche.",
+              "tr": {
+                "hu": "Ma este megcsinálom a vacsorát.",
+                "en": "I will make dinner tonight.",
+                "es": "Haré la cena esta noche.",
+                "de": "Ich werde heute Abend das Abendessen machen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A hay jövő alakja habrá, és sosem áll többes számban, akkor sem, ha a mondat többes számú dologról szól.",
+            "en": "Hay's future is habrá, and it never goes plural, not even when the sentence is about several things.",
+            "es": "El futuro de hay es habrá, y nunca va en plural, ni siquiera cuando la frase habla de varias cosas.",
+            "de": "Das Futur von hay ist habrá und steht nie im Plural, auch nicht, wenn der Satz von mehreren Dingen spricht."
+          },
+          "examples": [
+            {
+              "es": "Mañana habrá una fiesta.",
+              "tr": {
+                "hu": "Holnap lesz egy buli.",
+                "en": "Tomorrow there will be a party.",
+                "es": "Mañana habrá una fiesta.",
+                "de": "Morgen wird es eine Party geben."
+              }
+            },
+            {
+              "es": "El sábado habrá mucha gente.",
+              "tr": {
+                "hu": "Szombaton sok ember lesz.",
+                "en": "On Saturday there will be a lot of people.",
+                "es": "El sábado habrá mucha gente.",
+                "de": "Am Samstag wird es viele Leute geben."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "futuro-simple-regular",
+      "title": {
+        "hu": "Szabályos ragozás",
+        "en": "Regular conjugation",
+        "es": "Conjugación regular",
+        "de": "Regelmäßige Konjugation"
+      },
+      "header": [
+        {
+          "hu": "Persona",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "hablar",
+          "en": "hablar",
+          "es": "hablar",
+          "de": "hablar"
+        },
+        {
+          "hu": "comer",
+          "en": "comer",
+          "es": "comer",
+          "de": "comer"
+        },
+        {
+          "hu": "vivir",
+          "en": "vivir",
+          "es": "vivir",
+          "de": "vivir"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "hablaré",
+          "comeré",
+          "viviré"
+        ],
+        [
+          "tú",
+          "hablarás",
+          "comerás",
+          "vivirás"
+        ],
+        [
+          "él/ella/usted",
+          "hablará",
+          "comerá",
+          "vivirá"
+        ],
+        [
+          "nosotros",
+          "hablaremos",
+          "comeremos",
+          "viviremos"
+        ],
+        [
+          "vosotros",
+          "hablaréis",
+          "comeréis",
+          "viviréis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "hablarán",
+          "comerán",
+          "vivirán"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "futuro-simple-irregular",
+      "title": {
+        "hu": "Rendhagyó igék, teljes ragozás",
+        "en": "Irregular verbs, full conjugation",
+        "es": "Verbos irregulares, conjugación completa",
+        "de": "Unregelmäßige Verben, vollständige Konjugation"
+      },
+      "header": [
+        {
+          "hu": "Persona",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "tener",
+          "en": "tener",
+          "es": "tener",
+          "de": "tener"
+        },
+        {
+          "hu": "poder",
+          "en": "poder",
+          "es": "poder",
+          "de": "poder"
+        },
+        {
+          "hu": "hacer",
+          "en": "hacer",
+          "es": "hacer",
+          "de": "hacer"
+        },
+        {
+          "hu": "salir",
+          "en": "salir",
+          "es": "salir",
+          "de": "salir"
+        },
+        {
+          "hu": "decir",
+          "en": "decir",
+          "es": "decir",
+          "de": "decir"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "tendré",
+          "podré",
+          "haré",
+          "saldré",
+          "diré"
+        ],
+        [
+          "tú",
+          "tendrás",
+          "podrás",
+          "harás",
+          "saldrás",
+          "dirás"
+        ],
+        [
+          "él/ella/usted",
+          "tendrá",
+          "podrá",
+          "hará",
+          "saldrá",
+          "dirá"
+        ],
+        [
+          "nosotros",
+          "tendremos",
+          "podremos",
+          "haremos",
+          "saldremos",
+          "diremos"
+        ],
+        [
+          "vosotros",
+          "tendréis",
+          "podréis",
+          "haréis",
+          "saldréis",
+          "diréis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "tendrán",
+          "podrán",
+          "harán",
+          "saldrán",
+          "dirán"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "futuro-simple-raiz",
+      "title": {
+        "hu": "Rendhagyó tövek listája",
+        "en": "The list of irregular stems",
+        "es": "La lista de raíces irregulares",
+        "de": "Die Liste der unregelmäßigen Stämme"
+      },
+      "header": [
+        {
+          "hu": "Főnévi igenév",
+          "en": "Infinitive",
+          "es": "Infinitivo",
+          "de": "Infinitiv"
+        },
+        {
+          "hu": "Jövő idő töve",
+          "en": "Future stem",
+          "es": "Raíz de futuro",
+          "de": "Futurstamm"
+        }
+      ],
+      "rows": [
+        [
+          "tener",
+          "tendr-"
+        ],
+        [
+          "poder",
+          "podr-"
+        ],
+        [
+          "saber",
+          "sabr-"
+        ],
+        [
+          "haber",
+          "habr-"
+        ],
+        [
+          "hacer",
+          "har-"
+        ],
+        [
+          "decir",
+          "dir-"
+        ],
+        [
+          "poner",
+          "pondr-"
+        ],
+        [
+          "salir",
+          "saldr-"
+        ],
+        [
+          "venir",
+          "vendr-"
+        ],
+        [
+          "querer",
+          "querr-"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Mikor használjuk",
+        "en": "When do we use it",
+        "es": "Cuándo lo usamos",
+        "de": "Wann benutzen wir es"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Amikor ígéretet teszünk valamire, amit majd megcsinálunk.",
+            "en": "When we make a promise about something we will do.",
+            "es": "Cuando hacemos una promesa sobre algo que vamos a hacer.",
+            "de": "Wenn wir ein Versprechen über etwas geben, das wir tun werden."
+          },
+          "examples": [
+            {
+              "es": "Te lo prometo: tendré más cuidado.",
+              "tr": {
+                "hu": "Megígérem: jobban fogok vigyázni.",
+                "en": "I promise you: I will be more careful.",
+                "es": "Te lo prometo: tendré más cuidado.",
+                "de": "Ich verspreche es dir: Ich werde vorsichtiger sein."
+              }
+            },
+            {
+              "es": "Te prometo que no diré nada.",
+              "tr": {
+                "hu": "Megígérem, hogy nem mondok semmit.",
+                "en": "I promise you I will not say anything.",
+                "es": "Te prometo que no diré nada.",
+                "de": "Ich verspreche dir, dass ich nichts sagen werde."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Amikor egy távolabbi, kevésbé eldöntött tervről vagy jóslatról beszélünk.",
+            "en": "When we talk about a more distant, less decided plan or a prediction.",
+            "es": "Cuando hablamos de un plan más lejano, menos decidido, o de una predicción.",
+            "de": "Wenn wir über einen ferneren, weniger entschiedenen Plan oder eine Vorhersage sprechen."
+          },
+          "examples": [
+            {
+              "es": "El año que viene viviremos en otra ciudad.",
+              "tr": {
+                "hu": "Jövőre egy másik városban fogunk lakni.",
+                "en": "Next year we will live in another city.",
+                "es": "El año que viene viviremos en otra ciudad.",
+                "de": "Nächstes Jahr werden wir in einer anderen Stadt leben."
+              }
+            },
+            {
+              "es": "Los niños crecerán rápido.",
+              "tr": {
+                "hu": "A gyerekek gyorsan fognak nőni.",
+                "en": "The children will grow fast.",
+                "es": "Los niños crecerán rápido.",
+                "de": "Die Kinder werden schnell wachsen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Amikor a jelenről találgatunk, nem biztosak vagyunk benne, csak valószínűnek tartjuk.",
+            "en": "When we guess about the present, not being sure, just finding it likely.",
+            "es": "Cuando suponemos algo sobre el presente, sin estar seguros, solo pareciéndonos probable.",
+            "de": "Wenn wir über die Gegenwart mutmaßen, ohne sicher zu sein, es nur für wahrscheinlich halten."
+          },
+          "examples": [
+            {
+              "es": "¿Dónde está Luis? Estará en el trabajo, como siempre.",
+              "tr": {
+                "hu": "Hol van Luis? Biztos a munkahelyén van, mint mindig.",
+                "en": "Where is Luis? He must be at work, as always.",
+                "es": "¿Dónde está Luis? Estará en el trabajo, como siempre.",
+                "de": "Wo ist Luis? Er wird wie immer bei der Arbeit sein."
+              }
+            },
+            {
+              "es": "Tendrá unos treinta años.",
+              "tr": {
+                "hu": "Nagyjából harmincéves lehet.",
+                "en": "He must be about thirty years old.",
+                "es": "Tendrá unos treinta años.",
+                "de": "Er dürfte etwa dreißig Jahre alt sein."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Valós feltétel mellett: si + jelen idő a feltételben, a másik felében pedig jövő idő.",
+            "en": "With a real condition: si plus the present in the condition, and the future in the other half.",
+            "es": "Con una condición real: si más presente en la condición, y futuro en la otra parte.",
+            "de": "Bei einer realen Bedingung: si plus Präsens im Bedingungssatz, im anderen Teil Futur."
+          },
+          "examples": [
+            {
+              "es": "Si estudias, aprobarás el examen.",
+              "tr": {
+                "hu": "Ha tanulsz, át fogsz menni a vizsgán.",
+                "en": "If you study, you will pass the exam.",
+                "es": "Si estudias, aprobarás el examen.",
+                "de": "Wenn du lernst, wirst du die Prüfung bestehen."
+              }
+            },
+            {
+              "es": "Si terminas la tarea, saldremos a cenar.",
+              "tr": {
+                "hu": "Ha befejezed a házi feladatot, elmegyünk vacsorázni.",
+                "en": "If you finish the homework, we will go out for dinner.",
+                "es": "Si terminas la tarea, saldremos a cenar.",
+                "de": "Wenn du die Hausaufgabe beendest, gehen wir zum Abendessen aus."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Hasonló, mégis más",
+        "en": "Similar, yet different",
+        "es": "Parecido, pero distinto",
+        "de": "Ähnlich, aber anders"
+      },
+      "pairs": [
+        {
+          "a": "trabajaré",
+          "b": "voy a trabajar",
+          "note": {
+            "hu": "A trabajaré formálisabb, és inkább bizonytalan jóslásra vagy ígéretre való; a voy a trabajar a mindennapi, eldöntött tervet fejezi ki.",
+            "en": "Trabajaré is more formal, and leans toward an uncertain prediction or promise; voy a trabajar expresses an everyday, decided plan.",
+            "es": "Trabajaré es más formal, y tiende a una predicción o promesa incierta; voy a trabajar expresa un plan cotidiano y decidido.",
+            "de": "Trabajaré ist formeller und eher eine unsichere Vorhersage oder ein Versprechen; voy a trabajar drückt einen alltäglichen, entschiedenen Plan aus."
+          },
+          "examples": [
+            {
+              "es": "Trabajaré mucho en el futuro.",
+              "tr": {
+                "hu": "Sokat fogok dolgozni a jövőben.",
+                "en": "I will work a lot in the future.",
+                "es": "Trabajaré mucho en el futuro.",
+                "de": "Ich werde in Zukunft viel arbeiten."
+              }
+            },
+            {
+              "es": "Voy a trabajar mañana, ya es un plan.",
+              "tr": {
+                "hu": "Holnap fogok dolgozni, ez már egy terv.",
+                "en": "I am going to work tomorrow, it is already a plan.",
+                "es": "Voy a trabajar mañana, ya es un plan.",
+                "de": "Ich werde morgen arbeiten, das ist schon ein Plan."
+              }
+            }
+          ]
+        },
+        {
+          "a": "estará en casa",
+          "b": "está en casa",
+          "note": {
+            "hu": "Az estará en casa találgatás, valószínűség a jelenről (biztos otthon van); az está en casa egy biztos, ellenőrzött tény.",
+            "en": "Estará en casa is a guess, probability about the present (she must be home); está en casa is a certain, checked fact.",
+            "es": "Estará en casa es una suposición, probabilidad sobre el presente (seguro está en casa); está en casa es un hecho seguro, comprobado.",
+            "de": "Estará en casa ist eine Vermutung, Wahrscheinlichkeit über die Gegenwart (sie ist sicher zu Hause); está en casa ist eine sichere, geprüfte Tatsache."
+          },
+          "examples": [
+            {
+              "es": "No contesta, estará en casa todavía.",
+              "tr": {
+                "hu": "Nem veszi fel, biztos még otthon van.",
+                "en": "She is not answering, she must still be home.",
+                "es": "No contesta, estará en casa todavía.",
+                "de": "Sie geht nicht ran, sie ist wohl noch zu Hause."
+              }
+            },
+            {
+              "es": "Sé que está en casa ahora mismo.",
+              "tr": {
+                "hu": "Tudom, hogy pont most otthon van.",
+                "en": "I know that she is home right now.",
+                "es": "Sé que está en casa ahora mismo.",
+                "de": "Ich weiß, dass sie gerade jetzt zu Hause ist."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A leggyakoribb kezdő hiba az ékezet elfelejtése: nem hablare, hanem hablaré, mert az ékezet nélkül a hangsúly és az alak is más lenne.",
+        "en": "The most common beginner mistake is forgetting the accent: not hablare, but hablaré, because without it both the stress and the form would be different.",
+        "es": "El error más común de principiante es olvidar la tilde: no hablare, sino hablaré, porque sin ella cambiarían el acento y la forma.",
+        "de": "Der häufigste Anfängerfehler ist das vergessene Akzentzeichen: nicht hablare, sondern hablaré, weil ohne es sowohl die Betonung als auch die Form anders wären."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Amikor valaki ígéretet tesz, jóslatot mond, vagy csak találgat valamiről a jelenben, a spanyolban gyakran a futuro simple-t használja. A végződés a teljes főnévi igenévhez tapad, ugyanaz mind a három igecsoportnál: «hablaré», «comeré», «viviré», és minden alak ékezetet visel, kivéve a nosotros formát: «hablaremos». Néhány gyakori ige lerövidíti a tövét, de a végződés ugyanaz marad, mint a «tendré» vagy a «haré». A futuro simple gyakran nem a távoli jövőt jelenti, hanem valószínűséget a jelenről, mint a «estará en casa», vagyis biztos otthon van. A mindennapi beszédben az «ir a» plusz főnévi igenév gyakoribb, a futuro simple inkább írott vagy nyomatékos.",
+    "en": "When someone makes a promise, states a prediction, or simply guesses about the present, Spanish often uses the futuro simple. The ending attaches to the whole infinitive, the same for all three verb groups: «hablaré», «comeré», «viviré», and every form carries an accent except the nosotros form: «hablaremos». A few common verbs shorten their stem, but the ending stays the same, like «tendré» or «haré». The futuro simple often does not mean the distant future at all, but probability about the present, like «estará en casa», meaning she must be home. In everyday speech «ir a» plus infinitive is more common, while the futuro simple sounds more written or emphatic.",
+    "es": "Cuando alguien hace una promesa, dice una predicción, o simplemente supone algo sobre el presente, el español suele usar el futuro simple. La terminación se añade al infinitivo entero, igual en los tres grupos de verbos: «hablaré», «comeré», «viviré», y todas las formas llevan tilde menos la de nosotros: «hablaremos». Algunos verbos frecuentes acortan la raíz, pero la terminación se queda igual, como «tendré» o «haré». El futuro simple muchas veces no significa un futuro lejano, sino probabilidad sobre el presente, como «estará en casa», es decir que seguro está en casa. En el habla cotidiana «ir a» más infinitivo es más frecuente, mientras que el futuro simple suena más escrito o enfático.",
+    "de": "Wenn jemand ein Versprechen macht, eine Vorhersage ausspricht oder einfach etwas über die Gegenwart vermutet, benutzt das Spanische oft das futuro simple. Die Endung hängt am ganzen Infinitiv, in allen drei Verbgruppen gleich: «hablaré», «comeré», «viviré», und jede Form trägt einen Akzent außer der nosotros-Form: «hablaremos». Manche häufigen Verben kürzen den Stamm, die Endung bleibt aber gleich, wie bei «tendré» oder «haré». Das futuro simple bedeutet oft gar nicht die ferne Zukunft, sondern Wahrscheinlichkeit über die Gegenwart, wie «estará en casa», also sie ist sicher zu Hause. Im Alltagsspanisch ist «ir a» plus Infinitiv häufiger, während das futuro simple schriftlicher oder nachdrücklicher klingt."
   },
   "glossary": [
     {
@@ -174,22 +744,26 @@
       },
       "wrong": {
         "hablaba": {
-          "hu": "Ez múlt idejű szokás.",
-          "en": "That is a past habit.",
-          "es": "Eso es costumbre pasada.",
-          "de": "Das ist eine vergangene Gewohnheit."
+          "hu": "Ezzel a mondat azt jelentené: „szoktam beszélni a főnökkel (múltbeli szokás)”, ami nem illik ide; helyesen: Mañana hablaré con el jefe.",
+          "en": "This would say: “I used to talk with the boss (a past habit)”, which does not fit here; correctly: Mañana hablaré con el jefe.",
+          "es": "Esto diría: «yo hablaba con el jefe (costumbre pasada)», lo cual no encaja aquí; correctamente: Mañana hablaré con el jefe.",
+          "de": "Das würde bedeuten: „ich sprach früher mit dem Chef (vergangene Gewohnheit)“, was hier nicht passt; richtig: Mañana hablaré con el jefe."
         },
         "hablé": {
-          "hu": "Ez lezárt múlt.",
-          "en": "That is the closed past.",
-          "es": "Eso es pasado cerrado.",
-          "de": "Das ist abgeschlossene Vergangenheit."
+          "hu": "Ezzel a mondat azt jelentené: „beszéltem a főnökkel (lezárt múlt)”, ami nem illik ide; helyesen: Mañana hablaré con el jefe.",
+          "en": "This would say: “I talked with the boss (a closed past event)”, which does not fit here; correctly: Mañana hablaré con el jefe.",
+          "es": "Esto diría: «yo hablé con el jefe (pasado cerrado)», lo cual no encaja aquí; correctamente: Mañana hablaré con el jefe.",
+          "de": "Das würde bedeuten: „ich sprach mit dem Chef (abgeschlossene Vergangenheit)“, was hier nicht passt; richtig: Mañana hablaré con el jefe."
         }
       },
       "examples": [
         "Mañana comeré en casa.",
         "El lunes empezaré el curso."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
     },
     {
       "id": "fu-02",
@@ -208,22 +782,26 @@
       },
       "wrong": {
         "viajarémos": {
-          "hu": "Itt nincs ékezet.",
-          "en": "There is no accent here.",
-          "es": "Aquí no hay tilde.",
-          "de": "Hier steht kein Akzent."
+          "hu": "Ezzel a mondat azt jelentené: „ilyen alak nem létezik, a nosotros forma sosem visel ékezetet”, ami nem illik ide; helyesen: El año que viene viajaremos a España.",
+          "en": "This would say: “no such form exists, the nosotros form never carries an accent”, which does not fit here; correctly: El año que viene viajaremos a España.",
+          "es": "Esto diría: «esta forma no existe, la de nosotros nunca lleva tilde», lo cual no encaja aquí; correctamente: El año que viene viajaremos a España.",
+          "de": "Das würde bedeuten: „diese Form gibt es nicht, die nosotros-Form trägt nie einen Akzent“, was hier nicht passt; richtig: El año que viene viajaremos a España."
         },
         "viajamos": {
-          "hu": "Ez jelen vagy múlt idő, nem jövő.",
-          "en": "That is the present or the past, not the future.",
-          "es": "Eso es presente o pasado, no futuro.",
-          "de": "Das ist Präsens oder Vergangenheit, kein Futur."
+          "hu": "Ezzel a mondat azt jelentené: „utazunk Spanyolországba (jelen vagy múlt idő, nem jövő)”, ami nem illik ide; helyesen: El año que viene viajaremos a España.",
+          "en": "This would say: “we travel to Spain (present or past, not the future)”, which does not fit here; correctly: El año que viene viajaremos a España.",
+          "es": "Esto diría: «viajamos a España (presente o pasado, no futuro)», lo cual no encaja aquí; correctamente: El año que viene viajaremos a España.",
+          "de": "Das würde bedeuten: „wir reisen nach Spanien (Präsens oder Vergangenheit, keine Zukunft)“, was hier nicht passt; richtig: El año que viene viajaremos a España."
         }
       },
       "examples": [
         "Volveremos en agosto.",
         "Comeremos juntos el domingo."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
     },
     {
       "id": "fu-03",
@@ -242,22 +820,26 @@
       },
       "wrong": {
         "Tenerás": {
-          "hu": "A tener nem tartja meg a teljes alakot a jövőben.",
-          "en": "Tener does not keep the full infinitive in the future.",
-          "es": "Tener no conserva el infinitivo entero en futuro.",
-          "de": "Tener behält den vollen Infinitiv im Futur nicht."
+          "hu": "Ezzel a mondat azt jelentené: „ilyen alak nem létezik, a tener nem tartja meg a teljes főnévi igenevet a jövőben”, ami nem illik ide; helyesen: ¿Tendrás tiempo el sábado?",
+          "en": "This would say: “no such form exists, tener does not keep the full infinitive in the future”, which does not fit here; correctly: ¿Tendrás tiempo el sábado?",
+          "es": "Esto diría: «esta forma no existe, tener no conserva el infinitivo entero en futuro», lo cual no encaja aquí; correctamente: ¿Tendrás tiempo el sábado?",
+          "de": "Das würde bedeuten: „diese Form gibt es nicht, tener behält den vollen Infinitiv im Futur nicht“, was hier nicht passt; richtig: ¿Tendrás tiempo el sábado?"
         },
         "Tenías": {
-          "hu": "Ez múlt idő.",
-          "en": "That is the past.",
-          "es": "Eso es pasado.",
-          "de": "Das ist Vergangenheit."
+          "hu": "Ezzel a mondat azt jelentené: „volt időd (múlt idő), nem a szombati jövőről kérdez”, ami nem illik ide; helyesen: ¿Tendrás tiempo el sábado?",
+          "en": "This would say: “you used to have time (the past), not asking about Saturday's future”, which does not fit here; correctly: ¿Tendrás tiempo el sábado?",
+          "es": "Esto diría: «tenías tiempo (pasado), no pregunta sobre el sábado que viene», lo cual no encaja aquí; correctamente: ¿Tendrás tiempo el sábado?",
+          "de": "Das würde bedeuten: „du hattest Zeit (Vergangenheit), fragt nicht nach dem kommenden Samstag“, was hier nicht passt; richtig: ¿Tendrás tiempo el sábado?"
         }
       },
       "examples": [
         "Tendremos una reunión mañana.",
         "Vendrán a las ocho."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
     },
     {
       "id": "fu-04",
@@ -276,22 +858,26 @@
       },
       "wrong": {
         "deciré": {
-          "hu": "Ilyen alak nincs.",
-          "en": "No such form exists.",
-          "es": "Esa forma no existe.",
-          "de": "Diese Form gibt es nicht."
+          "hu": "Ezzel a mondat azt jelentené: „ilyen alak nem létezik, a decir lerövidíti a tövét: dir-”, ami nem illik ide; helyesen: Te diré la verdad cuando llegues.",
+          "en": "This would say: “no such form exists, decir shortens its stem to dir-”, which does not fit here; correctly: Te diré la verdad cuando llegues.",
+          "es": "Esto diría: «esta forma no existe, decir acorta la raíz a dir-», lo cual no encaja aquí; correctamente: Te diré la verdad cuando llegues.",
+          "de": "Das würde bedeuten: „diese Form gibt es nicht, decir kürzt den Stamm zu dir-“, was hier nicht passt; richtig: Te diré la verdad cuando llegues."
         },
         "decía": {
-          "hu": "Ez múlt idő.",
-          "en": "That is the past.",
-          "es": "Eso es pasado.",
-          "de": "Das ist Vergangenheit."
+          "hu": "Ezzel a mondat azt jelentené: „mondtam az igazat (múlt idő), nem azt, hogy majd megmondom”, ami nem illik ide; helyesen: Te diré la verdad cuando llegues.",
+          "en": "This would say: “I used to tell the truth (the past), not that I will tell it”, which does not fit here; correctly: Te diré la verdad cuando llegues.",
+          "es": "Esto diría: «decía la verdad (pasado), no que la diré», lo cual no encaja aquí; correctamente: Te diré la verdad cuando llegues.",
+          "de": "Das würde bedeuten: „ich sagte die Wahrheit (Vergangenheit), nicht dass ich sie sagen werde“, was hier nicht passt; richtig: Te diré la verdad cuando llegues."
         }
       },
       "examples": [
         "Haré la cena esta noche.",
         "Pondremos la mesa después."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
     },
     {
       "id": "fu-05",
@@ -310,22 +896,26 @@
       },
       "wrong": {
         "habrán": {
-          "hu": "A létezést kifejező alak mindig egyes szám.",
-          "en": "The existential form is always singular.",
-          "es": "La forma de existencia es siempre singular.",
-          "de": "Die Existenzform ist immer Singular."
+          "hu": "Ezzel a mondat azt jelentené: „a hay/habrá alak sosem tehető többes számba, akkor sem, ha a mondat egy buliról szól”, ami nem illik ide; helyesen: Mañana habrá una fiesta en casa de Ana.",
+          "en": "This would say: “the hay/habrá form is never made plural, not even when the sentence is about a party”, which does not fit here; correctly: Mañana habrá una fiesta en casa de Ana.",
+          "es": "Esto diría: «la forma hay/habrá nunca se pone en plural, ni cuando la frase habla de una fiesta», lo cual no encaja aquí; correctamente: Mañana habrá una fiesta en casa de Ana.",
+          "de": "Das würde bedeuten: „die Form hay/habrá wird nie in den Plural gesetzt, auch nicht bei einer Party“, was hier nicht passt; richtig: Mañana habrá una fiesta en casa de Ana."
         },
         "hay": {
-          "hu": "A hay jelen idő.",
-          "en": "Hay is the present.",
-          "es": "Hay es presente.",
-          "de": "Hay ist Präsens."
+          "hu": "Ezzel a mondat azt jelentené: „most van egy buli (jelen idő), a mañana viszont jövőt kér”, ami nem illik ide; helyesen: Mañana habrá una fiesta en casa de Ana.",
+          "en": "This would say: “there is a party now (the present), but mañana calls for the future”, which does not fit here; correctly: Mañana habrá una fiesta en casa de Ana.",
+          "es": "Esto diría: «hay una fiesta ahora (presente), pero mañana pide futuro», lo cual no encaja aquí; correctamente: Mañana habrá una fiesta en casa de Ana.",
+          "de": "Das würde bedeuten: „es gibt jetzt eine Party (Präsens), aber mañana verlangt die Zukunft“, was hier nicht passt; richtig: Mañana habrá una fiesta en casa de Ana."
         }
       },
       "examples": [
         "Habrá mucha gente.",
         "Mañana habrá clase."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
     },
     {
       "id": "fu-06",
@@ -344,22 +934,26 @@
       },
       "wrong": {
         "Estuvo": {
-          "hu": "Ez múlt időt állítana, nem találgatna a jelenről.",
-          "en": "That states a past fact instead of guessing about now.",
-          "es": "Eso afirma un pasado, no una conjetura.",
-          "de": "Das behauptet Vergangenheit statt einer Vermutung."
+          "hu": "Ezzel a mondat azt jelentené: „ott volt (múltbeli tény), nem egy mostani találgatás”, ami nem illik ide; helyesen: Estará en el trabajo, como siempre.",
+          "en": "This would say: “he was there (a past fact), not a guess about now”, which does not fit here; correctly: Estará en el trabajo, como siempre.",
+          "es": "Esto diría: «estuvo allí (hecho pasado), no una conjetura sobre ahora», lo cual no encaja aquí; correctamente: Estará en el trabajo, como siempre.",
+          "de": "Das würde bedeuten: „er war dort (vergangene Tatsache), keine Vermutung über jetzt“, was hier nicht passt; richtig: Estará en el trabajo, como siempre."
         },
         "Está": {
-          "hu": "Ez biztos állítás lenne, nem feltételezés.",
-          "en": "That would be a certain statement, not a guess.",
-          "es": "Sería una afirmación segura, no conjetura.",
-          "de": "Das wäre eine sichere Aussage, keine Vermutung."
+          "hu": "Ezzel a mondat azt jelentené: „biztosan ott van (ellenőrzött tény), nem egy találgatás”, ami nem illik ide; helyesen: Estará en el trabajo, como siempre.",
+          "en": "This would say: “he is definitely there (a checked fact), not a guess”, which does not fit here; correctly: Estará en el trabajo, como siempre.",
+          "es": "Esto diría: «está allí seguro (hecho comprobado), no una conjetura», lo cual no encaja aquí; correctamente: Estará en el trabajo, como siempre.",
+          "de": "Das würde bedeuten: „er ist sicher dort (geprüfte Tatsache), keine Vermutung“, was hier nicht passt; richtig: Estará en el trabajo, como siempre."
         }
       },
       "examples": [
         "Serán las tres más o menos.",
         "Tendrá unos cuarenta años."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
     },
     {
       "id": "fu-07",
@@ -378,22 +972,26 @@
       },
       "wrong": {
         "salirá": {
-          "hu": "Ilyen alak nincs.",
-          "en": "No such form exists.",
-          "es": "Esa forma no existe.",
-          "de": "Diese Form gibt es nicht."
+          "hu": "Ezzel a mondat azt jelentené: „ilyen alak nem létezik, a salir lerövidíti a tövét: saldr-”, ami nem illik ide; helyesen: El tren saldrá a las diez en punto.",
+          "en": "This would say: “no such form exists, salir shortens its stem to saldr-”, which does not fit here; correctly: El tren saldrá a las diez en punto.",
+          "es": "Esto diría: «esta forma no existe, salir acorta la raíz a saldr-», lo cual no encaja aquí; correctamente: El tren saldrá a las diez en punto.",
+          "de": "Das würde bedeuten: „diese Form gibt es nicht, salir kürzt den Stamm zu saldr-“, was hier nicht passt; richtig: El tren saldrá a las diez en punto."
         },
         "salía": {
-          "hu": "Ez múlt idő.",
-          "en": "That is the past.",
-          "es": "Eso es pasado.",
-          "de": "Das ist Vergangenheit."
+          "hu": "Ezzel a mondat azt jelentené: „a vonat szokott indulni (múltbeli szokás), nem egy konkrét jövőbeli indulásról szól”, ami nem illik ide; helyesen: El tren saldrá a las diez en punto.",
+          "en": "This would say: “the train used to leave (a past habit), not a specific future departure”, which does not fit here; correctly: El tren saldrá a las diez en punto.",
+          "es": "Esto diría: «el tren salía (costumbre pasada), no una salida futura concreta», lo cual no encaja aquí; correctamente: El tren saldrá a las diez en punto.",
+          "de": "Das würde bedeuten: „der Zug fuhr früher ab (vergangene Gewohnheit), keine konkrete zukünftige Abfahrt“, was hier nicht passt; richtig: El tren saldrá a las diez en punto."
         }
       },
       "examples": [
         "Podrás verlo mañana.",
         "Sabremos el resultado el viernes."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
     },
     {
       "id": "fu-08",
@@ -412,22 +1010,26 @@
       },
       "wrong": {
         "aprobaste": {
-          "hu": "Ez múlt idő, ami nem fér össze a feltétellel.",
-          "en": "That is the past, which does not fit the condition.",
-          "es": "Eso es pasado y no encaja con la condición.",
-          "de": "Das ist Vergangenheit und passt nicht zur Bedingung."
+          "hu": "Ezzel a mondat azt jelentené: „átmentél a vizsgán (múlt idő), ami nem fér össze a feltétellel”, ami nem illik ide; helyesen: Si estudias, aprobarás el examen.",
+          "en": "This would say: “you passed the exam (the past), which does not fit the condition”, which does not fit here; correctly: Si estudias, aprobarás el examen.",
+          "es": "Esto diría: «aprobaste el examen (pasado), que no encaja con la condición», lo cual no encaja aquí; correctamente: Si estudias, aprobarás el examen.",
+          "de": "Das würde bedeuten: „du hast die Prüfung bestanden (Vergangenheit), passt nicht zur Bedingung“, was hier nicht passt; richtig: Si estudias, aprobarás el examen."
         },
         "apruebas": {
-          "hu": "Jelen idővel is mondható, de a jövő a világosabb ígéret.",
-          "en": "The present is possible, but the future states the promise more clearly.",
-          "es": "El presente es posible, pero el futuro expresa mejor la promesa.",
-          "de": "Präsens ginge, das Futur macht das Versprechen klarer."
+          "hu": "Ezzel a mondat azt jelentené: „átmész a vizsgán (jelen idejű, általános kijelentés), nem a feltételhez kötött ígéret”, ami nem illik ide; helyesen: Si estudias, aprobarás el examen.",
+          "en": "This would say: “you pass the exam (a present, general statement), not the promise tied to the condition”, which does not fit here; correctly: Si estudias, aprobarás el examen.",
+          "es": "Esto diría: «apruebas el examen (afirmación general en presente), no la promesa ligada a la condición», lo cual no encaja aquí; correctamente: Si estudias, aprobarás el examen.",
+          "de": "Das würde bedeuten: „du bestehst die Prüfung (allgemeine Aussage im Präsens), nicht das an die Bedingung geknüpfte Versprechen“, was hier nicht passt; richtig: Si estudias, aprobarás el examen."
         }
       },
       "examples": [
         "Si llueve, no saldremos.",
         "Si tengo tiempo, te llamaré."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
     },
     {
       "id": "fu-09",
@@ -446,22 +1048,26 @@
       },
       "wrong": {
         "resolvieron": {
-          "hu": "Ez múlt idő.",
-          "en": "That is the past.",
-          "es": "Eso es pasado.",
-          "de": "Das ist Vergangenheit."
+          "hu": "Ezzel a mondat azt jelentené: „megoldották a problémát (múlt idő), nem egy jövőbeli tervről van szó”, ami nem illik ide; helyesen: Ellos resolverán el problema sin ayuda.",
+          "en": "This would say: “they solved the problem (the past), not about a future plan”, which does not fit here; correctly: Ellos resolverán el problema sin ayuda.",
+          "es": "Esto diría: «resolvieron el problema (pasado), no se trata de un plan futuro», lo cual no encaja aquí; correctamente: Ellos resolverán el problema sin ayuda.",
+          "de": "Das würde bedeuten: „sie haben das Problem gelöst (Vergangenheit), es geht nicht um einen zukünftigen Plan“, was hier nicht passt; richtig: Ellos resolverán el problema sin ayuda."
         },
         "resuelven": {
-          "hu": "Ez jelen idő.",
-          "en": "That is the present.",
-          "es": "Eso es presente.",
-          "de": "Das ist Präsens."
+          "hu": "Ezzel a mondat azt jelentené: „megoldják a problémát (jelen idő), nem egy jövőbeli jóslatról van szó”, ami nem illik ide; helyesen: Ellos resolverán el problema sin ayuda.",
+          "en": "This would say: “they solve the problem (the present), not about a future prediction”, which does not fit here; correctly: Ellos resolverán el problema sin ayuda.",
+          "es": "Esto diría: «resuelven el problema (presente), no se trata de una predicción futura», lo cual no encaja aquí; correctamente: Ellos resolverán el problema sin ayuda.",
+          "de": "Das würde bedeuten: „sie lösen das Problem (Präsens), es geht nicht um eine zukünftige Vorhersage“, was hier nicht passt; richtig: Ellos resolverán el problema sin ayuda."
         }
       },
       "examples": [
         "Los niños crecerán rápido.",
         "Mis amigos vendrán en coche."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
     },
     {
       "id": "fu-10",
@@ -480,22 +1086,26 @@
       },
       "wrong": {
         "salió": {
-          "hu": "Ez múltbeli tényt állítana.",
-          "en": "That would state a past fact.",
-          "es": "Eso afirmaría un hecho pasado.",
-          "de": "Das behauptete eine vergangene Tatsache."
+          "hu": "Ezzel a mondat azt jelentené: „minden jól alakult (múltbeli tény), nem egy megnyugtató jóslat a jövőről”, ami nem illik ide; helyesen: No te preocupes, todo saldrá bien.",
+          "en": "This would say: “everything turned out fine (a past fact), not a reassuring prediction about the future”, which does not fit here; correctly: No te preocupes, todo saldrá bien.",
+          "es": "Esto diría: «todo salió bien (hecho pasado), no una predicción tranquilizadora sobre el futuro», lo cual no encaja aquí; correctamente: No te preocupes, todo saldrá bien.",
+          "de": "Das würde bedeuten: „alles ist gut ausgegangen (vergangene Tatsache), keine beruhigende Vorhersage über die Zukunft“, was hier nicht passt; richtig: No te preocupes, todo saldrá bien."
         },
         "salía": {
-          "hu": "Ez múltbeli hátteret írna le.",
-          "en": "That would describe past background.",
-          "es": "Eso describiría un fondo pasado.",
-          "de": "Das beschriebe vergangenen Hintergrund."
+          "hu": "Ezzel a mondat azt jelentené: „minden jól szokott alakulni (múltbeli háttér), nem egy mostani biztatás a jövőre”, ami nem illik ide; helyesen: No te preocupes, todo saldrá bien.",
+          "en": "This would say: “everything used to turn out fine (a past background), not reassurance about now”, which does not fit here; correctly: No te preocupes, todo saldrá bien.",
+          "es": "Esto diría: «todo salía bien (fondo pasado), no un ánimo sobre ahora», lo cual no encaja aquí; correctamente: No te preocupes, todo saldrá bien.",
+          "de": "Das würde bedeuten: „alles ging früher gut aus (vergangener Hintergrund), keine Beruhigung für jetzt“, was hier nicht passt; richtig: No te preocupes, todo saldrá bien."
         }
       },
       "examples": [
         "Todo estará listo a las seis.",
         "Nadie lo sabrá."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
     },
     {
       "id": "fu-11",
@@ -514,22 +1124,26 @@
       },
       "wrong": {
         "busqué": {
-          "hu": "Ez múlt idő.",
-          "en": "That is the past.",
-          "es": "Eso es pasado.",
-          "de": "Das ist Vergangenheit."
+          "hu": "Ezzel a mondat azt jelentené: „kerestem egy állást (múlt idő), nem egy jövőbeli tervet”, ami nem illik ide; helyesen: Cuando termine el curso, buscaré un trabajo nuevo.",
+          "en": "This would say: “I looked for a job (the past), not a future plan”, which does not fit here; correctly: Cuando termine el curso, buscaré un trabajo nuevo.",
+          "es": "Esto diría: «busqué trabajo (pasado), no un plan futuro», lo cual no encaja aquí; correctamente: Cuando termine el curso, buscaré un trabajo nuevo.",
+          "de": "Das würde bedeuten: „ich suchte eine Arbeit (Vergangenheit), keinen zukünftigen Plan“, was hier nicht passt; richtig: Cuando termine el curso, buscaré un trabajo nuevo."
         },
         "buscaba": {
-          "hu": "Ez múltbeli szokás.",
-          "en": "That is a past habit.",
-          "es": "Eso es costumbre pasada.",
-          "de": "Das ist vergangene Gewohnheit."
+          "hu": "Ezzel a mondat azt jelentené: „szoktam állást keresni (múltbeli szokás), nem egy konkrét jövőbeli tervet”, ami nem illik ide; helyesen: Cuando termine el curso, buscaré un trabajo nuevo.",
+          "en": "This would say: “I used to look for a job (a past habit), not a specific future plan”, which does not fit here; correctly: Cuando termine el curso, buscaré un trabajo nuevo.",
+          "es": "Esto diría: «buscaba trabajo (costumbre pasada), no un plan futuro concreto», lo cual no encaja aquí; correctamente: Cuando termine el curso, buscaré un trabajo nuevo.",
+          "de": "Das würde bedeuten: „ich suchte früher eine Arbeit (vergangene Gewohnheit), keinen konkreten zukünftigen Plan“, was hier nicht passt; richtig: Cuando termine el curso, buscaré un trabajo nuevo."
         }
       },
       "examples": [
         "Cuando llegues, cenaremos.",
         "Cuando pueda, te ayudaré."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
     },
     {
       "id": "fu-12",
@@ -548,22 +1162,2002 @@
       },
       "wrong": {
         "tuve": {
-          "hu": "Ez múltbeli tény.",
-          "en": "That is a past fact.",
-          "es": "Eso es un hecho pasado.",
-          "de": "Das ist eine vergangene Tatsache."
+          "hu": "Ezzel a mondat azt jelentené: „vigyáztam (múltbeli tény), nem egy ígéret a jövőre”, ami nem illik ide; helyesen: Te lo prometo: tendré más cuidado.",
+          "en": "This would say: “I was careful (a past fact), not a promise about the future”, which does not fit here; correctly: Te lo prometo: tendré más cuidado.",
+          "es": "Esto diría: «tuve cuidado (hecho pasado), no una promesa sobre el futuro», lo cual no encaja aquí; correctamente: Te lo prometo: tendré más cuidado.",
+          "de": "Das würde bedeuten: „ich war vorsichtig (vergangene Tatsache), kein Versprechen für die Zukunft“, was hier nicht passt; richtig: Te lo prometo: tendré más cuidado."
         },
         "tenía": {
-          "hu": "Ez múltbeli állapot.",
-          "en": "That is a past state.",
-          "es": "Eso es un estado pasado.",
-          "de": "Das ist ein vergangener Zustand."
+          "hu": "Ezzel a mondat azt jelentené: „vigyáztam szoktam (múltbeli állapot), nem egy ígéret a jövőre”, ami nem illik ide; helyesen: Te lo prometo: tendré más cuidado.",
+          "en": "This would say: “I used to be careful (a past state), not a promise about the future”, which does not fit here; correctly: Te lo prometo: tendré más cuidado.",
+          "es": "Esto diría: «tenía cuidado (estado pasado), no una promesa sobre el futuro», lo cual no encaja aquí; correctamente: Te lo prometo: tendré más cuidado.",
+          "de": "Das würde bedeuten: „ich war vorsichtig gewesen (vergangener Zustand), kein Versprechen für die Zukunft“, was hier nicht passt; richtig: Te lo prometo: tendré más cuidado."
         }
       },
       "examples": [
         "Prometo que no diré nada.",
         "Te juro que llegaré a tiempo."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "id": "fu-match-01",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "tener",
+          "en": "tendré"
+        },
+        {
+          "es": "poder",
+          "en": "podré"
+        },
+        {
+          "es": "saber",
+          "en": "sabré"
+        },
+        {
+          "es": "hacer",
+          "en": "haré"
+        },
+        {
+          "es": "decir",
+          "en": "diré"
+        },
+        {
+          "es": "salir",
+          "en": "saldré"
+        }
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "id": "fu-form-01",
+      "kind": "form",
+      "verb": "hablar",
+      "person": "yo",
+      "answer": "hablaré",
+      "table": "futuro-simple-regular",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "id": "fu-form-02",
+      "kind": "form",
+      "verb": "comer",
+      "person": "tú",
+      "answer": "comerás",
+      "table": "futuro-simple-regular",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "id": "fu-form-03",
+      "kind": "form",
+      "verb": "vivir",
+      "person": "él/ella/usted",
+      "answer": "vivirá",
+      "table": "futuro-simple-regular",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "id": "fu-form-04",
+      "kind": "form",
+      "verb": "hablar",
+      "person": "nosotros",
+      "answer": "hablaremos",
+      "table": "futuro-simple-regular",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "id": "fu-form-05",
+      "kind": "form",
+      "verb": "comer",
+      "person": "vosotros",
+      "answer": "comeréis",
+      "table": "futuro-simple-regular",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "id": "fu-form-06",
+      "kind": "form",
+      "verb": "vivir",
+      "person": "ellos/ellas/ustedes",
+      "answer": "vivirán",
+      "table": "futuro-simple-regular",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "id": "fu-form-07",
+      "kind": "form",
+      "verb": "tener",
+      "person": "yo",
+      "answer": "tendré",
+      "table": "futuro-simple-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "id": "fu-form-08",
+      "kind": "form",
+      "verb": "poder",
+      "person": "tú",
+      "answer": "podrás",
+      "table": "futuro-simple-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "id": "fu-form-09",
+      "kind": "form",
+      "verb": "hacer",
+      "person": "él/ella/usted",
+      "answer": "hará",
+      "table": "futuro-simple-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "id": "fu-form-10",
+      "kind": "form",
+      "verb": "salir",
+      "person": "nosotros",
+      "answer": "saldremos",
+      "table": "futuro-simple-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "id": "fu-form-11",
+      "kind": "form",
+      "verb": "decir",
+      "person": "vosotros",
+      "answer": "diréis",
+      "table": "futuro-simple-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "id": "fu-form-12",
+      "kind": "form",
+      "verb": "tener",
+      "person": "ellos/ellas/ustedes",
+      "answer": "tendrán",
+      "table": "futuro-simple-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "fu-why-01",
+      "es": "Te lo prometo: tendré más cuidado.",
+      "tr": {
+        "hu": "Megígérem: jobban fogok vigyázni.",
+        "en": "I promise you: I will be more careful.",
+        "es": "Te lo prometo: tendré más cuidado.",
+        "de": "Ich verspreche es dir: Ich werde vorsichtiger sein."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ígéret vagy eldöntött terv",
+            "en": "a promise or a decided plan",
+            "es": "una promesa o un plan decidido",
+            "de": "ein Versprechen oder ein entschiedener Plan"
+          }
+        },
+        {
+          "text": {
+            "hu": "jóslat vagy terv a távolabbi jövőre",
+            "en": "a prediction or a plan for the more distant future",
+            "es": "una predicción o un plan para el futuro más lejano",
+            "de": "eine Vorhersage oder ein Plan für die fernere Zukunft"
+          },
+          "wrong": {
+            "hu": "ez jóslat vagy távolabbi terv lenne, de itt a prometo szó konkrét ígéretet vezet be, nem találgatást a jövőről",
+            "en": "this would be a prediction or a distant plan, but here prometo introduces a concrete promise, not a guess about the future",
+            "es": "esto sería una predicción o un plan lejano, pero aquí prometo introduce una promesa concreta, no una suposición sobre el futuro",
+            "de": "das wäre eine Vorhersage oder ein ferner Plan, aber hier leitet prometo ein konkretes Versprechen ein, keine Vermutung über die Zukunft"
+          }
+        },
+        {
+          "text": {
+            "hu": "valószínűség, találgatás a jelenről",
+            "en": "probability, a guess about the present",
+            "es": "probabilidad, una suposición sobre el presente",
+            "de": "Wahrscheinlichkeit, eine Vermutung über die Gegenwart"
+          },
+          "wrong": {
+            "hu": "ez a jelenről szóló találgatás lenne, de a prometo egy jövőbeli viselkedésre tett ígéret, nem a jelen állapotáról szól",
+            "en": "this would be a guess about the present, but prometo is a promise about future behavior, not about the present state",
+            "es": "esto sería una suposición sobre el presente, pero prometo es una promesa sobre un comportamiento futuro, no sobre el estado presente",
+            "de": "das wäre eine Vermutung über die Gegenwart, aber prometo ist ein Versprechen über zukünftiges Verhalten, nicht über den gegenwärtigen Zustand"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "fu-why-02",
+      "es": "Creo que mañana lloverá.",
+      "tr": {
+        "hu": "Azt hiszem, holnap esni fog.",
+        "en": "I think it will rain tomorrow.",
+        "es": "Creo que mañana lloverá.",
+        "de": "Ich glaube, es wird morgen regnen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ígéret vagy eldöntött terv",
+            "en": "a promise or a decided plan",
+            "es": "una promesa o un plan decidido",
+            "de": "ein Versprechen oder ein entschiedener Plan"
+          },
+          "wrong": {
+            "hu": "ez ígéret lenne, de az esőnek nincs akarata, senki sem vállal itt semmit",
+            "en": "this would be a promise, but rain has no will, nobody is committing to anything here",
+            "es": "esto sería una promesa, pero la lluvia no tiene voluntad, nadie se compromete aquí a nada",
+            "de": "das wäre ein Versprechen, aber der Regen hat keinen Willen, hier verpflichtet sich niemand zu etwas"
+          }
+        },
+        {
+          "text": {
+            "hu": "jóslat vagy terv a távolabbi jövőre",
+            "en": "a prediction or a plan for the more distant future",
+            "es": "una predicción o un plan para el futuro más lejano",
+            "de": "eine Vorhersage oder ein Plan für die fernere Zukunft"
+          }
+        },
+        {
+          "text": {
+            "hu": "valószínűség, találgatás a jelenről",
+            "en": "probability, a guess about the present",
+            "es": "probabilidad, una suposición sobre el presente",
+            "de": "Wahrscheinlichkeit, eine Vermutung über die Gegenwart"
+          },
+          "wrong": {
+            "hu": "ez a jelenről szóló találgatás lenne, de a mañana szó egyértelműen a holnapi, jövőbeli időpontra mutat, nem a mostani állapotra",
+            "en": "this would be a guess about the present, but mañana clearly points to tomorrow, a future moment, not the current state",
+            "es": "esto sería una suposición sobre el presente, pero mañana apunta claramente al momento futuro de mañana, no al estado actual",
+            "de": "das wäre eine Vermutung über die Gegenwart, aber mañana zeigt eindeutig auf den zukünftigen Moment morgen, nicht auf den jetzigen Zustand"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "fu-why-03",
+      "es": "¿Dónde está Ana? Estará en casa.",
+      "tr": {
+        "hu": "Hol van Ana? Biztos otthon van.",
+        "en": "Where is Ana? She must be at home.",
+        "es": "¿Dónde está Ana? Estará en casa.",
+        "de": "Wo ist Ana? Sie ist bestimmt zu Hause."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ígéret vagy eldöntött terv",
+            "en": "a promise or a decided plan",
+            "es": "una promesa o un plan decidido",
+            "de": "ein Versprechen oder ein entschiedener Plan"
+          },
+          "wrong": {
+            "hu": "ez ígéret lenne, de itt senki sem vállal semmit, csak egy találgatás hangzik el arról, hol lehet Ana",
+            "en": "this would be a promise, but nobody is committing to anything here, it is just a guess about where Ana might be",
+            "es": "esto sería una promesa, pero aquí nadie se compromete a nada, solo es una suposición sobre dónde puede estar Ana",
+            "de": "das wäre ein Versprechen, aber hier verpflichtet sich niemand zu etwas, es ist nur eine Vermutung, wo Ana sein könnte"
+          }
+        },
+        {
+          "text": {
+            "hu": "jóslat vagy terv a távolabbi jövőre",
+            "en": "a prediction or a plan for the more distant future",
+            "es": "una predicción o un plan para el futuro más lejano",
+            "de": "eine Vorhersage oder ein Plan für die fernere Zukunft"
+          },
+          "wrong": {
+            "hu": "ez egy távolabbi jövőről szóló jóslat lenne, de a kérdés Ana MOSTANI helyéről szól, nem egy jövőbeli eseményről",
+            "en": "this would be a prediction about the more distant future, but the question is about Ana's CURRENT location, not a future event",
+            "es": "esto sería una predicción sobre el futuro más lejano, pero la pregunta es sobre dónde está Ana AHORA, no sobre un evento futuro",
+            "de": "das wäre eine Vorhersage über die fernere Zukunft, aber die Frage betrifft Anas JETZIGEN Aufenthaltsort, kein zukünftiges Ereignis"
+          }
+        },
+        {
+          "text": {
+            "hu": "valószínűség, találgatás a jelenről",
+            "en": "probability, a guess about the present",
+            "es": "probabilidad, una suposición sobre el presente",
+            "de": "Wahrscheinlichkeit, eine Vermutung über die Gegenwart"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "fu-why-04",
+      "es": "Te prometo que no diré nada.",
+      "tr": {
+        "hu": "Megígérem, hogy nem mondok semmit.",
+        "en": "I promise you I will not say anything.",
+        "es": "Te prometo que no diré nada.",
+        "de": "Ich verspreche dir, dass ich nichts sagen werde."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ígéret vagy eldöntött terv",
+            "en": "a promise or a decided plan",
+            "es": "una promesa o un plan decidido",
+            "de": "ein Versprechen oder ein entschiedener Plan"
+          }
+        },
+        {
+          "text": {
+            "hu": "jóslat vagy terv a távolabbi jövőre",
+            "en": "a prediction or a plan for the more distant future",
+            "es": "una predicción o un plan para el futuro más lejano",
+            "de": "eine Vorhersage oder ein Plan für die fernere Zukunft"
+          },
+          "wrong": {
+            "hu": "ez egy távolabbi jóslat lenne, de a prometo szó itt is konkrét ígéretet vezet be, nem bizonytalan találgatást",
+            "en": "this would be a more distant prediction, but prometo again introduces a concrete promise, not an uncertain guess",
+            "es": "esto sería una predicción más lejana, pero prometo introduce de nuevo una promesa concreta, no una suposición incierta",
+            "de": "das wäre eine fernere Vorhersage, aber prometo leitet auch hier ein konkretes Versprechen ein, keine unsichere Vermutung"
+          }
+        },
+        {
+          "text": {
+            "hu": "valószínűség, találgatás a jelenről",
+            "en": "probability, a guess about the present",
+            "es": "probabilidad, una suposición sobre el presente",
+            "de": "Wahrscheinlichkeit, eine Vermutung über die Gegenwart"
+          },
+          "wrong": {
+            "hu": "ez a jelenről szóló találgatás lenne, de itt a beszélő a saját jövőbeli hallgatásáról tesz ígéretet, nem a jelen állapotot találgatja",
+            "en": "this would be a guess about the present, but the speaker is promising their own future silence, not guessing about the present state",
+            "es": "esto sería una suposición sobre el presente, pero el hablante promete su propio silencio futuro, no supone sobre el estado presente",
+            "de": "das wäre eine Vermutung über die Gegenwart, aber der Sprecher verspricht sein eigenes zukünftiges Schweigen, er vermutet nicht über den gegenwärtigen Zustand"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "fu-why-05",
+      "es": "El año que viene viviremos en otra ciudad.",
+      "tr": {
+        "hu": "Jövőre egy másik városban fogunk lakni.",
+        "en": "Next year we will live in another city.",
+        "es": "El año que viene viviremos en otra ciudad.",
+        "de": "Nächstes Jahr werden wir in einer anderen Stadt leben."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ígéret vagy eldöntött terv",
+            "en": "a promise or a decided plan",
+            "es": "una promesa o un plan decidido",
+            "de": "ein Versprechen oder ein entschiedener Plan"
+          },
+          "wrong": {
+            "hu": "ez ígéret lenne, de a mondatban nincs olyan szó (mint a prometo), ami konkrét vállalást jelezne, csak egy jövőbeli terv kijelentése",
+            "en": "this would be a promise, but the sentence has no word (like prometo) signaling a concrete commitment, just the statement of a future plan",
+            "es": "esto sería una promesa, pero la frase no tiene ninguna palabra (como prometo) que señale un compromiso concreto, solo la afirmación de un plan futuro",
+            "de": "das wäre ein Versprechen, aber der Satz enthält kein Wort (wie prometo), das eine konkrete Verpflichtung anzeigt, nur die Aussage eines zukünftigen Plans"
+          }
+        },
+        {
+          "text": {
+            "hu": "jóslat vagy terv a távolabbi jövőre",
+            "en": "a prediction or a plan for the more distant future",
+            "es": "una predicción o un plan para el futuro más lejano",
+            "de": "eine Vorhersage oder ein Plan für die fernere Zukunft"
+          }
+        },
+        {
+          "text": {
+            "hu": "valószínűség, találgatás a jelenről",
+            "en": "probability, a guess about the present",
+            "es": "probabilidad, una suposición sobre el presente",
+            "de": "Wahrscheinlichkeit, eine Vermutung über die Gegenwart"
+          },
+          "wrong": {
+            "hu": "ez a jelenről szóló találgatás lenne, de az el año que viene egyértelműen egy jövőbeli, távolabbi időpontra mutat, nem a mostani állapotra",
+            "en": "this would be a guess about the present, but el año que viene clearly points to a more distant future moment, not the current state",
+            "es": "esto sería una suposición sobre el presente, pero el año que viene apunta claramente a un momento futuro más lejano, no al estado actual",
+            "de": "das wäre eine Vermutung über die Gegenwart, aber el año que viene zeigt eindeutig auf einen ferneren zukünftigen Zeitpunkt, nicht auf den jetzigen Zustand"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "fu-why-06",
+      "es": "Tendrá unos treinta años.",
+      "tr": {
+        "hu": "Nagyjából harmincéves lehet.",
+        "en": "He must be about thirty years old.",
+        "es": "Tendrá unos treinta años.",
+        "de": "Er dürfte etwa dreißig Jahre alt sein."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ígéret vagy eldöntött terv",
+            "en": "a promise or a decided plan",
+            "es": "una promesa o un plan decidido",
+            "de": "ein Versprechen oder ein entschiedener Plan"
+          },
+          "wrong": {
+            "hu": "ez ígéret lenne, de az életkorra senki sem tehet ígéretet, ez csak egy találgatás",
+            "en": "this would be a promise, but nobody can promise someone's age, it is only a guess",
+            "es": "esto sería una promesa, pero nadie puede prometer la edad de alguien, esto es solo una suposición",
+            "de": "das wäre ein Versprechen, aber niemand kann jemandes Alter versprechen, das ist nur eine Vermutung"
+          }
+        },
+        {
+          "text": {
+            "hu": "jóslat vagy terv a távolabbi jövőre",
+            "en": "a prediction or a plan for the more distant future",
+            "es": "una predicción o un plan para el futuro más lejano",
+            "de": "eine Vorhersage oder ein Plan für die fernere Zukunft"
+          },
+          "wrong": {
+            "hu": "ez egy távolabbi jövőről szóló jóslat lenne, de a mondat a személy JELENLEGI életkoráról találgat, nem egy jövőbeli eseményről",
+            "en": "this would be a prediction about the more distant future, but the sentence guesses about the person's CURRENT age, not a future event",
+            "es": "esto sería una predicción sobre el futuro más lejano, pero la frase supone sobre la edad ACTUAL de la persona, no sobre un evento futuro",
+            "de": "das wäre eine Vorhersage über die fernere Zukunft, aber der Satz vermutet über das JETZIGE Alter der Person, kein zukünftiges Ereignis"
+          }
+        },
+        {
+          "text": {
+            "hu": "valószínűség, találgatás a jelenről",
+            "en": "probability, a guess about the present",
+            "es": "probabilidad, una suposición sobre el presente",
+            "de": "Wahrscheinlichkeit, eine Vermutung über die Gegenwart"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "fu-why-07",
+      "es": "Si terminas la tarea, saldremos a cenar.",
+      "tr": {
+        "hu": "Ha befejezed a házi feladatot, elmegyünk vacsorázni.",
+        "en": "If you finish the homework, we will go out for dinner.",
+        "es": "Si terminas la tarea, saldremos a cenar.",
+        "de": "Wenn du die Hausaufgabe beendest, gehen wir zum Abendessen aus."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ígéret vagy eldöntött terv",
+            "en": "a promise or a decided plan",
+            "es": "una promesa o un plan decidido",
+            "de": "ein Versprechen oder ein entschiedener Plan"
+          },
+          "wrong": {
+            "hu": "ez ígéret lenne, de itt egy feltételhez kötött tervről van szó (si + jelen), nem egy önálló vállalásról",
+            "en": "this would be a promise, but this is a plan tied to a condition (si plus the present), not a standalone commitment",
+            "es": "esto sería una promesa, pero se trata de un plan ligado a una condición (si más presente), no un compromiso independiente",
+            "de": "das wäre ein Versprechen, aber es handelt sich um einen an eine Bedingung geknüpften Plan (si plus Präsens), keine eigenständige Verpflichtung"
+          }
+        },
+        {
+          "text": {
+            "hu": "jóslat vagy terv a távolabbi jövőre",
+            "en": "a prediction or a plan for the more distant future",
+            "es": "una predicción o un plan para el futuro más lejano",
+            "de": "eine Vorhersage oder ein Plan für die fernere Zukunft"
+          }
+        },
+        {
+          "text": {
+            "hu": "valószínűség, találgatás a jelenről",
+            "en": "probability, a guess about the present",
+            "es": "probabilidad, una suposición sobre el presente",
+            "de": "Wahrscheinlichkeit, eine Vermutung über die Gegenwart"
+          },
+          "wrong": {
+            "hu": "ez a jelenről szóló találgatás lenne, de a mondat egy jövőbeli, feltételtől függő eseményről szól, nem a mostani állapotról",
+            "en": "this would be a guess about the present, but the sentence is about a future event depending on a condition, not the current state",
+            "es": "esto sería una suposición sobre el presente, pero la frase habla de un evento futuro que depende de una condición, no del estado actual",
+            "de": "das wäre eine Vermutung über die Gegenwart, aber der Satz handelt von einem zukünftigen, von einer Bedingung abhängigen Ereignis, nicht vom jetzigen Zustand"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "id": "fu-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Beszélek a főnökömmel.",
+        "en": "I talk to my boss.",
+        "es": "Hablo con mi jefe.",
+        "de": "Ich spreche mit meinem Chef."
+      },
+      "answer": "Hablaré con mi jefe.",
+      "accept": [
+        "Yo hablaré con mi jefe."
+      ],
+      "wordIds": [
+        "27",
+        "1854"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) hablar szabályos -ar ige, yo: hablaré.",
+        "en": "A future action: futuro simple. Hablar is a regular -ar verb, yo: hablaré.",
+        "es": "Una acción futura: futuro simple. hablar es un verbo regular en -ar, yo: hablaré.",
+        "de": "Eine zukünftige Handlung: futuro simple. hablar ist ein regelmäßiges -ar-Verb, yo: hablaré."
+      }
+    },
+    {
+      "id": "fu-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Beszélsz a családoddal.",
+        "en": "You talk to your family.",
+        "es": "Hablas con tu familia.",
+        "de": "Du sprichst mit deiner Familie."
+      },
+      "answer": "Hablarás con tu familia.",
+      "accept": [
+        "Tú hablarás con tu familia."
+      ],
+      "wordIds": [
+        "27",
+        "1852"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) hablar szabályos -ar ige, tú: hablarás.",
+        "en": "A future action: futuro simple. Hablar is a regular -ar verb, tú: hablarás.",
+        "es": "Una acción futura: futuro simple. hablar es un verbo regular en -ar, tú: hablarás.",
+        "de": "Eine zukünftige Handlung: futuro simple. hablar ist ein regelmäßiges -ar-Verb, tú: hablarás."
+      }
+    },
+    {
+      "id": "fu-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Nem beszél pénzről.",
+        "en": "He does not talk about money.",
+        "es": "No habla de dinero.",
+        "de": "Er spricht nicht über Geld."
+      },
+      "answer": "No hablará de dinero.",
+      "accept": [
+        "Él no hablará de dinero."
+      ],
+      "wordIds": [
+        "27",
+        "21",
+        "1"
+      ],
+      "why": {
+        "hu": "Tagadás jövő időben, a no az ige elé kerül: futuro simple. A(z) hablar szabályos -ar ige, él: hablará.",
+        "en": "Negation in the future, no goes before the verb: futuro simple. Hablar is a regular -ar verb, él: hablará.",
+        "es": "Negación en futuro, no va antes del verbo: futuro simple. hablar es un verbo regular en -ar, él: hablará.",
+        "de": "Verneinung im Futur, no steht vor dem Verb: futuro simple. hablar ist ein regelmäßiges -ar-Verb, él: hablará."
+      }
+    },
+    {
+      "id": "fu-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Beszélünk a tanárral.",
+        "en": "We talk to the teacher.",
+        "es": "Hablamos con el profesor.",
+        "de": "Wir sprechen mit dem Lehrer."
+      },
+      "answer": "Hablaremos con el profesor.",
+      "accept": [
+        "Nosotros hablaremos con el profesor."
+      ],
+      "wordIds": [
+        "27",
+        "1147"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) hablar szabályos -ar ige, nosotros: hablaremos.",
+        "en": "A future action: futuro simple. Hablar is a regular -ar verb, nosotros: hablaremos.",
+        "es": "Una acción futura: futuro simple. hablar es un verbo regular en -ar, nosotros: hablaremos.",
+        "de": "Eine zukünftige Handlung: futuro simple. hablar ist ein regelmäßiges -ar-Verb, nosotros: hablaremos."
+      }
+    },
+    {
+      "id": "fu-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Beszélnek az orvossal?",
+        "en": "Do they talk to the doctor?",
+        "es": "¿Hablan con el médico?",
+        "de": "Sprechen sie mit dem Arzt?"
+      },
+      "answer": "¿Hablarán con el médico?",
+      "accept": [
+        "¿Ellos hablarán con el médico?"
+      ],
+      "wordIds": [
+        "27",
+        "1292"
+      ],
+      "why": {
+        "hu": "Kérdés egy jövőbeli cselekvésről: futuro simple. A(z) hablar szabályos -ar ige, ellos: hablarán.",
+        "en": "A question about a future action: futuro simple. Hablar is a regular -ar verb, ellos: hablarán.",
+        "es": "Una pregunta sobre una acción futura: futuro simple. hablar es un verbo regular en -ar, ellos: hablarán.",
+        "de": "Eine Frage zu einer zukünftigen Handlung: futuro simple. hablar ist ein regelmäßiges -ar-Verb, ellos: hablarán."
+      }
+    },
+    {
+      "id": "fu-tr-06",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Otthon eszem.",
+        "en": "I eat at home.",
+        "es": "Como en casa.",
+        "de": "Ich esse zu Hause."
+      },
+      "answer": "Comeré en casa.",
+      "accept": [
+        "Yo comeré en casa."
+      ],
+      "wordIds": [
+        "25",
+        "14"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) comer szabályos -er ige, yo: comeré.",
+        "en": "A future action: futuro simple. Comer is a regular -er verb, yo: comeré.",
+        "es": "Una acción futura: futuro simple. comer es un verbo regular en -er, yo: comeré.",
+        "de": "Eine zukünftige Handlung: futuro simple. comer ist ein regelmäßiges -er-Verb, yo: comeré."
+      }
+    },
+    {
+      "id": "fu-tr-07",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "A barátaiddal eszel.",
+        "en": "You eat with your friends.",
+        "es": "Comes con tus amigos.",
+        "de": "Du isst mit deinen Freunden."
+      },
+      "answer": "Comerás con tus amigos.",
+      "accept": [
+        "Tú comerás con tus amigos."
+      ],
+      "wordIds": [
+        "25",
+        "22"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) comer szabályos -er ige, tú: comerás.",
+        "en": "A future action: futuro simple. Comer is a regular -er verb, tú: comerás.",
+        "es": "Una acción futura: futuro simple. comer es un verbo regular en -er, tú: comerás.",
+        "de": "Eine zukünftige Handlung: futuro simple. comer ist ein regelmäßiges -er-Verb, tú: comerás."
+      }
+    },
+    {
+      "id": "fu-tr-08",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Holnap együtt eszünk.",
+        "en": "We eat together tomorrow.",
+        "es": "Comemos juntos mañana.",
+        "de": "Wir essen morgen zusammen."
+      },
+      "answer": "Comeremos juntos mañana.",
+      "accept": [
+        "Nosotros comeremos juntos mañana."
+      ],
+      "wordIds": [
+        "25",
+        "86",
+        "56"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) comer szabályos -er ige, nosotros: comeremos.",
+        "en": "A future action: futuro simple. Comer is a regular -er verb, nosotros: comeremos.",
+        "es": "Una acción futura: futuro simple. comer es un verbo regular en -er, nosotros: comeremos.",
+        "de": "Eine zukünftige Handlung: futuro simple. comer ist ein regelmäßiges -er-Verb, nosotros: comeremos."
+      }
+    },
+    {
+      "id": "fu-tr-09",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Nem esznek sokat.",
+        "en": "They do not eat much.",
+        "es": "No comen mucho.",
+        "de": "Sie essen nicht viel."
+      },
+      "answer": "No comerán mucho.",
+      "accept": [
+        "Ellas no comerán mucho."
+      ],
+      "wordIds": [
+        "25",
+        "3752",
+        "1"
+      ],
+      "why": {
+        "hu": "Tagadás jövő időben, a no az ige elé kerül: futuro simple. A(z) comer szabályos -er ige, ellas: comerán.",
+        "en": "Negation in the future, no goes before the verb: futuro simple. Comer is a regular -er verb, ellas: comerán.",
+        "es": "Negación en futuro, no va antes del verbo: futuro simple. comer es un verbo regular en -er, ellas: comerán.",
+        "de": "Verneinung im Futur, no steht vor dem Verb: futuro simple. comer ist ein regelmäßiges -er-Verb, ellas: comerán."
+      }
+    },
+    {
+      "id": "fu-tr-10",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Hamarosan esztek?",
+        "en": "Are you all eating soon?",
+        "es": "¿Coméis pronto?",
+        "de": "Esst ihr bald?"
+      },
+      "answer": "¿Comeréis pronto?",
+      "accept": [
+        "¿Vosotros comeréis pronto?"
+      ],
+      "wordIds": [
+        "25",
+        "3780"
+      ],
+      "why": {
+        "hu": "Kérdés egy jövőbeli cselekvésről: futuro simple. A(z) comer szabályos -er ige, vosotros: comeréis.",
+        "en": "A question about a future action: futuro simple. Comer is a regular -er verb, vosotros: comeréis.",
+        "es": "Una pregunta sobre una acción futura: futuro simple. comer es un verbo regular en -er, vosotros: comeréis.",
+        "de": "Eine Frage zu einer zukünftigen Handlung: futuro simple. comer ist ein regelmäßiges -er-Verb, vosotros: comeréis."
+      }
+    },
+    {
+      "id": "fu-tr-11",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "A városban élek.",
+        "en": "I live in the city.",
+        "es": "Vivo en la ciudad.",
+        "de": "Ich lebe in der Stadt."
+      },
+      "answer": "Viviré en la ciudad.",
+      "accept": [
+        "Yo viviré en la ciudad."
+      ],
+      "wordIds": [
+        "82",
+        "1851"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) vivir szabályos -ir ige, yo: viviré.",
+        "en": "A future action: futuro simple. Vivir is a regular -ir verb, yo: viviré.",
+        "es": "Una acción futura: futuro simple. vivir es un verbo regular en -ir, yo: viviré.",
+        "de": "Eine zukünftige Handlung: futuro simple. vivir ist ein regelmäßiges -ir-Verb, yo: viviré."
+      }
+    },
+    {
+      "id": "fu-tr-12",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "A testvéreddel élsz.",
+        "en": "You live with your brother.",
+        "es": "Vives con tu hermano.",
+        "de": "Du lebst mit deinem Bruder."
+      },
+      "answer": "Vivirás con tu hermano.",
+      "accept": [
+        "Tú vivirás con tu hermano."
+      ],
+      "wordIds": [
+        "82",
+        "1358"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) vivir szabályos -ir ige, tú: vivirás.",
+        "en": "A future action: futuro simple. Vivir is a regular -ir verb, tú: vivirás.",
+        "es": "Una acción futura: futuro simple. vivir es un verbo regular en -ir, tú: vivirás.",
+        "de": "Eine zukünftige Handlung: futuro simple. vivir ist ein regelmäßiges -ir-Verb, tú: vivirás."
+      }
+    },
+    {
+      "id": "fu-tr-13",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Az országban él.",
+        "en": "She lives in the country.",
+        "es": "Vive en el país.",
+        "de": "Sie lebt im Land."
+      },
+      "answer": "Vivirá en el país.",
+      "accept": [
+        "Ella vivirá en el país."
+      ],
+      "wordIds": [
+        "82",
+        "1040"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) vivir szabályos -ir ige, ella: vivirá.",
+        "en": "A future action: futuro simple. Vivir is a regular -ir verb, ella: vivirá.",
+        "es": "Una acción futura: futuro simple. vivir es un verbo regular en -ir, ella: vivirá.",
+        "de": "Eine zukünftige Handlung: futuro simple. vivir ist ein regelmäßiges -ir-Verb, ella: vivirá."
+      }
+    },
+    {
+      "id": "fu-tr-14",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Nem itt élünk.",
+        "en": "We do not live here.",
+        "es": "No vivimos aquí.",
+        "de": "Wir leben nicht hier."
+      },
+      "answer": "No viviremos aquí.",
+      "accept": [
+        "Nosotros no viviremos aquí."
+      ],
+      "wordIds": [
+        "82",
+        "8",
+        "1"
+      ],
+      "why": {
+        "hu": "Tagadás jövő időben, a no az ige elé kerül: futuro simple. A(z) vivir szabályos -ir ige, nosotros: viviremos.",
+        "en": "Negation in the future, no goes before the verb: futuro simple. Vivir is a regular -ir verb, nosotros: viviremos.",
+        "es": "Negación en futuro, no va antes del verbo: futuro simple. vivir es un verbo regular en -ir, nosotros: viviremos.",
+        "de": "Verneinung im Futur, no steht vor dem Verb: futuro simple. vivir ist ein regelmäßiges -ir-Verb, nosotros: viviremos."
+      }
+    },
+    {
+      "id": "fu-tr-15",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Elégedetten élnek?",
+        "en": "Do they live happily?",
+        "es": "¿Viven contentos?",
+        "de": "Leben sie zufrieden?"
+      },
+      "answer": "¿Vivirán contentos?",
+      "accept": [
+        "¿Ellos vivirán contentos?"
+      ],
+      "wordIds": [
+        "82",
+        "1360"
+      ],
+      "why": {
+        "hu": "Kérdés egy jövőbeli cselekvésről: futuro simple. A(z) vivir szabályos -ir ige, ellos: vivirán.",
+        "en": "A question about a future action: futuro simple. Vivir is a regular -ir verb, ellos: vivirán.",
+        "es": "Una pregunta sobre una acción futura: futuro simple. vivir es un verbo regular en -ir, ellos: vivirán.",
+        "de": "Eine Frage zu einer zukünftigen Handlung: futuro simple. vivir ist ein regelmäßiges -ir-Verb, ellos: vivirán."
+      }
+    },
+    {
+      "id": "fu-tr-16",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "A vizsgára tanulok.",
+        "en": "I study for the exam.",
+        "es": "Estudio para el examen.",
+        "de": "Ich lerne für die Prüfung."
+      },
+      "answer": "Estudiaré para el examen.",
+      "accept": [
+        "Yo estudiaré para el examen."
+      ],
+      "wordIds": [
+        "1410",
+        "1857"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) estudiar szabályos -ar ige, yo: estudiaré.",
+        "en": "A future action: futuro simple. Estudiar is a regular -ar verb, yo: estudiaré.",
+        "es": "Una acción futura: futuro simple. estudiar es un verbo regular en -ar, yo: estudiaré.",
+        "de": "Eine zukünftige Handlung: futuro simple. estudiar ist ein regelmäßiges -ar-Verb, yo: estudiaré."
+      }
+    },
+    {
+      "id": "fu-tr-17",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Sokat tanulsz.",
+        "en": "You study a lot.",
+        "es": "Estudias mucho.",
+        "de": "Du lernst viel."
+      },
+      "answer": "Estudiarás mucho.",
+      "accept": [
+        "Tú estudiarás mucho."
+      ],
+      "wordIds": [
+        "1410",
+        "3752"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) estudiar szabályos -ar ige, tú: estudiarás.",
+        "en": "A future action: futuro simple. Estudiar is a regular -ar verb, tú: estudiarás.",
+        "es": "Una acción futura: futuro simple. estudiar es un verbo regular en -ar, tú: estudiarás.",
+        "de": "Eine zukünftige Handlung: futuro simple. estudiar ist ein regelmäßiges -ar-Verb, tú: estudiarás."
+      }
+    },
+    {
+      "id": "fu-tr-18",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Korán tanulunk.",
+        "en": "We study early.",
+        "es": "Estudiamos temprano.",
+        "de": "Wir lernen früh."
+      },
+      "answer": "Estudiaremos temprano.",
+      "accept": [
+        "Nosotros estudiaremos temprano."
+      ],
+      "wordIds": [
+        "1410",
+        "1239"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) estudiar szabályos -ar ige, nosotros: estudiaremos.",
+        "en": "A future action: futuro simple. Estudiar is a regular -ar verb, nosotros: estudiaremos.",
+        "es": "Una acción futura: futuro simple. estudiar es un verbo regular en -ar, nosotros: estudiaremos.",
+        "de": "Eine zukünftige Handlung: futuro simple. estudiar ist ein regelmäßiges -ar-Verb, nosotros: estudiaremos."
+      }
+    },
+    {
+      "id": "fu-tr-19",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Nem tanulnak éjszaka.",
+        "en": "They do not study at night.",
+        "es": "No estudian de noche.",
+        "de": "Sie lernen nicht nachts."
+      },
+      "answer": "No estudiarán de noche.",
+      "accept": [
+        "Ellos no estudiarán de noche."
+      ],
+      "wordIds": [
+        "1410",
+        "50",
+        "1"
+      ],
+      "why": {
+        "hu": "Tagadás jövő időben, a no az ige elé kerül: futuro simple. A(z) estudiar szabályos -ar ige, ellos: estudiarán.",
+        "en": "Negation in the future, no goes before the verb: futuro simple. Estudiar is a regular -ar verb, ellos: estudiarán.",
+        "es": "Negación en futuro, no va antes del verbo: futuro simple. estudiar es un verbo regular en -ar, ellos: estudiarán.",
+        "de": "Verneinung im Futur, no steht vor dem Verb: futuro simple. estudiar ist ein regelmäßiges -ar-Verb, ellos: estudiarán."
+      }
+    },
+    {
+      "id": "fu-tr-20",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Egyedül tanul?",
+        "en": "Does he study alone?",
+        "es": "¿Estudia solo?",
+        "de": "Lernt er allein?"
+      },
+      "answer": "¿Estudiará solo?",
+      "accept": [
+        "¿Él estudiará solo?"
+      ],
+      "wordIds": [
+        "1410",
+        "87"
+      ],
+      "why": {
+        "hu": "Kérdés egy jövőbeli cselekvésről: futuro simple. A(z) estudiar szabályos -ar ige, él: estudiará.",
+        "en": "A question about a future action: futuro simple. Estudiar is a regular -ar verb, él: estudiará.",
+        "es": "Una pregunta sobre una acción futura: futuro simple. estudiar es un verbo regular en -ar, él: estudiará.",
+        "de": "Eine Frage zu einer zukünftigen Handlung: futuro simple. estudiar ist ein regelmäßiges -ar-Verb, él: estudiará."
+      }
+    },
+    {
+      "id": "fu-tr-21",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Otthon dolgozom.",
+        "en": "I work at home.",
+        "es": "Trabajo en casa.",
+        "de": "Ich arbeite zu Hause."
+      },
+      "answer": "Trabajaré en casa.",
+      "accept": [
+        "Yo trabajaré en casa."
+      ],
+      "wordIds": [
+        "1409",
+        "14"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) trabajar szabályos -ar ige, yo: trabajaré.",
+        "en": "A future action: futuro simple. Trabajar is a regular -ar verb, yo: trabajaré.",
+        "es": "Una acción futura: futuro simple. trabajar es un verbo regular en -ar, yo: trabajaré.",
+        "de": "Eine zukünftige Handlung: futuro simple. trabajar ist ein regelmäßiges -ar-Verb, yo: trabajaré."
+      }
+    },
+    {
+      "id": "fu-tr-22",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Az apáddal dolgozol.",
+        "en": "You work with your father.",
+        "es": "Trabajas con tu padre.",
+        "de": "Du arbeitest mit deinem Vater."
+      },
+      "answer": "Trabajarás con tu padre.",
+      "accept": [
+        "Tú trabajarás con tu padre."
+      ],
+      "wordIds": [
+        "1409",
+        "43"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) trabajar szabályos -ar ige, tú: trabajarás.",
+        "en": "A future action: futuro simple. Trabajar is a regular -ar verb, tú: trabajarás.",
+        "es": "Una acción futura: futuro simple. trabajar es un verbo regular en -ar, tú: trabajarás.",
+        "de": "Eine zukünftige Handlung: futuro simple. trabajar ist ein regelmäßiges -ar-Verb, tú: trabajarás."
+      }
+    },
+    {
+      "id": "fu-tr-23",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Holnap korán dolgozik.",
+        "en": "She works early tomorrow.",
+        "es": "Trabaja mañana temprano.",
+        "de": "Sie arbeitet morgen früh."
+      },
+      "answer": "Trabajará mañana temprano.",
+      "accept": [
+        "Ella trabajará mañana temprano."
+      ],
+      "wordIds": [
+        "1409",
+        "56",
+        "1239"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) trabajar szabályos -ar ige, ella: trabajará.",
+        "en": "A future action: futuro simple. Trabajar is a regular -ar verb, ella: trabajará.",
+        "es": "Una acción futura: futuro simple. trabajar es un verbo regular en -ar, ella: trabajará.",
+        "de": "Eine zukünftige Handlung: futuro simple. trabajar ist ein regelmäßiges -ar-Verb, ella: trabajará."
+      }
+    },
+    {
+      "id": "fu-tr-24",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Nem dolgozunk utána.",
+        "en": "We do not work afterward.",
+        "es": "No trabajamos después.",
+        "de": "Wir arbeiten danach nicht."
+      },
+      "answer": "No trabajaremos después.",
+      "accept": [
+        "Nosotros no trabajaremos después."
+      ],
+      "wordIds": [
+        "1409",
+        "62",
+        "1"
+      ],
+      "why": {
+        "hu": "Tagadás jövő időben, a no az ige elé kerül: futuro simple. A(z) trabajar szabályos -ar ige, nosotros: trabajaremos.",
+        "en": "Negation in the future, no goes before the verb: futuro simple. Trabajar is a regular -ar verb, nosotros: trabajaremos.",
+        "es": "Negación en futuro, no va antes del verbo: futuro simple. trabajar es un verbo regular en -ar, nosotros: trabajaremos.",
+        "de": "Verneinung im Futur, no steht vor dem Verb: futuro simple. trabajar ist ein regelmäßiges -ar-Verb, nosotros: trabajaremos."
+      }
+    },
+    {
+      "id": "fu-tr-25",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Együtt dolgoznak?",
+        "en": "Do they work together?",
+        "es": "¿Trabajan juntos?",
+        "de": "Arbeiten sie zusammen?"
+      },
+      "answer": "¿Trabajarán juntos?",
+      "accept": [
+        "¿Ellos trabajarán juntos?"
+      ],
+      "wordIds": [
+        "1409",
+        "86"
+      ],
+      "why": {
+        "hu": "Kérdés egy jövőbeli cselekvésről: futuro simple. A(z) trabajar szabályos -ar ige, ellos: trabajarán.",
+        "en": "A question about a future action: futuro simple. Trabajar is a regular -ar verb, ellos: trabajarán.",
+        "es": "Una pregunta sobre una acción futura: futuro simple. trabajar es un verbo regular en -ar, ellos: trabajarán.",
+        "de": "Eine Frage zu einer zukünftigen Handlung: futuro simple. trabajar ist ein regelmäßiges -ar-Verb, ellos: trabajarán."
+      }
+    },
+    {
+      "id": "fu-tr-26",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "A városba utazom.",
+        "en": "I travel to the city.",
+        "es": "Viajo a la ciudad.",
+        "de": "Ich reise in die Stadt."
+      },
+      "answer": "Viajaré a la ciudad.",
+      "accept": [
+        "Yo viajaré a la ciudad."
+      ],
+      "wordIds": [
+        "1579",
+        "1851"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) viajar szabályos -ar ige, yo: viajaré.",
+        "en": "A future action: futuro simple. Viajar is a regular -ar verb, yo: viajaré.",
+        "es": "Una acción futura: futuro simple. viajar es un verbo regular en -ar, yo: viajaré.",
+        "de": "Eine zukünftige Handlung: futuro simple. viajar ist ein regelmäßiges -ar-Verb, yo: viajaré."
+      }
+    },
+    {
+      "id": "fu-tr-27",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "A családoddal utazol.",
+        "en": "You travel with your family.",
+        "es": "Viajas con tu familia.",
+        "de": "Du reist mit deiner Familie."
+      },
+      "answer": "Viajarás con tu familia.",
+      "accept": [
+        "Tú viajarás con tu familia."
+      ],
+      "wordIds": [
+        "1579",
+        "1852"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) viajar szabályos -ar ige, tú: viajarás.",
+        "en": "A future action: futuro simple. Viajar is a regular -ar verb, tú: viajarás.",
+        "es": "Una acción futura: futuro simple. viajar es un verbo regular en -ar, tú: viajarás.",
+        "de": "Eine zukünftige Handlung: futuro simple. viajar ist ein regelmäßiges -ar-Verb, tú: viajarás."
+      }
+    },
+    {
+      "id": "fu-tr-28",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Hamarosan utazunk.",
+        "en": "We travel soon.",
+        "es": "Viajamos pronto.",
+        "de": "Wir reisen bald."
+      },
+      "answer": "Viajaremos pronto.",
+      "accept": [
+        "Nosotros viajaremos pronto."
+      ],
+      "wordIds": [
+        "1579",
+        "3780"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) viajar szabályos -ar ige, nosotros: viajaremos.",
+        "en": "A future action: futuro simple. Viajar is a regular -ar verb, nosotros: viajaremos.",
+        "es": "Una acción futura: futuro simple. viajar es un verbo regular en -ar, nosotros: viajaremos.",
+        "de": "Eine zukünftige Handlung: futuro simple. viajar ist ein regelmäßiges -ar-Verb, nosotros: viajaremos."
+      }
+    },
+    {
+      "id": "fu-tr-29",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Nem utaznak egyedül.",
+        "en": "They do not travel alone.",
+        "es": "No viajan solas.",
+        "de": "Sie reisen nicht allein."
+      },
+      "answer": "No viajarán solas.",
+      "accept": [
+        "Ellas no viajarán solas."
+      ],
+      "wordIds": [
+        "1579",
+        "87",
+        "1"
+      ],
+      "why": {
+        "hu": "Tagadás jövő időben, a no az ige elé kerül: futuro simple. A(z) viajar szabályos -ar ige, ellas: viajarán.",
+        "en": "Negation in the future, no goes before the verb: futuro simple. Viajar is a regular -ar verb, ellas: viajarán.",
+        "es": "Negación en futuro, no va antes del verbo: futuro simple. viajar es un verbo regular en -ar, ellas: viajarán.",
+        "de": "Verneinung im Futur, no steht vor dem Verb: futuro simple. viajar ist ein regelmäßiges -ar-Verb, ellas: viajarán."
+      }
+    },
+    {
+      "id": "fu-tr-30",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Elégedetten utaznak?",
+        "en": "Do they travel happily?",
+        "es": "¿Viajan contentos?",
+        "de": "Reisen sie zufrieden?"
+      },
+      "answer": "¿Viajarán contentos?",
+      "accept": [
+        "¿Ellos viajarán contentos?"
+      ],
+      "wordIds": [
+        "1579",
+        "1360"
+      ],
+      "why": {
+        "hu": "Kérdés egy jövőbeli cselekvésről: futuro simple. A(z) viajar szabályos -ar ige, ellos: viajarán.",
+        "en": "A question about a future action: futuro simple. Viajar is a regular -ar verb, ellos: viajarán.",
+        "es": "Una pregunta sobre una acción futura: futuro simple. viajar es un verbo regular en -ar, ellos: viajarán.",
+        "de": "Eine Frage zu einer zukünftigen Handlung: futuro simple. viajar ist ein regelmäßiges -ar-Verb, ellos: viajarán."
+      }
+    },
+    {
+      "id": "fu-tr-31",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Sok időm van.",
+        "en": "I have a lot of time.",
+        "es": "Tengo mucho tiempo.",
+        "de": "Ich habe viel Zeit."
+      },
+      "answer": "Tendré mucho tiempo.",
+      "accept": [
+        "Yo tendré mucho tiempo."
+      ],
+      "wordIds": [
+        "33",
+        "3752",
+        "13"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) tener jövő töve tendr-: tendré.",
+        "en": "A future action: futuro simple. Tener's future stem is tendr-: tendré.",
+        "es": "Una acción futura: futuro simple. La raíz de futuro de tener es tendr-: tendré.",
+        "de": "Eine zukünftige Handlung: futuro simple. Der Futurstamm von tener ist tendr-: tendré."
+      }
+    },
+    {
+      "id": "fu-tr-32",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Van egy megbeszélésed.",
+        "en": "You have a meeting.",
+        "es": "Tienes una reunión.",
+        "de": "Du hast ein Treffen."
+      },
+      "answer": "Tendrás una reunión.",
+      "accept": [
+        "Tú tendrás una reunión."
+      ],
+      "wordIds": [
+        "33",
+        "3726"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) tener jövő töve tendr-: tendrás.",
+        "en": "A future action: futuro simple. Tener's future stem is tendr-: tendrás.",
+        "es": "Una acción futura: futuro simple. La raíz de futuro de tener es tendr-: tendrás.",
+        "de": "Eine zukünftige Handlung: futuro simple. Der Futurstamm von tener ist tendr-: tendrás."
+      }
+    },
+    {
+      "id": "fu-tr-33",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Van egy problémája.",
+        "en": "She has a problem.",
+        "es": "Tiene un problema.",
+        "de": "Sie hat ein Problem."
+      },
+      "answer": "Tendrá un problema.",
+      "accept": [
+        "Ella tendrá un problema."
+      ],
+      "wordIds": [
+        "33",
+        "76"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) tener jövő töve tendr-: tendrá.",
+        "en": "A future action: futuro simple. Tener's future stem is tendr-: tendrá.",
+        "es": "Una acción futura: futuro simple. La raíz de futuro de tener es tendr-: tendrá.",
+        "de": "Eine zukünftige Handlung: futuro simple. Der Futurstamm von tener ist tendr-: tendrá."
+      }
+    },
+    {
+      "id": "fu-tr-34",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Nincs pénzünk.",
+        "en": "We do not have money.",
+        "es": "No tenemos dinero.",
+        "de": "Wir haben kein Geld."
+      },
+      "answer": "No tendremos dinero.",
+      "accept": [
+        "Nosotros no tendremos dinero."
+      ],
+      "wordIds": [
+        "33",
+        "21",
+        "1"
+      ],
+      "why": {
+        "hu": "Tagadás jövő időben, a no az ige elé kerül: futuro simple. A(z) tener jövő töve tendr-: tendremos.",
+        "en": "Negation in the future, no goes before the verb: futuro simple. Tener's future stem is tendr-: tendremos.",
+        "es": "Negación en futuro, no va antes del verbo: futuro simple. La raíz de futuro de tener es tendr-: tendremos.",
+        "de": "Verneinung im Futur, no steht vor dem Verb: futuro simple. Der Futurstamm von tener ist tendr-: tendremos."
+      }
+    },
+    {
+      "id": "fu-tr-35",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Van holnap idejük?",
+        "en": "Do they have time tomorrow?",
+        "es": "¿Tienen tiempo mañana?",
+        "de": "Haben sie morgen Zeit?"
+      },
+      "answer": "¿Tendrán tiempo mañana?",
+      "accept": [
+        "¿Ellos tendrán tiempo mañana?"
+      ],
+      "wordIds": [
+        "33",
+        "13",
+        "56"
+      ],
+      "why": {
+        "hu": "Kérdés egy jövőbeli cselekvésről: futuro simple. A(z) tener jövő töve tendr-: tendrán.",
+        "en": "A question about a future action: futuro simple. Tener's future stem is tendr-: tendrán.",
+        "es": "Una pregunta sobre una acción futura: futuro simple. La raíz de futuro de tener es tendr-: tendrán.",
+        "de": "Eine Frage zu einer zukünftigen Handlung: futuro simple. Der Futurstamm von tener ist tendr-: tendrán."
+      }
+    },
+    {
+      "id": "fu-tr-36",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Hamarosan tudok segíteni.",
+        "en": "I can help soon.",
+        "es": "Puedo ayudar pronto.",
+        "de": "Ich kann bald helfen."
+      },
+      "answer": "Podré ayudar pronto.",
+      "accept": [
+        "Yo podré ayudar pronto."
+      ],
+      "wordIds": [
+        "29",
+        "239",
+        "3780"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) poder jövő töve podr-: podré.",
+        "en": "A future action: futuro simple. Poder's future stem is podr-: podré.",
+        "es": "Una acción futura: futuro simple. La raíz de futuro de poder es podr-: podré.",
+        "de": "Eine zukünftige Handlung: futuro simple. Der Futurstamm von poder ist podr-: podré."
+      }
+    },
+    {
+      "id": "fu-tr-37",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "El tudsz jönni a buliba.",
+        "en": "You can come to the party.",
+        "es": "Puedes venir a la fiesta.",
+        "de": "Du kannst zur Party kommen."
+      },
+      "answer": "Podrás venir a la fiesta.",
+      "accept": [
+        "Tú podrás venir a la fiesta."
+      ],
+      "wordIds": [
+        "29",
+        "32",
+        "218"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) poder jövő töve podr-: podrás.",
+        "en": "A future action: futuro simple. Poder's future stem is podr-: podrás.",
+        "es": "Una acción futura: futuro simple. La raíz de futuro de poder es podr-: podrás.",
+        "de": "Eine zukünftige Handlung: futuro simple. Der Futurstamm von poder ist podr-: podrás."
+      }
+    },
+    {
+      "id": "fu-tr-38",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Tud beszélni a főnökkel.",
+        "en": "He can talk to the boss.",
+        "es": "Puede hablar con el jefe.",
+        "de": "Er kann mit dem Chef sprechen."
+      },
+      "answer": "Podrá hablar con el jefe.",
+      "accept": [
+        "Él podrá hablar con el jefe."
+      ],
+      "wordIds": [
+        "29",
+        "27",
+        "1854"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) poder jövő töve podr-: podrá.",
+        "en": "A future action: futuro simple. Poder's future stem is podr-: podrá.",
+        "es": "Una acción futura: futuro simple. La raíz de futuro de poder es podr-: podrá.",
+        "de": "Eine zukünftige Handlung: futuro simple. Der Futurstamm von poder ist podr-: podrá."
+      }
+    },
+    {
+      "id": "fu-tr-39",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Nem tudunk együtt utazni.",
+        "en": "We cannot travel together.",
+        "es": "No podemos viajar juntos.",
+        "de": "Wir können nicht zusammen reisen."
+      },
+      "answer": "No podremos viajar juntos.",
+      "accept": [
+        "Nosotros no podremos viajar juntos."
+      ],
+      "wordIds": [
+        "29",
+        "1579",
+        "86",
+        "1"
+      ],
+      "why": {
+        "hu": "Tagadás jövő időben, a no az ige elé kerül: futuro simple. A(z) poder jövő töve podr-: podremos.",
+        "en": "Negation in the future, no goes before the verb: futuro simple. Poder's future stem is podr-: podremos.",
+        "es": "Negación en futuro, no va antes del verbo: futuro simple. La raíz de futuro de poder es podr-: podremos.",
+        "de": "Verneinung im Futur, no steht vor dem Verb: futuro simple. Der Futurstamm von poder ist podr-: podremos."
+      }
+    },
+    {
+      "id": "fu-tr-40",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "El tudnak jönni korán?",
+        "en": "Can they come early?",
+        "es": "¿Pueden venir temprano?",
+        "de": "Können sie früh kommen?"
+      },
+      "answer": "¿Podrán venir temprano?",
+      "accept": [
+        "¿Ellos podrán venir temprano?"
+      ],
+      "wordIds": [
+        "29",
+        "32",
+        "1239"
+      ],
+      "why": {
+        "hu": "Kérdés egy jövőbeli cselekvésről: futuro simple. A(z) poder jövő töve podr-: podrán.",
+        "en": "A question about a future action: futuro simple. Poder's future stem is podr-: podrán.",
+        "es": "Una pregunta sobre una acción futura: futuro simple. La raíz de futuro de poder es podr-: podrán.",
+        "de": "Eine Frage zu einer zukünftigen Handlung: futuro simple. Der Futurstamm von poder ist podr-: podrán."
+      }
+    },
+    {
+      "id": "fu-tr-41",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Megcsinálom a vacsorát.",
+        "en": "I make dinner.",
+        "es": "Hago la cena.",
+        "de": "Ich mache das Abendessen."
+      },
+      "answer": "Haré la cena.",
+      "accept": [
+        "Yo haré la cena."
+      ],
+      "wordIds": [
+        "34",
+        "1261"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) hacer jövő töve har-: haré.",
+        "en": "A future action: futuro simple. Hacer's future stem is har-: haré.",
+        "es": "Una acción futura: futuro simple. La raíz de futuro de hacer es har-: haré.",
+        "de": "Eine zukünftige Handlung: futuro simple. Der Futurstamm von hacer ist har-: haré."
+      }
+    },
+    {
+      "id": "fu-tr-42",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Becsomagolod a bőröndöt.",
+        "en": "You pack the suitcase.",
+        "es": "Haces la maleta.",
+        "de": "Du packst den Koffer."
+      },
+      "answer": "Harás la maleta.",
+      "accept": [
+        "Tú harás la maleta."
+      ],
+      "wordIds": [
+        "34",
+        "204"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) hacer jövő töve har-: harás.",
+        "en": "A future action: futuro simple. Hacer's future stem is har-: harás.",
+        "es": "Una acción futura: futuro simple. La raíz de futuro de hacer es har-: harás.",
+        "de": "Eine zukünftige Handlung: futuro simple. Der Futurstamm von hacer ist har-: harás."
+      }
+    },
+    {
+      "id": "fu-tr-43",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Egy utazást tesz.",
+        "en": "She takes a trip.",
+        "es": "Hace un viaje.",
+        "de": "Sie macht eine Reise."
+      },
+      "answer": "Hará un viaje.",
+      "accept": [
+        "Ella hará un viaje."
+      ],
+      "wordIds": [
+        "34",
+        "202"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) hacer jövő töve har-: hará.",
+        "en": "A future action: futuro simple. Hacer's future stem is har-: hará.",
+        "es": "Una acción futura: futuro simple. La raíz de futuro de hacer es har-: hará.",
+        "de": "Eine zukünftige Handlung: futuro simple. Der Futurstamm von hacer ist har-: hará."
+      }
+    },
+    {
+      "id": "fu-tr-44",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Nem csináljuk meg a bulit.",
+        "en": "We do not throw the party.",
+        "es": "No hacemos la fiesta.",
+        "de": "Wir machen die Party nicht."
+      },
+      "answer": "No haremos la fiesta.",
+      "accept": [
+        "Nosotros no haremos la fiesta."
+      ],
+      "wordIds": [
+        "34",
+        "218",
+        "1"
+      ],
+      "why": {
+        "hu": "Tagadás jövő időben, a no az ige elé kerül: futuro simple. A(z) hacer jövő töve har-: haremos.",
+        "en": "Negation in the future, no goes before the verb: futuro simple. Hacer's future stem is har-: haremos.",
+        "es": "Negación en futuro, no va antes del verbo: futuro simple. La raíz de futuro de hacer es har-: haremos.",
+        "de": "Verneinung im Futur, no steht vor dem Verb: futuro simple. Der Futurstamm von hacer ist har-: haremos."
+      }
+    },
+    {
+      "id": "fu-tr-45",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Ők csinálják az ételt?",
+        "en": "Do they make the food?",
+        "es": "¿Hacen la comida?",
+        "de": "Machen sie das Essen?"
+      },
+      "answer": "¿Harán la comida?",
+      "accept": [
+        "¿Ellos harán la comida?"
+      ],
+      "wordIds": [
+        "34",
+        "70"
+      ],
+      "why": {
+        "hu": "Kérdés egy jövőbeli cselekvésről: futuro simple. A(z) hacer jövő töve har-: harán.",
+        "en": "A question about a future action: futuro simple. Hacer's future stem is har-: harán.",
+        "es": "Una pregunta sobre una acción futura: futuro simple. La raíz de futuro de hacer es har-: harán.",
+        "de": "Eine Frage zu einer zukünftigen Handlung: futuro simple. Der Futurstamm von hacer ist har-: harán."
+      }
+    },
+    {
+      "id": "fu-tr-46",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Mindent elmondok.",
+        "en": "I say everything.",
+        "es": "Digo todo.",
+        "de": "Ich sage alles."
+      },
+      "answer": "Diré todo.",
+      "accept": [
+        "Yo diré todo."
+      ],
+      "wordIds": [
+        "35",
+        "10"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) decir jövő töve dir-: diré.",
+        "en": "A future action: futuro simple. Decir's future stem is dir-: diré.",
+        "es": "Una acción futura: futuro simple. La raíz de futuro de decir es dir-: diré.",
+        "de": "Eine zukünftige Handlung: futuro simple. Der Futurstamm von decir ist dir-: diré."
+      }
+    },
+    {
+      "id": "fu-tr-47",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Igazat mondasz.",
+        "en": "You tell the truth.",
+        "es": "Dices la verdad.",
+        "de": "Du sagst die Wahrheit."
+      },
+      "answer": "Dirás la verdad.",
+      "accept": [
+        "Tú dirás la verdad."
+      ],
+      "wordIds": [
+        "35",
+        "74"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) decir jövő töve dir-: dirás.",
+        "en": "A future action: futuro simple. Decir's future stem is dir-: dirás.",
+        "es": "Una acción futura: futuro simple. La raíz de futuro de decir es dir-: dirás.",
+        "de": "Eine zukünftige Handlung: futuro simple. Der Futurstamm von decir ist dir-: dirás."
+      }
+    },
+    {
+      "id": "fu-tr-48",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Mindig igazat mond.",
+        "en": "He always tells the truth.",
+        "es": "Dice la verdad siempre.",
+        "de": "Er sagt immer die Wahrheit."
+      },
+      "answer": "Dirá la verdad siempre.",
+      "accept": [
+        "Él dirá la verdad siempre."
+      ],
+      "wordIds": [
+        "35",
+        "74",
+        "57"
+      ],
+      "why": {
+        "hu": "Jövőbeli cselekvés: futuro simple. A(z) decir jövő töve dir-: dirá.",
+        "en": "A future action: futuro simple. Decir's future stem is dir-: dirá.",
+        "es": "Una acción futura: futuro simple. La raíz de futuro de decir es dir-: dirá.",
+        "de": "Eine zukünftige Handlung: futuro simple. Der Futurstamm von decir ist dir-: dirá."
+      }
+    },
+    {
+      "id": "fu-tr-49",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Nem mondunk semmit.",
+        "en": "We do not say anything.",
+        "es": "No decimos nada.",
+        "de": "Wir sagen nichts."
+      },
+      "answer": "No diremos nada.",
+      "accept": [
+        "Nosotros no diremos nada."
+      ],
+      "wordIds": [
+        "35",
+        "11",
+        "1"
+      ],
+      "why": {
+        "hu": "Tagadás jövő időben, a no az ige elé kerül: futuro simple. A(z) decir jövő töve dir-: diremos.",
+        "en": "Negation in the future, no goes before the verb: futuro simple. Decir's future stem is dir-: diremos.",
+        "es": "Negación en futuro, no va antes del verbo: futuro simple. La raíz de futuro de decir es dir-: diremos.",
+        "de": "Verneinung im Futur, no steht vor dem Verb: futuro simple. Der Futurstamm von decir ist dir-: diremos."
+      }
+    },
+    {
+      "id": "fu-tr-50",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "hu": "Igazat mondanak?",
+        "en": "Do they tell the truth?",
+        "es": "¿Dicen la verdad?",
+        "de": "Sagen sie die Wahrheit?"
+      },
+      "answer": "¿Dirán la verdad?",
+      "accept": [
+        "¿Ellos dirán la verdad?"
+      ],
+      "wordIds": [
+        "35",
+        "74"
+      ],
+      "why": {
+        "hu": "Kérdés egy jövőbeli cselekvésről: futuro simple. A(z) decir jövő töve dir-: dirán.",
+        "en": "A question about a future action: futuro simple. Decir's future stem is dir-: dirán.",
+        "es": "Una pregunta sobre una acción futura: futuro simple. La raíz de futuro de decir es dir-: dirán.",
+        "de": "Eine Frage zu einer zukünftigen Handlung: futuro simple. Der Futurstamm von decir ist dir-: dirán."
+      }
     }
   ]
 }
