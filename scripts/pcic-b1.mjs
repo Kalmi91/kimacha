@@ -13,7 +13,10 @@
 // "tener ~ una buena/una mala ~ actitud" tipusu darabokhoz; az egy-tildes
 // eset valtozatlan.
 //
-// Usage: node scripts/pcic-b1.mjs
+// `--level b2` a ket-oszlopos tablazatok MASODIK <td>-jet dolgozza fel az
+// elso helyett, ugyanazzal a kinyero logikaval; alapertelmezes: b1 (elso <td>).
+//
+// Usage: node scripts/pcic-b1.mjs [--level b1|b2]
 
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -22,6 +25,13 @@ const SOURCES = [
   { tag: '08', path: 'data/pcic/08_nociones_generales_inventario_b1-b2.md' },
   { tag: '09', path: 'data/pcic/09_nociones_especificas_inventario_b1-b2.md' },
 ];
+
+const LEVEL_ARG_IDX = process.argv.indexOf('--level');
+const level = LEVEL_ARG_IDX !== -1 ? process.argv[LEVEL_ARG_IDX + 1] : 'b1';
+if (level !== 'b1' && level !== 'b2') {
+  console.error(`Unknown --level: ${level} (expected b1 or b2)`);
+  process.exit(1);
+}
 
 // ---------------------------------------------------------------------------
 // HTML helpers
@@ -294,10 +304,11 @@ for (const { tag, path } of SOURCES) {
     }
     const tbodyMatch = tableHtml.match(/<tbody>([\s\S]*?)<\/tbody>/);
     if (!tbodyMatch) continue;
-    const firstTdMatch = tbodyMatch[1].match(/<td>([\s\S]*?)<\/td>/);
-    if (!firstTdMatch) continue;
+    const tdMatches = [...tbodyMatch[1].matchAll(/<td>([\s\S]*?)<\/td>/g)];
+    const tdMatch = level === 'b1' ? tdMatches[0] : tdMatches[1];
+    if (!tdMatch) continue;
 
-    for (const liHtml of extractLeafLis(firstTdMatch[1])) {
+    for (const liHtml of extractLeafLis(tdMatch[1])) {
       const { headwordItems, sentences } = processLi(liHtml);
       const firstEs = headwordItems.length > 0 ? headwordItems[0].es : null;
       for (const hw of headwordItems) {
@@ -321,7 +332,7 @@ for (const { tag, path } of SOURCES) {
 // Stable, content-based id: sha1 of the lowercased/trimmed `es`, first 8 hex
 // chars. Keeps pcic_cards.item_id valid across re-runs and rule fixes.
 function stableId(es) {
-  return `b1-${createHash('sha1').update(es.toLowerCase().trim()).digest('hex').slice(0, 8)}`;
+  return `${level}-${createHash('sha1').update(es.toLowerCase().trim()).digest('hex').slice(0, 8)}`;
 }
 
 // Global dedup, first occurrence wins (kisbetus `es` szerint).
@@ -352,11 +363,11 @@ const strip = (item) => {
   return rest;
 };
 
-writeFileSync('data/pcic/b1-all.json', JSON.stringify(all.map(strip), null, 2) + '\n');
-writeFileSync('data/pcic/b1-sample.json', JSON.stringify(sample.map(strip), null, 2) + '\n');
+writeFileSync(`data/pcic/${level}-all.json`, JSON.stringify(all.map(strip), null, 2) + '\n');
+writeFileSync(`data/pcic/${level}-sample.json`, JSON.stringify(sample.map(strip), null, 2) + '\n');
 
-console.log(`b1-all.json: ${all.length} items`);
-console.log(`b1-sample.json: ${sample.length} items`);
+console.log(`${level}-all.json: ${all.length} items`);
+console.log(`${level}-sample.json: ${sample.length} items`);
 console.log(`skipped tables: ${skippedTables.length}`);
 if (skippedTables.length) console.log(skippedTables);
 console.log(`tilde-product truncated to ${MAX_TILDE_PRODUCT}: ${tildeProductTruncations.length}`);

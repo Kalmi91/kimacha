@@ -11,15 +11,27 @@
 // csak azt nézi, hogy minden meglévő b1-en.json érték nem-üres string, és kiírja
 // az `en <lefordított>/<fordítható>` állást.
 //
-// Usage: node scripts/pcic-check.mjs [--all]
+// Usage: node scripts/pcic-check.mjs [--level b1|b2] [--all]
 
 import { readFileSync } from 'node:fs';
 
+const levelArgIdx = process.argv.indexOf('--level');
+const level = levelArgIdx !== -1 ? process.argv[levelArgIdx + 1] : 'b1';
+if (level !== 'b1' && level !== 'b2') {
+  console.error(`Unknown --level: ${level} (expected b1 or b2)`);
+  process.exit(1);
+}
 const useAll = process.argv.includes('--all');
 
-const sample = JSON.parse(readFileSync('data/pcic/b1-sample.json', 'utf8'));
-const en = JSON.parse(readFileSync('data/pcic/b1-en.json', 'utf8'));
-const all = JSON.parse(readFileSync('data/pcic/b1-all.json', 'utf8'));
+const sample = JSON.parse(readFileSync(`data/pcic/${level}-sample.json`, 'utf8'));
+let en;
+try {
+  en = JSON.parse(readFileSync(`data/pcic/${level}-en.json`, 'utf8'));
+} catch (err) {
+  if (err.code === 'ENOENT') en = {};
+  else throw err;
+}
+const all = JSON.parse(readFileSync(`data/pcic/${level}-all.json`, 'utf8'));
 
 const checked = useAll ? all : sample;
 
@@ -69,8 +81,8 @@ if (orphans.length) {
   console.error(`Árva b1-en.json kulcs, nincs a mintában (${orphans.length}): ${orphans.join(', ')}`);
 }
 
-// 4. minden id "b1-" + 8 hex karakter
-const idRe = /^b1-[0-9a-f]{8}$/;
+// 4. minden id "${level}-" + 8 hex karakter
+const idRe = new RegExp(`^${level}-[0-9a-f]{8}$`);
 const badIds = all.filter((item) => !idRe.test(item.id)).map((item) => item.id);
 if (badIds.length) {
   errors += badIds.length;
