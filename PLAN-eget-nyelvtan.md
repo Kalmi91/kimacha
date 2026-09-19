@@ -46,10 +46,29 @@ Státusz-jelek: `[ ]` nyitott, `[~]` fut, `[x]` kész, `[!]` elakadt.
   megjegyzés: az audit rendhagyó-ige térképe (IRREGULAR_FORMS) a venir/decir/llover kötőmód-alakjait nem ismeri, 4 választós item szabályos igére cserélve; ha a kötőmód-leckék rendhagyó alakjai kellenek a választósokba, az audit-térkép bővítése kód (/kimacha_nyelvtan)
 - [x] 15. `temporales-subjuntivo` (B1 core, SUBJ) új lecke → KÉSZ 2026-09-19, commit 11d1eba, audit 0/0, jest 1252/1252, tsc 0, lint 0 error; 31 item (12 choice, 1 match, 12 form, 6 why), glossza nincs
   minta: «Cuando ___ (tú) la tarea, te llamo.» = termines | «Antes de que ___ (ustedes) con el amigo, esperamos aquí.» = hablen | «Después de ___, vamos al cine.» = comer
-- [~] 16. `subjuntivo-imperfecto` (B2 core, SUBJ) új lecke, transform nélkül (TenseId-bővítés kell) → kész, ha: ugyanaz
-- …és a probe szerinti folytatás: C-sor 11 V1 átírás, D exam 17, E full 5.
+- [x] 16. `subjuntivo-imperfecto` (B2 core, SUBJ) új lecke, transform nélkül → KÉSZ 2026-09-19, commit 7b8564a, audit 0/0, jest 1263/1263, tsc 0, lint 0 error; 31 item (12 choice, 1 match, 12 form, 6 why)
+  minta: «Quería que ___ (tú) a la fiesta.» = vinieras | «Habla como si ___ (él) todo.» = supiera | «Si ___ (yo) tiempo, iría.» = tuviera
+  TenseId-bővítés kell: subjuntivo-imperfecto (transform-drill), /kimacha_nyelvtan
+  ⚠ minta-hiba (kód-igény, /kimacha_nyelvtan): a glossary 14 ragozott alakot tart (vinieras, supiera, tuviera, iría…), mert az audit IRREGULAR_FORMS térképe a kötőmód-alakokat nem ismeri; ugyanez a 9. lépésben (9 alak). A glossza nem erre való. Kell: IRREGULAR_FORMS bővítése subj. presente + imperfecto + condicional alakokkal, utána a két lecke glossary-ja üríthető.
+- B-SOR (core) KÉSZ: 16/16. C-sor (V1→V2 átírás, 11 lecke):
+- [x] 17. `quien-a-quien` (A1 core-plus) V1→V2 → KÉSZ 2026-09-19, commit b1b0b00, audit 0/0, jest 1273/1273, tsc 0, lint 0 error; 31 item (12 choice, 1 match, 12 form, 6 why), glossza 29→35 (ragozott alakok: amamos, aman…, ugyanaz a minta-hiba, mint a 16. lépésnél)
+  minta: «A ti ___ amo.» = te | «Yo te ___ un libro.» = doy | «A él ___ escribo un mensaje.» = le | form: él/ella/usted × objeto indirecto → le
+- [x] 18. `sustantivo-numero` (A1 core) V1→V2 → KÉSZ 2026-09-19, commit 9438b55, audit 0/0, jest 1283/1283, tsc 0, lint 0 error; 32 item (12 choice, 1 match, 12 form, 7 why), glossza 17→15
+  minta: «___ día es muy largo.» = El | «Escucho ___ canciones en español.» = las | form: el lápiz → los lápices
+- [x] 19. `adjetivo-concordancia` (A1 exam) V1→V2 → KÉSZ 2026-09-19, commit 5911f88, audit 0/0, jest 1293/1293, tsc 0, lint 0 error; 32 item (12 choice, 1 match, 12 form, 7 why), glossza 15 változatlan
+  minta: «La casa es muy ___.» = bonita | «Ella es ___ y trabaja en un hospital.» = española | form: rojo → rojas (nő többes)
+- [~] 20. `articulos-genero` (A1 exam) V1→V2 → kész, ha: ugyanaz
+- [ ] 21. `clases-de-palabras` (A1 exam, 16 item) V1→V2 → kész, ha: ugyanaz
+- [ ] 22. `demostrativos` (A1 full) V1→V2 → kész, ha: ugyanaz
+- [ ] 23. `interrogativos` (A1 full) V1→V2 → kész, ha: ugyanaz
+- [ ] 24. `negacion` (A1 full) V1→V2 → kész, ha: ugyanaz
+- [ ] 25. `posesivos` (A1 full) V1→V2 → kész, ha: ugyanaz
+- [ ] 26. `por-para` (A2 core) V1→V2 → kész, ha: ugyanaz
+- [ ] 27. `perfecto` (A2 full, igeidős) V1→V2 + 50 transform presente → perfecto → kész, ha: ugyanaz
+- …és a probe szerinti folytatás: D exam 17, E full 5.
 
 Adag = 3 lecke; adag után push a `nyelvtan` ágra, első adag után PR.
+6. adag (16-19) pusholva 2026-09-19, PR #25 frissül.
 5. adag (13-15) pusholva 2026-09-19, PR #25 frissül.
 4. adag (10-12) pusholva 2026-09-19, PR #25 frissül.
 3. adag (7-9) pusholva 2026-09-19, PR #25 frissül.
@@ -976,4 +995,212 @@ Nem pusholsz.
 - commit hash
 - 3 minta választós `sentence` (+ `correct`)
 - glossza-szavak egy sorban; kártya-kérés sorok, ha voltak; elakadás egy mondatban, ha volt
+Nincs diff, nincs fájltartalom, nincs narratíva.
+
+---
+
+## BRIEF quien-a-quien V1→V2 (17. lépés, C-sor, A1 core-plus, ÁTÍRÁS)
+
+Worktree gyökér: `/home/kalmi/ai/kimacha-wt-eget-nyelvtan`. Minden `node` / `npx` innen fut.
+Ág: `nyelvtan` (már ki van checkolva, ne válts ágat).
+
+### Olvasd el ELŐBB (ebben a sorrendben, csak a releváns szeletet)
+1. `/home/kalmi/ai/ai-workspace/kimacha/LECKE-SEMA.md` teljes, különösen a §7 (V1→V2 átírás: mi marad, mi hova megy), a blokkok, `form`/`match`/`why`, a választós `wrong` stílusa „miért ez az alak, és mi lenne, ha a másik", `speak` «...».
+2. `lib/grammar/lessonTypes.ts` teljes (V2 séma).
+3. `lib/grammar/syllabus.ts` 262-268. sor (id `quien-a-quien`, level A1, title ×4 „Ki kinek: te amo, me das", blurb: a végződés mondja meg, ki cselekszik, a névmás azt, kivel).
+4. `scripts/audit-games.mjs` fejléc-kommentje (P1/P2; szint-szabály: csak A0..A1 szó vagy glossza).
+5. Minta V2 A1 lecke: `data/games/grammar/es/pronombres-od.json` (A1, névmás-téma, body + 12 choice + 2 match + 8 form + 7 why). Teljesen olvasd, ez a formátum-minta.
+6. A célfájl: `data/games/grammar/es/quien-a-quien.json` (V1: `topic`, `level` A1, `title`, `rule` ~1.5K, `more` ~1.9K, `glossary` 31 szó, 12 választós item). Teljesen olvasd, minden szövege átmegy a V2-be.
+7. Regisztráció: `lib/games/content/es.ts` már importálja, nem kell új sor.
+
+### Feladat: V1 → V2 átírás, ugyanabban a fájlban
+Nem igeidős téma: NINCS transform, NINCS `tense`.
+A. **Fej:** `schema: 2`, a `topic` id (`quien-a-quien`) NEM változik (a `game_progress` kulcsa), `level` és `title` a syllabus szerint (a V1 `title` marad, ha egyezik).
+B. **`body`:** a V1 `rule` + `more` szövege blokkokba megy, SEMMI nem vész el (1:1 tartalom, átrendezve): `text` (1 bekezdés, mire jó: az ige végződése = ki csinálja, a névmás = kivel/kinek; a magyar „szeretlek" két spanyol szó), `list` vagy `usage` a szabálypontok mind példával (`ExamplePair`: `es` + `tr` ×4; a V1 szövegében lévő minden szabály és példa ide), `table` id-val (`quien`: sorok = a 6 személy, oszlopok = alany-végződés (-o/-as/-a/-amos/-an, „yo/tú/él…"), tárgy-névmás (me/te/lo-la/nos/los-las), részes-névmás (me/te/le/nos/les); a `form` itemek erre hivatkoznak: `verb` = a header 2. oszlopának `es` értéke, nem-ige tábla, mint a `preposiciones-basicas.json`-ban; az `auditFormItem` minden form-hármast egy tábla-cellához köt, ezért a 12 form item 12 különböző cellát kér), `contrast` (te amo vs me amas: ki szeret kit; le doy vs lo veo: részes vs tárgy), `tip` (1, a V1 `more`-ból, ha van ilyen; ha nincs: „a névmás az ige ELŐTT áll, a végződés az ige VÉGÉN: két helyen két információ"). Minden `Lang4` mind a 4 nyelven (hu/en/es/de), üres string tilos (P1).
+C. **`speak` ×4**, a spanyol szakaszok «...» közt (LECKE-SEMA §3).
+D. **`glossary`:** a V1 glossary marad; csak akkor szűkül, ha egy szó A1-ig már tanított (audit P2 szólhat), csak akkor bővül, ha új példamondat kéri. Kártyák: `node ~/ai/.claude/skills/eget-nyelvtan/probe.cjs --cards A1 /tmp/claude-1000/cards-A1.tsv`.
+E. **Itemek:** a meglévő **12 választós marad** (a `sentence` és `correct` változatlan; a `wrong` minden rossz opción átírva a LECKE-SEMA stílusra ×4 nyelven: miért nem az, mi lenne, ha; a V1 item egyéb mezői, ha vannak (`rule`, `hint`), a `wrong`-ba vagy a `why` itemekbe mennek, nem vesznek el); **1-2 `match`** (5-6 pár: alak ↔ ki-kinek); **12 `form`** a `quien` table id-ra (mondat + (személy, szerep) → alak, pl. `___ (tárgy, te) veo mañana.` → `te`, `Ana ___ (részes, nekem) da el libro.` → `me`); **6-8 `why`** (3 szabály-név, pl. „végződés = alany", „tárgy-névmás", „részes-névmás", a rossz opciókon `wrong` ×4).
+F. **Mondat-szabályok:** legfeljebb 12 szó (P2); természetes, anyanyelvű így mondja; csak A0-A1 szavak vagy glossza; csak spanyol forrásmondat (K1); Mexikó-spanyol.
+G. Ha valamelyik teszt fix darabszámot állít (V1/V2 számláló: `grep -rn "schema" lib/__tests__/*.test.ts lib/grammar/__tests__/*.test.ts`), frissítsd a számot, semmi mást. Ha egy jest-teszt olyan fájlban piros, ami nem a te leckéd (pl. `lib/games/*.ts`), NEM javítod a kódot: piros állapottal jelentesz, melyik teszt és miért.
+
+### Kapu (sorban, mind a worktree gyökeréből)
+```
+node scripts/audit-games.mjs 2>&1 | tail -15     # 0 P1, cél 0 P2
+npx jest 2>&1 | tail -8                           # zöld
+npx tsc --noEmit 2>&1 | tail -3                   # 0 hiba
+npx expo lint 2>&1 | tail -5                      # 0 error
+```
+Piros → javítasz és újra, legfeljebb 3-szor, aztán piros állapottal jelentesz (NEM commitolsz pirosat).
+
+### Commit (csak zöld kapuval)
+`git add data/games/grammar/es/quien-a-quien.json` (+ a teszt, ha nyúltál hozzá), majd:
+```
+refactor(grammar): quien-a-quien V2 séma (nyelvtan)
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+```
+Nem pusholsz.
+
+### Jelentés (max 10 sor)
+- fájl + item-számok fajtánként (choice/match/form/why)
+- a 4 kapu utolsó sora
+- commit hash
+- 3 minta választós `sentence` (+ `correct`), ebből 1 új `form`
+- glossza-változás egy sorban; elakadás egy mondatban, ha volt
+Nincs diff, nincs fájltartalom, nincs narratíva.
+
+---
+
+## BRIEF sustantivo-numero V1→V2 (18. lépés, C-sor, A1 core, ÁTÍRÁS)
+
+Worktree gyökér: `/home/kalmi/ai/kimacha-wt-eget-nyelvtan`. Minden `node` / `npx` innen fut.
+Ág: `nyelvtan` (már ki van checkolva, ne válts ágat).
+
+### Olvasd el ELŐBB (ebben a sorrendben, csak a releváns szeletet)
+1. `/home/kalmi/ai/ai-workspace/kimacha/LECKE-SEMA.md` teljes, különösen a §7 (V1→V2 átírás), a blokkok, `form`/`match`/`why`, a választós `wrong` stílusa, `speak` «...».
+2. `lib/grammar/lessonTypes.ts` teljes (V2 séma).
+3. `lib/grammar/syllabus.ts` 170-176. sor (id `sustantivo-numero`, level A1, title ×4 „Főnév: nem és többes szám", blurb: -o hím, -a nő, és hogyan lesz belőle többes szám).
+4. `scripts/audit-games.mjs` fejléc-kommentje (P1/P2; szint-szabály: csak A0..A1 szó vagy glossza).
+5. Minta V2 átírt lecke: `data/games/grammar/es/quien-a-quien.json` (előző lépés, V1→V2 átírás, nem-ige táblával). Teljesen olvasd, ez a formátum-minta.
+6. A célfájl: `data/games/grammar/es/sustantivo-numero.json` (V1: `topic`, `level` A1, `title`, `rule` ~1.4K, `more` ~1.5K, `glossary` 17 szó, 12 választós item). Teljesen olvasd, minden szövege átmegy a V2-be.
+7. Regisztráció: `lib/games/content/es.ts` már importálja, nem kell új sor.
+
+### Feladat: V1 → V2 átírás, ugyanabban a fájlban
+Nem igeidős téma: NINCS transform, NINCS `tense`.
+A. **Fej:** `schema: 2`, a `topic` id (`sustantivo-numero`) NEM változik, `level` és `title` a syllabus szerint.
+B. **`body`:** a V1 `rule` + `more` szövege blokkokba megy, SEMMI nem vész el (1:1 tartalom, átrendezve): `text` (1 bekezdés, mire jó: a főnév neme és száma minden névelőt, melléknevet, névmást magával húz), `list` vagy `usage` a szabálypontok mind példával (`ExamplePair`: `es` + `tr` ×4; a V1 minden szabálya és példája ide: -o/-a, -ción/-sión/-dad/-tad nőnem, -ma görög hímnem (el problema, el día, la mano), -e és mássalhangzó vegyes; többes: magánhangzó + s, mássalhangzó + es, -z → -ces, hangsúly-változás (lección → lecciones), változatlan (el lunes / los lunes)), `table` id-val (`plural`: sorok = 10-12 főnév (libro, casa, ciudad, lápiz, lección, lunes, problema, mano, mes, examen…), oszlopok = névelő + egyes, névelő + többes; a `form` itemek erre hivatkoznak: `verb` = a header 2. oszlopának `es` értéke, nem-ige tábla; az `auditFormItem` minden form-hármast egy tábla-cellához köt, ezért a 12 form item 12 különböző cellát kér), `contrast` (el problema vs la casa: -a nem mindig nőnem; el lunes vs los lunes: alak azonos, névelő dönt), `tip` (1, a V1 `more`-ból, ha van; ha nincs: „a főnevet mindig a névelőjével tanuld: el mapa, la foto"). Minden `Lang4` mind a 4 nyelven, üres string tilos (P1).
+C. **`speak` ×4**, a spanyol szakaszok «...» közt.
+D. **`glossary`:** a V1 glossary marad; szűkül, ha egy szó A1-ig tanított, bővül, ha új példamondat kéri. Kártyák: `node ~/ai/.claude/skills/eget-nyelvtan/probe.cjs --cards A1 /tmp/claude-1000/cards-A1.tsv`.
+E. **Itemek:** a meglévő **12 választós marad** (`sentence` és `correct` változatlan; a `wrong` minden rossz opción átírva LECKE-SEMA stílusra ×4; egyéb V1 item-mező a `wrong`-ba vagy `why`-ba, nem vész el); **1 `match`** (5-6 pár: egyes ↔ többes vagy főnév ↔ névelő); **12 `form`** a `plural` table id-ra (egyes → többes névelővel, pl. `la ciudad → ___` → `las ciudades`, `el lápiz → ___` → `los lápices`); **6-8 `why`** (3 szabály-név, pl. „-o hím / -a nő", „-dad nőnem", „mássalhangzó + es", „-z → -ces", a rossz opciókon `wrong` ×4).
+F. **Mondat-szabályok:** legfeljebb 12 szó (P2); természetes; csak A0-A1 szavak vagy glossza; csak spanyol forrásmondat (K1); Mexikó-spanyol.
+G. Ha valamelyik teszt fix darabszámot állít (V1/V2 számláló), frissítsd a számot, semmi mást. Ha egy jest-teszt olyan fájlban piros, ami nem a te leckéd, NEM javítod a kódot: piros állapottal jelentesz, melyik teszt és miért.
+
+### Kapu (sorban, mind a worktree gyökeréből)
+```
+node scripts/audit-games.mjs 2>&1 | tail -15     # 0 P1, cél 0 P2
+npx jest 2>&1 | tail -8                           # zöld
+npx tsc --noEmit 2>&1 | tail -3                   # 0 hiba
+npx expo lint 2>&1 | tail -5                      # 0 error
+```
+Piros → javítasz és újra, legfeljebb 3-szor, aztán piros állapottal jelentesz (NEM commitolsz pirosat).
+
+### Commit (csak zöld kapuval)
+`git add data/games/grammar/es/sustantivo-numero.json` (+ a teszt, ha nyúltál hozzá), majd:
+```
+refactor(grammar): sustantivo-numero V2 séma (nyelvtan)
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+```
+Nem pusholsz.
+
+### Jelentés (max 10 sor)
+- fájl + item-számok fajtánként (choice/match/form/why)
+- a 4 kapu utolsó sora
+- commit hash
+- 3 minta (2 választós `sentence` + `correct`, 1 új `form`)
+- glossza-változás egy sorban; elakadás egy mondatban, ha volt
+Nincs diff, nincs fájltartalom, nincs narratíva.
+
+---
+
+## BRIEF adjetivo-concordancia V1→V2 (19. lépés, C-sor, A1 exam, ÁTÍRÁS)
+
+Worktree gyökér: `/home/kalmi/ai/kimacha-wt-eget-nyelvtan`. Minden `node` / `npx` innen fut.
+Ág: `nyelvtan` (már ki van checkolva, ne válts ágat).
+
+### Olvasd el ELŐBB (ebben a sorrendben, csak a releváns szeletet)
+1. `/home/kalmi/ai/ai-workspace/kimacha/LECKE-SEMA.md` teljes, különösen a §7 (V1→V2 átírás), a blokkok, `form`/`match`/`why`, a választós `wrong` stílusa, `speak` «...».
+2. `lib/grammar/lessonTypes.ts` teljes (V2 séma).
+3. `lib/grammar/syllabus.ts` 184-190. sor (id `adjetivo-concordancia`, level A1, title ×4 „Melléknév-egyeztetés", blurb: a melléknév a főnév nemét és számát veszi fel, és mögé kerül).
+4. `scripts/audit-games.mjs` fejléc-kommentje (P1/P2; szint-szabály: csak A0..A1 szó vagy glossza).
+5. Minta V2 átírt lecke: `data/games/grammar/es/sustantivo-numero.json` (előző lépés, V1→V2, nem-ige táblával); ha még V1, `quien-a-quien.json`. Egyet olvass, teljesen.
+6. A célfájl: `data/games/grammar/es/adjetivo-concordancia.json` (V1: `rule` ~1.6K, `more` ~1.4K, `glossary` 10 szó, 12 választós item, itemenként `sentence`, `options`, `correct`, `wrong`, `why`, `examples`). Teljesen olvasd, minden szövege átmegy a V2-be.
+7. Regisztráció: `lib/games/content/es.ts` már importálja, nem kell új sor.
+
+### Feladat: V1 → V2 átírás, ugyanabban a fájlban
+Nem igeidős téma: NINCS transform, NINCS `tense`.
+A. **Fej:** `schema: 2`, a `topic` id NEM változik, `level` és `title` a syllabus szerint.
+B. **`body`:** a V1 `rule` + `more` szövege blokkokba megy, SEMMI nem vész el (1:1 tartalom, átrendezve): `text` (1 bekezdés, mire jó), `list` vagy `usage` a szabálypontok mind példával (`ExamplePair`: `es` + `tr` ×4; a V1 minden szabálya és példája ide: -o/-a/-os/-as négy alak; -e és mássalhangzó két alak (grande/grandes, azul/azules); nemzetiség-melléknév mássalhangzóra 4 alak (español/española); helye a főnév után, kivéve bueno/malo/grande (buen, mal, gran a főnév előtt); mucho/poco egyeztet, muy nem), `table` id-val (`concordancia`: sorok = 8-12 melléknév (rojo, grande, azul, español, bueno, feliz, trabajador, joven, inteligente, mexicano…), oszlopok = hím egyes, nő egyes, hím többes, nő többes; a `form` itemek erre hivatkoznak: `verb` = a header 2. oszlopának `es` értéke, nem-ige tábla; az `auditFormItem` minden form-hármast egy tábla-cellához köt, ezért a 12 form item 12 különböző cellát kér), `contrast` (un coche rojo vs una casa roja: nem; un chico grande vs un gran chico: hely és jelentés), `tip` (1). Minden `Lang4` mind a 4 nyelven, üres string tilos (P1).
+C. **`speak` ×4**, a spanyol szakaszok «...» közt.
+D. **`glossary`:** a V1 glossary marad; szűkül, ha egy szó A1-ig tanított, bővül, ha új példamondat kéri. Kártyák: `node ~/ai/.claude/skills/eget-nyelvtan/probe.cjs --cards A1 /tmp/claude-1000/cards-A1.tsv`.
+E. **Itemek:** a meglévő **12 választós marad** (`sentence`, `options`, `correct`, `examples` változatlan; a `wrong` minden rossz opción átírva LECKE-SEMA stílusra ×4; a V1 item `why` mezője a V2 sémában ha nem létezik választós itemen, a szövege a `wrong`-ba vagy a `why` itemekbe megy, nem vész el); **1 `match`** (5-6 pár: főnév ↔ egyeztetett melléknév); **12 `form`** a `concordancia` table id-ra (főnév + melléknév alapalak → egyeztetett alak, pl. `las casas (rojo) → ___` → `rojas`, `los chicos (feliz) → ___` → `felices`); **6-8 `why`** (3 szabály-név, pl. „-o/-a négy alak", „-e két alak", „főnév után", „buen/gran előtte", a rossz opciókon `wrong` ×4).
+F. **Mondat-szabályok:** legfeljebb 12 szó (P2); természetes; csak A0-A1 szavak vagy glossza; csak spanyol forrásmondat (K1); Mexikó-spanyol (carro, nem coche, ha új mondatot írsz; a meglévő V1 mondatok maradnak).
+G. Ha valamelyik teszt fix darabszámot állít, frissítsd a számot, semmi mást. Ha egy jest-teszt olyan fájlban piros, ami nem a te leckéd, NEM javítod a kódot: piros állapottal jelentesz, melyik teszt és miért.
+
+### Kapu (sorban, mind a worktree gyökeréből)
+```
+node scripts/audit-games.mjs 2>&1 | tail -15     # 0 P1, cél 0 P2
+npx jest 2>&1 | tail -8                           # zöld
+npx tsc --noEmit 2>&1 | tail -3                   # 0 hiba
+npx expo lint 2>&1 | tail -5                      # 0 error
+```
+Piros → javítasz és újra, legfeljebb 3-szor, aztán piros állapottal jelentesz (NEM commitolsz pirosat).
+
+### Commit (csak zöld kapuval)
+`git add data/games/grammar/es/adjetivo-concordancia.json` (+ a teszt, ha nyúltál hozzá), majd:
+```
+refactor(grammar): adjetivo-concordancia V2 séma (nyelvtan)
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+```
+Nem pusholsz.
+
+### Jelentés (max 10 sor)
+- fájl + item-számok fajtánként (choice/match/form/why)
+- a 4 kapu utolsó sora
+- commit hash
+- 3 minta (2 választós `sentence` + `correct`, 1 új `form`)
+- glossza-változás egy sorban; elakadás egy mondatban, ha volt
+Nincs diff, nincs fájltartalom, nincs narratíva.
+
+---
+
+## BRIEF articulos-genero V1→V2 (20. lépés, C-sor, A1 exam, ÁTÍRÁS)
+
+Worktree gyökér: `/home/kalmi/ai/kimacha-wt-eget-nyelvtan`. Minden `node` / `npx` innen fut.
+Ág: `nyelvtan` (már ki van checkolva, ne válts ágat).
+
+### Olvasd el ELŐBB (ebben a sorrendben, csak a releváns szeletet)
+1. `/home/kalmi/ai/ai-workspace/kimacha/LECKE-SEMA.md` teljes, különösen a §7 (V1→V2 átírás), a blokkok, `form`/`match`/`why`, a választós `wrong` stílusa, `speak` «...».
+2. `lib/grammar/lessonTypes.ts` teljes (V2 séma).
+3. `lib/grammar/syllabus.ts` 177-183. sor (id `articulos-genero`, level A1, title ×4 „Névelők: el, la, un, una", blurb: határozott és határozatlan névelő, nemmel egyeztetve).
+4. `scripts/audit-games.mjs` fejléc-kommentje (P1/P2; szint-szabály: csak A0..A1 szó vagy glossza).
+5. Minta V2 átírt lecke: `data/games/grammar/es/adjetivo-concordancia.json` (előző lépés, V1→V2, nem-ige táblával); ha még V1, `sustantivo-numero.json`. Egyet olvass, teljesen.
+6. A célfájl: `data/games/grammar/es/articulos-genero.json` (V1: `rule` ~1.1K, `more` ~1.7K, `glossary` 3 szó, 12 választós item, itemenként `sentence`, `options`, `correct`, `wrong`, `why`, `examples`). Teljesen olvasd, minden szövege átmegy a V2-be.
+7. Regisztráció: `lib/games/content/es.ts` már importálja, nem kell új sor.
+
+### Feladat: V1 → V2 átírás, ugyanabban a fájlban
+Nem igeidős téma: NINCS transform, NINCS `tense`.
+A. **Fej:** `schema: 2`, a `topic` id NEM változik, `level` és `title` a syllabus szerint.
+B. **`body`:** a V1 `rule` + `more` szövege blokkokba megy, SEMMI nem vész el (1:1 tartalom, átrendezve): `text` (1 bekezdés, mire jó: a névelő a főnév nemét és határozottságát mondja, minden főnév előtt dönteni kell), `list` vagy `usage` a szabálypontok mind példával (`ExamplePair`: `es` + `tr` ×4; a V1 minden szabálya és példája ide: el/la/los/las és un/una/unos/unas; nem-szabályok (-o hím, -a nő, -ción/-dad nő, -ma hím, kivételek: el día, la mano, el mapa, la foto); el + hangsúlyos a- nőnem (el agua, el aula, de: las aguas); határozott vs határozatlan (ismert vs új); mikor nincs névelő (foglalkozás: soy médico; hay + határozatlan); a + el = al, de + el = del), `table` id-val (`articulos`: sorok = 10-12 főnév (libro, casa, día, mano, agua, problema, ciudad, mapa, foto, lección, lunes, clase), oszlopok = határozott egyes, határozott többes, határozatlan egyes; a `form` itemek erre hivatkoznak: `verb` = a header 2. oszlopának `es` értéke, nem-ige tábla; az `auditFormItem` minden form-hármast egy tábla-cellához köt, ezért a 12 form item 12 különböző cellát kér), `contrast` (el agua vs las aguas: hangsúlyos a-; un libro vs el libro: új vs ismert), `tip` (1). Minden `Lang4` mind a 4 nyelven, üres string tilos (P1).
+C. **`speak` ×4**, a spanyol szakaszok «...» közt.
+D. **`glossary`:** a V1 glossary marad; szűkül, ha egy szó A1-ig tanított, bővül, ha új példamondat kéri. Kártyák: `node ~/ai/.claude/skills/eget-nyelvtan/probe.cjs --cards A1 /tmp/claude-1000/cards-A1.tsv`.
+E. **Itemek:** a meglévő **12 választós marad** (`sentence`, `options`, `correct`, `examples` változatlan; a `wrong` minden rossz opción átírva LECKE-SEMA stílusra ×4; a V1 item `why` mezőjének szövege a `wrong`-ba vagy a `why` itemekbe megy, nem vész el); **1 `match`** (5-6 pár: főnév ↔ névelő); **12 `form`** az `articulos` table id-ra (főnév → névelős alak, pl. `___ agua (határozott egyes)` → `el agua`, `___ ciudades (határozott többes)` → `las ciudades`, `___ problema (határozatlan)` → `un problema`); **6-8 `why`** (3 szabály-név, pl. „-o hím / -a nő", „hangsúlyos a- → el", „-ma hím", „ismert = el, új = un", a rossz opciókon `wrong` ×4).
+F. **Mondat-szabályok:** legfeljebb 12 szó (P2); természetes; csak A0-A1 szavak vagy glossza; csak spanyol forrásmondat (K1); Mexikó-spanyol, ha új mondatot írsz; a meglévő V1 mondatok maradnak.
+G. Ha valamelyik teszt fix darabszámot állít, frissítsd a számot, semmi mást. Ha egy jest-teszt olyan fájlban piros, ami nem a te leckéd, NEM javítod a kódot: piros állapottal jelentesz, melyik teszt és miért.
+
+### Kapu (sorban, mind a worktree gyökeréből)
+```
+node scripts/audit-games.mjs 2>&1 | tail -15     # 0 P1, cél 0 P2
+npx jest 2>&1 | tail -8                           # zöld
+npx tsc --noEmit 2>&1 | tail -3                   # 0 hiba
+npx expo lint 2>&1 | tail -5                      # 0 error
+```
+Piros → javítasz és újra, legfeljebb 3-szor, aztán piros állapottal jelentesz (NEM commitolsz pirosat).
+
+### Commit (csak zöld kapuval)
+`git add data/games/grammar/es/articulos-genero.json` (+ a teszt, ha nyúltál hozzá), majd:
+```
+refactor(grammar): articulos-genero V2 séma (nyelvtan)
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+```
+Nem pusholsz.
+
+### Jelentés (max 10 sor)
+- fájl + item-számok fajtánként (choice/match/form/why)
+- a 4 kapu utolsó sora
+- commit hash
+- 3 minta (2 választós `sentence` + `correct`, 1 új `form`)
+- glossza-változás egy sorban; elakadás egy mondatban, ha volt
 Nincs diff, nincs fájltartalom, nincs narratíva.
