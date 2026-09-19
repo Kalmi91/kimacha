@@ -294,12 +294,36 @@
         }
       ],
       "rows": [
-        ["yo", "hablé", "hablaba"],
-        ["tú", "hablaste", "hablabas"],
-        ["él/ella/usted", "habló", "hablaba"],
-        ["nosotros", "hablamos", "hablábamos"],
-        ["vosotros", "hablasteis", "hablabais"],
-        ["ellos/ellas/ustedes", "hablaron", "hablaban"]
+        [
+          "yo",
+          "hablé",
+          "hablaba"
+        ],
+        [
+          "tú",
+          "hablaste",
+          "hablabas"
+        ],
+        [
+          "él/ella/usted",
+          "habló",
+          "hablaba"
+        ],
+        [
+          "nosotros",
+          "hablamos",
+          "hablábamos"
+        ],
+        [
+          "vosotros",
+          "hablasteis",
+          "hablabais"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "hablaron",
+          "hablaban"
+        ]
       ]
     },
     {
@@ -779,7 +803,11 @@
       "examples": [
         "El lunes salí temprano.",
         "En 2020 cambié de trabajo."
-      ]
+      ],
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-02",
@@ -813,7 +841,11 @@
       "examples": [
         "Cuando vivía en Budapest, iba en metro.",
         "De niño jugaba en la calle."
-      ]
+      ],
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-03",
@@ -847,7 +879,11 @@
       "examples": [
         "Hacía frío y no había nadie.",
         "La calle estaba oscura."
-      ]
+      ],
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-04",
@@ -881,7 +917,11 @@
       "examples": [
         "Mientras leía, alguien tocó la puerta.",
         "Mientras esperaba, llegó el autobús."
-      ]
+      ],
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-05",
@@ -915,7 +955,11 @@
       "examples": [
         "Conocí a mi novia en Madrid.",
         "No conocía esa palabra."
-      ]
+      ],
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-06",
@@ -949,7 +993,11 @@
       "examples": [
         "Supimos la noticia por la radio.",
         "No sabía que estabas aquí."
-      ]
+      ],
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-07",
@@ -983,7 +1031,11 @@
       "examples": [
         "Antes cocinaba mi madre, ayer cociné yo.",
         "Siempre llegaba tarde, pero ese día no."
-      ]
+      ],
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-08",
@@ -1017,7 +1069,11 @@
       "examples": [
         "Tenía veinte años cuando se casó.",
         "Éramos jóvenes entonces."
-      ]
+      ],
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-09",
@@ -1051,7 +1107,11 @@
       "examples": [
         "De repente empezó a llover.",
         "De pronto alguien gritó."
-      ]
+      ],
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-10",
@@ -1085,7 +1145,11 @@
       "examples": [
         "Quería ir, pero no pude.",
         "No quise discutir con él."
-      ]
+      ],
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-11",
@@ -1119,7 +1183,11 @@
       "examples": [
         "Viví diez años en México.",
         "Estuvimos allí dos semanas."
-      ]
+      ],
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-12",
@@ -1153,19 +1221,45 @@
       "examples": [
         "Yo leía mientras ella escribía.",
         "Los niños jugaban mientras hablábamos."
-      ]
+      ],
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-match-01",
       "kind": "match",
       "pairs": [
-        { "es": "hablé una vez", "en": "I spoke once" },
-        { "es": "hablaba todos los días", "en": "I used to speak every day" },
-        { "es": "tuvo un accidente", "en": "he had an accident" },
-        { "es": "tenía veinte años", "en": "she was twenty years old" },
-        { "es": "conocí a tu hermana", "en": "I met your sister" },
-        { "es": "ya conocía esa película", "en": "I already knew that movie" }
-      ]
+        {
+          "es": "hablé una vez",
+          "en": "I spoke once"
+        },
+        {
+          "es": "hablaba todos los días",
+          "en": "I used to speak every day"
+        },
+        {
+          "es": "tuvo un accidente",
+          "en": "he had an accident"
+        },
+        {
+          "es": "tenía veinte años",
+          "en": "she was twenty years old"
+        },
+        {
+          "es": "conocí a tu hermana",
+          "en": "I met your sister"
+        },
+        {
+          "es": "ya conocía esa película",
+          "en": "I already knew that movie"
+        }
+      ],
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-form-01",
@@ -1173,7 +1267,11 @@
       "verb": "hablar (indefinido)",
       "person": "yo",
       "answer": "hablé",
-      "table": "ind-imp-hablar"
+      "table": "ind-imp-hablar",
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-form-02",
@@ -1181,7 +1279,11 @@
       "verb": "hablar (imperfecto)",
       "person": "yo",
       "answer": "hablaba",
-      "table": "ind-imp-hablar"
+      "table": "ind-imp-hablar",
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-form-03",
@@ -1189,7 +1291,11 @@
       "verb": "hablar (indefinido)",
       "person": "tú",
       "answer": "hablaste",
-      "table": "ind-imp-hablar"
+      "table": "ind-imp-hablar",
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-form-04",
@@ -1197,7 +1303,11 @@
       "verb": "hablar (imperfecto)",
       "person": "tú",
       "answer": "hablabas",
-      "table": "ind-imp-hablar"
+      "table": "ind-imp-hablar",
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-form-05",
@@ -1205,7 +1315,11 @@
       "verb": "hablar (indefinido)",
       "person": "él/ella/usted",
       "answer": "habló",
-      "table": "ind-imp-hablar"
+      "table": "ind-imp-hablar",
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-form-06",
@@ -1213,7 +1327,11 @@
       "verb": "hablar (imperfecto)",
       "person": "él/ella/usted",
       "answer": "hablaba",
-      "table": "ind-imp-hablar"
+      "table": "ind-imp-hablar",
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-form-07",
@@ -1221,7 +1339,11 @@
       "verb": "hablar (indefinido)",
       "person": "nosotros",
       "answer": "hablamos",
-      "table": "ind-imp-hablar"
+      "table": "ind-imp-hablar",
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-form-08",
@@ -1229,7 +1351,11 @@
       "verb": "hablar (imperfecto)",
       "person": "nosotros",
       "answer": "hablábamos",
-      "table": "ind-imp-hablar"
+      "table": "ind-imp-hablar",
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-form-09",
@@ -1237,7 +1363,11 @@
       "verb": "hablar (indefinido)",
       "person": "vosotros",
       "answer": "hablasteis",
-      "table": "ind-imp-hablar"
+      "table": "ind-imp-hablar",
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-form-10",
@@ -1245,7 +1375,11 @@
       "verb": "hablar (imperfecto)",
       "person": "vosotros",
       "answer": "hablabais",
-      "table": "ind-imp-hablar"
+      "table": "ind-imp-hablar",
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-form-11",
@@ -1253,7 +1387,11 @@
       "verb": "hablar (indefinido)",
       "person": "ellos/ellas/ustedes",
       "answer": "hablaron",
-      "table": "ind-imp-hablar"
+      "table": "ind-imp-hablar",
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii2-form-12",
@@ -1261,7 +1399,11 @@
       "verb": "hablar (imperfecto)",
       "person": "ellos/ellas/ustedes",
       "answer": "hablaban",
-      "table": "ind-imp-hablar"
+      "table": "ind-imp-hablar",
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1311,7 +1453,11 @@
           }
         }
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1361,7 +1507,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1411,7 +1561,11 @@
           }
         }
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1461,7 +1615,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1511,7 +1669,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1561,7 +1723,11 @@
           }
         }
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1611,7 +1777,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
     }
   ]
 }
