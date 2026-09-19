@@ -1,0 +1,1276 @@
+{
+  "schema": 2,
+  "topic": "estilo-indirecto",
+  "level": "B2",
+  "title": {
+    "hu": "Függő beszéd",
+    "en": "Reported speech",
+    "es": "Estilo indirecto",
+    "de": "Indirekte Rede"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Az estilo indirecto arra való, hogy elmondjuk, mit mondott, kérdezett vagy kért valaki: üzenetet adunk át, pletykálunk, beszámolunk egy beszélgetésről. Ha a bevezető ige (dijo, preguntó, contó) múlt idejű, az idézett mondat igeideje is eltolódik; ha a bevezető ige jelen idejű, semmi nem változik.",
+        "en": "Reported speech lets you say what someone said, asked or requested: passing on a message, gossiping, recounting a conversation. If the introducing verb (dijo, preguntó, contó) is in the past, the quoted sentence's tense shifts too; if the introducing verb is present, nothing changes.",
+        "es": "El estilo indirecto sirve para contar lo que alguien dijo, preguntó o pidió: pasar un mensaje, chismear, contar una conversación. Si el verbo introductor (dijo, preguntó, contó) está en pasado, el tiempo de la oración citada también se desplaza; si el verbo introductor está en presente, no cambia nada.",
+        "de": "Die indirekte Rede dient dazu, wiederzugeben, was jemand gesagt, gefragt oder gebeten hat: eine Nachricht weitergeben, klatschen, ein Gespräch erzählen. Steht das einleitende Verb (dijo, preguntó, contó) in der Vergangenheit, verschiebt sich auch die Zeit des zitierten Satzes; steht es im Präsens, ändert sich nichts."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Mikor és hogyan tolódik az igeidő?",
+        "en": "When and how does the tense shift?",
+        "es": "¿Cuándo y cómo se desplaza el tiempo verbal?",
+        "de": "Wann und wie verschiebt sich die Zeitform?"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Ha a bevezető ige jelen idejű (dice, pregunta, cuenta), nincs eltolás: az idézett mondat igeideje változatlan marad.",
+            "en": "If the introducing verb is present tense (dice, pregunta, cuenta), there is no shift: the quoted sentence's tense stays the same.",
+            "es": "Si el verbo introductor está en presente (dice, pregunta, cuenta), no hay desplazamiento: el tiempo de la oración citada se queda igual.",
+            "de": "Steht das einleitende Verb im Präsens (dice, pregunta, cuenta), gibt es keine Verschiebung: die Zeit des zitierten Satzes bleibt gleich."
+          },
+          "examples": [
+            {
+              "es": "Dice que viene mañana.",
+              "tr": {
+                "hu": "Azt mondja, hogy holnap jön.",
+                "en": "He says he's coming tomorrow.",
+                "es": "Dice que viene mañana.",
+                "de": "Er sagt, dass er morgen kommt."
+              }
+            },
+            {
+              "es": "Pregunta si tienes tiempo.",
+              "tr": {
+                "hu": "Azt kérdezi, van-e időd.",
+                "en": "She asks if you have time.",
+                "es": "Pregunta si tienes tiempo.",
+                "de": "Sie fragt, ob du Zeit hast."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ha a bevezető ige múlt idejű (dijo, preguntó, contó), eltolás van. Presente → imperfecto: dijo que venía. Indefinido vagy perfecto → pluscuamperfecto: dijo que había comido. Futuro → condicional: dijo que vendría. Imperativo → imperfecto de subjuntivo: dijo que viniera. Presente de subjuntivo → imperfecto de subjuntivo. Az imperfecto és a condicional önmagában marad, nem tolódik tovább.",
+            "en": "If the introducing verb is past tense (dijo, preguntó, contó), there is a shift. Present → imperfect: dijo que venía. Preterite or present perfect → pluperfect: dijo que había comido. Future → conditional: dijo que vendría. Imperative → imperfect subjunctive: dijo que viniera. Present subjunctive → imperfect subjunctive. The imperfect and the conditional stay as they are, they don't shift further.",
+            "es": "Si el verbo introductor está en pasado (dijo, preguntó, contó), hay desplazamiento. Presente → imperfecto: dijo que venía. Indefinido o perfecto → pluscuamperfecto: dijo que había comido. Futuro → condicional: dijo que vendría. Imperativo → imperfecto de subjuntivo: dijo que viniera. Presente de subjuntivo → imperfecto de subjuntivo. El imperfecto y el condicional se quedan como están, no se desplazan más.",
+            "de": "Steht das einleitende Verb in der Vergangenheit (dijo, preguntó, contó), gibt es eine Verschiebung. Präsens → Imperfekt: dijo que venía. Indefinido oder Perfekt → Plusquamperfekt: dijo que había comido. Futur → Konditional: dijo que vendría. Imperativ → Imperfecto de subjuntivo: dijo que viniera. Presente de subjuntivo → Imperfecto de subjuntivo. Das Imperfekt und das Konditional bleiben, wie sie sind, sie verschieben sich nicht weiter."
+          },
+          "examples": [
+            {
+              "es": "Dijo que venía enseguida.",
+              "tr": {
+                "hu": "Azt mondta, hogy máris jön.",
+                "en": "He said he was coming right away.",
+                "es": "Dijo que venía enseguida.",
+                "de": "Er sagte, dass er sofort komme."
+              }
+            },
+            {
+              "es": "Dijo que había comido ya.",
+              "tr": {
+                "hu": "Azt mondta, hogy már evett.",
+                "en": "He said he had already eaten.",
+                "es": "Dijo que había comido ya.",
+                "de": "Er sagte, dass er schon gegessen habe."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Eldöntendő kérdésnél a függő mondatot si vezeti be: preguntó si tenía tiempo. Kérdőszavas kérdésnél a kérdőszó megmarad, ékezettel: preguntó dónde vivía.",
+            "en": "For a yes/no question, si introduces the reported clause: preguntó si tenía tiempo. For a wh-question, the question word stays, with its accent: preguntó dónde vivía.",
+            "es": "En una pregunta cerrada, si introduce la oración indirecta: preguntó si tenía tiempo. En una pregunta con partícula interrogativa, esta se mantiene, con su acento: preguntó dónde vivía.",
+            "de": "Bei einer Ja/Nein-Frage leitet si den indirekten Satz ein: preguntó si tenía tiempo. Bei einer W-Frage bleibt das Fragewort erhalten, mit Akzent: preguntó dónde vivía."
+          },
+          "examples": [
+            {
+              "es": "Preguntó si tenía hambre.",
+              "tr": {
+                "hu": "Megkérdezte, éhes-e.",
+                "en": "He asked if she was hungry.",
+                "es": "Preguntó si tenía hambre.",
+                "de": "Er fragte, ob sie Hunger habe."
+              }
+            },
+            {
+              "es": "Preguntó dónde trabajaba.",
+              "tr": {
+                "hu": "Megkérdezte, hol dolgozik.",
+                "en": "She asked where he worked.",
+                "es": "Preguntó dónde trabajaba.",
+                "de": "Sie fragte, wo er arbeite."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A személy, a hely és az idő is átvált: yo → él, aquí → allí, hoy → ese día, mañana → al día siguiente, ayer → el día anterior, este → ese, mi → su.",
+            "en": "The person, place and time also shift: yo → él, aquí → allí, hoy → ese día, mañana → al día siguiente, ayer → el día anterior, este → ese, mi → su.",
+            "es": "La persona, el lugar y el tiempo también cambian: yo → él, aquí → allí, hoy → ese día, mañana → al día siguiente, ayer → el día anterior, este → ese, mi → su.",
+            "de": "Auch Person, Ort und Zeit wechseln: yo → él, aquí → allí, hoy → ese día, mañana → al día siguiente, ayer → el día anterior, este → ese, mi → su."
+          },
+          "examples": [
+            {
+              "es": "Dijo que ese era su coche.",
+              "tr": {
+                "hu": "Azt mondta, hogy az az ő autója.",
+                "en": "He said that was his car.",
+                "es": "Dijo que ese era su coche.",
+                "de": "Er sagte, das sei sein Auto."
+              }
+            },
+            {
+              "es": "Contó que había llegado el día anterior.",
+              "tr": {
+                "hu": "Elmesélte, hogy az előző nap érkezett.",
+                "en": "She told me she had arrived the day before.",
+                "es": "Contó que había llegado el día anterior.",
+                "de": "Sie erzählte, dass sie am Vortag angekommen sei."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Kérésnél és parancsnál pedir vagy decir + que + subjuntivo áll: me pidió que llamara. Az imperativo sosem marad meg szó szerint a függő beszédben.",
+            "en": "For a request or a command, pedir or decir + que + subjunctive is used: me pidió que llamara. The imperative never survives word for word in reported speech.",
+            "es": "En una petición o una orden va pedir o decir + que + subjuntivo: me pidió que llamara. El imperativo nunca se queda tal cual en el estilo indirecto.",
+            "de": "Bei einer Bitte oder einem Befehl steht pedir oder decir + que + Subjuntivo: me pidió que llamara. Der Imperativ bleibt in der indirekten Rede nie wörtlich erhalten."
+          },
+          "examples": [
+            {
+              "es": "Me pidió que cerrara la puerta.",
+              "tr": {
+                "hu": "Megkért, hogy csukjam be az ajtót.",
+                "en": "She asked me to close the door.",
+                "es": "Me pidió que cerrara la puerta.",
+                "de": "Sie bat mich, die Tür zu schließen."
+              }
+            },
+            {
+              "es": "Me dijo que trabajara más.",
+              "tr": {
+                "hu": "Azt mondta nekem, hogy dolgozzak többet.",
+                "en": "He told me to work more.",
+                "es": "Me dijo que trabajara más.",
+                "de": "Er sagte mir, ich solle mehr arbeiten."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ha az állítás ma is igaz (egy tudományos tény, egy általános szabály), a beszélt nyelvben gyakran nincs eltolás: dijo que la Tierra es redonda, el médico dijo que fumar es malo.",
+            "en": "If the statement is still true today (a scientific fact, a general rule), spoken language often skips the shift: dijo que la Tierra es redonda, el médico dijo que fumar es malo.",
+            "es": "Si la afirmación sigue siendo verdad hoy (un hecho científico, una regla general), en el habla a menudo no hay desplazamiento: dijo que la Tierra es redonda, el médico dijo que fumar es malo.",
+            "de": "Wenn die Aussage auch heute noch wahr ist (eine wissenschaftliche Tatsache, eine allgemeine Regel), entfällt in der gesprochenen Sprache oft die Verschiebung: dijo que la Tierra es redonda, el médico dijo que fumar es malo."
+          },
+          "examples": [
+            {
+              "es": "El profesor dijo que la Tierra es redonda.",
+              "tr": {
+                "hu": "A tanár azt mondta, hogy a Föld gömbölyű.",
+                "en": "The teacher said the Earth is round.",
+                "es": "El profesor dijo que la Tierra es redonda.",
+                "de": "Der Lehrer sagte, die Erde sei rund."
+              }
+            },
+            {
+              "es": "Dijo que el español es difícil.",
+              "tr": {
+                "hu": "Azt mondta, hogy a spanyol nehéz.",
+                "en": "He said Spanish is difficult.",
+                "es": "Dijo que el español es difícil.",
+                "de": "Er sagte, Spanisch sei schwer."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "cambio",
+      "title": {
+        "hu": "Az igeidő-eltolás",
+        "en": "The tense shift",
+        "es": "El cambio de tiempos",
+        "de": "Die Zeitverschiebung"
+      },
+      "header": [
+        {
+          "hu": "egyenes beszéd",
+          "en": "direct speech",
+          "es": "directo",
+          "de": "direkte Rede"
+        },
+        {
+          "hu": "függő beszéd",
+          "en": "reported speech",
+          "es": "indirecto",
+          "de": "indirekte Rede"
+        },
+        {
+          "hu": "példa",
+          "en": "example",
+          "es": "ejemplo",
+          "de": "Beispiel"
+        }
+      ],
+      "rows": [
+        [
+          "tengo",
+          "tenía",
+          "Dijo que tenía hambre."
+        ],
+        [
+          "vivo",
+          "vivía",
+          "Contó que vivía en Madrid."
+        ],
+        [
+          "comí",
+          "había comido",
+          "Dijo que había comido."
+        ],
+        [
+          "llegó",
+          "había llegado",
+          "Contó que había llegado tarde."
+        ],
+        [
+          "he trabajado",
+          "había trabajado",
+          "Dijo que había trabajado mucho."
+        ],
+        [
+          "he estudiado",
+          "había estudiado",
+          "Contó que había estudiado toda la noche."
+        ],
+        [
+          "vendré",
+          "vendría",
+          "Dijo que vendría al día siguiente."
+        ],
+        [
+          "llegaré",
+          "llegaría",
+          "Dijo que llegaría tarde."
+        ],
+        [
+          "¡Cierra!",
+          "cerrara",
+          "Me pidió que cerrara la puerta."
+        ],
+        [
+          "¡Ven!",
+          "viniera",
+          "Me dijo que viniera pronto."
+        ],
+        [
+          "quiero que vengas",
+          "vinieras",
+          "Dijo que quería que vinieras."
+        ],
+        [
+          "espero que estudies",
+          "estudiaras",
+          "Dijo que esperaba que estudiaras más."
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Jelen vs múlt bevezető, eldöntendő vs kérdőszavas kérdés",
+        "en": "Present vs past introducer, yes/no vs wh-question",
+        "es": "Introductor en presente vs pasado, pregunta cerrada vs con partícula",
+        "de": "Einleitung im Präsens vs Vergangenheit, Ja/Nein- vs W-Frage"
+      },
+      "pairs": [
+        {
+          "a": "dice que viene",
+          "b": "dijo que venía",
+          "note": {
+            "hu": "A dice (jelen) után nincs eltolás, a dijo (múlt) után igen: venir presente → imperfecto.",
+            "en": "After dice (present) there's no shift, after dijo (past) there is: venir present → imperfect.",
+            "es": "Después de dice (presente) no hay desplazamiento, después de dijo (pasado) sí: venir presente → imperfecto.",
+            "de": "Nach dice (Präsens) gibt es keine Verschiebung, nach dijo (Vergangenheit) schon: venir Präsens → Imperfekt."
+          },
+          "examples": [
+            {
+              "es": "Dice que viene enseguida.",
+              "tr": {
+                "hu": "Azt mondja, hogy máris jön.",
+                "en": "He says he's coming right away.",
+                "es": "Dice que viene enseguida.",
+                "de": "Er sagt, dass er sofort kommt."
+              }
+            },
+            {
+              "es": "Dijo que venía enseguida.",
+              "tr": {
+                "hu": "Azt mondta, hogy máris jön.",
+                "en": "He said he was coming right away.",
+                "es": "Dijo que venía enseguida.",
+                "de": "Er sagte, dass er sofort komme."
+              }
+            }
+          ]
+        },
+        {
+          "a": "preguntó si tenía tiempo",
+          "b": "preguntó qué hora era",
+          "note": {
+            "hu": "Eldöntendő kérdésnél si a bevezető, kérdőszavas kérdésnél a kérdőszó (qué, dónde, cuándo) marad.",
+            "en": "For a yes/no question, si introduces it; for a wh-question, the question word (qué, dónde, cuándo) stays.",
+            "es": "En una pregunta cerrada, si es el introductor; en una pregunta con partícula, esta (qué, dónde, cuándo) se mantiene.",
+            "de": "Bei einer Ja/Nein-Frage leitet si ein; bei einer W-Frage bleibt das Fragewort (qué, dónde, cuándo) erhalten."
+          },
+          "examples": [
+            {
+              "es": "Preguntó si tenía tiempo.",
+              "tr": {
+                "hu": "Megkérdezte, van-e ideje.",
+                "en": "He asked if she had time.",
+                "es": "Preguntó si tenía tiempo.",
+                "de": "Er fragte, ob sie Zeit habe."
+              }
+            },
+            {
+              "es": "Preguntó qué hora era.",
+              "tr": {
+                "hu": "Megkérdezte, hány óra van.",
+                "en": "She asked what time it was.",
+                "es": "Preguntó qué hora era.",
+                "de": "Sie fragte, wie spät es sei."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ha bizonytalan az eltolás, kérdezd meg: amikor ő mondta, az akkor jelen volt, múlt vagy jövő? Utána told egyet hátra: jelen → imperfecto, múlt → pluscuamperfecto, jövő → condicional.",
+        "en": "If you're unsure about the shift, ask: when they said it, was that the present, the past or the future? Then push it back one step: present → imperfect, past → pluperfect, future → conditional.",
+        "es": "Si dudas del desplazamiento, pregúntate: cuando lo dijo, ¿eso era presente, pasado o futuro? Luego retrocede un paso: presente → imperfecto, pasado → pluscuamperfecto, futuro → condicional.",
+        "de": "Bist du dir bei der Verschiebung unsicher, frage dich: War das, als er es sagte, Gegenwart, Vergangenheit oder Zukunft? Schiebe dann einen Schritt zurück: Gegenwart → Imperfekt, Vergangenheit → Plusquamperfekt, Zukunft → Konditional."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A függő beszéddel elmondjuk, mit mondott, kérdezett vagy kért valaki. Ha a bevezető ige jelen idejű, semmi nem változik: «dice que viene mañana». De ha a bevezető ige múlt idejű, az idézett mondat igeideje eltolódik. A jelen imperfectóra vált: «dijo que venía». A befejezett múlt vagy a közelmúlt pluscuamperfectóra vált: «dijo que había comido». A jövő condicionalra vált: «dijo que vendría». A felszólítás imperfecto de subjuntivóra vált: «me pidió que cerrara la puerta». Eldöntendő kérdésnél si vezeti be a mondatot: «preguntó si tenía tiempo». Kérdőszavas kérdésnél a kérdőszó megmarad: «preguntó dónde vivía». A személy, a hely és az idő is átvált: yo lesz él, aquí lesz allí, mañana lesz al día siguiente. Ha az állítás ma is igaz, gyakran nincs eltolás: «el médico dijo que fumar es malo».",
+    "en": "Reported speech tells what someone said, asked or requested. If the introducing verb is present tense, nothing changes: «dice que viene mañana». But if the introducing verb is past tense, the quoted sentence's tense shifts. The present shifts to the imperfect: «dijo que venía». The preterite or the present perfect shifts to the pluperfect: «dijo que había comido». The future shifts to the conditional: «dijo que vendría». The imperative shifts to the imperfect subjunctive: «me pidió que cerrara la puerta». For a yes/no question, si introduces the clause: «preguntó si tenía tiempo». For a wh-question, the question word stays: «preguntó dónde vivía». The person, the place and the time also shift: yo becomes él, aquí becomes allí, mañana becomes al día siguiente. If the statement is still true today, there's often no shift: «el médico dijo que fumar es malo».",
+    "es": "El estilo indirecto cuenta lo que alguien dijo, preguntó o pidió. Si el verbo introductor está en presente, no cambia nada: «dice que viene mañana». Pero si el verbo introductor está en pasado, el tiempo de la oración citada se desplaza. El presente pasa a imperfecto: «dijo que venía». El indefinido o el perfecto pasan a pluscuamperfecto: «dijo que había comido». El futuro pasa a condicional: «dijo que vendría». El imperativo pasa a imperfecto de subjuntivo: «me pidió que cerrara la puerta». En una pregunta cerrada, si introduce la oración: «preguntó si tenía tiempo». En una pregunta con partícula, esta se mantiene: «preguntó dónde vivía». La persona, el lugar y el tiempo también cambian: yo pasa a él, aquí pasa a allí, mañana pasa a al día siguiente. Si la afirmación sigue siendo verdad hoy, muchas veces no hay desplazamiento: «el médico dijo que fumar es malo».",
+    "de": "Die indirekte Rede gibt wieder, was jemand gesagt, gefragt oder gebeten hat. Steht das einleitende Verb im Präsens, ändert sich nichts: «dice que viene mañana». Steht das einleitende Verb aber in der Vergangenheit, verschiebt sich die Zeit des zitierten Satzes. Das Präsens wird zum Imperfekt: «dijo que venía». Das Indefinido oder das Perfekt werden zum Plusquamperfekt: «dijo que había comido». Das Futur wird zum Konditional: «dijo que vendría». Der Imperativ wird zum Imperfecto de subjuntivo: «me pidió que cerrara la puerta». Bei einer Ja/Nein-Frage leitet si den Satz ein: «preguntó si tenía tiempo». Bei einer W-Frage bleibt das Fragewort erhalten: «preguntó dónde vivía». Auch Person, Ort und Zeit wechseln: aus yo wird él, aus aquí wird allí, aus mañana wird al día siguiente. Ist die Aussage auch heute noch wahr, entfällt oft die Verschiebung: «el médico dijo que fumar es malo»."
+  },
+  "glossary": [
+    {
+      "word": "dice",
+      "gloss": {
+        "hu": "mondja (ő)",
+        "en": "he/she says",
+        "es": "él/ella dice",
+        "de": "er/sie sagt"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "ei-01",
+      "sentence": "Dice que ___ tarde.",
+      "options": [
+        "llega",
+        "llegó",
+        "llegaba"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A bevezető ige jelen idejű (dice): nincs eltolás, llega marad jelen idő.",
+        "en": "The introducing verb is present tense (dice): no shift, llega stays present tense.",
+        "es": "El verbo introductor está en presente (dice): no hay desplazamiento, llega se queda en presente.",
+        "de": "Das einleitende Verb steht im Präsens (dice): keine Verschiebung, llega bleibt im Präsens."
+      },
+      "wrong": {
+        "llegó": {
+          "hu": "A „llegó” indefinido: azt jelentené, hogy MÁR megérkezett, de a bevezető jelen idejű, nincs ok az eltolásra, helyesen: llega.",
+          "en": "\"Llegó\" is preterite: it would mean he has ALREADY arrived, but the introducer is present tense, there's no reason to shift, correctly: llega.",
+          "es": "«Llegó» es indefinido: significaría que YA llegó, pero el introductor está en presente, no hay motivo para desplazar, correcto: llega.",
+          "de": "„Llegó” ist Indefinido: es würde bedeuten, dass er SCHON angekommen ist, aber die Einleitung steht im Präsens, kein Grund zur Verschiebung, richtig: llega."
+        },
+        "llegaba": {
+          "hu": "A „llegaba” imperfecto: egy múltbeli szokást jelentene, de a bevezető jelen idejű, nincs eltolás, helyesen: llega.",
+          "en": "\"Llegaba\" is imperfect: it would describe a past habit, but the introducer is present tense, no shift, correctly: llega.",
+          "es": "«Llegaba» es imperfecto: describiría un hábito pasado, pero el introductor está en presente, no hay desplazamiento, correcto: llega.",
+          "de": "„Llegaba” ist Imperfekt: es würde eine vergangene Gewohnheit beschreiben, aber die Einleitung steht im Präsens, keine Verschiebung, richtig: llega."
+        }
+      },
+      "examples": [
+        "Dice que trabaja mucho.",
+        "Contó que vivía en Madrid."
+      ]
+    },
+    {
+      "id": "ei-02",
+      "sentence": "Dijo que ___ mucho.",
+      "options": [
+        "trabajaba",
+        "trabaja",
+        "trabajó"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A bevezető ige múltban (dijo): a presente imperfectóra tolódik, trabaja → trabajaba.",
+        "en": "The introducing verb is past tense (dijo): the present shifts to the imperfect, trabaja → trabajaba.",
+        "es": "El verbo introductor está en pasado (dijo): el presente se desplaza a imperfecto, trabaja → trabajaba.",
+        "de": "Das einleitende Verb steht in der Vergangenheit (dijo): das Präsens verschiebt sich zum Imperfekt, trabaja → trabajaba."
+      },
+      "wrong": {
+        "trabaja": {
+          "hu": "A „trabaja” jelen idő: azt jelentené, hogy MOST is dolgozik, holott a bevezető múlt, el kell tolni, helyesen: trabajaba.",
+          "en": "\"Trabaja\" is present: it would mean he's working RIGHT NOW, but the introducer is past, it must shift, correctly: trabajaba.",
+          "es": "«Trabaja» es presente: significaría que trabaja AHORA, pero el introductor es pasado, hay que desplazarlo, correcto: trabajaba.",
+          "de": "„Trabaja” ist Präsens: es würde bedeuten, dass er JETZT arbeitet, aber die Einleitung ist Vergangenheit, es muss verschoben werden, richtig: trabajaba."
+        },
+        "trabajó": {
+          "hu": "A „trabajó” indefinido: egy lezárt eseményt jelentene, nem egy akkor-fennálló állapotot, helyesen: trabajaba.",
+          "en": "\"Trabajó\" is preterite: it would report a closed event, not a state that held at that time, correctly: trabajaba.",
+          "es": "«Trabajó» es indefinido: contaría un hecho cerrado, no un estado que se daba en ese momento, correcto: trabajaba.",
+          "de": "„Trabajó” ist Indefinido: es würde ein abgeschlossenes Ereignis berichten, keinen damals andauernden Zustand, richtig: trabajaba."
+        }
+      },
+      "examples": [
+        "Contó que vivía en Madrid.",
+        "Dijo que tenía hambre."
+      ]
+    },
+    {
+      "id": "ei-03",
+      "sentence": "Contó que ya ___ comido.",
+      "options": [
+        "había",
+        "ha",
+        "tiene"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Múltbeli előzmény (indefinido/perfecto) a múlt bevezető után pluscuamperfectóra tolódik: había comido.",
+        "en": "A past event (preterite/present perfect) shifts to the pluperfect after a past introducer: había comido.",
+        "es": "Un hecho pasado (indefinido/perfecto) se desplaza a pluscuamperfecto después de un introductor en pasado: había comido.",
+        "de": "Ein vergangenes Ereignis (Indefinido/Perfekt) verschiebt sich nach einer vergangenen Einleitung zum Plusquamperfekt: había comido."
+      },
+      "wrong": {
+        "ha": {
+          "hu": "A „ha” perfecto de indicativo, a mához kötött közelmúlt: itt viszont egy korábbi előzményről van szó, helyesen: había.",
+          "en": "\"Ha\" is present perfect, tied to now: but here it's an earlier event, correctly: había.",
+          "es": "«Ha» es perfecto de indicativo, ligado a ahora: pero aquí es un hecho anterior, correcto: había.",
+          "de": "„Ha” ist Perfekt, an das Jetzt gebunden: hier ist es aber ein früheres Ereignis, richtig: había."
+        },
+        "tiene": {
+          "hu": "A „tiene” jelen idő: azt jelentené, hogy MOST birtokol valamit, itt viszont az evésről (comido) van szó, helyesen: había.",
+          "en": "\"Tiene\" is present: it would mean he HAS something now, but here it's about having eaten (comido), correctly: había.",
+          "es": "«Tiene» es presente: significaría que TIENE algo ahora, pero aquí se trata de haber comido, correcto: había.",
+          "de": "„Tiene” ist Präsens: es würde bedeuten, dass er JETZT etwas hat, hier geht es aber ums Gegessenhaben, richtig: había."
+        }
+      },
+      "examples": [
+        "Dijo que había llegado tarde.",
+        "Contó que había trabajado mucho."
+      ]
+    },
+    {
+      "id": "ei-04",
+      "sentence": "Dijo que ___ tarde.",
+      "options": [
+        "llegaría",
+        "llega",
+        "llegó"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A futuro a múlt bevezető után condicionalra tolódik: llegaré → llegaría.",
+        "en": "The future shifts to the conditional after a past introducer: llegaré → llegaría.",
+        "es": "El futuro se desplaza a condicional después de un introductor en pasado: llegaré → llegaría.",
+        "de": "Das Futur verschiebt sich nach einer vergangenen Einleitung zum Konditional: llegaré → llegaría."
+      },
+      "wrong": {
+        "llega": {
+          "hu": "A „llega” jelen idő: nem fejez ki egy korábban tett jövőbeli ígéretet, helyesen: llegaría.",
+          "en": "\"Llega\" is present: it doesn't express a future promise made earlier, correctly: llegaría.",
+          "es": "«Llega» es presente: no expresa una promesa futura hecha antes, correcto: llegaría.",
+          "de": "„Llega” ist Präsens: es drückt kein zuvor gegebenes Zukunftsversprechen aus, richtig: llegaría."
+        },
+        "llegó": {
+          "hu": "A „llegó” indefinido: egy megtörtént tényt jelentene, nem egy jövőre tett ígéretet, helyesen: llegaría.",
+          "en": "\"Llegó\" is preterite: it would report a fact that happened, not a promise about the future, correctly: llegaría.",
+          "es": "«Llegó» es indefinido: contaría un hecho ocurrido, no una promesa sobre el futuro, correcto: llegaría.",
+          "de": "„Llegó” ist Indefinido: es würde eine geschehene Tatsache berichten, kein Zukunftsversprechen, richtig: llegaría."
+        }
+      },
+      "examples": [
+        "Dijo que llegaría temprano.",
+        "Contó que estudiaría más."
+      ]
+    },
+    {
+      "id": "ei-05",
+      "sentence": "Me pidió que ___ a mi hermano.",
+      "options": [
+        "llamara",
+        "llamo",
+        "llamaría"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Kérés (pidió que): que + imperfecto de subjuntivo, llamar → llamara.",
+        "en": "A request (pidió que): que + imperfect subjunctive, llamar → llamara.",
+        "es": "Una petición (pidió que): que + imperfecto de subjuntivo, llamar → llamara.",
+        "de": "Eine Bitte (pidió que): que + Imperfecto de subjuntivo, llamar → llamara."
+      },
+      "wrong": {
+        "llamo": {
+          "hu": "A „llamo” jelen idő, kijelentő mód: nem fejez ki kérést, helyesen: llamara.",
+          "en": "\"Llamo\" is present indicative: it doesn't express a request, correctly: llamara.",
+          "es": "«Llamo» es presente de indicativo: no expresa una petición, correcto: llamara.",
+          "de": "„Llamo” ist Indikativ Präsens: es drückt keine Bitte aus, richtig: llamara."
+        },
+        "llamaría": {
+          "hu": "A „llamaría” feltételes mód: nem illik a que utáni subjuntivo szerkezethez, helyesen: llamara.",
+          "en": "\"Llamaría\" is conditional: it doesn't fit the que + subjunctive structure, correctly: llamara.",
+          "es": "«Llamaría» es condicional: no encaja en la estructura que + subjuntivo, correcto: llamara.",
+          "de": "„Llamaría” ist Konditional: es passt nicht zur Struktur que + Subjuntivo, richtig: llamara."
+        }
+      },
+      "examples": [
+        "Me pidió que cerrara la puerta.",
+        "Me pidió que trabajara más."
+      ]
+    },
+    {
+      "id": "ei-06",
+      "sentence": "Dijo que esperaba que ___ más.",
+      "options": [
+        "estudiaras",
+        "estudias",
+        "estudió"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A que utáni presente de subjuntivo a múlt bevezető után imperfecto de subjuntivóra tolódik: estudies → estudiaras.",
+        "en": "The present subjunctive after que shifts to the imperfect subjunctive after a past introducer: estudies → estudiaras.",
+        "es": "El presente de subjuntivo después de que se desplaza a imperfecto de subjuntivo después de un introductor en pasado: estudies → estudiaras.",
+        "de": "Der Presente de subjuntivo nach que verschiebt sich nach einer vergangenen Einleitung zum Imperfecto de subjuntivo: estudies → estudiaras."
+      },
+      "wrong": {
+        "estudias": {
+          "hu": "Az „estudias” jelen idő, kijelentő mód: nem illik a que utáni subjuntivo szerkezetbe, helyesen: estudiaras.",
+          "en": "\"Estudias\" is present indicative: it doesn't fit the que + subjunctive structure, correctly: estudiaras.",
+          "es": "«Estudias» es presente de indicativo: no encaja en la estructura que + subjuntivo, correcto: estudiaras.",
+          "de": "„Estudias” ist Indikativ Präsens: es passt nicht zur Struktur que + Subjuntivo, richtig: estudiaras."
+        },
+        "estudió": {
+          "hu": "Az „estudió” indefinido, kijelentő mód: szintén nem subjuntivo, helyesen: estudiaras.",
+          "en": "\"Estudió\" is preterite indicative: also not subjunctive, correctly: estudiaras.",
+          "es": "«Estudió» es indefinido de indicativo: tampoco es subjuntivo, correcto: estudiaras.",
+          "de": "„Estudió” ist Indikativ Indefinido: ebenfalls kein Subjuntivo, richtig: estudiaras."
+        }
+      },
+      "examples": [
+        "Dijo que quería que estudiara más.",
+        "Me pidió que llamara pronto."
+      ]
+    },
+    {
+      "id": "ei-07",
+      "sentence": "Preguntó ___ tenía tiempo.",
+      "options": [
+        "si",
+        "que",
+        "dónde"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Eldöntendő kérdés (¿Tienes tiempo?) függő beszédben si-vel vezetődik be.",
+        "en": "A yes/no question (¿Tienes tiempo?) is introduced with si in reported speech.",
+        "es": "Una pregunta cerrada (¿Tienes tiempo?) se introduce con si en el estilo indirecto.",
+        "de": "Eine Ja/Nein-Frage (¿Tienes tiempo?) wird in der indirekten Rede mit si eingeleitet."
+      },
+      "wrong": {
+        "que": {
+          "hu": "A „que” kijelentést vezet be, nem eldöntendő kérdést, helyesen: si.",
+          "en": "\"Que\" introduces a statement, not a yes/no question, correctly: si.",
+          "es": "«Que» introduce una afirmación, no una pregunta cerrada, correcto: si.",
+          "de": "„Que” leitet eine Aussage ein, keine Ja/Nein-Frage, richtig: si."
+        },
+        "dónde": {
+          "hu": "A „dónde” kérdőszó, de az eredeti kérdésben nincs kérdőszó, csak eldöntendő kérdés, helyesen: si.",
+          "en": "\"Dónde\" is a question word, but the original question has no question word, only a yes/no question, correctly: si.",
+          "es": "«Dónde» es una partícula interrogativa, pero la pregunta original no tiene partícula, solo es cerrada, correcto: si.",
+          "de": "„Dónde” ist ein Fragewort, aber die ursprüngliche Frage hat kein Fragewort, nur eine Ja/Nein-Frage, richtig: si."
+        }
+      },
+      "examples": [
+        "Preguntó si vivía cerca.",
+        "Preguntó si tenía hambre."
+      ]
+    },
+    {
+      "id": "ei-08",
+      "sentence": "Preguntó ___ vivía.",
+      "options": [
+        "dónde",
+        "si",
+        "que"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Kérdőszavas kérdésnél (¿Dónde vives?) a kérdőszó megmarad, csak az igeidő tolódik.",
+        "en": "For a wh-question (¿Dónde vives?), the question word stays, only the tense shifts.",
+        "es": "En una pregunta con partícula (¿Dónde vives?), esta se mantiene, solo se desplaza el tiempo.",
+        "de": "Bei einer W-Frage (¿Dónde vives?) bleibt das Fragewort erhalten, nur die Zeit verschiebt sich."
+      },
+      "wrong": {
+        "si": {
+          "hu": "A „si” az eldöntendő kérdés jele, de itt van kérdőszó (dónde), azt nem cserélhetjük si-re, helyesen: dónde.",
+          "en": "\"Si\" marks a yes/no question, but here there's a question word (dónde), it can't be replaced with si, correctly: dónde.",
+          "es": "«Si» marca una pregunta cerrada, pero aquí hay partícula (dónde), no se puede cambiar por si, correcto: dónde.",
+          "de": "„Si” markiert eine Ja/Nein-Frage, hier gibt es aber ein Fragewort (dónde), es kann nicht durch si ersetzt werden, richtig: dónde."
+        },
+        "que": {
+          "hu": "A „que” kijelentést vezetne be, nem kérdést, helyesen: dónde.",
+          "en": "\"Que\" would introduce a statement, not a question, correctly: dónde.",
+          "es": "«Que» introduciría una afirmación, no una pregunta, correcto: dónde.",
+          "de": "„Que” würde eine Aussage einleiten, keine Frage, richtig: dónde."
+        }
+      },
+      "examples": [
+        "Preguntó dónde trabajaba.",
+        "Preguntó cuándo llegaba."
+      ]
+    },
+    {
+      "id": "ei-09",
+      "sentence": "Dijo que iba a llegar ___.",
+      "options": [
+        "allí",
+        "aquí",
+        "ahí"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A hely-határozó a beszélő helyéhez képest változik: aquí (itt) helyett allí (ott) áll a beszámolóban.",
+        "en": "The place adverb shifts relative to the speaker's location: allí (there) replaces aquí (here) in the report.",
+        "es": "El adverbio de lugar cambia respecto al lugar del hablante: allí (allá) sustituye a aquí (aquí) en el relato.",
+        "de": "Das Ortsadverb ändert sich bezogen auf den Standort des Sprechers: allí (dort) ersetzt aquí (hier) im Bericht."
+      },
+      "wrong": {
+        "aquí": {
+          "hu": "Az eredeti mondatban a beszélő saját helyére utalt (aquí), de a beszámolóban ez már egy másik hely, helyesen: allí.",
+          "en": "In the original sentence, the speaker meant their own place (aquí), but in the report it's a different place, correctly: allí.",
+          "es": "En la oración original, el hablante se refería a su propio lugar (aquí), pero en el relato ya es otro lugar, correcto: allí.",
+          "de": "Im Originalsatz meinte der Sprecher seinen eigenen Ort (aquí), im Bericht ist es aber ein anderer Ort, richtig: allí."
+        },
+        "ahí": {
+          "hu": "Az „ahí” egy közelebbi távolságot jelöl, itt viszont a nagyobb távolságot kifejező allí illik, helyesen: allí.",
+          "en": "\"Ahí\" marks a closer distance, but here the farther allí fits, correctly: allí.",
+          "es": "«Ahí» marca una distancia más cercana, pero aquí encaja el más lejano allí, correcto: allí.",
+          "de": "„Ahí” markiert eine nähere Entfernung, hier passt aber das weiter entfernte allí, richtig: allí."
+        }
+      },
+      "examples": [
+        "Contó que iba a estudiar allí.",
+        "Dijo que vivía allí."
+      ]
+    },
+    {
+      "id": "ei-10",
+      "sentence": "Dijo que llegaría al día ___.",
+      "options": [
+        "siguiente",
+        "anterior",
+        "mismo"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Mañana (a beszéd napjához képest) függő beszédben al día siguiente lesz.",
+        "en": "Mañana (relative to the day of speaking) becomes al día siguiente in reported speech.",
+        "es": "Mañana (respecto al día de hablar) se convierte en al día siguiente en el estilo indirecto.",
+        "de": "Mañana (bezogen auf den Tag des Sprechens) wird in der indirekten Rede zu al día siguiente."
+      },
+      "wrong": {
+        "anterior": {
+          "hu": "Az „anterior” a MEGELŐZŐ napot jelentené (ayer helyett), itt viszont a KÖVETKEZŐ napról van szó, helyesen: siguiente.",
+          "en": "\"Anterior\" would mean the day BEFORE (instead of ayer), but here it's about the NEXT day, correctly: siguiente.",
+          "es": "«Anterior» significaría el día DE ANTES (en vez de ayer), pero aquí se trata del día SIGUIENTE, correcto: siguiente.",
+          "de": "„Anterior” würde den Tag DAVOR bedeuten (statt ayer), hier geht es aber um den FOLGENDEN Tag, richtig: siguiente."
+        },
+        "mismo": {
+          "hu": "A „mismo” azt jelentené, hogy UGYANAZON a napon, itt viszont egy másnapról van szó, helyesen: siguiente.",
+          "en": "\"Mismo\" would mean on the SAME day, but here it's about the next day, correctly: siguiente.",
+          "es": "«Mismo» significaría el MISMO día, pero aquí se trata del día siguiente, correcto: siguiente.",
+          "de": "„Mismo” würde AM SELBEN Tag bedeuten, hier geht es aber um den nächsten Tag, richtig: siguiente."
+        }
+      },
+      "examples": [
+        "Dijo que llegaría al día siguiente.",
+        "Contó que había llegado el día anterior."
+      ]
+    },
+    {
+      "id": "ei-11",
+      "sentence": "Dijo que ese era ___ coche.",
+      "options": [
+        "su",
+        "mi",
+        "tu"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A yo → él személyváltással a birtokos névmás mi (enyém) helyett su (övé) lesz.",
+        "en": "With the yo → él person shift, the possessive mi (my) becomes su (his/her).",
+        "es": "Con el cambio de persona yo → él, el posesivo mi pasa a su.",
+        "de": "Mit dem Personenwechsel yo → él wird das Possessivpronomen mi zu su."
+      },
+      "wrong": {
+        "mi": {
+          "hu": "A „mi” első személyű birtokos, de a bevezető ige harmadik személyre vált (dijo que él), helyesen: su.",
+          "en": "\"Mi\" is a first-person possessive, but the introducing verb shifts to third person (dijo que él), correctly: su.",
+          "es": "«Mi» es un posesivo de primera persona, pero el verbo introductor cambia a tercera persona (dijo que él), correcto: su.",
+          "de": "„Mi” ist ein Possessivpronomen der ersten Person, aber das einleitende Verb wechselt zur dritten Person (dijo que él), richtig: su."
+        },
+        "tu": {
+          "hu": "A „tu” második személyű birtokos, itt viszont nincs szó a hallgatóról, hanem egy harmadik személyről, helyesen: su.",
+          "en": "\"Tu\" is a second-person possessive, but here it's not about the listener, it's about a third person, correctly: su.",
+          "es": "«Tu» es un posesivo de segunda persona, pero aquí no se habla del oyente, sino de una tercera persona, correcto: su.",
+          "de": "„Tu” ist ein Possessivpronomen der zweiten Person, hier geht es aber nicht um den Zuhörer, sondern um eine dritte Person, richtig: su."
+        }
+      },
+      "examples": [
+        "Contó que ese era su libro.",
+        "Dijo que su hermano vivía allí."
+      ]
+    },
+    {
+      "id": "ei-12",
+      "sentence": "El profesor dijo que la Tierra ___ redonda.",
+      "options": [
+        "es",
+        "era",
+        "fue"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Olyan igazságnál, ami ma is fennáll, a bevezető ige múltja ellenére nincs eltolás: es marad.",
+        "en": "For a truth that still holds today, there is no shift despite the past introducer: es stays.",
+        "es": "Con una verdad que sigue vigente hoy, no hay desplazamiento pese al introductor en pasado: es se queda.",
+        "de": "Bei einer Wahrheit, die auch heute noch gilt, gibt es trotz der vergangenen Einleitung keine Verschiebung: es bleibt."
+      },
+      "wrong": {
+        "era": {
+          "hu": "Az „era” az eltolás általános szabályát követi, de itt kivétel él, mert az állítás ma is igaz, helyesen: es.",
+          "en": "\"Era\" follows the general shift rule, but here an exception applies because the statement is still true today, correctly: es.",
+          "es": "«Era» sigue la regla general del desplazamiento, pero aquí hay una excepción porque la afirmación sigue siendo verdad hoy, correcto: es.",
+          "de": "„Era” folgt der allgemeinen Verschiebungsregel, hier gilt aber eine Ausnahme, weil die Aussage auch heute noch wahr ist, richtig: es."
+        },
+        "fue": {
+          "hu": "A „fue” indefinido: egy lezárt múltbeli tényt jelentene, itt viszont egy örök igazságról van szó, helyesen: es.",
+          "en": "\"Fue\" is preterite: it would report a closed past fact, but here it's an eternal truth, correctly: es.",
+          "es": "«Fue» es indefinido: contaría un hecho pasado y cerrado, pero aquí se trata de una verdad eterna, correcto: es.",
+          "de": "„Fue” ist Indefinido: es würde eine abgeschlossene vergangene Tatsache berichten, hier geht es aber um eine ewige Wahrheit, richtig: es."
+        }
+      },
+      "examples": [
+        "El médico dijo que fumar es malo.",
+        "Dijo que el español es difícil."
+      ]
+    },
+    {
+      "id": "ei-match-01",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "«Vengo mañana.»",
+          "en": "she said she was coming the next day"
+        },
+        {
+          "es": "«¿Tienes tiempo?»",
+          "en": "he asked if she had time"
+        },
+        {
+          "es": "«¿Dónde vives?»",
+          "en": "she asked where he lived"
+        },
+        {
+          "es": "«He comido ya.»",
+          "en": "he said he had already eaten"
+        },
+        {
+          "es": "«¡Ven aquí!»",
+          "en": "she told him to come there"
+        },
+        {
+          "es": "«Vendré el lunes.»",
+          "en": "he said he would come the next Monday"
+        }
+      ]
+    },
+    {
+      "id": "ei-form-01",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "tengo",
+      "answer": "tenía",
+      "table": "cambio"
+    },
+    {
+      "id": "ei-form-02",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "vivo",
+      "answer": "vivía",
+      "table": "cambio"
+    },
+    {
+      "id": "ei-form-03",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "comí",
+      "answer": "había comido",
+      "table": "cambio"
+    },
+    {
+      "id": "ei-form-04",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "llegó",
+      "answer": "había llegado",
+      "table": "cambio"
+    },
+    {
+      "id": "ei-form-05",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "he trabajado",
+      "answer": "había trabajado",
+      "table": "cambio"
+    },
+    {
+      "id": "ei-form-06",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "he estudiado",
+      "answer": "había estudiado",
+      "table": "cambio"
+    },
+    {
+      "id": "ei-form-07",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "vendré",
+      "answer": "vendría",
+      "table": "cambio"
+    },
+    {
+      "id": "ei-form-08",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "llegaré",
+      "answer": "llegaría",
+      "table": "cambio"
+    },
+    {
+      "id": "ei-form-09",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "¡Cierra!",
+      "answer": "cerrara",
+      "table": "cambio"
+    },
+    {
+      "id": "ei-form-10",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "¡Ven!",
+      "answer": "viniera",
+      "table": "cambio"
+    },
+    {
+      "id": "ei-form-11",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "quiero que vengas",
+      "answer": "vinieras",
+      "table": "cambio"
+    },
+    {
+      "id": "ei-form-12",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "espero que estudies",
+      "answer": "estudiaras",
+      "table": "cambio"
+    },
+    {
+      "kind": "why",
+      "id": "ei-why-01",
+      "es": "Dijo que tenía hambre.",
+      "tr": {
+        "hu": "Azt mondta, hogy éhes.",
+        "en": "He said he was hungry.",
+        "es": "Dijo que tenía hambre.",
+        "de": "Er sagte, dass er Hunger habe."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "bevezető ige múltban, presente → imperfecto eltolás",
+            "en": "past introducer, present → imperfect shift",
+            "es": "introductor en pasado, desplazamiento presente → imperfecto",
+            "de": "vergangene Einleitung, Verschiebung Präsens → Imperfekt"
+          }
+        },
+        {
+          "text": {
+            "hu": "bevezető ige jelenben, nincs eltolás",
+            "en": "present introducer, no shift",
+            "es": "introductor en presente, sin desplazamiento",
+            "de": "Präsens-Einleitung, keine Verschiebung"
+          },
+          "wrong": {
+            "hu": "A „dijo” múlt idő, nem jelen: kell az eltolás.",
+            "en": "\"Dijo\" is past tense, not present: the shift is needed.",
+            "es": "«Dijo» es pasado, no presente: hace falta el desplazamiento.",
+            "de": "„Dijo” ist Vergangenheit, kein Präsens: die Verschiebung ist nötig."
+          }
+        },
+        {
+          "text": {
+            "hu": "kérdés, si-vel bevezetve",
+            "en": "a question, introduced with si",
+            "es": "una pregunta, introducida con si",
+            "de": "eine Frage, mit si eingeleitet"
+          },
+          "wrong": {
+            "hu": "A mondat nem kérdés, hanem kijelentés (dijo que).",
+            "en": "The sentence isn't a question, it's a statement (dijo que).",
+            "es": "La oración no es una pregunta, es una afirmación (dijo que).",
+            "de": "Der Satz ist keine Frage, sondern eine Aussage (dijo que)."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ei-why-02",
+      "es": "Preguntó si tenía tiempo.",
+      "tr": {
+        "hu": "Megkérdezte, van-e ideje.",
+        "en": "He asked if she had time.",
+        "es": "Preguntó si tenía tiempo.",
+        "de": "Er fragte, ob sie Zeit habe."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "eldöntendő kérdés → si",
+            "en": "a yes/no question → si",
+            "es": "pregunta cerrada → si",
+            "de": "Ja/Nein-Frage → si"
+          }
+        },
+        {
+          "text": {
+            "hu": "kérdőszavas kérdés, a kérdőszó marad",
+            "en": "a wh-question, the question word stays",
+            "es": "pregunta con partícula, esta se mantiene",
+            "de": "W-Frage, das Fragewort bleibt"
+          },
+          "wrong": {
+            "hu": "Nincs kérdőszó a mondatban, csak si.",
+            "en": "There's no question word in the sentence, only si.",
+            "es": "No hay partícula interrogativa en la oración, solo si.",
+            "de": "Es gibt kein Fragewort im Satz, nur si."
+          }
+        },
+        {
+          "text": {
+            "hu": "kérés vagy parancs → que + subjuntivo",
+            "en": "a request or command → que + subjunctive",
+            "es": "una petición u orden → que + subjuntivo",
+            "de": "eine Bitte oder ein Befehl → que + Subjuntivo"
+          },
+          "wrong": {
+            "hu": "A mondat egy kérdést idéz, nem egy kérést.",
+            "en": "The sentence reports a question, not a request.",
+            "es": "La oración cita una pregunta, no una petición.",
+            "de": "Der Satz gibt eine Frage wieder, keine Bitte."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ei-why-03",
+      "es": "Preguntó dónde vivía.",
+      "tr": {
+        "hu": "Megkérdezte, hol lakik.",
+        "en": "She asked where he lived.",
+        "es": "Preguntó dónde vivía.",
+        "de": "Sie fragte, wo er wohne."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kérdőszavas kérdés, a kérdőszó marad",
+            "en": "a wh-question, the question word stays",
+            "es": "pregunta con partícula, esta se mantiene",
+            "de": "W-Frage, das Fragewort bleibt"
+          }
+        },
+        {
+          "text": {
+            "hu": "eldöntendő kérdés → si",
+            "en": "a yes/no question → si",
+            "es": "pregunta cerrada → si",
+            "de": "Ja/Nein-Frage → si"
+          },
+          "wrong": {
+            "hu": "A mondatban „dónde” áll, nem „si”: van kérdőszó.",
+            "en": "The sentence has \"dónde\", not \"si\": there's a question word.",
+            "es": "La oración tiene «dónde», no «si»: hay partícula interrogativa.",
+            "de": "Der Satz enthält „dónde”, nicht „si”: es gibt ein Fragewort."
+          }
+        },
+        {
+          "text": {
+            "hu": "bevezető ige jelenben, nincs eltolás",
+            "en": "present introducer, no shift",
+            "es": "introductor en presente, sin desplazamiento",
+            "de": "Präsens-Einleitung, keine Verschiebung"
+          },
+          "wrong": {
+            "hu": "A „preguntó” múlt idő, az igeidő (vivía) el is tolódott.",
+            "en": "\"Preguntó\" is past tense, the tense (vivía) has shifted too.",
+            "es": "«Preguntó» es pasado, el tiempo (vivía) también se desplazó.",
+            "de": "„Preguntó” ist Vergangenheit, die Zeit (vivía) hat sich auch verschoben."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ei-why-04",
+      "es": "Me pidió que cerrara la puerta.",
+      "tr": {
+        "hu": "Megkért, hogy csukjam be az ajtót.",
+        "en": "She asked me to close the door.",
+        "es": "Me pidió que cerrara la puerta.",
+        "de": "Sie bat mich, die Tür zu schließen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kérés/parancs → que + imperfecto de subjuntivo",
+            "en": "a request/command → que + imperfect subjunctive",
+            "es": "petición/orden → que + imperfecto de subjuntivo",
+            "de": "Bitte/Befehl → que + Imperfecto de subjuntivo"
+          }
+        },
+        {
+          "text": {
+            "hu": "futuro → condicional eltolás",
+            "en": "future → conditional shift",
+            "es": "desplazamiento futuro → condicional",
+            "de": "Verschiebung Futur → Konditional"
+          },
+          "wrong": {
+            "hu": "Nincs futuro a mondatban, ez egy felszólításból lett kérés.",
+            "en": "There's no future in the sentence, this came from an imperative turned into a request.",
+            "es": "No hay futuro en la oración, esto viene de un imperativo convertido en petición.",
+            "de": "Es gibt kein Futur im Satz, das kommt von einem zur Bitte gewordenen Imperativ."
+          }
+        },
+        {
+          "text": {
+            "hu": "nincs eltolás, mert ma is igaz",
+            "en": "no shift, because it's still true today",
+            "es": "sin desplazamiento, porque sigue siendo verdad hoy",
+            "de": "keine Verschiebung, weil es auch heute noch wahr ist"
+          },
+          "wrong": {
+            "hu": "Ez nem egy örök igazság, hanem egy konkrét kérés.",
+            "en": "This isn't an eternal truth, it's a specific request.",
+            "es": "Esto no es una verdad eterna, es una petición concreta.",
+            "de": "Das ist keine ewige Wahrheit, sondern eine konkrete Bitte."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ei-why-05",
+      "es": "Dijo que vendría al día siguiente.",
+      "tr": {
+        "hu": "Azt mondta, hogy másnap jön.",
+        "en": "He said he would come the next day.",
+        "es": "Dijo que vendría al día siguiente.",
+        "de": "Er sagte, dass er am nächsten Tag komme."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "futuro → condicional eltolás",
+            "en": "future → conditional shift",
+            "es": "desplazamiento futuro → condicional",
+            "de": "Verschiebung Futur → Konditional"
+          }
+        },
+        {
+          "text": {
+            "hu": "indefinido → pluscuamperfecto eltolás",
+            "en": "preterite → pluperfect shift",
+            "es": "desplazamiento indefinido → pluscuamperfecto",
+            "de": "Verschiebung Indefinido → Plusquamperfekt"
+          },
+          "wrong": {
+            "hu": "Nincs a mondatban „había”: ez nem egy korábbi múltbeli tény, hanem egy ígéret.",
+            "en": "There's no \"había\" in the sentence: this isn't an earlier past fact, but a promise.",
+            "es": "No hay «había» en la oración: esto no es un hecho pasado anterior, sino una promesa.",
+            "de": "Es gibt kein „había” im Satz: das ist keine frühere vergangene Tatsache, sondern ein Versprechen."
+          }
+        },
+        {
+          "text": {
+            "hu": "bevezető ige jelenben, nincs eltolás",
+            "en": "present introducer, no shift",
+            "es": "introductor en presente, sin desplazamiento",
+            "de": "Präsens-Einleitung, keine Verschiebung"
+          },
+          "wrong": {
+            "hu": "A „dijo” múlt idő, és az igeidő (vendría) el is tolódott.",
+            "en": "\"Dijo\" is past tense, and the tense (vendría) has shifted too.",
+            "es": "«Dijo» es pasado, y el tiempo (vendría) también se desplazó.",
+            "de": "„Dijo” ist Vergangenheit, und die Zeit (vendría) hat sich auch verschoben."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ei-why-06",
+      "es": "El profesor dijo que la Tierra es redonda.",
+      "tr": {
+        "hu": "A tanár azt mondta, hogy a Föld gömbölyű.",
+        "en": "The teacher said the Earth is round.",
+        "es": "El profesor dijo que la Tierra es redonda.",
+        "de": "Der Lehrer sagte, die Erde sei rund."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "nincs eltolás, mert ma is igaz",
+            "en": "no shift, because it's still true today",
+            "es": "sin desplazamiento, porque sigue siendo verdad hoy",
+            "de": "keine Verschiebung, weil es auch heute noch wahr ist"
+          }
+        },
+        {
+          "text": {
+            "hu": "bevezető ige múltban, eltolás kötelező",
+            "en": "past introducer, the shift is mandatory",
+            "es": "introductor en pasado, el desplazamiento es obligatorio",
+            "de": "vergangene Einleitung, die Verschiebung ist zwingend"
+          },
+          "wrong": {
+            "hu": "A bevezető valóban múlt (dijo), de egy örök igazságnál ez a szabály kivétel.",
+            "en": "The introducer is indeed past (dijo), but for an eternal truth this rule has an exception.",
+            "es": "El introductor es efectivamente pasado (dijo), pero en una verdad eterna esta regla tiene excepción.",
+            "de": "Die Einleitung ist zwar Vergangenheit (dijo), aber bei einer ewigen Wahrheit gibt es hier eine Ausnahme."
+          }
+        },
+        {
+          "text": {
+            "hu": "kérdés, a kérdőszó marad",
+            "en": "a question, the question word stays",
+            "es": "una pregunta, la partícula se mantiene",
+            "de": "eine Frage, das Fragewort bleibt"
+          },
+          "wrong": {
+            "hu": "A mondat nem kérdés, hanem kijelentés.",
+            "en": "The sentence isn't a question, it's a statement.",
+            "es": "La oración no es una pregunta, es una afirmación.",
+            "de": "Der Satz ist keine Frage, sondern eine Aussage."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ei-why-07",
+      "es": "Dice que viene mañana.",
+      "tr": {
+        "hu": "Azt mondja, hogy holnap jön.",
+        "en": "He says he's coming tomorrow.",
+        "es": "Dice que viene mañana.",
+        "de": "Er sagt, dass er morgen kommt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "bevezető ige jelenben, nincs eltolás",
+            "en": "present introducer, no shift",
+            "es": "introductor en presente, sin desplazamiento",
+            "de": "Präsens-Einleitung, keine Verschiebung"
+          }
+        },
+        {
+          "text": {
+            "hu": "bevezető ige múltban, presente → imperfecto",
+            "en": "past introducer, present → imperfect",
+            "es": "introductor en pasado, presente → imperfecto",
+            "de": "vergangene Einleitung, Präsens → Imperfekt"
+          },
+          "wrong": {
+            "hu": "A „dice” jelen idő, nem „dijo”: nincs eltolás.",
+            "en": "\"Dice\" is present tense, not \"dijo\": there's no shift.",
+            "es": "«Dice» es presente, no «dijo»: no hay desplazamiento.",
+            "de": "„Dice” ist Präsens, nicht „dijo”: es gibt keine Verschiebung."
+          }
+        },
+        {
+          "text": {
+            "hu": "kérés/parancs → que + subjuntivo",
+            "en": "a request/command → que + subjunctive",
+            "es": "petición/orden → que + subjuntivo",
+            "de": "Bitte/Befehl → que + Subjuntivo"
+          },
+          "wrong": {
+            "hu": "A mondat egy kijelentést idéz, nem egy kérést.",
+            "en": "The sentence reports a statement, not a request.",
+            "es": "La oración cita una afirmación, no una petición.",
+            "de": "Der Satz gibt eine Aussage wieder, keine Bitte."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}
