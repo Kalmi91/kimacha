@@ -662,7 +662,7 @@ export default {
   },
   // PLAN-pcic step 5: the PCIC tab (English -> Spanish typing, Anki buttons).
   pcic: {
-    header: (due: number, newCount: number, doneToday: number) => `due ${due} · new ${newCount} · done today ${doneToday}`,
+    header: (due: number, newCount: number, doneToday: number, total: number) => `${total} words · due ${due} · new ${newCount} · done today ${doneToday}`,
     again: "Didn't know",
     hard: 'Hard',
     good: 'Knew it',
