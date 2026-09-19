@@ -688,5 +688,9 @@ export default {
     learningStep: (step: number, total: number) => `paso ${step}/${total}`,
     newBadge: 'nueva',
     moreNew: (n: number) => `+${n} palabras nuevas`,
+    tileAnswered: 'Respondidas',
+    tileNew: 'Nuevas',
+    tileAgain: 'Otra vez',
+    introduced: (n: number, total: number) => `${n} / ${total} palabras introducidas`,
   },
 };

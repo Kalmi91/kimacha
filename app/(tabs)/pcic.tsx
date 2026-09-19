@@ -245,15 +245,39 @@ export default function PcicScreen() {
   }
 
   if (!current || !currentItem) {
+    // FB317: hány PCIC-tétel van már bevezetve (nem 'new' állapotú) a teljes
+    // listából, a done-képernyő saját haladás-csíkjához.
+    const introducedCount = [...allCards.values()].filter((c) => c.state !== 'new').length;
+    const introducedPct = PCIC_ITEMS.length > 0 ? (introducedCount / PCIC_ITEMS.length) * 100 : 0;
     return (
-      <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <View style={[styles.container, styles.doneContainer, { backgroundColor: colors.background }]}>
         {headerRow}
-        <Text style={[styles.title, { color: colors.text }]}>{s.pcic.doneTitle}</Text>
-        {sessionAnswered > 0 && (
-          <Text style={[styles.emptySub, { color: colors.tabIconDefault }]}>
-            {s.pcic.summary(sessionAnswered, sessionNew, sessionAgain)}
+        <View style={styles.doneHeader}>
+          <Text style={styles.doneEmoji}>🎉</Text>
+          <Text style={[styles.title, { color: colors.text }]}>{s.pcic.doneTitle}</Text>
+        </View>
+        <View style={styles.tilesRow}>
+          <View style={[styles.tile, { backgroundColor: '#38BDF8' }]}>
+            <Text style={styles.tileNumber}>{sessionAnswered}</Text>
+            <Text style={styles.tileLabel}>{s.pcic.tileAnswered}</Text>
+          </View>
+          <View style={[styles.tile, { backgroundColor: '#22C55E' }]}>
+            <Text style={styles.tileNumber}>{sessionNew}</Text>
+            <Text style={styles.tileLabel}>{s.pcic.tileNew}</Text>
+          </View>
+          <View style={[styles.tile, { backgroundColor: '#F472B6' }]}>
+            <Text style={styles.tileNumber}>{sessionAgain}</Text>
+            <Text style={styles.tileLabel}>{s.pcic.tileAgain}</Text>
+          </View>
+        </View>
+        <View style={styles.introducedBlock}>
+          <Text style={[styles.introducedLabel, { color: colors.tabIconDefault }]}>
+            {s.pcic.introduced(introducedCount, PCIC_ITEMS.length)}
           </Text>
-        )}
+          <View style={[styles.introducedTrack, { backgroundColor: colors.card }]}>
+            <View style={[styles.introducedFill, { backgroundColor: '#38BDF8', width: `${introducedPct}%` }]} />
+          </View>
+        </View>
         {NEW_ORDER.some((id) => !allCards.has(id) || allCards.get(id)!.state === 'new') && (
           <Pressable style={[styles.checkBtn, { backgroundColor: '#38BDF8' }]} onPress={handleMoreNew}>
             <Text style={styles.checkBtnText}>{s.pcic.moreNew(10)}</Text>
@@ -429,6 +453,56 @@ const styles = StyleSheet.create({
   emptySub: {
     fontSize: 14,
     textAlign: 'center',
+  },
+  // FB317: színes done-képernyő, a components/DoneScreen.tsx vizuális
+  // nyelvén (doneEmoji, statsGrid), de saját stílusokkal.
+  doneContainer: {
+    gap: 16,
+  },
+  doneHeader: {
+    alignItems: 'center',
+  },
+  doneEmoji: {
+    fontSize: 52,
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+  tilesRow: {
+    flexDirection: 'row',
+    gap: 10,
+  },
+  tile: {
+    flex: 1,
+    borderRadius: 16,
+    paddingVertical: 14,
+    alignItems: 'center',
+  },
+  tileNumber: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: '#FFFFFF',
+  },
+  tileLabel: {
+    fontSize: 12,
+    color: '#FFFFFF',
+    marginTop: 2,
+  },
+  introducedBlock: {
+    alignSelf: 'stretch',
+  },
+  introducedLabel: {
+    fontSize: 13,
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+  introducedTrack: {
+    height: 10,
+    borderRadius: 5,
+    overflow: 'hidden',
+  },
+  introducedFill: {
+    height: '100%',
+    borderRadius: 5,
   },
   card: {
     borderRadius: 20,
