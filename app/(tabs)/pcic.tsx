@@ -12,7 +12,7 @@ import { speechLang } from '@/lib/languages';
 import { localDateString } from '@/lib/usageStats';
 import { PCIC_ITEMS, findPcicItem } from '@/data/pcic';
 import { gradePcicAnswer, type PcicGrade } from '@/lib/pcicMatch';
-import { sm2Review, sm2Preview, pickSm2Session, sm2MarkKnown, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
+import { sm2Review, sm2Preview, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, DEFAULT_NEW_LIMIT, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
 import { answerInputProps } from '@/lib/inputProps';
@@ -60,6 +60,9 @@ export default function PcicScreen() {
   // ilyenkor a kártya a képernyőn marad felfedve, és a gradesRow helyett egy
   // "Tovább" gomb lépteti a sort (advance() csak akkor fut).
   const [autoGraded, setAutoGraded] = useState(false);
+  // FB314: a "+10 új szó" gombbal bővített napi keret; load() (fókusz-váltás,
+  // új nap) nullázza, a menet közbeni értékelések nem érintik.
+  const [extraNew, setExtraNew] = useState(0);
 
   const load = useCallback(async () => {
     const db = getDb();
@@ -74,6 +77,7 @@ export default function PcicScreen() {
     setSessionNew(0);
     setSessionAgain(0);
     setLastGraded(null);
+    setExtraNew(0);
     setLoading(false);
     // setTypedAnswer is listed because the React Compiler infers it as a
     // dependency of this async callback (FB minta, lásd app/spelling.tsx); it
@@ -194,10 +198,18 @@ export default function PcicScreen() {
     }
   };
 
+  // FB314: nincs több esedékes/új lap, de a témakörben van még be nem
+  // vezetett tétel; ez a napi keretet bővíti +10-zel és újraépíti a sort.
+  const handleMoreNew = () => {
+    const next = extraNew + 10;
+    setExtraNew(next);
+    setQueue(pickSm2Session([...allCards.values()], NEW_ORDER, today, DEFAULT_NEW_LIMIT + next));
+  };
+
   const headerRow = (
     <View style={styles.headerRow}>
       <Text style={[styles.headerText, { color: colors.tabIconDefault }]}>
-        {s.pcic.header(dueRemaining, newRemaining, doneToday)}
+        {s.pcic.header(dueRemaining, newRemaining, doneToday, PCIC_ITEMS.length)}
       </Text>
       {lastGraded && (
         <Pressable onPress={handleUndo} hitSlop={12} style={styles.resetBtn} accessibilityLabel={s.pcic.undo}>
@@ -228,6 +240,11 @@ export default function PcicScreen() {
             {s.pcic.summary(sessionAnswered, sessionNew, sessionAgain)}
           </Text>
         )}
+        {NEW_ORDER.some((id) => !allCards.has(id) || allCards.get(id)!.state === 'new') && (
+          <Pressable style={[styles.checkBtn, { backgroundColor: '#38BDF8' }]} onPress={handleMoreNew}>
+            <Text style={styles.checkBtnText}>{s.pcic.moreNew(10)}</Text>
+          </Pressable>
+        )}
         <FeedbackButton level="B1" languagePair="es-en" currentCard="pcic" />
       </View>
     );
@@ -244,7 +261,17 @@ export default function PcicScreen() {
 
       <Pressable style={[styles.card, { backgroundColor: colors.card }]} onPress={() => Keyboard.dismiss()}>
         <Text style={[styles.frontText, { color: colors.text }]}>{currentItem.en}</Text>
-        <Text style={[styles.sectionText, { color: colors.tabIconDefault }]}>{currentItem.section}</Text>
+        <View style={styles.sectionRow}>
+          <Text style={[styles.sectionText, { color: colors.tabIconDefault }]}>{currentItem.section}</Text>
+          {current.state === 'learning' && (
+            <Text style={[styles.stepBadge, { color: colors.tabIconDefault }]}>
+              {s.pcic.learningStep(current.step + 1, LEARNING_STEPS)}
+            </Text>
+          )}
+          {current.state === 'new' && (
+            <Text style={[styles.stepBadge, { color: colors.tabIconDefault }]}>{s.pcic.newBadge}</Text>
+          )}
+        </View>
 
         <TextInput
           style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }]}
@@ -255,6 +282,12 @@ export default function PcicScreen() {
           autoFocus
           {...answerInputProps}
         />
+
+        {!grade && (
+          <Pressable style={[styles.inlineCheckBtn, { backgroundColor: '#38BDF8' }]} onPress={handleCheck}>
+            <Text style={styles.inlineCheckText}>{`✓ ${s.card.check}`}</Text>
+          </Pressable>
+        )}
 
         {grade && (
           <View style={styles.resultSection}>
@@ -288,18 +321,14 @@ export default function PcicScreen() {
         <Text style={[styles.dontLearn, { color: colors.tabIconDefault }]}>{s.pcic.dontLearn}</Text>
       </Pressable>
 
-      {!grade ? (
-        <Pressable style={[styles.checkBtn, { backgroundColor: colors.tint }]} onPress={handleCheck}>
-          <Text style={styles.checkBtnText}>{s.card.check}</Text>
-        </Pressable>
-      ) : autoGraded ? (
+      {autoGraded ? (
         <Pressable
           style={[styles.checkBtn, { backgroundColor: colors.tint }]}
           onPress={() => lastGraded && advance(lastGraded.after)}
         >
           <Text style={styles.checkBtnText}>{s.pcic.next}</Text>
         </Pressable>
-      ) : (
+      ) : grade ? (
         <View style={styles.gradesRow}>
           {GRADES.map((g) => {
             const isPre = PRESELECT[grade.match] === g;
@@ -309,26 +338,20 @@ export default function PcicScreen() {
                 style={({ pressed }) => [
                   styles.gradeBtn,
                   {
-                    backgroundColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : colors.card,
-                    borderColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : isPre ? colors.tint : 'transparent',
+                    backgroundColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : g === 'good' ? '#38BDF8' : '#1D4ED8',
+                    borderColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : isPre ? '#FFFFFF' : 'transparent',
                     borderWidth: isPre ? 3 : 1,
                   },
                 ]}
                 onPress={() => handleGrade(g)}
               >
-                {({ pressed }) => (
-                  <>
-                    <Text style={[styles.gradeLabel, { color: pressed ? '#FFFFFF' : colors.text }]}>{s.pcic[g]}</Text>
-                    <Text style={[styles.gradePreview, { color: pressed ? '#FFFFFF' : colors.tabIconDefault }]}>
-                      {previews[g]}
-                    </Text>
-                  </>
-                )}
+                <Text style={styles.gradeLabel}>{s.pcic[g]}</Text>
+                <Text style={styles.gradePreview}>{previews[g]}</Text>
               </Pressable>
             );
           })}
         </View>
-      )}
+      ) : null}
 
       <FeedbackButton level="B1" languagePair="es-en" currentCard="pcic" />
     </KeyboardAvoidingView>
@@ -393,11 +416,20 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textAlign: 'center',
   },
+  sectionRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+    marginTop: 4,
+    marginBottom: 16,
+  },
   sectionText: {
     fontSize: 12,
     textAlign: 'center',
-    marginTop: 4,
-    marginBottom: 16,
+  },
+  stepBadge: {
+    fontSize: 12,
   },
   speakBtn: {
     padding: 4,
@@ -412,6 +444,22 @@ const styles = StyleSheet.create({
     padding: 14,
     fontSize: 18,
     textAlign: 'center',
+  },
+  inlineCheckBtn: {
+    alignSelf: 'stretch',
+    width: '100%',
+    minHeight: 44,
+    marginTop: 10,
+    borderRadius: 14,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inlineCheckText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: '700',
   },
   resultSection: {
     alignItems: 'center',
@@ -472,9 +520,11 @@ const styles = StyleSheet.create({
   gradeLabel: {
     fontSize: 14,
     fontWeight: '700',
+    color: '#FFFFFF',
   },
   gradePreview: {
     fontSize: 11,
     marginTop: 2,
+    color: '#FFFFFF',
   },
 });

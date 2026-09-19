@@ -425,12 +425,17 @@ export default {
     dismiss: 'Schließen',
     // NY3 (NYELVTAN.md "Első szelet"): Zeitform-Umschreib-Drill.
     startTransform: (n: number) => `Umschreiben (${n})`,
+    // FB316 (NYELVTAN.md NY10): Satz-umformen-Drill in 10er-Runden bei großen Lektionen.
+    startTransformRound: (n: number, total: number) => `Satz umformen (${n} von ${total})`,
+    moreRound: (n: number) => `Noch ${n}`,
     rewriteTo: (tense: string) => `Schreibe um: ${tense}`,
     showTranslation: 'Übersetzung zeigen',
     correct: 'Richtig',
     correctAnswer: 'Richtige Antwort',
     next: 'Weiter',
     accentHint: 'Auch ohne Akzente akzeptiert, fehlende Akzente werden gezeigt',
+    // FB315 (NY9): der Wort-Fokus-Button auf dem Lektionsbildschirm.
+    learnTheseWords: (n: number) => `Diese Wörter lernen (${n})`,
   },
   exam: {
     simulationOf: (model: string) => `Simulation der Prüfung ${model}`,
@@ -581,6 +586,10 @@ export default {
     sum: 'Die Summe der drei Zahlen: so viele Karten bleiben bis zum Ende der Runde, wenn du nichts falsch machst.',
     close: 'Schließen',
     levelProgress: (known: number, total: number) => `${known} / ${total} Wörter`,
+    // FB315 (NY9): das Fokus-Sitzungsbanner über der Karte (wortabhängiger Lektions-Drill).
+    focusBanner: (label: string, known: number, total: number) => `${label} · ${known}/${total} bekannt`,
+    focusDone: 'alle bekannt, zurück zur Lektion',
+    focusExit: 'Fokus beenden',
   },
   spelling: {
     title: 'Rechtschreibtraining',
@@ -662,7 +671,7 @@ export default {
   },
   // PLAN-pcic Schritt 5: der PCIC-Tab (Englisch -> Spanisch tippen, Anki-Knöpfe).
   pcic: {
-    header: (due: number, newCount: number, doneToday: number) => `fällig ${due} · neu ${newCount} · heute fertig ${doneToday}`,
+    header: (due: number, newCount: number, doneToday: number, total: number) => `${total} Wörter · fällig ${due} · neu ${newCount} · heute fertig ${doneToday}`,
     again: 'Wusste ich nicht',
     hard: 'Schwer',
     good: 'Wusste ich',
@@ -676,5 +685,8 @@ export default {
     undo: 'Rückgängig',
     dontLearn: 'Nicht lernen',
     next: 'Weiter',
+    learningStep: (step: number, total: number) => `Schritt ${step}/${total}`,
+    newBadge: 'neu',
+    moreNew: (n: number) => `+${n} neue Wörter`,
   },
 };

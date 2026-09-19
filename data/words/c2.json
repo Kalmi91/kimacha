@@ -4,12 +4,14 @@
     "level": "C2",
     "es": "el resquicio",
     "hu": "rés / kiskapu",
-    "en": "crack / loophole",
+    "en": "loophole",
     "sentence_es": "Encontró un resquicio legal.",
     "sentence_hu": "Talált egy jogi kiskaput.",
     "sentence_en": "He found a legal loophole.",
     "de": "Schlupfloch / Spalt",
-    "sentence_de": "Er fand ein rechtliches Schlupfloch."
+    "sentence_de": "Er fand ein rechtliches Schlupfloch.",
+    "note_en": "Also: crack, chink, literal (un resquicio de luz = a chink of light).",
+    "note_hu": "Jelenti azt is: rés, szó szerint (un resquicio de luz = egy fénysugár rése)."
   },
   {
     "id": 602,
@@ -28,12 +30,14 @@
     "level": "C2",
     "es": "los recovecos",
     "hu": "zugok / útvesztők",
-    "en": "nooks / intricacies",
+    "en": "intricacies",
     "sentence_es": "Conoce los recovecos del tema.",
     "sentence_hu": "Ismeri a téma útvesztőit.",
     "sentence_en": "He knows the intricacies of the topic.",
     "de": "Winkel / Feinheiten",
-    "sentence_de": "Er kennt die Feinheiten des Themas."
+    "sentence_de": "Er kennt die Feinheiten des Themas.",
+    "note_en": "Also: nooks, literal, hidden corners (los recovecos de la casa vieja = the nooks of the old house).",
+    "note_hu": "Jelenti azt is: zugok, szó szerint (los recovecos de la casa vieja = a régi ház zugai)."
   },
   {
     "id": 604,
@@ -508,12 +512,14 @@
     "level": "C2",
     "es": "holgar",
     "hu": "felesleges lenni",
-    "en": "to be unnecessary / to be idle",
+    "en": "to be unnecessary",
     "sentence_es": "Huelga decir que es importante.",
     "sentence_hu": "Mondani sem kell, hogy fontos.",
     "sentence_en": "It goes without saying that it's important.",
     "de": "überflüssig sein",
-    "sentence_de": "Es versteht sich von selbst, dass es wichtig ist."
+    "sentence_de": "Es versteht sich von selbst, dass es wichtig ist.",
+    "note_en": "Also: to be idle, to rest, literal (el trabajador holgaba los domingos = the worker rested on Sundays).",
+    "note_hu": "Jelenti azt is: pihenni, tétlenkedni, szó szerint (el trabajador holgaba los domingos = a munkás pihent vasárnaponként)."
   },
   {
     "id": 644,
@@ -532,12 +538,14 @@
     "level": "C2",
     "es": "enajenar",
     "hu": "elidegeníteni",
-    "en": "to alienate / to transfer",
+    "en": "to alienate",
     "sentence_es": "Se enajenó de la realidad.",
     "sentence_hu": "Elidegenedett a valóságtól.",
     "sentence_en": "He became alienated from reality.",
     "de": "entfremden",
-    "sentence_de": "Er entfremdete sich von der Realität."
+    "sentence_de": "Er entfremdete sich von der Realität.",
+    "note_en": "Also: to transfer, legal, of property (enajenar un bien = to transfer/dispose of an asset).",
+    "note_hu": "Jelenti azt is: elidegeníteni, jogi értelemben, vagyontárgyat (enajenar un bien = elidegeníteni egy vagyontárgyat)."
   },
   {
     "id": 646,
@@ -880,12 +888,14 @@
     "level": "C2",
     "es": "la prosopopeya",
     "hu": "fennhéjázás / megszemélyesítés",
-    "en": "pomposity / prosopopoeia",
+    "en": "pomposity",
     "sentence_es": "Hablaba con tal prosopopeya que nadie osaba interrumpirle.",
     "sentence_hu": "Olyan fölényesen beszélt, hogy senki sem merte félbeszakítani.",
     "sentence_en": "He spoke with such pomposity that no one dared interrupt him.",
     "de": "Großtuerei",
-    "sentence_de": "Er sprach mit solcher Großtuerei, dass niemand es wagte, ihn zu unterbrechen."
+    "sentence_de": "Er sprach mit solcher Großtuerei, dass niemand es wagte, ihn zu unterbrechen.",
+    "note_en": "Also: prosopopoeia, personification, rhetoric (la prosopopeya es una figura retórica = prosopopoeia is a rhetorical figure).",
+    "note_hu": "Jelenti azt is: megszemélyesítés, retorikai alakzat (la prosopopeya es una figura retórica = a megszemélyesítés egy retorikai alakzat)."
   },
   {
     "id": 846,
@@ -1036,7 +1046,7 @@
     "level": "C2",
     "es": "el exabrupto",
     "hu": "indulatos kitörés",
-    "en": "outburst / blurt",
+    "en": "outburst",
     "sentence_es": "Su exabrupto dejó atónitos a los asistentes.",
     "sentence_hu": "Hirtelen kitörése megdöbbentette a jelenlévőket.",
     "sentence_en": "His outburst left the attendees stunned.",

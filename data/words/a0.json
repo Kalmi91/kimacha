@@ -184,7 +184,7 @@
     "level": "A0",
     "es": "el tiempo",
     "hu": "idő",
-    "en": "time (weather; duration)",
+    "en": "time (duration)",
     "sentence_es": "No tengo tiempo.",
     "sentence_hu": "Nincs időm.",
     "sentence_en": "I don't have time.",
@@ -193,7 +193,9 @@
     "topic": "tiempo_a0",
     "topicOrder": 1,
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: weather (qué tiempo hace = what's the weather like).",
+    "note_hu": "Jelenti azt is: időjárás (qué tiempo hace = milyen az időjárás)."
   },
   {
     "id": 14,
@@ -448,7 +450,7 @@
     "level": "A0",
     "es": "querer",
     "hu": "akarni / szeretni",
-    "en": "to want / to love",
+    "en": "to love",
     "sentence_es": "Te quiero mucho.",
     "sentence_hu": "Nagyon szeretlek.",
     "sentence_en": "I love you a lot.",
@@ -456,7 +458,9 @@
     "sentence_de": "Ich liebe dich sehr.",
     "topic": "verbos_a0",
     "topicOrder": 6,
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to want (quiero un café = I want a coffee).",
+    "note_hu": "Jelenti azt is: akarni (quiero un café = akarok egy kávét)."
   },
   {
     "id": 31,
@@ -508,7 +512,7 @@
     "level": "A0",
     "es": "hacer",
     "hu": "csinálni",
-    "en": "to do / to make",
+    "en": "to do",
     "sentence_es": "Qué vas a hacer?",
     "sentence_hu": "Mit fogsz csinálni?",
     "sentence_en": "What are you going to do?",
@@ -516,7 +520,9 @@
     "sentence_de": "Was wirst du machen?",
     "topic": "verbos_a0",
     "topicOrder": 10,
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to make (hacer un pastel = to make a cake).",
+    "note_hu": "Jelenti azt is: készíteni (hacer un pastel = tortát készíteni)."
   },
   {
     "id": 35,
@@ -845,7 +851,7 @@
     "level": "A0",
     "es": "mañana",
     "hu": "holnap / reggel",
-    "en": "tomorrow / morning",
+    "en": "tomorrow",
     "sentence_es": "Nos vemos mañana.",
     "sentence_hu": "Holnap találkozunk.",
     "sentence_en": "See you tomorrow.",
@@ -853,7 +859,9 @@
     "sentence_de": "Wir sehen uns morgen.",
     "topic": "tiempo_a0",
     "topicOrder": 3,
-    "pos": "adv"
+    "pos": "adv",
+    "note_en": "Also: morning (por la mañana = in the morning).",
+    "note_hu": "Jelenti azt is: reggel (por la mañana = reggel)."
   },
   {
     "id": 57,
@@ -1121,7 +1129,7 @@
     "level": "A0",
     "es": "la verdad",
     "hu": "igazság / igaz",
-    "en": "truth / true",
+    "en": "the truth",
     "sentence_es": "Es verdad?",
     "sentence_hu": "Igaz?",
     "sentence_en": "Is it true?",
@@ -1215,7 +1223,7 @@
     "level": "A0",
     "es": "esperar",
     "hu": "várni / remélni",
-    "en": "to wait / to hope",
+    "en": "to wait",
     "sentence_es": "Espera, por favor.",
     "sentence_hu": "Várj, kérlek.",
     "sentence_en": "Wait, please.",
@@ -1223,7 +1231,9 @@
     "sentence_de": "Warte bitte.",
     "topic": "verbos_a0",
     "topicOrder": 19,
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to hope (espero que sí = I hope so).",
+    "note_hu": "Jelenti azt is: remélni (espero que sí = remélem, hogy igen)."
   },
   {
     "id": 81,
@@ -1320,7 +1330,7 @@
     "level": "A0",
     "es": "solo",
     "hu": "egyedül / csak",
-    "en": "alone / only",
+    "en": "alone",
     "sentence_es": "Estoy solo.",
     "sentence_hu": "Egyedül vagyok.",
     "sentence_en": "I'm alone.",
@@ -1328,7 +1338,9 @@
     "sentence_de": "Ich bin allein.",
     "topic": "basicos",
     "topicOrder": 11,
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Also: only (solo quiero agua = I only want water).",
+    "note_hu": "Jelenti azt is: csak (solo quiero agua = csak vizet akarok)."
   },
   {
     "id": 88,
@@ -1350,7 +1362,7 @@
     "level": "A0",
     "es": "seguro",
     "hu": "biztos",
-    "en": "sure / safe",
+    "en": "sure",
     "sentence_es": "Estás seguro?",
     "sentence_hu": "Biztos vagy?",
     "sentence_en": "Are you sure?",
@@ -1358,7 +1370,9 @@
     "sentence_de": "Bist du sicher?",
     "topic": "emociones_a0",
     "topicOrder": 6,
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Also: safe (este lugar es seguro = this place is safe).",
+    "note_hu": "Jelenti azt is: biztonságos (este lugar es seguro = ez a hely biztonságos)."
   },
   {
     "id": 90,
@@ -1518,7 +1532,7 @@
     "level": "A0",
     "es": "la hora",
     "hu": "óra (idő)",
-    "en": "hour / time (clock)",
+    "en": "time (clock)",
     "sentence_es": "Qué hora es?",
     "sentence_hu": "Hány óra van?",
     "sentence_en": "What time is it?",
@@ -1527,7 +1541,9 @@
     "topic": "tiempo_a0",
     "topicOrder": 11,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: hour (dos horas = two hours).",
+    "note_hu": "Jelenti azt is: óra, időegység (dos horas = két óra)."
   },
   {
     "id": 101,
@@ -1564,7 +1580,7 @@
     "level": "A0",
     "es": "este / esta",
     "hu": "ez a",
-    "en": "this (+ noun)",
+    "en": "this (before a noun)",
     "de": "dieser / diese",
     "sentence_es": "Esta casa es grande.",
     "sentence_hu": "Ez a ház nagy.",
@@ -1579,7 +1595,7 @@
     "level": "A0",
     "es": "ese / esa",
     "hu": "az a",
-    "en": "that (+ noun)",
+    "en": "that (before a noun)",
     "de": "jener / jene",
     "sentence_es": "Ese lugar es bonito.",
     "sentence_hu": "Az a hely szép.",

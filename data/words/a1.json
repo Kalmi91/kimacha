@@ -791,7 +791,7 @@
     "level": "A1",
     "es": "él está",
     "hu": "ő van (állapot/hely)",
-    "en": "he is (state/location)",
+    "en": "he is (location)",
     "de": "er ist (Zustand/Ort)",
     "topic": "estar",
     "topicOrder": 3,
@@ -799,7 +799,9 @@
     "sentence_hu": "Otthon van.",
     "sentence_en": "He is at home.",
     "sentence_de": "Er ist zu Hause.",
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: state, not location (está cansado = he is tired).",
+    "note_hu": "Jelenti azt is: állapotot, nem helyet (está cansado = fáradt)."
   },
   {
     "id": 1054,
@@ -1391,7 +1393,7 @@
     "level": "A1",
     "es": "yo hago",
     "hu": "én csinálom / csinálok",
-    "en": "I do/make",
+    "en": "I make",
     "de": "ich mache",
     "topic": "hacer",
     "topicOrder": 1,
@@ -1399,14 +1401,16 @@
     "sentence_hu": "Megágyazok.",
     "sentence_en": "I make the bed.",
     "sentence_de": "Ich mache das Bett.",
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: I do (hago ejercicio = I do exercise).",
+    "note_hu": "Jelenti azt is: csinálok (hago ejercicio = tornázom)."
   },
   {
     "id": 1092,
     "level": "A1",
     "es": "tú haces",
     "hu": "te csinálod / csinálsz",
-    "en": "you do/make",
+    "en": "you do",
     "de": "du machst",
     "topic": "hacer",
     "topicOrder": 2,
@@ -1414,14 +1418,16 @@
     "sentence_hu": "Sportolsz?",
     "sentence_en": "Do you do sport?",
     "sentence_de": "Machst du Sport?",
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: you make (haces la cama = you make the bed).",
+    "note_hu": "Jelenti azt is: készítesz (haces la cama = megcsinálod az ágyat)."
   },
   {
     "id": 1093,
     "level": "A1",
     "es": "él hace",
     "hu": "ő csinálja / csinál",
-    "en": "he does/makes",
+    "en": "he makes",
     "de": "er macht",
     "topic": "hacer",
     "topicOrder": 3,
@@ -1429,14 +1435,16 @@
     "sentence_hu": "Ő főz.",
     "sentence_en": "He makes the food.",
     "sentence_de": "Er macht das Essen.",
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: he does (hace ejercicio = he does exercise).",
+    "note_hu": "Jelenti azt is: csinál (hace ejercicio = tornázik)."
   },
   {
     "id": 1094,
     "level": "A1",
     "es": "nosotros hacemos",
     "hu": "mi csináljuk / csinálunk",
-    "en": "we do/make",
+    "en": "we do",
     "de": "wir machen",
     "topic": "hacer",
     "topicOrder": 4,
@@ -1444,14 +1452,16 @@
     "sentence_hu": "Tornázunk.",
     "sentence_en": "We do exercise.",
     "sentence_de": "Wir machen Sport.",
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: we make (hacemos la cena = we make dinner).",
+    "note_hu": "Jelenti azt is: készítünk (hacemos la cena = elkészítjük a vacsorát)."
   },
   {
     "id": 1095,
     "level": "A1",
     "es": "ellos hacen",
     "hu": "ők csinálják / csinálnak",
-    "en": "they do/make",
+    "en": "they make",
     "de": "sie machen",
     "topic": "hacer",
     "topicOrder": 5,
@@ -1459,7 +1469,9 @@
     "sentence_hu": "Ők vacsorát készítenek.",
     "sentence_en": "They make dinner.",
     "sentence_de": "Sie machen das Abendessen.",
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: they do (hacen ejercicio = they do exercise).",
+    "note_hu": "Jelenti azt is: csinálnak (hacen ejercicio = tornáznak)."
   },
   {
     "id": 1096,
@@ -1531,7 +1543,7 @@
     "level": "A1",
     "es": "el techo",
     "hu": "a mennyezet / tető",
-    "en": "the ceiling/roof",
+    "en": "the ceiling",
     "de": "die Decke / das Dach",
     "topic": "casa_szobak_a1",
     "topicOrder": 5,
@@ -1540,7 +1552,9 @@
     "sentence_en": "The ceiling is white.",
     "sentence_de": "Die Decke ist weiß.",
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: the roof (el techo de la casa = the roof of the house).",
+    "note_hu": "Jelenti azt is: a tető (el techo de la casa = a ház teteje)."
   },
   {
     "id": 1101,
@@ -2480,7 +2494,7 @@
     "level": "A1",
     "es": "su amigo",
     "hu": "az ő barátja",
-    "en": "his/her friend",
+    "en": "his friend",
     "de": "sein/ihr Freund",
     "topic": "posesivos",
     "topicOrder": 3,
@@ -3659,7 +3673,7 @@
     "level": "A1",
     "es": "el reloj",
     "hu": "az óra",
-    "en": "the clock / watch",
+    "en": "the clock",
     "de": "die Uhr",
     "topic": "tiempo",
     "topicOrder": 1,
@@ -3668,7 +3682,9 @@
     "sentence_en": "The clock is on the wall.",
     "sentence_de": "Die Uhr hängt an der Wand.",
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: watch (mi reloj es nuevo = my watch is new).",
+    "note_hu": "Jelenti azt is: karóra (mi reloj es nuevo = az órám új)."
   },
   {
     "id": 1235,
@@ -4721,7 +4737,7 @@
     "level": "A1",
     "es": "el camino",
     "hu": "az út",
-    "en": "the road (general) / the path (way)",
+    "en": "the road (general)",
     "de": "der Weg",
     "topic": "transporte",
     "topicOrder": 15,
@@ -4730,7 +4746,9 @@
     "sentence_en": "The road is long.",
     "sentence_de": "Der Weg ist lang.",
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: the path (el camino de la montaña = the mountain path).",
+    "note_hu": "Jelenti azt is: az ösvény (el camino de la montaña = a hegyi ösvény)."
   },
   {
     "id": 1302,
@@ -5067,7 +5085,7 @@
     "level": "A1",
     "es": "sobre",
     "hu": "felett / fölött",
-    "en": "on top of / about",
+    "en": "on top of",
     "de": "über / auf",
     "topic": "preposiciones",
     "topicOrder": 9,
@@ -5075,7 +5093,9 @@
     "sentence_hu": "A könyv az asztalon van.",
     "sentence_en": "The book is on the table.",
     "sentence_de": "Das Buch liegt auf dem Tisch.",
-    "pos": "prep"
+    "pos": "prep",
+    "note_en": "Also: about (un libro sobre historia = a book about history).",
+    "note_hu": "Jelenti azt is: egy témáról (un libro sobre historia = egy könyv a történelemről)."
   },
   {
     "id": 1324,
@@ -5262,7 +5282,7 @@
     "level": "A1",
     "es": "suyo/suya",
     "hu": "övé",
-    "en": "his / hers",
+    "en": "his",
     "de": "seiner/seine/seins",
     "topic": "posesivos",
     "topicOrder": 9,
@@ -6282,7 +6302,7 @@
     "level": "A1",
     "es": "la oferta",
     "hu": "az akció",
-    "en": "the offer / sale",
+    "en": "the sale",
     "de": "das Angebot",
     "topic": "compras",
     "topicOrder": 9,
@@ -6291,7 +6311,9 @@
     "sentence_en": "There is a sale at the shop.",
     "sentence_de": "Im Geschäft gibt es ein Angebot.",
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: the offer (una oferta de trabajo = a job offer).",
+    "note_hu": "Jelenti azt is: az ajánlat (una oferta de trabajo = egy állásajánlat)."
   },
   {
     "id": 1403,
@@ -6494,7 +6516,7 @@
     "level": "A1",
     "es": "alto",
     "hu": "magas",
-    "en": "tall / high",
+    "en": "tall",
     "de": "groß / hoch",
     "topic": "adjetivos_basicos",
     "topicOrder": 1,
@@ -6502,14 +6524,16 @@
     "sentence_hu": "A fivérem nagyon magas.",
     "sentence_en": "My brother is very tall.",
     "sentence_de": "Mein Bruder ist sehr groß.",
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Also: high (el edificio es alto = the building is high).",
+    "note_hu": "Jelenti azt is: magas, dolgokra is (el edificio es alto = az épület magas)."
   },
   {
     "id": 1417,
     "level": "A1",
     "es": "bajo",
     "hu": "alacsony",
-    "en": "short (height) / low",
+    "en": "low",
     "de": "klein / niedrig",
     "topic": "adjetivos_basicos",
     "topicOrder": 2,
@@ -6517,7 +6541,9 @@
     "sentence_hu": "Az asztal alacsony.",
     "sentence_en": "The table is low.",
     "sentence_de": "Der Tisch ist niedrig.",
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Also: short, for people (mi hermano es bajo = my brother is short).",
+    "note_hu": "Jelenti azt is: alacsony, emberre (mi hermano es bajo = a testvérem alacsony)."
   },
   {
     "id": 1418,
@@ -6674,7 +6700,7 @@
     "level": "A1",
     "es": "caliente",
     "hu": "meleg / forró",
-    "en": "hot (touch) / warm",
+    "en": "hot (touch)",
     "de": "heiß / warm",
     "topic": "adjetivos_basicos",
     "topicOrder": 13,
@@ -6682,7 +6708,9 @@
     "sentence_hu": "A kávé forró.",
     "sentence_en": "The coffee is hot.",
     "sentence_de": "Der Kaffee ist heiß.",
-    "pos": "adj"
+    "pos": "adj",
+    "note_en": "Also: warm (el agua está caliente = the water is warm).",
+    "note_hu": "Jelenti azt is: meleg (el agua está caliente = meleg a víz)."
   },
   {
     "id": 1429,
@@ -12950,7 +12978,7 @@
     "level": "A1",
     "es": "llevar",
     "hu": "viselni / vinni",
-    "en": "to wear / to carry",
+    "en": "to wear",
     "de": "tragen",
     "topic": "ropa",
     "topicOrder": 29,
@@ -12958,7 +12986,9 @@
     "sentence_hu": "Ma fehér inget viselek.",
     "sentence_en": "Today I wear a white shirt.",
     "sentence_de": "Heute trage ich ein weißes Hemd.",
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to carry (llevo una maleta = I carry a suitcase).",
+    "note_hu": "Jelenti azt is: vinni, cipelni (llevo una maleta = viszek egy bőröndöt)."
   },
   {
     "id": 1835,
@@ -13670,7 +13700,7 @@
     "level": "A1",
     "es": "tomar",
     "hu": "inni / fogyasztani",
-    "en": "to take / to have (a drink)",
+    "en": "to have (a drink)",
     "de": "nehmen / trinken",
     "topic": "verbos_cotidianos",
     "topicOrder": 18,
@@ -13678,7 +13708,9 @@
     "sentence_hu": "Szeretek kávét inni.",
     "sentence_en": "I like to have coffee.",
     "sentence_de": "Ich mag es, Kaffee zu trinken.",
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to take (tomo el autobús = I take the bus).",
+    "note_hu": "Jelenti azt is: venni, igénybe venni (tomo el autobús = busszal megyek)."
   },
   {
     "id": 1880,
@@ -13715,7 +13747,7 @@
     "level": "A1",
     "es": "tocar",
     "hu": "megérinteni / kopogni",
-    "en": "to touch / to knock",
+    "en": "to knock",
     "de": "berühren / klopfen",
     "topic": "verbos_cotidianos",
     "topicOrder": 21,
@@ -13723,7 +13755,9 @@
     "sentence_hu": "Szeretek zörgetni az ajtón.",
     "sentence_en": "I like to knock on the door.",
     "sentence_de": "Ich klopfe gern an die Tür.",
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to touch (no toques eso = don't touch that).",
+    "note_hu": "Jelenti azt is: megérinteni (no toques eso = ne érintsd meg azt)."
   },
   {
     "id": 1883,
@@ -13775,7 +13809,7 @@
     "level": "A1",
     "es": "pasar",
     "hu": "történni / eltölteni",
-    "en": "to happen / to spend (time)",
+    "en": "to happen",
     "de": "passieren / verbringen",
     "topic": "verbos_cotidianos",
     "topicOrder": 26,
@@ -13783,7 +13817,9 @@
     "sentence_hu": "Mi fog itt történni?",
     "sentence_en": "What is going to happen here?",
     "sentence_de": "Was wird hier passieren?",
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to spend, time (paso mucho tiempo aquí = I spend a lot of time here).",
+    "note_hu": "Jelenti azt is: (időt) tölteni (paso mucho tiempo aquí = sok időt töltök itt)."
   },
   {
     "id": 1888,

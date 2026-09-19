@@ -440,12 +440,17 @@ export default {
     dismiss: 'Bezár',
     // NY3 (NYELVTAN.md "Első szelet"): igeidő-átírás drill.
     startTransform: (n: number) => `Átírás (${n})`,
+    // FB316 (NYELVTAN.md NY10): 10-es körös mondat-átírás nagy leckéken.
+    startTransformRound: (n: number, total: number) => `Mondat-átírás (${n} / ${total})`,
+    moreRound: (n: number) => `Még ${n}`,
     rewriteTo: (tense: string) => `Írd át: ${tense}`,
     showTranslation: 'Fordítás mutatása',
     correct: 'Helyes',
     correctAnswer: 'Helyes válasz',
     next: 'Következő',
     accentHint: 'Ékezet nélkül is elfogadja, a hiányzó ékezetet megmutatja',
+    // FB315 (NY9): a lecke-képernyő szó-fókusz gombja.
+    learnTheseWords: (n: number) => `Ezen szavak tanulása (${n})`,
   },
   exam: {
     simulationOf: (model: string) => `A ${model} vizsga szimulációja`,
@@ -596,6 +601,10 @@ export default {
     sum: 'A három szám összege: ennyi lap van hátra a kör végéig, ha nem rontasz.',
     close: 'Bezár',
     levelProgress: (known: number, total: number) => `${known} / ${total} szó`,
+    // FB315 (NY9): a fókusz-menet sávja a kártya fölött (szó-függő lecke-drill).
+    focusBanner: (label: string, known: number, total: number) => `${label} · ${known}/${total} ismert`,
+    focusDone: 'kész, vissza a leckéhez',
+    focusExit: 'Fókusz vége',
   },
   spelling: {
     title: 'Helyesírás-gyakorló',
@@ -677,7 +686,7 @@ export default {
   },
   // PLAN-pcic 5. lépés: a PCIC fül (angol -> spanyol gépelés, Anki-gombok).
   pcic: {
-    header: (due: number, newCount: number, doneToday: number) => `esedékes ${due} · új ${newCount} · ma kész ${doneToday}`,
+    header: (due: number, newCount: number, doneToday: number, total: number) => `${total} szó · esedékes ${due} · új ${newCount} · ma kész ${doneToday}`,
     again: 'Nem tudtam',
     hard: 'Nehéz',
     good: 'Tudtam',
@@ -691,5 +700,8 @@ export default {
     undo: 'Visszavonás',
     dontLearn: 'Ezt nem tanulom',
     next: 'Tovább',
+    learningStep: (step: number, total: number) => `${step}/${total}. lépés`,
+    newBadge: 'új',
+    moreNew: (n: number) => `+${n} új szó`,
   },
 };

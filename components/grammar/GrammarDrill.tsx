@@ -25,6 +25,7 @@ import { markTokens } from '@/lib/games/grammarMark';
 import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import { buildGrammarRound, grammarRoundItemKind, isChoiceRoundItem, wrongExplanation } from '@/lib/games/grammarChoice';
+import { pickTransformRound, TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString, shuffleArray } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
@@ -49,11 +50,13 @@ interface Props {
   learnedLang: string;
   contentLang: string;
   /** Fired once, when the last item has been answered and dismissed. */
-  onFinish: (correct: number, total: number) => void;
+  onFinish: (correct: number, total: number, roundItemIds?: string[]) => void;
   /** Extra rows under the explanation (e.g. the course's "back to the rule"). */
   footer?: React.ReactNode;
   /** LECKE-SEMA D3: mely fajták kerüljenek a körbe; hiányában csak a választós (Game fül). */
   kinds?: readonly GrammarKind[];
+  /** FB316 (NY10): a "transform" kör legkevésbé-gyakorolt-elöl sorrendjéhez. */
+  transformSeen?: Record<string, number>;
 }
 
 const CHOICE_ONLY: readonly GrammarKind[] = ['choice'];
@@ -449,17 +452,27 @@ function TransformDrillItem({
   );
 }
 
-export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, kinds = CHOICE_ONLY }: Props) {
+export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, kinds = CHOICE_ONLY, transformSeen }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
 
   const [seed] = useState(() => hashString(`${topic.topic}:${Date.now()}`));
   const fullRound = useMemo(() => buildGrammarRound(topic, seed), [topic, seed]);
-  const round = useMemo(
-    () => fullRound.filter((r) => kinds.includes(grammarRoundItemKind(r))),
-    [fullRound, kinds]
-  );
+  const transformPool = useMemo(() => fullRound.map((r) => r.item).filter(isTransformItem), [fullRound]);
+  // FB316 (NY10): a körös (legkevésbé-gyakorolt-elöl, legfeljebb 10 itemes)
+  // adagolás csak akkor él, ha egy tiszta "csak mondat-átírás" indításnál
+  // TÉNYLEG több item van, mint egy kör; kisebb leckén (ahol az egy kör úgyis
+  // minden itemet lefed) a régi, szerzői sorrendű, seed nélküli viselkedés
+  // marad, hogy ne boruljon fel ok nélkül a többi fajta és a kis leckék
+  // determinisztikus sorrendje.
+  const useTransformRounds = kinds.length === 1 && kinds[0] === 'transform' && transformPool.length > TRANSFORM_ROUND_SIZE;
+  const round = useMemo(() => {
+    if (useTransformRounds) {
+      return pickTransformRound(transformPool, transformSeen ?? {}, TRANSFORM_ROUND_SIZE, seed).map((item) => ({ item }));
+    }
+    return fullRound.filter((r) => kinds.includes(grammarRoundItemKind(r)));
+  }, [useTransformRounds, transformPool, transformSeen, seed, fullRound, kinds]);
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [correctCount, setCorrectCount] = useState(0);
@@ -483,7 +496,15 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
       setShowMore(false);
       return;
     }
-    onFinish(finalCorrectCount, round.length);
+    // FB316 (NY10): a kör item-id-jei csak a körös adagolásnál kellenek (a
+    // szülő ebből számolja a `seen` térképet); a többi ág a korábbi
+    // 2-argumentumos hívást kapja, hogy a meglévő onFinish-tesztek
+    // (toHaveBeenCalledWith(correct, total)) ne törjenek.
+    if (useTransformRounds) {
+      onFinish(finalCorrectCount, round.length, round.map((r) => r.item.id));
+    } else {
+      onFinish(finalCorrectCount, round.length);
+    }
   };
 
   // The gap/mark answer that got us here was scored on selection (below), so

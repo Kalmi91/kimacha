@@ -1,6 +1,7 @@
 import {
   bareSense,
   findPromptOverlaps,
+  headwordLeaks,
   isConjugatedForm,
   normalizedPrompt,
   promptSenses,
@@ -119,5 +120,41 @@ describe('findPromptOverlaps', () => {
       'en'
     );
     expect(clusters).toEqual([]);
+  });
+});
+
+describe('headwordLeaks (PROMPT-POLICY 12)', () => {
+  it('flags the Spanish headword surfacing inside the English prompt', () => {
+    const leaks = headwordLeaks([{ id: 1, headword: 'tratar', prompt: 'to try (tratar de + inf.)' }], 'en');
+    expect(leaks).toHaveLength(1);
+    expect(leaks[0].id).toBe(1);
+  });
+
+  it('accepts a cognate card, the prompt article-stripped equals the headword (PROMPT-POLICY 11/6)', () => {
+    const leaks = headwordLeaks([{ id: 1, headword: 'el hotel', prompt: 'the hotel' }], 'en');
+    expect(leaks).toEqual([]);
+  });
+
+  it('accepts a cognate inside a " / " prompt, one alternative equals the headword', () => {
+    const leaks = headwordLeaks([{ id: 1, headword: 'interior', prompt: 'interior / inner' }], 'en');
+    expect(leaks).toEqual([]);
+  });
+
+  it('does not run on a headword shorter than 3 letters', () => {
+    const leaks = headwordLeaks([{ id: 1, headword: 'no', prompt: 'no, not' }], 'en');
+    expect(leaks).toEqual([]);
+  });
+
+  // Valós korpusz-találatok (2026-09-18-i futtatás): a " / " mellett a
+  // korpusz "/" és ", " alak-elválasztót is használ (ua. mint a
+  // corpusIntegrity.test.ts "senses" helperje), ezek is cognate-ok, nem hiba.
+  it('accepts a cognate joined by a bare slash, no surrounding spaces', () => {
+    const leaks = headwordLeaks([{ id: 2095, headword: 'grave', prompt: 'serious/grave' }], 'en');
+    expect(leaks).toEqual([]);
+  });
+
+  it('accepts a cognate joined by a comma', () => {
+    const leaks = headwordLeaks([{ id: 2940, headword: 'fatal', prompt: 'terrible, fatal' }], 'en');
+    expect(leaks).toEqual([]);
   });
 });
