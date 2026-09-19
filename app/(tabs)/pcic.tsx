@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Pressable, TextInput, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard, Alert } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { speak } from '@/lib/speech';
@@ -95,6 +95,17 @@ export default function PcicScreen() {
   const current = queue[0];
   const currentItem = current ? findPcicItem(current.itemId) : undefined;
 
+  // FB319: az angol prompt felolvasása, amikor egy ÚJ lap kerül képernyőre.
+  // Csak a `current?.itemId` váltására fusson (a `grade` a closure-ből olvasva
+  // dönti el, hogy még nincs felfedve), felfedéskor (a `grade` state
+  // változásakor) ne ismételje.
+  useEffect(() => {
+    if (!loading && currentItem && !grade) {
+      speak(currentItem.en, speechLang('en'));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [current?.itemId, loading]);
+
   const dueRemaining = queue.filter((c) => c.state !== 'new').length;
   const newRemaining = queue.filter((c) => c.state === 'new').length;
   const doneToday = [...allCards.values()].filter((c) => c.lastReview === today).length;
@@ -141,7 +152,10 @@ export default function PcicScreen() {
       if (next) setAutoGraded(true);
       return;
     }
-    setGrade(gradePcicAnswer(typedAnswer, currentItem.es));
+    // FB321: felfedéskor mindig szóljon a helyes spanyol alak.
+    const g = gradePcicAnswer(typedAnswer, currentItem.es);
+    setGrade(g);
+    speak(g.best, speechLang('es'));
   };
 
   const handleGrade = async (g: Sm2Grade) => {
@@ -224,7 +238,7 @@ export default function PcicScreen() {
 
   if (loading) {
     return (
-      <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <View style={[styles.container, styles.centered, { backgroundColor: colors.background }]}>
         <ActivityIndicator size="large" color={colors.tint} />
       </View>
     );
@@ -251,6 +265,9 @@ export default function PcicScreen() {
   }
 
   const previews = sm2Preview(current, today);
+  // FB320: a fejléc alatti haladás-csík, a menet elején üres, a végén tele.
+  const sessionTotal = sessionAnswered + queue.length;
+  const sessionPct = sessionTotal > 0 ? (sessionAnswered / sessionTotal) * 100 : 0;
 
   return (
     <KeyboardAvoidingView
@@ -258,6 +275,10 @@ export default function PcicScreen() {
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
       {headerRow}
+
+      <View style={[styles.progressTrack, { backgroundColor: colors.card }]}>
+        <View style={[styles.progressFill, { backgroundColor: colors.tint, width: `${sessionPct}%` }]} />
+      </View>
 
       <Pressable style={[styles.card, { backgroundColor: colors.card }]} onPress={() => Keyboard.dismiss()}>
         <Text style={[styles.frontText, { color: colors.text }]}>{currentItem.en}</Text>
@@ -362,7 +383,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    justifyContent: 'flex-start',
+  },
+  // FB320: a loading-ág is a közös containert használja, de a pörgettyűnek
+  // középen kell maradnia, nem a tetejére ugrania.
+  centered: {
     justifyContent: 'center',
+  },
+  // FB320: vékony haladás-csík a fejléc alatt, a tanuló nézeten.
+  progressTrack: {
+    height: 6,
+    borderRadius: 3,
+    overflow: 'hidden',
+    marginBottom: 16,
+  },
+  progressFill: {
+    height: '100%',
+    borderRadius: 3,
   },
   headerRow: {
     flexDirection: 'row',
