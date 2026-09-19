@@ -123,18 +123,68 @@
         "de": "Imperfekt, regelmäßige Verben"
       },
       "header": [
-        { "hu": "Személy", "en": "Person", "es": "Persona", "de": "Person" },
-        { "hu": "hablar", "en": "hablar", "es": "hablar", "de": "hablar" },
-        { "hu": "comer", "en": "comer", "es": "comer", "de": "comer" },
-        { "hu": "vivir", "en": "vivir", "es": "vivir", "de": "vivir" }
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "hablar",
+          "en": "hablar",
+          "es": "hablar",
+          "de": "hablar"
+        },
+        {
+          "hu": "comer",
+          "en": "comer",
+          "es": "comer",
+          "de": "comer"
+        },
+        {
+          "hu": "vivir",
+          "en": "vivir",
+          "es": "vivir",
+          "de": "vivir"
+        }
       ],
       "rows": [
-        ["yo", "hablaba", "comía", "vivía"],
-        ["tú", "hablabas", "comías", "vivías"],
-        ["él/ella/usted", "hablaba", "comía", "vivía"],
-        ["nosotros", "hablábamos", "comíamos", "vivíamos"],
-        ["vosotros", "hablabais", "comíais", "vivíais"],
-        ["ellos/ellas/ustedes", "hablaban", "comían", "vivían"]
+        [
+          "yo",
+          "hablaba",
+          "comía",
+          "vivía"
+        ],
+        [
+          "tú",
+          "hablabas",
+          "comías",
+          "vivías"
+        ],
+        [
+          "él/ella/usted",
+          "hablaba",
+          "comía",
+          "vivía"
+        ],
+        [
+          "nosotros",
+          "hablábamos",
+          "comíamos",
+          "vivíamos"
+        ],
+        [
+          "vosotros",
+          "hablabais",
+          "comíais",
+          "vivíais"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "hablaban",
+          "comían",
+          "vivían"
+        ]
       ]
     },
     {
@@ -147,18 +197,68 @@
         "de": "Imperfekt, die drei unregelmäßigen Verben"
       },
       "header": [
-        { "hu": "Személy", "en": "Person", "es": "Persona", "de": "Person" },
-        { "hu": "ser", "en": "ser", "es": "ser", "de": "ser" },
-        { "hu": "ir", "en": "ir", "es": "ir", "de": "ir" },
-        { "hu": "ver", "en": "ver", "es": "ver", "de": "ver" }
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "ser",
+          "en": "ser",
+          "es": "ser",
+          "de": "ser"
+        },
+        {
+          "hu": "ir",
+          "en": "ir",
+          "es": "ir",
+          "de": "ir"
+        },
+        {
+          "hu": "ver",
+          "en": "ver",
+          "es": "ver",
+          "de": "ver"
+        }
       ],
       "rows": [
-        ["yo", "era", "iba", "veía"],
-        ["tú", "eras", "ibas", "veías"],
-        ["él/ella/usted", "era", "iba", "veía"],
-        ["nosotros", "éramos", "íbamos", "veíamos"],
-        ["vosotros", "erais", "ibais", "veíais"],
-        ["ellos/ellas/ustedes", "eran", "iban", "veían"]
+        [
+          "yo",
+          "era",
+          "iba",
+          "veía"
+        ],
+        [
+          "tú",
+          "eras",
+          "ibas",
+          "veías"
+        ],
+        [
+          "él/ella/usted",
+          "era",
+          "iba",
+          "veía"
+        ],
+        [
+          "nosotros",
+          "éramos",
+          "íbamos",
+          "veíamos"
+        ],
+        [
+          "vosotros",
+          "erais",
+          "ibais",
+          "veíais"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "eran",
+          "iban",
+          "veían"
+        ]
       ]
     },
     {
@@ -571,7 +671,11 @@
     {
       "id": "im-01",
       "sentence": "Cuando ___ (yo) niño, vivía en un pueblo pequeño.",
-      "options": ["era", "fui", "estaba"],
+      "options": [
+        "era",
+        "fui",
+        "estaba"
+      ],
       "correct": 0,
       "why": {
         "hu": "A gyerekkor leírás, nem esemény: era. A ser imperfectója rendhagyó.",
@@ -596,12 +700,20 @@
       "examples": [
         "Cuando era joven, jugaba al fútbol.",
         "Antes vivíamos en Budapest."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-02",
       "sentence": "Todos los días ___ (nosotros) café en el mismo bar.",
-      "options": ["tomábamos", "tomamos", "tomaremos"],
+      "options": [
+        "tomábamos",
+        "tomamos",
+        "tomaremos"
+      ],
       "correct": 0,
       "why": {
         "hu": "A todos los días ismétlődő szokás: imperfecto.",
@@ -626,12 +738,20 @@
       "examples": [
         "Siempre comíamos juntos.",
         "Cada verano visitábamos a mis abuelos."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-03",
       "sentence": "___ las tres de la tarde cuando llegó.",
-      "options": ["Eran", "Fueron", "Son"],
+      "options": [
+        "Eran",
+        "Fueron",
+        "Son"
+      ],
       "correct": 0,
       "why": {
         "hu": "A múltbeli óra MINDIG imperfecto: eran las tres.",
@@ -656,12 +776,20 @@
       "examples": [
         "Era la una cuando salimos.",
         "Eran las diez y todavía llovía."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-04",
       "sentence": "Yo ___ cuando sonó el teléfono.",
-      "options": ["dormía", "dormí", "duermo"],
+      "options": [
+        "dormía",
+        "dormí",
+        "duermo"
+      ],
       "correct": 0,
       "why": {
         "hu": "A hosszú, félbeszakított cselekvés imperfecto; a közbevágó (sonó) indefinido.",
@@ -686,12 +814,20 @@
       "examples": [
         "Comíamos cuando llegó mi hermano.",
         "Leía un libro cuando me llamaste."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-05",
       "sentence": "De niño ___ (yo) al parque todos los domingos.",
-      "options": ["iba", "fui", "voy"],
+      "options": [
+        "iba",
+        "fui",
+        "voy"
+      ],
       "correct": 0,
       "why": {
         "hu": "Az ir imperfectója iba, és a todos los domingos szokás.",
@@ -716,12 +852,20 @@
       "examples": [
         "Íbamos a la playa cada agosto.",
         "Iba en bicicleta al trabajo."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-06",
       "sentence": "La casa ___ vieja y no tenía calefacción.",
-      "options": ["era", "fue", "estuvo"],
+      "options": [
+        "era",
+        "fue",
+        "estuvo"
+      ],
       "correct": 0,
       "why": {
         "hu": "Leírás a múltban: era. A jellemzés nem esemény.",
@@ -746,12 +890,20 @@
       "examples": [
         "El pueblo era tranquilo.",
         "Mi profesor era muy simpático."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-07",
       "sentence": "Mientras ella ___ la cena, yo ponía la mesa.",
-      "options": ["preparaba", "preparó", "prepara"],
+      "options": [
+        "preparaba",
+        "preparó",
+        "prepara"
+      ],
       "correct": 0,
       "why": {
         "hu": "A mientras két párhuzamos folyamatot köt össze: mindkettő imperfecto.",
@@ -776,12 +928,20 @@
       "examples": [
         "Mientras yo cocinaba, él limpiaba.",
         "Mientras esperábamos, hablábamos."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-08",
       "sentence": "Cuando tenía veinte años ___ (yo) más deporte que ahora.",
-      "options": ["hacía", "hice", "haré"],
+      "options": [
+        "hacía",
+        "hice",
+        "haré"
+      ],
       "correct": 0,
       "why": {
         "hu": "Régebbi szokás, mai állapottal szembeállítva: imperfecto.",
@@ -806,12 +966,20 @@
       "examples": [
         "Antes fumaba, ahora no.",
         "De joven trabajaba los fines de semana."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-09",
       "sentence": "___ (nosotros) mucho la televisión cuando éramos pequeños.",
-      "options": ["Veíamos", "Vimos", "Vemos"],
+      "options": [
+        "Veíamos",
+        "Vimos",
+        "Vemos"
+      ],
       "correct": 0,
       "why": {
         "hu": "A ver a harmadik rendhagyó ige: veía, veíamos, mindig í-vel.",
@@ -836,12 +1004,20 @@
       "examples": [
         "Veía dibujos animados cada tarde.",
         "Veíamos películas los sábados."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-10",
       "sentence": "___ frío y la gente llevaba abrigo.",
-      "options": ["Hacía", "Hizo", "Hace"],
+      "options": [
+        "Hacía",
+        "Hizo",
+        "Hace"
+      ],
       "correct": 0,
       "why": {
         "hu": "Az időjárás leírása a múltban imperfecto: hacía frío.",
@@ -866,12 +1042,20 @@
       "examples": [
         "Llovía cuando salimos.",
         "Hacía calor en la calle."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-11",
       "sentence": "___ (yo) llamarte, pero me quedé sin batería.",
-      "options": ["Iba a", "Fui a", "Voy a"],
+      "options": [
+        "Iba a",
+        "Fui a",
+        "Voy a"
+      ],
       "correct": 0,
       "why": {
         "hu": "Az „iba a + főnévi igenév\" múltbeli szándék: fel akartalak hívni.",
@@ -896,12 +1080,20 @@
       "examples": [
         "Iba a decírtelo ayer.",
         "Íbamos a salir, pero empezó a llover."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-12",
       "sentence": "Mi abuela siempre ___ pan los domingos.",
-      "options": ["hacía", "hizo", "hará"],
+      "options": [
+        "hacía",
+        "hizo",
+        "hará"
+      ],
       "correct": 0,
       "why": {
         "hu": "A siempre + a hét napja ismétlődő szokás: hacía.",
@@ -926,19 +1118,45 @@
       "examples": [
         "Siempre me contaba historias.",
         "Nunca llegaba tarde."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-match-01",
       "kind": "match",
       "pairs": [
-        { "es": "cuando era niño", "en": "when I was a child" },
-        { "es": "vivíamos en Puebla", "en": "we used to live in Puebla" },
-        { "es": "hacía frío", "en": "it was cold" },
-        { "es": "veíamos la tele", "en": "we used to watch TV" },
-        { "es": "eran las tres", "en": "it was three o'clock" },
-        { "es": "iba a la escuela", "en": "I used to go to school" }
-      ]
+        {
+          "es": "cuando era niño",
+          "en": "when I was a child"
+        },
+        {
+          "es": "vivíamos en Puebla",
+          "en": "we used to live in Puebla"
+        },
+        {
+          "es": "hacía frío",
+          "en": "it was cold"
+        },
+        {
+          "es": "veíamos la tele",
+          "en": "we used to watch TV"
+        },
+        {
+          "es": "eran las tres",
+          "en": "it was three o'clock"
+        },
+        {
+          "es": "iba a la escuela",
+          "en": "I used to go to school"
+        }
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-form-01",
@@ -946,7 +1164,11 @@
       "verb": "ser",
       "person": "yo",
       "answer": "era",
-      "table": "imperfecto-irregular"
+      "table": "imperfecto-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-form-02",
@@ -954,7 +1176,11 @@
       "verb": "ser",
       "person": "nosotros",
       "answer": "éramos",
-      "table": "imperfecto-irregular"
+      "table": "imperfecto-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-form-03",
@@ -962,7 +1188,11 @@
       "verb": "ir",
       "person": "tú",
       "answer": "ibas",
-      "table": "imperfecto-irregular"
+      "table": "imperfecto-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-form-04",
@@ -970,7 +1200,11 @@
       "verb": "ir",
       "person": "ellos/ellas/ustedes",
       "answer": "iban",
-      "table": "imperfecto-irregular"
+      "table": "imperfecto-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-form-05",
@@ -978,7 +1212,11 @@
       "verb": "ver",
       "person": "él/ella/usted",
       "answer": "veía",
-      "table": "imperfecto-irregular"
+      "table": "imperfecto-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-form-06",
@@ -986,7 +1224,11 @@
       "verb": "ver",
       "person": "vosotros",
       "answer": "veíais",
-      "table": "imperfecto-irregular"
+      "table": "imperfecto-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-form-07",
@@ -994,7 +1236,11 @@
       "verb": "hablar",
       "person": "yo",
       "answer": "hablaba",
-      "table": "imperfecto-regular"
+      "table": "imperfecto-regular",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-form-08",
@@ -1002,7 +1248,11 @@
       "verb": "hablar",
       "person": "ellos/ellas/ustedes",
       "answer": "hablaban",
-      "table": "imperfecto-regular"
+      "table": "imperfecto-regular",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-form-09",
@@ -1010,7 +1260,11 @@
       "verb": "comer",
       "person": "tú",
       "answer": "comías",
-      "table": "imperfecto-regular"
+      "table": "imperfecto-regular",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-form-10",
@@ -1018,7 +1272,11 @@
       "verb": "comer",
       "person": "nosotros",
       "answer": "comíamos",
-      "table": "imperfecto-regular"
+      "table": "imperfecto-regular",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-form-11",
@@ -1026,7 +1284,11 @@
       "verb": "vivir",
       "person": "él/ella/usted",
       "answer": "vivía",
-      "table": "imperfecto-regular"
+      "table": "imperfecto-regular",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "id": "im-form-12",
@@ -1034,7 +1296,11 @@
       "verb": "vivir",
       "person": "vosotros",
       "answer": "vivíais",
-      "table": "imperfecto-regular"
+      "table": "imperfecto-regular",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "kind": "why",
@@ -1084,7 +1350,11 @@
           }
         }
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "kind": "why",
@@ -1134,7 +1404,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "kind": "why",
@@ -1184,7 +1458,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "kind": "why",
@@ -1234,7 +1512,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "kind": "why",
@@ -1284,7 +1566,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "kind": "why",
@@ -1334,7 +1620,11 @@
           }
         }
       ],
-      "correctIndex": 2
+      "correctIndex": 2,
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     },
     {
       "kind": "why",
@@ -1384,7 +1674,11 @@
           }
         }
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
     }
   ]
 }

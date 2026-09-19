@@ -533,7 +533,11 @@
       "examples": [
         "Ayer trabajé hasta las ocho.",
         "Anoche cené con mis amigos."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-02",
@@ -567,7 +571,11 @@
       "examples": [
         "¿Cuándo llegaste a México?",
         "¿Qué comiste ayer?"
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-03",
@@ -601,7 +609,11 @@
       "examples": [
         "Ella escribió una carta.",
         "El tren salió a las seis."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-04",
@@ -635,7 +647,11 @@
       "examples": [
         "Bebimos café después de la cena.",
         "Aprendimos mucho ese año."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-05",
@@ -669,7 +685,11 @@
       "examples": [
         "Los niños salieron temprano.",
         "Mis padres vivieron en Puebla."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-06",
@@ -703,7 +723,11 @@
       "examples": [
         "Busqué las llaves toda la mañana.",
         "Empecé el curso en enero."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-07",
@@ -737,7 +761,11 @@
       "examples": [
         "El niño rompió el vaso.",
         "El profesor explicó la lección."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-08",
@@ -771,7 +799,11 @@
       "examples": [
         "¿Ustedes hablaron con el médico?",
         "Ustedes comieron muy tarde."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-09",
@@ -805,7 +837,11 @@
       "examples": [
         "El año pasado cambiamos de casa.",
         "En marzo empezamos el trabajo."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-10",
@@ -839,7 +875,11 @@
       "examples": [
         "No salí de casa el domingo.",
         "No recibí tu mensaje."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-11",
@@ -873,7 +913,11 @@
       "examples": [
         "La clase terminó a las dos.",
         "La tienda abrió el lunes."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-12",
@@ -907,7 +951,11 @@
       "examples": [
         "Hace un mes visité a mi familia.",
         "Hace tres años cambié de trabajo."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-match-01",
@@ -937,7 +985,11 @@
           "es": "compró pan",
           "en": "she bought bread"
         }
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-form-01",
@@ -945,7 +997,11 @@
       "verb": "hablar",
       "person": "yo",
       "answer": "hablé",
-      "table": "indefinido-regular"
+      "table": "indefinido-regular",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-form-02",
@@ -953,7 +1009,11 @@
       "verb": "hablar",
       "person": "tú",
       "answer": "hablaste",
-      "table": "indefinido-regular"
+      "table": "indefinido-regular",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-form-03",
@@ -961,7 +1021,11 @@
       "verb": "hablar",
       "person": "nosotros",
       "answer": "hablamos",
-      "table": "indefinido-regular"
+      "table": "indefinido-regular",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-form-04",
@@ -969,7 +1033,11 @@
       "verb": "hablar",
       "person": "ellos/ellas/ustedes",
       "answer": "hablaron",
-      "table": "indefinido-regular"
+      "table": "indefinido-regular",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-form-05",
@@ -977,7 +1045,11 @@
       "verb": "comer",
       "person": "tú",
       "answer": "comiste",
-      "table": "indefinido-regular"
+      "table": "indefinido-regular",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-form-06",
@@ -985,7 +1057,11 @@
       "verb": "comer",
       "person": "él/ella/usted",
       "answer": "comió",
-      "table": "indefinido-regular"
+      "table": "indefinido-regular",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-form-07",
@@ -993,7 +1069,11 @@
       "verb": "comer",
       "person": "vosotros",
       "answer": "comisteis",
-      "table": "indefinido-regular"
+      "table": "indefinido-regular",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-form-08",
@@ -1001,7 +1081,11 @@
       "verb": "comer",
       "person": "ellos/ellas/ustedes",
       "answer": "comieron",
-      "table": "indefinido-regular"
+      "table": "indefinido-regular",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-form-09",
@@ -1009,7 +1093,11 @@
       "verb": "vivir",
       "person": "yo",
       "answer": "viví",
-      "table": "indefinido-regular"
+      "table": "indefinido-regular",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-form-10",
@@ -1017,7 +1105,11 @@
       "verb": "vivir",
       "person": "él/ella/usted",
       "answer": "vivió",
-      "table": "indefinido-regular"
+      "table": "indefinido-regular",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-form-11",
@@ -1025,7 +1117,11 @@
       "verb": "vivir",
       "person": "nosotros",
       "answer": "vivimos",
-      "table": "indefinido-regular"
+      "table": "indefinido-regular",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ir-form-12",
@@ -1033,7 +1129,11 @@
       "verb": "vivir",
       "person": "vosotros",
       "answer": "vivisteis",
-      "table": "indefinido-regular"
+      "table": "indefinido-regular",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1083,7 +1183,11 @@
           }
         }
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1133,7 +1237,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1183,7 +1291,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1233,7 +1345,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1283,7 +1399,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1333,7 +1453,11 @@
           }
         }
       ],
-      "correctIndex": 2
+      "correctIndex": 2,
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1383,7 +1507,11 @@
           }
         }
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     }
   ]
 }
