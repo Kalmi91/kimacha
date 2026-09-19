@@ -425,6 +425,9 @@ export default {
     dismiss: 'Cerrar',
     // NY3 (NYELVTAN.md "Első szelet"): drill de reescritura de tiempo verbal.
     startTransform: (n: number) => `Reescribir (${n})`,
+    // FB316 (NYELVTAN.md NY10): reescritura de frases en rondas de 10 en lecciones grandes.
+    startTransformRound: (n: number, total: number) => `Reescribir frases (${n} de ${total})`,
+    moreRound: (n: number) => `${n} más`,
     rewriteTo: (tense: string) => `Reescribe en ${tense}`,
     showTranslation: 'Mostrar traducción',
     correct: 'Correcto',
