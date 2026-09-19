@@ -1,0 +1,1191 @@
+[
+  {
+    "id": "a1-d1fed5d2",
+    "order": 0,
+    "es": "(no) haber",
+    "kind": "phrase",
+    "source": "08",
+    "section": "1.1. Existencia, inexistencia"
+  },
+  {
+    "id": "a1-1ab1b3e3",
+    "order": 1,
+    "es": "tener",
+    "kind": "word",
+    "source": "08",
+    "section": "1.1. Existencia, inexistencia"
+  },
+  {
+    "id": "a1-eb790784",
+    "order": 2,
+    "es": "En mi barrio hay dos farmacias.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "1.1. Existencia, inexistencia",
+    "headword": "a1-d1fed5d2"
+  },
+  {
+    "id": "a1-fc70673e",
+    "order": 3,
+    "es": "En Toledo no hay aeropuerto.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "1.1. Existencia, inexistencia",
+    "headword": "a1-d1fed5d2"
+  },
+  {
+    "id": "a1-f14e8374",
+    "order": 4,
+    "es": "El piso tiene tres habitaciones.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "1.1. Existencia, inexistencia",
+    "headword": "a1-d1fed5d2"
+  },
+  {
+    "id": "a1-d7cbec33",
+    "order": 5,
+    "es": "Vigo no tiene metro.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "1.1. Existencia, inexistencia",
+    "headword": "a1-d1fed5d2"
+  },
+  {
+    "id": "a1-605d3374",
+    "order": 15,
+    "es": "ser",
+    "kind": "word",
+    "source": "08",
+    "section": "1.4. Cualidad general"
+  },
+  {
+    "id": "a1-1aef0ea0",
+    "order": 16,
+    "es": "Esta cámara es nueva.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "1.4. Cualidad general",
+    "headword": "a1-605d3374"
+  },
+  {
+    "id": "a1-c416219f",
+    "order": 17,
+    "es": "Mi coche es blanco.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "1.4. Cualidad general",
+    "headword": "a1-605d3374"
+  },
+  {
+    "id": "a1-5febf5ed",
+    "order": 18,
+    "es": "El hotel es grande.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "1.4. Cualidad general",
+    "headword": "a1-605d3374"
+  },
+  {
+    "id": "a1-6bb2bcc7",
+    "order": 23,
+    "es": "[números cardinales]",
+    "kind": "pattern",
+    "source": "08",
+    "section": "2.1. Cantidad numérica"
+  },
+  {
+    "id": "a1-0e72a124",
+    "order": 24,
+    "es": "Tengo 18 años.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "2.1. Cantidad numérica",
+    "headword": "a1-6bb2bcc7"
+  },
+  {
+    "id": "a1-ddee098e",
+    "order": 25,
+    "es": "Somos cinco.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "2.1. Cantidad numérica",
+    "headword": "a1-6bb2bcc7"
+  },
+  {
+    "id": "a1-3e820c71",
+    "order": 26,
+    "es": "Mi ciudad tiene 150.000 habitantes.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "2.1. Cantidad numérica",
+    "headword": "a1-6bb2bcc7"
+  },
+  {
+    "id": "a1-be4a6cd0",
+    "order": 34,
+    "es": "más o menos",
+    "kind": "phrase",
+    "source": "08",
+    "section": "2.2. Cantidad relativa"
+  },
+  {
+    "id": "a1-c6c683e9",
+    "order": 35,
+    "es": "Tiene más o menos 25.000 habitantes.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "2.2. Cantidad relativa",
+    "headword": "a1-be4a6cd0"
+  },
+  {
+    "id": "a1-35272bf8",
+    "order": 44,
+    "es": "grande",
+    "kind": "word",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "a1-f5a425f8",
+    "order": 45,
+    "es": "pequeño",
+    "kind": "word",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "a1-28216bb7",
+    "order": 52,
+    "es": "rápido",
+    "kind": "word",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "a1-6b8b1fb4",
+    "order": 53,
+    "es": "lento",
+    "kind": "word",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "a1-b8ef9276",
+    "order": 62,
+    "es": "hacer frío",
+    "kind": "phrase",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "a1-a7b00c04",
+    "order": 63,
+    "es": "hacer calor",
+    "kind": "phrase",
+    "source": "08",
+    "section": "2.6. Medidas"
+  },
+  {
+    "id": "a1-050bc4fe",
+    "order": 73,
+    "es": "a la derecha (de)",
+    "kind": "phrase",
+    "source": "08",
+    "section": "3.3. Posición relativa"
+  },
+  {
+    "id": "a1-1c3792cb",
+    "order": 74,
+    "es": "a la izquierda (de)",
+    "kind": "phrase",
+    "source": "08",
+    "section": "3.3. Posición relativa"
+  },
+  {
+    "id": "a1-094b0fe0",
+    "order": 79,
+    "es": "en",
+    "kind": "word",
+    "source": "08",
+    "section": "3.3. Posición relativa"
+  },
+  {
+    "id": "a1-ed7ad1f6",
+    "order": 80,
+    "es": "entre",
+    "kind": "word",
+    "source": "08",
+    "section": "3.3. Posición relativa"
+  },
+  {
+    "id": "a1-55e3c91a",
+    "order": 81,
+    "es": "Las llaves están en la cartera.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "3.3. Posición relativa",
+    "headword": "a1-094b0fe0"
+  },
+  {
+    "id": "a1-667379e7",
+    "order": 82,
+    "es": "Hay una calle pequeña entre el supermercado y la cafetería.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "3.3. Posición relativa",
+    "headword": "a1-094b0fe0"
+  },
+  {
+    "id": "a1-3ce867c1",
+    "order": 89,
+    "es": "viajar",
+    "kind": "word",
+    "source": "08",
+    "section": "3.5. Movimiento, estabilidad"
+  },
+  {
+    "id": "a1-058471a8",
+    "order": 104,
+    "es": "a la derecha",
+    "kind": "phrase",
+    "source": "08",
+    "section": "3.6. Orientación, dirección"
+  },
+  {
+    "id": "a1-e1ffea86",
+    "order": 105,
+    "es": "a la izquierda",
+    "kind": "phrase",
+    "source": "08",
+    "section": "3.6. Orientación, dirección"
+  },
+  {
+    "id": "a1-260a7575",
+    "order": 112,
+    "es": "ser de",
+    "kind": "phrase",
+    "source": "08",
+    "section": "3.8. Origen"
+  },
+  {
+    "id": "a1-cb69dfa3",
+    "order": 113,
+    "es": "Soy de Sevilla.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "3.8. Origen",
+    "headword": "a1-260a7575"
+  },
+  {
+    "id": "a1-285fbe53",
+    "order": 132,
+    "es": "el fin de semana",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.1. Referencias generales"
+  },
+  {
+    "id": "a1-4ae4f8f5",
+    "order": 148,
+    "es": "a mediodía",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.1. Referencias generales"
+  },
+  {
+    "id": "a1-8727ae65",
+    "order": 162,
+    "es": "mañana",
+    "kind": "word",
+    "source": "08",
+    "section": "4.2. Localización en el tiempo"
+  },
+  {
+    "id": "a1-f36a1f6c",
+    "order": 167,
+    "es": "ser temprano",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "a1-c9857e4e",
+    "order": 168,
+    "es": "ser pronto",
+    "kind": "phrase",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "a1-8fb5fd98",
+    "order": 169,
+    "es": "Es temprano.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo",
+    "headword": "a1-f36a1f6c"
+  },
+  {
+    "id": "a1-8a424c01",
+    "order": 180,
+    "es": "Trabajo de nueve a cuatro.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo",
+    "headword": "a1-600ccd1b"
+  },
+  {
+    "id": "a1-fdadc53e",
+    "order": 185,
+    "es": "noche",
+    "kind": "word",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "a1-41cbc6f6",
+    "order": 193,
+    "es": "normalmente",
+    "kind": "word",
+    "source": "08",
+    "section": "4.3. Aspectos de desarrollo"
+  },
+  {
+    "id": "a1-98a793c7",
+    "order": 204,
+    "es": "claro",
+    "kind": "word",
+    "source": "08",
+    "section": "5.8. Visibilidad, visión"
+  },
+  {
+    "id": "a1-c0db1ada",
+    "order": 205,
+    "es": "oscuro",
+    "kind": "word",
+    "source": "08",
+    "section": "5.8. Visibilidad, visión"
+  },
+  {
+    "id": "a1-03b34252",
+    "order": 206,
+    "es": "Tiene los ojos claros.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "5.8. Visibilidad, visión",
+    "headword": "a1-98a793c7"
+  },
+  {
+    "id": "a1-4143766e",
+    "order": 207,
+    "es": "Tiene el pelo oscuro.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "5.8. Visibilidad, visión",
+    "headword": "a1-98a793c7"
+  },
+  {
+    "id": "a1-e900b9c0",
+    "order": 232,
+    "es": "estar abierto",
+    "kind": "phrase",
+    "source": "08",
+    "section": "5.14. Accesibilidad"
+  },
+  {
+    "id": "a1-92899841",
+    "order": 233,
+    "es": "estar cerrado",
+    "kind": "phrase",
+    "source": "08",
+    "section": "5.14. Accesibilidad"
+  },
+  {
+    "id": "a1-1ac20e9a",
+    "order": 242,
+    "es": "costar",
+    "kind": "word",
+    "source": "08",
+    "section": "6.2. Valor, precio"
+  },
+  {
+    "id": "a1-58e70efc",
+    "order": 243,
+    "es": "¿Cuánto es?",
+    "kind": "sentence",
+    "source": "08",
+    "section": "6.2. Valor, precio",
+    "headword": "a1-1ac20e9a"
+  },
+  {
+    "id": "a1-d4e2f608",
+    "order": 254,
+    "es": "bien",
+    "kind": "word",
+    "source": "08",
+    "section": "6.5. Aceptabilidad"
+  },
+  {
+    "id": "a1-1b606970",
+    "order": 260,
+    "es": "saber",
+    "kind": "word",
+    "source": "08",
+    "section": "6.13. Capacidad, competencia"
+  },
+  {
+    "id": "a1-513ec2e4",
+    "order": 261,
+    "es": "Sé español.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "6.13. Capacidad, competencia",
+    "headword": "a1-1b606970"
+  },
+  {
+    "id": "a1-1dfbe348",
+    "order": 262,
+    "es": "Sabemos nadar.",
+    "kind": "sentence",
+    "source": "08",
+    "section": "6.13. Capacidad, competencia",
+    "headword": "a1-1b606970"
+  },
+  {
+    "id": "a1-8099e0cd",
+    "order": 271,
+    "es": "ser alto",
+    "kind": "phrase",
+    "source": "09",
+    "section": "1.2. Características físicas"
+  },
+  {
+    "id": "a1-d36cdc4f",
+    "order": 272,
+    "es": "ser bajo",
+    "kind": "phrase",
+    "source": "09",
+    "section": "1.2. Características físicas"
+  },
+  {
+    "id": "a1-0c11daf1",
+    "order": 273,
+    "es": "ser gordo",
+    "kind": "phrase",
+    "source": "09",
+    "section": "1.2. Características físicas"
+  },
+  {
+    "id": "a1-a1143ce8",
+    "order": 274,
+    "es": "ser delgado",
+    "kind": "phrase",
+    "source": "09",
+    "section": "1.2. Características físicas"
+  },
+  {
+    "id": "a1-cbb9aa64",
+    "order": 275,
+    "es": "ser guapo",
+    "kind": "phrase",
+    "source": "09",
+    "section": "1.2. Características físicas"
+  },
+  {
+    "id": "a1-204ea9d1",
+    "order": 290,
+    "es": "tener los ojos grandes",
+    "kind": "phrase",
+    "source": "09",
+    "section": "1.2. Características físicas"
+  },
+  {
+    "id": "a1-84e5bc0a",
+    "order": 291,
+    "es": "tener los ojos pequeños",
+    "kind": "phrase",
+    "source": "09",
+    "section": "1.2. Características físicas"
+  },
+  {
+    "id": "a1-e04d588b",
+    "order": 304,
+    "es": "señora",
+    "kind": "word",
+    "source": "09",
+    "section": "3.1. Datos personales"
+  },
+  {
+    "id": "a1-061c9803",
+    "order": 305,
+    "es": "señores",
+    "kind": "word",
+    "source": "09",
+    "section": "3.1. Datos personales"
+  },
+  {
+    "id": "a1-81bce1f3",
+    "order": 315,
+    "es": "casa",
+    "kind": "word",
+    "source": "09",
+    "section": "3.1. Datos personales"
+  },
+  {
+    "id": "a1-bbd0d81f",
+    "order": 316,
+    "es": "habitación",
+    "kind": "word",
+    "source": "09",
+    "section": "3.1. Datos personales"
+  },
+  {
+    "id": "a1-0d2f463d",
+    "order": 322,
+    "es": "lugar de nacimiento",
+    "kind": "phrase",
+    "source": "09",
+    "section": "3.1. Datos personales"
+  },
+  {
+    "id": "a1-f206d767",
+    "order": 331,
+    "es": "ser de Laos",
+    "kind": "phrase",
+    "source": "09",
+    "section": "3.1. Datos personales"
+  },
+  {
+    "id": "a1-64babd71",
+    "order": 332,
+    "es": "ser de Bali",
+    "kind": "phrase",
+    "source": "09",
+    "section": "3.1. Datos personales"
+  },
+  {
+    "id": "a1-ec751167",
+    "order": 333,
+    "es": "ser de Mozambique",
+    "kind": "phrase",
+    "source": "09",
+    "section": "3.1. Datos personales"
+  },
+  {
+    "id": "a1-42ebb3d2",
+    "order": 341,
+    "es": "niña",
+    "kind": "word",
+    "source": "09",
+    "section": "3.1. Datos personales"
+  },
+  {
+    "id": "a1-c3de758a",
+    "order": 342,
+    "es": "chica",
+    "kind": "word",
+    "source": "09",
+    "section": "3.1. Datos personales"
+  },
+  {
+    "id": "a1-f7d90116",
+    "order": 353,
+    "es": "llaves",
+    "kind": "word",
+    "source": "09",
+    "section": "3.3. Objetos personales"
+  },
+  {
+    "id": "a1-fc8b93c8",
+    "order": 354,
+    "es": "cartera",
+    "kind": "word",
+    "source": "09",
+    "section": "3.3. Objetos personales"
+  },
+  {
+    "id": "a1-5bbccf89",
+    "order": 355,
+    "es": "bolso",
+    "kind": "word",
+    "source": "09",
+    "section": "3.3. Objetos personales"
+  },
+  {
+    "id": "a1-afa2148c",
+    "order": 356,
+    "es": "maleta",
+    "kind": "word",
+    "source": "09",
+    "section": "3.3. Objetos personales"
+  },
+  {
+    "id": "a1-2e490be4",
+    "order": 357,
+    "es": "reloj",
+    "kind": "word",
+    "source": "09",
+    "section": "3.3. Objetos personales"
+  },
+  {
+    "id": "a1-edadcfa5",
+    "order": 358,
+    "es": "ordenador",
+    "kind": "word",
+    "source": "09",
+    "section": "3.3. Objetos personales"
+  },
+  {
+    "id": "a1-81bf5494",
+    "order": 359,
+    "es": "tarjeta de crédito",
+    "kind": "phrase",
+    "source": "09",
+    "section": "3.3. Objetos personales"
+  },
+  {
+    "id": "a1-01f07beb",
+    "order": 373,
+    "es": "amigo",
+    "kind": "word",
+    "source": "09",
+    "section": "4.2. Relaciones sociales"
+  },
+  {
+    "id": "a1-322f0275",
+    "order": 385,
+    "es": "agua (mineral) con gas",
+    "kind": "phrase",
+    "source": "09",
+    "section": "5.2. Bebida"
+  },
+  {
+    "id": "a1-e39bde25",
+    "order": 386,
+    "es": "agua (mineral) sin gas",
+    "kind": "phrase",
+    "source": "09",
+    "section": "5.2. Bebida"
+  },
+  {
+    "id": "a1-636909bb",
+    "order": 402,
+    "es": "bocadillo",
+    "kind": "word",
+    "source": "09",
+    "section": "5.3. Alimentos"
+  },
+  {
+    "id": "a1-ca96b69e",
+    "order": 403,
+    "es": "sándwich",
+    "kind": "word",
+    "source": "09",
+    "section": "5.3. Alimentos"
+  },
+  {
+    "id": "a1-9a1e795a",
+    "order": 404,
+    "es": "hamburguesa",
+    "kind": "word",
+    "source": "09",
+    "section": "5.3. Alimentos"
+  },
+  {
+    "id": "a1-f04cc316",
+    "order": 414,
+    "es": "mesa",
+    "kind": "word",
+    "source": "09",
+    "section": "5.7. Restaurante"
+  },
+  {
+    "id": "a1-aabb211b",
+    "order": 421,
+    "es": "profesor",
+    "kind": "word",
+    "source": "09",
+    "section": "6.2. Profesorado y alumnado"
+  },
+  {
+    "id": "a1-d5d4bc1d",
+    "order": 422,
+    "es": "estudiante",
+    "kind": "word",
+    "source": "09",
+    "section": "6.2. Profesorado y alumnado"
+  },
+  {
+    "id": "a1-235acfdf",
+    "order": 423,
+    "es": "director",
+    "kind": "word",
+    "source": "09",
+    "section": "6.2. Profesorado y alumnado"
+  },
+  {
+    "id": "a1-d8a36dd7",
+    "order": 431,
+    "es": "ir a clase",
+    "kind": "phrase",
+    "source": "09",
+    "section": "6.4. Aprendizaje y enseñanza"
+  },
+  {
+    "id": "a1-86546b91",
+    "order": 457,
+    "es": "silla",
+    "kind": "word",
+    "source": "09",
+    "section": "6.8. Material educativo y mobiliario de aula"
+  },
+  {
+    "id": "a1-2b937936",
+    "order": 458,
+    "es": "armario",
+    "kind": "word",
+    "source": "09",
+    "section": "6.8. Material educativo y mobiliario de aula"
+  },
+  {
+    "id": "a1-cb28f4a6",
+    "order": 459,
+    "es": "estantería",
+    "kind": "word",
+    "source": "09",
+    "section": "6.8. Material educativo y mobiliario de aula"
+  },
+  {
+    "id": "a1-5d26b8f2",
+    "order": 468,
+    "es": "trabajar (en)",
+    "kind": "phrase",
+    "source": "09",
+    "section": "7.1. Profesiones y cargos"
+  },
+  {
+    "id": "a1-7a144895",
+    "order": 469,
+    "es": "dedicarse a",
+    "kind": "phrase",
+    "source": "09",
+    "section": "7.1. Profesiones y cargos"
+  },
+  {
+    "id": "a1-a2039cb4",
+    "order": 478,
+    "es": "comprar",
+    "kind": "word",
+    "source": "09",
+    "section": "7.3. Actividad laboral"
+  },
+  {
+    "id": "a1-9c25bd58",
+    "order": 479,
+    "es": "vender",
+    "kind": "word",
+    "source": "09",
+    "section": "7.3. Actividad laboral"
+  },
+  {
+    "id": "a1-b99c0fea",
+    "order": 483,
+    "es": "tener vacaciones",
+    "kind": "phrase",
+    "source": "09",
+    "section": "7.5. Derechos y obligaciones laborales"
+  },
+  {
+    "id": "a1-528f8529",
+    "order": 488,
+    "es": "leer el periódico",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.1. Tiempo libre y entretenimiento"
+  },
+  {
+    "id": "a1-42640996",
+    "order": 489,
+    "es": "leer un libro",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.1. Tiempo libre y entretenimiento"
+  },
+  {
+    "id": "a1-925197e0",
+    "order": 490,
+    "es": "leer una revista",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.1. Tiempo libre y entretenimiento"
+  },
+  {
+    "id": "a1-ad900d7b",
+    "order": 504,
+    "es": "cantar",
+    "kind": "word",
+    "source": "09",
+    "section": "8.1. Tiempo libre y entretenimiento"
+  },
+  {
+    "id": "a1-cebdd0c7",
+    "order": 505,
+    "es": "bailar",
+    "kind": "word",
+    "source": "09",
+    "section": "8.1. Tiempo libre y entretenimiento"
+  },
+  {
+    "id": "a1-aa153cb1",
+    "order": 513,
+    "es": "hacer deporte",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.3. Deportes"
+  },
+  {
+    "id": "a1-94113f9f",
+    "order": 514,
+    "es": "hacer ejercicio",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.3. Deportes"
+  },
+  {
+    "id": "a1-127a0261",
+    "order": 515,
+    "es": "hacer gimnasia",
+    "kind": "phrase",
+    "source": "09",
+    "section": "8.3. Deportes"
+  },
+  {
+    "id": "a1-639c48ee",
+    "order": 523,
+    "es": "sobre",
+    "kind": "word",
+    "source": "09",
+    "section": "9.2. Correspondencia escrita"
+  },
+  {
+    "id": "a1-f841bd7f",
+    "order": 524,
+    "es": "sello",
+    "kind": "word",
+    "source": "09",
+    "section": "9.2. Correspondencia escrita"
+  },
+  {
+    "id": "a1-f942c361",
+    "order": 531,
+    "es": "leer un periódico",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.4. Prensa escrita"
+  },
+  {
+    "id": "a1-633019dc",
+    "order": 536,
+    "es": "página web",
+    "kind": "phrase",
+    "source": "09",
+    "section": "9.6. Internet"
+  },
+  {
+    "id": "a1-88299356",
+    "order": 567,
+    "es": "sillón",
+    "kind": "word",
+    "source": "09",
+    "section": "10.4. Objetos domésticos"
+  },
+  {
+    "id": "a1-2b2d005e",
+    "order": 581,
+    "es": "hospital",
+    "kind": "word",
+    "source": "09",
+    "section": "11.4. Servicios sanitarios"
+  },
+  {
+    "id": "a1-b1059cbb",
+    "order": 587,
+    "es": "comprador",
+    "kind": "word",
+    "source": "09",
+    "section": "12.1. Lugares, personas y actividades"
+  },
+  {
+    "id": "a1-88d68187",
+    "order": 588,
+    "es": "vendedor",
+    "kind": "word",
+    "source": "09",
+    "section": "12.1. Lugares, personas y actividades"
+  },
+  {
+    "id": "a1-0960f707",
+    "order": 597,
+    "es": "pagar con tarjeta",
+    "kind": "phrase",
+    "source": "09",
+    "section": "12.4. Pagos"
+  },
+  {
+    "id": "a1-c1962c23",
+    "order": 604,
+    "es": "agua",
+    "kind": "word",
+    "source": "09",
+    "section": "13.6. Higiene"
+  },
+  {
+    "id": "a1-abdb1bf5",
+    "order": 605,
+    "es": "jabón",
+    "kind": "word",
+    "source": "09",
+    "section": "13.6. Higiene"
+  },
+  {
+    "id": "a1-d7d88964",
+    "order": 611,
+    "es": "plano",
+    "kind": "word",
+    "source": "09",
+    "section": "14.1. Viajes"
+  },
+  {
+    "id": "a1-0211715a",
+    "order": 615,
+    "es": "oficina de información y turismo",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.1. Viajes"
+  },
+  {
+    "id": "a1-5c0c1354",
+    "order": 622,
+    "es": "habitación doble baño",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.2. Alojamiento"
+  },
+  {
+    "id": "a1-a7381b14",
+    "order": 623,
+    "es": "habitación doble teléfono",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.2. Alojamiento"
+  },
+  {
+    "id": "a1-0c936386",
+    "order": 624,
+    "es": "habitación doble televisión",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.2. Alojamiento"
+  },
+  {
+    "id": "a1-2e77f85b",
+    "order": 625,
+    "es": "habitación doble aire acondicionado",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.2. Alojamiento"
+  },
+  {
+    "id": "a1-c13c4a03",
+    "order": 626,
+    "es": "habitación individual baño",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.2. Alojamiento"
+  },
+  {
+    "id": "a1-a807eb3f",
+    "order": 627,
+    "es": "habitación individual teléfono",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.2. Alojamiento"
+  },
+  {
+    "id": "a1-0bbf7e62",
+    "order": 628,
+    "es": "habitación individual televisión",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.2. Alojamiento"
+  },
+  {
+    "id": "a1-655475da",
+    "order": 629,
+    "es": "habitación individual aire acondicionado",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.2. Alojamiento"
+  },
+  {
+    "id": "a1-3e5845f6",
+    "order": 630,
+    "es": "habitación con baño",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.2. Alojamiento"
+  },
+  {
+    "id": "a1-812e2729",
+    "order": 631,
+    "es": "habitación con teléfono",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.2. Alojamiento"
+  },
+  {
+    "id": "a1-f2c73cda",
+    "order": 632,
+    "es": "habitación con televisión",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.2. Alojamiento"
+  },
+  {
+    "id": "a1-fc27433a",
+    "order": 633,
+    "es": "habitación con aire acondicionado",
+    "kind": "phrase",
+    "source": "09",
+    "section": "14.2. Alojamiento"
+  },
+  {
+    "id": "a1-33feb9d0",
+    "order": 650,
+    "es": "coche",
+    "kind": "word",
+    "source": "09",
+    "section": "14.3. Sistema de transporte"
+  },
+  {
+    "id": "a1-1388b778",
+    "order": 651,
+    "es": "metro",
+    "kind": "word",
+    "source": "09",
+    "section": "14.3. Sistema de transporte"
+  },
+  {
+    "id": "a1-15047c92",
+    "order": 652,
+    "es": "tren",
+    "kind": "word",
+    "source": "09",
+    "section": "14.3. Sistema de transporte"
+  },
+  {
+    "id": "a1-75b2634a",
+    "order": 653,
+    "es": "autobús",
+    "kind": "word",
+    "source": "09",
+    "section": "14.3. Sistema de transporte"
+  },
+  {
+    "id": "a1-4d82205a",
+    "order": 654,
+    "es": "taxi",
+    "kind": "word",
+    "source": "09",
+    "section": "14.3. Sistema de transporte"
+  },
+  {
+    "id": "a1-5d8df9b1",
+    "order": 661,
+    "es": "capital",
+    "kind": "word",
+    "source": "09",
+    "section": "17.2. Política y gobierno"
+  },
+  {
+    "id": "a1-0eb57679",
+    "order": 668,
+    "es": "foto",
+    "kind": "word",
+    "source": "09",
+    "section": "18.1. Disciplinas y cualidades artísticas"
+  },
+  {
+    "id": "a1-6c351bdc",
+    "order": 675,
+    "es": "catedral",
+    "kind": "word",
+    "source": "09",
+    "section": "18.3. Arquitectura, escultura y pintura"
+  },
+  {
+    "id": "a1-f163153f",
+    "order": 676,
+    "es": "iglesia",
+    "kind": "word",
+    "source": "09",
+    "section": "18.3. Arquitectura, escultura y pintura"
+  },
+  {
+    "id": "a1-4ed3655e",
+    "order": 677,
+    "es": "actor",
+    "kind": "word",
+    "source": "09",
+    "section": "18.6. Cine y teatro"
+  },
+  {
+    "id": "a1-12768f20",
+    "order": 678,
+    "es": "actriz",
+    "kind": "word",
+    "source": "09",
+    "section": "18.6. Cine y teatro"
+  },
+  {
+    "id": "a1-fbb93bb9",
+    "order": 687,
+    "es": "sol",
+    "kind": "word",
+    "source": "09",
+    "section": "20.1. Universo y espacio"
+  },
+  {
+    "id": "a1-c4779263",
+    "order": 696,
+    "es": "(el) centro",
+    "kind": "phrase",
+    "source": "09",
+    "section": "20.3. Espacios urbanos o rústicos"
+  },
+  {
+    "id": "a1-7d1a6177",
+    "order": 710,
+    "es": "planta",
+    "kind": "word",
+    "source": "09",
+    "section": "20.6. Flora"
+  },
+  {
+    "id": "a1-4cb270f3",
+    "order": 711,
+    "es": "flor",
+    "kind": "word",
+    "source": "09",
+    "section": "20.6. Flora"
+  },
+  {
+    "id": "a1-07cc4c39",
+    "order": 712,
+    "es": "árbol",
+    "kind": "word",
+    "source": "09",
+    "section": "20.6. Flora"
+  }
+]

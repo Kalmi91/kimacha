@@ -1,7 +1,7 @@
 // PLAN-pcic 5. lépés: adat-betöltő a PCIC fülhöz. Csak import + típus +
 // helper, az adat maga a data/pcic/*.json fájlokban él (K1 konvenció).
 
-import rawItems from './pcic/b1-sample.json';
+import rawItems from './pcic/b1-all.json';
 import enById from './pcic/b1-en.json';
 
 export type PcicKind = 'word' | 'phrase' | 'sentence' | 'pattern';

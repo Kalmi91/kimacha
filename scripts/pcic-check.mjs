@@ -3,37 +3,67 @@
 // Ellenőrzi:
 // 1. minden nem-pattern b1-sample.json id-nak van nem-üres `en`-je b1-en.json-ban
 // 2. nincs két azonos kisbetűs `es` a mintában
-// 3. nincs olyan b1-en.json kulcs, ami nem szerepel a mintában
+// 3. nincs olyan en kulcs, ami nem szerepel a korpuszban (all)
 // 4. minden b1-all.json id "b1-" + 8 hex karakter
 // 5. az `order` mezo egyedi es hezagmentes 0..n-1 a b1-all.json-ban
 // 6. minden `headword` letezo id-ra mutat
+// --all kapcsoló: a checked halmaz b1-all.json (nem a minta); 1. ellenőrzés helyett
+// csak azt nézi, hogy minden meglévő b1-en.json érték nem-üres string, és kiírja
+// az `en <lefordított>/<fordítható>` állást.
 //
-// Usage: node scripts/pcic-check.mjs
+// Usage: node scripts/pcic-check.mjs [--level a1|a2|b1|b2] [--all]
 
 import { readFileSync } from 'node:fs';
 
-const sample = JSON.parse(readFileSync('data/pcic/b1-sample.json', 'utf8'));
-const en = JSON.parse(readFileSync('data/pcic/b1-en.json', 'utf8'));
-const all = JSON.parse(readFileSync('data/pcic/b1-all.json', 'utf8'));
+const levelArgIdx = process.argv.indexOf('--level');
+const level = levelArgIdx !== -1 ? process.argv[levelArgIdx + 1] : 'b1';
+if (!['a1', 'a2', 'b1', 'b2'].includes(level)) {
+  console.error(`Unknown --level: ${level} (expected a1, a2, b1 or b2)`);
+  process.exit(1);
+}
+const useAll = process.argv.includes('--all');
+
+const sample = JSON.parse(readFileSync(`data/pcic/${level}-sample.json`, 'utf8'));
+let en;
+try {
+  en = JSON.parse(readFileSync(`data/pcic/${level}-en.json`, 'utf8'));
+} catch (err) {
+  if (err.code === 'ENOENT') en = {};
+  else throw err;
+}
+const all = JSON.parse(readFileSync(`data/pcic/${level}-all.json`, 'utf8'));
+
+const checked = useAll ? all : sample;
 
 let errors = 0;
 
-// 1. minden nem-pattern id-nak van nem-üres fordítása
-const missing = [];
-for (const item of sample) {
-  if (item.kind === 'pattern') continue;
-  const value = en[item.id];
-  if (typeof value !== 'string' || value.trim() === '') missing.push(item.id);
-}
-if (missing.length) {
-  errors += missing.length;
-  console.error(`Hiányzó/üres fordítás (${missing.length}): ${missing.join(', ')}`);
+if (useAll) {
+  // 1. minden meglévő b1-en.json érték nem-üres string
+  const badValues = Object.entries(en)
+    .filter(([, value]) => typeof value !== 'string' || value.trim() === '')
+    .map(([id]) => id);
+  if (badValues.length) {
+    errors += badValues.length;
+    console.error(`Üres/nem-string fordítás (${badValues.length}): ${badValues.join(', ')}`);
+  }
+} else {
+  // 1. minden nem-pattern id-nak van nem-üres fordítása
+  const missing = [];
+  for (const item of checked) {
+    if (item.kind === 'pattern') continue;
+    const value = en[item.id];
+    if (typeof value !== 'string' || value.trim() === '') missing.push(item.id);
+  }
+  if (missing.length) {
+    errors += missing.length;
+    console.error(`Hiányzó/üres fordítás (${missing.length}): ${missing.join(', ')}`);
+  }
 }
 
-// 2. nincs két azonos kisbetűs `es` a mintában
+// 2. nincs két azonos kisbetűs `es` a checked halmazban
 const seen = new Map();
 const dupes = [];
-for (const item of sample) {
+for (const item of checked) {
   const key = item.es.toLowerCase();
   if (seen.has(key)) dupes.push(`${item.id} == ${seen.get(key)} ("${item.es}")`);
   else seen.set(key, item.id);
@@ -43,16 +73,17 @@ if (dupes.length) {
   console.error(`Duplikált 'es' a mintában (${dupes.length}): ${dupes.join(', ')}`);
 }
 
-// 3. nincs olyan b1-en.json kulcs, ami nem szerepel a mintában
-const sampleIds = new Set(sample.map((item) => item.id));
-const orphans = Object.keys(en).filter((id) => !sampleIds.has(id));
+// 3. nincs olyan b1-en.json kulcs, ami nem szerepel a korpuszban (all; a minta
+//    részhalmaz, az en-fájl pedig a teljes korpuszt fedi a --all adagok óta)
+const corpusIds = new Set(all.map((item) => item.id));
+const orphans = Object.keys(en).filter((id) => !corpusIds.has(id));
 if (orphans.length) {
   errors += orphans.length;
-  console.error(`Árva b1-en.json kulcs, nincs a mintában (${orphans.length}): ${orphans.join(', ')}`);
+  console.error(`Árva en kulcs, nincs a korpuszban (${orphans.length}): ${orphans.join(', ')}`);
 }
 
-// 4. minden id "b1-" + 8 hex karakter
-const idRe = /^b1-[0-9a-f]{8}$/;
+// 4. minden id "${level}-" + 8 hex karakter
+const idRe = new RegExp(`^${level}-[0-9a-f]{8}$`);
 const badIds = all.filter((item) => !idRe.test(item.id)).map((item) => item.id);
 if (badIds.length) {
   errors += badIds.length;
@@ -80,4 +111,10 @@ if (errors) {
   process.exit(1);
 }
 
-console.log(`pcic:check OK, ${sample.length} tétel, ${Object.keys(en).length} fordítás, ${all.length} tétel a corpusban`);
+if (useAll) {
+  const translatable = all.filter((item) => item.kind !== 'pattern');
+  const translated = translatable.filter((item) => typeof en[item.id] === 'string' && en[item.id].trim() !== '').length;
+  console.log(`pcic:check OK, en ${translated}/${translatable.length}, ${all.length} tétel a corpusban`);
+} else {
+  console.log(`pcic:check OK, ${sample.length} tétel, ${Object.keys(en).length} fordítás, ${all.length} tétel a corpusban`);
+}
