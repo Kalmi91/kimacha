@@ -11,14 +11,14 @@
 // csak azt nézi, hogy minden meglévő b1-en.json érték nem-üres string, és kiírja
 // az `en <lefordított>/<fordítható>` állást.
 //
-// Usage: node scripts/pcic-check.mjs [--level b1|b2] [--all]
+// Usage: node scripts/pcic-check.mjs [--level a1|a2|b1|b2] [--all]
 
 import { readFileSync } from 'node:fs';
 
 const levelArgIdx = process.argv.indexOf('--level');
 const level = levelArgIdx !== -1 ? process.argv[levelArgIdx + 1] : 'b1';
-if (level !== 'b1' && level !== 'b2') {
-  console.error(`Unknown --level: ${level} (expected b1 or b2)`);
+if (!['a1', 'a2', 'b1', 'b2'].includes(level)) {
+  console.error(`Unknown --level: ${level} (expected a1, a2, b1 or b2)`);
   process.exit(1);
 }
 const useAll = process.argv.includes('--all');
