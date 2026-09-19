@@ -19,7 +19,7 @@ import {
   topicsForUnit,
   unitsForLevel,
 } from '@/lib/grammar/syllabus';
-import { GRAMMAR_UNLOCK_SEEN_KEY, lockState, transformWordIds, type LockState } from '@/lib/grammar/lockState';
+import { GRAMMAR_UNLOCK_SEEN_KEY, lessonWordIds, lockState, type LockState } from '@/lib/grammar/lockState';
 import FeedbackButton from '@/components/FeedbackModal';
 
 // The grammar course: the whole syllabus from A1 to C1, in teaching order.
@@ -79,7 +79,7 @@ export default function GrammarSyllabusScreen() {
     const wordIds = new Set<number>();
     for (const lesson of lessons.values()) {
       if (!lesson) continue;
-      for (const id of transformWordIds(lesson)) wordIds.add(Number(id));
+      for (const id of lessonWordIds(lesson)) wordIds.add(Number(id));
     }
     const wordStates = await db.getWordStates([...wordIds]);
     const knownIds = new Set<string>();

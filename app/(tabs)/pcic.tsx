@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Pressable, TextInput, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard, Alert } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { speak } from '@/lib/speech';
@@ -95,6 +95,17 @@ export default function PcicScreen() {
   const current = queue[0];
   const currentItem = current ? findPcicItem(current.itemId) : undefined;
 
+  // FB319: az angol prompt felolvasása, amikor egy ÚJ lap kerül képernyőre.
+  // Csak a `current?.itemId` váltására fusson (a `grade` a closure-ből olvasva
+  // dönti el, hogy még nincs felfedve), felfedéskor (a `grade` state
+  // változásakor) ne ismételje.
+  useEffect(() => {
+    if (!loading && currentItem && !grade) {
+      speak(currentItem.en, speechLang('en'));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [current?.itemId, loading]);
+
   const dueRemaining = queue.filter((c) => c.state !== 'new').length;
   const newRemaining = queue.filter((c) => c.state === 'new').length;
   const doneToday = [...allCards.values()].filter((c) => c.lastReview === today).length;
@@ -141,7 +152,10 @@ export default function PcicScreen() {
       if (next) setAutoGraded(true);
       return;
     }
-    setGrade(gradePcicAnswer(typedAnswer, currentItem.es));
+    // FB321: felfedéskor mindig szóljon a helyes spanyol alak.
+    const g = gradePcicAnswer(typedAnswer, currentItem.es);
+    setGrade(g);
+    speak(g.best, speechLang('es'));
   };
 
   const handleGrade = async (g: Sm2Grade) => {
@@ -224,22 +238,46 @@ export default function PcicScreen() {
 
   if (loading) {
     return (
-      <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <View style={[styles.container, styles.centered, { backgroundColor: colors.background }]}>
         <ActivityIndicator size="large" color={colors.tint} />
       </View>
     );
   }
 
   if (!current || !currentItem) {
+    // FB317: hány PCIC-tétel van már bevezetve (nem 'new' állapotú) a teljes
+    // listából, a done-képernyő saját haladás-csíkjához.
+    const introducedCount = [...allCards.values()].filter((c) => c.state !== 'new').length;
+    const introducedPct = PCIC_ITEMS.length > 0 ? (introducedCount / PCIC_ITEMS.length) * 100 : 0;
     return (
-      <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <View style={[styles.container, styles.doneContainer, { backgroundColor: colors.background }]}>
         {headerRow}
-        <Text style={[styles.title, { color: colors.text }]}>{s.pcic.doneTitle}</Text>
-        {sessionAnswered > 0 && (
-          <Text style={[styles.emptySub, { color: colors.tabIconDefault }]}>
-            {s.pcic.summary(sessionAnswered, sessionNew, sessionAgain)}
+        <View style={styles.doneHeader}>
+          <Text style={styles.doneEmoji}>🎉</Text>
+          <Text style={[styles.title, { color: colors.text }]}>{s.pcic.doneTitle}</Text>
+        </View>
+        <View style={styles.tilesRow}>
+          <View style={[styles.tile, { backgroundColor: '#38BDF8' }]}>
+            <Text style={styles.tileNumber}>{sessionAnswered}</Text>
+            <Text style={styles.tileLabel}>{s.pcic.tileAnswered}</Text>
+          </View>
+          <View style={[styles.tile, { backgroundColor: '#22C55E' }]}>
+            <Text style={styles.tileNumber}>{sessionNew}</Text>
+            <Text style={styles.tileLabel}>{s.pcic.tileNew}</Text>
+          </View>
+          <View style={[styles.tile, { backgroundColor: '#F472B6' }]}>
+            <Text style={styles.tileNumber}>{sessionAgain}</Text>
+            <Text style={styles.tileLabel}>{s.pcic.tileAgain}</Text>
+          </View>
+        </View>
+        <View style={styles.introducedBlock}>
+          <Text style={[styles.introducedLabel, { color: colors.tabIconDefault }]}>
+            {s.pcic.introduced(introducedCount, PCIC_ITEMS.length)}
           </Text>
-        )}
+          <View style={[styles.introducedTrack, { backgroundColor: colors.card }]}>
+            <View style={[styles.introducedFill, { backgroundColor: '#38BDF8', width: `${introducedPct}%` }]} />
+          </View>
+        </View>
         {NEW_ORDER.some((id) => !allCards.has(id) || allCards.get(id)!.state === 'new') && (
           <Pressable style={[styles.checkBtn, { backgroundColor: '#38BDF8' }]} onPress={handleMoreNew}>
             <Text style={styles.checkBtnText}>{s.pcic.moreNew(10)}</Text>
@@ -251,6 +289,9 @@ export default function PcicScreen() {
   }
 
   const previews = sm2Preview(current, today);
+  // FB320: a fejléc alatti haladás-csík, a menet elején üres, a végén tele.
+  const sessionTotal = sessionAnswered + queue.length;
+  const sessionPct = sessionTotal > 0 ? (sessionAnswered / sessionTotal) * 100 : 0;
 
   return (
     <KeyboardAvoidingView
@@ -258,6 +299,10 @@ export default function PcicScreen() {
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
       {headerRow}
+
+      <View style={[styles.progressTrack, { backgroundColor: colors.card }]}>
+        <View style={[styles.progressFill, { backgroundColor: colors.tint, width: `${sessionPct}%` }]} />
+      </View>
 
       <Pressable style={[styles.card, { backgroundColor: colors.card }]} onPress={() => Keyboard.dismiss()}>
         <Text style={[styles.frontText, { color: colors.text }]}>{currentItem.en}</Text>
@@ -362,7 +407,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    justifyContent: 'flex-start',
+  },
+  // FB320: a loading-ág is a közös containert használja, de a pörgettyűnek
+  // középen kell maradnia, nem a tetejére ugrania.
+  centered: {
     justifyContent: 'center',
+  },
+  // FB320: vékony haladás-csík a fejléc alatt, a tanuló nézeten.
+  progressTrack: {
+    height: 6,
+    borderRadius: 3,
+    overflow: 'hidden',
+    marginBottom: 16,
+  },
+  progressFill: {
+    height: '100%',
+    borderRadius: 3,
   },
   headerRow: {
     flexDirection: 'row',
@@ -392,6 +453,56 @@ const styles = StyleSheet.create({
   emptySub: {
     fontSize: 14,
     textAlign: 'center',
+  },
+  // FB317: színes done-képernyő, a components/DoneScreen.tsx vizuális
+  // nyelvén (doneEmoji, statsGrid), de saját stílusokkal.
+  doneContainer: {
+    gap: 16,
+  },
+  doneHeader: {
+    alignItems: 'center',
+  },
+  doneEmoji: {
+    fontSize: 52,
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+  tilesRow: {
+    flexDirection: 'row',
+    gap: 10,
+  },
+  tile: {
+    flex: 1,
+    borderRadius: 16,
+    paddingVertical: 14,
+    alignItems: 'center',
+  },
+  tileNumber: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: '#FFFFFF',
+  },
+  tileLabel: {
+    fontSize: 12,
+    color: '#FFFFFF',
+    marginTop: 2,
+  },
+  introducedBlock: {
+    alignSelf: 'stretch',
+  },
+  introducedLabel: {
+    fontSize: 13,
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+  introducedTrack: {
+    height: 10,
+    borderRadius: 5,
+    overflow: 'hidden',
+  },
+  introducedFill: {
+    height: '100%',
+    borderRadius: 5,
   },
   card: {
     borderRadius: 20,
