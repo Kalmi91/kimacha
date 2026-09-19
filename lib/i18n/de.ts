@@ -431,6 +431,8 @@ export default {
     correctAnswer: 'Richtige Antwort',
     next: 'Weiter',
     accentHint: 'Auch ohne Akzente akzeptiert, fehlende Akzente werden gezeigt',
+    // FB315 (NY9): der Wort-Fokus-Button auf dem Lektionsbildschirm.
+    learnTheseWords: (n: number) => `Diese Wörter lernen (${n})`,
   },
   exam: {
     simulationOf: (model: string) => `Simulation der Prüfung ${model}`,
@@ -581,6 +583,10 @@ export default {
     sum: 'Die Summe der drei Zahlen: so viele Karten bleiben bis zum Ende der Runde, wenn du nichts falsch machst.',
     close: 'Schließen',
     levelProgress: (known: number, total: number) => `${known} / ${total} Wörter`,
+    // FB315 (NY9): das Fokus-Sitzungsbanner über der Karte (wortabhängiger Lektions-Drill).
+    focusBanner: (label: string, known: number, total: number) => `${label} · ${known}/${total} bekannt`,
+    focusDone: 'alle bekannt, zurück zur Lektion',
+    focusExit: 'Fokus beenden',
   },
   spelling: {
     title: 'Rechtschreibtraining',

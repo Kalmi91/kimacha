@@ -431,6 +431,8 @@ export default {
     correctAnswer: 'Respuesta correcta',
     next: 'Siguiente',
     accentHint: 'Se acepta sin tildes, se muestran las que faltan',
+    // FB315 (NY9): el botón de enfoque en palabras de la pantalla de lección.
+    learnTheseWords: (n: number) => `Aprender estas palabras (${n})`,
   },
   exam: {
     simulationOf: (model: string) => `Simulacro del examen ${model}`,
@@ -581,6 +583,10 @@ export default {
     sum: 'La suma de los tres números: tantas tarjetas faltan hasta el final de la ronda si no fallas ninguna.',
     close: 'Cerrar',
     levelProgress: (known: number, total: number) => `${known} / ${total} palabras`,
+    // FB315 (NY9): la barra de la sesión de enfoque sobre la tarjeta (drill de lección por palabras).
+    focusBanner: (label: string, known: number, total: number) => `${label} · ${known}/${total} conocidas`,
+    focusDone: 'todas conocidas, volver a la lección',
+    focusExit: 'Salir del enfoque',
   },
   spelling: {
     title: 'Práctica de Ortografía',

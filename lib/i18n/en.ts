@@ -431,6 +431,8 @@ export default {
     correctAnswer: 'Correct answer',
     next: 'Next',
     accentHint: 'Accepted without accents, missing accents are shown',
+    // FB315 (NY9): the lesson screen's word-focus button.
+    learnTheseWords: (n: number) => `Learn these words (${n})`,
   },
   exam: {
     simulationOf: (model: string) => `Simulation of the ${model} exam`,
@@ -581,6 +583,10 @@ export default {
     sum: 'The three numbers added together: this many cards are left to the end of the round if you get everything right.',
     close: 'Close',
     levelProgress: (known: number, total: number) => `${known} / ${total} words`,
+    // FB315 (NY9): the focus-session banner above the card (word-gated lesson drill).
+    focusBanner: (label: string, known: number, total: number) => `${label} · ${known}/${total} known`,
+    focusDone: 'all known, back to the lesson',
+    focusExit: 'Exit focus',
   },
   spelling: {
     title: 'Spelling Practice',
