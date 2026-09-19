@@ -64,6 +64,7 @@ import grammarEsFuturoSimple from '@/data/games/grammar/es/futuro-simple.json';
 import grammarEsDemostrativos from '@/data/games/grammar/es/demostrativos.json';
 import grammarEsInterrogativos from '@/data/games/grammar/es/interrogativos.json';
 import grammarEsNegacion from '@/data/games/grammar/es/negacion.json';
+import grammarEsImperativoAfirmativo from '@/data/games/grammar/es/imperativo-afirmativo.json';
 import confusablesEsSueldo from '@/data/games/confusables/es/sueldo-suelo-suelto.json';
 import confusablesEsPero from '@/data/games/confusables/es/pero-perro.json';
 import confusablesEsCaro from '@/data/games/confusables/es/caro-carro.json';
@@ -145,6 +146,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsPerfecto,
     grammarEsEstarGerundio,
     grammarEsFuturoSimple,
+    grammarEsImperativoAfirmativo,
     grammarEsVerbosReflexivos,
     grammarEsPorPara,
     grammarEsCondicionalSimple,

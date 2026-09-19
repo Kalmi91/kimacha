@@ -1,0 +1,796 @@
+{
+  "schema": 2,
+  "topic": "imperativo-afirmativo",
+  "level": "A2",
+  "title": {
+    "hu": "Felszólítás: állító alak",
+    "en": "Imperative: affirmative",
+    "es": "Imperativo afirmativo",
+    "de": "Imperativ: bejahend"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A felszólító mód állító alakja kérésre, utasításra, útbaigazításra, receptre és tanácsra való: ez a hétköznapi „gyere\", „nézd\", „mondd\" nyelvtani alakja.",
+        "en": "The affirmative imperative is for requests, instructions, directions, recipes and advice: it is the grammar behind the everyday \"come\", \"look\", \"tell me\".",
+        "es": "El imperativo afirmativo sirve para pedir, ordenar, dar direcciones, recetas y consejos: es la gramática detrás del \"ven\", \"mira\", \"dime\" de cada día.",
+        "de": "Der bejahende Imperativ dient zum Bitten, Anweisen, Wegbeschreiben, für Rezepte und Ratschläge: das ist die Grammatik hinter dem alltäglichen \"komm\", \"schau\", \"sag mir\"."
+      }
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Ki melyik alakot kapja",
+        "en": "Who gets which form",
+        "es": "Quién recibe qué forma",
+        "de": "Wer bekommt welche Form"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A szabályos tú-alak ugyanaz, mint a presente 3. személyű (él/ella) alakja: habla, come, escribe.",
+            "en": "The regular tú form is the same as the presente third-person (he/she) form: habla, come, escribe.",
+            "es": "La forma regular de tú es igual a la forma de presente de él o ella: habla, come, escribe.",
+            "de": "Die regelmäßige tú-Form ist dieselbe wie die Presente-Form von er oder sie: habla, come, escribe."
+          },
+          "examples": [
+            {
+              "es": "Habla más despacio.",
+              "tr": { "hu": "Beszélj lassabban.", "en": "Speak more slowly.", "es": "Habla más despacio.", "de": "Sprich langsamer." }
+            },
+            {
+              "es": "Come tu comida.",
+              "tr": { "hu": "Edd meg az ételed.", "en": "Eat your food.", "es": "Come tu comida.", "de": "Iss dein Essen." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Nyolc ige tú-alakja rendhagyó, mind egy szótagos: di (decir), haz (hacer), ve (ir), pon (poner), sal (salir), sé (ser), ten (tener), ven (venir).",
+            "en": "Eight verbs have an irregular tú form, all one syllable: di (decir), haz (hacer), ve (ir), pon (poner), sal (salir), sé (ser), ten (tener), ven (venir).",
+            "es": "Ocho verbos tienen una forma de tú irregular, todas de una sílaba: di (decir), haz (hacer), ve (ir), pon (poner), sal (salir), sé (ser), ten (tener), ven (venir).",
+            "de": "Acht Verben haben eine unregelmäßige tú-Form, alle einsilbig: di (decir), haz (hacer), ve (ir), pon (poner), sal (salir), sé (ser), ten (tener), ven (venir)."
+          },
+          "examples": [
+            {
+              "es": "Haz la tarea ahora.",
+              "tr": { "hu": "Csináld meg most a házi feladatot.", "en": "Do your homework now.", "es": "Haz la tarea ahora.", "de": "Mach jetzt die Hausaufgabe." }
+            },
+            {
+              "es": "Pon la mesa, por favor.",
+              "tr": { "hu": "Terítsd meg az asztalt, kérlek.", "en": "Set the table, please.", "es": "Pon la mesa, por favor.", "de": "Deck den Tisch, bitte." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Az usted és ustedes alakja a subjuntivóból jön: hable, coma, escriba; hablen, coman, escriban. Rendhagyóknál: diga, haga, vaya, ponga, salga, sea, tenga, venga. Mexikóban az ustedes a többes szám, a vosotros nem használatos.",
+            "en": "Usted and ustedes forms come from the subjunctive: hable, coma, escriba; hablen, coman, escriban. Irregulars: diga, haga, vaya, ponga, salga, sea, tenga, venga. In Mexico ustedes is the plural, vosotros is not used.",
+            "es": "Las formas de usted y ustedes vienen del subjuntivo: hable, coma, escriba; hablen, coman, escriban. Irregulares: diga, haga, vaya, ponga, salga, sea, tenga, venga. En México ustedes es el plural, vosotros no se usa.",
+            "de": "Die usted- und ustedes-Formen kommen vom Subjuntivo: hable, coma, escriba; hablen, coman, escriban. Unregelmäßig: diga, haga, vaya, ponga, salga, sea, tenga, venga. In Mexiko ist ustedes der Plural, vosotros wird nicht benutzt."
+          },
+          "examples": [
+            {
+              "es": "Hable con el doctor, por favor.",
+              "tr": { "hu": "Beszéljen az orvossal, kérem.", "en": "Speak with the doctor, please.", "es": "Hable con el doctor, por favor.", "de": "Sprechen Sie mit dem Arzt, bitte." }
+            },
+            {
+              "es": "Vengan a la fiesta el sábado.",
+              "tr": { "hu": "Jöjjenek el a buliba szombaton.", "en": "Come to the party on Saturday.", "es": "Vengan a la fiesta el sábado.", "de": "Kommt am Samstag zur Party." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A nosotros-alak („csináljuk\") is a subjuntivóból jön: hablemos, comamos; az ir kivétel, ott a vamos marad.",
+            "en": "The nosotros form (\"let's do\") also comes from the subjunctive: hablemos, comamos; ir is the exception, it stays vamos.",
+            "es": "La forma de nosotros (\"hagamos\") también viene del subjuntivo: hablemos, comamos; ir es la excepción, se queda vamos.",
+            "de": "Die nosotros-Form (\"lass uns tun\") kommt auch vom Subjuntivo: hablemos, comamos; ir ist die Ausnahme, es bleibt vamos."
+          },
+          "examples": [
+            {
+              "es": "Hablemos de esto mañana.",
+              "tr": { "hu": "Beszéljünk erről holnap.", "en": "Let's talk about this tomorrow.", "es": "Hablemos de esto mañana.", "de": "Lass uns morgen darüber sprechen." }
+            },
+            {
+              "es": "Vamos a la playa este fin de semana.",
+              "tr": { "hu": "Menjünk a strandra ezen a hétvégén.", "en": "Let's go to the beach this weekend.", "es": "Vamos a la playa este fin de semana.", "de": "Lass uns dieses Wochenende an den Strand gehen." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A vosotros-alak a főnévi igenév -r végét -d-re cseréli: hablad, comed, venid. Ez csak Spanyolországban él, Mexikóban nem használják.",
+            "en": "The vosotros form replaces the infinitive's final -r with -d: hablad, comed, venid. This only lives on in Spain, it is not used in Mexico.",
+            "es": "La forma de vosotros cambia la -r final del infinitivo por -d: hablad, comed, venid. Esto solo se usa en España, no en México.",
+            "de": "Die vosotros-Form ersetzt das -r des Infinitivs durch -d: hablad, comed, venid. Das gibt es nur in Spanien, nicht in Mexiko."
+          },
+          "examples": [
+            {
+              "es": "Hablad más alto, por favor.",
+              "tr": { "hu": "Beszéljetek hangosabban, kérlek.", "en": "Speak louder, please.", "es": "Hablad más alto, por favor.", "de": "Sprecht lauter, bitte." }
+            },
+            {
+              "es": "Venid a mi casa esta tarde.",
+              "tr": { "hu": "Gyertek el hozzám ma délután.", "en": "Come to my house this afternoon.", "es": "Venid a mi casa esta tarde.", "de": "Kommt heute Nachmittag zu mir nach Hause." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A névmások a felszólító alak VÉGÉHEZ tapadnak, egybeírva, és ha kell, ékezetet kap az ige: dímelo, siéntate, cómelo, levántate. A visszaható tú-alak -te-re végződik, a nosotros pedig -nos-ra, az s elhagyásával: sentémonos.",
+            "en": "Pronouns attach to the END of the affirmative command, written as one word, and the verb gets an accent when needed: dímelo, siéntate, cómelo, levántate. The reflexive tú form ends in -te, and nosotros in -nos, dropping the s: sentémonos.",
+            "es": "Los pronombres se pegan al FINAL del imperativo afirmativo, en una sola palabra, y el verbo lleva tilde cuando hace falta: dímelo, siéntate, cómelo, levántate. La forma reflexiva de tú termina en -te, y la de nosotros en -nos, sin la s: sentémonos.",
+            "de": "Pronomen hängen sich ans ENDE des bejahenden Imperativs, als ein Wort geschrieben, und das Verb bekommt bei Bedarf einen Akzent: dímelo, siéntate, cómelo, levántate. Die reflexive tú-Form endet auf -te, die nosotros-Form auf -nos, ohne das s: sentémonos."
+          },
+          "examples": [
+            {
+              "es": "Siéntate aquí conmigo.",
+              "tr": { "hu": "Ülj le ide mellém.", "en": "Sit down here with me.", "es": "Siéntate aquí conmigo.", "de": "Setz dich hier zu mir." }
+            },
+            {
+              "es": "Dímelo ahora, por favor.",
+              "tr": { "hu": "Mondd el nekem most, kérlek.", "en": "Tell it to me now, please.", "es": "Dímelo ahora, por favor.", "de": "Sag es mir jetzt, bitte." }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "imperativo",
+      "title": {
+        "hu": "Felszólítás, állító alak",
+        "en": "Imperative, affirmative",
+        "es": "Imperativo afirmativo",
+        "de": "Imperativ, bejahend"
+      },
+      "header": [
+        { "hu": "Személy", "en": "Person", "es": "Persona", "de": "Person" },
+        { "hu": "hablar", "en": "hablar", "es": "hablar", "de": "hablar" },
+        { "hu": "comer", "en": "comer", "es": "comer", "de": "comer" },
+        { "hu": "escribir", "en": "escribir", "es": "escribir", "de": "escribir" },
+        { "hu": "decir", "en": "decir", "es": "decir", "de": "decir" },
+        { "hu": "hacer", "en": "hacer", "es": "hacer", "de": "hacer" },
+        { "hu": "ir", "en": "ir", "es": "ir", "de": "ir" },
+        { "hu": "poner", "en": "poner", "es": "poner", "de": "poner" },
+        { "hu": "salir", "en": "salir", "es": "salir", "de": "salir" },
+        { "hu": "ser", "en": "ser", "es": "ser", "de": "ser" },
+        { "hu": "tener", "en": "tener", "es": "tener", "de": "tener" },
+        { "hu": "venir", "en": "venir", "es": "venir", "de": "venir" }
+      ],
+      "rows": [
+        ["tú", "habla", "come", "escribe", "di", "haz", "ve", "pon", "sal", "sé", "ten", "ven"],
+        ["usted", "hable", "coma", "escriba", "diga", "haga", "vaya", "ponga", "salga", "sea", "tenga", "venga"],
+        ["ustedes", "hablen", "coman", "escriban", "digan", "hagan", "vayan", "pongan", "salgan", "sean", "tengan", "vengan"]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Hasonló, mégis más",
+        "en": "Similar, yet different",
+        "es": "Parecido, pero distinto",
+        "de": "Ähnlich, aber anders"
+      },
+      "pairs": [
+        {
+          "a": "habla",
+          "b": "hable",
+          "note": {
+            "hu": "A \"habla\" tegező felszólítás egy barátnak, a \"hable\" magázó felszólítás egy idegennek vagy főnöknek: kinek mondod, az dönt.",
+            "en": "\"Habla\" is an informal command to a friend, \"hable\" is a formal command to a stranger or boss: who you are talking to decides.",
+            "es": "\"Habla\" es una orden informal a un amigo, \"hable\" es una orden formal a un desconocido o jefe: a quién le hablas decide.",
+            "de": "\"Habla\" ist ein informeller Befehl an einen Freund, \"hable\" ein formeller Befehl an einen Fremden oder Chef: wem du es sagst, entscheidet."
+          },
+          "examples": [
+            {
+              "es": "Habla conmigo, Carlos.",
+              "tr": { "hu": "Beszélj velem, Carlos.", "en": "Talk to me, Carlos.", "es": "Habla conmigo, Carlos.", "de": "Sprich mit mir, Carlos." }
+            },
+            {
+              "es": "Hable conmigo, señor.",
+              "tr": { "hu": "Beszéljen velem, uram.", "en": "Talk to me, sir.", "es": "Hable conmigo, señor.", "de": "Sprechen Sie mit mir, mein Herr." }
+            }
+          ]
+        },
+        {
+          "a": "¡Come!",
+          "b": "Ella come.",
+          "note": {
+            "hu": "Az alak azonos (come), de a funkció más: az elsőben felszólítunk, a másodikban egy tényt állítunk.",
+            "en": "The form is identical (come), but the function differs: the first commands, the second states a fact.",
+            "es": "La forma es igual (come), pero la función es distinta: la primera ordena, la segunda afirma un hecho.",
+            "de": "Die Form ist gleich (come), aber die Funktion ist anders: die erste befiehlt, die zweite stellt eine Tatsache fest."
+          },
+          "examples": [
+            {
+              "es": "¡Come la fruta!",
+              "tr": { "hu": "Edd meg a gyümölcsöt!", "en": "Eat the fruit!", "es": "¡Come la fruta!", "de": "Iss das Obst!" }
+            },
+            {
+              "es": "Ella come fruta cada día.",
+              "tr": { "hu": "Ő minden nap gyümölcsöt eszik.", "en": "She eats fruit every day.", "es": "Ella come fruta cada día.", "de": "Sie isst jeden Tag Obst." }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A nyolc rendhagyó tú-alak mind egy szótagos, jó memóriasor: di, haz, ve, pon, sal, sé, ten, ven.",
+        "en": "All eight irregular tú forms are one syllable, a handy memory chain: di, haz, ve, pon, sal, sé, ten, ven.",
+        "es": "Las ocho formas de tú irregulares son de una sílaba, una buena cadena para memorizar: di, haz, ve, pon, sal, sé, ten, ven.",
+        "de": "Alle acht unregelmäßigen tú-Formen sind einsilbig, eine gute Merkkette: di, haz, ve, pon, sal, sé, ten, ven."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A felszólítás állító alakja kérésre és utasításra való. A tú szabályos alakja ugyanaz, mint a presente harmadik személye: «habla», «come», «escribe». Nyolc ige tú-alakja rendhagyó, mind egy szótagos: «di, haz, ve, pon, sal, sé, ten, ven». Az usted és ustedes alakja a subjuntivóból jön: «hable, coma, escriba» és «hablen, coman, escriban». A nosotros alak is a subjuntivóból jön, kivéve az irt, ott «vamos» marad. A vosotros csak Spanyolországban él: «hablad, comed, venid». A névmások a felszólítás végére tapadnak, egybeírva: «siéntate», «dímelo».",
+    "en": "The affirmative imperative is for requests and instructions. The regular tú form is the same as the presente third person: «habla», «come», «escribe». Eight verbs have an irregular tú form, all one syllable: «di, haz, ve, pon, sal, sé, ten, ven». Usted and ustedes forms come from the subjunctive: «hable, coma, escriba» and «hablen, coman, escriban». The nosotros form also comes from the subjunctive, except ir, which stays «vamos». Vosotros only lives on in Spain: «hablad, comed, venid». Pronouns attach to the end of the command, written as one word: «siéntate», «dímelo».",
+    "es": "El imperativo afirmativo sirve para pedir y ordenar. La forma regular de tú es igual a la de presente de él o ella: «habla», «come», «escribe». Ocho verbos tienen una forma de tú irregular, todas de una sílaba: «di, haz, ve, pon, sal, sé, ten, ven». Las formas de usted y ustedes vienen del subjuntivo: «hable, coma, escriba» y «hablen, coman, escriban». La forma de nosotros también viene del subjuntivo, salvo ir, que se queda «vamos». El vosotros solo se usa en España: «hablad, comed, venid». Los pronombres se pegan al final del imperativo, en una sola palabra: «siéntate», «dímelo».",
+    "de": "Der bejahende Imperativ dient zum Bitten und Anweisen. Die regelmäßige tú-Form ist dieselbe wie die Presente-Form von er oder sie: «habla», «come», «escribe». Acht Verben haben eine unregelmäßige tú-Form, alle einsilbig: «di, haz, ve, pon, sal, sé, ten, ven». Die usted- und ustedes-Formen kommen vom Subjuntivo: «hable, coma, escriba» und «hablen, coman, escriban». Die nosotros-Form kommt ebenfalls vom Subjuntivo, außer bei ir, das bleibt «vamos». Vosotros lebt nur in Spanien weiter: «hablad, comed, venid». Pronomen hängen sich ans Ende des Befehls, als ein Wort geschrieben: «siéntate», «dímelo»."
+  },
+  "items": [
+    {
+      "id": "ia-01",
+      "sentence": "Ana, ___ la verdad, por favor.",
+      "options": ["di", "decimos", "dijiste"],
+      "correct": 0,
+      "why": {
+        "hu": "A decir tú-alakja imperativóban rendhagyó, egy szótagú: di.",
+        "en": "Decir's tú form in the imperative is irregular, one syllable: di.",
+        "es": "La forma de tú de decir en imperativo es irregular, de una sílaba: di.",
+        "de": "Die tú-Form von decir im Imperativ ist unregelmäßig, einsilbig: di."
+      },
+      "wrong": {
+        "decimos": {
+          "hu": "A \"decimos\" a mi alakunk (nosotros), nem felszólítás egy személynek; ha ide kerülne, azt jelentené, hogy MI mondjuk az igazat, nem hogy Ana mondja.",
+          "en": "\"Decimos\" is our (nosotros) form, not a command to one person; if used here it would mean WE say the truth, not a command to Ana.",
+          "es": "\"Decimos\" es la forma de nosotros, no una orden a una persona; si se usara aquí significaría que NOSOTROS decimos la verdad, no una orden a Ana.",
+          "de": "\"Decimos\" ist unsere (nosotros) Form, kein Befehl an eine Person; würde man sie hier verwenden, hieße es, dass WIR die Wahrheit sagen, kein Befehl an Ana."
+        },
+        "dijiste": {
+          "hu": "A \"dijiste\" múlt idő (te mondtad), nem felszólítás; ha ide kerülne, a mondat azt állítaná, hogy Ana MÁR elmondta az igazat, nem hogy most kérjük rá.",
+          "en": "\"Dijiste\" is past tense (you said), not a command; if used here the sentence would state that Ana ALREADY told the truth, not that we are asking her to.",
+          "es": "\"Dijiste\" es pasado (tú dijiste), no una orden; si se usara aquí, la frase afirmaría que Ana YA dijo la verdad, no que se lo pedimos ahora.",
+          "de": "\"Dijiste\" ist Vergangenheit (du hast gesagt), kein Befehl; würde man es hier verwenden, würde der Satz aussagen, dass Ana die Wahrheit BEREITS gesagt hat, nicht dass wir sie jetzt darum bitten."
+        }
+      },
+      "examples": ["Di la verdad siempre.", "Carlos, di algo."]
+    },
+    {
+      "id": "ia-02",
+      "sentence": "Diego, ___ a la escuela ahora.",
+      "options": ["ve", "va", "vamos"],
+      "correct": 0,
+      "why": {
+        "hu": "Az ir tú-alakja felszólításban rendhagyó: ve.",
+        "en": "Ir's tú form in the imperative is irregular: ve.",
+        "es": "La forma de tú de ir en imperativo es irregular: ve.",
+        "de": "Die tú-Form von ir im Imperativ ist unregelmäßig: ve."
+      },
+      "wrong": {
+        "va": {
+          "hu": "A \"va\" az ő alakja (él/ella/usted); ha ide kerülne, azt jelentené, hogy Ő megy az iskolába, nem felszólítás Diegónak.",
+          "en": "\"Va\" is the he/she/usted form; if used here it would mean HE/SHE goes to school, not a command to Diego.",
+          "es": "\"Va\" es la forma de él/ella/usted; si se usara aquí significaría que ÉL/ELLA va a la escuela, no una orden para Diego.",
+          "de": "\"Va\" ist die er/sie/usted-Form; würde man sie hier verwenden, hieße es, dass ER/SIE zur Schule geht, kein Befehl an Diego."
+        },
+        "vamos": {
+          "hu": "A \"vamos\" a mi alakunk (nosotros); ha ide kerülne, azt jelentené, hogy MI megyünk együtt, nem hogy Diego menjen egyedül.",
+          "en": "\"Vamos\" is our (nosotros) form; if used here it would mean WE go together, not that Diego alone should go.",
+          "es": "\"Vamos\" es la forma de nosotros; si se usara aquí significaría que NOSOTROS vamos juntos, no que Diego vaya solo.",
+          "de": "\"Vamos\" ist unsere (nosotros) Form; würde man sie hier verwenden, hieße es, dass WIR zusammen gehen, nicht dass Diego allein gehen soll."
+        }
+      },
+      "examples": ["Ve a la tienda, por favor.", "Ve con Laura."]
+    },
+    {
+      "id": "ia-03",
+      "sentence": "Rosa, ___ amable con tu hermano.",
+      "options": ["sé", "eres", "es"],
+      "correct": 0,
+      "why": {
+        "hu": "A ser tú-alakja felszólításban rendhagyó, ékezetes: sé.",
+        "en": "Ser's tú form in the imperative is irregular, with an accent: sé.",
+        "es": "La forma de tú de ser en imperativo es irregular, con tilde: sé.",
+        "de": "Die tú-Form von ser im Imperativ ist unregelmäßig, mit Akzent: sé."
+      },
+      "wrong": {
+        "eres": {
+          "hu": "Az \"eres\" kijelentő mód (te vagy), nem felszólítás; ha ide kerülne, a mondat azt állítaná, hogy Rosa MOST amable, nem hogy legyen az.",
+          "en": "\"Eres\" is indicative (you are), not a command; if used here the sentence would state that Rosa already IS kind, not tell her to be.",
+          "es": "\"Eres\" es indicativo (tú eres), no una orden; si se usara aquí, la frase afirmaría que Rosa YA es amable, no que se lo pedimos.",
+          "de": "\"Eres\" ist Indikativ (du bist), kein Befehl; würde man es hier verwenden, würde der Satz aussagen, dass Rosa BEREITS nett ist, nicht dass wir sie darum bitten."
+        },
+        "es": {
+          "hu": "Az \"es\" az ő/usted alakja; ha ide kerülne, azt jelentené, hogy Ő/Ön kedves, nem felszólítás Rosának.",
+          "en": "\"Es\" is the he/she/usted form; if used here it would mean HE/SHE/usted is kind, not a command to Rosa.",
+          "es": "\"Es\" es la forma de él/ella/usted; si se usara aquí significaría que ÉL/ELLA/usted es amable, no una orden para Rosa.",
+          "de": "\"Es\" ist die er/sie/usted-Form; würde man sie hier verwenden, hieße es, dass ER/SIE/usted nett ist, kein Befehl an Rosa."
+        }
+      },
+      "examples": ["Sé paciente conmigo.", "Sé feliz hoy."]
+    },
+    {
+      "id": "ia-04",
+      "sentence": "Javier, ___ aquí conmigo ahora.",
+      "options": ["ven", "vienes", "viene"],
+      "correct": 0,
+      "why": {
+        "hu": "A venir tú-alakja felszólításban rendhagyó: ven.",
+        "en": "Venir's tú form in the imperative is irregular: ven.",
+        "es": "La forma de tú de venir en imperativo es irregular: ven.",
+        "de": "Die tú-Form von venir im Imperativ ist unregelmäßig: ven."
+      },
+      "wrong": {
+        "vienes": {
+          "hu": "A \"vienes\" kijelentő mód (te jössz), nem felszólítás; ha ide kerülne, a mondat azt állítaná, hogy Javier MOST jön, nem hogy hívjuk.",
+          "en": "\"Vienes\" is indicative (you come), not a command; if used here the sentence would state that Javier already comes, not that we are calling him.",
+          "es": "\"Vienes\" es indicativo (tú vienes), no una orden; si se usara aquí, la frase afirmaría que Javier YA viene, no que lo estamos llamando.",
+          "de": "\"Vienes\" ist Indikativ (du kommst), kein Befehl; würde man es hier verwenden, würde der Satz aussagen, dass Javier BEREITS kommt, nicht dass wir ihn rufen."
+        },
+        "viene": {
+          "hu": "A \"viene\" az ő/usted alakja; ha ide kerülne, azt jelentené, hogy Ő/Ön jön, nem felszólítás Javiernek.",
+          "en": "\"Viene\" is the he/she/usted form; if used here it would mean HE/SHE/usted comes, not a command to Javier.",
+          "es": "\"Viene\" es la forma de él/ella/usted; si se usara aquí significaría que ÉL/ELLA/usted viene, no una orden para Javier.",
+          "de": "\"Viene\" ist die er/sie/usted-Form; würde man sie hier verwenden, hieße es, dass ER/SIE/usted kommt, kein Befehl an Javier."
+        }
+      },
+      "examples": ["Ven a mi casa mañana.", "Ven temprano, por favor."]
+    },
+    {
+      "id": "ia-05",
+      "sentence": "Doctor, ___ más despacio, por favor.",
+      "options": ["hable", "habla", "hablas"],
+      "correct": 0,
+      "why": {
+        "hu": "A hablar usted-alakja a subjuntivóból jön: hable.",
+        "en": "Hablar's usted form comes from the subjunctive: hable.",
+        "es": "La forma de usted de hablar viene del subjuntivo: hable.",
+        "de": "Die usted-Form von hablar kommt vom Subjuntivo: hable."
+      },
+      "wrong": {
+        "habla": {
+          "hu": "A \"habla\" a tú-alak; ha ide kerülne, tegeződést jelentene egy doktornak, ami udvariatlan, formális helyzetben usted kell.",
+          "en": "\"Habla\" is the tú form; if used here it would address the doctor informally, which is impolite, a formal situation needs usted.",
+          "es": "\"Habla\" es la forma de tú; si se usara aquí trataría de tú al doctor, lo cual es descortés, una situación formal necesita usted.",
+          "de": "\"Habla\" ist die tú-Form; würde man sie hier verwenden, würde man den Arzt duzen, was unhöflich ist, eine formelle Situation braucht usted."
+        },
+        "hablas": {
+          "hu": "A \"hablas\" kijelentő mód, tú-alak (te beszélsz); se nem felszólítás, se nem usted, itt egyik sem illik.",
+          "en": "\"Hablas\" is indicative, tú form (you speak); it is neither a command nor usted, neither fits here.",
+          "es": "\"Hablas\" es indicativo, forma de tú (tú hablas); no es orden ni usted, ninguno encaja aquí.",
+          "de": "\"Hablas\" ist Indikativ, tú-Form (du sprichst); es ist weder ein Befehl noch usted, keines passt hier."
+        }
+      },
+      "examples": ["Hable con la doctora.", "Hable despacio, por favor."]
+    },
+    {
+      "id": "ia-06",
+      "sentence": "Señor, ___ despacio, la comida está caliente.",
+      "options": ["coma", "come", "comes"],
+      "correct": 0,
+      "why": {
+        "hu": "A comer usted-alakja a subjuntivóból jön: coma.",
+        "en": "Comer's usted form comes from the subjunctive: coma.",
+        "es": "La forma de usted de comer viene del subjuntivo: coma.",
+        "de": "Die usted-Form von comer kommt vom Subjuntivo: coma."
+      },
+      "wrong": {
+        "come": {
+          "hu": "A \"come\" a tú-alak; formális, usted-tal beszélő helyzetben tegeződést jelentene, ami nem illik ide.",
+          "en": "\"Come\" is the tú form; in a formal, usted-addressing situation it would mean informal address, which does not fit here.",
+          "es": "\"Come\" es la forma de tú; en una situación formal, hablando de usted, sería un trato informal que no encaja aquí.",
+          "de": "\"Come\" ist die tú-Form; in einer formellen, mit usted angesprochenen Situation wäre das eine informelle Anrede, die hier nicht passt."
+        },
+        "comes": {
+          "hu": "A \"comes\" kijelentő mód, tú-alak; se nem felszólítás, se nem usted, itt egyik sem illik.",
+          "en": "\"Comes\" is indicative, tú form; it is neither a command nor usted, neither fits here.",
+          "es": "\"Comes\" es indicativo, forma de tú; no es orden ni usted, ninguno encaja aquí.",
+          "de": "\"Comes\" ist Indikativ, tú-Form; es ist weder ein Befehl noch usted, keines passt hier."
+        }
+      },
+      "examples": ["Coma con nosotros hoy.", "Coma más despacio, por favor."]
+    },
+    {
+      "id": "ia-07",
+      "sentence": "Doctora, ___ cuidado con la puerta.",
+      "options": ["tenga", "tiene", "tienes"],
+      "correct": 0,
+      "why": {
+        "hu": "A tener usted-alakja rendhagyó tőváltással: tenga.",
+        "en": "Tener's usted form has an irregular stem: tenga.",
+        "es": "La forma de usted de tener tiene raíz irregular: tenga.",
+        "de": "Die usted-Form von tener hat einen unregelmäßigen Stamm: tenga."
+      },
+      "wrong": {
+        "tiene": {
+          "hu": "A \"tiene\" az ő/usted kijelentő alakja; ha ide kerülne, a mondat azt állítaná, hogy Önnek MÁR van óvatossága, nem hogy kérjük rá.",
+          "en": "\"Tiene\" is the he/she/usted indicative form; if used here the sentence would state that you already have caution, not that we are asking for it.",
+          "es": "\"Tiene\" es la forma indicativa de él/ella/usted; si se usara aquí, la frase afirmaría que usted YA tiene cuidado, no que se lo pedimos.",
+          "de": "\"Tiene\" ist die indikative er/sie/usted-Form; würde man sie hier verwenden, würde der Satz aussagen, dass Sie BEREITS vorsichtig sind, nicht dass wir Sie darum bitten."
+        },
+        "tienes": {
+          "hu": "A \"tienes\" a tú-alak; formális usted-megszólításnál tegeződést jelentene, ami nem illik ide.",
+          "en": "\"Tienes\" is the tú form; in a formal usted address it would mean informal speech, which does not fit here.",
+          "es": "\"Tienes\" es la forma de tú; en un trato formal de usted, sería un habla informal que no encaja aquí.",
+          "de": "\"Tienes\" ist die tú-Form; bei einer formellen usted-Anrede wäre das eine informelle Ansprache, die hier nicht passt."
+        }
+      },
+      "examples": ["Tenga cuidado con el perro.", "Tenga cuidado en la calle."]
+    },
+    {
+      "id": "ia-08",
+      "sentence": "Señor, ___ por la puerta, por favor.",
+      "options": ["salga", "sale", "sales"],
+      "correct": 0,
+      "why": {
+        "hu": "A salir usted-alakja a -go csoportból jön: salga.",
+        "en": "Salir's usted form comes from the -go group: salga.",
+        "es": "La forma de usted de salir viene del grupo -go: salga.",
+        "de": "Die usted-Form von salir kommt aus der -go-Gruppe: salga."
+      },
+      "wrong": {
+        "sale": {
+          "hu": "A \"sale\" az ő/usted kijelentő alakja; ha ide kerülne, azt jelentené, hogy Ön MÁR kimegy, nem hogy kérjük rá.",
+          "en": "\"Sale\" is the he/she/usted indicative form; if used here it would mean you already go out, not that we are asking you to.",
+          "es": "\"Sale\" es la forma indicativa de él/ella/usted; si se usara aquí significaría que usted YA sale, no que se lo pedimos.",
+          "de": "\"Sale\" ist die indikative er/sie/usted-Form; würde man sie hier verwenden, hieße es, dass Sie BEREITS hinausgehen, nicht dass wir Sie darum bitten."
+        },
+        "sales": {
+          "hu": "A \"sales\" a tú-alak; formális usted-megszólításnál tegeződést jelentene, ami nem illik ide.",
+          "en": "\"Sales\" is the tú form; in a formal usted address it would mean informal speech, which does not fit here.",
+          "es": "\"Sales\" es la forma de tú; en un trato formal de usted, sería informal, y no encaja aquí.",
+          "de": "\"Sales\" ist die tú-Form; bei einer formellen usted-Anrede wäre das informell und passt hier nicht."
+        }
+      },
+      "examples": ["Salga por aquí, por favor.", "Salga con cuidado."]
+    },
+    {
+      "id": "ia-09",
+      "sentence": "Niños, ___ el nombre en el libro.",
+      "options": ["escriban", "escriben", "escribe"],
+      "correct": 0,
+      "why": {
+        "hu": "Az escribir ustedes-alakja a subjuntivóból jön, többes szám: escriban.",
+        "en": "Escribir's ustedes form comes from the subjunctive, plural: escriban.",
+        "es": "La forma de ustedes de escribir viene del subjuntivo, plural: escriban.",
+        "de": "Die ustedes-Form von escribir kommt vom Subjuntivo, Plural: escriban."
+      },
+      "wrong": {
+        "escriben": {
+          "hu": "Az \"escriben\" az ők kijelentő alakja; ha ide kerülne, azt jelentené, hogy ŐK MÁR írnak, nem hogy kérjük tőlük.",
+          "en": "\"Escriben\" is the they indicative form; if used here it would mean THEY already write, not that we are asking them to.",
+          "es": "\"Escriben\" es la forma indicativa de ellos; si se usara aquí significaría que ELLOS YA escriben, no que se lo pedimos.",
+          "de": "\"Escriben\" ist die indikative sie(Plural)-Form; würde man sie hier verwenden, hieße es, dass SIE BEREITS schreiben, nicht dass wir sie darum bitten."
+        },
+        "escribe": {
+          "hu": "Az \"escribe\" egyes számú tú/usted-alak; ha ide kerülne, csak egy gyereknek szólna, nem a többinek.",
+          "en": "\"Escribe\" is a singular tú/usted form; if used here it would address only one child, not all of them.",
+          "es": "\"Escribe\" es una forma singular de tú/usted; si se usara aquí, se dirigiría a un solo niño, no a todos.",
+          "de": "\"Escribe\" ist eine singuläre tú/usted-Form; würde man sie hier verwenden, würde sie sich nur an ein Kind richten, nicht an alle."
+        }
+      },
+      "examples": ["Escriban su nombre aquí.", "Escriban despacio, por favor."]
+    },
+    {
+      "id": "ia-10",
+      "sentence": "Niños, ___ silencio, por favor.",
+      "options": ["hagan", "hacen", "hace"],
+      "correct": 0,
+      "why": {
+        "hu": "A hacer ustedes-alakja a -go csoportból jön, többes szám: hagan.",
+        "en": "Hacer's ustedes form comes from the -go group, plural: hagan.",
+        "es": "La forma de ustedes de hacer viene del grupo -go, plural: hagan.",
+        "de": "Die ustedes-Form von hacer kommt aus der -go-Gruppe, Plural: hagan."
+      },
+      "wrong": {
+        "hacen": {
+          "hu": "A \"hacen\" az ők kijelentő alakja; ha ide kerülne, azt jelentené, hogy ŐK MÁR csendben vannak, nem hogy kérjük tőlük.",
+          "en": "\"Hacen\" is the they indicative form; if used here it would mean THEY already make silence, not that we are asking them to.",
+          "es": "\"Hacen\" es la forma indicativa de ellos; si se usara aquí significaría que ELLOS YA hacen silencio, no que se lo pedimos.",
+          "de": "\"Hacen\" ist die indikative sie(Plural)-Form; würde man sie hier verwenden, hieße es, dass SIE BEREITS Ruhe machen, nicht dass wir sie darum bitten."
+        },
+        "hace": {
+          "hu": "A \"hace\" egyes számú alak; ha ide kerülne, csak egy gyereknek szólna, nem a többinek.",
+          "en": "\"Hace\" is a singular form; if used here it would address only one child, not all of them.",
+          "es": "\"Hace\" es una forma singular; si se usara aquí, se dirigiría a un solo niño, no a todos.",
+          "de": "\"Hace\" ist eine Singularform; würde man sie hier verwenden, würde sie sich nur an ein Kind richten, nicht an alle."
+        }
+      },
+      "examples": ["Hagan silencio, por favor.", "Hagan la comida juntos."]
+    },
+    {
+      "id": "ia-11",
+      "sentence": "Niños, ___ a la escuela juntos.",
+      "options": ["vayan", "van", "va"],
+      "correct": 0,
+      "why": {
+        "hu": "Az ir ustedes-alakja teljesen rendhagyó, subjuntivóból: vayan.",
+        "en": "Ir's ustedes form is fully irregular, from the subjunctive: vayan.",
+        "es": "La forma de ustedes de ir es totalmente irregular, del subjuntivo: vayan.",
+        "de": "Die ustedes-Form von ir ist völlig unregelmäßig, vom Subjuntivo: vayan."
+      },
+      "wrong": {
+        "van": {
+          "hu": "A \"van\" az ők kijelentő alakja; ha ide kerülne, azt jelentené, hogy ŐK MÁR mennek, nem hogy kérjük tőlük.",
+          "en": "\"Van\" is the they indicative form; if used here it would mean THEY already go, not that we are asking them to.",
+          "es": "\"Van\" es la forma indicativa de ellos; si se usara aquí significaría que ELLOS YA van, no que se lo pedimos.",
+          "de": "\"Van\" ist die indikative sie(Plural)-Form; würde man sie hier verwenden, hieße es, dass SIE BEREITS gehen, nicht dass wir sie darum bitten."
+        },
+        "va": {
+          "hu": "A \"va\" egyes számú alak; ha ide kerülne, csak egy gyereknek szólna, nem a többinek.",
+          "en": "\"Va\" is a singular form; if used here it would address only one child, not all of them.",
+          "es": "\"Va\" es una forma singular; si se usara aquí, se dirigiría a un solo niño, no a todos.",
+          "de": "\"Va\" ist eine Singularform; würde man sie hier verwenden, würde sie sich nur an ein Kind richten, nicht an alle."
+        }
+      },
+      "examples": ["Vayan con cuidado.", "Vayan a la tienda juntos."]
+    },
+    {
+      "id": "ia-12",
+      "sentence": "Niños, ___ despacio, por favor.",
+      "options": ["coman", "comen", "come"],
+      "correct": 0,
+      "why": {
+        "hu": "A comer ustedes-alakja a subjuntivóból jön, többes szám: coman.",
+        "en": "Comer's ustedes form comes from the subjunctive, plural: coman.",
+        "es": "La forma de ustedes de comer viene del subjuntivo, plural: coman.",
+        "de": "Die ustedes-Form von comer kommt vom Subjuntivo, Plural: coman."
+      },
+      "wrong": {
+        "comen": {
+          "hu": "A \"comen\" az ők kijelentő alakja; ha ide kerülne, azt jelentené, hogy ŐK MÁR esznek, nem hogy kérjük tőlük.",
+          "en": "\"Comen\" is the they indicative form; if used here it would mean THEY already eat, not that we are asking them to.",
+          "es": "\"Comen\" es la forma indicativa de ellos; si se usara aquí significaría que ELLOS YA comen, no que se lo pedimos.",
+          "de": "\"Comen\" ist die indikative sie(Plural)-Form; würde man sie hier verwenden, hieße es, dass SIE BEREITS essen, nicht dass wir sie darum bitten."
+        },
+        "come": {
+          "hu": "A \"come\" egyes számú alak; ha ide kerülne, csak egy gyereknek szólna, nem a többinek.",
+          "en": "\"Come\" is a singular form; if used here it would address only one child, not all of them.",
+          "es": "\"Come\" es una forma singular; si se usara aquí, se dirigiría a un solo niño, no a todos.",
+          "de": "\"Come\" ist eine Singularform; würde man sie hier verwenden, würde sie sich nur an ein Kind richten, nicht an alle."
+        }
+      },
+      "examples": ["Coman la fruta, niños.", "Coman despacio, por favor."]
+    },
+    {
+      "id": "ia-match-01",
+      "kind": "match",
+      "pairs": [
+        { "es": "decir", "en": "di (tell/say)" },
+        { "es": "hacer", "en": "haz (do/make)" },
+        { "es": "ir", "en": "ve (go)" },
+        { "es": "poner", "en": "pon (put)" },
+        { "es": "salir", "en": "sal (leave)" },
+        { "es": "tener", "en": "ten (have)" }
+      ]
+    },
+    { "id": "ia-form-01", "kind": "form", "verb": "venir", "person": "tú", "answer": "ven", "table": "imperativo" },
+    { "id": "ia-form-02", "kind": "form", "verb": "hacer", "person": "usted", "answer": "haga", "table": "imperativo" },
+    { "id": "ia-form-03", "kind": "form", "verb": "comer", "person": "ustedes", "answer": "coman", "table": "imperativo" },
+    { "id": "ia-form-04", "kind": "form", "verb": "hablar", "person": "tú", "answer": "habla", "table": "imperativo" },
+    { "id": "ia-form-05", "kind": "form", "verb": "escribir", "person": "usted", "answer": "escriba", "table": "imperativo" },
+    { "id": "ia-form-06", "kind": "form", "verb": "decir", "person": "ustedes", "answer": "digan", "table": "imperativo" },
+    { "id": "ia-form-07", "kind": "form", "verb": "poner", "person": "tú", "answer": "pon", "table": "imperativo" },
+    { "id": "ia-form-08", "kind": "form", "verb": "ir", "person": "usted", "answer": "vaya", "table": "imperativo" },
+    { "id": "ia-form-09", "kind": "form", "verb": "salir", "person": "ustedes", "answer": "salgan", "table": "imperativo" },
+    { "id": "ia-form-10", "kind": "form", "verb": "tener", "person": "tú", "answer": "ten", "table": "imperativo" },
+    { "id": "ia-form-11", "kind": "form", "verb": "ser", "person": "usted", "answer": "sea", "table": "imperativo" },
+    { "id": "ia-form-12", "kind": "form", "verb": "escribir", "person": "tú", "answer": "escribe", "table": "imperativo" },
+    {
+      "kind": "why",
+      "id": "ia-why-01",
+      "es": "Ven aquí, por favor.",
+      "tr": { "hu": "Gyere ide, kérlek.", "en": "Come here, please.", "es": "Ven aquí, por favor.", "de": "Komm her, bitte." },
+      "options": [
+        {
+          "text": { "hu": "tú, rendhagyó egy szótagos alak", "en": "tú, an irregular one-syllable form", "es": "tú, forma irregular de una sílaba", "de": "tú, unregelmäßige einsilbige Form" }
+        },
+        {
+          "text": { "hu": "usted, subjuntivóból jövő alak", "en": "usted, a form from the subjunctive", "es": "usted, forma del subjuntivo", "de": "usted, eine Form vom Subjuntivo" },
+          "wrong": {
+            "hu": "Nincs subjuntivo-alak a mondatban, hanem a venir rendhagyó tú-alakja: ven.",
+            "en": "There is no subjunctive form in the sentence, but venir's irregular tú form: ven.",
+            "es": "No hay una forma de subjuntivo en la frase, sino la forma irregular de tú de venir: ven.",
+            "de": "Es gibt keine Subjuntivo-Form im Satz, sondern die unregelmäßige tú-Form von venir: ven."
+          }
+        },
+        {
+          "text": { "hu": "vosotros, spanyolországi alak", "en": "vosotros, a Spain-only form", "es": "vosotros, forma solo de España", "de": "vosotros, eine nur in Spanien gebräuchliche Form" },
+          "wrong": {
+            "hu": "Nincs vosotros-alak a mondatban, a \"ven\" a tú rendhagyó formája, nem -d végű.",
+            "en": "There is no vosotros form in the sentence, \"ven\" is tú's irregular form, it does not end in -d.",
+            "es": "No hay una forma de vosotros en la frase, \"ven\" es la forma irregular de tú, no termina en -d.",
+            "de": "Es gibt keine vosotros-Form im Satz, \"ven\" ist die unregelmäßige tú-Form, sie endet nicht auf -d."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ia-why-02",
+      "es": "Hable con el doctor, por favor.",
+      "tr": { "hu": "Beszéljen az orvossal, kérem.", "en": "Speak with the doctor, please.", "es": "Hable con el doctor, por favor.", "de": "Sprechen Sie mit dem Arzt, bitte." },
+      "options": [
+        {
+          "text": { "hu": "tú, szabályos alak (mint a presente 3. személy)", "en": "tú, regular form (same as presente third person)", "es": "tú, forma regular (igual al presente de él/ella)", "de": "tú, regelmäßige Form (wie die Presente-Form von er/sie)" },
+          "wrong": {
+            "hu": "Nincs tú-alak a mondatban, hanem az usted subjuntivo-alakja: hable.",
+            "en": "There is no tú form in the sentence, but usted's subjunctive form: hable.",
+            "es": "No hay una forma de tú en la frase, sino la forma de subjuntivo de usted: hable.",
+            "de": "Es gibt keine tú-Form im Satz, sondern die Subjuntivo-Form von usted: hable."
+          }
+        },
+        {
+          "text": { "hu": "usted, subjuntivóból jövő alak", "en": "usted, a form from the subjunctive", "es": "usted, forma del subjuntivo", "de": "usted, eine Form vom Subjuntivo" }
+        },
+        {
+          "text": { "hu": "nosotros, subjuntivóból jövő alak, „csináljuk\"", "en": "nosotros, a subjunctive form, \"let's do\"", "es": "nosotros, forma del subjuntivo, \"hagamos\"", "de": "nosotros, eine Subjuntivo-Form, \"lass uns tun\"" },
+          "wrong": {
+            "hu": "Nincs nosotros-alak a mondatban, a \"hable\" egy személynek szól, nem \"mi\"-nek.",
+            "en": "There is no nosotros form in the sentence, \"hable\" addresses one person, not \"we\".",
+            "es": "No hay una forma de nosotros en la frase, \"hable\" se dirige a una persona, no a \"nosotros\".",
+            "de": "Es gibt keine nosotros-Form im Satz, \"hable\" richtet sich an eine Person, nicht an \"wir\"."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ia-why-03",
+      "es": "Hagan la tarea juntos.",
+      "tr": { "hu": "Csináljátok meg együtt a házi feladatot.", "en": "Do the homework together.", "es": "Hagan la tarea juntos.", "de": "Macht die Hausaufgabe zusammen." },
+      "options": [
+        {
+          "text": { "hu": "ustedes, subjuntivóból jövő rendhagyó alak, többes szám", "en": "ustedes, an irregular subjunctive form, plural", "es": "ustedes, forma irregular del subjuntivo, plural", "de": "ustedes, eine unregelmäßige Subjuntivo-Form, Plural" }
+        },
+        {
+          "text": { "hu": "tú, rendhagyó egy szótagos alak", "en": "tú, an irregular one-syllable form", "es": "tú, forma irregular de una sílaba", "de": "tú, unregelmäßige einsilbige Form" },
+          "wrong": {
+            "hu": "Nincs tú-alak a mondatban, a \"hagan\" többeknek szól, nem egy embernek.",
+            "en": "There is no tú form in the sentence, \"hagan\" addresses several people, not one.",
+            "es": "No hay una forma de tú en la frase, \"hagan\" se dirige a varias personas, no a una.",
+            "de": "Es gibt keine tú-Form im Satz, \"hagan\" richtet sich an mehrere Personen, nicht an eine."
+          }
+        },
+        {
+          "text": { "hu": "vosotros, spanyolországi alak", "en": "vosotros, a Spain-only form", "es": "vosotros, forma solo de España", "de": "vosotros, eine nur in Spanien gebräuchliche Form" },
+          "wrong": {
+            "hu": "Nincs vosotros-alak a mondatban, Mexikóban az ustedes helyettesíti a vosotrost, a \"hagan\" nem -d végű.",
+            "en": "There is no vosotros form in the sentence, in Mexico ustedes replaces vosotros, \"hagan\" does not end in -d.",
+            "es": "No hay una forma de vosotros en la frase, en México ustedes reemplaza a vosotros, \"hagan\" no termina en -d.",
+            "de": "Es gibt keine vosotros-Form im Satz, in Mexiko ersetzt ustedes das vosotros, \"hagan\" endet nicht auf -d."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ia-why-04",
+      "es": "Vamos a la playa este fin de semana.",
+      "tr": { "hu": "Menjünk a strandra ezen a hétvégén.", "en": "Let's go to the beach this weekend.", "es": "Vamos a la playa este fin de semana.", "de": "Lass uns dieses Wochenende an den Strand gehen." },
+      "options": [
+        {
+          "text": { "hu": "nosotros, kivétel: az ir megtartja a vamos alakot", "en": "nosotros, exception: ir keeps the form vamos", "es": "nosotros, excepción: ir mantiene la forma vamos", "de": "nosotros, Ausnahme: ir behält die Form vamos" }
+        },
+        {
+          "text": { "hu": "usted, subjuntivóból jövő alak", "en": "usted, a form from the subjunctive", "es": "usted, forma del subjuntivo", "de": "usted, eine Form vom Subjuntivo" },
+          "wrong": {
+            "hu": "Nincs usted-alak a mondatban, a \"vamos\" mi-nek szól, nem Önnek.",
+            "en": "There is no usted form in the sentence, \"vamos\" addresses we, not you (formal).",
+            "es": "No hay una forma de usted en la frase, \"vamos\" se dirige a nosotros, no a usted.",
+            "de": "Es gibt keine usted-Form im Satz, \"vamos\" richtet sich an uns, nicht an Sie."
+          }
+        },
+        {
+          "text": { "hu": "tú, rendhagyó egy szótagos alak", "en": "tú, an irregular one-syllable form", "es": "tú, forma irregular de una sílaba", "de": "tú, unregelmäßige einsilbige Form" },
+          "wrong": {
+            "hu": "Nincs tú-alak a mondatban, a \"vamos\" többeknek szól, nem egy embernek.",
+            "en": "There is no tú form in the sentence, \"vamos\" addresses several people together, not one.",
+            "es": "No hay una forma de tú en la frase, \"vamos\" incluye a varias personas, no a una sola.",
+            "de": "Es gibt keine tú-Form im Satz, \"vamos\" schließt mehrere Personen ein, nicht eine."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ia-why-05",
+      "es": "Hablad más alto, por favor.",
+      "tr": { "hu": "Beszéljetek hangosabban, kérlek.", "en": "Speak louder, please.", "es": "Hablad más alto, por favor.", "de": "Sprecht lauter, bitte." },
+      "options": [
+        {
+          "text": { "hu": "vosotros, spanyolországi alak (-r → -d)", "en": "vosotros, a Spain-only form (-r → -d)", "es": "vosotros, forma solo de España (-r → -d)", "de": "vosotros, eine nur in Spanien gebräuchliche Form (-r → -d)" }
+        },
+        {
+          "text": { "hu": "ustedes, subjuntivóból jövő alak", "en": "ustedes, a form from the subjunctive", "es": "ustedes, forma del subjuntivo", "de": "ustedes, eine Form vom Subjuntivo" },
+          "wrong": {
+            "hu": "Nincs ustedes-alak a mondatban, a \"hablad\" a -d végű vosotros-forma, nem subjuntivo.",
+            "en": "There is no ustedes form in the sentence, \"hablad\" is the -d ending vosotros form, not the subjunctive.",
+            "es": "No hay una forma de ustedes en la frase, \"hablad\" es la forma de vosotros con -d, no el subjuntivo.",
+            "de": "Es gibt keine ustedes-Form im Satz, \"hablad\" ist die vosotros-Form mit -d, nicht der Subjuntivo."
+          }
+        },
+        {
+          "text": { "hu": "tú, szabályos alak", "en": "tú, regular form", "es": "tú, forma regular", "de": "tú, regelmäßige Form" },
+          "wrong": {
+            "hu": "Nincs tú-alak a mondatban, a tú-alak \"habla\" lenne, nem \"hablad\".",
+            "en": "There is no tú form in the sentence, the tú form would be \"habla\", not \"hablad\".",
+            "es": "No hay una forma de tú en la frase, la forma de tú sería \"habla\", no \"hablad\".",
+            "de": "Es gibt keine tú-Form im Satz, die tú-Form wäre \"habla\", nicht \"hablad\"."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ia-why-06",
+      "es": "Siéntate aquí conmigo.",
+      "tr": { "hu": "Ülj le ide mellém.", "en": "Sit down here with me.", "es": "Siéntate aquí conmigo.", "de": "Setz dich hier zu mir." },
+      "options": [
+        {
+          "text": { "hu": "tú visszaható alak, a névmás a végén, -te", "en": "reflexive tú form, pronoun at the end, -te", "es": "tú reflexivo, el pronombre al final, -te", "de": "reflexive tú-Form, Pronomen am Ende, -te" }
+        },
+        {
+          "text": { "hu": "nosotros visszaható alak, a névmás a végén, -nos", "en": "reflexive nosotros form, pronoun at the end, -nos", "es": "nosotros reflexivo, el pronombre al final, -nos", "de": "reflexive nosotros-Form, Pronomen am Ende, -nos" },
+          "wrong": {
+            "hu": "Nincs nosotros-alak a mondatban, a \"siéntate\" egy embernek szól, a nosotros-alak \"sentémonos\" lenne.",
+            "en": "There is no nosotros form in the sentence, \"siéntate\" addresses one person, the nosotros form would be \"sentémonos\".",
+            "es": "No hay una forma de nosotros en la frase, \"siéntate\" se dirige a una persona, la forma de nosotros sería \"sentémonos\".",
+            "de": "Es gibt keine nosotros-Form im Satz, \"siéntate\" richtet sich an eine Person, die nosotros-Form wäre \"sentémonos\"."
+          }
+        },
+        {
+          "text": { "hu": "usted, subjuntivóból jövő alak", "en": "usted, a form from the subjunctive", "es": "usted, forma del subjuntivo", "de": "usted, eine Form vom Subjuntivo" },
+          "wrong": {
+            "hu": "Nincs usted-alak a mondatban, formálisan \"siéntese\" lenne, nem \"siéntate\".",
+            "en": "There is no usted form in the sentence, formally it would be \"siéntese\", not \"siéntate\".",
+            "es": "No hay una forma de usted en la frase, formalmente sería \"siéntese\", no \"siéntate\".",
+            "de": "Es gibt keine usted-Form im Satz, formell wäre es \"siéntese\", nicht \"siéntate\"."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ia-why-07",
+      "es": "Dímelo ahora, por favor.",
+      "tr": { "hu": "Mondd el nekem most, kérlek.", "en": "Tell it to me now, please.", "es": "Dímelo ahora, por favor.", "de": "Sag es mir jetzt, bitte." },
+      "options": [
+        {
+          "text": { "hu": "tú rendhagyó alak, a névmások a végén, egybeírva", "en": "irregular tú form, pronouns at the end, one word", "es": "tú irregular, los pronombres al final, en una palabra", "de": "unregelmäßige tú-Form, Pronomen am Ende, ein Wort" }
+        },
+        {
+          "text": { "hu": "ustedes, subjuntivóból jövő alak", "en": "ustedes, a form from the subjunctive", "es": "ustedes, forma del subjuntivo", "de": "ustedes, eine Form vom Subjuntivo" },
+          "wrong": {
+            "hu": "Nincs ustedes-alak a mondatban, a \"dímelo\" egy embernek szól, a decir tú-alakja.",
+            "en": "There is no ustedes form in the sentence, \"dímelo\" addresses one person, decir's tú form.",
+            "es": "No hay una forma de ustedes en la frase, \"dímelo\" se dirige a una persona, la forma de tú de decir.",
+            "de": "Es gibt keine ustedes-Form im Satz, \"dímelo\" richtet sich an eine Person, die tú-Form von decir."
+          }
+        },
+        {
+          "text": { "hu": "vosotros, spanyolországi alak", "en": "vosotros, a Spain-only form", "es": "vosotros, forma solo de España", "de": "vosotros, eine nur in Spanien gebräuchliche Form" },
+          "wrong": {
+            "hu": "Nincs vosotros-alak a mondatban, a \"dímelo\" nem -d végű forma.",
+            "en": "There is no vosotros form in the sentence, \"dímelo\" does not end in -d.",
+            "es": "No hay una forma de vosotros en la frase, \"dímelo\" no termina en -d.",
+            "de": "Es gibt keine vosotros-Form im Satz, \"dímelo\" endet nicht auf -d."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}
