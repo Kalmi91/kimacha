@@ -703,5 +703,9 @@ export default {
     learningStep: (step: number, total: number) => `${step}/${total}. lépés`,
     newBadge: 'új',
     moreNew: (n: number) => `+${n} új szó`,
+    tileAnswered: 'Megválaszolt',
+    tileNew: 'Új',
+    tileAgain: 'Újra',
+    introduced: (n: number, total: number) => `${n} / ${total} szó bevezetve`,
   },
 };
