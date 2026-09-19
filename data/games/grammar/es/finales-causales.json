@@ -1,0 +1,1293 @@
+{
+  "schema": 2,
+  "topic": "finales-causales",
+  "level": "B2",
+  "title": {
+    "hu": "Cél és ok: para que, porque, ya que",
+    "en": "Purpose and cause: para que, porque, ya que",
+    "es": "Finales y causales",
+    "de": "Final- und Kausalsätze"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A finales és causales mondatokkal indokolunk és célt mondunk: miért csinálunk valamit, és mi végett csináljuk. A kötőszó dönti el, hogy kijelentő vagy kötőmód jön utána: a cél még nem történt meg, ezért kötőmódot kíván (para que), az ok viszont már fennálló tény, ezért kijelentőt (porque). Ugyanaz az alany a mondatban infinitivóra egyszerűsíti a célt (para + infinitivo).",
+        "en": "Purpose and cause clauses let you say why you do something and what for. The connector decides whether indicative or subjunctive follows: a purpose has not happened yet, so it takes the subjunctive (para que), while a cause is an existing fact, so it takes the indicative (porque). The same subject in both parts simplifies the purpose to an infinitive (para + infinitivo).",
+        "es": "Con las oraciones finales y causales explicamos por qué hacemos algo y para qué lo hacemos. El nexo decide si sigue indicativo o subjuntivo: la finalidad todavía no ha pasado, por eso pide subjuntivo (para que), y la causa ya es un hecho, por eso pide indicativo (porque). Cuando el sujeto es el mismo en las dos partes, la finalidad se simplifica a infinitivo (para + infinitivo).",
+        "de": "Mit Final- und Kausalsätzen begründen wir etwas und geben einen Zweck an. Der Konnektor entscheidet, ob Indikativ oder Subjuntivo folgt: der Zweck ist noch nicht eingetreten, deshalb steht der Subjuntivo (para que), der Grund dagegen ist eine bestehende Tatsache, deshalb steht der Indikativ (porque). Bei gleichem Subjekt in beiden Teilen wird der Zweck zum Infinitiv vereinfacht (para + infinitivo)."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "A szabályok",
+        "en": "The rules",
+        "es": "Las reglas",
+        "de": "Die Regeln"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Cél, azonos alany: para + infinitivo. Ha a fő- és a mellékmondat alanya ugyanaz, nincs szükség kötőmódra, elég az infinitivo.",
+            "en": "Purpose, same subject: para + infinitive. If the main and the subordinate clause share the same subject, no subjunctive is needed, the infinitive is enough.",
+            "es": "Finalidad, mismo sujeto: para + infinitivo. Si el sujeto de las dos partes es el mismo, no hace falta subjuntivo, basta el infinitivo.",
+            "de": "Zweck, gleiches Subjekt: para + Infinitiv. Ist das Subjekt in beiden Teilen dasselbe, braucht es keinen Subjuntivo, der Infinitiv reicht."
+          },
+          "examples": [
+            {
+              "es": "Estudio para aprobar el examen.",
+              "tr": {
+                "hu": "Tanulok, hogy átmenjek a vizsgán.",
+                "en": "I study to pass the exam.",
+                "es": "Estudio para aprobar el examen.",
+                "de": "Ich lerne, um die Prüfung zu bestehen."
+              }
+            },
+            {
+              "es": "Trabajo para ganar dinero.",
+              "tr": {
+                "hu": "Dolgozom, hogy pénzt keressek.",
+                "en": "I work to earn money.",
+                "es": "Trabajo para ganar dinero.",
+                "de": "Ich arbeite, um Geld zu verdienen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Cél, más alany: para que + subjuntivo. Ha a két alany különböző, para que vezeti be a mellékmondatot, kötőmóddal: jelen vagy jövő idejű főmondat után presente de subjuntivo, múlt idejű főmondat után imperfecto de subjuntivo.",
+            "en": "Purpose, different subject: para que + subjunctive. If the two subjects differ, para que introduces the clause, with the subjunctive: present subjunctive after a present or future main clause, imperfect subjunctive after a past main clause.",
+            "es": "Finalidad, sujeto distinto: para que + subjuntivo. Si los dos sujetos son distintos, para que introduce la oración, con subjuntivo: presente de subjuntivo después de una oración principal en presente o futuro, imperfecto de subjuntivo después de una principal en pasado.",
+            "de": "Zweck, anderes Subjekt: para que + Subjuntivo. Sind die beiden Subjekte verschieden, leitet para que den Nebensatz ein, mit Subjuntivo: Presente de subjuntivo nach einem Hauptsatz im Präsens oder Futur, Imperfecto de subjuntivo nach einem Hauptsatz in der Vergangenheit."
+          },
+          "examples": [
+            {
+              "es": "Te llamo para que me ayudes.",
+              "tr": {
+                "hu": "Hívlak, hogy segíts nekem.",
+                "en": "I'm calling you so that you help me.",
+                "es": "Te llamo para que me ayudes.",
+                "de": "Ich rufe dich an, damit du mir hilfst."
+              }
+            },
+            {
+              "es": "Te lo expliqué para que lo entendieras.",
+              "tr": {
+                "hu": "Elmagyaráztam neked, hogy megértsd.",
+                "en": "I explained it to you so that you would understand it.",
+                "es": "Te lo expliqué para que lo entendieras.",
+                "de": "Ich habe es dir erklärt, damit du es verstehst."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "További cél-kötők, csak említve: a fin de que (formális, ugyanaz mint a para que), a que mozgás-igék után (vengo a que me ayudes).",
+            "en": "More purpose connectors, just noted: a fin de que (formal, same as para que), a que after verbs of motion (vengo a que me ayudes).",
+            "es": "Otros nexos de finalidad, solo mencionados: a fin de que (formal, igual que para que), a que después de verbos de movimiento (vengo a que me ayudes).",
+            "de": "Weitere Zweck-Konnektoren, nur erwähnt: a fin de que (formell, wie para que), a que nach Bewegungsverben (vengo a que me ayudes)."
+          },
+          "examples": [
+            {
+              "es": "Te escribo a fin de que lo sepas.",
+              "tr": {
+                "hu": "Írok neked, hogy tudd.",
+                "en": "I'm writing to you so that you know it.",
+                "es": "Te escribo a fin de que lo sepas.",
+                "de": "Ich schreibe dir, damit du es weißt."
+              }
+            },
+            {
+              "es": "Vengo a que me ayudes con esto.",
+              "tr": {
+                "hu": "Azért jövök, hogy segíts ebben.",
+                "en": "I've come for you to help me with this.",
+                "es": "Vengo a que me ayudes con esto.",
+                "de": "Ich komme, damit du mir dabei hilfst."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ok, kijelentő móddal: porque, ya que, puesto que, como (csak a mondat elején), es que (beszélt nyelvben). Mind egy már fennálló tényt indokol, ezért kijelentő mód jön utánuk.",
+            "en": "Cause, with the indicative: porque, ya que, puesto que, como (only at the start of the sentence), es que (in spoken language). All of them explain an already existing fact, so the indicative follows.",
+            "es": "Causa, con indicativo: porque, ya que, puesto que, como (solo al principio de la oración), es que (en el habla). Todos explican un hecho ya existente, por eso les sigue el indicativo.",
+            "de": "Grund, mit dem Indikativ: porque, ya que, puesto que, como (nur am Satzanfang), es que (in der gesprochenen Sprache). Alle erklären eine bereits bestehende Tatsache, deshalb folgt der Indikativ."
+          },
+          "examples": [
+            {
+              "es": "No salgo porque llueve mucho.",
+              "tr": {
+                "hu": "Nem megyek ki, mert nagyon esik.",
+                "en": "I'm not going out because it's raining a lot.",
+                "es": "No salgo porque llueve mucho.",
+                "de": "Ich gehe nicht raus, weil es stark regnet."
+              }
+            },
+            {
+              "es": "Como llueve, no salgo.",
+              "tr": {
+                "hu": "Mivel esik, nem megyek ki.",
+                "en": "Since it's raining, I'm not going out.",
+                "es": "Como llueve, no salgo.",
+                "de": "Da es regnet, gehe ich nicht raus."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Por + főnév vagy infinitivo: az ok itt egy dolog vagy egy megtörtént/el nem végzett cselekvés.",
+            "en": "Por + noun or infinitive: here the cause is a thing, or an action done or not done.",
+            "es": "Por + sustantivo o infinitivo: aquí la causa es una cosa, o una acción hecha o no hecha.",
+            "de": "Por + Substantiv oder Infinitiv: hier ist der Grund eine Sache, oder eine getane oder nicht getane Handlung."
+          },
+          "examples": [
+            {
+              "es": "Llegó tarde por el tráfico.",
+              "tr": {
+                "hu": "Elkésett a forgalom miatt.",
+                "en": "He arrived late because of the traffic.",
+                "es": "Llegó tarde por el tráfico.",
+                "de": "Er kam wegen des Verkehrs zu spät."
+              }
+            },
+            {
+              "es": "No aprobó por no estudiar.",
+              "tr": {
+                "hu": "Nem ment át, mert nem tanult.",
+                "en": "He didn't pass because he didn't study.",
+                "es": "No aprobó por no estudiar.",
+                "de": "Er hat nicht bestanden, weil er nicht gelernt hat."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Tagadott ok: no porque + subjuntivo, gyakran egy sino porque + kijelentő móddal szembeállítva: az igazi ok a másik.",
+            "en": "A negated cause: no porque + subjunctive, often contrasted with sino porque + indicative: the real cause is the other one.",
+            "es": "Causa negada: no porque + subjuntivo, a menudo contrastada con sino porque + indicativo: la causa real es la otra.",
+            "de": "Verneinter Grund: no porque + Subjuntivo, oft im Kontrast zu sino porque + Indikativ: der wahre Grund ist der andere."
+          },
+          "examples": [
+            {
+              "es": "No estudio porque me guste, sino porque debo.",
+              "tr": {
+                "hu": "Nem azért tanulok, mert szeretem, hanem mert muszáj.",
+                "en": "I don't study because I like it, but because I have to.",
+                "es": "No estudio porque me guste, sino porque debo.",
+                "de": "Ich lerne nicht, weil es mir gefällt, sondern weil ich muss."
+              }
+            },
+            {
+              "es": "No lo hago porque quieran, sino porque es necesario.",
+              "tr": {
+                "hu": "Nem azért csinálom, mert akarják, hanem mert szükséges.",
+                "en": "I don't do it because they want it, but because it's necessary.",
+                "es": "No lo hago porque quieran, sino porque es necesario.",
+                "de": "Ich mache es nicht, weil sie es wollen, sondern weil es notwendig ist."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Helyesírás: por qué (kérdésben, két szó, ékezettel), porque (ok, egy szó), porqué (főnév, „az ok\", ritka: el porqué), por que (elöljáró + vonatkozó névmás, ritka).",
+            "en": "Spelling: por qué (in a question, two words, with an accent), porque (cause, one word), porqué (noun, \"the reason\", rare: el porqué), por que (preposition + relative pronoun, rare).",
+            "es": "Ortografía: por qué (en pregunta, dos palabras, con tilde), porque (causa, una palabra), porqué (sustantivo, \"la razón\", raro: el porqué), por que (preposición + relativo, raro).",
+            "de": "Rechtschreibung: por qué (in einer Frage, zwei Wörter, mit Akzent), porque (Grund, ein Wort), porqué (Substantiv, „der Grund\", selten: el porqué), por que (Präposition + Relativpronomen, selten)."
+          },
+          "examples": [
+            {
+              "es": "¿Por qué no viniste ayer a la fiesta?",
+              "tr": {
+                "hu": "Miért nem jöttél el tegnap a buliba?",
+                "en": "Why didn't you come to the party yesterday?",
+                "es": "¿Por qué no viniste ayer a la fiesta?",
+                "de": "Warum bist du gestern nicht zur Party gekommen?"
+              }
+            },
+            {
+              "es": "Nadie sabe el porqué de su decisión.",
+              "tr": {
+                "hu": "Senki sem tudja a döntése okát.",
+                "en": "Nobody knows the reason for his decision.",
+                "es": "Nadie sabe el porqué de su decisión.",
+                "de": "Niemand kennt den Grund für seine Entscheidung."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "nexos",
+      "title": {
+        "hu": "Kötőszavak: cél és ok",
+        "en": "Connectors: purpose and cause",
+        "es": "Nexos: finalidad y causa",
+        "de": "Konnektoren: Zweck und Grund"
+      },
+      "header": [
+        {
+          "hu": "kötőszó",
+          "en": "connector",
+          "es": "nexo",
+          "de": "Konnektor"
+        },
+        {
+          "hu": "mód",
+          "en": "mood",
+          "es": "modo",
+          "de": "Modus"
+        },
+        {
+          "hu": "példa",
+          "en": "example",
+          "es": "ejemplo",
+          "de": "Beispiel"
+        }
+      ],
+      "rows": [
+        [
+          "para que",
+          "subjuntivo",
+          "Te lo digo para que lo sepas."
+        ],
+        [
+          "a fin de que",
+          "subjuntivo",
+          "Te escribo a fin de que lo sepas."
+        ],
+        [
+          "a que",
+          "subjuntivo",
+          "Vengo a que me ayudes."
+        ],
+        [
+          "porque",
+          "indicativo",
+          "No salgo porque llueve."
+        ],
+        [
+          "ya que",
+          "indicativo",
+          "Ya que estás aquí, ayúdame."
+        ],
+        [
+          "puesto que",
+          "indicativo",
+          "Puesto que lo sabes, dímelo."
+        ],
+        [
+          "como",
+          "indicativo",
+          "Como llueve, no salgo."
+        ],
+        [
+          "es que",
+          "indicativo",
+          "Es que no tengo tiempo."
+        ],
+        [
+          "por",
+          "infinitivo",
+          "No aprobó por no estudiar."
+        ],
+        [
+          "no porque",
+          "subjuntivo",
+          "No lo hago porque quiera."
+        ],
+        [
+          "sino porque",
+          "indicativo",
+          "No lo hago porque quiera, sino porque debo."
+        ],
+        [
+          "para + inf.",
+          "infinitivo",
+          "Vine para ver a mi madre."
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Azonos vs más alany, ok vs cél",
+        "en": "Same vs different subject, cause vs purpose",
+        "es": "Mismo sujeto vs distinto, causa vs finalidad",
+        "de": "Gleiches vs anderes Subjekt, Grund vs Zweck"
+      },
+      "pairs": [
+        {
+          "a": "estudio para aprobar",
+          "b": "te llamo para que me ayudes",
+          "note": {
+            "hu": "Azonos alany (yo estudio, yo apruebo) esetén para + infinitivo elég; más alany (yo llamo, tú ayudas) esetén para que + subjuntivo kell.",
+            "en": "With the same subject (yo estudio, yo apruebo), para + infinitive is enough; with a different subject (yo llamo, tú ayudas), para que + subjunctive is needed.",
+            "es": "Con el mismo sujeto (yo estudio, yo apruebo) basta para + infinitivo; con sujeto distinto (yo llamo, tú ayudas) hace falta para que + subjuntivo.",
+            "de": "Bei gleichem Subjekt (yo estudio, yo apruebo) reicht para + Infinitiv; bei unterschiedlichem Subjekt (yo llamo, tú ayudas) braucht es para que + Subjuntivo."
+          },
+          "examples": [
+            {
+              "es": "Estudio para aprobar el examen.",
+              "tr": {
+                "hu": "Tanulok, hogy átmenjek a vizsgán.",
+                "en": "I study to pass the exam.",
+                "es": "Estudio para aprobar el examen.",
+                "de": "Ich lerne, um die Prüfung zu bestehen."
+              }
+            },
+            {
+              "es": "Te llamo para que me ayudes.",
+              "tr": {
+                "hu": "Hívlak, hogy segíts nekem.",
+                "en": "I'm calling you so that you help me.",
+                "es": "Te llamo para que me ayudes.",
+                "de": "Ich rufe dich an, damit du mir hilfst."
+              }
+            }
+          ]
+        },
+        {
+          "a": "no salgo porque llueve",
+          "b": "te llamo para que me ayudes",
+          "note": {
+            "hu": "A porque + kijelentő egy már fennálló tényt indokol (esik); a para que + kötőmód egy még be nem következett célt fejez ki (hogy segíts).",
+            "en": "Porque + indicative explains an already existing fact (it is raining); para que + subjunctive expresses a purpose that has not happened yet (that you help).",
+            "es": "Porque + indicativo explica un hecho ya existente (llueve); para que + subjuntivo expresa una finalidad que todavía no ha pasado (que ayudes).",
+            "de": "Porque + Indikativ erklärt eine bereits bestehende Tatsache (es regnet); para que + Subjuntivo drückt einen noch nicht eingetretenen Zweck aus (dass du hilfst)."
+          },
+          "examples": [
+            {
+              "es": "No salgo porque llueve mucho.",
+              "tr": {
+                "hu": "Nem megyek ki, mert nagyon esik.",
+                "en": "I'm not going out because it's raining a lot.",
+                "es": "No salgo porque llueve mucho.",
+                "de": "Ich gehe nicht raus, weil es stark regnet."
+              }
+            },
+            {
+              "es": "Te llamo para que me ayudes.",
+              "tr": {
+                "hu": "Hívlak, hogy segíts nekem.",
+                "en": "I'm calling you so that you help me.",
+                "es": "Te llamo para que me ayudes.",
+                "de": "Ich rufe dich an, damit du mir hilfst."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ok = már megtörtént vagy tény → kijelentő mód. Cél = még nem történt meg → kötőmód. Ez a két kötő 90%-át eldönti.",
+        "en": "Cause = already happened or a fact → indicative. Purpose = has not happened yet → subjunctive. This decides 90% of these two connector types.",
+        "es": "Causa = ya ha pasado o es un hecho → indicativo. Finalidad = todavía no ha pasado → subjuntivo. Esto decide el 90% de estos dos tipos de nexos.",
+        "de": "Grund = bereits geschehen oder Tatsache → Indikativ. Zweck = noch nicht geschehen → Subjuntivo. Das entscheidet 90% dieser beiden Konnektor-Typen."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A cél- és ok-kötők közül a legfontosabb a para és a porque. Ha ugyanaz az alany, elég az infinitivo: «estudio para aprobar». Ha más az alany, para que kell, kötőmóddal: «te llamo para que me ayudes». Az ok viszont már fennálló tény, ezért utána kijelentő mód jön: «no salgo porque llueve». A como is okot vezet be, de csak a mondat elején állhat: «como llueve, no salgo». A puesto que, a ya que és az es que szintén kijelentő móddal jár. A por is okot fejezhet ki, főnévvel vagy infinitivóval: «no aprobó por no estudiar». A tagadott oknál kötőmód kell: «no lo hago porque quiera, sino porque debo». Kérdésben a por qué két szóban áll, ékezettel: «¿por qué no viniste?».",
+    "en": "Among the purpose and cause connectors, the most important are para and porque. With the same subject, the infinitive is enough: «estudio para aprobar». With a different subject, para que is needed, with the subjunctive: «te llamo para que me ayudes». A cause, though, is already an existing fact, so the indicative follows it: «no salgo porque llueve». Como also introduces a cause, but it can only stand at the start of the sentence: «como llueve, no salgo». Puesto que, ya que and es que also take the indicative. Por can also express a cause, with a noun or an infinitive: «no aprobó por no estudiar». A negated cause needs the subjunctive: «no lo hago porque quiera, sino porque debo». In a question, por qué is written as two words, with an accent: «¿por qué no viniste?».",
+    "es": "Entre los nexos de finalidad y causa, los más importantes son para y porque. Con el mismo sujeto, basta el infinitivo: «estudio para aprobar». Con sujeto distinto, hace falta para que, con subjuntivo: «te llamo para que me ayudes». La causa, en cambio, ya es un hecho existente, por eso le sigue el indicativo: «no salgo porque llueve». Como también introduce una causa, pero solo puede ir al principio de la oración: «como llueve, no salgo». Puesto que, ya que y es que también llevan indicativo. Por también puede expresar una causa, con sustantivo o infinitivo: «no aprobó por no estudiar». La causa negada necesita subjuntivo: «no lo hago porque quiera, sino porque debo». En una pregunta, por qué se escribe en dos palabras, con tilde: «¿por qué no viniste?».",
+    "de": "Unter den Zweck- und Grund-Konnektoren sind para und porque die wichtigsten. Bei gleichem Subjekt reicht der Infinitiv: «estudio para aprobar». Bei unterschiedlichem Subjekt braucht es para que, mit Subjuntivo: «te llamo para que me ayudes». Ein Grund ist dagegen bereits eine bestehende Tatsache, deshalb folgt der Indikativ: «no salgo porque llueve». Como leitet ebenfalls einen Grund ein, kann aber nur am Satzanfang stehen: «como llueve, no salgo». Puesto que, ya que und es que stehen ebenfalls mit dem Indikativ. Por kann auch einen Grund ausdrücken, mit einem Substantiv oder einem Infinitiv: «no aprobó por no estudiar». Ein verneinter Grund braucht den Subjuntivo: «no lo hago porque quiera, sino porque debo». In einer Frage wird por qué in zwei Wörtern geschrieben, mit Akzent: «¿por qué no viniste?»."
+  },
+  "items": [
+    {
+      "id": "fc-01",
+      "sentence": "Estudio ___ aprobar el examen.",
+      "options": [
+        "para",
+        "para que",
+        "porque"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Azonos alany (yo estudio, yo apruebo): para + infinitivo, nincs szükség kötőmódra.",
+        "en": "Same subject (yo estudio, yo apruebo): para + infinitive, no subjunctive needed.",
+        "es": "Mismo sujeto (yo estudio, yo apruebo): para + infinitivo, no hace falta subjuntivo.",
+        "de": "Gleiches Subjekt (yo estudio, yo apruebo): para + Infinitiv, kein Subjuntivo nötig."
+      },
+      "wrong": {
+        "para que": {
+          "hu": "A „para que” más alanyt kívánna kötőmóddal, itt viszont ugyanaz az alany, helyesen: para.",
+          "en": "\"Para que\" would want a different subject with the subjunctive, but here the subject is the same, correctly: para.",
+          "es": "«Para que» pediría un sujeto distinto con subjuntivo, pero aquí el sujeto es el mismo, correcto: para.",
+          "de": "„Para que” würde ein anderes Subjekt mit Subjuntivo verlangen, hier ist aber das Subjekt gleich, richtig: para."
+        },
+        "porque": {
+          "hu": "A „porque” okot vezetne be, itt viszont célról van szó, helyesen: para.",
+          "en": "\"Porque\" would introduce a cause, but here it is about a purpose, correctly: para.",
+          "es": "«Porque» introduciría una causa, pero aquí se trata de una finalidad, correcto: para.",
+          "de": "„Porque” würde einen Grund einleiten, hier geht es aber um einen Zweck, richtig: para."
+        }
+      },
+      "examples": [
+        "Trabajo para ganar dinero.",
+        "Como bien para estar sano."
+      ]
+    },
+    {
+      "id": "fc-02",
+      "sentence": "Te llamo para que me ___ tú.",
+      "options": [
+        "ayudes",
+        "ayudas",
+        "ayudar"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Más alany (yo llamo, tú ayudas): para que + subjuntivo, ayudar → ayudes.",
+        "en": "Different subject (yo llamo, tú ayudas): para que + subjunctive, ayudar → ayudes.",
+        "es": "Sujeto distinto (yo llamo, tú ayudas): para que + subjuntivo, ayudar → ayudes.",
+        "de": "Anderes Subjekt (yo llamo, tú ayudas): para que + Subjuntivo, ayudar → ayudes."
+      },
+      "wrong": {
+        "ayudas": {
+          "hu": "Az „ayudas” kijelentő mód, de para que után kötőmód kell, helyesen: ayudes.",
+          "en": "\"Ayudas\" is indicative, but para que needs the subjunctive, correctly: ayudes.",
+          "es": "«Ayudas» es indicativo, pero para que pide subjuntivo, correcto: ayudes.",
+          "de": "„Ayudas” ist Indikativ, aber para que verlangt den Subjuntivo, richtig: ayudes."
+        },
+        "ayudar": {
+          "hu": "Az „ayudar” infinitivo csak azonos alanynál állna, itt más az alany, helyesen: ayudes.",
+          "en": "\"Ayudar\" as an infinitive would only fit with the same subject, but here the subject differs, correctly: ayudes.",
+          "es": "«Ayudar» en infinitivo solo iría con el mismo sujeto, pero aquí el sujeto es distinto, correcto: ayudes.",
+          "de": "„Ayudar” als Infinitiv würde nur bei gleichem Subjekt passen, hier ist das Subjekt aber verschieden, richtig: ayudes."
+        }
+      },
+      "examples": [
+        "Te escribo para que lo sepas.",
+        "Te lo explico para que lo entiendas."
+      ]
+    },
+    {
+      "id": "fc-03",
+      "sentence": "No salgo ___ llueve mucho.",
+      "options": [
+        "porque",
+        "para que",
+        "para"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Ok, tényszerű állítás: porque + kijelentő mód.",
+        "en": "Cause, a factual statement: porque + indicative.",
+        "es": "Causa, una afirmación de hecho: porque + indicativo.",
+        "de": "Grund, eine Tatsachenaussage: porque + Indikativ."
+      },
+      "wrong": {
+        "para que": {
+          "hu": "A „para que” cél-kötő kötőmóddal, itt viszont ok áll, helyesen: porque.",
+          "en": "\"Para que\" is a purpose connector with the subjunctive, but here there is a cause, correctly: porque.",
+          "es": "«Para que» es un nexo de finalidad con subjuntivo, pero aquí hay una causa, correcto: porque.",
+          "de": "„Para que” ist ein Zweck-Konnektor mit Subjuntivo, hier steht aber ein Grund, richtig: porque."
+        },
+        "para": {
+          "hu": "A „para” azonos alanyú célt fejezne ki infinitivóval, itt viszont ok áll, helyesen: porque.",
+          "en": "\"Para\" would express a same-subject purpose with the infinitive, but here there is a cause, correctly: porque.",
+          "es": "«Para» expresaría una finalidad de mismo sujeto con infinitivo, pero aquí hay una causa, correcto: porque.",
+          "de": "„Para” würde einen Zweck mit gleichem Subjekt im Infinitiv ausdrücken, hier steht aber ein Grund, richtig: porque."
+        }
+      },
+      "examples": [
+        "No voy porque estoy enfermo.",
+        "Llegó tarde por el tráfico."
+      ]
+    },
+    {
+      "id": "fc-04",
+      "sentence": "___ no tengo tiempo, no puedo ayudarte.",
+      "options": [
+        "Como",
+        "Porque",
+        "Para que"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „como” ok-kötő csak a mondat elején állhat.",
+        "en": "\"Como\" as a cause connector can only stand at the start of the sentence.",
+        "es": "«Como» como nexo de causa solo puede ir al principio de la oración.",
+        "de": "„Como” als Grund-Konnektor kann nur am Satzanfang stehen."
+      },
+      "wrong": {
+        "Porque": {
+          "hu": "A „porque” nem állhat mondat elején ebben az értelemben, ide „como” kell.",
+          "en": "\"Porque\" cannot stand at the start of the sentence in this sense, \"como\" is needed here.",
+          "es": "«Porque» no puede ir al principio de la oración en este sentido, aquí hace falta «como».",
+          "de": "„Porque” kann in diesem Sinn nicht am Satzanfang stehen, hier braucht es „como”."
+        },
+        "Para que": {
+          "hu": "A „para que” cél-kötő kötőmóddal, itt viszont ok áll kijelentő móddal (tengo), helyesen: Como.",
+          "en": "\"Para que\" is a purpose connector with the subjunctive, but here there is a cause with the indicative (tengo), correctly: Como.",
+          "es": "«Para que» es un nexo de finalidad con subjuntivo, pero aquí hay una causa con indicativo (tengo), correcto: Como.",
+          "de": "„Para que” ist ein Zweck-Konnektor mit Subjuntivo, hier steht aber ein Grund im Indikativ (tengo), richtig: Como."
+        }
+      },
+      "examples": [
+        "Como llueve, no salgo.",
+        "Como estoy cansado, me quedo en casa."
+      ]
+    },
+    {
+      "id": "fc-05",
+      "sentence": "No estudio porque me ___, sino porque debo.",
+      "options": [
+        "guste",
+        "gusta",
+        "gustar"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Tagadott ok: no porque + subjuntivo, gustar → guste.",
+        "en": "Negated cause: no porque + subjunctive, gustar → guste.",
+        "es": "Causa negada: no porque + subjuntivo, gustar → guste.",
+        "de": "Verneinter Grund: no porque + Subjuntivo, gustar → guste."
+      },
+      "wrong": {
+        "gusta": {
+          "hu": "A „gusta” kijelentő mód, de a tagadott ok kötőmódot kíván, helyesen: guste.",
+          "en": "\"Gusta\" is indicative, but a negated cause needs the subjunctive, correctly: guste.",
+          "es": "«Gusta» es indicativo, pero la causa negada pide subjuntivo, correcto: guste.",
+          "de": "„Gusta” ist Indikativ, aber der verneinte Grund verlangt den Subjuntivo, richtig: guste."
+        },
+        "gustar": {
+          "hu": "A „gustar” infinitivo nem illik ide, a ragozott kötőmódú alak kell, helyesen: guste.",
+          "en": "\"Gustar\" as an infinitive doesn't fit here, the conjugated subjunctive form is needed, correctly: guste.",
+          "es": "«Gustar» en infinitivo no encaja aquí, hace falta la forma conjugada de subjuntivo, correcto: guste.",
+          "de": "„Gustar” als Infinitiv passt hier nicht, die konjugierte Subjuntivo-Form ist nötig, richtig: guste."
+        }
+      },
+      "examples": [
+        "No lo hago porque quieran, sino porque es necesario.",
+        "No voy porque me guste, sino porque debo."
+      ]
+    },
+    {
+      "id": "fc-06",
+      "sentence": "Vine para ___ a mi madre.",
+      "options": [
+        "ver",
+        "vea",
+        "veo"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Azonos alany (yo vine, yo veo): para + infinitivo.",
+        "en": "Same subject (yo vine, yo veo): para + infinitive.",
+        "es": "Mismo sujeto (yo vine, yo veo): para + infinitivo.",
+        "de": "Gleiches Subjekt (yo vine, yo veo): para + Infinitiv."
+      },
+      "wrong": {
+        "vea": {
+          "hu": "A „vea” kötőmód más alanynál kellene (para que), itt viszont ugyanaz az alany, helyesen: ver.",
+          "en": "\"Vea\" as a subjunctive would fit a different subject (para que), but here the subject is the same, correctly: ver.",
+          "es": "«Vea» en subjuntivo iría con sujeto distinto (para que), pero aquí el sujeto es el mismo, correcto: ver.",
+          "de": "„Vea” im Subjuntivo würde zu einem anderen Subjekt passen (para que), hier ist das Subjekt aber gleich, richtig: ver."
+        },
+        "veo": {
+          "hu": "A „veo” kijelentő jelen idő nem illik az infinitivo helyére, helyesen: ver.",
+          "en": "\"Veo\" as the present indicative doesn't fit in the infinitive's place, correctly: ver.",
+          "es": "«Veo» en presente de indicativo no encaja en el lugar del infinitivo, correcto: ver.",
+          "de": "„Veo” im Indikativ Präsens passt nicht an die Stelle des Infinitivs, richtig: ver."
+        }
+      },
+      "examples": [
+        "Vine para ayudarte.",
+        "Salió para comprar pan."
+      ]
+    },
+    {
+      "id": "fc-07",
+      "sentence": "No aprobó el examen ___ no estudiar.",
+      "options": [
+        "por",
+        "para",
+        "porque"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Ok + infinitivo: por + infinitivo (por no estudiar).",
+        "en": "Cause + infinitive: por + infinitive (por no estudiar).",
+        "es": "Causa + infinitivo: por + infinitivo (por no estudiar).",
+        "de": "Grund + Infinitiv: por + Infinitiv (por no estudiar)."
+      },
+      "wrong": {
+        "para": {
+          "hu": "A „para” cél-kötő, itt viszont ok áll, helyesen: por.",
+          "en": "\"Para\" is a purpose connector, but here there is a cause, correctly: por.",
+          "es": "«Para» es un nexo de finalidad, pero aquí hay una causa, correcto: por.",
+          "de": "„Para” ist ein Zweck-Konnektor, hier steht aber ein Grund, richtig: por."
+        },
+        "porque": {
+          "hu": "A „porque” után ragozott ige kellene (porque no estudió), itt viszont infinitivo áll, ezért „por” a helyes.",
+          "en": "\"Porque\" would need a conjugated verb after it (porque no estudió), but here there is an infinitive, so \"por\" is correct.",
+          "es": "«Porque» necesitaría un verbo conjugado después (porque no estudió), pero aquí hay un infinitivo, por eso es correcto «por».",
+          "de": "Nach „porque” bräuchte es ein konjugiertes Verb (porque no estudió), hier steht aber ein Infinitiv, deshalb ist „por” richtig."
+        }
+      },
+      "examples": [
+        "Llegó tarde por el tráfico.",
+        "Se enfermó por no dormir bien."
+      ]
+    },
+    {
+      "id": "fc-08",
+      "sentence": "Vengo ___ me ayudes con esto.",
+      "options": [
+        "a que",
+        "porque",
+        "para"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Mozgás-ige (vengo) után „a que\" + subjuntivo vezeti be a célt.",
+        "en": "After a verb of motion (vengo), \"a que\" + subjunctive introduces the purpose.",
+        "es": "Después de un verbo de movimiento (vengo), «a que» + subjuntivo introduce la finalidad.",
+        "de": "Nach einem Bewegungsverb (vengo) leitet „a que” + Subjuntivo den Zweck ein."
+      },
+      "wrong": {
+        "porque": {
+          "hu": "A „porque” okot vezetne be, itt viszont cél áll egy mozgás-ige után, helyesen: a que.",
+          "en": "\"Porque\" would introduce a cause, but here there is a purpose after a verb of motion, correctly: a que.",
+          "es": "«Porque» introduciría una causa, pero aquí hay una finalidad después de un verbo de movimiento, correcto: a que.",
+          "de": "„Porque” würde einen Grund einleiten, hier steht aber ein Zweck nach einem Bewegungsverb, richtig: a que."
+        },
+        "para": {
+          "hu": "A „para\" önmagában „que\" nélkül nem vezet be más alanyú mellékmondatot, helyesen: a que.",
+          "en": "\"Para\" on its own, without \"que\", doesn't introduce a different-subject clause, correctly: a que.",
+          "es": "«Para» solo, sin «que», no introduce una oración de sujeto distinto, correcto: a que.",
+          "de": "„Para” allein, ohne „que”, leitet keinen Nebensatz mit anderem Subjekt ein, richtig: a que."
+        }
+      },
+      "examples": [
+        "Vengo a que me ayudes.",
+        "Vino a que le ayudara."
+      ]
+    },
+    {
+      "id": "fc-09",
+      "sentence": "Ya que ___ aquí, ayúdame con esto.",
+      "options": [
+        "estás",
+        "estés",
+        "estar"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Ya que + kijelentő mód, mert egy tényt indokol.",
+        "en": "Ya que + indicative, because it explains a fact.",
+        "es": "Ya que + indicativo, porque explica un hecho.",
+        "de": "Ya que + Indikativ, weil es eine Tatsache erklärt."
+      },
+      "wrong": {
+        "estés": {
+          "hu": "Az „estés” kötőmód itt nem kell, ya que kijelentő módot kíván, helyesen: estás.",
+          "en": "\"Estés\" as a subjunctive isn't needed here, ya que wants the indicative, correctly: estás.",
+          "es": "«Estés» en subjuntivo no hace falta aquí, ya que pide indicativo, correcto: estás.",
+          "de": "„Estés” im Subjuntivo ist hier nicht nötig, ya que verlangt den Indikativ, richtig: estás."
+        },
+        "estar": {
+          "hu": "Az „estar” infinitivo nem illik ide, ragozott alak kell, helyesen: estás.",
+          "en": "\"Estar\" as an infinitive doesn't fit here, a conjugated form is needed, correctly: estás.",
+          "es": "«Estar» en infinitivo no encaja aquí, hace falta una forma conjugada, correcto: estás.",
+          "de": "„Estar” als Infinitiv passt hier nicht, eine konjugierte Form ist nötig, richtig: estás."
+        }
+      },
+      "examples": [
+        "Ya que estás aquí, puedes ayudarme.",
+        "Ya que insistes, voy contigo."
+      ]
+    },
+    {
+      "id": "fc-10",
+      "sentence": "Puesto que ya lo ___, no necesito repetirlo.",
+      "options": [
+        "sabes",
+        "sepas",
+        "saber"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Puesto que + kijelentő mód, mert egy tényt indokol.",
+        "en": "Puesto que + indicative, because it explains a fact.",
+        "es": "Puesto que + indicativo, porque explica un hecho.",
+        "de": "Puesto que + Indikativ, weil es eine Tatsache erklärt."
+      },
+      "wrong": {
+        "sepas": {
+          "hu": "A „sepas” kötőmód itt nem kell, puesto que kijelentő módot kíván, helyesen: sabes.",
+          "en": "\"Sepas\" as a subjunctive isn't needed here, puesto que wants the indicative, correctly: sabes.",
+          "es": "«Sepas» en subjuntivo no hace falta aquí, puesto que pide indicativo, correcto: sabes.",
+          "de": "„Sepas” im Subjuntivo ist hier nicht nötig, puesto que verlangt den Indikativ, richtig: sabes."
+        },
+        "saber": {
+          "hu": "A „saber” infinitivo nem illik ide, ragozott alak kell, helyesen: sabes.",
+          "en": "\"Saber\" as an infinitive doesn't fit here, a conjugated form is needed, correctly: sabes.",
+          "es": "«Saber» en infinitivo no encaja aquí, hace falta una forma conjugada, correcto: sabes.",
+          "de": "„Saber” als Infinitiv passt hier nicht, eine konjugierte Form ist nötig, richtig: sabes."
+        }
+      },
+      "examples": [
+        "Puesto que lo sabes, no hace falta repetirlo.",
+        "Puesto que llueve, nos quedamos."
+      ]
+    },
+    {
+      "id": "fc-11",
+      "sentence": "Es que no ___ tiempo hoy.",
+      "options": [
+        "tengo",
+        "tenga",
+        "tener"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Es que (beszélt) + kijelentő mód.",
+        "en": "Es que (spoken) + indicative.",
+        "es": "Es que (hablado) + indicativo.",
+        "de": "Es que (gesprochen) + Indikativ."
+      },
+      "wrong": {
+        "tenga": {
+          "hu": "A „tenga” kötőmód nem illik ide, kijelentő kell, helyesen: tengo.",
+          "en": "\"Tenga\" as a subjunctive doesn't fit here, the indicative is needed, correctly: tengo.",
+          "es": "«Tenga» en subjuntivo no encaja aquí, hace falta indicativo, correcto: tengo.",
+          "de": "„Tenga” im Subjuntivo passt hier nicht, der Indikativ ist nötig, richtig: tengo."
+        },
+        "tener": {
+          "hu": "A „tener” infinitivo nem illik ide, ragozott alak kell, helyesen: tengo.",
+          "en": "\"Tener\" as an infinitive doesn't fit here, a conjugated form is needed, correctly: tengo.",
+          "es": "«Tener» en infinitivo no encaja aquí, hace falta una forma conjugada, correcto: tengo.",
+          "de": "„Tener” als Infinitiv passt hier nicht, eine konjugierte Form ist nötig, richtig: tengo."
+        }
+      },
+      "examples": [
+        "Es que no tengo dinero.",
+        "Es que se me hizo tarde."
+      ]
+    },
+    {
+      "id": "fc-12",
+      "sentence": "¿___ no viniste ayer a la fiesta?",
+      "options": [
+        "Por qué",
+        "Porque",
+        "Porqué"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Kérdésben „por qué” két szóban, ékezettel.",
+        "en": "In a question, \"por qué\" is two words, with an accent.",
+        "es": "En una pregunta, «por qué» va en dos palabras, con tilde.",
+        "de": "In einer Frage steht „por qué” in zwei Wörtern, mit Akzent."
+      },
+      "wrong": {
+        "Porque": {
+          "hu": "A „porque” az ok-kötő egy szóban, kérdésben nem ezt használjuk, helyesen: Por qué.",
+          "en": "\"Porque\" is the one-word cause connector, we don't use it in a question, correctly: Por qué.",
+          "es": "«Porque» es el nexo de causa en una palabra, no se usa en una pregunta, correcto: Por qué.",
+          "de": "„Porque” ist der einwortige Grund-Konnektor, in einer Frage verwenden wir es nicht, richtig: Por qué."
+        },
+        "Porqué": {
+          "hu": "A „porqué” főnév („az ok\"), nem kérdőszó, helyesen: Por qué.",
+          "en": "\"Porqué\" is a noun (\"the reason\"), not a question word, correctly: Por qué.",
+          "es": "«Porqué» es un sustantivo («la razón»), no una partícula interrogativa, correcto: Por qué.",
+          "de": "„Porqué” ist ein Substantiv („der Grund”), kein Fragewort, richtig: Por qué."
+        }
+      },
+      "examples": [
+        "¿Por qué no me llamaste?",
+        "Nadie sabe el porqué de su decisión."
+      ]
+    },
+    {
+      "id": "fc-match-01",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "para que",
+          "en": "so that (different subject, subjunctive)"
+        },
+        {
+          "es": "para + infinitivo",
+          "en": "in order to (same subject)"
+        },
+        {
+          "es": "porque",
+          "en": "because (indicative)"
+        },
+        {
+          "es": "como",
+          "en": "since (only at the start of the sentence)"
+        },
+        {
+          "es": "puesto que",
+          "en": "given that (indicative)"
+        },
+        {
+          "es": "no porque",
+          "en": "not because (subjunctive)"
+        }
+      ]
+    },
+    {
+      "id": "fc-form-01",
+      "kind": "form",
+      "verb": "modo",
+      "person": "para que",
+      "answer": "subjuntivo",
+      "table": "nexos"
+    },
+    {
+      "id": "fc-form-02",
+      "kind": "form",
+      "verb": "modo",
+      "person": "a fin de que",
+      "answer": "subjuntivo",
+      "table": "nexos"
+    },
+    {
+      "id": "fc-form-03",
+      "kind": "form",
+      "verb": "modo",
+      "person": "a que",
+      "answer": "subjuntivo",
+      "table": "nexos"
+    },
+    {
+      "id": "fc-form-04",
+      "kind": "form",
+      "verb": "modo",
+      "person": "porque",
+      "answer": "indicativo",
+      "table": "nexos"
+    },
+    {
+      "id": "fc-form-05",
+      "kind": "form",
+      "verb": "modo",
+      "person": "ya que",
+      "answer": "indicativo",
+      "table": "nexos"
+    },
+    {
+      "id": "fc-form-06",
+      "kind": "form",
+      "verb": "modo",
+      "person": "puesto que",
+      "answer": "indicativo",
+      "table": "nexos"
+    },
+    {
+      "id": "fc-form-07",
+      "kind": "form",
+      "verb": "modo",
+      "person": "como",
+      "answer": "indicativo",
+      "table": "nexos"
+    },
+    {
+      "id": "fc-form-08",
+      "kind": "form",
+      "verb": "modo",
+      "person": "es que",
+      "answer": "indicativo",
+      "table": "nexos"
+    },
+    {
+      "id": "fc-form-09",
+      "kind": "form",
+      "verb": "modo",
+      "person": "por",
+      "answer": "infinitivo",
+      "table": "nexos"
+    },
+    {
+      "id": "fc-form-10",
+      "kind": "form",
+      "verb": "modo",
+      "person": "no porque",
+      "answer": "subjuntivo",
+      "table": "nexos"
+    },
+    {
+      "id": "fc-form-11",
+      "kind": "form",
+      "verb": "modo",
+      "person": "sino porque",
+      "answer": "indicativo",
+      "table": "nexos"
+    },
+    {
+      "id": "fc-form-12",
+      "kind": "form",
+      "verb": "modo",
+      "person": "para + inf.",
+      "answer": "infinitivo",
+      "table": "nexos"
+    },
+    {
+      "kind": "why",
+      "id": "fc-why-01",
+      "es": "Te llamo para que me ayudes.",
+      "tr": {
+        "hu": "Hívlak, hogy segíts nekem.",
+        "en": "I'm calling you so that you help me.",
+        "es": "Te llamo para que me ayudes.",
+        "de": "Ich rufe dich an, damit du mir hilfst."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "cél, más alany → subjuntivo",
+            "en": "purpose, different subject → subjunctive",
+            "es": "finalidad, sujeto distinto → subjuntivo",
+            "de": "Zweck, anderes Subjekt → Subjuntivo"
+          }
+        },
+        {
+          "text": {
+            "hu": "ok, kijelentő mód",
+            "en": "cause, indicative mood",
+            "es": "causa, modo indicativo",
+            "de": "Grund, Indikativ"
+          },
+          "wrong": {
+            "hu": "A mondat nem egy fennálló tényt indokol, hanem egy még be nem következett célt fejez ki.",
+            "en": "The sentence doesn't explain an existing fact, it expresses a purpose that hasn't happened yet.",
+            "es": "La oración no explica un hecho existente, expresa una finalidad que todavía no ha pasado.",
+            "de": "Der Satz erklärt keine bestehende Tatsache, sondern drückt einen noch nicht eingetretenen Zweck aus."
+          }
+        },
+        {
+          "text": {
+            "hu": "cél, azonos alany → infinitivo",
+            "en": "purpose, same subject → infinitive",
+            "es": "finalidad, mismo sujeto → infinitivo",
+            "de": "Zweck, gleiches Subjekt → Infinitiv"
+          },
+          "wrong": {
+            "hu": "Az alany itt más (yo llamo, tú ayudas), ezért nem elég az infinitivo.",
+            "en": "The subject here differs (yo llamo, tú ayudas), so the infinitive isn't enough.",
+            "es": "El sujeto aquí es distinto (yo llamo, tú ayudas), por eso no basta el infinitivo.",
+            "de": "Das Subjekt ist hier verschieden (yo llamo, tú ayudas), deshalb reicht der Infinitiv nicht."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "fc-why-02",
+      "es": "No salgo porque llueve mucho.",
+      "tr": {
+        "hu": "Nem megyek ki, mert nagyon esik.",
+        "en": "I'm not going out because it's raining a lot.",
+        "es": "No salgo porque llueve mucho.",
+        "de": "Ich gehe nicht raus, weil es stark regnet."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "cél, más alany → subjuntivo",
+            "en": "purpose, different subject → subjunctive",
+            "es": "finalidad, sujeto distinto → subjuntivo",
+            "de": "Zweck, anderes Subjekt → Subjuntivo"
+          },
+          "wrong": {
+            "hu": "A mondat nem egy célt fejez ki, hanem egy már fennálló tényt indokol (esik).",
+            "en": "The sentence doesn't express a purpose, it explains an already existing fact (it's raining).",
+            "es": "La oración no expresa una finalidad, explica un hecho ya existente (llueve).",
+            "de": "Der Satz drückt keinen Zweck aus, sondern erklärt eine bereits bestehende Tatsache (es regnet)."
+          }
+        },
+        {
+          "text": {
+            "hu": "ok, kijelentő mód",
+            "en": "cause, indicative mood",
+            "es": "causa, modo indicativo",
+            "de": "Grund, Indikativ"
+          }
+        },
+        {
+          "text": {
+            "hu": "cél, azonos alany → infinitivo",
+            "en": "purpose, same subject → infinitive",
+            "es": "finalidad, mismo sujeto → infinitivo",
+            "de": "Zweck, gleiches Subjekt → Infinitiv"
+          },
+          "wrong": {
+            "hu": "Nincs itt „para\" + infinitivo szerkezet, a porque kijelentő módot kíván, nem infinitivót.",
+            "en": "There is no \"para\" + infinitive structure here, porque wants the indicative, not the infinitive.",
+            "es": "Aquí no hay estructura «para» + infinitivo, porque pide indicativo, no infinitivo.",
+            "de": "Hier gibt es keine „para” + Infinitiv-Struktur, porque verlangt den Indikativ, keinen Infinitiv."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "fc-why-03",
+      "es": "Estudio para aprobar el examen.",
+      "tr": {
+        "hu": "Tanulok, hogy átmenjek a vizsgán.",
+        "en": "I study to pass the exam.",
+        "es": "Estudio para aprobar el examen.",
+        "de": "Ich lerne, um die Prüfung zu bestehen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "cél, más alany → subjuntivo",
+            "en": "purpose, different subject → subjunctive",
+            "es": "finalidad, sujeto distinto → subjuntivo",
+            "de": "Zweck, anderes Subjekt → Subjuntivo"
+          },
+          "wrong": {
+            "hu": "Az alany itt ugyanaz (yo estudio, yo apruebo), ezért nem kell más alanyú kötőmód.",
+            "en": "The subject here is the same (yo estudio, yo apruebo), so no different-subject subjunctive is needed.",
+            "es": "El sujeto aquí es el mismo (yo estudio, yo apruebo), por eso no hace falta subjuntivo de sujeto distinto.",
+            "de": "Das Subjekt ist hier gleich (yo estudio, yo apruebo), deshalb ist kein Subjuntivo mit anderem Subjekt nötig."
+          }
+        },
+        {
+          "text": {
+            "hu": "ok, kijelentő mód",
+            "en": "cause, indicative mood",
+            "es": "causa, modo indicativo",
+            "de": "Grund, Indikativ"
+          },
+          "wrong": {
+            "hu": "A mondat egy célt fejez ki, nem egy már fennálló okot.",
+            "en": "The sentence expresses a purpose, not an already existing cause.",
+            "es": "La oración expresa una finalidad, no una causa ya existente.",
+            "de": "Der Satz drückt einen Zweck aus, keinen bereits bestehenden Grund."
+          }
+        },
+        {
+          "text": {
+            "hu": "cél, azonos alany → infinitivo",
+            "en": "purpose, same subject → infinitive",
+            "es": "finalidad, mismo sujeto → infinitivo",
+            "de": "Zweck, gleiches Subjekt → Infinitiv"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "fc-why-04",
+      "es": "Como llueve, no salgo.",
+      "tr": {
+        "hu": "Mivel esik, nem megyek ki.",
+        "en": "Since it's raining, I'm not going out.",
+        "es": "Como llueve, no salgo.",
+        "de": "Da es regnet, gehe ich nicht raus."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "cél, más alany → subjuntivo",
+            "en": "purpose, different subject → subjunctive",
+            "es": "finalidad, sujeto distinto → subjuntivo",
+            "de": "Zweck, anderes Subjekt → Subjuntivo"
+          },
+          "wrong": {
+            "hu": "A mondat nem egy célt fejez ki, hanem egy már fennálló okot (esik), a como innen indokol.",
+            "en": "The sentence doesn't express a purpose, it gives an already existing cause (it's raining), como explains it.",
+            "es": "La oración no expresa una finalidad, da una causa ya existente (llueve), como la explica.",
+            "de": "Der Satz drückt keinen Zweck aus, sondern gibt einen bereits bestehenden Grund an (es regnet), como erklärt ihn."
+          }
+        },
+        {
+          "text": {
+            "hu": "ok, kijelentő mód",
+            "en": "cause, indicative mood",
+            "es": "causa, modo indicativo",
+            "de": "Grund, Indikativ"
+          }
+        },
+        {
+          "text": {
+            "hu": "cél, azonos alany → infinitivo",
+            "en": "purpose, same subject → infinitive",
+            "es": "finalidad, mismo sujeto → infinitivo",
+            "de": "Zweck, gleiches Subjekt → Infinitiv"
+          },
+          "wrong": {
+            "hu": "Itt nincs azonos alanyú „para\" + infinitivo szerkezet, a como kijelentő módot kíván.",
+            "en": "There is no same-subject \"para\" + infinitive structure here, como wants the indicative.",
+            "es": "Aquí no hay estructura «para» + infinitivo de mismo sujeto, como pide indicativo.",
+            "de": "Hier gibt es keine „para” + Infinitiv-Struktur mit gleichem Subjekt, como verlangt den Indikativ."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "fc-why-05",
+      "es": "Vengo a que me ayudes.",
+      "tr": {
+        "hu": "Azért jövök, hogy segíts nekem.",
+        "en": "I've come for you to help me.",
+        "es": "Vengo a que me ayudes.",
+        "de": "Ich komme, damit du mir hilfst."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "cél, más alany → subjuntivo",
+            "en": "purpose, different subject → subjunctive",
+            "es": "finalidad, sujeto distinto → subjuntivo",
+            "de": "Zweck, anderes Subjekt → Subjuntivo"
+          }
+        },
+        {
+          "text": {
+            "hu": "ok, kijelentő mód",
+            "en": "cause, indicative mood",
+            "es": "causa, modo indicativo",
+            "de": "Grund, Indikativ"
+          },
+          "wrong": {
+            "hu": "A mondat nem egy fennálló tényt indokol, hanem egy még be nem következett célt fejez ki egy mozgás-ige után.",
+            "en": "The sentence doesn't explain an existing fact, it expresses a purpose that hasn't happened yet, after a verb of motion.",
+            "es": "La oración no explica un hecho existente, expresa una finalidad que todavía no ha pasado, después de un verbo de movimiento.",
+            "de": "Der Satz erklärt keine bestehende Tatsache, sondern drückt einen noch nicht eingetretenen Zweck nach einem Bewegungsverb aus."
+          }
+        },
+        {
+          "text": {
+            "hu": "cél, azonos alany → infinitivo",
+            "en": "purpose, same subject → infinitive",
+            "es": "finalidad, mismo sujeto → infinitivo",
+            "de": "Zweck, gleiches Subjekt → Infinitiv"
+          },
+          "wrong": {
+            "hu": "Az alany itt más (yo vengo, tú ayudas), ezért nem elég az infinitivo.",
+            "en": "The subject here differs (yo vengo, tú ayudas), so the infinitive isn't enough.",
+            "es": "El sujeto aquí es distinto (yo vengo, tú ayudas), por eso no basta el infinitivo.",
+            "de": "Das Subjekt ist hier verschieden (yo vengo, tú ayudas), deshalb reicht der Infinitiv nicht."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "fc-why-06",
+      "es": "Puesto que lo sabes, dímelo.",
+      "tr": {
+        "hu": "Mivel tudod, mondd el nekem.",
+        "en": "Given that you know it, tell it to me.",
+        "es": "Puesto que lo sabes, dímelo.",
+        "de": "Da du es weißt, sag es mir."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "cél, más alany → subjuntivo",
+            "en": "purpose, different subject → subjunctive",
+            "es": "finalidad, sujeto distinto → subjuntivo",
+            "de": "Zweck, anderes Subjekt → Subjuntivo"
+          },
+          "wrong": {
+            "hu": "A mondat nem egy célt fejez ki, hanem egy már fennálló tényt indokol (tudod).",
+            "en": "The sentence doesn't express a purpose, it explains an already existing fact (you know it).",
+            "es": "La oración no expresa una finalidad, explica un hecho ya existente (lo sabes).",
+            "de": "Der Satz drückt keinen Zweck aus, sondern erklärt eine bereits bestehende Tatsache (du weißt es)."
+          }
+        },
+        {
+          "text": {
+            "hu": "ok, kijelentő mód",
+            "en": "cause, indicative mood",
+            "es": "causa, modo indicativo",
+            "de": "Grund, Indikativ"
+          }
+        },
+        {
+          "text": {
+            "hu": "cél, azonos alany → infinitivo",
+            "en": "purpose, same subject → infinitive",
+            "es": "finalidad, mismo sujeto → infinitivo",
+            "de": "Zweck, gleiches Subjekt → Infinitiv"
+          },
+          "wrong": {
+            "hu": "Itt nincs azonos alanyú „para\" + infinitivo szerkezet, a puesto que kijelentő módot kíván.",
+            "en": "There is no same-subject \"para\" + infinitive structure here, puesto que wants the indicative.",
+            "es": "Aquí no hay estructura «para» + infinitivo de mismo sujeto, puesto que pide indicativo.",
+            "de": "Hier gibt es keine „para” + Infinitiv-Struktur mit gleichem Subjekt, puesto que verlangt den Indikativ."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "fc-why-07",
+      "es": "Trabajo para ganar dinero.",
+      "tr": {
+        "hu": "Dolgozom, hogy pénzt keressek.",
+        "en": "I work to earn money.",
+        "es": "Trabajo para ganar dinero.",
+        "de": "Ich arbeite, um Geld zu verdienen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "cél, más alany → subjuntivo",
+            "en": "purpose, different subject → subjunctive",
+            "es": "finalidad, sujeto distinto → subjuntivo",
+            "de": "Zweck, anderes Subjekt → Subjuntivo"
+          },
+          "wrong": {
+            "hu": "Az alany itt ugyanaz (yo trabajo, yo gano), ezért nem kell más alanyú kötőmód.",
+            "en": "The subject here is the same (yo trabajo, yo gano), so no different-subject subjunctive is needed.",
+            "es": "El sujeto aquí es el mismo (yo trabajo, yo gano), por eso no hace falta subjuntivo de sujeto distinto.",
+            "de": "Das Subjekt ist hier gleich (yo trabajo, yo gano), deshalb ist kein Subjuntivo mit anderem Subjekt nötig."
+          }
+        },
+        {
+          "text": {
+            "hu": "ok, kijelentő mód",
+            "en": "cause, indicative mood",
+            "es": "causa, modo indicativo",
+            "de": "Grund, Indikativ"
+          },
+          "wrong": {
+            "hu": "A mondat egy célt fejez ki, nem egy már fennálló okot.",
+            "en": "The sentence expresses a purpose, not an already existing cause.",
+            "es": "La oración expresa una finalidad, no una causa ya existente.",
+            "de": "Der Satz drückt einen Zweck aus, keinen bereits bestehenden Grund."
+          }
+        },
+        {
+          "text": {
+            "hu": "cél, azonos alany → infinitivo",
+            "en": "purpose, same subject → infinitive",
+            "es": "finalidad, mismo sujeto → infinitivo",
+            "de": "Zweck, gleiches Subjekt → Infinitiv"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}
