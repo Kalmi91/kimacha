@@ -677,7 +677,7 @@ export default {
   },
   // PLAN-pcic 5. lépés: a PCIC fül (angol -> spanyol gépelés, Anki-gombok).
   pcic: {
-    header: (due: number, newCount: number, doneToday: number) => `esedékes ${due} · új ${newCount} · ma kész ${doneToday}`,
+    header: (due: number, newCount: number, doneToday: number, total: number) => `${total} szó · esedékes ${due} · új ${newCount} · ma kész ${doneToday}`,
     again: 'Nem tudtam',
     hard: 'Nehéz',
     good: 'Tudtam',
