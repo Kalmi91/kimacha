@@ -7,33 +7,51 @@
 // 4. minden b1-all.json id "b1-" + 8 hex karakter
 // 5. az `order` mezo egyedi es hezagmentes 0..n-1 a b1-all.json-ban
 // 6. minden `headword` letezo id-ra mutat
+// --all kapcsoló: a checked halmaz b1-all.json (nem a minta); 1. ellenőrzés helyett
+// csak azt nézi, hogy minden meglévő b1-en.json érték nem-üres string, és kiírja
+// az `en <lefordított>/<fordítható>` állást.
 //
-// Usage: node scripts/pcic-check.mjs
+// Usage: node scripts/pcic-check.mjs [--all]
 
 import { readFileSync } from 'node:fs';
+
+const useAll = process.argv.includes('--all');
 
 const sample = JSON.parse(readFileSync('data/pcic/b1-sample.json', 'utf8'));
 const en = JSON.parse(readFileSync('data/pcic/b1-en.json', 'utf8'));
 const all = JSON.parse(readFileSync('data/pcic/b1-all.json', 'utf8'));
 
+const checked = useAll ? all : sample;
+
 let errors = 0;
 
-// 1. minden nem-pattern id-nak van nem-üres fordítása
-const missing = [];
-for (const item of sample) {
-  if (item.kind === 'pattern') continue;
-  const value = en[item.id];
-  if (typeof value !== 'string' || value.trim() === '') missing.push(item.id);
-}
-if (missing.length) {
-  errors += missing.length;
-  console.error(`Hiányzó/üres fordítás (${missing.length}): ${missing.join(', ')}`);
+if (useAll) {
+  // 1. minden meglévő b1-en.json érték nem-üres string
+  const badValues = Object.entries(en)
+    .filter(([, value]) => typeof value !== 'string' || value.trim() === '')
+    .map(([id]) => id);
+  if (badValues.length) {
+    errors += badValues.length;
+    console.error(`Üres/nem-string fordítás (${badValues.length}): ${badValues.join(', ')}`);
+  }
+} else {
+  // 1. minden nem-pattern id-nak van nem-üres fordítása
+  const missing = [];
+  for (const item of checked) {
+    if (item.kind === 'pattern') continue;
+    const value = en[item.id];
+    if (typeof value !== 'string' || value.trim() === '') missing.push(item.id);
+  }
+  if (missing.length) {
+    errors += missing.length;
+    console.error(`Hiányzó/üres fordítás (${missing.length}): ${missing.join(', ')}`);
+  }
 }
 
-// 2. nincs két azonos kisbetűs `es` a mintában
+// 2. nincs két azonos kisbetűs `es` a checked halmazban
 const seen = new Map();
 const dupes = [];
-for (const item of sample) {
+for (const item of checked) {
   const key = item.es.toLowerCase();
   if (seen.has(key)) dupes.push(`${item.id} == ${seen.get(key)} ("${item.es}")`);
   else seen.set(key, item.id);
@@ -43,9 +61,9 @@ if (dupes.length) {
   console.error(`Duplikált 'es' a mintában (${dupes.length}): ${dupes.join(', ')}`);
 }
 
-// 3. nincs olyan b1-en.json kulcs, ami nem szerepel a mintában
-const sampleIds = new Set(sample.map((item) => item.id));
-const orphans = Object.keys(en).filter((id) => !sampleIds.has(id));
+// 3. nincs olyan b1-en.json kulcs, ami nem szerepel a checked halmazban
+const checkedIds = new Set(checked.map((item) => item.id));
+const orphans = Object.keys(en).filter((id) => !checkedIds.has(id));
 if (orphans.length) {
   errors += orphans.length;
   console.error(`Árva b1-en.json kulcs, nincs a mintában (${orphans.length}): ${orphans.join(', ')}`);
@@ -80,4 +98,10 @@ if (errors) {
   process.exit(1);
 }
 
-console.log(`pcic:check OK, ${sample.length} tétel, ${Object.keys(en).length} fordítás, ${all.length} tétel a corpusban`);
+if (useAll) {
+  const translatable = all.filter((item) => item.kind !== 'pattern');
+  const translated = translatable.filter((item) => typeof en[item.id] === 'string' && en[item.id].trim() !== '').length;
+  console.log(`pcic:check OK, en ${translated}/${translatable.length}, ${all.length} tétel a corpusban`);
+} else {
+  console.log(`pcic:check OK, ${sample.length} tétel, ${Object.keys(en).length} fordítás, ${all.length} tétel a corpusban`);
+}
