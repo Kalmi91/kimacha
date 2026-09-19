@@ -182,14 +182,19 @@ export function buildCcatOddOneOut(pool: OddWordMeta[], seed: number): CcatOddOn
 export function buildSentenceFillItem(lang: string, seed: number): CcatSentenceFillItem | null {
   const topics = getGrammarTopics(lang);
   if (topics.length === 0) return null;
-  const topic = shuffleArray(topics, seed)[0];
   // FB219: a nyelvtan-témák között már jelölős tétel is van (kész mondat, nincs
   // lyuk); a CCAT mondat-kiegészítése csak a lyukasat tudja megjeleníteni.
   // LECKE-SEMA 2: a kör match/form tételeket is tartalmazhat, azoknak nincs
-  // opció-listájuk; az `isChoiceRoundItem` szűri ki előbb ezeket.
-  const round = buildGrammarRound(topic, seed + 1).filter(isChoiceRoundItem).filter((r) => !isMarkItem(r.item));
-  if (round.length === 0) return null;
-  return { kind: 'sentenceFill', topic, round: round[0] };
+  // opció-listájuk; az `isChoiceRoundItem` szűri ki előbb ezeket. Egy tisztán
+  // `transform` tételekből álló téma (pl. indefinido-10-verbos) így 0 hosszú
+  // kört adna; a shuffle-elt lista következő témájával próbálkozunk tovább.
+  const shuffled = shuffleArray(topics, seed);
+  for (let i = 0; i < shuffled.length; i++) {
+    const topic = shuffled[i];
+    const round = buildGrammarRound(topic, seed + 1 + i).filter(isChoiceRoundItem).filter((r) => !isMarkItem(r.item));
+    if (round.length > 0) return { kind: 'sentenceFill', topic, round: round[0] };
+  }
+  return null;
 }
 
 // ---------------------------------------------------------------------------

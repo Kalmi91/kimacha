@@ -123,18 +123,68 @@
         "de": "Condicional simple, regelmäßige Verben"
       },
       "header": [
-        { "hu": "Személy", "en": "Person", "es": "Persona", "de": "Person" },
-        { "hu": "hablar", "en": "hablar", "es": "hablar", "de": "hablar" },
-        { "hu": "comer", "en": "comer", "es": "comer", "de": "comer" },
-        { "hu": "vivir", "en": "vivir", "es": "vivir", "de": "vivir" }
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "hablar",
+          "en": "hablar",
+          "es": "hablar",
+          "de": "hablar"
+        },
+        {
+          "hu": "comer",
+          "en": "comer",
+          "es": "comer",
+          "de": "comer"
+        },
+        {
+          "hu": "vivir",
+          "en": "vivir",
+          "es": "vivir",
+          "de": "vivir"
+        }
       ],
       "rows": [
-        ["yo", "hablaría", "comería", "viviría"],
-        ["tú", "hablarías", "comerías", "vivirías"],
-        ["él/ella/usted", "hablaría", "comería", "viviría"],
-        ["nosotros", "hablaríamos", "comeríamos", "viviríamos"],
-        ["vosotros", "hablaríais", "comeríais", "viviríais"],
-        ["ellos/ellas/ustedes", "hablarían", "comerían", "vivirían"]
+        [
+          "yo",
+          "hablaría",
+          "comería",
+          "viviría"
+        ],
+        [
+          "tú",
+          "hablarías",
+          "comerías",
+          "vivirías"
+        ],
+        [
+          "él/ella/usted",
+          "hablaría",
+          "comería",
+          "viviría"
+        ],
+        [
+          "nosotros",
+          "hablaríamos",
+          "comeríamos",
+          "viviríamos"
+        ],
+        [
+          "vosotros",
+          "hablaríais",
+          "comeríais",
+          "viviríais"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "hablarían",
+          "comerían",
+          "vivirían"
+        ]
       ]
     },
     {
@@ -147,19 +197,80 @@
         "de": "Condicional simple, Verben mit unregelmäßigem Stamm"
       },
       "header": [
-        { "hu": "Személy", "en": "Person", "es": "Persona", "de": "Person" },
-        { "hu": "tener", "en": "tener", "es": "tener", "de": "tener" },
-        { "hu": "poder", "en": "poder", "es": "poder", "de": "poder" },
-        { "hu": "hacer", "en": "hacer", "es": "hacer", "de": "hacer" },
-        { "hu": "decir", "en": "decir", "es": "decir", "de": "decir" }
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "tener",
+          "en": "tener",
+          "es": "tener",
+          "de": "tener"
+        },
+        {
+          "hu": "poder",
+          "en": "poder",
+          "es": "poder",
+          "de": "poder"
+        },
+        {
+          "hu": "hacer",
+          "en": "hacer",
+          "es": "hacer",
+          "de": "hacer"
+        },
+        {
+          "hu": "decir",
+          "en": "decir",
+          "es": "decir",
+          "de": "decir"
+        }
       ],
       "rows": [
-        ["yo", "tendría", "podría", "haría", "diría"],
-        ["tú", "tendrías", "podrías", "harías", "dirías"],
-        ["él/ella/usted", "tendría", "podría", "haría", "diría"],
-        ["nosotros", "tendríamos", "podríamos", "haríamos", "diríamos"],
-        ["vosotros", "tendríais", "podríais", "haríais", "diríais"],
-        ["ellos/ellas/ustedes", "tendrían", "podrían", "harían", "dirían"]
+        [
+          "yo",
+          "tendría",
+          "podría",
+          "haría",
+          "diría"
+        ],
+        [
+          "tú",
+          "tendrías",
+          "podrías",
+          "harías",
+          "dirías"
+        ],
+        [
+          "él/ella/usted",
+          "tendría",
+          "podría",
+          "haría",
+          "diría"
+        ],
+        [
+          "nosotros",
+          "tendríamos",
+          "podríamos",
+          "haríamos",
+          "diríamos"
+        ],
+        [
+          "vosotros",
+          "tendríais",
+          "podríais",
+          "haríais",
+          "diríais"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "tendrían",
+          "podrían",
+          "harían",
+          "dirían"
+        ]
       ]
     },
     {
@@ -440,29 +551,169 @@
     "de": "Das condicional simple drückt aus, was du unter einer Bedingung tun würdest, oder etwas, das sanft und höflich gesagt wird. Bei den meisten Verben hängen dieselben sechs Endungen am ganzen Infinitiv: «hablaría», «comería», «viviría». Manche Verben bekommen einen kürzeren Stamm, aber die Endungen bleiben gleich: «tendría», «podría», «haría», «diría». Wir benutzen es für eine höfliche Bitte, wie «¿me podría decir la hora?», und für sanften Rat, wie «deberías descansar más». Für einen Wunsch ist «me gustaría» die sanfte Form, viel höflicher als me gusta. In Mexiko lautet die richtige Form statt vosotros immer «ustedes hablarían»."
   },
   "glossary": [
-    { "word": "debería", "gloss": { "hu": "kellene neki/nekem", "en": "should (he/she/I)", "es": "debería", "de": "sollte" } },
-    { "word": "deberías", "gloss": { "hu": "kellene neked", "en": "you should", "es": "deberías", "de": "du solltest" } },
-    { "word": "podría", "gloss": { "hu": "tudna, tudnék", "en": "could (he/she/I)", "es": "podría", "de": "könnte" } },
-    { "word": "podrías", "gloss": { "hu": "tudnál", "en": "you could", "es": "podrías", "de": "du könntest" } },
-    { "word": "podríamos", "gloss": { "hu": "tudnánk", "en": "we could", "es": "podríamos", "de": "wir könnten" } },
-    { "word": "gustaría", "gloss": { "hu": "szeretnék, szeretne", "en": "would like", "es": "gustaría", "de": "würde gern mögen" } },
-    { "word": "sería", "gloss": { "hu": "lenne", "en": "it would be", "es": "sería", "de": "es wäre" } },
-    { "word": "saldríamos", "gloss": { "hu": "elmennénk, kimennénk", "en": "we would leave/go out", "es": "saldríamos", "de": "wir würden losgehen" } },
-    { "word": "haría", "gloss": { "hu": "csinálnék, csinálna", "en": "would do (I/he/she)", "es": "haría", "de": "würde machen" } },
-    { "word": "harías", "gloss": { "hu": "csinálnál", "en": "you would do", "es": "harías", "de": "du würdest machen" } },
-    { "word": "vendrían", "gloss": { "hu": "eljönnének", "en": "they would come", "es": "vendrían", "de": "sie würden kommen" } },
-    { "word": "tendría", "gloss": { "hu": "lenne neki (birtokolna)", "en": "he/she would have", "es": "tendría", "de": "er/sie hätte" } },
-    { "word": "dinero", "gloss": { "hu": "pénz", "en": "money", "es": "el dinero", "de": "Geld" } },
-    { "word": "hora", "gloss": { "hu": "óra, időpont", "en": "time, hour", "es": "la hora", "de": "Uhrzeit" } },
-    { "word": "invitar", "gloss": { "hu": "meghívni", "en": "to invite", "es": "invitar", "de": "einladen" } },
-    { "word": "verte", "gloss": { "hu": "látni téged", "en": "to see you", "es": "verte", "de": "dich sehen" } },
-    { "word": "pudiéramos", "gloss": { "hu": "tudnánk (kötőmód, múlt idejű feltétel)", "en": "we could (subjunctive, used in if-clauses)", "es": "pudiéramos", "de": "wir könnten (Konjunktiv, in Wenn-Sätzen)" } }
+    {
+      "word": "debería",
+      "gloss": {
+        "hu": "kellene neki/nekem",
+        "en": "should (he/she/I)",
+        "es": "debería",
+        "de": "sollte"
+      }
+    },
+    {
+      "word": "deberías",
+      "gloss": {
+        "hu": "kellene neked",
+        "en": "you should",
+        "es": "deberías",
+        "de": "du solltest"
+      }
+    },
+    {
+      "word": "podría",
+      "gloss": {
+        "hu": "tudna, tudnék",
+        "en": "could (he/she/I)",
+        "es": "podría",
+        "de": "könnte"
+      }
+    },
+    {
+      "word": "podrías",
+      "gloss": {
+        "hu": "tudnál",
+        "en": "you could",
+        "es": "podrías",
+        "de": "du könntest"
+      }
+    },
+    {
+      "word": "podríamos",
+      "gloss": {
+        "hu": "tudnánk",
+        "en": "we could",
+        "es": "podríamos",
+        "de": "wir könnten"
+      }
+    },
+    {
+      "word": "gustaría",
+      "gloss": {
+        "hu": "szeretnék, szeretne",
+        "en": "would like",
+        "es": "gustaría",
+        "de": "würde gern mögen"
+      }
+    },
+    {
+      "word": "sería",
+      "gloss": {
+        "hu": "lenne",
+        "en": "it would be",
+        "es": "sería",
+        "de": "es wäre"
+      }
+    },
+    {
+      "word": "saldríamos",
+      "gloss": {
+        "hu": "elmennénk, kimennénk",
+        "en": "we would leave/go out",
+        "es": "saldríamos",
+        "de": "wir würden losgehen"
+      }
+    },
+    {
+      "word": "haría",
+      "gloss": {
+        "hu": "csinálnék, csinálna",
+        "en": "would do (I/he/she)",
+        "es": "haría",
+        "de": "würde machen"
+      }
+    },
+    {
+      "word": "harías",
+      "gloss": {
+        "hu": "csinálnál",
+        "en": "you would do",
+        "es": "harías",
+        "de": "du würdest machen"
+      }
+    },
+    {
+      "word": "vendrían",
+      "gloss": {
+        "hu": "eljönnének",
+        "en": "they would come",
+        "es": "vendrían",
+        "de": "sie würden kommen"
+      }
+    },
+    {
+      "word": "tendría",
+      "gloss": {
+        "hu": "lenne neki (birtokolna)",
+        "en": "he/she would have",
+        "es": "tendría",
+        "de": "er/sie hätte"
+      }
+    },
+    {
+      "word": "dinero",
+      "gloss": {
+        "hu": "pénz",
+        "en": "money",
+        "es": "el dinero",
+        "de": "Geld"
+      }
+    },
+    {
+      "word": "hora",
+      "gloss": {
+        "hu": "óra, időpont",
+        "en": "time, hour",
+        "es": "la hora",
+        "de": "Uhrzeit"
+      }
+    },
+    {
+      "word": "invitar",
+      "gloss": {
+        "hu": "meghívni",
+        "en": "to invite",
+        "es": "invitar",
+        "de": "einladen"
+      }
+    },
+    {
+      "word": "verte",
+      "gloss": {
+        "hu": "látni téged",
+        "en": "to see you",
+        "es": "verte",
+        "de": "dich sehen"
+      }
+    },
+    {
+      "word": "pudiéramos",
+      "gloss": {
+        "hu": "tudnánk (kötőmód, múlt idejű feltétel)",
+        "en": "we could (subjunctive, used in if-clauses)",
+        "es": "pudiéramos",
+        "de": "wir könnten (Konjunktiv, in Wenn-Sätzen)"
+      }
+    }
   ],
   "items": [
     {
       "id": "cd-01",
       "sentence": "___ descansar más.",
-      "options": ["Deberías", "Debes", "Debería"],
+      "options": [
+        "Deberías",
+        "Debes",
+        "Debería"
+      ],
       "correct": 0,
       "why": {
         "hu": "Puha tanács tú-nak: deberías, nem kötelezettség.",
@@ -484,12 +735,23 @@
           "de": "„Debería” ist eine korrekte Konditionalform, aber für yo/er-sie-usted: damit würde der Satz bedeuten, dass ICH oder ER/SIE sich ausruhen sollte, nicht DU."
         }
       },
-      "examples": ["Deberías dormir ocho horas.", "Deberías tomar agua todos los días."]
+      "examples": [
+        "Deberías dormir ocho horas.",
+        "Deberías tomar agua todos los días."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-02",
       "sentence": "¿___ ayudarme con esto?",
-      "options": ["Podrías", "Puedes", "Podía"],
+      "options": [
+        "Podrías",
+        "Puedes",
+        "Podía"
+      ],
       "correct": 0,
       "why": {
         "hu": "Udvarias kérés condicionalban: podrías.",
@@ -511,12 +773,23 @@
           "de": "„Podía” ist Vergangenheit (Imperfekt): damit würde der Satz fragen, ob ich früher helfen KONNTE, nicht eine höfliche Bitte von jetzt ausdrücken."
         }
       },
-      "examples": ["¿Podrías cerrar la puerta?", "¿Podrías llamarme más tarde?"]
+      "examples": [
+        "¿Podrías cerrar la puerta?",
+        "¿Podrías llamarme más tarde?"
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-03",
       "sentence": "Me ___ un café, por favor.",
-      "options": ["gustaría", "gusta", "gustaba"],
+      "options": [
+        "gustaría",
+        "gusta",
+        "gustaba"
+      ],
       "correct": 0,
       "why": {
         "hu": "Udvarias, lágy kívánság: me gustaría.",
@@ -538,12 +811,23 @@
           "de": "„Gustaba” ist Vergangenheit: damit würde der Satz bedeuten, dass mir früher ein Kaffee gefiel, über eine vergangene Vorliebe, nicht über eine jetzige Bitte."
         }
       },
-      "examples": ["Me gustaría un té, gracias.", "Nos gustaría visitar Oaxaca."]
+      "examples": [
+        "Me gustaría un té, gracias.",
+        "Nos gustaría visitar Oaxaca."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-04",
       "sentence": "___ buena idea invitar a Ana.",
-      "options": ["Sería", "Es", "Era"],
+      "options": [
+        "Sería",
+        "Es",
+        "Era"
+      ],
       "correct": 0,
       "why": {
         "hu": "Feltételezett, még meg nem történt dolog: sería buena idea.",
@@ -565,12 +849,23 @@
           "de": "„Era” ist Vergangenheit: damit würde der Satz bedeuten, dass es früher eine gute Idee war, Ana einzuladen, nicht dass es jetzt, hypothetisch, eine wäre."
         }
       },
-      "examples": ["Sería genial verte pronto.", "Sería más fácil con tu ayuda."]
+      "examples": [
+        "Sería genial verte pronto.",
+        "Sería más fácil con tu ayuda."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-05",
       "sentence": "Nosotros ___ mañana si hay tiempo.",
-      "options": ["saldríamos", "salimos", "saldrán"],
+      "options": [
+        "saldríamos",
+        "salimos",
+        "saldrán"
+      ],
       "correct": 0,
       "why": {
         "hu": "Nosotroshoz -íamos jár, a salir szabálytalan tövével: saldríamos.",
@@ -592,12 +887,23 @@
           "de": "„Saldrán” ist die ellos-Form im Futur: damit würde das Subjekt des Satzes nicht zu „Nosotros” passen, da es auf eine andere Person verweist."
         }
       },
-      "examples": ["Saldríamos temprano si pudiéramos.", "Nosotros saldríamos contigo con gusto."]
+      "examples": [
+        "Saldríamos temprano si pudiéramos.",
+        "Nosotros saldríamos contigo con gusto."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-06",
       "sentence": "Yo ___ eso, pero no tengo tiempo.",
-      "options": ["haría", "hago", "hacía"],
+      "options": [
+        "haría",
+        "hago",
+        "hacía"
+      ],
       "correct": 0,
       "why": {
         "hu": "Feltételes cselekvés, ami a valóságban nem történik meg: yo haría.",
@@ -619,12 +925,23 @@
           "de": "„Hacía” ist Vergangenheit: damit würde der Satz bedeuten, dass ich das früher tat, nicht dass ich es jetzt, hypothetisch, tun würde, wenn ich Zeit hätte."
         }
       },
-      "examples": ["Yo haría eso por ti.", "Haría más ejercicio si tuviera tiempo."]
+      "examples": [
+        "Yo haría eso por ti.",
+        "Haría más ejercicio si tuviera tiempo."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-07",
       "sentence": "Ellos ___ a la fiesta.",
-      "options": ["vendrían", "vienen", "venían"],
+      "options": [
+        "vendrían",
+        "vienen",
+        "venían"
+      ],
       "correct": 0,
       "why": {
         "hu": "Feltételes szándék, szabálytalan tővel: vendrían.",
@@ -646,12 +963,23 @@
           "de": "„Venían” ist Vergangenheit (Imperfekt): damit würde der Satz bedeuten, dass sie früher regelmäßig zur Party kamen, keine gegenwärtige, hypothetische Absicht beschreiben."
         }
       },
-      "examples": ["Vendrían si los invitas.", "Ellos vendrían con mucho gusto."]
+      "examples": [
+        "Vendrían si los invitas.",
+        "Ellos vendrían con mucho gusto."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-08",
       "sentence": "¿Qué ___ tú en mi lugar?",
-      "options": ["harías", "haces", "hacías"],
+      "options": [
+        "harías",
+        "haces",
+        "hacías"
+      ],
       "correct": 0,
       "why": {
         "hu": "Feltételezett helyzet: mit csinálnál te? harías.",
@@ -673,12 +1001,23 @@
           "de": "„Hacías” ist Vergangenheit: damit würde der Satz fragen, was du früher zu tun pflegtest, nicht was du jetzt, in einer vorgestellten Situation, tun würdest."
         }
       },
-      "examples": ["¿Qué harías tú en mi lugar?", "Yo no sé qué harías tú."]
+      "examples": [
+        "¿Qué harías tú en mi lugar?",
+        "Yo no sé qué harías tú."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-09",
       "sentence": "Ella ___ mucho dinero con ese trabajo.",
-      "options": ["tendría", "tiene", "tenía"],
+      "options": [
+        "tendría",
+        "tiene",
+        "tenía"
+      ],
       "correct": 0,
       "why": {
         "hu": "Feltételezett eredmény: tendría, szabálytalan tővel.",
@@ -700,12 +1039,23 @@
           "de": "„Tenía” ist Vergangenheit: damit würde der Satz bedeuten, dass sie mit diesem Job früher viel Geld hatte, nicht dass sie es in einer hypothetischen Lage hätte."
         }
       },
-      "examples": ["Ella tendría más dinero con ese trabajo.", "Tendríamos más tiempo libre así."]
+      "examples": [
+        "Ella tendría más dinero con ese trabajo.",
+        "Tendríamos más tiempo libre así."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-10",
       "sentence": "Mi hermano ___ estudiar más.",
-      "options": ["debería", "debe", "debía"],
+      "options": [
+        "debería",
+        "debe",
+        "debía"
+      ],
       "correct": 0,
       "why": {
         "hu": "Harmadik személyű puha tanács: debería.",
@@ -727,12 +1077,23 @@
           "de": "„Debía” ist Vergangenheit: damit würde der Satz bedeuten, dass er früher mehr hätte lernen sollen, nicht dass er es jetzt, in der Gegenwart, sollte."
         }
       },
-      "examples": ["Mi hermano debería descansar más.", "Deberías escucharlo, tiene razón."]
+      "examples": [
+        "Mi hermano debería descansar más.",
+        "Deberías escucharlo, tiene razón."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-11",
       "sentence": "Nosotros no ___ eso sin ayuda.",
-      "options": ["podríamos", "podemos", "pudimos"],
+      "options": [
+        "podríamos",
+        "podemos",
+        "pudimos"
+      ],
       "correct": 0,
       "why": {
         "hu": "Feltételezett képesség: podríamos, szabálytalan tővel.",
@@ -754,12 +1115,23 @@
           "de": "„Pudimos” ist Vergangenheit (Indefinido): damit würde der Satz bedeuten, dass wir es bei einem konkreten, abgeschlossenen Anlass NICHT ohne Hilfe schafften, keine hypothetische Situation beschreiben."
         }
       },
-      "examples": ["No podríamos terminar sin tu ayuda.", "Podríamos intentarlo juntos."]
+      "examples": [
+        "No podríamos terminar sin tu ayuda.",
+        "Podríamos intentarlo juntos."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-12",
       "sentence": "¿Me ___ decir la hora, por favor?",
-      "options": ["podría", "puede", "pudo"],
+      "options": [
+        "podría",
+        "puede",
+        "pudo"
+      ],
       "correct": 0,
       "why": {
         "hu": "Udvarias hivatalos/boltos kérés usted-nek: me podría decir.",
@@ -781,19 +1153,48 @@
           "de": "„Pudo” ist Vergangenheit: damit würde der Satz fragen, ob es ihm oder ihr bei einer vergangenen Gelegenheit GELANG, die Uhrzeit zu sagen, keine gegenwärtige, höfliche Bitte ausdrücken."
         }
       },
-      "examples": ["¿Me podría ayudar, por favor?", "¿Nos podría traer la cuenta?"]
+      "examples": [
+        "¿Me podría ayudar, por favor?",
+        "¿Nos podría traer la cuenta?"
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-match-01",
       "kind": "match",
       "pairs": [
-        { "es": "me gustaría un café", "en": "I would like a coffee" },
-        { "es": "deberías descansar", "en": "you should rest" },
-        { "es": "¿podrías ayudarme?", "en": "could you help me?" },
-        { "es": "sería buena idea", "en": "it would be a good idea" },
-        { "es": "no podríamos sin ayuda", "en": "we could not without help" },
-        { "es": "vendrían a la fiesta", "en": "they would come to the party" }
-      ]
+        {
+          "es": "me gustaría un café",
+          "en": "I would like a coffee"
+        },
+        {
+          "es": "deberías descansar",
+          "en": "you should rest"
+        },
+        {
+          "es": "¿podrías ayudarme?",
+          "en": "could you help me?"
+        },
+        {
+          "es": "sería buena idea",
+          "en": "it would be a good idea"
+        },
+        {
+          "es": "no podríamos sin ayuda",
+          "en": "we could not without help"
+        },
+        {
+          "es": "vendrían a la fiesta",
+          "en": "they would come to the party"
+        }
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-form-01",
@@ -801,7 +1202,11 @@
       "verb": "hablar",
       "person": "yo",
       "answer": "hablaría",
-      "table": "condicional-regular"
+      "table": "condicional-regular",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-form-02",
@@ -809,7 +1214,11 @@
       "verb": "hablar",
       "person": "nosotros",
       "answer": "hablaríamos",
-      "table": "condicional-regular"
+      "table": "condicional-regular",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-form-03",
@@ -817,7 +1226,11 @@
       "verb": "comer",
       "person": "tú",
       "answer": "comerías",
-      "table": "condicional-regular"
+      "table": "condicional-regular",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-form-04",
@@ -825,7 +1238,11 @@
       "verb": "vivir",
       "person": "ellos/ellas/ustedes",
       "answer": "vivirían",
-      "table": "condicional-regular"
+      "table": "condicional-regular",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-form-05",
@@ -833,7 +1250,11 @@
       "verb": "tener",
       "person": "yo",
       "answer": "tendría",
-      "table": "condicional-irregular"
+      "table": "condicional-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-form-06",
@@ -841,7 +1262,11 @@
       "verb": "tener",
       "person": "ellos/ellas/ustedes",
       "answer": "tendrían",
-      "table": "condicional-irregular"
+      "table": "condicional-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-form-07",
@@ -849,7 +1274,11 @@
       "verb": "poder",
       "person": "tú",
       "answer": "podrías",
-      "table": "condicional-irregular"
+      "table": "condicional-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-form-08",
@@ -857,7 +1286,11 @@
       "verb": "poder",
       "person": "nosotros",
       "answer": "podríamos",
-      "table": "condicional-irregular"
+      "table": "condicional-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-form-09",
@@ -865,7 +1298,11 @@
       "verb": "hacer",
       "person": "él/ella/usted",
       "answer": "haría",
-      "table": "condicional-irregular"
+      "table": "condicional-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-form-10",
@@ -873,7 +1310,11 @@
       "verb": "hacer",
       "person": "vosotros",
       "answer": "haríais",
-      "table": "condicional-irregular"
+      "table": "condicional-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-form-11",
@@ -881,7 +1322,11 @@
       "verb": "decir",
       "person": "yo",
       "answer": "diría",
-      "table": "condicional-irregular"
+      "table": "condicional-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "id": "cd-form-12",
@@ -889,7 +1334,11 @@
       "verb": "decir",
       "person": "nosotros",
       "answer": "diríamos",
-      "table": "condicional-irregular"
+      "table": "condicional-irregular",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "kind": "why",
@@ -939,7 +1388,11 @@
           }
         }
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "kind": "why",
@@ -989,7 +1442,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "kind": "why",
@@ -1039,7 +1496,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "kind": "why",
@@ -1089,7 +1550,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "kind": "why",
@@ -1139,7 +1604,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "kind": "why",
@@ -1189,7 +1658,11 @@
           }
         }
       ],
-      "correctIndex": 2
+      "correctIndex": 2,
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     },
     {
       "kind": "why",
@@ -1239,7 +1712,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
     }
   ]
 }

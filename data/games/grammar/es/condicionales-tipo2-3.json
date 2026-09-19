@@ -1,0 +1,836 @@
+{
+  "schema": 2,
+  "topic": "condicionales-tipo2-3",
+  "level": "B2",
+  "title": {
+    "hu": "Irreális feltétel: si tuviera, si hubiera",
+    "en": "Unreal conditions: si tuviera, si hubiera",
+    "es": "Condicionales irreales",
+    "de": "Irreale Bedingungssätze"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A si + imperfecto de subjuntivo, illetve a si + pluscuamperfecto de subjuntivo azt fejezi ki, ami nem igaz, vagy már nem lehet igaz: kívánságot, sajnálkozást, tanácsot (yo que tú...) vagy egy udvarias feltételezést. A tipo1 után (si + jelen idő, valós feltétel) ez a két irreális fok: az egyik a jelenre vagy jövőre vonatkozó képzeletbeli eset, a másik pedig egy olyan múltbeli eset, ami már nem változtatható meg.",
+        "en": "Si + imperfect subjunctive, and si + pluperfect subjunctive, express what is not true, or can no longer be true: a wish, a regret, a piece of advice (if I were you...), or a polite assumption. After tipo1 (si + present, a real condition), these are the two unreal degrees: one is an imagined case in the present or future, the other a past case that can no longer be changed.",
+        "es": "Si + imperfecto de subjuntivo, y si + pluscuamperfecto de subjuntivo, expresan lo que no es verdad, o lo que ya no puede serlo: un deseo, un arrepentimiento, un consejo (yo que tú...) o una suposición cortés. Después del tipo1 (si + presente, una condición real), estos son los dos grados irreales: uno es un caso imaginado en el presente o futuro, el otro un caso pasado que ya no se puede cambiar.",
+        "de": "Si + Imperfecto de subjuntivo und si + Pluscuamperfecto de subjuntivo drücken aus, was nicht wahr ist oder nicht mehr wahr sein kann: einen Wunsch, ein Bedauern, einen Rat (an deiner Stelle...) oder eine höfliche Vermutung. Nach dem tipo1 (si + Präsens, eine reale Bedingung) sind dies die zwei irrealen Stufen: die eine ist ein vorgestellter Fall in Gegenwart oder Zukunft, die andere ein vergangener Fall, der sich nicht mehr ändern lässt."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Mikor melyik irreális feltételt használjuk?",
+        "en": "When do we use which unreal condition?",
+        "es": "¿Cuándo usamos cada condicional irreal?",
+        "de": "Wann benutzen wir welchen irrealen Konditionalsatz?"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Jelen/jövő irreális: si + imperfecto de subjuntivo, a főtagban condicional simple. Egy olyan feltételről szól, ami most vagy a közeljövőben nem igaz, vagy nagyon valószínűtlen.",
+            "en": "Unreal present/future: si + imperfect subjunctive, condicional simple in the main clause. It talks about a condition that isn't true now or in the near future, or is very unlikely.",
+            "es": "Irreal de presente/futuro: si + imperfecto de subjuntivo, condicional simple en la oración principal. Habla de una condición que no es verdad ahora ni en el futuro cercano, o que es muy improbable.",
+            "de": "Irreal für Gegenwart/Zukunft: si + Imperfecto de subjuntivo, im Hauptsatz Condicional simple. Er beschreibt eine Bedingung, die jetzt oder in naher Zukunft nicht zutrifft oder sehr unwahrscheinlich ist."
+          },
+          "examples": [
+            {
+              "es": "Si tuviera dinero, viajaría por el mundo.",
+              "tr": { "hu": "Ha lenne pénzem, körbeutaznám a világot.", "en": "If I had money, I would travel around the world.", "es": "Si tuviera dinero, viajaría por el mundo.", "de": "Wenn ich Geld hätte, würde ich um die Welt reisen." }
+            },
+            {
+              "es": "Si fueras más amable, te ayudarían.",
+              "tr": { "hu": "Ha kedvesebb lennél, segítenének neked.", "en": "If you were kinder, they would help you.", "es": "Si fueras más amable, te ayudarían.", "de": "Wenn du netter wärst, würden sie dir helfen." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Az imperfecto de subjuntivo képzése: az indefinido ők-alakjából (3. személy többes) indulunk, levesszük a -ron végződést, és hozzátesszük a -ra vagy -se végződést (mindkettő ugyanazt jelenti, de a -ra a gyakoribb): tuvieron → tuviera, fueron → fuera, hicieron → hiciera. Mivel az indefinido rendhagyóságai is átjönnek, a rendhagyó igék alakja innen ingyen adódik.",
+            "en": "The imperfect subjunctive is formed from the indefinido's ellos-form (3rd person plural): drop the -ron ending and add -ra or -se (both mean the same, but -ra is more common): tuvieron → tuviera, fueron → fuera, hicieron → hiciera. Since the indefinido's irregularities carry over, irregular verbs come for free this way.",
+            "es": "El imperfecto de subjuntivo se forma desde la forma de ellos del indefinido (3.ª persona del plural): se quita la terminación -ron y se añade -ra o -se (las dos significan lo mismo, pero -ra es más frecuente): tuvieron → tuviera, fueron → fuera, hicieron → hiciera. Como las irregularidades del indefinido se mantienen, los verbos irregulares salen gratis de esta forma.",
+            "de": "Das Imperfecto de subjuntivo wird aus der Ellos-Form (3. Person Plural) des Indefinido gebildet: die Endung -ron wird entfernt und -ra oder -se angehängt (beide bedeuten dasselbe, aber -ra ist häufiger): tuvieron → tuviera, fueron → fuera, hicieron → hiciera. Da die Unregelmäßigkeiten des Indefinido erhalten bleiben, ergeben sich unregelmäßige Verben so von selbst."
+          },
+          "examples": [
+            {
+              "es": "Si yo tuviera más tiempo, aprendería alemán.",
+              "tr": { "hu": "Ha több időm lenne, megtanulnék németül.", "en": "If I had more time, I would learn German.", "es": "Si yo tuviera más tiempo, aprendería alemán.", "de": "Wenn ich mehr Zeit hätte, würde ich Deutsch lernen." }
+            },
+            {
+              "es": "Si ella supiera la verdad, se lo diría a todos.",
+              "tr": { "hu": "Ha ő tudná az igazságot, mindenkinek elmondaná.", "en": "If she knew the truth, she would tell everyone.", "es": "Si ella supiera la verdad, se lo diría a todos.", "de": "Wenn sie die Wahrheit wüsste, würde sie es allen sagen." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Múlt irreális: si + pluscuamperfecto de subjuntivo (hubiera + participio), a főtagban condicional compuesto (habría + participio). Egy olyan múltbeli feltételről szól, ami már nem történhet meg, mert a múlt lezárult.",
+            "en": "Unreal past: si + pluperfect subjunctive (hubiera + participle), condicional compuesto (habría + participle) in the main clause. It talks about a past condition that can no longer happen, because the past is closed.",
+            "es": "Irreal de pasado: si + pluscuamperfecto de subjuntivo (hubiera + participio), condicional compuesto (habría + participio) en la oración principal. Habla de una condición pasada que ya no puede pasar, porque el pasado está cerrado.",
+            "de": "Irreal für die Vergangenheit: si + Pluscuamperfecto de subjuntivo (hubiera + Partizip), im Hauptsatz Condicional compuesto (habría + Partizip). Er beschreibt eine vergangene Bedingung, die nicht mehr eintreten kann, weil die Vergangenheit abgeschlossen ist."
+          },
+          "examples": [
+            {
+              "es": "Si hubiera sabido la verdad, no habría dicho nada.",
+              "tr": { "hu": "Ha tudtam volna az igazságot, nem mondtam volna semmit.", "en": "If I had known the truth, I wouldn't have said anything.", "es": "Si hubiera sabido la verdad, no habría dicho nada.", "de": "Wenn ich die Wahrheit gewusst hätte, hätte ich nichts gesagt." }
+            },
+            {
+              "es": "Si hubieras estudiado más, habrías aprobado el examen.",
+              "tr": { "hu": "Ha többet tanultál volna, átmentél volna a vizsgán.", "en": "If you had studied more, you would have passed the exam.", "es": "Si hubieras estudiado más, habrías aprobado el examen.", "de": "Wenn du mehr gelernt hättest, hättest du die Prüfung bestanden." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Vegyes forma: a feltétel a múltra vonatkozik (pluscuamperfecto de subjuntivo), a következmény viszont a jelenre (condicional simple, nem compuesto), mert a hatás máig tart.",
+            "en": "Mixed form: the condition is in the past (pluperfect subjunctive), but the consequence is in the present (condicional simple, not compuesto), because the effect still lasts today.",
+            "es": "Forma mixta: la condición es del pasado (pluscuamperfecto de subjuntivo), pero la consecuencia es del presente (condicional simple, no compuesto), porque el efecto llega hasta hoy.",
+            "de": "Mischform: die Bedingung liegt in der Vergangenheit (Pluscuamperfecto de subjuntivo), die Folge aber in der Gegenwart (Condicional simple, nicht compuesto), weil die Wirkung bis heute anhält."
+          },
+          "examples": [
+            {
+              "es": "Si hubiera estudiado medicina, ahora sería médico.",
+              "tr": { "hu": "Ha orvosit tanultam volna, most orvos lennék.", "en": "If I had studied medicine, I would be a doctor now.", "es": "Si hubiera estudiado medicina, ahora sería médico.", "de": "Wenn ich Medizin studiert hätte, wäre ich jetzt Arzt." }
+            },
+            {
+              "es": "Si no hubieras perdido el tren, ahora estarías en la playa.",
+              "tr": { "hu": "Ha nem késted volna le a vonatot, most a strandon lennél.", "en": "If you hadn't missed the train, you would be at the beach now.", "es": "Si no hubieras perdido el tren, ahora estarías en la playa.", "de": "Wenn du den Zug nicht verpasst hättest, wärst du jetzt am Strand." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A beszélt nyelvben, főleg Mexikóban, a főtag „habría” helyett gyakran „hubiera” áll: a két igeidő ilyenkor felcserélhető.",
+            "en": "In spoken language, especially in Mexico, the main clause often uses \"hubiera\" instead of \"habría\": the two forms become interchangeable here.",
+            "es": "En el habla, sobre todo en México, la oración principal usa a menudo «hubiera» en vez de «habría»: las dos formas se vuelven intercambiables aquí.",
+            "de": "In der gesprochenen Sprache, besonders in Mexiko, steht im Hauptsatz oft „hubiera” statt „habría”: die beiden Formen werden hier austauschbar."
+          },
+          "examples": [
+            {
+              "es": "Si lo hubiera sabido, hubiera venido.",
+              "tr": { "hu": "Ha tudtam volna, eljöttem volna.", "en": "If I had known, I would have come.", "es": "Si lo hubiera sabido, hubiera venido.", "de": "Wenn ich es gewusst hätte, wäre ich gekommen." }
+            },
+            {
+              "es": "Si me hubieras llamado, hubiera ido a ayudarte.",
+              "tr": { "hu": "Ha felhívtál volna, elmentem volna segíteni neked.", "en": "If you had called me, I would have gone to help you.", "es": "Si me hubieras llamado, hubiera ido a ayudarte.", "de": "Wenn du mich angerufen hättest, wäre ich gekommen, um dir zu helfen." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A si után SOHA nem áll condicional (si tendría ✗) és soha nem áll presente de subjuntivo (si tenga ✗): a si-tagmondat mindig indicativo jelen, imperfecto de subjuntivo vagy pluscuamperfecto de subjuntivo.",
+            "en": "After si there is NEVER a conditional (si tendría ✗) and never a present subjunctive (si tenga ✗): the si-clause is always indicative present, imperfect subjunctive, or pluperfect subjunctive.",
+            "es": "Después de si NUNCA va un condicional (si tendría ✗) ni un presente de subjuntivo (si tenga ✗): la cláusula con si siempre es presente de indicativo, imperfecto de subjuntivo o pluscuamperfecto de subjuntivo.",
+            "de": "Nach si steht NIE ein Konditional (si tendría ✗) und nie ein Presente de subjuntivo (si tenga ✗): der Si-Satz steht immer im Indikativ Präsens, im Imperfecto de subjuntivo oder im Pluscuamperfecto de subjuntivo."
+          },
+          "examples": [
+            {
+              "es": "Si tuviera tiempo, iría a la fiesta.",
+              "tr": { "hu": "Ha lenne időm, elmennék a buliba.", "en": "If I had time, I would go to the party.", "es": "Si tuviera tiempo, iría a la fiesta.", "de": "Wenn ich Zeit hätte, würde ich zur Party gehen." }
+            },
+            {
+              "es": "Si tuviera más dinero, compraría una casa.",
+              "tr": { "hu": "Ha lenne több pénzem, vennék egy házat.", "en": "If I had more money, I would buy a house.", "es": "Si tuviera más dinero, compraría una casa.", "de": "Wenn ich mehr Geld hätte, würde ich ein Haus kaufen." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Az „ojalá” és a „como si” szintén imperfecto de subjuntivóval jár, és ugyanazt az irrealitást hordozza: egy erős kívánságot, illetve egy hamis látszatot.",
+            "en": "\"Ojalá\" and \"como si\" also take the imperfect subjunctive, and carry the same unreality: a strong wish, or a false appearance.",
+            "es": "«Ojalá» y «como si» también llevan imperfecto de subjuntivo, y llevan la misma irrealidad: un deseo fuerte, o una apariencia falsa.",
+            "de": "„Ojalá” und „como si” stehen ebenfalls mit dem Imperfecto de subjuntivo und tragen dieselbe Irrealität: einen starken Wunsch oder einen falschen Anschein."
+          },
+          "examples": [
+            {
+              "es": "Ojalá tuviera más tiempo.",
+              "tr": { "hu": "Bárcsak lenne több időm.", "en": "I wish I had more time.", "es": "Ojalá tuviera más tiempo.", "de": "Ich wünschte, ich hätte mehr Zeit." }
+            },
+            {
+              "es": "Habla como si lo supiera todo.",
+              "tr": { "hu": "Úgy beszél, mintha mindent tudna.", "en": "He talks as if he knew everything.", "es": "Habla como si lo supiera todo.", "de": "Er spricht, als ob er alles wüsste." }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "irreal",
+      "title": {
+        "hu": "Öt ige irreális alakjai",
+        "en": "Five verbs' unreal forms",
+        "es": "Formas irreales de cinco verbos",
+        "de": "Irreale Formen von fünf Verben"
+      },
+      "header": [
+        { "hu": "Alak", "en": "Form", "es": "forma", "de": "Form" },
+        { "hu": "tener", "en": "tener", "es": "tener", "de": "tener" },
+        { "hu": "ser", "en": "ser", "es": "ser", "de": "ser" },
+        { "hu": "hacer", "en": "hacer", "es": "hacer", "de": "hacer" },
+        { "hu": "poder", "en": "poder", "es": "poder", "de": "poder" },
+        { "hu": "saber", "en": "saber", "es": "saber", "de": "saber" }
+      ],
+      "rows": [
+        ["imperfecto de subjuntivo, yo", "tuviera", "fuera", "hiciera", "pudiera", "supiera"],
+        ["imperfecto de subjuntivo, tú", "tuvieras", "fueras", "hicieras", "pudieras", "supieras"],
+        ["imperfecto de subjuntivo, él", "tuviera", "fuera", "hiciera", "pudiera", "supiera"],
+        ["pluscuamperfecto de subjuntivo, yo", "hubiera tenido", "hubiera sido", "hubiera hecho", "hubiera podido", "hubiera sabido"],
+        ["condicional simple, yo", "tendría", "sería", "haría", "podría", "sabría"],
+        ["condicional compuesto, yo", "habría tenido", "habría sido", "habría hecho", "habría podido", "habría sabido"]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Három fokozat",
+        "en": "Three degrees",
+        "es": "Tres grados",
+        "de": "Drei Stufen"
+      },
+      "pairs": [
+        {
+          "a": "si + presente (tipo1)",
+          "b": "si + imperfecto de subjuntivo (tipo2)",
+          "note": {
+            "hu": "A tipo1 valós, megtörténhet: si tengo tiempo, voy. A tipo2 irreális vagy valószínűtlen: si tuviera tiempo, iría.",
+            "en": "Tipo1 is real, it can happen: si tengo tiempo, voy. Tipo2 is unreal or unlikely: si tuviera tiempo, iría.",
+            "es": "El tipo1 es real, puede pasar: si tengo tiempo, voy. El tipo2 es irreal o improbable: si tuviera tiempo, iría.",
+            "de": "Der tipo1 ist real, er kann passieren: si tengo tiempo, voy. Der tipo2 ist irreal oder unwahrscheinlich: si tuviera tiempo, iría."
+          },
+          "examples": [
+            {
+              "es": "Si tengo tiempo, voy.",
+              "tr": { "hu": "Ha van időm, megyek.", "en": "If I have time, I go.", "es": "Si tengo tiempo, voy.", "de": "Wenn ich Zeit habe, gehe ich." }
+            },
+            {
+              "es": "Si tuviera tiempo, iría.",
+              "tr": { "hu": "Ha lenne időm, mennék.", "en": "If I had time, I would go.", "es": "Si tuviera tiempo, iría.", "de": "Wenn ich Zeit hätte, würde ich gehen." }
+            }
+          ]
+        },
+        {
+          "a": "si + imperfecto de subjuntivo (tipo2)",
+          "b": "si + pluscuamperfecto de subjuntivo (tipo3)",
+          "note": {
+            "hu": "A tipo2 még lehetséges lenne, ha más lenne a jelen: si tuviera tiempo. A tipo3 már nem változtatható meg, mert a múltról szól: si hubiera tenido tiempo.",
+            "en": "Tipo2 could still be possible if the present were different: si tuviera tiempo. Tipo3 can no longer be changed, because it's about the past: si hubiera tenido tiempo.",
+            "es": "El tipo2 todavía sería posible si el presente fuera distinto: si tuviera tiempo. El tipo3 ya no se puede cambiar, porque habla del pasado: si hubiera tenido tiempo.",
+            "de": "Der tipo2 wäre noch möglich, wenn die Gegenwart anders wäre: si tuviera tiempo. Der tipo3 lässt sich nicht mehr ändern, weil er von der Vergangenheit spricht: si hubiera tenido tiempo."
+          },
+          "examples": [
+            {
+              "es": "Si tuviera tiempo, iría a verte.",
+              "tr": { "hu": "Ha lenne időm, elmennék hozzád.", "en": "If I had time, I would go see you.", "es": "Si tuviera tiempo, iría a verte.", "de": "Wenn ich Zeit hätte, würde ich dich besuchen gehen." }
+            },
+            {
+              "es": "Si hubiera tenido tiempo, habría ido a verte.",
+              "tr": { "hu": "Ha lett volna időm, elmentem volna hozzád.", "en": "If I had had time, I would have gone to see you.", "es": "Si hubiera tenido tiempo, habría ido a verte.", "de": "Wenn ich Zeit gehabt hätte, wäre ich zu dir gegangen." }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Az imperfecto de subjuntivót mindig az indefinido ők-alakjából képezd, így a rendhagyó igék ingyen jönnek: dijeron → dijera, pudieron → pudiera.",
+        "en": "Always form the imperfect subjunctive from the indefinido's ellos-form, so irregular verbs come for free: dijeron → dijera, pudieron → pudiera.",
+        "es": "Forma siempre el imperfecto de subjuntivo desde la forma de ellos del indefinido, así los verbos irregulares salen gratis: dijeron → dijera, pudieron → pudiera.",
+        "de": "Bilde das Imperfecto de subjuntivo immer aus der Ellos-Form des Indefinido, so bekommst du unregelmäßige Verben gratis dazu: dijeron → dijera, pudieron → pudiera."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A si + imperfecto de subjuntivo és a si + pluscuamperfecto de subjuntivo azt fejezi ki, ami nem igaz, vagy már nem lehet igaz. Az első irreális fok a jelenre vagy a jövőre vonatkozik: «si tuviera dinero, viajaría por el mundo», a főtag mindig condicional simple. A második irreális fok a múltra vonatkozik, ami már lezárult: «si hubiera sabido la verdad, no habría dicho nada», a főtag condicional compuesto. Van egy vegyes forma is, ahol a feltétel múltbeli, de a következmény jelenre szól: «si hubiera estudiado medicina, ahora sería médico». A beszélt nyelvben, főleg Mexikóban, a főtagban «hubiera» is állhat «habría» helyett. A si után soha nincs condicional és soha nincs presente de subjuntivo. Az «ojalá» és a «como si» ugyanezt az irrealitást hordozza, mint «ojalá tuviera más tiempo» vagy «habla como si lo supiera todo».",
+    "en": "Si + imperfect subjunctive and si + pluperfect subjunctive express what is not true, or can no longer be true. The first unreal degree refers to the present or future: «si tuviera dinero, viajaría por el mundo», the main clause is always condicional simple. The second unreal degree refers to a closed past: «si hubiera sabido la verdad, no habría dicho nada», the main clause is condicional compuesto. There's also a mixed form, where the condition is past but the consequence is present: «si hubiera estudiado medicina, ahora sería médico». In spoken language, especially in Mexico, the main clause can also use «hubiera» instead of «habría». After si there is never a conditional and never a present subjunctive. «Ojalá» and «como si» carry the same unreality, like «ojalá tuviera más tiempo» or «habla como si lo supiera todo».",
+    "es": "El si + imperfecto de subjuntivo y el si + pluscuamperfecto de subjuntivo expresan lo que no es verdad, o lo que ya no puede serlo. El primer grado irreal se refiere al presente o al futuro: «si tuviera dinero, viajaría por el mundo», la oración principal siempre va en condicional simple. El segundo grado irreal se refiere a un pasado ya cerrado: «si hubiera sabido la verdad, no habría dicho nada», la oración principal va en condicional compuesto. También hay una forma mixta, donde la condición es pasada pero la consecuencia es presente: «si hubiera estudiado medicina, ahora sería médico». En el habla, sobre todo en México, la oración principal también puede usar «hubiera» en vez de «habría». Después de si nunca va un condicional ni un presente de subjuntivo. «Ojalá» y «como si» llevan la misma irrealidad, como «ojalá tuviera más tiempo» o «habla como si lo supiera todo».",
+    "de": "Si + Imperfecto de subjuntivo und si + Pluscuamperfecto de subjuntivo drücken aus, was nicht wahr ist oder nicht mehr wahr sein kann. Die erste irreale Stufe bezieht sich auf Gegenwart oder Zukunft: «si tuviera dinero, viajaría por el mundo», der Hauptsatz steht immer im Condicional simple. Die zweite irreale Stufe bezieht sich auf eine abgeschlossene Vergangenheit: «si hubiera sabido la verdad, no habría dicho nada», der Hauptsatz steht im Condicional compuesto. Es gibt auch eine Mischform, bei der die Bedingung vergangen, die Folge aber gegenwärtig ist: «si hubiera estudiado medicina, ahora sería médico». In der gesprochenen Sprache, besonders in Mexiko, kann der Hauptsatz auch «hubiera» statt «habría» verwenden. Nach si steht nie ein Konditional und nie ein Presente de subjuntivo. «Ojalá» und «como si» tragen dieselbe Irrealität, wie «ojalá tuviera más tiempo» oder «habla como si lo supiera todo»."
+  },
+  "glossary": [
+    { "word": "tendría", "gloss": { "hu": "lenne nekem", "en": "I would have", "es": "yo tendría", "de": "ich hätte" } },
+    { "word": "hubiera", "gloss": { "hu": "volna (segédige, kötőmód)", "en": "I/he/she would have (auxiliary)", "es": "yo/él/ella hubiera", "de": "ich/er/sie hätte (Hilfsverb)" } },
+    { "word": "hubieras", "gloss": { "hu": "volna (te, segédige, kötőmód)", "en": "you would have (auxiliary)", "es": "tú hubieras", "de": "du hättest (Hilfsverb)" } },
+    { "word": "habría", "gloss": { "hu": "lenne/lett volna (segédige)", "en": "I/he/she would have (auxiliary)", "es": "yo/él/ella habría", "de": "ich/er/sie würde/hätte (Hilfsverb)" } },
+    { "word": "habrías", "gloss": { "hu": "lennél/lettél volna (te, segédige)", "en": "you would have (auxiliary)", "es": "tú habrías", "de": "du würdest/hättest (Hilfsverb)" } },
+    { "word": "supiera", "gloss": { "hu": "tudná (kötőmód, múlt idejű feltétel)", "en": "I/he/she would know (subjunctive)", "es": "yo/él/ella supiera", "de": "ich/er/sie wüsste (Subjuntivo)" } },
+    { "word": "diría", "gloss": { "hu": "mondaná", "en": "I/he/she would say", "es": "yo/él/ella diría", "de": "ich/er/sie würde sagen" } },
+    { "word": "apruebas", "gloss": { "hu": "átmész (vizsgán)", "en": "you pass (an exam)", "es": "tú apruebas", "de": "du bestehst" } },
+    { "word": "dices", "gloss": { "hu": "mondod", "en": "you say", "es": "tú dices", "de": "du sagst" } }
+  ],
+  "items": [
+    {
+      "id": "ct2-01",
+      "sentence": "Si ___ dinero, viajaría por el mundo.",
+      "options": ["tuviera", "tengo", "tendría"],
+      "correct": 0,
+      "why": {
+        "hu": "A si-tagmondat irreális feltételnél imperfecto de subjuntivo: tuviera.",
+        "en": "In an unreal condition the si-clause takes the imperfect subjunctive: tuviera.",
+        "es": "En una condición irreal, la cláusula con si lleva imperfecto de subjuntivo: tuviera.",
+        "de": "Bei einer irrealen Bedingung steht im Si-Satz das Imperfecto de subjuntivo: tuviera."
+      },
+      "wrong": {
+        "tengo": {
+          "hu": "A „tengo” jelen idő: ezzel a mondat azt jelentené, hogy TÉNYLEG van pénzed (valós feltétel, tipo1), itt viszont egy irreális esetről van szó, helyesen: tuviera.",
+          "en": "\"Tengo\" is present tense: it would mean you REALLY have money (a real condition, tipo1), but here it's an unreal case, correctly: tuviera.",
+          "es": "«Tengo» es presente: significaría que REALMENTE tienes dinero (condición real, tipo1), pero aquí es un caso irreal, correcto: tuviera.",
+          "de": "„Tengo” ist Präsens: es würde bedeuten, dass du WIRKLICH Geld hast (reale Bedingung, tipo1), aber hier ist es ein irrealer Fall, richtig: tuviera."
+        },
+        "tendría": {
+          "hu": "A „tendría” feltételes mód: ez a főtagba való, a si-tagmondatban soha nem áll condicional, helyesen: tuviera.",
+          "en": "\"Tendría\" is conditional: that belongs in the main clause, the si-clause never takes the conditional, correctly: tuviera.",
+          "es": "«Tendría» es condicional: eso va en la oración principal, la cláusula con si nunca lleva condicional, correcto: tuviera.",
+          "de": "„Tendría” ist Konditional: das gehört in den Hauptsatz, der Si-Satz steht nie im Konditional, richtig: tuviera."
+        }
+      },
+      "examples": ["Si fueras más amable, te ayudarían.", "Si hubiera sabido la verdad, no habría dicho nada."]
+    },
+    {
+      "id": "ct2-02",
+      "sentence": "Si fueras más amable, te ___.",
+      "options": ["ayudarían", "ayudan", "ayudaron"],
+      "correct": 0,
+      "why": {
+        "hu": "Az irreális feltétel főtagja condicional simple: ayudarían.",
+        "en": "The main clause of an unreal condition takes condicional simple: ayudarían.",
+        "es": "La oración principal de una condición irreal lleva condicional simple: ayudarían.",
+        "de": "Der Hauptsatz einer irrealen Bedingung steht im Condicional simple: ayudarían."
+      },
+      "wrong": {
+        "ayudan": {
+          "hu": "Az „ayudan” jelen idő: ezzel a mondat azt jelentené, hogy MOST tényleg segítenek, holott a feltétel (fueras) irreális, helyesen: ayudarían.",
+          "en": "\"Ayudan\" is present tense: it would mean they REALLY help now, but the condition (fueras) is unreal, correctly: ayudarían.",
+          "es": "«Ayudan» es presente: significaría que REALMENTE ayudan ahora, pero la condición (fueras) es irreal, correcto: ayudarían.",
+          "de": "„Ayudan” ist Präsens: es würde bedeuten, dass sie JETZT wirklich helfen, aber die Bedingung (fueras) ist irreal, richtig: ayudarían."
+        },
+        "ayudaron": {
+          "hu": "Az „ayudaron” múlt idő (indefinido): egy megtörtént eseményt jelentene, nem egy feltételes következményt, helyesen: ayudarían.",
+          "en": "\"Ayudaron\" is past tense (indefinido): it would report something that already happened, not a conditional consequence, correctly: ayudarían.",
+          "es": "«Ayudaron» es pasado (indefinido): contaría algo que ya pasó, no una consecuencia condicional, correcto: ayudarían.",
+          "de": "„Ayudaron” ist Vergangenheit (Indefinido): es würde etwas Geschehenes berichten, keine bedingte Folge, richtig: ayudarían."
+        }
+      },
+      "examples": ["Si tuviera dinero, viajaría por el mundo.", "Si yo tuviera más tiempo, aprendería alemán."]
+    },
+    {
+      "id": "ct2-03",
+      "sentence": "Si yo ___ más tiempo, aprendería alemán.",
+      "options": ["tuviera", "tengo", "tuve"],
+      "correct": 0,
+      "why": {
+        "hu": "„Yo” alany, irreális feltétel: tuviera.",
+        "en": "The subject is \"yo\", an unreal condition: tuviera.",
+        "es": "El sujeto es «yo», condición irreal: tuviera.",
+        "de": "Das Subjekt ist „yo”, eine irreale Bedingung: tuviera."
+      },
+      "wrong": {
+        "tengo": {
+          "hu": "A „tengo” jelen idő: azt jelentené, hogy TÉNYLEG van időd, itt viszont irreális esetről van szó, helyesen: tuviera.",
+          "en": "\"Tengo\" is present: it would mean you REALLY have the time, but here it's unreal, correctly: tuviera.",
+          "es": "«Tengo» es presente: significaría que REALMENTE tienes tiempo, pero aquí es irreal, correcto: tuviera.",
+          "de": "„Tengo” ist Präsens: es würde bedeuten, dass du WIRKLICH Zeit hast, aber hier ist es irreal, richtig: tuviera."
+        },
+        "tuve": {
+          "hu": "A „tuve” indefinido: egy múltbeli, megtörtént tényt jelentene, nem egy jelenlegi irreális feltételt, helyesen: tuviera.",
+          "en": "\"Tuve\" is indefinido: it would state a past fact that happened, not a present unreal condition, correctly: tuviera.",
+          "es": "«Tuve» es indefinido: afirmaría un hecho pasado que ocurrió, no una condición irreal actual, correcto: tuviera.",
+          "de": "„Tuve” ist Indefinido: es würde eine vergangene, geschehene Tatsache aussagen, keine gegenwärtige irreale Bedingung, richtig: tuviera."
+        }
+      },
+      "examples": ["Si ella supiera la verdad, se lo diría a todos.", "Si hablaras más despacio, entenderías mejor."]
+    },
+    {
+      "id": "ct2-04",
+      "sentence": "Si ella ___ la verdad, se lo diría a todos.",
+      "options": ["supiera", "sabe", "supo"],
+      "correct": 0,
+      "why": {
+        "hu": "„Ella” alany, irreális feltétel: supiera.",
+        "en": "The subject is \"ella\", an unreal condition: supiera.",
+        "es": "El sujeto es «ella», condición irreal: supiera.",
+        "de": "Das Subjekt ist „ella”, eine irreale Bedingung: supiera."
+      },
+      "wrong": {
+        "sabe": {
+          "hu": "A „sabe” jelen idő: azt jelentené, hogy TÉNYLEG tudja az igazságot, itt viszont irreális feltevésről van szó, helyesen: supiera.",
+          "en": "\"Sabe\" is present: it would mean she REALLY knows the truth, but here it's a hypothetical, correctly: supiera.",
+          "es": "«Sabe» es presente: significaría que REALMENTE sabe la verdad, pero aquí es una suposición, correcto: supiera.",
+          "de": "„Sabe” ist Präsens: es würde bedeuten, dass sie die Wahrheit WIRKLICH kennt, aber hier ist es eine Annahme, richtig: supiera."
+        },
+        "supo": {
+          "hu": "A „supo” indefinido: azt jelentené, hogy MEGTUDTA az igazságot egy adott pillanatban, nem egy feltételezett esetről szól, helyesen: supiera.",
+          "en": "\"Supo\" is indefinido: it would mean she FOUND OUT the truth at some point, not a hypothetical case, correctly: supiera.",
+          "es": "«Supo» es indefinido: significaría que SE ENTERÓ de la verdad en un momento dado, no un caso hipotético, correcto: supiera.",
+          "de": "„Supo” ist Indefinido: es würde bedeuten, dass sie die Wahrheit zu einem bestimmten Zeitpunkt ERFAHREN hat, kein hypothetischer Fall, richtig: supiera."
+        }
+      },
+      "examples": ["Si tuviéramos más dinero, venderíamos el coche viejo.", "Si hubieras estudiado más, habrías aprobado el examen."]
+    },
+    {
+      "id": "ct2-05",
+      "sentence": "Si tuviéramos más dinero, ___ el coche viejo.",
+      "options": ["venderíamos", "vendemos", "vendimos"],
+      "correct": 0,
+      "why": {
+        "hu": "Irreális feltétel főtagja: condicional simple, „nosotros” alany: venderíamos.",
+        "en": "The main clause of an unreal condition, subject \"nosotros\": venderíamos.",
+        "es": "Oración principal de condición irreal, sujeto «nosotros»: venderíamos.",
+        "de": "Hauptsatz einer irrealen Bedingung, Subjekt „nosotros”: venderíamos."
+      },
+      "wrong": {
+        "vendemos": {
+          "hu": "A „vendemos” jelen idő: azt jelentené, hogy TÉNYLEG eladjuk az autót, holott a feltétel (tuviéramos) irreális, helyesen: venderíamos.",
+          "en": "\"Vendemos\" is present: it would mean we REALLY sell the car, but the condition (tuviéramos) is unreal, correctly: venderíamos.",
+          "es": "«Vendemos» es presente: significaría que REALMENTE vendemos el coche, pero la condición (tuviéramos) es irreal, correcto: venderíamos.",
+          "de": "„Vendemos” ist Präsens: es würde bedeuten, dass wir das Auto WIRKLICH verkaufen, aber die Bedingung (tuviéramos) ist irreal, richtig: venderíamos."
+        },
+        "vendimos": {
+          "hu": "A „vendimos” indefinido: egy megtörtént eseményt jelentene, nem egy feltételes következményt, helyesen: venderíamos.",
+          "en": "\"Vendimos\" is indefinido: it would report something that already happened, not a conditional consequence, correctly: venderíamos.",
+          "es": "«Vendimos» es indefinido: contaría algo que ya pasó, no una consecuencia condicional, correcto: venderíamos.",
+          "de": "„Vendimos” ist Indefinido: es würde etwas Geschehenes berichten, keine bedingte Folge, richtig: venderíamos."
+        }
+      },
+      "examples": ["Si yo tuviera más tiempo, aprendería alemán.", "Si ella supiera la verdad, se lo diría a todos."]
+    },
+    {
+      "id": "ct2-06",
+      "sentence": "Si ___ más despacio, entenderías mejor.",
+      "options": ["hablaras", "hablas", "hablaste"],
+      "correct": 0,
+      "why": {
+        "hu": "A si-tagmondat irreális feltételnél imperfecto de subjuntivo, „tú” alany: hablaras.",
+        "en": "In an unreal condition the si-clause takes the imperfect subjunctive, subject \"tú\": hablaras.",
+        "es": "En una condición irreal, la cláusula con si lleva imperfecto de subjuntivo, sujeto «tú»: hablaras.",
+        "de": "Bei einer irrealen Bedingung steht im Si-Satz das Imperfecto de subjuntivo, Subjekt „tú”: hablaras."
+      },
+      "wrong": {
+        "hablas": {
+          "hu": "A „hablas” jelen idő: valós feltételt jelentene (tipo1), itt viszont a főtag (entenderías) irreálist jelez, helyesen: hablaras.",
+          "en": "\"Hablas\" is present: it would signal a real condition (tipo1), but the main clause (entenderías) signals an unreal one, correctly: hablaras.",
+          "es": "«Hablas» es presente: indicaría una condición real (tipo1), pero la oración principal (entenderías) marca una irreal, correcto: hablaras.",
+          "de": "„Hablas” ist Präsens: es würde eine reale Bedingung anzeigen (tipo1), aber der Hauptsatz (entenderías) zeigt eine irreale an, richtig: hablaras."
+        },
+        "hablaste": {
+          "hu": "A „hablaste” indefinido: egy megtörtént eseményt jelentene, nem egy feltételezett esetet, helyesen: hablaras.",
+          "en": "\"Hablaste\" is indefinido: it would report something that already happened, not a hypothetical case, correctly: hablaras.",
+          "es": "«Hablaste» es indefinido: contaría algo que ya pasó, no un caso hipotético, correcto: hablaras.",
+          "de": "„Hablaste” ist Indefinido: es würde etwas Geschehenes berichten, keinen hypothetischen Fall, richtig: hablaras."
+        }
+      },
+      "examples": ["Si fueras más amable, te ayudarían.", "Si tuviéramos más dinero, venderíamos el coche viejo."]
+    },
+    {
+      "id": "ct2-07",
+      "sentence": "Si ___ la verdad, no habría dicho nada.",
+      "options": ["hubiera sabido", "sabía", "supe"],
+      "correct": 0,
+      "why": {
+        "hu": "Múltbeli irreális feltétel: pluscuamperfecto de subjuntivo: hubiera sabido.",
+        "en": "An unreal past condition: pluperfect subjunctive: hubiera sabido.",
+        "es": "Condición irreal de pasado: pluscuamperfecto de subjuntivo: hubiera sabido.",
+        "de": "Irreale Bedingung der Vergangenheit: Pluscuamperfecto de subjuntivo: hubiera sabido."
+      },
+      "wrong": {
+        "sabía": {
+          "hu": "A „sabía” imperfecto de indicativo: egy régi, folyamatos tudásállapotot jelentene, nem egy múltbeli irreális feltételt, helyesen: hubiera sabido.",
+          "en": "\"Sabía\" is imperfect indicative: it would describe an ongoing past state of knowing, not an unreal past condition, correctly: hubiera sabido.",
+          "es": "«Sabía» es imperfecto de indicativo: describiría un estado pasado y continuo de saber, no una condición irreal de pasado, correcto: hubiera sabido.",
+          "de": "„Sabía” ist Indikativ Imperfekt: es würde einen andauernden vergangenen Wissenszustand beschreiben, keine irreale Bedingung der Vergangenheit, richtig: hubiera sabido."
+        },
+        "supe": {
+          "hu": "A „supe” indefinido: azt jelentené, hogy MEGTUDTAM az igazságot egy adott pillanatban, nem egy irreális feltételt, helyesen: hubiera sabido.",
+          "en": "\"Supe\" is indefinido: it would mean I FOUND OUT the truth at some point, not an unreal condition, correctly: hubiera sabido.",
+          "es": "«Supe» es indefinido: significaría que ME ENTERÉ de la verdad en un momento dado, no una condición irreal, correcto: hubiera sabido.",
+          "de": "„Supe” ist Indefinido: es würde bedeuten, dass ich die Wahrheit zu einem bestimmten Zeitpunkt ERFAHREN habe, keine irreale Bedingung, richtig: hubiera sabido."
+        }
+      },
+      "examples": ["Si hubieras estudiado más, habrías aprobado el examen.", "Si hubiera estudiado medicina, ahora sería médico."]
+    },
+    {
+      "id": "ct2-08",
+      "sentence": "Si hubieras estudiado más, ___ el examen.",
+      "options": ["habrías aprobado", "apruebas", "aprobaste"],
+      "correct": 0,
+      "why": {
+        "hu": "A múltbeli irreális feltétel főtagja condicional compuesto: habrías aprobado.",
+        "en": "The main clause of an unreal past condition takes condicional compuesto: habrías aprobado.",
+        "es": "La oración principal de una condición irreal de pasado lleva condicional compuesto: habrías aprobado.",
+        "de": "Der Hauptsatz einer irrealen Bedingung der Vergangenheit steht im Condicional compuesto: habrías aprobado."
+      },
+      "wrong": {
+        "apruebas": {
+          "hu": "Az „apruebas” jelen idő: azt jelentené, hogy MOST mész át a vizsgán, holott a feltétel (hubieras estudiado) lezárt múlt, helyesen: habrías aprobado.",
+          "en": "\"Apruebas\" is present: it would mean you're passing the exam NOW, but the condition (hubieras estudiado) is a closed past, correctly: habrías aprobado.",
+          "es": "«Apruebas» es presente: significaría que AHORA apruebas el examen, pero la condición (hubieras estudiado) es un pasado cerrado, correcto: habrías aprobado.",
+          "de": "„Apruebas” ist Präsens: es würde bedeuten, dass du die Prüfung JETZT bestehst, aber die Bedingung (hubieras estudiado) ist eine abgeschlossene Vergangenheit, richtig: habrías aprobado."
+        },
+        "aprobaste": {
+          "hu": "Az „aprobaste” indefinido: egy megtörtént tényt jelentene, nem egy feltételes következményt, helyesen: habrías aprobado.",
+          "en": "\"Aprobaste\" is indefinido: it would state a fact that happened, not a conditional consequence, correctly: habrías aprobado.",
+          "es": "«Aprobaste» es indefinido: afirmaría un hecho ocurrido, no una consecuencia condicional, correcto: habrías aprobado.",
+          "de": "„Aprobaste” ist Indefinido: es würde eine geschehene Tatsache aussagen, keine bedingte Folge, richtig: habrías aprobado."
+        }
+      },
+      "examples": ["Si hubiera sabido la verdad, no habría dicho nada.", "Si no hubieras perdido el tren, ahora estarías en la playa."]
+    },
+    {
+      "id": "ct2-09",
+      "sentence": "Si yo ___ más despacio, habrías entendido todo.",
+      "options": ["hubiera hablado", "hablaba", "hablé"],
+      "correct": 0,
+      "why": {
+        "hu": "„Yo” alany, múltbeli irreális feltétel: hubiera hablado.",
+        "en": "The subject is \"yo\", an unreal past condition: hubiera hablado.",
+        "es": "El sujeto es «yo», condición irreal de pasado: hubiera hablado.",
+        "de": "Das Subjekt ist „yo”, irreale Bedingung der Vergangenheit: hubiera hablado."
+      },
+      "wrong": {
+        "hablaba": {
+          "hu": "A „hablaba” imperfecto de indicativo: egy régi szokást jelentene, nem egy múltbeli irreális feltételt, helyesen: hubiera hablado.",
+          "en": "\"Hablaba\" is imperfect indicative: it would describe a past habit, not an unreal past condition, correctly: hubiera hablado.",
+          "es": "«Hablaba» es imperfecto de indicativo: describiría un hábito pasado, no una condición irreal de pasado, correcto: hubiera hablado.",
+          "de": "„Hablaba” ist Indikativ Imperfekt: es würde eine frühere Gewohnheit beschreiben, keine irreale Bedingung der Vergangenheit, richtig: hubiera hablado."
+        },
+        "hablé": {
+          "hu": "A „hablé” indefinido: egy megtörtént tényt jelentene, nem egy irreális feltételt, helyesen: hubiera hablado.",
+          "en": "\"Hablé\" is indefinido: it would state a fact that happened, not an unreal condition, correctly: hubiera hablado.",
+          "es": "«Hablé» es indefinido: afirmaría un hecho ocurrido, no una condición irreal, correcto: hubiera hablado.",
+          "de": "„Hablé” ist Indefinido: es würde eine geschehene Tatsache aussagen, keine irreale Bedingung, richtig: hubiera hablado."
+        }
+      },
+      "examples": ["Si hubieras estudiado más, habrías aprobado el examen.", "Si tú me hubieras dicho la verdad, habría entendido todo."]
+    },
+    {
+      "id": "ct2-10",
+      "sentence": "Si tú me ___ la verdad, habría entendido todo.",
+      "options": ["hubieras dicho", "dices", "dijiste"],
+      "correct": 0,
+      "why": {
+        "hu": "„Tú” alany, múltbeli irreális feltétel: hubieras dicho.",
+        "en": "The subject is \"tú\", an unreal past condition: hubieras dicho.",
+        "es": "El sujeto es «tú», condición irreal de pasado: hubieras dicho.",
+        "de": "Das Subjekt ist „tú”, irreale Bedingung der Vergangenheit: hubieras dicho."
+      },
+      "wrong": {
+        "dices": {
+          "hu": "A „dices” jelen idő: azt jelentené, hogy MOST mondod az igazságot, holott a főtag (habría entendido) múltbeli irreálisra utal, helyesen: hubieras dicho.",
+          "en": "\"Dices\" is present: it would mean you're telling the truth NOW, but the main clause (habría entendido) points to an unreal past, correctly: hubieras dicho.",
+          "es": "«Dices» es presente: significaría que AHORA dices la verdad, pero la oración principal (habría entendido) señala un pasado irreal, correcto: hubieras dicho.",
+          "de": "„Dices” ist Präsens: es würde bedeuten, dass du die Wahrheit JETZT sagst, aber der Hauptsatz (habría entendido) verweist auf eine irreale Vergangenheit, richtig: hubieras dicho."
+        },
+        "dijiste": {
+          "hu": "A „dijiste” indefinido: egy megtörtént tényt jelentene, nem egy irreális feltételt, helyesen: hubieras dicho.",
+          "en": "\"Dijiste\" is indefinido: it would state a fact that happened, not an unreal condition, correctly: hubieras dicho.",
+          "es": "«Dijiste» es indefinido: afirmaría un hecho ocurrido, no una condición irreal, correcto: hubieras dicho.",
+          "de": "„Dijiste” ist Indefinido: es würde eine geschehene Tatsache aussagen, keine irreale Bedingung, richtig: hubieras dicho."
+        }
+      },
+      "examples": ["Si hubiera estudiado medicina, ahora sería médico.", "Si no hubieras perdido el tren, ahora estarías en la playa."]
+    },
+    {
+      "id": "ct2-11",
+      "sentence": "Si hubiera estudiado medicina, ahora ___ médico.",
+      "options": ["sería", "soy", "fui"],
+      "correct": 0,
+      "why": {
+        "hu": "Vegyes forma: múltbeli feltétel, jelen következmény, condicional simple: sería.",
+        "en": "Mixed form: past condition, present consequence, condicional simple: sería.",
+        "es": "Forma mixta: condición pasada, consecuencia presente, condicional simple: sería.",
+        "de": "Mischform: vergangene Bedingung, gegenwärtige Folge, Condicional simple: sería."
+      },
+      "wrong": {
+        "soy": {
+          "hu": "A „soy” jelen idő, kijelentő mód: azt jelentené, hogy TÉNYLEG orvos vagy, nem egy feltételezett állapotot, helyesen: sería.",
+          "en": "\"Soy\" is present indicative: it would mean you REALLY are a doctor, not a hypothetical state, correctly: sería.",
+          "es": "«Soy» es presente de indicativo: significaría que REALMENTE eres médico, no un estado hipotético, correcto: sería.",
+          "de": "„Soy” ist Indikativ Präsens: es würde bedeuten, dass du WIRKLICH Arzt bist, kein hypothetischer Zustand, richtig: sería."
+        },
+        "fui": {
+          "hu": "A „fui” indefinido: egy múltbeli tényt jelentene (voltam orvos), nem egy máig tartó feltételezett állapotot, helyesen: sería.",
+          "en": "\"Fui\" is indefinido: it would state a past fact (I was a doctor), not a hypothetical state lasting until today, correctly: sería.",
+          "es": "«Fui» es indefinido: afirmaría un hecho pasado (fui médico), no un estado hipotético que llega hasta hoy, correcto: sería.",
+          "de": "„Fui” ist Indefinido: es würde eine vergangene Tatsache aussagen (ich war Arzt), keinen bis heute andauernden hypothetischen Zustand, richtig: sería."
+        }
+      },
+      "examples": ["Si no hubieras perdido el tren, ahora estarías en la playa.", "Si lo hubiera sabido, hubiera venido."]
+    },
+    {
+      "id": "ct2-12",
+      "sentence": "Si no hubieras perdido el tren, ahora ___ en la playa.",
+      "options": ["estarías", "estás", "estuviste"],
+      "correct": 0,
+      "why": {
+        "hu": "Vegyes forma: múltbeli feltétel, jelen következmény, „tú” alany: estarías.",
+        "en": "Mixed form: past condition, present consequence, subject \"tú\": estarías.",
+        "es": "Forma mixta: condición pasada, consecuencia presente, sujeto «tú»: estarías.",
+        "de": "Mischform: vergangene Bedingung, gegenwärtige Folge, Subjekt „tú”: estarías."
+      },
+      "wrong": {
+        "estás": {
+          "hu": "Az „estás” jelen idő, kijelentő mód: azt jelentené, hogy TÉNYLEG a strandon vagy, nem egy feltételezett állapotot, helyesen: estarías.",
+          "en": "\"Estás\" is present indicative: it would mean you REALLY are at the beach, not a hypothetical state, correctly: estarías.",
+          "es": "«Estás» es presente de indicativo: significaría que REALMENTE estás en la playa, no un estado hipotético, correcto: estarías.",
+          "de": "„Estás” ist Indikativ Präsens: es würde bedeuten, dass du WIRKLICH am Strand bist, kein hypothetischer Zustand, richtig: estarías."
+        },
+        "estuviste": {
+          "hu": "Az „estuviste” indefinido: egy lezárt múltbeli tényt jelentene, nem egy máig tartó feltételezett állapotot, helyesen: estarías.",
+          "en": "\"Estuviste\" is indefinido: it would state a closed past fact, not a hypothetical state lasting until today, correctly: estarías.",
+          "es": "«Estuviste» es indefinido: afirmaría un hecho pasado y cerrado, no un estado hipotético que llega hasta hoy, correcto: estarías.",
+          "de": "„Estuviste” ist Indefinido: es würde eine abgeschlossene vergangene Tatsache aussagen, keinen bis heute andauernden hypothetischen Zustand, richtig: estarías."
+        }
+      },
+      "examples": ["Si hubiera estudiado medicina, ahora sería médico.", "Si me hubieras llamado, hubiera ido a ayudarte."]
+    },
+    {
+      "id": "ct2-match-01",
+      "kind": "match",
+      "pairs": [
+        { "es": "si tuviera dinero", "en": "I would travel around the world" },
+        { "es": "si fueras más amable", "en": "they would help you" },
+        { "es": "si hubiera sabido la verdad", "en": "I wouldn't have said anything" },
+        { "es": "si hubieras estudiado más", "en": "you would have passed the exam" },
+        { "es": "si no hubieras perdido el tren", "en": "you would be at the beach now" },
+        { "es": "si tuviéramos más dinero", "en": "we would sell the old car" }
+      ]
+    },
+    {
+      "id": "ct2-form-01",
+      "kind": "form",
+      "verb": "tener",
+      "person": "imperfecto de subjuntivo, yo",
+      "answer": "tuviera",
+      "table": "irreal"
+    },
+    {
+      "id": "ct2-form-02",
+      "kind": "form",
+      "verb": "ser",
+      "person": "imperfecto de subjuntivo, tú",
+      "answer": "fueras",
+      "table": "irreal"
+    },
+    {
+      "id": "ct2-form-03",
+      "kind": "form",
+      "verb": "hacer",
+      "person": "imperfecto de subjuntivo, él",
+      "answer": "hiciera",
+      "table": "irreal"
+    },
+    {
+      "id": "ct2-form-04",
+      "kind": "form",
+      "verb": "poder",
+      "person": "imperfecto de subjuntivo, yo",
+      "answer": "pudiera",
+      "table": "irreal"
+    },
+    {
+      "id": "ct2-form-05",
+      "kind": "form",
+      "verb": "saber",
+      "person": "imperfecto de subjuntivo, tú",
+      "answer": "supieras",
+      "table": "irreal"
+    },
+    {
+      "id": "ct2-form-06",
+      "kind": "form",
+      "verb": "ser",
+      "person": "imperfecto de subjuntivo, yo",
+      "answer": "fuera",
+      "table": "irreal"
+    },
+    {
+      "id": "ct2-form-07",
+      "kind": "form",
+      "verb": "tener",
+      "person": "pluscuamperfecto de subjuntivo, yo",
+      "answer": "hubiera tenido",
+      "table": "irreal"
+    },
+    {
+      "id": "ct2-form-08",
+      "kind": "form",
+      "verb": "saber",
+      "person": "pluscuamperfecto de subjuntivo, yo",
+      "answer": "hubiera sabido",
+      "table": "irreal"
+    },
+    {
+      "id": "ct2-form-09",
+      "kind": "form",
+      "verb": "hacer",
+      "person": "pluscuamperfecto de subjuntivo, yo",
+      "answer": "hubiera hecho",
+      "table": "irreal"
+    },
+    {
+      "id": "ct2-form-10",
+      "kind": "form",
+      "verb": "tener",
+      "person": "condicional simple, yo",
+      "answer": "tendría",
+      "table": "irreal"
+    },
+    {
+      "id": "ct2-form-11",
+      "kind": "form",
+      "verb": "hacer",
+      "person": "condicional simple, yo",
+      "answer": "haría",
+      "table": "irreal"
+    },
+    {
+      "id": "ct2-form-12",
+      "kind": "form",
+      "verb": "saber",
+      "person": "condicional compuesto, yo",
+      "answer": "habría sabido",
+      "table": "irreal"
+    },
+    {
+      "kind": "why",
+      "id": "ct2-why-01",
+      "es": "Si tuviera dinero, viajaría por el mundo.",
+      "tr": { "hu": "Ha lenne pénzem, körbeutaznám a világot.", "en": "If I had money, I would travel around the world.", "es": "Si tuviera dinero, viajaría por el mundo.", "de": "Wenn ich Geld hätte, würde ich um die Welt reisen." },
+      "options": [
+        {
+          "text": { "hu": "si + imperfecto de subjuntivo, condicional simple: jelenre/jövőre vonatkozó irreális feltétel", "en": "si + imperfect subjunctive, condicional simple: an unreal condition for the present/future", "es": "si + imperfecto de subjuntivo, condicional simple: una condición irreal de presente/futuro", "de": "si + Imperfecto de subjuntivo, Condicional simple: eine irreale Bedingung für Gegenwart/Zukunft" }
+        },
+        {
+          "text": { "hu": "si + presente, futuro simple: valós, biztos feltétel", "en": "si + present, simple future: a real, certain condition", "es": "si + presente, futuro simple: una condición real y segura", "de": "si + Präsens, einfaches Futur: eine reale, sichere Bedingung" },
+          "wrong": { "hu": "A mondatban „tuviera” áll, nem „tengo”: ez nem valós feltétel, hanem irreális.", "en": "The sentence has \"tuviera\", not \"tengo\": this isn't a real condition, but an unreal one.", "es": "La oración tiene «tuviera», no «tengo»: esto no es una condición real, sino irreal.", "de": "Der Satz enthält „tuviera”, nicht „tengo”: das ist keine reale, sondern eine irreale Bedingung." }
+        },
+        {
+          "text": { "hu": "si + pluscuamperfecto de subjuntivo, condicional compuesto: múltbeli irreális feltétel", "en": "si + pluperfect subjunctive, condicional compuesto: an unreal past condition", "es": "si + pluscuamperfecto de subjuntivo, condicional compuesto: una condición irreal de pasado", "de": "si + Pluscuamperfecto de subjuntivo, Condicional compuesto: eine irreale Bedingung der Vergangenheit" },
+          "wrong": { "hu": "Nincs a mondatban „hubiera” vagy „habría”: ez nem a múltra vonatkozik, hanem a jelenre/jövőre.", "en": "There's no \"hubiera\" or \"habría\" in the sentence: this isn't about the past, but the present/future.", "es": "No hay «hubiera» ni «habría» en la oración: esto no es del pasado, sino del presente/futuro.", "de": "Im Satz steht weder „hubiera” noch „habría”: das bezieht sich nicht auf die Vergangenheit, sondern auf Gegenwart/Zukunft." }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ct2-why-02",
+      "es": "Si hubiera sabido la verdad, no habría dicho nada.",
+      "tr": { "hu": "Ha tudtam volna az igazságot, nem mondtam volna semmit.", "en": "If I had known the truth, I wouldn't have said anything.", "es": "Si hubiera sabido la verdad, no habría dicho nada.", "de": "Wenn ich die Wahrheit gewusst hätte, hätte ich nichts gesagt." },
+      "options": [
+        {
+          "text": { "hu": "si + pluscuamperfecto de subjuntivo, condicional compuesto: múltbeli irreális feltétel", "en": "si + pluperfect subjunctive, condicional compuesto: an unreal past condition", "es": "si + pluscuamperfecto de subjuntivo, condicional compuesto: una condición irreal de pasado", "de": "si + Pluscuamperfecto de subjuntivo, Condicional compuesto: eine irreale Bedingung der Vergangenheit" }
+        },
+        {
+          "text": { "hu": "si + imperfecto de subjuntivo, condicional simple", "en": "si + imperfect subjunctive, condicional simple", "es": "si + imperfecto de subjuntivo, condicional simple", "de": "si + Imperfecto de subjuntivo, Condicional simple" },
+          "wrong": { "hu": "A mondatban „hubiera sabido” áll, ez pluscuamperfecto, nem sima imperfecto de subjuntivo.", "en": "The sentence has \"hubiera sabido\", that's pluperfect, not plain imperfect subjunctive.", "es": "La oración tiene «hubiera sabido», eso es pluscuamperfecto, no imperfecto de subjuntivo simple.", "de": "Der Satz enthält „hubiera sabido”, das ist Pluscuamperfecto, kein einfaches Imperfecto de subjuntivo." }
+        },
+        {
+          "text": { "hu": "vegyes forma: múltbeli feltétel, jelen következmény", "en": "mixed form: a past condition, a present consequence", "es": "forma mixta: condición pasada, consecuencia presente", "de": "Mischform: vergangene Bedingung, gegenwärtige Folge" },
+          "wrong": { "hu": "A főtag is múltra utal (habría dicho), nem jelenre: ez nem vegyes forma, hanem tiszta múlt irreális.", "en": "The main clause also points to the past (habría dicho), not the present: this isn't the mixed form, but the pure unreal past.", "es": "La oración principal también apunta al pasado (habría dicho), no al presente: esto no es la forma mixta, sino el pasado irreal puro.", "de": "Auch der Hauptsatz verweist auf die Vergangenheit (habría dicho), nicht auf die Gegenwart: das ist nicht die Mischform, sondern die reine irreale Vergangenheit." }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ct2-why-03",
+      "es": "Si hubiera estudiado medicina, ahora sería médico.",
+      "tr": { "hu": "Ha orvosit tanultam volna, most orvos lennék.", "en": "If I had studied medicine, I would be a doctor now.", "es": "Si hubiera estudiado medicina, ahora sería médico.", "de": "Wenn ich Medizin studiert hätte, wäre ich jetzt Arzt." },
+      "options": [
+        {
+          "text": { "hu": "si + pluscuamperfecto de subjuntivo, condicional compuesto", "en": "si + pluperfect subjunctive, condicional compuesto", "es": "si + pluscuamperfecto de subjuntivo, condicional compuesto", "de": "si + Pluscuamperfecto de subjuntivo, Condicional compuesto" },
+          "wrong": { "hu": "A főtag „sería”, ami condicional simple, nem compuesto (az „habría sido” lenne).", "en": "The main clause is \"sería\", which is condicional simple, not compuesto (that would be \"habría sido\").", "es": "La oración principal es «sería», que es condicional simple, no compuesto (sería «habría sido»).", "de": "Der Hauptsatz ist „sería”, das ist Condicional simple, nicht compuesto (das wäre „habría sido”)." }
+        },
+        {
+          "text": { "hu": "vegyes forma: múltbeli feltétel (pluscuamperfecto subj.), jelen következmény (condicional simple)", "en": "mixed form: a past condition (pluperfect subjunctive), a present consequence (condicional simple)", "es": "forma mixta: condición pasada (pluscuamperfecto de subjuntivo), consecuencia presente (condicional simple)", "de": "Mischform: vergangene Bedingung (Pluscuamperfecto de subjuntivo), gegenwärtige Folge (Condicional simple)" }
+        },
+        {
+          "text": { "hu": "si + imperfecto de subjuntivo, condicional simple", "en": "si + imperfect subjunctive, condicional simple", "es": "si + imperfecto de subjuntivo, condicional simple", "de": "si + Imperfecto de subjuntivo, Condicional simple" },
+          "wrong": { "hu": "A si-tagmondat „hubiera estudiado”, ez pluscuamperfecto, nem sima imperfecto de subjuntivo.", "en": "The si-clause is \"hubiera estudiado\", that's pluperfect, not plain imperfect subjunctive.", "es": "La cláusula con si es «hubiera estudiado», eso es pluscuamperfecto, no imperfecto de subjuntivo simple.", "de": "Der Si-Satz ist „hubiera estudiado”, das ist Pluscuamperfecto, kein einfaches Imperfecto de subjuntivo." }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ct2-why-04",
+      "es": "Si fueras más amable, te ayudarían.",
+      "tr": { "hu": "Ha kedvesebb lennél, segítenének neked.", "en": "If you were kinder, they would help you.", "es": "Si fueras más amable, te ayudarían.", "de": "Wenn du netter wärst, würden sie dir helfen." },
+      "options": [
+        {
+          "text": { "hu": "si + imperfecto de subjuntivo, condicional simple", "en": "si + imperfect subjunctive, condicional simple", "es": "si + imperfecto de subjuntivo, condicional simple", "de": "si + Imperfecto de subjuntivo, Condicional simple" }
+        },
+        {
+          "text": { "hu": "si + presente, imperativo", "en": "si + present, imperative", "es": "si + presente, imperativo", "de": "si + Präsens, Imperativ" },
+          "wrong": { "hu": "A „fueras” nem jelen idő, és a főtag (ayudarían) nem felszólítás.", "en": "\"Fueras\" is not present tense, and the main clause (ayudarían) is not an imperative.", "es": "«Fueras» no es presente, y la oración principal (ayudarían) no es imperativo.", "de": "„Fueras” ist kein Präsens, und der Hauptsatz (ayudarían) ist kein Imperativ." }
+        },
+        {
+          "text": { "hu": "si + pluscuamperfecto de subjuntivo, condicional compuesto", "en": "si + pluperfect subjunctive, condicional compuesto", "es": "si + pluscuamperfecto de subjuntivo, condicional compuesto", "de": "si + Pluscuamperfecto de subjuntivo, Condicional compuesto" },
+          "wrong": { "hu": "Nincs a mondatban „hubiera” vagy „habría”, ez a jelenre/jövőre vonatkozik, nem a múltra.", "en": "There's no \"hubiera\" or \"habría\" in the sentence, this refers to the present/future, not the past.", "es": "No hay «hubiera» ni «habría» en la oración, esto se refiere al presente/futuro, no al pasado.", "de": "Im Satz steht weder „hubiera” noch „habría”, das bezieht sich auf Gegenwart/Zukunft, nicht auf die Vergangenheit." }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ct2-why-05",
+      "es": "Si hubieras estudiado más, habrías aprobado el examen.",
+      "tr": { "hu": "Ha többet tanultál volna, átmentél volna a vizsgán.", "en": "If you had studied more, you would have passed the exam.", "es": "Si hubieras estudiado más, habrías aprobado el examen.", "de": "Wenn du mehr gelernt hättest, hättest du die Prüfung bestanden." },
+      "options": [
+        {
+          "text": { "hu": "si + imperfecto de subjuntivo, condicional simple", "en": "si + imperfect subjunctive, condicional simple", "es": "si + imperfecto de subjuntivo, condicional simple", "de": "si + Imperfecto de subjuntivo, Condicional simple" },
+          "wrong": { "hu": "A si-tagmondat „hubieras estudiado”, ez pluscuamperfecto, a főtag „habrías aprobado”, ez condicional compuesto, egyik sem a sima alak.", "en": "The si-clause is \"hubieras estudiado\", that's pluperfect, the main clause is \"habrías aprobado\", that's condicional compuesto, neither is the plain form.", "es": "La cláusula con si es «hubieras estudiado», eso es pluscuamperfecto, la oración principal es «habrías aprobado», eso es condicional compuesto, ninguno es la forma simple.", "de": "Der Si-Satz ist „hubieras estudiado”, das ist Pluscuamperfecto, der Hauptsatz ist „habrías aprobado”, das ist Condicional compuesto, keins von beiden ist die einfache Form." }
+        },
+        {
+          "text": { "hu": "si + pluscuamperfecto de subjuntivo, condicional compuesto: múltbeli irreális feltétel", "en": "si + pluperfect subjunctive, condicional compuesto: an unreal past condition", "es": "si + pluscuamperfecto de subjuntivo, condicional compuesto: una condición irreal de pasado", "de": "si + Pluscuamperfecto de subjuntivo, Condicional compuesto: eine irreale Bedingung der Vergangenheit" }
+        },
+        {
+          "text": { "hu": "vegyes forma: múltbeli feltétel, jelen következmény", "en": "mixed form: a past condition, a present consequence", "es": "forma mixta: condición pasada, consecuencia presente", "de": "Mischform: vergangene Bedingung, gegenwärtige Folge" },
+          "wrong": { "hu": "A főtag is múltra utal (habrías aprobado), nem jelenre: ez nem vegyes forma.", "en": "The main clause also points to the past (habrías aprobado), not the present: this isn't the mixed form.", "es": "La oración principal también apunta al pasado (habrías aprobado), no al presente: esto no es la forma mixta.", "de": "Auch der Hauptsatz verweist auf die Vergangenheit (habrías aprobado), nicht auf die Gegenwart: das ist nicht die Mischform." }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ct2-why-06",
+      "es": "Ojalá tuviera más tiempo.",
+      "tr": { "hu": "Bárcsak lenne több időm.", "en": "I wish I had more time.", "es": "Ojalá tuviera más tiempo.", "de": "Ich wünschte, ich hätte mehr Zeit." },
+      "options": [
+        {
+          "text": { "hu": "ojalá + imperfecto de subjuntivo: irreális kívánság", "en": "ojalá + imperfect subjunctive: an unreal wish", "es": "ojalá + imperfecto de subjuntivo: un deseo irreal", "de": "ojalá + Imperfecto de subjuntivo: ein irrealer Wunsch" }
+        },
+        {
+          "text": { "hu": "si + imperfecto de subjuntivo, condicional simple", "en": "si + imperfect subjunctive, condicional simple", "es": "si + imperfecto de subjuntivo, condicional simple", "de": "si + Imperfecto de subjuntivo, Condicional simple" },
+          "wrong": { "hu": "A mondatban nincs si-tagmondat és főtag, csak egy „ojalá” kezdetű önálló kívánság.", "en": "The sentence has no si-clause and main clause, just a standalone wish starting with \"ojalá\".", "es": "La oración no tiene cláusula con si y principal, solo un deseo independiente que empieza con «ojalá».", "de": "Der Satz hat weder Si-Satz noch Hauptsatz, nur einen eigenständigen Wunsch mit „ojalá”." }
+        },
+        {
+          "text": { "hu": "como si + imperfecto de subjuntivo: hamis látszat", "en": "como si + imperfect subjunctive: a false appearance", "es": "como si + imperfecto de subjuntivo: una apariencia falsa", "de": "como si + Imperfecto de subjuntivo: ein falscher Anschein" },
+          "wrong": { "hu": "A mondatban „ojalá” áll, nem „como si”: ez egy kívánság, nem egy hamis látszat leírása.", "en": "The sentence has \"ojalá\", not \"como si\": this is a wish, not a description of a false appearance.", "es": "La oración tiene «ojalá», no «como si»: esto es un deseo, no la descripción de una apariencia falsa.", "de": "Der Satz enthält „ojalá”, nicht „como si”: das ist ein Wunsch, keine Beschreibung eines falschen Anscheins." }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ct2-why-07",
+      "es": "Si lo hubiera sabido, hubiera venido.",
+      "tr": { "hu": "Ha tudtam volna, eljöttem volna.", "en": "If I had known, I would have come.", "es": "Si lo hubiera sabido, hubiera venido.", "de": "Wenn ich es gewusst hätte, wäre ich gekommen." },
+      "options": [
+        {
+          "text": { "hu": "si + pluscuamperfecto de subjuntivo, condicional compuesto", "en": "si + pluperfect subjunctive, condicional compuesto", "es": "si + pluscuamperfecto de subjuntivo, condicional compuesto", "de": "si + Pluscuamperfecto de subjuntivo, Condicional compuesto" },
+          "wrong": { "hu": "A főtagban „hubiera venido” áll „habría venido” helyett: ez a beszélt nyelvi, mexikói minta, nem a szabályos condicional compuesto.", "en": "The main clause has \"hubiera venido\" instead of \"habría venido\": this is the spoken, Mexican pattern, not the standard condicional compuesto.", "es": "La oración principal tiene «hubiera venido» en vez de «habría venido»: es el patrón hablado, mexicano, no el condicional compuesto estándar.", "de": "Der Hauptsatz hat „hubiera venido” statt „habría venido”: das ist das gesprochene, mexikanische Muster, nicht das standardmäßige Condicional compuesto." }
+        },
+        {
+          "text": { "hu": "beszélt nyelvi minta: „hubiera” a főtagban „habría” helyett, Mexikóban gyakori", "en": "a spoken pattern: \"hubiera\" in the main clause instead of \"habría\", common in Mexico", "es": "un patrón hablado: «hubiera» en la oración principal en vez de «habría», frecuente en México", "de": "ein gesprochenes Muster: „hubiera” im Hauptsatz statt „habría”, häufig in Mexiko" }
+        },
+        {
+          "text": { "hu": "si + imperfecto de subjuntivo, condicional simple", "en": "si + imperfect subjunctive, condicional simple", "es": "si + imperfecto de subjuntivo, condicional simple", "de": "si + Imperfecto de subjuntivo, Condicional simple" },
+          "wrong": { "hu": "A si-tagmondat „hubiera sabido”, ez pluscuamperfecto, nem sima imperfecto de subjuntivo.", "en": "The si-clause is \"hubiera sabido\", that's pluperfect, not plain imperfect subjunctive.", "es": "La cláusula con si es «hubiera sabido», eso es pluscuamperfecto, no imperfecto de subjuntivo simple.", "de": "Der Si-Satz ist „hubiera sabido”, das ist Pluscuamperfecto, kein einfaches Imperfecto de subjuntivo." }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

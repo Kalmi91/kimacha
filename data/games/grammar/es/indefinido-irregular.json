@@ -179,19 +179,80 @@
         "de": "Verben mit starkem Stamm, Indefinido"
       },
       "header": [
-        { "hu": "Személy", "en": "Person", "es": "Persona", "de": "Person" },
-        { "hu": "tener", "en": "tener", "es": "tener", "de": "tener" },
-        { "hu": "estar", "en": "estar", "es": "estar", "de": "estar" },
-        { "hu": "poder", "en": "poder", "es": "poder", "de": "poder" },
-        { "hu": "hacer", "en": "hacer", "es": "hacer", "de": "hacer" }
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "tener",
+          "en": "tener",
+          "es": "tener",
+          "de": "tener"
+        },
+        {
+          "hu": "estar",
+          "en": "estar",
+          "es": "estar",
+          "de": "estar"
+        },
+        {
+          "hu": "poder",
+          "en": "poder",
+          "es": "poder",
+          "de": "poder"
+        },
+        {
+          "hu": "hacer",
+          "en": "hacer",
+          "es": "hacer",
+          "de": "hacer"
+        }
       ],
       "rows": [
-        ["yo", "tuve", "estuve", "pude", "hice"],
-        ["tú", "tuviste", "estuviste", "pudiste", "hiciste"],
-        ["él/ella/usted", "tuvo", "estuvo", "pudo", "hizo"],
-        ["nosotros", "tuvimos", "estuvimos", "pudimos", "hicimos"],
-        ["vosotros", "tuvisteis", "estuvisteis", "pudisteis", "hicisteis"],
-        ["ellos/ellas/ustedes", "tuvieron", "estuvieron", "pudieron", "hicieron"]
+        [
+          "yo",
+          "tuve",
+          "estuve",
+          "pude",
+          "hice"
+        ],
+        [
+          "tú",
+          "tuviste",
+          "estuviste",
+          "pudiste",
+          "hiciste"
+        ],
+        [
+          "él/ella/usted",
+          "tuvo",
+          "estuvo",
+          "pudo",
+          "hizo"
+        ],
+        [
+          "nosotros",
+          "tuvimos",
+          "estuvimos",
+          "pudimos",
+          "hicimos"
+        ],
+        [
+          "vosotros",
+          "tuvisteis",
+          "estuvisteis",
+          "pudisteis",
+          "hicisteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "tuvieron",
+          "estuvieron",
+          "pudieron",
+          "hicieron"
+        ]
       ]
     },
     {
@@ -204,19 +265,80 @@
         "de": "Weitere Verben mit starkem Stamm, Indefinido"
       },
       "header": [
-        { "hu": "Személy", "en": "Person", "es": "Persona", "de": "Person" },
-        { "hu": "poner", "en": "poner", "es": "poner", "de": "poner" },
-        { "hu": "saber", "en": "saber", "es": "saber", "de": "saber" },
-        { "hu": "venir", "en": "venir", "es": "venir", "de": "venir" },
-        { "hu": "decir", "en": "decir", "es": "decir", "de": "decir" }
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "poner",
+          "en": "poner",
+          "es": "poner",
+          "de": "poner"
+        },
+        {
+          "hu": "saber",
+          "en": "saber",
+          "es": "saber",
+          "de": "saber"
+        },
+        {
+          "hu": "venir",
+          "en": "venir",
+          "es": "venir",
+          "de": "venir"
+        },
+        {
+          "hu": "decir",
+          "en": "decir",
+          "es": "decir",
+          "de": "decir"
+        }
       ],
       "rows": [
-        ["yo", "puse", "supe", "vine", "dije"],
-        ["tú", "pusiste", "supiste", "viniste", "dijiste"],
-        ["él/ella/usted", "puso", "supo", "vino", "dijo"],
-        ["nosotros", "pusimos", "supimos", "vinimos", "dijimos"],
-        ["vosotros", "pusisteis", "supisteis", "vinisteis", "dijisteis"],
-        ["ellos/ellas/ustedes", "pusieron", "supieron", "vinieron", "dijeron"]
+        [
+          "yo",
+          "puse",
+          "supe",
+          "vine",
+          "dije"
+        ],
+        [
+          "tú",
+          "pusiste",
+          "supiste",
+          "viniste",
+          "dijiste"
+        ],
+        [
+          "él/ella/usted",
+          "puso",
+          "supo",
+          "vino",
+          "dijo"
+        ],
+        [
+          "nosotros",
+          "pusimos",
+          "supimos",
+          "vinimos",
+          "dijimos"
+        ],
+        [
+          "vosotros",
+          "pusisteis",
+          "supisteis",
+          "vinisteis",
+          "dijisteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "pusieron",
+          "supieron",
+          "vinieron",
+          "dijeron"
+        ]
       ]
     },
     {
@@ -229,18 +351,68 @@
         "de": "Ser, ir und dar, Indefinido"
       },
       "header": [
-        { "hu": "Személy", "en": "Person", "es": "Persona", "de": "Person" },
-        { "hu": "ser", "en": "ser", "es": "ser", "de": "ser" },
-        { "hu": "ir", "en": "ir", "es": "ir", "de": "ir" },
-        { "hu": "dar", "en": "dar", "es": "dar", "de": "dar" }
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "ser",
+          "en": "ser",
+          "es": "ser",
+          "de": "ser"
+        },
+        {
+          "hu": "ir",
+          "en": "ir",
+          "es": "ir",
+          "de": "ir"
+        },
+        {
+          "hu": "dar",
+          "en": "dar",
+          "es": "dar",
+          "de": "dar"
+        }
       ],
       "rows": [
-        ["yo", "fui", "fui", "di"],
-        ["tú", "fuiste", "fuiste", "diste"],
-        ["él/ella/usted", "fue", "fue", "dio"],
-        ["nosotros", "fuimos", "fuimos", "dimos"],
-        ["vosotros", "fuisteis", "fuisteis", "disteis"],
-        ["ellos/ellas/ustedes", "fueron", "fueron", "dieron"]
+        [
+          "yo",
+          "fui",
+          "fui",
+          "di"
+        ],
+        [
+          "tú",
+          "fuiste",
+          "fuiste",
+          "diste"
+        ],
+        [
+          "él/ella/usted",
+          "fue",
+          "fue",
+          "dio"
+        ],
+        [
+          "nosotros",
+          "fuimos",
+          "fuimos",
+          "dimos"
+        ],
+        [
+          "vosotros",
+          "fuisteis",
+          "fuisteis",
+          "disteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "fueron",
+          "fueron",
+          "dieron"
+        ]
       ]
     },
     {
@@ -706,7 +878,11 @@
     {
       "id": "ii-01",
       "sentence": "Ayer ___ (yo) mucho trabajo en la oficina.",
-      "options": ["tuve", "tenía", "tengo"],
+      "options": [
+        "tuve",
+        "tenía",
+        "tengo"
+      ],
       "correct": 0,
       "why": {
         "hu": "A tener múlt idejű töve tuv-, ékezet nélküli végződéssel: tuve. Az \"ayer\" konkrét, lezárt napra utal.",
@@ -731,12 +907,20 @@
       "examples": [
         "Ayer tuvimos una reunión larga.",
         "El sábado tuve que trabajar."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-02",
       "sentence": "El año pasado ___ (nosotros) en Guadalajara.",
-      "options": ["estuvimos", "estamos", "fuimos"],
+      "options": [
+        "estuvimos",
+        "estamos",
+        "fuimos"
+      ],
       "correct": 0,
       "why": {
         "hu": "Az estar múlt töve estuv-: estuvimos, ott voltunk, tartózkodtunk.",
@@ -761,12 +945,20 @@
       "examples": [
         "Estuve en casa toda la tarde.",
         "Estuvieron aquí dos horas."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-03",
       "sentence": "¿Qué ___ (tú) el fin de semana?",
-      "options": ["hiciste", "haces", "hacías"],
+      "options": [
+        "hiciste",
+        "haces",
+        "hacías"
+      ],
       "correct": 0,
       "why": {
         "hu": "A hacer múlt töve hic-, a tú alakja hiciste; egy már elmúlt hétvégére kérdez.",
@@ -791,12 +983,20 @@
       "examples": [
         "Hice la comida para todos.",
         "Hicimos un viaje corto."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-04",
       "sentence": "Ella ___ que no podía venir.",
-      "options": ["dijo", "dice", "decía"],
+      "options": [
+        "dijo",
+        "dice",
+        "decía"
+      ],
       "correct": 0,
       "why": {
         "hu": "A decir múlt töve dij-, ő-alakban dijo: egyszeri bejelentésről van szó.",
@@ -821,12 +1021,20 @@
       "examples": [
         "Mis padres dijeron que sí.",
         "El médico dijo la verdad."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-05",
       "sentence": "Ellos ___ los libros a la escuela.",
-      "options": ["trajeron", "traieron", "traen"],
+      "options": [
+        "trajeron",
+        "traieron",
+        "traen"
+      ],
       "correct": 0,
       "why": {
         "hu": "A -j- tövű igék ellos-alakja -eron, nem -ieron: trajeron.",
@@ -851,12 +1059,20 @@
       "examples": [
         "Dijeron que llegaban tarde.",
         "Trajimos comida para todos."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-06",
       "sentence": "Yo ___ al mercado y compré fruta.",
-      "options": ["fui", "era", "iba"],
+      "options": [
+        "fui",
+        "era",
+        "iba"
+      ],
       "correct": 0,
       "why": {
         "hu": "Az ir múltja fui, és az „a\" elöljáró mutatja, hogy menésről van szó.",
@@ -881,12 +1097,20 @@
       "examples": [
         "Fuimos al cine el viernes.",
         "¿Adónde fuiste ayer?"
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-07",
       "sentence": "Mi abuelo ___ profesor durante treinta años.",
-      "options": ["fue", "fui", "iba"],
+      "options": [
+        "fue",
+        "fui",
+        "iba"
+      ],
       "correct": 0,
       "why": {
         "hu": "A ser múltja fue; a harminc év lezárt, befejezett szakasz.",
@@ -911,12 +1135,20 @@
       "examples": [
         "Fue un día difícil.",
         "Fueron muy amables con nosotros."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-08",
       "sentence": "No ___ (nosotros) terminar el trabajo a tiempo.",
-      "options": ["pudimos", "podemos", "podíamos"],
+      "options": [
+        "pudimos",
+        "podemos",
+        "podíamos"
+      ],
       "correct": 0,
       "why": {
         "hu": "A poder múlt töve pud-: pudimos, egy konkrét alkalomra, amikor nem sikerült.",
@@ -941,12 +1173,20 @@
       "examples": [
         "No pude dormir anoche.",
         "Pudieron entrar sin problema."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-09",
       "sentence": "¿Cuándo ___ (tú) la noticia?",
-      "options": ["supiste", "sabías", "sabes"],
+      "options": [
+        "supiste",
+        "sabías",
+        "sabes"
+      ],
       "correct": 0,
       "why": {
         "hu": "A saber múltja megtudást jelent: supiste, akkor tudtad meg.",
@@ -971,12 +1211,20 @@
       "examples": [
         "Supe la verdad ayer.",
         "Supimos que estaba enfermo."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-10",
       "sentence": "Él ___ el dinero en la mesa.",
-      "options": ["puso", "pone", "ponía"],
+      "options": [
+        "puso",
+        "pone",
+        "ponía"
+      ],
       "correct": 0,
       "why": {
         "hu": "A poner múlt töve pus-, ő-alakban puso: egyszeri cselekvés.",
@@ -1001,12 +1249,20 @@
       "examples": [
         "Puse la mesa antes de comer.",
         "Pusieron música toda la noche."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-11",
       "sentence": "Mis amigos ___ a la fiesta sin avisar.",
-      "options": ["vinieron", "vienen", "venían"],
+      "options": [
+        "vinieron",
+        "vienen",
+        "venían"
+      ],
       "correct": 0,
       "why": {
         "hu": "A venir múlt töve vin-, ellos-alakban vinieron: egyszeri, meglepetésszerű megjelenés.",
@@ -1031,12 +1287,20 @@
       "examples": [
         "Vino a verme el domingo.",
         "Vinimos en autobús."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-12",
       "sentence": "Ella me ___ un regalo por mi cumpleaños.",
-      "options": ["dio", "da", "daba"],
+      "options": [
+        "dio",
+        "da",
+        "daba"
+      ],
       "correct": 0,
       "why": {
         "hu": "A dar rendhagyó: az -er végződéseket kapja, ő-alakban dio, ékezet nélkül, egyszeri ajándékozásra.",
@@ -1061,19 +1325,45 @@
       "examples": [
         "Le di las llaves a mi vecino.",
         "Nos dieron una buena noticia."
-      ]
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-match-01",
       "kind": "match",
       "pairs": [
-        { "es": "tuve un problema", "en": "I had a problem" },
-        { "es": "fuimos al cine", "en": "we went to the movies" },
-        { "es": "ella dijo que sí", "en": "she said yes" },
-        { "es": "vinieron sin avisar", "en": "they came without warning" },
-        { "es": "no pude dormir", "en": "I couldn't sleep" },
-        { "es": "le di un regalo", "en": "I gave her a gift" }
-      ]
+        {
+          "es": "tuve un problema",
+          "en": "I had a problem"
+        },
+        {
+          "es": "fuimos al cine",
+          "en": "we went to the movies"
+        },
+        {
+          "es": "ella dijo que sí",
+          "en": "she said yes"
+        },
+        {
+          "es": "vinieron sin avisar",
+          "en": "they came without warning"
+        },
+        {
+          "es": "no pude dormir",
+          "en": "I couldn't sleep"
+        },
+        {
+          "es": "le di un regalo",
+          "en": "I gave her a gift"
+        }
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-form-01",
@@ -1081,7 +1371,11 @@
       "verb": "tener",
       "person": "yo",
       "answer": "tuve",
-      "table": "indefinido-fuerte-1"
+      "table": "indefinido-fuerte-1",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-form-02",
@@ -1089,7 +1383,11 @@
       "verb": "tener",
       "person": "ellos/ellas/ustedes",
       "answer": "tuvieron",
-      "table": "indefinido-fuerte-1"
+      "table": "indefinido-fuerte-1",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-form-03",
@@ -1097,7 +1395,11 @@
       "verb": "estar",
       "person": "tú",
       "answer": "estuviste",
-      "table": "indefinido-fuerte-1"
+      "table": "indefinido-fuerte-1",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-form-04",
@@ -1105,7 +1407,11 @@
       "verb": "estar",
       "person": "nosotros",
       "answer": "estuvimos",
-      "table": "indefinido-fuerte-1"
+      "table": "indefinido-fuerte-1",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-form-05",
@@ -1113,7 +1419,11 @@
       "verb": "hacer",
       "person": "él/ella/usted",
       "answer": "hizo",
-      "table": "indefinido-fuerte-1"
+      "table": "indefinido-fuerte-1",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-form-06",
@@ -1121,7 +1431,11 @@
       "verb": "poner",
       "person": "yo",
       "answer": "puse",
-      "table": "indefinido-fuerte-2"
+      "table": "indefinido-fuerte-2",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-form-07",
@@ -1129,7 +1443,11 @@
       "verb": "saber",
       "person": "tú",
       "answer": "supiste",
-      "table": "indefinido-fuerte-2"
+      "table": "indefinido-fuerte-2",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-form-08",
@@ -1137,7 +1455,11 @@
       "verb": "venir",
       "person": "él/ella/usted",
       "answer": "vino",
-      "table": "indefinido-fuerte-2"
+      "table": "indefinido-fuerte-2",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-form-09",
@@ -1145,7 +1467,11 @@
       "verb": "decir",
       "person": "vosotros",
       "answer": "dijisteis",
-      "table": "indefinido-fuerte-2"
+      "table": "indefinido-fuerte-2",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-form-10",
@@ -1153,7 +1479,11 @@
       "verb": "ser",
       "person": "yo",
       "answer": "fui",
-      "table": "indefinido-ser-ir-dar"
+      "table": "indefinido-ser-ir-dar",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-form-11",
@@ -1161,7 +1491,11 @@
       "verb": "ir",
       "person": "nosotros",
       "answer": "fuimos",
-      "table": "indefinido-ser-ir-dar"
+      "table": "indefinido-ser-ir-dar",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "id": "ii-form-12",
@@ -1169,7 +1503,11 @@
       "verb": "dar",
       "person": "ellos/ellas/ustedes",
       "answer": "dieron",
-      "table": "indefinido-ser-ir-dar"
+      "table": "indefinido-ser-ir-dar",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1219,7 +1557,11 @@
           }
         }
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1269,7 +1611,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1319,7 +1665,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1369,7 +1719,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1419,7 +1773,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1469,7 +1827,11 @@
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     },
     {
       "kind": "why",
@@ -1519,7 +1881,11 @@
           }
         }
       ],
-      "correctIndex": 2
+      "correctIndex": 2,
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
     }
   ]
 }

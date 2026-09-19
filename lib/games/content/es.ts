@@ -39,9 +39,21 @@ import grammarEsPronombresOd from '@/data/games/grammar/es/pronombres-od.json';
 import grammarEsPronombresOi from '@/data/games/grammar/es/pronombres-oi.json';
 import grammarEsQuienAQuien from '@/data/games/grammar/es/quien-a-quien.json';
 import grammarEsIrAInfinitivo from '@/data/games/grammar/es/ir-a-infinitivo.json';
+import grammarEsNumerosHoraFecha from '@/data/games/grammar/es/numeros-hora-fecha.json';
+import grammarEsPreposicionesBasicas from '@/data/games/grammar/es/preposiciones-basicas.json';
 import grammarEsEstarGerundio from '@/data/games/grammar/es/estar-gerundio.json';
 import grammarEsVerbosReflexivos from '@/data/games/grammar/es/verbos-reflexivos.json';
+import grammarEsSubjuntivoPresenteForma from '@/data/games/grammar/es/subjuntivo-presente-forma.json';
+import grammarEsSubjuntivoDisparadores from '@/data/games/grammar/es/subjuntivo-disparadores.json';
+import grammarEsTemporalesSubjuntivo from '@/data/games/grammar/es/temporales-subjuntivo.json';
 import grammarEsCondicionalSimple from '@/data/games/grammar/es/condicional-simple.json';
+import grammarEsCondicionalesTipo1 from '@/data/games/grammar/es/condicionales-tipo1.json';
+import grammarEsSubjuntivoImperfecto from '@/data/games/grammar/es/subjuntivo-imperfecto.json';
+import grammarEsCondicionalesTipo23 from '@/data/games/grammar/es/condicionales-tipo2-3.json';
+import grammarEsEstiloIndirecto from '@/data/games/grammar/es/estilo-indirecto.json';
+import grammarEsComparativosSuperlativos from '@/data/games/grammar/es/comparativos-superlativos.json';
+import grammarEsFinalesCausales from '@/data/games/grammar/es/finales-causales.json';
+import grammarEsMarcadoresDiscursivos from '@/data/games/grammar/es/marcadores-discursivos.json';
 import grammarEsPresenteRegular from '@/data/games/grammar/es/presente-regular.json';
 import grammarEsHayEstar from '@/data/games/grammar/es/hay-estar.json';
 import grammarEsGustar from '@/data/games/grammar/es/gustar.json';
@@ -61,6 +73,7 @@ import grammarEsFuturoSimple from '@/data/games/grammar/es/futuro-simple.json';
 import grammarEsDemostrativos from '@/data/games/grammar/es/demostrativos.json';
 import grammarEsInterrogativos from '@/data/games/grammar/es/interrogativos.json';
 import grammarEsNegacion from '@/data/games/grammar/es/negacion.json';
+import grammarEsImperativoAfirmativo from '@/data/games/grammar/es/imperativo-afirmativo.json';
 import confusablesEsSueldo from '@/data/games/confusables/es/sueldo-suelo-suelto.json';
 import confusablesEsPero from '@/data/games/confusables/es/pero-perro.json';
 import confusablesEsCaro from '@/data/games/confusables/es/caro-carro.json';
@@ -132,6 +145,8 @@ export const esContent: LanguageContentBundle = {
     grammarEsNegacion,
     grammarEsGustar,
     grammarEsIrAInfinitivo,
+    grammarEsNumerosHoraFecha,
+    grammarEsPreposicionesBasicas,
     grammarEsIndefinidoRegular,
     grammarEsIndefinidoIrregular,
     grammarEsIndefinido10Verbos,
@@ -140,9 +155,20 @@ export const esContent: LanguageContentBundle = {
     grammarEsPerfecto,
     grammarEsEstarGerundio,
     grammarEsFuturoSimple,
+    grammarEsImperativoAfirmativo,
     grammarEsVerbosReflexivos,
     grammarEsPorPara,
+    grammarEsSubjuntivoPresenteForma,
+    grammarEsSubjuntivoDisparadores,
+    grammarEsTemporalesSubjuntivo,
     grammarEsCondicionalSimple,
+    grammarEsCondicionalesTipo1,
+    grammarEsSubjuntivoImperfecto,
+    grammarEsCondicionalesTipo23,
+    grammarEsEstiloIndirecto,
+    grammarEsComparativosSuperlativos,
+    grammarEsFinalesCausales,
+    grammarEsMarcadoresDiscursivos,
   ] as unknown as GrammarTopicData[],
   confusables: [
     confusablesEsSueldo, confusablesEsPero, confusablesEsCaro, confusablesEsCasa,
