@@ -49,6 +49,7 @@ import grammarEsCondicionalesTipo23 from '@/data/games/grammar/es/condicionales-
 import grammarEsEstiloIndirecto from '@/data/games/grammar/es/estilo-indirecto.json';
 import grammarEsComparativosSuperlativos from '@/data/games/grammar/es/comparativos-superlativos.json';
 import grammarEsFinalesCausales from '@/data/games/grammar/es/finales-causales.json';
+import grammarEsMarcadoresDiscursivos from '@/data/games/grammar/es/marcadores-discursivos.json';
 import grammarEsPresenteRegular from '@/data/games/grammar/es/presente-regular.json';
 import grammarEsHayEstar from '@/data/games/grammar/es/hay-estar.json';
 import grammarEsGustar from '@/data/games/grammar/es/gustar.json';
@@ -159,6 +160,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsEstiloIndirecto,
     grammarEsComparativosSuperlativos,
     grammarEsFinalesCausales,
+    grammarEsMarcadoresDiscursivos,
   ] as unknown as GrammarTopicData[],
   confusables: [
     confusablesEsSueldo, confusablesEsPero, confusablesEsCaro, confusablesEsCasa,
