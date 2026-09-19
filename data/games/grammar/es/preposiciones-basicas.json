@@ -1,0 +1,664 @@
+{
+  "schema": 2,
+  "topic": "preposiciones-basicas",
+  "level": "A1",
+  "title": {
+    "hu": "Alap elöljárók: a, de, en, con, por",
+    "en": "Basic prepositions: a, de, en, con, por",
+    "es": "Preposiciones básicas: a, de, en, con, por",
+    "de": "Grundpräpositionen: a, de, en, con, por"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Az öt elöljáró, a, de, en, con és por nélkül nincs hely, irány, birtok, eszköz vagy idő spanyolul: a legtöbb A1-es mondatban legalább egy megjelenik közülük.",
+        "en": "Without the five prepositions a, de, en, con and por there is no place, direction, possession, tool or time in Spanish: most A1 sentences contain at least one of them.",
+        "es": "Sin las cinco preposiciones a, de, en, con y por no hay lugar, dirección, posesión, instrumento ni tiempo en español: la mayoría de las frases A1 tienen al menos una.",
+        "de": "Ohne die fünf Präpositionen a, de, en, con und por gibt es im Spanischen weder Ort, Richtung, Besitz, Mittel noch Zeit: die meisten A1-Sätze enthalten mindestens eine davon."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": { "hu": "Szabályok", "en": "Rules", "es": "Reglas", "de": "Regeln" },
+      "points": [
+        {
+          "text": {
+            "hu": "Az a irányt fejez ki (hova? voy a la escuela), egy konkrét időpontot (a las ocho), egy konkrét személyt tárgyként (veo a mi madre), és az ir a + infinitivo szerkezetben a közeli jövőt (voy a comer).",
+            "en": "A expresses direction (where to? voy a la escuela), a specific point in time (a las ocho), a specific person as the object (veo a mi madre), and in ir a + infinitive the near future (voy a comer).",
+            "es": "A expresa dirección (¿adónde? voy a la escuela), un momento concreto (a las ocho), a una persona concreta como objeto (veo a mi madre), y en ir a + infinitivo el futuro próximo (voy a comer).",
+            "de": "A drückt Richtung aus (wohin? voy a la escuela), einen bestimmten Zeitpunkt (a las ocho), eine konkrete Person als Objekt (veo a mi madre), und in ir a + Infinitiv die nahe Zukunft (voy a comer)."
+          },
+          "examples": [
+            { "es": "Voy a la escuela.", "tr": { "hu": "Iskolába megyek.", "en": "I go to school.", "es": "Voy a la escuela.", "de": "Ich gehe zur Schule." } },
+            { "es": "La clase empieza a las ocho.", "tr": { "hu": "Az óra nyolckor kezdődik.", "en": "Class starts at eight.", "es": "La clase empieza a las ocho.", "de": "Der Unterricht beginnt um acht." } },
+            { "es": "Veo a mi madre los domingos.", "tr": { "hu": "Vasárnaponként látom anyámat.", "en": "I see my mother on Sundays.", "es": "Veo a mi madre los domingos.", "de": "Ich sehe meine Mutter sonntags." } },
+            { "es": "Voy a comer a las dos.", "tr": { "hu": "Kettőkor fogok enni.", "en": "I'm going to eat at two.", "es": "Voy a comer a las dos.", "de": "Ich werde um zwei essen." } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A de birtokot fejez ki (el libro de Ana), anyagot vagy eredetet (soy de Hungría, una mesa de madera), azt, hogy miről beszélünk (hablamos de la comida), és egy napszakot egy konkrét óra mellett (de la mañana).",
+            "en": "De expresses possession (el libro de Ana), material or origin (soy de Hungría, una mesa de madera), what something is about (hablamos de la comida), and a part of day next to an exact hour (de la mañana).",
+            "es": "De expresa posesión (el libro de Ana), material u origen (soy de Hungría, una mesa de madera), aquello de lo que se habla (hablamos de la comida), y una parte del día junto a una hora exacta (de la mañana).",
+            "de": "De drückt Besitz aus (el libro de Ana), Material oder Herkunft (soy de Hungría, una mesa de madera), worüber man spricht (hablamos de la comida), und eine Tageszeit neben einer genauen Uhrzeit (de la mañana)."
+          },
+          "examples": [
+            { "es": "Es el libro de Ana.", "tr": { "hu": "Ez Ana könyve.", "en": "It's Ana's book.", "es": "Es el libro de Ana.", "de": "Das ist Anas Buch." } },
+            { "es": "La mesa es de madera.", "tr": { "hu": "Az asztal fából van.", "en": "The table is made of wood.", "es": "La mesa es de madera.", "de": "Der Tisch ist aus Holz." } },
+            { "es": "Soy de Hungría.", "tr": { "hu": "Magyarországról vagyok.", "en": "I am from Hungary.", "es": "Soy de Hungría.", "de": "Ich bin aus Ungarn." } },
+            { "es": "Hablamos de la comida.", "tr": { "hu": "A kajáról beszélünk.", "en": "We talk about the food.", "es": "Hablamos de la comida.", "de": "Wir sprechen über das Essen." } },
+            { "es": "Son las siete de la mañana.", "tr": { "hu": "Reggel hét óra van.", "en": "It is seven in the morning.", "es": "Son las siete de la mañana.", "de": "Es ist sieben Uhr morgens." } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Az en helyet fejez ki (estoy en casa, en la mesa), hónapot vagy évet (en mayo), és egy közlekedési eszközt (en metro, en coche).",
+            "en": "En expresses place (estoy en casa, en la mesa), a month or year (en mayo), and a means of transport (en metro, en coche).",
+            "es": "En expresa lugar (estoy en casa, en la mesa), un mes o un año (en mayo), y un medio de transporte (en metro, en coche).",
+            "de": "En drückt einen Ort aus (estoy en casa, en la mesa), einen Monat oder ein Jahr (en mayo), und ein Verkehrsmittel (en metro, en coche)."
+          },
+          "examples": [
+            { "es": "Estoy en casa.", "tr": { "hu": "Otthon vagyok.", "en": "I am at home.", "es": "Estoy en casa.", "de": "Ich bin zu Hause." } },
+            { "es": "Mi cumpleaños es en mayo.", "tr": { "hu": "A születésnapom májusban van.", "en": "My birthday is in May.", "es": "Mi cumpleaños es en mayo.", "de": "Mein Geburtstag ist im Mai." } },
+            { "es": "Vamos en metro.", "tr": { "hu": "Metróval megyünk.", "en": "We go by metro.", "es": "Vamos en metro.", "de": "Wir fahren mit der U-Bahn." } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A con azt fejezi ki, kivel vagy mivel csinálunk valamit (con mi amigo, café con leche); névmással conmigo, contigo lesz.",
+            "en": "Con expresses who or what you do something with (con mi amigo, café con leche); with a pronoun it becomes conmigo, contigo.",
+            "es": "Con expresa con quién o con qué se hace algo (con mi amigo, café con leche); con un pronombre se convierte en conmigo, contigo.",
+            "de": "Con drückt aus, mit wem oder womit man etwas tut (con mi amigo, café con leche); mit einem Pronomen wird es zu conmigo, contigo."
+          },
+          "examples": [
+            { "es": "Voy al cine con mi amigo.", "tr": { "hu": "A moziba megyek a barátommal.", "en": "I'm going to the movies with my friend.", "es": "Voy al cine con mi amigo.", "de": "Ich gehe mit meinem Freund ins Kino." } },
+            { "es": "Quiero un café con leche.", "tr": { "hu": "Egy tejeskávét kérek.", "en": "I want a coffee with milk.", "es": "Quiero un café con leche.", "de": "Ich möchte einen Kaffee mit Milch." } },
+            { "es": "¿Vienes conmigo?", "tr": { "hu": "Jössz velem?", "en": "Are you coming with me?", "es": "¿Vienes conmigo?", "de": "Kommst du mit mir?" } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A1-szinten a por csak ennyit jelent: az okot (gracias por la ayuda), egy hozzávetőleges helyet (por aquí), egy napszakot pontos óra nélkül (por la mañana), és hogy min keresztül (por la calle); a por/para részletes szembeállítása külön leckében van.",
+            "en": "At A1 level por only covers this much: the reason (gracias por la ayuda), a rough location (por aquí), a part of day without an exact hour (por la mañana), and passing through (por la calle); the detailed por/para contrast is in a separate lesson.",
+            "es": "En el nivel A1 por solo cubre esto: la razón (gracias por la ayuda), un lugar aproximado (por aquí), una parte del día sin hora exacta (por la mañana), y a través de dónde (por la calle); el contraste detallado de por/para está en otra lección.",
+            "de": "Auf A1-Niveau deckt por nur so viel ab: den Grund (gracias por la ayuda), einen ungefähren Ort (por aquí), eine Tageszeit ohne genaue Uhrzeit (por la mañana), und wodurch hindurch (por la calle); der ausführliche Vergleich von por/para steht in einer eigenen Lektion."
+          },
+          "examples": [
+            { "es": "Gracias por la ayuda.", "tr": { "hu": "Köszönöm a segítséget.", "en": "Thanks for the help.", "es": "Gracias por la ayuda.", "de": "Danke für die Hilfe." } },
+            { "es": "El hotel está por aquí.", "tr": { "hu": "A szálloda erre van valahol.", "en": "The hotel is around here.", "es": "El hotel está por aquí.", "de": "Das Hotel ist hier irgendwo." } },
+            { "es": "Trabajo por la mañana.", "tr": { "hu": "Délelőtt dolgozom.", "en": "I work in the morning.", "es": "Trabajo por la mañana.", "de": "Ich arbeite vormittags." } },
+            { "es": "Caminamos por la calle.", "tr": { "hu": "Végigsétálunk az utcán.", "en": "We walk along the street.", "es": "Caminamos por la calle.", "de": "Wir gehen die Straße entlang." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "contracciones",
+      "title": {
+        "hu": "Összevonások: a/de + el",
+        "en": "Contractions: a/de + el",
+        "es": "Contracciones: a/de + el",
+        "de": "Verschmelzungen: a/de + el"
+      },
+      "header": [
+        { "hu": "Kombináció", "en": "Combination", "es": "combinación", "de": "Kombination" },
+        { "hu": "Alak", "en": "Form", "es": "forma", "de": "Form" }
+      ],
+      "rows": [
+        ["a + el", "al"],
+        ["a + la", "a la"],
+        ["a + los", "a los"],
+        ["a + las", "a las"],
+        ["de + el", "del"],
+        ["de + la", "de la"],
+        ["de + los", "de los"],
+        ["de + las", "de las"]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "hu": "Hasonló, mégis más", "en": "Similar, yet different", "es": "Parecido, pero distinto", "de": "Ähnlich, aber anders" },
+      "pairs": [
+        {
+          "a": "estoy en casa",
+          "b": "voy a casa",
+          "note": {
+            "hu": "Az en azt mondja meg, hol vagyok (estoy en casa), az a pedig azt, hova tartok (voy a casa).",
+            "en": "En says where I am (estoy en casa), a says where I'm heading (voy a casa).",
+            "es": "En dice dónde estoy (estoy en casa), a dice adónde voy (voy a casa).",
+            "de": "En sagt, wo ich bin (estoy en casa), a sagt, wohin ich gehe (voy a casa)."
+          },
+          "examples": [
+            { "es": "Estoy en casa todo el día.", "tr": { "hu": "Egész nap otthon vagyok.", "en": "I'm at home all day.", "es": "Estoy en casa todo el día.", "de": "Ich bin den ganzen Tag zu Hause." } },
+            { "es": "Voy a casa después del trabajo.", "tr": { "hu": "Munka után hazamegyek.", "en": "I go home after work.", "es": "Voy a casa después del trabajo.", "de": "Ich gehe nach der Arbeit nach Hause." } }
+          ]
+        },
+        {
+          "a": "de Madrid",
+          "b": "en Madrid",
+          "note": {
+            "hu": "A de Madrid azt jelenti, hogy madridi vagy onnan jössz, az en Madrid pedig azt, hogy Madridban vagy.",
+            "en": "De Madrid means you're from Madrid or a Madrid native, en Madrid means you are in Madrid.",
+            "es": "De Madrid significa que eres de allí o vienes de allí, en Madrid significa que estás en Madrid.",
+            "de": "De Madrid bedeutet, dass man aus Madrid ist oder von dort kommt, en Madrid bedeutet, dass man in Madrid ist."
+          },
+          "examples": [
+            { "es": "Soy de Madrid.", "tr": { "hu": "Madridi vagyok.", "en": "I'm from Madrid.", "es": "Soy de Madrid.", "de": "Ich bin aus Madrid." } },
+            { "es": "Vivo en Madrid.", "tr": { "hu": "Madridban élek.", "en": "I live in Madrid.", "es": "Vivo en Madrid.", "de": "Ich lebe in Madrid." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A személyes tárgy a-ja: ha egy konkrét embert látsz, kérdezel vagy hívsz, a kell elé (veo a mi hermano); ha dolgot, nem kell (veo la tele).",
+        "en": "The personal a: if you see, ask about or call a specific person, a goes before it (veo a mi hermano); if it's a thing, it doesn't (veo la tele).",
+        "es": "La a personal: si ves, preguntas por o llamas a una persona concreta, va a delante (veo a mi hermano); si es una cosa, no (veo la tele).",
+        "de": "Das persönliche a: Wenn man eine konkrete Person sieht, nach ihr fragt oder sie ruft, steht davor a (veo a mi hermano); bei einer Sache nicht (veo la tele)."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Az öt elöljáró, «a», «de», «en», «con» és «por» nélkül egy spanyol mondat nem áll meg a lábán: hova mész, honnan jössz, hol vagy, kivel vagy mivel csinálsz valamit. Az irányt és az időpontot «a» fejezi ki, mint «voy a la escuela» vagy «a las ocho». A birtokot, az eredetet és a napszakot «de» jelzi, mint «el libro de Ana» vagy «de la mañana». A helyet, a hónapot és a közlekedési eszközt «en» adja, mint «estoy en casa» vagy «en metro». A társaságot «con» fejezi ki, mint «con mi amigo». A «por» az okot és egy bizonytalan napszakot jelez, mint «gracias por la ayuda» vagy «por la mañana». És egy dolgot ne feledj: «a» és «el» mindig «al» lesz, «de» és «el» pedig «del».",
+    "en": "Without the five prepositions «a», «de», «en», «con» and «por» a Spanish sentence can't stand on its own feet: where you're going, where you're from, where you are, who or what you're doing something with. Direction and a point in time are expressed with «a», like «voy a la escuela» or «a las ocho». Possession, origin and the part of day are marked with «de», like «el libro de Ana» or «de la mañana». Place, the month and the means of transport come with «en», like «estoy en casa» or «en metro». Company is expressed with «con», like «con mi amigo». «Por» marks a reason or a loose part of day, like «gracias por la ayuda» or «por la mañana». And remember one thing: «a» plus «el» always becomes «al», and «de» plus «el» becomes «del».",
+    "es": "Sin las cinco preposiciones «a», «de», «en», «con» y «por» una frase en español no se sostiene: adónde vas, de dónde vienes, dónde estás, con quién o con qué haces algo. La dirección y un momento se expresan con «a», como «voy a la escuela» o «a las ocho». La posesión, el origen y la parte del día se marcan con «de», como «el libro de Ana» o «de la mañana». El lugar, el mes y el medio de transporte llevan «en», como «estoy en casa» o «en metro». La compañía se expresa con «con», como «con mi amigo». «Por» marca una razón o una parte del día sin hora exacta, como «gracias por la ayuda» o «por la mañana». Y no olvides algo: «a» más «el» siempre da «al», y «de» más «el» da «del».",
+    "de": "Ohne die fünf Präpositionen «a», «de», «en», «con» und «por» steht kein spanischer Satz auf eigenen Beinen: wohin du gehst, woher du kommst, wo du bist, mit wem oder womit du etwas tust. Richtung und ein Zeitpunkt werden mit «a» ausgedrückt, wie «voy a la escuela» oder «a las ocho». Besitz, Herkunft und die Tageszeit werden mit «de» markiert, wie «el libro de Ana» oder «de la mañana». Ort, Monat und Verkehrsmittel kommen mit «en», wie «estoy en casa» oder «en metro». Begleitung wird mit «con» ausgedrückt, wie «con mi amigo». «Por» markiert einen Grund oder eine ungefähre Tageszeit, wie «gracias por la ayuda» oder «por la mañana». Und vergiss eins nicht: «a» plus «el» wird immer «al», und «de» plus «el» wird «del»."
+  },
+  "glossary": [
+    {
+      "word": "madera",
+      "gloss": { "hu": "fa (anyag)", "en": "wood (material)", "es": "madera", "de": "Holz" }
+    }
+  ],
+  "items": [
+    {
+      "id": "pb-01",
+      "sentence": "Voy ___ la escuela.",
+      "options": ["a", "en"],
+      "correct": 0,
+      "why": {
+        "hu": "Az irányt (hova?) az a fejezi ki: voy a la escuela.",
+        "en": "Direction (where to?) is expressed with a: voy a la escuela.",
+        "es": "La dirección (¿adónde?) se expresa con a: voy a la escuela.",
+        "de": "Die Richtung (wohin?) wird mit a ausgedrückt: voy a la escuela."
+      },
+      "wrong": {
+        "en": {
+          "hu": "Az en azt jelentené, hogy már ott vagyok (estoy en la escuela); ha oda tartok, a kell: voy a la escuela.",
+          "en": "En would mean I'm already there (estoy en la escuela); to say I'm heading there, a is needed: voy a la escuela.",
+          "es": "En significaría que ya estoy allí (estoy en la escuela); si voy hacia allá, hace falta a: voy a la escuela.",
+          "de": "En würde bedeuten, dass ich schon dort bin (estoy en la escuela); wenn ich dorthin unterwegs bin, braucht man a: voy a la escuela."
+        }
+      },
+      "examples": ["Vamos a la playa.", "Voy a casa."]
+    },
+    {
+      "id": "pb-02",
+      "sentence": "El tren llega ___ las tres.",
+      "options": ["a", "en"],
+      "correct": 0,
+      "why": {
+        "hu": "Egy konkrét időpontot a las fejez ki: llega a las tres.",
+        "en": "A specific point in time is expressed with a las: llega a las tres.",
+        "es": "Un momento concreto se expresa con a las: llega a las tres.",
+        "de": "Ein bestimmter Zeitpunkt wird mit a las ausgedrückt: llega a las tres."
+      },
+      "wrong": {
+        "en": {
+          "hu": "Az en nem használatos konkrét óra kifejezésére, csak a las: llega a las tres.",
+          "en": "En is not used to express an exact clock time, only a las is: llega a las tres.",
+          "es": "En no se usa para expresar una hora exacta, solo a las: llega a las tres.",
+          "de": "En wird nicht verwendet, um eine genaue Uhrzeit auszudrücken, nur a las: llega a las tres."
+        }
+      },
+      "examples": ["Llegamos a las dos.", "El autobús llega a las cinco."]
+    },
+    {
+      "id": "pb-03",
+      "sentence": "Veo ___ mi amigo en la calle.",
+      "options": ["a", "de"],
+      "correct": 0,
+      "why": {
+        "hu": "Egy konkrét személyt tárgyként a vezeti be: veo a mi amigo.",
+        "en": "A specific person as the object is introduced with a: veo a mi amigo.",
+        "es": "A una persona concreta como objeto la introduce a: veo a mi amigo.",
+        "de": "Eine konkrete Person als Objekt wird mit a eingeleitet: veo a mi amigo."
+      },
+      "wrong": {
+        "de": {
+          "hu": "A de birtokot vagy eredetet jelezne (el amigo de mi hermano); itt egy embert látok tárgyként, ahhoz a kell: veo a mi amigo.",
+          "en": "De would mark possession or origin (el amigo de mi hermano); here a person is the object I see, which needs a: veo a mi amigo.",
+          "es": "De marcaría posesión u origen (el amigo de mi hermano); aquí una persona es el objeto que veo, y eso pide a: veo a mi amigo.",
+          "de": "De würde Besitz oder Herkunft markieren (el amigo de mi hermano); hier ist eine Person das Objekt, das ich sehe, dafür braucht man a: veo a mi amigo."
+        }
+      },
+      "examples": ["Veo a mi madre los domingos.", "Veo a mi hermano en el parque."]
+    },
+    {
+      "id": "pb-04",
+      "sentence": "Es el libro ___ Ana.",
+      "options": ["de", "a"],
+      "correct": 0,
+      "why": {
+        "hu": "A birtokot de fejezi ki: el libro de Ana.",
+        "en": "Possession is expressed with de: el libro de Ana.",
+        "es": "La posesión se expresa con de: el libro de Ana.",
+        "de": "Besitz wird mit de ausgedrückt: el libro de Ana."
+      },
+      "wrong": {
+        "a": {
+          "hu": "Az a irányt vagy időpontot jelezne, nem birtokot; a birtokra de kell: el libro de Ana.",
+          "en": "A would mark direction or a point in time, not possession; possession needs de: el libro de Ana.",
+          "es": "A marcaría dirección o un momento, no posesión; para la posesión hace falta de: el libro de Ana.",
+          "de": "A würde Richtung oder einen Zeitpunkt markieren, nicht Besitz; für Besitz braucht man de: el libro de Ana."
+        }
+      },
+      "examples": ["Es la casa de mi amigo.", "Es el coche de mi hermano."]
+    },
+    {
+      "id": "pb-05",
+      "sentence": "La mesa es ___ madera.",
+      "options": ["de", "en"],
+      "correct": 0,
+      "why": {
+        "hu": "Az anyagot, amiből valami készül, de fejezi ki: la mesa es de madera.",
+        "en": "The material something is made of is expressed with de: la mesa es de madera.",
+        "es": "El material del que está hecho algo se expresa con de: la mesa es de madera.",
+        "de": "Das Material, aus dem etwas besteht, wird mit de ausgedrückt: la mesa es de madera."
+      },
+      "wrong": {
+        "en": {
+          "hu": "Az en helyet jelezne, nem anyagot; az anyagra de kell: la mesa es de madera.",
+          "en": "En would mark a place, not a material; the material needs de: la mesa es de madera.",
+          "es": "En marcaría un lugar, no un material; el material pide de: la mesa es de madera.",
+          "de": "En würde einen Ort markieren, kein Material; für das Material braucht man de: la mesa es de madera."
+        }
+      },
+      "examples": ["Esta silla es de madera.", "La mesa es de madera."]
+    },
+    {
+      "id": "pb-06",
+      "sentence": "Hablamos ___ la comida.",
+      "options": ["de", "con"],
+      "correct": 0,
+      "why": {
+        "hu": "Amiről beszélünk, azt de vezeti be: hablamos de la comida.",
+        "en": "What you talk about is introduced with de: hablamos de la comida.",
+        "es": "Aquello de lo que se habla lo introduce de: hablamos de la comida.",
+        "de": "Worüber man spricht, wird mit de eingeleitet: hablamos de la comida."
+      },
+      "wrong": {
+        "con": {
+          "hu": "A con azt jelentené, hogy kivel beszélünk (hablamos con mi amigo), nem azt, hogy miről; a témára de kell: hablamos de la comida.",
+          "en": "Con would mean who you talk with (hablamos con mi amigo), not what about; the topic needs de: hablamos de la comida.",
+          "es": "Con significaría con quién se habla (hablamos con mi amigo), no de qué; el tema pide de: hablamos de la comida.",
+          "de": "Con würde bedeuten, mit wem man spricht (hablamos con mi amigo), nicht worüber; das Thema braucht de: hablamos de la comida."
+        }
+      },
+      "examples": ["Hablamos de la familia.", "Hablamos de mi trabajo."]
+    },
+    {
+      "id": "pb-07",
+      "sentence": "Estoy ___ casa.",
+      "options": ["en", "a"],
+      "correct": 0,
+      "why": {
+        "hu": "Azt, hogy hol vagyok, en fejezi ki: estoy en casa.",
+        "en": "Where I am is expressed with en: estoy en casa.",
+        "es": "Dónde estoy se expresa con en: estoy en casa.",
+        "de": "Wo ich bin, wird mit en ausgedrückt: estoy en casa."
+      },
+      "wrong": {
+        "a": {
+          "hu": "Az a azt jelentené, hogy hova tartok (voy a casa), nem azt, hogy hol vagyok; a helyre en kell: estoy en casa.",
+          "en": "A would mean where I'm heading (voy a casa), not where I am; the place needs en: estoy en casa.",
+          "es": "A significaría hacia dónde voy (voy a casa), no dónde estoy; el lugar pide en: estoy en casa.",
+          "de": "A würde bedeuten, wohin ich gehe (voy a casa), nicht wo ich bin; für den Ort braucht man en: estoy en casa."
+        }
+      },
+      "examples": ["Estoy en la escuela.", "Estamos en el metro."]
+    },
+    {
+      "id": "pb-08",
+      "sentence": "El examen es ___ mayo.",
+      "options": ["en", "de"],
+      "correct": 0,
+      "why": {
+        "hu": "Egy hónapot en vezet be: el examen es en mayo.",
+        "en": "A month is introduced with en: el examen es en mayo.",
+        "es": "Un mes se introduce con en: el examen es en mayo.",
+        "de": "Ein Monat wird mit en eingeleitet: el examen es en mayo."
+      },
+      "wrong": {
+        "de": {
+          "hu": "A de birtokot vagy eredetet jelezne, nem hónapot; a hónapra en kell: el examen es en mayo.",
+          "en": "De would mark possession or origin, not a month; a month needs en: el examen es en mayo.",
+          "es": "De marcaría posesión u origen, no un mes; el mes pide en: el examen es en mayo.",
+          "de": "De würde Besitz oder Herkunft markieren, keinen Monat; für den Monat braucht man en: el examen es en mayo."
+        }
+      },
+      "examples": ["Vamos a España en mayo.", "Mi examen es en mayo."]
+    },
+    {
+      "id": "pb-09",
+      "sentence": "Vamos ___ metro.",
+      "options": ["en", "con"],
+      "correct": 0,
+      "why": {
+        "hu": "A közlekedési eszközt en vezeti be: vamos en metro.",
+        "en": "The means of transport is introduced with en: vamos en metro.",
+        "es": "El medio de transporte se introduce con en: vamos en metro.",
+        "de": "Das Verkehrsmittel wird mit en eingeleitet: vamos en metro."
+      },
+      "wrong": {
+        "con": {
+          "hu": "A con társaságot jelezne (vamos con mi amigo), nem közlekedési eszközt; az eszközre en kell: vamos en metro.",
+          "en": "Con would mark company (vamos con mi amigo), not the means of transport; the means of transport needs en: vamos en metro.",
+          "es": "Con marcaría compañía (vamos con mi amigo), no el medio de transporte; el medio de transporte pide en: vamos en metro.",
+          "de": "Con würde Begleitung markieren (vamos con mi amigo), nicht das Verkehrsmittel; dafür braucht man en: vamos en metro."
+        }
+      },
+      "examples": ["Vamos en coche.", "Vamos en autobús."]
+    },
+    {
+      "id": "pb-10",
+      "sentence": "Tomo café ___ leche.",
+      "options": ["con", "de"],
+      "correct": 0,
+      "why": {
+        "hu": "Amivel együtt van valami, azt con vezeti be: café con leche.",
+        "en": "What something comes together with is introduced with con: café con leche.",
+        "es": "Con qué va junto algo lo introduce con: café con leche.",
+        "de": "Womit etwas zusammen ist, wird mit con eingeleitet: café con leche."
+      },
+      "wrong": {
+        "de": {
+          "hu": "A de birtokot vagy anyagot jelezne, nem azt, hogy mivel együtt; a kávé-tej párra con kell: café con leche.",
+          "en": "De would mark possession or material, not what goes together; coffee with milk needs con: café con leche.",
+          "es": "De marcaría posesión o material, no lo que va junto; café con leche pide con: café con leche.",
+          "de": "De würde Besitz oder Material markieren, nicht was zusammen ist; für Kaffee mit Milch braucht man con: café con leche."
+        }
+      },
+      "examples": ["Voy al cine con mi amigo.", "Hablo con mi madre."]
+    },
+    {
+      "id": "pb-11",
+      "sentence": "Gracias ___ la ayuda.",
+      "options": ["por", "de"],
+      "correct": 0,
+      "why": {
+        "hu": "Az okot, amiért köszönetet mondunk, por vezeti be: gracias por la ayuda.",
+        "en": "The reason for thanking someone is introduced with por: gracias por la ayuda.",
+        "es": "La razón por la que se da las gracias la introduce por: gracias por la ayuda.",
+        "de": "Der Grund, wofür man dankt, wird mit por eingeleitet: gracias por la ayuda."
+      },
+      "wrong": {
+        "de": {
+          "hu": "A de birtokot vagy eredetet jelezne, nem okot; a köszönet okára por kell: gracias por la ayuda.",
+          "en": "De would mark possession or origin, not a reason; the reason for thanks needs por: gracias por la ayuda.",
+          "es": "De marcaría posesión u origen, no una razón; el motivo del agradecimiento pide por: gracias por la ayuda.",
+          "de": "De würde Besitz oder Herkunft markieren, keinen Grund; für den Dankesgrund braucht man por: gracias por la ayuda."
+        }
+      },
+      "examples": ["Gracias por todo.", "Gracias por la comida."]
+    },
+    {
+      "id": "pb-12",
+      "sentence": "Voy ___ cine con mi amigo.",
+      "options": ["al", "a el"],
+      "correct": 0,
+      "why": {
+        "hu": "Az a és az el mindig összevonódik al-lá, sosem marad külön: voy al cine.",
+        "en": "A and el always contract to al, they never stay separate: voy al cine.",
+        "es": "A y el siempre se contraen en al, nunca quedan separados: voy al cine.",
+        "de": "A und el verschmelzen immer zu al, sie bleiben nie getrennt: voy al cine."
+      },
+      "wrong": {
+        "a el": {
+          "hu": "Az a el sosem áll külön írva; a és el mindig al lesz: voy al cine.",
+          "en": "A el is never written separately; a and el always become al: voy al cine.",
+          "es": "A el nunca se escribe por separado; a y el siempre se convierten en al: voy al cine.",
+          "de": "A el wird nie getrennt geschrieben; a und el werden immer zu al: voy al cine."
+        }
+      },
+      "examples": ["Voy al parque.", "Vamos al cine."]
+    },
+    {
+      "id": "pb-match-01",
+      "kind": "match",
+      "pairs": [
+        { "es": "a", "en": "direction or a point in time" },
+        { "es": "de", "en": "possession or origin" },
+        { "es": "en", "en": "place, month, or means of transport" },
+        { "es": "con", "en": "together with" },
+        { "es": "por", "en": "reason or a rough part of day" },
+        { "es": "al / del", "en": "a + el / de + el contraction" }
+      ]
+    },
+    { "id": "pb-form-01", "kind": "form", "verb": "forma", "person": "a + el", "answer": "al", "table": "contracciones" },
+    { "id": "pb-form-02", "kind": "form", "verb": "forma", "person": "a + la", "answer": "a la", "table": "contracciones" },
+    { "id": "pb-form-03", "kind": "form", "verb": "forma", "person": "a + los", "answer": "a los", "table": "contracciones" },
+    { "id": "pb-form-04", "kind": "form", "verb": "forma", "person": "a + las", "answer": "a las", "table": "contracciones" },
+    { "id": "pb-form-05", "kind": "form", "verb": "forma", "person": "de + el", "answer": "del", "table": "contracciones" },
+    { "id": "pb-form-06", "kind": "form", "verb": "forma", "person": "de + la", "answer": "de la", "table": "contracciones" },
+    { "id": "pb-form-07", "kind": "form", "verb": "forma", "person": "de + los", "answer": "de los", "table": "contracciones" },
+    { "id": "pb-form-08", "kind": "form", "verb": "forma", "person": "de + las", "answer": "de las", "table": "contracciones" },
+    { "id": "pb-form-09", "kind": "form", "verb": "forma", "person": "a + el", "answer": "al", "table": "contracciones" },
+    { "id": "pb-form-10", "kind": "form", "verb": "forma", "person": "de + el", "answer": "del", "table": "contracciones" },
+    { "id": "pb-form-11", "kind": "form", "verb": "forma", "person": "a + la", "answer": "a la", "table": "contracciones" },
+    { "id": "pb-form-12", "kind": "form", "verb": "forma", "person": "de + la", "answer": "de la", "table": "contracciones" },
+    {
+      "kind": "why",
+      "id": "pb-why-01",
+      "es": "Voy a la escuela.",
+      "tr": { "hu": "Iskolába megyek.", "en": "I go to school.", "es": "Voy a la escuela.", "de": "Ich gehe zur Schule." },
+      "options": [
+        {
+          "text": { "hu": "irány vagy időpont (a)", "en": "direction or a point in time (a)", "es": "dirección o un momento (a)", "de": "Richtung oder ein Zeitpunkt (a)" }
+        },
+        {
+          "text": { "hu": "birtok vagy eredet (de)", "en": "possession or origin (de)", "es": "posesión u origen (de)", "de": "Besitz oder Herkunft (de)" },
+          "wrong": {
+            "hu": "Nincs birtok vagy eredet a mondatban, hanem irány: voy a la escuela.",
+            "en": "There is no possession or origin in the sentence, but direction: voy a la escuela.",
+            "es": "No hay posesión ni origen en la frase, sino dirección: voy a la escuela.",
+            "de": "Es gibt weder Besitz noch Herkunft im Satz, sondern eine Richtung: voy a la escuela."
+          }
+        },
+        {
+          "text": { "hu": "hely, hónap vagy közlekedés (en)", "en": "place, month, or means of transport (en)", "es": "lugar, mes o medio de transporte (en)", "de": "Ort, Monat oder Verkehrsmittel (en)" },
+          "wrong": {
+            "hu": "Nincs hely, hónap vagy közlekedés a mondatban, hanem irány: voy a la escuela.",
+            "en": "There is no place, month, or means of transport in the sentence, but direction: voy a la escuela.",
+            "es": "No hay lugar, mes ni medio de transporte en la frase, sino dirección: voy a la escuela.",
+            "de": "Es gibt weder Ort, Monat noch Verkehrsmittel im Satz, sondern eine Richtung: voy a la escuela."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pb-why-02",
+      "es": "Es el libro de Ana.",
+      "tr": { "hu": "Ez Ana könyve.", "en": "It's Ana's book.", "es": "Es el libro de Ana.", "de": "Das ist Anas Buch." },
+      "options": [
+        {
+          "text": { "hu": "irány vagy időpont (a)", "en": "direction or a point in time (a)", "es": "dirección o un momento (a)", "de": "Richtung oder ein Zeitpunkt (a)" },
+          "wrong": {
+            "hu": "Nincs irány vagy időpont a mondatban, hanem birtok: es el libro de Ana.",
+            "en": "There is no direction or point in time in the sentence, but possession: es el libro de Ana.",
+            "es": "No hay dirección ni momento en la frase, sino posesión: es el libro de Ana.",
+            "de": "Es gibt weder Richtung noch Zeitpunkt im Satz, sondern Besitz: es el libro de Ana."
+          }
+        },
+        {
+          "text": { "hu": "birtok vagy eredet (de)", "en": "possession or origin (de)", "es": "posesión u origen (de)", "de": "Besitz oder Herkunft (de)" }
+        },
+        {
+          "text": { "hu": "hely, hónap vagy közlekedés (en)", "en": "place, month, or means of transport (en)", "es": "lugar, mes o medio de transporte (en)", "de": "Ort, Monat oder Verkehrsmittel (en)" },
+          "wrong": {
+            "hu": "Nincs hely, hónap vagy közlekedés a mondatban, hanem birtok: es el libro de Ana.",
+            "en": "There is no place, month, or means of transport in the sentence, but possession: es el libro de Ana.",
+            "es": "No hay lugar, mes ni medio de transporte en la frase, sino posesión: es el libro de Ana.",
+            "de": "Es gibt weder Ort, Monat noch Verkehrsmittel im Satz, sondern Besitz: es el libro de Ana."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pb-why-03",
+      "es": "Estoy en casa.",
+      "tr": { "hu": "Otthon vagyok.", "en": "I am at home.", "es": "Estoy en casa.", "de": "Ich bin zu Hause." },
+      "options": [
+        {
+          "text": { "hu": "irány vagy időpont (a)", "en": "direction or a point in time (a)", "es": "dirección o un momento (a)", "de": "Richtung oder ein Zeitpunkt (a)" },
+          "wrong": {
+            "hu": "Nincs irány vagy időpont a mondatban, hanem hely: estoy en casa.",
+            "en": "There is no direction or point in time in the sentence, but a place: estoy en casa.",
+            "es": "No hay dirección ni momento en la frase, sino un lugar: estoy en casa.",
+            "de": "Es gibt weder Richtung noch Zeitpunkt im Satz, sondern einen Ort: estoy en casa."
+          }
+        },
+        {
+          "text": { "hu": "birtok vagy eredet (de)", "en": "possession or origin (de)", "es": "posesión u origen (de)", "de": "Besitz oder Herkunft (de)" },
+          "wrong": {
+            "hu": "Nincs birtok vagy eredet a mondatban, hanem hely: estoy en casa.",
+            "en": "There is no possession or origin in the sentence, but a place: estoy en casa.",
+            "es": "No hay posesión ni origen en la frase, sino un lugar: estoy en casa.",
+            "de": "Es gibt weder Besitz noch Herkunft im Satz, sondern einen Ort: estoy en casa."
+          }
+        },
+        {
+          "text": { "hu": "hely, hónap vagy közlekedés (en)", "en": "place, month, or means of transport (en)", "es": "lugar, mes o medio de transporte (en)", "de": "Ort, Monat oder Verkehrsmittel (en)" }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "pb-why-04",
+      "es": "La clase empieza a las ocho.",
+      "tr": { "hu": "Az óra nyolckor kezdődik.", "en": "Class starts at eight.", "es": "La clase empieza a las ocho.", "de": "Der Unterricht beginnt um acht." },
+      "options": [
+        {
+          "text": { "hu": "irány vagy időpont (a)", "en": "direction or a point in time (a)", "es": "dirección o un momento (a)", "de": "Richtung oder ein Zeitpunkt (a)" }
+        },
+        {
+          "text": { "hu": "birtok vagy eredet (de)", "en": "possession or origin (de)", "es": "posesión u origen (de)", "de": "Besitz oder Herkunft (de)" },
+          "wrong": {
+            "hu": "Nincs birtok vagy eredet a mondatban, hanem egy időpont: la clase empieza a las ocho.",
+            "en": "There is no possession or origin in the sentence, but a point in time: la clase empieza a las ocho.",
+            "es": "No hay posesión ni origen en la frase, sino un momento: la clase empieza a las ocho.",
+            "de": "Es gibt weder Besitz noch Herkunft im Satz, sondern einen Zeitpunkt: la clase empieza a las ocho."
+          }
+        },
+        {
+          "text": { "hu": "hely, hónap vagy közlekedés (en)", "en": "place, month, or means of transport (en)", "es": "lugar, mes o medio de transporte (en)", "de": "Ort, Monat oder Verkehrsmittel (en)" },
+          "wrong": {
+            "hu": "Nincs hely, hónap vagy közlekedés a mondatban, hanem egy időpont: la clase empieza a las ocho.",
+            "en": "There is no place, month, or means of transport in the sentence, but a point in time: la clase empieza a las ocho.",
+            "es": "No hay lugar, mes ni medio de transporte en la frase, sino un momento: la clase empieza a las ocho.",
+            "de": "Es gibt weder Ort, Monat noch Verkehrsmittel im Satz, sondern einen Zeitpunkt: la clase empieza a las ocho."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pb-why-05",
+      "es": "Soy de Hungría.",
+      "tr": { "hu": "Magyarországról vagyok.", "en": "I am from Hungary.", "es": "Soy de Hungría.", "de": "Ich bin aus Ungarn." },
+      "options": [
+        {
+          "text": { "hu": "irány vagy időpont (a)", "en": "direction or a point in time (a)", "es": "dirección o un momento (a)", "de": "Richtung oder ein Zeitpunkt (a)" },
+          "wrong": {
+            "hu": "Nincs irány vagy időpont a mondatban, hanem eredet: soy de Hungría.",
+            "en": "There is no direction or point in time in the sentence, but origin: soy de Hungría.",
+            "es": "No hay dirección ni momento en la frase, sino origen: soy de Hungría.",
+            "de": "Es gibt weder Richtung noch Zeitpunkt im Satz, sondern Herkunft: soy de Hungría."
+          }
+        },
+        {
+          "text": { "hu": "birtok vagy eredet (de)", "en": "possession or origin (de)", "es": "posesión u origen (de)", "de": "Besitz oder Herkunft (de)" }
+        },
+        {
+          "text": { "hu": "hely, hónap vagy közlekedés (en)", "en": "place, month, or means of transport (en)", "es": "lugar, mes o medio de transporte (en)", "de": "Ort, Monat oder Verkehrsmittel (en)" },
+          "wrong": {
+            "hu": "Nincs hely, hónap vagy közlekedés a mondatban, hanem eredet: soy de Hungría.",
+            "en": "There is no place, month, or means of transport in the sentence, but origin: soy de Hungría.",
+            "es": "No hay lugar, mes ni medio de transporte en la frase, sino origen: soy de Hungría.",
+            "de": "Es gibt weder Ort, Monat noch Verkehrsmittel im Satz, sondern Herkunft: soy de Hungría."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pb-why-06",
+      "es": "El examen es en mayo.",
+      "tr": { "hu": "A vizsga májusban van.", "en": "The exam is in May.", "es": "El examen es en mayo.", "de": "Die Prüfung ist im Mai." },
+      "options": [
+        {
+          "text": { "hu": "irány vagy időpont (a)", "en": "direction or a point in time (a)", "es": "dirección o un momento (a)", "de": "Richtung oder ein Zeitpunkt (a)" },
+          "wrong": {
+            "hu": "Nincs irány vagy egy konkrét óra a mondatban, hanem egy hónap: el examen es en mayo.",
+            "en": "There is no direction or an exact clock time in the sentence, but a month: el examen es en mayo.",
+            "es": "No hay dirección ni una hora exacta en la frase, sino un mes: el examen es en mayo.",
+            "de": "Es gibt weder Richtung noch eine genaue Uhrzeit im Satz, sondern einen Monat: el examen es en mayo."
+          }
+        },
+        {
+          "text": { "hu": "birtok vagy eredet (de)", "en": "possession or origin (de)", "es": "posesión u origen (de)", "de": "Besitz oder Herkunft (de)" },
+          "wrong": {
+            "hu": "Nincs birtok vagy eredet a mondatban, hanem egy hónap: el examen es en mayo.",
+            "en": "There is no possession or origin in the sentence, but a month: el examen es en mayo.",
+            "es": "No hay posesión ni origen en la frase, sino un mes: el examen es en mayo.",
+            "de": "Es gibt weder Besitz noch Herkunft im Satz, sondern einen Monat: el examen es en mayo."
+          }
+        },
+        {
+          "text": { "hu": "hely, hónap vagy közlekedés (en)", "en": "place, month, or means of transport (en)", "es": "lugar, mes o medio de transporte (en)", "de": "Ort, Monat oder Verkehrsmittel (en)" }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "pb-why-07",
+      "es": "Vamos en metro.",
+      "tr": { "hu": "Metróval megyünk.", "en": "We go by metro.", "es": "Vamos en metro.", "de": "Wir fahren mit der U-Bahn." },
+      "options": [
+        {
+          "text": { "hu": "irány vagy időpont (a)", "en": "direction or a point in time (a)", "es": "dirección o un momento (a)", "de": "Richtung oder ein Zeitpunkt (a)" },
+          "wrong": {
+            "hu": "Nincs irány vagy időpont a mondatban, hanem egy közlekedési eszköz: vamos en metro.",
+            "en": "There is no direction or point in time in the sentence, but a means of transport: vamos en metro.",
+            "es": "No hay dirección ni momento en la frase, sino un medio de transporte: vamos en metro.",
+            "de": "Es gibt weder Richtung noch Zeitpunkt im Satz, sondern ein Verkehrsmittel: vamos en metro."
+          }
+        },
+        {
+          "text": { "hu": "birtok vagy eredet (de)", "en": "possession or origin (de)", "es": "posesión u origen (de)", "de": "Besitz oder Herkunft (de)" },
+          "wrong": {
+            "hu": "Nincs birtok vagy eredet a mondatban, hanem egy közlekedési eszköz: vamos en metro.",
+            "en": "There is no possession or origin in the sentence, but a means of transport: vamos en metro.",
+            "es": "No hay posesión ni origen en la frase, sino un medio de transporte: vamos en metro.",
+            "de": "Es gibt weder Besitz noch Herkunft im Satz, sondern ein Verkehrsmittel: vamos en metro."
+          }
+        },
+        {
+          "text": { "hu": "hely, hónap vagy közlekedés (en)", "en": "place, month, or means of transport (en)", "es": "lugar, mes o medio de transporte (en)", "de": "Ort, Monat oder Verkehrsmittel (en)" }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

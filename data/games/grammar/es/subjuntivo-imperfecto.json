@@ -1,0 +1,1268 @@
+{
+  "schema": 2,
+  "topic": "subjuntivo-imperfecto",
+  "level": "B2",
+  "title": {
+    "hu": "Kötőmód múlt (imperfecto de subjuntivo)",
+    "en": "Imperfect subjunctive",
+    "es": "Imperfecto de subjuntivo",
+    "de": "Subjuntivo Imperfekt"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A kötőmód múltja (imperfecto de subjuntivo) ugyanazokra a kiváltókra reagál, mint a jelen: akarat, érzelem, kétely, cél, idő, csak a főmondat múltban vagy feltételes módban áll. Ehhez jön két önálló használat: az irreális feltétel (si tuviera tiempo, iría) és az udvarias kérés vagy kívánság (quisiera un café).",
+        "en": "The past subjunctive (imperfecto de subjuntivo) reacts to the same triggers as the present: will, emotion, doubt, purpose, time, only the main clause is in the past or conditional. Two extra uses come with it: the unreal condition (si tuviera tiempo, iría) and the polite request or wish (quisiera un café).",
+        "es": "El imperfecto de subjuntivo reacciona a los mismos disparadores que el presente: voluntad, emoción, duda, finalidad, tiempo, solo que la oración principal está en pasado o en condicional. A esto se suman dos usos propios: la condición irreal (si tuviera tiempo, iría) y la petición o el deseo cortés (quisiera un café).",
+        "de": "Der Subjuntivo Imperfekt reagiert auf dieselben Auslöser wie der Presente: Wille, Gefühl, Zweifel, Zweck, Zeit, nur steht der Hauptsatz in der Vergangenheit oder im Konditional. Dazu kommen zwei eigene Verwendungen: die irreale Bedingung (si tuviera tiempo, iría) und die höfliche Bitte oder der Wunsch (quisiera un café)."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "A szabály pontjai",
+        "en": "The rules",
+        "es": "Los puntos de la regla",
+        "de": "Die Regelpunkte"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "A képzés az indefinido ellos-alakjából indul: leveszed a -ron végződést, és hozzáteszed a -ra/-ras/-ra/-ramos/-rais/-ran végződést; a nosotros-alakon ékezet kerül a végződés előtti magánhangzóra (habláramos).",
+            "en": "Formation starts from the indefinido ellos-form: drop the -ron ending and add -ra/-ras/-ra/-ramos/-rais/-ran; the nosotros-form gets an accent on the vowel before the ending (habláramos).",
+            "es": "La formación parte de la forma ellos del indefinido: quitas la terminación -ron y añades -ra/-ras/-ra/-ramos/-rais/-ran; la forma nosotros lleva tilde en la vocal anterior a la terminación (habláramos).",
+            "de": "Die Bildung geht von der ellos-Form des Indefinido aus: die Endung -ron fällt weg, und -ra/-ras/-ra/-ramos/-rais/-ran kommt dazu; die nosotros-Form bekommt einen Akzent auf dem Vokal vor der Endung (habláramos)."
+          },
+          "examples": [
+            {
+              "es": "Hablaron mucho → que hablaran mucho.",
+              "tr": {
+                "hu": "Sokat beszéltek → hogy sokat beszéljenek.",
+                "en": "They talked a lot → that they talked a lot.",
+                "es": "Hablaron mucho → que hablaran mucho.",
+                "de": "Sie sprachen viel → dass sie viel sprächen."
+              }
+            },
+            {
+              "es": "Comieron aquí → que comieran aquí.",
+              "tr": {
+                "hu": "Itt ettek → hogy itt egyenek.",
+                "en": "They ate here → that they ate here.",
+                "es": "Comieron aquí → que comieran aquí.",
+                "de": "Sie aßen hier → dass sie hier äßen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A -se végződés (hablase, comiese) ugyanazt jelenti, mint a -ra: írott nyelvben és Spanyolországban gyakori, Mexikóban a beszélt nyelv szinte kizárólag a -ra alakot használja.",
+            "en": "The -se ending (hablase, comiese) means exactly the same as -ra: common in writing and in Spain, while spoken Mexican Spanish almost always uses -ra.",
+            "es": "La terminación -se (hablase, comiese) significa exactamente lo mismo que -ra: es frecuente en la lengua escrita y en España, mientras que el español hablado de México casi siempre usa -ra.",
+            "de": "Die Endung -se (hablase, comiese) bedeutet genau dasselbe wie -ra: sie ist in der Schriftsprache und in Spanien üblich, während das gesprochene mexikanische Spanisch fast immer -ra verwendet."
+          },
+          "examples": [
+            {
+              "es": "Quisiera un café.",
+              "tr": {
+                "hu": "Szeretnék egy kávét.",
+                "en": "I would like a coffee.",
+                "es": "Quisiera un café.",
+                "de": "Ich hätte gern einen Kaffee."
+              }
+            },
+            {
+              "es": "Quisiese un café.",
+              "tr": {
+                "hu": "Szeretnék egy kávét (írott vagy spanyolországi -se alak).",
+                "en": "I would like a coffee (written or Spain -se form).",
+                "es": "Quisiese un café.",
+                "de": "Ich hätte gern einen Kaffee (geschriebene oder spanische -se-Form)."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A leggyakoribb rendhagyó igék az indefinido tövéből ingyen jönnek: tuvieron → tuviera, fueron → fuera (ser és ir közös), hicieron → hiciera, dijeron → dijera, pudieron → pudiera, supieron → supiera, quisieron → quisiera, pusieron → pusiera, vinieron → viniera, estuvieron → estuviera, hubo → hubiera.",
+            "en": "The most common irregular verbs come for free from the indefinido stem: tuvieron → tuviera, fueron → fuera (shared by ser and ir), hicieron → hiciera, dijeron → dijera, pudieron → pudiera, supieron → supiera, quisieron → quisiera, pusieron → pusiera, vinieron → viniera, estuvieron → estuviera, hubo → hubiera.",
+            "es": "Los verbos irregulares más comunes salen gratis de la raíz del indefinido: tuvieron → tuviera, fueron → fuera (compartido por ser e ir), hicieron → hiciera, dijeron → dijera, pudieron → pudiera, supieron → supiera, quisieron → quisiera, pusieron → pusiera, vinieron → viniera, estuvieron → estuviera, hubo → hubiera.",
+            "de": "Die häufigsten unregelmäßigen Verben ergeben sich gratis aus dem Indefinido-Stamm: tuvieron → tuviera, fueron → fuera (gemeinsam für ser und ir), hicieron → hiciera, dijeron → dijera, pudieron → pudiera, supieron → supiera, quisieron → quisiera, pusieron → pusiera, vinieron → viniera, estuvieron → estuviera, hubo → hubiera."
+          },
+          "examples": [
+            {
+              "es": "Tuvieron tiempo → que tuvieran tiempo.",
+              "tr": {
+                "hu": "Volt idejük → hogy legyen idejük.",
+                "en": "They had time → that they had time.",
+                "es": "Tuvieron tiempo → que tuvieran tiempo.",
+                "de": "Sie hatten Zeit → dass sie Zeit hätten."
+              }
+            },
+            {
+              "es": "Fueron al cine → como si fueran al cine.",
+              "tr": {
+                "hu": "Moziba mentek → mintha moziba mennének.",
+                "en": "They went to the cinema → as if they went to the cinema.",
+                "es": "Fueron al cine → como si fueran al cine.",
+                "de": "Sie gingen ins Kino → als ob sie ins Kino gingen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ha a főmondat múlt vagy feltételes időben áll, és utána que következik, a mellékmondat kötőmódja is múltba kerül: quería que vinieras, me gustaría que vinieras, le pedí que me ayudara.",
+            "en": "When the main clause is in the past or conditional and is followed by que, the subordinate clause's subjunctive also shifts to the past: quería que vinieras, me gustaría que vinieras, le pedí que me ayudara.",
+            "es": "Cuando la oración principal está en pasado o en condicional y le sigue que, el subjuntivo de la subordinada también pasa al pasado: quería que vinieras, me gustaría que vinieras, le pedí que me ayudara.",
+            "de": "Wenn der Hauptsatz in der Vergangenheit oder im Konditional steht und que folgt, verschiebt sich auch der Subjuntivo des Nebensatzes in die Vergangenheit: quería que vinieras, me gustaría que vinieras, le pedí que me ayudara."
+          },
+          "examples": [
+            {
+              "es": "Quería que vinieras.",
+              "tr": {
+                "hu": "Azt akartam, hogy gyere.",
+                "en": "I wanted you to come.",
+                "es": "Quería que vinieras.",
+                "de": "Ich wollte, dass du kommst."
+              }
+            },
+            {
+              "es": "Le pedí que me ayudara.",
+              "tr": {
+                "hu": "Megkértem, hogy segítsen.",
+                "en": "I asked him to help me.",
+                "es": "Le pedí que me ayudara.",
+                "de": "Ich bat ihn, mir zu helfen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Az irreális feltétel szerkezete si + imperfecto de subjuntivo, condicional (si tuviera tiempo, iría); ez a szerkezet a condicionales-tipo2-3 leckében kerül részletesen elő, itt csak a kötőmód-alak fontos.",
+            "en": "The unreal condition uses si + imperfect subjunctive, conditional (si tuviera tiempo, iría); this structure is covered in detail in the condicionales-tipo2-3 lesson, here only the subjunctive form matters.",
+            "es": "La condición irreal usa si + imperfecto de subjuntivo, condicional (si tuviera tiempo, iría); esta estructura se trata a fondo en la lección condicionales-tipo2-3, aquí solo importa la forma del subjuntivo.",
+            "de": "Die irreale Bedingung verwendet si + Imperfecto de subjuntivo, Konditional (si tuviera tiempo, iría); diese Struktur wird ausführlich in der Lektion condicionales-tipo2-3 behandelt, hier zählt nur die Subjuntivo-Form."
+          },
+          "examples": [
+            {
+              "es": "Si tuviera tiempo, iría.",
+              "tr": {
+                "hu": "Ha lenne időm, mennék.",
+                "en": "If I had time, I would go.",
+                "es": "Si tuviera tiempo, iría.",
+                "de": "Wenn ich Zeit hätte, würde ich gehen."
+              }
+            },
+            {
+              "es": "Si pudiera, te ayudaría.",
+              "tr": {
+                "hu": "Ha tudnék, segítenék neked.",
+                "en": "If I could, I would help you.",
+                "es": "Si pudiera, te ayudaría.",
+                "de": "Wenn ich könnte, würde ich dir helfen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A como si (mintha) után mindig imperfecto de subjuntivo áll, akkor is, ha a főmondat jelen időben van: habla como si supiera todo.",
+            "en": "After como si (as if) the imperfect subjunctive always follows, even when the main clause is in the present: habla como si supiera todo.",
+            "es": "Tras como si siempre va el imperfecto de subjuntivo, incluso si la oración principal está en presente: habla como si supiera todo.",
+            "de": "Nach como si (als ob) steht immer der Imperfecto de subjuntivo, auch wenn der Hauptsatz im Presente steht: habla como si supiera todo."
+          },
+          "examples": [
+            {
+              "es": "Habla como si supiera todo.",
+              "tr": {
+                "hu": "Úgy beszél, mintha mindent tudna.",
+                "en": "He talks as if he knew everything.",
+                "es": "Habla como si supiera todo.",
+                "de": "Er spricht, als ob er alles wüsste."
+              }
+            },
+            {
+              "es": "Corre como si tuviera prisa.",
+              "tr": {
+                "hu": "Úgy fut, mintha sietne.",
+                "en": "He runs as if he were in a hurry.",
+                "es": "Corre como si tuviera prisa.",
+                "de": "Er läuft, als ob er es eilig hätte."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Udvarias kérésben vagy kívánságban a quisiera és a pudiera lágyabb, mint a jelen idő: quisiera un café; ojalá pudiera ir.",
+            "en": "In a polite request or wish, quisiera and pudiera sound softer than the present tense: quisiera un café; ojalá pudiera ir.",
+            "es": "En una petición o un deseo cortés, quisiera y pudiera suenan más suaves que el presente: quisiera un café; ojalá pudiera ir.",
+            "de": "Bei einer höflichen Bitte oder einem Wunsch klingen quisiera und pudiera sanfter als das Presente: quisiera un café; ojalá pudiera ir."
+          },
+          "examples": [
+            {
+              "es": "Quisiera un café.",
+              "tr": {
+                "hu": "Szeretnék egy kávét.",
+                "en": "I would like a coffee.",
+                "es": "Quisiera un café.",
+                "de": "Ich hätte gern einen Kaffee."
+              }
+            },
+            {
+              "es": "Ojalá pudiera ir.",
+              "tr": {
+                "hu": "Bár tudnék menni.",
+                "en": "I wish I could go.",
+                "es": "Ojalá pudiera ir.",
+                "de": "Hoffentlich könnte ich gehen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "imperfecto-subj",
+      "title": {
+        "hu": "Kötőmód múlt, 11 ige",
+        "en": "Imperfect subjunctive, 11 verbs",
+        "es": "Imperfecto de subjuntivo, 11 verbos",
+        "de": "Subjuntivo Imperfekt, 11 Verben"
+      },
+      "header": [
+        { "hu": "Személy", "en": "Person", "es": "Persona", "de": "Person" },
+        { "hu": "hablar", "en": "hablar", "es": "hablar", "de": "hablar" },
+        { "hu": "comer", "en": "comer", "es": "comer", "de": "comer" },
+        { "hu": "vivir", "en": "vivir", "es": "vivir", "de": "vivir" },
+        { "hu": "tener", "en": "tener", "es": "tener", "de": "tener" },
+        { "hu": "hacer", "en": "hacer", "es": "hacer", "de": "hacer" },
+        { "hu": "ser", "en": "ser", "es": "ser", "de": "ser" },
+        { "hu": "ir", "en": "ir", "es": "ir", "de": "ir" },
+        { "hu": "poder", "en": "poder", "es": "poder", "de": "poder" },
+        { "hu": "saber", "en": "saber", "es": "saber", "de": "saber" },
+        { "hu": "querer", "en": "querer", "es": "querer", "de": "querer" },
+        { "hu": "decir", "en": "decir", "es": "decir", "de": "decir" }
+      ],
+      "rows": [
+        ["yo", "hablara", "comiera", "viviera", "tuviera", "hiciera", "fuera", "fuera", "pudiera", "supiera", "quisiera", "dijera"],
+        ["tú", "hablaras", "comieras", "vivieras", "tuvieras", "hicieras", "fueras", "fueras", "pudieras", "supieras", "quisieras", "dijeras"],
+        ["él/ella", "hablara", "comiera", "viviera", "tuviera", "hiciera", "fuera", "fuera", "pudiera", "supiera", "quisiera", "dijera"],
+        ["nosotros", "habláramos", "comiéramos", "viviéramos", "tuviéramos", "hiciéramos", "fuéramos", "fuéramos", "pudiéramos", "supiéramos", "quisiéramos", "dijéramos"],
+        ["ustedes", "hablaran", "comieran", "vivieran", "tuvieran", "hicieran", "fueran", "fueran", "pudieran", "supieran", "quisieran", "dijeran"]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Jelen vagy múlt kötőmód",
+        "en": "Present or past subjunctive",
+        "es": "Subjuntivo presente o pasado",
+        "de": "Subjuntivo Präsens oder Imperfekt"
+      },
+      "pairs": [
+        {
+          "a": "quiero que vengas",
+          "b": "quería que vinieras",
+          "note": {
+            "hu": "Quiero que vengas jelen főmondat: most akarom. Quería que vinieras múlt főmondat: akkor akartam, ezért a mellékmondat is múltba kerül.",
+            "en": "Quiero que vengas has a present main clause: I want it now. Quería que vinieras has a past main clause: I wanted it then, so the subordinate clause shifts to the past too.",
+            "es": "Quiero que vengas tiene la principal en presente: lo quiero ahora. Quería que vinieras tiene la principal en pasado: lo quería entonces, por eso la subordinada también pasa al pasado.",
+            "de": "Quiero que vengas hat den Hauptsatz im Presente: ich will es jetzt. Quería que vinieras hat den Hauptsatz in der Vergangenheit: ich wollte es damals, deshalb verschiebt sich auch der Nebensatz in die Vergangenheit."
+          },
+          "examples": [
+            {
+              "es": "Quiero que vengas hoy.",
+              "tr": {
+                "hu": "Azt akarom, hogy ma gyere.",
+                "en": "I want you to come today.",
+                "es": "Quiero que vengas hoy.",
+                "de": "Ich will, dass du heute kommst."
+              }
+            },
+            {
+              "es": "Quería que vinieras ayer.",
+              "tr": {
+                "hu": "Azt akartam, hogy tegnap gyere.",
+                "en": "I wanted you to come yesterday.",
+                "es": "Quería que vinieras ayer.",
+                "de": "Ich wollte, dass du gestern kommst."
+              }
+            }
+          ]
+        },
+        {
+          "a": "si tengo, voy",
+          "b": "si tuviera, iría",
+          "note": {
+            "hu": "Si tengo, voy valós, elképzelhető feltétel: talán tényleg van időm. Si tuviera, iría irreális: nincs időm, ez csak elképzelt helyzet.",
+            "en": "Si tengo, voy is a real, possible condition: I might really have time. Si tuviera, iría is unreal: I don't have time, it's only a hypothetical.",
+            "es": "Si tengo, voy es una condición real y posible: puede que sí tenga tiempo. Si tuviera, iría es irreal: no tengo tiempo, es solo una situación imaginada.",
+            "de": "Si tengo, voy ist eine reale, mögliche Bedingung: vielleicht habe ich wirklich Zeit. Si tuviera, iría ist irreal: ich habe keine Zeit, es ist nur eine gedachte Situation."
+          },
+          "examples": [
+            {
+              "es": "Si tengo tiempo, voy.",
+              "tr": {
+                "hu": "Ha van időm, megyek.",
+                "en": "If I have time, I'll go.",
+                "es": "Si tengo tiempo, voy.",
+                "de": "Wenn ich Zeit habe, gehe ich."
+              }
+            },
+            {
+              "es": "Si tuviera tiempo, iría.",
+              "tr": {
+                "hu": "Ha lenne időm, mennék.",
+                "en": "If I had time, I would go.",
+                "es": "Si tuviera tiempo, iría.",
+                "de": "Wenn ich Zeit hätte, würde ich gehen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ökölszabály: az ellos indefinido-alakból (-ron le, -ra rá) minden rendhagyó ige ingyen jön: dijeron → dije- → dijera; ha az indefinidót tudod, ezt is tudod.",
+        "en": "Rule of thumb: from the ellos indefinido-form (drop -ron, add -ra), every irregular verb comes for free: dijeron → dije- → dijera; if you know the indefinido, you already know this.",
+        "es": "Regla práctica: de la forma ellos del indefinido (quitas -ron, añades -ra) todo verbo irregular sale gratis: dijeron → dije- → dijera; si sabes el indefinido, ya sabes esto.",
+        "de": "Faustregel: aus der ellos-Form des Indefinido (-ron weg, -ra dazu) ergibt sich jedes unregelmäßige Verb gratis: dijeron → dije- → dijera; wenn du das Indefinido kennst, kennst du das auch schon."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A kötőmód múltja az indefinido ellos-alakjából indul: leveszed a -ron végződést, és hozzáteszed a -ra végződést, mint a «hablara» vagy a «comiera». A leggyakoribb rendhagyó igék ugyanebből a tőből ingyen jönnek, mint a «tuviera», a «dijera» vagy a «pudiera». Ha a főmondat múltban vagy feltételes módban áll, a mellékmondat is ide kerül, mint a «quería que vinieras». A «como si» után mindig ez az alak áll, mint a «habla como si supiera todo». Udvarias kérésben ez az alak lágyabb, mint a «quisiera un café».",
+    "en": "The past subjunctive starts from the ellos-form of the indefinido: drop the -ron ending and add -ra, like «hablara» or «comiera». The most common irregular verbs come from the same stem for free, like «tuviera», «dijera» or «pudiera». When the main clause is in the past or conditional, the subordinate clause shifts too, like «quería que vinieras». After «como si» this form always follows, like «habla como si supiera todo». In a polite request this form sounds softer, like «quisiera un café».",
+    "es": "El imperfecto de subjuntivo parte de la forma ellos del indefinido: quitas la terminación -ron y añades -ra, como «hablara» o «comiera». Los verbos irregulares más comunes salen gratis de la misma raíz, como «tuviera», «dijera» o «pudiera». Cuando la oración principal está en pasado o condicional, la subordinada también pasa a esta forma, como «quería que vinieras». Tras «como si» siempre va esta forma, como «habla como si supiera todo». En una petición cortés esta forma suena más suave, como «quisiera un café».",
+    "de": "Der Subjuntivo Imperfekt geht von der ellos-Form des Indefinido aus: die Endung -ron fällt weg, und -ra kommt dazu, wie «hablara» oder «comiera». Die häufigsten unregelmäßigen Verben ergeben sich gratis aus demselben Stamm, wie «tuviera», «dijera» oder «pudiera». Steht der Hauptsatz in der Vergangenheit oder im Konditional, verschiebt sich auch der Nebensatz, wie «quería que vinieras». Nach «como si» steht immer diese Form, wie «habla como si supiera todo». In einer höflichen Bitte klingt diese Form sanfter, wie «quisiera un café»."
+  },
+  "glossary": [
+    {
+      "word": "vinieras",
+      "gloss": {
+        "hu": "jönnél (venir, kötőmód múlt, tú)",
+        "en": "you would come (venir, imperfect subjunctive)",
+        "es": "vinieras (subjuntivo imperfecto de venir)",
+        "de": "du kämest (Subjuntivo Imperfekt von venir)"
+      }
+    },
+    {
+      "word": "vengas",
+      "gloss": {
+        "hu": "gyere (venir, kötőmód jelen, tú)",
+        "en": "you come (venir, present subjunctive)",
+        "es": "vengas (subjuntivo presente de venir)",
+        "de": "du kommest (Subjuntivo Präsens von venir)"
+      }
+    },
+    {
+      "word": "dijeran",
+      "gloss": {
+        "hu": "mondanák (decir, kötőmód múlt, ellos)",
+        "en": "they would say (decir, imperfect subjunctive)",
+        "es": "dijeran (subjuntivo imperfecto de decir)",
+        "de": "sie sagten (Subjuntivo Imperfekt von decir)"
+      }
+    },
+    {
+      "word": "digan",
+      "gloss": {
+        "hu": "mondják (decir, kötőmód jelen, ellos)",
+        "en": "they say (decir, present subjunctive)",
+        "es": "digan (subjuntivo presente de decir)",
+        "de": "sie sagen (Subjuntivo Präsens von decir)"
+      }
+    },
+    {
+      "word": "tengamos",
+      "gloss": {
+        "hu": "legyen (tener, kötőmód jelen, nosotros)",
+        "en": "we have (tener, present subjunctive)",
+        "es": "tengamos (subjuntivo presente de tener)",
+        "de": "wir haben (Subjuntivo Präsens von tener)"
+      }
+    },
+    {
+      "word": "tuviéramos",
+      "gloss": {
+        "hu": "lenne (tener, kötőmód múlt, nosotros)",
+        "en": "we had (tener, imperfect subjunctive)",
+        "es": "tuviéramos (subjuntivo imperfecto de tener)",
+        "de": "wir hätten (Subjuntivo Imperfekt von tener)"
+      }
+    },
+    {
+      "word": "sepa",
+      "gloss": {
+        "hu": "tudja (saber, kötőmód jelen, yo/él)",
+        "en": "I/he know(s) (saber, present subjunctive)",
+        "es": "sepa (subjuntivo presente de saber)",
+        "de": "ich/er wisse (Subjuntivo Präsens von saber)"
+      }
+    },
+    {
+      "word": "supiera",
+      "gloss": {
+        "hu": "tudná (saber, kötőmód múlt, yo/él)",
+        "en": "I/he would know (saber, imperfect subjunctive)",
+        "es": "supiera (subjuntivo imperfecto de saber)",
+        "de": "ich/er wüsste (Subjuntivo Imperfekt von saber)"
+      }
+    },
+    {
+      "word": "pudiera",
+      "gloss": {
+        "hu": "tudná (poder, kötőmód múlt, yo)",
+        "en": "I could (poder, imperfect subjunctive)",
+        "es": "pudiera (subjuntivo imperfecto de poder)",
+        "de": "ich könnte (Subjuntivo Imperfekt von poder)"
+      }
+    },
+    {
+      "word": "quiera",
+      "gloss": {
+        "hu": "akarja (querer, kötőmód jelen, yo)",
+        "en": "I want (querer, present subjunctive)",
+        "es": "quiera (subjuntivo presente de querer)",
+        "de": "ich wolle (Subjuntivo Präsens von querer)"
+      }
+    },
+    {
+      "word": "quisiera",
+      "gloss": {
+        "hu": "szeretnék (querer, kötőmód múlt, udvarias)",
+        "en": "I would like (querer, imperfect subjunctive, polite)",
+        "es": "quisiera (subjuntivo imperfecto de querer, cortés)",
+        "de": "ich möchte (Subjuntivo Imperfekt von querer, höflich)"
+      }
+    },
+    {
+      "word": "tuviera",
+      "gloss": {
+        "hu": "lenne (tener, kötőmód múlt, yo)",
+        "en": "I had (tener, imperfect subjunctive)",
+        "es": "tuviera (subjuntivo imperfecto de tener)",
+        "de": "ich hätte (Subjuntivo Imperfekt von tener)"
+      }
+    },
+    {
+      "word": "tuvieras",
+      "gloss": {
+        "hu": "lenne (tener, kötőmód múlt, tú)",
+        "en": "you had (tener, imperfect subjunctive)",
+        "es": "tuvieras (subjuntivo imperfecto de tener)",
+        "de": "du hättest (Subjuntivo Imperfekt von tener)"
+      }
+    },
+    {
+      "word": "iría",
+      "gloss": {
+        "hu": "mennék (ir, feltételes mód, yo)",
+        "en": "I would go (ir, conditional)",
+        "es": "iría (condicional de ir)",
+        "de": "ich würde gehen (Konditional von ir)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "sp-ch-01",
+      "sentence": "Quería que ___ (tú) a la fiesta.",
+      "options": ["vinieras", "vengas", "venías", "viniste"],
+      "correct": 0,
+      "why": {
+        "hu": "A múlt főmondat (quería) után a mellékmondat kötőmódja is múltba kerül: vinieras.",
+        "en": "After the past main clause (quería), the subordinate clause's subjunctive also shifts to the past: vinieras.",
+        "es": "Tras la principal en pasado (quería), el subjuntivo de la subordinada también pasa al pasado: vinieras.",
+        "de": "Nach dem Hauptsatz in der Vergangenheit (quería) verschiebt sich auch der Subjuntivo des Nebensatzes in die Vergangenheit: vinieras."
+      },
+      "wrong": {
+        "vengas": {
+          "hu": "Ezzel a mondat kevert idejű lenne: múlt főmondat + jelen kötőmód, ami nem illik az igeidő-egyeztetéshez; helyesen: Quería que vinieras a la fiesta.",
+          "en": "This would mix tenses: a past main clause with a present subjunctive, which breaks the sequence of tenses; correctly: Quería que vinieras a la fiesta.",
+          "es": "Esto mezclaría los tiempos: principal en pasado con subjuntivo presente, lo cual rompe la concordancia de tiempos; correctamente: Quería que vinieras a la fiesta.",
+          "de": "Das würde die Zeiten mischen: Hauptsatz in der Vergangenheit mit Subjuntivo Präsens, was die Zeitenfolge verletzt; richtig: Quería que vinieras a la fiesta."
+        },
+        "venías": {
+          "hu": "Ezzel a mondat kijelentő módban állna: „jöttél a buliba”, de a quería után kötőmód kell; helyesen: Quería que vinieras a la fiesta.",
+          "en": "This would be indicative: “you were coming to the party,” but quería needs the subjunctive; correctly: Quería que vinieras a la fiesta.",
+          "es": "Esto sería indicativo: “venías a la fiesta”, pero quería exige subjuntivo; correctamente: Quería que vinieras a la fiesta.",
+          "de": "Das wäre Indikativ: „du kamst zur Party“, aber quería verlangt den Subjuntivo; richtig: Quería que vinieras a la fiesta."
+        },
+        "viniste": {
+          "hu": "Ezzel a mondat kijelentő múltban állna: „eljöttél”, de a quería után kötőmód kell; helyesen: Quería que vinieras a la fiesta.",
+          "en": "This would be the indicative past: “you came,” but quería needs the subjunctive; correctly: Quería que vinieras a la fiesta.",
+          "es": "Esto sería el pasado indicativo: “viniste”, pero quería exige subjuntivo; correctamente: Quería que vinieras a la fiesta.",
+          "de": "Das wäre der indikative Vergangenheit: „du kamst“, aber quería verlangt den Subjuntivo; richtig: Quería que vinieras a la fiesta."
+        }
+      }
+    },
+    {
+      "id": "sp-ch-02",
+      "sentence": "Me gustaría que ___ (tú) más despacio.",
+      "options": ["hablaras", "hables", "hablabas", "hablaste"],
+      "correct": 0,
+      "why": {
+        "hu": "A feltételes főmondat (me gustaría) után a mellékmondat kötőmódja is múltba kerül: hablaras.",
+        "en": "After the conditional main clause (me gustaría), the subordinate clause's subjunctive also shifts to the past: hablaras.",
+        "es": "Tras la principal en condicional (me gustaría), el subjuntivo de la subordinada también pasa al pasado: hablaras.",
+        "de": "Nach dem Hauptsatz im Konditional (me gustaría) verschiebt sich auch der Subjuntivo des Nebensatzes in die Vergangenheit: hablaras."
+      },
+      "wrong": {
+        "hables": {
+          "hu": "Ezzel a mondat kevert idejű lenne: feltételes főmondat + jelen kötőmód; helyesen: Me gustaría que hablaras más despacio.",
+          "en": "This would mix tenses: a conditional main clause with a present subjunctive; correctly: Me gustaría que hablaras más despacio.",
+          "es": "Esto mezclaría los tiempos: principal en condicional con subjuntivo presente; correctamente: Me gustaría que hablaras más despacio.",
+          "de": "Das würde die Zeiten mischen: Hauptsatz im Konditional mit Subjuntivo Präsens; richtig: Me gustaría que hablaras más despacio."
+        },
+        "hablabas": {
+          "hu": "Ezzel a mondat kijelentő módban állna: „lassabban beszéltél”, de a me gustaría után kötőmód kell; helyesen: Me gustaría que hablaras más despacio.",
+          "en": "This would be indicative: “you were talking more slowly,” but me gustaría needs the subjunctive; correctly: Me gustaría que hablaras más despacio.",
+          "es": "Esto sería indicativo: “hablabas más despacio”, pero me gustaría exige subjuntivo; correctamente: Me gustaría que hablaras más despacio.",
+          "de": "Das wäre Indikativ: „du sprachst langsamer“, aber me gustaría verlangt den Subjuntivo; richtig: Me gustaría que hablaras más despacio."
+        },
+        "hablaste": {
+          "hu": "Ezzel a mondat kijelentő múltban állna: „beszéltél”, de a me gustaría után kötőmód kell; helyesen: Me gustaría que hablaras más despacio.",
+          "en": "This would be the indicative past: “you talked,” but me gustaría needs the subjunctive; correctly: Me gustaría que hablaras más despacio.",
+          "es": "Esto sería el pasado indicativo: “hablaste”, pero me gustaría exige subjuntivo; correctamente: Me gustaría que hablaras más despacio.",
+          "de": "Das wäre der indikative Vergangenheit: „du sprachst“, aber me gustaría verlangt den Subjuntivo; richtig: Me gustaría que hablaras más despacio."
+        }
+      }
+    },
+    {
+      "id": "sp-ch-03",
+      "sentence": "Le pedí que me ___ (él) con la tarea.",
+      "options": ["ayudara", "ayude", "ayudaba", "ayudó"],
+      "correct": 0,
+      "why": {
+        "hu": "A múlt főmondat (pedí) után a mellékmondat kötőmódja is múltba kerül: ayudara.",
+        "en": "After the past main clause (pedí), the subordinate clause's subjunctive also shifts to the past: ayudara.",
+        "es": "Tras la principal en pasado (pedí), el subjuntivo de la subordinada también pasa al pasado: ayudara.",
+        "de": "Nach dem Hauptsatz in der Vergangenheit (pedí) verschiebt sich auch der Subjuntivo des Nebensatzes in die Vergangenheit: ayudara."
+      },
+      "wrong": {
+        "ayude": {
+          "hu": "Ezzel a mondat kevert idejű lenne: múlt főmondat + jelen kötőmód; helyesen: Le pedí que me ayudara con la tarea.",
+          "en": "This would mix tenses: a past main clause with a present subjunctive; correctly: Le pedí que me ayudara con la tarea.",
+          "es": "Esto mezclaría los tiempos: principal en pasado con subjuntivo presente; correctamente: Le pedí que me ayudara con la tarea.",
+          "de": "Das würde die Zeiten mischen: Hauptsatz in der Vergangenheit mit Subjuntivo Präsens; richtig: Le pedí que me ayudara con la tarea."
+        },
+        "ayudaba": {
+          "hu": "Ezzel a mondat kijelentő módban állna: „segített”, tényként, de a pedí után kötőmód kell; helyesen: Le pedí que me ayudara con la tarea.",
+          "en": "This would be indicative: “he was helping,” stated as fact, but pedí needs the subjunctive; correctly: Le pedí que me ayudara con la tarea.",
+          "es": "Esto sería indicativo: “ayudaba”, como un hecho, pero pedí exige subjuntivo; correctamente: Le pedí que me ayudara con la tarea.",
+          "de": "Das wäre Indikativ: „er half“, als Tatsache, aber pedí verlangt den Subjuntivo; richtig: Le pedí que me ayudara con la tarea."
+        },
+        "ayudó": {
+          "hu": "Ezzel a mondat kijelentő múltban állna: „segített”, de a pedí után kötőmód kell; helyesen: Le pedí que me ayudara con la tarea.",
+          "en": "This would be the indicative past: “he helped,” but pedí needs the subjunctive; correctly: Le pedí que me ayudara con la tarea.",
+          "es": "Esto sería el pasado indicativo: “ayudó”, pero pedí exige subjuntivo; correctamente: Le pedí que me ayudara con la tarea.",
+          "de": "Das wäre der indikative Vergangenheit: „er half“, aber pedí verlangt den Subjuntivo; richtig: Le pedí que me ayudara con la tarea."
+        }
+      }
+    },
+    {
+      "id": "sp-ch-04",
+      "sentence": "Esperaba que ___ (ellos) la verdad.",
+      "options": ["dijeran", "digan", "decían", "dijeron"],
+      "correct": 0,
+      "why": {
+        "hu": "A múlt főmondat (esperaba) után a mellékmondat kötőmódja is múltba kerül: dijeran.",
+        "en": "After the past main clause (esperaba), the subordinate clause's subjunctive also shifts to the past: dijeran.",
+        "es": "Tras la principal en pasado (esperaba), el subjuntivo de la subordinada también pasa al pasado: dijeran.",
+        "de": "Nach dem Hauptsatz in der Vergangenheit (esperaba) verschiebt sich auch der Subjuntivo des Nebensatzes in die Vergangenheit: dijeran."
+      },
+      "wrong": {
+        "digan": {
+          "hu": "Ezzel a mondat kevert idejű lenne: múlt főmondat + jelen kötőmód; helyesen: Esperaba que dijeran la verdad.",
+          "en": "This would mix tenses: a past main clause with a present subjunctive; correctly: Esperaba que dijeran la verdad.",
+          "es": "Esto mezclaría los tiempos: principal en pasado con subjuntivo presente; correctamente: Esperaba que dijeran la verdad.",
+          "de": "Das würde die Zeiten mischen: Hauptsatz in der Vergangenheit mit Subjuntivo Präsens; richtig: Esperaba que dijeran la verdad."
+        },
+        "decían": {
+          "hu": "Ezzel a mondat kijelentő módban állna: „mondták az igazat”, tényként, de az esperaba után kötőmód kell; helyesen: Esperaba que dijeran la verdad.",
+          "en": "This would be indicative: “they were telling the truth,” stated as fact, but esperaba needs the subjunctive; correctly: Esperaba que dijeran la verdad.",
+          "es": "Esto sería indicativo: “decían la verdad”, como un hecho, pero esperaba exige subjuntivo; correctamente: Esperaba que dijeran la verdad.",
+          "de": "Das wäre Indikativ: „sie sagten die Wahrheit“, als Tatsache, aber esperaba verlangt den Subjuntivo; richtig: Esperaba que dijeran la verdad."
+        },
+        "dijeron": {
+          "hu": "Ezzel a mondat kijelentő múltban állna: „elmondták az igazat”, de az esperaba után kötőmód kell; helyesen: Esperaba que dijeran la verdad.",
+          "en": "This would be the indicative past: “they told the truth,” but esperaba needs the subjunctive; correctly: Esperaba que dijeran la verdad.",
+          "es": "Esto sería el pasado indicativo: “dijeron la verdad”, pero esperaba exige subjuntivo; correctamente: Esperaba que dijeran la verdad.",
+          "de": "Das wäre der indikative Vergangenheit: „sie sagten die Wahrheit“, aber esperaba verlangt den Subjuntivo; richtig: Esperaba que dijeran la verdad."
+        }
+      }
+    },
+    {
+      "id": "sp-ch-05",
+      "sentence": "No creía que ___ (nosotros) suficiente dinero.",
+      "options": ["tuviéramos", "tengamos", "teníamos", "tuvimos"],
+      "correct": 0,
+      "why": {
+        "hu": "A tagadott múlt creer kétely, ezért kötőmód, múltban: tuviéramos.",
+        "en": "The negated past creer is doubt, so subjunctive, in the past: tuviéramos.",
+        "es": "El creer negado en pasado es duda, por eso subjuntivo, en pasado: tuviéramos.",
+        "de": "Das verneinte creer in der Vergangenheit ist Zweifel, deshalb Subjuntivo, in der Vergangenheit: tuviéramos."
+      },
+      "wrong": {
+        "tengamos": {
+          "hu": "Ezzel a mondat kevert idejű lenne: múlt főmondat + jelen kötőmód; helyesen: No creía que tuviéramos suficiente dinero.",
+          "en": "This would mix tenses: a past main clause with a present subjunctive; correctly: No creía que tuviéramos suficiente dinero.",
+          "es": "Esto mezclaría los tiempos: principal en pasado con subjuntivo presente; correctamente: No creía que tuviéramos suficiente dinero.",
+          "de": "Das würde die Zeiten mischen: Hauptsatz in der Vergangenheit mit Subjuntivo Präsens; richtig: No creía que tuviéramos suficiente dinero."
+        },
+        "teníamos": {
+          "hu": "Ezzel a mondat kijelentő módban állna: „volt elég pénzünk”, tényként, ami ellentmond a kételynek; helyesen: No creía que tuviéramos suficiente dinero.",
+          "en": "This would be indicative: “we had enough money,” stated as fact, which contradicts the doubt; correctly: No creía que tuviéramos suficiente dinero.",
+          "es": "Esto sería indicativo: “teníamos suficiente dinero”, como un hecho, lo cual contradice la duda; correctamente: No creía que tuviéramos suficiente dinero.",
+          "de": "Das wäre Indikativ: „wir hatten genug Geld“, als Tatsache, was dem Zweifel widerspricht; richtig: No creía que tuviéramos suficiente dinero."
+        },
+        "tuvimos": {
+          "hu": "Ezzel a mondat kijelentő múltban állna: „volt elég pénzünk”, de a kétely után kötőmód kell; helyesen: No creía que tuviéramos suficiente dinero.",
+          "en": "This would be the indicative past: “we had enough money,” but the doubt needs the subjunctive; correctly: No creía que tuviéramos suficiente dinero.",
+          "es": "Esto sería el pasado indicativo: “tuvimos suficiente dinero”, pero la duda exige subjuntivo; correctamente: No creía que tuviéramos suficiente dinero.",
+          "de": "Das wäre der indikative Vergangenheit: „wir hatten genug Geld“, aber der Zweifel verlangt den Subjuntivo; richtig: No creía que tuviéramos suficiente dinero."
+        }
+      }
+    },
+    {
+      "id": "sp-ch-06",
+      "sentence": "Dudaba que ___ (yo) la respuesta.",
+      "options": ["supiera", "sepa", "sabía", "supe"],
+      "correct": 0,
+      "why": {
+        "hu": "A múlt dudaba kétely, ezért kötőmód, múltban: supiera.",
+        "en": "The past dudaba is doubt, so subjunctive, in the past: supiera.",
+        "es": "El dudaba en pasado es duda, por eso subjuntivo, en pasado: supiera.",
+        "de": "Das vergangene dudaba ist Zweifel, deshalb Subjuntivo, in der Vergangenheit: supiera."
+      },
+      "wrong": {
+        "sepa": {
+          "hu": "Ezzel a mondat kevert idejű lenne: múlt főmondat + jelen kötőmód; helyesen: Dudaba que supiera la respuesta.",
+          "en": "This would mix tenses: a past main clause with a present subjunctive; correctly: Dudaba que supiera la respuesta.",
+          "es": "Esto mezclaría los tiempos: principal en pasado con subjuntivo presente; correctamente: Dudaba que supiera la respuesta.",
+          "de": "Das würde die Zeiten mischen: Hauptsatz in der Vergangenheit mit Subjuntivo Präsens; richtig: Dudaba que supiera la respuesta."
+        },
+        "sabía": {
+          "hu": "Ezzel a mondat kijelentő módban állna: „tudtam a választ”, tényként, ami ellentmond a kételynek; helyesen: Dudaba que supiera la respuesta.",
+          "en": "This would be indicative: “I knew the answer,” stated as fact, which contradicts the doubt; correctly: Dudaba que supiera la respuesta.",
+          "es": "Esto sería indicativo: “sabía la respuesta”, como un hecho, lo cual contradice la duda; correctamente: Dudaba que supiera la respuesta.",
+          "de": "Das wäre Indikativ: „ich wusste die Antwort“, als Tatsache, was dem Zweifel widerspricht; richtig: Dudaba que supiera la respuesta."
+        },
+        "supe": {
+          "hu": "Ezzel a mondat kijelentő múltban állna: „megtudtam a választ”, de a kétely után kötőmód kell; helyesen: Dudaba que supiera la respuesta.",
+          "en": "This would be the indicative past: “I found out the answer,” but the doubt needs the subjunctive; correctly: Dudaba que supiera la respuesta.",
+          "es": "Esto sería el pasado indicativo: “supe la respuesta”, pero la duda exige subjuntivo; correctamente: Dudaba que supiera la respuesta.",
+          "de": "Das wäre der indikative Vergangenheit: „ich erfuhr die Antwort“, aber der Zweifel verlangt den Subjuntivo; richtig: Dudaba que supiera la respuesta."
+        }
+      }
+    },
+    {
+      "id": "sp-ch-07",
+      "sentence": "Habla como si ___ (él) todo.",
+      "options": ["supiera", "sepa", "sabía", "supo"],
+      "correct": 0,
+      "why": {
+        "hu": "A como si után mindig imperfecto de subjuntivo áll, akkor is, ha a főmondat jelen idejű: supiera.",
+        "en": "After como si, the imperfect subjunctive always follows, even when the main clause is present: supiera.",
+        "es": "Tras como si siempre va el imperfecto de subjuntivo, incluso con la principal en presente: supiera.",
+        "de": "Nach como si steht immer der Subjuntivo Imperfekt, auch wenn der Hauptsatz im Presente steht: supiera."
+      },
+      "wrong": {
+        "sepa": {
+          "hu": "Ezzel a mondat azt sugallná, hogy jelen idejű kötőmód is állhat como si után, de az mindig múlt kötőmódot kér; helyesen: Habla como si supiera todo.",
+          "en": "This would suggest the present subjunctive can follow como si, but it always requires the past subjunctive; correctly: Habla como si supiera todo.",
+          "es": "Esto sugeriría que el subjuntivo presente puede ir tras como si, pero siempre exige el imperfecto de subjuntivo; correctamente: Habla como si supiera todo.",
+          "de": "Das würde nahelegen, dass der Subjuntivo Präsens nach como si stehen kann, aber es verlangt immer den Subjuntivo Imperfekt; richtig: Habla como si supiera todo."
+        },
+        "sabía": {
+          "hu": "Ezzel a mondat kijelentő módban állna, de a como si után mindig kötőmód kell; helyesen: Habla como si supiera todo.",
+          "en": "This would be indicative, but como si always needs the subjunctive; correctly: Habla como si supiera todo.",
+          "es": "Esto sería indicativo, pero como si siempre exige subjuntivo; correctamente: Habla como si supiera todo.",
+          "de": "Das wäre Indikativ, aber como si verlangt immer den Subjuntivo; richtig: Habla como si supiera todo."
+        },
+        "supo": {
+          "hu": "Ezzel a mondat kijelentő múltban állna, de a como si után mindig kötőmód kell; helyesen: Habla como si supiera todo.",
+          "en": "This would be the indicative past, but como si always needs the subjunctive; correctly: Habla como si supiera todo.",
+          "es": "Esto sería el pasado indicativo, pero como si siempre exige subjuntivo; correctamente: Habla como si supiera todo.",
+          "de": "Das wäre der indikative Vergangenheit, aber como si verlangt immer den Subjuntivo; richtig: Habla como si supiera todo."
+        }
+      }
+    },
+    {
+      "id": "sp-ch-08",
+      "sentence": "Ojalá ___ (yo) ir a la fiesta.",
+      "options": ["pudiera", "pueda", "podía", "pude"],
+      "correct": 0,
+      "why": {
+        "hu": "Ojalá + imperfecto de subjuntivo egy nehezen teljesíthető, udvarias kívánságot fejez ki: pudiera.",
+        "en": "Ojalá + imperfect subjunctive expresses a wish that is unlikely to come true, a polite wish: pudiera.",
+        "es": "Ojalá + imperfecto de subjuntivo expresa un deseo difícil de cumplir, un deseo cortés: pudiera.",
+        "de": "Ojalá + Subjuntivo Imperfekt drückt einen schwer erfüllbaren, höflichen Wunsch aus: pudiera."
+      },
+      "wrong": {
+        "pueda": {
+          "hu": "Ezzel a mondat azt jelentené, hogy tényleg van rá esély, jelen kötőmóddal; itt a lecke a múlt kötőmódos, nehezebben teljesíthető kívánságot kéri; helyesen: Ojalá pudiera ir a la fiesta.",
+          "en": "This would state a wish with a real chance, using the present subjunctive; this lesson asks for the past-subjunctive, less likely wish; correctly: Ojalá pudiera ir a la fiesta.",
+          "es": "Esto expresaría un deseo con posibilidad real, con subjuntivo presente; esta lección pide el deseo con imperfecto, menos probable; correctamente: Ojalá pudiera ir a la fiesta.",
+          "de": "Das würde einen Wunsch mit realer Chance ausdrücken, mit Subjuntivo Präsens; diese Lektion verlangt den weniger wahrscheinlichen Wunsch mit Subjuntivo Imperfekt; richtig: Ojalá pudiera ir a la fiesta."
+        },
+        "podía": {
+          "hu": "Ezzel a mondat kijelentő módban állna, tényként, de az ojalá után kötőmód kell; helyesen: Ojalá pudiera ir a la fiesta.",
+          "en": "This would be indicative, stated as fact, but ojalá needs the subjunctive; correctly: Ojalá pudiera ir a la fiesta.",
+          "es": "Esto sería indicativo, como un hecho, pero ojalá exige subjuntivo; correctamente: Ojalá pudiera ir a la fiesta.",
+          "de": "Das wäre Indikativ, als Tatsache, aber ojalá verlangt den Subjuntivo; richtig: Ojalá pudiera ir a la fiesta."
+        },
+        "pude": {
+          "hu": "Ezzel a mondat kijelentő múltban állna, tényként, de az ojalá után kötőmód kell; helyesen: Ojalá pudiera ir a la fiesta.",
+          "en": "This would be the indicative past, stated as fact, but ojalá needs the subjunctive; correctly: Ojalá pudiera ir a la fiesta.",
+          "es": "Esto sería el pasado indicativo, como un hecho, pero ojalá exige subjuntivo; correctamente: Ojalá pudiera ir a la fiesta.",
+          "de": "Das wäre der indikative Vergangenheit, als Tatsache, aber ojalá verlangt den Subjuntivo; richtig: Ojalá pudiera ir a la fiesta."
+        }
+      }
+    },
+    {
+      "id": "sp-ch-09",
+      "sentence": "___ (yo) un café, por favor.",
+      "options": ["quisiera", "quiera", "quería", "quise"],
+      "correct": 0,
+      "why": {
+        "hu": "A quisiera udvarias, lágyabb formája a jelen idejű „quiero”-nak: udvarias kérés.",
+        "en": "Quisiera is the polite, softer form of the present-tense “quiero”: a polite request.",
+        "es": "Quisiera es la forma cortés y más suave del presente “quiero”: una petición cortés.",
+        "de": "Quisiera ist die höfliche, sanftere Form des Presente „quiero“: eine höfliche Bitte."
+      },
+      "wrong": {
+        "quiera": {
+          "hu": "A puszta quiera önmagában nem áll meg udvarias kérésként, csak egy kiváltó szó (que, ojalá) után; helyesen: Quisiera un café, por favor.",
+          "en": "Bare quiera doesn't stand on its own as a polite request, only after a trigger word (que, ojalá); correctly: Quisiera un café, por favor.",
+          "es": "El quiera solo no funciona como petición cortés independiente, solo tras una palabra disparadora (que, ojalá); correctamente: Quisiera un café, por favor.",
+          "de": "Das bloße quiera funktioniert nicht als eigenständige höfliche Bitte, nur nach einem Auslösewort (que, ojalá); richtig: Quisiera un café, por favor."
+        },
+        "quería": {
+          "hu": "Ezzel a mondat kijelentő módban állna: „szerettem volna”, egy múltbeli tényként, kevésbé udvarias; helyesen: Quisiera un café, por favor.",
+          "en": "This would be indicative: “I wanted,” a past fact, less polite; correctly: Quisiera un café, por favor.",
+          "es": "Esto sería indicativo: “quería”, un hecho pasado, menos cortés; correctamente: Quisiera un café, por favor.",
+          "de": "Das wäre Indikativ: „ich wollte“, eine vergangene Tatsache, weniger höflich; richtig: Quisiera un café, por favor."
+        },
+        "quise": {
+          "hu": "Ezzel a mondat kijelentő múltban állna: „megkívántam”, egy lezárt tényként, nem udvarias kérésként; helyesen: Quisiera un café, por favor.",
+          "en": "This would be the indicative past: “I wanted (and got),” a completed fact, not a polite request; correctly: Quisiera un café, por favor.",
+          "es": "Esto sería el pasado indicativo: “quise”, un hecho terminado, no una petición cortés; correctamente: Quisiera un café, por favor.",
+          "de": "Das wäre der indikative Vergangenheit: „ich wollte (und bekam)“, eine abgeschlossene Tatsache, keine höfliche Bitte; richtig: Quisiera un café, por favor."
+        }
+      }
+    },
+    {
+      "id": "sp-ch-10",
+      "sentence": "Si ___ (yo) tiempo, iría.",
+      "options": ["tuviera", "tengo", "tenía", "tuve"],
+      "correct": 0,
+      "why": {
+        "hu": "Az irreális feltétel szerkezete si + imperfecto de subjuntivo, condicional: tuviera.",
+        "en": "The unreal condition uses si + imperfect subjunctive, conditional: tuviera.",
+        "es": "La condición irreal usa si + imperfecto de subjuntivo, condicional: tuviera.",
+        "de": "Die irreale Bedingung verwendet si + Subjuntivo Imperfekt, Konditional: tuviera."
+      },
+      "wrong": {
+        "tengo": {
+          "hu": "Ezzel egy valós feltétel jönne létre („si tengo”), de az a szerkezet jelen/jövő eredményt kér, nem feltételes módot; helyesen: Si tuviera tiempo, iría.",
+          "en": "This would create a real condition (“si tengo”), but that structure pairs with a present/future result, not the conditional; correctly: Si tuviera tiempo, iría.",
+          "es": "Esto crearía una condición real (“si tengo”), pero esa estructura pide un resultado en presente/futuro, no en condicional; correctamente: Si tuviera tiempo, iría.",
+          "de": "Das würde eine reale Bedingung ergeben („si tengo“), aber diese Struktur passt zu einem Ergebnis im Presente/Futuro, nicht im Konditional; richtig: Si tuviera tiempo, iría."
+        },
+        "tenía": {
+          "hu": "Ezzel a mondat kijelentő módban állna, egy valós múltbeli tényként, nem az irreális feltétel szerkezetében; helyesen: Si tuviera tiempo, iría.",
+          "en": "This would be indicative, a real past fact, not the unreal-condition structure; correctly: Si tuviera tiempo, iría.",
+          "es": "Esto sería indicativo, un hecho real en pasado, no la estructura de condición irreal; correctamente: Si tuviera tiempo, iría.",
+          "de": "Das wäre Indikativ, eine reale vergangene Tatsache, nicht die Struktur der irrealen Bedingung; richtig: Si tuviera tiempo, iría."
+        },
+        "tuve": {
+          "hu": "Ezzel a mondat kijelentő múltban állna, egy lezárt tényként, nem az irreális feltétel szerkezetében; helyesen: Si tuviera tiempo, iría.",
+          "en": "This would be the indicative past, a completed fact, not the unreal-condition structure; correctly: Si tuviera tiempo, iría.",
+          "es": "Esto sería el pasado indicativo, un hecho terminado, no la estructura de condición irreal; correctamente: Si tuviera tiempo, iría.",
+          "de": "Das wäre der indikative Vergangenheit, eine abgeschlossene Tatsache, nicht die Struktur der irrealen Bedingung; richtig: Si tuviera tiempo, iría."
+        }
+      }
+    },
+    {
+      "id": "sp-ch-11",
+      "sentence": "Si ___ (tú) más dinero, comprarías una casa.",
+      "options": ["tuvieras", "tienes", "tenías", "tuviste"],
+      "correct": 0,
+      "why": {
+        "hu": "Az irreális feltétel szerkezete si + imperfecto de subjuntivo, condicional: tuvieras.",
+        "en": "The unreal condition uses si + imperfect subjunctive, conditional: tuvieras.",
+        "es": "La condición irreal usa si + imperfecto de subjuntivo, condicional: tuvieras.",
+        "de": "Die irreale Bedingung verwendet si + Subjuntivo Imperfekt, Konditional: tuvieras."
+      },
+      "wrong": {
+        "tienes": {
+          "hu": "Ezzel egy valós feltétel jönne létre („si tienes”), de az a szerkezet jelen/jövő eredményt kér, nem feltételes módot; helyesen: Si tuvieras más dinero, comprarías una casa.",
+          "en": "This would create a real condition (“si tienes”), but that structure pairs with a present/future result, not the conditional; correctly: Si tuvieras más dinero, comprarías una casa.",
+          "es": "Esto crearía una condición real (“si tienes”), pero esa estructura pide un resultado en presente/futuro, no en condicional; correctamente: Si tuvieras más dinero, comprarías una casa.",
+          "de": "Das würde eine reale Bedingung ergeben („si tienes“), aber diese Struktur passt zu einem Ergebnis im Presente/Futuro, nicht im Konditional; richtig: Si tuvieras más dinero, comprarías una casa."
+        },
+        "tenías": {
+          "hu": "Ezzel a mondat kijelentő módban állna, egy valós múltbeli tényként, nem az irreális feltétel szerkezetében; helyesen: Si tuvieras más dinero, comprarías una casa.",
+          "en": "This would be indicative, a real past fact, not the unreal-condition structure; correctly: Si tuvieras más dinero, comprarías una casa.",
+          "es": "Esto sería indicativo, un hecho real en pasado, no la estructura de condición irreal; correctamente: Si tuvieras más dinero, comprarías una casa.",
+          "de": "Das wäre Indikativ, eine reale vergangene Tatsache, nicht die Struktur der irrealen Bedingung; richtig: Si tuvieras más dinero, comprarías una casa."
+        },
+        "tuviste": {
+          "hu": "Ezzel a mondat kijelentő múltban állna, egy lezárt tényként, nem az irreális feltétel szerkezetében; helyesen: Si tuvieras más dinero, comprarías una casa.",
+          "en": "This would be the indicative past, a completed fact, not the unreal-condition structure; correctly: Si tuvieras más dinero, comprarías una casa.",
+          "es": "Esto sería el pasado indicativo, un hecho terminado, no la estructura de condición irreal; correctamente: Si tuvieras más dinero, comprarías una casa.",
+          "de": "Das wäre der indikative Vergangenheit, eine abgeschlossene Tatsache, nicht die Struktur der irrealen Bedingung; richtig: Si tuvieras más dinero, comprarías una casa."
+        }
+      }
+    },
+    {
+      "id": "sp-ch-12",
+      "sentence": "Si ___ (él) español, conseguiría el trabajo.",
+      "options": ["hablara", "habla", "hablaba", "habló"],
+      "correct": 0,
+      "why": {
+        "hu": "Az irreális feltétel szerkezete si + imperfecto de subjuntivo, condicional: hablara.",
+        "en": "The unreal condition uses si + imperfect subjunctive, conditional: hablara.",
+        "es": "La condición irreal usa si + imperfecto de subjuntivo, condicional: hablara.",
+        "de": "Die irreale Bedingung verwendet si + Subjuntivo Imperfekt, Konditional: hablara."
+      },
+      "wrong": {
+        "habla": {
+          "hu": "Ezzel egy valós feltétel jönne létre („si habla”), de az a szerkezet jelen/jövő eredményt kér, nem feltételes módot; helyesen: Si hablara español, conseguiría el trabajo.",
+          "en": "This would create a real condition (“si habla”), but that structure pairs with a present/future result, not the conditional; correctly: Si hablara español, conseguiría el trabajo.",
+          "es": "Esto crearía una condición real (“si habla”), pero esa estructura pide un resultado en presente/futuro, no en condicional; correctamente: Si hablara español, conseguiría el trabajo.",
+          "de": "Das würde eine reale Bedingung ergeben („si habla“), aber diese Struktur passt zu einem Ergebnis im Presente/Futuro, nicht im Konditional; richtig: Si hablara español, conseguiría el trabajo."
+        },
+        "hablaba": {
+          "hu": "Ezzel a mondat kijelentő módban állna, egy valós múltbeli tényként, nem az irreális feltétel szerkezetében; helyesen: Si hablara español, conseguiría el trabajo.",
+          "en": "This would be indicative, a real past fact, not the unreal-condition structure; correctly: Si hablara español, conseguiría el trabajo.",
+          "es": "Esto sería indicativo, un hecho real en pasado, no la estructura de condición irreal; correctamente: Si hablara español, conseguiría el trabajo.",
+          "de": "Das wäre Indikativ, eine reale vergangene Tatsache, nicht die Struktur der irrealen Bedingung; richtig: Si hablara español, conseguiría el trabajo."
+        },
+        "habló": {
+          "hu": "Ezzel a mondat kijelentő múltban állna, egy lezárt tényként, nem az irreális feltétel szerkezetében; helyesen: Si hablara español, conseguiría el trabajo.",
+          "en": "This would be the indicative past, a completed fact, not the unreal-condition structure; correctly: Si hablara español, conseguiría el trabajo.",
+          "es": "Esto sería el pasado indicativo, un hecho terminado, no la estructura de condición irreal; correctamente: Si hablara español, conseguiría el trabajo.",
+          "de": "Das wäre der indikative Vergangenheit, eine abgeschlossene Tatsache, nicht die Struktur der irrealen Bedingung; richtig: Si hablara español, conseguiría el trabajo."
+        }
+      }
+    },
+    {
+      "id": "sp-match-01",
+      "kind": "match",
+      "pairs": [
+        { "es": "tuvieron", "en": "tuviera" },
+        { "es": "fueron", "en": "fuera" },
+        { "es": "hicieron", "en": "hiciera" },
+        { "es": "dijeron", "en": "dijera" },
+        { "es": "pudieron", "en": "pudiera" },
+        { "es": "quisieron", "en": "quisiera" }
+      ]
+    },
+    {
+      "id": "sp-form-01",
+      "kind": "form",
+      "verb": "hablar",
+      "person": "yo",
+      "answer": "hablara",
+      "table": "imperfecto-subj"
+    },
+    {
+      "id": "sp-form-02",
+      "kind": "form",
+      "verb": "comer",
+      "person": "tú",
+      "answer": "comieras",
+      "table": "imperfecto-subj"
+    },
+    {
+      "id": "sp-form-03",
+      "kind": "form",
+      "verb": "vivir",
+      "person": "él/ella",
+      "answer": "viviera",
+      "table": "imperfecto-subj"
+    },
+    {
+      "id": "sp-form-04",
+      "kind": "form",
+      "verb": "tener",
+      "person": "nosotros",
+      "answer": "tuviéramos",
+      "table": "imperfecto-subj"
+    },
+    {
+      "id": "sp-form-05",
+      "kind": "form",
+      "verb": "hacer",
+      "person": "ustedes",
+      "answer": "hicieran",
+      "table": "imperfecto-subj"
+    },
+    {
+      "id": "sp-form-06",
+      "kind": "form",
+      "verb": "ser",
+      "person": "yo",
+      "answer": "fuera",
+      "table": "imperfecto-subj"
+    },
+    {
+      "id": "sp-form-07",
+      "kind": "form",
+      "verb": "ir",
+      "person": "tú",
+      "answer": "fueras",
+      "table": "imperfecto-subj"
+    },
+    {
+      "id": "sp-form-08",
+      "kind": "form",
+      "verb": "saber",
+      "person": "él/ella",
+      "answer": "supiera",
+      "table": "imperfecto-subj"
+    },
+    {
+      "id": "sp-form-09",
+      "kind": "form",
+      "verb": "poder",
+      "person": "nosotros",
+      "answer": "pudiéramos",
+      "table": "imperfecto-subj"
+    },
+    {
+      "id": "sp-form-10",
+      "kind": "form",
+      "verb": "querer",
+      "person": "ustedes",
+      "answer": "quisieran",
+      "table": "imperfecto-subj"
+    },
+    {
+      "id": "sp-form-11",
+      "kind": "form",
+      "verb": "decir",
+      "person": "yo",
+      "answer": "dijera",
+      "table": "imperfecto-subj"
+    },
+    {
+      "id": "sp-form-12",
+      "kind": "form",
+      "verb": "tener",
+      "person": "tú",
+      "answer": "tuvieras",
+      "table": "imperfecto-subj"
+    },
+    {
+      "kind": "why",
+      "id": "sp-why-01",
+      "es": "Quería que vinieras temprano.",
+      "tr": {
+        "hu": "Azt akartam, hogy korán gyere.",
+        "en": "I wanted you to come early.",
+        "es": "Quería que vinieras temprano.",
+        "de": "Ich wollte, dass du früh kommst."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "múlt/feltételes főmondat + que → imperfecto de subjuntivo",
+            "en": "past/conditional main clause + que → imperfect subjunctive",
+            "es": "principal en pasado/condicional + que → imperfecto de subjuntivo",
+            "de": "Hauptsatz in Vergangenheit/Konditional + que → Imperfecto de subjuntivo"
+          }
+        },
+        {
+          "text": {
+            "hu": "como si után mindig imperfecto de subjuntivo",
+            "en": "after como si, always the imperfect subjunctive",
+            "es": "tras como si, siempre imperfecto de subjuntivo",
+            "de": "nach como si immer Imperfecto de subjuntivo"
+          },
+          "wrong": {
+            "hu": "Ez lenne az ok, ha a mondatban „como si” állna, de itt nincs hasonlítás, csak egy múltbeli akarat és a hozzá tartozó mellékmondat.",
+            "en": "This would apply if the sentence had “como si”, but here there's no comparison, just a past wish and its clause.",
+            "es": "Esto valdría si la oración tuviera “como si”, pero aquí no hay comparación, solo un deseo pasado y su subordinada.",
+            "de": "Das würde gelten, wenn der Satz „como si“ hätte, aber hier gibt es keinen Vergleich, nur einen vergangenen Wunsch und seinen Nebensatz."
+          }
+        },
+        {
+          "text": {
+            "hu": "udvarias kérés/kívánság (quisiera, pudiera)",
+            "en": "a polite request or wish (quisiera, pudiera)",
+            "es": "una petición o deseo cortés (quisiera, pudiera)",
+            "de": "eine höfliche Bitte oder ein Wunsch (quisiera, pudiera)"
+          },
+          "wrong": {
+            "hu": "Ez akkor lenne igaz, ha a beszélő saját magának kérne udvariasan valamit, de itt valaki más múltbeli cselekvéséről van szó, amit akkor akart.",
+            "en": "This would be true if the speaker were politely requesting something for themselves, but here it's about someone else's past action that was wanted back then.",
+            "es": "Esto sería cierto si el hablante pidiera algo cortésmente para sí mismo, pero aquí se trata de la acción pasada de otra persona que se quería entonces.",
+            "de": "Das würde stimmen, wenn der Sprecher höflich etwas für sich selbst bäte, aber hier geht es um die vergangene Handlung einer anderen Person, die man damals wollte."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "sp-why-02",
+      "es": "Habla como si lo supiera todo.",
+      "tr": {
+        "hu": "Úgy beszél, mintha mindent tudna.",
+        "en": "He talks as if he knew everything.",
+        "es": "Habla como si lo supiera todo.",
+        "de": "Er spricht, als ob er alles wüsste."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "múlt/feltételes főmondat + que → imperfecto de subjuntivo",
+            "en": "past/conditional main clause + que → imperfect subjunctive",
+            "es": "principal en pasado/condicional + que → imperfecto de subjuntivo",
+            "de": "Hauptsatz in Vergangenheit/Konditional + que → Imperfecto de subjuntivo"
+          },
+          "wrong": {
+            "hu": "Ez akkor lenne igaz, ha a főmondat múltban vagy feltételes módban állna, de a habla jelen idejű, itt nem igeidő-egyeztetésről van szó.",
+            "en": "This would apply if the main clause were in the past or conditional, but habla is present tense, this isn't about sequence of tenses.",
+            "es": "Esto sería cierto si la principal estuviera en pasado o condicional, pero habla está en presente, aquí no se trata de la concordancia de tiempos.",
+            "de": "Das würde gelten, wenn der Hauptsatz in der Vergangenheit oder im Konditional stünde, aber habla steht im Presente, hier geht es nicht um die Zeitenfolge."
+          }
+        },
+        {
+          "text": {
+            "hu": "como si után mindig imperfecto de subjuntivo",
+            "en": "after como si, always the imperfect subjunctive",
+            "es": "tras como si, siempre imperfecto de subjuntivo",
+            "de": "nach como si immer Imperfecto de subjuntivo"
+          }
+        },
+        {
+          "text": {
+            "hu": "udvarias kérés/kívánság (quisiera, pudiera)",
+            "en": "a polite request or wish (quisiera, pudiera)",
+            "es": "una petición o deseo cortés (quisiera, pudiera)",
+            "de": "eine höfliche Bitte oder ein Wunsch (quisiera, pudiera)"
+          },
+          "wrong": {
+            "hu": "Ez akkor lenne igaz, ha a mondat egy kérést vagy kívánságot fejezne ki, de itt egy hasonlítás áll: úgy beszél, mintha…",
+            "en": "This would apply if the sentence expressed a request or wish, but here there's a comparison: he talks as if…",
+            "es": "Esto sería cierto si la oración expresara una petición o un deseo, pero aquí hay una comparación: habla como si…",
+            "de": "Das würde gelten, wenn der Satz eine Bitte oder einen Wunsch ausdrückte, aber hier steht ein Vergleich: er spricht, als ob…"
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "sp-why-03",
+      "es": "Quisiera un café, por favor.",
+      "tr": {
+        "hu": "Szeretnék egy kávét, kérem.",
+        "en": "I would like a coffee, please.",
+        "es": "Quisiera un café, por favor.",
+        "de": "Ich hätte gern einen Kaffee, bitte."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "múlt/feltételes főmondat + que → imperfecto de subjuntivo",
+            "en": "past/conditional main clause + que → imperfect subjunctive",
+            "es": "principal en pasado/condicional + que → imperfecto de subjuntivo",
+            "de": "Hauptsatz in Vergangenheit/Konditional + que → Imperfecto de subjuntivo"
+          },
+          "wrong": {
+            "hu": "Ez akkor lenne igaz, ha lenne egy que-mellékmondat egy múltbeli főige után, de itt nincs que, ez egy önálló, udvarias kérés.",
+            "en": "This would apply if there were a que-clause after a past main verb, but there's no que here, this is a standalone polite request.",
+            "es": "Esto sería cierto si hubiera una subordinada con que tras un verbo principal en pasado, pero aquí no hay que, es una petición cortés independiente.",
+            "de": "Das würde gelten, wenn es einen que-Nebensatz nach einem Hauptverb in der Vergangenheit gäbe, aber hier gibt es kein que, das ist eine eigenständige höfliche Bitte."
+          }
+        },
+        {
+          "text": {
+            "hu": "como si után mindig imperfecto de subjuntivo",
+            "en": "after como si, always the imperfect subjunctive",
+            "es": "tras como si, siempre imperfecto de subjuntivo",
+            "de": "nach como si immer Imperfecto de subjuntivo"
+          },
+          "wrong": {
+            "hu": "Ez akkor lenne igaz, ha „como si” hasonlítás állna a mondatban, de itt nincs hasonlítás, csak egy kérés.",
+            "en": "This would apply if there were a “como si” comparison, but there's no comparison here, just a request.",
+            "es": "Esto sería cierto si hubiera una comparación con “como si”, pero aquí no hay comparación, solo una petición.",
+            "de": "Das würde gelten, wenn es einen Vergleich mit „como si“ gäbe, aber hier gibt es keinen Vergleich, nur eine Bitte."
+          }
+        },
+        {
+          "text": {
+            "hu": "udvarias kérés/kívánság (quisiera, pudiera)",
+            "en": "a polite request or wish (quisiera, pudiera)",
+            "es": "una petición o deseo cortés (quisiera, pudiera)",
+            "de": "eine höfliche Bitte oder ein Wunsch (quisiera, pudiera)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "sp-why-04",
+      "es": "Me pidió que le ayudara con la tarea.",
+      "tr": {
+        "hu": "Megkérte, hogy segítsen neki a házi feladattal.",
+        "en": "He asked him to help him with the homework.",
+        "es": "Me pidió que le ayudara con la tarea.",
+        "de": "Er bat ihn, ihm bei den Hausaufgaben zu helfen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "múlt/feltételes főmondat + que → imperfecto de subjuntivo",
+            "en": "past/conditional main clause + que → imperfect subjunctive",
+            "es": "principal en pasado/condicional + que → imperfecto de subjuntivo",
+            "de": "Hauptsatz in Vergangenheit/Konditional + que → Imperfecto de subjuntivo"
+          }
+        },
+        {
+          "text": {
+            "hu": "como si után mindig imperfecto de subjuntivo",
+            "en": "after como si, always the imperfect subjunctive",
+            "es": "tras como si, siempre imperfecto de subjuntivo",
+            "de": "nach como si immer Imperfecto de subjuntivo"
+          },
+          "wrong": {
+            "hu": "Ez akkor lenne igaz, ha „como si” hasonlítás állna a mondatban, de itt egy kérés és annak múltbeli mellékmondata áll.",
+            "en": "This would apply if there were a “como si” comparison, but here there's a request and its past subordinate clause.",
+            "es": "Esto sería cierto si hubiera una comparación con “como si”, pero aquí hay una petición y su subordinada en pasado.",
+            "de": "Das würde gelten, wenn es einen Vergleich mit „como si“ gäbe, aber hier gibt es eine Bitte und ihren vergangenen Nebensatz."
+          }
+        },
+        {
+          "text": {
+            "hu": "udvarias kérés/kívánság (quisiera, pudiera)",
+            "en": "a polite request or wish (quisiera, pudiera)",
+            "es": "una petición o deseo cortés (quisiera, pudiera)",
+            "de": "eine höfliche Bitte oder ein Wunsch (quisiera, pudiera)"
+          },
+          "wrong": {
+            "hu": "Ez akkor lenne igaz, ha a beszélő saját magának kérne valamit udvariasan, de itt egy már megtörtént, múltbeli kérésről van szó valaki más felé.",
+            "en": "This would apply if the speaker were politely requesting something for themselves, but here it's an already-past request made to someone else.",
+            "es": "Esto sería cierto si el hablante pidiera algo cortésmente para sí mismo, pero aquí se trata de una petición ya pasada hecha a otra persona.",
+            "de": "Das würde gelten, wenn der Sprecher höflich etwas für sich selbst bäte, aber hier geht es um eine bereits vergangene Bitte an eine andere Person."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "sp-why-05",
+      "es": "Corre como si tuviera prisa.",
+      "tr": {
+        "hu": "Úgy fut, mintha sietne.",
+        "en": "He runs as if he were in a hurry.",
+        "es": "Corre como si tuviera prisa.",
+        "de": "Er läuft, als ob er es eilig hätte."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "múlt/feltételes főmondat + que → imperfecto de subjuntivo",
+            "en": "past/conditional main clause + que → imperfect subjunctive",
+            "es": "principal en pasado/condicional + que → imperfecto de subjuntivo",
+            "de": "Hauptsatz in Vergangenheit/Konditional + que → Imperfecto de subjuntivo"
+          },
+          "wrong": {
+            "hu": "Ez akkor lenne igaz, ha a főmondat múltban állna, de a corre jelen idejű, itt nem igeidő-egyeztetésről van szó.",
+            "en": "This would apply if the main clause were in the past, but corre is present tense, this isn't about sequence of tenses.",
+            "es": "Esto sería cierto si la principal estuviera en pasado, pero corre está en presente, aquí no se trata de la concordancia de tiempos.",
+            "de": "Das würde gelten, wenn der Hauptsatz in der Vergangenheit stünde, aber corre steht im Presente, hier geht es nicht um die Zeitenfolge."
+          }
+        },
+        {
+          "text": {
+            "hu": "como si után mindig imperfecto de subjuntivo",
+            "en": "after como si, always the imperfect subjunctive",
+            "es": "tras como si, siempre imperfecto de subjuntivo",
+            "de": "nach como si immer Imperfecto de subjuntivo"
+          }
+        },
+        {
+          "text": {
+            "hu": "udvarias kérés/kívánság (quisiera, pudiera)",
+            "en": "a polite request or wish (quisiera, pudiera)",
+            "es": "una petición o deseo cortés (quisiera, pudiera)",
+            "de": "eine höfliche Bitte oder ein Wunsch (quisiera, pudiera)"
+          },
+          "wrong": {
+            "hu": "Ez akkor lenne igaz, ha a mondat egy kérést fejezne ki, de itt egy hasonlítás áll: úgy fut, mintha…",
+            "en": "This would apply if the sentence expressed a request, but here there's a comparison: he runs as if…",
+            "es": "Esto sería cierto si la oración expresara una petición, pero aquí hay una comparación: corre como si…",
+            "de": "Das würde gelten, wenn der Satz eine Bitte ausdrückte, aber hier steht ein Vergleich: er läuft, als ob…"
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "sp-why-06",
+      "es": "Ojalá pudiera ir a la fiesta.",
+      "tr": {
+        "hu": "Bár el tudnék menni a buliba.",
+        "en": "I wish I could go to the party.",
+        "es": "Ojalá pudiera ir a la fiesta.",
+        "de": "Hoffentlich könnte ich zur Party gehen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "múlt/feltételes főmondat + que → imperfecto de subjuntivo",
+            "en": "past/conditional main clause + que → imperfect subjunctive",
+            "es": "principal en pasado/condicional + que → imperfecto de subjuntivo",
+            "de": "Hauptsatz in Vergangenheit/Konditional + que → Imperfecto de subjuntivo"
+          },
+          "wrong": {
+            "hu": "Ez akkor lenne igaz, ha lenne que-mellékmondat egy múltbeli főige után, de az ojalá itt önmagában áll, que nélkül.",
+            "en": "This would apply if there were a que-clause after a past main verb, but ojalá stands alone here, without que.",
+            "es": "Esto sería cierto si hubiera una subordinada con que tras un verbo principal en pasado, pero aquí ojalá está solo, sin que.",
+            "de": "Das würde gelten, wenn es einen que-Nebensatz nach einem Hauptverb in der Vergangenheit gäbe, aber ojalá steht hier allein, ohne que."
+          }
+        },
+        {
+          "text": {
+            "hu": "como si után mindig imperfecto de subjuntivo",
+            "en": "after como si, always the imperfect subjunctive",
+            "es": "tras como si, siempre imperfecto de subjuntivo",
+            "de": "nach como si immer Imperfecto de subjuntivo"
+          },
+          "wrong": {
+            "hu": "Ez akkor lenne igaz, ha „como si” hasonlítás állna a mondatban, de itt nincs hasonlítás, csak egy kívánság.",
+            "en": "This would apply if there were a “como si” comparison, but there's no comparison here, just a wish.",
+            "es": "Esto sería cierto si hubiera una comparación con “como si”, pero aquí no hay comparación, solo un deseo.",
+            "de": "Das würde gelten, wenn es einen Vergleich mit „como si“ gäbe, aber hier gibt es keinen Vergleich, nur einen Wunsch."
+          }
+        },
+        {
+          "text": {
+            "hu": "udvarias kérés/kívánság (quisiera, pudiera)",
+            "en": "a polite request or wish (quisiera, pudiera)",
+            "es": "una petición o deseo cortés (quisiera, pudiera)",
+            "de": "eine höfliche Bitte oder ein Wunsch (quisiera, pudiera)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

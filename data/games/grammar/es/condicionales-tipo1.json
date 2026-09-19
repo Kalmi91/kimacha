@@ -1,0 +1,798 @@
+{
+  "schema": 2,
+  "topic": "condicionales-tipo1",
+  "level": "B1",
+  "title": {
+    "hu": "Si + jelen: valós feltétel",
+    "en": "Si + present: real conditions",
+    "es": "Si + presente: condicional real",
+    "de": "Si + Präsens: reale Bedingung"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A si + jelen idős mondat azt a feltételt fejezi ki, ami tényleg megtörténhet: egy terv, egy ígéret, egy figyelmeztetés vagy egy alku. Ez a leggyakoribb feltételes szerkezet a mindennapi beszédben, sokkal gyakoribb, mint a hipotetikus „ha... -nék” típus.",
+        "en": "A si + present sentence expresses a condition that can really happen: a plan, a promise, a warning or a bargain. It's the most common conditional structure in everyday speech, far more frequent than the hypothetical \"if I had...\" type.",
+        "es": "Una oración con si + presente expresa una condición que puede pasar de verdad: un plan, una promesa, una advertencia o un trato. Es la estructura condicional más común en el habla cotidiana, mucho más frecuente que el tipo hipotético «si tuviera...».",
+        "de": "Ein Satz mit si + Präsens drückt eine Bedingung aus, die wirklich eintreten kann: einen Plan, ein Versprechen, eine Warnung oder eine Abmachung. Das ist die häufigste Konditionalstruktur im Alltagsgespräch, viel häufiger als der hypothetische Typ „wenn ich hätte...”."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Mikor használjuk a si + jelen idős feltételt?",
+        "en": "When do we use the si + present conditional?",
+        "es": "¿Cuándo usamos el condicional con si + presente?",
+        "de": "Wann benutzen wir den Konditionalsatz mit si + Präsens?"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Egy általános igazságra vagy szokásra: ha X mindig igaz, Y is mindig igaz.",
+            "en": "For a general truth or habit: whenever X is true, Y is too.",
+            "es": "Para una verdad general o un hábito: siempre que X es cierto, Y también.",
+            "de": "Für eine allgemeine Wahrheit oder Gewohnheit: wann immer X zutrifft, trifft auch Y zu."
+          },
+          "examples": [
+            {
+              "es": "Si llueve, no salimos.",
+              "tr": { "hu": "Ha esik, nem megyünk ki.", "en": "If it rains, we don't go out.", "es": "Si llueve, no salimos.", "de": "Wenn es regnet, gehen wir nicht raus." }
+            },
+            {
+              "es": "Si tienes frío, cierra la ventana.",
+              "tr": { "hu": "Ha fázol, csukd be az ablakot.", "en": "If you're cold, close the window.", "es": "Si tienes frío, cierra la ventana.", "de": "Wenn dir kalt ist, schließ das Fenster." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Egy jövőbeli, elég biztos következményre: ha megteszed X-et, biztosan bekövetkezik Y.",
+            "en": "For a fairly certain future consequence: if you do X, Y will definitely happen.",
+            "es": "Para una consecuencia futura bastante segura: si haces X, Y pasará seguro.",
+            "de": "Für eine ziemlich sichere zukünftige Folge: wenn du X tust, wird Y sicher passieren."
+          },
+          "examples": [
+            {
+              "es": "Si estudias, aprobarás.",
+              "tr": { "hu": "Ha tanulsz, át fogsz menni.", "en": "If you study, you will pass.", "es": "Si estudias, aprobarás.", "de": "Wenn du lernst, wirst du bestehen." }
+            },
+            {
+              "es": "Si los invitas, vendrán temprano.",
+              "tr": { "hu": "Ha meghívod őket, korán jönnek majd.", "en": "If you invite them, they will come early.", "es": "Si los invitas, vendrán temprano.", "de": "Wenn du sie einlädst, werden sie früh kommen." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Egy utasításra vagy tanácsra: ha teljesül a feltétel, tedd meg Y-t, most.",
+            "en": "For an instruction or advice: once the condition holds, do Y, now.",
+            "es": "Para una instrucción o consejo: si se cumple la condición, haz Y, ahora.",
+            "de": "Für eine Anweisung oder einen Rat: wenn die Bedingung eintritt, tu Y, jetzt."
+          },
+          "examples": [
+            {
+              "es": "Si tienes frío, cierra la ventana.",
+              "tr": { "hu": "Ha fázol, csukd be az ablakot.", "en": "If you're cold, close the window.", "es": "Si tienes frío, cierra la ventana.", "de": "Wenn dir kalt ist, schließ das Fenster." }
+            },
+            {
+              "es": "Si necesita ayuda, llame ahora.",
+              "tr": { "hu": "Ha segítségre van szüksége, hívjon most.", "en": "If you need help, call now.", "es": "Si necesita ayuda, llame ahora.", "de": "Wenn Sie Hilfe brauchen, rufen Sie jetzt an." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A beszélt nyelv jövőjére, amikor a következmény már-már el van döntve: ha X, akkor rögtön Y-t fogunk csinálni.",
+            "en": "For the spoken-future, when the consequence is pretty much decided already: if X, then we're about to do Y.",
+            "es": "Para el futuro hablado, cuando la consecuencia ya está casi decidida: si X, entonces vamos a hacer Y.",
+            "de": "Für die gesprochene Zukunft, wenn die Folge so gut wie feststeht: wenn X, dann werden wir gleich Y tun."
+          },
+          "examples": [
+            {
+              "es": "Si llegas tarde, vamos a empezar sin ti.",
+              "tr": { "hu": "Ha később érkezel, nélküled fogunk kezdeni.", "en": "If you arrive late, we're going to start without you.", "es": "Si llegas tarde, vamos a empezar sin ti.", "de": "Wenn du spät kommst, fangen wir ohne dich an." }
+            },
+            {
+              "es": "Si necesitas ayuda, voy a llamarte.",
+              "tr": { "hu": "Ha segítségre van szükséged, fel foglak hívni.", "en": "If you need help, I'm going to call you.", "es": "Si necesitas ayuda, voy a llamarte.", "de": "Wenn du Hilfe brauchst, werde ich dich anrufen." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A si-tagmondat állhat elöl, vesszővel elválasztva a főtagtól, vagy hátul, vessző nélkül; a jelentés ugyanaz.",
+            "en": "The si-clause can come first, separated from the main clause by a comma, or last, with no comma; the meaning is the same.",
+            "es": "La cláusula con si puede ir delante, separada de la principal por una coma, o detrás, sin coma; el significado es el mismo.",
+            "de": "Der Si-Satz kann vorne stehen, durch ein Komma vom Hauptsatz getrennt, oder hinten, ohne Komma; die Bedeutung bleibt gleich."
+          },
+          "examples": [
+            {
+              "es": "Si puedo, te llamo.",
+              "tr": { "hu": "Ha tudok, felhívlak.", "en": "If I can, I'll call you.", "es": "Si puedo, te llamo.", "de": "Wenn ich kann, rufe ich dich an." }
+            },
+            {
+              "es": "Te llamo si puedo.",
+              "tr": { "hu": "Felhívlak, ha tudok.", "en": "I'll call you if I can.", "es": "Te llamo si puedo.", "de": "Ich rufe dich an, wenn ich kann." }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "tipo1",
+      "title": {
+        "hu": "Négyféle főtag a si + jelen után",
+        "en": "Four kinds of main clause after si + present",
+        "es": "Cuatro tipos de oración principal tras si + presente",
+        "de": "Vier Arten von Hauptsatz nach si + Präsens"
+      },
+      "header": [
+        { "hu": "Ige, személy", "en": "Verb, person", "es": "verbo y persona", "de": "Verb, Person" },
+        { "hu": "Alak", "en": "Form", "es": "forma", "de": "Form" },
+        { "hu": "Típus", "en": "Type", "es": "tipo", "de": "Typ" },
+        { "hu": "Példa", "en": "Example", "es": "ejemplo", "de": "Beispiel" }
+      ],
+      "rows": [
+        ["salir, nosotros", "salimos", "presente", "Si llueve, no salimos."],
+        ["tener, tú", "tienes", "presente", "Si tienes frío, cierra la ventana."],
+        ["decir, yo", "digo", "presente", "Si sé algo, lo digo."],
+        ["aprobar, tú", "aprobarás", "futuro simple", "Si estudias, aprobarás."],
+        ["venir, ellos", "vendrán", "futuro simple", "Si los invitas, vendrán temprano."],
+        ["hacer, tú", "harás", "futuro simple", "Si tienes tiempo, harás la tarea."],
+        ["cerrar, tú", "cierra", "imperativo", "Si tienes frío, cierra la ventana."],
+        ["llamar, usted", "llame", "imperativo", "Si necesita ayuda, llame ahora."],
+        ["quedarse, nosotros", "nos quedamos", "presente / futuro", "Si llueve, nos quedamos en casa."],
+        ["empezar, nosotros", "vamos a empezar", "ir a + infinitivo", "Si llegas tarde, vamos a empezar sin ti."],
+        ["salir, ellos", "van a salir", "ir a + infinitivo", "Si terminan pronto, van a salir."],
+        ["llegar, ellas", "van a llegar", "ir a + infinitivo", "Si las invitas, van a llegar tarde."]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Hasonló, mégis más",
+        "en": "Similar, yet different",
+        "es": "Parecido, pero distinto",
+        "de": "Ähnlich, aber anders"
+      },
+      "pairs": [
+        {
+          "a": "si + presente",
+          "b": "si + futuro",
+          "note": {
+            "hu": "A si-tagmondat sosem áll jövő időben (sem feltételes módban): mindig presente kell utána, még akkor is, ha a következmény a jövőben lesz.",
+            "en": "The si-clause is never in the future tense (or conditional): it always needs the present, even when the consequence lies in the future.",
+            "es": "La cláusula con si nunca va en futuro (ni en condicional): siempre necesita presente, aunque la consecuencia sea futura.",
+            "de": "Der Si-Satz steht nie im Futur (oder Konditional): danach braucht es immer das Präsens, selbst wenn die Folge in der Zukunft liegt."
+          },
+          "examples": [
+            {
+              "es": "Si tienes frío, cierra la ventana.",
+              "tr": { "hu": "Ha fázol, csukd be az ablakot.", "en": "If you're cold, close the window.", "es": "Si tienes frío, cierra la ventana.", "de": "Wenn dir kalt ist, schließ das Fenster." }
+            },
+            {
+              "es": "Si estudias, aprobarás.",
+              "tr": { "hu": "Ha tanulsz, át fogsz menni.", "en": "If you study, you will pass.", "es": "Si estudias, aprobarás.", "de": "Wenn du lernst, wirst du bestehen." }
+            }
+          ]
+        },
+        {
+          "a": "si",
+          "b": "cuando",
+          "note": {
+            "hu": "A si bizonytalan feltételt vezet be (lehet, hogy megtörténik), a cuando pedig biztosat, ismétlődőt (mindig, amikor megtörténik).",
+            "en": "Si introduces an uncertain condition (it might happen), while cuando introduces a certain, repeated one (whenever it happens).",
+            "es": "Si introduce una condición incierta (puede que pase), mientras que cuando introduce una segura y repetida (siempre que pasa).",
+            "de": "Si leitet eine unsichere Bedingung ein (es könnte passieren), cuando dagegen eine sichere, wiederkehrende (immer wenn es passiert)."
+          },
+          "examples": [
+            {
+              "es": "Si llueve, no salimos.",
+              "tr": { "hu": "Ha esik, nem megyünk ki.", "en": "If it rains, we don't go out.", "es": "Si llueve, no salimos.", "de": "Wenn es regnet, gehen wir nicht raus." }
+            },
+            {
+              "es": "Cuando llueve, no salimos.",
+              "tr": { "hu": "Amikor esik, nem megyünk ki.", "en": "When it rains, we don't go out.", "es": "Cuando llueve, no salimos.", "de": "Wenn es regnet (jedes Mal), gehen wir nicht raus." }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ha a magyarban jövő időt éreznél helyénvalónak (ha majd lesz időm...), a spanyol si után akkor is presente jön: si tengo tiempo, nem si tendré tiempo.",
+        "en": "Even where Hungarian or English might reach for a future tense, Spanish still uses the present after si: si tengo tiempo, not si tendré tiempo.",
+        "es": "Aunque en húngaro o en inglés parezca natural un futuro, el español usa presente después de si: si tengo tiempo, no si tendré tiempo.",
+        "de": "Auch wenn im Ungarischen oder Englischen ein Futur naheliegend wirkt, benutzt das Spanische nach si trotzdem das Präsens: si tengo tiempo, nicht si tendré tiempo."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A si + jelen idő azt a feltételt fejezi ki, ami tényleg megtörténhet: egy terv, egy ígéret, egy figyelmeztetés vagy egy alku. A si utáni tagmondat mindig jelen időben áll, «si llueve», «si estudias», «si tienes frío», még akkor is, ha a következmény a jövőben történik. A főtag négyféle lehet: jelen idő egy általános igazságra, mint «si llueve, no salimos»; jövő idő egy biztos következményre, mint «si estudias, aprobarás»; felszólító mód egy utasításra, mint «si tienes frío, cierra la ventana»; vagy «ir a» plusz főnévi igenév egy közeli, beszélt jövőre, mint «si llegas tarde, vamos a empezar sin ti». A si-tagmondat sosem áll jövő időben vagy feltételes módban. A sorrend szabad: a si-tagmondat állhat elöl vesszővel, vagy hátul vessző nélkül, mint «te llamo si puedo». A si bizonytalan feltételt jelez, a cuando pedig biztosat.",
+    "en": "The si + present conditional expresses a condition that can really happen: a plan, a promise, a warning or a bargain. The clause after si is always in the present, «si llueve», «si estudias», «si tienes frío», even when the consequence lies in the future. The main clause can take four forms: present for a general truth, like «si llueve, no salimos»; simple future for a fairly certain consequence, like «si estudias, aprobarás»; imperative for an instruction, like «si tienes frío, cierra la ventana»; or «ir a» plus infinitive for a near, spoken future, like «si llegas tarde, vamos a empezar sin ti». The si-clause is never in the future or the conditional. Word order is free: the si-clause can come first with a comma, or last with none, like «te llamo si puedo». Si signals an uncertain condition, while cuando signals a certain one.",
+    "es": "El condicional con si + presente expresa una condición que puede pasar de verdad: un plan, una promesa, una advertencia o un trato. La cláusula después de si siempre va en presente, «si llueve», «si estudias», «si tienes frío», aunque la consecuencia sea futura. La oración principal puede tomar cuatro formas: presente para una verdad general, como «si llueve, no salimos»; futuro simple para una consecuencia bastante segura, como «si estudias, aprobarás»; imperativo para una instrucción, como «si tienes frío, cierra la ventana»; o «ir a» más infinitivo para un futuro cercano y hablado, como «si llegas tarde, vamos a empezar sin ti». La cláusula con si nunca va en futuro ni en condicional. El orden es libre: la cláusula con si puede ir delante con una coma, o detrás sin ella, como «te llamo si puedo». Si señala una condición incierta, mientras que cuando señala una segura.",
+    "de": "Der Konditionalsatz mit si + Präsens drückt eine Bedingung aus, die wirklich eintreten kann: einen Plan, ein Versprechen, eine Warnung oder eine Abmachung. Der Teilsatz nach si steht immer im Präsens, «si llueve», «si estudias», «si tienes frío», selbst wenn die Folge in der Zukunft liegt. Der Hauptsatz kann vier Formen annehmen: Präsens für eine allgemeine Wahrheit, wie «si llueve, no salimos»; einfaches Futur für eine ziemlich sichere Folge, wie «si estudias, aprobarás»; Imperativ für eine Anweisung, wie «si tienes frío, cierra la ventana»; oder «ir a» plus Infinitiv für eine nahe, gesprochene Zukunft, wie «si llegas tarde, vamos a empezar sin ti». Der Si-Satz steht nie im Futur oder Konditional. Die Wortstellung ist frei: der Si-Satz kann vorne mit einem Komma stehen oder hinten ohne, wie «te llamo si puedo». Si zeigt eine unsichere Bedingung an, cuando dagegen eine sichere."
+  },
+  "glossary": [
+    { "word": "cerrar", "gloss": { "hu": "becsuk, bezár", "en": "to close", "es": "cerrar", "de": "schließen" } },
+    { "word": "ventana", "gloss": { "hu": "ablak", "en": "window", "es": "ventana", "de": "Fenster" } }
+  ],
+  "items": [
+    {
+      "id": "ct-01",
+      "sentence": "Si ___ frío, cierra la ventana.",
+      "options": ["tienes", "tendrás", "tenías"],
+      "correct": 0,
+      "why": {
+        "hu": "A si-tagmondat mindig jelen időben áll: tienes.",
+        "en": "The si-clause is always in the present: tienes.",
+        "es": "La cláusula con si siempre va en presente: tienes.",
+        "de": "Der Si-Satz steht immer im Präsens: tienes."
+      },
+      "wrong": {
+        "tendrás": {
+          "hu": "A „tendrás” jövő idő: a si-tagmondat sosem áll jövőben, csak jelenben, tienes.",
+          "en": "\"Tendrás\" is future tense: the si-clause is never in the future, only the present, tienes.",
+          "es": "«Tendrás» es futuro: la cláusula con si nunca va en futuro, solo en presente, tienes.",
+          "de": "„Tendrás” ist Futur: der Si-Satz steht nie im Futur, nur im Präsens, tienes."
+        },
+        "tenías": {
+          "hu": "A „tenías” múlt idő (imperfecto): egy régi szokásról szólna, nem a mostani feltételről.",
+          "en": "\"Tenías\" is past tense (imperfect): it would talk about a past habit, not the present condition.",
+          "es": "«Tenías» es pasado (imperfecto): hablaría de un hábito pasado, no de la condición actual.",
+          "de": "„Tenías” ist Vergangenheit (Imperfekt): es würde von einer früheren Gewohnheit sprechen, nicht von der jetzigen Bedingung."
+        }
+      },
+      "examples": ["Si llegas tarde, vamos a empezar sin ti.", "Si estudias, aprobarás."]
+    },
+    {
+      "id": "ct-02",
+      "sentence": "Si llueve, no ___.",
+      "options": ["salimos", "sales", "salen"],
+      "correct": 0,
+      "why": {
+        "hu": "„Nosotros” alany: salimos.",
+        "en": "The subject is \"nosotros\": salimos.",
+        "es": "El sujeto es «nosotros»: salimos.",
+        "de": "Das Subjekt ist „nosotros”: salimos."
+      },
+      "wrong": {
+        "sales": {
+          "hu": "A „sales” tú-alak: azt jelentené, hogy TE nem mész ki, nem MI.",
+          "en": "\"Sales\" is the tú-form: it would mean YOU don't go out, not WE.",
+          "es": "«Sales» es la forma de tú: significaría que TÚ no sales, no NOSOTROS.",
+          "de": "„Sales” ist die tú-Form: es würde bedeuten, dass DU nicht rausgehst, nicht WIR."
+        },
+        "salen": {
+          "hu": "A „salen” ők-alak: azt jelentené, hogy ŐK nem mennek ki, nem MI.",
+          "en": "\"Salen\" is the they-form: it would mean THEY don't go out, not WE.",
+          "es": "«Salen» es la forma de ellos: significaría que ELLOS no salen, no NOSOTROS.",
+          "de": "„Salen” ist die Sie/They-Form: es würde bedeuten, dass SIE nicht rausgehen, nicht WIR."
+        }
+      },
+      "examples": ["Si tienes frío, cierra la ventana.", "Si necesita ayuda, llame ahora."]
+    },
+    {
+      "id": "ct-03",
+      "sentence": "Si necesitas ayuda, te ___.",
+      "options": ["ayudo", "ayudas", "ayudamos"],
+      "correct": 0,
+      "why": {
+        "hu": "„Yo” alany: én segítek neked, ayudo.",
+        "en": "The subject is \"yo\": I help you, ayudo.",
+        "es": "El sujeto es «yo»: te ayudo.",
+        "de": "Das Subjekt ist „yo”: ich helfe dir, ayudo."
+      },
+      "wrong": {
+        "ayudas": {
+          "hu": "Az „ayudas” tú-alak: azt jelentené, hogy TE segítesz magadnak, értelmetlen itt.",
+          "en": "\"Ayudas\" is the tú-form: it would mean YOU help yourself, which makes no sense here.",
+          "es": "«Ayudas» es la forma de tú: significaría que TÚ te ayudas a ti mismo, no tiene sentido aquí.",
+          "de": "„Ayudas” ist die tú-Form: es würde bedeuten, dass DU dir selbst hilfst, das ergibt hier keinen Sinn."
+        },
+        "ayudamos": {
+          "hu": "Az „ayudamos” mi-alak: azt jelentené, hogy TÖBBEN segítünk, nem csak én.",
+          "en": "\"Ayudamos\" is the we-form: it would mean SEVERAL of us help, not just me.",
+          "es": "«Ayudamos» es la forma de nosotros: significaría que ayudamos VARIOS, no solo yo.",
+          "de": "„Ayudamos” ist die Wir-Form: es würde bedeuten, dass WIR mehrere helfen, nicht nur ich."
+        }
+      },
+      "examples": ["Si llueve, no salimos.", "Si estudias, aprobarás."]
+    },
+    {
+      "id": "ct-04",
+      "sentence": "Si ___, aprobarás.",
+      "options": ["estudias", "estudiarás", "estudiabas"],
+      "correct": 0,
+      "why": {
+        "hu": "A si-tagmondat jelen időben áll: estudias.",
+        "en": "The si-clause is in the present: estudias.",
+        "es": "La cláusula con si va en presente: estudias.",
+        "de": "Der Si-Satz steht im Präsens: estudias."
+      },
+      "wrong": {
+        "estudiarás": {
+          "hu": "Az „estudiarás” jövő idő: a si-tagmondat sosem áll jövőben.",
+          "en": "\"Estudiarás\" is future: the si-clause is never in the future.",
+          "es": "«Estudiarás» es futuro: la cláusula con si nunca va en futuro.",
+          "de": "„Estudiarás” ist Futur: der Si-Satz steht nie im Futur."
+        },
+        "estudiabas": {
+          "hu": "Az „estudiabas” múlt idő (imperfecto): egy régi szokásról szólna, nem a mostani feltételről.",
+          "en": "\"Estudiabas\" is past tense (imperfect): it would describe a past habit, not the present condition.",
+          "es": "«Estudiabas» es pasado (imperfecto): hablaría de un hábito pasado, no de la condición actual.",
+          "de": "„Estudiabas” ist Vergangenheit (Imperfekt): es würde eine frühere Gewohnheit beschreiben, nicht die jetzige Bedingung."
+        }
+      },
+      "examples": ["Si tienes frío, cierra la ventana.", "Si llegas tarde, vamos a empezar sin ti."]
+    },
+    {
+      "id": "ct-05",
+      "sentence": "Si los invitas, ___ temprano.",
+      "options": ["vendrán", "vendré", "vendrás"],
+      "correct": 0,
+      "why": {
+        "hu": "„Ellos” alany (akiket meghívsz): vendrán.",
+        "en": "The subject is \"ellos\" (the people you invite): vendrán.",
+        "es": "El sujeto es «ellos» (a quienes invitas): vendrán.",
+        "de": "Das Subjekt ist „ellos” (die, die du einlädst): vendrán."
+      },
+      "wrong": {
+        "vendré": {
+          "hu": "A „vendré” én-alak: azt jelentené, hogy ÉN jövök, nem ők.",
+          "en": "\"Vendré\" is the I-form: it would mean I'M coming, not them.",
+          "es": "«Vendré» es la forma de yo: significaría que YO vengo, no ellos.",
+          "de": "„Vendré” ist die Ich-Form: es würde bedeuten, dass ICH komme, nicht sie."
+        },
+        "vendrás": {
+          "hu": "A „vendrás” te-alak: azt jelentené, hogy TE jössz, nem ők.",
+          "en": "\"Vendrás\" is the you-form: it would mean YOU'RE coming, not them.",
+          "es": "«Vendrás» es la forma de tú: significaría que TÚ vienes, no ellos.",
+          "de": "„Vendrás” ist die Du-Form: es würde bedeuten, dass DU kommst, nicht sie."
+        }
+      },
+      "examples": ["Si llueve, no salimos.", "Si necesita ayuda, llame ahora."]
+    },
+    {
+      "id": "ct-06",
+      "sentence": "Si necesitas ayuda, yo te ___.",
+      "options": ["ayudaré", "ayudarás", "ayudaremos"],
+      "correct": 0,
+      "why": {
+        "hu": "„Yo” alany: én foglak segíteni, ayudaré.",
+        "en": "The subject is \"yo\": I will help you, ayudaré.",
+        "es": "El sujeto es «yo»: te ayudaré.",
+        "de": "Das Subjekt ist „yo”: ich werde dir helfen, ayudaré."
+      },
+      "wrong": {
+        "ayudarás": {
+          "hu": "Az „ayudarás” te-alak: azt jelentené, hogy TE fogsz segíteni, nem én.",
+          "en": "\"Ayudarás\" is the you-form: it would mean YOU will help, not me.",
+          "es": "«Ayudarás» es la forma de tú: significaría que TÚ ayudarás, no yo.",
+          "de": "„Ayudarás” ist die Du-Form: es würde bedeuten, dass DU helfen wirst, nicht ich."
+        },
+        "ayudaremos": {
+          "hu": "Az „ayudaremos” mi-alak: azt jelentené, hogy TÖBBEN fogunk segíteni, nem csak én.",
+          "en": "\"Ayudaremos\" is the we-form: it would mean SEVERAL of us will help, not just me.",
+          "es": "«Ayudaremos» es la forma de nosotros: significaría que ayudaremos VARIOS, no solo yo.",
+          "de": "„Ayudaremos” ist die Wir-Form: es würde bedeuten, dass WIR mehrere helfen werden, nicht nur ich."
+        }
+      },
+      "examples": ["Si tienes frío, cierra la ventana.", "Si estudias, aprobarás."]
+    },
+    {
+      "id": "ct-07",
+      "sentence": "Si tienes frío, ___ la ventana.",
+      "options": ["cierra", "cierro", "cierren"],
+      "correct": 0,
+      "why": {
+        "hu": "Felszólítás tú-nak: cierra.",
+        "en": "An imperative for tú: cierra.",
+        "es": "Imperativo para tú: cierra.",
+        "de": "Ein Imperativ für tú: cierra."
+      },
+      "wrong": {
+        "cierro": {
+          "hu": "A „cierro” jelen idő, én-alak: kijelentés lenne, nem felszólítás.",
+          "en": "\"Cierro\" is present tense, I-form: it would be a statement, not a command.",
+          "es": "«Cierro» es presente, forma de yo: sería una afirmación, no una orden.",
+          "de": "„Cierro” ist Präsens, Ich-Form: es wäre eine Aussage, kein Befehl."
+        },
+        "cierren": {
+          "hu": "A „cierren” ustedes-felszólítás: többeknek szólna, nem egy tú-nak.",
+          "en": "\"Cierren\" is the ustedes-imperative: it would address several people, not one tú.",
+          "es": "«Cierren» es el imperativo de ustedes: se dirigiría a varias personas, no a un tú.",
+          "de": "„Cierren” ist der Ustedes-Imperativ: er würde sich an mehrere Personen richten, nicht an ein tú."
+        }
+      },
+      "examples": ["Si llueve, no salimos.", "Si llegas tarde, vamos a empezar sin ti."]
+    },
+    {
+      "id": "ct-08",
+      "sentence": "Si necesita ayuda, ___ ahora.",
+      "options": ["llame", "llama", "llamen"],
+      "correct": 0,
+      "why": {
+        "hu": "„Necesita” usted-alak, a felszólítás is usted: llame.",
+        "en": "\"Necesita\" is the usted-form, so the imperative is usted too: llame.",
+        "es": "«Necesita» es la forma de usted, así que el imperativo también es de usted: llame.",
+        "de": "„Necesita” ist die Usted-Form, also ist auch der Imperativ Usted: llame."
+      },
+      "wrong": {
+        "llama": {
+          "hu": "A „llama” tú-felszólítás: nem illik az usted-hez (necesita).",
+          "en": "\"Llama\" is the tú-imperative: it doesn't match usted (necesita).",
+          "es": "«Llama» es el imperativo de tú: no concuerda con usted (necesita).",
+          "de": "„Llama” ist der Tú-Imperativ: er passt nicht zu usted (necesita)."
+        },
+        "llamen": {
+          "hu": "A „llamen” ustedes-felszólítás, többeknek szólna, itt egy személyről van szó (necesita).",
+          "en": "\"Llamen\" is the ustedes-imperative, for several people, but here it's one person (necesita).",
+          "es": "«Llamen» es el imperativo de ustedes, para varias personas, pero aquí es una sola (necesita).",
+          "de": "„Llamen” ist der Ustedes-Imperativ, für mehrere Personen, aber hier ist es nur eine (necesita)."
+        }
+      },
+      "examples": ["Si tienes frío, cierra la ventana.", "Si estudias, aprobarás."]
+    },
+    {
+      "id": "ct-09",
+      "sentence": "Si ___ tarde, vamos a empezar sin ti.",
+      "options": ["llegas", "llegarás", "llegabas"],
+      "correct": 0,
+      "why": {
+        "hu": "A si-tagmondat jelen időben áll: llegas.",
+        "en": "The si-clause is in the present: llegas.",
+        "es": "La cláusula con si va en presente: llegas.",
+        "de": "Der Si-Satz steht im Präsens: llegas."
+      },
+      "wrong": {
+        "llegarás": {
+          "hu": "A „llegarás” jövő idő: a si-tagmondat sosem áll jövőben.",
+          "en": "\"Llegarás\" is future: the si-clause is never in the future.",
+          "es": "«Llegarás» es futuro: la cláusula con si nunca va en futuro.",
+          "de": "„Llegarás” ist Futur: der Si-Satz steht nie im Futur."
+        },
+        "llegabas": {
+          "hu": "A „llegabas” múlt idő (imperfecto): egy régi szokásról szólna.",
+          "en": "\"Llegabas\" is past tense (imperfect): it would describe a past habit.",
+          "es": "«Llegabas» es pasado (imperfecto): hablaría de un hábito pasado.",
+          "de": "„Llegabas” ist Vergangenheit (Imperfekt): es würde eine frühere Gewohnheit beschreiben."
+        }
+      },
+      "examples": ["Si necesita ayuda, llame ahora.", "Si llueve, no salimos."]
+    },
+    {
+      "id": "ct-10",
+      "sentence": "Si los invitas, ___ a llegar tarde.",
+      "options": ["van", "vamos", "vas"],
+      "correct": 0,
+      "why": {
+        "hu": "„Ellos” alany (akiket meghívsz): van a llegar.",
+        "en": "The subject is \"ellos\" (the people you invite): van a llegar.",
+        "es": "El sujeto es «ellos» (a quienes invitas): van a llegar.",
+        "de": "Das Subjekt ist „ellos” (die, die du einlädst): van a llegar."
+      },
+      "wrong": {
+        "vamos": {
+          "hu": "A „vamos” mi-alak: azt jelentené, hogy MI érkezünk később, nem ők.",
+          "en": "\"Vamos\" is the we-form: it would mean WE arrive late, not them.",
+          "es": "«Vamos» es la forma de nosotros: significaría que NOSOTROS llegamos tarde, no ellos.",
+          "de": "„Vamos” ist die Wir-Form: es würde bedeuten, dass WIR spät ankommen, nicht sie."
+        },
+        "vas": {
+          "hu": "A „vas” te-alak: azt jelentené, hogy TE érkezel később, nem ők.",
+          "en": "\"Vas\" is the you-form: it would mean YOU arrive late, not them.",
+          "es": "«Vas» es la forma de tú: significaría que TÚ llegas tarde, no ellos.",
+          "de": "„Vas” ist die Du-Form: es würde bedeuten, dass DU spät ankommst, nicht sie."
+        }
+      },
+      "examples": ["Si estudias, aprobarás.", "Si tienes frío, cierra la ventana."]
+    },
+    {
+      "id": "ct-11",
+      "sentence": "Si necesitas ayuda, ___ a llamarte.",
+      "options": ["voy", "vas", "va"],
+      "correct": 0,
+      "why": {
+        "hu": "„Yo” alany: én foglak hívni, voy a llamarte.",
+        "en": "The subject is \"yo\": I'm going to call you, voy a llamarte.",
+        "es": "El sujeto es «yo»: voy a llamarte.",
+        "de": "Das Subjekt ist „yo”: ich werde dich anrufen, voy a llamarte."
+      },
+      "wrong": {
+        "vas": {
+          "hu": "A „vas” te-alak: azt jelentené, hogy TE fogsz hívni valakit, nem én téged.",
+          "en": "\"Vas\" is the you-form: it would mean YOU are going to call someone, not me calling you.",
+          "es": "«Vas» es la forma de tú: significaría que TÚ vas a llamar a alguien, no yo a ti.",
+          "de": "„Vas” ist die Du-Form: es würde bedeuten, dass DU jemanden anrufen wirst, nicht ich dich."
+        },
+        "va": {
+          "hu": "A „va” ő-alak: azt jelentené, hogy Ő fog hívni, nem én.",
+          "en": "\"Va\" is the he/she-form: it would mean HE/SHE is going to call, not me.",
+          "es": "«Va» es la forma de él/ella: significaría que ÉL/ELLA va a llamar, no yo.",
+          "de": "„Va” ist die Er/Sie-Form: es würde bedeuten, dass ER/SIE anrufen wird, nicht ich."
+        }
+      },
+      "examples": ["Si llueve, no salimos.", "Si necesita ayuda, llame ahora."]
+    },
+    {
+      "id": "ct-12",
+      "sentence": "___ llueve, no salimos.",
+      "options": ["Si", "Porque", "Aunque"],
+      "correct": 0,
+      "why": {
+        "hu": "A „Si” vezeti be a bizonytalan feltételt: lehet, hogy esik, lehet, hogy nem.",
+        "en": "\"Si\" introduces the uncertain condition: it might rain, it might not.",
+        "es": "«Si» introduce la condición incierta: puede que llueva, puede que no.",
+        "de": "„Si” leitet die unsichere Bedingung ein: es könnte regnen, es könnte auch nicht."
+      },
+      "wrong": {
+        "Porque": {
+          "hu": "A „Porque” okot fejezne ki (miért nem megyünk ki), nem feltételt.",
+          "en": "\"Porque\" would express a reason (why we don't go out), not a condition.",
+          "es": "«Porque» expresaría una razón (por qué no salimos), no una condición.",
+          "de": "„Porque” würde einen Grund ausdrücken (warum wir nicht rausgehen), keine Bedingung."
+        },
+        "Aunque": {
+          "hu": "Az „Aunque” megengedő mellékmondatot vezetne be (annak ellenére, hogy esik), nem feltételt.",
+          "en": "\"Aunque\" would introduce a concession (even though it rains), not a condition.",
+          "es": "«Aunque» introduciría una concesión (a pesar de que llueve), no una condición.",
+          "de": "„Aunque” würde einen Einräumungssatz einleiten (obwohl es regnet), keine Bedingung."
+        }
+      },
+      "examples": ["Si necesita ayuda, llame ahora.", "Si tienes frío, cierra la ventana."]
+    },
+    {
+      "id": "ct-match-01",
+      "kind": "match",
+      "pairs": [
+        { "es": "si llueve", "en": "we don't go out" },
+        { "es": "si estudias", "en": "you will pass" },
+        { "es": "si tienes frío", "en": "close the window" },
+        { "es": "si llegas tarde", "en": "we're going to start without you" },
+        { "es": "si necesita ayuda", "en": "call now" },
+        { "es": "si los invitas", "en": "they will come early" }
+      ]
+    },
+    {
+      "id": "ct-form-01",
+      "kind": "form",
+      "verb": "forma",
+      "person": "salir, nosotros",
+      "answer": "salimos",
+      "table": "tipo1"
+    },
+    {
+      "id": "ct-form-02",
+      "kind": "form",
+      "verb": "forma",
+      "person": "tener, tú",
+      "answer": "tienes",
+      "table": "tipo1"
+    },
+    {
+      "id": "ct-form-03",
+      "kind": "form",
+      "verb": "forma",
+      "person": "decir, yo",
+      "answer": "digo",
+      "table": "tipo1"
+    },
+    {
+      "id": "ct-form-04",
+      "kind": "form",
+      "verb": "forma",
+      "person": "aprobar, tú",
+      "answer": "aprobarás",
+      "table": "tipo1"
+    },
+    {
+      "id": "ct-form-05",
+      "kind": "form",
+      "verb": "forma",
+      "person": "venir, ellos",
+      "answer": "vendrán",
+      "table": "tipo1"
+    },
+    {
+      "id": "ct-form-06",
+      "kind": "form",
+      "verb": "forma",
+      "person": "hacer, tú",
+      "answer": "harás",
+      "table": "tipo1"
+    },
+    {
+      "id": "ct-form-07",
+      "kind": "form",
+      "verb": "forma",
+      "person": "cerrar, tú",
+      "answer": "cierra",
+      "table": "tipo1"
+    },
+    {
+      "id": "ct-form-08",
+      "kind": "form",
+      "verb": "forma",
+      "person": "llamar, usted",
+      "answer": "llame",
+      "table": "tipo1"
+    },
+    {
+      "id": "ct-form-09",
+      "kind": "form",
+      "verb": "forma",
+      "person": "quedarse, nosotros",
+      "answer": "nos quedamos",
+      "accept": ["nos quedaremos"],
+      "table": "tipo1"
+    },
+    {
+      "id": "ct-form-10",
+      "kind": "form",
+      "verb": "forma",
+      "person": "empezar, nosotros",
+      "answer": "vamos a empezar",
+      "table": "tipo1"
+    },
+    {
+      "id": "ct-form-11",
+      "kind": "form",
+      "verb": "forma",
+      "person": "salir, ellos",
+      "answer": "van a salir",
+      "table": "tipo1"
+    },
+    {
+      "id": "ct-form-12",
+      "kind": "form",
+      "verb": "forma",
+      "person": "llegar, ellas",
+      "answer": "van a llegar",
+      "table": "tipo1"
+    },
+    {
+      "kind": "why",
+      "id": "ct-why-01",
+      "es": "Si llueve, no salimos.",
+      "tr": { "hu": "Ha esik, nem megyünk ki.", "en": "If it rains, we don't go out.", "es": "Si llueve, no salimos.", "de": "Wenn es regnet, gehen wir nicht raus." },
+      "options": [
+        {
+          "text": { "hu": "si + jelen idő, jelen idő: általános szokás", "en": "si + present, present: a general habit", "es": "si + presente, presente: un hábito general", "de": "si + Präsens, Präsens: eine allgemeine Gewohnheit" }
+        },
+        {
+          "text": { "hu": "si + jelen idő, jövő idő: biztos következmény", "en": "si + present, future: a certain consequence", "es": "si + presente, futuro: una consecuencia segura", "de": "si + Präsens, Futur: eine sichere Folge" },
+          "wrong": { "hu": "A mondat jelen időben áll, nem jövőben: „no salimos”, nem „no saldremos”.", "en": "The sentence is in the present, not the future: \"no salimos\", not \"no saldremos\".", "es": "La oración está en presente, no en futuro: «no salimos», no «no saldremos».", "de": "Der Satz steht im Präsens, nicht im Futur: „no salimos”, nicht „no saldremos”." }
+        },
+        {
+          "text": { "hu": "si + jelen idő, felszólító mód: utasítás", "en": "si + present, imperative: an instruction", "es": "si + presente, imperativo: una instrucción", "de": "si + Präsens, Imperativ: eine Anweisung" },
+          "wrong": { "hu": "A „salimos” kijelentő mód, nem felszólítás: nincs parancs a mondatban.", "en": "\"Salimos\" is indicative, not imperative: there's no command in the sentence.", "es": "«Salimos» está en indicativo, no en imperativo: no hay una orden en la oración.", "de": "„Salimos” steht im Indikativ, nicht im Imperativ: es gibt keinen Befehl im Satz." }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ct-why-02",
+      "es": "Si estudias, aprobarás.",
+      "tr": { "hu": "Ha tanulsz, át fogsz menni.", "en": "If you study, you will pass.", "es": "Si estudias, aprobarás.", "de": "Wenn du lernst, wirst du bestehen." },
+      "options": [
+        {
+          "text": { "hu": "si + jelen idő, felszólító mód", "en": "si + present, imperative", "es": "si + presente, imperativo", "de": "si + Präsens, Imperativ" },
+          "wrong": { "hu": "Az „aprobarás” jövő idő, nem felszólítás: nincs parancs.", "en": "\"Aprobarás\" is future, not imperative: there's no command.", "es": "«Aprobarás» es futuro, no imperativo: no hay una orden.", "de": "„Aprobarás” ist Futur, kein Imperativ: es gibt keinen Befehl." }
+        },
+        {
+          "text": { "hu": "si + jelen idő, jövő idő: biztos következmény", "en": "si + present, future: a certain consequence", "es": "si + presente, futuro: una consecuencia segura", "de": "si + Präsens, Futur: eine sichere Folge" }
+        },
+        {
+          "text": { "hu": "si + jövő idő a si-tagban", "en": "si + future in the si-clause", "es": "si + futuro en la cláusula con si", "de": "si + Futur im Si-Satz" },
+          "wrong": { "hu": "Az „estudias” jelen idő, nem jövő: a si-tagmondat mindig presente.", "en": "\"Estudias\" is present, not future: the si-clause is always in the present.", "es": "«Estudias» es presente, no futuro: la cláusula con si siempre va en presente.", "de": "„Estudias” ist Präsens, nicht Futur: der Si-Satz steht immer im Präsens." }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ct-why-03",
+      "es": "Si tienes frío, cierra la ventana.",
+      "tr": { "hu": "Ha fázol, csukd be az ablakot.", "en": "If you're cold, close the window.", "es": "Si tienes frío, cierra la ventana.", "de": "Wenn dir kalt ist, schließ das Fenster." },
+      "options": [
+        {
+          "text": { "hu": "si + jelen idő, felszólító mód: utasítás", "en": "si + present, imperative: an instruction", "es": "si + presente, imperativo: una instrucción", "de": "si + Präsens, Imperativ: eine Anweisung" }
+        },
+        {
+          "text": { "hu": "si + jelen idő, jövő idő", "en": "si + present, future", "es": "si + presente, futuro", "de": "si + Präsens, Futur" },
+          "wrong": { "hu": "A „cierra” felszólítás, nem jövő idő: nincs „cerrarás” a mondatban.", "en": "\"Cierra\" is imperative, not future: there's no \"cerrarás\" in the sentence.", "es": "«Cierra» es imperativo, no futuro: no hay «cerrarás» en la oración.", "de": "„Cierra” ist Imperativ, nicht Futur: es gibt kein „cerrarás” im Satz." }
+        },
+        {
+          "text": { "hu": "cuando + kötőmód", "en": "cuando + subjunctive", "es": "cuando + subjuntivo", "de": "cuando + Subjuntivo" },
+          "wrong": { "hu": "A mondat si-vel kezdődik, nem cuando-val, és nincs benne kötőmód.", "en": "The sentence starts with si, not cuando, and has no subjunctive.", "es": "La oración empieza con si, no con cuando, y no tiene subjuntivo.", "de": "Der Satz beginnt mit si, nicht mit cuando, und enthält keinen Subjuntivo." }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ct-why-04",
+      "es": "Si llegas tarde, vamos a empezar sin ti.",
+      "tr": { "hu": "Ha később érkezel, nélküled fogunk kezdeni.", "en": "If you arrive late, we're going to start without you.", "es": "Si llegas tarde, vamos a empezar sin ti.", "de": "Wenn du spät kommst, fangen wir ohne dich an." },
+      "options": [
+        {
+          "text": { "hu": "si + jelen idő, feltételes mód", "en": "si + present, conditional", "es": "si + presente, condicional", "de": "si + Präsens, Konditional" },
+          "wrong": { "hu": "A „vamos a empezar” nem feltételes mód, hanem „ir a” + főnévi igenév.", "en": "\"Vamos a empezar\" is not the conditional, it's \"ir a\" + infinitive.", "es": "«Vamos a empezar» no es condicional, es «ir a» + infinitivo.", "de": "„Vamos a empezar” ist nicht Konditional, sondern „ir a” + Infinitiv." }
+        },
+        {
+          "text": { "hu": "si + jelen idő, „ir a” + főnévi igenév: közeli, beszélt jövő", "en": "si + present, \"ir a\" + infinitive: a near, spoken future", "es": "si + presente, «ir a» + infinitivo: un futuro cercano y hablado", "de": "si + Präsens, „ir a” + Infinitiv: eine nahe, gesprochene Zukunft" }
+        },
+        {
+          "text": { "hu": "si + jelen idő, jelen idő", "en": "si + present, present", "es": "si + presente, presente", "de": "si + Präsens, Präsens" },
+          "wrong": { "hu": "A főtag „vamos a empezar”, nem sima jelen idő („empezamos”).", "en": "The main clause is \"vamos a empezar\", not plain present (\"empezamos\").", "es": "La oración principal es «vamos a empezar», no presente simple («empezamos»).", "de": "Der Hauptsatz ist „vamos a empezar”, nicht einfaches Präsens („empezamos”)." }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ct-why-05",
+      "es": "Cuando llueve, no salimos.",
+      "tr": { "hu": "Amikor esik, nem megyünk ki.", "en": "When it rains, we don't go out.", "es": "Cuando llueve, no salimos.", "de": "Wenn es regnet (jedes Mal), gehen wir nicht raus." },
+      "options": [
+        {
+          "text": { "hu": "cuando + jelen idő: biztos, ismétlődő", "en": "cuando + present: certain, repeated", "es": "cuando + presente: seguro, repetido", "de": "cuando + Präsens: sicher, wiederkehrend" }
+        },
+        {
+          "text": { "hu": "si + jelen idő: bizonytalan feltétel", "en": "si + present: an uncertain condition", "es": "si + presente: una condición incierta", "de": "si + Präsens: eine unsichere Bedingung" },
+          "wrong": { "hu": "A mondat cuando-val kezdődik, nem si-vel: itt biztos, ismétlődő esetről van szó.", "en": "The sentence starts with cuando, not si: this is a certain, repeated case.", "es": "La oración empieza con cuando, no con si: aquí se trata de un caso seguro y repetido.", "de": "Der Satz beginnt mit cuando, nicht mit si: hier geht es um einen sicheren, wiederkehrenden Fall." }
+        },
+        {
+          "text": { "hu": "si + jövő idő", "en": "si + future", "es": "si + futuro", "de": "si + Futur" },
+          "wrong": { "hu": "Se si, se jövő idő nincs a mondatban.", "en": "There's neither si nor a future tense in the sentence.", "es": "No hay ni si ni futuro en la oración.", "de": "Weder si noch Futur kommen im Satz vor." }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ct-why-06",
+      "es": "Te llamo si puedo.",
+      "tr": { "hu": "Felhívlak, ha tudok.", "en": "I'll call you if I can.", "es": "Te llamo si puedo.", "de": "Ich rufe dich an, wenn ich kann." },
+      "options": [
+        {
+          "text": { "hu": "si-tagmondat hátul, vessző nélkül", "en": "si-clause last, no comma", "es": "cláusula con si al final, sin coma", "de": "Si-Satz am Ende, ohne Komma" }
+        },
+        {
+          "text": { "hu": "si-tagmondat elöl, vesszővel", "en": "si-clause first, with a comma", "es": "cláusula con si al principio, con coma", "de": "Si-Satz am Anfang, mit Komma" },
+          "wrong": { "hu": "A si-tagmondat itt hátul áll, és nincs előtte vessző.", "en": "Here the si-clause comes last, and there's no comma before it.", "es": "Aquí la cláusula con si va al final, y no hay coma antes.", "de": "Hier steht der Si-Satz am Ende, und davor steht kein Komma." }
+        },
+        {
+          "text": { "hu": "cuando-tagmondat hátul", "en": "cuando-clause last", "es": "cláusula con cuando al final", "de": "Cuando-Satz am Ende" },
+          "wrong": { "hu": "A mondatban si áll, nem cuando.", "en": "The sentence has si, not cuando.", "es": "La oración tiene si, no cuando.", "de": "Der Satz enthält si, nicht cuando." }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ct-why-07",
+      "es": "Si necesita ayuda, llame ahora.",
+      "tr": { "hu": "Ha segítségre van szüksége, hívjon most.", "en": "If you need help, call now.", "es": "Si necesita ayuda, llame ahora.", "de": "Wenn Sie Hilfe brauchen, rufen Sie jetzt an." },
+      "options": [
+        {
+          "text": { "hu": "si + jelen idő, felszólító mód (usted)", "en": "si + present, imperative (usted)", "es": "si + presente, imperativo (usted)", "de": "si + Präsens, Imperativ (usted)" }
+        },
+        {
+          "text": { "hu": "si + jelen idő, jelen idő", "en": "si + present, present", "es": "si + presente, presente", "de": "si + Präsens, Präsens" },
+          "wrong": { "hu": "A „llame” felszólítás, nem kijelentő jelen idő („llama” lenne).", "en": "\"Llame\" is imperative, not indicative present (that would be \"llama\").", "es": "«Llame» es imperativo, no presente de indicativo (sería «llama»).", "de": "„Llame” ist Imperativ, nicht Indikativ-Präsens (das wäre „llama”)." }
+        },
+        {
+          "text": { "hu": "si + jelen idő, jövő idő", "en": "si + present, future", "es": "si + presente, futuro", "de": "si + Präsens, Futur" },
+          "wrong": { "hu": "A „llame” felszólítás, nem jövő idő („llamará” lenne).", "en": "\"Llame\" is imperative, not future (that would be \"llamará\").", "es": "«Llame» es imperativo, no futuro (sería «llamará»).", "de": "„Llame” ist Imperativ, nicht Futur (das wäre „llamará”)." }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}
