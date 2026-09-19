@@ -3,7 +3,7 @@
 // Ellenőrzi:
 // 1. minden nem-pattern b1-sample.json id-nak van nem-üres `en`-je b1-en.json-ban
 // 2. nincs két azonos kisbetűs `es` a mintában
-// 3. nincs olyan b1-en.json kulcs, ami nem szerepel a mintában
+// 3. nincs olyan en kulcs, ami nem szerepel a korpuszban (all)
 // 4. minden b1-all.json id "b1-" + 8 hex karakter
 // 5. az `order` mezo egyedi es hezagmentes 0..n-1 a b1-all.json-ban
 // 6. minden `headword` letezo id-ra mutat
@@ -73,12 +73,13 @@ if (dupes.length) {
   console.error(`Duplikált 'es' a mintában (${dupes.length}): ${dupes.join(', ')}`);
 }
 
-// 3. nincs olyan b1-en.json kulcs, ami nem szerepel a checked halmazban
-const checkedIds = new Set(checked.map((item) => item.id));
-const orphans = Object.keys(en).filter((id) => !checkedIds.has(id));
+// 3. nincs olyan b1-en.json kulcs, ami nem szerepel a korpuszban (all; a minta
+//    részhalmaz, az en-fájl pedig a teljes korpuszt fedi a --all adagok óta)
+const corpusIds = new Set(all.map((item) => item.id));
+const orphans = Object.keys(en).filter((id) => !corpusIds.has(id));
 if (orphans.length) {
   errors += orphans.length;
-  console.error(`Árva b1-en.json kulcs, nincs a mintában (${orphans.length}): ${orphans.join(', ')}`);
+  console.error(`Árva en kulcs, nincs a korpuszban (${orphans.length}): ${orphans.join(', ')}`);
 }
 
 // 4. minden id "${level}-" + 8 hex karakter
