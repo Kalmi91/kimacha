@@ -13,25 +13,31 @@
 // "tener ~ una buena/una mala ~ actitud" tipusu darabokhoz; az egy-tildes
 // eset valtozatlan.
 //
-// `--level b2` a ket-oszlopos tablazatok MASODIK <td>-jet dolgozza fel az
+// `--level a2|b2` a ket-oszlopos tablazatok MASODIK <td>-jet dolgozza fel az
 // elso helyett, ugyanazzal a kinyero logikaval; alapertelmezes: b1 (elso <td>).
+// a1/a2 az A1-A2 inventario md-kbol olvas, b1/b2 a B1-B2 md-kbol.
 //
-// Usage: node scripts/pcic-b1.mjs [--level b1|b2]
+// Usage: node scripts/pcic-b1.mjs [--level a1|a2|b1|b2]
 
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
 
-const SOURCES = [
-  { tag: '08', path: 'data/pcic/08_nociones_generales_inventario_b1-b2.md' },
-  { tag: '09', path: 'data/pcic/09_nociones_especificas_inventario_b1-b2.md' },
-];
-
 const LEVEL_ARG_IDX = process.argv.indexOf('--level');
 const level = LEVEL_ARG_IDX !== -1 ? process.argv[LEVEL_ARG_IDX + 1] : 'b1';
-if (level !== 'b1' && level !== 'b2') {
-  console.error(`Unknown --level: ${level} (expected b1 or b2)`);
+if (!['a1', 'a2', 'b1', 'b2'].includes(level)) {
+  console.error(`Unknown --level: ${level} (expected a1, a2, b1 or b2)`);
   process.exit(1);
 }
+
+const isA = level === 'a1' || level === 'a2';
+const HEADER_PAIR = isA ? ['A1', 'A2'] : ['B1', 'B2'];
+const SOURCE_SUFFIX = isA ? 'a1-a2' : 'b1-b2';
+const TD_INDEX = level === 'a1' || level === 'b1' ? 0 : 1;
+
+const SOURCES = [
+  { tag: '08', path: `data/pcic/08_nociones_generales_inventario_${SOURCE_SUFFIX}.md` },
+  { tag: '09', path: `data/pcic/09_nociones_especificas_inventario_${SOURCE_SUFFIX}.md` },
+];
 
 // ---------------------------------------------------------------------------
 // HTML helpers
@@ -298,14 +304,14 @@ for (const { tag, path } of SOURCES) {
     const headers = theadMatch
       ? [...theadMatch[1].matchAll(/<th[^>]*>([\s\S]*?)<\/th>/g)].map((m) => stripTags(m[1]))
       : [];
-    if (!(headers.length === 2 && headers[0] === 'B1' && headers[1] === 'B2')) {
+    if (!(headers.length === 2 && headers[0] === HEADER_PAIR[0] && headers[1] === HEADER_PAIR[1])) {
       skippedTables.push({ source: tag, section: currentSection, headers });
       continue;
     }
     const tbodyMatch = tableHtml.match(/<tbody>([\s\S]*?)<\/tbody>/);
     if (!tbodyMatch) continue;
     const tdMatches = [...tbodyMatch[1].matchAll(/<td>([\s\S]*?)<\/td>/g)];
-    const tdMatch = level === 'b1' ? tdMatches[0] : tdMatches[1];
+    const tdMatch = tdMatches[TD_INDEX];
     if (!tdMatch) continue;
 
     for (const liHtml of extractLeafLis(tdMatch[1])) {
