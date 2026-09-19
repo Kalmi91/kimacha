@@ -45,6 +45,16 @@ describe('requeueAfterGrade', () => {
 
     expect(next).toEqual([other]);
   });
+
+  it('FB312: egyelemű sor, learning lap (due ma) a grade után ugyanazt az egy lapot tartalmazza', () => {
+    const before = sm2NewCard('b1-0010');
+    const graded = sm2Review(before, 'good', TODAY); // learning, due today, egyedüli lap a sorban
+    const queue = [before];
+
+    const next = requeueAfterGrade(queue, graded, TODAY);
+
+    expect(next).toEqual([graded]);
+  });
 });
 
 describe('requeueAfterUndo', () => {
