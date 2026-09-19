@@ -1,23 +1,277 @@
 {
+  "schema": 2,
   "topic": "interrogativos",
   "level": "A1",
   "title": {
-    "hu": "Kérdőszavak: qué, quién, dónde, cuándo",
-    "en": "Question words: qué, quién, dónde, cuándo",
-    "es": "Interrogativos: qué, quién, dónde, cuándo",
-    "de": "Fragewörter: qué, quién, dónde, cuándo"
+    "hu": "Kérdőszavak",
+    "en": "Question words",
+    "es": "Interrogativos",
+    "de": "Fragewörter"
   },
-  "rule": {
-    "hu": "Minden kérdőszó ÉKEZETET kap: qué (mi, milyen), quién (ki), dónde (hol), cuándo (mikor), cómo (hogyan), cuánto (mennyi), por qué (miért). A kérdés két fordított jellel áll: ¿Dónde vives? A szórend kérdésben megfordul: a kérdőszó után jön az ige, utána az alany: ¿Dónde vive tu hermano?",
-    "en": "Every question word takes an ACCENT: qué (what), quién (who), dónde (where), cuándo (when), cómo (how), cuánto (how much), por qué (why). A question sits between two marks: ¿Dónde vives? The word order flips in a question: the question word, then the verb, then the subject: ¿Dónde vive tu hermano?",
-    "es": "Todo interrogativo lleva TILDE: qué, quién, dónde, cuándo, cómo, cuánto, por qué. La pregunta va entre dos signos: ¿Dónde vives? El orden cambia: interrogativo, verbo y luego sujeto: ¿Dónde vive tu hermano?",
-    "de": "Jedes Fragewort bekommt einen AKZENT: qué (was), quién (wer), dónde (wo), cuándo (wann), cómo (wie), cuánto (wie viel), por qué (warum). Die Frage steht zwischen zwei Zeichen: ¿Dónde vives? Die Wortstellung dreht sich: Fragewort, Verb, dann Subjekt: ¿Dónde vive tu hermano?"
-  },
-  "more": {
-    "hu": "1) Az ékezet a kérdést jelöli, nem a hangsúlyt: que (hogy, ami) kötőszó, qué (mi?) kérdőszó. Ugyanígy: donde / dónde, cuando / cuándo, como / cómo. 2) A por qué (miért, két szó, ékezettel) kérdez, a porque (mert, egy szó, ékezet nélkül) válaszol: ¿Por qué no vienes? Porque estoy cansado. 3) A quién többes száma quiénes: ¿Quiénes son ellos? 4) A cuánto egyezik a főnévvel: ¿Cuánta agua? ¿Cuántos libros? 5) A cuál a választásé: ¿Cuál prefieres? = melyiket a felkínáltak közül, míg a ¿Qué prefieres? nyitott kérdés.",
-    "en": "1) The accent marks the question, not the stress: que (that, which) is a linking word, qué (what?) is a question word. Same pair: donde / dónde, cuando / cuándo, como / cómo. 2) Por qué (why, two words, accented) asks; porque (because, one word, no accent) answers: ¿Por qué no vienes? Porque estoy cansado. 3) The plural of quién is quiénes: ¿Quiénes son ellos? 4) Cuánto agrees with the noun: ¿Cuánta agua? ¿Cuántos libros? 5) Cuál is for choosing: ¿Cuál prefieres? = which one of these, while ¿Qué prefieres? is an open question.",
-    "es": "1) La tilde marca la pregunta, no el acento: que (conjunción) frente a qué (interrogativo). Igual: donde / dónde, cuando / cuándo, como / cómo. 2) Por qué (dos palabras, con tilde) pregunta; porque (una palabra, sin tilde) responde: ¿Por qué no vienes? Porque estoy cansado. 3) El plural de quién es quiénes. 4) Cuánto concuerda: ¿Cuánta agua? ¿Cuántos libros? 5) Cuál sirve para elegir: ¿Cuál prefieres?",
-    "de": "1) Der Akzent markiert die Frage, nicht die Betonung: que (dass, das) ist ein Bindewort, qué (was?) ein Fragewort. Ebenso: donde / dónde, cuando / cuándo, como / cómo. 2) Por qué (warum, zwei Wörter, mit Akzent) fragt; porque (weil, ein Wort, ohne Akzent) antwortet: ¿Por qué no vienes? Porque estoy cansado. 3) Der Plural von quién ist quiénes. 4) Cuánto richtet sich nach dem Nomen: ¿Cuánta agua? ¿Cuántos libros? 5) Cuál dient der Auswahl: ¿Cuál prefieres?"
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A kérdőszavak nélkül nem lehet információt kérni: útbaigazítást, árat, időpontot, egy ember kilétét. Kérdezni tudni előbb kell, mint válaszolni: mielőtt bárki elmondaná, hol van a gyógyszertár, mennyibe kerül a kávé, vagy ki az az ember, neked kell fel tudnod tenni a kérdést.",
+        "en": "Without question words you cannot ask for information: directions, a price, a time, who someone is. Knowing how to ask comes before knowing how to answer: before anyone tells you where the pharmacy is, what the coffee costs, or who that person is, you have to be able to ask the question yourself.",
+        "es": "Sin los interrogativos no se puede pedir información: cómo llegar, un precio, una hora, quién es alguien. Saber preguntar viene antes que saber responder: antes de que alguien te diga dónde está la farmacia, cuánto cuesta el café o quién es esa persona, tienes que poder hacer tú la pregunta.",
+        "de": "Ohne Fragewörter kann man keine Informationen erfragen: den Weg, einen Preis, eine Uhrzeit, wer jemand ist. Fragen können kommt vor Antworten können: bevor dir jemand sagt, wo die Apotheke ist, was der Kaffee kostet oder wer diese Person ist, musst du selbst die Frage stellen können."
+      }
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "A kérdőszavak",
+        "en": "The question words",
+        "es": "Los interrogativos",
+        "de": "Die Fragewörter"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "QUÉ: dologra vagy meghatározásra kérdez: mi, milyen.",
+            "en": "QUÉ asks about a thing or a definition: what, what kind.",
+            "es": "QUÉ pregunta por una cosa o una definición: qué, qué tipo de.",
+            "de": "QUÉ fragt nach einer Sache oder einer Definition: was, was für ein."
+          },
+          "examples": [
+            { "es": "¿Qué es esto?", "tr": { "hu": "Ez mi?", "en": "What is this?", "es": "¿Qué es esto?", "de": "Was ist das?" } },
+            { "es": "¿Qué haces hoy?", "tr": { "hu": "Mit csinálsz ma?", "en": "What are you doing today?", "es": "¿Qué haces hoy?", "de": "Was machst du heute?" } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "QUIÉN, többes számban QUIÉNES: emberre kérdez, ki.",
+            "en": "QUIÉN, plural QUIÉNES: asks about a person, who.",
+            "es": "QUIÉN, plural QUIÉNES: pregunta por una persona, quién.",
+            "de": "QUIÉN, im Plural QUIÉNES: fragt nach einer Person, wer."
+          },
+          "examples": [
+            { "es": "¿Quién es ese hombre?", "tr": { "hu": "Ki az az ember?", "en": "Who is that man?", "es": "¿Quién es ese hombre?", "de": "Wer ist dieser Mann?" } },
+            { "es": "¿Quiénes son ellos?", "tr": { "hu": "Kik ők?", "en": "Who are they?", "es": "¿Quiénes son ellos?", "de": "Wer sind sie?" } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "DÓNDE: hol. ADÓNDE: hova, iránnyal. DE DÓNDE: honnan, eredettel.",
+            "en": "DÓNDE: where. ADÓNDE: where to, with direction. DE DÓNDE: where from, with origin.",
+            "es": "DÓNDE: dónde. ADÓNDE: adónde, con dirección. DE DÓNDE: de dónde, con origen.",
+            "de": "DÓNDE: wo. ADÓNDE: wohin, mit Richtung. DE DÓNDE: woher, mit Herkunft."
+          },
+          "examples": [
+            { "es": "¿Dónde está la farmacia?", "tr": { "hu": "Hol van a gyógyszertár?", "en": "Where is the pharmacy?", "es": "¿Dónde está la farmacia?", "de": "Wo ist die Apotheke?" } },
+            { "es": "¿Adónde vas?", "tr": { "hu": "Hova mész?", "en": "Where are you going?", "es": "¿Adónde vas?", "de": "Wohin gehst du?" } },
+            { "es": "¿De dónde eres?", "tr": { "hu": "Honnan jössz?", "en": "Where are you from?", "es": "¿De dónde eres?", "de": "Woher kommst du?" } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "CUÁNDO: mikor.",
+            "en": "CUÁNDO: when.",
+            "es": "CUÁNDO: cuándo.",
+            "de": "CUÁNDO: wann."
+          },
+          "examples": [
+            { "es": "¿Cuándo empieza la clase?", "tr": { "hu": "Mikor kezdődik az óra?", "en": "When does the class start?", "es": "¿Cuándo empieza la clase?", "de": "Wann beginnt der Unterricht?" } },
+            { "es": "¿Cuándo vamos al parque?", "tr": { "hu": "Mikor megyünk a parkba?", "en": "When are we going to the park?", "es": "¿Cuándo vamos al parque?", "de": "Wann gehen wir in den Park?" } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "CÓMO: hogyan, milyen.",
+            "en": "CÓMO: how, what like.",
+            "es": "CÓMO: cómo.",
+            "de": "CÓMO: wie."
+          },
+          "examples": [
+            { "es": "¿Cómo se llama?", "tr": { "hu": "Hogy hívják?", "en": "What is he called?", "es": "¿Cómo se llama?", "de": "Wie heißt er?" } },
+            { "es": "¿Cómo estás hoy?", "tr": { "hu": "Hogy vagy ma?", "en": "How are you today?", "es": "¿Cómo estás hoy?", "de": "Wie geht es dir heute?" } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "CUÁNTO/A/OS/AS: mennyi. Egyezik a főnévvel nemben és számban, mint egy melléknév.",
+            "en": "CUÁNTO/A/OS/AS: how much/many. It agrees with the noun in gender and number, like an adjective.",
+            "es": "CUÁNTO/A/OS/AS: cuánto. Concuerda con el sustantivo en género y número, como un adjetivo.",
+            "de": "CUÁNTO/A/OS/AS: wie viel/e. Es richtet sich in Geschlecht und Zahl nach dem Nomen, wie ein Adjektiv."
+          },
+          "examples": [
+            { "es": "¿Cuánta agua bebes al día?", "tr": { "hu": "Mennyi vizet iszol naponta?", "en": "How much water do you drink a day?", "es": "¿Cuánta agua bebes al día?", "de": "Wie viel Wasser trinkst du täglich?" } },
+            { "es": "¿Cuántos años tienes?", "tr": { "hu": "Hány éves vagy?", "en": "How old are you?", "es": "¿Cuántos años tienes?", "de": "Wie alt bist du?" } },
+            { "es": "¿Cuántas hermanas tienes?", "tr": { "hu": "Hány lánytestvéred van?", "en": "How many sisters do you have?", "es": "¿Cuántas hermanas tienes?", "de": "Wie viele Schwestern hast du?" } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "CUÁL, többes számban CUÁLES: melyik, választás a felkínáltak közül.",
+            "en": "CUÁL, plural CUÁLES: which, a choice among options.",
+            "es": "CUÁL, plural CUÁLES: cuál, una elección entre opciones.",
+            "de": "CUÁL, im Plural CUÁLES: welcher, eine Wahl zwischen Optionen."
+          },
+          "examples": [
+            { "es": "¿Cuál es tu color favorito?", "tr": { "hu": "Melyik a kedvenc színed?", "en": "What is your favorite color?", "es": "¿Cuál es tu color favorito?", "de": "Was ist deine Lieblingsfarbe?" } },
+            { "es": "¿Cuáles son tus platillos favoritos?", "tr": { "hu": "Melyek a kedvenc ételeid?", "en": "What are your favorite dishes?", "es": "¿Cuáles son tus platillos favoritos?", "de": "Was sind deine Lieblingsgerichte?" } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "POR QUÉ: miért, két szó, ékezettel. A válasz PORQUE: mert, egy szó, ékezet nélkül.",
+            "en": "POR QUÉ: why, two words, accented. The answer is PORQUE: because, one word, no accent.",
+            "es": "POR QUÉ: dos palabras, con tilde. La respuesta es PORQUE: una palabra, sin tilde.",
+            "de": "POR QUÉ: warum, zwei Wörter, mit Akzent. Die Antwort ist PORQUE: weil, ein Wort, ohne Akzent."
+          },
+          "examples": [
+            { "es": "¿Por qué estudias español?", "tr": { "hu": "Miért tanulsz spanyolul?", "en": "Why do you study Spanish?", "es": "¿Por qué estudias español?", "de": "Warum lernst du Spanisch?" } },
+            { "es": "No vengo porque estoy cansado.", "tr": { "hu": "Nem jövök, mert fáradt vagyok.", "en": "I'm not coming because I'm tired.", "es": "No vengo porque estoy cansado.", "de": "Ich komme nicht, weil ich müde bin." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Ékezet, szórend, elöljárók",
+        "en": "Accent, word order, prepositions",
+        "es": "Tilde, orden y preposiciones",
+        "de": "Akzent, Wortstellung, Präpositionen"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Az ékezet a kérdést jelöli, nem a hangsúlyt, és akkor is ott marad, ha a kérdés rejtett, kérdőjel nélkül: que (hogy, ami) kötőszó, qué (mi?) kérdőszó.",
+            "en": "The accent marks the question, not the stress, and it stays even when the question is hidden, with no question mark: que (that, which) is a linking word, qué (what?) is a question word.",
+            "es": "La tilde marca la pregunta, no el acento, y se mantiene incluso cuando la pregunta está escondida, sin signos: que es una conjunción, qué es un interrogativo.",
+            "de": "Der Akzent markiert die Frage, nicht die Betonung, und bleibt auch, wenn die Frage versteckt ist, ohne Fragezeichen: que ist ein Bindewort, qué ein Fragewort."
+          },
+          "examples": [
+            { "es": "No sé dónde vive.", "tr": { "hu": "Nem tudom, hol lakik.", "en": "I don't know where he lives.", "es": "No sé dónde vive.", "de": "Ich weiß nicht, wo er wohnt." } },
+            { "es": "No sé qué quieres.", "tr": { "hu": "Nem tudom, mit akarsz.", "en": "I don't know what you want.", "es": "No sé qué quieres.", "de": "Ich weiß nicht, was du willst." } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A kérdés két fordított jellel áll: egy nyitó ¿ az elején, egy záró ? a végén.",
+            "en": "A question sits between two marks: an opening ¿ at the start, a closing ? at the end.",
+            "es": "La pregunta va entre dos signos: uno de apertura ¿ al principio, uno de cierre ? al final.",
+            "de": "Die Frage steht zwischen zwei Zeichen: einem öffnenden ¿ am Anfang, einem schließenden ? am Ende."
+          },
+          "examples": [
+            { "es": "¿Dónde vives?", "tr": { "hu": "Hol laksz?", "en": "Where do you live?", "es": "¿Dónde vives?", "de": "Wo wohnst du?" } },
+            { "es": "¿Qué hora es?", "tr": { "hu": "Hány óra van?", "en": "What time is it?", "es": "¿Qué hora es?", "de": "Wie spät ist es?" } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ha egy elöljáró tartozik a kérdőszóhoz, az elöljáró a kérdőszó ELÉ kerül, sosem a mondat végére.",
+            "en": "If a preposition belongs with the question word, it goes BEFORE the question word, never at the end of the sentence.",
+            "es": "Si una preposición acompaña al interrogativo, va DELANTE de él, nunca al final de la frase.",
+            "de": "Gehört eine Präposition zum Fragewort, steht sie VOR dem Fragewort, nie am Satzende."
+          },
+          "examples": [
+            { "es": "¿Con quién vas?", "tr": { "hu": "Kivel mész?", "en": "Who are you going with?", "es": "¿Con quién vas?", "de": "Mit wem gehst du?" } },
+            { "es": "¿De dónde eres?", "tr": { "hu": "Honnan jössz?", "en": "Where are you from?", "es": "¿De dónde eres?", "de": "Woher kommst du?" } }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A szórend kérdésben megfordul: a kérdőszó után jön az ige, utána az alany.",
+            "en": "The word order flips in a question: the question word, then the verb, then the subject.",
+            "es": "El orden cambia en la pregunta: interrogativo, verbo y luego sujeto.",
+            "de": "Die Wortstellung dreht sich in der Frage: Fragewort, Verb, dann Subjekt."
+          },
+          "examples": [
+            { "es": "¿Dónde vive tu hermano?", "tr": { "hu": "Hol lakik a bátyád?", "en": "Where does your brother live?", "es": "¿Dónde vive tu hermano?", "de": "Wo wohnt dein Bruder?" } },
+            { "es": "¿Cuándo come tu hermana?", "tr": { "hu": "Mikor eszik a nővéred?", "en": "When does your sister eat?", "es": "¿Cuándo come tu hermana?", "de": "Wann isst deine Schwester?" } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "interrogativos",
+      "title": {
+        "hu": "A kérdőszavak áttekintése",
+        "en": "Overview of the question words",
+        "es": "Resumen de los interrogativos",
+        "de": "Übersicht der Fragewörter"
+      },
+      "header": [
+        { "hu": "Kérdőszó", "en": "Question word", "es": "Interrogativo", "de": "Fragewort" },
+        { "hu": "Jelentés", "en": "Meaning", "es": "Significado", "de": "Bedeutung" },
+        { "hu": "Példa-kérdés", "en": "Example question", "es": "Pregunta de ejemplo", "de": "Beispielfrage" },
+        { "hu": "Tipikus válasz", "en": "Typical answer", "es": "Respuesta típica", "de": "Typische Antwort" }
+      ],
+      "rows": [
+        ["qué", "mi", "¿Qué haces?", "Estudio español."],
+        ["quién", "ki", "¿Quién es tu profesor?", "Es mi amigo."],
+        ["dónde", "hol", "¿Dónde vives?", "En Narvarte."],
+        ["adónde", "hova", "¿Adónde vas?", "A la tienda."],
+        ["cuándo", "mikor", "¿Cuándo llegas?", "Mañana."],
+        ["cómo", "hogyan", "¿Cómo estás?", "Bien, gracias."],
+        ["cuánto", "mennyi", "¿Cuánto cuesta?", "Veinte pesos."],
+        ["cuánta", "mennyi", "¿Cuánta agua bebes?", "Dos litros."],
+        ["cuántos", "hány", "¿Cuántos años tienes?", "Treinta años."],
+        ["cuál", "melyik", "¿Cuál es tu apellido?", "Pérez."],
+        ["por qué", "miért", "¿Por qué estudias español?", "Porque me gusta."],
+        ["de dónde", "honnan", "¿De dónde eres?", "Soy de Hungría."]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Hasonló, mégis más",
+        "en": "Similar, yet different",
+        "es": "Parecido, pero distinto",
+        "de": "Ähnlich, aber anders"
+      },
+      "pairs": [
+        {
+          "a": "qué",
+          "b": "cuál",
+          "note": {
+            "hu": "QUÉ egy fogalmat vagy dolgot kér meghatározásra, nyitott kérdés; CUÁL a felkínált lehetőségek közül választ.",
+            "en": "QUÉ asks for a definition or a thing, an open question; CUÁL chooses among the options on offer.",
+            "es": "QUÉ pide una definición o una cosa, pregunta abierta; CUÁL elige entre las opciones ofrecidas.",
+            "de": "QUÉ fragt nach einer Definition oder einer Sache, offene Frage; CUÁL wählt zwischen den angebotenen Optionen."
+          },
+          "examples": [
+            { "es": "¿Qué hora es?", "tr": { "hu": "Hány óra van?", "en": "What time is it?", "es": "¿Qué hora es?", "de": "Wie spät ist es?" } },
+            { "es": "¿Cuál es tu nombre?", "tr": { "hu": "Melyik a neved (a lehetségesek közül)?", "en": "What is your name (which one, of the possibilities)?", "es": "¿Cuál es tu nombre?", "de": "Wie heißt du (welcher, von den möglichen)?" } },
+            { "es": "¿Qué prefieres?", "tr": { "hu": "Mit szeretsz jobban (nyitott kérdés)?", "en": "What do you prefer (open question)?", "es": "¿Qué prefieres?", "de": "Was bevorzugst du (offene Frage)?" } },
+            { "es": "¿Cuál prefieres?", "tr": { "hu": "Melyiket szereted jobban (a felkínáltak közül)?", "en": "Which one do you prefer (out of the options)?", "es": "¿Cuál prefieres?", "de": "Welches bevorzugst du (von den angebotenen)?" } }
+          ]
+        },
+        {
+          "a": "por qué",
+          "b": "porque",
+          "note": {
+            "hu": "POR QUÉ (két szó, ékezettel) kérdez; PORQUE (egy szó, ékezet nélkül) válaszol.",
+            "en": "POR QUÉ (two words, accented) asks; PORQUE (one word, no accent) answers.",
+            "es": "POR QUÉ (dos palabras, con tilde) pregunta; PORQUE (una palabra, sin tilde) responde.",
+            "de": "POR QUÉ (zwei Wörter, mit Akzent) fragt; PORQUE (ein Wort, ohne Akzent) antwortet."
+          },
+          "examples": [
+            { "es": "¿Por qué no vienes?", "tr": { "hu": "Miért nem jössz?", "en": "Why aren't you coming?", "es": "¿Por qué no vienes?", "de": "Warum kommst du nicht?" } },
+            { "es": "Porque estoy cansado.", "tr": { "hu": "Mert fáradt vagyok.", "en": "Because I am tired.", "es": "Porque estoy cansado.", "de": "Weil ich müde bin." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A hagyományos szabály szerint a cuál nem áll közvetlenül főnév előtt (helyette qué jár), de a mindennapi mexikói spanyolban gyakori a „cuál + főnév\" forma is, mint ¿Cuál libro quieres? Ez nem hiba, csak kötetlenebb stílus.",
+        "en": "The traditional rule says cuál does not stand directly before a noun (qué takes that spot instead), but everyday Mexican Spanish often uses \"cuál + noun\" too, like ¿Cuál libro quieres? This is not a mistake, just a more relaxed style.",
+        "es": "La regla tradicional dice que cuál no va justo delante de un sustantivo (ahí va qué), pero el español cotidiano de México usa a menudo „cuál + sustantivo\", como ¿Cuál libro quieres? No es un error, solo un estilo más relajado.",
+        "de": "Die traditionelle Regel sagt, cuál stehe nicht direkt vor einem Nomen (dort steht qué), aber im mexikanischen Alltagsspanisch ist „cuál + Nomen\" ebenfalls häufig, wie ¿Cuál libro quieres? Das ist kein Fehler, nur ein lockerer Stil."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Hét kérdőszó nyit ajtót minden információhoz: «qué» a dolgokra kérdez, «quién», illetve többes számban «quiénes», a személyekre, «dónde» a helyre, «cuándo» az időre, «cómo» a módra, «cuánto», «cuánta», «cuántos» és «cuántas» a mennyiségre, mindig egyeztetve a főnévvel, «cuál» pedig akkor jár, ha a felkínáltak közül választunk. Minden kérdőszó ékezetet kap, akkor is, ha a kérdés rejtett, mint a «no sé dónde vive» mondatban. A kérdés két fordított jellel áll, és a szórend megfordul: előbb a kérdőszó, utána az ige, végül az alany, mint a «dónde vive tu hermano» mondatban. Az elöljáró mindig a kérdőszó elé kerül, mint a «con quién vas» vagy a «de dónde eres» kifejezésben. A «por qué», két szóban, ékezettel, kérdez, a «porque», egy szóban, ékezet nélkül, válaszol.",
+    "en": "Seven question words open the door to every piece of information: «qué» asks about things, «quién», or in the plural «quiénes», about people, «dónde» about place, «cuándo» about time, «cómo» about manner, «cuánto», «cuánta», «cuántos» and «cuántas» about quantity, always agreeing with the noun, and «cuál» is for choosing among options. Every question word carries an accent, even when the question is hidden, as in «no sé dónde vive». A question sits between two inverted marks, and the word order flips: the question word first, then the verb, then the subject, as in «dónde vive tu hermano». A preposition always comes before the question word, as in «con quién vas» or «de dónde eres». «Por qué», two words with an accent, asks; «porque», one word with no accent, answers.",
+    "es": "Siete interrogativos abren la puerta a toda la información: «qué» pregunta por las cosas, «quién», o en plural «quiénes», por las personas, «dónde» por el lugar, «cuándo» por el tiempo, «cómo» por el modo, «cuánto», «cuánta», «cuántos» y «cuántas» por la cantidad, siempre concordando con el sustantivo, y «cuál» sirve para elegir entre opciones. Todo interrogativo lleva tilde, incluso cuando la pregunta está escondida, como en «no sé dónde vive». La pregunta va entre dos signos invertidos, y el orden cambia: primero el interrogativo, luego el verbo, después el sujeto, como en «dónde vive tu hermano». La preposición siempre va delante del interrogativo, como en «con quién vas» o «de dónde eres». «Por qué», dos palabras con tilde, pregunta; «porque», una palabra sin tilde, responde.",
+    "de": "Sieben Fragewörter öffnen die Tür zu jeder Information: «qué» fragt nach Dingen, «quién», im Plural «quiénes», nach Personen, «dónde» nach dem Ort, «cuándo» nach der Zeit, «cómo» nach der Art, «cuánto», «cuánta», «cuántos» und «cuántas» nach der Menge, immer im Einklang mit dem Nomen, und «cuál» dient der Wahl zwischen Optionen. Jedes Fragewort trägt einen Akzent, auch wenn die Frage versteckt ist, wie in «no sé dónde vive». Die Frage steht zwischen zwei umgekehrten Zeichen, und die Wortstellung dreht sich: zuerst das Fragewort, dann das Verb, dann das Subjekt, wie in «dónde vive tu hermano». Die Präposition steht immer vor dem Fragewort, wie in «con quién vas» oder «de dónde eres». «Por qué», zwei Wörter mit Akzent, fragt; «porque», ein Wort ohne Akzent, antwortet."
   },
   "glossary": [
     {
@@ -27,15 +281,6 @@
         "en": "you prefer",
         "es": "prefieres, eliges",
         "de": "du bevorzugst"
-      }
-    },
-    {
-      "word": "cansado",
-      "gloss": {
-        "hu": "fáradt",
-        "en": "tired",
-        "es": "cansado",
-        "de": "müde"
       }
     }
   ],
@@ -56,10 +301,10 @@
       },
       "wrong": {
         "Cuándo": {
-          "hu": "A cuándo IDŐRE kérdez (mikor). Lakni helyen szoktunk, tehát dónde.",
-          "en": "Cuándo asks about TIME (when). You live in a place, so dónde.",
-          "es": "Cuándo pregunta por el TIEMPO. Se vive en un lugar, así que dónde.",
-          "de": "Cuándo fragt nach der ZEIT. Man wohnt an einem Ort, also dónde."
+          "hu": "Ezzel a mondat azt jelentené, hogy ¿Cuándo vives?, de a cuándo IDŐRE kérdez, itt viszont HELYRE kérdezünk; helyesen: ¿Dónde vives?",
+          "en": "This would give ¿Cuándo vives?, but cuándo asks about TIME, while here we are asking about a PLACE; correctly: ¿Dónde vives?",
+          "es": "Esto daría ¿Cuándo vives?, pero cuándo pregunta por el TIEMPO, y aquí se pregunta por el LUGAR; correctamente: ¿Dónde vives?",
+          "de": "Das würde ¿Cuándo vives? ergeben, aber cuándo fragt nach der ZEIT, während hier nach dem ORT gefragt wird; richtig: ¿Dónde vives?"
         }
       },
       "examples": [
@@ -83,10 +328,10 @@
       },
       "wrong": {
         "Qué": {
-          "hu": "A qué dologra kérdez (mi az?). Emberre a quién jár.",
-          "en": "Qué asks about a thing (what is it?). For a person, use quién.",
-          "es": "Qué pregunta por una cosa. Para una persona va quién.",
-          "de": "Qué fragt nach einer Sache. Für eine Person steht quién."
+          "hu": "Ezzel a mondat azt jelentené, hogy ¿Qué es tu madre?, de a qué DOLOGRA kérdez, az édesanyád viszont SZEMÉLY; helyesen: ¿Quién es tu madre?",
+          "en": "This would give ¿Qué es tu madre?, but qué asks about a THING, while your mother is a PERSON; correctly: ¿Quién es tu madre?",
+          "es": "Esto daría ¿Qué es tu madre?, pero qué pregunta por una COSA, y tu madre es una PERSONA; correctamente: ¿Quién es tu madre?",
+          "de": "Das würde ¿Qué es tu madre? ergeben, aber qué fragt nach einer SACHE, während deine Mutter eine PERSON ist; richtig: ¿Quién es tu madre?"
         }
       },
       "examples": [
@@ -110,10 +355,10 @@
       },
       "wrong": {
         "Cuánto": {
-          "hu": "A cuánto mennyiségre kérdez. Az estar-ral az állapotot kérdezzük: cómo.",
-          "en": "Cuánto asks about quantity. With estar you ask about a state: cómo.",
-          "es": "Cuánto pregunta por la cantidad. Con estar se pregunta el estado: cómo.",
-          "de": "Cuánto fragt nach der Menge. Mit estar fragt man nach dem Zustand: cómo."
+          "hu": "Ezzel a mondat azt jelentené, hogy ¿Cuánto estás?, de a cuánto MENNYISÉGRE kérdez, az estar-ral viszont ÁLLAPOTOT kérdezünk; helyesen: ¿Cómo estás?",
+          "en": "This would give ¿Cuánto estás?, but cuánto asks about QUANTITY, while with estar we ask about a STATE; correctly: ¿Cómo estás?",
+          "es": "Esto daría ¿Cuánto estás?, pero cuánto pregunta por la CANTIDAD, y con estar se pregunta el ESTADO; correctamente: ¿Cómo estás?",
+          "de": "Das würde ¿Cuánto estás? ergeben, aber cuánto fragt nach der MENGE, während man mit estar nach dem ZUSTAND fragt; richtig: ¿Cómo estás?"
         }
       },
       "examples": [
@@ -137,10 +382,10 @@
       },
       "wrong": {
         "Cómo": {
-          "hu": "A cómo azt kérdezi, hogyan. Az ár szám, tehát cuánto.",
-          "en": "Cómo asks in what way. A price is a number, so cuánto.",
-          "es": "Cómo pregunta de qué manera. El precio es un número: cuánto.",
-          "de": "Cómo fragt auf welche Weise. Der Preis ist eine Zahl, also cuánto."
+          "hu": "Ezzel a mondat azt jelentené, hogy ¿Cómo cuesta el libro?, de a cómo azt kérdezi, HOGYAN, az ár viszont SZÁM; helyesen: ¿Cuánto cuesta el libro?",
+          "en": "This would give ¿Cómo cuesta el libro?, but cómo asks HOW (in what way), while a price is a NUMBER; correctly: ¿Cuánto cuesta el libro?",
+          "es": "Esto daría ¿Cómo cuesta el libro?, pero cómo pregunta de qué MANERA, y el precio es un NÚMERO; correctamente: ¿Cuánto cuesta el libro?",
+          "de": "Das würde ¿Cómo cuesta el libro? ergeben, aber cómo fragt WIE (auf welche Weise), während ein Preis eine ZAHL ist; richtig: ¿Cuánto cuesta el libro?"
         }
       },
       "examples": [
@@ -164,10 +409,10 @@
       },
       "wrong": {
         "Porque": {
-          "hu": "A porque (egy szó, ékezet nélkül) a VÁLASZ: mert. Kérdésben por qué áll.",
-          "en": "Porque (one word, no accent) is the ANSWER: because. A question takes por qué.",
-          "es": "Porque (una palabra, sin tilde) es la RESPUESTA. En la pregunta va por qué.",
-          "de": "Porque (ein Wort, ohne Akzent) ist die ANTWORT: weil. In der Frage steht por qué."
+          "hu": "Ezzel a mondat azt jelentené, hogy ¿Porque no vienes con nosotros?, de a porque (egy szó, ékezet nélkül) a VÁLASZ szava, kérdésben a két szóból álló, ékezetes por qué áll; helyesen: ¿Por qué no vienes con nosotros?",
+          "en": "This would give ¿Porque no vienes con nosotros?, but porque (one word, no accent) is the ANSWER word; a question takes the two-word, accented por qué; correctly: ¿Por qué no vienes con nosotros?",
+          "es": "Esto daría ¿Porque no vienes con nosotros?, pero porque (una palabra, sin tilde) es la palabra de la RESPUESTA; en la pregunta va por qué, dos palabras con tilde; correctamente: ¿Por qué no vienes con nosotros?",
+          "de": "Das würde ¿Porque no vienes con nosotros? ergeben, aber porque (ein Wort, ohne Akzent) ist das ANTWORT-Wort; in der Frage steht das zweiteilige, akzentuierte por qué; richtig: ¿Por qué no vienes con nosotros?"
         }
       },
       "examples": [
@@ -191,10 +436,10 @@
       },
       "wrong": {
         "Quién": {
-          "hu": "A quién emberre kérdez. Egy tárgyra qué jár.",
-          "en": "Quién asks about a person. For an object, qué.",
-          "es": "Quién pregunta por una persona. Para un objeto va qué.",
-          "de": "Quién fragt nach einer Person. Für ein Objekt steht qué."
+          "hu": "Ezzel a mondat azt jelentené, hogy ¿Quién es esto?, de a quién EMBERRE kérdez, az esto viszont egy ismeretlen DOLOGRA utal; helyesen: ¿Qué es esto?",
+          "en": "This would give ¿Quién es esto?, but quién asks about a PERSON, while esto points at an unknown THING; correctly: ¿Qué es esto?",
+          "es": "Esto daría ¿Quién es esto?, pero quién pregunta por una PERSONA, y esto señala una COSA desconocida; correctamente: ¿Qué es esto?",
+          "de": "Das würde ¿Quién es esto? ergeben, aber quién fragt nach einer PERSON, während esto auf eine unbekannte SACHE zeigt; richtig: ¿Qué es esto?"
         }
       },
       "examples": [
@@ -218,10 +463,10 @@
       },
       "wrong": {
         "Dónde": {
-          "hu": "A dónde helyre kérdez, de a hely már benne van: a casa. Az idő hiányzik: cuándo.",
-          "en": "Dónde asks about place, but the place is already there: a casa. What is missing is the time: cuándo.",
-          "es": "Dónde pregunta por el lugar, pero el lugar ya está: a casa. Falta el momento: cuándo.",
-          "de": "Dónde fragt nach dem Ort, aber der Ort steht schon da: a casa. Es fehlt die Zeit: cuándo."
+          "hu": "Ezzel a mondat azt jelentené, hogy ¿Dónde llegas a casa?, de a hely már benne van a mondatban (a casa), az IDŐ hiányzik; helyesen: ¿Cuándo llegas a casa?",
+          "en": "This would give ¿Dónde llegas a casa?, but the place is already in the sentence (a casa); what is missing is the TIME; correctly: ¿Cuándo llegas a casa?",
+          "es": "Esto daría ¿Dónde llegas a casa?, pero el lugar ya está en la frase (a casa); falta el MOMENTO; correctamente: ¿Cuándo llegas a casa?",
+          "de": "Das würde ¿Dónde llegas a casa? ergeben, aber der Ort steht schon im Satz (a casa); es fehlt die ZEIT; richtig: ¿Cuándo llegas a casa?"
         }
       },
       "examples": [
@@ -245,10 +490,10 @@
       },
       "wrong": {
         "Cuánto": {
-          "hu": "A cuánto egyes számú alak: ¿Cuánto dinero? Több könyvhöz cuántos jár.",
-          "en": "Cuánto is the singular form: ¿Cuánto dinero? For several books, cuántos.",
-          "es": "Cuánto es la forma singular: ¿Cuánto dinero? Para varios libros, cuántos.",
-          "de": "Cuánto ist die Singularform: ¿Cuánto dinero? Für mehrere Bücher: cuántos."
+          "hu": "Ezzel a mondat azt jelentené, hogy ¿Cuánto libros tienes?, de a cuánto egyes számú alak, a libros viszont hímnemű TÖBBES szám; helyesen: ¿Cuántos libros tienes?",
+          "en": "This would give ¿Cuánto libros tienes?, but cuánto is the singular form, while libros is masculine PLURAL; correctly: ¿Cuántos libros tienes?",
+          "es": "Esto daría ¿Cuánto libros tienes?, pero cuánto es la forma singular, y libros es masculino PLURAL; correctamente: ¿Cuántos libros tienes?",
+          "de": "Das würde ¿Cuánto libros tienes? ergeben, aber cuánto ist die Singularform, während libros maskulin PLURAL ist; richtig: ¿Cuántos libros tienes?"
         }
       },
       "examples": [
@@ -272,10 +517,10 @@
       },
       "wrong": {
         "donde": {
-          "hu": "Az ékezet nélküli donde helyet KAPCSOL: la casa donde vivo = a ház, ahol lakom. Itt kérdés rejtőzik, tehát dónde.",
-          "en": "Unaccented donde LINKS a place: la casa donde vivo = the house where I live. Here a question is hidden, so dónde.",
-          "es": "Donde sin tilde ENLAZA un lugar: la casa donde vivo. Aquí hay una pregunta escondida: dónde.",
-          "de": "Donde ohne Akzent VERBINDET einen Ort: la casa donde vivo. Hier steckt eine Frage dahinter, also dónde."
+          "hu": "Ezzel a mondat azt jelentené, hogy No sé donde vive., de az ékezet nélküli donde helyet KAPCSOL (la casa donde vivo), itt viszont egy rejtett kérdés áll; helyesen: No sé dónde vive.",
+          "en": "This would give No sé donde vive., but unaccented donde LINKS a place (la casa donde vivo); here a hidden question stands instead; correctly: No sé dónde vive.",
+          "es": "Esto daría No sé donde vive., pero donde sin tilde ENLAZA un lugar (la casa donde vivo); aquí hay una pregunta escondida; correctamente: No sé dónde vive.",
+          "de": "Das würde No sé donde vive. ergeben, aber donde ohne Akzent VERBINDET einen Ort (la casa donde vivo); hier steckt eine versteckte Frage dahinter; richtig: No sé dónde vive."
         }
       },
       "examples": [
@@ -299,10 +544,10 @@
       },
       "wrong": {
         "Quién": {
-          "hu": "A quién egy emberre kérdez. A son és az esos hombres többes szám, tehát quiénes.",
-          "en": "Quién asks about one person. Son and esos hombres are plural, so quiénes.",
-          "es": "Quién pregunta por una persona. Son y esos hombres son plural: quiénes.",
-          "de": "Quién fragt nach einer Person. Son und esos hombres sind Plural, also quiénes."
+          "hu": "Ezzel a mondat azt jelentené, hogy ¿Quién son esos hombres?, de a quién egy emberre kérdez, a son és az esos hombres viszont TÖBBES számot mutat; helyesen: ¿Quiénes son esos hombres?",
+          "en": "This would give ¿Quién son esos hombres?, but quién asks about one person, while son and esos hombres are PLURAL; correctly: ¿Quiénes son esos hombres?",
+          "es": "Esto daría ¿Quién son esos hombres?, pero quién pregunta por una persona, y son y esos hombres están en PLURAL; correctamente: ¿Quiénes son esos hombres?",
+          "de": "Das würde ¿Quién son esos hombres? ergeben, aber quién fragt nach einer Person, während son und esos hombres PLURAL sind; richtig: ¿Quiénes son esos hombres?"
         }
       },
       "examples": [
@@ -324,16 +569,16 @@
       },
       "wrong": {
         "Dónde": {
-          "hu": "A dónde a kérdőszó, nem az ige: nem cselekvést mond, hanem a helyre kérdez.",
-          "en": "Dónde is the question word, not the verb: it does not name an action, it asks for the place.",
-          "es": "Dónde es el interrogativo, no el verbo: no nombra una acción, pregunta el lugar.",
-          "de": "Dónde ist das Fragewort, nicht das Verb: Es nennt keine Handlung, es fragt nach dem Ort."
+          "hu": "Ha erre koppintasz, a dónde szót jelölöd meg, de az KÉRDŐSZÓ, nem ige: nem cselekvést mond, hanem a helyre kérdez; a keresett IGE a cselekvés: trabaja.",
+          "en": "Tapping here marks dónde, but that is a QUESTION WORD, not a verb: it does not name an action, it asks for the place; the VERB you are looking for is the action: trabaja.",
+          "es": "Si tocas aquí, marcas dónde, pero eso es un INTERROGATIVO, no un verbo: no nombra una acción, pregunta el lugar; el VERBO buscado es la acción: trabaja.",
+          "de": "Tippst du hier, markierst du dónde, aber das ist ein FRAGEWORT, kein Verb: Es nennt keine Handlung, es fragt nach dem Ort; das gesuchte VERB ist die Handlung: trabaja."
         },
         "hermano": {
-          "hu": "A hermano FŐNÉV, ő az alany. A cselekvés a trabaja.",
-          "en": "Hermano is a NOUN, the subject. The action is trabaja.",
-          "es": "Hermano es un SUSTANTIVO, el sujeto. La acción es trabaja.",
-          "de": "Hermano ist ein NOMEN, das Subjekt. Die Handlung ist trabaja."
+          "hu": "Ha erre koppintasz, a hermano szót jelölöd meg, de az FŐNÉV, ő az alany, aki cselekszik; a keresett IGE maga a cselekvés: trabaja.",
+          "en": "Tapping here marks hermano, but that is a NOUN, the subject who acts; the VERB you are looking for is the action itself: trabaja.",
+          "es": "Si tocas aquí, marcas hermano, pero eso es un SUSTANTIVO, el sujeto que actúa; el VERBO buscado es la acción misma: trabaja.",
+          "de": "Tippst du hier, markierst du hermano, aber das ist ein NOMEN, das handelnde Subjekt; das gesuchte VERB ist die Handlung selbst: trabaja."
         }
       },
       "examples": [
@@ -355,22 +600,340 @@
       },
       "wrong": {
         "Cuántos": {
-          "hu": "A cuántos kérdőszó, nem főnév: nem nevez meg dolgot, csak a számát kérdezi.",
-          "en": "Cuántos is a question word, not a noun: it names no thing, it asks how many.",
-          "es": "Cuántos es interrogativo, no sustantivo: no nombra la cosa, pregunta cuántas hay.",
-          "de": "Cuántos ist ein Fragewort, kein Nomen: Es benennt nichts, es fragt nach der Anzahl."
+          "hu": "Ha erre koppintasz, a Cuántos szót jelölöd meg, de az KÉRDŐSZÓ, nem főnév: nem nevez meg dolgot, csak a számát kérdezi; a keresett FŐNÉV az, amit számolunk: libros.",
+          "en": "Tapping here marks Cuántos, but that is a QUESTION WORD, not a noun: it names no thing, it asks how many; the NOUN you are looking for is what is counted: libros.",
+          "es": "Si tocas aquí, marcas Cuántos, pero eso es un INTERROGATIVO, no un sustantivo: no nombra la cosa, pregunta cuántas hay; el SUSTANTIVO buscado es lo que se cuenta: libros.",
+          "de": "Tippst du hier, markierst du Cuántos, aber das ist ein FRAGEWORT, kein Nomen: Es benennt nichts, es fragt nach der Anzahl; das gesuchte NOMEN ist das Gezählte: libros."
         },
         "casa": {
-          "hu": "A casa is főnév, de a mondat nem azt számolja, hanem a könyveket. A kérdés tárgya a libros.",
-          "en": "Casa is a noun too, but the sentence counts the books, not the house. The question is about libros.",
-          "es": "Casa también es sustantivo, pero se cuentan los libros, no la casa. La pregunta va de libros.",
-          "de": "Casa ist auch ein Nomen, aber gezählt werden die Bücher, nicht das Haus. Die Frage gilt libros."
+          "hu": "Ha erre koppintasz, a casa szót jelölöd meg, de az is FŐNÉV, csak nem az, amit számolunk: a mondat a könyveket számolja, nem a házat; a keresett FŐNÉV: libros.",
+          "en": "Tapping here marks casa, but that is also a NOUN, just not the one being counted: the sentence counts the books, not the house; the NOUN you are looking for is: libros.",
+          "es": "Si tocas aquí, marcas casa, pero también es un SUSTANTIVO, solo que no es el que se cuenta: la frase cuenta los libros, no la casa; el SUSTANTIVO buscado es: libros.",
+          "de": "Tippst du hier, markierst du casa, aber das ist ebenfalls ein NOMEN, nur nicht das gezählte: Der Satz zählt die Bücher, nicht das Haus; das gesuchte NOMEN ist: libros."
         }
       },
       "examples": [
         "¿Cuántas sillas hay aquí?",
         "¿Cuánto dinero tienes?"
       ]
+    },
+    {
+      "id": "int-match-01",
+      "kind": "match",
+      "pairs": [
+        { "es": "dónde", "en": "place" },
+        { "es": "cuándo", "en": "time" },
+        { "es": "quién", "en": "person" },
+        { "es": "cuánto", "en": "quantity" },
+        { "es": "cómo", "en": "manner" },
+        { "es": "por qué", "en": "reason" }
+      ]
+    },
+    {
+      "id": "int-form-01",
+      "kind": "form",
+      "verb": "Significado",
+      "person": "qué",
+      "answer": "mi",
+      "table": "interrogativos"
+    },
+    {
+      "id": "int-form-02",
+      "kind": "form",
+      "verb": "Significado",
+      "person": "quién",
+      "answer": "ki",
+      "table": "interrogativos"
+    },
+    {
+      "id": "int-form-03",
+      "kind": "form",
+      "verb": "Significado",
+      "person": "dónde",
+      "answer": "hol",
+      "table": "interrogativos"
+    },
+    {
+      "id": "int-form-04",
+      "kind": "form",
+      "verb": "Significado",
+      "person": "adónde",
+      "answer": "hova",
+      "table": "interrogativos"
+    },
+    {
+      "id": "int-form-05",
+      "kind": "form",
+      "verb": "Significado",
+      "person": "cuándo",
+      "answer": "mikor",
+      "table": "interrogativos"
+    },
+    {
+      "id": "int-form-06",
+      "kind": "form",
+      "verb": "Significado",
+      "person": "cómo",
+      "answer": "hogyan",
+      "table": "interrogativos"
+    },
+    {
+      "id": "int-form-07",
+      "kind": "form",
+      "verb": "Significado",
+      "person": "cuánto",
+      "answer": "mennyi",
+      "table": "interrogativos"
+    },
+    {
+      "id": "int-form-08",
+      "kind": "form",
+      "verb": "Significado",
+      "person": "cuánta",
+      "answer": "mennyi",
+      "table": "interrogativos"
+    },
+    {
+      "id": "int-form-09",
+      "kind": "form",
+      "verb": "Significado",
+      "person": "cuántos",
+      "answer": "hány",
+      "table": "interrogativos"
+    },
+    {
+      "id": "int-form-10",
+      "kind": "form",
+      "verb": "Significado",
+      "person": "cuál",
+      "answer": "melyik",
+      "table": "interrogativos"
+    },
+    {
+      "id": "int-form-11",
+      "kind": "form",
+      "verb": "Significado",
+      "person": "por qué",
+      "answer": "miért",
+      "table": "interrogativos"
+    },
+    {
+      "id": "int-form-12",
+      "kind": "form",
+      "verb": "Significado",
+      "person": "de dónde",
+      "answer": "honnan",
+      "table": "interrogativos"
+    },
+    {
+      "id": "int-why-01",
+      "kind": "why",
+      "es": "¿Dónde trabajas?",
+      "tr": { "hu": "Hol dolgozol?", "en": "Where do you work?", "es": "¿Dónde trabajas?", "de": "Wo arbeitest du?" },
+      "options": [
+        {
+          "text": { "hu": "hely = dónde", "en": "place = dónde", "es": "lugar = dónde", "de": "Ort = dónde" }
+        },
+        {
+          "text": { "hu": "idő = cuándo", "en": "time = cuándo", "es": "tiempo = cuándo", "de": "Zeit = cuándo" },
+          "wrong": {
+            "hu": "A cuándo IDŐRE kérdez, itt viszont arról van szó, HOL dolgozol, nem mikor.",
+            "en": "Cuándo asks about TIME, but here the question is about WHERE you work, not when.",
+            "es": "Cuándo pregunta por el TIEMPO, pero aquí se pregunta DÓNDE trabajas, no cuándo.",
+            "de": "Cuándo fragt nach der ZEIT, aber hier geht es darum, WO du arbeitest, nicht wann."
+          }
+        },
+        {
+          "text": { "hu": "személy = quién", "en": "person = quién", "es": "persona = quién", "de": "Person = quién" },
+          "wrong": {
+            "hu": "A quién EMBERRE kérdez, itt viszont a munka HELYÉRE kérdezünk.",
+            "en": "Quién asks about a PERSON, but here we are asking about the PLACE of work.",
+            "es": "Quién pregunta por una PERSONA, pero aquí se pregunta por el LUGAR de trabajo.",
+            "de": "Quién fragt nach einer PERSON, aber hier wird nach dem ORT der Arbeit gefragt."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "int-why-02",
+      "kind": "why",
+      "es": "¿Cuándo empieza la clase?",
+      "tr": { "hu": "Mikor kezdődik az óra?", "en": "When does the class start?", "es": "¿Cuándo empieza la clase?", "de": "Wann beginnt der Unterricht?" },
+      "options": [
+        {
+          "text": { "hu": "idő = cuándo", "en": "time = cuándo", "es": "tiempo = cuándo", "de": "Zeit = cuándo" }
+        },
+        {
+          "text": { "hu": "hely = dónde", "en": "place = dónde", "es": "lugar = dónde", "de": "Ort = dónde" },
+          "wrong": {
+            "hu": "A dónde HELYRE kérdez, itt viszont az óra KEZDÉSI IDEJÉRŐL van szó.",
+            "en": "Dónde asks about PLACE, but here it is about the STARTING TIME of the class.",
+            "es": "Dónde pregunta por el LUGAR, pero aquí se trata del MOMENTO en que empieza la clase.",
+            "de": "Dónde fragt nach dem ORT, aber hier geht es um die ANFANGSZEIT des Unterrichts."
+          }
+        },
+        {
+          "text": { "hu": "mennyiség = cuánto", "en": "quantity = cuánto", "es": "cantidad = cuánto", "de": "Menge = cuánto" },
+          "wrong": {
+            "hu": "A cuánto MENNYISÉGRE kérdez, itt viszont IDŐPONTRÓL van szó.",
+            "en": "Cuánto asks about QUANTITY, but here it is about a POINT IN TIME.",
+            "es": "Cuánto pregunta por la CANTIDAD, pero aquí se trata de un MOMENTO.",
+            "de": "Cuánto fragt nach der MENGE, aber hier geht es um einen ZEITPUNKT."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "int-why-03",
+      "kind": "why",
+      "es": "¿Quiénes son ellos?",
+      "tr": { "hu": "Kik ők?", "en": "Who are they?", "es": "¿Quiénes son ellos?", "de": "Wer sind sie?" },
+      "options": [
+        {
+          "text": { "hu": "személy, többes szám = quiénes", "en": "person, plural = quiénes", "es": "persona, plural = quiénes", "de": "Person, Plural = quiénes" }
+        },
+        {
+          "text": { "hu": "személy, egyes szám = quién", "en": "person, singular = quién", "es": "persona, singular = quién", "de": "Person, Singular = quién" },
+          "wrong": {
+            "hu": "A quién egy emberre kérdez, az ellos viszont TÖBBES szám.",
+            "en": "Quién asks about one person, but ellos is PLURAL.",
+            "es": "Quién pregunta por una sola persona, y ellos está en PLURAL.",
+            "de": "Quién fragt nach einer einzigen Person, aber ellos ist PLURAL."
+          }
+        },
+        {
+          "text": { "hu": "dolog = qué", "en": "thing = qué", "es": "cosa = qué", "de": "Sache = qué" },
+          "wrong": {
+            "hu": "A qué DOLOGRA kérdez, az ellos viszont EMBEREKRE utal.",
+            "en": "Qué asks about a THING, but ellos refers to PEOPLE.",
+            "es": "Qué pregunta por una COSA, y ellos se refiere a PERSONAS.",
+            "de": "Qué fragt nach einer SACHE, aber ellos bezieht sich auf PERSONEN."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "int-why-04",
+      "kind": "why",
+      "es": "¿Cuántas hermanas tienes?",
+      "tr": { "hu": "Hány lánytestvéred van?", "en": "How many sisters do you have?", "es": "¿Cuántas hermanas tienes?", "de": "Wie viele Schwestern hast du?" },
+      "options": [
+        {
+          "text": { "hu": "mennyiség, nőnemű többes = cuántas", "en": "quantity, feminine plural = cuántas", "es": "cantidad, femenino plural = cuántas", "de": "Menge, feminin Plural = cuántas" }
+        },
+        {
+          "text": { "hu": "mennyiség, hímnemű többes = cuántos", "en": "quantity, masculine plural = cuántos", "es": "cantidad, masculino plural = cuántos", "de": "Menge, maskulin Plural = cuántos" },
+          "wrong": {
+            "hu": "A cuántos hímnemű alak, a hermanas viszont NŐNEMŰ.",
+            "en": "Cuántos is the masculine form, but hermanas is FEMININE.",
+            "es": "Cuántos es la forma masculina, y hermanas es FEMENINO.",
+            "de": "Cuántos ist die maskuline Form, aber hermanas ist FEMININ."
+          }
+        },
+        {
+          "text": { "hu": "választás = cuál", "en": "choice = cuál", "es": "elección = cuál", "de": "Wahl = cuál" },
+          "wrong": {
+            "hu": "A cuál a választásé, itt viszont MENNYISÉGRE kérdezünk.",
+            "en": "Cuál is for choosing, but here we ask about QUANTITY.",
+            "es": "Cuál sirve para elegir, pero aquí se pregunta por la CANTIDAD.",
+            "de": "Cuál dient der Wahl, aber hier fragen wir nach der MENGE."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "int-why-05",
+      "kind": "why",
+      "es": "¿Con quién vas al cine?",
+      "tr": { "hu": "Kivel mész moziba?", "en": "Who are you going to the movies with?", "es": "¿Con quién vas al cine?", "de": "Mit wem gehst du ins Kino?" },
+      "options": [
+        {
+          "text": { "hu": "elöljáró a kérdőszó előtt = con quién", "en": "preposition before the question word = con quién", "es": "preposición delante del interrogativo = con quién", "de": "Präposition vor dem Fragewort = con quién" }
+        },
+        {
+          "text": { "hu": "elöljáró a kérdőszó mögött", "en": "preposition after the question word", "es": "preposición detrás del interrogativo", "de": "Präposition nach dem Fragewort" },
+          "wrong": {
+            "hu": "A spanyolban az elöljáró sosem kerülhet a mondat végére: mindig a kérdőszó ELÉ áll.",
+            "en": "In Spanish a preposition can never go to the end of the sentence: it always stands BEFORE the question word.",
+            "es": "En español la preposición nunca va al final de la frase: siempre va DELANTE del interrogativo.",
+            "de": "Im Spanischen kann eine Präposition nie ans Satzende: Sie steht immer VOR dem Fragewort."
+          }
+        },
+        {
+          "text": { "hu": "hely = dónde", "en": "place = dónde", "es": "lugar = dónde", "de": "Ort = dónde" },
+          "wrong": {
+            "hu": "A dónde HELYRE kérdez, itt viszont azt kérdezzük, KIVEL mész.",
+            "en": "Dónde asks about PLACE, but here we ask WHO you are going with.",
+            "es": "Dónde pregunta por el LUGAR, pero aquí se pregunta CON QUIÉN vas.",
+            "de": "Dónde fragt nach dem ORT, aber hier fragen wir, MIT WEM du gehst."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "int-why-06",
+      "kind": "why",
+      "es": "¿Cuál es tu apellido?",
+      "tr": { "hu": "Melyik a vezetékneved?", "en": "What is your last name?", "es": "¿Cuál es tu apellido?", "de": "Wie ist dein Nachname?" },
+      "options": [
+        {
+          "text": { "hu": "választás = cuál", "en": "choice = cuál", "es": "elección = cuál", "de": "Wahl = cuál" }
+        },
+        {
+          "text": { "hu": "nyitott kérdés, meghatározás = qué", "en": "open question, definition = qué", "es": "pregunta abierta, definición = qué", "de": "offene Frage, Definition = qué" },
+          "wrong": {
+            "hu": "A qué egy fogalom meghatározására kérdez, a névre viszont a cuál jár, mintha a lehetséges nevek közül választanál.",
+            "en": "Qué asks for the definition of a concept, but for a name cuál is used, as if choosing among possible names.",
+            "es": "Qué pide la definición de un concepto, pero para un nombre va cuál, como si eligieras entre los nombres posibles.",
+            "de": "Qué fragt nach der Definition eines Begriffs, aber für einen Namen steht cuál, als würdest du zwischen möglichen Namen wählen."
+          }
+        },
+        {
+          "text": { "hu": "mennyiség = cuánto", "en": "quantity = cuánto", "es": "cantidad = cuánto", "de": "Menge = cuánto" },
+          "wrong": {
+            "hu": "A cuánto MENNYISÉGRE kérdez, itt viszont egy NÉVRŐL van szó.",
+            "en": "Cuánto asks about QUANTITY, but here it is about a NAME.",
+            "es": "Cuánto pregunta por la CANTIDAD, pero aquí se trata de un NOMBRE.",
+            "de": "Cuánto fragt nach der MENGE, aber hier geht es um einen NAMEN."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "int-why-07",
+      "kind": "why",
+      "es": "¿Por qué no vienes? Porque estoy cansado.",
+      "tr": { "hu": "Miért nem jössz? Mert fáradt vagyok.", "en": "Why aren't you coming? Because I'm tired.", "es": "¿Por qué no vienes? Porque estoy cansado.", "de": "Warum kommst du nicht? Weil ich müde bin." },
+      "options": [
+        {
+          "text": { "hu": "kérdés, két szó, ékezettel = por qué", "en": "question, two words, accented = por qué", "es": "pregunta, dos palabras, con tilde = por qué", "de": "Frage, zwei Wörter, mit Akzent = por qué" }
+        },
+        {
+          "text": { "hu": "válasz, egy szó, ékezet nélkül = porque", "en": "answer, one word, no accent = porque", "es": "respuesta, una palabra, sin tilde = porque", "de": "Antwort, ein Wort, ohne Akzent = porque" },
+          "wrong": {
+            "hu": "A porque a VÁLASZ szava, a mondat elején viszont KÉRDÉS áll, ahhoz a két szóból álló por qué kell.",
+            "en": "Porque is the ANSWER word, but the start of the sentence is a QUESTION, which needs the two-word por qué.",
+            "es": "Porque es la palabra de la RESPUESTA, pero el inicio de la frase es una PREGUNTA, que necesita el por qué de dos palabras.",
+            "de": "Porque ist das ANTWORT-Wort, aber der Satzanfang ist eine FRAGE, die das zweiteilige por qué braucht."
+          }
+        },
+        {
+          "text": { "hu": "hely = dónde", "en": "place = dónde", "es": "lugar = dónde", "de": "Ort = dónde" },
+          "wrong": {
+            "hu": "A dónde HELYRE kérdez, itt viszont az OKÁT kérdezzük annak, hogy valaki nem jön.",
+            "en": "Dónde asks about PLACE, but here we ask the REASON why someone is not coming.",
+            "es": "Dónde pregunta por el LUGAR, pero aquí se pregunta el MOTIVO de que alguien no venga.",
+            "de": "Dónde fragt nach dem ORT, aber hier fragen wir nach dem GRUND, warum jemand nicht kommt."
+          }
+        }
+      ],
+      "correctIndex": 0
     }
   ]
 }
