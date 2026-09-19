@@ -132,4 +132,5 @@ export interface LessonV2 {
   speak: Lang4; // LECKE-SEMA 3: felolvasásra írt szöveg, a spanyol szakaszok «...» közt
   glossary?: { word: string; gloss: Lang4 }[];
   items: (GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem | TransformItem)[];
+  focusTopic?: string; // FB318: szó-témakör (data/topics), aminek a kártyái a lecke szó-halmazába tartoznak a transform-szavak mellett
 }
