@@ -1,0 +1,3002 @@
+{
+  "schema": 2,
+  "topic": "subjuntivo-presente-forma",
+  "level": "B1",
+  "title": {
+    "hu": "Kötőmód jelen: az alakok",
+    "en": "Present subjunctive: the forms",
+    "es": "Presente de subjuntivo: las formas",
+    "de": "Subjuntivo Präsens: die Formen"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A kötőmód (subjuntivo) alakja nélkül nincs kérés, kívánság, kétely, sem “hogy…”-mondat. Ez a lecke csak az ALAKOKAT tanítja: hogyan lesz a hablo-ból hable, a como-ból coma. Hogy MIKOR kell használni, azt a subjuntivo-disparadores lecke mutatja meg.",
+        "en": "Without the subjunctive form there is no request, wish, doubt, or “that…” clause. This lesson only teaches the FORMS: how hablo becomes hable, como becomes coma. WHEN to use it is covered by the subjuntivo-disparadores lesson.",
+        "es": "Sin la forma del subjuntivo no hay petición, deseo, duda, ni oración con “que…”. Esta lección solo enseña las FORMAS: cómo hablo se convierte en hable, como en coma. CUÁNDO usarlo lo enseña la lección subjuntivo-disparadores.",
+        "de": "Ohne die Subjuntivo-Form gibt es keine Bitte, keinen Wunsch, keinen Zweifel und keinen “dass…”-Satz. Diese Lektion lehrt nur die FORMEN: wie aus hablo hable wird, aus como coma. WANN man ihn benutzt, zeigt die Lektion subjuntivo-disparadores."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "A képzés szabályai",
+        "en": "The rules of formation",
+        "es": "Las reglas de formación",
+        "de": "Die Regeln der Bildung"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "A kötőmód a presente yo-alakjából indul: leveszed az -o-t, és “fordított” végződést kapsz: -ar ige -e/-es/-e/-emos/-éis/-en, -er/-ir ige -a/-as/-a/-amos/-áis/-an.",
+            "en": "The subjunctive starts from the presente yo-form: drop the -o, and add the “swapped” ending: -ar verbs get -e/-es/-e/-emos/-éis/-en, -er/-ir verbs get -a/-as/-a/-amos/-áis/-an.",
+            "es": "El subjuntivo parte de la forma yo del presente: quitas la -o y añades la terminación “cambiada”: los verbos en -ar llevan -e/-es/-e/-emos/-éis/-en, los de -er/-ir llevan -a/-as/-a/-amos/-áis/-an.",
+            "de": "Der Subjuntivo geht von der yo-Form des Presente aus: das -o fällt weg, und die “vertauschte” Endung kommt dazu: -ar-Verben bekommen -e/-es/-e/-emos/-éis/-en, -er/-ir-Verben bekommen -a/-as/-a/-amos/-áis/-an."
+          },
+          "examples": [
+            {
+              "es": "Hablo mucho → que hable mucho.",
+              "tr": {
+                "hu": "Sokat beszélek → hogy sokat beszéljek.",
+                "en": "I talk a lot → that I talk a lot.",
+                "es": "Hablo mucho → que hable mucho.",
+                "de": "Ich spreche viel → dass ich viel spreche."
+              }
+            },
+            {
+              "es": "Como aquí → que coma aquí.",
+              "tr": {
+                "hu": "Itt eszem → hogy itt egyek.",
+                "en": "I eat here → that I eat here.",
+                "es": "Como aquí → que coma aquí.",
+                "de": "Ich esse hier → dass ich hier esse."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ha a yo-alak rendhagyó, azt a kötőmód is örökli: tengo → tenga, vengo → venga, pongo → ponga, hago → haga, digo → diga, salgo → salga, conozco → conozca, veo → vea.",
+            "en": "If the yo-form is irregular, the subjunctive inherits it: tengo → tenga, vengo → venga, pongo → ponga, hago → haga, digo → diga, salgo → salga, conozco → conozca, veo → vea.",
+            "es": "Si la forma yo es irregular, el subjuntivo la hereda: tengo → tenga, vengo → venga, pongo → ponga, hago → haga, digo → diga, salgo → salga, conozco → conozca, veo → vea.",
+            "de": "Wenn die yo-Form unregelmäßig ist, erbt der Subjuntivo das: tengo → tenga, vengo → venga, pongo → ponga, hago → haga, digo → diga, salgo → salga, conozco → conozca, veo → vea."
+          },
+          "examples": [
+            {
+              "es": "Tengo tiempo → que tenga tiempo.",
+              "tr": {
+                "hu": "Van időm → hogy legyen időm.",
+                "en": "I have time → that I have time.",
+                "es": "Tengo tiempo → que tenga tiempo.",
+                "de": "Ich habe Zeit → dass ich Zeit habe."
+              }
+            },
+            {
+              "es": "Hago la comida → que haga la comida.",
+              "tr": {
+                "hu": "Csinálom az ételt → hogy csináljam az ételt.",
+                "en": "I make the food → that I make the food.",
+                "es": "Hago la comida → que haga la comida.",
+                "de": "Ich mache das Essen → dass ich das Essen mache."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A tőhangváltó igék a presente mintáját követik (e→ie, o→ue: quiera, pueda); az -ir igéknél a nosotros/vosotros is vált (durmamos, sintamos, pidamos).",
+            "en": "Stem-changing verbs follow the presente pattern (e→ie, o→ue: quiera, pueda); for -ir verbs, nosotros/vosotros change too (durmamos, sintamos, pidamos).",
+            "es": "Los verbos con cambio vocálico siguen el patrón del presente (e→ie, o→ue: quiera, pueda); en los verbos en -ir, nosotros/vosotros también cambian (durmamos, sintamos, pidamos).",
+            "de": "Verben mit Stammvokaländerung folgen dem Muster des Presente (e→ie, o→ue: quiera, pueda); bei -ir-Verben ändert sich auch nosotros/vosotros (durmamos, sintamos, pidamos)."
+          },
+          "examples": [
+            {
+              "es": "Puedo ir → que pueda ir.",
+              "tr": {
+                "hu": "Tudok menni → hogy tudjak menni.",
+                "en": "I can go → that I can go.",
+                "es": "Puedo ir → que pueda ir.",
+                "de": "Ich kann gehen → dass ich gehen kann."
+              }
+            },
+            {
+              "es": "Pido ayuda → que pida ayuda.",
+              "tr": {
+                "hu": "Segítséget kérek → hogy segítséget kérjek.",
+                "en": "I ask for help → that I ask for help.",
+                "es": "Pido ayuda → que pida ayuda.",
+                "de": "Ich bitte um Hilfe → dass ich um Hilfe bitte."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Hat ige teljesen rendhagyó, ezeket fejből kell tudni: ser → sea, estar → esté, ir → vaya, haber → haya, saber → sepa, dar → dé.",
+            "en": "Six verbs are completely irregular, they must be memorized: ser → sea, estar → esté, ir → vaya, haber → haya, saber → sepa, dar → dé.",
+            "es": "Seis verbos son totalmente irregulares, hay que memorizarlos: ser → sea, estar → esté, ir → vaya, haber → haya, saber → sepa, dar → dé.",
+            "de": "Sechs Verben sind völlig unregelmäßig, sie müssen auswendig gelernt werden: ser → sea, estar → esté, ir → vaya, haber → haya, saber → sepa, dar → dé."
+          },
+          "examples": [
+            {
+              "es": "Soy profesor → que sea profesor.",
+              "tr": {
+                "hu": "Tanár vagyok → hogy tanár legyek.",
+                "en": "I am a teacher → that I am a teacher.",
+                "es": "Soy profesor → que sea profesor.",
+                "de": "Ich bin Lehrer → dass ich Lehrer bin."
+              }
+            },
+            {
+              "es": "Voy a casa → que vaya a casa.",
+              "tr": {
+                "hu": "Hazamegyek → hogy hazamenjek.",
+                "en": "I go home → that I go home.",
+                "es": "Voy a casa → que vaya a casa.",
+                "de": "Ich gehe nach Hause → dass ich nach Hause gehe."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Helyesírási váltás a kiejtés megőrzésére: -car → -que, -gar → -gue, -zar → -ce (busque, llegue, empiece).",
+            "en": "A spelling change to keep the pronunciation: -car → -que, -gar → -gue, -zar → -ce (busque, llegue, empiece).",
+            "es": "Un cambio ortográfico para conservar la pronunciación: -car → -que, -gar → -gue, -zar → -ce (busque, llegue, empiece).",
+            "de": "Eine Rechtschreibänderung zur Erhaltung der Aussprache: -car → -que, -gar → -gue, -zar → -ce (busque, llegue, empiece)."
+          },
+          "examples": [
+            {
+              "es": "Busco trabajo → que busque trabajo.",
+              "tr": {
+                "hu": "Munkát keresek → hogy munkát keressek.",
+                "en": "I look for work → that I look for work.",
+                "es": "Busco trabajo → que busque trabajo.",
+                "de": "Ich suche Arbeit → dass ich Arbeit suche."
+              }
+            },
+            {
+              "es": "Llego temprano → que llegue temprano.",
+              "tr": {
+                "hu": "Korán érkezem → hogy korán érkezzek.",
+                "en": "I arrive early → that I arrive early.",
+                "es": "Llego temprano → que llegue temprano.",
+                "de": "Ich komme früh an → dass ich früh ankomme."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Az alak nem csak “hogy”-mondatban él: usted/ustedes felszólításban (hable usted), tagadó tú-parancsban (no hables), Ojalá után, és a que + kötőmód “hadd…” szerkezetben (que pase).",
+            "en": "The form is not only used in “that” clauses: in usted/ustedes commands (hable usted), in negative tú commands (no hables), after Ojalá, and in the que + subjunctive “let…” structure (que pase).",
+            "es": "La forma no vive solo en oraciones con “que”: en el mandato de usted/ustedes (hable usted), en el mandato negativo de tú (no hables), tras Ojalá, y en la estructura que + subjuntivo (que pase).",
+            "de": "Die Form lebt nicht nur in “dass”-Sätzen: im usted/ustedes-Befehl (hable usted), im verneinten tú-Befehl (no hables), nach Ojalá, und in der que + Subjuntivo-Struktur “lass…” (que pase)."
+          },
+          "examples": [
+            {
+              "es": "No hables tan rápido.",
+              "tr": {
+                "hu": "Ne beszélj olyan gyorsan.",
+                "en": "Don't talk so fast.",
+                "es": "No hables tan rápido.",
+                "de": "Sprich nicht so schnell."
+              }
+            },
+            {
+              "es": "Ojalá tengas suerte.",
+              "tr": {
+                "hu": "Bár szerencséd legyen.",
+                "en": "I hope you have luck.",
+                "es": "Ojalá tengas suerte.",
+                "de": "Hoffentlich hast du Glück."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "subjuntivo",
+      "title": {
+        "hu": "Kötőmód jelen, 10 ige",
+        "en": "Present subjunctive, 10 verbs",
+        "es": "Presente de subjuntivo, 10 verbos",
+        "de": "Subjuntivo Präsens, 10 Verben"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "hablar",
+          "en": "hablar",
+          "es": "hablar",
+          "de": "hablar"
+        },
+        {
+          "hu": "comer",
+          "en": "comer",
+          "es": "comer",
+          "de": "comer"
+        },
+        {
+          "hu": "vivir",
+          "en": "vivir",
+          "es": "vivir",
+          "de": "vivir"
+        },
+        {
+          "hu": "tener",
+          "en": "tener",
+          "es": "tener",
+          "de": "tener"
+        },
+        {
+          "hu": "hacer",
+          "en": "hacer",
+          "es": "hacer",
+          "de": "hacer"
+        },
+        {
+          "hu": "ser",
+          "en": "ser",
+          "es": "ser",
+          "de": "ser"
+        },
+        {
+          "hu": "ir",
+          "en": "ir",
+          "es": "ir",
+          "de": "ir"
+        },
+        {
+          "hu": "saber",
+          "en": "saber",
+          "es": "saber",
+          "de": "saber"
+        },
+        {
+          "hu": "poder",
+          "en": "poder",
+          "es": "poder",
+          "de": "poder"
+        },
+        {
+          "hu": "pedir",
+          "en": "pedir",
+          "es": "pedir",
+          "de": "pedir"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "hable",
+          "coma",
+          "viva",
+          "tenga",
+          "haga",
+          "sea",
+          "vaya",
+          "sepa",
+          "pueda",
+          "pida"
+        ],
+        [
+          "tú",
+          "hables",
+          "comas",
+          "vivas",
+          "tengas",
+          "hagas",
+          "seas",
+          "vayas",
+          "sepas",
+          "puedas",
+          "pidas"
+        ],
+        [
+          "él/ella",
+          "hable",
+          "coma",
+          "viva",
+          "tenga",
+          "haga",
+          "sea",
+          "vaya",
+          "sepa",
+          "pueda",
+          "pida"
+        ],
+        [
+          "nosotros",
+          "hablemos",
+          "comamos",
+          "vivamos",
+          "tengamos",
+          "hagamos",
+          "seamos",
+          "vayamos",
+          "sepamos",
+          "podamos",
+          "pidamos"
+        ],
+        [
+          "ustedes",
+          "hablen",
+          "coman",
+          "vivan",
+          "tengan",
+          "hagan",
+          "sean",
+          "vayan",
+          "sepan",
+          "puedan",
+          "pidan"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Kijelentő vagy kötőmód",
+        "en": "Indicative or subjunctive",
+        "es": "Indicativo o subjuntivo",
+        "de": "Indikativ oder Subjuntivo"
+      },
+      "pairs": [
+        {
+          "a": "hablas",
+          "b": "hables",
+          "note": {
+            "hu": "Hablas kijelentő mód: tény. Hables kötőmód: ugyanaz a személy, de kérés, kétely vagy óhaj után.",
+            "en": "Hablas is indicative: a fact. Hables is subjunctive: the same person, but after a request, doubt, or wish.",
+            "es": "Hablas es indicativo: un hecho. Hables es subjuntivo: la misma persona, pero tras una petición, duda o deseo.",
+            "de": "Hablas ist Indikativ: eine Tatsache. Hables ist Subjuntivo: dieselbe Person, aber nach einer Bitte, einem Zweifel oder Wunsch."
+          },
+          "examples": [
+            {
+              "es": "Hablas español.",
+              "tr": {
+                "hu": "Beszélsz spanyolul.",
+                "en": "You speak Spanish.",
+                "es": "Hablas español.",
+                "de": "Du sprichst Spanisch."
+              }
+            },
+            {
+              "es": "Espero que hables español.",
+              "tr": {
+                "hu": "Remélem, beszélsz spanyolul.",
+                "en": "I hope you speak Spanish.",
+                "es": "Espero que hables español.",
+                "de": "Ich hoffe, du sprichst Spanisch."
+              }
+            }
+          ]
+        },
+        {
+          "a": "come",
+          "b": "coma",
+          "note": {
+            "hu": "Come kijelentő: tényt közöl. Coma kötőmód: usted-parancsban felszólítás, vagy “hogy”-mondatban kívánság.",
+            "en": "Come is indicative: states a fact. Coma is subjunctive: a command with usted, or a wish in a “that” clause.",
+            "es": "Come es indicativo: afirma un hecho. Coma es subjuntivo: un mandato con usted, o un deseo en una oración con “que”.",
+            "de": "Come ist Indikativ: nennt eine Tatsache. Coma ist Subjuntivo: ein Befehl mit usted, oder ein Wunsch im “dass”-Satz."
+          },
+          "examples": [
+            {
+              "es": "Come mucho.",
+              "tr": {
+                "hu": "Sokat eszik.",
+                "en": "He eats a lot.",
+                "es": "Come mucho.",
+                "de": "Er isst viel."
+              }
+            },
+            {
+              "es": "Coma usted, por favor.",
+              "tr": {
+                "hu": "Egyen, kérem.",
+                "en": "Please eat, sir.",
+                "es": "Coma usted, por favor.",
+                "de": "Essen Sie bitte."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ökölszabály: ha a yo-alak rendhagyó, a kötőmód is az; ha a yo-alak szabályos, a kötőmód is szabályos.",
+        "en": "Rule of thumb: if the yo-form is irregular, the subjunctive is too; if the yo-form is regular, so is the subjunctive.",
+        "es": "Regla práctica: si la forma yo es irregular, el subjuntivo también; si la forma yo es regular, el subjuntivo también lo es.",
+        "de": "Faustregel: Ist die yo-Form unregelmäßig, ist es auch der Subjuntivo; ist die yo-Form regelmäßig, ist es auch der Subjuntivo."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A kötőmód alakja a presente yo-alakjából indul: leveszed az -o-t, és fordított végződést kapsz, mint a «hable» vagy a «coma». Ha a yo-alak rendhagyó, mint a «tengo» vagy a «hago», a kötőmód is örökli ezt: «tenga», «haga». A tőhangváltó igék a presente mintáját követik, mint a «pueda» vagy a «pida». Hat ige teljesen rendhagyó, ezeket fejből kell tudni, mint a «sea», a «vaya» és a «sepa». Az alak nem csak «hogy» mondatban él, hanem parancsban is, mint a «no hables» vagy a «hable usted». Ökölszabály: ha a yo-alak rendhagyó, a kötőmód is az.",
+    "en": "The subjunctive form starts from the presente yo-form: drop the -o, and add the swapped ending, like «hable» or «coma». If the yo-form is irregular, like «tengo» or «hago», the subjunctive inherits it too: «tenga», «haga». Stem-changing verbs follow the presente pattern, like «pueda» or «pida». Six verbs are completely irregular and must be memorized, like «sea», «vaya» and «sepa». The form does not only live in «that» clauses, but also in commands, like «no hables» or «hable usted». Rule of thumb: if the yo-form is irregular, so is the subjunctive.",
+    "es": "La forma del subjuntivo parte de la forma yo del presente: quitas la -o y añades la terminación cambiada, como «hable» o «coma». Si la forma yo es irregular, como «tengo» o «hago», el subjuntivo también la hereda: «tenga», «haga». Los verbos con cambio vocálico siguen el patrón del presente, como «pueda» o «pida». Seis verbos son totalmente irregulares y hay que memorizarlos, como «sea», «vaya» y «sepa». La forma no vive solo en oraciones con «que», sino también en mandatos, como «no hables» o «hable usted». Regla práctica: si la forma yo es irregular, el subjuntivo también.",
+    "de": "Die Subjuntivo-Form geht von der yo-Form des Presente aus: das -o fällt weg, und die vertauschte Endung kommt dazu, wie «hable» oder «coma». Wenn die yo-Form unregelmäßig ist, wie «tengo» oder «hago», erbt der Subjuntivo das auch: «tenga», «haga». Verben mit Stammvokaländerung folgen dem Muster des Presente, wie «pueda» oder «pida». Sechs Verben sind völlig unregelmäßig und müssen auswendig gelernt werden, wie «sea», «vaya» und «sepa». Die Form lebt nicht nur im «dass»-Satz, sondern auch im Befehl, wie «no hables» oder «hable usted». Faustregel: ist die yo-Form unregelmäßig, ist es auch der Subjuntivo."
+  },
+  "items": [
+    {
+      "id": "sp-ch-01",
+      "sentence": "No creo que ___ (yo) muy tarde.",
+      "options": [
+        "hable",
+        "hablo",
+        "hablé"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A tagadott creer kétely, ezért kötőmód: hable.",
+        "en": "Negated creer is doubt, so subjunctive: hable.",
+        "es": "El creer negado es duda, por eso subjuntivo: hable.",
+        "de": "Das verneinte creer ist Zweifel, deshalb Subjuntivo: hable."
+      },
+      "wrong": {
+        "hablo": {
+          "hu": "Ezzel a mondat azt jelentené: „nem hiszem, hogy tényleg így van, de mégis kijelentem: nagyon későn beszélek”, ami nem illik a kétely után; helyesen: No creo que hable muy tarde.",
+          "en": "This would state a plain fact (“I do talk very late”) instead of the doubted idea; correctly: No creo que hable muy tarde.",
+          "es": "Esto afirmaría un hecho (“hablo muy tarde”) en vez de la idea dudada; correctamente: No creo que hable muy tarde.",
+          "de": "Das würde eine reine Tatsache aussagen (“ich spreche sehr spät”) statt der bezweifelten Idee; richtig: No creo que hable muy tarde."
+        },
+        "hablé": {
+          "hu": "Ezzel a mondat múlt időben állna: „beszéltem nagyon későn”, de a „no creo que” után jelen idejű kötőmód kell; helyesen: No creo que hable muy tarde.",
+          "en": "This would put it in the past (“I talked very late”), but “no creo que” needs the present subjunctive; correctly: No creo que hable muy tarde.",
+          "es": "Esto lo pondría en pasado (“hablé muy tarde”), pero “no creo que” pide subjuntivo presente; correctamente: No creo que hable muy tarde.",
+          "de": "Das würde es in die Vergangenheit setzen (“ich sprach sehr spät”), aber “no creo que” verlangt den Subjuntivo Präsens; richtig: No creo que hable muy tarde."
+        }
+      },
+      "examples": [
+        "Espero que hables español.",
+        "Dudo que vivan aquí."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-ch-02",
+      "sentence": "Dudo que ___ (tú) muy tarde.",
+      "options": [
+        "hables",
+        "hablas",
+        "hablaste"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A dudar kétely, ezért kötőmód: hables.",
+        "en": "Dudar is doubt, so subjunctive: hables.",
+        "es": "Dudar es duda, por eso subjuntivo: hables.",
+        "de": "Dudar ist Zweifel, deshalb Subjuntivo: hables."
+      },
+      "wrong": {
+        "hablas": {
+          "hu": "Ezzel a mondat azt jelentené: „kétlem, de tényleg nagyon későn beszélsz”, ami nem illik a kétely után; helyesen: Dudo que hables muy tarde.",
+          "en": "This would state a plain fact (“you do talk very late”) instead of the doubted idea; correctly: Dudo que hables muy tarde.",
+          "es": "Esto afirmaría un hecho (“hablas muy tarde”) en vez de la idea dudada; correctamente: Dudo que hables muy tarde.",
+          "de": "Das würde eine reine Tatsache aussagen (“du sprichst sehr spät”) statt der bezweifelten Idee; richtig: Dudo que hables muy tarde."
+        },
+        "hablaste": {
+          "hu": "Ezzel a mondat múlt időben állna: „beszéltél nagyon későn”, de a „dudo que” után jelen idejű kötőmód kell; helyesen: Dudo que hables muy tarde.",
+          "en": "This would put it in the past (“you talked very late”), but “dudo que” needs the present subjunctive; correctly: Dudo que hables muy tarde.",
+          "es": "Esto lo pondría en pasado (“hablaste muy tarde”), pero “dudo que” pide subjuntivo presente; correctamente: Dudo que hables muy tarde.",
+          "de": "Das würde es in die Vergangenheit setzen (“du sprachst sehr spät”), aber “dudo que” verlangt den Subjuntivo Präsens; richtig: Dudo que hables muy tarde."
+        }
+      },
+      "examples": [
+        "Espero que hables español.",
+        "Dudo que vivan aquí."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-ch-03",
+      "sentence": "Espero que ___ (ella) mañana.",
+      "options": [
+        "hable",
+        "habla",
+        "habló"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az esperar óhaj, ezért kötőmód: hable.",
+        "en": "Esperar is a wish, so subjunctive: hable.",
+        "es": "Esperar es deseo, por eso subjuntivo: hable.",
+        "de": "Esperar ist ein Wunsch, deshalb Subjuntivo: hable."
+      },
+      "wrong": {
+        "habla": {
+          "hu": "Ezzel a mondat azt jelentené: „remélem, de tényleg beszél holnap”, ami nem illik az óhaj után; helyesen: Espero que hable mañana.",
+          "en": "This would state a plain fact (“she does talk tomorrow”) instead of the wish; correctly: Espero que hable mañana.",
+          "es": "Esto afirmaría un hecho (“habla mañana”) en vez del deseo; correctamente: Espero que hable mañana.",
+          "de": "Das würde eine reine Tatsache aussagen (“sie spricht morgen”) statt des Wunsches; richtig: Espero que hable mañana."
+        },
+        "habló": {
+          "hu": "Ezzel a mondat múlt időben állna: „beszélt”, de az óhaj jelen idejű kötőmódot kér; helyesen: Espero que hable mañana.",
+          "en": "This would put it in the past (“she talked”), but the wish needs the present subjunctive; correctly: Espero que hable mañana.",
+          "es": "Esto lo pondría en pasado (“habó”), pero el deseo pide subjuntivo presente; correctamente: Espero que hable mañana.",
+          "de": "Das würde es in die Vergangenheit setzen (“sie sprach”), aber der Wunsch verlangt den Subjuntivo Präsens; richtig: Espero que hable mañana."
+        }
+      },
+      "examples": [
+        "Espero que hables español.",
+        "Dudo que vivan aquí."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-ch-04",
+      "sentence": "No pienso que ___ (yo) mucho.",
+      "options": [
+        "coma",
+        "como",
+        "comí"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A tagadott pensar kétely, ezért kötőmód: coma.",
+        "en": "Negated pensar is doubt, so subjunctive: coma.",
+        "es": "El pensar negado es duda, por eso subjuntivo: coma.",
+        "de": "Das verneinte pensar ist Zweifel, deshalb Subjuntivo: coma."
+      },
+      "wrong": {
+        "como": {
+          "hu": "Ezzel a mondat azt jelentené: „nem gondolom, de tényleg sokat eszem”, ami nem illik a kétely után; helyesen: No pienso que coma mucho.",
+          "en": "This would state a plain fact (“I do eat a lot”) instead of the doubted idea; correctly: No pienso que coma mucho.",
+          "es": "Esto afirmaría un hecho (“como mucho”) en vez de la idea dudada; correctamente: No pienso que coma mucho.",
+          "de": "Das würde eine reine Tatsache aussagen (“ich esse viel”) statt der bezweifelten Idee; richtig: No pienso que coma mucho."
+        },
+        "comí": {
+          "hu": "Ezzel a mondat múlt időben állna: „ettem sokat”, de itt jelen idejű kötőmód kell; helyesen: No pienso que coma mucho.",
+          "en": "This would put it in the past (“I ate a lot”), but this needs the present subjunctive; correctly: No pienso que coma mucho.",
+          "es": "Esto lo pondría en pasado (“comí mucho”), pero aquí hace falta subjuntivo presente; correctamente: No pienso que coma mucho.",
+          "de": "Das würde es in die Vergangenheit setzen (“ich aß viel”), aber hier braucht es den Subjuntivo Präsens; richtig: No pienso que coma mucho."
+        }
+      },
+      "examples": [
+        "Espero que hables español.",
+        "Dudo que vivan aquí."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-ch-05",
+      "sentence": "Espero que ___ (tú) aquí.",
+      "options": [
+        "comas",
+        "comes",
+        "comiste"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az esperar óhaj, ezért kötőmód: comas.",
+        "en": "Esperar is a wish, so subjunctive: comas.",
+        "es": "Esperar es deseo, por eso subjuntivo: comas.",
+        "de": "Esperar ist ein Wunsch, deshalb Subjuntivo: comas."
+      },
+      "wrong": {
+        "comes": {
+          "hu": "Ezzel a mondat azt jelentené: „remélem, de tényleg itt eszel”, ami nem illik az óhaj után; helyesen: Espero que comas aquí.",
+          "en": "This would state a plain fact (“you do eat here”) instead of the wish; correctly: Espero que comas aquí.",
+          "es": "Esto afirmaría un hecho (“comes aquí”) en vez del deseo; correctamente: Espero que comas aquí.",
+          "de": "Das würde eine reine Tatsache aussagen (“du isst hier”) statt des Wunsches; richtig: Espero que comas aquí."
+        },
+        "comiste": {
+          "hu": "Ezzel a mondat múlt időben állna: „ettél itt”, de az óhaj jelen idejű kötőmódot kér; helyesen: Espero que comas aquí.",
+          "en": "This would put it in the past (“you ate here”), but the wish needs the present subjunctive; correctly: Espero que comas aquí.",
+          "es": "Esto lo pondría en pasado (“comiste aquí”), pero el deseo pide subjuntivo presente; correctamente: Espero que comas aquí.",
+          "de": "Das würde es in die Vergangenheit setzen (“du hast hier gegessen”), aber der Wunsch verlangt den Subjuntivo Präsens; richtig: Espero que comas aquí."
+        }
+      },
+      "examples": [
+        "Espero que hables español.",
+        "Dudo que vivan aquí."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-ch-06",
+      "sentence": "Quiere que ___ (ustedes) la comida.",
+      "options": [
+        "coman",
+        "comen",
+        "comieron"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A querer akarat, ezért kötőmód: coman.",
+        "en": "Querer is will, so subjunctive: coman.",
+        "es": "Querer es voluntad, por eso subjuntivo: coman.",
+        "de": "Querer ist Wille, deshalb Subjuntivo: coman."
+      },
+      "wrong": {
+        "comen": {
+          "hu": "Ezzel a mondat azt jelentené: „akarja, de tényleg megeszik az ételt”, ami nem illik az akarat után; helyesen: Quiere que coman la comida.",
+          "en": "This would state a plain fact (“they do eat the food”) instead of the wanted idea; correctly: Quiere que coman la comida.",
+          "es": "Esto afirmaría un hecho (“comen la comida”) en vez de lo querido; correctamente: Quiere que coman la comida.",
+          "de": "Das würde eine reine Tatsache aussagen (“sie essen das Essen”) statt des Gewollten; richtig: Quiere que coman la comida."
+        },
+        "comieron": {
+          "hu": "Ezzel a mondat múlt időben állna: „megették”, de az akarat jelen idejű kötőmódot kér; helyesen: Quiere que coman la comida.",
+          "en": "This would put it in the past (“they ate it”), but the wanted idea needs the present subjunctive; correctly: Quiere que coman la comida.",
+          "es": "Esto lo pondría en pasado (“comieron”), pero lo querido pide subjuntivo presente; correctamente: Quiere que coman la comida.",
+          "de": "Das würde es in die Vergangenheit setzen (“sie aßen”), aber das Gewollte verlangt den Subjuntivo Präsens; richtig: Quiere que coman la comida."
+        }
+      },
+      "examples": [
+        "Espero que hables español.",
+        "Dudo que vivan aquí."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-ch-07",
+      "sentence": "No creo que ___ (yo) aquí.",
+      "options": [
+        "viva",
+        "vivo",
+        "viví"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A tagadott creer kétely, ezért kötőmód: viva.",
+        "en": "Negated creer is doubt, so subjunctive: viva.",
+        "es": "El creer negado es duda, por eso subjuntivo: viva.",
+        "de": "Das verneinte creer ist Zweifel, deshalb Subjuntivo: viva."
+      },
+      "wrong": {
+        "vivo": {
+          "hu": "Ezzel a mondat azt jelentené: „nem hiszem, de tényleg itt élek”, ami nem illik a kétely után; helyesen: No creo que viva aquí.",
+          "en": "This would state a plain fact (“I do live here”) instead of the doubted idea; correctly: No creo que viva aquí.",
+          "es": "Esto afirmaría un hecho (“vivo aquí”) en vez de la idea dudada; correctamente: No creo que viva aquí.",
+          "de": "Das würde eine reine Tatsache aussagen (“ich lebe hier”) statt der bezweifelten Idee; richtig: No creo que viva aquí."
+        },
+        "viví": {
+          "hu": "Ezzel a mondat múlt időben állna: „éltem itt”, de itt jelen idejű kötőmód kell; helyesen: No creo que viva aquí.",
+          "en": "This would put it in the past (“I lived here”), but this needs the present subjunctive; correctly: No creo que viva aquí.",
+          "es": "Esto lo pondría en pasado (“viví aquí”), pero aquí hace falta subjuntivo presente; correctamente: No creo que viva aquí.",
+          "de": "Das würde es in die Vergangenheit setzen (“ich lebte hier”), aber hier braucht es den Subjuntivo Präsens; richtig: No creo que viva aquí."
+        }
+      },
+      "examples": [
+        "Espero que hables español.",
+        "Dudo que vivan aquí."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-ch-08",
+      "sentence": "Dudo que ___ (tú) solo.",
+      "options": [
+        "vivas",
+        "vives",
+        "viviste"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A dudar kétely, ezért kötőmód: vivas.",
+        "en": "Dudar is doubt, so subjunctive: vivas.",
+        "es": "Dudar es duda, por eso subjuntivo: vivas.",
+        "de": "Dudar ist Zweifel, deshalb Subjuntivo: vivas."
+      },
+      "wrong": {
+        "vives": {
+          "hu": "Ezzel a mondat azt jelentené: „kétlem, de tényleg egyedül élsz”, ami nem illik a kétely után; helyesen: Dudo que vivas solo.",
+          "en": "This would state a plain fact (“you do live alone”) instead of the doubted idea; correctly: Dudo que vivas solo.",
+          "es": "Esto afirmaría un hecho (“vives solo”) en vez de la idea dudada; correctamente: Dudo que vivas solo.",
+          "de": "Das würde eine reine Tatsache aussagen (“du lebst allein”) statt der bezweifelten Idee; richtig: Dudo que vivas solo."
+        },
+        "viviste": {
+          "hu": "Ezzel a mondat múlt időben állna: „egyedül éltél”, de a „dudo que” után jelen idejű kötőmód kell; helyesen: Dudo que vivas solo.",
+          "en": "This would put it in the past (“you lived alone”), but “dudo que” needs the present subjunctive; correctly: Dudo que vivas solo.",
+          "es": "Esto lo pondría en pasado (“viviste solo”), pero “dudo que” pide subjuntivo presente; correctamente: Dudo que vivas solo.",
+          "de": "Das würde es in die Vergangenheit setzen (“du lebtest allein”), aber “dudo que” verlangt den Subjuntivo Präsens; richtig: Dudo que vivas solo."
+        }
+      },
+      "examples": [
+        "Espero que hables español.",
+        "Dudo que vivan aquí."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-ch-09",
+      "sentence": "Espero que ___ (ustedes) juntos.",
+      "options": [
+        "vivan",
+        "viven",
+        "vivieron"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az esperar óhaj, ezért kötőmód: vivan.",
+        "en": "Esperar is a wish, so subjunctive: vivan.",
+        "es": "Esperar es deseo, por eso subjuntivo: vivan.",
+        "de": "Esperar ist ein Wunsch, deshalb Subjuntivo: vivan."
+      },
+      "wrong": {
+        "viven": {
+          "hu": "Ezzel a mondat azt jelentené: „remélem, de tényleg együtt élnek”, ami nem illik az óhaj után; helyesen: Espero que vivan juntos.",
+          "en": "This would state a plain fact (“they do live together”) instead of the wish; correctly: Espero que vivan juntos.",
+          "es": "Esto afirmaría un hecho (“viven juntos”) en vez del deseo; correctamente: Espero que vivan juntos.",
+          "de": "Das würde eine reine Tatsache aussagen (“sie leben zusammen”) statt des Wunsches; richtig: Espero que vivan juntos."
+        },
+        "vivieron": {
+          "hu": "Ezzel a mondat múlt időben állna: „együtt éltek”, de az óhaj jelen idejű kötőmódot kér; helyesen: Espero que vivan juntos.",
+          "en": "This would put it in the past (“they lived together”), but the wish needs the present subjunctive; correctly: Espero que vivan juntos.",
+          "es": "Esto lo pondría en pasado (“vivieron juntos”), pero el deseo pide subjuntivo presente; correctamente: Espero que vivan juntos.",
+          "de": "Das würde es in die Vergangenheit setzen (“sie lebten zusammen”), aber der Wunsch verlangt den Subjuntivo Präsens; richtig: Espero que vivan juntos."
+        }
+      },
+      "examples": [
+        "Espero que hables español.",
+        "Dudo que vivan aquí."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-ch-10",
+      "sentence": "No creo que ___ (yo) tiempo.",
+      "options": [
+        "tenga",
+        "tengo",
+        "tuve"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A tagadott creer kétely, ezért kötőmód: tenga (rendhagyó, a tengo tőből).",
+        "en": "Negated creer is doubt, so subjunctive: tenga (irregular, from the tengo stem).",
+        "es": "El creer negado es duda, por eso subjuntivo: tenga (irregular, de la raíz tengo).",
+        "de": "Das verneinte creer ist Zweifel, deshalb Subjuntivo: tenga (unregelmäßig, vom tengo-Stamm)."
+      },
+      "wrong": {
+        "tengo": {
+          "hu": "Ezzel a mondat azt jelentené: „nem hiszem, de tényleg van időm”, ami nem illik a kétely után; helyesen: No creo que tenga tiempo.",
+          "en": "This would state a plain fact (“I do have time”) instead of the doubted idea; correctly: No creo que tenga tiempo.",
+          "es": "Esto afirmaría un hecho (“tengo tiempo”) en vez de la idea dudada; correctamente: No creo que tenga tiempo.",
+          "de": "Das würde eine reine Tatsache aussagen (“ich habe Zeit”) statt der bezweifelten Idee; richtig: No creo que tenga tiempo."
+        },
+        "tuve": {
+          "hu": "Ezzel a mondat múlt időben állna: „volt időm”, de itt jelen idejű kötőmód kell; helyesen: No creo que tenga tiempo.",
+          "en": "This would put it in the past (“I had time”), but this needs the present subjunctive; correctly: No creo que tenga tiempo.",
+          "es": "Esto lo pondría en pasado (“tuve tiempo”), pero aquí hace falta subjuntivo presente; correctamente: No creo que tenga tiempo.",
+          "de": "Das würde es in die Vergangenheit setzen (“ich hatte Zeit”), aber hier braucht es den Subjuntivo Präsens; richtig: No creo que tenga tiempo."
+        }
+      },
+      "examples": [
+        "Espero que hables español.",
+        "Dudo que vivan aquí."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-ch-11",
+      "sentence": "Dudo que ___ (él) suerte.",
+      "options": [
+        "tenga",
+        "tiene",
+        "tuvo"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A dudar kétely, ezért kötőmód: tenga (rendhagyó, a tengo tőből).",
+        "en": "Dudar is doubt, so subjunctive: tenga (irregular, from the tengo stem).",
+        "es": "Dudar es duda, por eso subjuntivo: tenga (irregular, de la raíz tengo).",
+        "de": "Dudar ist Zweifel, deshalb Subjuntivo: tenga (unregelmäßig, vom tengo-Stamm)."
+      },
+      "wrong": {
+        "tiene": {
+          "hu": "Ezzel a mondat azt jelentené: „kétlem, de tényleg szerencséje van”, ami nem illik a kétely után; helyesen: Dudo que tenga suerte.",
+          "en": "This would state a plain fact (“he does have luck”) instead of the doubted idea; correctly: Dudo que tenga suerte.",
+          "es": "Esto afirmaría un hecho (“tiene suerte”) en vez de la idea dudada; correctamente: Dudo que tenga suerte.",
+          "de": "Das würde eine reine Tatsache aussagen (“er hat Glück”) statt der bezweifelten Idee; richtig: Dudo que tenga suerte."
+        },
+        "tuvo": {
+          "hu": "Ezzel a mondat múlt időben állna: „szerencséje volt”, de a „dudo que” után jelen idejű kötőmód kell; helyesen: Dudo que tenga suerte.",
+          "en": "This would put it in the past (“he had luck”), but “dudo que” needs the present subjunctive; correctly: Dudo que tenga suerte.",
+          "es": "Esto lo pondría en pasado (“tuvo suerte”), pero “dudo que” pide subjuntivo presente; correctamente: Dudo que tenga suerte.",
+          "de": "Das würde es in die Vergangenheit setzen (“er hatte Glück”), aber “dudo que” verlangt den Subjuntivo Präsens; richtig: Dudo que tenga suerte."
+        }
+      },
+      "examples": [
+        "Espero que hables español.",
+        "Dudo que vivan aquí."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-ch-12",
+      "sentence": "Espero que ___ (tú) venir.",
+      "options": [
+        "puedas",
+        "puedes",
+        "pudiste"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az esperar óhaj, ezért kötőmód: puedas (töhangváltós, o→ue).",
+        "en": "Esperar is a wish, so subjunctive: puedas (stem-changing, o→ue).",
+        "es": "Esperar es deseo, por eso subjuntivo: puedas (con cambio vocálico, o→ue).",
+        "de": "Esperar ist ein Wunsch, deshalb Subjuntivo: puedas (mit Stammvokaländerung, o→ue)."
+      },
+      "wrong": {
+        "puedes": {
+          "hu": "Ezzel a mondat azt jelentené: „remélem, de tényleg tudsz jönni”, ami nem illik az óhaj után; helyesen: Espero que puedas venir.",
+          "en": "This would state a plain fact (“you can come”) instead of the wish; correctly: Espero que puedas venir.",
+          "es": "Esto afirmaría un hecho (“puedes venir”) en vez del deseo; correctamente: Espero que puedas venir.",
+          "de": "Das würde eine reine Tatsache aussagen (“du kannst kommen”) statt des Wunsches; richtig: Espero que puedas venir."
+        },
+        "pudiste": {
+          "hu": "Ezzel a mondat múlt időben állna: „tudtál jönni”, de az óhaj jelen idejű kötőmódot kér; helyesen: Espero que puedas venir.",
+          "en": "This would put it in the past (“you were able to come”), but the wish needs the present subjunctive; correctly: Espero que puedas venir.",
+          "es": "Esto lo pondría en pasado (“pudiste venir”), pero el deseo pide subjuntivo presente; correctamente: Espero que puedas venir.",
+          "de": "Das würde es in die Vergangenheit setzen (“du konntest kommen”), aber der Wunsch verlangt den Subjuntivo Präsens; richtig: Espero que puedas venir."
+        }
+      },
+      "examples": [
+        "Espero que hables español.",
+        "Dudo que vivan aquí."
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-match-01",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "tener",
+          "en": "tenga"
+        },
+        {
+          "es": "hacer",
+          "en": "haga"
+        },
+        {
+          "es": "ser",
+          "en": "sea"
+        },
+        {
+          "es": "ir",
+          "en": "vaya"
+        },
+        {
+          "es": "saber",
+          "en": "sepa"
+        },
+        {
+          "es": "pedir",
+          "en": "pida"
+        }
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-form-01",
+      "kind": "form",
+      "verb": "hablar",
+      "person": "yo",
+      "answer": "hable",
+      "table": "subjuntivo",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-form-02",
+      "kind": "form",
+      "verb": "comer",
+      "person": "tú",
+      "answer": "comas",
+      "table": "subjuntivo",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-form-03",
+      "kind": "form",
+      "verb": "vivir",
+      "person": "él/ella",
+      "answer": "viva",
+      "table": "subjuntivo",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-form-04",
+      "kind": "form",
+      "verb": "tener",
+      "person": "nosotros",
+      "answer": "tengamos",
+      "table": "subjuntivo",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-form-05",
+      "kind": "form",
+      "verb": "hacer",
+      "person": "ustedes",
+      "answer": "hagan",
+      "table": "subjuntivo",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-form-06",
+      "kind": "form",
+      "verb": "ser",
+      "person": "yo",
+      "answer": "sea",
+      "table": "subjuntivo",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-form-07",
+      "kind": "form",
+      "verb": "ir",
+      "person": "tú",
+      "answer": "vayas",
+      "table": "subjuntivo",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-form-08",
+      "kind": "form",
+      "verb": "saber",
+      "person": "él/ella",
+      "answer": "sepa",
+      "table": "subjuntivo",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-form-09",
+      "kind": "form",
+      "verb": "poder",
+      "person": "nosotros",
+      "answer": "podamos",
+      "table": "subjuntivo",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-form-10",
+      "kind": "form",
+      "verb": "pedir",
+      "person": "ustedes",
+      "answer": "pidan",
+      "table": "subjuntivo",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-form-11",
+      "kind": "form",
+      "verb": "tener",
+      "person": "yo",
+      "answer": "tenga",
+      "table": "subjuntivo",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-form-12",
+      "kind": "form",
+      "verb": "pedir",
+      "person": "tú",
+      "answer": "pidas",
+      "table": "subjuntivo",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "sp-why-01",
+      "es": "Espero que hables con ella.",
+      "tr": {
+        "hu": "Remélem, beszélsz vele.",
+        "en": "I hope you talk to her.",
+        "es": "Espero que hables con ella.",
+        "de": "Ich hoffe, du sprichst mit ihr."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szabályos ige, fordított végződés",
+            "en": "a regular verb, just the swapped ending",
+            "es": "verbo regular, solo la terminación invertida",
+            "de": "regelmäßiges Verb, nur die vertauschte Endung"
+          }
+        },
+        {
+          "text": {
+            "hu": "a tő megváltozik (yo-alak vagy tőhangváltás)",
+            "en": "the stem changes (from the yo-form or a vowel shift)",
+            "es": "la raíz cambia (de la forma yo o un cambio vocálico)",
+            "de": "der Stamm ändert sich (von der yo-Form oder einem Vokalwechsel)"
+          },
+          "wrong": {
+            "hu": "ez tőváltozás lenne, de ez az ige egyáltalán nem követi a szabályos mintát, fejből kell tudni",
+            "en": "this would be a stem change, but this verb doesn't follow the regular pattern at all, it must be memorized",
+            "es": "esto sería un cambio de raíz, pero este verbo no sigue el patrón regular en absoluto, hay que memorizarlo",
+            "de": "das wäre eine Stammänderung, aber dieses Verb folgt überhaupt nicht dem regelmäßigen Muster, es muss auswendig gelernt werden"
+          }
+        },
+        {
+          "text": {
+            "hu": "teljesen rendhagyó, meg kell tanulni fejből",
+            "en": "completely irregular, must be memorized",
+            "es": "totalmente irregular, hay que memorizarlo",
+            "de": "völlig unregelmäßig, muss auswendig gelernt werden"
+          },
+          "wrong": {
+            "hu": "ez teljesen rendhagyó alak lenne, de itt elég a szabályos végződést megfordítani",
+            "en": "this would be a fully irregular form, but here it's enough to swap the regular ending",
+            "es": "esto sería una forma totalmente irregular, pero aquí basta con invertir la terminación regular",
+            "de": "das wäre eine völlig unregelmäßige Form, aber hier reicht es, die regelmäßige Endung umzukehren"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "sp-why-02",
+      "es": "Es posible que comas aquí.",
+      "tr": {
+        "hu": "Lehet, hogy itt eszel.",
+        "en": "It's possible you eat here.",
+        "es": "Es posible que comas aquí.",
+        "de": "Es ist möglich, dass du hier isst."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szabályos ige, fordított végződés",
+            "en": "a regular verb, just the swapped ending",
+            "es": "verbo regular, solo la terminación invertida",
+            "de": "regelmäßiges Verb, nur die vertauschte Endung"
+          }
+        },
+        {
+          "text": {
+            "hu": "a tő megváltozik (yo-alak vagy tőhangváltás)",
+            "en": "the stem changes (from the yo-form or a vowel shift)",
+            "es": "la raíz cambia (de la forma yo o un cambio vocálico)",
+            "de": "der Stamm ändert sich (von der yo-Form oder einem Vokalwechsel)"
+          },
+          "wrong": {
+            "hu": "ez tőváltozás lenne, de ez az ige egyáltalán nem követi a szabályos mintát, fejből kell tudni",
+            "en": "this would be a stem change, but this verb doesn't follow the regular pattern at all, it must be memorized",
+            "es": "esto sería un cambio de raíz, pero este verbo no sigue el patrón regular en absoluto, hay que memorizarlo",
+            "de": "das wäre eine Stammänderung, aber dieses Verb folgt überhaupt nicht dem regelmäßigen Muster, es muss auswendig gelernt werden"
+          }
+        },
+        {
+          "text": {
+            "hu": "teljesen rendhagyó, meg kell tanulni fejből",
+            "en": "completely irregular, must be memorized",
+            "es": "totalmente irregular, hay que memorizarlo",
+            "de": "völlig unregelmäßig, muss auswendig gelernt werden"
+          },
+          "wrong": {
+            "hu": "ez teljesen rendhagyó alak lenne, de itt elég a szabályos végződést megfordítani",
+            "en": "this would be a fully irregular form, but here it's enough to swap the regular ending",
+            "es": "esto sería una forma totalmente irregular, pero aquí basta con invertir la terminación regular",
+            "de": "das wäre eine völlig unregelmäßige Form, aber hier reicht es, die regelmäßige Endung umzukehren"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "sp-why-03",
+      "es": "Dudo que tengas tiempo.",
+      "tr": {
+        "hu": "Kétlem, hogy van időd.",
+        "en": "I doubt you have time.",
+        "es": "Dudo que tengas tiempo.",
+        "de": "Ich bezweifle, dass du Zeit hast."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szabályos ige, fordított végződés",
+            "en": "a regular verb, just the swapped ending",
+            "es": "verbo regular, solo la terminación invertida",
+            "de": "regelmäßiges Verb, nur die vertauschte Endung"
+          },
+          "wrong": {
+            "hu": "ez szabályos ige lenne, de itt a tő maga változik, nem csak a végződés",
+            "en": "this would be a regular verb, but here the stem itself changes, not just the ending",
+            "es": "esto sería un verbo regular, pero aquí la raíz misma cambia, no solo la terminación",
+            "de": "das wäre ein regelmäßiges Verb, aber hier ändert sich der Stamm selbst, nicht nur die Endung"
+          }
+        },
+        {
+          "text": {
+            "hu": "a tő megváltozik (yo-alak vagy tőhangváltás)",
+            "en": "the stem changes (from the yo-form or a vowel shift)",
+            "es": "la raíz cambia (de la forma yo o un cambio vocálico)",
+            "de": "der Stamm ändert sich (von der yo-Form oder einem Vokalwechsel)"
+          }
+        },
+        {
+          "text": {
+            "hu": "teljesen rendhagyó, meg kell tanulni fejből",
+            "en": "completely irregular, must be memorized",
+            "es": "totalmente irregular, hay que memorizarlo",
+            "de": "völlig unregelmäßig, muss auswendig gelernt werden"
+          },
+          "wrong": {
+            "hu": "ez teljesen rendhagyó alak lenne, de itt elég a szabályos végződést megfordítani",
+            "en": "this would be a fully irregular form, but here it's enough to swap the regular ending",
+            "es": "esto sería una forma totalmente irregular, pero aquí basta con invertir la terminación regular",
+            "de": "das wäre eine völlig unregelmäßige Form, aber hier reicht es, die regelmäßige Endung umzukehren"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "sp-why-04",
+      "es": "Espero que puedas hablar español.",
+      "tr": {
+        "hu": "Remélem, tudsz spanyolul beszélni.",
+        "en": "I hope you can speak Spanish.",
+        "es": "Espero que puedas hablar español.",
+        "de": "Ich hoffe, du kannst Spanisch sprechen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szabályos ige, fordított végződés",
+            "en": "a regular verb, just the swapped ending",
+            "es": "verbo regular, solo la terminación invertida",
+            "de": "regelmäßiges Verb, nur die vertauschte Endung"
+          },
+          "wrong": {
+            "hu": "ez szabályos ige lenne, de itt a tő maga változik, nem csak a végződés",
+            "en": "this would be a regular verb, but here the stem itself changes, not just the ending",
+            "es": "esto sería un verbo regular, pero aquí la raíz misma cambia, no solo la terminación",
+            "de": "das wäre ein regelmäßiges Verb, aber hier ändert sich der Stamm selbst, nicht nur die Endung"
+          }
+        },
+        {
+          "text": {
+            "hu": "a tő megváltozik (yo-alak vagy tőhangváltás)",
+            "en": "the stem changes (from the yo-form or a vowel shift)",
+            "es": "la raíz cambia (de la forma yo o un cambio vocálico)",
+            "de": "der Stamm ändert sich (von der yo-Form oder einem Vokalwechsel)"
+          }
+        },
+        {
+          "text": {
+            "hu": "teljesen rendhagyó, meg kell tanulni fejből",
+            "en": "completely irregular, must be memorized",
+            "es": "totalmente irregular, hay que memorizarlo",
+            "de": "völlig unregelmäßig, muss auswendig gelernt werden"
+          },
+          "wrong": {
+            "hu": "ez teljesen rendhagyó alak lenne, de itt elég a szabályos végződést megfordítani",
+            "en": "this would be a fully irregular form, but here it's enough to swap the regular ending",
+            "es": "esto sería una forma totalmente irregular, pero aquí basta con invertir la terminación regular",
+            "de": "das wäre eine völlig unregelmäßige Form, aber hier reicht es, die regelmäßige Endung umzukehren"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "sp-why-05",
+      "es": "No creo que pidan un libro.",
+      "tr": {
+        "hu": "Nem hiszem, hogy könyvet kérnek.",
+        "en": "I don't think they're asking for a book.",
+        "es": "No creo que pidan un libro.",
+        "de": "Ich glaube nicht, dass sie ein Buch verlangen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szabályos ige, fordított végződés",
+            "en": "a regular verb, just the swapped ending",
+            "es": "verbo regular, solo la terminación invertida",
+            "de": "regelmäßiges Verb, nur die vertauschte Endung"
+          },
+          "wrong": {
+            "hu": "ez szabályos ige lenne, de itt a tő maga változik, nem csak a végződés",
+            "en": "this would be a regular verb, but here the stem itself changes, not just the ending",
+            "es": "esto sería un verbo regular, pero aquí la raíz misma cambia, no solo la terminación",
+            "de": "das wäre ein regelmäßiges Verb, aber hier ändert sich der Stamm selbst, nicht nur die Endung"
+          }
+        },
+        {
+          "text": {
+            "hu": "a tő megváltozik (yo-alak vagy tőhangváltás)",
+            "en": "the stem changes (from the yo-form or a vowel shift)",
+            "es": "la raíz cambia (de la forma yo o un cambio vocálico)",
+            "de": "der Stamm ändert sich (von der yo-Form oder einem Vokalwechsel)"
+          }
+        },
+        {
+          "text": {
+            "hu": "teljesen rendhagyó, meg kell tanulni fejből",
+            "en": "completely irregular, must be memorized",
+            "es": "totalmente irregular, hay que memorizarlo",
+            "de": "völlig unregelmäßig, muss auswendig gelernt werden"
+          },
+          "wrong": {
+            "hu": "ez teljesen rendhagyó alak lenne, de itt elég a szabályos végződést megfordítani",
+            "en": "this would be a fully irregular form, but here it's enough to swap the regular ending",
+            "es": "esto sería una forma totalmente irregular, pero aquí basta con invertir la terminación regular",
+            "de": "das wäre eine völlig unregelmäßige Form, aber hier reicht es, die regelmäßige Endung umzukehren"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "sp-why-06",
+      "es": "No pienso que sea tarde.",
+      "tr": {
+        "hu": "Nem gondolom, hogy késő van.",
+        "en": "I don't think it's late.",
+        "es": "No pienso que sea tarde.",
+        "de": "Ich denke nicht, dass es spät ist."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szabályos ige, fordított végződés",
+            "en": "a regular verb, just the swapped ending",
+            "es": "verbo regular, solo la terminación invertida",
+            "de": "regelmäßiges Verb, nur die vertauschte Endung"
+          },
+          "wrong": {
+            "hu": "ez szabályos ige lenne, de itt a tő maga változik, nem csak a végződés",
+            "en": "this would be a regular verb, but here the stem itself changes, not just the ending",
+            "es": "esto sería un verbo regular, pero aquí la raíz misma cambia, no solo la terminación",
+            "de": "das wäre ein regelmäßiges Verb, aber hier ändert sich der Stamm selbst, nicht nur die Endung"
+          }
+        },
+        {
+          "text": {
+            "hu": "a tő megváltozik (yo-alak vagy tőhangváltás)",
+            "en": "the stem changes (from the yo-form or a vowel shift)",
+            "es": "la raíz cambia (de la forma yo o un cambio vocálico)",
+            "de": "der Stamm ändert sich (von der yo-Form oder einem Vokalwechsel)"
+          },
+          "wrong": {
+            "hu": "ez tőváltozás lenne, de ez az ige egyáltalán nem követi a szabályos mintát, fejből kell tudni",
+            "en": "this would be a stem change, but this verb doesn't follow the regular pattern at all, it must be memorized",
+            "es": "esto sería un cambio de raíz, pero este verbo no sigue el patrón regular en absoluto, hay que memorizarlo",
+            "de": "das wäre eine Stammänderung, aber dieses Verb folgt überhaupt nicht dem regelmäßigen Muster, es muss auswendig gelernt werden"
+          }
+        },
+        {
+          "text": {
+            "hu": "teljesen rendhagyó, meg kell tanulni fejből",
+            "en": "completely irregular, must be memorized",
+            "es": "totalmente irregular, hay que memorizarlo",
+            "de": "völlig unregelmäßig, muss auswendig gelernt werden"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "sp-why-07",
+      "es": "Es posible que vayamos hoy.",
+      "tr": {
+        "hu": "Lehet, hogy ma megyünk.",
+        "en": "It's possible we go today.",
+        "es": "Es posible que vayamos hoy.",
+        "de": "Es ist möglich, dass wir heute gehen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szabályos ige, fordított végződés",
+            "en": "a regular verb, just the swapped ending",
+            "es": "verbo regular, solo la terminación invertida",
+            "de": "regelmäßiges Verb, nur die vertauschte Endung"
+          },
+          "wrong": {
+            "hu": "ez szabályos ige lenne, de itt a tő maga változik, nem csak a végződés",
+            "en": "this would be a regular verb, but here the stem itself changes, not just the ending",
+            "es": "esto sería un verbo regular, pero aquí la raíz misma cambia, no solo la terminación",
+            "de": "das wäre ein regelmäßiges Verb, aber hier ändert sich der Stamm selbst, nicht nur die Endung"
+          }
+        },
+        {
+          "text": {
+            "hu": "a tő megváltozik (yo-alak vagy tőhangváltás)",
+            "en": "the stem changes (from the yo-form or a vowel shift)",
+            "es": "la raíz cambia (de la forma yo o un cambio vocálico)",
+            "de": "der Stamm ändert sich (von der yo-Form oder einem Vokalwechsel)"
+          },
+          "wrong": {
+            "hu": "ez tőváltozás lenne, de ez az ige egyáltalán nem követi a szabályos mintát, fejből kell tudni",
+            "en": "this would be a stem change, but this verb doesn't follow the regular pattern at all, it must be memorized",
+            "es": "esto sería un cambio de raíz, pero este verbo no sigue el patrón regular en absoluto, hay que memorizarlo",
+            "de": "das wäre eine Stammänderung, aber dieses Verb folgt überhaupt nicht dem regelmäßigen Muster, es muss auswendig gelernt werden"
+          }
+        },
+        {
+          "text": {
+            "hu": "teljesen rendhagyó, meg kell tanulni fejből",
+            "en": "completely irregular, must be memorized",
+            "es": "totalmente irregular, hay que memorizarlo",
+            "de": "völlig unregelmäßig, muss auswendig gelernt werden"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "sp-why-08",
+      "es": "Dudo que sepas la verdad.",
+      "tr": {
+        "hu": "Kétlem, hogy tudod az igazat.",
+        "en": "I doubt you know the truth.",
+        "es": "Dudo que sepas la verdad.",
+        "de": "Ich bezweifle, dass du die Wahrheit weißt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szabályos ige, fordított végződés",
+            "en": "a regular verb, just the swapped ending",
+            "es": "verbo regular, solo la terminación invertida",
+            "de": "regelmäßiges Verb, nur die vertauschte Endung"
+          },
+          "wrong": {
+            "hu": "ez szabályos ige lenne, de itt a tő maga változik, nem csak a végződés",
+            "en": "this would be a regular verb, but here the stem itself changes, not just the ending",
+            "es": "esto sería un verbo regular, pero aquí la raíz misma cambia, no solo la terminación",
+            "de": "das wäre ein regelmäßiges Verb, aber hier ändert sich der Stamm selbst, nicht nur die Endung"
+          }
+        },
+        {
+          "text": {
+            "hu": "a tő megváltozik (yo-alak vagy tőhangváltás)",
+            "en": "the stem changes (from the yo-form or a vowel shift)",
+            "es": "la raíz cambia (de la forma yo o un cambio vocálico)",
+            "de": "der Stamm ändert sich (von der yo-Form oder einem Vokalwechsel)"
+          },
+          "wrong": {
+            "hu": "ez tőváltozás lenne, de ez az ige egyáltalán nem követi a szabályos mintát, fejből kell tudni",
+            "en": "this would be a stem change, but this verb doesn't follow the regular pattern at all, it must be memorized",
+            "es": "esto sería un cambio de raíz, pero este verbo no sigue el patrón regular en absoluto, hay que memorizarlo",
+            "de": "das wäre eine Stammänderung, aber dieses Verb folgt überhaupt nicht dem regelmäßigen Muster, es muss auswendig gelernt werden"
+          }
+        },
+        {
+          "text": {
+            "hu": "teljesen rendhagyó, meg kell tanulni fejből",
+            "en": "completely irregular, must be memorized",
+            "es": "totalmente irregular, hay que memorizarlo",
+            "de": "völlig unregelmäßig, muss auswendig gelernt werden"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      }
+    },
+    {
+      "id": "sp-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Azt hiszem, ma beszélek a barátommal.",
+        "en": "I think I talk to my friend today.",
+        "es": "Creo que hablo con mi amigo hoy.",
+        "de": "Ich glaube, ich spreche heute mit meinem Freund."
+      },
+      "answer": "No creo que hable con mi amigo hoy.",
+      "accept": [
+        "No creo que yo hable con mi amigo hoy."
+      ],
+      "wordIds": [
+        "22",
+        "27",
+        "38",
+        "1312"
+      ],
+      "why": {
+        "hu": "A tagadott „creo” kétséget fejez ki, ezért kötőmód kell. A(z) hablar szabályos -ar ige, a végződés megfordul: hable.",
+        "en": "Negated “creo” expresses doubt, so it takes the subjunctive. Hablar is a regular -ar verb, the ending swaps: hable.",
+        "es": "El “creo” negado expresa duda, por eso pide subjuntivo. Hablar es un verbo regular en -ar, la terminación se invierte: hable.",
+        "de": "Das verneinte “creo” drückt Zweifel aus, deshalb steht der Subjuntivo. Hablar ist ein regelmäßiges -ar-Verb, die Endung kehrt sich um: hable."
+      }
+    },
+    {
+      "id": "sp-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Igaz, hogy nagyon gyorsan beszélsz.",
+        "en": "It's true that you speak very fast.",
+        "es": "Es verdad que hablas muy rápido.",
+        "de": "Es ist wahr, dass du sehr schnell sprichst."
+      },
+      "answer": "No es verdad que hables muy rápido.",
+      "accept": [
+        "No es verdad que tú hables muy rápido."
+      ],
+      "wordIds": [
+        "27",
+        "74",
+        "90"
+      ],
+      "why": {
+        "hu": "A tagadott „es verdad” bizonytalanná teszi az állítást, ezért kötőmód kell. A(z) hablar szabályos -ar ige, a végződés megfordul: hables.",
+        "en": "Negating “es verdad” makes the statement uncertain, so it takes the subjunctive. Hablar is a regular -ar verb, the ending swaps: hables.",
+        "es": "Negar “es verdad” hace incierta la afirmación, por eso pide subjuntivo. Hablar es un verbo regular en -ar, la terminación se invierte: hables.",
+        "de": "Die Verneinung von “es verdad” macht die Aussage unsicher, deshalb steht der Subjuntivo. Hablar ist ein regelmäßiges -ar-Verb, die Endung kehrt sich um: hables."
+      }
+    },
+    {
+      "id": "sp-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Tudom, hogy beszél a családjával.",
+        "en": "I know he talks to his family.",
+        "es": "Sé que habla con su familia.",
+        "de": "Ich weiß, dass er mit seiner Familie spricht."
+      },
+      "answer": "Dudo que hable con su familia.",
+      "accept": [
+        "Dudo que él hable con su familia."
+      ],
+      "wordIds": [
+        "27",
+        "28",
+        "1852",
+        "3822"
+      ],
+      "why": {
+        "hu": "A „sé” bizonyosságból a „dudo” kétségbe vált, ezért kötőmód kell. A(z) hablar szabályos -ar ige, a végződés megfordul: hable.",
+        "en": "“Sé” (certainty) switches to “dudo” (doubt), so it takes the subjunctive. Hablar is a regular -ar verb, the ending swaps: hable.",
+        "es": "“Sé” (certeza) cambia a “dudo” (duda), por eso pide subjuntivo. Hablar es un verbo regular en -ar, la terminación se invierte: hable.",
+        "de": "“Sé” (Gewissheit) wechselt zu “dudo” (Zweifel), deshalb steht der Subjuntivo. Hablar ist ein regelmäßiges -ar-Verb, die Endung kehrt sich um: hable."
+      }
+    },
+    {
+      "id": "sp-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Tudom, hogy nem beszélünk angolul otthon.",
+        "en": "I know we don't speak English at home.",
+        "es": "Sé que no hablamos inglés en casa.",
+        "de": "Ich weiß, dass wir zu Hause kein Englisch sprechen."
+      },
+      "answer": "Dudo que no hablemos inglés en casa.",
+      "accept": [
+        "Dudo que nosotros no hablemos inglés en casa."
+      ],
+      "wordIds": [
+        "1",
+        "14",
+        "27",
+        "28",
+        "3607",
+        "3822"
+      ],
+      "why": {
+        "hu": "A „sé” bizonyosságból a „dudo” kétségbe vált, ezért kötőmód kell. A(z) hablar szabályos -ar ige, a végződés megfordul: hablemos.",
+        "en": "“Sé” (certainty) switches to “dudo” (doubt), so it takes the subjunctive. Hablar is a regular -ar verb, the ending swaps: hablemos.",
+        "es": "“Sé” (certeza) cambia a “dudo” (duda), por eso pide subjuntivo. Hablar es un verbo regular en -ar, la terminación se invierte: hablemos.",
+        "de": "“Sé” (Gewissheit) wechselt zu “dudo” (Zweifel), deshalb steht der Subjuntivo. Hablar ist ein regelmäßiges -ar-Verb, die Endung kehrt sich um: hablemos."
+      }
+    },
+    {
+      "id": "sp-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Világos, hogy beszélnek a tanárral?",
+        "en": "Is it clear that they talk to the teacher?",
+        "es": "¿Está claro que hablan con el profesor?",
+        "de": "Ist es klar, dass sie mit dem Lehrer sprechen?"
+      },
+      "answer": "¿No está claro que hablen con el profesor?",
+      "accept": [
+        "¿No está claro que ustedes hablen con el profesor?"
+      ],
+      "wordIds": [
+        "27",
+        "1147",
+        "1250"
+      ],
+      "why": {
+        "hu": "A tagadott „está claro” bizonytalanná teszi az állítást, ezért kötőmód kell. A(z) hablar szabályos -ar ige, a végződés megfordul: hablen.",
+        "en": "Negating “está claro” makes the statement uncertain, so it takes the subjunctive. Hablar is a regular -ar verb, the ending swaps: hablen.",
+        "es": "Negar “está claro” hace incierta la afirmación, por eso pide subjuntivo. Hablar es un verbo regular en -ar, la terminación se invierte: hablen.",
+        "de": "Die Verneinung von “está claro” macht die Aussage unsicher, deshalb steht der Subjuntivo. Hablar ist ein regelmäßiges -ar-Verb, die Endung kehrt sich um: hablen."
+      }
+    },
+    {
+      "id": "sp-tr-06",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Biztos, hogy sokat eszem a buliban.",
+        "en": "It's certain that I eat a lot at the party.",
+        "es": "Es seguro que como mucho en la fiesta.",
+        "de": "Es ist sicher, dass ich auf der Party viel esse."
+      },
+      "answer": "Es posible que coma mucho en la fiesta.",
+      "accept": [
+        "Es posible que yo coma mucho en la fiesta."
+      ],
+      "wordIds": [
+        "25",
+        "89",
+        "218",
+        "2023",
+        "3752"
+      ],
+      "why": {
+        "hu": "A biztos „es seguro” helyett a bizonytalan „es posible” kötőmódot kér. A(z) comer szabályos -er ige, a végződés megfordul: coma.",
+        "en": "The certain “es seguro” becomes the uncertain “es posible”, which takes the subjunctive. Comer is a regular -er verb, the ending swaps: coma.",
+        "es": "Lo seguro “es seguro” pasa a lo incierto “es posible”, que pide subjuntivo. Comer es un verbo regular en -er, la terminación se invierte: coma.",
+        "de": "Das sichere “es seguro” wird zum unsicheren “es posible”, das den Subjuntivo verlangt. Comer ist ein regelmäßiges -er-Verb, die Endung kehrt sich um: coma."
+      }
+    },
+    {
+      "id": "sp-tr-07",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Látom, hogy nagyon keveset eszel.",
+        "en": "I see that you eat very little.",
+        "es": "Veo que comes muy poco.",
+        "de": "Ich sehe, dass du sehr wenig isst."
+      },
+      "answer": "Espero que comas muy poco.",
+      "accept": [
+        "Espero que tú comas muy poco."
+      ],
+      "wordIds": [
+        "25",
+        "37",
+        "80",
+        "1976"
+      ],
+      "why": {
+        "hu": "A tényt jelentő „veo” helyett az óhajt jelentő „espero” kötőmódot kér. A(z) comer szabályos -er ige, a végződés megfordul: comas.",
+        "en": "The factual “veo” becomes the wishful “espero”, which takes the subjunctive. Comer is a regular -er verb, the ending swaps: comas.",
+        "es": "El hecho “veo” pasa al deseo “espero”, que pide subjuntivo. Comer es un verbo regular en -er, la terminación se invierte: comas.",
+        "de": "Die Tatsache “veo” wird zum Wunsch “espero”, der den Subjuntivo verlangt. Comer ist ein regelmäßiges -er-Verb, die Endung kehrt sich um: comas."
+      }
+    },
+    {
+      "id": "sp-tr-08",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Azt mondja, hogy a családjával eszik.",
+        "en": "He says he eats with his family.",
+        "es": "Dice que come con su familia.",
+        "de": "Er sagt, dass er mit seiner Familie isst."
+      },
+      "answer": "Quiere que coma con su familia.",
+      "accept": [
+        "Quiere que él coma con su familia."
+      ],
+      "wordIds": [
+        "25",
+        "30",
+        "35",
+        "1852"
+      ],
+      "why": {
+        "hu": "A tényt közlő „dice” helyett az akaratot kifejező „quiere” kötőmódot kér. A(z) comer szabályos -er ige, a végződés megfordul: coma.",
+        "en": "The reporting “dice” becomes the wanting “quiere”, which takes the subjunctive. Comer is a regular -er verb, the ending swaps: coma.",
+        "es": "Lo que se dice “dice” pasa a lo que se quiere “quiere”, que pide subjuntivo. Comer es un verbo regular en -er, la terminación se invierte: coma.",
+        "de": "Das Berichtete “dice” wird zum Gewollten “quiere”, das den Subjuntivo verlangt. Comer ist ein regelmäßiges -er-Verb, die Endung kehrt sich um: coma."
+      }
+    },
+    {
+      "id": "sp-tr-09",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Biztos, hogy nem eszünk húst.",
+        "en": "It's certain that we don't eat meat.",
+        "es": "Es seguro que no comemos carne.",
+        "de": "Es ist sicher, dass wir kein Fleisch essen."
+      },
+      "answer": "Es posible que no comamos carne.",
+      "accept": [
+        "Es posible que nosotros no comamos carne."
+      ],
+      "wordIds": [
+        "1",
+        "25",
+        "89",
+        "1058",
+        "2023"
+      ],
+      "why": {
+        "hu": "A biztos „es seguro” helyett a bizonytalan „es posible” kötőmódot kér. A(z) comer szabályos -er ige, a végződés megfordul: comamos.",
+        "en": "The certain “es seguro” becomes the uncertain “es posible”, which takes the subjunctive. Comer is a regular -er verb, the ending swaps: comamos.",
+        "es": "Lo seguro “es seguro” pasa a lo incierto “es posible”, que pide subjuntivo. Comer es un verbo regular en -er, la terminación se invierte: comamos.",
+        "de": "Das sichere “es seguro” wird zum unsicheren “es posible”, das den Subjuntivo verlangt. Comer ist ein regelmäßiges -er-Verb, die Endung kehrt sich um: comamos."
+      }
+    },
+    {
+      "id": "sp-tr-10",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Azt gondolod, hogy vidéken esznek?",
+        "en": "Do you think they eat in the countryside?",
+        "es": "¿Piensas que comen en el campo?",
+        "de": "Denkst du, dass sie auf dem Land essen?"
+      },
+      "answer": "¿No piensas que coman en el campo?",
+      "accept": [
+        "¿No piensas que ustedes coman en el campo?"
+      ],
+      "wordIds": [
+        "25",
+        "78",
+        "1862"
+      ],
+      "why": {
+        "hu": "A tagadott „pienso” kétséget fejez ki, ezért kötőmód kell. A(z) comer szabályos -er ige, a végződés megfordul: coman.",
+        "en": "Negated “pienso” expresses doubt, so it takes the subjunctive. Comer is a regular -er verb, the ending swaps: coman.",
+        "es": "El “pienso” negado expresa duda, por eso pide subjuntivo. Comer es un verbo regular en -er, la terminación se invierte: coman.",
+        "de": "Das verneinte “pienso” drückt Zweifel aus, deshalb steht der Subjuntivo. Comer ist ein regelmäßiges -er-Verb, die Endung kehrt sich um: coman."
+      }
+    },
+    {
+      "id": "sp-tr-11",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Azt hiszem, közel lakom a strandhoz.",
+        "en": "I think I live close to the beach.",
+        "es": "Creo que vivo cerca de la playa.",
+        "de": "Ich glaube, ich wohne in der Nähe des Strandes."
+      },
+      "answer": "No creo que viva cerca de la playa.",
+      "accept": [
+        "No creo que yo viva cerca de la playa."
+      ],
+      "wordIds": [
+        "38",
+        "82",
+        "1869",
+        "2008"
+      ],
+      "why": {
+        "hu": "A tagadott „creo” kétséget fejez ki, ezért kötőmód kell. A(z) vivir szabályos -ir ige, a végződés megfordul: viva.",
+        "en": "Negated “creo” expresses doubt, so it takes the subjunctive. Vivir is a regular -ir verb, the ending swaps: viva.",
+        "es": "El “creo” negado expresa duda, por eso pide subjuntivo. Vivir es un verbo regular en -ir, la terminación se invierte: viva.",
+        "de": "Das verneinte “creo” drückt Zweifel aus, deshalb steht der Subjuntivo. Vivir ist ein regelmäßiges -ir-Verb, die Endung kehrt sich um: viva."
+      }
+    },
+    {
+      "id": "sp-tr-12",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Igaz, hogy a városban laksz.",
+        "en": "It's true that you live in the city.",
+        "es": "Es verdad que vives en la ciudad.",
+        "de": "Es ist wahr, dass du in der Stadt wohnst."
+      },
+      "answer": "No es verdad que vivas en la ciudad.",
+      "accept": [
+        "No es verdad que tú vivas en la ciudad."
+      ],
+      "wordIds": [
+        "74",
+        "82",
+        "1851"
+      ],
+      "why": {
+        "hu": "A tagadott „es verdad” bizonytalanná teszi az állítást, ezért kötőmód kell. A(z) vivir szabályos -ir ige, a végződés megfordul: vivas.",
+        "en": "Negating “es verdad” makes the statement uncertain, so it takes the subjunctive. Vivir is a regular -ir verb, the ending swaps: vivas.",
+        "es": "Negar “es verdad” hace incierta la afirmación, por eso pide subjuntivo. Vivir es un verbo regular en -ir, la terminación se invierte: vivas.",
+        "de": "Die Verneinung von “es verdad” macht die Aussage unsicher, deshalb steht der Subjuntivo. Vivir ist ein regelmäßiges -ir-Verb, die Endung kehrt sich um: vivas."
+      }
+    },
+    {
+      "id": "sp-tr-13",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Tudom, hogy egyedül él.",
+        "en": "I know he lives alone.",
+        "es": "Sé que vive solo.",
+        "de": "Ich weiß, dass er allein lebt."
+      },
+      "answer": "Dudo que viva solo.",
+      "accept": [
+        "Dudo que él viva solo."
+      ],
+      "wordIds": [
+        "28",
+        "82",
+        "87",
+        "3822"
+      ],
+      "why": {
+        "hu": "A „sé” bizonyosságból a „dudo” kétségbe vált, ezért kötőmód kell. A(z) vivir szabályos -ir ige, a végződés megfordul: viva.",
+        "en": "“Sé” (certainty) switches to “dudo” (doubt), so it takes the subjunctive. Vivir is a regular -ir verb, the ending swaps: viva.",
+        "es": "“Sé” (certeza) cambia a “dudo” (duda), por eso pide subjuntivo. Vivir es un verbo regular en -ir, la terminación se invierte: viva.",
+        "de": "“Sé” (Gewissheit) wechselt zu “dudo” (Zweifel), deshalb steht der Subjuntivo. Vivir ist ein regelmäßiges -ir-Verb, die Endung kehrt sich um: viva."
+      }
+    },
+    {
+      "id": "sp-tr-14",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Látom, hogy nem élünk együtt.",
+        "en": "I see that we don't live together.",
+        "es": "Veo que no vivimos juntos.",
+        "de": "Ich sehe, dass wir nicht zusammen leben."
+      },
+      "answer": "Espero que no vivamos juntos.",
+      "accept": [
+        "Espero que nosotros no vivamos juntos."
+      ],
+      "wordIds": [
+        "1",
+        "37",
+        "80",
+        "82",
+        "86"
+      ],
+      "why": {
+        "hu": "A tényt jelentő „veo” helyett az óhajt jelentő „espero” kötőmódot kér. A(z) vivir szabályos -ir ige, a végződés megfordul: vivamos.",
+        "en": "The factual “veo” becomes the wishful “espero”, which takes the subjunctive. Vivir is a regular -ir verb, the ending swaps: vivamos.",
+        "es": "El hecho “veo” pasa al deseo “espero”, que pide subjuntivo. Vivir es un verbo regular en -ir, la terminación se invierte: vivamos.",
+        "de": "Die Tatsache “veo” wird zum Wunsch “espero”, der den Subjuntivo verlangt. Vivir ist ein regelmäßiges -ir-Verb, die Endung kehrt sich um: vivamos."
+      }
+    },
+    {
+      "id": "sp-tr-15",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Világos, hogy itt élnek?",
+        "en": "Is it clear that they live here?",
+        "es": "¿Está claro que viven aquí?",
+        "de": "Ist es klar, dass sie hier leben?"
+      },
+      "answer": "¿No está claro que vivan aquí?",
+      "accept": [
+        "¿No está claro que ustedes vivan aquí?"
+      ],
+      "wordIds": [
+        "8",
+        "82",
+        "1250"
+      ],
+      "why": {
+        "hu": "A tagadott „está claro” bizonytalanná teszi az állítást, ezért kötőmód kell. A(z) vivir szabályos -ir ige, a végződés megfordul: vivan.",
+        "en": "Negating “está claro” makes the statement uncertain, so it takes the subjunctive. Vivir is a regular -ir verb, the ending swaps: vivan.",
+        "es": "Negar “está claro” hace incierta la afirmación, por eso pide subjuntivo. Vivir es un verbo regular en -ir, la terminación se invierte: vivan.",
+        "de": "Die Verneinung von “está claro” macht die Aussage unsicher, deshalb steht der Subjuntivo. Vivir ist ein regelmäßiges -ir-Verb, die Endung kehrt sich um: vivan."
+      }
+    },
+    {
+      "id": "sp-tr-16",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Biztos, hogy sok pénzem van.",
+        "en": "It's certain that I have a lot of money.",
+        "es": "Es seguro que tengo mucho dinero.",
+        "de": "Es ist sicher, dass ich viel Geld habe."
+      },
+      "answer": "Es posible que tenga mucho dinero.",
+      "accept": [
+        "Es posible que yo tenga mucho dinero."
+      ],
+      "wordIds": [
+        "21",
+        "33",
+        "89",
+        "2023",
+        "3752"
+      ],
+      "why": {
+        "hu": "A biztos „es seguro” helyett a bizonytalan „es posible” kötőmódot kér. A(z) tener yo-alakja (tengo) rendhagyó, ez öröklődik: tenga.",
+        "en": "The certain “es seguro” becomes the uncertain “es posible”, which takes the subjunctive. Tener's yo-form (tengo) is irregular, and that carries over: tenga.",
+        "es": "Lo seguro “es seguro” pasa a lo incierto “es posible”, que pide subjuntivo. La forma yo de tener (tengo) es irregular, y eso se hereda: tenga.",
+        "de": "Das sichere “es seguro” wird zum unsicheren “es posible”, das den Subjuntivo verlangt. Teners yo-Form (tengo) ist unregelmäßig, das vererbt sich: tenga."
+      }
+    },
+    {
+      "id": "sp-tr-17",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Látom, hogy sok szerencséd van.",
+        "en": "I see that you have a lot of luck.",
+        "es": "Veo que tienes mucha suerte.",
+        "de": "Ich sehe, dass du viel Glück hast."
+      },
+      "answer": "Espero que tengas mucha suerte.",
+      "accept": [
+        "Espero que tú tengas mucha suerte."
+      ],
+      "wordIds": [
+        "33",
+        "37",
+        "80",
+        "709"
+      ],
+      "why": {
+        "hu": "A tényt jelentő „veo” helyett az óhajt jelentő „espero” kötőmódot kér. A(z) tener yo-alakja (tengo) rendhagyó, ez öröklődik: tengas.",
+        "en": "The factual “veo” becomes the wishful “espero”, which takes the subjunctive. Tener's yo-form (tengo) is irregular, and that carries over: tengas.",
+        "es": "El hecho “veo” pasa al deseo “espero”, que pide subjuntivo. La forma yo de tener (tengo) es irregular, y eso se hereda: tengas.",
+        "de": "Die Tatsache “veo” wird zum Wunsch “espero”, der den Subjuntivo verlangt. Teners yo-Form (tengo) ist unregelmäßig, das vererbt sich: tengas."
+      }
+    },
+    {
+      "id": "sp-tr-18",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Tudom, hogy nincs ideje.",
+        "en": "I know he doesn't have time.",
+        "es": "Sé que no tiene tiempo.",
+        "de": "Ich weiß, dass er keine Zeit hat."
+      },
+      "answer": "Dudo que no tenga tiempo.",
+      "accept": [
+        "Dudo que él no tenga tiempo."
+      ],
+      "wordIds": [
+        "1",
+        "13",
+        "28",
+        "33",
+        "3822"
+      ],
+      "why": {
+        "hu": "A „sé” bizonyosságból a „dudo” kétségbe vált, ezért kötőmód kell. A(z) tener yo-alakja (tengo) rendhagyó, ez öröklődik: tenga.",
+        "en": "“Sé” (certainty) switches to “dudo” (doubt), so it takes the subjunctive. Tener's yo-form (tengo) is irregular, and that carries over: tenga.",
+        "es": "“Sé” (certeza) cambia a “dudo” (duda), por eso pide subjuntivo. La forma yo de tener (tengo) es irregular, y eso se hereda: tenga.",
+        "de": "“Sé” (Gewissheit) wechselt zu “dudo” (Zweifel), deshalb steht der Subjuntivo. Teners yo-Form (tengo) ist unregelmäßig, das vererbt sich: tenga."
+      }
+    },
+    {
+      "id": "sp-tr-19",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Azt mondja, hogy vigyázunk.",
+        "en": "He says we are careful.",
+        "es": "Dice que tenemos cuidado.",
+        "de": "Er sagt, dass wir vorsichtig sind."
+      },
+      "answer": "Quiere que tengamos cuidado.",
+      "accept": [
+        "Quiere que nosotros tengamos cuidado."
+      ],
+      "wordIds": [
+        "30",
+        "33",
+        "35",
+        "2007"
+      ],
+      "why": {
+        "hu": "A tényt közlő „dice” helyett az akaratot kifejező „quiere” kötőmódot kér. A(z) tener yo-alakja (tengo) rendhagyó, ez öröklődik: tengamos.",
+        "en": "The reporting “dice” becomes the wanting “quiere”, which takes the subjunctive. Tener's yo-form (tengo) is irregular, and that carries over: tengamos.",
+        "es": "Lo que se dice “dice” pasa a lo que se quiere “quiere”, que pide subjuntivo. La forma yo de tener (tengo) es irregular, y eso se hereda: tengamos.",
+        "de": "Das Berichtete “dice” wird zum Gewollten “quiere”, das den Subjuntivo verlangt. Teners yo-Form (tengo) ist unregelmäßig, das vererbt sich: tengamos."
+      }
+    },
+    {
+      "id": "sp-tr-20",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Azt gondolod, hogy van kutyájuk?",
+        "en": "Do you think they have a dog?",
+        "es": "¿Piensas que tienen un perro?",
+        "de": "Denkst du, dass sie einen Hund haben?"
+      },
+      "answer": "¿No piensas que tengan un perro?",
+      "accept": [
+        "¿No piensas que ustedes tengan un perro?"
+      ],
+      "wordIds": [
+        "33",
+        "78",
+        "1143"
+      ],
+      "why": {
+        "hu": "A tagadott „pienso” kétséget fejez ki, ezért kötőmód kell. A(z) tener yo-alakja (tengo) rendhagyó, ez öröklődik: tengan.",
+        "en": "Negated “pienso” expresses doubt, so it takes the subjunctive. Tener's yo-form (tengo) is irregular, and that carries over: tengan.",
+        "es": "El “pienso” negado expresa duda, por eso pide subjuntivo. La forma yo de tener (tengo) es irregular, y eso se hereda: tengan.",
+        "de": "Das verneinte “pienso” drückt Zweifel aus, deshalb steht der Subjuntivo. Teners yo-Form (tengo) ist unregelmäßig, das vererbt sich: tengan."
+      }
+    },
+    {
+      "id": "sp-tr-21",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Azt hiszem, ma én készítem az ételt.",
+        "en": "I think I make the food today.",
+        "es": "Creo que hago la comida hoy.",
+        "de": "Ich glaube, ich mache heute das Essen."
+      },
+      "answer": "No creo que haga la comida hoy.",
+      "accept": [
+        "No creo que yo haga la comida hoy."
+      ],
+      "wordIds": [
+        "34",
+        "38",
+        "70",
+        "1312"
+      ],
+      "why": {
+        "hu": "A tagadott „creo” kétséget fejez ki, ezért kötőmód kell. A(z) hacer yo-alakja (hago) rendhagyó, ez öröklődik: haga.",
+        "en": "Negated “creo” expresses doubt, so it takes the subjunctive. Hacer's yo-form (hago) is irregular, and that carries over: haga.",
+        "es": "El “creo” negado expresa duda, por eso pide subjuntivo. La forma yo de hacer (hago) es irregular, y eso se hereda: haga.",
+        "de": "Das verneinte “creo” drückt Zweifel aus, deshalb steht der Subjuntivo. Hacers yo-Form (hago) ist unregelmäßig, das vererbt sich: haga."
+      }
+    },
+    {
+      "id": "sp-tr-22",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Igaz, hogy holnap írod a vizsgát.",
+        "en": "It's true that you take the exam tomorrow.",
+        "es": "Es verdad que haces el examen mañana.",
+        "de": "Es ist wahr, dass du morgen die Prüfung machst."
+      },
+      "answer": "No es verdad que hagas el examen mañana.",
+      "accept": [
+        "No es verdad que tú hagas el examen mañana."
+      ],
+      "wordIds": [
+        "34",
+        "56",
+        "74",
+        "1857"
+      ],
+      "why": {
+        "hu": "A tagadott „es verdad” bizonytalanná teszi az állítást, ezért kötőmód kell. A(z) hacer yo-alakja (hago) rendhagyó, ez öröklődik: hagas.",
+        "en": "Negating “es verdad” makes the statement uncertain, so it takes the subjunctive. Hacer's yo-form (hago) is irregular, and that carries over: hagas.",
+        "es": "Negar “es verdad” hace incierta la afirmación, por eso pide subjuntivo. La forma yo de hacer (hago) es irregular, y eso se hereda: hagas.",
+        "de": "Die Verneinung von “es verdad” macht die Aussage unsicher, deshalb steht der Subjuntivo. Hacers yo-Form (hago) ist unregelmäßig, das vererbt sich: hagas."
+      }
+    },
+    {
+      "id": "sp-tr-23",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Tudom, hogy utazik egyet.",
+        "en": "I know he is taking a trip.",
+        "es": "Sé que hace un viaje.",
+        "de": "Ich weiß, dass er eine Reise macht."
+      },
+      "answer": "Dudo que haga un viaje.",
+      "accept": [
+        "Dudo que él haga un viaje."
+      ],
+      "wordIds": [
+        "28",
+        "34",
+        "202",
+        "3822"
+      ],
+      "why": {
+        "hu": "A „sé” bizonyosságból a „dudo” kétségbe vált, ezért kötőmód kell. A(z) hacer yo-alakja (hago) rendhagyó, ez öröklődik: haga.",
+        "en": "“Sé” (certainty) switches to “dudo” (doubt), so it takes the subjunctive. Hacer's yo-form (hago) is irregular, and that carries over: haga.",
+        "es": "“Sé” (certeza) cambia a “dudo” (duda), por eso pide subjuntivo. La forma yo de hacer (hago) es irregular, y eso se hereda: haga.",
+        "de": "“Sé” (Gewissheit) wechselt zu “dudo” (Zweifel), deshalb steht der Subjuntivo. Hacers yo-Form (hago) ist unregelmäßig, das vererbt sich: haga."
+      }
+    },
+    {
+      "id": "sp-tr-24",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Azt mondja, hogy nem csinálunk semmit.",
+        "en": "He says we don't do anything.",
+        "es": "Dice que no hacemos nada.",
+        "de": "Er sagt, dass wir nichts tun."
+      },
+      "answer": "Quiere que no hagamos nada.",
+      "accept": [
+        "Quiere que nosotros no hagamos nada."
+      ],
+      "wordIds": [
+        "1",
+        "11",
+        "30",
+        "34",
+        "35"
+      ],
+      "why": {
+        "hu": "A tényt közlő „dice” helyett az akaratot kifejező „quiere” kötőmódot kér. A(z) hacer yo-alakja (hago) rendhagyó, ez öröklődik: hagamos.",
+        "en": "The reporting “dice” becomes the wanting “quiere”, which takes the subjunctive. Hacer's yo-form (hago) is irregular, and that carries over: hagamos.",
+        "es": "Lo que se dice “dice” pasa a lo que se quiere “quiere”, que pide subjuntivo. La forma yo de hacer (hago) es irregular, y eso se hereda: hagamos.",
+        "de": "Das Berichtete “dice” wird zum Gewollten “quiere”, das den Subjuntivo verlangt. Hacers yo-Form (hago) ist unregelmäßig, das vererbt sich: hagamos."
+      }
+    },
+    {
+      "id": "sp-tr-25",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Világos, hogy ajándékot adnak?",
+        "en": "Is it clear that they're making a gift?",
+        "es": "¿Está claro que hacen un regalo?",
+        "de": "Ist es klar, dass sie ein Geschenk machen?"
+      },
+      "answer": "¿No está claro que hagan un regalo?",
+      "accept": [
+        "¿No está claro que ustedes hagan un regalo?"
+      ],
+      "wordIds": [
+        "34",
+        "217",
+        "1250"
+      ],
+      "why": {
+        "hu": "A tagadott „está claro” bizonytalanná teszi az állítást, ezért kötőmód kell. A(z) hacer yo-alakja (hago) rendhagyó, ez öröklődik: hagan.",
+        "en": "Negating “está claro” makes the statement uncertain, so it takes the subjunctive. Hacer's yo-form (hago) is irregular, and that carries over: hagan.",
+        "es": "Negar “está claro” hace incierta la afirmación, por eso pide subjuntivo. La forma yo de hacer (hago) es irregular, y eso se hereda: hagan.",
+        "de": "Die Verneinung von “está claro” macht die Aussage unsicher, deshalb steht der Subjuntivo. Hacers yo-Form (hago) ist unregelmäßig, das vererbt sich: hagan."
+      }
+    },
+    {
+      "id": "sp-tr-26",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Biztos, hogy tanár vagyok.",
+        "en": "It's certain that I am a teacher.",
+        "es": "Es seguro que soy profesor.",
+        "de": "Es ist sicher, dass ich Lehrer bin."
+      },
+      "answer": "Es posible que sea profesor.",
+      "accept": [
+        "Es posible que yo sea profesor."
+      ],
+      "wordIds": [
+        "89",
+        "1147",
+        "2023",
+        "3746"
+      ],
+      "why": {
+        "hu": "A biztos „es seguro” helyett a bizonytalan „es posible” kötőmódot kér. A(z) ser teljesen rendhagyó kötőmódja: sea.",
+        "en": "The certain “es seguro” becomes the uncertain “es posible”, which takes the subjunctive. Ser has a completely irregular subjunctive: sea.",
+        "es": "Lo seguro “es seguro” pasa a lo incierto “es posible”, que pide subjuntivo. Ser tiene un subjuntivo totalmente irregular: sea.",
+        "de": "Das sichere “es seguro” wird zum unsicheren “es posible”, das den Subjuntivo verlangt. Ser hat einen völlig unregelmäßigen Subjuntivo: sea."
+      }
+    },
+    {
+      "id": "sp-tr-27",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Látom, hogy a barátom vagy.",
+        "en": "I see that you are my friend.",
+        "es": "Veo que eres mi amigo.",
+        "de": "Ich sehe, dass du mein Freund bist."
+      },
+      "answer": "Espero que seas mi amigo.",
+      "accept": [
+        "Espero que tú seas mi amigo."
+      ],
+      "wordIds": [
+        "22",
+        "37",
+        "80",
+        "3746"
+      ],
+      "why": {
+        "hu": "A tényt jelentő „veo” helyett az óhajt jelentő „espero” kötőmódot kér. A(z) ser teljesen rendhagyó kötőmódja: seas.",
+        "en": "The factual “veo” becomes the wishful “espero”, which takes the subjunctive. Ser has a completely irregular subjunctive: seas.",
+        "es": "El hecho “veo” pasa al deseo “espero”, que pide subjuntivo. Ser tiene un subjuntivo totalmente irregular: seas.",
+        "de": "Die Tatsache “veo” wird zum Wunsch “espero”, der den Subjuntivo verlangt. Ser hat einen völlig unregelmäßigen Subjuntivo: seas."
+      }
+    },
+    {
+      "id": "sp-tr-28",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Azt mondja, hogy idevalósi.",
+        "en": "He says he is from here.",
+        "es": "Dice que es de aquí.",
+        "de": "Er sagt, dass er von hier ist."
+      },
+      "answer": "Quiere que sea de aquí.",
+      "accept": [
+        "Quiere que él sea de aquí."
+      ],
+      "wordIds": [
+        "8",
+        "30",
+        "35",
+        "3746"
+      ],
+      "why": {
+        "hu": "A tényt közlő „dice” helyett az akaratot kifejező „quiere” kötőmódot kér. A(z) ser teljesen rendhagyó kötőmódja: sea.",
+        "en": "The reporting “dice” becomes the wanting “quiere”, which takes the subjunctive. Ser has a completely irregular subjunctive: sea.",
+        "es": "Lo que se dice “dice” pasa a lo que se quiere “quiere”, que pide subjuntivo. Ser tiene un subjuntivo totalmente irregular: sea.",
+        "de": "Das Berichtete “dice” wird zum Gewollten “quiere”, das den Subjuntivo verlangt. Ser hat einen völlig unregelmäßigen Subjuntivo: sea."
+      }
+    },
+    {
+      "id": "sp-tr-29",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Tudom, hogy nem vagyunk a városból valók.",
+        "en": "I know we're not from the city.",
+        "es": "Sé que no somos de la ciudad.",
+        "de": "Ich weiß, dass wir nicht aus der Stadt sind."
+      },
+      "answer": "Dudo que no seamos de la ciudad.",
+      "accept": [
+        "Dudo que nosotros no seamos de la ciudad."
+      ],
+      "wordIds": [
+        "1",
+        "28",
+        "1851",
+        "3746",
+        "3822"
+      ],
+      "why": {
+        "hu": "A „sé” bizonyosságból a „dudo” kétségbe vált, ezért kötőmód kell. A(z) ser teljesen rendhagyó kötőmódja: seamos.",
+        "en": "“Sé” (certainty) switches to “dudo” (doubt), so it takes the subjunctive. Ser has a completely irregular subjunctive: seamos.",
+        "es": "“Sé” (certeza) cambia a “dudo” (duda), por eso pide subjuntivo. Ser tiene un subjuntivo totalmente irregular: seamos.",
+        "de": "“Sé” (Gewissheit) wechselt zu “dudo” (Zweifel), deshalb steht der Subjuntivo. Ser hat einen völlig unregelmäßigen Subjuntivo: seamos."
+      }
+    },
+    {
+      "id": "sp-tr-30",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Azt gondolod, hogy jó barátok?",
+        "en": "Do you think they are good friends?",
+        "es": "¿Piensas que son buenos amigos?",
+        "de": "Denkst du, dass sie gute Freunde sind?"
+      },
+      "answer": "¿No piensas que sean buenos amigos?",
+      "accept": [
+        "¿No piensas que ustedes sean buenos amigos?"
+      ],
+      "wordIds": [
+        "18",
+        "22",
+        "78",
+        "3746"
+      ],
+      "why": {
+        "hu": "A tagadott „pienso” kétséget fejez ki, ezért kötőmód kell. A(z) ser teljesen rendhagyó kötőmódja: sean.",
+        "en": "Negated “pienso” expresses doubt, so it takes the subjunctive. Ser has a completely irregular subjunctive: sean.",
+        "es": "El “pienso” negado expresa duda, por eso pide subjuntivo. Ser tiene un subjuntivo totalmente irregular: sean.",
+        "de": "Das verneinte “pienso” drückt Zweifel aus, deshalb steht der Subjuntivo. Ser hat einen völlig unregelmäßigen Subjuntivo: sean."
+      }
+    },
+    {
+      "id": "sp-tr-31",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Azt hiszem, a strandra megyek.",
+        "en": "I think I'm going to the beach.",
+        "es": "Creo que voy a la playa.",
+        "de": "Ich glaube, ich gehe an den Strand."
+      },
+      "answer": "No creo que vaya a la playa.",
+      "accept": [
+        "No creo que yo vaya a la playa."
+      ],
+      "wordIds": [
+        "31",
+        "38",
+        "1869"
+      ],
+      "why": {
+        "hu": "A tagadott „creo” kétséget fejez ki, ezért kötőmód kell. A(z) ir teljesen rendhagyó kötőmódja: vaya.",
+        "en": "Negated “creo” expresses doubt, so it takes the subjunctive. Ir has a completely irregular subjunctive: vaya.",
+        "es": "El “creo” negado expresa duda, por eso pide subjuntivo. Ir tiene un subjuntivo totalmente irregular: vaya.",
+        "de": "Das verneinte “creo” drückt Zweifel aus, deshalb steht der Subjuntivo. Ir hat einen völlig unregelmäßigen Subjuntivo: vaya."
+      }
+    },
+    {
+      "id": "sp-tr-32",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Igaz, hogy elmész a buliba.",
+        "en": "It's true that you're going to the party.",
+        "es": "Es verdad que vas a la fiesta.",
+        "de": "Es ist wahr, dass du auf die Party gehst."
+      },
+      "answer": "No es verdad que vayas a la fiesta.",
+      "accept": [
+        "No es verdad que tú vayas a la fiesta."
+      ],
+      "wordIds": [
+        "31",
+        "74",
+        "218"
+      ],
+      "why": {
+        "hu": "A tagadott „es verdad” bizonytalanná teszi az állítást, ezért kötőmód kell. A(z) ir teljesen rendhagyó kötőmódja: vayas.",
+        "en": "Negating “es verdad” makes the statement uncertain, so it takes the subjunctive. Ir has a completely irregular subjunctive: vayas.",
+        "es": "Negar “es verdad” hace incierta la afirmación, por eso pide subjuntivo. Ir tiene un subjuntivo totalmente irregular: vayas.",
+        "de": "Die Verneinung von “es verdad” macht die Aussage unsicher, deshalb steht der Subjuntivo. Ir hat einen völlig unregelmäßigen Subjuntivo: vayas."
+      }
+    },
+    {
+      "id": "sp-tr-33",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Tudom, hogy megy az órára.",
+        "en": "I know he goes to class.",
+        "es": "Sé que va a la clase.",
+        "de": "Ich weiß, dass er zum Unterricht geht."
+      },
+      "answer": "Dudo que vaya a la clase.",
+      "accept": [
+        "Dudo que él vaya a la clase."
+      ],
+      "wordIds": [
+        "28",
+        "31",
+        "1858",
+        "3822"
+      ],
+      "why": {
+        "hu": "A „sé” bizonyosságból a „dudo” kétségbe vált, ezért kötőmód kell. A(z) ir teljesen rendhagyó kötőmódja: vaya.",
+        "en": "“Sé” (certainty) switches to “dudo” (doubt), so it takes the subjunctive. Ir has a completely irregular subjunctive: vaya.",
+        "es": "“Sé” (certeza) cambia a “dudo” (duda), por eso pide subjuntivo. Ir tiene un subjuntivo totalmente irregular: vaya.",
+        "de": "“Sé” (Gewissheit) wechselt zu “dudo” (Zweifel), deshalb steht der Subjuntivo. Ir hat einen völlig unregelmäßigen Subjuntivo: vaya."
+      }
+    },
+    {
+      "id": "sp-tr-34",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Biztos, hogy nem megyünk moziba.",
+        "en": "It's certain that we're not going to the cinema.",
+        "es": "Es seguro que no vamos al cine.",
+        "de": "Es ist sicher, dass wir nicht ins Kino gehen."
+      },
+      "answer": "Es posible que no vayamos al cine.",
+      "accept": [
+        "Es posible que nosotros no vayamos al cine."
+      ],
+      "wordIds": [
+        "1",
+        "31",
+        "89",
+        "2023",
+        "3587"
+      ],
+      "why": {
+        "hu": "A biztos „es seguro” helyett a bizonytalan „es posible” kötőmódot kér. A(z) ir teljesen rendhagyó kötőmódja: vayamos.",
+        "en": "The certain “es seguro” becomes the uncertain “es posible”, which takes the subjunctive. Ir has a completely irregular subjunctive: vayamos.",
+        "es": "Lo seguro “es seguro” pasa a lo incierto “es posible”, que pide subjuntivo. Ir tiene un subjuntivo totalmente irregular: vayamos.",
+        "de": "Das sichere “es seguro” wird zum unsicheren “es posible”, das den Subjuntivo verlangt. Ir hat einen völlig unregelmäßigen Subjuntivo: vayamos."
+      }
+    },
+    {
+      "id": "sp-tr-35",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Világos, hogy vidékre mennek?",
+        "en": "Is it clear that they're going to the countryside?",
+        "es": "¿Está claro que van al campo?",
+        "de": "Ist es klar, dass sie aufs Land gehen?"
+      },
+      "answer": "¿No está claro que vayan al campo?",
+      "accept": [
+        "¿No está claro que ustedes vayan al campo?"
+      ],
+      "wordIds": [
+        "31",
+        "1250",
+        "1862"
+      ],
+      "why": {
+        "hu": "A tagadott „está claro” bizonytalanná teszi az állítást, ezért kötőmód kell. A(z) ir teljesen rendhagyó kötőmódja: vayan.",
+        "en": "Negating “está claro” makes the statement uncertain, so it takes the subjunctive. Ir has a completely irregular subjunctive: vayan.",
+        "es": "Negar “está claro” hace incierta la afirmación, por eso pide subjuntivo. Ir tiene un subjuntivo totalmente irregular: vayan.",
+        "de": "Die Verneinung von “está claro” macht die Aussage unsicher, deshalb steht der Subjuntivo. Ir hat einen völlig unregelmäßigen Subjuntivo: vayan."
+      }
+    },
+    {
+      "id": "sp-tr-36",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Biztos, hogy tudom az igazat.",
+        "en": "It's certain that I know the truth.",
+        "es": "Es seguro que sé la verdad.",
+        "de": "Es ist sicher, dass ich die Wahrheit weiß."
+      },
+      "answer": "Es posible que sepa la verdad.",
+      "accept": [
+        "Es posible que yo sepa la verdad."
+      ],
+      "wordIds": [
+        "28",
+        "74",
+        "89",
+        "2023"
+      ],
+      "why": {
+        "hu": "A biztos „es seguro” helyett a bizonytalan „es posible” kötőmódot kér. A(z) saber teljesen rendhagyó kötőmódja: sepa.",
+        "en": "The certain “es seguro” becomes the uncertain “es posible”, which takes the subjunctive. Saber has a completely irregular subjunctive: sepa.",
+        "es": "Lo seguro “es seguro” pasa a lo incierto “es posible”, que pide subjuntivo. Saber tiene un subjuntivo totalmente irregular: sepa.",
+        "de": "Das sichere “es seguro” wird zum unsicheren “es posible”, das den Subjuntivo verlangt. Saber hat einen völlig unregelmäßigen Subjuntivo: sepa."
+      }
+    },
+    {
+      "id": "sp-tr-37",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Látom, hogy tudod a számomat.",
+        "en": "I see that you know my number.",
+        "es": "Veo que sabes mi número.",
+        "de": "Ich sehe, dass du meine Nummer weißt."
+      },
+      "answer": "Espero que sepas mi número.",
+      "accept": [
+        "Espero que tú sepas mi número."
+      ],
+      "wordIds": [
+        "28",
+        "37",
+        "80",
+        "2024"
+      ],
+      "why": {
+        "hu": "A tényt jelentő „veo” helyett az óhajt jelentő „espero” kötőmódot kér. A(z) saber teljesen rendhagyó kötőmódja: sepas.",
+        "en": "The factual “veo” becomes the wishful “espero”, which takes the subjunctive. Saber has a completely irregular subjunctive: sepas.",
+        "es": "El hecho “veo” pasa al deseo “espero”, que pide subjuntivo. Saber tiene un subjuntivo totalmente irregular: sepas.",
+        "de": "Die Tatsache “veo” wird zum Wunsch “espero”, der den Subjuntivo verlangt. Saber hat einen völlig unregelmäßigen Subjuntivo: sepas."
+      }
+    },
+    {
+      "id": "sp-tr-38",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Biztos, hogy nem tud semmit.",
+        "en": "It's certain that he doesn't know anything.",
+        "es": "Es seguro que no sabe nada.",
+        "de": "Es ist sicher, dass er nichts weiß."
+      },
+      "answer": "Es posible que no sepa nada.",
+      "accept": [
+        "Es posible que él no sepa nada."
+      ],
+      "wordIds": [
+        "1",
+        "11",
+        "28",
+        "89",
+        "2023"
+      ],
+      "why": {
+        "hu": "A biztos „es seguro” helyett a bizonytalan „es posible” kötőmódot kér. A(z) saber teljesen rendhagyó kötőmódja: sepa.",
+        "en": "The certain “es seguro” becomes the uncertain “es posible”, which takes the subjunctive. Saber has a completely irregular subjunctive: sepa.",
+        "es": "Lo seguro “es seguro” pasa a lo incierto “es posible”, que pide subjuntivo. Saber tiene un subjuntivo totalmente irregular: sepa.",
+        "de": "Das sichere “es seguro” wird zum unsicheren “es posible”, das den Subjuntivo verlangt. Saber hat einen völlig unregelmäßigen Subjuntivo: sepa."
+      }
+    },
+    {
+      "id": "sp-tr-39",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Azt mondja, hogy tudjuk az okát.",
+        "en": "He says we know the reason.",
+        "es": "Dice que sabemos la razón.",
+        "de": "Er sagt, dass wir den Grund wissen."
+      },
+      "answer": "Quiere que sepamos la razón.",
+      "accept": [
+        "Quiere que nosotros sepamos la razón."
+      ],
+      "wordIds": [
+        "28",
+        "30",
+        "35",
+        "3766"
+      ],
+      "why": {
+        "hu": "A tényt közlő „dice” helyett az akaratot kifejező „quiere” kötőmódot kér. A(z) saber teljesen rendhagyó kötőmódja: sepamos.",
+        "en": "The reporting “dice” becomes the wanting “quiere”, which takes the subjunctive. Saber has a completely irregular subjunctive: sepamos.",
+        "es": "Lo que se dice “dice” pasa a lo que se quiere “quiere”, que pide subjuntivo. Saber tiene un subjuntivo totalmente irregular: sepamos.",
+        "de": "Das Berichtete “dice” wird zum Gewollten “quiere”, das den Subjuntivo verlangt. Saber hat einen völlig unregelmäßigen Subjuntivo: sepamos."
+      }
+    },
+    {
+      "id": "sp-tr-40",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Azt gondolod, hogy tudják az igazat?",
+        "en": "Do you think they know the truth?",
+        "es": "¿Piensas que saben la verdad?",
+        "de": "Denkst du, dass sie die Wahrheit wissen?"
+      },
+      "answer": "¿No piensas que sepan la verdad?",
+      "accept": [
+        "¿No piensas que ustedes sepan la verdad?"
+      ],
+      "wordIds": [
+        "28",
+        "74",
+        "78"
+      ],
+      "why": {
+        "hu": "A tagadott „pienso” kétséget fejez ki, ezért kötőmód kell. A(z) saber teljesen rendhagyó kötőmódja: sepan.",
+        "en": "Negated “pienso” expresses doubt, so it takes the subjunctive. Saber has a completely irregular subjunctive: sepan.",
+        "es": "El “pienso” negado expresa duda, por eso pide subjuntivo. Saber tiene un subjuntivo totalmente irregular: sepan.",
+        "de": "Das verneinte “pienso” drückt Zweifel aus, deshalb steht der Subjuntivo. Saber hat einen völlig unregelmäßigen Subjuntivo: sepan."
+      }
+    },
+    {
+      "id": "sp-tr-41",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Azt hiszem, tudok spanyolul beszélni.",
+        "en": "I think I can speak Spanish.",
+        "es": "Creo que puedo hablar español.",
+        "de": "Ich glaube, ich kann Spanisch sprechen."
+      },
+      "answer": "No creo que pueda hablar español.",
+      "accept": [
+        "No creo que yo pueda hablar español."
+      ],
+      "wordIds": [
+        "27",
+        "29",
+        "38",
+        "2350"
+      ],
+      "why": {
+        "hu": "A tagadott „creo” kétséget fejez ki, ezért kötőmód kell. A(z) poder töhangváltós ige (o→ue), nosotrosban nem vált: pueda.",
+        "en": "Negated “creo” expresses doubt, so it takes the subjunctive. Poder is a stem-changing verb (o→ue), it doesn't change in nosotros: pueda.",
+        "es": "El “creo” negado expresa duda, por eso pide subjuntivo. Poder es un verbo con cambio vocálico (o→ue), no cambia en nosotros: pueda.",
+        "de": "Das verneinte “creo” drückt Zweifel aus, deshalb steht der Subjuntivo. Poder ist ein Verb mit Stammvokaländerung (o→ue), bei nosotros ändert es sich nicht: pueda."
+      }
+    },
+    {
+      "id": "sp-tr-42",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Igaz, hogy el tudsz jönni holnap.",
+        "en": "It's true that you can come tomorrow.",
+        "es": "Es verdad que puedes venir mañana.",
+        "de": "Es ist wahr, dass du morgen kommen kannst."
+      },
+      "answer": "No es verdad que puedas venir mañana.",
+      "accept": [
+        "No es verdad que tú puedas venir mañana."
+      ],
+      "wordIds": [
+        "29",
+        "32",
+        "56",
+        "74"
+      ],
+      "why": {
+        "hu": "A tagadott „es verdad” bizonytalanná teszi az állítást, ezért kötőmód kell. A(z) poder töhangváltós ige (o→ue), nosotrosban nem vált: puedas.",
+        "en": "Negating “es verdad” makes the statement uncertain, so it takes the subjunctive. Poder is a stem-changing verb (o→ue), it doesn't change in nosotros: puedas.",
+        "es": "Negar “es verdad” hace incierta la afirmación, por eso pide subjuntivo. Poder es un verbo con cambio vocálico (o→ue), no cambia en nosotros: puedas.",
+        "de": "Die Verneinung von “es verdad” macht die Aussage unsicher, deshalb steht der Subjuntivo. Poder ist ein Verb mit Stammvokaländerung (o→ue), bei nosotros ändert es sich nicht: puedas."
+      }
+    },
+    {
+      "id": "sp-tr-43",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Látom, hogy nem tud enni.",
+        "en": "I see that he can't eat.",
+        "es": "Veo que no puede comer.",
+        "de": "Ich sehe, dass er nicht essen kann."
+      },
+      "answer": "Espero que no pueda comer.",
+      "accept": [
+        "Espero que él no pueda comer."
+      ],
+      "wordIds": [
+        "1",
+        "25",
+        "29",
+        "37",
+        "80"
+      ],
+      "why": {
+        "hu": "A tényt jelentő „veo” helyett az óhajt jelentő „espero” kötőmódot kér. A(z) poder töhangváltós ige (o→ue), nosotrosban nem vált: pueda.",
+        "en": "The factual “veo” becomes the wishful “espero”, which takes the subjunctive. Poder is a stem-changing verb (o→ue), it doesn't change in nosotros: pueda.",
+        "es": "El hecho “veo” pasa al deseo “espero”, que pide subjuntivo. Poder es un verbo con cambio vocálico (o→ue), no cambia en nosotros: pueda.",
+        "de": "Die Tatsache “veo” wird zum Wunsch “espero”, der den Subjuntivo verlangt. Poder ist ein Verb mit Stammvokaländerung (o→ue), bei nosotros ändert es sich nicht: pueda."
+      }
+    },
+    {
+      "id": "sp-tr-44",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Tudom, hogy korán el tudunk indulni.",
+        "en": "I know we can leave early.",
+        "es": "Sé que podemos salir temprano.",
+        "de": "Ich weiß, dass wir früh losgehen können."
+      },
+      "answer": "Dudo que podamos salir temprano.",
+      "accept": [
+        "Dudo que nosotros podamos salir temprano."
+      ],
+      "wordIds": [
+        "28",
+        "29",
+        "758",
+        "1239",
+        "3822"
+      ],
+      "why": {
+        "hu": "A „sé” bizonyosságból a „dudo” kétségbe vált, ezért kötőmód kell. A(z) poder töhangváltós ige (o→ue), nosotrosban nem vált: podamos.",
+        "en": "“Sé” (certainty) switches to “dudo” (doubt), so it takes the subjunctive. Poder is a stem-changing verb (o→ue), it doesn't change in nosotros: podamos.",
+        "es": "“Sé” (certeza) cambia a “dudo” (duda), por eso pide subjuntivo. Poder es un verbo con cambio vocálico (o→ue), no cambia en nosotros: podamos.",
+        "de": "“Sé” (Gewissheit) wechselt zu “dudo” (Zweifel), deshalb steht der Subjuntivo. Poder ist ein Verb mit Stammvokaländerung (o→ue), bei nosotros ändert es sich nicht: podamos."
+      }
+    },
+    {
+      "id": "sp-tr-45",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Világos, hogy el tudnak jönni a buliba?",
+        "en": "Is it clear that they can come to the party?",
+        "es": "¿Está claro que pueden venir a la fiesta?",
+        "de": "Ist es klar, dass sie zur Party kommen können?"
+      },
+      "answer": "¿No está claro que puedan venir a la fiesta?",
+      "accept": [
+        "¿No está claro que ustedes puedan venir a la fiesta?"
+      ],
+      "wordIds": [
+        "29",
+        "32",
+        "218",
+        "1250"
+      ],
+      "why": {
+        "hu": "A tagadott „está claro” bizonytalanná teszi az állítást, ezért kötőmód kell. A(z) poder töhangváltós ige (o→ue), nosotrosban nem vált: puedan.",
+        "en": "Negating “está claro” makes the statement uncertain, so it takes the subjunctive. Poder is a stem-changing verb (o→ue), it doesn't change in nosotros: puedan.",
+        "es": "Negar “está claro” hace incierta la afirmación, por eso pide subjuntivo. Poder es un verbo con cambio vocálico (o→ue), no cambia en nosotros: puedan.",
+        "de": "Die Verneinung von “está claro” macht die Aussage unsicher, deshalb steht der Subjuntivo. Poder ist ein Verb mit Stammvokaländerung (o→ue), bei nosotros ändert es sich nicht: puedan."
+      }
+    },
+    {
+      "id": "sp-tr-46",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Biztos, hogy kérek egy könyvet.",
+        "en": "It's certain that I'm asking for a book.",
+        "es": "Es seguro que pido un libro.",
+        "de": "Es ist sicher, dass ich ein Buch bestelle."
+      },
+      "answer": "Es posible que pida un libro.",
+      "accept": [
+        "Es posible que yo pida un libro."
+      ],
+      "wordIds": [
+        "89",
+        "1132",
+        "1139",
+        "2023"
+      ],
+      "why": {
+        "hu": "A biztos „es seguro” helyett a bizonytalan „es posible” kötőmódot kér. A(z) pedir töhangváltós ige (e→i), nosotrosban is vált: pida.",
+        "en": "The certain “es seguro” becomes the uncertain “es posible”, which takes the subjunctive. Pedir is a stem-changing verb (e→i), it changes in nosotros too: pida.",
+        "es": "Lo seguro “es seguro” pasa a lo incierto “es posible”, que pide subjuntivo. Pedir es un verbo con cambio vocálico (e→i), también cambia en nosotros: pida.",
+        "de": "Das sichere “es seguro” wird zum unsicheren “es posible”, das den Subjuntivo verlangt. Pedir ist ein Verb mit Stammvokaländerung (e→i), auch bei nosotros ändert es sich: pida."
+      }
+    },
+    {
+      "id": "sp-tr-47",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Látom, hogy több időt kérsz.",
+        "en": "I see that you're asking for more time.",
+        "es": "Veo que pides más tiempo.",
+        "de": "Ich sehe, dass du mehr Zeit bittest."
+      },
+      "answer": "Espero que pidas más tiempo.",
+      "accept": [
+        "Espero que tú pidas más tiempo."
+      ],
+      "wordIds": [
+        "13",
+        "37",
+        "80",
+        "1132"
+      ],
+      "why": {
+        "hu": "A tényt jelentő „veo” helyett az óhajt jelentő „espero” kötőmódot kér. A(z) pedir töhangváltós ige (e→i), nosotrosban is vált: pidas.",
+        "en": "The factual “veo” becomes the wishful “espero”, which takes the subjunctive. Pedir is a stem-changing verb (e→i), it changes in nosotros too: pidas.",
+        "es": "El hecho “veo” pasa al deseo “espero”, que pide subjuntivo. Pedir es un verbo con cambio vocálico (e→i), también cambia en nosotros: pidas.",
+        "de": "Die Tatsache “veo” wird zum Wunsch “espero”, der den Subjuntivo verlangt. Pedir ist ein Verb mit Stammvokaländerung (e→i), auch bei nosotros ändert es sich: pidas."
+      }
+    },
+    {
+      "id": "sp-tr-48",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Azt mondja, hogy nem kér semmit.",
+        "en": "He says he doesn't ask for anything.",
+        "es": "Dice que no pide nada.",
+        "de": "Er sagt, dass er nichts bittet."
+      },
+      "answer": "Quiere que no pida nada.",
+      "accept": [
+        "Quiere que él no pida nada."
+      ],
+      "wordIds": [
+        "1",
+        "11",
+        "30",
+        "35",
+        "1132"
+      ],
+      "why": {
+        "hu": "A tényt közlő „dice” helyett az akaratot kifejező „quiere” kötőmódot kér. A(z) pedir töhangváltós ige (e→i), nosotrosban is vált: pida.",
+        "en": "The reporting “dice” becomes the wanting “quiere”, which takes the subjunctive. Pedir is a stem-changing verb (e→i), it changes in nosotros too: pida.",
+        "es": "Lo que se dice “dice” pasa a lo que se quiere “quiere”, que pide subjuntivo. Pedir es un verbo con cambio vocálico (e→i), también cambia en nosotros: pida.",
+        "de": "Das Berichtete “dice” wird zum Gewollten “quiere”, das den Subjuntivo verlangt. Pedir ist ein Verb mit Stammvokaländerung (e→i), auch bei nosotros ändert es sich: pida."
+      }
+    },
+    {
+      "id": "sp-tr-49",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Azt mondja, hogy mi rendeljük az ételt.",
+        "en": "He says we order the food.",
+        "es": "Dice que pedimos la comida.",
+        "de": "Er sagt, dass wir das Essen bestellen."
+      },
+      "answer": "Quiere que pidamos la comida.",
+      "accept": [
+        "Quiere que nosotros pidamos la comida."
+      ],
+      "wordIds": [
+        "30",
+        "35",
+        "70",
+        "1132"
+      ],
+      "why": {
+        "hu": "A tényt közlő „dice” helyett az akaratot kifejező „quiere” kötőmódot kér. A(z) pedir töhangváltós ige (e→i), nosotrosban is vált: pidamos.",
+        "en": "The reporting “dice” becomes the wanting “quiere”, which takes the subjunctive. Pedir is a stem-changing verb (e→i), it changes in nosotros too: pidamos.",
+        "es": "Lo que se dice “dice” pasa a lo que se quiere “quiere”, que pide subjuntivo. Pedir es un verbo con cambio vocálico (e→i), también cambia en nosotros: pidamos.",
+        "de": "Das Berichtete “dice” wird zum Gewollten “quiere”, das den Subjuntivo verlangt. Pedir ist ein Verb mit Stammvokaländerung (e→i), auch bei nosotros ändert es sich: pidamos."
+      }
+    },
+    {
+      "id": "sp-tr-50",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "hu": "Azt gondolod, hogy több pénzt kérnek?",
+        "en": "Do you think they're asking for more money?",
+        "es": "¿Piensas que piden más dinero?",
+        "de": "Denkst du, dass sie mehr Geld verlangen?"
+      },
+      "answer": "¿No piensas que pidan más dinero?",
+      "accept": [
+        "¿No piensas que ustedes pidan más dinero?"
+      ],
+      "wordIds": [
+        "21",
+        "78",
+        "1132"
+      ],
+      "why": {
+        "hu": "A tagadott „pienso” kétséget fejez ki, ezért kötőmód kell. A(z) pedir töhangváltós ige (e→i), nosotrosban is vált: pidan.",
+        "en": "Negated “pienso” expresses doubt, so it takes the subjunctive. Pedir is a stem-changing verb (e→i), it changes in nosotros too: pidan.",
+        "es": "El “pienso” negado expresa duda, por eso pide subjuntivo. Pedir es un verbo con cambio vocálico (e→i), también cambia en nosotros: pidan.",
+        "de": "Das verneinte “pienso” drückt Zweifel aus, deshalb steht der Subjuntivo. Pedir ist ein Verb mit Stammvokaländerung (e→i), auch bei nosotros ändert es sich: pidan."
+      }
+    }
+  ]
+}
