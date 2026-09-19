@@ -218,7 +218,7 @@
     "level": "C1",
     "es": "esgrimir",
     "hu": "felhozni (érvet)",
-    "en": "to wield / to put forward",
+    "en": "to put forward",
     "sentence_es": "Esgrimió un buen argumento.",
     "sentence_hu": "Jó érvet hozott fel.",
     "sentence_en": "He put forward a good argument.",
@@ -226,7 +226,9 @@
     "sentence_de": "Er brachte ein gutes Argument vor.",
     "topic": "sociedad_politica_economia_c1",
     "topicOrder": 3,
-    "pos": "verb"
+    "pos": "verb",
+    "note_en": "Also: to wield, literally (esgrimió una espada = he wielded a sword).",
+    "note_hu": "Jelenti azt is: forgatni, szó szerint (esgrimió una espada = kardot forgatott)."
   },
   {
     "id": 516,
@@ -675,7 +677,7 @@
     "level": "C1",
     "es": "nefasto",
     "hu": "végzetes / baljós",
-    "en": "disastrous / ominous",
+    "en": "disastrous",
     "sentence_es": "Fue un día nefasto.",
     "sentence_hu": "Végzetes nap volt az.",
     "sentence_en": "It was a disastrous day.",
@@ -960,7 +962,7 @@
     "level": "C1",
     "es": "la incidencia",
     "hu": "hatás / előfordulás",
-    "en": "incidence / impact",
+    "en": "incidence",
     "sentence_es": "La pobreza tiene alta incidencia en zonas rurales.",
     "sentence_hu": "A szegénység aránya magas a vidéki területeken.",
     "sentence_en": "Poverty has a high incidence in rural areas.",
@@ -969,7 +971,9 @@
     "topic": "cualidades_matices_circunstancias_c1",
     "topicOrder": 20,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: impact, effect (tuvo gran incidencia en el resultado = it had a great impact on the outcome).",
+    "note_hu": "Jelenti azt is: hatás (tuvo gran incidencia en el resultado = nagy hatással volt az eredményre)."
   },
   {
     "id": 805,
@@ -1072,7 +1076,7 @@
     "level": "C1",
     "es": "la parsimonia",
     "hu": "megfontoltság / kimértség",
-    "en": "parsimony / deliberateness",
+    "en": "deliberateness",
     "sentence_es": "Se movía con una parsimonia exasperante.",
     "sentence_hu": "Bosszantó kimértséggel mozgott.",
     "sentence_en": "He moved with exasperating deliberateness.",
@@ -1168,7 +1172,7 @@
     "level": "C1",
     "es": "la avidez",
     "hu": "mohóság / sóvárgás",
-    "en": "avidity / greed",
+    "en": "avidity",
     "sentence_es": "Leía con una avidez insaciable.",
     "sentence_hu": "Csillapíthatatlan mohósággal olvasott.",
     "sentence_en": "She read with insatiable avidity.",
@@ -1177,7 +1181,9 @@
     "topic": "caracter_actitud_c1",
     "topicOrder": 18,
     "pos": "noun",
-    "gender": "f"
+    "gender": "f",
+    "note_en": "Also: greed, negative connotation (avidez por el dinero = greed for money).",
+    "note_hu": "Jelenti azt is: kapzsiság, negatív értelemben (avidez por el dinero = pénzsóvárgás)."
   },
   {
     "id": 818,
@@ -1802,7 +1808,7 @@
     "level": "C1",
     "es": "manufacturero",
     "hu": "feldolgozóipari",
-    "en": "manufacturing (adj.)",
+    "en": "manufacturing sector",
     "sentence_es": "El sector manufacturero creció un tres por ciento.",
     "sentence_hu": "A feldolgozóipari szektor három százalékkal nőtt.",
     "sentence_en": "The manufacturing sector grew three percent.",
@@ -3587,7 +3593,7 @@
     "level": "C1",
     "es": "vanguardista",
     "hu": "avantgárd szemléletű",
-    "en": "avant-garde (adj.)",
+    "en": "avant-garde (style, artist)",
     "sentence_es": "Es un arquitecto muy vanguardista.",
     "sentence_hu": "Nagyon avantgárd szemléletű építész.",
     "sentence_en": "He is a very avant-garde architect.",
@@ -7147,7 +7153,7 @@
     "level": "C1",
     "es": "el aprovechamiento",
     "hu": "hasznosítás",
-    "en": "use / exploitation",
+    "en": "use",
     "de": "die Nutzung",
     "topic": "medioambiente_c1",
     "topicOrder": 30,
@@ -7156,7 +7162,9 @@
     "sentence_en": "They regulate the use of irrigation water.",
     "sentence_de": "Sie regeln die Nutzung des Bewässerungswassers.",
     "pos": "noun",
-    "gender": "m"
+    "gender": "m",
+    "note_en": "Also: exploitation, of resources (el aprovechamiento forestal = forestry exploitation).",
+    "note_hu": "Jelenti azt is: hasznosítás, erőforrásoké (el aprovechamiento forestal = erdészeti hasznosítás)."
   },
   {
     "id": 7428,

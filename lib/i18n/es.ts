@@ -425,12 +425,17 @@ export default {
     dismiss: 'Cerrar',
     // NY3 (NYELVTAN.md "Első szelet"): drill de reescritura de tiempo verbal.
     startTransform: (n: number) => `Reescribir (${n})`,
+    // FB316 (NYELVTAN.md NY10): reescritura de frases en rondas de 10 en lecciones grandes.
+    startTransformRound: (n: number, total: number) => `Reescribir frases (${n} de ${total})`,
+    moreRound: (n: number) => `${n} más`,
     rewriteTo: (tense: string) => `Reescribe en ${tense}`,
     showTranslation: 'Mostrar traducción',
     correct: 'Correcto',
     correctAnswer: 'Respuesta correcta',
     next: 'Siguiente',
     accentHint: 'Se acepta sin tildes, se muestran las que faltan',
+    // FB315 (NY9): el botón de enfoque en palabras de la pantalla de lección.
+    learnTheseWords: (n: number) => `Aprender estas palabras (${n})`,
   },
   exam: {
     simulationOf: (model: string) => `Simulacro del examen ${model}`,
@@ -581,6 +586,10 @@ export default {
     sum: 'La suma de los tres números: tantas tarjetas faltan hasta el final de la ronda si no fallas ninguna.',
     close: 'Cerrar',
     levelProgress: (known: number, total: number) => `${known} / ${total} palabras`,
+    // FB315 (NY9): la barra de la sesión de enfoque sobre la tarjeta (drill de lección por palabras).
+    focusBanner: (label: string, known: number, total: number) => `${label} · ${known}/${total} conocidas`,
+    focusDone: 'todas conocidas, volver a la lección',
+    focusExit: 'Salir del enfoque',
   },
   spelling: {
     title: 'Práctica de Ortografía',
@@ -662,7 +671,7 @@ export default {
   },
   // PLAN-pcic paso 5: la pestaña PCIC (inglés -> español escrito, botones Anki).
   pcic: {
-    header: (due: number, newCount: number, doneToday: number) => `pendientes ${due} · nuevas ${newCount} · hechas hoy ${doneToday}`,
+    header: (due: number, newCount: number, doneToday: number, total: number) => `${total} palabras · pendientes ${due} · nuevas ${newCount} · hechas hoy ${doneToday}`,
     again: 'No la sabía',
     hard: 'Difícil',
     good: 'La sabía',
@@ -676,5 +685,8 @@ export default {
     undo: 'Deshacer',
     dontLearn: 'No aprender esta',
     next: 'Siguiente',
+    learningStep: (step: number, total: number) => `paso ${step}/${total}`,
+    newBadge: 'nueva',
+    moreNew: (n: number) => `+${n} palabras nuevas`,
   },
 };
