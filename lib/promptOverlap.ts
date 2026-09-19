@@ -178,3 +178,32 @@ export function findPromptOverlaps(words: PromptOverlapWord[], lang: PromptLang)
 
   return clusters;
 }
+
+// PROMPT-POLICY 12: az angol prompt sosem tartalmazhatja a spanyol címszót,
+// mert elárulja a választ. A címszó a normalizált "es" mező: névelő, zárójel
+// és a " / " utáni alternatíva nélkül, kisbetűsítve (ugyanazokkal a segédekkel,
+// mint a többi szabály); 3 betűnél rövidebb címszóra nem fut (pl. "no", túl
+// sok véletlen angol egyezést adna). A cognate-kártyák (PROMPT-POLICY 11/6,
+// pl. "el hotel" / "the hotel") nem hibák: kizárva, ha a levágott en prompt
+// egésze, vagy annak "/" vagy ","-tagja (a korpusz mindkét alak-elválasztót
+// használja, ld. a fájl "senses" helperét a corpusIntegrity.test.ts-ben),
+// maga a címszó.
+export function headwordLeaks(
+  words: PromptOverlapWord[],
+  lang: PromptLang
+): { id: number; headword: string; prompt: string }[] {
+  if (lang !== 'en') return [];
+  const leaks: { id: number; headword: string; prompt: string }[] = [];
+  for (const w of words) {
+    const [firstSense] = promptSenses(w.headword, 'es');
+    const key = firstSense ? bareSense(firstSense) : '';
+    if (key.length < 3) continue;
+    const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (!new RegExp(`\\b${escaped}\\b`).test(w.prompt.toLowerCase())) continue;
+    const trimmedPrompt = bareSense(normalizeSense(w.prompt, 'en'));
+    const altParts = trimmedPrompt.split(/[/,]/).map((part) => part.trim());
+    if (trimmedPrompt === key || altParts.includes(key)) continue;
+    leaks.push({ id: w.id, headword: w.headword, prompt: w.prompt });
+  }
+  return leaks;
+}

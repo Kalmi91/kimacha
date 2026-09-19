@@ -153,6 +153,27 @@ function findPromptOverlaps(words, lang) {
   return clusters;
 }
 
+// PROMPT-POLICY 12, forrás: lib/promptOverlap.ts headwordLeaks (keep in
+// sync). Csak az es-sávra fut (headword = es mező, prompt = en mező); a
+// cognate-kizárás a " / " mellett a "/" és ", " alak-elválasztót is elfogadja,
+// mert a korpusz mindkettőt használja (ld. lib/__tests__/promptOverlap.test.ts).
+function headwordLeaks(words, lang) {
+  if (lang !== 'en') return [];
+  const leaks = [];
+  for (const w of words) {
+    const [firstSense] = promptSenses(w.headword, 'es');
+    const key = firstSense ? bareSense(firstSense) : '';
+    if (key.length < 3) continue;
+    const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (!new RegExp(`\\b${escaped}\\b`).test(w.prompt.toLowerCase())) continue;
+    const trimmedPrompt = bareSense(normalizeSense(w.prompt, 'en'));
+    const altParts = trimmedPrompt.split(/[/,]/).map((part) => part.trim());
+    if (trimmedPrompt === key || altParts.includes(key)) continue;
+    leaks.push({ id: w.id, headword: w.headword, prompt: w.prompt });
+  }
+  return leaks;
+}
+
 // --- end duplicated block -----------------------------------------------
 
 // PROMPT-POLICY facts (2026-09-14 spec header): a "prompt field" az a mező,
@@ -215,6 +236,7 @@ for (const band of BANDS) {
   const levels = [...byLevel.keys()].sort();
   let exactTotal = 0;
   let partialTotal = 0;
+  let leakTotal = 0;
   report += `## ${band.label} sáv\n\n`;
   report += `- headword mező: \`${band.headwordField}\`, prompt mező: \`${band.promptField}\`\n`;
   report += `- spec-elvárás: ${band.expected.exact} exact + ${band.expected.partial} partial\n\n`;
@@ -227,7 +249,9 @@ for (const band of BANDS) {
       prompt: String(w[band.promptField] ?? ''),
     }));
     const clusters = findPromptOverlaps(inputs, band.promptLang);
-    if (clusters.length === 0) continue;
+    // PROMPT-POLICY 12: csak az es-sávra értelmes (ld. headwordLeaks fejléce).
+    const leaks = band.label === 'es' ? headwordLeaks(inputs, band.promptLang) : [];
+    if (clusters.length === 0 && leaks.length === 0) continue;
 
     report += `### ${level}\n\n`;
     for (const cluster of clusters) {
@@ -242,12 +266,23 @@ for (const band of BANDS) {
       if (cluster.kind === 'exact') exactTotal += cluster.words.length;
       else partialTotal += cluster.words.length;
     }
+    if (leaks.length > 0) {
+      report += `[leak]\n`;
+      for (const leak of leaks) report += `- ${leak.id} | ${leak.headword} | ${leak.prompt}\n`;
+      report += `\n`;
+      leakTotal += leaks.length;
+    }
   }
 
   // PROMPT-POLICY 9.4: a menet után a cél 0 / 0, a fejléc számai csak a
-  // kiindulás voltak.
-  const matchNote = exactTotal === 0 && partialTotal === 0 ? 'OK' : 'P1: ütközés maradt';
-  summaryLines.push(`${band.label}: ${exactTotal} exact, ${partialTotal} partial (${matchNote})`);
+  // kiindulás voltak. Az es-sáv sora a PROMPT-POLICY 12 leak-számát is hordozza.
+  if (band.label === 'es') {
+    const matchNote = exactTotal === 0 && partialTotal === 0 && leakTotal === 0 ? 'OK' : 'P1: ütközés maradt';
+    summaryLines.push(`${band.label}: ${exactTotal} exact, ${partialTotal} partial, ${leakTotal} leak (${matchNote})`);
+  } else {
+    const matchNote = exactTotal === 0 && partialTotal === 0 ? 'OK' : 'P1: ütközés maradt';
+    summaryLines.push(`${band.label}: ${exactTotal} exact, ${partialTotal} partial (${matchNote})`);
+  }
 }
 
 report += `## Summary\n\n`;
