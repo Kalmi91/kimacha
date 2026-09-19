@@ -446,6 +446,8 @@ export default {
     correctAnswer: 'Helyes válasz',
     next: 'Következő',
     accentHint: 'Ékezet nélkül is elfogadja, a hiányzó ékezetet megmutatja',
+    // FB315 (NY9): a lecke-képernyő szó-fókusz gombja.
+    learnTheseWords: (n: number) => `Ezen szavak tanulása (${n})`,
   },
   exam: {
     simulationOf: (model: string) => `A ${model} vizsga szimulációja`,
@@ -596,6 +598,10 @@ export default {
     sum: 'A három szám összege: ennyi lap van hátra a kör végéig, ha nem rontasz.',
     close: 'Bezár',
     levelProgress: (known: number, total: number) => `${known} / ${total} szó`,
+    // FB315 (NY9): a fókusz-menet sávja a kártya fölött (szó-függő lecke-drill).
+    focusBanner: (label: string, known: number, total: number) => `${label} · ${known}/${total} ismert`,
+    focusDone: 'kész, vissza a leckéhez',
+    focusExit: 'Fókusz vége',
   },
   spelling: {
     title: 'Helyesírás-gyakorló',

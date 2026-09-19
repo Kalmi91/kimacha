@@ -10,6 +10,9 @@ import { normalizeWordToken, type Level } from '@/data/words';
 import { cumulativeCorpusWordIds, grammarKindCounts, isLessonV2, type GrammarGapItem, type GrammarItem, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, syllabusTopic } from '@/lib/grammar/syllabus';
+import { lockState, transformWordIds, type LockState } from '@/lib/grammar/lockState';
+import { setFocusWords } from '@/lib/focusWords';
+import { setPendingAction } from '@/lib/pendingAction';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 import { splitByLanguage, splitByMarkers } from '@/lib/mixedSpeech';
 import { speechLang } from '@/lib/languages';
@@ -52,6 +55,9 @@ export default function GrammarLessonScreen() {
   // LECKE-SEMA 3.3: a V2 lecke egyetlen (play → stop) gombja a lesson.speak
   // felolvasásához; leállítás gombnyomásra, fázisváltáskor és unmountkor is.
   const [speaking, setSpeaking] = useState(false);
+  // FB315 (NY9): a lecke transform-szavainak zár-állapota, az "Ezen szavak
+  // tanulása" gomb N-jéhez (need - have).
+  const [lock, setLock] = useState<LockState>({ state: 'unlocked', have: 0, need: 0 });
 
   const load = useCallback(async () => {
     const db = getDb();
@@ -62,7 +68,18 @@ export default function GrammarLessonScreen() {
     setContentLang(source === 'hu' || source === 'es' || source === 'de' ? source : 'en');
     const levelData = await db.getLevel();
     setLevel((levelData.level as Level) ?? 'A1');
-    setLesson(lessonFor(target, String(topicId)) ?? null);
+    const loadedLesson = lessonFor(target, String(topicId)) ?? null;
+    setLesson(loadedLesson);
+    // FB315 (NY9): a zár-állapot ugyanúgy, mint a lecke-listán (app/grammar/index.tsx).
+    if (loadedLesson) {
+      const wordIds = transformWordIds(loadedLesson).map(Number);
+      const wordStates = await db.getWordStates(wordIds);
+      const knownIds = new Set<string>();
+      for (const [id, known] of wordStates) if (known === 1) knownIds.add(String(id));
+      setLock(lockState(loadedLesson, knownIds));
+    } else {
+      setLock({ state: 'unlocked', have: 0, need: 0 });
+    }
   }, [topicId]);
 
   useLoadOnMount(load);
@@ -261,9 +278,26 @@ export default function GrammarLessonScreen() {
     );
   }
 
+  // FB315 (NY9): N = a lecke transform-szavaiból még nem ismert szavak száma;
+  // a gomb csak akkor jelenik meg, ha van ilyen.
+  const needWords = lock.need - lock.have;
+
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       {header}
+      {needWords > 0 ? (
+        <Pressable
+          testID="grammar-learn-words"
+          style={[styles.btn, styles.learnWordsBtn, { backgroundColor: colors.tint }]}
+          onPress={() => {
+            setFocusWords({ topicId: String(topicId), label: lessonTitle, wordIds: transformWordIds(lesson).map(Number) });
+            setPendingAction({ type: 'focusWords' });
+            router.push('/');
+          }}
+        >
+          <Text style={[styles.btnText, styles.btnTextOnTint]}>{s.grammar.learnTheseWords(needWords)}</Text>
+        </Pressable>
+      ) : null}
       <ScrollView contentContainerStyle={styles.body}>
         {isLessonV2(lesson) ? (
           <>
@@ -397,6 +431,8 @@ const styles = StyleSheet.create({
   },
   btnText: { fontSize: 16, fontWeight: '700' },
   startBtn: { marginTop: 18 },
+  // FB315 (NY9): a gomb a ScrollView-n kívül ül, a 16px oldalpárnázást pótolja.
+  learnWordsBtn: { marginHorizontal: 16 },
   btnTextOnTint: { color: '#FFFFFF' },
   ghostBtn: { marginTop: 12, padding: 8 },
   ghostBtnText: { fontSize: 14 },
