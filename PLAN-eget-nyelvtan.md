@@ -31,16 +31,21 @@ Státusz-jelek: `[ ]` nyitott, `[~]` fut, `[x]` kész, `[!]` elakadt.
   minta: «Si ___ frío, cierra la ventana.» = tienes | «Si llueve, no ___.» = salimos | «Si necesita ayuda, ___ ahora.» = llame; a `tipo1` tábla 12 soros lett (az auditFormItem minden form-hármast egy tábla-cellához köt), a ct-form-09 `accept` mezője inert (a FormItem típus nem ismeri, a UI nem olvassa)
 - [x] 9. `condicionales-tipo2-3` (B2 core) új lecke → KÉSZ 2026-09-19, commit 91abbf0, audit 0/0, jest 1186/1186, tsc 0, lint 0 error; 32 item (12 choice, 1 match, 12 form, 7 why), glossza 9 ragozott alak (tendría, hubiera, habría, supiera…)
   minta: «Si ___ dinero, viajaría por el mundo.» = tuviera | «Si hubieras estudiado más, ___ el examen.» = habrías aprobado | «Si hubiera estudiado medicina, ahora ___ médico.» = sería
-- [~] 10. `estilo-indirecto` (B2 core) új lecke → kész, ha: ugyanaz
-- [ ] 11. `finales-causales` (B2 core) új lecke → kész, ha: ugyanaz
-- [ ] 12. `marcadores-discursivos` (C1 core) új lecke → kész, ha: ugyanaz
-- [ ] 13. `subjuntivo-disparadores` (B1 core, SUBJ) új lecke → kész, ha: ugyanaz
-- [ ] 14. `subjuntivo-presente-forma` (B1 core, SUBJ) új lecke, 50 transform presente → subjuntivo-presente → kész, ha: ugyanaz
+- [x] 10. `estilo-indirecto` (B2 core) új lecke → KÉSZ 2026-09-19, commit a758e68, audit 0/0, jest 1197/1197, tsc 0, lint 0 error; 32 item (12 choice, 1 match, 12 form, 7 why), glossza: dice
+  minta: «Dice que ___ tarde.» = llega | «Dijo que ___ mucho.» = trabajaba | «Me pidió que ___ a mi hermano.» = llamara
+- [x] 11. `finales-causales` (B2 core) új lecke → KÉSZ 2026-09-19, commit 7308213, audit 0/0, jest 1208/1208, tsc 0, lint 0 error; 32 item (12 choice, 1 match, 12 form, 7 why), glossza nincs
+  minta: «Estudio ___ aprobar el examen.» = para | «Te llamo para que me ___ tú.» = ayudes | «___ no tengo tiempo, no puedo ayudarte.» = Como
+- [x] 12. `marcadores-discursivos` (C1 core) új lecke → KÉSZ 2026-09-19, commit 8fd5561, audit 0/0, jest 1219/1219, tsc 0, lint 0 error; 32 item (12 choice, 1 match, 12 form, 7 why), glossza: obstante, aun, consiguiente, sea
+  minta: «Estudió mucho; ___, no aprobó el examen.» = sin embargo | «No estudió nada; ___, no aprobó el examen.» = por lo tanto
+  ⚠ gyenge pont: a 12 form item itt „kötőelem → funkció/regiszter" felismerés, nem mondat-gyártás (az auditFormItem person = tábla row[0], answer = col≥1 cella; a brief táblája ezt nem vette figyelembe). A választós és why itemek mondatosak. A 14. lépéstől a nem-ige táblák úgy épülnek, hogy row[0] = a helyzet/kiváltó, az oszlopok = igék, a cella = a gyártandó alak.
+- [~] 13. `subjuntivo-presente-forma` (B1 core, SUBJ) új lecke, 50 transform presente → subjuntivo-presente → kész, ha: ugyanaz (a syllabus-sorrend szerint a disparadores ELŐTT, a probe ábécé-sorrendje helyett)
+- [ ] 14. `subjuntivo-disparadores` (B1 core, SUBJ) új lecke → kész, ha: ugyanaz
 - [ ] 15. `temporales-subjuntivo` (B1 core, SUBJ) új lecke → kész, ha: ugyanaz
 - [ ] 16. `subjuntivo-imperfecto` (B2 core, SUBJ) új lecke, transform nélkül (TenseId-bővítés kell) → kész, ha: ugyanaz
 - …és a probe szerinti folytatás: C-sor 11 V1 átírás, D exam 17, E full 5.
 
 Adag = 3 lecke; adag után push a `nyelvtan` ágra, első adag után PR.
+4. adag (10-12) pusholva 2026-09-19, PR #25 frissül.
 3. adag (7-9) pusholva 2026-09-19, PR #25 frissül.
 2. adag (4-6) pusholva 2026-09-19, PR #25 frissül.
 1. adag (1-3) pusholva 2026-09-19, PR #25: https://github.com/Kalmi91/kimacha/pull/25 (mainbe csak Kálmán szavára).
@@ -611,5 +616,184 @@ Nem pusholsz.
 - a 4 kapu utolsó sora
 - commit hash
 - 3 minta választós `sentence` (+ `correct`)
+- glossza-szavak egy sorban; kártya-kérés sorok, ha voltak; elakadás egy mondatban, ha volt
+Nincs diff, nincs fájltartalom, nincs narratíva.
+
+---
+
+## BRIEF finales-causales (11. lépés, B-sor, B2 core, ÚJ lecke)
+
+Worktree gyökér: `/home/kalmi/ai/kimacha-wt-eget-nyelvtan`. Minden `node` / `npx` innen fut.
+Ág: `nyelvtan` (már ki van checkolva, ne válts ágat).
+
+### Olvasd el ELŐBB (ebben a sorrendben, csak a releváns szeletet)
+1. `/home/kalmi/ai/ai-workspace/kimacha/LECKE-SEMA.md` teljes (blokkok, `form`/`match`/`why`, a választós `wrong` stílusa „miért ez az alak, és mi lenne, ha a másik", `speak` «...»).
+2. `lib/grammar/lessonTypes.ts` teljes (V2 séma).
+3. `lib/grammar/syllabus.ts` 565-571. sor (id `finales-causales`, level B2, unit `b2-oraciones`, title ×4 „Cél és ok: para que, porque, ya que", blurb: para que + kötőmód, porque + kijelentő).
+4. `scripts/audit-games.mjs` fejléc-kommentje (P1/P2; szint-szabály: csak A0..B2 szó vagy glossza).
+5. Minta V2 lecke: `data/games/grammar/es/estilo-indirecto.json` (előző lépés, B2, szerkezet-téma nem-ige táblával); ha nem létezik, `condicionales-tipo2-3.json`. Egyet olvass, teljesen.
+6. Regisztráció mintája: `lib/games/content/es.ts`, a `grammarEsEstiloIndirecto` (vagy `CondicionalesTipo23`) import + lista-elem.
+
+### Feladat: új lecke, `data/games/grammar/es/finales-causales.json`
+Szerkezet-téma: NINCS transform, NINCS `tense`.
+A. **Fej:** `schema: 2`, `topic: "finales-causales"`, `level: "B2"`, `title` a syllabus 4 nyelvén 1:1.
+B. **`body`:**
+   - `text` (1 bekezdés): mire jó: indokolni és célt mondani; „miért?" és „mi végett?" a beszédben és írásban; a kötőszó dönti el, kijelentő vagy kötőmód jön.
+   - `list` vagy `usage` a szabálypontok mind példával (`ExamplePair`: `es` + `tr` ×4), legalább: (1) **cél, azonos alany: para + infinitivo** (estudio para aprobar); (2) **cél, más alany: para que + subjuntivo** (te lo digo para que lo sepas; presente de subj. jelen/jövő főmondat után, imperfecto de subj. múlt után: se lo dije para que lo supiera); (3) további cél-kötők: a fin de que (formális), a que (mozgás-igék után: vengo a que me ayudes), csak említve; (4) **ok, kijelentő: porque, ya que, puesto que, como (mondat elején), es que (beszélt)** (no salgo porque llueve; como llueve, no salgo; es que no tengo tiempo); (5) **por + főnév / infinitivo** (por el tráfico, por no estudiar); (6) **tagadott ok: no porque + subjuntivo** (no lo hago porque quiera, sino porque debo); (7) **por qué / porque / porqué / por que** helyesírás: kérdés, ok, főnév (el porqué), ritka.
+   - `table` id-val: `nexos` (sorok: para que, a fin de que, porque, ya que, puesto que, como, es que, por, no porque, para + inf.; oszlopok: kötőszó, mód (subjuntivo / indicativo / infinitivo), példa); a `form` itemek erre hivatkoznak (a `verb` mező = a table header 2. oszlopának `es` értéke, nem-ige tábla, mint a `preposiciones-basicas.json`-ban). Tanulság a 8. lépésből: az `auditFormItem` minden form-item person/verb/answer hármasát egy konkrét tábla-cellához köti, ezért a táblának legalább 12 különböző, a form itemekkel egyező cellát kell adnia; ha kell, bővítsd a sorokat, ne a form itemeket ismételd. `accept` mezőt form itemre NE tegyél (inert).
+   - `contrast`: para + infinitivo vs para que + subjuntivo (azonos vs más alany), és porque + indicativo vs para que + subjuntivo (ok vs cél).
+   - `tip` (1): „ok = már megtörtént vagy tény → kijelentő; cél = még nem történt meg → kötőmód", ez a két kötő 90%-át eldönti.
+   Minden `Lang4` mind a 4 nyelven (hu/en/es/de), üres string tilos (P1).
+C. **`speak` ×4**, a spanyol szakaszok «...» közt.
+D. **`glossary`:** csak akkor, ha egy tartalmas szó B2-ig nincs tanítva és nem cserélhető (audit P1). Kártyák: `node ~/ai/.claude/skills/eget-nyelvtan/probe.cjs --cards B2 /tmp/claude-1000/cards-B2.tsv` („id<TAB>es<TAB>szint"); a példamondatok szavait ebből választod.
+E. **Itemek:** 12 választós (`sentence` `___`-nal: hol a kötőszó, hol a kötőszó utáni ige módja; opciók pl. para que / porque / para, vagy sepa / sabe / saber, `correct`, minden rossz opción `wrong` ×4 LECKE-SEMA stílusban); 1 `match` (5-6 pár: kötőszó ↔ mód vagy funkció); 12 `form` a `nexos` table id-ra (mondat + (ige) → helyes módú alak a kötőszó szerint, pl. `Te llamo para que (saber, tú) ___ la hora.` → `sepas`, `No salgo porque (llover) ___.` → `llueve`, `Vine para (ver, yo) ___ a mi madre.` → `ver`); 6-8 `why` (3 szabály-név, pl. „cél = subjuntivo", „ok = indicativo", „azonos alany = infinitivo", a rossz opciókon `wrong` ×4).
+F. **Mondat-szabályok:** legfeljebb 12 szó (P2); természetes, anyanyelvű így mondja; csak A0-B2 szavak vagy glossza; csak spanyol forrásmondat (K1); Mexikó-spanyol (ustedes).
+G. **Regisztráció:** `lib/games/content/es.ts`: import (`grammarEsFinalesCausales`) + lista-elem a B2 leckék mellé. Semmi más kód.
+H. Ha valamelyik teszt fix darabszámot állít, frissítsd a számot, semmi mást. Ha egy jest-teszt olyan fájlban piros, ami nem a te leckéd (pl. `lib/games/*.ts`), NEM javítod a kódot: piros állapottal jelentesz, melyik teszt és miért.
+
+### Kapu (sorban, mind a worktree gyökeréből)
+```
+node scripts/audit-games.mjs 2>&1 | tail -15     # 0 P1, cél 0 P2
+npx jest 2>&1 | tail -8                           # zöld
+npx tsc --noEmit 2>&1 | tail -3                   # 0 hiba
+npx expo lint 2>&1 | tail -5                      # 0 error
+```
+Piros → javítasz és újra, legfeljebb 3-szor, aztán piros állapottal jelentesz (NEM commitolsz pirosat).
+
+### Commit (csak zöld kapuval)
+`git add data/games/grammar/es/finales-causales.json lib/games/content/es.ts` (+ a teszt, ha nyúltál hozzá), majd:
+```
+feat(grammar): finales-causales lesson (nyelvtan)
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+```
+Nem pusholsz.
+
+### Jelentés (max 10 sor)
+- fájl + item-számok fajtánként (choice/match/form/why)
+- a 4 kapu utolsó sora
+- commit hash
+- 3 minta választós `sentence` (+ `correct`)
+- glossza-szavak egy sorban; kártya-kérés sorok, ha voltak; elakadás egy mondatban, ha volt
+Nincs diff, nincs fájltartalom, nincs narratíva.
+
+---
+
+## BRIEF marcadores-discursivos (12. lépés, B-sor, C1 core, ÚJ lecke)
+
+Worktree gyökér: `/home/kalmi/ai/kimacha-wt-eget-nyelvtan`. Minden `node` / `npx` innen fut.
+Ág: `nyelvtan` (már ki van checkolva, ne válts ágat).
+
+### Olvasd el ELŐBB (ebben a sorrendben, csak a releváns szeletet)
+1. `/home/kalmi/ai/ai-workspace/kimacha/LECKE-SEMA.md` teljes (blokkok, `form`/`match`/`why`, a választós `wrong` stílusa „miért ez az alak, és mi lenne, ha a másik", `speak` «...»).
+2. `lib/grammar/lessonTypes.ts` teljes (V2 séma).
+3. `lib/grammar/syllabus.ts` 615-621. sor (id `marcadores-discursivos`, level C1, unit `c1-matices`, title ×4 „Szövegkötő elemek", blurb: sin embargo, por lo tanto, en cuanto a).
+4. `scripts/audit-games.mjs` fejléc-kommentje (P1/P2; szint-szabály: csak A0..C1 szó vagy glossza).
+5. Minta V2 lecke: `data/games/grammar/es/finales-causales.json` (előző lépés, B2, kötőszó-téma nem-ige táblával); ha nem létezik, `estilo-indirecto.json`. Egyet olvass, teljesen.
+6. Regisztráció mintája: `lib/games/content/es.ts`, a `grammarEsFinalesCausales` (vagy `EstiloIndirecto`) import + lista-elem.
+
+### Feladat: új lecke, `data/games/grammar/es/marcadores-discursivos.json`
+Szerkezet-téma: NINCS transform, NINCS `tense`. Ez az első C1 lecke, ugyanaz a séma, csak a szókincs-plafon C1.
+A. **Fej:** `schema: 2`, `topic: "marcadores-discursivos"`, `level: "C1"`, `title` a syllabus 4 nyelvén 1:1.
+B. **`body`:**
+   - `text` (1 bekezdés): mire jó: hosszabb beszéd és írás összefűzése (érvelés, e-mail, vizsga-fogalmazás, prezentáció); a kötőelem mondja meg, hogy a következő mondat ellentmond, következik, példáz vagy témát vált.
+   - `list` vagy `usage` a szabálypontok mind példával (`ExamplePair`: `es` + `tr` ×4), csoportonként 2-4 elem, legalább: (1) **ellentét**: sin embargo, no obstante, en cambio, aun así, ahora bien; (2) **következmény**: por lo tanto, por consiguiente, así que (beszélt), de ahí que + subjuntivo; (3) **hozzáadás / erősítés**: además, asimismo, es más, incluso; (4) **rendezés**: en primer lugar, por un lado / por otro (lado), por último, en resumen, en definitiva; (5) **téma-váltás / vonatkozás**: en cuanto a, respecto a, por lo que se refiere a; (6) **magyarázat / példa**: es decir, o sea (beszélt), por ejemplo, en concreto; (7) írásjel és hely: a legtöbb mondat elején vesszővel, egyesek mondat belsejében is (sin embargo, además); a beszélt regiszter (o sea, así que, bueno, pues) és az írott (no obstante, por consiguiente, asimismo) különbsége.
+   - `table` id-val: `marcadores` (sorok: legalább 12 kötőelem; oszlopok: kötőelem, funkció (ellentét / következmény / hozzáadás / rendezés / vonatkozás / magyarázat), regiszter (írott / beszélt / mindkettő), példa); a `form` itemek erre hivatkoznak (a `verb` mező = a table header 2. oszlopának `es` értéke, nem-ige tábla, mint a `preposiciones-basicas.json`-ban). Tanulság: az `auditFormItem` minden form-item person/verb/answer hármasát egy konkrét tábla-cellához köti, ezért a táblának legalább 12 különböző, a form itemekkel egyező cellát kell adnia; ha kell, bővítsd a sorokat, ne a form itemeket ismételd. `accept` mezőt form itemre NE tegyél (inert).
+   - `contrast`: sin embargo vs en cambio (megszorítás vs szembeállítás), és es decir vs o sea (írott vs beszélt, azonos jelentés).
+   - `tip` (1): egy bekezdésben egy funkcióból egy kötőelem; a „además, además, además" a magyar „és, és, és" megfelelője.
+   Minden `Lang4` mind a 4 nyelven (hu/en/es/de), üres string tilos (P1).
+C. **`speak` ×4**, a spanyol szakaszok «...» közt.
+D. **`glossary`:** csak akkor, ha egy tartalmas szó C1-ig nincs tanítva és nem cserélhető (audit P1). Kártyák: `node ~/ai/.claude/skills/eget-nyelvtan/probe.cjs --cards C1 /tmp/claude-1000/cards-C1.tsv` („id<TAB>es<TAB>szint"); a példamondatok szavait ebből választod; a kötőelemek maguk, ha nincs kártyájuk, glosszába.
+E. **Itemek:** 12 választós (`sentence` `___`-nal: a kötőelem helye, két rövid tagmondat között; opciók 3-4 kötőelem különböző funkcióból, `correct` az egyetlen, ami a viszonyt (ellentét / következmény / stb.) helyesen adja, minden rossz opción `wrong` ×4 LECKE-SEMA stílusban: milyen viszonyt mondana az a kötőelem); 1 `match` (5-6 pár: kötőelem ↔ funkció); 12 `form` a `marcadores` table id-ra (mondat + (funkció, regiszter) → kötőelem, pl. `Llovía mucho; ___ (ellentét, írott), salimos.` → `sin embargo`, `No estudió; ___ (következmény, beszélt) no aprobó.` → `así que`); 6-8 `why` (3 szabály-név, pl. „ellentét = sin embargo", „következmény = por lo tanto", „téma-váltás = en cuanto a", a rossz opciókon `wrong` ×4).
+F. **Mondat-szabályok:** legfeljebb 12 szó (P2); természetes, anyanyelvű így mondja; csak A0-C1 szavak vagy glossza; csak spanyol forrásmondat (K1); Mexikó-spanyol (ustedes).
+G. **Regisztráció:** `lib/games/content/es.ts`: import (`grammarEsMarcadoresDiscursivos`) + lista-elem a lista végére (első C1 lecke). Semmi más kód.
+H. Ha valamelyik teszt fix darabszámot állít, frissítsd a számot, semmi mást. Ha egy jest-teszt olyan fájlban piros, ami nem a te leckéd (pl. `lib/games/*.ts`), NEM javítod a kódot: piros állapottal jelentesz, melyik teszt és miért.
+
+### Kapu (sorban, mind a worktree gyökeréből)
+```
+node scripts/audit-games.mjs 2>&1 | tail -15     # 0 P1, cél 0 P2
+npx jest 2>&1 | tail -8                           # zöld
+npx tsc --noEmit 2>&1 | tail -3                   # 0 hiba
+npx expo lint 2>&1 | tail -5                      # 0 error
+```
+Piros → javítasz és újra, legfeljebb 3-szor, aztán piros állapottal jelentesz (NEM commitolsz pirosat).
+
+### Commit (csak zöld kapuval)
+`git add data/games/grammar/es/marcadores-discursivos.json lib/games/content/es.ts` (+ a teszt, ha nyúltál hozzá), majd:
+```
+feat(grammar): marcadores-discursivos lesson (nyelvtan)
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+```
+Nem pusholsz.
+
+### Jelentés (max 10 sor)
+- fájl + item-számok fajtánként (choice/match/form/why)
+- a 4 kapu utolsó sora
+- commit hash
+- 3 minta választós `sentence` (+ `correct`)
+- glossza-szavak egy sorban; kártya-kérés sorok, ha voltak; elakadás egy mondatban, ha volt
+Nincs diff, nincs fájltartalom, nincs narratíva.
+
+---
+
+## BRIEF subjuntivo-presente-forma (13. lépés, B2-sor subjuntivo, B1 core, ÚJ lecke, 50 transform)
+
+Worktree gyökér: `/home/kalmi/ai/kimacha-wt-eget-nyelvtan`. Minden `node` / `npx` innen fut.
+Ág: `nyelvtan` (már ki van checkolva, ne válts ágat).
+
+### Olvasd el ELŐBB (ebben a sorrendben, csak a releváns szeletet)
+1. `/home/kalmi/ai/ai-workspace/kimacha/NYELVTAN.md` NY1-NY4 + NY10 szakasz (transform item adatformátum 1:1, `wordIds` szabály, ÉSZAK-CSILLAG).
+2. `/home/kalmi/ai/ai-workspace/kimacha/LECKE-SEMA.md` teljes (blokkok, `form`/`match`/`why`, a választós `wrong` stílusa, `speak` «...»).
+3. `lib/grammar/lessonTypes.ts` teljes (V2 séma, `TransformItem`, `tense`, `TENSE_IDS`: a `subjuntivo-presente` benne van).
+4. `lib/grammar/syllabus.ts` 445-451. sor (id `subjuntivo-presente-forma`, level B1, unit `b1-subjuntivo`, title ×4 „Kötőmód jelen: az alakok", blurb: hable, coma, viva: a fordított végződések).
+5. `scripts/audit-games.mjs` fejléc-kommentje (P1/P2; szint-szabály: csak A0..B1 szó vagy glossza) + `auditTenseField` (576. sor körül).
+6. Minta ige-lecke transformmal: `data/games/grammar/es/futuro-simple.json` (V2, body + 12 choice + 1 match + 12 form + 7 why + 50 transform + tense). A body-t, 2-2 itemet fajtánként és az utolsó 6 transform itemet olvasd, nem az egészet.
+7. Regisztráció mintája: `lib/games/content/es.ts`, a `grammarEsFuturoSimple` import + lista-elem.
+
+### Feladat: új lecke, `data/games/grammar/es/subjuntivo-presente-forma.json`
+Igeidős téma (`subjuntivo-presente` a `TENSE_IDS`-ben): 50 transform + `tense` minden itemen.
+A. **Fej:** `schema: 2`, `topic: "subjuntivo-presente-forma"`, `level: "B1"`, `title` a syllabus 4 nyelvén 1:1.
+B. **`body`:**
+   - `text` (1 bekezdés): mire jó: a kötőmód alakja nélkül nincs kérés, kívánság, kétely, „hogy…"-mondat; ez a lecke csak az alakokat tanítja, a kiváltó szerkezeteket a `subjuntivo-disparadores` lecke.
+   - `list` vagy `usage` a szabálypontok mind példával (`ExamplePair`: `es` + `tr` ×4), legalább: (1) képzés: presente yo-alak, -o le, „fordított" végződés: -ar → -e/-es/-e/-emos/-éis/-en, -er/-ir → -a/-as/-a/-amos/-áis/-an; (2) a yo-alakból örökölt rendhagyó tő: tengo → tenga, vengo → venga, pongo → ponga, hago → haga, digo → diga, salgo → salga, conozco → conozca, veo → vea; (3) tőhangváltó: e→ie, o→ue a presente mintájára (quiera, pueda), az -ir igéknél nosotros/vosotros is vált (durmamos, sintamos, pidamos); (4) hat teljesen rendhagyó: ser (sea), estar (esté), ir (vaya), haber (haya), saber (sepa), dar (dé), memória-sor; (5) helyesírás: -car/-gar/-zar → -que/-gue/-ce (busque, llegue, empiece); (6) alak és a mai használat: parancs usted/ustedes, tagadó parancs tú (no hables), Ojalá + subjuntivo, que + subjuntivo („hadd…", que pase).
+   - `table` id-val: `subjuntivo` (sorok: hablar, comer, vivir, tener, hacer, ser, ir, saber, poder, pedir; oszlopok: yo, tú, él/ella, nosotros, ustedes); a `form` itemek erre hivatkoznak (a `verb` mező = infinitivo, ige-tábla mint a `futuro-simple.json`-ban; az `auditFormItem` minden form-hármast egy tábla-cellához köt, ezért a 12 form item 12 különböző cellát kér).
+   - `contrast`: hablas vs hables (kijelentő vs kötőmód, ugyanaz a személy), és come vs coma (tú-parancs kijelentő alak vs usted-parancs kötőmód).
+   - `tip` (1): „ha a yo-alak rendhagyó, a kötőmód is az; ha a yo-alak szabályos, a kötőmód is".
+   Minden `Lang4` mind a 4 nyelven (hu/en/es/de), üres string tilos (P1).
+C. **`speak` ×4**, a spanyol szakaszok «...» közt.
+D. **`glossary`:** csak akkor, ha egy tartalmas szó B1-ig nincs tanítva és nem cserélhető (audit P1). Transform itemben glossza NEM helyettesíti a `wordIds`-t.
+E. **Itemek:** 12 választós (`sentence` `___`-nal, opciók kötőmód / kijelentő / rossz tő, `correct`, minden rossz opción `wrong` ×4); 1 `match` (5-6 pár: infinitivo ↔ rendhagyó kötőmód-alak); 12 `form` a `subjuntivo` table id-ra; 6-8 `why` (3 szabály-név, pl. „yo-alak tő", „fordított végződés", „hat rendhagyó", a rossz opciókon `wrong` ×4); **50 `transform`** (lent); **`tense`** minden itemen (choice, match, form, why, transform): `{ "from": "presente", "to": "subjuntivo-presente" }`.
+F. **A 50 transform item recept:** irány presente (kijelentő mellékmondat) → subjuntivo-presente (kötőmódú mellékmondat). A mellékmondat szavai változatlanok, csak (a) a főmondati kiváltó cserélődik és (b) a mellékmondat igéje megy kötőmódba. Kiváltó-párok (a prompt bal fele → az answer bal fele), egyenletesen forgatva, egy pár legfeljebb 8 itemben: «Creo que» → «No creo que»; «Es verdad que» → «No es verdad que»; «Sé que» → «Dudo que»; «Está claro que» → «No está claro que»; «Es seguro que» → «Es posible que»; «Veo que» → «Espero que»; «Dice que» → «Quiere que»; «Pienso que» → «No pienso que». Példa: «Creo que viene mañana.» → «No creo que venga mañana.»; «Sé que tienes tiempo.» → «Dudo que tengas tiempo.»; «Es verdad que comen aquí.» → «No es verdad que coman aquí.»
+   - 10 ige × 5 mondat, a `subjuntivo` tábla 10 igéje (hablar, comer, vivir, tener, hacer, ser, ir, saber, poder, pedir), vegyes személyek a mellékmondatban (yo/tú/él-ella/nosotros/ustedes), kb. 30 kijelentő, 10 tagadó mellékmondat («Creo que no viene.» → «No creo que no venga.» kerülendő, inkább: «Sé que no tienes tiempo.» → «Dudo que no tengas tiempo.» csak ha természetes; ha nem, kijelentő mellékmondat + tagadó kiváltó), 10 kérdő («¿Crees que viene mañana?» → «¿No crees que venga mañana?»).
+   - `prompt.es ≠ answer` minden itemen. `accept`: a kitett-névmásos / névmás-nélküli mellékmondat-változat.
+   - `wordIds`: a prompt ÉS az answer MINDEN tartalmas szava (a kiváltó igéje/mellékneve is: creer, verdad, saber, dudar, claro, seguro, posible, ver, esperar, decir, querer, pensar) kártya-id STRINGKÉNT; funkciószó csak ha van kártyája. Ragozott alakkal egyező kártya, ha van; különben a szótári alak kártyája. **Csak A0 + A1 + A2 + B1** kártya (a lecke `level` B1). Megengedett kártyák: `node ~/ai/.claude/skills/eget-nyelvtan/probe.cjs --cards B1 /tmp/claude-1000/cards-B1.tsv` („id<TAB>es<TAB>szint"). Ebből választasz és **írás előtt node-dal ellenőrzöd** (minden transform item minden wordId-je benne van-e a tsv-ben, és a prompt + answer minden tartalmas szava le van-e fedve). Nem fejből. Ha egy kiváltónak nincs kártyája: másik kiváltó-párt használsz a listából; ha 5-nél kevesebb pár marad, a jelentésbe „kártya-kérés: <szó> B1".
+   - Mondat-szabályok: legfeljebb 12 szó (P2); természetes, anyanyelvű így mondja; **ismétlés-plafon:** egy tartalmas szó (a 10 ige és a kiváltók kivételével) legfeljebb 3-szor az 50 itemben; egy kiváltó-pár legfeljebb 8-szor; csak spanyol forrásmondat (K1).
+G. **Regisztráció:** `lib/games/content/es.ts`: import (`grammarEsSubjuntivoPresenteForma`) + lista-elem a B1 leckék mellé. Semmi más kód.
+H. Ha valamelyik teszt fix darabszámot állít, frissítsd a számot, semmi mást. Ha egy jest-teszt olyan fájlban piros, ami nem a te leckéd (pl. `lib/games/*.ts`), NEM javítod a kódot: piros állapottal jelentesz, melyik teszt és miért.
+
+### Kapu (sorban, mind a worktree gyökeréből)
+```
+node scripts/audit-games.mjs 2>&1 | tail -15     # 0 P1, cél 0 P2
+npx jest 2>&1 | tail -8                           # zöld
+npx tsc --noEmit 2>&1 | tail -3                   # 0 hiba
+npx expo lint 2>&1 | tail -5                      # 0 error
+```
+Piros → javítasz és újra, legfeljebb 3-szor, aztán piros állapottal jelentesz (NEM commitolsz pirosat).
+
+### Commit (csak zöld kapuval)
+`git add data/games/grammar/es/subjuntivo-presente-forma.json lib/games/content/es.ts` (+ a teszt, ha nyúltál hozzá), majd:
+```
+feat(grammar): subjuntivo-presente-forma lesson, 50 transform (nyelvtan)
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+```
+Nem pusholsz.
+
+### Jelentés (max 10 sor)
+- fájl + item-számok fajtánként (choice/match/form/why/transform)
+- a 4 kapu utolsó sora
+- commit hash
+- 5 minta `prompt.es → answer`
 - glossza-szavak egy sorban; kártya-kérés sorok, ha voltak; elakadás egy mondatban, ha volt
 Nincs diff, nincs fájltartalom, nincs narratíva.
