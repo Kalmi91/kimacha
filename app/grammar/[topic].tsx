@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
@@ -10,9 +10,11 @@ import { normalizeWordToken, type Level } from '@/data/words';
 import { cumulativeCorpusWordIds, grammarKindCounts, isLessonV2, type GrammarGapItem, type GrammarItem, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, syllabusTopic } from '@/lib/grammar/syllabus';
-import { lessonWordIds, lockState, type LockState } from '@/lib/grammar/lockState';
+import { lessonWordIds, lockState, MIN_FOCUS_WORDS, type LockState } from '@/lib/grammar/lockState';
+import { lessonPercent } from '@/lib/grammar/lessonScore';
 import { TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import { setFocusWords } from '@/lib/focusWords';
+import { getScrollY, setScrollY } from '@/lib/grammar/scrollMemory';
 import { setPendingAction } from '@/lib/pendingAction';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 import { splitByLanguage, splitByMarkers } from '@/lib/mixedSpeech';
@@ -53,15 +55,24 @@ export default function GrammarLessonScreen() {
   // D3 (FB290): melyik fajtát indította el a tanuló (a gombja szerint), ez megy
   // a GrammarDrill `kinds` propjába és a haladás-sor kulcsába is.
   const [drillKind, setDrillKind] = useState<GrammarKind>('choice');
+  // FB340-342/345/356: a látható drill-item id-ja, a feedback-kontextusba.
+  const [drillItemId, setDrillItemId] = useState<string | undefined>(undefined);
+  // FB327: a lecke-body ScrollView fázisváltáskor újra-mountol, a pozíciót a
+  // lib/grammar/scrollMemory.ts tartja topicId szerint, hogy visszaállítható legyen.
+  const scrollRef = useRef<ScrollView>(null);
   // LECKE-SEMA 3.3: a V2 lecke egyetlen (play → stop) gombja a lesson.speak
   // felolvasásához; leállítás gombnyomásra, fázisváltáskor és unmountkor is.
   const [speaking, setSpeaking] = useState(false);
   // FB315 (NY9): a lecke transform-szavainak zár-állapota, az "Ezen szavak
   // tanulása" gomb N-jéhez (need - have).
-  const [lock, setLock] = useState<LockState>({ state: 'unlocked', have: 0, need: 0 });
+  const [lock, setLock] = useState<LockState>({ have: 0, need: 0 });
   // FB316 (NY10): hányszor gyakorolt már egy-egy transform item (itemId -> n),
   // ez dönti el a következő 10-es kör sorrendjét (legkevésbé gyakorolt elöl).
   const [transformSeen, setTransformSeen] = useState<Record<string, number>>({});
+  // FB328: a lecke ÖSSZES eddigi köréből (bármelyik fajta) számolt kumulált
+  // megválaszolt/helyes darabszám, a Kész-képernyő "Eddig: NN%" sorához.
+  const [lessonAnswered, setLessonAnswered] = useState(0);
+  const [lessonCorrect, setLessonCorrect] = useState(0);
 
   const load = useCallback(async () => {
     const db = getDb();
@@ -86,9 +97,16 @@ export default function GrammarLessonScreen() {
       const progressRows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
       const seenRow = progressRows.find((r) => r.itemId === `${String(topicId)}:transform:seen`);
       setTransformSeen((seenRow?.data as Record<string, number>) ?? {});
+      // FB328: ugyanabból a lekérésből, külön sor nélkül.
+      const answeredRow = progressRows.find((r) => r.itemId === `${String(topicId)}:answered`);
+      const correctRow = progressRows.find((r) => r.itemId === `${String(topicId)}:correct`);
+      setLessonAnswered(typeof answeredRow?.data === 'number' ? answeredRow.data : 0);
+      setLessonCorrect(typeof correctRow?.data === 'number' ? correctRow.data : 0);
     } else {
-      setLock({ state: 'unlocked', have: 0, need: 0 });
+      setLock({ have: 0, need: 0 });
       setTransformSeen({});
+      setLessonAnswered(0);
+      setLessonCorrect(0);
     }
   }, [topicId]);
 
@@ -197,6 +215,14 @@ export default function GrammarLessonScreen() {
         .setGameProgress(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:${drillKind}`, 'done', { correct, total })
         .catch(() => {});
     }
+    // FB328: kumulált megválaszolt/helyes darabszám, MINDEN fajta MINDEN
+    // körénél, a meglévő >=80%-os "kész" küszöbtől függetlenül.
+    const nextAnswered = lessonAnswered + total;
+    const nextCorrect = lessonCorrect + correct;
+    setLessonAnswered(nextAnswered);
+    setLessonCorrect(nextCorrect);
+    getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:answered`, 'count', nextAnswered).catch(() => {});
+    getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:correct`, 'count', nextCorrect).catch(() => {});
     // FB316 (NY10): a kör itemjei "gyakoroltak" lesznek, jó és rossz válasz is
     // számít; egy írás a kör végén, nem itemenként.
     if (drillKind === 'transform' && roundItemIds && roundItemIds.length) {
@@ -235,8 +261,13 @@ export default function GrammarLessonScreen() {
           onFinish={finish}
           kinds={[drillKind]}
           transformSeen={transformSeen}
+          onItemChange={setDrillItemId}
         />
-        <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:drill`} />
+        <FeedbackButton
+          level={level}
+          languagePair={`${contentLang}→${learnedLang}`}
+          currentCard={`grammar:${topicId}:drill${drillItemId ? `:${drillItemId}` : ''}`}
+        />
       </View>
     );
   }
@@ -246,6 +277,9 @@ export default function GrammarLessonScreen() {
     // Kálmán 2026-09-09: a Kész-képernyőről tovább lehessen lépni a következő
     // témára. Csak megírt leckére kínáljuk fel, üres képernyőre nem viszünk.
     const next = nextWrittenTopic(learnedLang, String(topicId));
+    // FB328: a lecke MINDEN eddigi köréből számolt kumulált arány, nem csak
+    // ennek a körnek a pontszáma (ami fentebb, `pct`).
+    const cumulativePct = lessonPercent(lessonAnswered, lessonCorrect);
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
@@ -257,6 +291,11 @@ export default function GrammarLessonScreen() {
           <Text style={[styles.doneNote, { color: colors.tabIconDefault }]}>
             {pct >= 80 ? s.grammar.doneGood : s.grammar.doneAgain}
           </Text>
+          {cumulativePct !== null ? (
+            <Text testID="grammar-lesson-percent" style={[styles.lessonPercentNote, { color: colors.tabIconDefault }]}>
+              {s.grammar.lessonPercent(cumulativePct)}
+            </Text>
+          ) : null}
           {next ? (
             <Pressable
               testID="grammar-next-topic"
@@ -320,14 +359,16 @@ export default function GrammarLessonScreen() {
     );
   }
 
-  // FB315 (NY9): N = a lecke transform-szavaiból még nem ismert szavak száma;
-  // a gomb csak akkor jelenik meg, ha van ilyen.
+  // FB315 (NY9): N = a lecke szavaiból még nem ismert szavak száma. FB343: a
+  // gomb csak akkor jelenik meg, ha van hiányzó szó ÉS a lecke összes szava
+  // eléri a MIN_FOCUS_WORDS küszöböt (kevés szónál nincs értelme a gombnak).
   const needWords = lock.need - lock.have;
+  const showFocusButton = needWords > 0 && lock.need >= MIN_FOCUS_WORDS;
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       {header}
-      {needWords > 0 ? (
+      {showFocusButton ? (
         <Pressable
           testID="grammar-learn-words"
           style={[styles.btn, styles.learnWordsBtn, { backgroundColor: colors.tint }]}
@@ -340,7 +381,13 @@ export default function GrammarLessonScreen() {
           <Text style={[styles.btnText, styles.btnTextOnTint]}>{s.grammar.learnTheseWords(needWords)}</Text>
         </Pressable>
       ) : null}
-      <ScrollView contentContainerStyle={styles.body}>
+      <ScrollView
+        ref={scrollRef}
+        contentContainerStyle={styles.body}
+        onScroll={(e) => setScrollY(String(topicId), e.nativeEvent.contentOffset.y)}
+        scrollEventThrottle={100}
+        onContentSizeChange={() => scrollRef.current?.scrollTo({ y: getScrollY(String(topicId)), animated: false })}
+      >
         {isLessonV2(lesson) ? (
           <>
             {/* LECKE-SEMA 1+3: a body-blokkok váltják a rule/more prózát, a
@@ -485,4 +532,6 @@ const styles = StyleSheet.create({
   doneEmoji: { fontSize: 56 },
   doneScore: { fontSize: 34, fontWeight: '800' },
   doneNote: { fontSize: 14, textAlign: 'center', marginBottom: 12 },
+  // FB328: a kumulált "Eddig: NN%" sor, a pontszám és a "kész"-üzenet alatt.
+  lessonPercentNote: { fontSize: 12, textAlign: 'center', marginTop: -6, marginBottom: 12 },
 });

@@ -42,9 +42,9 @@ export const TENSE_IDS: readonly TenseId[] = [
 // a hétköznapi név (mint a syllabus témacímekben).
 export const TENSE_NAMES: Record<TenseId, Lang4> = {
   presente: { hu: 'jelen idő', en: 'present tense', es: 'Presente', de: 'Präsens' },
-  indefinido: { hu: 'befejezett múlt', en: 'preterite', es: 'Pretérito indefinido', de: 'Indefinido' },
+  indefinido: { hu: 'befejezett múlt', en: 'preterite', es: 'Pretérito perfecto simple', de: 'Indefinido' },
   imperfecto: { hu: 'folyamatos múlt', en: 'imperfect', es: 'Pretérito imperfecto', de: 'Imperfekt' },
-  perfecto: { hu: 'közelmúlt', en: 'present perfect', es: 'Pretérito perfecto', de: 'Perfekt' },
+  perfecto: { hu: 'közelmúlt', en: 'present perfect', es: 'Pretérito perfecto compuesto', de: 'Perfekt' },
   'futuro-simple': { hu: 'egyszerű jövő', en: 'simple future', es: 'Futuro simple', de: 'einfaches Futur' },
   'ir-a': { hu: '„ir a" jövő', en: '"ir a" future', es: 'Ir a + infinitivo', de: '„ir a"-Zukunft' },
   condicional: { hu: 'feltételes mód', en: 'conditional', es: 'Condicional simple', de: 'Konditional' },

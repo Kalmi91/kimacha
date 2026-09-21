@@ -49,7 +49,7 @@
           "text": {
             "hu": "Az imperfecto de subjuntivo képzése: az indefinido ők-alakjából (3. személy többes) indulunk, levesszük a -ron végződést, és hozzátesszük a -ra vagy -se végződést (mindkettő ugyanazt jelenti, de a -ra a gyakoribb): tuvieron → tuviera, fueron → fuera, hicieron → hiciera. Mivel az indefinido rendhagyóságai is átjönnek, a rendhagyó igék alakja innen ingyen adódik.",
             "en": "The imperfect subjunctive is formed from the indefinido's ellos-form (3rd person plural): drop the -ron ending and add -ra or -se (both mean the same, but -ra is more common): tuvieron → tuviera, fueron → fuera, hicieron → hiciera. Since the indefinido's irregularities carry over, irregular verbs come for free this way.",
-            "es": "El imperfecto de subjuntivo se forma desde la forma de ellos del indefinido (3.ª persona del plural): se quita la terminación -ron y se añade -ra o -se (las dos significan lo mismo, pero -ra es más frecuente): tuvieron → tuviera, fueron → fuera, hicieron → hiciera. Como las irregularidades del indefinido se mantienen, los verbos irregulares salen gratis de esta forma.",
+            "es": "El imperfecto de subjuntivo se forma desde la forma de ellos del perfecto simple (3.ª persona del plural): se quita la terminación -ron y se añade -ra o -se (las dos significan lo mismo, pero -ra es más frecuente): tuvieron → tuviera, fueron → fuera, hicieron → hiciera. Como las irregularidades del perfecto simple se mantienen, los verbos irregulares salen gratis de esta forma.",
             "de": "Das Imperfecto de subjuntivo wird aus der Ellos-Form (3. Person Plural) des Indefinido gebildet: die Endung -ron wird entfernt und -ra oder -se angehängt (beide bedeuten dasselbe, aber -ra ist häufiger): tuvieron → tuviera, fueron → fuera, hicieron → hiciera. Da die Unregelmäßigkeiten des Indefinido erhalten bleiben, ergeben sich unregelmäßige Verben so von selbst."
           },
           "examples": [
@@ -237,7 +237,7 @@
       "text": {
         "hu": "Az imperfecto de subjuntivót mindig az indefinido ők-alakjából képezd, így a rendhagyó igék ingyen jönnek: dijeron → dijera, pudieron → pudiera.",
         "en": "Always form the imperfect subjunctive from the indefinido's ellos-form, so irregular verbs come for free: dijeron → dijera, pudieron → pudiera.",
-        "es": "Forma siempre el imperfecto de subjuntivo desde la forma de ellos del indefinido, así los verbos irregulares salen gratis: dijeron → dijera, pudieron → pudiera.",
+        "es": "Forma siempre el imperfecto de subjuntivo desde la forma de ellos del perfecto simple, así los verbos irregulares salen gratis: dijeron → dijera, pudieron → pudiera.",
         "de": "Bilde das Imperfecto de subjuntivo immer aus der Ellos-Form des Indefinido, so bekommst du unregelmäßige Verben gratis dazu: dijeron → dijera, pudieron → pudiera."
       }
     }
@@ -308,7 +308,7 @@
         "ayudaron": {
           "hu": "Az „ayudaron” múlt idő (indefinido): egy megtörtént eseményt jelentene, nem egy feltételes következményt, helyesen: ayudarían.",
           "en": "\"Ayudaron\" is past tense (indefinido): it would report something that already happened, not a conditional consequence, correctly: ayudarían.",
-          "es": "«Ayudaron» es pasado (indefinido): contaría algo que ya pasó, no una consecuencia condicional, correcto: ayudarían.",
+          "es": "«Ayudaron» es pasado (perfecto simple): contaría algo que ya pasó, no una consecuencia condicional, correcto: ayudarían.",
           "de": "„Ayudaron” ist Vergangenheit (Indefinido): es würde etwas Geschehenes berichten, keine bedingte Folge, richtig: ayudarían."
         }
       },
@@ -335,7 +335,7 @@
         "tuve": {
           "hu": "A „tuve” indefinido: egy múltbeli, megtörtént tényt jelentene, nem egy jelenlegi irreális feltételt, helyesen: tuviera.",
           "en": "\"Tuve\" is indefinido: it would state a past fact that happened, not a present unreal condition, correctly: tuviera.",
-          "es": "«Tuve» es indefinido: afirmaría un hecho pasado que ocurrió, no una condición irreal actual, correcto: tuviera.",
+          "es": "«Tuve» es perfecto simple: afirmaría un hecho pasado que ocurrió, no una condición irreal actual, correcto: tuviera.",
           "de": "„Tuve” ist Indefinido: es würde eine vergangene, geschehene Tatsache aussagen, keine gegenwärtige irreale Bedingung, richtig: tuviera."
         }
       },
@@ -362,7 +362,7 @@
         "supo": {
           "hu": "A „supo” indefinido: azt jelentené, hogy MEGTUDTA az igazságot egy adott pillanatban, nem egy feltételezett esetről szól, helyesen: supiera.",
           "en": "\"Supo\" is indefinido: it would mean she FOUND OUT the truth at some point, not a hypothetical case, correctly: supiera.",
-          "es": "«Supo» es indefinido: significaría que SE ENTERÓ de la verdad en un momento dado, no un caso hipotético, correcto: supiera.",
+          "es": "«Supo» es perfecto simple: significaría que SE ENTERÓ de la verdad en un momento dado, no un caso hipotético, correcto: supiera.",
           "de": "„Supo” ist Indefinido: es würde bedeuten, dass sie die Wahrheit zu einem bestimmten Zeitpunkt ERFAHREN hat, kein hypothetischer Fall, richtig: supiera."
         }
       },
@@ -389,7 +389,7 @@
         "vendimos": {
           "hu": "A „vendimos” indefinido: egy megtörtént eseményt jelentene, nem egy feltételes következményt, helyesen: venderíamos.",
           "en": "\"Vendimos\" is indefinido: it would report something that already happened, not a conditional consequence, correctly: venderíamos.",
-          "es": "«Vendimos» es indefinido: contaría algo que ya pasó, no una consecuencia condicional, correcto: venderíamos.",
+          "es": "«Vendimos» es perfecto simple: contaría algo que ya pasó, no una consecuencia condicional, correcto: venderíamos.",
           "de": "„Vendimos” ist Indefinido: es würde etwas Geschehenes berichten, keine bedingte Folge, richtig: venderíamos."
         }
       },
@@ -416,7 +416,7 @@
         "hablaste": {
           "hu": "A „hablaste” indefinido: egy megtörtént eseményt jelentene, nem egy feltételezett esetet, helyesen: hablaras.",
           "en": "\"Hablaste\" is indefinido: it would report something that already happened, not a hypothetical case, correctly: hablaras.",
-          "es": "«Hablaste» es indefinido: contaría algo que ya pasó, no un caso hipotético, correcto: hablaras.",
+          "es": "«Hablaste» es perfecto simple: contaría algo que ya pasó, no un caso hipotético, correcto: hablaras.",
           "de": "„Hablaste” ist Indefinido: es würde etwas Geschehenes berichten, keinen hypothetischen Fall, richtig: hablaras."
         }
       },
@@ -443,7 +443,7 @@
         "supe": {
           "hu": "A „supe” indefinido: azt jelentené, hogy MEGTUDTAM az igazságot egy adott pillanatban, nem egy irreális feltételt, helyesen: hubiera sabido.",
           "en": "\"Supe\" is indefinido: it would mean I FOUND OUT the truth at some point, not an unreal condition, correctly: hubiera sabido.",
-          "es": "«Supe» es indefinido: significaría que ME ENTERÉ de la verdad en un momento dado, no una condición irreal, correcto: hubiera sabido.",
+          "es": "«Supe» es perfecto simple: significaría que ME ENTERÉ de la verdad en un momento dado, no una condición irreal, correcto: hubiera sabido.",
           "de": "„Supe” ist Indefinido: es würde bedeuten, dass ich die Wahrheit zu einem bestimmten Zeitpunkt ERFAHREN habe, keine irreale Bedingung, richtig: hubiera sabido."
         }
       },
@@ -470,7 +470,7 @@
         "aprobaste": {
           "hu": "Az „aprobaste” indefinido: egy megtörtént tényt jelentene, nem egy feltételes következményt, helyesen: habrías aprobado.",
           "en": "\"Aprobaste\" is indefinido: it would state a fact that happened, not a conditional consequence, correctly: habrías aprobado.",
-          "es": "«Aprobaste» es indefinido: afirmaría un hecho ocurrido, no una consecuencia condicional, correcto: habrías aprobado.",
+          "es": "«Aprobaste» es perfecto simple: afirmaría un hecho ocurrido, no una consecuencia condicional, correcto: habrías aprobado.",
           "de": "„Aprobaste” ist Indefinido: es würde eine geschehene Tatsache aussagen, keine bedingte Folge, richtig: habrías aprobado."
         }
       },
@@ -497,7 +497,7 @@
         "hablé": {
           "hu": "A „hablé” indefinido: egy megtörtént tényt jelentene, nem egy irreális feltételt, helyesen: hubiera hablado.",
           "en": "\"Hablé\" is indefinido: it would state a fact that happened, not an unreal condition, correctly: hubiera hablado.",
-          "es": "«Hablé» es indefinido: afirmaría un hecho ocurrido, no una condición irreal, correcto: hubiera hablado.",
+          "es": "«Hablé» es perfecto simple: afirmaría un hecho ocurrido, no una condición irreal, correcto: hubiera hablado.",
           "de": "„Hablé” ist Indefinido: es würde eine geschehene Tatsache aussagen, keine irreale Bedingung, richtig: hubiera hablado."
         }
       },
@@ -524,7 +524,7 @@
         "dijiste": {
           "hu": "A „dijiste” indefinido: egy megtörtént tényt jelentene, nem egy irreális feltételt, helyesen: hubieras dicho.",
           "en": "\"Dijiste\" is indefinido: it would state a fact that happened, not an unreal condition, correctly: hubieras dicho.",
-          "es": "«Dijiste» es indefinido: afirmaría un hecho ocurrido, no una condición irreal, correcto: hubieras dicho.",
+          "es": "«Dijiste» es perfecto simple: afirmaría un hecho ocurrido, no una condición irreal, correcto: hubieras dicho.",
           "de": "„Dijiste” ist Indefinido: es würde eine geschehene Tatsache aussagen, keine irreale Bedingung, richtig: hubieras dicho."
         }
       },
@@ -551,7 +551,7 @@
         "fui": {
           "hu": "A „fui” indefinido: egy múltbeli tényt jelentene (voltam orvos), nem egy máig tartó feltételezett állapotot, helyesen: sería.",
           "en": "\"Fui\" is indefinido: it would state a past fact (I was a doctor), not a hypothetical state lasting until today, correctly: sería.",
-          "es": "«Fui» es indefinido: afirmaría un hecho pasado (fui médico), no un estado hipotético que llega hasta hoy, correcto: sería.",
+          "es": "«Fui» es perfecto simple: afirmaría un hecho pasado (fui médico), no un estado hipotético que llega hasta hoy, correcto: sería.",
           "de": "„Fui” ist Indefinido: es würde eine vergangene Tatsache aussagen (ich war Arzt), keinen bis heute andauernden hypothetischen Zustand, richtig: sería."
         }
       },
@@ -578,7 +578,7 @@
         "estuviste": {
           "hu": "Az „estuviste” indefinido: egy lezárt múltbeli tényt jelentene, nem egy máig tartó feltételezett állapotot, helyesen: estarías.",
           "en": "\"Estuviste\" is indefinido: it would state a closed past fact, not a hypothetical state lasting until today, correctly: estarías.",
-          "es": "«Estuviste» es indefinido: afirmaría un hecho pasado y cerrado, no un estado hipotético que llega hasta hoy, correcto: estarías.",
+          "es": "«Estuviste» es perfecto simple: afirmaría un hecho pasado y cerrado, no un estado hipotético que llega hasta hoy, correcto: estarías.",
           "de": "„Estuviste” ist Indefinido: es würde eine abgeschlossene vergangene Tatsache aussagen, keinen bis heute andauernden hypothetischen Zustand, richtig: estarías."
         }
       },

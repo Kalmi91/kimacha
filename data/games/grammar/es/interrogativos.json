@@ -196,24 +196,24 @@
         "de": "Übersicht der Fragewörter"
       },
       "header": [
-        { "hu": "Kérdőszó", "en": "Question word", "es": "Interrogativo", "de": "Fragewort" },
         { "hu": "Jelentés", "en": "Meaning", "es": "Significado", "de": "Bedeutung" },
+        { "hu": "Kérdőszó", "en": "Question word", "es": "Interrogativo", "de": "Fragewort" },
         { "hu": "Példa-kérdés", "en": "Example question", "es": "Pregunta de ejemplo", "de": "Beispielfrage" },
         { "hu": "Tipikus válasz", "en": "Typical answer", "es": "Respuesta típica", "de": "Typische Antwort" }
       ],
       "rows": [
-        ["qué", "mi", "¿Qué haces?", "Estudio español."],
-        ["quién", "ki", "¿Quién es tu profesor?", "Es mi amigo."],
-        ["dónde", "hol", "¿Dónde vives?", "En Narvarte."],
-        ["adónde", "hova", "¿Adónde vas?", "A la tienda."],
-        ["cuándo", "mikor", "¿Cuándo llegas?", "Mañana."],
-        ["cómo", "hogyan", "¿Cómo estás?", "Bien, gracias."],
-        ["cuánto", "mennyi", "¿Cuánto cuesta?", "Veinte pesos."],
-        ["cuánta", "mennyi", "¿Cuánta agua bebes?", "Dos litros."],
-        ["cuántos", "hány", "¿Cuántos años tienes?", "Treinta años."],
-        ["cuál", "melyik", "¿Cuál es tu apellido?", "Pérez."],
-        ["por qué", "miért", "¿Por qué estudias español?", "Porque me gusta."],
-        ["de dónde", "honnan", "¿De dónde eres?", "Soy de Hungría."]
+        ["what", "qué", "¿Qué haces?", "Estudio español."],
+        ["who", "quién", "¿Quién es tu profesor?", "Es mi amigo."],
+        ["where", "dónde", "¿Dónde vives?", "En Narvarte."],
+        ["where to", "adónde", "¿Adónde vas?", "A la tienda."],
+        ["when", "cuándo", "¿Cuándo llegas?", "Mañana."],
+        ["how", "cómo", "¿Cómo estás?", "Bien, gracias."],
+        ["how much", "cuánto", "¿Cuánto cuesta?", "Veinte pesos."],
+        ["how much (fem.)", "cuánta", "¿Cuánta agua bebes?", "Dos litros."],
+        ["how many", "cuántos", "¿Cuántos años tienes?", "Treinta años."],
+        ["which", "cuál", "¿Cuál es tu apellido?", "Pérez."],
+        ["why", "por qué", "¿Por qué estudias español?", "Porque me gusta."],
+        ["where from", "de dónde", "¿De dónde eres?", "Soy de Hungría."]
       ]
     },
     {
@@ -632,97 +632,97 @@
     {
       "id": "int-form-01",
       "kind": "form",
-      "verb": "Significado",
-      "person": "qué",
-      "answer": "mi",
+      "verb": "Interrogativo",
+      "person": "what",
+      "answer": "qué",
       "table": "interrogativos"
     },
     {
       "id": "int-form-02",
       "kind": "form",
-      "verb": "Significado",
-      "person": "quién",
-      "answer": "ki",
+      "verb": "Interrogativo",
+      "person": "who",
+      "answer": "quién",
       "table": "interrogativos"
     },
     {
       "id": "int-form-03",
       "kind": "form",
-      "verb": "Significado",
-      "person": "dónde",
-      "answer": "hol",
+      "verb": "Interrogativo",
+      "person": "where",
+      "answer": "dónde",
       "table": "interrogativos"
     },
     {
       "id": "int-form-04",
       "kind": "form",
-      "verb": "Significado",
-      "person": "adónde",
-      "answer": "hova",
+      "verb": "Interrogativo",
+      "person": "where to",
+      "answer": "adónde",
       "table": "interrogativos"
     },
     {
       "id": "int-form-05",
       "kind": "form",
-      "verb": "Significado",
-      "person": "cuándo",
-      "answer": "mikor",
+      "verb": "Interrogativo",
+      "person": "when",
+      "answer": "cuándo",
       "table": "interrogativos"
     },
     {
       "id": "int-form-06",
       "kind": "form",
-      "verb": "Significado",
-      "person": "cómo",
-      "answer": "hogyan",
+      "verb": "Interrogativo",
+      "person": "how",
+      "answer": "cómo",
       "table": "interrogativos"
     },
     {
       "id": "int-form-07",
       "kind": "form",
-      "verb": "Significado",
-      "person": "cuánto",
-      "answer": "mennyi",
+      "verb": "Interrogativo",
+      "person": "how much",
+      "answer": "cuánto",
       "table": "interrogativos"
     },
     {
       "id": "int-form-08",
       "kind": "form",
-      "verb": "Significado",
-      "person": "cuánta",
-      "answer": "mennyi",
+      "verb": "Interrogativo",
+      "person": "how much (fem.)",
+      "answer": "cuánta",
       "table": "interrogativos"
     },
     {
       "id": "int-form-09",
       "kind": "form",
-      "verb": "Significado",
-      "person": "cuántos",
-      "answer": "hány",
+      "verb": "Interrogativo",
+      "person": "how many",
+      "answer": "cuántos",
       "table": "interrogativos"
     },
     {
       "id": "int-form-10",
       "kind": "form",
-      "verb": "Significado",
-      "person": "cuál",
-      "answer": "melyik",
+      "verb": "Interrogativo",
+      "person": "which",
+      "answer": "cuál",
       "table": "interrogativos"
     },
     {
       "id": "int-form-11",
       "kind": "form",
-      "verb": "Significado",
-      "person": "por qué",
-      "answer": "miért",
+      "verb": "Interrogativo",
+      "person": "why",
+      "answer": "por qué",
       "table": "interrogativos"
     },
     {
       "id": "int-form-12",
       "kind": "form",
-      "verb": "Significado",
-      "person": "de dónde",
-      "answer": "honnan",
+      "verb": "Interrogativo",
+      "person": "where from",
+      "answer": "de dónde",
       "table": "interrogativos"
     },
     {
