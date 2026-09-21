@@ -55,7 +55,7 @@ describe('GrammarDrill: transform item', () => {
   it('kinds={["transform"]} shows the sentence, tense badge and input', () => {
     render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['transform']} />);
     expect(screen.queryByText('Como pan.')).toBeTruthy();
-    expect(screen.queryByText('Presente → Pretérito indefinido')).toBeTruthy();
+    expect(screen.queryByText('Presente → Pretérito perfecto simple')).toBeTruthy();
     expect(screen.queryByTestId('transform-input')).toBeTruthy();
   });
 
