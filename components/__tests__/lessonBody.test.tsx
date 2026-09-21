@@ -6,6 +6,7 @@ import { render, screen } from '@testing-library/react-native';
 
 import LessonBody from '../grammar/LessonBody';
 import lessonJson from '@/data/games/grammar/es/ser-estar.json';
+import presenteRegularJson from '@/data/games/grammar/es/presente-regular.json';
 import type { LessonV2 } from '@/lib/grammar/lessonTypes';
 
 jest.mock('@/lib/ThemeContext', () => ({
@@ -13,6 +14,7 @@ jest.mock('@/lib/ThemeContext', () => ({
 }));
 
 const lesson = lessonJson as unknown as LessonV2;
+const presenteRegular = presenteRegularJson as unknown as LessonV2;
 
 describe('LessonBody', () => {
   it('renders both present-tense tables', () => {
@@ -37,5 +39,22 @@ describe('LessonBody', () => {
     expect(tip?.kind).toBe('tip');
     if (tip?.kind !== 'tip') return;
     expect(screen.queryByText(`💡 ${tip.text.hu}`)).toBeTruthy();
+  });
+});
+
+// FB326 (Kálmán 2. terv): a ragozási táblák személy-blokkokban jelennek meg,
+// a tő halványan, a végződés külön, saját Text-ben (hogy a stílus is külön
+// legyen).
+describe('LessonBody conjugation table (FB326)', () => {
+  it('renders 6 person blocks for presente-regular, hablamos split as stem + ending', () => {
+    render(<LessonBody blocks={presenteRegular.body} contentLang="en" learnedLang="es" />);
+    for (const person of ['yo', 'tú', 'él/ella/usted', 'nosotros', 'vosotros', 'ellos/ellas/ustedes']) {
+      expect(screen.queryByText(person)).toBeTruthy();
+    }
+    // "habl" is the stem of all six hablar forms, so it appears once per
+    // person block; "amos" (the nosotros ending) is unique to that one chip.
+    expect(screen.getAllByText('habl').length).toBe(6);
+    expect(screen.queryByText('amos')).toBeTruthy();
+    expect(screen.queryByText('hablamos')).toBeFalsy();
   });
 });
