@@ -5,7 +5,7 @@
   "title": {
     "hu": "Indefinido vagy imperfecto?",
     "en": "Preterite or imperfect?",
-    "es": "¿Indefinido o imperfecto?",
+    "es": "¿Pretérito perfecto simple o imperfecto?",
     "de": "Indefinido oder Imperfekt?"
   },
   "body": [
@@ -14,7 +14,7 @@
       "text": {
         "hu": "Az indefinido és az imperfecto mindkettő múlt idő, de más szemszögből mesélik el a történetet. Az indefinido egy pontot jelöl a történet vonalán: megtörtént és lezárult. Az imperfecto a díszletet festi a pont köré: szokás, leírás, folyamat. Ugyanaz a mondat mindkettővel helyes lehet, csak mást jelent.",
         "en": "The preterite (indefinido) and the imperfect (imperfecto) are both past tenses, but they tell the story from a different angle. The preterite marks a point on the story line: it happened and it is closed. The imperfect paints the scenery around that point: habit, description, an action in progress. The same sentence can be correct with either, but it means something different.",
-        "es": "El indefinido y el imperfecto son los dos tiempos del pasado, pero cuentan la historia desde un ángulo distinto. El indefinido marca un punto en la línea del relato: ocurrió y terminó. El imperfecto pinta el decorado alrededor de ese punto: costumbre, descripción, una acción en curso. La misma frase puede ser correcta con los dos, pero significa algo distinto.",
+        "es": "El pretérito perfecto simple y el imperfecto son los dos tiempos del pasado, pero cuentan la historia desde un ángulo distinto. El perfecto simple marca un punto en la línea del relato: ocurrió y terminó. El imperfecto pinta el decorado alrededor de ese punto: costumbre, descripción, una acción en curso. La misma frase puede ser correcta con los dos, pero significa algo distinto.",
         "de": "Das Indefinido und das Imperfekt sind beide Vergangenheitsformen, erzählen die Geschichte aber aus einem anderen Blickwinkel. Das Indefinido markiert einen Punkt auf der Erzähllinie: es geschah und ist abgeschlossen. Das Imperfekt malt die Kulisse um diesen Punkt herum: Gewohnheit, Beschreibung, eine laufende Handlung. Derselbe Satz kann mit beiden richtig sein, bedeutet aber etwas anderes."
       }
     },
@@ -23,7 +23,7 @@
       "title": {
         "hu": "INDEFINIDO ezekre",
         "en": "PRETERITE for these",
-        "es": "INDEFINIDO para esto",
+        "es": "PERFECTO SIMPLE para esto",
         "de": "INDEFINIDO dafür"
       },
       "items": [
@@ -270,7 +270,7 @@
       "title": {
         "hu": "Hablar, indefinido és imperfecto",
         "en": "Hablar, preterite and imperfect",
-        "es": "Hablar, indefinido e imperfecto",
+        "es": "Hablar, perfecto simple e imperfecto",
         "de": "Hablar, Indefinido und Imperfekt"
       },
       "header": [
@@ -283,7 +283,7 @@
         {
           "hu": "hablar (indefinido)",
           "en": "hablar (indefinido)",
-          "es": "hablar (indefinido)",
+          "es": "hablar (perfecto simple)",
           "de": "hablar (indefinido)"
         },
         {
@@ -339,7 +339,7 @@
           "text": {
             "hu": "Ha a kérdés az, MI TÖRTÉNT, és egy konkrét választ vársz, indefinido jön.",
             "en": "If the question is WHAT HAPPENED, and you expect a specific answer, the preterite is the one.",
-            "es": "Si la pregunta es QUÉ PASÓ, y esperas una respuesta concreta, va el indefinido.",
+            "es": "Si la pregunta es QUÉ PASÓ, y esperas una respuesta concreta, va el perfecto simple.",
             "de": "Wenn die Frage lautet, WAS GESCHAH, und du eine konkrete Antwort erwartest, kommt das Indefinido."
           },
           "examples": [
@@ -395,7 +395,7 @@
           "text": {
             "hu": "A történet váza indefinido: ami előreviszi a cselekményt. A díszlet köré imperfecto: ami csak leírja a hátteret.",
             "en": "The backbone of a story is the preterite: what moves the plot forward. The scenery around it is the imperfect: what only describes the background.",
-            "es": "El armazón de la historia es indefinido: lo que hace avanzar la trama. El decorado alrededor es imperfecto: lo que solo describe el fondo.",
+            "es": "El armazón de la historia es perfecto simple: lo que hace avanzar la trama. El decorado alrededor es imperfecto: lo que solo describe el fondo.",
             "de": "Das Gerüst der Geschichte ist das Indefinido: was die Handlung vorantreibt. Die Kulisse darum ist das Imperfekt: was nur den Hintergrund beschreibt."
           },
           "examples": [
@@ -423,7 +423,7 @@
           "text": {
             "hu": "A saber, poder, querer és conocer jelentést vált a kettő között: az imperfecto tartós állapot, az indefinido egy pillanatban történő váltás.",
             "en": "Saber, poder, querer and conocer shift meaning between the two: the imperfect is a lasting state, the preterite is a change happening at one moment.",
-            "es": "Saber, poder, querer y conocer cambian de sentido entre los dos: el imperfecto es un estado duradero, el indefinido es un cambio en un momento.",
+            "es": "Saber, poder, querer y conocer cambian de sentido entre los dos: el imperfecto es un estado duradero, el perfecto simple es un cambio en un momento.",
             "de": "Saber, poder, querer und conocer ändern zwischen den beiden die Bedeutung: das Imperfekt ist ein dauerhafter Zustand, das Indefinido ein Wechsel in einem Moment."
           },
           "examples": [
@@ -451,7 +451,7 @@
           "text": {
             "hu": "Egy rövid, közbevágó esemény indefinidóban áll, a folyamatban lévő háttér köré pedig imperfecto kerül.",
             "en": "A short, interrupting event takes the preterite, and the background it interrupts takes the imperfect.",
-            "es": "Un suceso breve que interrumpe va en indefinido, y el fondo que interrumpe va en imperfecto.",
+            "es": "Un suceso breve que interrumpe va en perfecto simple, y el fondo que interrumpe va en imperfecto.",
             "de": "Ein kurzes, unterbrechendes Ereignis steht im Indefinido, und der unterbrochene Hintergrund im Imperfekt."
           },
           "examples": [
@@ -622,7 +622,7 @@
       "text": {
         "hu": "A hablar imperfectójában csak a nosotros alak kap ékezetet: hablábamos; a szabályos igék indefinido yo és ő alakja viszont mindig ékezetes: hablé, habló.",
         "en": "In hablar's imperfect, only the nosotros form carries a written accent: hablábamos; but regular verbs' yo and he/she forms in the preterite are always accented: hablé, habló.",
-        "es": "En el imperfecto de hablar, solo la forma de nosotros lleva tilde: hablábamos; en cambio, las formas de yo y él del indefinido de los verbos regulares siempre llevan tilde: hablé, habló.",
+        "es": "En el imperfecto de hablar, solo la forma de nosotros lleva tilde: hablábamos; en cambio, las formas de yo y él del perfecto simple de los verbos regulares siempre llevan tilde: hablé, habló.",
         "de": "Im Imperfekt von hablar trägt nur die nosotros-Form einen Akzent: hablábamos; die yo- und er/sie-Formen regelmäßiger Verben im Indefinido tragen dagegen immer einen Akzent: hablé, habló."
       }
     }
@@ -630,7 +630,7 @@
   "speak": {
     "hu": "Az indefinido és az imperfecto mindkettő múlt idő, de más szemszögből mesélik el a történetet. Az indefinido egy pontot jelöl a történet vonalán, ami megtörtént és lezárult, mint «Ayer llegué tarde» vagy «Fuimos al cine». Az imperfecto a díszletet festi a pont köré, szokást vagy leírást, mint «De niño jugaba en la calle» vagy «Era de noche y llovía». Néhány ige jelentést is vált a kettő között: «supe» azt jelenti, megtudtam valamit egy pillanatban, «sabía» azt, hogy már régóta tudtam. Egy rövid, közbevágó esemény indefinidóban áll, a háttér körülötte pedig imperfecto: «Mientras cenábamos, sonó el teléfono».",
     "en": "The preterite and the imperfect are both past tenses, but they tell the story from a different angle. The preterite marks a point on the story line that happened and is closed, like «Ayer llegué tarde» or «Fuimos al cine». The imperfect paints the scenery around that point, a habit or a description, like «De niño jugaba en la calle» or «Era de noche y llovía». A few verbs even shift meaning between the two: «supe» means I found something out at one moment, «sabía» means I already knew it for a while. A short, interrupting event takes the preterite, and the background around it takes the imperfect: «Mientras cenábamos, sonó el teléfono».",
-    "es": "El indefinido y el imperfecto son los dos tiempos del pasado, pero cuentan la historia desde un ángulo distinto. El indefinido marca un punto en la línea del relato que ocurrió y terminó, como «Ayer llegué tarde» o «Fuimos al cine». El imperfecto pinta el decorado alrededor de ese punto, una costumbre o una descripción, como «De niño jugaba en la calle» o «Era de noche y llovía». Algunos verbos incluso cambian de sentido entre los dos: «supe» significa que me enteré de algo en un momento, «sabía» significa que ya lo sabía desde hacía tiempo. Un suceso breve que interrumpe va en indefinido, y el fondo a su alrededor va en imperfecto: «Mientras cenábamos, sonó el teléfono».",
+    "es": "El perfecto simple y el imperfecto son los dos tiempos del pasado, pero cuentan la historia desde un ángulo distinto. El perfecto simple marca un punto en la línea del relato que ocurrió y terminó, como «Ayer llegué tarde» o «Fuimos al cine». El imperfecto pinta el decorado alrededor de ese punto, una costumbre o una descripción, como «De niño jugaba en la calle» o «Era de noche y llovía». Algunos verbos incluso cambian de sentido entre los dos: «supe» significa que me enteré de algo en un momento, «sabía» significa que ya lo sabía desde hacía tiempo. Un suceso breve que interrumpe va en perfecto simple, y el fondo a su alrededor va en imperfecto: «Mientras cenábamos, sonó el teléfono».",
     "de": "Das Indefinido und das Imperfekt sind beide Vergangenheitsformen, erzählen die Geschichte aber aus einem anderen Blickwinkel. Das Indefinido markiert einen Punkt auf der Erzähllinie, der geschah und abgeschlossen ist, wie «Ayer llegué tarde» oder «Fuimos al cine». Das Imperfekt malt die Kulisse um diesen Punkt herum, eine Gewohnheit oder eine Beschreibung, wie «De niño jugaba en la calle» oder «Era de noche y llovía». Manche Verben ändern zwischen den beiden sogar die Bedeutung: «supe» bedeutet, ich erfuhr etwas in einem Moment, «sabía» bedeutet, ich wusste es schon seit einer Weile. Ein kurzes, unterbrechendes Ereignis steht im Indefinido, und der Hintergrund darum im Imperfekt: «Mientras cenábamos, sonó el teléfono»."
   },
   "glossary": [
@@ -783,7 +783,7 @@
       "why": {
         "hu": "Az ayer + konkrét óra: egyetlen lezárt esemény, tehát indefinido.",
         "en": "Ayer plus a specific hour: one closed event, so the preterite.",
-        "es": "Ayer y una hora concreta: un hecho cerrado, indefinido.",
+        "es": "Ayer y una hora concreta: un hecho cerrado, perfecto simple.",
         "de": "Ayer plus konkrete Uhrzeit: ein abgeschlossenes Ereignis, Indefinido."
       },
       "wrong": {
@@ -897,7 +897,7 @@
       "why": {
         "hu": "A közbevágó, rövid esemény indefinido: sonó.",
         "en": "The short interrupting event takes the preterite: sonó.",
-        "es": "El suceso breve que interrumpe va en indefinido: sonó.",
+        "es": "El suceso breve que interrumpe va en perfecto simple: sonó.",
         "de": "Das kurze, unterbrechende Ereignis steht im Indefinido: sonó."
       },
       "wrong": {
@@ -935,7 +935,7 @@
       "why": {
         "hu": "A conocer indefinidóban megismerkedést jelent: akkor találkoztunk először.",
         "en": "Conocer in the preterite means meeting for the first time.",
-        "es": "Conocer en indefinido significa el primer encuentro.",
+        "es": "Conocer en perfecto simple significa el primer encuentro.",
         "de": "Conocer im Indefinido heißt: zum ersten Mal begegnen."
       },
       "wrong": {
@@ -973,7 +973,7 @@
       "why": {
         "hu": "A saber indefinidóban megtudást jelent: akkor derült ki.",
         "en": "Saber in the preterite means finding out: that is when I learned it.",
-        "es": "Saber en indefinido significa enterarse.",
+        "es": "Saber en perfecto simple significa enterarse.",
         "de": "Saber im Indefinido heißt erfahren."
       },
       "wrong": {
@@ -1011,14 +1011,14 @@
       "why": {
         "hu": "A todos los veranos szokás (imperfecto), a mondat második fele egyszeri esemény (indefinido). A kettő szembeállítása maga a lecke.",
         "en": "Todos los veranos is a habit (imperfect); the second half is one event (preterite). The contrast is the whole lesson.",
-        "es": "Todos los veranos es costumbre (imperfecto); la segunda parte es un hecho (indefinido).",
+        "es": "Todos los veranos es costumbre (imperfecto); la segunda parte es un hecho (perfecto simple).",
         "de": "Todos los veranos ist Gewohnheit (Imperfekt), die zweite Hälfte ein Ereignis (Indefinido)."
       },
       "wrong": {
         "fuimos": {
           "hu": "A \"fuimos\" is helyes mondatot adna, de eltörölné a mondat lényegét: kétszer ugyanaz az indefinido azt jelentené, hogy egyszer elmentünk a strandra, és tavaly sem, ami nem ad értelmes ellentétet; a szokást imperfecto fejezi ki: íbamos.",
           "en": "\"Fuimos\" would also make a sentence, but it would erase the point: the same preterite twice would mean we went to the beach once, and not last year either, which makes no real contrast; the habit takes the imperfect: íbamos.",
-          "es": "\"Fuimos\" también formaría una frase, pero borraría el sentido: el mismo indefinido dos veces significaría que fuimos a la playa una vez, y tampoco el año pasado, sin contraste real; la costumbre lleva imperfecto: íbamos.",
+          "es": "\"Fuimos\" también formaría una frase, pero borraría el sentido: el mismo perfecto simple dos veces significaría que fuimos a la playa una vez, y tampoco el año pasado, sin contraste real; la costumbre lleva imperfecto: íbamos.",
           "de": "\"Fuimos\" würde ebenfalls einen Satz ergeben, aber den Sinn zerstören: dasselbe Indefinido zweimal würde bedeuten, wir gingen einmal an den Strand, und letztes Jahr auch nicht, was keinen echten Kontrast ergibt; die Gewohnheit steht im Imperfekt: íbamos."
         },
         "vamos": {
@@ -1087,7 +1087,7 @@
       "why": {
         "hu": "A de repente hirtelen, egyszeri eseményt jelöl: indefinido.",
         "en": "De repente marks a sudden, one-off event: the preterite.",
-        "es": "De repente marca un suceso único y brusco: indefinido.",
+        "es": "De repente marca un suceso único y brusco: perfecto simple.",
         "de": "De repente markiert ein plötzliches Einzelereignis: Indefinido."
       },
       "wrong": {
@@ -1163,7 +1163,7 @@
       "why": {
         "hu": "Megadott, lezárt időtartam: indefinido. A hosszúság önmagában nem tesz imperfectóvá semmit.",
         "en": "A stated, closed duration takes the preterite. Length alone never makes something imperfect.",
-        "es": "Una duración cerrada va en indefinido. La duración por sí sola no pide imperfecto.",
+        "es": "Una duración cerrada va en perfecto simple. La duración por sí sola no pide imperfecto.",
         "de": "Eine genannte, abgeschlossene Dauer steht im Indefinido. Länge allein verlangt kein Imperfekt."
       },
       "wrong": {
@@ -1264,7 +1264,7 @@
     {
       "id": "ii2-form-01",
       "kind": "form",
-      "verb": "hablar (indefinido)",
+      "verb": "hablar (perfecto simple)",
       "person": "yo",
       "answer": "hablé",
       "table": "ind-imp-hablar",
@@ -1288,7 +1288,7 @@
     {
       "id": "ii2-form-03",
       "kind": "form",
-      "verb": "hablar (indefinido)",
+      "verb": "hablar (perfecto simple)",
       "person": "tú",
       "answer": "hablaste",
       "table": "ind-imp-hablar",
@@ -1312,7 +1312,7 @@
     {
       "id": "ii2-form-05",
       "kind": "form",
-      "verb": "hablar (indefinido)",
+      "verb": "hablar (perfecto simple)",
       "person": "él/ella/usted",
       "answer": "habló",
       "table": "ind-imp-hablar",
@@ -1336,7 +1336,7 @@
     {
       "id": "ii2-form-07",
       "kind": "form",
-      "verb": "hablar (indefinido)",
+      "verb": "hablar (perfecto simple)",
       "person": "nosotros",
       "answer": "hablamos",
       "table": "ind-imp-hablar",
@@ -1360,7 +1360,7 @@
     {
       "id": "ii2-form-09",
       "kind": "form",
-      "verb": "hablar (indefinido)",
+      "verb": "hablar (perfecto simple)",
       "person": "vosotros",
       "answer": "hablasteis",
       "table": "ind-imp-hablar",
@@ -1384,7 +1384,7 @@
     {
       "id": "ii2-form-11",
       "kind": "form",
-      "verb": "hablar (indefinido)",
+      "verb": "hablar (perfecto simple)",
       "person": "ellos/ellas/ustedes",
       "answer": "hablaron",
       "table": "ind-imp-hablar",
@@ -1420,7 +1420,7 @@
           "text": {
             "hu": "egyszeri, lezárt esemény (indefinido)",
             "en": "one-time, closed event (indefinido)",
-            "es": "hecho único y cerrado (indefinido)",
+            "es": "hecho único y cerrado (perfecto simple)",
             "de": "einmaliges, abgeschlossenes Ereignis (indefinido)"
           }
         },
@@ -1480,7 +1480,7 @@
           "wrong": {
             "hu": "A leírás olyankor állna, mint \"Llovía\" (esett, háttér-állapot); itt viszont a \"de repente\" (hirtelen) egy RÖVID, VÁRATLAN eseményt jelez, ami megszakít valamit, ez indefinido.",
             "en": "Description would apply to something like \"Llovía\" (it was raining, background); here \"de repente\" (suddenly) marks a SHORT, UNEXPECTED event that interrupts something, that is the preterite.",
-            "es": "La descripción iría en algo como \"Llovía\" (fondo); aquí \"de repente\" marca un suceso CORTO e INESPERADO que interrumpe algo, eso es indefinido.",
+            "es": "La descripción iría en algo como \"Llovía\" (fondo); aquí \"de repente\" marca un suceso CORTO e INESPERADO que interrumpe algo, eso es perfecto simple.",
             "de": "Die Beschreibung passt zu etwas wie \"Llovía\" (Hintergrund); hier markiert \"de repente\" (plötzlich) ein KURZES, UNERWARTETES Ereignis, das etwas unterbricht, das ist Indefinido."
           }
         },
@@ -1488,7 +1488,7 @@
           "text": {
             "hu": "hirtelen esemény, megszakítja a hátteret (indefinido)",
             "en": "sudden event, interrupts the background (indefinido)",
-            "es": "suceso repentino que interrumpe (indefinido)",
+            "es": "suceso repentino que interrumpe (perfecto simple)",
             "de": "plötzliches Ereignis, unterbricht (indefinido)"
           }
         },
@@ -1536,7 +1536,7 @@
           "text": {
             "hu": "egyszeri, lezárt esemény (indefinido)",
             "en": "one-time, closed event (indefinido)",
-            "es": "hecho único y cerrado (indefinido)",
+            "es": "hecho único y cerrado (perfecto simple)",
             "de": "einmaliges, abgeschlossenes Ereignis (indefinido)"
           },
           "wrong": {
@@ -1582,7 +1582,7 @@
           "text": {
             "hu": "egyszeri, lezárt esemény (indefinido)",
             "en": "one-time, closed event (indefinido)",
-            "es": "hecho único y cerrado (indefinido)",
+            "es": "hecho único y cerrado (perfecto simple)",
             "de": "einmaliges, abgeschlossenes Ereignis (indefinido)"
           },
           "wrong": {
@@ -1604,7 +1604,7 @@
           "text": {
             "hu": "hirtelen esemény, megszakítja a hátteret (indefinido)",
             "en": "sudden event, interrupts the background (indefinido)",
-            "es": "suceso repentino que interrumpe (indefinido)",
+            "es": "suceso repentino que interrumpe (perfecto simple)",
             "de": "plötzliches Ereignis, unterbricht (indefinido)"
           },
           "wrong": {
@@ -1658,7 +1658,7 @@
           "text": {
             "hu": "egyszeri, lezárt esemény (indefinido)",
             "en": "one-time, closed event (indefinido)",
-            "es": "hecho único y cerrado (indefinido)",
+            "es": "hecho único y cerrado (perfecto simple)",
             "de": "einmaliges, abgeschlossenes Ereignis (indefinido)"
           },
           "wrong": {
@@ -1690,7 +1690,7 @@
           "text": {
             "hu": "egyszeri, lezárt esemény (indefinido)",
             "en": "one-time, closed event (indefinido)",
-            "es": "hecho único y cerrado (indefinido)",
+            "es": "hecho único y cerrado (perfecto simple)",
             "de": "einmaliges, abgeschlossenes Ereignis (indefinido)"
           }
         },
@@ -1744,7 +1744,7 @@
           "text": {
             "hu": "egyszeri, lezárt esemény (indefinido)",
             "en": "one-time, closed event (indefinido)",
-            "es": "hecho único y cerrado (indefinido)",
+            "es": "hecho único y cerrado (perfecto simple)",
             "de": "einmaliges, abgeschlossenes Ereignis (indefinido)"
           },
           "wrong": {
@@ -1766,7 +1766,7 @@
           "text": {
             "hu": "hirtelen esemény, megszakítja a hátteret (indefinido)",
             "en": "sudden event, interrupts the background (indefinido)",
-            "es": "suceso repentino que interrumpe (indefinido)",
+            "es": "suceso repentino que interrumpe (perfecto simple)",
             "de": "plötzliches Ereignis, unterbricht (indefinido)"
           },
           "wrong": {
