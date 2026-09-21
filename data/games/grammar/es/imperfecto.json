@@ -330,7 +330,7 @@
           "text": {
             "hu": "Kor és óra a múltban: mindig imperfecto, sosem indefinido.",
             "en": "Age and clock time in the past: always the imperfect, never the preterite.",
-            "es": "Edad y hora en el pasado: siempre imperfecto, nunca indefinido.",
+            "es": "Edad y hora en el pasado: siempre imperfecto, nunca perfecto simple.",
             "de": "Alter und Uhrzeit in der Vergangenheit: immer Imperfekt, nie Indefinido."
           },
           "examples": [
@@ -358,7 +358,7 @@
           "text": {
             "hu": "Egy folyamatban lévő cselekvésre, amit egy másik, rövidebb cselekvés félbeszakít: a hosszú imperfecto, a közbevágó indefinido.",
             "en": "For an action already in progress, interrupted by a shorter one: the long one takes the imperfect, the interrupting one the preterite.",
-            "es": "Para una acción en curso, interrumpida por otra más corta: la larga en imperfecto, la que interrumpe en indefinido.",
+            "es": "Para una acción en curso, interrumpida por otra más corta: la larga en imperfecto, la que interrumpe en perfecto simple.",
             "de": "Für eine bereits laufende Handlung, die von einer kürzeren unterbrochen wird: die lange steht im Imperfekt, die unterbrechende im Indefinido."
           },
           "examples": [
@@ -687,7 +687,7 @@
         "fui": {
           "hu": "A \"fui\" a ser befejezett múltja: ezzel a mondat azt jelentené, hogy egy konkrét pillanatban VÁLTAM gyerekké, mintha a gyerekkor egy lezárt esemény volna, nem pedig a háttérben húzódó időszak.",
           "en": "\"Fui\" is the preterite of ser: with it the sentence would mean I BECAME a child at one specific completed moment, as if childhood were a closed event, not the background period it actually is.",
-          "es": "\"Fui\" es el indefinido de ser: con él la frase diría que ME CONVERTÍ en niño en un momento concreto y cerrado, como si la infancia fuera un suceso terminado, no la etapa de fondo que en realidad es.",
+          "es": "\"Fui\" es el perfecto simple de ser: con él la frase diría que ME CONVERTÍ en niño en un momento concreto y cerrado, como si la infancia fuera un suceso terminado, no la etapa de fondo que en realidad es.",
           "de": "\"Fui\" ist das Indefinido von ser: damit würde der Satz heißen, dass ich in einem bestimmten, abgeschlossenen Moment zum Kind WURDE, als wäre die Kindheit ein abgeschlossenes Ereignis, nicht die Hintergrundphase, die sie ist."
         },
         "estaba": {
@@ -763,7 +763,7 @@
         "Fueron": {
           "hu": "A \"Fueron\" a ser többes szám harmadik személyű befejezett múltja, de az órát ebben az igeidőben sosem mondjuk, csak imperfectóban; ez rögzült kivétel, amit nem lehet megkerülni.",
           "en": "\"Fueron\" is the plural preterite of ser, but clock time is never told in that tense, only in the imperfect; this is a fixed exception with no way around it.",
-          "es": "\"Fueron\" es el indefinido plural de ser, pero la hora nunca se dice en ese tiempo, solo en imperfecto; es una excepción fija sin manera de evitarla.",
+          "es": "\"Fueron\" es el perfecto simple plural de ser, pero la hora nunca se dice en ese tiempo, solo en imperfecto; es una excepción fija sin manera de evitarla.",
           "de": "\"Fueron\" ist das Indefinido-Plural von ser, aber die Uhrzeit wird nie in dieser Zeitform genannt, nur im Imperfekt; das ist eine feste Ausnahme ohne Umgehung."
         },
         "Son": {
@@ -794,7 +794,7 @@
       "why": {
         "hu": "A hosszú, félbeszakított cselekvés imperfecto; a közbevágó (sonó) indefinido.",
         "en": "The long, interrupted action takes the imperfect; the interrupting one (sonó) the preterite.",
-        "es": "La acción larga interrumpida va en imperfecto; la que interrumpe, en indefinido.",
+        "es": "La acción larga interrumpida va en imperfecto; la que interrumpe, en perfecto simple.",
         "de": "Die lange, unterbrochene Handlung steht im Imperfekt, die unterbrechende im Indefinido."
       },
       "wrong": {
@@ -839,7 +839,7 @@
         "fui": {
           "hu": "A \"fui\" az ir befejezett múltja, egyetlen konkrét alkalmat jelentene, ami ellentmond a \"todos los domingos\" ismétlődésnek; helyesen egy alkalomra: El domingo pasado fui al parque.",
           "en": "\"Fui\" is the preterite of ir, meaning one specific occasion, which contradicts the repetition in \"todos los domingos\"; correctly for one occasion: El domingo pasado fui al parque.",
-          "es": "\"Fui\" es el indefinido de ir, indicaría una sola ocasión concreta, lo cual contradice la repetición de \"todos los domingos\"; correctamente para una vez: El domingo pasado fui al parque.",
+          "es": "\"Fui\" es el perfecto simple de ir, indicaría una sola ocasión concreta, lo cual contradice la repetición de \"todos los domingos\"; correctamente para una vez: El domingo pasado fui al parque.",
           "de": "\"Fui\" ist das Indefinido von ir und würde einen einzigen, konkreten Anlass bedeuten, was der Wiederholung in \"todos los domingos\" widerspricht; richtig für einen Anlass: El domingo pasado fui al parque."
         },
         "voy": {
@@ -877,13 +877,13 @@
         "fue": {
           "hu": "A \"fue\" a ser befejezett múltja: ezzel a mondat azt jelentené, hogy a ház egy konkrét pillanatban VÁLT régivé, nem azt, hogy egyszerűen ilyen volt, háttér-jellemzőként.",
           "en": "\"Fue\" is the preterite of ser: with it the sentence would mean the house BECAME old at one specific moment, not that it simply was old, as a background trait.",
-          "es": "\"Fue\" es el indefinido de ser: con él la frase diría que la casa SE VOLVIÓ vieja en un momento concreto, no que simplemente era así, como rasgo de fondo.",
+          "es": "\"Fue\" es el perfecto simple de ser: con él la frase diría que la casa SE VOLVIÓ vieja en un momento concreto, no que simplemente era así, como rasgo de fondo.",
           "de": "\"Fue\" ist das Indefinido von ser: damit würde der Satz heißen, dass das Haus in einem bestimmten Moment alt WURDE, nicht dass es einfach so war, als Hintergrundmerkmal."
         },
         "estuvo": {
           "hu": "Az \"estuvo\" az estar befejezett múltja: ezzel a mondat egy konkrét, lezárt időszakra korlátozná az állapotot, nem a tartós, leíró jellemzőt, amit egy régi ház esetében a ser fejez ki.",
           "en": "\"Estuvo\" is the preterite of estar: with it the sentence would limit the state to one closed period, not the lasting, descriptive trait that ser expresses for an old house.",
-          "es": "\"Estuvo\" es el indefinido de estar: con él la frase limitaría el estado a un periodo cerrado, no al rasgo descriptivo y duradero que expresa ser para una casa vieja.",
+          "es": "\"Estuvo\" es el perfecto simple de estar: con él la frase limitaría el estado a un periodo cerrado, no al rasgo descriptivo y duradero que expresa ser para una casa vieja.",
           "de": "\"Estuvo\" ist das Indefinido von estar: damit würde der Satz den Zustand auf einen abgeschlossenen Zeitraum begrenzen, nicht auf das dauerhafte, beschreibende Merkmal, das ser für ein altes Haus ausdrückt."
         }
       },
@@ -1067,7 +1067,7 @@
         "Fui a": {
           "hu": "A \"Fui a\" az ir befejezett múltja + a: ezzel a mondat azt jelentené, hogy TÉNYLEG elmentem valahova, hogy felhívjalak, nem azt, hogy csak szándékomban állt, mielőtt lemerült a telefonom.",
           "en": "\"Fui a\" is the preterite of ir plus a: with it the sentence would mean I actually WENT somewhere to call you, not that I merely intended to before my battery died.",
-          "es": "\"Fui a\" es el indefinido de ir más a: con él la frase diría que de verdad FUI a algún sitio para llamarte, no que solo tenía la intención antes de quedarme sin batería.",
+          "es": "\"Fui a\" es el perfecto simple de ir más a: con él la frase diría que de verdad FUI a algún sitio para llamarte, no que solo tenía la intención antes de quedarme sin batería.",
           "de": "\"Fui a\" ist das Indefinido von ir plus a: damit würde der Satz heißen, dass ich tatsächlich irgendwohin GING, um dich anzurufen, nicht dass ich es nur vorhatte, bevor mein Akku leer war."
         },
         "Voy a": {
