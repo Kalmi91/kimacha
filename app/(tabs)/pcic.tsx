@@ -432,7 +432,7 @@ export default function PcicScreen() {
         </View>
       ) : null}
 
-      <FeedbackButton level="B1" languagePair="es-en" currentCard="pcic" />
+      <FeedbackButton level="B1" languagePair="es-en" currentCard={`pcic:${current.itemId}`} />
     </KeyboardAvoidingView>
   );
 }

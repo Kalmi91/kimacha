@@ -53,6 +53,8 @@ export default function GrammarLessonScreen() {
   // D3 (FB290): melyik fajtát indította el a tanuló (a gombja szerint), ez megy
   // a GrammarDrill `kinds` propjába és a haladás-sor kulcsába is.
   const [drillKind, setDrillKind] = useState<GrammarKind>('choice');
+  // FB340-342/345/356: a látható drill-item id-ja, a feedback-kontextusba.
+  const [drillItemId, setDrillItemId] = useState<string | undefined>(undefined);
   // LECKE-SEMA 3.3: a V2 lecke egyetlen (play → stop) gombja a lesson.speak
   // felolvasásához; leállítás gombnyomásra, fázisváltáskor és unmountkor is.
   const [speaking, setSpeaking] = useState(false);
@@ -235,8 +237,13 @@ export default function GrammarLessonScreen() {
           onFinish={finish}
           kinds={[drillKind]}
           transformSeen={transformSeen}
+          onItemChange={setDrillItemId}
         />
-        <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:drill`} />
+        <FeedbackButton
+          level={level}
+          languagePair={`${contentLang}→${learnedLang}`}
+          currentCard={`grammar:${topicId}:drill${drillItemId ? `:${drillItemId}` : ''}`}
+        />
       </View>
     );
   }

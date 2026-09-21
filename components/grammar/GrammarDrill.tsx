@@ -57,6 +57,8 @@ interface Props {
   kinds?: readonly GrammarKind[];
   /** FB316 (NY10): a "transform" kör legkevésbé-gyakorolt-elöl sorrendjéhez. */
   transformSeen?: Record<string, number>;
+  /** FB340-342/345/356: a feedback-kontextushoz, az éppen látható item id-ja. */
+  onItemChange?: (itemId: string) => void;
 }
 
 const CHOICE_ONLY: readonly GrammarKind[] = ['choice'];
@@ -452,7 +454,7 @@ function TransformDrillItem({
   );
 }
 
-export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, kinds = CHOICE_ONLY, transformSeen }: Props) {
+export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, kinds = CHOICE_ONLY, transformSeen, onItemChange }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
@@ -485,6 +487,13 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     if (!hasTransform) return;
     getDb().getStrictAccents().then(setStrictAccents).catch(() => {});
   }, [hasTransform]);
+
+  // FB340-342/345/356: a szülő ebből tudja a feedback-kontextusba tenni,
+  // melyik itemre panaszkodott a tanuló.
+  useEffect(() => {
+    const id = round[index]?.item.id;
+    if (id) onItemChange?.(id);
+  }, [round, index, onItemChange]);
 
   const roundItem = round[index];
   if (!roundItem) return null;
