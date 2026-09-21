@@ -683,6 +683,11 @@ export default {
   // PLAN-pcic 5. lépés: a PCIC fül (angol -> spanyol gépelés, Anki-gombok).
   pcic: {
     header: (due: number, newCount: number, doneToday: number, total: number) => `${total} szó · esedékes ${due} · új ${newCount} · ma kész ${doneToday}`,
+    // 5b: a BadgeRow chip-sorának négy külön felirata (anki-ui-terv.html).
+    badgeTotal: (n: number) => `${n} szó`,
+    badgeDue: (n: number) => `esedékes ${n}`,
+    badgeNew: (n: number) => `új ${n}`,
+    badgeDone: (n: number) => `ma kész ${n}`,
     again: 'Nem tudtam',
     hard: 'Nehéz',
     good: 'Tudtam',
@@ -703,5 +708,11 @@ export default {
     tileNew: 'Új',
     tileAgain: 'Újra',
     introduced: (n: number, total: number) => `${n} / ${total} szó bevezetve`,
+  },
+  // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
+  pos: {
+    noun: 'főnév',
+    verb: 'ige',
+    phrase: 'kifejezés',
   },
 };
