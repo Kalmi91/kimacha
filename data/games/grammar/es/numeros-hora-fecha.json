@@ -230,7 +230,7 @@
         ["3:30", "las tres y media"],
         ["2:45", "las tres menos cuarto"],
         ["1 de enero", "el primero de enero"],
-        ["5 de mayo", "el 5 de mayo"],
+        ["5 de mayo", "el cinco de mayo"],
         ["21 años", "veintiún años"]
       ]
     },
@@ -679,7 +679,7 @@
     { "id": "nh-form-08", "kind": "form", "verb": "palabra", "person": "3:30", "answer": "las tres y media", "table": "numeros" },
     { "id": "nh-form-09", "kind": "form", "verb": "palabra", "person": "2:45", "answer": "las tres menos cuarto", "table": "numeros" },
     { "id": "nh-form-10", "kind": "form", "verb": "palabra", "person": "1 de enero", "answer": "el primero de enero", "table": "numeros" },
-    { "id": "nh-form-11", "kind": "form", "verb": "palabra", "person": "5 de mayo", "answer": "el 5 de mayo", "table": "numeros" },
+    { "id": "nh-form-11", "kind": "form", "verb": "palabra", "person": "5 de mayo", "answer": "el cinco de mayo", "table": "numeros" },
     { "id": "nh-form-12", "kind": "form", "verb": "palabra", "person": "21 años", "answer": "veintiún años", "table": "numeros" },
     {
       "kind": "why",
