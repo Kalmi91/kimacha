@@ -668,6 +668,11 @@ export default {
   // PLAN-pcic Schritt 5: der PCIC-Tab (Englisch -> Spanisch tippen, Anki-Knöpfe).
   pcic: {
     header: (due: number, newCount: number, doneToday: number, total: number) => `${total} Wörter · fällig ${due} · neu ${newCount} · heute fertig ${doneToday}`,
+    // 5b: a BadgeRow chip-sorának négy külön felirata (anki-ui-terv.html).
+    badgeTotal: (n: number) => `${n} Wörter`,
+    badgeDue: (n: number) => `fällig ${n}`,
+    badgeNew: (n: number) => `neu ${n}`,
+    badgeDone: (n: number) => `heute fertig ${n}`,
     again: 'Wusste ich nicht',
     hard: 'Schwer',
     good: 'Wusste ich',

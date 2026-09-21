@@ -9,6 +9,8 @@ import TappableSentence, { type TokenState } from '@/components/TappableSentence
 import { charDiff } from '@/lib/charDiff';
 import { ARTICLE_OPTIONS, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import FeedbackButton from '@/components/FeedbackModal';
+import CardShell from '@/components/learn/CardShell';
+import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { speak as speakIn } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import { answerInputProps } from '@/lib/inputProps';
@@ -17,11 +19,6 @@ import type { TypingResult } from '@/lib/learn/cardPresentation';
 
 type Strings = ReturnType<typeof stringsFor>;
 type ColorScheme = (typeof Colors)['light'];
-
-// FB170 (moved from app/(tabs)/index.tsx, structural extraction only):
-// height of the docked Check bar (button plus its padding), the room the
-// typing card has to keep free at its bottom.
-const DOCK_RESERVE = 76;
 
 type Props = {
   current: DueItem;
@@ -124,7 +121,7 @@ export default function TypingCardScreen({
           kattintok". The card is the area beside the field, so a tap on it
           closes the keyboard; the ✓ button and the speaker keep working,
           they handle their own press. */}
-      <Pressable style={[styles.card, styles.typingCard, { backgroundColor: colors.card }]} onPress={() => Keyboard.dismiss()}>
+      <CardShell compact colors={colors} onPress={() => Keyboard.dismiss()}>
         {cardChips}
         <View style={[styles.frontRow, { marginBottom: 16 }]}>
           {iconBadge}
@@ -223,7 +220,7 @@ export default function TypingCardScreen({
             {spellingTapLine}
           </View>
         )}
-      </Pressable>
+      </CardShell>
 
       {/* Kálmán 2026-09-10: "Helyes ez így". Az automata ellenőrzés hibásnak
           mondta, de a gépelt válasz mégis jó (pl. elfogadható szinonima), ezért
@@ -271,14 +268,14 @@ export default function TypingCardScreen({
 
       {/* FB170: the one and only Check/→ of the typing card, pinned to the top
           edge of the keyboard (or to the bottom of the screen when it is closed). */}
-      <View style={[styles.dockedAction, { bottom: dockLift, backgroundColor: colors.background }]}>
-        <Pressable
-          style={[styles.inlineCheckBtn, { backgroundColor: revealed && typingResult === 'wrong' ? '#1D4ED8' : '#38BDF8' }]}
-          onPress={revealed ? handleTypingNext : handleCheck}
-        >
-          <Text style={styles.inlineCheckText}>{revealed ? '→' : `✓ ${s.card.check}`}</Text>
-        </Pressable>
-      </View>
+      <DockedAction
+        label={revealed ? '→' : `✓ ${s.card.check}`}
+        onPress={revealed ? handleTypingNext : handleCheck}
+        tone={revealed ? 'next' : 'check'}
+        color={revealed && typingResult === 'wrong' ? '#1D4ED8' : '#38BDF8'}
+        bottom={dockLift}
+        colors={colors}
+      />
 
       {/* FB173, Kálmán 2026-09-06: "feedback gomb egybe csúszott". The 💬 button sits
           at bottom: 24, which is inside the docked Check bar; it rides above it. */}
@@ -297,28 +294,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     justifyContent: 'center',
-  },
-  card: {
-    borderRadius: 20,
-    padding: 32,
-    alignItems: 'center',
-    minHeight: 260,
-    justifyContent: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.1,
-    shadowRadius: 12,
-    elevation: 4,
-  },
-  // FB172, Kálmán 2026-09-06: "fent a review tul messze van a tetejétől". The shared
-  // card centres its content inside a 260 px minimum, so a short typing card (chip,
-  // word, field) floated with a band of empty card above the Review chip. The typing
-  // card hugs its content from the top instead; the flashcard branch keeps the block.
-  typingCard: {
-    minHeight: 0,
-    justifyContent: 'flex-start',
-    paddingTop: 18,
-    paddingBottom: 20,
   },
   frontRow: {
     flexDirection: 'row',
@@ -379,33 +354,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'stretch',
     gap: 8,
-  },
-  dockedAction: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    paddingHorizontal: 20,
-    paddingTop: 8,
-    paddingBottom: 10,
-  },
-  // FB167, Kálmán 2026-08-29: "az új check gomb nagyon egyenletlen így, legyen
-  // szűkebb és szélesebb". The 82% right-biased bar left uneven margins; it is
-  // now full width (even on both sides) and lower.
-  inlineCheckBtn: {
-    alignSelf: 'stretch',
-    width: '100%',
-    minHeight: 44,
-    borderRadius: 14,
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inlineCheckText: {
-    color: '#fff',
-    fontSize: 18,
-    fontWeight: '700',
   },
   resultSection: {
     alignItems: 'center',
