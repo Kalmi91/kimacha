@@ -223,7 +223,7 @@ export default {
       explanation: (person: string, tense: string, form: string) => `La forma "${person}" en ${tense}: ${form}`,
       tenseNames: {
         presente: 'presente',
-        indefinido: 'pretérito indefinido',
+        indefinido: 'pretérito perfecto simple',
         imperfecto: 'pretérito imperfecto',
         futuro: 'futuro',
         condicional: 'condicional',
