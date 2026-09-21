@@ -1,6 +1,6 @@
 // SZ2 (SZAVAK.md): a session-sor léptetése értékelés után és visszavonáskor.
 
-import { requeueAfterGrade, requeueAfterUndo } from '../pcicSession';
+import { countDoneToday, requeueAfterGrade, requeueAfterUndo } from '../pcicSession';
 import { sm2NewCard, sm2Review, addDays, type Sm2Card } from '../sm2';
 
 const TODAY = '2026-09-18';
@@ -80,5 +80,34 @@ describe('requeueAfterUndo', () => {
     const undone = requeueAfterUndo(queueAfterGrade, before, graded, TODAY);
 
     expect(undone).toEqual([before, other]);
+  });
+});
+
+// FB352: a napi haladás perzisztált `lastReview`-ból számolt, tab-váltás vagy
+// app-újraindítás után is a valós napi számot kell adnia.
+describe('countDoneToday', () => {
+  it('counts only cards reviewed today', () => {
+    const cards = [
+      reviewCard({ itemId: 'b1-0011', lastReview: TODAY }),
+      reviewCard({ itemId: 'b1-0012', lastReview: TODAY }),
+      reviewCard({ itemId: 'b1-0013', lastReview: addDays(TODAY, -1) }),
+      sm2NewCard('b1-0014'), // lastReview: null, még nem értékelt
+    ];
+
+    expect(countDoneToday(cards, TODAY)).toBe(2);
+  });
+
+  it('stays correct after a remount (fresh array, same persisted data)', () => {
+    const persisted = [reviewCard({ itemId: 'b1-0015', lastReview: TODAY })];
+    // Egy "remount" csak újra beolvassa ugyanazt az adatot, új tömbként.
+    const reloaded = persisted.map((c) => ({ ...c }));
+
+    expect(countDoneToday(reloaded, TODAY)).toBe(1);
+  });
+
+  it('returns 0 when nothing was reviewed today', () => {
+    const cards = [reviewCard({ lastReview: addDays(TODAY, -1) }), sm2NewCard('b1-0016')];
+
+    expect(countDoneToday(cards, TODAY)).toBe(0);
   });
 });

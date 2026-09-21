@@ -205,3 +205,16 @@ describe('eitherArticle (PROMPT-POLICY 5, FB285)', () => {
     expect(strictAnswerMatch('la perro', 'el perro', { eitherArticle: false })).toBe(false);
   });
 });
+
+// FB356 (indefinido-10-verbos): a lecke saját szövege szerint Mexikóban a
+// vosotros alakot sosem használjuk, mindig ustedes van helyette, de a
+// vosotros-itemek `accept` listája eddig csak a vosotros alakot fogadta el;
+// egy ustedes-t begépelő tanuló jó válasza pirosra ment. A GrammarDrill
+// `check()`-je (components/grammar/GrammarDrill.tsx) pontosan így vizsgál
+// egy transform itemet: `[item.answer, ...(item.accept ?? [])]` bármelyikére.
+describe('indefinido-10-verbos transform accept lists (FB356)', () => {
+  it('accepts the Mexican ustedes form alongside the taught vosotros form', () => {
+    const candidates = ['Mirasteis la película tarde.', 'Vosotros mirasteis la película tarde.', 'Ustedes miraron la película tarde.'];
+    expect(candidates.some((c) => strictAnswerMatch('Ustedes miraron la película tarde.', c))).toBe(true);
+  });
+});
