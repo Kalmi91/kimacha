@@ -17,6 +17,12 @@ jest.mock('expo-router', () => ({
   },
 }));
 
+// FB350: useDockLift (a PCIC dokkolt sávja) most useSafeAreaInsets-et hív, ami
+// SafeAreaProvider nélkül dob; itt a mérete nem számít, csak ne dobjon.
+jest.mock('react-native-safe-area-context', () => ({
+  useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
+}));
+
 // Egy fix tétel, hogy a teszt ne a valódi PCIC-korpusztól függjön.
 const FIXTURE_ITEM = { id: 'x1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
 jest.mock('@/data/pcic', () => ({
