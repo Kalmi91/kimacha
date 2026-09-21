@@ -430,6 +430,8 @@ export default {
     accentHint: 'Auch ohne Akzente akzeptiert, fehlende Akzente werden gezeigt',
     // FB315 (NY9): der Wort-Fokus-Button auf dem Lektionsbildschirm.
     learnTheseWords: (n: number) => `Diese Wörter lernen (${n})`,
+    // FB328: kumulierte Trefferquote, in der Lehrplanliste und auf dem Ergebnisbildschirm.
+    lessonPercent: (n: number) => `Bisher: ${n}% richtig`,
   },
   exam: {
     simulationOf: (model: string) => `Simulation der Prüfung ${model}`,

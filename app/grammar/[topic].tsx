@@ -11,6 +11,7 @@ import { cumulativeCorpusWordIds, grammarKindCounts, isLessonV2, type GrammarGap
 import { buildGlossMap } from '@/lib/games/gloss';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, syllabusTopic } from '@/lib/grammar/syllabus';
 import { lessonWordIds, lockState, MIN_FOCUS_WORDS, type LockState } from '@/lib/grammar/lockState';
+import { lessonPercent } from '@/lib/grammar/lessonScore';
 import { TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import { setFocusWords } from '@/lib/focusWords';
 import { getScrollY, setScrollY } from '@/lib/grammar/scrollMemory';
@@ -68,6 +69,10 @@ export default function GrammarLessonScreen() {
   // FB316 (NY10): hányszor gyakorolt már egy-egy transform item (itemId -> n),
   // ez dönti el a következő 10-es kör sorrendjét (legkevésbé gyakorolt elöl).
   const [transformSeen, setTransformSeen] = useState<Record<string, number>>({});
+  // FB328: a lecke ÖSSZES eddigi köréből (bármelyik fajta) számolt kumulált
+  // megválaszolt/helyes darabszám, a Kész-képernyő "Eddig: NN%" sorához.
+  const [lessonAnswered, setLessonAnswered] = useState(0);
+  const [lessonCorrect, setLessonCorrect] = useState(0);
 
   const load = useCallback(async () => {
     const db = getDb();
@@ -92,9 +97,16 @@ export default function GrammarLessonScreen() {
       const progressRows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
       const seenRow = progressRows.find((r) => r.itemId === `${String(topicId)}:transform:seen`);
       setTransformSeen((seenRow?.data as Record<string, number>) ?? {});
+      // FB328: ugyanabból a lekérésből, külön sor nélkül.
+      const answeredRow = progressRows.find((r) => r.itemId === `${String(topicId)}:answered`);
+      const correctRow = progressRows.find((r) => r.itemId === `${String(topicId)}:correct`);
+      setLessonAnswered(typeof answeredRow?.data === 'number' ? answeredRow.data : 0);
+      setLessonCorrect(typeof correctRow?.data === 'number' ? correctRow.data : 0);
     } else {
       setLock({ have: 0, need: 0 });
       setTransformSeen({});
+      setLessonAnswered(0);
+      setLessonCorrect(0);
     }
   }, [topicId]);
 
@@ -203,6 +215,14 @@ export default function GrammarLessonScreen() {
         .setGameProgress(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:${drillKind}`, 'done', { correct, total })
         .catch(() => {});
     }
+    // FB328: kumulált megválaszolt/helyes darabszám, MINDEN fajta MINDEN
+    // körénél, a meglévő >=80%-os "kész" küszöbtől függetlenül.
+    const nextAnswered = lessonAnswered + total;
+    const nextCorrect = lessonCorrect + correct;
+    setLessonAnswered(nextAnswered);
+    setLessonCorrect(nextCorrect);
+    getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:answered`, 'count', nextAnswered).catch(() => {});
+    getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:correct`, 'count', nextCorrect).catch(() => {});
     // FB316 (NY10): a kör itemjei "gyakoroltak" lesznek, jó és rossz válasz is
     // számít; egy írás a kör végén, nem itemenként.
     if (drillKind === 'transform' && roundItemIds && roundItemIds.length) {
@@ -257,6 +277,9 @@ export default function GrammarLessonScreen() {
     // Kálmán 2026-09-09: a Kész-képernyőről tovább lehessen lépni a következő
     // témára. Csak megírt leckére kínáljuk fel, üres képernyőre nem viszünk.
     const next = nextWrittenTopic(learnedLang, String(topicId));
+    // FB328: a lecke MINDEN eddigi köréből számolt kumulált arány, nem csak
+    // ennek a körnek a pontszáma (ami fentebb, `pct`).
+    const cumulativePct = lessonPercent(lessonAnswered, lessonCorrect);
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
@@ -268,6 +291,11 @@ export default function GrammarLessonScreen() {
           <Text style={[styles.doneNote, { color: colors.tabIconDefault }]}>
             {pct >= 80 ? s.grammar.doneGood : s.grammar.doneAgain}
           </Text>
+          {cumulativePct !== null ? (
+            <Text testID="grammar-lesson-percent" style={[styles.lessonPercentNote, { color: colors.tabIconDefault }]}>
+              {s.grammar.lessonPercent(cumulativePct)}
+            </Text>
+          ) : null}
           {next ? (
             <Pressable
               testID="grammar-next-topic"
@@ -504,4 +532,6 @@ const styles = StyleSheet.create({
   doneEmoji: { fontSize: 56 },
   doneScore: { fontSize: 34, fontWeight: '800' },
   doneNote: { fontSize: 14, textAlign: 'center', marginBottom: 12 },
+  // FB328: a kumulált "Eddig: NN%" sor, a pontszám és a "kész"-üzenet alatt.
+  lessonPercentNote: { fontSize: 12, textAlign: 'center', marginTop: -6, marginBottom: 12 },
 });
