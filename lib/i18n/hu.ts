@@ -709,4 +709,10 @@ export default {
     tileAgain: 'Újra',
     introduced: (n: number, total: number) => `${n} / ${total} szó bevezetve`,
   },
+  // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
+  pos: {
+    noun: 'főnév',
+    verb: 'ige',
+    phrase: 'kifejezés',
+  },
 };

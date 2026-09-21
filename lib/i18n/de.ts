@@ -694,4 +694,10 @@ export default {
     tileAgain: 'Nochmal',
     introduced: (n: number, total: number) => `${n} / ${total} Wörter eingeführt`,
   },
+  // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
+  pos: {
+    noun: 'Substantiv',
+    verb: 'Verb',
+    phrase: 'Phrase',
+  },
 };

@@ -694,4 +694,10 @@ export default {
     tileAgain: 'Otra vez',
     introduced: (n: number, total: number) => `${n} / ${total} palabras introducidas`,
   },
+  // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
+  pos: {
+    noun: 'sustantivo',
+    verb: 'verbo',
+    phrase: 'frase',
+  },
 };

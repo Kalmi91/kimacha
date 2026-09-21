@@ -15,6 +15,7 @@ import { gradePcicAnswer, type PcicGrade } from '@/lib/pcicMatch';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, DEFAULT_NEW_LIMIT, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { countDoneToday, requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
+import { posOf } from '@/lib/pcicPos';
 import FeedbackButton from '@/components/FeedbackModal';
 import BadgeRow from '@/components/learn/BadgeRow';
 import CardShell from '@/components/learn/CardShell';
@@ -337,6 +338,9 @@ export default function PcicScreen() {
         ? s.pcic.learningStep(current.step + 1, LEARNING_STEPS)
         : undefined;
 
+  // 5c: szófaj-chip a szó alatt, a spanyol alakból (lib/pcicPos.ts, döntés 6b).
+  const pos = posOf(currentItem);
+
   return (
     <KeyboardAvoidingView
       style={[styles.container, { backgroundColor: colors.background }]}
@@ -369,7 +373,15 @@ export default function PcicScreen() {
               <Text style={styles.speakIcon}>🔊</Text>
             </Pressable>
           </View>
+          {/* 5c: a chip (szófaj) + a szekció ugyanabban a sorban látszik
+              gépeléskor és felfedés után is, hogy háromszor ismétlődő angol
+              promptnál is megkülönböztethető legyen a tétel. */}
           <View style={styles.sectionRow}>
+            {pos && (
+              <View style={[styles.posChip, { backgroundColor: colors.background }]}>
+                <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>{s.pos[pos]}</Text>
+              </View>
+            )}
             <Text style={[styles.sectionText, { color: colors.tabIconDefault }]}>{currentItem.section}</Text>
           </View>
 
@@ -619,6 +631,16 @@ const styles = StyleSheet.create({
   sectionText: {
     fontSize: 12,
     textAlign: 'center',
+  },
+  // 5c: szófaj-chip (noun/verb/phrase) a szekció-szöveg mellett.
+  posChip: {
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 999,
+  },
+  posChipText: {
+    fontSize: 12,
+    fontWeight: '700',
   },
   speakBtn: {
     padding: 4,
