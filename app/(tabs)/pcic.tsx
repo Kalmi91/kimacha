@@ -21,6 +21,7 @@ import BadgeRow from '@/components/learn/BadgeRow';
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import GradeButtons from '@/components/learn/GradeButtons';
+import { useDockLift } from '@/components/learn/useDockLift';
 import { answerInputProps } from '@/lib/inputProps';
 
 // PLAN-pcic 5. lépés: a PCIC fül. Angol -> spanyol gépelés, Anki-gombokkal
@@ -75,6 +76,8 @@ export default function PcicScreen() {
   // 5b: a dokkolt Check/Next sáv mért magassága, a görgető alsó paddingjéhez
   // és a 💬 bottomOffsetjéhez (DockedAction.tsx, a Learn DOCK_RESERVE-je az alapérték).
   const [dockH, setDockH] = useState(DOCK_RESERVE);
+  // FB350: a dokkolt sáv a billentyűzet fölé emelkedjen, mint a Learn fülön.
+  const { dockLift } = useDockLift();
 
   const load = useCallback(async () => {
     const db = getDb();
@@ -354,7 +357,7 @@ export default function PcicScreen() {
 
       <ScrollView
         style={styles.cardScroll}
-        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: 16 + dockH }]}
+        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: 16 + dockH + dockLift }]}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >
@@ -478,12 +481,12 @@ export default function PcicScreen() {
               : () => suggestedGrade && handleGrade(suggestedGrade)
         }
         tone={grade ? 'next' : 'check'}
-        bottom={0}
+        bottom={dockLift}
         colors={colors}
         onHeight={setDockH}
       />
 
-      <FeedbackButton level="B1" languagePair="es-en" currentCard={`pcic:${current.itemId}`} bottomOffset={dockH} />
+      <FeedbackButton level="B1" languagePair="es-en" currentCard={`pcic:${current.itemId}`} bottomOffset={DOCK_RESERVE + dockLift} />
     </KeyboardAvoidingView>
   );
 }
