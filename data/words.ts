@@ -43,7 +43,11 @@ export interface WordEntry {
   gender?: WordGender;
   region?: WordRegion;
   plural?: WordPlural;
-  [key: string]: string | number | undefined;
+  // FB357 (grammar:indefinido-10-verbos:drill): a lecke szűri ki a szót a
+  // fókusz-módból/lessonWordIds()-ból/témakör-szószámból (getWordsForTopic
+  // alapból), a kártya maga marad, haladás nem vész el.
+  vosotros?: boolean;
+  [key: string]: string | number | boolean | undefined;
 }
 
 import a0 from './words/a0.json';
@@ -116,9 +120,12 @@ export function findWordById(id: number, lang: string = 'es'): WordEntry | undef
   return indexFor(lang)?.get(id) ?? words.find(w => w.id === id);
 }
 
-export function getWordsForTopic(level: Level, topicId: string, lang: string = 'es'): WordEntry[] {
+// FB357: `includeVosotros` defaults to false, so every existing caller (the
+// grammar lesson's word-halmaz, the Learn tab's tree-tile/mastery counts)
+// automatically drops the vosotros-flagged cards without a call-site change.
+export function getWordsForTopic(level: Level, topicId: string, lang: string = 'es', includeVosotros: boolean = false): WordEntry[] {
   return getWordsForLevel(level, lang)
-    .filter(w => w['topic'] === topicId)
+    .filter(w => w['topic'] === topicId && (includeVosotros || !w.vosotros))
     .sort((a, b) => (Number(a['topicOrder']) || 0) - (Number(b['topicOrder']) || 0));
 }
 
