@@ -202,18 +202,18 @@
         { "hu": "Tipikus válasz", "en": "Typical answer", "es": "Respuesta típica", "de": "Typische Antwort" }
       ],
       "rows": [
-        ["qué", "mi", "¿Qué haces?", "Estudio español."],
-        ["quién", "ki", "¿Quién es tu profesor?", "Es mi amigo."],
-        ["dónde", "hol", "¿Dónde vives?", "En Narvarte."],
-        ["adónde", "hova", "¿Adónde vas?", "A la tienda."],
-        ["cuándo", "mikor", "¿Cuándo llegas?", "Mañana."],
-        ["cómo", "hogyan", "¿Cómo estás?", "Bien, gracias."],
-        ["cuánto", "mennyi", "¿Cuánto cuesta?", "Veinte pesos."],
-        ["cuánta", "mennyi", "¿Cuánta agua bebes?", "Dos litros."],
-        ["cuántos", "hány", "¿Cuántos años tienes?", "Treinta años."],
-        ["cuál", "melyik", "¿Cuál es tu apellido?", "Pérez."],
-        ["por qué", "miért", "¿Por qué estudias español?", "Porque me gusta."],
-        ["de dónde", "honnan", "¿De dónde eres?", "Soy de Hungría."]
+        ["qué", "what", "¿Qué haces?", "Estudio español."],
+        ["quién", "who", "¿Quién es tu profesor?", "Es mi amigo."],
+        ["dónde", "where", "¿Dónde vives?", "En Narvarte."],
+        ["adónde", "where to", "¿Adónde vas?", "A la tienda."],
+        ["cuándo", "when", "¿Cuándo llegas?", "Mañana."],
+        ["cómo", "how", "¿Cómo estás?", "Bien, gracias."],
+        ["cuánto", "how much", "¿Cuánto cuesta?", "Veinte pesos."],
+        ["cuánta", "how much", "¿Cuánta agua bebes?", "Dos litros."],
+        ["cuántos", "how many", "¿Cuántos años tienes?", "Treinta años."],
+        ["cuál", "which", "¿Cuál es tu apellido?", "Pérez."],
+        ["por qué", "why", "¿Por qué estudias español?", "Porque me gusta."],
+        ["de dónde", "where from", "¿De dónde eres?", "Soy de Hungría."]
       ]
     },
     {
@@ -634,7 +634,7 @@
       "kind": "form",
       "verb": "Significado",
       "person": "qué",
-      "answer": "mi",
+      "answer": "what",
       "table": "interrogativos"
     },
     {
@@ -642,7 +642,7 @@
       "kind": "form",
       "verb": "Significado",
       "person": "quién",
-      "answer": "ki",
+      "answer": "who",
       "table": "interrogativos"
     },
     {
@@ -650,7 +650,7 @@
       "kind": "form",
       "verb": "Significado",
       "person": "dónde",
-      "answer": "hol",
+      "answer": "where",
       "table": "interrogativos"
     },
     {
@@ -658,7 +658,7 @@
       "kind": "form",
       "verb": "Significado",
       "person": "adónde",
-      "answer": "hova",
+      "answer": "where to",
       "table": "interrogativos"
     },
     {
@@ -666,7 +666,7 @@
       "kind": "form",
       "verb": "Significado",
       "person": "cuándo",
-      "answer": "mikor",
+      "answer": "when",
       "table": "interrogativos"
     },
     {
@@ -674,7 +674,7 @@
       "kind": "form",
       "verb": "Significado",
       "person": "cómo",
-      "answer": "hogyan",
+      "answer": "how",
       "table": "interrogativos"
     },
     {
@@ -682,7 +682,7 @@
       "kind": "form",
       "verb": "Significado",
       "person": "cuánto",
-      "answer": "mennyi",
+      "answer": "how much",
       "table": "interrogativos"
     },
     {
@@ -690,7 +690,7 @@
       "kind": "form",
       "verb": "Significado",
       "person": "cuánta",
-      "answer": "mennyi",
+      "answer": "how much",
       "table": "interrogativos"
     },
     {
@@ -698,7 +698,7 @@
       "kind": "form",
       "verb": "Significado",
       "person": "cuántos",
-      "answer": "hány",
+      "answer": "how many",
       "table": "interrogativos"
     },
     {
@@ -706,7 +706,7 @@
       "kind": "form",
       "verb": "Significado",
       "person": "cuál",
-      "answer": "melyik",
+      "answer": "which",
       "table": "interrogativos"
     },
     {
@@ -714,7 +714,7 @@
       "kind": "form",
       "verb": "Significado",
       "person": "por qué",
-      "answer": "miért",
+      "answer": "why",
       "table": "interrogativos"
     },
     {
@@ -722,7 +722,7 @@
       "kind": "form",
       "verb": "Significado",
       "person": "de dónde",
-      "answer": "honnan",
+      "answer": "where from",
       "table": "interrogativos"
     },
     {
