@@ -118,6 +118,32 @@
       ]
     },
     {
+      "kind": "list",
+      "title": {
+        "hu": "A szabály és a kivételek",
+        "en": "The rule and the exceptions",
+        "es": "La regla y las excepciones",
+        "de": "Die Regel und die Ausnahmen"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Az a és a de mindig összevonódik az el névelővel: a + el = al, de + el = del. Ez kötelező, nem választható. NEM vonódik össze viszont a la, los, las névelővel (a la escuela, de los niños), az él névmással (hablo de él), és akkor sem, ha az El egy tulajdonnév része (voy a El Salvador, el periódico de El País).",
+            "en": "A and de always contract with the article el: a + el = al, de + el = del. This is mandatory, not optional. It does NOT contract with the articles la, los, las (a la escuela, de los niños), with the pronoun él (hablo de él), or when El is part of a proper noun (voy a El Salvador, el periódico de El País).",
+            "es": "A y de siempre se contraen con el artículo el: a + el = al, de + el = del. Es obligatorio, no opcional. NO se contraen con los artículos la, los, las (a la escuela, de los niños), con el pronombre él (hablo de él), ni cuando El forma parte de un nombre propio (voy a El Salvador, el periódico de El País).",
+            "de": "A und de verschmelzen immer mit dem Artikel el: a + el = al, de + el = del. Das ist verpflichtend, nicht wählbar. Keine Verschmelzung gibt es mit den Artikeln la, los, las (a la escuela, de los niños), mit dem Pronomen él (hablo de él), und auch nicht, wenn El Teil eines Eigennamens ist (voy a El Salvador, el periódico de El País)."
+          },
+          "examples": [
+            { "es": "Voy a el cine → Voy al cine.", "tr": { "hu": "Moziba megyek.", "en": "I go to the movies.", "es": "Voy a el cine → Voy al cine.", "de": "Ich gehe ins Kino." } },
+            { "es": "Vengo de el trabajo → Vengo del trabajo.", "tr": { "hu": "A munkából jövök.", "en": "I come from work.", "es": "Vengo de el trabajo → Vengo del trabajo.", "de": "Ich komme von der Arbeit." } },
+            { "es": "Voy al Salvador → Voy a El Salvador.", "tr": { "hu": "El Salvadorba megyek.", "en": "I'm going to El Salvador.", "es": "Voy al Salvador → Voy a El Salvador.", "de": "Ich fahre nach El Salvador." } },
+            { "es": "Hablo del él → Hablo de él.", "tr": { "hu": "Róla beszélek.", "en": "I'm talking about him.", "es": "Hablo del él → Hablo de él.", "de": "Ich spreche über ihn." } },
+            { "es": "Vengo del escuela → Vengo de la escuela.", "tr": { "hu": "Az iskolából jövök.", "en": "I come from school.", "es": "Vengo del escuela → Vengo de la escuela.", "de": "Ich komme von der Schule." } }
+          ]
+        }
+      ]
+    },
+    {
       "kind": "contrast",
       "title": { "hu": "Hasonló, mégis más", "en": "Similar, yet different", "es": "Parecido, pero distinto", "de": "Ähnlich, aber anders" },
       "pairs": [
