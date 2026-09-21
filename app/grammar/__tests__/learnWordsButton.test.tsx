@@ -27,6 +27,9 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ topic: 'fixture-topic' }),
 }));
 
+// FB343 (grammar:ir-a-infinitivo:lesson): a fixture szószáma állítható, hogy a
+// MIN_FOCUS_WORDS (10) küszöb két oldalát is lefedje ugyanazon topicId alatt.
+let mockWordCount = 10;
 const mockFixtureLesson = () => ({
   schema: 2 as const,
   topic: 'fixture-topic',
@@ -41,11 +44,14 @@ const mockFixtureLesson = () => ({
       tense: { from: 'presente' as const, to: 'indefinido' as const },
       prompt: { hu: 'Como pan.', en: 'Como pan.', es: 'Como pan.', de: 'Como pan.' },
       answer: 'Comí pan.',
-      wordIds: ['1', '2', '3'],
+      wordIds: Array.from({ length: mockWordCount }, (_, i) => String(i + 1)),
       why: { hu: 'x', en: 'x', es: 'x', de: 'x' },
     },
   ],
 });
+
+const knownMap = (total: number, knownCount: number) =>
+  new Map(Array.from({ length: total }, (_, i) => [i + 1, i < knownCount ? 1 : 0] as const));
 
 jest.mock('@/lib/grammar/syllabus', () => ({
   ...jest.requireActual('@/lib/grammar/syllabus'),
@@ -77,6 +83,7 @@ describe('grammar lesson screen: learn-these-words button (FB315, NY9)', () => {
     await db.updateLevel('A1', 0, 0, 0);
     clearFocusWords();
     consumePendingAction();
+    mockWordCount = 10;
   });
 
   afterEach(() => {
@@ -85,13 +92,7 @@ describe('grammar lesson screen: learn-these-words button (FB315, NY9)', () => {
   });
 
   it('shows the button with N = need - have on a locked lesson', async () => {
-    jest.spyOn(getDb(), 'getWordStates').mockResolvedValue(
-      new Map([
-        [1, 1],
-        [2, 0],
-        [3, 0],
-      ])
-    );
+    jest.spyOn(getDb(), 'getWordStates').mockResolvedValue(knownMap(10, 8));
 
     render(<GrammarLessonScreen />);
     await flush();
@@ -100,13 +101,7 @@ describe('grammar lesson screen: learn-these-words button (FB315, NY9)', () => {
   });
 
   it('hides the button once every transform word is known', async () => {
-    jest.spyOn(getDb(), 'getWordStates').mockResolvedValue(
-      new Map([
-        [1, 1],
-        [2, 1],
-        [3, 1],
-      ])
-    );
+    jest.spyOn(getDb(), 'getWordStates').mockResolvedValue(knownMap(10, 10));
 
     render(<GrammarLessonScreen />);
     await flush();
@@ -115,21 +110,41 @@ describe('grammar lesson screen: learn-these-words button (FB315, NY9)', () => {
   });
 
   it('tapping the button fills the focusWords singleton, queues the reload, and opens the Learn tab', async () => {
-    jest.spyOn(getDb(), 'getWordStates').mockResolvedValue(
-      new Map([
-        [1, 0],
-        [2, 0],
-        [3, 0],
-      ])
-    );
+    jest.spyOn(getDb(), 'getWordStates').mockResolvedValue(knownMap(10, 0));
 
     render(<GrammarLessonScreen />);
     await flush();
 
     fireEvent.press(screen.getByTestId('grammar-learn-words'));
 
-    expect(getFocusWords()).toEqual({ topicId: 'fixture-topic', label: 'Indefinido', wordIds: [1, 2, 3] });
+    expect(getFocusWords()).toEqual({
+      topicId: 'fixture-topic',
+      label: 'Indefinido',
+      wordIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    });
     expect(consumePendingAction()).toEqual({ type: 'focusWords' });
     expect(mockPush).toHaveBeenCalledWith('/');
+  });
+
+  // FB343 (grammar:ir-a-infinitivo:lesson): "learn these words nek itt nincs
+  // értelme mert csak 6 szó van", a gomb a MIN_FOCUS_WORDS (10) alatt nem jelenik meg.
+  it('hides the button on a 6-word lesson even with words missing (FB343)', async () => {
+    mockWordCount = 6;
+    jest.spyOn(getDb(), 'getWordStates').mockResolvedValue(knownMap(6, 2));
+
+    render(<GrammarLessonScreen />);
+    await flush();
+
+    expect(screen.queryByTestId('grammar-learn-words')).toBeNull();
+  });
+
+  it('shows the button on a 28-word lesson with words missing (FB343)', async () => {
+    mockWordCount = 28;
+    jest.spyOn(getDb(), 'getWordStates').mockResolvedValue(knownMap(28, 20));
+
+    render(<GrammarLessonScreen />);
+    await flush();
+
+    expect(within(screen.getByTestId('grammar-learn-words')).getByText(/\(8\)/)).toBeTruthy();
   });
 });

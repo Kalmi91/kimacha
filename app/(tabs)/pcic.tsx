@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Pressable, TextInput, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard, Alert } from 'react-native';
+import { StyleSheet, Text, View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard, Alert } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { speak } from '@/lib/speech';
 
@@ -13,9 +13,14 @@ import { localDateString } from '@/lib/usageStats';
 import { PCIC_ITEMS, findPcicItem } from '@/data/pcic';
 import { gradePcicAnswer, type PcicGrade } from '@/lib/pcicMatch';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
-import { sm2Review, sm2Preview, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, DEFAULT_NEW_LIMIT, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
+import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, DEFAULT_NEW_LIMIT, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
+import { countDoneToday, requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
+import { posOf } from '@/lib/pcicPos';
 import FeedbackButton from '@/components/FeedbackModal';
+import BadgeRow from '@/components/learn/BadgeRow';
+import CardShell from '@/components/learn/CardShell';
+import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
+import GradeButtons from '@/components/learn/GradeButtons';
 import { answerInputProps } from '@/lib/inputProps';
 
 // PLAN-pcic 5. lépés: a PCIC fül. Angol -> spanyol gépelés, Anki-gombokkal
@@ -23,11 +28,13 @@ import { answerInputProps } from '@/lib/inputProps';
 // Nem a FSRS `cards`/`sessionQueue` ütemezőt használja, azt nem érinti.
 
 const NEW_ORDER = PCIC_ITEMS.map((i) => i.id);
-const GRADES: Sm2Grade[] = ['again', 'good'];
 
 // FB minta (pcicMatch.ts): exact -> Good, near -> Hard, wrong -> Again van
 // előre kijelölve, Easy sosem.
 // SZ1, Kálmán döntése 2026-09-18: near is Tudtam, ő nyomja le Nem tudtam-ra.
+// 5b: a dokkolt "→ Next" ezt a javasolt értékelést alkalmazza, ha a kézi
+// Tudtam/Nem tudtam helyett a dokkolt gombbal lép tovább (anki-ui-terv.html,
+// mindkettő látszik felfedés után).
 const PRESELECT: Record<PcicGrade['match'], Sm2Grade> = { exact: 'good', near: 'good', wrong: 'again' };
 
 // SZ2 (SZAVAK.md): egy visszavonható értékelés pillanatképe. `counted` = a
@@ -65,6 +72,9 @@ export default function PcicScreen() {
   // FB314: a "+10 új szó" gombbal bővített napi keret; load() (fókusz-váltás,
   // új nap) nullázza, a menet közbeni értékelések nem érintik.
   const [extraNew, setExtraNew] = useState(0);
+  // 5b: a dokkolt Check/Next sáv mért magassága, a görgető alsó paddingjéhez
+  // és a 💬 bottomOffsetjéhez (DockedAction.tsx, a Learn DOCK_RESERVE-je az alapérték).
+  const [dockH, setDockH] = useState(DOCK_RESERVE);
 
   const load = useCallback(async () => {
     const db = getDb();
@@ -110,7 +120,7 @@ export default function PcicScreen() {
 
   const dueRemaining = queue.filter((c) => c.state !== 'new').length;
   const newRemaining = queue.filter((c) => c.state === 'new').length;
-  const doneToday = [...allCards.values()].filter((c) => c.lastReview === today).length;
+  const doneToday = countDoneToday([...allCards.values()], today);
 
   // SZ5: a DB-írás + számlálók külön függvényben, hogy a queue-léptetés
   // (advance) nélkül is meghívható legyen (üres beküldésnél a kártya a
@@ -229,19 +239,29 @@ export default function PcicScreen() {
     setQueue(pickSm2Session([...allCards.values()], NEW_ORDER, today, DEFAULT_NEW_LIMIT + next));
   };
 
+  // 5b: a régi egysoros szöveg-fejléc (`s.pcic.header`) helyett BadgeRow chip-sor;
+  // a négy szám ugyanaz, csak külön i18n kulcsokból (badgeTotal/Due/New/Done).
   const headerRow = (
     <View style={styles.headerRow}>
-      <Text style={[styles.headerText, { color: colors.tabIconDefault }]}>
-        {s.pcic.header(dueRemaining, newRemaining, doneToday, PCIC_ITEMS.length)}
-      </Text>
-      {lastGraded && (
-        <Pressable onPress={handleUndo} hitSlop={12} style={styles.resetBtn} accessibilityLabel={s.pcic.undo}>
-          <Text style={styles.resetIcon}>↶</Text>
+      <BadgeRow
+        colors={colors}
+        items={[
+          { label: s.pcic.badgeTotal(PCIC_ITEMS.length) },
+          { label: s.pcic.badgeDue(dueRemaining), tone: 'blue' },
+          { label: s.pcic.badgeNew(newRemaining), tone: 'green' },
+          { label: s.pcic.badgeDone(doneToday), tone: 'pink' },
+        ]}
+      />
+      <View style={styles.headerIcons}>
+        {lastGraded && (
+          <Pressable onPress={handleUndo} hitSlop={12} style={styles.resetBtn} accessibilityLabel={s.pcic.undo}>
+            <Text style={styles.resetIcon}>↶</Text>
+          </Pressable>
+        )}
+        <Pressable onPress={handleReset} hitSlop={12} style={styles.resetBtn}>
+          <Text style={styles.resetIcon}>🗑️</Text>
         </Pressable>
-      )}
-      <Pressable onPress={handleReset} hitSlop={12} style={styles.resetBtn}>
-        <Text style={styles.resetIcon}>🗑️</Text>
-      </Pressable>
+      </View>
     </View>
   );
 
@@ -297,10 +317,29 @@ export default function PcicScreen() {
     );
   }
 
-  const previews = sm2Preview(current, today);
-  // FB320: a fejléc alatti haladás-csík, a menet elején üres, a végén tele.
-  const sessionTotal = sessionAnswered + queue.length;
-  const sessionPct = sessionTotal > 0 ? (sessionAnswered / sessionTotal) * 100 : 0;
+  // FB320/FB352: a fejléc alatti haladás-csík a `doneToday` perzisztált napi
+  // számból épül (nem a mountonként nullázódó `sessionAnswered`-ből), hogy
+  // tab-váltás vagy app-újraindítás után is a valós napi haladást mutassa,
+  // ne ugorjon vissza üresre.
+  const sessionTotal = doneToday + queue.length;
+  const sessionPct = sessionTotal > 0 ? (doneToday / sessionTotal) * 100 : 0;
+
+  // 5b: a dokkolt "→ Next" ezt alkalmazza, ha kézi Tudtam/Nem tudtam helyett
+  // egyenesen a dokkolt gombbal lép tovább (PRESELECT: exact/near -> good,
+  // wrong -> again).
+  const suggestedGrade: Sm2Grade | null = grade ? PRESELECT[grade.match] : null;
+
+  // 5b: a lap tetejére kerülő lap/lépés-jelvény (CardShell chip propja),
+  // a korábbi sectionRow-beli stepBadge szövegek helyén.
+  const chipLabel =
+    current.state === 'new'
+      ? s.pcic.newBadge
+      : current.state === 'learning'
+        ? s.pcic.learningStep(current.step + 1, LEARNING_STEPS)
+        : undefined;
+
+  // 5c: szófaj-chip a szó alatt, a spanyol alakból (lib/pcicPos.ts, döntés 6b).
+  const pos = posOf(currentItem);
 
   return (
     <KeyboardAvoidingView
@@ -313,126 +352,138 @@ export default function PcicScreen() {
         <View style={[styles.progressFill, { backgroundColor: colors.tint, width: `${sessionPct}%` }]} />
       </View>
 
-      <Pressable style={[styles.card, { backgroundColor: colors.card }]} onPress={() => Keyboard.dismiss()}>
-        <Text style={[styles.frontText, { color: colors.text }]}>{currentItem.en}</Text>
-        <View style={styles.sectionRow}>
-          <Text style={[styles.sectionText, { color: colors.tabIconDefault }]}>{currentItem.section}</Text>
-          {current.state === 'learning' && (
-            <Text style={[styles.stepBadge, { color: colors.tabIconDefault }]}>
-              {s.pcic.learningStep(current.step + 1, LEARNING_STEPS)}
-            </Text>
-          )}
-          {current.state === 'new' && (
-            <Text style={[styles.stepBadge, { color: colors.tabIconDefault }]}>{s.pcic.newBadge}</Text>
-          )}
-        </View>
-
-        {/* SZ7 (SZAVAK.md): FB188 névelő-gombsor a Learn fülről, ⊘ az alapállás. */}
-        {articlePickerApplies('es', currentItem.kind !== 'sentence', currentItem.es) && (
-          <View style={styles.articleRow}>
-            {([...ARTICLE_OPTIONS, ''] as ArticlePick[]).map((opt) => {
-              const active = articlePick === opt;
-              return (
-                <Pressable
-                  key={opt || 'none'}
-                  disabled={!!grade}
-                  onPress={() => setArticlePick(active ? '' : opt)}
-                  style={[
-                    styles.articleChip,
-                    { backgroundColor: active ? colors.tint : colors.background, opacity: grade ? 0.6 : 1 },
-                  ]}
-                  accessibilityLabel={opt || 'sin artículo'}
-                >
-                  <Text style={[styles.articleChipText, { color: active ? colors.background : colors.text }]}>
-                    {opt || '⊘'}
-                  </Text>
-                </Pressable>
-              );
-            })}
-          </View>
-        )}
-
-        <TextInput
-          style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }]}
-          value={typedAnswer}
-          onChangeText={setTypedAnswer}
-          onSubmitEditing={grade ? undefined : handleCheck}
-          editable={!grade}
-          autoFocus
-          {...answerInputProps}
-        />
-
-        {!grade && (
-          <Pressable style={[styles.inlineCheckBtn, { backgroundColor: '#38BDF8' }]} onPress={handleCheck}>
-            <Text style={styles.inlineCheckText}>{`✓ ${s.card.check}`}</Text>
-          </Pressable>
-        )}
-
-        {grade && (
-          <View style={styles.resultSection}>
-            <Text style={styles.diffLine}>
-              {charDiff(typedAnswer, grade.best, { case: true, accents: false }).map((d, i) => (
-                <Text
-                  key={i}
-                  style={
-                    d.missing
-                      ? styles.diffMissing
-                      : d.wrong
-                        ? styles.diffWrong
-                        : { color: grade.match === 'exact' ? '#22C55E' : colors.text }
-                  }
-                >
-                  {d.ch}
-                </Text>
-              ))}
-            </Text>
-            <View style={styles.frontRow}>
-              <Text style={[styles.correctAnswer, { color: colors.tint }]}>{grade.best}</Text>
-              <Pressable onPress={() => speak(grade.best, speechLang('es'))} style={styles.speakBtn}>
-                <Text style={styles.speakIcon}>🔊</Text>
-              </Pressable>
-            </View>
-          </View>
-        )}
-      </Pressable>
-
-      <Pressable onPress={handleDontLearn} hitSlop={8}>
-        <Text style={[styles.dontLearn, { color: colors.tabIconDefault }]}>{s.pcic.dontLearn}</Text>
-      </Pressable>
-
-      {autoGraded ? (
-        <Pressable
-          style={[styles.checkBtn, { backgroundColor: colors.tint }]}
-          onPress={() => lastGraded && advance(lastGraded.after)}
+      <ScrollView
+        style={styles.cardScroll}
+        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: 16 + dockH }]}
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
+      >
+        <CardShell
+          compact
+          colors={colors}
+          chip={chipLabel}
+          chipTone={current.state === 'new' ? 'new' : 'neutral'}
+          onPress={() => Keyboard.dismiss()}
         >
-          <Text style={styles.checkBtnText}>{s.pcic.next}</Text>
-        </Pressable>
-      ) : grade ? (
-        <View style={styles.gradesRow}>
-          {GRADES.map((g) => {
-            const isPre = PRESELECT[grade.match] === g;
-            return (
-              <Pressable
-                key={g}
-                style={({ pressed }) => [
-                  styles.gradeBtn,
-                  {
-                    backgroundColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : g === 'good' ? '#38BDF8' : '#1D4ED8',
-                    borderColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : isPre ? '#FFFFFF' : 'transparent',
-                    borderWidth: isPre ? 3 : 1,
-                  },
-                ]}
-                onPress={() => handleGrade(g)}
-              >
-                <Text style={styles.gradeLabel}>{s.pcic[g]}</Text>
-                <Text style={styles.gradePreview}>{previews[g]}</Text>
-              </Pressable>
-            );
-          })}
-        </View>
-      ) : null}
+          {/* 5b: a szó melletti 🔊 újra elmondja az angolt (Kálmán kiegészítése,
+              anki-ui-terv.html), ugyanazzal a hívással, mint a lap-nyitáskori FB319 felolvasás. */}
+          <View style={styles.wordRow}>
+            <Text style={[styles.frontText, { color: colors.text }]}>{currentItem.en}</Text>
+            <Pressable onPress={() => speak(currentItem.en, speechLang('en'))} style={styles.speakBtn}>
+              <Text style={styles.speakIcon}>🔊</Text>
+            </Pressable>
+          </View>
+          {/* 5c: a chip (szófaj) + a szekció ugyanabban a sorban látszik
+              gépeléskor és felfedés után is, hogy háromszor ismétlődő angol
+              promptnál is megkülönböztethető legyen a tétel. */}
+          <View style={styles.sectionRow}>
+            {pos && (
+              <View style={[styles.posChip, { backgroundColor: colors.background }]}>
+                <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>{s.pos[pos]}</Text>
+              </View>
+            )}
+            <Text style={[styles.sectionText, { color: colors.tabIconDefault }]}>{currentItem.section}</Text>
+          </View>
 
-      <FeedbackButton level="B1" languagePair="es-en" currentCard="pcic" />
+          {/* SZ7 (SZAVAK.md): FB188 névelő-gombsor a Learn fülről, ⊘ az alapállás. */}
+          {articlePickerApplies('es', currentItem.kind !== 'sentence', currentItem.es) && (
+            <View style={styles.articleRow}>
+              {([...ARTICLE_OPTIONS, ''] as ArticlePick[]).map((opt) => {
+                const active = articlePick === opt;
+                return (
+                  <Pressable
+                    key={opt || 'none'}
+                    disabled={!!grade}
+                    onPress={() => setArticlePick(active ? '' : opt)}
+                    style={[
+                      styles.articleChip,
+                      { backgroundColor: active ? colors.tint : colors.background, opacity: grade ? 0.6 : 1 },
+                    ]}
+                    accessibilityLabel={opt || 'sin artículo'}
+                  >
+                    <Text style={[styles.articleChipText, { color: active ? colors.background : colors.text }]}>
+                      {opt || '⊘'}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+            </View>
+          )}
+
+          <TextInput
+            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }]}
+            value={typedAnswer}
+            onChangeText={setTypedAnswer}
+            onSubmitEditing={grade ? undefined : handleCheck}
+            editable={!grade}
+            autoFocus
+            {...answerInputProps}
+          />
+
+          {grade && (
+            <View style={styles.resultSection}>
+              <Text style={styles.diffLine}>
+                {charDiff(typedAnswer, grade.best, { case: true, accents: false }).map((d, i) => (
+                  <Text
+                    key={i}
+                    style={
+                      d.missing
+                        ? styles.diffMissing
+                        : d.wrong
+                          ? styles.diffWrong
+                          : { color: grade.match === 'exact' ? '#22C55E' : colors.text }
+                    }
+                  >
+                    {d.ch}
+                  </Text>
+                ))}
+              </Text>
+              <View style={styles.frontRow}>
+                <Text style={[styles.correctAnswer, { color: colors.tint }]}>{grade.best}</Text>
+                <Pressable onPress={() => speak(grade.best, speechLang('es'))} style={styles.speakBtn}>
+                  <Text style={styles.speakIcon}>🔊</Text>
+                </Pressable>
+              </View>
+            </View>
+          )}
+
+          {/* 5b: Tudtam/Nem tudtam a Learn gomb-alakjában (GradeButtons), csak
+              a kézi értékelésnél; az auto-értékelt (üres beküldés) esetet a
+              dokkolt "→ Next" viszi tovább, ott nincs mit választani. */}
+          {grade && !autoGraded && (
+            <GradeButtons
+              left={{ label: s.pcic.good, color: '#38BDF8', onPress: () => handleGrade('good') }}
+              right={{ label: s.pcic.again, color: '#1D4ED8', onPress: () => handleGrade('again') }}
+            />
+          )}
+
+          <Pressable onPress={handleDontLearn} hitSlop={8}>
+            <Text style={[styles.dontLearn, { color: colors.tabIconDefault }]}>{s.pcic.dontLearn}</Text>
+          </Pressable>
+        </CardShell>
+      </ScrollView>
+
+      {/* 5b: az inlineCheckBtn megszűnt, a Check/→ Next a Learn dokkolt sávja
+          lett (anki-ui-terv.html screen 2: felfedés után a dokkolt "→ Next"
+          ÉS a GradeButtons is látszik). Kézi Tudtam/Nem tudtam esetén a Next a
+          javasolt (PRESELECT) értékelést alkalmazza; auto-értékelt (üres
+          beküldés) esetben a már elmentett lapot lépteti tovább. */}
+      <DockedAction
+        label={grade ? `→ ${s.pcic.next}` : `✓ ${s.card.check}`}
+        onPress={
+          !grade
+            ? handleCheck
+            : autoGraded
+              ? () => lastGraded && advance(lastGraded.after)
+              : () => suggestedGrade && handleGrade(suggestedGrade)
+        }
+        tone={grade ? 'next' : 'check'}
+        bottom={0}
+        colors={colors}
+        onHeight={setDockH}
+      />
+
+      <FeedbackButton level="B1" languagePair="es-en" currentCard={`pcic:${current.itemId}`} bottomOffset={dockH} />
     </KeyboardAvoidingView>
   );
 }
@@ -463,11 +514,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    gap: 8,
     marginBottom: 12,
   },
-  headerText: {
-    fontSize: 13,
-    flex: 1,
+  headerIcons: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   resetBtn: {
     width: 32,
@@ -538,26 +590,33 @@ const styles = StyleSheet.create({
     height: '100%',
     borderRadius: 5,
   },
-  card: {
-    borderRadius: 20,
-    padding: 32,
-    alignItems: 'center',
-    minHeight: 220,
+  // 5b: a kártya-doboz a CardShell-be költözött, a görgető pedig a dokkolt
+  // sáv magasságát tartja alul (cardScroll/cardScrollContent).
+  cardScroll: {
+    flex: 1,
+    width: '100%',
+  },
+  cardScrollContent: {
+    flexGrow: 1,
     justifyContent: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.1,
-    shadowRadius: 12,
-    elevation: 4,
+  },
+  // 5b: a szó-sor (szó + 🔊), a CardShell tetején.
+  wordRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
   },
   frontRow: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     gap: 8,
     marginTop: 8,
   },
+  // 5b: a Learn frontText méretét vette át (32/bold), hogy a két fül kártyája
+  // azonos súlyú szót mutasson.
   frontText: {
-    fontSize: 26,
+    fontSize: 32,
     fontWeight: '700',
     textAlign: 'center',
   },
@@ -573,11 +632,19 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: 'center',
   },
-  stepBadge: {
+  // 5c: szófaj-chip (noun/verb/phrase) a szekció-szöveg mellett.
+  posChip: {
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 999,
+  },
+  posChipText: {
     fontSize: 12,
+    fontWeight: '700',
   },
   speakBtn: {
     padding: 4,
+    flexShrink: 0,
   },
   speakIcon: {
     fontSize: 22,
@@ -607,22 +674,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
   },
-  inlineCheckBtn: {
-    alignSelf: 'stretch',
-    width: '100%',
-    minHeight: 44,
-    marginTop: 10,
-    borderRadius: 14,
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inlineCheckText: {
-    color: '#fff',
-    fontSize: 18,
-    fontWeight: '700',
-  },
   resultSection: {
     alignItems: 'center',
     marginTop: 16,
@@ -644,6 +695,8 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
   correctAnswer: {
+    flex: 1,
+    flexShrink: 1,
     fontSize: 22,
     fontWeight: '600',
   },
@@ -666,27 +719,5 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 18,
     fontWeight: '700',
-  },
-  gradesRow: {
-    flexDirection: 'row',
-    gap: 8,
-    marginTop: 24,
-  },
-  gradeBtn: {
-    flex: 1,
-    borderRadius: 12,
-    paddingVertical: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  gradeLabel: {
-    fontSize: 14,
-    fontWeight: '700',
-    color: '#FFFFFF',
-  },
-  gradePreview: {
-    fontSize: 11,
-    marginTop: 2,
-    color: '#FFFFFF',
   },
 });

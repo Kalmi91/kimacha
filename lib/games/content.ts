@@ -14,6 +14,7 @@
 
 import { LEVELS, getWordsForLevel, type Level } from '@/data/words';
 import type { FormItem, LessonV2, MatchItem, TenseId, TransformItem, WhyItem } from '../grammar/lessonTypes';
+import { isVosotrosItem } from '../grammar/vosotros';
 
 // Cumulative corpus word ids up to and including `level` (A0..level), used by
 // the content-driven game screens to build GlossText's `knownWordIds`: a
@@ -300,7 +301,11 @@ export type GrammarKind = 'choice' | 'match' | 'form' | 'why' | 'transform';
 
 export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, number> {
   const counts: Record<GrammarKind, number> = { choice: 0, match: 0, form: 0, why: 0, transform: 0 };
+  // FB357: the button label counts the round the learner actually plays, so a
+  // vosotros item dropped from buildGrammarRound (lib/games/grammarChoice.ts)
+  // does not inflate a "Mondatok (N)"-style count.
   for (const item of topic.items as GrammarItem[]) {
+    if (isVosotrosItem(item)) continue;
     if (isMatchItem(item)) counts.match++;
     else if (isFormItem(item)) counts.form++;
     else if (isWhyItem(item)) counts.why++;

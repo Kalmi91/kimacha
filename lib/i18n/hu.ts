@@ -432,12 +432,6 @@ export default {
     formHint: 'Írd be a helyes alakot',
     showTable: 'Táblázat',
     check: 'Ellenőrzés',
-    // NY2 (NYELVTAN.md "Unlock-modell"): szó-függő lecke-zár a leckelistán.
-    locked: 'Zárva',
-    lockedMeta: (have: number, need: number) => `zárva, ${have}/${need} szó megvan · koppintásra mégis nyílik`,
-    unlockedMeta: (have: number, need: number) => `feloldva, ${have}/${need} szó megvan`,
-    unlockedBanner: (title: string) => `Új nyelvtani rész feloldva: ${title}`,
-    dismiss: 'Bezár',
     // NY3 (NYELVTAN.md "Első szelet"): igeidő-átírás drill.
     startTransform: (n: number) => `Átírás (${n})`,
     // FB316 (NYELVTAN.md NY10): 10-es körös mondat-átírás nagy leckéken.
@@ -451,6 +445,8 @@ export default {
     accentHint: 'Ékezet nélkül is elfogadja, a hiányzó ékezetet megmutatja',
     // FB315 (NY9): a lecke-képernyő szó-fókusz gombja.
     learnTheseWords: (n: number) => `Ezen szavak tanulása (${n})`,
+    // FB328: kumulált helyes-arány, a tanterv-listán és a Kész-képernyőn.
+    lessonPercent: (n: number) => `Eddig: ${n}% jó válasz`,
   },
   exam: {
     simulationOf: (model: string) => `A ${model} vizsga szimulációja`,
@@ -687,6 +683,11 @@ export default {
   // PLAN-pcic 5. lépés: a PCIC fül (angol -> spanyol gépelés, Anki-gombok).
   pcic: {
     header: (due: number, newCount: number, doneToday: number, total: number) => `${total} szó · esedékes ${due} · új ${newCount} · ma kész ${doneToday}`,
+    // 5b: a BadgeRow chip-sorának négy külön felirata (anki-ui-terv.html).
+    badgeTotal: (n: number) => `${n} szó`,
+    badgeDue: (n: number) => `esedékes ${n}`,
+    badgeNew: (n: number) => `új ${n}`,
+    badgeDone: (n: number) => `ma kész ${n}`,
     again: 'Nem tudtam',
     hard: 'Nehéz',
     good: 'Tudtam',
@@ -707,5 +708,11 @@ export default {
     tileNew: 'Új',
     tileAgain: 'Újra',
     introduced: (n: number, total: number) => `${n} / ${total} szó bevezetve`,
+  },
+  // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
+  pos: {
+    noun: 'főnév',
+    verb: 'ige',
+    phrase: 'kifejezés',
   },
 };
