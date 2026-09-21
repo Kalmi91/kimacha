@@ -57,7 +57,9 @@ describe('transformWordIds', () => {
 });
 
 // FB318: a valódi indefinido-10-verbos lecke `focusTopic`-os, a szó-halmaza a
-// transform-szavak ÉS a témakör 60 kártyájának uniója.
+// transform-szavak ÉS a témakör kártyáinak uniója. FB357: a témakör 60
+// kártyájából 9 vosotros-jelölésű, azokat a getWordsForTopic alapból kihagyja
+// (51 marad), lásd data/words/a2.json + data/words.ts.
 describe('lessonWordIds', () => {
   it('unions the transform words and the focusTopic cards on the real lesson', () => {
     const lesson = lessonFor('es', 'indefinido-10-verbos');
@@ -67,7 +69,7 @@ describe('lessonWordIds', () => {
     const topicIds = getWordsForTopic('A2', 'indefinido_10_verbos').map((w) => String(w.id));
     for (const id of transformIds) expect(ids).toContain(id);
     for (const id of topicIds) expect(ids).toContain(id);
-    expect(topicIds).toHaveLength(60);
+    expect(topicIds).toHaveLength(51);
     expect(new Set(ids).size).toBe(ids.length);
   });
 

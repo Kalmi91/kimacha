@@ -20,6 +20,7 @@ import {
 } from './content';
 import type { FormItem, MatchItem, TransformItem, WhyItem } from '../grammar/lessonTypes';
 import { markAnswerIndex, markTokens } from './grammarMark';
+import { filterVosotros, filterVosotrosPairs } from '../grammar/vosotros';
 
 // A gap/mark tétel mindig kap opció-listát (gap: a felkínált válaszok kevert
 // sorrendben; mark: a mondat szavai, sorrendben) és egy helyes indexet;
@@ -79,8 +80,9 @@ export function grammarRoundItemKind(r: GrammarRoundItem): GrammarKind {
 export function buildGrammarRound(topic: GrammarTopicData, seed: number): GrammarRoundItem[] {
   // A `topic.items` uniós elem-típusa (LegacyLesson vs LessonV2) a `.filter`
   // narrowing-jét megzavarja; a `GrammarItem[]` cast egy lapos típusra hozza,
-  // mielőtt a predikátum leszűkít.
-  const allItems = topic.items as GrammarItem[];
+  // mielőtt a predikátum leszűkít. FB357: a vosotros-tételek itt esnek ki a
+  // körből, EGY helyen minden lecke-item-fajtára (lib/grammar/vosotros.ts).
+  const allItems = filterVosotros(topic.items as GrammarItem[]);
   const choiceItems = allItems.filter(
     (item): item is GrammarGapItem | GrammarMarkItem =>
       !isMatchItem(item) && !isFormItem(item) && !isWhyItem(item) && !isTransformItem(item)
@@ -100,9 +102,10 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
     return { item, options, correctIndex };
   });
 
+  // FB357: a match itemek maguk maradnak, csak a vosotros-párjuk esik ki.
   const matchItems: GrammarMatchFormRoundItem[] = allItems
     .filter((item): item is MatchItem => isMatchItem(item))
-    .map((item) => ({ item }));
+    .map((item) => ({ item: filterVosotrosPairs(item) }));
   const formItems: GrammarMatchFormRoundItem[] = allItems
     .filter((item): item is FormItem => isFormItem(item))
     .map((item) => ({ item }));
