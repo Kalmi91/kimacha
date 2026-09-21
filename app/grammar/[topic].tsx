@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
@@ -13,6 +13,7 @@ import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, syllabusTopic } from
 import { lessonWordIds, lockState, type LockState } from '@/lib/grammar/lockState';
 import { TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import { setFocusWords } from '@/lib/focusWords';
+import { getScrollY, setScrollY } from '@/lib/grammar/scrollMemory';
 import { setPendingAction } from '@/lib/pendingAction';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 import { splitByLanguage, splitByMarkers } from '@/lib/mixedSpeech';
@@ -55,6 +56,9 @@ export default function GrammarLessonScreen() {
   const [drillKind, setDrillKind] = useState<GrammarKind>('choice');
   // FB340-342/345/356: a látható drill-item id-ja, a feedback-kontextusba.
   const [drillItemId, setDrillItemId] = useState<string | undefined>(undefined);
+  // FB327: a lecke-body ScrollView fázisváltáskor újra-mountol, a pozíciót a
+  // lib/grammar/scrollMemory.ts tartja topicId szerint, hogy visszaállítható legyen.
+  const scrollRef = useRef<ScrollView>(null);
   // LECKE-SEMA 3.3: a V2 lecke egyetlen (play → stop) gombja a lesson.speak
   // felolvasásához; leállítás gombnyomásra, fázisváltáskor és unmountkor is.
   const [speaking, setSpeaking] = useState(false);
@@ -347,7 +351,13 @@ export default function GrammarLessonScreen() {
           <Text style={[styles.btnText, styles.btnTextOnTint]}>{s.grammar.learnTheseWords(needWords)}</Text>
         </Pressable>
       ) : null}
-      <ScrollView contentContainerStyle={styles.body}>
+      <ScrollView
+        ref={scrollRef}
+        contentContainerStyle={styles.body}
+        onScroll={(e) => setScrollY(String(topicId), e.nativeEvent.contentOffset.y)}
+        scrollEventThrottle={100}
+        onContentSizeChange={() => scrollRef.current?.scrollTo({ y: getScrollY(String(topicId)), animated: false })}
+      >
         {isLessonV2(lesson) ? (
           <>
             {/* LECKE-SEMA 1+3: a body-blokkok váltják a rule/more prózát, a

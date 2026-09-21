@@ -14,7 +14,7 @@ import { PCIC_ITEMS, findPcicItem } from '@/data/pcic';
 import { gradePcicAnswer, type PcicGrade } from '@/lib/pcicMatch';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { sm2Review, sm2Preview, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, DEFAULT_NEW_LIMIT, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
+import { countDoneToday, requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
 import { answerInputProps } from '@/lib/inputProps';
 
@@ -110,7 +110,7 @@ export default function PcicScreen() {
 
   const dueRemaining = queue.filter((c) => c.state !== 'new').length;
   const newRemaining = queue.filter((c) => c.state === 'new').length;
-  const doneToday = [...allCards.values()].filter((c) => c.lastReview === today).length;
+  const doneToday = countDoneToday([...allCards.values()], today);
 
   // SZ5: a DB-írás + számlálók külön függvényben, hogy a queue-léptetés
   // (advance) nélkül is meghívható legyen (üres beküldésnél a kártya a
@@ -298,9 +298,12 @@ export default function PcicScreen() {
   }
 
   const previews = sm2Preview(current, today);
-  // FB320: a fejléc alatti haladás-csík, a menet elején üres, a végén tele.
-  const sessionTotal = sessionAnswered + queue.length;
-  const sessionPct = sessionTotal > 0 ? (sessionAnswered / sessionTotal) * 100 : 0;
+  // FB320/FB352: a fejléc alatti haladás-csík a `doneToday` perzisztált napi
+  // számból épül (nem a mountonként nullázódó `sessionAnswered`-ből), hogy
+  // tab-váltás vagy app-újraindítás után is a valós napi haladást mutassa,
+  // ne ugorjon vissza üresre.
+  const sessionTotal = doneToday + queue.length;
+  const sessionPct = sessionTotal > 0 ? (doneToday / sessionTotal) * 100 : 0;
 
   return (
     <KeyboardAvoidingView
@@ -552,7 +555,7 @@ const styles = StyleSheet.create({
   },
   frontRow: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     gap: 8,
     marginTop: 8,
   },
@@ -578,6 +581,7 @@ const styles = StyleSheet.create({
   },
   speakBtn: {
     padding: 4,
+    flexShrink: 0,
   },
   speakIcon: {
     fontSize: 22,
@@ -644,6 +648,8 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
   correctAnswer: {
+    flex: 1,
+    flexShrink: 1,
     fontSize: 22,
     fontWeight: '600',
   },
