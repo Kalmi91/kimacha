@@ -417,12 +417,6 @@ export default {
     formHint: 'Type the correct form',
     showTable: 'Table',
     check: 'Check',
-    // NY2 (NYELVTAN.md "Unlock-modell"): word-gated lesson lock on the list.
-    locked: 'Locked',
-    lockedMeta: (have: number, need: number) => `locked, ${have}/${need} words known · tap to open anyway`,
-    unlockedMeta: (have: number, need: number) => `unlocked, ${have}/${need} words known`,
-    unlockedBanner: (title: string) => `New grammar part unlocked: ${title}`,
-    dismiss: 'Dismiss',
     // NY3 (NYELVTAN.md "Első szelet"): tense rewrite drill.
     startTransform: (n: number) => `Rewrite (${n})`,
     // FB316 (NYELVTAN.md NY10): sentence-rewrite drill in rounds of 10 on big lessons.

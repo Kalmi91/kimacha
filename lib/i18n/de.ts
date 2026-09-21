@@ -417,12 +417,6 @@ export default {
     formHint: 'Gib die richtige Form ein',
     showTable: 'Tabelle',
     check: 'Prüfen',
-    // NY2 (NYELVTAN.md "Unlock-modell"): wortabhängige Lektionssperre in der Liste.
-    locked: 'Gesperrt',
-    lockedMeta: (have: number, need: number) => `gesperrt, ${have}/${need} Wörter bekannt · tippen öffnet trotzdem`,
-    unlockedMeta: (have: number, need: number) => `freigeschaltet, ${have}/${need} Wörter bekannt`,
-    unlockedBanner: (title: string) => `Neuer Grammatikteil freigeschaltet: ${title}`,
-    dismiss: 'Schließen',
     // NY3 (NYELVTAN.md "Első szelet"): Zeitform-Umschreib-Drill.
     startTransform: (n: number) => `Umschreiben (${n})`,
     // FB316 (NYELVTAN.md NY10): Satz-umformen-Drill in 10er-Runden bei großen Lektionen.

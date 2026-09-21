@@ -432,12 +432,6 @@ export default {
     formHint: 'Írd be a helyes alakot',
     showTable: 'Táblázat',
     check: 'Ellenőrzés',
-    // NY2 (NYELVTAN.md "Unlock-modell"): szó-függő lecke-zár a leckelistán.
-    locked: 'Zárva',
-    lockedMeta: (have: number, need: number) => `zárva, ${have}/${need} szó megvan · koppintásra mégis nyílik`,
-    unlockedMeta: (have: number, need: number) => `feloldva, ${have}/${need} szó megvan`,
-    unlockedBanner: (title: string) => `Új nyelvtani rész feloldva: ${title}`,
-    dismiss: 'Bezár',
     // NY3 (NYELVTAN.md "Első szelet"): igeidő-átírás drill.
     startTransform: (n: number) => `Átírás (${n})`,
     // FB316 (NYELVTAN.md NY10): 10-es körös mondat-átírás nagy leckéken.

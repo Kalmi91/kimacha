@@ -10,7 +10,7 @@ import { normalizeWordToken, type Level } from '@/data/words';
 import { cumulativeCorpusWordIds, grammarKindCounts, isLessonV2, type GrammarGapItem, type GrammarItem, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, syllabusTopic } from '@/lib/grammar/syllabus';
-import { lessonWordIds, lockState, type LockState } from '@/lib/grammar/lockState';
+import { lessonWordIds, lockState, MIN_FOCUS_WORDS, type LockState } from '@/lib/grammar/lockState';
 import { TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import { setFocusWords } from '@/lib/focusWords';
 import { getScrollY, setScrollY } from '@/lib/grammar/scrollMemory';
@@ -64,7 +64,7 @@ export default function GrammarLessonScreen() {
   const [speaking, setSpeaking] = useState(false);
   // FB315 (NY9): a lecke transform-szavainak zár-állapota, az "Ezen szavak
   // tanulása" gomb N-jéhez (need - have).
-  const [lock, setLock] = useState<LockState>({ state: 'unlocked', have: 0, need: 0 });
+  const [lock, setLock] = useState<LockState>({ have: 0, need: 0 });
   // FB316 (NY10): hányszor gyakorolt már egy-egy transform item (itemId -> n),
   // ez dönti el a következő 10-es kör sorrendjét (legkevésbé gyakorolt elöl).
   const [transformSeen, setTransformSeen] = useState<Record<string, number>>({});
@@ -93,7 +93,7 @@ export default function GrammarLessonScreen() {
       const seenRow = progressRows.find((r) => r.itemId === `${String(topicId)}:transform:seen`);
       setTransformSeen((seenRow?.data as Record<string, number>) ?? {});
     } else {
-      setLock({ state: 'unlocked', have: 0, need: 0 });
+      setLock({ have: 0, need: 0 });
       setTransformSeen({});
     }
   }, [topicId]);
@@ -331,14 +331,16 @@ export default function GrammarLessonScreen() {
     );
   }
 
-  // FB315 (NY9): N = a lecke transform-szavaiból még nem ismert szavak száma;
-  // a gomb csak akkor jelenik meg, ha van ilyen.
+  // FB315 (NY9): N = a lecke szavaiból még nem ismert szavak száma. FB343: a
+  // gomb csak akkor jelenik meg, ha van hiányzó szó ÉS a lecke összes szava
+  // eléri a MIN_FOCUS_WORDS küszöböt (kevés szónál nincs értelme a gombnak).
   const needWords = lock.need - lock.have;
+  const showFocusButton = needWords > 0 && lock.need >= MIN_FOCUS_WORDS;
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       {header}
-      {needWords > 0 ? (
+      {showFocusButton ? (
         <Pressable
           testID="grammar-learn-words"
           style={[styles.btn, styles.learnWordsBtn, { backgroundColor: colors.tint }]}
