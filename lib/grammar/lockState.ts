@@ -49,20 +49,23 @@ export function lessonWordIds(lesson: GrammarTopicData): string[] {
   return ids;
 }
 
-export type LockState = { state: 'locked' | 'unlocked'; have: number; need: number };
+export type LockState = { have: number; need: number };
 
 /**
- * A téma zár-állapota: `need` a lecke szó-halmazának mérete (lessonWordIds),
- * `have` ebből az ismert szavak száma. `need === 0` (nincs transform item, vagy
- * nem V2 lecke) mindig `unlocked`.
+ * FB349: a lecke-zár megszűnt (Kálmán: "lecke lockolása ez hülyeség... legyen
+ * minden elérhető"), ez a függvény már csak a "Ezen szavak tanulása" gomb N-jét
+ * számolja: `need` a lecke szó-halmazának mérete (lessonWordIds), `have` ebből
+ * az ismert szavak száma.
  */
 export function lockState(lesson: GrammarTopicData, knownIds: Set<string>): LockState {
   const wordIds = lessonWordIds(lesson);
   const need = wordIds.length;
-  if (need === 0) return { state: 'unlocked', have: 0, need: 0 };
+  if (need === 0) return { have: 0, need: 0 };
   const have = wordIds.filter((id) => knownIds.has(id)).length;
-  return { state: have === need ? 'unlocked' : 'locked', have, need };
+  return { have, need };
 }
 
-// A "feloldás-sáv már látott" jelzők game_progress kulcsa (NY2, app/grammar/index.tsx).
-export const GRAMMAR_UNLOCK_SEEN_KEY = 'grammar-unlock-seen';
+// FB343 (grammar:ir-a-infinitivo:lesson): a gomb csak akkor jelenik meg, ha a
+// lecke összes szava eléri ezt a küszöböt, mert kevesebb szónál nincs értelme
+// a külön fókusz-módnak.
+export const MIN_FOCUS_WORDS = 10;

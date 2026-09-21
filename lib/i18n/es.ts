@@ -417,12 +417,6 @@ export default {
     formHint: 'Escribe la forma correcta',
     showTable: 'Tabla',
     check: 'Comprobar',
-    // NY2 (NYELVTAN.md "Unlock-modell"): bloqueo de lección por palabras en la lista.
-    locked: 'Bloqueado',
-    lockedMeta: (have: number, need: number) => `bloqueado, ${have}/${need} palabras · toca para abrir igual`,
-    unlockedMeta: (have: number, need: number) => `desbloqueado, ${have}/${need} palabras`,
-    unlockedBanner: (title: string) => `Nueva parte de gramática desbloqueada: ${title}`,
-    dismiss: 'Cerrar',
     // NY3 (NYELVTAN.md "Első szelet"): drill de reescritura de tiempo verbal.
     startTransform: (n: number) => `Reescribir (${n})`,
     // FB316 (NYELVTAN.md NY10): reescritura de frases en rondas de 10 en lecciones grandes.
