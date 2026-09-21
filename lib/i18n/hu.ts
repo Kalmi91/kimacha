@@ -445,6 +445,8 @@ export default {
     accentHint: 'Ékezet nélkül is elfogadja, a hiányzó ékezetet megmutatja',
     // FB315 (NY9): a lecke-képernyő szó-fókusz gombja.
     learnTheseWords: (n: number) => `Ezen szavak tanulása (${n})`,
+    // FB328: kumulált helyes-arány, a tanterv-listán és a Kész-képernyőn.
+    lessonPercent: (n: number) => `Eddig: ${n}% jó válasz`,
   },
   exam: {
     simulationOf: (model: string) => `A ${model} vizsga szimulációja`,

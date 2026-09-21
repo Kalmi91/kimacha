@@ -430,6 +430,8 @@ export default {
     accentHint: 'Accepted without accents, missing accents are shown',
     // FB315 (NY9): the lesson screen's word-focus button.
     learnTheseWords: (n: number) => `Learn these words (${n})`,
+    // FB328: cumulative correct-answer rate, on the syllabus list and the done screen.
+    lessonPercent: (n: number) => `So far: ${n}% correct`,
   },
   exam: {
     simulationOf: (model: string) => `Simulation of the ${model} exam`,

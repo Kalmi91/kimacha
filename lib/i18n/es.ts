@@ -430,6 +430,8 @@ export default {
     accentHint: 'Se acepta sin tildes, se muestran las que faltan',
     // FB315 (NY9): el botón de enfoque en palabras de la pantalla de lección.
     learnTheseWords: (n: number) => `Aprender estas palabras (${n})`,
+    // FB328: porcentaje acumulado de aciertos, en la lista del temario y en la pantalla de resultado.
+    lessonPercent: (n: number) => `Hasta ahora: ${n}% de aciertos`,
   },
   exam: {
     simulationOf: (model: string) => `Simulacro del examen ${model}`,
