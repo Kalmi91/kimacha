@@ -16,3 +16,11 @@ export function requeueAfterUndo(queue: Sm2Card[], before: Sm2Card, graded: Sm2C
   }
   return [before, ...rest];
 }
+
+// FB352: kiemelve tiszta függvénybe, hogy a napi haladás (a header-sor és a
+// csík) tab-váltás/app-újraindítás után is a perzisztált `lastReview`-ból
+// számolt, valós napi számot mutassa, ne csak a (mountonként nullázódó)
+// menet-számlálót.
+export function countDoneToday(cards: Sm2Card[], today: string): number {
+  return cards.filter((c) => c.lastReview === today).length;
+}

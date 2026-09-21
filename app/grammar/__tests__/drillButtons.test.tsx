@@ -57,7 +57,9 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
 
     expect(within(screen.getByTestId('grammar-start-choice')).getByText(/\(12\)/)).toBeTruthy();
     expect(within(screen.getByTestId('grammar-start-match')).getByText(/\(1\)/)).toBeTruthy();
-    expect(within(screen.getByTestId('grammar-start-form')).getByText(/\(12\)/)).toBeTruthy();
+    // FB357: 12 authored form items, 2 are vosotros (se-form-09/10), filtered
+    // out of the round the button promises.
+    expect(within(screen.getByTestId('grammar-start-form')).getByText(/\(10\)/)).toBeTruthy();
 
     view.unmount();
   });
@@ -89,8 +91,9 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
   // FB316 (NYELVTAN.md NY10): az 50 transform itemes lecke a régi "Átírás
   // (n)" helyett a körös "10 / 50" gombot mutatja (a szám-pár nyelvfüggetlen,
   // az UI nyelve ebben a tesztkörnyezetben en), és egy kör végén egy "10"-et
-  // említő gomb kínálja a folytatást.
-  it('indefinido-10-verbos (50 transform items) shows a 10/50 round button, and finishing a round offers 10 more', async () => {
+  // említő gomb kínálja a folytatást. FB357: 4 az 50-ből vosotros, a
+  // körös nevező ezért 46.
+  it('indefinido-10-verbos (46 non-vosotros transform items) shows a 10/46 round button, and finishing a round offers 10 more', async () => {
     mockTopicId = 'indefinido-10-verbos';
     const now = 1700000000000;
     jest.spyOn(Date, 'now').mockReturnValue(now);
@@ -105,7 +108,7 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
     const view = render(<GrammarLessonScreen />);
     await flush(4);
 
-    expect(within(screen.getByTestId('grammar-start-transform')).getByText(/10.*50/)).toBeTruthy();
+    expect(within(screen.getByTestId('grammar-start-transform')).getByText(/10.*46/)).toBeTruthy();
 
     fireEvent.press(screen.getByTestId('grammar-start-transform'));
     await flush(1);

@@ -417,12 +417,6 @@ export default {
     formHint: 'Gib die richtige Form ein',
     showTable: 'Tabelle',
     check: 'Prüfen',
-    // NY2 (NYELVTAN.md "Unlock-modell"): wortabhängige Lektionssperre in der Liste.
-    locked: 'Gesperrt',
-    lockedMeta: (have: number, need: number) => `gesperrt, ${have}/${need} Wörter bekannt · tippen öffnet trotzdem`,
-    unlockedMeta: (have: number, need: number) => `freigeschaltet, ${have}/${need} Wörter bekannt`,
-    unlockedBanner: (title: string) => `Neuer Grammatikteil freigeschaltet: ${title}`,
-    dismiss: 'Schließen',
     // NY3 (NYELVTAN.md "Első szelet"): Zeitform-Umschreib-Drill.
     startTransform: (n: number) => `Umschreiben (${n})`,
     // FB316 (NYELVTAN.md NY10): Satz-umformen-Drill in 10er-Runden bei großen Lektionen.
@@ -436,6 +430,8 @@ export default {
     accentHint: 'Auch ohne Akzente akzeptiert, fehlende Akzente werden gezeigt',
     // FB315 (NY9): der Wort-Fokus-Button auf dem Lektionsbildschirm.
     learnTheseWords: (n: number) => `Diese Wörter lernen (${n})`,
+    // FB328: kumulierte Trefferquote, in der Lehrplanliste und auf dem Ergebnisbildschirm.
+    lessonPercent: (n: number) => `Bisher: ${n}% richtig`,
   },
   exam: {
     simulationOf: (model: string) => `Simulation der Prüfung ${model}`,
@@ -672,6 +668,11 @@ export default {
   // PLAN-pcic Schritt 5: der PCIC-Tab (Englisch -> Spanisch tippen, Anki-Knöpfe).
   pcic: {
     header: (due: number, newCount: number, doneToday: number, total: number) => `${total} Wörter · fällig ${due} · neu ${newCount} · heute fertig ${doneToday}`,
+    // 5b: a BadgeRow chip-sorának négy külön felirata (anki-ui-terv.html).
+    badgeTotal: (n: number) => `${n} Wörter`,
+    badgeDue: (n: number) => `fällig ${n}`,
+    badgeNew: (n: number) => `neu ${n}`,
+    badgeDone: (n: number) => `heute fertig ${n}`,
     again: 'Wusste ich nicht',
     hard: 'Schwer',
     good: 'Wusste ich',
@@ -692,5 +693,11 @@ export default {
     tileNew: 'Neu',
     tileAgain: 'Nochmal',
     introduced: (n: number, total: number) => `${n} / ${total} Wörter eingeführt`,
+  },
+  // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
+  pos: {
+    noun: 'Substantiv',
+    verb: 'Verb',
+    phrase: 'Phrase',
   },
 };

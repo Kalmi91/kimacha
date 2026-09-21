@@ -223,7 +223,7 @@ export default {
       explanation: (person: string, tense: string, form: string) => `La forma "${person}" en ${tense}: ${form}`,
       tenseNames: {
         presente: 'presente',
-        indefinido: 'pretérito indefinido',
+        indefinido: 'pretérito perfecto simple',
         imperfecto: 'pretérito imperfecto',
         futuro: 'futuro',
         condicional: 'condicional',
@@ -417,12 +417,6 @@ export default {
     formHint: 'Escribe la forma correcta',
     showTable: 'Tabla',
     check: 'Comprobar',
-    // NY2 (NYELVTAN.md "Unlock-modell"): bloqueo de lección por palabras en la lista.
-    locked: 'Bloqueado',
-    lockedMeta: (have: number, need: number) => `bloqueado, ${have}/${need} palabras · toca para abrir igual`,
-    unlockedMeta: (have: number, need: number) => `desbloqueado, ${have}/${need} palabras`,
-    unlockedBanner: (title: string) => `Nueva parte de gramática desbloqueada: ${title}`,
-    dismiss: 'Cerrar',
     // NY3 (NYELVTAN.md "Első szelet"): drill de reescritura de tiempo verbal.
     startTransform: (n: number) => `Reescribir (${n})`,
     // FB316 (NYELVTAN.md NY10): reescritura de frases en rondas de 10 en lecciones grandes.
@@ -436,6 +430,8 @@ export default {
     accentHint: 'Se acepta sin tildes, se muestran las que faltan',
     // FB315 (NY9): el botón de enfoque en palabras de la pantalla de lección.
     learnTheseWords: (n: number) => `Aprender estas palabras (${n})`,
+    // FB328: porcentaje acumulado de aciertos, en la lista del temario y en la pantalla de resultado.
+    lessonPercent: (n: number) => `Hasta ahora: ${n}% de aciertos`,
   },
   exam: {
     simulationOf: (model: string) => `Simulacro del examen ${model}`,
@@ -672,6 +668,11 @@ export default {
   // PLAN-pcic paso 5: la pestaña PCIC (inglés -> español escrito, botones Anki).
   pcic: {
     header: (due: number, newCount: number, doneToday: number, total: number) => `${total} palabras · pendientes ${due} · nuevas ${newCount} · hechas hoy ${doneToday}`,
+    // 5b: a BadgeRow chip-sorának négy külön felirata (anki-ui-terv.html).
+    badgeTotal: (n: number) => `${n} palabras`,
+    badgeDue: (n: number) => `pendientes ${n}`,
+    badgeNew: (n: number) => `nuevas ${n}`,
+    badgeDone: (n: number) => `hechas hoy ${n}`,
     again: 'No la sabía',
     hard: 'Difícil',
     good: 'La sabía',
@@ -692,5 +693,11 @@ export default {
     tileNew: 'Nuevas',
     tileAgain: 'Otra vez',
     introduced: (n: number, total: number) => `${n} / ${total} palabras introducidas`,
+  },
+  // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
+  pos: {
+    noun: 'sustantivo',
+    verb: 'verbo',
+    phrase: 'frase',
   },
 };

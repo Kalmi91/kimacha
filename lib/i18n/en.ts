@@ -417,12 +417,6 @@ export default {
     formHint: 'Type the correct form',
     showTable: 'Table',
     check: 'Check',
-    // NY2 (NYELVTAN.md "Unlock-modell"): word-gated lesson lock on the list.
-    locked: 'Locked',
-    lockedMeta: (have: number, need: number) => `locked, ${have}/${need} words known · tap to open anyway`,
-    unlockedMeta: (have: number, need: number) => `unlocked, ${have}/${need} words known`,
-    unlockedBanner: (title: string) => `New grammar part unlocked: ${title}`,
-    dismiss: 'Dismiss',
     // NY3 (NYELVTAN.md "Első szelet"): tense rewrite drill.
     startTransform: (n: number) => `Rewrite (${n})`,
     // FB316 (NYELVTAN.md NY10): sentence-rewrite drill in rounds of 10 on big lessons.
@@ -436,6 +430,8 @@ export default {
     accentHint: 'Accepted without accents, missing accents are shown',
     // FB315 (NY9): the lesson screen's word-focus button.
     learnTheseWords: (n: number) => `Learn these words (${n})`,
+    // FB328: cumulative correct-answer rate, on the syllabus list and the done screen.
+    lessonPercent: (n: number) => `So far: ${n}% correct`,
   },
   exam: {
     simulationOf: (model: string) => `Simulation of the ${model} exam`,
@@ -672,6 +668,11 @@ export default {
   // PLAN-pcic step 5: the PCIC tab (English -> Spanish typing, Anki buttons).
   pcic: {
     header: (due: number, newCount: number, doneToday: number, total: number) => `${total} words · due ${due} · new ${newCount} · done today ${doneToday}`,
+    // 5b: a BadgeRow chip-sorának négy külön felirata (anki-ui-terv.html).
+    badgeTotal: (n: number) => `${n} words`,
+    badgeDue: (n: number) => `due ${n}`,
+    badgeNew: (n: number) => `new ${n}`,
+    badgeDone: (n: number) => `done ${n}`,
     again: "Didn't know",
     hard: 'Hard',
     good: 'Knew it',
@@ -692,5 +693,11 @@ export default {
     tileNew: 'New',
     tileAgain: 'Again',
     introduced: (n: number, total: number) => `${n} / ${total} words introduced`,
+  },
+  // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
+  pos: {
+    noun: 'noun',
+    verb: 'verb',
+    phrase: 'phrase',
   },
 };
