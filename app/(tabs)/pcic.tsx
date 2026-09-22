@@ -382,7 +382,9 @@ export default function PcicScreen() {
           <View style={styles.sectionRow}>
             {pos && (
               <View style={[styles.posChip, { backgroundColor: colors.background }]}>
-                <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>{s.pos[pos]}</Text>
+                <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>
+                  {pos.gender ? `${s.pos[pos.pos]} · ${pos.gender}` : s.pos[pos.pos]}
+                </Text>
               </View>
             )}
             <Text style={[styles.sectionText, { color: colors.tabIconDefault }]}>{currentItem.section}</Text>
@@ -601,7 +603,8 @@ const styles = StyleSheet.create({
   },
   cardScrollContent: {
     flexGrow: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    paddingTop: 8,
   },
   // 5b: a szó-sor (szó + 🔊), a CardShell tetején.
   wordRow: {
