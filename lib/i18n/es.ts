@@ -685,7 +685,6 @@ export default {
     resetConfirmYes: 'Restablecer',
     undo: 'Deshacer',
     dontLearn: 'No aprender esta',
-    next: 'Siguiente',
     learningStep: (step: number, total: number) => `paso ${step}/${total}`,
     newBadge: 'nueva',
     moreNew: (n: number) => `+${n} palabras nuevas`,
