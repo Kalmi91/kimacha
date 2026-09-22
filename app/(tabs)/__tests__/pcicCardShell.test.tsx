@@ -70,7 +70,7 @@ describe('PCIC fül: Learn kártya-felület (5b)', () => {
     expect(queryByText('✓ Check')).toBeNull();
     expect(getByText('Knew it')).toBeTruthy();
     expect(getByText("Didn't know")).toBeTruthy();
-    expect(getAllByText('<1 nap').length).toBe(2);
+    expect(getAllByText('<1 day').length).toBe(2);
   });
 
   it('üres beküldés is felfedi a helyes alakot és a két gombot mutatja, a koppintás dönt', async () => {

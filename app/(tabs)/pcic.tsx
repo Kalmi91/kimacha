@@ -13,7 +13,7 @@ import { localDateString } from '@/lib/usageStats';
 import { PCIC_ITEMS, findPcicItem } from '@/data/pcic';
 import { gradePcicAnswer, type PcicGrade } from '@/lib/pcicMatch';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
-import { sm2Review, sm2Preview, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, DEFAULT_NEW_LIMIT, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
+import { sm2Review, sm2PreviewDays, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, DEFAULT_NEW_LIMIT, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { countDoneToday, requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
 import { posOf } from '@/lib/pcicPos';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -313,8 +313,12 @@ export default function PcicScreen() {
   const sessionTotal = doneToday + queue.length;
   const sessionPct = sessionTotal > 0 ? (doneToday / sessionTotal) * 100 : 0;
 
-  // A régi gombsor intervallum-előnézete grade-enként (lib/sm2.ts sm2Preview).
-  const previews = sm2Preview(current, today);
+  // A régi gombsor intervallum-előnézete grade-enként (lib/sm2.ts
+  // sm2PreviewDays), i18n-nel formázva (FB350/5. commit: ne csak magyarul).
+  const previewDays = sm2PreviewDays(current, today);
+  const previews = Object.fromEntries(
+    GRADES.map((g) => [g, previewDays[g] === 0 ? s.pcic.intervalToday : s.pcic.intervalDays(previewDays[g])])
+  ) as Record<Sm2Grade, string>;
 
   // Kálmán 2026-09-21: felfedés után nincs dokkolt sáv, a görgető alsó
   // paddingja és a 💬 bottomOffsetje ehhez igazodjon (0, ha grade van).
@@ -454,7 +458,7 @@ export default function PcicScreen() {
                       styles.gradeBtn,
                       {
                         backgroundColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : g === 'good' ? '#38BDF8' : '#1D4ED8',
-                        borderColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : isPre ? '#FFFFFF' : 'transparent',
+                        borderColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : isPre ? colors.text : 'transparent',
                         borderWidth: isPre ? 3 : 1,
                       },
                     ]}
