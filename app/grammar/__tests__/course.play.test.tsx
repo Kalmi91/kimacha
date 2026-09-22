@@ -122,10 +122,12 @@ describe('grammar course', () => {
   });
 
   it('shows the finished lesson as done when the syllabus comes back', async () => {
+    // FB328: no `${topic}:answered`/`${topic}:correct` rows here (old-style
+    // progress), so the badge falls back to this round's own correct/total.
     await getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, 'presente-regular', 'done', { correct: 10, total: 12 });
     const view = render(<GrammarSyllabusScreen />);
     await flush(4);
-    expect(screen.queryByText('✓ 10/12')).toBeTruthy();
+    expect(screen.queryByText('✓ 83%')).toBeTruthy(); // 10/12 rounded
     view.unmount();
   });
 });

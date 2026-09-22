@@ -139,21 +139,17 @@ export function sm2Review(card: Sm2Card, grade: Sm2Grade, today: string): Sm2Car
   return next;
 }
 
-// Mind a 4 gomb címkéje Anki-módra ("<1 nap", "1 nap", "4 nap" stb.), a
-// sm2Review-t hívja meg hipotetikusan minden grade-re, hogy a szám sose
-// csúszhasson el a tényleges ütemezéstől.
-export function sm2Preview(card: Sm2Card, today: string): Record<Sm2Grade, string> {
+// Mind a 4 gomb intervallum-előnézete napokban (0 = még ma), a sm2Review-t
+// hívja meg hipotetikusan minden grade-re, hogy a szám sose csúszhasson el a
+// tényleges ütemezéstől. A feliratot (i18n) a hívó oldal formázza.
+export function sm2PreviewDays(card: Sm2Card, today: string): Record<Sm2Grade, number> {
   const grades: Sm2Grade[] = ['again', 'hard', 'good', 'easy'];
-  const labels = {} as Record<Sm2Grade, string>;
+  const days = {} as Record<Sm2Grade, number>;
   for (const grade of grades) {
     const next = sm2Review(card, grade, today);
-    if (next.due === today) {
-      labels[grade] = '<1 nap';
-    } else {
-      labels[grade] = `${daysBetween(today, next.due)} nap`;
-    }
+    days[grade] = next.due === today ? 0 : daysBetween(today, next.due);
   }
-  return labels;
+  return days;
 }
 
 // Sorrend: (1) esedékes review, due szerint növekvő; (2) learning kártyák

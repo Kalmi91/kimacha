@@ -685,7 +685,6 @@ export default {
     resetConfirmYes: 'Reset',
     undo: 'Undo',
     dontLearn: "Don't learn this",
-    next: 'Next',
     learningStep: (step: number, total: number) => `step ${step}/${total}`,
     newBadge: 'new',
     moreNew: (n: number) => `+${n} new words`,
@@ -693,6 +692,10 @@ export default {
     tileNew: 'New',
     tileAgain: 'Again',
     introduced: (n: number, total: number) => `${n} / ${total} words introduced`,
+    // FB350/5. commit: a gombsor intervallum-előnézete (korábban lib/sm2.ts
+    // sm2Preview-ban magyarul égetve be, minden nyelven).
+    intervalToday: '<1 day',
+    intervalDays: (n: number) => `${n} days`,
   },
   // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
   pos: {
