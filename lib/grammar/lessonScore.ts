@@ -42,3 +42,20 @@ export function lessonPercentsByTopic(rows: ProgressRow[]): Map<string, number> 
   }
   return result;
 }
+
+// FB328, Kálmán 2026-09-21: the syllabus row's single badge percent. The
+// cumulative counters win when they exist; a topic marked `done` before FB328
+// added them has no `${topic}:answered`/`${topic}:correct` rows yet, so the
+// badge falls back to that topic's last round result instead of showing
+// nothing.
+export function lessonBadgePercent(
+  cumulative: number | null,
+  roundCorrect?: number,
+  roundTotal?: number
+): number | null {
+  if (cumulative !== null) return cumulative;
+  if (roundTotal !== undefined && roundTotal > 0) {
+    return Math.round(((roundCorrect ?? 0) / roundTotal) * 100);
+  }
+  return null;
+}
