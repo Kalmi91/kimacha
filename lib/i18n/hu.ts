@@ -700,7 +700,6 @@ export default {
     resetConfirmYes: 'Törlés',
     undo: 'Visszavonás',
     dontLearn: 'Ezt nem tanulom',
-    next: 'Tovább',
     learningStep: (step: number, total: number) => `${step}/${total}. lépés`,
     newBadge: 'új',
     moreNew: (n: number) => `+${n} új szó`,

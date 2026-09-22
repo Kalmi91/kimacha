@@ -13,14 +13,13 @@ import { localDateString } from '@/lib/usageStats';
 import { PCIC_ITEMS, findPcicItem } from '@/data/pcic';
 import { gradePcicAnswer, type PcicGrade } from '@/lib/pcicMatch';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
-import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, DEFAULT_NEW_LIMIT, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
+import { sm2Review, sm2Preview, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, DEFAULT_NEW_LIMIT, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { countDoneToday, requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
 import { posOf } from '@/lib/pcicPos';
 import FeedbackButton from '@/components/FeedbackModal';
 import BadgeRow from '@/components/learn/BadgeRow';
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
-import GradeButtons from '@/components/learn/GradeButtons';
 import { useDockLift } from '@/components/learn/useDockLift';
 import { answerInputProps } from '@/lib/inputProps';
 
@@ -37,6 +36,9 @@ const NEW_ORDER = PCIC_ITEMS.map((i) => i.id);
 // Tudtam/Nem tudtam helyett a dokkolt gombbal lép tovább (anki-ui-terv.html,
 // mindkettő látszik felfedés után).
 const PRESELECT: Record<PcicGrade['match'], Sm2Grade> = { exact: 'good', near: 'good', wrong: 'again' };
+
+// A régi (PR #27 előtti) gombsor sorrendje: Nem tudtam, Tudtam.
+const GRADES: Sm2Grade[] = ['again', 'good'];
 
 // SZ2 (SZAVAK.md): egy visszavonható értékelés pillanatképe. `counted` = a
 // számlálókat is léptette-e (SZ3 „Ezt nem tanulom" gombja majd false-t ír ide).
@@ -66,10 +68,6 @@ export default function PcicScreen() {
   const [sessionNew, setSessionNew] = useState(0);
   const [sessionAgain, setSessionAgain] = useState(0);
   const [lastGraded, setLastGraded] = useState<UndoEntry | null>(null);
-  // SZ5 (SZAVAK.md): üres beküldés a szót azonnal Nem tudtam-ként értékeli;
-  // ilyenkor a kártya a képernyőn marad felfedve, és a gradesRow helyett egy
-  // "Tovább" gomb lépteti a sort (advance() csak akkor fut).
-  const [autoGraded, setAutoGraded] = useState(false);
   // FB314: a "+10 új szó" gombbal bővített napi keret; load() (fókusz-váltás,
   // új nap) nullázza, a menet közbeni értékelések nem érintik.
   const [extraNew, setExtraNew] = useState(0);
@@ -125,13 +123,9 @@ export default function PcicScreen() {
   const newRemaining = queue.filter((c) => c.state === 'new').length;
   const doneToday = countDoneToday([...allCards.values()], today);
 
-  // SZ5: a DB-írás + számlálók külön függvényben, hogy a queue-léptetés
-  // (advance) nélkül is meghívható legyen (üres beküldésnél a kártya a
-  // képernyőn marad, csak a "Tovább" gomb léptet). A `revealed` a lastGraded
-  // felfedésének értéke; alapból a képernyőn látszó `grade`, de az
-  // auto-értékelésnél a handleCheck a frissen számolt objektumot adja át,
-  // mert a `grade` state a setGrade hívás után még nem frissült a closure-ben.
-  const commitGrade = async (g: Sm2Grade, revealed: PcicGrade | null = grade): Promise<Sm2Card | null> => {
+  // SZ2 (SZAVAK.md): a DB-írás + számlálók itt, a queue-léptetés (advance) a
+  // hívó handleGrade-ben, külön.
+  const commitGrade = async (g: Sm2Grade): Promise<Sm2Card | null> => {
     if (!current) return null;
     const wasNew = current.state === 'new';
     const before = { ...current };
@@ -139,7 +133,7 @@ export default function PcicScreen() {
     await getDb().upsertPcicCard(next);
 
     setAllCards((prev) => new Map(prev).set(next.itemId, next));
-    setLastGraded({ before, after: next, typed: typedAnswer, grade: revealed, wasNew, g, counted: true });
+    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew, g, counted: true });
     setSessionAnswered((n) => n + 1);
     if (wasNew) setSessionNew((n) => n + 1);
     if (g === 'again') setSessionAgain((n) => n + 1);
@@ -151,23 +145,20 @@ export default function PcicScreen() {
     setTypedAnswer('');
     setArticlePick('');
     setGrade(null);
-    setAutoGraded(false);
   };
 
   const handleCheck = async () => {
     if (!current || !currentItem) return;
     const answer = composeAnswer(articlePick, typedAnswer);
     if (answer.trim().length === 0) {
-      // SZ5 (SZAVAK.md): üres beküldés = Nem tudtam automatikusan; felfedi a
-      // helyes alakot és felolvassa. Mondatot most nem olvas fel (SZ6 PARKOL,
-      // nincs mondat-adat a PCIC-tételekhez).
+      // Kálmán 2026-09-21: üres beküldés is felfedi a helyes alakot és
+      // felolvassa, de nem értékel automatikusan; a koppintás dönt, mint
+      // bármelyik felfedésnél (SZ6 PARKOL, nincs mondat-adat a PCIC-tételekhez).
       const g = gradePcicAnswer('', currentItem.es);
       const revealed: PcicGrade = { ...g, match: 'wrong' };
       setGrade(revealed);
       if (revealed.match !== 'exact') setArticlePick(articleOf(revealed.best));
       speak(g.best, speechLang('es'));
-      const next = await commitGrade('again', revealed);
-      if (next) setAutoGraded(true);
       return;
     }
     // FB321: felfedéskor mindig szóljon a helyes spanyol alak.
@@ -187,11 +178,7 @@ export default function PcicScreen() {
     if (!lastGraded) return;
     await getDb().upsertPcicCard(lastGraded.before);
     setAllCards((prev) => new Map(prev).set(lastGraded.before.itemId, lastGraded.before));
-    // SZ5: auto-graded üres beküldésnél a kártya még nem lépett a sor
-    // végére (nincs advance() hívás), tehát a sorhoz sem kell nyúlni.
-    if (!autoGraded) {
-      setQueue((prev) => requeueAfterUndo(prev, lastGraded.before, lastGraded.after, today));
-    }
+    setQueue((prev) => requeueAfterUndo(prev, lastGraded.before, lastGraded.after, today));
     // A padló 0, mert a session-reset (load) közben is lehet nyomni.
     if (lastGraded.counted) {
       setSessionAnswered((n) => Math.max(0, n - 1));
@@ -201,7 +188,6 @@ export default function PcicScreen() {
     setTypedAnswer(lastGraded.typed);
     setArticlePick('');
     setGrade(lastGraded.grade);
-    setAutoGraded(false);
     setLastGraded(null);
   };
 
@@ -327,10 +313,12 @@ export default function PcicScreen() {
   const sessionTotal = doneToday + queue.length;
   const sessionPct = sessionTotal > 0 ? (doneToday / sessionTotal) * 100 : 0;
 
-  // 5b: a dokkolt "→ Next" ezt alkalmazza, ha kézi Tudtam/Nem tudtam helyett
-  // egyenesen a dokkolt gombbal lép tovább (PRESELECT: exact/near -> good,
-  // wrong -> again).
-  const suggestedGrade: Sm2Grade | null = grade ? PRESELECT[grade.match] : null;
+  // A régi gombsor intervallum-előnézete grade-enként (lib/sm2.ts sm2Preview).
+  const previews = sm2Preview(current, today);
+
+  // Kálmán 2026-09-21: felfedés után nincs dokkolt sáv, a görgető alsó
+  // paddingja és a 💬 bottomOffsetje ehhez igazodjon (0, ha grade van).
+  const effectiveDockH = grade ? 0 : dockH;
 
   // 5b: a lap tetejére kerülő lap/lépés-jelvény (CardShell chip propja),
   // a korábbi sectionRow-beli stepBadge szövegek helyén.
@@ -357,7 +345,7 @@ export default function PcicScreen() {
 
       <ScrollView
         style={styles.cardScroll}
-        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: 16 + dockH + dockLift }]}
+        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: 16 + effectiveDockH + dockLift }]}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >
@@ -452,14 +440,32 @@ export default function PcicScreen() {
             </View>
           )}
 
-          {/* 5b: Tudtam/Nem tudtam a Learn gomb-alakjában (GradeButtons), csak
-              a kézi értékelésnél; az auto-értékelt (üres beküldés) esetet a
-              dokkolt "→ Next" viszi tovább, ott nincs mit választani. */}
-          {grade && !autoGraded && (
-            <GradeButtons
-              left={{ label: s.pcic.good, color: '#38BDF8', onPress: () => handleGrade('good') }}
-              right={{ label: s.pcic.again, color: '#1D4ED8', onPress: () => handleGrade('again') }}
-            />
+          {/* Kálmán 2026-09-21: a régi (PR #27 előtti) Tudtam/Nem tudtam
+              gombsor vissza, intervallum-előnézettel; a koppintás dönt és
+              értékel, üres beküldés után is. */}
+          {grade && (
+            <View style={styles.gradesRow}>
+              {GRADES.map((g) => {
+                const isPre = PRESELECT[grade.match] === g;
+                return (
+                  <Pressable
+                    key={g}
+                    style={({ pressed }) => [
+                      styles.gradeBtn,
+                      {
+                        backgroundColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : g === 'good' ? '#38BDF8' : '#1D4ED8',
+                        borderColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : isPre ? '#FFFFFF' : 'transparent',
+                        borderWidth: isPre ? 3 : 1,
+                      },
+                    ]}
+                    onPress={() => handleGrade(g)}
+                  >
+                    <Text style={styles.gradeLabel}>{s.pcic[g]}</Text>
+                    <Text style={styles.gradePreview}>{previews[g]}</Text>
+                  </Pressable>
+                );
+              })}
+            </View>
           )}
 
           <Pressable onPress={handleDontLearn} hitSlop={8}>
@@ -468,27 +474,21 @@ export default function PcicScreen() {
         </CardShell>
       </ScrollView>
 
-      {/* 5b: az inlineCheckBtn megszűnt, a Check/→ Next a Learn dokkolt sávja
-          lett (anki-ui-terv.html screen 2: felfedés után a dokkolt "→ Next"
-          ÉS a GradeButtons is látszik). Kézi Tudtam/Nem tudtam esetén a Next a
-          javasolt (PRESELECT) értékelést alkalmazza; auto-értékelt (üres
-          beküldés) esetben a már elmentett lapot lépteti tovább. */}
-      <DockedAction
-        label={grade ? `→ ${s.pcic.next}` : `✓ ${s.card.check}`}
-        onPress={
-          !grade
-            ? handleCheck
-            : autoGraded
-              ? () => lastGraded && advance(lastGraded.after)
-              : () => suggestedGrade && handleGrade(suggestedGrade)
-        }
-        tone={grade ? 'next' : 'check'}
-        bottom={dockLift}
-        colors={colors}
-        onHeight={setDockH}
-      />
+      {/* 5b: az inlineCheckBtn megszűnt, a Check a Learn dokkolt sávja lett.
+          Kálmán 2026-09-21: felfedés után nincs dokkolt "Next", a gombsor a
+          kártyában dönt, ezért a dokkolt sáv csak gépeléskor jelenik meg. */}
+      {!grade && (
+        <DockedAction
+          label={`✓ ${s.card.check}`}
+          onPress={handleCheck}
+          tone="check"
+          bottom={dockLift}
+          colors={colors}
+          onHeight={setDockH}
+        />
+      )}
 
-      <FeedbackButton level="B1" languagePair="es-en" currentCard={`pcic:${current.itemId}`} bottomOffset={DOCK_RESERVE + dockLift} />
+      <FeedbackButton level="B1" languagePair="es-en" currentCard={`pcic:${current.itemId}`} bottomOffset={effectiveDockH + dockLift} />
     </KeyboardAvoidingView>
   );
 }
@@ -725,5 +725,27 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 18,
     fontWeight: '700',
+  },
+  gradesRow: {
+    flexDirection: 'row',
+    gap: 8,
+    marginTop: 24,
+  },
+  gradeBtn: {
+    flex: 1,
+    borderRadius: 12,
+    paddingVertical: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  gradeLabel: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: '#FFFFFF',
+  },
+  gradePreview: {
+    fontSize: 11,
+    marginTop: 2,
+    color: '#FFFFFF',
   },
 });

@@ -1,6 +1,7 @@
 // 5b (döntés 5/6b): a PCIC fül átveszi a Learn kártya-felületét (CardShell,
-// DockedAction, GradeButtons). Mock-minta: pcicSpeak.test.tsx (db, router,
-// speech, data/pcic).
+// DockedAction). Kálmán 2026-09-21: felfedés után a régi Tudtam/Nem tudtam
+// gombsor dönt a kártyában, nincs dokkolt Next. Mock-minta: pcicSpeak.test.tsx
+// (db, router, speech, data/pcic).
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -57,16 +58,36 @@ describe('PCIC fül: Learn kártya-felület (5b)', () => {
     expect(getByText('✓ Check')).toBeTruthy();
   });
 
-  it('felfedés után a dokkolt → Next és a két grade-gomb is látszik', async () => {
-    const { getByText, UNSAFE_getByType } = render(<PcicScreen />);
+  it('felfedés után a régi Tudtam/Nem tudtam gombok látszanak intervallum-előnézettel, dokkolt Next nélkül', async () => {
+    const { getByText, queryByText, getAllByText, UNSAFE_getByType } = render(<PcicScreen />);
     await flush();
 
     fireEvent.changeText(UNSAFE_getByType(TextInput), 'vida');
     fireEvent.press(getByText('✓ Check'));
     await flush();
 
-    expect(getByText('→ Next')).toBeTruthy();
+    expect(queryByText('→ Next')).toBeNull();
+    expect(queryByText('✓ Check')).toBeNull();
     expect(getByText('Knew it')).toBeTruthy();
     expect(getByText("Didn't know")).toBeTruthy();
+    expect(getAllByText('<1 nap').length).toBe(2);
+  });
+
+  it('üres beküldés is felfedi a helyes alakot és a két gombot mutatja, a koppintás dönt', async () => {
+    const { getByText, getAllByText, queryByText } = render(<PcicScreen />);
+    await flush();
+
+    fireEvent.press(getByText('✓ Check'));
+    await flush();
+
+    expect(queryByText('→ Next')).toBeNull();
+    expect(getAllByText('vida').length).toBeGreaterThan(0);
+    expect(getByText('Knew it')).toBeTruthy();
+    expect(getByText("Didn't know")).toBeTruthy();
+
+    fireEvent.press(getByText("Didn't know"));
+    await flush();
+
+    expect(getByText('✓ Check')).toBeTruthy();
   });
 });
