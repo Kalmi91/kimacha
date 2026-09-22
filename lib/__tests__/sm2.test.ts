@@ -1,6 +1,6 @@
 // PLAN-pcic 4. lépés: SM-2 (Anki-módszerű) ütemező tiszta függvényei.
 
-import { sm2NewCard, sm2Review, sm2Preview, pickSm2Session, sm2MarkKnown, addDays, KNOWN_INTERVAL_DAYS, DEFAULT_NEW_LIMIT, type Sm2Card } from '../sm2';
+import { sm2NewCard, sm2Review, sm2PreviewDays, pickSm2Session, sm2MarkKnown, addDays, KNOWN_INTERVAL_DAYS, DEFAULT_NEW_LIMIT, type Sm2Card } from '../sm2';
 
 const TODAY = '2026-09-18';
 const TOMORROW = addDays(TODAY, 1);
@@ -127,20 +127,20 @@ describe('sm2Review, review állapot', () => {
   });
 });
 
-describe('sm2Preview', () => {
-  it('learning kártyánál <1 nap a nem-graduáló gombokra', () => {
+describe('sm2PreviewDays', () => {
+  it('learning kártyánál 0 nap a nem-graduáló gombokra', () => {
     const c0 = sm2NewCard('b1-0005');
-    const labels = sm2Preview(c0, TODAY);
-    expect(labels.again).toBe('<1 nap');
-    expect(labels.hard).toBe('<1 nap');
-    expect(labels.easy).toBe('4 nap');
+    const days = sm2PreviewDays(c0, TODAY);
+    expect(days.again).toBe(0);
+    expect(days.hard).toBe(0);
+    expect(days.easy).toBe(4);
   });
 
-  it('review kártyánál napokban adja vissza', () => {
-    const labels = sm2Preview(reviewCard({ interval: 10, ease: 2.5 }), TODAY);
-    expect(labels.good).toBe('25 nap');
-    expect(labels.hard).toBe('12 nap');
-    expect(labels.again).toBe('<1 nap');
+  it('review kártyánál napok számában adja vissza', () => {
+    const days = sm2PreviewDays(reviewCard({ interval: 10, ease: 2.5 }), TODAY);
+    expect(days.good).toBe(25);
+    expect(days.hard).toBe(12);
+    expect(days.again).toBe(0);
   });
 });
 

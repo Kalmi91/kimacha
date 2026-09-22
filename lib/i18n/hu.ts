@@ -707,6 +707,10 @@ export default {
     tileNew: 'Új',
     tileAgain: 'Újra',
     introduced: (n: number, total: number) => `${n} / ${total} szó bevezetve`,
+    // FB350/5. commit: a gombsor intervallum-előnézete (korábban lib/sm2.ts
+    // sm2Preview-ban magyarul égetve be, minden nyelven).
+    intervalToday: '<1 nap',
+    intervalDays: (n: number) => `${n} nap`,
   },
   // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
   pos: {
