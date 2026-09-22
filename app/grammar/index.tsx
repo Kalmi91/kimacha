@@ -18,7 +18,7 @@ import {
   topicsForUnit,
   unitsForLevel,
 } from '@/lib/grammar/syllabus';
-import { lessonPercentsByTopic } from '@/lib/grammar/lessonScore';
+import { lessonBadgePercent, lessonPercentsByTopic } from '@/lib/grammar/lessonScore';
 import FeedbackButton from '@/components/FeedbackModal';
 
 // The grammar course: the whole syllabus from A1 to C1, in teaching order.
@@ -134,13 +134,31 @@ export default function GrammarSyllabusScreen() {
                         const p = progress.get(topic.id);
                         // FB328: null amíg egyetlen kör sincs lejátszva a témán.
                         const pct = percents.get(topic.id) ?? null;
+                        // FB328: EGY jelvény, nem kettő. Kész témán a kumulált
+                        // százalék (vagy a régi haladásnál a kör eredménye)
+                        // ül a ✓ mellett; elkezdett, nem kész témán önmagában.
+                        const badgePct = lessonBadgePercent(pct, p?.correct, p?.total);
                         const badge = !written2
                           ? s.grammar.soon
                           : p?.state === 'done'
-                            ? `✓ ${p.correct ?? 0}/${p.total ?? 0}`
-                            : p
-                              ? s.grammar.started
-                              : s.grammar.notStarted;
+                            ? badgePct !== null
+                              ? `✓ ${badgePct}%`
+                              : `✓ ${p.correct ?? 0}/${p.total ?? 0}`
+                            : badgePct !== null
+                              ? `${badgePct}%`
+                              : p
+                                ? s.grammar.started
+                                : s.grammar.notStarted;
+                        const badgeColor =
+                          badgePct !== null
+                            ? badgePct >= 80
+                              ? '#22C55E'
+                              : badgePct >= 50
+                                ? colors.warningFill
+                                : colors.tabIconDefault
+                            : p?.state === 'done'
+                              ? '#22C55E'
+                              : colors.tabIconDefault;
                         return (
                           <Pressable
                             key={topic.id}
@@ -177,24 +195,11 @@ export default function GrammarSyllabusScreen() {
                             </View>
                             <View style={styles.topicBadgeCol}>
                               <Text
-                                style={[
-                                  styles.topicBadge,
-                                  { color: p?.state === 'done' ? '#22C55E' : colors.tabIconDefault },
-                                ]}
+                                testID={`grammar-percent-${topic.id}`}
+                                style={[styles.topicBadge, { color: badgeColor }]}
                               >
                                 {badge}
                               </Text>
-                              {pct !== null ? (
-                                <Text
-                                  testID={`grammar-percent-${topic.id}`}
-                                  style={[
-                                    styles.lessonPercentBadge,
-                                    { color: pct >= 80 ? '#22C55E' : pct >= 50 ? colors.warningFill : colors.tabIconDefault },
-                                  ]}
-                                >
-                                  {pct}%
-                                </Text>
-                              ) : null}
                             </View>
                           </Pressable>
                         );
@@ -263,7 +268,5 @@ const styles = StyleSheet.create({
   topicBlurb: { fontSize: 12, marginTop: 2, lineHeight: 17 },
   topicBadgeCol: { alignItems: 'flex-end', gap: 2 },
   topicBadge: { fontSize: 12, fontWeight: '700' },
-  // FB328: a kumulált helyes-arány kis jelvénye, a meglévő badge alatt.
-  lessonPercentBadge: { fontSize: 11, fontWeight: '700' },
   footNote: { fontSize: 12, textAlign: 'center', marginTop: 18, lineHeight: 17 },
 });

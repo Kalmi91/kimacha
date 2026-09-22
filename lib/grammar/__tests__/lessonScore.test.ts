@@ -1,6 +1,6 @@
 // FB328 (grammar-syllabus): the per-lesson correct-percent badge's pure math.
 
-import { lessonPercent, lessonPercentsByTopic } from '../lessonScore';
+import { lessonBadgePercent, lessonPercent, lessonPercentsByTopic } from '../lessonScore';
 
 describe('lessonPercent', () => {
   it('is null when nothing has been answered', () => {
@@ -50,5 +50,23 @@ describe('lessonPercentsByTopic', () => {
 
   it('is empty for no rows', () => {
     expect(lessonPercentsByTopic([])).toEqual(new Map());
+  });
+});
+
+describe('lessonBadgePercent', () => {
+  it('the cumulative percent wins over a round result', () => {
+    expect(lessonBadgePercent(83, 10, 12)).toBe(83);
+  });
+
+  it('falls back to the round result when there is no cumulative percent', () => {
+    expect(lessonBadgePercent(null, 10, 12)).toBe(83); // 10/12 rounded
+  });
+
+  it('is null when the round total is 0', () => {
+    expect(lessonBadgePercent(null, 0, 0)).toBeNull();
+  });
+
+  it('is null when neither source has anything', () => {
+    expect(lessonBadgePercent(null)).toBeNull();
   });
 });
