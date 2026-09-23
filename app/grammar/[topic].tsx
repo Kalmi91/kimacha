@@ -11,6 +11,7 @@ import { cumulativeCorpusWordIds, grammarKindCounts, isLessonV2, type GrammarGap
 import { buildGlossMap } from '@/lib/games/gloss';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, syllabusTopic } from '@/lib/grammar/syllabus';
 import { lessonPercent } from '@/lib/grammar/lessonScore';
+import { tableCellsForLesson } from '@/lib/grammar/tableDeck';
 import { TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import { getScrollY, setScrollY } from '@/lib/grammar/scrollMemory';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
@@ -139,6 +140,10 @@ export default function GrammarLessonScreen() {
   // (pl. hay-estar nem kap ragozás-gombot, mert nincs benne form item).
   const kindCounts = grammarKindCounts(lesson);
   const availableKinds = KIND_ORDER.filter((k) => kindCounts[k] > 0);
+  // PLAN-play 13. lépés (s6): the deck button only where the lesson actually
+  // has a conjugation table (lib/grammar/tableDeck.ts already excludes the
+  // reference GridTables and vosotros rows).
+  const tableDeckCells = tableCellsForLesson(lesson);
 
   // Two worked examples from the first items, so the lesson SHOWS the rule
   // before it asks anything.
@@ -446,6 +451,19 @@ export default function GrammarLessonScreen() {
             </Text>
           </Pressable>
         ))}
+
+        {/* PLAN-play 13. lépés (s6): the deck button only where the lesson has
+            a conjugation table; outlined, to read as an optional extra next
+            to the fajtánkénti drill gombok above. */}
+        {tableDeckCells.length > 0 ? (
+          <Pressable
+            testID="grammar-start-tabledeck"
+            style={[styles.btn, availableKinds.length === 0 && styles.startBtn, { borderWidth: 1.5, borderColor: colors.tint }]}
+            onPress={() => router.push(`/grammar/deck/${topicId}` as never)}
+          >
+            <Text style={[styles.btnText, { color: colors.tint }]}>{s.grammar.practiceTable(tableDeckCells.length)}</Text>
+          </Pressable>
+        ) : null}
       </ScrollView>
       <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:lesson`} />
     </View>
