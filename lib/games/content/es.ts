@@ -60,8 +60,9 @@ import grammarEsImperativoAfirmativo from '@/data/games/grammar/es/imperativo-af
 
 // K33 (play-vágás, 2026-09-22): a Játék/Átbeszélő fülek és a hozzájuk tartozó
 // data/games/{ccat,myths,chats,stories,confusables} mappák kikerültek. A
-// bundle e mezői ürese maradnak (a `LanguageContentBundle` alak MARAD, mert
-// lib/exam/generated.ts a getStories()-t még hívja).
+// bundle e mezői ürese maradnak (a `LanguageContentBundle` alak MARAD; a
+// 4. lépés óta a vizsga-kód is kikerült, a getStories()-nek nincs hívója,
+// árva a 7. lépésnek).
 export const esContent: LanguageContentBundle = {
   stories: [],
   chats: [],
