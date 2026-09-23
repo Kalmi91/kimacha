@@ -45,40 +45,13 @@ export default {
     spelling: 'Spelling',
   },
   done: {
-    title: 'Done for today!',
+    // K33 (play-vágás, 2026-09-22): the Learn tab (Done screen) is gone, this
+    // key stays, the Stats tab's daily-streak tile uses it.
     streak: 'day streak',
-    nextTopicWords: 'New words from another topic',
-    topicEmpty: 'This topic has no new words left, the rest is scheduled for later.',
-    takeExam: 'Take the exam',
-    examLocked: (pct: number) => `Exam (from ${pct}% mastered)`,
-    nextLevel: 'Move on to the next level',
-    // UTEMEZO 5. szakasz: the Done screen's four numbers.
-    reviewLaps: 'reviews',
-    wordsStarted: 'new words started',
-    wordsLearned: 'words learned',
-    wrongLaps: 'wrong cards',
-    // UTEMEZO 5. szakasz: the one end-of-round question, depending on the situation.
-    askMoreNew: 'Learning more new words today?',
-    yesThisMany: 'Yes, this many',
-    noEnoughToday: "No, that's enough for today",
-    askPractise: 'Practise some random words from this level?',
-    yesPractise: 'Yes',
-    no: 'No',
-  },
-  // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): the
-  // MID-round question, once black hits 0 and the hand also empties, but
-  // reviews are still left. Separate keys from `done.*` above: this card
-  // takes the card's place, not the round's end.
-  learn: {
-    askMoreTitle: "Today's new words are used up",
-    askMoreYes: (n: number) => `+${n} new words`,
-    askMoreReviewOnly: (k: number) => `Review only (${k} cards)`,
-    askMoreDone: "That's enough for today",
   },
   tabs: {
-    learn: 'Learn',
     settings: 'Settings',
-    tree: 'Topics',
+    grammar: 'Grammar',
     stats: 'Stats',
     pcic: 'PCIC',
   },
@@ -106,7 +79,6 @@ export default {
     },
   },
   grammar: {
-    title: 'Grammar course',
     coverage: (done: number, written: number, planned: number) =>
       `${done} lessons finished · ${written} of ${planned} written`,
     levelMeta: (done: number, topics: number, written: number) =>
@@ -154,8 +126,6 @@ export default {
     correctAnswer: 'Correct answer',
     next: 'Next',
     accentHint: 'Accepted without accents, missing accents are shown',
-    // FB315 (NY9): the lesson screen's word-focus button.
-    learnTheseWords: (n: number) => `Learn these words (${n})`,
     // FB328: cumulative correct-answer rate, on the syllabus list and the done screen.
     lessonPercent: (n: number) => `So far: ${n}% correct`,
   },
@@ -215,33 +185,8 @@ export default {
     unlocked: 'Exam unlocked!',
     unlockedCta: 'Start Exam',
   },
-  topic: {
-    progress: (current: number, total: number) => `Topic ${current}/${total}`,
-    complete: 'Topic complete!',
-    allComplete: 'All topics complete!',
-    next: (name: string) => `Next: ${name}`,
-    locked: 'Locked',
-    chooseTopic: 'Choose a New Topic',
-    switchToast: (name: string) => `Now showing new "${name}" words. Earlier ones stay as review.`,
-    wordProgress: (done: number, total: number) => `${done}/${total}`,
-  },
-  subLevel: {
-    progress: (id: string, name: string, current: number, total: number) => `${id} · ${name} — ${current}/${total}`,
-    complete: (id: string, name: string) => `${id} complete: ${name}! 🎉`,
-    doneProgress: (done: number, total: number) => `${done}/${total} topics done in this sub-level`,
-  },
-  master: {
-    button: 'Master',
-    title: 'Choose Level',
-    levels: 'Switch Level',
-    exams: 'Exams',
-    restart: 'Restart',
-    wordCount: (n: number) => `${n} words`,
-  },
   settings: {
     changeLanguage: 'Change Language',
-    wordsOnly: 'Words Only',
-    randomTopics: 'Random Topics',
     weeklyGoal: 'Weekly study goal',
     weeklyGoalHours: (h: string) => `${h} hours / week`,
     weeklyGoalDoneTag: '✓ DONE',
@@ -267,13 +212,6 @@ export default {
     requeueEasy: 'Easy (5 laps)',
     requeueNormal: 'Normal (12 laps)',
     requeueHard: 'Hard (25 laps)',
-    // FB279, 2026-09-17: difficulty dial, sets the daily new words and P together.
-    difficultyVeryEasy: 'very easy',
-    difficultyEasy: 'easy',
-    difficultyNormal: 'normal',
-    difficultyHard: 'hard',
-    difficultyVeryHard: 'very hard',
-    difficultyCustom: 'custom',
   },
   backup: {
     backup: 'Backup',
@@ -290,28 +228,12 @@ export default {
     wordsKnown: 'Words Known',
   },
   // UTEMEZO 7. szakasz: the small tag on top of every card.
-  lap: {
-    newLap: (n: number) => `new · ${n}/3`,
-    review: 'review',
-    repair: 'fix',
-    repairLap: (n: number) => `fix · ${n}/3`,
-    sentence: 'sentence',
-    // UTEMEZO 5. szakasz (FB296/297/298): the ask-more card's label.
-    question: 'question',
-  },
-  // UTEMEZO 6. szakasz: explanation window for the header's three numbers.
+  // K33 (play-vágás, 2026-09-22): the Learn tab's header (three numbers +
+  // focus session) is gone; close/levelProgress stay, Settings and Stats
+  // still use them.
   header: {
-    title: 'The three numbers',
-    black: 'Black: how many new words you can still start today at this level.',
-    blue: 'Blue: the remaining cards of the words you already have in hand (one word = 3 cards).',
-    pink: 'Pink: the remaining review cards, sentence cards included.',
-    sum: 'The three numbers added together: this many cards are left to the end of the round if you get everything right.',
     close: 'Close',
     levelProgress: (known: number, total: number) => `${known} / ${total} words`,
-    // FB315 (NY9): the focus-session banner above the card (word-gated lesson drill).
-    focusBanner: (label: string, known: number, total: number) => `${label} · ${known}/${total} known`,
-    focusDone: 'all known, back to the lesson',
-    focusExit: 'Exit focus',
   },
   spelling: {
     title: 'Spelling Practice',
@@ -324,12 +246,6 @@ export default {
     send: 'Send',
     cancel: 'Cancel',
     thanks: 'Thank You!',
-  },
-  note: {
-    title: 'Grammar note',
-    pairNoun: 'An object with two symmetric parts: in Spanish both the singular and the plural can mean ONE item (el pantalón = los pantalones, RAE). English keeps it plural: a pair of trousers.',
-    someIndef: 'unos/unas is the plural indefinite article: some, a pair of (unos vaqueros = a pair of jeans).',
-    serEstar: 'SER = what something IS: identity, job, origin, lasting quality. ESTAR = how something IS right now: state, mood, location, result of a change.\n• Soy profesor. (I am a teacher, my job.) VS Estoy en clase. (I am in class, right now.)\n• El café es caliente. (Coffee is a hot drink, always.) VS El café está frío. (This coffee has gone cold.)',
   },
   usage: {
     plusOneMinute: '+1 minute wooo!',

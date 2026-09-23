@@ -45,40 +45,13 @@ export default {
     spelling: 'Rechtschreibung',
   },
   done: {
-    title: 'Fertig für heute!',
+    // K33 (play-vágás, 2026-09-22): a Tanulás fül (Kész-képernyő) kikerült,
+    // ez a kulcs marad, a Stats fül napi-streak csempéje használja.
     streak: 'Tage Serie',
-    nextTopicWords: 'Neue Wörter aus einem anderen Thema',
-    topicEmpty: 'Dieses Thema hat keine neuen Wörter mehr, der Rest ist für später geplant.',
-    takeExam: 'Prüfung ablegen',
-    examLocked: (pct: number) => `Prüfung (ab ${pct}%)`,
-    nextLevel: 'Weiter zur nächsten Stufe',
-    // UTEMEZO 5. szakasz: die vier Zahlen des Done-Bildschirms.
-    reviewLaps: 'Wiederholungen',
-    wordsStarted: 'neue Wörter begonnen',
-    wordsLearned: 'gelernte Wörter',
-    wrongLaps: 'falsche Karten',
-    // UTEMEZO 5. szakasz: die eine Frage am Rundenende, je nach Lage.
-    askMoreNew: 'Lernst du heute noch mehr neue Wörter?',
-    yesThisMany: 'Ja, so viele',
-    noEnoughToday: 'Nein, das reicht für heute',
-    askPractise: 'Übst du noch ein paar zufällige Wörter der Stufe?',
-    yesPractise: 'Ja',
-    no: 'Nein',
-  },
-  // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): die Frage
-  // MITTEN in der Runde, sobald Schwarz auf 0 fällt und auch die Hand leer
-  // wird, aber noch Wiederholungen übrig sind. Eigene Schlüssel, getrennt von
-  // `done.*` oben: diese Karte ersetzt die Kartei, nicht das Rundenende.
-  learn: {
-    askMoreTitle: 'Die neuen Wörter für heute sind aufgebraucht',
-    askMoreYes: (n: number) => `+${n} neue Wörter`,
-    askMoreReviewOnly: (k: number) => `Nur Wiederholung (${k} Karten)`,
-    askMoreDone: 'Das reicht für heute',
   },
   tabs: {
-    learn: 'Lernen',
     settings: 'Einstellungen',
-    tree: 'Themen',
+    grammar: 'Grammatik',
     stats: 'Statistik',
     pcic: 'PCIC',
   },
@@ -106,7 +79,6 @@ export default {
     },
   },
   grammar: {
-    title: 'Grammatikkurs',
     coverage: (done: number, written: number, planned: number) =>
       `${done} Lektionen fertig · ${written} von ${planned} geschrieben`,
     levelMeta: (done: number, topics: number, written: number) =>
@@ -154,8 +126,6 @@ export default {
     correctAnswer: 'Richtige Antwort',
     next: 'Weiter',
     accentHint: 'Auch ohne Akzente akzeptiert, fehlende Akzente werden gezeigt',
-    // FB315 (NY9): der Wort-Fokus-Button auf dem Lektionsbildschirm.
-    learnTheseWords: (n: number) => `Diese Wörter lernen (${n})`,
     // FB328: kumulierte Trefferquote, in der Lehrplanliste und auf dem Ergebnisbildschirm.
     lessonPercent: (n: number) => `Bisher: ${n}% richtig`,
   },
@@ -215,33 +185,8 @@ export default {
     unlocked: 'Prüfung freigeschaltet!',
     unlockedCta: 'Prüfung Starten',
   },
-  topic: {
-    progress: (current: number, total: number) => `Thema ${current}/${total}`,
-    complete: 'Thema abgeschlossen!',
-    allComplete: 'Alle Themen abgeschlossen!',
-    next: (name: string) => `Nächstes: ${name}`,
-    locked: 'Gesperrt',
-    chooseTopic: 'Neues Thema Wählen',
-    switchToast: (name: string) => `Ab jetzt neue Wörter aus „${name}". Frühere bleiben zur Wiederholung.`,
-    wordProgress: (done: number, total: number) => `${done}/${total}`,
-  },
-  subLevel: {
-    progress: (id: string, name: string, current: number, total: number) => `${id} · ${name} — ${current}/${total}`,
-    complete: (id: string, name: string) => `${id} abgeschlossen: ${name}! 🎉`,
-    doneProgress: (done: number, total: number) => `${done}/${total} Themen fertig in dieser Stufe`,
-  },
-  master: {
-    button: 'Meister',
-    title: 'Stufe Wählen',
-    levels: 'Stufe Wechseln',
-    exams: 'Prüfungen',
-    restart: 'Neustart',
-    wordCount: (n: number) => `${n} Wörter`,
-  },
   settings: {
     changeLanguage: 'Sprache Wechseln',
-    wordsOnly: 'Nur Wörter',
-    randomTopics: 'Zufällige Themen',
     weeklyGoal: 'Wöchentliches Lernziel',
     weeklyGoalHours: (h: string) => `${h} Stunden / Woche`,
     weeklyGoalDoneTag: '✓ FERTIG',
@@ -267,13 +212,6 @@ export default {
     requeueEasy: 'Leicht (5 Runden)',
     requeueNormal: 'Normal (12 Runden)',
     requeueHard: 'Schwer (25 Runden)',
-    // FB279, 2026-09-17: Schwierigkeits-Regler, stellt neue Wörter und P zusammen ein.
-    difficultyVeryEasy: 'sehr leicht',
-    difficultyEasy: 'leicht',
-    difficultyNormal: 'normal',
-    difficultyHard: 'schwer',
-    difficultyVeryHard: 'sehr schwer',
-    difficultyCustom: 'eigene',
   },
   backup: {
     backup: 'Sicherung',
@@ -290,28 +228,12 @@ export default {
     wordsKnown: 'Bekannte Wörter',
   },
   // UTEMEZO 7. szakasz: das kleine Etikett oben auf jeder Karte.
-  lap: {
-    newLap: (n: number) => `neu · ${n}/3`,
-    review: 'Wiederholung',
-    repair: 'Korrektur',
-    repairLap: (n: number) => `Korrektur · ${n}/3`,
-    sentence: 'Satz',
-    // UTEMEZO 5. szakasz (FB296/297/298): das Label der Frage-Karte.
-    question: 'Frage',
-  },
-  // UTEMEZO 6. szakasz: Erklärfenster für die drei Zahlen im Kopfbereich.
+  // K33 (play-vágás, 2026-09-22): der Kopfbereich des Tanulás-Tabs (drei
+  // Zahlen + Fokus-Sitzung) ist weg; close/levelProgress bleiben, Settings
+  // und Stats nutzen sie noch.
   header: {
-    title: 'Die drei Zahlen',
-    black: 'Schwarz: so viele neue Wörter kannst du heute auf diesem Niveau noch beginnen.',
-    blue: 'Blau: die verbleibenden Karten der Wörter, die du schon begonnen hast (ein Wort = 3 Karten).',
-    pink: 'Pink: die verbleibenden Wiederholungskarten, Satzkarten eingeschlossen.',
-    sum: 'Die Summe der drei Zahlen: so viele Karten bleiben bis zum Ende der Runde, wenn du nichts falsch machst.',
     close: 'Schließen',
     levelProgress: (known: number, total: number) => `${known} / ${total} Wörter`,
-    // FB315 (NY9): das Fokus-Sitzungsbanner über der Karte (wortabhängiger Lektions-Drill).
-    focusBanner: (label: string, known: number, total: number) => `${label} · ${known}/${total} bekannt`,
-    focusDone: 'alle bekannt, zurück zur Lektion',
-    focusExit: 'Fokus beenden',
   },
   spelling: {
     title: 'Rechtschreibtraining',
@@ -324,12 +246,6 @@ export default {
     send: 'Senden',
     cancel: 'Abbrechen',
     thanks: 'Danke!',
-  },
-  note: {
-    title: 'Grammatik-Hinweis',
-    pairNoun: 'Gegenstand aus zwei symmetrischen Teilen: im Spanischen können Singular und Plural EIN Stück bezeichnen (el pantalón = los pantalones, RAE). Im Englischen steht immer der Plural: a pair of trousers.',
-    serEstar: 'SER = was etwas IST: Identität, Beruf, Herkunft, dauerhafte Eigenschaft. ESTAR = wie etwas GERADE ist: Zustand, Stimmung, Ort, Ergebnis einer Veränderung.\n• Soy profesor. (mein Beruf) VS Estoy en clase. (gerade jetzt)\n• El café es caliente. (Kaffee ist ein heißes Getränk, immer) VS El café está frío. (dieser Kaffee ist kalt geworden)',
-    someIndef: 'unos/unas ist der unbestimmte Artikel im Plural: einige, ein Paar (unos vaqueros = eine Jeans).',
   },
   usage: {
     plusOneMinute: '+1 Minute, juhu!',

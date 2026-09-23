@@ -45,40 +45,13 @@ export default {
     spelling: 'Helyesírás',
   },
   done: {
-    title: 'Kész vagy mára!',
+    // K33 (play-vágás, 2026-09-22): a Tanulás fül (Kész-képernyő) kikerült,
+    // ez a kulcs marad, a Stats fül napi-streak csempéje használja.
     streak: 'nap streak',
-    nextTopicWords: 'Új szavak másik témából',
-    topicEmpty: 'Ebben a témában most nincs új szó, a többi már későbbre van ütemezve.',
-    takeExam: 'Vizsga',
-    examLocked: (pct: number) => `Vizsga (${pct}% készültségtől)`,
-    nextLevel: 'Tovább a következő szintre',
-    // UTEMEZO 5. szakasz: a Done-képernyő négy száma.
-    reviewLaps: 'ismétlő lap',
-    wordsStarted: 'új szó indult',
-    wordsLearned: 'szó megtanult',
-    wrongLaps: 'rontott lap',
-    // UTEMEZO 5. szakasz: a kör végi egyetlen kérdés, a helyzettől függően.
-    askMoreNew: 'Tanulsz még új szót?',
-    yesThisMany: 'Igen, ennyit',
-    noEnoughToday: 'Nem, mára ennyi',
-    askPractise: 'Gyakorolsz még véletlen szavakat a szintből?',
-    yesPractise: 'Igen',
-    no: 'Nem',
-  },
-  // UTEMEZO 5. szakasz (FB296/297/298, Kálmán döntése 2026-09-17): a kör
-  // KÖZBENI kérdés, amint a fekete 0-ra ér és a kéz is kiürül, de review van
-  // még. A Done-képernyő fenti `done.*` kérdésétől külön kulcsok, mert ez a
-  // kártya helyén jön, nem a kör végén.
-  learn: {
-    askMoreTitle: 'Elfogyott a mai új szó',
-    askMoreYes: (n: number) => `+${n} új szó`,
-    askMoreReviewOnly: (k: number) => `Csak ismétlés (${k} lap)`,
-    askMoreDone: 'Mára ennyi',
   },
   tabs: {
-    learn: 'Tanulás',
     settings: 'Beállítások',
-    tree: 'Témák',
+    grammar: 'Nyelvtan',
     stats: 'Statisztika',
     pcic: 'PCIC',
   },
@@ -107,7 +80,6 @@ export default {
     },
   },
   grammar: {
-    title: 'Nyelvtani tanfolyam',
     coverage: (done: number, written: number, planned: number) =>
       `${done} lecke kész · ${written} megírva a ${planned}-ból`,
     levelMeta: (done: number, topics: number, written: number) =>
@@ -156,8 +128,6 @@ export default {
     correctAnswer: 'Helyes válasz',
     next: 'Következő',
     accentHint: 'Ékezet nélkül is elfogadja, a hiányzó ékezetet megmutatja',
-    // FB315 (NY9): a lecke-képernyő szó-fókusz gombja.
-    learnTheseWords: (n: number) => `Ezen szavak tanulása (${n})`,
     // FB328: kumulált helyes-arány, a tanterv-listán és a Kész-képernyőn.
     lessonPercent: (n: number) => `Eddig: ${n}% jó válasz`,
   },
@@ -217,33 +187,8 @@ export default {
     unlocked: 'Vizsga feloldva!',
     unlockedCta: 'Vizsga Megkezdése',
   },
-  topic: {
-    progress: (current: number, total: number) => `Téma ${current}/${total}`,
-    complete: 'Téma kész!',
-    allComplete: 'Minden téma kész!',
-    next: (name: string) => `Következő: ${name}`,
-    locked: 'Zárolva',
-    chooseTopic: 'Válassz Új Témát',
-    switchToast: (name: string) => `Mostantól a(z) „${name}" új szavai jönnek. A korábbiak ismétlése marad.`,
-    wordProgress: (done: number, total: number) => `${done}/${total}`,
-  },
-  subLevel: {
-    progress: (id: string, name: string, current: number, total: number) => `${id} · ${name} — ${current}/${total}`,
-    complete: (id: string, name: string) => `${id} kész: ${name}! 🎉`,
-    doneProgress: (done: number, total: number) => `${done}/${total} téma kész ebben az al-szintben`,
-  },
-  master: {
-    button: 'Mester',
-    title: 'Szint Választás',
-    levels: 'Szintváltás',
-    exams: 'Vizsgák',
-    restart: 'Újrakezdés',
-    wordCount: (n: number) => `${n} szó`,
-  },
   settings: {
     changeLanguage: 'Nyelv Váltás',
-    wordsOnly: 'Csak szavak',
-    randomTopics: 'Random témák',
     weeklyGoal: 'Heti tanulási cél',
     weeklyGoalHours: (h: string) => `${h} óra / hét`,
     weeklyGoalDoneTag: '✓ KÉSZ',
@@ -269,13 +214,6 @@ export default {
     requeueEasy: 'Könnyű (5 lap)',
     requeueNormal: 'Közepes (12 lap)',
     requeueHard: 'Nehéz (25 lap)',
-    // FB279, 2026-09-17: nehézség-tárcsa, a napi új szót és P-t együtt állítja.
-    difficultyVeryEasy: 'nagyon könnyű',
-    difficultyEasy: 'könnyű',
-    difficultyNormal: 'alap',
-    difficultyHard: 'nehéz',
-    difficultyVeryHard: 'nagyon nehéz',
-    difficultyCustom: 'egyéni',
   },
   backup: {
     backup: 'Biztonsági mentés',
@@ -292,28 +230,12 @@ export default {
     wordsKnown: 'Ismert Szavak',
   },
   // UTEMEZO 7. szakasz: a lapok tetején álló kis címke.
-  lap: {
-    newLap: (n: number) => `új · ${n}/3`,
-    review: 'ismétlés',
-    repair: 'javítás',
-    repairLap: (n: number) => `javítás · ${n}/3`,
-    sentence: 'mondat',
-    // UTEMEZO 5. szakasz (FB296/297/298): a kerdes-lap cimkeje.
-    question: 'kérdés',
-  },
-  // UTEMEZO 6. szakasz: a fejléc három számára koppintva megnyíló magyarázó ablak.
+  // K33 (play-vágás, 2026-09-22): a Tanulás fül fejléce (három szám + fókusz-
+  // menet) kikerült; a close/levelProgress marad, a Beállítások és a Stats
+  // fül még használja.
   header: {
-    title: 'A három szám',
-    black: 'Fekete: ma még ennyi új szót indíthatsz ezen a szinten.',
-    blue: 'Kék: a kézben lévő szavak hátralévő lapjai (egy szó = 3 lap).',
-    pink: 'Rózsaszín: a hátralévő ismétlő lapok, mondat-lapokkal együtt.',
-    sum: 'A három szám összege: ennyi lap van hátra a kör végéig, ha nem rontasz.',
     close: 'Bezár',
     levelProgress: (known: number, total: number) => `${known} / ${total} szó`,
-    // FB315 (NY9): a fókusz-menet sávja a kártya fölött (szó-függő lecke-drill).
-    focusBanner: (label: string, known: number, total: number) => `${label} · ${known}/${total} ismert`,
-    focusDone: 'kész, vissza a leckéhez',
-    focusExit: 'Fókusz vége',
   },
   spelling: {
     title: 'Helyesírás-gyakorló',
@@ -326,12 +248,6 @@ export default {
     send: 'Küldés',
     cancel: 'Mégse',
     thanks: 'Köszönjük!',
-  },
-  note: {
-    title: 'Nyelvtani infó',
-    pairNoun: 'Két szimmetrikus részből álló tárgy: spanyolul az egyes és a többes szám is jelenthet EGY darabot (el pantalón = los pantalones, RAE). Angolul mindig többes szám: a pair of trousers.',
-    serEstar: 'SER = ami valami TARTÓSAN: azonosság, foglalkozás, származás, állandó tulajdonság. ESTAR = ami ÉPPEN MOST van: állapot, hangulat, hely, változás eredménye.\n• Soy profesor. (Tanár vagyok, ez a foglalkozásom.) VS Estoy en clase. (Órán vagyok, most.)\n• El café es caliente. (A kávé forró ital, mindig.) VS El café está frío. (Ez a kávé kihűlt.)',
-    someIndef: 'Az unos/unas a határozatlan névelő többes alakja: néhány, egy pár (unos vaqueros = egy farmernadrág).',
   },
   usage: {
     plusOneMinute: '+1 perc wauuuuuuuu',
