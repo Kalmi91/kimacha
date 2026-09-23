@@ -34,7 +34,15 @@ export default function RootLayout() {
   useEffect(() => {
     async function check() {
       const db = getDb();
-      const result = await db.getOnboarding();
+      let result = await db.getOnboarding();
+      // Kimacha Play: single en-es pair (Kálmán, 2026-09-22). An install that
+      // still has an older pair (hu-es, es-hu, hu-en, ...) is corrected to
+      // en-es here, silently, at startup; its old DB rows stay, they are just
+      // no longer the active pair.
+      if (result && (result.source !== 'en' || result.target !== 'es')) {
+        await db.setOnboarding('en', 'es');
+        result = await db.getOnboarding();
+      }
       if (result) {
         setLanguage(result.source);
         sendAnalyticsIfNeeded();

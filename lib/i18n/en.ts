@@ -1,12 +1,9 @@
 export default {
   onboarding: {
     welcome: 'Welcome to Kimacha! Thank you for using the app, it means a lot.',
-    whatLanguage: 'What language do you speak?',
-    selectSource: 'Select your native language',
-    whatLearn: 'What do you want to learn?',
-    selectTarget: 'Select target language',
-    back: '← Back',
-    pairNotAvailable: 'This language pair is not available yet. Coming soon!',
+    // Kimacha Play: single en-es pair (Kálmán, 2026-09-22), no more language
+    // picker here, just a way to start the course.
+    start: 'Get Started',
   },
   card: {
     word: 'word',
@@ -130,7 +127,6 @@ export default {
     lessonPercent: (n: number) => `So far: ${n}% correct`,
   },
   settings: {
-    changeLanguage: 'Change Language',
     weeklyGoal: 'Weekly study goal',
     weeklyGoalHours: (h: string) => `${h} hours / week`,
     weeklyGoalDoneTag: '✓ DONE',
@@ -140,22 +136,10 @@ export default {
     dailyNewLimit: 'New words a day',
     dailyNewLimitWords: (n: string) => `${n} words / day`,
     spellingPractice: (due: number, total: number) => `Spelling practice · ${due} due, ${total} on the list`,
-    difficulty: 'Difficulty',
-    difficultySummary: (hand: number, gap: number, repair: number, strict: boolean) =>
-      `In hand: ${hand} · gap: ${gap} laps · repair: ${Math.min(repair, gap)} laps · accents: ${strict ? 'on' : 'off'}`,
-    handCap: 'Words in hand',
-    handCapHint: 'This many words can be started at once; a new one only starts once there is room.',
-    gapLaps: 'Return gap',
-    gapLapsHint: 'This many other laps pass before the same word comes back.',
-    repairGap: 'Repair gap',
-    repairGapHint: 'A word you got wrong comes back after this many laps, ahead of the other reviews. Never longer than the return gap.',
     strictAccents: 'Accents count',
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',
     articlePicker: 'Article buttons',
     articlePickerHint: 'On Spanish noun cards you pick el/la/los/las instead of typing it. ⊘ means no article.',
-    requeueEasy: 'Easy (5 laps)',
-    requeueNormal: 'Normal (12 laps)',
-    requeueHard: 'Hard (25 laps)',
   },
   backup: {
     backup: 'Backup',
