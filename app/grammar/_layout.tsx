@@ -6,6 +6,8 @@ export default function GrammarLayout() {
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="[topic]" />
+      {/* PLAN-play 13. lépés: the table-deck practice screen. */}
+      <Stack.Screen name="deck/[topic]" />
     </Stack>
   );
 }
