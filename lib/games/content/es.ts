@@ -60,12 +60,9 @@ import grammarEsImperativoAfirmativo from '@/data/games/grammar/es/imperativo-af
 
 // K33 (play-vágás, 2026-09-22): a Játék/Átbeszélő fülek és a hozzájuk tartozó
 // data/games/{ccat,myths,chats,stories,confusables} mappák kikerültek. A
-// bundle e mezői ürese maradnak (a `LanguageContentBundle` alak MARAD; a
-// 4. lépés óta a vizsga-kód is kikerült, a getStories()-nek nincs hívója,
-// árva a 7. lépésnek).
+// 7. lépés (2026-09-23) a `LanguageContentBundle` mezőit is levágta erre az
+// egyre: stories/chats/confusables/myths/ccat* kikerült, grammarTopics maradt.
 export const esContent: LanguageContentBundle = {
-  stories: [],
-  chats: [],
     // The JSON's per-item literal shape (each `wrong` only has the one key that
     // item actually needs) is narrower than GrammarWrongExplanation's index
     // signature, so a direct `as` doesn't overlap; `unknown` first is the
@@ -121,9 +118,4 @@ export const esContent: LanguageContentBundle = {
     grammarEsFinalesCausales,
     grammarEsMarcadoresDiscursivos,
   ] as unknown as GrammarTopicData[],
-  confusables: [],
-  myths: [],
-  ccatAntonyms: [],
-  ccatSynonyms: [],
-  ccatWordProblems: [],
 };
