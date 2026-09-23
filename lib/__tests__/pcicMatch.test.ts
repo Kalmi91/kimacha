@@ -1,4 +1,4 @@
-import { pcicAlternatives, gradePcicAnswer } from '../pcicMatch';
+import { pcicAlternatives, gradePcicAnswer, suggestedGrade } from '../pcicMatch';
 
 describe('pcicAlternatives', () => {
   it('expands a slash alternative into both single-word forms', () => {
@@ -43,5 +43,44 @@ describe('gradePcicAnswer', () => {
     const g = gradePcicAnswer('', 'hola');
     expect(g.match).toBe('wrong');
     expect(g.best).toBe('hola');
+  });
+});
+
+// PLAN-play 10. lépés (s2, anki-ui-terv.html): a Beállítások ékezet-szigor
+// kapcsolója a PCIC gépelésén is dönt, és ez adja a Next-gomb javaslatát.
+describe('gradePcicAnswer strict accents (PLAN-play 10)', () => {
+  it('a missing accent is near + accentOnly when strict is off (default)', () => {
+    const g = gradePcicAnswer('cafe', 'café');
+    expect(g.match).toBe('near');
+    expect(g.accentOnly).toBe(true);
+  });
+
+  it('a missing accent is wrong, without accentOnly, when strict is on', () => {
+    const g = gradePcicAnswer('cafe', 'café', true);
+    expect(g.match).toBe('wrong');
+    expect(g.accentOnly).toBeUndefined();
+  });
+
+  it('a real letter mistake stays wrong either way', () => {
+    expect(gradePcicAnswer('buena', 'bueno', false).match).toBe('wrong');
+    expect(gradePcicAnswer('buena', 'bueno', true).match).toBe('wrong');
+  });
+});
+
+describe('suggestedGrade', () => {
+  it('an exact match suggests Knew it', () => {
+    expect(suggestedGrade({ match: 'exact', best: 'x' })).toBe('good');
+  });
+
+  it('an accent-only near (strict off) suggests Knew it', () => {
+    expect(suggestedGrade({ match: 'near', best: 'x', accentOnly: true })).toBe('good');
+  });
+
+  it('a non-accent near suggests Didn’t know', () => {
+    expect(suggestedGrade({ match: 'near', best: 'x' })).toBe('again');
+  });
+
+  it('a wrong match suggests Didn’t know', () => {
+    expect(suggestedGrade({ match: 'wrong', best: 'x' })).toBe('again');
   });
 });
