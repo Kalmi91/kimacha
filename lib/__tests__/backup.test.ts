@@ -1,4 +1,3 @@
-import { createEmptyCard } from 'ts-fsrs';
 import { getDb } from '../database.web';
 import { BACKUP_SCHEMA_VERSION, BACKUP_TABLES, validateBackupPayload } from '../backup';
 
@@ -7,32 +6,24 @@ describe('backup export/import round-trip (memory db)', () => {
 
   it('exports every table and restores an identical state', async () => {
     await db.setOnboarding('hu', 'en');
-    await db.ensureCard(5001, 'word');
-    const card = createEmptyCard();
-    card.reps = 3;
-    await db.updateCard(5001, 'word', card);
-    await db.recordAttempt(5001, 'word', true, 1200);
-    await db.updateLevel('A1', 2, 0, 0);
-    await db.setWordsOnly(true);
-    await db.setRandomTopics(true);
+    // Play-vágás 7. lépés: the cards/card_attempts/user_level writers
+    // (ensureCard, updateCard, recordAttempt, updateLevel) are gone, no
+    // app-code caller; __setLevelForTest replaces updateLevel for fixtures.
+    (db as any).__setLevelForTest('A1');
     await db.setFeedbackBtnSide('left');
-    await db.setSelectedTopic('to_be');
     await db.addToSpellingList(5001);
-    await db.updateStreak();
+    await db.setGameProgress('grammar', 'ser-estar:done', 'done', { correct: 3, total: 3 });
 
     const payload = await db.exportAll();
     expect(payload.schemaVersion).toBe(BACKUP_SCHEMA_VERSION);
     for (const table of BACKUP_TABLES) {
       expect(Array.isArray(payload.tables[table])).toBe(true);
     }
-    expect(payload.tables.cards).toHaveLength(1);
     expect(payload.tables.onboarding[0]).toMatchObject({ source: 'hu', target: 'en' });
     expect(payload.tables.spelling_list).toHaveLength(1);
+    expect(payload.tables.game_progress).toHaveLength(1);
 
     // Wreck the state, then restore from the payload.
-    await db.resetAllProgress();
-    await db.setSelectedTopic(null);
-    await db.setWordsOnly(false);
     await db.setOnboarding('hu', 'es');
 
     await db.importAll(payload);
@@ -42,12 +33,34 @@ describe('backup export/import round-trip (memory db)', () => {
     // And the restored state behaves like the original through the public API.
     expect(await db.getOnboarding()).toEqual({ source: 'hu', target: 'en' });
     expect((await db.getLevel()).level).toBe('A1');
-    expect(await db.getWordsOnly()).toBe(true);
-    expect(await db.getRandomTopics()).toBe(true);
     expect(await db.getFeedbackBtnSide()).toBe('left');
-    expect(await db.getSelectedTopic()).toBe('to_be');
-    expect(await db.isInSpellingList(5001)).toBe(true);
-    expect((await db.getWordReps([5001])).get(5001)).toBe(3);
+    expect(await db.getSpellingList()).toEqual([{ wordId: 5001, step: 0, due: expect.any(String) }]);
+  });
+
+  // Play-vágás 7. lépés: game_scores/game_settings/selected_topic lost their
+  // last DB method this step (no app-code caller); an older backup (e.g.
+  // 4.0.25) can still carry them, and a restore must accept and skip them.
+  it('accepts and restores an older backup that still carries legacy tables', async () => {
+    // Own pair, so this test's state can't collide with the one above (the
+    // singleton memory db is shared across tests in this file).
+    await db.setOnboarding('pt', 'es');
+    await db.addToSpellingList(7001);
+    const payload = await db.exportAll();
+    const legacyPayload = {
+      ...payload,
+      tables: {
+        ...payload.tables,
+        game_scores: [{ pair: 'pt-es', game_id: 'word-rain', best_score: 900, best_at: 'x', plays: 3, last_played: 'x' }],
+        game_settings: [{ pair: 'pt-es', game_id: 'bubble-pop', settings_json: '{}' }],
+        selected_topic: [{ pair: 'pt-es', topic_id: 'to_be' }],
+      },
+    };
+
+    expect(() => validateBackupPayload(legacyPayload)).not.toThrow();
+
+    await db.importAll(legacyPayload as any);
+    expect(await db.getOnboarding()).toEqual({ source: 'pt', target: 'es' });
+    expect(await db.getSpellingList()).toEqual([{ wordId: 7001, step: 0, due: expect.any(String) }]);
   });
 });
 
@@ -86,7 +99,6 @@ describe('validateBackupPayload', () => {
   it('accepts a real exported payload (round-trip with exportAll rows)', async () => {
     const db = getDb();
     await db.setOnboarding('en', 'es');
-    await db.ensureCard(9001, 'word');
     const payload = await db.exportAll();
     expect(() => validateBackupPayload(payload)).not.toThrow();
   });

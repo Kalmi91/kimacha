@@ -5,40 +5,16 @@ export default {
     // picker here, just a way to start the course.
     start: 'Get Started',
   },
+  // Play-vágás 7. lépés: the flashcard-review keys (word/sentence prompts,
+  // typing, skip, borrowed-from-topic, new/review tags, spelling-tap hint)
+  // are gone with the Learn tab (step 3); correct/wrong/check still label the
+  // PCIC and spelling screens' feedback.
   card: {
-    word: 'word',
-    sentence: 'sentence',
-    tapToReveal: 'Tap to translate',
-    typeTranslation: 'Type the translation',
-    typeIt: 'Type It',
     check: 'Check',
     correct: 'Correct!',
-    almostCorrect: 'Almost!',
     wrong: 'Wrong',
-    skipped: 'Skipped, the correct form:',
-    pickSpelling: 'Pick the correct spelling',
-    skip: 'Skip',
-    // FB139: the card was borrowed from another topic to fill the new-word budget.
-    fromTopic: (topic: string) => `From another topic: ${topic}`,
-    // FB158/FB159: the card says whether this is a NEW word or a review.
-    newWordTag: '🌱 New word',
-    reviewTag: '🔁 Review',
-    // FB150: tapping any word of the sentence files it into the spelling list.
-    spellingTapHint: 'Tap a word to add it to spelling practice',
-    spellingAddedWord: (word: string) => `✓ "${word}" is in your spelling list`,
-    spellingNoCardWord: (word: string) => `"${word}" has no word card yet`,
-    // PROMPT-POLICY 6/7: region flag + irregular-plural marker, next to the prompt.
-    regionMx: 'Used in Mexico',
-    irregularPlural: 'irregular plural',
-    pluralOnly: 'plural only',
   },
   buttons: {
-    again: 'Again',
-    good: 'Good',
-    inSentence: 'In Sentence',
-    iKnowThis: 'I Know This',
-    correctAsIs: 'This Is Correct',
-    snooze: 'Rest 3 Days',
     spelling: 'Spelling',
   },
   done: {
@@ -103,8 +79,6 @@ export default {
     backToSyllabus: 'Back to the course',
     doneGood: 'That rule is sitting well.',
     doneAgain: 'Worth reading the rule once more before the next one.',
-    entryTitle: 'Grammar course',
-    entryBlurb: 'Every rule from A1 to C1, explained then practised.',
     // FB216: kevert nyelvű felolvasás a lecke-szövegre.
     readAloud: 'Read aloud',
     // LECKE-SEMA 2.1-2.2: match/form feladat-fajták.
@@ -131,8 +105,6 @@ export default {
     weeklyGoalHours: (h: string) => `${h} hours / week`,
     weeklyGoalDoneTag: '✓ DONE',
     missingVoice: (langs: string) => `⚠️ No installed voice for: ${langs}. Download it in the phone's text-to-speech settings; until then the app stays silent in that language.`,
-    weeklyGoalDone: 'Weekly goal reached!',
-    weeklyGoalDoneText: (h: string, goal: string) => `${h} hours of study this week, your goal was ${goal}. Huge!`,
     dailyNewLimit: 'New words a day',
     dailyNewLimitWords: (n: string) => `${n} words / day`,
     spellingPractice: (due: number, total: number) => `Spelling practice · ${due} due, ${total} on the list`,
@@ -157,10 +129,9 @@ export default {
   },
   // UTEMEZO 7. szakasz: the small tag on top of every card.
   // K33 (play-vágás, 2026-09-22): the Learn tab's header (three numbers +
-  // focus session) is gone; close/levelProgress stay, Settings and Stats
-  // still use them.
+  // focus session) is gone; levelProgress stays, Stats still uses it.
+  // Play-vágás 7. lépés: close had no caller left either, removed.
   header: {
-    close: 'Close',
     levelProgress: (known: number, total: number) => `${known} / ${total} words`,
   },
   spelling: {
@@ -243,13 +214,13 @@ export default {
     badgeDue: (n: number) => `due ${n}`,
     badgeNew: (n: number) => `new ${n}`,
     badgeDone: (n: number) => `done ${n}`,
+    // T1 only shows again/good (index.tsx GRADES), but `s.pcic[g]` indexes by
+    // the full Sm2Grade type, so hard/easy stay for TS even though unreachable.
     again: "Didn't know",
     hard: 'Hard',
     good: 'Knew it',
     easy: 'Easy',
     doneTitle: 'Done for today',
-    summary: (answered: number, newCount: number, again: number) => `You answered ${answered} cards: ${newCount} new, ${again} again.`,
-    resetLabel: 'Reset progress',
     resetConfirmTitle: 'Reset progress',
     resetConfirmMessage: 'This clears all PCIC progress. Are you sure?',
     resetConfirmYes: 'Reset',
