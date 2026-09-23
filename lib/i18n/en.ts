@@ -99,6 +99,9 @@ export default {
     accentHint: 'Accepted without accents, missing accents are shown',
     // FB328: cumulative correct-answer rate, on the syllabus list and the done screen.
     lessonPercent: (n: number) => `So far: ${n}% correct`,
+    // PLAN-play 13. lépés: the table-deck button, only on lessons that have a
+    // conjugation table (lib/grammar/tableDeck.ts).
+    practiceTable: (n: number) => `Practice the table · ${n} cells`,
   },
   settings: {
     weeklyGoal: 'Weekly study goal',
@@ -254,5 +257,15 @@ export default {
     noun: 'noun',
     verb: 'verb',
     phrase: 'phrase',
+  },
+  // PLAN-play 13. lépés: the table-deck screen (a lesson's conjugation
+  // tables, practiced Anki-style with the PCIC card UI).
+  tableDeck: {
+    chip: 'TABLE',
+    promptCaption: 'person · verb',
+    progress: (done: number, total: number) => `${done} / ${total} done`,
+    completeTitle: (n: number) => `All ${n} cells done 🎉`,
+    startAgain: 'Start again',
+    backToLesson: 'Back to the lesson',
   },
 };
