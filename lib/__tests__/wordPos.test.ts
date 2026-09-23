@@ -8,20 +8,30 @@
 // Scope: the shared Spanish set (A0..C1) plus the live en/hu branches. C2 is
 // FROZEN and intentionally excluded, per the task.
 
-import { words, getWordsForLevel, type WordEntry } from '@/data/words';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+
+import { words, type WordEntry } from '@/data/words';
 
 const VALID_POS = new Set(['noun', 'verb', 'adj', 'adv', 'pron', 'prep', 'num', 'phrase']);
 const VALID_GENDER = new Set(['m', 'f', 'mf', '-']);
 
+// Play-vágás 7. lépés (2026-09-23): the en/hu branches no longer go through
+// the loader (single en-es pair), so their annotation is checked straight off
+// the JSON files, the same way `svCorpus.test.ts` reads the Swedish track.
+function branchLevel(lang: string, level: string): WordEntry[] {
+  return JSON.parse(readFileSync(join(__dirname, '..', '..', 'data', 'words', lang, `${level}.json`), 'utf8'));
+}
+
 const sharedAnnotated: WordEntry[] = words.filter((w) => w.level !== 'C2');
 const enAnnotated: WordEntry[] = [
-  ...getWordsForLevel('A0', 'en'),
-  ...getWordsForLevel('A1', 'en'),
-  ...getWordsForLevel('A2', 'en'),
+  ...branchLevel('en', 'a0'),
+  ...branchLevel('en', 'a1'),
+  ...branchLevel('en', 'a2'),
 ];
 const huAnnotated: WordEntry[] = [
-  ...getWordsForLevel('A0', 'hu'),
-  ...getWordsForLevel('A1', 'hu'),
+  ...branchLevel('hu', 'a0'),
+  ...branchLevel('hu', 'a1'),
 ];
 
 describe('word pos/gender metadata (GAMES.md F-1)', () => {

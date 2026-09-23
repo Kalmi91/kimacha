@@ -46,8 +46,8 @@ const flush = async (times = 3) => {
 describe('grammar lesson screen: per-kind drill buttons', () => {
   beforeEach(async () => {
     const db = getDb();
-    await db.setOnboarding('hu', 'es');
-    await db.updateLevel('A1', 0, 0, 0);
+    await db.setOnboarding('en', 'es');
+    (db as any).__setLevelForTest('A1');
   });
 
   it('schema-2 lesson with all 3 kinds (ser-estar) shows 3 buttons with their own counts', async () => {

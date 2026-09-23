@@ -1,121 +1,57 @@
-import { createEmptyCard, type Card } from 'ts-fsrs';
 import { BACKUP_SCHEMA_VERSION, getAppVersion, type BackupPayload } from './backup';
 import { pickSurvivor } from './cardMerge';
-import { rankSentencesByWordWeakness, sentenceSlotCount, type WordWeakness } from './sentenceMix';
+import { FORCED_PAIR, needsPairCorrection } from './languages';
 import { WORD_MERGES } from './wordMerges';
-import { LAPS, type Lap } from './lap';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
-import type { Sm2Card } from './sm2';
+import { addDays, type Sm2Card } from './sm2';
+import type { PcicLevel } from '@/data/pcic';
 
 export interface DB {
-  ensureCard(wordId: number, type: string): Promise<void>;
-  updateCard(wordId: number, type: string, card: Card): Promise<void>;
-  // UTEMEZO 11. szakasz: lásd database.ts a szöveges leírásért.
-  startWord(wordId: number): Promise<void>;
-  passLap(wordId: number): Promise<Lap>;
-  getInHandWordCards(): Promise<{ word_id: number; lap: Lap }[]>;
-  getWordsStartedToday(): Promise<number>;
-  getUntouchedWordIds(wordIds: number[]): Promise<Set<number>>;
-  getDueCards(limit: number): Promise<any[]>;
   getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
-  updateStreak(): Promise<void>;
   getOnboarding(): Promise<{ source: string; target: string } | null>;
   setOnboarding(source: string, target: string): Promise<void>;
   getLevel(): Promise<{ level: string; correct_streak: number; mistakes_in_window: number; fail_streak: number }>;
-  updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number): Promise<void>;
-  getDueCardsForLevel(level: string, limit: number): Promise<any[]>;
-  getDueCardsForWordIds(wordIds: number[], limit: number): Promise<any[]>;
-  getPracticeCardsForLevel(level: string, limit: number): Promise<any[]>;
-  // FB225: a szint-szűrésen kívül esedékes, megkezdett szó-kártyák (a natív tükre).
-  getDueCarryoverCards(excludeWordIds: number[], limit: number): Promise<any[]>;
-  countDueCarryoverWords(excludeWordIds: number[]): Promise<number>;
-  getWordReps(wordIds: number[]): Promise<Map<number, number>>;
-  getWordStates(wordIds: number[]): Promise<Map<number, number>>;
-  // GAMES.md 3.1 (F0): every non-buried word card of a given pair, for
-  // lib/games/vocabPool.ts. Explicit `pair` param, matches the native twin.
-  getAllWordCards(pair: string): Promise<{ word_id: number; reps: number; lapses: number; state: number; buried: 0 | 1; lap: Lap; in_hand: 0 | 1 }[]>;
-  recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number): Promise<void>;
-  getUserMeta(): Promise<{ userId: string; firstUseDate: string; lastSyncDate: string | null }>;
-  updateLastSync(date: string): Promise<void>;
   claimDailyGreeting(): Promise<boolean>;
   getStatusBarTint(): Promise<number>;
   setStatusBarTint(index: number): Promise<void>;
-  getTodayStats(): Promise<{ totalReviews: number; correctCount: number; avgResponseMs: number; flashcardCount: number; typingCount: number; wordCount: number; sentenceCount: number }>;
-  getTop5Failed(): Promise<string[]>;
-  getMasteredCount(): Promise<number>;
-  getMasteredWordCount(level: string): Promise<number>;
-  getReviewedWordCount(level: string): Promise<number>;
-  getScheduledWordDueDates(): Promise<string[]>;
-  buryCard(wordId: number, type: string): Promise<void>;
-  // FB293/294: "I know this" a SZORA vonatkozik, nem egy lap-tipusra.
-  buryWord(wordId: number): Promise<void>;
-  snoozeCard(wordId: number, type: string, days: number): Promise<void>;
+  // PLAN-play 12. lépés: napi streak-írás visszakerült, a PCIC-értékelés hívja.
+  updateStreak(): Promise<void>;
   addToSpellingList(wordId: number): Promise<void>;
-  removeFromSpellingList(wordId: number): Promise<void>;
   getSpellingList(): Promise<{ wordId: number; step: number; due: string }[]>;
   getSpellingDueCount(): Promise<number>;
+  getSpellingListCount(): Promise<number>;
   updateSpellingStep(wordId: number, step: number, due: string): Promise<void>;
-  isInSpellingList(wordId: number): Promise<boolean>;
-  resetAllProgress(): Promise<void>;
-  getSelectedTopic(): Promise<string | null>;
-  setSelectedTopic(topicId: string | null): Promise<void>;
-  getWordsOnly(): Promise<boolean>;
-  setWordsOnly(v: boolean): Promise<void>;
-  getRandomTopics(): Promise<boolean>;
-  setRandomTopics(v: boolean): Promise<void>;
+  // PLAN-play 12. lépés (s3): PCIC-tétel a helyesírás-listán, string id-vel.
+  addToPcicSpellingList(itemId: string): Promise<void>;
+  getPcicSpellingList(): Promise<{ itemId: string; step: number; due: string }[]>;
+  getPcicSpellingDueCount(): Promise<number>;
+  getPcicSpellingListCount(): Promise<number>;
+  updatePcicSpellingStep(itemId: string, step: number, due: string): Promise<void>;
   getStrictAccents(): Promise<boolean>;
   setStrictAccents(v: boolean): Promise<void>;
   getArticlePicker(): Promise<boolean>;
   setArticlePicker(v: boolean): Promise<void>;
-  getHandCap(): Promise<number>;
-  setHandCap(n: number): Promise<void>;
-  getGapLaps(): Promise<number>;
-  setGapLaps(n: number): Promise<void>;
-  getRepairGap(): Promise<number>;
-  setRepairGap(n: number): Promise<void>;
   getWeeklyGoalMinutes(): Promise<number>;
   setWeeklyGoalMinutes(minutes: number): Promise<void>;
   getFeedbackBtnSide(): Promise<'left' | 'right'>;
   setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
   getDailyNewLimit(): Promise<number>;
   setDailyNewLimit(limit: number): Promise<void>;
-  getNewLimitBonus(): Promise<number>;
-  addNewLimitBonus(extra: number): Promise<void>;
-  getNewWordsToday(): Promise<number>;
-  getWordsLearnedToday(): Promise<number>;
-  getUnlearnedWordCount(): Promise<number>;
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
   // GAMES.md 3.5 (F0): Game fül tables, scoped to the active pair like every
   // other per-pair setting/state in this interface.
-  getGameScore(gameId: string): Promise<{ bestScore: number; bestAt: string | null; plays: number; lastPlayed: string | null } | null>;
-  recordGameScore(gameId: string, score: number): Promise<{ isNewBest: boolean; best: number }>;
-  getGameSettings(gameId: string): Promise<Record<string, unknown> | null>;
-  setGameSettings(gameId: string, settings: Record<string, unknown>): Promise<void>;
   getGameProgress(gameId: string): Promise<{ itemId: string; state: string; data: unknown }[]>;
   setGameProgress(gameId: string, itemId: string, state: string, data?: unknown): Promise<void>;
   // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól
   getPcicCards(): Promise<Sm2Card[]>;
   upsertPcicCard(card: Sm2Card): Promise<void>;
   getPcicStats(today: string): Promise<{ total: number; newIntroducedToday: number; dueToday: number; learned: number }>;
-  resetPcicCards(): Promise<void>;
+  getPcicLevel(): Promise<PcicLevel>;
+  setPcicLevel(level: PcicLevel): Promise<void>;
+  resetPcicCards(levelPrefix?: string): Promise<void>;
   exportAll(): Promise<BackupPayload>;
   importAll(payload: BackupPayload): Promise<void>;
-}
-
-export function cardFromRow(row: any): Card {
-  return {
-    due: new Date(row.due),
-    stability: row.stability,
-    difficulty: row.difficulty,
-    elapsed_days: row.elapsed_days,
-    scheduled_days: row.scheduled_days,
-    learning_steps: row.learning_steps ?? 0,
-    reps: row.reps,
-    lapses: row.lapses,
-    state: row.state,
-    last_review: row.last_review ? new Date(row.last_review) : undefined,
-  };
 }
 
 class MemoryDB implements DB {
@@ -124,65 +60,18 @@ class MemoryDB implements DB {
   // Active language pair (e.g. "es-hu"); scopes cards + level so each pair keeps its own progress.
   private activePair = 'es-hu';
 
-  private key(wordId: number, type: string) { return `${this.activePair}:${wordId}:${type}`; }
-
-  async ensureCard(wordId: number, type: string) {
-    const k = this.key(wordId, type);
-    if (this.cards.has(k)) return;
-    const empty = createEmptyCard();
-    this.cards.set(k, {
-      word_id: wordId, type, pair: this.activePair,
-      due: empty.due.toISOString(),
-      stability: empty.stability, difficulty: empty.difficulty,
-      elapsed_days: empty.elapsed_days, scheduled_days: empty.scheduled_days,
-      learning_steps: empty.learning_steps,
-      reps: empty.reps, lapses: empty.lapses, state: empty.state,
-      last_review: null,
-      // UTEMEZO 11. szakasz: lásd lib/lap.ts fejléce. UTEMEZO 2.2: started_at.
-      lap: 0, in_hand: 0, started_at: null,
-    });
-  }
-
-  async updateCard(wordId: number, type: string, card: Card) {
-    const k = this.key(wordId, type);
-    const existing = this.cards.get(k);
-    this.cards.set(k, {
-      word_id: wordId, type, pair: this.activePair,
-      due: card.due.toISOString(),
-      stability: card.stability, difficulty: card.difficulty,
-      elapsed_days: card.elapsed_days, scheduled_days: card.scheduled_days,
-      learning_steps: card.learning_steps,
-      reps: card.reps, lapses: card.lapses, state: card.state,
-      last_review: card.last_review ? card.last_review.toISOString() : null,
-      buried: existing?.buried ?? 0,
-      // UTEMEZO 3.4: az FSRS-t a 3 lap alatt nem érinti a learned_at, azt
-      // innentől passLap állítja.
-      learned_at: existing?.learned_at ?? null,
-      lap: existing?.lap ?? 0,
-      in_hand: existing?.in_hand ?? 0,
-      started_at: existing?.started_at ?? null,
-    });
-  }
-
-  async getDueCards(limit: number) {
-    const now = new Date().toISOString();
-    return [...this.cards.values()]
-      .filter(c => c.due <= now && !c.buried && c.pair === this.activePair)
-      .sort((a, b) => a.due.localeCompare(b.due))
-      .slice(0, limit);
-  }
-
   async getStreak() {
     return { ...this.streak };
   }
 
+  // PLAN-play 12. lépés: visszahozva, a PCIC-értékelés hívja (mirrors the
+  // native SQLiteDB.updateStreak).
   async updateStreak() {
-    const today = new Date().toISOString().split('T')[0];
+    const today = localDateString();
     if (this.streak.last_date === today) return;
-    const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
-    this.streak.current_count = this.streak.last_date === yesterday ? this.streak.current_count + 1 : 1;
-    this.streak.last_date = today;
-    this.streak.longest_count = Math.max(this.streak.current_count, this.streak.longest_count);
+    const yesterday = addDays(today, -1);
+    const newCount = this.streak.last_date === yesterday ? this.streak.current_count + 1 : 1;
+    this.streak = { current_count: newCount, last_date: today, longest_count: Math.max(newCount, this.streak.longest_count) };
   }
 
   private onboarding: { source: string; target: string } | null = null;
@@ -201,159 +90,17 @@ class MemoryDB implements DB {
     return { ...(this.userLevels.get(this.activePair) ?? { level: 'A0', correct_streak: 0, mistakes_in_window: 0, fail_streak: 0 }) };
   }
 
-  async updateLevel(level: string, correctStreak: number, mistakesInWindow: number, failStreak: number) {
-    this.userLevels.set(this.activePair, { level, correct_streak: correctStreak, mistakes_in_window: mistakesInWindow, fail_streak: failStreak });
-  }
-
-  async getDueCardsForLevel(level: string, limit: number) {
-    const { getWordsForLevel } = require('@/data/words');
-    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
-    const wordIds = levelWords.map((w: any) => w.id);
-    return this.getDueCardsForWordIds(wordIds, limit);
-  }
-
-  // FB190: szabad gyakorlás a szint megkezdett szavaiból, esedékesség nélkül
-  // (a SQLite oldal tükre). UTEMEZO 11. szakasz: megtanult = lap >= 3, in_hand = 0.
-  async getPracticeCardsForLevel(level: string, limit: number) {
-    const { getWordsForLevel } = require('@/data/words');
-    const ids = new Set(getWordsForLevel(level as any, this.activePair.split('-')[1] ?? 'es').map((w: any) => w.id));
-    const rows = [...this.cards.values()].filter(
-      (c: any) => c.type === 'word' && c.pair === this.activePair && (c.lap ?? 0) >= 3 && c.in_hand === 0 && !c.buried && ids.has(c.word_id)
-    );
-    for (let i = rows.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [rows[i], rows[j]] = [rows[j], rows[i]];
-    }
-    return rows.slice(0, limit);
-  }
-
-  // UTEMEZO 11. szakasz: ez a lekérdezés csak ISMÉTLÉST ad (megtanult szó,
-  // lap >= 3, in_hand = 0) plusz a hozzájuk tartozó mondat-kártyákat. Az
-  // érintetlen és a kézben lévő szavak az ütemező `fresh`/`hand` listáján
-  // jönnek, nem ezen a lekérdezésen (lásd a Learn tab loadCards-ját).
-  async getDueCardsForWordIds(wordIds: number[], limit: number) {
-    const idSet = new Set(wordIds);
-    const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
-    const all = [...this.cards.values()].filter(c => idSet.has(c.word_id) && c.pair === this.activePair);
-
-    const reviewWords = all
-      .filter(c => c.type === 'word' && (c.lap ?? 0) >= 3 && c.in_hand === 0 && !c.buried && c.due <= lookahead)
-      .sort((a, b) => a.due.localeCompare(b.due))
-      .slice(0, limit);
-
-    const knownWordIds = new Set(
-      all.filter(c => c.type === 'word' && ((c.lap ?? 0) >= 3 || c.buried)).map(c => c.word_id)
-    );
-
-    // FB89: same 4:1 cap and weakest-word-first ordering as the native DB.
-    const sentenceSlots = sentenceSlotCount(reviewWords.length);
-    const weakness = new Map<number, WordWeakness>(
-      all
-        .filter(c => c.type === 'word')
-        .map(c => [c.word_id, { lapses: c.lapses, difficulty: c.difficulty }])
-    );
-    const sentenceCards = rankSentencesByWordWeakness(
-      all
-        .filter(c => c.type === 'sentence' && !c.buried && knownWordIds.has(c.word_id) && c.due <= lookahead)
-        .sort((a, b) => a.due.localeCompare(b.due)),
-      weakness
-    ).slice(0, sentenceSlots);
-
-    return [...reviewWords, ...sentenceCards];
-  }
-
-  async countDueReviewWords(wordIds: number[]) {
-    if (wordIds.length === 0) return 0;
-    const idSet = new Set(wordIds);
-    const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
-    const due = new Set(
-      [...this.cards.values()]
-        .filter(c => idSet.has(c.word_id) && c.type === 'word' && (c.lap ?? 0) >= 3 && c.in_hand === 0 && !c.buried
-          && c.pair === this.activePair && c.due <= lookahead)
-        .map(c => c.word_id)
-    );
-    return due.size;
-  }
-
-  async countDueReviewWordsForLevel(level: string) {
-    const { getWordsForLevel } = require('@/data/words');
-    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
-    return this.countDueReviewWords(levelWords.map((w: any) => w.id));
-  }
-
-  // FB225: a szinten kívüli, már megkezdett szavak esedékes ismétlései (a
-  // SQLite oldal tükre). A szűrés a hívó által besorolt id-kra megy, nem
-  // szintre, így nem függ a szint-sorrendtől.
-  async getDueCarryoverCards(excludeWordIds: number[], limit: number) {
-    if (limit <= 0) return [];
-    const excluded = new Set(excludeWordIds);
-    const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
-    return [...this.cards.values()]
-      .filter(c => c.type === 'word' && (c.lap ?? 0) >= 3 && c.in_hand === 0 && !c.buried && c.pair === this.activePair
-        && c.due <= lookahead && !excluded.has(c.word_id))
-      .sort((a, b) => a.due.localeCompare(b.due))
-      .slice(0, limit);
-  }
-
-  async countDueCarryoverWords(excludeWordIds: number[]) {
-    const excluded = new Set(excludeWordIds);
-    const lookahead = new Date(Date.now() + 10 * 60 * 1000).toISOString();
-    const due = new Set(
-      [...this.cards.values()]
-        .filter(c => c.type === 'word' && (c.lap ?? 0) >= 3 && c.in_hand === 0 && !c.buried && c.pair === this.activePair
-          && c.due <= lookahead && !excluded.has(c.word_id))
-        .map(c => c.word_id)
-    );
-    return due.size;
-  }
-
-  async getWordReps(wordIds: number[]): Promise<Map<number, number>> {
-    const idSet = new Set(wordIds);
-    const map = new Map<number, number>();
-    for (const c of this.cards.values()) {
-      if (idSet.has(c.word_id) && c.type === 'word' && c.pair === this.activePair) {
-        map.set(c.word_id, c.reps);
-      }
-    }
-    return map;
-  }
-
-  // "Ismert" jelző (1/0) szavanként, UTEMEZO 12/4: EGY definíció a
-  // Stats-kártyával (lap >= 3 OR buried, lásd getMasteredWordCount), nem FSRS
-  // Review-állapot. A topic-készültség ebből dől el, nem a reps-ből, lásd
-  // lib/topicMastery.ts.
-  async getWordStates(wordIds: number[]): Promise<Map<number, number>> {
-    const idSet = new Set(wordIds);
-    const map = new Map<number, number>();
-    for (const c of this.cards.values()) {
-      if (idSet.has(c.word_id) && c.type === 'word' && c.pair === this.activePair) {
-        map.set(c.word_id, ((c.lap ?? 0) >= 3 || c.buried) ? 1 : 0);
-      }
-    }
-    return map;
-  }
-
-  // GAMES.md 3.1 (F0): every non-buried word card of `pair`, for vocabPool.ts.
-  // FB162 follow-up: buried cards stay in the list, flagged (see database.ts).
-  async getAllWordCards(pair: string) {
-    return [...this.cards.values()]
-      .filter((c) => c.type === 'word' && c.pair === pair)
-      .map((c) => ({
-        word_id: c.word_id, reps: c.reps, lapses: c.lapses, state: c.state,
-        buried: (c.buried ? 1 : 0) as 0 | 1, lap: (c.lap ?? 0) as Lap, in_hand: (c.in_hand ? 1 : 0) as 0 | 1,
-      }));
+  // Play-vágás 7. lépés: updateLevel (the only public setter) had no app-code
+  // caller and is gone; grammar-screen fixtures that need a specific level
+  // use this instead. Not on the DB interface, same pattern as the old
+  // __setRequeueLevelForTest.
+  __setLevelForTest(level: string): void {
+    this.userLevels.set(this.activePair, { level, correct_streak: 0, mistakes_in_window: 0, fail_streak: 0 });
   }
 
   private attempts: { word_id: number; type: string; pair?: string; correct: boolean; response_time_ms: number; timestamp: string }[] = [];
 
-  async recordAttempt(wordId: number, type: string, correct: boolean, responseTimeMs: number) {
-    this.attempts.push({ word_id: wordId, type, pair: this.activePair, correct, response_time_ms: responseTimeMs, timestamp: new Date().toISOString() });
-  }
-
   private meta = { userId: crypto.randomUUID?.() ?? Math.random().toString(36), firstUseDate: new Date().toISOString(), lastSyncDate: null as string | null };
-
-  async getUserMeta() { return { ...this.meta }; }
-  async updateLastSync(date: string) { this.meta.lastSyncDate = date; }
 
   // FB76: first open of the day (memory mirror; a web reload counts as a new day).
   private lastOpenDate: string | null = null;
@@ -370,115 +117,6 @@ class MemoryDB implements DB {
 
   async getStatusBarTint(): Promise<number> { return this.statusBarTint; }
   async setStatusBarTint(index: number): Promise<void> { this.statusBarTint = index; }
-  async getTodayStats() {
-    const today = new Date().toISOString().split('T')[0];
-    const todayAttempts = this.attempts.filter(a => a.timestamp >= `${today}T00:00:00`);
-    const total = todayAttempts.length;
-    const correct = todayAttempts.filter(a => a.correct).length;
-    const avgMs = total > 0 ? Math.round(todayAttempts.reduce((s, a) => s + a.response_time_ms, 0) / total) : 0;
-    return { totalReviews: total, correctCount: correct, avgResponseMs: avgMs, flashcardCount: 0, typingCount: 0, wordCount: todayAttempts.filter(a => a.type === 'word').length, sentenceCount: todayAttempts.filter(a => a.type === 'sentence').length };
-  }
-  async getTop5Failed() { return []; }
-  async getMasteredCount() { return 0; }
-  async getMasteredWordCount(level: string) {
-    const { getWordsForLevel } = require('@/data/words');
-    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
-    const wordIds = new Set(levelWords.map((w: any) => w.id));
-    // UTEMEZO 1. szakasz: megtanult = a 3. lap egyszer helyes volt, lásd database.ts.
-    return [...this.cards.values()].filter(c =>
-      wordIds.has(c.word_id) && c.type === 'word' && c.pair === this.activePair &&
-      ((c.lap ?? 0) >= 3 || c.buried === 1)
-    ).length;
-  }
-  async getReviewedWordCount(level: string) {
-    const { getWordsForLevel } = require('@/data/words');
-    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
-    const wordIds = new Set(levelWords.map((w: any) => w.id));
-    // UTEMEZO 1. szakasz: ugyanaz a szabály, mint a natív ágon.
-    return [...this.cards.values()].filter(c => wordIds.has(c.word_id) && c.type === 'word' && ((c.lap ?? 0) >= 3 || c.buried) && c.pair === this.activePair).length;
-  }
-
-  // FB100: see the native twin, due dates of the word cards still in rotation.
-  async getScheduledWordDueDates() {
-    return [...this.cards.values()]
-      .filter(c => c.type === 'word' && c.reps > 0 && !c.buried && c.pair === this.activePair)
-      .map(c => String(c.due));
-  }
-
-  async buryCard(wordId: number, type: string) {
-    const k = this.key(wordId, type);
-    const card = this.cards.get(k);
-    // UTEMEZO 11. szakasz: egy elásott szó kikerül a kézből is.
-    if (card) { card.buried = 1; card.in_hand = 0; }
-  }
-
-  // FB293/294: "I know this" a SZORA vonatkozik, nem egy lap-tipusra (mint a
-  // buryCard): a szó MINDEN meglévő kártya-típus-sorát temeti.
-  async buryWord(wordId: number) {
-    const prefix = `${this.activePair}:${wordId}:`;
-    for (const [k, card] of this.cards) {
-      if (k.startsWith(prefix)) { card.buried = 1; card.in_hand = 0; }
-    }
-  }
-
-  // UTEMEZO 11. szakasz: lásd database.ts a szöveges leírásért. UTEMEZO 2.2: a
-  // started_at ekkor kap értéket ("csak egyszer" szabály, COALESCE-szerűen).
-  async startWord(wordId: number): Promise<void> {
-    await this.ensureCard(wordId, 'word');
-    const card = this.cards.get(this.key(wordId, 'word'));
-    if (card && (card.lap ?? 0) < 3) {
-      card.in_hand = 1;
-      card.started_at = card.started_at ?? new Date().toISOString();
-    }
-  }
-
-  async passLap(wordId: number): Promise<Lap> {
-    const card = this.cards.get(this.key(wordId, 'word'));
-    if (!card) return 0;
-    card.lap = Math.min(LAPS, (card.lap ?? 0) + 1) as Lap;
-    if (card.lap >= LAPS) {
-      card.in_hand = 0;
-      card.learned_at = card.learned_at ?? new Date().toISOString();
-    }
-    return card.lap;
-  }
-
-  async getInHandWordCards(): Promise<{ word_id: number; lap: Lap }[]> {
-    return [...this.cards.values()]
-      .filter(c => c.type === 'word' && c.pair === this.activePair && c.in_hand === 1 && !c.buried)
-      .sort((a, b) => a.word_id - b.word_id)
-      .map(c => ({ word_id: c.word_id, lap: c.lap as Lap }));
-  }
-
-  // UTEMEZO 2.2: hány szó indult el ma (a SQLite oldal tükre).
-  async getWordsStartedToday(): Promise<number> {
-    const today = localDateString();
-    return [...this.cards.values()].filter(
-      c => c.type === 'word' && c.pair === this.activePair && c.started_at &&
-           localDateString(new Date(c.started_at)) === today
-    ).length;
-  }
-
-  // UTEMEZO 2.4/12.1: `wordIds`-ből az érintetlenek (a SQLite oldal tükre).
-  async getUntouchedWordIds(wordIds: number[]): Promise<Set<number>> {
-    const idSet = new Set(wordIds);
-    const touched = new Set(
-      [...this.cards.values()]
-        .filter(c => idSet.has(c.word_id) && c.type === 'word' && c.pair === this.activePair)
-        .filter(c => !((c.lap ?? 0) === 0 && c.in_hand === 0 && !c.buried))
-        .map(c => c.word_id)
-    );
-    return new Set(wordIds.filter(id => !touched.has(id)));
-  }
-
-  // FB38: push the card's due date out by `days`, leaving reps/stability untouched
-  // (unlike buryCard, this isn't final, the card resurfaces after the snooze).
-  async snoozeCard(wordId: number, type: string, days: number) {
-    const k = this.key(wordId, type);
-    const card = this.cards.get(k);
-    if (card) card.due = new Date(Date.now() + days * 86400000).toISOString();
-  }
-
   // FB39: spelling-practice list, per-pair map like the other pair-scoped state.
   // Web doesn't survive reload, known, fine (same limit as wordsOnlyMap etc).
   private spellingLists: Map<string, Map<number, { step: number; due: string }>> = new Map();
@@ -492,10 +130,6 @@ class MemoryDB implements DB {
   async addToSpellingList(wordId: number) {
     const list = this.spellingListFor(this.activePair);
     if (!list.has(wordId)) list.set(wordId, { step: 0, due: new Date().toISOString() });
-  }
-
-  async removeFromSpellingList(wordId: number) {
-    this.spellingListFor(this.activePair).delete(wordId);
   }
 
   async getSpellingList() {
@@ -516,47 +150,37 @@ class MemoryDB implements DB {
     this.spellingListFor(this.activePair).set(wordId, { step, due });
   }
 
-  async isInSpellingList(wordId: number) {
-    return this.spellingListFor(this.activePair).has(wordId);
+  // PLAN-play 12. lépés (s3): PCIC-tétel a helyesírás-listán, nem pair-hez
+  // kötve (mint a pcic_cards map), item_id kulccsal.
+  private pcicSpellingList: Map<string, { step: number; due: string }> = new Map();
+
+  async addToPcicSpellingList(itemId: string) {
+    if (!this.pcicSpellingList.has(itemId)) this.pcicSpellingList.set(itemId, { step: 0, due: new Date().toISOString() });
   }
 
-  async resetAllProgress() {
-    // Reset only the active pair, other languages keep their progress.
-    for (const k of [...this.cards.keys()]) {
-      if (this.cards.get(k)?.pair === this.activePair) this.cards.delete(k);
-    }
-    this.userLevels.delete(this.activePair);
+  async getPcicSpellingList() {
+    return [...this.pcicSpellingList.entries()].map(([itemId, v]) => ({ itemId, step: v.step, due: v.due }));
   }
 
-  private selectedTopics: Map<string, string | null> = new Map();
-
-  async getSelectedTopic(): Promise<string | null> {
-    return this.selectedTopics.get(this.activePair) ?? null;
+  async getPcicSpellingDueCount() {
+    const now = new Date().toISOString();
+    return [...this.pcicSpellingList.values()].filter(v => v.due <= now).length;
   }
 
-  async setSelectedTopic(topicId: string | null): Promise<void> {
-    this.selectedTopics.set(this.activePair, topicId);
+  async getPcicSpellingListCount() {
+    return this.pcicSpellingList.size;
   }
 
+  async updatePcicSpellingStep(itemId: string, step: number, due: string) {
+    this.pcicSpellingList.set(itemId, { step, due });
+  }
+
+  // Play-vágás 7. lépés: getWordsOnly/setWordsOnly and getRandomTopics/
+  // setRandomTopics are gone (no caller since the Learn/Topics tabs left),
+  // but the maps stay so an imported old backup's learn_settings.words_only /
+  // .random_topics values still round-trip through exportAll unchanged.
   private wordsOnlyMap: Map<string, boolean> = new Map();
-
-  async getWordsOnly(): Promise<boolean> {
-    return this.wordsOnlyMap.get(this.activePair) ?? false;
-  }
-
-  async setWordsOnly(v: boolean): Promise<void> {
-    this.wordsOnlyMap.set(this.activePair, v);
-  }
-
   private randomTopicsMap: Map<string, boolean> = new Map();
-
-  async getRandomTopics(): Promise<boolean> {
-    return this.randomTopicsMap.get(this.activePair) ?? false;
-  }
-
-  async setRandomTopics(v: boolean): Promise<void> {
-    this.randomTopicsMap.set(this.activePair, v);
-  }
 
   // FB132: difficulty switch, per pair (mirrors the SQLite side).
   private strictAccentsMap: Map<string, boolean> = new Map();
@@ -578,60 +202,6 @@ class MemoryDB implements DB {
 
   async setArticlePicker(v: boolean): Promise<void> {
     this.articlePickerMap.set(this.activePair, v);
-  }
-
-  // UTEMEZO 8/3.1: P, kézben lévő szavak, per pár (a SQLite oldal tükre).
-  private handCapMap: Map<string, number> = new Map();
-
-  async getHandCap(): Promise<number> {
-    return Math.min(10, Math.max(1, this.handCapMap.get(this.activePair) ?? 5));
-  }
-
-  async setHandCap(n: number): Promise<void> {
-    this.handCapMap.set(this.activePair, Math.min(10, Math.max(1, n)));
-  }
-
-  // UTEMEZO 8/4.2: R, visszatérési rés, per pár (a SQLite oldal tükre). A
-  // requeueLevelMap csak a régi FB198-tárcsa egyszeri áthozatalához él tovább,
-  // lásd getGapLaps és __setRequeueLevelForTest.
-  private gapLapsMap: Map<string, number> = new Map();
-  private requeueLevelMap: Map<string, string> = new Map();
-
-  async getGapLaps(): Promise<number> {
-    if (this.gapLapsMap.has(this.activePair)) {
-      return Math.min(30, Math.max(1, this.gapLapsMap.get(this.activePair)!));
-    }
-    const level = this.requeueLevelMap.get(this.activePair);
-    if (level) {
-      const carryOver: Record<string, number> = { easy: 5, normal: 12, hard: 25 };
-      const carried = carryOver[level] ?? 5;
-      await this.setGapLaps(carried);
-      return carried;
-    }
-    return 5;
-  }
-
-  async setGapLaps(n: number): Promise<void> {
-    this.gapLapsMap.set(this.activePair, Math.min(30, Math.max(1, n)));
-  }
-
-  // UTEMEZO 4.7: R_javítás, a rontott lap rése, per pár (a SQLite oldal tükre).
-  private repairGapMap: Map<string, number> = new Map();
-
-  async getRepairGap(): Promise<number> {
-    return Math.min(10, Math.max(1, this.repairGapMap.get(this.activePair) ?? 2));
-  }
-
-  async setRepairGap(n: number): Promise<void> {
-    this.repairGapMap.set(this.activePair, Math.min(10, Math.max(1, n)));
-  }
-
-  // UTEMEZO 8 teszt-segéd: a régi FB198-tárcsa értékének beültetése a
-  // getGapLaps áthozatali ágának teszteléséhez, most hogy a nyilvános
-  // setRequeueLevel megszűnt. Nincs a DB interfészen, csak a konkrét
-  // osztályon (lib/__tests__/difficultyWindow.test.ts castol rá).
-  __setRequeueLevelForTest(level: string): void {
-    this.requeueLevelMap.set(this.activePair, level);
   }
 
   // FB65: weekly study goal in minutes, per pair (mirrors the SQLite side).
@@ -657,7 +227,6 @@ class MemoryDB implements DB {
 
   // FB77: daily new-word budget (memory mirror of the SQLite columns).
   private dailyNewLimitMap: Map<string, number> = new Map();
-  private newBonusMap: Map<string, { date: string; bonus: number }> = new Map();
 
   async getDailyNewLimit(): Promise<number> {
     return this.dailyNewLimitMap.get(this.activePair) ?? DEFAULT_DAILY_NEW_LIMIT;
@@ -665,44 +234,6 @@ class MemoryDB implements DB {
 
   async setDailyNewLimit(limit: number): Promise<void> {
     this.dailyNewLimitMap.set(this.activePair, limit);
-  }
-
-  async getNewLimitBonus(): Promise<number> {
-    const entry = this.newBonusMap.get(this.activePair);
-    return entry && entry.date === localDateString() ? entry.bonus : 0;
-  }
-
-  async addNewLimitBonus(extra: number): Promise<void> {
-    const current = await this.getNewLimitBonus();
-    this.newBonusMap.set(this.activePair, { date: localDateString(), bonus: current + extra });
-  }
-
-  async getNewWordsToday(): Promise<number> {
-    const today = localDateString();
-    const first = new Map<number, string>();
-    for (const a of this.attempts) {
-      // FB129: per-pair, so a day on one course does not exhaust the other's budget.
-      if (a.type !== 'word' || (a.pair ?? this.activePair) !== this.activePair) continue;
-      const prev = first.get(a.word_id);
-      if (!prev || a.timestamp < prev) first.set(a.word_id, a.timestamp);
-    }
-    return [...first.values()].filter(ts => localDateString(new Date(ts)) === today).length;
-  }
-
-  // FB103: word cards still in the FSRS learning (1) / relearning (3) state.
-  async getUnlearnedWordCount(): Promise<number> {
-    // UTEMEZO 11. szakasz: a tárolt in_hand jelzőből, nem az FSRS-ből.
-    return [...this.cards.values()].filter(
-      c => c.type === 'word' && c.pair === this.activePair && !c.buried && c.in_hand === 1
-    ).length;
-  }
-
-  async getWordsLearnedToday(): Promise<number> {
-    const today = localDateString();
-    return [...this.cards.values()].filter(
-      c => c.type === 'word' && c.pair === this.activePair && c.learned_at &&
-           localDateString(new Date(c.learned_at)) === today
-    ).length;
   }
 
   // Usage-timer feature: one entry per local calendar day, app-wide (not
@@ -732,42 +263,12 @@ class MemoryDB implements DB {
     return { minutes: this.usageMinutes.get(date) ?? 0, words: words.size };
   }
 
-  // GAMES.md 3.5 (F0): Game fül rekord/beállítás/haladás táblák, per-pair
-  // maps like the other web-only state above (session-scoped, doesn't
-  // survive reload, same known limitation as everything else in this file).
-  private gameScores: Map<string, { bestScore: number; bestAt: string | null; plays: number; lastPlayed: string | null }> = new Map();
-  private gameSettingsMap: Map<string, Record<string, unknown>> = new Map();
+  // GAMES.md 3.5 (F0): Game fül tables, scoped to the active pair like every
+  // other per-pair setting/state in this interface.
   private gameProgressMap: Map<string, Map<string, { state: string; data: unknown }>> = new Map();
 
   private gameKey(gameId: string) {
     return `${this.activePair}:${gameId}`;
-  }
-
-  async getGameScore(gameId: string) {
-    return this.gameScores.get(this.gameKey(gameId)) ?? null;
-  }
-
-  async recordGameScore(gameId: string, score: number) {
-    const key = this.gameKey(gameId);
-    const existing = this.gameScores.get(key);
-    const prevBest = existing?.bestScore ?? 0;
-    const isNewBest = score > prevBest;
-    const now = new Date().toISOString();
-    this.gameScores.set(key, {
-      bestScore: isNewBest ? score : prevBest,
-      bestAt: isNewBest ? now : (existing?.bestAt ?? now),
-      plays: (existing?.plays ?? 0) + 1,
-      lastPlayed: now,
-    });
-    return { isNewBest, best: isNewBest ? score : prevBest };
-  }
-
-  async getGameSettings(gameId: string) {
-    return this.gameSettingsMap.get(this.gameKey(gameId)) ?? null;
-  }
-
-  async setGameSettings(gameId: string, settings: Record<string, unknown>) {
-    this.gameSettingsMap.set(this.gameKey(gameId), settings);
   }
 
   private gameProgressFor(gameId: string) {
@@ -811,8 +312,27 @@ class MemoryDB implements DB {
     };
   }
 
-  async resetPcicCards(): Promise<void> {
-    this.pcicCards.clear();
+  async resetPcicCards(levelPrefix?: string): Promise<void> {
+    if (!levelPrefix) {
+      this.pcicCards.clear();
+      return;
+    }
+    for (const id of [...this.pcicCards.keys()]) {
+      if (id.startsWith(`${levelPrefix}-`)) this.pcicCards.delete(id);
+    }
+  }
+
+  // PLAN-play 10. lépés: a kiválasztott PCIC szint, memória-tükör (mint a
+  // status-bar tint), alap B1, hogy egy meglévő telepítés progressze ("b1-...")
+  // ne csússzon el.
+  private pcicLevel: PcicLevel = 'B1';
+
+  async getPcicLevel(): Promise<PcicLevel> {
+    return this.pcicLevel;
+  }
+
+  async setPcicLevel(level: PcicLevel): Promise<void> {
+    this.pcicLevel = level;
   }
 
   // Q0: full learning-state backup. Memory state is serialized into the same
@@ -836,6 +356,11 @@ class MemoryDB implements DB {
         spelling_list.push({ pair, word_id: wordId, step: v.step, due: v.due });
       }
     }
+    const pcic_spelling_list = [...this.pcicSpellingList.entries()].map(([itemId, v]) => ({
+      item_id: itemId,
+      step: v.step,
+      due: v.due,
+    }));
     return {
       schemaVersion: BACKUP_SCHEMA_VERSION,
       exportedAt: new Date().toISOString(),
@@ -851,21 +376,10 @@ class MemoryDB implements DB {
             data_json: v.data !== undefined ? JSON.stringify(v.data) : null,
           }));
         }),
-        game_scores: [...this.gameScores].map(([key, v]) => {
-          const sep = key.lastIndexOf(':');
-          return {
-            pair: key.slice(0, sep), game_id: key.slice(sep + 1),
-            best_score: v.bestScore, best_at: v.bestAt, plays: v.plays, last_played: v.lastPlayed,
-          };
-        }),
-        game_settings: [...this.gameSettingsMap].map(([key, settings]) => {
-          const sep = key.lastIndexOf(':');
-          return { pair: key.slice(0, sep), game_id: key.slice(sep + 1), settings_json: JSON.stringify(settings) };
-        }),
         learn_settings,
         onboarding: this.onboarding ? [{ id: 1, ...this.onboarding }] : [],
-        selected_topic: [...this.selectedTopics].map(([pair, topicId]) => ({ pair, topic_id: topicId })),
         spelling_list,
+        pcic_spelling_list,
         streak: [{ id: 1, ...this.streak }],
         user_level: [...this.userLevels].map(([pair, l]) => ({ pair, ...l })),
         user_meta: [{ id: 1, user_id: this.meta.userId, first_use_date: this.meta.firstUseDate, last_sync_date: this.meta.lastSyncDate }],
@@ -898,23 +412,6 @@ class MemoryDB implements DB {
         }, {})
       ).map(([key, entries]) => [key, new Map(entries)])
     );
-    this.gameScores = new Map(
-      (t.game_scores as any[]).map((row) => [
-        `${row.pair}:${row.game_id}`,
-        { bestScore: row.best_score, bestAt: row.best_at, plays: row.plays, lastPlayed: row.last_played },
-      ])
-    );
-    this.gameSettingsMap = new Map(
-      (t.game_settings as any[]).map((row) => {
-        let settings: Record<string, unknown> = {};
-        try {
-          settings = JSON.parse(row.settings_json);
-        } catch {
-          settings = {};
-        }
-        return [`${row.pair}:${row.game_id}`, settings];
-      })
-    );
     this.wordsOnlyMap = new Map();
     this.randomTopicsMap = new Map();
     this.feedbackBtnSideMap = new Map();
@@ -924,13 +421,21 @@ class MemoryDB implements DB {
       if (row.feedback_btn_side != null) this.feedbackBtnSideMap.set(row.pair, row.feedback_btn_side);
     }
     const ob = t.onboarding[0];
-    this.onboarding = ob ? { source: ob.source, target: ob.target } : null;
+    // Corrected to the single supported pair if the backup carries an older
+    // one (same rule as the app/_layout.tsx startup check).
+    this.onboarding = ob
+      ? (needsPairCorrection(ob) ? { ...FORCED_PAIR } : { source: ob.source, target: ob.target })
+      : null;
     if (this.onboarding) this.activePair = `${this.onboarding.source}-${this.onboarding.target}`;
-    this.selectedTopics = new Map(t.selected_topic.map((r: any) => [r.pair, r.topic_id]));
     this.spellingLists = new Map();
     for (const row of t.spelling_list) {
       this.spellingListFor(row.pair).set(row.word_id, { step: row.step, due: row.due });
     }
+    // Play-vágás 12. lépés: a régi mentések nem ismerik ezt a táblát, `?? []`
+    // az FB39-mintát követve visszatölthetővé teszi az új rész nélküli mentést.
+    this.pcicSpellingList = new Map(
+      (t.pcic_spelling_list ?? []).map((row: any) => [row.item_id, { step: row.step, due: row.due }])
+    );
     const st = t.streak[0];
     if (st) this.streak = { current_count: st.current_count, last_date: st.last_date, longest_count: st.longest_count };
     this.userLevels = new Map(t.user_level.map((r: any) => [r.pair, { level: r.level, correct_streak: r.correct_streak, mistakes_in_window: r.mistakes_in_window, fail_streak: r.fail_streak }]));
