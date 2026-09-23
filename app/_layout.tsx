@@ -9,7 +9,6 @@ import 'react-native-reanimated';
 import { bottomGutter } from '@/lib/bottomGutter';
 import { getDb } from '@/lib/database';
 import { initI18n, setLanguage } from '@/lib/i18n';
-import { sendAnalyticsIfNeeded } from '@/lib/analytics';
 import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
 import { startUsageTimer, stopUsageTimer, noteInteraction } from '@/lib/usageTimer';
 import { watchAppStateForSpeech } from '@/lib/speech';
@@ -45,7 +44,6 @@ export default function RootLayout() {
       }
       if (result) {
         setLanguage(result.source);
-        sendAnalyticsIfNeeded();
       }
       setOnboardingDone(!!result);
     }

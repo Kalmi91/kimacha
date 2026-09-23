@@ -67,6 +67,15 @@ keytool -printcert -jarfile android/app/build/outputs/bundle/release/app-release
 # 2F:EC:66:… kell legyen, nem fac61745…
 ```
 
+**Play-vágás után (2026-09-23-tól):** a bundle-parancs elé az `EXPO_PUBLIC_PLAY_STORE=1`
+env-változó kell, különben a Drive-APK-s Apps Script feedback-URL bekerül a Play-
+bundle-be (`lib/buildFlavor.ts`). A `-PplayStore=true` gradle-kapcsolót a 16. lépés
+köti be, itt csak a JS-oldali env-változó:
+
+```bash
+EXPO_PUBLIC_PLAY_STORE=1 ./gradlew :app:bundleRelease -PplayStore=true --console=plain
+```
+
 ## 2. A feltöltendő csomag
 
 ```
