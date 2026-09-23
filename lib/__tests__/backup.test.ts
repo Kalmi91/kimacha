@@ -28,10 +28,15 @@ describe('backup export/import round-trip (memory db)', () => {
 
     await db.importAll(payload);
     const roundTrip = await db.exportAll();
-    expect(roundTrip.tables).toEqual(payload.tables);
+    // Play-vágás 7. lépés: restore forces the active pair to the single
+    // supported one (en-es), so the onboarding row differs from the backup's
+    // own hu-en; every other table round-trips byte for byte.
+    expect(roundTrip.tables).toEqual({ ...payload.tables, onboarding: [{ id: 1, source: 'en', target: 'es' }] });
+    expect(await db.getOnboarding()).toEqual({ source: 'en', target: 'es' });
 
-    // And the restored state behaves like the original through the public API.
-    expect(await db.getOnboarding()).toEqual({ source: 'hu', target: 'en' });
+    // The hu-en rows themselves are untouched, just no longer active: switching
+    // back to that pair (not a restore, just a normal pair switch) reaches them.
+    await db.setOnboarding('hu', 'en');
     expect((await db.getLevel()).level).toBe('A1');
     expect(await db.getFeedbackBtnSide()).toBe('left');
     expect(await db.getSpellingList()).toEqual([{ wordId: 5001, step: 0, due: expect.any(String) }]);
@@ -59,8 +64,23 @@ describe('backup export/import round-trip (memory db)', () => {
     expect(() => validateBackupPayload(legacyPayload)).not.toThrow();
 
     await db.importAll(legacyPayload as any);
-    expect(await db.getOnboarding()).toEqual({ source: 'pt', target: 'es' });
+    // Play-vágás 7. lépés: restore forces the active pair to en-es; the pt-es
+    // row is still there and reachable once that pair is active again.
+    expect(await db.getOnboarding()).toEqual({ source: 'en', target: 'es' });
+    await db.setOnboarding('pt', 'es');
     expect(await db.getSpellingList()).toEqual([{ wordId: 7001, step: 0, due: expect.any(String) }]);
+  });
+
+  // Play-vágás 7. lépés (2026-09-23): the exact scenario the step's own
+  // acceptance check names, an older-schema backup whose onboarding/active
+  // pair is hu-es restores onto en-es, not onto the pair it was saved with.
+  it('forces the active pair to en-es when the backup carries an older pair', async () => {
+    await db.setOnboarding('hu', 'es');
+    const payload = await db.exportAll();
+    expect(payload.tables.onboarding[0]).toMatchObject({ source: 'hu', target: 'es' });
+
+    await db.importAll(payload);
+    expect(await db.getOnboarding()).toEqual({ source: 'en', target: 'es' });
   });
 });
 

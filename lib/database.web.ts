@@ -1,5 +1,6 @@
 import { BACKUP_SCHEMA_VERSION, getAppVersion, type BackupPayload } from './backup';
 import { pickSurvivor } from './cardMerge';
+import { FORCED_PAIR, needsPairCorrection } from './languages';
 import { WORD_MERGES } from './wordMerges';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 import type { Sm2Card } from './sm2';
@@ -376,7 +377,11 @@ class MemoryDB implements DB {
       if (row.feedback_btn_side != null) this.feedbackBtnSideMap.set(row.pair, row.feedback_btn_side);
     }
     const ob = t.onboarding[0];
-    this.onboarding = ob ? { source: ob.source, target: ob.target } : null;
+    // Corrected to the single supported pair if the backup carries an older
+    // one (same rule as the app/_layout.tsx startup check).
+    this.onboarding = ob
+      ? (needsPairCorrection(ob) ? { ...FORCED_PAIR } : { source: ob.source, target: ob.target })
+      : null;
     if (this.onboarding) this.activePair = `${this.onboarding.source}-${this.onboarding.target}`;
     this.spellingLists = new Map();
     for (const row of t.spelling_list) {

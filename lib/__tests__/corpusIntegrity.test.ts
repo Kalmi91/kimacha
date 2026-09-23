@@ -3,10 +3,31 @@
 // checked here rather than trusted: an id collision makes one card render another
 // card's word, a same-meaning duplicate makes you relearn a known word from zero.
 
-import { LEVELS, getWordsForLevel, words, type WordEntry } from '@/data/words';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+
+import { LEVELS, getWordsForLevel, words, type Level, type WordEntry } from '@/data/words';
 import { WORD_MERGES } from '../wordMerges';
 import { pickSurvivor } from '../cardMerge';
 import { findPromptOverlaps, headwordLeaks, type PromptLang } from '../promptOverlap';
+
+// Play-vágás 7. lépés (2026-09-23): the en/hu word-branch loader path
+// (getWordsForLevel(level, 'en'|'hu')) is gone, so the cases below that guard
+// the actual en/hu corpus content read these JSON files straight off disk
+// instead, the same way `svCorpus.test.ts` reads the Swedish track.
+function branchLevel(lang: string, level: string): WordEntry[] {
+  return JSON.parse(readFileSync(join(__dirname, '..', '..', 'data', 'words', lang, `${level}.json`), 'utf8'));
+}
+
+const EN_BRANCH_BY_LEVEL: Partial<Record<Level, WordEntry[]>> = {
+  A0: branchLevel('en', 'a0'),
+  A1: branchLevel('en', 'a1'),
+  A2: branchLevel('en', 'a2'),
+};
+const HU_BRANCH_BY_LEVEL: Partial<Record<Level, WordEntry[]>> = {
+  A0: branchLevel('hu', 'a0'),
+  A1: branchLevel('hu', 'a1'),
+};
 
 const LEVEL_ORDER = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
@@ -125,8 +146,8 @@ describe('word entry completeness', () => {
 
   const corpora: [string, WordEntry[]][] = [
     ['shared', words],
-    ['en branch', LEVELS.flatMap((l) => getWordsForLevel(l, 'en'))],
-    ['hu branch', LEVELS.flatMap((l) => getWordsForLevel(l, 'hu'))],
+    ['en branch', Object.values(EN_BRANCH_BY_LEVEL).flat()],
+    ['hu branch', Object.values(HU_BRANCH_BY_LEVEL).flat()],
   ];
 
   it.each(corpora)('every %s entry carries all four languages and sentences', (_label, entries) => {
@@ -147,21 +168,20 @@ describe('word entry completeness', () => {
 // korpusz-menet (2026-09-14/15) után ez az őr ÉLES: új szó nem hozhatja
 // vissza a hibát. A fürt-logika a lib/promptOverlap.ts-ben él, ugyanaz fut
 // itt és a scripts/audit-prompts.mjs-ben (ott duplikálva, mert az .mjs nem
-// importál TS-t). Csak azokat a szinteket nézi, amelyek a sávban tényleg
-// léteznek: a getWordsForLevel a hiányzó hu/en szintekre a spanyol korpuszra
-// esik vissza, és az nem ennek a sávnak a promptja.
+// importál TS-t). A hu/en sáv (Play-vágás 7. lépés óta a JSON-ból, nem a
+// betöltőből) csak azokra a szintekre ad szavakat, amik tényleg léteznek;
+// a hiányzó szintre üres lista jön, amin a fürt-keresés triviálisan üres.
 describe('prompt policy (PROMPT-POLICY 1)', () => {
-  const BANDS: { label: string; lang: PromptLang; headword: PromptLang; prompt: PromptLang }[] = [
-    { label: 'es', lang: 'es', headword: 'es', prompt: 'en' },
-    { label: 'hu', lang: 'hu', headword: 'hu', prompt: 'en' },
-    { label: 'en', lang: 'en', headword: 'en', prompt: 'hu' },
+  const BANDS: { label: string; wordsByLevel: (level: Level) => WordEntry[]; headword: PromptLang; prompt: PromptLang }[] = [
+    { label: 'es', wordsByLevel: (level) => getWordsForLevel(level, 'es'), headword: 'es', prompt: 'en' },
+    { label: 'hu', wordsByLevel: (level) => HU_BRANCH_BY_LEVEL[level] ?? [], headword: 'hu', prompt: 'en' },
+    { label: 'en', wordsByLevel: (level) => EN_BRANCH_BY_LEVEL[level] ?? [], headword: 'en', prompt: 'hu' },
   ];
 
-  it.each(BANDS)('never gives two words of a level an ambiguous $label prompt', ({ lang, headword, prompt }) => {
+  it.each(BANDS)('never gives two words of a level an ambiguous $label prompt', ({ wordsByLevel, headword, prompt }) => {
     const offenders: string[] = [];
     for (const level of LEVELS) {
-      const levelWords = getWordsForLevel(level, lang);
-      if (lang !== 'es' && levelWords.some((w) => w.level === level && getWordsForLevel(level, 'es').includes(w))) continue;
+      const levelWords = wordsByLevel(level);
       const clusters = findPromptOverlaps(
         levelWords.map((w) => ({ id: w.id, headword: String(w[headword] ?? ''), prompt: String(w[prompt] ?? '') })),
         prompt
