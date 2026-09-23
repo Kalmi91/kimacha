@@ -9,11 +9,11 @@ import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
 import { charDiff } from '@/lib/charDiff';
 import { speechLang } from '@/lib/languages';
-import { localDateString } from '@/lib/usageStats';
+import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
 import { pcicItemsForLevel, findPcicItem, type PcicLevel } from '@/data/pcic';
 import { gradePcicAnswer, suggestedGrade, type PcicGrade } from '@/lib/pcicMatch';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
-import { sm2Review, sm2PreviewDays, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, DEFAULT_NEW_LIMIT, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
+import { sm2Review, sm2PreviewDays, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { countDoneToday, requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
 import { cardsForLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
@@ -71,6 +71,13 @@ export default function PcicScreen() {
   // FB314: a "+10 új szó" gombbal bővített napi keret; load() (fókusz-váltás,
   // új nap) nullázza, a menet közbeni értékelések nem érintik.
   const [extraNew, setExtraNew] = useState(0);
+  // PLAN-play 12. lépés (C): a Beállítások "Napi új szó" (learn_settings.daily_new_limit,
+  // eddig csak a törölt Tanulás fül olvasta) mostantól a PCIC napi új tételeinek
+  // számát is adja; a fejléc "new" chipje ebből számol (queue state === 'new').
+  const [dailyNewLimit, setDailyNewLimit] = useState(DEFAULT_DAILY_NEW_LIMIT);
+  // PLAN-play 12. lépés (s3): a helyesírás-listán már szereplő PCIC-tételek
+  // id-je, hogy a "Add to spelling" gomb "✓ In spelling list"-re váltson.
+  const [pcicSpellingIds, setPcicSpellingIds] = useState<Set<string>>(new Set());
   // 5b: a dokkolt Check/Next sáv mért magassága, a görgető alsó paddingjéhez
   // és a 💬 bottomOffsetjéhez (DockedAction.tsx, a Learn DOCK_RESERVE-je az alapérték).
   const [dockH, setDockH] = useState(DOCK_RESERVE);
@@ -88,12 +95,16 @@ export default function PcicScreen() {
     const rawCards = await db.getPcicCards();
     const cards = cardsForLevel(rawCards, lvl);
     const strict = await db.getStrictAccents();
+    const newLimit = await db.getDailyNewLimit();
+    const spellingRows = await db.getPcicSpellingList();
     setLevel(lvl);
     setAllLevelCards(rawCards);
     setStrictAccents(strict);
+    setDailyNewLimit(newLimit);
+    setPcicSpellingIds(new Set(spellingRows.map((r) => r.itemId)));
     setToday(day);
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
-    setQueue(pickSm2Session(cards, newOrder, day));
+    setQueue(pickSm2Session(cards, newOrder, day, newLimit));
     setTypedAnswer('');
     setGrade(null);
     setSessionAnswered(0);
@@ -155,6 +166,10 @@ export default function PcicScreen() {
     const before = { ...current };
     const next = sm2Review(current, g, today);
     await getDb().upsertPcicCard(next);
+    // PLAN-play 12. lépés: a napi streak-et innentől a PCIC-értékelés írja (a
+    // Tanulás fül vitte el az egyetlen korábbi hívót); a metódus a nap első
+    // hívásán túl no-op, tehát Again-re is biztonságos.
+    await getDb().updateStreak();
 
     setAllCards((prev) => new Map(prev).set(next.itemId, next));
     setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew, g, counted: true });
@@ -229,6 +244,15 @@ export default function PcicScreen() {
     setLastGraded(null);
   };
 
+  // PLAN-play 12. lépés (s3, döntés a): csak Check után hívható (a gomb csak
+  // grade-nél látszik); PCIC-azonosítóval kerül a listára (lib/database.ts
+  // pcic_spelling_list), a helyesírás-tréner (app/spelling.tsx) ebből is olvas.
+  const handleAddSpelling = async () => {
+    if (!current) return;
+    await getDb().addToPcicSpellingList(current.itemId);
+    setPcicSpellingIds((prev) => new Set(prev).add(current.itemId));
+  };
+
   const handleDontLearn = async () => {
     if (!current) return;
     const before = { ...current };
@@ -264,7 +288,7 @@ export default function PcicScreen() {
   const handleMoreNew = () => {
     const next = extraNew + 10;
     setExtraNew(next);
-    setQueue(pickSm2Session([...allCards.values()], newOrder, today, DEFAULT_NEW_LIMIT + next));
+    setQueue(pickSm2Session([...allCards.values()], newOrder, today, dailyNewLimit + next));
   };
 
   // s1 (anki-ui-terv.html): a fejléc ELSŐ chipje a kiválasztott szint,
@@ -554,9 +578,26 @@ export default function PcicScreen() {
             </View>
           )}
 
-          <Pressable onPress={handleDontLearn} hitSlop={8}>
-            <Text style={[styles.dontLearn, { color: colors.tabIconDefault }]}>{s.pcic.dontLearn}</Text>
-          </Pressable>
+          {/* PLAN-play 12. lépés (s3, döntés a): a "Add to spelling" gomb csak
+              Check után látszik, a "Don't learn this" mellett; a meglévő gomb
+              mérete/helyzete változatlan. */}
+          <View style={styles.bottomRow}>
+            {grade && (
+              <Pressable onPress={handleAddSpelling} hitSlop={8}>
+                <Text
+                  style={[
+                    styles.spellingBtn,
+                    { color: pcicSpellingIds.has(current.itemId) ? '#22C55E' : colors.tabIconDefault },
+                  ]}
+                >
+                  {pcicSpellingIds.has(current.itemId) ? s.pcic.inSpellingList : s.pcic.addToSpelling}
+                </Text>
+              </Pressable>
+            )}
+            <Pressable onPress={handleDontLearn} hitSlop={8}>
+              <Text style={[styles.dontLearn, { color: colors.tabIconDefault }]}>{s.pcic.dontLearn}</Text>
+            </Pressable>
+          </View>
         </CardShell>
       </ScrollView>
 
@@ -834,6 +875,19 @@ const styles = StyleSheet.create({
   dontLearn: {
     fontSize: 13,
     textAlign: 'right',
+    marginBottom: 8,
+  },
+  // PLAN-play 12. lépés (s3): a "Add to spelling" gomb sora a "Don't learn
+  // this" mellett; ungraded állapotban (a gomb rejtve) egyetlen gyerek marad,
+  // a flex-end ilyenkor is a régi jobbra-igazított helyre teszi a dontLearn-t.
+  bottomRow: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    gap: 16,
+  },
+  spellingBtn: {
+    fontSize: 13,
     marginBottom: 8,
   },
   checkBtn: {

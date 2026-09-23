@@ -76,9 +76,11 @@ export default function SettingsScreen() {
         setMissingVoices([o.source, o.target].filter(code => !hasVoiceFor(code)));
       });
       db.getLevel().then(l => setLevel(l.level as Level));
-      db.getSpellingDueCount().then(setSpellingDue);
+      // PLAN-play 12. lépés: a sor a két forrás (szó-lista + PCIC-lista)
+      // együttes számát mutassa, nem csak a régié.
+      Promise.all([db.getSpellingDueCount(), db.getPcicSpellingDueCount()]).then(([a, b]) => setSpellingDue(a + b));
+      Promise.all([db.getSpellingListCount(), db.getPcicSpellingListCount()]).then(([a, b]) => setSpellingTotal(a + b));
       db.getArticlePicker().then(setArticlePicker);
-      db.getSpellingListCount().then(setSpellingTotal);
     }, [])
   );
 
