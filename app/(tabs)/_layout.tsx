@@ -70,55 +70,12 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="games"
-        options={{
-          title: s.tabs.games,
-          // A hub saját fejlécet rajzol, mint az index (FB123-minta).
-          headerShown: false,
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{ ios: 'gamecontroller.fill', android: 'sports_esports', web: 'sports_esports' }}
-              tintColor={color}
-              size={28}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="active"
-        options={{
-          title: s.tabs.active,
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{ ios: 'mic.fill', android: 'mic', web: 'mic' }}
-              tintColor={color}
-              size={28}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
         name="tree"
         options={{
           title: s.tabs.tree,
           tabBarIcon: ({ color }) => (
             <SymbolView
               name={{ ios: 'square.grid.2x2.fill', android: 'grid_view', web: 'grid_view' }}
-              tintColor={color}
-              size={28}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="talk"
-        options={{
-          title: s.tabs.talk,
-          // Saját fejlécet rajzol, mint az index és a games (FB123-minta).
-          headerShown: false,
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{ ios: 'bubble.left.and.bubble.right.fill', android: 'forum', web: 'forum' }}
               tintColor={color}
               size={28}
             />

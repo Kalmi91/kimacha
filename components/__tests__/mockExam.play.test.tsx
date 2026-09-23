@@ -1,6 +1,6 @@
 // Sitting the whole mock exam on screen: intro, four papers with their own
 // clocks, no feedback while answering, then the score report and the pass rule.
-// This is the exam counterpart of the game playthroughs in app/games/__tests__.
+// This is the exam counterpart of the grammar playthrough tests in app/grammar/__tests__.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({

@@ -1,26 +1,21 @@
 import { feedbackTag } from '../feedbackTag';
 
 describe('feedbackTag', () => {
-  it('keeps the game tags the sheet already carries', () => {
-    expect(feedbackTag('/games/word-rain')).toBe('game:word-rain');
-    expect(feedbackTag('/games/ccat')).toBe('game:ccat');
-  });
-
-  it('names the Átbeszélő sub-screens', () => {
-    expect(feedbackTag('/talk/comida')).toBe('talk:comida');
-    expect(feedbackTag('/talk/quiz')).toBe('talk:quiz');
+  it('names a sub-screen from its route group', () => {
+    expect(feedbackTag('/grammar/ser-estar')).toBe('grammar:ser-estar');
+    expect(feedbackTag('/pcic/b1')).toBe('pcic:b1');
   });
 
   it('keeps the deeper path segments, so a nested screen stays traceable', () => {
-    expect(feedbackTag('/talk/comida/a2')).toBe('talk:comida:a2');
+    expect(feedbackTag('/grammar/ser-estar/drill')).toBe('grammar:ser-estar:drill');
   });
 
   it('falls back to the group name on its own index', () => {
-    expect(feedbackTag('/talk')).toBe('talk:index');
+    expect(feedbackTag('/grammar')).toBe('grammar:index');
   });
 
   it('survives a trailing slash', () => {
-    expect(feedbackTag('/games/chat/')).toBe('game:chat');
+    expect(feedbackTag('/grammar/ser-estar/')).toBe('grammar:ser-estar');
   });
 
   it('has something to send even from the root', () => {
