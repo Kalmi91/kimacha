@@ -46,7 +46,7 @@ const flush = async (times = 3) => {
 describe('grammar lesson screen: per-kind drill buttons', () => {
   beforeEach(async () => {
     const db = getDb();
-    await db.setOnboarding('hu', 'es');
+    await db.setOnboarding('en', 'es');
     await db.updateLevel('A1', 0, 0, 0);
   });
 

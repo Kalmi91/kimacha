@@ -1,8 +1,6 @@
 import { pickDayRolloverMessage } from '@/lib/dayRollover';
-import hu from '@/lib/i18n/hu';
 import en from '@/lib/i18n/en';
 import es from '@/lib/i18n/es';
-import de from '@/lib/i18n/de';
 
 // FB108: the midnight celebration. The pool is picked at random (repeats are
 // wanted), and every line has to carry the finished day's numbers.
@@ -27,8 +25,10 @@ describe('pickDayRolloverMessage', () => {
     expect(pickDayRolloverMessage([], { minutes: 3, words: 4 }, 0)).toBe('');
   });
 
-  it('every shipped line uses both placeholders, in all four languages', () => {
-    for (const strings of [hu, en, es, de]) {
+  // Kimacha Play: single en-es pair (Kálmán, 2026-09-22); `es` is now just the
+  // usage-toast subset (FB63), not a full UI translation.
+  it('every shipped line uses both placeholders, in en and es', () => {
+    for (const strings of [en, es]) {
       expect(strings.usage.dayRollover.length).toBeGreaterThan(1);
       for (const line of strings.usage.dayRollover) {
         expect(line).toContain('{min}');

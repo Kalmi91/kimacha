@@ -38,7 +38,7 @@ export default function SpellingScreen() {
   const router = useRouter();
 
   const [loading, setLoading] = useState(true);
-  const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
+  const [direction, setDirection] = useState<[string, string]>(['en', 'es']);
   const [level, setLevel] = useState('A0');
   const [totalInList, setTotalInList] = useState(0);
   const [queue, setQueue] = useState<QueueItem[]>([]);
@@ -49,8 +49,8 @@ export default function SpellingScreen() {
   const loadQueue = useCallback(async () => {
     const db = getDb();
     const onboarding = await db.getOnboarding();
-    const native = onboarding?.source ?? 'es';
-    const learned = onboarding?.target ?? 'hu';
+    const native = onboarding?.source ?? 'en';
+    const learned = onboarding?.target ?? 'es';
     setDirection([native, learned]);
     const levelData = await db.getLevel();
     setLevel(levelData.level);
