@@ -29,7 +29,7 @@ import type { LegacyLesson } from '@/lib/games/content';
 import { buildGrammarRound, isChoiceRoundItem } from '@/lib/games/grammarChoice';
 import { hashString } from '@/lib/shuffle';
 import GrammarLessonScreen from '../[topic]';
-import GrammarSyllabusScreen from '../index';
+import GrammarSyllabusScreen from '@/app/(tabs)/course';
 
 const flush = async (times = 3) => {
   for (let i = 0; i < times; i++) {

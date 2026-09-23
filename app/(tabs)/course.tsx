@@ -84,15 +84,9 @@ export default function GrammarSyllabusScreen() {
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
-      <View style={styles.header}>
-        <Pressable onPress={() => router.back()} hitSlop={12}>
-          <Text style={[styles.back, { color: colors.text }]}>←</Text>
-        </Pressable>
-        <Text style={[styles.title, { color: colors.text }]}>{s.grammar.title}</Text>
-        <View style={{ width: 24 }} />
-      </View>
-
-      <Text style={[styles.subtitle, { color: colors.tabIconDefault }]}>
+      {/* K33 (play-vágás): ez már a Nyelvtan fül gyökere, nem push-olt képernyő,
+          a cím+vissza sort a tab-navigátor saját fejléce adja (s.tabs.grammar). */}
+      <Text style={[styles.subtitle, { color: colors.tabIconDefault, marginTop: 12 }]}>
         {s.grammar.coverage(doneCount, coverage.written, coverage.planned)}
       </Text>
 
@@ -221,15 +215,6 @@ export default function GrammarSyllabusScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    paddingTop: 12,
-  },
-  back: { fontSize: 22 },
-  title: { flex: 1, textAlign: 'center', fontSize: 18, fontWeight: '700' },
   subtitle: { fontSize: 13, textAlign: 'center', marginTop: 2, marginBottom: 8 },
   body: { padding: 14, paddingBottom: 100, gap: 10 },
   levelBlock: { gap: 8 },

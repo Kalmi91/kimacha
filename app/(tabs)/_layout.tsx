@@ -40,25 +40,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: s.tabs.learn,
-          // FB123: "a fent Learn rész az felesleges azt vedd ki van ott egy centi
-          // ami nem kell oda". The learning screen draws its own header row, so
-          // the navigator title was only eating vertical space.
-          headerShown: false,
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{ ios: 'book.fill', android: 'book', web: 'book' }}
-              tintColor={color}
-              size={28}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="pcic"
-        options={{
           title: s.tabs.pcic,
-          // Saját fejlécet rajzol, mint az index (FB123-minta).
+          // Saját fejlécet rajzol, mint korábban is (FB123-minta).
           headerShown: false,
           tabBarIcon: ({ color }) => (
             <SymbolView
@@ -70,12 +53,12 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="tree"
+        name="course"
         options={{
-          title: s.tabs.tree,
+          title: s.tabs.grammar,
           tabBarIcon: ({ color }) => (
             <SymbolView
-              name={{ ios: 'square.grid.2x2.fill', android: 'grid_view', web: 'grid_view' }}
+              name={{ ios: 'book.fill', android: 'book', web: 'book' }}
               tintColor={color}
               size={28}
             />
