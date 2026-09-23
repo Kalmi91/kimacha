@@ -1,6 +1,7 @@
 import * as SQLite from 'expo-sqlite';
 import { BACKUP_SCHEMA_VERSION, BACKUP_TABLES, getAppVersion, type BackupPayload } from './backup';
 import { pickSurvivor } from './cardMerge';
+import { FORCED_PAIR, needsPairCorrection } from './languages';
 import { WORD_MERGES } from './wordMerges';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 import type { Sm2Card } from './sm2';
@@ -809,9 +810,15 @@ class SQLiteDB implements DB {
         }
       }
     });
-    // The imported onboarding decides the active pair from here on.
+    // The imported onboarding decides the active pair from here on, corrected
+    // to the single supported pair if the backup carries an older one (same
+    // rule as the app/_layout.tsx startup check).
     const ob = await db.getFirstAsync<any>('SELECT source, target FROM onboarding WHERE id = 1');
-    if (ob) this.activePair = `${ob.source}-${ob.target}`;
+    if (ob && needsPairCorrection(ob)) {
+      await this.setOnboarding(FORCED_PAIR.source, FORCED_PAIR.target);
+    } else if (ob) {
+      this.activePair = `${ob.source}-${ob.target}`;
+    }
     // A backup taken before the duplicate cleanup still carries the deleted ids.
     await this.applyWordMerges(db);
   }

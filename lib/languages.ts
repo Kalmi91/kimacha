@@ -21,6 +21,16 @@ export function isPairSupported(source: string, target: string): boolean {
   return supportedPairs.some(([s, t]) => s === source && t === target);
 }
 
+// Play-vágás 7. lépés (2026-09-23): the pair onboarding is forced to whenever
+// it drifts from the single supported pair, whether at startup (an older
+// install still on hu-es/es-hu/hu-en/...) or after a backup restore (an
+// older-schema payload, same drift). Shared so both call sites agree.
+export const FORCED_PAIR = { source: 'en', target: 'es' } as const;
+
+export function needsPairCorrection(pair: { source: string; target: string }): boolean {
+  return !isPairSupported(pair.source, pair.target);
+}
+
 // Full BCP-47 locales for text-to-speech, i.e. what iOS wants. Android cannot
 // take these as they are: expo-speech feeds the string to `Locale(...)`, which
 // reads "hu-HU" as a language named "hu-hu" and then falls back to the device
