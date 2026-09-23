@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { StyleSheet, Text, View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard, Alert } from 'react-native';
 import { useFocusEffect } from 'expo-router';
-import { speak } from '@/lib/speech';
+import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
@@ -137,6 +137,9 @@ export default function PcicScreen() {
     if (!loading && currentItem && !grade) {
       speak(currentItem.en, speechLang('en'));
     }
+    // PLAN-play 11. lépés: kártyaváltáskor a folyamatban lévő felolvasás
+    // (pl. Check utáni szó+példamondat lánc) álljon le, LECKE-SEMA 3.3 minta.
+    return () => stopSpeaking();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [current?.itemId, loading]);
 
@@ -168,18 +171,32 @@ export default function PcicScreen() {
     setGrade(null);
   };
 
+  // PLAN-play 11. lépés: Check után a szó felolvasása UTÁN, láncolva, magától
+  // szól a példamondat is, ha van a tételhez (data/pcic/<szint>-sentences.json).
+  const speakRevealed = (best: string) => {
+    const example = currentItem?.exampleEs;
+    if (example) {
+      speakSequence([
+        { text: best, locale: speechLang('es') },
+        { text: example, locale: speechLang('es') },
+      ]);
+    } else {
+      speak(best, speechLang('es'));
+    }
+  };
+
   const handleCheck = async () => {
     if (!current || !currentItem) return;
     const answer = composeAnswer(articlePick, typedAnswer);
     if (answer.trim().length === 0) {
       // Kálmán 2026-09-21: üres beküldés is felfedi a helyes alakot és
       // felolvassa, de nem értékel automatikusan; a koppintás dönt, mint
-      // bármelyik felfedésnél (SZ6 PARKOL, nincs mondat-adat a PCIC-tételekhez).
+      // bármelyik felfedésnél.
       const g = gradePcicAnswer('', currentItem.es, strictAccents);
       const revealed: PcicGrade = { ...g, match: 'wrong', accentOnly: undefined };
       setGrade(revealed);
       if (revealed.match !== 'exact') setArticlePick(articleOf(revealed.best));
-      speak(g.best, speechLang('es'));
+      speakRevealed(g.best);
       return;
     }
     // FB321: felfedéskor mindig szóljon a helyes spanyol alak.
@@ -187,7 +204,7 @@ export default function PcicScreen() {
     setTypedAnswer(answer);
     setGrade(g);
     if (g.match !== 'exact') setArticlePick(articleOf(g.best));
-    speak(g.best, speechLang('es'));
+    speakRevealed(g.best);
   };
 
   const handleGrade = async (g: Sm2Grade) => {
@@ -493,6 +510,19 @@ export default function PcicScreen() {
               {grade.accentOnly && (
                 <Text style={[styles.accentNote, { color: colors.tabIconDefault }]}>{s.pcic.accentForgiven}</Text>
               )}
+              {/* PLAN-play 11. lépés: példamondat a megoldás alatt, csak Check
+                  után és csak ha van egyezés a korpuszban (currentItem.exampleEs). */}
+              {currentItem?.exampleEs && (
+                <>
+                  <View style={[styles.frontRow, styles.exampleRow]}>
+                    <Text style={[styles.exampleEs, { color: colors.text }]}>{currentItem.exampleEs}</Text>
+                    <Pressable onPress={() => speak(currentItem.exampleEs!, speechLang('es'))} style={styles.speakBtn}>
+                      <Text style={styles.speakIcon}>🔊</Text>
+                    </Pressable>
+                  </View>
+                  <Text style={[styles.exampleEn, { color: colors.tabIconDefault }]}>{currentItem.exampleEn}</Text>
+                </>
+              )}
             </View>
           )}
 
@@ -782,6 +812,22 @@ const styles = StyleSheet.create({
   // s2 (anki-ui-terv.html): "Missing accent, counted as correct" sor.
   accentNote: {
     fontSize: 12,
+    textAlign: 'center',
+    marginTop: 4,
+  },
+  // PLAN-play 11. lépés: példamondat a megoldás alatt, Check után.
+  exampleRow: {
+    marginTop: 12,
+  },
+  exampleEs: {
+    flex: 1,
+    flexShrink: 1,
+    fontSize: 16,
+    fontWeight: '700',
+    textAlign: 'center',
+  },
+  exampleEn: {
+    fontSize: 13,
     textAlign: 'center',
     marginTop: 4,
   },
