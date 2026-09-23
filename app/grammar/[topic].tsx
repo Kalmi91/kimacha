@@ -44,7 +44,7 @@ export default function GrammarLessonScreen() {
   const { topic: topicId } = useLocalSearchParams<{ topic: string }>();
 
   const [learnedLang, setLearnedLang] = useState('es');
-  const [contentLang, setContentLang] = useState('hu');
+  const [contentLang, setContentLang] = useState('en');
   const [level, setLevel] = useState<Level>('A1');
   const [lesson, setLesson] = useState<GrammarTopicData | null>(null);
   const [phase, setPhase] = useState<Phase>('lesson');
@@ -71,10 +71,11 @@ export default function GrammarLessonScreen() {
   const load = useCallback(async () => {
     const db = getDb();
     const onboarding = await db.getOnboarding();
-    const source = onboarding?.source ?? 'hu';
     const target = onboarding?.target ?? 'es';
     setLearnedLang(target);
-    setContentLang(source === 'hu' || source === 'es' || source === 'de' ? source : 'en');
+    // Kimacha Play: UI always English (Kálmán, 2026-09-22), regardless of the
+    // stored source language; the lesson data's hu/es/de fields stay unused.
+    setContentLang('en');
     const levelData = await db.getLevel();
     setLevel((levelData.level as Level) ?? 'A1');
     const loadedLesson = lessonFor(target, String(topicId)) ?? null;

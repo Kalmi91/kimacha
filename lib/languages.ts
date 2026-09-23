@@ -4,29 +4,17 @@ export interface Language {
   flag: string;
 }
 
+// Kimacha Play: single en-es pair (Kálmán, 2026-09-22). The other language
+// tracks (hu, de, fr, pt, sv) no longer have an onboarding entry point; their
+// data files stay in the repo (see AGENTS.md 2. lépés for what became
+// unreachable), just nothing routes a learner to them any more.
 export const languages: Language[] = [
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'hu', name: 'Magyar', flag: '🇭🇺' },
   { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'pt', name: 'Português', flag: '🇵🇹' },
-  { code: 'sv', name: 'Svenska', flag: '🇸🇪' },
+  { code: 'es', name: 'Español', flag: '🇪🇸' },
 ];
 
-// Issue #3: a párok listája KÉZI, nem kereszt-szorzat. A szorzat minden új
-// nyelvkódra nyolc új párt hirdetett meg magától, tartalom nélkül: aki ilyet
-// választott, üres kurzust kapott. Egy nyelv mostantól páronként kerül be,
-// akkor, amikor az adott irányhoz tényleg van szókészlet.
-//
-// A cél-nyelv mögötti tartalom: `es` a közös korpusz, `en` és `hu` a saját
-// ágán (`data/words/<lang>/`), `de` a közös korpusz `de` mezőin. Ha egy új
-// nyelv (pl. `sv`) belép, ide annyi sor kerül, ahány irányban kész a tartalom.
 export const supportedPairs: [string, string][] = [
-  ['es', 'hu'], ['es', 'en'], ['es', 'de'],
-  ['hu', 'es'], ['hu', 'en'], ['hu', 'de'],
-  ['en', 'es'], ['en', 'hu'], ['en', 'de'],
-  ['de', 'es'], ['de', 'hu'], ['de', 'en'],
+  ['en', 'es'],
 ];
 
 export function isPairSupported(source: string, target: string): boolean {

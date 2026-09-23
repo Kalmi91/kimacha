@@ -42,7 +42,7 @@ const flush = async (times = 3) => {
 describe('grammar course', () => {
   beforeEach(async () => {
     const db = getDb();
-    await db.setOnboarding('hu', 'es');
+    await db.setOnboarding('en', 'es');
     await db.updateLevel('A1', 0, 0, 0);
   });
 
@@ -51,7 +51,9 @@ describe('grammar course', () => {
     await flush(4);
 
     // The learner's own level is expanded, so its units and topics are visible.
-    expect(screen.queryByText('Jelen idő')).toBeTruthy();
+    // Kimacha Play: UI always English (Kálmán, 2026-09-22), regardless of the
+    // stored source language, so the unit title renders in English.
+    expect(screen.queryByText('The present tense')).toBeTruthy();
     expect(screen.queryByTestId('grammar-topic-presente-regular')).toBeTruthy();
 
     // Every level of the map is on screen as a header, including the ones above.
@@ -91,8 +93,9 @@ describe('grammar course', () => {
     const view = render(<GrammarLessonScreen />);
     await flush(4);
 
-    // The rule and worked examples come BEFORE any question.
-    expect(screen.queryByText(lesson.rule.hu!)).toBeTruthy();
+    // The rule and worked examples come BEFORE any question. Kimacha Play: UI
+    // always English (Kálmán, 2026-09-22), regardless of the stored source.
+    expect(screen.queryByText(lesson.rule.en!)).toBeTruthy();
     expect(screen.queryAllByTestId('grammar-option').length).toBe(0);
 
     fireEvent.press(screen.getByTestId('grammar-start-choice'));
