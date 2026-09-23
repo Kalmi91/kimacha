@@ -95,4 +95,24 @@ describe('PCIC fül: Learn kártya-felület (5b)', () => {
 
     expect(getByText('✓ Check')).toBeTruthy();
   });
+
+  // PLAN-play 12. lépés (s3, döntés a): a gomb csak Check után látszik, és a
+  // PCIC-azonosítóval kerül a pcic_spelling_list táblára.
+  it('Check után "Add to spelling" jelenik meg, megnyomva a listára kerül', async () => {
+    const { getByText, queryByText } = render(<PcicScreen />);
+    await flush();
+
+    expect(queryByText('✎ Add to spelling')).toBeNull();
+
+    fireEvent.press(getByText('✓ Check'));
+    await flush();
+
+    expect(getByText('✎ Add to spelling')).toBeTruthy();
+    fireEvent.press(getByText('✎ Add to spelling'));
+    await flush();
+
+    expect(queryByText('✎ Add to spelling')).toBeNull();
+    expect(getByText('✓ In spelling list')).toBeTruthy();
+    expect(await getDb().getPcicSpellingList()).toEqual([{ itemId: 'b1-x1', step: 0, due: expect.any(String) }]);
+  });
 });

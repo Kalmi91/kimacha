@@ -189,7 +189,11 @@ export default {
     noData: 'No usage yet, go learn something!',
     learningProgress: 'Learning Progress',
     reviewsToday: 'Reviews Today',
-    wordsMastered: 'Words Mastered',
+    // PLAN-play 12. lépés (s5): "known" = interval >= 21 nap, "graduated" =
+    // túljutott a tanuló-lépéseken (lib/pcicStats.ts).
+    known21: 'Known (21+ days)',
+    graduatedLabel: 'Learning → Graduated',
+    knownAtLevel: (level: string, known: number) => `${level} ${known}`,
     // FB100: how many words are put away for how long, and when they come back
     schedule: 'Schedule',
     scheduleDueNow: 'Waiting now',
@@ -226,6 +230,9 @@ export default {
     resetConfirmYes: 'Reset',
     undo: 'Undo',
     dontLearn: "Don't learn this",
+    // PLAN-play 12. lépés (s3): "Add to spelling" gomb Check után.
+    addToSpelling: '✎ Add to spelling',
+    inSpellingList: '✓ In spelling list',
     learningStep: (step: number, total: number) => `step ${step}/${total}`,
     newBadge: 'new',
     moreNew: (n: number) => `+${n} new words`,

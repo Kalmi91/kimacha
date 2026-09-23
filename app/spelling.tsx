@@ -7,6 +7,7 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb } from '@/lib/database';
 import { findWordById } from '@/data/words';
+import { findPcicItem } from '@/data/pcic';
 import { t } from '@/lib/i18n';
 import { charDiff, stripTrailingPunct } from '@/lib/charDiff';
 import { speechLang } from '@/lib/languages';
@@ -26,10 +27,10 @@ const spellingTargets = (target: string) => {
   return bare && bare !== target.trim() ? [target, bare] : [target];
 };
 
-interface QueueItem {
-  wordId: number;
-  step: number;
-}
+// PLAN-play 12. lépés (s3): a tréner két forrásból mereget, a régi word_id
+// alapú listából ÉS a PCIC-tételekéből (döntés a: mindkettő marad, egy sorba
+// keverve, a due dátum dönti el a sorrendet).
+type QueueItem = { source: 'word'; wordId: number; step: number } | { source: 'pcic'; itemId: string; step: number };
 
 export default function SpellingScreen() {
   const { theme } = useTheme();
@@ -55,12 +56,25 @@ export default function SpellingScreen() {
     const levelData = await db.getLevel();
     setLevel(levelData.level);
 
-    const list = await db.getSpellingList();
-    setTotalInList(list.length);
+    const wordList = await db.getSpellingList();
+    const pcicList = await db.getPcicSpellingList();
+    setTotalInList(wordList.length + pcicList.length);
     const now = new Date().toISOString();
-    const due = list.filter((row) => row.due <= now).sort((a, b) => a.due.localeCompare(b.due));
+    const dueWord = wordList
+      .filter((row) => row.due <= now)
+      .map((row) => ({ source: 'word' as const, wordId: row.wordId, step: row.step, due: row.due }));
+    const duePcic = pcicList
+      .filter((row) => row.due <= now)
+      .map((row) => ({ source: 'pcic' as const, itemId: row.itemId, step: row.step, due: row.due }));
+    const due = [...dueWord, ...duePcic].sort((a, b) => a.due.localeCompare(b.due));
 
-    setQueue(due.map((row) => ({ wordId: row.wordId, step: row.step })));
+    setQueue(
+      due.map((row) =>
+        row.source === 'word'
+          ? { source: 'word', wordId: row.wordId, step: row.step }
+          : { source: 'pcic', itemId: row.itemId, step: row.step }
+      )
+    );
     setCurrentIndex(0);
     setTypedAnswer('');
     setResult(null);
@@ -78,14 +92,19 @@ export default function SpellingScreen() {
   );
 
   const current = queue[currentIndex];
-  const currentWord = current ? findWordById(current.wordId, direction[1]) : undefined;
+  const currentWord = current?.source === 'word' ? findWordById(current.wordId, direction[1]) : undefined;
+  // PLAN-play 12. lépés: a PCIC tétel mindig en->es (data/pcic.ts), ami az
+  // onboardingból jövő `direction`-nal is egyezik (az app egyetlen párja en-es).
+  const currentPcicItem = current?.source === 'pcic' ? findPcicItem(current.itemId) : undefined;
+  const hasCurrent = !!current && (current.source === 'word' ? !!currentWord : !!currentPcicItem);
 
   const [native, learned] = direction;
-  const prompt = currentWord ? String(currentWord[native]) : '';
-  const target = currentWord ? String(currentWord[learned]).split(' / ')[0] : '';
+  const prompt = current?.source === 'pcic' ? (currentPcicItem?.en ?? '') : currentWord ? String(currentWord[native]) : '';
+  const target =
+    current?.source === 'pcic' ? (currentPcicItem?.es ?? '') : currentWord ? String(currentWord[learned]).split(' / ')[0] : '';
 
   const handleCheck = async () => {
-    if (!current || !currentWord) return;
+    if (!hasCurrent || !current) return;
     // BUG-003: an empty field is not a wrong answer (FB43/FB73 settled the same
     // for the typing card). Grading it here would reset the word's ladder step
     // to 0, so a stray tap on Check used to wipe the word's whole progress.
@@ -97,12 +116,14 @@ export default function SpellingScreen() {
     setResult(ok ? 'correct' : 'wrong');
 
     const db = getDb();
-    if (ok) {
-      const nextStep = current.step + 1;
-      const due = new Date(Date.now() + spellingLadderDays(current.step) * 86400000).toISOString();
+    const nextStep = ok ? current.step + 1 : 0;
+    const due = ok
+      ? new Date(Date.now() + spellingLadderDays(current.step) * 86400000).toISOString()
+      : new Date().toISOString();
+    if (current.source === 'word') {
       await db.updateSpellingStep(current.wordId, nextStep, due);
     } else {
-      await db.updateSpellingStep(current.wordId, 0, new Date().toISOString());
+      await db.updatePcicSpellingStep(current.itemId, nextStep, due);
     }
   };
 
@@ -127,7 +148,7 @@ export default function SpellingScreen() {
     );
   }
 
-  if (!current || !currentWord) {
+  if (!hasCurrent) {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         <Text style={[styles.title, { color: colors.text }]}>{s.spelling.title}</Text>
