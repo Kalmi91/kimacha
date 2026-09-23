@@ -76,6 +76,13 @@ köti be, itt csak a JS-oldali env-változó:
 EXPO_PUBLIC_PLAY_STORE=1 ./gradlew :app:bundleRelease -PplayStore=true --console=plain
 ```
 
+⚠️ **Metro-cache csapda:** a Metro gyorsítótára az env-változót nem kulcsolja, ezért egy
+korábbi Drive-bundle változatlanul visszajöhet (a 6. lépés próbáján `--clear` nélkül a két
+flavor ugyanazt a hash-t adta). Minden Play-bundle előtt: `rm -rf "${TMPDIR:-/tmp}"/metro-* node_modules/.cache`
++ az AGENTS.md Csapda 2 törlése (`android/app/build/generated/assets/react`,
+`android/app/build/intermediates/assets`). Utána kötelező ellenőrzés az AAB-n:
+`unzip -p app-release.aab base/assets/index.android.bundle | grep -c script.google.com` → 0.
+
 ## 2. A feltöltendő csomag
 
 ```
