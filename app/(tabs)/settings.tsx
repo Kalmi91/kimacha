@@ -7,10 +7,8 @@ import * as DocumentPicker from 'expo-document-picker';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
-import { LEVELS, type Level, getWordsForLevel } from '@/data/words';
-import { setPendingAction } from '@/lib/pendingAction';
+import { type Level } from '@/data/words';
 import { getDb } from '@/lib/database';
-import { difficultyPreset, presetValues, type DifficultyLevel } from '@/lib/difficultyPreset';
 import { validateBackupPayload } from '@/lib/backup';
 import {
   DEFAULT_WEEKLY_GOAL_MINUTES,
@@ -35,13 +33,6 @@ export default function SettingsScreen() {
   const colors = Colors[theme];
   const s = t();
   const router = useRouter();
-  const [masterVisible, setMasterVisible] = useState(false);
-  const [wordsOnly, setWordsOnly] = useState(false);
-  const [randomTopics, setRandomTopics] = useState(false);
-  // null until the DB says which course this is: defaulting to Spanish made the
-  // level picker show the Spanish word counts for a second or two after a cold
-  // start, so an es→hu learner saw 881 A1 words instead of 480.
-  const [target, setTarget] = useState<string | null>(null);
   const [level, setLevel] = useState<Level>('A0');
   const [direction, setDirection] = useState<[string, string]>(['es', 'hu']);
   // FB39: due count for the "Spelling Practice (N)" settings row, refreshed
@@ -83,15 +74,12 @@ export default function SettingsScreen() {
   useFocusEffect(
     useCallback(() => {
       const db = getDb();
-      db.getWordsOnly().then(setWordsOnly);
-      db.getRandomTopics().then(setRandomTopics);
       db.getStrictAccents().then(setStrictAccents);
       db.getWeeklyGoalMinutes().then(setWeeklyGoal);
       db.getUsageStats().then(u => setWeekMinutes(u.thisWeek));
       db.getDailyNewLimit().then(setDailyNewLimit);
       db.getOnboarding().then(async o => {
         if (!o) return;
-        setTarget(o.target);
         setDirection([o.source, o.target]);
         await loadVoices();
         setMissingVoices([o.source, o.target].filter(code => !hasVoiceFor(code)));
@@ -106,27 +94,12 @@ export default function SettingsScreen() {
     }, [])
   );
 
-  const handleWordsOnlyToggle = async (v: boolean) => {
-    setWordsOnly(v);
-    await getDb().setWordsOnly(v);
-    setPendingAction({ type: 'selectTopic' });
-    router.push('/');
-  };
-
-  const handleRandomTopicsToggle = async (v: boolean) => {
-    setRandomTopics(v);
-    await getDb().setRandomTopics(v);
-    setPendingAction({ type: 'selectTopic' });
-    router.push('/');
-  };
-
   // FB132: the Learn screen reads the flag when it builds a queue. Lives in the
   // Nehézség ablakban (UTEMEZO 8) most, ezért a reload csak az ablak bezárásakor
   // fut le (closeDifficultyModal), nem minden koppintásnál.
   const handleStrictAccentsToggle = async (v: boolean) => {
     setStrictAccents(v);
     await getDb().setStrictAccents(v);
-    setPendingAction({ type: 'selectTopic' });
   };
 
   // UTEMEZO 8/3.1: P, kézben lévő szavak, 1-10.
@@ -135,7 +108,6 @@ export default function SettingsScreen() {
     if (next === handCap) return;
     setHandCap(next);
     await getDb().setHandCap(next);
-    setPendingAction({ type: 'selectTopic' });
   };
 
   // UTEMEZO 8/4.2: R, visszatérési rés, 1-30 (± stepper és a régi FB198
@@ -145,7 +117,6 @@ export default function SettingsScreen() {
     if (next === gapLaps) return;
     setGapLaps(next);
     await getDb().setGapLaps(next);
-    setPendingAction({ type: 'selectTopic' });
   };
 
   // UTEMEZO 4.7: R_javítás, 1-10.
@@ -154,25 +125,11 @@ export default function SettingsScreen() {
     if (next === repairGap) return;
     setRepairGap(next);
     await getDb().setRepairGap(next);
-    setPendingAction({ type: 'selectTopic' });
   };
 
   const handleGapLapsPreset = async (v: number) => {
     setGapLaps(v);
     await getDb().setGapLaps(v);
-    setPendingAction({ type: 'selectTopic' });
-  };
-
-  // FB279, 2026-09-17: nehézség-tárcsa, a napi új szót és P-t (kézben) állítja
-  // együtt (lib/difficultyPreset.ts). A tárcsa csak ír: az aktuális fokozatot a
-  // difficultyPreset() számolja vissza a tárolt párból, nincs külön mentett érték.
-  const handleDifficultyPresetChange = async (level: DifficultyLevel) => {
-    const { dailyNew, hand } = presetValues(level);
-    setDailyNewLimit(dailyNew);
-    setHandCap(hand);
-    await getDb().setDailyNewLimit(dailyNew);
-    await getDb().setHandCap(hand);
-    setPendingAction({ type: 'selectTopic' });
   };
 
   // UTEMEZO 8: a Nehézség ablak bezárásakor egyszer töltjük újra a sort, nem
@@ -186,8 +143,6 @@ export default function SettingsScreen() {
   const handleArticlePickerToggle = async (v: boolean) => {
     setArticlePicker(v);
     await getDb().setArticlePicker(v);
-    setPendingAction({ type: 'selectTopic' });
-    router.push('/');
   };
 
   // FB144: the language's own name for the hint ("Magyar"), not its code.
@@ -217,7 +172,6 @@ export default function SettingsScreen() {
     if (next === dailyNewLimit) return;
     setDailyNewLimit(next);
     await getDb().setDailyNewLimit(next);
-    setPendingAction({ type: 'selectTopic' });
   };
 
   // UTEMEZO 8: a régi FB198 gyors-fokozatok, most az R-stepper alatti chipek.
@@ -227,35 +181,11 @@ export default function SettingsScreen() {
     { value: 25, label: s.settings.requeueHard },
   ];
 
-  // UTEMEZO 8/0: a nehézség-tárcsa 5 fokozata (FB279, 2026-09-17).
-  const difficultyLevels: { level: DifficultyLevel; label: string }[] = [
-    { level: 1, label: s.settings.difficultyVeryEasy },
-    { level: 2, label: s.settings.difficultyEasy },
-    { level: 3, label: s.settings.difficultyNormal },
-    { level: 4, label: s.settings.difficultyHard },
-    { level: 5, label: s.settings.difficultyVeryHard },
-  ];
-  const currentDifficultyLevel = difficultyPreset(dailyNewLimit, handCap);
-
   const themeOptions: { label: string; value: 'system' | 'light' | 'dark' }[] = [
     { label: '🔄 Auto', value: 'system' },
     { label: '☀️ Light', value: 'light' },
     { label: '🌙 Dark', value: 'dark' },
   ];
-
-  // Direct level switch — no exam gate (Master = free movement).
-  const handleLevelSwitch = (level: Level) => {
-    setMasterVisible(false);
-    setPendingAction({ type: 'setLevel', level });
-    router.navigate('/');
-  };
-
-  // Start the chosen level's exam directly; passing it levels up as usual.
-  const handleExamSelect = (level: Level) => {
-    setMasterVisible(false);
-    setPendingAction({ type: 'exam', examLevel: level });
-    router.navigate('/');
-  };
 
   // RN-web Alert is a no-op, so web falls back to the browser dialogs.
   const notify = (title: string, message?: string) => {
@@ -304,7 +234,6 @@ export default function SettingsScreen() {
       const doImport = async () => {
         try {
           await getDb().importAll(payload);
-          setPendingAction({ type: 'selectTopic' });
           notify(s.backup.doneTitle);
           router.navigate('/');
         } catch {
@@ -322,25 +251,6 @@ export default function SettingsScreen() {
     } catch {
       notify(s.backup.errorTitle, s.backup.importError);
     }
-  };
-
-  const handleRestart = () => {
-    setMasterVisible(false);
-    Alert.alert(
-      'Újrakezdés',
-      'Biztos újra akarod kezdeni? Eltűnik az eddigi haladásod.',
-      [
-        { text: 'Nem', style: 'cancel' },
-        {
-          text: 'Igen',
-          style: 'destructive',
-          onPress: () => {
-            setPendingAction({ type: 'restart' });
-            router.navigate('/');
-          },
-        },
-      ]
-    );
   };
 
   return (
@@ -369,28 +279,11 @@ export default function SettingsScreen() {
       </View>
 
       <Pressable
-        style={[styles.masterBtn, { backgroundColor: colors.tint }]}
-        onPress={() => setMasterVisible(true)}
-      >
-        <Text style={styles.masterBtnText}>🎓 {s.master.button}</Text>
-      </Pressable>
-
-      <Pressable
-        style={[styles.masterBtn, { backgroundColor: '#1D4ED8', marginTop: 12 }]}
+        style={[styles.masterBtn, { backgroundColor: '#1D4ED8' }]}
         onPress={() => router.replace('/onboarding')}
       >
         <Text style={styles.masterBtnText}>🌐 {s.settings.changeLanguage}</Text>
       </Pressable>
-
-      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.wordsOnly}</Text>
-        <Switch value={wordsOnly} onValueChange={handleWordsOnlyToggle} trackColor={{ true: colors.tint }} />
-      </View>
-
-      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.randomTopics}</Text>
-        <Switch value={randomTopics} onValueChange={handleRandomTopicsToggle} trackColor={{ true: colors.tint }} />
-      </View>
 
       {/* FB144: a course language with no installed voice, named so the fix
           (install it in the phone's text-to-speech settings) is obvious. */}
@@ -504,88 +397,12 @@ export default function SettingsScreen() {
       <Text style={[styles.versionText, { color: colors.tabIconDefault }]}>{appVersionLabel}</Text>
       </ScrollView>
 
-      <Modal visible={masterVisible} transparent animationType="fade">
-        <View style={styles.overlay}>
-          <View style={[styles.modal, { backgroundColor: colors.card }]}>
-            <Text style={[styles.modalTitle, { color: colors.text }]}>{s.master.title}</Text>
-
-            <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.master.levels}</Text>
-            <View style={styles.levelGrid}>
-              {LEVELS.map(lvl => {
-                const wordCount = target ? getWordsForLevel(lvl, target).length : null;
-                return (
-                  <Pressable
-                    key={lvl}
-                    style={[styles.levelOption, { backgroundColor: colors.tint }]}
-                    onPress={() => handleLevelSwitch(lvl)}
-                  >
-                    <Text style={styles.levelOptionText}>{lvl}</Text>
-                    <Text style={styles.levelWordCount}>{wordCount === null ? ' ' : s.master.wordCount(wordCount)}</Text>
-                  </Pressable>
-                );
-              })}
-            </View>
-
-            <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.master.exams}</Text>
-            <View style={styles.levelGrid}>
-              {LEVELS.map(lvl => (
-                <Pressable
-                  key={lvl}
-                  style={[styles.levelOption, styles.examOption]}
-                  onPress={() => handleExamSelect(lvl)}
-                >
-                  <Text style={styles.levelOptionText}>🎓 {lvl}</Text>
-                </Pressable>
-              ))}
-            </View>
-
-            <Pressable style={styles.restartBtn} onPress={handleRestart}>
-              <Text style={styles.restartText}>↺ {s.master.restart}</Text>
-            </Pressable>
-            <Pressable onPress={() => setMasterVisible(false)}>
-              <Text style={[styles.cancelText, { color: colors.tabIconDefault }]}>{s.feedback.cancel}</Text>
-            </Pressable>
-          </View>
-        </View>
-      </Modal>
-
       {/* UTEMEZO 8: a „Nehézség" ablak, P (kézben lévő szavak), R (visszatérési
           rés, a régi FB198 gyors-fokozatokkal) és az ékezet-szigor. */}
       <Modal visible={difficultyVisible} transparent animationType="fade">
         <View style={styles.overlay}>
           <View style={[styles.modal, { backgroundColor: colors.card }]}>
             <Text style={[styles.modalTitle, { color: colors.text }]}>{s.settings.difficulty}</Text>
-
-            {/* UTEMEZO 8/0: a tárcsa a napi új szót és P-t együtt állítja; ha a
-                pár nem egyezik egyik fokozattal sem, egyik chip sem aktív, és az
-                "egyéni" felirat jelzi, hogy a két szám külön lett beállítva. */}
-            <View style={{ flexDirection: 'row', gap: 6, marginBottom: 4 }}>
-              {difficultyLevels.map(({ level, label }) => {
-                const active = currentDifficultyLevel === level;
-                return (
-                  <Pressable
-                    key={level}
-                    onPress={() => handleDifficultyPresetChange(level)}
-                    style={{
-                      flex: 1,
-                      paddingVertical: 8,
-                      borderRadius: 10,
-                      alignItems: 'center',
-                      backgroundColor: active ? colors.tint : colors.background,
-                    }}
-                  >
-                    <Text style={{ fontSize: 10, fontWeight: '600', color: active ? colors.background : colors.text }}>
-                      {label}
-                    </Text>
-                  </Pressable>
-                );
-              })}
-            </View>
-            {currentDifficultyLevel === 'custom' && (
-              <Text style={[styles.sectionHint, { color: colors.tabIconDefault, marginBottom: 12 }]}>
-                {s.settings.difficultyCustom}
-              </Text>
-            )}
 
             <View style={styles.difficultyLabelBox}>
               <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.handCap}</Text>
@@ -736,51 +553,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textAlign: 'center',
     marginBottom: 20,
-  },
-  levelGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 10,
-    justifyContent: 'center',
-    marginBottom: 20,
-  },
-  levelOption: {
-    width: 90,
-    paddingVertical: 14,
-    borderRadius: 12,
-    alignItems: 'center',
-  },
-  levelOptionText: {
-    color: '#FFF',
-    fontSize: 18,
-    fontWeight: '800',
-  },
-  levelWordCount: {
-    color: 'rgba(255,255,255,0.7)',
-    fontSize: 11,
-    marginTop: 2,
-  },
-  sectionLabel: {
-    fontSize: 13,
-    fontWeight: '600',
-    textTransform: 'uppercase',
-    letterSpacing: 0.5,
-    marginBottom: 8,
-  },
-  examOption: {
-    backgroundColor: '#1D4ED8',
-    paddingVertical: 10,
-  },
-  restartBtn: {
-    alignSelf: 'center',
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    marginBottom: 8,
-  },
-  restartText: {
-    color: '#EF4444',
-    fontSize: 14,
-    fontWeight: '600',
   },
   cancelText: {
     textAlign: 'center',

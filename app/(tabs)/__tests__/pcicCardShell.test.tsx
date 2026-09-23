@@ -35,7 +35,7 @@ import { act, fireEvent, render } from '@testing-library/react-native';
 import { TextInput } from 'react-native';
 
 import { getDb } from '@/lib/database';
-import PcicScreen from '../pcic';
+import PcicScreen from '../index';
 
 const flush = async (times = 4) => {
   for (let i = 0; i < times; i++) {

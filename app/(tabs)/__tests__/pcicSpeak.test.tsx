@@ -34,7 +34,7 @@ import { TextInput } from 'react-native';
 
 import { getDb } from '@/lib/database';
 import { speak } from '@/lib/speech';
-import PcicScreen from '../pcic';
+import PcicScreen from '../index';
 
 const mockSpeak = speak as jest.Mock;
 
