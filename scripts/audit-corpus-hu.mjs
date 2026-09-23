@@ -228,49 +228,12 @@ for (const lvl of LEVELS) {
 }
 
 // ---------------------------------------------------------------------------
-// Exam audit, data/exams/hu/*.json (gap questions), same rule as the en gate:
-// question sentence + CORRECT option only; wrong options are exempt.
-// ---------------------------------------------------------------------------
-
-function loadExam(level) {
-  const p = join(ROOT, `data/exams/hu/${level.toLowerCase()}.json`);
-  if (!existsSync(p)) return [];
-  return JSON.parse(readFileSync(p, 'utf8'));
-}
-
-const examByLevel = {};
-for (const lvl of LEVELS) examByLevel[lvl] = loadExam(lvl);
-
-const p1ExamIssues = [];
-
-for (const lvl of LEVELS) {
-  const taught = cumulativeTaught(lvl);
-  for (const q of examByLevel[lvl]) {
-    if (q.type !== 'gap') continue;
-    const correct = q.options?.[q.correctIndex] ?? '';
-    const missing = [];
-    // Fill the blank before tokenizing: a suffix question ("az asztal____" +
-    // "on") only makes sense as the finished word, not as two fragments.
-    const filled = String(q.sentence ?? '').includes('____')
-      ? String(q.sentence).replace('____', correct)
-      : `${q.sentence ?? ''} ${correct}`;
-    for (const tok of tokenizeHu(filled)) {
-      if (!tokenTaught(tok, taught)) missing.push(tok);
-    }
-    if (missing.length > 0) {
-      p1ExamIssues.push({ id: q.id, level: lvl, sentence: q.sentence, correct, missing });
-    }
-  }
-}
-
-// ---------------------------------------------------------------------------
 // Report
 // ---------------------------------------------------------------------------
 
 let report = `# Hungarian-track Corpus Audit\n\nGenerated: ${new Date().toISOString()}\n\n## Summary\n\n`;
-for (const lvl of LEVELS) report += `- ${lvl} cards: ${cardsByLevel[lvl].length}, exam questions: ${examByLevel[lvl].length}\n`;
-report += `- P1 issues (untaught token in sentence_hu): **${p1Issues.length}**\n`;
-report += `- P1 exam issues (untaught token in question sentence/correct option): **${p1ExamIssues.length}**\n\n`;
+for (const lvl of LEVELS) report += `- ${lvl} cards: ${cardsByLevel[lvl].length}\n`;
+report += `- P1 issues (untaught token in sentence_hu): **${p1Issues.length}**\n\n`;
 report += `## P1 Issues\n\n`;
 if (p1Issues.length === 0) {
   report += `None, every sentence_hu uses only taught Hungarian vocabulary.\n`;
@@ -279,19 +242,10 @@ if (p1Issues.length === 0) {
     report += `- **Card ${it.id}** (${it.level}, \`${it.topic}\`)\n  - \`${it.sentence_hu}\`\n  - Missing: ${it.missing.map((t) => `\`${t}\``).join(', ')}\n`;
   }
 }
-report += `\n## P1 Exam Issues\n\n`;
-if (p1ExamIssues.length === 0) {
-  report += `None, every exam sentence + correct option uses only taught Hungarian vocabulary.\n`;
-} else {
-  for (const it of p1ExamIssues) {
-    report += `- **Question ${it.id}** (${it.level})\n  - \`${it.sentence}\` (correct: \`${it.correct}\`)\n  - Missing: ${it.missing.map((t) => `\`${t}\``).join(', ')}\n`;
-  }
-}
 writeFileSync(join(ROOT, 'scripts/audit-report-hu.md'), report, 'utf8');
 
 console.log('Hungarian-track audit complete.');
-for (const lvl of LEVELS) console.log(`  ${lvl} cards: ${cardsByLevel[lvl].length}, exam questions: ${examByLevel[lvl].length}`);
+for (const lvl of LEVELS) console.log(`  ${lvl} cards: ${cardsByLevel[lvl].length}`);
 console.log(`P1 (untaught): ${p1Issues.length}`);
-console.log(`P1 exam (untaught): ${p1ExamIssues.length}`);
 console.log('Report: scripts/audit-report-hu.md');
-process.exit(p1Issues.length + p1ExamIssues.length > 0 ? 1 : 0);
+process.exit(p1Issues.length > 0 ? 1 : 0);

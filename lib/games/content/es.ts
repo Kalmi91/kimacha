@@ -10,27 +10,10 @@
 // a `content.ts` felé, csak fordításidejű hivatkozás.
 
 import type {
-  CcatWordPairItem,
-  CcatWordProblemItem,
-  ChatData,
-  ConfusablesSet,
   GrammarTopicData,
   LanguageContentBundle,
-  MythItem,
-  StoryData,
 } from '../content';
 
-import storyEsElMercado from '@/data/games/stories/es/el-mercado.json';
-import storyEsElMetro from '@/data/games/stories/es/el-metro.json';
-import storyEsElCollarDesaparecido from '@/data/games/stories/es/el-collar-desaparecido.json';
-import storyEsLaLlamadaDeMedianoche from '@/data/games/stories/es/la-llamada-de-medianoche.json';
-import storyEsElRobotPerdido from '@/data/games/stories/es/el-robot-perdido.json';
-import storyEsElMensajeDelEspacio from '@/data/games/stories/es/el-mensaje-del-espacio.json';
-import chatEsCocheUsado from '@/data/games/chats/es/coche-usado.json';
-import chatEsAlquilerCdmx from '@/data/games/chats/es/alquiler-cdmx.json';
-import chatEsAlimentacionSaludable from '@/data/games/chats/es/alimentacion-saludable.json';
-import chatEsConsejoCarrera from '@/data/games/chats/es/consejo-carrera.json';
-import chatEsWhatsappSospechoso from '@/data/games/chats/es/whatsapp-sospechoso.json';
 import grammarEsSerEstar from '@/data/games/grammar/es/ser-estar.json';
 import grammarEsArticulosGenero from '@/data/games/grammar/es/articulos-genero.json';
 import grammarEsPorPara from '@/data/games/grammar/es/por-para.json';
@@ -74,47 +57,12 @@ import grammarEsDemostrativos from '@/data/games/grammar/es/demostrativos.json';
 import grammarEsInterrogativos from '@/data/games/grammar/es/interrogativos.json';
 import grammarEsNegacion from '@/data/games/grammar/es/negacion.json';
 import grammarEsImperativoAfirmativo from '@/data/games/grammar/es/imperativo-afirmativo.json';
-import confusablesEsSueldo from '@/data/games/confusables/es/sueldo-suelo-suelto.json';
-import confusablesEsPero from '@/data/games/confusables/es/pero-perro.json';
-import confusablesEsCaro from '@/data/games/confusables/es/caro-carro.json';
-import confusablesEsCasa from '@/data/games/confusables/es/casa-caza.json';
-import confusablesEsCocer from '@/data/games/confusables/es/cocer-coser.json';
-import confusablesEsVes from '@/data/games/confusables/es/ves-vez.json';
-import confusablesEsEcho from '@/data/games/confusables/es/echo-hecho.json';
-import confusablesEsPimienta from '@/data/games/confusables/es/pimienta-pimiento.json';
-import confusablesEsSaber from '@/data/games/confusables/es/saber-conocer.json';
-import confusablesEsPedir from '@/data/games/confusables/es/pedir-preguntar.json';
-import confusablesEsLlevar from '@/data/games/confusables/es/llevar-traer.json';
-import confusablesEsIr from '@/data/games/confusables/es/ir-venir.json';
-import confusablesEsSerEstar from '@/data/games/confusables/es/ser-estar.json';
-import confusablesEsHay from '@/data/games/confusables/es/hay-esta.json';
-import confusablesEsVaso from '@/data/games/confusables/es/vaso-copa-taza.json';
-import confusablesEsMirar from '@/data/games/confusables/es/mirar-ver.json';
-import confusablesEsQuedar from '@/data/games/confusables/es/quedar-quedarse.json';
-import confusablesEsCoger from '@/data/games/confusables/es/coger-agarrar.json';
-import confusablesEsAhorita from '@/data/games/confusables/es/ahorita-ahora-ya.json';
-import confusablesEsMande from '@/data/games/confusables/es/mande-que.json';
-import confusablesEsGuey from '@/data/games/confusables/es/guey-cuate-compa.json';
-import confusablesEsChingon from '@/data/games/confusables/es/chingon-chido-padre.json';
-import confusablesEsPlaticar from '@/data/games/confusables/es/platicar-hablar.json';
-import confusablesEsRegional from '@/data/games/confusables/es/mx-regional-synonyms.json';
-import mythsEsCommon from '@/data/games/myths/es/common.json';
-import mythsEsBody from '@/data/games/myths/es/body.json';
-import mythsEsMexico from '@/data/games/myths/es/mexico.json';
-import mythsEsLanguage from '@/data/games/myths/es/language.json';
-import ccatEsAntonyms from '@/data/games/ccat/es/antonyms.json';
-import ccatEsSynonyms from '@/data/games/ccat/es/synonyms.json';
-import ccatEsWordProblems from '@/data/games/ccat/es/word-problems.json';
 
+// K33 (play-vágás, 2026-09-22): a Játék/Átbeszélő fülek és a hozzájuk tartozó
+// data/games/{ccat,myths,chats,stories,confusables} mappák kikerültek. A
+// 7. lépés (2026-09-23) a `LanguageContentBundle` mezőit is levágta erre az
+// egyre: stories/chats/confusables/myths/ccat* kikerült, grammarTopics maradt.
 export const esContent: LanguageContentBundle = {
-  stories: [
-    storyEsElMercado, storyEsElMetro, storyEsElCollarDesaparecido,
-    storyEsLaLlamadaDeMedianoche, storyEsElRobotPerdido, storyEsElMensajeDelEspacio,
-  ] as unknown as StoryData[],
-  chats: [
-    chatEsCocheUsado, chatEsAlquilerCdmx, chatEsAlimentacionSaludable,
-    chatEsConsejoCarrera, chatEsWhatsappSospechoso,
-  ] as unknown as ChatData[],
     // The JSON's per-item literal shape (each `wrong` only has the one key that
     // item actually needs) is narrower than GrammarWrongExplanation's index
     // signature, so a direct `as` doesn't overlap; `unknown` first is the
@@ -170,16 +118,4 @@ export const esContent: LanguageContentBundle = {
     grammarEsFinalesCausales,
     grammarEsMarcadoresDiscursivos,
   ] as unknown as GrammarTopicData[],
-  confusables: [
-    confusablesEsSueldo, confusablesEsPero, confusablesEsCaro, confusablesEsCasa,
-    confusablesEsCocer, confusablesEsVes, confusablesEsEcho, confusablesEsPimienta,
-    confusablesEsSaber, confusablesEsPedir, confusablesEsLlevar, confusablesEsIr,
-    confusablesEsSerEstar, confusablesEsHay, confusablesEsVaso, confusablesEsMirar,
-    confusablesEsQuedar, confusablesEsCoger, confusablesEsAhorita, confusablesEsMande,
-    confusablesEsGuey, confusablesEsChingon, confusablesEsPlaticar, confusablesEsRegional,
-  ] as ConfusablesSet[],
-  myths: [...mythsEsCommon, ...mythsEsBody, ...mythsEsMexico, ...mythsEsLanguage] as MythItem[],
-  ccatAntonyms: ccatEsAntonyms as CcatWordPairItem[],
-  ccatSynonyms: ccatEsSynonyms as CcatWordPairItem[],
-  ccatWordProblems: ccatEsWordProblems as CcatWordProblemItem[],
 };

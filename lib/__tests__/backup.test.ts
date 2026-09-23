@@ -1,4 +1,3 @@
-import { createEmptyCard } from 'ts-fsrs';
 import { getDb } from '../database.web';
 import { BACKUP_SCHEMA_VERSION, BACKUP_TABLES, validateBackupPayload } from '../backup';
 
@@ -7,47 +6,100 @@ describe('backup export/import round-trip (memory db)', () => {
 
   it('exports every table and restores an identical state', async () => {
     await db.setOnboarding('hu', 'en');
-    await db.ensureCard(5001, 'word');
-    const card = createEmptyCard();
-    card.reps = 3;
-    await db.updateCard(5001, 'word', card);
-    await db.recordAttempt(5001, 'word', true, 1200);
-    await db.updateLevel('A1', 2, 0, 0);
-    await db.setWordsOnly(true);
-    await db.setRandomTopics(true);
+    // Play-vágás 7. lépés: the cards/card_attempts/user_level writers
+    // (ensureCard, updateCard, recordAttempt, updateLevel) are gone, no
+    // app-code caller; __setLevelForTest replaces updateLevel for fixtures.
+    (db as any).__setLevelForTest('A1');
     await db.setFeedbackBtnSide('left');
-    await db.setSelectedTopic('to_be');
     await db.addToSpellingList(5001);
-    await db.updateStreak();
+    await db.setGameProgress('grammar', 'ser-estar:done', 'done', { correct: 3, total: 3 });
 
     const payload = await db.exportAll();
     expect(payload.schemaVersion).toBe(BACKUP_SCHEMA_VERSION);
     for (const table of BACKUP_TABLES) {
       expect(Array.isArray(payload.tables[table])).toBe(true);
     }
-    expect(payload.tables.cards).toHaveLength(1);
     expect(payload.tables.onboarding[0]).toMatchObject({ source: 'hu', target: 'en' });
     expect(payload.tables.spelling_list).toHaveLength(1);
+    expect(payload.tables.game_progress).toHaveLength(1);
 
     // Wreck the state, then restore from the payload.
-    await db.resetAllProgress();
-    await db.setSelectedTopic(null);
-    await db.setWordsOnly(false);
     await db.setOnboarding('hu', 'es');
 
     await db.importAll(payload);
     const roundTrip = await db.exportAll();
-    expect(roundTrip.tables).toEqual(payload.tables);
+    // Play-vágás 7. lépés: restore forces the active pair to the single
+    // supported one (en-es), so the onboarding row differs from the backup's
+    // own hu-en; every other table round-trips byte for byte.
+    expect(roundTrip.tables).toEqual({ ...payload.tables, onboarding: [{ id: 1, source: 'en', target: 'es' }] });
+    expect(await db.getOnboarding()).toEqual({ source: 'en', target: 'es' });
 
-    // And the restored state behaves like the original through the public API.
-    expect(await db.getOnboarding()).toEqual({ source: 'hu', target: 'en' });
+    // The hu-en rows themselves are untouched, just no longer active: switching
+    // back to that pair (not a restore, just a normal pair switch) reaches them.
+    await db.setOnboarding('hu', 'en');
     expect((await db.getLevel()).level).toBe('A1');
-    expect(await db.getWordsOnly()).toBe(true);
-    expect(await db.getRandomTopics()).toBe(true);
     expect(await db.getFeedbackBtnSide()).toBe('left');
-    expect(await db.getSelectedTopic()).toBe('to_be');
-    expect(await db.isInSpellingList(5001)).toBe(true);
-    expect((await db.getWordReps([5001])).get(5001)).toBe(3);
+    expect(await db.getSpellingList()).toEqual([{ wordId: 5001, step: 0, due: expect.any(String) }]);
+  });
+
+  // Play-vágás 7. lépés: game_scores/game_settings/selected_topic lost their
+  // last DB method this step (no app-code caller); an older backup (e.g.
+  // 4.0.25) can still carry them, and a restore must accept and skip them.
+  it('accepts and restores an older backup that still carries legacy tables', async () => {
+    // Own pair, so this test's state can't collide with the one above (the
+    // singleton memory db is shared across tests in this file).
+    await db.setOnboarding('pt', 'es');
+    await db.addToSpellingList(7001);
+    const payload = await db.exportAll();
+    const legacyPayload = {
+      ...payload,
+      tables: {
+        ...payload.tables,
+        game_scores: [{ pair: 'pt-es', game_id: 'word-rain', best_score: 900, best_at: 'x', plays: 3, last_played: 'x' }],
+        game_settings: [{ pair: 'pt-es', game_id: 'bubble-pop', settings_json: '{}' }],
+        selected_topic: [{ pair: 'pt-es', topic_id: 'to_be' }],
+      },
+    };
+
+    expect(() => validateBackupPayload(legacyPayload)).not.toThrow();
+
+    await db.importAll(legacyPayload as any);
+    // Play-vágás 7. lépés: restore forces the active pair to en-es; the pt-es
+    // row is still there and reachable once that pair is active again.
+    expect(await db.getOnboarding()).toEqual({ source: 'en', target: 'es' });
+    await db.setOnboarding('pt', 'es');
+    expect(await db.getSpellingList()).toEqual([{ wordId: 7001, step: 0, due: expect.any(String) }]);
+  });
+
+  // PLAN-play 12. lépés: the opposite direction of the legacy-table test above,
+  // an OLDER backup taken before pcic_spelling_list existed has no key for it
+  // at all (not even an empty array); restoring it must not throw, and the
+  // PCIC spelling list should come back empty rather than crash the restore.
+  it('accepts and restores an older backup that predates pcic_spelling_list', async () => {
+    await db.setOnboarding('de', 'es');
+    await db.addToSpellingList(8001);
+    const payload = await db.exportAll();
+    const olderPayload = { ...payload, tables: { ...payload.tables } };
+    delete (olderPayload.tables as any).pcic_spelling_list;
+
+    expect(() => validateBackupPayload(olderPayload)).not.toThrow();
+
+    await db.importAll(olderPayload as any);
+    expect(await db.getPcicSpellingList()).toEqual([]);
+    await db.setOnboarding('de', 'es');
+    expect(await db.getSpellingList()).toEqual([{ wordId: 8001, step: 0, due: expect.any(String) }]);
+  });
+
+  // Play-vágás 7. lépés (2026-09-23): the exact scenario the step's own
+  // acceptance check names, an older-schema backup whose onboarding/active
+  // pair is hu-es restores onto en-es, not onto the pair it was saved with.
+  it('forces the active pair to en-es when the backup carries an older pair', async () => {
+    await db.setOnboarding('hu', 'es');
+    const payload = await db.exportAll();
+    expect(payload.tables.onboarding[0]).toMatchObject({ source: 'hu', target: 'es' });
+
+    await db.importAll(payload);
+    expect(await db.getOnboarding()).toEqual({ source: 'en', target: 'es' });
   });
 });
 
@@ -81,5 +133,48 @@ describe('validateBackupPayload', () => {
       tables: emptyTables(),
     });
     expect(payload.schemaVersion).toBe(BACKUP_SCHEMA_VERSION);
+  });
+
+  it('accepts a real exported payload (round-trip with exportAll rows)', async () => {
+    const db = getDb();
+    await db.setOnboarding('en', 'es');
+    const payload = await db.exportAll();
+    expect(() => validateBackupPayload(payload)).not.toThrow();
+  });
+
+  it('rejects a foreign JSON file (no backup fields at all)', () => {
+    expect(() => validateBackupPayload({ hello: 'world' })).toThrow();
+  });
+
+  it('rejects an unknown table', () => {
+    const tables = emptyTables();
+    tables.not_a_real_table = [];
+    expect(() =>
+      validateBackupPayload({ schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: 'x', appVersion: 'y', tables })
+    ).toThrow(/unknown table/);
+  });
+
+  it('rejects a wrong-type field (string where a number belongs)', () => {
+    const tables = emptyTables();
+    tables.cards = [{ id: 1, word_id: 5001, type: 'word', pair: 'en-es', due: 'x', stability: 'not-a-number' }];
+    expect(() =>
+      validateBackupPayload({ schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: 'x', appVersion: 'y', tables })
+    ).toThrow(/wrong-type/);
+  });
+
+  it('rejects a wrong-type field (number where a string belongs)', () => {
+    const tables = emptyTables();
+    tables.onboarding = [{ id: 1, source: 'en', target: 42 }];
+    expect(() =>
+      validateBackupPayload({ schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: 'x', appVersion: 'y', tables })
+    ).toThrow(/wrong-type/);
+  });
+
+  it('rejects null in a non-nullable field', () => {
+    const tables = emptyTables();
+    tables.streak = [{ id: 1, current_count: null, last_date: null, longest_count: 0 }];
+    expect(() =>
+      validateBackupPayload({ schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: 'x', appVersion: 'y', tables })
+    ).toThrow(/wrong-type/);
   });
 });

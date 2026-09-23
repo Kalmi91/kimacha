@@ -2,7 +2,7 @@
   "expo": {
     "name": "Kimacha",
     "slug": "kimacha",
-    "version": "4.0.25",
+    "version": "4.0.26",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "kimacha",
@@ -12,7 +12,7 @@
     },
     "android": {
       "package": "com.kimachaapp.kimacha",
-      "versionCode": 75,
+      "versionCode": 76,
       "softwareKeyboardLayoutMode": "pan",
       "adaptiveIcon": {
         "backgroundColor": "#0F172A",
@@ -39,14 +39,7 @@
       ],
       "expo-localization",
       "expo-sqlite",
-      "expo-sharing",
-      [
-        "expo-speech-recognition",
-        {
-          "microphonePermission": "A Kimacha a mikrofont a nyelvvizsga szóbeli részéhez használja: leírja, amit mondasz, és az alapján pontoz.",
-          "speechRecognitionPermission": "A Kimacha a beszédfelismerést a nyelvvizsga szóbeli részéhez használja."
-        }
-      ]
+      "expo-sharing"
     ],
     "experiments": {
       "typedRoutes": true

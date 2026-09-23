@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Pressable, TextInput, Modal, PanResponder, Dimensions, Keyboard } from 'react-native';
+import { StyleSheet, Text, View, Pressable, TextInput, Modal, PanResponder, Dimensions, Keyboard, Share } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { feedbackBuildTag } from '@/lib/appBuild';
-
-const ENDPOINT = 'https://script.google.com/macros/s/AKfycbz2ziRYVpdLcQO1fI10CpbAO7l3bqUFZMxfwBTNxVsc19tRAfE8mGAg01JJscB2fRt6/exec';
+import { IS_PLAY_BUILD, FEEDBACK_URL } from '@/lib/buildFlavor';
 
 interface Props {
   level: string;
@@ -64,18 +63,27 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
     // prefixed to `currentCard` so it shows up in the CURRENT sheet, whose
     // script only writes the five existing columns.
     const build = feedbackBuildTag();
-    const params = new URLSearchParams({
-      timestamp: new Date().toISOString(),
-      level,
-      languagePair,
-      currentCard: `${build} · ${currentCard}`,
-      feedbackText: text.trim(),
-      appVersion: build,
-    });
 
-    try {
-      await fetch(`${ENDPOINT}?${params.toString()}`);
-    } catch {}
+    if (IS_PLAY_BUILD) {
+      // Play-vágás: no server call (lib/buildFlavor.ts); the learner's own
+      // share sheet sends the text wherever they pick (most often e-mail).
+      try {
+        await Share.share({ message: `${build} · ${currentCard}\n\n${text.trim()}` });
+      } catch {}
+    } else {
+      const params = new URLSearchParams({
+        timestamp: new Date().toISOString(),
+        level,
+        languagePair,
+        currentCard: `${build} · ${currentCard}`,
+        feedbackText: text.trim(),
+        appVersion: build,
+      });
+
+      try {
+        await fetch(`${FEEDBACK_URL}?${params.toString()}`);
+      } catch {}
+    }
 
     setSending(false);
     setText('');

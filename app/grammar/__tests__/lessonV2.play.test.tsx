@@ -41,8 +41,8 @@ describe('grammar course, V2 pilot lesson (ser-estar)', () => {
   beforeEach(async () => {
     jest.clearAllMocks();
     const db = getDb();
-    await db.setOnboarding('hu', 'es');
-    await db.updateLevel('A1', 0, 0, 0);
+    await db.setOnboarding('en', 'es');
+    (db as any).__setLevelForTest('A1');
   });
 
   it('renders the body blocks (a lesson table) instead of rule/more prose', async () => {

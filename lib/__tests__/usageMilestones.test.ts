@@ -1,8 +1,6 @@
 import { isDailyMilestone, isLongHaulMilestone, pickMilestoneLine } from '@/lib/usageMilestones';
-import hu from '@/lib/i18n/hu';
 import en from '@/lib/i18n/en';
 import es from '@/lib/i18n/es';
-import de from '@/lib/i18n/de';
 
 // FB149, Kálmán 2026-08-20: "1 óra után 15 percenként gratuláljon az app és.
 // indig más szöveggel."
@@ -28,7 +26,10 @@ describe('daily usage milestones', () => {
 });
 
 describe('long-haul milestone lines', () => {
-  const pools = { hu: hu.usage.milestoneLong, en: en.usage.milestoneLong, es: es.usage.milestoneLong, de: de.usage.milestoneLong };
+  // Kimacha Play: single en-es pair (Kálmán, 2026-09-22), UI always English.
+  // `en` is the full pool (the "+1 minute" pill and any UI text); `es` is the
+  // usage-toast subset the learner actually hears (FB63, always Spanish).
+  const pools = { en: en.usage.milestoneLong, es: es.usage.milestoneLong };
 
   it('every language has a pool, and no line is left with a placeholder', () => {
     for (const [lang, pool] of Object.entries(pools)) {
