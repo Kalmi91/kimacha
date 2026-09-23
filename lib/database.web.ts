@@ -3,7 +3,7 @@ import { pickSurvivor } from './cardMerge';
 import { FORCED_PAIR, needsPairCorrection } from './languages';
 import { WORD_MERGES } from './wordMerges';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
-import type { Sm2Card } from './sm2';
+import { addDays, type Sm2Card } from './sm2';
 import type { PcicLevel } from '@/data/pcic';
 
 export interface DB {
@@ -14,14 +14,19 @@ export interface DB {
   claimDailyGreeting(): Promise<boolean>;
   getStatusBarTint(): Promise<number>;
   setStatusBarTint(index: number): Promise<void>;
-  getTodayStats(): Promise<{ totalReviews: number; correctCount: number; avgResponseMs: number; flashcardCount: number; typingCount: number; wordCount: number; sentenceCount: number }>;
-  getMasteredCount(): Promise<number>;
-  getReviewedWordCount(level: string): Promise<number>;
-  getScheduledWordDueDates(): Promise<string[]>;
+  // PLAN-play 12. lépés: napi streak-írás visszakerült, a PCIC-értékelés hívja.
+  updateStreak(): Promise<void>;
   addToSpellingList(wordId: number): Promise<void>;
   getSpellingList(): Promise<{ wordId: number; step: number; due: string }[]>;
   getSpellingDueCount(): Promise<number>;
+  getSpellingListCount(): Promise<number>;
   updateSpellingStep(wordId: number, step: number, due: string): Promise<void>;
+  // PLAN-play 12. lépés (s3): PCIC-tétel a helyesírás-listán, string id-vel.
+  addToPcicSpellingList(itemId: string): Promise<void>;
+  getPcicSpellingList(): Promise<{ itemId: string; step: number; due: string }[]>;
+  getPcicSpellingDueCount(): Promise<number>;
+  getPcicSpellingListCount(): Promise<number>;
+  updatePcicSpellingStep(itemId: string, step: number, due: string): Promise<void>;
   getStrictAccents(): Promise<boolean>;
   setStrictAccents(v: boolean): Promise<void>;
   getArticlePicker(): Promise<boolean>;
@@ -57,6 +62,16 @@ class MemoryDB implements DB {
 
   async getStreak() {
     return { ...this.streak };
+  }
+
+  // PLAN-play 12. lépés: visszahozva, a PCIC-értékelés hívja (mirrors the
+  // native SQLiteDB.updateStreak).
+  async updateStreak() {
+    const today = localDateString();
+    if (this.streak.last_date === today) return;
+    const yesterday = addDays(today, -1);
+    const newCount = this.streak.last_date === yesterday ? this.streak.current_count + 1 : 1;
+    this.streak = { current_count: newCount, last_date: today, longest_count: Math.max(newCount, this.streak.longest_count) };
   }
 
   private onboarding: { source: string; target: string } | null = null;
@@ -102,30 +117,6 @@ class MemoryDB implements DB {
 
   async getStatusBarTint(): Promise<number> { return this.statusBarTint; }
   async setStatusBarTint(index: number): Promise<void> { this.statusBarTint = index; }
-  async getTodayStats() {
-    const today = new Date().toISOString().split('T')[0];
-    const todayAttempts = this.attempts.filter(a => a.timestamp >= `${today}T00:00:00`);
-    const total = todayAttempts.length;
-    const correct = todayAttempts.filter(a => a.correct).length;
-    const avgMs = total > 0 ? Math.round(todayAttempts.reduce((s, a) => s + a.response_time_ms, 0) / total) : 0;
-    return { totalReviews: total, correctCount: correct, avgResponseMs: avgMs, flashcardCount: 0, typingCount: 0, wordCount: todayAttempts.filter(a => a.type === 'word').length, sentenceCount: todayAttempts.filter(a => a.type === 'sentence').length };
-  }
-  async getMasteredCount() { return 0; }
-  async getReviewedWordCount(level: string) {
-    const { getWordsForLevel } = require('@/data/words');
-    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
-    const wordIds = new Set(levelWords.map((w: any) => w.id));
-    // UTEMEZO 1. szakasz: ugyanaz a szabály, mint a natív ágon.
-    return [...this.cards.values()].filter(c => wordIds.has(c.word_id) && c.type === 'word' && ((c.lap ?? 0) >= 3 || c.buried) && c.pair === this.activePair).length;
-  }
-
-  // FB100: see the native twin, due dates of the word cards still in rotation.
-  async getScheduledWordDueDates() {
-    return [...this.cards.values()]
-      .filter(c => c.type === 'word' && c.reps > 0 && !c.buried && c.pair === this.activePair)
-      .map(c => String(c.due));
-  }
-
   // FB39: spelling-practice list, per-pair map like the other pair-scoped state.
   // Web doesn't survive reload, known, fine (same limit as wordsOnlyMap etc).
   private spellingLists: Map<string, Map<number, { step: number; due: string }>> = new Map();
@@ -157,6 +148,31 @@ class MemoryDB implements DB {
 
   async updateSpellingStep(wordId: number, step: number, due: string) {
     this.spellingListFor(this.activePair).set(wordId, { step, due });
+  }
+
+  // PLAN-play 12. lépés (s3): PCIC-tétel a helyesírás-listán, nem pair-hez
+  // kötve (mint a pcic_cards map), item_id kulccsal.
+  private pcicSpellingList: Map<string, { step: number; due: string }> = new Map();
+
+  async addToPcicSpellingList(itemId: string) {
+    if (!this.pcicSpellingList.has(itemId)) this.pcicSpellingList.set(itemId, { step: 0, due: new Date().toISOString() });
+  }
+
+  async getPcicSpellingList() {
+    return [...this.pcicSpellingList.entries()].map(([itemId, v]) => ({ itemId, step: v.step, due: v.due }));
+  }
+
+  async getPcicSpellingDueCount() {
+    const now = new Date().toISOString();
+    return [...this.pcicSpellingList.values()].filter(v => v.due <= now).length;
+  }
+
+  async getPcicSpellingListCount() {
+    return this.pcicSpellingList.size;
+  }
+
+  async updatePcicSpellingStep(itemId: string, step: number, due: string) {
+    this.pcicSpellingList.set(itemId, { step, due });
   }
 
   // Play-vágás 7. lépés: getWordsOnly/setWordsOnly and getRandomTopics/
@@ -340,6 +356,11 @@ class MemoryDB implements DB {
         spelling_list.push({ pair, word_id: wordId, step: v.step, due: v.due });
       }
     }
+    const pcic_spelling_list = [...this.pcicSpellingList.entries()].map(([itemId, v]) => ({
+      item_id: itemId,
+      step: v.step,
+      due: v.due,
+    }));
     return {
       schemaVersion: BACKUP_SCHEMA_VERSION,
       exportedAt: new Date().toISOString(),
@@ -358,6 +379,7 @@ class MemoryDB implements DB {
         learn_settings,
         onboarding: this.onboarding ? [{ id: 1, ...this.onboarding }] : [],
         spelling_list,
+        pcic_spelling_list,
         streak: [{ id: 1, ...this.streak }],
         user_level: [...this.userLevels].map(([pair, l]) => ({ pair, ...l })),
         user_meta: [{ id: 1, user_id: this.meta.userId, first_use_date: this.meta.firstUseDate, last_sync_date: this.meta.lastSyncDate }],
@@ -409,6 +431,11 @@ class MemoryDB implements DB {
     for (const row of t.spelling_list) {
       this.spellingListFor(row.pair).set(row.word_id, { step: row.step, due: row.due });
     }
+    // Play-vágás 12. lépés: a régi mentések nem ismerik ezt a táblát, `?? []`
+    // az FB39-mintát követve visszatölthetővé teszi az új rész nélküli mentést.
+    this.pcicSpellingList = new Map(
+      (t.pcic_spelling_list ?? []).map((row: any) => [row.item_id, { step: row.step, due: row.due }])
+    );
     const st = t.streak[0];
     if (st) this.streak = { current_count: st.current_count, last_date: st.last_date, longest_count: st.longest_count };
     this.userLevels = new Map(t.user_level.map((r: any) => [r.pair, { level: r.level, correct_streak: r.correct_streak, mistakes_in_window: r.mistakes_in_window, fail_streak: r.fail_streak }]));
