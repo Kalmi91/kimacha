@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import { Animated, StyleSheet, Text } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t, stringsFor } from '@/lib/i18n';
@@ -26,10 +25,6 @@ const ANIM_MS = 250;
 export default function UsageToast() {
   const { theme } = useTheme();
   const colors = Colors[theme];
-  // FB-play: fixed top:56 sat under the header on every screen (PCIC chips row
-  // + card's NEW label got covered). Anchoring to the bottom, above the tab
-  // bar, clears every screen's header without needing to know its height.
-  const insets = useSafeAreaInsets();
   const [visible, setVisible] = useState(false);
   // The toast lives in the root layout, so it mounts BEFORE onboarding picks the
   // native language: reading t() once would freeze the pill in the device locale
@@ -40,9 +35,7 @@ export default function UsageToast() {
   // Lazy useState rather than useRef().current: the animated values must
   // survive re-renders, but reading a ref during render is not allowed.
   const [opacity] = useState(() => new Animated.Value(0));
-  // Bottom-anchored toast slides up into place, so the resting offset is
-  // positive (below final position), unlike the old top-anchored -16.
-  const [translateY] = useState(() => new Animated.Value(16));
+  const [translateY] = useState(() => new Animated.Value(-16));
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   // FB63: language being learned, for the milestone text. Read once on mount,
   // it only changes on the onboarding screen (before this toast can fire).
@@ -73,7 +66,7 @@ export default function UsageToast() {
       setIsMilestone(milestone);
       setVisible(true);
       opacity.setValue(0);
-      translateY.setValue(16);
+      translateY.setValue(-16);
       Animated.parallel([
         Animated.timing(opacity, { toValue: 1, duration: ANIM_MS, useNativeDriver: true }),
         Animated.timing(translateY, { toValue: 0, duration: ANIM_MS, useNativeDriver: true }),
@@ -81,7 +74,7 @@ export default function UsageToast() {
       hideTimer.current = setTimeout(() => {
         Animated.parallel([
           Animated.timing(opacity, { toValue: 0, duration: ANIM_MS, useNativeDriver: true }),
-          Animated.timing(translateY, { toValue: 16, duration: ANIM_MS, useNativeDriver: true }),
+          Animated.timing(translateY, { toValue: -16, duration: ANIM_MS, useNativeDriver: true }),
         ]).start(() => setVisible(false));
       }, visibleMs ?? (milestone ? MILESTONE_VISIBLE_MS : VISIBLE_MS));
     };
@@ -128,7 +121,7 @@ export default function UsageToast() {
       pointerEvents="none"
       style={[
         styles.pill,
-        { bottom: 110 + insets.bottom, backgroundColor: isMilestone ? '#22C55E' : colors.tint, opacity, transform: [{ translateY }] },
+        { backgroundColor: isMilestone ? '#22C55E' : colors.tint, opacity, transform: [{ translateY }] },
         isMilestone && styles.milestonePill,
       ]}
     >
@@ -140,6 +133,7 @@ export default function UsageToast() {
 const styles = StyleSheet.create({
   pill: {
     position: 'absolute',
+    top: 56,
     alignSelf: 'center',
     paddingHorizontal: 20,
     paddingVertical: 10,
