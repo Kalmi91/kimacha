@@ -5,11 +5,11 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
-import { getWordsForLevel, type Level } from '@/data/words';
 import { languages } from '@/lib/languages';
 import {
   weeklyGoalProgress,
   DEFAULT_WEEKLY_GOAL_MINUTES,
+  localDateString,
   type UsageStats,
 } from '@/lib/usageStats';
 import {
@@ -18,6 +18,10 @@ import {
   type SchedulePreview,
   type ScheduleBucketKey,
 } from '@/lib/schedulePreview';
+import { PCIC_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
+import { cardsForLevel } from '@/lib/pcicLevels';
+import { countKnown, countGraduated } from '@/lib/pcicStats';
+import { countDoneToday } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
 
 const EMPTY_SCHEDULE: SchedulePreview = { dueNow: 0, buckets: [], scheduled: 0, nextDue: null };
@@ -38,14 +42,20 @@ export default function StatsScreen() {
   const s = t();
   const [usage, setUsage] = useState<UsageStats>(EMPTY_STATS);
   const [streak, setStreak] = useState(0);
-  const [mastered, setMastered] = useState(0);
+  // PLAN-play 12. lépés (s5): "known" = interval >= 21 nap, globálisan (a 4
+  // PCIC szint összesítve); "graduated" = túljutott a tanuló-lépéseken
+  // (state 'review'), a küszöb alatt is (lib/pcicStats.ts).
+  const [known, setKnown] = useState(0);
+  const [graduated, setGraduated] = useState(0);
   const [reviewsToday, setReviewsToday] = useState(0);
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
   const [schedule, setSchedule] = useState<SchedulePreview>(EMPTY_SCHEDULE);
-  // UTEMEZO 6. szakasz: a fejlecbol ide koltozott know/total szint-halado.
-  const [level, setLevel] = useState<Level>('A0');
+  // PLAN-play 12. lépés: a régi FSRS-szint (A0-C2) helyett a PCIC-szint
+  // (A1-B2), amit a PCIC fül szint-választója állít.
+  const [pcicLevel, setPcicLevel] = useState<PcicLevel>('B1');
   const [levelKnown, setLevelKnown] = useState(0);
   const [levelTotal, setLevelTotal] = useState(0);
+  const [otherLevels, setOtherLevels] = useState<{ level: PcicLevel; known: number }[]>([]);
   const [targetLang, setTargetLang] = useState('es');
   const [sourceLang, setSourceLang] = useState('en');
   // FB254: a napi oszlop 60 perc fölött órában áll, koppintásra percre vált.
@@ -58,22 +68,29 @@ export default function StatsScreen() {
       const db = getDb();
       db.getUsageStats().then(setUsage);
       db.getStreak().then(r => setStreak(r.current_count));
-      db.getMasteredCount().then(setMastered);
-      db.getTodayStats().then(r => setReviewsToday(r.totalReviews));
       db.getWeeklyGoalMinutes().then(setWeeklyGoal);
-      // FB100: the schedule is read on focus like everything else here, so the
-      // buckets match the state the learner just left the session in.
-      db.getScheduledWordDueDates().then(dates => setSchedule(buildSchedulePreview(dates, new Date())));
-      // UTEMEZO 6. szakasz: a szint-halado, ugyanugy focus-on frissul.
-      db.getLevel().then(({ level: lvl }) => {
-        setLevel(lvl as Level);
-        db.getReviewedWordCount(lvl as Level).then(setLevelKnown);
-        db.getOnboarding().then(ob => {
-          const learned = ob?.target ?? 'es';
-          setTargetLang(learned);
-          setSourceLang(ob?.source ?? 'en');
-          setLevelTotal(getWordsForLevel(lvl as Level, learned).length);
-        });
+      db.getOnboarding().then(ob => {
+        setTargetLang(ob?.target ?? 'es');
+        setSourceLang(ob?.source ?? 'en');
+      });
+      // PLAN-play 12. lépés (s5): minden PCIC-számítás egyetlen getPcicCards()
+      // hívásból (mint a PCIC fülön), a szűrés/összegzés tiszta függvényekben.
+      db.getPcicLevel().then(async lvl => {
+        setPcicLevel(lvl);
+        const cards = await db.getPcicCards();
+        const today = localDateString();
+        setReviewsToday(countDoneToday(cards, today));
+        setKnown(countKnown(cards));
+        setGraduated(countGraduated(cards));
+        const selCards = cardsForLevel(cards, lvl);
+        setLevelKnown(countKnown(selCards));
+        setLevelTotal(pcicItemsForLevel(lvl).length);
+        setOtherLevels(PCIC_LEVELS.map(l => ({ level: l, known: countKnown(cardsForLevel(cards, l)) })));
+        // FB100 minta, PCIC-dátumokra: a bare 'YYYY-MM-DD' due-t helyi éjfélre
+        // egészíti ki, különben `new Date('YYYY-MM-DD')` UTC-éjfélt parseol, és
+        // negatív UTC-eltolású zónában (pl. CDMX) egy nappal korábbra csúszna.
+        const dueDates = selCards.filter(c => c.due).map(c => `${c.due}T00:00:00`);
+        setSchedule(buildSchedulePreview(dueDates, new Date()));
       });
     }, [])
   );
@@ -123,13 +140,13 @@ export default function StatsScreen() {
       <ScrollView style={styles.container} contentContainerStyle={styles.content}>
         <Text style={[styles.title, { color: colors.text }]}>{s.stats.title}</Text>
 
-      {/* UTEMEZO 6. szakasz: a fejlecbol ide koltozott know/total szint-halado, a
-          🌱 jelvenyt a fekete szam valtja a Tanulas fulon. */}
+      {/* PLAN-play 12. lépés (s5): a PCIC-szint jelvénye + known/total (interval
+          >= 21 nap), alatta a másik 3 PCIC-szint known-száma. */}
       <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.progress.wordsKnown}</Text>
       <View style={[styles.levelCard, { backgroundColor: colors.card }]}>
         <View style={styles.levelCardHead}>
           <View style={[styles.levelBadge, { backgroundColor: '#38BDF8' }]}>
-            <Text style={styles.levelBadgeText}>{level}</Text>
+            <Text style={styles.levelBadgeText}>{pcicLevel}</Text>
           </View>
           <Text style={[styles.levelCardValue, { color: colors.text }]}>
             {s.header.levelProgress(levelKnown, levelTotal)}
@@ -140,6 +157,9 @@ export default function StatsScreen() {
         <Text style={[styles.levelCardPair, { color: colors.tabIconDefault }]}>
           {sourceLangInfo?.flag ?? ''} {sourceLangInfo?.name ?? sourceLang} → {targetLangInfo?.flag ?? ''}{' '}
           {targetLangInfo?.name ?? targetLang}
+        </Text>
+        <Text style={[styles.levelCardOthers, { color: colors.tabIconDefault }]}>
+          {otherLevels.map(r => s.stats.knownAtLevel(r.level, r.known)).join('  ·  ')}
         </Text>
       </View>
 
@@ -238,11 +258,15 @@ export default function StatsScreen() {
           <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.done.streak}</Text>
         </View>
         <View style={[styles.tile, { backgroundColor: colors.card }]}>
-          <Text style={[styles.tileValue, { color: colors.accent }]}>{mastered}</Text>
-          <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.stats.wordsMastered}</Text>
+          <Text style={[styles.tileValue, { color: colors.accent }]}>{known}</Text>
+          <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.stats.known21}</Text>
         </View>
       </View>
       <View style={styles.tileRow}>
+        <View style={[styles.tile, { backgroundColor: colors.card }]}>
+          <Text style={[styles.tileValue, { color: colors.accent }]}>{graduated}</Text>
+          <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.stats.graduatedLabel}</Text>
+        </View>
         <View style={[styles.tile, { backgroundColor: colors.card }]}>
           <Text style={[styles.tileValue, { color: colors.accent }]}>{reviewsToday}</Text>
           <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.stats.reviewsToday}</Text>
@@ -354,6 +378,11 @@ const styles = StyleSheet.create({
   levelCardPair: {
     fontSize: 13,
     marginTop: 6,
+  },
+  // PLAN-play 12. lépés (s5): a másik 3 PCIC-szint known-száma, a pár-sor alatt.
+  levelCardOthers: {
+    fontSize: 12,
+    marginTop: 8,
   },
   bestDayRow: {
     borderRadius: 14,

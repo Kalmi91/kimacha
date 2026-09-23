@@ -9,7 +9,7 @@ import 'react-native-reanimated';
 import { bottomGutter } from '@/lib/bottomGutter';
 import { getDb } from '@/lib/database';
 import { initI18n, setLanguage } from '@/lib/i18n';
-import { sendAnalyticsIfNeeded } from '@/lib/analytics';
+import { FORCED_PAIR, needsPairCorrection } from '@/lib/languages';
 import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
 import { startUsageTimer, stopUsageTimer, noteInteraction } from '@/lib/usageTimer';
 import { watchAppStateForSpeech } from '@/lib/speech';
@@ -34,10 +34,17 @@ export default function RootLayout() {
   useEffect(() => {
     async function check() {
       const db = getDb();
-      const result = await db.getOnboarding();
+      let result = await db.getOnboarding();
+      // Kimacha Play: single en-es pair (Kálmán, 2026-09-22). An install that
+      // still has an older pair (hu-es, es-hu, hu-en, ...) is corrected to
+      // en-es here, silently, at startup; its old DB rows stay, they are just
+      // no longer the active pair.
+      if (result && needsPairCorrection(result)) {
+        await db.setOnboarding(FORCED_PAIR.source, FORCED_PAIR.target);
+        result = await db.getOnboarding();
+      }
       if (result) {
         setLanguage(result.source);
-        sendAnalyticsIfNeeded();
       }
       setOnboardingDone(!!result);
     }
@@ -99,7 +106,6 @@ function RootLayoutNav() {
           <Stack.Screen name="onboarding" options={{ headerShown: false }} />
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="spelling" options={{ headerShown: false }} />
-          <Stack.Screen name="games" options={{ headerShown: false }} />
           <Stack.Screen name="grammar" options={{ headerShown: false }} />
         </Stack>
         <UsageToast />

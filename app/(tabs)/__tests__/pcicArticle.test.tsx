@@ -24,17 +24,21 @@ jest.mock('react-native-safe-area-context', () => ({
 
 // Egy fix, névelős tétel, hogy a composeAnswer bemenete ellenőrizhető legyen
 // a valódi PCIC-korpusztól függetlenül.
-const FIXTURE_ITEM = { id: 'x1', es: 'el perro', en: 'dog', kind: 'word' as const, section: 'Test', order: 0 };
+// PLAN-play 10. lépés: az id "b1-" előtaggal, mert lib/pcicLevels.ts a
+// szint-szűrést az id-előtagból dönti el (a fül a B1 alap-szinten indul).
+const FIXTURE_ITEM = { id: 'b1-x1', es: 'el perro', en: 'dog', kind: 'word' as const, section: 'Test', order: 0 };
 jest.mock('@/data/pcic', () => ({
-  PCIC_ITEMS: [FIXTURE_ITEM],
-  findPcicItem: (id: string) => (id === 'x1' ? FIXTURE_ITEM : undefined),
+  PCIC_LEVELS: ['B1'],
+  LEVEL_LABELS: { B1: 'Intermediate' },
+  pcicItemsForLevel: () => [FIXTURE_ITEM],
+  findPcicItem: (id: string) => (id === 'b1-x1' ? FIXTURE_ITEM : undefined),
 }));
 
 import { act, fireEvent, render } from '@testing-library/react-native';
 import { TextInput } from 'react-native';
 
 import { getDb } from '@/lib/database';
-import PcicScreen from '../pcic';
+import PcicScreen from '../index';
 
 const flush = async (times = 4) => {
   for (let i = 0; i < times; i++) {

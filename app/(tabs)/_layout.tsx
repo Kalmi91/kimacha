@@ -40,25 +40,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: s.tabs.learn,
-          // FB123: "a fent Learn rész az felesleges azt vedd ki van ott egy centi
-          // ami nem kell oda". The learning screen draws its own header row, so
-          // the navigator title was only eating vertical space.
-          headerShown: false,
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{ ios: 'book.fill', android: 'book', web: 'book' }}
-              tintColor={color}
-              size={28}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="pcic"
-        options={{
           title: s.tabs.pcic,
-          // Saját fejlécet rajzol, mint az index (FB123-minta).
+          // Saját fejlécet rajzol, mint korábban is (FB123-minta).
           headerShown: false,
           tabBarIcon: ({ color }) => (
             <SymbolView
@@ -70,55 +53,12 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="games"
+        name="course"
         options={{
-          title: s.tabs.games,
-          // A hub saját fejlécet rajzol, mint az index (FB123-minta).
-          headerShown: false,
+          title: s.tabs.grammar,
           tabBarIcon: ({ color }) => (
             <SymbolView
-              name={{ ios: 'gamecontroller.fill', android: 'sports_esports', web: 'sports_esports' }}
-              tintColor={color}
-              size={28}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="active"
-        options={{
-          title: s.tabs.active,
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{ ios: 'mic.fill', android: 'mic', web: 'mic' }}
-              tintColor={color}
-              size={28}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="tree"
-        options={{
-          title: s.tabs.tree,
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{ ios: 'square.grid.2x2.fill', android: 'grid_view', web: 'grid_view' }}
-              tintColor={color}
-              size={28}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="talk"
-        options={{
-          title: s.tabs.talk,
-          // Saját fejlécet rajzol, mint az index és a games (FB123-minta).
-          headerShown: false,
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{ ios: 'bubble.left.and.bubble.right.fill', android: 'forum', web: 'forum' }}
+              name={{ ios: 'book.fill', android: 'book', web: 'book' }}
               tintColor={color}
               size={28}
             />
