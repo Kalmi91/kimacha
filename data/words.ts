@@ -58,66 +58,22 @@ import b2 from './words/b2.json';
 import c1 from './words/c1.json';
 import c2 from './words/c2.json';
 
-import en_a0 from './words/en/a0.json';
-import en_a1 from './words/en/a1.json';
-import en_a2 from './words/en/a2.json';
-import hu_a0 from './words/hu/a0.json';
-import hu_a1 from './words/hu/a1.json';
-
 export const words: WordEntry[] = [...a0, ...a1, ...a2, ...b1, ...b2, ...c1, ...c2] as WordEntry[];
 
-// Dedicated English-target word sets, keyed by level. Only levels with authored
-// English content appear here; every other (level, lang) falls back to the shared
-// Spanish-headword set above. So `lang` defaults to 'es' and existing callers are
-// unchanged, only an explicit lang==='en' with English content diverges.
-const enWordsByLevel: Partial<Record<Level, WordEntry[]>> = {
-  A0: en_a0 as WordEntry[],
-  A1: en_a1 as WordEntry[],
-  A2: en_a2 as WordEntry[],
-};
-const huWordsByLevel: Partial<Record<Level, WordEntry[]>> = {
-  A0: hu_a0 as WordEntry[],
-  A1: hu_a1 as WordEntry[],
-};
-
+// Play-vágás 7. lépés (2026-09-23): the app runs a single en-es pair, target
+// always 'es', so the dedicated English-target/Hungarian-target word sets
+// (the `en` and `hu` subfolders next to these files) are unreachable and
+// dropped from this loader. The JSON files stay in the repo. `lang` is kept
+// on every function below only so call sites (which pass the active pair's
+// target, always 'es' now) don't need to change.
 export function getWordsForLevel(level: Level, lang: string = 'es'): WordEntry[] {
-  if (lang === 'en' && enWordsByLevel[level]) return enWordsByLevel[level]!;
-  if (lang === 'hu' && huWordsByLevel[level]) return huWordsByLevel[level]!;
   return words.filter(w => w.level === level);
 }
 
-// Card rows in the DB only carry a word id, so the id is looked up in the branch
-// being learned first, then in the shared set.
-//
-// Issue #3, 2026-09-09: the id spaces are NOT disjoint any more, whatever the
-// old comment here claimed. The shared Spanish set has grown past its stated
-// ceiling and now reaches 9883-adjacent numbers; 266 ids exist in both the
-// shared set and the Hungarian branch. Nothing is broken today, because this
-// branch-first order resolves each track to its own entry and every card query
-// is scoped by `pair`, but the invariant is gone, so do not rely on it. A new
-// language track takes ids from 10001 up, which is free
-// (`lib/__tests__/svCorpus.test.ts` holds that line). Renumbering the existing
-// overlap is not an option: card rows key on these ids, so it would throw away
-// the learner's progress. Resolving against the shared set alone dropped
-// every card of a non-Spanish course, which left the learner on the Done screen
-// with an empty queue (FB129 second cause).
-const branchIndex: Partial<Record<string, Map<number, WordEntry>>> = {};
-
-function indexFor(lang: string): Map<number, WordEntry> | undefined {
-  const byLevel = lang === 'en' ? enWordsByLevel : lang === 'hu' ? huWordsByLevel : null;
-  if (!byLevel) return undefined;
-  if (!branchIndex[lang]) {
-    const map = new Map<number, WordEntry>();
-    for (const list of Object.values(byLevel)) {
-      for (const w of list ?? []) map.set(w.id, w);
-    }
-    branchIndex[lang] = map;
-  }
-  return branchIndex[lang];
-}
-
+// Card rows in the DB only carry a word id, looked up in the shared Spanish
+// set (the only one this loader carries any more, see the note above).
 export function findWordById(id: number, lang: string = 'es'): WordEntry | undefined {
-  return indexFor(lang)?.get(id) ?? words.find(w => w.id === id);
+  return words.find(w => w.id === id);
 }
 
 // FB357: `includeVosotros` defaults to false, so every existing caller (the
@@ -179,9 +135,7 @@ export function normalizeWordToken(raw: string): string {
 }
 
 function allWordsFor(lang: string): WordEntry[] {
-  const byLevel = lang === 'en' ? enWordsByLevel : lang === 'hu' ? huWordsByLevel : null;
-  if (!byLevel) return words;
-  return Object.values(byLevel).flatMap(list => list ?? []);
+  return words;
 }
 
 // A headword field can carry several glosses ("the lorry / the truck"), and each

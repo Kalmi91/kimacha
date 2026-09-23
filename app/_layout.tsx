@@ -9,6 +9,7 @@ import 'react-native-reanimated';
 import { bottomGutter } from '@/lib/bottomGutter';
 import { getDb } from '@/lib/database';
 import { initI18n, setLanguage } from '@/lib/i18n';
+import { FORCED_PAIR, needsPairCorrection } from '@/lib/languages';
 import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
 import { startUsageTimer, stopUsageTimer, noteInteraction } from '@/lib/usageTimer';
 import { watchAppStateForSpeech } from '@/lib/speech';
@@ -38,8 +39,8 @@ export default function RootLayout() {
       // still has an older pair (hu-es, es-hu, hu-en, ...) is corrected to
       // en-es here, silently, at startup; its old DB rows stay, they are just
       // no longer the active pair.
-      if (result && (result.source !== 'en' || result.target !== 'es')) {
-        await db.setOnboarding('en', 'es');
+      if (result && needsPairCorrection(result)) {
+        await db.setOnboarding(FORCED_PAIR.source, FORCED_PAIR.target);
         result = await db.getOnboarding();
       }
       if (result) {
