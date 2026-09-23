@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { StyleSheet, Text, View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard, Alert } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { speak } from '@/lib/speech';
@@ -10,11 +10,12 @@ import { t } from '@/lib/i18n';
 import { charDiff } from '@/lib/charDiff';
 import { speechLang } from '@/lib/languages';
 import { localDateString } from '@/lib/usageStats';
-import { PCIC_ITEMS, findPcicItem } from '@/data/pcic';
-import { gradePcicAnswer, type PcicGrade } from '@/lib/pcicMatch';
+import { pcicItemsForLevel, findPcicItem, type PcicLevel } from '@/data/pcic';
+import { gradePcicAnswer, suggestedGrade, type PcicGrade } from '@/lib/pcicMatch';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { sm2Review, sm2PreviewDays, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, DEFAULT_NEW_LIMIT, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { countDoneToday, requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
+import { cardsForLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
 import FeedbackButton from '@/components/FeedbackModal';
 import BadgeRow from '@/components/learn/BadgeRow';
@@ -22,20 +23,11 @@ import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 import { answerInputProps } from '@/lib/inputProps';
+import LevelPickerSheet from '@/components/LevelPickerSheet';
 
 // PLAN-pcic 5. lépés: a PCIC fül. Angol -> spanyol gépelés, Anki-gombokkal
 // (again/hard/good/easy), az önálló SM-2 ütemezőn (lib/sm2.ts, 4. lépés).
 // Nem a FSRS `cards`/`sessionQueue` ütemezőt használja, azt nem érinti.
-
-const NEW_ORDER = PCIC_ITEMS.map((i) => i.id);
-
-// FB minta (pcicMatch.ts): exact -> Good, near -> Hard, wrong -> Again van
-// előre kijelölve, Easy sosem.
-// SZ1, Kálmán döntése 2026-09-18: near is Tudtam, ő nyomja le Nem tudtam-ra.
-// 5b: a dokkolt "→ Next" ezt a javasolt értékelést alkalmazza, ha a kézi
-// Tudtam/Nem tudtam helyett a dokkolt gombbal lép tovább (anki-ui-terv.html,
-// mindkettő látszik felfedés után).
-const PRESELECT: Record<PcicGrade['match'], Sm2Grade> = { exact: 'good', near: 'good', wrong: 'again' };
 
 // A régi (PR #27 előtti) gombsor sorrendje: Nem tudtam, Tudtam.
 const GRADES: Sm2Grade[] = ['again', 'good'];
@@ -59,6 +51,14 @@ export default function PcicScreen() {
 
   const [loading, setLoading] = useState(true);
   const [today, setToday] = useState('');
+  const [level, setLevel] = useState<PcicLevel>('B1');
+  // s1 (anki-ui-terv.html): a szint-választó lap; a benne mutatott N/total
+  // haladáshoz MIND a négy szint kártyája kell, nem csak az aktívé.
+  const [levelSheetOpen, setLevelSheetOpen] = useState(false);
+  const [allLevelCards, setAllLevelCards] = useState<Sm2Card[]>([]);
+  // s2 (anki-ui-terv.html): a Beállítások ékezet-szigor kapcsolója a PCIC
+  // gépelésén is dönt (gradePcicAnswer strictAccents paramja).
+  const [strictAccents, setStrictAccents] = useState(false);
   const [allCards, setAllCards] = useState<Map<string, Sm2Card>>(new Map());
   const [queue, setQueue] = useState<Sm2Card[]>([]);
   const [typedAnswer, setTypedAnswer] = useState('');
@@ -77,13 +77,23 @@ export default function PcicScreen() {
   // FB350: a dokkolt sáv a billentyűzet fölé emelkedjen, mint a Learn fülön.
   const { dockLift } = useDockLift();
 
-  const load = useCallback(async () => {
+  // PLAN-play 10. lépés: `overrideLevel` a szint-választó lapról jövő azonnali
+  // váltásnak, hogy ne kelljen a setLevel-re várni egy render-kört (a db-be
+  // már ott az új szint, load() csak újraolvassa vele).
+  const load = useCallback(async (overrideLevel?: PcicLevel) => {
     const db = getDb();
     const day = localDateString();
-    const cards = await db.getPcicCards();
+    const lvl = overrideLevel ?? (await db.getPcicLevel());
+    const newOrder = pcicItemsForLevel(lvl).map((i) => i.id);
+    const rawCards = await db.getPcicCards();
+    const cards = cardsForLevel(rawCards, lvl);
+    const strict = await db.getStrictAccents();
+    setLevel(lvl);
+    setAllLevelCards(rawCards);
+    setStrictAccents(strict);
     setToday(day);
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
-    setQueue(pickSm2Session(cards, NEW_ORDER, day));
+    setQueue(pickSm2Session(cards, newOrder, day));
     setTypedAnswer('');
     setGrade(null);
     setSessionAnswered(0);
@@ -105,6 +115,17 @@ export default function PcicScreen() {
     }, [load])
   );
 
+  // s1: a szint-választó lapon koppintva azonnal a választott szint pakliját
+  // adja (a lap előbb bezár, hogy a váltás ne tűnjön befagyottnak).
+  const handleSelectLevel = async (lvl: PcicLevel) => {
+    setLevelSheetOpen(false);
+    if (lvl === level) return;
+    await getDb().setPcicLevel(lvl);
+    setLoading(true);
+    await load(lvl);
+  };
+
+  const newOrder = useMemo(() => pcicItemsForLevel(level).map((i) => i.id), [level]);
   const current = queue[0];
   const currentItem = current ? findPcicItem(current.itemId) : undefined;
 
@@ -154,15 +175,15 @@ export default function PcicScreen() {
       // Kálmán 2026-09-21: üres beküldés is felfedi a helyes alakot és
       // felolvassa, de nem értékel automatikusan; a koppintás dönt, mint
       // bármelyik felfedésnél (SZ6 PARKOL, nincs mondat-adat a PCIC-tételekhez).
-      const g = gradePcicAnswer('', currentItem.es);
-      const revealed: PcicGrade = { ...g, match: 'wrong' };
+      const g = gradePcicAnswer('', currentItem.es, strictAccents);
+      const revealed: PcicGrade = { ...g, match: 'wrong', accentOnly: undefined };
       setGrade(revealed);
       if (revealed.match !== 'exact') setArticlePick(articleOf(revealed.best));
       speak(g.best, speechLang('es'));
       return;
     }
     // FB321: felfedéskor mindig szóljon a helyes spanyol alak.
-    const g = gradePcicAnswer(answer, currentItem.es);
+    const g = gradePcicAnswer(answer, currentItem.es, strictAccents);
     setTypedAnswer(answer);
     setGrade(g);
     if (g.match !== 'exact') setArticlePick(articleOf(g.best));
@@ -206,7 +227,8 @@ export default function PcicScreen() {
 
   const handleReset = () => {
     const doReset = async () => {
-      await getDb().resetPcicCards();
+      // Csak az AKTÍV szint kártyáit üríti (a haladás szintenként külön él).
+      await getDb().resetPcicCards(level.toLowerCase());
       setLoading(true);
       await load();
     };
@@ -225,22 +247,29 @@ export default function PcicScreen() {
   const handleMoreNew = () => {
     const next = extraNew + 10;
     setExtraNew(next);
-    setQueue(pickSm2Session([...allCards.values()], NEW_ORDER, today, DEFAULT_NEW_LIMIT + next));
+    setQueue(pickSm2Session([...allCards.values()], newOrder, today, DEFAULT_NEW_LIMIT + next));
   };
 
+  // s1 (anki-ui-terv.html): a fejléc ELSŐ chipje a kiválasztott szint,
+  // koppintásra a szint-választó lap nyílik; a meglévő négy chip változatlan.
   // 5b: a régi egysoros szöveg-fejléc (`s.pcic.header`) helyett BadgeRow chip-sor;
   // a négy szám ugyanaz, csak külön i18n kulcsokból (badgeTotal/Due/New/Done).
   const headerRow = (
     <View style={styles.headerRow}>
-      <BadgeRow
-        colors={colors}
-        items={[
-          { label: s.pcic.badgeTotal(PCIC_ITEMS.length) },
-          { label: s.pcic.badgeDue(dueRemaining), tone: 'blue' },
-          { label: s.pcic.badgeNew(newRemaining), tone: 'green' },
-          { label: s.pcic.badgeDone(doneToday), tone: 'pink' },
-        ]}
-      />
+      <View style={styles.headerBadges}>
+        <Pressable style={[styles.levelChip, { backgroundColor: colors.tint }]} onPress={() => setLevelSheetOpen(true)}>
+          <Text style={styles.levelChipText}>{level} ▾</Text>
+        </Pressable>
+        <BadgeRow
+          colors={colors}
+          items={[
+            { label: s.pcic.badgeTotal(newOrder.length) },
+            { label: s.pcic.badgeDue(dueRemaining), tone: 'blue' },
+            { label: s.pcic.badgeNew(newRemaining), tone: 'green' },
+            { label: s.pcic.badgeDone(doneToday), tone: 'pink' },
+          ]}
+        />
+      </View>
       <View style={styles.headerIcons}>
         {lastGraded && (
           <Pressable onPress={handleUndo} hitSlop={12} style={styles.resetBtn} accessibilityLabel={s.pcic.undo}>
@@ -266,10 +295,19 @@ export default function PcicScreen() {
     // FB317: hány PCIC-tétel van már bevezetve (nem 'new' állapotú) a teljes
     // listából, a done-képernyő saját haladás-csíkjához.
     const introducedCount = [...allCards.values()].filter((c) => c.state !== 'new').length;
-    const introducedPct = PCIC_ITEMS.length > 0 ? (introducedCount / PCIC_ITEMS.length) * 100 : 0;
+    const introducedPct = newOrder.length > 0 ? (introducedCount / newOrder.length) * 100 : 0;
     return (
       <View style={[styles.container, styles.doneContainer, { backgroundColor: colors.background }]}>
         {headerRow}
+        <LevelPickerSheet
+          visible={levelSheetOpen}
+          active={level}
+          cards={allLevelCards}
+          colors={colors}
+          title={s.pcic.chooseLevel}
+          onSelect={handleSelectLevel}
+          onClose={() => setLevelSheetOpen(false)}
+        />
         <View style={styles.doneHeader}>
           <Text style={styles.doneEmoji}>🎉</Text>
           <Text style={[styles.title, { color: colors.text }]}>{s.pcic.doneTitle}</Text>
@@ -290,18 +328,18 @@ export default function PcicScreen() {
         </View>
         <View style={styles.introducedBlock}>
           <Text style={[styles.introducedLabel, { color: colors.tabIconDefault }]}>
-            {s.pcic.introduced(introducedCount, PCIC_ITEMS.length)}
+            {s.pcic.introduced(introducedCount, newOrder.length)}
           </Text>
           <View style={[styles.introducedTrack, { backgroundColor: colors.card }]}>
             <View style={[styles.introducedFill, { backgroundColor: '#38BDF8', width: `${introducedPct}%` }]} />
           </View>
         </View>
-        {NEW_ORDER.some((id) => !allCards.has(id) || allCards.get(id)!.state === 'new') && (
+        {newOrder.some((id) => !allCards.has(id) || allCards.get(id)!.state === 'new') && (
           <Pressable style={[styles.checkBtn, { backgroundColor: '#38BDF8' }]} onPress={handleMoreNew}>
             <Text style={styles.checkBtnText}>{s.pcic.moreNew(10)}</Text>
           </Pressable>
         )}
-        <FeedbackButton level="B1" languagePair="es-en" currentCard="pcic" />
+        <FeedbackButton level={level} languagePair="es-en" currentCard="pcic" />
       </View>
     );
   }
@@ -320,10 +358,6 @@ export default function PcicScreen() {
     GRADES.map((g) => [g, previewDays[g] === 0 ? s.pcic.intervalToday : s.pcic.intervalDays(previewDays[g])])
   ) as Record<Sm2Grade, string>;
 
-  // Kálmán 2026-09-21: felfedés után nincs dokkolt sáv, a görgető alsó
-  // paddingja és a 💬 bottomOffsetje ehhez igazodjon (0, ha grade van).
-  const effectiveDockH = grade ? 0 : dockH;
-
   // 5b: a lap tetejére kerülő lap/lépés-jelvény (CardShell chip propja),
   // a korábbi sectionRow-beli stepBadge szövegek helyén.
   const chipLabel =
@@ -336,12 +370,25 @@ export default function PcicScreen() {
   // 5c: szófaj-chip a szó alatt, a spanyol alakból (lib/pcicPos.ts, döntés 6b).
   const pos = posOf(currentItem);
 
+  // T1 (anki-ui-terv.html): a dokkolt Check sáv felfedés után "Next"-re vált,
+  // ugyanazzal a hellyel/mérettel, a javasolt értékeléssel a feliratban.
+  const nextGrade = grade ? suggestedGrade(grade) : null;
+
   return (
     <KeyboardAvoidingView
       style={[styles.container, { backgroundColor: colors.background }]}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
       {headerRow}
+      <LevelPickerSheet
+        visible={levelSheetOpen}
+        active={level}
+        cards={allLevelCards}
+        colors={colors}
+        title={s.pcic.chooseLevel}
+        onSelect={handleSelectLevel}
+        onClose={() => setLevelSheetOpen(false)}
+      />
 
       <View style={[styles.progressTrack, { backgroundColor: colors.card }]}>
         <View style={[styles.progressFill, { backgroundColor: colors.tint, width: `${sessionPct}%` }]} />
@@ -349,7 +396,7 @@ export default function PcicScreen() {
 
       <ScrollView
         style={styles.cardScroll}
-        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: 16 + effectiveDockH + dockLift }]}
+        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: 16 + dockH + dockLift }]}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >
@@ -411,7 +458,7 @@ export default function PcicScreen() {
             style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }]}
             value={typedAnswer}
             onChangeText={setTypedAnswer}
-            onSubmitEditing={grade ? undefined : handleCheck}
+            onSubmitEditing={grade ? () => nextGrade && handleGrade(nextGrade) : handleCheck}
             editable={!grade}
             autoFocus
             {...answerInputProps}
@@ -428,7 +475,7 @@ export default function PcicScreen() {
                         ? styles.diffMissing
                         : d.wrong
                           ? styles.diffWrong
-                          : { color: grade.match === 'exact' ? '#22C55E' : colors.text }
+                          : { color: nextGrade === 'good' ? '#22C55E' : colors.text }
                     }
                   >
                     {d.ch}
@@ -441,6 +488,11 @@ export default function PcicScreen() {
                   <Text style={styles.speakIcon}>🔊</Text>
                 </Pressable>
               </View>
+              {/* s2 (anki-ui-terv.html): ékezet-szigor KI + csak-ékezet eltérés
+                  -> a diff sárga jelölése mellett kimondva is 100%-nak számít. */}
+              {grade.accentOnly && (
+                <Text style={[styles.accentNote, { color: colors.tabIconDefault }]}>{s.pcic.accentForgiven}</Text>
+              )}
             </View>
           )}
 
@@ -450,7 +502,7 @@ export default function PcicScreen() {
           {grade && (
             <View style={styles.gradesRow}>
               {GRADES.map((g) => {
-                const isPre = PRESELECT[grade.match] === g;
+                const isPre = nextGrade === g;
                 return (
                   <Pressable
                     key={g}
@@ -478,21 +530,20 @@ export default function PcicScreen() {
         </CardShell>
       </ScrollView>
 
-      {/* 5b: az inlineCheckBtn megszűnt, a Check a Learn dokkolt sávja lett.
-          Kálmán 2026-09-21: felfedés után nincs dokkolt "Next", a gombsor a
-          kártyában dönt, ezért a dokkolt sáv csak gépeléskor jelenik meg. */}
-      {!grade && (
-        <DockedAction
-          label={`✓ ${s.card.check}`}
-          onPress={handleCheck}
-          tone="check"
-          bottom={dockLift}
-          colors={colors}
-          onHeight={setDockH}
-        />
-      )}
+      {/* T1 (anki-ui-terv.html): Check után UGYANAZ a dokkolt sáv (hely+méret
+          változatlan) "Next"-re vált, felirata kimondja a javasolt értékelést;
+          a két gomb a kártyában felülbírálásra marad. */}
+      <DockedAction
+        label={grade && nextGrade ? s.pcic.next(s.pcic[nextGrade]) : `✓ ${s.card.check}`}
+        onPress={grade && nextGrade ? () => handleGrade(nextGrade) : handleCheck}
+        tone={grade ? 'next' : 'check'}
+        color={grade ? '#22C55E' : undefined}
+        bottom={dockLift}
+        colors={colors}
+        onHeight={setDockH}
+      />
 
-      <FeedbackButton level="B1" languagePair="es-en" currentCard={`pcic:${current.itemId}`} bottomOffset={effectiveDockH + dockLift} />
+      <FeedbackButton level={level} languagePair="es-en" currentCard={`pcic:${current.itemId}`} bottomOffset={dockH + dockLift} />
     </KeyboardAvoidingView>
   );
 }
@@ -525,6 +576,24 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     gap: 8,
     marginBottom: 12,
+  },
+  // s1 (anki-ui-terv.html): a szint-chip + a meglévő négy BadgeRow chip egy soron.
+  headerBadges: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    gap: 6,
+    flex: 1,
+  },
+  levelChip: {
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 999,
+  },
+  levelChipText: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: '#FFFFFF',
   },
   headerIcons: {
     flexDirection: 'row',
@@ -709,6 +778,12 @@ const styles = StyleSheet.create({
     flexShrink: 1,
     fontSize: 22,
     fontWeight: '600',
+  },
+  // s2 (anki-ui-terv.html): "Missing accent, counted as correct" sor.
+  accentNote: {
+    fontSize: 12,
+    textAlign: 'center',
+    marginTop: 4,
   },
   dontLearn: {
     fontSize: 13,
