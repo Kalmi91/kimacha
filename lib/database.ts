@@ -5,6 +5,11 @@ import { FORCED_PAIR, needsPairCorrection } from './languages';
 import { WORD_MERGES } from './wordMerges';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 import type { Sm2Card } from './sm2';
+import type { PcicLevel } from '@/data/pcic';
+
+// PLAN-play 10. lépés: egy meglévő telepítésen a haladás ma "b1-..." id-kkel
+// forog, ezért az oszlop hiánya (régi DB) B1-re esik vissza, nem A1-re.
+const DEFAULT_PCIC_LEVEL: PcicLevel = 'B1';
 
 export interface DB {
   getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
@@ -47,7 +52,12 @@ export interface DB {
   getPcicCards(): Promise<Sm2Card[]>;
   upsertPcicCard(card: Sm2Card): Promise<void>;
   getPcicStats(today: string): Promise<{ total: number; newIntroducedToday: number; dueToday: number; learned: number }>;
-  resetPcicCards(): Promise<void>;
+  // PLAN-play 10. lépés: a kiválasztott PCIC szint (A1-B2), app-szintű, mint a
+  // status-bar tint. `levelPrefix` opcionális: csak azt a szintet üríti ki
+  // (item-id előtag szerint), üresen az egész táblát, mint eddig.
+  getPcicLevel(): Promise<PcicLevel>;
+  setPcicLevel(level: PcicLevel): Promise<void>;
+  resetPcicCards(levelPrefix?: string): Promise<void>;
   exportAll(): Promise<BackupPayload>;
   importAll(payload: BackupPayload): Promise<void>;
 }
@@ -234,6 +244,10 @@ class SQLiteDB implements DB {
     // Migration: pcic_cards.known column (DBs created before "Ezt nem tanulom", SZ3).
     try {
       await this.db.execAsync('ALTER TABLE pcic_cards ADD COLUMN known INTEGER');
+    } catch {}
+    // Migration: pcic_level column (DBs created before the A1-B2 level picker).
+    try {
+      await this.db.execAsync('ALTER TABLE user_meta ADD COLUMN pcic_level TEXT');
     } catch {}
     const meta = await this.db.getFirstAsync<any>('SELECT id FROM user_meta WHERE id = 1');
     if (!meta) {
@@ -458,6 +472,18 @@ class SQLiteDB implements DB {
   async setStatusBarTint(index: number): Promise<void> {
     const db = await this.open();
     await db.runAsync('UPDATE user_meta SET status_bar_tint = ? WHERE id = 1', [index]);
+  }
+
+  // PLAN-play 10. lépés: a kiválasztott PCIC szint, app-szintű mint a fenti tint.
+  async getPcicLevel(): Promise<PcicLevel> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT pcic_level FROM user_meta WHERE id = 1');
+    return (row?.pcic_level as PcicLevel) ?? DEFAULT_PCIC_LEVEL;
+  }
+
+  async setPcicLevel(level: PcicLevel): Promise<void> {
+    const db = await this.open();
+    await db.runAsync('UPDATE user_meta SET pcic_level = ? WHERE id = 1', [level]);
   }
 
   // FB76: "first open of the day" marker for the greeting. Claiming it is a
@@ -773,9 +799,13 @@ class SQLiteDB implements DB {
     };
   }
 
-  async resetPcicCards(): Promise<void> {
+  async resetPcicCards(levelPrefix?: string): Promise<void> {
     const db = await this.open();
-    await db.runAsync('DELETE FROM pcic_cards');
+    if (levelPrefix) {
+      await db.runAsync('DELETE FROM pcic_cards WHERE item_id LIKE ?', [`${levelPrefix}-%`]);
+    } else {
+      await db.runAsync('DELETE FROM pcic_cards');
+    }
   }
 
   // Q0: full learning-state backup, every table across all pairs.
