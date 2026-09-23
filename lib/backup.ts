@@ -9,11 +9,8 @@ export const BACKUP_TABLES = [
   'cards',
   'card_attempts',
   'game_progress',
-  'game_scores',
-  'game_settings',
   'learn_settings',
   'onboarding',
-  'selected_topic',
   'spelling_list',
   'streak',
   'user_level',
@@ -21,6 +18,16 @@ export const BACKUP_TABLES = [
 ] as const;
 
 export type BackupTable = (typeof BACKUP_TABLES)[number];
+
+// Play-vágás 7. lépés (2026-09-23): tables an older backup (e.g. 4.0.25) may
+// still carry, but the app no longer reads or writes (their DB methods were
+// removed as dead: the Game tab's own score/settings tables, and the topic
+// picker). A restore accepts and skips them, so an old backup still loads.
+export const LEGACY_BACKUP_TABLES = [
+  'game_scores',
+  'game_settings',
+  'selected_topic',
+] as const;
 
 export interface BackupPayload {
   schemaVersion: number;
@@ -80,19 +87,6 @@ const TABLE_COLUMNS: Record<BackupTable, Record<string, ColumnSpec>> = {
     state: { type: 'string', nullable: false },
     data_json: { type: 'string', nullable: true },
   },
-  game_scores: {
-    pair: { type: 'string', nullable: false },
-    game_id: { type: 'string', nullable: false },
-    best_score: { type: 'number', nullable: false },
-    best_at: { type: 'string', nullable: true },
-    plays: { type: 'number', nullable: false },
-    last_played: { type: 'string', nullable: true },
-  },
-  game_settings: {
-    pair: { type: 'string', nullable: false },
-    game_id: { type: 'string', nullable: false },
-    settings_json: { type: 'string', nullable: false },
-  },
   learn_settings: {
     pair: { type: 'string', nullable: false },
     words_only: { type: 'number', nullable: true },
@@ -113,10 +107,6 @@ const TABLE_COLUMNS: Record<BackupTable, Record<string, ColumnSpec>> = {
     id: { type: 'number', nullable: false },
     source: { type: 'string', nullable: false },
     target: { type: 'string', nullable: false },
-  },
-  selected_topic: {
-    pair: { type: 'string', nullable: false },
-    topic_id: { type: 'string', nullable: true },
   },
   spelling_list: {
     pair: { type: 'string', nullable: false },
@@ -162,9 +152,9 @@ export function validateBackupPayload(raw: unknown): BackupPayload {
     throw new Error('Backup file has no tables');
   }
   for (const key of Object.keys(p.tables)) {
-    if (!(BACKUP_TABLES as readonly string[]).includes(key)) {
-      throw new Error(`Backup file has an unknown table: ${key}`);
-    }
+    if ((BACKUP_TABLES as readonly string[]).includes(key)) continue;
+    if ((LEGACY_BACKUP_TABLES as readonly string[]).includes(key)) continue;
+    throw new Error(`Backup file has an unknown table: ${key}`);
   }
   for (const table of BACKUP_TABLES) {
     const rows = p.tables[table];

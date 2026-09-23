@@ -43,7 +43,7 @@ describe('grammar course', () => {
   beforeEach(async () => {
     const db = getDb();
     await db.setOnboarding('en', 'es');
-    await db.updateLevel('A1', 0, 0, 0);
+    (db as any).__setLevelForTest('A1');
   });
 
   it('lists the whole syllabus, A1 open, later levels reachable', async () => {
