@@ -1,7 +1,8 @@
 // 5b (döntés 5/6b): a PCIC fül átveszi a Learn kártya-felületét (CardShell,
-// DockedAction). Kálmán 2026-09-21: felfedés után a régi Tudtam/Nem tudtam
-// gombsor dönt a kártyában, nincs dokkolt Next. Mock-minta: pcicSpeak.test.tsx
-// (db, router, speech, data/pcic).
+// DockedAction). PLAN-play 10. lépés (T1, s2, anki-ui-terv.html): felfedés
+// után a dokkolt sáv "Next"-re vált (a javasolt értékeléssel a feliratban),
+// a régi Tudtam/Nem tudtam gombsor a kártyában felülbírálásra marad. Mock-minta:
+// pcicSpeak.test.tsx (db, router, speech, data/pcic).
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -25,10 +26,14 @@ jest.mock('react-native-safe-area-context', () => ({
 }));
 
 // Egy fix tétel, hogy a teszt ne a valódi PCIC-korpusztól függjön.
-const FIXTURE_ITEM = { id: 'x1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
+// PLAN-play 10. lépés: az id "b1-" előtaggal, mert lib/pcicLevels.ts a
+// szint-szűrést az id-előtagból dönti el (a fül a B1 alap-szinten indul).
+const FIXTURE_ITEM = { id: 'b1-x1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
 jest.mock('@/data/pcic', () => ({
-  PCIC_ITEMS: [FIXTURE_ITEM],
-  findPcicItem: (id: string) => (id === 'x1' ? FIXTURE_ITEM : undefined),
+  PCIC_LEVELS: ['B1'],
+  LEVEL_LABELS: { B1: 'Intermediate' },
+  pcicItemsForLevel: () => [FIXTURE_ITEM],
+  findPcicItem: (id: string) => (id === 'b1-x1' ? FIXTURE_ITEM : undefined),
 }));
 
 import { act, fireEvent, render } from '@testing-library/react-native';
@@ -58,7 +63,7 @@ describe('PCIC fül: Learn kártya-felület (5b)', () => {
     expect(getByText('✓ Check')).toBeTruthy();
   });
 
-  it('felfedés után a régi Tudtam/Nem tudtam gombok látszanak intervallum-előnézettel, dokkolt Next nélkül', async () => {
+  it('felfedés után a dokkolt sáv "Next -> Knew it"-re vált, a régi gombok maradnak felülbírálásra', async () => {
     const { getByText, queryByText, getAllByText, UNSAFE_getByType } = render(<PcicScreen />);
     await flush();
 
@@ -66,21 +71,21 @@ describe('PCIC fül: Learn kártya-felület (5b)', () => {
     fireEvent.press(getByText('✓ Check'));
     await flush();
 
-    expect(queryByText('→ Next')).toBeNull();
     expect(queryByText('✓ Check')).toBeNull();
+    expect(getByText('Next → Knew it')).toBeTruthy();
     expect(getByText('Knew it')).toBeTruthy();
     expect(getByText("Didn't know")).toBeTruthy();
     expect(getAllByText('<1 day').length).toBe(2);
   });
 
-  it('üres beküldés is felfedi a helyes alakot és a két gombot mutatja, a koppintás dönt', async () => {
-    const { getByText, getAllByText, queryByText } = render(<PcicScreen />);
+  it('üres beküldés is felfedi a helyes alakot, "Next -> Didn\'t know"-t javasol, a koppintás dönt', async () => {
+    const { getByText, getAllByText } = render(<PcicScreen />);
     await flush();
 
     fireEvent.press(getByText('✓ Check'));
     await flush();
 
-    expect(queryByText('→ Next')).toBeNull();
+    expect(getByText("Next → Didn't know")).toBeTruthy();
     expect(getAllByText('vida').length).toBeGreaterThan(0);
     expect(getByText('Knew it')).toBeTruthy();
     expect(getByText("Didn't know")).toBeTruthy();

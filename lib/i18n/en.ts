@@ -237,6 +237,10 @@ export default {
     // sm2Preview-ban magyarul égetve be, minden nyelven).
     intervalToday: '<1 day',
     intervalDays: (n: number) => `${n} days`,
+    // PLAN-play 10. lépés (s1/s2, anki-ui-terv.html): szint-választó + Next.
+    chooseLevel: 'Choose level',
+    next: (label: string) => `Next → ${label}`,
+    accentForgiven: 'Missing accent, counted as correct',
   },
   // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
   pos: {
