@@ -2,9 +2,8 @@
 // regular -ar/-er/-ir verbs (endings generated, not hand-listed per verb) and
 // a hand-verified TABLE for the 15 core irregulars named in the spec (ser,
 // estar, ir, tener, hacer, poder, decir, ver, dar, saber, querer, venir,
-// poner, salir, haber). K15: Spanish only, the game's hub card shows "soon"
-// for every other learned language (app/(tabs)/games.tsx + registry.ts
-// `languages: ['es']`).
+// poner, salir, haber). K15: Spanish only, callers show "soon" for every
+// other learned language.
 //
 // GAMES.md's own words: "A ragozási alakok tényállítások: ha egy alakban
 // bizonytalan vagy, inkább hagyd ki azt az igét vagy igeidőt, mint hogy
