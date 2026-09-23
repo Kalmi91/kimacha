@@ -71,6 +71,25 @@ describe('backup export/import round-trip (memory db)', () => {
     expect(await db.getSpellingList()).toEqual([{ wordId: 7001, step: 0, due: expect.any(String) }]);
   });
 
+  // PLAN-play 12. lépés: the opposite direction of the legacy-table test above,
+  // an OLDER backup taken before pcic_spelling_list existed has no key for it
+  // at all (not even an empty array); restoring it must not throw, and the
+  // PCIC spelling list should come back empty rather than crash the restore.
+  it('accepts and restores an older backup that predates pcic_spelling_list', async () => {
+    await db.setOnboarding('de', 'es');
+    await db.addToSpellingList(8001);
+    const payload = await db.exportAll();
+    const olderPayload = { ...payload, tables: { ...payload.tables } };
+    delete (olderPayload.tables as any).pcic_spelling_list;
+
+    expect(() => validateBackupPayload(olderPayload)).not.toThrow();
+
+    await db.importAll(olderPayload as any);
+    expect(await db.getPcicSpellingList()).toEqual([]);
+    await db.setOnboarding('de', 'es');
+    expect(await db.getSpellingList()).toEqual([{ wordId: 8001, step: 0, due: expect.any(String) }]);
+  });
+
   // Play-vágás 7. lépés (2026-09-23): the exact scenario the step's own
   // acceptance check names, an older-schema backup whose onboarding/active
   // pair is hu-es restores onto en-es, not onto the pair it was saved with.

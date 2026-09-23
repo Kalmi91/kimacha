@@ -12,12 +12,19 @@ export const BACKUP_TABLES = [
   'learn_settings',
   'onboarding',
   'spelling_list',
+  'pcic_spelling_list',
   'streak',
   'user_level',
   'user_meta',
 ] as const;
 
 export type BackupTable = (typeof BACKUP_TABLES)[number];
+
+// PLAN-play 12. lépés (s3): tables added AFTER a table already shipped in
+// BACKUP_TABLES; an older backup taken before the table existed has no key
+// for it at all (not even an empty array), so it must not throw or crash the
+// restore. Missing -> treated as empty, same content as an empty list.
+export const OPTIONAL_BACKUP_TABLES: readonly BackupTable[] = ['pcic_spelling_list'];
 
 // Play-vágás 7. lépés (2026-09-23): tables an older backup (e.g. 4.0.25) may
 // still carry, but the app no longer reads or writes (their DB methods were
@@ -114,6 +121,11 @@ const TABLE_COLUMNS: Record<BackupTable, Record<string, ColumnSpec>> = {
     step: { type: 'number', nullable: false },
     due: { type: 'string', nullable: false },
   },
+  pcic_spelling_list: {
+    item_id: { type: 'string', nullable: false },
+    step: { type: 'number', nullable: false },
+    due: { type: 'string', nullable: false },
+  },
   streak: {
     id: { type: 'number', nullable: false },
     current_count: { type: 'number', nullable: false },
@@ -157,6 +169,9 @@ export function validateBackupPayload(raw: unknown): BackupPayload {
     throw new Error(`Backup file has an unknown table: ${key}`);
   }
   for (const table of BACKUP_TABLES) {
+    if (p.tables[table] === undefined && OPTIONAL_BACKUP_TABLES.includes(table)) {
+      p.tables[table] = [];
+    }
     const rows = p.tables[table];
     if (!Array.isArray(rows)) {
       throw new Error(`Backup file is missing table: ${table}`);

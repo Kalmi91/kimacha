@@ -5,6 +5,7 @@ import { FORCED_PAIR, needsPairCorrection } from './languages';
 import { WORD_MERGES } from './wordMerges';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 import type { Sm2Card } from './sm2';
+import { addDays } from './sm2';
 import type { PcicLevel } from '@/data/pcic';
 
 // PLAN-play 10. lépés: egy meglévő telepítésen a haladás ma "b1-..." id-kkel
@@ -19,10 +20,9 @@ export interface DB {
   claimDailyGreeting(): Promise<boolean>;
   getStatusBarTint(): Promise<number>;
   setStatusBarTint(index: number): Promise<void>;
-  getTodayStats(): Promise<{ totalReviews: number; correctCount: number; avgResponseMs: number; flashcardCount: number; typingCount: number; wordCount: number; sentenceCount: number }>;
-  getMasteredCount(): Promise<number>;
-  getReviewedWordCount(level: string): Promise<number>;
-  getScheduledWordDueDates(): Promise<string[]>;
+  // PLAN-play 12. lépés: napi streak-írás visszakerült (a Tanulás fül vitte
+  // el, a PCIC-értékelés az egyetlen hívó innentől, lásd app/(tabs)/index.tsx).
+  updateStreak(): Promise<void>;
   addToSpellingList(wordId: number): Promise<void>;
   getSpellingList(): Promise<{ wordId: number; step: number; due: string }[]>;
   getSpellingDueCount(): Promise<number>;
@@ -30,6 +30,14 @@ export interface DB {
   // a szám esedékes gyakorlás-e vagy összesen ennyi szó van a listán.
   getSpellingListCount(): Promise<number>;
   updateSpellingStep(wordId: number, step: number, due: string): Promise<void>;
+  // PLAN-play 12. lépés (s3): PCIC-tétel a helyesírás-listán, a fenti
+  // word_id-alapú listától külön (a PCIC id string, pl. "b1-0184"). Nem
+  // pair-hez kötött, mint a pcic_cards tábla.
+  addToPcicSpellingList(itemId: string): Promise<void>;
+  getPcicSpellingList(): Promise<{ itemId: string; step: number; due: string }[]>;
+  getPcicSpellingDueCount(): Promise<number>;
+  getPcicSpellingListCount(): Promise<number>;
+  updatePcicSpellingStep(itemId: string, step: number, due: string): Promise<void>;
   getStrictAccents(): Promise<boolean>;
   setStrictAccents(v: boolean): Promise<void>;
   // FB188: a névelő-gombsor a gépelős spanyol főnév-kártyán, ki-be kapcsolható.
@@ -183,6 +191,11 @@ class SQLiteDB implements DB {
         last_review TEXT,
         introduced_at TEXT,
         known INTEGER NOT NULL DEFAULT 0
+      );
+      CREATE TABLE IF NOT EXISTS pcic_spelling_list (
+        item_id TEXT PRIMARY KEY,
+        step INTEGER NOT NULL DEFAULT 0,
+        due TEXT NOT NULL
       );
     `);
     // Migration: add random_topics column (DBs created before the random-topic toggle).
@@ -443,6 +456,19 @@ class SQLiteDB implements DB {
     return await db.getFirstAsync<any>('SELECT * FROM streak WHERE id = 1');
   }
 
+  // PLAN-play 12. lépés: visszahozva (a Tanulás fül vitte el a lépés 3-ban),
+  // a PCIC-értékelés hívja, napi első hívás számít csak (a last_date őrzi).
+  async updateStreak() {
+    const db = await this.open();
+    const today = localDateString();
+    const streak = await this.getStreak();
+    if (streak.last_date === today) return;
+    const yesterday = addDays(today, -1);
+    const newCount = streak.last_date === yesterday ? streak.current_count + 1 : 1;
+    const longest = Math.max(newCount, streak.longest_count);
+    await db.runAsync('UPDATE streak SET current_count = ?, last_date = ?, longest_count = ? WHERE id = 1', [newCount, today, longest]);
+  }
+
   async getOnboarding() {
     const db = await this.open();
     const row = await db.getFirstAsync<any>('SELECT source, target FROM onboarding WHERE id = 1');
@@ -497,64 +523,6 @@ class SQLiteDB implements DB {
     return true;
   }
 
-  async getTodayStats() {
-    const db = await this.open();
-    const today = new Date().toISOString().split('T')[0];
-    const rows = await db.getAllAsync<any>(
-      "SELECT * FROM card_attempts WHERE timestamp >= ?", [`${today}T00:00:00`]
-    );
-    const total = rows.length;
-    const correct = rows.filter((r: any) => r.correct === 1).length;
-    const avgMs = total > 0 ? Math.round(rows.reduce((s: number, r: any) => s + r.response_time_ms, 0) / total) : 0;
-    return {
-      totalReviews: total,
-      correctCount: correct,
-      avgResponseMs: avgMs,
-      flashcardCount: 0,
-      typingCount: 0,
-      wordCount: rows.filter((r: any) => r.type === 'word').length,
-      sentenceCount: rows.filter((r: any) => r.type === 'sentence').length,
-    };
-  }
-
-  async getMasteredCount() {
-    const db = await this.open();
-    const row = await db.getFirstAsync<any>(
-      "SELECT COUNT(*) as cnt FROM cards WHERE state >= 2 AND stability > 10 AND pair = ?",
-      [this.activePair]
-    );
-    return row?.cnt ?? 0;
-  }
-
-  async getReviewedWordCount(level: string) {
-    const db = await this.open();
-    const { getWordsForLevel } = require('@/data/words');
-    const levelWords = getWordsForLevel(level, this.activePair.split('-')[1]);
-    const wordIds = levelWords.map((w: any) => w.id);
-    if (wordIds.length === 0) return 0;
-    const placeholders = wordIds.map(() => '?').join(',');
-    const row = await db.getFirstAsync<any>(
-      // UTEMEZO 1. szakasz: megtanult = a 3. lap egyszer helyes volt, nem pedig
-      // „egyszer már láttam" (reps > 0).
-      `SELECT COUNT(*) as cnt FROM cards WHERE word_id IN (${placeholders}) AND type = 'word' AND pair = ?
-         AND (lap >= 3 OR buried = 1)`,
-      [...wordIds, this.activePair]
-    );
-    return row?.cnt ?? 0;
-  }
-
-  // FB100: due dates of the word cards already in rotation (a never-studied card
-  // has no schedule yet, and a buried one never comes back), for the Stats tab's
-  // "how many words are put away for how long" report.
-  async getScheduledWordDueDates() {
-    const db = await this.open();
-    const rows = await db.getAllAsync<any>(
-      "SELECT due FROM cards WHERE type = 'word' AND reps > 0 AND buried = 0 AND pair = ?",
-      [this.activePair]
-    );
-    return rows.map((r: any) => String(r.due));
-  }
-
   // FB39: spelling-practice list, scoped to the active pair like cards.
   async addToSpellingList(wordId: number) {
     const db = await this.open();
@@ -595,6 +563,41 @@ class SQLiteDB implements DB {
       'UPDATE spelling_list SET step = ?, due = ? WHERE pair = ? AND word_id = ?',
       [step, due, this.activePair, wordId]
     );
+  }
+
+  // PLAN-play 12. lépés (s3): ugyanaz, mint a fenti négy metódus, de a
+  // PCIC-tétel string id-jére (pl. "b1-0184"), nem pair-hez kötve, mint a
+  // pcic_cards tábla.
+  async addToPcicSpellingList(itemId: string) {
+    const db = await this.open();
+    const now = new Date().toISOString();
+    await db.runAsync('INSERT OR IGNORE INTO pcic_spelling_list (item_id, step, due) VALUES (?, 0, ?)', [itemId, now]);
+  }
+
+  async getPcicSpellingList() {
+    const db = await this.open();
+    const rows = await db.getAllAsync<any>('SELECT item_id, step, due FROM pcic_spelling_list');
+    return rows.map((r: any) => ({ itemId: r.item_id, step: r.step, due: r.due }));
+  }
+
+  async getPcicSpellingDueCount() {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>(
+      'SELECT COUNT(*) as cnt FROM pcic_spelling_list WHERE due <= ?',
+      [new Date().toISOString()]
+    );
+    return row?.cnt ?? 0;
+  }
+
+  async getPcicSpellingListCount() {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT COUNT(*) as cnt FROM pcic_spelling_list');
+    return row?.cnt ?? 0;
+  }
+
+  async updatePcicSpellingStep(itemId: string, step: number, due: string) {
+    const db = await this.open();
+    await db.runAsync('UPDATE pcic_spelling_list SET step = ?, due = ? WHERE item_id = ?', [step, due, itemId]);
   }
 
   // FB132: difficulty switch, per pair (accents matter in Spanish, less so in
@@ -831,7 +834,7 @@ class SQLiteDB implements DB {
     await db.withTransactionAsync(async () => {
       for (const table of BACKUP_TABLES) {
         await db.runAsync(`DELETE FROM ${table}`);
-        for (const row of payload.tables[table]) {
+        for (const row of payload.tables[table] ?? []) {
           const cols = Object.keys(row);
           await db.runAsync(
             `INSERT INTO ${table} (${cols.join(', ')}) VALUES (${cols.map(() => '?').join(', ')})`,
