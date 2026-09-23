@@ -7,13 +7,12 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
-import { charDiff } from '@/lib/charDiff';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
 import { pcicItemsForLevel, findPcicItem, type PcicLevel } from '@/data/pcic';
 import { gradePcicAnswer, suggestedGrade, type PcicGrade } from '@/lib/pcicMatch';
 import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
-import { sm2Review, sm2PreviewDays, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
+import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { countDoneToday, requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
 import { cardsForLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
@@ -22,15 +21,13 @@ import BadgeRow from '@/components/learn/BadgeRow';
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
+import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
 import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
 
 // PLAN-pcic 5. lépés: a PCIC fül. Angol -> spanyol gépelés, Anki-gombokkal
 // (again/hard/good/easy), az önálló SM-2 ütemezőn (lib/sm2.ts, 4. lépés).
 // Nem a FSRS `cards`/`sessionQueue` ütemezőt használja, azt nem érinti.
-
-// A régi (PR #27 előtti) gombsor sorrendje: Nem tudtam, Tudtam.
-const GRADES: Sm2Grade[] = ['again', 'good'];
 
 // SZ2 (SZAVAK.md): egy visszavonható értékelés pillanatképe. `counted` = a
 // számlálókat is léptette-e (SZ3 „Ezt nem tanulom" gombja majd false-t ír ide).
@@ -392,13 +389,6 @@ export default function PcicScreen() {
   const sessionTotal = doneToday + queue.length;
   const sessionPct = sessionTotal > 0 ? (doneToday / sessionTotal) * 100 : 0;
 
-  // A régi gombsor intervallum-előnézete grade-enként (lib/sm2.ts
-  // sm2PreviewDays), i18n-nel formázva (FB350/5. commit: ne csak magyarul).
-  const previewDays = sm2PreviewDays(current, today);
-  const previews = Object.fromEntries(
-    GRADES.map((g) => [g, previewDays[g] === 0 ? s.pcic.intervalToday : s.pcic.intervalDays(previewDays[g])])
-  ) as Record<Sm2Grade, string>;
-
   // 5b: a lap tetejére kerülő lap/lépés-jelvény (CardShell chip propja),
   // a korábbi sectionRow-beli stepBadge szövegek helyén.
   const chipLabel =
@@ -506,76 +496,17 @@ export default function PcicScreen() {
           />
 
           {grade && (
-            <View style={styles.resultSection}>
-              <Text style={styles.diffLine}>
-                {charDiff(typedAnswer, grade.best, { case: true, accents: false }).map((d, i) => (
-                  <Text
-                    key={i}
-                    style={
-                      d.missing
-                        ? styles.diffMissing
-                        : d.wrong
-                          ? styles.diffWrong
-                          : { color: nextGrade === 'good' ? '#22C55E' : colors.text }
-                    }
-                  >
-                    {d.ch}
-                  </Text>
-                ))}
-              </Text>
-              <View style={styles.frontRow}>
-                <Text style={[styles.correctAnswer, { color: colors.tint }]}>{grade.best}</Text>
-                <Pressable onPress={() => speak(grade.best, speechLang('es'))} style={styles.speakBtn}>
-                  <Text style={styles.speakIcon}>🔊</Text>
-                </Pressable>
-              </View>
-              {/* s2 (anki-ui-terv.html): ékezet-szigor KI + csak-ékezet eltérés
-                  -> a diff sárga jelölése mellett kimondva is 100%-nak számít. */}
-              {grade.accentOnly && (
-                <Text style={[styles.accentNote, { color: colors.tabIconDefault }]}>{s.pcic.accentForgiven}</Text>
-              )}
-              {/* PLAN-play 11. lépés: példamondat a megoldás alatt, csak Check
-                  után és csak ha van egyezés a korpuszban (currentItem.exampleEs). */}
-              {currentItem?.exampleEs && (
-                <>
-                  <View style={[styles.frontRow, styles.exampleRow]}>
-                    <Text style={[styles.exampleEs, { color: colors.text }]}>{currentItem.exampleEs}</Text>
-                    <Pressable onPress={() => speak(currentItem.exampleEs!, speechLang('es'))} style={styles.speakBtn}>
-                      <Text style={styles.speakIcon}>🔊</Text>
-                    </Pressable>
-                  </View>
-                  <Text style={[styles.exampleEn, { color: colors.tabIconDefault }]}>{currentItem.exampleEn}</Text>
-                </>
-              )}
-            </View>
-          )}
-
-          {/* Kálmán 2026-09-21: a régi (PR #27 előtti) Tudtam/Nem tudtam
-              gombsor vissza, intervallum-előnézettel; a koppintás dönt és
-              értékel, üres beküldés után is. */}
-          {grade && (
-            <View style={styles.gradesRow}>
-              {GRADES.map((g) => {
-                const isPre = nextGrade === g;
-                return (
-                  <Pressable
-                    key={g}
-                    style={({ pressed }) => [
-                      styles.gradeBtn,
-                      {
-                        backgroundColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : g === 'good' ? '#38BDF8' : '#1D4ED8',
-                        borderColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : isPre ? colors.text : 'transparent',
-                        borderWidth: isPre ? 3 : 1,
-                      },
-                    ]}
-                    onPress={() => handleGrade(g)}
-                  >
-                    <Text style={styles.gradeLabel}>{s.pcic[g]}</Text>
-                    <Text style={styles.gradePreview}>{previews[g]}</Text>
-                  </Pressable>
-                );
-              })}
-            </View>
+            <PcicRevealedAnswer
+              colors={colors}
+              s={s}
+              typedAnswer={typedAnswer}
+              grade={grade}
+              nextGrade={nextGrade}
+              current={current}
+              currentItem={currentItem}
+              today={today}
+              onGrade={handleGrade}
+            />
           )}
 
           {/* PLAN-play 12. lépés (s3, döntés a): a "Add to spelling" gomb csak
@@ -757,12 +688,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 8,
   },
-  frontRow: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    gap: 8,
-    marginTop: 8,
-  },
   // 5b: a Learn frontText méretét vette át (32/bold), hogy a két fül kártyája
   // azonos súlyú szót mutasson.
   frontText: {
@@ -824,54 +749,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
   },
-  resultSection: {
-    alignItems: 'center',
-    marginTop: 16,
-  },
-  diffLine: {
-    fontSize: 20,
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: 1,
-    marginBottom: 6,
-  },
-  diffWrong: {
-    backgroundColor: '#EF4444',
-    color: '#FFFFFF',
-  },
-  diffMissing: {
-    backgroundColor: '#EAB308',
-    color: '#FFFFFF',
-    textDecorationLine: 'underline',
-  },
-  correctAnswer: {
-    flex: 1,
-    flexShrink: 1,
-    fontSize: 22,
-    fontWeight: '600',
-  },
-  // s2 (anki-ui-terv.html): "Missing accent, counted as correct" sor.
-  accentNote: {
-    fontSize: 12,
-    textAlign: 'center',
-    marginTop: 4,
-  },
-  // PLAN-play 11. lépés: példamondat a megoldás alatt, Check után.
-  exampleRow: {
-    marginTop: 12,
-  },
-  exampleEs: {
-    flex: 1,
-    flexShrink: 1,
-    fontSize: 16,
-    fontWeight: '700',
-    textAlign: 'center',
-  },
-  exampleEn: {
-    fontSize: 13,
-    textAlign: 'center',
-    marginTop: 4,
-  },
   dontLearn: {
     fontSize: 13,
     textAlign: 'right',
@@ -904,27 +781,5 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 18,
     fontWeight: '700',
-  },
-  gradesRow: {
-    flexDirection: 'row',
-    gap: 8,
-    marginTop: 24,
-  },
-  gradeBtn: {
-    flex: 1,
-    borderRadius: 12,
-    paddingVertical: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  gradeLabel: {
-    fontSize: 14,
-    fontWeight: '700',
-    color: '#FFFFFF',
-  },
-  gradePreview: {
-    fontSize: 11,
-    marginTop: 2,
-    color: '#FFFFFF',
   },
 });
