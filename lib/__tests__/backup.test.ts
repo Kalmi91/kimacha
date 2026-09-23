@@ -82,4 +82,48 @@ describe('validateBackupPayload', () => {
     });
     expect(payload.schemaVersion).toBe(BACKUP_SCHEMA_VERSION);
   });
+
+  it('accepts a real exported payload (round-trip with exportAll rows)', async () => {
+    const db = getDb();
+    await db.setOnboarding('en', 'es');
+    await db.ensureCard(9001, 'word');
+    const payload = await db.exportAll();
+    expect(() => validateBackupPayload(payload)).not.toThrow();
+  });
+
+  it('rejects a foreign JSON file (no backup fields at all)', () => {
+    expect(() => validateBackupPayload({ hello: 'world' })).toThrow();
+  });
+
+  it('rejects an unknown table', () => {
+    const tables = emptyTables();
+    tables.not_a_real_table = [];
+    expect(() =>
+      validateBackupPayload({ schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: 'x', appVersion: 'y', tables })
+    ).toThrow(/unknown table/);
+  });
+
+  it('rejects a wrong-type field (string where a number belongs)', () => {
+    const tables = emptyTables();
+    tables.cards = [{ id: 1, word_id: 5001, type: 'word', pair: 'en-es', due: 'x', stability: 'not-a-number' }];
+    expect(() =>
+      validateBackupPayload({ schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: 'x', appVersion: 'y', tables })
+    ).toThrow(/wrong-type/);
+  });
+
+  it('rejects a wrong-type field (number where a string belongs)', () => {
+    const tables = emptyTables();
+    tables.onboarding = [{ id: 1, source: 'en', target: 42 }];
+    expect(() =>
+      validateBackupPayload({ schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: 'x', appVersion: 'y', tables })
+    ).toThrow(/wrong-type/);
+  });
+
+  it('rejects null in a non-nullable field', () => {
+    const tables = emptyTables();
+    tables.streak = [{ id: 1, current_count: null, last_date: null, longest_count: 0 }];
+    expect(() =>
+      validateBackupPayload({ schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: 'x', appVersion: 'y', tables })
+    ).toThrow(/wrong-type/);
+  });
 });
