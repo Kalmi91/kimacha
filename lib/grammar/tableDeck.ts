@@ -15,6 +15,7 @@
 import type { GrammarTopicData } from '../games/content';
 import { isLessonV2 } from '../games/content';
 import { isConjugationTable } from './tableShape';
+import { DEFAULT_AGAIN_DELAY_SEC } from '../pcicSession';
 
 export interface DeckCell {
   /** Stable within a lesson: `${tableId}::${person}::${verb}` (all lowercased). */
@@ -42,7 +43,12 @@ export interface DeckState {
   cells: DeckCellState[];
 }
 
-const COOLDOWN_MS = 60_000;
+// FELTEVÉS (Kálmán vétózhatja, PLAN-fb0923 5. lépés/D2): a táblázat-pakli
+// "wrong answer comes back later" cooldownja UGYANABBÓL a beállításból
+// olvas, mint a PCIC "rontott szó" időzítője (lib/pcicSession.ts
+// again_delay_sec) - egy beállítás, két hely. A hívó (app/grammar/deck/
+// [topic].tsx) adja át `answerCell`-nek; ha nincs átadva, ez a régi 60s marad.
+const COOLDOWN_MS = DEFAULT_AGAIN_DELAY_SEC * 1000;
 
 function normalizePerson(label: string): string {
   return label.trim().toLowerCase();
@@ -122,11 +128,18 @@ export function nextCellId(state: DeckState, now: number): string | null {
   return pending.reduce((earliest, c) => (c.dueAt! < earliest.dueAt! ? c : earliest)).id;
 }
 
-/** Correct -> done, cleared cooldown. Wrong/empty -> due again in 60s. */
-export function answerCell(state: DeckState, id: string, correct: boolean, now: number): DeckState {
+/** Correct -> done, cleared cooldown. Wrong/empty -> due again after cooldownMs
+ *  (default: the same again_delay_sec setting as the PCIC tab, see above). */
+export function answerCell(
+  state: DeckState,
+  id: string,
+  correct: boolean,
+  now: number,
+  cooldownMs: number = COOLDOWN_MS
+): DeckState {
   return {
     cells: state.cells.map((c) =>
-      c.id === id ? { ...c, done: correct, dueAt: correct ? null : now + COOLDOWN_MS } : c
+      c.id === id ? { ...c, done: correct, dueAt: correct ? null : now + cooldownMs } : c
     ),
   };
 }
