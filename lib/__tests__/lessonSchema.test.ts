@@ -12,6 +12,7 @@ import path from 'path';
 import type { LessonV2, LessonBlock } from '@/lib/grammar/lessonTypes';
 import { TENSE_IDS, TENSE_NAMES } from '@/lib/grammar/lessonTypes';
 import type { GrammarGapItem } from '@/lib/games/content';
+import { findWholeWord } from '@/lib/grammar/whyTarget';
 
 const LANGS = ['hu', 'en', 'es', 'de'] as const;
 const DIR = path.join(__dirname, '..', '..', 'data', 'games', 'grammar', 'es');
@@ -200,6 +201,11 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
           for (const lang of LANGS) expect(opt.wrong?.[lang]).toBeTruthy();
         }
       });
+
+      // FB376: ha van `target`, szóhatárral szerepeljen az `es` mondatban.
+      if (item.target) {
+        expect(findWholeWord(item.es, item.target)).not.toBeNull();
+      }
     }
   });
 
