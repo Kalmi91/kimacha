@@ -22,7 +22,7 @@ import {
   nextCellId,
   resetDeck,
   tableCellsForLesson,
-  type DeckCell,
+  wordCellsForLesson,
   type DeckCellState,
   type DeckState,
 } from '@/lib/grammar/tableDeck';
@@ -37,8 +37,23 @@ import { useDockLift } from '@/components/learn/useDockLift';
 // DockedAction), Anki-szerű ütemezéssel (lib/grammar/tableDeck.ts). A
 // haladás a game_progress-be perzisztál, ${topic}:tabledeck kulccsal, ugyanaz
 // a game_id (GRAMMAR_PROGRESS_KEY), mint a lecke-pontszámoké.
+//
+// FB375 (PLAN-fb0923 6. lépés): tábla nélküli leckén a kártya-forrás a lecke
+// saját szavai (wordCellsForLesson), nem a ragozási tábla; a scheduler és a
+// képernyő ugyanaz, csak a promptBig szövege és a chip-felirat vált módonként.
 
 const progressKeyFor = (topicId: string) => `${topicId}:tabledeck`;
+
+type DeckMode = 'table' | 'word';
+
+interface DeckItem {
+  id: string;
+  /** The Spanish word/form to type. */
+  answer: string;
+  /** The big prompt text: "person · verb" for a table cell, the English
+   *  meaning for a word card. */
+  promptBig: string;
+}
 
 export default function TableDeckScreen() {
   const { theme } = useTheme();
@@ -53,7 +68,8 @@ export default function TableDeckScreen() {
   // FB364 (PLAN-fb0923 5. lépés/D2): egy beállítás, két hely, lásd
   // lib/grammar/tableDeck.ts fejét.
   const [againDelaySec, setAgainDelaySec] = useState(DEFAULT_AGAIN_DELAY_SEC);
-  const [cells, setCells] = useState<DeckCell[]>([]);
+  const [mode, setMode] = useState<DeckMode>('table');
+  const [items, setItems] = useState<DeckItem[]>([]);
   const [deck, setDeck] = useState<DeckState>({ cells: [] });
   const [typed, setTyped] = useState('');
   const [checked, setChecked] = useState<{ correct: boolean } | null>(null);
@@ -69,7 +85,14 @@ export default function TableDeckScreen() {
     const db = getDb();
     const id = String(topicId);
     const lesson = lessonFor('es', id);
-    const cellList = tableCellsForLesson(lesson);
+    const tableCells = tableCellsForLesson(lesson);
+    // FB375: table cells win where they exist (unchanged behavior); a
+    // table-less lesson falls back to its own word-deck.
+    const deckMode: DeckMode = tableCells.length > 0 ? 'table' : 'word';
+    const itemList: DeckItem[] =
+      deckMode === 'table'
+        ? tableCells.map((c) => ({ id: c.id, answer: c.answer, promptBig: `${c.person} · ${c.verb}` }))
+        : wordCellsForLesson(lesson).map((c) => ({ id: c.id, answer: c.es, promptBig: c.en }));
     const strict = await db.getStrictAccents();
     const delaySec = await db.getAgainDelaySec();
     const levelData = await db.getLevel();
@@ -79,8 +102,9 @@ export default function TableDeckScreen() {
     setLevel((levelData.level as Level) ?? 'A1');
     setStrictAccents(strict);
     setAgainDelaySec(delaySec);
-    setCells(cellList);
-    setDeck(mergeDeckState(cellList, persisted));
+    setMode(deckMode);
+    setItems(itemList);
+    setDeck(mergeDeckState(itemList, persisted));
     setTyped('');
     setChecked(null);
     setNow(Date.now());
@@ -102,8 +126,8 @@ export default function TableDeckScreen() {
   const lessonTitle = entry?.title.en ?? String(topicId);
 
   const currentId = nextCellId(deck, now);
-  const current = currentId ? cells.find((c) => c.id === currentId) : undefined;
-  const complete = cells.length > 0 && !current;
+  const current = currentId ? items.find((c) => c.id === currentId) : undefined;
+  const complete = items.length > 0 && !current;
 
   const handleCheck = () => {
     if (!current) return;
@@ -141,7 +165,7 @@ export default function TableDeckScreen() {
         {lessonTitle}
       </Text>
       <View style={[styles.progressChip, { backgroundColor: colors.tint }]}>
-        <Text style={styles.progressChipText}>{s.tableDeck.progress(doneCount(deck), cells.length)}</Text>
+        <Text style={styles.progressChipText}>{s.tableDeck.progress(doneCount(deck), items.length)}</Text>
       </View>
     </View>
   );
@@ -154,7 +178,7 @@ export default function TableDeckScreen() {
     );
   }
 
-  const pct = cells.length > 0 ? (doneCount(deck) / cells.length) * 100 : 0;
+  const pct = items.length > 0 ? (doneCount(deck) / items.length) * 100 : 0;
 
   if (complete) {
     return (
@@ -165,7 +189,7 @@ export default function TableDeckScreen() {
         </View>
         <View style={styles.doneBody}>
           <Text style={styles.doneEmoji}>🎉</Text>
-          <Text style={[styles.doneTitle, { color: colors.text }]}>{s.tableDeck.completeTitle(cells.length)}</Text>
+          <Text style={[styles.doneTitle, { color: colors.text }]}>{s.tableDeck.completeTitle(items.length)}</Text>
           <Pressable testID="tabledeck-start-again" style={[styles.btn, { backgroundColor: colors.tint }]} onPress={handleStartAgain}>
             <Text style={styles.btnTextOnTint}>{s.tableDeck.startAgain}</Text>
           </Pressable>
@@ -179,7 +203,8 @@ export default function TableDeckScreen() {
   }
 
   if (!current) {
-    // No conjugation table in this lesson (direct link / stale state).
+    // No conjugation table AND no word-deck cards for this lesson (direct
+    // link / stale state).
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
@@ -200,9 +225,11 @@ export default function TableDeckScreen() {
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >
-        <CardShell compact colors={colors} chip={s.tableDeck.chip} onPress={() => Keyboard.dismiss()}>
-          <Text style={[styles.promptCaption, { color: colors.tabIconDefault }]}>{s.tableDeck.promptCaption}</Text>
-          <Text style={[styles.promptBig, { color: colors.text }]}>{`${current.person} · ${current.verb}`}</Text>
+        <CardShell compact colors={colors} chip={mode === 'table' ? s.tableDeck.chip : s.tableDeck.wordChip} onPress={() => Keyboard.dismiss()}>
+          <Text style={[styles.promptCaption, { color: colors.tabIconDefault }]}>
+            {mode === 'table' ? s.tableDeck.promptCaption : s.tableDeck.wordPromptCaption}
+          </Text>
+          <Text style={[styles.promptBig, { color: colors.text }]}>{current.promptBig}</Text>
 
           <TextInput
             testID="tabledeck-input"

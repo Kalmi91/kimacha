@@ -11,7 +11,7 @@ import { cumulativeCorpusWordIds, grammarKindCounts, isLessonV2, type GrammarGap
 import { buildGlossMap } from '@/lib/games/gloss';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, syllabusTopic } from '@/lib/grammar/syllabus';
 import { lessonPercent } from '@/lib/grammar/lessonScore';
-import { tableCellsForLesson } from '@/lib/grammar/tableDeck';
+import { tableCellsForLesson, wordCellsForLesson, WORD_DECK_MIN_CARDS } from '@/lib/grammar/tableDeck';
 import { TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import { getScrollY, setScrollY } from '@/lib/grammar/scrollMemory';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
@@ -144,6 +144,10 @@ export default function GrammarLessonScreen() {
   // has a conjugation table (lib/grammar/tableDeck.ts already excludes the
   // reference GridTables and vosotros rows).
   const tableDeckCells = tableCellsForLesson(lesson);
+  // FB375 (PLAN-fb0923 6. lépés, D5/a): a table-less lesson gets a word-deck
+  // instead, built from its own vocabulary; only shown at >= 8 cards, and
+  // never alongside the table-deck button (D5: "ne legyen két gomb").
+  const wordDeckCells = tableDeckCells.length === 0 ? wordCellsForLesson(lesson) : [];
 
   // Two worked examples from the first items, so the lesson SHOWS the rule
   // before it asks anything.
@@ -462,6 +466,15 @@ export default function GrammarLessonScreen() {
             onPress={() => router.push(`/grammar/deck/${topicId}` as never)}
           >
             <Text style={[styles.btnText, { color: colors.tint }]}>{s.grammar.practiceTable(tableDeckCells.length)}</Text>
+          </Pressable>
+        ) : wordDeckCells.length >= WORD_DECK_MIN_CARDS ? (
+          // FB375: same deck screen, the word-source variant (D5/a).
+          <Pressable
+            testID="grammar-start-worddeck"
+            style={[styles.btn, availableKinds.length === 0 && styles.startBtn, { borderWidth: 1.5, borderColor: colors.tint }]}
+            onPress={() => router.push(`/grammar/deck/${topicId}` as never)}
+          >
+            <Text style={[styles.btnText, { color: colors.tint }]}>{s.grammar.practiceWords(wordDeckCells.length)}</Text>
           </Pressable>
         ) : null}
       </ScrollView>

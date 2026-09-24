@@ -12,10 +12,13 @@
 // file only computes state, given an explicit `now`, so it is testable
 // without timers.
 
-import type { GrammarTopicData } from '../games/content';
-import { isLessonV2 } from '../games/content';
+import type { GrammarGapItem, GrammarItem, GrammarMarkItem, GrammarTopicData } from '../games/content';
+import { isLessonV2, isMatchItem, isTransformItem, isWhyItem } from '../games/content';
 import { isConjugationTable } from './tableShape';
 import { DEFAULT_AGAIN_DELAY_SEC } from '../pcicSession';
+import type { ExamplePair, Lang4, LessonV2 } from './lessonTypes';
+import { PCIC_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
+import { normalizeWordToken, type Level } from '@/data/words';
 
 export interface DeckCell {
   /** Stable within a lesson: `${tableId}::${person}::${verb}` (all lowercased). */
@@ -91,7 +94,11 @@ export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined)
   return cells;
 }
 
-export function initDeckState(cells: DeckCell[]): DeckState {
+// FB375 (PLAN-fb0923 6. lépés): a scheduler csak `id`-t néz, sose a kártya
+// tartalmát, ezért ugyanez a motor szolgálja ki a szó-paklit is
+// (wordCellsForLesson lent) a tábla-pakli mellett, forrás-tömb-tipizálás
+// nélkül duplikálva.
+export function initDeckState(cells: { id: string }[]): DeckState {
   return { cells: cells.map((c) => ({ id: c.id, done: false, dueAt: null })) };
 }
 
@@ -100,7 +107,7 @@ export function initDeckState(cells: DeckCell[]): DeckState {
  * state (from game_progress). A cell the lesson no longer has is dropped; a
  * new cell the persisted state has never seen starts fresh.
  */
-export function mergeDeckState(cells: DeckCell[], persisted: DeckCellState[] | undefined): DeckState {
+export function mergeDeckState(cells: { id: string }[], persisted: DeckCellState[] | undefined): DeckState {
   const byId = new Map((persisted ?? []).map((c) => [c.id, c]));
   return { cells: cells.map((c) => byId.get(c.id) ?? { id: c.id, done: false, dueAt: null }) };
 }
@@ -147,4 +154,176 @@ export function answerCell(
 /** Every cell answered right once -> start the pass over. */
 export function resetDeck(state: DeckState): DeckState {
   return { cells: state.cells.map((c) => ({ id: c.id, done: false, dueAt: null })) };
+}
+
+// ---------------------------------------------------------------------------
+// FB375 (PLAN-fb0923 6. lépés, D5/a): "itt is legyen egy nyelvtanulós kártya
+// csomag a szavakból" - a lecke SAJÁT szavaiból egy pakli azoknak a
+// leckéknek, amiknek nincs ragozási táblájuk (tableCellsForLesson fent 0
+// cellát ad rájuk). A scheduler fent content-agnosztikus, ez a rész csak a
+// kártya-forrást adja: a lecke glosszáriuma ÉS a példamondatai (body+items),
+// PCIC angol jelentéssel, funkciószó nélkül.
+// ---------------------------------------------------------------------------
+
+/** FB375 (PLAN-fb0923 6. lépés/D5, step 3): the word-deck button only shows
+ *  at this many cards or more; below it, a table-less lesson stays
+ *  buttonless rather than offering a near-empty deck. */
+export const WORD_DECK_MIN_CARDS = 8;
+
+export interface WordDeckCard {
+  id: string;
+  /** The prompt: the word's English meaning. */
+  en: string;
+  /** The answer to type: the Spanish word. */
+  es: string;
+}
+
+// Zárt osztályú szófajok (véges alak-lista): névelő, elöljáró, névmás,
+// kötőszó, plusz a "haber" segédige csupasz infinitivusa. Nyílt osztályú
+// szófajra (főnév/ige/melléknév/határozó/szám) nincs teljes lista, azt a
+// PCIC-egyezés dönti el; egy ragozott segédige-alak (es, ha, está...) amúgy
+// sem egyezik semmilyen PCIC infinitivussal, tehát magától kimarad.
+const FUNCTION_WORDS_ES = new Set([
+  'el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas', 'al', 'del',
+  'a', 'ante', 'bajo', 'cabe', 'con', 'contra', 'de', 'desde', 'durante', 'en',
+  'entre', 'hacia', 'hasta', 'mediante', 'para', 'por', 'según', 'sin', 'so', 'sobre', 'tras',
+  'y', 'e', 'o', 'u', 'ni', 'pero', 'sino', 'aunque', 'porque', 'que', 'si', 'como', 'cuando', 'mientras', 'pues',
+  'yo', 'tú', 'tu', 'vos', 'él', 'ella', 'usted', 'nosotros', 'nosotras', 'vosotros', 'vosotras', 'ellos', 'ellas', 'ustedes',
+  'me', 'te', 'se', 'le', 'les', 'lo', 'nos', 'os',
+  'mi', 'mí', 'su', 'sus', 'nuestro', 'nuestra', 'nuestros', 'nuestras', 'vuestro', 'vuestra', 'vuestros', 'vuestras',
+  'este', 'esta', 'estos', 'estas', 'esto', 'ese', 'esa', 'esos', 'esas', 'eso', 'aquel', 'aquella', 'aquellos', 'aquellas', 'aquello',
+  'quien', 'quienes', 'cual', 'cuales', 'cuyo', 'cuya', 'cuyos', 'cuyas',
+  'qué', 'quién', 'quiénes', 'cuál', 'cuáles', 'cuánto', 'cuánta', 'cuántos', 'cuántas', 'cómo', 'cuándo', 'dónde',
+  'haber',
+]);
+
+// A lecke szintje-vagy-alatta (D5/a): a PCIC csak A1..B2-t fed, A0 az A1-re
+// esik, C1/C2 a B2-re (nincs feljebb PCIC-adat).
+const PCIC_LEVEL_CEILING: Record<Level, PcicLevel> = {
+  A0: 'A1', A1: 'A1', A2: 'A2', B1: 'B1', B2: 'B2', C1: 'B2', C2: 'B2',
+};
+
+const pcicIndexCache = new Map<Level, Map<string, { es: string; en: string }>>();
+
+// Egyetlen szótári alakra kulcsolt (id, es, en) index, A1-től a lecke
+// szintjéig kumulatívan, csak egy-tokenes (szóköz nélküli) tételekkel: egy
+// mondatból szedett szó csak egy másik egy szavas PCIC-alakkal egyezhet
+// pontosan, a PCIC 'sentence' tételei és a többszavas kifejezések itt nem
+// forrás (azokat a szerző a glosszáriumba teheti, ha kellenek).
+function pcicWordIndex(level: Level): Map<string, { es: string; en: string }> {
+  const cached = pcicIndexCache.get(level);
+  if (cached) return cached;
+  const ceiling = PCIC_LEVELS.indexOf(PCIC_LEVEL_CEILING[level]);
+  const index = new Map<string, { es: string; en: string }>();
+  for (let i = 0; i <= ceiling; i++) {
+    for (const item of pcicItemsForLevel(PCIC_LEVELS[i])) {
+      if (item.kind === 'sentence' || item.es.includes(' ')) continue;
+      const key = normalizeWordToken(item.es);
+      if (!key || index.has(key)) continue;
+      index.set(key, { es: item.es, en: item.en });
+    }
+  }
+  pcicIndexCache.set(level, index);
+  return index;
+}
+
+function pushLang4(out: string[], text: Lang4 | undefined): void {
+  if (text?.es) out.push(text.es);
+}
+
+function pushExamples(out: string[], examples: ExamplePair[] | undefined): void {
+  for (const ex of examples ?? []) out.push(ex.es);
+}
+
+// A lecke minden spanyol példamondata: body-blokkok (a táblák celláit
+// tableCellsForLesson már lefedi, itt kimaradnak) + items (form-nak nincs
+// önálló "es" mezője - verb/person/answer kategória-címke is lehet, pl.
+// "Adverbio (-mente)" -, ezért az marad ki egyedüliként).
+function lessonSentences(lesson: LessonV2): string[] {
+  const out: string[] = [];
+  for (const block of lesson.body) {
+    switch (block.kind) {
+      case 'text':
+      case 'tip':
+        pushLang4(out, block.text);
+        break;
+      case 'list':
+        for (const item of block.items) {
+          pushLang4(out, item.text);
+          pushExamples(out, item.examples);
+        }
+        break;
+      case 'usage':
+        for (const point of block.points) {
+          pushLang4(out, point.text);
+          pushExamples(out, point.examples);
+        }
+        break;
+      case 'examples':
+        pushExamples(out, block.examples);
+        break;
+      case 'contrast':
+        for (const pair of block.pairs) {
+          out.push(pair.a, pair.b);
+          pushLang4(out, pair.note);
+          pushExamples(out, pair.examples);
+        }
+        break;
+      case 'table':
+        break;
+    }
+  }
+  for (const item of lesson.items as GrammarItem[]) {
+    if (item.kind === undefined || item.kind === 'gap') {
+      const gap = item as GrammarGapItem;
+      out.push(gap.sentence, ...gap.examples);
+    } else if (item.kind === 'mark') {
+      const mark = item as GrammarMarkItem;
+      out.push(mark.sentence, ...mark.examples);
+    } else if (isMatchItem(item)) {
+      for (const pair of item.pairs) out.push(pair.es);
+    } else if (isWhyItem(item)) {
+      out.push(item.es);
+    } else if (isTransformItem(item)) {
+      out.push(item.answer);
+    }
+  }
+  return out;
+}
+
+/**
+ * A word-deck source for a lesson: its glossary entries (the author's own
+ * choice, so these never go through the function-word filter below - e.g.
+ * clases-de-palabras glosses "mía"/"mío" on purpose, as vocabulary), plus
+ * every content word from its example sentences that both (a) is not a
+ * closed-class function word and (b) has an English meaning in the PCIC
+ * (at the lesson's level or below). Order: glossary first, then first
+ * occurrence in the sentences; each word once (mergeDeckState/answerCell
+ * key on `id`, a repeat would silently collide).
+ */
+export function wordCellsForLesson(lesson: GrammarTopicData | null | undefined): WordDeckCard[] {
+  if (!lesson || !isLessonV2(lesson)) return [];
+  const cards: WordDeckCard[] = [];
+  const seen = new Set<string>();
+
+  for (const g of lesson.glossary ?? []) {
+    const key = normalizeWordToken(g.word);
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    cards.push({ id: `glossary::${key}`, es: g.word, en: g.gloss.en });
+  }
+
+  const pcic = pcicWordIndex(lesson.level);
+  for (const sentence of lessonSentences(lesson)) {
+    for (const token of sentence.split(/\s+/)) {
+      const key = normalizeWordToken(token);
+      if (!key || seen.has(key) || FUNCTION_WORDS_ES.has(key)) continue;
+      const hit = pcic.get(key);
+      if (!hit) continue;
+      seen.add(key);
+      cards.push({ id: `word::${key}`, es: hit.es, en: hit.en });
+    }
+  }
+
+  return cards;
 }
