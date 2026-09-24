@@ -102,6 +102,8 @@ export default {
     // PLAN-play 13. lépés: the table-deck button, only on lessons that have a
     // conjugation table (lib/grammar/tableDeck.ts).
     practiceTable: (n: number) => `Practice the table · ${n} cells`,
+    // FB376: names the word a "why" question is asking about.
+    whyFocus: (word: string) => `What is "${word}"?`,
   },
   settings: {
     weeklyGoal: 'Weekly study goal',

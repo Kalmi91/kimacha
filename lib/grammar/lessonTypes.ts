@@ -107,6 +107,9 @@ export interface WhyItem {
   options: { text: Lang4; wrong?: Lang4 }[]; // 3 szabály-név; a nem jó opciókon `wrong` kötelező
   correctIndex: number;
   tense?: { from: TenseId; to: TenseId };
+  // FB376: melyik szóra vonatkozik a kérdés, pontosan úgy, ahogy `es`-ben áll
+  // (a UI ezt emeli ki a mondatban és nevezi meg a kérdésben).
+  focus?: string;
 }
 
 // NY1: az igeidő-drill item-fajtája, mondat-átírás egyik igeidőből a

@@ -533,6 +533,10 @@ function auditWhyItem(item, itemPath) {
   }
   if (!item.es) p1.push({ path: itemPath, issue: 'why item missing es' });
   if (item.es && item.tr?.es !== item.es) p1.push({ path: itemPath, issue: 'why item tr.es must equal es' });
+  // FB376: ha van `focus`, pontosan úgy kell szerepelnie `es`-ben, ahogy áll.
+  if (item.focus && item.es && !item.es.includes(item.focus)) {
+    p1.push({ path: itemPath, issue: `why item focus "${item.focus}" not found in es "${item.es}"` });
+  }
 
   const huSeen = new Set();
   options.forEach((opt, i) => {

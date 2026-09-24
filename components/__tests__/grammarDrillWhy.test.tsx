@@ -68,3 +68,32 @@ describe('GrammarDrill: why item', () => {
     expect(onFinish).toHaveBeenCalledWith(0, 1);
   });
 });
+
+// FB376: without `focus`, no question naming a word (nothing to name); with
+// `focus`, the sentence highlights the word and the question names it.
+const lessonWithFocus: LessonV2 = {
+  ...lesson,
+  items: [
+    {
+      id: 'why-02',
+      kind: 'why',
+      es: 'El perro corre en el parque.',
+      tr: { hu: 'A kutya fut a parkban.', en: 'The dog runs in the park.', es: 'El perro corre en el parque.', de: 'Der Hund läuft im Park.' },
+      options: lesson.items[0].kind === 'why' ? lesson.items[0].options : [],
+      correctIndex: 0,
+      focus: 'perro',
+    },
+  ],
+};
+
+describe('GrammarDrill: why item focus (FB376)', () => {
+  it('names the focus word in a question', () => {
+    render(<GrammarDrill topic={lessonWithFocus} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['why']} />);
+    expect(screen.queryByText('What is "perro"?')).toBeTruthy();
+  });
+
+  it('without focus, asks no such question', () => {
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['why']} />);
+    expect(screen.queryByText(/What is/)).toBeNull();
+  });
+});
