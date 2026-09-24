@@ -1,0 +1,43 @@
+{
+  "format": "kimacha-hibaim",
+  "version": 1,
+  "batchId": "2026-09-23-sample",
+  "title": "Sample mistakes batch",
+  "date": "2026-09-23",
+  "source": "claude-chat",
+  "patterns": [
+    {
+      "id": "yo-form",
+      "title": "Use the yo form when you talk about yourself",
+      "rule": "When you talk about yourself, the verb is the yo form: tengo, sé, vivo.",
+      "lessons": ["presente-irregular", "presente-regular"],
+      "drills": [
+        { "id": "d1", "prompt": "Pero no ___ tomate. (tener)", "answer": "tengo", "en": "But I don't have tomato." }
+      ]
+    },
+    {
+      "id": "ser-estar",
+      "title": "Use estar for a temporary state, not ser",
+      "rule": "A temporary state or condition uses estar, not ser: está bien, estoy confundido.",
+      "lessons": ["ser-estar"],
+      "drills": [
+        { "id": "d1", "prompt": "Eso ___ bien. (estar)", "answer": "está", "en": "That's fine." },
+        { "id": "d2", "prompt": "___ confundido. (estar, yo)", "answer": "Estoy", "en": "I'm confused." }
+      ]
+    }
+  ],
+  "sentences": [
+    { "id": "s1", "en": "I don't have tomato.", "es": "No tengo tomate.", "wrong": "Pero no tienes tomate.", "pattern": "yo-form", "doubtful": false },
+    { "id": "s2", "en": "That's fine.", "es": "Eso está bien.", "wrong": "Eso es bien.", "pattern": "ser-estar", "doubtful": false },
+    { "id": "s3", "en": "I'm confused.", "es": "Estoy confundido.", "wrong": "Soy confundido.", "pattern": "ser-estar", "doubtful": true }
+  ],
+  "words": [
+    { "id": "w1", "es": "sartén", "en": "frying pan", "note": "" },
+    { "id": "w2", "es": "alacrán", "en": "scorpion", "note": "Mexican Spanish" }
+  ],
+  "wrongWords": [
+    { "wrong": "tienes", "es": "tengo", "kind": "form", "note": "yo form of tener" },
+    { "wrong": "misterios", "es": "errores", "kind": "word", "note": "misterios = mysteries" },
+    { "wrong": "compania", "es": "compañía", "kind": "spelling", "note": "" }
+  ]
+}
