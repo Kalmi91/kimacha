@@ -283,6 +283,7 @@ function WhyDrillItem({
   onDone: (correct: boolean) => void;
 }) {
   const [selected, setSelected] = useState<number | null>(null);
+  const [showTr, setShowTr] = useState(false);
   const answered = selected !== null;
   const isCorrect = answered && selected === item.correctIndex;
 
@@ -301,9 +302,15 @@ function WhyDrillItem({
             <Text style={styles.speak}>🔊</Text>
           </Pressable>
         </View>
-        <Text style={[styles.whyTranslation, { color: colors.tabIconDefault }]}>
-          {item.tr[contentLang] ?? item.tr.en}
-        </Text>
+        {answered || showTr ? (
+          <Text style={[styles.whyTranslation, { color: colors.tabIconDefault }]}>
+            {item.tr[contentLang] ?? item.tr.en}
+          </Text>
+        ) : (
+          <Pressable testID="why-show-translation" onPress={() => setShowTr(true)} style={styles.whyTrButton}>
+            <Text style={[styles.whyTrButtonText, { color: colors.tint }]}>{s.grammar.showTranslation}</Text>
+          </Pressable>
+        )}
         {item.focus ? (
           <Text style={[styles.whyFocusQuestion, { color: colors.tint }]}>{s.grammar.whyFocus(item.focus)}</Text>
         ) : null}
@@ -774,6 +781,8 @@ const styles = StyleSheet.create({
   whySentenceRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10 },
   whyTranslation: { fontSize: 14, textAlign: 'center', marginTop: 6 },
   whyFocusQuestion: { fontSize: 14, fontWeight: '700', textAlign: 'center', marginTop: 6 },
+  whyTrButton: { alignSelf: 'center', marginTop: 6, paddingVertical: 4, paddingHorizontal: 10 },
+  whyTrButtonText: { fontSize: 13, fontWeight: '700' },
   speak: { fontSize: 18 },
   // NY3 (NYELVTAN.md "Első szelet"): igeidő-jelvény + mondat-átírás drill.
   tenseBadge: { alignSelf: 'flex-start', paddingVertical: 6, paddingHorizontal: 12, borderRadius: 999 },
