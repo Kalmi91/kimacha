@@ -459,7 +459,8 @@
     "es": "mediano",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "adj"
   },
   {
     "id": "a2-c4cc3529",
@@ -483,7 +484,8 @@
     "es": "centímetro(s)",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "noun"
   },
   {
     "id": "a2-3b08b383",
@@ -508,7 +510,8 @@
     "es": "kilo(s)",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "noun"
   },
   {
     "id": "a2-d860184f",
@@ -516,7 +519,8 @@
     "es": "gramo(s)",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "noun"
   },
   {
     "id": "a2-b4beb878",
@@ -592,7 +596,8 @@
     "es": "litro",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "noun"
   },
   {
     "id": "a2-cdf4f979",
@@ -765,7 +770,8 @@
     "es": "desde",
     "kind": "word",
     "source": "08",
-    "section": "3.4. Distancia"
+    "section": "3.4. Distancia",
+    "pos": "prep"
   },
   {
     "id": "a2-720f754f",
@@ -773,7 +779,8 @@
     "es": "hasta",
     "kind": "word",
     "source": "08",
-    "section": "3.4. Distancia"
+    "section": "3.4. Distancia",
+    "pos": "prep"
   },
   {
     "id": "a2-ed7ad1f6",
@@ -1221,7 +1228,8 @@
     "es": "durante",
     "kind": "word",
     "source": "08",
-    "section": "4.1. Referencias generales"
+    "section": "4.1. Referencias generales",
+    "pos": "prep"
   },
   {
     "id": "a2-e028f6dd",
@@ -1608,7 +1616,8 @@
     "es": "ya",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adv"
   },
   {
     "id": "a2-b4ab0e70",
@@ -2102,7 +2111,8 @@
     "es": "cuadrado",
     "kind": "word",
     "source": "08",
-    "section": "5.1. Formas y figuras"
+    "section": "5.1. Formas y figuras",
+    "pos": "noun"
   },
   {
     "id": "a2-605d3374",
@@ -2135,7 +2145,8 @@
     "es": "seco",
     "kind": "word",
     "source": "08",
-    "section": "5.6. Humedad, sequedad"
+    "section": "5.6. Humedad, sequedad",
+    "pos": "adj"
   },
   {
     "id": "a2-3edf150b",
@@ -2175,7 +2186,8 @@
     "es": "tela",
     "kind": "word",
     "source": "08",
-    "section": "5.7. Materia"
+    "section": "5.7. Materia",
+    "pos": "noun"
   },
   {
     "id": "a2-cb030c5e",
@@ -2216,7 +2228,8 @@
     "es": "vistas",
     "kind": "word",
     "source": "08",
-    "section": "5.8. Visibilidad, visión"
+    "section": "5.8. Visibilidad, visión",
+    "pos": "noun"
   },
   {
     "id": "a2-161c845e",
@@ -2380,7 +2393,8 @@
     "es": "mayor",
     "kind": "word",
     "source": "08",
-    "section": "5.13. Edad, vejez"
+    "section": "5.13. Edad, vejez",
+    "pos": "adj"
   },
   {
     "id": "a2-8097f526",
@@ -2414,7 +2428,8 @@
     "es": "moderno",
     "kind": "word",
     "source": "08",
-    "section": "5.13. Edad, vejez"
+    "section": "5.13. Edad, vejez",
+    "pos": "adj"
   },
   {
     "id": "a2-b1825946",
@@ -2454,7 +2469,8 @@
     "es": "mejor",
     "kind": "word",
     "source": "08",
-    "section": "6.1. Evaluación general"
+    "section": "6.1. Evaluación general",
+    "pos": "adv"
   },
   {
     "id": "a2-09a2cc93",
@@ -2770,7 +2786,8 @@
     "es": "muela",
     "kind": "word",
     "source": "09",
-    "section": "1.1. Partes del cuerpo"
+    "section": "1.1. Partes del cuerpo",
+    "pos": "noun"
   },
   {
     "id": "a2-0120d4c0",
@@ -2986,7 +3003,8 @@
     "es": "optimista",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "adj"
   },
   {
     "id": "a2-bcd2bfb9",
@@ -3058,7 +3076,8 @@
     "es": "tolerante",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "adj"
   },
   {
     "id": "a2-25379790",
@@ -3210,7 +3229,8 @@
     "es": "presentar(se)",
     "kind": "word",
     "source": "09",
-    "section": "3.1. Datos personales"
+    "section": "3.1. Datos personales",
+    "pos": "verb"
   },
   {
     "id": "a2-5d3a130c",
@@ -3226,7 +3246,8 @@
     "es": "prefijo",
     "kind": "word",
     "source": "09",
-    "section": "3.1. Datos personales"
+    "section": "3.1. Datos personales",
+    "pos": "noun"
   },
   {
     "id": "a2-ec5a6ac0",
@@ -3234,7 +3255,8 @@
     "es": "extensión",
     "kind": "word",
     "source": "09",
-    "section": "3.1. Datos personales"
+    "section": "3.1. Datos personales",
+    "pos": "noun"
   },
   {
     "id": "a2-bca3f257",
@@ -3338,7 +3360,8 @@
     "es": "maletín",
     "kind": "word",
     "source": "09",
-    "section": "3.3. Objetos personales"
+    "section": "3.3. Objetos personales",
+    "pos": "noun"
   },
   {
     "id": "a2-bec5e726",
@@ -3594,7 +3617,8 @@
     "es": "infusión",
     "kind": "word",
     "source": "09",
-    "section": "5.2. Bebida"
+    "section": "5.2. Bebida",
+    "pos": "noun"
   },
   {
     "id": "a2-b937b287",
@@ -3602,7 +3626,8 @@
     "es": "ron",
     "kind": "word",
     "source": "09",
-    "section": "5.2. Bebida"
+    "section": "5.2. Bebida",
+    "pos": "noun"
   },
   {
     "id": "a2-73a07b78",
@@ -3610,7 +3635,8 @@
     "es": "ginebra",
     "kind": "word",
     "source": "09",
-    "section": "5.2. Bebida"
+    "section": "5.2. Bebida",
+    "pos": "noun"
   },
   {
     "id": "a2-3e02d94d",
@@ -3618,7 +3644,8 @@
     "es": "cava",
     "kind": "word",
     "source": "09",
-    "section": "5.2. Bebida"
+    "section": "5.2. Bebida",
+    "pos": "noun"
   },
   {
     "id": "a2-164c27dc",
@@ -3626,7 +3653,8 @@
     "es": "champán",
     "kind": "word",
     "source": "09",
-    "section": "5.2. Bebida"
+    "section": "5.2. Bebida",
+    "pos": "noun"
   },
   {
     "id": "a2-a7eab768",
@@ -3642,7 +3670,8 @@
     "es": "lata",
     "kind": "word",
     "source": "09",
-    "section": "5.2. Bebida"
+    "section": "5.2. Bebida",
+    "pos": "noun"
   },
   {
     "id": "a2-3656524a",
@@ -3698,7 +3727,8 @@
     "es": "naranja",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "a2-be949382",
@@ -3730,7 +3760,8 @@
     "es": "perejil",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "a2-8e5fc65e",
@@ -3762,7 +3793,8 @@
     "es": "mayonesa",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "a2-2880c735",
@@ -3778,7 +3810,8 @@
     "es": "merluza",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "a2-1307240f",
@@ -3786,7 +3819,8 @@
     "es": "salmón",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "a2-440d1f60",
@@ -3794,7 +3828,8 @@
     "es": "sardina",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "a2-1673a3e2",
@@ -3810,7 +3845,8 @@
     "es": "gambas",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "a2-46139b0b",
@@ -3842,7 +3878,8 @@
     "es": "galletas",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "a2-fa27d392",
@@ -3850,7 +3887,8 @@
     "es": "cereales",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "a2-59c21812",
@@ -3922,7 +3960,8 @@
     "es": "filete",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "a2-dddfff17",
@@ -4106,7 +4145,8 @@
     "es": "pizzería",
     "kind": "word",
     "source": "09",
-    "section": "5.7. Restaurante"
+    "section": "5.7. Restaurante",
+    "pos": "noun"
   },
   {
     "id": "a2-8ab4183d",
@@ -4354,7 +4394,8 @@
     "es": "diploma",
     "kind": "word",
     "source": "09",
-    "section": "6.5. Exámenes y calificaciones"
+    "section": "6.5. Exámenes y calificaciones",
+    "pos": "noun"
   },
   {
     "id": "a2-d318aed4",
@@ -4522,7 +4563,8 @@
     "es": "cuaderno",
     "kind": "word",
     "source": "09",
-    "section": "6.8. Material educativo y mobiliario de aula"
+    "section": "6.8. Material educativo y mobiliario de aula",
+    "pos": "noun"
   },
   {
     "id": "a2-d4235bc0",
@@ -4554,7 +4596,8 @@
     "es": "fotocopiadora",
     "kind": "word",
     "source": "09",
-    "section": "6.8. Material educativo y mobiliario de aula"
+    "section": "6.8. Material educativo y mobiliario de aula",
+    "pos": "noun"
   },
   {
     "id": "a2-7361996c",
@@ -4562,7 +4605,8 @@
     "es": "dependiente",
     "kind": "word",
     "source": "09",
-    "section": "7.1. Profesiones y cargos"
+    "section": "7.1. Profesiones y cargos",
+    "pos": "adj"
   },
   {
     "id": "a2-3802bbe7",
@@ -4586,7 +4630,8 @@
     "es": "empresario",
     "kind": "word",
     "source": "09",
-    "section": "7.1. Profesiones y cargos"
+    "section": "7.1. Profesiones y cargos",
+    "pos": "noun"
   },
   {
     "id": "a2-ecead271",
@@ -4658,7 +4703,8 @@
     "es": "multinacional",
     "kind": "word",
     "source": "09",
-    "section": "7.2. Lugares, herramientas y ropa de trabajo"
+    "section": "7.2. Lugares, herramientas y ropa de trabajo",
+    "pos": "noun"
   },
   {
     "id": "a2-90c4483b",
@@ -4666,7 +4712,8 @@
     "es": "panadería",
     "kind": "word",
     "source": "09",
-    "section": "7.2. Lugares, herramientas y ropa de trabajo"
+    "section": "7.2. Lugares, herramientas y ropa de trabajo",
+    "pos": "noun"
   },
   {
     "id": "a2-30916727",
@@ -4674,7 +4721,8 @@
     "es": "librería",
     "kind": "word",
     "source": "09",
-    "section": "7.2. Lugares, herramientas y ropa de trabajo"
+    "section": "7.2. Lugares, herramientas y ropa de trabajo",
+    "pos": "noun"
   },
   {
     "id": "a2-07d5c6d7",
@@ -4859,7 +4907,8 @@
     "es": "hobby",
     "kind": "word",
     "source": "09",
-    "section": "8.1. Tiempo libre y entretenimiento"
+    "section": "8.1. Tiempo libre y entretenimiento",
+    "pos": "noun"
   },
   {
     "id": "a2-408209c2",
@@ -4883,7 +4932,8 @@
     "es": "zoo",
     "kind": "word",
     "source": "09",
-    "section": "8.1. Tiempo libre y entretenimiento"
+    "section": "8.1. Tiempo libre y entretenimiento",
+    "pos": "noun"
   },
   {
     "id": "a2-c3c36d0e",
@@ -5011,7 +5061,8 @@
     "es": "ópera",
     "kind": "word",
     "source": "09",
-    "section": "8.2. Espectáculos y exposiciones"
+    "section": "8.2. Espectáculos y exposiciones",
+    "pos": "noun"
   },
   {
     "id": "a2-fe0feb3c",
@@ -5203,7 +5254,8 @@
     "es": "fax",
     "kind": "word",
     "source": "09",
-    "section": "9.2. Correspondencia escrita"
+    "section": "9.2. Correspondencia escrita",
+    "pos": "noun"
   },
   {
     "id": "a2-ef25a788",
@@ -5299,7 +5351,8 @@
     "es": "anuncios",
     "kind": "word",
     "source": "09",
-    "section": "9.5. Televisión y radio"
+    "section": "9.5. Televisión y radio",
+    "pos": "noun"
   },
   {
     "id": "a2-701e7d7e",
@@ -5315,7 +5368,8 @@
     "es": "presentador",
     "kind": "word",
     "source": "09",
-    "section": "9.5. Televisión y radio"
+    "section": "9.5. Televisión y radio",
+    "pos": "noun"
   },
   {
     "id": "a2-df861349",
@@ -5355,7 +5409,8 @@
     "es": "chat",
     "kind": "word",
     "source": "09",
-    "section": "9.6. Internet"
+    "section": "9.6. Internet",
+    "pos": "noun"
   },
   {
     "id": "a2-68bb75d2",
@@ -5435,7 +5490,8 @@
     "es": "chalé",
     "kind": "word",
     "source": "09",
-    "section": "10.2. Características de la vivienda"
+    "section": "10.2. Características de la vivienda",
+    "pos": "noun"
   },
   {
     "id": "a2-e880232b",
@@ -5747,7 +5803,8 @@
     "es": "papelería",
     "kind": "word",
     "source": "09",
-    "section": "12.1. Lugares, personas y actividades"
+    "section": "12.1. Lugares, personas y actividades",
+    "pos": "noun"
   },
   {
     "id": "a2-518d156b",
@@ -5755,7 +5812,8 @@
     "es": "peluquería",
     "kind": "word",
     "source": "09",
-    "section": "12.1. Lugares, personas y actividades"
+    "section": "12.1. Lugares, personas y actividades",
+    "pos": "noun"
   },
   {
     "id": "a2-60439c2e",
@@ -5771,7 +5829,8 @@
     "es": "estanco",
     "kind": "word",
     "source": "09",
-    "section": "12.1. Lugares, personas y actividades"
+    "section": "12.1. Lugares, personas y actividades",
+    "pos": "noun"
   },
   {
     "id": "a2-4a664d4b",
@@ -5779,7 +5838,8 @@
     "es": "frutería",
     "kind": "word",
     "source": "09",
-    "section": "12.1. Lugares, personas y actividades"
+    "section": "12.1. Lugares, personas y actividades",
+    "pos": "noun"
   },
   {
     "id": "a2-667d7af9",
@@ -5787,7 +5847,8 @@
     "es": "carnicería",
     "kind": "word",
     "source": "09",
-    "section": "12.1. Lugares, personas y actividades"
+    "section": "12.1. Lugares, personas y actividades",
+    "pos": "noun"
   },
   {
     "id": "a2-825b154f",
@@ -5843,7 +5904,8 @@
     "es": "frutero",
     "kind": "word",
     "source": "09",
-    "section": "12.1. Lugares, personas y actividades"
+    "section": "12.1. Lugares, personas y actividades",
+    "pos": "noun"
   },
   {
     "id": "a2-82e3d621",
@@ -5899,7 +5961,8 @@
     "es": "blusa",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "a2-dcba4edc",
@@ -5915,7 +5978,8 @@
     "es": "cazadora",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "a2-f3d4f310",
@@ -5923,7 +5987,8 @@
     "es": "gorra",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "a2-9e7abfb6",
@@ -5939,7 +6004,8 @@
     "es": "pañuelo",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "a2-126dbbd4",
@@ -5947,7 +6013,8 @@
     "es": "guantes",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "a2-8c1a851e",
@@ -5963,7 +6030,8 @@
     "es": "sujetador",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "a2-bdfbd9cd",
@@ -5971,7 +6039,8 @@
     "es": "braga",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "a2-4a93b283",
@@ -5979,7 +6048,8 @@
     "es": "calzoncillo",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "a2-084aa7bb",
@@ -5987,7 +6057,8 @@
     "es": "medias",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "a2-c9e8e5e2",
@@ -6011,7 +6082,8 @@
     "es": "biquini",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "a2-13c9bd54",
@@ -6019,7 +6091,8 @@
     "es": "botas",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "a2-a5eac468",
@@ -6027,7 +6100,8 @@
     "es": "probador",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "a2-c6b91b90",
@@ -6323,7 +6397,8 @@
     "es": "urgencias",
     "kind": "word",
     "source": "09",
-    "section": "13.4. Centros de asistencia sanitaria"
+    "section": "13.4. Centros de asistencia sanitaria",
+    "pos": "noun"
   },
   {
     "id": "a2-63d09321",
@@ -6379,7 +6454,8 @@
     "es": "gel",
     "kind": "word",
     "source": "09",
-    "section": "13.6. Higiene"
+    "section": "13.6. Higiene",
+    "pos": "noun"
   },
   {
     "id": "a2-16ea6726",
@@ -6395,7 +6471,8 @@
     "es": "colonia",
     "kind": "word",
     "source": "09",
-    "section": "13.6. Higiene"
+    "section": "13.6. Higiene",
+    "pos": "noun"
   },
   {
     "id": "a2-e485aa2a",
@@ -6403,7 +6480,8 @@
     "es": "desodorante",
     "kind": "word",
     "source": "09",
-    "section": "13.6. Higiene"
+    "section": "13.6. Higiene",
+    "pos": "adj"
   },
   {
     "id": "a2-04f47971",
@@ -6747,7 +6825,8 @@
     "es": "gorro",
     "kind": "word",
     "source": "09",
-    "section": "14.1. Viajes"
+    "section": "14.1. Viajes",
+    "pos": "noun"
   },
   {
     "id": "a2-493f34f5",
@@ -6835,7 +6914,8 @@
     "es": "ciclista",
     "kind": "word",
     "source": "09",
-    "section": "14.3. Sistema de transporte"
+    "section": "14.3. Sistema de transporte",
+    "pos": "noun"
   },
   {
     "id": "a2-a050145e",
@@ -6891,7 +6971,8 @@
     "es": "azafata",
     "kind": "word",
     "source": "09",
-    "section": "14.3. Sistema de transporte"
+    "section": "14.3. Sistema de transporte",
+    "pos": "noun"
   },
   {
     "id": "a2-46497a3c",
@@ -6963,7 +7044,8 @@
     "es": "agricultor",
     "kind": "word",
     "source": "09",
-    "section": "15.5. Industria y energía"
+    "section": "15.5. Industria y energía",
+    "pos": "noun"
   },
   {
     "id": "a2-c522d41a",
@@ -7027,7 +7109,8 @@
     "es": "PC",
     "kind": "word",
     "source": "09",
-    "section": "16.4. Informática y nuevas tecnologías"
+    "section": "16.4. Informática y nuevas tecnologías",
+    "pos": "noun"
   },
   {
     "id": "a2-b4d37d41",
@@ -7035,7 +7118,8 @@
     "es": "informática",
     "kind": "word",
     "source": "09",
-    "section": "16.4. Informática y nuevas tecnologías"
+    "section": "16.4. Informática y nuevas tecnologías",
+    "pos": "adj"
   },
   {
     "id": "a2-9f73e0f3",
@@ -7043,7 +7127,8 @@
     "es": "informático",
     "kind": "word",
     "source": "09",
-    "section": "16.4. Informática y nuevas tecnologías"
+    "section": "16.4. Informática y nuevas tecnologías",
+    "pos": "adj"
   },
   {
     "id": "a2-eaff9f9f",
@@ -7051,7 +7136,8 @@
     "es": "CD-ROM",
     "kind": "word",
     "source": "09",
-    "section": "16.4. Informática y nuevas tecnologías"
+    "section": "16.4. Informática y nuevas tecnologías",
+    "pos": "noun"
   },
   {
     "id": "a2-a61906a1",
@@ -7059,7 +7145,8 @@
     "es": "DVD",
     "kind": "word",
     "source": "09",
-    "section": "16.4. Informática y nuevas tecnologías"
+    "section": "16.4. Informática y nuevas tecnologías",
+    "pos": "noun"
   },
   {
     "id": "a2-4526e6b8",
@@ -7195,7 +7282,8 @@
     "es": "literatura",
     "kind": "word",
     "source": "09",
-    "section": "18.1. Disciplinas y cualidades artísticas"
+    "section": "18.1. Disciplinas y cualidades artísticas",
+    "pos": "noun"
   },
   {
     "id": "a2-b4b82088",
@@ -7227,7 +7315,8 @@
     "es": "poesía",
     "kind": "word",
     "source": "09",
-    "section": "18.1. Disciplinas y cualidades artísticas"
+    "section": "18.1. Disciplinas y cualidades artísticas",
+    "pos": "noun"
   },
   {
     "id": "a2-20e72262",
@@ -7283,7 +7372,8 @@
     "es": "flamenco",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "a2-38464bf0",
@@ -7291,7 +7381,8 @@
     "es": "rock",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "a2-4f197c99",
@@ -7299,7 +7390,8 @@
     "es": "pop",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "a2-6abc743b",
@@ -7307,7 +7399,8 @@
     "es": "jazz",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "a2-de852dff",
@@ -7315,7 +7408,8 @@
     "es": "tango",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "a2-7f70a3ce",
@@ -7403,7 +7497,8 @@
     "es": "fotógrafo",
     "kind": "word",
     "source": "09",
-    "section": "18.5. Fotografía"
+    "section": "18.5. Fotografía",
+    "pos": "noun"
   },
   {
     "id": "a2-fc3a47fb",
@@ -7467,7 +7562,8 @@
     "es": "Ramadán",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "noun"
   },
   {
     "id": "a2-e04c9181",
@@ -7475,7 +7571,8 @@
     "es": "Sabbat",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "noun"
   },
   {
     "id": "a2-b3bec00e",
@@ -7555,7 +7652,8 @@
     "es": "Noroeste",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "noun"
   },
   {
     "id": "a2-9a2e69ed",
@@ -7563,7 +7661,8 @@
     "es": "Nordeste",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "noun"
   },
   {
     "id": "a2-d290a8eb",
@@ -7571,7 +7670,8 @@
     "es": "Suroeste",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "noun"
   },
   {
     "id": "a2-4083ac21",
@@ -7579,7 +7679,8 @@
     "es": "Sudeste",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "noun"
   },
   {
     "id": "a2-ef64ecf7",
@@ -7627,7 +7728,8 @@
     "es": "habitante",
     "kind": "word",
     "source": "09",
-    "section": "20.3. Espacios urbanos o rústicos"
+    "section": "20.3. Espacios urbanos o rústicos",
+    "pos": "adj"
   },
   {
     "id": "a2-2ce33323",
@@ -7859,7 +7961,8 @@
     "es": "mosca",
     "kind": "word",
     "source": "09",
-    "section": "20.5. Fauna"
+    "section": "20.5. Fauna",
+    "pos": "noun"
   },
   {
     "id": "a2-a0d889b9",
@@ -7867,7 +7970,8 @@
     "es": "mosquito",
     "kind": "word",
     "source": "09",
-    "section": "20.5. Fauna"
+    "section": "20.5. Fauna",
+    "pos": "noun"
   },
   {
     "id": "a2-026b6a67",
@@ -7891,7 +7995,8 @@
     "es": "margarita",
     "kind": "word",
     "source": "09",
-    "section": "20.6. Flora"
+    "section": "20.6. Flora",
+    "pos": "noun"
   },
   {
     "id": "a2-beb13b0d",
@@ -7899,7 +8004,8 @@
     "es": "pino",
     "kind": "word",
     "source": "09",
-    "section": "20.6. Flora"
+    "section": "20.6. Flora",
+    "pos": "noun"
   },
   {
     "id": "a2-d0872a6b",
@@ -7907,7 +8013,8 @@
     "es": "olivo",
     "kind": "word",
     "source": "09",
-    "section": "20.6. Flora"
+    "section": "20.6. Flora",
+    "pos": "adj"
   },
   {
     "id": "a2-9f433784",
