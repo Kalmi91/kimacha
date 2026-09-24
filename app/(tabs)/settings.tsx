@@ -10,6 +10,7 @@ import { t } from '@/lib/i18n';
 import { type Level } from '@/data/words';
 import { getDb } from '@/lib/database';
 import { validateBackupPayload } from '@/lib/backup';
+import { validateMistakesPayload } from '@/lib/mistakes/format';
 import {
   DEFAULT_WEEKLY_GOAL_MINUTES,
   MIN_WEEKLY_GOAL_MINUTES,
@@ -197,6 +198,33 @@ export default function SettingsScreen() {
     }
   };
 
+  // PLAN-hibaim.md 3. lépés: pick a kimacha-hibaim JSON (the /hibaim skill's
+  // output), validate it with the app's own rules (lib/mistakes/format.ts),
+  // save it (loading the same batchId again replaces its content, card
+  // progress survives) and open the report.
+  const handleLoadMistakes = async () => {
+    try {
+      const res = await DocumentPicker.getDocumentAsync({ type: 'application/json', copyToCacheDirectory: true });
+      if (res.canceled || !res.assets?.length) return;
+      const asset = res.assets[0];
+      const json = Platform.OS === 'web' && asset.file
+        ? await asset.file.text()
+        : await new File(asset.uri).text();
+      const result = validateMistakesPayload(JSON.parse(json));
+      if (!result.ok) {
+        notify(s.backup.errorTitle, result.error);
+        return;
+      }
+      const { batch } = result;
+      await getDb().saveMistakeBatch(batch.batchId, JSON.stringify(batch), new Date().toISOString());
+      const drillCount = batch.patterns.reduce((n, p) => n + p.drills.length, 0);
+      notify(s.mistakes.loaded(batch.sentences.length, batch.words.length, drillCount));
+      router.navigate('/mistakes');
+    } catch {
+      notify(s.backup.errorTitle, s.backup.importError);
+    }
+  };
+
   return (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {/* FB101: the page grew past one screen (the version line at its bottom was
@@ -321,6 +349,15 @@ export default function SettingsScreen() {
         onPress={handleRestore}
       >
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>♻️ {s.backup.restore}</Text>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+      </Pressable>
+
+      {/* PLAN-hibaim.md 3. lépés: import a "Hibáim" kötegből (Drive JSON). */}
+      <Pressable
+        style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}
+        onPress={handleLoadMistakes}
+      >
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.mistakes.load}</Text>
         <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
       </Pressable>
 
