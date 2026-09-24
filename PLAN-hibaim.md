@@ -13,8 +13,8 @@ Becslés: ~4 agent-lépés, lépésenként ~200K subagent-token (a PLAN-play 2. 
 
 - [x] 1. Munkafa + ág + npm ci + alap-kapu → kész, ha: tsc 0, jest zöld az ág tövén (2026-09-23: tsc 0, jest 939/939 zöld `--runInBand`-dal; párhuzamos worker mellett 5 suite timeoutol a sandboxban, ez környezeti flakiness, nem regresszió)
 - [x] 2. Formátum + validátor + tárolás (`lib/mistakes/`, DB-táblák natív + web) → kész, ha: jest-teszt zöld (2026-09-23, `9a2c5b0` formátum+validátor+check-mistakes.mjs, `06f087f` deck.ts+DB-táblák; tsc 0, jest 966/966 `--runInBand`-dal)
-- [ ] 3. Import gomb (Settings, Restore alatt) + riport-képernyő `app/mistakes/index.tsx` → kész, ha: tsc + jest zöld
-- [ ] 4. Hibáim pakli `app/mistakes/deck.tsx` (SM-2) + belépő a PCIC fülön → kész, ha: tsc + lint + jest + 3 audit zöld
+- [x] 3. Import gomb (Settings, Restore alatt) + riport-képernyő `app/mistakes/index.tsx` → kész, ha: tsc + jest zöld (2026-09-23, `1d34dbb`; tsc 0, jest 971/971 `--runInBand`-dal)
+- [x] 4. Hibáim pakli `app/mistakes/deck.tsx` (SM-2) + belépő a PCIC fülön → kész, ha: tsc + lint + jest + 3 audit zöld (2026-09-23; tsc 0, lint 0 error/12 pre-existing warning, jest 973/973 `--runInBand`-dal, audit-corpus/games/prompts mind 0, nincs 800 sor feletti fájl)
 - [x] 5. `/hibaim` skill (`~/.claude/skills/hibaim/SKILL.md`) → kész, ha: a fájl megvan, a formátum = ez a fájl (2026-09-23, Opus írta; validálás `scripts/check-mistakes.mjs`-sel, ezt az agent adja)
 - [ ] 6. Skill a mai doksin → `hibaim-2026-09-23-claude.json` a Drive-on → kész, ha: a validátor elfogadja
 - [ ] 7. Web-export képernyőképek (import, riport, kártya) → kész, ha: Kálmán megnézte
