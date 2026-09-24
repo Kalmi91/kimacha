@@ -9,6 +9,8 @@
 // spanyol FŐNÉV-kártyán ott van, névelőstől-névelőtlenül. A ⊘ az alapállás, tehát
 // aki nem nyúl hozzá, ugyanúgy gépelhet, mint eddig.
 
+import type { PosInfo } from '@/lib/pcicPos';
+
 export const ARTICLE_OPTIONS = ['el', 'la', 'los', 'las'] as const;
 
 export type ArticlePick = '' | (typeof ARTICLE_OPTIONS)[number];
@@ -84,4 +86,15 @@ export function articleOf(text: string): ArticlePick {
 export function bodyOf(text: string): string {
   const trimmed = text.trim();
   return articleOf(trimmed) ? trimmed.split(/\s+/).slice(1).join(' ') : trimmed;
+}
+
+/**
+ * FB214 kiegészítés (javító kör, 2026-09-23): a PCIC-kártyán a szófaj-chip
+ * (lib/pcicPos.ts posOf()) már megmondja, ha a tétel nem főnév, ezért ott a
+ * névelő-sor felesleges (és zavaró) volna nem-főnévnél is megkérdezni. A sor
+ * csak akkor jár, ha a szófaj ismeretlen (`null`, ilyenkor még tanulság az
+ * ⊘-válasz) vagy kifejezetten `noun`.
+ */
+export function articleRowAppliesForPos(pos: PosInfo | null): boolean {
+  return !pos || pos.pos === 'noun';
 }

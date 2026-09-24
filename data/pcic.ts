@@ -16,7 +16,7 @@ import b1Sentences from './pcic/b1-sentences.json';
 import b2Raw from './pcic/b2-all.json';
 import b2En from './pcic/b2-en.json';
 import b2Sentences from './pcic/b2-sentences.json';
-import type { WordPos } from './words';
+import type { Pos } from '@/lib/pcicPos';
 
 export type PcicKind = 'word' | 'phrase' | 'sentence' | 'pattern';
 export type PcicLevel = 'A1' | 'A2' | 'B1' | 'B2';
@@ -40,8 +40,10 @@ interface RawPcicItem {
   headword?: string;
   order?: number;
   // FB361-362: kézzel felvitt szófaj a data/pcic/<szint>-all.json tételen,
-  // ahol a lib/pcicPos.ts korpusz-egyezés/szabály nem ad találatot.
-  pos?: WordPos;
+  // ahol a lib/pcicPos.ts korpusz-egyezés/szabály nem ad találatot. A `Pos`
+  // a korpusz WordPos-án felül `conj`/`prefix`/`suffix`-et is felvesz,
+  // olyan PCIC-tételekre, amiknek a korpuszban nincs is megfelelője.
+  pos?: Pos;
 }
 
 export interface PcicItem {
@@ -51,7 +53,7 @@ export interface PcicItem {
   kind: PcicKind;
   section: string;
   order: number;
-  pos?: WordPos;
+  pos?: Pos;
   // PLAN-play 11. lépés: példamondat a korpuszból, csak ha van egyezés
   // (data/pcic/<szint>-sentences.json); a Check utáni felfedésen jelenik meg.
   exampleEs?: string;

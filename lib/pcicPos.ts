@@ -14,8 +14,11 @@ import type { PcicKind } from '@/data/pcic';
 import { words, type WordGender, type WordPos } from '@/data/words';
 
 // FB361-362: a chip minden korpusz-szófajt kaphat (nem csak noun/verb/phrase),
-// ezért a Pos immár lefedi a teljes WordPos-készletet.
-export type Pos = WordPos;
+// ezért a Pos lefedi a teljes WordPos-készletet. A `conj`/`prefix`/`suffix`
+// csak a PCIC oldalon létezik (kötőszó, illetve képző-tétel, pl. "-ísimo"),
+// a korpusz WordPos típusát ez nem bővíti, azt kézzel írt PCIC `pos` mező
+// adja, a lemma-index (korpuszból) sose ad ilyet.
+export type Pos = WordPos | 'conj' | 'prefix' | 'suffix';
 
 export interface PosInfo {
   pos: Pos;
@@ -28,7 +31,7 @@ const LEADING_ARTICLE = /^(el|la|los|las|un|una)\s+/;
 // Egy szó és -ar/-er/-ir(se) végű: infinitivus alak.
 const VERB_ENDING = /^[a-záéíóúñü]+(ar|er|ir|arse|erse|irse)$/i;
 
-// FB361-362: a Pos immár azonos a korpusz WordPos-készletével, ezért minden
+// FB361-362: a Pos lefedi a teljes WordPos-készletet, ezért minden
 // korpusz-szófaj átjön a lemma-indexbe (korábban csak noun/verb/phrase).
 const CORPUS_POS_TO_PCIC: Partial<Record<WordPos, Pos>> = {
   noun: 'noun',

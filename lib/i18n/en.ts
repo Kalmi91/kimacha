@@ -253,7 +253,8 @@ export default {
     accentForgiven: 'Missing accent, counted as correct',
   },
   // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
-  // FB361-362: a teljes WordPos-készlet felirata (nem csak noun/verb/phrase).
+  // FB361-362: a teljes WordPos-készlet felirata (nem csak noun/verb/phrase),
+  // + conj/prefix/suffix a PCIC-only Pos-értékekre.
   pos: {
     noun: 'noun',
     verb: 'verb',
@@ -263,6 +264,9 @@ export default {
     prep: 'preposition',
     num: 'number',
     phrase: 'phrase',
+    conj: 'conjunction',
+    prefix: 'prefix',
+    suffix: 'suffix',
   },
   // PLAN-play 13. lépés: the table-deck screen (a lesson's conjugation
   // tables, practiced Anki-style with the PCIC card UI).
