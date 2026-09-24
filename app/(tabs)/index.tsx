@@ -21,6 +21,7 @@ import {
 } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { countDoneToday, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC } from '@/lib/pcicSession';
+import { applyChainOrder } from '@/lib/pcicChains';
 import { cardsForLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -113,7 +114,7 @@ export default function PcicScreen() {
     setPcicSpellingIds(new Set(spellingRows.map((r) => r.itemId)));
     setToday(day);
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
-    setQueue(pickSm2Session(cards, newOrder, day, newLimit));
+    setQueue(pickSm2Session(cards, applyChainOrder(newOrder, cards, lvl), day, newLimit));
     setTypedAnswer('');
     setGrade(null);
     setSessionAnswered(0);
@@ -299,7 +300,8 @@ export default function PcicScreen() {
   const handleMoreNew = () => {
     const next = extraNew + 10;
     setExtraNew(next);
-    setQueue(pickSm2Session([...allCards.values()], newOrder, today, dailyNewLimit + next));
+    const activeCards = [...allCards.values()];
+    setQueue(pickSm2Session(activeCards, applyChainOrder(newOrder, activeCards, level), today, dailyNewLimit + next));
   };
 
   // s1 (anki-ui-terv.html): a fejléc ELSŐ chipje a kiválasztott szint,
