@@ -13,6 +13,7 @@ import { strictAnswerMatch } from '@/lib/answerMatch';
 import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import { answerInputProps } from '@/lib/inputProps';
+import { DEFAULT_AGAIN_DELAY_SEC } from '@/lib/pcicSession';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, syllabusTopic } from '@/lib/grammar/syllabus';
 import {
   answerCell,
@@ -49,6 +50,9 @@ export default function TableDeckScreen() {
   const [loading, setLoading] = useState(true);
   const [level, setLevel] = useState<Level>('A1');
   const [strictAccents, setStrictAccents] = useState(false);
+  // FB364 (PLAN-fb0923 5. lépés/D2): egy beállítás, két hely, lásd
+  // lib/grammar/tableDeck.ts fejét.
+  const [againDelaySec, setAgainDelaySec] = useState(DEFAULT_AGAIN_DELAY_SEC);
   const [cells, setCells] = useState<DeckCell[]>([]);
   const [deck, setDeck] = useState<DeckState>({ cells: [] });
   const [typed, setTyped] = useState('');
@@ -67,12 +71,14 @@ export default function TableDeckScreen() {
     const lesson = lessonFor('es', id);
     const cellList = tableCellsForLesson(lesson);
     const strict = await db.getStrictAccents();
+    const delaySec = await db.getAgainDelaySec();
     const levelData = await db.getLevel();
     const rows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
     const saved = rows.find((r) => r.itemId === progressKeyFor(id));
     const persisted = (saved?.data as { cells: DeckCellState[] } | undefined)?.cells;
     setLevel((levelData.level as Level) ?? 'A1');
     setStrictAccents(strict);
+    setAgainDelaySec(delaySec);
     setCells(cellList);
     setDeck(mergeDeckState(cellList, persisted));
     setTyped('');
@@ -109,7 +115,7 @@ export default function TableDeckScreen() {
   const handleNext = () => {
     if (!current || !checked) return;
     const nowMs = Date.now();
-    const next = answerCell(deck, current.id, checked.correct, nowMs);
+    const next = answerCell(deck, current.id, checked.correct, nowMs, againDelaySec * 1000);
     setDeck(next);
     persist(next);
     setTyped('');

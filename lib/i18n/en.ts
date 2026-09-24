@@ -118,6 +118,9 @@ export default {
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',
     articlePicker: 'Article buttons',
     articlePickerHint: 'On Spanish noun cards you pick el/la/los/las instead of typing it. ⊘ means no article.',
+    // FB364 (PLAN-fb0923 5. lépés): a PCIC "again" kártya visszatérési ideje.
+    missedWordDelay: 'Missed word comes back after',
+    missedWordDelaySeconds: (n: string) => `${n} s`,
   },
   backup: {
     backup: 'Backup',
