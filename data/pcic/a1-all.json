@@ -99,7 +99,8 @@
     "es": "sin",
     "kind": "word",
     "source": "08",
-    "section": "1.2. Presencia, ausencia"
+    "section": "1.2. Presencia, ausencia",
+    "pos": "prep"
   },
   {
     "id": "a1-b1f6e510",
@@ -107,7 +108,8 @@
     "es": "con",
     "kind": "word",
     "source": "08",
-    "section": "1.2. Presencia, ausencia"
+    "section": "1.2. Presencia, ausencia",
+    "pos": "prep"
   },
   {
     "id": "a1-365f9dca",
@@ -185,7 +187,8 @@
     "es": "quizá(s)",
     "kind": "word",
     "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
+    "section": "1.6. Certeza, incertidumbre",
+    "pos": "adv"
   },
   {
     "id": "a1-413b54cf",
@@ -269,7 +272,8 @@
     "es": "más",
     "kind": "word",
     "source": "08",
-    "section": "2.2. Cantidad relativa"
+    "section": "2.2. Cantidad relativa",
+    "pos": "adv"
   },
   {
     "id": "a1-4e16c8aa",
@@ -277,7 +281,8 @@
     "es": "menos",
     "kind": "word",
     "source": "08",
-    "section": "2.2. Cantidad relativa"
+    "section": "2.2. Cantidad relativa",
+    "pos": "adv"
   },
   {
     "id": "a1-1be785f6",
@@ -426,7 +431,8 @@
     "es": "metro(s)",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "noun"
   },
   {
     "id": "a1-936424c1",
@@ -434,7 +440,8 @@
     "es": "kilómetro(s)",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "noun"
   },
   {
     "id": "a1-28216bb7",
@@ -574,7 +581,8 @@
     "es": "allí",
     "kind": "word",
     "source": "08",
-    "section": "3.1. Localización"
+    "section": "3.1. Localización",
+    "pos": "adv"
   },
   {
     "id": "a1-973f8539",
@@ -590,7 +598,8 @@
     "es": "allá",
     "kind": "word",
     "source": "08",
-    "section": "3.1. Localización"
+    "section": "3.1. Localización",
+    "pos": "adv"
   },
   {
     "id": "a1-88fc207c",
@@ -662,7 +671,8 @@
     "es": "en",
     "kind": "word",
     "source": "08",
-    "section": "3.3. Posición relativa"
+    "section": "3.3. Posición relativa",
+    "pos": "prep"
   },
   {
     "id": "a1-ed7ad1f6",
@@ -704,7 +714,8 @@
     "es": "lejos",
     "kind": "word",
     "source": "08",
-    "section": "3.4. Distancia"
+    "section": "3.4. Distancia",
+    "pos": "adv"
   },
   {
     "id": "a1-aa1553be",
@@ -951,7 +962,8 @@
     "es": "de",
     "kind": "word",
     "source": "08",
-    "section": "3.8. Origen"
+    "section": "3.8. Origen",
+    "pos": "prep"
   },
   {
     "id": "a1-8a3898b1",
@@ -1110,7 +1122,8 @@
     "es": "cuándo",
     "kind": "word",
     "source": "08",
-    "section": "4.1. Referencias generales"
+    "section": "4.1. Referencias generales",
+    "pos": "adv"
   },
   {
     "id": "a1-a6b16091",
@@ -1354,7 +1367,8 @@
     "es": "mañana",
     "kind": "word",
     "source": "08",
-    "section": "4.2. Localización en el tiempo"
+    "section": "4.2. Localización en el tiempo",
+    "pos": "adv"
   },
   {
     "id": "a1-5258c9fe",
@@ -1807,7 +1821,8 @@
     "es": "naranja",
     "kind": "word",
     "source": "08",
-    "section": "5.12. Color"
+    "section": "5.12. Color",
+    "pos": "adj"
   },
   {
     "id": "a1-512ade2d",
@@ -1847,7 +1862,8 @@
     "es": "niño",
     "kind": "word",
     "source": "08",
-    "section": "5.13. Edad, vejez"
+    "section": "5.13. Edad, vejez",
+    "pos": "noun"
   },
   {
     "id": "a1-763c189e",
@@ -2152,7 +2168,8 @@
     "es": "interesante",
     "kind": "word",
     "source": "08",
-    "section": "6.10. Interés"
+    "section": "6.10. Interés",
+    "pos": "adj"
   },
   {
     "id": "a1-1b606970",
@@ -2442,7 +2459,8 @@
     "es": "antipático",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "adj"
   },
   {
     "id": "a1-a1d7da7c",
@@ -2482,7 +2500,8 @@
     "es": "tímido",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "adj"
   },
   {
     "id": "a1-a3968707",
@@ -2490,7 +2509,8 @@
     "es": "sociable",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "adj"
   },
   {
     "id": "a1-4832ec78",
@@ -2522,7 +2542,8 @@
     "es": "señores",
     "kind": "word",
     "source": "09",
-    "section": "3.1. Datos personales"
+    "section": "3.1. Datos personales",
+    "pos": "noun"
   },
   {
     "id": "a1-8c2ef45a",
@@ -2570,7 +2591,8 @@
     "es": "paseo",
     "kind": "word",
     "source": "09",
-    "section": "3.1. Datos personales"
+    "section": "3.1. Datos personales",
+    "pos": "noun"
   },
   {
     "id": "a1-2366c31f",
@@ -2706,7 +2728,8 @@
     "es": "mexicano",
     "kind": "word",
     "source": "09",
-    "section": "3.1. Datos personales"
+    "section": "3.1. Datos personales",
+    "pos": "adj"
   },
   {
     "id": "a1-567e79db",
@@ -2714,7 +2737,8 @@
     "es": "japonés",
     "kind": "word",
     "source": "09",
-    "section": "3.1. Datos personales"
+    "section": "3.1. Datos personales",
+    "pos": "adj"
   },
   {
     "id": "a1-cd24e580",
@@ -2722,7 +2746,8 @@
     "es": "marroquí",
     "kind": "word",
     "source": "09",
-    "section": "3.1. Datos personales"
+    "section": "3.1. Datos personales",
+    "pos": "adj"
   },
   {
     "id": "a1-f206d767",
@@ -2810,7 +2835,8 @@
     "es": "niña",
     "kind": "word",
     "source": "09",
-    "section": "3.1. Datos personales"
+    "section": "3.1. Datos personales",
+    "pos": "noun"
   },
   {
     "id": "a1-c3de758a",
@@ -2834,7 +2860,8 @@
     "es": "soltero",
     "kind": "word",
     "source": "09",
-    "section": "3.1. Datos personales"
+    "section": "3.1. Datos personales",
+    "pos": "adj"
   },
   {
     "id": "a1-07150cd8",
@@ -2850,7 +2877,8 @@
     "es": "viudo",
     "kind": "word",
     "source": "09",
-    "section": "3.1. Datos personales"
+    "section": "3.1. Datos personales",
+    "pos": "adj"
   },
   {
     "id": "a1-0ee3e0a9",
@@ -2858,7 +2886,8 @@
     "es": "separado",
     "kind": "word",
     "source": "09",
-    "section": "3.1. Datos personales"
+    "section": "3.1. Datos personales",
+    "pos": "adj"
   },
   {
     "id": "a1-6aca569c",
@@ -2866,7 +2895,8 @@
     "es": "divorciado",
     "kind": "word",
     "source": "09",
-    "section": "3.1. Datos personales"
+    "section": "3.1. Datos personales",
+    "pos": "adj"
   },
   {
     "id": "a1-e4b88e75",
@@ -2906,7 +2936,8 @@
     "es": "llaves",
     "kind": "word",
     "source": "09",
-    "section": "3.3. Objetos personales"
+    "section": "3.3. Objetos personales",
+    "pos": "noun"
   },
   {
     "id": "a1-fc8b93c8",
@@ -3282,7 +3313,8 @@
     "es": "huevos",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "a1-bd2bd821",
@@ -3306,7 +3338,8 @@
     "es": "sándwich",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "a1-9a1e795a",
@@ -3690,7 +3723,8 @@
     "es": "diccionario",
     "kind": "word",
     "source": "09",
-    "section": "6.8. Material educativo y mobiliario de aula"
+    "section": "6.8. Material educativo y mobiliario de aula",
+    "pos": "noun"
   },
   {
     "id": "a1-cb030c5e",
@@ -3706,7 +3740,8 @@
     "es": "bolígrafo",
     "kind": "word",
     "source": "09",
-    "section": "6.8. Material educativo y mobiliario de aula"
+    "section": "6.8. Material educativo y mobiliario de aula",
+    "pos": "noun"
   },
   {
     "id": "a1-5187e8db",
@@ -3722,7 +3757,8 @@
     "es": "goma",
     "kind": "word",
     "source": "09",
-    "section": "6.8. Material educativo y mobiliario de aula"
+    "section": "6.8. Material educativo y mobiliario de aula",
+    "pos": "noun"
   },
   {
     "id": "a1-ced5f005",
@@ -3730,7 +3766,8 @@
     "es": "fotocopia",
     "kind": "word",
     "source": "09",
-    "section": "6.8. Material educativo y mobiliario de aula"
+    "section": "6.8. Material educativo y mobiliario de aula",
+    "pos": "noun"
   },
   {
     "id": "a1-86546b91",
@@ -3762,7 +3799,8 @@
     "es": "pizarra",
     "kind": "word",
     "source": "09",
-    "section": "6.8. Material educativo y mobiliario de aula"
+    "section": "6.8. Material educativo y mobiliario de aula",
+    "pos": "noun"
   },
   {
     "id": "a1-4a472d01",
@@ -3874,7 +3912,8 @@
     "es": "fax",
     "kind": "word",
     "source": "09",
-    "section": "7.2. Lugares, herramientas y ropa de trabajo"
+    "section": "7.2. Lugares, herramientas y ropa de trabajo",
+    "pos": "noun"
   },
   {
     "id": "a1-09d2e3a1",
@@ -3882,7 +3921,8 @@
     "es": "trabajo",
     "kind": "word",
     "source": "09",
-    "section": "7.3. Actividad laboral"
+    "section": "7.3. Actividad laboral",
+    "pos": "noun"
   },
   {
     "id": "a1-b54c1ff4",
@@ -4338,7 +4378,8 @@
     "es": "arroba",
     "kind": "word",
     "source": "09",
-    "section": "9.6. Internet"
+    "section": "9.6. Internet",
+    "pos": "noun"
   },
   {
     "id": "a1-941ccad0",
@@ -4618,7 +4659,8 @@
     "es": "sillón",
     "kind": "word",
     "source": "09",
-    "section": "10.4. Objetos domésticos"
+    "section": "10.4. Objetos domésticos",
+    "pos": "noun"
   },
   {
     "id": "a1-976df5d6",
@@ -4634,7 +4676,8 @@
     "es": "lavabo",
     "kind": "word",
     "source": "09",
-    "section": "10.4. Objetos domésticos"
+    "section": "10.4. Objetos domésticos",
+    "pos": "noun"
   },
   {
     "id": "a1-6316b04a",
@@ -4658,7 +4701,8 @@
     "es": "DVD",
     "kind": "word",
     "source": "09",
-    "section": "10.4. Objetos domésticos"
+    "section": "10.4. Objetos domésticos",
+    "pos": "noun"
   },
   {
     "id": "a1-b0f8e771",
@@ -4746,7 +4790,8 @@
     "es": "policía",
     "kind": "word",
     "source": "09",
-    "section": "11.6. Servicios de protección y seguridad"
+    "section": "11.6. Servicios de protección y seguridad",
+    "pos": "noun"
   },
   {
     "id": "a1-54b974bf",
@@ -4762,7 +4807,8 @@
     "es": "(super)mercado",
     "kind": "word",
     "source": "09",
-    "section": "12.1. Lugares, personas y actividades"
+    "section": "12.1. Lugares, personas y actividades",
+    "pos": "noun"
   },
   {
     "id": "a1-e8efa0f7",
@@ -4778,7 +4824,8 @@
     "es": "comprador",
     "kind": "word",
     "source": "09",
-    "section": "12.1. Lugares, personas y actividades"
+    "section": "12.1. Lugares, personas y actividades",
+    "pos": "noun"
   },
   {
     "id": "a1-88d68187",
@@ -4794,7 +4841,8 @@
     "es": "pantalones",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "a1-059ab551",
@@ -4834,7 +4882,8 @@
     "es": "zapatos",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "a1-4f28f744",
@@ -5050,7 +5099,8 @@
     "es": "campin",
     "kind": "word",
     "source": "09",
-    "section": "14.2. Alojamiento"
+    "section": "14.2. Alojamiento",
+    "pos": "noun"
   },
   {
     "id": "a1-5c0c1354",
@@ -5330,7 +5380,8 @@
     "es": "aparcamiento",
     "kind": "word",
     "source": "09",
-    "section": "14.3. Sistema de transporte"
+    "section": "14.3. Sistema de transporte",
+    "pos": "noun"
   },
   {
     "id": "a1-2e07cefa",
@@ -5458,7 +5509,8 @@
     "es": "cantante",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "adj"
   },
   {
     "id": "a1-affe4c6c",
@@ -5522,7 +5574,8 @@
     "es": "cristiano",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "adj"
   },
   {
     "id": "a1-f70b526f",
@@ -5530,7 +5583,8 @@
     "es": "judío",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "adj"
   },
   {
     "id": "a1-81396585",
@@ -5538,7 +5592,8 @@
     "es": "musulmán",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "adj"
   },
   {
     "id": "a1-f888cf60",
@@ -5546,7 +5601,8 @@
     "es": "budista",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "adj"
   },
   {
     "id": "a1-8e6fc2c4",
@@ -5586,7 +5642,8 @@
     "es": "Norte",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "noun"
   },
   {
     "id": "a1-3d54fd66",
@@ -5610,7 +5667,8 @@
     "es": "Oeste",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "noun"
   },
   {
     "id": "a1-9a5807ec",
@@ -5682,7 +5740,8 @@
     "es": "escuela",
     "kind": "word",
     "source": "09",
-    "section": "20.3. Espacios urbanos o rústicos"
+    "section": "20.3. Espacios urbanos o rústicos",
+    "pos": "noun"
   },
   {
     "id": "a1-a3e8201f",
