@@ -408,6 +408,13 @@ export default function PcicScreen() {
   // 5c: szófaj-chip a szó alatt, a spanyol alakból (lib/pcicPos.ts, döntés 6b).
   const pos = posOf(currentItem);
 
+  // FB363/FB367: régió-chip (PCIC `[Régió]` zárójel tartalma) és mx-chip
+  // (spanyolországi/mexikói köznyelvi eltérés) a szófaj-chip mellett.
+  const regionChipLabel = currentItem.region
+    ? `${currentItem.region.toLowerCase() === 'méxico' ? '🇲🇽' : '🌎'} ${currentItem.region}`
+    : undefined;
+  const mxChipLabel = currentItem.mx ? `🇲🇽 ${currentItem.mx}` : undefined;
+
   // T1 (anki-ui-terv.html): a dokkolt Check sáv felfedés után "Next"-re vált,
   // ugyanazzal a hellyel/mérettel, a javasolt értékeléssel a feliratban.
   const nextGrade = grade ? suggestedGrade(grade) : null;
@@ -462,6 +469,16 @@ export default function PcicScreen() {
                 <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>
                   {pos.gender ? `${s.pos[pos.pos]} · ${pos.gender}` : s.pos[pos.pos]}
                 </Text>
+              </View>
+            )}
+            {regionChipLabel && (
+              <View style={[styles.posChip, { backgroundColor: colors.background }]}>
+                <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>{regionChipLabel}</Text>
+              </View>
+            )}
+            {mxChipLabel && (
+              <View style={[styles.posChip, { backgroundColor: colors.background }]}>
+                <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>{mxChipLabel}</Text>
               </View>
             )}
             <Text style={[styles.sectionText, { color: colors.tabIconDefault }]}>{currentItem.section}</Text>

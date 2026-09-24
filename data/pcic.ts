@@ -44,6 +44,12 @@ interface RawPcicItem {
   // a korpusz WordPos-án felül `conj`/`prefix`/`suffix`-et is felvesz,
   // olyan PCIC-tételekre, amiknek a korpuszban nincs is megfelelője.
   pos?: Pos;
+  // FB363: a PCIC `[Régió] szó` zárójeles nyelvjárás-jelölése, a zárójel
+  // nélküli tartalom (pl. "Hispanoamérica", "México, Cuba y Venezuela").
+  region?: string;
+  // FB367: A1 spanyolországi/mexikói köznyelvi eltérés a mexikói alak
+  // (pl. "departamento" a "piso" mellett).
+  mx?: string;
 }
 
 export interface PcicItem {
@@ -54,6 +60,8 @@ export interface PcicItem {
   section: string;
   order: number;
   pos?: Pos;
+  region?: string;
+  mx?: string;
   // PLAN-play 11. lépés: példamondat a korpuszból, csak ha van egyezés
   // (data/pcic/<szint>-sentences.json); a Check utáni felfedésen jelenik meg.
   exampleEs?: string;
@@ -83,6 +91,8 @@ function buildItems(
         section: item.section,
         order: item.order ?? index,
         pos: item.pos,
+        region: item.region,
+        mx: item.mx,
         exampleEs: sentence?.es,
         exampleEn: sentence?.en,
       };
