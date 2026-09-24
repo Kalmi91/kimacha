@@ -11,7 +11,14 @@ import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
 import { pcicItemsForLevel, findPcicItem, type PcicLevel } from '@/data/pcic';
 import { gradePcicAnswer, suggestedGrade, type PcicGrade } from '@/lib/pcicMatch';
-import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
+import {
+  ARTICLE_OPTIONS,
+  articleOf,
+  articlePickerApplies,
+  articleRowAppliesForPos,
+  composeAnswer,
+  type ArticlePick,
+} from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { countDoneToday, requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
 import { cardsForLevel } from '@/lib/pcicLevels';
@@ -460,8 +467,11 @@ export default function PcicScreen() {
             <Text style={[styles.sectionText, { color: colors.tabIconDefault }]}>{currentItem.section}</Text>
           </View>
 
-          {/* SZ7 (SZAVAK.md): FB188 névelő-gombsor a Learn fülről, ⊘ az alapállás. */}
-          {articlePickerApplies('es', currentItem.kind !== 'sentence', currentItem.es) && (
+          {/* SZ7 (SZAVAK.md): FB188 névelő-gombsor a Learn fülről, ⊘ az alapállás.
+              FB214 kiegészítés: a PCIC-en a chip már mutatja, ha nem főnév, a
+              sor csak noun/ismeretlen szófajnál jár (lib/articlePicker.ts). */}
+          {articlePickerApplies('es', currentItem.kind !== 'sentence', currentItem.es) &&
+            articleRowAppliesForPos(pos) && (
             <View style={styles.articleRow}>
               {([...ARTICLE_OPTIONS, ''] as ArticlePick[]).map((opt) => {
                 const active = articlePick === opt;
