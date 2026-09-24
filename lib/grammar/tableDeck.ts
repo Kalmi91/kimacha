@@ -28,6 +28,9 @@ export interface DeckCell {
    *  "a / b" alternatives or parenthetical glosses on its own; this module
    *  does not need to split them out. */
   answer: string;
+  /** FB378: the cell's English prompt ("she spoke"), if the table has one;
+   *  the deck screen shows it instead of the bare person·verb prompt. */
+  enPrompt?: string;
 }
 
 export interface DeckCellState {
@@ -72,9 +75,9 @@ export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined)
     if (block.kind !== 'table') continue;
     if (!isConjugationTable(block.header, block.rows)) continue;
     const verbHeaders = block.header.slice(1);
-    for (const row of block.rows) {
+    block.rows.forEach((row, ri) => {
       const person = row[0];
-      if (VOSOTROS_PERSONS.has(normalizePerson(person))) continue;
+      if (VOSOTROS_PERSONS.has(normalizePerson(person))) return;
       for (let ci = 0; ci < verbHeaders.length; ci++) {
         const verb = verbHeaders[ci].es;
         const answer = row[ci + 1];
@@ -82,9 +85,10 @@ export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined)
         const key = `${normalizePerson(person)}::${verb.toLowerCase()}`;
         if (seen.has(key)) continue;
         seen.add(key);
-        cells.push({ id: `${block.id}::${key}`, person, verb, answer });
+        const enPrompt = block.enPrompt?.[ri]?.[ci];
+        cells.push({ id: `${block.id}::${key}`, person, verb, answer, ...(enPrompt ? { enPrompt } : {}) });
       }
-    }
+    });
   }
   return cells;
 }

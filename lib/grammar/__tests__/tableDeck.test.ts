@@ -60,6 +60,21 @@ describe('tableCellsForLesson', () => {
     const doubled = { ...lesson, body: [...lesson.body, ...tables] };
     expect(tableCellsForLesson(doubled)).toHaveLength(10);
   });
+
+  // FB378: a table's optional `enPrompt` (English sentence per cell) carries
+  // through to the cell the deck screen renders.
+  it('carries a table\'s enPrompt through to the cell (indefinido-regular)', () => {
+    const lesson = lessonFor('es', 'indefinido-regular')!;
+    const cells = tableCellsForLesson(lesson);
+    expect(cells.find((c) => c.person === 'yo' && c.verb === 'hablar')?.enPrompt).toBe('I spoke');
+    expect(cells.find((c) => c.person === 'nosotros' && c.verb === 'escribir')?.enPrompt).toBe('we wrote');
+  });
+
+  it('a table without enPrompt leaves the cell field undefined (ser-estar)', () => {
+    const lesson = lessonFor('es', 'ser-estar')!;
+    const cells = tableCellsForLesson(lesson);
+    expect(cells.every((c) => c.enPrompt === undefined)).toBe(true);
+  });
 });
 
 // FB377: the deck no longer walks the cells in table order (a fixed "yo ·
