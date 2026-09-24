@@ -249,52 +249,13 @@
     "section": "1.6. Certeza, incertidumbre"
   },
   {
-    "id": "b2-d1bb628e",
-    "order": 151,
-    "es": "[América Central",
-    "kind": "pattern",
-    "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
-  },
-  {
-    "id": "b2-c4e7ac09",
-    "order": 152,
-    "es": "Cuba",
-    "kind": "word",
-    "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
-  },
-  {
-    "id": "b2-ffd4002f",
-    "order": 153,
-    "es": "Colombia",
-    "kind": "word",
-    "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
-  },
-  {
-    "id": "b2-1f62cb67",
-    "order": 154,
-    "es": "Perú",
-    "kind": "word",
-    "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
-  },
-  {
-    "id": "b2-0dc5a188",
-    "order": 155,
-    "es": "Uruguay",
-    "kind": "word",
-    "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
-  },
-  {
     "id": "b2-2ad05af6",
     "order": 156,
-    "es": "Argentina y Chile] de juro",
+    "es": "de juro",
     "kind": "phrase",
     "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
+    "section": "1.6. Certeza, incertidumbre",
+    "region": "América Central, Cuba, Colombia, Perú, Uruguay, Argentina y Chile"
   },
   {
     "id": "b2-d7cae9ee",
@@ -512,18 +473,10 @@
     "headword": "b2-cedb0fb0"
   },
   {
-    "id": "b2-9ba90fc4",
-    "order": 306,
-    "es": "cuánto [sustantivo",
-    "kind": "pattern",
-    "source": "08",
-    "section": "2.5. Grado"
-  },
-  {
     "id": "b2-c487daed",
     "order": 307,
-    "es": "cuánto verbo]",
-    "kind": "phrase",
+    "es": "cuánto [sustantivo/verbo]",
+    "kind": "pattern",
     "source": "08",
     "section": "2.5. Grado"
   },
@@ -1168,10 +1121,11 @@
   {
     "id": "b2-370ead7c",
     "order": 673,
-    "es": "[Hispanoamérica] más nunca",
+    "es": "más nunca",
     "kind": "pattern",
     "source": "08",
-    "section": "4.1. Referencias generales"
+    "section": "4.1. Referencias generales",
+    "region": "Hispanoamérica"
   },
   {
     "id": "b2-79396922",

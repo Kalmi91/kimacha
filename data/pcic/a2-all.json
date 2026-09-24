@@ -525,10 +525,11 @@
   {
     "id": "a2-b4beb878",
     "order": 63,
-    "es": "[Hispanoamérica] libra(s)",
+    "es": "libra(s)",
     "kind": "pattern",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "region": "Hispanoamérica"
   },
   {
     "id": "a2-80417e76",
@@ -675,10 +676,11 @@
   {
     "id": "a2-17d859c5",
     "order": 81,
-    "es": "[Hispanoamérica] arriba (de)",
+    "es": "arriba (de)",
     "kind": "pattern",
     "source": "08",
-    "section": "3.3. Posición relativa"
+    "section": "3.3. Posición relativa",
+    "region": "Hispanoamérica"
   },
   {
     "id": "a2-a72d6a82",
@@ -1769,11 +1771,12 @@
   {
     "id": "a2-66097dbe",
     "order": 211,
-    "es": "[Hispanoamérica] otra vuelta",
+    "es": "otra vuelta",
     "kind": "phrase",
     "source": "08",
     "section": "4.3. Aspectos de desarrollo",
-    "headword": "a2-7243f2cc"
+    "headword": "a2-7243f2cc",
+    "region": "Hispanoamérica"
   },
   {
     "id": "a2-927c75cc",
@@ -2604,10 +2607,11 @@
   {
     "id": "a2-4c4196f8",
     "order": 312,
-    "es": "[Hispanoamérica] importar",
+    "es": "importar",
     "kind": "pattern",
     "source": "08",
-    "section": "6.10. Interés"
+    "section": "6.10. Interés",
+    "region": "Hispanoamérica"
   },
   {
     "id": "a2-e7e85d8f",
