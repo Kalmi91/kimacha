@@ -6,6 +6,7 @@ import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_D
 import { addDays, type Sm2Card } from './sm2';
 import type { PcicLevel } from '@/data/pcic';
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
+import type { MistakeBatchRow } from './mistakes/deck';
 
 export interface DB {
   getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
@@ -55,6 +56,13 @@ export interface DB {
   getPcicLevel(): Promise<PcicLevel>;
   setPcicLevel(level: PcicLevel): Promise<void>;
   resetPcicCards(levelPrefix?: string): Promise<void>;
+  // PLAN-hibaim.md 2. lépés: a "Hibáim" kötegek és a hozzájuk tartozó SM-2
+  // haladás, a pcic_cards-tól elkülönítve.
+  saveMistakeBatch(batchId: string, json: string, importedAt: string): Promise<void>;
+  getMistakeBatches(): Promise<MistakeBatchRow[]>;
+  getMistakeCards(): Promise<Sm2Card[]>;
+  upsertMistakeCard(card: Sm2Card): Promise<void>;
+  getMistakeDueCount(today: string): Promise<number>;
   exportAll(): Promise<BackupPayload>;
   importAll(payload: BackupPayload): Promise<void>;
 }
@@ -336,6 +344,35 @@ class MemoryDB implements DB {
     for (const id of [...this.pcicCards.keys()]) {
       if (id.startsWith(`${levelPrefix}-`)) this.pcicCards.delete(id);
     }
+  }
+
+  // PLAN-hibaim.md 2. lépés: session-scoped Map-ek, mint a pcicCards/pcicLevel
+  // fent, ugyanazzal a szignatúrával, mint a natív (SQLite) implementáció.
+  private mistakeBatches: Map<string, { json: string; importedAt: string }> = new Map();
+  private mistakeCards: Map<string, Sm2Card> = new Map();
+
+  async saveMistakeBatch(batchId: string, json: string, importedAt: string): Promise<void> {
+    this.mistakeBatches.set(batchId, { json, importedAt });
+  }
+
+  async getMistakeBatches(): Promise<MistakeBatchRow[]> {
+    return [...this.mistakeBatches.entries()]
+      .map(([batchId, v]) => ({ batchId, json: v.json, importedAt: v.importedAt }))
+      .sort((a, b) => (a.importedAt < b.importedAt ? 1 : a.importedAt > b.importedAt ? -1 : 0));
+  }
+
+  async getMistakeCards(): Promise<Sm2Card[]> {
+    return [...this.mistakeCards.values()].map((c) => ({ ...c }));
+  }
+
+  async upsertMistakeCard(card: Sm2Card): Promise<void> {
+    this.mistakeCards.set(card.itemId, { ...card });
+  }
+
+  async getMistakeDueCount(today: string): Promise<number> {
+    return [...this.mistakeCards.values()].filter(
+      (c) => (c.state === 'review' || c.state === 'learning') && c.due <= today
+    ).length;
   }
 
   // PLAN-play 10. lépés: a kiválasztott PCIC szint, memória-tükör (mint a

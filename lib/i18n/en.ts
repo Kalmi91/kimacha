@@ -136,6 +136,25 @@ export default {
     exportError: 'The backup could not be created.',
     importError: 'Invalid or corrupted backup file. Your data was not changed.',
   },
+  // PLAN-hibaim.md: the "Hibáim" import (Settings), report and practice deck.
+  mistakes: {
+    load: '📥 Load my mistakes',
+    loaded: (sentences: number, words: number, drills: number) =>
+      `Loaded: ${sentences} sentences, ${words} words, ${drills} grammar drills`,
+    entry: (n: number) => `📕 My mistakes (${n})`,
+    title: 'My mistakes',
+    practice: (n: number) => `Practice my mistakes (${n} due)`,
+    empty: 'No mistakes loaded yet. Settings → Load my mistakes.',
+    wrongWordsTitle: 'Words you got wrong',
+    reviewAgainTitle: 'Review again',
+    noLesson: 'No lesson in the app, the deck drills it',
+    doubtfulTitle: 'Not in the deck (correction uncertain)',
+    youSaid: 'You said:',
+    chipSentence: 'Sentence',
+    chipWord: 'Word',
+    chipGrammar: 'Grammar',
+    allDone: 'All done for now',
+  },
   progress: {
     wordsKnown: 'Words Known',
   },
