@@ -329,6 +329,18 @@ function wordCount(str) {
   return normalize(str).split(/\s+/).filter(Boolean).length;
 }
 
+// FB376: szóhatárral keresi a `target`-et a mondatban, hogy egy rövid target
+// (pl. "es") ne találjon rá egy hosszabb szó belsejére (pl. "profesor").
+// Ugyanez a logika van lib/grammar/whyTarget.ts-ben (ez a script nem
+// importál TS fájlt).
+function wholeWordIndex(haystack, needle) {
+  if (!needle) return -1;
+  const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const re = new RegExp(`(?<![\\p{L}\\p{M}])${escaped}(?![\\p{L}\\p{M}])`, 'u');
+  const m = haystack.match(re);
+  return m ? m.index : -1;
+}
+
 function checkLength(str, level, path) {
   const isA1Plus = level !== 'A0';
   const cap = isA1Plus ? 12 : 12;
@@ -533,6 +545,14 @@ function auditWhyItem(item, itemPath) {
   }
   if (!item.es) p1.push({ path: itemPath, issue: 'why item missing es' });
   if (item.es && item.tr?.es !== item.es) p1.push({ path: itemPath, issue: 'why item tr.es must equal es' });
+
+  // FB376 (PLAN-fb0923 4. lépés): a `target` megnevezi, mire vonatkozik a
+  // kérdés; hiánya P2, egy meglévő de a mondatban nem található target P1.
+  if (!item.target) {
+    p2.push({ path: itemPath, issue: 'why item missing target' });
+  } else if (item.es && wholeWordIndex(item.es, item.target) === -1) {
+    p1.push({ path: itemPath, issue: `why item target "${item.target}" not found as a whole word in es` });
+  }
 
   const huSeen = new Set();
   options.forEach((opt, i) => {

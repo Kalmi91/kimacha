@@ -26,6 +26,7 @@ import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import { buildGrammarRound, grammarRoundItemKind, isChoiceRoundItem, wrongExplanation } from '@/lib/games/grammarChoice';
 import { pickTransformRound, TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
+import { findWholeWord } from '@/lib/grammar/whyTarget';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString, shuffleArray } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
@@ -275,12 +276,29 @@ function WhyDrillItem({
     setSelected(i);
   };
 
+  // FB376: ha van `target`, a mondatban kiemelve jelenik meg, és a kérdés-sor
+  // megnevezi, mire vonatkozik a kérdés (a felhasználó nem tudta kitalálni,
+  // melyik szóról van szó).
+  const targetSpan = item.target ? findWholeWord(item.es, item.target) : null;
+
   return (
     <View style={styles.whyBody}>
       {item.tense ? <TenseBadge tense={item.tense} colors={colors} /> : null}
       <View style={[styles.sentenceCard, { backgroundColor: colors.card }]}>
         <View style={styles.whySentenceRow}>
-          <Text style={[styles.sentence, { color: colors.text }]}>{item.es}</Text>
+          <Text style={[styles.sentence, { color: colors.text }]}>
+            {targetSpan ? (
+              <>
+                {item.es.slice(0, targetSpan.start)}
+                <Text style={[styles.whyTargetBold, { color: colors.tint }]}>
+                  {item.es.slice(targetSpan.start, targetSpan.end)}
+                </Text>
+                {item.es.slice(targetSpan.end)}
+              </>
+            ) : (
+              item.es
+            )}
+          </Text>
           <Pressable onPress={() => speak(item.es, speechLang(learnedLang))} hitSlop={10}>
             <Text style={styles.speak}>🔊</Text>
           </Pressable>
@@ -289,6 +307,11 @@ function WhyDrillItem({
           {item.tr[contentLang] ?? item.tr.en}
         </Text>
       </View>
+      {item.target ? (
+        <Text style={[styles.whyQuestion, { color: colors.tint }]}>
+          {s.games.grammarChoice.whyQuestion(item.target)}
+        </Text>
+      ) : null}
 
       <View style={styles.options}>
         {item.options.map((opt, i) => {
@@ -754,6 +777,9 @@ const styles = StyleSheet.create({
   whyBody: { gap: 12 },
   whySentenceRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10 },
   whyTranslation: { fontSize: 14, textAlign: 'center', marginTop: 6 },
+  // FB376: a `target` kiemelése a mondatban + a kérdés-sor, ami megnevezi.
+  whyTargetBold: { fontWeight: '800' },
+  whyQuestion: { fontSize: 15, fontWeight: '700', textAlign: 'center' },
   speak: { fontSize: 18 },
   // NY3 (NYELVTAN.md "Első szelet"): igeidő-jelvény + mondat-átírás drill.
   tenseBadge: { alignSelf: 'flex-start', paddingVertical: 6, paddingHorizontal: 12, borderRadius: 999 },
