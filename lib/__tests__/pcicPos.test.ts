@@ -36,10 +36,10 @@ describe('posOf (5c, FB348/351/358/359)', () => {
     expect(posOf({ es: 'tocar frío', kind: 'word' })).toEqual({ pos: 'phrase' });
   });
 
-  it('egyéb egyszavas, nem igevégű, névelő nélküli, korpuszban nem szereplő alaknál nincs chip', () => {
-    // 'bueno' a korpuszban 'adj', ami nem tartozik a PCIC chip (noun/verb/phrase)
-    // közé, ezért a lemma-index kihagyja, és a lemma a régi szabályra esik.
-    expect(posOf({ es: 'bueno', kind: 'word' })).toBe(null);
+  // FB361-362: a Pos immár a teljes WordPos-készlet, ezért a korpusz 'adj'-ja
+  // ('bueno') már nem esik ki a lemma-indexből, van chip.
+  it('a korpuszban adj/adv/pron/prep/num szófajú lemma is chipet kap', () => {
+    expect(posOf({ es: 'bueno', kind: 'word' })).toEqual({ pos: 'adj' });
   });
 
   it('a meglévő pos mezőt előnyben részesíti a korpusszal és a szabállyal szemben', () => {
@@ -55,5 +55,12 @@ describe('posOf (5c, FB348/351/358/359)', () => {
   it('a korpuszban nem szereplő lemma a régi szabályra esik vissza', () => {
     expect(posOf({ es: 'xyzabc', kind: 'word' })).toBe(null);
     expect(posOf({ es: 'el xyzabc', kind: 'word' })).toEqual({ pos: 'noun' });
+  });
+
+  // FB362: "a mondatoknál nem kell szofaj", akkor sem, ha volna pos mező vagy
+  // korpusz-egyezés.
+  it('sentence és pattern kindre sose ad chipet', () => {
+    expect(posOf({ es: 'el perro', kind: 'sentence' })).toBe(null);
+    expect(posOf({ es: 'bueno', kind: 'pattern', pos: 'adj' })).toBe(null);
   });
 });

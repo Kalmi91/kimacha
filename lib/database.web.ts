@@ -5,6 +5,7 @@ import { WORD_MERGES } from './wordMerges';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 import { addDays, type Sm2Card } from './sm2';
 import type { PcicLevel } from '@/data/pcic';
+import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
 
 export interface DB {
   getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
@@ -29,6 +30,10 @@ export interface DB {
   updatePcicSpellingStep(itemId: string, step: number, due: string): Promise<void>;
   getStrictAccents(): Promise<boolean>;
   setStrictAccents(v: boolean): Promise<void>;
+  // FB364: a PCIC "rontott" (again) kártya ennyi másodperc múlva jön
+  // mindenképp vissza (lib/pcicSession.ts).
+  getAgainDelaySec(): Promise<number>;
+  setAgainDelaySec(sec: number): Promise<void>;
   getArticlePicker(): Promise<boolean>;
   setArticlePicker(v: boolean): Promise<void>;
   getWeeklyGoalMinutes(): Promise<number>;
@@ -191,6 +196,17 @@ class MemoryDB implements DB {
 
   async setStrictAccents(v: boolean): Promise<void> {
     this.strictAccentsMap.set(this.activePair, v);
+  }
+
+  // FB364: memory mirror of the SQLite again_delay_sec column.
+  private againDelaySecMap: Map<string, number> = new Map();
+
+  async getAgainDelaySec(): Promise<number> {
+    return this.againDelaySecMap.get(this.activePair) ?? DEFAULT_AGAIN_DELAY_SEC;
+  }
+
+  async setAgainDelaySec(sec: number): Promise<void> {
+    this.againDelaySecMap.set(this.activePair, sec);
   }
 
   // FB188: névelő-gombsor kapcsoló, per pár (a SQLite oldal tükre). Alapból be.

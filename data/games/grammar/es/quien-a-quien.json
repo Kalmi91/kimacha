@@ -880,6 +880,7 @@
       "kind": "why",
       "id": "qq-why-01",
       "es": "Nosotros ayudamos mucho.",
+      "target": "ayudamos",
       "tr": { "hu": "Sokat segítünk.", "en": "We help a lot.", "es": "Nosotros ayudamos mucho.", "de": "Wir helfen viel." },
       "options": [
         {
@@ -925,6 +926,7 @@
       "kind": "why",
       "id": "qq-why-02",
       "es": "Vosotros ayudáis siempre.",
+      "target": "ayudáis",
       "tr": { "hu": "Ti mindig segítetek.", "en": "You (plural) always help.", "es": "Vosotros ayudáis siempre.", "de": "Ihr helft immer." },
       "options": [
         {
@@ -970,6 +972,7 @@
       "kind": "why",
       "id": "qq-why-03",
       "es": "Te veo mañana.",
+      "target": "Te",
       "tr": { "hu": "Holnap látlak.", "en": "I'll see you tomorrow.", "es": "Te veo mañana.", "de": "Ich sehe dich morgen." },
       "options": [
         {
@@ -1015,6 +1018,7 @@
       "kind": "why",
       "id": "qq-why-04",
       "es": "Ella me ayuda mucho.",
+      "target": "me",
       "tr": { "hu": "Ő sokat segít nekem.", "en": "She helps me a lot.", "es": "Ella me ayuda mucho.", "de": "Sie hilft mir viel." },
       "options": [
         {
@@ -1060,6 +1064,7 @@
       "kind": "why",
       "id": "qq-why-05",
       "es": "A él le escribo un mensaje.",
+      "target": "le",
       "tr": { "hu": "Neki írok egy üzenetet.", "en": "I'm writing him a message.", "es": "A él le escribo un mensaje.", "de": "Ich schreibe ihm eine Nachricht." },
       "options": [
         {
@@ -1105,6 +1110,7 @@
       "kind": "why",
       "id": "qq-why-06",
       "es": "Tú me das un libro.",
+      "target": "me",
       "tr": { "hu": "Adsz nekem egy könyvet.", "en": "You give me a book.", "es": "Tú me das un libro.", "de": "Du gibst mir ein Buch." },
       "options": [
         {

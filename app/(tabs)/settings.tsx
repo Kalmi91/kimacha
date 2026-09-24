@@ -20,6 +20,12 @@ import {
   MAX_DAILY_NEW_LIMIT,
   DAILY_NEW_LIMIT_STEP,
 } from '@/lib/usageStats';
+import {
+  DEFAULT_AGAIN_DELAY_SEC,
+  MIN_AGAIN_DELAY_SEC,
+  MAX_AGAIN_DELAY_SEC,
+  AGAIN_DELAY_STEP_SEC,
+} from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
 // FB82: version line in Settings, the same tag the feedback rows carry.
 import { appBuildTag } from '@/lib/appBuild';
@@ -46,6 +52,8 @@ export default function SettingsScreen() {
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
   // FB77: daily budget of brand-new words entering the queue.
   const [dailyNewLimit, setDailyNewLimit] = useState(DEFAULT_DAILY_NEW_LIMIT);
+  // FB364 (PLAN-fb0923 5. lépés): a PCIC "again" kártya visszatérési ideje.
+  const [againDelaySec, setAgainDelaySec] = useState(DEFAULT_AGAIN_DELAY_SEC);
   // FB132: difficulty switches. Accents are the first one: off = the beginner
   // grader forgives a missing á/é/ñ, on = it counts as a mistake.
   const [strictAccents, setStrictAccents] = useState(false);
@@ -69,6 +77,7 @@ export default function SettingsScreen() {
       db.getWeeklyGoalMinutes().then(setWeeklyGoal);
       db.getUsageStats().then(u => setWeekMinutes(u.thisWeek));
       db.getDailyNewLimit().then(setDailyNewLimit);
+      db.getAgainDelaySec().then(setAgainDelaySec);
       db.getOnboarding().then(async o => {
         if (!o) return;
         setDirection([o.source, o.target]);
@@ -123,6 +132,17 @@ export default function SettingsScreen() {
     if (next === dailyNewLimit) return;
     setDailyNewLimit(next);
     await getDb().setDailyNewLimit(next);
+  };
+
+  // FB364: ± 15 s per tap, clamped to the 15..300 s range.
+  const handleAgainDelayChange = async (delta: number) => {
+    const next = Math.min(
+      MAX_AGAIN_DELAY_SEC,
+      Math.max(MIN_AGAIN_DELAY_SEC, againDelaySec + delta)
+    );
+    if (next === againDelaySec) return;
+    setAgainDelaySec(next);
+    await getDb().setAgainDelaySec(next);
   };
 
   const themeOptions: { label: string; value: 'system' | 'light' | 'dark' }[] = [
@@ -273,6 +293,29 @@ export default function SettingsScreen() {
           <Pressable
             style={[styles.goalBtn, { borderColor: colors.tint }]}
             onPress={() => handleDailyNewLimitChange(DAILY_NEW_LIMIT_STEP)}
+          >
+            <Text style={[styles.goalBtnText, { color: colors.tint }]}>+</Text>
+          </Pressable>
+        </View>
+      </View>
+
+      {/* FB364 (PLAN-fb0923 5. lépés/D2): a PCIC "again" kártya visszatérési
+          ideje; ugyanezt olvassa a nyelvtani táblázat-pakli cooldownja is. */}
+      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.missedWordDelay}</Text>
+        <View style={styles.goalStepper}>
+          <Pressable
+            style={[styles.goalBtn, { borderColor: colors.tint }]}
+            onPress={() => handleAgainDelayChange(-AGAIN_DELAY_STEP_SEC)}
+          >
+            <Text style={[styles.goalBtnText, { color: colors.tint }]}>−</Text>
+          </Pressable>
+          <Text style={[styles.goalValue, { color: colors.text }]}>
+            {s.settings.missedWordDelaySeconds(String(againDelaySec))}
+          </Text>
+          <Pressable
+            style={[styles.goalBtn, { borderColor: colors.tint }]}
+            onPress={() => handleAgainDelayChange(AGAIN_DELAY_STEP_SEC)}
           >
             <Text style={[styles.goalBtnText, { color: colors.tint }]}>+</Text>
           </Pressable>
