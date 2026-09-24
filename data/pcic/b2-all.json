@@ -5,7 +5,8 @@
     "es": "nacimiento",
     "kind": "word",
     "source": "08",
-    "section": "1.1. Existencia, inexistencia"
+    "section": "1.1. Existencia, inexistencia",
+    "pos": "noun"
   },
   {
     "id": "b2-3f6ae0c8",
@@ -13,7 +14,8 @@
     "es": "inexistente",
     "kind": "word",
     "source": "08",
-    "section": "1.1. Existencia, inexistencia"
+    "section": "1.1. Existencia, inexistencia",
+    "pos": "adj"
   },
   {
     "id": "b2-156aa51d",
@@ -136,7 +138,8 @@
     "es": "participación",
     "kind": "word",
     "source": "08",
-    "section": "1.2. Presencia, ausencia"
+    "section": "1.2. Presencia, ausencia",
+    "pos": "noun"
   },
   {
     "id": "b2-2b04b44d",
@@ -144,7 +147,8 @@
     "es": "desaparición",
     "kind": "word",
     "source": "08",
-    "section": "1.2. Presencia, ausencia"
+    "section": "1.2. Presencia, ausencia",
+    "pos": "noun"
   },
   {
     "id": "b2-55e5b6b1",
@@ -169,7 +173,8 @@
     "es": "presente",
     "kind": "word",
     "source": "08",
-    "section": "1.2. Presencia, ausencia"
+    "section": "1.2. Presencia, ausencia",
+    "pos": "adj"
   },
   {
     "id": "b2-754543b9",
@@ -177,7 +182,8 @@
     "es": "ausente",
     "kind": "word",
     "source": "08",
-    "section": "1.2. Presencia, ausencia"
+    "section": "1.2. Presencia, ausencia",
+    "pos": "adj"
   },
   {
     "id": "b2-d7609b73",
@@ -185,7 +191,8 @@
     "es": "ignorado",
     "kind": "word",
     "source": "08",
-    "section": "1.2. Presencia, ausencia"
+    "section": "1.2. Presencia, ausencia",
+    "pos": "adj"
   },
   {
     "id": "b2-b4642c79",
@@ -210,7 +217,8 @@
     "es": "oculto",
     "kind": "word",
     "source": "08",
-    "section": "1.2. Presencia, ausencia"
+    "section": "1.2. Presencia, ausencia",
+    "pos": "adj"
   },
   {
     "id": "b2-0eb18b14",
@@ -218,7 +226,8 @@
     "es": "esconder(se)",
     "kind": "word",
     "source": "08",
-    "section": "1.2. Presencia, ausencia"
+    "section": "1.2. Presencia, ausencia",
+    "pos": "verb"
   },
   {
     "id": "b2-ea7941c5",
@@ -351,7 +360,8 @@
     "es": "vacante",
     "kind": "word",
     "source": "08",
-    "section": "1.3. Disponibilidad, no disponibilidad"
+    "section": "1.3. Disponibilidad, no disponibilidad",
+    "pos": "adj"
   },
   {
     "id": "b2-bf244cdf",
@@ -359,7 +369,8 @@
     "es": "desocupado",
     "kind": "word",
     "source": "08",
-    "section": "1.3. Disponibilidad, no disponibilidad"
+    "section": "1.3. Disponibilidad, no disponibilidad",
+    "pos": "adj"
   },
   {
     "id": "b2-0963ce8a",
@@ -411,7 +422,8 @@
     "es": "agotado",
     "kind": "word",
     "source": "08",
-    "section": "1.3. Disponibilidad, no disponibilidad"
+    "section": "1.3. Disponibilidad, no disponibilidad",
+    "pos": "adj"
   },
   {
     "id": "b2-b520383d",
@@ -572,7 +584,8 @@
     "es": "categoría",
     "kind": "word",
     "source": "08",
-    "section": "1.4. Cualidad general"
+    "section": "1.4. Cualidad general",
+    "pos": "noun"
   },
   {
     "id": "b2-f7e86b53",
@@ -604,7 +617,8 @@
     "es": "característica",
     "kind": "word",
     "source": "08",
-    "section": "1.4. Cualidad general"
+    "section": "1.4. Cualidad general",
+    "pos": "adj"
   },
   {
     "id": "b2-2282b6f2",
@@ -638,7 +652,8 @@
     "es": "textura",
     "kind": "word",
     "source": "08",
-    "section": "1.4. Cualidad general"
+    "section": "1.4. Cualidad general",
+    "pos": "noun"
   },
   {
     "id": "b2-97912524",
@@ -680,7 +695,8 @@
     "es": "característico",
     "kind": "word",
     "source": "08",
-    "section": "1.4. Cualidad general"
+    "section": "1.4. Cualidad general",
+    "pos": "adj"
   },
   {
     "id": "b2-f16ec2f9",
@@ -863,7 +879,8 @@
     "es": "esencialmente",
     "kind": "word",
     "source": "08",
-    "section": "1.4. Cualidad general"
+    "section": "1.4. Cualidad general",
+    "pos": "adv"
   },
   {
     "id": "b2-af577bb5",
@@ -871,7 +888,8 @@
     "es": "fundamentalmente",
     "kind": "word",
     "source": "08",
-    "section": "1.4. Cualidad general"
+    "section": "1.4. Cualidad general",
+    "pos": "adv"
   },
   {
     "id": "b2-61f3d9a5",
@@ -888,7 +906,8 @@
     "es": "suceso",
     "kind": "word",
     "source": "08",
-    "section": "1.5. Acontecimiento"
+    "section": "1.5. Acontecimiento",
+    "pos": "noun"
   },
   {
     "id": "b2-23af90bc",
@@ -904,7 +923,8 @@
     "es": "anécdota",
     "kind": "word",
     "source": "08",
-    "section": "1.5. Acontecimiento"
+    "section": "1.5. Acontecimiento",
+    "pos": "noun"
   },
   {
     "id": "b2-a81009a4",
@@ -912,7 +932,8 @@
     "es": "acontecimiento",
     "kind": "word",
     "source": "08",
-    "section": "1.5. Acontecimiento"
+    "section": "1.5. Acontecimiento",
+    "pos": "noun"
   },
   {
     "id": "b2-809cc231",
@@ -1003,7 +1024,8 @@
     "es": "(des)convocar",
     "kind": "word",
     "source": "08",
-    "section": "1.5. Acontecimiento"
+    "section": "1.5. Acontecimiento",
+    "pos": "verb"
   },
   {
     "id": "b2-f83e936c",
@@ -1029,7 +1051,8 @@
     "es": "certeza",
     "kind": "word",
     "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
+    "section": "1.6. Certeza, incertidumbre",
+    "pos": "noun"
   },
   {
     "id": "b2-e6189e35",
@@ -1045,7 +1068,8 @@
     "es": "probabilidad",
     "kind": "word",
     "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
+    "section": "1.6. Certeza, incertidumbre",
+    "pos": "noun"
   },
   {
     "id": "b2-1231b3a3",
@@ -1061,7 +1085,8 @@
     "es": "indecisión",
     "kind": "word",
     "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
+    "section": "1.6. Certeza, incertidumbre",
+    "pos": "noun"
   },
   {
     "id": "b2-3f90a745",
@@ -1069,7 +1094,8 @@
     "es": "incertidumbre",
     "kind": "word",
     "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
+    "section": "1.6. Certeza, incertidumbre",
+    "pos": "noun"
   },
   {
     "id": "b2-1e91f72b",
@@ -1077,7 +1103,8 @@
     "es": "hipotético",
     "kind": "word",
     "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
+    "section": "1.6. Certeza, incertidumbre",
+    "pos": "adj"
   },
   {
     "id": "b2-45c42807",
@@ -1085,7 +1112,8 @@
     "es": "dudoso",
     "kind": "word",
     "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
+    "section": "1.6. Certeza, incertidumbre",
+    "pos": "adj"
   },
   {
     "id": "b2-4b62c705",
@@ -1118,7 +1146,8 @@
     "es": "asegurar(se)",
     "kind": "word",
     "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
+    "section": "1.6. Certeza, incertidumbre",
+    "pos": "verb"
   },
   {
     "id": "b2-519cdbaa",
@@ -1190,7 +1219,8 @@
     "es": "evidentemente",
     "kind": "word",
     "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
+    "section": "1.6. Certeza, incertidumbre",
+    "pos": "adv"
   },
   {
     "id": "b2-d26ef554",
@@ -1198,7 +1228,8 @@
     "es": "inevitablemente",
     "kind": "word",
     "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
+    "section": "1.6. Certeza, incertidumbre",
+    "pos": "adv"
   },
   {
     "id": "b2-7ecfc34b",
@@ -1263,7 +1294,8 @@
     "es": "Cuba",
     "kind": "word",
     "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
+    "section": "1.6. Certeza, incertidumbre",
+    "pos": "noun"
   },
   {
     "id": "b2-ffd4002f",
@@ -1271,7 +1303,8 @@
     "es": "Colombia",
     "kind": "word",
     "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
+    "section": "1.6. Certeza, incertidumbre",
+    "pos": "noun"
   },
   {
     "id": "b2-1f62cb67",
@@ -1279,7 +1312,8 @@
     "es": "Perú",
     "kind": "word",
     "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
+    "section": "1.6. Certeza, incertidumbre",
+    "pos": "noun"
   },
   {
     "id": "b2-0dc5a188",
@@ -1287,7 +1321,8 @@
     "es": "Uruguay",
     "kind": "word",
     "source": "08",
-    "section": "1.6. Certeza, incertidumbre"
+    "section": "1.6. Certeza, incertidumbre",
+    "pos": "noun"
   },
   {
     "id": "b2-2ad05af6",
@@ -1337,7 +1372,8 @@
     "es": "invención",
     "kind": "word",
     "source": "08",
-    "section": "1.7. Realidad, ficción"
+    "section": "1.7. Realidad, ficción",
+    "pos": "noun"
   },
   {
     "id": "b2-bd9e27e0",
@@ -1353,7 +1389,8 @@
     "es": "simulación",
     "kind": "word",
     "source": "08",
-    "section": "1.7. Realidad, ficción"
+    "section": "1.7. Realidad, ficción",
+    "pos": "noun"
   },
   {
     "id": "b2-d7cae9ee",
@@ -1361,7 +1398,8 @@
     "es": "irreal",
     "kind": "word",
     "source": "08",
-    "section": "1.7. Realidad, ficción"
+    "section": "1.7. Realidad, ficción",
+    "pos": "adj"
   },
   {
     "id": "b2-2e2b85e9",
@@ -1369,7 +1407,8 @@
     "es": "ficticio",
     "kind": "word",
     "source": "08",
-    "section": "1.7. Realidad, ficción"
+    "section": "1.7. Realidad, ficción",
+    "pos": "adj"
   },
   {
     "id": "b2-645fe4ad",
@@ -1377,7 +1416,8 @@
     "es": "surrealista",
     "kind": "word",
     "source": "08",
-    "section": "1.7. Realidad, ficción"
+    "section": "1.7. Realidad, ficción",
+    "pos": "adj"
   },
   {
     "id": "b2-a22161a4",
@@ -1394,7 +1434,8 @@
     "es": "(in)material",
     "kind": "word",
     "source": "08",
-    "section": "1.7. Realidad, ficción"
+    "section": "1.7. Realidad, ficción",
+    "pos": "noun"
   },
   {
     "id": "b2-d5830d10",
@@ -1402,7 +1443,8 @@
     "es": "concreto",
     "kind": "word",
     "source": "08",
-    "section": "1.7. Realidad, ficción"
+    "section": "1.7. Realidad, ficción",
+    "pos": "adj"
   },
   {
     "id": "b2-c18b8922",
@@ -1467,7 +1509,8 @@
     "es": "(des)ilusionarse",
     "kind": "word",
     "source": "08",
-    "section": "1.7. Realidad, ficción"
+    "section": "1.7. Realidad, ficción",
+    "pos": "verb"
   },
   {
     "id": "b2-69700fec",
@@ -1507,7 +1550,8 @@
     "es": "esencial",
     "kind": "word",
     "source": "08",
-    "section": "1.8. Necesidad, contingencia, obligación"
+    "section": "1.8. Necesidad, contingencia, obligación",
+    "pos": "adj"
   },
   {
     "id": "b2-81f27a69",
@@ -1515,7 +1559,8 @@
     "es": "fundamental",
     "kind": "word",
     "source": "08",
-    "section": "1.8. Necesidad, contingencia, obligación"
+    "section": "1.8. Necesidad, contingencia, obligación",
+    "pos": "adj"
   },
   {
     "id": "b2-f7f033af",
@@ -1548,7 +1593,8 @@
     "es": "originalidad",
     "kind": "word",
     "source": "08",
-    "section": "1.9. Generalidad, especificidad"
+    "section": "1.9. Generalidad, especificidad",
+    "pos": "noun"
   },
   {
     "id": "b2-7269ccd4",
@@ -1573,7 +1619,8 @@
     "es": "determinado",
     "kind": "word",
     "source": "08",
-    "section": "1.9. Generalidad, especificidad"
+    "section": "1.9. Generalidad, especificidad",
+    "pos": "adj"
   },
   {
     "id": "b2-dfe2db74",
@@ -1597,7 +1644,8 @@
     "es": "individual",
     "kind": "word",
     "source": "08",
-    "section": "1.9. Generalidad, especificidad"
+    "section": "1.9. Generalidad, especificidad",
+    "pos": "adj"
   },
   {
     "id": "b2-304b65be",
@@ -1622,7 +1670,8 @@
     "es": "parcial",
     "kind": "word",
     "source": "08",
-    "section": "1.9. Generalidad, especificidad"
+    "section": "1.9. Generalidad, especificidad",
+    "pos": "adj"
   },
   {
     "id": "b2-da5f51a1",
@@ -1630,7 +1679,8 @@
     "es": "universal",
     "kind": "word",
     "source": "08",
-    "section": "1.9. Generalidad, especificidad"
+    "section": "1.9. Generalidad, especificidad",
+    "pos": "adj"
   },
   {
     "id": "b2-b70f41d0",
@@ -1722,7 +1772,8 @@
     "es": "particularmente",
     "kind": "word",
     "source": "08",
-    "section": "1.9. Generalidad, especificidad"
+    "section": "1.9. Generalidad, especificidad",
+    "pos": "adv"
   },
   {
     "id": "b2-4156d34f",
@@ -1730,7 +1781,8 @@
     "es": "concretamente",
     "kind": "word",
     "source": "08",
-    "section": "1.9. Generalidad, especificidad"
+    "section": "1.9. Generalidad, especificidad",
+    "pos": "adv"
   },
   {
     "id": "b2-7c2e99ad",
@@ -1810,7 +1862,8 @@
     "es": "índice",
     "kind": "word",
     "source": "08",
-    "section": "2.1. Cantidad numérica"
+    "section": "2.1. Cantidad numérica",
+    "pos": "noun"
   },
   {
     "id": "b2-ff04c87d",
@@ -1818,7 +1871,8 @@
     "es": "porcentaje",
     "kind": "word",
     "source": "08",
-    "section": "2.1. Cantidad numérica"
+    "section": "2.1. Cantidad numérica",
+    "pos": "noun"
   },
   {
     "id": "b2-041effea",
@@ -1826,7 +1880,8 @@
     "es": "cálculo",
     "kind": "word",
     "source": "08",
-    "section": "2.1. Cantidad numérica"
+    "section": "2.1. Cantidad numérica",
+    "pos": "noun"
   },
   {
     "id": "b2-751826cd",
@@ -1926,7 +1981,8 @@
     "es": "parte",
     "kind": "word",
     "source": "08",
-    "section": "2.2. Cantidad relativa"
+    "section": "2.2. Cantidad relativa",
+    "pos": "noun"
   },
   {
     "id": "b2-56d1eb3c",
@@ -1992,7 +2048,8 @@
     "es": "abundante",
     "kind": "word",
     "source": "08",
-    "section": "2.2. Cantidad relativa"
+    "section": "2.2. Cantidad relativa",
+    "pos": "adj"
   },
   {
     "id": "b2-7d451c1c",
@@ -2008,7 +2065,8 @@
     "es": "(i)limitado",
     "kind": "word",
     "source": "08",
-    "section": "2.2. Cantidad relativa"
+    "section": "2.2. Cantidad relativa",
+    "pos": "adj"
   },
   {
     "id": "b2-c3618662",
@@ -2016,7 +2074,8 @@
     "es": "(in)suficiente",
     "kind": "word",
     "source": "08",
-    "section": "2.2. Cantidad relativa"
+    "section": "2.2. Cantidad relativa",
+    "pos": "adj"
   },
   {
     "id": "b2-663182d5",
@@ -2116,7 +2175,8 @@
     "es": "disminución",
     "kind": "word",
     "source": "08",
-    "section": "2.3. Aumento, disminución"
+    "section": "2.3. Aumento, disminución",
+    "pos": "noun"
   },
   {
     "id": "b2-b8d43338",
@@ -2124,7 +2184,8 @@
     "es": "crecimiento",
     "kind": "word",
     "source": "08",
-    "section": "2.3. Aumento, disminución"
+    "section": "2.3. Aumento, disminución",
+    "pos": "noun"
   },
   {
     "id": "b2-220393e0",
@@ -2183,7 +2244,8 @@
     "es": "duplicar(se)",
     "kind": "word",
     "source": "08",
-    "section": "2.3. Aumento, disminución"
+    "section": "2.3. Aumento, disminución",
+    "pos": "verb"
   },
   {
     "id": "b2-5b6a0328",
@@ -2191,7 +2253,8 @@
     "es": "triplicar(se)",
     "kind": "word",
     "source": "08",
-    "section": "2.3. Aumento, disminución"
+    "section": "2.3. Aumento, disminución",
+    "pos": "verb"
   },
   {
     "id": "b2-6a8b743f",
@@ -2258,7 +2321,8 @@
     "es": "proporción",
     "kind": "word",
     "source": "08",
-    "section": "2.4. Proporción"
+    "section": "2.4. Proporción",
+    "pos": "noun"
   },
   {
     "id": "b2-6f3abeb7",
@@ -2283,7 +2347,8 @@
     "es": "distribución",
     "kind": "word",
     "source": "08",
-    "section": "2.4. Proporción"
+    "section": "2.4. Proporción",
+    "pos": "noun"
   },
   {
     "id": "b2-ad3e5219",
@@ -2291,7 +2356,8 @@
     "es": "reparto",
     "kind": "word",
     "source": "08",
-    "section": "2.4. Proporción"
+    "section": "2.4. Proporción",
+    "pos": "noun"
   },
   {
     "id": "b2-05432b42",
@@ -2299,7 +2365,8 @@
     "es": "proporcional",
     "kind": "word",
     "source": "08",
-    "section": "2.4. Proporción"
+    "section": "2.4. Proporción",
+    "pos": "adj"
   },
   {
     "id": "b2-377dc534",
@@ -2348,7 +2415,8 @@
     "es": "proporcionalmente",
     "kind": "word",
     "source": "08",
-    "section": "2.4. Proporción"
+    "section": "2.4. Proporción",
+    "pos": "adv"
   },
   {
     "id": "b2-dc2f88eb",
@@ -2406,7 +2474,8 @@
     "es": "increíblemente",
     "kind": "word",
     "source": "08",
-    "section": "2.5. Grado"
+    "section": "2.5. Grado",
+    "pos": "adv"
   },
   {
     "id": "b2-66224537",
@@ -2432,7 +2501,8 @@
     "es": "principalmente",
     "kind": "word",
     "source": "08",
-    "section": "2.5. Grado"
+    "section": "2.5. Grado",
+    "pos": "adv"
   },
   {
     "id": "b2-ca46ed02",
@@ -2449,7 +2519,8 @@
     "es": "totalmente",
     "kind": "word",
     "source": "08",
-    "section": "2.5. Grado"
+    "section": "2.5. Grado",
+    "pos": "adv"
   },
   {
     "id": "b2-b1056fa0",
@@ -2457,7 +2528,8 @@
     "es": "completamente",
     "kind": "word",
     "source": "08",
-    "section": "2.5. Grado"
+    "section": "2.5. Grado",
+    "pos": "adv"
   },
   {
     "id": "b2-c7bfafda",
@@ -2568,7 +2640,8 @@
     "es": "super-",
     "kind": "word",
     "source": "08",
-    "section": "2.5. Grado"
+    "section": "2.5. Grado",
+    "pos": "adj"
   },
   {
     "id": "b2-a2b5539c",
@@ -2610,7 +2683,8 @@
     "es": "extensión",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "noun"
   },
   {
     "id": "b2-720ef605",
@@ -2626,7 +2700,8 @@
     "es": "profundidad",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "noun"
   },
   {
     "id": "b2-76a81440",
@@ -2642,7 +2717,8 @@
     "es": "longitud",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "noun"
   },
   {
     "id": "b2-7db29f38",
@@ -2650,7 +2726,8 @@
     "es": "anchura",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "noun"
   },
   {
     "id": "b2-c380dab8",
@@ -2666,7 +2743,8 @@
     "es": "espesor",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "noun"
   },
   {
     "id": "b2-5e11eb4f",
@@ -2759,7 +2837,8 @@
     "es": "enano",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "adj"
   },
   {
     "id": "b2-ae18cad6",
@@ -2775,7 +2854,8 @@
     "es": "inmenso",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "adj"
   },
   {
     "id": "b2-349f2124",
@@ -2783,7 +2863,8 @@
     "es": "amplio",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "adj"
   },
   {
     "id": "b2-8dd1793c",
@@ -2791,7 +2872,8 @@
     "es": "espacioso",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "adj"
   },
   {
     "id": "b2-ae3f484c",
@@ -2944,7 +3026,8 @@
     "es": "milímetro(s)",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "noun"
   },
   {
     "id": "b2-00bba60f",
@@ -2969,7 +3052,8 @@
     "es": "rapidez",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "noun"
   },
   {
     "id": "b2-b4ba8385",
@@ -2977,7 +3061,8 @@
     "es": "lentitud",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "noun"
   },
   {
     "id": "b2-63315ab8",
@@ -3068,7 +3153,8 @@
     "es": "tonelada",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "noun"
   },
   {
     "id": "b2-45005eba",
@@ -3076,7 +3162,8 @@
     "es": "carga",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "noun"
   },
   {
     "id": "b2-fbe6c011",
@@ -3108,7 +3195,8 @@
     "es": "(des)cargar",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "verb"
   },
   {
     "id": "b2-e65190b6",
@@ -3124,7 +3212,8 @@
     "es": "hectárea(s)",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "noun"
   },
   {
     "id": "b2-c3b1be26",
@@ -3182,7 +3271,8 @@
     "es": "fino",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "adj"
   },
   {
     "id": "b2-d0c08753",
@@ -3190,7 +3280,8 @@
     "es": "grueso",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "adj"
   },
   {
     "id": "b2-603774d4",
@@ -3224,7 +3315,8 @@
     "es": "inundar(se)",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "verb"
   },
   {
     "id": "b2-d7fa908f",
@@ -3290,7 +3382,8 @@
     "es": "congelado",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "adj"
   },
   {
     "id": "b2-d35dbc10",
@@ -3314,7 +3407,8 @@
     "es": "cálido",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "adj"
   },
   {
     "id": "b2-77c65c6d",
@@ -3408,7 +3502,8 @@
     "es": "(des)congelarse",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "verb"
   },
   {
     "id": "b2-ba600bf7",
@@ -3416,7 +3511,8 @@
     "es": "helar(se)",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "verb"
   },
   {
     "id": "b2-6764ac1b",
@@ -3424,7 +3520,8 @@
     "es": "quemar(se)",
     "kind": "word",
     "source": "08",
-    "section": "2.6. Medidas"
+    "section": "2.6. Medidas",
+    "pos": "verb"
   },
   {
     "id": "b2-b32d53e9",
@@ -3483,7 +3580,8 @@
     "es": "localización",
     "kind": "word",
     "source": "08",
-    "section": "3.1. Localización"
+    "section": "3.1. Localización",
+    "pos": "noun"
   },
   {
     "id": "b2-5e96cc4c",
@@ -3491,7 +3589,8 @@
     "es": "situado",
     "kind": "word",
     "source": "08",
-    "section": "3.1. Localización"
+    "section": "3.1. Localización",
+    "pos": "adj"
   },
   {
     "id": "b2-ee75ed6c",
@@ -3499,7 +3598,8 @@
     "es": "colocado",
     "kind": "word",
     "source": "08",
-    "section": "3.1. Localización"
+    "section": "3.1. Localización",
+    "pos": "adj"
   },
   {
     "id": "b2-e17bc430",
@@ -3507,7 +3607,8 @@
     "es": "instalado",
     "kind": "word",
     "source": "08",
-    "section": "3.1. Localización"
+    "section": "3.1. Localización",
+    "pos": "adj"
   },
   {
     "id": "b2-db35fe30",
@@ -3515,7 +3616,8 @@
     "es": "guardado",
     "kind": "word",
     "source": "08",
-    "section": "3.1. Localización"
+    "section": "3.1. Localización",
+    "pos": "adj"
   },
   {
     "id": "b2-0ede9c92",
@@ -3523,7 +3625,8 @@
     "es": "aparcado",
     "kind": "word",
     "source": "08",
-    "section": "3.1. Localización"
+    "section": "3.1. Localización",
+    "pos": "adj"
   },
   {
     "id": "b2-0345b6cb",
@@ -3592,7 +3695,8 @@
     "es": "instalar(se)",
     "kind": "word",
     "source": "08",
-    "section": "3.1. Localización"
+    "section": "3.1. Localización",
+    "pos": "verb"
   },
   {
     "id": "b2-91cc79cb",
@@ -3763,7 +3867,8 @@
     "es": "posterior",
     "kind": "word",
     "source": "08",
-    "section": "3.3. Posición relativa"
+    "section": "3.3. Posición relativa",
+    "pos": "adj"
   },
   {
     "id": "b2-362c65bf",
@@ -3789,7 +3894,8 @@
     "es": "delantero",
     "kind": "word",
     "source": "08",
-    "section": "3.3. Posición relativa"
+    "section": "3.3. Posición relativa",
+    "pos": "adj"
   },
   {
     "id": "b2-c94a30ab",
@@ -3881,7 +3987,8 @@
     "es": "donde",
     "kind": "word",
     "source": "08",
-    "section": "3.3. Posición relativa"
+    "section": "3.3. Posición relativa",
+    "pos": "adv"
   },
   {
     "id": "b2-e6b4f1b7",
@@ -4210,7 +4317,8 @@
     "es": "recorrido",
     "kind": "word",
     "source": "08",
-    "section": "3.4. Distancia"
+    "section": "3.4. Distancia",
+    "pos": "noun"
   },
   {
     "id": "b2-0f65a52e",
@@ -4218,7 +4326,8 @@
     "es": "separación",
     "kind": "word",
     "source": "08",
-    "section": "3.4. Distancia"
+    "section": "3.4. Distancia",
+    "pos": "noun"
   },
   {
     "id": "b2-4d4acbc7",
@@ -4234,7 +4343,8 @@
     "es": "lejano",
     "kind": "word",
     "source": "08",
-    "section": "3.4. Distancia"
+    "section": "3.4. Distancia",
+    "pos": "adj"
   },
   {
     "id": "b2-13da3ced",
@@ -4242,7 +4352,8 @@
     "es": "alejado",
     "kind": "word",
     "source": "08",
-    "section": "3.4. Distancia"
+    "section": "3.4. Distancia",
+    "pos": "adj"
   },
   {
     "id": "b2-545f67ac",
@@ -4250,7 +4361,8 @@
     "es": "aislado",
     "kind": "word",
     "source": "08",
-    "section": "3.4. Distancia"
+    "section": "3.4. Distancia",
+    "pos": "adj"
   },
   {
     "id": "b2-ddf0ea24",
@@ -4399,7 +4511,8 @@
     "es": "partida",
     "kind": "word",
     "source": "08",
-    "section": "3.5. Movimiento, estabilidad"
+    "section": "3.5. Movimiento, estabilidad",
+    "pos": "noun"
   },
   {
     "id": "b2-721bbe73",
@@ -4416,7 +4529,8 @@
     "es": "caída",
     "kind": "word",
     "source": "08",
-    "section": "3.5. Movimiento, estabilidad"
+    "section": "3.5. Movimiento, estabilidad",
+    "pos": "noun"
   },
   {
     "id": "b2-b5553eee",
@@ -4424,7 +4538,8 @@
     "es": "temblor",
     "kind": "word",
     "source": "08",
-    "section": "3.5. Movimiento, estabilidad"
+    "section": "3.5. Movimiento, estabilidad",
+    "pos": "noun"
   },
   {
     "id": "b2-deeef896",
@@ -4441,7 +4556,8 @@
     "es": "dinamismo",
     "kind": "word",
     "source": "08",
-    "section": "3.5. Movimiento, estabilidad"
+    "section": "3.5. Movimiento, estabilidad",
+    "pos": "noun"
   },
   {
     "id": "b2-54568480",
@@ -4449,7 +4565,8 @@
     "es": "(in)estabilidad",
     "kind": "word",
     "source": "08",
-    "section": "3.5. Movimiento, estabilidad"
+    "section": "3.5. Movimiento, estabilidad",
+    "pos": "noun"
   },
   {
     "id": "b2-3d099f1f",
@@ -4515,7 +4632,8 @@
     "es": "trasladar(se)",
     "kind": "word",
     "source": "08",
-    "section": "3.5. Movimiento, estabilidad"
+    "section": "3.5. Movimiento, estabilidad",
+    "pos": "verb"
   },
   {
     "id": "b2-e25d92b6",
@@ -4688,7 +4806,8 @@
     "es": "detener(se)",
     "kind": "word",
     "source": "08",
-    "section": "3.5. Movimiento, estabilidad"
+    "section": "3.5. Movimiento, estabilidad",
+    "pos": "verb"
   },
   {
     "id": "b2-1227b33b",
@@ -4804,7 +4923,8 @@
     "es": "armoniosamente",
     "kind": "word",
     "source": "08",
-    "section": "3.5. Movimiento, estabilidad"
+    "section": "3.5. Movimiento, estabilidad",
+    "pos": "adv"
   },
   {
     "id": "b2-4fd07745",
@@ -5091,7 +5211,8 @@
     "es": "(des)colocado",
     "kind": "word",
     "source": "08",
-    "section": "3.7. Orden"
+    "section": "3.7. Orden",
+    "pos": "adj"
   },
   {
     "id": "b2-f9812f3d",
@@ -5099,7 +5220,8 @@
     "es": "(des)colocar",
     "kind": "word",
     "source": "08",
-    "section": "3.7. Orden"
+    "section": "3.7. Orden",
+    "pos": "verb"
   },
   {
     "id": "b2-3a05a8f0",
@@ -5229,7 +5351,8 @@
     "es": "raíz",
     "kind": "word",
     "source": "08",
-    "section": "3.8. Origen"
+    "section": "3.8. Origen",
+    "pos": "noun"
   },
   {
     "id": "b2-bd79309e",
@@ -5246,7 +5369,8 @@
     "es": "procedencia",
     "kind": "word",
     "source": "08",
-    "section": "3.8. Origen"
+    "section": "3.8. Origen",
+    "pos": "noun"
   },
   {
     "id": "b2-03197da4",
@@ -5330,7 +5454,8 @@
     "es": "periodo",
     "kind": "word",
     "source": "08",
-    "section": "4.1. Referencias generales"
+    "section": "4.1. Referencias generales",
+    "pos": "noun"
   },
   {
     "id": "b2-95038fc7",
@@ -5389,7 +5514,8 @@
     "es": "vejez",
     "kind": "word",
     "source": "08",
-    "section": "4.1. Referencias generales"
+    "section": "4.1. Referencias generales",
+    "pos": "noun"
   },
   {
     "id": "b2-cd8bd49b",
@@ -5405,7 +5531,8 @@
     "es": "madrugada",
     "kind": "word",
     "source": "08",
-    "section": "4.1. Referencias generales"
+    "section": "4.1. Referencias generales",
+    "pos": "noun"
   },
   {
     "id": "b2-cc1ab60e",
@@ -5745,7 +5872,8 @@
     "es": "hacia",
     "kind": "word",
     "source": "08",
-    "section": "4.1. Referencias generales"
+    "section": "4.1. Referencias generales",
+    "pos": "prep"
   },
   {
     "id": "b2-6b49f09c",
@@ -5795,7 +5923,8 @@
     "es": "contemporáneo",
     "kind": "word",
     "source": "08",
-    "section": "4.2. Localización en el tiempo"
+    "section": "4.2. Localización en el tiempo",
+    "pos": "adj"
   },
   {
     "id": "b2-66b2d3dd",
@@ -6023,7 +6152,8 @@
     "es": "olvido",
     "kind": "word",
     "source": "08",
-    "section": "4.2. Localización en el tiempo"
+    "section": "4.2. Localización en el tiempo",
+    "pos": "noun"
   },
   {
     "id": "b2-781060c4",
@@ -6139,7 +6269,8 @@
     "es": "antiguamente",
     "kind": "word",
     "source": "08",
-    "section": "4.2. Localización en el tiempo"
+    "section": "4.2. Localización en el tiempo",
+    "pos": "adv"
   },
   {
     "id": "b2-2368f1e2",
@@ -6296,7 +6427,8 @@
     "es": "próximamente",
     "kind": "word",
     "source": "08",
-    "section": "4.2. Localización en el tiempo"
+    "section": "4.2. Localización en el tiempo",
+    "pos": "adv"
   },
   {
     "id": "b2-536d091a",
@@ -6330,7 +6462,8 @@
     "es": "ya",
     "kind": "word",
     "source": "08",
-    "section": "4.2. Localización en el tiempo"
+    "section": "4.2. Localización en el tiempo",
+    "pos": "adv"
   },
   {
     "id": "b2-ff139578",
@@ -6380,7 +6513,8 @@
     "es": "simultáneo",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-2e304110",
@@ -6422,7 +6556,8 @@
     "es": "entretanto",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adv"
   },
   {
     "id": "b2-dde06ffb",
@@ -6539,7 +6674,8 @@
     "es": "víspera",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "noun"
   },
   {
     "id": "b2-0610d0ce",
@@ -6597,7 +6733,8 @@
     "es": "ex-",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-98f8ea68",
@@ -6605,7 +6742,8 @@
     "es": "preexcombatiente",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-fea535dd",
@@ -6681,7 +6819,8 @@
     "es": "seguidamente",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adv"
   },
   {
     "id": "b2-1283f777",
@@ -6985,7 +7124,8 @@
     "es": "puntualidad",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "noun"
   },
   {
     "id": "b2-2d66b7e0",
@@ -7017,7 +7157,8 @@
     "es": "puntualmente",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adv"
   },
   {
     "id": "b2-4560a39d",
@@ -7152,7 +7293,8 @@
     "es": "retrasar(se)",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "verb"
   },
   {
     "id": "b2-f2caba1c",
@@ -7210,7 +7352,8 @@
     "es": "inicio",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "noun"
   },
   {
     "id": "b2-f2efbfff",
@@ -7227,7 +7370,8 @@
     "es": "inauguración",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "noun"
   },
   {
     "id": "b2-ddc8236f",
@@ -7260,7 +7404,8 @@
     "es": "fundación",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "noun"
   },
   {
     "id": "b2-13bd3113",
@@ -7277,7 +7422,8 @@
     "es": "inicial",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-e5e01719",
@@ -7422,7 +7568,8 @@
     "es": "inicialmente",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adv"
   },
   {
     "id": "b2-53a88bf8",
@@ -7439,7 +7586,8 @@
     "es": "¡Venga!",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "verb"
   },
   {
     "id": "b2-be55e90f",
@@ -7464,7 +7612,8 @@
     "es": "fin",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "noun"
   },
   {
     "id": "b2-a98ee6be",
@@ -7481,7 +7630,8 @@
     "es": "acabado",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-035fa923",
@@ -7539,7 +7689,8 @@
     "es": "agotar(se)",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "verb"
   },
   {
     "id": "b2-91d34143",
@@ -7657,7 +7808,8 @@
     "es": "continuo",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-544d0388",
@@ -7691,7 +7843,8 @@
     "es": "interminable",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-d710345d",
@@ -7776,7 +7929,8 @@
     "es": "aún",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adv"
   },
   {
     "id": "b2-1d0b2404",
@@ -7793,7 +7947,8 @@
     "es": "continuamente",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adv"
   },
   {
     "id": "b2-001e90ea",
@@ -7801,7 +7956,8 @@
     "es": "constantemente",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adv"
   },
   {
     "id": "b2-7890efaf",
@@ -7833,7 +7989,8 @@
     "es": "hábito",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "noun"
   },
   {
     "id": "b2-376c1082",
@@ -7841,7 +7998,8 @@
     "es": "vicio",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "noun"
   },
   {
     "id": "b2-af9a42e6",
@@ -7849,7 +8007,8 @@
     "es": "manía",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "noun"
   },
   {
     "id": "b2-940bf7cb",
@@ -7857,7 +8016,8 @@
     "es": "ciclo",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "noun"
   },
   {
     "id": "b2-3af28ec8",
@@ -7874,7 +8034,8 @@
     "es": "eco",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "noun"
   },
   {
     "id": "b2-4a945420",
@@ -7916,7 +8077,8 @@
     "es": "rutinario",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-d98a3d66",
@@ -7924,7 +8086,8 @@
     "es": "repetitivo",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-3b549cd4",
@@ -7932,7 +8095,8 @@
     "es": "cíclico",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-19a06a00",
@@ -7940,7 +8104,8 @@
     "es": "rítmico",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-e405b218",
@@ -8043,7 +8208,8 @@
     "es": "repetidamente",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adv"
   },
   {
     "id": "b2-6a7c733c",
@@ -8084,7 +8250,8 @@
     "es": "jornada",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "noun"
   },
   {
     "id": "b2-baefa231",
@@ -8225,7 +8392,8 @@
     "es": "indefinido",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-f6c57e40",
@@ -8327,7 +8495,8 @@
     "es": "indefinidamente",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adv"
   },
   {
     "id": "b2-d1712c4e",
@@ -8427,7 +8596,8 @@
     "es": "semanal",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-8cbe9429",
@@ -8435,7 +8605,8 @@
     "es": "quincenal",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-2564a4b9",
@@ -8443,7 +8614,8 @@
     "es": "mensual",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-2fa6a867",
@@ -8451,7 +8623,8 @@
     "es": "anual",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-787a3421",
@@ -8477,7 +8650,8 @@
     "es": "semanalmente",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adv"
   },
   {
     "id": "b2-54927d92",
@@ -8485,7 +8659,8 @@
     "es": "mensualmente",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adv"
   },
   {
     "id": "b2-a2f4ef84",
@@ -8493,7 +8668,8 @@
     "es": "anualmente",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adv"
   },
   {
     "id": "b2-ab0d2b2e",
@@ -8501,7 +8677,8 @@
     "es": "habitualmente",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adv"
   },
   {
     "id": "b2-1e70cf51",
@@ -8509,7 +8686,8 @@
     "es": "frecuentemente",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adv"
   },
   {
     "id": "b2-b550a3f5",
@@ -8517,7 +8695,8 @@
     "es": "periódicamente",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adv"
   },
   {
     "id": "b2-fa76b552",
@@ -8707,7 +8886,8 @@
     "es": "modificación",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "noun"
   },
   {
     "id": "b2-a89c6315",
@@ -8715,7 +8895,8 @@
     "es": "transformación",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "noun"
   },
   {
     "id": "b2-7bdf2f42",
@@ -8723,7 +8904,8 @@
     "es": "traslado",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "noun"
   },
   {
     "id": "b2-0b443183",
@@ -8739,7 +8921,8 @@
     "es": "evolución",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "noun"
   },
   {
     "id": "b2-8cc009da",
@@ -8763,7 +8946,8 @@
     "es": "inestable",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-885e6c5e",
@@ -8823,7 +9007,8 @@
     "es": "desarrollar(se)",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "verb"
   },
   {
     "id": "b2-d6973b62",
@@ -9045,7 +9230,8 @@
     "es": "estabilidad",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "noun"
   },
   {
     "id": "b2-28065b63",
@@ -9069,7 +9255,8 @@
     "es": "fijo",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-df9743ea",
@@ -9095,7 +9282,8 @@
     "es": "inmortal",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-4be7865a",
@@ -9128,7 +9316,8 @@
     "es": "exclusivo",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adj"
   },
   {
     "id": "b2-17ac0bc4",
@@ -9145,7 +9334,8 @@
     "es": "únicamente",
     "kind": "word",
     "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
+    "section": "4.3. Aspectos de desarrollo",
+    "pos": "adv"
   },
   {
     "id": "b2-3a0a9f76",
@@ -9153,7 +9343,8 @@
     "es": "geometría",
     "kind": "word",
     "source": "08",
-    "section": "5.1. Formas y figuras"
+    "section": "5.1. Formas y figuras",
+    "pos": "noun"
   },
   {
     "id": "b2-48b6988b",
@@ -9185,7 +9376,8 @@
     "es": "eje",
     "kind": "word",
     "source": "08",
-    "section": "5.1. Formas y figuras"
+    "section": "5.1. Formas y figuras",
+    "pos": "noun"
   },
   {
     "id": "b2-7a0bb885",
@@ -9201,7 +9393,8 @@
     "es": "curva",
     "kind": "word",
     "source": "08",
-    "section": "5.1. Formas y figuras"
+    "section": "5.1. Formas y figuras",
+    "pos": "noun"
   },
   {
     "id": "b2-7e4b9801",
@@ -9258,7 +9451,8 @@
     "es": "curvo",
     "kind": "word",
     "source": "08",
-    "section": "5.1. Formas y figuras"
+    "section": "5.1. Formas y figuras",
+    "pos": "adj"
   },
   {
     "id": "b2-df08f5d4",
@@ -9266,7 +9460,8 @@
     "es": "doblado",
     "kind": "word",
     "source": "08",
-    "section": "5.1. Formas y figuras"
+    "section": "5.1. Formas y figuras",
+    "pos": "adj"
   },
   {
     "id": "b2-ccc0345d",
@@ -9372,7 +9567,8 @@
     "es": "consistencia",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "noun"
   },
   {
     "id": "b2-d8148f1f",
@@ -9388,7 +9584,8 @@
     "es": "delicadeza",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "noun"
   },
   {
     "id": "b2-292299de",
@@ -9396,7 +9593,8 @@
     "es": "fragilidad",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "noun"
   },
   {
     "id": "b2-bbe74611",
@@ -9413,7 +9611,8 @@
     "es": "dureza",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "noun"
   },
   {
     "id": "b2-6a1479bf",
@@ -9438,7 +9637,8 @@
     "es": "densidad",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "noun"
   },
   {
     "id": "b2-69d09202",
@@ -9446,7 +9646,8 @@
     "es": "elasticidad",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "noun"
   },
   {
     "id": "b2-a3a482ec",
@@ -9454,7 +9655,8 @@
     "es": "flexibilidad",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "noun"
   },
   {
     "id": "b2-ba879f21",
@@ -9462,7 +9664,8 @@
     "es": "rigidez",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "noun"
   },
   {
     "id": "b2-d0b1835c",
@@ -9470,7 +9673,8 @@
     "es": "solidez",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "noun"
   },
   {
     "id": "b2-aeeff473",
@@ -9478,7 +9682,8 @@
     "es": "fluidez",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "noun"
   },
   {
     "id": "b2-78745f8c",
@@ -9527,7 +9732,8 @@
     "es": "tenso",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "adj"
   },
   {
     "id": "b2-809f9a6b",
@@ -9535,7 +9741,8 @@
     "es": "flojo",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "adj"
   },
   {
     "id": "b2-d8865a6a",
@@ -9543,7 +9750,8 @@
     "es": "firme",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "adj"
   },
   {
     "id": "b2-f0be96b0",
@@ -9551,7 +9759,8 @@
     "es": "gaseoso",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "adj"
   },
   {
     "id": "b2-f5ca4bf0",
@@ -9559,7 +9768,8 @@
     "es": "rígido",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "adj"
   },
   {
     "id": "b2-9ad2eef8",
@@ -9567,7 +9777,8 @@
     "es": "elástico",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "adj"
   },
   {
     "id": "b2-c51d526f",
@@ -9591,7 +9802,8 @@
     "es": "denso",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "adj"
   },
   {
     "id": "b2-55a1fa7f",
@@ -9599,7 +9811,8 @@
     "es": "espeso",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "adj"
   },
   {
     "id": "b2-a71494a2",
@@ -9607,7 +9820,8 @@
     "es": "fluido",
     "kind": "word",
     "source": "08",
-    "section": "5.3. Consistencia, resistencia"
+    "section": "5.3. Consistencia, resistencia",
+    "pos": "noun"
   },
   {
     "id": "b2-530a1668",
@@ -9640,7 +9854,8 @@
     "es": "áspero",
     "kind": "word",
     "source": "08",
-    "section": "5.4. Textura"
+    "section": "5.4. Textura",
+    "pos": "adj"
   },
   {
     "id": "b2-ebcbce37",
@@ -9648,7 +9863,8 @@
     "es": "peludo",
     "kind": "word",
     "source": "08",
-    "section": "5.4. Textura"
+    "section": "5.4. Textura",
+    "pos": "adj"
   },
   {
     "id": "b2-78164d60",
@@ -9665,7 +9881,8 @@
     "es": "arrugado",
     "kind": "word",
     "source": "08",
-    "section": "5.4. Textura"
+    "section": "5.4. Textura",
+    "pos": "adj"
   },
   {
     "id": "b2-50a9cfe5",
@@ -9732,7 +9949,8 @@
     "es": "plastificado",
     "kind": "word",
     "source": "08",
-    "section": "5.5. Acabado"
+    "section": "5.5. Acabado",
+    "pos": "adj"
   },
   {
     "id": "b2-4f8cf2a0",
@@ -9780,7 +9998,8 @@
     "es": "vapor",
     "kind": "word",
     "source": "08",
-    "section": "5.6. Humedad, sequedad"
+    "section": "5.6. Humedad, sequedad",
+    "pos": "noun"
   },
   {
     "id": "b2-061da13a",
@@ -9788,7 +10007,8 @@
     "es": "evaporación",
     "kind": "word",
     "source": "08",
-    "section": "5.6. Humedad, sequedad"
+    "section": "5.6. Humedad, sequedad",
+    "pos": "noun"
   },
   {
     "id": "b2-244eebcd",
@@ -9796,7 +10016,8 @@
     "es": "gota",
     "kind": "word",
     "source": "08",
-    "section": "5.6. Humedad, sequedad"
+    "section": "5.6. Humedad, sequedad",
+    "pos": "noun"
   },
   {
     "id": "b2-b9944f5e",
@@ -9804,7 +10025,8 @@
     "es": "chorro",
     "kind": "word",
     "source": "08",
-    "section": "5.6. Humedad, sequedad"
+    "section": "5.6. Humedad, sequedad",
+    "pos": "noun"
   },
   {
     "id": "b2-4291ebc0",
@@ -9812,7 +10034,8 @@
     "es": "sudor",
     "kind": "word",
     "source": "08",
-    "section": "5.6. Humedad, sequedad"
+    "section": "5.6. Humedad, sequedad",
+    "pos": "noun"
   },
   {
     "id": "b2-056bde25",
@@ -9820,7 +10043,8 @@
     "es": "transpiración",
     "kind": "word",
     "source": "08",
-    "section": "5.6. Humedad, sequedad"
+    "section": "5.6. Humedad, sequedad",
+    "pos": "noun"
   },
   {
     "id": "b2-44b81eb1",
@@ -9828,7 +10052,8 @@
     "es": "(des)hidratación",
     "kind": "word",
     "source": "08",
-    "section": "5.6. Humedad, sequedad"
+    "section": "5.6. Humedad, sequedad",
+    "pos": "noun"
   },
   {
     "id": "b2-ddd9b502",
@@ -9836,7 +10061,8 @@
     "es": "empapado",
     "kind": "word",
     "source": "08",
-    "section": "5.6. Humedad, sequedad"
+    "section": "5.6. Humedad, sequedad",
+    "pos": "adj"
   },
   {
     "id": "b2-1cce1e79",
@@ -9844,7 +10070,8 @@
     "es": "inundado",
     "kind": "word",
     "source": "08",
-    "section": "5.6. Humedad, sequedad"
+    "section": "5.6. Humedad, sequedad",
+    "pos": "adj"
   },
   {
     "id": "b2-edcad849",
@@ -9861,7 +10088,8 @@
     "es": "absorbente",
     "kind": "word",
     "source": "08",
-    "section": "5.6. Humedad, sequedad"
+    "section": "5.6. Humedad, sequedad",
+    "pos": "adj"
   },
   {
     "id": "b2-0993b3cc",
@@ -9885,7 +10113,8 @@
     "es": "(des)hidratar(se)",
     "kind": "word",
     "source": "08",
-    "section": "5.6. Humedad, sequedad"
+    "section": "5.6. Humedad, sequedad",
+    "pos": "verb"
   },
   {
     "id": "b2-6591467f",
@@ -9902,7 +10131,8 @@
     "es": "humedecer(se)",
     "kind": "word",
     "source": "08",
-    "section": "5.6. Humedad, sequedad"
+    "section": "5.6. Humedad, sequedad",
+    "pos": "verb"
   },
   {
     "id": "b2-5e80bc59",
@@ -9910,7 +10140,8 @@
     "es": "empapar(se)",
     "kind": "word",
     "source": "08",
-    "section": "5.6. Humedad, sequedad"
+    "section": "5.6. Humedad, sequedad",
+    "pos": "verb"
   },
   {
     "id": "b2-fcdf723c",
@@ -9926,7 +10157,8 @@
     "es": "evaporar(se)",
     "kind": "word",
     "source": "08",
-    "section": "5.6. Humedad, sequedad"
+    "section": "5.6. Humedad, sequedad",
+    "pos": "verb"
   },
   {
     "id": "b2-e5ecedc4",
@@ -9975,7 +10207,8 @@
     "es": "mezcla",
     "kind": "word",
     "source": "08",
-    "section": "5.7. Materia"
+    "section": "5.7. Materia",
+    "pos": "noun"
   },
   {
     "id": "b2-44772031",
@@ -9983,7 +10216,8 @@
     "es": "bronce",
     "kind": "word",
     "source": "08",
-    "section": "5.7. Materia"
+    "section": "5.7. Materia",
+    "pos": "noun"
   },
   {
     "id": "b2-e388f25d",
@@ -9991,7 +10225,8 @@
     "es": "cobre",
     "kind": "word",
     "source": "08",
-    "section": "5.7. Materia"
+    "section": "5.7. Materia",
+    "pos": "noun"
   },
   {
     "id": "b2-06b3bfb7",
@@ -9999,7 +10234,8 @@
     "es": "plomo",
     "kind": "word",
     "source": "08",
-    "section": "5.7. Materia"
+    "section": "5.7. Materia",
+    "pos": "noun"
   },
   {
     "id": "b2-83735f18",
@@ -10007,7 +10243,8 @@
     "es": "mármol",
     "kind": "word",
     "source": "08",
-    "section": "5.7. Materia"
+    "section": "5.7. Materia",
+    "pos": "noun"
   },
   {
     "id": "b2-b71a82a6",
@@ -10015,7 +10252,8 @@
     "es": "cemento",
     "kind": "word",
     "source": "08",
-    "section": "5.7. Materia"
+    "section": "5.7. Materia",
+    "pos": "noun"
   },
   {
     "id": "b2-72605821",
@@ -10023,7 +10261,8 @@
     "es": "ladrillo",
     "kind": "word",
     "source": "08",
-    "section": "5.7. Materia"
+    "section": "5.7. Materia",
+    "pos": "noun"
   },
   {
     "id": "b2-896fee02",
@@ -10031,7 +10270,8 @@
     "es": "cerámica",
     "kind": "word",
     "source": "08",
-    "section": "5.7. Materia"
+    "section": "5.7. Materia",
+    "pos": "adj"
   },
   {
     "id": "b2-9f1bda6d",
@@ -10039,7 +10279,8 @@
     "es": "barro",
     "kind": "word",
     "source": "08",
-    "section": "5.7. Materia"
+    "section": "5.7. Materia",
+    "pos": "noun"
   },
   {
     "id": "b2-92b05106",
@@ -10055,7 +10296,8 @@
     "es": "pana",
     "kind": "word",
     "source": "08",
-    "section": "5.7. Materia"
+    "section": "5.7. Materia",
+    "pos": "noun"
   },
   {
     "id": "b2-c625a6de",
@@ -10063,7 +10305,8 @@
     "es": "ante",
     "kind": "word",
     "source": "08",
-    "section": "5.7. Materia"
+    "section": "5.7. Materia",
+    "pos": "prep"
   },
   {
     "id": "b2-b722e697",
@@ -10071,7 +10314,8 @@
     "es": "cera",
     "kind": "word",
     "source": "08",
-    "section": "5.7. Materia"
+    "section": "5.7. Materia",
+    "pos": "noun"
   },
   {
     "id": "b2-e7d715d8",
@@ -10087,7 +10331,8 @@
     "es": "plumas",
     "kind": "word",
     "source": "08",
-    "section": "5.7. Materia"
+    "section": "5.7. Materia",
+    "pos": "noun"
   },
   {
     "id": "b2-1ebff994",
@@ -10113,7 +10358,8 @@
     "es": "metálico",
     "kind": "word",
     "source": "08",
-    "section": "5.7. Materia"
+    "section": "5.7. Materia",
+    "pos": "adj"
   },
   {
     "id": "b2-bbf32eb0",
@@ -10121,7 +10367,8 @@
     "es": "textil",
     "kind": "word",
     "source": "08",
-    "section": "5.7. Materia"
+    "section": "5.7. Materia",
+    "pos": "noun"
   },
   {
     "id": "b2-decbbb39",
@@ -10162,7 +10409,8 @@
     "es": "claridad",
     "kind": "word",
     "source": "08",
-    "section": "5.8. Visibilidad, visión"
+    "section": "5.8. Visibilidad, visión",
+    "pos": "noun"
   },
   {
     "id": "b2-7e44b2f4",
@@ -10202,7 +10450,8 @@
     "es": "óptica",
     "kind": "word",
     "source": "08",
-    "section": "5.8. Visibilidad, visión"
+    "section": "5.8. Visibilidad, visión",
+    "pos": "adj"
   },
   {
     "id": "b2-5df5372a",
@@ -10210,7 +10459,8 @@
     "es": "óptico",
     "kind": "word",
     "source": "08",
-    "section": "5.8. Visibilidad, visión"
+    "section": "5.8. Visibilidad, visión",
+    "pos": "adj"
   },
   {
     "id": "b2-75a31fd0",
@@ -10218,7 +10468,8 @@
     "es": "vista",
     "kind": "word",
     "source": "08",
-    "section": "5.8. Visibilidad, visión"
+    "section": "5.8. Visibilidad, visión",
+    "pos": "noun"
   },
   {
     "id": "b2-e6317ddf",
@@ -10268,7 +10519,8 @@
     "es": "luminosidad",
     "kind": "word",
     "source": "08",
-    "section": "5.8. Visibilidad, visión"
+    "section": "5.8. Visibilidad, visión",
+    "pos": "noun"
   },
   {
     "id": "b2-5c8bcbd3",
@@ -10293,7 +10545,8 @@
     "es": "transparente",
     "kind": "word",
     "source": "08",
-    "section": "5.8. Visibilidad, visión"
+    "section": "5.8. Visibilidad, visión",
+    "pos": "adj"
   },
   {
     "id": "b2-fddb265f",
@@ -10301,7 +10554,8 @@
     "es": "(in)definido",
     "kind": "word",
     "source": "08",
-    "section": "5.8. Visibilidad, visión"
+    "section": "5.8. Visibilidad, visión",
+    "pos": "adj"
   },
   {
     "id": "b2-8623181a",
@@ -10426,7 +10680,8 @@
     "es": "atentamente",
     "kind": "word",
     "source": "08",
-    "section": "5.8. Visibilidad, visión"
+    "section": "5.8. Visibilidad, visión",
+    "pos": "adv"
   },
   {
     "id": "b2-9c8f3325",
@@ -10520,7 +10775,8 @@
     "es": "sirena",
     "kind": "word",
     "source": "08",
-    "section": "5.9. Audibilidad, audición"
+    "section": "5.9. Audibilidad, audición",
+    "pos": "noun"
   },
   {
     "id": "b2-31a4cd41",
@@ -10595,7 +10851,8 @@
     "es": "sordo",
     "kind": "word",
     "source": "08",
-    "section": "5.9. Audibilidad, audición"
+    "section": "5.9. Audibilidad, audición",
+    "pos": "adj"
   },
   {
     "id": "b2-dc9f0091",
@@ -10603,7 +10860,8 @@
     "es": "mudo",
     "kind": "word",
     "source": "08",
-    "section": "5.9. Audibilidad, audición"
+    "section": "5.9. Audibilidad, audición",
+    "pos": "adj"
   },
   {
     "id": "b2-4fe37c99",
@@ -10798,7 +11056,8 @@
     "es": "sabroso",
     "kind": "word",
     "source": "08",
-    "section": "5.10. Sabor"
+    "section": "5.10. Sabor",
+    "pos": "adj"
   },
   {
     "id": "b2-fcb614f7",
@@ -10806,7 +11065,8 @@
     "es": "insípido",
     "kind": "word",
     "source": "08",
-    "section": "5.10. Sabor"
+    "section": "5.10. Sabor",
+    "pos": "adj"
   },
   {
     "id": "b2-5c462734",
@@ -10814,7 +11074,8 @@
     "es": "soso",
     "kind": "word",
     "source": "08",
-    "section": "5.10. Sabor"
+    "section": "5.10. Sabor",
+    "pos": "adj"
   },
   {
     "id": "b2-2b73d488",
@@ -10822,7 +11083,8 @@
     "es": "agrio",
     "kind": "word",
     "source": "08",
-    "section": "5.10. Sabor"
+    "section": "5.10. Sabor",
+    "pos": "adj"
   },
   {
     "id": "b2-2fc850fc",
@@ -10830,7 +11092,8 @@
     "es": "agridulce",
     "kind": "word",
     "source": "08",
-    "section": "5.10. Sabor"
+    "section": "5.10. Sabor",
+    "pos": "adj"
   },
   {
     "id": "b2-5b4175d4",
@@ -10838,7 +11101,8 @@
     "es": "olfato",
     "kind": "word",
     "source": "08",
-    "section": "5.11. Olor"
+    "section": "5.11. Olor",
+    "pos": "noun"
   },
   {
     "id": "b2-6a32bbb3",
@@ -10846,7 +11110,8 @@
     "es": "aroma",
     "kind": "word",
     "source": "08",
-    "section": "5.11. Olor"
+    "section": "5.11. Olor",
+    "pos": "noun"
   },
   {
     "id": "b2-aad05a2a",
@@ -10878,7 +11143,8 @@
     "es": "perfumado",
     "kind": "word",
     "source": "08",
-    "section": "5.11. Olor"
+    "section": "5.11. Olor",
+    "pos": "adj"
   },
   {
     "id": "b2-94982c82",
@@ -10927,7 +11193,8 @@
     "es": "colorante",
     "kind": "word",
     "source": "08",
-    "section": "5.12. Color"
+    "section": "5.12. Color",
+    "pos": "adj"
   },
   {
     "id": "b2-252756ab",
@@ -11039,7 +11306,8 @@
     "es": "teñido",
     "kind": "word",
     "source": "08",
-    "section": "5.12. Color"
+    "section": "5.12. Color",
+    "pos": "adj"
   },
   {
     "id": "b2-7cced939",
@@ -11047,7 +11315,8 @@
     "es": "multicolor",
     "kind": "word",
     "source": "08",
-    "section": "5.12. Color"
+    "section": "5.12. Color",
+    "pos": "adj"
   },
   {
     "id": "b2-744f88dc",
@@ -11104,7 +11373,8 @@
     "es": "adolescencia",
     "kind": "word",
     "source": "08",
-    "section": "5.13. Edad, vejez"
+    "section": "5.13. Edad, vejez",
+    "pos": "noun"
   },
   {
     "id": "b2-6285f13d",
@@ -11154,7 +11424,8 @@
     "es": "(in)experto",
     "kind": "word",
     "source": "08",
-    "section": "5.13. Edad, vejez"
+    "section": "5.13. Edad, vejez",
+    "pos": "noun"
   },
   {
     "id": "b2-2307a1ca",
@@ -11194,7 +11465,8 @@
     "es": "podrido",
     "kind": "word",
     "source": "08",
-    "section": "5.13. Edad, vejez"
+    "section": "5.13. Edad, vejez",
+    "pos": "adj"
   },
   {
     "id": "b2-7827d260",
@@ -11220,7 +11492,8 @@
     "es": "usado",
     "kind": "word",
     "source": "08",
-    "section": "5.13. Edad, vejez"
+    "section": "5.13. Edad, vejez",
+    "pos": "adj"
   },
   {
     "id": "b2-51ed0dca",
@@ -11254,7 +11527,8 @@
     "es": "maduro",
     "kind": "word",
     "source": "08",
-    "section": "5.13. Edad, vejez"
+    "section": "5.13. Edad, vejez",
+    "pos": "adj"
   },
   {
     "id": "b2-a2c88df8",
@@ -11287,7 +11561,8 @@
     "es": "juvenil",
     "kind": "word",
     "source": "08",
-    "section": "5.13. Edad, vejez"
+    "section": "5.13. Edad, vejez",
+    "pos": "adj"
   },
   {
     "id": "b2-b9b3c366",
@@ -11411,7 +11686,8 @@
     "es": "suciedad",
     "kind": "word",
     "source": "08",
-    "section": "5.15. Limpieza"
+    "section": "5.15. Limpieza",
+    "pos": "noun"
   },
   {
     "id": "b2-5884eebb",
@@ -11436,7 +11712,8 @@
     "es": "mancha",
     "kind": "word",
     "source": "08",
-    "section": "5.15. Limpieza"
+    "section": "5.15. Limpieza",
+    "pos": "noun"
   },
   {
     "id": "b2-437bfd9f",
@@ -11452,7 +11729,8 @@
     "es": "manchar(se)",
     "kind": "word",
     "source": "08",
-    "section": "5.15. Limpieza"
+    "section": "5.15. Limpieza",
+    "pos": "verb"
   },
   {
     "id": "b2-b43d07b5",
@@ -11460,7 +11738,8 @@
     "es": "ensuciar(se)",
     "kind": "word",
     "source": "08",
-    "section": "5.15. Limpieza"
+    "section": "5.15. Limpieza",
+    "pos": "verb"
   },
   {
     "id": "b2-567d8142",
@@ -11589,7 +11868,8 @@
     "es": "absurdo",
     "kind": "word",
     "source": "08",
-    "section": "6.1. Evaluación general"
+    "section": "6.1. Evaluación general",
+    "pos": "adj"
   },
   {
     "id": "b2-fa937776",
@@ -11597,7 +11877,8 @@
     "es": "objetivo",
     "kind": "word",
     "source": "08",
-    "section": "6.1. Evaluación general"
+    "section": "6.1. Evaluación general",
+    "pos": "adj"
   },
   {
     "id": "b2-70482ce9",
@@ -11613,7 +11894,8 @@
     "es": "(in)justo",
     "kind": "word",
     "source": "08",
-    "section": "6.1. Evaluación general"
+    "section": "6.1. Evaluación general",
+    "pos": "adj"
   },
   {
     "id": "b2-87c20af3",
@@ -11736,7 +12018,8 @@
     "es": "rebajado",
     "kind": "word",
     "source": "08",
-    "section": "6.2. Valor, precio"
+    "section": "6.2. Valor, precio",
+    "pos": "adj"
   },
   {
     "id": "b2-882b1763",
@@ -11824,7 +12107,8 @@
     "es": "horroroso",
     "kind": "word",
     "source": "08",
-    "section": "6.3. Atractivo"
+    "section": "6.3. Atractivo",
+    "pos": "adj"
   },
   {
     "id": "b2-ccf8956b",
@@ -11840,7 +12124,8 @@
     "es": "espantoso",
     "kind": "word",
     "source": "08",
-    "section": "6.3. Atractivo"
+    "section": "6.3. Atractivo",
+    "pos": "adj"
   },
   {
     "id": "b2-f048223b",
@@ -11872,7 +12157,8 @@
     "es": "aceptable",
     "kind": "word",
     "source": "08",
-    "section": "6.5. Aceptabilidad"
+    "section": "6.5. Aceptabilidad",
+    "pos": "adj"
   },
   {
     "id": "b2-6d0df2b2",
@@ -11888,7 +12174,8 @@
     "es": "adaptación",
     "kind": "word",
     "source": "08",
-    "section": "6.6. Adecuación"
+    "section": "6.6. Adecuación",
+    "pos": "noun"
   },
   {
     "id": "b2-e13bbb6f",
@@ -11905,7 +12192,8 @@
     "es": "apropiado",
     "kind": "word",
     "source": "08",
-    "section": "6.6. Adecuación"
+    "section": "6.6. Adecuación",
+    "pos": "adj"
   },
   {
     "id": "b2-b3fdaaa0",
@@ -11962,7 +12250,8 @@
     "es": "equivocación",
     "kind": "word",
     "source": "08",
-    "section": "6.8. Corrección"
+    "section": "6.8. Corrección",
+    "pos": "noun"
   },
   {
     "id": "b2-cce209ce",
@@ -11970,7 +12259,8 @@
     "es": "corrección",
     "kind": "word",
     "source": "08",
-    "section": "6.8. Corrección"
+    "section": "6.8. Corrección",
+    "pos": "noun"
   },
   {
     "id": "b2-f51df13d",
@@ -11978,7 +12268,8 @@
     "es": "perfección",
     "kind": "word",
     "source": "08",
-    "section": "6.8. Corrección"
+    "section": "6.8. Corrección",
+    "pos": "noun"
   },
   {
     "id": "b2-234674b1",
@@ -11986,7 +12277,8 @@
     "es": "imperfecto",
     "kind": "word",
     "source": "08",
-    "section": "6.8. Corrección"
+    "section": "6.8. Corrección",
+    "pos": "adj"
   },
   {
     "id": "b2-9aeb5acf",
@@ -12003,7 +12295,8 @@
     "es": "equivocado",
     "kind": "word",
     "source": "08",
-    "section": "6.8. Corrección"
+    "section": "6.8. Corrección",
+    "pos": "adj"
   },
   {
     "id": "b2-95bb9d64",
@@ -12011,7 +12304,8 @@
     "es": "perfeccionista",
     "kind": "word",
     "source": "08",
-    "section": "6.8. Corrección"
+    "section": "6.8. Corrección",
+    "pos": "adj"
   },
   {
     "id": "b2-8639bc1f",
@@ -12075,7 +12369,8 @@
     "es": "aburrimiento",
     "kind": "word",
     "source": "08",
-    "section": "6.10. Interés"
+    "section": "6.10. Interés",
+    "pos": "noun"
   },
   {
     "id": "b2-bf9c9a11",
@@ -12083,7 +12378,8 @@
     "es": "motivación",
     "kind": "word",
     "source": "08",
-    "section": "6.10. Interés"
+    "section": "6.10. Interés",
+    "pos": "noun"
   },
   {
     "id": "b2-7be7869e",
@@ -12108,7 +12404,8 @@
     "es": "entretenido",
     "kind": "word",
     "source": "08",
-    "section": "6.10. Interés"
+    "section": "6.10. Interés",
+    "pos": "adj"
   },
   {
     "id": "b2-9fe0a497",
@@ -12157,7 +12454,8 @@
     "es": "triunfo",
     "kind": "word",
     "source": "08",
-    "section": "6.11. Éxito, logro"
+    "section": "6.11. Éxito, logro",
+    "pos": "noun"
   },
   {
     "id": "b2-5792be2f",
@@ -12165,7 +12463,8 @@
     "es": "trofeo",
     "kind": "word",
     "source": "08",
-    "section": "6.11. Éxito, logro"
+    "section": "6.11. Éxito, logro",
+    "pos": "noun"
   },
   {
     "id": "b2-feee5a83",
@@ -12173,7 +12472,8 @@
     "es": "medalla",
     "kind": "word",
     "source": "08",
-    "section": "6.11. Éxito, logro"
+    "section": "6.11. Éxito, logro",
+    "pos": "noun"
   },
   {
     "id": "b2-e811985b",
@@ -12181,7 +12481,8 @@
     "es": "aplauso",
     "kind": "word",
     "source": "08",
-    "section": "6.11. Éxito, logro"
+    "section": "6.11. Éxito, logro",
+    "pos": "noun"
   },
   {
     "id": "b2-97300402",
@@ -12301,7 +12602,8 @@
     "es": "funcionamiento",
     "kind": "word",
     "source": "08",
-    "section": "6.12. Utilidad, uso"
+    "section": "6.12. Utilidad, uso",
+    "pos": "noun"
   },
   {
     "id": "b2-4d2096d7",
@@ -12317,7 +12619,8 @@
     "es": "funcional",
     "kind": "word",
     "source": "08",
-    "section": "6.12. Utilidad, uso"
+    "section": "6.12. Utilidad, uso",
+    "pos": "adj"
   },
   {
     "id": "b2-b6f8737f",
@@ -12381,7 +12684,8 @@
     "es": "(in)competente",
     "kind": "word",
     "source": "08",
-    "section": "6.13. Capacidad, competencia"
+    "section": "6.13. Capacidad, competencia",
+    "pos": "adj"
   },
   {
     "id": "b2-14e80fa6",
@@ -12389,7 +12693,8 @@
     "es": "(in)capaz",
     "kind": "word",
     "source": "08",
-    "section": "6.13. Capacidad, competencia"
+    "section": "6.13. Capacidad, competencia",
+    "pos": "adj"
   },
   {
     "id": "b2-0eb2a409",
@@ -12405,7 +12710,8 @@
     "es": "entrenar(se)",
     "kind": "word",
     "source": "08",
-    "section": "6.13. Capacidad, competencia"
+    "section": "6.13. Capacidad, competencia",
+    "pos": "verb"
   },
   {
     "id": "b2-858c2b80",
@@ -12525,7 +12831,8 @@
     "es": "secundario",
     "kind": "word",
     "source": "08",
-    "section": "6.14. Importancia"
+    "section": "6.14. Importancia",
+    "pos": "adj"
   },
   {
     "id": "b2-83d8fafd",
@@ -12549,7 +12856,8 @@
     "es": "básico",
     "kind": "word",
     "source": "08",
-    "section": "6.14. Importancia"
+    "section": "6.14. Importancia",
+    "pos": "adj"
   },
   {
     "id": "b2-9ab7feb9",
@@ -12582,7 +12890,8 @@
     "es": "excepción",
     "kind": "word",
     "source": "08",
-    "section": "6.15. Normalidad"
+    "section": "6.15. Normalidad",
+    "pos": "noun"
   },
   {
     "id": "b2-84d002e2",
@@ -12590,7 +12899,8 @@
     "es": "lógico",
     "kind": "word",
     "source": "08",
-    "section": "6.15. Normalidad"
+    "section": "6.15. Normalidad",
+    "pos": "adj"
   },
   {
     "id": "b2-447c64ec",
@@ -12606,7 +12916,8 @@
     "es": "anormal",
     "kind": "word",
     "source": "08",
-    "section": "6.15. Normalidad"
+    "section": "6.15. Normalidad",
+    "pos": "adj"
   },
   {
     "id": "b2-0835ef56",
@@ -12614,7 +12925,8 @@
     "es": "sorprender(se)",
     "kind": "word",
     "source": "08",
-    "section": "6.15. Normalidad"
+    "section": "6.15. Normalidad",
+    "pos": "verb"
   },
   {
     "id": "b2-194851aa",
@@ -12663,7 +12975,8 @@
     "es": "complejidad",
     "kind": "word",
     "source": "08",
-    "section": "6.16. Facilidad"
+    "section": "6.16. Facilidad",
+    "pos": "noun"
   },
   {
     "id": "b2-654c6eba",
@@ -12671,7 +12984,8 @@
     "es": "simplicidad",
     "kind": "word",
     "source": "08",
-    "section": "6.16. Facilidad"
+    "section": "6.16. Facilidad",
+    "pos": "noun"
   },
   {
     "id": "b2-0b8cc0e6",
@@ -12767,7 +13081,8 @@
     "es": "difícilmente",
     "kind": "word",
     "source": "08",
-    "section": "6.16. Facilidad"
+    "section": "6.16. Facilidad",
+    "pos": "adv"
   },
   {
     "id": "b2-e1734d86",
@@ -12800,7 +13115,8 @@
     "es": "reflexión",
     "kind": "word",
     "source": "08",
-    "section": "7.1. Reflexión, conocimiento"
+    "section": "7.1. Reflexión, conocimiento",
+    "pos": "noun"
   },
   {
     "id": "b2-8611b995",
@@ -12843,7 +13159,8 @@
     "es": "pensativo",
     "kind": "word",
     "source": "08",
-    "section": "7.1. Reflexión, conocimiento"
+    "section": "7.1. Reflexión, conocimiento",
+    "pos": "adj"
   },
   {
     "id": "b2-7f1ba0c1",
@@ -12859,7 +13176,8 @@
     "es": "reflexivo",
     "kind": "word",
     "source": "08",
-    "section": "7.1. Reflexión, conocimiento"
+    "section": "7.1. Reflexión, conocimiento",
+    "pos": "adj"
   },
   {
     "id": "b2-f52ac061",
@@ -13012,7 +13330,8 @@
     "es": "informar(se)",
     "kind": "word",
     "source": "08",
-    "section": "7.1. Reflexión, conocimiento"
+    "section": "7.1. Reflexión, conocimiento",
+    "pos": "verb"
   },
   {
     "id": "b2-a3a4111b",
@@ -13036,7 +13355,8 @@
     "es": "mentalmente",
     "kind": "word",
     "source": "08",
-    "section": "7.1. Reflexión, conocimiento"
+    "section": "7.1. Reflexión, conocimiento",
+    "pos": "adv"
   },
   {
     "id": "b2-dd76692f",
@@ -13044,7 +13364,8 @@
     "es": "afirmación",
     "kind": "word",
     "source": "08",
-    "section": "7.2. Expresión verbal"
+    "section": "7.2. Expresión verbal",
+    "pos": "noun"
   },
   {
     "id": "b2-2fdb2f41",
@@ -13052,7 +13373,8 @@
     "es": "negación",
     "kind": "word",
     "source": "08",
-    "section": "7.2. Expresión verbal"
+    "section": "7.2. Expresión verbal",
+    "pos": "noun"
   },
   {
     "id": "b2-762ba43a",
@@ -13068,7 +13390,8 @@
     "es": "recomendación",
     "kind": "word",
     "source": "08",
-    "section": "7.2. Expresión verbal"
+    "section": "7.2. Expresión verbal",
+    "pos": "noun"
   },
   {
     "id": "b2-301bead7",
@@ -13076,7 +13399,8 @@
     "es": "sugerencia",
     "kind": "word",
     "source": "08",
-    "section": "7.2. Expresión verbal"
+    "section": "7.2. Expresión verbal",
+    "pos": "noun"
   },
   {
     "id": "b2-02e770e5",
@@ -13092,7 +13416,8 @@
     "es": "observación",
     "kind": "word",
     "source": "08",
-    "section": "7.2. Expresión verbal"
+    "section": "7.2. Expresión verbal",
+    "pos": "noun"
   },
   {
     "id": "b2-860b4828",
@@ -13108,7 +13433,8 @@
     "es": "agradecimiento",
     "kind": "word",
     "source": "08",
-    "section": "7.2. Expresión verbal"
+    "section": "7.2. Expresión verbal",
+    "pos": "noun"
   },
   {
     "id": "b2-2f14a2dd",
@@ -13140,7 +13466,8 @@
     "es": "aclaración",
     "kind": "word",
     "source": "08",
-    "section": "7.2. Expresión verbal"
+    "section": "7.2. Expresión verbal",
+    "pos": "noun"
   },
   {
     "id": "b2-c248c235",
@@ -13156,7 +13483,8 @@
     "es": "debate",
     "kind": "word",
     "source": "08",
-    "section": "7.2. Expresión verbal"
+    "section": "7.2. Expresión verbal",
+    "pos": "noun"
   },
   {
     "id": "b2-6096e62d",
@@ -13181,7 +13509,8 @@
     "es": "tema",
     "kind": "word",
     "source": "08",
-    "section": "7.2. Expresión verbal"
+    "section": "7.2. Expresión verbal",
+    "pos": "noun"
   },
   {
     "id": "b2-f5f0626f",
@@ -13214,7 +13543,8 @@
     "es": "escrito",
     "kind": "word",
     "source": "08",
-    "section": "7.2. Expresión verbal"
+    "section": "7.2. Expresión verbal",
+    "pos": "noun"
   },
   {
     "id": "b2-0f710f28",
@@ -13222,7 +13552,8 @@
     "es": "recado",
     "kind": "word",
     "source": "08",
-    "section": "7.2. Expresión verbal"
+    "section": "7.2. Expresión verbal",
+    "pos": "noun"
   },
   {
     "id": "b2-e876a8ee",
@@ -13238,7 +13569,8 @@
     "es": "introducción",
     "kind": "word",
     "source": "08",
-    "section": "7.2. Expresión verbal"
+    "section": "7.2. Expresión verbal",
+    "pos": "noun"
   },
   {
     "id": "b2-5d78a3c9",
@@ -13286,7 +13618,8 @@
     "es": "(in)discreto",
     "kind": "word",
     "source": "08",
-    "section": "7.2. Expresión verbal"
+    "section": "7.2. Expresión verbal",
+    "pos": "adj"
   },
   {
     "id": "b2-acf13fa0",
@@ -13534,7 +13867,8 @@
     "es": "frente",
     "kind": "word",
     "source": "09",
-    "section": "1.1. Partes del cuerpo"
+    "section": "1.1. Partes del cuerpo",
+    "pos": "adj"
   },
   {
     "id": "b2-ae9318ca",
@@ -13550,7 +13884,8 @@
     "es": "barbilla",
     "kind": "word",
     "source": "09",
-    "section": "1.1. Partes del cuerpo"
+    "section": "1.1. Partes del cuerpo",
+    "pos": "noun"
   },
   {
     "id": "b2-8295c405",
@@ -13566,7 +13901,8 @@
     "es": "pestaña",
     "kind": "word",
     "source": "09",
-    "section": "1.1. Partes del cuerpo"
+    "section": "1.1. Partes del cuerpo",
+    "pos": "noun"
   },
   {
     "id": "b2-49520ffd",
@@ -13590,7 +13926,8 @@
     "es": "hígado",
     "kind": "word",
     "source": "09",
-    "section": "1.1. Partes del cuerpo"
+    "section": "1.1. Partes del cuerpo",
+    "pos": "noun"
   },
   {
     "id": "b2-aa584cc2",
@@ -13598,7 +13935,8 @@
     "es": "riñón",
     "kind": "word",
     "source": "09",
-    "section": "1.1. Partes del cuerpo"
+    "section": "1.1. Partes del cuerpo",
+    "pos": "noun"
   },
   {
     "id": "b2-881565c4",
@@ -13606,7 +13944,8 @@
     "es": "intestino",
     "kind": "word",
     "source": "09",
-    "section": "1.1. Partes del cuerpo"
+    "section": "1.1. Partes del cuerpo",
+    "pos": "noun"
   },
   {
     "id": "b2-95455768",
@@ -13614,7 +13953,8 @@
     "es": "esqueleto",
     "kind": "word",
     "source": "09",
-    "section": "1.1. Partes del cuerpo"
+    "section": "1.1. Partes del cuerpo",
+    "pos": "noun"
   },
   {
     "id": "b2-d5c57800",
@@ -13622,7 +13962,8 @@
     "es": "costilla",
     "kind": "word",
     "source": "09",
-    "section": "1.1. Partes del cuerpo"
+    "section": "1.1. Partes del cuerpo",
+    "pos": "noun"
   },
   {
     "id": "b2-a46be107",
@@ -13630,7 +13971,8 @@
     "es": "nervio",
     "kind": "word",
     "source": "09",
-    "section": "1.1. Partes del cuerpo"
+    "section": "1.1. Partes del cuerpo",
+    "pos": "noun"
   },
   {
     "id": "b2-31132f65",
@@ -13638,7 +13980,8 @@
     "es": "articulación",
     "kind": "word",
     "source": "09",
-    "section": "1.1. Partes del cuerpo"
+    "section": "1.1. Partes del cuerpo",
+    "pos": "noun"
   },
   {
     "id": "b2-823b5ed1",
@@ -13646,7 +13989,8 @@
     "es": "arteria",
     "kind": "word",
     "source": "09",
-    "section": "1.1. Partes del cuerpo"
+    "section": "1.1. Partes del cuerpo",
+    "pos": "noun"
   },
   {
     "id": "b2-58c34906",
@@ -13654,7 +13998,8 @@
     "es": "tendón",
     "kind": "word",
     "source": "09",
-    "section": "1.1. Partes del cuerpo"
+    "section": "1.1. Partes del cuerpo",
+    "pos": "noun"
   },
   {
     "id": "b2-23685a12",
@@ -13662,7 +14007,8 @@
     "es": "saliva",
     "kind": "word",
     "source": "09",
-    "section": "1.2. Características físicas"
+    "section": "1.2. Características físicas",
+    "pos": "adj"
   },
   {
     "id": "b2-b9083bda",
@@ -14070,7 +14416,8 @@
     "es": "menstruación",
     "kind": "word",
     "source": "09",
-    "section": "1.3. Acciones y posiciones que se realizan con el cuerpo"
+    "section": "1.3. Acciones y posiciones que se realizan con el cuerpo",
+    "pos": "noun"
   },
   {
     "id": "b2-62a95eca",
@@ -14078,7 +14425,8 @@
     "es": "fecundación",
     "kind": "word",
     "source": "09",
-    "section": "1.3. Acciones y posiciones que se realizan con el cuerpo"
+    "section": "1.3. Acciones y posiciones que se realizan con el cuerpo",
+    "pos": "noun"
   },
   {
     "id": "b2-f2c53b20",
@@ -14094,7 +14442,8 @@
     "es": "aborto",
     "kind": "word",
     "source": "09",
-    "section": "1.3. Acciones y posiciones que se realizan con el cuerpo"
+    "section": "1.3. Acciones y posiciones que se realizan con el cuerpo",
+    "pos": "noun"
   },
   {
     "id": "b2-a15fe8ea",
@@ -14102,7 +14451,8 @@
     "es": "parto",
     "kind": "word",
     "source": "09",
-    "section": "1.3. Acciones y posiciones que se realizan con el cuerpo"
+    "section": "1.3. Acciones y posiciones que se realizan con el cuerpo",
+    "pos": "noun"
   },
   {
     "id": "b2-e04c5cff",
@@ -14110,7 +14460,8 @@
     "es": "cesárea",
     "kind": "word",
     "source": "09",
-    "section": "1.3. Acciones y posiciones que se realizan con el cuerpo"
+    "section": "1.3. Acciones y posiciones que se realizan con el cuerpo",
+    "pos": "noun"
   },
   {
     "id": "b2-29f4a45a",
@@ -14118,7 +14469,8 @@
     "es": "maternidad",
     "kind": "word",
     "source": "09",
-    "section": "1.4. Ciclo de la vida y reproducción"
+    "section": "1.4. Ciclo de la vida y reproducción",
+    "pos": "noun"
   },
   {
     "id": "b2-ba9db247",
@@ -14126,7 +14478,8 @@
     "es": "paternidad",
     "kind": "word",
     "source": "09",
-    "section": "1.4. Ciclo de la vida y reproducción"
+    "section": "1.4. Ciclo de la vida y reproducción",
+    "pos": "noun"
   },
   {
     "id": "b2-f123eea1",
@@ -14166,7 +14519,8 @@
     "es": "ambición",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "noun"
   },
   {
     "id": "b2-e7ca08f2",
@@ -14174,7 +14528,8 @@
     "es": "arrogancia",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "noun"
   },
   {
     "id": "b2-70b96042",
@@ -14182,7 +14537,8 @@
     "es": "(in)constancia",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "noun"
   },
   {
     "id": "b2-edcd6735",
@@ -14190,7 +14546,8 @@
     "es": "cobardía",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "noun"
   },
   {
     "id": "b2-078453c8",
@@ -14206,7 +14563,8 @@
     "es": "egoísmo",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "noun"
   },
   {
     "id": "b2-1760ac38",
@@ -14214,7 +14572,8 @@
     "es": "generosidad",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "noun"
   },
   {
     "id": "b2-912d12ed",
@@ -14222,7 +14581,8 @@
     "es": "(im)puntualidad",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "noun"
   },
   {
     "id": "b2-31308263",
@@ -14230,7 +14590,8 @@
     "es": "(ir)responsabilidad",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "noun"
   },
   {
     "id": "b2-afcb740d",
@@ -14238,7 +14599,8 @@
     "es": "(in)sensibilidad",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "noun"
   },
   {
     "id": "b2-c21620e2",
@@ -14246,7 +14608,8 @@
     "es": "seriedad",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "noun"
   },
   {
     "id": "b2-9902c842",
@@ -14254,7 +14617,8 @@
     "es": "(in)sinceridad",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "noun"
   },
   {
     "id": "b2-e83fa1dc",
@@ -14270,7 +14634,8 @@
     "es": "timidez",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "noun"
   },
   {
     "id": "b2-a8f70501",
@@ -14278,7 +14643,8 @@
     "es": "valentía",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "noun"
   },
   {
     "id": "b2-782a852d",
@@ -14286,7 +14652,8 @@
     "es": "ambicioso",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "adj"
   },
   {
     "id": "b2-468e31e0",
@@ -14310,7 +14677,8 @@
     "es": "discreto",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "adj"
   },
   {
     "id": "b2-7f910fe7",
@@ -14318,7 +14686,8 @@
     "es": "tacaño",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "adj"
   },
   {
     "id": "b2-12a47c35",
@@ -14326,7 +14695,8 @@
     "es": "tierno",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "adj"
   },
   {
     "id": "b2-94ce5512",
@@ -14334,7 +14704,8 @@
     "es": "(ir)responsable",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "adj"
   },
   {
     "id": "b2-eadb463c",
@@ -14342,7 +14713,8 @@
     "es": "susceptible",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "adj"
   },
   {
     "id": "b2-ec7dc19d",
@@ -14350,7 +14722,8 @@
     "es": "apasionado",
     "kind": "word",
     "source": "09",
-    "section": "2.1. Carácter y personalidad"
+    "section": "2.1. Carácter y personalidad",
+    "pos": "adj"
   },
   {
     "id": "b2-fe9a9a6d",
@@ -14502,7 +14875,8 @@
     "es": "admiración",
     "kind": "word",
     "source": "09",
-    "section": "2.2. Sentimientos y estados de ánimo"
+    "section": "2.2. Sentimientos y estados de ánimo",
+    "pos": "noun"
   },
   {
     "id": "b2-ecdee078",
@@ -14550,7 +14924,8 @@
     "es": "enfado",
     "kind": "word",
     "source": "09",
-    "section": "2.2. Sentimientos y estados de ánimo"
+    "section": "2.2. Sentimientos y estados de ánimo",
+    "pos": "noun"
   },
   {
     "id": "b2-e6fc2990",
@@ -14582,7 +14957,8 @@
     "es": "tristeza",
     "kind": "word",
     "source": "09",
-    "section": "2.2. Sentimientos y estados de ánimo"
+    "section": "2.2. Sentimientos y estados de ánimo",
+    "pos": "noun"
   },
   {
     "id": "b2-503ad295",
@@ -14590,7 +14966,8 @@
     "es": "(des)animado",
     "kind": "word",
     "source": "09",
-    "section": "2.2. Sentimientos y estados de ánimo"
+    "section": "2.2. Sentimientos y estados de ánimo",
+    "pos": "adj"
   },
   {
     "id": "b2-6b27eba9",
@@ -14606,7 +14983,8 @@
     "es": "fascinado",
     "kind": "word",
     "source": "09",
-    "section": "2.2. Sentimientos y estados de ánimo"
+    "section": "2.2. Sentimientos y estados de ánimo",
+    "pos": "adj"
   },
   {
     "id": "b2-b9081c99",
@@ -14622,7 +15000,8 @@
     "es": "(des)ilusionado",
     "kind": "word",
     "source": "09",
-    "section": "2.2. Sentimientos y estados de ánimo"
+    "section": "2.2. Sentimientos y estados de ánimo",
+    "pos": "adj"
   },
   {
     "id": "b2-1e85b085",
@@ -14646,7 +15025,8 @@
     "es": "agobiado",
     "kind": "word",
     "source": "09",
-    "section": "2.2. Sentimientos y estados de ánimo"
+    "section": "2.2. Sentimientos y estados de ánimo",
+    "pos": "adj"
   },
   {
     "id": "b2-73557aca",
@@ -14654,7 +15034,8 @@
     "es": "apenado",
     "kind": "word",
     "source": "09",
-    "section": "2.2. Sentimientos y estados de ánimo"
+    "section": "2.2. Sentimientos y estados de ánimo",
+    "pos": "adj"
   },
   {
     "id": "b2-052decdf",
@@ -14670,7 +15051,8 @@
     "es": "disgustado",
     "kind": "word",
     "source": "09",
-    "section": "2.2. Sentimientos y estados de ánimo"
+    "section": "2.2. Sentimientos y estados de ánimo",
+    "pos": "adj"
   },
   {
     "id": "b2-87b41c90",
@@ -14678,7 +15060,8 @@
     "es": "dolido",
     "kind": "word",
     "source": "09",
-    "section": "2.2. Sentimientos y estados de ánimo"
+    "section": "2.2. Sentimientos y estados de ánimo",
+    "pos": "adj"
   },
   {
     "id": "b2-50809c39",
@@ -14686,7 +15069,8 @@
     "es": "indignado",
     "kind": "word",
     "source": "09",
-    "section": "2.2. Sentimientos y estados de ánimo"
+    "section": "2.2. Sentimientos y estados de ánimo",
+    "pos": "adj"
   },
   {
     "id": "b2-f58656dd",
@@ -14694,7 +15078,8 @@
     "es": "resignado",
     "kind": "word",
     "source": "09",
-    "section": "2.2. Sentimientos y estados de ánimo"
+    "section": "2.2. Sentimientos y estados de ánimo",
+    "pos": "adj"
   },
   {
     "id": "b2-dd364f1c",
@@ -14902,7 +15287,8 @@
     "es": "gusto",
     "kind": "word",
     "source": "09",
-    "section": "2.3. Sensaciones y percepciones físicas"
+    "section": "2.3. Sensaciones y percepciones físicas",
+    "pos": "noun"
   },
   {
     "id": "b2-7172ef49",
@@ -14910,7 +15296,8 @@
     "es": "tacto",
     "kind": "word",
     "source": "09",
-    "section": "2.3. Sensaciones y percepciones físicas"
+    "section": "2.3. Sensaciones y percepciones físicas",
+    "pos": "noun"
   },
   {
     "id": "b2-6fe2daad",
@@ -15182,7 +15569,8 @@
     "es": "solidaridad",
     "kind": "word",
     "source": "09",
-    "section": "2.6. Valores personales"
+    "section": "2.6. Valores personales",
+    "pos": "noun"
   },
   {
     "id": "b2-88779f31",
@@ -15318,7 +15706,8 @@
     "es": "niñez",
     "kind": "word",
     "source": "09",
-    "section": "3.1. Datos personales"
+    "section": "3.1. Datos personales",
+    "pos": "noun"
   },
   {
     "id": "b2-fdb48251",
@@ -15326,7 +15715,8 @@
     "es": "preadolescencia",
     "kind": "word",
     "source": "09",
-    "section": "3.1. Datos personales"
+    "section": "3.1. Datos personales",
+    "pos": "noun"
   },
   {
     "id": "b2-0777d17b",
@@ -15358,7 +15748,8 @@
     "es": "validez",
     "kind": "word",
     "source": "09",
-    "section": "3.2. Documentación"
+    "section": "3.2. Documentación",
+    "pos": "noun"
   },
   {
     "id": "b2-666dbeb2",
@@ -15454,7 +15845,8 @@
     "es": "lentillas",
     "kind": "word",
     "source": "09",
-    "section": "3.3. Objetos personales"
+    "section": "3.3. Objetos personales",
+    "pos": "noun"
   },
   {
     "id": "b2-caaa09c0",
@@ -15502,7 +15894,8 @@
     "es": "cónyuge",
     "kind": "word",
     "source": "09",
-    "section": "4.1. Relaciones familiares"
+    "section": "4.1. Relaciones familiares",
+    "pos": "noun"
   },
   {
     "id": "b2-97b0032f",
@@ -15534,7 +15927,8 @@
     "es": "nuera",
     "kind": "word",
     "source": "09",
-    "section": "4.1. Relaciones familiares"
+    "section": "4.1. Relaciones familiares",
+    "pos": "noun"
   },
   {
     "id": "b2-753347a4",
@@ -15542,7 +15936,8 @@
     "es": "bisabuelo",
     "kind": "word",
     "source": "09",
-    "section": "4.1. Relaciones familiares"
+    "section": "4.1. Relaciones familiares",
+    "pos": "noun"
   },
   {
     "id": "b2-4bf4d382",
@@ -15550,7 +15945,8 @@
     "es": "tatarabuelo",
     "kind": "word",
     "source": "09",
-    "section": "4.1. Relaciones familiares"
+    "section": "4.1. Relaciones familiares",
+    "pos": "noun"
   },
   {
     "id": "b2-be242ca2",
@@ -15558,7 +15954,8 @@
     "es": "mellizos",
     "kind": "word",
     "source": "09",
-    "section": "4.1. Relaciones familiares"
+    "section": "4.1. Relaciones familiares",
+    "pos": "noun"
   },
   {
     "id": "b2-f814083a",
@@ -15566,7 +15963,8 @@
     "es": "trillizos",
     "kind": "word",
     "source": "09",
-    "section": "4.1. Relaciones familiares"
+    "section": "4.1. Relaciones familiares",
+    "pos": "noun"
   },
   {
     "id": "b2-6d8ae66f",
@@ -15702,7 +16100,8 @@
     "es": "educar(se)",
     "kind": "word",
     "source": "09",
-    "section": "4.1. Relaciones familiares"
+    "section": "4.1. Relaciones familiares",
+    "pos": "verb"
   },
   {
     "id": "b2-67994bfd",
@@ -15790,7 +16189,8 @@
     "es": "invitado",
     "kind": "word",
     "source": "09",
-    "section": "4.2. Relaciones sociales"
+    "section": "4.2. Relaciones sociales",
+    "pos": "noun"
   },
   {
     "id": "b2-284fc46b",
@@ -16030,7 +16430,8 @@
     "es": "bautizo",
     "kind": "word",
     "source": "09",
-    "section": "4.3. Celebraciones y actos familiares, sociales y religiosos"
+    "section": "4.3. Celebraciones y actos familiares, sociales y religiosos",
+    "pos": "noun"
   },
   {
     "id": "b2-441369ec",
@@ -16086,7 +16487,8 @@
     "es": "banquete",
     "kind": "word",
     "source": "09",
-    "section": "4.3. Celebraciones y actos familiares, sociales y religiosos"
+    "section": "4.3. Celebraciones y actos familiares, sociales y religiosos",
+    "pos": "noun"
   },
   {
     "id": "b2-a766138d",
@@ -16318,7 +16720,8 @@
     "es": "imprudencia",
     "kind": "word",
     "source": "09",
-    "section": "4.4. Actitudes y formas de comportarse"
+    "section": "4.4. Actitudes y formas de comportarse",
+    "pos": "noun"
   },
   {
     "id": "b2-2fb56555",
@@ -16734,7 +17137,8 @@
     "es": "refresco",
     "kind": "word",
     "source": "09",
-    "section": "5.2. Bebida"
+    "section": "5.2. Bebida",
+    "pos": "noun"
   },
   {
     "id": "b2-23496f34",
@@ -16750,7 +17154,8 @@
     "es": "cóctel",
     "kind": "word",
     "source": "09",
-    "section": "5.2. Bebida"
+    "section": "5.2. Bebida",
+    "pos": "noun"
   },
   {
     "id": "b2-7b05f2c7",
@@ -16798,7 +17203,8 @@
     "es": "abrebotellas",
     "kind": "word",
     "source": "09",
-    "section": "5.2. Bebida"
+    "section": "5.2. Bebida",
+    "pos": "noun"
   },
   {
     "id": "b2-462be1b5",
@@ -16806,7 +17212,8 @@
     "es": "sacacorchos",
     "kind": "word",
     "source": "09",
-    "section": "5.2. Bebida"
+    "section": "5.2. Bebida",
+    "pos": "noun"
   },
   {
     "id": "b2-5d11c5f4",
@@ -16862,7 +17269,8 @@
     "es": "merengue",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-07e92b2c",
@@ -16878,7 +17286,8 @@
     "es": "bollería",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-d8fc6acb",
@@ -16886,7 +17295,8 @@
     "es": "ensaimada",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-6adc487f",
@@ -16894,7 +17304,8 @@
     "es": "palmera",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-a9e3d849",
@@ -16902,7 +17313,8 @@
     "es": "dulces",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "adj"
   },
   {
     "id": "b2-2e3c65a3",
@@ -16910,7 +17322,8 @@
     "es": "caramelo",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-3595e67f",
@@ -16918,7 +17331,8 @@
     "es": "lenguado",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-e8d96f8e",
@@ -16926,7 +17340,8 @@
     "es": "dorada",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-b9ee8a29",
@@ -16934,7 +17349,8 @@
     "es": "salmonete",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-48601cf1",
@@ -16942,7 +17358,8 @@
     "es": "lubina",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-fa93089a",
@@ -16958,7 +17375,8 @@
     "es": "frambuesa",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-42d44d95",
@@ -16966,7 +17384,8 @@
     "es": "mora",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-af4e736d",
@@ -16974,7 +17393,8 @@
     "es": "grosella",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-fb5d7784",
@@ -17006,7 +17426,8 @@
     "es": "langosta",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-f86b7da5",
@@ -17014,7 +17435,8 @@
     "es": "langostino",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-67e46762",
@@ -17022,7 +17444,8 @@
     "es": "mejillón",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-aeb56963",
@@ -17030,7 +17453,8 @@
     "es": "almeja",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-1dd0d63f",
@@ -17038,7 +17462,8 @@
     "es": "legumbres",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-e731e598",
@@ -17054,7 +17479,8 @@
     "es": "almendras",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-85782c7f",
@@ -17062,7 +17488,8 @@
     "es": "nueces",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-1cc54352",
@@ -17070,7 +17497,8 @@
     "es": "avellanas",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-c60f645a",
@@ -17078,7 +17506,8 @@
     "es": "albahaca",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-96b0eaa2",
@@ -17086,7 +17515,8 @@
     "es": "romero",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-aa3c34ce",
@@ -17094,7 +17524,8 @@
     "es": "tomillo",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-67553f59",
@@ -17102,7 +17533,8 @@
     "es": "orégano",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-1824d6bc",
@@ -17198,7 +17630,8 @@
     "es": "levadura",
     "kind": "word",
     "source": "09",
-    "section": "5.3. Alimentos"
+    "section": "5.3. Alimentos",
+    "pos": "noun"
   },
   {
     "id": "b2-da79a4af",
@@ -17446,7 +17879,8 @@
     "es": "fabada",
     "kind": "word",
     "source": "09",
-    "section": "5.5. Platos"
+    "section": "5.5. Platos",
+    "pos": "noun"
   },
   {
     "id": "b2-c52eeda6",
@@ -17478,7 +17912,8 @@
     "es": "pincho",
     "kind": "word",
     "source": "09",
-    "section": "5.5. Platos"
+    "section": "5.5. Platos",
+    "pos": "noun"
   },
   {
     "id": "b2-666a52b7",
@@ -17502,7 +17937,8 @@
     "es": "exquisito",
     "kind": "word",
     "source": "09",
-    "section": "5.5. Platos"
+    "section": "5.5. Platos",
+    "pos": "adj"
   },
   {
     "id": "b2-cfd20775",
@@ -17510,7 +17946,8 @@
     "es": "(in)comestible",
     "kind": "word",
     "source": "09",
-    "section": "5.5. Platos"
+    "section": "5.5. Platos",
+    "pos": "adj"
   },
   {
     "id": "b2-77061a18",
@@ -17518,7 +17955,8 @@
     "es": "(in)comible",
     "kind": "word",
     "source": "09",
-    "section": "5.5. Platos"
+    "section": "5.5. Platos",
+    "pos": "adj"
   },
   {
     "id": "b2-e18a5895",
@@ -17542,7 +17980,8 @@
     "es": "bol",
     "kind": "word",
     "source": "09",
-    "section": "5.6. Utensilios de cocina y mesa"
+    "section": "5.6. Utensilios de cocina y mesa",
+    "pos": "noun"
   },
   {
     "id": "b2-e8dc11c0",
@@ -17550,7 +17989,8 @@
     "es": "tazón",
     "kind": "word",
     "source": "09",
-    "section": "5.6. Utensilios de cocina y mesa"
+    "section": "5.6. Utensilios de cocina y mesa",
+    "pos": "noun"
   },
   {
     "id": "b2-8e453375",
@@ -17566,7 +18006,8 @@
     "es": "cacharro",
     "kind": "word",
     "source": "09",
-    "section": "5.6. Utensilios de cocina y mesa"
+    "section": "5.6. Utensilios de cocina y mesa",
+    "pos": "noun"
   },
   {
     "id": "b2-954fbcd8",
@@ -17582,7 +18023,8 @@
     "es": "recipiente",
     "kind": "word",
     "source": "09",
-    "section": "5.6. Utensilios de cocina y mesa"
+    "section": "5.6. Utensilios de cocina y mesa",
+    "pos": "adj"
   },
   {
     "id": "b2-20c9d9e0",
@@ -17590,7 +18032,8 @@
     "es": "cuenco",
     "kind": "word",
     "source": "09",
-    "section": "5.6. Utensilios de cocina y mesa"
+    "section": "5.6. Utensilios de cocina y mesa",
+    "pos": "noun"
   },
   {
     "id": "b2-642d73db",
@@ -17598,7 +18041,8 @@
     "es": "ensaladera",
     "kind": "word",
     "source": "09",
-    "section": "5.6. Utensilios de cocina y mesa"
+    "section": "5.6. Utensilios de cocina y mesa",
+    "pos": "noun"
   },
   {
     "id": "b2-6285acbe",
@@ -17606,7 +18050,8 @@
     "es": "sopera",
     "kind": "word",
     "source": "09",
-    "section": "5.6. Utensilios de cocina y mesa"
+    "section": "5.6. Utensilios de cocina y mesa",
+    "pos": "noun"
   },
   {
     "id": "b2-64158dca",
@@ -17614,7 +18059,8 @@
     "es": "abrelatas",
     "kind": "word",
     "source": "09",
-    "section": "5.6. Utensilios de cocina y mesa"
+    "section": "5.6. Utensilios de cocina y mesa",
+    "pos": "noun"
   },
   {
     "id": "b2-6b926643",
@@ -17622,7 +18068,8 @@
     "es": "autoservicio",
     "kind": "word",
     "source": "09",
-    "section": "5.7. Restaurante"
+    "section": "5.7. Restaurante",
+    "pos": "noun"
   },
   {
     "id": "b2-a6e8e861",
@@ -17630,7 +18077,8 @@
     "es": "hamburguesería",
     "kind": "word",
     "source": "09",
-    "section": "5.7. Restaurante"
+    "section": "5.7. Restaurante",
+    "pos": "noun"
   },
   {
     "id": "b2-977d9f12",
@@ -17654,7 +18102,8 @@
     "es": "bufé",
     "kind": "word",
     "source": "09",
-    "section": "5.7. Restaurante"
+    "section": "5.7. Restaurante",
+    "pos": "noun"
   },
   {
     "id": "b2-76c5f6fa",
@@ -17670,7 +18119,8 @@
     "es": "barman",
     "kind": "word",
     "source": "09",
-    "section": "5.7. Restaurante"
+    "section": "5.7. Restaurante",
+    "pos": "noun"
   },
   {
     "id": "b2-85681d25",
@@ -17790,7 +18240,8 @@
     "es": "alumnado",
     "kind": "word",
     "source": "09",
-    "section": "6.2. Profesorado y alumnado"
+    "section": "6.2. Profesorado y alumnado",
+    "pos": "noun"
   },
   {
     "id": "b2-2fbfb1d8",
@@ -17806,7 +18257,8 @@
     "es": "catedrático",
     "kind": "word",
     "source": "09",
-    "section": "6.2. Profesorado y alumnado"
+    "section": "6.2. Profesorado y alumnado",
+    "pos": "adj"
   },
   {
     "id": "b2-bd2731e8",
@@ -17814,7 +18266,8 @@
     "es": "rector",
     "kind": "word",
     "source": "09",
-    "section": "6.2. Profesorado y alumnado"
+    "section": "6.2. Profesorado y alumnado",
+    "pos": "noun"
   },
   {
     "id": "b2-650fbfd4",
@@ -17838,7 +18291,8 @@
     "es": "tutor",
     "kind": "word",
     "source": "09",
-    "section": "6.2. Profesorado y alumnado"
+    "section": "6.2. Profesorado y alumnado",
+    "pos": "noun"
   },
   {
     "id": "b2-2eefe79b",
@@ -17862,7 +18316,8 @@
     "es": "conferenciante",
     "kind": "word",
     "source": "09",
-    "section": "6.2. Profesorado y alumnado"
+    "section": "6.2. Profesorado y alumnado",
+    "pos": "adj"
   },
   {
     "id": "b2-9e8ee1e1",
@@ -17870,7 +18325,8 @@
     "es": "universitario",
     "kind": "word",
     "source": "09",
-    "section": "6.2. Profesorado y alumnado"
+    "section": "6.2. Profesorado y alumnado",
+    "pos": "noun"
   },
   {
     "id": "b2-6e3a4aad",
@@ -18118,7 +18574,8 @@
     "es": "seminario",
     "kind": "word",
     "source": "09",
-    "section": "6.3. Sistema educativo"
+    "section": "6.3. Sistema educativo",
+    "pos": "noun"
   },
   {
     "id": "b2-430a9940",
@@ -18230,7 +18687,8 @@
     "es": "enseñanza",
     "kind": "word",
     "source": "09",
-    "section": "6.4. Aprendizaje y enseñanza"
+    "section": "6.4. Aprendizaje y enseñanza",
+    "pos": "noun"
   },
   {
     "id": "b2-9db3c1d2",
@@ -18270,7 +18728,8 @@
     "es": "didáctico",
     "kind": "word",
     "source": "09",
-    "section": "6.4. Aprendizaje y enseñanza"
+    "section": "6.4. Aprendizaje y enseñanza",
+    "pos": "adj"
   },
   {
     "id": "b2-6f968cd7",
@@ -18278,7 +18737,8 @@
     "es": "educativo",
     "kind": "word",
     "source": "09",
-    "section": "6.4. Aprendizaje y enseñanza"
+    "section": "6.4. Aprendizaje y enseñanza",
+    "pos": "adj"
   },
   {
     "id": "b2-17dbbb15",
@@ -18446,7 +18906,8 @@
     "es": "autoevaluación",
     "kind": "word",
     "source": "09",
-    "section": "6.5. Exámenes y calificaciones"
+    "section": "6.5. Exámenes y calificaciones",
+    "pos": "noun"
   },
   {
     "id": "b2-c1bda72b",
@@ -18846,7 +19307,8 @@
     "es": "grapadora",
     "kind": "word",
     "source": "09",
-    "section": "6.8. Material educativo y mobiliario de aula"
+    "section": "6.8. Material educativo y mobiliario de aula",
+    "pos": "noun"
   },
   {
     "id": "b2-91adfd72",
@@ -18854,7 +19316,8 @@
     "es": "grapa",
     "kind": "word",
     "source": "09",
-    "section": "6.8. Material educativo y mobiliario de aula"
+    "section": "6.8. Material educativo y mobiliario de aula",
+    "pos": "noun"
   },
   {
     "id": "b2-e3a93fa8",
@@ -18862,7 +19325,8 @@
     "es": "clip",
     "kind": "word",
     "source": "09",
-    "section": "6.8. Material educativo y mobiliario de aula"
+    "section": "6.8. Material educativo y mobiliario de aula",
+    "pos": "noun"
   },
   {
     "id": "b2-b16d51b3",
@@ -18870,7 +19334,8 @@
     "es": "celo",
     "kind": "word",
     "source": "09",
-    "section": "6.8. Material educativo y mobiliario de aula"
+    "section": "6.8. Material educativo y mobiliario de aula",
+    "pos": "noun"
   },
   {
     "id": "b2-17f7fb03",
@@ -18878,7 +19343,8 @@
     "es": "borrador",
     "kind": "word",
     "source": "09",
-    "section": "6.8. Material educativo y mobiliario de aula"
+    "section": "6.8. Material educativo y mobiliario de aula",
+    "pos": "noun"
   },
   {
     "id": "b2-98a619ca",
@@ -18886,7 +19352,8 @@
     "es": "retroproyector",
     "kind": "word",
     "source": "09",
-    "section": "6.8. Material educativo y mobiliario de aula"
+    "section": "6.8. Material educativo y mobiliario de aula",
+    "pos": "noun"
   },
   {
     "id": "b2-d38bbbf9",
@@ -18902,7 +19369,8 @@
     "es": "diapositiva",
     "kind": "word",
     "source": "09",
-    "section": "6.8. Material educativo y mobiliario de aula"
+    "section": "6.8. Material educativo y mobiliario de aula",
+    "pos": "adj"
   },
   {
     "id": "b2-09b21def",
@@ -18918,7 +19386,8 @@
     "es": "cartulina",
     "kind": "word",
     "source": "09",
-    "section": "6.8. Material educativo y mobiliario de aula"
+    "section": "6.8. Material educativo y mobiliario de aula",
+    "pos": "noun"
   },
   {
     "id": "b2-acec4ec6",
@@ -18966,7 +19435,8 @@
     "es": "contratado",
     "kind": "word",
     "source": "09",
-    "section": "7.1. Profesiones y cargos"
+    "section": "7.1. Profesiones y cargos",
+    "pos": "noun"
   },
   {
     "id": "b2-84bfbc07",
@@ -18974,7 +19444,8 @@
     "es": "interino",
     "kind": "word",
     "source": "09",
-    "section": "7.1. Profesiones y cargos"
+    "section": "7.1. Profesiones y cargos",
+    "pos": "noun"
   },
   {
     "id": "b2-c712e099",
@@ -19110,7 +19581,8 @@
     "es": "quirófano",
     "kind": "word",
     "source": "09",
-    "section": "7.2. Lugares, herramientas y ropa de trabajo"
+    "section": "7.2. Lugares, herramientas y ropa de trabajo",
+    "pos": "noun"
   },
   {
     "id": "b2-6aa4d835",
@@ -19150,7 +19622,8 @@
     "es": "destornillador",
     "kind": "word",
     "source": "09",
-    "section": "7.2. Lugares, herramientas y ropa de trabajo"
+    "section": "7.2. Lugares, herramientas y ropa de trabajo",
+    "pos": "noun"
   },
   {
     "id": "b2-e97ba6ae",
@@ -19191,7 +19664,8 @@
     "es": "delantal",
     "kind": "word",
     "source": "09",
-    "section": "7.2. Lugares, herramientas y ropa de trabajo"
+    "section": "7.2. Lugares, herramientas y ropa de trabajo",
+    "pos": "noun"
   },
   {
     "id": "b2-698295f9",
@@ -19239,7 +19713,8 @@
     "es": "ocupación",
     "kind": "word",
     "source": "09",
-    "section": "7.3. Actividad laboral"
+    "section": "7.3. Actividad laboral",
+    "pos": "noun"
   },
   {
     "id": "b2-37eec36a",
@@ -19647,7 +20122,8 @@
     "es": "(des)empleo",
     "kind": "word",
     "source": "09",
-    "section": "7.4. Desempleo y búsqueda de trabajo"
+    "section": "7.4. Desempleo y búsqueda de trabajo",
+    "pos": "noun"
   },
   {
     "id": "b2-d33ef889",
@@ -19839,7 +20315,8 @@
     "es": "anticipo",
     "kind": "word",
     "source": "09",
-    "section": "7.5. Derechos y obligaciones laborales"
+    "section": "7.5. Derechos y obligaciones laborales",
+    "pos": "noun"
   },
   {
     "id": "b2-36476980",
@@ -19855,7 +20332,8 @@
     "es": "dietas",
     "kind": "word",
     "source": "09",
-    "section": "7.5. Derechos y obligaciones laborales"
+    "section": "7.5. Derechos y obligaciones laborales",
+    "pos": "noun"
   },
   {
     "id": "b2-ce606f9d",
@@ -20167,7 +20645,8 @@
     "es": "profesionalidad",
     "kind": "word",
     "source": "09",
-    "section": "7.6. Características de un trabajador"
+    "section": "7.6. Características de un trabajador",
+    "pos": "noun"
   },
   {
     "id": "b2-d9e23296",
@@ -20183,7 +20662,8 @@
     "es": "cualificado",
     "kind": "word",
     "source": "09",
-    "section": "7.6. Características de un trabajador"
+    "section": "7.6. Características de un trabajador",
+    "pos": "adj"
   },
   {
     "id": "b2-7007385b",
@@ -20263,7 +20743,8 @@
     "es": "cohetes",
     "kind": "word",
     "source": "09",
-    "section": "8.1. Tiempo libre y entretenimiento"
+    "section": "8.1. Tiempo libre y entretenimiento",
+    "pos": "noun"
   },
   {
     "id": "b2-9e6406bc",
@@ -20335,7 +20816,8 @@
     "es": "desfile",
     "kind": "word",
     "source": "09",
-    "section": "8.2. Espectáculos y exposiciones"
+    "section": "8.2. Espectáculos y exposiciones",
+    "pos": "noun"
   },
   {
     "id": "b2-f31b172c",
@@ -20351,7 +20833,8 @@
     "es": "acomodador",
     "kind": "word",
     "source": "09",
-    "section": "8.2. Espectáculos y exposiciones"
+    "section": "8.2. Espectáculos y exposiciones",
+    "pos": "noun"
   },
   {
     "id": "b2-218a6bd8",
@@ -20359,7 +20842,8 @@
     "es": "guardarropa",
     "kind": "word",
     "source": "09",
-    "section": "8.2. Espectáculos y exposiciones"
+    "section": "8.2. Espectáculos y exposiciones",
+    "pos": "noun"
   },
   {
     "id": "b2-be625e89",
@@ -20375,7 +20859,8 @@
     "es": "butaca",
     "kind": "word",
     "source": "09",
-    "section": "8.2. Espectáculos y exposiciones"
+    "section": "8.2. Espectáculos y exposiciones",
+    "pos": "noun"
   },
   {
     "id": "b2-ad368b0f",
@@ -20543,7 +21028,8 @@
     "es": "estadio",
     "kind": "word",
     "source": "09",
-    "section": "8.3. Deportes"
+    "section": "8.3. Deportes",
+    "pos": "noun"
   },
   {
     "id": "b2-0cdde7bd",
@@ -20567,7 +21053,8 @@
     "es": "fan",
     "kind": "word",
     "source": "09",
-    "section": "8.3. Deportes"
+    "section": "8.3. Deportes",
+    "pos": "noun"
   },
   {
     "id": "b2-6031d898",
@@ -20631,7 +21118,8 @@
     "es": "olimpiada",
     "kind": "word",
     "source": "09",
-    "section": "8.3. Deportes"
+    "section": "8.3. Deportes",
+    "pos": "noun"
   },
   {
     "id": "b2-161df8fa",
@@ -20823,7 +21311,8 @@
     "es": "rompecabezas",
     "kind": "word",
     "source": "09",
-    "section": "8.4. Juegos"
+    "section": "8.4. Juegos",
+    "pos": "noun"
   },
   {
     "id": "b2-f94eae09",
@@ -20831,7 +21320,8 @@
     "es": "puzle",
     "kind": "word",
     "source": "09",
-    "section": "8.4. Juegos"
+    "section": "8.4. Juegos",
+    "pos": "noun"
   },
   {
     "id": "b2-dbc8bd61",
@@ -21735,7 +22225,8 @@
     "es": "audición",
     "kind": "word",
     "source": "09",
-    "section": "9.5. Televisión y radio"
+    "section": "9.5. Televisión y radio",
+    "pos": "noun"
   },
   {
     "id": "b2-f27786de",
@@ -21767,7 +22258,8 @@
     "es": "oyente",
     "kind": "word",
     "source": "09",
-    "section": "9.5. Televisión y radio"
+    "section": "9.5. Televisión y radio",
+    "pos": "adj"
   },
   {
     "id": "b2-1c3af690",
@@ -21775,7 +22267,8 @@
     "es": "telespectador",
     "kind": "word",
     "source": "09",
-    "section": "9.5. Televisión y radio"
+    "section": "9.5. Televisión y radio",
+    "pos": "noun"
   },
   {
     "id": "b2-17b555bf",
@@ -21783,7 +22276,8 @@
     "es": "teleadicto",
     "kind": "word",
     "source": "09",
-    "section": "9.5. Televisión y radio"
+    "section": "9.5. Televisión y radio",
+    "pos": "noun"
   },
   {
     "id": "b2-dbe4368e",
@@ -21807,7 +22301,8 @@
     "es": "reportero",
     "kind": "word",
     "source": "09",
-    "section": "9.5. Televisión y radio"
+    "section": "9.5. Televisión y radio",
+    "pos": "noun"
   },
   {
     "id": "b2-db9f0a94",
@@ -21871,7 +22366,8 @@
     "es": "informativos",
     "kind": "word",
     "source": "09",
-    "section": "9.5. Televisión y radio"
+    "section": "9.5. Televisión y radio",
+    "pos": "noun"
   },
   {
     "id": "b2-b3fdb751",
@@ -21999,7 +22495,8 @@
     "es": "videoconferencia",
     "kind": "word",
     "source": "09",
-    "section": "9.6. Internet"
+    "section": "9.6. Internet",
+    "pos": "noun"
   },
   {
     "id": "b2-2cb54eec",
@@ -22007,7 +22504,8 @@
     "es": "audioconferencia",
     "kind": "word",
     "source": "09",
-    "section": "9.6. Internet"
+    "section": "9.6. Internet",
+    "pos": "noun"
   },
   {
     "id": "b2-75642701",
@@ -22079,7 +22577,8 @@
     "es": "albañilería",
     "kind": "word",
     "source": "09",
-    "section": "10.1. Acciones relacionadas con la vivienda"
+    "section": "10.1. Acciones relacionadas con la vivienda",
+    "pos": "noun"
   },
   {
     "id": "b2-addc9d63",
@@ -22087,7 +22586,8 @@
     "es": "fontanería",
     "kind": "word",
     "source": "09",
-    "section": "10.1. Acciones relacionadas con la vivienda"
+    "section": "10.1. Acciones relacionadas con la vivienda",
+    "pos": "noun"
   },
   {
     "id": "b2-f8aa6fbe",
@@ -22095,7 +22595,8 @@
     "es": "carpintería",
     "kind": "word",
     "source": "09",
-    "section": "10.1. Acciones relacionadas con la vivienda"
+    "section": "10.1. Acciones relacionadas con la vivienda",
+    "pos": "noun"
   },
   {
     "id": "b2-54423ce2",
@@ -22127,7 +22628,8 @@
     "es": "inmobiliaria",
     "kind": "word",
     "source": "09",
-    "section": "10.1. Acciones relacionadas con la vivienda"
+    "section": "10.1. Acciones relacionadas con la vivienda",
+    "pos": "noun"
   },
   {
     "id": "b2-b41231d4",
@@ -22135,7 +22637,8 @@
     "es": "constructora",
     "kind": "word",
     "source": "09",
-    "section": "10.1. Acciones relacionadas con la vivienda"
+    "section": "10.1. Acciones relacionadas con la vivienda",
+    "pos": "noun"
   },
   {
     "id": "b2-ea5eafc1",
@@ -22319,7 +22822,8 @@
     "es": "ático",
     "kind": "word",
     "source": "09",
-    "section": "10.2. Características de la vivienda"
+    "section": "10.2. Características de la vivienda",
+    "pos": "adj"
   },
   {
     "id": "b2-8b6ba65b",
@@ -22327,7 +22831,8 @@
     "es": "dúplex",
     "kind": "word",
     "source": "09",
-    "section": "10.2. Características de la vivienda"
+    "section": "10.2. Características de la vivienda",
+    "pos": "noun"
   },
   {
     "id": "b2-3188703c",
@@ -22335,7 +22840,8 @@
     "es": "buhardilla",
     "kind": "word",
     "source": "09",
-    "section": "10.2. Características de la vivienda"
+    "section": "10.2. Características de la vivienda",
+    "pos": "noun"
   },
   {
     "id": "b2-9431ef77",
@@ -22399,7 +22905,8 @@
     "es": "administrador",
     "kind": "word",
     "source": "09",
-    "section": "10.2. Características de la vivienda"
+    "section": "10.2. Características de la vivienda",
+    "pos": "noun"
   },
   {
     "id": "b2-647a698a",
@@ -22407,7 +22914,8 @@
     "es": "conserje",
     "kind": "word",
     "source": "09",
-    "section": "10.2. Características de la vivienda"
+    "section": "10.2. Características de la vivienda",
+    "pos": "noun"
   },
   {
     "id": "b2-4342f2b1",
@@ -22455,7 +22963,8 @@
     "es": "lujoso",
     "kind": "word",
     "source": "09",
-    "section": "10.2. Características de la vivienda"
+    "section": "10.2. Características de la vivienda",
+    "pos": "adj"
   },
   {
     "id": "b2-d3524e90",
@@ -22495,7 +23004,8 @@
     "es": "recogedor",
     "kind": "word",
     "source": "09",
-    "section": "10.3. Actividades domésticas"
+    "section": "10.3. Actividades domésticas",
+    "pos": "noun"
   },
   {
     "id": "b2-bcae9b4a",
@@ -22503,7 +23013,8 @@
     "es": "fregona",
     "kind": "word",
     "source": "09",
-    "section": "10.3. Actividades domésticas"
+    "section": "10.3. Actividades domésticas",
+    "pos": "noun"
   },
   {
     "id": "b2-6270d71c",
@@ -22511,7 +23022,8 @@
     "es": "trapo",
     "kind": "word",
     "source": "09",
-    "section": "10.3. Actividades domésticas"
+    "section": "10.3. Actividades domésticas",
+    "pos": "noun"
   },
   {
     "id": "b2-12332fe6",
@@ -22527,7 +23039,8 @@
     "es": "lavavajillas",
     "kind": "word",
     "source": "09",
-    "section": "10.3. Actividades domésticas"
+    "section": "10.3. Actividades domésticas",
+    "pos": "noun"
   },
   {
     "id": "b2-4f8255db",
@@ -22535,7 +23048,8 @@
     "es": "suavizante",
     "kind": "word",
     "source": "09",
-    "section": "10.3. Actividades domésticas"
+    "section": "10.3. Actividades domésticas",
+    "pos": "adj"
   },
   {
     "id": "b2-89343eca",
@@ -22607,7 +23121,8 @@
     "es": "adorno",
     "kind": "word",
     "source": "09",
-    "section": "10.3. Actividades domésticas"
+    "section": "10.3. Actividades domésticas",
+    "pos": "noun"
   },
   {
     "id": "b2-cf78d02d",
@@ -22695,7 +23210,8 @@
     "es": "freidora",
     "kind": "word",
     "source": "09",
-    "section": "10.4. Objetos domésticos"
+    "section": "10.4. Objetos domésticos",
+    "pos": "noun"
   },
   {
     "id": "b2-b5fbd6c7",
@@ -22711,7 +23227,8 @@
     "es": "exprimidor",
     "kind": "word",
     "source": "09",
-    "section": "10.4. Objetos domésticos"
+    "section": "10.4. Objetos domésticos",
+    "pos": "noun"
   },
   {
     "id": "b2-0d6ebe06",
@@ -22719,7 +23236,8 @@
     "es": "picadora",
     "kind": "word",
     "source": "09",
-    "section": "10.4. Objetos domésticos"
+    "section": "10.4. Objetos domésticos",
+    "pos": "noun"
   },
   {
     "id": "b2-00656f4c",
@@ -22727,7 +23245,8 @@
     "es": "batidora",
     "kind": "word",
     "source": "09",
-    "section": "10.4. Objetos domésticos"
+    "section": "10.4. Objetos domésticos",
+    "pos": "noun"
   },
   {
     "id": "b2-6d2de84d",
@@ -22751,7 +23270,8 @@
     "es": "interruptor",
     "kind": "word",
     "source": "09",
-    "section": "10.4. Objetos domésticos"
+    "section": "10.4. Objetos domésticos",
+    "pos": "noun"
   },
   {
     "id": "b2-dda3a6c6",
@@ -22767,7 +23287,8 @@
     "es": "repartidor",
     "kind": "word",
     "source": "09",
-    "section": "11.1. Servicio postal"
+    "section": "11.1. Servicio postal",
+    "pos": "noun"
   },
   {
     "id": "b2-8cd849d4",
@@ -22791,7 +23312,8 @@
     "es": "entrega",
     "kind": "word",
     "source": "09",
-    "section": "11.1. Servicio postal"
+    "section": "11.1. Servicio postal",
+    "pos": "noun"
   },
   {
     "id": "b2-f4e49624",
@@ -22903,7 +23425,8 @@
     "es": "ahorro",
     "kind": "word",
     "source": "09",
-    "section": "11.3. Servicios financieros"
+    "section": "11.3. Servicios financieros",
+    "pos": "noun"
   },
   {
     "id": "b2-e17d73e0",
@@ -22911,7 +23434,8 @@
     "es": "cobro",
     "kind": "word",
     "source": "09",
-    "section": "11.3. Servicios financieros"
+    "section": "11.3. Servicios financieros",
+    "pos": "noun"
   },
   {
     "id": "b2-8ed93442",
@@ -22927,7 +23451,8 @@
     "es": "pago",
     "kind": "word",
     "source": "09",
-    "section": "11.3. Servicios financieros"
+    "section": "11.3. Servicios financieros",
+    "pos": "noun"
   },
   {
     "id": "b2-0d3e9377",
@@ -22943,7 +23468,8 @@
     "es": "crédito",
     "kind": "word",
     "source": "09",
-    "section": "11.3. Servicios financieros"
+    "section": "11.3. Servicios financieros",
+    "pos": "noun"
   },
   {
     "id": "b2-f8343bd9",
@@ -22975,7 +23501,8 @@
     "es": "inversor",
     "kind": "word",
     "source": "09",
-    "section": "11.3. Servicios financieros"
+    "section": "11.3. Servicios financieros",
+    "pos": "noun"
   },
   {
     "id": "b2-f2c9467c",
@@ -23167,7 +23694,8 @@
     "es": "secuestrador",
     "kind": "word",
     "source": "09",
-    "section": "11.6. Servicios de protección y seguridad"
+    "section": "11.6. Servicios de protección y seguridad",
+    "pos": "noun"
   },
   {
     "id": "b2-cd817607",
@@ -23223,7 +23751,8 @@
     "es": "atraco",
     "kind": "word",
     "source": "09",
-    "section": "11.6. Servicios de protección y seguridad"
+    "section": "11.6. Servicios de protección y seguridad",
+    "pos": "noun"
   },
   {
     "id": "b2-feaabc9e",
@@ -23351,7 +23880,8 @@
     "es": "integración",
     "kind": "word",
     "source": "09",
-    "section": "11.7. Servicios sociales"
+    "section": "11.7. Servicios sociales",
+    "pos": "noun"
   },
   {
     "id": "b2-651c19d9",
@@ -23359,7 +23889,8 @@
     "es": "marginación",
     "kind": "word",
     "source": "09",
-    "section": "11.7. Servicios sociales"
+    "section": "11.7. Servicios sociales",
+    "pos": "noun"
   },
   {
     "id": "b2-7585434a",
@@ -23367,7 +23898,8 @@
     "es": "menores",
     "kind": "word",
     "source": "09",
-    "section": "11.7. Servicios sociales"
+    "section": "11.7. Servicios sociales",
+    "pos": "adj"
   },
   {
     "id": "b2-65a9c32a",
@@ -23375,7 +23907,8 @@
     "es": "inmigrantes",
     "kind": "word",
     "source": "09",
-    "section": "11.7. Servicios sociales"
+    "section": "11.7. Servicios sociales",
+    "pos": "noun"
   },
   {
     "id": "b2-b14fe858",
@@ -23439,7 +23972,8 @@
     "es": "inmigración",
     "kind": "word",
     "source": "09",
-    "section": "11.7. Servicios sociales"
+    "section": "11.7. Servicios sociales",
+    "pos": "noun"
   },
   {
     "id": "b2-4615c32a",
@@ -23503,7 +24037,8 @@
     "es": "farola",
     "kind": "word",
     "source": "09",
-    "section": "11.8. Servicios de abastecimiento público"
+    "section": "11.8. Servicios de abastecimiento público",
+    "pos": "noun"
   },
   {
     "id": "b2-5aafdd43",
@@ -23719,7 +24254,8 @@
     "es": "establecimiento",
     "kind": "word",
     "source": "09",
-    "section": "12.1. Lugares, personas y actividades"
+    "section": "12.1. Lugares, personas y actividades",
+    "pos": "noun"
   },
   {
     "id": "b2-592bd52a",
@@ -23767,7 +24303,8 @@
     "es": "clientela",
     "kind": "word",
     "source": "09",
-    "section": "12.1. Lugares, personas y actividades"
+    "section": "12.1. Lugares, personas y actividades",
+    "pos": "noun"
   },
   {
     "id": "b2-febb2274",
@@ -23775,7 +24312,8 @@
     "es": "consumidor",
     "kind": "word",
     "source": "09",
-    "section": "12.1. Lugares, personas y actividades"
+    "section": "12.1. Lugares, personas y actividades",
+    "pos": "noun"
   },
   {
     "id": "b2-a5ccc35c",
@@ -23791,7 +24329,8 @@
     "es": "etiqueta",
     "kind": "word",
     "source": "09",
-    "section": "12.1. Lugares, personas y actividades"
+    "section": "12.1. Lugares, personas y actividades",
+    "pos": "noun"
   },
   {
     "id": "b2-384c1af3",
@@ -23863,7 +24402,8 @@
     "es": "complementos",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "b2-ccfad7c8",
@@ -23871,7 +24411,8 @@
     "es": "albornoz",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "b2-191968f1",
@@ -23879,7 +24420,8 @@
     "es": "bata",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "b2-1fd198fe",
@@ -23887,7 +24429,8 @@
     "es": "camisón",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "b2-3967b9ad",
@@ -23895,7 +24438,8 @@
     "es": "calzador",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "b2-e785dd67",
@@ -23919,7 +24463,8 @@
     "es": "hilo",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "b2-bb5dad64",
@@ -23927,7 +24472,8 @@
     "es": "cremallera",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "b2-6e5d195b",
@@ -23935,7 +24481,8 @@
     "es": "percha",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "b2-48fba86e",
@@ -23999,7 +24546,8 @@
     "es": "estampado",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "noun"
   },
   {
     "id": "b2-6dd943fe",
@@ -24007,7 +24555,8 @@
     "es": "(des)cosido",
     "kind": "word",
     "source": "09",
-    "section": "12.2. Ropa, calzado y complementos"
+    "section": "12.2. Ropa, calzado y complementos",
+    "pos": "adj"
   },
   {
     "id": "b2-8e8749c1",
@@ -24383,7 +24932,8 @@
     "es": "faringitis",
     "kind": "word",
     "source": "09",
-    "section": "13.1. Salud y enfermedades"
+    "section": "13.1. Salud y enfermedades",
+    "pos": "noun"
   },
   {
     "id": "b2-5b2c70e9",
@@ -24391,7 +24941,8 @@
     "es": "diabetes",
     "kind": "word",
     "source": "09",
-    "section": "13.1. Salud y enfermedades"
+    "section": "13.1. Salud y enfermedades",
+    "pos": "noun"
   },
   {
     "id": "b2-5248d5f0",
@@ -24399,7 +24950,8 @@
     "es": "bronquitis",
     "kind": "word",
     "source": "09",
-    "section": "13.1. Salud y enfermedades"
+    "section": "13.1. Salud y enfermedades",
+    "pos": "noun"
   },
   {
     "id": "b2-2923cdd9",
@@ -24407,7 +24959,8 @@
     "es": "neumonía",
     "kind": "word",
     "source": "09",
-    "section": "13.1. Salud y enfermedades"
+    "section": "13.1. Salud y enfermedades",
+    "pos": "noun"
   },
   {
     "id": "b2-16fbc2b2",
@@ -24543,7 +25096,8 @@
     "es": "contagiar(se)",
     "kind": "word",
     "source": "09",
-    "section": "13.1. Salud y enfermedades"
+    "section": "13.1. Salud y enfermedades",
+    "pos": "verb"
   },
   {
     "id": "b2-e95b86d5",
@@ -24559,7 +25113,8 @@
     "es": "curativo",
     "kind": "word",
     "source": "09",
-    "section": "13.1. Salud y enfermedades"
+    "section": "13.1. Salud y enfermedades",
+    "pos": "adj"
   },
   {
     "id": "b2-469fab24",
@@ -24567,7 +25122,8 @@
     "es": "medicinal",
     "kind": "word",
     "source": "09",
-    "section": "13.1. Salud y enfermedades"
+    "section": "13.1. Salud y enfermedades",
+    "pos": "adj"
   },
   {
     "id": "b2-2a328869",
@@ -24575,7 +25131,8 @@
     "es": "terapéutico",
     "kind": "word",
     "source": "09",
-    "section": "13.1. Salud y enfermedades"
+    "section": "13.1. Salud y enfermedades",
+    "pos": "adj"
   },
   {
     "id": "b2-60f8deb3",
@@ -24583,7 +25140,8 @@
     "es": "perjudicial",
     "kind": "word",
     "source": "09",
-    "section": "13.1. Salud y enfermedades"
+    "section": "13.1. Salud y enfermedades",
+    "pos": "adj"
   },
   {
     "id": "b2-19522784",
@@ -24591,7 +25149,8 @@
     "es": "beneficioso",
     "kind": "word",
     "source": "09",
-    "section": "13.1. Salud y enfermedades"
+    "section": "13.1. Salud y enfermedades",
+    "pos": "adj"
   },
   {
     "id": "b2-77a82e02",
@@ -24895,7 +25454,8 @@
     "es": "cansancio",
     "kind": "word",
     "source": "09",
-    "section": "13.3. Síntomas"
+    "section": "13.3. Síntomas",
+    "pos": "noun"
   },
   {
     "id": "b2-442f032c",
@@ -24911,7 +25471,8 @@
     "es": "mareos",
     "kind": "word",
     "source": "09",
-    "section": "13.3. Síntomas"
+    "section": "13.3. Síntomas",
+    "pos": "noun"
   },
   {
     "id": "b2-534e506e",
@@ -24919,7 +25480,8 @@
     "es": "náuseas",
     "kind": "word",
     "source": "09",
-    "section": "13.3. Síntomas"
+    "section": "13.3. Síntomas",
+    "pos": "noun"
   },
   {
     "id": "b2-af3a6ce4",
@@ -25055,7 +25617,8 @@
     "es": "consultorio",
     "kind": "word",
     "source": "09",
-    "section": "13.4. Centros de asistencia sanitaria"
+    "section": "13.4. Centros de asistencia sanitaria",
+    "pos": "noun"
   },
   {
     "id": "b2-ab505fa8",
@@ -25063,7 +25626,8 @@
     "es": "sanatorio",
     "kind": "word",
     "source": "09",
-    "section": "13.4. Centros de asistencia sanitaria"
+    "section": "13.4. Centros de asistencia sanitaria",
+    "pos": "noun"
   },
   {
     "id": "b2-aa446a49",
@@ -25087,7 +25651,8 @@
     "es": "TAC",
     "kind": "word",
     "source": "09",
-    "section": "13.4. Centros de asistencia sanitaria"
+    "section": "13.4. Centros de asistencia sanitaria",
+    "pos": "noun"
   },
   {
     "id": "b2-c5f43070",
@@ -25103,7 +25668,8 @@
     "es": "ecografía",
     "kind": "word",
     "source": "09",
-    "section": "13.4. Centros de asistencia sanitaria"
+    "section": "13.4. Centros de asistencia sanitaria",
+    "pos": "noun"
   },
   {
     "id": "b2-ce509191",
@@ -25111,7 +25677,8 @@
     "es": "chequeo",
     "kind": "word",
     "source": "09",
-    "section": "13.4. Centros de asistencia sanitaria"
+    "section": "13.4. Centros de asistencia sanitaria",
+    "pos": "noun"
   },
   {
     "id": "b2-7a75194f",
@@ -25159,7 +25726,8 @@
     "es": "pediatra",
     "kind": "word",
     "source": "09",
-    "section": "13.4. Centros de asistencia sanitaria"
+    "section": "13.4. Centros de asistencia sanitaria",
+    "pos": "noun"
   },
   {
     "id": "b2-4759a74a",
@@ -25167,7 +25735,8 @@
     "es": "otorrino(laringólogo)",
     "kind": "word",
     "source": "09",
-    "section": "13.4. Centros de asistencia sanitaria"
+    "section": "13.4. Centros de asistencia sanitaria",
+    "pos": "noun"
   },
   {
     "id": "b2-2427c044",
@@ -25175,7 +25744,8 @@
     "es": "traumatólogo",
     "kind": "word",
     "source": "09",
-    "section": "13.4. Centros de asistencia sanitaria"
+    "section": "13.4. Centros de asistencia sanitaria",
+    "pos": "noun"
   },
   {
     "id": "b2-75e1b0b2",
@@ -25183,7 +25753,8 @@
     "es": "anestesista",
     "kind": "word",
     "source": "09",
-    "section": "13.4. Centros de asistencia sanitaria"
+    "section": "13.4. Centros de asistencia sanitaria",
+    "pos": "noun"
   },
   {
     "id": "b2-774e2c56",
@@ -25199,7 +25770,8 @@
     "es": "botiquín",
     "kind": "word",
     "source": "09",
-    "section": "13.4. Centros de asistencia sanitaria"
+    "section": "13.4. Centros de asistencia sanitaria",
+    "pos": "noun"
   },
   {
     "id": "b2-e52626f5",
@@ -25207,7 +25779,8 @@
     "es": "camilla",
     "kind": "word",
     "source": "09",
-    "section": "13.4. Centros de asistencia sanitaria"
+    "section": "13.4. Centros de asistencia sanitaria",
+    "pos": "noun"
   },
   {
     "id": "b2-364ad717",
@@ -25287,7 +25860,8 @@
     "es": "inyección",
     "kind": "word",
     "source": "09",
-    "section": "13.5. Medicina y medicamentos"
+    "section": "13.5. Medicina y medicamentos",
+    "pos": "noun"
   },
   {
     "id": "b2-222b7557",
@@ -25295,7 +25869,8 @@
     "es": "pomada",
     "kind": "word",
     "source": "09",
-    "section": "13.5. Medicina y medicamentos"
+    "section": "13.5. Medicina y medicamentos",
+    "pos": "noun"
   },
   {
     "id": "b2-86fc9364",
@@ -25303,7 +25878,8 @@
     "es": "calmante",
     "kind": "word",
     "source": "09",
-    "section": "13.5. Medicina y medicamentos"
+    "section": "13.5. Medicina y medicamentos",
+    "pos": "adj"
   },
   {
     "id": "b2-90764e81",
@@ -25311,7 +25887,8 @@
     "es": "supositorio",
     "kind": "word",
     "source": "09",
-    "section": "13.5. Medicina y medicamentos"
+    "section": "13.5. Medicina y medicamentos",
+    "pos": "noun"
   },
   {
     "id": "b2-a7b98164",
@@ -25319,7 +25896,8 @@
     "es": "analgésico",
     "kind": "word",
     "source": "09",
-    "section": "13.5. Medicina y medicamentos"
+    "section": "13.5. Medicina y medicamentos",
+    "pos": "adj"
   },
   {
     "id": "b2-73463346",
@@ -25327,7 +25905,8 @@
     "es": "antiinflamatorio",
     "kind": "word",
     "source": "09",
-    "section": "13.5. Medicina y medicamentos"
+    "section": "13.5. Medicina y medicamentos",
+    "pos": "noun"
   },
   {
     "id": "b2-467efc5a",
@@ -25335,7 +25914,8 @@
     "es": "prospecto",
     "kind": "word",
     "source": "09",
-    "section": "13.5. Medicina y medicamentos"
+    "section": "13.5. Medicina y medicamentos",
+    "pos": "noun"
   },
   {
     "id": "b2-208fa5cf",
@@ -25343,7 +25923,8 @@
     "es": "contraindicaciones",
     "kind": "word",
     "source": "09",
-    "section": "13.5. Medicina y medicamentos"
+    "section": "13.5. Medicina y medicamentos",
+    "pos": "noun"
   },
   {
     "id": "b2-3f8e26cb",
@@ -25359,7 +25940,8 @@
     "es": "síntomas",
     "kind": "word",
     "source": "09",
-    "section": "13.5. Medicina y medicamentos"
+    "section": "13.5. Medicina y medicamentos",
+    "pos": "noun"
   },
   {
     "id": "b2-695a8d97",
@@ -25367,7 +25949,8 @@
     "es": "gasa",
     "kind": "word",
     "source": "09",
-    "section": "13.5. Medicina y medicamentos"
+    "section": "13.5. Medicina y medicamentos",
+    "pos": "noun"
   },
   {
     "id": "b2-d1342a89",
@@ -25375,7 +25958,8 @@
     "es": "venda",
     "kind": "word",
     "source": "09",
-    "section": "13.5. Medicina y medicamentos"
+    "section": "13.5. Medicina y medicamentos",
+    "pos": "noun"
   },
   {
     "id": "b2-b7d91cd6",
@@ -25383,7 +25967,8 @@
     "es": "esparadrapo",
     "kind": "word",
     "source": "09",
-    "section": "13.5. Medicina y medicamentos"
+    "section": "13.5. Medicina y medicamentos",
+    "pos": "noun"
   },
   {
     "id": "b2-e9d5ddd1",
@@ -25455,7 +26040,8 @@
     "es": "esencia",
     "kind": "word",
     "source": "09",
-    "section": "13.6. Higiene"
+    "section": "13.6. Higiene",
+    "pos": "noun"
   },
   {
     "id": "b2-b3838207",
@@ -25479,7 +26065,8 @@
     "es": "tijeras",
     "kind": "word",
     "source": "09",
-    "section": "13.6. Higiene"
+    "section": "13.6. Higiene",
+    "pos": "noun"
   },
   {
     "id": "b2-0c1a4b1f",
@@ -25487,7 +26074,8 @@
     "es": "lima",
     "kind": "word",
     "source": "09",
-    "section": "13.6. Higiene"
+    "section": "13.6. Higiene",
+    "pos": "noun"
   },
   {
     "id": "b2-15335646",
@@ -25495,7 +26083,8 @@
     "es": "cortaúñas",
     "kind": "word",
     "source": "09",
-    "section": "13.6. Higiene"
+    "section": "13.6. Higiene",
+    "pos": "noun"
   },
   {
     "id": "b2-fe7c48b5",
@@ -25511,7 +26100,8 @@
     "es": "jacuzzi",
     "kind": "word",
     "source": "09",
-    "section": "13.6. Higiene"
+    "section": "13.6. Higiene",
+    "pos": "noun"
   },
   {
     "id": "b2-35c582ea",
@@ -25663,7 +26253,8 @@
     "es": "colorete",
     "kind": "word",
     "source": "09",
-    "section": "13.7. Estética"
+    "section": "13.7. Estética",
+    "pos": "noun"
   },
   {
     "id": "b2-f1bd94bd",
@@ -25679,7 +26270,8 @@
     "es": "rímel",
     "kind": "word",
     "source": "09",
-    "section": "13.7. Estética"
+    "section": "13.7. Estética",
+    "pos": "noun"
   },
   {
     "id": "b2-bfadfc07",
@@ -25687,7 +26279,8 @@
     "es": "laca",
     "kind": "word",
     "source": "09",
-    "section": "13.7. Estética"
+    "section": "13.7. Estética",
+    "pos": "noun"
   },
   {
     "id": "b2-2bc4e041",
@@ -25703,7 +26296,8 @@
     "es": "gomina",
     "kind": "word",
     "source": "09",
-    "section": "13.7. Estética"
+    "section": "13.7. Estética",
+    "pos": "noun"
   },
   {
     "id": "b2-169e7724",
@@ -25711,7 +26305,8 @@
     "es": "(hidro)masaje",
     "kind": "word",
     "source": "09",
-    "section": "13.7. Estética"
+    "section": "13.7. Estética",
+    "pos": "noun"
   },
   {
     "id": "b2-2cc815a8",
@@ -25719,7 +26314,8 @@
     "es": "sauna",
     "kind": "word",
     "source": "09",
-    "section": "13.7. Estética"
+    "section": "13.7. Estética",
+    "pos": "noun"
   },
   {
     "id": "b2-abd51418",
@@ -25727,7 +26323,8 @@
     "es": "estética",
     "kind": "word",
     "source": "09",
-    "section": "13.7. Estética"
+    "section": "13.7. Estética",
+    "pos": "adj"
   },
   {
     "id": "b2-6b9e0cb0",
@@ -25759,7 +26356,8 @@
     "es": "balneario",
     "kind": "word",
     "source": "09",
-    "section": "13.7. Estética"
+    "section": "13.7. Estética",
+    "pos": "noun"
   },
   {
     "id": "b2-9dfffbe6",
@@ -25767,7 +26365,8 @@
     "es": "manchas",
     "kind": "word",
     "source": "09",
-    "section": "13.7. Estética"
+    "section": "13.7. Estética",
+    "pos": "noun"
   },
   {
     "id": "b2-23951f35",
@@ -25775,7 +26374,8 @@
     "es": "granos",
     "kind": "word",
     "source": "09",
-    "section": "13.7. Estética"
+    "section": "13.7. Estética",
+    "pos": "noun"
   },
   {
     "id": "b2-95180291",
@@ -26063,7 +26663,8 @@
     "es": "pala",
     "kind": "word",
     "source": "09",
-    "section": "14.1. Viajes"
+    "section": "14.1. Viajes",
+    "pos": "noun"
   },
   {
     "id": "b2-7725df67",
@@ -26071,7 +26672,8 @@
     "es": "rastrillo",
     "kind": "word",
     "source": "09",
-    "section": "14.1. Viajes"
+    "section": "14.1. Viajes",
+    "pos": "noun"
   },
   {
     "id": "b2-c0c4561e",
@@ -26079,7 +26681,8 @@
     "es": "flotador",
     "kind": "word",
     "source": "09",
-    "section": "14.1. Viajes"
+    "section": "14.1. Viajes",
+    "pos": "noun"
   },
   {
     "id": "b2-64d6f2c8",
@@ -26231,7 +26834,8 @@
     "es": "monte",
     "kind": "word",
     "source": "09",
-    "section": "14.1. Viajes"
+    "section": "14.1. Viajes",
+    "pos": "noun"
   },
   {
     "id": "b2-a7bb8348",
@@ -26247,7 +26851,8 @@
     "es": "anorak",
     "kind": "word",
     "source": "09",
-    "section": "14.1. Viajes"
+    "section": "14.1. Viajes",
+    "pos": "noun"
   },
   {
     "id": "b2-36a12c9d",
@@ -26287,7 +26892,8 @@
     "es": "bungaló",
     "kind": "word",
     "source": "09",
-    "section": "14.2. Alojamiento"
+    "section": "14.2. Alojamiento",
+    "pos": "noun"
   },
   {
     "id": "b2-eba7f118",
@@ -26295,7 +26901,8 @@
     "es": "parador",
     "kind": "word",
     "source": "09",
-    "section": "14.2. Alojamiento"
+    "section": "14.2. Alojamiento",
+    "pos": "noun"
   },
   {
     "id": "b2-2bb5d4a3",
@@ -26303,7 +26910,8 @@
     "es": "vestíbulo",
     "kind": "word",
     "source": "09",
-    "section": "14.2. Alojamiento"
+    "section": "14.2. Alojamiento",
+    "pos": "noun"
   },
   {
     "id": "b2-cb706930",
@@ -26311,7 +26919,8 @@
     "es": "consigna",
     "kind": "word",
     "source": "09",
-    "section": "14.2. Alojamiento"
+    "section": "14.2. Alojamiento",
+    "pos": "noun"
   },
   {
     "id": "b2-ae769e0b",
@@ -26327,7 +26936,8 @@
     "es": "colchoneta",
     "kind": "word",
     "source": "09",
-    "section": "14.2. Alojamiento"
+    "section": "14.2. Alojamiento",
+    "pos": "noun"
   },
   {
     "id": "b2-aa7ad32b",
@@ -26431,7 +27041,8 @@
     "es": "autovía",
     "kind": "word",
     "source": "09",
-    "section": "14.3. Sistema de transporte"
+    "section": "14.3. Sistema de transporte",
+    "pos": "noun"
   },
   {
     "id": "b2-e16ce346",
@@ -26487,7 +27098,8 @@
     "es": "rotonda",
     "kind": "word",
     "source": "09",
-    "section": "14.3. Sistema de transporte"
+    "section": "14.3. Sistema de transporte",
+    "pos": "noun"
   },
   {
     "id": "b2-bc0eb1a0",
@@ -26495,7 +27107,8 @@
     "es": "bache",
     "kind": "word",
     "source": "09",
-    "section": "14.3. Sistema de transporte"
+    "section": "14.3. Sistema de transporte",
+    "pos": "noun"
   },
   {
     "id": "b2-13d09999",
@@ -26535,7 +27148,8 @@
     "es": "IBERIA",
     "kind": "word",
     "source": "09",
-    "section": "14.3. Sistema de transporte"
+    "section": "14.3. Sistema de transporte",
+    "pos": "noun"
   },
   {
     "id": "b2-2bf0a960",
@@ -26679,7 +27293,8 @@
     "es": "compartimento",
     "kind": "word",
     "source": "09",
-    "section": "14.3. Sistema de transporte"
+    "section": "14.3. Sistema de transporte",
+    "pos": "noun"
   },
   {
     "id": "b2-1f96a0e6",
@@ -26759,7 +27374,8 @@
     "es": "ferry",
     "kind": "word",
     "source": "09",
-    "section": "14.3. Sistema de transporte"
+    "section": "14.3. Sistema de transporte",
+    "pos": "noun"
   },
   {
     "id": "b2-1f0b7e29",
@@ -26775,7 +27391,8 @@
     "es": "marítimo",
     "kind": "word",
     "source": "09",
-    "section": "14.3. Sistema de transporte"
+    "section": "14.3. Sistema de transporte",
+    "pos": "adj"
   },
   {
     "id": "b2-4b49a06d",
@@ -26791,7 +27408,8 @@
     "es": "(des)embarcar",
     "kind": "word",
     "source": "09",
-    "section": "14.3. Sistema de transporte"
+    "section": "14.3. Sistema de transporte",
+    "pos": "verb"
   },
   {
     "id": "b2-6287b8d8",
@@ -27103,7 +27721,8 @@
     "es": "grúa",
     "kind": "word",
     "source": "09",
-    "section": "14.3. Sistema de transporte"
+    "section": "14.3. Sistema de transporte",
+    "pos": "noun"
   },
   {
     "id": "b2-3cdb8e75",
@@ -27127,7 +27746,8 @@
     "es": "arreglo",
     "kind": "word",
     "source": "09",
-    "section": "14.3. Sistema de transporte"
+    "section": "14.3. Sistema de transporte",
+    "pos": "noun"
   },
   {
     "id": "b2-e4d16c77",
@@ -27135,7 +27755,8 @@
     "es": "reparación",
     "kind": "word",
     "source": "09",
-    "section": "14.3. Sistema de transporte"
+    "section": "14.3. Sistema de transporte",
+    "pos": "noun"
   },
   {
     "id": "b2-06ed05c3",
@@ -27231,7 +27852,8 @@
     "es": "ahorros",
     "kind": "word",
     "source": "09",
-    "section": "15.1. Finanzas y bolsa"
+    "section": "15.1. Finanzas y bolsa",
+    "pos": "noun"
   },
   {
     "id": "b2-19a75ac2",
@@ -27239,7 +27861,8 @@
     "es": "ingresos",
     "kind": "word",
     "source": "09",
-    "section": "15.1. Finanzas y bolsa"
+    "section": "15.1. Finanzas y bolsa",
+    "pos": "noun"
   },
   {
     "id": "b2-782c82d5",
@@ -27247,7 +27870,8 @@
     "es": "ganancias",
     "kind": "word",
     "source": "09",
-    "section": "15.1. Finanzas y bolsa"
+    "section": "15.1. Finanzas y bolsa",
+    "pos": "noun"
   },
   {
     "id": "b2-647b7c51",
@@ -27255,7 +27879,8 @@
     "es": "pérdidas",
     "kind": "word",
     "source": "09",
-    "section": "15.1. Finanzas y bolsa"
+    "section": "15.1. Finanzas y bolsa",
+    "pos": "noun"
   },
   {
     "id": "b2-cf0c2ca8",
@@ -27431,7 +28056,8 @@
     "es": "inspección",
     "kind": "word",
     "source": "09",
-    "section": "15.2. Renta"
+    "section": "15.2. Renta",
+    "pos": "noun"
   },
   {
     "id": "b2-d49748b6",
@@ -27447,7 +28073,8 @@
     "es": "consumo",
     "kind": "word",
     "source": "09",
-    "section": "15.3. Comercio"
+    "section": "15.3. Comercio",
+    "pos": "noun"
   },
   {
     "id": "b2-d961e8aa",
@@ -27479,7 +28106,8 @@
     "es": "comerciante",
     "kind": "word",
     "source": "09",
-    "section": "15.3. Comercio"
+    "section": "15.3. Comercio",
+    "pos": "adj"
   },
   {
     "id": "b2-5cfe9b03",
@@ -27487,7 +28115,8 @@
     "es": "comercialización",
     "kind": "word",
     "source": "09",
-    "section": "15.3. Comercio"
+    "section": "15.3. Comercio",
+    "pos": "noun"
   },
   {
     "id": "b2-558726f6",
@@ -27503,7 +28132,8 @@
     "es": "representante",
     "kind": "word",
     "source": "09",
-    "section": "15.3. Comercio"
+    "section": "15.3. Comercio",
+    "pos": "adj"
   },
   {
     "id": "b2-cbfe2f3b",
@@ -27655,7 +28285,8 @@
     "es": "propaganda",
     "kind": "word",
     "source": "09",
-    "section": "15.3. Comercio"
+    "section": "15.3. Comercio",
+    "pos": "noun"
   },
   {
     "id": "b2-2e6653b8",
@@ -27663,7 +28294,8 @@
     "es": "buzoneo",
     "kind": "word",
     "source": "09",
-    "section": "15.3. Comercio"
+    "section": "15.3. Comercio",
+    "pos": "noun"
   },
   {
     "id": "b2-6d562a87",
@@ -27671,7 +28303,8 @@
     "es": "pancarta",
     "kind": "word",
     "source": "09",
-    "section": "15.3. Comercio"
+    "section": "15.3. Comercio",
+    "pos": "noun"
   },
   {
     "id": "b2-0fc240c4",
@@ -27679,7 +28312,8 @@
     "es": "pegatina",
     "kind": "word",
     "source": "09",
-    "section": "15.3. Comercio"
+    "section": "15.3. Comercio",
+    "pos": "noun"
   },
   {
     "id": "b2-eef199dc",
@@ -27783,7 +28417,8 @@
     "es": "cristalería",
     "kind": "word",
     "source": "09",
-    "section": "15.5. Industria y energía"
+    "section": "15.5. Industria y energía",
+    "pos": "noun"
   },
   {
     "id": "b2-45e21bb4",
@@ -27791,7 +28426,8 @@
     "es": "elaboración",
     "kind": "word",
     "source": "09",
-    "section": "15.5. Industria y energía"
+    "section": "15.5. Industria y energía",
+    "pos": "noun"
   },
   {
     "id": "b2-f0b9f64a",
@@ -27799,7 +28435,8 @@
     "es": "explotación",
     "kind": "word",
     "source": "09",
-    "section": "15.5. Industria y energía"
+    "section": "15.5. Industria y energía",
+    "pos": "noun"
   },
   {
     "id": "b2-65ff0755",
@@ -27807,7 +28444,8 @@
     "es": "carbón",
     "kind": "word",
     "source": "09",
-    "section": "15.5. Industria y energía"
+    "section": "15.5. Industria y energía",
+    "pos": "noun"
   },
   {
     "id": "b2-4b6740af",
@@ -27855,7 +28493,8 @@
     "es": "constructor",
     "kind": "word",
     "source": "09",
-    "section": "15.5. Industria y energía"
+    "section": "15.5. Industria y energía",
+    "pos": "noun"
   },
   {
     "id": "b2-ea99aaba",
@@ -27863,7 +28502,8 @@
     "es": "aparejador",
     "kind": "word",
     "source": "09",
-    "section": "15.5. Industria y energía"
+    "section": "15.5. Industria y energía",
+    "pos": "noun"
   },
   {
     "id": "b2-73b03c4e",
@@ -27911,7 +28551,8 @@
     "es": "campesino",
     "kind": "word",
     "source": "09",
-    "section": "15.5. Industria y energía"
+    "section": "15.5. Industria y energía",
+    "pos": "noun"
   },
   {
     "id": "b2-53d43212",
@@ -27919,7 +28560,8 @@
     "es": "tractor",
     "kind": "word",
     "source": "09",
-    "section": "15.5. Industria y energía"
+    "section": "15.5. Industria y energía",
+    "pos": "noun"
   },
   {
     "id": "b2-7e667091",
@@ -27927,7 +28569,8 @@
     "es": "ganado",
     "kind": "word",
     "source": "09",
-    "section": "15.5. Industria y energía"
+    "section": "15.5. Industria y energía",
+    "pos": "noun"
   },
   {
     "id": "b2-9e215cc0",
@@ -27935,7 +28578,8 @@
     "es": "finca",
     "kind": "word",
     "source": "09",
-    "section": "15.5. Industria y energía"
+    "section": "15.5. Industria y energía",
+    "pos": "noun"
   },
   {
     "id": "b2-888b4cb3",
@@ -27943,7 +28587,8 @@
     "es": "huerta",
     "kind": "word",
     "source": "09",
-    "section": "15.5. Industria y energía"
+    "section": "15.5. Industria y energía",
+    "pos": "noun"
   },
   {
     "id": "b2-ecf11503",
@@ -27951,7 +28596,8 @@
     "es": "huerto",
     "kind": "word",
     "source": "09",
-    "section": "15.5. Industria y energía"
+    "section": "15.5. Industria y energía",
+    "pos": "noun"
   },
   {
     "id": "b2-499f3de5",
@@ -27999,7 +28645,8 @@
     "es": "físico",
     "kind": "word",
     "source": "09",
-    "section": "16.1. Cuestiones generales"
+    "section": "16.1. Cuestiones generales",
+    "pos": "adj"
   },
   {
     "id": "b2-73672bba",
@@ -28007,7 +28654,8 @@
     "es": "químico",
     "kind": "word",
     "source": "09",
-    "section": "16.1. Cuestiones generales"
+    "section": "16.1. Cuestiones generales",
+    "pos": "adj"
   },
   {
     "id": "b2-4335d195",
@@ -28015,7 +28663,8 @@
     "es": "matemático",
     "kind": "word",
     "source": "09",
-    "section": "16.1. Cuestiones generales"
+    "section": "16.1. Cuestiones generales",
+    "pos": "adj"
   },
   {
     "id": "b2-7c1ad06c",
@@ -28023,7 +28672,8 @@
     "es": "astrónomo",
     "kind": "word",
     "source": "09",
-    "section": "16.1. Cuestiones generales"
+    "section": "16.1. Cuestiones generales",
+    "pos": "noun"
   },
   {
     "id": "b2-422e1c98",
@@ -28063,7 +28713,8 @@
     "es": "fórmula",
     "kind": "word",
     "source": "09",
-    "section": "16.1. Cuestiones generales"
+    "section": "16.1. Cuestiones generales",
+    "pos": "noun"
   },
   {
     "id": "b2-5f7575fe",
@@ -28199,7 +28850,8 @@
     "es": "neurona",
     "kind": "word",
     "source": "09",
-    "section": "16.2. Biología"
+    "section": "16.2. Biología",
+    "pos": "noun"
   },
   {
     "id": "b2-f6f50016",
@@ -28231,7 +28883,8 @@
     "es": "biológico",
     "kind": "word",
     "source": "09",
-    "section": "16.2. Biología"
+    "section": "16.2. Biología",
+    "pos": "adj"
   },
   {
     "id": "b2-a1ab45ff",
@@ -28239,7 +28892,8 @@
     "es": "álgebra",
     "kind": "word",
     "source": "09",
-    "section": "16.3. Matemáticas"
+    "section": "16.3. Matemáticas",
+    "pos": "noun"
   },
   {
     "id": "b2-d85ff9b1",
@@ -28247,7 +28901,8 @@
     "es": "estadística",
     "kind": "word",
     "source": "09",
-    "section": "16.3. Matemáticas"
+    "section": "16.3. Matemáticas",
+    "pos": "adj"
   },
   {
     "id": "b2-13cd9dca",
@@ -28367,7 +29022,8 @@
     "es": "monitor",
     "kind": "word",
     "source": "09",
-    "section": "16.4. Informática y nuevas tecnologías"
+    "section": "16.4. Informática y nuevas tecnologías",
+    "pos": "noun"
   },
   {
     "id": "b2-925ae836",
@@ -28383,7 +29039,8 @@
     "es": "módem",
     "kind": "word",
     "source": "09",
-    "section": "16.4. Informática y nuevas tecnologías"
+    "section": "16.4. Informática y nuevas tecnologías",
+    "pos": "noun"
   },
   {
     "id": "b2-ea956148",
@@ -28423,7 +29080,8 @@
     "es": "cursor",
     "kind": "word",
     "source": "09",
-    "section": "16.4. Informática y nuevas tecnologías"
+    "section": "16.4. Informática y nuevas tecnologías",
+    "pos": "noun"
   },
   {
     "id": "b2-7194d174",
@@ -28511,7 +29169,8 @@
     "es": "aluminio",
     "kind": "word",
     "source": "09",
-    "section": "16.5. Física y química"
+    "section": "16.5. Física y química",
+    "pos": "noun"
   },
   {
     "id": "b2-9aa00812",
@@ -28527,7 +29186,8 @@
     "es": "nitrógeno",
     "kind": "word",
     "source": "09",
-    "section": "16.5. Física y química"
+    "section": "16.5. Física y química",
+    "pos": "noun"
   },
   {
     "id": "b2-3baa5090",
@@ -28535,7 +29195,8 @@
     "es": "formulación",
     "kind": "word",
     "source": "09",
-    "section": "16.5. Física y química"
+    "section": "16.5. Física y química",
+    "pos": "noun"
   },
   {
     "id": "b2-687614ef",
@@ -28559,7 +29220,8 @@
     "es": "termómetro",
     "kind": "word",
     "source": "09",
-    "section": "16.5. Física y química"
+    "section": "16.5. Física y química",
+    "pos": "noun"
   },
   {
     "id": "b2-bb881ca4",
@@ -28567,7 +29229,8 @@
     "es": "(des)igualdad",
     "kind": "word",
     "source": "09",
-    "section": "17.1. Sociedad"
+    "section": "17.1. Sociedad",
+    "pos": "noun"
   },
   {
     "id": "b2-eb792060",
@@ -28599,7 +29262,8 @@
     "es": "rebeldía",
     "kind": "word",
     "source": "09",
-    "section": "17.1. Sociedad"
+    "section": "17.1. Sociedad",
+    "pos": "noun"
   },
   {
     "id": "b2-ab8f926d",
@@ -28687,7 +29351,8 @@
     "es": "comunitario",
     "kind": "word",
     "source": "09",
-    "section": "17.1. Sociedad"
+    "section": "17.1. Sociedad",
+    "pos": "noun"
   },
   {
     "id": "b2-d66149f7",
@@ -28711,7 +29376,8 @@
     "es": "integrar(se)",
     "kind": "word",
     "source": "09",
-    "section": "17.1. Sociedad"
+    "section": "17.1. Sociedad",
+    "pos": "verb"
   },
   {
     "id": "b2-fe953d7c",
@@ -28767,7 +29433,8 @@
     "es": "cooperación",
     "kind": "word",
     "source": "09",
-    "section": "17.1. Sociedad"
+    "section": "17.1. Sociedad",
+    "pos": "noun"
   },
   {
     "id": "b2-ef84888f",
@@ -28791,7 +29458,8 @@
     "es": "tolerancia",
     "kind": "word",
     "source": "09",
-    "section": "17.1. Sociedad"
+    "section": "17.1. Sociedad",
+    "pos": "noun"
   },
   {
     "id": "b2-ee2fa130",
@@ -28807,7 +29475,8 @@
     "es": "agresividad",
     "kind": "word",
     "source": "09",
-    "section": "17.1. Sociedad"
+    "section": "17.1. Sociedad",
+    "pos": "noun"
   },
   {
     "id": "b2-29877cb6",
@@ -28863,7 +29532,8 @@
     "es": "parlamentario",
     "kind": "word",
     "source": "09",
-    "section": "17.2. Política y gobierno"
+    "section": "17.2. Política y gobierno",
+    "pos": "noun"
   },
   {
     "id": "b2-99ac119e",
@@ -28871,7 +29541,8 @@
     "es": "diplomático",
     "kind": "word",
     "source": "09",
-    "section": "17.2. Política y gobierno"
+    "section": "17.2. Política y gobierno",
+    "pos": "adj"
   },
   {
     "id": "b2-3032e27c",
@@ -28879,7 +29550,8 @@
     "es": "dictador",
     "kind": "word",
     "source": "09",
-    "section": "17.2. Política y gobierno"
+    "section": "17.2. Política y gobierno",
+    "pos": "noun"
   },
   {
     "id": "b2-0f1de6e8",
@@ -28903,7 +29575,8 @@
     "es": "votante",
     "kind": "word",
     "source": "09",
-    "section": "17.2. Política y gobierno"
+    "section": "17.2. Política y gobierno",
+    "pos": "adj"
   },
   {
     "id": "b2-6b501f06",
@@ -28911,7 +29584,8 @@
     "es": "electorado",
     "kind": "word",
     "source": "09",
-    "section": "17.2. Política y gobierno"
+    "section": "17.2. Política y gobierno",
+    "pos": "noun"
   },
   {
     "id": "b2-dcc9d5b2",
@@ -29063,7 +29737,8 @@
     "es": "comunismo",
     "kind": "word",
     "source": "09",
-    "section": "17.2. Política y gobierno"
+    "section": "17.2. Política y gobierno",
+    "pos": "noun"
   },
   {
     "id": "b2-3a45b970",
@@ -29071,7 +29746,8 @@
     "es": "fascismo",
     "kind": "word",
     "source": "09",
-    "section": "17.2. Política y gobierno"
+    "section": "17.2. Política y gobierno",
+    "pos": "noun"
   },
   {
     "id": "b2-36329fff",
@@ -29079,7 +29755,8 @@
     "es": "anarquía",
     "kind": "word",
     "source": "09",
-    "section": "17.2. Política y gobierno"
+    "section": "17.2. Política y gobierno",
+    "pos": "noun"
   },
   {
     "id": "b2-068ba964",
@@ -29087,7 +29764,8 @@
     "es": "marxismo",
     "kind": "word",
     "source": "09",
-    "section": "17.2. Política y gobierno"
+    "section": "17.2. Política y gobierno",
+    "pos": "noun"
   },
   {
     "id": "b2-022c42bb",
@@ -29095,7 +29773,8 @@
     "es": "socialismo",
     "kind": "word",
     "source": "09",
-    "section": "17.2. Política y gobierno"
+    "section": "17.2. Política y gobierno",
+    "pos": "noun"
   },
   {
     "id": "b2-ec2d383f",
@@ -29183,7 +29862,8 @@
     "es": "criminal",
     "kind": "word",
     "source": "09",
-    "section": "17.3. Ley y justicia"
+    "section": "17.3. Ley y justicia",
+    "pos": "noun"
   },
   {
     "id": "b2-66b1de81",
@@ -29207,7 +29887,8 @@
     "es": "atentado",
     "kind": "word",
     "source": "09",
-    "section": "17.3. Ley y justicia"
+    "section": "17.3. Ley y justicia",
+    "pos": "noun"
   },
   {
     "id": "b2-ea2fe518",
@@ -29239,7 +29920,8 @@
     "es": "juicio",
     "kind": "word",
     "source": "09",
-    "section": "17.3. Ley y justicia"
+    "section": "17.3. Ley y justicia",
+    "pos": "noun"
   },
   {
     "id": "b2-8f9ba869",
@@ -29255,7 +29937,8 @@
     "es": "fiscal",
     "kind": "word",
     "source": "09",
-    "section": "17.3. Ley y justicia"
+    "section": "17.3. Ley y justicia",
+    "pos": "noun"
   },
   {
     "id": "b2-56ff0595",
@@ -29311,7 +29994,8 @@
     "es": "mafia",
     "kind": "word",
     "source": "09",
-    "section": "17.3. Ley y justicia"
+    "section": "17.3. Ley y justicia",
+    "pos": "noun"
   },
   {
     "id": "b2-0f8643a5",
@@ -29535,7 +30219,8 @@
     "es": "fusil",
     "kind": "word",
     "source": "09",
-    "section": "17.4. Ejército"
+    "section": "17.4. Ejército",
+    "pos": "noun"
   },
   {
     "id": "b2-3acb4032",
@@ -29575,7 +30260,8 @@
     "es": "submarino",
     "kind": "word",
     "source": "09",
-    "section": "17.4. Ejército"
+    "section": "17.4. Ejército",
+    "pos": "noun"
   },
   {
     "id": "b2-c5edf78a",
@@ -29687,7 +30373,8 @@
     "es": "creatividad",
     "kind": "word",
     "source": "09",
-    "section": "18.1. Disciplinas y cualidades artísticas"
+    "section": "18.1. Disciplinas y cualidades artísticas",
+    "pos": "noun"
   },
   {
     "id": "b2-0cfeae3f",
@@ -29695,7 +30382,8 @@
     "es": "inspiración",
     "kind": "word",
     "source": "09",
-    "section": "18.1. Disciplinas y cualidades artísticas"
+    "section": "18.1. Disciplinas y cualidades artísticas",
+    "pos": "noun"
   },
   {
     "id": "b2-6127e8d9",
@@ -29711,7 +30399,8 @@
     "es": "pureza",
     "kind": "word",
     "source": "09",
-    "section": "18.1. Disciplinas y cualidades artísticas"
+    "section": "18.1. Disciplinas y cualidades artísticas",
+    "pos": "noun"
   },
   {
     "id": "b2-42eb3ece",
@@ -29719,7 +30408,8 @@
     "es": "armonía",
     "kind": "word",
     "source": "09",
-    "section": "18.1. Disciplinas y cualidades artísticas"
+    "section": "18.1. Disciplinas y cualidades artísticas",
+    "pos": "noun"
   },
   {
     "id": "b2-bfaa64b1",
@@ -29735,7 +30425,8 @@
     "es": "equilibrio",
     "kind": "word",
     "source": "09",
-    "section": "18.1. Disciplinas y cualidades artísticas"
+    "section": "18.1. Disciplinas y cualidades artísticas",
+    "pos": "noun"
   },
   {
     "id": "b2-aee493f3",
@@ -29743,7 +30434,8 @@
     "es": "sensibilidad",
     "kind": "word",
     "source": "09",
-    "section": "18.1. Disciplinas y cualidades artísticas"
+    "section": "18.1. Disciplinas y cualidades artísticas",
+    "pos": "noun"
   },
   {
     "id": "b2-b8ae3feb",
@@ -29751,7 +30443,8 @@
     "es": "romanticismo",
     "kind": "word",
     "source": "09",
-    "section": "18.1. Disciplinas y cualidades artísticas"
+    "section": "18.1. Disciplinas y cualidades artísticas",
+    "pos": "noun"
   },
   {
     "id": "b2-d8476a50",
@@ -29759,7 +30452,8 @@
     "es": "clasicismo",
     "kind": "word",
     "source": "09",
-    "section": "18.1. Disciplinas y cualidades artísticas"
+    "section": "18.1. Disciplinas y cualidades artísticas",
+    "pos": "noun"
   },
   {
     "id": "b2-68c02e3f",
@@ -29767,7 +30461,8 @@
     "es": "cubismo",
     "kind": "word",
     "source": "09",
-    "section": "18.1. Disciplinas y cualidades artísticas"
+    "section": "18.1. Disciplinas y cualidades artísticas",
+    "pos": "noun"
   },
   {
     "id": "b2-232d396e",
@@ -29927,7 +30622,8 @@
     "es": "coreografía",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "b2-92ae7a7d",
@@ -29959,7 +30655,8 @@
     "es": "clarinete",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "b2-71012e6b",
@@ -29967,7 +30664,8 @@
     "es": "saxofón",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "b2-69bf76a9",
@@ -29975,7 +30673,8 @@
     "es": "trompeta",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "b2-4f236972",
@@ -29983,7 +30682,8 @@
     "es": "contrabajo",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "b2-3c82ac6a",
@@ -29991,7 +30691,8 @@
     "es": "violonchelo",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "b2-2f758280",
@@ -30007,7 +30708,8 @@
     "es": "compás",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "b2-45bcbd10",
@@ -30055,7 +30757,8 @@
     "es": "sinfonía",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "b2-00c056df",
@@ -30063,7 +30766,8 @@
     "es": "himno",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "b2-e08ebf74",
@@ -30079,7 +30783,8 @@
     "es": "do",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "b2-c387c982",
@@ -30087,7 +30792,8 @@
     "es": "re",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "b2-9c51ad86",
@@ -30095,7 +30801,8 @@
     "es": "mi",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "b2-215a9561",
@@ -30103,7 +30810,8 @@
     "es": "fa",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "b2-fbb93bb9",
@@ -30127,7 +30835,8 @@
     "es": "si",
     "kind": "word",
     "source": "09",
-    "section": "18.2. Música y danza"
+    "section": "18.2. Música y danza",
+    "pos": "noun"
   },
   {
     "id": "b2-aab8b9a5",
@@ -30159,7 +30868,8 @@
     "es": "pirámide",
     "kind": "word",
     "source": "09",
-    "section": "18.3. Arquitectura, escultura y pintura"
+    "section": "18.3. Arquitectura, escultura y pintura",
+    "pos": "noun"
   },
   {
     "id": "b2-fc21b18e",
@@ -30167,7 +30877,8 @@
     "es": "fachada",
     "kind": "word",
     "source": "09",
-    "section": "18.3. Arquitectura, escultura y pintura"
+    "section": "18.3. Arquitectura, escultura y pintura",
+    "pos": "noun"
   },
   {
     "id": "b2-1408b791",
@@ -30375,7 +31086,8 @@
     "es": "historiador",
     "kind": "word",
     "source": "09",
-    "section": "18.4. Literatura"
+    "section": "18.4. Literatura",
+    "pos": "noun"
   },
   {
     "id": "b2-6beb862c",
@@ -30383,7 +31095,8 @@
     "es": "prosa",
     "kind": "word",
     "source": "09",
-    "section": "18.4. Literatura"
+    "section": "18.4. Literatura",
+    "pos": "adj"
   },
   {
     "id": "b2-b7282507",
@@ -30399,7 +31112,8 @@
     "es": "narración",
     "kind": "word",
     "source": "09",
-    "section": "18.4. Literatura"
+    "section": "18.4. Literatura",
+    "pos": "noun"
   },
   {
     "id": "b2-092c09fd",
@@ -30423,7 +31137,8 @@
     "es": "relato",
     "kind": "word",
     "source": "09",
-    "section": "18.4. Literatura"
+    "section": "18.4. Literatura",
+    "pos": "noun"
   },
   {
     "id": "b2-27f47f6a",
@@ -30431,7 +31146,8 @@
     "es": "leyenda",
     "kind": "word",
     "source": "09",
-    "section": "18.4. Literatura"
+    "section": "18.4. Literatura",
+    "pos": "noun"
   },
   {
     "id": "b2-09c5388a",
@@ -30703,7 +31419,8 @@
     "es": "guionista",
     "kind": "word",
     "source": "09",
-    "section": "18.6. Cine y teatro"
+    "section": "18.6. Cine y teatro",
+    "pos": "noun"
   },
   {
     "id": "b2-63746892",
@@ -30719,7 +31436,8 @@
     "es": "largometraje",
     "kind": "word",
     "source": "09",
-    "section": "18.6. Cine y teatro"
+    "section": "18.6. Cine y teatro",
+    "pos": "noun"
   },
   {
     "id": "b2-2be975bf",
@@ -30743,7 +31461,8 @@
     "es": "iluminación",
     "kind": "word",
     "source": "09",
-    "section": "18.6. Cine y teatro"
+    "section": "18.6. Cine y teatro",
+    "pos": "noun"
   },
   {
     "id": "b2-87d17e42",
@@ -30751,7 +31470,8 @@
     "es": "decorado",
     "kind": "word",
     "source": "09",
-    "section": "18.6. Cine y teatro"
+    "section": "18.6. Cine y teatro",
+    "pos": "noun"
   },
   {
     "id": "b2-8b3de7b8",
@@ -30775,7 +31495,8 @@
     "es": "vestuario",
     "kind": "word",
     "source": "09",
-    "section": "18.6. Cine y teatro"
+    "section": "18.6. Cine y teatro",
+    "pos": "noun"
   },
   {
     "id": "b2-dc8bc627",
@@ -30783,7 +31504,8 @@
     "es": "secuencia",
     "kind": "word",
     "source": "09",
-    "section": "18.6. Cine y teatro"
+    "section": "18.6. Cine y teatro",
+    "pos": "noun"
   },
   {
     "id": "b2-d611eaea",
@@ -30823,7 +31545,8 @@
     "es": "interpretación",
     "kind": "word",
     "source": "09",
-    "section": "18.6. Cine y teatro"
+    "section": "18.6. Cine y teatro",
+    "pos": "noun"
   },
   {
     "id": "b2-e4a850fb",
@@ -30839,7 +31562,8 @@
     "es": "tragicomedia",
     "kind": "word",
     "source": "09",
-    "section": "18.6. Cine y teatro"
+    "section": "18.6. Cine y teatro",
+    "pos": "noun"
   },
   {
     "id": "b2-edbdf94c",
@@ -30895,7 +31619,8 @@
     "es": "rabino",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "noun"
   },
   {
     "id": "b2-ed4eb96e",
@@ -30903,7 +31628,8 @@
     "es": "imán",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "noun"
   },
   {
     "id": "b2-08ea836a",
@@ -30919,7 +31645,8 @@
     "es": "párroco",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "noun"
   },
   {
     "id": "b2-b232e634",
@@ -30927,7 +31654,8 @@
     "es": "monja",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "noun"
   },
   {
     "id": "b2-147837d6",
@@ -30967,7 +31695,8 @@
     "es": "catolicismo",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "noun"
   },
   {
     "id": "b2-6e2f7747",
@@ -30975,7 +31704,8 @@
     "es": "protestantismo",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "noun"
   },
   {
     "id": "b2-746ce020",
@@ -30983,7 +31713,8 @@
     "es": "hinduismo",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "noun"
   },
   {
     "id": "b2-1bf19dee",
@@ -30991,7 +31722,8 @@
     "es": "cristianismo",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "noun"
   },
   {
     "id": "b2-75c1ec5c",
@@ -30999,7 +31731,8 @@
     "es": "islamismo",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "noun"
   },
   {
     "id": "b2-b9977e83",
@@ -31007,7 +31740,8 @@
     "es": "budismo",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "noun"
   },
   {
     "id": "b2-ba731e7b",
@@ -31015,7 +31749,8 @@
     "es": "ateísmo",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "noun"
   },
   {
     "id": "b2-213c4abf",
@@ -31031,7 +31766,8 @@
     "es": "purgatorio",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "noun"
   },
   {
     "id": "b2-5f5ea380",
@@ -31071,7 +31807,8 @@
     "es": "Evangelio",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "noun"
   },
   {
     "id": "b2-4cf2eb3a",
@@ -31087,7 +31824,8 @@
     "es": "procesión",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "noun"
   },
   {
     "id": "b2-563da593",
@@ -31103,7 +31841,8 @@
     "es": "pecador",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "noun"
   },
   {
     "id": "b2-83210d9e",
@@ -31127,7 +31866,8 @@
     "es": "agnóstico",
     "kind": "word",
     "source": "09",
-    "section": "19.1. Religión"
+    "section": "19.1. Religión",
+    "pos": "adj"
   },
   {
     "id": "b2-8497e18a",
@@ -31271,7 +32011,8 @@
     "es": "filosofía",
     "kind": "word",
     "source": "09",
-    "section": "19.2. Filosofía"
+    "section": "19.2. Filosofía",
+    "pos": "noun"
   },
   {
     "id": "b2-6185fcaa",
@@ -31279,7 +32020,8 @@
     "es": "filósofo",
     "kind": "word",
     "source": "09",
-    "section": "19.2. Filosofía"
+    "section": "19.2. Filosofía",
+    "pos": "noun"
   },
   {
     "id": "b2-f5e4abd4",
@@ -31287,7 +32029,8 @@
     "es": "razón",
     "kind": "word",
     "source": "09",
-    "section": "19.2. Filosofía"
+    "section": "19.2. Filosofía",
+    "pos": "noun"
   },
   {
     "id": "b2-1f09d023",
@@ -31311,7 +32054,8 @@
     "es": "filosófico",
     "kind": "word",
     "source": "09",
-    "section": "19.2. Filosofía"
+    "section": "19.2. Filosofía",
+    "pos": "adj"
   },
   {
     "id": "b2-e1d024b9",
@@ -31319,7 +32063,8 @@
     "es": "ideológico",
     "kind": "word",
     "source": "09",
-    "section": "19.2. Filosofía"
+    "section": "19.2. Filosofía",
+    "pos": "adj"
   },
   {
     "id": "b2-c1976231",
@@ -31327,7 +32072,8 @@
     "es": "metafísico",
     "kind": "word",
     "source": "09",
-    "section": "19.2. Filosofía"
+    "section": "19.2. Filosofía",
+    "pos": "adj"
   },
   {
     "id": "b2-25de1239",
@@ -31351,7 +32097,8 @@
     "es": "astronomía",
     "kind": "word",
     "source": "09",
-    "section": "20.1. Universo y espacio"
+    "section": "20.1. Universo y espacio",
+    "pos": "noun"
   },
   {
     "id": "b2-7c0bbc6d",
@@ -31359,7 +32106,8 @@
     "es": "astrología",
     "kind": "word",
     "source": "09",
-    "section": "20.1. Universo y espacio"
+    "section": "20.1. Universo y espacio",
+    "pos": "noun"
   },
   {
     "id": "b2-6181e1d4",
@@ -31375,7 +32123,8 @@
     "es": "Capricornio",
     "kind": "word",
     "source": "09",
-    "section": "20.1. Universo y espacio"
+    "section": "20.1. Universo y espacio",
+    "pos": "noun"
   },
   {
     "id": "b2-1f0a51c3",
@@ -31383,7 +32132,8 @@
     "es": "Leo",
     "kind": "word",
     "source": "09",
-    "section": "20.1. Universo y espacio"
+    "section": "20.1. Universo y espacio",
+    "pos": "noun"
   },
   {
     "id": "b2-8c7f32ce",
@@ -31399,7 +32149,8 @@
     "es": "constelación",
     "kind": "word",
     "source": "09",
-    "section": "20.1. Universo y espacio"
+    "section": "20.1. Universo y espacio",
+    "pos": "noun"
   },
   {
     "id": "b2-c65de981",
@@ -31407,7 +32158,8 @@
     "es": "galaxia",
     "kind": "word",
     "source": "09",
-    "section": "20.1. Universo y espacio"
+    "section": "20.1. Universo y espacio",
+    "pos": "noun"
   },
   {
     "id": "b2-a29d3f63",
@@ -31415,7 +32167,8 @@
     "es": "cometa",
     "kind": "word",
     "source": "09",
-    "section": "20.1. Universo y espacio"
+    "section": "20.1. Universo y espacio",
+    "pos": "noun"
   },
   {
     "id": "b2-ab1b8362",
@@ -31463,7 +32216,8 @@
     "es": "Saturno",
     "kind": "word",
     "source": "09",
-    "section": "20.1. Universo y espacio"
+    "section": "20.1. Universo y espacio",
+    "pos": "noun"
   },
   {
     "id": "b2-bc8135c0",
@@ -31471,7 +32225,8 @@
     "es": "Mercurio",
     "kind": "word",
     "source": "09",
-    "section": "20.1. Universo y espacio"
+    "section": "20.1. Universo y espacio",
+    "pos": "noun"
   },
   {
     "id": "b2-c8721b65",
@@ -31479,7 +32234,8 @@
     "es": "Venus",
     "kind": "word",
     "source": "09",
-    "section": "20.1. Universo y espacio"
+    "section": "20.1. Universo y espacio",
+    "pos": "noun"
   },
   {
     "id": "b2-af66735b",
@@ -31535,7 +32291,8 @@
     "es": "altitud",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "noun"
   },
   {
     "id": "b2-0991b566",
@@ -31543,7 +32300,8 @@
     "es": "ecuador",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "noun"
   },
   {
     "id": "b2-e82636ac",
@@ -31591,7 +32349,8 @@
     "es": "superpoblación",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "noun"
   },
   {
     "id": "b2-33e0f3c0",
@@ -31703,7 +32462,8 @@
     "es": "emigración",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "noun"
   },
   {
     "id": "b2-87d36217",
@@ -31711,7 +32471,8 @@
     "es": "territorial",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "adj"
   },
   {
     "id": "b2-ff12795b",
@@ -31719,7 +32480,8 @@
     "es": "continental",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "adj"
   },
   {
     "id": "b2-177177d0",
@@ -31727,7 +32489,8 @@
     "es": "provincial",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "adj"
   },
   {
     "id": "b2-939bb46a",
@@ -31743,7 +32506,8 @@
     "es": "urbano",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "adj"
   },
   {
     "id": "b2-9ba97332",
@@ -31751,7 +32515,8 @@
     "es": "rural",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "adj"
   },
   {
     "id": "b2-ebf8c5a6",
@@ -31759,7 +32524,8 @@
     "es": "ecuatorial",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "adj"
   },
   {
     "id": "b2-4a073902",
@@ -31767,7 +32533,8 @@
     "es": "tropical",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "adj"
   },
   {
     "id": "b2-fbc9ac06",
@@ -31815,7 +32582,8 @@
     "es": "horizonte",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "noun"
   },
   {
     "id": "b2-f56c1bb0",
@@ -31831,7 +32599,8 @@
     "es": "golfo",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "noun"
   },
   {
     "id": "b2-c4cc3529",
@@ -31847,7 +32616,8 @@
     "es": "pantano",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "noun"
   },
   {
     "id": "b2-56b5e813",
@@ -31855,7 +32625,8 @@
     "es": "laguna",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "noun"
   },
   {
     "id": "b2-0cd1e800",
@@ -31863,7 +32634,8 @@
     "es": "cascada",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "noun"
   },
   {
     "id": "b2-b32ab896",
@@ -31871,7 +32643,8 @@
     "es": "cordillera",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "noun"
   },
   {
     "id": "b2-ed58213d",
@@ -31879,7 +32652,8 @@
     "es": "llanura",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "noun"
   },
   {
     "id": "b2-20cddfb4",
@@ -31967,7 +32741,8 @@
     "es": "costero",
     "kind": "word",
     "source": "09",
-    "section": "20.2. Geografía"
+    "section": "20.2. Geografía",
+    "pos": "adj"
   },
   {
     "id": "b2-b0b0a11e",
@@ -32015,7 +32790,8 @@
     "es": "papelera",
     "kind": "word",
     "source": "09",
-    "section": "20.3. Espacios urbanos o rústicos"
+    "section": "20.3. Espacios urbanos o rústicos",
+    "pos": "noun"
   },
   {
     "id": "b2-391ebdbf",
@@ -32023,7 +32799,8 @@
     "es": "edificación",
     "kind": "word",
     "source": "09",
-    "section": "20.3. Espacios urbanos o rústicos"
+    "section": "20.3. Espacios urbanos o rústicos",
+    "pos": "noun"
   },
   {
     "id": "b2-3098cc7e",
@@ -32039,7 +32816,8 @@
     "es": "urbanización",
     "kind": "word",
     "source": "09",
-    "section": "20.3. Espacios urbanos o rústicos"
+    "section": "20.3. Espacios urbanos o rústicos",
+    "pos": "noun"
   },
   {
     "id": "b2-2fbc22e0",
@@ -32047,7 +32825,8 @@
     "es": "alrededores",
     "kind": "word",
     "source": "09",
-    "section": "20.3. Espacios urbanos o rústicos"
+    "section": "20.3. Espacios urbanos o rústicos",
+    "pos": "adj"
   },
   {
     "id": "b2-2ebb7e4c",
@@ -32055,7 +32834,8 @@
     "es": "ciudadano(s)",
     "kind": "word",
     "source": "09",
-    "section": "20.3. Espacios urbanos o rústicos"
+    "section": "20.3. Espacios urbanos o rústicos",
+    "pos": "noun"
   },
   {
     "id": "b2-f646e678",
@@ -32111,7 +32891,8 @@
     "es": "corral",
     "kind": "word",
     "source": "09",
-    "section": "20.3. Espacios urbanos o rústicos"
+    "section": "20.3. Espacios urbanos o rústicos",
+    "pos": "noun"
   },
   {
     "id": "b2-9b3bc143",
@@ -32119,7 +32900,8 @@
     "es": "ganadero",
     "kind": "word",
     "source": "09",
-    "section": "20.3. Espacios urbanos o rústicos"
+    "section": "20.3. Espacios urbanos o rústicos",
+    "pos": "noun"
   },
   {
     "id": "b2-ad627617",
@@ -32135,7 +32917,8 @@
     "es": "forestal",
     "kind": "word",
     "source": "09",
-    "section": "20.3. Espacios urbanos o rústicos"
+    "section": "20.3. Espacios urbanos o rústicos",
+    "pos": "adj"
   },
   {
     "id": "b2-4d5e7bd7",
@@ -32143,7 +32926,8 @@
     "es": "semilla",
     "kind": "word",
     "source": "09",
-    "section": "20.3. Espacios urbanos o rústicos"
+    "section": "20.3. Espacios urbanos o rústicos",
+    "pos": "noun"
   },
   {
     "id": "b2-5ee397b5",
@@ -32175,7 +32959,8 @@
     "es": "chaparrón",
     "kind": "word",
     "source": "09",
-    "section": "20.4. Clima y tiempo atmosférico"
+    "section": "20.4. Clima y tiempo atmosférico",
+    "pos": "noun"
   },
   {
     "id": "b2-e5c66851",
@@ -32191,7 +32976,8 @@
     "es": "relámpago",
     "kind": "word",
     "source": "09",
-    "section": "20.4. Clima y tiempo atmosférico"
+    "section": "20.4. Clima y tiempo atmosférico",
+    "pos": "noun"
   },
   {
     "id": "b2-f0e933b4",
@@ -32199,7 +32985,8 @@
     "es": "borrasca",
     "kind": "word",
     "source": "09",
-    "section": "20.4. Clima y tiempo atmosférico"
+    "section": "20.4. Clima y tiempo atmosférico",
+    "pos": "noun"
   },
   {
     "id": "b2-7709e95f",
@@ -32207,7 +32994,8 @@
     "es": "anticiclón",
     "kind": "word",
     "source": "09",
-    "section": "20.4. Clima y tiempo atmosférico"
+    "section": "20.4. Clima y tiempo atmosférico",
+    "pos": "noun"
   },
   {
     "id": "b2-8ff6c40c",
@@ -32503,7 +33291,8 @@
     "es": "dócil",
     "kind": "word",
     "source": "09",
-    "section": "20.5. Fauna"
+    "section": "20.5. Fauna",
+    "pos": "adj"
   },
   {
     "id": "b2-770a6a72",
@@ -32511,7 +33300,8 @@
     "es": "manso",
     "kind": "word",
     "source": "09",
-    "section": "20.5. Fauna"
+    "section": "20.5. Fauna",
+    "pos": "adj"
   },
   {
     "id": "b2-8eca84b7",
@@ -32527,7 +33317,8 @@
     "es": "feroz",
     "kind": "word",
     "source": "09",
-    "section": "20.5. Fauna"
+    "section": "20.5. Fauna",
+    "pos": "adj"
   },
   {
     "id": "b2-96266571",
@@ -32551,7 +33342,8 @@
     "es": "alga",
     "kind": "word",
     "source": "09",
-    "section": "20.6. Flora"
+    "section": "20.6. Flora",
+    "pos": "noun"
   },
   {
     "id": "b2-003d6b2e",
@@ -32567,7 +33359,8 @@
     "es": "arbusto",
     "kind": "word",
     "source": "09",
-    "section": "20.6. Flora"
+    "section": "20.6. Flora",
+    "pos": "noun"
   },
   {
     "id": "b2-a26fc812",
@@ -32575,7 +33368,8 @@
     "es": "pétalo",
     "kind": "word",
     "source": "09",
-    "section": "20.6. Flora"
+    "section": "20.6. Flora",
+    "pos": "noun"
   },
   {
     "id": "b2-9dd81e5f",
@@ -32583,7 +33377,8 @@
     "es": "savia",
     "kind": "word",
     "source": "09",
-    "section": "20.6. Flora"
+    "section": "20.6. Flora",
+    "pos": "noun"
   },
   {
     "id": "b2-faad42b8",
@@ -32591,7 +33386,8 @@
     "es": "polen",
     "kind": "word",
     "source": "09",
-    "section": "20.6. Flora"
+    "section": "20.6. Flora",
+    "pos": "noun"
   },
   {
     "id": "b2-7725817d",
@@ -32599,7 +33395,8 @@
     "es": "fruto",
     "kind": "word",
     "source": "09",
-    "section": "20.6. Flora"
+    "section": "20.6. Flora",
+    "pos": "noun"
   },
   {
     "id": "b2-ce594753",
@@ -32647,7 +33444,8 @@
     "es": "florero",
     "kind": "word",
     "source": "09",
-    "section": "20.6. Flora"
+    "section": "20.6. Flora",
+    "pos": "noun"
   },
   {
     "id": "b2-d89b5eab",
@@ -32655,7 +33453,8 @@
     "es": "maceta",
     "kind": "word",
     "source": "09",
-    "section": "20.6. Flora"
+    "section": "20.6. Flora",
+    "pos": "noun"
   },
   {
     "id": "b2-32da0ebc",
@@ -32663,7 +33462,8 @@
     "es": "jarrón",
     "kind": "word",
     "source": "09",
-    "section": "20.6. Flora"
+    "section": "20.6. Flora",
+    "pos": "noun"
   },
   {
     "id": "b2-ee3c9765",
@@ -32671,7 +33471,8 @@
     "es": "jardinera",
     "kind": "word",
     "source": "09",
-    "section": "20.6. Flora"
+    "section": "20.6. Flora",
+    "pos": "noun"
   },
   {
     "id": "b2-48309509",
@@ -32799,7 +33600,8 @@
     "es": "biosfera",
     "kind": "word",
     "source": "09",
-    "section": "20.7. Problemas medioambientales y desastres naturales"
+    "section": "20.7. Problemas medioambientales y desastres naturales",
+    "pos": "noun"
   },
   {
     "id": "b2-848bc84d",
@@ -32815,7 +33617,8 @@
     "es": "desertización",
     "kind": "word",
     "source": "09",
-    "section": "20.7. Problemas medioambientales y desastres naturales"
+    "section": "20.7. Problemas medioambientales y desastres naturales",
+    "pos": "noun"
   },
   {
     "id": "b2-27686d22",
@@ -32823,7 +33626,8 @@
     "es": "maremoto",
     "kind": "word",
     "source": "09",
-    "section": "20.7. Problemas medioambientales y desastres naturales"
+    "section": "20.7. Problemas medioambientales y desastres naturales",
+    "pos": "noun"
   },
   {
     "id": "b2-ef7fc558",
@@ -32887,7 +33691,8 @@
     "es": "biomasa",
     "kind": "word",
     "source": "09",
-    "section": "20.7. Problemas medioambientales y desastres naturales"
+    "section": "20.7. Problemas medioambientales y desastres naturales",
+    "pos": "noun"
   },
   {
     "id": "b2-ffe4b0bc",
@@ -32967,7 +33772,8 @@
     "es": "incendiar(se)",
     "kind": "word",
     "source": "09",
-    "section": "20.7. Problemas medioambientales y desastres naturales"
+    "section": "20.7. Problemas medioambientales y desastres naturales",
+    "pos": "verb"
   },
   {
     "id": "b2-c0ce5294",
@@ -32975,7 +33781,8 @@
     "es": "extinguir(se)",
     "kind": "word",
     "source": "09",
-    "section": "20.7. Problemas medioambientales y desastres naturales"
+    "section": "20.7. Problemas medioambientales y desastres naturales",
+    "pos": "verb"
   },
   {
     "id": "b2-2939b05c",
