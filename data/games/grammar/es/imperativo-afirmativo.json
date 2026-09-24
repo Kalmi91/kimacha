@@ -586,6 +586,7 @@
       "kind": "why",
       "id": "ia-why-01",
       "es": "Ven aquí, por favor.",
+      "target": "Ven",
       "tr": { "hu": "Gyere ide, kérlek.", "en": "Come here, please.", "es": "Ven aquí, por favor.", "de": "Komm her, bitte." },
       "options": [
         {
@@ -616,6 +617,7 @@
       "kind": "why",
       "id": "ia-why-02",
       "es": "Hable con el doctor, por favor.",
+      "target": "Hable",
       "tr": { "hu": "Beszéljen az orvossal, kérem.", "en": "Speak with the doctor, please.", "es": "Hable con el doctor, por favor.", "de": "Sprechen Sie mit dem Arzt, bitte." },
       "options": [
         {
@@ -646,6 +648,7 @@
       "kind": "why",
       "id": "ia-why-03",
       "es": "Hagan la tarea juntos.",
+      "target": "Hagan",
       "tr": { "hu": "Csináljátok meg együtt a házi feladatot.", "en": "Do the homework together.", "es": "Hagan la tarea juntos.", "de": "Macht die Hausaufgabe zusammen." },
       "options": [
         {
@@ -676,6 +679,7 @@
       "kind": "why",
       "id": "ia-why-04",
       "es": "Vamos a la playa este fin de semana.",
+      "target": "Vamos",
       "tr": { "hu": "Menjünk a strandra ezen a hétvégén.", "en": "Let's go to the beach this weekend.", "es": "Vamos a la playa este fin de semana.", "de": "Lass uns dieses Wochenende an den Strand gehen." },
       "options": [
         {
@@ -706,6 +710,7 @@
       "kind": "why",
       "id": "ia-why-05",
       "es": "Hablad más alto, por favor.",
+      "target": "Hablad",
       "tr": { "hu": "Beszéljetek hangosabban, kérlek.", "en": "Speak louder, please.", "es": "Hablad más alto, por favor.", "de": "Sprecht lauter, bitte." },
       "options": [
         {
@@ -736,6 +741,7 @@
       "kind": "why",
       "id": "ia-why-06",
       "es": "Siéntate aquí conmigo.",
+      "target": "Siéntate",
       "tr": { "hu": "Ülj le ide mellém.", "en": "Sit down here with me.", "es": "Siéntate aquí conmigo.", "de": "Setz dich hier zu mir." },
       "options": [
         {
@@ -766,6 +772,7 @@
       "kind": "why",
       "id": "ia-why-07",
       "es": "Dímelo ahora, por favor.",
+      "target": "Dímelo",
       "tr": { "hu": "Mondd el nekem most, kérlek.", "en": "Tell it to me now, please.", "es": "Dímelo ahora, por favor.", "de": "Sag es mir jetzt, bitte." },
       "options": [
         {
