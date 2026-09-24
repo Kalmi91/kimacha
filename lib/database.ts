@@ -5,6 +5,7 @@ import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_D
 import type { Sm2Card } from './sm2';
 import { addDays } from './sm2';
 import type { PcicLevel } from '@/data/pcic';
+import type { MistakeBatchRow } from './mistakes/deck';
 import { runMigrations, applyWordMerges } from './db/migrations';
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
 
@@ -71,6 +72,13 @@ export interface DB {
   getPcicLevel(): Promise<PcicLevel>;
   setPcicLevel(level: PcicLevel): Promise<void>;
   resetPcicCards(levelPrefix?: string): Promise<void>;
+  // PLAN-hibaim.md 2. lépés: a "Hibáim" kötegek (Settings -> Load my mistakes)
+  // és a hozzájuk tartozó SM-2 haladás, a pcic_cards-tól elkülönítve.
+  saveMistakeBatch(batchId: string, json: string, importedAt: string): Promise<void>;
+  getMistakeBatches(): Promise<MistakeBatchRow[]>;
+  getMistakeCards(): Promise<Sm2Card[]>;
+  upsertMistakeCard(card: Sm2Card): Promise<void>;
+  getMistakeDueCount(today: string): Promise<number>;
   exportAll(): Promise<BackupPayload>;
   importAll(payload: BackupPayload): Promise<void>;
 }
@@ -462,6 +470,68 @@ class SQLiteDB implements DB {
     } else {
       await db.runAsync('DELETE FROM pcic_cards');
     }
+  }
+
+  // PLAN-hibaim.md 2. lépés: a köteg JSON-ja egészében a `json` oszlopba
+  // kerül (a riport ebből olvas), `batchId` újratöltése lecseréli a tartalmat.
+  async saveMistakeBatch(batchId: string, json: string, importedAt: string): Promise<void> {
+    const db = await this.open();
+    await db.runAsync(
+      `INSERT INTO mistake_batches (batch_id, json, imported_at) VALUES (?, ?, ?)
+       ON CONFLICT(batch_id) DO UPDATE SET json = excluded.json, imported_at = excluded.imported_at`,
+      [batchId, json, importedAt]
+    );
+  }
+
+  async getMistakeBatches(): Promise<MistakeBatchRow[]> {
+    const db = await this.open();
+    const rows = await db.getAllAsync<any>('SELECT * FROM mistake_batches ORDER BY imported_at DESC');
+    return rows.map((r: any) => ({ batchId: r.batch_id, json: r.json, importedAt: r.imported_at }));
+  }
+
+  async getMistakeCards(): Promise<Sm2Card[]> {
+    const db = await this.open();
+    const rows = await db.getAllAsync<any>('SELECT * FROM mistake_cards');
+    return rows.map((r: any) => ({
+      itemId: r.item_id,
+      state: r.state,
+      step: r.step,
+      ease: r.ease,
+      interval: r.interval,
+      reps: r.reps,
+      lapses: r.lapses,
+      due: r.due,
+      lastReview: r.last_review,
+      introducedAt: r.introduced_at,
+      known: !!r.known,
+    }));
+  }
+
+  async upsertMistakeCard(card: Sm2Card): Promise<void> {
+    const db = await this.open();
+    await db.runAsync(
+      `INSERT INTO mistake_cards (item_id, state, step, ease, interval, reps, lapses, due, last_review, introduced_at, known)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+       ON CONFLICT(item_id) DO UPDATE SET
+         state = excluded.state, step = excluded.step, ease = excluded.ease,
+         interval = excluded.interval, reps = excluded.reps, lapses = excluded.lapses,
+         due = excluded.due, last_review = excluded.last_review, introduced_at = excluded.introduced_at,
+         known = excluded.known`,
+      [card.itemId, card.state, card.step, card.ease, card.interval, card.reps, card.lapses, card.due, card.lastReview, card.introducedAt, card.known ? 1 : 0]
+    );
+  }
+
+  // Only counts cards already introduced (a row exists once graded at least
+  // once, same as pcic_cards); a freshly loaded batch's still-new cards are
+  // not "due" yet, see lib/mistakes/deck.ts pickMistakeSession for the full
+  // session count (due + capped new).
+  async getMistakeDueCount(today: string): Promise<number> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>(
+      "SELECT COUNT(*) as c FROM mistake_cards WHERE (state = 'review' OR state = 'learning') AND due <= ?",
+      [today]
+    );
+    return row?.c ?? 0;
   }
 
   // Q0: full learning-state backup, every table across all pairs.

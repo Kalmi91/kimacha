@@ -30,6 +30,7 @@ import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
+import MistakesEntry from '@/components/learn/MistakesEntry';
 import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
 
@@ -308,7 +309,11 @@ export default function PcicScreen() {
   // koppintásra a szint-választó lap nyílik; a meglévő négy chip változatlan.
   // 5b: a régi egysoros szöveg-fejléc (`s.pcic.header`) helyett BadgeRow chip-sor;
   // a négy szám ugyanaz, csak külön i18n kulcsokból (badgeTotal/Due/New/Done).
+  // PLAN-hibaim.md 4. lépés: a "Hibáim" belépő önálló komponens (saját
+  // betöltéssel), hogy ez a fájl (785 sor) ne nőjön 800 fölé; csak akkor
+  // renderel, ha van betöltött köteg.
   const headerRow = (
+    <>
     <View style={styles.headerRow}>
       <View style={styles.headerBadges}>
         <Pressable style={[styles.levelChip, { backgroundColor: colors.tint }]} onPress={() => setLevelSheetOpen(true)}>
@@ -335,6 +340,8 @@ export default function PcicScreen() {
         </Pressable>
       </View>
     </View>
+    <MistakesEntry colors={colors} />
+    </>
   );
 
   if (loading) {
