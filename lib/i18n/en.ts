@@ -105,6 +105,9 @@ export default {
     // PLAN-play 13. lépés: the table-deck button, only on lessons that have a
     // conjugation table (lib/grammar/tableDeck.ts).
     practiceTable: (n: number) => `Practice the table · ${n} cells`,
+    // FB375 (PLAN-fb0923 6. lépés): the word-deck button, only on table-less
+    // lessons with >= 8 word cards (lib/grammar/tableDeck.ts wordCellsForLesson).
+    practiceWords: (n: number) => `Practice the words · ${n} cards`,
   },
   settings: {
     weeklyGoal: 'Weekly study goal',
@@ -279,6 +282,10 @@ export default {
   tableDeck: {
     chip: 'TABLE',
     promptCaption: 'person · verb',
+    // FB375 (PLAN-fb0923 6. lépés): a tábla nélküli leckék szó-paklija
+    // ugyanezt a képernyőt használja, csak ez a két string vált.
+    wordChip: 'WORD',
+    wordPromptCaption: 'meaning',
     progress: (done: number, total: number) => `${done} / ${total} done`,
     completeTitle: (n: number) => `All ${n} cells done 🎉`,
     startAgain: 'Start again',
