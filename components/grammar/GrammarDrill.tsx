@@ -247,6 +247,22 @@ function FormDrillItem({
   );
 }
 
+// FB376: a `focus` szót emeli ki a mondatban (félkövér + tint szín), hogy
+// látszódjon, melyik szóra kérdez a "why" item. `focus` nélkül a mondat
+// változatlan sima szöveg.
+function renderWhySentence(es: string, focus: string | undefined, tint: string) {
+  if (!focus) return es;
+  const idx = es.indexOf(focus);
+  if (idx === -1) return es;
+  return (
+    <>
+      {es.slice(0, idx)}
+      <Text style={{ fontWeight: '800', color: tint }}>{es.slice(idx, idx + focus.length)}</Text>
+      {es.slice(idx + focus.length)}
+    </>
+  );
+}
+
 // TASK-8 (D4, FB288): "Miért ez a mondat?", a tanuló nem a hiányzó szót
 // választja, hanem a szabályt, ami miatt a mondat úgy van, ahogy van. Egy
 // próbálkozás, mint a választós tételnél (2.3): jó → zöld + „következő"; rossz
@@ -280,7 +296,7 @@ function WhyDrillItem({
       {item.tense ? <TenseBadge tense={item.tense} colors={colors} /> : null}
       <View style={[styles.sentenceCard, { backgroundColor: colors.card }]}>
         <View style={styles.whySentenceRow}>
-          <Text style={[styles.sentence, { color: colors.text }]}>{item.es}</Text>
+          <Text style={[styles.sentence, { color: colors.text }]}>{renderWhySentence(item.es, item.focus, colors.tint)}</Text>
           <Pressable onPress={() => speak(item.es, speechLang(learnedLang))} hitSlop={10}>
             <Text style={styles.speak}>🔊</Text>
           </Pressable>
@@ -288,6 +304,9 @@ function WhyDrillItem({
         <Text style={[styles.whyTranslation, { color: colors.tabIconDefault }]}>
           {item.tr[contentLang] ?? item.tr.en}
         </Text>
+        {item.focus ? (
+          <Text style={[styles.whyFocusQuestion, { color: colors.tint }]}>{s.grammar.whyFocus(item.focus)}</Text>
+        ) : null}
       </View>
 
       <View style={styles.options}>
@@ -754,6 +773,7 @@ const styles = StyleSheet.create({
   whyBody: { gap: 12 },
   whySentenceRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10 },
   whyTranslation: { fontSize: 14, textAlign: 'center', marginTop: 6 },
+  whyFocusQuestion: { fontSize: 14, fontWeight: '700', textAlign: 'center', marginTop: 6 },
   speak: { fontSize: 18 },
   // NY3 (NYELVTAN.md "Első szelet"): igeidő-jelvény + mondat-átírás drill.
   tenseBadge: { alignSelf: 'flex-start', paddingVertical: 6, paddingHorizontal: 12, borderRadius: 999 },
