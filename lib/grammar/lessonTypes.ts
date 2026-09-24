@@ -103,6 +103,10 @@ export interface WhyItem {
   kind: 'why';
   id: string;
   es: string; // a mondat spanyolul, pl. "Soy profesor."
+  // FB376: a mondat pontos része, amire a kérdés vonatkozik (pl. "perro",
+  // több szó is lehet: "está cansado"); szóhatárral kell szerepelnie az
+  // `es` mezőben, lásd lib/grammar/whyTarget.ts.
+  target?: string;
   tr: Lang4; // a mondat fordítása; tr.es === es, a felolvasás miatt egységesen
   options: { text: Lang4; wrong?: Lang4 }[]; // 3 szabály-név; a nem jó opciókon `wrong` kötelező
   correctIndex: number;

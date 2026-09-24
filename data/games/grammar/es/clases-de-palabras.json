@@ -771,6 +771,7 @@
       "id": "cp-why-01",
       "kind": "why",
       "es": "El perro corre en el parque.",
+      "target": "perro",
       "tr": { "hu": "A kutya fut a parkban.", "en": "The dog runs in the park.", "es": "El perro corre en el parque.", "de": "Der Hund läuft im Park." },
       "options": [
         {
@@ -801,6 +802,7 @@
       "id": "cp-why-02",
       "kind": "why",
       "es": "Mi hermano trabaja mucho.",
+      "target": "mucho",
       "tr": { "hu": "A testvérem sokat dolgozik.", "en": "My brother works a lot.", "es": "Mi hermano trabaja mucho.", "de": "Mein Bruder arbeitet viel." },
       "options": [
         {
@@ -831,6 +833,7 @@
       "id": "cp-why-03",
       "kind": "why",
       "es": "El café está muy frío.",
+      "target": "frío",
       "tr": { "hu": "A kávé nagyon hideg.", "en": "The coffee is very cold.", "es": "El café está muy frío.", "de": "Der Kaffee ist sehr kalt." },
       "options": [
         {
@@ -861,6 +864,7 @@
       "id": "cp-why-04",
       "kind": "why",
       "es": "Ella habla rápidamente.",
+      "target": "rápidamente",
       "tr": { "hu": "Gyorsan beszél.", "en": "She speaks quickly.", "es": "Ella habla rápidamente.", "de": "Sie spricht schnell." },
       "options": [
         {
@@ -891,6 +895,7 @@
       "id": "cp-why-05",
       "kind": "why",
       "es": "Comer es bueno.",
+      "target": "Comer",
       "tr": { "hu": "Enni jó.", "en": "Eating is good.", "es": "Comer es bueno.", "de": "Essen ist gut." },
       "options": [
         {
@@ -921,6 +926,7 @@
       "id": "cp-why-06",
       "kind": "why",
       "es": "La casa blanca es mía.",
+      "target": "blanca",
       "tr": { "hu": "A fehér ház az enyém.", "en": "The white house is mine.", "es": "La casa blanca es mía.", "de": "Das weiße Haus ist meins." },
       "options": [
         {
@@ -951,6 +957,7 @@
       "id": "cp-why-07",
       "kind": "why",
       "es": "Los niños comen pan.",
+      "target": "comen",
       "tr": { "hu": "A gyerekek kenyeret esznek.", "en": "The children eat bread.", "es": "Los niños comen pan.", "de": "Die Kinder essen Brot." },
       "options": [
         {

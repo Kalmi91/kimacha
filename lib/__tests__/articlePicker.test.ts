@@ -2,6 +2,7 @@ import {
   ARTICLE_OPTIONS,
   articleOf,
   articlePickerApplies,
+  articleRowAppliesForPos,
   bodyOf,
   composeAnswer,
 } from '../articlePicker';
@@ -98,5 +99,29 @@ describe('articlePickerApplies on sentence cards (FB291)', () => {
     expect(articlePickerApplies('es', true, 'el fin de semana')).toBe(true);
     expect(articlePickerApplies('es', true, 'perro')).toBe(true);
     expect(articlePickerApplies('es', true, 'voy a viajar')).toBe(false);
+  });
+});
+
+describe('articleRowAppliesForPos (FB214 kiegészítés, PCIC chip)', () => {
+  it('applies when the pos is unknown (null), the ⊘ answer is still worth asking', () => {
+    expect(articleRowAppliesForPos(null)).toBe(true);
+  });
+
+  it('applies on a noun', () => {
+    expect(articleRowAppliesForPos({ pos: 'noun' })).toBe(true);
+    expect(articleRowAppliesForPos({ pos: 'noun', gender: 'f' })).toBe(true);
+  });
+
+  it('does not apply once the chip already names a non-noun part of speech', () => {
+    expect(articleRowAppliesForPos({ pos: 'verb' })).toBe(false);
+    expect(articleRowAppliesForPos({ pos: 'adj' })).toBe(false);
+    expect(articleRowAppliesForPos({ pos: 'adv' })).toBe(false);
+    expect(articleRowAppliesForPos({ pos: 'pron' })).toBe(false);
+    expect(articleRowAppliesForPos({ pos: 'prep' })).toBe(false);
+    expect(articleRowAppliesForPos({ pos: 'num' })).toBe(false);
+    expect(articleRowAppliesForPos({ pos: 'phrase' })).toBe(false);
+    expect(articleRowAppliesForPos({ pos: 'conj' })).toBe(false);
+    expect(articleRowAppliesForPos({ pos: 'prefix' })).toBe(false);
+    expect(articleRowAppliesForPos({ pos: 'suffix' })).toBe(false);
   });
 });

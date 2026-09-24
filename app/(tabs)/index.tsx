@@ -11,9 +11,17 @@ import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
 import { pcicItemsForLevel, findPcicItem, type PcicLevel } from '@/data/pcic';
 import { gradePcicAnswer, suggestedGrade, type PcicGrade } from '@/lib/pcicMatch';
-import { ARTICLE_OPTIONS, articleOf, articlePickerApplies, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
+import {
+  ARTICLE_OPTIONS,
+  articleOf,
+  articlePickerApplies,
+  articleRowAppliesForPos,
+  composeAnswer,
+  type ArticlePick,
+} from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
+import { countDoneToday, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC } from '@/lib/pcicSession';
+import { applyChainOrder } from '@/lib/pcicChains';
 import { cardsForLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -56,6 +64,9 @@ export default function PcicScreen() {
   // s2 (anki-ui-terv.html): a Beállítások ékezet-szigor kapcsolója a PCIC
   // gépelésén is dönt (gradePcicAnswer strictAccents paramja).
   const [strictAccents, setStrictAccents] = useState(false);
+  // FB364 (PLAN-fb0923 5. lépés/D2): a Beállítások "Missed word comes back
+  // after" steppere; a requeueAfterGrade "again" ágának a returnAt-ját adja.
+  const [againDelaySec, setAgainDelaySec] = useState(DEFAULT_AGAIN_DELAY_SEC);
   const [allCards, setAllCards] = useState<Map<string, Sm2Card>>(new Map());
   const [queue, setQueue] = useState<Sm2Card[]>([]);
   const [typedAnswer, setTypedAnswer] = useState('');
@@ -93,15 +104,17 @@ export default function PcicScreen() {
     const cards = cardsForLevel(rawCards, lvl);
     const strict = await db.getStrictAccents();
     const newLimit = await db.getDailyNewLimit();
+    const delaySec = await db.getAgainDelaySec();
     const spellingRows = await db.getPcicSpellingList();
     setLevel(lvl);
     setAllLevelCards(rawCards);
     setStrictAccents(strict);
     setDailyNewLimit(newLimit);
+    setAgainDelaySec(delaySec);
     setPcicSpellingIds(new Set(spellingRows.map((r) => r.itemId)));
     setToday(day);
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
-    setQueue(pickSm2Session(cards, newOrder, day, newLimit));
+    setQueue(pickSm2Session(cards, applyChainOrder(newOrder, cards, lvl), day, newLimit));
     setTypedAnswer('');
     setGrade(null);
     setSessionAnswered(0);
@@ -176,8 +189,10 @@ export default function PcicScreen() {
     return next;
   };
 
-  const advance = (next: Sm2Card) => {
-    setQueue((prev) => requeueAfterGrade(prev, next, today));
+  // FB364: a `grade`-et is átadja a requeuenak, hogy csak a "Nem tudtam"
+  // (again) kártya kapjon returnAt-időzítőt, a "Tudtam" (good) ne.
+  const advance = (next: Sm2Card, g: Sm2Grade) => {
+    setQueue((prev) => requeueAfterGrade(prev, next, today, g, Date.now(), againDelaySec));
     setTypedAnswer('');
     setArticlePick('');
     setGrade(null);
@@ -221,7 +236,7 @@ export default function PcicScreen() {
 
   const handleGrade = async (g: Sm2Grade) => {
     const next = await commitGrade(g);
-    if (next) advance(next);
+    if (next) advance(next, g);
   };
 
   const handleUndo = async () => {
@@ -285,7 +300,8 @@ export default function PcicScreen() {
   const handleMoreNew = () => {
     const next = extraNew + 10;
     setExtraNew(next);
-    setQueue(pickSm2Session([...allCards.values()], newOrder, today, dailyNewLimit + next));
+    const activeCards = [...allCards.values()];
+    setQueue(pickSm2Session(activeCards, applyChainOrder(newOrder, activeCards, level), today, dailyNewLimit + next));
   };
 
   // s1 (anki-ui-terv.html): a fejléc ELSŐ chipje a kiválasztott szint,
@@ -401,6 +417,13 @@ export default function PcicScreen() {
   // 5c: szófaj-chip a szó alatt, a spanyol alakból (lib/pcicPos.ts, döntés 6b).
   const pos = posOf(currentItem);
 
+  // FB363/FB367: régió-chip (PCIC `[Régió]` zárójel tartalma) és mx-chip
+  // (spanyolországi/mexikói köznyelvi eltérés) a szófaj-chip mellett.
+  const regionChipLabel = currentItem.region
+    ? `${currentItem.region.toLowerCase() === 'méxico' ? '🇲🇽' : '🌎'} ${currentItem.region}`
+    : undefined;
+  const mxChipLabel = currentItem.mx ? `🇲🇽 ${currentItem.mx}` : undefined;
+
   // T1 (anki-ui-terv.html): a dokkolt Check sáv felfedés után "Next"-re vált,
   // ugyanazzal a hellyel/mérettel, a javasolt értékeléssel a feliratban.
   const nextGrade = grade ? suggestedGrade(grade) : null;
@@ -457,11 +480,24 @@ export default function PcicScreen() {
                 </Text>
               </View>
             )}
+            {regionChipLabel && (
+              <View style={[styles.posChip, { backgroundColor: colors.background }]}>
+                <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>{regionChipLabel}</Text>
+              </View>
+            )}
+            {mxChipLabel && (
+              <View style={[styles.posChip, { backgroundColor: colors.background }]}>
+                <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>{mxChipLabel}</Text>
+              </View>
+            )}
             <Text style={[styles.sectionText, { color: colors.tabIconDefault }]}>{currentItem.section}</Text>
           </View>
 
-          {/* SZ7 (SZAVAK.md): FB188 névelő-gombsor a Learn fülről, ⊘ az alapállás. */}
-          {articlePickerApplies('es', currentItem.kind !== 'sentence', currentItem.es) && (
+          {/* SZ7 (SZAVAK.md): FB188 névelő-gombsor a Learn fülről, ⊘ az alapállás.
+              FB214 kiegészítés: a PCIC-en a chip már mutatja, ha nem főnév, a
+              sor csak noun/ismeretlen szófajnál jár (lib/articlePicker.ts). */}
+          {articlePickerApplies('es', currentItem.kind !== 'sentence', currentItem.es) &&
+            articleRowAppliesForPos(pos) && (
             <View style={styles.articleRow}>
               {([...ARTICLE_OPTIONS, ''] as ArticlePick[]).map((opt) => {
                 const active = articlePick === opt;

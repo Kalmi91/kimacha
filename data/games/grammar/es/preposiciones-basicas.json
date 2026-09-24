@@ -480,6 +480,7 @@
       "kind": "why",
       "id": "pb-why-01",
       "es": "Voy a la escuela.",
+      "target": "a la escuela",
       "tr": { "hu": "Iskolába megyek.", "en": "I go to school.", "es": "Voy a la escuela.", "de": "Ich gehe zur Schule." },
       "options": [
         {
@@ -510,6 +511,7 @@
       "kind": "why",
       "id": "pb-why-02",
       "es": "Es el libro de Ana.",
+      "target": "de Ana",
       "tr": { "hu": "Ez Ana könyve.", "en": "It's Ana's book.", "es": "Es el libro de Ana.", "de": "Das ist Anas Buch." },
       "options": [
         {
@@ -540,6 +542,7 @@
       "kind": "why",
       "id": "pb-why-03",
       "es": "Estoy en casa.",
+      "target": "en casa",
       "tr": { "hu": "Otthon vagyok.", "en": "I am at home.", "es": "Estoy en casa.", "de": "Ich bin zu Hause." },
       "options": [
         {
@@ -570,6 +573,7 @@
       "kind": "why",
       "id": "pb-why-04",
       "es": "La clase empieza a las ocho.",
+      "target": "a las ocho",
       "tr": { "hu": "Az óra nyolckor kezdődik.", "en": "Class starts at eight.", "es": "La clase empieza a las ocho.", "de": "Der Unterricht beginnt um acht." },
       "options": [
         {
@@ -600,6 +604,7 @@
       "kind": "why",
       "id": "pb-why-05",
       "es": "Soy de Hungría.",
+      "target": "de Hungría",
       "tr": { "hu": "Magyarországról vagyok.", "en": "I am from Hungary.", "es": "Soy de Hungría.", "de": "Ich bin aus Ungarn." },
       "options": [
         {
@@ -630,6 +635,7 @@
       "kind": "why",
       "id": "pb-why-06",
       "es": "El examen es en mayo.",
+      "target": "en mayo",
       "tr": { "hu": "A vizsga májusban van.", "en": "The exam is in May.", "es": "El examen es en mayo.", "de": "Die Prüfung ist im Mai." },
       "options": [
         {
@@ -660,6 +666,7 @@
       "kind": "why",
       "id": "pb-why-07",
       "es": "Vamos en metro.",
+      "target": "en metro",
       "tr": { "hu": "Metróval megyünk.", "en": "We go by metro.", "es": "Vamos en metro.", "de": "Wir fahren mit der U-Bahn." },
       "options": [
         {

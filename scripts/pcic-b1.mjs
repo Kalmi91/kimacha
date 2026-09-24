@@ -18,6 +18,11 @@
 // a1/a2 az A1-A2 inventario md-kbol olvas, b1/b2 a B1-B2 md-kbol.
 //
 // Usage: node scripts/pcic-b1.mjs [--level a1|a2|b1|b2]
+//
+// FIGYELEM (FB363/FB367, 2026-09-23): a *-all.json / *-sample.json most kezzel
+// javitva van (region-cimke szetszedett zarojel-parok osszevonva, `region` es
+// `mx` mezok). Ujrafutas felulirja ezeket: a kezzel felvitt `region`, `mx`,
+// `pos` mezok es a modositott `es` ertekek elvesznek.
 
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -121,14 +126,16 @@ function extractLeafLis(tdContent) {
 // Headword-text rules (a <li> elso resze)
 // ---------------------------------------------------------------------------
 
-// Rule 1: split on "," / ";" but not inside parentheses.
+// Rule 1: split on "," / ";" but not inside parentheses or square brackets
+// (a "[México, Cuba y Venezuela] a la mejor" region-tag list must survive as
+// one piece, not "[México" + "Cuba y Venezuela] a la mejor"; FB363).
 function splitOutsideParens(text) {
   const parts = [];
   let depth = 0;
   let buf = '';
   for (const ch of text) {
-    if (ch === '(') depth++;
-    if (ch === ')') depth = Math.max(0, depth - 1);
+    if (ch === '(' || ch === '[') depth++;
+    if (ch === ')' || ch === ']') depth = Math.max(0, depth - 1);
     if ((ch === ',' || ch === ';') && depth === 0) {
       parts.push(buf);
       buf = '';

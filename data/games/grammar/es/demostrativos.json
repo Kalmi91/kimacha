@@ -852,6 +852,7 @@
       "id": "dem-why-01",
       "kind": "why",
       "es": "Este libro es mío.",
+      "target": "Este",
       "tr": {
         "hu": "Ez a könyv az enyém.",
         "en": "This book is mine.",
@@ -902,6 +903,7 @@
       "id": "dem-why-02",
       "kind": "why",
       "es": "Ese coche es tuyo.",
+      "target": "Ese",
       "tr": {
         "hu": "Az az autó a tiéd.",
         "en": "That car is yours.",
@@ -952,6 +954,7 @@
       "id": "dem-why-03",
       "kind": "why",
       "es": "Aquellas montañas están lejos.",
+      "target": "Aquellas",
       "tr": {
         "hu": "Azok a hegyek messze vannak.",
         "en": "Those mountains are far away.",
@@ -1002,6 +1005,7 @@
       "id": "dem-why-04",
       "kind": "why",
       "es": "¿Qué es esto?",
+      "target": "esto",
       "tr": {
         "hu": "Ez mi?",
         "en": "What is this?",
@@ -1052,6 +1056,7 @@
       "id": "dem-why-05",
       "kind": "why",
       "es": "Esta semana tengo mucho trabajo.",
+      "target": "Esta",
       "tr": {
         "hu": "Ezen a héten sok munkám van.",
         "en": "This week I have a lot of work.",
@@ -1102,6 +1107,7 @@
       "id": "dem-why-06",
       "kind": "why",
       "es": "Esos zapatos son tuyos.",
+      "target": "Esos",
       "tr": {
         "hu": "Azok a cipők a tieid.",
         "en": "Those shoes are yours.",
@@ -1152,6 +1158,7 @@
       "id": "dem-why-07",
       "kind": "why",
       "es": "Aquellos años fueron difíciles.",
+      "target": "Aquellos",
       "tr": {
         "hu": "Azok az évek nehezek voltak.",
         "en": "Those years were hard.",

@@ -658,6 +658,7 @@
       "kind": "why",
       "id": "ct-why-01",
       "es": "Si llueve, no salimos.",
+      "target": "salimos",
       "tr": { "hu": "Ha esik, nem megyünk ki.", "en": "If it rains, we don't go out.", "es": "Si llueve, no salimos.", "de": "Wenn es regnet, gehen wir nicht raus." },
       "options": [
         {
@@ -678,6 +679,7 @@
       "kind": "why",
       "id": "ct-why-02",
       "es": "Si estudias, aprobarás.",
+      "target": "aprobarás",
       "tr": { "hu": "Ha tanulsz, át fogsz menni.", "en": "If you study, you will pass.", "es": "Si estudias, aprobarás.", "de": "Wenn du lernst, wirst du bestehen." },
       "options": [
         {
@@ -698,6 +700,7 @@
       "kind": "why",
       "id": "ct-why-03",
       "es": "Si tienes frío, cierra la ventana.",
+      "target": "cierra",
       "tr": { "hu": "Ha fázol, csukd be az ablakot.", "en": "If you're cold, close the window.", "es": "Si tienes frío, cierra la ventana.", "de": "Wenn dir kalt ist, schließ das Fenster." },
       "options": [
         {
@@ -718,6 +721,7 @@
       "kind": "why",
       "id": "ct-why-04",
       "es": "Si llegas tarde, vamos a empezar sin ti.",
+      "target": "vamos a empezar",
       "tr": { "hu": "Ha később érkezel, nélküled fogunk kezdeni.", "en": "If you arrive late, we're going to start without you.", "es": "Si llegas tarde, vamos a empezar sin ti.", "de": "Wenn du spät kommst, fangen wir ohne dich an." },
       "options": [
         {
@@ -738,6 +742,7 @@
       "kind": "why",
       "id": "ct-why-05",
       "es": "Cuando llueve, no salimos.",
+      "target": "Cuando",
       "tr": { "hu": "Amikor esik, nem megyünk ki.", "en": "When it rains, we don't go out.", "es": "Cuando llueve, no salimos.", "de": "Wenn es regnet (jedes Mal), gehen wir nicht raus." },
       "options": [
         {
@@ -758,6 +763,7 @@
       "kind": "why",
       "id": "ct-why-06",
       "es": "Te llamo si puedo.",
+      "target": "si puedo",
       "tr": { "hu": "Felhívlak, ha tudok.", "en": "I'll call you if I can.", "es": "Te llamo si puedo.", "de": "Ich rufe dich an, wenn ich kann." },
       "options": [
         {
@@ -778,6 +784,7 @@
       "kind": "why",
       "id": "ct-why-07",
       "es": "Si necesita ayuda, llame ahora.",
+      "target": "llame",
       "tr": { "hu": "Ha segítségre van szüksége, hívjon most.", "en": "If you need help, call now.", "es": "Si necesita ayuda, llame ahora.", "de": "Wenn Sie Hilfe brauchen, rufen Sie jetzt an." },
       "options": [
         {

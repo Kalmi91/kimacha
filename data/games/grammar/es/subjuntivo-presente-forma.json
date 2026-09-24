@@ -1068,6 +1068,7 @@
       "kind": "why",
       "id": "sp-why-01",
       "es": "Espero que hables con ella.",
+      "target": "hables",
       "tr": {
         "hu": "Remélem, beszélsz vele.",
         "en": "I hope you talk to her.",
@@ -1122,6 +1123,7 @@
       "kind": "why",
       "id": "sp-why-02",
       "es": "Es posible que comas aquí.",
+      "target": "comas",
       "tr": {
         "hu": "Lehet, hogy itt eszel.",
         "en": "It's possible you eat here.",
@@ -1176,6 +1178,7 @@
       "kind": "why",
       "id": "sp-why-03",
       "es": "Dudo que tengas tiempo.",
+      "target": "tengas",
       "tr": {
         "hu": "Kétlem, hogy van időd.",
         "en": "I doubt you have time.",
@@ -1230,6 +1233,7 @@
       "kind": "why",
       "id": "sp-why-04",
       "es": "Espero que puedas hablar español.",
+      "target": "puedas",
       "tr": {
         "hu": "Remélem, tudsz spanyolul beszélni.",
         "en": "I hope you can speak Spanish.",
@@ -1284,6 +1288,7 @@
       "kind": "why",
       "id": "sp-why-05",
       "es": "No creo que pidan un libro.",
+      "target": "pidan",
       "tr": {
         "hu": "Nem hiszem, hogy könyvet kérnek.",
         "en": "I don't think they're asking for a book.",
@@ -1338,6 +1343,7 @@
       "kind": "why",
       "id": "sp-why-06",
       "es": "No pienso que sea tarde.",
+      "target": "sea",
       "tr": {
         "hu": "Nem gondolom, hogy késő van.",
         "en": "I don't think it's late.",
@@ -1392,6 +1398,7 @@
       "kind": "why",
       "id": "sp-why-07",
       "es": "Es posible que vayamos hoy.",
+      "target": "vayamos",
       "tr": {
         "hu": "Lehet, hogy ma megyünk.",
         "en": "It's possible we go today.",
@@ -1446,6 +1453,7 @@
       "kind": "why",
       "id": "sp-why-08",
       "es": "Dudo que sepas la verdad.",
+      "target": "sepas",
       "tr": {
         "hu": "Kétlem, hogy tudod az igazat.",
         "en": "I doubt you know the truth.",

@@ -829,6 +829,7 @@
       "kind": "why",
       "id": "eg-why-01",
       "es": "Estoy hablando por teléfono.",
+      "target": "hablando",
       "tr": {
         "hu": "Éppen telefonálok.",
         "en": "I am talking on the phone.",
@@ -879,6 +880,7 @@
       "kind": "why",
       "id": "eg-why-02",
       "es": "Están viviendo en México.",
+      "target": "viviendo",
       "tr": {
         "hu": "Éppen Mexikóban élnek.",
         "en": "They are living in Mexico right now.",
@@ -929,6 +931,7 @@
       "kind": "why",
       "id": "eg-why-03",
       "es": "Estoy leyendo un libro.",
+      "target": "leyendo",
       "tr": {
         "hu": "Éppen olvasok egy könyvet.",
         "en": "I am reading a book.",
@@ -979,6 +982,7 @@
       "kind": "why",
       "id": "eg-why-04",
       "es": "El bebé está durmiendo.",
+      "target": "durmiendo",
       "tr": {
         "hu": "A baba éppen alszik.",
         "en": "The baby is sleeping.",
@@ -1029,6 +1033,7 @@
       "kind": "why",
       "id": "eg-why-05",
       "es": "Estamos trabajando mucho hoy.",
+      "target": "trabajando",
       "tr": {
         "hu": "Sokat dolgozunk ma.",
         "en": "We are working a lot today.",
@@ -1079,6 +1084,7 @@
       "kind": "why",
       "id": "eg-why-06",
       "es": "¿Qué estás diciendo?",
+      "target": "diciendo",
       "tr": {
         "hu": "Mit mondasz éppen?",
         "en": "What are you saying right now?",
@@ -1129,6 +1135,7 @@
       "kind": "why",
       "id": "eg-why-07",
       "es": "Están comiendo.",
+      "target": "comiendo",
       "tr": {
         "hu": "Éppen esznek.",
         "en": "They are eating.",
