@@ -106,6 +106,15 @@ if (badHeadwords.length) {
   console.error(`Nem létező id-ra mutató 'headword' (${badHeadwords.length}): ${badHeadwords.join(', ')}`);
 }
 
+// 7. FB361-362: ha van kézzel felvitt `pos` mező, csak ismert szófaj-érték
+//    engedett; a mező hiánya nem hiba (posOf korpusz/szabály-fallbackje adja).
+const KNOWN_POS = new Set(['noun', 'verb', 'adj', 'adv', 'pron', 'prep', 'num', 'phrase']);
+const badPos = all.filter((item) => item.pos != null && !KNOWN_POS.has(item.pos)).map((item) => item.id);
+if (badPos.length) {
+  errors += badPos.length;
+  console.error(`Ismeretlen 'pos' érték (${badPos.length}): ${badPos.join(', ')}`);
+}
+
 if (errors) {
   console.error(`pcic:check FAIL, ${errors} hiba`);
   process.exit(1);
