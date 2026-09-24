@@ -926,6 +926,7 @@
       "kind": "why",
       "id": "ei-why-01",
       "es": "Dijo que tenía hambre.",
+      "target": "Dijo",
       "tr": {
         "hu": "Azt mondta, hogy éhes.",
         "en": "He said he was hungry.",
@@ -976,6 +977,7 @@
       "kind": "why",
       "id": "ei-why-02",
       "es": "Preguntó si tenía tiempo.",
+      "target": "si",
       "tr": {
         "hu": "Megkérdezte, van-e ideje.",
         "en": "He asked if she had time.",
@@ -1026,6 +1028,7 @@
       "kind": "why",
       "id": "ei-why-03",
       "es": "Preguntó dónde vivía.",
+      "target": "dónde",
       "tr": {
         "hu": "Megkérdezte, hol lakik.",
         "en": "She asked where he lived.",
@@ -1076,6 +1079,7 @@
       "kind": "why",
       "id": "ei-why-04",
       "es": "Me pidió que cerrara la puerta.",
+      "target": "cerrara",
       "tr": {
         "hu": "Megkért, hogy csukjam be az ajtót.",
         "en": "She asked me to close the door.",
@@ -1126,6 +1130,7 @@
       "kind": "why",
       "id": "ei-why-05",
       "es": "Dijo que vendría al día siguiente.",
+      "target": "vendría",
       "tr": {
         "hu": "Azt mondta, hogy másnap jön.",
         "en": "He said he would come the next day.",
@@ -1176,6 +1181,7 @@
       "kind": "why",
       "id": "ei-why-06",
       "es": "El profesor dijo que la Tierra es redonda.",
+      "target": "Tierra es redonda",
       "tr": {
         "hu": "A tanár azt mondta, hogy a Föld gömbölyű.",
         "en": "The teacher said the Earth is round.",
@@ -1226,6 +1232,7 @@
       "kind": "why",
       "id": "ei-why-07",
       "es": "Dice que viene mañana.",
+      "target": "Dice",
       "tr": {
         "hu": "Azt mondja, hogy holnap jön.",
         "en": "He says he's coming tomorrow.",

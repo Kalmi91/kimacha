@@ -943,6 +943,7 @@
       "kind": "why",
       "id": "fc-why-01",
       "es": "Te llamo para que me ayudes.",
+      "target": "para que",
       "tr": {
         "hu": "Hívlak, hogy segíts nekem.",
         "en": "I'm calling you so that you help me.",
@@ -993,6 +994,7 @@
       "kind": "why",
       "id": "fc-why-02",
       "es": "No salgo porque llueve mucho.",
+      "target": "porque",
       "tr": {
         "hu": "Nem megyek ki, mert nagyon esik.",
         "en": "I'm not going out because it's raining a lot.",
@@ -1043,6 +1045,7 @@
       "kind": "why",
       "id": "fc-why-03",
       "es": "Estudio para aprobar el examen.",
+      "target": "para",
       "tr": {
         "hu": "Tanulok, hogy átmenjek a vizsgán.",
         "en": "I study to pass the exam.",
@@ -1093,6 +1096,7 @@
       "kind": "why",
       "id": "fc-why-04",
       "es": "Como llueve, no salgo.",
+      "target": "Como",
       "tr": {
         "hu": "Mivel esik, nem megyek ki.",
         "en": "Since it's raining, I'm not going out.",
@@ -1143,6 +1147,7 @@
       "kind": "why",
       "id": "fc-why-05",
       "es": "Vengo a que me ayudes.",
+      "target": "a que",
       "tr": {
         "hu": "Azért jövök, hogy segíts nekem.",
         "en": "I've come for you to help me.",
@@ -1193,6 +1198,7 @@
       "kind": "why",
       "id": "fc-why-06",
       "es": "Puesto que lo sabes, dímelo.",
+      "target": "Puesto que",
       "tr": {
         "hu": "Mivel tudod, mondd el nekem.",
         "en": "Given that you know it, tell it to me.",
@@ -1243,6 +1249,7 @@
       "kind": "why",
       "id": "fc-why-07",
       "es": "Trabajo para ganar dinero.",
+      "target": "para",
       "tr": {
         "hu": "Dolgozom, hogy pénzt keressek.",
         "en": "I work to earn money.",
