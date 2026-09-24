@@ -97,3 +97,25 @@ describe('GrammarDrill: why item focus (FB376)', () => {
     expect(screen.queryByText(/What is/)).toBeNull();
   });
 });
+
+// FB379: the translation gives away the answer, so it starts hidden, a
+// button reveals it, and it shows on its own once the item is answered.
+describe('GrammarDrill: why item translation (FB379)', () => {
+  it('starts hidden behind a button', () => {
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['why']} />);
+    expect(screen.queryByText('Tanár vagyok.')).toBeNull();
+    expect(screen.getByTestId('why-show-translation')).toBeTruthy();
+  });
+
+  it('shows after tapping the button', () => {
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['why']} />);
+    fireEvent.press(screen.getByTestId('why-show-translation'));
+    expect(screen.queryByText('Tanár vagyok.')).toBeTruthy();
+  });
+
+  it('shows automatically once answered, even without tapping the button', () => {
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['why']} />);
+    fireEvent.press(screen.getByText('foglalkozás'));
+    expect(screen.queryByText('Tanár vagyok.')).toBeTruthy();
+  });
+});
