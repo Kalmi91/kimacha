@@ -444,6 +444,26 @@ function auditLessonBody(topic, path) {
         if (!Array.isArray(block.rows) || block.rows.length < 1) {
           p1.push({ path: blockPath, issue: 'table needs >=1 row' });
         }
+        // FB378: enPrompt, when present, is rows x verb-columns (rows minus
+        // the person column), one English sentence per cell.
+        if (block.enPrompt !== undefined) {
+          const verbCols = (block.header?.length ?? 1) - 1;
+          if (!Array.isArray(block.enPrompt) || block.enPrompt.length !== (block.rows?.length ?? 0)) {
+            p1.push({ path: blockPath, issue: `enPrompt needs ${block.rows?.length ?? 0} rows, has ${block.enPrompt?.length ?? 0}` });
+          } else {
+            block.enPrompt.forEach((row, ri) => {
+              if (!Array.isArray(row) || row.length !== verbCols) {
+                p1.push({ path: `${blockPath} enPrompt[${ri}]`, issue: `needs ${verbCols} cells, has ${row?.length ?? 0}` });
+              } else {
+                row.forEach((cell, ci) => {
+                  if (typeof cell !== 'string' || !cell.trim()) {
+                    p1.push({ path: `${blockPath} enPrompt[${ri}][${ci}]`, issue: 'empty enPrompt cell' });
+                  }
+                });
+              }
+            });
+          }
+        }
         break;
       case 'contrast':
         if (!Array.isArray(block.pairs) || block.pairs.length === 0) {
