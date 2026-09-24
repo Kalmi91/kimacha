@@ -49,6 +49,9 @@ export default {
         preposition: 'PREPOSITION',
       } as Record<string, string>,
       markWrong: 'Not this one. Look for the word that plays that role.',
+      // FB376: a `why` drill kérdés-sora, ha az itemnek van `target` mezője
+      // (a kiemelt szó/szerkezet, amire a kérdés vonatkozik).
+      whyQuestion: (target: string) => `Why «${target}»?`,
     },
   },
   grammar: {
