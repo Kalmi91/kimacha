@@ -6,6 +6,7 @@ import type { Sm2Card } from './sm2';
 import { addDays } from './sm2';
 import type { PcicLevel } from '@/data/pcic';
 import { runMigrations, applyWordMerges } from './db/migrations';
+import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
 
 // PLAN-play 10. lépés: egy meglévő telepítésen a haladás ma "b1-..." id-kkel
 // forog, ezért az oszlop hiánya (régi DB) B1-re esik vissza, nem A1-re.
@@ -39,6 +40,11 @@ export interface DB {
   updatePcicSpellingStep(itemId: string, step: number, due: string): Promise<void>;
   getStrictAccents(): Promise<boolean>;
   setStrictAccents(v: boolean): Promise<void>;
+  // FB364: a PCIC "rontott" (again) kártya ennyi másodperc múlva jön
+  // mindenképp vissza (lib/pcicSession.ts); a táblázat-pakli cooldownja
+  // (lib/grammar/tableDeck.ts) is ugyanebből olvas.
+  getAgainDelaySec(): Promise<number>;
+  setAgainDelaySec(sec: number): Promise<void>;
   // FB188: a névelő-gombsor a gépelős spanyol főnév-kártyán, ki-be kapcsolható.
   getArticlePicker(): Promise<boolean>;
   setArticlePicker(v: boolean): Promise<void>;
@@ -244,6 +250,22 @@ class SQLiteDB implements DB {
     await db.runAsync(
       'INSERT INTO learn_settings (pair, strict_accents) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET strict_accents = excluded.strict_accents',
       [this.activePair, v ? 1 : 0]
+    );
+  }
+
+  // FB364 (PLAN-fb0923 5. lépés, D2): állítható, hány másodperc múlva jön
+  // mindenképp vissza egy rontott PCIC-kártya (lib/pcicSession.ts).
+  async getAgainDelaySec(): Promise<number> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT again_delay_sec FROM learn_settings WHERE pair = ?', [this.activePair]);
+    return typeof row?.again_delay_sec === 'number' ? row.again_delay_sec : DEFAULT_AGAIN_DELAY_SEC;
+  }
+
+  async setAgainDelaySec(sec: number): Promise<void> {
+    const db = await this.open();
+    await db.runAsync(
+      'INSERT INTO learn_settings (pair, again_delay_sec) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET again_delay_sec = excluded.again_delay_sec',
+      [this.activePair, sec]
     );
   }
 

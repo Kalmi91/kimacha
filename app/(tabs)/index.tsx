@@ -20,7 +20,7 @@ import {
   type ArticlePick,
 } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
+import { countDoneToday, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC } from '@/lib/pcicSession';
 import { cardsForLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -63,6 +63,9 @@ export default function PcicScreen() {
   // s2 (anki-ui-terv.html): a Beállítások ékezet-szigor kapcsolója a PCIC
   // gépelésén is dönt (gradePcicAnswer strictAccents paramja).
   const [strictAccents, setStrictAccents] = useState(false);
+  // FB364 (PLAN-fb0923 5. lépés/D2): a Beállítások "Missed word comes back
+  // after" steppere; a requeueAfterGrade "again" ágának a returnAt-ját adja.
+  const [againDelaySec, setAgainDelaySec] = useState(DEFAULT_AGAIN_DELAY_SEC);
   const [allCards, setAllCards] = useState<Map<string, Sm2Card>>(new Map());
   const [queue, setQueue] = useState<Sm2Card[]>([]);
   const [typedAnswer, setTypedAnswer] = useState('');
@@ -100,11 +103,13 @@ export default function PcicScreen() {
     const cards = cardsForLevel(rawCards, lvl);
     const strict = await db.getStrictAccents();
     const newLimit = await db.getDailyNewLimit();
+    const delaySec = await db.getAgainDelaySec();
     const spellingRows = await db.getPcicSpellingList();
     setLevel(lvl);
     setAllLevelCards(rawCards);
     setStrictAccents(strict);
     setDailyNewLimit(newLimit);
+    setAgainDelaySec(delaySec);
     setPcicSpellingIds(new Set(spellingRows.map((r) => r.itemId)));
     setToday(day);
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
@@ -183,8 +188,10 @@ export default function PcicScreen() {
     return next;
   };
 
-  const advance = (next: Sm2Card) => {
-    setQueue((prev) => requeueAfterGrade(prev, next, today));
+  // FB364: a `grade`-et is átadja a requeuenak, hogy csak a "Nem tudtam"
+  // (again) kártya kapjon returnAt-időzítőt, a "Tudtam" (good) ne.
+  const advance = (next: Sm2Card, g: Sm2Grade) => {
+    setQueue((prev) => requeueAfterGrade(prev, next, today, g, Date.now(), againDelaySec));
     setTypedAnswer('');
     setArticlePick('');
     setGrade(null);
@@ -228,7 +235,7 @@ export default function PcicScreen() {
 
   const handleGrade = async (g: Sm2Grade) => {
     const next = await commitGrade(g);
-    if (next) advance(next);
+    if (next) advance(next, g);
   };
 
   const handleUndo = async () => {
