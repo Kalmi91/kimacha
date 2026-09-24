@@ -23,7 +23,6 @@ import {
   resetDeck,
   tableCellsForLesson,
   wordCellsForLesson,
-  type DeckCellState,
   type DeckState,
 } from '@/lib/grammar/tableDeck';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -53,6 +52,12 @@ interface DeckItem {
   /** The big prompt text: "person · verb" for a table cell, the English
    *  meaning for a word card. */
   promptBig: string;
+  /** FB378: the cell's English prompt ("she spoke"), table cells only; when
+   *  set, promptBig shows it (with `verb` as the infinitive underneath)
+   *  instead of the bare person·verb prompt. */
+  enPrompt?: string;
+  /** The table cell's infinitive, shown under an enPrompt. */
+  verb?: string;
 }
 
 export default function TableDeckScreen() {
@@ -70,7 +75,7 @@ export default function TableDeckScreen() {
   const [againDelaySec, setAgainDelaySec] = useState(DEFAULT_AGAIN_DELAY_SEC);
   const [mode, setMode] = useState<DeckMode>('table');
   const [items, setItems] = useState<DeckItem[]>([]);
-  const [deck, setDeck] = useState<DeckState>({ cells: [] });
+  const [deck, setDeck] = useState<DeckState>({ cells: [], resetCount: 0 });
   const [typed, setTyped] = useState('');
   const [checked, setChecked] = useState<{ correct: boolean } | null>(null);
   const [dockH, setDockH] = useState(DOCK_RESERVE);
@@ -91,20 +96,26 @@ export default function TableDeckScreen() {
     const deckMode: DeckMode = tableCells.length > 0 ? 'table' : 'word';
     const itemList: DeckItem[] =
       deckMode === 'table'
-        ? tableCells.map((c) => ({ id: c.id, answer: c.answer, promptBig: `${c.person} · ${c.verb}` }))
+        ? tableCells.map((c) => ({
+            id: c.id,
+            answer: c.answer,
+            promptBig: c.enPrompt ?? `${c.person} · ${c.verb}`,
+            enPrompt: c.enPrompt,
+            verb: c.verb,
+          }))
         : wordCellsForLesson(lesson).map((c) => ({ id: c.id, answer: c.es, promptBig: c.en }));
     const strict = await db.getStrictAccents();
     const delaySec = await db.getAgainDelaySec();
     const levelData = await db.getLevel();
     const rows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
     const saved = rows.find((r) => r.itemId === progressKeyFor(id));
-    const persisted = (saved?.data as { cells: DeckCellState[] } | undefined)?.cells;
+    const persisted = saved?.data as DeckState | undefined;
     setLevel((levelData.level as Level) ?? 'A1');
     setStrictAccents(strict);
     setAgainDelaySec(delaySec);
     setMode(deckMode);
     setItems(itemList);
-    setDeck(mergeDeckState(itemList, persisted));
+    setDeck(mergeDeckState(itemList, id, persisted));
     setTyped('');
     setChecked(null);
     setNow(Date.now());
@@ -148,7 +159,7 @@ export default function TableDeckScreen() {
   };
 
   const handleStartAgain = () => {
-    const fresh = resetDeck(deck);
+    const fresh = resetDeck(deck, String(topicId));
     setDeck(fresh);
     persist(fresh);
     setTyped('');
@@ -227,9 +238,16 @@ export default function TableDeckScreen() {
       >
         <CardShell compact colors={colors} chip={mode === 'table' ? s.tableDeck.chip : s.tableDeck.wordChip} onPress={() => Keyboard.dismiss()}>
           <Text style={[styles.promptCaption, { color: colors.tabIconDefault }]}>
-            {mode === 'table' ? s.tableDeck.promptCaption : s.tableDeck.wordPromptCaption}
+            {mode === 'table'
+              ? current.enPrompt
+                ? s.tableDeck.promptCaptionEn
+                : s.tableDeck.promptCaption
+              : s.tableDeck.wordPromptCaption}
           </Text>
           <Text style={[styles.promptBig, { color: colors.text }]}>{current.promptBig}</Text>
+          {current.enPrompt ? (
+            <Text style={[styles.promptInfinitive, { color: colors.tabIconDefault }]}>{current.verb}</Text>
+          ) : null}
 
           <TextInput
             testID="tabledeck-input"
@@ -307,6 +325,9 @@ const styles = StyleSheet.create({
   cardScrollContent: { flexGrow: 1, justifyContent: 'flex-start', paddingTop: 8 },
   promptCaption: { fontSize: 13, textAlign: 'center', marginBottom: 8 },
   promptBig: { fontSize: 32, fontWeight: '700', textAlign: 'center', marginBottom: 20 },
+  // FB378: the infinitive under the English prompt, pulled up into promptBig's
+  // bottom margin so the two read as one prompt block.
+  promptInfinitive: { fontSize: 15, fontStyle: 'italic', textAlign: 'center', marginTop: -12, marginBottom: 12 },
   input: { width: '100%', borderWidth: 2, borderRadius: 12, padding: 14, fontSize: 18, textAlign: 'center' },
   resultSection: { alignItems: 'center', marginTop: 16 },
   correctLine: { fontSize: 22, fontWeight: '700', textAlign: 'center', color: '#22C55E' },

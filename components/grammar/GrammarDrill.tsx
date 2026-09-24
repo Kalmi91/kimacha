@@ -268,6 +268,7 @@ function WhyDrillItem({
   onDone: (correct: boolean) => void;
 }) {
   const [selected, setSelected] = useState<number | null>(null);
+  const [showTr, setShowTr] = useState(false);
   const answered = selected !== null;
   const isCorrect = answered && selected === item.correctIndex;
 
@@ -303,9 +304,15 @@ function WhyDrillItem({
             <Text style={styles.speak}>🔊</Text>
           </Pressable>
         </View>
-        <Text style={[styles.whyTranslation, { color: colors.tabIconDefault }]}>
-          {item.tr[contentLang] ?? item.tr.en}
-        </Text>
+        {answered || showTr ? (
+          <Text style={[styles.whyTranslation, { color: colors.tabIconDefault }]}>
+            {item.tr[contentLang] ?? item.tr.en}
+          </Text>
+        ) : (
+          <Pressable testID="why-show-translation" onPress={() => setShowTr(true)} style={styles.whyTrButton}>
+            <Text style={[styles.whyTrButtonText, { color: colors.tint }]}>{s.grammar.showTranslation}</Text>
+          </Pressable>
+        )}
       </View>
       {item.target ? (
         <Text style={[styles.whyQuestion, { color: colors.tint }]}>
@@ -780,6 +787,9 @@ const styles = StyleSheet.create({
   // FB376: a `target` kiemelése a mondatban + a kérdés-sor, ami megnevezi.
   whyTargetBold: { fontWeight: '800' },
   whyQuestion: { fontSize: 15, fontWeight: '700', textAlign: 'center' },
+  // FB379: a "why" fordítás rejtve indul, gombbal előhozható.
+  whyTrButton: { alignSelf: 'center', marginTop: 6, paddingVertical: 4, paddingHorizontal: 10 },
+  whyTrButtonText: { fontSize: 13, fontWeight: '700' },
   speak: { fontSize: 18 },
   // NY3 (NYELVTAN.md "Első szelet"): igeidő-jelvény + mondat-átírás drill.
   tenseBadge: { alignSelf: 'flex-start', paddingVertical: 6, paddingHorizontal: 12, borderRadius: 999 },

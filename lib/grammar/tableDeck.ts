@@ -19,6 +19,7 @@ import { DEFAULT_AGAIN_DELAY_SEC } from '../pcicSession';
 import type { ExamplePair, Lang4, LessonV2 } from './lessonTypes';
 import { PCIC_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
 import { normalizeWordToken, type Level } from '@/data/words';
+import { hashString, shuffleArray } from '../shuffle';
 
 export interface DeckCell {
   /** Stable within a lesson: `${tableId}::${person}::${verb}` (all lowercased). */
@@ -31,6 +32,9 @@ export interface DeckCell {
    *  "a / b" alternatives or parenthetical glosses on its own; this module
    *  does not need to split them out. */
   answer: string;
+  /** FB378: the cell's English prompt ("she spoke"), if the table has one;
+   *  the deck screen shows it instead of the bare person·verb prompt. */
+  enPrompt?: string;
 }
 
 export interface DeckCellState {
@@ -44,6 +48,9 @@ export interface DeckCellState {
 
 export interface DeckState {
   cells: DeckCellState[];
+  /** FB377: bumped by resetDeck, part of the reshuffle seed so each pass
+   *  through the deck gets a new (but still deterministic) order. */
+  resetCount: number;
 }
 
 // FELTEVÉS (Kálmán vétózhatja, PLAN-fb0923 5. lépés/D2): a táblázat-pakli
@@ -77,9 +84,9 @@ export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined)
     if (block.kind !== 'table') continue;
     if (!isConjugationTable(block.header, block.rows)) continue;
     const verbHeaders = block.header.slice(1);
-    for (const row of block.rows) {
+    block.rows.forEach((row, ri) => {
       const person = row[0];
-      if (VOSOTROS_PERSONS.has(normalizePerson(person))) continue;
+      if (VOSOTROS_PERSONS.has(normalizePerson(person))) return;
       for (let ci = 0; ci < verbHeaders.length; ci++) {
         const verb = verbHeaders[ci].es;
         const answer = row[ci + 1];
@@ -87,9 +94,10 @@ export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined)
         const key = `${normalizePerson(person)}::${verb.toLowerCase()}`;
         if (seen.has(key)) continue;
         seen.add(key);
-        cells.push({ id: `${block.id}::${key}`, person, verb, answer });
+        const enPrompt = block.enPrompt?.[ri]?.[ci];
+        cells.push({ id: `${block.id}::${key}`, person, verb, answer, ...(enPrompt ? { enPrompt } : {}) });
       }
-    }
+    });
   }
   return cells;
 }
@@ -98,18 +106,38 @@ export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined)
 // tartalmát, ezért ugyanez a motor szolgálja ki a szó-paklit is
 // (wordCellsForLesson lent) a tábla-pakli mellett, forrás-tömb-tipizálás
 // nélkül duplikálva.
-export function initDeckState(cells: { id: string }[]): DeckState {
-  return { cells: cells.map((c) => ({ id: c.id, done: false, dueAt: null })) };
+// FB377: the deck's cell order used to be the table's own row/column order
+// (every learner saw "yo · ser" first, always), which makes the answers
+// memorizable by position instead of by meaning. A seeded shuffle (lesson id
+// + reset count) fixes the order for a given pass through the deck, so it is
+// still deterministic and testable, but it is not the table's order, and a
+// "Start again" reset gets a fresh shuffle.
+// Sorted first, so the result depends only on the SET of ids, never on
+// whatever order they happened to arrive in (table order from a fresh
+// lesson load, or the previous pass's shuffled order on a reset), the
+// order is a pure function of (ids, lessonId, resetCount).
+function shuffledIds(cellIds: string[], lessonId: string, resetCount: number): string[] {
+  return shuffleArray(cellIds.slice().sort(), hashString(`${lessonId}:${resetCount}`));
+}
+
+export function initDeckState(cells: { id: string }[], lessonId: string): DeckState {
+  const order = shuffledIds(cells.map((c) => c.id), lessonId, 0);
+  return { cells: order.map((id) => ({ id, done: false, dueAt: null })), resetCount: 0 };
 }
 
 /**
  * Reconciles freshly-derived cells (from the lesson data) with a persisted
  * state (from game_progress). A cell the lesson no longer has is dropped; a
- * new cell the persisted state has never seen starts fresh.
+ * new cell the persisted state has never seen starts fresh. The order is
+ * reshuffled from `lessonId` + the persisted reset count, not read off the
+ * persisted cell array, so a corpus change (a cell added/removed) does not
+ * leave the new cell stuck at the end.
  */
-export function mergeDeckState(cells: { id: string }[], persisted: DeckCellState[] | undefined): DeckState {
-  const byId = new Map((persisted ?? []).map((c) => [c.id, c]));
-  return { cells: cells.map((c) => byId.get(c.id) ?? { id: c.id, done: false, dueAt: null }) };
+export function mergeDeckState(cells: { id: string }[], lessonId: string, persisted: DeckState | undefined): DeckState {
+  const resetCount = persisted?.resetCount ?? 0;
+  const byId = new Map((persisted?.cells ?? []).map((c) => [c.id, c]));
+  const order = shuffledIds(cells.map((c) => c.id), lessonId, resetCount);
+  return { cells: order.map((id) => byId.get(id) ?? { id, done: false, dueAt: null }), resetCount };
 }
 
 export function doneCount(state: DeckState): number {
@@ -145,15 +173,19 @@ export function answerCell(
   cooldownMs: number = COOLDOWN_MS
 ): DeckState {
   return {
+    ...state,
     cells: state.cells.map((c) =>
       c.id === id ? { ...c, done: correct, dueAt: correct ? null : now + cooldownMs } : c
     ),
   };
 }
 
-/** Every cell answered right once -> start the pass over. */
-export function resetDeck(state: DeckState): DeckState {
-  return { cells: state.cells.map((c) => ({ id: c.id, done: false, dueAt: null })) };
+/** Every cell answered right once -> start the pass over, with a fresh
+ *  (still deterministic) shuffle, so the next pass isn't the same order. */
+export function resetDeck(state: DeckState, lessonId: string): DeckState {
+  const resetCount = state.resetCount + 1;
+  const order = shuffledIds(state.cells.map((c) => c.id), lessonId, resetCount);
+  return { cells: order.map((id) => ({ id, done: false, dueAt: null })), resetCount };
 }
 
 // ---------------------------------------------------------------------------
