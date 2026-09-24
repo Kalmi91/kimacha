@@ -55,7 +55,11 @@ export function requeueAfterGrade(
 ): QueuedSm2Card[] {
   const rest = queue.slice(1);
   if (next.due !== today) return rest;
-  const entry: QueuedSm2Card = grade === 'again' ? { ...next, returnAt: now + delaySec * 1000 } : next;
+  // A visszahozott kártya a `sm2Review` másolatában magával hozná a lejárt
+  // returnAt-ját, és "Knew it" után azonnal újra a sor elejére ugrana
+  // (4.1.0 web-smoke, 2026-09-24). Csak az `again` kap új időzítőt.
+  const { returnAt: _stale, ...clean } = next as QueuedSm2Card;
+  const entry: QueuedSm2Card = grade === 'again' ? { ...clean, returnAt: now + delaySec * 1000 } : clean;
   return reorderForReturn([...rest, entry], now);
 }
 

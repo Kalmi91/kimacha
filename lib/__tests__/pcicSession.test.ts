@@ -55,6 +55,25 @@ describe('requeueAfterGrade', () => {
 
     expect(next).toEqual([graded]);
   });
+
+  it('a visszahozott kártya "Knew it" után nem ugrik újra a sor elejére (4.1.0 web-smoke)', () => {
+    const now = 1_000_000;
+    const missed = sm2Review(sm2NewCard('b1-0020'), 'again', TODAY);
+    const other1 = reviewCard({ itemId: 'b1-0021' });
+    const other2 = reviewCard({ itemId: 'b1-0022' });
+    // "Didn't know" 60 s-os időzítővel, aztán 61 s múlva egy másik kártya értékelése előhozza.
+    let queue = requeueAfterGrade([missed, other1, other2], missed, TODAY, 'again', now, 60);
+    queue = requeueAfterGrade(queue, sm2Review(other1, 'again', TODAY), TODAY, 'again', now + 61_000, 60);
+    expect(queue[0].itemId).toBe('b1-0020');
+
+    const knew = sm2Review(queue[0], 'good', TODAY);
+    expect(knew.due).toBe(TODAY); // még learning, a sorban marad
+    const after = requeueAfterGrade(queue, knew, TODAY, 'good', now + 62_000, 60);
+
+    expect(after[0].itemId).not.toBe('b1-0020');
+    expect(after[after.length - 1].itemId).toBe('b1-0020');
+    expect(after[after.length - 1].returnAt).toBeUndefined();
+  });
 });
 
 describe('requeueAfterUndo', () => {
