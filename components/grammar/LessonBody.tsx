@@ -5,7 +5,16 @@ import { useTheme } from '@/lib/ThemeContext';
 import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import type { ExamplePair, Lang4, LessonBlock } from '@/lib/grammar/lessonTypes';
-import { isConjugationTable, personGloss, splitStemEnding, verbClassColor, verbClassOf } from '@/lib/grammar/tableShape';
+import { isConjugationTable, personGloss, splitStemEnding, verbClassOf, verbColumnColor } from '@/lib/grammar/tableShape';
+
+// FB381-383: a jelmagyarázat alatti rövid magyarázó sor, minden ragozási
+// táblán (nem lecke-adat, ezért itt lakik, nem egy JSON body-blokkban).
+const LEGEND_CAPTION: Lang4 = {
+  hu: 'Minden sor egy személy, minden szín egy ige.',
+  en: 'Each row is one person; each colour is one verb.',
+  es: 'Cada fila es una persona, cada color es un verbo.',
+  de: 'Jede Zeile ist eine Person, jede Farbe ist ein Verb.',
+};
 
 // LECKE-SEMA 1. szakasz: a LessonV2 body-blokkjainak megjelenítője. A
 // moreBlocks.ts (FB224) a próza szerkezetét TALÁLTA KI; ez a komponens innen
@@ -48,8 +57,29 @@ function ConjugationTable({ header, rows, contentLang, colors, isDark }: {
   isDark: boolean;
 }) {
   const verbHeaders = header.slice(1);
+  // FB381: ha egyetlen alak sem bontható tisztán tőre+végződésre, nincs közös
+  // alap a táblában, a tő/végződés bontásnak nincs értelme (rendhagyó); az
+  // egész tábla akkor egyben megy, nem cellánként (egy oszlopon belül ne
+  // legyen fele bontott, fele nem).
+  const isRegularTable = rows.every((row) => verbHeaders.every((h, ci) => splitStemEnding(row[ci + 1], h.es) !== null));
+
   return (
     <View style={styles.pblocks}>
+      <View style={styles.legend}>
+        {verbHeaders.map((h, ci) => {
+          const color = verbColumnColor(ci, isDark);
+          const verbClass = isRegularTable ? verbClassOf(h.es) : null;
+          return (
+            <Text key={ci} style={[styles.legendItem, { color: colors.tabIconDefault }]}>
+              <Text style={{ color, fontWeight: '700' }}>{h.es}</Text>
+              {verbClass ? ` -${verbClass}` : ''}
+            </Text>
+          );
+        })}
+      </View>
+      <Text style={[styles.legendCaption, { color: colors.tabIconDefault }]}>
+        {LEGEND_CAPTION[contentLang] ?? LEGEND_CAPTION.en}
+      </Text>
       {rows.map((row, ri) => {
         const person = row[0];
         const gloss = personGloss(person, contentLang);
@@ -62,9 +92,8 @@ function ConjugationTable({ header, rows, contentLang, colors, isDark }: {
             <View style={styles.pblockForms}>
               {verbHeaders.map((h, ci) => {
                 const form = row[ci + 1];
-                const verbClass = verbClassOf(h.es);
-                const color = verbClass ? verbClassColor(verbClass, isDark) : colors.text;
-                const split = splitStemEnding(form, h.es);
+                const color = verbColumnColor(ci, isDark);
+                const split = isRegularTable ? splitStemEnding(form, h.es) : null;
                 return (
                   <View
                     key={ci}
@@ -85,17 +114,6 @@ function ConjugationTable({ header, rows, contentLang, colors, isDark }: {
           </View>
         );
       })}
-      <View style={styles.legend}>
-        {verbHeaders.map((h, ci) => {
-          const verbClass = verbClassOf(h.es);
-          const color = verbClass ? verbClassColor(verbClass, isDark) : colors.text;
-          return (
-            <Text key={ci} style={[styles.legendItem, { color: colors.tabIconDefault }]}>
-              <Text style={{ color, fontWeight: '700' }}>{h.es}</Text> -{verbClass ?? '?'}
-            </Text>
-          );
-        })}
-      </View>
     </View>
   );
 }
@@ -286,6 +304,7 @@ const styles = StyleSheet.create({
   chipEnding: { fontSize: 16, fontWeight: '700' },
   legend: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
   legendItem: { fontSize: 13.5 },
+  legendCaption: { fontSize: 12, fontStyle: 'italic' },
   // FB326, nem-ragozási (referencia) táblák: a régi rács, monospace és
   // fix minWidth nélkül; flex-cellák, hacsak 5+ oszlop miatt görgetős.
   grid: { borderWidth: StyleSheet.hairlineWidth, borderRadius: 10, overflow: 'hidden' },
