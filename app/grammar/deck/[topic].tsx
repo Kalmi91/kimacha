@@ -22,7 +22,6 @@ import {
   resetDeck,
   tableCellsForLesson,
   type DeckCell,
-  type DeckCellState,
   type DeckState,
 } from '@/lib/grammar/tableDeck';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -50,7 +49,7 @@ export default function TableDeckScreen() {
   const [level, setLevel] = useState<Level>('A1');
   const [strictAccents, setStrictAccents] = useState(false);
   const [cells, setCells] = useState<DeckCell[]>([]);
-  const [deck, setDeck] = useState<DeckState>({ cells: [] });
+  const [deck, setDeck] = useState<DeckState>({ cells: [], resetCount: 0 });
   const [typed, setTyped] = useState('');
   const [checked, setChecked] = useState<{ correct: boolean } | null>(null);
   const [dockH, setDockH] = useState(DOCK_RESERVE);
@@ -70,11 +69,11 @@ export default function TableDeckScreen() {
     const levelData = await db.getLevel();
     const rows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
     const saved = rows.find((r) => r.itemId === progressKeyFor(id));
-    const persisted = (saved?.data as { cells: DeckCellState[] } | undefined)?.cells;
+    const persisted = saved?.data as DeckState | undefined;
     setLevel((levelData.level as Level) ?? 'A1');
     setStrictAccents(strict);
     setCells(cellList);
-    setDeck(mergeDeckState(cellList, persisted));
+    setDeck(mergeDeckState(cellList, id, persisted));
     setTyped('');
     setChecked(null);
     setNow(Date.now());
@@ -118,7 +117,7 @@ export default function TableDeckScreen() {
   };
 
   const handleStartAgain = () => {
-    const fresh = resetDeck(deck);
+    const fresh = resetDeck(deck, String(topicId));
     setDeck(fresh);
     persist(fresh);
     setTyped('');

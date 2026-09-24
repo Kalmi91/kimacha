@@ -15,6 +15,7 @@
 import type { GrammarTopicData } from '../games/content';
 import { isLessonV2 } from '../games/content';
 import { isConjugationTable } from './tableShape';
+import { hashString, shuffleArray } from '../shuffle';
 
 export interface DeckCell {
   /** Stable within a lesson: `${tableId}::${person}::${verb}` (all lowercased). */
@@ -40,6 +41,9 @@ export interface DeckCellState {
 
 export interface DeckState {
   cells: DeckCellState[];
+  /** FB377: bumped by resetDeck, part of the reshuffle seed so each pass
+   *  through the deck gets a new (but still deterministic) order. */
+  resetCount: number;
 }
 
 const COOLDOWN_MS = 60_000;
@@ -85,18 +89,38 @@ export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined)
   return cells;
 }
 
-export function initDeckState(cells: DeckCell[]): DeckState {
-  return { cells: cells.map((c) => ({ id: c.id, done: false, dueAt: null })) };
+// FB377: the deck's cell order used to be the table's own row/column order
+// (every learner saw "yo · ser" first, always), which makes the answers
+// memorizable by position instead of by meaning. A seeded shuffle (lesson id
+// + reset count) fixes the order for a given pass through the deck, so it is
+// still deterministic and testable, but it is not the table's order, and a
+// "Start again" reset gets a fresh shuffle.
+// Sorted first, so the result depends only on the SET of ids, never on
+// whatever order they happened to arrive in (table order from a fresh
+// lesson load, or the previous pass's shuffled order on a reset), the
+// order is a pure function of (ids, lessonId, resetCount).
+function shuffledIds(cellIds: string[], lessonId: string, resetCount: number): string[] {
+  return shuffleArray(cellIds.slice().sort(), hashString(`${lessonId}:${resetCount}`));
+}
+
+export function initDeckState(cells: DeckCell[], lessonId: string): DeckState {
+  const order = shuffledIds(cells.map((c) => c.id), lessonId, 0);
+  return { cells: order.map((id) => ({ id, done: false, dueAt: null })), resetCount: 0 };
 }
 
 /**
  * Reconciles freshly-derived cells (from the lesson data) with a persisted
  * state (from game_progress). A cell the lesson no longer has is dropped; a
- * new cell the persisted state has never seen starts fresh.
+ * new cell the persisted state has never seen starts fresh. The order is
+ * reshuffled from `lessonId` + the persisted reset count, not read off the
+ * persisted cell array, so a corpus change (a cell added/removed) does not
+ * leave the new cell stuck at the end.
  */
-export function mergeDeckState(cells: DeckCell[], persisted: DeckCellState[] | undefined): DeckState {
-  const byId = new Map((persisted ?? []).map((c) => [c.id, c]));
-  return { cells: cells.map((c) => byId.get(c.id) ?? { id: c.id, done: false, dueAt: null }) };
+export function mergeDeckState(cells: DeckCell[], lessonId: string, persisted: DeckState | undefined): DeckState {
+  const resetCount = persisted?.resetCount ?? 0;
+  const byId = new Map((persisted?.cells ?? []).map((c) => [c.id, c]));
+  const order = shuffledIds(cells.map((c) => c.id), lessonId, resetCount);
+  return { cells: order.map((id) => byId.get(id) ?? { id, done: false, dueAt: null }), resetCount };
 }
 
 export function doneCount(state: DeckState): number {
@@ -125,13 +149,17 @@ export function nextCellId(state: DeckState, now: number): string | null {
 /** Correct -> done, cleared cooldown. Wrong/empty -> due again in 60s. */
 export function answerCell(state: DeckState, id: string, correct: boolean, now: number): DeckState {
   return {
+    ...state,
     cells: state.cells.map((c) =>
       c.id === id ? { ...c, done: correct, dueAt: correct ? null : now + COOLDOWN_MS } : c
     ),
   };
 }
 
-/** Every cell answered right once -> start the pass over. */
-export function resetDeck(state: DeckState): DeckState {
-  return { cells: state.cells.map((c) => ({ id: c.id, done: false, dueAt: null })) };
+/** Every cell answered right once -> start the pass over, with a fresh
+ *  (still deterministic) shuffle, so the next pass isn't the same order. */
+export function resetDeck(state: DeckState, lessonId: string): DeckState {
+  const resetCount = state.resetCount + 1;
+  const order = shuffledIds(state.cells.map((c) => c.id), lessonId, resetCount);
+  return { cells: order.map((id) => ({ id, done: false, dueAt: null })), resetCount };
 }
