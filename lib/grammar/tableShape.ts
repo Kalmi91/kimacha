@@ -106,15 +106,22 @@ export function splitStemEnding(form: string, infinitive: string): { stem: strin
   return { stem, ending };
 }
 
-// A négy igeosztály-szín (világos/sötét pár), a LessonBody chip- és
-// legenda-rajzolásához. A hablar/comer/vivir párokat Kálmán fogadta el a
-// mockból (tablazat-tervek.html, "2 Személy-blokkok" szekció).
-export const VERB_CLASS_COLORS: Record<VerbClass, { light: string; dark: string }> = {
-  ar: { light: '#1D4ED8', dark: '#7FA3FF' },
-  er: { light: '#0F766E', dark: '#4FD1B9' },
-  ir: { light: '#7C3AED', dark: '#B899FF' },
-};
+// FB381-383: minden IGE (oszlop) saját színt kap az oszlop-indexe szerint,
+// nem az igeosztálya szerint (hablar/comer/vivir addig 3 külön szín volt
+// véletlenül, de tener/estar/poder/hacer közül tener és poder és hacer mind
+// -er osztályú, tehát ugyanaz a szín jutott 3 különböző igének). Legalább 5
+// szín, világos/sötét pár, jó kontraszttal a kártya-háttéren; a régi 3 szín
+// (ar/er/ir) az első 3 index, hogy a meglévő táblák hangulata ne váltson.
+const VERB_COLUMN_COLORS: { light: string; dark: string }[] = [
+  { light: '#1D4ED8', dark: '#7FA3FF' }, // kék
+  { light: '#0F766E', dark: '#4FD1B9' }, // teal
+  { light: '#7C3AED', dark: '#B899FF' }, // lila
+  { light: '#B45309', dark: '#FBBF24' }, // borostyán
+  { light: '#BE185D', dark: '#F472B6' }, // pink
+  { light: '#4D7C0F', dark: '#A3E635' }, // lime
+];
 
-export function verbClassColor(verbClass: VerbClass, isDark: boolean): string {
-  return isDark ? VERB_CLASS_COLORS[verbClass].dark : VERB_CLASS_COLORS[verbClass].light;
+export function verbColumnColor(index: number, isDark: boolean): string {
+  const pair = VERB_COLUMN_COLORS[index % VERB_COLUMN_COLORS.length];
+  return isDark ? pair.dark : pair.light;
 }
