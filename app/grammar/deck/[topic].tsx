@@ -194,8 +194,15 @@ export default function TableDeckScreen() {
         keyboardDismissMode="on-drag"
       >
         <CardShell compact colors={colors} chip={s.tableDeck.chip} onPress={() => Keyboard.dismiss()}>
-          <Text style={[styles.promptCaption, { color: colors.tabIconDefault }]}>{s.tableDeck.promptCaption}</Text>
-          <Text style={[styles.promptBig, { color: colors.text }]}>{`${current.person} · ${current.verb}`}</Text>
+          <Text style={[styles.promptCaption, { color: colors.tabIconDefault }]}>
+            {current.enPrompt ? s.tableDeck.promptCaptionEn : s.tableDeck.promptCaption}
+          </Text>
+          <Text style={[styles.promptBig, { color: colors.text }]}>
+            {current.enPrompt ?? `${current.person} · ${current.verb}`}
+          </Text>
+          {current.enPrompt ? (
+            <Text style={[styles.promptInfinitive, { color: colors.tabIconDefault }]}>{current.verb}</Text>
+          ) : null}
 
           <TextInput
             testID="tabledeck-input"
@@ -273,6 +280,9 @@ const styles = StyleSheet.create({
   cardScrollContent: { flexGrow: 1, justifyContent: 'flex-start', paddingTop: 8 },
   promptCaption: { fontSize: 13, textAlign: 'center', marginBottom: 8 },
   promptBig: { fontSize: 32, fontWeight: '700', textAlign: 'center', marginBottom: 20 },
+  // FB378: the infinitive under the English prompt, pulled up into promptBig's
+  // bottom margin so the two read as one prompt block.
+  promptInfinitive: { fontSize: 15, fontStyle: 'italic', textAlign: 'center', marginTop: -12, marginBottom: 12 },
   input: { width: '100%', borderWidth: 2, borderRadius: 12, padding: 14, fontSize: 18, textAlign: 'center' },
   resultSection: { alignItems: 'center', marginTop: 16 },
   correctLine: { fontSize: 22, fontWeight: '700', textAlign: 'center', color: '#22C55E' },

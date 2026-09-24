@@ -253,6 +253,14 @@
           "pudieron",
           "hicieron"
         ]
+      ],
+      "enPrompt": [
+        ["I had", "I was", "I could", "I did"],
+        ["you had", "you were", "you could", "you did"],
+        ["she had", "he was", "she could", "he did"],
+        ["we had", "we were", "we could", "we did"],
+        ["you all had", "you all were", "you all could", "you all did"],
+        ["they had", "they were", "they could", "they did"]
       ]
     },
     {
@@ -339,6 +347,14 @@
           "vinieron",
           "dijeron"
         ]
+      ],
+      "enPrompt": [
+        ["I put", "I knew", "I came", "I said"],
+        ["you put", "you knew", "you came", "you said"],
+        ["she put", "he knew", "she came", "he said"],
+        ["we put", "we knew", "we came", "we said"],
+        ["you all put", "you all knew", "you all came", "you all said"],
+        ["they put", "they knew", "they came", "they said"]
       ]
     },
     {
@@ -413,6 +429,14 @@
           "fueron",
           "dieron"
         ]
+      ],
+      "enPrompt": [
+        ["I was", "I went", "I gave"],
+        ["you were", "you went", "you gave"],
+        ["she was", "he went", "she gave"],
+        ["we were", "we went", "we gave"],
+        ["you all were", "you all went", "you all gave"],
+        ["they were", "they went", "they gave"]
       ]
     },
     {

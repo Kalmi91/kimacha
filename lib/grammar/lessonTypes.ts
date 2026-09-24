@@ -66,7 +66,17 @@ export interface ExamplePair {
 export type LessonBlock =
   | { kind: 'text'; text: Lang4 }
   | { kind: 'list'; title?: Lang4; items: { text: Lang4; examples: ExamplePair[] }[] }
-  | { kind: 'table'; id: string; title: Lang4; header: Lang4[]; rows: string[][] }
+  | {
+      kind: 'table';
+      id: string;
+      title: Lang4;
+      header: Lang4[];
+      rows: string[][];
+      // FB378: english prompt per cell (rows x verb-columns, same shape as
+      // `rows` minus the person column), for the table-deck's "translate the
+      // English sentence" mode; a table without it keeps the person·verb prompt.
+      enPrompt?: string[][];
+    }
   | { kind: 'usage'; title?: Lang4; points: { text: Lang4; examples: ExamplePair[] }[] }
   | { kind: 'examples'; title?: Lang4; examples: ExamplePair[] }
   | {

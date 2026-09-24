@@ -16,7 +16,7 @@ Minden lépés = 1 commit (`fix(grammar): ... (FBxxx)`), a sor itt `[x]`-re + id
 - [x] 2. FB379 why-drillnél a fordítás elárulja a megoldást → kész, ha: a `tr` sor alapból rejtve, gombbal előhozható, válasz után magától látszik, jest-teszt rá, kapu zöld (2026-09-23)
 - [x] 3. FB381+382+383 igeragozási tábla színezése → kész, ha: jelmagyarázat a tábla FÖLÖTT, minden ige saját színű (chip = jelmagyarázat színe), rendhagyó táblán nincs tő/végződés bontás, jest-teszt rá, kapu zöld (2026-09-23)
 - [x] 4. FB377 Practice the table sorrendje → kész, ha: a deck a cellákat keverve adja, nem táblázat-sorrendben, teszt rá, kapu zöld (2026-09-23)
-- [ ] 5. FB378 Practice the table angol prompt + 3 új ige → kész, ha: indefinido-regular és -irregular deck angol múlt idejű mondatot kérdez („she spoke" → habló), +1 tábla 3 szabályos igével, audit + kapu zöld
+- [x] 5. FB378 Practice the table angol prompt + 3 új ige → kész, ha: indefinido-regular és -irregular deck angol múlt idejű mondatot kérdez („she spoke" → habló), +1 tábla 3 szabályos igével, audit + kapu zöld (2026-09-23)
 - [ ] 6. FB380 leckén belüli feladatonkénti % → kész, ha: a lecke képernyőn minden feladat mellett ugyanaz a %-logika látszik, ami kint a 80%-ot adja, teszt rá, kapu zöld
 - [!] 7. FB375 szó-kártyacsomag a clases-de-palabras leckéhez → vár rám: melyik szavakból és mit kérdezzen (Kálmán dönt, RULES 8: képernyő-leírás jóváhagyás kód előtt)
 
