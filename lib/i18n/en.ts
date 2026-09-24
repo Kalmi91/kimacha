@@ -286,6 +286,8 @@ export default {
     // ugyanezt a képernyőt használja, csak ez a két string vált.
     wordChip: 'WORD',
     wordPromptCaption: 'meaning',
+    // FB378: caption for a cell with an English prompt (translate to Spanish).
+    promptCaptionEn: 'translate to Spanish',
     progress: (done: number, total: number) => `${done} / ${total} done`,
     completeTitle: (n: number) => `All ${n} cells done 🎉`,
     startAgain: 'Start again',

@@ -3,7 +3,7 @@ import hayEstar from '@/data/games/grammar/es/hay-estar.json';
 import serEstar from '@/data/games/grammar/es/ser-estar.json';
 import verbosReflexivos from '@/data/games/grammar/es/verbos-reflexivos.json';
 import type { LessonV2 } from '../grammar/lessonTypes';
-import { isConjugationTable, splitStemEnding, verbClassOf } from '../grammar/tableShape';
+import { isConjugationTable, splitStemEnding, verbClassOf, verbColumnColor } from '../grammar/tableShape';
 
 function tableBlock(lesson: unknown, id: string) {
   const body = (lesson as LessonV2).body;
@@ -52,6 +52,24 @@ describe('splitStemEnding', () => {
 
   it('returns null for a reflexive stem-change, whole form stays bold', () => {
     expect(splitStemEnding('me acuesto', 'acostarse')).toBeNull();
+  });
+});
+
+// FB381-383: minden oszlop (ige) saját színt kap, index szerint, nem
+// igeosztály szerint (tener/poder/hacer korábban egy színt kapott, mert
+// mind -er végű, holott 3 külön ige).
+describe('verbColumnColor', () => {
+  it('gives four different columns four different colours, light and dark', () => {
+    const light = [0, 1, 2, 3].map((i) => verbColumnColor(i, false));
+    expect(new Set(light).size).toBe(4);
+    const dark = [0, 1, 2, 3].map((i) => verbColumnColor(i, true));
+    expect(new Set(dark).size).toBe(4);
+  });
+
+  it('wraps around past the palette length, deterministically', () => {
+    const first = verbColumnColor(0, false);
+    const wrapped = verbColumnColor(6, false);
+    expect(wrapped).toBe(first);
   });
 });
 
