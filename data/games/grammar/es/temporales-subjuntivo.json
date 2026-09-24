@@ -836,6 +836,7 @@
       "kind": "why",
       "id": "sp-why-01",
       "es": "Cuando llegues a casa, te llamo.",
+      "target": "Cuando llegues",
       "tr": {
         "hu": "Amikor hazaérsz, felhívlak.",
         "en": "When you get home, I'll call you.",
@@ -872,6 +873,7 @@
       "kind": "why",
       "id": "sp-why-02",
       "es": "Cuando llego a casa, ceno.",
+      "target": "Cuando llego",
       "tr": {
         "hu": "Amikor hazaérek, vacsorázom.",
         "en": "When I get home, I have dinner.",
@@ -908,6 +910,7 @@
       "kind": "why",
       "id": "sp-why-03",
       "es": "Antes de que salgas, avísame.",
+      "target": "Antes de que",
       "tr": {
         "hu": "Mielőtt elmész, szólj.",
         "en": "Before you leave, let me know.",
@@ -944,6 +947,7 @@
       "kind": "why",
       "id": "sp-why-04",
       "es": "Antes de salir, me lavo las manos.",
+      "target": "Antes de salir",
       "tr": {
         "hu": "Mielőtt elmegyek, megmosom a kezem.",
         "en": "Before leaving, I wash my hands.",
@@ -980,6 +984,7 @@
       "kind": "why",
       "id": "sp-why-05",
       "es": "Desde que vivo aquí, soy feliz.",
+      "target": "Desde que",
       "tr": {
         "hu": "Amióta itt élek, boldog vagyok.",
         "en": "Since I've been living here, I'm happy.",
@@ -1016,6 +1021,7 @@
       "kind": "why",
       "id": "sp-why-06",
       "es": "En cuanto termine la tarea, te aviso.",
+      "target": "En cuanto",
       "tr": {
         "hu": "Amint befejezem a feladatot, szólok.",
         "en": "As soon as I finish the task, I'll let you know.",

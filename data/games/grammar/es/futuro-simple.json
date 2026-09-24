@@ -1365,6 +1365,7 @@
       "kind": "why",
       "id": "fu-why-01",
       "es": "Te lo prometo: tendré más cuidado.",
+      "target": "prometo",
       "tr": {
         "hu": "Megígérem: jobban fogok vigyázni.",
         "en": "I promise you: I will be more careful.",
@@ -1419,6 +1420,7 @@
       "kind": "why",
       "id": "fu-why-02",
       "es": "Creo que mañana lloverá.",
+      "target": "mañana",
       "tr": {
         "hu": "Azt hiszem, holnap esni fog.",
         "en": "I think it will rain tomorrow.",
@@ -1473,6 +1475,7 @@
       "kind": "why",
       "id": "fu-why-03",
       "es": "¿Dónde está Ana? Estará en casa.",
+      "target": "Estará",
       "tr": {
         "hu": "Hol van Ana? Biztos otthon van.",
         "en": "Where is Ana? She must be at home.",
@@ -1527,6 +1530,7 @@
       "kind": "why",
       "id": "fu-why-04",
       "es": "Te prometo que no diré nada.",
+      "target": "prometo",
       "tr": {
         "hu": "Megígérem, hogy nem mondok semmit.",
         "en": "I promise you I will not say anything.",
@@ -1581,6 +1585,7 @@
       "kind": "why",
       "id": "fu-why-05",
       "es": "El año que viene viviremos en otra ciudad.",
+      "target": "El año que viene",
       "tr": {
         "hu": "Jövőre egy másik városban fogunk lakni.",
         "en": "Next year we will live in another city.",
@@ -1635,6 +1640,7 @@
       "kind": "why",
       "id": "fu-why-06",
       "es": "Tendrá unos treinta años.",
+      "target": "Tendrá",
       "tr": {
         "hu": "Nagyjából harmincéves lehet.",
         "en": "He must be about thirty years old.",
@@ -1689,6 +1695,7 @@
       "kind": "why",
       "id": "fu-why-07",
       "es": "Si terminas la tarea, saldremos a cenar.",
+      "target": "saldremos",
       "tr": {
         "hu": "Ha befejezed a házi feladatot, elmegyünk vacsorázni.",
         "en": "If you finish the homework, we will go out for dinner.",

@@ -1222,6 +1222,7 @@
       "kind": "why",
       "id": "poi-why-01",
       "es": "Me escribe todos los días.",
+      "target": "Me",
       "tr": {
         "hu": "Mindennap ír nekem.",
         "en": "He/she writes to me every day.",
@@ -1272,6 +1273,7 @@
       "kind": "why",
       "id": "poi-why-02",
       "es": "Te traigo las llaves.",
+      "target": "Te",
       "tr": {
         "hu": "Hozom neked a kulcsokat.",
         "en": "I am bringing you the keys.",
@@ -1322,6 +1324,7 @@
       "kind": "why",
       "id": "poi-why-03",
       "es": "Le doy el libro a Juan.",
+      "target": "Le",
       "tr": {
         "hu": "Odaadom Juannak a könyvet.",
         "en": "I give the book to Juan.",
@@ -1372,6 +1375,7 @@
       "kind": "why",
       "id": "poi-why-04",
       "es": "Nos manda un mensaje cada semana.",
+      "target": "Nos",
       "tr": {
         "hu": "Hetente küld nekünk egy üzenetet.",
         "en": "He/she sends us a message every week.",
@@ -1422,6 +1426,7 @@
       "kind": "why",
       "id": "poi-why-05",
       "es": "Os escribo un mensaje.",
+      "target": "Os",
       "tr": {
         "hu": "Írok nektek egy üzenetet.",
         "en": "I am writing you all a message.",
@@ -1472,6 +1477,7 @@
       "kind": "why",
       "id": "poi-why-06",
       "es": "Les mando un mensaje a mis papás.",
+      "target": "Les",
       "tr": {
         "hu": "Küldök egy üzenetet a szüleimnek.",
         "en": "I send a message to my parents.",
@@ -1522,6 +1528,7 @@
       "kind": "why",
       "id": "poi-why-07",
       "es": "Le doy el libro a María.",
+      "target": "Le",
       "tr": {
         "hu": "Odaadom Maríának a könyvet.",
         "en": "I give the book to María.",

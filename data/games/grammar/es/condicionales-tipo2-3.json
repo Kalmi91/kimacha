@@ -696,6 +696,7 @@
       "kind": "why",
       "id": "ct2-why-01",
       "es": "Si tuviera dinero, viajaría por el mundo.",
+      "target": "tuviera",
       "tr": { "hu": "Ha lenne pénzem, körbeutaznám a világot.", "en": "If I had money, I would travel around the world.", "es": "Si tuviera dinero, viajaría por el mundo.", "de": "Wenn ich Geld hätte, würde ich um die Welt reisen." },
       "options": [
         {
@@ -716,6 +717,7 @@
       "kind": "why",
       "id": "ct2-why-02",
       "es": "Si hubiera sabido la verdad, no habría dicho nada.",
+      "target": "hubiera sabido",
       "tr": { "hu": "Ha tudtam volna az igazságot, nem mondtam volna semmit.", "en": "If I had known the truth, I wouldn't have said anything.", "es": "Si hubiera sabido la verdad, no habría dicho nada.", "de": "Wenn ich die Wahrheit gewusst hätte, hätte ich nichts gesagt." },
       "options": [
         {
@@ -736,6 +738,7 @@
       "kind": "why",
       "id": "ct2-why-03",
       "es": "Si hubiera estudiado medicina, ahora sería médico.",
+      "target": "sería",
       "tr": { "hu": "Ha orvosit tanultam volna, most orvos lennék.", "en": "If I had studied medicine, I would be a doctor now.", "es": "Si hubiera estudiado medicina, ahora sería médico.", "de": "Wenn ich Medizin studiert hätte, wäre ich jetzt Arzt." },
       "options": [
         {
@@ -756,6 +759,7 @@
       "kind": "why",
       "id": "ct2-why-04",
       "es": "Si fueras más amable, te ayudarían.",
+      "target": "fueras",
       "tr": { "hu": "Ha kedvesebb lennél, segítenének neked.", "en": "If you were kinder, they would help you.", "es": "Si fueras más amable, te ayudarían.", "de": "Wenn du netter wärst, würden sie dir helfen." },
       "options": [
         {
@@ -776,6 +780,7 @@
       "kind": "why",
       "id": "ct2-why-05",
       "es": "Si hubieras estudiado más, habrías aprobado el examen.",
+      "target": "hubieras estudiado",
       "tr": { "hu": "Ha többet tanultál volna, átmentél volna a vizsgán.", "en": "If you had studied more, you would have passed the exam.", "es": "Si hubieras estudiado más, habrías aprobado el examen.", "de": "Wenn du mehr gelernt hättest, hättest du die Prüfung bestanden." },
       "options": [
         {
@@ -796,6 +801,7 @@
       "kind": "why",
       "id": "ct2-why-06",
       "es": "Ojalá tuviera más tiempo.",
+      "target": "Ojalá",
       "tr": { "hu": "Bárcsak lenne több időm.", "en": "I wish I had more time.", "es": "Ojalá tuviera más tiempo.", "de": "Ich wünschte, ich hätte mehr Zeit." },
       "options": [
         {
@@ -816,6 +822,7 @@
       "kind": "why",
       "id": "ct2-why-07",
       "es": "Si lo hubiera sabido, hubiera venido.",
+      "target": "hubiera venido",
       "tr": { "hu": "Ha tudtam volna, eljöttem volna.", "en": "If I had known, I would have come.", "es": "Si lo hubiera sabido, hubiera venido.", "de": "Wenn ich es gewusst hätte, wäre ich gekommen." },
       "options": [
         {

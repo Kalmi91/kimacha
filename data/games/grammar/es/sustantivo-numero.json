@@ -879,6 +879,7 @@
       "kind": "why",
       "id": "sn-why-01",
       "es": "El libro es interesante.",
+      "target": "libro",
       "tr": { "hu": "A könyv érdekes.", "en": "The book is interesting.", "es": "El libro es interesante.", "de": "Das Buch ist interessant." },
       "options": [
         {
@@ -909,6 +910,7 @@
       "kind": "why",
       "id": "sn-why-02",
       "es": "La ciudad es grande.",
+      "target": "ciudad",
       "tr": { "hu": "A város nagy.", "en": "The city is big.", "es": "La ciudad es grande.", "de": "Die Stadt ist groß." },
       "options": [
         {
@@ -939,6 +941,7 @@
       "kind": "why",
       "id": "sn-why-03",
       "es": "Necesito los papeles.",
+      "target": "papeles",
       "tr": { "hu": "Szükségem van a papírokra.", "en": "I need the papers.", "es": "Necesito los papeles.", "de": "Ich brauche die Papiere." },
       "options": [
         {
@@ -969,6 +972,7 @@
       "kind": "why",
       "id": "sn-why-04",
       "es": "Compro tres lápices nuevos.",
+      "target": "lápices",
       "tr": { "hu": "Veszek három új ceruzát.", "en": "I buy three new pencils.", "es": "Compro tres lápices nuevos.", "de": "Ich kaufe drei neue Bleistifte." },
       "options": [
         {
@@ -999,6 +1003,7 @@
       "kind": "why",
       "id": "sn-why-05",
       "es": "El problema es difícil.",
+      "target": "problema",
       "tr": { "hu": "A probléma nehéz.", "en": "The problem is difficult.", "es": "El problema es difícil.", "de": "Das Problem ist schwer." },
       "options": [
         {
@@ -1029,6 +1034,7 @@
       "kind": "why",
       "id": "sn-why-06",
       "es": "Las lecciones son fáciles.",
+      "target": "lecciones",
       "tr": { "hu": "A leckék könnyűek.", "en": "The lessons are easy.", "es": "Las lecciones son fáciles.", "de": "Die Lektionen sind leicht." },
       "options": [
         {
@@ -1059,6 +1065,7 @@
       "kind": "why",
       "id": "sn-why-07",
       "es": "Los lunes tengo clase.",
+      "target": "lunes",
       "tr": { "hu": "Hétfőnként órám van.", "en": "On Mondays I have class.", "es": "Los lunes tengo clase.", "de": "Montags habe ich Unterricht." },
       "options": [
         {
