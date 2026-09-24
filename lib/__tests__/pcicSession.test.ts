@@ -1,6 +1,6 @@
 // SZ2 (SZAVAK.md): a session-sor léptetése értékelés után és visszavonáskor.
 
-import { countDoneToday, requeueAfterGrade, requeueAfterUndo } from '../pcicSession';
+import { countDoneToday, requeueAfterGrade, requeueAfterUndo, reorderForReturn, type QueuedSm2Card } from '../pcicSession';
 import { sm2NewCard, sm2Review, addDays, type Sm2Card } from '../sm2';
 
 const TODAY = '2026-09-18';
@@ -80,6 +80,79 @@ describe('requeueAfterUndo', () => {
     const undone = requeueAfterUndo(queueAfterGrade, before, graded, TODAY);
 
     expect(undone).toEqual([before, other]);
+  });
+});
+
+// FB364 (PLAN-fb0923 5. lépés, D2): a rontott ("again") kártya N másodperc
+// múlva mindenképp visszajön, akármennyi új/esedékes szó áll a sorban.
+describe('reorderForReturn / requeueAfterGrade (FB364, again-időzítő)', () => {
+  it('(a) 20 új szó a sorban, rontás, 60 s múlva a rontott jön', () => {
+    const A = sm2NewCard('a1');
+    const gradedA = sm2Review(A, 'again', TODAY); // learning, due today
+    const others = Array.from({ length: 20 }, (_, i) => sm2NewCard(`n${i}`));
+    const afterGrade = requeueAfterGrade([A, ...others], gradedA, TODAY, 'again', 0, 60);
+
+    // Rögtön a rontás után (t=0) még nem esedékes, hátra kerül.
+    expect(afterGrade[0].itemId).not.toBe('a1');
+
+    // 60 s múlva a kiválasztás a 20 szó ellenére a rontottat adja.
+    const reordered = reorderForReturn(afterGrade, 60_000);
+    expect(reordered[0].itemId).toBe('a1');
+  });
+
+  it.each([15, 300])('(b) N = %i s is a rontott kártya visszatérési ideje', (n) => {
+    const A = sm2NewCard('a1');
+    const gradedA = sm2Review(A, 'again', TODAY);
+    const other = sm2NewCard('b1');
+    const afterGrade = requeueAfterGrade([A, other], gradedA, TODAY, 'again', 0, n);
+
+    const tooEarly = reorderForReturn(afterGrade, n * 1000 - 1);
+    expect(tooEarly[0].itemId).not.toBe('a1');
+
+    const onTime = reorderForReturn(afterGrade, n * 1000);
+    expect(onTime[0].itemId).toBe('a1');
+  });
+
+  it('(c) üres sor: a rontott a lejárat előtt is jön, ha nincs más kártya', () => {
+    const A = sm2NewCard('a1');
+    const gradedA = sm2Review(A, 'again', TODAY);
+    const afterGrade = requeueAfterGrade([A], gradedA, TODAY, 'again', 0, 60);
+
+    // t=0, a 60 s-os returnAt még nincs lejárva, de nincs más kártya a sorban.
+    expect(afterGrade[0].itemId).toBe('a1');
+    expect(afterGrade[0].returnAt).toBe(60_000);
+  });
+
+  it('(d) két rontás: a régebbi jön előbb', () => {
+    const older: QueuedSm2Card = { ...sm2NewCard('old'), returnAt: 1000 };
+    const newer: QueuedSm2Card = { ...sm2NewCard('new'), returnAt: 2000 };
+    // "newer" ül elöl a sorban, de "older" returnAt-ja korábbi.
+    const reordered = reorderForReturn([newer, older], 5000);
+    expect(reordered[0].itemId).toBe('old');
+  });
+
+  it('"Knew it" (good) kártyára nincs időzítő: a sor végére kerül, returnAt nélkül', () => {
+    const A = sm2NewCard('a1');
+    const gradedA = sm2Review(A, 'good', TODAY); // learning, 1. lépés, due today
+    const other = sm2NewCard('b1');
+    const afterGrade = requeueAfterGrade([A, other], gradedA, TODAY, 'good', 0, 60);
+
+    expect(afterGrade).toEqual([other, gradedA]);
+    expect((afterGrade[1] as QueuedSm2Card).returnAt).toBeUndefined();
+  });
+});
+
+describe('requeueAfterUndo (FB364, nincs árva időzítő)', () => {
+  it('(e) undo után nincs árva időzítő', () => {
+    const A = sm2NewCard('a1');
+    const other = sm2NewCard('b1');
+    const gradedA = sm2Review(A, 'again', TODAY);
+    const afterGrade = requeueAfterGrade([A, other], gradedA, TODAY, 'again', 0, 60);
+
+    const undone = requeueAfterUndo(afterGrade, A, gradedA, TODAY);
+
+    expect(undone).toEqual([A, other]);
+    expect(undone.every((c) => (c as QueuedSm2Card).returnAt === undefined)).toBe(true);
   });
 });
 

@@ -49,6 +49,9 @@ export default {
         preposition: 'PREPOSITION',
       } as Record<string, string>,
       markWrong: 'Not this one. Look for the word that plays that role.',
+      // FB376: a `why` drill kérdés-sora, ha az itemnek van `target` mezője
+      // (a kiemelt szó/szerkezet, amire a kérdés vonatkozik).
+      whyQuestion: (target: string) => `Why «${target}»?`,
     },
   },
   grammar: {
@@ -102,6 +105,9 @@ export default {
     // PLAN-play 13. lépés: the table-deck button, only on lessons that have a
     // conjugation table (lib/grammar/tableDeck.ts).
     practiceTable: (n: number) => `Practice the table · ${n} cells`,
+    // FB375 (PLAN-fb0923 6. lépés): the word-deck button, only on table-less
+    // lessons with >= 8 word cards (lib/grammar/tableDeck.ts wordCellsForLesson).
+    practiceWords: (n: number) => `Practice the words · ${n} cards`,
   },
   settings: {
     weeklyGoal: 'Weekly study goal',
@@ -115,6 +121,9 @@ export default {
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',
     articlePicker: 'Article buttons',
     articlePickerHint: 'On Spanish noun cards you pick el/la/los/las instead of typing it. ⊘ means no article.',
+    // FB364 (PLAN-fb0923 5. lépés): a PCIC "again" kártya visszatérési ideje.
+    missedWordDelay: 'Missed word comes back after',
+    missedWordDelaySeconds: (n: string) => `${n} s`,
   },
   backup: {
     backup: 'Backup',
@@ -253,16 +262,30 @@ export default {
     accentForgiven: 'Missing accent, counted as correct',
   },
   // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
+  // FB361-362: a teljes WordPos-készlet felirata (nem csak noun/verb/phrase),
+  // + conj/prefix/suffix a PCIC-only Pos-értékekre.
   pos: {
     noun: 'noun',
     verb: 'verb',
+    adj: 'adjective',
+    adv: 'adverb',
+    pron: 'pronoun',
+    prep: 'preposition',
+    num: 'number',
     phrase: 'phrase',
+    conj: 'conjunction',
+    prefix: 'prefix',
+    suffix: 'suffix',
   },
   // PLAN-play 13. lépés: the table-deck screen (a lesson's conjugation
   // tables, practiced Anki-style with the PCIC card UI).
   tableDeck: {
     chip: 'TABLE',
     promptCaption: 'person · verb',
+    // FB375 (PLAN-fb0923 6. lépés): a tábla nélküli leckék szó-paklija
+    // ugyanezt a képernyőt használja, csak ez a két string vált.
+    wordChip: 'WORD',
+    wordPromptCaption: 'meaning',
     progress: (done: number, total: number) => `${done} / ${total} done`,
     completeTitle: (n: number) => `All ${n} cells done 🎉`,
     startAgain: 'Start again',

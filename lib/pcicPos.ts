@@ -13,7 +13,12 @@
 import type { PcicKind } from '@/data/pcic';
 import { words, type WordGender, type WordPos } from '@/data/words';
 
-export type Pos = 'noun' | 'verb' | 'phrase';
+// FB361-362: a chip minden korpusz-szófajt kaphat (nem csak noun/verb/phrase),
+// ezért a Pos lefedi a teljes WordPos-készletet. A `conj`/`prefix`/`suffix`
+// csak a PCIC oldalon létezik (kötőszó, illetve képző-tétel, pl. "-ísimo"),
+// a korpusz WordPos típusát ez nem bővíti, azt kézzel írt PCIC `pos` mező
+// adja, a lemma-index (korpuszból) sose ad ilyet.
+export type Pos = WordPos | 'conj' | 'prefix' | 'suffix';
 
 export interface PosInfo {
   pos: Pos;
@@ -26,12 +31,16 @@ const LEADING_ARTICLE = /^(el|la|los|las|un|una)\s+/;
 // Egy szó és -ar/-er/-ir(se) végű: infinitivus alak.
 const VERB_ENDING = /^[a-záéíóúñü]+(ar|er|ir|arse|erse|irse)$/i;
 
-// A korpusz szélesebb szófaj-készletet visel (adj/adv/pron/...), mint a PCIC
-// chip (csak noun/verb/phrase); ami nem esik ebbe a háromba, azt a lemma-index
-// építése figyelmen kívül hagyja, és a lemma a régi szabályra esik vissza.
+// FB361-362: a Pos lefedi a teljes WordPos-készletet, ezért minden
+// korpusz-szófaj átjön a lemma-indexbe (korábban csak noun/verb/phrase).
 const CORPUS_POS_TO_PCIC: Partial<Record<WordPos, Pos>> = {
   noun: 'noun',
   verb: 'verb',
+  adj: 'adj',
+  adv: 'adv',
+  pron: 'pron',
+  prep: 'prep',
+  num: 'num',
   phrase: 'phrase',
 };
 
@@ -67,6 +76,9 @@ function getLemmaIndex(): Map<string, PosInfo | null> {
 }
 
 export function posOf(item: { es: string; kind: PcicKind; pos?: Pos | null }): PosInfo | null {
+  // FB362: mondat- és minta-tételnek sose jár szófaj-chip, még akkor sem, ha
+  // volna `pos` mezője vagy a korpusz ismerné a spanyol alakot.
+  if (item.kind === 'sentence' || item.kind === 'pattern') return null;
   if (item.pos) return { pos: item.pos };
 
   const es = item.es.trim();

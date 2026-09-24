@@ -146,7 +146,10 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
       new_bonus_date TEXT,
       hand_cap INTEGER,
       gap_laps INTEGER,
-      repair_gap INTEGER
+      repair_gap INTEGER,
+      -- FB364 (PLAN-fb0923 5. lépés): a PCIC "rontott" (again) kártya ennyi
+      -- másodperc múlva jön mindenképp vissza (lib/pcicSession.ts).
+      again_delay_sec INTEGER
     );
     CREATE TABLE IF NOT EXISTS spelling_list (
       pair TEXT NOT NULL,
@@ -241,6 +244,11 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
   // UTEMEZO 4.7: repair_gap (R_javítás), a rontott lap külön, rövid rése.
   try {
     await db.execAsync('ALTER TABLE learn_settings ADD COLUMN repair_gap INTEGER');
+  } catch {}
+  // Migration: add again_delay_sec column (DBs created before the PCIC
+  // "missed word comes back after N seconds" setting, FB364).
+  try {
+    await db.execAsync('ALTER TABLE learn_settings ADD COLUMN again_delay_sec INTEGER');
   } catch {}
   // Migration: pcic_cards.known column (DBs created before "Ezt nem tanulom", SZ3).
   try {

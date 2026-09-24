@@ -966,6 +966,7 @@
       "id": "ag-why-01",
       "kind": "why",
       "es": "El perro corre en el parque.",
+      "target": "perro",
       "tr": {
         "hu": "A kutya fut a parkban.",
         "en": "The dog runs in the park.",
@@ -1016,6 +1017,7 @@
       "id": "ag-why-02",
       "kind": "why",
       "es": "El agua de la botella está fría.",
+      "target": "agua",
       "tr": {
         "hu": "A palack vize hideg.",
         "en": "The water in the bottle is cold.",
@@ -1066,6 +1068,7 @@
       "id": "ag-why-03",
       "kind": "why",
       "es": "El problema no tiene solución fácil.",
+      "target": "problema",
       "tr": {
         "hu": "A problémának nincs könnyű megoldása.",
         "en": "The problem has no easy solution.",
@@ -1116,6 +1119,7 @@
       "id": "ag-why-04",
       "kind": "why",
       "es": "La mano derecha me duele.",
+      "target": "mano",
       "tr": {
         "hu": "Fáj a jobb kezem.",
         "en": "My right hand hurts.",
@@ -1166,6 +1170,7 @@
       "id": "ag-why-05",
       "kind": "why",
       "es": "Busco un restaurante bueno cerca de aquí.",
+      "target": "restaurante",
       "tr": {
         "hu": "Keresek egy jó éttermet itt a közelben.",
         "en": "I'm looking for a good restaurant near here.",
@@ -1216,6 +1221,7 @@
       "id": "ag-why-06",
       "kind": "why",
       "es": "La ciudad tiene muchos parques.",
+      "target": "ciudad",
       "tr": {
         "hu": "A városnak sok parkja van.",
         "en": "The city has many parks.",
@@ -1266,6 +1272,7 @@
       "id": "ag-why-07",
       "kind": "why",
       "es": "La foto está en la pared.",
+      "target": "foto",
       "tr": {
         "hu": "A fénykép a falon van.",
         "en": "The photo is on the wall.",

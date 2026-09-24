@@ -729,6 +729,7 @@
       "id": "int-why-01",
       "kind": "why",
       "es": "¿Dónde trabajas?",
+      "target": "Dónde",
       "tr": { "hu": "Hol dolgozol?", "en": "Where do you work?", "es": "¿Dónde trabajas?", "de": "Wo arbeitest du?" },
       "options": [
         {
@@ -759,6 +760,7 @@
       "id": "int-why-02",
       "kind": "why",
       "es": "¿Cuándo empieza la clase?",
+      "target": "Cuándo",
       "tr": { "hu": "Mikor kezdődik az óra?", "en": "When does the class start?", "es": "¿Cuándo empieza la clase?", "de": "Wann beginnt der Unterricht?" },
       "options": [
         {
@@ -789,6 +791,7 @@
       "id": "int-why-03",
       "kind": "why",
       "es": "¿Quiénes son ellos?",
+      "target": "Quiénes",
       "tr": { "hu": "Kik ők?", "en": "Who are they?", "es": "¿Quiénes son ellos?", "de": "Wer sind sie?" },
       "options": [
         {
@@ -819,6 +822,7 @@
       "id": "int-why-04",
       "kind": "why",
       "es": "¿Cuántas hermanas tienes?",
+      "target": "Cuántas",
       "tr": { "hu": "Hány lánytestvéred van?", "en": "How many sisters do you have?", "es": "¿Cuántas hermanas tienes?", "de": "Wie viele Schwestern hast du?" },
       "options": [
         {
@@ -849,6 +853,7 @@
       "id": "int-why-05",
       "kind": "why",
       "es": "¿Con quién vas al cine?",
+      "target": "Con quién",
       "tr": { "hu": "Kivel mész moziba?", "en": "Who are you going to the movies with?", "es": "¿Con quién vas al cine?", "de": "Mit wem gehst du ins Kino?" },
       "options": [
         {
@@ -879,6 +884,7 @@
       "id": "int-why-06",
       "kind": "why",
       "es": "¿Cuál es tu apellido?",
+      "target": "Cuál",
       "tr": { "hu": "Melyik a vezetékneved?", "en": "What is your last name?", "es": "¿Cuál es tu apellido?", "de": "Wie ist dein Nachname?" },
       "options": [
         {
@@ -909,6 +915,7 @@
       "id": "int-why-07",
       "kind": "why",
       "es": "¿Por qué no vienes? Porque estoy cansado.",
+      "target": "Por qué",
       "tr": { "hu": "Miért nem jössz? Mert fáradt vagyok.", "en": "Why aren't you coming? Because I'm tired.", "es": "¿Por qué no vienes? Porque estoy cansado.", "de": "Warum kommst du nicht? Weil ich müde bin." },
       "options": [
         {

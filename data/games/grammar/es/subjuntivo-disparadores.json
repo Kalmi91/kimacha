@@ -796,6 +796,7 @@
       "kind": "why",
       "id": "sp-why-01",
       "es": "Quiero que vengas pronto.",
+      "target": "Quiero que",
       "tr": {
         "hu": "Szeretném, ha hamarosan jönnél.",
         "en": "I want you to come soon.",
@@ -847,6 +848,7 @@
       "kind": "why",
       "id": "sp-why-02",
       "es": "No creo que sea tarde.",
+      "target": "No creo que",
       "tr": {
         "hu": "Nem hiszem, hogy késő van.",
         "en": "I don't think it's late.",
@@ -898,6 +900,7 @@
       "kind": "why",
       "id": "sp-why-03",
       "es": "Creo que tiene razón.",
+      "target": "Creo que",
       "tr": {
         "hu": "Azt hiszem, igaza van.",
         "en": "I think he's right.",
@@ -949,6 +952,7 @@
       "kind": "why",
       "id": "sp-why-04",
       "es": "Quiero comer temprano.",
+      "target": "Quiero",
       "tr": {
         "hu": "Korán akarok enni.",
         "en": "I want to eat early.",
@@ -1000,6 +1004,7 @@
       "kind": "why",
       "id": "sp-why-05",
       "es": "Dudo que vengan hoy.",
+      "target": "Dudo que",
       "tr": {
         "hu": "Kétlem, hogy ma jönnek.",
         "en": "I doubt they're coming today.",
@@ -1051,6 +1056,7 @@
       "kind": "why",
       "id": "sp-why-06",
       "es": "Es verdad que llueve mucho.",
+      "target": "Es verdad que",
       "tr": {
         "hu": "Igaz, hogy sokat esik.",
         "en": "It's true that it rains a lot.",
@@ -1102,6 +1108,7 @@
       "kind": "why",
       "id": "sp-why-07",
       "es": "Me alegro de estar aquí.",
+      "target": "Me alegro de",
       "tr": {
         "hu": "Örülök, hogy itt vagyok.",
         "en": "I'm glad to be here.",

@@ -5,6 +5,7 @@
 
 import { lessonFor } from '../syllabus';
 import { isLessonV2 } from '../../games/content';
+import type { LessonV2 } from '../lessonTypes';
 import {
   answerCell,
   doneCount,
@@ -14,6 +15,8 @@ import {
   nextCellId,
   resetDeck,
   tableCellsForLesson,
+  wordCellsForLesson,
+  WORD_DECK_MIN_CARDS,
   type DeckCellState,
 } from '../tableDeck';
 
@@ -150,5 +153,33 @@ describe('mergeDeckState', () => {
     const merged = mergeDeckState(cells, persisted);
     expect(merged.cells).toHaveLength(10);
     expect(doneCount(merged)).toBe(0);
+  });
+});
+
+// FB375 (PLAN-fb0923 6. lépés, D5/a): "itt is legyen egy nyelvtanulós kártya
+// csomag a szavakból" - a word-deck a tábla nélküli leckéknek.
+describe('wordCellsForLesson', () => {
+  it('clases-de-palabras (no conjugation table): a non-empty deck with no function word', () => {
+    const lesson = lessonFor('es', 'clases-de-palabras')!;
+    expect(tableCellsForLesson(lesson)).toEqual([]); // ez a lecke pontosan azért kap szó-paklit
+    const cards = wordCellsForLesson(lesson);
+    expect(cards.length).toBeGreaterThan(0);
+    const functionWords = ['el', 'la', 'los', 'las', 'un', 'una', 'y', 'o', 'pero', 'que', 'de', 'en', 'a', 'con', 'sin', 'yo', 'tú', 'me', 'te', 'se', 'su', 'este', 'esta'];
+    for (const w of functionWords) {
+      expect(cards.some((c) => c.es.toLowerCase() === w)).toBe(false);
+    }
+  });
+
+  it('a sparse table-less lesson stays under the button threshold (D5, 3. lépés)', () => {
+    const tiny: LessonV2 = {
+      schema: 2,
+      topic: 'zz-tiny-fixture',
+      level: 'A1',
+      title: { hu: 't', en: 't', es: 't', de: 't' },
+      body: [{ kind: 'text', text: { hu: '', en: '', de: '', es: 'Hola. Adiós.' } }],
+      speak: { hu: '', en: '', de: '', es: '' },
+      items: [],
+    };
+    expect(wordCellsForLesson(tiny).length).toBeLessThan(WORD_DECK_MIN_CARDS);
   });
 });
