@@ -265,6 +265,8 @@ export default {
   tableDeck: {
     chip: 'TABLE',
     promptCaption: 'person · verb',
+    // FB378: caption for a cell with an English prompt (translate to Spanish).
+    promptCaptionEn: 'translate to Spanish',
     progress: (done: number, total: number) => `${done} / ${total} done`,
     completeTitle: (n: number) => `All ${n} cells done 🎉`,
     startAgain: 'Start again',

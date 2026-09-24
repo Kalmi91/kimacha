@@ -157,6 +157,66 @@
           "comieron",
           "vivieron"
         ]
+      ],
+      "enPrompt": [
+        ["I spoke", "I ate", "I lived"],
+        ["you spoke", "you ate", "you lived"],
+        ["she spoke", "he ate", "she lived"],
+        ["we spoke", "we ate", "we lived"],
+        ["you all spoke", "you all ate", "you all lived"],
+        ["they spoke", "they ate", "they lived"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "indefinido-regular-2",
+      "title": {
+        "hu": "További szabályos igék, befejezett múlt",
+        "en": "More regular verbs, preterite",
+        "es": "Más verbos regulares, perfecto simple",
+        "de": "Weitere regelmäßige Verben, Indefinido"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "trabajar",
+          "en": "trabajar",
+          "es": "trabajar",
+          "de": "trabajar"
+        },
+        {
+          "hu": "aprender",
+          "en": "aprender",
+          "es": "aprender",
+          "de": "aprender"
+        },
+        {
+          "hu": "escribir",
+          "en": "escribir",
+          "es": "escribir",
+          "de": "escribir"
+        }
+      ],
+      "rows": [
+        ["yo", "trabajé", "aprendí", "escribí"],
+        ["tú", "trabajaste", "aprendiste", "escribiste"],
+        ["él/ella/usted", "trabajó", "aprendió", "escribió"],
+        ["nosotros", "trabajamos", "aprendimos", "escribimos"],
+        ["vosotros", "trabajasteis", "aprendisteis", "escribisteis"],
+        ["ellos/ellas/ustedes", "trabajaron", "aprendieron", "escribieron"]
+      ],
+      "enPrompt": [
+        ["I worked", "I learned", "I wrote"],
+        ["you worked", "you learned", "you wrote"],
+        ["she worked", "he learned", "she wrote"],
+        ["we worked", "we learned", "we wrote"],
+        ["you all worked", "you all learned", "you all wrote"],
+        ["they worked", "they learned", "they wrote"]
       ]
     },
     {
