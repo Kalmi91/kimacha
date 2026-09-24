@@ -185,6 +185,27 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
       step INTEGER NOT NULL DEFAULT 0,
       due TEXT NOT NULL
     );
+    -- PLAN-hibaim.md 2. lépés: a betöltött "Hibáim" kötegek (a validált JSON,
+    -- teljes egészében) és a hozzájuk tartozó SM-2 haladás, a pcic_cards
+    -- oszlopaival, de saját táblában, hogy a PCIC-statisztikát ne szennyezze.
+    CREATE TABLE IF NOT EXISTS mistake_batches (
+      batch_id TEXT PRIMARY KEY,
+      json TEXT NOT NULL,
+      imported_at TEXT NOT NULL
+    );
+    CREATE TABLE IF NOT EXISTS mistake_cards (
+      item_id TEXT PRIMARY KEY,
+      state TEXT NOT NULL DEFAULT 'new',
+      step INTEGER NOT NULL DEFAULT 0,
+      ease REAL NOT NULL DEFAULT 2.5,
+      interval INTEGER NOT NULL DEFAULT 0,
+      reps INTEGER NOT NULL DEFAULT 0,
+      lapses INTEGER NOT NULL DEFAULT 0,
+      due TEXT NOT NULL DEFAULT '',
+      last_review TEXT,
+      introduced_at TEXT,
+      known INTEGER NOT NULL DEFAULT 0
+    );
   `);
   // Migration: add random_topics column (DBs created before the random-topic toggle).
   try {
