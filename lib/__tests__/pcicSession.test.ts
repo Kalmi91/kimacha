@@ -1,7 +1,19 @@
 // SZ2 (SZAVAK.md): a session-sor léptetése értékelés után és visszavonáskor.
 
-import { countDoneToday, requeueAfterGrade, requeueAfterUndo, reorderForReturn, type QueuedSm2Card } from '../pcicSession';
-import { sm2NewCard, sm2Review, addDays, type Sm2Card } from '../sm2';
+import {
+  countDoneToday,
+  countIntroducedTodayByKind,
+  requeueAfterGrade,
+  requeueAfterUndo,
+  reorderForReturn,
+  nextPcicNewBonus,
+  pcicNewBudget,
+  pickStrongerSm2Card,
+  thinSentences,
+  type QueuedSm2Card,
+} from '../pcicSession';
+import { sm2NewCard, sm2Review, pickSm2Session, addDays, type Sm2Card } from '../sm2';
+import type { PcicKind } from '@/data/pcic';
 
 const TODAY = '2026-09-18';
 const TOMORROW = addDays(TODAY, 1);
@@ -201,5 +213,158 @@ describe('countDoneToday', () => {
     const cards = [reviewCard({ lastReview: addDays(TODAY, -1) }), sm2NewCard('b1-0016')];
 
     expect(countDoneToday(cards, TODAY)).toBe(0);
+  });
+});
+
+// FB385/386: "+10 new words" was flat-added to the standing limit and kept
+// only in React state (extraNew), so a tap after the day's introduced count
+// already ran past the limit (limit 10, introduced today 18) gave back only
+// 2 new cards instead of 10, and the bonus vanished on the next reload.
+describe('nextPcicNewBonus + pcicNewBudget (FB385/386)', () => {
+  it('reproduces the bug case: limit 10, 18 already introduced today, "+10" gives 10 new cards, not 2', () => {
+    const limit = 10;
+    const introducedToday = 18;
+    const bonus = nextPcicNewBonus({ limit, bonus: 0, introducedToday });
+    expect(bonus).toBe(18); // max(0, 18-10) + 10
+
+    const effectiveLimit = pcicNewBudget({ limit, bonus, introducedToday });
+
+    // Build a session where 18 cards were already introduced today and 10
+    // fresh ones are still waiting, exactly like the reported case.
+    const today = TODAY;
+    const already = Array.from({ length: introducedToday }, (_, i) =>
+      sm2Review(sm2NewCard(`b1-int-${i}`), 'good', today)
+    );
+    const freshOrder = Array.from({ length: 10 }, (_, i) => `b1-fresh-${i}`);
+    const session = pickSm2Session(already, freshOrder, today, effectiveLimit);
+
+    expect(session.filter((c) => c.state === 'new').length).toBe(10);
+  });
+
+  it('a second "+10" tap keeps stacking on top of the persisted bonus', () => {
+    const limit = 10;
+    const introducedToday = 5;
+    const first = nextPcicNewBonus({ limit, bonus: 0, introducedToday });
+    expect(first).toBe(10); // max(0, 5-10)=0, +10
+
+    const second = nextPcicNewBonus({ limit, bonus: first, introducedToday });
+    expect(second).toBe(20); // max(10, 5-10)=10, +10
+  });
+
+  it('a reload (fresh load() call) keeps giving the same budget as long as the persisted bonus and introduced count are unchanged', () => {
+    const input = { limit: 10, bonus: 18, introducedToday: 18 };
+    // load() re-derives the budget purely from the persisted bonus + the
+    // cards read back from the DB, so calling it twice with the same
+    // (persisted) inputs must not shrink the budget the way the old
+    // React-state extraNew did (it reset to 0 on every load()).
+    expect(pcicNewBudget(input)).toBe(pcicNewBudget(input));
+    expect(pcicNewBudget(input)).toBe(28); // limit + bonus, well above introducedToday
+  });
+
+  it("a day change means the stored bonus no longer applies (only today's introduced count counts)", () => {
+    // getPcicNewBonus(today) returns 0 once new_bonus_date !== today, so the
+    // caller (load()) passes bonus: 0 the next day regardless of yesterday's value.
+    const limit = 10;
+    const introducedToday = 3;
+    const budgetWithYesterdaysBonusExpired = pcicNewBudget({ limit, bonus: 0, introducedToday });
+    expect(budgetWithYesterdaysBonusExpired).toBe(10); // back to the standing limit, no leftover bonus
+  });
+});
+
+// FB387/395 (PLAN-fb0924 1b. lépés): a fejléc "ma: N szó · M mondat / keret"
+// felbontása - a KIND szerinti szétválasztás, amit a "miért csak 6 vagy 8 jött 10
+// helyett" panasz (FB387/395) valójában hiányolt (a maradék a másik fajtára ment).
+function kindMap(map: Record<string, PcicKind>): (itemId: string) => PcicKind | undefined {
+  return (itemId) => map[itemId];
+}
+
+describe('countIntroducedTodayByKind (FB387/395)', () => {
+  it('szétválasztja a ma bevezetett szó- és mondat-kártyákat', () => {
+    const cards = [
+      reviewCard({ itemId: 'w1', introducedAt: TODAY }),
+      reviewCard({ itemId: 'w2', introducedAt: TODAY }),
+      reviewCard({ itemId: 's1', introducedAt: TODAY }),
+      reviewCard({ itemId: 's2', introducedAt: TODAY }),
+      reviewCard({ itemId: 's3', introducedAt: TODAY }),
+    ];
+    const kindOf = kindMap({ w1: 'word', w2: 'word', s1: 'sentence', s2: 'sentence', s3: 'sentence' });
+    expect(countIntroducedTodayByKind(cards, TODAY, kindOf)).toEqual({ words: 2, sentences: 3 });
+  });
+
+  it('a phrase és a pattern is a szó-vödörbe esik, a lánc-mondat a mondat-vödörbe', () => {
+    const cards = [
+      reviewCard({ itemId: 'p1', introducedAt: TODAY }),
+      reviewCard({ itemId: 'pat1', introducedAt: TODAY }),
+      reviewCard({ itemId: 'chain-2', introducedAt: TODAY }), // lánc-tag, de kind: sentence
+    ];
+    const kindOf = kindMap({ p1: 'phrase', pat1: 'pattern', 'chain-2': 'sentence' });
+    expect(countIntroducedTodayByKind(cards, TODAY, kindOf)).toEqual({ words: 2, sentences: 1 });
+  });
+
+  it('csak a MA bevezetett kártyákat számolja, a tegnapiakat nem', () => {
+    const cards = [
+      reviewCard({ itemId: 'today1', introducedAt: TODAY }),
+      reviewCard({ itemId: 'yesterday1', introducedAt: addDays(TODAY, -1) }),
+      sm2NewCard('never-introduced'), // introducedAt: null
+    ];
+    const kindOf = kindMap({ today1: 'word', yesterday1: 'word', 'never-introduced': 'word' });
+    expect(countIntroducedTodayByKind(cards, TODAY, kindOf)).toEqual({ words: 1, sentences: 0 });
+  });
+
+  it('üres kártyalistára {0, 0}-t ad', () => {
+    expect(countIntroducedTodayByKind([], TODAY, () => undefined)).toEqual({ words: 0, sentences: 0 });
+  });
+});
+
+describe('pickStrongerSm2Card (FB384, 7b)', () => {
+  it('több sikeres ismétlés (reps - lapses) nyer', () => {
+    const strong = reviewCard({ itemId: 'x', reps: 10, lapses: 1 }); // 9 sikeres
+    const weak = reviewCard({ itemId: 'y', reps: 5, lapses: 0 }); // 5 sikeres
+    expect(pickStrongerSm2Card(strong, weak)).toBe(strong);
+    expect(pickStrongerSm2Card(weak, strong)).toBe(strong);
+  });
+
+  it('holtversenynél (azonos sikeres ismétlés) a nagyobb interval nyer', () => {
+    const strong = reviewCard({ itemId: 'x', reps: 5, lapses: 0, interval: 30 });
+    const weak = reviewCard({ itemId: 'y', reps: 5, lapses: 0, interval: 10 });
+    expect(pickStrongerSm2Card(strong, weak)).toBe(strong);
+  });
+
+  it('végső holtversenynél a korábbi esedékesség (due) nyer', () => {
+    const earlier = reviewCard({ itemId: 'x', reps: 5, lapses: 0, interval: 10, due: TODAY });
+    const later = reviewCard({ itemId: 'y', reps: 5, lapses: 0, interval: 10, due: addDays(TODAY, 5) });
+    expect(pickStrongerSm2Card(earlier, later)).toBe(earlier);
+  });
+});
+
+describe('thinSentences (PLAN-fb0924 8. lépés, FB394/396)', () => {
+  const kind = kindMap({ w1: 'word', w2: 'word', w3: 'word', s1: 'sentence', s2: 'sentence', s3: 'sentence' });
+  const ownGroup = (id: string) => id;
+
+  it('az első mondat várakozás nélkül mehet', () => {
+    const order = ['w1', 's1', 'w2', 'w3'];
+    expect(thinSentences(order, kind, ownGroup, 2)).toEqual(['w1', 's1', 'w2', 'w3']);
+  });
+
+  it('egy második mondat kimarad, ha a kettő közt kevesebb, mint minGap nem-mondat kártya van', () => {
+    const order = ['s1', 'w1', 's2', 'w2', 'w3'];
+    // s1 -> s2 közt csak 1 szó van, minGap 2 -> s2 kimarad ebből a hívásból.
+    expect(thinSentences(order, kind, ownGroup, 2)).toEqual(['s1', 'w1', 'w2', 'w3']);
+  });
+
+  it('a második mondat bekerül, ha elég nem-mondat kártya választja el az elsőtől', () => {
+    const order = ['s1', 'w1', 'w2', 's2', 'w3'];
+    expect(thinSentences(order, kind, ownGroup, 2)).toEqual(['s1', 'w1', 'w2', 's2', 'w3']);
+  });
+
+  it('egy csoport (groupOf) tagjai egymás után, rés nélkül is bemehetnek - EGY egységnek számítanak', () => {
+    const order = ['w1', 's1', 's2', 'w2'];
+    const sameGroup = () => 'chain-1'; // s1 és s2 ugyanabba a láncba tartozik
+    expect(thinSentences(order, kind, sameGroup, 9)).toEqual(['w1', 's1', 's2', 'w2']);
+  });
+
+  it('nincs mondat a bemeneten -> a sorrend változatlan', () => {
+    const order = ['w1', 'w2', 'w3'];
+    expect(thinSentences(order, kind, ownGroup)).toEqual(order);
   });
 });

@@ -4,7 +4,7 @@ import { FORCED_PAIR, needsPairCorrection } from './languages';
 import { WORD_MERGES } from './wordMerges';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 import { addDays, type Sm2Card } from './sm2';
-import type { PcicLevel } from '@/data/pcic';
+import { pcicItemsForLevel, type PcicLevel, type PcicViewLevel } from '@/data/pcic';
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
 import type { MistakeBatchRow } from './mistakes/deck';
 
@@ -43,6 +43,9 @@ export interface DB {
   setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
   getDailyNewLimit(): Promise<number>;
   setDailyNewLimit(limit: number): Promise<void>;
+  // FB385/386: a PCIC "+10 új szó" bónusz, a naptári nappal lejár.
+  getPcicNewBonus(today: string): Promise<number>;
+  setPcicNewBonus(bonus: number, today: string): Promise<void>;
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
   // GAMES.md 3.5 (F0): Game fül tables, scoped to the active pair like every
@@ -53,8 +56,8 @@ export interface DB {
   getPcicCards(): Promise<Sm2Card[]>;
   upsertPcicCard(card: Sm2Card): Promise<void>;
   getPcicStats(today: string): Promise<{ total: number; newIntroducedToday: number; dueToday: number; learned: number }>;
-  getPcicLevel(): Promise<PcicLevel>;
-  setPcicLevel(level: PcicLevel): Promise<void>;
+  getPcicLevel(): Promise<PcicViewLevel>;
+  setPcicLevel(level: PcicViewLevel): Promise<void>;
   resetPcicCards(levelPrefix?: string): Promise<void>;
   // PLAN-hibaim.md 2. lépés: a "Hibáim" kötegek és a hozzájuk tartozó SM-2
   // haladás, a pcic_cards-tól elkülönítve.
@@ -260,6 +263,18 @@ class MemoryDB implements DB {
     this.dailyNewLimitMap.set(this.activePair, limit);
   }
 
+  // FB385/386: memory mirror of the SQLite new_bonus/new_bonus_date columns.
+  private pcicNewBonusMap: Map<string, { bonus: number; date: string }> = new Map();
+
+  async getPcicNewBonus(today: string): Promise<number> {
+    const entry = this.pcicNewBonusMap.get(this.activePair);
+    return entry && entry.date === today ? entry.bonus : 0;
+  }
+
+  async setPcicNewBonus(bonus: number, today: string): Promise<void> {
+    this.pcicNewBonusMap.set(this.activePair, { bonus, date: today });
+  }
+
   // Usage-timer feature: one entry per local calendar day, app-wide (not
   // scoped to a language pair, unlike cards/level). Web doesn't survive
   // reload, same known limitation as the other in-memory maps above.
@@ -336,13 +351,16 @@ class MemoryDB implements DB {
     };
   }
 
+  // PLAN-fb0924 7a. lépés: lásd lib/database.ts resetPcicCards komment - a
+  // valódi id-listát a betöltött korpuszból kérjük, nem az id előtagjából.
   async resetPcicCards(levelPrefix?: string): Promise<void> {
     if (!levelPrefix) {
       this.pcicCards.clear();
       return;
     }
+    const ids = new Set(pcicItemsForLevel(levelPrefix.toUpperCase() as PcicLevel).map((i) => i.id));
     for (const id of [...this.pcicCards.keys()]) {
-      if (id.startsWith(`${levelPrefix}-`)) this.pcicCards.delete(id);
+      if (ids.has(id)) this.pcicCards.delete(id);
     }
   }
 
@@ -378,13 +396,13 @@ class MemoryDB implements DB {
   // PLAN-play 10. lépés: a kiválasztott PCIC szint, memória-tükör (mint a
   // status-bar tint), alap B1, hogy egy meglévő telepítés progressze ("b1-...")
   // ne csússzon el.
-  private pcicLevel: PcicLevel = 'B1';
+  private pcicLevel: PcicViewLevel = 'B1';
 
-  async getPcicLevel(): Promise<PcicLevel> {
+  async getPcicLevel(): Promise<PcicViewLevel> {
     return this.pcicLevel;
   }
 
-  async setPcicLevel(level: PcicLevel): Promise<void> {
+  async setPcicLevel(level: PcicViewLevel): Promise<void> {
     this.pcicLevel = level;
   }
 

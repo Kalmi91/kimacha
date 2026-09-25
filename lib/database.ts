@@ -4,14 +4,16 @@ import { FORCED_PAIR, needsPairCorrection } from './languages';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 import type { Sm2Card } from './sm2';
 import { addDays } from './sm2';
-import type { PcicLevel } from '@/data/pcic';
+import { pcicItemsForLevel, type PcicLevel, type PcicViewLevel } from '@/data/pcic';
 import type { MistakeBatchRow } from './mistakes/deck';
 import { runMigrations, applyWordMerges } from './db/migrations';
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
 
 // PLAN-play 10. lépés: egy meglévő telepítésen a haladás ma "b1-..." id-kkel
 // forog, ezért az oszlop hiánya (régi DB) B1-re esik vissza, nem A1-re.
-const DEFAULT_PCIC_LEVEL: PcicLevel = 'B1';
+// PLAN-fb0924 8. lépés: a perzisztált érték "A1+"/"A2+" is lehet (lásd
+// data/pcic.ts PcicViewLevel), a mezőt csak string-ként tárolja a DB.
+const DEFAULT_PCIC_LEVEL: PcicViewLevel = 'B1';
 
 export interface DB {
   getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
@@ -55,6 +57,11 @@ export interface DB {
   setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
   getDailyNewLimit(): Promise<number>;
   setDailyNewLimit(limit: number): Promise<void>;
+  // FB385/386: a PCIC "+10 új szó" bónusz, a naptári nappal lejár (a `today`
+  // paramot a hívó adja, mint `getPcicStats`-nál); 0, ha `today`-re nincs
+  // perzisztált bónusz.
+  getPcicNewBonus(today: string): Promise<number>;
+  setPcicNewBonus(bonus: number, today: string): Promise<void>;
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
   getDayStats(date: string): Promise<{ minutes: number; words: number }>;
@@ -68,9 +75,11 @@ export interface DB {
   getPcicStats(today: string): Promise<{ total: number; newIntroducedToday: number; dueToday: number; learned: number }>;
   // PLAN-play 10. lépés: a kiválasztott PCIC szint (A1-B2), app-szintű, mint a
   // status-bar tint. `levelPrefix` opcionális: csak azt a szintet üríti ki
-  // (item-id előtag szerint), üresen az egész táblát, mint eddig.
-  getPcicLevel(): Promise<PcicLevel>;
-  setPcicLevel(level: PcicLevel): Promise<void>;
+  // (a betöltött korpuszból lekért id-lista szerint, lib/pcicLevels.ts
+  // matchesLevel mintájára - PLAN-fb0924 7a. lépés, a szint-igazítás óta nem
+  // csupasz id-előtag), üresen az egész táblát, mint eddig.
+  getPcicLevel(): Promise<PcicViewLevel>;
+  setPcicLevel(level: PcicViewLevel): Promise<void>;
   resetPcicCards(levelPrefix?: string): Promise<void>;
   // PLAN-hibaim.md 2. lépés: a "Hibáim" kötegek (Settings -> Load my mistakes)
   // és a hozzájuk tartozó SM-2 haladás, a pcic_cards-tól elkülönítve.
@@ -146,13 +155,13 @@ class SQLiteDB implements DB {
   }
 
   // PLAN-play 10. lépés: a kiválasztott PCIC szint, app-szintű mint a fenti tint.
-  async getPcicLevel(): Promise<PcicLevel> {
+  async getPcicLevel(): Promise<PcicViewLevel> {
     const db = await this.open();
     const row = await db.getFirstAsync<any>('SELECT pcic_level FROM user_meta WHERE id = 1');
-    return (row?.pcic_level as PcicLevel) ?? DEFAULT_PCIC_LEVEL;
+    return (row?.pcic_level as PcicViewLevel) ?? DEFAULT_PCIC_LEVEL;
   }
 
-  async setPcicLevel(level: PcicLevel): Promise<void> {
+  async setPcicLevel(level: PcicViewLevel): Promise<void> {
     const db = await this.open();
     await db.runAsync('UPDATE user_meta SET pcic_level = ? WHERE id = 1', [level]);
   }
@@ -312,7 +321,8 @@ class SQLiteDB implements DB {
   }
 
   // FB77: daily new-word budget. The standing limit lives in learn_settings,
-  // the "+5 new words" taps add a bonus that expires with the calendar day.
+  // the "+10 new words" taps (PCIC, FB385/386) add a bonus that expires with
+  // the calendar day (getPcicNewBonus/setPcicNewBonus below).
   async getDailyNewLimit(): Promise<number> {
     const db = await this.open();
     const row = await db.getFirstAsync<any>('SELECT daily_new_limit FROM learn_settings WHERE pair = ?', [this.activePair]);
@@ -324,6 +334,25 @@ class SQLiteDB implements DB {
     await db.runAsync(
       'INSERT INTO learn_settings (pair, daily_new_limit) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET daily_new_limit = excluded.daily_new_limit',
       [this.activePair, limit]
+    );
+  }
+
+  // FB385/386: the columns already existed (FB77, the retired Learn tab) but
+  // had no reader/writer since that tab left; the PCIC "+10 new words" tap
+  // reuses them instead of adding a new pair of columns. `new_bonus_date`
+  // decides whether the stored bonus still counts (0 once the day rolls over).
+  async getPcicNewBonus(today: string): Promise<number> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT new_bonus, new_bonus_date FROM learn_settings WHERE pair = ?', [this.activePair]);
+    if (row?.new_bonus_date !== today) return 0;
+    return typeof row?.new_bonus === 'number' ? row.new_bonus : 0;
+  }
+
+  async setPcicNewBonus(bonus: number, today: string): Promise<void> {
+    const db = await this.open();
+    await db.runAsync(
+      'INSERT INTO learn_settings (pair, new_bonus, new_bonus_date) VALUES (?, ?, ?) ON CONFLICT(pair) DO UPDATE SET new_bonus = excluded.new_bonus, new_bonus_date = excluded.new_bonus_date',
+      [this.activePair, bonus, today]
     );
   }
 
@@ -463,10 +492,17 @@ class SQLiteDB implements DB {
     };
   }
 
+  // PLAN-fb0924 7a. lépés: a `levelPrefix` (pl. "a1") már NEM a LIKE-mintát
+  // adja (a szint-igazítás óta egy id előtagja nem feltétlen a valódi szintje,
+  // lásd lib/pcicLevels.ts matchesLevel), hanem a törlendő szint neve; a
+  // valódi id-listát a betöltött korpuszból kérjük le.
   async resetPcicCards(levelPrefix?: string): Promise<void> {
     const db = await this.open();
     if (levelPrefix) {
-      await db.runAsync('DELETE FROM pcic_cards WHERE item_id LIKE ?', [`${levelPrefix}-%`]);
+      const ids = pcicItemsForLevel(levelPrefix.toUpperCase() as PcicLevel).map((i) => i.id);
+      if (ids.length === 0) return;
+      const placeholders = ids.map(() => '?').join(',');
+      await db.runAsync(`DELETE FROM pcic_cards WHERE item_id IN (${placeholders})`, ids);
     } else {
       await db.runAsync('DELETE FROM pcic_cards');
     }
