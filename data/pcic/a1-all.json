@@ -807,25 +807,8 @@
     "headword": "a1-094b0fe0"
   },
   {
-    "id": "a1-34bbe760",
-    "order": 96,
-    "es": "cerca",
-    "kind": "word",
-    "source": "08",
-    "section": "3.4. Distancia"
-  },
-  {
-    "id": "a1-96b5d8f2",
-    "order": 97,
-    "es": "lejos",
-    "kind": "word",
-    "source": "08",
-    "section": "3.4. Distancia",
-    "pos": "adv"
-  },
-  {
     "id": "a1-aa1553be",
-    "order": 98,
+    "order": 96,
     "es": "ir",
     "kind": "word",
     "source": "08",
@@ -833,7 +816,7 @@
   },
   {
     "id": "a1-60ab455f",
-    "order": 99,
+    "order": 97,
     "es": "volver",
     "kind": "word",
     "source": "08",
@@ -841,7 +824,7 @@
   },
   {
     "id": "a1-2b89b886",
-    "order": 100,
+    "order": 98,
     "es": "venir",
     "kind": "word",
     "source": "08",
@@ -849,7 +832,7 @@
   },
   {
     "id": "a1-ec24f23b",
-    "order": 101,
+    "order": 99,
     "es": "llegar",
     "kind": "word",
     "source": "08",
@@ -857,7 +840,7 @@
   },
   {
     "id": "a1-3ce867c1",
-    "order": 102,
+    "order": 100,
     "es": "viajar",
     "kind": "word",
     "source": "08",
@@ -865,7 +848,7 @@
   },
   {
     "id": "a1-684ce6a0",
-    "order": 103,
+    "order": 101,
     "es": "salir",
     "kind": "word",
     "source": "08",
@@ -873,7 +856,7 @@
   },
   {
     "id": "a1-2b5eed7c",
-    "order": 104,
+    "order": 102,
     "es": "entrar",
     "kind": "word",
     "source": "08",
@@ -881,7 +864,7 @@
   },
   {
     "id": "a1-9c53b88b",
-    "order": 105,
+    "order": 103,
     "es": "a pie",
     "kind": "phrase",
     "source": "08",
@@ -889,7 +872,7 @@
   },
   {
     "id": "a1-87dcd1fe",
-    "order": 106,
+    "order": 104,
     "es": "en coche",
     "kind": "phrase",
     "source": "08",
@@ -897,7 +880,7 @@
   },
   {
     "id": "a1-9840d124",
-    "order": 107,
+    "order": 105,
     "es": "en metro",
     "kind": "phrase",
     "source": "08",
@@ -905,7 +888,7 @@
   },
   {
     "id": "a1-fa9ea3a3",
-    "order": 108,
+    "order": 106,
     "es": "en autobús",
     "kind": "phrase",
     "source": "08",
@@ -913,7 +896,7 @@
   },
   {
     "id": "a1-7c5ccc4c",
-    "order": 109,
+    "order": 107,
     "es": "en tren",
     "kind": "phrase",
     "source": "08",
@@ -921,7 +904,7 @@
   },
   {
     "id": "a1-d19a3992",
-    "order": 110,
+    "order": 108,
     "es": "en barco",
     "kind": "phrase",
     "source": "08",
@@ -929,7 +912,7 @@
   },
   {
     "id": "a1-4a3541a3",
-    "order": 111,
+    "order": 109,
     "es": "en avión",
     "kind": "phrase",
     "source": "08",
@@ -937,7 +920,7 @@
   },
   {
     "id": "a1-a831fb85",
-    "order": 112,
+    "order": 110,
     "es": "Normalmente voy a pie al trabajo.",
     "kind": "sentence",
     "source": "08",
@@ -946,7 +929,7 @@
   },
   {
     "id": "a1-185926c6",
-    "order": 113,
+    "order": 111,
     "es": "Prefiero viajar en tren.",
     "kind": "sentence",
     "source": "08",
@@ -955,7 +938,7 @@
   },
   {
     "id": "a1-8f9f97eb",
-    "order": 114,
+    "order": 112,
     "es": "calle",
     "kind": "word",
     "source": "08",
@@ -963,7 +946,7 @@
   },
   {
     "id": "a1-6b70fbd0",
-    "order": 115,
+    "order": 113,
     "es": "¿Dónde está la calle Velázquez? La segunda calle a la derecha.",
     "kind": "sentence",
     "source": "08",
@@ -972,7 +955,7 @@
   },
   {
     "id": "a1-34f76036",
-    "order": 116,
+    "order": 114,
     "es": "caminar",
     "kind": "word",
     "source": "08",
@@ -980,7 +963,7 @@
   },
   {
     "id": "a1-31191462",
-    "order": 117,
+    "order": 115,
     "es": "todo recto",
     "kind": "phrase",
     "source": "08",
@@ -988,31 +971,15 @@
   },
   {
     "id": "a1-e8d119ab",
-    "order": 118,
+    "order": 116,
     "es": "pasear",
     "kind": "word",
     "source": "08",
     "section": "3.5. Movimiento, estabilidad"
   },
   {
-    "id": "a1-058471a8",
-    "order": 119,
-    "es": "a la derecha",
-    "kind": "phrase",
-    "source": "08",
-    "section": "3.6. Orientación, dirección"
-  },
-  {
-    "id": "a1-e1ffea86",
-    "order": 120,
-    "es": "a la izquierda",
-    "kind": "phrase",
-    "source": "08",
-    "section": "3.6. Orientación, dirección"
-  },
-  {
     "id": "a1-575a0a52",
-    "order": 121,
+    "order": 117,
     "es": "la tercera calle",
     "kind": "phrase",
     "source": "08",
@@ -1021,7 +988,7 @@
   },
   {
     "id": "a1-a4ae285e",
-    "order": 122,
+    "order": 118,
     "es": "el sexto piso",
     "kind": "phrase",
     "source": "08",
@@ -1030,7 +997,7 @@
   },
   {
     "id": "a1-05783293",
-    "order": 123,
+    "order": 119,
     "es": "equipo",
     "kind": "word",
     "source": "08",
@@ -1038,7 +1005,7 @@
   },
   {
     "id": "a1-cef4b5e9",
-    "order": 124,
+    "order": 120,
     "es": "antes",
     "kind": "word",
     "source": "08",
@@ -1046,7 +1013,7 @@
   },
   {
     "id": "a1-985c4d42",
-    "order": 125,
+    "order": 121,
     "es": "después",
     "kind": "word",
     "source": "08",
@@ -1054,7 +1021,7 @@
   },
   {
     "id": "a1-a144a453",
-    "order": 126,
+    "order": 122,
     "es": "ser + [nacionalidad]",
     "kind": "pattern",
     "source": "08",
@@ -1062,7 +1029,7 @@
   },
   {
     "id": "a1-9d3d3425",
-    "order": 127,
+    "order": 123,
     "es": "sentarse",
     "kind": "word",
     "source": "08",
@@ -1070,7 +1037,7 @@
   },
   {
     "id": "a1-29f8c322",
-    "order": 128,
+    "order": 124,
     "es": "Luis Alberto es cubano.",
     "kind": "sentence",
     "source": "08",
@@ -1079,7 +1046,7 @@
   },
   {
     "id": "a1-f7266e78",
-    "order": 129,
+    "order": 125,
     "es": "acostarse",
     "kind": "word",
     "source": "08",
@@ -1087,7 +1054,7 @@
   },
   {
     "id": "a1-260a7575",
-    "order": 130,
+    "order": 126,
     "es": "ser de",
     "kind": "phrase",
     "source": "08",
@@ -1095,7 +1062,7 @@
   },
   {
     "id": "a1-cb69dfa3",
-    "order": 131,
+    "order": 127,
     "es": "Soy de Sevilla.",
     "kind": "sentence",
     "source": "08",
@@ -1104,7 +1071,7 @@
   },
   {
     "id": "a1-600ccd1b",
-    "order": 132,
+    "order": 128,
     "es": "de",
     "kind": "word",
     "source": "08",
@@ -1113,7 +1080,7 @@
   },
   {
     "id": "a1-8a3898b1",
-    "order": 133,
+    "order": 129,
     "es": "¿De dónde eres?",
     "kind": "sentence",
     "source": "08",
@@ -1122,7 +1089,7 @@
   },
   {
     "id": "a1-72fc50cb",
-    "order": 134,
+    "order": 130,
     "es": "[hora]",
     "kind": "pattern",
     "source": "08",
@@ -1130,7 +1097,7 @@
   },
   {
     "id": "a1-4dfc27c1",
-    "order": 135,
+    "order": 131,
     "es": "llevar",
     "kind": "word",
     "source": "08",
@@ -1138,7 +1105,7 @@
   },
   {
     "id": "a1-148b5c38",
-    "order": 136,
+    "order": 132,
     "es": "[Hispanoamérica]",
     "kind": "pattern",
     "source": "08",
@@ -1146,7 +1113,7 @@
   },
   {
     "id": "a1-24db525f",
-    "order": 137,
+    "order": 133,
     "es": "traer",
     "kind": "word",
     "source": "08",
@@ -1154,7 +1121,7 @@
   },
   {
     "id": "a1-fd1f7f94",
-    "order": 138,
+    "order": 134,
     "es": "¿Qué hora es?",
     "kind": "sentence",
     "source": "08",
@@ -1163,7 +1130,7 @@
   },
   {
     "id": "a1-85c4e972",
-    "order": 139,
+    "order": 135,
     "es": "Son las dos.",
     "kind": "sentence",
     "source": "08",
@@ -1172,7 +1139,7 @@
   },
   {
     "id": "a1-05de8695",
-    "order": 140,
+    "order": 136,
     "es": "Son las nueve y cuarto.",
     "kind": "sentence",
     "source": "08",
@@ -1181,7 +1148,7 @@
   },
   {
     "id": "a1-ce0be4db",
-    "order": 141,
+    "order": 137,
     "es": "Son las diez menos veinte.",
     "kind": "sentence",
     "source": "08",
@@ -1190,7 +1157,7 @@
   },
   {
     "id": "a1-ab0919bf",
-    "order": 142,
+    "order": 138,
     "es": "Son veinte para las diez.",
     "kind": "sentence",
     "source": "08",
@@ -1199,7 +1166,7 @@
   },
   {
     "id": "a1-33769ac9",
-    "order": 143,
+    "order": 139,
     "es": "momento",
     "kind": "word",
     "source": "08",
@@ -1207,7 +1174,7 @@
   },
   {
     "id": "a1-e53435e6",
-    "order": 144,
+    "order": 140,
     "es": "minuto",
     "kind": "word",
     "source": "08",
@@ -1215,7 +1182,7 @@
   },
   {
     "id": "a1-623aeb8c",
-    "order": 145,
+    "order": 141,
     "es": "hora",
     "kind": "word",
     "source": "08",
@@ -1223,7 +1190,7 @@
   },
   {
     "id": "a1-743a04a9",
-    "order": 146,
+    "order": 142,
     "es": "día",
     "kind": "word",
     "source": "08",
@@ -1231,7 +1198,7 @@
   },
   {
     "id": "a1-106ff312",
-    "order": 147,
+    "order": 143,
     "es": "solo",
     "kind": "word",
     "source": "08",
@@ -1239,7 +1206,7 @@
   },
   {
     "id": "a1-da05863e",
-    "order": 148,
+    "order": 144,
     "es": "semana",
     "kind": "word",
     "source": "08",
@@ -1247,7 +1214,7 @@
   },
   {
     "id": "a1-9c2cef27",
-    "order": 149,
+    "order": 145,
     "es": "mes",
     "kind": "word",
     "source": "08",
@@ -1255,7 +1222,7 @@
   },
   {
     "id": "a1-48765024",
-    "order": 150,
+    "order": 146,
     "es": "delante",
     "kind": "word",
     "source": "08",
@@ -1263,7 +1230,7 @@
   },
   {
     "id": "a1-8470d9e5",
-    "order": 151,
+    "order": 147,
     "es": "año",
     "kind": "word",
     "source": "08",
@@ -1271,7 +1238,7 @@
   },
   {
     "id": "a1-1637f2cf",
-    "order": 152,
+    "order": 148,
     "es": "detrás",
     "kind": "word",
     "source": "08",
@@ -1279,7 +1246,7 @@
   },
   {
     "id": "a1-b86f5267",
-    "order": 153,
+    "order": 149,
     "es": "Un momento, por favor.",
     "kind": "sentence",
     "source": "08",
@@ -1288,7 +1255,7 @@
   },
   {
     "id": "a1-f9ffe3fb",
-    "order": 154,
+    "order": 150,
     "es": "el + [día de la semana]",
     "kind": "pattern",
     "source": "08",
@@ -1296,7 +1263,7 @@
   },
   {
     "id": "a1-285fbe53",
-    "order": 155,
+    "order": 151,
     "es": "el fin de semana",
     "kind": "phrase",
     "source": "08",
@@ -1304,7 +1271,7 @@
   },
   {
     "id": "a1-8317e735",
-    "order": 156,
+    "order": 152,
     "es": "descuento",
     "kind": "word",
     "source": "08",
@@ -1312,7 +1279,7 @@
   },
   {
     "id": "a1-4344af9a",
-    "order": 157,
+    "order": 153,
     "es": "cuándo",
     "kind": "word",
     "source": "08",
@@ -1321,7 +1288,7 @@
   },
   {
     "id": "a1-3fe7cd36",
-    "order": 158,
+    "order": 154,
     "es": "mentira",
     "kind": "word",
     "source": "08",
@@ -1329,7 +1296,7 @@
   },
   {
     "id": "a1-a6b16091",
-    "order": 159,
+    "order": 155,
     "es": "¿Cuándo vuelves?",
     "kind": "sentence",
     "source": "08",
@@ -1338,7 +1305,7 @@
   },
   {
     "id": "a1-fb69c43f",
-    "order": 160,
+    "order": 156,
     "es": "temprano",
     "kind": "word",
     "source": "08",
@@ -1346,7 +1313,7 @@
   },
   {
     "id": "a1-2726bab3",
-    "order": 161,
+    "order": 157,
     "es": "pronto",
     "kind": "word",
     "source": "08",
@@ -1354,7 +1321,7 @@
   },
   {
     "id": "a1-8693c78a",
-    "order": 162,
+    "order": 158,
     "es": "tarde",
     "kind": "word",
     "source": "08",
@@ -1362,7 +1329,7 @@
   },
   {
     "id": "a1-284b7457",
-    "order": 163,
+    "order": 159,
     "es": "Los domingos me acuesto temprano.",
     "kind": "sentence",
     "source": "08",
@@ -1371,7 +1338,7 @@
   },
   {
     "id": "a1-375364aa",
-    "order": 164,
+    "order": 160,
     "es": "en [mes/estación]",
     "kind": "pattern",
     "source": "08",
@@ -1379,7 +1346,7 @@
   },
   {
     "id": "a1-f090afb8",
-    "order": 165,
+    "order": 161,
     "es": "por la mañana",
     "kind": "phrase",
     "source": "08",
@@ -1387,7 +1354,7 @@
   },
   {
     "id": "a1-57a50b99",
-    "order": 166,
+    "order": 162,
     "es": "por la tarde",
     "kind": "phrase",
     "source": "08",
@@ -1395,7 +1362,7 @@
   },
   {
     "id": "a1-152b55e1",
-    "order": 167,
+    "order": 163,
     "es": "por la noche",
     "kind": "phrase",
     "source": "08",
@@ -1403,7 +1370,7 @@
   },
   {
     "id": "a1-ff0e7695",
-    "order": 168,
+    "order": 164,
     "es": "en la mañana",
     "kind": "pattern",
     "source": "08",
@@ -1412,7 +1379,7 @@
   },
   {
     "id": "a1-1dbdb60c",
-    "order": 169,
+    "order": 165,
     "es": "en la tarde",
     "kind": "pattern",
     "source": "08",
@@ -1421,7 +1388,7 @@
   },
   {
     "id": "a1-2b92b7cd",
-    "order": 170,
+    "order": 166,
     "es": "en la noche",
     "kind": "pattern",
     "source": "08",
@@ -1430,7 +1397,7 @@
   },
   {
     "id": "a1-d795e3ca",
-    "order": 171,
+    "order": 167,
     "es": "En la mañana estudio y en la tarde trabajo.",
     "kind": "sentence",
     "source": "08",
@@ -1439,7 +1406,7 @@
   },
   {
     "id": "a1-4ae4f8f5",
-    "order": 172,
+    "order": 168,
     "es": "a mediodía",
     "kind": "phrase",
     "source": "08",
@@ -1447,7 +1414,7 @@
   },
   {
     "id": "a1-64dc10bc",
-    "order": 173,
+    "order": 169,
     "es": "Las tiendas abren a las diez.",
     "kind": "sentence",
     "source": "08",
@@ -1456,7 +1423,7 @@
   },
   {
     "id": "a1-5a238e35",
-    "order": 174,
+    "order": 170,
     "es": "Son las siete de la tarde.",
     "kind": "sentence",
     "source": "08",
@@ -1465,7 +1432,7 @@
   },
   {
     "id": "a1-04ac3bfa",
-    "order": 175,
+    "order": 171,
     "es": "Trabajo de nueve a dos.",
     "kind": "sentence",
     "source": "08",
@@ -1474,7 +1441,7 @@
   },
   {
     "id": "a1-9d3b665d",
-    "order": 176,
+    "order": 172,
     "es": "El viernes no tenemos clase.",
     "kind": "sentence",
     "source": "08",
@@ -1483,7 +1450,7 @@
   },
   {
     "id": "a1-ec80f569",
-    "order": 177,
+    "order": 173,
     "es": "hoy",
     "kind": "word",
     "source": "08",
@@ -1491,7 +1458,7 @@
   },
   {
     "id": "a1-317914bb",
-    "order": 178,
+    "order": 174,
     "es": "ahora",
     "kind": "word",
     "source": "08",
@@ -1499,7 +1466,7 @@
   },
   {
     "id": "a1-307cea75",
-    "order": 179,
+    "order": 175,
     "es": "Ahora vivo en Lisboa.",
     "kind": "sentence",
     "source": "08",
@@ -1508,7 +1475,7 @@
   },
   {
     "id": "a1-1218c7ee",
-    "order": 180,
+    "order": 176,
     "es": "en agosto, en invierno",
     "kind": "phrase",
     "source": "08",
@@ -1517,7 +1484,7 @@
   },
   {
     "id": "a1-0a8248c3",
-    "order": 181,
+    "order": 177,
     "es": "el miércoles",
     "kind": "phrase",
     "source": "08",
@@ -1526,7 +1493,7 @@
   },
   {
     "id": "a1-d2617dba",
-    "order": 182,
+    "order": 178,
     "es": "ayer",
     "kind": "word",
     "source": "08",
@@ -1534,7 +1501,7 @@
   },
   {
     "id": "a1-0e42610b",
-    "order": 183,
+    "order": 179,
     "es": "en + [mes / estación]",
     "kind": "pattern",
     "source": "08",
@@ -1542,7 +1509,7 @@
   },
   {
     "id": "a1-6cd12a56",
-    "order": 184,
+    "order": 180,
     "es": "temperatura",
     "kind": "word",
     "source": "08",
@@ -1550,7 +1517,7 @@
   },
   {
     "id": "a1-d84dad99",
-    "order": 185,
+    "order": 181,
     "es": "en junio, en otoño",
     "kind": "phrase",
     "source": "08",
@@ -1559,7 +1526,7 @@
   },
   {
     "id": "a1-fcb898ad",
-    "order": 186,
+    "order": 182,
     "es": "El jueves voy al teatro.",
     "kind": "sentence",
     "source": "08",
@@ -1568,7 +1535,7 @@
   },
   {
     "id": "a1-8727ae65",
-    "order": 187,
+    "order": 183,
     "es": "mañana",
     "kind": "word",
     "source": "08",
@@ -1577,7 +1544,7 @@
   },
   {
     "id": "a1-5258c9fe",
-    "order": 188,
+    "order": 184,
     "es": "en enero, en primavera",
     "kind": "phrase",
     "source": "08",
@@ -1586,7 +1553,7 @@
   },
   {
     "id": "a1-da850155",
-    "order": 189,
+    "order": 185,
     "es": "[presente de indicativo]",
     "kind": "pattern",
     "source": "08",
@@ -1594,7 +1561,7 @@
   },
   {
     "id": "a1-dec7b7a8",
-    "order": 190,
+    "order": 186,
     "es": "usar",
     "kind": "word",
     "source": "08",
@@ -1602,7 +1569,7 @@
   },
   {
     "id": "a1-78042b4a",
-    "order": 191,
+    "order": 187,
     "es": "Me ducho por la mañana pero antes desayuno.",
     "kind": "sentence",
     "source": "08",
@@ -1611,7 +1578,7 @@
   },
   {
     "id": "a1-3a5a1cb8",
-    "order": 192,
+    "order": 188,
     "es": "El sábado vamos al cine y después cenamos en un restaurante.",
     "kind": "sentence",
     "source": "08",
@@ -1620,7 +1587,7 @@
   },
   {
     "id": "a1-f36a1f6c",
-    "order": 193,
+    "order": 189,
     "es": "ser temprano",
     "kind": "phrase",
     "source": "08",
@@ -1628,7 +1595,7 @@
   },
   {
     "id": "a1-c9857e4e",
-    "order": 194,
+    "order": 190,
     "es": "ser pronto",
     "kind": "phrase",
     "source": "08",
@@ -1636,7 +1603,7 @@
   },
   {
     "id": "a1-8fb5fd98",
-    "order": 195,
+    "order": 191,
     "es": "Es temprano.",
     "kind": "sentence",
     "source": "08",
@@ -1645,7 +1612,7 @@
   },
   {
     "id": "a1-6298a24e",
-    "order": 196,
+    "order": 192,
     "es": "llegar/salir pronto",
     "kind": "phrase",
     "source": "08",
@@ -1653,7 +1620,7 @@
   },
   {
     "id": "a1-9c4ea758",
-    "order": 197,
+    "order": 193,
     "es": "llegar/salir temprano",
     "kind": "phrase",
     "source": "08",
@@ -1661,7 +1628,7 @@
   },
   {
     "id": "a1-03952ed4",
-    "order": 198,
+    "order": 194,
     "es": "Normalmente llego pronto a la oficina.",
     "kind": "sentence",
     "source": "08",
@@ -1670,7 +1637,7 @@
   },
   {
     "id": "a1-232e6b5d",
-    "order": 199,
+    "order": 195,
     "es": "Los lunes salgo de casa temprano.",
     "kind": "sentence",
     "source": "08",
@@ -1679,7 +1646,7 @@
   },
   {
     "id": "a1-e59c7a5d",
-    "order": 200,
+    "order": 196,
     "es": "ser tarde",
     "kind": "phrase",
     "source": "08",
@@ -1687,7 +1654,7 @@
   },
   {
     "id": "a1-2154abe2",
-    "order": 201,
+    "order": 197,
     "es": "Es tarde.",
     "kind": "sentence",
     "source": "08",
@@ -1696,7 +1663,7 @@
   },
   {
     "id": "a1-2703ac44",
-    "order": 202,
+    "order": 198,
     "es": "llegar/salir tarde",
     "kind": "phrase",
     "source": "08",
@@ -1704,7 +1671,7 @@
   },
   {
     "id": "a1-f8629c0c",
-    "order": 203,
+    "order": 199,
     "es": "A veces el tren llega tarde a la estación.",
     "kind": "sentence",
     "source": "08",
@@ -1713,7 +1680,7 @@
   },
   {
     "id": "a1-7f5a9bed",
-    "order": 204,
+    "order": 200,
     "es": "empezar",
     "kind": "word",
     "source": "08",
@@ -1721,7 +1688,7 @@
   },
   {
     "id": "a1-e37dab91",
-    "order": 205,
+    "order": 201,
     "es": "La clase empieza a las diez.",
     "kind": "sentence",
     "source": "08",
@@ -1730,7 +1697,7 @@
   },
   {
     "id": "a1-8a424c01",
-    "order": 206,
+    "order": 202,
     "es": "Trabajo de nueve a cuatro.",
     "kind": "sentence",
     "source": "08",
@@ -1739,7 +1706,7 @@
   },
   {
     "id": "a1-0eee4189",
-    "order": 207,
+    "order": 203,
     "es": "terminar",
     "kind": "word",
     "source": "08",
@@ -1747,7 +1714,7 @@
   },
   {
     "id": "a1-d00a42b1",
-    "order": 208,
+    "order": 204,
     "es": "La clase termina a la una.",
     "kind": "sentence",
     "source": "08",
@@ -1756,7 +1723,7 @@
   },
   {
     "id": "a1-69820d08",
-    "order": 209,
+    "order": 205,
     "es": "repetir",
     "kind": "word",
     "source": "08",
@@ -1764,7 +1731,7 @@
   },
   {
     "id": "a1-0641bdf0",
-    "order": 210,
+    "order": 206,
     "es": "No entiendo, ¿puedes repetir, por favor?",
     "kind": "sentence",
     "source": "08",
@@ -1773,23 +1740,15 @@
   },
   {
     "id": "a1-fdadc53e",
-    "order": 211,
+    "order": 207,
     "es": "noche",
     "kind": "word",
     "source": "08",
     "section": "4.3. Aspectos de desarrollo"
   },
   {
-    "id": "a1-341a5930",
-    "order": 212,
-    "es": "fin de semana",
-    "kind": "phrase",
-    "source": "08",
-    "section": "4.3. Aspectos de desarrollo"
-  },
-  {
     "id": "a1-611faee2",
-    "order": 213,
+    "order": 208,
     "es": "primavera",
     "kind": "word",
     "source": "08",
@@ -1797,7 +1756,7 @@
   },
   {
     "id": "a1-952fa749",
-    "order": 214,
+    "order": 209,
     "es": "verano",
     "kind": "word",
     "source": "08",
@@ -1805,7 +1764,7 @@
   },
   {
     "id": "a1-6a602587",
-    "order": 215,
+    "order": 210,
     "es": "otoño",
     "kind": "word",
     "source": "08",
@@ -1813,7 +1772,7 @@
   },
   {
     "id": "a1-d355446b",
-    "order": 216,
+    "order": 211,
     "es": "invierno",
     "kind": "word",
     "source": "08",
@@ -1821,7 +1780,7 @@
   },
   {
     "id": "a1-a9b4c2ce",
-    "order": 217,
+    "order": 212,
     "es": "mucho/bastante/poco tiempo",
     "kind": "phrase",
     "source": "08",
@@ -1829,7 +1788,7 @@
   },
   {
     "id": "a1-514bd365",
-    "order": 218,
+    "order": 213,
     "es": "todos los días",
     "kind": "phrase",
     "source": "08",
@@ -1837,7 +1796,7 @@
   },
   {
     "id": "a1-41cbc6f6",
-    "order": 219,
+    "order": 214,
     "es": "normalmente",
     "kind": "word",
     "source": "08",
@@ -1845,7 +1804,7 @@
   },
   {
     "id": "a1-c29b8873",
-    "order": 220,
+    "order": 215,
     "es": "siempre",
     "kind": "word",
     "source": "08",
@@ -1853,7 +1812,7 @@
   },
   {
     "id": "a1-21174b12",
-    "order": 221,
+    "order": 216,
     "es": "nunca",
     "kind": "word",
     "source": "08",
@@ -1861,7 +1820,7 @@
   },
   {
     "id": "a1-c13abb2c",
-    "order": 222,
+    "order": 217,
     "es": "pesado",
     "kind": "word",
     "source": "08",
@@ -1869,7 +1828,7 @@
   },
   {
     "id": "a1-0fc5577e",
-    "order": 223,
+    "order": 218,
     "es": "Siempre desayuno cereales.",
     "kind": "sentence",
     "source": "08",
@@ -1878,7 +1837,7 @@
   },
   {
     "id": "a1-30679ef7",
-    "order": 224,
+    "order": 219,
     "es": "ligero",
     "kind": "word",
     "source": "08",
@@ -1886,7 +1845,7 @@
   },
   {
     "id": "a1-762719b8",
-    "order": 225,
+    "order": 220,
     "es": "Nunca como pescado.",
     "kind": "sentence",
     "source": "08",
@@ -1895,7 +1854,7 @@
   },
   {
     "id": "a1-ec28be4b",
-    "order": 226,
+    "order": 221,
     "es": "a veces",
     "kind": "phrase",
     "source": "08",
@@ -1903,7 +1862,7 @@
   },
   {
     "id": "a1-1b7a34b3",
-    "order": 227,
+    "order": 222,
     "es": "A veces se levanta tarde.",
     "kind": "sentence",
     "source": "08",
@@ -1912,7 +1871,7 @@
   },
   {
     "id": "a1-3ddbe49e",
-    "order": 228,
+    "order": 223,
     "es": "A veces voy de vacaciones en septiembre.",
     "kind": "sentence",
     "source": "08",
@@ -1921,7 +1880,7 @@
   },
   {
     "id": "a1-637e9229",
-    "order": 229,
+    "order": 224,
     "es": "cambiar",
     "kind": "word",
     "source": "08",
@@ -1929,7 +1888,7 @@
   },
   {
     "id": "a1-2fd3b944",
-    "order": 230,
+    "order": 225,
     "es": "Quiero cambiar dinero.",
     "kind": "sentence",
     "source": "08",
@@ -1938,7 +1897,7 @@
   },
   {
     "id": "a1-959d918a",
-    "order": 231,
+    "order": 226,
     "es": "gafas",
     "kind": "word",
     "source": "08",
@@ -1947,7 +1906,7 @@
   },
   {
     "id": "a1-98a793c7",
-    "order": 232,
+    "order": 227,
     "es": "claro",
     "kind": "word",
     "source": "08",
@@ -1955,7 +1914,7 @@
   },
   {
     "id": "a1-c0db1ada",
-    "order": 233,
+    "order": 228,
     "es": "oscuro",
     "kind": "word",
     "source": "08",
@@ -1963,7 +1922,7 @@
   },
   {
     "id": "a1-03b34252",
-    "order": 234,
+    "order": 229,
     "es": "Tiene los ojos claros.",
     "kind": "sentence",
     "source": "08",
@@ -1972,7 +1931,7 @@
   },
   {
     "id": "a1-4143766e",
-    "order": 235,
+    "order": 230,
     "es": "Tiene el pelo oscuro.",
     "kind": "sentence",
     "source": "08",
@@ -1981,7 +1940,7 @@
   },
   {
     "id": "a1-5e0b8aa1",
-    "order": 236,
+    "order": 231,
     "es": "ver",
     "kind": "word",
     "source": "08",
@@ -1989,7 +1948,7 @@
   },
   {
     "id": "a1-d840fde5",
-    "order": 237,
+    "order": 232,
     "es": "No me gusta ver la televisión.",
     "kind": "sentence",
     "source": "08",
@@ -1998,7 +1957,7 @@
   },
   {
     "id": "a1-08571a9e",
-    "order": 238,
+    "order": 233,
     "es": "escuchar",
     "kind": "word",
     "source": "08",
@@ -2006,7 +1965,7 @@
   },
   {
     "id": "a1-c6aea4fe",
-    "order": 239,
+    "order": 234,
     "es": "Me gusta escuchar música.",
     "kind": "sentence",
     "source": "08",
@@ -2015,7 +1974,7 @@
   },
   {
     "id": "a1-af6c1a0c",
-    "order": 240,
+    "order": 235,
     "es": "rojo",
     "kind": "word",
     "source": "08",
@@ -2023,7 +1982,7 @@
   },
   {
     "id": "a1-56815506",
-    "order": 241,
+    "order": 236,
     "es": "amarillo",
     "kind": "word",
     "source": "08",
@@ -2031,7 +1990,7 @@
   },
   {
     "id": "a1-1768d39c",
-    "order": 242,
+    "order": 237,
     "es": "azul",
     "kind": "word",
     "source": "08",
@@ -2039,7 +1998,7 @@
   },
   {
     "id": "a1-2030abee",
-    "order": 243,
+    "order": 238,
     "es": "verde",
     "kind": "word",
     "source": "08",
@@ -2047,7 +2006,7 @@
   },
   {
     "id": "a1-3cf34940",
-    "order": 244,
+    "order": 239,
     "es": "naranja",
     "kind": "word",
     "source": "08",
@@ -2056,7 +2015,7 @@
   },
   {
     "id": "a1-512ade2d",
-    "order": 245,
+    "order": 240,
     "es": "marrón",
     "kind": "word",
     "source": "08",
@@ -2064,7 +2023,7 @@
   },
   {
     "id": "a1-062c2aa8",
-    "order": 246,
+    "order": 241,
     "es": "blanco",
     "kind": "word",
     "source": "08",
@@ -2072,7 +2031,7 @@
   },
   {
     "id": "a1-86726847",
-    "order": 247,
+    "order": 242,
     "es": "negro",
     "kind": "word",
     "source": "08",
@@ -2080,7 +2039,7 @@
   },
   {
     "id": "a1-28c94237",
-    "order": 248,
+    "order": 243,
     "es": "gris",
     "kind": "word",
     "source": "08",
@@ -2088,7 +2047,7 @@
   },
   {
     "id": "a1-36a2baf4",
-    "order": 249,
+    "order": 244,
     "es": "niño",
     "kind": "word",
     "source": "08",
@@ -2097,7 +2056,7 @@
   },
   {
     "id": "a1-763c189e",
-    "order": 250,
+    "order": 245,
     "es": "chico",
     "kind": "word",
     "source": "08",
@@ -2105,7 +2064,7 @@
   },
   {
     "id": "a1-93f6a852",
-    "order": 251,
+    "order": 246,
     "es": "señor",
     "kind": "word",
     "source": "08",
@@ -2113,7 +2072,7 @@
   },
   {
     "id": "a1-5043f762",
-    "order": 252,
+    "order": 247,
     "es": "nuevo",
     "kind": "word",
     "source": "08",
@@ -2121,7 +2080,7 @@
   },
   {
     "id": "a1-da6dfa2b",
-    "order": 253,
+    "order": 248,
     "es": "viejo",
     "kind": "word",
     "source": "08",
@@ -2129,7 +2088,7 @@
   },
   {
     "id": "a1-59f81933",
-    "order": 254,
+    "order": 249,
     "es": "tener + [número cardinal] meses",
     "kind": "pattern",
     "source": "08",
@@ -2137,7 +2096,7 @@
   },
   {
     "id": "a1-96b70546",
-    "order": 255,
+    "order": 250,
     "es": "tener + [número cardinal] años",
     "kind": "pattern",
     "source": "08",
@@ -2145,7 +2104,7 @@
   },
   {
     "id": "a1-a9df7a76",
-    "order": 256,
+    "order": 251,
     "es": "entrada",
     "kind": "word",
     "source": "08",
@@ -2153,7 +2112,7 @@
   },
   {
     "id": "a1-0b38ae75",
-    "order": 257,
+    "order": 252,
     "es": "salida",
     "kind": "word",
     "source": "08",
@@ -2161,7 +2120,7 @@
   },
   {
     "id": "a1-50d3cb21",
-    "order": 258,
+    "order": 253,
     "es": "abrir",
     "kind": "word",
     "source": "08",
@@ -2169,7 +2128,7 @@
   },
   {
     "id": "a1-13c4f05a",
-    "order": 259,
+    "order": 254,
     "es": "cerrar",
     "kind": "word",
     "source": "08",
@@ -2177,7 +2136,7 @@
   },
   {
     "id": "a1-e900b9c0",
-    "order": 260,
+    "order": 255,
     "es": "estar abierto",
     "kind": "phrase",
     "source": "08",
@@ -2185,7 +2144,7 @@
   },
   {
     "id": "a1-92899841",
-    "order": 261,
+    "order": 256,
     "es": "estar cerrado",
     "kind": "phrase",
     "source": "08",
@@ -2193,7 +2152,7 @@
   },
   {
     "id": "a1-28e5793a",
-    "order": 262,
+    "order": 257,
     "es": "bueno",
     "kind": "word",
     "source": "08",
@@ -2201,7 +2160,7 @@
   },
   {
     "id": "a1-bf7cdc72",
-    "order": 263,
+    "order": 258,
     "es": "malo",
     "kind": "word",
     "source": "08",
@@ -2209,7 +2168,7 @@
   },
   {
     "id": "a1-5a32ead2",
-    "order": 264,
+    "order": 259,
     "es": "(muy) bien",
     "kind": "phrase",
     "source": "08",
@@ -2217,7 +2176,7 @@
   },
   {
     "id": "a1-78f3286c",
-    "order": 265,
+    "order": 260,
     "es": "(muy) mal",
     "kind": "phrase",
     "source": "08",
@@ -2225,7 +2184,7 @@
   },
   {
     "id": "a1-5f51efbe",
-    "order": 266,
+    "order": 261,
     "es": "regular",
     "kind": "word",
     "source": "08",
@@ -2233,7 +2192,7 @@
   },
   {
     "id": "a1-e2052ebe",
-    "order": 267,
+    "order": 262,
     "es": "ser interesante",
     "kind": "phrase",
     "source": "08",
@@ -2241,7 +2200,7 @@
   },
   {
     "id": "a1-c7410f2b",
-    "order": 268,
+    "order": 263,
     "es": "ser feo",
     "kind": "phrase",
     "source": "08",
@@ -2249,7 +2208,7 @@
   },
   {
     "id": "a1-e58e9c98",
-    "order": 269,
+    "order": 264,
     "es": "ser difícil",
     "kind": "phrase",
     "source": "08",
@@ -2257,7 +2216,7 @@
   },
   {
     "id": "a1-1ac20e9a",
-    "order": 270,
+    "order": 265,
     "es": "costar",
     "kind": "word",
     "source": "08",
@@ -2265,7 +2224,7 @@
   },
   {
     "id": "a1-3e178482",
-    "order": 271,
+    "order": 266,
     "es": "cambio",
     "kind": "word",
     "source": "08",
@@ -2273,7 +2232,7 @@
   },
   {
     "id": "a1-58e70efc",
-    "order": 272,
+    "order": 267,
     "es": "¿Cuánto es?",
     "kind": "sentence",
     "source": "08",
@@ -2282,7 +2241,7 @@
   },
   {
     "id": "a1-33e8c86f",
-    "order": 273,
+    "order": 268,
     "es": "barato",
     "kind": "word",
     "source": "08",
@@ -2290,7 +2249,7 @@
   },
   {
     "id": "a1-732849d5",
-    "order": 274,
+    "order": 269,
     "es": "caro",
     "kind": "word",
     "source": "08",
@@ -2298,7 +2257,7 @@
   },
   {
     "id": "a1-7b125739",
-    "order": 275,
+    "order": 270,
     "es": "pagar",
     "kind": "word",
     "source": "08",
@@ -2306,7 +2265,7 @@
   },
   {
     "id": "a1-5013193d",
-    "order": 276,
+    "order": 271,
     "es": "guapo",
     "kind": "word",
     "source": "08",
@@ -2314,7 +2273,7 @@
   },
   {
     "id": "a1-723d1915",
-    "order": 277,
+    "order": 272,
     "es": "feo",
     "kind": "word",
     "source": "08",
@@ -2322,7 +2281,7 @@
   },
   {
     "id": "a1-bc394244",
-    "order": 278,
+    "order": 273,
     "es": "bonito",
     "kind": "word",
     "source": "08",
@@ -2330,7 +2289,7 @@
   },
   {
     "id": "a1-5462df9b",
-    "order": 279,
+    "order": 274,
     "es": "lindo",
     "kind": "pattern",
     "source": "08",
@@ -2339,7 +2298,7 @@
   },
   {
     "id": "a1-19a55654",
-    "order": 280,
+    "order": 275,
     "es": "dibujo",
     "kind": "word",
     "source": "08",
@@ -2347,7 +2306,7 @@
   },
   {
     "id": "a1-6ed125f8",
-    "order": 281,
+    "order": 276,
     "es": "hermoso",
     "kind": "word",
     "source": "08",
@@ -2355,7 +2314,7 @@
   },
   {
     "id": "a1-b17cf0cf",
-    "order": 282,
+    "order": 277,
     "es": "dibujar",
     "kind": "word",
     "source": "08",
@@ -2363,7 +2322,7 @@
   },
   {
     "id": "a1-979ed1d1",
-    "order": 283,
+    "order": 278,
     "es": "ser bueno",
     "kind": "phrase",
     "source": "08",
@@ -2371,7 +2330,7 @@
   },
   {
     "id": "a1-45633ea7",
-    "order": 284,
+    "order": 279,
     "es": "redondo",
     "kind": "word",
     "source": "08",
@@ -2379,23 +2338,15 @@
   },
   {
     "id": "a1-4ef515ab",
-    "order": 285,
+    "order": 280,
     "es": "ser malo",
     "kind": "phrase",
     "source": "08",
     "section": "6.4. Calidad"
   },
   {
-    "id": "a1-d4e2f608",
-    "order": 286,
-    "es": "bien",
-    "kind": "word",
-    "source": "08",
-    "section": "6.5. Aceptabilidad"
-  },
-  {
     "id": "a1-5e06bd15",
-    "order": 287,
+    "order": 281,
     "es": "sí",
     "kind": "word",
     "source": "08",
@@ -2403,7 +2354,7 @@
   },
   {
     "id": "a1-fd128635",
-    "order": 288,
+    "order": 282,
     "es": "no",
     "kind": "word",
     "source": "08",
@@ -2411,7 +2362,7 @@
   },
   {
     "id": "a1-e8d19826",
-    "order": 289,
+    "order": 283,
     "es": "fuerte",
     "kind": "word",
     "source": "08",
@@ -2419,7 +2370,7 @@
   },
   {
     "id": "a1-fe471e92",
-    "order": 290,
+    "order": 284,
     "es": "de acuerdo",
     "kind": "phrase",
     "source": "08",
@@ -2427,7 +2378,7 @@
   },
   {
     "id": "a1-27bb3ed9",
-    "order": 291,
+    "order": 285,
     "es": "okay",
     "kind": "pattern",
     "source": "08",
@@ -2436,7 +2387,7 @@
   },
   {
     "id": "a1-c16280be",
-    "order": 292,
+    "order": 286,
     "es": "interesante",
     "kind": "word",
     "source": "08",
@@ -2445,7 +2396,7 @@
   },
   {
     "id": "a1-7da0ef23",
-    "order": 293,
+    "order": 287,
     "es": "piel",
     "kind": "word",
     "source": "08",
@@ -2453,7 +2404,7 @@
   },
   {
     "id": "a1-1b606970",
-    "order": 294,
+    "order": 288,
     "es": "saber",
     "kind": "word",
     "source": "08",
@@ -2461,7 +2412,7 @@
   },
   {
     "id": "a1-513ec2e4",
-    "order": 295,
+    "order": 289,
     "es": "Sé español.",
     "kind": "sentence",
     "source": "08",
@@ -2470,7 +2421,7 @@
   },
   {
     "id": "a1-1dfbe348",
-    "order": 296,
+    "order": 290,
     "es": "Sabemos nadar.",
     "kind": "sentence",
     "source": "08",
@@ -2479,7 +2430,7 @@
   },
   {
     "id": "a1-2c60cfa3",
-    "order": 297,
+    "order": 291,
     "es": "fácil",
     "kind": "word",
     "source": "08",
@@ -2487,7 +2438,7 @@
   },
   {
     "id": "a1-87bf8080",
-    "order": 298,
+    "order": 292,
     "es": "difícil",
     "kind": "word",
     "source": "08",
@@ -2495,7 +2446,7 @@
   },
   {
     "id": "a1-0563d862",
-    "order": 299,
+    "order": 293,
     "es": "creer",
     "kind": "word",
     "source": "08",
@@ -2503,7 +2454,7 @@
   },
   {
     "id": "a1-18c35a29",
-    "order": 300,
+    "order": 294,
     "es": "hablar",
     "kind": "word",
     "source": "08",
@@ -2511,7 +2462,7 @@
   },
   {
     "id": "a1-cd44cdfa",
-    "order": 301,
+    "order": 295,
     "es": "llegada",
     "kind": "word",
     "source": "08",
@@ -2519,7 +2470,7 @@
   },
   {
     "id": "a1-6aaf02f1",
-    "order": 302,
+    "order": 296,
     "es": "escribir",
     "kind": "word",
     "source": "08",
@@ -2527,7 +2478,7 @@
   },
   {
     "id": "a1-2d577932",
-    "order": 303,
+    "order": 297,
     "es": "parada",
     "kind": "word",
     "source": "08",
@@ -2535,7 +2486,7 @@
   },
   {
     "id": "a1-58a250ea",
-    "order": 304,
+    "order": 298,
     "es": "pelo",
     "kind": "word",
     "source": "09",
@@ -2543,7 +2494,7 @@
   },
   {
     "id": "a1-e726b02b",
-    "order": 305,
+    "order": 299,
     "es": "irse",
     "kind": "word",
     "source": "08",
@@ -2551,7 +2502,7 @@
   },
   {
     "id": "a1-2db9e0c6",
-    "order": 306,
+    "order": 300,
     "es": "ojo",
     "kind": "word",
     "source": "09",
@@ -2559,7 +2510,7 @@
   },
   {
     "id": "a1-c68037f0",
-    "order": 307,
+    "order": 301,
     "es": "luz",
     "kind": "word",
     "source": "08",
@@ -2567,7 +2518,7 @@
   },
   {
     "id": "a1-06256410",
-    "order": 308,
+    "order": 302,
     "es": "nariz",
     "kind": "word",
     "source": "09",
@@ -2575,7 +2526,7 @@
   },
   {
     "id": "a1-afeb7937",
-    "order": 309,
+    "order": 303,
     "es": "conducir",
     "kind": "word",
     "source": "08",
@@ -2583,7 +2534,7 @@
   },
   {
     "id": "a1-8099e0cd",
-    "order": 310,
+    "order": 304,
     "es": "ser alto",
     "kind": "phrase",
     "source": "09",
@@ -2591,7 +2542,7 @@
   },
   {
     "id": "a1-43045d57",
-    "order": 311,
+    "order": 305,
     "es": "mirar",
     "kind": "word",
     "source": "08",
@@ -2599,7 +2550,7 @@
   },
   {
     "id": "a1-d36cdc4f",
-    "order": 312,
+    "order": 306,
     "es": "ser bajo",
     "kind": "phrase",
     "source": "09",
@@ -2607,7 +2558,7 @@
   },
   {
     "id": "a1-0c11daf1",
-    "order": 313,
+    "order": 307,
     "es": "ser gordo",
     "kind": "phrase",
     "source": "09",
@@ -2615,7 +2566,7 @@
   },
   {
     "id": "a1-0f19b527",
-    "order": 314,
+    "order": 308,
     "es": "ruido",
     "kind": "word",
     "source": "08",
@@ -2623,7 +2574,7 @@
   },
   {
     "id": "a1-a1143ce8",
-    "order": 315,
+    "order": 309,
     "es": "ser delgado",
     "kind": "phrase",
     "source": "09",
@@ -2631,7 +2582,7 @@
   },
   {
     "id": "a1-cbb9aa64",
-    "order": 316,
+    "order": 310,
     "es": "ser guapo",
     "kind": "phrase",
     "source": "09",
@@ -2639,7 +2590,7 @@
   },
   {
     "id": "a1-1e90610e",
-    "order": 317,
+    "order": 311,
     "es": "ser rubio",
     "kind": "phrase",
     "source": "09",
@@ -2647,7 +2598,7 @@
   },
   {
     "id": "a1-90bd1fa9",
-    "order": 318,
+    "order": 312,
     "es": "rico",
     "kind": "word",
     "source": "08",
@@ -2655,7 +2606,7 @@
   },
   {
     "id": "a1-0f0b5b56",
-    "order": 319,
+    "order": 313,
     "es": "ser moreno",
     "kind": "phrase",
     "source": "09",
@@ -2663,7 +2614,7 @@
   },
   {
     "id": "a1-ebdfb17a",
-    "order": 320,
+    "order": 314,
     "es": "tener el pelo rubio",
     "kind": "phrase",
     "source": "09",
@@ -2671,7 +2622,7 @@
   },
   {
     "id": "a1-95786eda",
-    "order": 321,
+    "order": 315,
     "es": "saltar",
     "kind": "word",
     "source": "08",
@@ -2679,7 +2630,7 @@
   },
   {
     "id": "a1-1e6190ce",
-    "order": 322,
+    "order": 316,
     "es": "tener el pelo moreno",
     "kind": "phrase",
     "source": "09",
@@ -2687,7 +2638,7 @@
   },
   {
     "id": "a1-e5d37c8f",
-    "order": 323,
+    "order": 317,
     "es": "tener el pelo blanco",
     "kind": "phrase",
     "source": "09",
@@ -2695,7 +2646,7 @@
   },
   {
     "id": "a1-6bf17065",
-    "order": 324,
+    "order": 318,
     "es": "llevar/tener barba",
     "kind": "phrase",
     "source": "09",
@@ -2703,7 +2654,7 @@
   },
   {
     "id": "a1-561780c9",
-    "order": 325,
+    "order": 319,
     "es": "llevar/tener bigote",
     "kind": "phrase",
     "source": "09",
@@ -2711,7 +2662,7 @@
   },
   {
     "id": "a1-6769a808",
-    "order": 326,
+    "order": 320,
     "es": "llevar/tener gafas",
     "kind": "phrase",
     "source": "09",
@@ -2719,7 +2670,7 @@
   },
   {
     "id": "a1-48d4cd11",
-    "order": 327,
+    "order": 321,
     "es": "pintar",
     "kind": "word",
     "source": "08",
@@ -2727,7 +2678,7 @@
   },
   {
     "id": "a1-d54d561c",
-    "order": 328,
+    "order": 322,
     "es": "tener los ojos claros",
     "kind": "phrase",
     "source": "09",
@@ -2735,7 +2686,7 @@
   },
   {
     "id": "a1-28bd84a9",
-    "order": 329,
+    "order": 323,
     "es": "tener los ojos oscuros",
     "kind": "phrase",
     "source": "09",
@@ -2743,7 +2694,7 @@
   },
   {
     "id": "a1-0008fbcc",
-    "order": 330,
+    "order": 324,
     "es": "tener los ojos azules",
     "kind": "phrase",
     "source": "09",
@@ -2751,7 +2702,7 @@
   },
   {
     "id": "a1-dbbda10c",
-    "order": 331,
+    "order": 325,
     "es": "tener los ojos verdes",
     "kind": "phrase",
     "source": "09",
@@ -2759,7 +2710,7 @@
   },
   {
     "id": "a1-2f923fa8",
-    "order": 332,
+    "order": 326,
     "es": "tener los ojos negros",
     "kind": "phrase",
     "source": "09",
@@ -2767,7 +2718,7 @@
   },
   {
     "id": "a1-3736ae72",
-    "order": 333,
+    "order": 327,
     "es": "tener los ojos marrones",
     "kind": "phrase",
     "source": "09",
@@ -2775,7 +2726,7 @@
   },
   {
     "id": "a1-f59f5f02",
-    "order": 334,
+    "order": 328,
     "es": "camino",
     "kind": "word",
     "source": "08",
@@ -2783,7 +2734,7 @@
   },
   {
     "id": "a1-204ea9d1",
-    "order": 335,
+    "order": 329,
     "es": "tener los ojos grandes",
     "kind": "phrase",
     "source": "09",
@@ -2791,7 +2742,7 @@
   },
   {
     "id": "a1-a8be1b78",
-    "order": 336,
+    "order": 330,
     "es": "antiguo",
     "kind": "word",
     "source": "08",
@@ -2799,7 +2750,7 @@
   },
   {
     "id": "a1-84e5bc0a",
-    "order": 337,
+    "order": 331,
     "es": "tener los ojos pequeños",
     "kind": "phrase",
     "source": "09",
@@ -2807,7 +2758,7 @@
   },
   {
     "id": "a1-2e1b710d",
-    "order": 338,
+    "order": 332,
     "es": "levantarse",
     "kind": "word",
     "source": "09",
@@ -2815,7 +2766,7 @@
   },
   {
     "id": "a1-28ef7a90",
-    "order": 339,
+    "order": 333,
     "es": "limpio",
     "kind": "word",
     "source": "08",
@@ -2823,7 +2774,7 @@
   },
   {
     "id": "a1-dd15b455",
-    "order": 340,
+    "order": 334,
     "es": "ducharse",
     "kind": "word",
     "source": "09",
@@ -2831,7 +2782,7 @@
   },
   {
     "id": "a1-a98d9f9d",
-    "order": 341,
+    "order": 335,
     "es": "sucio",
     "kind": "word",
     "source": "08",
@@ -2839,7 +2790,7 @@
   },
   {
     "id": "a1-df112970",
-    "order": 342,
+    "order": 336,
     "es": "simpático",
     "kind": "word",
     "source": "09",
@@ -2847,7 +2798,7 @@
   },
   {
     "id": "a1-4346dad8",
-    "order": 343,
+    "order": 337,
     "es": "limpiar",
     "kind": "word",
     "source": "08",
@@ -2855,7 +2806,7 @@
   },
   {
     "id": "a1-387bc21d",
-    "order": 344,
+    "order": 338,
     "es": "antipático",
     "kind": "word",
     "source": "09",
@@ -2864,7 +2815,7 @@
   },
   {
     "id": "a1-a1d7da7c",
-    "order": 345,
+    "order": 339,
     "es": "inteligente",
     "kind": "word",
     "source": "09",
@@ -2872,7 +2823,7 @@
   },
   {
     "id": "a1-d0f16530",
-    "order": 346,
+    "order": 340,
     "es": "trabajador",
     "kind": "word",
     "source": "09",
@@ -2880,7 +2831,7 @@
   },
   {
     "id": "a1-dbece4b4",
-    "order": 347,
+    "order": 341,
     "es": "alegre",
     "kind": "word",
     "source": "09",
@@ -2888,7 +2839,7 @@
   },
   {
     "id": "a1-ee6093af",
-    "order": 348,
+    "order": 342,
     "es": "serio",
     "kind": "word",
     "source": "09",
@@ -2896,7 +2847,7 @@
   },
   {
     "id": "a1-f53a820b",
-    "order": 349,
+    "order": 343,
     "es": "tímido",
     "kind": "word",
     "source": "09",
@@ -2905,7 +2856,7 @@
   },
   {
     "id": "a1-a3968707",
-    "order": 350,
+    "order": 344,
     "es": "sociable",
     "kind": "word",
     "source": "09",
@@ -2914,7 +2865,7 @@
   },
   {
     "id": "a1-4832ec78",
-    "order": 351,
+    "order": 345,
     "es": "nombre",
     "kind": "word",
     "source": "09",
@@ -2922,7 +2873,7 @@
   },
   {
     "id": "a1-46cbf749",
-    "order": 352,
+    "order": 346,
     "es": "(primer/segundo) apellido",
     "kind": "phrase",
     "source": "09",
@@ -2930,7 +2881,7 @@
   },
   {
     "id": "a1-e04d588b",
-    "order": 353,
+    "order": 347,
     "es": "señora",
     "kind": "word",
     "source": "09",
@@ -2938,7 +2889,7 @@
   },
   {
     "id": "a1-061c9803",
-    "order": 354,
+    "order": 348,
     "es": "señores",
     "kind": "word",
     "source": "09",
@@ -2947,7 +2898,7 @@
   },
   {
     "id": "a1-8c2ef45a",
-    "order": 355,
+    "order": 349,
     "es": "firmar",
     "kind": "word",
     "source": "09",
@@ -2955,7 +2906,7 @@
   },
   {
     "id": "a1-01e70bf7",
-    "order": 356,
+    "order": 350,
     "es": "llamarse",
     "kind": "word",
     "source": "09",
@@ -2963,7 +2914,7 @@
   },
   {
     "id": "a1-5695924a",
-    "order": 357,
+    "order": 351,
     "es": "dirección",
     "kind": "word",
     "source": "09",
@@ -2971,7 +2922,7 @@
   },
   {
     "id": "a1-62843f16",
-    "order": 358,
+    "order": 352,
     "es": "correo electrónico",
     "kind": "phrase",
     "source": "09",
@@ -2979,7 +2930,7 @@
   },
   {
     "id": "a1-6ced8ec4",
-    "order": 359,
+    "order": 353,
     "es": "avenida",
     "kind": "word",
     "source": "09",
@@ -2987,7 +2938,7 @@
   },
   {
     "id": "a1-e5dc5655",
-    "order": 360,
+    "order": 354,
     "es": "(des)ordenar",
     "kind": "word",
     "source": "08",
@@ -2996,7 +2947,7 @@
   },
   {
     "id": "a1-dae2f72e",
-    "order": 361,
+    "order": 355,
     "es": "paseo",
     "kind": "word",
     "source": "09",
@@ -3005,7 +2956,7 @@
   },
   {
     "id": "a1-a510e8eb",
-    "order": 362,
+    "order": 356,
     "es": "aburrido",
     "kind": "word",
     "source": "08",
@@ -3013,7 +2964,7 @@
   },
   {
     "id": "a1-2366c31f",
-    "order": 363,
+    "order": 357,
     "es": "plaza",
     "kind": "word",
     "source": "09",
@@ -3021,7 +2972,7 @@
   },
   {
     "id": "a1-90d94ae3",
-    "order": 364,
+    "order": 358,
     "es": "piso",
     "kind": "word",
     "source": "09",
@@ -3029,7 +2980,7 @@
   },
   {
     "id": "a1-e6c100a9",
-    "order": 365,
+    "order": 359,
     "es": "código postal",
     "kind": "phrase",
     "source": "09",
@@ -3037,7 +2988,7 @@
   },
   {
     "id": "a1-81bce1f3",
-    "order": 366,
+    "order": 360,
     "es": "casa",
     "kind": "word",
     "source": "09",
@@ -3045,7 +2996,7 @@
   },
   {
     "id": "a1-bbd0d81f",
-    "order": 367,
+    "order": 361,
     "es": "habitación",
     "kind": "word",
     "source": "09",
@@ -3053,7 +3004,7 @@
   },
   {
     "id": "a1-a5cd9d69",
-    "order": 368,
+    "order": 362,
     "es": "poder",
     "kind": "word",
     "source": "08",
@@ -3061,7 +3012,7 @@
   },
   {
     "id": "a1-8b83c17f",
-    "order": 369,
+    "order": 363,
     "es": "país",
     "kind": "word",
     "source": "09",
@@ -3069,7 +3020,7 @@
   },
   {
     "id": "a1-7227e710",
-    "order": 370,
+    "order": 364,
     "es": "ciudad",
     "kind": "word",
     "source": "09",
@@ -3077,7 +3028,7 @@
   },
   {
     "id": "a1-40e61a65",
-    "order": 371,
+    "order": 365,
     "es": "pueblo",
     "kind": "word",
     "source": "09",
@@ -3085,7 +3036,7 @@
   },
   {
     "id": "a1-8693c8ba",
-    "order": 372,
+    "order": 366,
     "es": "importante",
     "kind": "word",
     "source": "08",
@@ -3093,7 +3044,7 @@
   },
   {
     "id": "a1-6a47a30d",
-    "order": 373,
+    "order": 367,
     "es": "origen",
     "kind": "word",
     "source": "08",
@@ -3101,7 +3052,7 @@
   },
   {
     "id": "a1-361e8ab3",
-    "order": 374,
+    "order": 368,
     "es": "número de teléfono",
     "kind": "phrase",
     "source": "09",
@@ -3109,7 +3060,7 @@
   },
   {
     "id": "a1-3d099f1f",
-    "order": 375,
+    "order": 369,
     "es": "móvil",
     "kind": "word",
     "source": "09",
@@ -3118,7 +3069,7 @@
   },
   {
     "id": "a1-0d2f463d",
-    "order": 376,
+    "order": 370,
     "es": "lugar de nacimiento",
     "kind": "phrase",
     "source": "09",
@@ -3126,7 +3077,7 @@
   },
   {
     "id": "a1-4bd1b2dc",
-    "order": 377,
+    "order": 371,
     "es": "fecha de nacimiento",
     "kind": "phrase",
     "source": "09",
@@ -3134,7 +3085,7 @@
   },
   {
     "id": "a1-ca670a69",
-    "order": 378,
+    "order": 372,
     "es": "nacionalidad",
     "kind": "word",
     "source": "09",
@@ -3142,7 +3093,7 @@
   },
   {
     "id": "a1-dd9b8472",
-    "order": 379,
+    "order": 373,
     "es": "segundo",
     "kind": "word",
     "source": "08",
@@ -3150,7 +3101,7 @@
   },
   {
     "id": "a1-f613d184",
-    "order": 380,
+    "order": 374,
     "es": "extranjero",
     "kind": "word",
     "source": "09",
@@ -3158,7 +3109,7 @@
   },
   {
     "id": "a1-2fa0f1d1",
-    "order": 381,
+    "order": 375,
     "es": "decir",
     "kind": "word",
     "source": "08",
@@ -3166,7 +3117,7 @@
   },
   {
     "id": "a1-d2a8463f",
-    "order": 382,
+    "order": 376,
     "es": "español",
     "kind": "word",
     "source": "09",
@@ -3174,7 +3125,7 @@
   },
   {
     "id": "a1-16ea593f",
-    "order": 383,
+    "order": 377,
     "es": "alemán",
     "kind": "word",
     "source": "09",
@@ -3182,7 +3133,7 @@
   },
   {
     "id": "a1-01df1a72",
-    "order": 384,
+    "order": 378,
     "es": "cabeza",
     "kind": "word",
     "source": "09",
@@ -3190,7 +3141,7 @@
   },
   {
     "id": "a1-d69b850e",
-    "order": 385,
+    "order": 379,
     "es": "mexicano",
     "kind": "word",
     "source": "09",
@@ -3199,7 +3150,7 @@
   },
   {
     "id": "a1-3e4fa0ef",
-    "order": 386,
+    "order": 380,
     "es": "cara",
     "kind": "word",
     "source": "09",
@@ -3207,7 +3158,7 @@
   },
   {
     "id": "a1-567e79db",
-    "order": 387,
+    "order": 381,
     "es": "japonés",
     "kind": "word",
     "source": "09",
@@ -3216,7 +3167,7 @@
   },
   {
     "id": "a1-894bb48c",
-    "order": 388,
+    "order": 382,
     "es": "brazo",
     "kind": "word",
     "source": "09",
@@ -3224,7 +3175,7 @@
   },
   {
     "id": "a1-cd24e580",
-    "order": 389,
+    "order": 383,
     "es": "marroquí",
     "kind": "word",
     "source": "09",
@@ -3233,7 +3184,7 @@
   },
   {
     "id": "a1-7ac58255",
-    "order": 390,
+    "order": 384,
     "es": "mano",
     "kind": "word",
     "source": "09",
@@ -3241,7 +3192,7 @@
   },
   {
     "id": "a1-f206d767",
-    "order": 391,
+    "order": 385,
     "es": "ser de Laos",
     "kind": "phrase",
     "source": "09",
@@ -3249,7 +3200,7 @@
   },
   {
     "id": "a1-fea5414d",
-    "order": 392,
+    "order": 386,
     "es": "dedo",
     "kind": "word",
     "source": "09",
@@ -3257,7 +3208,7 @@
   },
   {
     "id": "a1-64babd71",
-    "order": 393,
+    "order": 387,
     "es": "ser de Bali",
     "kind": "phrase",
     "source": "09",
@@ -3265,7 +3216,7 @@
   },
   {
     "id": "a1-c5a26e11",
-    "order": 394,
+    "order": 388,
     "es": "pierna",
     "kind": "word",
     "source": "09",
@@ -3273,7 +3224,7 @@
   },
   {
     "id": "a1-ec751167",
-    "order": 395,
+    "order": 389,
     "es": "ser de Mozambique",
     "kind": "phrase",
     "source": "09",
@@ -3281,7 +3232,7 @@
   },
   {
     "id": "a1-287c5312",
-    "order": 396,
+    "order": 390,
     "es": "edad",
     "kind": "word",
     "source": "09",
@@ -3289,7 +3240,7 @@
   },
   {
     "id": "a1-18ad3550",
-    "order": 397,
+    "order": 391,
     "es": "joven",
     "kind": "word",
     "source": "09",
@@ -3297,7 +3248,7 @@
   },
   {
     "id": "a1-1349e40c",
-    "order": 398,
+    "order": 392,
     "es": "tener [número cardinal] años",
     "kind": "pattern",
     "source": "09",
@@ -3305,7 +3256,7 @@
   },
   {
     "id": "a1-61f0b4f7",
-    "order": 399,
+    "order": 393,
     "es": "garganta",
     "kind": "word",
     "source": "09",
@@ -3313,7 +3264,7 @@
   },
   {
     "id": "a1-16fad6f7",
-    "order": 400,
+    "order": 394,
     "es": "tener muchos años",
     "kind": "phrase",
     "source": "09",
@@ -3321,7 +3272,7 @@
   },
   {
     "id": "a1-b2b59405",
-    "order": 401,
+    "order": 395,
     "es": "estómago",
     "kind": "word",
     "source": "09",
@@ -3329,7 +3280,7 @@
   },
   {
     "id": "a1-5ee47ef7",
-    "order": 402,
+    "order": 396,
     "es": "tener pocos años",
     "kind": "phrase",
     "source": "09",
@@ -3337,7 +3288,7 @@
   },
   {
     "id": "a1-069a1256",
-    "order": 403,
+    "order": 397,
     "es": "espalda",
     "kind": "word",
     "source": "09",
@@ -3345,7 +3296,7 @@
   },
   {
     "id": "a1-ac4064a3",
-    "order": 404,
+    "order": 398,
     "es": "hombre",
     "kind": "word",
     "source": "09",
@@ -3353,7 +3304,7 @@
   },
   {
     "id": "a1-c4034b7d",
-    "order": 405,
+    "order": 399,
     "es": "mujer",
     "kind": "word",
     "source": "09",
@@ -3361,7 +3312,7 @@
   },
   {
     "id": "a1-42ebb3d2",
-    "order": 406,
+    "order": 400,
     "es": "niña",
     "kind": "word",
     "source": "09",
@@ -3370,7 +3321,7 @@
   },
   {
     "id": "a1-c3de758a",
-    "order": 407,
+    "order": 401,
     "es": "chica",
     "kind": "word",
     "source": "09",
@@ -3378,7 +3329,7 @@
   },
   {
     "id": "a1-b506f6ce",
-    "order": 408,
+    "order": 402,
     "es": "estado civil",
     "kind": "phrase",
     "source": "09",
@@ -3386,7 +3337,7 @@
   },
   {
     "id": "a1-b94e5ae0",
-    "order": 409,
+    "order": 403,
     "es": "soltero",
     "kind": "word",
     "source": "09",
@@ -3395,7 +3346,7 @@
   },
   {
     "id": "a1-07150cd8",
-    "order": 410,
+    "order": 404,
     "es": "casado",
     "kind": "word",
     "source": "09",
@@ -3403,7 +3354,7 @@
   },
   {
     "id": "a1-b72e56f3",
-    "order": 411,
+    "order": 405,
     "es": "viudo",
     "kind": "word",
     "source": "09",
@@ -3412,7 +3363,7 @@
   },
   {
     "id": "a1-0ee3e0a9",
-    "order": 412,
+    "order": 406,
     "es": "separado",
     "kind": "word",
     "source": "09",
@@ -3421,7 +3372,7 @@
   },
   {
     "id": "a1-6aca569c",
-    "order": 413,
+    "order": 407,
     "es": "divorciado",
     "kind": "word",
     "source": "09",
@@ -3430,7 +3381,7 @@
   },
   {
     "id": "a1-e4b88e75",
-    "order": 414,
+    "order": 408,
     "es": "marido",
     "kind": "word",
     "source": "09",
@@ -3438,7 +3389,7 @@
   },
   {
     "id": "a1-ab095133",
-    "order": 415,
+    "order": 409,
     "es": "pasaporte",
     "kind": "word",
     "source": "09",
@@ -3446,7 +3397,7 @@
   },
   {
     "id": "a1-85b1398a",
-    "order": 416,
+    "order": 410,
     "es": "carné de identidad",
     "kind": "phrase",
     "source": "09",
@@ -3454,7 +3405,7 @@
   },
   {
     "id": "a1-dc822faa",
-    "order": 417,
+    "order": 411,
     "es": "lavarse",
     "kind": "word",
     "source": "09",
@@ -3462,7 +3413,7 @@
   },
   {
     "id": "a1-b8018e2b",
-    "order": 418,
+    "order": 412,
     "es": "carné de conducir",
     "kind": "phrase",
     "source": "09",
@@ -3470,7 +3421,7 @@
   },
   {
     "id": "a1-15a47314",
-    "order": 419,
+    "order": 413,
     "es": "peinarse",
     "kind": "word",
     "source": "09",
@@ -3478,7 +3429,7 @@
   },
   {
     "id": "a1-f7d90116",
-    "order": 420,
+    "order": 414,
     "es": "llaves",
     "kind": "word",
     "source": "09",
@@ -3487,7 +3438,7 @@
   },
   {
     "id": "a1-68ea6a5d",
-    "order": 421,
+    "order": 415,
     "es": "afeitarse",
     "kind": "word",
     "source": "09",
@@ -3495,7 +3446,7 @@
   },
   {
     "id": "a1-fc8b93c8",
-    "order": 422,
+    "order": 416,
     "es": "cartera",
     "kind": "word",
     "source": "09",
@@ -3503,7 +3454,7 @@
   },
   {
     "id": "a1-5bbccf89",
-    "order": 423,
+    "order": 417,
     "es": "bolso",
     "kind": "word",
     "source": "09",
@@ -3511,7 +3462,7 @@
   },
   {
     "id": "a1-afa2148c",
-    "order": 424,
+    "order": 418,
     "es": "maleta",
     "kind": "word",
     "source": "09",
@@ -3519,7 +3470,7 @@
   },
   {
     "id": "a1-2e490be4",
-    "order": 425,
+    "order": 419,
     "es": "reloj",
     "kind": "word",
     "source": "09",
@@ -3527,7 +3478,7 @@
   },
   {
     "id": "a1-edadcfa5",
-    "order": 426,
+    "order": 420,
     "es": "ordenador",
     "kind": "word",
     "source": "09",
@@ -3536,7 +3487,7 @@
   },
   {
     "id": "a1-81bf5494",
-    "order": 427,
+    "order": 421,
     "es": "tarjeta de crédito",
     "kind": "phrase",
     "source": "09",
@@ -3544,7 +3495,7 @@
   },
   {
     "id": "a1-3b660a83",
-    "order": 428,
+    "order": 422,
     "es": "familia",
     "kind": "word",
     "source": "09",
@@ -3552,7 +3503,7 @@
   },
   {
     "id": "a1-188ccfab",
-    "order": 429,
+    "order": 423,
     "es": "padres",
     "kind": "word",
     "source": "09",
@@ -3560,7 +3511,7 @@
   },
   {
     "id": "a1-05d4ac9a",
-    "order": 430,
+    "order": 424,
     "es": "padre",
     "kind": "word",
     "source": "09",
@@ -3568,7 +3519,7 @@
   },
   {
     "id": "a1-10c4070b",
-    "order": 431,
+    "order": 425,
     "es": "madre",
     "kind": "word",
     "source": "09",
@@ -3576,7 +3527,7 @@
   },
   {
     "id": "a1-1cd26c17",
-    "order": 432,
+    "order": 426,
     "es": "abierto",
     "kind": "word",
     "source": "09",
@@ -3584,7 +3535,7 @@
   },
   {
     "id": "a1-cf233a5c",
-    "order": 433,
+    "order": 427,
     "es": "hijo",
     "kind": "word",
     "source": "09",
@@ -3592,7 +3543,7 @@
   },
   {
     "id": "a1-9587a830",
-    "order": 434,
+    "order": 428,
     "es": "hermano",
     "kind": "word",
     "source": "09",
@@ -3600,7 +3551,7 @@
   },
   {
     "id": "a1-9d57eb35",
-    "order": 435,
+    "order": 429,
     "es": "tranquilo",
     "kind": "word",
     "source": "09",
@@ -3608,7 +3559,7 @@
   },
   {
     "id": "a1-272f06f6",
-    "order": 436,
+    "order": 430,
     "es": "tío",
     "kind": "word",
     "source": "09",
@@ -3616,7 +3567,7 @@
   },
   {
     "id": "a1-742d356c",
-    "order": 437,
+    "order": 431,
     "es": "nervioso",
     "kind": "word",
     "source": "09",
@@ -3624,7 +3575,7 @@
   },
   {
     "id": "a1-311a2270",
-    "order": 438,
+    "order": 432,
     "es": "sobrino",
     "kind": "word",
     "source": "09",
@@ -3632,7 +3583,7 @@
   },
   {
     "id": "a1-8f76c681",
-    "order": 439,
+    "order": 433,
     "es": "abuelo",
     "kind": "word",
     "source": "09",
@@ -3640,7 +3591,7 @@
   },
   {
     "id": "a1-39368b20",
-    "order": 440,
+    "order": 434,
     "es": "nieto",
     "kind": "word",
     "source": "09",
@@ -3648,7 +3599,7 @@
   },
   {
     "id": "a1-9fc14a67",
-    "order": 441,
+    "order": 435,
     "es": "amable",
     "kind": "word",
     "source": "09",
@@ -3656,7 +3607,7 @@
   },
   {
     "id": "a1-9d46660b",
-    "order": 442,
+    "order": 436,
     "es": "primo",
     "kind": "word",
     "source": "09",
@@ -3664,7 +3615,7 @@
   },
   {
     "id": "a1-38bac135",
-    "order": 443,
+    "order": 437,
     "es": "pareja",
     "kind": "word",
     "source": "09",
@@ -3672,7 +3623,7 @@
   },
   {
     "id": "a1-cc6eb1be",
-    "order": 444,
+    "order": 438,
     "es": "novio",
     "kind": "word",
     "source": "09",
@@ -3680,7 +3631,7 @@
   },
   {
     "id": "a1-01f07beb",
-    "order": 445,
+    "order": 439,
     "es": "amigo",
     "kind": "word",
     "source": "09",
@@ -3688,7 +3639,7 @@
   },
   {
     "id": "a1-a7434f46",
-    "order": 446,
+    "order": 440,
     "es": "jefe",
     "kind": "word",
     "source": "09",
@@ -3696,7 +3647,7 @@
   },
   {
     "id": "a1-67874488",
-    "order": 447,
+    "order": 441,
     "es": "compañero",
     "kind": "word",
     "source": "09",
@@ -3704,7 +3655,7 @@
   },
   {
     "id": "a1-311931bb",
-    "order": 448,
+    "order": 442,
     "es": "fiesta",
     "kind": "word",
     "source": "09",
@@ -3712,7 +3663,7 @@
   },
   {
     "id": "a1-6987adf0",
-    "order": 449,
+    "order": 443,
     "es": "desayuno",
     "kind": "word",
     "source": "09",
@@ -3720,7 +3671,7 @@
   },
   {
     "id": "a1-67cd89a7",
-    "order": 450,
+    "order": 444,
     "es": "gustar",
     "kind": "word",
     "source": "09",
@@ -3728,7 +3679,7 @@
   },
   {
     "id": "a1-90245433",
-    "order": 451,
+    "order": 445,
     "es": "comida",
     "kind": "word",
     "source": "09",
@@ -3736,7 +3687,7 @@
   },
   {
     "id": "a1-b6f60d88",
-    "order": 452,
+    "order": 446,
     "es": "merienda",
     "kind": "word",
     "source": "09",
@@ -3744,7 +3695,7 @@
   },
   {
     "id": "a1-62e5582a",
-    "order": 453,
+    "order": 447,
     "es": "cena",
     "kind": "word",
     "source": "09",
@@ -3752,7 +3703,7 @@
   },
   {
     "id": "a1-3d3e1f17",
-    "order": 454,
+    "order": 448,
     "es": "desayunar",
     "kind": "word",
     "source": "09",
@@ -3760,7 +3711,7 @@
   },
   {
     "id": "a1-5fb14f82",
-    "order": 455,
+    "order": 449,
     "es": "comer",
     "kind": "word",
     "source": "09",
@@ -3768,7 +3719,7 @@
   },
   {
     "id": "a1-1b858d93",
-    "order": 456,
+    "order": 450,
     "es": "merendar",
     "kind": "word",
     "source": "09",
@@ -3776,7 +3727,7 @@
   },
   {
     "id": "a1-0e095b28",
-    "order": 457,
+    "order": 451,
     "es": "cenar",
     "kind": "word",
     "source": "09",
@@ -3784,7 +3735,7 @@
   },
   {
     "id": "a1-322f0275",
-    "order": 458,
+    "order": 452,
     "es": "agua (mineral) con gas",
     "kind": "phrase",
     "source": "09",
@@ -3792,7 +3743,7 @@
   },
   {
     "id": "a1-e39bde25",
-    "order": 459,
+    "order": 453,
     "es": "agua (mineral) sin gas",
     "kind": "phrase",
     "source": "09",
@@ -3800,7 +3751,7 @@
   },
   {
     "id": "a1-3c60405a",
-    "order": 460,
+    "order": 454,
     "es": "leche",
     "kind": "word",
     "source": "09",
@@ -3808,7 +3759,7 @@
   },
   {
     "id": "a1-77bb3d0b",
-    "order": 461,
+    "order": 455,
     "es": "té",
     "kind": "word",
     "source": "09",
@@ -3816,7 +3767,7 @@
   },
   {
     "id": "a1-512ab0eb",
-    "order": 462,
+    "order": 456,
     "es": "café solo",
     "kind": "phrase",
     "source": "09",
@@ -3824,7 +3775,7 @@
   },
   {
     "id": "a1-b61ae70b",
-    "order": 463,
+    "order": 457,
     "es": "café con leche",
     "kind": "phrase",
     "source": "09",
@@ -3832,7 +3783,7 @@
   },
   {
     "id": "a1-815e65e5",
-    "order": 464,
+    "order": 458,
     "es": "presentar(se)",
     "kind": "word",
     "source": "09",
@@ -3841,7 +3792,7 @@
   },
   {
     "id": "a1-96465efe",
-    "order": 465,
+    "order": 459,
     "es": "café cortado",
     "kind": "phrase",
     "source": "09",
@@ -3849,7 +3800,7 @@
   },
   {
     "id": "a1-e996f592",
-    "order": 466,
+    "order": 460,
     "es": "cerveza",
     "kind": "word",
     "source": "09",
@@ -3857,7 +3808,7 @@
   },
   {
     "id": "a1-98462fdf",
-    "order": 467,
+    "order": 461,
     "es": "vino blanco",
     "kind": "phrase",
     "source": "09",
@@ -3865,7 +3816,7 @@
   },
   {
     "id": "a1-2600f1c6",
-    "order": 468,
+    "order": 462,
     "es": "helado",
     "kind": "word",
     "source": "08",
@@ -3873,7 +3824,7 @@
   },
   {
     "id": "a1-57219a77",
-    "order": 469,
+    "order": 463,
     "es": "vino tinto",
     "kind": "phrase",
     "source": "09",
@@ -3881,7 +3832,7 @@
   },
   {
     "id": "a1-d6c27d2e",
-    "order": 470,
+    "order": 464,
     "es": "fresco",
     "kind": "word",
     "source": "08",
@@ -3889,7 +3840,7 @@
   },
   {
     "id": "a1-5c7c319b",
-    "order": 471,
+    "order": 465,
     "es": "beber",
     "kind": "word",
     "source": "09",
@@ -3897,7 +3848,7 @@
   },
   {
     "id": "a1-c99b38d7",
-    "order": 472,
+    "order": 466,
     "es": "bebé",
     "kind": "word",
     "source": "09",
@@ -3905,7 +3856,7 @@
   },
   {
     "id": "a1-8ecc854e",
-    "order": 473,
+    "order": 467,
     "es": "carne",
     "kind": "word",
     "source": "09",
@@ -3913,7 +3864,7 @@
   },
   {
     "id": "a1-964fdf6a",
-    "order": 474,
+    "order": 468,
     "es": "caluroso",
     "kind": "word",
     "source": "08",
@@ -3921,7 +3872,7 @@
   },
   {
     "id": "a1-432e49fe",
-    "order": 475,
+    "order": 469,
     "es": "pescado",
     "kind": "word",
     "source": "09",
@@ -3929,7 +3880,7 @@
   },
   {
     "id": "a1-1ea8c03f",
-    "order": 476,
+    "order": 470,
     "es": "fruta",
     "kind": "word",
     "source": "09",
@@ -3937,7 +3888,7 @@
   },
   {
     "id": "a1-c63cd472",
-    "order": 477,
+    "order": 471,
     "es": "verdura",
     "kind": "word",
     "source": "09",
@@ -3945,7 +3896,7 @@
   },
   {
     "id": "a1-5d327570",
-    "order": 478,
+    "order": 472,
     "es": "huevos",
     "kind": "word",
     "source": "09",
@@ -3954,7 +3905,7 @@
   },
   {
     "id": "a1-bd2bd821",
-    "order": 479,
+    "order": 473,
     "es": "pan",
     "kind": "word",
     "source": "09",
@@ -3962,7 +3913,7 @@
   },
   {
     "id": "a1-636909bb",
-    "order": 480,
+    "order": 474,
     "es": "bocadillo",
     "kind": "word",
     "source": "09",
@@ -3970,7 +3921,7 @@
   },
   {
     "id": "a1-ca96b69e",
-    "order": 481,
+    "order": 475,
     "es": "sándwich",
     "kind": "word",
     "source": "09",
@@ -3979,7 +3930,7 @@
   },
   {
     "id": "a1-fac69828",
-    "order": 482,
+    "order": 476,
     "es": "paraguas",
     "kind": "word",
     "source": "09",
@@ -3987,7 +3938,7 @@
   },
   {
     "id": "a1-9a1e795a",
-    "order": 483,
+    "order": 477,
     "es": "hamburguesa",
     "kind": "word",
     "source": "09",
@@ -3995,7 +3946,7 @@
   },
   {
     "id": "a1-876c05f7",
-    "order": 484,
+    "order": 478,
     "es": "primer/segundo plato",
     "kind": "phrase",
     "source": "09",
@@ -4003,7 +3954,7 @@
   },
   {
     "id": "a1-4b112157",
-    "order": 485,
+    "order": 479,
     "es": "postre",
     "kind": "word",
     "source": "09",
@@ -4011,7 +3962,7 @@
   },
   {
     "id": "a1-4662abff",
-    "order": 486,
+    "order": 480,
     "es": "sopa",
     "kind": "word",
     "source": "09",
@@ -4019,7 +3970,7 @@
   },
   {
     "id": "a1-047762cc",
-    "order": 487,
+    "order": 481,
     "es": "ensalada",
     "kind": "word",
     "source": "09",
@@ -4027,7 +3978,7 @@
   },
   {
     "id": "a1-b94c0f1c",
-    "order": 488,
+    "order": 482,
     "es": "paella",
     "kind": "word",
     "source": "09",
@@ -4035,7 +3986,7 @@
   },
   {
     "id": "a1-9d14874e",
-    "order": 489,
+    "order": 483,
     "es": "tortilla",
     "kind": "word",
     "source": "09",
@@ -4043,7 +3994,7 @@
   },
   {
     "id": "a1-62cdb702",
-    "order": 490,
+    "order": 484,
     "es": "bar",
     "kind": "word",
     "source": "09",
@@ -4051,7 +4002,7 @@
   },
   {
     "id": "a1-9e8cb070",
-    "order": 491,
+    "order": 485,
     "es": "restaurante",
     "kind": "word",
     "source": "09",
@@ -4059,7 +4010,7 @@
   },
   {
     "id": "a1-7cc27686",
-    "order": 492,
+    "order": 486,
     "es": "camarero",
     "kind": "word",
     "source": "09",
@@ -4067,7 +4018,7 @@
   },
   {
     "id": "a1-f04cc316",
-    "order": 493,
+    "order": 487,
     "es": "mesa",
     "kind": "word",
     "source": "09",
@@ -4075,7 +4026,7 @@
   },
   {
     "id": "a1-99506bdd",
-    "order": 494,
+    "order": 488,
     "es": "el menú",
     "kind": "phrase",
     "source": "09",
@@ -4083,7 +4034,7 @@
   },
   {
     "id": "a1-266ffb6d",
-    "order": 495,
+    "order": 489,
     "es": "la cuenta",
     "kind": "phrase",
     "source": "09",
@@ -4091,7 +4042,7 @@
   },
   {
     "id": "a1-99a7e1bc",
-    "order": 496,
+    "order": 490,
     "es": "instituto",
     "kind": "word",
     "source": "09",
@@ -4099,7 +4050,7 @@
   },
   {
     "id": "a1-8b08a87c",
-    "order": 497,
+    "order": 491,
     "es": "universidad",
     "kind": "word",
     "source": "09",
@@ -4107,7 +4058,7 @@
   },
   {
     "id": "a1-686bf5da",
-    "order": 498,
+    "order": 492,
     "es": "clase",
     "kind": "word",
     "source": "09",
@@ -4115,7 +4066,7 @@
   },
   {
     "id": "a1-973f3077",
-    "order": 499,
+    "order": 493,
     "es": "biblioteca",
     "kind": "word",
     "source": "09",
@@ -4123,7 +4074,7 @@
   },
   {
     "id": "a1-aabb211b",
-    "order": 500,
+    "order": 494,
     "es": "profesor",
     "kind": "word",
     "source": "09",
@@ -4131,7 +4082,7 @@
   },
   {
     "id": "a1-d5d4bc1d",
-    "order": 501,
+    "order": 495,
     "es": "estudiante",
     "kind": "word",
     "source": "09",
@@ -4139,7 +4090,7 @@
   },
   {
     "id": "a1-e1b61b36",
-    "order": 502,
+    "order": 496,
     "es": "visitar",
     "kind": "word",
     "source": "09",
@@ -4147,7 +4098,7 @@
   },
   {
     "id": "a1-235acfdf",
-    "order": 503,
+    "order": 497,
     "es": "director",
     "kind": "word",
     "source": "09",
@@ -4155,7 +4106,7 @@
   },
   {
     "id": "a1-6b3354ab",
-    "order": 504,
+    "order": 498,
     "es": "clase de español",
     "kind": "phrase",
     "source": "09",
@@ -4163,7 +4114,7 @@
   },
   {
     "id": "a1-e7486285",
-    "order": 505,
+    "order": 499,
     "es": "clase de matemáticas",
     "kind": "phrase",
     "source": "09",
@@ -4171,7 +4122,7 @@
   },
   {
     "id": "a1-ba9eceaa",
-    "order": 506,
+    "order": 500,
     "es": "clase de historia",
     "kind": "phrase",
     "source": "09",
@@ -4179,7 +4130,7 @@
   },
   {
     "id": "a1-35fdf1a2",
-    "order": 507,
+    "order": 501,
     "es": "horario",
     "kind": "word",
     "source": "09",
@@ -4187,7 +4138,7 @@
   },
   {
     "id": "a1-ae0de9e3",
-    "order": 508,
+    "order": 502,
     "es": "examen",
     "kind": "word",
     "source": "09",
@@ -4195,7 +4146,7 @@
   },
   {
     "id": "a1-3fcde0df",
-    "order": 509,
+    "order": 503,
     "es": "aprender",
     "kind": "word",
     "source": "09",
@@ -4203,7 +4154,7 @@
   },
   {
     "id": "a1-1d4d6c81",
-    "order": 510,
+    "order": 504,
     "es": "estudiar",
     "kind": "word",
     "source": "09",
@@ -4211,7 +4162,7 @@
   },
   {
     "id": "a1-d8a36dd7",
-    "order": 511,
+    "order": 505,
     "es": "ir a clase",
     "kind": "phrase",
     "source": "09",
@@ -4219,7 +4170,7 @@
   },
   {
     "id": "a1-359291fe",
-    "order": 512,
+    "order": 506,
     "es": "hacer/tener un examen",
     "kind": "phrase",
     "source": "09",
@@ -4227,7 +4178,7 @@
   },
   {
     "id": "a1-cded0061",
-    "order": 513,
+    "order": 507,
     "es": "ejercicio",
     "kind": "word",
     "source": "09",
@@ -4235,7 +4186,7 @@
   },
   {
     "id": "a1-5347c609",
-    "order": 514,
+    "order": 508,
     "es": "actividad",
     "kind": "word",
     "source": "09",
@@ -4243,7 +4194,7 @@
   },
   {
     "id": "a1-c98ed635",
-    "order": 515,
+    "order": 509,
     "es": "lección",
     "kind": "word",
     "source": "09",
@@ -4251,7 +4202,7 @@
   },
   {
     "id": "a1-3529a073",
-    "order": 516,
+    "order": 510,
     "es": "unidad",
     "kind": "word",
     "source": "09",
@@ -4259,7 +4210,7 @@
   },
   {
     "id": "a1-fe34fd93",
-    "order": 517,
+    "order": 511,
     "es": "página",
     "kind": "word",
     "source": "09",
@@ -4267,7 +4218,7 @@
   },
   {
     "id": "a1-0524ae33",
-    "order": 518,
+    "order": 512,
     "es": "pregunta",
     "kind": "word",
     "source": "09",
@@ -4275,7 +4226,7 @@
   },
   {
     "id": "a1-89c01c5e",
-    "order": 519,
+    "order": 513,
     "es": "en parejas",
     "kind": "phrase",
     "source": "09",
@@ -4283,7 +4234,7 @@
   },
   {
     "id": "a1-ad4ac957",
-    "order": 520,
+    "order": 514,
     "es": "en grupos",
     "kind": "phrase",
     "source": "09",
@@ -4291,7 +4242,7 @@
   },
   {
     "id": "a1-40a26dbc",
-    "order": 521,
+    "order": 515,
     "es": "leer",
     "kind": "word",
     "source": "09",
@@ -4299,7 +4250,7 @@
   },
   {
     "id": "a1-42bd1643",
-    "order": 522,
+    "order": 516,
     "es": "entender",
     "kind": "word",
     "source": "09",
@@ -4307,7 +4258,7 @@
   },
   {
     "id": "a1-15725a66",
-    "order": 523,
+    "order": 517,
     "es": "comprender",
     "kind": "word",
     "source": "09",
@@ -4315,7 +4266,7 @@
   },
   {
     "id": "a1-6d611149",
-    "order": 524,
+    "order": 518,
     "es": "practicar",
     "kind": "word",
     "source": "09",
@@ -4323,7 +4274,7 @@
   },
   {
     "id": "a1-5709af19",
-    "order": 525,
+    "order": 519,
     "es": "hacer los deberes",
     "kind": "phrase",
     "source": "09",
@@ -4331,7 +4282,7 @@
   },
   {
     "id": "a1-fa236184",
-    "order": 526,
+    "order": 520,
     "es": "hacer un ejercicio",
     "kind": "phrase",
     "source": "09",
@@ -4339,7 +4290,7 @@
   },
   {
     "id": "a1-b709bc1e",
-    "order": 527,
+    "order": 521,
     "es": "lechuga",
     "kind": "word",
     "source": "09",
@@ -4347,7 +4298,7 @@
   },
   {
     "id": "a1-348f8259",
-    "order": 528,
+    "order": 522,
     "es": "hacer una actividad",
     "kind": "phrase",
     "source": "09",
@@ -4355,7 +4306,7 @@
   },
   {
     "id": "a1-34c1a2ee",
-    "order": 529,
+    "order": 523,
     "es": "tomate",
     "kind": "word",
     "source": "09",
@@ -4363,7 +4314,7 @@
   },
   {
     "id": "a1-55767cac",
-    "order": 530,
+    "order": 524,
     "es": "hacer un examen",
     "kind": "phrase",
     "source": "09",
@@ -4371,7 +4322,7 @@
   },
   {
     "id": "a1-b9cffaa6",
-    "order": 531,
+    "order": 525,
     "es": "zanahoria",
     "kind": "word",
     "source": "09",
@@ -4379,7 +4330,7 @@
   },
   {
     "id": "a1-4d0fb475",
-    "order": 532,
+    "order": 526,
     "es": "Internet",
     "kind": "word",
     "source": "09",
@@ -4387,7 +4338,7 @@
   },
   {
     "id": "a1-8b0212fe",
-    "order": 533,
+    "order": 527,
     "es": "plátano",
     "kind": "word",
     "source": "09",
@@ -4395,7 +4346,7 @@
   },
   {
     "id": "a1-7d664b80",
-    "order": 534,
+    "order": 528,
     "es": "libro",
     "kind": "word",
     "source": "09",
@@ -4403,7 +4354,7 @@
   },
   {
     "id": "a1-ade46dd4",
-    "order": 535,
+    "order": 529,
     "es": "manzana",
     "kind": "word",
     "source": "09",
@@ -4411,7 +4362,7 @@
   },
   {
     "id": "a1-553ed42f",
-    "order": 536,
+    "order": 530,
     "es": "diccionario",
     "kind": "word",
     "source": "09",
@@ -4420,7 +4371,7 @@
   },
   {
     "id": "a1-cb030c5e",
-    "order": 537,
+    "order": 531,
     "es": "papel",
     "kind": "word",
     "source": "09",
@@ -4428,7 +4379,7 @@
   },
   {
     "id": "a1-fc4a648f",
-    "order": 538,
+    "order": 532,
     "es": "patata",
     "kind": "word",
     "source": "09",
@@ -4436,7 +4387,7 @@
   },
   {
     "id": "a1-315a22b8",
-    "order": 539,
+    "order": 533,
     "es": "bolígrafo",
     "kind": "word",
     "source": "09",
@@ -4445,7 +4396,7 @@
   },
   {
     "id": "a1-6933dd26",
-    "order": 540,
+    "order": 534,
     "es": "ajo",
     "kind": "word",
     "source": "09",
@@ -4453,7 +4404,7 @@
   },
   {
     "id": "a1-5187e8db",
-    "order": 541,
+    "order": 535,
     "es": "lápiz",
     "kind": "word",
     "source": "09",
@@ -4461,7 +4412,7 @@
   },
   {
     "id": "a1-db0794a9",
-    "order": 542,
+    "order": 536,
     "es": "cebolla",
     "kind": "word",
     "source": "09",
@@ -4469,7 +4420,7 @@
   },
   {
     "id": "a1-c19065ff",
-    "order": 543,
+    "order": 537,
     "es": "goma",
     "kind": "word",
     "source": "09",
@@ -4478,7 +4429,7 @@
   },
   {
     "id": "a1-ced5f005",
-    "order": 544,
+    "order": 538,
     "es": "fotocopia",
     "kind": "word",
     "source": "09",
@@ -4487,7 +4438,7 @@
   },
   {
     "id": "a1-d7ed0c3f",
-    "order": 545,
+    "order": 539,
     "es": "queso",
     "kind": "word",
     "source": "09",
@@ -4495,7 +4446,7 @@
   },
   {
     "id": "a1-86546b91",
-    "order": 546,
+    "order": 540,
     "es": "silla",
     "kind": "word",
     "source": "09",
@@ -4503,7 +4454,7 @@
   },
   {
     "id": "a1-ed6ed808",
-    "order": 547,
+    "order": 541,
     "es": "yogur",
     "kind": "word",
     "source": "09",
@@ -4511,7 +4462,7 @@
   },
   {
     "id": "a1-2b937936",
-    "order": 548,
+    "order": 542,
     "es": "armario",
     "kind": "word",
     "source": "09",
@@ -4519,7 +4470,7 @@
   },
   {
     "id": "a1-ca50ee69",
-    "order": 549,
+    "order": 543,
     "es": "mantequilla",
     "kind": "word",
     "source": "09",
@@ -4527,7 +4478,7 @@
   },
   {
     "id": "a1-cb28f4a6",
-    "order": 550,
+    "order": 544,
     "es": "estantería",
     "kind": "word",
     "source": "09",
@@ -4535,7 +4486,7 @@
   },
   {
     "id": "a1-b6cc13ff",
-    "order": 551,
+    "order": 545,
     "es": "pizarra",
     "kind": "word",
     "source": "09",
@@ -4544,7 +4495,7 @@
   },
   {
     "id": "a1-4a472d01",
-    "order": 552,
+    "order": 546,
     "es": "mapa",
     "kind": "word",
     "source": "09",
@@ -4552,7 +4503,7 @@
   },
   {
     "id": "a1-20ece292",
-    "order": 553,
+    "order": 547,
     "es": "abogado",
     "kind": "word",
     "source": "09",
@@ -4560,7 +4511,7 @@
   },
   {
     "id": "a1-08bbc365",
-    "order": 554,
+    "order": 548,
     "es": "médico",
     "kind": "word",
     "source": "09",
@@ -4568,7 +4519,7 @@
   },
   {
     "id": "a1-ef513cd4",
-    "order": 555,
+    "order": 549,
     "es": "taxista",
     "kind": "word",
     "source": "09",
@@ -4576,7 +4527,7 @@
   },
   {
     "id": "a1-50338aef",
-    "order": 556,
+    "order": 550,
     "es": "atún",
     "kind": "word",
     "source": "09",
@@ -4584,7 +4535,7 @@
   },
   {
     "id": "a1-655d255a",
-    "order": 557,
+    "order": 551,
     "es": "ama de casa",
     "kind": "phrase",
     "source": "09",
@@ -4592,7 +4543,7 @@
   },
   {
     "id": "a1-7328ea3d",
-    "order": 558,
+    "order": 552,
     "es": "ser camarero",
     "kind": "phrase",
     "source": "09",
@@ -4600,7 +4551,7 @@
   },
   {
     "id": "a1-e734f7ca",
-    "order": 559,
+    "order": 553,
     "es": "pasta",
     "kind": "word",
     "source": "09",
@@ -4608,7 +4559,7 @@
   },
   {
     "id": "a1-0a0f89d3",
-    "order": 560,
+    "order": 554,
     "es": "ser ingeniero",
     "kind": "phrase",
     "source": "09",
@@ -4616,7 +4567,7 @@
   },
   {
     "id": "a1-871984f9",
-    "order": 561,
+    "order": 555,
     "es": "arroz",
     "kind": "word",
     "source": "09",
@@ -4624,7 +4575,7 @@
   },
   {
     "id": "a1-5d26b8f2",
-    "order": 562,
+    "order": 556,
     "es": "trabajar (en)",
     "kind": "phrase",
     "source": "09",
@@ -4632,7 +4583,7 @@
   },
   {
     "id": "a1-f03fb6a7",
-    "order": 563,
+    "order": 557,
     "es": "chocolate",
     "kind": "word",
     "source": "09",
@@ -4640,7 +4591,7 @@
   },
   {
     "id": "a1-7a144895",
-    "order": 564,
+    "order": 558,
     "es": "dedicarse a",
     "kind": "phrase",
     "source": "09",
@@ -4648,7 +4599,7 @@
   },
   {
     "id": "a1-9403f4c8",
-    "order": 565,
+    "order": 559,
     "es": "empresa",
     "kind": "word",
     "source": "09",
@@ -4656,7 +4607,7 @@
   },
   {
     "id": "a1-c65a795a",
-    "order": 566,
+    "order": 560,
     "es": "oficina",
     "kind": "word",
     "source": "09",
@@ -4664,7 +4615,7 @@
   },
   {
     "id": "a1-58637696",
-    "order": 567,
+    "order": 561,
     "es": "tienda",
     "kind": "word",
     "source": "09",
@@ -4672,7 +4623,7 @@
   },
   {
     "id": "a1-5abbec36",
-    "order": 568,
+    "order": 562,
     "es": "sal",
     "kind": "word",
     "source": "09",
@@ -4680,7 +4631,7 @@
   },
   {
     "id": "a1-ee089b4a",
-    "order": 569,
+    "order": 563,
     "es": "puntual",
     "kind": "word",
     "source": "08",
@@ -4688,7 +4639,7 @@
   },
   {
     "id": "a1-9303fb5d",
-    "order": 570,
+    "order": 564,
     "es": "teléfono",
     "kind": "word",
     "source": "09",
@@ -4696,7 +4647,7 @@
   },
   {
     "id": "a1-f9b8fd82",
-    "order": 571,
+    "order": 565,
     "es": "pimienta",
     "kind": "word",
     "source": "09",
@@ -4704,7 +4655,7 @@
   },
   {
     "id": "a1-da41abc0",
-    "order": 572,
+    "order": 566,
     "es": "fax",
     "kind": "word",
     "source": "09",
@@ -4713,7 +4664,7 @@
   },
   {
     "id": "a1-14527318",
-    "order": 573,
+    "order": 567,
     "es": "aceite",
     "kind": "word",
     "source": "09",
@@ -4721,7 +4672,7 @@
   },
   {
     "id": "a1-09d2e3a1",
-    "order": 574,
+    "order": 568,
     "es": "trabajo",
     "kind": "word",
     "source": "09",
@@ -4730,23 +4681,15 @@
   },
   {
     "id": "a1-b54c1ff4",
-    "order": 575,
+    "order": 569,
     "es": "profesión",
     "kind": "word",
     "source": "09",
     "section": "7.3. Actividad laboral"
   },
   {
-    "id": "a1-a4adaa62",
-    "order": 576,
-    "es": "trabajar",
-    "kind": "word",
-    "source": "09",
-    "section": "7.3. Actividad laboral"
-  },
-  {
     "id": "a1-a2039cb4",
-    "order": 577,
+    "order": 570,
     "es": "comprar",
     "kind": "word",
     "source": "09",
@@ -4754,7 +4697,7 @@
   },
   {
     "id": "a1-9c25bd58",
-    "order": 578,
+    "order": 571,
     "es": "vender",
     "kind": "word",
     "source": "09",
@@ -4762,7 +4705,7 @@
   },
   {
     "id": "a1-3fd485de",
-    "order": 579,
+    "order": 572,
     "es": "estar en paro",
     "kind": "phrase",
     "source": "09",
@@ -4770,7 +4713,7 @@
   },
   {
     "id": "a1-305ea7c8",
-    "order": 580,
+    "order": 573,
     "es": "tener trabajo",
     "kind": "phrase",
     "source": "09",
@@ -4778,7 +4721,7 @@
   },
   {
     "id": "a1-2a7331b7",
-    "order": 581,
+    "order": 574,
     "es": "vacaciones",
     "kind": "word",
     "source": "09",
@@ -4786,7 +4729,7 @@
   },
   {
     "id": "a1-b99c0fea",
-    "order": 582,
+    "order": 575,
     "es": "tener vacaciones",
     "kind": "phrase",
     "source": "09",
@@ -4794,7 +4737,7 @@
   },
   {
     "id": "a1-5376c96d",
-    "order": 583,
+    "order": 576,
     "es": "ser trabajador",
     "kind": "phrase",
     "source": "09",
@@ -4802,7 +4745,7 @@
   },
   {
     "id": "a1-4ec76f2e",
-    "order": 584,
+    "order": 577,
     "es": "turista",
     "kind": "word",
     "source": "09",
@@ -4810,7 +4753,7 @@
   },
   {
     "id": "a1-34fedbb1",
-    "order": 585,
+    "order": 578,
     "es": "oficina de información",
     "kind": "phrase",
     "source": "09",
@@ -4818,7 +4761,7 @@
   },
   {
     "id": "a1-aeeeacc2",
-    "order": 586,
+    "order": 579,
     "es": "oficina de turismo",
     "kind": "phrase",
     "source": "09",
@@ -4826,7 +4769,7 @@
   },
   {
     "id": "a1-528f8529",
-    "order": 587,
+    "order": 580,
     "es": "leer el periódico",
     "kind": "phrase",
     "source": "09",
@@ -4834,7 +4777,7 @@
   },
   {
     "id": "a1-42640996",
-    "order": 588,
+    "order": 581,
     "es": "leer un libro",
     "kind": "phrase",
     "source": "09",
@@ -4842,7 +4785,7 @@
   },
   {
     "id": "a1-925197e0",
-    "order": 589,
+    "order": 582,
     "es": "leer una revista",
     "kind": "phrase",
     "source": "09",
@@ -4850,7 +4793,7 @@
   },
   {
     "id": "a1-12f46ad6",
-    "order": 590,
+    "order": 583,
     "es": "cocinar",
     "kind": "word",
     "source": "09",
@@ -4858,7 +4801,7 @@
   },
   {
     "id": "a1-e4b17b5d",
-    "order": 591,
+    "order": 584,
     "es": "ver la televisión",
     "kind": "phrase",
     "source": "09",
@@ -4866,7 +4809,7 @@
   },
   {
     "id": "a1-e616b6b3",
-    "order": 592,
+    "order": 585,
     "es": "ver una película",
     "kind": "phrase",
     "source": "09",
@@ -4874,7 +4817,7 @@
   },
   {
     "id": "a1-ca582cd3",
-    "order": 593,
+    "order": 586,
     "es": "escuchar música",
     "kind": "phrase",
     "source": "09",
@@ -4882,7 +4825,7 @@
   },
   {
     "id": "a1-d0f34dc6",
-    "order": 594,
+    "order": 587,
     "es": "escuchar la radio",
     "kind": "phrase",
     "source": "09",
@@ -4890,7 +4833,7 @@
   },
   {
     "id": "a1-7a67248a",
-    "order": 595,
+    "order": 588,
     "es": "escuchar una canción",
     "kind": "phrase",
     "source": "09",
@@ -4898,7 +4841,7 @@
   },
   {
     "id": "a1-9e1c6187",
-    "order": 596,
+    "order": 589,
     "es": "tapa",
     "kind": "word",
     "source": "09",
@@ -4906,7 +4849,7 @@
   },
   {
     "id": "a1-3d29208e",
-    "order": 597,
+    "order": 590,
     "es": "final",
     "kind": "word",
     "source": "08",
@@ -4914,7 +4857,7 @@
   },
   {
     "id": "a1-b0747477",
-    "order": 598,
+    "order": 591,
     "es": "ir a un bar",
     "kind": "phrase",
     "source": "09",
@@ -4922,7 +4865,7 @@
   },
   {
     "id": "a1-190ac84f",
-    "order": 599,
+    "order": 592,
     "es": "aperitivo",
     "kind": "word",
     "source": "09",
@@ -4930,7 +4873,7 @@
   },
   {
     "id": "a1-e085f633",
-    "order": 600,
+    "order": 593,
     "es": "ir a una discoteca",
     "kind": "phrase",
     "source": "09",
@@ -4938,7 +4881,7 @@
   },
   {
     "id": "a1-d6bc9169",
-    "order": 601,
+    "order": 594,
     "es": "plato",
     "kind": "word",
     "source": "09",
@@ -4946,7 +4889,7 @@
   },
   {
     "id": "a1-1391b45a",
-    "order": 602,
+    "order": 595,
     "es": "ir a un café",
     "kind": "phrase",
     "source": "09",
@@ -4954,7 +4897,7 @@
   },
   {
     "id": "a1-e317a0f7",
-    "order": 603,
+    "order": 596,
     "es": "vaso",
     "kind": "word",
     "source": "09",
@@ -4962,7 +4905,7 @@
   },
   {
     "id": "a1-c5ab6aa6",
-    "order": 604,
+    "order": 597,
     "es": "ir a un restaurante",
     "kind": "phrase",
     "source": "09",
@@ -4970,7 +4913,7 @@
   },
   {
     "id": "a1-febce3ef",
-    "order": 605,
+    "order": 598,
     "es": "taza",
     "kind": "word",
     "source": "09",
@@ -4978,7 +4921,7 @@
   },
   {
     "id": "a1-2201042d",
-    "order": 606,
+    "order": 599,
     "es": "ir a un museo",
     "kind": "phrase",
     "source": "09",
@@ -4986,7 +4929,7 @@
   },
   {
     "id": "a1-030ff0b9",
-    "order": 607,
+    "order": 600,
     "es": "servilleta",
     "kind": "word",
     "source": "09",
@@ -4994,7 +4937,7 @@
   },
   {
     "id": "a1-2d08a382",
-    "order": 608,
+    "order": 601,
     "es": "ir al cine",
     "kind": "phrase",
     "source": "09",
@@ -5002,7 +4945,7 @@
   },
   {
     "id": "a1-baa693b2",
-    "order": 609,
+    "order": 602,
     "es": "ir al teatro",
     "kind": "phrase",
     "source": "09",
@@ -5010,7 +4953,7 @@
   },
   {
     "id": "a1-04d314d8",
-    "order": 610,
+    "order": 603,
     "es": "ir al parque",
     "kind": "phrase",
     "source": "09",
@@ -5018,7 +4961,7 @@
   },
   {
     "id": "a1-ad900d7b",
-    "order": 611,
+    "order": 604,
     "es": "cantar",
     "kind": "word",
     "source": "09",
@@ -5026,7 +4969,7 @@
   },
   {
     "id": "a1-cebdd0c7",
-    "order": 612,
+    "order": 605,
     "es": "bailar",
     "kind": "word",
     "source": "09",
@@ -5034,7 +4977,7 @@
   },
   {
     "id": "a1-84b698cc",
-    "order": 613,
+    "order": 606,
     "es": "película",
     "kind": "word",
     "source": "09",
@@ -5042,7 +4985,7 @@
   },
   {
     "id": "a1-68fbaa24",
-    "order": 614,
+    "order": 607,
     "es": "concierto",
     "kind": "word",
     "source": "09",
@@ -5050,7 +4993,7 @@
   },
   {
     "id": "a1-66b97db9",
-    "order": 615,
+    "order": 608,
     "es": "ir al circo",
     "kind": "phrase",
     "source": "09",
@@ -5058,7 +5001,7 @@
   },
   {
     "id": "a1-93dc068a",
-    "order": 616,
+    "order": 609,
     "es": "ir a un concierto",
     "kind": "phrase",
     "source": "09",
@@ -5066,7 +5009,7 @@
   },
   {
     "id": "a1-43e97870",
-    "order": 617,
+    "order": 610,
     "es": "correr",
     "kind": "word",
     "source": "09",
@@ -5074,7 +5017,7 @@
   },
   {
     "id": "a1-358b4e77",
-    "order": 618,
+    "order": 611,
     "es": "cocinero",
     "kind": "word",
     "source": "09",
@@ -5082,7 +5025,7 @@
   },
   {
     "id": "a1-b6e1a00e",
-    "order": 619,
+    "order": 612,
     "es": "nadar",
     "kind": "word",
     "source": "09",
@@ -5090,7 +5033,7 @@
   },
   {
     "id": "a1-ede6f315",
-    "order": 620,
+    "order": 613,
     "es": "esquiar",
     "kind": "word",
     "source": "09",
@@ -5098,7 +5041,7 @@
   },
   {
     "id": "a1-aa153cb1",
-    "order": 621,
+    "order": 614,
     "es": "hacer deporte",
     "kind": "phrase",
     "source": "09",
@@ -5106,7 +5049,7 @@
   },
   {
     "id": "a1-94113f9f",
-    "order": 622,
+    "order": 615,
     "es": "hacer ejercicio",
     "kind": "phrase",
     "source": "09",
@@ -5114,7 +5057,7 @@
   },
   {
     "id": "a1-ada4eb2a",
-    "order": 623,
+    "order": 616,
     "es": "todavía",
     "kind": "word",
     "source": "08",
@@ -5122,7 +5065,7 @@
   },
   {
     "id": "a1-127a0261",
-    "order": 624,
+    "order": 617,
     "es": "hacer gimnasia",
     "kind": "phrase",
     "source": "09",
@@ -5130,7 +5073,7 @@
   },
   {
     "id": "a1-72dc1712",
-    "order": 625,
+    "order": 618,
     "es": "jugar al fútbol",
     "kind": "phrase",
     "source": "09",
@@ -5138,7 +5081,7 @@
   },
   {
     "id": "a1-abeb7b57",
-    "order": 626,
+    "order": 619,
     "es": "jugar al baloncesto",
     "kind": "phrase",
     "source": "09",
@@ -5146,7 +5089,7 @@
   },
   {
     "id": "a1-11787e6a",
-    "order": 627,
+    "order": 620,
     "es": "jugar al tenis",
     "kind": "phrase",
     "source": "09",
@@ -5154,23 +5097,15 @@
   },
   {
     "id": "a1-2a5246ff",
-    "order": 628,
+    "order": 621,
     "es": "juego",
     "kind": "word",
     "source": "09",
     "section": "8.4. Juegos"
   },
   {
-    "id": "a1-946fa7e5",
-    "order": 629,
-    "es": "compañero (de juego)",
-    "kind": "phrase",
-    "source": "09",
-    "section": "8.4. Juegos"
-  },
-  {
     "id": "a1-bf6e4067",
-    "order": 630,
+    "order": 622,
     "es": "televisión",
     "kind": "word",
     "source": "09",
@@ -5178,7 +5113,7 @@
   },
   {
     "id": "a1-ebf94480",
-    "order": 631,
+    "order": 623,
     "es": "lado",
     "kind": "word",
     "source": "08",
@@ -5186,7 +5121,7 @@
   },
   {
     "id": "a1-d432c352",
-    "order": 632,
+    "order": 624,
     "es": "radio",
     "kind": "word",
     "source": "09",
@@ -5194,7 +5129,7 @@
   },
   {
     "id": "a1-639c48ee",
-    "order": 633,
+    "order": 625,
     "es": "sobre",
     "kind": "word",
     "source": "09",
@@ -5202,7 +5137,7 @@
   },
   {
     "id": "a1-f841bd7f",
-    "order": 634,
+    "order": 626,
     "es": "sello",
     "kind": "word",
     "source": "09",
@@ -5210,7 +5145,7 @@
   },
   {
     "id": "a1-66c195dc",
-    "order": 635,
+    "order": 627,
     "es": "escribir una postal",
     "kind": "phrase",
     "source": "09",
@@ -5218,7 +5153,7 @@
   },
   {
     "id": "a1-81dfbe65",
-    "order": 636,
+    "order": 628,
     "es": "escribir una carta",
     "kind": "phrase",
     "source": "09",
@@ -5226,7 +5161,7 @@
   },
   {
     "id": "a1-9a437d38",
-    "order": 637,
+    "order": 629,
     "es": "escribir un mensaje electrónico",
     "kind": "phrase",
     "source": "09",
@@ -5234,7 +5169,7 @@
   },
   {
     "id": "a1-4e76c8d3",
-    "order": 638,
+    "order": 630,
     "es": "teléfono fijo",
     "kind": "phrase",
     "source": "09",
@@ -5242,7 +5177,7 @@
   },
   {
     "id": "a1-ffd8ad31",
-    "order": 639,
+    "order": 631,
     "es": "teléfono móvil",
     "kind": "phrase",
     "source": "09",
@@ -5250,7 +5185,7 @@
   },
   {
     "id": "a1-60439c2e",
-    "order": 640,
+    "order": 632,
     "es": "quiosco",
     "kind": "word",
     "source": "09",
@@ -5258,7 +5193,7 @@
   },
   {
     "id": "a1-f942c361",
-    "order": 641,
+    "order": 633,
     "es": "leer un periódico",
     "kind": "phrase",
     "source": "09",
@@ -5266,7 +5201,7 @@
   },
   {
     "id": "a1-f28efa1e",
-    "order": 642,
+    "order": 634,
     "es": "arroba",
     "kind": "word",
     "source": "09",
@@ -5275,7 +5210,7 @@
   },
   {
     "id": "a1-941ccad0",
-    "order": 643,
+    "order": 635,
     "es": "guión",
     "kind": "word",
     "source": "09",
@@ -5283,7 +5218,7 @@
   },
   {
     "id": "a1-0d8289b1",
-    "order": 644,
+    "order": 636,
     "es": "guión bajo",
     "kind": "phrase",
     "source": "09",
@@ -5291,7 +5226,7 @@
   },
   {
     "id": "a1-f4c4ee6e",
-    "order": 645,
+    "order": 637,
     "es": "punto",
     "kind": "word",
     "source": "09",
@@ -5299,7 +5234,7 @@
   },
   {
     "id": "a1-633019dc",
-    "order": 646,
+    "order": 638,
     "es": "página web",
     "kind": "phrase",
     "source": "09",
@@ -5307,7 +5242,7 @@
   },
   {
     "id": "a1-b40abf93",
-    "order": 647,
+    "order": 639,
     "es": "comprar/vender/alquilar un piso",
     "kind": "phrase",
     "source": "09",
@@ -5315,7 +5250,7 @@
   },
   {
     "id": "a1-9b873364",
-    "order": 648,
+    "order": 640,
     "es": "comprar/vender/alquilar un apartamento",
     "kind": "phrase",
     "source": "09",
@@ -5323,7 +5258,7 @@
   },
   {
     "id": "a1-b74097cd",
-    "order": 649,
+    "order": 641,
     "es": "vivir en una casa",
     "kind": "phrase",
     "source": "09",
@@ -5331,7 +5266,7 @@
   },
   {
     "id": "a1-6abf00cc",
-    "order": 650,
+    "order": 642,
     "es": "Medicina",
     "kind": "word",
     "source": "09",
@@ -5339,7 +5274,7 @@
   },
   {
     "id": "a1-45c737e5",
-    "order": 651,
+    "order": 643,
     "es": "vivir en un apartamento",
     "kind": "phrase",
     "source": "09",
@@ -5347,7 +5282,7 @@
   },
   {
     "id": "a1-0f2c666a",
-    "order": 652,
+    "order": 644,
     "es": "vivir en un piso",
     "kind": "phrase",
     "source": "09",
@@ -5355,7 +5290,7 @@
   },
   {
     "id": "a1-af51e888",
-    "order": 653,
+    "order": 645,
     "es": "apartamento",
     "kind": "word",
     "source": "09",
@@ -5363,7 +5298,7 @@
   },
   {
     "id": "a1-13b3bd1e",
-    "order": 654,
+    "order": 646,
     "es": "jugar",
     "kind": "word",
     "source": "09",
@@ -5371,7 +5306,7 @@
   },
   {
     "id": "a1-c08f8437",
-    "order": 655,
+    "order": 647,
     "es": "estudio",
     "kind": "word",
     "source": "09",
@@ -5379,7 +5314,7 @@
   },
   {
     "id": "a1-8b452fd0",
-    "order": 656,
+    "order": 648,
     "es": "ascensor",
     "kind": "word",
     "source": "09",
@@ -5387,7 +5322,7 @@
   },
   {
     "id": "a1-67bf0229",
-    "order": 657,
+    "order": 649,
     "es": "escalera",
     "kind": "word",
     "source": "09",
@@ -5395,7 +5330,7 @@
   },
   {
     "id": "a1-ca4f31ae",
-    "order": 658,
+    "order": 650,
     "es": "duro",
     "kind": "word",
     "source": "08",
@@ -5403,7 +5338,7 @@
   },
   {
     "id": "a1-7c79d7fa",
-    "order": 659,
+    "order": 651,
     "es": "terraza",
     "kind": "word",
     "source": "09",
@@ -5411,7 +5346,7 @@
   },
   {
     "id": "a1-c9761711",
-    "order": 660,
+    "order": 652,
     "es": "blando",
     "kind": "word",
     "source": "08",
@@ -5419,7 +5354,7 @@
   },
   {
     "id": "a1-152b0c98",
-    "order": 661,
+    "order": 653,
     "es": "jardín",
     "kind": "word",
     "source": "09",
@@ -5427,7 +5362,7 @@
   },
   {
     "id": "a1-39252f2f",
-    "order": 662,
+    "order": 654,
     "es": "ventana",
     "kind": "word",
     "source": "09",
@@ -5435,7 +5370,7 @@
   },
   {
     "id": "a1-16924b92",
-    "order": 663,
+    "order": 655,
     "es": "puerta",
     "kind": "word",
     "source": "09",
@@ -5443,7 +5378,7 @@
   },
   {
     "id": "a1-2052cb28",
-    "order": 664,
+    "order": 656,
     "es": "sala de estar",
     "kind": "phrase",
     "source": "09",
@@ -5451,7 +5386,7 @@
   },
   {
     "id": "a1-b928e4f5",
-    "order": 665,
+    "order": 657,
     "es": "dormitorio",
     "kind": "word",
     "source": "09",
@@ -5459,7 +5394,7 @@
   },
   {
     "id": "a1-6c6e13da",
-    "order": 666,
+    "order": 658,
     "es": "cocina",
     "kind": "word",
     "source": "09",
@@ -5467,7 +5402,7 @@
   },
   {
     "id": "a1-8d781ea8",
-    "order": 667,
+    "order": 659,
     "es": "tocar",
     "kind": "word",
     "source": "08",
@@ -5475,7 +5410,7 @@
   },
   {
     "id": "a1-d5f88dbc",
-    "order": 668,
+    "order": 660,
     "es": "(cuarto de) baño",
     "kind": "phrase",
     "source": "09",
@@ -5483,7 +5418,7 @@
   },
   {
     "id": "a1-9e7db28a",
-    "order": 669,
+    "order": 661,
     "es": "salón",
     "kind": "word",
     "source": "09",
@@ -5491,7 +5426,7 @@
   },
   {
     "id": "a1-06c6bb5c",
-    "order": 670,
+    "order": 662,
     "es": "garaje",
     "kind": "word",
     "source": "09",
@@ -5499,7 +5434,7 @@
   },
   {
     "id": "a1-7be964ba",
-    "order": 671,
+    "order": 663,
     "es": "piso exterior",
     "kind": "phrase",
     "source": "09",
@@ -5507,7 +5442,7 @@
   },
   {
     "id": "a1-e8c8c5bd",
-    "order": 672,
+    "order": 664,
     "es": "piso interior",
     "kind": "phrase",
     "source": "09",
@@ -5515,7 +5450,7 @@
   },
   {
     "id": "a1-3c37bbc5",
-    "order": 673,
+    "order": 665,
     "es": "impresora",
     "kind": "word",
     "source": "09",
@@ -5523,7 +5458,7 @@
   },
   {
     "id": "a1-f844c5e3",
-    "order": 674,
+    "order": 666,
     "es": "piso céntrico",
     "kind": "phrase",
     "source": "09",
@@ -5531,7 +5466,7 @@
   },
   {
     "id": "a1-5c6dbd0f",
-    "order": 675,
+    "order": 667,
     "es": "húmedo",
     "kind": "word",
     "source": "08",
@@ -5539,7 +5474,7 @@
   },
   {
     "id": "a1-4e48d4b1",
-    "order": 676,
+    "order": 668,
     "es": "bien/mal comunicado",
     "kind": "phrase",
     "source": "09",
@@ -5547,7 +5482,7 @@
   },
   {
     "id": "a1-c6931950",
-    "order": 677,
+    "order": 669,
     "es": "mojado",
     "kind": "word",
     "source": "08",
@@ -5555,7 +5490,7 @@
   },
   {
     "id": "a1-bc658441",
-    "order": 678,
+    "order": 670,
     "es": "tener ascensor",
     "kind": "phrase",
     "source": "09",
@@ -5563,7 +5498,7 @@
   },
   {
     "id": "a1-280cd458",
-    "order": 679,
+    "order": 671,
     "es": "tener teléfono",
     "kind": "phrase",
     "source": "09",
@@ -5571,7 +5506,7 @@
   },
   {
     "id": "a1-e0fb477a",
-    "order": 680,
+    "order": 672,
     "es": "tener aire acondicionado",
     "kind": "phrase",
     "source": "09",
@@ -5579,7 +5514,7 @@
   },
   {
     "id": "a1-03e245a4",
-    "order": 681,
+    "order": 673,
     "es": "tener calefacción (central",
     "kind": "phrase",
     "source": "09",
@@ -5587,7 +5522,7 @@
   },
   {
     "id": "a1-75ac7d03",
-    "order": 682,
+    "order": 674,
     "es": "secar(se)",
     "kind": "word",
     "source": "08",
@@ -5596,7 +5531,7 @@
   },
   {
     "id": "a1-5a6a39fe",
-    "order": 683,
+    "order": 675,
     "es": "tener individual)",
     "kind": "phrase",
     "source": "09",
@@ -5604,7 +5539,7 @@
   },
   {
     "id": "a1-1bef95ab",
-    "order": 684,
+    "order": 676,
     "es": "cama",
     "kind": "word",
     "source": "09",
@@ -5612,7 +5547,7 @@
   },
   {
     "id": "a1-7968bb9f",
-    "order": 685,
+    "order": 677,
     "es": "regar",
     "kind": "word",
     "source": "08",
@@ -5620,7 +5555,7 @@
   },
   {
     "id": "a1-b6190998",
-    "order": 686,
+    "order": 678,
     "es": "sofá",
     "kind": "word",
     "source": "09",
@@ -5628,7 +5563,7 @@
   },
   {
     "id": "a1-88299356",
-    "order": 687,
+    "order": 679,
     "es": "sillón",
     "kind": "word",
     "source": "09",
@@ -5637,7 +5572,7 @@
   },
   {
     "id": "a1-976df5d6",
-    "order": 688,
+    "order": 680,
     "es": "ducha",
     "kind": "word",
     "source": "09",
@@ -5645,7 +5580,7 @@
   },
   {
     "id": "a1-795a1035",
-    "order": 689,
+    "order": 681,
     "es": "lavabo",
     "kind": "word",
     "source": "09",
@@ -5653,16 +5588,8 @@
     "pos": "noun"
   },
   {
-    "id": "a1-6316b04a",
-    "order": 690,
-    "es": "televisión (TV)",
-    "kind": "phrase",
-    "source": "09",
-    "section": "10.4. Objetos domésticos"
-  },
-  {
     "id": "a1-057b67bb",
-    "order": 691,
+    "order": 682,
     "es": "vídeo",
     "kind": "word",
     "source": "09",
@@ -5670,7 +5597,7 @@
   },
   {
     "id": "a1-a61906a1",
-    "order": 692,
+    "order": 683,
     "es": "DVD",
     "kind": "word",
     "source": "09",
@@ -5679,7 +5606,7 @@
   },
   {
     "id": "a1-b0f8e771",
-    "order": 693,
+    "order": 684,
     "es": "carta",
     "kind": "word",
     "source": "09",
@@ -5687,7 +5614,7 @@
   },
   {
     "id": "a1-57f64cc9",
-    "order": 694,
+    "order": 685,
     "es": "cuero",
     "kind": "word",
     "source": "08",
@@ -5695,7 +5622,7 @@
   },
   {
     "id": "a1-b761814f",
-    "order": 695,
+    "order": 686,
     "es": "postal",
     "kind": "word",
     "source": "09",
@@ -5703,7 +5630,7 @@
   },
   {
     "id": "a1-8339f984",
-    "order": 696,
+    "order": 687,
     "es": "banco",
     "kind": "word",
     "source": "09",
@@ -5711,7 +5638,7 @@
   },
   {
     "id": "a1-19bfd1be",
-    "order": 697,
+    "order": 688,
     "es": "dinero",
     "kind": "word",
     "source": "09",
@@ -5719,7 +5646,7 @@
   },
   {
     "id": "a1-1fabf1c8",
-    "order": 698,
+    "order": 689,
     "es": "lana",
     "kind": "word",
     "source": "08",
@@ -5727,7 +5654,7 @@
   },
   {
     "id": "a1-0eb8b448",
-    "order": 699,
+    "order": 690,
     "es": "euro",
     "kind": "word",
     "source": "09",
@@ -5735,7 +5662,7 @@
   },
   {
     "id": "a1-44b90317",
-    "order": 700,
+    "order": 691,
     "es": "céntimo (de euro)",
     "kind": "phrase",
     "source": "09",
@@ -5743,7 +5670,7 @@
   },
   {
     "id": "a1-65f15fb9",
-    "order": 701,
+    "order": 692,
     "es": "corbata",
     "kind": "word",
     "source": "09",
@@ -5751,7 +5678,7 @@
   },
   {
     "id": "a1-a4f56575",
-    "order": 702,
+    "order": 693,
     "es": "tarjeta (de crédito)",
     "kind": "phrase",
     "source": "09",
@@ -5759,7 +5686,7 @@
   },
   {
     "id": "a1-e6cc9315",
-    "order": 703,
+    "order": 694,
     "es": "cambiar dinero",
     "kind": "phrase",
     "source": "09",
@@ -5767,7 +5694,7 @@
   },
   {
     "id": "a1-bd609edc",
-    "order": 704,
+    "order": 695,
     "es": "cliente",
     "kind": "word",
     "source": "09",
@@ -5775,7 +5702,7 @@
   },
   {
     "id": "a1-f8e180c7",
-    "order": 705,
+    "order": 696,
     "es": "ruta",
     "kind": "word",
     "source": "08",
@@ -5783,7 +5710,7 @@
   },
   {
     "id": "a1-2b2d005e",
-    "order": 706,
+    "order": 697,
     "es": "hospital",
     "kind": "word",
     "source": "09",
@@ -5791,7 +5718,7 @@
   },
   {
     "id": "a1-445010c5",
-    "order": 707,
+    "order": 698,
     "es": "natural",
     "kind": "word",
     "source": "08",
@@ -5799,7 +5726,7 @@
   },
   {
     "id": "a1-830d8cbb",
-    "order": 708,
+    "order": 699,
     "es": "enfermera",
     "kind": "word",
     "source": "09",
@@ -5807,7 +5734,7 @@
   },
   {
     "id": "a1-c8a85632",
-    "order": 709,
+    "order": 700,
     "es": "policía",
     "kind": "word",
     "source": "09",
@@ -5816,7 +5743,7 @@
   },
   {
     "id": "a1-54b974bf",
-    "order": 710,
+    "order": 701,
     "es": "bombero",
     "kind": "word",
     "source": "09",
@@ -5824,7 +5751,7 @@
   },
   {
     "id": "a1-4cef18d2",
-    "order": 711,
+    "order": 702,
     "es": "(super)mercado",
     "kind": "word",
     "source": "09",
@@ -5833,7 +5760,7 @@
   },
   {
     "id": "a1-e8efa0f7",
-    "order": 712,
+    "order": 703,
     "es": "información",
     "kind": "word",
     "source": "09",
@@ -5841,7 +5768,7 @@
   },
   {
     "id": "a1-b1059cbb",
-    "order": 713,
+    "order": 704,
     "es": "comprador",
     "kind": "word",
     "source": "09",
@@ -5850,7 +5777,7 @@
   },
   {
     "id": "a1-88d68187",
-    "order": 714,
+    "order": 705,
     "es": "vendedor",
     "kind": "word",
     "source": "09",
@@ -5858,7 +5785,7 @@
   },
   {
     "id": "a1-156564ef",
-    "order": 715,
+    "order": 706,
     "es": "pantalones",
     "kind": "word",
     "source": "09",
@@ -5867,7 +5794,7 @@
   },
   {
     "id": "a1-059ab551",
-    "order": 716,
+    "order": 707,
     "es": "(pantalones) vaqueros",
     "kind": "phrase",
     "source": "09",
@@ -5875,7 +5802,7 @@
   },
   {
     "id": "a1-3cd22d84",
-    "order": 717,
+    "order": 708,
     "es": "falda",
     "kind": "word",
     "source": "09",
@@ -5883,7 +5810,7 @@
   },
   {
     "id": "a1-90db2a49",
-    "order": 718,
+    "order": 709,
     "es": "camisa",
     "kind": "word",
     "source": "09",
@@ -5891,7 +5818,7 @@
   },
   {
     "id": "a1-5a5d7a49",
-    "order": 719,
+    "order": 710,
     "es": "jersey",
     "kind": "word",
     "source": "09",
@@ -5899,7 +5826,7 @@
   },
   {
     "id": "a1-ae45f157",
-    "order": 720,
+    "order": 711,
     "es": "zapatos",
     "kind": "word",
     "source": "09",
@@ -5908,23 +5835,15 @@
   },
   {
     "id": "a1-4f28f744",
-    "order": 721,
+    "order": 712,
     "es": "billete",
     "kind": "word",
     "source": "09",
     "section": "12.4. Pagos"
   },
   {
-    "id": "a1-c1048c64",
-    "order": 722,
-    "es": "tarjeta",
-    "kind": "word",
-    "source": "09",
-    "section": "12.4. Pagos"
-  },
-  {
     "id": "a1-0960f707",
-    "order": 723,
+    "order": 713,
     "es": "pagar con tarjeta",
     "kind": "phrase",
     "source": "09",
@@ -5932,7 +5851,7 @@
   },
   {
     "id": "a1-8debd8b8",
-    "order": 724,
+    "order": 714,
     "es": "estar enfermo",
     "kind": "phrase",
     "source": "09",
@@ -5940,7 +5859,7 @@
   },
   {
     "id": "a1-0735353d",
-    "order": 725,
+    "order": 715,
     "es": "estar malo",
     "kind": "phrase",
     "source": "09",
@@ -5948,7 +5867,7 @@
   },
   {
     "id": "a1-f5dfc521",
-    "order": 726,
+    "order": 716,
     "es": "enfermero",
     "kind": "word",
     "source": "09",
@@ -5956,7 +5875,7 @@
   },
   {
     "id": "a1-e7263f90",
-    "order": 727,
+    "order": 717,
     "es": "ir al hospital",
     "kind": "phrase",
     "source": "09",
@@ -5964,7 +5883,7 @@
   },
   {
     "id": "a1-e71c48e5",
-    "order": 728,
+    "order": 718,
     "es": "ir al médico",
     "kind": "phrase",
     "source": "09",
@@ -5972,7 +5891,7 @@
   },
   {
     "id": "a1-fb430e74",
-    "order": 729,
+    "order": 719,
     "es": "farmacia",
     "kind": "word",
     "source": "09",
@@ -5980,7 +5899,7 @@
   },
   {
     "id": "a1-c1962c23",
-    "order": 730,
+    "order": 720,
     "es": "agua",
     "kind": "word",
     "source": "09",
@@ -5988,7 +5907,7 @@
   },
   {
     "id": "a1-abdb1bf5",
-    "order": 731,
+    "order": 721,
     "es": "jabón",
     "kind": "word",
     "source": "09",
@@ -5996,7 +5915,7 @@
   },
   {
     "id": "a1-e74cf3be",
-    "order": 732,
+    "order": 722,
     "es": "lavarse la cara",
     "kind": "phrase",
     "source": "09",
@@ -6004,7 +5923,7 @@
   },
   {
     "id": "a1-a0b15a9f",
-    "order": 733,
+    "order": 723,
     "es": "lavarse las manos",
     "kind": "phrase",
     "source": "09",
@@ -6012,7 +5931,7 @@
   },
   {
     "id": "a1-964cd562",
-    "order": 734,
+    "order": 724,
     "es": "lavarse el pelo",
     "kind": "phrase",
     "source": "09",
@@ -6020,7 +5939,7 @@
   },
   {
     "id": "a1-df61a787",
-    "order": 735,
+    "order": 725,
     "es": "lavarse los dientes",
     "kind": "phrase",
     "source": "09",
@@ -6028,7 +5947,7 @@
   },
   {
     "id": "a1-5e3a391a",
-    "order": 736,
+    "order": 726,
     "es": "bañarse",
     "kind": "word",
     "source": "09",
@@ -6036,7 +5955,7 @@
   },
   {
     "id": "a1-d7d88964",
-    "order": 737,
+    "order": 727,
     "es": "plano",
     "kind": "word",
     "source": "09",
@@ -6044,7 +5963,7 @@
   },
   {
     "id": "a1-701e7d7e",
-    "order": 738,
+    "order": 728,
     "es": "publicidad",
     "kind": "word",
     "source": "09",
@@ -6052,7 +5971,7 @@
   },
   {
     "id": "a1-20c1d552",
-    "order": 739,
+    "order": 729,
     "es": "comprar un billete de ida",
     "kind": "phrase",
     "source": "09",
@@ -6060,7 +5979,7 @@
   },
   {
     "id": "a1-6cb0a1bc",
-    "order": 740,
+    "order": 730,
     "es": "comprar un billete de ida y vuelta",
     "kind": "phrase",
     "source": "09",
@@ -6068,7 +5987,7 @@
   },
   {
     "id": "a1-0211715a",
-    "order": 741,
+    "order": 731,
     "es": "oficina de información y turismo",
     "kind": "phrase",
     "source": "09",
@@ -6076,7 +5995,7 @@
   },
   {
     "id": "a1-88a93ff5",
-    "order": 742,
+    "order": 732,
     "es": "ir a Madrid",
     "kind": "phrase",
     "source": "09",
@@ -6084,7 +6003,7 @@
   },
   {
     "id": "a1-7d42a185",
-    "order": 743,
+    "order": 733,
     "es": "ir a la playa",
     "kind": "phrase",
     "source": "09",
@@ -6092,7 +6011,7 @@
   },
   {
     "id": "a1-27743ae2",
-    "order": 744,
+    "order": 734,
     "es": "ir a la montaña",
     "kind": "phrase",
     "source": "09",
@@ -6100,7 +6019,7 @@
   },
   {
     "id": "a1-bdc52c31",
-    "order": 745,
+    "order": 735,
     "es": "ir al campo",
     "kind": "phrase",
     "source": "09",
@@ -6108,7 +6027,7 @@
   },
   {
     "id": "a1-14e83355",
-    "order": 746,
+    "order": 736,
     "es": "hotel",
     "kind": "word",
     "source": "09",
@@ -6116,7 +6035,7 @@
   },
   {
     "id": "a1-1da74cce",
-    "order": 747,
+    "order": 737,
     "es": "dulce",
     "kind": "word",
     "source": "08",
@@ -6124,7 +6043,7 @@
   },
   {
     "id": "a1-84879ff8",
-    "order": 748,
+    "order": 738,
     "es": "campin",
     "kind": "word",
     "source": "09",
@@ -6133,7 +6052,7 @@
   },
   {
     "id": "a1-fb264dbe",
-    "order": 749,
+    "order": 739,
     "es": "salado",
     "kind": "word",
     "source": "08",
@@ -6141,7 +6060,7 @@
   },
   {
     "id": "a1-5c0c1354",
-    "order": 750,
+    "order": 740,
     "es": "habitación doble baño",
     "kind": "phrase",
     "source": "09",
@@ -6149,7 +6068,7 @@
   },
   {
     "id": "a1-e4277ada",
-    "order": 751,
+    "order": 741,
     "es": "amargo",
     "kind": "word",
     "source": "08",
@@ -6157,7 +6076,7 @@
   },
   {
     "id": "a1-a7381b14",
-    "order": 752,
+    "order": 742,
     "es": "habitación doble teléfono",
     "kind": "phrase",
     "source": "09",
@@ -6165,7 +6084,7 @@
   },
   {
     "id": "a1-35156ef9",
-    "order": 753,
+    "order": 743,
     "es": "gimnasio",
     "kind": "word",
     "source": "09",
@@ -6173,7 +6092,7 @@
   },
   {
     "id": "a1-75069f68",
-    "order": 754,
+    "order": 744,
     "es": "picante",
     "kind": "word",
     "source": "08",
@@ -6181,7 +6100,7 @@
   },
   {
     "id": "a1-0c936386",
-    "order": 755,
+    "order": 745,
     "es": "habitación doble televisión",
     "kind": "phrase",
     "source": "09",
@@ -6189,7 +6108,7 @@
   },
   {
     "id": "a1-7ffeba2b",
-    "order": 756,
+    "order": 746,
     "es": "piscina",
     "kind": "word",
     "source": "09",
@@ -6197,7 +6116,7 @@
   },
   {
     "id": "a1-2e77f85b",
-    "order": 757,
+    "order": 747,
     "es": "habitación doble aire acondicionado",
     "kind": "phrase",
     "source": "09",
@@ -6205,7 +6124,7 @@
   },
   {
     "id": "a1-c13c4a03",
-    "order": 758,
+    "order": 748,
     "es": "habitación individual baño",
     "kind": "phrase",
     "source": "09",
@@ -6213,7 +6132,7 @@
   },
   {
     "id": "a1-a807eb3f",
-    "order": 759,
+    "order": 749,
     "es": "habitación individual teléfono",
     "kind": "phrase",
     "source": "09",
@@ -6221,7 +6140,7 @@
   },
   {
     "id": "a1-0bbf7e62",
-    "order": 760,
+    "order": 750,
     "es": "habitación individual televisión",
     "kind": "phrase",
     "source": "09",
@@ -6229,7 +6148,7 @@
   },
   {
     "id": "a1-655475da",
-    "order": 761,
+    "order": 751,
     "es": "habitación individual aire acondicionado",
     "kind": "phrase",
     "source": "09",
@@ -6237,7 +6156,7 @@
   },
   {
     "id": "a1-3e5845f6",
-    "order": 762,
+    "order": 752,
     "es": "habitación con baño",
     "kind": "phrase",
     "source": "09",
@@ -6245,7 +6164,7 @@
   },
   {
     "id": "a1-812e2729",
-    "order": 763,
+    "order": 753,
     "es": "habitación con teléfono",
     "kind": "phrase",
     "source": "09",
@@ -6253,7 +6172,7 @@
   },
   {
     "id": "a1-f2c73cda",
-    "order": 764,
+    "order": 754,
     "es": "habitación con televisión",
     "kind": "phrase",
     "source": "09",
@@ -6261,7 +6180,7 @@
   },
   {
     "id": "a1-fc27433a",
-    "order": 765,
+    "order": 755,
     "es": "habitación con aire acondicionado",
     "kind": "phrase",
     "source": "09",
@@ -6269,7 +6188,7 @@
   },
   {
     "id": "a1-157a7200",
-    "order": 766,
+    "order": 756,
     "es": "carretera",
     "kind": "word",
     "source": "09",
@@ -6277,7 +6196,7 @@
   },
   {
     "id": "a1-bec89fc5",
-    "order": 767,
+    "order": 757,
     "es": "aeropuerto",
     "kind": "word",
     "source": "09",
@@ -6285,7 +6204,7 @@
   },
   {
     "id": "a1-d9f32769",
-    "order": 768,
+    "order": 758,
     "es": "puerto",
     "kind": "word",
     "source": "09",
@@ -6293,7 +6212,7 @@
   },
   {
     "id": "a1-5567c620",
-    "order": 769,
+    "order": 759,
     "es": "estación de tren",
     "kind": "phrase",
     "source": "09",
@@ -6301,7 +6220,7 @@
   },
   {
     "id": "a1-b6843745",
-    "order": 770,
+    "order": 760,
     "es": "tiempo",
     "kind": "word",
     "source": "08",
@@ -6309,7 +6228,7 @@
   },
   {
     "id": "a1-965c3fa7",
-    "order": 771,
+    "order": 761,
     "es": "estación de metro",
     "kind": "phrase",
     "source": "09",
@@ -6317,7 +6236,7 @@
   },
   {
     "id": "a1-d4999c45",
-    "order": 772,
+    "order": 762,
     "es": "parada de autobús",
     "kind": "phrase",
     "source": "09",
@@ -6325,7 +6244,7 @@
   },
   {
     "id": "a1-b6efa7df",
-    "order": 773,
+    "order": 763,
     "es": "parada de taxi",
     "kind": "phrase",
     "source": "09",
@@ -6333,7 +6252,7 @@
   },
   {
     "id": "a1-a2f78a5b",
-    "order": 774,
+    "order": 764,
     "es": "parada de metro",
     "kind": "phrase",
     "source": "09",
@@ -6341,7 +6260,7 @@
   },
   {
     "id": "a1-8414a8e6",
-    "order": 775,
+    "order": 765,
     "es": "ir andando",
     "kind": "phrase",
     "source": "09",
@@ -6349,7 +6268,7 @@
   },
   {
     "id": "a1-36a70164",
-    "order": 776,
+    "order": 766,
     "es": "ir en coche",
     "kind": "phrase",
     "source": "09",
@@ -6357,7 +6276,7 @@
   },
   {
     "id": "a1-ddba8b23",
-    "order": 777,
+    "order": 767,
     "es": "ir en taxi",
     "kind": "phrase",
     "source": "09",
@@ -6365,7 +6284,7 @@
   },
   {
     "id": "a1-4e150846",
-    "order": 778,
+    "order": 768,
     "es": "ir en tren",
     "kind": "phrase",
     "source": "09",
@@ -6373,7 +6292,7 @@
   },
   {
     "id": "a1-810fe824",
-    "order": 779,
+    "order": 769,
     "es": "ir en metro",
     "kind": "phrase",
     "source": "09",
@@ -6381,7 +6300,7 @@
   },
   {
     "id": "a1-680df771",
-    "order": 780,
+    "order": 770,
     "es": "ir en autobús",
     "kind": "phrase",
     "source": "09",
@@ -6389,7 +6308,7 @@
   },
   {
     "id": "a1-7a6d2a8c",
-    "order": 781,
+    "order": 771,
     "es": "ir en avión",
     "kind": "phrase",
     "source": "09",
@@ -6397,7 +6316,7 @@
   },
   {
     "id": "a1-577d93a1",
-    "order": 782,
+    "order": 772,
     "es": "ir en barco",
     "kind": "phrase",
     "source": "09",
@@ -6405,7 +6324,7 @@
   },
   {
     "id": "a1-4f47cb40",
-    "order": 783,
+    "order": 773,
     "es": "entrevista",
     "kind": "word",
     "source": "09",
@@ -6413,7 +6332,7 @@
   },
   {
     "id": "a1-33feb9d0",
-    "order": 784,
+    "order": 774,
     "es": "coche",
     "kind": "word",
     "source": "09",
@@ -6422,23 +6341,15 @@
   },
   {
     "id": "a1-5f6784c9",
-    "order": 785,
+    "order": 775,
     "es": "periodista",
     "kind": "word",
     "source": "09",
     "section": "9.4. Prensa escrita"
   },
   {
-    "id": "a1-1388b778",
-    "order": 786,
-    "es": "metro",
-    "kind": "word",
-    "source": "09",
-    "section": "14.3. Sistema de transporte"
-  },
-  {
     "id": "a1-15047c92",
-    "order": 787,
+    "order": 776,
     "es": "tren",
     "kind": "word",
     "source": "09",
@@ -6446,7 +6357,7 @@
   },
   {
     "id": "a1-f832b56a",
-    "order": 788,
+    "order": 777,
     "es": "basura",
     "kind": "word",
     "source": "08",
@@ -6454,7 +6365,7 @@
   },
   {
     "id": "a1-75b2634a",
-    "order": 789,
+    "order": 778,
     "es": "autobús",
     "kind": "word",
     "source": "09",
@@ -6462,7 +6373,7 @@
   },
   {
     "id": "a1-4d82205a",
-    "order": 790,
+    "order": 779,
     "es": "taxi",
     "kind": "word",
     "source": "09",
@@ -6470,7 +6381,7 @@
   },
   {
     "id": "a1-433f12ff",
-    "order": 791,
+    "order": 780,
     "es": "conductor",
     "kind": "word",
     "source": "09",
@@ -6478,7 +6389,7 @@
   },
   {
     "id": "a1-98736edd",
-    "order": 792,
+    "order": 781,
     "es": "aparcamiento",
     "kind": "word",
     "source": "09",
@@ -6487,7 +6398,7 @@
   },
   {
     "id": "a1-2e07cefa",
-    "order": 793,
+    "order": 782,
     "es": "estación de autobuses",
     "kind": "phrase",
     "source": "09",
@@ -6495,7 +6406,7 @@
   },
   {
     "id": "a1-2c103c96",
-    "order": 794,
+    "order": 783,
     "es": "ir/viajar en barco",
     "kind": "phrase",
     "source": "09",
@@ -6503,7 +6414,7 @@
   },
   {
     "id": "a1-1901d3a3",
-    "order": 795,
+    "order": 784,
     "es": "avión",
     "kind": "word",
     "source": "09",
@@ -6511,7 +6422,7 @@
   },
   {
     "id": "a1-2928d777",
-    "order": 796,
+    "order": 785,
     "es": "ir/viajar en avión",
     "kind": "phrase",
     "source": "09",
@@ -6519,7 +6430,7 @@
   },
   {
     "id": "a1-5d8df9b1",
-    "order": 797,
+    "order": 786,
     "es": "capital",
     "kind": "word",
     "source": "09",
@@ -6527,7 +6438,7 @@
   },
   {
     "id": "a1-5cfbb084",
-    "order": 798,
+    "order": 787,
     "es": "presidente",
     "kind": "word",
     "source": "09",
@@ -6535,7 +6446,7 @@
   },
   {
     "id": "a1-9fc518ef",
-    "order": 799,
+    "order": 788,
     "es": "rey",
     "kind": "word",
     "source": "09",
@@ -6543,7 +6454,7 @@
   },
   {
     "id": "a1-262e5843",
-    "order": 800,
+    "order": 789,
     "es": "reina",
     "kind": "word",
     "source": "09",
@@ -6551,7 +6462,7 @@
   },
   {
     "id": "a1-2ffb1135",
-    "order": 801,
+    "order": 790,
     "es": "cine",
     "kind": "word",
     "source": "09",
@@ -6559,7 +6470,7 @@
   },
   {
     "id": "a1-930221c8",
-    "order": 802,
+    "order": 791,
     "es": "teatro",
     "kind": "word",
     "source": "09",
@@ -6567,7 +6478,7 @@
   },
   {
     "id": "a1-56a08b6d",
-    "order": 803,
+    "order": 792,
     "es": "música",
     "kind": "word",
     "source": "09",
@@ -6575,7 +6486,7 @@
   },
   {
     "id": "a1-0eb57679",
-    "order": 804,
+    "order": 793,
     "es": "foto",
     "kind": "word",
     "source": "09",
@@ -6583,7 +6494,7 @@
   },
   {
     "id": "a1-f62af2d0",
-    "order": 805,
+    "order": 794,
     "es": "museo",
     "kind": "word",
     "source": "09",
@@ -6591,7 +6502,7 @@
   },
   {
     "id": "a1-3282a9f5",
-    "order": 806,
+    "order": 795,
     "es": "exposición",
     "kind": "word",
     "source": "09",
@@ -6599,7 +6510,7 @@
   },
   {
     "id": "a1-8602a05e",
-    "order": 807,
+    "order": 796,
     "es": "pasillo",
     "kind": "word",
     "source": "09",
@@ -6607,7 +6518,7 @@
   },
   {
     "id": "a1-fe40dc4c",
-    "order": 808,
+    "order": 797,
     "es": "ser bonito",
     "kind": "phrase",
     "source": "09",
@@ -6615,7 +6526,7 @@
   },
   {
     "id": "a1-03b4cbc6",
-    "order": 809,
+    "order": 798,
     "es": "suelo",
     "kind": "word",
     "source": "09",
@@ -6623,7 +6534,7 @@
   },
   {
     "id": "a1-f9c7805b",
-    "order": 810,
+    "order": 799,
     "es": "cantante",
     "kind": "word",
     "source": "09",
@@ -6632,7 +6543,7 @@
   },
   {
     "id": "a1-a97eb6df",
-    "order": 811,
+    "order": 800,
     "es": "techo",
     "kind": "word",
     "source": "09",
@@ -6640,7 +6551,7 @@
   },
   {
     "id": "a1-27ef1386",
-    "order": 812,
+    "order": 801,
     "es": "oferta",
     "kind": "word",
     "source": "08",
@@ -6648,7 +6559,7 @@
   },
   {
     "id": "a1-affe4c6c",
-    "order": 813,
+    "order": 802,
     "es": "edificio",
     "kind": "word",
     "source": "09",
@@ -6656,7 +6567,7 @@
   },
   {
     "id": "a1-ece4eb02",
-    "order": 814,
+    "order": 803,
     "es": "pared",
     "kind": "word",
     "source": "09",
@@ -6664,7 +6575,7 @@
   },
   {
     "id": "a1-b4b82088",
-    "order": 815,
+    "order": 804,
     "es": "monumento",
     "kind": "word",
     "source": "09",
@@ -6672,7 +6583,7 @@
   },
   {
     "id": "a1-6c351bdc",
-    "order": 816,
+    "order": 805,
     "es": "catedral",
     "kind": "word",
     "source": "09",
@@ -6680,7 +6591,7 @@
   },
   {
     "id": "a1-f163153f",
-    "order": 817,
+    "order": 806,
     "es": "iglesia",
     "kind": "word",
     "source": "09",
@@ -6688,7 +6599,7 @@
   },
   {
     "id": "a1-4ed3655e",
-    "order": 818,
+    "order": 807,
     "es": "actor",
     "kind": "word",
     "source": "09",
@@ -6696,7 +6607,7 @@
   },
   {
     "id": "a1-12768f20",
-    "order": 819,
+    "order": 808,
     "es": "actriz",
     "kind": "word",
     "source": "09",
@@ -6704,7 +6615,7 @@
   },
   {
     "id": "a1-b2cf7dd7",
-    "order": 820,
+    "order": 809,
     "es": "religión",
     "kind": "word",
     "source": "09",
@@ -6712,7 +6623,7 @@
   },
   {
     "id": "a1-1ce45b47",
-    "order": 821,
+    "order": 810,
     "es": "cristiano",
     "kind": "word",
     "source": "09",
@@ -6721,7 +6632,7 @@
   },
   {
     "id": "a1-f70b526f",
-    "order": 822,
+    "order": 811,
     "es": "judío",
     "kind": "word",
     "source": "09",
@@ -6730,7 +6641,7 @@
   },
   {
     "id": "a1-81396585",
-    "order": 823,
+    "order": 812,
     "es": "musulmán",
     "kind": "word",
     "source": "09",
@@ -6739,7 +6650,7 @@
   },
   {
     "id": "a1-f888cf60",
-    "order": 824,
+    "order": 813,
     "es": "budista",
     "kind": "word",
     "source": "09",
@@ -6748,7 +6659,7 @@
   },
   {
     "id": "a1-8e6fc2c4",
-    "order": 825,
+    "order": 814,
     "es": "ir a la iglesia",
     "kind": "phrase",
     "source": "09",
@@ -6756,7 +6667,7 @@
   },
   {
     "id": "a1-3641baf0",
-    "order": 826,
+    "order": 815,
     "es": "ir a la mezquita",
     "kind": "phrase",
     "source": "09",
@@ -6764,7 +6675,7 @@
   },
   {
     "id": "a1-b0bb74f9",
-    "order": 827,
+    "order": 816,
     "es": "ir a la sinagoga",
     "kind": "phrase",
     "source": "09",
@@ -6772,7 +6683,7 @@
   },
   {
     "id": "a1-fbb93bb9",
-    "order": 828,
+    "order": 817,
     "es": "sol",
     "kind": "word",
     "source": "09",
@@ -6780,7 +6691,7 @@
   },
   {
     "id": "a1-47fe531a",
-    "order": 829,
+    "order": 818,
     "es": "nevera",
     "kind": "word",
     "source": "09",
@@ -6788,7 +6699,7 @@
   },
   {
     "id": "a1-ee1b4453",
-    "order": 830,
+    "order": 819,
     "es": "Norte",
     "kind": "word",
     "source": "09",
@@ -6797,7 +6708,7 @@
   },
   {
     "id": "a1-81ad7342",
-    "order": 831,
+    "order": 820,
     "es": "lavadora",
     "kind": "word",
     "source": "09",
@@ -6805,7 +6716,7 @@
   },
   {
     "id": "a1-3d54fd66",
-    "order": 832,
+    "order": 821,
     "es": "Sur",
     "kind": "word",
     "source": "09",
@@ -6813,7 +6724,7 @@
   },
   {
     "id": "a1-dcedbb95",
-    "order": 833,
+    "order": 822,
     "es": "lavaplatos",
     "kind": "word",
     "source": "09",
@@ -6821,7 +6732,7 @@
   },
   {
     "id": "a1-3957e302",
-    "order": 834,
+    "order": 823,
     "es": "Este",
     "kind": "word",
     "source": "09",
@@ -6829,7 +6740,7 @@
   },
   {
     "id": "a1-316a2120",
-    "order": 835,
+    "order": 824,
     "es": "microondas",
     "kind": "word",
     "source": "09",
@@ -6837,7 +6748,7 @@
   },
   {
     "id": "a1-3ad72b37",
-    "order": 836,
+    "order": 825,
     "es": "Oeste",
     "kind": "word",
     "source": "09",
@@ -6846,7 +6757,7 @@
   },
   {
     "id": "a1-9a5807ec",
-    "order": 837,
+    "order": 826,
     "es": "montaña",
     "kind": "word",
     "source": "09",
@@ -6854,7 +6765,7 @@
   },
   {
     "id": "a1-1418c402",
-    "order": 838,
+    "order": 827,
     "es": "mar",
     "kind": "word",
     "source": "09",
@@ -6862,7 +6773,7 @@
   },
   {
     "id": "a1-348f8368",
-    "order": 839,
+    "order": 828,
     "es": "río",
     "kind": "word",
     "source": "09",
@@ -6870,7 +6781,7 @@
   },
   {
     "id": "a1-abd5cf4f",
-    "order": 840,
+    "order": 829,
     "es": "playa",
     "kind": "word",
     "source": "09",
@@ -6878,7 +6789,7 @@
   },
   {
     "id": "a1-871b4d75",
-    "order": 841,
+    "order": 830,
     "es": "moneda",
     "kind": "word",
     "source": "09",
@@ -6886,7 +6797,7 @@
   },
   {
     "id": "a1-66c0fda0",
-    "order": 842,
+    "order": 831,
     "es": "error",
     "kind": "word",
     "source": "08",
@@ -6894,7 +6805,7 @@
   },
   {
     "id": "a1-c4779263",
-    "order": 843,
+    "order": 832,
     "es": "(el) centro",
     "kind": "phrase",
     "source": "09",
@@ -6902,7 +6813,7 @@
   },
   {
     "id": "a1-6aa440a4",
-    "order": 844,
+    "order": 833,
     "es": "parque",
     "kind": "word",
     "source": "09",
@@ -6910,7 +6821,7 @@
   },
   {
     "id": "a1-a34acec5",
-    "order": 845,
+    "order": 834,
     "es": "centro comercial",
     "kind": "phrase",
     "source": "09",
@@ -6918,7 +6829,7 @@
   },
   {
     "id": "a1-a1f9819c",
-    "order": 846,
+    "order": 835,
     "es": "colegio",
     "kind": "word",
     "source": "09",
@@ -6926,7 +6837,7 @@
   },
   {
     "id": "a1-b4fb38ca",
-    "order": 847,
+    "order": 836,
     "es": "ambulancia",
     "kind": "word",
     "source": "09",
@@ -6934,7 +6845,7 @@
   },
   {
     "id": "a1-6cb8387f",
-    "order": 848,
+    "order": 837,
     "es": "escuela",
     "kind": "word",
     "source": "09",
@@ -6943,7 +6854,7 @@
   },
   {
     "id": "a1-a3e8201f",
-    "order": 849,
+    "order": 838,
     "es": "parada de taxis",
     "kind": "phrase",
     "source": "09",
@@ -6951,7 +6862,7 @@
   },
   {
     "id": "a1-bdc4e014",
-    "order": 850,
+    "order": 839,
     "es": "campo",
     "kind": "word",
     "source": "09",
@@ -6959,7 +6870,7 @@
   },
   {
     "id": "a1-18ccfd8e",
-    "order": 851,
+    "order": 840,
     "es": "llover",
     "kind": "word",
     "source": "09",
@@ -6967,7 +6878,7 @@
   },
   {
     "id": "a1-463623d4",
-    "order": 852,
+    "order": 841,
     "es": "nevar",
     "kind": "word",
     "source": "09",
@@ -6975,7 +6886,7 @@
   },
   {
     "id": "a1-af10b730",
-    "order": 853,
+    "order": 842,
     "es": "hacer sol",
     "kind": "phrase",
     "source": "09",
@@ -6983,7 +6894,7 @@
   },
   {
     "id": "a1-70398f62",
-    "order": 854,
+    "order": 843,
     "es": "hacer viento",
     "kind": "phrase",
     "source": "09",
@@ -6991,7 +6902,7 @@
   },
   {
     "id": "a1-d2921fdd",
-    "order": 855,
+    "order": 844,
     "es": "hacer buen tiempo",
     "kind": "phrase",
     "source": "09",
@@ -6999,7 +6910,7 @@
   },
   {
     "id": "a1-63cbb379",
-    "order": 856,
+    "order": 845,
     "es": "hacer mal tiempo",
     "kind": "phrase",
     "source": "09",
@@ -7007,7 +6918,7 @@
   },
   {
     "id": "a1-3199ea05",
-    "order": 857,
+    "order": 846,
     "es": "animal",
     "kind": "word",
     "source": "09",
@@ -7015,7 +6926,7 @@
   },
   {
     "id": "a1-7d1a6177",
-    "order": 858,
+    "order": 847,
     "es": "planta",
     "kind": "word",
     "source": "09",
@@ -7023,7 +6934,7 @@
   },
   {
     "id": "a1-4cb270f3",
-    "order": 859,
+    "order": 848,
     "es": "flor",
     "kind": "word",
     "source": "09",
@@ -7031,7 +6942,7 @@
   },
   {
     "id": "a1-07cc4c39",
-    "order": 860,
+    "order": 849,
     "es": "árbol",
     "kind": "word",
     "source": "09",
@@ -7039,7 +6950,7 @@
   },
   {
     "id": "a1-2ce33323",
-    "order": 861,
+    "order": 850,
     "es": "barrio",
     "kind": "word",
     "source": "kimacha",
@@ -7048,7 +6959,7 @@
   },
   {
     "id": "a1-e67f16d2",
-    "order": 862,
+    "order": 851,
     "es": "dos",
     "kind": "word",
     "source": "kimacha",
@@ -7056,18 +6967,8 @@
     "pos": "num"
   },
   {
-    "id": "a1-da84060c",
-    "order": 863,
-    "es": "el piso",
-    "kind": "word",
-    "source": "kimacha",
-    "section": "1.1. Existencia, inexistencia",
-    "pos": "noun",
-    "mx": "departamento"
-  },
-  {
     "id": "a1-b5a897a4",
-    "order": 864,
+    "order": 852,
     "es": "tiene (tener)",
     "kind": "word",
     "source": "kimacha",
@@ -7077,7 +6978,7 @@
   },
   {
     "id": "a1-0c959873",
-    "order": 865,
+    "order": 853,
     "es": "tres",
     "kind": "word",
     "source": "kimacha",
@@ -7086,7 +6987,7 @@
   },
   {
     "id": "a1-4504328c",
-    "order": 866,
+    "order": 854,
     "es": "Mi barrio es grande.",
     "kind": "sentence",
     "source": "kimacha",
@@ -7095,7 +6996,7 @@
   },
   {
     "id": "a1-c8a42d40",
-    "order": 867,
+    "order": 855,
     "es": "Hay dos farmacias.",
     "kind": "sentence",
     "source": "kimacha",
@@ -7104,7 +7005,7 @@
   },
   {
     "id": "a1-a86a8462",
-    "order": 868,
+    "order": 856,
     "es": "funcionar",
     "kind": "word",
     "source": "08",
@@ -7112,16 +7013,15 @@
   },
   {
     "id": "a1-32625e57",
-    "order": 869,
+    "order": 857,
     "es": "El piso es grande.",
     "kind": "sentence",
     "source": "kimacha",
-    "section": "1.1. Existencia, inexistencia",
-    "headword": "a1-da84060c"
+    "section": "1.1. Existencia, inexistencia"
   },
   {
     "id": "a1-a5d5a55e",
-    "order": 870,
+    "order": 858,
     "es": "carnicero",
     "kind": "word",
     "source": "09",
@@ -7129,7 +7029,7 @@
   },
   {
     "id": "a1-59c21812",
-    "order": 871,
+    "order": 859,
     "es": "azúcar",
     "kind": "word",
     "source": "kimacha",
@@ -7138,7 +7038,7 @@
   },
   {
     "id": "a1-0a0fda53",
-    "order": 872,
+    "order": 860,
     "es": "panadero",
     "kind": "word",
     "source": "09",
@@ -7146,7 +7046,7 @@
   },
   {
     "id": "a1-e392209e",
-    "order": 873,
+    "order": 861,
     "es": "por favor",
     "kind": "phrase",
     "source": "kimacha",
@@ -7154,7 +7054,7 @@
   },
   {
     "id": "a1-c68429a4",
-    "order": 874,
+    "order": 862,
     "es": "devolver",
     "kind": "word",
     "source": "09",
@@ -7162,7 +7062,7 @@
   },
   {
     "id": "a1-a30b3970",
-    "order": 875,
+    "order": 863,
     "es": "gracias",
     "kind": "phrase",
     "source": "kimacha",
@@ -7170,7 +7070,7 @@
   },
   {
     "id": "a1-a429a29d",
-    "order": 876,
+    "order": 864,
     "es": "No hay aeropuerto.",
     "kind": "sentence",
     "source": "kimacha",
@@ -7179,7 +7079,7 @@
   },
   {
     "id": "a1-73fa0343",
-    "order": 877,
+    "order": 865,
     "es": "No tiene metro.",
     "kind": "sentence",
     "source": "kimacha",
@@ -7188,7 +7088,7 @@
   },
   {
     "id": "a1-7c57c876",
-    "order": 878,
+    "order": 866,
     "es": "Hay gente en la calle.",
     "kind": "sentence",
     "source": "kimacha",
@@ -7197,7 +7097,7 @@
   },
   {
     "id": "a1-61a60aca",
-    "order": 879,
+    "order": 867,
     "es": "pijama",
     "kind": "word",
     "source": "09",
@@ -7205,7 +7105,7 @@
   },
   {
     "id": "a1-1e4f82d0",
-    "order": 880,
+    "order": 868,
     "es": "sombrero",
     "kind": "word",
     "source": "09",
@@ -7213,7 +7113,7 @@
   },
   {
     "id": "a1-7aecab2e",
-    "order": 881,
+    "order": 869,
     "es": "bufanda",
     "kind": "word",
     "source": "09",
@@ -7221,7 +7121,7 @@
   },
   {
     "id": "a1-7f3732e0",
-    "order": 882,
+    "order": 870,
     "es": "calcetines",
     "kind": "word",
     "source": "09",
@@ -7229,7 +7129,7 @@
   },
   {
     "id": "a1-212befaa",
-    "order": 883,
+    "order": 871,
     "es": "bañador",
     "kind": "word",
     "source": "09",
@@ -7237,7 +7137,7 @@
   },
   {
     "id": "a1-b21e4f4f",
-    "order": 884,
+    "order": 872,
     "es": "ponerse",
     "kind": "word",
     "source": "09",
@@ -7245,7 +7145,7 @@
   },
   {
     "id": "a1-b1ed7e82",
-    "order": 885,
+    "order": 873,
     "es": "quitarse",
     "kind": "word",
     "source": "09",
@@ -7253,7 +7153,7 @@
   },
   {
     "id": "a1-b181cf23",
-    "order": 886,
+    "order": 874,
     "es": "noticia",
     "kind": "word",
     "source": "08",
@@ -7261,7 +7161,7 @@
   },
   {
     "id": "a1-9e9dab5a",
-    "order": 887,
+    "order": 875,
     "es": "doler",
     "kind": "word",
     "source": "09",
@@ -7269,7 +7169,7 @@
   },
   {
     "id": "a1-bb784d62",
-    "order": 888,
+    "order": 876,
     "es": "músculo",
     "kind": "word",
     "source": "09",
@@ -7277,7 +7177,7 @@
   },
   {
     "id": "a1-72cd55ac",
-    "order": 889,
+    "order": 877,
     "es": "hueso",
     "kind": "word",
     "source": "09",
@@ -7285,7 +7185,7 @@
   },
   {
     "id": "a1-5ce5eed1",
-    "order": 890,
+    "order": 878,
     "es": "corazón",
     "kind": "word",
     "source": "09",
@@ -7293,7 +7193,7 @@
   },
   {
     "id": "a1-dea77ad5",
-    "order": 891,
+    "order": 879,
     "es": "toalla",
     "kind": "word",
     "source": "09",
@@ -7301,7 +7201,7 @@
   },
   {
     "id": "a1-a3756d32",
-    "order": 892,
+    "order": 880,
     "es": "champú",
     "kind": "word",
     "source": "09",
@@ -7309,7 +7209,7 @@
   },
   {
     "id": "a1-64bf54bd",
-    "order": 893,
+    "order": 881,
     "es": "cuello",
     "kind": "word",
     "source": "09",
@@ -7317,7 +7217,7 @@
   },
   {
     "id": "a1-8895d079",
-    "order": 894,
+    "order": 882,
     "es": "pecho",
     "kind": "word",
     "source": "09",
@@ -7325,7 +7225,7 @@
   },
   {
     "id": "a1-7928683b",
-    "order": 895,
+    "order": 883,
     "es": "cintura",
     "kind": "word",
     "source": "09",
@@ -7333,7 +7233,7 @@
   },
   {
     "id": "a1-f6a68172",
-    "order": 896,
+    "order": 884,
     "es": "barriga",
     "kind": "word",
     "source": "09",
@@ -7341,7 +7241,7 @@
   },
   {
     "id": "a1-10e2e9ef",
-    "order": 897,
+    "order": 885,
     "es": "rodilla",
     "kind": "word",
     "source": "09",
@@ -7349,7 +7249,7 @@
   },
   {
     "id": "a1-71c6bea6",
-    "order": 898,
+    "order": 886,
     "es": "tobillo",
     "kind": "word",
     "source": "09",
@@ -7357,7 +7257,7 @@
   },
   {
     "id": "a1-b65ce6d1",
-    "order": 899,
+    "order": 887,
     "es": "codo",
     "kind": "word",
     "source": "09",
@@ -7365,7 +7265,7 @@
   },
   {
     "id": "a1-31d37105",
-    "order": 900,
+    "order": 888,
     "es": "muñeca",
     "kind": "word",
     "source": "09",
@@ -7373,7 +7273,7 @@
   },
   {
     "id": "a1-1c22a0a7",
-    "order": 901,
+    "order": 889,
     "es": "excursión",
     "kind": "word",
     "source": "09",
@@ -7381,7 +7281,7 @@
   },
   {
     "id": "a1-5994a67f",
-    "order": 902,
+    "order": 890,
     "es": "mochila",
     "kind": "word",
     "source": "09",
@@ -7389,7 +7289,7 @@
   },
   {
     "id": "a1-8a93ada2",
-    "order": 903,
+    "order": 891,
     "es": "abrigo",
     "kind": "word",
     "source": "09",
@@ -7397,7 +7297,7 @@
   },
   {
     "id": "a1-ee134e7f",
-    "order": 904,
+    "order": 892,
     "es": "reservar",
     "kind": "word",
     "source": "09",
@@ -7405,7 +7305,7 @@
   },
   {
     "id": "a1-70d90762",
-    "order": 905,
+    "order": 893,
     "es": "urgencia",
     "kind": "word",
     "source": "08",
@@ -7413,7 +7313,7 @@
   },
   {
     "id": "a1-00599d03",
-    "order": 906,
+    "order": 894,
     "es": "(in)seguro",
     "kind": "word",
     "source": "09",
@@ -7422,7 +7322,7 @@
   },
   {
     "id": "a1-f5e0c0b9",
-    "order": 907,
+    "order": 895,
     "es": "madrugar",
     "kind": "word",
     "source": "08",
@@ -7430,7 +7330,7 @@
   },
   {
     "id": "a1-94c05a76",
-    "order": 908,
+    "order": 896,
     "es": "piloto",
     "kind": "word",
     "source": "09",
@@ -7438,7 +7338,7 @@
   },
   {
     "id": "a1-0b4339be",
-    "order": 909,
+    "order": 897,
     "es": "mecánico",
     "kind": "word",
     "source": "09",
@@ -7446,7 +7346,7 @@
   },
   {
     "id": "a1-d9d6d82e",
-    "order": 910,
+    "order": 898,
     "es": "pobre",
     "kind": "word",
     "source": "09",
@@ -7454,7 +7354,7 @@
   },
   {
     "id": "a1-9e3ba066",
-    "order": 911,
+    "order": 899,
     "es": "cerdo",
     "kind": "word",
     "source": "09",
@@ -7462,7 +7362,7 @@
   },
   {
     "id": "a1-1ce1d746",
-    "order": 912,
+    "order": 900,
     "es": "vaca",
     "kind": "word",
     "source": "09",
@@ -7470,7 +7370,7 @@
   },
   {
     "id": "a1-964f71eb",
-    "order": 913,
+    "order": 901,
     "es": "amor",
     "kind": "word",
     "source": "09",
@@ -7478,7 +7378,7 @@
   },
   {
     "id": "a1-add39126",
-    "order": 914,
+    "order": 902,
     "es": "científico",
     "kind": "word",
     "source": "09",
@@ -7486,7 +7386,7 @@
   },
   {
     "id": "a1-2cc2117f",
-    "order": 915,
+    "order": 903,
     "es": "Ayuntamiento",
     "kind": "word",
     "source": "09",
@@ -7494,7 +7394,7 @@
   },
   {
     "id": "a1-e97416d6",
-    "order": 916,
+    "order": 904,
     "es": "artista",
     "kind": "word",
     "source": "09",
@@ -7502,7 +7402,7 @@
   },
   {
     "id": "a1-99ac74cc",
-    "order": 917,
+    "order": 905,
     "es": "novela",
     "kind": "word",
     "source": "09",
@@ -7510,7 +7410,7 @@
   },
   {
     "id": "a1-014e6ff5",
-    "order": 918,
+    "order": 906,
     "es": "cuadro",
     "kind": "word",
     "source": "09",
@@ -7518,7 +7418,7 @@
   },
   {
     "id": "a1-2aae8185",
-    "order": 919,
+    "order": 907,
     "es": "músico",
     "kind": "word",
     "source": "09",
@@ -7526,7 +7426,7 @@
   },
   {
     "id": "a1-632b543e",
-    "order": 920,
+    "order": 908,
     "es": "guitarra",
     "kind": "word",
     "source": "09",
@@ -7534,7 +7434,7 @@
   },
   {
     "id": "a1-ff7738de",
-    "order": 921,
+    "order": 909,
     "es": "piano",
     "kind": "word",
     "source": "09",
@@ -7542,7 +7442,7 @@
   },
   {
     "id": "a1-c5411812",
-    "order": 922,
+    "order": 910,
     "es": "violín",
     "kind": "word",
     "source": "09",
@@ -7550,7 +7450,7 @@
   },
   {
     "id": "a1-56b3c400",
-    "order": 923,
+    "order": 911,
     "es": "arquitecto",
     "kind": "word",
     "source": "09",
@@ -7558,7 +7458,7 @@
   },
   {
     "id": "a1-abbc263b",
-    "order": 924,
+    "order": 912,
     "es": "pintor",
     "kind": "word",
     "source": "09",
@@ -7566,7 +7466,7 @@
   },
   {
     "id": "a1-1b6e2481",
-    "order": 925,
+    "order": 913,
     "es": "escritor",
     "kind": "word",
     "source": "09",
@@ -7574,7 +7474,7 @@
   },
   {
     "id": "a1-0bdf905a",
-    "order": 926,
+    "order": 914,
     "es": "mundo",
     "kind": "word",
     "source": "09",
@@ -7582,7 +7482,7 @@
   },
   {
     "id": "a1-13201024",
-    "order": 927,
+    "order": 915,
     "es": "anillo",
     "kind": "word",
     "source": "09",
@@ -7590,7 +7490,7 @@
   },
   {
     "id": "a1-b4e6bfee",
-    "order": 928,
+    "order": 916,
     "es": "pulsera",
     "kind": "word",
     "source": "09",
@@ -7598,7 +7498,7 @@
   },
   {
     "id": "a1-123176eb",
-    "order": 929,
+    "order": 917,
     "es": "desierto",
     "kind": "word",
     "source": "09",
@@ -7606,7 +7506,7 @@
   },
   {
     "id": "a1-abd32814",
-    "order": 930,
+    "order": 918,
     "es": "bosque",
     "kind": "word",
     "source": "09",
@@ -7614,7 +7514,7 @@
   },
   {
     "id": "a1-9c520587",
-    "order": 931,
+    "order": 919,
     "es": "costa",
     "kind": "word",
     "source": "09",
@@ -7622,7 +7522,7 @@
   },
   {
     "id": "a1-0801e0eb",
-    "order": 932,
+    "order": 920,
     "es": "lluvia",
     "kind": "word",
     "source": "09",
@@ -7630,7 +7530,7 @@
   },
   {
     "id": "a1-9376b5cc",
-    "order": 933,
+    "order": 921,
     "es": "nieve",
     "kind": "word",
     "source": "09",
@@ -7638,7 +7538,7 @@
   },
   {
     "id": "a1-b758d015",
-    "order": 934,
+    "order": 922,
     "es": "niebla",
     "kind": "word",
     "source": "09",
@@ -7646,7 +7546,7 @@
   },
   {
     "id": "a1-a44098e0",
-    "order": 935,
+    "order": 923,
     "es": "tormenta",
     "kind": "word",
     "source": "09",
@@ -7654,7 +7554,7 @@
   },
   {
     "id": "a1-e0a05cb8",
-    "order": 936,
+    "order": 924,
     "es": "perro",
     "kind": "word",
     "source": "09",
@@ -7662,7 +7562,7 @@
   },
   {
     "id": "a1-bd9160d3",
-    "order": 937,
+    "order": 925,
     "es": "gato",
     "kind": "word",
     "source": "09",
@@ -7670,7 +7570,7 @@
   },
   {
     "id": "a1-9abb82ff",
-    "order": 938,
+    "order": 926,
     "es": "pájaro",
     "kind": "word",
     "source": "09",
@@ -7678,7 +7578,7 @@
   },
   {
     "id": "a1-f8ea2d84",
-    "order": 939,
+    "order": 927,
     "es": "pez",
     "kind": "word",
     "source": "09",
@@ -7686,7 +7586,7 @@
   },
   {
     "id": "a1-5d728ed0",
-    "order": 940,
+    "order": 928,
     "es": "caballo",
     "kind": "word",
     "source": "09",
@@ -7694,7 +7594,7 @@
   },
   {
     "id": "a1-25d2e1ae",
-    "order": 941,
+    "order": 929,
     "es": "araña",
     "kind": "word",
     "source": "09",
@@ -7702,7 +7602,7 @@
   },
   {
     "id": "a1-0cd24184",
-    "order": 942,
+    "order": 930,
     "es": "rosa",
     "kind": "word",
     "source": "09",
@@ -7710,7 +7610,7 @@
   },
   {
     "id": "a1-d13e42ee",
-    "order": 943,
+    "order": 931,
     "es": "marisco",
     "kind": "word",
     "source": "09",
@@ -7718,7 +7618,7 @@
   },
   {
     "id": "a1-8939b408",
-    "order": 944,
+    "order": 932,
     "es": "calabacín",
     "kind": "word",
     "source": "09",
@@ -7726,7 +7626,7 @@
   },
   {
     "id": "a1-5709aa7c",
-    "order": 945,
+    "order": 933,
     "es": "cereza",
     "kind": "word",
     "source": "09",
@@ -7734,7 +7634,7 @@
   },
   {
     "id": "a1-6883c631",
-    "order": 946,
+    "order": 934,
     "es": "piña",
     "kind": "word",
     "source": "09",
@@ -7742,7 +7642,7 @@
   },
   {
     "id": "a1-eb9444e1",
-    "order": 947,
+    "order": 935,
     "es": "nata",
     "kind": "word",
     "source": "09",
@@ -7750,7 +7650,7 @@
   },
   {
     "id": "a1-10dc8d3c",
-    "order": 948,
+    "order": 936,
     "es": "vinagre",
     "kind": "word",
     "source": "09",
@@ -7758,7 +7658,7 @@
   },
   {
     "id": "a1-0399472f",
-    "order": 949,
+    "order": 937,
     "es": "maquillarse",
     "kind": "word",
     "source": "08",
@@ -7766,7 +7666,7 @@
   },
   {
     "id": "a1-b3e6d752",
-    "order": 950,
+    "order": 938,
     "es": "gazpacho",
     "kind": "word",
     "source": "09",
@@ -7774,7 +7674,7 @@
   },
   {
     "id": "a1-891e6c6d",
-    "order": 951,
+    "order": 939,
     "es": "cuchara",
     "kind": "word",
     "source": "09",
@@ -7782,7 +7682,7 @@
   },
   {
     "id": "a1-6e1d89e4",
-    "order": 952,
+    "order": 940,
     "es": "tenedor",
     "kind": "word",
     "source": "09",
@@ -7790,7 +7690,7 @@
   },
   {
     "id": "a1-5331a22a",
-    "order": 953,
+    "order": 941,
     "es": "cuchillo",
     "kind": "word",
     "source": "09",
@@ -7798,7 +7698,7 @@
   },
   {
     "id": "a1-333e233e",
-    "order": 954,
+    "order": 942,
     "es": "mantel",
     "kind": "word",
     "source": "09",
@@ -7806,7 +7706,7 @@
   },
   {
     "id": "a1-8e345a86",
-    "order": 955,
+    "order": 943,
     "es": "doblar",
     "kind": "word",
     "source": "08",
@@ -7814,7 +7714,7 @@
   },
   {
     "id": "a1-587dd55b",
-    "order": 956,
+    "order": 944,
     "es": "pensar",
     "kind": "word",
     "source": "09",
@@ -7822,7 +7722,7 @@
   },
   {
     "id": "a1-f1674404",
-    "order": 957,
+    "order": 945,
     "es": "casco",
     "kind": "word",
     "source": "09",
@@ -7830,7 +7730,7 @@
   },
   {
     "id": "a1-7fb31aff",
-    "order": 958,
+    "order": 946,
     "es": "contrato",
     "kind": "word",
     "source": "09",
@@ -7838,7 +7738,7 @@
   },
   {
     "id": "a1-9b51a72d",
-    "order": 959,
+    "order": 947,
     "es": "sueldo",
     "kind": "word",
     "source": "09",
@@ -7846,7 +7746,7 @@
   },
   {
     "id": "a1-491d07b1",
-    "order": 960,
+    "order": 948,
     "es": "timbre",
     "kind": "word",
     "source": "08",
@@ -7854,7 +7754,7 @@
   },
   {
     "id": "a1-7b776458",
-    "order": 961,
+    "order": 949,
     "es": "arcoíris",
     "kind": "word",
     "source": "08",
@@ -7862,7 +7762,7 @@
   },
   {
     "id": "a1-8f2a7dd9",
-    "order": 962,
+    "order": 950,
     "es": "plateado",
     "kind": "word",
     "source": "08",
@@ -7870,7 +7770,7 @@
   },
   {
     "id": "a1-1552e2a6",
-    "order": 963,
+    "order": 951,
     "es": "dorado",
     "kind": "word",
     "source": "08",
@@ -7878,7 +7778,7 @@
   },
   {
     "id": "a1-516f1de1",
-    "order": 964,
+    "order": 952,
     "es": "videojuego",
     "kind": "word",
     "source": "09",
@@ -7886,7 +7786,7 @@
   },
   {
     "id": "a1-c25345c1",
-    "order": 965,
+    "order": 953,
     "es": "buzón",
     "kind": "word",
     "source": "09",
@@ -7894,7 +7794,7 @@
   },
   {
     "id": "a1-9fb4e04e",
-    "order": 966,
+    "order": 954,
     "es": "cobrar",
     "kind": "word",
     "source": "08",
@@ -7902,7 +7802,7 @@
   },
   {
     "id": "a1-cebb2657",
-    "order": 967,
+    "order": 955,
     "es": "ratón",
     "kind": "word",
     "source": "09",
@@ -7910,7 +7810,7 @@
   },
   {
     "id": "a1-5cdbdd2f",
-    "order": 968,
+    "order": 956,
     "es": "barrer",
     "kind": "word",
     "source": "09",
@@ -7918,7 +7818,7 @@
   },
   {
     "id": "a1-b03daa70",
-    "order": 969,
+    "order": 957,
     "es": "planchar",
     "kind": "word",
     "source": "09",
@@ -7926,7 +7826,7 @@
   },
   {
     "id": "a1-6fcb40ad",
-    "order": 970,
+    "order": 958,
     "es": "entrenar(se)",
     "kind": "word",
     "source": "08",
@@ -7935,7 +7835,7 @@
   },
   {
     "id": "a1-63b6985f",
-    "order": 971,
+    "order": 959,
     "es": "alfombra",
     "kind": "word",
     "source": "09",
@@ -7943,7 +7843,7 @@
   },
   {
     "id": "a1-3a54cef2",
-    "order": 972,
+    "order": 960,
     "es": "espejo",
     "kind": "word",
     "source": "09",
@@ -7951,7 +7851,7 @@
   },
   {
     "id": "a1-34bb3ad5",
-    "order": 973,
+    "order": 961,
     "es": "horno",
     "kind": "word",
     "source": "09",
@@ -7959,23 +7859,15 @@
   },
   {
     "id": "a1-062ab8ec",
-    "order": 974,
+    "order": 962,
     "es": "cartero",
     "kind": "word",
     "source": "09",
     "section": "11.1. Servicio postal"
   },
   {
-    "id": "a1-101f0e64",
-    "order": 975,
-    "es": "cuenta",
-    "kind": "word",
-    "source": "09",
-    "section": "11.3. Servicios financieros"
-  },
-  {
     "id": "a1-11ddeeda",
-    "order": 976,
+    "order": 963,
     "es": "ayuda",
     "kind": "word",
     "source": "09",
@@ -7983,7 +7875,7 @@
   },
   {
     "id": "a1-34b92c38",
-    "order": 977,
+    "order": 964,
     "es": "semáforo",
     "kind": "word",
     "source": "09",
@@ -7991,7 +7883,7 @@
   },
   {
     "id": "a1-86dc145c",
-    "order": 978,
+    "order": 965,
     "es": "preocupado",
     "kind": "word",
     "source": "08",
@@ -7999,7 +7891,7 @@
   },
   {
     "id": "a1-d770e1b7",
-    "order": 979,
+    "order": 966,
     "es": "verdad",
     "kind": "word",
     "source": "08",
@@ -8007,7 +7899,7 @@
   },
   {
     "id": "a1-b677c661",
-    "order": 980,
+    "order": 967,
     "es": "herida",
     "kind": "word",
     "source": "09",
@@ -8015,7 +7907,7 @@
   },
   {
     "id": "a1-fb56de8d",
-    "order": 981,
+    "order": 968,
     "es": "enfermo",
     "kind": "word",
     "source": "09",
@@ -8023,7 +7915,7 @@
   },
   {
     "id": "a1-f6db8dee",
-    "order": 982,
+    "order": 969,
     "es": "mejilla",
     "kind": "word",
     "source": "09",
@@ -8031,7 +7923,7 @@
   },
   {
     "id": "a1-222c80c0",
-    "order": 983,
+    "order": 970,
     "es": "dentista",
     "kind": "word",
     "source": "09",
@@ -8039,7 +7931,7 @@
   },
   {
     "id": "a1-eef931ac",
-    "order": 984,
+    "order": 971,
     "es": "ceja",
     "kind": "word",
     "source": "09",
@@ -8047,7 +7939,7 @@
   },
   {
     "id": "a1-5dbdee16",
-    "order": 985,
+    "order": 972,
     "es": "uña",
     "kind": "word",
     "source": "09",
@@ -8055,7 +7947,7 @@
   },
   {
     "id": "a1-c43ff257",
-    "order": 986,
+    "order": 973,
     "es": "pastilla",
     "kind": "word",
     "source": "09",
@@ -8063,7 +7955,7 @@
   },
   {
     "id": "a1-d26be047",
-    "order": 987,
+    "order": 974,
     "es": "cepillo",
     "kind": "word",
     "source": "09",
@@ -8071,7 +7963,7 @@
   },
   {
     "id": "a1-af5644e5",
-    "order": 988,
+    "order": 975,
     "es": "visado",
     "kind": "word",
     "source": "09",
@@ -8079,7 +7971,7 @@
   },
   {
     "id": "a1-3cf20991",
-    "order": 989,
+    "order": 976,
     "es": "equipaje",
     "kind": "word",
     "source": "09",
@@ -8087,7 +7979,7 @@
   },
   {
     "id": "a1-3d82f3c5",
-    "order": 990,
+    "order": 977,
     "es": "pelota",
     "kind": "word",
     "source": "09",
@@ -8095,7 +7987,7 @@
   },
   {
     "id": "a1-872972dc",
-    "order": 991,
+    "order": 978,
     "es": "recepción",
     "kind": "word",
     "source": "09",
@@ -8103,7 +7995,7 @@
   },
   {
     "id": "a1-7cdfe51c",
-    "order": 992,
+    "order": 979,
     "es": "manta",
     "kind": "word",
     "source": "09",
@@ -8111,7 +8003,7 @@
   },
   {
     "id": "a1-9f0f88ca",
-    "order": 993,
+    "order": 980,
     "es": "autopista",
     "kind": "word",
     "source": "09",
@@ -8119,7 +8011,7 @@
   },
   {
     "id": "a1-2e98b98e",
-    "order": 994,
+    "order": 981,
     "es": "moto",
     "kind": "word",
     "source": "09",
@@ -8127,7 +8019,7 @@
   },
   {
     "id": "a1-0465e225",
-    "order": 995,
+    "order": 982,
     "es": "camión",
     "kind": "word",
     "source": "09",
@@ -8135,7 +8027,7 @@
   },
   {
     "id": "a1-b1f63130",
-    "order": 996,
+    "order": 983,
     "es": "asiento",
     "kind": "word",
     "source": "09",
@@ -8143,7 +8035,7 @@
   },
   {
     "id": "a1-3cc72781",
-    "order": 997,
+    "order": 984,
     "es": "cinturón",
     "kind": "word",
     "source": "09",
@@ -8151,7 +8043,7 @@
   },
   {
     "id": "a1-41a18c24",
-    "order": 998,
+    "order": 985,
     "es": "contento",
     "kind": "word",
     "source": "09",
@@ -8159,7 +8051,7 @@
   },
   {
     "id": "a1-59e40b27",
-    "order": 999,
+    "order": 986,
     "es": "feliz",
     "kind": "word",
     "source": "09",
@@ -8167,7 +8059,7 @@
   },
   {
     "id": "a1-c8c760e3",
-    "order": 1000,
+    "order": 987,
     "es": "sorprendido",
     "kind": "word",
     "source": "09",
@@ -8175,7 +8067,7 @@
   },
   {
     "id": "a1-520edc75",
-    "order": 1001,
+    "order": 988,
     "es": "avergonzado",
     "kind": "word",
     "source": "09",
@@ -8183,7 +8075,7 @@
   },
   {
     "id": "a1-a56cf7b8",
-    "order": 1002,
+    "order": 989,
     "es": "helicóptero",
     "kind": "word",
     "source": "09",
@@ -8191,7 +8083,7 @@
   },
   {
     "id": "a1-01296445",
-    "order": 1003,
+    "order": 990,
     "es": "gastar",
     "kind": "word",
     "source": "09",
@@ -8199,7 +8091,7 @@
   },
   {
     "id": "a1-33d24f10",
-    "order": 1004,
+    "order": 991,
     "es": "folleto",
     "kind": "word",
     "source": "09",
@@ -8207,7 +8099,7 @@
   },
   {
     "id": "a1-fb887c6c",
-    "order": 1005,
+    "order": 992,
     "es": "agencia",
     "kind": "word",
     "source": "09",
@@ -8215,7 +8107,7 @@
   },
   {
     "id": "a1-331b9782",
-    "order": 1006,
+    "order": 993,
     "es": "análisis",
     "kind": "word",
     "source": "09",
@@ -8223,7 +8115,7 @@
   },
   {
     "id": "a1-2f3cbb86",
-    "order": 1007,
+    "order": 994,
     "es": "pantalla",
     "kind": "word",
     "source": "09",
@@ -8231,7 +8123,7 @@
   },
   {
     "id": "a1-7ad2db31",
-    "order": 1008,
+    "order": 995,
     "es": "cuñado",
     "kind": "word",
     "source": "09",
@@ -8239,7 +8131,7 @@
   },
   {
     "id": "a1-fdfe72b3",
-    "order": 1009,
+    "order": 996,
     "es": "suegro",
     "kind": "word",
     "source": "09",
@@ -8247,7 +8139,7 @@
   },
   {
     "id": "a1-4ee5ffe8",
-    "order": 1010,
+    "order": 997,
     "es": "yerno",
     "kind": "word",
     "source": "09",
@@ -8255,7 +8147,7 @@
   },
   {
     "id": "a1-367dc2d8",
-    "order": 1011,
+    "order": 998,
     "es": "imprimir",
     "kind": "word",
     "source": "09",
@@ -8263,7 +8155,7 @@
   },
   {
     "id": "a1-3b15ef43",
-    "order": 1012,
+    "order": 999,
     "es": "paisaje",
     "kind": "word",
     "source": "09",
@@ -8271,7 +8163,7 @@
   },
   {
     "id": "a1-dadd6eac",
-    "order": 1013,
+    "order": 1000,
     "es": "lago",
     "kind": "word",
     "source": "09",
@@ -8279,7 +8171,7 @@
   },
   {
     "id": "a1-4651d7c5",
-    "order": 1014,
+    "order": 1001,
     "es": "granizo",
     "kind": "word",
     "source": "09",
@@ -8287,7 +8179,7 @@
   },
   {
     "id": "a1-99e5e8f0",
-    "order": 1015,
+    "order": 1002,
     "es": "hielo",
     "kind": "word",
     "source": "09",
@@ -8295,7 +8187,7 @@
   },
   {
     "id": "a1-3b2f42f6",
-    "order": 1016,
+    "order": 1003,
     "es": "ración",
     "kind": "word",
     "source": "09",
@@ -8303,7 +8195,7 @@
   },
   {
     "id": "a1-68df8c65",
-    "order": 1017,
+    "order": 1004,
     "es": "fuente",
     "kind": "word",
     "source": "09",
@@ -8311,7 +8203,7 @@
   },
   {
     "id": "a1-c208d601",
-    "order": 1018,
+    "order": 1005,
     "es": "conejo",
     "kind": "word",
     "source": "09",
@@ -8319,7 +8211,7 @@
   },
   {
     "id": "a1-fa176ec9",
-    "order": 1019,
+    "order": 1006,
     "es": "oveja",
     "kind": "word",
     "source": "09",
@@ -8327,7 +8219,7 @@
   },
   {
     "id": "a1-70aeb307",
-    "order": 1020,
+    "order": 1007,
     "es": "gallina",
     "kind": "word",
     "source": "09",
@@ -8335,7 +8227,7 @@
   },
   {
     "id": "a1-930c4f3e",
-    "order": 1021,
+    "order": 1008,
     "es": "león",
     "kind": "word",
     "source": "09",
@@ -8343,7 +8235,7 @@
   },
   {
     "id": "a1-dbf269af",
-    "order": 1022,
+    "order": 1009,
     "es": "tigre",
     "kind": "word",
     "source": "09",
@@ -8351,7 +8243,7 @@
   },
   {
     "id": "a1-9c6e0aa3",
-    "order": 1023,
+    "order": 1010,
     "es": "elefante",
     "kind": "word",
     "source": "09",
@@ -8359,7 +8251,7 @@
   },
   {
     "id": "a1-0abf1fe3",
-    "order": 1024,
+    "order": 1011,
     "es": "serpiente",
     "kind": "word",
     "source": "09",
@@ -8367,7 +8259,7 @@
   },
   {
     "id": "a1-d4bfb15f",
-    "order": 1025,
+    "order": 1012,
     "es": "barra",
     "kind": "word",
     "source": "09",
@@ -8375,7 +8267,7 @@
   },
   {
     "id": "a1-998cc079",
-    "order": 1026,
+    "order": 1013,
     "es": "hierba",
     "kind": "word",
     "source": "09",
@@ -8383,7 +8275,7 @@
   },
   {
     "id": "a1-f9b613cc",
-    "order": 1027,
+    "order": 1014,
     "es": "comedor",
     "kind": "word",
     "source": "09",
@@ -8391,7 +8283,7 @@
   },
   {
     "id": "a1-2c2b18a0",
-    "order": 1028,
+    "order": 1015,
     "es": "granja",
     "kind": "word",
     "source": "09",
@@ -8399,7 +8291,7 @@
   },
   {
     "id": "a1-007766b2",
-    "order": 1029,
+    "order": 1016,
     "es": "mono",
     "kind": "word",
     "source": "09",
@@ -8407,7 +8299,7 @@
   },
   {
     "id": "a1-5847506b",
-    "order": 1030,
+    "order": 1017,
     "es": "comisión",
     "kind": "word",
     "source": "09",
@@ -8415,23 +8307,15 @@
   },
   {
     "id": "a1-73f2960f",
-    "order": 1031,
+    "order": 1018,
     "es": "contratar",
     "kind": "word",
     "source": "09",
     "section": "7.5. Derechos y obligaciones laborales"
   },
   {
-    "id": "a1-cdd20898",
-    "order": 1032,
-    "es": "entrenar",
-    "kind": "word",
-    "source": "09",
-    "section": "8.3. Deportes"
-  },
-  {
     "id": "a1-5e894abe",
-    "order": 1033,
+    "order": 1019,
     "es": "escoba",
     "kind": "word",
     "source": "09",
@@ -8439,7 +8323,7 @@
   },
   {
     "id": "a1-17a43cf2",
-    "order": 1034,
+    "order": 1020,
     "es": "detergente",
     "kind": "word",
     "source": "09",
@@ -8447,7 +8331,7 @@
   },
   {
     "id": "a1-ad259f6d",
-    "order": 1035,
+    "order": 1021,
     "es": "bombilla",
     "kind": "word",
     "source": "09",
@@ -8455,7 +8339,7 @@
   },
   {
     "id": "a1-be38e737",
-    "order": 1036,
+    "order": 1022,
     "es": "linterna",
     "kind": "word",
     "source": "09",
@@ -8463,7 +8347,7 @@
   },
   {
     "id": "a1-a488e64e",
-    "order": 1037,
+    "order": 1023,
     "es": "préstamo",
     "kind": "word",
     "source": "09",
@@ -8471,7 +8355,7 @@
   },
   {
     "id": "a1-393a4ded",
-    "order": 1038,
+    "order": 1024,
     "es": "factura",
     "kind": "word",
     "source": "09",
@@ -8479,7 +8363,7 @@
   },
   {
     "id": "a1-cd79ec38",
-    "order": 1039,
+    "order": 1025,
     "es": "recibo",
     "kind": "word",
     "source": "09",
@@ -8487,7 +8371,7 @@
   },
   {
     "id": "a1-f88c4538",
-    "order": 1040,
+    "order": 1026,
     "es": "radiografía",
     "kind": "word",
     "source": "09",
@@ -8495,7 +8379,7 @@
   },
   {
     "id": "a1-ab0460f3",
-    "order": 1041,
+    "order": 1027,
     "es": "venda",
     "kind": "word",
     "source": "09",
@@ -8504,7 +8388,7 @@
   },
   {
     "id": "a1-6e2585e7",
-    "order": 1042,
+    "order": 1028,
     "es": "itinerario",
     "kind": "word",
     "source": "09",
@@ -8512,7 +8396,7 @@
   },
   {
     "id": "a1-54aa09ac",
-    "order": 1043,
+    "order": 1029,
     "es": "cubo",
     "kind": "word",
     "source": "09",
@@ -8520,7 +8404,7 @@
   },
   {
     "id": "a1-32bc6b73",
-    "order": 1044,
+    "order": 1030,
     "es": "albergue",
     "kind": "word",
     "source": "09",
@@ -8528,7 +8412,7 @@
   },
   {
     "id": "a1-a728aed2",
-    "order": 1045,
+    "order": 1031,
     "es": "cruce",
     "kind": "word",
     "source": "09",
@@ -8536,7 +8420,7 @@
   },
   {
     "id": "a1-e9779c6d",
-    "order": 1046,
+    "order": 1032,
     "es": "bolsa",
     "kind": "word",
     "source": "09",
@@ -8544,7 +8428,7 @@
   },
   {
     "id": "a1-68bb4b17",
-    "order": 1047,
+    "order": 1033,
     "es": "ahorrar",
     "kind": "word",
     "source": "09",
@@ -8552,7 +8436,7 @@
   },
   {
     "id": "a1-be26091c",
-    "order": 1048,
+    "order": 1034,
     "es": "escritorio",
     "kind": "word",
     "source": "09",
@@ -8560,7 +8444,7 @@
   },
   {
     "id": "a1-315ee16a",
-    "order": 1049,
+    "order": 1035,
     "es": "perdón",
     "kind": "word",
     "source": "09",
@@ -8568,7 +8452,7 @@
   },
   {
     "id": "a1-d4cc8d97",
-    "order": 1050,
+    "order": 1036,
     "es": "colorido",
     "kind": "word",
     "source": "09",
@@ -8576,7 +8460,7 @@
   },
   {
     "id": "a1-57caa278",
-    "order": 1051,
+    "order": 1037,
     "es": "acera",
     "kind": "word",
     "source": "09",
@@ -8584,7 +8468,7 @@
   },
   {
     "id": "a1-180521d3",
-    "order": 1052,
+    "order": 1038,
     "es": "trueno",
     "kind": "word",
     "source": "09",
@@ -8592,7 +8476,7 @@
   },
   {
     "id": "a1-452504a4",
-    "order": 1053,
+    "order": 1039,
     "es": "seta",
     "kind": "word",
     "source": "09",

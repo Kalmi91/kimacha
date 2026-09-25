@@ -8,6 +8,7 @@ import {
   reorderForReturn,
   nextPcicNewBonus,
   pcicNewBudget,
+  pickStrongerSm2Card,
   type QueuedSm2Card,
 } from '../pcicSession';
 import { sm2NewCard, sm2Review, pickSm2Session, addDays, type Sm2Card } from '../sm2';
@@ -311,5 +312,26 @@ describe('countIntroducedTodayByKind (FB387/395)', () => {
 
   it('üres kártyalistára {0, 0}-t ad', () => {
     expect(countIntroducedTodayByKind([], TODAY, () => undefined)).toEqual({ words: 0, sentences: 0 });
+  });
+});
+
+describe('pickStrongerSm2Card (FB384, 7b)', () => {
+  it('több sikeres ismétlés (reps - lapses) nyer', () => {
+    const strong = reviewCard({ itemId: 'x', reps: 10, lapses: 1 }); // 9 sikeres
+    const weak = reviewCard({ itemId: 'y', reps: 5, lapses: 0 }); // 5 sikeres
+    expect(pickStrongerSm2Card(strong, weak)).toBe(strong);
+    expect(pickStrongerSm2Card(weak, strong)).toBe(strong);
+  });
+
+  it('holtversenynél (azonos sikeres ismétlés) a nagyobb interval nyer', () => {
+    const strong = reviewCard({ itemId: 'x', reps: 5, lapses: 0, interval: 30 });
+    const weak = reviewCard({ itemId: 'y', reps: 5, lapses: 0, interval: 10 });
+    expect(pickStrongerSm2Card(strong, weak)).toBe(strong);
+  });
+
+  it('végső holtversenynél a korábbi esedékesség (due) nyer', () => {
+    const earlier = reviewCard({ itemId: 'x', reps: 5, lapses: 0, interval: 10, due: TODAY });
+    const later = reviewCard({ itemId: 'y', reps: 5, lapses: 0, interval: 10, due: addDays(TODAY, 5) });
+    expect(pickStrongerSm2Card(earlier, later)).toBe(earlier);
   });
 });
