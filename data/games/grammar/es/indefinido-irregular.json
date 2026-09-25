@@ -943,7 +943,7 @@
       "options": [
         "estuvimos",
         "estamos",
-        "fuimos"
+        "estuviste"
       ],
       "correct": 0,
       "why": {
@@ -959,11 +959,11 @@
           "es": "\"Estamos\" es presente; si se usara aquí significaría que estamos en Guadalajara AHORA, lo cual contradice \"el año pasado\".",
           "de": "\"Estamos\" ist Präsens; würde man es hier verwenden, hieße es, dass wir JETZT in Guadalajara sind, im Widerspruch zu \"el año pasado\" (letztes Jahr)."
         },
-        "fuimos": {
-          "hu": "A \"fuimos\" is helyes mondatot adna, de mást jelentene: azt, hogy ODAMENTÜNK Guadalajarába, egyszeri utazásként, nem azt, hogy egy ideig OTT TARTÓZKODTUNK; a tartózkodást estar fejezi ki.",
-          "en": "\"Fuimos\" would also make a correct sentence, but a different one: that we WENT to Guadalajara, a one-time trip, not that we STAYED there for a while; staying is expressed with estar.",
-          "es": "\"Fuimos\" también formaría una frase correcta, pero distinta: que FUIMOS a Guadalajara, un viaje puntual, no que estuvimos allí una temporada; la estancia se expresa con estar.",
-          "de": "\"Fuimos\" würde ebenfalls einen korrekten Satz ergeben, aber einen anderen: dass wir nach Guadalajara FUHREN, eine einmalige Reise, nicht dass wir dort eine Weile BLIEBEN; das Bleiben wird mit estar ausgedrückt."
+        "estuviste": {
+          "hu": "Az \"estuviste\" a tú (te) alak, de a mondat alanya \"(nosotros)\" (mi); a helyes mi-alak estuvimos, nem estuviste.",
+          "en": "\"Estuviste\" is the tú (you) form, but the sentence's subject is \"(nosotros)\" (we); the correct we-form is estuvimos, not estuviste.",
+          "es": "\"Estuviste\" es la forma de tú, pero el sujeto de la frase es \"(nosotros)\"; la forma correcta es estuvimos, no estuviste.",
+          "de": "\"Estuviste\" ist die du-Form, aber das Subjekt des Satzes ist \"(nosotros)\" (wir); die richtige Form ist estuvimos, nicht estuviste."
         }
       },
       "examples": [
