@@ -943,7 +943,7 @@
       "options": [
         "estuvimos",
         "estamos",
-        "estuviste"
+        "tuvimos"
       ],
       "correct": 0,
       "why": {
@@ -959,11 +959,11 @@
           "es": "\"Estamos\" es presente; si se usara aquí significaría que estamos en Guadalajara AHORA, lo cual contradice \"el año pasado\".",
           "de": "\"Estamos\" ist Präsens; würde man es hier verwenden, hieße es, dass wir JETZT in Guadalajara sind, im Widerspruch zu \"el año pasado\" (letztes Jahr)."
         },
-        "estuviste": {
-          "hu": "Az \"estuviste\" a tú (te) alak, de a mondat alanya \"(nosotros)\" (mi); a helyes mi-alak estuvimos, nem estuviste.",
-          "en": "\"Estuviste\" is the tú (you) form, but the sentence's subject is \"(nosotros)\" (we); the correct we-form is estuvimos, not estuviste.",
-          "es": "\"Estuviste\" es la forma de tú, pero el sujeto de la frase es \"(nosotros)\"; la forma correcta es estuvimos, no estuviste.",
-          "de": "\"Estuviste\" ist die du-Form, aber das Subjekt des Satzes ist \"(nosotros)\" (wir); die richtige Form ist estuvimos, nicht estuviste."
+        "tuvimos": {
+          "hu": "A \"tuvimos\" a tener (birtokolni) mi-alakja múlt időben; a mondat alanya és az igeidő is stimmel, de a jelentés nem: \"tuvimos en Guadalajara\" nem teljes mondat, mert a tener tárgyat kíván (tuvimos VALAMIT), nem helyet; az ott-tartózkodást estar fejezi ki.",
+          "en": "\"Tuvimos\" is the nosotros/preterite form of tener (to have); the person and tense match, but the meaning doesn't: \"tuvimos en Guadalajara\" isn't a complete sentence, because tener needs a direct object (tuvimos SOMETHING), not just a place; being/staying somewhere is expressed with estar.",
+          "es": "\"Tuvimos\" es la forma de nosotros del pretérito de tener; la persona y el tiempo coinciden, pero no el significado: \"tuvimos en Guadalajara\" no es una frase completa, porque tener necesita un objeto directo (tuvimos ALGO), no solo un lugar; la estancia se expresa con estar.",
+          "de": "\"Tuvimos\" ist die wir-Form des Präteritums von tener (haben); Person und Zeitform stimmen, aber die Bedeutung nicht: \"tuvimos en Guadalajara\" ist kein vollständiger Satz, weil tener ein direktes Objekt braucht (tuvimos ETWAS), nicht nur einen Ort; das Sein/Bleiben an einem Ort wird mit estar ausgedrückt."
         }
       },
       "examples": [
