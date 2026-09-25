@@ -25,6 +25,7 @@ import { applyChainOrder } from '@/lib/pcicChains';
 import { cardsForLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
 import { pcicNoteText } from '@/lib/pcicNotes';
+import { sensesFor } from '@/lib/pcicSenses';
 import FeedbackButton from '@/components/FeedbackModal';
 import BadgeRow from '@/components/learn/BadgeRow';
 import CardShell from '@/components/learn/CardShell';
@@ -164,14 +165,23 @@ export default function PcicScreen() {
   const current = queue[0];
   const currentItem = current ? findPcicItem(current.itemId) : undefined;
 
+  // PLAN-fb0924 7b. lépés (FB384, D4): ha a szónak több, érdemben eltérő
+  // jelentése van (data/pcic/senses.json, a duplikátum-egyesítés töltötte
+  // fel), a prompt (és a felolvasás) mindet mutatja/mondja " · "-tal
+  // elválasztva; a beírandó válasz ettől függetlenül a szó maga marad
+  // (currentItem.es). `currentItem` fentebb defíniált, ez az effekt ELŐTT
+  // kell, mert az is ezt mondja ki.
+  const senses = currentItem ? sensesFor(currentItem.id) : undefined;
+  const promptEn = senses ? senses.map((sn) => sn.en).join(' · ') : currentItem?.en;
+
   // FB319/FB391: az angol prompt felolvasása ÉS a beviteli mező fókusza,
   // amikor egy ÚJ lap kerül képernyőre (kinyílik a billentyűzet). Csak a
   // `current?.itemId` váltására fusson (a `grade` a closure-ből olvasva
   // dönti el, hogy még nincs felfedve), felfedéskor (a `grade` state
   // változásakor) ne ismételje - se a felolvasás, se a fókusz.
   useEffect(() => {
-    if (!loading && currentItem && !grade) {
-      speak(currentItem.en, speechLang('en'));
+    if (!loading && currentItem && promptEn && !grade) {
+      speak(promptEn, speechLang('en'));
       inputRef.current?.focus();
     }
     // PLAN-play 11. lépés: kártyaváltáskor a folyamatban lévő felolvasás
@@ -509,8 +519,8 @@ export default function PcicScreen() {
           {/* 5b: a szó melletti 🔊 újra elmondja az angolt (Kálmán kiegészítése,
               anki-ui-terv.html), ugyanazzal a hívással, mint a lap-nyitáskori FB319 felolvasás. */}
           <View style={styles.wordRow}>
-            <Text style={[styles.frontText, { color: colors.text }]}>{currentItem.en}</Text>
-            <Pressable onPress={() => speak(currentItem.en, speechLang('en'))} style={styles.speakBtn}>
+            <Text style={[styles.frontText, { color: colors.text }]}>{promptEn}</Text>
+            <Pressable onPress={() => speak(promptEn ?? currentItem.en, speechLang('en'))} style={styles.speakBtn}>
               <Text style={styles.speakIcon}>🔊</Text>
             </Pressable>
             {/* FB392/393: ℹ️ gomb, csak jegyzetes itemen; koppintásra ki/be

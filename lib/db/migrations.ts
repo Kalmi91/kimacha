@@ -2,6 +2,9 @@ import * as SQLite from 'expo-sqlite';
 import { pickSurvivor } from '../cardMerge';
 import { WORD_MERGES } from '../wordMerges';
 import { PCIC_LEVEL_MOVES } from '../pcicLevelMoves';
+import { PCIC_DEDUP_MOVES } from '../pcicDedupMoves';
+import { pickStrongerSm2Card } from '../pcicSession';
+import type { Sm2Card } from '../sm2';
 
 // PLAN-play 14. lépés: a séma-létrehozás + minden ALTER/CREATE-migráció
 // (korábban SQLiteDB.open() és SQLiteDB.applyWordMerges(), lib/database.ts),
@@ -82,6 +85,60 @@ export async function applyPcicLevelMoves(db: SQLite.SQLiteDatabase) {
   for (const row of stale) {
     const newId = PCIC_LEVEL_MOVES[row.item_id];
     await db.runAsync('UPDATE pcic_cards SET item_id = ? WHERE item_id = ?', [newId, row.item_id]);
+  }
+}
+
+function pcicRowToSm2Card(row: any): Sm2Card {
+  return {
+    itemId: row.item_id,
+    state: row.state,
+    step: row.step,
+    ease: row.ease,
+    interval: row.interval,
+    reps: row.reps,
+    lapses: row.lapses,
+    due: row.due,
+    lastReview: row.last_review,
+    introducedAt: row.introduced_at,
+    known: row.known === 1,
+  };
+}
+
+// PLAN-fb0924 7b. lépés (FB384, D3+D4): a szintek közti/szinten belüli
+// duplikátum-egyesítés (script: scripts/pcic-dedup.mjs --write) egy törölt
+// (loser) item-id-t a megmaradó (winner) item-id-re képez le
+// (lib/pcicDedupMoves.ts). Több loser is mutathat ugyanarra a winnerre
+// (many-to-one), ezért soronként, a WORD_MERGES/applyWordMerges mintáját
+// követve: ha mindkét oldalon van haladás, az erősebb (pickStrongerSm2Card)
+// nyer, a gyengébb sor törlődik. Idempotens: a második futástól a SELECT 0
+// sort ad. Csak natív induláskor kell futnia (lásd applyPcicLevelMoves fent).
+export async function applyPcicDedup(db: SQLite.SQLiteDatabase) {
+  const loserIds = Object.keys(PCIC_DEDUP_MOVES);
+  if (loserIds.length === 0) return;
+  const placeholders = loserIds.map(() => '?').join(',');
+  const stale = await db.getAllAsync<any>(
+    `SELECT * FROM pcic_cards WHERE item_id IN (${placeholders})`,
+    loserIds
+  );
+  if (stale.length === 0) return;
+
+  for (const row of stale) {
+    const winnerId = PCIC_DEDUP_MOVES[row.item_id];
+    const twin = await db.getFirstAsync<any>('SELECT * FROM pcic_cards WHERE item_id = ?', [winnerId]);
+    if (!twin) {
+      await db.runAsync('UPDATE pcic_cards SET item_id = ? WHERE item_id = ?', [winnerId, row.item_id]);
+      continue;
+    }
+    const survivor = pickStrongerSm2Card(pcicRowToSm2Card(row), pcicRowToSm2Card(twin));
+    if (survivor.itemId === row.item_id) {
+      // A törölt (loser) oldal volt erősebb: a winner sora törlődik, a
+      // loser sora veszi fel a winner id-t.
+      await db.runAsync('DELETE FROM pcic_cards WHERE item_id = ?', [winnerId]);
+      await db.runAsync('UPDATE pcic_cards SET item_id = ? WHERE item_id = ?', [winnerId, row.item_id]);
+    } else {
+      // A winner sora erősebb (vagy egyenlő): a loser sora törlődik.
+      await db.runAsync('DELETE FROM pcic_cards WHERE item_id = ?', [row.item_id]);
+    }
   }
 }
 
@@ -437,5 +494,6 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
   }
   await applyWordMerges(db);
   await applyPcicLevelMoves(db);
+  await applyPcicDedup(db);
   return activePair;
 }
