@@ -150,3 +150,18 @@ export function countIntroducedTodayByKind(
   }
   return { words, sentences };
 }
+
+// PLAN-fb0924 7b. lépés (FB384): a szintek közti duplikátum-egyesítéskor
+// (lib/db/migrations.ts applyPcicDedup) ha MINDKÉT oldalon (a törölt és a
+// megmaradó item-id-n is) van SRS-haladás, az "erősebb" oldal nyer: több
+// sikeres ismétlés (reps - lapses), holtversenyben nagyobb interval, végül
+// a korábbi esedékesség (hogy az ismétlés ne csússzon ki). A `cardMerge.ts`
+// pickSurvivor-jának Sm2Card-megfelelője (az ottani `stability` mező itt
+// nincs, az FSRS-only `cards` táblára épült).
+export function pickStrongerSm2Card(a: Sm2Card, b: Sm2Card): Sm2Card {
+  const aSuccess = a.reps - a.lapses;
+  const bSuccess = b.reps - b.lapses;
+  if (aSuccess !== bSuccess) return aSuccess > bSuccess ? a : b;
+  if (a.interval !== b.interval) return a.interval > b.interval ? a : b;
+  return a.due <= b.due ? a : b;
+}

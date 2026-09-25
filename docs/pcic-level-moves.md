@@ -868,3 +868,323 @@ Törölt `headword` hivatkozás: 132 (a hivatkozott szó másik szintre került;
 | `b2-ee24bfdc` | alto | B2 → A1 | A1 |
 | `b2-f2b946b7` | garantía | B2 → B1 | B1 |
 | `b2-fbb93bb9` | sol | B2 → A1 | A1 |
+
+## 7b. lépés: szintek közti/szinten belüli duplikátumok (FB384, D3+D4)
+
+Generálva: node scripts/pcic-dedup.mjs --write
+
+**304 duplikátum-csoport** (normalizált `es` szerint, word/phrase kind): a legalacsonyabb szintű tétel marad, a többi törlődik, a haladás átkerül rá (erősebb nyer: több sikeres ismétlés, aztán nagyobb interval - lib/db/migrations.ts applyPcicDedup). **219** csoportnál a jelentés lényegében egyezik (sima törlés), **85** csoportnál a jelentés érdemben eltér, ezért a megmaradó kártya jelentés-listát kapott (`data/pcic/senses.json`).
+
+### Jelentésben eltérő csoportok (senses.json)
+
+| normalizált es | megtartva | törölt jelentések |
+|---|---|---|
+| largo | A1 `a1-5e11eb4f` "largo" = "long" | B2 `b2-5e11eb4f` "largo" = "length" |
+| alto | A1 `a1-ee24bfdc` "alto" = "tall" | B2 `b2-ee24bfdc` "alto" = "height" |
+| metro | A1 `a1-dcb8c894` "metro(s)" = "meter(s)" | A1 `a1-1388b778` "metro" = "subway" |
+| pasar | A1 `a1-7a5e88d9` "pasar" = "to happen" | A2 `a2-9b641269` "pasar (por)" = "to go through" |
+| estrecho | A1 `a1-68d3e031` "estrecho" = "narrow" | B2 `b2-c4cc3529` "estrecho" = "strait" |
+| ancho | A1 `a1-3d61f0ce` "ancho" = "wide" | B2 `b2-0b950c55` "ancho" = "width" |
+| cerca | A1 `a1-88fc207c` "cerca (de)" = "near" | A1 `a1-34bbe760` "cerca" = "nearby" |
+| llevar | A1 `a1-4dfc27c1` "llevar" = "to carry" | B1 `b1-14fdf15f` "llevar" = "to wear"; B2 `b2-14fdf15f` "llevar" = "to take (time)" |
+| delante | A1 `a1-48765024` "delante" = "ahead" | A2 `a2-a72d6a82` "delante (de)" = "in front (of)" |
+| cambiar | A1 `a1-637e9229` "cambiar" = "to change" | A2 `a2-637e9229` "cambiar" = "to exchange" |
+| claro | A1 `a1-98a793c7` "claro" = "light (in color)" | A2 `a2-98a793c7` "claro" = "of course"; B1 `b1-98a793c7` "claro" = "clear" |
+| oscuro | A1 `a1-c0db1ada` "oscuro" = "dark" | B2 `b2-c0db1ada` "oscuro" = "unclear" |
+| entrada | A1 `a1-a9df7a76` "entrada" = "entrance" | A2 `a2-a9df7a76` "entrada" = "ticket"; B1 `b1-a9df7a76` "entrada" = "entrance" |
+| regular | A1 `a1-5f51efbe` "regular" = "so-so" | B1 `b1-5f51efbe` "regular" = "regular" |
+| fuerte | A1 `a1-e8d19826` "fuerte" = "strong" | B1 `b1-7af0f1c6` "fuerte" = "loud" |
+| piel | A1 `a1-7da0ef23` "piel" = "leather" | B1 `b1-1824d6bc` "piel" = "skin"; B2 `b2-1824d6bc` "piel" = "skin" |
+| trabajador | A1 `a1-d0f16530` "trabajador" = "hardworking" | B1 `b1-d0f16530` "trabajador" = "worker" |
+| dirección | A1 `a1-5695924a` "dirección" = "address" | B1 `b1-5695924a` "dirección" = "direction"; B2 `b2-5695924a` "dirección" = "board of directors" |
+| paseo | A1 `a1-dae2f72e` "paseo" = "boulevard" | B1 `b1-dae2f72e` "paseo" = "walk" |
+| piso | A1 `a1-90d94ae3` "piso" = "floor" | A1 `a1-da84060c` "el piso" = "the apartment" |
+| poder | A1 `a1-a5cd9d69` "poder" = "to be able to" | B2 `b2-b1b3592d` "poder" = "power" |
+| móvil | A1 `a1-3d099f1f` "móvil" = "cell phone (contact)" | B1 `b1-08572461` "móvil" = "mobile" |
+| mano | A1 `a1-7ac58255` "mano" = "hand" | B2 `b2-abf1aa4a` "mano" = "coat" |
+| separado | A1 `a1-0ee3e0a9` "separado" = "separated" | B1 `b1-d636d880` "separado (de)" = "separate (from)"; B1 `b1-0ee3e0a9` "separado" = "separated" |
+| compañero | A1 `a1-67874488` "compañero" = "colleague" | A1 `a1-946fa7e5` "compañero (de juego)" = "playmate" |
+| cuenta | A1 `a1-266ffb6d` "la cuenta" = "the bill" | A1 `a1-101f0e64` "cuenta" = "account" |
+| clase | A1 `a1-686bf5da` "clase" = "class" | B1 `b1-686bf5da` "clase" = "kind" |
+| director | A1 `a1-235acfdf` "director" = "principal" | A2 `a2-235acfdf` "director" = "director" |
+| sobre | A1 `a1-639c48ee` "sobre" = "envelope" | B1 `b1-639c48ee` "sobre" = "around" |
+| guión | A1 `a1-941ccad0` "guión" = "hyphen" | B1 `b1-eb786248` "guión" = "script" |
+| punto | A1 `a1-f4c4ee6e` "punto" = "dot" | A2 `a2-c44f7ac4` "punto" = "point" |
+| estudio | A1 `a1-c08f8437` "estudio" = "studio apartment" | A2 `a2-ff70aa47` "estudio" = "study" |
+| cocina | A1 `a1-6c6e13da` "cocina" = "kitchen" | A2 `a2-6c6e13da` "cocina" = "stove"; B1 `b1-6c6e13da` "cocina" = "cooking" |
+| salón | A1 `a1-9e7db28a` "salón" = "living room" | B2 `b2-9e7db28a` "salón" = "dining hall" |
+| estar malo | A1 `a1-0735353d` "estar malo" = "to be unwell" | B1 `b1-0735353d` "estar malo" = "to be off, spoiled (food)"; B2 `b2-0735353d` "estar malo" = "to have gone bad" |
+| bañarse | A1 `a1-5e3a391a` "bañarse" = "to bathe" | A2 `a2-5e3a391a` "bañarse" = "to swim" |
+| plano | A1 `a1-d7d88964` "plano" = "map (city)" | B1 `b1-d7d88964` "plano" = "flat"; B2 `b2-d7d88964` "plano" = "plane" |
+| exposición | A1 `a1-3282a9f5` "exposición" = "exhibition" | A2 `a2-3282a9f5` "exposición" = "exhibition"; B2 `b2-3282a9f5` "exposición" = "talk" |
+| pasillo | A1 `a1-8602a05e` "pasillo" = "hallway" | B1 `b1-e65d16c3` "pasillo" = "aisle" |
+| sol | A1 `a1-fbb93bb9` "sol" = "sun" | B2 `b2-fbb93bb9` "sol" = "G" |
+| igual | A2 `a2-7ecfc34b` "igual" = "same" | B1 `b1-7ecfc34b` "igual" = "equal"; B2 `b2-7ecfc34b` "igual" = "maybe" |
+| seguridad | A2 `a2-eafb9d5f` "seguridad" = "certainty" | B2 `b2-c3bc985f` "(servicio de) seguridad" = "security service"; B2 `b2-8ad06853` "seguridad (ciudadana)" = "public safety" |
+| contar | A2 `a2-564c63e9` "contar" = "to count" | B1 `b1-82e86540` "contar (la historia de)" = "to tell (the story of)" |
+| girar | A2 `a2-7f44657f` "girar" = "to turn" | B1 `b1-7f44657f` "girar" = "to turn"; B2 `b2-e55f1382` "girar (un planeta)" = "to rotate (a planet)" |
+| mayor | A2 `a2-e6a04b67` "mayor" = "older" | B1 `b1-e6a04b67` "mayor" = "bigger, greater" |
+| extensión | A2 `a2-ec5a6ac0` "extensión" = "extension" | B1 `b1-ec5a6ac0` "extensión" = "extension"; B2 `b2-ec5a6ac0` "extensión" = "extent" |
+| socio | A2 `a2-1753d010` "socio" = "business partner" | B1 `b1-6de7fbda` "socio" = "member" |
+| principio | A2 `a2-bd9e7f16` "principio" = "beginning" | B2 `b2-4a5cb5ab` "principio" = "principle" |
+| programa | A2 `a2-1ba658f4` "programa (del curso)" = "(course) syllabus" | A2 `a2-e7d92c1f` "programa" = "program"; B1 `b1-e7d92c1f` "programa" = "program, software" |
+| suspender | A2 `a2-5e9dd91b` "suspender" = "to fail" | B1 `b1-b6e60039` "suspender" = "to cancel" |
+| derecho | A2 `a2-47207a68` "Derecho" = "Law" | B1 `b1-47207a68` "derecho" = "right"; B2 `b2-53405b4b` "(estar) derecho" = "to be standing upright" |
+| hoja | A2 `a2-d4235bc0` "hoja" = "sheet (of paper)" | B1 `b1-d4235bc0` "hoja" = "leaf" |
+| regla | A2 `a2-00698e87` "regla" = "ruler" | B2 `b2-00698e87` "regla" = "rule" |
+| comercial | A2 `a2-a5ccc35c` "comercial" = "sales rep" | B1 `b1-f889e854` "comercial" = "commercial" |
+| quedar | A2 `a2-c3c36d0e` "quedar" = "to meet up" | B2 `b2-c3c36d0e` "quedar" = "to be left" |
+| nota | A2 `a2-91c7992b` "nota" = "grade" | B2 `b2-e08ebf74` "nota (musical)" = "musical note" |
+| portátil | A2 `a2-c93e5c3c` "(ordenador) portátil" = "laptop" | B2 `b2-9811c01d` "portátil" = "portable" |
+| diario | A2 `a2-c918b647` "diario" = "diary" | B2 `b2-37b3214f` "diario" = "daily" |
+| cielo | A2 `a2-b54cfda8` "cielo" = "sky" | B1 `b1-b54cfda8` "cielo" = "heaven" |
+| interior | A2 `a2-cfa582c0` "interior" = "inland" | B1 `b1-cfa582c0` "interior" = "interior" |
+| aparecer | B1 `b1-49a6d530` "(des)aparecer" = "to appear/disappear" | B1 `b1-1babd673` "aparecer" = "to appear" |
+| material | B1 `b1-b51c6310` "material" = "material" | B1 `b1-ace9bd59` "(in)material" = "immaterial" |
+| asegurar | B1 `b1-94bd9970` "asegurar(se)" = "to make sure" | B1 `b1-a0492ea5` "asegurar" = "to assure" |
+| congelar | B1 `b1-28d9e3a7` "(des)congelar" = "to freeze/defrost" | B1 `b1-01fea684` "congelar(se)" = "to freeze" |
+| a continuación | B1 `b1-d52d75e1` "a continuación" = "next" | B2 `b2-3ce95f31` "a continuación (de)" = "right after" |
+| anterior | B1 `b1-d8890d8d` "anterior" = "front" | B2 `b2-96c982a7` "(el) anterior" = "the previous one" |
+| cercano | B1 `b1-a80b3ee8` "cercano" = "nearby" | B2 `b2-c6fa106c` "cercano (a)" = "close (to)" |
+| redacción | B1 `b1-18f79971` "redacción" = "essay, composition (writing)" | B2 `b2-18f79971` "redacción" = "newsroom" |
+| soso | B1 `b1-5c462734` "soso" = "bland" | B2 `b2-5c462734` "soso" = "tasteless" |
+| matrícula | B1 `b1-2b51c979` "matrícula" = "enrollment" | B2 `b2-dc1320de` "(número de) matrícula" = "license plate (number)" |
+| economía | B1 `b1-f125a436` "(sección de) economía" = "business section" | B1 `b1-3cde4d27` "economía" = "economy" |
+| ponerse malo | B1 `b1-0c94594c` "ponerse malo" = "to get sick" | B2 `b2-0c94594c` "ponerse malo" = "to go off" |
+| dar un golpe | B1 `b1-1c183ff2` "dar(se) un golpe" = "to bump/hit oneself" | B2 `b2-1c183ff2` "dar(se) un golpe" = "to crash into something" |
+| conserje | B1 `b1-647a698a` "conserje" = "concierge" | B2 `b2-647a698a` "conserje" = "caretaker" |
+| vía | B1 `b1-37caec07` "vía" = "track" | B2 `b2-37caec07` "vía" = "way" |
+| comercio | B1 `b1-592bd52a` "comercio" = "trade" | B2 `b2-592bd52a` "comercio" = "commerce" |
+| materia | B1 `b1-f5c44c2b` "materia" = "matter" | B2 `b2-a28af733` "materia (prima)" = "raw material" |
+| comunidad | B1 `b1-58b01ddb` "comunidad" = "community" | B2 `b2-87008906` "comunidad (de vecinos)" = "residents' association" |
+| congreso | B1 `b1-430a9940` "congreso" = "congress" | B2 `b2-430a9940` "congreso" = "conference" |
+| vista | B1 `b1-75a31fd0` "vista" = "view" | B2 `b2-75a31fd0` "vista" = "eyesight" |
+| parque natural | B1 `b1-60dd3ee8` "parque natural" = "natural park" | B2 `b2-60dd3ee8` "parque natural" = "nature reserve" |
+| empleo | B1 `b1-ae7cb2ac` "empleo" = "job" | B1 `b1-bd7f4e2e` "(des)empleo" = "(un)employment" |
+| lejano | B2 `b2-41dc1eb4` "lejano (a)" = "far (from)" | B2 `b2-49520d21` "lejano" = "distant" |
+| por abajo | B2 `b2-c170d049` "por abajo (de)" = "underneath" | B2 `b2-047c851c` "por abajo" = "from the bottom" |
+| pinchar | B2 `b2-ea5871f7` "pinchar(se) (una rueda)" = "to get a flat tire" | B2 `b2-7194d174` "pinchar" = "to click" |
+
+### Szinonima-csoportok (219, sima törlés, nincs senses.json)
+
+| normalizált es | megtartva | törölt |
+|---|---|---|
+| tener | A1 `a1-1ab1b3e3` "tener" | A2 `a2-1ab1b3e3` "tener" |
+| haber | A1 `a1-1b94c09a` "haber" | A2 `a2-1b94c09a` "haber" |
+| ser | A1 `a1-605d3374` "ser" | A2 `a2-605d3374` "ser" |
+| encontrar | A1 `a1-cc04dcdc` "encontrar" | B1 `b1-e3795368` "encontrar (algo)" |
+| precio | A1 `a1-363da8b7` "precio" | A2 `a2-363da8b7` "precio" |
+| corto | A1 `a1-a523e566` "corto" | B2 `b2-2be975bf` "corto (metraje)" |
+| lejos | A1 `a1-144962e3` "lejos (de)" | A1 `a1-96b5d8f2` "lejos" |
+| a la derecha | A1 `a1-050bc4fe` "a la derecha (de)" | A1 `a1-058471a8` "a la derecha"; B1 `b1-050bc4fe` "a la derecha (de)" |
+| a la izquierda | A1 `a1-1c3792cb` "a la izquierda (de)" | A1 `a1-e1ffea86` "a la izquierda"; B1 `b1-1c3792cb` "a la izquierda (de)" |
+| al final | A1 `a1-0aab1f04` "al final (de)" | B1 `b1-0aab1f04` "al final (de)"; B1 `b1-74aa37b1` "al final" |
+| entre | A1 `a1-ed7ad1f6` "entre" | A2 `a2-ed7ad1f6` "entre" |
+| calle | A1 `a1-8f9f97eb` "calle" | A2 `a2-8f9f97eb` "calle" |
+| caminar | A1 `a1-34f76036` "caminar" | B1 `b1-851c2e6d` "caminar" |
+| antes | A1 `a1-cef4b5e9` "antes" | A2 `a2-cef4b5e9` "antes" |
+| detrás | A1 `a1-1637f2cf` "detrás" | A2 `a2-ae85e826` "detrás (de)" |
+| fin de semana | A1 `a1-285fbe53` "el fin de semana" | A1 `a1-341a5930` "fin de semana" |
+| gafas | A1 `a1-959d918a` "gafas" | A2 `a2-959d918a` "gafas" |
+| ver | A1 `a1-5e0b8aa1` "ver" | A2 `a2-5e0b8aa1` "ver"; B1 `b1-2fb779d3` "ver (algo)" |
+| escuchar | A1 `a1-08571a9e` "escuchar" | A2 `a2-08571a9e` "escuchar" |
+| naranja | A1 `a1-3cf34940` "naranja" | A2 `a2-3cf34940` "naranja" |
+| viejo | A1 `a1-da6dfa2b` "viejo" | A2 `a2-da6dfa2b` "viejo" |
+| salida | A1 `a1-0b38ae75` "salida" | A2 `a2-7ad19951` "salida" |
+| cerrar | A1 `a1-13c4f05a` "cerrar" | B2 `b2-13c4f05a` "cerrar" |
+| bueno | A1 `a1-28e5793a` "bueno" | A2 `a2-28e5793a` "bueno" |
+| malo | A1 `a1-bf7cdc72` "malo" | A2 `a2-bf7cdc72` "malo" |
+| bien | A1 `a1-5a32ead2` "(muy) bien" | A1 `a1-d4e2f608` "bien" |
+| cambio | A1 `a1-3e178482` "cambio" | B1 `b1-93cf094f` "cambio" |
+| ser moreno | A1 `a1-0f0b5b56` "ser moreno" | B1 `b1-f02ef2ac` "ser moreno (de piel)" |
+| pintar | A1 `a1-48d4cd11` "pintar" | B1 `b1-6efb2f76` "pintar" |
+| antiguo | A1 `a1-a8be1b78` "antiguo" | B1 `b1-bd17811d` "antiguo" |
+| levantarse | A1 `a1-2e1b710d` "levantarse" | B1 `b1-2e1b710d` "levantarse" |
+| inteligente | A1 `a1-a1d7da7c` "inteligente" | A2 `a2-33aa91b9` "inteligente" |
+| serio | A1 `a1-ee6093af` "serio" | A2 `a2-76e69820` "serio" |
+| edad | A1 `a1-287c5312` "edad" | B1 `b1-287c5312` "edad" |
+| joven | A1 `a1-18ad3550` "joven" | A2 `a2-18ad3550` "joven" |
+| familia | A1 `a1-3b660a83` "familia" | B2 `b2-3b660a83` "familia" |
+| vino blanco | A1 `a1-98462fdf` "vino blanco" | A2 `a2-98462fdf` "vino blanco" |
+| vino tinto | A1 `a1-57219a77` "vino tinto" | A2 `a2-57219a77` "vino tinto" |
+| actividad | A1 `a1-5347c609` "actividad" | B1 `b1-5347c609` "actividad" |
+| pregunta | A1 `a1-0524ae33` "pregunta" | A2 `a2-0524ae33` "pregunta" |
+| entender | A1 `a1-42bd1643` "entender" | B1 `b1-42bd1643` "entender" |
+| comprender | A1 `a1-15725a66` "comprender" | A2 `a2-4e747478` "comprender" |
+| practicar | A1 `a1-6d611149` "practicar" | B1 `b1-6d611149` "practicar" |
+| papel | A1 `a1-cb030c5e` "papel" | A2 `a2-cb030c5e` "papel" |
+| trabajar | A1 `a1-5d26b8f2` "trabajar (en)" | A1 `a1-a4adaa62` "trabajar" |
+| fax | A1 `a1-da41abc0` "fax" | A2 `a2-da41abc0` "fax" |
+| correr | A1 `a1-43e97870` "correr" | A2 `a2-43e97870` "correr" |
+| hacer deporte | A1 `a1-aa153cb1` "hacer deporte" | A2 `a2-aa153cb1` "hacer deporte" |
+| hacer ejercicio | A1 `a1-94113f9f` "hacer ejercicio" | A2 `a2-94113f9f` "hacer ejercicio"; B2 `b2-94113f9f` "hacer ejercicio" |
+| todavía | A1 `a1-ada4eb2a` "todavía" | B1 `b1-dc3c29a6` "todavía (no)" |
+| hacer gimnasia | A1 `a1-127a0261` "hacer gimnasia" | A2 `a2-127a0261` "hacer gimnasia"; B2 `b2-127a0261` "hacer gimnasia" |
+| televisión | A1 `a1-bf6e4067` "televisión" | A1 `a1-6316b04a` "televisión (TV)" |
+| quiosco | A1 `a1-60439c2e` "quiosco" | A2 `a2-60439c2e` "quiosco" |
+| duro | A1 `a1-ca4f31ae` "duro" | B2 `b2-53af8c2c` "duro" |
+| jardín | A1 `a1-152b0c98` "jardín" | A2 `a2-152b0c98` "jardín" |
+| ducha | A1 `a1-976df5d6` "ducha" | A2 `a2-976df5d6` "ducha" |
+| dvd | A1 `a1-a61906a1` "DVD" | A2 `a2-a61906a1` "DVD" |
+| tarjeta | A1 `a1-a4f56575` "tarjeta (de crédito)" | A1 `a1-c1048c64` "tarjeta" |
+| billete | A1 `a1-4f28f744` "billete" | A2 `a2-4f28f744` "billete" |
+| publicidad | A1 `a1-701e7d7e` "publicidad" | A2 `a2-701e7d7e` "publicidad" |
+| carretera | A1 `a1-157a7200` "carretera" | A2 `a2-157a7200` "carretera" |
+| entrevista | A1 `a1-4f47cb40` "entrevista" | B1 `b1-24c11764` "entrevista" |
+| aparcamiento | A1 `a1-98736edd` "aparcamiento" | B1 `b1-98736edd` "aparcamiento" |
+| presidente | A1 `a1-5cfbb084` "presidente" | A2 `a2-5cfbb084` "presidente" |
+| edificio | A1 `a1-affe4c6c` "edificio" | A2 `a2-affe4c6c` "edificio" |
+| monumento | A1 `a1-b4b82088` "monumento" | A2 `a2-b4b82088` "monumento" |
+| catedral | A1 `a1-6c351bdc` "catedral" | A2 `a2-6c351bdc` "catedral" |
+| iglesia | A1 `a1-f163153f` "iglesia" | A2 `a2-f163153f` "Iglesia" |
+| cristiano | A1 `a1-1ce45b47` "cristiano" | B1 `b1-1ce45b47` "cristiano" |
+| centro comercial | A1 `a1-a34acec5` "centro comercial" | A2 `a2-a34acec5` "centro comercial" |
+| colegio | A1 `a1-a1f9819c` "colegio" | A2 `a2-a1f9819c` "colegio" |
+| barrio | A1 `a1-2ce33323` "barrio" | A2 `a2-2ce33323` "barrio" |
+| azúcar | A1 `a1-59c21812` "azúcar" | A2 `a2-59c21812` "azúcar" |
+| gracias | A1 `a1-a30b3970` "gracias" | B1 `b1-a30b3970` "gracias" |
+| hueso | A1 `a1-72cd55ac` "hueso" | B2 `b2-e7d715d8` "hueso" |
+| buzón | A1 `a1-c25345c1` "buzón" | B1 `b1-a12f41f5` "buzón (de correos)" |
+| entrenar | A1 `a1-6fcb40ad` "entrenar(se)" | A1 `a1-cdd20898` "entrenar" |
+| estar sentado | A2 `a2-cf732fea` "estar sentado" | B1 `b1-cf732fea` "estar sentado" |
+| distancia | A2 `a2-a4b3d4fc` "distancia" | B1 `b1-a4b3d4fc` "distancia" |
+| total | A2 `a2-d515331b` "total" | B2 `b2-5a537e20` "total" |
+| grupo | A2 `a2-d1df2f5f` "grupo" | B1 `b1-3acd56d5` "grupo (musical)" |
+| hace un momento | A2 `a2-91494565` "hace un momento" | B1 `b1-91494565` "hace un momento" |
+| ya | A2 `a2-e92fc4e2` "ya" | B1 `b1-6a42348f` "ya (no)"; B2 `b2-e92fc4e2` "ya" |
+| espacio | A2 `a2-83097082` "espacio" | B2 `b2-6e1e6776` "espacio" |
+| estación | A2 `a2-927c75cc` "estación (del año)" | B1 `b1-927c75cc` "estación (del año)" |
+| toda la mañana | A2 `a2-fbff2020` "toda la mañana" | B2 `b2-fbff2020` "toda la mañana" |
+| todo el día | A2 `a2-feb62f38` "todo el día" | B2 `b2-feb62f38` "todo el día" |
+| cuadrado | A2 `a2-80e7adc1` "cuadrado" | B1 `b1-80e7adc1` "cuadrado" |
+| caer | A2 `a2-dfa5ab80` "caer" | A2 `a2-fa768f5e` "caer(se)" |
+| parar | A2 `a2-6aadcb2f` "parar(se)" | A2 `a2-56b62493` "parar" |
+| orden | A2 `a2-3712246f` "orden" | A2 `a2-4c1fb51a` "(des)orden" |
+| primero | A2 `a2-957fb763` "primero" | B1 `b1-a8f63ebb` "(el) primero" |
+| útil | A2 `a2-d16c8b5e` "útil" | B1 `b1-d16c8b5e` "útil" |
+| santo | A2 `a2-24271fc5` "santo" | B2 `b2-ca066736` "santo" |
+| oído | A2 `a2-e0bea26f` "oído" | B2 `b2-e0bea26f` "oído" |
+| crecer | A2 `a2-c722afa1` "crecer" | B1 `b1-c722afa1` "crecer"; B2 `b2-c722afa1` "crecer" |
+| prefijo | A2 `a2-85d51065` "prefijo" | B1 `b1-85d51065` "prefijo" |
+| futuro | A2 `a2-b0aea6e6` "futuro" | B2 `b2-daa24f33` "futuro" |
+| receta | A2 `a2-7c712919` "receta" | B1 `b1-7c712919` "receta" |
+| línea | A2 `a2-a017d361` "línea" | B1 `b1-55ebd3c1` "línea (ocupada)" |
+| aprobar | A2 `a2-decfe095` "aprobar" | B1 `b1-c1933634` "aprobar" |
+| historia | A2 `a2-64c2b8d9` "Historia" | B1 `b1-64c2b8d9` "historia" |
+| adivinar | A2 `a2-f9d0eba6` "adivinar" | B1 `b1-f9d0eba6` "adivinar" |
+| funcionario | A2 `a2-3802bbe7` "funcionario" | B1 `b1-3802bbe7` "funcionario" |
+| ropa de trabajo | A2 `a2-d7e4635f` "Ropa de trabajo" | B1 `b1-d7e4635f` "Ropa de trabajo"; B2 `b2-d7e4635f` "Ropa de trabajo" |
+| tomar una copa | A2 `a2-03bd8995` "tomar una copa" | B1 `b1-03bd8995` "tomar una copa" |
+| musical | A2 `a2-fe0feb3c` "musical" | A2 `a2-7f70a3ce` "(un) musical" |
+| montar en bicicleta | A2 `a2-55b16311` "montar en bicicleta" | B1 `b1-55b16311` "montar en bicicleta" |
+| hacer senderismo | A2 `a2-5505b787` "hacer senderismo" | B1 `b1-5505b787` "hacer senderismo" |
+| enviar | A2 `a2-d22aed21` "enviar" | B1 `b1-d22aed21` "enviar" |
+| dejar un mensaje | A2 `a2-8876f906` "dejar un mensaje" | B1 `b1-8876f906` "dejar un mensaje" |
+| virus | A2 `a2-68bb75d2` "virus" | B1 `b1-a279db67` "virus" |
+| propietario | A2 `a2-3ed65aec` "propietario" | B1 `b1-3ed65aec` "propietario" |
+| victoria | A2 `a2-21f542d3` "victoria" | B2 `b2-d714d845` "victoria" |
+| hacer la compra | A2 `a2-52b6f359` "hacer la compra" | B1 `b1-52b6f359` "hacer la compra" |
+| especial | A2 `a2-309a93d9` "especial" | B2 `b2-569b1c7e` "especial" |
+| idea | A2 `a2-0a73baf2` "idea" | B2 `b2-76625061` "idea" |
+| botas | A2 `a2-13c9bd54` "botas" | A2 `a2-985b3b2d` "botas (de montaña)"; B1 `b1-13c9bd54` "botas" |
+| pagar en efectivo | A2 `a2-a0ab4edf` "pagar en efectivo" | B1 `b1-a0ab4edf` "pagar en efectivo" |
+| urgencias | A2 `a2-f39ea4a8` "urgencias" | B1 `b1-f39ea4a8` "urgencias" |
+| paciente | A2 `a2-43e092fb` "(im)paciente" | A2 `a2-238dcada` "paciente" |
+| montar en moto | A2 `a2-5e8daa07` "montar en moto" | B1 `b1-5e8daa07` "montar en moto" |
+| cheque | A2 `a2-ba743803` "cheque" | B1 `b1-82e7c1fa` "cheque (de viaje)"; B1 `b1-e0300c7d` "cheque" |
+| empleado | A2 `a2-f9f011a5` "empleado" | B1 `b1-f9f011a5` "empleado" |
+| cordero | A2 `a2-99c93466` "cordero" | B1 `b1-99c93466` "cordero" |
+| educación | A2 `a2-359dd51a` "educación" | B1 `b1-1a907bfd` "educación" |
+| ejército | A2 `a2-3c0071dc` "ejército" | B2 `b2-3c0071dc` "ejército" |
+| cuento | A2 `a2-5949d2e9` "cuento" | B1 `b1-5949d2e9` "cuento" |
+| cámara | A2 `a2-fc3a47fb` "cámara (de fotos)" | A2 `a2-0d07f0eb` "cámara" |
+| recordar | A2 `a2-421558bc` "recordar" | B2 `b2-af4d702a` "recordar" |
+| olvidar | A2 `a2-7f856203` "olvidar" | B2 `b2-29630133` "olvidar" |
+| señal | A2 `a2-56cb77b8` "señal" | B2 `b2-4900b120` "señal (de tráfico)" |
+| dividir | B1 `b1-377dc534` "dividir" | B2 `b2-377dc534` "dividir" |
+| calentar | B1 `b1-29c9fbfd` "calentar(se)" | B2 `b2-51bc100b` "calentar" |
+| al principio | B1 `b1-bd0f7746` "al principio (de)" | B1 `b1-2f137e76` "al principio" |
+| aniversario | B1 `b1-1e29c190` "aniversario" | B2 `b2-1e29c190` "aniversario" |
+| día festivo | B1 `b1-04dcaa43` "día festivo" | B2 `b2-04dcaa43` "día festivo" |
+| día laborable | B1 `b1-bdb8cb52` "día laborable" | B2 `b2-bdb8cb52` "día laborable" |
+| presente | B1 `b1-88b7ff90` "presente" | B2 `b2-88b7ff90` "presente" |
+| montar un negocio | B1 `b1-61967e4c` "montar un negocio" | B2 `b2-61967e4c` "montar un negocio" |
+| recto | B1 `b1-1e07b9ee` "recto" | B2 `b2-5190b193` "(estar) recto" |
+| aluminio | B1 `b1-2ef63117` "aluminio" | B2 `b2-2ef63117` "aluminio" |
+| organización | B1 `b1-6079e6cf` "(des)organización" | B1 `b1-70b1b0c1` "organización" |
+| dar igual | B1 `b1-ca2961bc` "dar igual" | B2 `b2-ca2961bc` "dar igual" |
+| expresión | B1 `b1-086720f7` "expresión" | B2 `b2-086720f7` "expresión" |
+| callado | B1 `b1-468e31e0` "callado" | B2 `b2-468e31e0` "callado" |
+| postura | B1 `b1-ce2dcbde` "postura" | B2 `b2-ce2dcbde` "postura" |
+| estar deprimido | B1 `b1-afec8d9e` "estar deprimido" | B2 `b2-afec8d9e` "estar deprimido" |
+| cansarse | B1 `b1-a8bac81b` "cansarse" | B2 `b2-a8bac81b` "cansarse" |
+| recién nacido | B1 `b1-2307a1ca` "recién nacido" | B2 `b2-2307a1ca` "recién nacido" |
+| anciano | B1 `b1-a2c88df8` "anciano" | B2 `b2-a2c88df8` "anciano" |
+| separación | B1 `b1-0f65a52e` "separación" | B2 `b2-0f65a52e` "separación" |
+| insistir | B1 `b1-ca59ff32` "insistir" | B2 `b2-66fae76b` "insistir (en)" |
+| fiesta de disfraces | B1 `b1-c0f4eb09` "fiesta de disfraces" | B2 `b2-c0f4eb09` "fiesta de disfraces" |
+| producto natural | B1 `b1-493fe980` "producto natural" | B2 `b2-493fe980` "producto natural" |
+| sabor agradable | B1 `b1-0e3d5738` "sabor agradable" | B2 `b2-9b7f2330` "sabor (des)agradable" |
+| equivocarse | B1 `b1-7d8414fd` "equivocarse" | B2 `b2-7d8414fd` "equivocarse" |
+| hacer una presentación | B1 `b1-61d54209` "hacer una presentación" | B2 `b2-61d54209` "hacer una presentación" |
+| demanda | B1 `b1-d961e8aa` "demanda" | B2 `b2-d961e8aa` "demanda" |
+| firmar un contrato | B1 `b1-93f009cf` "firmar un contrato" | B2 `b2-de64699e` "firmar un contrato (de alquiler)" |
+| poner una película | B1 `b1-f85a02d4` "poner una película" | B2 `b2-f85a02d4` "poner una película" |
+| comentario | B1 `b1-c248c235` "comentario" | B2 `b2-c248c235` "comentario" |
+| informar | B1 `b1-f76d1e3d` "informar" | B2 `b2-9a34b25e` "informar(se)"; B2 `b2-f76d1e3d` "informar" |
+| comunicarse con alguien por correo | B1 `b1-ede5c5f0` "comunicarse con alguien por correo (electrónico)" | B1 `b1-5d801ef4` "comunicarse con alguien por correo" |
+| justo | B1 `b1-36e96341` "(in)justo" | B1 `b1-34af5447` "justo" |
+| debate | B1 `b1-26fee417` "debate" | B2 `b2-26fee417` "debate" |
+| florero | B1 `b1-e7c93042` "florero" | B2 `b2-e7c93042` "florero" |
+| salida de emergencia | B1 `b1-8a28a9f0` "salida de emergencia" | B2 `b2-8a28a9f0` "salida de emergencia" |
+| garantía | B1 `b1-f2b946b7` "garantía" | B2 `b2-f2b946b7` "garantía" |
+| estar de oferta | B1 `b1-4ef4b2bc` "estar de oferta" | B2 `b2-4ef4b2bc` "estar de oferta" |
+| tener garantía | B1 `b1-90e3eee8` "tener garantía" | B2 `b2-90e3eee8` "tener garantía" |
+| estar caducado | B1 `b1-205bf8ca` "estar caducado" | B2 `b2-205bf8ca` "estar caducado" |
+| estar de baja | B1 `b1-d03542b9` "estar de baja" | B2 `b2-d03542b9` "estar de baja" |
+| estar agotado | B1 `b1-27a13d0a` "estar agotado" | B2 `b2-27a13d0a` "estar agotado" |
+| termómetro | B1 `b1-fdc75ba3` "termómetro" | B2 `b2-fdc75ba3` "termómetro" |
+| hacer un crucero | B1 `b1-6287b8d8` "hacer un crucero" | B2 `b2-6287b8d8` "hacer un crucero" |
+| fila | B1 `b1-47a5d765` "fila" | B2 `b2-47a5d765` "fila" |
+| hacer escala | B1 `b1-4b49a06d` "hacer escala" | B2 `b2-4b49a06d` "hacer escala" |
+| policía de tráfico | B1 `b1-5d8e4b67` "policía de tráfico" | B2 `b2-5d8e4b67` "policía de tráfico" |
+| hipoteca | B1 `b1-0d3e9377` "hipoteca" | B2 `b2-0d3e9377` "hipoteca" |
+| producción | B1 `b1-63746892` "producción" | B2 `b2-63746892` "producción" |
+| construcción | B1 `b1-3098cc7e` "construcción" | B2 `b2-3098cc7e` "construcción" |
+| físico | B1 `b1-325f0c41` "físico" | B2 `b2-325f0c41` "físico" |
+| químico | B1 `b1-73672bba` "químico" | B2 `b2-73672bba` "químico" |
+| historiador | B1 `b1-bf4d96d5` "historiador" | B2 `b2-bf4d96d5` "historiador" |
+| ciudadano | B1 `b1-2d3e9a4b` "ciudadano" | B1 `b1-2d2f971f` "ciudadano(s)" |
+| historia contemporánea | B1 `b1-34fe5d0a` "historia contemporánea" | B2 `b2-34fe5d0a` "Historia Contemporánea" |
+| ley | B1 `b1-afa13919` "ley" | B2 `b2-afa13919` "ley" |
+| general | B1 `b1-dfe2db74` "general" | B2 `b2-dfe2db74` "general" |
+| universal | B1 `b1-da5f51a1` "universal" | B2 `b2-da5f51a1` "universal" |
+| huerta | B1 `b1-888b4cb3` "huerta" | B2 `b2-888b4cb3` "huerta" |
+| raíz | B1 `b1-fd002ada` "raíz" | B2 `b2-fd002ada` "raíz" |
+| contenedor de papel | B1 `b1-ad5ce72c` "contenedor de papel" | B2 `b2-ad5ce72c` "contenedor de papel" |
+| contenedor de vidrio | B1 `b1-e4cf1d0f` "contenedor de vidrio" | B2 `b2-e4cf1d0f` "contenedor de vidrio" |
+| recursos naturales | B1 `b1-fd67333b` "recursos naturales" | B2 `b2-fd67333b` "recursos naturales" |
+| helar | B2 `b2-ba600bf7` "helar(se)" | B2 `b2-a413d2d8` "helar" |
+| colocado | B2 `b2-ee75ed6c` "colocado" | B2 `b2-b5daf6eb` "(des)colocado" |
+| doblado | B2 `b2-bb7a52f8` "(estar) doblado" | B2 `b2-df08f5d4` "doblado" |
+| alejado | B2 `b2-97b19f7b` "alejado (de)" | B2 `b2-13da3ced` "alejado" |
+| aislado | B2 `b2-664f2086` "aislado (de)" | B2 `b2-545f67ac` "aislado" |
+| por delante | B2 `b2-9650f06d` "por delante (de)" | B2 `b2-6c739193` "por delante" |
+| por detrás | B2 `b2-ea118c13` "por detrás (de)" | B2 `b2-c4ac90c0` "por detrás" |
+| por el principio | B2 `b2-398ec7a8` "por el principio (de)" | B2 `b2-20df41c0` "por el principio" |
+| por el final | B2 `b2-5333d3fd` "por el final (de)" | B2 `b2-44fe0602` "por el final" |
+| por arriba | B2 `b2-7d4024a5` "por arriba (de)" | B2 `b2-ca1d15cd` "por arriba" |
+| estabilidad | B2 `b2-54568480` "(in)estabilidad" | B2 `b2-82766bc8` "estabilidad" |
+| estar de moda | B2 `b2-cce9aae3` "estar de moda" | B2 `b2-53ebbdc0` "estar (pasado) de moda" |
+| aún | B2 `b2-64cc155f` "aún (no)" | B2 `b2-b9e1a24c` "aún" |
+| puntualidad | B2 `b2-da3b4c76` "puntualidad" | B2 `b2-912d12ed` "(im)puntualidad" |
+| ángulo | B2 `b2-7fac8c08` "ángulo" | B2 `b2-d0ea5642` "ángulo (recto)" |
+| invertir | B2 `b2-a0979246` "invertir" | B2 `b2-c5295542` "invertir (en)" |
+| tener facilidad para | B2 `b2-876c09dc` "tener facilidad para" | B2 `b2-81c31c85` "tener facilidad(es) para" |
+| tener facilidad con | B2 `b2-41cfb9d0` "tener facilidad con" | B2 `b2-26dec75c` "tener facilidad(es) con" |
+| reflexionar | B2 `b2-6c387e68` "reflexionar (sobre)" | B2 `b2-681d2ea1` "reflexionar" |
+| discreto | B2 `b2-9644293a` "(in)discreto" | B2 `b2-369ddfed` "discreto" |
+| sensibilidad | B2 `b2-afcb740d` "(in)sensibilidad" | B2 `b2-aee493f3` "sensibilidad" |
+| redactor | B2 `b2-0e4b2b12` "redactor (jefe)" | B2 `b2-c7f560ae` "redactor" |
+| hacer una transferencia | B2 `b2-94575acf` "hacer una transferencia (bancaria)" | B2 `b2-e2b8a3b4` "hacer una transferencia" |
+| fórmula | B2 `b2-cad89b0b` "fórmula" | B2 `b2-f29d692d` "fórmula (matemática)" |
