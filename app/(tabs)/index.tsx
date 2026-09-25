@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { StyleSheet, Text, View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard, Alert } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
@@ -93,6 +93,10 @@ export default function PcicScreen() {
   const [dockH, setDockH] = useState(DOCK_RESERVE);
   // FB350: a dokkolt sáv a billentyűzet fölé emelkedjen, mint a Learn fülön.
   const { dockLift } = useDockLift();
+  // FB391: a beviteli mező fókuszt kap minden ÚJ lapnál (lásd a FB319
+  // effektet lent), nem csak első mountkor (az `autoFocus` prop erre nem
+  // elég, mert a TextInput kártyaváltáskor nem remountol).
+  const inputRef = useRef<TextInput>(null);
 
   // PLAN-play 10. lépés: `overrideLevel` a szint-választó lapról jövő azonnali
   // váltásnak, hogy ne kelljen a setLevel-re várni egy render-kört (a db-be
@@ -154,13 +158,15 @@ export default function PcicScreen() {
   const current = queue[0];
   const currentItem = current ? findPcicItem(current.itemId) : undefined;
 
-  // FB319: az angol prompt felolvasása, amikor egy ÚJ lap kerül képernyőre.
-  // Csak a `current?.itemId` váltására fusson (a `grade` a closure-ből olvasva
+  // FB319/FB391: az angol prompt felolvasása ÉS a beviteli mező fókusza,
+  // amikor egy ÚJ lap kerül képernyőre (kinyílik a billentyűzet). Csak a
+  // `current?.itemId` váltására fusson (a `grade` a closure-ből olvasva
   // dönti el, hogy még nincs felfedve), felfedéskor (a `grade` state
-  // változásakor) ne ismételje.
+  // változásakor) ne ismételje - se a felolvasás, se a fókusz.
   useEffect(() => {
     if (!loading && currentItem && !grade) {
       speak(currentItem.en, speechLang('en'));
+      inputRef.current?.focus();
     }
     // PLAN-play 11. lépés: kártyaváltáskor a folyamatban lévő felolvasás
     // (pl. Check utáni szó+példamondat lánc) álljon le, LECKE-SEMA 3.3 minta.
@@ -542,12 +548,12 @@ export default function PcicScreen() {
           )}
 
           <TextInput
+            ref={inputRef}
             style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }]}
             value={typedAnswer}
             onChangeText={setTypedAnswer}
             onSubmitEditing={grade ? () => nextGrade && handleGrade(nextGrade) : handleCheck}
             editable={!grade}
-            autoFocus
             {...answerInputProps}
           />
 
