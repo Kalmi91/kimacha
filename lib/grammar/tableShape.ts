@@ -63,6 +63,23 @@ export function isConjugationTable(header: Lang4[], rows: string[][]): boolean {
   return rows.every((row) => isPersonLabel(row[0]));
 }
 
+// FB390: a reference table shaped like interrogativos.json's overview (row[0]
+// = an English meaning, e.g. "what"/"who"; row[1] = the single Spanish term
+// that means it, e.g. "qué"; further columns are extra reference context,
+// e.g. an example question, not part of the quiz). Detected by the author's
+// OWN English column label ("Meaning"), not by guessing from the row text,
+// so it only ever fires where the lesson explicitly framed the table this
+// way (interrogativos today; any future lesson with the same header wins
+// the same treatment automatically). Deliberately narrow: a table with a
+// different header (Person, Singular, Infinitive, ...) stays reference-only
+// and falls back to the word-deck, per PLAN-fb0924 2. lépés ("ha egy tábla
+// nem kérdezhető, ne erőltesd").
+export function isMeaningTable(header: Lang4[], rows: string[][]): boolean {
+  if (header.length < 2 || rows.length === 0) return false;
+  if (header[0].en.trim().toLowerCase() !== 'meaning') return false;
+  return !isConjugationTable(header, rows);
+}
+
 // Az infinitivus utolsó 2 betűje nélkül számolt "névelő nélküli" igeosztály;
 // visszaható igénél a "se" előbb lekerül (levantarse -> levantar -> ar).
 export function verbClassOf(infinitive: string): VerbClass | null {

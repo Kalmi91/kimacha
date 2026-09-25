@@ -78,6 +78,33 @@ describe('tableCellsForLesson', () => {
     const cells = tableCellsForLesson(lesson);
     expect(cells.every((c) => c.enPrompt === undefined)).toBe(true);
   });
+
+  // FB390: interrogativos' table is a MEANING reference table (row[0] = "what",
+  // "who", ... ; row[1] = the Spanish term), not a conjugation table, so it used
+  // to give 0 table cells and fall back to the word-deck - where the question
+  // words themselves are filtered out as closed-class (FUNCTION_WORDS_ES),
+  // leaving only glossary::/example-sentence words like "prefieres".
+  it('interrogativos: the meaning table gives a cell per question word, prompt = English meaning', () => {
+    const lesson = lessonFor('es', 'interrogativos')!;
+    const cells = tableCellsForLesson(lesson);
+    expect(cells.length).toBeGreaterThanOrEqual(12);
+    expect(cells.every((c) => c.id.startsWith('interrogativos::'))).toBe(true);
+    // No glossary:: id leaked in from the word-deck fallback.
+    expect(cells.some((c) => c.id.startsWith('glossary::'))).toBe(false);
+
+    const what = cells.find((c) => c.enPrompt === 'what');
+    expect(what?.answer).toBe('qué');
+    const whoCell = cells.find((c) => c.enPrompt === 'who');
+    expect(whoCell?.answer).toBe('quién');
+    // No fake "infinitive" caption for a meaning cell (app/grammar/deck/[topic].tsx
+    // only shows it when `verb` is non-empty).
+    expect(cells.every((c) => c.verb === '')).toBe(true);
+  });
+
+  it('a reference table with a different header (Person, Singular, ...) still falls back to 0 cells, not forced', () => {
+    const lesson = lessonFor('es', 'sustantivo-numero')!;
+    expect(tableCellsForLesson(lesson)).toEqual([]);
+  });
 });
 
 // FB377: the deck no longer walks the cells in table order (a fixed "yo ·
