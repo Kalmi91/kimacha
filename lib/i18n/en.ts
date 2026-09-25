@@ -249,6 +249,10 @@ export default {
     badgeDue: (n: number) => `due ${n}`,
     badgeNew: (n: number) => `new ${n}`,
     badgeDone: (n: number) => `done ${n}`,
+    // FB387/395 (PLAN-fb0924 1b. lépés): a mai bevezetés szó/mondat bontásban +
+    // a mai teljes keret (napi limit + az 1a "+10" bónusz), pl. "today: 6 words · 4 sentences / 10".
+    badgeIntroducedToday: (words: number, sentences: number, budget: number) =>
+      `today: ${words} word${words === 1 ? '' : 's'} · ${sentences} sentence${sentences === 1 ? '' : 's'} / ${budget}`,
     // T1 only shows again/good (index.tsx GRADES), but `s.pcic[g]` indexes by
     // the full Sm2Grade type, so hard/easy stay for TS even though unreachable.
     again: "Didn't know",

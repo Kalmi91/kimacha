@@ -2,6 +2,7 @@
 
 import {
   countDoneToday,
+  countIntroducedTodayByKind,
   requeueAfterGrade,
   requeueAfterUndo,
   reorderForReturn,
@@ -10,6 +11,7 @@ import {
   type QueuedSm2Card,
 } from '../pcicSession';
 import { sm2NewCard, sm2Review, pickSm2Session, addDays, type Sm2Card } from '../sm2';
+import type { PcicKind } from '@/data/pcic';
 
 const TODAY = '2026-09-18';
 const TOMORROW = addDays(TODAY, 1);
@@ -264,5 +266,50 @@ describe('nextPcicNewBonus + pcicNewBudget (FB385/386)', () => {
     const introducedToday = 3;
     const budgetWithYesterdaysBonusExpired = pcicNewBudget({ limit, bonus: 0, introducedToday });
     expect(budgetWithYesterdaysBonusExpired).toBe(10); // back to the standing limit, no leftover bonus
+  });
+});
+
+// FB387/395 (PLAN-fb0924 1b. lépés): a fejléc "ma: N szó · M mondat / keret"
+// felbontása - a KIND szerinti szétválasztás, amit a "miért csak 6 vagy 8 jött 10
+// helyett" panasz (FB387/395) valójában hiányolt (a maradék a másik fajtára ment).
+function kindMap(map: Record<string, PcicKind>): (itemId: string) => PcicKind | undefined {
+  return (itemId) => map[itemId];
+}
+
+describe('countIntroducedTodayByKind (FB387/395)', () => {
+  it('szétválasztja a ma bevezetett szó- és mondat-kártyákat', () => {
+    const cards = [
+      reviewCard({ itemId: 'w1', introducedAt: TODAY }),
+      reviewCard({ itemId: 'w2', introducedAt: TODAY }),
+      reviewCard({ itemId: 's1', introducedAt: TODAY }),
+      reviewCard({ itemId: 's2', introducedAt: TODAY }),
+      reviewCard({ itemId: 's3', introducedAt: TODAY }),
+    ];
+    const kindOf = kindMap({ w1: 'word', w2: 'word', s1: 'sentence', s2: 'sentence', s3: 'sentence' });
+    expect(countIntroducedTodayByKind(cards, TODAY, kindOf)).toEqual({ words: 2, sentences: 3 });
+  });
+
+  it('a phrase és a pattern is a szó-vödörbe esik, a lánc-mondat a mondat-vödörbe', () => {
+    const cards = [
+      reviewCard({ itemId: 'p1', introducedAt: TODAY }),
+      reviewCard({ itemId: 'pat1', introducedAt: TODAY }),
+      reviewCard({ itemId: 'chain-2', introducedAt: TODAY }), // lánc-tag, de kind: sentence
+    ];
+    const kindOf = kindMap({ p1: 'phrase', pat1: 'pattern', 'chain-2': 'sentence' });
+    expect(countIntroducedTodayByKind(cards, TODAY, kindOf)).toEqual({ words: 2, sentences: 1 });
+  });
+
+  it('csak a MA bevezetett kártyákat számolja, a tegnapiakat nem', () => {
+    const cards = [
+      reviewCard({ itemId: 'today1', introducedAt: TODAY }),
+      reviewCard({ itemId: 'yesterday1', introducedAt: addDays(TODAY, -1) }),
+      sm2NewCard('never-introduced'), // introducedAt: null
+    ];
+    const kindOf = kindMap({ today1: 'word', yesterday1: 'word', 'never-introduced': 'word' });
+    expect(countIntroducedTodayByKind(cards, TODAY, kindOf)).toEqual({ words: 1, sentences: 0 });
+  });
+
+  it('üres kártyalistára {0, 0}-t ad', () => {
+    expect(countIntroducedTodayByKind([], TODAY, () => undefined)).toEqual({ words: 0, sentences: 0 });
   });
 });
