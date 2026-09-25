@@ -2,8 +2,10 @@ import presenteRegular from '@/data/games/grammar/es/presente-regular.json';
 import hayEstar from '@/data/games/grammar/es/hay-estar.json';
 import serEstar from '@/data/games/grammar/es/ser-estar.json';
 import verbosReflexivos from '@/data/games/grammar/es/verbos-reflexivos.json';
+import interrogativos from '@/data/games/grammar/es/interrogativos.json';
+import sustantivoNumero from '@/data/games/grammar/es/sustantivo-numero.json';
 import type { LessonV2 } from '../grammar/lessonTypes';
-import { isConjugationTable, splitStemEnding, verbClassOf, verbColumnColor } from '../grammar/tableShape';
+import { isConjugationTable, isMeaningTable, splitStemEnding, verbClassOf, verbColumnColor } from '../grammar/tableShape';
 
 function tableBlock(lesson: unknown, id: string) {
   const body = (lesson as LessonV2).body;
@@ -92,5 +94,29 @@ describe('isConjugationTable', () => {
   it('is false for a reference table (hay/estar)', () => {
     const block = tableBlock(hayEstar, 'hay-estar-articulo');
     expect(isConjugationTable(block.header, block.rows)).toBe(false);
+  });
+});
+
+// FB390: header[0].en === "Meaning" is the (deliberately narrow) signal for
+// a quizzable "English meaning -> Spanish term" reference table.
+describe('isMeaningTable', () => {
+  it('is true for interrogativos (Meaning | Question word | ...)', () => {
+    const block = tableBlock(interrogativos, 'interrogativos');
+    expect(isMeaningTable(block.header, block.rows)).toBe(true);
+  });
+
+  it('is false for a conjugation table (presente-regular)', () => {
+    const block = tableBlock(presenteRegular, 'presente-regular');
+    expect(isMeaningTable(block.header, block.rows)).toBe(false);
+  });
+
+  it('is false for a reference table with a different header (hay/estar: "What follows")', () => {
+    const block = tableBlock(hayEstar, 'hay-estar-articulo');
+    expect(isMeaningTable(block.header, block.rows)).toBe(false);
+  });
+
+  it('is false for a reference table with a different header (sustantivo-numero: "Singular")', () => {
+    const block = tableBlock(sustantivoNumero, 'plural');
+    expect(isMeaningTable(block.header, block.rows)).toBe(false);
   });
 });

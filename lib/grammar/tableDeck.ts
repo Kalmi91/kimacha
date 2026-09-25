@@ -14,7 +14,7 @@
 
 import type { GrammarGapItem, GrammarItem, GrammarMarkItem, GrammarTopicData } from '../games/content';
 import { isLessonV2, isMatchItem, isTransformItem, isWhyItem } from '../games/content';
-import { isConjugationTable } from './tableShape';
+import { isConjugationTable, isMeaningTable } from './tableShape';
 import { DEFAULT_AGAIN_DELAY_SEC } from '../pcicSession';
 import type { ExamplePair, Lang4, LessonV2 } from './lessonTypes';
 import { PCIC_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
@@ -74,7 +74,12 @@ const VOSOTROS_PERSONS = new Set(['vosotros', 'vosotros/vosotras']);
  * Every cell of every CONJUGATION table in a lesson (decision (a): reference
  * GridTables, e.g. hay-estar's article table, are excluded), vosotros rows
  * dropped, and the same person+verb pair counted once even if it somehow
- * repeats across two tables in the same lesson.
+ * repeats across two tables in the same lesson. FB390: a MEANING table
+ * (isMeaningTable, e.g. interrogativos' "what -> qué" overview) is quizzed
+ * the same way - prompt = the English meaning (row[0], shown via enPrompt),
+ * answer = the Spanish term (row[1]) - instead of falling back to the
+ * word-deck, where the target terms are often closed-class words
+ * (qué/quién/dónde...) filtered out by FUNCTION_WORDS_ES below.
  */
 export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined): DeckCell[] {
   if (!lesson || !isLessonV2(lesson)) return [];
@@ -82,22 +87,33 @@ export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined)
   const seen = new Set<string>();
   for (const block of lesson.body) {
     if (block.kind !== 'table') continue;
-    if (!isConjugationTable(block.header, block.rows)) continue;
-    const verbHeaders = block.header.slice(1);
-    block.rows.forEach((row, ri) => {
-      const person = row[0];
-      if (VOSOTROS_PERSONS.has(normalizePerson(person))) return;
-      for (let ci = 0; ci < verbHeaders.length; ci++) {
-        const verb = verbHeaders[ci].es;
-        const answer = row[ci + 1];
-        if (!answer) continue;
-        const key = `${normalizePerson(person)}::${verb.toLowerCase()}`;
-        if (seen.has(key)) continue;
+    if (isConjugationTable(block.header, block.rows)) {
+      const verbHeaders = block.header.slice(1);
+      block.rows.forEach((row, ri) => {
+        const person = row[0];
+        if (VOSOTROS_PERSONS.has(normalizePerson(person))) return;
+        for (let ci = 0; ci < verbHeaders.length; ci++) {
+          const verb = verbHeaders[ci].es;
+          const answer = row[ci + 1];
+          if (!answer) continue;
+          const key = `${normalizePerson(person)}::${verb.toLowerCase()}`;
+          if (seen.has(key)) continue;
+          seen.add(key);
+          const enPrompt = block.enPrompt?.[ri]?.[ci];
+          cells.push({ id: `${block.id}::${key}`, person, verb, answer, ...(enPrompt ? { enPrompt } : {}) });
+        }
+      });
+    } else if (isMeaningTable(block.header, block.rows)) {
+      block.rows.forEach((row) => {
+        const meaning = row[0];
+        const answer = row[1];
+        if (!meaning || !answer) return;
+        const key = normalizePerson(meaning);
+        if (seen.has(key)) return;
         seen.add(key);
-        const enPrompt = block.enPrompt?.[ri]?.[ci];
-        cells.push({ id: `${block.id}::${key}`, person, verb, answer, ...(enPrompt ? { enPrompt } : {}) });
-      }
-    });
+        cells.push({ id: `${block.id}::${key}`, person: meaning, verb: '', answer, enPrompt: meaning });
+      });
+    }
   }
   return cells;
 }
