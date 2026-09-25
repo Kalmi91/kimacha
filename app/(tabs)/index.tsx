@@ -20,7 +20,7 @@ import {
   type ArticlePick,
 } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC } from '@/lib/pcicSession';
+import { countDoneToday, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget } from '@/lib/pcicSession';
 import { applyChainOrder } from '@/lib/pcicChains';
 import { cardsForLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
@@ -77,9 +77,10 @@ export default function PcicScreen() {
   const [sessionNew, setSessionNew] = useState(0);
   const [sessionAgain, setSessionAgain] = useState(0);
   const [lastGraded, setLastGraded] = useState<UndoEntry | null>(null);
-  // FB314: a "+10 új szó" gombbal bővített napi keret; load() (fókusz-váltás,
-  // új nap) nullázza, a menet közbeni értékelések nem érintik.
-  const [extraNew, setExtraNew] = useState(0);
+  // FB385/386: a "+10 új szó" gombbal bővített napi keret, a
+  // learn_settings.new_bonus/new_bonus_date oszlopokban perzisztálva (a
+  // naptári nappal lejár); load() a DB-ből olvassa vissza, nem nullázza.
+  const [pcicBonus, setPcicBonus] = useState(0);
   // PLAN-play 12. lépés (C): a Beállítások "Napi új szó" (learn_settings.daily_new_limit,
   // eddig csak a törölt Tanulás fül olvasta) mostantól a PCIC napi új tételeinek
   // számát is adja; a fejléc "new" chipje ebből számol (queue state === 'new').
@@ -107,6 +108,8 @@ export default function PcicScreen() {
     const newLimit = await db.getDailyNewLimit();
     const delaySec = await db.getAgainDelaySec();
     const spellingRows = await db.getPcicSpellingList();
+    const bonus = await db.getPcicNewBonus(day);
+    const introducedToday = cards.filter((c) => c.introducedAt === day).length;
     setLevel(lvl);
     setAllLevelCards(rawCards);
     setStrictAccents(strict);
@@ -115,14 +118,14 @@ export default function PcicScreen() {
     setPcicSpellingIds(new Set(spellingRows.map((r) => r.itemId)));
     setToday(day);
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
-    setQueue(pickSm2Session(cards, applyChainOrder(newOrder, cards, lvl), day, newLimit));
+    setQueue(pickSm2Session(cards, applyChainOrder(newOrder, cards, lvl), day, pcicNewBudget({ limit: newLimit, bonus, introducedToday })));
     setTypedAnswer('');
     setGrade(null);
     setSessionAnswered(0);
     setSessionNew(0);
     setSessionAgain(0);
     setLastGraded(null);
-    setExtraNew(0);
+    setPcicBonus(bonus);
     setLoading(false);
     // setTypedAnswer is listed because the React Compiler infers it as a
     // dependency of this async callback (FB minta, lásd app/spelling.tsx); it
@@ -296,13 +299,23 @@ export default function PcicScreen() {
     }
   };
 
-  // FB314: nincs több esedékes/új lap, de a témakörben van még be nem
-  // vezetett tétel; ez a napi keretet bővíti +10-zel és újraépíti a sort.
+  // FB314/385/386: nincs több esedékes/új lap, de a témakörben van még be
+  // nem vezetett tétel; ez a napi keretet bővíti +10-zel (perzisztálva,
+  // a naptári nappal lejár) és újraépíti a sort.
   const handleMoreNew = () => {
-    const next = extraNew + 10;
-    setExtraNew(next);
     const activeCards = [...allCards.values()];
-    setQueue(pickSm2Session(activeCards, applyChainOrder(newOrder, activeCards, level), today, dailyNewLimit + next));
+    const introducedToday = activeCards.filter((c) => c.introducedAt === today).length;
+    const next = nextPcicNewBonus({ limit: dailyNewLimit, bonus: pcicBonus, introducedToday });
+    setPcicBonus(next);
+    getDb().setPcicNewBonus(next, today).catch(() => {});
+    setQueue(
+      pickSm2Session(
+        activeCards,
+        applyChainOrder(newOrder, activeCards, level),
+        today,
+        pcicNewBudget({ limit: dailyNewLimit, bonus: next, introducedToday })
+      )
+    );
   };
 
   // s1 (anki-ui-terv.html): a fejléc ELSŐ chipje a kiválasztott szint,
