@@ -4,7 +4,7 @@ import { FORCED_PAIR, needsPairCorrection } from './languages';
 import { WORD_MERGES } from './wordMerges';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 import { addDays, type Sm2Card } from './sm2';
-import { pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
+import { pcicItemsForLevel, type PcicLevel, type PcicViewLevel } from '@/data/pcic';
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
 import type { MistakeBatchRow } from './mistakes/deck';
 
@@ -56,8 +56,8 @@ export interface DB {
   getPcicCards(): Promise<Sm2Card[]>;
   upsertPcicCard(card: Sm2Card): Promise<void>;
   getPcicStats(today: string): Promise<{ total: number; newIntroducedToday: number; dueToday: number; learned: number }>;
-  getPcicLevel(): Promise<PcicLevel>;
-  setPcicLevel(level: PcicLevel): Promise<void>;
+  getPcicLevel(): Promise<PcicViewLevel>;
+  setPcicLevel(level: PcicViewLevel): Promise<void>;
   resetPcicCards(levelPrefix?: string): Promise<void>;
   // PLAN-hibaim.md 2. lépés: a "Hibáim" kötegek és a hozzájuk tartozó SM-2
   // haladás, a pcic_cards-tól elkülönítve.
@@ -396,13 +396,13 @@ class MemoryDB implements DB {
   // PLAN-play 10. lépés: a kiválasztott PCIC szint, memória-tükör (mint a
   // status-bar tint), alap B1, hogy egy meglévő telepítés progressze ("b1-...")
   // ne csússzon el.
-  private pcicLevel: PcicLevel = 'B1';
+  private pcicLevel: PcicViewLevel = 'B1';
 
-  async getPcicLevel(): Promise<PcicLevel> {
+  async getPcicLevel(): Promise<PcicViewLevel> {
     return this.pcicLevel;
   }
 
-  async setPcicLevel(level: PcicLevel): Promise<void> {
+  async setPcicLevel(level: PcicViewLevel): Promise<void> {
     this.pcicLevel = level;
   }
 

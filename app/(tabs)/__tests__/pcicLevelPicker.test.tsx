@@ -31,12 +31,20 @@ const ITEMS_BY_LEVEL: Record<string, typeof A1_ITEM[]> = { A1: [A1_ITEM], B1: [B
 // levelOfItem-jét hívja (a valódi korpuszban ez dönti el egy item TÉNYLEGES
 // szintjét, nem az id-előtag); itt a rögzített ITEMS_BY_LEVEL fixture-ből
 // származtatva, hogy a mock a valódi modul alakját kövesse.
+// PLAN-fb0924 8. lépés: a szint-választó a "+1" virtuális szinteket is érti
+// (lib/pcicLevels.ts matchesViewLevel a mockolt isPlusSentence/realLevelOfView-t
+// hívja); ez a fixture nem tartalmaz mondatot, tehát isPlusSentence mindig false,
+// realLevelOfView pedig a 2 valódi szintre identitás.
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['A1', 'B1'],
+  PCIC_VIEW_LEVELS: ['A1', 'B1'],
   LEVEL_LABELS: { A1: 'Beginner', B1: 'Intermediate' },
   pcicItemsForLevel: (level: string) => ITEMS_BY_LEVEL[level] ?? [],
+  pcicItemsForViewLevel: (level: string) => ITEMS_BY_LEVEL[level] ?? [],
   findPcicItem: (id: string) => [A1_ITEM, B1_ITEM].find((i) => i.id === id),
   levelOfItem: (id: string) => (id === A1_ITEM.id ? 'A1' : id === B1_ITEM.id ? 'B1' : undefined),
+  isPlusSentence: () => false,
+  realLevelOfView: (level: string) => level,
 }));
 
 import { act, fireEvent, render } from '@testing-library/react-native';

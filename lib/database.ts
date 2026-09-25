@@ -4,14 +4,16 @@ import { FORCED_PAIR, needsPairCorrection } from './languages';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 import type { Sm2Card } from './sm2';
 import { addDays } from './sm2';
-import { pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
+import { pcicItemsForLevel, type PcicLevel, type PcicViewLevel } from '@/data/pcic';
 import type { MistakeBatchRow } from './mistakes/deck';
 import { runMigrations, applyWordMerges } from './db/migrations';
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
 
 // PLAN-play 10. lépés: egy meglévő telepítésen a haladás ma "b1-..." id-kkel
 // forog, ezért az oszlop hiánya (régi DB) B1-re esik vissza, nem A1-re.
-const DEFAULT_PCIC_LEVEL: PcicLevel = 'B1';
+// PLAN-fb0924 8. lépés: a perzisztált érték "A1+"/"A2+" is lehet (lásd
+// data/pcic.ts PcicViewLevel), a mezőt csak string-ként tárolja a DB.
+const DEFAULT_PCIC_LEVEL: PcicViewLevel = 'B1';
 
 export interface DB {
   getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
@@ -76,8 +78,8 @@ export interface DB {
   // (a betöltött korpuszból lekért id-lista szerint, lib/pcicLevels.ts
   // matchesLevel mintájára - PLAN-fb0924 7a. lépés, a szint-igazítás óta nem
   // csupasz id-előtag), üresen az egész táblát, mint eddig.
-  getPcicLevel(): Promise<PcicLevel>;
-  setPcicLevel(level: PcicLevel): Promise<void>;
+  getPcicLevel(): Promise<PcicViewLevel>;
+  setPcicLevel(level: PcicViewLevel): Promise<void>;
   resetPcicCards(levelPrefix?: string): Promise<void>;
   // PLAN-hibaim.md 2. lépés: a "Hibáim" kötegek (Settings -> Load my mistakes)
   // és a hozzájuk tartozó SM-2 haladás, a pcic_cards-tól elkülönítve.
@@ -153,13 +155,13 @@ class SQLiteDB implements DB {
   }
 
   // PLAN-play 10. lépés: a kiválasztott PCIC szint, app-szintű mint a fenti tint.
-  async getPcicLevel(): Promise<PcicLevel> {
+  async getPcicLevel(): Promise<PcicViewLevel> {
     const db = await this.open();
     const row = await db.getFirstAsync<any>('SELECT pcic_level FROM user_meta WHERE id = 1');
-    return (row?.pcic_level as PcicLevel) ?? DEFAULT_PCIC_LEVEL;
+    return (row?.pcic_level as PcicViewLevel) ?? DEFAULT_PCIC_LEVEL;
   }
 
-  async setPcicLevel(level: PcicLevel): Promise<void> {
+  async setPcicLevel(level: PcicViewLevel): Promise<void> {
     const db = await this.open();
     await db.runAsync('UPDATE user_meta SET pcic_level = ? WHERE id = 1', [level]);
   }

@@ -9,6 +9,7 @@ import {
   nextPcicNewBonus,
   pcicNewBudget,
   pickStrongerSm2Card,
+  thinSentences,
   type QueuedSm2Card,
 } from '../pcicSession';
 import { sm2NewCard, sm2Review, pickSm2Session, addDays, type Sm2Card } from '../sm2';
@@ -333,5 +334,37 @@ describe('pickStrongerSm2Card (FB384, 7b)', () => {
     const earlier = reviewCard({ itemId: 'x', reps: 5, lapses: 0, interval: 10, due: TODAY });
     const later = reviewCard({ itemId: 'y', reps: 5, lapses: 0, interval: 10, due: addDays(TODAY, 5) });
     expect(pickStrongerSm2Card(earlier, later)).toBe(earlier);
+  });
+});
+
+describe('thinSentences (PLAN-fb0924 8. lépés, FB394/396)', () => {
+  const kind = kindMap({ w1: 'word', w2: 'word', w3: 'word', s1: 'sentence', s2: 'sentence', s3: 'sentence' });
+  const ownGroup = (id: string) => id;
+
+  it('az első mondat várakozás nélkül mehet', () => {
+    const order = ['w1', 's1', 'w2', 'w3'];
+    expect(thinSentences(order, kind, ownGroup, 2)).toEqual(['w1', 's1', 'w2', 'w3']);
+  });
+
+  it('egy második mondat kimarad, ha a kettő közt kevesebb, mint minGap nem-mondat kártya van', () => {
+    const order = ['s1', 'w1', 's2', 'w2', 'w3'];
+    // s1 -> s2 közt csak 1 szó van, minGap 2 -> s2 kimarad ebből a hívásból.
+    expect(thinSentences(order, kind, ownGroup, 2)).toEqual(['s1', 'w1', 'w2', 'w3']);
+  });
+
+  it('a második mondat bekerül, ha elég nem-mondat kártya választja el az elsőtől', () => {
+    const order = ['s1', 'w1', 'w2', 's2', 'w3'];
+    expect(thinSentences(order, kind, ownGroup, 2)).toEqual(['s1', 'w1', 'w2', 's2', 'w3']);
+  });
+
+  it('egy csoport (groupOf) tagjai egymás után, rés nélkül is bemehetnek - EGY egységnek számítanak', () => {
+    const order = ['w1', 's1', 's2', 'w2'];
+    const sameGroup = () => 'chain-1'; // s1 és s2 ugyanabba a láncba tartozik
+    expect(thinSentences(order, kind, sameGroup, 9)).toEqual(['w1', 's1', 's2', 'w2']);
+  });
+
+  it('nincs mondat a bemeneten -> a sorrend változatlan', () => {
+    const order = ['w1', 'w2', 'w3'];
+    expect(thinSentences(order, kind, ownGroup)).toEqual(order);
   });
 });
