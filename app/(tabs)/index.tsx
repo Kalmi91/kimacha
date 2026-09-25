@@ -9,7 +9,7 @@ import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
-import { pcicItemsForLevel, findPcicItem, type PcicLevel } from '@/data/pcic';
+import { pcicItemsForViewLevel, findPcicItem, realLevelOfView, type PcicViewLevel } from '@/data/pcic';
 import { gradePcicAnswer, suggestedGrade, type PcicGrade } from '@/lib/pcicMatch';
 import {
   ARTICLE_OPTIONS,
@@ -20,9 +20,9 @@ import {
   type ArticlePick,
 } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget } from '@/lib/pcicSession';
-import { applyChainOrder } from '@/lib/pcicChains';
-import { cardsForLevel } from '@/lib/pcicLevels';
+import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget, thinSentences } from '@/lib/pcicSession';
+import { applyChainOrder, chainGroupId } from '@/lib/pcicChains';
+import { cardsForViewLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
 import { pcicNoteText } from '@/lib/pcicNotes';
 import { sensesFor } from '@/lib/pcicSenses';
@@ -39,6 +39,15 @@ import LevelPickerSheet from '@/components/LevelPickerSheet';
 // PLAN-pcic 5. lépés: a PCIC fül. Angol -> spanyol gépelés, Anki-gombokkal
 // (again/hard/good/easy), az önálló SM-2 ütemezőn (lib/sm2.ts, 4. lépés).
 // Nem a FSRS `cards`/`sessionQueue` ütemezőt használja, azt nem érinti.
+
+// PLAN-fb0924 8. lépés (FB394/396): a lánc-átrendezés (applyChainOrder) UTÁN a
+// mondat-ritkítás (thinSentences) - de csak NORMÁL szinten; az "A1+"/"A2+"
+// nézet kizárólag mondatból áll, ott a ritkítás mindent kidobna.
+function pcicIntroOrder(memberIds: string[], cards: Sm2Card[], view: PcicViewLevel): string[] {
+  const reordered = applyChainOrder(memberIds, cards, realLevelOfView(view));
+  if (view === 'A1+' || view === 'A2+') return reordered;
+  return thinSentences(reordered, (id) => findPcicItem(id)?.kind, (id) => chainGroupId(id) ?? id);
+}
 
 // SZ2 (SZAVAK.md): egy visszavonható értékelés pillanatképe. `counted` = a
 // számlálókat is léptette-e (SZ3 „Ezt nem tanulom" gombja majd false-t ír ide).
@@ -59,7 +68,7 @@ export default function PcicScreen() {
 
   const [loading, setLoading] = useState(true);
   const [today, setToday] = useState('');
-  const [level, setLevel] = useState<PcicLevel>('B1');
+  const [level, setLevel] = useState<PcicViewLevel>('B1');
   // s1 (anki-ui-terv.html): a szint-választó lap; a benne mutatott N/total
   // haladáshoz MIND a négy szint kártyája kell, nem csak az aktívé.
   const [levelSheetOpen, setLevelSheetOpen] = useState(false);
@@ -108,13 +117,13 @@ export default function PcicScreen() {
   // PLAN-play 10. lépés: `overrideLevel` a szint-választó lapról jövő azonnali
   // váltásnak, hogy ne kelljen a setLevel-re várni egy render-kört (a db-be
   // már ott az új szint, load() csak újraolvassa vele).
-  const load = useCallback(async (overrideLevel?: PcicLevel) => {
+  const load = useCallback(async (overrideLevel?: PcicViewLevel) => {
     const db = getDb();
     const day = localDateString();
     const lvl = overrideLevel ?? (await db.getPcicLevel());
-    const newOrder = pcicItemsForLevel(lvl).map((i) => i.id);
+    const newOrder = pcicItemsForViewLevel(lvl).map((i) => i.id);
     const rawCards = await db.getPcicCards();
-    const cards = cardsForLevel(rawCards, lvl);
+    const cards = cardsForViewLevel(rawCards, lvl);
     const strict = await db.getStrictAccents();
     const newLimit = await db.getDailyNewLimit();
     const delaySec = await db.getAgainDelaySec();
@@ -129,7 +138,7 @@ export default function PcicScreen() {
     setPcicSpellingIds(new Set(spellingRows.map((r) => r.itemId)));
     setToday(day);
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
-    setQueue(pickSm2Session(cards, applyChainOrder(newOrder, cards, lvl), day, pcicNewBudget({ limit: newLimit, bonus, introducedToday })));
+    setQueue(pickSm2Session(cards, pcicIntroOrder(newOrder, cards, lvl), day, pcicNewBudget({ limit: newLimit, bonus, introducedToday })));
     setTypedAnswer('');
     setGrade(null);
     setSessionAnswered(0);
@@ -153,7 +162,7 @@ export default function PcicScreen() {
 
   // s1: a szint-választó lapon koppintva azonnal a választott szint pakliját
   // adja (a lap előbb bezár, hogy a váltás ne tűnjön befagyottnak).
-  const handleSelectLevel = async (lvl: PcicLevel) => {
+  const handleSelectLevel = async (lvl: PcicViewLevel) => {
     setLevelSheetOpen(false);
     if (lvl === level) return;
     await getDb().setPcicLevel(lvl);
@@ -161,7 +170,7 @@ export default function PcicScreen() {
     await load(lvl);
   };
 
-  const newOrder = useMemo(() => pcicItemsForLevel(level).map((i) => i.id), [level]);
+  const newOrder = useMemo(() => pcicItemsForViewLevel(level).map((i) => i.id), [level]);
   const current = queue[0];
   const currentItem = current ? findPcicItem(current.itemId) : undefined;
 
@@ -310,8 +319,10 @@ export default function PcicScreen() {
 
   const handleReset = () => {
     const doReset = async () => {
-      // Csak az AKTÍV szint kártyáit üríti (a haladás szintenként külön él).
-      await getDb().resetPcicCards(level.toLowerCase());
+      // Csak az AKTÍV szint kártyáit üríti (a haladás szintenként külön él);
+      // "A1+"/"A2+" nézeten a mögöttes valódi szintet (a lánc/mondat ugyanaz
+      // a fájl/haladás, mint a szó-pakli, PLAN-fb0924 8. lépés).
+      await getDb().resetPcicCards(realLevelOfView(level).toLowerCase());
       setLoading(true);
       await load();
     };
@@ -337,7 +348,7 @@ export default function PcicScreen() {
     setQueue(
       pickSm2Session(
         activeCards,
-        applyChainOrder(newOrder, activeCards, level),
+        pcicIntroOrder(newOrder, activeCards, level),
         today,
         pcicNewBudget({ limit: dailyNewLimit, bonus: next, introducedToday })
       )
@@ -351,12 +362,16 @@ export default function PcicScreen() {
   // PLAN-hibaim.md 4. lépés: a "Hibáim" belépő önálló komponens (saját
   // betöltéssel), hogy ez a fájl (785 sor) ne nőjön 800 fölé; csak akkor
   // renderel, ha van betöltött köteg.
+  // PLAN-fb0924 8. lépés (FB394/396): a fejléc chip a "+1" szinten "A1 +1"
+  // alakban olvasható (a belső azonosító "A1+", térköz nélkül).
+  const levelChipLabel = level === 'A1+' || level === 'A2+' ? `${level.slice(0, 2)} +1` : level;
+
   const headerRow = (
     <>
     <View style={styles.headerRow}>
       <View style={styles.headerBadges}>
         <Pressable style={[styles.levelChip, { backgroundColor: colors.tint }]} onPress={() => setLevelSheetOpen(true)}>
-          <Text style={styles.levelChipText}>{level} ▾</Text>
+          <Text style={styles.levelChipText}>{levelChipLabel} ▾</Text>
         </Pressable>
         <BadgeRow
           colors={colors}
