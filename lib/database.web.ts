@@ -43,6 +43,9 @@ export interface DB {
   setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
   getDailyNewLimit(): Promise<number>;
   setDailyNewLimit(limit: number): Promise<void>;
+  // FB385/386: a PCIC "+10 új szó" bónusz, a naptári nappal lejár.
+  getPcicNewBonus(today: string): Promise<number>;
+  setPcicNewBonus(bonus: number, today: string): Promise<void>;
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
   // GAMES.md 3.5 (F0): Game fül tables, scoped to the active pair like every
@@ -258,6 +261,18 @@ class MemoryDB implements DB {
 
   async setDailyNewLimit(limit: number): Promise<void> {
     this.dailyNewLimitMap.set(this.activePair, limit);
+  }
+
+  // FB385/386: memory mirror of the SQLite new_bonus/new_bonus_date columns.
+  private pcicNewBonusMap: Map<string, { bonus: number; date: string }> = new Map();
+
+  async getPcicNewBonus(today: string): Promise<number> {
+    const entry = this.pcicNewBonusMap.get(this.activePair);
+    return entry && entry.date === today ? entry.bonus : 0;
+  }
+
+  async setPcicNewBonus(bonus: number, today: string): Promise<void> {
+    this.pcicNewBonusMap.set(this.activePair, { bonus, date: today });
   }
 
   // Usage-timer feature: one entry per local calendar day, app-wide (not

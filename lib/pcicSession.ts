@@ -86,3 +86,39 @@ export function requeueAfterUndo(
 export function countDoneToday(cards: Sm2Card[], today: string): number {
   return cards.filter((c) => c.lastReview === today).length;
 }
+
+export const PCIC_NEW_BONUS_STEP = 10;
+
+export interface PcicNewBudgetInput {
+  limit: number; // a Beállítások napi új-szó kerete (daily_new_limit)
+  bonus: number; // a mai napra perzisztált bónusz (learn_settings.new_bonus, csak ha new_bonus_date === ma)
+  introducedToday: number; // a ma bevezetett (introducedAt === ma) kártyák száma
+}
+
+/**
+ * FB385/386: a "+10 új szó" bónusz eddig csak React-state-ben élt
+ * (`extraNew`), amit a `load()` minden fókusz-váltásnál/új napon nullázott,
+ * ÉS a flat +10-et adta a napi kerethez, függetlenül attól, hány szó lett
+ * már bevezetve ma. Emiatt (limit 10, ma bevezetve 18) a "+10" 2 új kártyát
+ * adott (10+10-18), nem 10-et. Ez a következő bónusz-érték: annyival TÖBB
+ * lesz, mint amennyi ma már be van vezetve, plusz a lépés (alap 10).
+ */
+export function nextPcicNewBonus(
+  { limit, bonus, introducedToday }: PcicNewBudgetInput,
+  step: number = PCIC_NEW_BONUS_STEP
+): number {
+  return Math.max(bonus, introducedToday - limit) + step;
+}
+
+/**
+ * A `pickSm2Session` `newLimit` paraméterének adandó érték: a keret + a mai
+ * napra perzisztált bónusz, de sosem kevesebb, mint amennyi ma már be van
+ * vezetve (a `pickSm2Session` ebből vonja ki `introducedToday`-t, tehát ha
+ * ez itt már `introducedToday` alatt lenne, negatív keret helyett 0 jönne ki
+ * idő előtt). Nap-váltáskor a hívó oldal a DB-től 0 bónuszt kap (a
+ * `new_bonus_date` nem a mai), tehát ez a függvény önmagában nem tud a
+ * naptári napról - azt a `getPcicNewBonus(today)` DB-hívás dönti el.
+ */
+export function pcicNewBudget({ limit, bonus, introducedToday }: PcicNewBudgetInput): number {
+  return Math.max(introducedToday, limit + bonus);
+}
