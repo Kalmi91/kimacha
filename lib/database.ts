@@ -4,7 +4,7 @@ import { FORCED_PAIR, needsPairCorrection } from './languages';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 import type { Sm2Card } from './sm2';
 import { addDays } from './sm2';
-import type { PcicLevel } from '@/data/pcic';
+import { pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
 import type { MistakeBatchRow } from './mistakes/deck';
 import { runMigrations, applyWordMerges } from './db/migrations';
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
@@ -73,7 +73,9 @@ export interface DB {
   getPcicStats(today: string): Promise<{ total: number; newIntroducedToday: number; dueToday: number; learned: number }>;
   // PLAN-play 10. lépés: a kiválasztott PCIC szint (A1-B2), app-szintű, mint a
   // status-bar tint. `levelPrefix` opcionális: csak azt a szintet üríti ki
-  // (item-id előtag szerint), üresen az egész táblát, mint eddig.
+  // (a betöltött korpuszból lekért id-lista szerint, lib/pcicLevels.ts
+  // matchesLevel mintájára - PLAN-fb0924 7a. lépés, a szint-igazítás óta nem
+  // csupasz id-előtag), üresen az egész táblát, mint eddig.
   getPcicLevel(): Promise<PcicLevel>;
   setPcicLevel(level: PcicLevel): Promise<void>;
   resetPcicCards(levelPrefix?: string): Promise<void>;
@@ -488,10 +490,17 @@ class SQLiteDB implements DB {
     };
   }
 
+  // PLAN-fb0924 7a. lépés: a `levelPrefix` (pl. "a1") már NEM a LIKE-mintát
+  // adja (a szint-igazítás óta egy id előtagja nem feltétlen a valódi szintje,
+  // lásd lib/pcicLevels.ts matchesLevel), hanem a törlendő szint neve; a
+  // valódi id-listát a betöltött korpuszból kérjük le.
   async resetPcicCards(levelPrefix?: string): Promise<void> {
     const db = await this.open();
     if (levelPrefix) {
-      await db.runAsync('DELETE FROM pcic_cards WHERE item_id LIKE ?', [`${levelPrefix}-%`]);
+      const ids = pcicItemsForLevel(levelPrefix.toUpperCase() as PcicLevel).map((i) => i.id);
+      if (ids.length === 0) return;
+      const placeholders = ids.map(() => '?').join(',');
+      await db.runAsync(`DELETE FROM pcic_cards WHERE item_id IN (${placeholders})`, ids);
     } else {
       await db.runAsync('DELETE FROM pcic_cards');
     }

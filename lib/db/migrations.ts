@@ -1,6 +1,7 @@
 import * as SQLite from 'expo-sqlite';
 import { pickSurvivor } from '../cardMerge';
 import { WORD_MERGES } from '../wordMerges';
+import { PCIC_LEVEL_MOVES } from '../pcicLevelMoves';
 
 // PLAN-play 14. lépés: a séma-létrehozás + minden ALTER/CREATE-migráció
 // (korábban SQLiteDB.open() és SQLiteDB.applyWordMerges(), lib/database.ts),
@@ -59,6 +60,29 @@ export async function applyWordMerges(db: SQLite.SQLiteDatabase) {
       .join(' ')} ELSE word_id END WHERE word_id IN (${placeholders})`,
     oldIds
   );
+}
+
+// PLAN-fb0924 7a. lépés (FB396, D3): a nehézség-igazítás egy PCIC-szót
+// (script: scripts/pcic-level-fit.mjs --write) a hozzá illő szint FÁJLJÁBA
+// mozgat, ÚJ id-vel (lib/pcicLevelMoves.ts, régi id -> új id). Tiszta
+// átnevezés: a cél id mindig frissen generált, nincs "iker"-ütközés a másik
+// oldalon, ezért nincs pickSurvivor-ág, mint applyWordMerges-nél fent.
+// Idempotens: a SELECT a második futástól 0 sort ad (a régi id-jű
+// pcic_cards-sor már nincs a táblában), a `pcic_cards` a backup-ból ki van
+// hagyva (lib/backup.ts), tehát csak itt, natív induláskor kell futnia.
+export async function applyPcicLevelMoves(db: SQLite.SQLiteDatabase) {
+  const oldIds = Object.keys(PCIC_LEVEL_MOVES);
+  if (oldIds.length === 0) return;
+  const placeholders = oldIds.map(() => '?').join(',');
+  const stale = await db.getAllAsync<any>(
+    `SELECT item_id FROM pcic_cards WHERE item_id IN (${placeholders})`,
+    oldIds
+  );
+  if (stale.length === 0) return;
+  for (const row of stale) {
+    const newId = PCIC_LEVEL_MOVES[row.item_id];
+    await db.runAsync('UPDATE pcic_cards SET item_id = ? WHERE item_id = ?', [newId, row.item_id]);
+  }
 }
 
 // Creates every table (if missing), runs each column/table migration, ensures
@@ -412,5 +436,6 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
     );
   }
   await applyWordMerges(db);
+  await applyPcicLevelMoves(db);
   return activePair;
 }

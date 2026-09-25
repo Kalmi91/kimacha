@@ -4,7 +4,7 @@ import { FORCED_PAIR, needsPairCorrection } from './languages';
 import { WORD_MERGES } from './wordMerges';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 import { addDays, type Sm2Card } from './sm2';
-import type { PcicLevel } from '@/data/pcic';
+import { pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
 import type { MistakeBatchRow } from './mistakes/deck';
 
@@ -351,13 +351,16 @@ class MemoryDB implements DB {
     };
   }
 
+  // PLAN-fb0924 7a. lépés: lásd lib/database.ts resetPcicCards komment - a
+  // valódi id-listát a betöltött korpuszból kérjük, nem az id előtagjából.
   async resetPcicCards(levelPrefix?: string): Promise<void> {
     if (!levelPrefix) {
       this.pcicCards.clear();
       return;
     }
+    const ids = new Set(pcicItemsForLevel(levelPrefix.toUpperCase() as PcicLevel).map((i) => i.id));
     for (const id of [...this.pcicCards.keys()]) {
-      if (id.startsWith(`${levelPrefix}-`)) this.pcicCards.delete(id);
+      if (ids.has(id)) this.pcicCards.delete(id);
     }
   }
 
