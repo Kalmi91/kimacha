@@ -245,7 +245,10 @@ export default function TableDeckScreen() {
               : s.tableDeck.wordPromptCaption}
           </Text>
           <Text style={[styles.promptBig, { color: colors.text }]}>{current.promptBig}</Text>
-          {current.enPrompt ? (
+          {/* FB390: a meaning-table cell (lib/grammar/tableDeck.ts) has no
+              infinitive to show underneath (verb: ''), so this caption stays
+              hidden there instead of rendering an empty line. */}
+          {current.enPrompt && current.verb ? (
             <Text style={[styles.promptInfinitive, { color: colors.tabIconDefault }]}>{current.verb}</Text>
           ) : null}
 
