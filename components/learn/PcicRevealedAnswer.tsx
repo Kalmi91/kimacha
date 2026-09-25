@@ -8,6 +8,7 @@ import { speechLang } from '@/lib/languages';
 import type { PcicItem } from '@/data/pcic';
 import type { PcicGrade } from '@/lib/pcicMatch';
 import { sm2PreviewDays, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
+import { sensesFor } from '@/lib/pcicSenses';
 
 // PLAN-play 14. lépés: a PCIC kártya felfedett-állapot blokkja
 // (app/(tabs)/index.tsx-ből kiemelve, felelősség szerinti szétvágás, nincs
@@ -44,6 +45,10 @@ export default function PcicRevealedAnswer({
   const previews = Object.fromEntries(
     GRADES.map((g) => [g, previewDays[g] === 0 ? s.pcic.intervalToday : s.pcic.intervalDays(previewDays[g])])
   ) as Record<Sm2Grade, string>;
+  // PLAN-fb0924 7b. lépés (FB384, D4): ha ennek a szónak több, érdemben eltérő
+  // jelentése van (data/pcic/senses.json), a felfedés jelentésenként mutatja a
+  // spanyol alakot (a beírandó válasz továbbra is a szó maga, currentItem.es).
+  const senses = sensesFor(currentItem.id);
 
   return (
     <>
@@ -74,6 +79,18 @@ export default function PcicRevealedAnswer({
             -> a diff sárga jelölése mellett kimondva is 100%-nak számít. */}
         {grade.accentOnly && (
           <Text style={[styles.accentNote, { color: colors.tabIconDefault }]}>{s.pcic.accentForgiven}</Text>
+        )}
+        {/* PLAN-fb0924 7b. lépés (FB384, D4): jelentésenként a rövid spanyol
+            alak, ha a szónak több, érdemben eltérő jelentése van. */}
+        {senses && senses.length > 1 && (
+          <View style={styles.sensesBlock}>
+            {senses.map((sense, i) => (
+              <View key={i} style={styles.senseRow}>
+                <Text style={[styles.senseEn, { color: colors.tabIconDefault }]}>{sense.en}</Text>
+                <Text style={[styles.senseEs, { color: colors.text }]}>{sense.es}</Text>
+              </View>
+            ))}
+          </View>
         )}
         {/* PLAN-play 11. lépés: példamondat a megoldás alatt, csak Check
             után és csak ha van egyezés a korpuszban (currentItem.exampleEs). */}
@@ -157,6 +174,22 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: 'center',
     marginTop: 4,
+  },
+  // PLAN-fb0924 7b. lépés (FB384, D4): jelentésenként egy sor (angol jelentés
+  // fölül, halványan, a rövid spanyol alak alatta).
+  sensesBlock: {
+    marginTop: 12,
+    gap: 6,
+  },
+  senseRow: {
+    alignItems: 'center',
+  },
+  senseEn: {
+    fontSize: 12,
+  },
+  senseEs: {
+    fontSize: 15,
+    fontWeight: '600',
   },
   // PLAN-play 11. lépés: példamondat a megoldás alatt, Check után.
   exampleRow: {

@@ -1,5 +1,6 @@
-// FB319/FB321: automatikus felolvasás a PCIC fülön. Mock-minta:
-// app/grammar/__tests__/learnWordsButton.test.tsx (db, router, i18n).
+// FB391: a beviteli mező fókuszt kap minden ÚJ PCIC-lapnál (kinyílik a
+// billentyűzet), de a felfedés után nem nyílik újra. Mock-minta:
+// app/(tabs)/__tests__/pcicSpeak.test.tsx (ugyanaz a FB319 effekt viszi mindkettőt).
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -23,8 +24,6 @@ jest.mock('react-native-safe-area-context', () => ({
 }));
 
 // Egy fix tétel, hogy a teszt ne a valódi PCIC-korpusztól függjön.
-// PLAN-play 10. lépés: az id "b1-" előtaggal, mert lib/pcicLevels.ts a
-// szint-szűrést az id-előtagból dönti el (a fül a B1 alap-szinten indul).
 const FIXTURE_ITEM = { id: 'b1-x1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['B1'],
@@ -41,10 +40,7 @@ import { act, fireEvent, render } from '@testing-library/react-native';
 import { TextInput } from 'react-native';
 
 import { getDb } from '@/lib/database';
-import { speak } from '@/lib/speech';
 import PcicScreen from '../index';
-
-const mockSpeak = speak as jest.Mock;
 
 const flush = async (times = 4) => {
   for (let i = 0; i < times; i++) {
@@ -54,28 +50,35 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: automatikus felolvasás (FB319/FB321)', () => {
+describe('PCIC fül: a mező fókusza (FB391)', () => {
+  let focusSpy: jest.SpyInstance;
+
   beforeEach(async () => {
     await getDb().resetPcicCards();
-    mockSpeak.mockClear();
+    focusSpy = jest.spyOn(TextInput.prototype, 'focus').mockImplementation(() => {});
   });
 
-  it('új lap megjelenésekor angolul mondja ki a promptot', async () => {
+  afterEach(() => {
+    focusSpy.mockRestore();
+  });
+
+  it('új lap megjelenésekor (mountkor) a mező fókuszt kap', async () => {
     render(<PcicScreen />);
     await flush();
 
-    expect(mockSpeak).toHaveBeenCalledWith('life', 'en-US');
+    expect(focusSpy).toHaveBeenCalled();
   });
 
-  it('felfedéskor spanyolul mondja ki a helyes alakot', async () => {
+  it('felfedés (Check) után NEM kap újra fókuszt, amíg ugyanaz a lap van képernyőn', async () => {
     const { UNSAFE_getByType, getByText } = render(<PcicScreen />);
     await flush();
-    mockSpeak.mockClear();
+    const callsAfterMount = focusSpy.mock.calls.length;
+    expect(callsAfterMount).toBeGreaterThan(0);
 
     fireEvent.changeText(UNSAFE_getByType(TextInput), 'vida');
     fireEvent.press(getByText('✓ Check'));
     await flush();
 
-    expect(mockSpeak).toHaveBeenCalledWith('vida', 'es-MX');
+    expect(focusSpy.mock.calls.length).toBe(callsAfterMount);
   });
 });

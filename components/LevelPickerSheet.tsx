@@ -1,8 +1,8 @@
 import { Modal, Pressable, Text, StyleSheet } from 'react-native';
 
 import Colors from '@/constants/Colors';
-import { PCIC_LEVELS, LEVEL_LABELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
-import { levelProgress } from '@/lib/pcicLevels';
+import { PCIC_VIEW_LEVELS, LEVEL_LABELS, pcicItemsForViewLevel, type PcicViewLevel } from '@/data/pcic';
+import { levelProgressView } from '@/lib/pcicLevels';
 import type { Sm2Card } from '@/lib/sm2';
 import LevelRow from './LevelRow';
 
@@ -13,17 +13,17 @@ type ColorScheme = (typeof Colors)['light'];
 // választott szint pakliját adja (PLAN-play 10., index.tsx handleSelectLevel).
 type Props = {
   visible: boolean;
-  active: PcicLevel;
+  active: PcicViewLevel;
   cards: Sm2Card[];
   colors: ColorScheme;
   title: string;
-  onSelect: (level: PcicLevel) => void;
+  onSelect: (level: PcicViewLevel) => void;
   onClose: () => void;
 };
 
 export default function LevelPickerSheet({ visible, active, cards, colors, title, onSelect, onClose }: Props) {
   // Ha egy szinthez nincs adat vagy nincs angol fordítás, ne kínáljuk fel.
-  const levels = PCIC_LEVELS.filter((lvl) => pcicItemsForLevel(lvl).length > 0);
+  const levels = PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForViewLevel(lvl).length > 0);
 
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
@@ -33,8 +33,8 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
         <Pressable style={[styles.sheet, { backgroundColor: colors.card }]} onPress={() => {}}>
           <Text style={[styles.title, { color: colors.text }]}>{title}</Text>
           {levels.map((lvl) => {
-            const total = pcicItemsForLevel(lvl).length;
-            const { introduced } = levelProgress(cards, lvl, total);
+            const total = pcicItemsForViewLevel(lvl).length;
+            const { introduced } = levelProgressView(cards, lvl, total);
             return (
               <LevelRow
                 key={lvl}
