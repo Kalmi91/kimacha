@@ -380,9 +380,6 @@ export default function PcicScreen() {
             { label: s.pcic.badgeDue(dueRemaining), tone: 'blue' },
             { label: s.pcic.badgeNew(newRemaining), tone: 'green' },
             { label: s.pcic.badgeDone(doneToday), tone: 'pink' },
-            // FB387/395: miből áll a mai bevezetés (szó vs. mondat) + a mai
-            // teljes keret (napi limit + az 1a-beli "+10" bónusz).
-            { label: s.pcic.badgeIntroducedToday(introducedTodayByKind.words, introducedTodayByKind.sentences, todayNewBudget) },
           ]}
         />
       </View>
@@ -397,6 +394,14 @@ export default function PcicScreen() {
         </Pressable>
       </View>
     </View>
+    {/* FB387/395 javítás: a régi ötödik BadgeRow-chip (miből áll a mai bevezetés
+        + a mai teljes keret) egy hosszú, egybefüggő szöveg volt, ami chipként
+        kilógott a képernyő jobb széléről (nem fért a sorba, és a chip belseje
+        nem tördelhető). Külön, teljes szélességű, tördelhető sor lett belőle,
+        a chip-sor ALATT; a tartalom (i18n) változatlan. */}
+    <Text style={[styles.todayLine, { color: colors.tabIconDefault }]}>
+      {s.pcic.badgeIntroducedToday(introducedTodayByKind.words, introducedTodayByKind.sentences, todayNewBudget)}
+    </Text>
     <MistakesEntry colors={colors} />
     </>
   );
@@ -723,6 +728,12 @@ const styles = StyleSheet.create({
   headerIcons: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  // FB387/395 javítás: a mai szó/mondat bontás saját, teljes szélességű,
+  // tördelhető sora a chip-sor alatt (lásd a headerRow utáni Text-et).
+  todayLine: {
+    fontSize: 12,
+    marginBottom: 8,
   },
   resetBtn: {
     width: 32,
