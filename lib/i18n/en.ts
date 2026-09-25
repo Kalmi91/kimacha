@@ -310,6 +310,9 @@ export default {
     progress: (done: number, total: number) => `${done} / ${total} done`,
     completeTitle: (n: number) => `All ${n} cells done 🎉`,
     startAgain: 'Start again',
+    // FB389 (PLAN-fb0924 3. lépés): a full pass, all cells shuffled, once
+    // the plain (deck-order) "Start again" pass is done.
+    harder: 'Harder: shuffled',
     backToLesson: 'Back to the lesson',
   },
 };

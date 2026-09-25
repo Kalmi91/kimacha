@@ -48,9 +48,17 @@ export interface DeckCellState {
 
 export interface DeckState {
   cells: DeckCellState[];
-  /** FB377: bumped by resetDeck, part of the reshuffle seed so each pass
-   *  through the deck gets a new (but still deterministic) order. */
+  /** FB377/FB389: bumped by resetDeckShuffled, part of the reshuffle seed so
+   *  each shuffled pass through the deck gets a new (but still
+   *  deterministic) order. Meaningless while `shuffled` is false. */
   resetCount: number;
+  /** FB389: false = the deck's own order (the table read top to bottom, or
+   *  the word-deck's own order); true = the seeded shuffle keyed on
+   *  `resetCount`. A fresh deck (no persisted state) starts false; an old
+   *  persisted deck saved before this field existed defaults to true, so a
+   *  mid-pass reload does not silently reorder what the learner was seeing
+   *  (mergeDeckState below). */
+  shuffled: boolean;
 }
 
 // FELTEVÉS (Kálmán vétózhatja, PLAN-fb0923 5. lépés/D2): a táblázat-pakli
@@ -122,38 +130,46 @@ export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined)
 // tartalmát, ezért ugyanez a motor szolgálja ki a szó-paklit is
 // (wordCellsForLesson lent) a tábla-pakli mellett, forrás-tömb-tipizálás
 // nélkül duplikálva.
-// FB377: the deck's cell order used to be the table's own row/column order
-// (every learner saw "yo · ser" first, always), which makes the answers
-// memorizable by position instead of by meaning. A seeded shuffle (lesson id
-// + reset count) fixes the order for a given pass through the deck, so it is
-// still deterministic and testable, but it is not the table's order, and a
-// "Start again" reset gets a fresh shuffle.
+// FB377 (felülírva FB389-cel, lásd lent): a tábla-pakli sorrendje eleinte a
+// tábla saját sor/oszlop-sorrendje volt (mindenki "yo · ser"-t látta
+// elsőnek), amitől a válasz a POZÍCIÓBÓL, nem a jelentésből tanulható meg.
+// FB389 (Kálmán 2026-09-08, felülírja a fenti döntést): az 1. kör megint a
+// tábla sorrendjében jön (ahogy a tábla olvasható), a kevert sorrend egy
+// KÜLÖN, választható "Nehezebb: keverve" kör lett (resetDeckShuffled), nem
+// az alapértelmezett. A shuffle maga (a seed-elt permutáció) változatlan.
 // Sorted first, so the result depends only on the SET of ids, never on
-// whatever order they happened to arrive in (table order from a fresh
-// lesson load, or the previous pass's shuffled order on a reset), the
-// order is a pure function of (ids, lessonId, resetCount).
+// whatever order they happened to arrive in, the order is a pure function
+// of (ids, lessonId, resetCount).
 function shuffledIds(cellIds: string[], lessonId: string, resetCount: number): string[] {
   return shuffleArray(cellIds.slice().sort(), hashString(`${lessonId}:${resetCount}`));
 }
 
-export function initDeckState(cells: { id: string }[], lessonId: string): DeckState {
-  const order = shuffledIds(cells.map((c) => c.id), lessonId, 0);
-  return { cells: order.map((id) => ({ id, done: false, dueAt: null })), resetCount: 0 };
+/** FB389: a fresh deck, in the SOURCE order (the table read top to bottom,
+ *  or the word-deck's own order) - no shuffle. */
+export function initDeckState(cells: { id: string }[]): DeckState {
+  return { cells: cells.map((c) => ({ id: c.id, done: false, dueAt: null })), resetCount: 0, shuffled: false };
 }
 
 /**
  * Reconciles freshly-derived cells (from the lesson data) with a persisted
  * state (from game_progress). A cell the lesson no longer has is dropped; a
- * new cell the persisted state has never seen starts fresh. The order is
- * reshuffled from `lessonId` + the persisted reset count, not read off the
- * persisted cell array, so a corpus change (a cell added/removed) does not
- * leave the new cell stuck at the end.
+ * new cell the persisted state has never seen starts fresh. FB389: the order
+ * follows the persisted `shuffled` flag - the SOURCE order (`cells`, as given)
+ * when false, or the seeded shuffle (`lessonId` + the persisted reset count)
+ * when true - never read off the persisted cell array itself, so a corpus
+ * change (a cell added/removed) does not leave the new cell stuck at the end.
+ * No persisted state at all (a lesson never opened before) defaults to the
+ * SOURCE order (the new FB389 default); a persisted state saved before this
+ * field existed has no `shuffled` key and defaults to true instead, so an
+ * in-progress shuffled pass does not silently reorder on the next reload.
  */
 export function mergeDeckState(cells: { id: string }[], lessonId: string, persisted: DeckState | undefined): DeckState {
   const resetCount = persisted?.resetCount ?? 0;
+  const shuffled = persisted ? (persisted.shuffled ?? true) : false;
   const byId = new Map((persisted?.cells ?? []).map((c) => [c.id, c]));
-  const order = shuffledIds(cells.map((c) => c.id), lessonId, resetCount);
-  return { cells: order.map((id) => byId.get(id) ?? { id, done: false, dueAt: null }), resetCount };
+  const ids = cells.map((c) => c.id);
+  const order = shuffled ? shuffledIds(ids, lessonId, resetCount) : ids;
+  return { cells: order.map((id) => byId.get(id) ?? { id, done: false, dueAt: null }), resetCount, shuffled };
 }
 
 export function doneCount(state: DeckState): number {
@@ -196,12 +212,24 @@ export function answerCell(
   };
 }
 
-/** Every cell answered right once -> start the pass over, with a fresh
- *  (still deterministic) shuffle, so the next pass isn't the same order. */
-export function resetDeck(state: DeckState, lessonId: string): DeckState {
-  const resetCount = state.resetCount + 1;
-  const order = shuffledIds(state.cells.map((c) => c.id), lessonId, resetCount);
-  return { cells: order.map((id) => ({ id, done: false, dueAt: null })), resetCount };
+/** FB389: "Start again" - every cell answered right once (or the learner
+ *  just wants a fresh pass) -> start over in the deck's own SOURCE order
+ *  (the table read top to bottom / the word-deck's own order), same as a
+ *  brand-new deck. Takes the canonical `cells` (not `state.cells`), because
+ *  a prior "Harder: shuffled" pass may have left the state's own cell order
+ *  shuffled - "Start again" always returns to the source order regardless. */
+export function resetDeckInOrder(cells: { id: string }[]): DeckState {
+  return initDeckState(cells);
+}
+
+/** FB389: "Harder: shuffled" - every cell, again, in a fresh (still
+ *  deterministic) shuffle, so a repeated shuffled pass is not the same
+ *  order as the last one. `resetCount` is the PREVIOUS state's count
+ *  (bumped here), so consecutive shuffles keep advancing the seed. */
+export function resetDeckShuffled(cells: { id: string }[], lessonId: string, resetCount: number): DeckState {
+  const nextResetCount = resetCount + 1;
+  const order = shuffledIds(cells.map((c) => c.id), lessonId, nextResetCount);
+  return { cells: order.map((id) => ({ id, done: false, dueAt: null })), resetCount: nextResetCount, shuffled: true };
 }
 
 // ---------------------------------------------------------------------------

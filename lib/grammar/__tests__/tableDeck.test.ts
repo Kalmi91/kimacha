@@ -14,7 +14,8 @@ import {
   isDeckComplete,
   mergeDeckState,
   nextCellId,
-  resetDeck,
+  resetDeckInOrder,
+  resetDeckShuffled,
   tableCellsForLesson,
   wordCellsForLesson,
   WORD_DECK_MIN_CARDS,
@@ -107,69 +108,66 @@ describe('tableCellsForLesson', () => {
   });
 });
 
-// FB377: the deck no longer walks the cells in table order (a fixed "yo ·
-// ser" first taught the position, not the answer), it uses a seeded shuffle
-// of lesson id + reset count instead. `order(lessonId, resetCount)` below
-// recomputes that exact order with the same primitives the module uses, so
-// these tests stay meaningful (and would catch a change to the shuffle
-// itself) instead of hardcoding a sequence.
+// FB389 (felülírja FB377-et): az 1. kör megint a tábla/forrás sorrendjében
+// jön (`tableOrder` = a cellák saját tömb-sorrendje), a kevert sorrend a
+// "Harder: shuffled" (resetDeckShuffled) külön útja. `shuffledOrder(...)`
+// lent ugyanazzal az elsődleges eszközzel (seed-elt shuffle) számolja ki azt
+// a permutációt, amit a resetDeckShuffled-nek adnia KELL, hogy ezek a
+// tesztek magát a shuffle-t is elkapják, ha megváltozna.
 const LESSON_ID = 'ser-estar';
-function order(lessonId: string, resetCount: number, ids: string[]): string[] {
+function shuffledOrder(lessonId: string, resetCount: number, ids: string[]): string[] {
   return shuffleArray(ids.slice().sort(), hashString(`${lessonId}:${resetCount}`));
 }
 
-describe('scheduling: initDeckState / nextCellId / answerCell / resetDeck', () => {
+describe('scheduling: initDeckState / nextCellId / answerCell / resetDeckInOrder / resetDeckShuffled', () => {
   const cells = tableCellsForLesson(lessonFor('es', LESSON_ID)!);
-  const deckOrder = order(LESSON_ID, 0, cells.map((c) => c.id));
+  const tableOrder = cells.map((c) => c.id);
 
-  it('starts every cell due now, in the seeded-shuffle order (not the table order)', () => {
-    const state = initDeckState(cells, LESSON_ID);
+  it('starts every cell due now, in the SOURCE (table) order, not shuffled', () => {
+    const state = initDeckState(cells);
     expect(state.cells).toHaveLength(10);
-    expect(state.cells.map((c) => c.id)).toEqual(deckOrder);
+    expect(state.cells.map((c) => c.id)).toEqual(tableOrder);
+    expect(state.shuffled).toBe(false);
     expect(state.cells.every((c) => !c.done && c.dueAt === null)).toBe(true);
-    expect(nextCellId(state, 1000)).toBe(deckOrder[0]);
+    expect(nextCellId(state, 1000)).toBe(tableOrder[0]);
   });
 
-  it('the same lesson id + reset count always gives the same order', () => {
-    const a = initDeckState(cells, LESSON_ID);
-    const b = initDeckState(cells, LESSON_ID);
-    expect(a.cells.map((c) => c.id)).toEqual(b.cells.map((c) => c.id));
-  });
-
-  it('a different lesson id gives a different order', () => {
-    const other = initDeckState(cells, 'presente-regular');
-    expect(other.cells.map((c) => c.id)).not.toEqual(deckOrder);
+  it('initDeckState always gives the same (table) order, regardless of lesson id', () => {
+    const a = initDeckState(cells);
+    const b = initDeckState(cells);
+    expect(a.cells.map((c) => c.id)).toEqual(tableOrder);
+    expect(b.cells.map((c) => c.id)).toEqual(tableOrder);
   });
 
   it('a correct answer marks the cell done and moves on to the next one', () => {
-    let state = initDeckState(cells, LESSON_ID);
+    let state = initDeckState(cells);
     const now = 1_000_000;
-    state = answerCell(state, deckOrder[0], true, now);
-    expect(state.cells[0]).toEqual({ id: deckOrder[0], done: true, dueAt: null });
-    expect(nextCellId(state, now)).toBe(deckOrder[1]);
+    state = answerCell(state, tableOrder[0], true, now);
+    expect(state.cells[0]).toEqual({ id: tableOrder[0], done: true, dueAt: null });
+    expect(nextCellId(state, now)).toBe(tableOrder[1]);
     expect(doneCount(state)).toBe(1);
   });
 
   it('a wrong answer keeps the cell open and pushes it 60s into the future', () => {
-    let state = initDeckState(cells, LESSON_ID);
+    let state = initDeckState(cells);
     const now = 1_000_000;
-    state = answerCell(state, deckOrder[0], false, now);
-    expect(state.cells[0]).toEqual({ id: deckOrder[0], done: false, dueAt: now + 60_000 });
+    state = answerCell(state, tableOrder[0], false, now);
+    expect(state.cells[0]).toEqual({ id: tableOrder[0], done: false, dueAt: now + 60_000 });
     // Not due yet -> the next fresh cell is shown, not the just-missed one.
-    expect(nextCellId(state, now)).toBe(deckOrder[1]);
+    expect(nextCellId(state, now)).toBe(tableOrder[1]);
   });
 
   it('a wrong cell comes back once its cooldown has elapsed', () => {
-    let state = initDeckState(cells, LESSON_ID);
+    let state = initDeckState(cells);
     const now = 1_000_000;
-    state = answerCell(state, deckOrder[0], false, now);
-    expect(nextCellId(state, now + 59_999)).toBe(deckOrder[1]);
-    expect(nextCellId(state, now + 60_000)).toBe(deckOrder[0]);
+    state = answerCell(state, tableOrder[0], false, now);
+    expect(nextCellId(state, now + 59_999)).toBe(tableOrder[1]);
+    expect(nextCellId(state, now + 60_000)).toBe(tableOrder[0]);
   });
 
   it('learn-ahead: if every remaining cell is a waiting wrong answer, shows the soonest one', () => {
-    const two = cells.filter((c) => c.id === deckOrder[0] || c.id === deckOrder[1]);
-    let state = initDeckState(two, LESSON_ID);
+    const two = cells.filter((c) => c.id === tableOrder[0] || c.id === tableOrder[1]);
+    let state = initDeckState(two);
     const [firstId, secondId] = state.cells.map((c) => c.id);
     state = answerCell(state, firstId, false, 1000); // due at 61000
     state = answerCell(state, secondId, false, 2000); // due at 62000
@@ -178,7 +176,7 @@ describe('scheduling: initDeckState / nextCellId / answerCell / resetDeck', () =
   });
 
   it('nextCellId is null once every cell is done, and isDeckComplete agrees', () => {
-    let state = initDeckState(cells, LESSON_ID);
+    let state = initDeckState(cells);
     const now = 1_000_000;
     for (const c of cells) state = answerCell(state, c.id, true, now);
     expect(nextCellId(state, now)).toBeNull();
@@ -187,53 +185,93 @@ describe('scheduling: initDeckState / nextCellId / answerCell / resetDeck', () =
   });
 
   it('an empty deck is not "complete" (nothing to celebrate)', () => {
-    expect(isDeckComplete(initDeckState([], LESSON_ID))).toBe(false);
+    expect(isDeckComplete(initDeckState([]))).toBe(false);
   });
 
-  it('resetDeck clears every cell back to fresh, bumps resetCount, and reshuffles', () => {
-    let state = initDeckState(cells, LESSON_ID);
+  it('resetDeckInOrder ("Start again") clears every cell back to fresh, in the SOURCE order, resetCount back to 0', () => {
+    let state = initDeckState(cells);
     const now = 1_000_000;
-    state = answerCell(state, deckOrder[0], true, now);
-    state = answerCell(state, deckOrder[1], false, now);
-    const fresh = resetDeck(state, LESSON_ID);
-    expect(fresh.resetCount).toBe(1);
+    state = answerCell(state, tableOrder[0], true, now);
+    state = answerCell(state, tableOrder[1], false, now);
+    const fresh = resetDeckInOrder(cells);
+    expect(fresh.shuffled).toBe(false);
+    expect(fresh.resetCount).toBe(0);
     expect(fresh.cells.every((c) => !c.done && c.dueAt === null)).toBe(true);
-    expect(fresh.cells.map((c) => c.id).sort()).toEqual(deckOrder.slice().sort());
-    expect(fresh.cells.map((c) => c.id)).toEqual(order(LESSON_ID, 1, deckOrder));
+    expect(fresh.cells.map((c) => c.id)).toEqual(tableOrder);
+  });
+
+  it('resetDeckInOrder returns to the table order even from a shuffled pass (not the shuffled order)', () => {
+    const shuffled = resetDeckShuffled(cells, LESSON_ID, 0);
+    const backToOrder = resetDeckInOrder(cells);
+    expect(backToOrder.cells.map((c) => c.id)).toEqual(tableOrder);
+    expect(backToOrder.cells.map((c) => c.id)).not.toEqual(shuffled.cells.map((c) => c.id));
+  });
+
+  // FB390-tesztből ismert eset (interrogativos): ha egy táblának >= 2 cellája
+  // van, a shuffle sorrendje ténylegesen eltér a tábla-sorrendtől (nem
+  // véletlenül egyezik meg vele), ahogy a PLAN-fb0924 3. lépés kéri.
+  it('resetDeckShuffled ("Harder: shuffled") is a permutation of the same ids, not the table order, and bumps resetCount + shuffled', () => {
+    const fresh = resetDeckShuffled(cells, LESSON_ID, 0);
+    expect(fresh.resetCount).toBe(1);
+    expect(fresh.shuffled).toBe(true);
+    expect(fresh.cells.every((c) => !c.done && c.dueAt === null)).toBe(true);
+    expect(fresh.cells.map((c) => c.id).sort()).toEqual(tableOrder.slice().sort());
+    expect(fresh.cells.map((c) => c.id)).toEqual(shuffledOrder(LESSON_ID, 1, tableOrder));
+    expect(fresh.cells.map((c) => c.id)).not.toEqual(tableOrder);
+  });
+
+  it('resetDeckShuffled keeps advancing the seed on consecutive shuffles', () => {
+    const first = resetDeckShuffled(cells, LESSON_ID, 0);
+    const second = resetDeckShuffled(cells, LESSON_ID, first.resetCount);
+    expect(second.resetCount).toBe(2);
+    expect(second.cells.map((c) => c.id)).toEqual(shuffledOrder(LESSON_ID, 2, tableOrder));
+    expect(second.cells.map((c) => c.id)).not.toEqual(first.cells.map((c) => c.id));
   });
 });
 
 describe('mergeDeckState', () => {
   const cells = tableCellsForLesson(lessonFor('es', LESSON_ID)!);
-  const deckOrder = order(LESSON_ID, 0, cells.map((c) => c.id));
+  const tableOrder = cells.map((c) => c.id);
 
-  it('with no persisted state, everything starts fresh', () => {
+  it('with no persisted state at all, everything starts fresh IN THE TABLE ORDER (FB389 default)', () => {
     const merged = mergeDeckState(cells, LESSON_ID, undefined);
     expect(merged.cells).toHaveLength(10);
-    expect(merged.cells.map((c) => c.id)).toEqual(deckOrder);
+    expect(merged.shuffled).toBe(false);
+    expect(merged.cells.map((c) => c.id)).toEqual(tableOrder);
     expect(merged.cells.every((c) => !c.done && c.dueAt === null)).toBe(true);
   });
 
   it('keeps a persisted cell state that still matches a current cell', () => {
-    const persistedCells: DeckCellState[] = [{ id: deckOrder[0], done: true, dueAt: null }];
-    const persisted: DeckState = { cells: persistedCells, resetCount: 0 };
+    const persistedCells: DeckCellState[] = [{ id: tableOrder[0], done: true, dueAt: null }];
+    const persisted: DeckState = { cells: persistedCells, resetCount: 0, shuffled: false };
     const merged = mergeDeckState(cells, LESSON_ID, persisted);
-    expect(merged.cells.find((c) => c.id === deckOrder[0])).toEqual(persistedCells[0]);
+    expect(merged.cells.find((c) => c.id === tableOrder[0])).toEqual(persistedCells[0]);
     expect(doneCount(merged)).toBe(1);
   });
 
   it('drops a persisted cell the lesson no longer has, and starts an unseen cell fresh', () => {
-    const persisted: DeckState = { cells: [{ id: 'stale-id-from-an-old-corpus', done: true, dueAt: null }], resetCount: 0 };
+    const persisted: DeckState = { cells: [{ id: 'stale-id-from-an-old-corpus', done: true, dueAt: null }], resetCount: 0, shuffled: false };
     const merged = mergeDeckState(cells, LESSON_ID, persisted);
     expect(merged.cells).toHaveLength(10);
     expect(doneCount(merged)).toBe(0);
   });
 
-  it('carries the persisted reset count over, so the order matches that pass', () => {
-    const persisted: DeckState = { cells: [], resetCount: 2 };
+  it('a persisted shuffled=true state keeps the seeded shuffle order for its reset count', () => {
+    const persisted: DeckState = { cells: [], resetCount: 2, shuffled: true };
     const merged = mergeDeckState(cells, LESSON_ID, persisted);
     expect(merged.resetCount).toBe(2);
-    expect(merged.cells.map((c) => c.id)).toEqual(order(LESSON_ID, 2, cells.map((c) => c.id)));
+    expect(merged.shuffled).toBe(true);
+    expect(merged.cells.map((c) => c.id)).toEqual(shuffledOrder(LESSON_ID, 2, tableOrder));
+  });
+
+  // FB389: régi mentés, még a `shuffled` mező bevezetése ELŐTTről (csak
+  // `cells` + `resetCount`) - ne dobjon hibát, és NE rendezze át hallgatólag
+  // a folyamatban lévő shuffled kört a tábla-sorrendre.
+  it('a persisted state without the `shuffled` field (pre-FB389 save) defaults to shuffled=true, not a reorder', () => {
+    const oldPersisted = { cells: [], resetCount: 0 } as unknown as DeckState;
+    const merged = mergeDeckState(cells, LESSON_ID, oldPersisted);
+    expect(merged.shuffled).toBe(true);
+    expect(merged.cells.map((c) => c.id)).toEqual(shuffledOrder(LESSON_ID, 0, tableOrder));
   });
 });
 
