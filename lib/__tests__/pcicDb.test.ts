@@ -47,4 +47,17 @@ describe('pcic_cards (memory db)', () => {
     expect(await db.getPcicCards()).toEqual([]);
     expect((await db.getPcicStats('2026-09-18')).total).toBe(0);
   });
+
+  // FB385/386: getPcicNewBonus/setPcicNewBonus round-trip, memory-DB szinten.
+  it('getPcicNewBonus/setPcicNewBonus: perzisztál (reload-eset) és naptári nappal lejár', async () => {
+    expect(await db.getPcicNewBonus('2026-09-18')).toBe(0);
+
+    await db.setPcicNewBonus(18, '2026-09-18');
+    // "Reload": ugyanarra a napra ÚJRA lekérdezve ugyanaz jön, nem nullázódik.
+    expect(await db.getPcicNewBonus('2026-09-18')).toBe(18);
+    expect(await db.getPcicNewBonus('2026-09-18')).toBe(18);
+
+    // Nap-váltás: a tegnapi bónusz nem számít a következő napon.
+    expect(await db.getPcicNewBonus('2026-09-19')).toBe(0);
+  });
 });

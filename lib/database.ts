@@ -55,6 +55,11 @@ export interface DB {
   setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
   getDailyNewLimit(): Promise<number>;
   setDailyNewLimit(limit: number): Promise<void>;
+  // FB385/386: a PCIC "+10 új szó" bónusz, a naptári nappal lejár (a `today`
+  // paramot a hívó adja, mint `getPcicStats`-nál); 0, ha `today`-re nincs
+  // perzisztált bónusz.
+  getPcicNewBonus(today: string): Promise<number>;
+  setPcicNewBonus(bonus: number, today: string): Promise<void>;
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
   getDayStats(date: string): Promise<{ minutes: number; words: number }>;
@@ -312,7 +317,8 @@ class SQLiteDB implements DB {
   }
 
   // FB77: daily new-word budget. The standing limit lives in learn_settings,
-  // the "+5 new words" taps add a bonus that expires with the calendar day.
+  // the "+10 new words" taps (PCIC, FB385/386) add a bonus that expires with
+  // the calendar day (getPcicNewBonus/setPcicNewBonus below).
   async getDailyNewLimit(): Promise<number> {
     const db = await this.open();
     const row = await db.getFirstAsync<any>('SELECT daily_new_limit FROM learn_settings WHERE pair = ?', [this.activePair]);
@@ -324,6 +330,25 @@ class SQLiteDB implements DB {
     await db.runAsync(
       'INSERT INTO learn_settings (pair, daily_new_limit) VALUES (?, ?) ON CONFLICT(pair) DO UPDATE SET daily_new_limit = excluded.daily_new_limit',
       [this.activePair, limit]
+    );
+  }
+
+  // FB385/386: the columns already existed (FB77, the retired Learn tab) but
+  // had no reader/writer since that tab left; the PCIC "+10 new words" tap
+  // reuses them instead of adding a new pair of columns. `new_bonus_date`
+  // decides whether the stored bonus still counts (0 once the day rolls over).
+  async getPcicNewBonus(today: string): Promise<number> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT new_bonus, new_bonus_date FROM learn_settings WHERE pair = ?', [this.activePair]);
+    if (row?.new_bonus_date !== today) return 0;
+    return typeof row?.new_bonus === 'number' ? row.new_bonus : 0;
+  }
+
+  async setPcicNewBonus(bonus: number, today: string): Promise<void> {
+    const db = await this.open();
+    await db.runAsync(
+      'INSERT INTO learn_settings (pair, new_bonus, new_bonus_date) VALUES (?, ?, ?) ON CONFLICT(pair) DO UPDATE SET new_bonus = excluded.new_bonus, new_bonus_date = excluded.new_bonus_date',
+      [this.activePair, bonus, today]
     );
   }
 

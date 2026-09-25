@@ -1,7 +1,15 @@
 // SZ2 (SZAVAK.md): a session-sor léptetése értékelés után és visszavonáskor.
 
-import { countDoneToday, requeueAfterGrade, requeueAfterUndo, reorderForReturn, type QueuedSm2Card } from '../pcicSession';
-import { sm2NewCard, sm2Review, addDays, type Sm2Card } from '../sm2';
+import {
+  countDoneToday,
+  requeueAfterGrade,
+  requeueAfterUndo,
+  reorderForReturn,
+  nextPcicNewBonus,
+  pcicNewBudget,
+  type QueuedSm2Card,
+} from '../pcicSession';
+import { sm2NewCard, sm2Review, pickSm2Session, addDays, type Sm2Card } from '../sm2';
 
 const TODAY = '2026-09-18';
 const TOMORROW = addDays(TODAY, 1);
@@ -201,5 +209,60 @@ describe('countDoneToday', () => {
     const cards = [reviewCard({ lastReview: addDays(TODAY, -1) }), sm2NewCard('b1-0016')];
 
     expect(countDoneToday(cards, TODAY)).toBe(0);
+  });
+});
+
+// FB385/386: "+10 new words" was flat-added to the standing limit and kept
+// only in React state (extraNew), so a tap after the day's introduced count
+// already ran past the limit (limit 10, introduced today 18) gave back only
+// 2 new cards instead of 10, and the bonus vanished on the next reload.
+describe('nextPcicNewBonus + pcicNewBudget (FB385/386)', () => {
+  it('reproduces the bug case: limit 10, 18 already introduced today, "+10" gives 10 new cards, not 2', () => {
+    const limit = 10;
+    const introducedToday = 18;
+    const bonus = nextPcicNewBonus({ limit, bonus: 0, introducedToday });
+    expect(bonus).toBe(18); // max(0, 18-10) + 10
+
+    const effectiveLimit = pcicNewBudget({ limit, bonus, introducedToday });
+
+    // Build a session where 18 cards were already introduced today and 10
+    // fresh ones are still waiting, exactly like the reported case.
+    const today = TODAY;
+    const already = Array.from({ length: introducedToday }, (_, i) =>
+      sm2Review(sm2NewCard(`b1-int-${i}`), 'good', today)
+    );
+    const freshOrder = Array.from({ length: 10 }, (_, i) => `b1-fresh-${i}`);
+    const session = pickSm2Session(already, freshOrder, today, effectiveLimit);
+
+    expect(session.filter((c) => c.state === 'new').length).toBe(10);
+  });
+
+  it('a second "+10" tap keeps stacking on top of the persisted bonus', () => {
+    const limit = 10;
+    const introducedToday = 5;
+    const first = nextPcicNewBonus({ limit, bonus: 0, introducedToday });
+    expect(first).toBe(10); // max(0, 5-10)=0, +10
+
+    const second = nextPcicNewBonus({ limit, bonus: first, introducedToday });
+    expect(second).toBe(20); // max(10, 5-10)=10, +10
+  });
+
+  it('a reload (fresh load() call) keeps giving the same budget as long as the persisted bonus and introduced count are unchanged', () => {
+    const input = { limit: 10, bonus: 18, introducedToday: 18 };
+    // load() re-derives the budget purely from the persisted bonus + the
+    // cards read back from the DB, so calling it twice with the same
+    // (persisted) inputs must not shrink the budget the way the old
+    // React-state extraNew did (it reset to 0 on every load()).
+    expect(pcicNewBudget(input)).toBe(pcicNewBudget(input));
+    expect(pcicNewBudget(input)).toBe(28); // limit + bonus, well above introducedToday
+  });
+
+  it("a day change means the stored bonus no longer applies (only today's introduced count counts)", () => {
+    // getPcicNewBonus(today) returns 0 once new_bonus_date !== today, so the
+    // caller (load()) passes bonus: 0 the next day regardless of yesterday's value.
+    const limit = 10;
+    const introducedToday = 3;
+    const budgetWithYesterdaysBonusExpired = pcicNewBudget({ limit, bonus: 0, introducedToday });
+    expect(budgetWithYesterdaysBonusExpired).toBe(10); // back to the standing limit, no leftover bonus
   });
 });
