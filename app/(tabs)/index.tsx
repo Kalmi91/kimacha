@@ -20,7 +20,7 @@ import {
   type ArticlePick,
 } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget } from '@/lib/pcicSession';
+import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget } from '@/lib/pcicSession';
 import { applyChainOrder } from '@/lib/pcicChains';
 import { cardsForLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
@@ -183,6 +183,10 @@ export default function PcicScreen() {
   const dueRemaining = queue.filter((c) => c.state !== 'new').length;
   const newRemaining = queue.filter((c) => c.state === 'new').length;
   const doneToday = countDoneToday([...allCards.values()], today);
+  // FB387/395 (PLAN-fb0924 1b. lépés): a fejléc mutassa, MIBŐL áll a mai
+  // bevezetés (szó vs. mondat), plusz a mai teljes keret (limit + bónusz).
+  const introducedTodayByKind = countIntroducedTodayByKind([...allCards.values()], today, (id) => findPcicItem(id)?.kind);
+  const todayNewBudget = dailyNewLimit + pcicBonus;
 
   // SZ2 (SZAVAK.md): a DB-írás + számlálók itt, a queue-léptetés (advance) a
   // hívó handleGrade-ben, külön.
@@ -351,6 +355,9 @@ export default function PcicScreen() {
             { label: s.pcic.badgeDue(dueRemaining), tone: 'blue' },
             { label: s.pcic.badgeNew(newRemaining), tone: 'green' },
             { label: s.pcic.badgeDone(doneToday), tone: 'pink' },
+            // FB387/395: miből áll a mai bevezetés (szó vs. mondat) + a mai
+            // teljes keret (napi limit + az 1a-beli "+10" bónusz).
+            { label: s.pcic.badgeIntroducedToday(introducedTodayByKind.words, introducedTodayByKind.sentences, todayNewBudget) },
           ]}
         />
       </View>

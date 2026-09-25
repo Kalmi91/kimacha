@@ -1,4 +1,5 @@
 import type { Sm2Card, Sm2Grade } from './sm2';
+import type { PcicKind } from '@/data/pcic';
 
 // SZ2 (SZAVAK.md): a sor léptetése értékelés után és visszavonáskor, tesztelhetően.
 
@@ -121,4 +122,31 @@ export function nextPcicNewBonus(
  */
 export function pcicNewBudget({ limit, bonus, introducedToday }: PcicNewBudgetInput): number {
   return Math.max(introducedToday, limit + bonus);
+}
+
+// FB387/395 (PLAN-fb0924 1b. lépés, D2 = b): a napi keret MINDEN kártyát számol
+// (szó, kifejezés, mondat, lánc-tag), ahogy eddig - ez nem változik. Ami hiányzott:
+// a fejléc nem mutatta meg, MIBŐL áll a mai bevezetés, ezért egy 10-es keretnél a
+// "csak 6 vagy 8 jött" zavarba fulladt (a maradék a másik fajtára ment el, vagy
+// korábban ebben a napi körben már bevezetődött). Ez a felbontás, `word` = kind
+// word/phrase/pattern, `sentence` = kind sentence (a lánc-mondatok is ide esnek,
+// mert egy lánc-tag ugyanolyan `sentence` kind-ú PcicItem, mint bármely más mondat).
+export interface TodayIntroducedByKind {
+  words: number;
+  sentences: number;
+}
+
+export function countIntroducedTodayByKind(
+  cards: Sm2Card[],
+  today: string,
+  kindOf: (itemId: string) => PcicKind | undefined
+): TodayIntroducedByKind {
+  let words = 0;
+  let sentences = 0;
+  for (const card of cards) {
+    if (card.introducedAt !== today) continue;
+    if (kindOf(card.itemId) === 'sentence') sentences++;
+    else words++; // word / phrase / pattern / ismeretlen -> szó-vödör
+  }
+  return { words, sentences };
 }
