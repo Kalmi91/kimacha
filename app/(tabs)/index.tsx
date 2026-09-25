@@ -24,6 +24,7 @@ import { countDoneToday, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELA
 import { applyChainOrder } from '@/lib/pcicChains';
 import { cardsForLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
+import { pcicNoteText } from '@/lib/pcicNotes';
 import FeedbackButton from '@/components/FeedbackModal';
 import BadgeRow from '@/components/learn/BadgeRow';
 import CardShell from '@/components/learn/CardShell';
@@ -73,6 +74,11 @@ export default function PcicScreen() {
   const [typedAnswer, setTypedAnswer] = useState('');
   const [articlePick, setArticlePick] = useState<ArticlePick>('');
   const [grade, setGrade] = useState<PcicGrade | null>(null);
+  // FB392/393: a ℹ️ jegyzet ki/be nyitása. Az itemId-t tárolja (nem egy
+  // puszta boolean-t), hogy kártyaváltáskor a becsukódás LEVEZETETT állapot
+  // legyen (nincs szükség rá, hogy egy effekt setState-tel nullázza -
+  // react-hooks/set-state-in-effect).
+  const [noteOpenFor, setNoteOpenFor] = useState<string | null>(null);
   const [sessionAnswered, setSessionAnswered] = useState(0);
   const [sessionNew, setSessionNew] = useState(0);
   const [sessionAgain, setSessionAgain] = useState(0);
@@ -443,6 +449,12 @@ export default function PcicScreen() {
   // 5c: szófaj-chip a szó alatt, a spanyol alakból (lib/pcicPos.ts, döntés 6b).
   const pos = posOf(currentItem);
 
+  // FB392/393: ℹ️ jegyzet, CSAK ha az itemnek van (lib/pcicNotes.ts); a
+  // nyitottság LEVEZETETT (noteOpenFor === az aktuális item id-je), tehát
+  // kártyaváltáskor magától becsukódik, nincs rá külön effekt.
+  const note = pcicNoteText(currentItem.id);
+  const noteOpen = noteOpenFor === currentItem.id;
+
   // FB363/FB367: régió-chip (PCIC `[Régió]` zárójel tartalma) és mx-chip
   // (spanyolországi/mexikói köznyelvi eltérés) a szófaj-chip mellett.
   const regionChipLabel = currentItem.region
@@ -494,7 +506,24 @@ export default function PcicScreen() {
             <Pressable onPress={() => speak(currentItem.en, speechLang('en'))} style={styles.speakBtn}>
               <Text style={styles.speakIcon}>🔊</Text>
             </Pressable>
+            {/* FB392/393: ℹ️ gomb, csak jegyzetes itemen; koppintásra ki/be
+                nyílik a jegyzet, kártyaváltáskor levezetve becsukódik. */}
+            {note && (
+              <Pressable
+                onPress={() => setNoteOpenFor(noteOpen ? null : currentItem.id)}
+                style={styles.speakBtn}
+                accessibilityLabel="note"
+                testID="pcic-note-toggle"
+              >
+                <Text style={styles.speakIcon}>ℹ️</Text>
+              </Pressable>
+            )}
           </View>
+          {note && noteOpen && (
+            <Text testID="pcic-note-text" style={[styles.noteText, { color: colors.tabIconDefault }]}>
+              {note}
+            </Text>
+          )}
           {/* 5c: a chip (szófaj) + a szekció ugyanabban a sorban látszik
               gépeléskor és felfedés után is, hogy háromszor ismétlődő angol
               promptnál is megkülönböztethető legyen a tétel. */}
@@ -756,6 +785,14 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: '700',
     textAlign: 'center',
+  },
+  // FB392/393: a ℹ️ jegyzet szövege, a wordRow alatt.
+  noteText: {
+    fontSize: 14,
+    lineHeight: 20,
+    textAlign: 'center',
+    marginTop: 8,
+    marginBottom: 4,
   },
   sectionRow: {
     flexDirection: 'row',
