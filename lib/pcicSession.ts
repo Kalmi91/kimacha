@@ -158,6 +158,43 @@ export function countIntroducedTodayByKind(
 // a korábbi esedékesség (hogy az ismétlés ne csússzon ki). A `cardMerge.ts`
 // pickSurvivor-jának Sm2Card-megfelelője (az ottani `stability` mező itt
 // nincs, az FSRS-only `cards` táblára épült).
+// PLAN-fb0924 8. lépés (FB394/396): a bevezetendő új kártyák (a lánc-
+// átrendezés, lib/pcicChains.ts applyChainOrder, UTÁN futó) sorrendjében két
+// mondat (vagy lánc, ami `groupOf` szerint EGY egységnek számít) közt
+// legalább `minGap` nem-mondat kártyának kell lennie ("10 kártyánként max 1
+// mondat"). Ami idő előtt jönne, EBBŐL a hívásból kimarad (nem a sor végére
+// kerül, hanem eldobódik - mint az applyChainOrder `excluded` halmaza): a
+// következő sor-építés (load()/handleMoreNew()) újra megvizsgálja, mert addigra
+// már más kártyák is bevezetődtek. Az "A1+"/"A2+" (csak mondatot tartalmazó)
+// szinten NEM hívandó (ott minden ritkítás mindent kidobna).
+export function thinSentences(
+  orderedIds: string[],
+  kindOf: (id: string) => PcicKind | undefined,
+  groupOf: (id: string) => string,
+  minGap: number = 9
+): string[] {
+  const result: string[] = [];
+  let sinceLastGroup = minGap; // az első mondat-csoport várakozás nélkül mehet
+  let activeGroup: string | null = null;
+  for (const id of orderedIds) {
+    if (kindOf(id) !== 'sentence') {
+      result.push(id);
+      sinceLastGroup++;
+      continue;
+    }
+    const group = groupOf(id);
+    if (group === activeGroup || sinceLastGroup >= minGap) {
+      result.push(id);
+      if (group !== activeGroup) {
+        activeGroup = group;
+        sinceLastGroup = 0;
+      }
+    }
+    // else: idő előtt jönne, ebből a hívásból kimarad.
+  }
+  return result;
+}
+
 export function pickStrongerSm2Card(a: Sm2Card, b: Sm2Card): Sm2Card {
   const aSuccess = a.reps - a.lapses;
   const bSuccess = b.reps - b.lapses;

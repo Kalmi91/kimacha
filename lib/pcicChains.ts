@@ -124,6 +124,23 @@ export function applyChainOrder(newOrder: string[], cards: Sm2Card[], level: Pci
   return [...pulled, ...rest];
 }
 
+// PLAN-fb0924 8. lépés (FB394/396): a mondat-ritkításhoz (lib/pcicSession.ts
+// thinSentences) egy lánc (a szülő komplex mondat + a bridge-ei) EGY
+// egységnek számít. Bridge id -> a szülője id-je, szülő id -> önmaga,
+// nem lánc-tag id -> undefined (a hívó ilyenkor a saját id-jét használja
+// csoportkulcsnak, azaz nem csoportosít).
+const A1_BUILD = BUILD_BY_LEVEL.A1 ?? {};
+const A1_BRIDGE_TO_PARENT = new Map<string, string>();
+for (const [parentId, entry] of Object.entries(A1_BUILD)) {
+  for (const bridgeId of entry.bridges ?? []) A1_BRIDGE_TO_PARENT.set(bridgeId, parentId);
+}
+
+export function chainGroupId(id: string): string | undefined {
+  const parent = A1_BRIDGE_TO_PARENT.get(id);
+  if (parent) return parent;
+  return A1_BUILD[id] ? id : undefined;
+}
+
 // FB365-369, funkciószó-lista a mondat-lánc szó-lefedettség auditjához
 // (lib/__tests__/pcicChainCoverage.test.ts, észak-csillag 4. pont: soha
 // nincs mondat ismeretlen szóval): névelők, alap-elöljárók, kötőszó,
