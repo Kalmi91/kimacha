@@ -20,7 +20,8 @@ import {
   doneCount,
   mergeDeckState,
   nextCellId,
-  resetDeck,
+  resetDeckInOrder,
+  resetDeckShuffled,
   tableCellsForLesson,
   wordCellsForLesson,
   type DeckState,
@@ -75,7 +76,7 @@ export default function TableDeckScreen() {
   const [againDelaySec, setAgainDelaySec] = useState(DEFAULT_AGAIN_DELAY_SEC);
   const [mode, setMode] = useState<DeckMode>('table');
   const [items, setItems] = useState<DeckItem[]>([]);
-  const [deck, setDeck] = useState<DeckState>({ cells: [], resetCount: 0 });
+  const [deck, setDeck] = useState<DeckState>({ cells: [], resetCount: 0, shuffled: false });
   const [typed, setTyped] = useState('');
   const [checked, setChecked] = useState<{ correct: boolean } | null>(null);
   const [dockH, setDockH] = useState(DOCK_RESERVE);
@@ -159,7 +160,18 @@ export default function TableDeckScreen() {
   };
 
   const handleStartAgain = () => {
-    const fresh = resetDeck(deck, String(topicId));
+    const fresh = resetDeckInOrder(items);
+    setDeck(fresh);
+    persist(fresh);
+    setTyped('');
+    setChecked(null);
+    setNow(Date.now());
+  };
+
+  // FB389: "Harder: shuffled" - all cells again, but shuffled this time
+  // (resetDeckInOrder above is the plain restart, in the deck's own order).
+  const handleHarder = () => {
+    const fresh = resetDeckShuffled(items, String(topicId), deck.resetCount);
     setDeck(fresh);
     persist(fresh);
     setTyped('');
@@ -203,6 +215,11 @@ export default function TableDeckScreen() {
           <Text style={[styles.doneTitle, { color: colors.text }]}>{s.tableDeck.completeTitle(items.length)}</Text>
           <Pressable testID="tabledeck-start-again" style={[styles.btn, { backgroundColor: colors.tint }]} onPress={handleStartAgain}>
             <Text style={styles.btnTextOnTint}>{s.tableDeck.startAgain}</Text>
+          </Pressable>
+          {/* FB389: same pill shape/size as "Start again" (outline instead
+              of filled), so the two options read as equally-weighted choices. */}
+          <Pressable testID="tabledeck-harder" style={[styles.btn, styles.btnOutline, { borderColor: colors.tint }]} onPress={handleHarder}>
+            <Text style={[styles.btnTextOnTint, { color: colors.tint }]}>{s.tableDeck.harder}</Text>
           </Pressable>
           <Pressable style={styles.ghostBtn} onPress={() => router.back()}>
             <Text style={[styles.ghostBtnText, { color: colors.tabIconDefault }]}>{s.tableDeck.backToLesson}</Text>
@@ -352,6 +369,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   btnTextOnTint: { color: '#FFFFFF', fontSize: 16, fontWeight: '700' },
+  // FB389: "Harder: shuffled" pill, same size as `btn`, outline instead of filled.
+  btnOutline: { backgroundColor: 'transparent', borderWidth: 2 },
   ghostBtn: { marginTop: 4, padding: 8 },
   ghostBtnText: { fontSize: 14 },
 });

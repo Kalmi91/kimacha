@@ -43,12 +43,11 @@ const flush = async (times = 3) => {
 
 const cells = tableCellsForLesson(lessonFor('es', 'ser-estar')!);
 
-// FB377: the deck no longer shows the cells in table order, it uses a
-// seeded shuffle (lesson id + reset count, lib/grammar/tableDeck.ts). This
-// recomputes that same order (reset count 0, the first pass) so the test
-// walks the cells in the order the screen actually shows them.
-const deckOrder = shuffleArray(cells.map((c) => c.id).sort(), hashString('ser-estar:0'));
-const cellAt = (i: number) => cells.find((c) => c.id === deckOrder[i])!;
+// FB389 (felülírja FB377-et): az 1. kör (és a "Start again") megint a
+// tábla/forrás sorrendjében jön, tehát a képernyő a `cells` saját tömb-
+// sorrendjét mutatja; nincs shuffle-t kell újraszámolni a pass 0-hoz.
+const tableOrder = cells.map((c) => c.id);
+const cellAt = (i: number) => cells.find((c) => c.id === tableOrder[i])!;
 
 const answerCurrent = async (typed: string) => {
   fireEvent.changeText(screen.getByTestId('tabledeck-input'), typed);
@@ -65,20 +64,24 @@ describe('table-deck screen: ser-estar playthrough', () => {
     await db.setOnboarding('en', 'es');
     (db as any).__setLevelForTest('A1');
     // Each test starts a fresh deck; the web db's game_progress map otherwise
-    // carries state over between `it` blocks in this file.
-    await db.setGameProgress(GRAMMAR_PROGRESS_KEY, 'ser-estar:tabledeck', 'progress', { cells: [] });
+    // carries state over between `it` blocks in this file. FB389: an
+    // explicit `shuffled: false` here (not the bare pre-FB389 `{ cells: [] }`
+    // shape) so a reset test starts in the table order, same as a lesson
+    // that was genuinely never opened before (mergeDeckState's `persisted
+    // === undefined` branch) rather than the legacy-save fallback.
+    await db.setGameProgress(GRAMMAR_PROGRESS_KEY, 'ser-estar:tabledeck', 'progress', { cells: [], resetCount: 0, shuffled: false });
   });
 
   afterEach(() => {
     (Date.now as jest.Mock).mockRestore?.();
   });
 
-  it('extracted exactly 10 non-vosotros cells (raw table order, not the deck order)', () => {
+  it('extracted exactly 10 non-vosotros cells, in table order', () => {
     expect(cells).toHaveLength(10);
     expect(cells[0]).toMatchObject({ person: 'yo', verb: 'ser', answer: 'soy' });
   });
 
-  it('shows the first cell in the seeded-shuffle order, its "person · verb" caption, and the TABLE chip', async () => {
+  it('shows the first cell in the table order, its "person · verb" caption, and the TABLE chip', async () => {
     const view = render(<TableDeckScreen />);
     await flush();
 
@@ -131,13 +134,9 @@ describe('table-deck screen: ser-estar playthrough', () => {
     view2.unmount();
   });
 
-  it('finishing every cell shows the completion screen, and "Start again" resets and reshuffles the deck', async () => {
-    const now = 1_700_000_000_000;
-    jest.spyOn(Date, 'now').mockReturnValue(now);
-
-    render(<TableDeckScreen />);
-    await flush();
-
+  // FB389: the shared "answer every cell, once wrong first" walk used by
+  // both the "Start again" and "Harder: shuffled" completion tests below.
+  const finishTheDeck = async () => {
     // Fail the first deck cell once, then answer every other cell correctly
     // in the order the screen actually shows them (its cooldown pushes it
     // behind the rest, until it is the only one left, "learn ahead").
@@ -147,7 +146,7 @@ describe('table-deck screen: ser-estar playthrough', () => {
     fireEvent.press(screen.getByText('Next →'));
     await flush();
 
-    for (let i = 1; i < deckOrder.length; i++) {
+    for (let i = 1; i < tableOrder.length; i++) {
       expect(screen.getByText(`${cellAt(i).person} · ${cellAt(i).verb}`)).toBeTruthy();
       await answerCurrent(cellAt(i).answer);
     }
@@ -158,15 +157,41 @@ describe('table-deck screen: ser-estar playthrough', () => {
     await answerCurrent(cellAt(0).answer);
 
     expect(screen.getByText('All 10 cells done 🎉')).toBeTruthy();
+  };
+
+  it('finishing every cell shows the completion screen, and "Start again" resets back to the TABLE order (not shuffled)', async () => {
+    const now = 1_700_000_000_000;
+    jest.spyOn(Date, 'now').mockReturnValue(now);
+
+    render(<TableDeckScreen />);
+    await flush();
+    await finishTheDeck();
 
     fireEvent.press(screen.getByText('Start again'));
     await flush();
 
-    // A fresh pass (reset count 1) gets a different, still deterministic,
-    // shuffle; recompute it the same way instead of assuming it matches pass 0.
-    const nextOrder = shuffleArray(cells.map((c) => c.id).sort(), hashString('ser-estar:1'));
-    const nextFirst = cells.find((c) => c.id === nextOrder[0])!;
+    // FB389: "Start again" is the plain, in-order restart, so the very same
+    // first cell as the initial pass comes back, not a new shuffle.
     expect(screen.getByText('0 / 10 done')).toBeTruthy();
-    expect(screen.getByText(`${nextFirst.person} · ${nextFirst.verb}`)).toBeTruthy();
+    expect(screen.getByText(`${cellAt(0).person} · ${cellAt(0).verb}`)).toBeTruthy();
+  });
+
+  it('"Harder: shuffled" restarts all cells in a seeded shuffle, not the table order', async () => {
+    const now = 1_700_000_000_000;
+    jest.spyOn(Date, 'now').mockReturnValue(now);
+
+    render(<TableDeckScreen />);
+    await flush();
+    await finishTheDeck();
+
+    fireEvent.press(screen.getByText('Harder: shuffled'));
+    await flush();
+
+    // FB389: resetDeckShuffled bumps resetCount to 1 off the persisted 0.
+    const shuffled = shuffleArray(cells.map((c) => c.id).sort(), hashString('ser-estar:1'));
+    const first = cells.find((c) => c.id === shuffled[0])!;
+    expect(screen.getByText('0 / 10 done')).toBeTruthy();
+    expect(screen.getByText(`${first.person} · ${first.verb}`)).toBeTruthy();
+    expect(shuffled).not.toEqual(tableOrder);
   });
 });
