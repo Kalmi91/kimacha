@@ -109,8 +109,18 @@ const ITEMS_BY_LEVEL: Record<PcicLevel, PcicItem[]> = {
 };
 
 const ITEM_BY_ID = new Map<string, PcicItem>();
+// PLAN-fb0924 7a. lépés (FB396, D3): a szint-igazítás egy szót a
+// nehézségének megfelelő szint FÁJLJÁBA mozgat, az id-je változatlan marad
+// (lib/pcicLevelMoves.ts, régi id -> új id). Az item TÉNYLEGES szintje innentől
+// azt jelenti, MELYIK fájlban él, nem az id előtagját (lib/pcicLevels.ts
+// matchesLevel ezt a térképet használja, id-előtagra csak akkor esik vissza,
+// ha az id nincs a betöltött korpuszban, pl. teszt-fixture).
+const LEVEL_BY_ID = new Map<string, PcicLevel>();
 for (const level of PCIC_LEVELS) {
-  for (const item of ITEMS_BY_LEVEL[level]) ITEM_BY_ID.set(item.id, item);
+  for (const item of ITEMS_BY_LEVEL[level]) {
+    ITEM_BY_ID.set(item.id, item);
+    LEVEL_BY_ID.set(item.id, level);
+  }
 }
 
 export function pcicItemsForLevel(level: PcicLevel): PcicItem[] {
@@ -119,4 +129,10 @@ export function pcicItemsForLevel(level: PcicLevel): PcicItem[] {
 
 export function findPcicItem(id: string): PcicItem | undefined {
   return ITEM_BY_ID.get(id);
+}
+
+/** A betöltött korpuszban élő item TÉNYLEGES szintje, vagy undefined, ha az
+ *  id nincs a korpuszban. */
+export function levelOfItem(id: string): PcicLevel | undefined {
+  return LEVEL_BY_ID.get(id);
 }
