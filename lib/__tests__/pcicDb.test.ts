@@ -48,6 +48,23 @@ describe('pcic_cards (memory db)', () => {
     expect((await db.getPcicStats('2026-09-18')).total).toBe(0);
   });
 
+  // PLAN-ketiranyu 4. lépés: a pcic_cards tábla nincs pair-hez kötve (a két
+  // irány a w<id>/e<id> id-előtaggal válik el, data/pcic.ts), tehát az
+  // irányváltás (setOnboarding) önmagában nem törli egyik irány haladását sem.
+  it('irányváltás (setOnboarding) nem nullázza a másik irány kártyáit', async () => {
+    await db.resetPcicCards();
+    await db.setOnboarding('en', 'es');
+    await db.upsertPcicCard({ ...sm2NewCard('w1'), state: 'review', interval: 5, due: '2026-09-20', introducedAt: '2026-09-18' });
+
+    await db.setOnboarding('es', 'en');
+    await db.upsertPcicCard({ ...sm2NewCard('e1'), state: 'learning', due: '2026-09-18', introducedAt: '2026-09-18' });
+
+    await db.setOnboarding('en', 'es');
+    const cards = await db.getPcicCards();
+    expect(cards.find(c => c.itemId === 'w1')?.interval).toBe(5);
+    expect(cards.find(c => c.itemId === 'e1')?.state).toBe('learning');
+  });
+
   // FB385/386: getPcicNewBonus/setPcicNewBonus round-trip, memory-DB szinten.
   it('getPcicNewBonus/setPcicNewBonus: perzisztál (reload-eset) és naptári nappal lejár', async () => {
     expect(await db.getPcicNewBonus('2026-09-18')).toBe(0);

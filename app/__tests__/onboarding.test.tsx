@@ -2,8 +2,10 @@
 // (Kálmán döntése, s1 anki-ui-terv.html). Ez a screen csak új telepítésnél
 // fut le egyáltalán (app/_layout.tsx a getOnboarding() alapján dönt), tehát
 // az "csak új telepítés látja" feltétel a root-layout felelőssége, nem ezé a
-// screené; itt a screen SAJÁT két lépését (üdvözlés -> szint-választás)
-// teszteljük. Mock-minta: app/(tabs)/__tests__/pcicSpeak.test.tsx.
+// screené; itt a screen SAJÁT lépéseit (nyelv-választás -> üdvözlés ->
+// szint-választás) teszteljük. Mock-minta: app/(tabs)/__tests__/pcicSpeak.test.tsx.
+// PLAN-ketiranyu 4. lépés (2026-09-28): a nyelv-választás lépés a jóváhagyott
+// vázlat 1-3. pontja szerint bekerült a "Get Started" elé.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -17,13 +19,22 @@ import { act, fireEvent, render } from '@testing-library/react-native';
 import { getDb } from '@/lib/database';
 import OnboardingScreen from '../onboarding';
 
-describe('OnboardingScreen: szint-lépés (PLAN-play 10)', () => {
+describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)', () => {
   beforeEach(() => {
     mockReplace.mockClear();
   });
 
-  it('üdvözléssel indul, a szint-választó csak a "Get Started" után jelenik meg', () => {
+  it('nyelv-választással indul, mindkét gomb kétnyelvű cím alatt látszik', () => {
+    const { getByText } = render(<OnboardingScreen />);
+
+    expect(getByText('Which language do you speak? / ¿Qué idioma hablas?')).toBeTruthy();
+    expect(getByText('English')).toBeTruthy();
+    expect(getByText('Español')).toBeTruthy();
+  });
+
+  it('"English" -> en→es: üdvözlés, majd a szint-választó a "Get Started" után', () => {
     const { getByText, queryByText } = render(<OnboardingScreen />);
+    fireEvent.press(getByText('English'));
 
     expect(queryByText('Choose level')).toBeNull();
     fireEvent.press(getByText('Get Started'));
@@ -35,8 +46,9 @@ describe('OnboardingScreen: szint-lépés (PLAN-play 10)', () => {
     expect(getByText('Upper intermediate')).toBeTruthy();
   });
 
-  it('egy szint kiválasztása menti az onboardingot + a PCIC szintet, és a fülekre navigál', async () => {
+  it('en→es szint kiválasztása menti az onboardingot + a PCIC szintet, és a fülekre navigál', async () => {
     const { getByText } = render(<OnboardingScreen />);
+    fireEvent.press(getByText('English'));
     fireEvent.press(getByText('Get Started'));
 
     await act(async () => {
@@ -46,6 +58,34 @@ describe('OnboardingScreen: szint-lépés (PLAN-play 10)', () => {
 
     expect(await getDb().getOnboarding()).toEqual({ source: 'en', target: 'es' });
     expect(await getDb().getPcicLevel()).toBe('A2');
+    expect(mockReplace).toHaveBeenCalledWith('/(tabs)');
+  });
+
+  it('"Español" -> es→en: spanyol üdvözlés, a szint-választó csak A1-et kínálja, "Todavía no hay palabras."', () => {
+    const { getByText } = render(<OnboardingScreen />);
+    fireEvent.press(getByText('Español'));
+
+    expect(getByText('Empezar')).toBeTruthy();
+    fireEvent.press(getByText('Empezar'));
+
+    expect(getByText('Elige el nivel')).toBeTruthy();
+    expect(getByText('A1')).toBeTruthy();
+    // D-A: az 5. lépés (50 angol szó) még nincs kész, tehát A1 üres.
+    expect(getByText('Todavía no hay palabras.')).toBeTruthy();
+  });
+
+  it('es→en A1 kiválasztása "es"/"en"-t ment, mindig A1 szinttel', async () => {
+    const { getByText } = render(<OnboardingScreen />);
+    fireEvent.press(getByText('Español'));
+    fireEvent.press(getByText('Empezar'));
+
+    await act(async () => {
+      fireEvent.press(getByText('A1'));
+      await Promise.resolve();
+    });
+
+    expect(await getDb().getOnboarding()).toEqual({ source: 'es', target: 'en' });
+    expect(await getDb().getPcicLevel()).toBe('A1');
     expect(mockReplace).toHaveBeenCalledWith('/(tabs)');
   });
 });

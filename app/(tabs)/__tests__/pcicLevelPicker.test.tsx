@@ -45,6 +45,7 @@ jest.mock('@/data/pcic', () => ({
   levelOfItem: (id: string) => (id === A1_ITEM.id ? 'A1' : id === B1_ITEM.id ? 'B1' : undefined),
   isPlusSentence: () => false,
   realLevelOfView: (level: string) => level,
+  setPcicTarget: () => {},
 }));
 
 import { act, fireEvent, render } from '@testing-library/react-native';

@@ -108,6 +108,9 @@ export default {
     // FB375 (PLAN-fb0923 6. lépés): the word-deck button, only on table-less
     // lessons with >= 8 word cards (lib/grammar/tableDeck.ts wordCellsForLesson).
     practiceWords: (n: number) => `Practice the words · ${n} cards`,
+    // PLAN-ketiranyu 4. lépés: es→en irányban a Grammar fül még nem tanít
+    // angol nyelvtant, csak ezt az egy sort mutatja a lecke-lista helyett.
+    enComingSoon: 'English grammar lessons are coming later.',
   },
   settings: {
     weeklyGoal: 'Weekly study goal',
@@ -124,6 +127,12 @@ export default {
     // FB364 (PLAN-fb0923 5. lépés): a PCIC "again" kártya visszatérési ideje.
     missedWordDelay: 'Missed word comes back after',
     missedWordDelaySeconds: (n: string) => `${n} s`,
+    // PLAN-ketiranyu 4. lépés: a tanulási irány váltó sora + a hozzá tartozó
+    // lap (Settings, a Spelling practice sor fölött).
+    learningDirection: 'Learning direction',
+    chooseDirection: 'Choose learning direction',
+    directionEnEs: 'English → Spanish',
+    directionEsEn: 'Spanish → English',
   },
   backup: {
     backup: 'Backup',

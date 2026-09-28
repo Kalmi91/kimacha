@@ -68,11 +68,13 @@ function noteField(word: WordEntry, key: 'note_en' | 'note_hu'): string | undefi
 }
 
 // FB357-jelzésű (vosotros: true) kártya kimarad, ahogy a nyelvtani leckéknél is.
-function itemsFromWords(entries: WordEntry[]): PcicItem[] {
+// PLAN-ketiranyu 4. lépés: `idPrefix` különbözteti meg a két irány id-terét
+// a KÖZÖS pcic_cards táblában (nincs pár-oszlop): en→es 'w<id>', es→en 'e<id>'.
+function itemsFromWords(entries: WordEntry[], idPrefix: 'w' | 'e' = 'w'): PcicItem[] {
   return entries
     .filter((w) => !w.vosotros)
     .map((w, index) => ({
-      id: `w${w.id}`,
+      id: `${idPrefix}${w.id}`,
       es: w.es,
       en: w.en,
       kind: kindOfEs(w.es),
@@ -89,34 +91,76 @@ function itemsFromWords(entries: WordEntry[]): PcicItem[] {
 // A1 nézet = a0 + a1 (a1 fájl önmagában túl kevés lenne); A2 = a2; B1 = b1;
 // B2 az adatban marad (data/words/b2.json), csak a PCIC_VIEW_LEVELS nem
 // kínálja fel a szint-választón.
-const ITEMS_BY_LEVEL: Record<PcicLevel, PcicItem[]> = {
-  A1: itemsFromWords([...getWordsForLevel('A0'), ...getWordsForLevel('A1')]),
-  A2: itemsFromWords(getWordsForLevel('A2')),
-  B1: itemsFromWords(getWordsForLevel('B1')),
-  B2: itemsFromWords(getWordsForLevel('B2')),
+const ITEMS_BY_LEVEL_ES: Record<PcicLevel, PcicItem[]> = {
+  A1: itemsFromWords([...getWordsForLevel('A0'), ...getWordsForLevel('A1')], 'w'),
+  A2: itemsFromWords(getWordsForLevel('A2'), 'w'),
+  B1: itemsFromWords(getWordsForLevel('B1'), 'w'),
+  B2: itemsFromWords(getWordsForLevel('B2'), 'w'),
 };
 
-const ITEM_BY_ID = new Map<string, PcicItem>();
-const LEVEL_BY_ID = new Map<string, PcicLevel>();
-for (const level of PCIC_LEVELS) {
-  for (const item of ITEMS_BY_LEVEL[level]) {
-    ITEM_BY_ID.set(item.id, item);
-    LEVEL_BY_ID.set(item.id, level);
+// PLAN-ketiranyu 5. lépés: az es→en irány A1 paklija a data/words/en/a0.json
+// első 50 kártyájából épül majd (e<id> id-tér, D-A döntés). Amíg ez nincs
+// bekötve, minden szint üres; a felület ezt "még nincs szó" üzenetként
+// mutatja (app/onboarding.tsx), a szint-választók a meglévő "0 tétel = nem
+// kínáljuk fel" szabállyal automatikusan A2/B1/B2 nélkül maradnak.
+const ITEMS_BY_LEVEL_EN: Record<PcicLevel, PcicItem[]> = {
+  A1: [],
+  A2: [],
+  B1: [],
+  B2: [],
+};
+
+// PLAN-ketiranyu 4. lépés: melyik irány paklija aktív (app/_layout.tsx az
+// induláskor, app/onboarding.tsx a választáskor, a Settings irányváltó sora
+// a váltáskor állítja, az onboarding.target kódjával: 'es' = en→es, 'en' =
+// es→en). Modul-szintű állapot, mint a lib/database.ts activePair-je.
+export type PcicTarget = 'es' | 'en';
+
+let activeTarget: PcicTarget = 'es';
+
+export function setPcicTarget(target: PcicTarget) {
+  activeTarget = target;
+}
+
+export function getPcicTarget(): PcicTarget {
+  return activeTarget;
+}
+
+function itemsByTarget(target: PcicTarget): Record<PcicLevel, PcicItem[]> {
+  return target === 'en' ? ITEMS_BY_LEVEL_EN : ITEMS_BY_LEVEL_ES;
+}
+
+function buildIndexes(byLevel: Record<PcicLevel, PcicItem[]>) {
+  const itemById = new Map<string, PcicItem>();
+  const levelById = new Map<string, PcicLevel>();
+  for (const level of PCIC_LEVELS) {
+    for (const item of byLevel[level]) {
+      itemById.set(item.id, item);
+      levelById.set(item.id, level);
+    }
   }
+  return { itemById, levelById };
+}
+
+const INDEXES_ES = buildIndexes(ITEMS_BY_LEVEL_ES);
+const INDEXES_EN = buildIndexes(ITEMS_BY_LEVEL_EN);
+
+function indexesByTarget(target: PcicTarget) {
+  return target === 'en' ? INDEXES_EN : INDEXES_ES;
 }
 
 export function pcicItemsForLevel(level: PcicLevel): PcicItem[] {
-  return ITEMS_BY_LEVEL[level];
+  return itemsByTarget(activeTarget)[level];
 }
 
 export function findPcicItem(id: string): PcicItem | undefined {
-  return ITEM_BY_ID.get(id);
+  return indexesByTarget(activeTarget).itemById.get(id);
 }
 
 /** A betöltött korpuszban élő item TÉNYLEGES szintje, vagy undefined, ha az
  *  id nincs a korpuszban (pl. a régi PCIC-korpusz árva SRS-sora). */
 export function levelOfItem(id: string): PcicLevel | undefined {
-  return LEVEL_BY_ID.get(id);
+  return indexesByTarget(activeTarget).levelById.get(id);
 }
 
 /** A gyakorisági korpusznak nincs `sentence` kind tétele, tehát a "+1"
@@ -137,5 +181,5 @@ export function realLevelOfView(view: PcicViewLevel): PcicLevel {
 export function pcicItemsForViewLevel(view: PcicViewLevel): PcicItem[] {
   const level = realLevelOfView(view);
   const wantPlus = view === 'A1+' || view === 'A2+';
-  return ITEMS_BY_LEVEL[level].filter((it) => isPlusSentence(it.id) === wantPlus);
+  return itemsByTarget(activeTarget)[level].filter((it) => isPlusSentence(it.id) === wantPlus);
 }
