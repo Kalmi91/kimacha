@@ -138,12 +138,12 @@ describe('hasLesson: Play build hides schema:1 lessons', () => {
     jest.resetModules();
   });
 
-  // posesivos.json has no "schema": 2 field (one of the 3 still-unmigrated lessons).
-  it('Drive-APK (flag unset): a schema:1 lesson (posesivos) is still reachable', () => {
+  // por-para.json has no "schema": 2 field (one of the still-unmigrated lessons).
+  it('Drive-APK (flag unset): a schema:1 lesson (por-para) is still reachable', () => {
     delete process.env.EXPO_PUBLIC_PLAY_STORE;
     jest.resetModules();
     const driveSyllabus = require('../grammar/syllabus');
-    expect(driveSyllabus.hasLesson('es', 'posesivos')).toBe(true);
+    expect(driveSyllabus.hasLesson('es', 'por-para')).toBe(true);
     expect(driveSyllabus.hasLesson('es', 'ser-estar')).toBe(true);
   });
 
@@ -155,11 +155,11 @@ describe('hasLesson: Play build hides schema:1 lessons', () => {
     process.env.EXPO_PUBLIC_PLAY_STORE = '1';
     jest.resetModules();
     const playSyllabus = require('../grammar/syllabus');
-    expect(playSyllabus.hasLesson('es', 'posesivos')).toBe(false);
+    expect(playSyllabus.hasLesson('es', 'por-para')).toBe(false);
     expect(playSyllabus.hasLesson('es', 'ser-estar')).toBe(true);
     // lessonCoverage and nextWrittenTopic both go through hasLesson, so a
     // hidden topic also drops out of the header count and the "next" button.
-    expect(playSyllabus.nextWrittenTopic('es', 'ser-estar')?.id).not.toBe('posesivos');
+    expect(playSyllabus.nextWrittenTopic('es', 'ser-estar')?.id).not.toBe('por-para');
     expect(playSyllabus.lessonCoverage('es').written).toBeLessThan(driveWritten);
   });
 });
