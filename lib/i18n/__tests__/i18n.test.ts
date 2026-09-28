@@ -52,4 +52,12 @@ describe('lib/i18n: es.ts teljes lefedettsége + t()/setLanguage() (PLAN-ketiran
     expect(stringsFor('es').usage.dailyGreeting).toBe(es.usage.dailyGreeting);
     expect(stringsFor('en').usage.dailyGreeting).toBe(en.usage.dailyGreeting);
   });
+
+  // 2026-09-28 review, 1. pont: az elírás-javításkor a mondatszám kiesett a
+  // spanyol "hoy: ... palabras · oraciones / 10" sorból.
+  it('a spanyol badgeIntroducedToday kiírja a mondatszámot (1 oración, 2 oraciones)', () => {
+    expect(es.pcic.badgeIntroducedToday(3, 1, 10)).toBe('hoy: 3 palabras · 1 oración / 10');
+    expect(es.pcic.badgeIntroducedToday(1, 2, 10)).toBe('hoy: 1 palabra · 2 oraciones / 10');
+    expect(es.pcic.badgeIntroducedToday(0, 0, 10)).toBe('hoy: 0 palabras · 0 oraciones / 10');
+  });
 });

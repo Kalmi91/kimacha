@@ -242,9 +242,9 @@ const es: Strings = {
     badgeDone: (n: number) => `hechas ${n}`,
     // "oración" -> "oraciones" nem sima "+es" ragozás (az ékezet elmarad a
     // többesben), ezért a teljes szó vált, nem toldalék (elírás-javítás,
-    // orkesztrátor visszajelzés 3. pont: "oraciónes" -> "oraciones").
+    // 2026-09-28 review, 3. pont: "oraciónes" -> "oraciones").
     badgeIntroducedToday: (words: number, sentences: number, budget: number) =>
-      `hoy: ${words} palabra${words === 1 ? '' : 's'} · ${sentences === 1 ? 'oración' : 'oraciones'} / ${budget}`,
+      `hoy: ${words} palabra${words === 1 ? '' : 's'} · ${sentences} ${sentences === 1 ? 'oración' : 'oraciones'} / ${budget}`,
     again: 'No lo sabía',
     hard: 'Difícil',
     good: 'Lo sabía',

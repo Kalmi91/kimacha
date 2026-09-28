@@ -22,7 +22,7 @@ type Props = {
 
 export default function LevelRow({ level, label, introduced, total, active, colors, onPress }: Props) {
   const pct = total > 0 ? (introduced / total) * 100 : 0;
-  // PLAN-ketiranyu 4. lépés javítás (orkesztrátor visszajelzés, 3. pont): a
+  // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont): a
   // sor korábban angolra égetve mutatta ezt a két szöveget, spanyol
   // felületen is angolul maradt.
   const s = t();
