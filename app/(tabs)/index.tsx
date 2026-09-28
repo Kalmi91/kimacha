@@ -131,6 +131,12 @@ export default function PcicScreen() {
     const dir = (onboarding?.target as PcicTarget) ?? 'es';
     setPcicTarget(dir);
     setTarget(dir);
+    // PLAN-ketiranyu 4. lépés javítás (orkesztrátor visszajelzés, 2. pont): ha
+    // az aktív párnak MÉG nincs kifejezetten választott szintje (Settings
+    // irányváltás egy korábban nem onboardolt irányra; friss onboarding
+    // mindig választat, ide sose ér el választatlanul), a szint-választó lap
+    // magától felnyílik, ugyanaz a lap, mint a fejléc-chipre koppintva.
+    if (!overrideLevel && !(await db.hasPcicLevel())) setLevelSheetOpen(true);
     const lvl = overrideLevel ?? (await db.getPcicLevel());
     const newOrder = pcicItemsForViewLevel(lvl).map((i) => i.id);
     const rawCards = await db.getPcicCards();
@@ -455,6 +461,7 @@ export default function PcicScreen() {
           cards={allLevelCards}
           colors={colors}
           title={s.pcic.chooseLevel}
+          target={target}
           onSelect={handleSelectLevel}
           onClose={() => setLevelSheetOpen(false)}
         />
@@ -544,6 +551,7 @@ export default function PcicScreen() {
         cards={allLevelCards}
         colors={colors}
         title={s.pcic.chooseLevel}
+        target={target}
         onSelect={handleSelectLevel}
         onClose={() => setLevelSheetOpen(false)}
       />
