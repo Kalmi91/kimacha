@@ -18,6 +18,8 @@ const es: Strings = {
     check: 'Comprobar',
     correct: '¡Correcto!',
     wrong: 'Incorrecto',
+    next: 'Siguiente',
+    typeSentence: 'Escribe la frase',
   },
   buttons: {
     spelling: 'Ortografía',
