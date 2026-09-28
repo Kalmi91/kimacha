@@ -1,0 +1,79 @@
+// PLAN-nyelvtan-en 3-4. lépés: az angol tanterv (es→en irány) az angol
+// témafából generálódik, a spanyol tanterv pedig bájtra változatlan marad.
+
+import { createHash } from 'crypto';
+import {
+  GRAMMAR_SYLLABUS,
+  GRAMMAR_UNITS,
+  SYLLABUS_LEVELS,
+  hasLesson,
+  lessonCoverage,
+  nextWrittenTopic,
+  orphanLessons,
+  syllabusForLevel,
+  syllabusLevels,
+  syllabusTopic,
+  topicsForUnit,
+  unitsForLevel,
+} from '../syllabus';
+
+describe('English grammar syllabus (lang = en)', () => {
+  it('has the 21 grammar topics of the English topic tree, levels A1 and A2 only', () => {
+    expect(syllabusLevels('en')).toEqual(['A1', 'A2']);
+    expect(syllabusForLevel('A1', 'en')).toHaveLength(13);
+    expect(syllabusForLevel('A2', 'en')).toHaveLength(8);
+    expect(lessonCoverage('en').planned).toBe(21);
+  });
+
+  it('opens A1 with basic_verbs, then the A1 topics in tree order', () => {
+    const a1 = syllabusForLevel('A1', 'en').map((t) => t.id);
+    expect(a1[0]).toBe('basic_verbs');
+    expect(a1[1]).toBe('to_be');
+    expect(syllabusTopic('basic_verbs', 'en')?.unit).toBe('A1.1');
+  });
+
+  it('groups topics into the sublevel units, each with a title in all four languages', () => {
+    expect(unitsForLevel('A1', 'en').map((u) => u.id)).toEqual(['A1.1', 'A1.2', 'A1.3', 'A1.4', 'A1.5', 'A1.6']);
+    expect(unitsForLevel('A2', 'en').map((u) => u.id)).toEqual(['A2.1', 'A2.2', 'A2.3', 'A2.4', 'A2.5']);
+    for (const lvl of syllabusLevels('en')) {
+      for (const unit of unitsForLevel(lvl, 'en')) {
+        expect(topicsForUnit(unit.id, 'en').length).toBeGreaterThan(0);
+        for (const l of ['hu', 'en', 'es', 'de']) expect(unit.title[l]).toBeTruthy();
+      }
+      for (const topic of syllabusForLevel(lvl, 'en')) {
+        for (const l of ['hu', 'en', 'es', 'de']) expect(topic.title[l]).toBeTruthy();
+      }
+    }
+  });
+
+  it('has no lessons yet, so every topic is planned-only and nothing is orphaned', () => {
+    expect(lessonCoverage('en').written).toBe(0);
+    expect(hasLesson('en', 'to_be')).toBe(false);
+    expect(nextWrittenTopic('en', 'to_be')).toBeUndefined();
+    expect(orphanLessons('en')).toEqual([]);
+  });
+
+  it('does not share topic ids with the Spanish syllabus', () => {
+    const es = new Set(GRAMMAR_SYLLABUS.map((t) => t.id));
+    for (const lvl of syllabusLevels('en')) {
+      for (const t of syllabusForLevel(lvl, 'en')) expect(es.has(t.id)).toBe(false);
+    }
+  });
+});
+
+describe('Spanish grammar syllabus (default lang) is unchanged', () => {
+  it('keeps its levels, size and content fingerprint', () => {
+    expect(syllabusLevels()).toBe(SYLLABUS_LEVELS);
+    expect(syllabusLevels('es')).toBe(SYLLABUS_LEVELS);
+    expect(GRAMMAR_SYLLABUS).toHaveLength(SYLLABUS_LEVELS.reduce((n, l) => n + syllabusForLevel(l).length, 0));
+    expect(lessonCoverage('es').planned).toBe(GRAMMAR_SYLLABUS.length);
+    expect(syllabusTopic('presente-regular')?.level).toBe('A1');
+    expect(syllabusTopic('to_be')).toBeUndefined();
+    const fingerprint = createHash('sha1').update(JSON.stringify([GRAMMAR_UNITS, GRAMMAR_SYLLABUS])).digest('hex');
+    expect({ units: GRAMMAR_UNITS.length, topics: GRAMMAR_SYLLABUS.length, fingerprint }).toEqual({
+      units: 17,
+      topics: 65,
+      fingerprint: 'b13dfdf17328f6e53bc8306c6ef91a51e9f9bdf4',
+    });
+  });
+});

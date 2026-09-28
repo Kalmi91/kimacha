@@ -139,17 +139,20 @@ describe('grammar course', () => {
     view.unmount();
   });
 
-  // PLAN-ketiranyu 4. lépés (4. pont, K2 döntés): es→en irányban a Grammar
-  // fül még nem tanít angol nyelvtant, csak ezt az egy sort mutatja.
-  it('es→en irányban csak a "gramática inglesa" sort mutatja, leckelista nélkül', async () => {
+  // PLAN-nyelvtan-en 3-4. lépés: es→en irányban az angol tanterv jelenik meg
+  // (A1, A2), a témák lecke nélkül „pronto” jelvénnyel, a spanyol témák nélkül.
+  it('es→en irányban az angol tantervet mutatja, spanyol téma nélkül', async () => {
     await getDb().setOnboarding('es', 'en');
     setLanguage('es');
     const view = render(<GrammarSyllabusScreen />);
     await flush(4);
 
-    expect(screen.queryByText('La gramática inglesa llegará más adelante.')).toBeTruthy();
+    expect(screen.queryByTestId('grammar-level-A1')).toBeTruthy();
+    expect(screen.queryByTestId('grammar-level-A2')).toBeTruthy();
+    expect(screen.queryByTestId('grammar-level-B1')).toBeNull();
     expect(screen.queryByTestId('grammar-topic-presente-regular')).toBeNull();
-    expect(screen.queryByTestId('grammar-level-A1')).toBeNull();
+    expect(screen.queryByTestId('grammar-topic-to_be')).toBeTruthy();
+    expect(screen.getByTestId('grammar-percent-to_be').props.children).toBe('próximamente');
 
     setLanguage('en');
     view.unmount();
