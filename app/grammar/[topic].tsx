@@ -141,7 +141,7 @@ export default function GrammarLessonScreen() {
     };
   }, [phase]);
 
-  const entry = syllabusTopic(String(topicId));
+  const entry = syllabusTopic(String(topicId), learnedLang);
 
   if (!lesson) {
     return (
