@@ -24,10 +24,14 @@ describe('data/pcic.ts: irány-tudatos korpusz (PLAN-ketiranyu 4. lépés)', () 
     expect(a1.every((item) => item.id.startsWith('w'))).toBe(true);
   });
 
-  it('setPcicTarget("en")-re vált, a szintek egyelőre üresek (az 5. lépés adja a szavakat)', () => {
+  // PLAN-ketiranyu 5. lépés (D-A döntés a): az A1 az data/words/en/a0.json
+  // első 50 kártyáját adja, e<id> id-térrel; A2/B1/B2 marad üres (nincs rájuk terv).
+  it('setPcicTarget("en")-re vált: A1 50 e<id> kártyát ad, A2/B1/B2 üres', () => {
     setPcicTarget('en');
     expect(getPcicTarget()).toBe('en');
-    expect(pcicItemsForLevel('A1')).toEqual([]);
+    const a1 = pcicItemsForLevel('A1');
+    expect(a1.length).toBe(50);
+    expect(a1.every((item) => item.id.startsWith('e'))).toBe(true);
     expect(pcicItemsForLevel('A2')).toEqual([]);
     expect(pcicItemsForLevel('B1')).toEqual([]);
     expect(pcicItemsForLevel('B2')).toEqual([]);
