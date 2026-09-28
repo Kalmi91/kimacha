@@ -25,6 +25,20 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ topic: mockTopicId }),
 }));
 
+// No real schema:1 lesson is left in the corpus: a minimal legacy fixture
+// (lib/__tests__/fixtures/legacy-lesson.json) is added to the content registry.
+jest.mock('@/lib/games/content', () => {
+  const actual = jest.requireActual('@/lib/games/content');
+  const fixture = require('@/lib/__tests__/fixtures/legacy-lesson.json');
+  const topics = (lang: string) => [...actual.getGrammarTopics(lang), ...(lang === 'es' ? [fixture] : [])];
+  return {
+    ...actual,
+    getGrammarTopics: topics,
+    getGrammarTopic: (lang: string, topic: string) =>
+      topics(lang).find((t: { topic: string }) => t.topic === topic),
+  };
+});
+
 import { act, fireEvent, render, screen, within } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
@@ -76,8 +90,8 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
     view.unmount();
   });
 
-  it('schema-1 lesson (posesivos) shows a single choice button', async () => {
-    mockTopicId = 'posesivos';
+  it('schema-1 lesson (legacy fixture) shows a single choice button', async () => {
+    mockTopicId = 'legacy-fixture';
     const view = render(<GrammarLessonScreen />);
     await flush(4);
 

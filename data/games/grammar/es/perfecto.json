@@ -1,4 +1,5 @@
 {
+  "schema": 2,
   "topic": "perfecto",
   "level": "A2",
   "title": {
@@ -7,91 +8,557 @@
     "es": "El pretérito perfecto compuesto",
     "de": "Das Perfekt"
   },
-  "rule": {
-    "hu": "Alak: haber ragozva (he, has, ha, hemos, habéis, han) + participio (-ar → -ado, -er/-ir → -ido): he hablado, has comido, ha vivido. Akkor használod, ha az időszak, amiben történt, MÉG TART: hoy, esta semana, este año, siempre, nunca, todavía no, ya. A két rész SOSEM válik szét: nem mondasz „he no comido\"-t, hanem no he comido, és a névmás is elé megy: no lo he visto.",
-    "en": "Form: haber conjugated (he, has, ha, hemos, habéis, han) plus the participle (-ar → -ado, -er/-ir → -ido): he hablado, has comido, ha vivido. You use it when the period it happened in is STILL OPEN: hoy, esta semana, este año, siempre, nunca, todavía no, ya. The two parts NEVER split: not \"he no comido\" but no he comido, and pronouns go in front: no lo he visto.",
-    "es": "Forma: haber (he, has, ha, hemos, habéis, han) más participio (-ado, -ido): he hablado, has comido. Se usa cuando el periodo sigue abierto: hoy, esta semana, este año, siempre, nunca, todavía no, ya. Las dos partes no se separan: no he comido, no lo he visto.",
-    "de": "Form: haber (he, has, ha, hemos, habéis, han) plus Partizip (-ado, -ido): he hablado, has comido. Man nutzt es, wenn der Zeitraum NOCH LÄUFT: hoy, esta semana, este año, siempre, nunca, todavía no, ya. Die zwei Teile trennen sich nie: no he comido, no lo he visto."
-  },
-  "more": {
-    "hu": "Rendhagyó participiók, amiket muszáj tudni: hacer → hecho, ver → visto, decir → dicho, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto. Regionális különbség: Spanyolországban a mai eseményre perfectót mondanak (Hoy he comido tarde), Mexikóban és nagy részén Latin-Amerikának ugyanerre indefinidót (Hoy comí tarde). Mindkettő helyes, csak más vidék. A participio itt SOSEM egyeztetődik: ellas han llegado, nem llegadas.",
-    "en": "Irregular participles you simply have to know: hacer → hecho, ver → visto, decir → dicho, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto. A regional split: Spain uses the perfect for today's events (Hoy he comido tarde), Mexico and most of Latin America use the preterite (Hoy comí tarde). Both are correct, they are different regions. The participle here NEVER agrees: ellas han llegado, not llegadas.",
-    "es": "Participios irregulares imprescindibles: hecho, visto, dicho, escrito, puesto, vuelto, abierto, roto, muerto. Diferencia regional: en España se dice Hoy he comido tarde; en México y casi toda América, Hoy comí tarde. El participio aquí no concuerda: ellas han llegado.",
-    "de": "Unregelmäßige Partizipien, die man können muss: hecho, visto, dicho, escrito, puesto, vuelto, abierto, roto, muerto. Regionaler Unterschied: in Spanien Hoy he comido tarde, in Mexiko und fast ganz Lateinamerika Hoy comí tarde. Das Partizip wird hier nie angeglichen: ellas han llegado."
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A pretérito perfecto olyan dologról szól, ami egy még tartó időszakban vagy az eddigi életedben történt: ma, ezen a héten, idén, még nem, már. Alakja: a haber jelen ideje + participio: «he hablado», «has comido», «ha vivido».",
+        "en": "The pretérito perfecto is for things that happened in a period that is still open, or in your life so far: today, this week, this year, not yet, already. Its form: the present of haber plus a participle: «he hablado», «has comido», «ha vivido».",
+        "es": "El pretérito perfecto sirve para lo que ocurrió en un periodo que sigue abierto, o en tu vida hasta ahora: hoy, esta semana, este año, todavía no, ya. Su forma: el presente de haber más un participio: «he hablado», «has comido», «ha vivido».",
+        "de": "Das pretérito perfecto beschreibt, was in einem noch offenen Zeitraum oder in deinem bisherigen Leben geschah: heute, diese Woche, dieses Jahr, noch nicht, schon. Seine Form: das Präsens von haber plus ein Partizip: «he hablado», «has comido», «ha vivido»."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "perfecto",
+      "title": {
+        "hu": "Pretérito perfecto ragozása",
+        "en": "The pretérito perfecto, conjugated",
+        "es": "El pretérito perfecto, conjugado",
+        "de": "Das pretérito perfecto, konjugiert"
+      },
+      "header": [
+        {
+          "hu": "Persona",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "hablar",
+          "en": "hablar",
+          "es": "hablar",
+          "de": "hablar"
+        },
+        {
+          "hu": "comer",
+          "en": "comer",
+          "es": "comer",
+          "de": "comer"
+        },
+        {
+          "hu": "vivir",
+          "en": "vivir",
+          "es": "vivir",
+          "de": "vivir"
+        },
+        {
+          "hu": "hacer",
+          "en": "hacer",
+          "es": "hacer",
+          "de": "hacer"
+        },
+        {
+          "hu": "ver",
+          "en": "ver",
+          "es": "ver",
+          "de": "ver"
+        },
+        {
+          "hu": "decir",
+          "en": "decir",
+          "es": "decir",
+          "de": "decir"
+        },
+        {
+          "hu": "escribir",
+          "en": "escribir",
+          "es": "escribir",
+          "de": "escribir"
+        },
+        {
+          "hu": "volver",
+          "en": "volver",
+          "es": "volver",
+          "de": "volver"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "he hablado",
+          "he comido",
+          "he vivido",
+          "he hecho",
+          "he visto",
+          "he dicho",
+          "he escrito",
+          "he vuelto"
+        ],
+        [
+          "tú",
+          "has hablado",
+          "has comido",
+          "has vivido",
+          "has hecho",
+          "has visto",
+          "has dicho",
+          "has escrito",
+          "has vuelto"
+        ],
+        [
+          "él/ella/usted",
+          "ha hablado",
+          "ha comido",
+          "ha vivido",
+          "ha hecho",
+          "ha visto",
+          "ha dicho",
+          "ha escrito",
+          "ha vuelto"
+        ],
+        [
+          "nosotros",
+          "hemos hablado",
+          "hemos comido",
+          "hemos vivido",
+          "hemos hecho",
+          "hemos visto",
+          "hemos dicho",
+          "hemos escrito",
+          "hemos vuelto"
+        ],
+        [
+          "vosotros",
+          "habéis hablado",
+          "habéis comido",
+          "habéis vivido",
+          "habéis hecho",
+          "habéis visto",
+          "habéis dicho",
+          "habéis escrito",
+          "habéis vuelto"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "han hablado",
+          "han comido",
+          "han vivido",
+          "han hecho",
+          "han visto",
+          "han dicho",
+          "han escrito",
+          "han vuelto"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "A szabályok",
+        "en": "The rules",
+        "es": "Las reglas",
+        "de": "Die Regeln"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A haber jelen ideje: he, has, ha, hemos, habéis, han. Ehhez jön a participio: he hablado, has comido, ha vivido.",
+            "en": "The present of haber: he, has, ha, hemos, habéis, han. The participle follows it: he hablado, has comido, ha vivido.",
+            "es": "El presente de haber: he, has, ha, hemos, habéis, han. Después va el participio: he hablado, has comido, ha vivido.",
+            "de": "Das Präsens von haber: he, has, ha, hemos, habéis, han. Danach folgt das Partizip: he hablado, has comido, ha vivido."
+          },
+          "examples": [
+            {
+              "es": "He hablado con mi jefe.",
+              "tr": {
+                "hu": "Beszéltem a főnökömmel.",
+                "en": "I have talked to my boss.",
+                "es": "He hablado con mi jefe.",
+                "de": "Ich habe mit meinem Chef gesprochen."
+              }
+            },
+            {
+              "es": "Hemos comido en casa.",
+              "tr": {
+                "hu": "Otthon ettünk.",
+                "en": "We have eaten at home.",
+                "es": "Hemos comido en casa.",
+                "de": "Wir haben zu Hause gegessen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A participio: -ar → -ado, -er és -ir → -ido: hablar → hablado, comer → comido, vivir → vivido.",
+            "en": "The participle: -ar → -ado, -er and -ir → -ido: hablar → hablado, comer → comido, vivir → vivido.",
+            "es": "El participio: -ar → -ado, -er e -ir → -ido: hablar → hablado, comer → comido, vivir → vivido.",
+            "de": "Das Partizip: -ar → -ado, -er und -ir → -ido: hablar → hablado, comer → comido, vivir → vivido."
+          },
+          "examples": [
+            {
+              "es": "Has trabajado mucho.",
+              "tr": {
+                "hu": "Sokat dolgoztál.",
+                "en": "You have worked a lot.",
+                "es": "Has trabajado mucho.",
+                "de": "Du hast viel gearbeitet."
+              }
+            },
+            {
+              "es": "Hemos vivido con mi hermana.",
+              "tr": {
+                "hu": "A nővéremmel laktunk.",
+                "en": "We have lived with my sister.",
+                "es": "Hemos vivido con mi hermana.",
+                "de": "Wir haben bei meiner Schwester gewohnt."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Rendhagyó participiók, amiket muszáj tudni: hacer → hecho, ver → visto, decir → dicho, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, cubrir → cubierto.",
+            "en": "Irregular participles you simply have to know: hacer → hecho, ver → visto, decir → dicho, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, cubrir → cubierto.",
+            "es": "Participios irregulares imprescindibles: hacer → hecho, ver → visto, decir → dicho, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, cubrir → cubierto.",
+            "de": "Unregelmäßige Partizipien, die man können muss: hacer → hecho, ver → visto, decir → dicho, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, cubrir → cubierto."
+          },
+          "examples": [
+            {
+              "es": "He escrito tres correos.",
+              "tr": {
+                "hu": "Három e-mailt írtam.",
+                "en": "I have written three emails.",
+                "es": "He escrito tres correos.",
+                "de": "Ich habe drei E-Mails geschrieben."
+              }
+            },
+            {
+              "es": "Han hecho la tarea.",
+              "tr": {
+                "hu": "Megcsinálták a házi feladatot.",
+                "en": "They have done the homework.",
+                "es": "Han hecho la tarea.",
+                "de": "Sie haben die Hausaufgabe gemacht."
+              }
+            },
+            {
+              "es": "He puesto la mesa.",
+              "tr": {
+                "hu": "Megterítettem az asztalt.",
+                "en": "I have set the table.",
+                "es": "He puesto la mesa.",
+                "de": "Ich habe den Tisch gedeckt."
+              }
+            },
+            {
+              "es": "Han vuelto temprano.",
+              "tr": {
+                "hu": "Korán visszajöttek.",
+                "en": "They have come back early.",
+                "es": "Han vuelto temprano.",
+                "de": "Sie sind früh zurückgekommen."
+              }
+            },
+            {
+              "es": "Ella ha abierto la puerta.",
+              "tr": {
+                "hu": "Ő kinyitotta az ajtót.",
+                "en": "She has opened the door.",
+                "es": "Ella ha abierto la puerta.",
+                "de": "Sie hat die Tür geöffnet."
+              }
+            },
+            {
+              "es": "El vaso se ha roto.",
+              "tr": {
+                "hu": "Eltörött a pohár.",
+                "en": "The glass has broken.",
+                "es": "El vaso se ha roto.",
+                "de": "Das Glas ist zerbrochen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A két rész SOSEM válik szét: a no és a névmás a haber ELÉ megy. Nem «he no comido», hanem no he comido; nem «he lo visto», hanem lo he visto.",
+            "en": "The two parts NEVER split: no and the pronoun go BEFORE haber. Not «he no comido» but no he comido; not «he lo visto» but lo he visto.",
+            "es": "Las dos partes NUNCA se separan: el no y el pronombre van ANTES de haber. No «he no comido», sino no he comido; no «he lo visto», sino lo he visto.",
+            "de": "Die zwei Teile trennen sich NIE: no und das Pronomen stehen VOR haber. Nicht «he no comido», sondern no he comido; nicht «he lo visto», sondern lo he visto."
+          },
+          "examples": [
+            {
+              "es": "No he comido nada.",
+              "tr": {
+                "hu": "Nem ettem semmit.",
+                "en": "I have not eaten anything.",
+                "es": "No he comido nada.",
+                "de": "Ich habe nichts gegessen."
+              }
+            },
+            {
+              "es": "No lo he visto.",
+              "tr": {
+                "hu": "Nem láttam.",
+                "en": "I have not seen it.",
+                "es": "No lo he visto.",
+                "de": "Ich habe es nicht gesehen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A participio itt SOSEM egyeztetődik: ellas han llegado, nem «llegadas».",
+            "en": "The participle NEVER agrees here: ellas han llegado, not «llegadas».",
+            "es": "El participio aquí NUNCA concuerda: ellas han llegado, no «llegadas».",
+            "de": "Das Partizip wird hier NIE angeglichen: ellas han llegado, nicht «llegadas»."
+          },
+          "examples": [
+            {
+              "es": "Mis amigas han venido juntas.",
+              "tr": {
+                "hu": "A barátnőim együtt jöttek.",
+                "en": "My friends have come together.",
+                "es": "Mis amigas han venido juntas.",
+                "de": "Meine Freundinnen sind zusammen gekommen."
+              }
+            },
+            {
+              "es": "Los niños han comido bien.",
+              "tr": {
+                "hu": "A gyerekek jól ettek.",
+                "en": "The children have eaten well.",
+                "es": "Los niños han comido bien.",
+                "de": "Die Kinder haben gut gegessen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Mikor használjuk",
+        "en": "When do we use it",
+        "es": "Cuándo lo usamos",
+        "de": "Wann benutzen wir es"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Még tartó időszak: hoy, esta semana, este año, este mes.",
+            "en": "A period that is still open: hoy, esta semana, este año, este mes.",
+            "es": "Un periodo que sigue abierto: hoy, esta semana, este año, este mes.",
+            "de": "Ein noch offener Zeitraum: hoy, esta semana, este año, este mes."
+          },
+          "examples": [
+            {
+              "es": "Esta semana he trabajado mucho.",
+              "tr": {
+                "hu": "Ezen a héten sokat dolgoztam.",
+                "en": "This week I have worked a lot.",
+                "es": "Esta semana he trabajado mucho.",
+                "de": "Diese Woche habe ich viel gearbeitet."
+              }
+            },
+            {
+              "es": "Este año hemos viajado poco.",
+              "tr": {
+                "hu": "Idén keveset utaztunk.",
+                "en": "This year we have travelled little.",
+                "es": "Este año hemos viajado poco.",
+                "de": "Dieses Jahr sind wir wenig gereist."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Élmény, az eddigi életről: alguna vez, nunca, siempre.",
+            "en": "An experience, about your life so far: alguna vez, nunca, siempre.",
+            "es": "Una experiencia, sobre la vida hasta ahora: alguna vez, nunca, siempre.",
+            "de": "Eine Erfahrung, über das bisherige Leben: alguna vez, nunca, siempre."
+          },
+          "examples": [
+            {
+              "es": "¿Has estado alguna vez en Oaxaca?",
+              "tr": {
+                "hu": "Voltál már valaha Oaxacában?",
+                "en": "Have you ever been to Oaxaca?",
+                "es": "¿Has estado alguna vez en Oaxaca?",
+                "de": "Warst du schon einmal in Oaxaca?"
+              }
+            },
+            {
+              "es": "Nunca he estado en Perú.",
+              "tr": {
+                "hu": "Még soha nem voltam Peruban.",
+                "en": "I have never been to Peru.",
+                "es": "Nunca he estado en Perú.",
+                "de": "Ich war noch nie in Peru."
+              }
+            },
+            {
+              "es": "Siempre he vivido aquí.",
+              "tr": {
+                "hu": "Mindig itt éltem.",
+                "en": "I have always lived here.",
+                "es": "Siempre he vivido aquí.",
+                "de": "Ich habe immer hier gewohnt."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Még nem történt meg, vagy már megtörtént: todavía no, ya.",
+            "en": "Not yet, or already: todavía no, ya.",
+            "es": "Todavía no o ya: lo que no ha pasado aún, o lo que ya pasó.",
+            "de": "Noch nicht oder schon: todavía no, ya."
+          },
+          "examples": [
+            {
+              "es": "Todavía no he comido.",
+              "tr": {
+                "hu": "Még nem ettem.",
+                "en": "I have not eaten yet.",
+                "es": "Todavía no he comido.",
+                "de": "Ich habe noch nicht gegessen."
+              }
+            },
+            {
+              "es": "Ya hemos terminado.",
+              "tr": {
+                "hu": "Már befejeztük.",
+                "en": "We have already finished.",
+                "es": "Ya hemos terminado.",
+                "de": "Wir sind schon fertig."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ami valamikor kezdődött, és MOSTIG tart: desde + időpont.",
+            "en": "Something that began at some point and runs up to NOW: desde plus a point in time.",
+            "es": "Lo que empezó en un momento y llega hasta AHORA: desde más un momento.",
+            "de": "Was irgendwann begann und bis JETZT läuft: desde plus Zeitpunkt."
+          },
+          "examples": [
+            {
+              "es": "He estudiado español desde enero.",
+              "tr": {
+                "hu": "Januártól tanulok spanyolul.",
+                "en": "I have studied Spanish since January.",
+                "es": "He estudiado español desde enero.",
+                "de": "Ich lerne seit Januar Spanisch."
+              }
+            },
+            {
+              "es": "Ha llovido toda la semana.",
+              "tr": {
+                "hu": "Egész héten esett.",
+                "en": "It has rained all week.",
+                "es": "Ha llovido toda la semana.",
+                "de": "Es hat die ganze Woche geregnet."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Hasonló, mégis más",
+        "en": "Similar, yet different",
+        "es": "Parecido, pero distinto",
+        "de": "Ähnlich, aber anders"
+      },
+      "pairs": [
+        {
+          "a": "Este año he viajado",
+          "b": "El año pasado viajé",
+          "note": {
+            "hu": "A perfecto a még tartó időszaké (este año), az indefinido a lezárté (el año pasado): ha az időszak vége már megvan, indefinido kell.",
+            "en": "The perfect is for an open period (este año), the preterite for a closed one (el año pasado): once the period has ended, you need the preterite.",
+            "es": "El perfecto es del periodo abierto (este año), el indefinido del cerrado (el año pasado): si el periodo ya terminó, hace falta indefinido.",
+            "de": "Das Perfekt gehört zum offenen Zeitraum (este año), das Indefinido zum abgeschlossenen (el año pasado): ist der Zeitraum vorbei, braucht man das Indefinido."
+          },
+          "examples": [
+            {
+              "es": "Este año he viajado mucho.",
+              "tr": {
+                "hu": "Idén sokat utaztam.",
+                "en": "This year I have travelled a lot.",
+                "es": "Este año he viajado mucho.",
+                "de": "Dieses Jahr bin ich viel gereist."
+              }
+            },
+            {
+              "es": "El año pasado viajé a México.",
+              "tr": {
+                "hu": "Tavaly Mexikóba utaztam.",
+                "en": "Last year I travelled to Mexico.",
+                "es": "El año pasado viajé a México.",
+                "de": "Letztes Jahr bin ich nach Mexiko gereist."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Hoy he comido tarde",
+          "b": "Hoy comí tarde",
+          "note": {
+            "hu": "Regionális különbség: Spanyolországban a mai eseményre perfectót mondanak, Mexikóban a lezárt, mai eseményre is az indefinido a gyakoribb. Mindkettő helyes; Mexikóban a perfecto főleg élményre, még tartó időszakra és a todavía no mellé jön.",
+            "en": "A regional split: Spain uses the perfect for today's events, while in Mexico the preterite is more common even for a closed event from today. Both are correct; in Mexico the perfect mostly comes with experiences, open periods and todavía no.",
+            "es": "Diferencia regional: en España se usa el perfecto para lo de hoy; en México, incluso para un hecho cerrado de hoy, es más común el indefinido. Ambos son correctos; en México el perfecto aparece sobre todo con experiencias, periodos abiertos y todavía no.",
+            "de": "Regionaler Unterschied: In Spanien nimmt man für heutige Ereignisse das Perfekt; in Mexiko ist auch für ein abgeschlossenes Ereignis von heute das Indefinido häufiger. Beides ist richtig; in Mexiko steht das Perfekt vor allem bei Erfahrungen, offenen Zeiträumen und todavía no."
+          },
+          "examples": [
+            {
+              "es": "Hoy he comido tarde.",
+              "tr": {
+                "hu": "Ma későn ebédeltem.",
+                "en": "Today I have eaten late.",
+                "es": "Hoy he comido tarde.",
+                "de": "Heute habe ich spät gegessen."
+              }
+            },
+            {
+              "es": "Hoy comí tarde.",
+              "tr": {
+                "hu": "Ma későn ebédeltem.",
+                "en": "Today I ate late.",
+                "es": "Hoy comí tarde.",
+                "de": "Heute habe ich spät gegessen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ne vágd szét a haber-t és a participiót, és a participio ne kapjon végződést: no he comido (nem «he no comido»), han llegado (nem «llegadas»).",
+        "en": "Never split haber and the participle, and the participle takes no ending: no he comido (not «he no comido»), han llegado (not «llegadas»).",
+        "es": "No separes haber y el participio, y el participio no lleva terminación: no he comido (no «he no comido»), han llegado (no «llegadas»).",
+        "de": "Trenne haber und Partizip nie, und das Partizip bekommt keine Endung: no he comido (nicht «he no comido»), han llegado (nicht «llegadas»)."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A pretérito perfecto akkor kell, ha valami egy még tartó időszakban vagy az eddigi életedben történt. Az alakja a haber jelen ideje és a participio: «he hablado», «has comido», «hemos vivido». A participio -ar igéknél -ado, -er és -ir igéknél -ido, de van néhány rendhagyó: «hecho», «visto», «dicho», «escrito». Élményre használod: «¿Has estado alguna vez en Oaxaca?», és olyan időre, ami még tart: «Este año he trabajado mucho». A todavía no mellett is ez jön: «Todavía no he comido». A két rész nem válik szét, és a participio nem egyeztetődik. Mexikóban egy lezárt, mai eseményre gyakrabban mondanak indefinidót: «Hoy comí tarde».",
+    "en": "You need the pretérito perfecto when something happened in a period that is still open, or in your life so far. Its form is the present of haber plus the participle: «he hablado», «has comido», «hemos vivido». The participle ends in -ado for -ar verbs and -ido for -er and -ir verbs, but a few are irregular: «hecho», «visto», «dicho», «escrito». You use it for experiences: «¿Has estado alguna vez en Oaxaca?», and for time that is still running: «Este año he trabajado mucho». It also comes with todavía no: «Todavía no he comido». The two parts never split, and the participle never agrees. In Mexico, for a closed event from today, people more often use the preterite: «Hoy comí tarde».",
+    "es": "El pretérito perfecto se usa cuando algo ocurrió en un periodo que sigue abierto, o en tu vida hasta ahora. Su forma es el presente de haber más el participio: «he hablado», «has comido», «hemos vivido». El participio termina en -ado en los verbos en -ar y en -ido en los verbos en -er e -ir, pero hay algunos irregulares: «hecho», «visto», «dicho», «escrito». Lo usas para experiencias: «¿Has estado alguna vez en Oaxaca?», y para un tiempo que sigue abierto: «Este año he trabajado mucho». También va con todavía no: «Todavía no he comido». Las dos partes no se separan, y el participio no concuerda. En México, para un hecho cerrado de hoy, se usa más el indefinido: «Hoy comí tarde».",
+    "de": "Das pretérito perfecto braucht man, wenn etwas in einem noch offenen Zeitraum oder in deinem bisherigen Leben geschah. Seine Form ist das Präsens von haber plus das Partizip: «he hablado», «has comido», «hemos vivido». Das Partizip endet bei -ar-Verben auf -ado, bei -er- und -ir-Verben auf -ido, aber einige sind unregelmäßig: «hecho», «visto», «dicho», «escrito». Du benutzt es für Erfahrungen: «¿Has estado alguna vez en Oaxaca?», und für Zeit, die noch läuft: «Este año he trabajado mucho». Es steht auch bei todavía no: «Todavía no he comido». Die zwei Teile trennen sich nie, und das Partizip wird nie angeglichen. In Mexiko nimmt man für ein abgeschlossenes Ereignis von heute öfter das Indefinido: «Hoy comí tarde»."
   },
   "glossary": [
-    {
-      "word": "todavía",
-      "gloss": {
-        "hu": "még (todavía no = még nem)",
-        "en": "still (todavía no = not yet)",
-        "es": "todavía",
-        "de": "noch (todavía no = noch nicht)"
-      }
-    },
-    {
-      "word": "ya",
-      "gloss": {
-        "hu": "már",
-        "en": "already",
-        "es": "ya",
-        "de": "schon"
-      }
-    },
-    {
-      "word": "hecho",
-      "gloss": {
-        "hu": "csinált (hacer participiója)",
-        "en": "done, made",
-        "es": "hecho",
-        "de": "gemacht"
-      }
-    },
-    {
-      "word": "visto",
-      "gloss": {
-        "hu": "látott (ver participiója)",
-        "en": "seen",
-        "es": "visto",
-        "de": "gesehen"
-      }
-    },
-    {
-      "word": "dicho",
-      "gloss": {
-        "hu": "mondott (decir participiója)",
-        "en": "said",
-        "es": "dicho",
-        "de": "gesagt"
-      }
-    },
-    {
-      "word": "escrito",
-      "gloss": {
-        "hu": "írott (escribir participiója)",
-        "en": "written",
-        "es": "escrito",
-        "de": "geschrieben"
-      }
-    },
-    {
-      "word": "roto",
-      "gloss": {
-        "hu": "eltört (romper participiója)",
-        "en": "broken",
-        "es": "roto",
-        "de": "kaputt, zerbrochen"
-      }
-    },
-    {
-      "word": "vuelto",
-      "gloss": {
-        "hu": "visszatért (volver participiója)",
-        "en": "come back",
-        "es": "vuelto",
-        "de": "zurückgekommen"
-      }
-    },
     {
       "word": "caído",
       "gloss": {
@@ -129,16 +596,16 @@
       },
       "wrong": {
         "tuve": {
-          "hu": "Mexikóban ezt mondanák, de ez a lecke a perfectóról szól; a „más regionális\" blokk kimondja.",
-          "en": "Mexico would say this, but this lesson is about the perfect; the notes explain the split.",
-          "es": "En México se diría así, pero esta lección trata del perfecto.",
-          "de": "In Mexiko sagt man das, diese Lektion behandelt aber das Perfekt."
+          "hu": "Ezzel a mondat azt jelentené: „ma sok munkám volt (lezárt múlt)”. Mexikóban ezt mondanák, de ez a lecke a perfectóról szól; helyesen: Hoy he tenido mucho trabajo.",
+          "en": "This would say: “I had a lot of work today (a closed past)”. In Mexico you would hear that, but this lesson is about the perfect; correctly: Hoy he tenido mucho trabajo.",
+          "es": "Diría: «hoy tuve mucho trabajo (pasado cerrado)». En México se diría así, pero esta lección trata del perfecto; correctamente: Hoy he tenido mucho trabajo.",
+          "de": "Das würde bedeuten: „ich hatte heute viel Arbeit (abgeschlossene Vergangenheit)“. In Mexiko sagt man das, diese Lektion behandelt aber das Perfekt; richtig: Hoy he tenido mucho trabajo."
         },
         "tenía": {
-          "hu": "A tenía szokást vagy hátteret jelöl.",
-          "en": "Tenía marks a habit or background.",
-          "es": "Tenía marca costumbre o fondo.",
-          "de": "Tenía markiert Gewohnheit oder Hintergrund."
+          "hu": "Ezzel a mondat azt jelentené: „ma sok munkám szokott lenni (szokás vagy háttér)”, ami nem illik ide; helyesen: Hoy he tenido mucho trabajo.",
+          "en": "This would say: “today I used to have a lot of work (a habit or background)”, which does not fit here; correctly: Hoy he tenido mucho trabajo.",
+          "es": "Diría: «hoy solía tener mucho trabajo (costumbre o fondo)», lo cual no encaja aquí; correctamente: Hoy he tenido mucho trabajo.",
+          "de": "Das würde bedeuten: „heute hatte ich gewöhnlich viel Arbeit (Gewohnheit oder Hintergrund)“, was hier nicht passt; richtig: Hoy he tenido mucho trabajo."
         }
       },
       "examples": [
@@ -167,16 +634,16 @@
       },
       "wrong": {
         "Has ver": {
-          "hu": "A haber után nem főnévi igenév áll, hanem participio.",
-          "en": "Haber is followed by a participle, not an infinitive.",
-          "es": "Después de haber va participio, no infinitivo.",
-          "de": "Nach haber steht ein Partizip, kein Infinitiv."
+          "hu": "Ilyen szerkezet nincs: a haber után nem főnévi igenév áll, hanem participio; helyesen: ¿Has visto la película nueva?",
+          "en": "No such structure exists: haber is followed by a participle, not an infinitive; correctly: ¿Has visto la película nueva?",
+          "es": "Esa estructura no existe: después de haber va participio, no infinitivo; correctamente: ¿Has visto la película nueva?",
+          "de": "Diese Struktur gibt es nicht: nach haber steht ein Partizip, kein Infinitiv; richtig: ¿Has visto la película nueva?"
         },
         "Has vido": {
-          "hu": "Ilyen alak nincs.",
-          "en": "No such form exists.",
-          "es": "Esa forma no existe.",
-          "de": "Diese Form gibt es nicht."
+          "hu": "Ilyen alak nincs: a ver participiója rendhagyó, visto, nem „vido”; helyesen: ¿Has visto la película nueva?",
+          "en": "No such form exists: the participle of ver is irregular, visto, not “vido”; correctly: ¿Has visto la película nueva?",
+          "es": "Esa forma no existe: el participio de ver es irregular, visto, no «vido»; correctamente: ¿Has visto la película nueva?",
+          "de": "Diese Form gibt es nicht: das Partizip von ver ist unregelmäßig, visto, nicht „vido“; richtig: ¿Has visto la película nueva?"
         }
       },
       "examples": [
@@ -205,16 +672,16 @@
       },
       "wrong": {
         "recibimos": {
-          "hu": "Lezárt múltat jelentene, a todavía no viszont a mostig tartó időt nézi.",
-          "en": "That would be a closed past, while todavía no looks at the time up to now.",
-          "es": "Sería un pasado cerrado, y todavía no mira hasta ahora.",
-          "de": "Das wäre abgeschlossene Vergangenheit, todavía no blickt bis jetzt."
+          "hu": "Ezzel a mondat azt jelentené: „nem kaptuk meg az eredményt (lezárt múlt)”, a todavía no viszont a mostig tartó várakozást nézi; helyesen: Todavía no hemos recibido el resultado.",
+          "en": "This would say: “we did not receive the result (a closed past)”, while todavía no looks at the wait that runs up to now; correctly: Todavía no hemos recibido el resultado.",
+          "es": "Diría: «no recibimos el resultado (pasado cerrado)», y todavía no mira la espera hasta ahora; correctamente: Todavía no hemos recibido el resultado.",
+          "de": "Das würde bedeuten: „wir bekamen das Ergebnis nicht (abgeschlossene Vergangenheit)“, todavía no blickt aber auf das Warten bis jetzt; richtig: Todavía no hemos recibido el resultado."
         },
         "recibíamos": {
-          "hu": "Szokást jelentene.",
-          "en": "That would mean a habit.",
-          "es": "Indicaría costumbre.",
-          "de": "Das hieße Gewohnheit."
+          "hu": "Ezzel a mondat azt jelentené: „nem szoktuk megkapni az eredményt (szokás)”, ami nem illik ide; helyesen: Todavía no hemos recibido el resultado.",
+          "en": "This would say: “we did not use to receive the result (a habit)”, which does not fit here; correctly: Todavía no hemos recibido el resultado.",
+          "es": "Diría: «no solíamos recibir el resultado (costumbre)», lo cual no encaja aquí; correctamente: Todavía no hemos recibido el resultado.",
+          "de": "Das würde bedeuten: „wir bekamen das Ergebnis gewöhnlich nicht (Gewohnheit)“, was hier nicht passt; richtig: Todavía no hemos recibido el resultado."
         }
       },
       "examples": [
@@ -243,16 +710,16 @@
       },
       "wrong": {
         "viajé": {
-          "hu": "Ez egy konkrét, lezárt alkalomra utalna.",
-          "en": "That would point at one closed occasion.",
-          "es": "Señalaría una ocasión cerrada.",
-          "de": "Das zeigte auf einen abgeschlossenen Anlass."
+          "hu": "Ezzel a mondat egy konkrét, lezárt alkalomra utalna („akkor nem utaztam repülővel”); az egész eddigi életről a perfecto beszél; helyesen: Nunca he viajado en avión.",
+          "en": "This would point at one closed occasion (“back then I did not fly”); the perfect is what speaks about your whole life so far; correctly: Nunca he viajado en avión.",
+          "es": "Señalaría una ocasión cerrada («entonces no viajé en avión»); el perfecto habla de toda la vida hasta ahora; correctamente: Nunca he viajado en avión.",
+          "de": "Das zeigte auf einen abgeschlossenen Anlass („damals flog ich nicht“); das Perfekt spricht über das ganze bisherige Leben; richtig: Nunca he viajado en avión."
         },
         "viajaba": {
-          "hu": "Ez azt mondaná, hogy akkoriban nem szoktam repülni.",
-          "en": "That would say I did not use to fly back then.",
-          "es": "Diría que entonces no solía viajar en avión.",
-          "de": "Das hieße, ich flog damals gewöhnlich nicht."
+          "hu": "Ezzel a mondat azt jelentené: „akkoriban nem szoktam repülővel utazni (múltbeli szokás)”; helyesen: Nunca he viajado en avión.",
+          "en": "This would say: “back then I did not use to travel by plane (a past habit)”; correctly: Nunca he viajado en avión.",
+          "es": "Diría: «entonces no solía viajar en avión (costumbre pasada)»; correctamente: Nunca he viajado en avión.",
+          "de": "Das würde bedeuten: „damals reiste ich gewöhnlich nicht mit dem Flugzeug (vergangene Gewohnheit)“; richtig: Nunca he viajado en avión."
         }
       },
       "examples": [
@@ -281,16 +748,16 @@
       },
       "wrong": {
         "ha abrido": {
-          "hu": "Ilyen alak nincs.",
-          "en": "No such form exists.",
-          "es": "Esa forma no existe.",
-          "de": "Diese Form gibt es nicht."
+          "hu": "Ilyen alak nincs: az abrir participiója rendhagyó, abierto, nem „abrido”; helyesen: Ella ha abierto la puerta y ha salido.",
+          "en": "No such form exists: the participle of abrir is irregular, abierto, not “abrido”; correctly: Ella ha abierto la puerta y ha salido.",
+          "es": "Esa forma no existe: el participio de abrir es irregular, abierto, no «abrido»; correctamente: Ella ha abierto la puerta y ha salido.",
+          "de": "Diese Form gibt es nicht: das Partizip von abrir ist unregelmäßig, abierto, nicht „abrido“; richtig: Ella ha abierto la puerta y ha salido."
         },
         "abrió": {
-          "hu": "Nyelvtanilag helyes múlt, de a mondat másik fele perfectóban áll.",
-          "en": "A correct past, but the other half of the sentence is in the perfect.",
-          "es": "Pasado correcto, pero la otra mitad está en perfecto.",
-          "de": "Korrekte Vergangenheit, aber die andere Hälfte steht im Perfekt."
+          "hu": "Ezzel a mondat azt jelentené: „ő kinyitotta az ajtót (lezárt múlt)”, és egy mondatban keverednének az igeidők (abrió … ha salido); helyesen: Ella ha abierto la puerta y ha salido.",
+          "en": "This would say: “she opened the door (a closed past)”, and the tenses would clash in one sentence (abrió … ha salido); correctly: Ella ha abierto la puerta y ha salido.",
+          "es": "Diría: «ella abrió la puerta (pasado cerrado)», y los tiempos chocarían en una frase (abrió … ha salido); correctamente: Ella ha abierto la puerta y ha salido.",
+          "de": "Das würde bedeuten: „sie öffnete die Tür (abgeschlossene Vergangenheit)“, und die Zeiten würden in einem Satz aufeinanderprallen (abrió … ha salido); richtig: Ella ha abierto la puerta y ha salido."
         }
       },
       "examples": [
@@ -319,16 +786,16 @@
       },
       "wrong": {
         "comido he": {
-          "hu": "A sorrend fordítva van.",
-          "en": "The order is reversed.",
-          "es": "El orden está al revés.",
-          "de": "Die Reihenfolge ist vertauscht."
+          "hu": "Ilyen szórend nincs: a haber áll elöl, a participio mögötte; helyesen: No he comido nada en todo el día.",
+          "en": "No such word order exists: haber comes first and the participle right behind it; correctly: No he comido nada en todo el día.",
+          "es": "Ese orden no existe: haber va primero y el participio detrás; correctamente: No he comido nada en todo el día.",
+          "de": "Diese Reihenfolge gibt es nicht: haber steht vorn, das Partizip dahinter; richtig: No he comido nada en todo el día."
         },
         "he no comido": {
-          "hu": "A no soha nem áll a haber és a participio közé.",
-          "en": "No never goes between haber and the participle.",
-          "es": "El no nunca va entre haber y el participio.",
-          "de": "Das no steht nie zwischen haber und Partizip."
+          "hu": "Ilyen szórend nincs: a no a haber ELÉ megy, nem közé; helyesen: No he comido nada en todo el día.",
+          "en": "No such word order exists: no goes BEFORE haber, not between the two parts; correctly: No he comido nada en todo el día.",
+          "es": "Ese orden no existe: el no va ANTES de haber, no entre las dos partes; correctamente: No he comido nada en todo el día.",
+          "de": "Diese Reihenfolge gibt es nicht: no steht VOR haber, nicht zwischen den zwei Teilen; richtig: No he comido nada en todo el día."
         }
       },
       "examples": [
@@ -357,16 +824,16 @@
       },
       "wrong": {
         "vinieron": {
-          "hu": "Lezárt évhez illene: el año pasado vinieron.",
-          "en": "That would fit a closed year: el año pasado vinieron.",
-          "es": "Encajaría con un año cerrado: el año pasado vinieron.",
-          "de": "Das passte zu einem abgeschlossenen Jahr."
+          "hu": "Ezzel a mondat azt jelentené: „a szüleim kétszer jöttek Mexikóba (lezárt időszakban)”, ami lezárt évhez illene (el año pasado vinieron); helyesen: Este año mis padres han venido dos veces a México.",
+          "en": "This would say: “my parents came to Mexico twice (in a closed period)”, which would fit a closed year (el año pasado vinieron); correctly: Este año mis padres han venido dos veces a México.",
+          "es": "Diría: «mis padres vinieron dos veces a México (periodo cerrado)», lo que encajaría con un año cerrado (el año pasado vinieron); correctamente: Este año mis padres han venido dos veces a México.",
+          "de": "Das würde bedeuten: „meine Eltern kamen zweimal nach Mexiko (abgeschlossener Zeitraum)“, was zu einem abgeschlossenen Jahr passte (el año pasado vinieron); richtig: Este año mis padres han venido dos veces a México."
         },
         "venían": {
-          "hu": "Szokást jelentene.",
-          "en": "That would mean a habit.",
-          "es": "Indicaría costumbre.",
-          "de": "Das hieße Gewohnheit."
+          "hu": "Ezzel a mondat azt jelentené: „a szüleim szoktak jönni Mexikóba (szokás)”, ami nem illik ide; helyesen: Este año mis padres han venido dos veces a México.",
+          "en": "This would say: “my parents used to come to Mexico (a habit)”, which does not fit here; correctly: Este año mis padres han venido dos veces a México.",
+          "es": "Diría: «mis padres solían venir a México (costumbre)», lo cual no encaja aquí; correctamente: Este año mis padres han venido dos veces a México.",
+          "de": "Das würde bedeuten: „meine Eltern kamen gewöhnlich nach Mexiko (Gewohnheit)“, was hier nicht passt; richtig: Este año mis padres han venido dos veces a México."
         }
       },
       "examples": [
@@ -395,16 +862,16 @@
       },
       "wrong": {
         "han hacido": {
-          "hu": "Ilyen alak nincs.",
-          "en": "No such form exists.",
-          "es": "Esa forma no existe.",
-          "de": "Diese Form gibt es nicht."
+          "hu": "Ilyen alak nincs: a hacer participiója rendhagyó, hecho, nem „hacido”; helyesen: ¿Ya han hecho la reserva?",
+          "en": "No such form exists: the participle of hacer is irregular, hecho, not “hacido”; correctly: ¿Ya han hecho la reserva?",
+          "es": "Esa forma no existe: el participio de hacer es irregular, hecho, no «hacido»; correctamente: ¿Ya han hecho la reserva?",
+          "de": "Diese Form gibt es nicht: das Partizip von hacer ist unregelmäßig, hecho, nicht „hacido“; richtig: ¿Ya han hecho la reserva?"
         },
         "hicieron ya": {
-          "hu": "Latin-Amerikában elhangzik, de itt a perfecto szerkezetét gyakoroljuk.",
-          "en": "You would hear this in Latin America, but this lesson practises the perfect.",
-          "es": "Se oye en América, pero aquí practicamos el perfecto.",
-          "de": "In Amerika hört man das, hier üben wir das Perfekt."
+          "hu": "Ezzel a mondat azt jelentené: „már megcsinálták a foglalást (lezárt múlt)”; Latin-Amerikában elhangzik, de itt a perfecto szerkezetét gyakoroljuk; helyesen: ¿Ya han hecho la reserva?",
+          "en": "This would say: “they already made the reservation (a closed past)”; you would hear it in Latin America, but here we practise the perfect; correctly: ¿Ya han hecho la reserva?",
+          "es": "Diría: «ya hicieron la reserva (pasado cerrado)»; se oye en América, pero aquí practicamos el perfecto; correctamente: ¿Ya han hecho la reserva?",
+          "de": "Das würde bedeuten: „sie machten die Reservierung schon (abgeschlossene Vergangenheit)“; in Amerika hört man das, hier üben wir aber das Perfekt; richtig: ¿Ya han hecho la reserva?"
         }
       },
       "examples": [
@@ -433,16 +900,16 @@
       },
       "wrong": {
         "ha rompido": {
-          "hu": "Ilyen alak nincs.",
-          "en": "No such form exists.",
-          "es": "Esa forma no existe.",
-          "de": "Diese Form gibt es nicht."
+          "hu": "Ilyen alak nincs: a romper participiója rendhagyó, roto, nem „rompido”; helyesen: El vaso se ha roto.",
+          "en": "No such form exists: the participle of romper is irregular, roto, not “rompido”; correctly: El vaso se ha roto.",
+          "es": "Esa forma no existe: el participio de romper es irregular, roto, no «rompido»; correctamente: El vaso se ha roto.",
+          "de": "Diese Form gibt es nicht: das Partizip von romper ist unregelmäßig, roto, nicht „rompido“; richtig: El vaso se ha roto."
         },
         "rompía": {
-          "hu": "Folyamatot jelentene, itt viszont egyszeri eredmény van.",
-          "en": "That would be an ongoing action; here there is a single result.",
-          "es": "Sería una acción en curso; aquí hay un resultado.",
-          "de": "Das wäre ein Verlauf; hier gibt es ein Ergebnis."
+          "hu": "Ezzel a mondat azt jelentené: „a pohár törögetett (folyamat)”, itt viszont egyszeri eredmény van; helyesen: El vaso se ha roto.",
+          "en": "This would say: “the glass was breaking (an ongoing action)”, but here there is a single result; correctly: El vaso se ha roto.",
+          "es": "Diría: «el vaso se rompía (acción en curso)», pero aquí hay un resultado; correctamente: El vaso se ha roto.",
+          "de": "Das würde bedeuten: „das Glas zerbrach gerade (Verlauf)“, hier gibt es aber ein Ergebnis; richtig: El vaso se ha roto."
         }
       },
       "examples": [
@@ -471,16 +938,16 @@
       },
       "wrong": {
         "han llegadas": {
-          "hu": "A haber utáni participio nem kap nőnemű végződést.",
-          "en": "The participle after haber takes no feminine ending.",
-          "es": "El participio tras haber no lleva femenino.",
-          "de": "Das Partizip nach haber bekommt keine feminine Endung."
+          "hu": "Ilyen alak nincs: a haber utáni participio nem kap sem nőnemű, sem többes végződést; helyesen: Las chicas han llegado temprano.",
+          "en": "No such form exists: the participle after haber takes neither a feminine nor a plural ending; correctly: Las chicas han llegado temprano.",
+          "es": "Esa forma no existe: el participio tras haber no lleva ni femenino ni plural; correctamente: Las chicas han llegado temprano.",
+          "de": "Diese Form gibt es nicht: das Partizip nach haber bekommt weder feminine noch Plural-Endung; richtig: Las chicas han llegado temprano."
         },
         "ha llegado": {
-          "hu": "Az alany többes szám, tehát han kell.",
-          "en": "The subject is plural, so it needs han.",
-          "es": "El sujeto es plural, hace falta han.",
-          "de": "Das Subjekt ist Plural, also han."
+          "hu": "Ezzel a mondat egyes számú alanyhoz illene («Ella ha llegado temprano»), itt viszont az alany többes szám (las chicas), ezért han kell; helyesen: Las chicas han llegado temprano.",
+          "en": "This would fit a singular subject («Ella ha llegado temprano»), but here the subject is plural (las chicas), so you need han; correctly: Las chicas han llegado temprano.",
+          "es": "Encajaría con un sujeto singular («Ella ha llegado temprano»), pero aquí el sujeto es plural (las chicas), por eso hace falta han; correctamente: Las chicas han llegado temprano.",
+          "de": "Das passte zu einem Singular-Subjekt («Ella ha llegado temprano»), hier ist das Subjekt aber Plural (las chicas), also braucht man han; richtig: Las chicas han llegado temprano."
         }
       },
       "examples": [
@@ -509,16 +976,16 @@
       },
       "wrong": {
         "vivimos ayer": {
-          "hu": "Az ayer lezárja az időt, ami ellentmond a desde marzónak.",
-          "en": "Ayer closes the time, which contradicts desde marzo.",
-          "es": "Ayer cierra el tiempo y contradice desde marzo.",
-          "de": "Ayer schließt die Zeit ab und widerspricht desde marzo."
+          "hu": "Ezzel a mondat azt jelentené: „tegnap laktunk itt”, és az ayer lezárja az időt, ami ellentmond a desde marzónak; helyesen: Nosotros hemos vivido aquí desde marzo.",
+          "en": "This would say: “we lived here yesterday”, and ayer closes the time, which contradicts desde marzo; correctly: Nosotros hemos vivido aquí desde marzo.",
+          "es": "Diría: «vivimos aquí ayer», y ayer cierra el tiempo y contradice desde marzo; correctamente: Nosotros hemos vivido aquí desde marzo.",
+          "de": "Das würde bedeuten: „wir wohnten gestern hier“, und ayer schließt die Zeit ab und widerspricht desde marzo; richtig: Nosotros hemos vivido aquí desde marzo."
         },
         "vivíamos": {
-          "hu": "Ez azt jelentené, hogy régen ott laktunk, de már nem.",
-          "en": "That would mean we lived there once but not any more.",
-          "es": "Indicaría que vivíamos antes y ya no.",
-          "de": "Das hieße, wir wohnten früher dort, jetzt nicht mehr."
+          "hu": "Ezzel a mondat azt jelentené: „régen itt laktunk márciustól, de már nem (múltbeli háttér)”; helyesen: Nosotros hemos vivido aquí desde marzo.",
+          "en": "This would say: “we lived here from March, but no longer (a past background)”; correctly: Nosotros hemos vivido aquí desde marzo.",
+          "es": "Diría: «vivíamos aquí desde marzo, pero ya no (fondo pasado)»; correctamente: Nosotros hemos vivido aquí desde marzo.",
+          "de": "Das würde bedeuten: „wir wohnten seit März hier, aber jetzt nicht mehr (vergangener Hintergrund)“; richtig: Nosotros hemos vivido aquí desde marzo."
         }
       },
       "examples": [
@@ -547,16 +1014,16 @@
       },
       "wrong": {
         "ha decido": {
-          "hu": "Ilyen alak nincs (a decidir participiója decidido, de az más ige).",
-          "en": "No such form (decidir gives decidido, but that is a different verb).",
-          "es": "Esa forma no existe (decidir da decidido, otro verbo).",
-          "de": "Diese Form gibt es nicht (decidir ergibt decidido, ein anderes Verb)."
+          "hu": "Ilyen alak nincs: a decir participiója dicho (a decidido a decidir igéé, más ige); helyesen: ¿Qué te ha dicho el médico?",
+          "en": "No such form exists: the participle of decir is dicho (decidido belongs to decidir, a different verb); correctly: ¿Qué te ha dicho el médico?",
+          "es": "Esa forma no existe: el participio de decir es dicho (decidido es de decidir, otro verbo); correctamente: ¿Qué te ha dicho el médico?",
+          "de": "Diese Form gibt es nicht: das Partizip von decir ist dicho (decidido gehört zu decidir, einem anderen Verb); richtig: ¿Qué te ha dicho el médico?"
         },
         "decía": {
-          "hu": "Ismétlődő beszédre utalna.",
-          "en": "That would point at repeated speech.",
-          "es": "Señalaría repetición.",
-          "de": "Das zeigte auf Wiederholung."
+          "hu": "Ezzel a mondat azt jelentené: „mit mondogatott neked az orvos (ismétlődő beszéd)”; helyesen: ¿Qué te ha dicho el médico?",
+          "en": "This would say: “what did the doctor keep telling you (repeated speech)”; correctly: ¿Qué te ha dicho el médico?",
+          "es": "Diría: «¿qué te decía el médico? (habla repetida)»; correctamente: ¿Qué te ha dicho el médico?",
+          "de": "Das würde bedeuten: „was sagte dir der Arzt immer wieder (wiederholte Rede)“; richtig: ¿Qué te ha dicho el médico?"
         }
       },
       "examples": [
@@ -566,6 +1033,2017 @@
       "tense": {
         "from": "presente",
         "to": "perfecto"
+      }
+    },
+    {
+      "id": "pf-match-01",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "hacer",
+          "en": "hecho"
+        },
+        {
+          "es": "ver",
+          "en": "visto"
+        },
+        {
+          "es": "decir",
+          "en": "dicho"
+        },
+        {
+          "es": "escribir",
+          "en": "escrito"
+        },
+        {
+          "es": "volver",
+          "en": "vuelto"
+        },
+        {
+          "es": "poner",
+          "en": "puesto"
+        }
+      ],
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "id": "pf-form-01",
+      "kind": "form",
+      "verb": "hacer",
+      "person": "yo",
+      "answer": "he hecho",
+      "table": "perfecto",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "id": "pf-form-02",
+      "kind": "form",
+      "verb": "ver",
+      "person": "tú",
+      "answer": "has visto",
+      "table": "perfecto",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "id": "pf-form-03",
+      "kind": "form",
+      "verb": "decir",
+      "person": "él/ella/usted",
+      "answer": "ha dicho",
+      "table": "perfecto",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "id": "pf-form-04",
+      "kind": "form",
+      "verb": "escribir",
+      "person": "nosotros",
+      "answer": "hemos escrito",
+      "table": "perfecto",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "id": "pf-form-05",
+      "kind": "form",
+      "verb": "volver",
+      "person": "ellos/ellas/ustedes",
+      "answer": "han vuelto",
+      "table": "perfecto",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "id": "pf-form-06",
+      "kind": "form",
+      "verb": "hablar",
+      "person": "yo",
+      "answer": "he hablado",
+      "table": "perfecto",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "id": "pf-form-07",
+      "kind": "form",
+      "verb": "comer",
+      "person": "tú",
+      "answer": "has comido",
+      "table": "perfecto",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "id": "pf-form-08",
+      "kind": "form",
+      "verb": "vivir",
+      "person": "nosotros",
+      "answer": "hemos vivido",
+      "table": "perfecto",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "id": "pf-form-09",
+      "kind": "form",
+      "verb": "hacer",
+      "person": "ellos/ellas/ustedes",
+      "answer": "han hecho",
+      "table": "perfecto",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "id": "pf-form-10",
+      "kind": "form",
+      "verb": "ver",
+      "person": "nosotros",
+      "answer": "hemos visto",
+      "table": "perfecto",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "id": "pf-form-11",
+      "kind": "form",
+      "verb": "decir",
+      "person": "yo",
+      "answer": "he dicho",
+      "table": "perfecto",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "id": "pf-form-12",
+      "kind": "form",
+      "verb": "escribir",
+      "person": "tú",
+      "answer": "has escrito",
+      "table": "perfecto",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "pf-why-01",
+      "es": "¿Has estado alguna vez en Oaxaca?",
+      "target": "Has estado",
+      "tr": {
+        "hu": "Voltál már valaha Oaxacában?",
+        "en": "Have you ever been to Oaxaca?",
+        "es": "¿Has estado alguna vez en Oaxaca?",
+        "de": "Warst du schon einmal in Oaxaca?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "élmény, az eddigi életre nézve",
+            "en": "an experience, looking at your life so far",
+            "es": "una experiencia, mirando la vida hasta ahora",
+            "de": "eine Erfahrung, bezogen auf das bisherige Leben"
+          }
+        },
+        {
+          "text": {
+            "hu": "lezárt múltbeli időpont → indefinido",
+            "en": "a closed point in the past → indefinido",
+            "es": "un momento cerrado del pasado → indefinido",
+            "de": "ein abgeschlossener Zeitpunkt in der Vergangenheit → indefinido"
+          },
+          "wrong": {
+            "hu": "Ez a lezárt időpont szabálya lenne, de itt nincs időpont: az alguna vez az egész eddigi életről kérdez.",
+            "en": "This would be the rule for a closed point in time, but there is none here: alguna vez asks about your whole life so far.",
+            "es": "Sería la regla del momento cerrado, pero aquí no hay ninguno: alguna vez pregunta por toda la vida hasta ahora.",
+            "de": "Das wäre die Regel für einen abgeschlossenen Zeitpunkt, hier gibt es aber keinen: alguna vez fragt nach dem ganzen bisherigen Leben."
+          }
+        },
+        {
+          "text": {
+            "hu": "szokás vagy háttér a múltban → imperfecto",
+            "en": "a habit or background in the past → imperfecto",
+            "es": "costumbre o fondo en el pasado → imperfecto",
+            "de": "Gewohnheit oder Hintergrund in der Vergangenheit → imperfecto"
+          },
+          "wrong": {
+            "hu": "Ez a szokás szabálya lenne, de a kérdés egy élményre vonatkozik, nem ismétlődésre.",
+            "en": "This would be the rule for a habit, but the question is about an experience, not a repetition.",
+            "es": "Sería la regla de la costumbre, pero la pregunta es por una experiencia, no una repetición.",
+            "de": "Das wäre die Regel für eine Gewohnheit, die Frage betrifft aber eine Erfahrung, keine Wiederholung."
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "pf-why-02",
+      "es": "Este año he trabajado mucho.",
+      "target": "Este año",
+      "tr": {
+        "hu": "Idén sokat dolgoztam.",
+        "en": "This year I have worked a lot.",
+        "es": "Este año he trabajado mucho.",
+        "de": "Dieses Jahr habe ich viel gearbeitet."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lezárt múltbeli időpont → indefinido",
+            "en": "a closed point in the past → indefinido",
+            "es": "un momento cerrado del pasado → indefinido",
+            "de": "ein abgeschlossener Zeitpunkt in der Vergangenheit → indefinido"
+          },
+          "wrong": {
+            "hu": "Ez lezárt időhöz illene (el año pasado trabajé), de az este año még tart.",
+            "en": "This would fit a closed time (el año pasado trabajé), but este año is still running.",
+            "es": "Encajaría con un tiempo cerrado (el año pasado trabajé), pero este año sigue abierto.",
+            "de": "Das passte zu einer abgeschlossenen Zeit (el año pasado trabajé), este año läuft aber noch."
+          }
+        },
+        {
+          "text": {
+            "hu": "még tartó időszak → perfecto",
+            "en": "a period that is still open → perfecto",
+            "es": "un periodo que sigue abierto → perfecto",
+            "de": "ein noch offener Zeitraum → perfecto"
+          }
+        },
+        {
+          "text": {
+            "hu": "szokás vagy háttér a múltban → imperfecto",
+            "en": "a habit or background in the past → imperfecto",
+            "es": "costumbre o fondo en el pasado → imperfecto",
+            "de": "Gewohnheit oder Hintergrund in der Vergangenheit → imperfecto"
+          },
+          "wrong": {
+            "hu": "Ez a szokás szabálya lenne, de itt az időszak még tart, ez dönti el az igeidőt.",
+            "en": "This would be the rule for a habit, but here the period is still open, and that decides the tense.",
+            "es": "Sería la regla de la costumbre, pero aquí el periodo sigue abierto, y eso decide el tiempo.",
+            "de": "Das wäre die Regel für eine Gewohnheit, hier läuft aber der Zeitraum noch, und das entscheidet über die Zeitform."
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "pf-why-03",
+      "es": "Todavía no he comido.",
+      "target": "Todavía no",
+      "tr": {
+        "hu": "Még nem ettem.",
+        "en": "I have not eaten yet.",
+        "es": "Todavía no he comido.",
+        "de": "Ich habe noch nicht gegessen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "élmény, az eddigi életre nézve",
+            "en": "an experience, looking at your life so far",
+            "es": "una experiencia, mirando la vida hasta ahora",
+            "de": "eine Erfahrung, bezogen auf das bisherige Leben"
+          },
+          "wrong": {
+            "hu": "Ez élményről szólna, itt viszont egy még várt dolog van: a todavía no a mostanig tartó időt nézi.",
+            "en": "This would be about an experience, but here it is something still awaited: todavía no looks at the time up to now.",
+            "es": "Sería sobre una experiencia, pero aquí es algo que se espera aún: todavía no mira el tiempo hasta ahora.",
+            "de": "Das ginge um eine Erfahrung, hier ist es aber etwas noch Erwartetes: todavía no blickt auf die Zeit bis jetzt."
+          }
+        },
+        {
+          "text": {
+            "hu": "lezárt múltbeli időpont → indefinido",
+            "en": "a closed point in the past → indefinido",
+            "es": "un momento cerrado del pasado → indefinido",
+            "de": "ein abgeschlossener Zeitpunkt in der Vergangenheit → indefinido"
+          },
+          "wrong": {
+            "hu": "Ez lezárt időpont lenne (ayer no comí), a todavía no viszont nyitva hagyja az időt.",
+            "en": "This would be a closed point (ayer no comí), while todavía no leaves the time open.",
+            "es": "Sería un momento cerrado (ayer no comí), y todavía no deja el tiempo abierto.",
+            "de": "Das wäre ein abgeschlossener Zeitpunkt (ayer no comí), todavía no lässt die Zeit aber offen."
+          }
+        },
+        {
+          "text": {
+            "hu": "todavía no: még nem történt meg → perfecto",
+            "en": "todavía no: it has not happened yet → perfecto",
+            "es": "todavía no: aún no ha pasado → perfecto",
+            "de": "todavía no: es ist noch nicht passiert → perfecto"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "pf-why-04",
+      "es": "Ayer comí con mi familia.",
+      "target": "Ayer",
+      "tr": {
+        "hu": "Tegnap a családommal ebédeltem.",
+        "en": "Yesterday I ate with my family.",
+        "es": "Ayer comí con mi familia.",
+        "de": "Gestern habe ich mit meiner Familie gegessen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "még tartó időszak → perfecto",
+            "en": "a period that is still open → perfecto",
+            "es": "un periodo que sigue abierto → perfecto",
+            "de": "ein noch offener Zeitraum → perfecto"
+          },
+          "wrong": {
+            "hu": "Ez még tartó időszakot jelentene (hoy he comido), az ayer viszont lezárt nap.",
+            "en": "This would mean an open period (hoy he comido), but ayer is a closed day.",
+            "es": "Sería un periodo abierto (hoy he comido), pero ayer es un día cerrado.",
+            "de": "Das hieße ein offener Zeitraum (hoy he comido), ayer ist aber ein abgeschlossener Tag."
+          }
+        },
+        {
+          "text": {
+            "hu": "lezárt múltbeli időpont → indefinido",
+            "en": "a closed point in the past → indefinido",
+            "es": "un momento cerrado del pasado → indefinido",
+            "de": "ein abgeschlossener Zeitpunkt in der Vergangenheit → indefinido"
+          }
+        },
+        {
+          "text": {
+            "hu": "szokás vagy háttér a múltban → imperfecto",
+            "en": "a habit or background in the past → imperfecto",
+            "es": "costumbre o fondo en el pasado → imperfecto",
+            "de": "Gewohnheit oder Hintergrund in der Vergangenheit → imperfecto"
+          },
+          "wrong": {
+            "hu": "Ez szokást jelentene (comía con mi familia), itt viszont egy konkrét nap van.",
+            "en": "This would mean a habit (comía con mi familia), but here there is one specific day.",
+            "es": "Sería una costumbre (comía con mi familia), pero aquí hay un día concreto.",
+            "de": "Das hieße eine Gewohnheit (comía con mi familia), hier ist es aber ein bestimmter Tag."
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "pf-why-05",
+      "es": "Las chicas han llegado.",
+      "target": "han llegado",
+      "tr": {
+        "hu": "A lányok megérkeztek.",
+        "en": "The girls have arrived.",
+        "es": "Las chicas han llegado.",
+        "de": "Die Mädchen sind angekommen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a participio nem egyeztet",
+            "en": "the participle does not agree",
+            "es": "el participio no concuerda",
+            "de": "das Partizip wird nicht angeglichen"
+          }
+        },
+        {
+          "text": {
+            "hu": "a participio egyeztet az alannyal",
+            "en": "the participle agrees with the subject",
+            "es": "el participio concuerda con el sujeto",
+            "de": "das Partizip stimmt mit dem Subjekt überein"
+          },
+          "wrong": {
+            "hu": "Ez tévedés: a haber utáni participio nem kap végződést, nem «llegadas».",
+            "en": "That is a mistake: the participle after haber takes no ending, not «llegadas».",
+            "es": "Es un error: el participio tras haber no lleva terminación, no «llegadas».",
+            "de": "Das ist ein Fehler: das Partizip nach haber bekommt keine Endung, nicht «llegadas»."
+          }
+        },
+        {
+          "text": {
+            "hu": "a participio a haber elé megy",
+            "en": "the participle goes before haber",
+            "es": "el participio va antes de haber",
+            "de": "das Partizip steht vor haber"
+          },
+          "wrong": {
+            "hu": "Ez fordított sorrend lenne («llegado han»), pedig a haber áll elöl.",
+            "en": "That would be the reverse order («llegado han»), but haber comes first.",
+            "es": "Sería el orden inverso («llegado han»), pero haber va primero.",
+            "de": "Das wäre die umgekehrte Reihenfolge («llegado han»), haber steht aber vorn."
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "pf-why-06",
+      "es": "No lo he visto.",
+      "target": "lo he visto",
+      "tr": {
+        "hu": "Nem láttam.",
+        "en": "I have not seen it.",
+        "es": "No lo he visto.",
+        "de": "Ich habe es nicht gesehen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a névmás a participio után megy",
+            "en": "the pronoun goes after the participle",
+            "es": "el pronombre va después del participio",
+            "de": "das Pronomen steht nach dem Partizip"
+          },
+          "wrong": {
+            "hu": "Ez «no he visto lo» lenne, ilyen nincs: a névmás nem áll a participio mögé.",
+            "en": "That would be «no he visto lo», which does not exist: the pronoun does not follow the participle.",
+            "es": "Sería «no he visto lo», que no existe: el pronombre no va detrás del participio.",
+            "de": "Das wäre «no he visto lo», das gibt es nicht: das Pronomen folgt nicht dem Partizip."
+          }
+        },
+        {
+          "text": {
+            "hu": "a névmás a haber és a participio közé megy",
+            "en": "the pronoun goes between haber and the participle",
+            "es": "el pronombre va entre haber y el participio",
+            "de": "das Pronomen steht zwischen haber und Partizip"
+          },
+          "wrong": {
+            "hu": "Ez «no he lo visto» lenne, ilyen nincs: a két rész nem válik szét.",
+            "en": "That would be «no he lo visto», which does not exist: the two parts never split.",
+            "es": "Sería «no he lo visto», que no existe: las dos partes no se separan.",
+            "de": "Das wäre «no he lo visto», das gibt es nicht: die zwei Teile trennen sich nie."
+          }
+        },
+        {
+          "text": {
+            "hu": "a névmás a haber elé megy",
+            "en": "the pronoun goes before haber",
+            "es": "el pronombre va antes de haber",
+            "de": "das Pronomen steht vor haber"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "pf-why-07",
+      "es": "Hoy comí tarde.",
+      "target": "comí",
+      "tr": {
+        "hu": "Ma későn ebédeltem.",
+        "en": "Today I ate late.",
+        "es": "Hoy comí tarde.",
+        "de": "Heute habe ich spät gegessen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lezárt, mai esemény: Mexikóban indefinido",
+            "en": "a closed event from today: indefinido in Mexico",
+            "es": "un hecho cerrado de hoy: indefinido en México",
+            "de": "ein abgeschlossenes Ereignis von heute: in Mexiko indefinido"
+          }
+        },
+        {
+          "text": {
+            "hu": "a hoy mindig perfectót kér",
+            "en": "hoy always needs the perfecto",
+            "es": "hoy siempre pide perfecto",
+            "de": "hoy verlangt immer das perfecto"
+          },
+          "wrong": {
+            "hu": "Spanyolországban valóban perfectót mondanak (Hoy he comido tarde), de Mexikóban a lezárt, mai eseményre gyakoribb az indefinido; nem kötelező.",
+            "en": "In Spain people do say the perfect (Hoy he comido tarde), but in Mexico the preterite is more common for a closed event from today; it is not compulsory.",
+            "es": "En España sí se dice el perfecto (Hoy he comido tarde), pero en México es más común el indefinido para un hecho cerrado de hoy; no es obligatorio.",
+            "de": "In Spanien sagt man tatsächlich das Perfekt (Hoy he comido tarde), in Mexiko ist für ein abgeschlossenes Ereignis von heute aber das Indefinido häufiger; es ist nicht zwingend."
+          }
+        },
+        {
+          "text": {
+            "hu": "szokás vagy háttér a múltban → imperfecto",
+            "en": "a habit or background in the past → imperfecto",
+            "es": "costumbre o fondo en el pasado → imperfecto",
+            "de": "Gewohnheit oder Hintergrund in der Vergangenheit → imperfecto"
+          },
+          "wrong": {
+            "hu": "Ez szokás lenne (hoy comía tarde), itt viszont egyszeri, lezárt eset van.",
+            "en": "This would be a habit (hoy comía tarde), but here it is a single, closed event.",
+            "es": "Sería una costumbre (hoy comía tarde), pero aquí es un hecho único y cerrado.",
+            "de": "Das wäre eine Gewohnheit (hoy comía tarde), hier ist es aber ein einmaliges, abgeschlossenes Ereignis."
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      }
+    },
+    {
+      "id": "pf-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Ma beszélek a főnökömmel.",
+        "en": "Today I talk to my boss.",
+        "es": "Hoy hablo con mi jefe.",
+        "de": "Heute spreche ich mit meinem Chef."
+      },
+      "answer": "Hoy he hablado con mi jefe.",
+      "accept": [
+        "Hoy yo he hablado con mi jefe."
+      ],
+      "wordIds": [
+        "27",
+        "1312",
+        "1854"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (hoy): pretérito perfecto. A(z) hablar szabályos -ar ige, participio: hablado, itt: he hablado.",
+        "en": "A period that is still open (hoy): pretérito perfecto. Hablar is a regular -ar verb, participle: hablado, here: he hablado.",
+        "es": "Un periodo que sigue abierto (hoy): pretérito perfecto. hablar es un verbo regular en -ar, participio: hablado, aquí: he hablado.",
+        "de": "Ein noch offener Zeitraum (hoy): pretérito perfecto. hablar ist ein regelmäßiges -ar-Verb, Partizip: hablado, hier: he hablado."
+      }
+    },
+    {
+      "id": "pf-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Ezen a héten sokat beszélsz a családoddal.",
+        "en": "This week you talk a lot with your family.",
+        "es": "Esta semana hablas mucho con tu familia.",
+        "de": "Diese Woche sprichst du viel mit deiner Familie."
+      },
+      "answer": "Esta semana has hablado mucho con tu familia.",
+      "accept": [
+        "Esta semana tú has hablado mucho con tu familia."
+      ],
+      "wordIds": [
+        "27",
+        "103",
+        "1314",
+        "3752",
+        "1852"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (esta semana): pretérito perfecto. A(z) hablar szabályos -ar ige, participio: hablado, itt: has hablado.",
+        "en": "A period that is still open (esta semana): pretérito perfecto. Hablar is a regular -ar verb, participle: hablado, here: has hablado.",
+        "es": "Un periodo que sigue abierto (esta semana): pretérito perfecto. hablar es un verbo regular en -ar, participio: hablado, aquí: has hablado.",
+        "de": "Ein noch offener Zeitraum (esta semana): pretérito perfecto. hablar ist ein regelmäßiges -ar-Verb, Partizip: hablado, hier: has hablado."
+      }
+    },
+    {
+      "id": "pf-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Mostanában keveset beszélünk.",
+        "en": "Lately we talk little.",
+        "es": "Últimamente hablamos poco.",
+        "de": "In letzter Zeit sprechen wir wenig."
+      },
+      "answer": "Últimamente hemos hablado poco.",
+      "accept": [
+        "Últimamente nosotros hemos hablado poco."
+      ],
+      "wordIds": [
+        "27",
+        "2099",
+        "1976"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (últimamente): pretérito perfecto. A(z) hablar szabályos -ar ige, participio: hablado, itt: hemos hablado.",
+        "en": "A period that is still open (últimamente): pretérito perfecto. Hablar is a regular -ar verb, participle: hablado, here: hemos hablado.",
+        "es": "Un periodo que sigue abierto (últimamente): pretérito perfecto. hablar es un verbo regular en -ar, participio: hablado, aquí: hemos hablado.",
+        "de": "Ein noch offener Zeitraum (últimamente): pretérito perfecto. hablar ist ein regelmäßiges -ar-Verb, Partizip: hablado, hier: hemos hablado."
+      }
+    },
+    {
+      "id": "pf-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Még nem beszélek vele.",
+        "en": "I still do not talk to her.",
+        "es": "Todavía no hablo con ella.",
+        "de": "Ich spreche noch nicht mit ihr."
+      },
+      "answer": "Todavía no he hablado con ella.",
+      "accept": [
+        "Yo todavía no he hablado con ella."
+      ],
+      "wordIds": [
+        "27",
+        "60"
+      ],
+      "why": {
+        "hu": "todavía no: még nem történt meg, de a várakozás tart: pretérito perfecto. A(z) hablar szabályos -ar ige, participio: hablado, itt: he hablado.",
+        "en": "todavía no: it has not happened yet, but the wait goes on: pretérito perfecto. Hablar is a regular -ar verb, participle: hablado, here: he hablado.",
+        "es": "todavía no: aún no ha pasado, pero la espera sigue: pretérito perfecto. hablar es un verbo regular en -ar, participio: hablado, aquí: he hablado.",
+        "de": "todavía no: es ist noch nicht passiert, das Warten dauert an: pretérito perfecto. hablar ist ein regelmäßiges -ar-Verb, Partizip: hablado, hier: he hablado."
+      }
+    },
+    {
+      "id": "pf-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Beszélsz valaha a szomszéddal?",
+        "en": "Do you ever talk to the neighbour?",
+        "es": "¿Hablas alguna vez con el vecino?",
+        "de": "Sprichst du jemals mit dem Nachbarn?"
+      },
+      "answer": "¿Has hablado alguna vez con el vecino?",
+      "accept": [
+        "¿Tú has hablado alguna vez con el vecino?"
+      ],
+      "wordIds": [
+        "27",
+        "1974",
+        "211"
+      ],
+      "why": {
+        "hu": "Élmény, az eddigi életre nézve: pretérito perfecto. A(z) hablar szabályos -ar ige, participio: hablado, itt: has hablado.",
+        "en": "An experience, looking at your life so far: pretérito perfecto. Hablar is a regular -ar verb, participle: hablado, here: has hablado.",
+        "es": "Una experiencia, mirando la vida hasta ahora: pretérito perfecto. hablar es un verbo regular en -ar, participio: hablado, aquí: has hablado.",
+        "de": "Eine Erfahrung, bezogen auf das bisherige Leben: pretérito perfecto. hablar ist ein regelmäßiges -ar-Verb, Partizip: hablado, hier: has hablado."
+      }
+    },
+    {
+      "id": "pf-tr-06",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Idén halat eszünk.",
+        "en": "This year we eat fish.",
+        "es": "Este año comemos pescado.",
+        "de": "Dieses Jahr essen wir Fisch."
+      },
+      "answer": "Este año hemos comido pescado.",
+      "accept": [
+        "Este año nosotros hemos comido pescado."
+      ],
+      "wordIds": [
+        "25",
+        "103",
+        "1818",
+        "1059"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (este año): pretérito perfecto. A(z) comer szabályos -er ige, participio: comido, itt: hemos comido.",
+        "en": "A period that is still open (este año): pretérito perfecto. Comer is a regular -er verb, participle: comido, here: hemos comido.",
+        "es": "Un periodo que sigue abierto (este año): pretérito perfecto. comer es un verbo regular en -er, participio: comido, aquí: hemos comido.",
+        "de": "Ein noch offener Zeitraum (este año): pretérito perfecto. comer ist ein regelmäßiges -er-Verb, Partizip: comido, hier: hemos comido."
+      }
+    },
+    {
+      "id": "pf-tr-07",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Ma otthon eszem.",
+        "en": "Today I eat at home.",
+        "es": "Hoy como en casa.",
+        "de": "Heute esse ich zu Hause."
+      },
+      "answer": "Hoy he comido en casa.",
+      "accept": [
+        "Hoy yo he comido en casa."
+      ],
+      "wordIds": [
+        "25",
+        "1312",
+        "14"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (hoy): pretérito perfecto. A(z) comer szabályos -er ige, participio: comido, itt: he comido.",
+        "en": "A period that is still open (hoy): pretérito perfecto. Comer is a regular -er verb, participle: comido, here: he comido.",
+        "es": "Un periodo que sigue abierto (hoy): pretérito perfecto. comer es un verbo regular en -er, participio: comido, aquí: he comido.",
+        "de": "Ein noch offener Zeitraum (hoy): pretérito perfecto. comer ist ein regelmäßiges -er-Verb, Partizip: comido, hier: he comido."
+      }
+    },
+    {
+      "id": "pf-tr-08",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Soha nem eszem húst.",
+        "en": "I never eat meat.",
+        "es": "Nunca como carne.",
+        "de": "Ich esse nie Fleisch."
+      },
+      "answer": "Nunca he comido carne.",
+      "accept": [
+        "Yo nunca he comido carne."
+      ],
+      "wordIds": [
+        "25",
+        "58",
+        "1058"
+      ],
+      "why": {
+        "hu": "Élmény, az eddigi életre nézve: pretérito perfecto. A(z) comer szabályos -er ige, participio: comido, itt: he comido.",
+        "en": "An experience, looking at your life so far: pretérito perfecto. Comer is a regular -er verb, participle: comido, here: he comido.",
+        "es": "Una experiencia, mirando la vida hasta ahora: pretérito perfecto. comer es un verbo regular en -er, participio: comido, aquí: he comido.",
+        "de": "Eine Erfahrung, bezogen auf das bisherige Leben: pretérito perfecto. comer ist ein regelmäßiges -er-Verb, Partizip: comido, hier: he comido."
+      }
+    },
+    {
+      "id": "pf-tr-09",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Ezen a héten későn esznek.",
+        "en": "This week they eat late.",
+        "es": "Esta semana comen tarde.",
+        "de": "Diese Woche essen sie spät."
+      },
+      "answer": "Esta semana han comido tarde.",
+      "accept": [
+        "Esta semana ellos han comido tarde."
+      ],
+      "wordIds": [
+        "25",
+        "103",
+        "1314",
+        "1240"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (esta semana): pretérito perfecto. A(z) comer szabályos -er ige, participio: comido, itt: han comido.",
+        "en": "A period that is still open (esta semana): pretérito perfecto. Comer is a regular -er verb, participle: comido, here: han comido.",
+        "es": "Un periodo que sigue abierto (esta semana): pretérito perfecto. comer es un verbo regular en -er, participio: comido, aquí: han comido.",
+        "de": "Ein noch offener Zeitraum (esta semana): pretérito perfecto. comer ist ein regelmäßiges -er-Verb, Partizip: comido, hier: han comido."
+      }
+    },
+    {
+      "id": "pf-tr-10",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Jól eszel mostanában?",
+        "en": "Do you eat well lately?",
+        "es": "¿Comes bien últimamente?",
+        "de": "Isst du in letzter Zeit gut?"
+      },
+      "answer": "¿Has comido bien últimamente?",
+      "accept": [
+        "¿Tú has comido bien últimamente?"
+      ],
+      "wordIds": [
+        "25",
+        "6",
+        "2099"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (últimamente): pretérito perfecto. A(z) comer szabályos -er ige, participio: comido, itt: has comido.",
+        "en": "A period that is still open (últimamente): pretérito perfecto. Comer is a regular -er verb, participle: comido, here: has comido.",
+        "es": "Un periodo que sigue abierto (últimamente): pretérito perfecto. comer es un verbo regular en -er, participio: comido, aquí: has comido.",
+        "de": "Ein noch offener Zeitraum (últimamente): pretérito perfecto. comer ist ein regelmäßiges -er-Verb, Partizip: comido, hier: has comido."
+      }
+    },
+    {
+      "id": "pf-tr-11",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Ebben a hónapban a nővéremmel lakunk.",
+        "en": "This month we live with my sister.",
+        "es": "Este mes vivimos con mi hermana.",
+        "de": "Diesen Monat wohnen wir bei meiner Schwester."
+      },
+      "answer": "Este mes hemos vivido con mi hermana.",
+      "accept": [
+        "Este mes nosotros hemos vivido con mi hermana."
+      ],
+      "wordIds": [
+        "82",
+        "103",
+        "1315",
+        "1359"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (este mes): pretérito perfecto. A(z) vivir szabályos -ir ige, participio: vivido, itt: hemos vivido.",
+        "en": "A period that is still open (este mes): pretérito perfecto. Vivir is a regular -ir verb, participle: vivido, here: hemos vivido.",
+        "es": "Un periodo que sigue abierto (este mes): pretérito perfecto. vivir es un verbo regular en -ir, participio: vivido, aquí: hemos vivido.",
+        "de": "Ein noch offener Zeitraum (este mes): pretérito perfecto. vivir ist ein regelmäßiges -ir-Verb, Partizip: vivido, hier: hemos vivido."
+      }
+    },
+    {
+      "id": "pf-tr-12",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Mindig a városban lakom.",
+        "en": "I always live in the city.",
+        "es": "Siempre vivo en la ciudad.",
+        "de": "Ich wohne immer in der Stadt."
+      },
+      "answer": "Siempre he vivido en la ciudad.",
+      "accept": [
+        "Siempre yo he vivido en la ciudad."
+      ],
+      "wordIds": [
+        "82",
+        "57",
+        "1851"
+      ],
+      "why": {
+        "hu": "Élmény, az eddigi életre nézve: pretérito perfecto. A(z) vivir szabályos -ir ige, participio: vivido, itt: he vivido.",
+        "en": "An experience, looking at your life so far: pretérito perfecto. Vivir is a regular -ir verb, participle: vivido, here: he vivido.",
+        "es": "Una experiencia, mirando la vida hasta ahora: pretérito perfecto. vivir es un verbo regular en -ir, participio: vivido, aquí: he vivido.",
+        "de": "Eine Erfahrung, bezogen auf das bisherige Leben: pretérito perfecto. vivir ist ein regelmäßiges -ir-Verb, Partizip: vivido, hier: he vivido."
+      }
+    },
+    {
+      "id": "pf-tr-13",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Mostanában a szüleim a fivéremmel laknak.",
+        "en": "Lately my parents live with my brother.",
+        "es": "Últimamente mis padres viven con mi hermano.",
+        "de": "In letzter Zeit wohnen meine Eltern bei meinem Bruder."
+      },
+      "answer": "Últimamente mis padres han vivido con mi hermano.",
+      "wordIds": [
+        "82",
+        "2099",
+        "3915",
+        "1358"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (últimamente): pretérito perfecto. A(z) vivir szabályos -ir ige, participio: vivido, itt: han vivido.",
+        "en": "A period that is still open (últimamente): pretérito perfecto. Vivir is a regular -ir verb, participle: vivido, here: han vivido.",
+        "es": "Un periodo que sigue abierto (últimamente): pretérito perfecto. vivir es un verbo regular en -ir, participio: vivido, aquí: han vivido.",
+        "de": "Ein noch offener Zeitraum (últimamente): pretérito perfecto. vivir ist ein regelmäßiges -ir-Verb, Partizip: vivido, hier: han vivido."
+      }
+    },
+    {
+      "id": "pf-tr-14",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Soha nem lakunk szállodában.",
+        "en": "We never live in a hotel.",
+        "es": "Nunca vivimos en un hotel.",
+        "de": "Wir wohnen nie in einem Hotel."
+      },
+      "answer": "Nunca hemos vivido en un hotel.",
+      "accept": [
+        "Nunca nosotros hemos vivido en un hotel."
+      ],
+      "wordIds": [
+        "82",
+        "58",
+        "1309"
+      ],
+      "why": {
+        "hu": "Élmény, az eddigi életre nézve: pretérito perfecto. A(z) vivir szabályos -ir ige, participio: vivido, itt: hemos vivido.",
+        "en": "An experience, looking at your life so far: pretérito perfecto. Vivir is a regular -ir verb, participle: vivido, here: hemos vivido.",
+        "es": "Una experiencia, mirando la vida hasta ahora: pretérito perfecto. vivir es un verbo regular en -ir, participio: vivido, aquí: hemos vivido.",
+        "de": "Eine Erfahrung, bezogen auf das bisherige Leben: pretérito perfecto. vivir ist ein regelmäßiges -ir-Verb, Partizip: vivido, hier: hemos vivido."
+      }
+    },
+    {
+      "id": "pf-tr-15",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Ő a családjával lakik?",
+        "en": "Does she live with her family?",
+        "es": "¿Vive ella con su familia?",
+        "de": "Wohnt sie bei ihrer Familie?"
+      },
+      "answer": "¿Ha vivido ella con su familia?",
+      "accept": [
+        "¿Ha vivido con su familia?"
+      ],
+      "wordIds": [
+        "82",
+        "1852"
+      ],
+      "why": {
+        "hu": "Élmény, az eddigi életre nézve: pretérito perfecto. A(z) vivir szabályos -ir ige, participio: vivido, itt: ha vivido.",
+        "en": "An experience, looking at your life so far: pretérito perfecto. Vivir is a regular -ir verb, participle: vivido, here: ha vivido.",
+        "es": "Una experiencia, mirando la vida hasta ahora: pretérito perfecto. vivir es un verbo regular en -ir, participio: vivido, aquí: ha vivido.",
+        "de": "Eine Erfahrung, bezogen auf das bisherige Leben: pretérito perfecto. vivir ist ein regelmäßiges -ir-Verb, Partizip: vivido, hier: ha vivido."
+      }
+    },
+    {
+      "id": "pf-tr-16",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Ezen a héten sokat dolgozom.",
+        "en": "This week I work a lot.",
+        "es": "Esta semana trabajo mucho.",
+        "de": "Diese Woche arbeite ich viel."
+      },
+      "answer": "Esta semana he trabajado mucho.",
+      "accept": [
+        "Esta semana yo he trabajado mucho."
+      ],
+      "wordIds": [
+        "1409",
+        "103",
+        "1314",
+        "3752"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (esta semana): pretérito perfecto. A(z) trabajar szabályos -ar ige, participio: trabajado, itt: he trabajado.",
+        "en": "A period that is still open (esta semana): pretérito perfecto. Trabajar is a regular -ar verb, participle: trabajado, here: he trabajado.",
+        "es": "Un periodo que sigue abierto (esta semana): pretérito perfecto. trabajar es un verbo regular en -ar, participio: trabajado, aquí: he trabajado.",
+        "de": "Ein noch offener Zeitraum (esta semana): pretérito perfecto. trabajar ist ein regelmäßiges -ar-Verb, Partizip: trabajado, hier: he trabajado."
+      }
+    },
+    {
+      "id": "pf-tr-17",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Ma otthon dolgozunk.",
+        "en": "Today we work at home.",
+        "es": "Hoy trabajamos en casa.",
+        "de": "Heute arbeiten wir zu Hause."
+      },
+      "answer": "Hoy hemos trabajado en casa.",
+      "accept": [
+        "Hoy nosotros hemos trabajado en casa."
+      ],
+      "wordIds": [
+        "1409",
+        "1312",
+        "14"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (hoy): pretérito perfecto. A(z) trabajar szabályos -ar ige, participio: trabajado, itt: hemos trabajado.",
+        "en": "A period that is still open (hoy): pretérito perfecto. Trabajar is a regular -ar verb, participle: trabajado, here: hemos trabajado.",
+        "es": "Un periodo que sigue abierto (hoy): pretérito perfecto. trabajar es un verbo regular en -ar, participio: trabajado, aquí: hemos trabajado.",
+        "de": "Ein noch offener Zeitraum (hoy): pretérito perfecto. trabajar ist ein regelmäßiges -ar-Verb, Partizip: trabajado, hier: hemos trabajado."
+      }
+    },
+    {
+      "id": "pf-tr-18",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Idén egy ügyfélnek dolgozol.",
+        "en": "This year you work for a client.",
+        "es": "Este año trabajas para un cliente.",
+        "de": "Dieses Jahr arbeitest du für einen Kunden."
+      },
+      "answer": "Este año has trabajado para un cliente.",
+      "accept": [
+        "Este año tú has trabajado para un cliente."
+      ],
+      "wordIds": [
+        "1409",
+        "103",
+        "1818",
+        "1600"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (este año): pretérito perfecto. A(z) trabajar szabályos -ar ige, participio: trabajado, itt: has trabajado.",
+        "en": "A period that is still open (este año): pretérito perfecto. Trabajar is a regular -ar verb, participle: trabajado, here: has trabajado.",
+        "es": "Un periodo que sigue abierto (este año): pretérito perfecto. trabajar es un verbo regular en -ar, participio: trabajado, aquí: has trabajado.",
+        "de": "Ein noch offener Zeitraum (este año): pretérito perfecto. trabajar ist ein regelmäßiges -ar-Verb, Partizip: trabajado, hier: has trabajado."
+      }
+    },
+    {
+      "id": "pf-tr-19",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Még nem dolgozom a projekten.",
+        "en": "I still do not work on the project.",
+        "es": "Todavía no trabajo en el proyecto.",
+        "de": "Ich arbeite noch nicht an dem Projekt."
+      },
+      "answer": "Todavía no he trabajado en el proyecto.",
+      "accept": [
+        "Yo todavía no he trabajado en el proyecto."
+      ],
+      "wordIds": [
+        "1409",
+        "60",
+        "1601"
+      ],
+      "why": {
+        "hu": "todavía no: még nem történt meg, de a várakozás tart: pretérito perfecto. A(z) trabajar szabályos -ar ige, participio: trabajado, itt: he trabajado.",
+        "en": "todavía no: it has not happened yet, but the wait goes on: pretérito perfecto. Trabajar is a regular -ar verb, participle: trabajado, here: he trabajado.",
+        "es": "todavía no: aún no ha pasado, pero la espera sigue: pretérito perfecto. trabajar es un verbo regular en -ar, participio: trabajado, aquí: he trabajado.",
+        "de": "todavía no: es ist noch nicht passiert, das Warten dauert an: pretérito perfecto. trabajar ist ein regelmäßiges -ar-Verb, Partizip: trabajado, hier: he trabajado."
+      }
+    },
+    {
+      "id": "pf-tr-20",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Dolgozol valaha étteremben?",
+        "en": "Do you ever work in a restaurant?",
+        "es": "¿Trabajas alguna vez en un restaurante?",
+        "de": "Arbeitest du jemals in einem Restaurant?"
+      },
+      "answer": "¿Has trabajado alguna vez en un restaurante?",
+      "accept": [
+        "¿Tú has trabajado alguna vez en un restaurante?"
+      ],
+      "wordIds": [
+        "1409",
+        "1974",
+        "1841"
+      ],
+      "why": {
+        "hu": "Élmény, az eddigi életre nézve: pretérito perfecto. A(z) trabajar szabályos -ar ige, participio: trabajado, itt: has trabajado.",
+        "en": "An experience, looking at your life so far: pretérito perfecto. Trabajar is a regular -ar verb, participle: trabajado, here: has trabajado.",
+        "es": "Una experiencia, mirando la vida hasta ahora: pretérito perfecto. trabajar es un verbo regular en -ar, participio: trabajado, aquí: has trabajado.",
+        "de": "Eine Erfahrung, bezogen auf das bisherige Leben: pretérito perfecto. trabajar ist ein regelmäßiges -ar-Verb, Partizip: trabajado, hier: has trabajado."
+      }
+    },
+    {
+      "id": "pf-tr-21",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Idén repülővel utazom.",
+        "en": "This year I travel by plane.",
+        "es": "Este año viajo en avión.",
+        "de": "Dieses Jahr reise ich mit dem Flugzeug."
+      },
+      "answer": "Este año he viajado en avión.",
+      "accept": [
+        "Este año yo he viajado en avión."
+      ],
+      "wordIds": [
+        "1579",
+        "103",
+        "1818",
+        "1164"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (este año): pretérito perfecto. A(z) viajar szabályos -ar ige, participio: viajado, itt: he viajado.",
+        "en": "A period that is still open (este año): pretérito perfecto. Viajar is a regular -ar verb, participle: viajado, here: he viajado.",
+        "es": "Un periodo que sigue abierto (este año): pretérito perfecto. viajar es un verbo regular en -ar, participio: viajado, aquí: he viajado.",
+        "de": "Ein noch offener Zeitraum (este año): pretérito perfecto. viajar ist ein regelmäßiges -ar-Verb, Partizip: viajado, hier: he viajado."
+      }
+    },
+    {
+      "id": "pf-tr-22",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Ebben a hónapban a tengerpartra utazunk.",
+        "en": "This month we travel to the beach.",
+        "es": "Este mes viajamos a la playa.",
+        "de": "Diesen Monat reisen wir an den Strand."
+      },
+      "answer": "Este mes hemos viajado a la playa.",
+      "accept": [
+        "Este mes nosotros hemos viajado a la playa."
+      ],
+      "wordIds": [
+        "1579",
+        "103",
+        "1315",
+        "1869"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (este mes): pretérito perfecto. A(z) viajar szabályos -ar ige, participio: viajado, itt: hemos viajado.",
+        "en": "A period that is still open (este mes): pretérito perfecto. Viajar is a regular -ar verb, participle: viajado, here: hemos viajado.",
+        "es": "Un periodo que sigue abierto (este mes): pretérito perfecto. viajar es un verbo regular en -ar, participio: viajado, aquí: hemos viajado.",
+        "de": "Ein noch offener Zeitraum (este mes): pretérito perfecto. viajar ist ein regelmäßiges -ar-Verb, Partizip: viajado, hier: hemos viajado."
+      }
+    },
+    {
+      "id": "pf-tr-23",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Mindig vonattal utazunk.",
+        "en": "We always travel by train.",
+        "es": "Viajamos siempre en tren.",
+        "de": "Wir reisen immer mit dem Zug."
+      },
+      "answer": "Hemos viajado siempre en tren.",
+      "accept": [
+        "Nosotros hemos viajado siempre en tren."
+      ],
+      "wordIds": [
+        "1579",
+        "57",
+        "1163"
+      ],
+      "why": {
+        "hu": "Élmény, az eddigi életre nézve: pretérito perfecto. A(z) viajar szabályos -ar ige, participio: viajado, itt: hemos viajado.",
+        "en": "An experience, looking at your life so far: pretérito perfecto. Viajar is a regular -ar verb, participle: viajado, here: hemos viajado.",
+        "es": "Una experiencia, mirando la vida hasta ahora: pretérito perfecto. viajar es un verbo regular en -ar, participio: viajado, aquí: hemos viajado.",
+        "de": "Eine Erfahrung, bezogen auf das bisherige Leben: pretérito perfecto. viajar ist ein regelmäßiges -ar-Verb, Partizip: viajado, hier: hemos viajado."
+      }
+    },
+    {
+      "id": "pf-tr-24",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Soha nem utazom busszal.",
+        "en": "I never travel by bus.",
+        "es": "No viajo nunca en autobús.",
+        "de": "Ich fahre nie mit dem Bus."
+      },
+      "answer": "No he viajado nunca en autobús.",
+      "accept": [
+        "Yo no he viajado nunca en autobús."
+      ],
+      "wordIds": [
+        "1579",
+        "58",
+        "1297"
+      ],
+      "why": {
+        "hu": "Élmény, az eddigi életre nézve: pretérito perfecto. A(z) viajar szabályos -ar ige, participio: viajado, itt: he viajado.",
+        "en": "An experience, looking at your life so far: pretérito perfecto. Viajar is a regular -ar verb, participle: viajado, here: he viajado.",
+        "es": "Una experiencia, mirando la vida hasta ahora: pretérito perfecto. viajar es un verbo regular en -ar, participio: viajado, aquí: he viajado.",
+        "de": "Eine Erfahrung, bezogen auf das bisherige Leben: pretérito perfecto. viajar ist ein regelmäßiges -ar-Verb, Partizip: viajado, hier: he viajado."
+      }
+    },
+    {
+      "id": "pf-tr-25",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Utazol a fivéreddel?",
+        "en": "Do you travel with your brother?",
+        "es": "¿Viajas con tu hermano?",
+        "de": "Reist du mit deinem Bruder?"
+      },
+      "answer": "¿Has viajado con tu hermano?",
+      "accept": [
+        "¿Tú has viajado con tu hermano?"
+      ],
+      "wordIds": [
+        "1579",
+        "1358"
+      ],
+      "why": {
+        "hu": "Élmény, az eddigi életre nézve: pretérito perfecto. A(z) viajar szabályos -ar ige, participio: viajado, itt: has viajado.",
+        "en": "An experience, looking at your life so far: pretérito perfecto. Viajar is a regular -ar verb, participle: viajado, here: has viajado.",
+        "es": "Una experiencia, mirando la vida hasta ahora: pretérito perfecto. viajar es un verbo regular en -ar, participio: viajado, aquí: has viajado.",
+        "de": "Eine Erfahrung, bezogen auf das bisherige Leben: pretérito perfecto. viajar ist ein regelmäßiges -ar-Verb, Partizip: viajado, hier: has viajado."
+      }
+    },
+    {
+      "id": "pf-tr-26",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Ebben a hónapban a vizsgára tanulok.",
+        "en": "This month I study for the exam.",
+        "es": "Este mes estudio para el examen.",
+        "de": "Diesen Monat lerne ich für die Prüfung."
+      },
+      "answer": "Este mes he estudiado para el examen.",
+      "accept": [
+        "Este mes yo he estudiado para el examen."
+      ],
+      "wordIds": [
+        "1410",
+        "103",
+        "1315",
+        "1857"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (este mes): pretérito perfecto. A(z) estudiar szabályos -ar ige, participio: estudiado, itt: he estudiado.",
+        "en": "A period that is still open (este mes): pretérito perfecto. Estudiar is a regular -ar verb, participle: estudiado, here: he estudiado.",
+        "es": "Un periodo que sigue abierto (este mes): pretérito perfecto. estudiar es un verbo regular en -ar, participio: estudiado, aquí: he estudiado.",
+        "de": "Ein noch offener Zeitraum (este mes): pretérito perfecto. estudiar ist ein regelmäßiges -ar-Verb, Partizip: estudiado, hier: he estudiado."
+      }
+    },
+    {
+      "id": "pf-tr-27",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Mindig zenével tanulok.",
+        "en": "I always study with music.",
+        "es": "Siempre estudio con música.",
+        "de": "Ich lerne immer mit Musik."
+      },
+      "answer": "Siempre he estudiado con música.",
+      "accept": [
+        "Siempre yo he estudiado con música."
+      ],
+      "wordIds": [
+        "1410",
+        "57",
+        "1566"
+      ],
+      "why": {
+        "hu": "Élmény, az eddigi életre nézve: pretérito perfecto. A(z) estudiar szabályos -ar ige, participio: estudiado, itt: he estudiado.",
+        "en": "An experience, looking at your life so far: pretérito perfecto. Estudiar is a regular -ar verb, participle: estudiado, here: he estudiado.",
+        "es": "Una experiencia, mirando la vida hasta ahora: pretérito perfecto. estudiar es un verbo regular en -ar, participio: estudiado, aquí: he estudiado.",
+        "de": "Eine Erfahrung, bezogen auf das bisherige Leben: pretérito perfecto. estudiar ist ein regelmäßiges -ar-Verb, Partizip: estudiado, hier: he estudiado."
+      }
+    },
+    {
+      "id": "pf-tr-28",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Angolt tanulunk a tanárral.",
+        "en": "We study English with the teacher.",
+        "es": "Estudiamos inglés con el profesor.",
+        "de": "Wir lernen Englisch mit dem Lehrer."
+      },
+      "answer": "Hemos estudiado inglés con el profesor.",
+      "accept": [
+        "Nosotros hemos estudiado inglés con el profesor."
+      ],
+      "wordIds": [
+        "1410",
+        "3607",
+        "1147"
+      ],
+      "why": {
+        "hu": "Mostanáig ható, eredmény-központú múlt: pretérito perfecto. A(z) estudiar szabályos -ar ige, participio: estudiado, itt: hemos estudiado.",
+        "en": "A past that reaches up to now, focused on the result: pretérito perfecto. Estudiar is a regular -ar verb, participle: estudiado, here: hemos estudiado.",
+        "es": "Un pasado que llega hasta ahora, centrado en el resultado: pretérito perfecto. estudiar es un verbo regular en -ar, participio: estudiado, aquí: hemos estudiado.",
+        "de": "Eine Vergangenheit, die bis jetzt reicht, mit Blick auf das Ergebnis: pretérito perfecto. estudiar ist ein regelmäßiges -ar-Verb, Partizip: estudiado, hier: hemos estudiado."
+      }
+    },
+    {
+      "id": "pf-tr-29",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Még nem tanulom a szavakat.",
+        "en": "I still do not study the words.",
+        "es": "No estudio las palabras todavía.",
+        "de": "Ich lerne die Wörter noch nicht."
+      },
+      "answer": "No he estudiado las palabras todavía.",
+      "accept": [
+        "Yo no he estudiado las palabras todavía."
+      ],
+      "wordIds": [
+        "1410",
+        "2029",
+        "60"
+      ],
+      "why": {
+        "hu": "todavía no: még nem történt meg, de a várakozás tart: pretérito perfecto. A(z) estudiar szabályos -ar ige, participio: estudiado, itt: he estudiado.",
+        "en": "todavía no: it has not happened yet, but the wait goes on: pretérito perfecto. Estudiar is a regular -ar verb, participle: estudiado, here: he estudiado.",
+        "es": "todavía no: aún no ha pasado, pero la espera sigue: pretérito perfecto. estudiar es un verbo regular en -ar, participio: estudiado, aquí: he estudiado.",
+        "de": "todavía no: es ist noch nicht passiert, das Warten dauert an: pretérito perfecto. estudiar ist ein regelmäßiges -ar-Verb, Partizip: estudiado, hier: he estudiado."
+      }
+    },
+    {
+      "id": "pf-tr-30",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "A barátaiddal tanulsz?",
+        "en": "Do you study with your friends?",
+        "es": "¿Estudias con tus amigos?",
+        "de": "Lernst du mit deinen Freunden?"
+      },
+      "answer": "¿Has estudiado con tus amigos?",
+      "accept": [
+        "¿Tú has estudiado con tus amigos?"
+      ],
+      "wordIds": [
+        "1410",
+        "22"
+      ],
+      "why": {
+        "hu": "Mostanáig ható, eredmény-központú múlt: pretérito perfecto. A(z) estudiar szabályos -ar ige, participio: estudiado, itt: has estudiado.",
+        "en": "A past that reaches up to now, focused on the result: pretérito perfecto. Estudiar is a regular -ar verb, participle: estudiado, here: has estudiado.",
+        "es": "Un pasado que llega hasta ahora, centrado en el resultado: pretérito perfecto. estudiar es un verbo regular en -ar, participio: estudiado, aquí: has estudiado.",
+        "de": "Eine Vergangenheit, die bis jetzt reicht, mit Blick auf das Ergebnis: pretérito perfecto. estudiar ist ein regelmäßiges -ar-Verb, Partizip: estudiado, hier: has estudiado."
+      }
+    },
+    {
+      "id": "pf-tr-31",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Ma reggel kávét főzök.",
+        "en": "This morning I make coffee.",
+        "es": "Esta mañana hago café.",
+        "de": "Heute Morgen mache ich Kaffee."
+      },
+      "answer": "Esta mañana he hecho café.",
+      "accept": [
+        "Esta mañana yo he hecho café."
+      ],
+      "wordIds": [
+        "34",
+        "103",
+        "1313",
+        "1264"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (esta mañana): pretérito perfecto. A(z) hacer participiója rendhagyó: hecho, itt: he hecho.",
+        "en": "A period that is still open (esta mañana): pretérito perfecto. The participle of hacer is irregular: hecho, here: he hecho.",
+        "es": "Un periodo que sigue abierto (esta mañana): pretérito perfecto. El participio de hacer es irregular: hecho, aquí: he hecho.",
+        "de": "Ein noch offener Zeitraum (esta mañana): pretérito perfecto. Das Partizip von hacer ist unregelmäßig: hecho, hier: he hecho."
+      }
+    },
+    {
+      "id": "pf-tr-32",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Vacsorát csinálunk a barátaimnak.",
+        "en": "We make dinner for my friends.",
+        "es": "Hacemos la cena para mis amigos.",
+        "de": "Wir machen das Abendessen für meine Freunde."
+      },
+      "answer": "Hemos hecho la cena para mis amigos.",
+      "accept": [
+        "Nosotros hemos hecho la cena para mis amigos."
+      ],
+      "wordIds": [
+        "34",
+        "1261",
+        "22"
+      ],
+      "why": {
+        "hu": "Mostanáig ható, eredmény-központú múlt: pretérito perfecto. A(z) hacer participiója rendhagyó: hecho, itt: hemos hecho.",
+        "en": "A past that reaches up to now, focused on the result: pretérito perfecto. The participle of hacer is irregular: hecho, here: hemos hecho.",
+        "es": "Un pasado que llega hasta ahora, centrado en el resultado: pretérito perfecto. El participio de hacer es irregular: hecho, aquí: hemos hecho.",
+        "de": "Eine Vergangenheit, die bis jetzt reicht, mit Blick auf das Ergebnis: pretérito perfecto. Das Partizip von hacer ist unregelmäßig: hecho, hier: hemos hecho."
+      }
+    },
+    {
+      "id": "pf-tr-33",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Sokat teszel a családodért.",
+        "en": "You do a lot for your family.",
+        "es": "Haces mucho por tu familia.",
+        "de": "Du tust viel für deine Familie."
+      },
+      "answer": "Has hecho mucho por tu familia.",
+      "accept": [
+        "Tú has hecho mucho por tu familia."
+      ],
+      "wordIds": [
+        "34",
+        "3752",
+        "1852"
+      ],
+      "why": {
+        "hu": "Élmény, az eddigi életre nézve: pretérito perfecto. A(z) hacer participiója rendhagyó: hecho, itt: has hecho.",
+        "en": "An experience, looking at your life so far: pretérito perfecto. The participle of hacer is irregular: hecho, here: has hecho.",
+        "es": "Una experiencia, mirando la vida hasta ahora: pretérito perfecto. El participio de hacer es irregular: hecho, aquí: has hecho.",
+        "de": "Eine Erfahrung, bezogen auf das bisherige Leben: pretérito perfecto. Das Partizip von hacer ist unregelmäßig: hecho, hier: has hecho."
+      }
+    },
+    {
+      "id": "pf-tr-34",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Semmit sem teszünk a projektért.",
+        "en": "We do nothing for the project.",
+        "es": "No hacemos nada por el proyecto.",
+        "de": "Wir tun nichts für das Projekt."
+      },
+      "answer": "No hemos hecho nada por el proyecto.",
+      "accept": [
+        "Nosotros no hemos hecho nada por el proyecto."
+      ],
+      "wordIds": [
+        "34",
+        "11",
+        "1601"
+      ],
+      "why": {
+        "hu": "Mostanáig ható, eredmény-központú múlt: pretérito perfecto. A(z) hacer participiója rendhagyó: hecho, itt: hemos hecho.",
+        "en": "A past that reaches up to now, focused on the result: pretérito perfecto. The participle of hacer is irregular: hecho, here: hemos hecho.",
+        "es": "Un pasado que llega hasta ahora, centrado en el resultado: pretérito perfecto. El participio de hacer es irregular: hecho, aquí: hemos hecho.",
+        "de": "Eine Vergangenheit, die bis jetzt reicht, mit Blick auf das Ergebnis: pretérito perfecto. Das Partizip von hacer ist unregelmäßig: hecho, hier: hemos hecho."
+      }
+    },
+    {
+      "id": "pf-tr-35",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Önök megcsinálják a foglalást?",
+        "en": "Do you (plural) make the reservation?",
+        "es": "¿Hacen ustedes la reserva?",
+        "de": "Machen Sie die Reservierung?"
+      },
+      "answer": "¿Han hecho ustedes la reserva?",
+      "accept": [
+        "¿Han hecho la reserva?"
+      ],
+      "wordIds": [
+        "34",
+        "205"
+      ],
+      "why": {
+        "hu": "Mostanáig ható, eredmény-központú múlt: pretérito perfecto. A(z) hacer participiója rendhagyó: hecho, itt: han hecho.",
+        "en": "A past that reaches up to now, focused on the result: pretérito perfecto. The participle of hacer is irregular: hecho, here: han hecho.",
+        "es": "Un pasado que llega hasta ahora, centrado en el resultado: pretérito perfecto. El participio de hacer es irregular: hecho, aquí: han hecho.",
+        "de": "Eine Vergangenheit, die bis jetzt reicht, mit Blick auf das Ergebnis: pretérito perfecto. Das Partizip von hacer ist unregelmäßig: hecho, hier: han hecho."
+      }
+    },
+    {
+      "id": "pf-tr-36",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Ma reggel nézem a híreket.",
+        "en": "This morning I watch the news.",
+        "es": "Veo las noticias esta mañana.",
+        "de": "Heute Morgen sehe ich die Nachrichten."
+      },
+      "answer": "He visto las noticias esta mañana.",
+      "accept": [
+        "Yo he visto las noticias esta mañana."
+      ],
+      "wordIds": [
+        "37",
+        "1855",
+        "103",
+        "1313"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (esta mañana): pretérito perfecto. A(z) ver participiója rendhagyó: visto, itt: he visto.",
+        "en": "A period that is still open (esta mañana): pretérito perfecto. The participle of ver is irregular: visto, here: he visto.",
+        "es": "Un periodo que sigue abierto (esta mañana): pretérito perfecto. El participio de ver es irregular: visto, aquí: he visto.",
+        "de": "Ein noch offener Zeitraum (esta mañana): pretérito perfecto. Das Partizip von ver ist unregelmäßig: visto, hier: he visto."
+      }
+    },
+    {
+      "id": "pf-tr-37",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Látom a szomszédomat az utcán.",
+        "en": "I see my neighbour in the street.",
+        "es": "Veo a mi vecino en la calle.",
+        "de": "Ich sehe meinen Nachbarn auf der Straße."
+      },
+      "answer": "He visto a mi vecino en la calle.",
+      "accept": [
+        "Yo he visto a mi vecino en la calle."
+      ],
+      "wordIds": [
+        "37",
+        "211",
+        "1308"
+      ],
+      "why": {
+        "hu": "Mostanáig ható, eredmény-központú múlt: pretérito perfecto. A(z) ver participiója rendhagyó: visto, itt: he visto.",
+        "en": "A past that reaches up to now, focused on the result: pretérito perfecto. The participle of ver is irregular: visto, here: he visto.",
+        "es": "Un pasado que llega hasta ahora, centrado en el resultado: pretérito perfecto. El participio de ver es irregular: visto, aquí: he visto.",
+        "de": "Eine Vergangenheit, die bis jetzt reicht, mit Blick auf das Ergebnis: pretérito perfecto. Das Partizip von ver ist unregelmäßig: visto, hier: he visto."
+      }
+    },
+    {
+      "id": "pf-tr-38",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Egy múzeumot nézünk meg a városban.",
+        "en": "We see a museum in the city.",
+        "es": "Vemos un museo en la ciudad.",
+        "de": "Wir sehen ein Museum in der Stadt."
+      },
+      "answer": "Hemos visto un museo en la ciudad.",
+      "accept": [
+        "Nosotros hemos visto un museo en la ciudad."
+      ],
+      "wordIds": [
+        "37",
+        "1220",
+        "1851"
+      ],
+      "why": {
+        "hu": "Élmény, az eddigi életre nézve: pretérito perfecto. A(z) ver participiója rendhagyó: visto, itt: hemos visto.",
+        "en": "An experience, looking at your life so far: pretérito perfecto. The participle of ver is irregular: visto, here: hemos visto.",
+        "es": "Una experiencia, mirando la vida hasta ahora: pretérito perfecto. El participio de ver es irregular: visto, aquí: hemos visto.",
+        "de": "Eine Erfahrung, bezogen auf das bisherige Leben: pretérito perfecto. Das Partizip von ver ist unregelmäßig: visto, hier: hemos visto."
+      }
+    },
+    {
+      "id": "pf-tr-39",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Nem nézzük meg a filmet.",
+        "en": "We do not watch the film.",
+        "es": "No vemos la película.",
+        "de": "Wir sehen den Film nicht."
+      },
+      "answer": "No hemos visto la película.",
+      "accept": [
+        "Nosotros no hemos visto la película."
+      ],
+      "wordIds": [
+        "37",
+        "1875"
+      ],
+      "why": {
+        "hu": "Élmény, az eddigi életre nézve: pretérito perfecto. A(z) ver participiója rendhagyó: visto, itt: hemos visto.",
+        "en": "An experience, looking at your life so far: pretérito perfecto. The participle of ver is irregular: visto, here: hemos visto.",
+        "es": "Una experiencia, mirando la vida hasta ahora: pretérito perfecto. El participio de ver es irregular: visto, aquí: hemos visto.",
+        "de": "Eine Erfahrung, bezogen auf das bisherige Leben: pretérito perfecto. Das Partizip von ver ist unregelmäßig: visto, hier: hemos visto."
+      }
+    },
+    {
+      "id": "pf-tr-40",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Látod ezt a filmet?",
+        "en": "Do you see this film?",
+        "es": "¿Ves esta película?",
+        "de": "Siehst du diesen Film?"
+      },
+      "answer": "¿Has visto esta película?",
+      "accept": [
+        "¿Tú has visto esta película?"
+      ],
+      "wordIds": [
+        "37",
+        "103",
+        "1875"
+      ],
+      "why": {
+        "hu": "Élmény, az eddigi életre nézve: pretérito perfecto. A(z) ver participiója rendhagyó: visto, itt: has visto.",
+        "en": "An experience, looking at your life so far: pretérito perfecto. The participle of ver is irregular: visto, here: has visto.",
+        "es": "Una experiencia, mirando la vida hasta ahora: pretérito perfecto. El participio de ver es irregular: visto, aquí: has visto.",
+        "de": "Eine Erfahrung, bezogen auf das bisherige Leben: pretérito perfecto. Das Partizip von ver ist unregelmäßig: visto, hier: has visto."
+      }
+    },
+    {
+      "id": "pf-tr-41",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Mindent elmondok a főnökömnek.",
+        "en": "I tell my boss everything.",
+        "es": "Digo todo a mi jefe.",
+        "de": "Ich sage meinem Chef alles."
+      },
+      "answer": "He dicho todo a mi jefe.",
+      "accept": [
+        "Yo he dicho todo a mi jefe."
+      ],
+      "wordIds": [
+        "35",
+        "10",
+        "1854"
+      ],
+      "why": {
+        "hu": "Mostanáig ható, eredmény-központú múlt: pretérito perfecto. A(z) decir participiója rendhagyó: dicho, itt: he dicho.",
+        "en": "A past that reaches up to now, focused on the result: pretérito perfecto. The participle of decir is irregular: dicho, here: he dicho.",
+        "es": "Un pasado que llega hasta ahora, centrado en el resultado: pretérito perfecto. El participio de decir es irregular: dicho, aquí: he dicho.",
+        "de": "Eine Vergangenheit, die bis jetzt reicht, mit Blick auf das Ergebnis: pretérito perfecto. Das Partizip von decir ist unregelmäßig: dicho, hier: he dicho."
+      }
+    },
+    {
+      "id": "pf-tr-42",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Köszönsz a szomszédodnak.",
+        "en": "You say hello to your neighbour.",
+        "es": "Dices hola a tu vecino.",
+        "de": "Du sagst deinem Nachbarn Hallo."
+      },
+      "answer": "Has dicho hola a tu vecino.",
+      "accept": [
+        "Tú has dicho hola a tu vecino."
+      ],
+      "wordIds": [
+        "35",
+        "54",
+        "211"
+      ],
+      "why": {
+        "hu": "Mostanáig ható, eredmény-központú múlt: pretérito perfecto. A(z) decir participiója rendhagyó: dicho, itt: has dicho.",
+        "en": "A past that reaches up to now, focused on the result: pretérito perfecto. The participle of decir is irregular: dicho, here: has dicho.",
+        "es": "Un pasado que llega hasta ahora, centrado en el resultado: pretérito perfecto. El participio de decir es irregular: dicho, aquí: has dicho.",
+        "de": "Eine Vergangenheit, die bis jetzt reicht, mit Blick auf das Ergebnis: pretérito perfecto. Das Partizip von decir ist unregelmäßig: dicho, hier: has dicho."
+      }
+    },
+    {
+      "id": "pf-tr-43",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Az orvos igazat mond.",
+        "en": "The doctor tells the truth.",
+        "es": "El médico dice la verdad.",
+        "de": "Der Arzt sagt die Wahrheit."
+      },
+      "answer": "El médico ha dicho la verdad.",
+      "wordIds": [
+        "35",
+        "1292",
+        "74"
+      ],
+      "why": {
+        "hu": "Mostanáig ható, eredmény-központú múlt: pretérito perfecto. A(z) decir participiója rendhagyó: dicho, itt: ha dicho.",
+        "en": "A past that reaches up to now, focused on the result: pretérito perfecto. The participle of decir is irregular: dicho, here: ha dicho.",
+        "es": "Un pasado que llega hasta ahora, centrado en el resultado: pretérito perfecto. El participio de decir es irregular: dicho, aquí: ha dicho.",
+        "de": "Eine Vergangenheit, die bis jetzt reicht, mit Blick auf das Ergebnis: pretérito perfecto. Das Partizip von decir ist unregelmäßig: dicho, hier: ha dicho."
+      }
+    },
+    {
+      "id": "pf-tr-44",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Nem mondunk semmit az ügyfélnek.",
+        "en": "We do not say anything to the client.",
+        "es": "No decimos nada al cliente.",
+        "de": "Wir sagen dem Kunden nichts."
+      },
+      "answer": "No hemos dicho nada al cliente.",
+      "accept": [
+        "Nosotros no hemos dicho nada al cliente."
+      ],
+      "wordIds": [
+        "35",
+        "11",
+        "1600"
+      ],
+      "why": {
+        "hu": "Mostanáig ható, eredmény-központú múlt: pretérito perfecto. A(z) decir participiója rendhagyó: dicho, itt: hemos dicho.",
+        "en": "A past that reaches up to now, focused on the result: pretérito perfecto. The participle of decir is irregular: dicho, here: hemos dicho.",
+        "es": "Un pasado que llega hasta ahora, centrado en el resultado: pretérito perfecto. El participio de decir es irregular: dicho, aquí: hemos dicho.",
+        "de": "Eine Vergangenheit, die bis jetzt reicht, mit Blick auf das Ergebnis: pretérito perfecto. Das Partizip von decir ist unregelmäßig: dicho, hier: hemos dicho."
+      }
+    },
+    {
+      "id": "pf-tr-45",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Mit mond a tanár?",
+        "en": "What does the teacher say?",
+        "es": "¿Qué dice el profesor?",
+        "de": "Was sagt der Lehrer?"
+      },
+      "answer": "¿Qué ha dicho el profesor?",
+      "wordIds": [
+        "35",
+        "4",
+        "1147"
+      ],
+      "why": {
+        "hu": "Mostanáig ható, eredmény-központú múlt: pretérito perfecto. A(z) decir participiója rendhagyó: dicho, itt: ha dicho.",
+        "en": "A past that reaches up to now, focused on the result: pretérito perfecto. The participle of decir is irregular: dicho, here: ha dicho.",
+        "es": "Un pasado que llega hasta ahora, centrado en el resultado: pretérito perfecto. El participio de decir es irregular: dicho, aquí: ha dicho.",
+        "de": "Eine Vergangenheit, die bis jetzt reicht, mit Blick auf das Ergebnis: pretérito perfecto. Das Partizip von decir ist unregelmäßig: dicho, hier: ha dicho."
+      }
+    },
+    {
+      "id": "pf-tr-46",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Ma reggel írok egy e-mailt.",
+        "en": "This morning I write an email.",
+        "es": "Esta mañana escribo un correo.",
+        "de": "Heute Morgen schreibe ich eine E-Mail."
+      },
+      "answer": "Esta mañana he escrito un correo.",
+      "accept": [
+        "Esta mañana yo he escrito un correo."
+      ],
+      "wordIds": [
+        "1412",
+        "103",
+        "1313",
+        "1042"
+      ],
+      "why": {
+        "hu": "Még tartó időszak (esta mañana): pretérito perfecto. A(z) escribir participiója rendhagyó: escrito, itt: he escrito.",
+        "en": "A period that is still open (esta mañana): pretérito perfecto. The participle of escribir is irregular: escrito, here: he escrito.",
+        "es": "Un periodo que sigue abierto (esta mañana): pretérito perfecto. El participio de escribir es irregular: escrito, aquí: he escrito.",
+        "de": "Ein noch offener Zeitraum (esta mañana): pretérito perfecto. Das Partizip von escribir ist unregelmäßig: escrito, hier: he escrito."
+      }
+    },
+    {
+      "id": "pf-tr-47",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Levelet írsz a barátodnak.",
+        "en": "You write a letter to your friend.",
+        "es": "Escribes una carta a tu amigo.",
+        "de": "Du schreibst deinem Freund einen Brief."
+      },
+      "answer": "Has escrito una carta a tu amigo.",
+      "accept": [
+        "Tú has escrito una carta a tu amigo."
+      ],
+      "wordIds": [
+        "1412",
+        "1290",
+        "22"
+      ],
+      "why": {
+        "hu": "Mostanáig ható, eredmény-központú múlt: pretérito perfecto. A(z) escribir participiója rendhagyó: escrito, itt: has escrito.",
+        "en": "A past that reaches up to now, focused on the result: pretérito perfecto. The participle of escribir is irregular: escrito, here: has escrito.",
+        "es": "Un pasado que llega hasta ahora, centrado en el resultado: pretérito perfecto. El participio de escribir es irregular: escrito, aquí: has escrito.",
+        "de": "Eine Vergangenheit, die bis jetzt reicht, mit Blick auf das Ergebnis: pretérito perfecto. Das Partizip von escribir ist unregelmäßig: escrito, hier: has escrito."
+      }
+    },
+    {
+      "id": "pf-tr-48",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Az ügyféllel írjuk a jelentést.",
+        "en": "We write the report with the client.",
+        "es": "Escribimos el informe con el cliente.",
+        "de": "Wir schreiben den Bericht mit dem Kunden."
+      },
+      "answer": "Hemos escrito el informe con el cliente.",
+      "accept": [
+        "Nosotros hemos escrito el informe con el cliente."
+      ],
+      "wordIds": [
+        "1412",
+        "3472",
+        "1600"
+      ],
+      "why": {
+        "hu": "Mostanáig ható, eredmény-központú múlt: pretérito perfecto. A(z) escribir participiója rendhagyó: escrito, itt: hemos escrito.",
+        "en": "A past that reaches up to now, focused on the result: pretérito perfecto. The participle of escribir is irregular: escrito, here: hemos escrito.",
+        "es": "Un pasado que llega hasta ahora, centrado en el resultado: pretérito perfecto. El participio de escribir es irregular: escrito, aquí: hemos escrito.",
+        "de": "Eine Vergangenheit, die bis jetzt reicht, mit Blick auf das Ergebnis: pretérito perfecto. Das Partizip von escribir ist unregelmäßig: escrito, hier: hemos escrito."
+      }
+    },
+    {
+      "id": "pf-tr-49",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Nem írom meg az üzenetet.",
+        "en": "I do not write the message.",
+        "es": "No escribo el mensaje.",
+        "de": "Ich schreibe die Nachricht nicht."
+      },
+      "answer": "No he escrito el mensaje.",
+      "accept": [
+        "Yo no he escrito el mensaje."
+      ],
+      "wordIds": [
+        "1412",
+        "2042"
+      ],
+      "why": {
+        "hu": "Mostanáig ható, eredmény-központú múlt: pretérito perfecto. A(z) escribir participiója rendhagyó: escrito, itt: he escrito.",
+        "en": "A past that reaches up to now, focused on the result: pretérito perfecto. The participle of escribir is irregular: escrito, here: he escrito.",
+        "es": "Un pasado que llega hasta ahora, centrado en el resultado: pretérito perfecto. El participio de escribir es irregular: escrito, aquí: he escrito.",
+        "de": "Eine Vergangenheit, die bis jetzt reicht, mit Blick auf das Ergebnis: pretérito perfecto. Das Partizip von escribir ist unregelmäßig: escrito, hier: he escrito."
+      }
+    },
+    {
+      "id": "pf-tr-50",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Önök írnak egy e-mailt a főnöknek?",
+        "en": "Do you (plural) write an email to the boss?",
+        "es": "¿Escriben ustedes un correo al jefe?",
+        "de": "Schreiben Sie dem Chef eine E-Mail?"
+      },
+      "answer": "¿Han escrito ustedes un correo al jefe?",
+      "accept": [
+        "¿Han escrito un correo al jefe?"
+      ],
+      "wordIds": [
+        "1412",
+        "1042",
+        "1854"
+      ],
+      "why": {
+        "hu": "Mostanáig ható, eredmény-központú múlt: pretérito perfecto. A(z) escribir participiója rendhagyó: escrito, itt: han escrito.",
+        "en": "A past that reaches up to now, focused on the result: pretérito perfecto. The participle of escribir is irregular: escrito, here: han escrito.",
+        "es": "Un pasado que llega hasta ahora, centrado en el resultado: pretérito perfecto. El participio de escribir es irregular: escrito, aquí: han escrito.",
+        "de": "Eine Vergangenheit, die bis jetzt reicht, mit Blick auf das Ergebnis: pretérito perfecto. Das Partizip von escribir ist unregelmäßig: escrito, hier: han escrito."
       }
     }
   ]
