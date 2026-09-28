@@ -11,7 +11,7 @@ import { LEVELS, type Level } from '@/data/words';
 import {
   doneGrammarTopicProgress,
   GRAMMAR_PROGRESS_KEY,
-  SYLLABUS_LEVELS,
+  syllabusLevels,
   hasLesson,
   lessonCoverage,
   getGrammarTier,
@@ -89,19 +89,6 @@ export default function GrammarSyllabusScreen() {
       load();
     }, [load])
   );
-
-  // PLAN-ketiranyu 4. lépés (4. pont, K2 döntés): es→en irányban (angolul
-  // tanulsz) a Grammar fül még nem tanít angol nyelvtant; a spanyol leckék
-  // nem valók egy spanyol anyanyelvűnek, ezért csak ez az egy sor jelenik meg.
-  if (learnedLang === 'en') {
-    return (
-      <View style={[styles.container, styles.comingSoonContainer, { backgroundColor: colors.background }]}>
-        <Text style={[styles.topicBlurb, { color: colors.tabIconDefault, textAlign: 'center' }]}>
-          {s.grammar.enComingSoon}
-        </Text>
-      </View>
-    );
-  }
 
   const coverage = lessonCoverage(learnedLang);
   const doneCount = [...progress.values()].filter((p) => p.state === 'done').length;
@@ -240,8 +227,8 @@ export default function GrammarSyllabusScreen() {
       </Text>
 
       <ScrollView contentContainerStyle={styles.body}>
-        {SYLLABUS_LEVELS.map((lvl) => {
-          const topics = syllabusForLevel(lvl);
+        {syllabusLevels(learnedLang).map((lvl) => {
+          const topics = syllabusForLevel(lvl, learnedLang);
           const written = topics.filter((tp) => hasLesson(learnedLang, tp.id)).length;
           const done = topics.filter((tp) => progress.get(tp.id)?.state === 'done').length;
           const isOpen = openLevel === lvl;
@@ -267,12 +254,12 @@ export default function GrammarSyllabusScreen() {
               </Pressable>
 
               {isOpen
-                ? unitsForLevel(lvl).map((unit) => (
+                ? unitsForLevel(lvl, learnedLang).map((unit) => (
                     <View key={unit.id} style={styles.unitBlock}>
                       <Text style={[styles.unitName, { color: colors.tint }]}>
                         {unit.title[contentLang] ?? unit.title.en}
                       </Text>
-                      {topicsForUnit(unit.id).map((topic) => {
+                      {topicsForUnit(unit.id, learnedLang).map((topic) => {
                         const written2 = hasLesson(learnedLang, topic.id);
                         const p = progress.get(topic.id);
                         // FB328: null amíg egyetlen kör sincs lejátszva a témán.
@@ -364,8 +351,6 @@ export default function GrammarSyllabusScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
-  // PLAN-ketiranyu 4. lépés: es→en irányban a fül csak ezt a sort mutatja.
-  comingSoonContainer: { justifyContent: 'center', alignItems: 'center', padding: 24 },
   subtitle: { fontSize: 13, textAlign: 'center', marginTop: 2, marginBottom: 8 },
   body: { padding: 14, paddingBottom: 100, gap: 10 },
   levelBlock: { gap: 8 },
