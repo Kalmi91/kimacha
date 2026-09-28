@@ -1,4 +1,6 @@
-# Kimacha
+# Kimacha_x
+
+> Frozen personal build (split from Kimacha at v4.1.2 + one-step learning). No further development here; active work continues on `main`.
 
 [![CI](https://github.com/kalmi91/kimacha/actions/workflows/ci.yml/badge.svg)](https://github.com/kalmi91/kimacha/actions/workflows/ci.yml)
 [![Android APK](https://github.com/kalmi91/kimacha/actions/workflows/android.yml/badge.svg)](https://github.com/kalmi91/kimacha/actions/workflows/android.yml)
