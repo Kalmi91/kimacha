@@ -20,10 +20,12 @@ export interface Sm2Card {
   known?: boolean; // SZ3: Kálmán kézzel »tudott«-nak jelölte; ritka ellenőrzés, a statisztikában ismert
 }
 
-// Anki alapértékek: 2 learning lépés, mindkettő ugyanabban a menetben kerül
-// újra elő (percben itt nem mérünk, a menetsor végére kerül a "step" logika
-// helyett a hívó oldal sorrendjén múlik, lásd pickSm2Session).
-export const LEARNING_STEPS = 2;
+// Kálmán, 2026-09-26: egy helyes válasz elég a graduáláshoz (a korábbi 2 lépés
+// idegesítő volt, ugyanazt a szót kétszer kellett jól leírni). Egy "good" a
+// learning állapotból egyenesen review-ba viszi a kártyát (interval =
+// GRADUATE_INTERVAL_DAYS); "again" változatlanul a menet végére kerül vissza
+// (lásd pickSm2Session), és onnan ugyanígy egy jó válasszal graduál.
+export const LEARNING_STEPS = 1;
 const EASE_FLOOR = 1.3;
 export const DEFAULT_EASE = 2.5;
 const GRADUATE_INTERVAL_DAYS = 1;

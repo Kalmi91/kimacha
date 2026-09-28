@@ -37,7 +37,7 @@ function reviewCard(overrides: Partial<Sm2Card> = {}): Sm2Card {
 describe('requeueAfterGrade', () => {
   it('learning kártya (due === today) a sor végére kerül', () => {
     const before = sm2NewCard('b1-0002');
-    const graded = sm2Review(before, 'good', TODAY); // learning, due today
+    const graded = sm2Review(before, 'hard', TODAY); // learning, due today (LEARNING_STEPS=1: "good" már graduálna)
     const other = reviewCard({ itemId: 'b1-0003' });
     const queue = [before, other];
 
@@ -60,7 +60,7 @@ describe('requeueAfterGrade', () => {
 
   it('FB312: egyelemű sor, learning lap (due ma) a grade után ugyanazt az egy lapot tartalmazza', () => {
     const before = sm2NewCard('b1-0010');
-    const graded = sm2Review(before, 'good', TODAY); // learning, due today, egyedüli lap a sorban
+    const graded = sm2Review(before, 'hard', TODAY); // learning, due today, egyedüli lap a sorban (LEARNING_STEPS=1: "good" már graduálna)
     const queue = [before];
 
     const next = requeueAfterGrade(queue, graded, TODAY);
@@ -68,7 +68,7 @@ describe('requeueAfterGrade', () => {
     expect(next).toEqual([graded]);
   });
 
-  it('a visszahozott kártya "Knew it" után nem ugrik újra a sor elejére (4.1.0 web-smoke)', () => {
+  it('a visszahozott kártya "Knew it" után graduál és kikerül a mai sorból (LEARNING_STEPS=1)', () => {
     const now = 1_000_000;
     const missed = sm2Review(sm2NewCard('b1-0020'), 'again', TODAY);
     const other1 = reviewCard({ itemId: 'b1-0021' });
@@ -79,12 +79,10 @@ describe('requeueAfterGrade', () => {
     expect(queue[0].itemId).toBe('b1-0020');
 
     const knew = sm2Review(queue[0], 'good', TODAY);
-    expect(knew.due).toBe(TODAY); // még learning, a sorban marad
+    expect(knew.due).not.toBe(TODAY); // egy "good" graduál (LEARNING_STEPS=1), nem marad ma esedékes
     const after = requeueAfterGrade(queue, knew, TODAY, 'good', now + 62_000, 60);
 
-    expect(after[0].itemId).not.toBe('b1-0020');
-    expect(after[after.length - 1].itemId).toBe('b1-0020');
-    expect(after[after.length - 1].returnAt).toBeUndefined();
+    expect(after.some((c) => c.itemId === 'b1-0020')).toBe(false); // graduált, kikerült a mai sorból
   });
 });
 
@@ -162,14 +160,15 @@ describe('reorderForReturn / requeueAfterGrade (FB364, again-időzítő)', () =>
     expect(reordered[0].itemId).toBe('old');
   });
 
-  it('"Knew it" (good) kártyára nincs időzítő: a sor végére kerül, returnAt nélkül', () => {
+  it('"Knew it" (good) egy lépésben graduál (LEARNING_STEPS=1): kikerül a sorból, nincs időzítő', () => {
     const A = sm2NewCard('a1');
-    const gradedA = sm2Review(A, 'good', TODAY); // learning, 1. lépés, due today
+    const gradedA = sm2Review(A, 'good', TODAY); // egy "good" graduál, review, due holnap
+    expect(gradedA.state).toBe('review');
+    expect(gradedA.due).not.toBe(TODAY);
     const other = sm2NewCard('b1');
     const afterGrade = requeueAfterGrade([A, other], gradedA, TODAY, 'good', 0, 60);
 
-    expect(afterGrade).toEqual([other, gradedA]);
-    expect((afterGrade[1] as QueuedSm2Card).returnAt).toBeUndefined();
+    expect(afterGrade).toEqual([other]);
   });
 });
 
