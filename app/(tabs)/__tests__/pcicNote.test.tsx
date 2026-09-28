@@ -39,6 +39,7 @@ jest.mock('@/data/pcic', () => {
     findPcicItem: (id: string) => items.find((i) => i.id === id),
     isPlusSentence: () => false,
     realLevelOfView: (level: string) => level,
+    setPcicTarget: () => {},
   };
 });
 
