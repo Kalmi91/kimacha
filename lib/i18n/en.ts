@@ -140,6 +140,7 @@ export default {
     chooseDirection: 'Choose learning direction',
     directionEnEs: 'English → Spanish',
     directionEsEn: 'Spanish → English',
+    credits: 'Credits',
   },
   backup: {
     backup: 'Backup',
@@ -180,6 +181,20 @@ export default {
   // Play-vágás 7. lépés: close had no caller left either, removed.
   header: {
     levelProgress: (known: number, total: number) => `${known} / ${total} words`,
+  },
+  // PLAN-credits.md: word-data attribution screen, opened from Settings.
+  credits: {
+    title: 'Credits',
+    body:
+      'Word frequency data: FrequencyWords by Hermit Dave, CC BY-SA 4.0, derived from the ' +
+      'OpenSubtitles 2018 corpus. The word lists in this app are an adapted work and are ' +
+      'shared under CC BY-SA 4.0.',
+    frequencyWordsLabel: 'github.com/hermitdave/FrequencyWords',
+    frequencyWordsUrl: 'https://github.com/hermitdave/FrequencyWords',
+    openSubtitlesLabel: 'opus.nlpl.eu',
+    openSubtitlesUrl: 'https://opus.nlpl.eu',
+    licenseLabel: 'creativecommons.org/licenses/by-sa/4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0',
   },
   spelling: {
     title: 'Spelling Practice',
