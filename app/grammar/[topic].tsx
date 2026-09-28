@@ -91,7 +91,8 @@ export default function GrammarLessonScreen() {
     setLearnedLang(target);
     // Kimacha Play: UI always English (Kálmán, 2026-09-22), regardless of the
     // stored source language; the lesson data's hu/es/de fields stay unused.
-    setContentLang('en');
+    // es→en (Kálmán, 2026-09-28): a spanyol anyanyelvű tanuló spanyol magyarázatot kap.
+    setContentLang(target === 'en' ? 'es' : 'en');
     const levelData = await db.getLevel();
     setLevel((levelData.level as Level) ?? 'A1');
     setStreak((await db.getStreak())?.current_count ?? 0);
