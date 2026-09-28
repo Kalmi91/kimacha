@@ -51,7 +51,7 @@ describe('data/pcic/senses.json (FB384, D4)', () => {
     }
   });
 
-  // PLAN-fb0924 7b javítás (D4 nem teljesült, orkesztrátor 2026-09-24): a
+  // PLAN-fb0924 7b javítás (D4 nem teljesült, review 2026-09-24): a
   // sense.es mezők eddig maguk a puszta szó voltak (llevar/llevar/llevar),
   // holott a döntés egy RÖVID, a jelentést egyértelművé tevő KIFEJEZÉS volt
   // (pl. "llevar la bolsa" / "llevar gafas" / "lleva una hora"). Az őr-teszt
