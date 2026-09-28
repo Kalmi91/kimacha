@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
-import Colors from '@/constants/Colors';
+import Colors, { isDarkTheme } from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
@@ -155,7 +155,7 @@ function GridTable({ header, rows, contentLang, colors, scroll }: {
 export default function LessonBody({ blocks, contentLang, learnedLang }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
-  const isDark = theme !== 'light';
+  const isDark = isDarkTheme(theme);
 
   return (
     <View style={styles.body}>

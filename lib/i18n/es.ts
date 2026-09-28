@@ -106,7 +106,7 @@ const es: Strings = {
     paletteTitle: 'Colores',
     paletteElectric: 'Azul eléctrico',
     paletteLime: 'Lima + rosa',
-    paletteBrand: 'Marca Kimacha',
+    paletteBrand: 'Kimacha',
     paletteCyan: 'Cian + violeta',
     paletteOrange: 'Naranja + turquesa',
     paletteClassic: 'Clásico',

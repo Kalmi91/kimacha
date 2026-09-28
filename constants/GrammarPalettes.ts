@@ -1,34 +1,32 @@
-// Neon sötét paletták (NY11). Kulcsok: bg = háttér, card = kártya,
-// chip = chip / nem választott gomb, a = akcentus, b = második szín,
-// mu = halvány szöveg, tr = progress-sáv alja, on = szöveg akcentus kitöltésen.
-// Az alap szöveg minden neon palettán ugyanaz (NEON_TEXT). A 'classic' nem
-// neon: a mai Colors[theme] értékeket adja (lib/ThemeContext.tsx).
-export type GrammarPaletteId = 'electric' | 'lime' | 'brand' | 'cyan' | 'orange' | 'classic';
-export type NeonPaletteId = Exclude<GrammarPaletteId, 'classic'>;
+// Neo-brutalista paletták (NY20, NYELVTAN.md "Neo-brutalista stílus"). A mód a
+// meglévő Auto / Light / Dark téma-beállítást követi: világos = "papír", sötét
+// = "tinta" (BASE). A palettánként csak a két kitöltő szín van: a = akcentus,
+// b = második szín; a szöveg színes kitöltésen mindig ON_FILL. A 'classic' nem
+// brutalista: a mai Colors[light|dark] értékeket adja (lib/ThemeContext.tsx).
+export type GrammarPaletteId = 'brand' | 'electric' | 'lime' | 'cyan' | 'orange' | 'classic';
+export type FillPaletteId = Exclude<GrammarPaletteId, 'classic'>;
 
-export type NeonPalette = {
-  bg: string;
-  card: string;
-  chip: string;
-  a: string;
-  b: string;
-  mu: string;
-  tr: string;
-  on: string;
+export type PaletteFills = { a: string; b: string };
+// bg = háttér, paper = kártya, ink = keret + szöveg, mu = halvány szöveg.
+export type PaletteBase = { bg: string; paper: string; ink: string; mu: string };
+
+export const DEFAULT_GRAMMAR_PALETTE: GrammarPaletteId = 'brand';
+
+export const GRAMMAR_PALETTE_IDS: GrammarPaletteId[] = ['brand', 'electric', 'lime', 'cyan', 'orange', 'classic'];
+
+export const ON_FILL = '#111111';
+
+export const BASE: Record<'light' | 'dark', PaletteBase> = {
+  light: { bg: '#FFFBEA', paper: '#FFFFFF', ink: '#111111', mu: '#6B6B6B' },
+  dark: { bg: '#111111', paper: '#1C1C1C', ink: '#F5F5F5', mu: '#A0A0A0' },
 };
 
-export const NEON_TEXT = '#E8ECF8';
-
-export const DEFAULT_GRAMMAR_PALETTE: GrammarPaletteId = 'electric';
-
-export const GRAMMAR_PALETTE_IDS: GrammarPaletteId[] = ['electric', 'lime', 'brand', 'cyan', 'orange', 'classic'];
-
-export const NEON_PALETTES: Record<NeonPaletteId, NeonPalette> = {
-  electric: { bg: '#08090D', card: '#12141C', chip: '#1A1D28', a: '#3D7BFF', b: '#FFD23F', mu: '#8C90A0', tr: '#232735', on: '#FFFFFF' },
-  lime: { bg: '#0B1020', card: '#141B33', chip: '#1C2440', a: '#C6FF3D', b: '#FF4FD8', mu: '#8A93B8', tr: '#26304F', on: '#0B1020' },
-  brand: { bg: '#0F172A', card: '#1A2338', chip: '#243049', a: '#EC4899', b: '#22D3EE', mu: '#94A3B8', tr: '#2A3650', on: '#FFFFFF' },
-  cyan: { bg: '#0A0F1F', card: '#131A30', chip: '#1B2440', a: '#22D3EE', b: '#A78BFA', mu: '#8B95B5', tr: '#243050', on: '#0A0F1F' },
-  orange: { bg: '#100E14', card: '#1C1822', chip: '#26212E', a: '#FF8A3D', b: '#2EE6C5', mu: '#9A92A8', tr: '#302A38', on: '#100E14' },
+export const PALETTE_FILLS: Record<FillPaletteId, PaletteFills> = {
+  brand: { a: '#EC4899', b: '#22D3EE' },
+  electric: { a: '#3D7BFF', b: '#FFD23F' },
+  lime: { a: '#C6FF3D', b: '#FF4FD8' },
+  cyan: { a: '#22D3EE', b: '#A78BFA' },
+  orange: { a: '#FF8A3D', b: '#2EE6C5' },
 };
 
 export function isGrammarPaletteId(v: unknown): v is GrammarPaletteId {

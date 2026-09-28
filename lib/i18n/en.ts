@@ -124,7 +124,7 @@ export default {
     paletteTitle: 'Colors',
     paletteElectric: 'Electric blue',
     paletteLime: 'Lime + pink',
-    paletteBrand: 'Kimacha brand',
+    paletteBrand: 'Kimacha',
     paletteCyan: 'Cyan + violet',
     paletteOrange: 'Orange + teal',
     paletteClassic: 'Classic',
