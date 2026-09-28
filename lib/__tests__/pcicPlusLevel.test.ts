@@ -2,9 +2,15 @@
 // virtuális szint. A valódi data/pcic korpuszon fut (nem mock), mert a
 // lánc-szerkezet (data/pcic/a1-build.json) és a fájl-sorrend maguk is a
 // viselkedés részei (lib/__tests__/pcicChains.test.ts mintája).
+// PLAN-ketiranyu 2. lépés (2026-09-28): mindkét alvó funkcióra épül (lánc +
+// "+1" virtuális szint), amik a production modulokban most no-op/mindig-false
+// állapotban vannak, ezért describe.skip (törölni NEM szabad, minden import
+// megmarad, hogy a skip alatti blokk típusellenőrzése is átmenjen); a
+// data/pcic import a rejtett data/pcicCorpus.ts-re váltva, hogy a valódi
+// id-k a funkció visszahozásakor újra használhatók legyenek.
 import { applyChainOrder, chainGroupId } from '../pcicChains';
 import { thinSentences } from '../pcicSession';
-import { pcicItemsForViewLevel, findPcicItem } from '../../data/pcic';
+import { pcicItemsForViewLevel, findPcicItem } from '../../data/pcicCorpus';
 import { cardsForViewLevel } from '../pcicLevels';
 import { sm2NewCard, sm2Review, type Sm2Card } from '../sm2';
 import a1Build from '../../data/pcic/a1-build.json';
@@ -41,7 +47,7 @@ function assertSentenceGapRespected(orderedIds: string[], groupOf: (id: string) 
   return groupSwitches;
 }
 
-describe('PLAN-fb0924 8. lépés: mondat-arány max 1/10 kártya + "A1+"/"A2+" (FB394/396)', () => {
+describe.skip('PLAN-fb0924 8. lépés: mondat-arány max 1/10 kártya + "A1+"/"A2+" (FB394/396) - PCIC rejtve, PLAN-ketiranyu 2. lépés', () => {
   it('A1 új-sorában nincs nem-lánc mondat, és két lánc-csoport közt legalább 9 kártya', () => {
     // Minden lánc-tag "review", hogy applyChainOrder AZ ÖSSZES lánc-mondatot
     // előrehozza - ez a legszigorúbb próba a ritkításra.
