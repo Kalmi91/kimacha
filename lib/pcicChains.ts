@@ -32,7 +32,6 @@
 
 import type { Sm2Card } from './sm2';
 import type { PcicLevel } from '@/data/pcic';
-import a1Build from '../data/pcic/a1-build.json';
 
 export interface ChainEntry {
   /** A mondat tartalmas szavaira mutató PCIC-tétel-id-k (funkciószó nélkül). */
@@ -43,11 +42,11 @@ export interface ChainEntry {
 
 export type ChainBuildMap = Record<string, ChainEntry>;
 
-// Csak A1-en fut (PLAN-fb0923 7. lépés: "most még csak A1-be csináljuk");
-// A2/B1/B2-nek nincs build.json-ja, ott applyChainOrder no-op.
-const BUILD_BY_LEVEL: Partial<Record<PcicLevel, ChainBuildMap>> = {
-  A1: a1Build as ChainBuildMap,
-};
+// PLAN-ketiranyu 2. lépés (2026-09-28): a gyakorisági korpusznak nincs
+// mondat-lánc adata (a1-build.json a data/pcicCorpus.ts alá tartozó, rejtett
+// PCIC-adat maradt) - a lánc-térkép üres, ezért `applyChainOrder` lent minden
+// szinten no-op (a bemenetet változatlanul adja vissza).
+const BUILD_BY_LEVEL: Partial<Record<PcicLevel, ChainBuildMap>> = {};
 
 function isReview(cardsById: Map<string, Sm2Card>, id: string): boolean {
   return cardsById.get(id)?.state === 'review';
