@@ -21,25 +21,33 @@ export function t(): Strings {
 
 // Csak a két támogatott pár nyelvére vált (lib/languages.ts supportedPairs);
 // ismeretlen kódra angolra esik vissza, hogy a felület sose maradjon üresen.
+// Önmagában NEM értesíti a listenereket (lásd notifyLanguageChange lent): az
+// onboarding a saját lépései közt is hívja ezt, élő előnézetnek, és az a
+// remount, amit a notify kivált (app/_layout.tsx), elpusztítaná az
+// OnboardingScreen saját `step`-állapotát.
 export function setLanguage(code: string) {
   current = LANGS[code] ?? en;
   currentCode = code;
-  listeners.forEach((fn) => fn());
 }
 
 export function currentLanguage(): string {
   return currentCode;
 }
 
-// A Settings irányváltó sora ettől frissül azonnal (app/_layout.tsx erre
-// épített remount-kulccsal), hogy a tab-fülek felirata is azonnal váltson,
-// nem csak a fókuszban lévő képernyő.
+// A Settings irányváltó sora ezt hívja meg setLanguage() UTÁN (nem maga
+// setLanguage), hogy csak egy VÉGLEGESÍTETT váltás váltsa ki a teljes fa
+// remountját (app/_layout.tsx `key={langVersion}`), az onboarding közbeni
+// próba-váltás ne.
 type Listener = () => void;
 const listeners = new Set<Listener>();
 
 export function subscribeLanguage(fn: Listener): () => void {
   listeners.add(fn);
   return () => listeners.delete(fn);
+}
+
+export function notifyLanguageChange() {
+  listeners.forEach((fn) => fn());
 }
 
 // FB63/76/108/149: the usage toasts (milestone, daily greeting, midnight

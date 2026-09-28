@@ -6,7 +6,7 @@ import * as Sharing from 'expo-sharing';
 import * as DocumentPicker from 'expo-document-picker';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
-import { t, setLanguage } from '@/lib/i18n';
+import { t, setLanguage, notifyLanguageChange } from '@/lib/i18n';
 import { type Level } from '@/data/words';
 import { getDb } from '@/lib/database';
 import { setPcicTarget, type PcicTarget } from '@/data/pcic';
@@ -122,6 +122,9 @@ export default function SettingsScreen() {
     await db.setOnboarding(source, target);
     if (target === 'en') await db.setPcicLevel('A1');
     setLanguage(source);
+    // Csak itt, egy VÉGLEGESÍTETT váltásnál kell a teljes fa remountja (a
+    // tab-fülek felirata is), az onboarding próba-váltása ezt nem hívja.
+    notifyLanguageChange();
     setPcicTarget(target);
     setDirection([source, target]);
     router.replace('/(tabs)');
