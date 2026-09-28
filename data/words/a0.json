@@ -105,6 +105,21 @@
     "pos": "pron"
   },
   {
+    "id": 3,
+    "level": "A0",
+    "es": "yo",
+    "hu": "én",
+    "en": "I",
+    "sentence_es": "Yo soy de aquí.",
+    "sentence_hu": "Helyi vagyok.",
+    "sentence_en": "I'm from here.",
+    "de": "ich",
+    "sentence_de": "Ich bin von hier.",
+    "topic": "personas",
+    "topicOrder": 1,
+    "pos": "pron"
+  },
+  {
     "id": 8,
     "level": "A0",
     "es": "aquí",
@@ -1589,20 +1604,5 @@
     "topic": "verbos_a0",
     "topicOrder": 23,
     "pos": "verb"
-  },
-  {
-    "id": 3,
-    "level": "A0",
-    "es": "yo",
-    "hu": "én",
-    "en": "I",
-    "sentence_es": "Yo soy de aquí.",
-    "sentence_hu": "Helyi vagyok.",
-    "sentence_en": "I'm from here.",
-    "de": "ich",
-    "sentence_de": "Ich bin von hier.",
-    "topic": "personas",
-    "topicOrder": 1,
-    "pos": "pron"
   }
 ]

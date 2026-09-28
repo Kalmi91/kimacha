@@ -30,6 +30,21 @@
     "pos": "phrase"
   },
   {
+    "id": 1330,
+    "level": "A1",
+    "es": "un/una",
+    "hu": "egy (határozatlan névelő)",
+    "en": "a / an",
+    "de": "ein/eine",
+    "topic": "genero_numero",
+    "topicOrder": 9,
+    "sentence_es": "Tengo un gato y una perra.",
+    "sentence_hu": "Van egy macskám és egy szukám.",
+    "sentence_en": "I have a cat and a female dog.",
+    "sentence_de": "Ich habe eine Katze und eine Hündin.",
+    "pos": "adj"
+  },
+  {
     "id": 1053,
     "level": "A1",
     "es": "él está",
@@ -1617,6 +1632,21 @@
     "sentence_de": "Ich habe eine Frage.",
     "pos": "noun",
     "gender": "f"
+  },
+  {
+    "id": 1331,
+    "level": "A1",
+    "es": "unos/unas",
+    "hu": "néhány (határozatlan többes)",
+    "en": "some",
+    "de": "einige",
+    "topic": "genero_numero",
+    "topicOrder": 10,
+    "sentence_es": "Compro unos libros y unas flores.",
+    "sentence_hu": "Veszek néhány könyvet és virágot.",
+    "sentence_en": "I buy some books and some flowers.",
+    "sentence_de": "Ich kaufe einige Bücher und Blumen.",
+    "pos": "adj"
   },
   {
     "id": 1357,
@@ -14615,36 +14645,6 @@
     "sentence_de": "Gazpacho ist eine kalte Suppe.",
     "pos": "noun",
     "gender": "m"
-  },
-  {
-    "id": 1330,
-    "level": "A1",
-    "es": "un/una",
-    "hu": "egy (határozatlan névelő)",
-    "en": "a / an",
-    "de": "ein/eine",
-    "topic": "genero_numero",
-    "topicOrder": 9,
-    "sentence_es": "Tengo un gato y una perra.",
-    "sentence_hu": "Van egy macskám és egy szukám.",
-    "sentence_en": "I have a cat and a female dog.",
-    "sentence_de": "Ich habe eine Katze und eine Hündin.",
-    "pos": "adj"
-  },
-  {
-    "id": 1331,
-    "level": "A1",
-    "es": "unos/unas",
-    "hu": "néhány (határozatlan többes)",
-    "en": "some",
-    "de": "einige",
-    "topic": "genero_numero",
-    "topicOrder": 10,
-    "sentence_es": "Compro unos libros y unas flores.",
-    "sentence_hu": "Veszek néhány könyvet és virágot.",
-    "sentence_en": "I buy some books and some flowers.",
-    "sentence_de": "Ich kaufe einige Bücher und Blumen.",
-    "pos": "adj"
   },
   {
     "id": 1378,
