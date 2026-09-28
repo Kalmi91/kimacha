@@ -1,7 +1,8 @@
-import { Modal, Pressable, Text, StyleSheet } from 'react-native';
+import { Modal, Pressable, Text, View, StyleSheet } from 'react-native';
 
 import Colors from '@/constants/Colors';
-import { PCIC_VIEW_LEVELS, LEVEL_LABELS, pcicItemsForViewLevel, type PcicViewLevel } from '@/data/pcic';
+import { t } from '@/lib/i18n';
+import { PCIC_VIEW_LEVELS, pcicItemsForViewLevel, type PcicViewLevel, type PcicTarget } from '@/data/pcic';
 import { levelProgressView } from '@/lib/pcicLevels';
 import type { Sm2Card } from '@/lib/sm2';
 import LevelRow from './LevelRow';
@@ -17,13 +18,29 @@ type Props = {
   cards: Sm2Card[];
   colors: ColorScheme;
   title: string;
+  // PLAN-ketiranyu 4. lépés javítás: es→en-nél mindig A1-et kínálja fel,
+  // akkor is, ha még üres (mint app/onboarding.tsx szint-lépése), és a
+  // feliratok a felület nyelvén jelennek meg (nem az adatmodul angoljával).
+  target: PcicTarget;
   onSelect: (level: PcicViewLevel) => void;
   onClose: () => void;
 };
 
-export default function LevelPickerSheet({ visible, active, cards, colors, title, onSelect, onClose }: Props) {
-  // Ha egy szinthez nincs adat vagy nincs angol fordítás, ne kínáljuk fel.
-  const levels = PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForViewLevel(lvl).length > 0);
+export default function LevelPickerSheet({ visible, active, cards, colors, title, target, onSelect, onClose }: Props) {
+  const s = t();
+  const levelLabels: Partial<Record<PcicViewLevel, string>> = {
+    A1: s.pcic.levelBeginner,
+    A2: s.pcic.levelElementary,
+    B1: s.pcic.levelIntermediate,
+    B2: s.pcic.levelUpperIntermediate,
+    'A1+': s.pcic.levelPlusSentences,
+    'A2+': s.pcic.levelPlusSentences,
+  };
+  // Ha egy szinthez nincs adat vagy nincs angol fordítás, ne kínáljuk fel;
+  // es→en-nél kivétel az A1 (egyetlen kínált szint, D-A döntés), az mindig
+  // felkínált, még üresen is (app/onboarding.tsx level-lépés mintája).
+  const levels: PcicViewLevel[] =
+    target === 'en' ? ['A1'] : PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForViewLevel(lvl).length > 0);
 
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
@@ -36,16 +53,20 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
             const total = pcicItemsForViewLevel(lvl).length;
             const { introduced } = levelProgressView(cards, lvl, total);
             return (
-              <LevelRow
-                key={lvl}
-                level={lvl}
-                label={LEVEL_LABELS[lvl]}
-                introduced={introduced}
-                total={total}
-                active={lvl === active}
-                colors={colors}
-                onPress={() => onSelect(lvl)}
-              />
+              <View key={lvl}>
+                <LevelRow
+                  level={lvl}
+                  label={levelLabels[lvl] ?? lvl}
+                  introduced={introduced}
+                  total={total}
+                  active={lvl === active}
+                  colors={colors}
+                  onPress={() => onSelect(lvl)}
+                />
+                {target === 'en' && total === 0 && (
+                  <Text style={[styles.noWordsYet, { color: colors.tabIconDefault }]}>Todavía no hay palabras.</Text>
+                )}
+              </View>
             );
           })}
         </Pressable>
@@ -71,5 +92,13 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textAlign: 'center',
     marginBottom: 16,
+  },
+  // PLAN-ketiranyu 4. lépés: "még nincs szó" sor az üres A1 alatt (es→en,
+  // amíg az 5. lépés nincs kész), mint app/onboarding.tsx szint-lépése.
+  noWordsYet: {
+    fontSize: 13,
+    textAlign: 'center',
+    marginTop: -4,
+    marginBottom: 10,
   },
 });

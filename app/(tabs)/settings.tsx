@@ -1,14 +1,15 @@
 import { useState, useCallback } from 'react';
-import { StyleSheet, Text, View, Pressable, Alert, Switch, Platform, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Alert, Switch, Platform, ScrollView, Modal } from 'react-native';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { File, Paths } from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import * as DocumentPicker from 'expo-document-picker';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
-import { t } from '@/lib/i18n';
+import { t, setLanguage, notifyLanguageChange } from '@/lib/i18n';
 import { type Level } from '@/data/words';
 import { getDb } from '@/lib/database';
+import { setPcicTarget, type PcicTarget } from '@/data/pcic';
 import { validateBackupPayload } from '@/lib/backup';
 import { validateMistakesPayload } from '@/lib/mistakes/format';
 import {
@@ -42,6 +43,9 @@ export default function SettingsScreen() {
   const router = useRouter();
   const [level, setLevel] = useState<Level>('A0');
   const [direction, setDirection] = useState<[string, string]>(['en', 'es']);
+  // PLAN-ketiranyu 4. lépés (6-7. pont): a tanulási irány váltó sora és a
+  // hozzá tartozó kis lap.
+  const [directionSheetOpen, setDirectionSheetOpen] = useState(false);
   // FB39: due count for the "Spelling Practice (N)" settings row, refreshed
   // every time Settings gains focus (e.g. after adding words on the Learn tab).
   const [spellingDue, setSpellingDue] = useState(0);
@@ -106,6 +110,26 @@ export default function SettingsScreen() {
     await getDb().setArticlePicker(v);
   };
 
+  // PLAN-ketiranyu 4. lépés (6-7. pont): irányváltás. K1 (Kálmán, 2026-09-28):
+  // nincs megerősítő kérdés, mert visszaváltható és a haladás nem vész el (a
+  // két irány külön id-térrel/pair-rel és külön pár-szintű szinttel él,
+  // lib/database.ts getPcicLevel/hasPcicLevel). Ha az új irányban még nincs
+  // kifejezetten választott szint, a főfül (app/(tabs)/index.tsx load())
+  // magától felnyitja a szint-választó lapot, itt nem kell külön kezelni.
+  const handleSelectDirection = async (source: 'en' | 'es', target: PcicTarget) => {
+    setDirectionSheetOpen(false);
+    if (source === direction[0] && target === direction[1]) return;
+    const db = getDb();
+    await db.setOnboarding(source, target);
+    setLanguage(source);
+    // Csak itt, egy VÉGLEGESÍTETT váltásnál kell a teljes fa remountja (a
+    // tab-fülek felirata is), az onboarding próba-váltása ezt nem hívja.
+    notifyLanguageChange();
+    setPcicTarget(target);
+    setDirection([source, target]);
+    router.replace('/(tabs)');
+  };
+
   // FB144: the language's own name for the hint ("Magyar"), not its code.
   const voiceName = (code: string) => languages.find(l => l.code === code)?.name ?? code;
 
@@ -146,10 +170,12 @@ export default function SettingsScreen() {
     await getDb().setAgainDelaySec(next);
   };
 
+  // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont): a
+  // korábban angolra égetett gombfeliratok a felület nyelvén.
   const themeOptions: { label: string; value: 'system' | 'light' | 'dark' }[] = [
-    { label: '🔄 Auto', value: 'system' },
-    { label: '☀️ Light', value: 'light' },
-    { label: '🌙 Dark', value: 'dark' },
+    { label: `🔄 ${s.settings.themeAuto}`, value: 'system' },
+    { label: `☀️ ${s.settings.themeLight}`, value: 'light' },
+    { label: `🌙 ${s.settings.themeDark}`, value: 'dark' },
   ];
 
   // RN-web Alert is a no-op, so web falls back to the browser dialogs.
@@ -360,14 +386,32 @@ export default function SettingsScreen() {
         <Switch value={strictAccents} onValueChange={handleStrictAccentsToggle} trackColor={{ true: colors.tint }} />
       </View>
 
-      {/* FB188: névelő-gombsor a gépelős spanyol főnév-kártyákon. */}
-      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
-        <View style={styles.difficultyLabelBox}>
-          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.articlePicker}</Text>
-          <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.articlePickerHint}</Text>
+      {/* FB188: névelő-gombsor a gépelős spanyol főnév-kártyákon. PLAN-ketiranyu
+          4. lépés javítás (2026-09-28 review, 4. pont): csak spanyol
+          célnyelvnél él (index.tsx-ben is target==='es'-nél jár a gombsor). */}
+      {direction[1] === 'es' && (
+        <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
+          <View style={styles.difficultyLabelBox}>
+            <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.articlePicker}</Text>
+            <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.articlePickerHint}</Text>
+          </View>
+          <Switch value={articlePicker} onValueChange={handleArticlePickerToggle} trackColor={{ true: colors.tint }} />
         </View>
-        <Switch value={articlePicker} onValueChange={handleArticlePickerToggle} trackColor={{ true: colors.tint }} />
-      </View>
+      )}
+
+      {/* PLAN-ketiranyu 4. lépés (6. pont): tanulási irány váltó sora. */}
+      <Pressable
+        style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}
+        onPress={() => setDirectionSheetOpen(true)}
+      >
+        <View style={styles.difficultyLabelBox}>
+          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.learningDirection}</Text>
+          <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>
+            {direction[0] === 'en' ? s.settings.directionEnEs : s.settings.directionEsEn}
+          </Text>
+        </View>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+      </Pressable>
 
       {/* FB39: entry point into the spelling-practice trainer screen. */}
       <Pressable
@@ -409,6 +453,36 @@ export default function SettingsScreen() {
       </ScrollView>
 
       <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="settings-tab" />
+
+      {/* PLAN-ketiranyu 4. lépés (6. pont): kis lap a két iránnyal, az
+          aktuális pipával, a LevelPickerSheet mintájára (components/LevelPickerSheet.tsx). */}
+      <Modal visible={directionSheetOpen} transparent animationType="slide" onRequestClose={() => setDirectionSheetOpen(false)}>
+        <Pressable style={styles.sheetOverlay} onPress={() => setDirectionSheetOpen(false)}>
+          <Pressable style={[styles.sheet, { backgroundColor: colors.card }]} onPress={() => {}}>
+            <Text style={[styles.sheetTitle, { color: colors.text }]}>{s.settings.chooseDirection}</Text>
+            {(
+              [
+                ['en', 'es'],
+                ['es', 'en'],
+              ] as const
+            ).map(([src, tgt]) => {
+              const active = direction[0] === src && direction[1] === tgt;
+              return (
+                <Pressable
+                  key={src}
+                  style={[styles.sheetOption, { backgroundColor: active ? colors.tint : colors.background }]}
+                  onPress={() => handleSelectDirection(src, tgt)}
+                >
+                  <Text style={[styles.sheetOptionText, { color: active ? '#FFF' : colors.text }]}>
+                    {src === 'en' ? s.settings.directionEnEs : s.settings.directionEsEn}
+                  </Text>
+                  {active && <Text style={[styles.sheetOptionText, { color: '#FFF' }]}>✓</Text>}
+                </Pressable>
+              );
+            })}
+          </Pressable>
+        </Pressable>
+      </Modal>
     </View>
   );
 }
@@ -427,6 +501,38 @@ const styles = StyleSheet.create({
     marginTop: 12,
     fontSize: 12,
     textAlign: 'center',
+  },
+  // PLAN-ketiranyu 4. lépés: az irányváltó kis lapja, a
+  // components/LevelPickerSheet.tsx overlay/sheet stílusának mintájára.
+  sheetOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'flex-end',
+  },
+  sheet: {
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    padding: 20,
+    paddingBottom: 32,
+  },
+  sheetTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    textAlign: 'center',
+    marginBottom: 16,
+  },
+  sheetOption: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 14,
+    paddingHorizontal: 16,
+    borderRadius: 14,
+    marginBottom: 10,
+  },
+  sheetOptionText: {
+    fontSize: 16,
+    fontWeight: '600',
   },
   sectionTitle: {
     fontSize: 22,

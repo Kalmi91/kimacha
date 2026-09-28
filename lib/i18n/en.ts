@@ -108,8 +108,16 @@ export default {
     // FB375 (PLAN-fb0923 6. lépés): the word-deck button, only on table-less
     // lessons with >= 8 word cards (lib/grammar/tableDeck.ts wordCellsForLesson).
     practiceWords: (n: number) => `Practice the words · ${n} cards`,
+    // PLAN-ketiranyu 4. lépés: es→en irányban a Grammar fül még nem tanít
+    // angol nyelvtant, csak ezt az egy sort mutatja a lecke-lista helyett.
+    enComingSoon: 'English grammar lessons are coming later.',
   },
   settings: {
+    // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont):
+    // a téma-választó gombok (korábban settings.tsx-ben angolra égetve).
+    themeAuto: 'Auto',
+    themeLight: 'Light',
+    themeDark: 'Dark',
     weeklyGoal: 'Weekly study goal',
     weeklyGoalHours: (h: string) => `${h} hours / week`,
     weeklyGoalDoneTag: '✓ DONE',
@@ -124,6 +132,12 @@ export default {
     // FB364 (PLAN-fb0923 5. lépés): a PCIC "again" kártya visszatérési ideje.
     missedWordDelay: 'Missed word comes back after',
     missedWordDelaySeconds: (n: string) => `${n} s`,
+    // PLAN-ketiranyu 4. lépés: a tanulási irány váltó sora + a hozzá tartozó
+    // lap (Settings, a Spelling practice sor fölött).
+    learningDirection: 'Learning direction',
+    chooseDirection: 'Choose learning direction',
+    directionEnEs: 'English → Spanish',
+    directionEsEn: 'Spanish → English',
   },
   backup: {
     backup: 'Backup',
@@ -283,6 +297,16 @@ export default {
     chooseLevel: 'Choose level',
     next: (label: string) => `Next → ${label}`,
     accentForgiven: 'Missing accent, counted as correct',
+    // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont):
+    // a szint-választó lap feliratai és sorai (korábban data/pcic.ts
+    // LEVEL_LABELS-ben és components/LevelRow.tsx-ben angolra égetve).
+    levelBeginner: 'Beginner',
+    levelElementary: 'Elementary',
+    levelIntermediate: 'Intermediate',
+    levelUpperIntermediate: 'Upper intermediate',
+    levelPlusSentences: '+1 · sentences',
+    levelNotStarted: 'not started',
+    levelRowIntroduced: (n: number, total: number) => `${n} / ${total} introduced`,
   },
   // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
   // FB361-362: a teljes WordPos-készlet felirata (nem csak noun/verb/phrase),
