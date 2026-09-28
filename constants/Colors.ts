@@ -1,42 +1,55 @@
-import { NEON_PALETTES, NEON_TEXT, type NeonPalette } from './GrammarPalettes';
+import { BASE, ON_FILL, PALETTE_FILLS, type FillPaletteId } from './GrammarPalettes';
 
 const darkBlue = '#2563EB';
 const navy = '#0F172A';
 const pink = '#EC4899';
 const cyan = '#06B6D4';
 
-// NY11: a neon paletta (GrammarPalettes) egy helyen képződik le a Colors
-// kulcsaira, így a `Colors[theme]`-et olvasó fájlok külön átírás nélkül váltanak.
-// success/danger/warning szemantikus marad, a sötét dark-értékekkel.
-function neonColors(p: NeonPalette) {
+// NY20: a brutalista paletta (GrammarPalettes) egy helyen képződik le a Colors
+// kulcsaira: a téma-kulcs `<paletta>-light|dark`, így a `Colors[theme]`-et olvasó
+// fájlok külön átírás nélkül váltanak (világos = papír, sötét = tinta).
+// tint/accent = a, secondary = b, border = ink, onTint = ON_FILL; a
+// success/danger/warning szemantikus marad a classic light/dark értékekkel.
+function brutalColors(id: FillPaletteId, mode: 'light' | 'dark') {
+  const base = BASE[mode];
+  const fills = PALETTE_FILLS[id];
+  const dark = mode === 'dark';
   return {
-    text: NEON_TEXT,
-    background: p.bg,
-    tint: p.a,
-    card: p.card,
-    tabIconDefault: p.mu,
-    tabIconSelected: p.a,
-    accent: p.a,
-    secondary: p.b,
-    textMuted: p.mu,
-    success: '#22C55E',
+    text: base.ink,
+    background: base.bg,
+    tint: fills.a,
+    card: base.paper,
+    tabIconDefault: base.mu,
+    tabIconSelected: base.ink,
+    accent: fills.a,
+    secondary: fills.b,
+    textMuted: base.mu,
+    success: dark ? '#22C55E' : '#15803D',
     successFill: '#22C55E',
-    danger: '#EF4444',
-    warning: '#F59E0B',
+    danger: dark ? '#EF4444' : '#DC2626',
+    warning: dark ? '#F59E0B' : '#B45309',
     warningFill: '#F59E0B',
-    info: '#38BDF8',
-    border: p.tr,
-    overlay: 'rgba(0,0,0,0.6)',
-    onTint: p.on,
+    info: dark ? '#38BDF8' : '#0369A1',
+    border: base.ink,
+    overlay: dark ? 'rgba(0,0,0,0.6)' : 'rgba(15,23,42,0.5)',
+    onTint: ON_FILL,
   };
 }
 
+// A mód a classic light/dark kulcs-neveket követi.
+export const isDarkTheme = (theme: string) => theme === 'dark' || theme.endsWith('-dark');
+
 export default {
-  electric: neonColors(NEON_PALETTES.electric),
-  lime: neonColors(NEON_PALETTES.lime),
-  brand: neonColors(NEON_PALETTES.brand),
-  cyan: neonColors(NEON_PALETTES.cyan),
-  orange: neonColors(NEON_PALETTES.orange),
+  'brand-light': brutalColors('brand', 'light'),
+  'brand-dark': brutalColors('brand', 'dark'),
+  'electric-light': brutalColors('electric', 'light'),
+  'electric-dark': brutalColors('electric', 'dark'),
+  'lime-light': brutalColors('lime', 'light'),
+  'lime-dark': brutalColors('lime', 'dark'),
+  'cyan-light': brutalColors('cyan', 'light'),
+  'cyan-dark': brutalColors('cyan', 'dark'),
+  'orange-light': brutalColors('orange', 'light'),
+  'orange-dark': brutalColors('orange', 'dark'),
   light: {
     text: '#1E293B',
     background: '#F8FAFC',
