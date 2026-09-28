@@ -479,7 +479,7 @@ export default function PcicScreen() {
   const chipLabel =
     current.state === 'new'
       ? s.pcic.newBadge
-      : current.state === 'learning'
+      : current.state === 'learning' && LEARNING_STEPS > 1
         ? s.pcic.learningStep(current.step + 1, LEARNING_STEPS)
         : undefined;
 
