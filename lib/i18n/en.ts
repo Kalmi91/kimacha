@@ -67,6 +67,11 @@ export default {
     corePlusTag: 'core+',
     started: 'started',
     notStarted: 'new',
+    // NY21: brutalist course list.
+    doneTag: 'done',
+    continueTag: 'continue →',
+    weeklyGoalTitle: 'Weekly goal',
+    weeklyGoalValue: (done: string, goal: string) => `${done} h / ${goal} h`,
     soonLong: 'This lesson has not been written yet. It is on the list, and the rest of the level is already open.',
     footNote: 'The whole grammar of the language, A1 to C1, in teaching order. Lessons marked "coming" are planned, not written yet.',
     ruleLabel: 'The rule',
