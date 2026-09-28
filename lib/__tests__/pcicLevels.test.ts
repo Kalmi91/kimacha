@@ -7,7 +7,15 @@
 import { matchesLevel, cardsForLevel, levelProgress } from '../pcicLevels';
 import { sm2NewCard } from '../sm2';
 import { PCIC_LEVEL_MOVES } from '../pcicLevelMoves';
-import { findPcicItem, levelOfItem } from '@/data/pcic';
+// PLAN-ketiranyu 2. lépés (2026-09-28): a PCIC_LEVEL_MOVES a régi, valódi
+// PCIC-korpusz id-terén él (lib/db/migrations.ts natív-induláskori migrációja
+// használja), data/pcic.ts pedig mostantól a data/words alapú korpuszt adja -
+// a lenti item/realLevel ellenőrzés ezért a rejtett data/pcicCorpus.ts-re
+// váltott importtal olvassa a valódi id-ket. A `matchesLevel` hívás maga
+// (production lib/pcicLevels.ts) a PRODUCTION data/pcic-et használja belül,
+// de mivel ott az id nincs betöltve, az id-előtag tartalékra esik - ami erre
+// a valódi PCIC-id-mintára (az előtag = a tényleges szint) helyes marad.
+import { findPcicItem, levelOfItem } from '@/data/pcicCorpus';
 
 describe('matchesLevel', () => {
   it('matches a NOT-in-corpus (fixture) id to its own id-prefix (fallback)', () => {

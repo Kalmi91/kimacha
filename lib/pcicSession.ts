@@ -195,6 +195,16 @@ export function thinSentences(
   return result;
 }
 
+// PLAN-ketiranyu 2. lépés (2026-09-28): a régi PCIC-korpuszból itt maradt
+// SRS-sorok (data/pcic.ts most már a data/words alapú korpuszt tölti be, a
+// régi "a1-..."/"b1-..." id-k nincsenek benne) a `matchesLevel` id-előtag
+// tartalékszabálya miatt továbbra is bekerülnének egy szint pakljába, holott
+// `findPcicItem` rájuk undefined-ot ad. Ez a szűrő kihagyja őket, mielőtt a
+// session összeáll, hogy a pakli ne akadjon el egy üres/felfedhetetlen lapon.
+export function dropOrphanCards(cards: Sm2Card[], itemExists: (id: string) => boolean): Sm2Card[] {
+  return cards.filter((c) => itemExists(c.itemId));
+}
+
 export function pickStrongerSm2Card(a: Sm2Card, b: Sm2Card): Sm2Card {
   const aSuccess = a.reps - a.lapses;
   const bSuccess = b.reps - b.lapses;
