@@ -1,11 +1,175 @@
-// Kimacha Play: single en-es pair, UI always English (Kálmán, 2026-09-22).
-// This is no longer a full UI translation, the hu/es/de translation files
-// were cut. This file survives only because FB63/76/108/149 want the usage
-// toasts (per-minute pill, milestones, daily greeting, midnight rollover) to
-// speak the language being LEARNED, which for Kimacha Play is always Spanish.
-// `lib/i18n/index.ts`'s `stringsFor()` reads this `usage` object. Content
-// kept 1:1 with the pre-cut Spanish strings, nothing paraphrased.
-export default {
+import en from './en';
+
+// PLAN-ketiranyu 4. lépés (2026-09-28): teljes felület-fordítás, az en.ts
+// minden kulcsával (a `Strings` típus ezt kikényszeríti: ha egy kulcs
+// hiányzik vagy a típusa eltér, a fájl nem fordul). Ez a felület nyelve az
+// es→en párban (spanyolból tanulsz angolul), tegező, természetes mexikói/
+// semleges spanyollal; a ¿/¡ jelek itt rendben vannak (ez felület-szöveg,
+// nem Kálmán nevében írt szöveg). Az `usage` blokk (célnyelvi toastok) a
+// Kimacha Play en-es korából változatlan, azt a `stringsFor('es')` olvassa.
+type Strings = typeof en;
+
+const es: Strings = {
+  onboarding: {
+    welcome: '¡Bienvenido a Kimacha! Gracias por usar la app, significa mucho.',
+    start: 'Empezar',
+  },
+  card: {
+    check: 'Comprobar',
+    correct: '¡Correcto!',
+    wrong: 'Incorrecto',
+  },
+  buttons: {
+    spelling: 'Ortografía',
+  },
+  done: {
+    streak: 'días seguidos',
+  },
+  tabs: {
+    settings: 'Ajustes',
+    grammar: 'Gramática',
+    stats: 'Estadísticas',
+    pcic: 'PCIC',
+  },
+  games: {
+    understood: 'Entendido',
+    moreLabel: 'Más',
+    correctFeedback: '¡Correcto!',
+    wrongFeedback: '¡Casi!',
+    grammarChoice: {
+      progress: (current: number, total: number) => `${current} / ${total}`,
+      markPrompt: (wordClass: string) => `Toca ${wordClass} en la oración.`,
+      wordClass: {
+        noun: 'SUSTANTIVO',
+        verb: 'VERBO',
+        adjective: 'ADJETIVO',
+        adverb: 'ADVERBIO',
+        article: 'ARTÍCULO',
+        pronoun: 'PRONOMBRE',
+        preposition: 'PREPOSICIÓN',
+      } as Record<string, string>,
+      markWrong: 'Esta no. Busca la palabra que cumple ese papel.',
+      whyQuestion: (target: string) => `¿Por qué «${target}»?`,
+    },
+  },
+  grammar: {
+    coverage: (done: number, written: number, planned: number) =>
+      `${done} lecciones terminadas · ${written} de ${planned} escritas`,
+    levelMeta: (done: number, topics: number, written: number) =>
+      `${done}/${topics} hechas · ${written} lecciones disponibles`,
+    yourLevel: 'estás aquí',
+    soon: 'próximamente',
+    coreTag: 'base',
+    corePlusTag: 'base+',
+    started: 'empezado',
+    notStarted: 'nuevo',
+    soonLong: 'Esta lección todavía no está escrita. Está en la lista, y el resto del nivel ya está abierto.',
+    footNote: 'Toda la gramática del idioma, de A1 a C1, en orden de enseñanza. Las lecciones marcadas "próximamente" están planeadas, pero todavía no escritas.',
+    ruleLabel: 'La regla',
+    examplesLabel: 'Ejemplos',
+    exceptionsLabel: 'Excepciones y casos especiales',
+    startChoice: (n: number) => `Oraciones (${n})`,
+    startMatch: (n: number) => `Relacionar (${n})`,
+    startForm: (n: number) => `Formas (${n})`,
+    startWhy: (n: number) => `¿Por qué? (${n})`,
+    backToRule: 'Leer la regla otra vez',
+    practiceAgain: 'Practicar otra vez',
+    nextTopic: 'Siguiente tema',
+    backToSyllabus: 'Volver al curso',
+    doneGood: 'Esa regla ya la dominas.',
+    doneAgain: 'Vale la pena leer la regla una vez más antes de seguir.',
+    readAloud: 'Leer en voz alta',
+    matchHint: 'Relaciona las palabras',
+    formHint: 'Escribe la forma correcta',
+    showTable: 'Tabla',
+    check: 'Comprobar',
+    startTransform: (n: number) => `Reescribir (${n})`,
+    startTransformRound: (n: number, total: number) => `Reescribir oraciones (${n} de ${total})`,
+    moreRound: (n: number) => `${n} más`,
+    rewriteTo: (tense: string) => `Reescribe en ${tense}`,
+    showTranslation: 'Mostrar traducción',
+    correct: 'Correcto',
+    correctAnswer: 'Respuesta correcta',
+    next: 'Siguiente',
+    accentHint: 'Se acepta sin acentos, los acentos que faltan se muestran',
+    lessonPercent: (n: number) => `Hasta ahora: ${n}% correcto`,
+    practiceTable: (n: number) => `Practicar la tabla · ${n} celdas`,
+    practiceWords: (n: number) => `Practicar las palabras · ${n} tarjetas`,
+    enComingSoon: 'La gramática inglesa llegará más adelante.',
+  },
+  settings: {
+    weeklyGoal: 'Objetivo semanal de estudio',
+    weeklyGoalHours: (h: string) => `${h} horas / semana`,
+    weeklyGoalDoneTag: '✓ LISTO',
+    missingVoice: (langs: string) => `⚠️ No hay voz instalada para: ${langs}. Descárgala en los ajustes de texto a voz del teléfono; hasta entonces la app se queda en silencio en ese idioma.`,
+    dailyNewLimit: 'Palabras nuevas al día',
+    dailyNewLimitWords: (n: string) => `${n} palabras / día`,
+    spellingPractice: (due: number, total: number) => `Práctica de ortografía · ${due} pendientes, ${total} en la lista`,
+    strictAccents: 'Los acentos cuentan',
+    strictAccentsHint: 'Un acento que falta (á, é, ñ) cuenta como error al escribir.',
+    articlePicker: 'Botones de artículo',
+    articlePickerHint: 'En las tarjetas de sustantivos en español eliges el/la/los/las en vez de escribirlo. ⊘ significa sin artículo.',
+    missedWordDelay: 'La palabra fallada vuelve después de',
+    missedWordDelaySeconds: (n: string) => `${n} s`,
+    learningDirection: 'Dirección de aprendizaje',
+    chooseDirection: 'Elige la dirección de aprendizaje',
+    directionEnEs: 'Inglés → Español',
+    directionEsEn: 'Español → Inglés',
+  },
+  backup: {
+    backup: 'Copia de seguridad',
+    restore: 'Restaurar',
+    confirmTitle: 'Restaurar',
+    confirmMessage: 'Esto sobrescribe tu progreso actual con el contenido de la copia de seguridad. ¿Estás seguro?',
+    confirmYes: 'Restaurar ahora',
+    doneTitle: '¡Restaurado!',
+    errorTitle: 'Error',
+    exportError: 'No se pudo crear la copia de seguridad.',
+    importError: 'Archivo de copia de seguridad inválido o dañado. Tus datos no cambiaron.',
+  },
+  mistakes: {
+    load: '📥 Cargar mis errores',
+    loaded: (sentences: number, words: number, drills: number) =>
+      `Cargado: ${sentences} oraciones, ${words} palabras, ${drills} ejercicios de gramática`,
+    entry: (n: number) => `📕 Mis errores (${n})`,
+    title: 'Mis errores',
+    practice: (n: number) => `Practicar mis errores (${n} pendientes)`,
+    empty: 'Todavía no hay errores cargados. Ajustes → Cargar mis errores.',
+    wrongWordsTitle: 'Palabras que fallaste',
+    reviewAgainTitle: 'Repasar otra vez',
+    noLesson: 'No hay lección en la app, la baraja lo practica',
+    doubtfulTitle: 'No está en la baraja (corrección incierta)',
+    youSaid: 'Dijiste:',
+    chipSentence: 'Oración',
+    chipWord: 'Palabra',
+    chipGrammar: 'Gramática',
+    allDone: 'Todo listo por ahora',
+  },
+  progress: {
+    wordsKnown: 'Palabras Conocidas',
+  },
+  header: {
+    levelProgress: (known: number, total: number) => `${known} / ${total} palabras`,
+  },
+  spelling: {
+    title: 'Práctica de Ortografía',
+    empty: 'No hay palabras pendientes',
+    totalInList: (n: number) => `${n} palabras en tu lista`,
+  },
+  feedback: {
+    button: 'Comentarios',
+    placeholder: 'Comparte tu opinión...',
+    send: 'Enviar',
+    cancel: 'Cancelar',
+    thanks: '¡Gracias!',
+  },
+  // Kimacha Play: single en-es pair (Kálmán, 2026-09-22). This is no longer a
+  // full UI translation, the hu/es/de translation files were cut. This file
+  // survives only because FB63/76/108/149 want the usage toasts (per-minute
+  // pill, milestones, daily greeting, midnight rollover) to speak the
+  // language being LEARNED, which for Kimacha Play is always Spanish.
+  // `lib/i18n/index.ts`'s `stringsFor()` reads this `usage` object. Content
+  // kept 1:1 with the pre-cut Spanish strings, nothing paraphrased.
   usage: {
     plusOneMinute: '¡+1 minuto, guau!',
     milestoneSession: '🔥 ¡Guau, {min} minutos seguidos!',
@@ -33,4 +197,98 @@ export default {
       '🌟 Ayer está hecho: {words} palabras, {min} minutos. Cada palabra es un ladrillo, y hoy también construiste.',
     ],
   },
+  stats: {
+    title: 'Estadísticas de Uso',
+    today: 'Hoy',
+    thisWeek: 'Esta Semana',
+    allTime: 'Total Histórico',
+    bestDay: 'Mejor Día',
+    daysActive: 'Días Activos',
+    minutes: (n: number) => `${n} min`,
+    last7Days: 'Últimos 7 Días',
+    weeklyGoal: 'Objetivo Semanal',
+    goalProgress: (done: string, goal: string) => `${done} / ${goal} horas`,
+    goalBehind: (left: string) => `⚠️ Te faltan ${left} horas para tu objetivo`,
+    goalReached: '🏆 ¡Objetivo semanal cumplido!',
+    noData: '¡Todavía no hay uso, ve a aprender algo!',
+    learningProgress: 'Progreso de Aprendizaje',
+    reviewsToday: 'Repasos de Hoy',
+    known21: 'Conocidas (21+ días)',
+    graduatedLabel: 'Aprendiendo → Dominadas',
+    knownAtLevel: (level: string, known: number) => `${level} ${known}`,
+    schedule: 'Calendario',
+    scheduleDueNow: 'Esperando ahora',
+    scheduleWaiting: (n: number) => `${n} palabras guardadas`,
+    scheduleToday: 'Más tarde hoy',
+    scheduleTomorrow: 'Mañana',
+    scheduleDays2to3: 'En 2-3 días',
+    scheduleDays4to7: 'En 4-7 días',
+    scheduleLater: 'En más de una semana',
+    scheduleWords: (n: number) => `${n} palabras`,
+    scheduleNext: (when: string) => `Próxima repetición: ${when}`,
+    scheduleNextToday: (time: string) => `hoy ${time}`,
+    scheduleNextTomorrow: (time: string) => `mañana ${time}`,
+    scheduleNextDays: (days: number) => `en ${days} días`,
+    scheduleEmpty: '¡Todavía no hay nada guardado, aprende algunas palabras!',
+  },
+  pcic: {
+    header: (due: number, newCount: number, doneToday: number, total: number) => `${total} palabras · pendientes ${due} · nuevas ${newCount} · hechas hoy ${doneToday}`,
+    badgeTotal: (n: number) => `${n} palabras`,
+    badgeDue: (n: number) => `pendientes ${n}`,
+    badgeNew: (n: number) => `nuevas ${n}`,
+    badgeDone: (n: number) => `hechas ${n}`,
+    badgeIntroducedToday: (words: number, sentences: number, budget: number) =>
+      `hoy: ${words} palabra${words === 1 ? '' : 's'} · ${sentences} oración${sentences === 1 ? '' : 'es'} / ${budget}`,
+    again: 'No lo sabía',
+    hard: 'Difícil',
+    good: 'Lo sabía',
+    easy: 'Fácil',
+    doneTitle: 'Listo por hoy',
+    resetConfirmTitle: 'Reiniciar progreso',
+    resetConfirmMessage: 'Esto borra todo el progreso de PCIC. ¿Estás seguro?',
+    resetConfirmYes: 'Reiniciar',
+    undo: 'Deshacer',
+    dontLearn: 'No aprender esto',
+    addToSpelling: '✎ Añadir a ortografía',
+    inSpellingList: '✓ En la lista de ortografía',
+    learningStep: (step: number, total: number) => `paso ${step}/${total}`,
+    newBadge: 'nueva',
+    moreNew: (n: number) => `+${n} palabras nuevas`,
+    tileAnswered: 'Respondidas',
+    tileNew: 'Nuevas',
+    tileAgain: 'Falladas',
+    introduced: (n: number, total: number) => `${n} / ${total} palabras presentadas`,
+    intervalToday: '<1 día',
+    intervalDays: (n: number) => `${n} días`,
+    chooseLevel: 'Elige el nivel',
+    next: (label: string) => `Siguiente → ${label}`,
+    accentForgiven: 'Falta el acento, se cuenta como correcto',
+  },
+  pos: {
+    noun: 'sustantivo',
+    verb: 'verbo',
+    adj: 'adjetivo',
+    adv: 'adverbio',
+    pron: 'pronombre',
+    prep: 'preposición',
+    num: 'número',
+    phrase: 'frase',
+    conj: 'conjunción',
+    prefix: 'prefijo',
+    suffix: 'sufijo',
+  },
+  tableDeck: {
+    chip: 'TABLA',
+    promptCaption: 'persona · verbo',
+    wordChip: 'PALABRA',
+    wordPromptCaption: 'significado',
+    promptCaptionEn: 'traducir al español',
+    progress: (done: number, total: number) => `${done} / ${total} hechas`,
+    completeTitle: (n: number) => `Las ${n} celdas hechas 🎉`,
+    startAgain: 'Empezar de nuevo',
+    harder: 'Más difícil: mezclado',
+    backToLesson: 'Volver a la lección',
+  },
 };
+
+export default es;

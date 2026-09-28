@@ -1,5 +1,7 @@
-// FB319/FB321: automatikus felolvasás a PCIC fülön. Mock-minta:
-// app/grammar/__tests__/learnWordsButton.test.tsx (db, router, i18n).
+// PLAN-ketiranyu 4. lépés (2026-09-28): a PCIC fül irány-tudatos lett. Ez a
+// teszt az es→en irányt fedi: a prompt a kiinduló (spanyol) mező, a válasz
+// (bírálás + felolvasás) a célnyelvi (angol) mező - a pcicSpeak.test.tsx
+// en→es esetének tükörképe. Mock-minta: app/(tabs)/__tests__/pcicSpeak.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -16,23 +18,20 @@ jest.mock('expo-router', () => ({
   },
 }));
 
-// FB350: useDockLift (a PCIC dokkolt sávja) most useSafeAreaInsets-et hív, ami
-// SafeAreaProvider nélkül dob; itt a mérete nem számít, csak ne dobjon.
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
 
-// Egy fix tétel, hogy a teszt ne a valódi PCIC-korpusztól függjön.
-// PLAN-play 10. lépés: az id "b1-" előtaggal, mert lib/pcicLevels.ts a
-// szint-szűrést az id-előtagból dönti el (a fül a B1 alap-szinten indul).
-const FIXTURE_ITEM = { id: 'b1-x1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
+// Ugyanaz a fixture-alak, mint pcicSpeak.test.tsx-ben (es/en mező egyaránt
+// kitöltve); az irány dönti el, melyik a prompt és melyik a válasz.
+const FIXTURE_ITEM = { id: 'a1-x1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
 jest.mock('@/data/pcic', () => ({
-  PCIC_LEVELS: ['B1'],
-  PCIC_VIEW_LEVELS: ['B1'],
-  LEVEL_LABELS: { B1: 'Intermediate' },
+  PCIC_LEVELS: ['A1'],
+  PCIC_VIEW_LEVELS: ['A1'],
+  LEVEL_LABELS: { A1: 'Beginner' },
   pcicItemsForLevel: () => [FIXTURE_ITEM],
   pcicItemsForViewLevel: () => [FIXTURE_ITEM],
-  findPcicItem: (id: string) => (id === 'b1-x1' ? FIXTURE_ITEM : undefined),
+  findPcicItem: (id: string) => (id === 'a1-x1' ? FIXTURE_ITEM : undefined),
   isPlusSentence: () => false,
   realLevelOfView: (level: string) => level,
   setPcicTarget: () => {},
@@ -55,28 +54,29 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: automatikus felolvasás (FB319/FB321)', () => {
+describe('PCIC fül: es→en irány (PLAN-ketiranyu 4. lépés)', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
+    await getDb().setOnboarding('es', 'en');
     mockSpeak.mockClear();
   });
 
-  it('új lap megjelenésekor angolul mondja ki a promptot', async () => {
+  it('új lap megjelenésekor a spanyol promptot mondja ki (a kiinduló nyelv)', async () => {
     render(<PcicScreen />);
     await flush();
 
-    expect(mockSpeak).toHaveBeenCalledWith('life', 'en-US');
+    expect(mockSpeak).toHaveBeenCalledWith('vida', 'es-MX');
   });
 
-  it('felfedéskor spanyolul mondja ki a helyes alakot', async () => {
+  it('felfedéskor angolul mondja ki a helyes (célnyelvi) alakot, "life"-ra bírál', async () => {
     const { UNSAFE_getByType, getByText } = render(<PcicScreen />);
     await flush();
     mockSpeak.mockClear();
 
-    fireEvent.changeText(UNSAFE_getByType(TextInput), 'vida');
+    fireEvent.changeText(UNSAFE_getByType(TextInput), 'life');
     fireEvent.press(getByText('✓ Check'));
     await flush();
 
-    expect(mockSpeak).toHaveBeenCalledWith('vida', 'es-MX');
+    expect(mockSpeak).toHaveBeenCalledWith('life', 'en-US');
   });
 });

@@ -1,27 +1,51 @@
 import en from './en';
 import es from './es';
 
-type Strings = typeof en;
+export type Strings = typeof en;
 
-const current: Strings = en;
+const LANGS: Record<string, Strings> = { en, es };
 
-// Kimacha Play: the UI is always English, regardless of the phone's locale
-// (Kálmán, 2026-09-22, "felület csak angol"). Kept as a function so the
-// existing call site (app/_layout.tsx, before splash hides) doesn't change.
+let current: Strings = en;
+let currentCode = 'en';
+
+// PLAN-ketiranyu 4. lépés (2026-09-28): a felület nyelve mostantól a pár
+// KIINDULÓ nyelve (onboarding.source), nem mindig angol; setLanguage() innentől
+// tényleg vált, nem no-op. Az app/_layout.tsx hívja a betöltéskor kapott
+// source-szal, app/onboarding.tsx a választáskor, a Settings irányváltó sora
+// a váltáskor.
 export function initI18n() {}
 
 export function t(): Strings {
   return current;
 }
 
-// Only one UI language exists now; kept so the onboarding/root-layout call
-// sites that pass the active pair's source don't need to change.
-export function setLanguage(_code: string) {}
+// Csak a két támogatott pár nyelvére vált (lib/languages.ts supportedPairs);
+// ismeretlen kódra angolra esik vissza, hogy a felület sose maradjon üresen.
+export function setLanguage(code: string) {
+  current = LANGS[code] ?? en;
+  currentCode = code;
+  listeners.forEach((fn) => fn());
+}
+
+export function currentLanguage(): string {
+  return currentCode;
+}
+
+// A Settings irányváltó sora ettől frissül azonnal (app/_layout.tsx erre
+// épített remount-kulccsal), hogy a tab-fülek felirata is azonnal váltson,
+// nem csak a fókuszban lévő képernyő.
+type Listener = () => void;
+const listeners = new Set<Listener>();
+
+export function subscribeLanguage(fn: Listener): () => void {
+  listeners.add(fn);
+  return () => listeners.delete(fn);
+}
 
 // FB63/76/108/149: the usage toasts (milestone, daily greeting, midnight
-// rollover) speak the language being LEARNED, not the UI language. Kimacha
-// Play only ever teaches Spanish, so this is the small Spanish `usage`
-// subset those toasts read, not a full UI translation (see lib/i18n/es.ts).
-export function stringsFor(_code: string): Pick<Strings, 'usage'> {
-  return es;
+// rollover) speak the language being LEARNED (the pair's target), not the UI
+// language. Now that both en-es and es-en exist, this reads whichever
+// language's `usage` block the caller asks for (the active pair's target).
+export function stringsFor(code: string): Pick<Strings, 'usage'> {
+  return LANGS[code] ?? es;
 }
