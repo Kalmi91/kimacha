@@ -19,11 +19,11 @@ import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 import { splitByLanguage, splitByMarkers } from '@/lib/mixedSpeech';
 import { speechLang } from '@/lib/languages';
 import GlossText from '@/components/games/GlossText';
-import GrammarDrill from '@/components/grammar/GrammarDrill';
+import GrammarDrill, { type RoundStats } from '@/components/grammar/GrammarDrill';
 import LessonBody from '@/components/grammar/LessonBody';
 import MoreBlocks from '@/components/grammar/MoreBlocks';
 import FeedbackButton from '@/components/FeedbackModal';
-import { BrutalBox, Card, Sticker } from '@/components/grammar/Brutal';
+import { BrutalBox, Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // One grammar lesson: the rule first, then the practice.
@@ -78,6 +78,11 @@ export default function GrammarLessonScreen() {
   // fajtánkénti darabszámainak összege, nem külön számított.
   const [kindAnswered, setKindAnswered] = useState<Partial<Record<GrammarKind, number>>>({});
   const [kindCorrect, setKindCorrect] = useState<Partial<Record<GrammarKind, number>>>({});
+  // NY24: a kör-vége képernyő adatai (csak memóriában): a drill statisztikája, a
+  // kör ELŐTTI kumulált %, és a streak-nap.
+  const [roundStats, setRoundStats] = useState<RoundStats | null>(null);
+  const [prevPct, setPrevPct] = useState<number | null>(null);
+  const [streak, setStreak] = useState(0);
 
   const load = useCallback(async () => {
     const db = getDb();
@@ -89,6 +94,7 @@ export default function GrammarLessonScreen() {
     setContentLang('en');
     const levelData = await db.getLevel();
     setLevel((levelData.level as Level) ?? 'A1');
+    setStreak((await db.getStreak())?.current_count ?? 0);
     const loadedLesson = lessonFor(target, String(topicId)) ?? null;
     setLesson(loadedLesson);
     if (loadedLesson) {
@@ -224,6 +230,7 @@ export default function GrammarLessonScreen() {
   };
 
   const finish = async (correct: number, total: number, roundItemIds?: string[]) => {
+    setPrevPct(lessonPercent(lessonAnswered, lessonCorrect));
     setScore({ correct, total });
     setPhase('done');
     // D3 (FB290): a sor kulcsa fajtánként külön (`${topic}:${kind}`), és csak
@@ -336,6 +343,7 @@ export default function GrammarLessonScreen() {
           kinds={[drillKind]}
           transformSeen={transformSeen}
           onItemChange={setDrillItemId}
+          onRoundStats={setRoundStats}
         />
         <FeedbackButton
           level={level}
@@ -354,6 +362,110 @@ export default function GrammarLessonScreen() {
     // FB328: a lecke MINDEN eddigi köréből számolt kumulált arány, nem csak
     // ennek a körnek a pontszáma (ami fentebb, `pct`).
     const cumulativePct = lessonPercent(lessonAnswered, lessonCorrect);
+    // NY24 (neo-brutalista, NYELVTAN.md "Neo-brutalista stílus" 3. képernyő): nagy
+    // helyes-arány a kitöltött dobozban + combo-matrica, 3 kis doboz, "practice
+    // this" a rontott mondattal, téma-progress szegmensekben, gombok.
+    if (g.brutal) {
+      const secs = roundStats?.seconds ?? 0;
+      const time = `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, '0')}`;
+      const miss = roundStats?.miss ?? null;
+      const missAt = miss ? miss.sentence.indexOf(miss.highlight) : -1;
+      const stat = (label: string, value: string, fill: 'paper' | 'b') => (
+        <BrutalBox fill={fill} style={styles.brutalStatWrap} boxStyle={styles.brutalStat}>
+          <Text style={[styles.brutalStatValue, { color: fill === 'b' ? g.onFill : g.ink }]}>{value}</Text>
+          <Text style={[styles.brutalStatLabel, { color: fill === 'b' ? g.onFill : g.mu }]}>{label}</Text>
+        </BrutalBox>
+      );
+      return (
+        <View style={[styles.container, { backgroundColor: g.bg }]}>
+          {header}
+          <ScrollView contentContainerStyle={styles.brutalDoneBody}>
+            <BrutalBox testID="grammar-score" fill="a" boxStyle={styles.brutalScoreBox}>
+              <Text style={[styles.brutalScore, { color: g.onFill }]}>
+                {score.correct}/{score.total}
+              </Text>
+              <Text style={[styles.brutalNote, { color: g.onFill }]}>{pct >= 80 ? s.grammar.doneGood : s.grammar.doneAgain}</Text>
+              {roundStats && roundStats.bestCombo >= 2 ? (
+                <View style={styles.brutalComboPos}>
+                  <Sticker testID="grammar-best-combo" label={s.grammar.comboLabel(roundStats.bestCombo)} fill="b" rotate={6} />
+                </View>
+              ) : null}
+            </BrutalBox>
+
+            <View style={styles.brutalStats}>
+              {stat(s.grammar.statCorrect, String(score.correct), 'paper')}
+              {stat(s.grammar.statTime, time, 'paper')}
+              {stat(s.grammar.statStreak, `🔥 ${streak}`, 'b')}
+            </View>
+
+            {cumulativePct !== null ? (
+              <BrutalBox boxStyle={styles.brutalProgressBox}>
+                <SegmentBar segments={8} filled={segmentsFilled(cumulativePct, 8)} />
+                <Text style={[styles.brutalStatLabel, { color: g.ink }]}>{s.grammar.progressChange(prevPct, cumulativePct)}</Text>
+                <Text testID="grammar-lesson-percent" style={[styles.brutalStatLabel, { color: g.mu }]}>
+                  {s.grammar.lessonPercent(cumulativePct)}
+                </Text>
+              </BrutalBox>
+            ) : null}
+
+            {miss ? (
+              <BrutalBox testID="grammar-practice-this" boxStyle={styles.brutalProgressBox}>
+                <Text style={[styles.brutalStatLabel, { color: g.mu }]}>{s.grammar.practiceThis}</Text>
+                <Text style={[styles.brutalMiss, { color: g.ink }]}>
+                  {missAt >= 0 ? miss.sentence.slice(0, missAt) : miss.sentence}
+                  {missAt >= 0 ? (
+                    <Text style={{ backgroundColor: g.b, color: g.onFill }}>{miss.highlight}</Text>
+                  ) : null}
+                  {missAt >= 0 ? miss.sentence.slice(missAt + miss.highlight.length) : ''}
+                </Text>
+              </BrutalBox>
+            ) : null}
+
+            {next ? (
+              <BrutalBox
+                testID="grammar-next-topic"
+                fill="a"
+                style={styles.brutalBtnWrap}
+                boxStyle={styles.brutalBtn}
+                onPress={() => router.replace(`/grammar/${next.id}` as never)}
+              >
+                <Text style={[styles.brutalBtnText, { color: g.onFill }]}>{s.grammar.nextTopic} →</Text>
+              </BrutalBox>
+            ) : null}
+            <BrutalBox style={styles.brutalBtnWrap} boxStyle={styles.brutalBtn} onPress={() => setPhase('lesson')}>
+              <Text style={[styles.brutalBtnText, { color: g.ink }]}>{s.grammar.backToRule}</Text>
+            </BrutalBox>
+            {drillKind === 'transform' && kindCounts.transform > TRANSFORM_ROUND_SIZE ? (
+              <BrutalBox
+                testID="grammar-more-round"
+                fill="a"
+                style={styles.brutalBtnWrap}
+                boxStyle={styles.brutalBtn}
+                onPress={() => {
+                  setScore(null);
+                  setPhase('drill');
+                }}
+              >
+                <Text style={[styles.brutalBtnText, { color: g.onFill }]}>{s.grammar.moreRound(TRANSFORM_ROUND_SIZE)}</Text>
+              </BrutalBox>
+            ) : null}
+            <Pressable
+              testID="grammar-practice-again"
+              style={styles.ghostBtn}
+              onPress={() => {
+                setScore(null);
+                setPhase('drill');
+              }}
+            >
+              <Text style={[styles.brutalUnderline, { color: g.ink }]}>{s.grammar.oneMoreRound}</Text>
+            </Pressable>
+            <Pressable style={styles.ghostBtn} onPress={() => router.back()}>
+              <Text style={[styles.ghostBtnText, { color: g.mu }]}>{s.grammar.backToSyllabus}</Text>
+            </Pressable>
+          </ScrollView>
+        </View>
+      );
+    }
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
@@ -615,6 +727,19 @@ const styles = StyleSheet.create({
   brutalBtnWrap: { marginTop: 10, alignSelf: 'stretch' },
   brutalBtn: { paddingVertical: 14, alignItems: 'center' },
   brutalBtnText: { fontSize: 16, fontWeight: '500', textTransform: 'uppercase' },
+  brutalDoneBody: { padding: 16, paddingBottom: 60, gap: 12 },
+  brutalScoreBox: { padding: 24, alignItems: 'center', gap: 6 },
+  brutalScore: { fontSize: 56, fontWeight: '500' },
+  brutalNote: { fontSize: 13, fontWeight: '500', textAlign: 'center' },
+  brutalComboPos: { position: 'absolute', top: -14, right: -8 },
+  brutalStats: { flexDirection: 'row', gap: 10 },
+  brutalStatWrap: { flex: 1 },
+  brutalStat: { paddingVertical: 12, alignItems: 'center', gap: 2 },
+  brutalStatValue: { fontSize: 20, fontWeight: '500' },
+  brutalStatLabel: { fontSize: 11, fontWeight: '500', textTransform: 'uppercase' },
+  brutalProgressBox: { padding: 14, gap: 8 },
+  brutalMiss: { fontSize: 18, lineHeight: 26, fontWeight: '500' },
+  brutalUnderline: { fontSize: 14, fontWeight: '500', textTransform: 'uppercase', textDecorationLine: 'underline' },
   ghostBtn: { marginTop: 12, padding: 8 },
   ghostBtnText: { fontSize: 14 },
   empty: { fontSize: 15, textAlign: 'center', marginTop: 60, paddingHorizontal: 30, lineHeight: 22 },
