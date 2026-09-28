@@ -8,7 +8,7 @@ jest.mock('expo-speech', () => ({
 
 import { Platform } from 'react-native';
 import * as Speech from 'expo-speech';
-import { loadVoices, hasVoiceFor, speak, missingVoiceLanguages, resetVoiceCache, voiceIdFor, speechTag } from '@/lib/speech';
+import { loadVoices, hasVoiceFor, speak, speakSequence, missingVoiceLanguages, resetVoiceCache, voiceIdFor, speechTag } from '@/lib/speech';
 
 const mocked = Speech as jest.Mocked<typeof Speech>;
 
@@ -213,5 +213,55 @@ describe('final consonant clipping on android', () => {
     } finally {
       (Platform as { OS: string }).OS = os;
     }
+  });
+});
+
+// Kálmán 2026-09-28: a web-build headless böngészős tesztje ne szóljon a gépen.
+describe('headless browser on web', () => {
+  const onWebWithUserAgent = async (userAgent: string, fn: () => Promise<void>) => {
+    const os = Platform.OS;
+    const nav = Object.getOwnPropertyDescriptor(globalThis, 'navigator');
+    (Platform as { OS: string }).OS = 'web';
+    Object.defineProperty(globalThis, 'navigator', { value: { userAgent }, configurable: true });
+    try {
+      await fn();
+    } finally {
+      (Platform as { OS: string }).OS = os;
+      if (nav) Object.defineProperty(globalThis, 'navigator', nav);
+      else delete (globalThis as { navigator?: unknown }).navigator;
+    }
+  };
+  const tick = () => new Promise((resolve) => setTimeout(resolve, 0));
+  const HEADLESS = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36';
+  const CHROME = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
+
+  it('stays silent in headless Chrome but still reports the word as done', async () => {
+    await withVoices(['es-MX']);
+    await onWebWithUserAgent(HEADLESS, async () => {
+      const onDone = jest.fn();
+      speak('hola', 'es-MX', { onDone });
+      await tick();
+      expect(mocked.speak).not.toHaveBeenCalled();
+      expect(onDone).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  it('stays silent for a mixed-language run and still ends it', async () => {
+    await withVoices(['es-MX', 'hu-HU']);
+    await onWebWithUserAgent(HEADLESS, async () => {
+      const onEnd = jest.fn();
+      speakSequence([{ text: 'hola', locale: 'es-MX' }, { text: 'szia', locale: 'hu-HU' }], onEnd);
+      await tick();
+      expect(mocked.speak).not.toHaveBeenCalled();
+      expect(onEnd).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  it('still speaks in a normal desktop Chrome', async () => {
+    await withVoices(['es-MX']);
+    await onWebWithUserAgent(CHROME, async () => {
+      speak('hola', 'es-MX');
+      expect(mocked.speak).toHaveBeenCalledTimes(1);
+    });
   });
 });
