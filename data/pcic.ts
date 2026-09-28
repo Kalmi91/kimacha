@@ -10,9 +10,11 @@
 import type { Pos } from '@/lib/pcicPos';
 import { getWordsForLevel, type WordEntry } from '@/data/words';
 // PLAN-ketiranyu 5. lépés (D-A döntés, 2026-09-26: "a", a régi angol-célnyelvű
-// ág kész, ellenőrzött kártyái, ~0 token). Csak ez a modul importálja: az A1
-// nézet az első 50 kártyáját adja, e<id> id-térrel (lásd itemsFromWords).
+// ág kész, ellenőrzött kártyái, ~0 token). Csak ez a modul importálja, e<id>
+// id-térrel (lásd itemsFromWords). PLAN-esen: A1 = a0 + a1, A2 = a2.
 import enA0 from '@/data/words/en/a0.json';
+import enA1 from '@/data/words/en/a1.json';
+import enA2 from '@/data/words/en/a2.json';
 
 export type PcicKind = 'word' | 'phrase' | 'sentence' | 'pattern';
 export type PcicLevel = 'A1' | 'A2' | 'B1' | 'B2';
@@ -102,14 +104,31 @@ const ITEMS_BY_LEVEL_ES: Record<PcicLevel, PcicItem[]> = {
   B2: itemsFromWords(getWordsForLevel('B2'), 'w'),
 };
 
-// PLAN-ketiranyu 5. lépés: az es→en irány A1 paklija a data/words/en/a0.json
-// első 50 kártyájából épül (e<id> id-tér, D-A döntés: (a) a kész, ellenőrzött
-// angol-célnyelvű ág, nem új lista). A2/B1/B2 üres marad (nincs rájuk terv),
-// a szint-választók a meglévő "0 tétel = nem kínáljuk fel" szabállyal
-// automatikusan A2/B1/B2 nélkül maradnak.
+// PLAN-esen (2026-09-28): az es→en irány A1 paklija = data/words/en/a0.json +
+// a1.json (külön A0 nincs), A2 = a2.json (e<id> id-tér, a régi első 50 id-je
+// nem változik). Ugyanaz az angol szó csak egyszer, az első előfordulásánál
+// (alacsonyabb szinten) marad. B1/B2 üres (nincs rájuk tartalom), a
+// szint-választók a "0 tétel = nem kínáljuk fel" szabállyal kihagyják.
+function dedupeByEn(levels: WordEntry[][]): WordEntry[][] {
+  const seen = new Set<string>();
+  return levels.map((entries) =>
+    entries.filter((w) => {
+      const key = w.en.trim().toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    }),
+  );
+}
+
+const [EN_A1_WORDS, EN_A2_WORDS] = dedupeByEn([
+  [...(enA0 as WordEntry[]), ...(enA1 as WordEntry[])],
+  enA2 as WordEntry[],
+]);
+
 const ITEMS_BY_LEVEL_EN: Record<PcicLevel, PcicItem[]> = {
-  A1: itemsFromWords((enA0 as WordEntry[]).slice(0, 50), 'e'),
-  A2: [],
+  A1: itemsFromWords(EN_A1_WORDS, 'e'),
+  A2: itemsFromWords(EN_A2_WORDS, 'e'),
   B1: [],
   B2: [],
 };
