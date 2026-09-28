@@ -113,7 +113,7 @@ export default {
     enComingSoon: 'English grammar lessons are coming later.',
   },
   settings: {
-    // PLAN-ketiranyu 4. lépés javítás (orkesztrátor visszajelzés, 3. pont):
+    // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont):
     // a téma-választó gombok (korábban settings.tsx-ben angolra égetve).
     themeAuto: 'Auto',
     themeLight: 'Light',
@@ -297,7 +297,7 @@ export default {
     chooseLevel: 'Choose level',
     next: (label: string) => `Next → ${label}`,
     accentForgiven: 'Missing accent, counted as correct',
-    // PLAN-ketiranyu 4. lépés javítás (orkesztrátor visszajelzés, 3. pont):
+    // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont):
     // a szint-választó lap feliratai és sorai (korábban data/pcic.ts
     // LEVEL_LABELS-ben és components/LevelRow.tsx-ben angolra égetve).
     levelBeginner: 'Beginner',

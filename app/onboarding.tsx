@@ -6,7 +6,7 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb } from '@/lib/database';
 import { t, setLanguage } from '@/lib/i18n';
-import { PCIC_LEVELS, pcicItemsForLevel, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
+import { PCIC_VIEW_LEVELS, pcicItemsForLevel, pcicItemsForViewLevel, realLevelOfView, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import LevelRow from '@/components/LevelRow';
 
 // PLAN-ketiranyu 4. lépés (2026-09-28, jóváhagyott vázlat 1-5. pont): az
@@ -68,8 +68,12 @@ export default function OnboardingScreen() {
     // 3. pont: en-es-ben A1/A2/B1 (a meglévő "0 tétel = ne kínáljuk fel"
     // szűrő); es-en-ben csak A1, mindig felkínálva, akkor is, ha még üres (az
     // 50 angol szó az 5. lépésben jön) - ilyenkor a sor alatt egy mondat mondja ki.
-    const levels: PcicLevel[] = target === 'en' ? ['A1'] : PCIC_LEVELS.filter((lvl) => pcicItemsForLevel(lvl).length > 0);
-    // PLAN-ketiranyu 4. lépés javítás (orkesztrátor visszajelzés, 3. pont): a
+    // 2026-09-28 review, 2. pont: en-es-ben a választható nézet-szintek
+    // (A1/A2/B1, a B2 rejtett - PLAN-ketiranyu 2. lépés), nem a nyers PCIC_LEVELS.
+    const levels: PcicLevel[] = target === 'en'
+      ? ['A1']
+      : PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForViewLevel(lvl).length > 0).map(realLevelOfView);
+    // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont): a
     // feliratok a felület nyelvén (data/pcic.ts LEVEL_LABELS angolra égetve volt).
     const levelLabels: Record<PcicLevel, string> = {
       A1: s.pcic.levelBeginner,

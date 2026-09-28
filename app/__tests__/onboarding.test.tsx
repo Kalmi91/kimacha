@@ -42,8 +42,11 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
     expect(getByText('Choose level')).toBeTruthy();
     expect(getByText('A1')).toBeTruthy();
     expect(getByText('Beginner')).toBeTruthy();
-    expect(getByText('B2')).toBeTruthy();
-    expect(getByText('Upper intermediate')).toBeTruthy();
+    expect(getByText('A2')).toBeTruthy();
+    expect(getByText('B1')).toBeTruthy();
+    // 2026-09-28 review, 2. pont: a B2 rejtett (PCIC_VIEW_LEVELS = A1/A2/B1).
+    expect(queryByText('B2')).toBeNull();
+    expect(queryByText('Upper intermediate')).toBeNull();
   });
 
   it('en→es szint kiválasztása menti az onboardingot + a PCIC szintet, és a fülekre navigál', async () => {
