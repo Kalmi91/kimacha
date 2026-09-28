@@ -146,6 +146,7 @@ const TABLE_COLUMNS: Record<BackupTable, Record<string, ColumnSpec>> = {
     last_sync_date: { type: 'string', nullable: true },
     last_open_date: { type: 'string', nullable: true },
     status_bar_tint: { type: 'number', nullable: true },
+    grammar_palette: { type: 'string', nullable: true },
   },
 };
 

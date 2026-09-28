@@ -104,7 +104,7 @@ function RootLayoutNav() {
   }, []);
 
   return (
-    <NavThemeProvider value={theme === 'dark' ? DarkTheme : DefaultTheme}>
+    <NavThemeProvider value={theme !== 'light' ? DarkTheme : DefaultTheme}>
       <View
         style={{ flex: 1, paddingBottom: gutter }}
         onStartShouldSetResponderCapture={() => {
