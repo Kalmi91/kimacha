@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
@@ -62,9 +62,22 @@ interface Props {
   transformSeen?: Record<string, number>;
   /** FB340-342/345/356: a feedback-kontextushoz, az éppen látható item id-ja. */
   onItemChange?: (itemId: string) => void;
+  /** NY24: a kör statisztikája a kör végén (onFinish ELŐTT): legjobb combo, idő, az első rontott mondat. */
+  onRoundStats?: (stats: RoundStats) => void;
+}
+
+// NY24: a kör-vége képernyő adatai; csak memóriában, nincs DB-írás.
+export interface RoundStats {
+  bestCombo: number;
+  seconds: number;
+  /** Az első rontott mondat a helyes alakkal (csak gap/mark és transform tételnél). */
+  miss: { sentence: string; highlight: string } | null;
 }
 
 const CHOICE_ONLY: readonly GrammarKind[] = ['choice'];
+
+// NY24: a kör hossza másodpercben (külön függvény, hogy ne render-időben hívjuk a Date.now-t).
+const secondsSince = (startedAt: number) => Math.max(0, Math.round((Date.now() - startedAt) / 1000));
 
 function findFormTable(topic: GrammarTopicData, tableId: string): Extract<LessonBlock, { kind: 'table' }> | undefined {
   if (!isLessonV2(topic)) return undefined;
@@ -486,7 +499,7 @@ function TransformDrillItem({
   );
 }
 
-export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, kinds = CHOICE_ONLY, transformSeen, onItemChange }: Props) {
+export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, kinds = CHOICE_ONLY, transformSeen, onItemChange, onRoundStats }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -515,6 +528,16 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // NY22: egymás utáni helyes válaszok a körön belül, csak memóriában (nincs
   // DB-írás); hibánál nullázódik, "x2"-től látszik a combo-matrica.
   const [combo, setCombo] = useState(0);
+  const comboRef = useRef(0);
+  const bestComboRef = useRef(0);
+  const missRef = useRef<RoundStats['miss']>(null);
+  const [startedAt] = useState(() => Date.now());
+  const noteResult = (wasCorrect: boolean, miss?: RoundStats['miss']) => {
+    comboRef.current = wasCorrect ? comboRef.current + 1 : 0;
+    bestComboRef.current = Math.max(bestComboRef.current, comboRef.current);
+    setCombo(comboRef.current);
+    if (!wasCorrect && miss && !missRef.current) missRef.current = miss;
+  };
   // NY3: a Beállítások ékezet-szigor kapcsolója, egyszer lekérve, csak ha a
   // körben van transform tétel (a többi ágnak nincs rá szüksége).
   const [strictAccents, setStrictAccents] = useState(false);
@@ -545,6 +568,11 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     // szülő ebből számolja a `seen` térképet); a többi ág a korábbi
     // 2-argumentumos hívást kapja, hogy a meglévő onFinish-tesztek
     // (toHaveBeenCalledWith(correct, total)) ne törjenek.
+    onRoundStats?.({
+      bestCombo: bestComboRef.current,
+      seconds: secondsSince(startedAt),
+      miss: missRef.current,
+    });
     if (useTransformRounds) {
       onFinish(finalCorrectCount, round.length, round.map((r) => r.item.id));
     } else {
@@ -560,7 +588,12 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // so correctCount's state update has not landed yet; the final tally is
   // computed locally instead of trusted from the (possibly stale) closure.
   const completeItem = (wasCorrect: boolean) => {
-    setCombo((c) => (wasCorrect ? c + 1 : 0));
+    noteResult(
+      wasCorrect,
+      isTransformItem(roundItem.item)
+        ? { sentence: roundItem.item.answer, highlight: roundItem.item.answer }
+        : undefined
+    );
     const finalCount = wasCorrect ? correctCount + 1 : correctCount;
     if (wasCorrect) setCorrectCount(finalCount);
     advance(finalCount);
@@ -652,7 +685,15 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     if (answered) return;
     setSelected(optIdx);
     if (optIdx === current.correctIndex) setCorrectCount((c) => c + 1);
-    setCombo((c) => (optIdx === current.correctIndex ? c + 1 : 0));
+    noteResult(
+      optIdx === current.correctIndex,
+      marking
+        ? { sentence: (current.item as GrammarMarkItem).sentence, highlight: current.options[current.correctIndex] }
+        : {
+            sentence: current.item.sentence.replace('___', current.options[current.correctIndex]),
+            highlight: current.options[current.correctIndex],
+          }
+    );
   };
 
   // NY3: a jelvény csak a gap-ágon (choice) jelenik meg, a jelölős tételnek

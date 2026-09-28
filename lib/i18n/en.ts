@@ -76,6 +76,13 @@ export default {
     comboLabel: (n: number) => `combo x${n}`,
     perfect: 'perfect!',
     nextArrow: 'next →',
+    // NY24: brutalist round end.
+    statCorrect: 'correct',
+    statTime: 'time',
+    statStreak: 'streak',
+    practiceThis: 'practice this',
+    progressChange: (from: number | null, to: number) => (from === null ? `${to}%` : `${from}% → ${to}%`),
+    oneMoreRound: 'one more round',
     soonLong: 'This lesson has not been written yet. It is on the list, and the rest of the level is already open.',
     footNote: 'The whole grammar of the language, A1 to C1, in teaching order. Lessons marked "coming" are planned, not written yet.',
     ruleLabel: 'The rule',
