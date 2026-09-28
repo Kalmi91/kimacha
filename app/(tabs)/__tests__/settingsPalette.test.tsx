@@ -52,12 +52,12 @@ describe('Beállítások: színválasztó (NY12)', () => {
       expect(getByTestId(`palette-${id}`)).toBeTruthy();
     }
     expect(getByText('Lime + pink')).toBeTruthy();
-    expect(ctx.grammarPalette).toBe('electric');
+    expect(ctx.grammarPalette).toBe('brand');
 
     fireEvent.press(getByTestId('palette-cyan'));
     await flush();
     expect(ctx.grammarPalette).toBe('cyan');
-    expect(ctx.theme).toBe('cyan');
+    expect(ctx.theme).toMatch(/^cyan-(light|dark)$/);
     expect(await getDb().getGrammarPalette()).toBe('cyan');
 
     fireEvent.press(getByTestId('palette-classic'));

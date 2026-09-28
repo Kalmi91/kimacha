@@ -5,7 +5,7 @@ import { File, Paths } from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import * as DocumentPicker from 'expo-document-picker';
 import Colors from '@/constants/Colors';
-import { NEON_PALETTES, type GrammarPaletteId } from '@/constants/GrammarPalettes';
+import { PALETTE_FILLS, type GrammarPaletteId } from '@/constants/GrammarPalettes';
 import { useTheme } from '@/lib/ThemeContext';
 import { t, setLanguage, notifyLanguageChange } from '@/lib/i18n';
 import { type Level } from '@/data/words';
@@ -181,9 +181,9 @@ export default function SettingsScreen() {
 
   // NY12: color palettes, two dots (accent + second color) and the name.
   const paletteOptions: { label: string; value: GrammarPaletteId }[] = [
+    { label: s.settings.paletteBrand, value: 'brand' },
     { label: s.settings.paletteElectric, value: 'electric' },
     { label: s.settings.paletteLime, value: 'lime' },
-    { label: s.settings.paletteBrand, value: 'brand' },
     { label: s.settings.paletteCyan, value: 'cyan' },
     { label: s.settings.paletteOrange, value: 'orange' },
     { label: s.settings.paletteClassic, value: 'classic' },
@@ -191,7 +191,7 @@ export default function SettingsScreen() {
   const paletteDots = (id: GrammarPaletteId): [string, string] =>
     id === 'classic'
       ? [Colors.light.tint, Colors.light.accent]
-      : [NEON_PALETTES[id].a, NEON_PALETTES[id].b];
+      : [PALETTE_FILLS[id].a, PALETTE_FILLS[id].b];
 
   // RN-web Alert is a no-op, so web falls back to the browser dialogs.
   const notify = (title: string, message?: string) => {
@@ -323,7 +323,7 @@ export default function SettingsScreen() {
               style={[
                 styles.option,
                 styles.paletteOption,
-                { backgroundColor: selected ? colors.border : colors.card, borderColor: selected ? colors.tint : 'transparent' },
+                { backgroundColor: colors.card, borderColor: selected ? colors.text : 'transparent' },
               ]}
               onPress={() => setGrammarPalette(opt.value)}
             >
@@ -630,6 +630,8 @@ const styles = StyleSheet.create({
     width: 12,
     height: 12,
     borderRadius: 6,
+    borderWidth: 1,
+    borderColor: '#111111',
   },
   sectionHint: {
     fontSize: 12,

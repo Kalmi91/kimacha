@@ -7,6 +7,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import 'react-native-reanimated';
 
 import { bottomGutter } from '@/lib/bottomGutter';
+import { isDarkTheme } from '@/constants/Colors';
 import { getDb } from '@/lib/database';
 import { initI18n, setLanguage, subscribeLanguage } from '@/lib/i18n';
 import { setPcicTarget, type PcicTarget } from '@/data/pcic';
@@ -104,7 +105,7 @@ function RootLayoutNav() {
   }, []);
 
   return (
-    <NavThemeProvider value={theme !== 'light' ? DarkTheme : DefaultTheme}>
+    <NavThemeProvider value={isDarkTheme(theme) ? DarkTheme : DefaultTheme}>
       <View
         style={{ flex: 1, paddingBottom: gutter }}
         onStartShouldSetResponderCapture={() => {
