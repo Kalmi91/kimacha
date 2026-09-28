@@ -122,6 +122,30 @@ export function Sticker({
   );
 }
 
+// Lecke-kártya: brutalista palettán BrutalBox (paper vagy b kitöltéssel), classic
+// paletta esetén a mai sima kártya (classicStyle + a paper = mai card szín).
+export function Card({
+  children,
+  fill = 'paper',
+  style,
+  classicStyle,
+}: {
+  children?: ReactNode;
+  fill?: BrutalFill;
+  style?: StyleProp<ViewStyle>;
+  classicStyle?: StyleProp<ViewStyle>;
+}) {
+  const g = useGrammarColors();
+  if (g.brutal) {
+    return (
+      <BrutalBox fill={fill} style={style} boxStyle={styles.card}>
+        {children}
+      </BrutalBox>
+    );
+  }
+  return <View style={[{ backgroundColor: g.paper }, classicStyle, style]}>{children}</View>;
+}
+
 // Hány blokk legyen kitöltve a szegmentált sávban egy 0-100 százalékhoz.
 export function segmentsFilled(percent: number, segments: number): number {
   return Math.max(0, Math.min(segments, Math.round((percent / 100) * segments)));
@@ -157,6 +181,7 @@ export function SegmentBar({
 }
 
 const styles = StyleSheet.create({
+  card: { padding: 14, gap: 6 },
   sticker: {
     alignSelf: 'flex-start',
     borderWidth: 2,

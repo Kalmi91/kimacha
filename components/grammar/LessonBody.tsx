@@ -2,6 +2,8 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import Colors, { isDarkTheme } from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
+import { Card } from '@/components/grammar/Brutal';
 import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import type { ExamplePair, Lang4, LessonBlock } from '@/lib/grammar/lessonTypes';
@@ -56,6 +58,7 @@ function ConjugationTable({ header, rows, contentLang, colors, isDark }: {
   colors: (typeof Colors)['light'];
   isDark: boolean;
 }) {
+  const g = useGrammarColors();
   const verbHeaders = header.slice(1);
   // FB381: ha egyetlen alak sem bontható tisztán tőre+végződésre, nincs közös
   // alap a táblában, a tő/végződés bontásnak nincs értelme (rendhagyó); az
@@ -84,7 +87,7 @@ function ConjugationTable({ header, rows, contentLang, colors, isDark }: {
         const person = row[0];
         const gloss = personGloss(person, contentLang);
         return (
-          <View key={ri} style={[styles.pblock, { backgroundColor: colors.tabIconDefault + '14' }]}>
+          <Card key={ri} classicStyle={[styles.pblock, { backgroundColor: colors.tabIconDefault + '14' }]}>
             <View style={styles.pblockWho}>
               <Text style={[styles.pblockPerson, { color: colors.text }]}>{person}</Text>
               {gloss ? <Text style={[styles.pblockGloss, { color: colors.tabIconDefault }]}>{gloss}</Text> : null}
@@ -97,7 +100,11 @@ function ConjugationTable({ header, rows, contentLang, colors, isDark }: {
                 return (
                   <View
                     key={ci}
-                    style={[styles.chip, { backgroundColor: colors.card, borderColor: colors.tabIconDefault + '55' }]}
+                    style={[
+                      styles.chip,
+                      { backgroundColor: colors.card, borderColor: colors.tabIconDefault + '55' },
+                      g.brutal && { borderRadius: 0, borderWidth: 2, borderColor: g.ink },
+                    ]}
                   >
                     {split ? (
                       <>
@@ -111,7 +118,7 @@ function ConjugationTable({ header, rows, contentLang, colors, isDark }: {
                 );
               })}
             </View>
-          </View>
+          </Card>
         );
       })}
     </View>
@@ -128,12 +135,19 @@ function GridTable({ header, rows, contentLang, colors, scroll }: {
   colors: (typeof Colors)['light'];
   scroll: boolean;
 }) {
+  const g = useGrammarColors();
   const cellStyle = scroll ? styles.gridCellWide : styles.gridCellFlex;
   const grid = (
-    <View style={[styles.grid, { borderColor: colors.tabIconDefault + '55' }]}>
-      <View style={[styles.gridRow, { backgroundColor: colors.tint + '22' }]}>
+    <View
+      style={[
+        styles.grid,
+        { borderColor: colors.tabIconDefault + '55' },
+        g.brutal && { borderWidth: 2, borderColor: g.ink, borderRadius: 0 },
+      ]}
+    >
+      <View style={[styles.gridRow, { backgroundColor: g.brutal ? g.a : colors.tint + '22' }]}>
         {header.map((cell, ci) => (
-          <Text key={ci} style={[styles.gridCell, cellStyle, styles.gridHeaderCell, { color: colors.text }]}>
+          <Text key={ci} style={[styles.gridCell, cellStyle, styles.gridHeaderCell, { color: g.brutal ? g.onFill : colors.text }]}>
             {cell[contentLang] ?? cell.en}
           </Text>
         ))}
@@ -156,6 +170,10 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
   const { theme } = useTheme();
   const colors = Colors[theme];
   const isDark = isDarkTheme(theme);
+  const g = useGrammarColors();
+  // NY23: brutalista palettán a címek ink színűek (a lime / cián kitöltés
+  // papíron nem olvasható szövegnek).
+  const titleColor = g.brutal ? g.ink : colors.tint;
 
   return (
     <View style={styles.body}>
@@ -170,9 +188,9 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
 
         if (block.kind === 'tip') {
           return (
-            <View key={i} style={[styles.tipCard, { backgroundColor: colors.card }]}>
-              <Text style={[styles.tipText, { color: colors.text }]}>💡 {block.text[contentLang] ?? block.text.en}</Text>
-            </View>
+            <Card key={i} fill="b" classicStyle={styles.tipCard}>
+              <Text style={[styles.tipText, { color: g.brutal ? g.onFill : colors.text }]}>💡 {block.text[contentLang] ?? block.text.en}</Text>
+            </Card>
           );
         }
 
@@ -181,10 +199,10 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
           return (
             <View key={i} style={styles.section}>
               {block.title ? (
-                <Text style={[styles.sectionTitle, { color: colors.tint }]}>{block.title[contentLang] ?? block.title.en}</Text>
+                <Text style={[styles.sectionTitle, { color: titleColor }]}>{block.title[contentLang] ?? block.title.en}</Text>
               ) : null}
               {points.map((point, pi) => (
-                <View key={pi} style={[styles.card, { backgroundColor: colors.card }]}>
+                <Card key={pi} classicStyle={styles.card}>
                   <Text style={[styles.pointText, { color: colors.text }]}>
                     {block.kind === 'usage' ? `${pi + 1}. ` : '• '}
                     {point.text[contentLang] ?? point.text.en}
@@ -192,7 +210,7 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
                   {point.examples.map((ex, ei) => (
                     <ExampleRow key={ei} ex={ex} contentLang={contentLang} learnedLang={learnedLang} colors={colors} />
                   ))}
-                </View>
+                </Card>
               ))}
             </View>
           );
@@ -202,13 +220,13 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
           return (
             <View key={i} style={styles.section}>
               {block.title ? (
-                <Text style={[styles.sectionTitle, { color: colors.tint }]}>{block.title[contentLang] ?? block.title.en}</Text>
+                <Text style={[styles.sectionTitle, { color: titleColor }]}>{block.title[contentLang] ?? block.title.en}</Text>
               ) : null}
-              <View style={[styles.card, { backgroundColor: colors.card }]}>
+              <Card classicStyle={styles.card}>
                 {block.examples.map((ex, ei) => (
                   <ExampleRow key={ei} ex={ex} contentLang={contentLang} learnedLang={learnedLang} colors={colors} />
                 ))}
-              </View>
+              </Card>
             </View>
           );
         }
@@ -217,7 +235,7 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
           const conjugation = isConjugationTable(block.header, block.rows);
           return (
             <View key={i} style={styles.section} testID={`table-${block.id}`}>
-              <Text style={[styles.sectionTitle, { color: colors.tint }]}>{block.title[contentLang] ?? block.title.en}</Text>
+              <Text style={[styles.sectionTitle, { color: titleColor }]}>{block.title[contentLang] ?? block.title.en}</Text>
               {conjugation ? (
                 <ConjugationTable
                   header={block.header}
@@ -245,10 +263,10 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
           return (
             <View key={i} style={styles.section}>
               {block.title ? (
-                <Text style={[styles.sectionTitle, { color: colors.tint }]}>{block.title[contentLang] ?? block.title.en}</Text>
+                <Text style={[styles.sectionTitle, { color: titleColor }]}>{block.title[contentLang] ?? block.title.en}</Text>
               ) : null}
               {block.pairs.map((pair, pi) => (
-                <View key={pi} style={[styles.card, { backgroundColor: colors.card }]}>
+                <Card key={pi} classicStyle={styles.card}>
                   <View style={styles.contrastRow}>
                     <Text style={[styles.contrastSide, { color: colors.text }]}>{pair.a}</Text>
                     <Text style={[styles.contrastVs, { color: colors.tabIconDefault }]}>·</Text>
@@ -258,7 +276,7 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
                   {pair.examples.map((ex, ei) => (
                     <ExampleRow key={ei} ex={ex} contentLang={contentLang} learnedLang={learnedLang} colors={colors} />
                   ))}
-                </View>
+                </Card>
               ))}
             </View>
           );
