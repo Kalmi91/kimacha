@@ -131,8 +131,24 @@ function padForAndroid(text: string): string {
   return Platform.OS === 'android' ? `${text} ` : text;
 }
 
+// Kálmán, 2026-09-28: „valamelyik agent úgy tesztel, hogy kimondja a szavakat".
+// A web-build böngészős tesztje (headless Chrome, CDP-ről vezérelve) a gép
+// hangszóróján felolvasott mindent. Headless böngészőt senki nem hallgat, ezért
+// ott a felolvasás néma; a befejező callback azért lefut, hogy a képernyő úgy
+// haladjon tovább, mintha a hang elszólt volna. A `navigator.webdriver` itt nem
+// segít: a CDP-vel indított headless Chrome-ban `false` (mérve 2026-09-28).
+function isHeadlessWeb(): boolean {
+  if (Platform.OS !== 'web') return false;
+  const ua = (globalThis as { navigator?: { userAgent?: string } }).navigator?.userAgent;
+  return /HeadlessChrome/.test(String(ua ?? ''));
+}
+
 export function speak(text: string, locale: string, options: Speech.SpeechOptions = {}): void {
   if (!text) return;
+  if (isHeadlessWeb()) {
+    setTimeout(() => options.onDone?.(), 0);
+    return;
+  }
   if (!hasVoiceFor(locale)) {
     missing.add(baseLanguage(locale));
     return;
@@ -216,6 +232,10 @@ export function speakSequence(segments: SpeechRunSegment[], onEnd?: () => void):
     });
   };
 
+  if (isHeadlessWeb()) {
+    setTimeout(() => { if (run === speakingRun) onEnd?.(); }, 0);
+    return;
+  }
   next(0);
 }
 
