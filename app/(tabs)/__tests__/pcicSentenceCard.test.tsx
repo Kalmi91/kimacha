@@ -15,6 +15,8 @@ jest.mock('expo-router', () => ({
     const { useEffect } = require('react');
     // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
+    // A teszt ezzel tudja újra "fókuszba hozni" a fület (fülváltás és vissza).
+    (globalThis as { __focusCb?: () => void }).__focusCb = cb;
   },
 }));
 
@@ -45,6 +47,7 @@ jest.mock('@/data/pcic', () => {
     findPcicItem: (id: string) => ITEMS.find((i) => i.id === id),
     isPlusSentence: () => false,
     realLevelOfView: (level: string) => level,
+    levelOfItem: () => undefined,
     setPcicTarget: () => {},
   };
 });
@@ -146,6 +149,22 @@ describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
     // Az undo a felfedett állapotot állítja vissza: újra a Next értékel.
     fireEvent.press(r.getByText('Next → Knew it'));
     await flush();
+    expect(r.getByText('The book and the table.')).toBeTruthy();
+  });
+
+  it('a számláló fülváltáson át is számol: 3 új szó, fókusz-újratöltés, a 4. után jön a kártya', async () => {
+    const r = render(<PcicScreen />);
+    await flush();
+    for (const prompt of ['the book', 'the table', 'the cat']) await answerWord(r, prompt);
+
+    // Settingsbe és vissza: a fül újra fókuszba kerül, load() újraépíti a sort.
+    await act(async () => {
+      (globalThis as { __focusCb?: () => void }).__focusCb?.();
+    });
+    await flush();
+    expect(r.queryByText('The book and the table.')).toBeNull();
+
+    await answerWord(r, 'the house');
     expect(r.getByText('The book and the table.')).toBeTruthy();
   });
 });
