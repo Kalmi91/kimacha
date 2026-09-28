@@ -76,8 +76,8 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
     view.unmount();
   });
 
-  it('schema-1 lesson (posesivos) shows a single choice button', async () => {
-    mockTopicId = 'posesivos';
+  it('schema-1 lesson (por-para) shows a single choice button', async () => {
+    mockTopicId = 'por-para';
     const view = render(<GrammarLessonScreen />);
     await flush(4);
 
