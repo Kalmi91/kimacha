@@ -22,18 +22,13 @@ function reviewCard(overrides: Partial<Sm2Card> = {}): Sm2Card {
 }
 
 describe('sm2Review, learning/new', () => {
-  it('new + good x2 graduates to review, interval 1, due tomorrow', () => {
+  it('new + good graduates to review, interval 1, due tomorrow (LEARNING_STEPS=1)', () => {
     const c0 = sm2NewCard('b1-0001');
     const c1 = sm2Review(c0, 'good', TODAY);
-    expect(c1.state).toBe('learning');
-    expect(c1.step).toBe(1);
-    expect(c1.due).toBe(TODAY);
+    expect(c1.state).toBe('review');
+    expect(c1.interval).toBe(1);
+    expect(c1.due).toBe(TOMORROW);
     expect(c1.introducedAt).toBe(TODAY);
-
-    const c2 = sm2Review(c1, 'good', TODAY);
-    expect(c2.state).toBe('review');
-    expect(c2.interval).toBe(1);
-    expect(c2.due).toBe(TOMORROW);
   });
 
   it('new + easy graduates immediately, interval 4', () => {
@@ -84,7 +79,7 @@ describe('sm2Review, review állapot', () => {
     expect(next.ease).toBeCloseTo(2.65);
   });
 
-  it('again: lapse, ease - 0.20, learning step 0, majd good x2 -> interval 1', () => {
+  it('again: lapse, ease - 0.20, learning step 0, majd good -> interval 1 (LEARNING_STEPS=1)', () => {
     const lapsed = sm2Review(reviewCard({ ease: 2.5, lapses: 0 }), 'again', TODAY);
     expect(lapsed.state).toBe('learning');
     expect(lapsed.step).toBe(0);
@@ -93,21 +88,16 @@ describe('sm2Review, review állapot', () => {
     expect(lapsed.due).toBe(TODAY);
 
     const g1 = sm2Review(lapsed, 'good', TODAY);
-    expect(g1.state).toBe('learning');
-    expect(g1.step).toBe(1);
-
-    const g2 = sm2Review(g1, 'good', TODAY);
-    expect(g2.state).toBe('review');
-    expect(g2.interval).toBe(1);
-    expect(g2.due).toBe(TOMORROW);
+    expect(g1.state).toBe('review');
+    expect(g1.interval).toBe(1);
+    expect(g1.due).toBe(TOMORROW);
   });
 
   it('ease floor 1.3, ismételt again sem megy alá', () => {
     let card = reviewCard({ ease: 1.4 });
     card = sm2Review(card, 'again', TODAY);
     expect(card.ease).toBeCloseTo(1.3);
-    // relearning -> graduál vissza review-ba, ismét again
-    card = sm2Review(card, 'good', TODAY);
+    // relearning -> graduál vissza review-ba (egy "good", LEARNING_STEPS=1), ismét again
     card = sm2Review(card, 'good', TODAY);
     expect(card.state).toBe('review');
     card = sm2Review(card, 'again', TODAY);
