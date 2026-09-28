@@ -448,6 +448,15 @@ export default function SettingsScreen() {
         <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
       </Pressable>
 
+      {/* PLAN-credits.md: word-data attribution screen entry point. */}
+      <Pressable
+        style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}
+        onPress={() => router.push('/credits')}
+      >
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.credits}</Text>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+      </Pressable>
+
       {/* FB82: app version, small and grey, so the user can tell which build runs. */}
       <Text style={[styles.versionText, { color: colors.tabIconDefault }]}>{appVersionLabel}</Text>
       </ScrollView>

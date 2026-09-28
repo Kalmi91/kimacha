@@ -120,6 +120,7 @@ const es: Strings = {
     chooseDirection: 'Elige la dirección de aprendizaje',
     directionEnEs: 'Inglés → Español',
     directionEsEn: 'Español → Inglés',
+    credits: 'Créditos',
   },
   backup: {
     backup: 'Copia de seguridad',
@@ -155,6 +156,19 @@ const es: Strings = {
   },
   header: {
     levelProgress: (known: number, total: number) => `${known} / ${total} palabras`,
+  },
+  credits: {
+    title: 'Créditos',
+    body:
+      'Datos de frecuencia de palabras: FrequencyWords de Hermit Dave, CC BY-SA 4.0, derivado del ' +
+      'corpus OpenSubtitles 2018. Las listas de palabras de esta app son una obra adaptada y se ' +
+      'comparten bajo CC BY-SA 4.0.',
+    frequencyWordsLabel: 'github.com/hermitdave/FrequencyWords',
+    frequencyWordsUrl: 'https://github.com/hermitdave/FrequencyWords',
+    openSubtitlesLabel: 'opus.nlpl.eu',
+    openSubtitlesUrl: 'https://opus.nlpl.eu',
+    licenseLabel: 'creativecommons.org/licenses/by-sa/4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0',
   },
   spelling: {
     title: 'Práctica de Ortografía',
