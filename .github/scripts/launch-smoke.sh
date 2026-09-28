@@ -4,7 +4,7 @@
 # up" check, not a UI test: anything deeper belongs in the jest suite.
 set -euo pipefail
 
-PACKAGE="com.kimachaapp.kimacha"
+PACKAGE="com.kimachaapp.kimacha.app"
 APK=$(find android/app/build/outputs/apk/release -name '*.apk' | head -1)
 
 if [ -z "$APK" ]; then

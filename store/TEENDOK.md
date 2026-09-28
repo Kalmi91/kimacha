@@ -35,7 +35,7 @@ A szöveg kész: `store/privacy-policy.html`. Csak nyilvános linkre van szüks�
 ## 3. App létrehozása a Console-ban (20 perc)
 
 - [ ] Create app → név `Kimacha`, típus **App** (nem Game), **Free**
-- [ ] ⚠️ Csomagnév: `com.kimachaapp.kimacha`. A feltöltés pillanatában VÉGLEGES.
+- [ ] ⚠️ Csomagnév: `com.kimachaapp.kimacha.app`. A feltöltés pillanatában VÉGLEGES.
       Ha komolyabb nevet akarsz (pl. `hu.feketekalman.kimacha`), MOST szólj,
       utána már nem lehet
 - [ ] **App content** szekció végig, a válaszok készen vannak a `PLAYSTORE.md`
