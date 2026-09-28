@@ -9,6 +9,10 @@
 
 import type { Pos } from '@/lib/pcicPos';
 import { getWordsForLevel, type WordEntry } from '@/data/words';
+// PLAN-ketiranyu 5. lépés (D-A döntés, 2026-09-26: "a", a régi angol-célnyelvű
+// ág kész, ellenőrzött kártyái, ~0 token). Csak ez a modul importálja: az A1
+// nézet az első 50 kártyáját adja, e<id> id-térrel (lásd itemsFromWords).
+import enA0 from '@/data/words/en/a0.json';
 
 export type PcicKind = 'word' | 'phrase' | 'sentence' | 'pattern';
 export type PcicLevel = 'A1' | 'A2' | 'B1' | 'B2';
@@ -99,12 +103,12 @@ const ITEMS_BY_LEVEL_ES: Record<PcicLevel, PcicItem[]> = {
 };
 
 // PLAN-ketiranyu 5. lépés: az es→en irány A1 paklija a data/words/en/a0.json
-// első 50 kártyájából épül majd (e<id> id-tér, D-A döntés). Amíg ez nincs
-// bekötve, minden szint üres; a felület ezt "még nincs szó" üzenetként
-// mutatja (app/onboarding.tsx), a szint-választók a meglévő "0 tétel = nem
-// kínáljuk fel" szabállyal automatikusan A2/B1/B2 nélkül maradnak.
+// első 50 kártyájából épül (e<id> id-tér, D-A döntés: (a) a kész, ellenőrzött
+// angol-célnyelvű ág, nem új lista). A2/B1/B2 üres marad (nincs rájuk terv),
+// a szint-választók a meglévő "0 tétel = nem kínáljuk fel" szabállyal
+// automatikusan A2/B1/B2 nélkül maradnak.
 const ITEMS_BY_LEVEL_EN: Record<PcicLevel, PcicItem[]> = {
-  A1: [],
+  A1: itemsFromWords((enA0 as WordEntry[]).slice(0, 50), 'e'),
   A2: [],
   B1: [],
   B2: [],

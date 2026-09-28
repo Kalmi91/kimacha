@@ -61,8 +61,8 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
     expect(mockReplace).toHaveBeenCalledWith('/(tabs)');
   });
 
-  it('"Español" -> es→en: spanyol üdvözlés, a szint-választó csak A1-et kínálja, "Todavía no hay palabras."', () => {
-    const { getByText } = render(<OnboardingScreen />);
+  it('"Español" -> es→en: spanyol üdvözlés, a szint-választó csak A1-et kínálja, 50 szóval', () => {
+    const { getByText, queryByText } = render(<OnboardingScreen />);
     fireEvent.press(getByText('Español'));
 
     expect(getByText('Empezar')).toBeTruthy();
@@ -70,8 +70,10 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
 
     expect(getByText('Elige el nivel')).toBeTruthy();
     expect(getByText('A1')).toBeTruthy();
-    // D-A: az 5. lépés (50 angol szó) még nincs kész, tehát A1 üres.
-    expect(getByText('Todavía no hay palabras.')).toBeTruthy();
+    expect(getByText('Principiante')).toBeTruthy();
+    expect(queryByText('A2')).toBeNull();
+    // D-A/5. lépés kész: az A1-nek már van 50 szava, a "még nincs szó" sor nem jelenik meg.
+    expect(queryByText('Todavía no hay palabras.')).toBeNull();
   });
 
   it('es→en A1 kiválasztása "es"/"en"-t ment, mindig A1 szinttel', async () => {
