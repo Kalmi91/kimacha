@@ -1,0 +1,527 @@
+{
+  "schema": 2,
+  "topic": "to_be",
+  "level": "A1",
+  "title": {
+    "hu": "A „to be” ige (am / is / are)",
+    "en": "The verb “to be” (am / is / are)",
+    "es": "El verbo To Be (am / is / are)",
+    "de": "Das Verb „to be“ (am / is / are)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Az angolban a „to be” ige egyszerre a spanyol „ser” és „estar”. Ugyanaz a szó mondja meg, ki vagy mi valaki („I am a teacher”), és azt is, hogyan van éppen („I am tired”). A spanyolban két ige közül kell választanod, az angolban csak az alakját kell kiválasztanod: am, is vagy are.",
+        "en": "In English, “to be” is ser and estar in one verb. The same word says who or what someone is (“I am a teacher”) and how they are right now (“I am tired”). Spanish makes you choose between two verbs; English only asks you to pick the form: am, is or are.",
+        "es": "En inglés, «to be» es ser y estar en un solo verbo. La misma palabra dice quién o qué es alguien («I am a teacher») y cómo está ahora mismo («I am tired»). En español eliges entre dos verbos; en inglés solo eliges la forma: am, is o are.",
+        "de": "Im Englischen ist „to be“ ser und estar in einem einzigen Verb. Dasselbe Wort sagt, wer oder was jemand ist („I am a teacher“), und auch, wie es jemandem gerade geht („I am tired“). Im Spanischen musst du zwischen zwei Verben wählen; im Englischen wählst du nur die Form: am, is oder are."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "be-present",
+      "title": {
+        "hu": "To be, jelen idő",
+        "en": "To be, present tense",
+        "es": "To be, presente",
+        "de": "To be, Präsens"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "to be",
+          "en": "to be",
+          "es": "to be",
+          "de": "to be"
+        },
+        {
+          "hu": "rövid alak",
+          "en": "short form",
+          "es": "forma corta",
+          "de": "Kurzform"
+        }
+      ],
+      "rows": [
+        [
+          "I",
+          "am",
+          "I'm"
+        ],
+        [
+          "you",
+          "are",
+          "you're"
+        ],
+        [
+          "he / she / it",
+          "is",
+          "he's / she's / it's"
+        ],
+        [
+          "we",
+          "are",
+          "we're"
+        ],
+        [
+          "they",
+          "are",
+          "they're"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Tagadás, kérdés, rövid válasz",
+        "en": "Negation, questions, short answers",
+        "es": "Negación, pregunta, respuesta corta",
+        "de": "Verneinung, Frage, Kurzantwort"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Tagadás: a „not” a to be után áll. Rövid alakok: isn’t (is not), aren’t (are not). Az „I am not” rövidítése I’m not; „amn’t” nincs.",
+            "en": "Negation: “not” goes after to be. Short forms: isn’t (is not), aren’t (are not). With I, the short form is I’m not; “amn’t” does not exist.",
+            "es": "Negación: not va después de to be. Formas cortas: isn’t (is not), aren’t (are not). Con I se dice I’m not; «amn’t» no existe.",
+            "de": "Verneinung: „not“ steht nach to be. Kurzformen: isn’t (is not), aren’t (are not). Bei I heißt es I’m not; „amn’t“ gibt es nicht."
+          },
+          "examples": [
+            {
+              "es": "I am not tired.",
+              "tr": {
+                "hu": "Nem vagyok fáradt.",
+                "en": "I am not tired.",
+                "es": "No estoy cansado.",
+                "de": "Ich bin nicht müde."
+              }
+            },
+            {
+              "es": "She isn't a doctor.",
+              "tr": {
+                "hu": "Ő nem orvos.",
+                "en": "She isn't a doctor.",
+                "es": "Ella no es doctora.",
+                "de": "Sie ist keine Ärztin."
+              }
+            },
+            {
+              "es": "They aren't at home.",
+              "tr": {
+                "hu": "Nincsenek otthon.",
+                "en": "They aren't at home.",
+                "es": "No están en casa.",
+                "de": "Sie sind nicht zu Hause."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Kérdés: a to be a mondat elejére kerül, az alany elé. Nincs külön kérdőszó vagy segédige.",
+            "en": "Questions: to be moves to the front, before the subject. No extra word or helper verb is needed.",
+            "es": "Pregunta: to be pasa al principio, antes del sujeto. No hace falta ninguna palabra extra ni verbo auxiliar.",
+            "de": "Frage: to be rückt an den Satzanfang, vor das Subjekt. Ein Hilfsverb oder ein Extrawort ist nicht nötig."
+          },
+          "examples": [
+            {
+              "es": "Are you tired?",
+              "tr": {
+                "hu": "Fáradt vagy?",
+                "en": "Are you tired?",
+                "es": "¿Estás cansado?",
+                "de": "Bist du müde?"
+              }
+            },
+            {
+              "es": "Is she a doctor?",
+              "tr": {
+                "hu": "Ő orvos?",
+                "en": "Is she a doctor?",
+                "es": "¿Es doctora?",
+                "de": "Ist sie Ärztin?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Rövid válasz: Yes / No + alany + to be. Az igenlő válaszban nem rövidítünk: Yes, I am (nem „Yes, I’m”). A nemleges válaszban lehet: No, I’m not. / No, he isn’t.",
+            "en": "Short answer: Yes / No + subject + to be. In a “yes” answer you do not contract: Yes, I am (not “Yes, I’m”). In a “no” answer you can: No, I’m not. / No, he isn’t.",
+            "es": "Respuesta corta: Yes / No + sujeto + to be. En la respuesta afirmativa no se contrae: Yes, I am (no «Yes, I’m»). En la negativa sí: No, I’m not. / No, he isn’t.",
+            "de": "Kurzantwort: Yes / No + Subjekt + to be. In der bejahenden Antwort wird nicht verkürzt: Yes, I am (nicht „Yes, I’m“). In der verneinenden schon: No, I’m not. / No, he isn’t."
+          },
+          "examples": [
+            {
+              "es": "Are you tired? Yes, I am.",
+              "tr": {
+                "hu": "Fáradt vagy? Igen, az vagyok.",
+                "en": "Are you tired? Yes, I am.",
+                "es": "¿Estás cansado? Sí, lo estoy.",
+                "de": "Bist du müde? Ja, das bin ich."
+              }
+            },
+            {
+              "es": "Is she a doctor? No, she isn't.",
+              "tr": {
+                "hu": "Ő orvos? Nem, nem az.",
+                "en": "Is she a doctor? No, she isn't.",
+                "es": "¿Es doctora? No, no lo es.",
+                "de": "Ist sie Ärztin? Nein, ist sie nicht."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Vigyázat: az angolban a kor is „to be”-vel megy. Ne mondd, hogy „I have 20 years”, hanem: „I am 20 years old”.",
+        "en": "Careful: in English, age also uses to be. Do not say “I have 20 years”; say “I am 20 years old”.",
+        "es": "Cuidado: en inglés la edad también lleva to be. No digas «I have 20 years», di «I am 20 years old».",
+        "de": "Vorsicht: Im Englischen wird auch das Alter mit to be gebildet. Sag nicht „I have 20 years“, sondern „I am 20 years old“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Az angol mondatban az alany kötelező, akkor is, ha a spanyolban elhagyod. Ne mondd, hogy „Is raining”, hanem: „It is raining”.",
+        "en": "In English the subject is required, even when Spanish drops it. Do not say “Is raining”; say “It is raining”.",
+        "es": "En inglés el sujeto es obligatorio, aunque en español se omita. No digas «Is raining», di «It is raining».",
+        "de": "Im Englischen ist das Subjekt Pflicht, auch wenn man es im Spanischen weglässt. Sag nicht „Is raining“, sondern „It is raining“."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Az angol „to be” egyszerre a spanyol ser és estar. Így ragozzuk: «I am», «you are», «he is», «she is», «it is», «we are», «they are». Tagadásnál a not szó kerül utána: «I am not», «he isn't», «they aren't». Kérdésnél megfordul a sorrend: «Are you tired?». Röviden válaszolj: «Yes, I am» vagy «No, I'm not». Figyelem: a korodat így mondod: «I am twenty years old», soha nem «I have twenty years».",
+    "en": "The English “to be” is Spanish ser and estar in one. This is how it goes: «I am», «you are», «he is», «she is», «it is», «we are», «they are». To make it negative, put not after it: «I am not», «he isn't», «they aren't». In a question the order flips: «Are you tired?». Answer briefly: «Yes, I am» or «No, I'm not». Careful: you say your age like this: «I am twenty years old», never «I have twenty years».",
+    "es": "El «to be» del inglés es ser y estar en uno. Así se conjuga: «I am», «you are», «he is», «she is», «it is», «we are», «they are». Para negar, se pone not después: «I am not», «he isn't», «they aren't». En una pregunta se invierte el orden: «Are you tired?». Responde con brevedad: «Yes, I am» o «No, I'm not». Cuidado: la edad se dice así: «I am twenty years old», nunca «I have twenty years».",
+    "de": "Das englische „to be“ ist das spanische ser und estar in einem. So wird es gebildet: «I am», «you are», «he is», «she is», «it is», «we are», «they are». Zum Verneinen kommt not dahinter: «I am not», «he isn't», «they aren't». In der Frage dreht sich die Reihenfolge um: «Are you tired?». Antworte kurz: «Yes, I am» oder «No, I'm not». Vorsicht: Dein Alter sagst du so: «I am twenty years old», niemals «I have twenty years»."
+  },
+  "items": [
+    {
+      "id": "tb-01",
+      "sentence": "I ___ from Mexico.",
+      "options": [
+        "am",
+        "is",
+        "are"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az „I” (én) mellett a to be alakja mindig „am”: I am from Mexico.",
+        "en": "With “I”, the form of to be is always “am”: I am from Mexico.",
+        "es": "Con «I», la forma de to be siempre es «am»: I am from Mexico.",
+        "de": "Nach „I“ lautet die Form von to be immer „am“: I am from Mexico."
+      },
+      "wrong": {
+        "is": {
+          "hu": "Az „is” a he, she, it mellé való, az „I” mellé nem: I am, sosem „I is”.",
+          "en": "“Is” goes with he, she, it, not with “I”: I am, never “I is”.",
+          "es": "«Is» va con he, she, it, no con «I»: I am, nunca «I is».",
+          "de": "„Is“ gehört zu he, she, it, nicht zu „I“: I am, niemals „I is“."
+        },
+        "are": {
+          "hu": "Az „are” a you, we, they mellé való: I am, sosem „I are”.",
+          "en": "“Are” goes with you, we, they: I am, never “I are”.",
+          "es": "«Are» va con you, we, they: I am, nunca «I are».",
+          "de": "„Are“ gehört zu you, we, they: I am, niemals „I are“."
+        }
+      },
+      "examples": [
+        "I am a student.",
+        "I am at home."
+      ]
+    },
+    {
+      "id": "tb-02",
+      "kind": "form",
+      "verb": "to be",
+      "person": "he / she / it",
+      "answer": "is",
+      "table": "be-present"
+    },
+    {
+      "id": "tb-03",
+      "sentence": "They ___ at home.",
+      "options": [
+        "am",
+        "is",
+        "are"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A „they” (ők) mellé „are” kell: They are at home. Itt a spanyol estar jelentés (hely), az angol viszont ugyanazt az igét használja.",
+        "en": "With “they”, use “are”: They are at home. Spanish uses estar here (location), but English uses the same verb.",
+        "es": "Con «they» se usa «are»: They are at home. En español aquí va estar (lugar), pero el inglés usa el mismo verbo.",
+        "de": "Zu „they“ gehört „are“: They are at home. Im Spanischen steht hier estar (Ort), das Englische nimmt dasselbe Verb."
+      },
+      "wrong": {
+        "am": {
+          "hu": "Az „am” csak az „I” mellé való.",
+          "en": "“Am” only goes with “I”.",
+          "es": "«Am» solo va con «I».",
+          "de": "„Am“ gehört nur zu „I“."
+        },
+        "is": {
+          "hu": "Az „is” egyes szám harmadik személyhez (he, she, it) való; a „they” többes szám.",
+          "en": "“Is” is for the singular third person (he, she, it); “they” is plural.",
+          "es": "«Is» es para la tercera persona del singular (he, she, it); «they» es plural.",
+          "de": "„Is“ ist für die dritte Person Singular (he, she, it); „they“ ist Plural."
+        }
+      },
+      "examples": [
+        "We are at home.",
+        "You are at home."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "tb-04",
+      "es": "She is a doctor.",
+      "target": "is",
+      "tr": {
+        "hu": "Ő orvos.",
+        "en": "She is a doctor.",
+        "es": "Ella es doctora.",
+        "de": "Sie ist Ärztin."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "azonosság, foglalkozás (ser jelentés)",
+            "en": "identity, profession (ser meaning)",
+            "es": "identidad, profesión (sentido de ser)",
+            "de": "Identität, Beruf (ser-Bedeutung)"
+          }
+        },
+        {
+          "text": {
+            "hu": "hely (estar jelentés)",
+            "en": "location (estar meaning)",
+            "es": "lugar (sentido de estar)",
+            "de": "Ort (estar-Bedeutung)"
+          },
+          "wrong": {
+            "hu": "A mondat nem azt mondja meg, hol van, hanem hogy ki ő: az orvos foglalkozás, ez a ser jelentése. Az angol itt is „is”.",
+            "en": "The sentence does not say where she is, but what she is: doctor is a profession, the ser meaning. English uses “is” here too.",
+            "es": "La oración no dice dónde está, sino quién es: doctora es una profesión, el sentido de ser. El inglés también usa «is».",
+            "de": "Der Satz sagt nicht, wo sie ist, sondern was sie ist: Ärztin ist ein Beruf, die ser-Bedeutung. Auch hier steht im Englischen „is“."
+          }
+        },
+        {
+          "text": {
+            "hu": "múló állapot (estar jelentés)",
+            "en": "temporary state (estar meaning)",
+            "es": "estado pasajero (sentido de estar)",
+            "de": "vorübergehender Zustand (estar-Bedeutung)"
+          },
+          "wrong": {
+            "hu": "Az orvos nem múló állapot, hanem foglalkozás, tartós besorolás: ez a ser jelentése.",
+            "en": "Doctor is not a temporary state but a profession, a lasting classification: the ser meaning.",
+            "es": "Doctora no es un estado pasajero sino una profesión, una clasificación estable: el sentido de ser.",
+            "de": "Ärztin ist kein vorübergehender Zustand, sondern ein Beruf, eine dauerhafte Einordnung: die ser-Bedeutung."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "tb-05",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Soy estudiante.",
+          "en": "I am a student."
+        },
+        {
+          "es": "Estoy cansado.",
+          "en": "I am tired."
+        },
+        {
+          "es": "Ella es doctora.",
+          "en": "She is a doctor."
+        },
+        {
+          "es": "Ellos están en casa.",
+          "en": "They are at home."
+        },
+        {
+          "es": "Somos amigos.",
+          "en": "We are friends."
+        },
+        {
+          "es": "Tengo hambre.",
+          "en": "I am hungry."
+        }
+      ]
+    },
+    {
+      "id": "tb-06",
+      "sentence": "No, we ___ tired.",
+      "options": [
+        "isn't",
+        "aren't",
+        "am not"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A „we” (mi) mellé „are” való, a tagadó rövid alakja „aren’t”: No, we aren’t tired.",
+        "en": "With “we” you use “are”, and its negative short form is “aren’t”: No, we aren’t tired.",
+        "es": "Con «we» se usa «are», y su forma corta negativa es «aren’t»: No, we aren’t tired.",
+        "de": "Zu „we“ gehört „are“, die verneinte Kurzform ist „aren’t“: No, we aren’t tired."
+      },
+      "wrong": {
+        "isn't": {
+          "hu": "Az „isn’t” a he, she, it mellé való, a „we” többes szám.",
+          "en": "“Isn’t” goes with he, she, it; “we” is plural.",
+          "es": "«Isn’t» va con he, she, it; «we» es plural.",
+          "de": "„Isn’t“ gehört zu he, she, it; „we“ ist Plural."
+        },
+        "am not": {
+          "hu": "Az „am not” csak az „I” mellé való.",
+          "en": "“Am not” only goes with “I”.",
+          "es": "«Am not» solo va con «I».",
+          "de": "„Am not“ gehört nur zu „I“."
+        }
+      },
+      "examples": [
+        "We aren't hungry.",
+        "They aren't at home."
+      ]
+    },
+    {
+      "id": "tb-07",
+      "kind": "form",
+      "verb": "forma corta",
+      "person": "we",
+      "answer": "we're",
+      "table": "be-present"
+    },
+    {
+      "kind": "why",
+      "id": "tb-08",
+      "es": "I am tired.",
+      "target": "am",
+      "tr": {
+        "hu": "Fáradt vagyok.",
+        "en": "I am tired.",
+        "es": "Estoy cansado.",
+        "de": "Ich bin müde."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "azonosság, foglalkozás (ser jelentés)",
+            "en": "identity, profession (ser meaning)",
+            "es": "identidad, profesión (sentido de ser)",
+            "de": "Identität, Beruf (ser-Bedeutung)"
+          },
+          "wrong": {
+            "hu": "A fáradtság nem azt mondja meg, ki vagy, hanem hogyan vagy éppen: állapot, ez az estar jelentése. Az angol itt is „am”.",
+            "en": "Being tired does not say who you are but how you are right now: a state, the estar meaning. English uses “am” here too.",
+            "es": "Estar cansado no dice quién eres sino cómo estás ahora: un estado, el sentido de estar. El inglés también usa «am».",
+            "de": "Müdesein sagt nicht, wer du bist, sondern wie es dir gerade geht: ein Zustand, die estar-Bedeutung. Auch hier steht im Englischen „am“."
+          }
+        },
+        {
+          "text": {
+            "hu": "hely (estar jelentés)",
+            "en": "location (estar meaning)",
+            "es": "lugar (sentido de estar)",
+            "de": "Ort (estar-Bedeutung)"
+          },
+          "wrong": {
+            "hu": "A mondatban nincs helymegjelölés: a fáradtság állapot, nem hely.",
+            "en": "The sentence has no place in it: being tired is a state, not a location.",
+            "es": "La oración no menciona ningún lugar: estar cansado es un estado, no un lugar.",
+            "de": "Der Satz nennt keinen Ort: Müdesein ist ein Zustand, kein Ort."
+          }
+        },
+        {
+          "text": {
+            "hu": "múló állapot (estar jelentés)",
+            "en": "temporary state (estar meaning)",
+            "es": "estado pasajero (sentido de estar)",
+            "de": "vorübergehender Zustand (estar-Bedeutung)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "tb-09",
+      "sentence": "___ your friend hungry?",
+      "options": [
+        "Is",
+        "Are",
+        "Am"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Kérdésnél a to be az elejére kerül. Egy barát egy személy (it/he/she), ezért „Is”: Is your friend hungry?",
+        "en": "In a question, to be goes first. One friend is a single person (he/she), so “Is”: Is your friend hungry?",
+        "es": "En una pregunta, to be va primero. Un amigo es una sola persona (he/she), por eso «Is»: Is your friend hungry?",
+        "de": "In der Frage steht to be vorn. Ein Freund ist eine einzelne Person (he/she), deshalb „Is“: Is your friend hungry?"
+      },
+      "wrong": {
+        "Are": {
+          "hu": "Az „Are” a you, we, they mellé való; egy barát egyes szám.",
+          "en": "“Are” goes with you, we, they; one friend is singular.",
+          "es": "«Are» va con you, we, they; un amigo es singular.",
+          "de": "„Are“ gehört zu you, we, they; ein Freund ist Singular."
+        },
+        "Am": {
+          "hu": "Az „Am” csak az „I” mellé való.",
+          "en": "“Am” only goes with “I”.",
+          "es": "«Am» solo va con «I».",
+          "de": "„Am“ gehört nur zu „I“."
+        }
+      },
+      "examples": [
+        "Is he a teacher?",
+        "Is it late?"
+      ]
+    },
+    {
+      "id": "tb-10",
+      "sentence": "I ___ 20 years old.",
+      "options": [
+        "am",
+        "have",
+        "has"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Angolul a kort a to be adja meg: I am 20 years old. A spanyol „tengo 20 años” szó szerint „I have” lenne, de az angolban ez hiba.",
+        "en": "In English, age uses to be: I am 20 years old. Spanish “tengo 20 años” would be “I have” word for word, but in English that is a mistake.",
+        "es": "En inglés la edad lleva to be: I am 20 years old. «Tengo 20 años» sería «I have» palabra por palabra, pero en inglés eso es un error.",
+        "de": "Im Englischen wird das Alter mit to be gebildet: I am 20 years old. Das spanische „tengo 20 años“ wäre wörtlich „I have“, aber im Englischen ist das ein Fehler."
+      },
+      "wrong": {
+        "have": {
+          "hu": "A „have” a spanyol tener szó szerinti fordítása, de az angol a kort nem birtoklásként, hanem to be-vel fejezi ki.",
+          "en": "“Have” is the word-for-word copy of Spanish tener, but English does not treat age as possession; it uses to be.",
+          "es": "«Have» es la copia palabra por palabra de tener, pero el inglés no trata la edad como posesión: usa to be.",
+          "de": "„Have“ ist die wörtliche Kopie von spanisch tener, aber das Englische behandelt das Alter nicht als Besitz, sondern nimmt to be."
+        },
+        "has": {
+          "hu": "A „has” a he, she, it mellé való „have”, és a kor kifejezéséhez sem jó: kell a to be.",
+          "en": "“Has” is “have” for he, she, it, and it is wrong for age anyway: you need to be.",
+          "es": "«Has» es «have» para he, she, it, y además no sirve para la edad: hace falta to be.",
+          "de": "„Has“ ist „have“ für he, she, it und passt auch nicht zum Alter: Du brauchst to be."
+        }
+      },
+      "examples": [
+        "She is 20 years old.",
+        "We are old friends."
+      ]
+    }
+  ]
+}

@@ -58,6 +58,10 @@ export const TENSE_NAMES: Record<TenseId, Lang4> = {
 
 // spanyol mondat + fordítás; `es` maga a mondat (vagy egy parafrázisa, ha a
 // blokk-pont maga nem mondat, hanem egy jelenség leírása).
+// Mezőkonvenció angol célnyelvnél (es→en irány): `ExamplePair.es` és
+// `WhyItem.es` a TANULT nyelvű (angol) mondat, `tr` a fordítások (tr.en ===
+// maga a mondat); `MatchItem.pairs` {es, en} szó szerint marad (es = spanyol,
+// en = angol), a renderer a tanult nyelvű oldalt learnedLang szerint választja.
 export interface ExamplePair {
   es: string;
   tr: Lang4;
