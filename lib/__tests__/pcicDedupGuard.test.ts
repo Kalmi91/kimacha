@@ -2,9 +2,14 @@
 // phrase kind) csak EGY PCIC-tételként létezzen, a betöltött korpusz teljes
 // egészén (szintek közt ÉS szinten belül), és a senses.json minden kulcsa
 // létező item-id legyen.
+// PLAN-ketiranyu 2. lépés (2026-09-28): data/pcic.ts mostantól a data/words
+// alapú korpuszt adja (a régi PCIC-id-tér, amire ez a teszt vonatkozik, nincs
+// többé betöltve onnan), ezért a valódi PCIC-korpuszra a rejtett
+// data/pcicCorpus.ts-re váltott importtal fut tovább (a régi tartalom
+// VÁLTOZATLAN, a teszt továbbra is érdemi).
 
 import sensesRaw from '@/data/pcic/senses.json';
-import { findPcicItem, pcicItemsForLevel, PCIC_LEVELS } from '@/data/pcic';
+import { findPcicItem, pcicItemsForLevel, PCIC_LEVELS } from '@/data/pcicCorpus';
 import { normalizeForLevelFit } from '../pcicLevelFit';
 
 describe('nincs két word/phrase tétel azonos normalizált es-sel (FB384, 7b)', () => {
