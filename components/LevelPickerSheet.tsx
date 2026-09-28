@@ -37,10 +37,8 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
     'A2+': s.pcic.levelPlusSentences,
   };
   // Ha egy szinthez nincs adat vagy nincs angol fordítás, ne kínáljuk fel;
-  // es→en-nél kivétel az A1 (egyetlen kínált szint, D-A döntés), az mindig
-  // felkínált, még üresen is (app/onboarding.tsx level-lépés mintája).
-  const levels: PcicViewLevel[] =
-    target === 'en' ? ['A1'] : PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForViewLevel(lvl).length > 0);
+  // PLAN-esen: es→en-ben is ugyanez a szűrő (A1 + A2 van adat).
+  const levels: PcicViewLevel[] = PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForViewLevel(lvl).length > 0);
 
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
