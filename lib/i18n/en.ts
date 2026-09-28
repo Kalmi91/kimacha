@@ -113,6 +113,11 @@ export default {
     enComingSoon: 'English grammar lessons are coming later.',
   },
   settings: {
+    // PLAN-ketiranyu 4. lépés javítás (orkesztrátor visszajelzés, 3. pont):
+    // a téma-választó gombok (korábban settings.tsx-ben angolra égetve).
+    themeAuto: 'Auto',
+    themeLight: 'Light',
+    themeDark: 'Dark',
     weeklyGoal: 'Weekly study goal',
     weeklyGoalHours: (h: string) => `${h} hours / week`,
     weeklyGoalDoneTag: '✓ DONE',
@@ -292,6 +297,16 @@ export default {
     chooseLevel: 'Choose level',
     next: (label: string) => `Next → ${label}`,
     accentForgiven: 'Missing accent, counted as correct',
+    // PLAN-ketiranyu 4. lépés javítás (orkesztrátor visszajelzés, 3. pont):
+    // a szint-választó lap feliratai és sorai (korábban data/pcic.ts
+    // LEVEL_LABELS-ben és components/LevelRow.tsx-ben angolra égetve).
+    levelBeginner: 'Beginner',
+    levelElementary: 'Elementary',
+    levelIntermediate: 'Intermediate',
+    levelUpperIntermediate: 'Upper intermediate',
+    levelPlusSentences: '+1 · sentences',
+    levelNotStarted: 'not started',
+    levelRowIntroduced: (n: number, total: number) => `${n} / ${total} introduced`,
   },
   // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
   // FB361-362: a teljes WordPos-készlet felirata (nem csak noun/verb/phrase),

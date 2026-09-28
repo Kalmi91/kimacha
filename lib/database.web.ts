@@ -57,6 +57,7 @@ export interface DB {
   upsertPcicCard(card: Sm2Card): Promise<void>;
   getPcicStats(today: string): Promise<{ total: number; newIntroducedToday: number; dueToday: number; learned: number }>;
   getPcicLevel(): Promise<PcicViewLevel>;
+  hasPcicLevel(): Promise<boolean>;
   setPcicLevel(level: PcicViewLevel): Promise<void>;
   resetPcicCards(levelPrefix?: string): Promise<void>;
   // PLAN-hibaim.md 2. lépés: a "Hibáim" kötegek és a hozzájuk tartozó SM-2
@@ -393,17 +394,23 @@ class MemoryDB implements DB {
     ).length;
   }
 
-  // PLAN-play 10. lépés: a kiválasztott PCIC szint, memória-tükör (mint a
-  // status-bar tint), alap B1, hogy egy meglévő telepítés progressze ("b1-...")
-  // ne csússzon el.
-  private pcicLevel: PcicViewLevel = 'B1';
+  // PLAN-play 10. lépés: a kiválasztott PCIC szint. PLAN-ketiranyu 4. lépés
+  // javítás: pár-szerinti Map (mint articlePickerMap), hogy irányváltáskor
+  // mindkét pár megőrizze a saját szintjét; alap B1 en-es-nek (meglévő
+  // "b1-..." progressz), A1 minden es→en irányú párnak (5. lépés adja az
+  // egyetlen tartalommal bíró szintet).
+  private pcicLevelMap: Map<string, PcicViewLevel> = new Map();
 
   async getPcicLevel(): Promise<PcicViewLevel> {
-    return this.pcicLevel;
+    return this.pcicLevelMap.get(this.activePair) ?? (this.activePair.endsWith('-en') ? 'A1' : 'B1');
+  }
+
+  async hasPcicLevel(): Promise<boolean> {
+    return this.pcicLevelMap.has(this.activePair);
   }
 
   async setPcicLevel(level: PcicViewLevel): Promise<void> {
-    this.pcicLevel = level;
+    this.pcicLevelMap.set(this.activePair, level);
   }
 
   // Q0: full learning-state backup. Memory state is serialized into the same

@@ -112,15 +112,15 @@ export default function SettingsScreen() {
 
   // PLAN-ketiranyu 4. lépés (6-7. pont): irányváltás. K1 (Kálmán, 2026-09-28):
   // nincs megerősítő kérdés, mert visszaváltható és a haladás nem vész el (a
-  // két irány külön id-térrel/pair-rel él). es→en-nél a szint mindig 'A1'
-  // (egyelőre az egyetlen kínált szint, 5. lépés adja a szavakat); en→es-nél
-  // a korábban választott szint marad (nincs pár-szerinti tárolása).
+  // két irány külön id-térrel/pair-rel és külön pár-szintű szinttel él,
+  // lib/database.ts getPcicLevel/hasPcicLevel). Ha az új irányban még nincs
+  // kifejezetten választott szint, a főfül (app/(tabs)/index.tsx load())
+  // magától felnyitja a szint-választó lapot, itt nem kell külön kezelni.
   const handleSelectDirection = async (source: 'en' | 'es', target: PcicTarget) => {
     setDirectionSheetOpen(false);
     if (source === direction[0] && target === direction[1]) return;
     const db = getDb();
     await db.setOnboarding(source, target);
-    if (target === 'en') await db.setPcicLevel('A1');
     setLanguage(source);
     // Csak itt, egy VÉGLEGESÍTETT váltásnál kell a teljes fa remountja (a
     // tab-fülek felirata is), az onboarding próba-váltása ezt nem hívja.
@@ -170,10 +170,12 @@ export default function SettingsScreen() {
     await getDb().setAgainDelaySec(next);
   };
 
+  // PLAN-ketiranyu 4. lépés javítás (orkesztrátor visszajelzés, 3. pont): a
+  // korábban angolra égetett gombfeliratok a felület nyelvén.
   const themeOptions: { label: string; value: 'system' | 'light' | 'dark' }[] = [
-    { label: '🔄 Auto', value: 'system' },
-    { label: '☀️ Light', value: 'light' },
-    { label: '🌙 Dark', value: 'dark' },
+    { label: `🔄 ${s.settings.themeAuto}`, value: 'system' },
+    { label: `☀️ ${s.settings.themeLight}`, value: 'light' },
+    { label: `🌙 ${s.settings.themeDark}`, value: 'dark' },
   ];
 
   // RN-web Alert is a no-op, so web falls back to the browser dialogs.
@@ -384,14 +386,18 @@ export default function SettingsScreen() {
         <Switch value={strictAccents} onValueChange={handleStrictAccentsToggle} trackColor={{ true: colors.tint }} />
       </View>
 
-      {/* FB188: névelő-gombsor a gépelős spanyol főnév-kártyákon. */}
-      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
-        <View style={styles.difficultyLabelBox}>
-          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.articlePicker}</Text>
-          <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.articlePickerHint}</Text>
+      {/* FB188: névelő-gombsor a gépelős spanyol főnév-kártyákon. PLAN-ketiranyu
+          4. lépés javítás (orkesztrátor visszajelzés, 4. pont): csak spanyol
+          célnyelvnél él (index.tsx-ben is target==='es'-nél jár a gombsor). */}
+      {direction[1] === 'es' && (
+        <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
+          <View style={styles.difficultyLabelBox}>
+            <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.articlePicker}</Text>
+            <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.articlePickerHint}</Text>
+          </View>
+          <Switch value={articlePicker} onValueChange={handleArticlePickerToggle} trackColor={{ true: colors.tint }} />
         </View>
-        <Switch value={articlePicker} onValueChange={handleArticlePickerToggle} trackColor={{ true: colors.tint }} />
-      </View>
+      )}
 
       {/* PLAN-ketiranyu 4. lépés (6. pont): tanulási irány váltó sora. */}
       <Pressable

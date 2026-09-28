@@ -79,4 +79,15 @@ describe('PCIC fül: es→en irány (PLAN-ketiranyu 4. lépés)', () => {
 
     expect(mockSpeak).toHaveBeenCalledWith('life', 'en-US');
   });
+
+  // PLAN-ketiranyu 4. lépés javítás (orkesztrátor visszajelzés, 2. pont): egy
+  // frissen váltott irányban, ahol még sose választottak szintet
+  // (db.hasPcicLevel() false), a főfül magától felnyitja a szint-választó
+  // lapot, ahelyett hogy csendben a fallback szintre ugorna.
+  it('szint nélkül landolva (hasPcicLevel false) magától felnyílik a szint-választó lap', async () => {
+    const { getByText } = render(<PcicScreen />);
+    await flush();
+
+    expect(getByText('Choose level')).toBeTruthy();
+  });
 });
