@@ -304,7 +304,7 @@ export default function SettingsScreen() {
             ]}
             onPress={() => setOverride(opt.value)}
           >
-            <Text style={[styles.optionText, { color: override === opt.value ? '#FFF' : colors.text }]}>
+            <Text style={[styles.optionText, { color: override === opt.value ? colors.onTint : colors.text }]}>
               {opt.label}
             </Text>
           </Pressable>
@@ -323,7 +323,7 @@ export default function SettingsScreen() {
               style={[
                 styles.option,
                 styles.paletteOption,
-                { backgroundColor: selected ? colors.tint : colors.card },
+                { backgroundColor: selected ? colors.border : colors.card, borderColor: selected ? colors.tint : 'transparent' },
               ]}
               onPress={() => setGrammarPalette(opt.value)}
             >
@@ -331,7 +331,7 @@ export default function SettingsScreen() {
                 <View style={[styles.paletteDot, { backgroundColor: dotA }]} />
                 <View style={[styles.paletteDot, { backgroundColor: dotB }]} />
               </View>
-              <Text style={[styles.optionText, { color: selected ? colors.onTint : colors.text }]}>
+              <Text style={[styles.optionText, { color: colors.text }]}>
                 {opt.label}
               </Text>
             </Pressable>
@@ -525,10 +525,10 @@ export default function SettingsScreen() {
                   style={[styles.sheetOption, { backgroundColor: active ? colors.tint : colors.background }]}
                   onPress={() => handleSelectDirection(src, tgt)}
                 >
-                  <Text style={[styles.sheetOptionText, { color: active ? '#FFF' : colors.text }]}>
+                  <Text style={[styles.sheetOptionText, { color: active ? colors.onTint : colors.text }]}>
                     {src === 'en' ? s.settings.directionEnEs : s.settings.directionEsEn}
                   </Text>
-                  {active && <Text style={[styles.sheetOptionText, { color: '#FFF' }]}>✓</Text>}
+                  {active && <Text style={[styles.sheetOptionText, { color: colors.onTint }]}>✓</Text>}
                 </Pressable>
               );
             })}
@@ -620,6 +620,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 8,
     paddingHorizontal: 8,
+    borderWidth: 2,
   },
   paletteDots: {
     flexDirection: 'row',
