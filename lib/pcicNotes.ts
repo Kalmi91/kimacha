@@ -1,19 +1,21 @@
-// PLAN-fb0924 6. lépés (FB392/393): kézzel írt ℹ️ jegyzet PCIC-tételekre,
-// a régi Learn fül `lib/cardNotes.ts` mintája (kivéve a fülével együtt),
-// ÚJRA felépítve a PCIC id-térre. Adat: data/pcic/notes.json.
+// PLAN-fb0924 6. lépés (FB392/393): kézzel írt ℹ️ jegyzet PCIC-tételekre.
+// PLAN-ketiranyu 2. lépés (2026-09-28): a data/pcic/notes.json (PCIC-id-tér)
+// helyett a betöltött item saját noteEn/noteHu mezőjéből olvas (data/pcic.ts,
+// a lib/cardNotes.ts hibrid ℹ️ jegyzete, FB75, a szó note_en/note_hu mezőjéből
+// mappelve). A két exportált függvény aláírása változatlan.
 
-import notesRaw from '@/data/pcic/notes.json';
+import { findPcicItem } from '@/data/pcic';
 
 export interface PcicNote {
   en: string;
   hu?: string;
 }
 
-const NOTES = notesRaw as Record<string, PcicNote>;
-
 /** Van-e jegyzet ehhez az id-hez (a ℹ️ gomb csak ekkor jelenik meg). */
 export function pcicNoteFor(itemId: string): PcicNote | undefined {
-  return NOTES[itemId];
+  const item = findPcicItem(itemId);
+  if (!item?.noteEn) return undefined;
+  return { en: item.noteEn, hu: item.noteHu };
 }
 
 /**
@@ -23,7 +25,7 @@ export function pcicNoteFor(itemId: string): PcicNote | undefined {
  * a `hu` mező a jegyzet adatában a jövőbeli/kézi olvasáshoz marad.
  */
 export function pcicNoteText(itemId: string, uiLang: 'en' | 'hu' = 'en'): string | undefined {
-  const note = NOTES[itemId];
+  const note = pcicNoteFor(itemId);
   if (!note) return undefined;
   return note[uiLang] ?? note.en;
 }

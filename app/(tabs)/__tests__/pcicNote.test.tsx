@@ -21,14 +21,13 @@ jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
 
-// Két tétel: az első id-je a VALÓDI notes.json-ban szerepel (a1-1b94c09a,
-// haber), tehát a lib/pcicNotes.ts (nem mockolt) valódi jegyzetet talál
-// hozzá; a második egy nem-létező, notes.json-ban nem szereplő id, tehát
-// nincs jegyzete. (A jest.mock factory nem hivatkozhat külső változóra,
-// ezért a két tétel itt, önmagában, kétszer van kiírva.)
+// PLAN-ketiranyu 2. lépés (2026-09-28): a lib/pcicNotes.ts mostantól az item
+// SAJÁT noteEn/noteHu mezőjéből olvas (nem a data/pcic/notes.json fájlból),
+// ezért a jegyzetet itt közvetlenül az első mock-itemre kell tenni. Két
+// tétel: az elsőnek van noteEn-je (a ℹ️ gomb megjelenik), a másodiknak nincs.
 jest.mock('@/data/pcic', () => {
   const items = [
-    { id: 'a1-1b94c09a', es: 'haber', en: 'there is / there are', kind: 'word', section: 'Test', order: 0 },
+    { id: 'a1-1b94c09a', es: 'haber', en: 'there is / there are', kind: 'word', section: 'Test', order: 0, noteEn: 'Hay comes from haber.' },
     { id: 'a1-zzzzzzzz', es: 'mesa', en: 'table', kind: 'word', section: 'Test', order: 1 },
   ];
   return {

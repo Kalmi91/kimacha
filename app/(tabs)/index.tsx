@@ -20,7 +20,7 @@ import {
   type ArticlePick,
 } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget, thinSentences } from '@/lib/pcicSession';
+import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget, thinSentences, dropOrphanCards } from '@/lib/pcicSession';
 import { applyChainOrder, chainGroupId } from '@/lib/pcicChains';
 import { cardsForViewLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
@@ -123,7 +123,10 @@ export default function PcicScreen() {
     const lvl = overrideLevel ?? (await db.getPcicLevel());
     const newOrder = pcicItemsForViewLevel(lvl).map((i) => i.id);
     const rawCards = await db.getPcicCards();
-    const cards = cardsForViewLevel(rawCards, lvl);
+    // PLAN-ketiranyu 2. lépés: a régi PCIC-korpusz árva SRS-sorait (a
+    // betöltött korpuszban már nem létező item-id) kihagyja, mielőtt a
+    // session belőlük épülne.
+    const cards = dropOrphanCards(cardsForViewLevel(rawCards, lvl), (id) => findPcicItem(id) !== undefined);
     const strict = await db.getStrictAccents();
     const newLimit = await db.getDailyNewLimit();
     const delaySec = await db.getAgainDelaySec();
