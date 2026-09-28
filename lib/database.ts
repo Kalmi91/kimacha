@@ -158,7 +158,7 @@ class SQLiteDB implements DB {
   }
 
   // PLAN-play 10. lépés: a kiválasztott PCIC szint. PLAN-ketiranyu 4. lépés
-  // javítás (2026-09-28, orkesztrátor visszajelzés): a user_meta szingliton
+  // javítás (2026-09-28 review): a user_meta szingliton
   // oszlop helyett a learn_settings pár-szerinti sorába költözött (mint a
   // többi tanulási beállítás), hogy irányváltáskor mindkét pár megőrizze a
   // SAJÁT szintjét. A régi (en-es) érték migrációja: runMigrations.

@@ -80,7 +80,7 @@ describe('PCIC fül: es→en irány (PLAN-ketiranyu 4. lépés)', () => {
     expect(mockSpeak).toHaveBeenCalledWith('life', 'en-US');
   });
 
-  // PLAN-ketiranyu 4. lépés javítás (orkesztrátor visszajelzés, 2. pont): egy
+  // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 2. pont): egy
   // frissen váltott irányban, ahol még sose választottak szintet
   // (db.hasPcicLevel() false), a főfül magától felnyitja a szint-választó
   // lapot, ahelyett hogy csendben a fallback szintre ugorna.

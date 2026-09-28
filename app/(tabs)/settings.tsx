@@ -170,7 +170,7 @@ export default function SettingsScreen() {
     await getDb().setAgainDelaySec(next);
   };
 
-  // PLAN-ketiranyu 4. lépés javítás (orkesztrátor visszajelzés, 3. pont): a
+  // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont): a
   // korábban angolra égetett gombfeliratok a felület nyelvén.
   const themeOptions: { label: string; value: 'system' | 'light' | 'dark' }[] = [
     { label: `🔄 ${s.settings.themeAuto}`, value: 'system' },
@@ -387,7 +387,7 @@ export default function SettingsScreen() {
       </View>
 
       {/* FB188: névelő-gombsor a gépelős spanyol főnév-kártyákon. PLAN-ketiranyu
-          4. lépés javítás (orkesztrátor visszajelzés, 4. pont): csak spanyol
+          4. lépés javítás (2026-09-28 review, 4. pont): csak spanyol
           célnyelvnél él (index.tsx-ben is target==='es'-nél jár a gombsor). */}
       {direction[1] === 'es' && (
         <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>

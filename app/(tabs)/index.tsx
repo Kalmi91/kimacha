@@ -131,7 +131,7 @@ export default function PcicScreen() {
     const dir = (onboarding?.target as PcicTarget) ?? 'es';
     setPcicTarget(dir);
     setTarget(dir);
-    // PLAN-ketiranyu 4. lépés javítás (orkesztrátor visszajelzés, 2. pont): ha
+    // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 2. pont): ha
     // az aktív párnak MÉG nincs kifejezetten választott szintje (Settings
     // irányváltás egy korábban nem onboardolt irányra; friss onboarding
     // mindig választat, ide sose ér el választatlanul), a szint-választó lap

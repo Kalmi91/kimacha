@@ -65,7 +65,7 @@ describe('pcic_cards (memory db)', () => {
     expect(cards.find(c => c.itemId === 'e1')?.state).toBe('learning');
   });
 
-  // PLAN-ketiranyu 4. lépés javítás (orkesztrátor visszajelzés, 1. pont): a
+  // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 1. pont): a
   // pcic_level a learn_settings pár-szerinti sorába költözött (korábban
   // user_meta szingliton volt), hogy irányváltáskor mindkét pár megőrizze a
   // saját szintjét.
