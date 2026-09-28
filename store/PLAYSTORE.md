@@ -87,7 +87,7 @@ flavor ugyanazt a hash-t adta). Minden Play-bundle előtt: `rm -rf "${TMPDIR:-/t
 
 ```
 android/app/build/outputs/bundle/release/app-release.aab
-versionName 3.1.15   versionCode 49   applicationId com.kimachaapp.kimacha
+versionName 3.1.15   versionCode 49   applicationId com.kimachaapp.kimacha.app
 minSdk 24 (Expo 56 alapértelmezés)   targetSdk 36   méret 71 MB
 ```
 
@@ -103,7 +103,7 @@ kérhetsz cserét.
 
 ## 4. Csomag-név, ami már nem visszavonható
 
-`com.kimachaapp.kimacha` a feltöltés pillanatában véglegessé válik: ezen a néven
+`com.kimachaapp.kimacha.app` a feltöltés pillanatában véglegessé válik: ezen a néven
 soha többé nem tölthetsz fel más appot, és a nevet sem lehet átírni. Ha valaha
 kifelé is látszó, komolyabb nevet akarsz (pl. `hu.feketekalman.kimacha`),
 MOST kell átírni, mielőtt bármit feltöltesz.
