@@ -35,6 +35,11 @@ import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
 import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
+import EasySentenceCard from '@/components/EasySentenceCard';
+import TypedSentenceCard from '@/components/TypedSentenceCard';
+import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
+import { resolvedTensesFromLessons, type ResolvedTense } from '@/lib/knownSentence';
+import { INITIAL_CADENCE, nextSentenceStep, type CadenceState, type SentenceCardData } from '@/lib/sentenceCards';
 
 // PLAN-pcic 5. lépés: a PCIC fül. Angol -> spanyol gépelés, Anki-gombokkal
 // (again/hard/good/easy), az önálló SM-2 ütemezőn (lib/sm2.ts, 4. lépés).
@@ -59,6 +64,8 @@ interface UndoEntry {
   wasNew: boolean;
   g: Sm2Grade;
   counted: boolean;
+  // PLAN-ketiranyu 7. lépés: a mondatkártya-kadencia az értékelés előtti állapotban.
+  cadenceBefore: CadenceState;
 }
 
 export default function PcicScreen() {
@@ -97,6 +104,12 @@ export default function PcicScreen() {
   const [sessionNew, setSessionNew] = useState(0);
   const [sessionAgain, setSessionAgain] = useState(0);
   const [lastGraded, setLastGraded] = useState<UndoEntry | null>(null);
+  // PLAN-ketiranyu 7. lépés: minden 4. új szó után 1 mondatkártya (felváltva
+  // összerakós és begépelős), csak gyakorlás: nem ír SRS-t (K3). A `tenses` a
+  // kész nyelvtani leckékkel feloldott igeidők (lib/knownSentence.ts).
+  const [cadence, setCadence] = useState<CadenceState>(INITIAL_CADENCE);
+  const [sentenceCard, setSentenceCard] = useState<SentenceCardData | null>(null);
+  const [tenses, setTenses] = useState<ReadonlySet<ResolvedTense>>(new Set());
   // FB385/386: a "+10 új szó" gombbal bővített napi keret, a
   // learn_settings.new_bonus/new_bonus_date oszlopokban perzisztálva (a
   // naptári nappal lejár); load() a DB-ből olvassa vissza, nem nullázza.
@@ -149,7 +162,11 @@ export default function PcicScreen() {
     const delaySec = await db.getAgainDelaySec();
     const spellingRows = await db.getPcicSpellingList();
     const bonus = await db.getPcicNewBonus(day);
+    // PLAN-ketiranyu 7. lépés: a feloldott igeidők a kész nyelvtani leckékből
+    // (csak spanyol célnyelven van igeidő-kapu).
+    const grammarRows = dir === 'es' ? await db.getGameProgress(GRAMMAR_PROGRESS_KEY) : [];
     const introducedToday = cards.filter((c) => c.introducedAt === day).length;
+    setTenses(resolvedTensesFromLessons(doneGrammarTopicProgress(dir, grammarRows).keys()));
     setLevel(lvl);
     setAllLevelCards(rawCards);
     setStrictAccents(strict);
@@ -165,6 +182,8 @@ export default function PcicScreen() {
     setSessionNew(0);
     setSessionAgain(0);
     setLastGraded(null);
+    setCadence(INITIAL_CADENCE);
+    setSentenceCard(null);
     setPcicBonus(bonus);
     setLoading(false);
     // setTypedAnswer is listed because the React Compiler infers it as a
@@ -220,8 +239,11 @@ export default function PcicScreen() {
   // `current?.itemId` váltására fusson (a `grade` a closure-ből olvasva
   // dönti el, hogy még nincs felfedve), felfedéskor (a `grade` state
   // változásakor) ne ismételje - se a felolvasás, se a fókusz.
+  // PLAN-ketiranyu 7. lépés: mondatkártya alatt nem szól a következő prompt;
+  // a kártya bezárásakor (sentenceOpen false) szól, mint egy új lapnál.
+  const sentenceOpen = sentenceCard !== null;
   useEffect(() => {
-    if (!loading && currentItem && promptText && !grade) {
+    if (!loading && !sentenceOpen && currentItem && promptText && !grade) {
       speak(promptText, speechLang(sourceLang));
       inputRef.current?.focus();
     }
@@ -229,7 +251,7 @@ export default function PcicScreen() {
     // (pl. Check utáni szó+példamondat lánc) álljon le, LECKE-SEMA 3.3 minta.
     return () => stopSpeaking();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [current?.itemId, loading]);
+  }, [current?.itemId, loading, sentenceOpen]);
 
   const dueRemaining = queue.filter((c) => c.state !== 'new').length;
   const newRemaining = queue.filter((c) => c.state === 'new').length;
@@ -253,7 +275,7 @@ export default function PcicScreen() {
     await getDb().updateStreak();
 
     setAllCards((prev) => new Map(prev).set(next.itemId, next));
-    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew, g, counted: true });
+    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew, g, counted: true, cadenceBefore: cadence });
     setSessionAnswered((n) => n + 1);
     if (wasNew) setSessionNew((n) => n + 1);
     if (g === 'again') setSessionAgain((n) => n + 1);
@@ -307,8 +329,25 @@ export default function PcicScreen() {
   };
 
   const handleGrade = async (g: Sm2Grade) => {
+    const wasNew = current?.state === 'new';
     const next = await commitGrade(g);
-    if (next) advance(next, g);
+    if (!next) return;
+    advance(next, g);
+    // PLAN-ketiranyu 7. lépés: minden 4. ÚJ szó után jöhet egy mondatkártya
+    // (K3: csak gyakorlás, az eredménye nem ír SRS-t).
+    if (!wasNew) return;
+    const cardsById = new Map(allLevelCards.map((c) => [c.itemId, c]));
+    for (const [id, c] of allCards) cardsById.set(id, c);
+    cardsById.set(next.itemId, next);
+    const step = nextSentenceStep(cadence, next.itemId, {
+      target,
+      cards: cardsById.values(),
+      tenses,
+      findItem: findPcicItem,
+      vocab: () => pcicItemsForViewLevel(level).map((i) => (target === 'es' ? i.es : i.en)),
+    });
+    setCadence(step.state);
+    setSentenceCard(step.card);
   };
 
   const handleUndo = async () => {
@@ -326,6 +365,8 @@ export default function PcicScreen() {
     setArticlePick('');
     setGrade(lastGraded.grade);
     setLastGraded(null);
+    setCadence(lastGraded.cadenceBefore);
+    setSentenceCard(null);
   };
 
   // PLAN-play 12. lépés (s3, döntés a): csak Check után hívható (a gomb csak
@@ -343,7 +384,7 @@ export default function PcicScreen() {
     const next = sm2MarkKnown(current, today);
     await getDb().upsertPcicCard(next);
     setAllCards((prev) => new Map(prev).set(next.itemId, next));
-    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew: false, g: 'good', counted: false });
+    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew: false, g: 'good', counted: false, cadenceBefore: cadence });
     setQueue((prev) => requeueAfterGrade(prev, next, today));
     setTypedAnswer('');
     setArticlePick('');
@@ -444,6 +485,56 @@ export default function PcicScreen() {
       <View style={[styles.container, styles.centered, { backgroundColor: colors.background }]}>
         <ActivityIndicator size="large" color={colors.tint} />
       </View>
+    );
+  }
+
+  // PLAN-ketiranyu 7. lépés: a mondatkártya a következő szókártya ELŐTT jön
+  // (a done-képernyő előtt is). A saját gombja zár; nem ír SRS-t (K3).
+  if (sentenceCard) {
+    return (
+      <KeyboardAvoidingView
+        style={[styles.container, { backgroundColor: colors.background }]}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      >
+        {headerRow}
+        <LevelPickerSheet
+          visible={levelSheetOpen}
+          active={level}
+          cards={allLevelCards}
+          colors={colors}
+          title={s.pcic.chooseLevel}
+          target={target}
+          onSelect={handleSelectLevel}
+          onClose={() => setLevelSheetOpen(false)}
+        />
+        <ScrollView
+          style={styles.cardScroll}
+          contentContainerStyle={[styles.cardScrollContent, { paddingBottom: 24 }]}
+          keyboardShouldPersistTaps="handled"
+          keyboardDismissMode="on-drag"
+        >
+          {sentenceCard.kind === 'tiles' ? (
+            <EasySentenceCard
+              key={sentenceCard.itemId}
+              sourceSentence={sentenceCard.source}
+              targetWords={sentenceCard.targetWords}
+              trapWords={sentenceCard.trapWords}
+              speechLocale={speechLang(target)}
+              onResult={() => setSentenceCard(null)}
+            />
+          ) : (
+            <TypedSentenceCard
+              key={sentenceCard.itemId}
+              sourceSentence={sentenceCard.source}
+              targetSentence={sentenceCard.target}
+              strictAccents={strictAccents}
+              speechLocale={speechLang(target)}
+              onResult={() => setSentenceCard(null)}
+            />
+          )}
+        </ScrollView>
+        <FeedbackButton level={level} languagePair={languagePair} currentCard={`sentence:${sentenceCard.itemId}`} />
+      </KeyboardAvoidingView>
     );
   }
 

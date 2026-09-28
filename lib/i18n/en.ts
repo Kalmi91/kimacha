@@ -13,6 +13,8 @@ export default {
     check: 'Check',
     correct: 'Correct!',
     wrong: 'Wrong',
+    next: 'Next',
+    typeSentence: 'Type the sentence',
   },
   buttons: {
     spelling: 'Spelling',
