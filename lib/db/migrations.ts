@@ -211,7 +211,8 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
       first_use_date TEXT NOT NULL,
       last_sync_date TEXT,
       last_open_date TEXT,
-      status_bar_tint INTEGER
+      status_bar_tint INTEGER,
+      grammar_palette TEXT
     );
     CREATE TABLE IF NOT EXISTS learn_settings (
       pair TEXT PRIMARY KEY,
@@ -326,6 +327,10 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
   // Migration: status-bar tint index (DBs created before the blue strip, FB83).
   try {
     await db.execAsync('ALTER TABLE user_meta ADD COLUMN status_bar_tint INTEGER');
+  } catch {}
+  // Migration: app-wide color palette id (DBs created before the neon UI, NY11).
+  try {
+    await db.execAsync('ALTER TABLE user_meta ADD COLUMN grammar_palette TEXT');
   } catch {}
   // Migration: daily new-word budget columns (FB77). daily_new_limit is the
   // standing setting; new_bonus/new_bonus_date carry the "+5 new words" taps,

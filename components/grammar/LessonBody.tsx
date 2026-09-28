@@ -155,7 +155,7 @@ function GridTable({ header, rows, contentLang, colors, scroll }: {
 export default function LessonBody({ blocks, contentLang, learnedLang }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
-  const isDark = theme === 'dark';
+  const isDark = theme !== 'light';
 
   return (
     <View style={styles.body}>
