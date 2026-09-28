@@ -18,7 +18,7 @@ jest.mock('expo-router', () => ({
     const { useEffect } = require('react');
     useEffect(cb, []);
   },
-  useLocalSearchParams: () => ({ topic: 'por-para' }),
+  useLocalSearchParams: () => ({ topic: 'perfecto' }),
 }));
 
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
@@ -81,8 +81,8 @@ describe('grammar course', () => {
 
   it('teaches the rule first, then drills it, then records the lesson as done', async () => {
     // LECKE-SEMA: a core+ leckék (presente-regular is) már LessonV2-n vannak, a
-    // rule/more-os régi utat egy még átíratlan core-lecke, a por-para játssza.
-    const lesson = lessonFor('es', 'por-para')! as LegacyLesson;
+    // rule/more-os régi utat egy még átíratlan core-lecke, a perfecto játssza.
+    const lesson = lessonFor('es', 'perfecto')! as LegacyLesson;
     // D3 (FB290): a lecke csak >=80%-nál ír "kész" sort, ezért a teszt mindig
     // a helyes választ nyomja meg. A GrammarDrill seedje Date.now()-ból jön,
     // lemockolva előre kiszámítható ugyanazzal a `buildGrammarRound`-dal.
@@ -117,7 +117,7 @@ describe('grammar course', () => {
     expect(screen.queryByTestId('grammar-practice-again')).toBeTruthy();
     await flush(2);
     const rows = await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY);
-    const row = rows.find((r) => r.itemId === 'por-para:choice');
+    const row = rows.find((r) => r.itemId === 'perfecto:choice');
     expect(row?.state).toBe('done');
     expect((row?.data as { total?: number })?.total).toBe(lesson.items.length);
 
