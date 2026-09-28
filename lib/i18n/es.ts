@@ -98,6 +98,9 @@ const es: Strings = {
     enComingSoon: 'La gramática inglesa llegará más adelante.',
   },
   settings: {
+    themeAuto: 'Automático',
+    themeLight: 'Claro',
+    themeDark: 'Oscuro',
     weeklyGoal: 'Objetivo semanal de estudio',
     weeklyGoalHours: (h: string) => `${h} horas / semana`,
     weeklyGoalDoneTag: '✓ LISTO',
@@ -237,8 +240,11 @@ const es: Strings = {
     badgeDue: (n: number) => `pendientes ${n}`,
     badgeNew: (n: number) => `nuevas ${n}`,
     badgeDone: (n: number) => `hechas ${n}`,
+    // "oración" -> "oraciones" nem sima "+es" ragozás (az ékezet elmarad a
+    // többesben), ezért a teljes szó vált, nem toldalék (elírás-javítás,
+    // orkesztrátor visszajelzés 3. pont: "oraciónes" -> "oraciones").
     badgeIntroducedToday: (words: number, sentences: number, budget: number) =>
-      `hoy: ${words} palabra${words === 1 ? '' : 's'} · ${sentences} oración${sentences === 1 ? '' : 'es'} / ${budget}`,
+      `hoy: ${words} palabra${words === 1 ? '' : 's'} · ${sentences === 1 ? 'oración' : 'oraciones'} / ${budget}`,
     again: 'No lo sabía',
     hard: 'Difícil',
     good: 'Lo sabía',
@@ -263,6 +269,13 @@ const es: Strings = {
     chooseLevel: 'Elige el nivel',
     next: (label: string) => `Siguiente → ${label}`,
     accentForgiven: 'Falta el acento, se cuenta como correcto',
+    levelBeginner: 'Principiante',
+    levelElementary: 'Elemental',
+    levelIntermediate: 'Intermedio',
+    levelUpperIntermediate: 'Intermedio alto',
+    levelPlusSentences: '+1 · oraciones',
+    levelNotStarted: 'sin empezar',
+    levelRowIntroduced: (n: number, total: number) => `${n} / ${total} presentadas`,
   },
   pos: {
     noun: 'sustantivo',

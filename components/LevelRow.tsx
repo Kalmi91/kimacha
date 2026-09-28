@@ -1,6 +1,7 @@
 import { StyleSheet, View, Text, Pressable } from 'react-native';
 
 import Colors from '@/constants/Colors';
+import { t } from '@/lib/i18n';
 import type { PcicViewLevel } from '@/data/pcic';
 
 type ColorScheme = (typeof Colors)['light'];
@@ -21,6 +22,10 @@ type Props = {
 
 export default function LevelRow({ level, label, introduced, total, active, colors, onPress }: Props) {
   const pct = total > 0 ? (introduced / total) * 100 : 0;
+  // PLAN-ketiranyu 4. lépés javítás (orkesztrátor visszajelzés, 3. pont): a
+  // sor korábban angolra égetve mutatta ezt a két szöveget, spanyol
+  // felületen is angolul maradt.
+  const s = t();
   return (
     <Pressable
       style={[styles.row, { backgroundColor: colors.card, borderColor: active ? colors.tint : 'transparent' }]}
@@ -37,7 +42,7 @@ export default function LevelRow({ level, label, introduced, total, active, colo
         <View style={[styles.fill, { backgroundColor: colors.tint, width: `${pct}%` }]} />
       </View>
       <Text style={[styles.progress, { color: colors.tabIconDefault }]}>
-        {introduced > 0 ? `${introduced} / ${total} introduced` : 'not started'}
+        {introduced > 0 ? s.pcic.levelRowIntroduced(introduced, total) : s.pcic.levelNotStarted}
       </Text>
     </Pressable>
   );

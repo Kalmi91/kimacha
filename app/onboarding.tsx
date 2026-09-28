@@ -6,7 +6,7 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb } from '@/lib/database';
 import { t, setLanguage } from '@/lib/i18n';
-import { PCIC_LEVELS, LEVEL_LABELS, pcicItemsForLevel, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
+import { PCIC_LEVELS, pcicItemsForLevel, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import LevelRow from '@/components/LevelRow';
 
 // PLAN-ketiranyu 4. lépés (2026-09-28, jóváhagyott vázlat 1-5. pont): az
@@ -69,6 +69,14 @@ export default function OnboardingScreen() {
     // szűrő); es-en-ben csak A1, mindig felkínálva, akkor is, ha még üres (az
     // 50 angol szó az 5. lépésben jön) - ilyenkor a sor alatt egy mondat mondja ki.
     const levels: PcicLevel[] = target === 'en' ? ['A1'] : PCIC_LEVELS.filter((lvl) => pcicItemsForLevel(lvl).length > 0);
+    // PLAN-ketiranyu 4. lépés javítás (orkesztrátor visszajelzés, 3. pont): a
+    // feliratok a felület nyelvén (data/pcic.ts LEVEL_LABELS angolra égetve volt).
+    const levelLabels: Record<PcicLevel, string> = {
+      A1: s.pcic.levelBeginner,
+      A2: s.pcic.levelElementary,
+      B1: s.pcic.levelIntermediate,
+      B2: s.pcic.levelUpperIntermediate,
+    };
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         <Text style={[styles.welcome, { color: colors.tint }]}>{s.pcic.chooseLevel}</Text>
@@ -78,7 +86,7 @@ export default function OnboardingScreen() {
             <View key={lvl}>
               <LevelRow
                 level={lvl}
-                label={LEVEL_LABELS[lvl]}
+                label={levelLabels[lvl]}
                 introduced={0}
                 total={total}
                 active={false}
