@@ -12,7 +12,8 @@ import Colors from '@/constants/Colors';
 import { BASE, ON_FILL, PALETTE_FILLS } from '@/constants/GrammarPalettes';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { getDb } from '@/lib/database';
-import { ThemeProvider, useGrammarColors, useTheme } from '@/lib/ThemeContext';
+import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
 
 let ctx: ReturnType<typeof useTheme>;
 let gc: ReturnType<typeof useGrammarColors>;

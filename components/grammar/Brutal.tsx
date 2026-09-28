@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Pressable, StyleSheet, Text, View, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 
-import { useGrammarColors, type GrammarColors } from '@/lib/ThemeContext';
+import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 
 // NY20: a neo-brutalista forma-elemek (NYELVTAN.md "Neo-brutalista stílus").
 // Csak akkor használjuk őket, ha useGrammarColors().brutal igaz; a classic

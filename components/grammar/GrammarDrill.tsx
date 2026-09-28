@@ -32,6 +32,8 @@ import { hashString, shuffleArray } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
 import LessonBody from '@/components/grammar/LessonBody';
 import MoreBlocks from '@/components/grammar/MoreBlocks';
+import { BrutalBox, SegmentBar, Sticker, segmentsFilled, textOnFill } from '@/components/grammar/Brutal';
+import { useGrammarColors } from '@/lib/grammarColors';
 
 // The "which one is right, and why" drill, shared by the grammar course
 // (app/grammar/[topic].tsx) and the Game tab's grammar-choice screen. It was
@@ -487,6 +489,7 @@ function TransformDrillItem({
 export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, kinds = CHOICE_ONLY, transformSeen, onItemChange }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const s = t();
 
   const [seed] = useState(() => hashString(`${topic.topic}:${Date.now()}`));
@@ -509,6 +512,9 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const [selected, setSelected] = useState<number | null>(null);
   const [correctCount, setCorrectCount] = useState(0);
   const [showMore, setShowMore] = useState(false);
+  // NY22: egymás utáni helyes válaszok a körön belül, csak memóriában (nincs
+  // DB-írás); hibánál nullázódik, "x2"-től látszik a combo-matrica.
+  const [combo, setCombo] = useState(0);
   // NY3: a Beállítások ékezet-szigor kapcsolója, egyszer lekérve, csak ha a
   // körben van transform tétel (a többi ágnak nincs rá szüksége).
   const [strictAccents, setStrictAccents] = useState(false);
@@ -554,17 +560,39 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // so correctCount's state update has not landed yet; the final tally is
   // computed locally instead of trusted from the (possibly stale) closure.
   const completeItem = (wasCorrect: boolean) => {
+    setCombo((c) => (wasCorrect ? c + 1 : 0));
     const finalCount = wasCorrect ? correctCount + 1 : correctCount;
     if (wasCorrect) setCorrectCount(finalCount);
     advance(finalCount);
   };
 
+  // NY22: neo-brutalista fejléc: szegmentált progress + combo-matrica (b).
+  const progressText = s.games.grammarChoice.progress(index + 1, round.length);
+  const header = g.brutal ? (
+    <View style={styles.brutalHead}>
+      <View style={styles.brutalHeadRow}>
+        <SegmentBar
+          testID="grammar-drill-segments"
+          segments={Math.min(8, Math.max(5, round.length))}
+          filled={segmentsFilled((index / round.length) * 100, Math.min(8, Math.max(5, round.length)))}
+          style={styles.brutalSegments}
+        />
+        {combo >= 2 ? <Sticker testID="grammar-combo" label={s.grammar.comboLabel(combo)} fill="b" rotate={5} /> : null}
+      </View>
+      <Text testID="grammar-drill-progress" style={[styles.brutalProgress, { color: g.mu }]}>
+        {progressText}
+      </Text>
+    </View>
+  ) : (
+    <Text testID="grammar-drill-progress" style={[styles.progress, { color: colors.tabIconDefault }]}>
+      {progressText}
+    </Text>
+  );
+
   if (!isChoiceRoundItem(roundItem)) {
     return (
       <ScrollView contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled">
-        <Text testID="grammar-drill-progress" style={[styles.progress, { color: colors.tabIconDefault }]}>
-          {s.games.grammarChoice.progress(index + 1, round.length)}
-        </Text>
+        {header}
         {isMatchItem(roundItem.item) ? (
           <MatchDrillItem key={roundItem.item.id} item={roundItem.item} colors={colors} s={s} onDone={completeItem} />
         ) : isFormItem(roundItem.item) ? (
@@ -624,11 +652,140 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     if (answered) return;
     setSelected(optIdx);
     if (optIdx === current.correctIndex) setCorrectCount((c) => c + 1);
+    setCombo((c) => (optIdx === current.correctIndex ? c + 1 : 0));
   };
 
   // NY3: a jelvény csak a gap-ágon (choice) jelenik meg, a jelölős tételnek
   // nincs `tense` mezője (lessonTypes.ts).
   const badgeTense = !marking && !isMarkItem(current.item) ? current.item.tense : undefined;
+
+  // NY22 (neo-brutalista, NYELVTAN.md "Neo-brutalista stílus" 2. képernyő): a
+  // mondat dobozban, a hiány b kitöltésű blokk, a válaszok 2x2 rácsban, a
+  // helyes = a kitöltés + pipa, a visszajelző doboz b kitöltésű.
+  if (g.brutal) {
+    const blankFill = answered ? (isCorrect ? g.a : g.ink) : g.b;
+    const blankColor = answered && !isCorrect ? g.bg : g.onFill;
+    return (
+      <ScrollView contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled">
+        {header}
+        {badgeTense ? <TenseBadge tense={badgeTense} colors={colors} /> : null}
+
+        {marking ? (
+          <Text style={[styles.markPrompt, { color: g.ink, textTransform: 'uppercase' }]}>
+            {s.games.grammarChoice.markPrompt(
+              s.games.grammarChoice.wordClass[(current.item as GrammarMarkItem).target] ??
+                (current.item as GrammarMarkItem).target
+            )}
+          </Text>
+        ) : null}
+        <BrutalBox boxStyle={styles.brutalSentenceBox}>
+          {marking ? (
+            <Text style={[styles.sentence, { color: g.ink }]}>
+              {markParts.map((tok, i) => {
+                if (!tok.isWord) return <Text key={`s${i}`}>{tok.text}</Text>;
+                const wordIndex = wordIndexByToken[i];
+                const isRightAnswer = wordIndex === current.correctIndex;
+                const isPicked = selected === wordIndex;
+                const hit = answered && isRightAnswer;
+                const miss = answered && isPicked && !isRightAnswer;
+                return (
+                  <Text
+                    key={`w${i}`}
+                    testID="grammar-mark-word"
+                    onPress={() => selectOption(wordIndex)}
+                    style={{
+                      color: hit ? g.onFill : miss ? g.bg : g.ink,
+                      backgroundColor: hit ? g.a : miss ? g.ink : undefined,
+                      fontWeight: '500',
+                      textDecorationLine: answered ? 'none' : 'underline',
+                    }}
+                  >
+                    {tok.text}
+                  </Text>
+                );
+              })}
+            </Text>
+          ) : (
+            <Text style={[styles.sentence, { color: g.ink }]}>
+              {before}
+              <Text style={{ backgroundColor: blankFill, color: blankColor, fontWeight: '500' }}>
+                {` ${answered ? pickedText : '____'} `}
+              </Text>
+              {after}
+            </Text>
+          )}
+        </BrutalBox>
+
+        <View style={marking ? styles.hiddenOptions : styles.brutalOptions}>
+          {(marking ? [] : current.options).map((opt, i) => {
+            const isPicked = selected === i;
+            const isRightAnswer = i === current.correctIndex;
+            const fill = answered && isRightAnswer ? 'a' : answered && isPicked ? 'ink' : 'paper';
+            return (
+              <BrutalBox
+                key={opt}
+                testID="grammar-option"
+                fill={fill}
+                style={styles.brutalOption}
+                boxStyle={styles.brutalOptionInner}
+                onPress={() => selectOption(i)}
+                disabled={answered}
+              >
+                <Text style={[styles.brutalOptionText, { color: textOnFill(g, fill) }]}>{opt}</Text>
+                {answered && isRightAnswer ? (
+                  <Text style={[styles.brutalOptionText, { color: textOnFill(g, fill) }]}> ✓</Text>
+                ) : null}
+              </BrutalBox>
+            );
+          })}
+        </View>
+
+        {answered ? (
+          <BrutalBox fill="b" boxStyle={styles.brutalFeedback}>
+            <Text style={[styles.brutalFeedbackHead, { color: g.onFill }]}>
+              {isCorrect ? s.grammar.perfect : s.games.wrongFeedback}
+            </Text>
+            <Text style={[styles.explainText, { color: g.onFill }]}>{current.item.why[contentLang] ?? current.item.why.en}</Text>
+            {!isCorrect && pickedText !== undefined ? (
+              <Text style={[styles.explainText, { color: g.onFill }]}>
+                {wrongExplanation(current.item, pickedText, contentLang) ??
+                  (marking ? s.games.grammarChoice.markWrong : '')}
+              </Text>
+            ) : null}
+            {current.item.examples.map((ex, i) => (
+              <GlossText
+                key={i}
+                text={ex}
+                glosses={buildGlossMap(ex, { learnedLang, nativeLang: contentLang, knownWordIds: knownIds, overrides })}
+                learnedLang={learnedLang}
+                style={[styles.example, { color: g.onFill }]}
+              />
+            ))}
+            {'more' in topic && topic.more ? (
+              <View style={[styles.moreSection, { borderTopColor: g.onFill }]}>
+                <Pressable onPress={() => setShowMore((v) => !v)} hitSlop={8}>
+                  <Text style={[styles.moreToggle, { color: g.onFill }]}>
+                    {showMore ? `▾ ${s.games.moreLabel}` : `▸ ${s.games.moreLabel}`}
+                  </Text>
+                </Pressable>
+                {showMore ? (
+                  <View style={styles.moreBody}>
+                    <MoreBlocks more={topic.more} contentLang={contentLang} color={g.onFill} />
+                  </View>
+                ) : null}
+              </View>
+            ) : null}
+          </BrutalBox>
+        ) : null}
+        {answered ? (
+          <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.brutalNext} onPress={next}>
+            <Text style={[styles.brutalNextText, { color: g.bg }]}>{s.grammar.nextArrow}</Text>
+          </BrutalBox>
+        ) : null}
+        {answered ? footer : null}
+      </ScrollView>
+    );
+  }
 
   return (
     <ScrollView contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled">
@@ -756,6 +913,20 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
 const styles = StyleSheet.create({
   body: { padding: 20, gap: 12, paddingBottom: 60 },
   progress: { fontSize: 13, textAlign: 'center' },
+  // NY22: neo-brutalista drill (nagybetűs címek, 500 súly, sarok 0).
+  brutalHead: { gap: 4 },
+  brutalHeadRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  brutalSegments: { flex: 1 },
+  brutalProgress: { fontSize: 11, fontWeight: '500', textTransform: 'uppercase' },
+  brutalSentenceBox: { padding: 20 },
+  brutalOptions: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
+  brutalOption: { flexBasis: '46%', flexGrow: 1 },
+  brutalOptionInner: { paddingVertical: 16, paddingHorizontal: 8, flexDirection: 'row', justifyContent: 'center' },
+  brutalOptionText: { fontSize: 17, fontWeight: '500' },
+  brutalFeedback: { padding: 16, gap: 8 },
+  brutalFeedbackHead: { fontSize: 18, fontWeight: '500', textTransform: 'uppercase' },
+  brutalNext: { paddingVertical: 14, alignItems: 'center' },
+  brutalNextText: { fontSize: 16, fontWeight: '500', textTransform: 'uppercase' },
   sentenceCard: { borderRadius: 16, padding: 20 },
   sentence: { fontSize: 20, lineHeight: 30, textAlign: 'center' },
   options: { gap: 10 },
