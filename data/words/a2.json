@@ -45,6 +45,21 @@
     "pos": "verb"
   },
   {
+    "id": 7543,
+    "level": "A2",
+    "es": "fue (ir)",
+    "hu": "ő ment (menni)",
+    "en": "he went",
+    "de": "er ging (gehen)",
+    "sentence_es": "No fue al parque.",
+    "sentence_hu": "Nem ment el a parkba.",
+    "sentence_en": "He didn't go to the park.",
+    "sentence_de": "Er ging nicht in den Park.",
+    "topic": "indefinido_10_verbos",
+    "topicOrder": 9,
+    "pos": "verb"
+  },
+  {
     "es": "la vez",
     "hu": "alkalom/szer",
     "en": "time / occasion",
@@ -105,21 +120,6 @@
     "topic": "promesa_emociones_a2",
     "topicOrder": 19,
     "pos": "adj"
-  },
-  {
-    "id": 7543,
-    "level": "A2",
-    "es": "fue (ir)",
-    "hu": "ő ment (menni)",
-    "en": "he went",
-    "de": "er ging (gehen)",
-    "sentence_es": "No fue al parque.",
-    "sentence_hu": "Nem ment el a parkba.",
-    "sentence_en": "He didn't go to the park.",
-    "sentence_de": "Er ging nicht in den Park.",
-    "topic": "indefinido_10_verbos",
-    "topicOrder": 9,
-    "pos": "verb"
   },
   {
     "id": 3743,
@@ -534,6 +534,23 @@
     "gender": "m"
   },
   {
+    "id": 7571,
+    "level": "A2",
+    "es": "pasó (pasar)",
+    "hu": "ő töltötte (tölteni)",
+    "en": "he spent",
+    "de": "er verbrachte (verbringen)",
+    "sentence_es": "Pasó la tarde con sus amigos.",
+    "sentence_hu": "A délutánt a barátaival töltötte.",
+    "sentence_en": "He spent the afternoon with his friends.",
+    "sentence_de": "Er verbrachte den Nachmittag mit seinen Freunden.",
+    "topic": "indefinido_10_verbos",
+    "topicOrder": 39,
+    "pos": "verb",
+    "note_en": "Pasar also means to pass by / to happen (¿Qué pasó? = What happened?).",
+    "note_hu": "A pasar azt is jelenti: benézni valahova / megtörténni (¿Qué pasó? = Mi történt?)."
+  },
+  {
     "es": "genial",
     "hu": "remek/zseniális",
     "en": "awesome (great)",
@@ -612,23 +629,6 @@
     "gender": "f",
     "note_en": "Also: history (me gusta la historia de México = I like the history of Mexico).",
     "note_hu": "Jelenti azt is: történelem (me gusta la historia de México = szeretem Mexikó történelmét)."
-  },
-  {
-    "id": 7571,
-    "level": "A2",
-    "es": "pasó (pasar)",
-    "hu": "ő töltötte (tölteni)",
-    "en": "he spent",
-    "de": "er verbrachte (verbringen)",
-    "sentence_es": "Pasó la tarde con sus amigos.",
-    "sentence_hu": "A délutánt a barátaival töltötte.",
-    "sentence_en": "He spent the afternoon with his friends.",
-    "sentence_de": "Er verbrachte den Nachmittag mit seinen Freunden.",
-    "topic": "indefinido_10_verbos",
-    "topicOrder": 39,
-    "pos": "verb",
-    "note_en": "Pasar also means to pass by / to happen (¿Qué pasó? = What happened?).",
-    "note_hu": "A pasar azt is jelenti: benézni valahova / megtörténni (¿Qué pasó? = Mi történt?)."
   },
   {
     "es": "el primero",
@@ -1043,6 +1043,21 @@
     "topicOrder": 4,
     "pos": "noun",
     "gender": "f"
+  },
+  {
+    "id": 7584,
+    "level": "A2",
+    "es": "necesitamos (necesitar)",
+    "hu": "nekünk szükségünk volt (szükségelni)",
+    "en": "we needed",
+    "de": "wir brauchten (brauchen)",
+    "sentence_es": "Necesitamos ayuda con la maleta.",
+    "sentence_hu": "Szükségünk volt segítségre a bőrönddel.",
+    "sentence_en": "We needed help with the suitcase.",
+    "sentence_de": "Wir brauchten Hilfe mit dem Koffer.",
+    "topic": "indefinido_10_verbos",
+    "topicOrder": 52,
+    "pos": "verb"
   },
   {
     "es": "listo",
@@ -2530,6 +2545,21 @@
     "pos": "adv"
   },
   {
+    "id": 3552,
+    "level": "A2",
+    "es": "largo (larga)",
+    "hu": "hosszú (nőnem)",
+    "en": "long (feminine)",
+    "de": "lang (feminin)",
+    "sentence_es": "Ha sido una larga espera.",
+    "sentence_hu": "Hosszú várakozás volt.",
+    "sentence_en": "It has been a long wait.",
+    "sentence_de": "Es war eine lange Wartezeit.",
+    "topic": "trabajo_dia_adjetivos_a2",
+    "topicOrder": 22,
+    "pos": "adj"
+  },
+  {
     "es": "la pena",
     "hu": "kár/szomorúság/büntetés",
     "en": "pity (sorrow)",
@@ -3032,6 +3062,21 @@
     "gender": "f"
   },
   {
+    "id": 3629,
+    "level": "A2",
+    "es": "tranquilo (tranquila)",
+    "hu": "nyugodt (nőnem)",
+    "en": "calm / quiet (feminine)",
+    "de": "ruhig (feminin)",
+    "sentence_es": "La noche ha sido muy tranquila.",
+    "sentence_hu": "Az éjszaka nagyon nyugodt volt.",
+    "sentence_en": "The night has been very quiet.",
+    "sentence_de": "Die Nacht war sehr ruhig.",
+    "topic": "personas_caracter_a2",
+    "topicOrder": 10,
+    "pos": "adj"
+  },
+  {
     "id": 7559,
     "level": "A2",
     "es": "pudo (poder)",
@@ -3240,6 +3285,21 @@
     "topicOrder": 16,
     "pos": "noun",
     "gender": "m"
+  },
+  {
+    "id": 3579,
+    "level": "A2",
+    "es": "blanco (blanca)",
+    "hu": "fehér (nőnem)",
+    "en": "white (feminine)",
+    "de": "weiß (feminin)",
+    "sentence_es": "La casa blanca está al final de la calle.",
+    "sentence_hu": "A fehér ház az utca végén van.",
+    "sentence_en": "The white house is at the end of the street.",
+    "sentence_de": "Das weiße Haus steht am Ende der Straße.",
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 13,
+    "pos": "adj"
   },
   {
     "id": 3725,
@@ -4802,6 +4862,21 @@
     "pos": "verb"
   },
   {
+    "id": 3568,
+    "level": "A2",
+    "es": "lleno (llena)",
+    "hu": "tele (nőnem)",
+    "en": "full (feminine)",
+    "de": "voll (feminin)",
+    "sentence_es": "La sala está llena de gente.",
+    "sentence_hu": "A terem tele van emberekkel.",
+    "sentence_en": "The room is full of people.",
+    "sentence_de": "Der Saal ist voller Menschen.",
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 12,
+    "pos": "adj"
+  },
+  {
     "es": "el respeto",
     "hu": "tisztelet",
     "en": "respect",
@@ -4931,6 +5006,21 @@
     "note_de": "Zwei Bedeutungen. 1) WEITERMACHEN: sigo estudiando. 2) FOLGEN: sigue el camino. Mit einer -ndo-Form heißt es weitermachen."
   },
   {
+    "id": 3423,
+    "level": "A2",
+    "es": "corre (correr)",
+    "hu": "ő fut (futni)",
+    "en": "he runs",
+    "de": "er/sie läuft (laufen)",
+    "sentence_es": "Corre todos los días por el parque.",
+    "sentence_hu": "Minden nap fut a parkban.",
+    "sentence_en": "He runs in the park every day.",
+    "sentence_de": "Er läuft jeden Tag im Park.",
+    "topic": "salud_deporte_ejercicio_a2",
+    "topicOrder": 2,
+    "pos": "verb"
+  },
+  {
     "id": 3424,
     "level": "A2",
     "es": "podido (poder)",
@@ -5054,6 +5144,21 @@
     "pos": "verb",
     "note_en": "Also: to do (quiero hacerte un favor = I want to do you a favor).",
     "note_hu": "Jelenti azt is: tenni (quiero hacerte un favor = szeretnék tenni neked egy szívességet)."
+  },
+  {
+    "id": 3432,
+    "level": "A2",
+    "es": "necesitaba (necesitar)",
+    "hu": "szükségem volt rá (akkoriban, szükségelni)",
+    "en": "I used to need",
+    "de": "ich/er brauchte (brauchen)",
+    "sentence_es": "Necesitaba tu ayuda ayer.",
+    "sentence_hu": "Tegnap szükségem volt a segítségedre.",
+    "sentence_en": "I needed your help yesterday.",
+    "sentence_de": "Ich brauchte gestern deine Hilfe.",
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 2,
+    "pos": "verb"
   },
   {
     "id": 3433,
@@ -5253,6 +5358,21 @@
     "note_en": "Two meanings. 1) TO CARRY along: llevo las llaves. 2) TO WEAR: lleva una camisa blanca. With a piece of clothing after it, it means wearing.",
     "note_es": "Dos sentidos. 1) LLEVAR consigo: llevo las llaves. 2) VESTIR: lleva una camisa blanca. Con ropa detrás, es vestir.",
     "note_de": "Zwei Bedeutungen. 1) MITNEHMEN: llevo las llaves. 2) TRAGEN (Kleidung): lleva una camisa blanca."
+  },
+  {
+    "id": 3445,
+    "level": "A2",
+    "es": "alegra (alegrar)",
+    "hu": "örül (örülni)",
+    "en": "it makes happy (to make happy)",
+    "de": "es freut (freuen)",
+    "sentence_es": "Me alegra verte de nuevo.",
+    "sentence_hu": "Örülök, hogy újra látlak.",
+    "sentence_en": "I'm glad to see you again.",
+    "sentence_de": "Es freut mich, dich wiederzusehen.",
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 4,
+    "pos": "verb"
   },
   {
     "id": 3446,
@@ -5598,6 +5718,21 @@
     "note_de": "Zwei Bedeutungen. 1) FRAGE als Thema: una cuestión difícil. 2) SACHE: es cuestión de tiempo. Für die gestellte Frage steht pregunta."
   },
   {
+    "id": 3470,
+    "level": "A2",
+    "es": "molesta (molestar)",
+    "hu": "zavar (zavarni)",
+    "en": "it bothers",
+    "de": "es stört (stören)",
+    "sentence_es": "¿Te molesta el ruido?",
+    "sentence_hu": "Zavar a zaj?",
+    "sentence_en": "Does the noise bother you?",
+    "sentence_de": "Stört dich der Lärm?",
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 3,
+    "pos": "verb"
+  },
+  {
     "id": 3471,
     "level": "A2",
     "es": "teniendo (tener)",
@@ -5778,6 +5913,21 @@
     "pos": "verb"
   },
   {
+    "id": 3481,
+    "level": "A2",
+    "es": "preocupa (preocupar)",
+    "hu": "aggaszt (aggasztani)",
+    "en": "it worries",
+    "de": "es besorgt (besorgen)",
+    "sentence_es": "Me preocupa tu salud.",
+    "sentence_hu": "Aggódom az egészséged miatt.",
+    "sentence_en": "Your health worries me.",
+    "sentence_de": "Deine Gesundheit macht mir Sorgen.",
+    "topic": "salud_deporte_enfermedad_a2",
+    "topicOrder": 5,
+    "pos": "verb"
+  },
+  {
     "id": 3482,
     "level": "A2",
     "es": "tomó (tomar)",
@@ -5885,6 +6035,21 @@
     "note_hu": "Jelenti azt is: bárcsak (ojalá tuviera más tiempo = bárcsak több időm lenne)."
   },
   {
+    "id": 3489,
+    "level": "A2",
+    "es": "perdona (perdonar)",
+    "hu": "bocsáss meg (megbocsátani)",
+    "en": "forgive (informal command)",
+    "de": "verzeih (verzeihen)",
+    "sentence_es": "Perdona, no he visto tu mensaje.",
+    "sentence_hu": "Bocsi, nem láttam az üzeneted.",
+    "sentence_en": "Sorry, I haven't seen your message.",
+    "sentence_de": "Entschuldigung, ich habe deine Nachricht nicht gesehen.",
+    "topic": "promesa_emociones_a2",
+    "topicOrder": 5,
+    "pos": "verb"
+  },
+  {
     "id": 3490,
     "level": "A2",
     "es": "vuelvo (volver)",
@@ -5916,6 +6081,21 @@
     "gender": "m"
   },
   {
+    "id": 3492,
+    "level": "A2",
+    "es": "quedarme (quedar)",
+    "hu": "maradnom (maradni)",
+    "en": "for me to stay",
+    "de": "bleiben (bleiben)",
+    "sentence_es": "He decidido quedarme en casa hoy.",
+    "sentence_hu": "Úgy döntöttem, ma otthon maradok.",
+    "sentence_en": "I've decided to stay home today.",
+    "sentence_de": "Ich habe beschlossen, heute zu Hause zu bleiben.",
+    "topic": "hogar_entorno_vivienda_a2",
+    "topicOrder": 7,
+    "pos": "verb"
+  },
+  {
     "id": 3493,
     "level": "A2",
     "es": "llamaré (llamar)",
@@ -5928,6 +6108,21 @@
     "sentence_de": "Ich rufe dich morgen früh an.",
     "topic": "comunicacion_hablar_a2",
     "topicOrder": 9,
+    "pos": "verb"
+  },
+  {
+    "id": 3494,
+    "level": "A2",
+    "es": "acabado (acabar)",
+    "hu": "befejezett (befejezni)",
+    "en": "finished",
+    "de": "beendet (beenden)",
+    "sentence_es": "He acabado todos mis deberes.",
+    "sentence_hu": "Befejeztem az összes házi feladatom.",
+    "sentence_en": "I've finished all my homework.",
+    "sentence_de": "Ich habe alle meine Hausaufgaben erledigt.",
+    "topic": "estudios",
+    "topicOrder": 5,
     "pos": "verb"
   },
   {
@@ -5960,21 +6155,6 @@
     "topic": "trabajo_dia_tiempo_a2",
     "topicOrder": 15,
     "pos": "adv"
-  },
-  {
-    "id": 3492,
-    "level": "A2",
-    "es": "quedarme (quedar)",
-    "hu": "maradnom (maradni)",
-    "en": "for me to stay",
-    "de": "bleiben (bleiben)",
-    "sentence_es": "He decidido quedarme en casa hoy.",
-    "sentence_hu": "Úgy döntöttem, ma otthon maradok.",
-    "sentence_en": "I've decided to stay home today.",
-    "sentence_de": "Ich habe beschlossen, heute zu Hause zu bleiben.",
-    "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 7,
-    "pos": "verb"
   },
   {
     "id": 3497,
@@ -6225,6 +6405,21 @@
     "pos": "pron"
   },
   {
+    "id": 3608,
+    "level": "A2",
+    "es": "suyo (suya)",
+    "hu": "övé (nőnem)",
+    "en": "hers",
+    "de": "sein / ihr (feminin Possessiv)",
+    "sentence_es": "Esta idea es suya, no mía.",
+    "sentence_hu": "Ez az ő ötlete, nem az enyém.",
+    "sentence_en": "This idea is hers, not mine.",
+    "sentence_de": "Diese Idee ist ihre, nicht meine.",
+    "topic": "familia_matrimonio_a2",
+    "topicOrder": 20,
+    "pos": "pron"
+  },
+  {
     "id": 3513,
     "level": "A2",
     "es": "de repente",
@@ -6238,6 +6433,36 @@
     "topic": "naturaleza_leirasok_a2",
     "topicOrder": 2,
     "pos": "phrase"
+  },
+  {
+    "id": 3514,
+    "level": "A2",
+    "es": "debía (deber)",
+    "hu": "kellett volna (kelleni)",
+    "en": "I should have",
+    "de": "ich/er sollte (sollen, müssen)",
+    "sentence_es": "Debía llamarte pero lo he olvidado.",
+    "sentence_hu": "Fel kellett volna hívjalak, de elfelejtettem.",
+    "sentence_en": "I should have called you but I forgot.",
+    "sentence_de": "Ich hätte dich anrufen sollen, aber ich habe es vergessen.",
+    "topic": "comunicacion_expresiones_a2",
+    "topicOrder": 4,
+    "pos": "verb"
+  },
+  {
+    "id": 3515,
+    "level": "A2",
+    "es": "bromeando (bromear)",
+    "hu": "viccelve (viccelni)",
+    "en": "joking",
+    "de": "scherzend (scherzen)",
+    "sentence_es": "Solo estoy bromeando, no te enfades.",
+    "sentence_hu": "Csak viccelek, ne haragudj.",
+    "sentence_en": "I'm just joking, don't get upset.",
+    "sentence_de": "Ich scherze nur, reg dich nicht auf.",
+    "topic": "fiesta_hospitalidad_a2",
+    "topicOrder": 17,
+    "pos": "verb"
   },
   {
     "id": 3516,
@@ -6454,6 +6679,21 @@
     "pos": "verb"
   },
   {
+    "id": 3530,
+    "level": "A2",
+    "es": "ama (amar)",
+    "hu": "ő szeret (szeretni)",
+    "en": "she loves",
+    "de": "er/sie liebt (lieben)",
+    "sentence_es": "Ella ama a sus hijos con todo el corazón.",
+    "sentence_hu": "Ő teljes szívéből szereti a gyerekeit.",
+    "sentence_en": "She loves her children with all her heart.",
+    "sentence_de": "Sie liebt ihre Kinder von ganzem Herzen.",
+    "topic": "amor_pareja_a2",
+    "topicOrder": 4,
+    "pos": "verb"
+  },
+  {
     "id": 3531,
     "level": "A2",
     "es": "serás (ser)",
@@ -6512,21 +6752,6 @@
     "sentence_de": "Ich habe gestern Abend meine Schlüssel verloren.",
     "topic": "trabajo_dia_acciones_a2",
     "topicOrder": 15,
-    "pos": "verb"
-  },
-  {
-    "id": 3423,
-    "level": "A2",
-    "es": "corre (correr)",
-    "hu": "ő fut (futni)",
-    "en": "he runs",
-    "de": "er/sie läuft (laufen)",
-    "sentence_es": "Corre todos los días por el parque.",
-    "sentence_hu": "Minden nap fut a parkban.",
-    "sentence_en": "He runs in the park every day.",
-    "sentence_de": "Er läuft jeden Tag im Park.",
-    "topic": "salud_deporte_ejercicio_a2",
-    "topicOrder": 2,
     "pos": "verb"
   },
   {
@@ -6682,6 +6907,25 @@
     "gender": "f"
   },
   {
+    "id": 3545,
+    "level": "A2",
+    "es": "cierra (cerrar)",
+    "hu": "ő bezárja (bezárni)",
+    "en": "he closes",
+    "de": "er/sie schließt (schließen)",
+    "sentence_es": "La tienda cierra a las nueve.",
+    "sentence_hu": "A bolt kilenckor zár.",
+    "sentence_en": "The shop closes at nine.",
+    "sentence_de": "Der Laden schließt um neun.",
+    "topic": "compras_servicios",
+    "topicOrder": 12,
+    "pos": "verb",
+    "note_hu": "A cerrar tőhangváltós ige: a hangsúlyos e-ből ie lesz. cierro, cierras, cierra, cerramos, cerráis, cierran. Az i tehát nem elírás, hanem a ragozás: a mi/ti alakban (cerramos, cerráis) nincs hangsúly a tövön, ott marad az e. Ugyanígy megy a pensar → pienso, empezar → empiezo, querer → quiero.",
+    "note_en": "Cerrar is a stem-changing verb: a stressed e becomes ie. cierro, cierras, cierra, cerramos, cerráis, cierran. The i is not a typo, it is the conjugation: in the we/you-plural forms (cerramos, cerráis) the stem is unstressed, so the e stays. Same pattern: pensar → pienso, empezar → empiezo, querer → quiero.",
+    "note_es": "Cerrar es un verbo con cambio vocálico: la e tónica pasa a ie. cierro, cierras, cierra, cerramos, cerráis, cierran. En nosotros y vosotros la raíz no lleva acento, por eso se mantiene la e. Igual: pensar → pienso, empezar → empiezo, querer → quiero.",
+    "note_de": "Cerrar ist ein Verb mit Stammwechsel: betontes e wird zu ie. cierro, cierras, cierra, cerramos, cerráis, cierran. Das i ist kein Tippfehler, sondern die Konjugation: bei nosotros und vosotros ist der Stamm unbetont, dort bleibt das e. Ebenso: pensar → pienso, empezar → empiezo, querer → quiero."
+  },
+  {
     "id": 3546,
     "level": "A2",
     "es": "el enemigo",
@@ -6778,21 +7022,6 @@
     "note_hu": "Jelenti azt is: kérni, általánosan (he pedido ayuda = segítséget kértem)."
   },
   {
-    "id": 3552,
-    "level": "A2",
-    "es": "largo (larga)",
-    "hu": "hosszú (nőnem)",
-    "en": "long (feminine)",
-    "de": "lang (feminin)",
-    "sentence_es": "Ha sido una larga espera.",
-    "sentence_hu": "Hosszú várakozás volt.",
-    "sentence_en": "It has been a long wait.",
-    "sentence_de": "Es war eine lange Wartezeit.",
-    "topic": "trabajo_dia_adjetivos_a2",
-    "topicOrder": 22,
-    "pos": "adj"
-  },
-  {
     "id": 3553,
     "level": "A2",
     "es": "entiende (entender)",
@@ -6854,6 +7083,21 @@
     "pos": "adv"
   },
   {
+    "id": 3557,
+    "level": "A2",
+    "es": "despierta (despertar)",
+    "hu": "ébred / ébreszd fel (felébredni)",
+    "en": "he wakes up (to wake up)",
+    "de": "er/sie wacht auf (aufwachen)",
+    "sentence_es": "Se despierta a las seis todos los días.",
+    "sentence_hu": "Minden nap hatkor ébred.",
+    "sentence_en": "He wakes up at six every day.",
+    "sentence_de": "Er wacht jeden Tag um sechs auf.",
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 17,
+    "pos": "verb"
+  },
+  {
     "id": 3558,
     "level": "A2",
     "es": "pido (pedir)",
@@ -6883,6 +7127,21 @@
     "topicOrder": 11,
     "pos": "noun",
     "gender": "m"
+  },
+  {
+    "id": 3561,
+    "level": "A2",
+    "es": "refiero (referir)",
+    "hu": "utalok (utalni)",
+    "en": "I refer",
+    "de": "ich beziehe mich (sich beziehen)",
+    "sentence_es": "Me refiero al problema de ayer.",
+    "sentence_hu": "A tegnapi problémára utalok.",
+    "sentence_en": "I'm referring to yesterday's problem.",
+    "sentence_de": "Ich beziehe mich auf das Problem von gestern.",
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 11,
+    "pos": "verb"
   },
   {
     "id": 3562,
@@ -6974,21 +7233,6 @@
     "topic": "trabajo_dia_tiempo_a2",
     "topicOrder": 18,
     "pos": "adv"
-  },
-  {
-    "id": 3568,
-    "level": "A2",
-    "es": "lleno (llena)",
-    "hu": "tele (nőnem)",
-    "en": "full (feminine)",
-    "de": "voll (feminin)",
-    "sentence_es": "La sala está llena de gente.",
-    "sentence_hu": "A terem tele van emberekkel.",
-    "sentence_en": "The room is full of people.",
-    "sentence_de": "Der Saal ist voller Menschen.",
-    "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 12,
-    "pos": "adj"
   },
   {
     "id": 3569,
@@ -7128,21 +7372,6 @@
     "topicOrder": 10,
     "pos": "noun",
     "gender": "m"
-  },
-  {
-    "id": 3579,
-    "level": "A2",
-    "es": "blanco (blanca)",
-    "hu": "fehér (nőnem)",
-    "en": "white (feminine)",
-    "de": "weiß (feminin)",
-    "sentence_es": "La casa blanca está al final de la calle.",
-    "sentence_hu": "A fehér ház az utca végén van.",
-    "sentence_en": "The white house is at the end of the street.",
-    "sentence_de": "Das weiße Haus steht am Ende der Straße.",
-    "topic": "hogar_entorno_vivienda_a2",
-    "topicOrder": 13,
-    "pos": "adj"
   },
   {
     "id": 3580,
@@ -7426,6 +7655,66 @@
     "note_en": "For a woman: la testigo. Either article is accepted when typing."
   },
   {
+    "id": 3602,
+    "level": "A2",
+    "es": "deberían (deber)",
+    "hu": "kellene nekik (kelleni)",
+    "en": "they should (should)",
+    "de": "sie sollten (sollen)",
+    "sentence_es": "Deberían estudiar más para el examen.",
+    "sentence_hu": "Többet kellene tanulniuk a vizsgára.",
+    "sentence_en": "They should study more for the exam.",
+    "sentence_de": "Sie sollten mehr für die Prüfung lernen.",
+    "topic": "estudios",
+    "topicOrder": 9,
+    "pos": "verb"
+  },
+  {
+    "id": 3603,
+    "level": "A2",
+    "es": "olvidado (olvidar)",
+    "hu": "elfelejtve (elfelejteni)",
+    "en": "forgotten",
+    "de": "vergessen (vergessen)",
+    "sentence_es": "He olvidado mi contraseña otra vez.",
+    "sentence_hu": "Megint elfelejtettem a jelszavamat.",
+    "sentence_en": "I've forgotten my password again.",
+    "sentence_de": "Ich habe mein Passwort wieder vergessen.",
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 12,
+    "pos": "verb"
+  },
+  {
+    "id": 3605,
+    "level": "A2",
+    "es": "resulta (resultar)",
+    "hu": "kiderül (kiderülni)",
+    "en": "it turns out (to turn out)",
+    "de": "es stellt sich heraus (sich herausstellen)",
+    "sentence_es": "Resulta que tenía razón desde el principio.",
+    "sentence_hu": "Kiderült, hogy a kezdetektől igaza volt.",
+    "sentence_en": "It turns out he was right from the beginning.",
+    "sentence_de": "Es stellt sich heraus, dass er von Anfang an recht hatte.",
+    "topic": "trabajo_dia_acciones_a2",
+    "topicOrder": 22,
+    "pos": "verb"
+  },
+  {
+    "id": 3606,
+    "level": "A2",
+    "es": "depende (depender)",
+    "hu": "attól függ (függni)",
+    "en": "it depends",
+    "de": "es hängt ab (abhängen)",
+    "sentence_es": "Depende del tiempo que haga mañana.",
+    "sentence_hu": "Attól függ, milyen idő lesz holnap.",
+    "sentence_en": "It depends on the weather tomorrow.",
+    "sentence_de": "Es hängt vom Wetter morgen ab.",
+    "topic": "naturaleza_leirasok_a2",
+    "topicOrder": 4,
+    "pos": "verb"
+  },
+  {
     "id": 3607,
     "level": "A2",
     "es": "el inglés",
@@ -7442,21 +7731,6 @@
     "gender": "m",
     "note_en": "Also: an Englishman (el inglés es alto = the English man is tall).",
     "note_hu": "Jelenti azt is: angol férfi (el inglés es alto = az angol férfi magas)."
-  },
-  {
-    "id": 3608,
-    "level": "A2",
-    "es": "suyo (suya)",
-    "hu": "övé (nőnem)",
-    "en": "hers",
-    "de": "sein / ihr (feminin Possessiv)",
-    "sentence_es": "Esta idea es suya, no mía.",
-    "sentence_hu": "Ez az ő ötlete, nem az enyém.",
-    "sentence_en": "This idea is hers, not mine.",
-    "sentence_de": "Diese Idee ist ihre, nicht meine.",
-    "topic": "familia_matrimonio_a2",
-    "topicOrder": 20,
-    "pos": "pron"
   },
   {
     "id": 3609,
@@ -7477,21 +7751,6 @@
     "note_en": "Two meanings. 1) STUDY, a piece of research: un estudio sobre el tema. 2) STUDIO, a workroom or a small flat: un estudio de música. Studying itself is estudiar, not this word.",
     "note_es": "Dos sentidos. 1) INVESTIGACIÓN: un estudio sobre el tema. 2) TALLER o apartamento pequeño: un estudio de música.",
     "note_de": "Zwei Bedeutungen. 1) STUDIE: un estudio sobre el tema. 2) STUDIO: un estudio de música."
-  },
-  {
-    "id": 3494,
-    "level": "A2",
-    "es": "acabado (acabar)",
-    "hu": "befejezett (befejezni)",
-    "en": "finished",
-    "de": "beendet (beenden)",
-    "sentence_es": "He acabado todos mis deberes.",
-    "sentence_hu": "Befejeztem az összes házi feladatom.",
-    "sentence_en": "I've finished all my homework.",
-    "sentence_de": "Ich habe alle meine Hausaufgaben erledigt.",
-    "topic": "estudios",
-    "topicOrder": 5,
-    "pos": "verb"
   },
   {
     "id": 3610,
@@ -7692,21 +7951,6 @@
     "pos": "verb"
   },
   {
-    "id": 3629,
-    "level": "A2",
-    "es": "tranquilo (tranquila)",
-    "hu": "nyugodt (nőnem)",
-    "en": "calm / quiet (feminine)",
-    "de": "ruhig (feminin)",
-    "sentence_es": "La noche ha sido muy tranquila.",
-    "sentence_hu": "Az éjszaka nagyon nyugodt volt.",
-    "sentence_en": "The night has been very quiet.",
-    "sentence_de": "Die Nacht war sehr ruhig.",
-    "topic": "personas_caracter_a2",
-    "topicOrder": 10,
-    "pos": "adj"
-  },
-  {
     "id": 3630,
     "level": "A2",
     "es": "la operación",
@@ -7887,6 +8131,36 @@
     "note_hu": "Jelenti azt is: hagyod (siempre dejas que gane = mindig hagyod, hogy nyerjen)."
   },
   {
+    "id": 3642,
+    "level": "A2",
+    "es": "interesa (interesar)",
+    "hu": "érdekel (érdekelni)",
+    "en": "it interests",
+    "de": "es interessiert (interessieren)",
+    "sentence_es": "Me interesa mucho la historia.",
+    "sentence_hu": "Nagyon érdekel a történelem.",
+    "sentence_en": "I'm very interested in history.",
+    "sentence_de": "Mich interessiert Geschichte sehr.",
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 9,
+    "pos": "verb"
+  },
+  {
+    "id": 3643,
+    "level": "A2",
+    "es": "refieres (referir)",
+    "hu": "te utalsz (utalni)",
+    "en": "you refer",
+    "de": "du beziehst dich (sich beziehen)",
+    "sentence_es": "¿A qué te refieres exactamente?",
+    "sentence_hu": "Pontosan mire gondolsz?",
+    "sentence_en": "What exactly are you referring to?",
+    "sentence_de": "Worauf beziehst du dich genau?",
+    "topic": "comunicacion_hablar_a2",
+    "topicOrder": 14,
+    "pos": "verb"
+  },
+  {
     "id": 3644,
     "level": "A2",
     "es": "casado",
@@ -8051,6 +8325,21 @@
     "note_de": "Zwei Bedeutungen. 1) REIHE: ahora es mi turno. 2) SCHICHT: el turno de noche."
   },
   {
+    "id": 3655,
+    "level": "A2",
+    "es": "encantaría (encantar)",
+    "hu": "imádnám (imádni)",
+    "en": "I would love",
+    "de": "ich würde lieben (lieben)",
+    "sentence_es": "Me encantaría ir contigo al cine.",
+    "sentence_hu": "Nagyon szívesen mennék veled moziba.",
+    "sentence_en": "I would love to go to the cinema with you.",
+    "sentence_de": "Ich würde gerne mit dir ins Kino gehen.",
+    "topic": "ocio_zene_konyvek_a2",
+    "topicOrder": 11,
+    "pos": "verb"
+  },
+  {
     "id": 3656,
     "level": "A2",
     "es": "saliendo (salir)",
@@ -8081,6 +8370,21 @@
     "pos": "verb"
   },
   {
+    "id": 3658,
+    "level": "A2",
+    "es": "cálmate (calmar)",
+    "hu": "nyugodj meg (megnyugodni)",
+    "en": "calm down! (to calm down)",
+    "de": "beruhige dich! (sich beruhigen)",
+    "sentence_es": "Cálmate, todo va a salir bien.",
+    "sentence_hu": "Nyugodj meg, minden rendben lesz.",
+    "sentence_en": "Calm down, everything will be fine.",
+    "sentence_de": "Beruhige dich, alles wird gut.",
+    "topic": "espiritu_pensamientos_a2",
+    "topicOrder": 21,
+    "pos": "verb"
+  },
+  {
     "id": 3660,
     "level": "A2",
     "es": "caer",
@@ -8108,6 +8412,21 @@
     "sentence_de": "Ich bringe dich morgen zum Flughafen.",
     "topic": "transporte_a2",
     "topicOrder": 14,
+    "pos": "verb"
+  },
+  {
+    "id": 3663,
+    "level": "A2",
+    "es": "prefiero (preferir)",
+    "hu": "én előnyben részesítem (előnyben részesíteni)",
+    "en": "I prefer",
+    "de": "ich bevorzuge (bevorzugen)",
+    "sentence_es": "Prefiero el café con leche.",
+    "sentence_hu": "A tejes kávét szeretem jobban.",
+    "sentence_en": "I prefer coffee with milk.",
+    "sentence_de": "Ich bevorzuge Kaffee mit Milch.",
+    "topic": "comida_a2",
+    "topicOrder": 20,
     "pos": "verb"
   },
   {
@@ -8656,6 +8975,21 @@
     "gender": "m"
   },
   {
+    "es": "nosotras",
+    "hu": "mi (nők/lányok)",
+    "en": "we (feminine)",
+    "sentence_es": "Nosotras somos amigas desde niñas.",
+    "sentence_hu": "Mi gyerekkorunk óta barátok vagyunk.",
+    "sentence_en": "We have been friends since we were children.",
+    "de": "wir (weiblich)",
+    "sentence_de": "Wir sind seit Kindheit Freundinnen.",
+    "id": 2215,
+    "level": "A2",
+    "topic": "trato_respeto_a2",
+    "topicOrder": 10,
+    "pos": "pron"
+  },
+  {
     "es": "la enfermedad",
     "hu": "betegség",
     "en": "illness/disease",
@@ -9076,36 +9410,6 @@
     "gender": "m"
   },
   {
-    "id": 3432,
-    "level": "A2",
-    "es": "necesitaba (necesitar)",
-    "hu": "szükségem volt rá (akkoriban, szükségelni)",
-    "en": "I used to need",
-    "de": "ich/er brauchte (brauchen)",
-    "sentence_es": "Necesitaba tu ayuda ayer.",
-    "sentence_hu": "Tegnap szükségem volt a segítségedre.",
-    "sentence_en": "I needed your help yesterday.",
-    "sentence_de": "Ich brauchte gestern deine Hilfe.",
-    "topic": "promesa_emociones_a2",
-    "topicOrder": 2,
-    "pos": "verb"
-  },
-  {
-    "id": 7584,
-    "level": "A2",
-    "es": "necesitamos (necesitar)",
-    "hu": "nekünk szükségünk volt (szükségelni)",
-    "en": "we needed",
-    "de": "wir brauchten (brauchen)",
-    "sentence_es": "Necesitamos ayuda con la maleta.",
-    "sentence_hu": "Szükségünk volt segítségre a bőrönddel.",
-    "sentence_en": "We needed help with the suitcase.",
-    "sentence_de": "Wir brauchten Hilfe mit dem Koffer.",
-    "topic": "indefinido_10_verbos",
-    "topicOrder": 52,
-    "pos": "verb"
-  },
-  {
     "es": "la vergüenza",
     "hu": "szégyen",
     "en": "shame/embarrassment",
@@ -9495,25 +9799,6 @@
     "gender": "m",
     "note_en": "Also: humor, comedy (tiene mucho humor = he has a great sense of humor).",
     "note_hu": "Jelenti azt is: humor (tiene mucho humor = nagyon humoros)."
-  },
-  {
-    "id": 3545,
-    "level": "A2",
-    "es": "cierra (cerrar)",
-    "hu": "ő bezárja (bezárni)",
-    "en": "he closes",
-    "de": "er/sie schließt (schließen)",
-    "sentence_es": "La tienda cierra a las nueve.",
-    "sentence_hu": "A bolt kilenckor zár.",
-    "sentence_en": "The shop closes at nine.",
-    "sentence_de": "Der Laden schließt um neun.",
-    "topic": "compras_servicios",
-    "topicOrder": 12,
-    "pos": "verb",
-    "note_hu": "A cerrar tőhangváltós ige: a hangsúlyos e-ből ie lesz. cierro, cierras, cierra, cerramos, cerráis, cierran. Az i tehát nem elírás, hanem a ragozás: a mi/ti alakban (cerramos, cerráis) nincs hangsúly a tövön, ott marad az e. Ugyanígy megy a pensar → pienso, empezar → empiezo, querer → quiero.",
-    "note_en": "Cerrar is a stem-changing verb: a stressed e becomes ie. cierro, cierras, cierra, cerramos, cerráis, cierran. The i is not a typo, it is the conjugation: in the we/you-plural forms (cerramos, cerráis) the stem is unstressed, so the e stays. Same pattern: pensar → pienso, empezar → empiezo, querer → quiero.",
-    "note_es": "Cerrar es un verbo con cambio vocálico: la e tónica pasa a ie. cierro, cierras, cierra, cerramos, cerráis, cierran. En nosotros y vosotros la raíz no lleva acento, por eso se mantiene la e. Igual: pensar → pienso, empezar → empiezo, querer → quiero.",
-    "note_de": "Cerrar ist ein Verb mit Stammwechsel: betontes e wird zu ie. cierro, cierras, cierra, cerramos, cerráis, cierran. Das i ist kein Tippfehler, sondern die Konjugation: bei nosotros und vosotros ist der Stamm unbetont, dort bleibt das e. Ebenso: pensar → pienso, empezar → empiezo, querer → quiero."
   },
   {
     "es": "directo",
@@ -10258,36 +10543,6 @@
     "gender": "m"
   },
   {
-    "id": 3514,
-    "level": "A2",
-    "es": "debía (deber)",
-    "hu": "kellett volna (kelleni)",
-    "en": "I should have",
-    "de": "ich/er sollte (sollen, müssen)",
-    "sentence_es": "Debía llamarte pero lo he olvidado.",
-    "sentence_hu": "Fel kellett volna hívjalak, de elfelejtettem.",
-    "sentence_en": "I should have called you but I forgot.",
-    "sentence_de": "Ich hätte dich anrufen sollen, aber ich habe es vergessen.",
-    "topic": "comunicacion_expresiones_a2",
-    "topicOrder": 4,
-    "pos": "verb"
-  },
-  {
-    "id": 3602,
-    "level": "A2",
-    "es": "deberían (deber)",
-    "hu": "kellene nekik (kelleni)",
-    "en": "they should (should)",
-    "de": "sie sollten (sollen)",
-    "sentence_es": "Deberían estudiar más para el examen.",
-    "sentence_hu": "Többet kellene tanulniuk a vizsgára.",
-    "sentence_en": "They should study more for the exam.",
-    "sentence_de": "Sie sollten mehr für die Prüfung lernen.",
-    "topic": "estudios",
-    "topicOrder": 9,
-    "pos": "verb"
-  },
-  {
     "id": 3747,
     "level": "A2",
     "es": "deber",
@@ -10303,6 +10558,108 @@
     "pos": "verb",
     "note_en": "Also: should, weaker (deberías estudiar más = you should study more).",
     "note_hu": "Jelenti azt is: kellene (deberías estudiar más = tanulnod kellene többet)."
+  },
+  {
+    "id": 7587,
+    "level": "A2",
+    "es": "me gustó (gustar)",
+    "hu": "nekem tetszett (tetszeni)",
+    "en": "I liked it",
+    "de": "mir gefiel (gefallen)",
+    "sentence_es": "Me gustó la música.",
+    "sentence_hu": "Tetszett nekem a zene.",
+    "sentence_en": "I liked the music.",
+    "sentence_de": "Mir gefiel die Musik.",
+    "topic": "indefinido_10_verbos",
+    "topicOrder": 55,
+    "pos": "verb",
+    "note_en": "Gustar works backwards: the thing liked is the subject (me gustó la playa = the beach pleased me). Plural thing: me gustaron.",
+    "note_hu": "A gustar fordítva működik: a tetsző dolog az alany (me gustó la playa = a strand tetszett nekem). Többes tárgynál: me gustaron."
+  },
+  {
+    "id": 7588,
+    "level": "A2",
+    "es": "te gustó (gustar)",
+    "hu": "neked tetszett (tetszeni)",
+    "en": "you liked it",
+    "de": "dir gefiel (gefallen)",
+    "sentence_es": "¿Te gustó la playa?",
+    "sentence_hu": "Tetszett neked a strand?",
+    "sentence_en": "Did you like the beach?",
+    "sentence_de": "Gefiel dir der Strand?",
+    "topic": "indefinido_10_verbos",
+    "topicOrder": 56,
+    "pos": "verb",
+    "note_en": "Gustar works backwards: the thing liked is the subject (me gustó la playa = the beach pleased me). Plural thing: me gustaron.",
+    "note_hu": "A gustar fordítva működik: a tetsző dolog az alany (me gustó la playa = a strand tetszett nekem). Többes tárgynál: me gustaron."
+  },
+  {
+    "id": 7589,
+    "level": "A2",
+    "es": "le gustó (gustar)",
+    "hu": "neki tetszett (tetszeni)",
+    "en": "she liked it",
+    "de": "ihr gefiel (gefallen)",
+    "sentence_es": "Le gustó el cine.",
+    "sentence_hu": "Neki tetszett a mozi.",
+    "sentence_en": "She liked the movies.",
+    "sentence_de": "Ihr gefiel das Kino.",
+    "topic": "indefinido_10_verbos",
+    "topicOrder": 57,
+    "pos": "verb",
+    "note_en": "Gustar works backwards: the thing liked is the subject (me gustó la playa = the beach pleased me). Plural thing: me gustaron.",
+    "note_hu": "A gustar fordítva működik: a tetsző dolog az alany (me gustó la playa = a strand tetszett nekem). Többes tárgynál: me gustaron."
+  },
+  {
+    "id": 7590,
+    "level": "A2",
+    "es": "nos gustó (gustar)",
+    "hu": "nekünk tetszett (tetszeni)",
+    "en": "we liked it",
+    "de": "uns gefiel (gefallen)",
+    "sentence_es": "No nos gustó la ciudad.",
+    "sentence_hu": "Nekünk nem tetszett a város.",
+    "sentence_en": "We didn't like the city.",
+    "sentence_de": "Uns gefiel die Stadt nicht.",
+    "topic": "indefinido_10_verbos",
+    "topicOrder": 58,
+    "pos": "verb",
+    "note_en": "Gustar works backwards: the thing liked is the subject (me gustó la playa = the beach pleased me). Plural thing: me gustaron.",
+    "note_hu": "A gustar fordítva működik: a tetsző dolog az alany (me gustó la playa = a strand tetszett nekem). Többes tárgynál: me gustaron."
+  },
+  {
+    "id": 7591,
+    "level": "A2",
+    "es": "os gustó (gustar)",
+    "hu": "nektek tetszett (tetszeni)",
+    "en": "you all liked it",
+    "de": "euch gefiel (gefallen)",
+    "sentence_es": "Os gustó el parque.",
+    "sentence_hu": "Nektek tetszett a park.",
+    "sentence_en": "You all liked the park.",
+    "sentence_de": "Euch gefiel der Park.",
+    "topic": "indefinido_10_verbos",
+    "topicOrder": 59,
+    "pos": "verb",
+    "note_en": "Gustar works backwards: the thing liked is the subject (me gustó la playa = the beach pleased me). Plural thing: me gustaron.",
+    "note_hu": "A gustar fordítva működik: a tetsző dolog az alany (me gustó la playa = a strand tetszett nekem). Többes tárgynál: me gustaron."
+  },
+  {
+    "id": 7592,
+    "level": "A2",
+    "es": "les gustó (gustar)",
+    "hu": "nekik tetszett (tetszeni)",
+    "en": "they liked it",
+    "de": "ihnen gefiel (gefallen)",
+    "sentence_es": "Les gustó el libro.",
+    "sentence_hu": "Nekik tetszett a könyv.",
+    "sentence_en": "They liked the book.",
+    "sentence_de": "Ihnen gefiel das Buch.",
+    "topic": "indefinido_10_verbos",
+    "topicOrder": 60,
+    "pos": "verb",
+    "note_en": "Gustar works backwards: the thing liked is the subject (me gustó la playa = the beach pleased me). Plural thing: me gustaron.",
+    "note_hu": "A gustar fordítva működik: a tetsző dolog az alany (me gustó la playa = a strand tetszett nekem). Többes tárgynál: me gustaron."
   },
   {
     "es": "el periódico",
@@ -10807,21 +11164,6 @@
     "sentence_de": "Ich will nicht vergessen.",
     "topic": "espiritu_pensamientos_a2",
     "topicOrder": 3,
-    "pos": "verb"
-  },
-  {
-    "id": 3603,
-    "level": "A2",
-    "es": "olvidado (olvidar)",
-    "hu": "elfelejtve (elfelejteni)",
-    "en": "forgotten",
-    "de": "vergessen (vergessen)",
-    "sentence_es": "He olvidado mi contraseña otra vez.",
-    "sentence_hu": "Megint elfelejtettem a jelszavamat.",
-    "sentence_en": "I've forgotten my password again.",
-    "sentence_de": "Ich habe mein Passwort wieder vergessen.",
-    "topic": "comunicacion_hablar_a2",
-    "topicOrder": 12,
     "pos": "verb"
   },
   {
@@ -11365,21 +11707,6 @@
     "pos": "verb"
   },
   {
-    "id": 3530,
-    "level": "A2",
-    "es": "ama (amar)",
-    "hu": "ő szeret (szeretni)",
-    "en": "she loves",
-    "de": "er/sie liebt (lieben)",
-    "sentence_es": "Ella ama a sus hijos con todo el corazón.",
-    "sentence_hu": "Ő teljes szívéből szereti a gyerekeit.",
-    "sentence_en": "She loves her children with all her heart.",
-    "sentence_de": "Sie liebt ihre Kinder von ganzem Herzen.",
-    "topic": "amor_pareja_a2",
-    "topicOrder": 4,
-    "pos": "verb"
-  },
-  {
     "id": 3742,
     "level": "A2",
     "es": "amar",
@@ -11538,21 +11865,6 @@
     "gender": "f"
   },
   {
-    "id": 3557,
-    "level": "A2",
-    "es": "despierta (despertar)",
-    "hu": "ébred / ébreszd fel (felébredni)",
-    "en": "he wakes up (to wake up)",
-    "de": "er/sie wacht auf (aufwachen)",
-    "sentence_es": "Se despierta a las seis todos los días.",
-    "sentence_hu": "Minden nap hatkor ébred.",
-    "sentence_en": "He wakes up at six every day.",
-    "sentence_de": "Er wacht jeden Tag um sechs auf.",
-    "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 17,
-    "pos": "verb"
-  },
-  {
     "es": "importar",
     "hu": "számít/fontos",
     "en": "to matter / to be important",
@@ -11701,108 +12013,6 @@
     "pos": "verb"
   },
   {
-    "id": 7587,
-    "level": "A2",
-    "es": "me gustó (gustar)",
-    "hu": "nekem tetszett (tetszeni)",
-    "en": "I liked it",
-    "de": "mir gefiel (gefallen)",
-    "sentence_es": "Me gustó la música.",
-    "sentence_hu": "Tetszett nekem a zene.",
-    "sentence_en": "I liked the music.",
-    "sentence_de": "Mir gefiel die Musik.",
-    "topic": "indefinido_10_verbos",
-    "topicOrder": 55,
-    "pos": "verb",
-    "note_en": "Gustar works backwards: the thing liked is the subject (me gustó la playa = the beach pleased me). Plural thing: me gustaron.",
-    "note_hu": "A gustar fordítva működik: a tetsző dolog az alany (me gustó la playa = a strand tetszett nekem). Többes tárgynál: me gustaron."
-  },
-  {
-    "id": 7588,
-    "level": "A2",
-    "es": "te gustó (gustar)",
-    "hu": "neked tetszett (tetszeni)",
-    "en": "you liked it",
-    "de": "dir gefiel (gefallen)",
-    "sentence_es": "¿Te gustó la playa?",
-    "sentence_hu": "Tetszett neked a strand?",
-    "sentence_en": "Did you like the beach?",
-    "sentence_de": "Gefiel dir der Strand?",
-    "topic": "indefinido_10_verbos",
-    "topicOrder": 56,
-    "pos": "verb",
-    "note_en": "Gustar works backwards: the thing liked is the subject (me gustó la playa = the beach pleased me). Plural thing: me gustaron.",
-    "note_hu": "A gustar fordítva működik: a tetsző dolog az alany (me gustó la playa = a strand tetszett nekem). Többes tárgynál: me gustaron."
-  },
-  {
-    "id": 7589,
-    "level": "A2",
-    "es": "le gustó (gustar)",
-    "hu": "neki tetszett (tetszeni)",
-    "en": "she liked it",
-    "de": "ihr gefiel (gefallen)",
-    "sentence_es": "Le gustó el cine.",
-    "sentence_hu": "Neki tetszett a mozi.",
-    "sentence_en": "She liked the movies.",
-    "sentence_de": "Ihr gefiel das Kino.",
-    "topic": "indefinido_10_verbos",
-    "topicOrder": 57,
-    "pos": "verb",
-    "note_en": "Gustar works backwards: the thing liked is the subject (me gustó la playa = the beach pleased me). Plural thing: me gustaron.",
-    "note_hu": "A gustar fordítva működik: a tetsző dolog az alany (me gustó la playa = a strand tetszett nekem). Többes tárgynál: me gustaron."
-  },
-  {
-    "id": 7590,
-    "level": "A2",
-    "es": "nos gustó (gustar)",
-    "hu": "nekünk tetszett (tetszeni)",
-    "en": "we liked it",
-    "de": "uns gefiel (gefallen)",
-    "sentence_es": "No nos gustó la ciudad.",
-    "sentence_hu": "Nekünk nem tetszett a város.",
-    "sentence_en": "We didn't like the city.",
-    "sentence_de": "Uns gefiel die Stadt nicht.",
-    "topic": "indefinido_10_verbos",
-    "topicOrder": 58,
-    "pos": "verb",
-    "note_en": "Gustar works backwards: the thing liked is the subject (me gustó la playa = the beach pleased me). Plural thing: me gustaron.",
-    "note_hu": "A gustar fordítva működik: a tetsző dolog az alany (me gustó la playa = a strand tetszett nekem). Többes tárgynál: me gustaron."
-  },
-  {
-    "id": 7591,
-    "level": "A2",
-    "es": "os gustó (gustar)",
-    "hu": "nektek tetszett (tetszeni)",
-    "en": "you all liked it",
-    "de": "euch gefiel (gefallen)",
-    "sentence_es": "Os gustó el parque.",
-    "sentence_hu": "Nektek tetszett a park.",
-    "sentence_en": "You all liked the park.",
-    "sentence_de": "Euch gefiel der Park.",
-    "topic": "indefinido_10_verbos",
-    "topicOrder": 59,
-    "pos": "verb",
-    "note_en": "Gustar works backwards: the thing liked is the subject (me gustó la playa = the beach pleased me). Plural thing: me gustaron.",
-    "note_hu": "A gustar fordítva működik: a tetsző dolog az alany (me gustó la playa = a strand tetszett nekem). Többes tárgynál: me gustaron."
-  },
-  {
-    "id": 7592,
-    "level": "A2",
-    "es": "les gustó (gustar)",
-    "hu": "nekik tetszett (tetszeni)",
-    "en": "they liked it",
-    "de": "ihnen gefiel (gefallen)",
-    "sentence_es": "Les gustó el libro.",
-    "sentence_hu": "Nekik tetszett a könyv.",
-    "sentence_en": "They liked the book.",
-    "sentence_de": "Ihnen gefiel das Buch.",
-    "topic": "indefinido_10_verbos",
-    "topicOrder": 60,
-    "pos": "verb",
-    "note_en": "Gustar works backwards: the thing liked is the subject (me gustó la playa = the beach pleased me). Plural thing: me gustaron.",
-    "note_hu": "A gustar fordítva működik: a tetsző dolog az alany (me gustó la playa = a strand tetszett nekem). Többes tárgynál: me gustaron."
-  },
-  {
     "id": 3741,
     "level": "A2",
     "es": "trata de esclavos",
@@ -11846,21 +12056,6 @@
     "topic": "naturaleza_leirasok_a2",
     "topicOrder": 12,
     "pos": "adj"
-  },
-  {
-    "id": 3470,
-    "level": "A2",
-    "es": "molesta (molestar)",
-    "hu": "zavar (zavarni)",
-    "en": "it bothers",
-    "de": "es stört (stören)",
-    "sentence_es": "¿Te molesta el ruido?",
-    "sentence_hu": "Zavar a zaj?",
-    "sentence_en": "Does the noise bother you?",
-    "sentence_de": "Stört dich der Lärm?",
-    "topic": "promesa_emociones_a2",
-    "topicOrder": 3,
-    "pos": "verb"
   },
   {
     "id": 698,
@@ -12037,21 +12232,6 @@
     "pos": "verb"
   },
   {
-    "id": 3489,
-    "level": "A2",
-    "es": "perdona (perdonar)",
-    "hu": "bocsáss meg (megbocsátani)",
-    "en": "forgive (informal command)",
-    "de": "verzeih (verzeihen)",
-    "sentence_es": "Perdona, no he visto tu mensaje.",
-    "sentence_hu": "Bocsi, nem láttam az üzeneted.",
-    "sentence_en": "Sorry, I haven't seen your message.",
-    "sentence_de": "Entschuldigung, ich habe deine Nachricht nicht gesehen.",
-    "topic": "promesa_emociones_a2",
-    "topicOrder": 5,
-    "pos": "verb"
-  },
-  {
     "es": "existir",
     "hu": "létezni",
     "en": "to exist",
@@ -12064,21 +12244,6 @@
     "level": "A2",
     "topic": "naturaleza_leirasok_a2",
     "topicOrder": 9,
-    "pos": "verb"
-  },
-  {
-    "id": 3655,
-    "level": "A2",
-    "es": "encantaría (encantar)",
-    "hu": "imádnám (imádni)",
-    "en": "I would love",
-    "de": "ich würde lieben (lieben)",
-    "sentence_es": "Me encantaría ir contigo al cine.",
-    "sentence_hu": "Nagyon szívesen mennék veled moziba.",
-    "sentence_en": "I would love to go to the cinema with you.",
-    "sentence_de": "Ich würde gerne mit dir ins Kino gehen.",
-    "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 11,
     "pos": "verb"
   },
   {
@@ -12157,21 +12322,6 @@
     "pos": "verb"
   },
   {
-    "id": 3605,
-    "level": "A2",
-    "es": "resulta (resultar)",
-    "hu": "kiderül (kiderülni)",
-    "en": "it turns out (to turn out)",
-    "de": "es stellt sich heraus (sich herausstellen)",
-    "sentence_es": "Resulta que tenía razón desde el principio.",
-    "sentence_hu": "Kiderült, hogy a kezdetektől igaza volt.",
-    "sentence_en": "It turns out he was right from the beginning.",
-    "sentence_de": "Es stellt sich heraus, dass er von Anfang an recht hatte.",
-    "topic": "trabajo_dia_acciones_a2",
-    "topicOrder": 22,
-    "pos": "verb"
-  },
-  {
     "es": "prometer",
     "hu": "ígérni",
     "en": "to promise",
@@ -12201,21 +12351,6 @@
     "topicOrder": 20,
     "pos": "noun",
     "gender": "m"
-  },
-  {
-    "id": 3658,
-    "level": "A2",
-    "es": "cálmate (calmar)",
-    "hu": "nyugodj meg (megnyugodni)",
-    "en": "calm down! (to calm down)",
-    "de": "beruhige dich! (sich beruhigen)",
-    "sentence_es": "Cálmate, todo va a salir bien.",
-    "sentence_hu": "Nyugodj meg, minden rendben lesz.",
-    "sentence_en": "Calm down, everything will be fine.",
-    "sentence_de": "Beruhige dich, alles wird gut.",
-    "topic": "espiritu_pensamientos_a2",
-    "topicOrder": 21,
-    "pos": "verb"
   },
   {
     "id": 7554,
@@ -12250,21 +12385,6 @@
     "pos": "verb"
   },
   {
-    "id": 3515,
-    "level": "A2",
-    "es": "bromeando (bromear)",
-    "hu": "viccelve (viccelni)",
-    "en": "joking",
-    "de": "scherzend (scherzen)",
-    "sentence_es": "Solo estoy bromeando, no te enfades.",
-    "sentence_hu": "Csak viccelek, ne haragudj.",
-    "sentence_en": "I'm just joking, don't get upset.",
-    "sentence_de": "Ich scherze nur, reg dich nicht auf.",
-    "topic": "fiesta_hospitalidad_a2",
-    "topicOrder": 17,
-    "pos": "verb"
-  },
-  {
     "id": 7577,
     "level": "A2",
     "es": "esperó (esperar)",
@@ -12295,21 +12415,6 @@
     "pos": "verb"
   },
   {
-    "id": 3481,
-    "level": "A2",
-    "es": "preocupa (preocupar)",
-    "hu": "aggaszt (aggasztani)",
-    "en": "it worries",
-    "de": "es besorgt (besorgen)",
-    "sentence_es": "Me preocupa tu salud.",
-    "sentence_hu": "Aggódom az egészséged miatt.",
-    "sentence_en": "Your health worries me.",
-    "sentence_de": "Deine Gesundheit macht mir Sorgen.",
-    "topic": "salud_deporte_enfermedad_a2",
-    "topicOrder": 5,
-    "pos": "verb"
-  },
-  {
     "id": 3744,
     "level": "A2",
     "es": "preocupar",
@@ -12337,21 +12442,6 @@
     "sentence_de": "Du schautest dir den Film spät an.",
     "topic": "indefinido_10_verbos",
     "topicOrder": 32,
-    "pos": "verb"
-  },
-  {
-    "id": 3606,
-    "level": "A2",
-    "es": "depende (depender)",
-    "hu": "attól függ (függni)",
-    "en": "it depends",
-    "de": "es hängt ab (abhängen)",
-    "sentence_es": "Depende del tiempo que haga mañana.",
-    "sentence_hu": "Attól függ, milyen idő lesz holnap.",
-    "sentence_en": "It depends on the weather tomorrow.",
-    "sentence_de": "Es hängt vom Wetter morgen ab.",
-    "topic": "naturaleza_leirasok_a2",
-    "topicOrder": 4,
     "pos": "verb"
   },
   {
@@ -12478,21 +12568,6 @@
     "pos": "verb"
   },
   {
-    "id": 3642,
-    "level": "A2",
-    "es": "interesa (interesar)",
-    "hu": "érdekel (érdekelni)",
-    "en": "it interests",
-    "de": "es interessiert (interessieren)",
-    "sentence_es": "Me interesa mucho la historia.",
-    "sentence_hu": "Nagyon érdekel a történelem.",
-    "sentence_en": "I'm very interested in history.",
-    "sentence_de": "Mich interessiert Geschichte sehr.",
-    "topic": "ocio_zene_konyvek_a2",
-    "topicOrder": 9,
-    "pos": "verb"
-  },
-  {
     "id": 7568,
     "level": "A2",
     "es": "miraron (mirar)",
@@ -12522,21 +12597,6 @@
     "topicOrder": 17,
     "pos": "verb",
     "vosotros": true
-  },
-  {
-    "id": 3445,
-    "level": "A2",
-    "es": "alegra (alegrar)",
-    "hu": "örül (örülni)",
-    "en": "it makes happy (to make happy)",
-    "de": "es freut (freuen)",
-    "sentence_es": "Me alegra verte de nuevo.",
-    "sentence_hu": "Örülök, hogy újra látlak.",
-    "sentence_en": "I'm glad to see you again.",
-    "sentence_de": "Es freut mich, dich wiederzusehen.",
-    "topic": "promesa_emociones_a2",
-    "topicOrder": 4,
-    "pos": "verb"
   },
   {
     "id": 7580,
@@ -12600,21 +12660,6 @@
     "pos": "verb"
   },
   {
-    "id": 3663,
-    "level": "A2",
-    "es": "prefiero (preferir)",
-    "hu": "én előnyben részesítem (előnyben részesíteni)",
-    "en": "I prefer",
-    "de": "ich bevorzuge (bevorzugen)",
-    "sentence_es": "Prefiero el café con leche.",
-    "sentence_hu": "A tejes kávét szeretem jobban.",
-    "sentence_en": "I prefer coffee with milk.",
-    "sentence_de": "Ich bevorzuge Kaffee mit Milch.",
-    "topic": "comida_a2",
-    "topicOrder": 20,
-    "pos": "verb"
-  },
-  {
     "id": 7561,
     "level": "A2",
     "es": "pudisteis (poder)",
@@ -12633,36 +12678,6 @@
     "vosotros": true
   },
   {
-    "id": 3561,
-    "level": "A2",
-    "es": "refiero (referir)",
-    "hu": "utalok (utalni)",
-    "en": "I refer",
-    "de": "ich beziehe mich (sich beziehen)",
-    "sentence_es": "Me refiero al problema de ayer.",
-    "sentence_hu": "A tegnapi problémára utalok.",
-    "sentence_en": "I'm referring to yesterday's problem.",
-    "sentence_de": "Ich beziehe mich auf das Problem von gestern.",
-    "topic": "comunicacion_hablar_a2",
-    "topicOrder": 11,
-    "pos": "verb"
-  },
-  {
-    "id": 3643,
-    "level": "A2",
-    "es": "refieres (referir)",
-    "hu": "te utalsz (utalni)",
-    "en": "you refer",
-    "de": "du beziehst dich (sich beziehen)",
-    "sentence_es": "¿A qué te refieres exactamente?",
-    "sentence_hu": "Pontosan mire gondolsz?",
-    "sentence_en": "What exactly are you referring to?",
-    "sentence_de": "Worauf beziehst du dich genau?",
-    "topic": "comunicacion_hablar_a2",
-    "topicOrder": 14,
-    "pos": "verb"
-  },
-  {
     "es": "soler",
     "hu": "szokni/rendszerint csinálni",
     "en": "to usually do / to be in the habit of",
@@ -12676,21 +12691,6 @@
     "topic": "trabajo_dia_ser_estar_a2",
     "topicOrder": 1,
     "pos": "verb"
-  },
-  {
-    "es": "nosotras",
-    "hu": "mi (nők/lányok)",
-    "en": "we (feminine)",
-    "sentence_es": "Nosotras somos amigas desde niñas.",
-    "sentence_hu": "Mi gyerekkorunk óta barátok vagyunk.",
-    "sentence_en": "We have been friends since we were children.",
-    "de": "wir (weiblich)",
-    "sentence_de": "Wir sind seit Kindheit Freundinnen.",
-    "id": 2215,
-    "level": "A2",
-    "topic": "trato_respeto_a2",
-    "topicOrder": 10,
-    "pos": "pron"
   },
   {
     "id": 7555,
