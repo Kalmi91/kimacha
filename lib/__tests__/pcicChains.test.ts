@@ -2,8 +2,13 @@
 // data/pcic/a1-build.json + a1-all.json tartalmán fut (nem mock-lánc), mert
 // az id-k (és a köztük levő fájl-sorrend, pl. "aeropuerto" a 634. helyen)
 // maguk is a viselkedés részei.
+// PLAN-ketiranyu 2. lépés (2026-09-28): a lánc-funkció ALVÓ - a production
+// lib/pcicChains.ts applyChainOrder-je most minden szinten no-op (üres
+// lánc-térkép), tehát ez a teszt describe.skip-pel marad (törölni NEM
+// szabad), a data/pcic import a rejtett data/pcicCorpus.ts-re váltva, hogy a
+// valódi id-k/fájl-sorrend a funkció visszahozásakor újra használhatók legyenek.
 import { applyChainOrder } from '../pcicChains';
-import { pcicItemsForLevel } from '../../data/pcic';
+import { pcicItemsForLevel } from '../../data/pcicCorpus';
 import { sm2NewCard, sm2Review, type Sm2Card } from '../sm2';
 import a1Build from '../../data/pcic/a1-build.json';
 
@@ -29,7 +34,7 @@ function cardIn(itemId: string, state: Sm2Card['state']): Sm2Card {
   return sm2Review(base, 'hard', TODAY); // learning
 }
 
-describe('applyChainOrder (PLAN-fb0923 8. lépés)', () => {
+describe.skip('applyChainOrder (PLAN-fb0923 8. lépés) - PCIC rejtve, PLAN-ketiranyu 2. lépés', () => {
   it('(a) friss A1 profil: az első új kártyák az 1. lánc tagjai, a bridge/mondat még sehol', () => {
     const order = applyChainOrder(NEW_ORDER, [], 'A1');
 

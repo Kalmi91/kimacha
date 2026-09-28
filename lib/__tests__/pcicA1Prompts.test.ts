@@ -45,8 +45,11 @@ function collectPairs(): Pair[] {
 describe('PCIC A1 prompt audit (PROMPT-POLICY 4, 12-15. szakasz, FB370-374)', () => {
   const pairs = collectPairs().filter((p) => !EXCEPTIONS.has(p.id));
 
-  it('legalabb egy sentence-tetelt es egy pelda-mondatot lefed (a teszt nem üresen zöld)', () => {
-    expect(pairs.filter((p) => p.label === 'sentence-item').length).toBeGreaterThan(0);
+  // PLAN-ketiranyu 2. lépés (2026-09-28): a gyakorisági korpusznak (data/pcic.ts)
+  // nincs `kind: 'sentence'` tétele (csak word/phrase), a 'sentence-item' kategória
+  // ezért állandóan üres - a nem-üresen-zöld önellenőrzés innentől csak a
+  // (továbbra is élő és auditált) szó-példamondatokat követeli meg.
+  it('legalabb egy pelda-mondatot lefed (a teszt nem üresen zöld)', () => {
     expect(pairs.filter((p) => p.label === 'example-sentence').length).toBeGreaterThan(0);
   });
 
