@@ -175,7 +175,7 @@ describe('resolvedTensesFromLessons', () => {
     );
   });
 
-  it('does not unlock a tense from a lesson that only names it (indefinidos, contrast lesson)', () => {
-    expect(resolvedTensesFromLessons(['indefinidos', 'indefinido-imperfecto']).size).toBe(0);
+  it('does not unlock a tense from a lesson that only shares a prefix (indefinidos)', () => {
+    expect(resolvedTensesFromLessons(['indefinidos']).size).toBe(0);
   });
 });

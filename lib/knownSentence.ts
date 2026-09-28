@@ -69,7 +69,7 @@ export function isLearnedCard(card: Sm2Card): boolean {
 /**
  * A nyelvtani leckék teljesítéséből (`doneGrammarTopicProgress` kulcsai) a
  * feloldott igeidők. presente ← presente-regular/presente-irregular,
- * indefinido ← indefinido-regular/indefinido-irregular, imperfecto ← imperfecto,
+ * indefinido ← indefinido-*, imperfecto ← imperfecto,
  * futuro ← futuro-simple, condicional ← condicional-simple,
  * kötőmód presente ← subjuntivo-presente-forma, kötőmód imperfecto ← subjuntivo-imperfecto.
  */
@@ -77,7 +77,7 @@ export function resolvedTensesFromLessons(doneTopicIds: Iterable<string>): Set<R
   const done = new Set(doneTopicIds);
   const out = new Set<ResolvedTense>();
   if (done.has('presente-regular') || done.has('presente-irregular')) out.add('presente');
-  if (done.has('indefinido-regular') || done.has('indefinido-irregular')) out.add('indefinido');
+  if ([...done].some((id) => id.startsWith('indefinido-'))) out.add('indefinido');
   if (done.has('imperfecto')) out.add('imperfecto');
   if (done.has('futuro-simple')) out.add('futuro');
   if (done.has('condicional-simple')) out.add('condicional');
