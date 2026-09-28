@@ -5,7 +5,7 @@ import { speak } from '@/lib/speech';
 import { t } from '@/lib/i18n';
 import { charDiff } from '@/lib/charDiff';
 import { speechLang } from '@/lib/languages';
-import type { PcicItem } from '@/data/pcic';
+import type { PcicItem, PcicTarget } from '@/data/pcic';
 import type { PcicGrade } from '@/lib/pcicMatch';
 import { sm2PreviewDays, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { sensesFor } from '@/lib/pcicSenses';
@@ -27,6 +27,7 @@ export default function PcicRevealedAnswer({
   current,
   currentItem,
   today,
+  target,
   onGrade,
 }: {
   colors: (typeof Colors)['light'];
@@ -37,6 +38,9 @@ export default function PcicRevealedAnswer({
   current: Sm2Card;
   currentItem: PcicItem;
   today: string;
+  // PLAN-ketiranyu 4. lépés: melyik irány aktív, hogy a felfedés (felolvasás,
+  // példamondat, jelentés-lista) a célnyelvet mutassa, ne mindig a spanyolt.
+  target: PcicTarget;
   onGrade: (g: Sm2Grade) => void;
 }) {
   // A régi gombsor intervallum-előnézete grade-enként (lib/sm2.ts
@@ -48,7 +52,10 @@ export default function PcicRevealedAnswer({
   // PLAN-fb0924 7b. lépés (FB384, D4): ha ennek a szónak több, érdemben eltérő
   // jelentése van (data/pcic/senses.json), a felfedés jelentésenként mutatja a
   // spanyol alakot (a beírandó válasz továbbra is a szó maga, currentItem.es).
-  const senses = sensesFor(currentItem.id);
+  // PLAN-ketiranyu 4. lépés: a jelentés-lista angol glossz, csak es célnyelven van értelme.
+  const senses = target === 'es' ? sensesFor(currentItem.id) : undefined;
+  const example = target === 'es' ? currentItem?.exampleEs : currentItem?.exampleEn;
+  const exampleGloss = target === 'es' ? currentItem?.exampleEn : currentItem?.exampleEs;
 
   return (
     <>
@@ -71,7 +78,7 @@ export default function PcicRevealedAnswer({
         </Text>
         <View style={styles.frontRow}>
           <Text style={[styles.correctAnswer, { color: colors.tint }]}>{grade.best}</Text>
-          <Pressable onPress={() => speak(grade.best, speechLang('es'))} style={styles.speakBtn}>
+          <Pressable onPress={() => speak(grade.best, speechLang(target))} style={styles.speakBtn}>
             <Text style={styles.speakIcon}>🔊</Text>
           </Pressable>
         </View>
@@ -93,16 +100,17 @@ export default function PcicRevealedAnswer({
           </View>
         )}
         {/* PLAN-play 11. lépés: példamondat a megoldás alatt, csak Check
-            után és csak ha van egyezés a korpuszban (currentItem.exampleEs). */}
-        {currentItem?.exampleEs && (
+            után és csak ha van egyezés a korpuszban (currentItem.exampleEs).
+            PLAN-ketiranyu 4. lépés: célnyelven szól, a másik nyelv a gloss. */}
+        {example && (
           <>
             <View style={[styles.frontRow, styles.exampleRow]}>
-              <Text style={[styles.exampleEs, { color: colors.text }]}>{currentItem.exampleEs}</Text>
-              <Pressable onPress={() => speak(currentItem.exampleEs!, speechLang('es'))} style={styles.speakBtn}>
+              <Text style={[styles.exampleEs, { color: colors.text }]}>{example}</Text>
+              <Pressable onPress={() => speak(example, speechLang(target))} style={styles.speakBtn}>
                 <Text style={styles.speakIcon}>🔊</Text>
               </Pressable>
             </View>
-            <Text style={[styles.exampleEn, { color: colors.tabIconDefault }]}>{currentItem.exampleEn}</Text>
+            <Text style={[styles.exampleEn, { color: colors.tabIconDefault }]}>{exampleGloss}</Text>
           </>
         )}
       </View>

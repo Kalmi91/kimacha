@@ -9,7 +9,7 @@ import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
-import { pcicItemsForViewLevel, findPcicItem, realLevelOfView, type PcicViewLevel } from '@/data/pcic';
+import { pcicItemsForViewLevel, findPcicItem, realLevelOfView, setPcicTarget, type PcicViewLevel, type PcicTarget } from '@/data/pcic';
 import { gradePcicAnswer, suggestedGrade, type PcicGrade } from '@/lib/pcicMatch';
 import {
   ARTICLE_OPTIONS,
@@ -69,6 +69,10 @@ export default function PcicScreen() {
   const [loading, setLoading] = useState(true);
   const [today, setToday] = useState('');
   const [level, setLevel] = useState<PcicViewLevel>('B1');
+  // PLAN-ketiranyu 4. lépés: az aktív pár célnyelve (onboarding.target),
+  // ez dönti el a kártya prompt/válasz irányát, a TTS locale-t és a
+  // névelő-gombsor/posOf megjelenését.
+  const [target, setTarget] = useState<PcicTarget>('es');
   // s1 (anki-ui-terv.html): a szint-választó lap; a benne mutatott N/total
   // haladáshoz MIND a négy szint kártyája kell, nem csak az aktívé.
   const [levelSheetOpen, setLevelSheetOpen] = useState(false);
@@ -120,6 +124,19 @@ export default function PcicScreen() {
   const load = useCallback(async (overrideLevel?: PcicViewLevel) => {
     const db = getDb();
     const day = localDateString();
+    // PLAN-ketiranyu 4. lépés: az aktív pár célnyelve dönti el, melyik irány
+    // paklija épül (data/pcic.ts setPcicTarget); a pcicItemsForViewLevel
+    // hívás ELŐTT kell, különben a régi irány szavai jönnének.
+    const onboarding = await db.getOnboarding();
+    const dir = (onboarding?.target as PcicTarget) ?? 'es';
+    setPcicTarget(dir);
+    setTarget(dir);
+    // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 2. pont): ha
+    // az aktív párnak MÉG nincs kifejezetten választott szintje (Settings
+    // irányváltás egy korábban nem onboardolt irányra; friss onboarding
+    // mindig választat, ide sose ér el választatlanul), a szint-választó lap
+    // magától felnyílik, ugyanaz a lap, mint a fejléc-chipre koppintva.
+    if (!overrideLevel && !(await db.hasPcicLevel())) setLevelSheetOpen(true);
     const lvl = overrideLevel ?? (await db.getPcicLevel());
     const newOrder = pcicItemsForViewLevel(lvl).map((i) => i.id);
     const rawCards = await db.getPcicCards();
@@ -177,23 +194,35 @@ export default function PcicScreen() {
   const current = queue[0];
   const currentItem = current ? findPcicItem(current.itemId) : undefined;
 
+  // PLAN-ketiranyu 4. lépés: a FeedbackButton párcímkéje az aktív iránnyal
+  // (korábban "es-en"-re volt égetve, holott a tényleges viselkedés en-es volt).
+  const languagePair = target === 'es' ? 'en-es' : 'es-en';
+
+  // PLAN-ketiranyu 4. lépés: a prompt a kiinduló nyelvű mező, a válasz a
+  // célnyelvű; en-es-ben ez a régi sorrend (prompt en, válasz es), es-en-ben
+  // fordítva. `sourceLang` a prompt/felolvasás nyelve, `target` a válaszé.
+  const sourceLang = target === 'es' ? 'en' : 'es';
+
   // PLAN-fb0924 7b. lépés (FB384, D4): ha a szónak több, érdemben eltérő
   // jelentése van (data/pcic/senses.json, a duplikátum-egyesítés töltötte
   // fel), a prompt (és a felolvasás) mindet mutatja/mondja " · "-tal
   // elválasztva; a beírandó válasz ettől függetlenül a szó maga marad
   // (currentItem.es). `currentItem` fentebb defíniált, ez az effekt ELŐTT
-  // kell, mert az is ezt mondja ki.
-  const senses = currentItem ? sensesFor(currentItem.id) : undefined;
-  const promptEn = senses ? senses.map((sn) => sn.en).join(' · ') : currentItem?.en;
+  // kell, mert az is ezt mondja ki. PLAN-ketiranyu 4. lépés: a jelentés-lista
+  // angol gloss, csak es célnyelven van értelme (en-es irány).
+  const senses = target === 'es' && currentItem ? sensesFor(currentItem.id) : undefined;
+  const promptSource = target === 'es' ? currentItem?.en : currentItem?.es;
+  const promptText = senses ? senses.map((sn) => sn.en).join(' · ') : promptSource;
+  const answerText = target === 'es' ? currentItem?.es : currentItem?.en;
 
-  // FB319/FB391: az angol prompt felolvasása ÉS a beviteli mező fókusza,
-  // amikor egy ÚJ lap kerül képernyőre (kinyílik a billentyűzet). Csak a
+  // FB319/FB391: a prompt felolvasása ÉS a beviteli mező fókusza, amikor egy
+  // ÚJ lap kerül képernyőre (kinyílik a billentyűzet). Csak a
   // `current?.itemId` váltására fusson (a `grade` a closure-ből olvasva
   // dönti el, hogy még nincs felfedve), felfedéskor (a `grade` state
   // változásakor) ne ismételje - se a felolvasás, se a fókusz.
   useEffect(() => {
-    if (!loading && currentItem && promptEn && !grade) {
-      speak(promptEn, speechLang('en'));
+    if (!loading && currentItem && promptText && !grade) {
+      speak(promptText, speechLang(sourceLang));
       inputRef.current?.focus();
     }
     // PLAN-play 11. lépés: kártyaváltáskor a folyamatban lévő felolvasás
@@ -242,34 +271,35 @@ export default function PcicScreen() {
 
   // PLAN-play 11. lépés: Check után a szó felolvasása UTÁN, láncolva, magától
   // szól a példamondat is, ha van a tételhez (data/pcic/<szint>-sentences.json).
+  // PLAN-ketiranyu 4. lépés: mindkettő a célnyelven szól, nem mindig spanyolul.
   const speakRevealed = (best: string) => {
-    const example = currentItem?.exampleEs;
+    const example = target === 'es' ? currentItem?.exampleEs : currentItem?.exampleEn;
     if (example) {
       speakSequence([
-        { text: best, locale: speechLang('es') },
-        { text: example, locale: speechLang('es') },
+        { text: best, locale: speechLang(target) },
+        { text: example, locale: speechLang(target) },
       ]);
     } else {
-      speak(best, speechLang('es'));
+      speak(best, speechLang(target));
     }
   };
 
   const handleCheck = async () => {
-    if (!current || !currentItem) return;
+    if (!current || !currentItem || !answerText) return;
     const answer = composeAnswer(articlePick, typedAnswer);
     if (answer.trim().length === 0) {
       // Kálmán 2026-09-21: üres beküldés is felfedi a helyes alakot és
       // felolvassa, de nem értékel automatikusan; a koppintás dönt, mint
       // bármelyik felfedésnél.
-      const g = gradePcicAnswer('', currentItem.es, strictAccents);
+      const g = gradePcicAnswer('', answerText, strictAccents);
       const revealed: PcicGrade = { ...g, match: 'wrong', accentOnly: undefined };
       setGrade(revealed);
       if (revealed.match !== 'exact') setArticlePick(articleOf(revealed.best));
       speakRevealed(g.best);
       return;
     }
-    // FB321: felfedéskor mindig szóljon a helyes spanyol alak.
-    const g = gradePcicAnswer(answer, currentItem.es, strictAccents);
+    // FB321: felfedéskor mindig szóljon a helyes célnyelvi alak.
+    const g = gradePcicAnswer(answer, answerText, strictAccents);
     setTypedAnswer(answer);
     setGrade(g);
     if (g.match !== 'exact') setArticlePick(articleOf(g.best));
@@ -431,6 +461,7 @@ export default function PcicScreen() {
           cards={allLevelCards}
           colors={colors}
           title={s.pcic.chooseLevel}
+          target={target}
           onSelect={handleSelectLevel}
           onClose={() => setLevelSheetOpen(false)}
         />
@@ -465,7 +496,7 @@ export default function PcicScreen() {
             <Text style={styles.checkBtnText}>{s.pcic.moreNew(10)}</Text>
           </Pressable>
         )}
-        <FeedbackButton level={level} languagePair="es-en" currentCard="pcic" />
+        <FeedbackButton level={level} languagePair={languagePair} currentCard="pcic" />
       </View>
     );
   }
@@ -487,7 +518,9 @@ export default function PcicScreen() {
         : undefined;
 
   // 5c: szófaj-chip a szó alatt, a spanyol alakból (lib/pcicPos.ts, döntés 6b).
-  const pos = posOf(currentItem);
+  // PLAN-ketiranyu 4. lépés (3. pont): posOf csak es célnyelven fut (a
+  // szabály/korpusz spanyol szóalakra épül, angol célnyelven nincs értelme).
+  const pos = target === 'es' ? posOf(currentItem) : null;
 
   // FB392/393: ℹ️ jegyzet, CSAK ha az itemnek van (lib/pcicNotes.ts); a
   // nyitottság LEVEZETETT (noteOpenFor === az aktuális item id-je), tehát
@@ -518,6 +551,7 @@ export default function PcicScreen() {
         cards={allLevelCards}
         colors={colors}
         title={s.pcic.chooseLevel}
+        target={target}
         onSelect={handleSelectLevel}
         onClose={() => setLevelSheetOpen(false)}
       />
@@ -542,8 +576,8 @@ export default function PcicScreen() {
           {/* 5b: a szó melletti 🔊 újra elmondja az angolt (Kálmán kiegészítése,
               anki-ui-terv.html), ugyanazzal a hívással, mint a lap-nyitáskori FB319 felolvasás. */}
           <View style={styles.wordRow}>
-            <Text style={[styles.frontText, { color: colors.text }]}>{promptEn}</Text>
-            <Pressable onPress={() => speak(promptEn ?? currentItem.en, speechLang('en'))} style={styles.speakBtn}>
+            <Text style={[styles.frontText, { color: colors.text }]}>{promptText}</Text>
+            <Pressable onPress={() => speak(promptText ?? promptSource ?? '', speechLang(sourceLang))} style={styles.speakBtn}>
               <Text style={styles.speakIcon}>🔊</Text>
             </Pressable>
             {/* FB392/393: ℹ️ gomb, csak jegyzetes itemen; koppintásra ki/be
@@ -590,8 +624,10 @@ export default function PcicScreen() {
 
           {/* SZ7 (SZAVAK.md): FB188 névelő-gombsor a Learn fülről, ⊘ az alapállás.
               FB214 kiegészítés: a PCIC-en a chip már mutatja, ha nem főnév, a
-              sor csak noun/ismeretlen szófajnál jár (lib/articlePicker.ts). */}
-          {articlePickerApplies('es', currentItem.kind !== 'sentence', currentItem.es) &&
+              sor csak noun/ismeretlen szófajnál jár (lib/articlePicker.ts).
+              PLAN-ketiranyu 4. lépés (3. pont): csak es célnyelvnél jár. */}
+          {target === 'es' &&
+            articlePickerApplies(target, currentItem.kind !== 'sentence', answerText) &&
             articleRowAppliesForPos(pos) && (
             <View style={styles.articleRow}>
               {([...ARTICLE_OPTIONS, ''] as ArticlePick[]).map((opt) => {
@@ -636,6 +672,7 @@ export default function PcicScreen() {
               current={current}
               currentItem={currentItem}
               today={today}
+              target={target}
               onGrade={handleGrade}
             />
           )}
@@ -676,7 +713,7 @@ export default function PcicScreen() {
         onHeight={setDockH}
       />
 
-      <FeedbackButton level={level} languagePair="es-en" currentCard={`pcic:${current.itemId}`} bottomOffset={dockH + dockLift} />
+      <FeedbackButton level={level} languagePair={languagePair} currentCard={`pcic:${current.itemId}`} bottomOffset={dockH + dockLift} />
     </KeyboardAvoidingView>
   );
 }

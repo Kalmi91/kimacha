@@ -13,8 +13,13 @@ export const languages: Language[] = [
   { code: 'es', name: 'Español', flag: '🇪🇸' },
 ];
 
+// PLAN-ketiranyu 4. lépés (2026-09-28): a második irány, es→en (Kálmán
+// tanul angolul spanyolból), a régi en→es mellett. Meglévő telepítés a
+// FORCED_PAIR miatt en-es-ben marad, ez a lista csak azt dönti el, melyik
+// párt fogadja el az onboarding/settings irányváltó.
 export const supportedPairs: [string, string][] = [
   ['en', 'es'],
+  ['es', 'en'],
 ];
 
 export function isPairSupported(source: string, target: string): boolean {

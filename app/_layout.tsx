@@ -8,7 +8,8 @@ import 'react-native-reanimated';
 
 import { bottomGutter } from '@/lib/bottomGutter';
 import { getDb } from '@/lib/database';
-import { initI18n, setLanguage } from '@/lib/i18n';
+import { initI18n, setLanguage, subscribeLanguage } from '@/lib/i18n';
+import { setPcicTarget, type PcicTarget } from '@/data/pcic';
 import { FORCED_PAIR, needsPairCorrection } from '@/lib/languages';
 import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
 import { startUsageTimer, stopUsageTimer, noteInteraction } from '@/lib/usageTimer';
@@ -26,10 +27,17 @@ export default function RootLayout() {
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
   const [onboardingDone, setOnboardingDone] = useState<boolean | null>(null);
+  // PLAN-ketiranyu 4. lépés (7. pont): a Settings irányváltó sora setLanguage()-t
+  // hív, ami itt egy verziószámot léptet; a szám a lenti <RootLayoutNav key>-je,
+  // tehát váltáskor az egész navigációs fa (a tab-fülek felirata is) frissen
+  // rendereldik, nem csak a fókuszban lévő képernyő.
+  const [langVersion, setLangVersion] = useState(0);
 
   useEffect(() => {
     if (error) throw error;
   }, [error]);
+
+  useEffect(() => subscribeLanguage(() => setLangVersion((v) => v + 1)), []);
 
   useEffect(() => {
     async function check() {
@@ -45,6 +53,9 @@ export default function RootLayout() {
       }
       if (result) {
         setLanguage(result.source);
+        // PLAN-ketiranyu 4. lépés: a PCIC-fül aktív iránya is a tárolt
+        // target-tel induljon, ne mindig en-es-sel (data/pcic.ts activeTarget).
+        setPcicTarget(result.target as PcicTarget);
       }
       setOnboardingDone(!!result);
     }
@@ -66,7 +77,7 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider>
-      <RootLayoutNav />
+      <RootLayoutNav key={langVersion} />
     </ThemeProvider>
   );
 }
