@@ -136,30 +136,54 @@ describe('hasLesson: Play build hides schema:1 lessons', () => {
     if (ORIGINAL_ENV === undefined) delete process.env.EXPO_PUBLIC_PLAY_STORE;
     else process.env.EXPO_PUBLIC_PLAY_STORE = ORIGINAL_ENV;
     jest.resetModules();
+    jest.dontMock('../games/content');
   });
 
-  // negacion.json has no "schema": 2 field (one of the 4 still-unmigrated lessons).
-  it('Drive-APK (flag unset): a schema:1 lesson (negacion) is still reachable', () => {
+  // No real schema:1 lesson is left in the corpus, so a minimal legacy fixture
+  // (fixtures/legacy-lesson.json) stands in for a still-unmigrated lesson,
+  // registered under a syllabus id that has no authored lesson of its own.
+  const LEGACY_ID = 'muy-mucho';
+  const mockLegacyFixture = () => {
+    jest.doMock('../games/content', () => {
+      const actual = jest.requireActual('../games/content');
+      const fixture = { ...require('./fixtures/legacy-lesson.json'), topic: 'muy-mucho' };
+      const topics = (lang: string) => [
+        ...actual.getGrammarTopics(lang).filter((t: { topic: string }) => t.topic !== fixture.topic),
+        ...(lang === 'es' ? [fixture] : []),
+      ];
+      return {
+        ...actual,
+        getGrammarTopics: topics,
+        getGrammarTopic: (lang: string, topic: string) =>
+          topics(lang).find((t: { topic: string }) => t.topic === topic),
+      };
+    });
+  };
+
+  it('Drive-APK (flag unset): a schema:1 lesson (legacy fixture) is still reachable', () => {
     delete process.env.EXPO_PUBLIC_PLAY_STORE;
     jest.resetModules();
+    mockLegacyFixture();
     const driveSyllabus = require('../grammar/syllabus');
-    expect(driveSyllabus.hasLesson('es', 'negacion')).toBe(true);
+    expect(driveSyllabus.hasLesson('es', LEGACY_ID)).toBe(true);
     expect(driveSyllabus.hasLesson('es', 'ser-estar')).toBe(true);
   });
 
   it('Play build (flag=1): the same schema:1 lesson is hidden, schema:2 stays', () => {
     delete process.env.EXPO_PUBLIC_PLAY_STORE;
     jest.resetModules();
+    mockLegacyFixture();
     const { written: driveWritten } = require('../grammar/syllabus').lessonCoverage('es');
 
     process.env.EXPO_PUBLIC_PLAY_STORE = '1';
     jest.resetModules();
+    mockLegacyFixture();
     const playSyllabus = require('../grammar/syllabus');
-    expect(playSyllabus.hasLesson('es', 'negacion')).toBe(false);
+    expect(playSyllabus.hasLesson('es', LEGACY_ID)).toBe(false);
     expect(playSyllabus.hasLesson('es', 'ser-estar')).toBe(true);
     // lessonCoverage and nextWrittenTopic both go through hasLesson, so a
     // hidden topic also drops out of the header count and the "next" button.
-    expect(playSyllabus.nextWrittenTopic('es', 'ser-estar')?.id).not.toBe('negacion');
+    expect(playSyllabus.nextWrittenTopic('es', 'ser-estar')?.id).not.toBe(LEGACY_ID);
     expect(playSyllabus.lessonCoverage('es').written).toBeLessThan(driveWritten);
   });
 });
