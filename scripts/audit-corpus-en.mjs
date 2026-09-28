@@ -7,6 +7,7 @@
  *   A0 sentence_en ⊆ taught(A0)
  *   A1 sentence_en ⊆ taught(A0 ∪ A1)
  *   A2 sentence_en ⊆ taught(A0 ∪ A1 ∪ A2)
+ *   B1 sentence_en ⊆ taught(A0 ∪ A1 ∪ A2 ∪ B1)
  * plus a glue whitelist of English function words that are never taught as cards.
  *
  * This is the en-track counterpart of scripts/audit-corpus.mjs (Spanish flagship,
@@ -20,7 +21,7 @@ import { dirname, join } from 'path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
-const LEVELS = ['A0', 'A1', 'A2'];
+const LEVELS = ['A0', 'A1', 'A2', 'B1'];
 
 // ---------------------------------------------------------------------------
 // Glue whitelist, English function words NOT taught as vocabulary cards.
@@ -59,6 +60,8 @@ const GLUE_WHITELIST = new Set([
   'not', 'no', 'yes', 'very', 'too', 'also', 'here', 'there', 'now',
   'then', 'some', 'any', 'many', 'much', 'more', 'most', 'all', 'both',
   'each', 'every', 'few', 'lot', 'lots', 'only', 'just', 'again',
+  // "used to" (past habit) is a grammar marker, not a content word
+  'used',
   // number placeholders that recur as glue in dates/times if not yet taught
   'oclock',
 ]);
