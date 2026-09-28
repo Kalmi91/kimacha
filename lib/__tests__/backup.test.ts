@@ -11,6 +11,7 @@ describe('backup export/import round-trip (memory db)', () => {
     // app-code caller; __setLevelForTest replaces updateLevel for fixtures.
     (db as any).__setLevelForTest('A1');
     await db.setFeedbackBtnSide('left');
+    await db.setGrammarPalette('lime');
     await db.addToSpellingList(5001);
     await db.setGameProgress('grammar', 'ser-estar:done', 'done', { correct: 3, total: 3 });
 
@@ -25,6 +26,7 @@ describe('backup export/import round-trip (memory db)', () => {
 
     // Wreck the state, then restore from the payload.
     await db.setOnboarding('hu', 'es');
+    await db.setGrammarPalette('classic');
 
     await db.importAll(payload);
     const roundTrip = await db.exportAll();
@@ -33,6 +35,7 @@ describe('backup export/import round-trip (memory db)', () => {
     // own hu-en; every other table round-trips byte for byte.
     expect(roundTrip.tables).toEqual({ ...payload.tables, onboarding: [{ id: 1, source: 'en', target: 'es' }] });
     expect(await db.getOnboarding()).toEqual({ source: 'en', target: 'es' });
+    expect(await db.getGrammarPalette()).toBe('lime');
 
     // The hu-en rows themselves are untouched, just no longer active: switching
     // back to that pair (not a restore, just a normal pair switch) reaches them.
