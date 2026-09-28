@@ -18,8 +18,22 @@ jest.mock('expo-router', () => ({
     const { useEffect } = require('react');
     useEffect(cb, []);
   },
-  useLocalSearchParams: () => ({ topic: 'posesivos' }),
+  useLocalSearchParams: () => ({ topic: 'legacy-fixture' }),
 }));
+
+// No real schema:1 lesson is left in the corpus: a minimal legacy fixture
+// (lib/__tests__/fixtures/legacy-lesson.json) is added to the content registry.
+jest.mock('@/lib/games/content', () => {
+  const actual = jest.requireActual('@/lib/games/content');
+  const fixture = require('@/lib/__tests__/fixtures/legacy-lesson.json');
+  const topics = (lang: string) => [...actual.getGrammarTopics(lang), ...(lang === 'es' ? [fixture] : [])];
+  return {
+    ...actual,
+    getGrammarTopics: topics,
+    getGrammarTopic: (lang: string, topic: string) =>
+      topics(lang).find((t: { topic: string }) => t.topic === topic),
+  };
+});
 
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
 
@@ -81,8 +95,8 @@ describe('grammar course', () => {
 
   it('teaches the rule first, then drills it, then records the lesson as done', async () => {
     // LECKE-SEMA: a core+ leckék (presente-regular is) már LessonV2-n vannak, a
-    // rule/more-os régi utat egy még átíratlan core-lecke, a posesivos játssza.
-    const lesson = lessonFor('es', 'posesivos')! as LegacyLesson;
+    // rule/more-os régi utat a legacy-fixture lecke játssza.
+    const lesson = lessonFor('es', 'legacy-fixture')! as LegacyLesson;
     // D3 (FB290): a lecke csak >=80%-nál ír "kész" sort, ezért a teszt mindig
     // a helyes választ nyomja meg. A GrammarDrill seedje Date.now()-ból jön,
     // lemockolva előre kiszámítható ugyanazzal a `buildGrammarRound`-dal.
@@ -117,7 +131,7 @@ describe('grammar course', () => {
     expect(screen.queryByTestId('grammar-practice-again')).toBeTruthy();
     await flush(2);
     const rows = await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY);
-    const row = rows.find((r) => r.itemId === 'posesivos:choice');
+    const row = rows.find((r) => r.itemId === 'legacy-fixture:choice');
     expect(row?.state).toBe('done');
     expect((row?.data as { total?: number })?.total).toBe(lesson.items.length);
 

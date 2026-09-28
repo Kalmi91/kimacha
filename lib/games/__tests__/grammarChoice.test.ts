@@ -1,6 +1,7 @@
 import { buildGrammarRound, isChoiceRoundItem, wrongExplanation } from '../grammarChoice';
 import { markAnswerIndex, markTokens } from '../grammarMark';
 import { getGrammarTopics, isLessonV2, isMarkItem, type LegacyLesson } from '../content';
+import legacyFixture from '../../__tests__/fixtures/legacy-lesson.json';
 
 function makeTopic(): LegacyLesson {
   return {
@@ -95,7 +96,12 @@ describe('authored grammar topics are complete (Q1 batch)', () => {
   // LECKE-SEMA: a ser-estar pilot már LessonV2 (body-blokkok, nincs rule, és
   // match/form item is van benne); annak saját alakját a lessonSchema.test.ts
   // ellenőrzi. Ez a leltár a még régi sémán lévő témákra vonatkozik.
-  const legacyTopics = topics.filter((t): t is LegacyLesson => !isLessonV2(t));
+  // Nincs több valódi V1 lecke a korpuszban: a legacy-fixture tartja életben a
+  // régi séma ellenőrzését (a mostani V1 renderelő út még létezik).
+  const legacyTopics = [
+    ...topics.filter((t): t is LegacyLesson => !isLessonV2(t)),
+    legacyFixture as unknown as LegacyLesson,
+  ];
 
   it('offers the A1 topics before the A2 ones', () => {
     expect(topics.length).toBeGreaterThanOrEqual(7);
