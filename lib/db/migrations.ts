@@ -230,7 +230,11 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
       repair_gap INTEGER,
       -- FB364 (PLAN-fb0923 5. lépés): a PCIC "rontott" (again) kártya ennyi
       -- másodperc múlva jön mindenképp vissza (lib/pcicSession.ts).
-      again_delay_sec INTEGER
+      again_delay_sec INTEGER,
+      -- PLAN-ketiranyu 4. lépés javítás: a PCIC szint (A1-B2) párhoz kötve,
+      -- hogy en-es és es-en külön szintet őrizzen (a user_meta szingliton
+      -- oszlopból ide költözött, lásd a lenti ALTER-migráció régi DB-khez).
+      pcic_level TEXT
     );
     CREATE TABLE IF NOT EXISTS spelling_list (
       pair TEXT NOT NULL,
@@ -372,6 +376,25 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
   // Resolve the active pair from onboarding before running migrations.
   const ob = await db.getFirstAsync<any>('SELECT source, target FROM onboarding WHERE id = 1');
   if (ob) activePair = `${ob.source}-${ob.target}`;
+
+  // Migration (PLAN-ketiranyu 4. lépés javítás, 2026-09-28): pcic_level a
+  // user_meta szingliton oszlopból a learn_settings pár-szerinti sorába
+  // költözik, hogy a két irány (en-es / es-en) külön szintet őrizzen meg
+  // egymástól. A régi érték mindig az en-es párhoz tartozott (az egyetlen
+  // pár, ami addig létezett); a COALESCE csak akkor tölti be, ha a
+  // learn_settings oldalon még nincs semmi (nem írja felül a később
+  // választott szintet), ezért a migráció biztonságosan fut minden induláskor.
+  try {
+    await db.execAsync('ALTER TABLE learn_settings ADD COLUMN pcic_level TEXT');
+  } catch {}
+  const oldMeta = await db.getFirstAsync<any>('SELECT pcic_level FROM user_meta WHERE id = 1');
+  if (oldMeta?.pcic_level) {
+    await db.runAsync(
+      `INSERT INTO learn_settings (pair, pcic_level) VALUES ('en-es', ?)
+       ON CONFLICT(pair) DO UPDATE SET pcic_level = COALESCE(learn_settings.pcic_level, excluded.pcic_level)`,
+      [oldMeta.pcic_level]
+    );
+  }
 
   // Migration: add buried column (DBs created before the bury feature).
   const buriedCol = await db.getFirstAsync<any>("SELECT * FROM pragma_table_info('cards') WHERE name = 'buried'");

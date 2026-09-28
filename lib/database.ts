@@ -79,6 +79,9 @@ export interface DB {
   // matchesLevel mintájára - PLAN-fb0924 7a. lépés, a szint-igazítás óta nem
   // csupasz id-előtag), üresen az egész táblát, mint eddig.
   getPcicLevel(): Promise<PcicViewLevel>;
+  // PLAN-ketiranyu 4. lépés javítás: van-e KIFEJEZETTEN választott szintje az
+  // aktív párnak (a getPcicLevel fallbackja nem számít annak).
+  hasPcicLevel(): Promise<boolean>;
   setPcicLevel(level: PcicViewLevel): Promise<void>;
   resetPcicCards(levelPrefix?: string): Promise<void>;
   // PLAN-hibaim.md 2. lépés: a "Hibáim" kötegek (Settings -> Load my mistakes)
@@ -154,16 +157,36 @@ class SQLiteDB implements DB {
     await db.runAsync('UPDATE user_meta SET status_bar_tint = ? WHERE id = 1', [index]);
   }
 
-  // PLAN-play 10. lépés: a kiválasztott PCIC szint, app-szintű mint a fenti tint.
+  // PLAN-play 10. lépés: a kiválasztott PCIC szint. PLAN-ketiranyu 4. lépés
+  // javítás (2026-09-28 review): a user_meta szingliton
+  // oszlop helyett a learn_settings pár-szerinti sorába költözött (mint a
+  // többi tanulási beállítás), hogy irányváltáskor mindkét pár megőrizze a
+  // SAJÁT szintjét. A régi (en-es) érték migrációja: runMigrations.
   async getPcicLevel(): Promise<PcicViewLevel> {
     const db = await this.open();
-    const row = await db.getFirstAsync<any>('SELECT pcic_level FROM user_meta WHERE id = 1');
-    return (row?.pcic_level as PcicViewLevel) ?? DEFAULT_PCIC_LEVEL;
+    const row = await db.getFirstAsync<any>('SELECT pcic_level FROM learn_settings WHERE pair = ?', [this.activePair]);
+    if (row?.pcic_level) return row.pcic_level as PcicViewLevel;
+    // es→en-nek (egyelőre) csak A1 kap tartalmat (5. lépés); minden más pár a
+    // régi B1-alapértelmezésre esik vissza (meglévő "b1-..." progressz miatt).
+    return this.activePair.endsWith('-en') ? 'A1' : DEFAULT_PCIC_LEVEL;
+  }
+
+  // Van-e MÁR kifejezetten választott szintje az aktív párnak (a fenti
+  // fallback nem számít annak). A Settings irányváltó sora ezzel dönti el,
+  // hogy az új irányban egyszer felugorjon-e a szint-választó lap.
+  async hasPcicLevel(): Promise<boolean> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT pcic_level FROM learn_settings WHERE pair = ?', [this.activePair]);
+    return !!row?.pcic_level;
   }
 
   async setPcicLevel(level: PcicViewLevel): Promise<void> {
     const db = await this.open();
-    await db.runAsync('UPDATE user_meta SET pcic_level = ? WHERE id = 1', [level]);
+    await db.runAsync(
+      `INSERT INTO learn_settings (pair, pcic_level) VALUES (?, ?)
+       ON CONFLICT(pair) DO UPDATE SET pcic_level = excluded.pcic_level`,
+      [this.activePair, level]
+    );
   }
 
   // FB76: "first open of the day" marker for the greeting. Claiming it is a

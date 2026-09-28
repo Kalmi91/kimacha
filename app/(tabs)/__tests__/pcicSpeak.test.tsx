@@ -35,6 +35,7 @@ jest.mock('@/data/pcic', () => ({
   findPcicItem: (id: string) => (id === 'b1-x1' ? FIXTURE_ITEM : undefined),
   isPlusSentence: () => false,
   realLevelOfView: (level: string) => level,
+  setPcicTarget: () => {},
 }));
 
 import { act, fireEvent, render } from '@testing-library/react-native';

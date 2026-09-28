@@ -48,6 +48,50 @@ describe('pcic_cards (memory db)', () => {
     expect((await db.getPcicStats('2026-09-18')).total).toBe(0);
   });
 
+  // PLAN-ketiranyu 4. lépés: a pcic_cards tábla nincs pair-hez kötve (a két
+  // irány a w<id>/e<id> id-előtaggal válik el, data/pcic.ts), tehát az
+  // irányváltás (setOnboarding) önmagában nem törli egyik irány haladását sem.
+  it('irányváltás (setOnboarding) nem nullázza a másik irány kártyáit', async () => {
+    await db.resetPcicCards();
+    await db.setOnboarding('en', 'es');
+    await db.upsertPcicCard({ ...sm2NewCard('w1'), state: 'review', interval: 5, due: '2026-09-20', introducedAt: '2026-09-18' });
+
+    await db.setOnboarding('es', 'en');
+    await db.upsertPcicCard({ ...sm2NewCard('e1'), state: 'learning', due: '2026-09-18', introducedAt: '2026-09-18' });
+
+    await db.setOnboarding('en', 'es');
+    const cards = await db.getPcicCards();
+    expect(cards.find(c => c.itemId === 'w1')?.interval).toBe(5);
+    expect(cards.find(c => c.itemId === 'e1')?.state).toBe('learning');
+  });
+
+  // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 1. pont): a
+  // pcic_level a learn_settings pár-szerinti sorába költözött (korábban
+  // user_meta szingliton volt), hogy irányváltáskor mindkét pár megőrizze a
+  // saját szintjét.
+  it('pcic_level pár-szerint: oda-vissza váltás megtartja mindkét irány saját szintjét', async () => {
+    await db.setOnboarding('en', 'es');
+    await db.setPcicLevel('B1');
+    await db.setOnboarding('es', 'en');
+    await db.setPcicLevel('A1');
+
+    await db.setOnboarding('en', 'es');
+    expect(await db.getPcicLevel()).toBe('B1');
+    await db.setOnboarding('es', 'en');
+    expect(await db.getPcicLevel()).toBe('A1');
+  });
+
+  // Ugyanaz a pont: hasPcicLevel csak akkor igaz, ha az aktív párnak
+  // KIFEJEZETTEN van választott szintje (nem a getPcicLevel fallbackja
+  // miatt); ezzel dönti el a Settings irányváltó sora / a főfül load()-ja,
+  // hogy fel kell-e nyitni a szint-választó lapot.
+  it('hasPcicLevel: hamis egy még sose választott párnak, igaz setPcicLevel után', async () => {
+    await db.setOnboarding('xx', 'yy');
+    expect(await db.hasPcicLevel()).toBe(false);
+    await db.setPcicLevel('A1');
+    expect(await db.hasPcicLevel()).toBe(true);
+  });
+
   // FB385/386: getPcicNewBonus/setPcicNewBonus round-trip, memory-DB szinten.
   it('getPcicNewBonus/setPcicNewBonus: perzisztál (reload-eset) és naptári nappal lejár', async () => {
     expect(await db.getPcicNewBonus('2026-09-18')).toBe(0);

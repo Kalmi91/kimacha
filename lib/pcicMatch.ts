@@ -50,8 +50,8 @@ function expandSlashes(s: string): string[] {
   return variants.map((v) => v.join(' '));
 }
 
-export function pcicAlternatives(es: string): string[] {
-  const withParens = expandParens(es);
+export function pcicAlternatives(answer: string): string[] {
+  const withParens = expandParens(answer);
   const all = withParens.flatMap(expandSlashes).map((v) => v.trim());
   return Array.from(new Set(all));
 }
@@ -76,8 +76,12 @@ function isAccentOnlyDiff(a: string, b: string): boolean {
   return a !== b && foldAccents(a) === foldAccents(b);
 }
 
-export function gradePcicAnswer(typed: string, es: string, strictAccents = false): PcicGrade {
-  const alternatives = pcicAlternatives(es);
+// PLAN-ketiranyu 4. lépés: a `target` (korábban `es`) a CÉLNYELVI helyes
+// alak, akármelyik irányban; a normalizálás (ékezet, kis/nagybetű, "/" és
+// zárójel-alternatívák) nyelvfüggetlen, angolra is jó (Kálmán jóváhagyott
+// vázlata, 3. pont).
+export function gradePcicAnswer(typed: string, target: string, strictAccents = false): PcicGrade {
+  const alternatives = pcicAlternatives(target);
   const typedNorm = stripTrailingPunct(normalize(typed));
 
   for (const alt of alternatives) {

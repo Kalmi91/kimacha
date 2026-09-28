@@ -6,47 +6,103 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb } from '@/lib/database';
 import { t, setLanguage } from '@/lib/i18n';
-import { PCIC_LEVELS, LEVEL_LABELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
+import { PCIC_VIEW_LEVELS, pcicItemsForLevel, pcicItemsForViewLevel, realLevelOfView, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import LevelRow from '@/components/LevelRow';
 
-// Kimacha Play: single en-es pair (Kálmán, 2026-09-22), so onboarding no
-// longer asks which languages to use, it just greets the learner once
-// (FB121) and starts the course with the fixed pair.
-// PLAN-play 10. lépés: az üdvözlés után egy második lépés kéri a PCIC
-// kezdő-szintet (Kálmán döntése, s1 anki-ui-terv.html); ez a screen csak új
-// telepítésnél fut le egyáltalán (app/_layout.tsx a getOnboarding() alapján
-// dönt, meglévő telepítés sosem látja).
+// PLAN-ketiranyu 4. lépés (2026-09-28, jóváhagyott vázlat 1-5. pont): az
+// onboarding megint irányt kérdez, mint a régi (nem Kimacha Play) ág, de
+// csak a két támogatott párra (lib/languages.ts supportedPairs): angolból
+// tanulsz spanyolul (en→es), vagy spanyolból angolul (es→en). A választás a
+// felület nyelvét is eldönti (setLanguage a kiinduló nyelvre), az "Üdvözlés"
+// és a szint-választó lépés már ebben a nyelvben jelenik meg. Meglévő
+// telepítés ezt a screent sose látja (app/_layout.tsx a getOnboarding()
+// alapján dönt), tehát ott a választó nem jön elő (5. pont).
 export default function OnboardingScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
-  const [step, setStep] = useState<'welcome' | 'level'>('welcome');
+  const [step, setStep] = useState<'language' | 'welcome' | 'level'>('language');
+  const [source, setSource] = useState<'en' | 'es'>('en');
+  const [target, setTarget] = useState<PcicTarget>('es');
+
+  // 2. pont: "English" -> en→es (a mostani app, minden felirat angol);
+  // "Español" -> es→en (minden felirat spanyol). A felület nyelve és a PCIC
+  // aktív iránya azonnal vált, hogy az Üdvözlés képernyő már jó nyelven jöjjön.
+  const handleChooseLanguage = (chosenSource: 'en' | 'es') => {
+    const chosenTarget: PcicTarget = chosenSource === 'en' ? 'es' : 'en';
+    setSource(chosenSource);
+    setTarget(chosenTarget);
+    setLanguage(chosenSource);
+    setPcicTarget(chosenTarget);
+    setStep('welcome');
+  };
 
   const handleSelectLevel = async (level: PcicLevel) => {
     const db = getDb();
-    await db.setOnboarding('en', 'es');
+    await db.setOnboarding(source, target);
     await db.setPcicLevel(level);
-    setLanguage('en');
     router.replace('/(tabs)');
   };
 
+  if (step === 'language') {
+    return (
+      <View style={[styles.container, { backgroundColor: colors.background }]}>
+        <View style={styles.content}>
+          <Text style={[styles.welcome, { color: colors.tint }]}>
+            Which language do you speak? / ¿Qué idioma hablas?
+          </Text>
+          <View style={styles.langButtonGroup}>
+            <Pressable style={[styles.startBtn, { backgroundColor: colors.tint }]} onPress={() => handleChooseLanguage('en')}>
+              <Text style={styles.startBtnText}>English</Text>
+            </Pressable>
+            <Pressable style={[styles.startBtn, { backgroundColor: colors.tint }]} onPress={() => handleChooseLanguage('es')}>
+              <Text style={styles.startBtnText}>Español</Text>
+            </Pressable>
+          </View>
+        </View>
+      </View>
+    );
+  }
+
   if (step === 'level') {
-    const levels = PCIC_LEVELS.filter((lvl) => pcicItemsForLevel(lvl).length > 0);
+    // 3. pont: en-es-ben A1/A2/B1 (a meglévő "0 tétel = ne kínáljuk fel"
+    // szűrő); es-en-ben csak A1, mindig felkínálva, akkor is, ha még üres (az
+    // 50 angol szó az 5. lépésben jön) - ilyenkor a sor alatt egy mondat mondja ki.
+    // 2026-09-28 review, 2. pont: en-es-ben a választható nézet-szintek
+    // (A1/A2/B1, a B2 rejtett - PLAN-ketiranyu 2. lépés), nem a nyers PCIC_LEVELS.
+    const levels: PcicLevel[] = target === 'en'
+      ? ['A1']
+      : PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForViewLevel(lvl).length > 0).map(realLevelOfView);
+    // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont): a
+    // feliratok a felület nyelvén (data/pcic.ts LEVEL_LABELS angolra égetve volt).
+    const levelLabels: Record<PcicLevel, string> = {
+      A1: s.pcic.levelBeginner,
+      A2: s.pcic.levelElementary,
+      B1: s.pcic.levelIntermediate,
+      B2: s.pcic.levelUpperIntermediate,
+    };
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         <Text style={[styles.welcome, { color: colors.tint }]}>{s.pcic.chooseLevel}</Text>
-        {levels.map((lvl) => (
-          <LevelRow
-            key={lvl}
-            level={lvl}
-            label={LEVEL_LABELS[lvl]}
-            introduced={0}
-            total={pcicItemsForLevel(lvl).length}
-            active={false}
-            colors={colors}
-            onPress={() => handleSelectLevel(lvl)}
-          />
-        ))}
+        {levels.map((lvl) => {
+          const total = pcicItemsForLevel(lvl).length;
+          return (
+            <View key={lvl}>
+              <LevelRow
+                level={lvl}
+                label={levelLabels[lvl]}
+                introduced={0}
+                total={total}
+                active={false}
+                colors={colors}
+                onPress={() => handleSelectLevel(lvl)}
+              />
+              {target === 'en' && total === 0 && (
+                <Text style={[styles.noWordsYet, { color: colors.tabIconDefault }]}>Todavía no hay palabras.</Text>
+              )}
+            </View>
+          );
+        })}
       </View>
     );
   }
@@ -79,6 +135,11 @@ const styles = StyleSheet.create({
     marginBottom: 32,
     paddingHorizontal: 8,
   },
+  // 1. pont: a két nyelv-gomb egymás alatt, a meglévő startBtn stílussal.
+  langButtonGroup: {
+    gap: 14,
+    alignItems: 'center',
+  },
   startBtn: {
     paddingVertical: 16,
     paddingHorizontal: 40,
@@ -88,5 +149,12 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontSize: 18,
     fontWeight: '700',
+  },
+  // 3. pont: "még nincs szó" sor az üres A1 alatt (es→en, amíg az 5. lépés nincs kész).
+  noWordsYet: {
+    fontSize: 13,
+    textAlign: 'center',
+    marginTop: -4,
+    marginBottom: 10,
   },
 });

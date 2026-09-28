@@ -24,6 +24,7 @@ jest.mock('expo-router', () => ({
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
+import { setLanguage } from '@/lib/i18n';
 import { GRAMMAR_PROGRESS_KEY, lessonFor } from '@/lib/grammar/syllabus';
 import type { LegacyLesson } from '@/lib/games/content';
 import { buildGrammarRound, isChoiceRoundItem } from '@/lib/games/grammarChoice';
@@ -121,6 +122,22 @@ describe('grammar course', () => {
     expect((row?.data as { total?: number })?.total).toBe(lesson.items.length);
 
     (Date.now as jest.Mock).mockRestore();
+    view.unmount();
+  });
+
+  // PLAN-ketiranyu 4. lépés (4. pont, K2 döntés): es→en irányban a Grammar
+  // fül még nem tanít angol nyelvtant, csak ezt az egy sort mutatja.
+  it('es→en irányban csak a "gramática inglesa" sort mutatja, leckelista nélkül', async () => {
+    await getDb().setOnboarding('es', 'en');
+    setLanguage('es');
+    const view = render(<GrammarSyllabusScreen />);
+    await flush(4);
+
+    expect(screen.queryByText('La gramática inglesa llegará más adelante.')).toBeTruthy();
+    expect(screen.queryByTestId('grammar-topic-presente-regular')).toBeNull();
+    expect(screen.queryByTestId('grammar-level-A1')).toBeNull();
+
+    setLanguage('en');
     view.unmount();
   });
 
