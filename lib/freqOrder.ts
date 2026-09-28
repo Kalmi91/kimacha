@@ -20,14 +20,21 @@ export function stripAccents(s: string): string {
   return s.normalize('NFD').replace(/[̀-ͯ]/g, '');
 }
 
-/** Az `es` mező tokenjei: kisbetű, írásjel ki, szóköz/`/` mentén vágva, névelő és alanyi névmás nélkül. */
+/**
+ * Az `es` mező tokenjei: a zárójeles rész (tartalmával együtt) ki, kisbetű,
+ * írásjel ki, szóköz/`/` mentén vágva, névelő és alanyi névmás nélkül, DE
+ * csak akkor esik ki egy névelő/névmás, ha marad más token is (különben a
+ * szűretlen tokenek maradnak, pl. önmagában `yo` vagy `un/una`).
+ */
 export function tokenizeEs(es: string): string[] {
-  const cleaned = es.toLowerCase().replace(/[¿?¡!.,;:"()]/g, '');
-  return cleaned
+  const withoutParens = es.replace(/\([^)]*\)/g, '');
+  const cleaned = withoutParens.toLowerCase().replace(/[¿?¡!.,;:"()]/g, '');
+  const rawTokens = cleaned
     .split(/[\s/]+/)
     .map((t) => t.trim())
-    .filter(Boolean)
-    .filter((t) => !ARTICLES.has(t) && !PRONOUNS.has(t));
+    .filter(Boolean);
+  const filtered = rawTokens.filter((t) => !ARTICLES.has(t) && !PRONOUNS.has(t));
+  return filtered.length > 0 ? filtered : rawTokens;
 }
 
 /** `es_50k.txt` ("szó darabszám" soronként) -> pontos és ékezet-hajtogatott rang-index, 1-től. */

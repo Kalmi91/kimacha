@@ -45,12 +45,14 @@ export function stripAccents(s) {
 }
 
 export function tokenizeEs(es) {
-  const cleaned = es.toLowerCase().replace(/[¿?¡!.,;:"()]/g, '');
-  return cleaned
+  const withoutParens = es.replace(/\([^)]*\)/g, '');
+  const cleaned = withoutParens.toLowerCase().replace(/[¿?¡!.,;:"()]/g, '');
+  const rawTokens = cleaned
     .split(/[\s/]+/)
     .map((t) => t.trim())
-    .filter(Boolean)
-    .filter((t) => !ARTICLES.has(t) && !PRONOUNS.has(t));
+    .filter(Boolean);
+  const filtered = rawTokens.filter((t) => !ARTICLES.has(t) && !PRONOUNS.has(t));
+  return filtered.length > 0 ? filtered : rawTokens;
 }
 
 export function parseFreqList(text) {

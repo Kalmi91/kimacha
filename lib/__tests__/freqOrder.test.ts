@@ -3,7 +3,18 @@
 
 import { cardRank, parseFreqList, sortByFreqRank, tokenizeEs } from '../freqOrder';
 
-const FREQ_TEXT = ['no 5', 'casa 8', 'recuerdo 10', 'hablo 20', 'habla 21', 'camion 100', 'grande 9999'].join('\n');
+const FREQ_TEXT = [
+  'yo 3',
+  'no 5',
+  'un 6',
+  'una 7',
+  'casa 8',
+  'recuerdo 10',
+  'hablo 20',
+  'habla 21',
+  'camion 100',
+  'grande 9999',
+].join('\n');
 const index = parseFreqList(FREQ_TEXT);
 
 describe('tokenizeEs', () => {
@@ -22,6 +33,18 @@ describe('tokenizeEs', () => {
   it('"no" -> ["no"] (nem névelő/névmás, megmarad)', () => {
     expect(tokenizeEs('no')).toEqual(['no']);
   });
+
+  it('"yo" -> ["yo"] (önmagában névmás, nem esik ki, mert nem maradna más token)', () => {
+    expect(tokenizeEs('yo')).toEqual(['yo']);
+  });
+
+  it('"un/una" -> ["un", "una"] (önmagában névelő, nem esik ki)', () => {
+    expect(tokenizeEs('un/una')).toEqual(['un', 'una']);
+  });
+
+  it('"refiero (referir)" -> ["refiero"] (zárójel a tartalmával együtt ki)', () => {
+    expect(tokenizeEs('refiero (referir)')).toEqual(['refiero']);
+  });
 });
 
 describe('cardRank', () => {
@@ -35,6 +58,14 @@ describe('cardRank', () => {
 
   it('ismeretlen token -> Infinity', () => {
     expect(cardRank('el ornitorrinco', index)).toBe(Infinity);
+  });
+
+  it('önmagában névmás ("yo") véges rangot kap, nem Infinity-t', () => {
+    expect(cardRank('yo', index)).toBe(index.exact.get('yo'));
+  });
+
+  it('önmagában névelő-pár ("un/una") véges rangot kap, nem Infinity-t', () => {
+    expect(cardRank('un/una', index)).toBe(Math.max(index.exact.get('un')!, index.exact.get('una')!));
   });
 });
 
