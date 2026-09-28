@@ -182,7 +182,6 @@ export default function PcicScreen() {
     setSessionNew(0);
     setSessionAgain(0);
     setLastGraded(null);
-    setCadence(INITIAL_CADENCE);
     setSentenceCard(null);
     setPcicBonus(bonus);
     setLoading(false);
