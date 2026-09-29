@@ -5,6 +5,7 @@ import { SymbolView, type SymbolViewProps } from 'expo-symbols';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
+import { brutalHeaderOptions } from '@/lib/brutalHeader';
 import { t } from '@/lib/i18n';
 
 export default function TabLayout() {
@@ -55,6 +56,8 @@ export default function TabLayout() {
           backgroundColor: colors.background,
         },
         headerTintColor: colors.text,
+        // NY25: brutalista palettán ink vonalas, nagybetűs fejléc (classic: üres).
+        ...brutalHeaderOptions(g),
       }}>
       <Tabs.Screen
         name="index"

@@ -20,7 +20,8 @@ import { cardsForBatches, pickMistakeSession, suggestedMistakeGrade, type Mistak
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
-import { BrutalBox, BrutalButton, brutalInputStyle } from '@/components/grammar/Brutal';
+import { BrutalBackButton, BrutalBox, BrutalButton, brutalInputStyle } from '@/components/grammar/Brutal';
+import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 
 // PLAN-hibaim.md 4. lépés ("Pakli"): the PCIC card surface (CardShell,
 // DockedAction) over the cards lib/mistakes/deck.ts builds from every loaded
@@ -108,10 +109,16 @@ export default function MistakesDeckScreen() {
   }
 
   const header = (
-    <View style={styles.header}>
+    <View style={[styles.header, brutalHeaderRowStyle(g)]}>
+      {g.brutal ? (
+        <View style={styles.back}>
+          <BrutalBackButton testID="mistakes-deck-back" onPress={() => router.back()} />
+        </View>
+      ) : (
       <Pressable onPress={() => router.back()} hitSlop={12}>
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
+      )}
       <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]} numberOfLines={1}>
         {s.mistakes.title}
       </Text>
