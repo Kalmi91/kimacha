@@ -8,6 +8,7 @@ import { pcicItemsForLevel, type PcicLevel, type PcicViewLevel } from '@/data/pc
 import type { MistakeBatchRow } from './mistakes/deck';
 import { runMigrations, applyWordMerges } from './db/migrations';
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
+import { DEFAULT_GRAMMAR_PALETTE, isGrammarPaletteId, type GrammarPaletteId } from '@/constants/GrammarPalettes';
 
 // PLAN-play 10. lépés: egy meglévő telepítésen a haladás ma "b1-..." id-kkel
 // forog, ezért az oszlop hiánya (régi DB) B1-re esik vissza, nem A1-re.
@@ -23,6 +24,8 @@ export interface DB {
   claimDailyGreeting(): Promise<boolean>;
   getStatusBarTint(): Promise<number>;
   setStatusBarTint(index: number): Promise<void>;
+  getGrammarPalette(): Promise<GrammarPaletteId>;
+  setGrammarPalette(id: GrammarPaletteId): Promise<void>;
   // PLAN-play 12. lépés: napi streak-írás visszakerült (a Tanulás fül vitte
   // el, a PCIC-értékelés az egyetlen hívó innentől, lásd app/(tabs)/index.tsx).
   updateStreak(): Promise<void>;
@@ -155,6 +158,19 @@ class SQLiteDB implements DB {
   async setStatusBarTint(index: number): Promise<void> {
     const db = await this.open();
     await db.runAsync('UPDATE user_meta SET status_bar_tint = ? WHERE id = 1', [index]);
+  }
+
+  // NY11: the app-wide color palette (constants/GrammarPalettes.ts). Like the
+  // status-bar tint it is not per language pair, so it lives in user_meta.
+  async getGrammarPalette(): Promise<GrammarPaletteId> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT grammar_palette FROM user_meta WHERE id = 1');
+    return isGrammarPaletteId(row?.grammar_palette) ? row.grammar_palette : DEFAULT_GRAMMAR_PALETTE;
+  }
+
+  async setGrammarPalette(id: GrammarPaletteId): Promise<void> {
+    const db = await this.open();
+    await db.runAsync('UPDATE user_meta SET grammar_palette = ? WHERE id = 1', [id]);
   }
 
   // PLAN-play 10. lépés: a kiválasztott PCIC szint. PLAN-ketiranyu 4. lépés

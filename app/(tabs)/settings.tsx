@@ -5,6 +5,7 @@ import { File, Paths } from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import * as DocumentPicker from 'expo-document-picker';
 import Colors from '@/constants/Colors';
+import { PALETTE_FILLS, type GrammarPaletteId } from '@/constants/GrammarPalettes';
 import { useTheme } from '@/lib/ThemeContext';
 import { t, setLanguage, notifyLanguageChange } from '@/lib/i18n';
 import { type Level } from '@/data/words';
@@ -37,7 +38,7 @@ import { languages } from '@/lib/languages';
 const appVersionLabel = appBuildTag();
 
 export default function SettingsScreen() {
-  const { theme, override, setOverride } = useTheme();
+  const { theme, override, setOverride, grammarPalette, setGrammarPalette } = useTheme();
   const colors = Colors[theme];
   const s = t();
   const router = useRouter();
@@ -178,6 +179,20 @@ export default function SettingsScreen() {
     { label: `🌙 ${s.settings.themeDark}`, value: 'dark' },
   ];
 
+  // NY12: color palettes, two dots (accent + second color) and the name.
+  const paletteOptions: { label: string; value: GrammarPaletteId }[] = [
+    { label: s.settings.paletteBrand, value: 'brand' },
+    { label: s.settings.paletteElectric, value: 'electric' },
+    { label: s.settings.paletteLime, value: 'lime' },
+    { label: s.settings.paletteCyan, value: 'cyan' },
+    { label: s.settings.paletteOrange, value: 'orange' },
+    { label: s.settings.paletteClassic, value: 'classic' },
+  ];
+  const paletteDots = (id: GrammarPaletteId): [string, string] =>
+    id === 'classic'
+      ? [Colors.light.tint, Colors.light.accent]
+      : [PALETTE_FILLS[id].a, PALETTE_FILLS[id].b];
+
   // RN-web Alert is a no-op, so web falls back to the browser dialogs.
   const notify = (title: string, message?: string) => {
     if (Platform.OS === 'web') window.alert(message ? `${title}\n${message}` : title);
@@ -289,11 +304,39 @@ export default function SettingsScreen() {
             ]}
             onPress={() => setOverride(opt.value)}
           >
-            <Text style={[styles.optionText, { color: override === opt.value ? '#FFF' : colors.text }]}>
+            <Text style={[styles.optionText, { color: override === opt.value ? colors.onTint : colors.text }]}>
               {opt.label}
             </Text>
           </Pressable>
         ))}
+      </View>
+
+      <Text style={[styles.sectionHint, { color: colors.textMuted, marginBottom: 8 }]}>{s.settings.paletteTitle}</Text>
+      <View style={[styles.optionGroup, styles.paletteGroup]}>
+        {paletteOptions.map(opt => {
+          const [dotA, dotB] = paletteDots(opt.value);
+          const selected = grammarPalette === opt.value;
+          return (
+            <Pressable
+              key={opt.value}
+              testID={`palette-${opt.value}`}
+              style={[
+                styles.option,
+                styles.paletteOption,
+                { backgroundColor: colors.card, borderColor: selected ? colors.text : 'transparent' },
+              ]}
+              onPress={() => setGrammarPalette(opt.value)}
+            >
+              <View style={styles.paletteDots}>
+                <View style={[styles.paletteDot, { backgroundColor: dotA }]} />
+                <View style={[styles.paletteDot, { backgroundColor: dotB }]} />
+              </View>
+              <Text style={[styles.optionText, { color: colors.text }]}>
+                {opt.label}
+              </Text>
+            </Pressable>
+          );
+        })}
       </View>
 
       {/* FB144: a course language with no installed voice, named so the fix
@@ -482,10 +525,10 @@ export default function SettingsScreen() {
                   style={[styles.sheetOption, { backgroundColor: active ? colors.tint : colors.background }]}
                   onPress={() => handleSelectDirection(src, tgt)}
                 >
-                  <Text style={[styles.sheetOptionText, { color: active ? '#FFF' : colors.text }]}>
+                  <Text style={[styles.sheetOptionText, { color: active ? colors.onTint : colors.text }]}>
                     {src === 'en' ? s.settings.directionEnEs : s.settings.directionEsEn}
                   </Text>
-                  {active && <Text style={[styles.sheetOptionText, { color: '#FFF' }]}>✓</Text>}
+                  {active && <Text style={[styles.sheetOptionText, { color: colors.onTint }]}>✓</Text>}
                 </Pressable>
               );
             })}
@@ -567,6 +610,28 @@ const styles = StyleSheet.create({
   optionText: {
     fontSize: 15,
     fontWeight: '600',
+  },
+  paletteGroup: {
+    flexWrap: 'wrap',
+  },
+  paletteOption: {
+    flexBasis: '47%',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 8,
+    paddingHorizontal: 8,
+    borderWidth: 2,
+  },
+  paletteDots: {
+    flexDirection: 'row',
+    gap: 3,
+  },
+  paletteDot: {
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: '#111111',
   },
   sectionHint: {
     fontSize: 12,

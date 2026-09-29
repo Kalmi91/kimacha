@@ -4,6 +4,7 @@ import { useFocusEffect, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { LEVELS, type Level } from '@/data/words';
@@ -19,7 +20,9 @@ import {
   unitsForLevel,
 } from '@/lib/grammar/syllabus';
 import { lessonBadgePercent, lessonPercentsByTopic } from '@/lib/grammar/lessonScore';
+import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
 import FeedbackButton from '@/components/FeedbackModal';
+import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 
 // The grammar course: the whole syllabus from A1 to C1, in teaching order.
 //
@@ -40,6 +43,7 @@ interface TopicProgress {
 export default function GrammarSyllabusScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const s = t();
   const router = useRouter();
 
@@ -50,6 +54,10 @@ export default function GrammarSyllabusScreen() {
   const [progress, setProgress] = useState<Map<string, TopicProgress>>(new Map());
   // FB328: leckénkénti kumulált helyes-arány, a sor jobb szélén lévő NN% jelvényhez.
   const [percents, setPercents] = useState<Map<string, number>>(new Map());
+  // NY21: streak-matrica + heti cél doboz (a meglévő getStreak / heti cél / használat értékeiből).
+  const [streak, setStreak] = useState(0);
+  const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
+  const [weekMinutes, setWeekMinutes] = useState(0);
 
   const load = useCallback(async () => {
     const db = getDb();
@@ -71,6 +79,9 @@ export default function GrammarSyllabusScreen() {
     setProgress(doneGrammarTopicProgress(target, rows));
     // FB328: ugyanabból a lekérésből, külön DB-hívás nélkül.
     setPercents(lessonPercentsByTopic(rows));
+    setStreak((await db.getStreak())?.current_count ?? 0);
+    setWeeklyGoal(await db.getWeeklyGoalMinutes());
+    setWeekMinutes((await db.getUsageStats()).thisWeek);
   }, []);
 
   useFocusEffect(
@@ -94,6 +105,131 @@ export default function GrammarSyllabusScreen() {
 
   const coverage = lessonCoverage(learnedLang);
   const doneCount = [...progress.values()].filter((p) => p.state === 'done').length;
+
+  // NY21 (neo-brutalista, NYELVTAN.md "Neo-brutalista stílus" 1. képernyő):
+  // a classic paletta a lenti mai kinézetet adja.
+  if (g.brutal) {
+    const shownLevel: Level = openLevel ?? 'A1';
+    const shownTopics = syllabusForLevel(shownLevel as (typeof SYLLABUS_LEVELS)[number]);
+    const shownWritten = shownTopics.filter((tp) => hasLesson(learnedLang, tp.id)).length;
+    const shownDone = shownTopics.filter((tp) => progress.get(tp.id)?.state === 'done').length;
+    return (
+      <View style={[styles.container, { backgroundColor: g.bg }]}>
+        <ScrollView contentContainerStyle={styles.brutalBody}>
+          <View style={styles.brutalHeader}>
+            <Text style={[styles.brutalTitle, { color: g.ink }]}>{s.tabs.grammar}</Text>
+            <Sticker testID="grammar-streak" label={`🔥 ${streak}`} fill="b" rotate={6} />
+          </View>
+          <Text style={[styles.brutalSmall, { color: g.mu }]}>
+            {s.grammar.coverage(doneCount, coverage.written, coverage.planned)}
+          </Text>
+
+          <View style={styles.brutalLevelRow}>
+            {SYLLABUS_LEVELS.map((lvl) => (
+              <BrutalBox
+                key={lvl}
+                testID={`grammar-level-${lvl}`}
+                fill={shownLevel === lvl ? 'a' : 'paper'}
+                style={styles.brutalLevelBox}
+                boxStyle={styles.brutalLevelInner}
+                onPress={() => setOpenLevel(lvl)}
+              >
+                <Text style={[styles.brutalLevelText, { color: shownLevel === lvl ? g.onFill : g.ink }]}>{lvl}</Text>
+              </BrutalBox>
+            ))}
+          </View>
+          <Text style={[styles.brutalSmall, { color: g.mu }]}>
+            {s.grammar.levelMeta(shownDone, shownTopics.length, shownWritten)}
+            {shownLevel === level ? ` · ${s.grammar.yourLevel}` : ''}
+          </Text>
+
+          {unitsForLevel(shownLevel as (typeof SYLLABUS_LEVELS)[number]).map((unit) => (
+            <View key={unit.id} style={styles.brutalUnit}>
+              <Text style={[styles.brutalUnitName, { color: g.mu }]}>
+                {unit.title[contentLang] ?? unit.title.en}
+              </Text>
+              {topicsForUnit(unit.id).map((topic) => {
+                const written2 = hasLesson(learnedLang, topic.id);
+                const p = progress.get(topic.id);
+                const pct = percents.get(topic.id) ?? null;
+                const badgePct = lessonBadgePercent(pct, p?.correct, p?.total);
+                const isDone = p?.state === 'done';
+                const inProgress = written2 && !isDone && (badgePct !== null || !!p);
+                const badge = !written2
+                  ? `🔒 ${s.grammar.soon}`
+                  : isDone
+                    ? badgePct !== null
+                      ? `✓ ${badgePct}%`
+                      : `✓ ${p.correct ?? 0}/${p.total ?? 0}`
+                    : badgePct !== null
+                      ? `${badgePct}% · ${s.grammar.continueTag}`
+                      : p
+                        ? s.grammar.started
+                        : s.grammar.notStarted;
+                const tier = getGrammarTier(topic.id);
+                const textColor = inProgress ? g.onFill : written2 ? g.ink : g.mu;
+                return (
+                  <BrutalBox
+                    key={topic.id}
+                    testID={`grammar-topic-${topic.id}`}
+                    fill={inProgress ? 'b' : 'paper'}
+                    dashed={!written2}
+                    disabled={!written2}
+                    onPress={() => router.push(`/grammar/${topic.id}` as never)}
+                    boxStyle={styles.brutalTopic}
+                  >
+                    <View style={styles.brutalTopicTop}>
+                      <Text style={[styles.brutalTopicTitle, { color: textColor }]}>
+                        {topic.title[contentLang] ?? topic.title.en}
+                      </Text>
+                    </View>
+                    {tier || isDone ? (
+                      <View style={styles.brutalStickers}>
+                        {tier === 'core-plus' ? (
+                          <Sticker testID={`grammar-core-plus-${topic.id}`} label={s.grammar.corePlusTag} fill="paper" rotate={-4} />
+                        ) : tier === 'core' ? (
+                          <Sticker testID={`grammar-core-${topic.id}`} label={s.grammar.coreTag} fill="paper" rotate={-4} />
+                        ) : null}
+                        {isDone ? <Sticker label={s.grammar.doneTag} fill="a" rotate={5} /> : null}
+                      </View>
+                    ) : null}
+                    <Text style={[styles.brutalBlurb, { color: textColor }]} numberOfLines={2}>
+                      {topic.blurb[contentLang] ?? topic.blurb.en}
+                    </Text>
+                    {inProgress && badgePct !== null ? (
+                      <SegmentBar segments={6} filled={segmentsFilled(badgePct, 6)} style={styles.brutalBar} />
+                    ) : null}
+                    <Text testID={`grammar-percent-${topic.id}`} style={[styles.brutalBadge, { color: textColor }]}>
+                      {badge}
+                    </Text>
+                  </BrutalBox>
+                );
+              })}
+            </View>
+          ))}
+
+          <BrutalBox style={styles.brutalGoal} boxStyle={styles.brutalTopic}>
+            <Text style={[styles.brutalUnitName, { color: g.ink }]}>{s.grammar.weeklyGoalTitle}</Text>
+            <Text style={[styles.brutalBadge, { color: g.ink }]}>
+              {s.grammar.weeklyGoalValue(
+                String(Math.round((weekMinutes / 60) * 10) / 10),
+                String(Math.round(weeklyGoal / 60))
+              )}
+            </Text>
+            <SegmentBar
+              segments={7}
+              filled={segmentsFilled(weeklyGoal > 0 ? Math.min(100, (weekMinutes / weeklyGoal) * 100) : 0, 7)}
+              style={styles.brutalBar}
+            />
+          </BrutalBox>
+
+          <Text style={[styles.footNote, { color: g.mu }]}>{s.grammar.footNote}</Text>
+        </ScrollView>
+
+        <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard="grammar-syllabus" />
+      </View>
+    );
+  }
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
@@ -268,5 +404,25 @@ const styles = StyleSheet.create({
   topicBlurb: { fontSize: 12, marginTop: 2, lineHeight: 17 },
   topicBadgeCol: { alignItems: 'flex-end', gap: 2 },
   topicBadge: { fontSize: 12, fontWeight: '700' },
+  // NY21: neo-brutalista forma-stílusok (címek, gombok nagybetűsek, 500 súly).
+  // paddingBottom: az utolsó kártya a chat-gomb (FAB) alól is kigördül.
+  brutalBody: { padding: 16, paddingBottom: 130, gap: 10 },
+  brutalHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  brutalTitle: { fontSize: 30, fontWeight: '500', textTransform: 'uppercase' },
+  brutalSmall: { fontSize: 11, fontWeight: '500' },
+  brutalLevelRow: { flexDirection: 'row', gap: 8 },
+  brutalLevelBox: { flex: 1 },
+  brutalLevelInner: { paddingVertical: 8, alignItems: 'center' },
+  brutalLevelText: { fontSize: 14, fontWeight: '500' },
+  brutalUnit: { gap: 10 },
+  brutalUnitName: { fontSize: 11, fontWeight: '500', textTransform: 'uppercase', letterSpacing: 0.5, marginTop: 6 },
+  brutalTopic: { padding: 12, gap: 6 },
+  brutalTopicTop: { flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8 },
+  brutalTopicTitle: { flexShrink: 1, fontSize: 15, fontWeight: '500', textTransform: 'uppercase' },
+  brutalStickers: { flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', gap: 6 },
+  brutalBlurb: { fontSize: 12, lineHeight: 17 },
+  brutalBar: { marginTop: 2 },
+  brutalBadge: { fontSize: 12, fontWeight: '500', textTransform: 'uppercase' },
+  brutalGoal: { marginTop: 10 },
   footNote: { fontSize: 12, textAlign: 'center', marginTop: 18, lineHeight: 17 },
 });
