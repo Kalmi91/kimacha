@@ -1,0 +1,56 @@
+// NY19: a tab-bar brutalista palettán (az aktív ikon kitöltésű dobozon), classic
+// palettán a mai sima ikon. A Tabs mock csak a tabBarIcon-okat rendereli.
+
+jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
+jest.mock('expo-symbols', () => ({ SymbolView: () => null }));
+jest.mock('expo-router', () => {
+  const React = require('react');
+  const Tabs = ({ children }: { children: React.ReactNode }) =>
+    React.createElement(
+      React.Fragment,
+      null,
+      React.Children.map(children, (c: React.ReactElement<any>) =>
+        c.props.options.tabBarIcon
+          ? c.props.options.tabBarIcon({ color: '#000', focused: c.props.name === 'index' })
+          : null
+      )
+    );
+  Tabs.Screen = function Screen() {
+    return null;
+  };
+  return { Tabs };
+});
+
+import { act, render } from '@testing-library/react-native';
+
+import { getDb } from '@/lib/database';
+import { ThemeProvider } from '@/lib/ThemeContext';
+import TabLayout from '../_layout';
+
+jest.setTimeout(30000);
+
+const flush = async (times = 6) => {
+  for (let i = 0; i < times; i++) {
+    await act(async () => {
+      await Promise.resolve();
+    });
+  }
+};
+
+describe('Tab-bar, neo-brutalista (NY19)', () => {
+  it('brand palettán az aktív ikon dobozon ül', async () => {
+    await getDb().setGrammarPalette('brand');
+    const view = render(<ThemeProvider><TabLayout /></ThemeProvider>);
+    await flush();
+    expect(view.queryAllByTestId('tab-icon-active').length).toBe(1);
+    view.unmount();
+  });
+
+  it('classic palettán a mai ikon: nincs doboz', async () => {
+    await getDb().setGrammarPalette('classic');
+    const view = render(<ThemeProvider><TabLayout /></ThemeProvider>);
+    await flush();
+    expect(view.queryAllByTestId('tab-icon-active').length).toBe(0);
+    view.unmount();
+  });
+});
