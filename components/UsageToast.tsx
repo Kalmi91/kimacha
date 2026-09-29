@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Animated, StyleSheet, Text } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
+import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
 import { t, stringsFor } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { onActiveMinute, onUsageMilestone, onDayRollover } from '@/lib/usageTimer';
@@ -25,6 +27,7 @@ const ANIM_MS = 250;
 export default function UsageToast() {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const [visible, setVisible] = useState(false);
   // The toast lives in the root layout, so it mounts BEFORE onboarding picks the
   // native language: reading t() once would freeze the pill in the device locale
@@ -116,6 +119,18 @@ export default function UsageToast() {
 
   if (!visible) return null;
 
+  // NY25: brutalista palettán BrutalBox (sarok 0, tömör árnyék), nem pirula.
+  if (g.brutal) {
+    const fill = isMilestone ? 'b' : 'a';
+    return (
+      <Animated.View pointerEvents="none" testID="usage-toast" style={[styles.brutalToast, { opacity, transform: [{ translateY }] }]}>
+        <BrutalBox fill={fill} boxStyle={isMilestone ? styles.brutalMilestoneBox : styles.brutalBox}>
+          <Text style={[styles.brutalText, { color: textOnFill(g, fill) }, isMilestone && styles.milestoneText]}>{message}</Text>
+        </BrutalBox>
+      </Animated.View>
+    );
+  }
+
   return (
     <Animated.View
       pointerEvents="none"
@@ -144,6 +159,10 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
     elevation: 4,
   },
+  brutalToast: { position: 'absolute', top: 56, alignSelf: 'center', maxWidth: '90%' },
+  brutalBox: { paddingHorizontal: 18, paddingVertical: 10 },
+  brutalMilestoneBox: { paddingHorizontal: 22, paddingVertical: 14 },
+  brutalText: { fontSize: 15, fontWeight: '500', textTransform: 'uppercase' },
   text: {
     color: '#FFFFFF',
     fontSize: 15,

@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
+import { SegmentBar, segmentsFilled } from '@/components/grammar/Brutal';
 import { t } from '@/lib/i18n';
 
 interface Props {
@@ -13,6 +15,8 @@ interface Props {
 // Unique "gem grid" meter: a wrapped row of diamonds (rotated squares) that fill
 // as the learner masters words. Rarely used vs a plain bar, no extra dependency.
 const MAX_CELLS = 40;
+// NY25: brutalista palettán a gyémánt-rács helyett 8 blokkos SegmentBar.
+const BRUTAL_SEGMENTS = 8;
 
 // FB122, Kálmán 2026-08-14: "ha valaki sokkal nagyobb betűkkel használja a
 // telefonját ... összelóg ez a felső progress bár". The caption is a fixed-height
@@ -23,6 +27,7 @@ const FONT_SCALE_CAP = 1.4;
 export default function ProgressMeter({ known, total, langFlag, langName }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const s = t();
 
   const safeTotal = Math.max(total, 1);
@@ -35,14 +40,14 @@ export default function ProgressMeter({ known, total, langFlag, langName }: Prop
     <View style={styles.wrap}>
       <View style={styles.captionRow}>
         <Text
-          style={[styles.label, { color: colors.text }]}
+          style={[styles.label, { color: colors.text }, g.brutal && styles.brutalLabel]}
           numberOfLines={1}
           maxFontSizeMultiplier={FONT_SCALE_CAP}
         >
           {langFlag} {s.progress.wordsKnown}
         </Text>
         <Text
-          style={[styles.count, { color: colors.tint }]}
+          style={[styles.count, { color: g.brutal ? g.ink : colors.tint }, g.brutal && styles.brutalCount]}
           numberOfLines={1}
           maxFontSizeMultiplier={FONT_SCALE_CAP}
         >
@@ -50,6 +55,9 @@ export default function ProgressMeter({ known, total, langFlag, langName }: Prop
         </Text>
       </View>
 
+      {g.brutal ? (
+        <SegmentBar testID="progress-segments" filled={segmentsFilled(pct, BRUTAL_SEGMENTS)} segments={BRUTAL_SEGMENTS} style={styles.brutalBar} />
+      ) : (
       <View style={styles.grid}>
         {Array.from({ length: cellCount }).map((_, i) => {
           const isFilled = i < filled;
@@ -68,8 +76,9 @@ export default function ProgressMeter({ known, total, langFlag, langName }: Prop
           );
         })}
       </View>
+      )}
 
-      <Text style={[styles.pct, { color: colors.tabIconDefault }]}>
+      <Text style={[styles.pct, { color: g.brutal ? g.mu : colors.tabIconDefault }]}>
         {langName} · {pct}%
       </Text>
     </View>
@@ -111,6 +120,9 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     transform: [{ rotate: '45deg' }],
   },
+  brutalLabel: { textTransform: 'uppercase', fontWeight: '500' },
+  brutalCount: { fontWeight: '500' },
+  brutalBar: { marginVertical: 4 },
   pct: {
     fontSize: 11,
     fontWeight: '500',
