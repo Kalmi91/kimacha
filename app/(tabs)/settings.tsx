@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, type ReactNode } from 'react';
 import { StyleSheet, Text, View, Pressable, Alert, Switch, Platform, ScrollView, Modal } from 'react-native';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { File, Paths } from 'expo-file-system';
@@ -7,6 +7,7 @@ import * as DocumentPicker from 'expo-document-picker';
 import Colors from '@/constants/Colors';
 import { PALETTE_FILLS, type GrammarPaletteId } from '@/constants/GrammarPalettes';
 import { useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
 import { t, setLanguage, notifyLanguageChange } from '@/lib/i18n';
 import { type Level } from '@/data/words';
 import { getDb } from '@/lib/database';
@@ -30,6 +31,7 @@ import {
   AGAIN_DELAY_STEP_SEC,
 } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
+import { BrutalBox } from '@/components/grammar/Brutal';
 // FB82: version line in Settings, the same tag the feedback rows carry.
 import { appBuildTag } from '@/lib/appBuild';
 import { loadVoices, hasVoiceFor } from '@/lib/speech';
@@ -37,11 +39,53 @@ import { languages } from '@/lib/languages';
 
 const appVersionLabel = appBuildTag();
 
+// NY19: a beállítás-sor: brutalista palettán BrutalBox, classic palettán a mai kártya-sor.
+function Row({ onPress, children }: { onPress?: () => void; children: ReactNode }) {
+  const g = useGrammarColors();
+  if (g.brutal) {
+    return (
+      <BrutalBox testID="settings-row" onPress={onPress} style={styles.brutalRowOuter} boxStyle={styles.brutalRow}>
+        {children}
+      </BrutalBox>
+    );
+  }
+  const style = [styles.wordsOnlyRow, { backgroundColor: g.paper }];
+  return onPress ? (
+    <Pressable style={style} onPress={onPress}>
+      {children}
+    </Pressable>
+  ) : (
+    <View style={style}>{children}</View>
+  );
+}
+
+// A −/+ léptető gomb (brutalista palettán doboz).
+function StepBtn({ label, onPress }: { label: string; onPress: () => void }) {
+  const g = useGrammarColors();
+  if (g.brutal) {
+    return (
+      <BrutalBox offset={2} onPress={onPress} style={styles.brutalStepOuter} boxStyle={styles.brutalStep}>
+        <Text style={[styles.goalBtnText, { color: g.ink }]}>{label}</Text>
+      </BrutalBox>
+    );
+  }
+  return (
+    <Pressable style={[styles.goalBtn, { borderColor: g.a }]} onPress={onPress}>
+      <Text style={[styles.goalBtnText, { color: g.a }]}>{label}</Text>
+    </Pressable>
+  );
+}
+
 export default function SettingsScreen() {
   const { theme, override, setOverride, grammarPalette, setGrammarPalette } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const s = t();
   const router = useRouter();
+  // NY19: a kapcsoló brutalista palettán ink gombbal, a színnel a bekapcsolt sávon.
+  const switchColors = g.brutal
+    ? { trackColor: { false: g.mu, true: g.a }, thumbColor: g.ink }
+    : { trackColor: { true: colors.tint } };
   const [level, setLevel] = useState<Level>('A0');
   const [direction, setDirection] = useState<[string, string]>(['en', 'es']);
   // PLAN-ketiranyu 4. lépés (6-7. pont): a tanulási irány váltó sora és a
@@ -292,10 +336,22 @@ export default function SettingsScreen() {
           unreachable), so the settings list scrolls. The modal and the feedback
           FAB stay outside, pinned to the screen. */}
       <ScrollView contentContainerStyle={styles.container}>
-      <Text style={[styles.sectionTitle, { color: colors.text }]}>{s.tabs.settings}</Text>
+      <Text style={[styles.sectionTitle, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.tabs.settings}</Text>
 
       <View style={styles.optionGroup}>
-        {themeOptions.map(opt => (
+        {themeOptions.map(opt => g.brutal ? (
+          <BrutalBox
+            key={opt.value}
+            fill={override === opt.value ? 'a' : 'paper'}
+            style={styles.brutalOptionOuter}
+            boxStyle={styles.brutalOption}
+            onPress={() => setOverride(opt.value)}
+          >
+            <Text style={[styles.optionText, styles.brutalOptionText, { color: override === opt.value ? g.onFill : g.ink }]}>
+              {opt.label}
+            </Text>
+          </BrutalBox>
+        ) : (
           <Pressable
             key={opt.value}
             style={[
@@ -316,6 +372,24 @@ export default function SettingsScreen() {
         {paletteOptions.map(opt => {
           const [dotA, dotB] = paletteDots(opt.value);
           const selected = grammarPalette === opt.value;
+          if (g.brutal) {
+            return (
+              <BrutalBox
+                key={opt.value}
+                testID={`palette-${opt.value}`}
+                fill={selected ? 'a' : 'paper'}
+                style={styles.brutalPaletteOuter}
+                boxStyle={[styles.brutalOption, styles.brutalPalette]}
+                onPress={() => setGrammarPalette(opt.value)}
+              >
+                <View style={styles.paletteDots}>
+                  <View style={[styles.paletteDot, { backgroundColor: dotA }]} />
+                  <View style={[styles.paletteDot, { backgroundColor: dotB }]} />
+                </View>
+                <Text style={[styles.optionText, styles.brutalOptionText, { color: selected ? g.onFill : g.ink }]}>{opt.label}</Text>
+              </BrutalBox>
+            );
+          }
           return (
             <Pressable
               key={opt.value}
@@ -342,111 +416,78 @@ export default function SettingsScreen() {
       {/* FB144: a course language with no installed voice, named so the fix
           (install it in the phone's text-to-speech settings) is obvious. */}
       {missingVoices.length > 0 && (
-        <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
+        <Row>
           <Text style={[styles.missingVoiceText, { color: '#EAB308' }]}>
             {s.settings.missingVoice(missingVoices.map(voiceName).join(', '))}
           </Text>
-        </View>
+        </Row>
       )}
 
       {/* FB281: the FB147 "weekly goal reached" card is gone (Kálmán: felesleges);
           the reached state stays as the green tag on the goal row below. */}
       {/* FB65: weekly study goal in whole hours, shown on the Stats tab. */}
-      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
+      <Row>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.weeklyGoal}</Text>
         <View style={styles.goalStepper}>
-          <Pressable
-            style={[styles.goalBtn, { borderColor: colors.tint }]}
-            onPress={() => handleWeeklyGoalChange(-WEEKLY_GOAL_STEP_MINUTES)}
-          >
-            <Text style={[styles.goalBtnText, { color: colors.tint }]}>−</Text>
-          </Pressable>
+          <StepBtn label="−" onPress={() => handleWeeklyGoalChange(-WEEKLY_GOAL_STEP_MINUTES)} />
           <Text style={[styles.goalValue, { color: goalReached ? '#22C55E' : colors.text }]}>
             {s.settings.weeklyGoalHours(String(Math.round(weeklyGoal / 60)))}
             {goalReached ? ` ${s.settings.weeklyGoalDoneTag}` : ''}
           </Text>
-          <Pressable
-            style={[styles.goalBtn, { borderColor: colors.tint }]}
-            onPress={() => handleWeeklyGoalChange(WEEKLY_GOAL_STEP_MINUTES)}
-          >
-            <Text style={[styles.goalBtnText, { color: colors.tint }]}>+</Text>
-          </Pressable>
+          <StepBtn label="+" onPress={() => handleWeeklyGoalChange(WEEKLY_GOAL_STEP_MINUTES)} />
         </View>
-      </View>
+      </Row>
 
       {/* FB77: how many brand-new words a day may enter the learning queue. */}
-      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
+      <Row>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.dailyNewLimit}</Text>
         <View style={styles.goalStepper}>
-          <Pressable
-            style={[styles.goalBtn, { borderColor: colors.tint }]}
-            onPress={() => handleDailyNewLimitChange(-DAILY_NEW_LIMIT_STEP)}
-          >
-            <Text style={[styles.goalBtnText, { color: colors.tint }]}>−</Text>
-          </Pressable>
+          <StepBtn label="−" onPress={() => handleDailyNewLimitChange(-DAILY_NEW_LIMIT_STEP)} />
           <Text style={[styles.goalValue, { color: colors.text }]}>
             {s.settings.dailyNewLimitWords(String(dailyNewLimit))}
           </Text>
-          <Pressable
-            style={[styles.goalBtn, { borderColor: colors.tint }]}
-            onPress={() => handleDailyNewLimitChange(DAILY_NEW_LIMIT_STEP)}
-          >
-            <Text style={[styles.goalBtnText, { color: colors.tint }]}>+</Text>
-          </Pressable>
+          <StepBtn label="+" onPress={() => handleDailyNewLimitChange(DAILY_NEW_LIMIT_STEP)} />
         </View>
-      </View>
+      </Row>
 
       {/* FB364 (PLAN-fb0923 5. lépés/D2): a PCIC "again" kártya visszatérési
           ideje; ugyanezt olvassa a nyelvtani táblázat-pakli cooldownja is. */}
-      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
+      <Row>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.missedWordDelay}</Text>
         <View style={styles.goalStepper}>
-          <Pressable
-            style={[styles.goalBtn, { borderColor: colors.tint }]}
-            onPress={() => handleAgainDelayChange(-AGAIN_DELAY_STEP_SEC)}
-          >
-            <Text style={[styles.goalBtnText, { color: colors.tint }]}>−</Text>
-          </Pressable>
+          <StepBtn label="−" onPress={() => handleAgainDelayChange(-AGAIN_DELAY_STEP_SEC)} />
           <Text style={[styles.goalValue, { color: colors.text }]}>
             {s.settings.missedWordDelaySeconds(String(againDelaySec))}
           </Text>
-          <Pressable
-            style={[styles.goalBtn, { borderColor: colors.tint }]}
-            onPress={() => handleAgainDelayChange(AGAIN_DELAY_STEP_SEC)}
-          >
-            <Text style={[styles.goalBtnText, { color: colors.tint }]}>+</Text>
-          </Pressable>
+          <StepBtn label="+" onPress={() => handleAgainDelayChange(AGAIN_DELAY_STEP_SEC)} />
         </View>
-      </View>
+      </Row>
 
       {/* FB132: accent strictness, standalone toggle (the UTEMEZO 8 "Nehézség"
           dial that used to wrap it, P/R kézben-lévő-szó ablak, is gone). */}
-      <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
+      <Row>
         <View style={styles.difficultyLabelBox}>
           <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.strictAccents}</Text>
           <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.strictAccentsHint}</Text>
         </View>
-        <Switch value={strictAccents} onValueChange={handleStrictAccentsToggle} trackColor={{ true: colors.tint }} />
-      </View>
+        <Switch value={strictAccents} onValueChange={handleStrictAccentsToggle} {...switchColors} />
+      </Row>
 
       {/* FB188: névelő-gombsor a gépelős spanyol főnév-kártyákon. PLAN-ketiranyu
           4. lépés javítás (2026-09-28 review, 4. pont): csak spanyol
           célnyelvnél él (index.tsx-ben is target==='es'-nél jár a gombsor). */}
       {direction[1] === 'es' && (
-        <View style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}>
+        <Row>
           <View style={styles.difficultyLabelBox}>
             <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.articlePicker}</Text>
             <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.articlePickerHint}</Text>
           </View>
-          <Switch value={articlePicker} onValueChange={handleArticlePickerToggle} trackColor={{ true: colors.tint }} />
-        </View>
+          <Switch value={articlePicker} onValueChange={handleArticlePickerToggle} {...switchColors} />
+        </Row>
       )}
 
       {/* PLAN-ketiranyu 4. lépés (6. pont): tanulási irány váltó sora. */}
-      <Pressable
-        style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}
-        onPress={() => setDirectionSheetOpen(true)}
-      >
+      <Row onPress={() => setDirectionSheetOpen(true)}>
         <View style={styles.difficultyLabelBox}>
           <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.learningDirection}</Text>
           <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>
@@ -454,51 +495,36 @@ export default function SettingsScreen() {
           </Text>
         </View>
         <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
-      </Pressable>
+      </Row>
 
       {/* FB39: entry point into the spelling-practice trainer screen. */}
-      <Pressable
-        style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}
-        onPress={() => router.push('/spelling')}
-      >
+      <Row onPress={() => router.push('/spelling')}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.spellingPractice(spellingDue, spellingTotal)}</Text>
         <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
-      </Pressable>
+      </Row>
 
       {/* Q0: backup (export + share) and restore (pick file + confirm + import). */}
-      <Pressable
-        style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}
-        onPress={handleBackup}
-      >
+      <Row onPress={handleBackup}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>💾 {s.backup.backup}</Text>
         <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
-      </Pressable>
+      </Row>
 
-      <Pressable
-        style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}
-        onPress={handleRestore}
-      >
+      <Row onPress={handleRestore}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>♻️ {s.backup.restore}</Text>
         <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
-      </Pressable>
+      </Row>
 
       {/* PLAN-hibaim.md 3. lépés: import a "Hibáim" kötegből (Drive JSON). */}
-      <Pressable
-        style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}
-        onPress={handleLoadMistakes}
-      >
+      <Row onPress={handleLoadMistakes}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.mistakes.load}</Text>
         <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
-      </Pressable>
+      </Row>
 
       {/* PLAN-credits.md: word-data attribution screen entry point. */}
-      <Pressable
-        style={[styles.wordsOnlyRow, { backgroundColor: colors.card }]}
-        onPress={() => router.push('/credits')}
-      >
+      <Row onPress={() => router.push('/credits')}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.credits}</Text>
         <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
-      </Pressable>
+      </Row>
 
       {/* FB82: app version, small and grey, so the user can tell which build runs. */}
       <Text style={[styles.versionText, { color: colors.tabIconDefault }]}>{appVersionLabel}</Text>
@@ -510,8 +536,8 @@ export default function SettingsScreen() {
           aktuális pipával, a LevelPickerSheet mintájára (components/LevelPickerSheet.tsx). */}
       <Modal visible={directionSheetOpen} transparent animationType="slide" onRequestClose={() => setDirectionSheetOpen(false)}>
         <Pressable style={styles.sheetOverlay} onPress={() => setDirectionSheetOpen(false)}>
-          <Pressable style={[styles.sheet, { backgroundColor: colors.card }]} onPress={() => {}}>
-            <Text style={[styles.sheetTitle, { color: colors.text }]}>{s.settings.chooseDirection}</Text>
+          <Pressable style={[styles.sheet, { backgroundColor: colors.card }, g.brutal && [styles.brutalSheet, { borderColor: g.ink }]]} onPress={() => {}}>
+            <Text style={[styles.sheetTitle, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.settings.chooseDirection}</Text>
             {(
               [
                 ['en', 'es'],
@@ -519,6 +545,22 @@ export default function SettingsScreen() {
               ] as const
             ).map(([src, tgt]) => {
               const active = direction[0] === src && direction[1] === tgt;
+              if (g.brutal) {
+                return (
+                  <BrutalBox
+                    key={src}
+                    fill={active ? 'a' : 'paper'}
+                    style={styles.brutalSheetOptionOuter}
+                    boxStyle={styles.brutalSheetOption}
+                    onPress={() => handleSelectDirection(src, tgt)}
+                  >
+                    <Text style={[styles.sheetOptionText, styles.brutalOptionText, { color: active ? g.onFill : g.ink }]}>
+                      {src === 'en' ? s.settings.directionEnEs : s.settings.directionEsEn}
+                    </Text>
+                    {active && <Text style={[styles.sheetOptionText, { color: g.onFill }]}>✓</Text>}
+                  </BrutalBox>
+                );
+              }
               return (
                 <Pressable
                   key={src}
@@ -586,6 +628,20 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
   },
+  // NY19: brutalista formák.
+  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
+  brutalRowOuter: { marginTop: 12 },
+  brutalRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 12, paddingHorizontal: 14 },
+  brutalStepOuter: { width: 38 },
+  brutalStep: { width: 34, height: 34, alignItems: 'center', justifyContent: 'center' },
+  brutalOptionOuter: { flex: 1 },
+  brutalOption: { paddingVertical: 12, alignItems: 'center' },
+  brutalOptionText: { fontWeight: '500', textTransform: 'uppercase' },
+  brutalPaletteOuter: { flexBasis: '46%' },
+  brutalPalette: { flexDirection: 'row', justifyContent: 'center', gap: 8, paddingHorizontal: 8 },
+  brutalSheet: { borderTopLeftRadius: 0, borderTopRightRadius: 0, borderTopWidth: 2.5 },
+  brutalSheetOptionOuter: { marginBottom: 10 },
+  brutalSheetOption: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 12, paddingHorizontal: 16 },
   sectionTitle: {
     fontSize: 22,
     fontWeight: '700',

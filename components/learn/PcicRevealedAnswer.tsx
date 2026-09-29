@@ -9,6 +9,8 @@ import type { PcicItem, PcicTarget } from '@/data/pcic';
 import type { PcicGrade } from '@/lib/pcicMatch';
 import { sm2PreviewDays, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { sensesFor } from '@/lib/pcicSenses';
+import { useGrammarColors } from '@/lib/grammarColors';
+import { BrutalBox } from '@/components/grammar/Brutal';
 
 // PLAN-play 14. lépés: a PCIC kártya felfedett-állapot blokkja
 // (app/(tabs)/index.tsx-ből kiemelve, felelősség szerinti szétvágás, nincs
@@ -45,6 +47,7 @@ export default function PcicRevealedAnswer({
 }) {
   // A régi gombsor intervallum-előnézete grade-enként (lib/sm2.ts
   // sm2PreviewDays), i18n-nel formázva (FB350/5. commit: ne csak magyarul).
+  const g = useGrammarColors();
   const previewDays = sm2PreviewDays(current, today);
   const previews = Object.fromEntries(
     GRADES.map((g) => [g, previewDays[g] === 0 ? s.pcic.intervalToday : s.pcic.intervalDays(previewDays[g])])
@@ -119,23 +122,40 @@ export default function PcicRevealedAnswer({
           gombsor vissza, intervallum-előnézettel; a koppintás dönt és
           értékel, üres beküldés után is. */}
       <View style={styles.gradesRow}>
-        {GRADES.map((g) => {
-          const isPre = nextGrade === g;
+        {GRADES.map((gr) => {
+          const isPre = nextGrade === gr;
+          if (g.brutal) {
+            // NY19: doboz (good = a, again = b); a javasolt értékelés nagyobb árnyékkal.
+            return (
+              <BrutalBox
+                key={gr}
+                testID={`pcic-grade-${gr}`}
+                fill={gr === 'good' ? 'a' : 'b'}
+                offset={isPre ? 5 : 3}
+                style={styles.brutalGrade}
+                boxStyle={styles.brutalGradeBox}
+                onPress={() => onGrade(gr)}
+              >
+                <Text style={[styles.gradeLabel, { color: g.onFill, fontWeight: '500', textTransform: 'uppercase' }]}>{s.pcic[gr]}</Text>
+                <Text style={[styles.gradePreview, { color: g.onFill }]}>{previews[gr]}</Text>
+              </BrutalBox>
+            );
+          }
           return (
             <Pressable
-              key={g}
+              key={gr}
               style={({ pressed }) => [
                 styles.gradeBtn,
                 {
-                  backgroundColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : g === 'good' ? '#38BDF8' : '#1D4ED8',
-                  borderColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : isPre ? colors.text : 'transparent',
+                  backgroundColor: pressed ? (gr === 'good' ? '#22C55E' : '#EF4444') : gr === 'good' ? '#38BDF8' : '#1D4ED8',
+                  borderColor: pressed ? (gr === 'good' ? '#22C55E' : '#EF4444') : isPre ? colors.text : 'transparent',
                   borderWidth: isPre ? 3 : 1,
                 },
               ]}
-              onPress={() => onGrade(g)}
+              onPress={() => onGrade(gr)}
             >
-              <Text style={styles.gradeLabel}>{s.pcic[g]}</Text>
-              <Text style={styles.gradePreview}>{previews[g]}</Text>
+              <Text style={styles.gradeLabel}>{s.pcic[gr]}</Text>
+              <Text style={styles.gradePreview}>{previews[gr]}</Text>
             </Pressable>
           );
         })}
@@ -227,6 +247,8 @@ const styles = StyleSheet.create({
     gap: 8,
     marginTop: 24,
   },
+  brutalGrade: { flex: 1 },
+  brutalGradeBox: { paddingVertical: 8, alignItems: 'center', justifyContent: 'center' },
   gradeBtn: {
     flex: 1,
     borderRadius: 12,

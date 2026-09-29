@@ -4,6 +4,7 @@ import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
@@ -19,6 +20,7 @@ import { cardsForBatches, pickMistakeSession, suggestedMistakeGrade, type Mistak
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
+import { BrutalBox, BrutalButton, brutalInputStyle } from '@/components/grammar/Brutal';
 
 // PLAN-hibaim.md 4. lépés ("Pakli"): the PCIC card surface (CardShell,
 // DockedAction) over the cards lib/mistakes/deck.ts builds from every loaded
@@ -38,6 +40,7 @@ const CHIP_LABEL: Record<MistakeCard['kind'], (s: ReturnType<typeof t>) => strin
 export default function MistakesDeckScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const s = t();
   const router = useRouter();
   const { dockLift } = useDockLift();
@@ -109,7 +112,7 @@ export default function MistakesDeckScreen() {
       <Pressable onPress={() => router.back()} hitSlop={12}>
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
-      <Text style={[styles.title, { color: colors.text }]} numberOfLines={1}>
+      <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]} numberOfLines={1}>
         {s.mistakes.title}
       </Text>
       <View style={styles.backSpacer} />
@@ -123,9 +126,13 @@ export default function MistakesDeckScreen() {
         <View style={styles.doneBody}>
           <Text style={styles.doneEmoji}>🎉</Text>
           <Text style={[styles.doneTitle, { color: colors.text }]}>{s.mistakes.allDone}</Text>
+          {g.brutal ? (
+            <BrutalButton fill="a" label={s.mistakes.title} onPress={() => router.back()} style={styles.brutalDone} />
+          ) : (
           <Pressable style={[styles.btn, { backgroundColor: colors.tint }]} onPress={() => router.back()}>
             <Text style={styles.btnTextOnTint}>{s.mistakes.title}</Text>
           </Pressable>
+          )}
         </View>
       </View>
     );
@@ -150,7 +157,7 @@ export default function MistakesDeckScreen() {
           )}
 
           <TextInput
-            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }]}
+            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, g.brutal && brutalInputStyle(g)]}
             value={typed}
             onChangeText={setTyped}
             onSubmitEditing={checked ? () => handleGrade(nextGrade) : handleCheck}
@@ -190,22 +197,37 @@ export default function MistakesDeckScreen() {
 
           {checked && (
             <View style={styles.gradesRow}>
-              {GRADES.map((g) => {
-                const isPre = nextGrade === g;
+              {GRADES.map((gr) => {
+                const isPre = nextGrade === gr;
+                if (g.brutal) {
+                  return (
+                    <BrutalBox
+                      key={gr}
+                      testID={`mistakes-grade-${gr}`}
+                      fill={gr === 'good' ? 'a' : 'b'}
+                      offset={isPre ? 5 : 3}
+                      style={styles.brutalGrade}
+                      boxStyle={styles.brutalGradeBox}
+                      onPress={() => handleGrade(gr)}
+                    >
+                      <Text style={[styles.gradeLabel, { color: g.onFill, fontWeight: '500', textTransform: 'uppercase' }]}>{s.pcic[gr]}</Text>
+                    </BrutalBox>
+                  );
+                }
                 return (
                   <Pressable
-                    key={g}
+                    key={gr}
                     style={({ pressed }) => [
                       styles.gradeBtn,
                       {
-                        backgroundColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : g === 'good' ? '#38BDF8' : '#1D4ED8',
-                        borderColor: pressed ? (g === 'good' ? '#22C55E' : '#EF4444') : isPre ? colors.text : 'transparent',
+                        backgroundColor: pressed ? (gr === 'good' ? '#22C55E' : '#EF4444') : gr === 'good' ? '#38BDF8' : '#1D4ED8',
+                        borderColor: pressed ? (gr === 'good' ? '#22C55E' : '#EF4444') : isPre ? colors.text : 'transparent',
                         borderWidth: isPre ? 3 : 1,
                       },
                     ]}
-                    onPress={() => handleGrade(g)}
+                    onPress={() => handleGrade(gr)}
                   >
-                    <Text style={styles.gradeLabel}>{s.pcic[g]}</Text>
+                    <Text style={styles.gradeLabel}>{s.pcic[gr]}</Text>
                   </Pressable>
                 );
               })}
@@ -233,6 +255,10 @@ const styles = StyleSheet.create({
   header: { flexDirection: 'row', alignItems: 'center', marginBottom: 12 },
   back: { fontSize: 22, width: 32 },
   backSpacer: { width: 32 },
+  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
+  brutalGrade: { flex: 1 },
+  brutalGradeBox: { paddingVertical: 8, alignItems: 'center', justifyContent: 'center' },
+  brutalDone: { alignSelf: 'stretch', marginTop: 10 },
   title: { flex: 1, textAlign: 'center', fontSize: 17, fontWeight: '700' },
   cardScroll: { flex: 1, width: '100%' },
   cardScrollContent: { flexGrow: 1, justifyContent: 'flex-start', paddingTop: 8 },

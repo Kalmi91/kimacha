@@ -2,6 +2,8 @@ import { StyleSheet, View, Text, Pressable } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { t } from '@/lib/i18n';
+import { useGrammarColors } from '@/lib/grammarColors';
+import { BrutalBox, SegmentBar, segmentsFilled } from '@/components/grammar/Brutal';
 import type { PcicViewLevel } from '@/data/pcic';
 
 type ColorScheme = (typeof Colors)['light'];
@@ -26,6 +28,30 @@ export default function LevelRow({ level, label, introduced, total, active, colo
   // sor korábban angolra égetve mutatta ezt a két szöveget, spanyol
   // felületen is angolul maradt.
   const s = t();
+  const g = useGrammarColors();
+  // NY19: brutalista palettán doboz (aktív = a kitöltés) + szegmentált sáv.
+  if (g.brutal) {
+    const ink = active ? g.onFill : g.ink;
+    return (
+      <BrutalBox
+        testID={`level-row-${level}`}
+        fill={active ? 'a' : 'paper'}
+        offset={2}
+        style={styles.brutalRow}
+        boxStyle={styles.brutalBox}
+        onPress={onPress}
+      >
+        <View style={styles.topLine}>
+          <Text style={[styles.label, { color: ink, fontWeight: '500', textTransform: 'uppercase' }]}>{`${level} · ${label}`}</Text>
+          {active && <Text style={[styles.check, { color: ink }]}>✓</Text>}
+        </View>
+        <SegmentBar filled={segmentsFilled(pct, 8)} segments={8} style={styles.brutalBar} />
+        <Text style={[styles.progress, { color: active ? g.onFill : g.mu }]}>
+          {introduced > 0 ? s.pcic.levelRowIntroduced(introduced, total) : s.pcic.levelNotStarted}
+        </Text>
+      </BrutalBox>
+    );
+  }
   return (
     <Pressable
       style={[styles.row, { backgroundColor: colors.card, borderColor: active ? colors.tint : 'transparent' }]}
@@ -55,6 +81,9 @@ const styles = StyleSheet.create({
     padding: 14,
     marginBottom: 10,
   },
+  brutalRow: { marginBottom: 10 },
+  brutalBox: { padding: 12 },
+  brutalBar: { marginBottom: 6 },
   topLine: {
     flexDirection: 'row',
     alignItems: 'center',

@@ -1,10 +1,11 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, type ReactNode } from 'react';
 import { StyleSheet, Text, View, Pressable, TextInput, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { speak as speakIn } from '@/lib/speech';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
 import { getDb } from '@/lib/database';
 import { findWordById } from '@/data/words';
 import { findPcicItem } from '@/data/pcic';
@@ -14,6 +15,24 @@ import { speechLang } from '@/lib/languages';
 import { spellingLadderDays } from '@/lib/spellingLadder';
 import FeedbackButton from '@/components/FeedbackModal';
 import { answerInputProps } from '@/lib/inputProps';
+import { BrutalBox, BrutalButton, brutalInputStyle } from '@/components/grammar/Brutal';
+
+// NY19: a kártya brutalista palettán BrutalBox, classic palettán a mai koppintható kártya.
+function CardPress({ onPress, children }: { onPress: () => void; children: ReactNode }) {
+  const g = useGrammarColors();
+  if (g.brutal) {
+    return (
+      <BrutalBox testID="spelling-card" onPress={onPress} boxStyle={styles.brutalCard}>
+        {children}
+      </BrutalBox>
+    );
+  }
+  return (
+    <Pressable style={[styles.card, { backgroundColor: g.paper }]} onPress={onPress}>
+      {children}
+    </Pressable>
+  );
+}
 
 // FB25/FB84: shared char diff, called with fold=false, spelling practice is
 // graded byte-for-byte, so case and accent differences must stay visible.
@@ -35,6 +54,7 @@ type QueueItem = { source: 'word'; wordId: number; step: number } | { source: 'p
 export default function SpellingScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const s = t();
   const router = useRouter();
 
@@ -151,12 +171,16 @@ export default function SpellingScreen() {
   if (!hasCurrent) {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
-        <Text style={[styles.title, { color: colors.text }]}>{s.spelling.title}</Text>
+        <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.spelling.title}</Text>
         <Text style={[styles.emptyText, { color: colors.tabIconDefault }]}>{s.spelling.empty}</Text>
         <Text style={[styles.emptySub, { color: colors.tabIconDefault }]}>{s.spelling.totalInList(totalInList)}</Text>
+        {g.brutal ? (
+          <BrutalButton testID="spelling-back" fill="a" label={`← ${s.tabs.settings}`} onPress={() => router.back()} style={styles.brutalBack} />
+        ) : (
         <Pressable style={[styles.backBtn, { backgroundColor: colors.tint }]} onPress={() => router.back()}>
           <Text style={styles.backBtnText}>← {s.tabs.settings}</Text>
         </Pressable>
+        )}
         <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="spelling-screen" />
       </View>
     );
@@ -172,12 +196,12 @@ export default function SpellingScreen() {
         <Pressable onPress={() => router.back()} hitSlop={12} style={styles.exitBtn}>
           <Text style={[styles.exitIcon, { color: colors.text }]}>←</Text>
         </Pressable>
-        <Text style={[styles.title, styles.titleInRow, { color: colors.text }]}>{s.spelling.title}</Text>
+        <Text style={[styles.title, styles.titleInRow, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.spelling.title}</Text>
         <View style={styles.exitBtn} />
       </View>
 
       {/* FB143: tapping the card beside the field closes the keyboard. */}
-      <Pressable style={[styles.card, { backgroundColor: colors.card }]} onPress={() => Keyboard.dismiss()}>
+      <CardPress onPress={() => Keyboard.dismiss()}>
         <View style={styles.frontRow}>
           <Text style={[styles.frontText, { color: colors.text }]}>{prompt}</Text>
           <Pressable onPress={() => speakIn(prompt, speechLang(native))} style={styles.speakBtn}>
@@ -186,7 +210,7 @@ export default function SpellingScreen() {
         </View>
 
         <TextInput
-          style={[styles.input, { color: colors.text, borderColor: result === 'correct' ? '#22C55E' : result === 'wrong' ? '#EF4444' : colors.tabIconDefault }]}
+          style={[styles.input, { color: colors.text, borderColor: result === 'correct' ? '#22C55E' : result === 'wrong' ? '#EF4444' : colors.tabIconDefault }, g.brutal && brutalInputStyle(g), g.brutal && result && { borderColor: result === 'correct' ? '#22C55E' : '#EF4444' }]}
           value={typedAnswer}
           onChangeText={setTypedAnswer}
           onSubmitEditing={result ? handleNext : handleCheck}
@@ -222,14 +246,24 @@ export default function SpellingScreen() {
             )}
           </View>
         )}
-      </Pressable>
+      </CardPress>
 
+      {g.brutal ? (
+        <BrutalButton
+          testID="spelling-action"
+          fill={result ? 'a' : 'ink'}
+          label={result ? '→' : s.card.check}
+          onPress={result ? handleNext : handleCheck}
+          style={styles.brutalAction}
+        />
+      ) : (
       <Pressable
         style={[styles.checkBtn, { backgroundColor: result === 'wrong' ? '#1D4ED8' : '#38BDF8' }]}
         onPress={result ? handleNext : handleCheck}
       >
         <Text style={styles.checkBtnText}>{result ? '→' : s.card.check}</Text>
       </Pressable>
+      )}
 
       <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="spelling-screen" />
     </KeyboardAvoidingView>
@@ -248,6 +282,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 20,
   },
+  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
+  brutalCard: { padding: 28, alignItems: 'center', minHeight: 220, justifyContent: 'center' },
+  brutalAction: { alignSelf: 'stretch', marginTop: 24 },
+  brutalBack: { alignSelf: 'center', marginTop: 24, minWidth: 200 },
   headerRow: {
     flexDirection: 'row',
     alignItems: 'center',
