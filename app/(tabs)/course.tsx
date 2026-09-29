@@ -98,7 +98,7 @@ export default function GrammarSyllabusScreen() {
   // a classic paletta a lenti mai kinézetet adja.
   if (g.brutal) {
     const shownLevel: Level = openLevel ?? 'A1';
-    const shownTopics = syllabusForLevel(shownLevel as (typeof SYLLABUS_LEVELS)[number]);
+    const shownTopics = syllabusForLevel(shownLevel, learnedLang);
     const shownWritten = shownTopics.filter((tp) => hasLesson(learnedLang, tp.id)).length;
     const shownDone = shownTopics.filter((tp) => progress.get(tp.id)?.state === 'done').length;
     return (
@@ -113,7 +113,7 @@ export default function GrammarSyllabusScreen() {
           </Text>
 
           <View style={styles.brutalLevelRow}>
-            {SYLLABUS_LEVELS.map((lvl) => (
+            {syllabusLevels(learnedLang).map((lvl) => (
               <BrutalBox
                 key={lvl}
                 testID={`grammar-level-${lvl}`}
@@ -131,12 +131,12 @@ export default function GrammarSyllabusScreen() {
             {shownLevel === level ? ` · ${s.grammar.yourLevel}` : ''}
           </Text>
 
-          {unitsForLevel(shownLevel as (typeof SYLLABUS_LEVELS)[number]).map((unit) => (
+          {unitsForLevel(shownLevel, learnedLang).map((unit) => (
             <View key={unit.id} style={styles.brutalUnit}>
               <Text style={[styles.brutalUnitName, { color: g.mu }]}>
                 {unit.title[contentLang] ?? unit.title.en}
               </Text>
-              {topicsForUnit(unit.id).map((topic) => {
+              {topicsForUnit(unit.id, learnedLang).map((topic) => {
                 const written2 = hasLesson(learnedLang, topic.id);
                 const p = progress.get(topic.id);
                 const pct = percents.get(topic.id) ?? null;
