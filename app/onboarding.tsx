@@ -70,9 +70,9 @@ export default function OnboardingScreen() {
     // 50 angol szó az 5. lépésben jön) - ilyenkor a sor alatt egy mondat mondja ki.
     // 2026-09-28 review, 2. pont: en-es-ben a választható nézet-szintek
     // (A1/A2/B1, a B2 rejtett - PLAN-ketiranyu 2. lépés), nem a nyers PCIC_LEVELS.
-    const levels: PcicLevel[] = target === 'en'
-      ? ['A1']
-      : PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForViewLevel(lvl).length > 0).map(realLevelOfView);
+    // PLAN-esen: es-en-ben is A1 + A2 van adat, ugyanaz a szűrő mindkét irányra.
+    const levels: PcicLevel[] =
+      PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForViewLevel(lvl).length > 0).map(realLevelOfView);
     // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont): a
     // feliratok a felület nyelvén (data/pcic.ts LEVEL_LABELS angolra égetve volt).
     const levelLabels: Record<PcicLevel, string> = {
