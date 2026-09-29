@@ -13,6 +13,8 @@ import { initI18n, setLanguage, subscribeLanguage } from '@/lib/i18n';
 import { setPcicTarget, type PcicTarget } from '@/data/pcic';
 import { FORCED_PAIR, needsPairCorrection } from '@/lib/languages';
 import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
+import { brutalHeaderOptions } from '@/lib/brutalHeader';
 import { startUsageTimer, stopUsageTimer, noteInteraction } from '@/lib/usageTimer';
 import { watchAppStateForSpeech } from '@/lib/speech';
 import UsageToast from '@/components/UsageToast';
@@ -85,6 +87,7 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const { theme } = useTheme();
+  const g = useGrammarColors();
   // FB202: a rendszer navigációs sávja alá futó képernyők egy helyen kapják meg a
   // rést, nem képernyőnkénti foltként (lib/bottomGutter.ts).
   const insets = useSafeAreaInsets();
@@ -114,7 +117,7 @@ function RootLayoutNav() {
         }}
       >
         <StatusBarStrip />
-        <Stack>
+        <Stack screenOptions={brutalHeaderOptions(g)}>
           <Stack.Screen name="onboarding" options={{ headerShown: false }} />
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="spelling" options={{ headerShown: false }} />
