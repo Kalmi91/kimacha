@@ -97,6 +97,7 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
       <Pressable
         style={[
           styles.fab,
+          { backgroundColor: colors.tint },
           draggable && (side === 'left' ? styles.fabLeft : styles.fabRight),
           bottomOffset > 0 && { bottom: 24 + bottomOffset },
         ]}
@@ -165,7 +166,6 @@ const styles = StyleSheet.create({
     width: 52,
     height: 52,
     borderRadius: 26,
-    backgroundColor: '#2563EB',
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: '#000',

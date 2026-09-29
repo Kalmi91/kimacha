@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
 import { parseMoreBlocks } from '@/lib/grammar/moreBlocks';
 
 // FB221, Kálmán 2026-09-10: „I do not like the structure of the more I want it to
@@ -23,6 +24,7 @@ interface Props {
 export default function MoreBlocks({ more, contentLang, color }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const raw = more[contentLang] ?? more.en;
   const blocks = useMemo(() => parseMoreBlocks(raw ?? ''), [raw]);
 
@@ -48,11 +50,18 @@ export default function MoreBlocks({ more, contentLang, color }: Props) {
         return (
           <View key={i} style={styles.row}>
             {block.kind === 'item' ? (
-              <View style={[styles.badge, { backgroundColor: colors.tint + '22' }]}>
-                <Text style={[styles.badgeText, { color: colors.tint }]}>{block.label}</Text>
+              <View
+                style={[
+                  styles.badge,
+                  { backgroundColor: colors.tint + '22' },
+                  // NY23: brutalista palettán négyzetes a-kitöltésű jelvény, 2 px ink kerettel.
+                  g.brutal && { backgroundColor: g.a, borderRadius: 0, borderWidth: 2, borderColor: g.ink },
+                ]}
+              >
+                <Text style={[styles.badgeText, { color: g.brutal ? g.onFill : colors.tint }]}>{block.label}</Text>
               </View>
             ) : (
-              <Text style={[styles.dot, { color: colors.tint }]}>•</Text>
+              <Text style={[styles.dot, { color: g.brutal ? g.ink : colors.tint }]}>•</Text>
             )}
             <Text style={[styles.text, styles.rowText, { color }]}>{block.text}</Text>
           </View>

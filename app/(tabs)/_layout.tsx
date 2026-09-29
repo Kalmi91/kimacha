@@ -6,7 +6,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 
 export default function TabLayout() {
-  const { theme } = useTheme();
+  const { theme, grammarPalette } = useTheme();
   const colors = Colors[theme];
   const s = t();
 
@@ -56,6 +56,8 @@ export default function TabLayout() {
         name="course"
         options={{
           title: s.tabs.grammar,
+          // NY21: a brutalista kurzus-lista saját fejlécet rajzol (cím + streak-matrica).
+          headerShown: grammarPalette === 'classic',
           tabBarIcon: ({ color }) => (
             <SymbolView
               name={{ ios: 'book.fill', android: 'book', web: 'book' }}
