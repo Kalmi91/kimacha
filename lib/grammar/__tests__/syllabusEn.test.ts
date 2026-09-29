@@ -46,12 +46,14 @@ describe('English grammar syllabus (lang = en)', () => {
     }
   });
 
-  it('has only the to_be lesson written so far, and nothing is orphaned', () => {
-    expect(lessonCoverage('en').written).toBe(1);
+  it('has only the to_be and articles lessons written so far, and nothing is orphaned', () => {
+    expect(lessonCoverage('en').written).toBe(2);
     expect(hasLesson('en', 'to_be')).toBe(true);
+    expect(hasLesson('en', 'articles')).toBe(true);
     expect(hasLesson('en', 'basic_verbs')).toBe(false);
     expect(nextWrittenTopic('en', 'basic_verbs')?.id).toBe('to_be');
-    expect(nextWrittenTopic('en', 'to_be')).toBeUndefined();
+    expect(nextWrittenTopic('en', 'to_be')?.id).toBe('articles');
+    expect(nextWrittenTopic('en', 'articles')).toBeUndefined();
     expect(orphanLessons('en')).toEqual([]);
   });
 
