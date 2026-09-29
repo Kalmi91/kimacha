@@ -15,7 +15,8 @@ import { speechLang } from '@/lib/languages';
 import { spellingLadderDays } from '@/lib/spellingLadder';
 import FeedbackButton from '@/components/FeedbackModal';
 import { answerInputProps } from '@/lib/inputProps';
-import { BrutalBox, BrutalButton, brutalInputStyle } from '@/components/grammar/Brutal';
+import { BrutalBackButton, BrutalBox, BrutalButton, brutalInputStyle } from '@/components/grammar/Brutal';
+import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 
 // NY19: a kártya brutalista palettán BrutalBox, classic palettán a mai koppintható kártya.
 function CardPress({ onPress, children }: { onPress: () => void; children: ReactNode }) {
@@ -192,10 +193,16 @@ export default function SpellingScreen() {
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
       {/* BUG-007: the practice view had no way out but the system back gesture. */}
-      <View style={styles.headerRow}>
+      <View style={[styles.headerRow, brutalHeaderRowStyle(g)]}>
+        {g.brutal ? (
+          <View style={styles.exitBtn}>
+            <BrutalBackButton testID="spelling-exit" onPress={() => router.back()} />
+          </View>
+        ) : (
         <Pressable onPress={() => router.back()} hitSlop={12} style={styles.exitBtn}>
           <Text style={[styles.exitIcon, { color: colors.text }]}>←</Text>
         </Pressable>
+        )}
         <Text style={[styles.title, styles.titleInRow, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.spelling.title}</Text>
         <View style={styles.exitBtn} />
       </View>
