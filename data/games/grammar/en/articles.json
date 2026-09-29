@@ -195,7 +195,7 @@
     },
     {
       "id": "ar-02",
-      "sentence": "I wait for ___ hour.",
+      "sentence": "I study for ___ hour every day.",
       "options": [
         "a",
         "an",
@@ -203,10 +203,10 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az „hour” h-ja néma, a szó magánhangzó-hanggal indul, ezért „an”: I wait for an hour.",
-        "en": "The h in “hour” is silent, so the word starts with a vowel sound: I wait for an hour.",
-        "es": "La h de «hour» es muda, así que la palabra empieza con sonido vocálico: I wait for an hour.",
-        "de": "Das h in „hour“ ist stumm, das Wort beginnt also mit einem Vokallaut: I wait for an hour."
+        "hu": "Az „hour” h-ja néma, a szó magánhangzó-hanggal indul, ezért „an”: I study for an hour every day.",
+        "en": "The h in “hour” is silent, so the word starts with a vowel sound: I study for an hour every day.",
+        "es": "La h de «hour» es muda, así que la palabra empieza con sonido vocálico: I study for an hour every day.",
+        "de": "Das h in „hour“ ist stumm, das Wort beginnt also mit einem Vokallaut: I study for an hour every day."
       },
       "wrong": {
         "a": {
@@ -527,6 +527,729 @@
       "examples": [
         "He has an old phone.",
         "It is an old house."
+      ]
+    },
+    {
+      "id": "ar-11",
+      "sentence": "I need ___ umbrella.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az „umbrella” magánhangzó-hanggal kezdődik, ezért „an”: I need an umbrella.",
+        "en": "“Umbrella” starts with a vowel sound, so “an”: I need an umbrella.",
+        "es": "«Umbrella» empieza con un sonido vocálico, por eso «an»: I need an umbrella.",
+        "de": "„Umbrella“ beginnt mit einem Vokallaut, deshalb „an“: I need an umbrella."
+      },
+      "wrong": {
+        "a": {
+          "hu": "Az „a” mássalhangzó-hang előtt áll (a book); az „umbrella” magánhangzóval kezdődik: an umbrella.",
+          "en": "“A” goes before a consonant sound (a book); “umbrella” starts with a vowel: an umbrella.",
+          "es": "«A» va delante de un sonido consonántico (a book); «umbrella» empieza con vocal: an umbrella.",
+          "de": "„A“ steht vor einem Konsonantenlaut (a book); „umbrella“ beginnt mit einem Vokal: an umbrella."
+        },
+        "the": {
+          "hu": "A „the” már ismert vagy egyetlen dologra mutat; itt egy bármilyen esernyőre van szükséged, ezért „an”.",
+          "en": "“The” points to something already known or one of a kind; here you need just any umbrella, so “an”.",
+          "es": "«The» señala algo ya conocido o único; aquí necesitas un paraguas cualquiera, por eso «an».",
+          "de": "„The“ zeigt auf etwas Bekanntes oder Einzigartiges; hier brauchst du irgendeinen Regenschirm, deshalb „an“."
+        }
+      },
+      "examples": [
+        "He has an orange bag.",
+        "I see an elephant."
+      ]
+    },
+    {
+      "id": "ar-12",
+      "sentence": "The pilot has ___ uniform.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „uniform” u-ja „jú” hangot ad, ami mássalhangzó-hang, ezért „a”: The pilot has a uniform.",
+        "en": "The u in “uniform” sounds like “you”, a consonant sound, so “a”: The pilot has a uniform.",
+        "es": "La u de «uniform» suena «yu», un sonido consonántico, por eso «a»: The pilot has a uniform.",
+        "de": "Das u in „uniform“ klingt wie „ju“, ein Konsonantenlaut, deshalb „a“: The pilot has a uniform."
+      },
+      "wrong": {
+        "an": {
+          "hu": "Betűre magánhangzó, de a hang „jú”, azaz mássalhangzó-hang: a uniform, nem „an uniform”.",
+          "en": "It is a vowel by letter, but the sound is “you”, a consonant sound: a uniform, not “an uniform”.",
+          "es": "Por letra es vocal, pero el sonido es «yu», consonántico: a uniform, no «an uniform».",
+          "de": "Dem Buchstaben nach ein Vokal, aber der Laut ist „ju“, ein Konsonantenlaut: a uniform, nicht „an uniform“."
+        },
+        "the": {
+          "hu": "Itt egy bármelyik egyenruháról van szó, nem egy már ismertről, ezért „a uniform”.",
+          "en": "This is just any uniform, not one we already know, so “a uniform”.",
+          "es": "Aquí es un uniforme cualquiera, no uno ya conocido, por eso «a uniform».",
+          "de": "Hier geht es um irgendeine Uniform, nicht um eine bereits bekannte, deshalb „a uniform“."
+        }
+      },
+      "examples": [
+        "The nurse has a green uniform.",
+        "It is a white uniform."
+      ]
+    },
+    {
+      "id": "ar-13",
+      "sentence": "Look at ___ moon.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Csak egy Hold van, ezért „the”: Look at the moon.",
+        "en": "There is only one moon, so “the”: Look at the moon.",
+        "es": "Solo hay una luna, por eso «the»: Look at the moon.",
+        "de": "Es gibt nur einen Mond, deshalb „the“: Look at the moon."
+      },
+      "wrong": {
+        "a": {
+          "hu": "Az „a” valamelyik dolgot jelölne a sok közül; a Holdból csak egy van: the moon.",
+          "en": "“A” would mean one of many; there is only one moon: the moon.",
+          "es": "«A» significaría una de tantas; solo hay una luna: the moon.",
+          "de": "„A“ würde eines von vielen meinen; es gibt nur einen Mond: the moon."
+        },
+        "an": {
+          "hu": "Az „an” magánhangzó-hang előtt áll, és bármelyik dolgot jelölne; a „moon” mássalhangzóval indul, és csak egy van belőle: the moon.",
+          "en": "“An” goes before a vowel sound and means any one; “moon” starts with a consonant and there is only one: the moon.",
+          "es": "«An» va delante de un sonido vocálico y significa uno cualquiera; «moon» empieza con consonante y solo hay una: the moon.",
+          "de": "„An“ steht vor einem Vokallaut und meint irgendeines; „moon“ beginnt mit einem Konsonanten und es gibt nur einen: the moon."
+        }
+      },
+      "examples": [
+        "The moon is white.",
+        "Look at the sun."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "ar-14",
+      "es": "I see a bird. The bird is red.",
+      "target": "a",
+      "tr": {
+        "hu": "Látok egy madarat. A madár piros.",
+        "en": "I see a bird. The bird is red.",
+        "es": "Veo un pájaro. El pájaro es rojo.",
+        "de": "Ich sehe einen Vogel. Der Vogel ist rot."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "első említés: új dolog, a / an",
+            "en": "first mention: a new thing, a / an",
+            "es": "primera mención: algo nuevo, a / an",
+            "de": "erste Erwähnung: etwas Neues, a / an"
+          }
+        },
+        {
+          "text": {
+            "hu": "második említés: the",
+            "en": "second mention: the",
+            "es": "segunda mención: the",
+            "de": "zweite Erwähnung: the"
+          },
+          "wrong": {
+            "hu": "A kijelölt „a bird” a madár első említése; a második említés a következő mondat „The bird”-je.",
+            "en": "The marked “a bird” is the first mention of the bird; the second mention is “The bird” in the next sentence.",
+            "es": "El «a bird» marcado es la primera mención del pájaro; la segunda mención es «The bird» de la oración siguiente.",
+            "de": "Das markierte „a bird“ ist die erste Erwähnung des Vogels; die zweite ist „The bird“ im nächsten Satz."
+          }
+        },
+        {
+          "text": {
+            "hu": "egyetlen létező dolog: the",
+            "en": "the only one that exists: the",
+            "es": "lo único que existe: the",
+            "de": "das einzige seiner Art: the"
+          },
+          "wrong": {
+            "hu": "Nem az egyetlen madár a világon, csak egy újonnan említett: ezért „a bird”, nem „the bird”.",
+            "en": "It is not the only bird in the world, just a newly mentioned one: “a bird”, not “the bird”.",
+            "es": "No es el único pájaro del mundo, solo uno recién mencionado: «a bird», no «the bird».",
+            "de": "Es ist nicht der einzige Vogel der Welt, nur ein neu erwähnter: „a bird“, nicht „the bird“."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "ar-15",
+      "sentence": "My brother is ___.",
+      "options": [
+        "an actor",
+        "actor",
+        "a actor"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A foglalkozás elé kell az „a / an”, és az „actor” magánhangzó-hanggal indul: „an actor”. Spanyolul névelő nélkül mondod („Es actor”).",
+        "en": "A job needs “a / an”, and “actor” starts with a vowel sound: “an actor”. Spanish says it without an article (“Es actor”).",
+        "es": "La profesión necesita «a / an», y «actor» empieza con sonido vocálico: «an actor». En español se dice sin artículo («Es actor»).",
+        "de": "Vor einem Beruf steht „a / an“, und „actor“ beginnt mit einem Vokallaut: „an actor“. Im Spanischen sagt man es ohne Artikel („Es actor“)."
+      },
+      "wrong": {
+        "actor": {
+          "hu": "Névelő nélkül hiba, ez a tipikus spanyol átvétel („Es actor”). Az angol a foglalkozás elé „a / an”-t kér.",
+          "en": "Without an article it is a mistake, the typical copy from Spanish (“Es actor”). English wants “a / an” before a job.",
+          "es": "Sin artículo es un error, la copia típica del español («Es actor»). El inglés pide «a / an» delante de la profesión.",
+          "de": "Ohne Artikel ist es ein Fehler, die typische Übernahme aus dem Spanischen („Es actor“). Das Englische verlangt vor einem Beruf „a / an“."
+        },
+        "a actor": {
+          "hu": "Az „actor” magánhangzó-hanggal indul, ezért „an”, nem „a”.",
+          "en": "“Actor” starts with a vowel sound, so “an”, not “a”.",
+          "es": "«Actor» empieza con sonido vocálico, por eso «an», no «a».",
+          "de": "„Actor“ beginnt mit einem Vokallaut, deshalb „an“, nicht „a“."
+        }
+      },
+      "examples": [
+        "He is a driver.",
+        "She is a singer."
+      ]
+    },
+    {
+      "id": "ar-16",
+      "sentence": "It is ___ nice day.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „nice” mássalhangzó-hanggal kezdődik, és a névelő közvetlenül előtte áll, ezért „a”: It is a nice day.",
+        "en": "“Nice” starts with a consonant sound and the article sits right before it, so “a”: It is a nice day.",
+        "es": "«Nice» empieza con sonido consonántico y el artículo va justo antes, por eso «a»: It is a nice day.",
+        "de": "„Nice“ beginnt mit einem Konsonantenlaut und der Artikel steht direkt davor, deshalb „a“: It is a nice day."
+      },
+      "wrong": {
+        "an": {
+          "hu": "Az „an” magánhangzó-hang előtt áll; a „nice” n-nel kezdődik, ami mássalhangzó: a nice day.",
+          "en": "“An” goes before a vowel sound; “nice” starts with n, a consonant: a nice day.",
+          "es": "«An» va delante de un sonido vocálico; «nice» empieza con n, una consonante: a nice day.",
+          "de": "„An“ steht vor einem Vokallaut; „nice“ beginnt mit n, einem Konsonanten: a nice day."
+        },
+        "the": {
+          "hu": "A „the day” egy már ismert napot jelölne; itt egy bármilyen szép napról van szó: a nice day.",
+          "en": "“The day” would mean a day we already know; here it is just any nice day: a nice day.",
+          "es": "«The day» sería un día ya conocido; aquí es un día bonito cualquiera: a nice day.",
+          "de": "„The day“ meinte einen bereits bekannten Tag; hier geht es um irgendeinen schönen Tag: a nice day."
+        }
+      },
+      "examples": [
+        "She has a nice bag.",
+        "It is a big city."
+      ]
+    },
+    {
+      "id": "ar-17",
+      "sentence": "We have a house. ___ house is old.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A házról már szó volt (a house), ezért másodszorra „the house”: We have a house. The house is old.",
+        "en": "The house was already mentioned (a house), so the second time it is “the house”: We have a house. The house is old.",
+        "es": "De la casa ya se habló (a house), por eso la segunda vez es «the house»: We have a house. The house is old.",
+        "de": "Vom Haus war schon die Rede (a house), deshalb heißt es beim zweiten Mal „the house“: We have a house. The house is old."
+      },
+      "wrong": {
+        "a": {
+          "hu": "Az „a” új, még nem említett dolog előtt áll; a házat az előző mondatban már bemutattuk.",
+          "en": "“A” goes before something new, not yet mentioned; the house was introduced in the previous sentence.",
+          "es": "«A» va delante de algo nuevo, aún no mencionado; la casa ya se presentó en la oración anterior.",
+          "de": "„A“ steht vor etwas Neuem, noch nicht Erwähntem; das Haus wurde im vorigen Satz schon eingeführt."
+        },
+        "an": {
+          "hu": "Az „an” magánhangzó-hang előtt állna, és új dolgot jelölne; a „house” mássalhangzóval indul, és már említettük: the house.",
+          "en": "“An” goes before a vowel sound and marks something new; “house” starts with a consonant and was already mentioned: the house.",
+          "es": "«An» va delante de un sonido vocálico y marca algo nuevo; «house» empieza con consonante y ya se mencionó: the house.",
+          "de": "„An“ steht vor einem Vokallaut und bezeichnet etwas Neues; „house“ beginnt mit einem Konsonanten und wurde schon erwähnt: the house."
+        }
+      },
+      "examples": [
+        "I have a bag. The bag is red.",
+        "He has a car. The car is new."
+      ]
+    },
+    {
+      "id": "ar-18",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Es una naranja.",
+          "en": "It is an orange."
+        },
+        {
+          "es": "Él es piloto.",
+          "en": "He is a pilot."
+        },
+        {
+          "es": "Me gusta el agua.",
+          "en": "I like water."
+        },
+        {
+          "es": "La luna es grande.",
+          "en": "The moon is big."
+        },
+        {
+          "es": "Tengo una hora.",
+          "en": "I have an hour."
+        },
+        {
+          "es": "Ella es maestra.",
+          "en": "She is a teacher."
+        }
+      ]
+    },
+    {
+      "id": "ar-19",
+      "sentence": "I eat ___ orange every day.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az „orange” magánhangzó-hanggal kezdődik, ezért „an”: I eat an orange every day.",
+        "en": "“Orange” starts with a vowel sound, so “an”: I eat an orange every day.",
+        "es": "«Orange» empieza con un sonido vocálico, por eso «an»: I eat an orange every day.",
+        "de": "„Orange“ beginnt mit einem Vokallaut, deshalb „an“: I eat an orange every day."
+      },
+      "wrong": {
+        "a": {
+          "hu": "Az „a” mássalhangzó-hang előtt áll (a book); az „orange” magánhangzóval kezdődik: an orange.",
+          "en": "“A” goes before a consonant sound (a book); “orange” starts with a vowel: an orange.",
+          "es": "«A» va delante de un sonido consonántico (a book); «orange» empieza con vocal: an orange.",
+          "de": "„A“ steht vor einem Konsonantenlaut (a book); „orange“ beginnt mit einem Vokal: an orange."
+        },
+        "the": {
+          "hu": "A „the” már ismert vagy egyetlen dologra mutat; itt bármelyik narancsról van szó, ezért „an”.",
+          "en": "“The” points to something already known or one of a kind; here it is just any orange, so “an”.",
+          "es": "«The» señala algo ya conocido o único; aquí es una naranja cualquiera, por eso «an».",
+          "de": "„The“ zeigt auf etwas Bekanntes oder Einzigartiges; hier ist es irgendeine Orange, deshalb „an“."
+        }
+      },
+      "examples": [
+        "She has an egg.",
+        "I see an animal."
+      ]
+    },
+    {
+      "id": "ar-20",
+      "sentence": "Water and ___ are good for you.",
+      "options": [
+        "milk",
+        "the milk",
+        "a milk"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Általános értelemben névelő nélkül mondjuk: Water and milk are good for you. A spanyol itt névelőt mond („el agua y la leche”), az angol nem.",
+        "en": "In a general sense we use no article: Water and milk are good for you. Spanish uses an article here (“el agua y la leche”); English does not.",
+        "es": "En sentido general no se usa artículo: Water and milk are good for you. El español usa artículo aquí («el agua y la leche»); el inglés no.",
+        "de": "Im allgemeinen Sinn steht kein Artikel: Water and milk are good for you. Das Spanische setzt hier einen Artikel („el agua y la leche“), das Englische nicht."
+      },
+      "wrong": {
+        "the milk": {
+          "hu": "A „the milk” egy konkrét, már ismert tejre mutatna; itt általában a tejről van szó, ezért névelő nélkül.",
+          "en": "“The milk” would point to one specific, known milk; here it means milk in general, so no article.",
+          "es": "«The milk» señalaría una leche concreta ya conocida; aquí se habla de la leche en general, por eso sin artículo.",
+          "de": "„The milk“ würde auf eine bestimmte, bekannte Milch zeigen; hier geht es um Milch im Allgemeinen, also ohne Artikel."
+        },
+        "a milk": {
+          "hu": "Az „a milk” egy adag, egy pohár tej lenne; a tej megszámlálhatatlan, általános értelemben névelő nélkül áll.",
+          "en": "“A milk” would be one portion, one glass of milk; milk is uncountable and stands without an article in a general sense.",
+          "es": "«A milk» sería una porción, un vaso de leche; milk es incontable y en sentido general va sin artículo.",
+          "de": "„A milk“ wäre eine Portion, ein Glas Milch; milk ist unzählbar und steht im allgemeinen Sinn ohne Artikel."
+        }
+      },
+      "examples": [
+        "I like rice.",
+        "Cheese is good."
+      ]
+    },
+    {
+      "id": "ar-21",
+      "sentence": "There is ___ bird in the tree.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „bird” mássalhangzó-hanggal kezdődik, és ez egy új, először említett madár, ezért „a”: There is a bird in the tree.",
+        "en": "“Bird” starts with a consonant sound and it is a new, first-mentioned bird, so “a”: There is a bird in the tree.",
+        "es": "«Bird» empieza con sonido consonántico y es un pájaro nuevo, mencionado por primera vez, por eso «a»: There is a bird in the tree.",
+        "de": "„Bird“ beginnt mit einem Konsonantenlaut und ist ein neuer, zum ersten Mal erwähnter Vogel, deshalb „a“: There is a bird in the tree."
+      },
+      "wrong": {
+        "an": {
+          "hu": "Az „an” magánhangzó-hang előtt áll; a „bird” b-vel kezdődik, ami mássalhangzó: a bird.",
+          "en": "“An” goes before a vowel sound; “bird” starts with b, a consonant: a bird.",
+          "es": "«An» va delante de un sonido vocálico; «bird» empieza con b, una consonante: a bird.",
+          "de": "„An“ steht vor einem Vokallaut; „bird“ beginnt mit b, einem Konsonanten: a bird."
+        },
+        "the": {
+          "hu": "A „the” már ismert dologra mutat; a madarat most említjük először, ezért „a bird”.",
+          "en": "“The” points to something already known; the bird is mentioned for the first time, so “a bird”.",
+          "es": "«The» señala algo ya conocido; el pájaro se menciona por primera vez, por eso «a bird».",
+          "de": "„The“ zeigt auf etwas Bekanntes; der Vogel wird zum ersten Mal erwähnt, deshalb „a bird“."
+        }
+      },
+      "examples": [
+        "There is a cat in the house.",
+        "I see a fish."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "ar-22",
+      "es": "She has a cat. The cat is small.",
+      "target": "The",
+      "tr": {
+        "hu": "Van egy macskája. A macska kicsi.",
+        "en": "She has a cat. The cat is small.",
+        "es": "Ella tiene un gato. El gato es pequeño.",
+        "de": "Sie hat eine Katze. Die Katze ist klein."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "első említés: új dolog, a / an",
+            "en": "first mention: a new thing, a / an",
+            "es": "primera mención: algo nuevo, a / an",
+            "de": "erste Erwähnung: etwas Neues, a / an"
+          },
+          "wrong": {
+            "hu": "A „The cat” nem első említés: a macskát az előző mondat már bemutatta („a cat”).",
+            "en": "“The cat” is not a first mention: the previous sentence already introduced the cat (“a cat”).",
+            "es": "«The cat» no es una primera mención: la oración anterior ya presentó al gato («a cat»).",
+            "de": "„The cat“ ist keine erste Erwähnung: der vorige Satz hat die Katze schon eingeführt („a cat“)."
+          }
+        },
+        {
+          "text": {
+            "hu": "általános értelem: névelő nélkül",
+            "en": "general sense: no article",
+            "es": "sentido general: sin artículo",
+            "de": "allgemeiner Sinn: ohne Artikel"
+          },
+          "wrong": {
+            "hu": "Nem a macskákról beszélünk általában, hanem arról az egy macskáról, amelyet az előbb említettünk: „the cat”.",
+            "en": "We are not talking about cats in general, but about the one cat we just mentioned: “the cat”.",
+            "es": "No hablamos de los gatos en general, sino del gato que acabamos de mencionar: «the cat».",
+            "de": "Wir sprechen nicht über Katzen im Allgemeinen, sondern über die eine Katze, die wir gerade erwähnt haben: „the cat“."
+          }
+        },
+        {
+          "text": {
+            "hu": "második említés: the",
+            "en": "second mention: the",
+            "es": "segunda mención: the",
+            "de": "zweite Erwähnung: the"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "ar-23",
+      "sentence": "Look at ___ sky. It is blue.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Csak egy ég van fölöttünk, ezért „the”: Look at the sky.",
+        "en": "There is only one sky above us, so “the”: Look at the sky.",
+        "es": "Solo hay un cielo sobre nosotros, por eso «the»: Look at the sky.",
+        "de": "Es gibt nur einen Himmel über uns, deshalb „the“: Look at the sky."
+      },
+      "wrong": {
+        "a": {
+          "hu": "Az „a” bármelyik dolgot jelölne a sok közül; az égből csak egy van: the sky.",
+          "en": "“A” would mean any one of many; there is only one sky: the sky.",
+          "es": "«A» significaría uno cualquiera de varios; solo hay un cielo: the sky.",
+          "de": "„A“ würde irgendeines von vielen meinen; es gibt nur einen Himmel: the sky."
+        },
+        "an": {
+          "hu": "Az „an” magánhangzó-hang előtt áll, és bármelyik dolgot jelölne; a „sky” mássalhangzóval indul, és csak egy van belőle: the sky.",
+          "en": "“An” goes before a vowel sound and means any one; “sky” starts with a consonant and there is only one: the sky.",
+          "es": "«An» va delante de un sonido vocálico y significa uno cualquiera; «sky» empieza con consonante y solo hay uno: the sky.",
+          "de": "„An“ steht vor einem Vokallaut und meint irgendeines; „sky“ beginnt mit einem Konsonanten und es gibt nur einen: the sky."
+        }
+      },
+      "examples": [
+        "The sea is blue.",
+        "The sky is big."
+      ]
+    },
+    {
+      "id": "ar-24",
+      "sentence": "I see ___ elephant.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az „elephant” magánhangzó-hanggal kezdődik, és most látod először, ezért „an”: I see an elephant.",
+        "en": "“Elephant” starts with a vowel sound and you see it for the first time, so “an”: I see an elephant.",
+        "es": "«Elephant» empieza con un sonido vocálico y lo ves por primera vez, por eso «an»: I see an elephant.",
+        "de": "„Elephant“ beginnt mit einem Vokallaut und du siehst ihn zum ersten Mal, deshalb „an“: I see an elephant."
+      },
+      "wrong": {
+        "a": {
+          "hu": "Az „a” mássalhangzó-hang előtt áll (a book); az „elephant” magánhangzóval kezdődik: an elephant.",
+          "en": "“A” goes before a consonant sound (a book); “elephant” starts with a vowel: an elephant.",
+          "es": "«A» va delante de un sonido consonántico (a book); «elephant» empieza con vocal: an elephant.",
+          "de": "„A“ steht vor einem Konsonantenlaut (a book); „elephant“ beginnt mit einem Vokal: an elephant."
+        },
+        "the": {
+          "hu": "A „the” már ismert dologra mutat; az elefántot most látod először, ezért „an”.",
+          "en": "“The” points to something already known; you see the elephant for the first time, so “an”.",
+          "es": "«The» señala algo ya conocido; ves al elefante por primera vez, por eso «an».",
+          "de": "„The“ zeigt auf etwas Bekanntes; du siehst den Elefanten zum ersten Mal, deshalb „an“."
+        }
+      },
+      "examples": [
+        "It is an animal.",
+        "He has an uncle."
+      ]
+    },
+    {
+      "id": "ar-25",
+      "sentence": "I like cats and ___.",
+      "options": [
+        "the dogs",
+        "dogs",
+        "a dog"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Általános értelemben, többes számban névelő nélkül mondjuk: I like cats and dogs. A spanyol itt névelőt mond („los perros”), az angol nem.",
+        "en": "In a general sense, with a plural, we use no article: I like cats and dogs. Spanish uses an article here (“los perros”); English does not.",
+        "es": "En sentido general, con un plural, no se usa artículo: I like cats and dogs. El español usa artículo aquí («los perros»); el inglés no.",
+        "de": "Im allgemeinen Sinn steht beim Plural kein Artikel: I like cats and dogs. Das Spanische setzt hier einen Artikel („los perros“), das Englische nicht."
+      },
+      "wrong": {
+        "the dogs": {
+          "hu": "A „the dogs” bizonyos, már ismert kutyákat jelölne; itt általában a kutyákról van szó, ezért névelő nélkül.",
+          "en": "“The dogs” would mean certain, known dogs; here it means dogs in general, so no article.",
+          "es": "«The dogs» serían unos perros concretos ya conocidos; aquí se habla de los perros en general, por eso sin artículo.",
+          "de": "„The dogs“ meinte bestimmte, bekannte Hunde; hier geht es um Hunde im Allgemeinen, also ohne Artikel."
+        },
+        "a dog": {
+          "hu": "Az „a dog” egyetlen kutya; a „cats” többes szám mellé általános kedvelésnél többes számú, névelő nélküli „dogs” illik.",
+          "en": "“A dog” is one single dog; next to plural “cats”, a general liking takes plural “dogs” with no article.",
+          "es": "«A dog» es un solo perro; junto a «cats» en plural, un gusto general lleva «dogs» en plural, sin artículo.",
+          "de": "„A dog“ ist ein einzelner Hund; neben dem Plural „cats“ steht bei einer allgemeinen Vorliebe der Plural „dogs“ ohne Artikel."
+        }
+      },
+      "examples": [
+        "I love birds.",
+        "They like books."
+      ]
+    },
+    {
+      "id": "ar-26",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Ellos son estudiantes.",
+          "en": "They are students."
+        },
+        {
+          "es": "Me gustan los perros.",
+          "en": "I like dogs."
+        },
+        {
+          "es": "Es un carro viejo.",
+          "en": "It is an old car."
+        },
+        {
+          "es": "Es una escuela grande.",
+          "en": "It is a big school."
+        },
+        {
+          "es": "El libro está en la mesa.",
+          "en": "The book is on the table."
+        },
+        {
+          "es": "Él come una manzana.",
+          "en": "He eats an apple."
+        }
+      ]
+    },
+    {
+      "id": "ar-27",
+      "sentence": "I eat an apple. ___ apple is red.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az almáról már szó volt (an apple), ezért másodszorra „the apple”: I eat an apple. The apple is red.",
+        "en": "The apple was already mentioned (an apple), so the second time it is “the apple”: I eat an apple. The apple is red.",
+        "es": "De la manzana ya se habló (an apple), por eso la segunda vez es «the apple»: I eat an apple. The apple is red.",
+        "de": "Vom Apfel war schon die Rede (an apple), deshalb heißt es beim zweiten Mal „the apple“: I eat an apple. The apple is red."
+      },
+      "wrong": {
+        "a": {
+          "hu": "Az „a” mássalhangzó-hang előtt áll, és új dolgot jelölne; az „apple” magánhangzóval indul, és már említettük: the apple.",
+          "en": "“A” goes before a consonant sound and marks something new; “apple” starts with a vowel and was already mentioned: the apple.",
+          "es": "«A» va delante de un sonido consonántico y marca algo nuevo; «apple» empieza con vocal y ya se mencionó: the apple.",
+          "de": "„A“ steht vor einem Konsonantenlaut und bezeichnet etwas Neues; „apple“ beginnt mit einem Vokal und wurde schon erwähnt: the apple."
+        },
+        "an": {
+          "hu": "Az „an” új, még nem említett dolog előtt áll; az almát az előző mondatban már bemutattuk.",
+          "en": "“An” goes before something new, not yet mentioned; the apple was introduced in the previous sentence.",
+          "es": "«An» va delante de algo nuevo, aún no mencionado; la manzana ya se presentó en la oración anterior.",
+          "de": "„An“ steht vor etwas Neuem, noch nicht Erwähntem; der Apfel wurde im vorigen Satz schon eingeführt."
+        }
+      },
+      "examples": [
+        "I have an egg. The egg is white.",
+        "She has an orange. The orange is big."
+      ]
+    },
+    {
+      "id": "ar-28",
+      "sentence": "I have ___ red pen.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „red” mássalhangzó-hanggal kezdődik, és a névelő közvetlenül előtte áll, ezért „a”: I have a red pen.",
+        "en": "“Red” starts with a consonant sound and the article sits right before it, so “a”: I have a red pen.",
+        "es": "«Red» empieza con sonido consonántico y el artículo va justo antes, por eso «a»: I have a red pen.",
+        "de": "„Red“ beginnt mit einem Konsonantenlaut und der Artikel steht direkt davor, deshalb „a“: I have a red pen."
+      },
+      "wrong": {
+        "an": {
+          "hu": "Az „an” magánhangzó-hang előtt áll; a „red” r-rel kezdődik, ami mássalhangzó: a red pen.",
+          "en": "“An” goes before a vowel sound; “red” starts with r, a consonant: a red pen.",
+          "es": "«An» va delante de un sonido vocálico; «red» empieza con r, una consonante: a red pen.",
+          "de": "„An“ steht vor einem Vokallaut; „red“ beginnt mit r, einem Konsonanten: a red pen."
+        },
+        "the": {
+          "hu": "A „the” már ismert vagy egyetlen dologra mutat; itt egy bármilyen piros tollról van szó: a red pen.",
+          "en": "“The” points to something already known or one of a kind; here it is just any red pen: a red pen.",
+          "es": "«The» señala algo ya conocido o único; aquí es una pluma roja cualquiera: a red pen.",
+          "de": "„The“ zeigt auf etwas Bekanntes oder Einzigartiges; hier geht es um irgendeinen roten Stift: a red pen."
+        }
+      },
+      "examples": [
+        "He has a black pen.",
+        "It is a green bag."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "ar-29",
+      "es": "Cats are nice.",
+      "target": "Cats",
+      "tr": {
+        "hu": "A macskák kedvesek.",
+        "en": "Cats are nice.",
+        "es": "Los gatos son simpáticos.",
+        "de": "Katzen sind nett."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "új dolog: a / an",
+            "en": "a new thing: a / an",
+            "es": "algo nuevo: a / an",
+            "de": "etwas Neues: a / an"
+          },
+          "wrong": {
+            "hu": "Az „a / an” csak egyes számú főnév előtt áll, a „cats” pedig többes szám; ráadásul nem valami újról van szó.",
+            "en": "“A / an” only goes before a singular noun, and “cats” is plural; besides, nothing new is being introduced.",
+            "es": "«A / an» solo va delante de un nombre en singular, y «cats» es plural; además, no se presenta nada nuevo.",
+            "de": "„A / an“ steht nur vor einem Nomen im Singular, „cats“ ist aber Plural; außerdem wird nichts Neues eingeführt."
+          }
+        },
+        {
+          "text": {
+            "hu": "általános értelem: névelő nélkül",
+            "en": "general sense: no article",
+            "es": "sentido general: sin artículo",
+            "de": "allgemeiner Sinn: ohne Artikel"
+          }
+        },
+        {
+          "text": {
+            "hu": "második említés: the",
+            "en": "second mention: the",
+            "es": "segunda mención: the",
+            "de": "zweite Erwähnung: the"
+          },
+          "wrong": {
+            "hu": "Nem egy már említett macskákról van szó, hanem általában a macskákról: névelő nélkül, „Cats are nice”.",
+            "en": "It is not about cats that were already mentioned, but about cats in general: no article, “Cats are nice”.",
+            "es": "No se trata de unos gatos ya mencionados, sino de los gatos en general: sin artículo, «Cats are nice».",
+            "de": "Es geht nicht um bereits erwähnte Katzen, sondern um Katzen im Allgemeinen: ohne Artikel, „Cats are nice“."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "ar-30",
+      "sentence": "I have ___ uncle in Mexico.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az „uncle” magánhangzó-hanggal kezdődik, ezért „an”: I have an uncle in Mexico.",
+        "en": "“Uncle” starts with a vowel sound, so “an”: I have an uncle in Mexico.",
+        "es": "«Uncle» empieza con un sonido vocálico, por eso «an»: I have an uncle in Mexico.",
+        "de": "„Uncle“ beginnt mit einem Vokallaut, deshalb „an“: I have an uncle in Mexico."
+      },
+      "wrong": {
+        "a": {
+          "hu": "Az „a” mássalhangzó-hang előtt áll (a book); az „uncle” magánhangzóval kezdődik: an uncle.",
+          "en": "“A” goes before a consonant sound (a book); “uncle” starts with a vowel: an uncle.",
+          "es": "«A» va delante de un sonido consonántico (a book); «uncle» empieza con vocal: an uncle.",
+          "de": "„A“ steht vor einem Konsonantenlaut (a book); „uncle“ beginnt mit einem Vokal: an uncle."
+        },
+        "the": {
+          "hu": "A „the” már ismert vagy egyetlen dologra mutat; itt egy bármelyik nagybácsiról van szó, ezért „an”.",
+          "en": "“The” points to something already known or one of a kind; here it is just one uncle among possible ones, so “an”.",
+          "es": "«The» señala algo ya conocido o único; aquí es un tío entre otros posibles, por eso «an».",
+          "de": "„The“ zeigt auf etwas Bekanntes oder Einzigartiges; hier ist es irgendein Onkel unter möglichen, deshalb „an“."
+        }
+      },
+      "examples": [
+        "She has an aunt in the city.",
+        "He is an uncle."
       ]
     }
   ]
