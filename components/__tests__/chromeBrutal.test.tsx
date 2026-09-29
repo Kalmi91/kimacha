@@ -9,7 +9,9 @@ jest.mock('@/lib/usageTimer', () => {
   return {
     onActiveMinute: (cb: () => void) => {
       listeners.push(cb);
-      return () => {};
+      return () => {
+        listeners.splice(listeners.indexOf(cb), 1);
+      };
     },
     onUsageMilestone: () => () => {},
     onDayRollover: () => () => {},
