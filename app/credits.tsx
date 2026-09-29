@@ -6,7 +6,8 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
-import { Card } from '@/components/grammar/Brutal';
+import { BrutalBackButton, Card } from '@/components/grammar/Brutal';
+import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 
 // NY19: brutalista palettán a szöveg egy BrutalBox kártyában, classic palettán a mai sima elrendezés.
 function Wrap({ children }: { children: ReactNode }) {
@@ -32,10 +33,16 @@ export default function CreditsScreen() {
 
   return (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
-      <View style={styles.headerRow}>
+      <View style={[styles.headerRow, brutalHeaderRowStyle(g)]}>
+        {g.brutal ? (
+          <View style={styles.exitBtn}>
+            <BrutalBackButton testID="credits-back" onPress={() => router.back()} />
+          </View>
+        ) : (
         <Pressable onPress={() => router.back()} hitSlop={12} style={styles.exitBtn}>
           <Text style={[styles.exitIcon, { color: colors.text }]}>←</Text>
         </Pressable>
+        )}
         <Text style={[styles.title, styles.titleInRow, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.credits.title}</Text>
         <View style={styles.exitBtn} />
       </View>

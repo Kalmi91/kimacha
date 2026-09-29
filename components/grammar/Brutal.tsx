@@ -199,6 +199,16 @@ export function brutalInputStyle(g: GrammarColors): TextStyle {
   return { borderWidth: 2.5, borderColor: g.ink, borderRadius: 0, backgroundColor: g.paper, color: g.ink };
 }
 
+// NY25: vissza-nyíl a képernyőbe rajzolt fejlécsorban: kis BrutalBox, ink nyíl.
+export function BrutalBackButton({ onPress, testID }: { onPress: () => void; testID?: string }) {
+  const g = useGrammarColors();
+  return (
+    <BrutalBox testID={testID} onPress={onPress} offset={2} boxStyle={styles.backBox}>
+      <Text style={[styles.backArrow, { color: g.ink }]}>←</Text>
+    </BrutalBox>
+  );
+}
+
 // Hány blokk legyen kitöltve a szegmentált sávban egy 0-100 százalékhoz.
 export function segmentsFilled(percent: number, segments: number): number {
   return Math.max(0, Math.min(segments, Math.round((percent / 100) * segments)));
@@ -248,6 +258,8 @@ const styles = StyleSheet.create({
   },
   button: { minHeight: 44, paddingVertical: 12, paddingHorizontal: 16, alignItems: 'center', justifyContent: 'center' },
   buttonText: { fontSize: 16, fontWeight: '500', textTransform: 'uppercase' },
+  backBox: { width: 30, height: 30, alignItems: 'center', justifyContent: 'center' },
+  backArrow: { fontSize: 20, fontWeight: '500' },
   segmentRow: { flexDirection: 'row', gap: 3 },
   segment: { flex: 1, height: 9, borderWidth: 2 },
 });
