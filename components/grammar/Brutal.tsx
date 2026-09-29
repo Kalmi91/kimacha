@@ -137,6 +137,7 @@ export function Card({
   style,
   classicStyle,
   boxStyle,
+  testID,
 }: {
   children?: ReactNode;
   fill?: BrutalFill;
@@ -144,11 +145,13 @@ export function Card({
   classicStyle?: StyleProp<ViewStyle>;
   // NY19: a brutalista doboz belső stílusa (a default styles.card után).
   boxStyle?: StyleProp<ViewStyle>;
+  // Csak a brutalista dobozra kerül (a classic ág nem kap testID-t).
+  testID?: string;
 }) {
   const g = useGrammarColors();
   if (g.brutal) {
     return (
-      <BrutalBox fill={fill} style={style} boxStyle={[styles.card, boxStyle]}>
+      <BrutalBox testID={testID} fill={fill} style={style} boxStyle={[styles.card, boxStyle]}>
         {children}
       </BrutalBox>
     );
