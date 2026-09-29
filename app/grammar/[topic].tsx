@@ -331,7 +331,8 @@ export default function GrammarLessonScreen() {
   if (phase === 'drill') {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
-        {header}
+        {/* NY22: brutalista palettán a drill saját fejléce (X + szegmentált sáv + combo) váltja. */}
+        {g.brutal ? null : header}
         {/* LECKE-SEMA 2/6.3/D3: a lecke-drill a `drillKind` fajtáját viszi végig
             (a gombok fajtánként külön indítanak), a Game fül grammar-choice-a
             a `kinds` prop híján változatlanul csak a gap/mark körét kapja. */}
@@ -344,6 +345,7 @@ export default function GrammarLessonScreen() {
           transformSeen={transformSeen}
           onItemChange={setDrillItemId}
           onRoundStats={setRoundStats}
+          onClose={() => setPhase('lesson')}
         />
         <FeedbackButton
           level={level}
@@ -550,7 +552,7 @@ export default function GrammarLessonScreen() {
       {header}
       <ScrollView
         ref={scrollRef}
-        contentContainerStyle={styles.body}
+        contentContainerStyle={[styles.body, g.brutal && styles.brutalPad]}
         onScroll={(e) => setScrollY(String(topicId), e.nativeEvent.contentOffset.y)}
         scrollEventThrottle={100}
         onContentSizeChange={() => scrollRef.current?.scrollTo({ y: getScrollY(String(topicId)), animated: false })}
@@ -722,6 +724,8 @@ const styles = StyleSheet.create({
   startBtn: { marginTop: 18 },
   btnTextOnTint: { color: '#FFFFFF' },
   // NY23: neo-brutalista gombok, cím (nagybetűs, 500 súly).
+  // A chat-gomb (FAB) alól is kigördül az utolsó gomb.
+  brutalPad: { paddingBottom: 130 },
   brutalBack: { paddingVertical: 4, paddingHorizontal: 10 },
   brutalTitle: { fontWeight: '500', textTransform: 'uppercase' },
   brutalBtnWrap: { marginTop: 10, alignSelf: 'stretch' },

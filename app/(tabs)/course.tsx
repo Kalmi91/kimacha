@@ -182,6 +182,8 @@ export default function GrammarSyllabusScreen() {
                       <Text style={[styles.brutalTopicTitle, { color: textColor }]}>
                         {topic.title[contentLang] ?? topic.title.en}
                       </Text>
+                    </View>
+                    {tier || isDone ? (
                       <View style={styles.brutalStickers}>
                         {tier === 'core-plus' ? (
                           <Sticker testID={`grammar-core-plus-${topic.id}`} label={s.grammar.corePlusTag} fill="paper" rotate={-4} />
@@ -190,7 +192,7 @@ export default function GrammarSyllabusScreen() {
                         ) : null}
                         {isDone ? <Sticker label={s.grammar.doneTag} fill="a" rotate={5} /> : null}
                       </View>
-                    </View>
+                    ) : null}
                     <Text style={[styles.brutalBlurb, { color: textColor }]} numberOfLines={2}>
                       {topic.blurb[contentLang] ?? topic.blurb.en}
                     </Text>
@@ -403,7 +405,8 @@ const styles = StyleSheet.create({
   topicBadgeCol: { alignItems: 'flex-end', gap: 2 },
   topicBadge: { fontSize: 12, fontWeight: '700' },
   // NY21: neo-brutalista forma-stílusok (címek, gombok nagybetűsek, 500 súly).
-  brutalBody: { padding: 16, paddingBottom: 100, gap: 10 },
+  // paddingBottom: az utolsó kártya a chat-gomb (FAB) alól is kigördül.
+  brutalBody: { padding: 16, paddingBottom: 130, gap: 10 },
   brutalHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   brutalTitle: { fontSize: 30, fontWeight: '500', textTransform: 'uppercase' },
   brutalSmall: { fontSize: 11, fontWeight: '500' },
@@ -415,8 +418,8 @@ const styles = StyleSheet.create({
   brutalUnitName: { fontSize: 11, fontWeight: '500', textTransform: 'uppercase', letterSpacing: 0.5, marginTop: 6 },
   brutalTopic: { padding: 12, gap: 6 },
   brutalTopicTop: { flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8 },
-  brutalTopicTitle: { flex: 1, fontSize: 15, fontWeight: '500', textTransform: 'uppercase' },
-  brutalStickers: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  brutalTopicTitle: { flexShrink: 1, fontSize: 15, fontWeight: '500', textTransform: 'uppercase' },
+  brutalStickers: { flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', gap: 6 },
   brutalBlurb: { fontSize: 12, lineHeight: 17 },
   brutalBar: { marginTop: 2 },
   brutalBadge: { fontSize: 12, fontWeight: '500', textTransform: 'uppercase' },
