@@ -21,5 +21,7 @@ describe('CreditsScreen (app/credits.tsx)', () => {
     expect(getByText('github.com/hermitdave/FrequencyWords')).toBeTruthy();
     expect(getByText('opus.nlpl.eu')).toBeTruthy();
     expect(getByText('creativecommons.org/licenses/by-sa/4.0')).toBeTruthy();
+    expect(getAllByText(/CEFR-J/).length).toBeGreaterThan(0);
+    expect(getByText('github.com/openlanguageprofiles/olp-en-cefrj')).toBeTruthy();
   });
 });
