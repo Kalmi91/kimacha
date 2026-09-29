@@ -1,5 +1,5 @@
 import { useState, useCallback, type ReactNode } from 'react';
-import { StyleSheet, Text, View, Pressable, Alert, Switch, Platform, ScrollView, Modal } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Alert, Platform, ScrollView, Modal } from 'react-native';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { File, Paths } from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
@@ -31,7 +31,7 @@ import {
   AGAIN_DELAY_STEP_SEC,
 } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
-import { BrutalBox } from '@/components/grammar/Brutal';
+import { BrutalBox, BrutalSwitch } from '@/components/grammar/Brutal';
 // FB82: version line in Settings, the same tag the feedback rows carry.
 import { appBuildTag } from '@/lib/appBuild';
 import { loadVoices, hasVoiceFor } from '@/lib/speech';
@@ -82,10 +82,6 @@ export default function SettingsScreen() {
   const g = useGrammarColors();
   const s = t();
   const router = useRouter();
-  // NY19: a kapcsoló brutalista palettán ink gombbal, a színnel a bekapcsolt sávon.
-  const switchColors = g.brutal
-    ? { trackColor: { false: g.mu, true: g.a }, thumbColor: g.ink }
-    : { trackColor: { true: colors.tint } };
   const [level, setLevel] = useState<Level>('A0');
   const [direction, setDirection] = useState<[string, string]>(['en', 'es']);
   // PLAN-ketiranyu 4. lépés (6-7. pont): a tanulási irány váltó sora és a
@@ -470,7 +466,7 @@ export default function SettingsScreen() {
           <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.strictAccents}</Text>
           <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.strictAccentsHint}</Text>
         </View>
-        <Switch value={strictAccents} onValueChange={handleStrictAccentsToggle} {...switchColors} />
+        <BrutalSwitch testID="settings-strict-accents" value={strictAccents} onValueChange={handleStrictAccentsToggle} />
       </Row>
 
       {/* FB188: névelő-gombsor a gépelős spanyol főnév-kártyákon. PLAN-ketiranyu
@@ -482,7 +478,7 @@ export default function SettingsScreen() {
             <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.articlePicker}</Text>
             <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.articlePickerHint}</Text>
           </View>
-          <Switch value={articlePicker} onValueChange={handleArticlePickerToggle} {...switchColors} />
+          <BrutalSwitch testID="settings-article-picker" value={articlePicker} onValueChange={handleArticlePickerToggle} />
         </Row>
       )}
 

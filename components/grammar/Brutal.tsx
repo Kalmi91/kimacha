@@ -1,8 +1,10 @@
 import type { ReactNode } from 'react';
-import { Pressable, StyleSheet, Text, View, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
+import { Pressable, StyleSheet, Switch, Text, View, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 
+import Colors from '@/constants/Colors';
 import { BASE } from '@/constants/GrammarPalettes';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
+import { useTheme } from '@/lib/ThemeContext';
 
 // NY20: a neo-brutalista forma-elemek (NYELVTAN.md "Neo-brutalista stílus").
 // Csak akkor használjuk őket, ha useGrammarColors().brutal igaz; a classic
@@ -199,6 +201,42 @@ export function brutalInputStyle(g: GrammarColors): TextStyle {
   return { borderWidth: 2.5, borderColor: g.ink, borderRadius: 0, backgroundColor: g.paper, color: g.ink };
 }
 
+// NY25: kapcsoló. Brutalista palettán téglalap sín (2,5 px ink keret, sarok 0), négyzetes
+// ink gomb, bekapcsolva a sín `a` kitöltésű; classic palettán a mai Switch.
+export function BrutalSwitch({
+  value,
+  onValueChange,
+  disabled,
+  testID,
+}: {
+  value: boolean;
+  onValueChange?: (value: boolean) => void;
+  disabled?: boolean;
+  testID?: string;
+}) {
+  const g = useGrammarColors();
+  const { theme } = useTheme();
+  if (!g.brutal) {
+    return <Switch testID={testID} value={value} onValueChange={onValueChange} disabled={disabled} trackColor={{ true: Colors[theme].tint }} />;
+  }
+  return (
+    <Pressable
+      testID={testID}
+      accessibilityRole="switch"
+      accessibilityState={{ checked: value, disabled: !!disabled }}
+      disabled={disabled}
+      onPress={() => onValueChange?.(!value)}
+      style={[
+        styles.switchTrack,
+        { borderColor: g.ink, backgroundColor: value ? g.a : g.paper },
+        disabled ? { opacity: 0.4 } : null,
+      ]}
+    >
+      <View style={[styles.switchThumb, { backgroundColor: g.ink }, value ? { right: 4 } : { left: 4 }]} />
+    </Pressable>
+  );
+}
+
 // NY25: vissza-nyíl a képernyőbe rajzolt fejlécsorban: kis BrutalBox, ink nyíl.
 export function BrutalBackButton({ onPress, testID }: { onPress: () => void; testID?: string }) {
   const g = useGrammarColors();
@@ -258,6 +296,8 @@ const styles = StyleSheet.create({
   },
   button: { minHeight: 44, paddingVertical: 12, paddingHorizontal: 16, alignItems: 'center', justifyContent: 'center' },
   buttonText: { fontSize: 16, fontWeight: '500', textTransform: 'uppercase' },
+  switchTrack: { width: 52, height: 28, borderWidth: 2.5 },
+  switchThumb: { position: 'absolute', top: 4, width: 15, height: 15 },
   backBox: { width: 30, height: 30, alignItems: 'center', justifyContent: 'center' },
   backArrow: { fontSize: 20, fontWeight: '500' },
   segmentRow: { flexDirection: 'row', gap: 3 },
