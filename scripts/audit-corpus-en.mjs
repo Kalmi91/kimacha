@@ -47,6 +47,7 @@ const GLUE_WHITELIST = new Set([
   'cant', 'cannot', 'wont', 'wouldnt', 'couldnt', 'shouldnt', 'mustnt',
   'ive', 'youve', 'weve', 'theyve', 'ill', 'youll', 'hell', 'well', 'theyll',
   'id', 'youd', 'hed', 'wed', 'theyd', 'lets', 'thats', 'whats', 'wheres',
+  'itll', 'theres',
   // prepositions
   'in', 'on', 'at', 'to', 'of', 'for', 'with', 'from', 'by', 'about',
   'into', 'onto', 'over', 'under', 'up', 'down', 'out', 'off', 'as',
