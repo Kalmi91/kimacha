@@ -23,6 +23,7 @@ const EN_BRANCH_BY_LEVEL: Partial<Record<Level, WordEntry[]>> = {
   A0: branchLevel('en', 'a0'),
   A1: branchLevel('en', 'a1'),
   A2: branchLevel('en', 'a2'),
+  B1: branchLevel('en', 'b1'),
 };
 const HU_BRANCH_BY_LEVEL: Partial<Record<Level, WordEntry[]>> = {
   A0: branchLevel('hu', 'a0'),
