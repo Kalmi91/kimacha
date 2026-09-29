@@ -5,7 +5,7 @@ jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({ router: { push: jest.fn() } }));
 jest.mock('expo-status-bar', () => ({ StatusBar: () => null }));
 jest.mock('@/lib/usageTimer', () => {
-  const listeners: Array<() => void> = [];
+  const listeners: (() => void)[] = [];
   return {
     onActiveMinute: (cb: () => void) => {
       listeners.push(cb);
