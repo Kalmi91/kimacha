@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { Pressable, StyleSheet, Text, View, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 
+import { BASE } from '@/constants/GrammarPalettes';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 
 // NY20: a neo-brutalista forma-elemek (NYELVTAN.md "Neo-brutalista stílus").
@@ -22,6 +23,12 @@ export function textOnFill(g: GrammarColors, fill: BrutalFill): string {
   if (fill === 'a' || fill === 'b') return g.onFill;
   if (fill === 'ink') return g.bg;
   return g.ink;
+}
+
+// A fő gomb (ink kitöltés) szövege: világos módban a b szín, sötét módban (ahol az ink
+// világos) a sötét alap, hogy olvasható maradjon.
+export function inkButtonText(g: GrammarColors): string {
+  return g.bg === BASE.dark.bg ? g.bg : g.b;
 }
 
 // Doboz: 2,5 px ink keret, sarok 0, tömör eltolt árnyék (3 px jobbra + 3 px le,
@@ -64,7 +71,7 @@ export function BrutalBox({
     boxStyle,
   ];
   return (
-    <View style={[dashed ? null : { marginRight: offset, marginBottom: offset }, style]}>
+    <View style={[{ marginRight: offset, marginBottom: offset }, style]}>
       {dashed ? null : (
         <View
           pointerEvents="none"
