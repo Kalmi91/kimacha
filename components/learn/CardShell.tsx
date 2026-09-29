@@ -2,6 +2,8 @@ import { type ReactNode } from 'react';
 import { StyleSheet, View, Text, Pressable } from 'react-native';
 
 import Colors from '@/constants/Colors';
+import { useGrammarColors } from '@/lib/grammarColors';
+import { BrutalBox, Sticker } from '@/components/grammar/Brutal';
 
 type ColorScheme = (typeof Colors)['light'];
 
@@ -20,6 +22,16 @@ type Props = {
 };
 
 export default function CardShell({ compact, chip, chipTone = 'neutral', onPress, colors, children }: Props) {
+  const g = useGrammarColors();
+  // NY19: brutalista palettán BrutalBox, a chip matrica (new = b kitöltés).
+  if (g.brutal) {
+    return (
+      <BrutalBox testID="learn-card" onPress={onPress} boxStyle={[styles.brutalCard, compact && styles.brutalTyping]}>
+        {chip && <Sticker label={chip} fill={chipTone === 'new' ? 'b' : 'paper'} rotate={-4} style={styles.brutalChip} />}
+        {children}
+      </BrutalBox>
+    );
+  }
   return (
     <Pressable
       style={[styles.card, compact && styles.typingCard, { backgroundColor: colors.card }]}
@@ -59,6 +71,9 @@ const styles = StyleSheet.create({
     paddingTop: 18,
     paddingBottom: 20,
   },
+  brutalCard: { padding: 24, alignItems: 'center', minHeight: 260, justifyContent: 'center' },
+  brutalTyping: { minHeight: 0, justifyContent: 'flex-start', paddingTop: 18, paddingBottom: 20 },
+  brutalChip: { alignSelf: 'center', marginBottom: 10 },
   lapChip: {
     alignSelf: 'center',
     paddingHorizontal: 10,

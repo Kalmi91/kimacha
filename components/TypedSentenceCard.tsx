@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, Pressable, TextInput, Keyboard } from 'react-native';
+import { StyleSheet, Text, Pressable, TextInput, Keyboard } from 'react-native';
 import { speak, stop as stopSpeech } from '@/lib/speech';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
+import { BrutalButton, Card, brutalInputStyle } from '@/components/grammar/Brutal';
 import { t } from '@/lib/i18n';
 import { gradePcicAnswer, suggestedGrade } from '@/lib/pcicMatch';
 import { stripSentencePunct } from '@/lib/sentenceCards';
@@ -21,6 +23,7 @@ interface Props {
 export default function TypedSentenceCard({ sourceSentence, targetSentence, onResult, speechLocale, strictAccents = false }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const s = t();
 
   const [typed, setTyped] = useState('');
@@ -40,13 +43,15 @@ export default function TypedSentenceCard({ sourceSentence, targetSentence, onRe
   };
 
   return (
-    <View style={[styles.card, { backgroundColor: colors.card }]}>
+    <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
       <Text style={[styles.sourceText, { color: colors.text }]}>{sourceSentence}</Text>
 
       <TextInput
         style={[
           styles.input,
           { color: colors.text, borderColor: result === 'correct' ? '#22C55E' : result === 'wrong' ? '#EF4444' : colors.tabIconDefault },
+          g.brutal && brutalInputStyle(g),
+          g.brutal && result && { borderColor: result === 'correct' ? '#22C55E' : '#EF4444' },
         ]}
         placeholder={s.card.typeSentence}
         placeholderTextColor={colors.tabIconDefault}
@@ -71,7 +76,13 @@ export default function TypedSentenceCard({ sourceSentence, targetSentence, onRe
         </Text>
       )}
 
-      {!result ? (
+      {g.brutal ? (
+        !result ? (
+          <BrutalButton label={s.card.check} onPress={handleCheck} style={styles.brutalBtn} />
+        ) : (
+          <BrutalButton label={`${s.card.next} →`} fill="a" onPress={() => onResult(result === 'correct')} style={styles.brutalBtn} />
+        )
+      ) : !result ? (
         <Pressable style={[styles.checkBtn, styles.checkBtnPrimary, { backgroundColor: colors.accent }]} onPress={handleCheck}>
           <Text style={styles.checkBtnText}>{s.card.check}</Text>
         </Pressable>
@@ -83,12 +94,14 @@ export default function TypedSentenceCard({ sourceSentence, targetSentence, onRe
           <Text style={styles.checkBtnText}>{s.card.next} →</Text>
         </Pressable>
       )}
-    </View>
+    </Card>
   );
 }
 
 const styles = StyleSheet.create({
   card: { borderRadius: 20, padding: 24, alignItems: 'center', minHeight: 280, gap: 16 },
+  brutalCard: { padding: 24, alignItems: 'center', minHeight: 280, gap: 16 },
+  brutalBtn: { alignSelf: 'stretch' },
   sourceText: { fontSize: 20, fontWeight: '700', textAlign: 'center' },
   input: { width: '100%', borderWidth: 2, borderRadius: 12, paddingHorizontal: 12, paddingVertical: 10, fontSize: 16 },
   resultText: { fontSize: 18, fontWeight: '700' },
