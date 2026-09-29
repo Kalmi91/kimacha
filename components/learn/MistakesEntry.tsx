@@ -3,6 +3,8 @@ import { Pressable, StyleSheet, Text } from 'react-native';
 import { router } from 'expo-router';
 
 import Colors from '@/constants/Colors';
+import { useGrammarColors } from '@/lib/grammarColors';
+import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
@@ -17,6 +19,7 @@ type ColorScheme = (typeof Colors)['light'];
 // Csak akkor renderel, ha van legalább egy betöltött "Hibáim" köteg; a PCIC
 // meglévő mezői/gombjai (BadgeRow, chip-ek) érintetlenek maradnak.
 export default function MistakesEntry({ colors }: { colors: ColorScheme }) {
+  const g = useGrammarColors();
   const [visible, setVisible] = useState(false);
   const [dueCount, setDueCount] = useState(0);
 
@@ -46,6 +49,15 @@ export default function MistakesEntry({ colors }: { colors: ColorScheme }) {
 
   if (!visible) return null;
 
+  // NY25: brutalista palettán `a` kitöltésű BrutalBox, nagybetűs 500-as szöveg.
+  if (g.brutal) {
+    return (
+      <BrutalBox testID="mistakes-entry" fill="a" style={styles.brutalWrap} boxStyle={styles.brutalRow} onPress={() => router.push('/mistakes' as never)}>
+        <Text style={[styles.brutalLabel, { color: textOnFill(g, 'a') }]}>{t().mistakes.entry(dueCount)}</Text>
+      </BrutalBox>
+    );
+  }
+
   return (
     <Pressable style={styles.row} onPress={() => router.push('/mistakes' as never)}>
       <Text style={[styles.label, { color: colors.tint }]}>{t().mistakes.entry(dueCount)}</Text>
@@ -59,6 +71,9 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     paddingHorizontal: 12,
   },
+  brutalWrap: { alignSelf: 'center' },
+  brutalRow: { paddingVertical: 8, paddingHorizontal: 14 },
+  brutalLabel: { fontSize: 13, fontWeight: '500', textTransform: 'uppercase' },
   label: {
     fontSize: 13,
     fontWeight: '700',

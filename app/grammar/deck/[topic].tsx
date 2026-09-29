@@ -4,6 +4,9 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
+import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
+import { BrutalBackButton, BrutalButton, Sticker, SegmentBar, brutalInputStyle, segmentsFilled } from '@/components/grammar/Brutal';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
@@ -64,6 +67,7 @@ interface DeckItem {
 export default function TableDeckScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const s = t();
   const router = useRouter();
   const { topic: topicId } = useLocalSearchParams<{ topic: string }>();
@@ -179,17 +183,26 @@ export default function TableDeckScreen() {
     setNow(Date.now());
   };
 
+  // NY25: brutalista palettán vissza-doboz, nagybetűs cím, a haladás matrica.
   const header = (
-    <View style={styles.header}>
+    <View style={[styles.header, brutalHeaderRowStyle(g)]}>
+      {g.brutal ? (
+        <BrutalBackButton testID="tabledeck-back" onPress={() => router.back()} />
+      ) : (
       <Pressable onPress={() => router.back()} hitSlop={12}>
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
-      <Text style={[styles.title, { color: colors.text }]} numberOfLines={1}>
+      )}
+      <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]} numberOfLines={1}>
         {lessonTitle}
       </Text>
+      {g.brutal ? (
+        <Sticker label={s.tableDeck.progress(doneCount(deck), items.length)} fill="a" rotate={4} />
+      ) : (
       <View style={[styles.progressChip, { backgroundColor: colors.tint }]}>
         <Text style={styles.progressChipText}>{s.tableDeck.progress(doneCount(deck), items.length)}</Text>
       </View>
+      )}
     </View>
   );
 
@@ -203,24 +216,38 @@ export default function TableDeckScreen() {
 
   const pct = items.length > 0 ? (doneCount(deck) / items.length) * 100 : 0;
 
+  const progressBar = g.brutal ? (
+    <SegmentBar testID="tabledeck-segments" filled={segmentsFilled(pct, 8)} segments={8} style={styles.brutalBar} />
+  ) : (
+    <View style={[styles.progressTrack, { backgroundColor: colors.card }]}>
+      <View style={[styles.progressFill, { backgroundColor: '#22C55E', width: `${pct}%` }]} />
+    </View>
+  );
+
   if (complete) {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
-        <View style={[styles.progressTrack, { backgroundColor: colors.card }]}>
-          <View style={[styles.progressFill, { backgroundColor: '#22C55E', width: `${pct}%` }]} />
-        </View>
+        {progressBar}
         <View style={styles.doneBody}>
           <Text style={styles.doneEmoji}>🎉</Text>
           <Text style={[styles.doneTitle, { color: colors.text }]}>{s.tableDeck.completeTitle(items.length)}</Text>
+          {g.brutal ? (
+            <BrutalButton testID="tabledeck-start-again" fill="a" label={s.tableDeck.startAgain} onPress={handleStartAgain} style={styles.brutalBtn} />
+          ) : (
           <Pressable testID="tabledeck-start-again" style={[styles.btn, { backgroundColor: colors.tint }]} onPress={handleStartAgain}>
             <Text style={styles.btnTextOnTint}>{s.tableDeck.startAgain}</Text>
           </Pressable>
+          )}
           {/* FB389: same pill shape/size as "Start again" (outline instead
               of filled), so the two options read as equally-weighted choices. */}
+          {g.brutal ? (
+            <BrutalButton testID="tabledeck-harder" fill="paper" label={s.tableDeck.harder} onPress={handleHarder} style={styles.brutalBtn} />
+          ) : (
           <Pressable testID="tabledeck-harder" style={[styles.btn, styles.btnOutline, { borderColor: colors.tint }]} onPress={handleHarder}>
             <Text style={[styles.btnTextOnTint, { color: colors.tint }]}>{s.tableDeck.harder}</Text>
           </Pressable>
+          )}
           <Pressable style={styles.ghostBtn} onPress={() => router.back()}>
             <Text style={[styles.ghostBtnText, { color: colors.tabIconDefault }]}>{s.tableDeck.backToLesson}</Text>
           </Pressable>
@@ -243,9 +270,7 @@ export default function TableDeckScreen() {
   return (
     <KeyboardAvoidingView style={[styles.container, { backgroundColor: colors.background }]} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       {header}
-      <View style={[styles.progressTrack, { backgroundColor: colors.card }]}>
-        <View style={[styles.progressFill, { backgroundColor: '#22C55E', width: `${pct}%` }]} />
-      </View>
+      {progressBar}
 
       <ScrollView
         style={styles.cardScroll}
@@ -271,7 +296,7 @@ export default function TableDeckScreen() {
 
           <TextInput
             testID="tabledeck-input"
-            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }]}
+            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, g.brutal && brutalInputStyle(g)]}
             value={typed}
             onChangeText={setTyped}
             onSubmitEditing={checked ? handleNext : handleCheck}
@@ -337,6 +362,9 @@ const styles = StyleSheet.create({
   },
   back: { fontSize: 22 },
   title: { flex: 1, textAlign: 'center', fontSize: 17, fontWeight: '700', paddingHorizontal: 8 },
+  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
+  brutalBar: { marginBottom: 16 },
+  brutalBtn: { alignSelf: 'stretch', marginTop: 10 },
   progressChip: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 999 },
   progressChipText: { fontSize: 13, fontWeight: '700', color: '#FFFFFF' },
   progressTrack: { height: 6, borderRadius: 3, overflow: 'hidden', marginBottom: 16 },

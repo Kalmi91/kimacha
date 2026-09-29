@@ -12,7 +12,8 @@ import { localDateString } from '@/lib/usageStats';
 import { hasLesson, syllabusTopic } from '@/lib/grammar/syllabus';
 import type { MistakesBatch } from '@/lib/mistakes/format';
 import { cardsForBatches, pickMistakeSession } from '@/lib/mistakes/deck';
-import { BrutalButton, Card } from '@/components/grammar/Brutal';
+import { BrutalBackButton, BrutalButton, Card } from '@/components/grammar/Brutal';
+import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 
 // PLAN-hibaim.md 3. lépés ("Riport"): one row per loaded batch (newest
 // first, from getMistakeBatches()), a wrong-words list, the grammar patterns
@@ -54,10 +55,16 @@ export default function MistakesReportScreen() {
   useLoadOnMount(load);
 
   const header = (
-    <View style={styles.headerRow}>
+    <View style={[styles.headerRow, brutalHeaderRowStyle(g)]}>
+      {g.brutal ? (
+        <View style={styles.back}>
+          <BrutalBackButton testID="mistakes-back" onPress={() => router.back()} />
+        </View>
+      ) : (
       <Pressable onPress={() => router.back()} hitSlop={12}>
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
+      )}
       <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.mistakes.title}</Text>
       <View style={styles.backSpacer} />
     </View>
