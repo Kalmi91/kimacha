@@ -189,6 +189,12 @@ export default {
       'Word frequency data: FrequencyWords by Hermit Dave, CC BY-SA 4.0, derived from the ' +
       'OpenSubtitles 2018 corpus. The word lists in this app are an adapted work and are ' +
       'shared under CC BY-SA 4.0.',
+    cefrjBody:
+      'English B1 word list: The CEFR-J Wordlist Version 1.5, compiled by Yukio Tono, Tokyo ' +
+      'University of Foreign Studies (cefr-j.org). Used under its terms for research and ' +
+      'commercial use with attribution.',
+    cefrjLabel: 'github.com/openlanguageprofiles/olp-en-cefrj',
+    cefrjUrl: 'https://github.com/openlanguageprofiles/olp-en-cefrj',
     frequencyWordsLabel: 'github.com/hermitdave/FrequencyWords',
     frequencyWordsUrl: 'https://github.com/hermitdave/FrequencyWords',
     openSubtitlesLabel: 'opus.nlpl.eu',

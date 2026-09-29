@@ -37,6 +37,11 @@ export default function CreditsScreen() {
             <Text style={[styles.link, { color: colors.tint }]}>{link.label}</Text>
           </Pressable>
         ))}
+
+        <Text style={[styles.body, styles.bodySpaced, { color: colors.text }]}>{s.credits.cefrjBody}</Text>
+        <Pressable onPress={() => Linking.openURL(s.credits.cefrjUrl)}>
+          <Text style={[styles.link, { color: colors.tint }]}>{s.credits.cefrjLabel}</Text>
+        </Pressable>
       </ScrollView>
     </View>
   );
@@ -77,6 +82,9 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 22,
     marginBottom: 20,
+  },
+  bodySpaced: {
+    marginTop: 8,
   },
   link: {
     fontSize: 15,

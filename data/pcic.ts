@@ -15,6 +15,7 @@ import { getWordsForLevel, type WordEntry } from '@/data/words';
 import enA0 from '@/data/words/en/a0.json';
 import enA1 from '@/data/words/en/a1.json';
 import enA2 from '@/data/words/en/a2.json';
+import enB1 from '@/data/words/en/b1.json';
 
 export type PcicKind = 'word' | 'phrase' | 'sentence' | 'pattern';
 export type PcicLevel = 'A1' | 'A2' | 'B1' | 'B2';
@@ -107,8 +108,9 @@ const ITEMS_BY_LEVEL_ES: Record<PcicLevel, PcicItem[]> = {
 // PLAN-esen (2026-09-28): az es→en irány A1 paklija = data/words/en/a0.json +
 // a1.json (külön A0 nincs), A2 = a2.json (e<id> id-tér, a régi első 50 id-je
 // nem változik). Ugyanaz az angol szó csak egyszer, az első előfordulásánál
-// (alacsonyabb szinten) marad. B1/B2 üres (nincs rájuk tartalom), a
-// szint-választók a "0 tétel = nem kínáljuk fel" szabállyal kihagyják.
+// (alacsonyabb szinten) marad. B1 = en/b1.json (PLAN-enb1, CEFR-J szólista,
+// e10000-től); B2 üres (nincs rá tartalom), a szint-választók a "0 tétel =
+// nem kínáljuk fel" szabállyal kihagyják.
 function dedupeByEn(levels: WordEntry[][]): WordEntry[][] {
   const seen = new Set<string>();
   return levels.map((entries) =>
@@ -121,15 +123,16 @@ function dedupeByEn(levels: WordEntry[][]): WordEntry[][] {
   );
 }
 
-const [EN_A1_WORDS, EN_A2_WORDS] = dedupeByEn([
+const [EN_A1_WORDS, EN_A2_WORDS, EN_B1_WORDS] = dedupeByEn([
   [...(enA0 as WordEntry[]), ...(enA1 as WordEntry[])],
   enA2 as WordEntry[],
+  enB1 as WordEntry[],
 ]);
 
 const ITEMS_BY_LEVEL_EN: Record<PcicLevel, PcicItem[]> = {
   A1: itemsFromWords(EN_A1_WORDS, 'e'),
   A2: itemsFromWords(EN_A2_WORDS, 'e'),
-  B1: [],
+  B1: itemsFromWords(EN_B1_WORDS, 'e'),
   B2: [],
 };
 
