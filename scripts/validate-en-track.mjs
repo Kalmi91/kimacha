@@ -22,10 +22,10 @@ import { dirname, join } from 'path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
-const LEVELS = ['A0', 'A1', 'A2'];
+const LEVELS = ['A0', 'A1', 'A2', 'B1'];
 
 // Reserved, non-overlapping id blocks per en level.
-const ID_RANGE = { A0: [5800, 5999], A1: [5001, 5399], A2: [5400, 5799] };
+const ID_RANGE = { A0: [5800, 5999], A1: [5001, 5399], A2: [5400, 5799], B1: [10000, 10999] };
 
 const errors = [];
 const err = (m) => errors.push(m);
