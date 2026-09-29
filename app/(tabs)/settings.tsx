@@ -379,8 +379,8 @@ export default function SettingsScreen() {
                 onPress={() => setGrammarPalette(opt.value)}
               >
                 <View style={styles.paletteDots}>
-                  <View style={[styles.paletteDot, { backgroundColor: dotA }]} />
-                  <View style={[styles.paletteDot, { backgroundColor: dotB }]} />
+                  <View style={[styles.paletteDot, styles.brutalDot, { backgroundColor: dotA, borderColor: g.ink }]} />
+                  <View style={[styles.paletteDot, styles.brutalDot, { backgroundColor: dotB, borderColor: g.ink }]} />
                 </View>
                 <Text style={[styles.optionText, styles.brutalOptionText, { color: selected ? g.onFill : g.ink }]}>{opt.label}</Text>
               </BrutalBox>
@@ -633,6 +633,7 @@ const styles = StyleSheet.create({
   brutalOptionOuter: { flex: 1 },
   brutalOption: { paddingVertical: 12, alignItems: 'center' },
   brutalOptionText: { fontWeight: '500', textTransform: 'uppercase' },
+  brutalDot: { borderRadius: 0, borderWidth: 2 },
   brutalPaletteOuter: { flexBasis: '46%' },
   brutalPalette: { flexDirection: 'row', justifyContent: 'center', gap: 8, paddingHorizontal: 8 },
   brutalSheet: { borderTopLeftRadius: 0, borderTopRightRadius: 0, borderTopWidth: 2.5 },
