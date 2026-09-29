@@ -5,6 +5,7 @@ import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
 import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
@@ -35,6 +36,7 @@ import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
 import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
+import { BrutalBox, BrutalButton, SegmentBar, brutalInputStyle, segmentsFilled, textOnFill } from '@/components/grammar/Brutal';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import TypedSentenceCard from '@/components/TypedSentenceCard';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
@@ -71,6 +73,7 @@ interface UndoEntry {
 export default function PcicScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const s = t();
 
   const [loading, setLoading] = useState(true);
@@ -443,9 +446,16 @@ export default function PcicScreen() {
     <>
     <View style={styles.headerRow}>
       <View style={styles.headerBadges}>
-        <Pressable style={[styles.levelChip, { backgroundColor: colors.tint }]} onPress={() => setLevelSheetOpen(true)}>
-          <Text style={styles.levelChipText}>{levelChipLabel} ▾</Text>
-        </Pressable>
+        {g.brutal ? (
+          // NY19: a szint-chip doboz (aktív = a kitöltés).
+          <BrutalBox testID="learn-level-chip" fill="a" offset={2} boxStyle={styles.brutalLevelChip} onPress={() => setLevelSheetOpen(true)}>
+            <Text style={[styles.levelChipText, { color: g.onFill, fontWeight: '500' }]}>{levelChipLabel} ▾</Text>
+          </BrutalBox>
+        ) : (
+          <Pressable style={[styles.levelChip, { backgroundColor: colors.tint }]} onPress={() => setLevelSheetOpen(true)}>
+            <Text style={styles.levelChipText}>{levelChipLabel} ▾</Text>
+          </Pressable>
+        )}
         <BadgeRow
           colors={colors}
           items={[
@@ -508,7 +518,7 @@ export default function PcicScreen() {
         />
         <ScrollView
           style={styles.cardScroll}
-          contentContainerStyle={[styles.cardScrollContent, { paddingBottom: 24 }]}
+          contentContainerStyle={[styles.cardScrollContent, { paddingBottom: g.brutal ? 100 : 24 }]}
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="on-drag"
         >
@@ -557,8 +567,18 @@ export default function PcicScreen() {
         />
         <View style={styles.doneHeader}>
           <Text style={styles.doneEmoji}>🎉</Text>
-          <Text style={[styles.title, { color: colors.text }]}>{s.pcic.doneTitle}</Text>
+          <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.pcic.doneTitle}</Text>
         </View>
+        {g.brutal ? (
+          <View style={styles.tilesRow}>
+            {([['b', sessionAnswered, s.pcic.tileAnswered], ['paper', sessionNew, s.pcic.tileNew], ['a', sessionAgain, s.pcic.tileAgain]] as const).map(([fill, n, label]) => (
+              <BrutalBox key={label} testID="learn-done-tile" fill={fill} style={styles.brutalTile} boxStyle={styles.brutalTileBox}>
+                <Text style={[styles.tileNumber, { color: textOnFill(g, fill), fontWeight: '500' }]}>{n}</Text>
+                <Text style={[styles.tileLabel, { color: textOnFill(g, fill) }]}>{label}</Text>
+              </BrutalBox>
+            ))}
+          </View>
+        ) : (
         <View style={styles.tilesRow}>
           <View style={[styles.tile, { backgroundColor: '#38BDF8' }]}>
             <Text style={styles.tileNumber}>{sessionAnswered}</Text>
@@ -573,18 +593,27 @@ export default function PcicScreen() {
             <Text style={styles.tileLabel}>{s.pcic.tileAgain}</Text>
           </View>
         </View>
+        )}
         <View style={styles.introducedBlock}>
           <Text style={[styles.introducedLabel, { color: colors.tabIconDefault }]}>
             {s.pcic.introduced(introducedCount, newOrder.length)}
           </Text>
-          <View style={[styles.introducedTrack, { backgroundColor: colors.card }]}>
-            <View style={[styles.introducedFill, { backgroundColor: '#38BDF8', width: `${introducedPct}%` }]} />
-          </View>
+          {g.brutal ? (
+            <SegmentBar filled={segmentsFilled(introducedPct, 8)} segments={8} />
+          ) : (
+            <View style={[styles.introducedTrack, { backgroundColor: colors.card }]}>
+              <View style={[styles.introducedFill, { backgroundColor: '#38BDF8', width: `${introducedPct}%` }]} />
+            </View>
+          )}
         </View>
         {newOrder.some((id) => !allCards.has(id) || allCards.get(id)!.state === 'new') && (
+          g.brutal ? (
+            <BrutalButton testID="learn-more-new" label={s.pcic.moreNew(10)} onPress={handleMoreNew} style={styles.brutalMoreNew} />
+          ) : (
           <Pressable style={[styles.checkBtn, { backgroundColor: '#38BDF8' }]} onPress={handleMoreNew}>
             <Text style={styles.checkBtnText}>{s.pcic.moreNew(10)}</Text>
           </Pressable>
+          )
         )}
         <FeedbackButton level={level} languagePair={languagePair} currentCard="pcic" />
       </View>
@@ -646,9 +675,13 @@ export default function PcicScreen() {
         onClose={() => setLevelSheetOpen(false)}
       />
 
-      <View style={[styles.progressTrack, { backgroundColor: colors.card }]}>
-        <View style={[styles.progressFill, { backgroundColor: colors.tint, width: `${sessionPct}%` }]} />
-      </View>
+      {g.brutal ? (
+        <SegmentBar testID="learn-progress" filled={segmentsFilled(sessionPct, 8)} segments={8} style={styles.brutalProgress} />
+      ) : (
+        <View style={[styles.progressTrack, { backgroundColor: colors.card }]}>
+          <View style={[styles.progressFill, { backgroundColor: colors.tint, width: `${sessionPct}%` }]} />
+        </View>
+      )}
 
       <ScrollView
         style={styles.cardScroll}
@@ -693,19 +726,19 @@ export default function PcicScreen() {
               promptnál is megkülönböztethető legyen a tétel. */}
           <View style={styles.sectionRow}>
             {pos && (
-              <View style={[styles.posChip, { backgroundColor: colors.background }]}>
+              <View style={[styles.posChip, { backgroundColor: colors.background }, g.brutal && [styles.brutalPos, { borderColor: g.ink }]]}>
                 <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>
                   {pos.gender ? `${s.pos[pos.pos]} · ${pos.gender}` : s.pos[pos.pos]}
                 </Text>
               </View>
             )}
             {regionChipLabel && (
-              <View style={[styles.posChip, { backgroundColor: colors.background }]}>
+              <View style={[styles.posChip, { backgroundColor: colors.background }, g.brutal && [styles.brutalPos, { borderColor: g.ink }]]}>
                 <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>{regionChipLabel}</Text>
               </View>
             )}
             {mxChipLabel && (
-              <View style={[styles.posChip, { backgroundColor: colors.background }]}>
+              <View style={[styles.posChip, { backgroundColor: colors.background }, g.brutal && [styles.brutalPos, { borderColor: g.ink }]]}>
                 <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>{mxChipLabel}</Text>
               </View>
             )}
@@ -722,6 +755,22 @@ export default function PcicScreen() {
             <View style={styles.articleRow}>
               {([...ARTICLE_OPTIONS, ''] as ArticlePick[]).map((opt) => {
                 const active = articlePick === opt;
+                if (g.brutal) {
+                  return (
+                    <BrutalBox
+                      key={opt || 'none'}
+                      fill={active ? 'a' : 'paper'}
+                      offset={2}
+                      disabled={!!grade}
+                      onPress={() => setArticlePick(active ? '' : opt)}
+                      style={grade ? styles.brutalDim : undefined}
+                      boxStyle={styles.brutalArticle}
+                      accessibilityLabel={opt || 'sin artículo'}
+                    >
+                      <Text style={[styles.articleChipText, { color: active ? g.onFill : g.ink, fontWeight: '500' }]}>{opt || '⊘'}</Text>
+                    </BrutalBox>
+                  );
+                }
                 return (
                   <Pressable
                     key={opt || 'none'}
@@ -744,7 +793,7 @@ export default function PcicScreen() {
 
           <TextInput
             ref={inputRef}
-            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }]}
+            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, g.brutal && brutalInputStyle(g)]}
             value={typedAnswer}
             onChangeText={setTypedAnswer}
             onSubmitEditing={grade ? () => nextGrade && handleGrade(nextGrade) : handleCheck}
@@ -855,6 +904,15 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#FFFFFF',
   },
+  brutalLevelChip: { paddingHorizontal: 10, paddingVertical: 3 },
+  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
+  brutalTile: { flex: 1 },
+  brutalTileBox: { paddingVertical: 12, alignItems: 'center' },
+  brutalMoreNew: { marginTop: 24 },
+  brutalProgress: { marginBottom: 16 },
+  brutalArticle: { minWidth: 48, paddingVertical: 6, paddingHorizontal: 10, alignItems: 'center' },
+  brutalDim: { opacity: 0.6 },
+  brutalPos: { borderWidth: 2, borderRadius: 0 },
   headerIcons: {
     flexDirection: 'row',
     alignItems: 'center',
