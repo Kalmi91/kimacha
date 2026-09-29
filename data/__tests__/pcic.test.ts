@@ -26,13 +26,18 @@ describe('data/pcic.ts: irány-tudatos korpusz (PLAN-ketiranyu 4. lépés)', () 
 
   // PLAN-ketiranyu 5. lépés (D-A döntés a): az A1 az data/words/en/a0.json
   // első 50 kártyáját adja, e<id> id-térrel; A2/B1/B2 marad üres (nincs rájuk terv).
-  it('setPcicTarget("en")-re vált: A1 50 e<id> kártyát ad, A2/B1/B2 üres', () => {
+  it('setPcicTarget("en")-re vált: A1 = en a0+a1, A2 = en a2, e<id>, angol szó egyszer; B1/B2 üres', () => {
     setPcicTarget('en');
     expect(getPcicTarget()).toBe('en');
     const a1 = pcicItemsForLevel('A1');
-    expect(a1.length).toBe(50);
-    expect(a1.every((item) => item.id.startsWith('e'))).toBe(true);
-    expect(pcicItemsForLevel('A2')).toEqual([]);
+    const a2 = pcicItemsForLevel('A2');
+    expect(a1.length).toBeGreaterThan(1100);
+    expect(a2.length).toBeGreaterThan(750);
+    const all = [...a1, ...a2];
+    expect(all.every((item) => item.id.startsWith('e'))).toBe(true);
+    expect(new Set(all.map((item) => item.id)).size).toBe(all.length);
+    expect(new Set(all.map((item) => item.en.trim().toLowerCase())).size).toBe(all.length);
+    expect(a1[0].id).toBe('e5800');
     expect(pcicItemsForLevel('B1')).toEqual([]);
     expect(pcicItemsForLevel('B2')).toEqual([]);
   });
