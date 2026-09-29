@@ -110,11 +110,13 @@ function findFormTable(topic: GrammarTopicData, tableId: string): Extract<Lesson
 // maradjon (item.id-ból számolt seed, nem Date.now()).
 function MatchDrillItem({
   item,
+  learnedLang,
   colors,
   s,
   onDone,
 }: {
   item: MatchItem;
+  learnedLang: string;
   colors: (typeof Colors)['light'];
   s: ReturnType<typeof t>;
   onDone: (correct: boolean) => void;
@@ -125,6 +127,10 @@ function MatchDrillItem({
   const [wrongPair, setWrongPair] = useState<{ left: number; right: number } | null>(null);
   const [hadWrong, setHadWrong] = useState(false);
   const g = useGrammarColors();
+  // `pairs` {es, en} szó szerint spanyol/angol; a jobb oszlop a TANULT nyelv
+  // (es→en irányban az angol), a bal a másik.
+  const leftText = (p: MatchItem['pairs'][number]) => (learnedLang === 'en' ? p.es : p.en);
+  const rightText = (p: MatchItem['pairs'][number]) => (learnedLang === 'en' ? p.en : p.es);
 
   const done = matched.size === item.pairs.length;
 
@@ -184,7 +190,7 @@ function MatchDrillItem({
               cell(
                 `l${li}`,
                 `match-left-${li}`,
-                p.en,
+                leftText(p),
                 matched.has(li) ? 'matched' : wrongPair?.left === li ? 'wrong' : selectedLeft === li ? 'selected' : 'idle',
                 () => pressLeft(li)
               )
@@ -195,7 +201,7 @@ function MatchDrillItem({
               cell(
                 `r${pos}`,
                 `match-right-${pos}`,
-                item.pairs[pairId].es,
+                rightText(item.pairs[pairId]),
                 matched.has(pairId) ? 'matched' : wrongPair?.right === pos ? 'wrong' : 'idle',
                 () => pressRight(pos)
               )
@@ -231,7 +237,7 @@ function MatchDrillItem({
                 onPress={() => pressLeft(li)}
                 disabled={isMatched}
               >
-                <Text style={[styles.matchCellText, { color: colors.text }]}>{p.en}</Text>
+                <Text style={[styles.matchCellText, { color: colors.text }]}>{leftText(p)}</Text>
               </Pressable>
             );
           })}
@@ -250,7 +256,7 @@ function MatchDrillItem({
                 onPress={() => pressRight(pos)}
                 disabled={isMatched}
               >
-                <Text style={[styles.matchCellText, { color: colors.text }]}>{item.pairs[pairId].es}</Text>
+                <Text style={[styles.matchCellText, { color: colors.text }]}>{rightText(item.pairs[pairId])}</Text>
               </Pressable>
             );
           })}
@@ -908,7 +914,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
       <ScrollView contentContainerStyle={[styles.body, g.brutal && styles.brutalBodyPad]} keyboardShouldPersistTaps="handled">
         {header}
         {isMatchItem(roundItem.item) ? (
-          <MatchDrillItem key={roundItem.item.id} item={roundItem.item} colors={colors} s={s} onDone={completeItem} />
+          <MatchDrillItem key={roundItem.item.id} item={roundItem.item} learnedLang={learnedLang} colors={colors} s={s} onDone={completeItem} />
         ) : isFormItem(roundItem.item) ? (
           <FormDrillItem
             key={roundItem.item.id}
