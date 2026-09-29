@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, ScrollView, Pressable } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
 import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
 import { languages } from '@/lib/languages';
@@ -23,6 +24,7 @@ import { cardsForViewLevel } from '@/lib/pcicLevels';
 import { countKnown, countGraduated } from '@/lib/pcicStats';
 import { countDoneToday } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
+import { Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 
 const EMPTY_SCHEDULE: SchedulePreview = { dueNow: 0, buckets: [], scheduled: 0, nextDue: null };
 
@@ -98,6 +100,9 @@ export default function StatsScreen() {
   const targetLangInfo = languages.find(l => l.code === targetLang);
   const sourceLangInfo = languages.find(l => l.code === sourceLang);
 
+  const g = useGrammarColors();
+  // NY19: brutalista palettán a nagy számok tintával, 500 súllyal (az a / b szín a papíron olvashatatlan lehet).
+  const tileValueStyle = (c: string) => [styles.tileValue, g.brutal ? { color: g.ink, fontWeight: '500' as const } : { color: c }];
   const maxMinutes = Math.max(1, ...usage.last7Days.map(d => d.minutes));
   const hasChartData = usage.last7Days.some(d => d.minutes > 0);
   const goal = weeklyGoalProgress(usage.thisWeek, weeklyGoal);
@@ -137,17 +142,21 @@ export default function StatsScreen() {
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
-      <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-        <Text style={[styles.title, { color: colors.text }]}>{s.stats.title}</Text>
+      <ScrollView style={styles.container} contentContainerStyle={[styles.content, g.brutal && styles.brutalContent]}>
+        <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.stats.title}</Text>
 
       {/* PLAN-play 12. lépés (s5): a PCIC-szint jelvénye + known/total (interval
           >= 21 nap), alatta a másik 3 PCIC-szint known-száma. */}
       <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.progress.wordsKnown}</Text>
-      <View style={[styles.levelCard, { backgroundColor: colors.card }]}>
+      <Card classicStyle={styles.levelCard} style={styles.gapBottom}>
         <View style={styles.levelCardHead}>
+          {g.brutal ? (
+            <Sticker label={pcicLevel} fill="a" rotate={-4} textStyle={styles.brutalBadgeText} />
+          ) : (
           <View style={[styles.levelBadge, { backgroundColor: '#38BDF8' }]}>
             <Text style={styles.levelBadgeText}>{pcicLevel}</Text>
           </View>
+          )}
           <Text style={[styles.levelCardValue, { color: colors.text }]}>
             {s.header.levelProgress(levelKnown, levelTotal)}
           </Text>
@@ -161,47 +170,50 @@ export default function StatsScreen() {
         <Text style={[styles.levelCardOthers, { color: colors.tabIconDefault }]}>
           {otherLevels.map(r => s.stats.knownAtLevel(r.level, r.known)).join('  ·  ')}
         </Text>
-      </View>
+      </Card>
 
       <View style={styles.tileRow}>
-        <View style={[styles.tile, { backgroundColor: colors.card }]}>
+        <Card style={styles.tile} classicStyle={styles.tileClassic} boxStyle={styles.tileBox}>
           {/* FB72: spell out the unit, a bare number left it unclear that
               today's app time is counted in minutes. */}
-          <Text style={[styles.tileValue, { color: colors.tint }]}>{s.stats.minutes(usage.today)}</Text>
+          <Text style={tileValueStyle(colors.tint)}>{s.stats.minutes(usage.today)}</Text>
           <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.stats.today}</Text>
-        </View>
-        <View style={[styles.tile, { backgroundColor: colors.card }]}>
-          <Text style={[styles.tileValue, { color: colors.tint }]}>{usage.thisWeek}</Text>
+        </Card>
+        <Card style={styles.tile} classicStyle={styles.tileClassic} boxStyle={styles.tileBox}>
+          <Text style={tileValueStyle(colors.tint)}>{usage.thisWeek}</Text>
           <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.stats.thisWeek}</Text>
-        </View>
+        </Card>
       </View>
       <View style={styles.tileRow}>
-        <View style={[styles.tile, { backgroundColor: colors.card }]}>
-          <Text style={[styles.tileValue, { color: colors.tint }]}>{usage.allTimeTotal}</Text>
+        <Card style={styles.tile} classicStyle={styles.tileClassic} boxStyle={styles.tileBox}>
+          <Text style={tileValueStyle(colors.tint)}>{usage.allTimeTotal}</Text>
           <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.stats.allTime}</Text>
-        </View>
-        <View style={[styles.tile, { backgroundColor: colors.card }]}>
-          <Text style={[styles.tileValue, { color: colors.tint }]}>{usage.daysActive}</Text>
+        </Card>
+        <Card style={styles.tile} classicStyle={styles.tileClassic} boxStyle={styles.tileBox}>
+          <Text style={tileValueStyle(colors.tint)}>{usage.daysActive}</Text>
           <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.stats.daysActive}</Text>
-        </View>
+        </Card>
       </View>
 
       {usage.bestDay && (
-        <View style={[styles.bestDayRow, { backgroundColor: colors.card }]}>
+        <Card classicStyle={styles.bestDayRow} style={styles.gapBottom}>
           <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.stats.bestDay}</Text>
           <Text style={[styles.bestDayValue, { color: colors.text }]}>
             {usage.bestDay.date} · {s.stats.minutes(usage.bestDay.minutes)}
           </Text>
-        </View>
+        </Card>
       )}
 
       {/* FB65: weekly goal, the rolling 7-day total measured against the target
           set in Settings, with an explicit warning while it's still short. */}
       <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.stats.weeklyGoal}</Text>
-      <View style={[styles.goalCard, { backgroundColor: colors.card }]}>
-        <Text style={[styles.goalValue, { color: colors.text }]}>
+      <Card classicStyle={styles.goalCard} boxStyle={styles.goalBox} style={styles.goalOuter}>
+        <Text style={[styles.goalValue, { color: colors.text }, g.brutal && styles.brutalValue]}>
           {s.stats.goalProgress(hours(usage.thisWeek), hours(weeklyGoal))}
         </Text>
+        {g.brutal ? (
+          <SegmentBar testID="stats-goal-bar" filled={segmentsFilled(goal.pct * 100, 8)} segments={8} />
+        ) : (
         <View style={[styles.goalTrack, { backgroundColor: colors.background }]}>
           <View
             style={[
@@ -210,6 +222,7 @@ export default function StatsScreen() {
             ]}
           />
         </View>
+        )}
         {/* FB147: a reached goal is the celebration, not a footnote, so it gets
             the trophy and the big type. */}
         {goal.behind ? (
@@ -220,7 +233,7 @@ export default function StatsScreen() {
             <Text style={styles.goalDoneTitle}>{s.stats.goalReached}</Text>
           </>
         )}
-      </View>
+      </Card>
 
       <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.stats.last7Days}</Text>
       {!hasChartData ? (
@@ -237,6 +250,7 @@ export default function StatsScreen() {
                       backgroundColor: colors.tint,
                       height: `${Math.max(4, Math.round((day.minutes / maxMinutes) * 100))}%`,
                     },
+                    g.brutal && { backgroundColor: g.a, borderWidth: 2.5, borderColor: g.ink, borderRadius: 0 },
                   ]}
                 />
               </View>
@@ -253,24 +267,24 @@ export default function StatsScreen() {
         {s.stats.learningProgress}
       </Text>
       <View style={styles.tileRow}>
-        <View style={[styles.tile, { backgroundColor: colors.card }]}>
-          <Text style={[styles.tileValue, { color: colors.accent }]}>{streak}</Text>
-          <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.done.streak}</Text>
-        </View>
-        <View style={[styles.tile, { backgroundColor: colors.card }]}>
-          <Text style={[styles.tileValue, { color: colors.accent }]}>{known}</Text>
+        <Card fill="b" style={styles.tile} classicStyle={styles.tileClassic} boxStyle={styles.tileBox}>
+          <Text style={[tileValueStyle(colors.accent), g.brutal && { color: g.onFill }]}>{streak}</Text>
+          <Text style={[styles.tileLabel, { color: colors.tabIconDefault }, g.brutal && { color: g.onFill }]}>{s.done.streak}</Text>
+        </Card>
+        <Card style={styles.tile} classicStyle={styles.tileClassic} boxStyle={styles.tileBox}>
+          <Text style={tileValueStyle(colors.accent)}>{known}</Text>
           <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.stats.known21}</Text>
-        </View>
+        </Card>
       </View>
       <View style={styles.tileRow}>
-        <View style={[styles.tile, { backgroundColor: colors.card }]}>
-          <Text style={[styles.tileValue, { color: colors.accent }]}>{graduated}</Text>
+        <Card style={styles.tile} classicStyle={styles.tileClassic} boxStyle={styles.tileBox}>
+          <Text style={tileValueStyle(colors.accent)}>{graduated}</Text>
           <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.stats.graduatedLabel}</Text>
-        </View>
-        <View style={[styles.tile, { backgroundColor: colors.card }]}>
-          <Text style={[styles.tileValue, { color: colors.accent }]}>{reviewsToday}</Text>
+        </Card>
+        <Card style={styles.tile} classicStyle={styles.tileClassic} boxStyle={styles.tileBox}>
+          <Text style={tileValueStyle(colors.accent)}>{reviewsToday}</Text>
           <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.stats.reviewsToday}</Text>
-        </View>
+        </Card>
       </View>
 
       {/* FB100: where the words went, how many wait now and how many sit in
@@ -281,7 +295,7 @@ export default function StatsScreen() {
       {schedule.dueNow === 0 && schedule.scheduled === 0 ? (
         <Text style={[styles.noData, { color: colors.tabIconDefault }]}>{s.stats.scheduleEmpty}</Text>
       ) : (
-        <View style={[styles.scheduleCard, { backgroundColor: colors.card }]}>
+        <Card classicStyle={styles.scheduleCard} style={styles.scheduleOuter}>
           <View style={styles.scheduleRow}>
             <Text style={[styles.scheduleLabel, { color: colors.text }]}>{s.stats.scheduleDueNow}</Text>
             <Text style={[styles.scheduleValue, { color: colors.tint }]}>
@@ -302,7 +316,7 @@ export default function StatsScreen() {
             {s.stats.scheduleWaiting(schedule.scheduled)}
             {schedule.nextDue ? ` · ${s.stats.scheduleNext(nextRefreshLabel(schedule.nextDue))}` : ''}
           </Text>
-        </View>
+        </Card>
       )}
       </ScrollView>
 
@@ -334,11 +348,24 @@ const styles = StyleSheet.create({
   },
   tile: {
     flex: 1,
+  },
+  tileClassic: {
     borderRadius: 14,
     paddingVertical: 16,
     paddingHorizontal: 12,
     alignItems: 'center',
   },
+  // NY19: brutalista doboz belseje.
+  tileBox: { paddingVertical: 14, paddingHorizontal: 12, alignItems: 'center' },
+  gapBottom: { marginBottom: 20 },
+  goalOuter: { marginBottom: 24 },
+  scheduleOuter: { marginBottom: 12 },
+  goalBox: { padding: 16, gap: 10 },
+  // A chat-gomb (FAB) alól is kigördül az utolsó kártya.
+  brutalContent: { paddingBottom: 100 },
+  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
+  brutalValue: { fontWeight: '500' },
+  brutalBadgeText: { fontSize: 14 },
   tileValue: {
     fontSize: 26,
     fontWeight: '800',

@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { speak as speakIn, stop as stopSpeech } from '@/lib/speech';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
+import { BrutalBox, BrutalButton, Card } from '@/components/grammar/Brutal';
 import { t } from '@/lib/i18n';
 import { sentenceBuildMatch } from '@/lib/answerMatch';
 
@@ -18,6 +20,7 @@ interface Props {
 export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, speechLocale }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const s = t();
 
   // Word bank shuffled once. Positions never change — clicking a word leaves a
@@ -63,18 +66,24 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   const canCheck = placed.length > 0;
 
   return (
-    <View style={[styles.card, { backgroundColor: colors.card }]}>
+    <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
       <Text style={[styles.sourceText, { color: colors.text }]}>{sourceSentence}</Text>
 
-      <View style={[styles.placedArea, { borderColor: result === 'correct' ? '#22C55E' : result === 'wrong' ? '#EF4444' : colors.tabIconDefault, borderStyle: result === 'correct' ? 'solid' : 'dashed' }]}>
+      <View style={[styles.placedArea, { borderColor: result === 'correct' ? '#22C55E' : result === 'wrong' ? '#EF4444' : colors.tabIconDefault, borderStyle: result === 'correct' ? 'solid' : 'dashed' }, g.brutal && styles.brutalPlaced]}>
         {placed.length === 0 ? (
           <Text style={[styles.placeholder, { color: colors.tabIconDefault }]}>...</Text>
         ) : (
           <View style={styles.wordRow}>
             {placed.map((bankIdx, pos) => (
+              g.brutal ? (
+                <BrutalBox key={`placed-${bankIdx}-${pos}`} fill="b" offset={2} boxStyle={styles.brutalChip} onPress={() => removeWord(pos)}>
+                  <Text style={[styles.chipText, { color: g.onFill }]}>{bank[bankIdx]}</Text>
+                </BrutalBox>
+              ) : (
               <Pressable key={`placed-${bankIdx}-${pos}`} style={[styles.wordChip, styles.placedChip]} onPress={() => removeWord(pos)}>
                 <Text style={styles.chipText}>{bank[bankIdx]}</Text>
               </Pressable>
+              )
             ))}
           </View>
         )}
@@ -88,13 +97,19 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
         {bank.map((w, idx) =>
           usedSet.has(idx) ? (
             // Same-size dashed slot keeps the layout fixed while the word is in use.
-            <View key={`slot-${idx}`} style={[styles.wordChip, styles.emptySlot, { borderColor: colors.tabIconDefault }]}>
+            <View key={`slot-${idx}`} style={[styles.wordChip, styles.emptySlot, { borderColor: colors.tabIconDefault }, g.brutal && styles.brutalSlot]}>
               <Text style={[styles.chipText, styles.hiddenText]}>{w}</Text>
             </View>
           ) : (
+            g.brutal ? (
+              <BrutalBox key={`bank-${idx}`} fill="a" offset={2} boxStyle={styles.brutalChip} onPress={() => addWord(idx)}>
+                <Text style={[styles.chipText, { color: g.onFill }]}>{w}</Text>
+              </BrutalBox>
+            ) : (
             <Pressable key={`bank-${idx}`} style={[styles.wordChip, { backgroundColor: '#2563EB' }]} onPress={() => addWord(idx)}>
               <Text style={styles.chipText}>{w}</Text>
             </Pressable>
+            )
           )
         )}
       </View>
@@ -105,7 +120,13 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
         </Text>
       )}
 
-      {!result ? (
+      {g.brutal ? (
+        !result ? (
+          <BrutalButton label={s.card.check} onPress={handleCheck} disabled={!canCheck} style={styles.brutalBtn} />
+        ) : (
+          <BrutalButton label={`${s.card.next} →`} fill="a" onPress={() => onResult(result === 'correct')} style={styles.brutalBtn} />
+        )
+      ) : !result ? (
         <Pressable
           style={[styles.checkBtn, styles.checkBtnPrimary, { backgroundColor: colors.accent, opacity: canCheck ? 1 : 0.4 }]}
           onPress={handleCheck}
@@ -121,12 +142,17 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
           <Text style={styles.checkBtnText}>{s.card.next} →</Text>
         </Pressable>
       )}
-    </View>
+    </Card>
   );
 }
 
 const styles = StyleSheet.create({
   card: { borderRadius: 20, padding: 24, alignItems: 'center', minHeight: 280, gap: 16 },
+  brutalCard: { padding: 24, alignItems: 'center', minHeight: 280, gap: 16 },
+  brutalPlaced: { borderRadius: 0, borderWidth: 2.5 },
+  brutalChip: { paddingHorizontal: 12, paddingVertical: 6 },
+  brutalSlot: { borderRadius: 0, borderWidth: 2.5, paddingHorizontal: 12, paddingVertical: 6, marginRight: 2, marginBottom: 2 },
+  brutalBtn: { alignSelf: 'stretch' },
   sourceText: { fontSize: 20, fontWeight: '700', textAlign: 'center' },
   placedArea: { borderWidth: 2, borderStyle: 'dashed', borderRadius: 12, padding: 12, minHeight: 50, width: '100%', justifyContent: 'center', alignItems: 'center' },
   placeholder: { fontSize: 16 },

@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { StyleSheet, Text, View, Pressable, TextInput, Modal, PanResponder, Dimensions, Keyboard, Share } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
+import { BrutalBox, BrutalButton, brutalInputStyle } from '@/components/grammar/Brutal';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { feedbackBuildTag } from '@/lib/appBuild';
@@ -19,9 +21,23 @@ interface Props {
   bottomOffset?: number;
 }
 
+// NY19: a modal doboza brutalista palettán BrutalBox, classic palettán a mai kártya.
+function ModalBox({ children }: { children: ReactNode }) {
+  const g = useGrammarColors();
+  if (g.brutal) {
+    return (
+      <BrutalBox testID="feedback-modal" style={styles.brutalModalOuter} boxStyle={styles.brutalModal}>
+        {children}
+      </BrutalBox>
+    );
+  }
+  return <View style={[styles.modal, { backgroundColor: g.paper }]}>{children}</View>;
+}
+
 export default function FeedbackButton({ level, languagePair, currentCard, draggable = false, bottomOffset = 0 }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const s = t();
 
   const [visible, setVisible] = useState(false);
@@ -98,20 +114,28 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
         style={[
           styles.fab,
           { backgroundColor: colors.tint },
+          g.brutal && styles.brutalFab,
           draggable && (side === 'left' ? styles.fabLeft : styles.fabRight),
           bottomOffset > 0 && { bottom: 24 + bottomOffset },
         ]}
         onPress={() => setVisible(true)}
         {...(draggable ? panResponder.panHandlers : {})}
       >
-        <Text style={styles.fabText}>💬</Text>
+        {g.brutal ? (
+          // NY19: négyzetes BrutalBox a kitöltéssel a kör helyett.
+          <BrutalBox testID="feedback-fab" fill="a" boxStyle={styles.brutalFabBox}>
+            <Text style={styles.fabText}>💬</Text>
+          </BrutalBox>
+        ) : (
+          <Text style={styles.fabText}>💬</Text>
+        )}
       </Pressable>
 
       <Modal visible={showThanks} transparent animationType="fade">
         <View style={styles.toastOverlay}>
-          <View style={[styles.toast, { backgroundColor: colors.tint }]}>
+          <View style={[styles.toast, { backgroundColor: colors.tint }, g.brutal && [styles.brutalToast, { backgroundColor: g.a, borderColor: g.ink }]]}>
             <Text style={styles.toastEmoji}>✅</Text>
-            <Text style={styles.toastText}>{s.feedback.thanks}</Text>
+            <Text style={[styles.toastText, g.brutal && { color: g.onFill }]}>{s.feedback.thanks}</Text>
           </View>
         </View>
       </Modal>
@@ -121,11 +145,11 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
             taps, so it closes the keyboard (the modal itself stays open, Cancel
             closes that). */}
         <Pressable style={styles.overlay} onPress={() => Keyboard.dismiss()}>
-          <View style={[styles.modal, { backgroundColor: colors.card }]}>
-            <Text style={[styles.modalTitle, { color: colors.text }]}>{s.feedback.button}</Text>
+          <ModalBox>
+            <Text style={[styles.modalTitle, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.feedback.button}</Text>
 
             <TextInput
-              style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }]}
+              style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, g.brutal && brutalInputStyle(g)]}
               placeholder={s.feedback.placeholder}
               placeholderTextColor={colors.tabIconDefault}
               value={text}
@@ -136,6 +160,12 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
               autoFocus
             />
 
+            {g.brutal ? (
+              <View style={styles.modalButtons}>
+                <BrutalButton label={s.feedback.cancel} fill="paper" onPress={() => { setVisible(false); setText(''); }} style={styles.brutalModalBtn} />
+                <BrutalButton label={sending ? '...' : s.feedback.send} fill="a" onPress={handleSend} disabled={!text.trim() || sending} style={styles.brutalModalBtn} />
+              </View>
+            ) : (
             <View style={styles.modalButtons}>
               <Pressable
                 style={[styles.modalBtn, { backgroundColor: colors.tabIconDefault }]}
@@ -151,7 +181,8 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
                 <Text style={styles.modalBtnText}>{sending ? '...' : s.feedback.send}</Text>
               </Pressable>
             </View>
-          </View>
+            )}
+          </ModalBox>
         </Pressable>
       </Modal>
     </>
@@ -185,6 +216,21 @@ const styles = StyleSheet.create({
     right: 24,
     left: undefined,
   },
+  // NY19: a Pressable átlátszó tartó, a doboz a BrutalBox (52 + 3 px árnyék).
+  brutalFab: {
+    width: 55,
+    height: 55,
+    borderRadius: 0,
+    backgroundColor: 'transparent',
+    shadowOpacity: 0,
+    elevation: 0,
+  },
+  brutalFabBox: { width: 52, height: 52, alignItems: 'center', justifyContent: 'center' },
+  brutalModalOuter: {},
+  brutalModal: { padding: 24 },
+  brutalModalBtn: { flex: 1 },
+  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
+  brutalToast: { borderRadius: 0, borderWidth: 2.5 },
   fabText: {
     fontSize: 24,
   },

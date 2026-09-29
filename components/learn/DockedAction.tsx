@@ -1,6 +1,8 @@
 import { StyleSheet, View, Text, Pressable, type LayoutChangeEvent } from 'react-native';
 
 import Colors from '@/constants/Colors';
+import { useGrammarColors } from '@/lib/grammarColors';
+import { BrutalButton } from '@/components/grammar/Brutal';
 
 type ColorScheme = (typeof Colors)['light'];
 
@@ -29,14 +31,20 @@ type Props = {
 };
 
 export default function DockedAction({ label, onPress, tone, color, bottom, colors, onHeight }: Props) {
+  const g = useGrammarColors();
   return (
     <View
       style={[styles.dockedAction, { bottom, backgroundColor: colors.background }]}
       onLayout={onHeight ? (e: LayoutChangeEvent) => onHeight(e.nativeEvent.layout.height) : undefined}
     >
-      <Pressable style={[styles.inlineCheckBtn, { backgroundColor: color ?? TONE_COLOR[tone] }]} onPress={onPress}>
-        <Text style={styles.inlineCheckText}>{label}</Text>
-      </Pressable>
+      {g.brutal ? (
+        // NY19: Check = ink kitöltés, Next = a kitöltés.
+        <BrutalButton testID="learn-docked-action" label={label} fill={tone === 'next' ? 'a' : 'ink'} onPress={onPress} />
+      ) : (
+        <Pressable style={[styles.inlineCheckBtn, { backgroundColor: color ?? TONE_COLOR[tone] }]} onPress={onPress}>
+          <Text style={styles.inlineCheckText}>{label}</Text>
+        </Pressable>
+      )}
     </View>
   );
 }
