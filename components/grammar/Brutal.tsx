@@ -136,21 +136,64 @@ export function Card({
   fill = 'paper',
   style,
   classicStyle,
+  boxStyle,
 }: {
   children?: ReactNode;
   fill?: BrutalFill;
   style?: StyleProp<ViewStyle>;
   classicStyle?: StyleProp<ViewStyle>;
+  // NY19: a brutalista doboz belső stílusa (a default styles.card után).
+  boxStyle?: StyleProp<ViewStyle>;
 }) {
   const g = useGrammarColors();
   if (g.brutal) {
     return (
-      <BrutalBox fill={fill} style={style} boxStyle={styles.card}>
+      <BrutalBox fill={fill} style={style} boxStyle={[styles.card, boxStyle]}>
         {children}
       </BrutalBox>
     );
   }
   return <View style={[{ backgroundColor: g.paper }, classicStyle, style]}>{children}</View>;
+}
+
+// NY19: a fő gomb (nagybetűs, 500 súly): ink kitöltés b / bg színű szöveggel, vagy
+// a / b kitöltés #111 szöveggel.
+export function BrutalButton({
+  label,
+  onPress,
+  fill = 'ink',
+  disabled,
+  testID,
+  accessibilityLabel,
+  style,
+}: {
+  label: string;
+  onPress: () => void;
+  fill?: BrutalFill;
+  disabled?: boolean;
+  testID?: string;
+  accessibilityLabel?: string;
+  style?: StyleProp<ViewStyle>;
+}) {
+  const g = useGrammarColors();
+  return (
+    <BrutalBox
+      testID={testID}
+      accessibilityLabel={accessibilityLabel}
+      fill={fill}
+      disabled={disabled}
+      onPress={onPress}
+      style={[disabled ? { opacity: 0.4 } : null, style]}
+      boxStyle={styles.button}
+    >
+      <Text style={[styles.buttonText, { color: fill === 'ink' ? inkButtonText(g) : textOnFill(g, fill) }]}>{label}</Text>
+    </BrutalBox>
+  );
+}
+
+// NY19: beviteli mező brutalista palettán: 2,5 px ink keret, sarok 0, papír háttér.
+export function brutalInputStyle(g: GrammarColors): TextStyle {
+  return { borderWidth: 2.5, borderColor: g.ink, borderRadius: 0, backgroundColor: g.paper, color: g.ink };
 }
 
 // Hány blokk legyen kitöltve a szegmentált sávban egy 0-100 százalékhoz.
@@ -200,6 +243,8 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     textTransform: 'uppercase',
   },
+  button: { minHeight: 44, paddingVertical: 12, paddingHorizontal: 16, alignItems: 'center', justifyContent: 'center' },
+  buttonText: { fontSize: 16, fontWeight: '500', textTransform: 'uppercase' },
   segmentRow: { flexDirection: 'row', gap: 3 },
   segment: { flex: 1, height: 9, borderWidth: 2 },
 });

@@ -2,6 +2,7 @@ import { Modal, Pressable, Text, View, StyleSheet } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { t } from '@/lib/i18n';
+import { useGrammarColors } from '@/lib/grammarColors';
 import { PCIC_VIEW_LEVELS, pcicItemsForViewLevel, type PcicViewLevel, type PcicTarget } from '@/data/pcic';
 import { levelProgressView } from '@/lib/pcicLevels';
 import type { Sm2Card } from '@/lib/sm2';
@@ -28,6 +29,7 @@ type Props = {
 
 export default function LevelPickerSheet({ visible, active, cards, colors, title, target, onSelect, onClose }: Props) {
   const s = t();
+  const g = useGrammarColors();
   const levelLabels: Partial<Record<PcicViewLevel, string>> = {
     A1: s.pcic.levelBeginner,
     A2: s.pcic.levelElementary,
@@ -45,8 +47,8 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
       <Pressable style={styles.overlay} onPress={onClose}>
         {/* A lap tartalma saját Pressable-lel nyeli el a koppintást, hogy a
             sorok közti üres terület ne zárja be a lapot (mint az overlay). */}
-        <Pressable style={[styles.sheet, { backgroundColor: colors.card }]} onPress={() => {}}>
-          <Text style={[styles.title, { color: colors.text }]}>{title}</Text>
+        <Pressable style={[styles.sheet, { backgroundColor: colors.card }, g.brutal && [styles.brutalSheet, { borderColor: g.ink }]]} onPress={() => {}}>
+          <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{title}</Text>
           {levels.map((lvl) => {
             const total = pcicItemsForViewLevel(lvl).length;
             const { introduced } = levelProgressView(cards, lvl, total);
@@ -85,6 +87,9 @@ const styles = StyleSheet.create({
     padding: 20,
     paddingBottom: 32,
   },
+  // NY19: brutalista lap: sarok 0, felső 2,5 px ink vonal.
+  brutalSheet: { borderTopLeftRadius: 0, borderTopRightRadius: 0, borderTopWidth: 2.5 },
+  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   title: {
     fontSize: 18,
     fontWeight: '700',
