@@ -306,6 +306,85 @@ function tokenKnown(tok, taughtSet, extra) {
 }
 
 // ---------------------------------------------------------------------------
+// English taught-vocabulary matcher (es→en direction: a Spanish speaker learns
+// English). The learned word of a card in data/words/en/ is its `en` field.
+// Function words play the role GLUE_WHITELIST plays for Spanish.
+// ---------------------------------------------------------------------------
+
+const LANG_NAMES = { es: 'Spanish', en: 'English' };
+
+const GLUE_WHITELIST_EN = new Set([
+  'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her', 'us', 'them',
+  'my', 'your', 'his', 'its', 'our', 'their',
+  'am', 'is', 'are', 'was', 'were', 'be', 'been', 'do', 'does', 'did', 'not',
+  'a', 'an', 'the', 'this', 'that', 'these', 'those',
+  'and', 'or', 'but', 'so', 'if', 'because',
+  'to', 'of', 'in', 'on', 'at', 'from', 'with', 'for', 'by', 'about',
+  'yes', 'no', 'there', 'here', 'very', 'too',
+  'what', 'who', 'where', 'when', 'why', 'how',
+  "i'm", "you're", "he's", "she's", "it's", "we're", "they're",
+  "isn't", "aren't", "wasn't", "weren't", "don't", "doesn't", "that's", "there's", "what's",
+]);
+
+function normalizeEn(str) {
+  return String(str)
+    .toLowerCase()
+    .replace(/[’]/g, "'")
+    .replace(/[¡!¿?.,;:"()\-–_/]/g, ' ')
+    .replace(/___/g, ' ')
+    .trim();
+}
+
+function tokenizeEn(str) {
+  return normalizeEn(str)
+    .split(/\s+/)
+    .map((t) => t.replace(/^'+|'+$/g, ''))
+    .filter((t) => t.length > 0);
+}
+
+/** Exact match, or a regular plural / third-person / -ed / -ing variant of a taught word. */
+function matchesEn(token, taughtSet) {
+  if (taughtSet.has(token)) return true;
+  const bases = [];
+  if (token.endsWith('ies')) bases.push(token.slice(0, -3) + 'y');
+  if (token.endsWith('es')) bases.push(token.slice(0, -2));
+  if (token.endsWith('s')) bases.push(token.slice(0, -1));
+  if (token.endsWith('ed')) bases.push(token.slice(0, -2), token.slice(0, -1));
+  if (token.endsWith('ing')) bases.push(token.slice(0, -3), token.slice(0, -3) + 'e');
+  return bases.some((b) => b.length >= 2 && taughtSet.has(b));
+}
+
+function tokenKnownEn(tok, taughtSet, extra) {
+  if (/^\d+%?$/.test(tok)) return true;
+  if (GLUE_WHITELIST_EN.has(tok)) return true;
+  if (PROPER_NOUNS.has(removeAccents(tok))) return true;
+  if (extra?.has(tok)) return true;
+  const combined = extra?.size ? new Set([...taughtSet, ...extra]) : taughtSet;
+  return matchesEn(tok, combined);
+}
+
+// Cumulative taught-token sets from the English track's corpus (data/words/en/).
+const taughtByLevelEn = {};
+for (const lvl of LEVELS) {
+  const set = new Set();
+  const p = join(ROOT, `data/words/en/${lvl.toLowerCase()}.json`);
+  if (existsSync(p)) {
+    for (const card of JSON.parse(readFileSync(p, 'utf8'))) {
+      for (const tok of tokenizeEn(card.en ?? '')) set.add(tok);
+    }
+  }
+  taughtByLevelEn[lvl] = set;
+}
+
+function cumulativeTaughtEn(level) {
+  const idx = LEVELS.indexOf(level);
+  const set = new Set();
+  const upTo = idx === -1 ? LEVELS.length - 1 : idx;
+  for (let i = 0; i <= upTo; i++) for (const t of taughtByLevelEn[LEVELS[i]]) set.add(t);
+  return set;
+}
+
+// ---------------------------------------------------------------------------
 // Language-completeness helpers
 // ---------------------------------------------------------------------------
 
@@ -352,17 +431,22 @@ function checkLength(str, level, path) {
 // grammar-choice (data/games/grammar/<lang>/<topic>.json)
 // ---------------------------------------------------------------------------
 
-function glossaryTokenSet(glossary) {
+function glossaryTokenSet(glossary, lang = 'es') {
   const set = new Set();
   for (const g of glossary ?? []) {
-    for (const tok of tokenize(g.word ?? '')) set.add(removeAccents(tok));
+    if (lang === 'en') {
+      for (const tok of tokenizeEn(g.word ?? '')) set.add(tok);
+    } else {
+      for (const tok of tokenize(g.word ?? '')) set.add(removeAccents(tok));
+    }
   }
   return set;
 }
 
-function auditGrammarWord(tok, taughtSet, extra, path) {
-  if (!tokenKnown(tok, taughtSet, extra)) {
-    p1.push({ path, issue: `untaught/unglossed Spanish word: "${tok}"` });
+function auditGrammarWord(tok, taughtSet, extra, path, lang = 'es') {
+  const known = lang === 'en' ? tokenKnownEn(tok, taughtSet, extra) : tokenKnown(tok, taughtSet, extra);
+  if (!known) {
+    p1.push({ path, issue: `untaught/unglossed ${LANG_NAMES[lang] ?? lang} word: "${tok}"` });
   }
 }
 
@@ -555,7 +639,7 @@ function auditFormItem(item, itemPath, topic, tableIds) {
 // TASK-8 (D4, FB288): "miért ez a mondat", correctIndex érvényes, pontosan 3
 // opció, opció-szövegek egyediek (hu-n), minden opció mind a 4 nyelven, a nem
 // jó opciókon van `wrong` mind a 4 nyelven, `es` nem üres és `tr.es` === `es`.
-function auditWhyItem(item, itemPath) {
+function auditWhyItem(item, itemPath, lang = 'es') {
   const options = Array.isArray(item.options) ? item.options : [];
   if (options.length !== 3) {
     p1.push({ path: itemPath, issue: `why item needs exactly 3 options, has ${options.length}` });
@@ -564,7 +648,7 @@ function auditWhyItem(item, itemPath) {
     p1.push({ path: itemPath, issue: `why item correctIndex ${item.correctIndex} out of range` });
   }
   if (!item.es) p1.push({ path: itemPath, issue: 'why item missing es' });
-  if (item.es && item.tr?.es !== item.es) p1.push({ path: itemPath, issue: 'why item tr.es must equal es' });
+  if (item.es && item.tr?.[lang] !== item.es) p1.push({ path: itemPath, issue: `why item tr.${lang} must equal es` });
 
   // FB376 (PLAN-fb0923 4. lépés): a `target` megnevezi, mire vonatkozik a
   // kérdés; hiánya P2, egy meglévő de a mondatban nem található target P1.
@@ -664,7 +748,7 @@ function auditTransformItem(item, itemPath, topic) {
   checkLangs(item.why, `${itemPath} why`);
 }
 
-function auditGrammarTopic(topic, filePath) {
+function auditGrammarTopic(topic, filePath, lang = 'es') {
   const path = `grammar/${filePath}`;
   if (!topic.topic) p1.push({ path, issue: 'missing topic id' });
   if (!LEVELS.includes(topic.level)) p1.push({ path, issue: `missing/unknown level: ${topic.level}` });
@@ -683,8 +767,11 @@ function auditGrammarTopic(topic, filePath) {
   }
   const tableIds = isV2 ? tableIdsOf(topic) : null;
 
-  const taughtSet = cumulativeTaught(topic.level ?? 'C1');
-  const extra = glossaryTokenSet(topic.glossary);
+  const isEn = lang === 'en';
+  const taughtSet = isEn ? cumulativeTaughtEn(topic.level ?? 'C1') : cumulativeTaught(topic.level ?? 'C1');
+  const extra = glossaryTokenSet(topic.glossary, lang);
+  const norm = isEn ? normalizeEn : normalize;
+  const toks = isEn ? tokenizeEn : tokenize;
 
   const seenIds = new Set();
   for (const item of topic.items ?? []) {
@@ -707,7 +794,7 @@ function auditGrammarTopic(topic, filePath) {
       continue;
     }
     if (item.kind === 'why') {
-      auditWhyItem(item, itemPath);
+      auditWhyItem(item, itemPath, lang);
       continue;
     }
     if (item.kind === 'transform') {
@@ -751,9 +838,9 @@ function auditGrammarTopic(topic, filePath) {
         // yo."), vagy a negáció lecke tárgya maga ("No, no como carne."),
         // ez a lecke szándékos mintája, nem hiba.
         const correctText = item.options[item.correct];
-        const correctNorm = normalize(correctText ?? '');
+        const correctNorm = norm(correctText ?? '');
         const restOfSentence = (item.sentence ?? '').replace('___', '');
-        if (correctText && !OBJECT_PRONOUN_WORDS.has(correctNorm) && tokenize(restOfSentence).includes(correctNorm)) {
+        if (correctText && !OBJECT_PRONOUN_WORDS.has(correctNorm) && toks(restOfSentence).includes(correctNorm)) {
           p1.push({ path: itemPath, issue: `self-revealing: correct answer "${correctText}" appears literally in the prompt` });
         }
       }
@@ -775,14 +862,14 @@ function auditGrammarTopic(topic, filePath) {
       checkLangs(item.wrong[key], `${itemPath} wrong[${key}]`);
     }
 
-    for (const tok of tokenize((item.sentence ?? '').replace('___', ''))) {
-      auditGrammarWord(tok, taughtSet, extra, itemPath);
+    for (const tok of toks((item.sentence ?? '').replace('___', ''))) {
+      auditGrammarWord(tok, taughtSet, extra, itemPath, lang);
     }
     for (const opt of item.options ?? []) {
-      for (const tok of tokenize(opt)) auditGrammarWord(tok, taughtSet, extra, itemPath);
+      for (const tok of toks(opt)) auditGrammarWord(tok, taughtSet, extra, itemPath, lang);
     }
     for (const ex of item.examples ?? []) {
-      for (const tok of tokenize(ex)) auditGrammarWord(tok, taughtSet, extra, itemPath);
+      for (const tok of toks(ex)) auditGrammarWord(tok, taughtSet, extra, itemPath, lang);
       checkLength(ex, topic.level, itemPath);
     }
     checkLength(item.sentence ?? '', topic.level, itemPath);
@@ -805,7 +892,7 @@ function runGrammar() {
     const dir = join(base, lang);
     for (const file of jsonFilesIn(dir)) {
       const topic = JSON.parse(readFileSync(join(dir, file), 'utf8'));
-      auditGrammarTopic(topic, `${lang}/${file}`);
+      auditGrammarTopic(topic, `${lang}/${file}`, lang);
     }
   }
 }

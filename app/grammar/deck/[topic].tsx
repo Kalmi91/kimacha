@@ -73,6 +73,7 @@ export default function TableDeckScreen() {
   const { topic: topicId } = useLocalSearchParams<{ topic: string }>();
 
   const [loading, setLoading] = useState(true);
+  const [learnedLang, setLearnedLang] = useState('es');
   const [level, setLevel] = useState<Level>('A1');
   const [strictAccents, setStrictAccents] = useState(false);
   // FB364 (PLAN-fb0923 5. lépés/D2): egy beállítás, két hely, lásd
@@ -94,7 +95,10 @@ export default function TableDeckScreen() {
   const load = useCallback(async () => {
     const db = getDb();
     const id = String(topicId);
-    const lesson = lessonFor('es', id);
+    const onboarding = await db.getOnboarding();
+    const target = onboarding?.target ?? 'es';
+    setLearnedLang(target);
+    const lesson = lessonFor(target, id);
     const tableCells = tableCellsForLesson(lesson);
     // FB375: table cells win where they exist (unchanged behavior); a
     // table-less lesson falls back to its own word-deck.
@@ -138,7 +142,7 @@ export default function TableDeckScreen() {
     getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, progressKeyFor(String(topicId)), 'progress', next).catch(() => {});
   };
 
-  const entry = syllabusTopic(String(topicId));
+  const entry = syllabusTopic(String(topicId), learnedLang);
   const lessonTitle = entry?.title.en ?? String(topicId);
 
   const currentId = nextCellId(deck, now);

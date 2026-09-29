@@ -15,6 +15,7 @@
 import { getGrammarTopic, getGrammarTopics, grammarKindCounts, isLessonV2, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
 import type { Level } from '@/data/words';
 import { IS_PLAY_BUILD } from '@/lib/buildFlavor';
+import { EN_SYLLABUS, EN_UNITS } from './syllabusEn';
 
 export interface SyllabusTopic {
   id: string;
@@ -630,20 +631,36 @@ export const SYLLABUS_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
  */
 export const GRAMMAR_PROGRESS_KEY = 'grammar-course';
 
-export function syllabusForLevel(level: Level): SyllabusTopic[] {
-  return GRAMMAR_SYLLABUS.filter((t) => t.level === level);
+// Nyelv-kulcs: 'es' (alap) = a spanyol tanterv fent, bájtra változatlan;
+// 'en' = az angol tanterv az angol témafából (lib/grammar/syllabusEn.ts).
+const EN_SYLLABUS_LEVELS: Level[] = ['A1', 'A2'];
+
+function syllabusOf(lang: string): SyllabusTopic[] {
+  return lang === 'en' ? EN_SYLLABUS : GRAMMAR_SYLLABUS;
 }
 
-export function unitsForLevel(level: Level): SyllabusUnit[] {
-  return GRAMMAR_UNITS.filter((u) => u.level === level);
+function unitsOf(lang: string): SyllabusUnit[] {
+  return lang === 'en' ? EN_UNITS : GRAMMAR_UNITS;
 }
 
-export function topicsForUnit(unitId: string): SyllabusTopic[] {
-  return GRAMMAR_SYLLABUS.filter((t) => t.unit === unitId);
+export function syllabusLevels(lang = 'es'): Level[] {
+  return lang === 'en' ? EN_SYLLABUS_LEVELS : SYLLABUS_LEVELS;
 }
 
-export function syllabusTopic(id: string): SyllabusTopic | undefined {
-  return GRAMMAR_SYLLABUS.find((t) => t.id === id);
+export function syllabusForLevel(level: Level, lang = 'es'): SyllabusTopic[] {
+  return syllabusOf(lang).filter((t) => t.level === level);
+}
+
+export function unitsForLevel(level: Level, lang = 'es'): SyllabusUnit[] {
+  return unitsOf(lang).filter((u) => u.level === level);
+}
+
+export function topicsForUnit(unitId: string, lang = 'es'): SyllabusTopic[] {
+  return syllabusOf(lang).filter((t) => t.unit === unitId);
+}
+
+export function syllabusTopic(id: string, lang = 'es'): SyllabusTopic | undefined {
+  return syllabusOf(lang).find((t) => t.id === id);
 }
 
 /**
@@ -653,9 +670,10 @@ export function syllabusTopic(id: string): SyllabusTopic | undefined {
  * határán nem áll meg: a tanterv folytatódik a következő szinten.
  */
 export function nextWrittenTopic(lang: string, topicId: string): SyllabusTopic | undefined {
-  const at = GRAMMAR_SYLLABUS.findIndex((t) => t.id === topicId);
+  const syllabus = syllabusOf(lang);
+  const at = syllabus.findIndex((t) => t.id === topicId);
   if (at < 0) return undefined;
-  return GRAMMAR_SYLLABUS.slice(at + 1).find((t) => hasLesson(lang, t.id));
+  return syllabus.slice(at + 1).find((t) => hasLesson(lang, t.id));
 }
 
 /** The authored lesson for a syllabus entry, if it has been written yet. */
@@ -734,8 +752,9 @@ export function doneGrammarTopicProgress(
 
 /** How much of the syllabus is written, for the header line. */
 export function lessonCoverage(lang: string): { written: number; planned: number } {
-  const planned = GRAMMAR_SYLLABUS.length;
-  const written = GRAMMAR_SYLLABUS.filter((t) => hasLesson(lang, t.id)).length;
+  const syllabus = syllabusOf(lang);
+  const planned = syllabus.length;
+  const written = syllabus.filter((t) => hasLesson(lang, t.id)).length;
   return { written, planned };
 }
 
@@ -745,7 +764,7 @@ export function lessonCoverage(lang: string): { written: number; planned: number
  * letting the content go quietly missing.
  */
 export function orphanLessons(lang: string): string[] {
-  const ids = new Set(GRAMMAR_SYLLABUS.map((t) => t.id));
+  const ids = new Set(syllabusOf(lang).map((t) => t.id));
   return getGrammarTopics(lang)
     .map((t) => t.topic)
     .filter((id) => !ids.has(id));
