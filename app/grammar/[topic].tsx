@@ -4,6 +4,7 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { normalizeWordToken, type Level } from '@/data/words';
@@ -18,10 +19,11 @@ import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 import { splitByLanguage, splitByMarkers } from '@/lib/mixedSpeech';
 import { speechLang } from '@/lib/languages';
 import GlossText from '@/components/games/GlossText';
-import GrammarDrill from '@/components/grammar/GrammarDrill';
+import GrammarDrill, { type RoundStats } from '@/components/grammar/GrammarDrill';
 import LessonBody from '@/components/grammar/LessonBody';
 import MoreBlocks from '@/components/grammar/MoreBlocks';
 import FeedbackButton from '@/components/FeedbackModal';
+import { BrutalBox, Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // One grammar lesson: the rule first, then the practice.
@@ -40,6 +42,7 @@ const KIND_ORDER: GrammarKind[] = ['choice', 'match', 'form', 'why', 'transform'
 export default function GrammarLessonScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const s = t();
   const router = useRouter();
   const { topic: topicId } = useLocalSearchParams<{ topic: string }>();
@@ -75,6 +78,11 @@ export default function GrammarLessonScreen() {
   // fajtánkénti darabszámainak összege, nem külön számított.
   const [kindAnswered, setKindAnswered] = useState<Partial<Record<GrammarKind, number>>>({});
   const [kindCorrect, setKindCorrect] = useState<Partial<Record<GrammarKind, number>>>({});
+  // NY24: a kör-vége képernyő adatai (csak memóriában): a drill statisztikája, a
+  // kör ELŐTTI kumulált %, és a streak-nap.
+  const [roundStats, setRoundStats] = useState<RoundStats | null>(null);
+  const [prevPct, setPrevPct] = useState<number | null>(null);
+  const [streak, setStreak] = useState(0);
 
   const load = useCallback(async () => {
     const db = getDb();
@@ -86,6 +94,7 @@ export default function GrammarLessonScreen() {
     setContentLang('en');
     const levelData = await db.getLevel();
     setLevel((levelData.level as Level) ?? 'A1');
+    setStreak((await db.getStreak())?.current_count ?? 0);
     const loadedLesson = lessonFor(target, String(topicId)) ?? null;
     setLesson(loadedLesson);
     if (loadedLesson) {
@@ -221,6 +230,7 @@ export default function GrammarLessonScreen() {
   };
 
   const finish = async (correct: number, total: number, roundItemIds?: string[]) => {
+    setPrevPct(lessonPercent(lessonAnswered, lessonCorrect));
     setScore({ correct, total });
     setPhase('done');
     // D3 (FB290): a sor kulcsa fajtánként külön (`${topic}:${kind}`), és csak
@@ -263,7 +273,22 @@ export default function GrammarLessonScreen() {
     }
   };
 
-  const header = (
+  // NY23: brutalista palettán a vissza-gomb dobozban, a cím nagybetűs, a szint matrica.
+  const header = g.brutal ? (
+    <View style={styles.header}>
+      <BrutalBox
+        testID="grammar-back"
+        boxStyle={styles.brutalBack}
+        onPress={() => (phase === 'lesson' ? router.back() : setPhase('lesson'))}
+      >
+        <Text style={[styles.back, { color: g.ink }]}>←</Text>
+      </BrutalBox>
+      <Text style={[styles.title, styles.brutalTitle, { color: g.ink }]} numberOfLines={1}>
+        {lessonTitle}
+      </Text>
+      <Sticker label={lesson.level} fill="a" rotate={5} />
+    </View>
+  ) : (
     <View style={styles.header}>
       <Pressable onPress={() => (phase === 'lesson' ? router.back() : setPhase('lesson'))} hitSlop={12}>
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
@@ -274,11 +299,40 @@ export default function GrammarLessonScreen() {
       <Text style={[styles.levelTag, { color: colors.tint }]}>{lesson.level}</Text>
     </View>
   );
+  // NY23: a cím-szín brutalista palettán ink (a kitöltő a / b szín papíron nem olvasható szöveg).
+  const accentText = g.brutal ? g.ink : colors.tint;
+
+  // NY23: fő gomb: brutalista palettán a kitöltésű doboz, classic-on a mai gomb.
+  const lessonButton = (testID: string, label: string, onPress: () => void, filled: boolean, first: boolean) =>
+    g.brutal ? (
+      <BrutalBox
+        testID={testID}
+        fill={filled ? 'a' : 'paper'}
+        style={[styles.brutalBtnWrap, first && styles.startBtn]}
+        boxStyle={styles.brutalBtn}
+        onPress={onPress}
+      >
+        <Text style={[styles.brutalBtnText, { color: filled ? g.onFill : g.ink }]}>{label}</Text>
+      </BrutalBox>
+    ) : (
+      <Pressable
+        testID={testID}
+        style={[
+          styles.btn,
+          first && styles.startBtn,
+          filled ? { backgroundColor: colors.tint } : { borderWidth: 1.5, borderColor: colors.tint },
+        ]}
+        onPress={onPress}
+      >
+        <Text style={[styles.btnText, filled ? styles.btnTextOnTint : { color: colors.tint }]}>{label}</Text>
+      </Pressable>
+    );
 
   if (phase === 'drill') {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
-        {header}
+        {/* NY22: brutalista palettán a drill saját fejléce (X + szegmentált sáv + combo) váltja. */}
+        {g.brutal ? null : header}
         {/* LECKE-SEMA 2/6.3/D3: a lecke-drill a `drillKind` fajtáját viszi végig
             (a gombok fajtánként külön indítanak), a Game fül grammar-choice-a
             a `kinds` prop híján változatlanul csak a gap/mark körét kapja. */}
@@ -290,6 +344,8 @@ export default function GrammarLessonScreen() {
           kinds={[drillKind]}
           transformSeen={transformSeen}
           onItemChange={setDrillItemId}
+          onRoundStats={setRoundStats}
+          onClose={() => setPhase('lesson')}
         />
         <FeedbackButton
           level={level}
@@ -308,6 +364,110 @@ export default function GrammarLessonScreen() {
     // FB328: a lecke MINDEN eddigi köréből számolt kumulált arány, nem csak
     // ennek a körnek a pontszáma (ami fentebb, `pct`).
     const cumulativePct = lessonPercent(lessonAnswered, lessonCorrect);
+    // NY24 (neo-brutalista, NYELVTAN.md "Neo-brutalista stílus" 3. képernyő): nagy
+    // helyes-arány a kitöltött dobozban + combo-matrica, 3 kis doboz, "practice
+    // this" a rontott mondattal, téma-progress szegmensekben, gombok.
+    if (g.brutal) {
+      const secs = roundStats?.seconds ?? 0;
+      const time = `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, '0')}`;
+      const miss = roundStats?.miss ?? null;
+      const missAt = miss ? miss.sentence.indexOf(miss.highlight) : -1;
+      const stat = (label: string, value: string, fill: 'paper' | 'b') => (
+        <BrutalBox fill={fill} style={styles.brutalStatWrap} boxStyle={styles.brutalStat}>
+          <Text style={[styles.brutalStatValue, { color: fill === 'b' ? g.onFill : g.ink }]}>{value}</Text>
+          <Text style={[styles.brutalStatLabel, { color: fill === 'b' ? g.onFill : g.mu }]}>{label}</Text>
+        </BrutalBox>
+      );
+      return (
+        <View style={[styles.container, { backgroundColor: g.bg }]}>
+          {header}
+          <ScrollView contentContainerStyle={styles.brutalDoneBody}>
+            <BrutalBox testID="grammar-score" fill="a" boxStyle={styles.brutalScoreBox}>
+              <Text style={[styles.brutalScore, { color: g.onFill }]}>
+                {score.correct}/{score.total}
+              </Text>
+              <Text style={[styles.brutalNote, { color: g.onFill }]}>{pct >= 80 ? s.grammar.doneGood : s.grammar.doneAgain}</Text>
+              {roundStats && roundStats.bestCombo >= 2 ? (
+                <View style={styles.brutalComboPos}>
+                  <Sticker testID="grammar-best-combo" label={s.grammar.comboLabel(roundStats.bestCombo)} fill="b" rotate={6} />
+                </View>
+              ) : null}
+            </BrutalBox>
+
+            <View style={styles.brutalStats}>
+              {stat(s.grammar.statCorrect, String(score.correct), 'paper')}
+              {stat(s.grammar.statTime, time, 'paper')}
+              {stat(s.grammar.statStreak, `🔥 ${streak}`, 'b')}
+            </View>
+
+            {cumulativePct !== null ? (
+              <BrutalBox boxStyle={styles.brutalProgressBox}>
+                <SegmentBar segments={8} filled={segmentsFilled(cumulativePct, 8)} />
+                <Text style={[styles.brutalStatLabel, { color: g.ink }]}>{s.grammar.progressChange(prevPct, cumulativePct)}</Text>
+                <Text testID="grammar-lesson-percent" style={[styles.brutalStatLabel, { color: g.mu }]}>
+                  {s.grammar.lessonPercent(cumulativePct)}
+                </Text>
+              </BrutalBox>
+            ) : null}
+
+            {miss ? (
+              <BrutalBox testID="grammar-practice-this" boxStyle={styles.brutalProgressBox}>
+                <Text style={[styles.brutalStatLabel, { color: g.mu }]}>{s.grammar.practiceThis}</Text>
+                <Text style={[styles.brutalMiss, { color: g.ink }]}>
+                  {missAt >= 0 ? miss.sentence.slice(0, missAt) : miss.sentence}
+                  {missAt >= 0 ? (
+                    <Text style={{ backgroundColor: g.b, color: g.onFill }}>{miss.highlight}</Text>
+                  ) : null}
+                  {missAt >= 0 ? miss.sentence.slice(missAt + miss.highlight.length) : ''}
+                </Text>
+              </BrutalBox>
+            ) : null}
+
+            {next ? (
+              <BrutalBox
+                testID="grammar-next-topic"
+                fill="a"
+                style={styles.brutalBtnWrap}
+                boxStyle={styles.brutalBtn}
+                onPress={() => router.replace(`/grammar/${next.id}` as never)}
+              >
+                <Text style={[styles.brutalBtnText, { color: g.onFill }]}>{s.grammar.nextTopic} →</Text>
+              </BrutalBox>
+            ) : null}
+            <BrutalBox style={styles.brutalBtnWrap} boxStyle={styles.brutalBtn} onPress={() => setPhase('lesson')}>
+              <Text style={[styles.brutalBtnText, { color: g.ink }]}>{s.grammar.backToRule}</Text>
+            </BrutalBox>
+            {drillKind === 'transform' && kindCounts.transform > TRANSFORM_ROUND_SIZE ? (
+              <BrutalBox
+                testID="grammar-more-round"
+                fill="a"
+                style={styles.brutalBtnWrap}
+                boxStyle={styles.brutalBtn}
+                onPress={() => {
+                  setScore(null);
+                  setPhase('drill');
+                }}
+              >
+                <Text style={[styles.brutalBtnText, { color: g.onFill }]}>{s.grammar.moreRound(TRANSFORM_ROUND_SIZE)}</Text>
+              </BrutalBox>
+            ) : null}
+            <Pressable
+              testID="grammar-practice-again"
+              style={styles.ghostBtn}
+              onPress={() => {
+                setScore(null);
+                setPhase('drill');
+              }}
+            >
+              <Text style={[styles.brutalUnderline, { color: g.ink }]}>{s.grammar.oneMoreRound}</Text>
+            </Pressable>
+            <Pressable style={styles.ghostBtn} onPress={() => router.back()}>
+              <Text style={[styles.ghostBtnText, { color: g.mu }]}>{s.grammar.backToSyllabus}</Text>
+            </Pressable>
+          </ScrollView>
+        </View>
+      );
+    }
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
@@ -392,7 +552,7 @@ export default function GrammarLessonScreen() {
       {header}
       <ScrollView
         ref={scrollRef}
-        contentContainerStyle={styles.body}
+        contentContainerStyle={[styles.body, g.brutal && styles.brutalPad]}
         onScroll={(e) => setScrollY(String(topicId), e.nativeEvent.contentOffset.y)}
         scrollEventThrottle={100}
         onContentSizeChange={() => scrollRef.current?.scrollTo({ y: getScrollY(String(topicId)), animated: false })}
@@ -401,31 +561,31 @@ export default function GrammarLessonScreen() {
           <>
             {/* LECKE-SEMA 1+3: a body-blokkok váltják a rule/more prózát, a
                 lesson.speak felolvasása egyetlen play<->stop gombbal. */}
-            <Text style={[styles.sectionLabel, { color: colors.tint }]}>{s.grammar.ruleLabel}</Text>
+            <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.ruleLabel}</Text>
             <Pressable testID="speakToggle" style={styles.readRow} onPress={toggleLessonSpeech} hitSlop={10}>
               <Text style={styles.speak}>{speaking ? '⏹' : '🔊'}</Text>
-              <Text style={[styles.readLabel, { color: colors.tint }]}>{s.grammar.readAloud}</Text>
+              <Text style={[styles.readLabel, { color: accentText }]}>{s.grammar.readAloud}</Text>
             </Pressable>
             <LessonBody blocks={lesson.body} contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'} learnedLang={learnedLang} />
           </>
         ) : (
           <>
-            <Text style={[styles.sectionLabel, { color: colors.tint }]}>{s.grammar.ruleLabel}</Text>
-            <View style={[styles.card, { backgroundColor: colors.card }]}>
+            <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.ruleLabel}</Text>
+            <Card classicStyle={styles.card}>
               <Text style={[styles.ruleText, { color: colors.text }]}>{ruleText}</Text>
               {/* FB216: a hosszú magyarázatot fel is olvassa, a benne lévő spanyol
                   példákat spanyol hangon (lib/mixedSpeech.ts). */}
               <Pressable testID="grammar-read-rule" style={styles.readRow} onPress={() => readAloud(ruleText)} hitSlop={10}>
                 <Text style={styles.speak}>🔊</Text>
-                <Text style={[styles.readLabel, { color: colors.tint }]}>{s.grammar.readAloud}</Text>
+                <Text style={[styles.readLabel, { color: accentText }]}>{s.grammar.readAloud}</Text>
               </Pressable>
-            </View>
+            </Card>
           </>
         )}
 
-        <Text style={[styles.sectionLabel, { color: colors.tint }]}>{s.grammar.examplesLabel}</Text>
+        <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.examplesLabel}</Text>
         {worked.map((w, i) => (
-          <View key={i} style={[styles.card, { backgroundColor: colors.card }]}>
+          <Card key={i} classicStyle={styles.card}>
             <View style={styles.exampleRow}>
               <GlossText
                 text={w.filled}
@@ -438,13 +598,13 @@ export default function GrammarLessonScreen() {
               </Pressable>
             </View>
             <Text style={[styles.exampleWhy, { color: colors.tabIconDefault }]}>{w.why}</Text>
-          </View>
+          </Card>
         ))}
 
         {'more' in lesson && lesson.more ? (
           <>
-            <Text style={[styles.sectionLabel, { color: colors.tint }]}>{s.grammar.exceptionsLabel}</Text>
-            <View style={[styles.card, { backgroundColor: colors.card }]}>
+            <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.exceptionsLabel}</Text>
+            <Card classicStyle={styles.card}>
               <MoreBlocks more={lesson.more} contentLang={contentLang} color={colors.text} />
               <Pressable
                 testID="grammar-read-more"
@@ -453,9 +613,9 @@ export default function GrammarLessonScreen() {
                 hitSlop={10}
               >
                 <Text style={styles.speak}>🔊</Text>
-                <Text style={[styles.readLabel, { color: colors.tint }]}>{s.grammar.readAloud}</Text>
+                <Text style={[styles.readLabel, { color: accentText }]}>{s.grammar.readAloud}</Text>
               </Pressable>
-            </View>
+            </Card>
           </>
         ) : null}
 
@@ -467,16 +627,9 @@ export default function GrammarLessonScreen() {
           const kindPct = lessonPercent(kindAnswered[kind] ?? 0, kindCorrect[kind] ?? 0);
           return (
             <View key={kind}>
-              <Pressable
-                testID={`grammar-start-${kind}`}
-                style={[styles.btn, i === 0 && styles.startBtn, { backgroundColor: colors.tint }]}
-                onPress={() => {
-                  setDrillKind(kind);
-                  setPhase('drill');
-                }}
-              >
-                <Text style={[styles.btnText, styles.btnTextOnTint]}>
-                  {kind === 'choice'
+              {lessonButton(
+                `grammar-start-${kind}`,
+                kind === 'choice'
                     ? s.grammar.startChoice(kindCounts.choice)
                     : kind === 'match'
                       ? s.grammar.startMatch(kindCounts.match)
@@ -486,9 +639,14 @@ export default function GrammarLessonScreen() {
                           ? s.grammar.startWhy(kindCounts.why)
                           : kindCounts.transform > TRANSFORM_ROUND_SIZE
                             ? s.grammar.startTransformRound(TRANSFORM_ROUND_SIZE, kindCounts.transform)
-                            : s.grammar.startTransform(kindCounts.transform)}
-                </Text>
-              </Pressable>
+                            : s.grammar.startTransform(kindCounts.transform),
+                () => {
+                  setDrillKind(kind);
+                  setPhase('drill');
+                },
+                true,
+                i === 0
+              )}
               {kindPct !== null ? (
                 <Text testID={`grammar-kind-percent-${kind}`} style={[styles.kindPercentNote, { color: colors.tabIconDefault }]}>
                   {s.grammar.lessonPercent(kindPct)}
@@ -502,22 +660,22 @@ export default function GrammarLessonScreen() {
             a conjugation table; outlined, to read as an optional extra next
             to the fajtánkénti drill gombok above. */}
         {tableDeckCells.length > 0 ? (
-          <Pressable
-            testID="grammar-start-tabledeck"
-            style={[styles.btn, availableKinds.length === 0 && styles.startBtn, { borderWidth: 1.5, borderColor: colors.tint }]}
-            onPress={() => router.push(`/grammar/deck/${topicId}` as never)}
-          >
-            <Text style={[styles.btnText, { color: colors.tint }]}>{s.grammar.practiceTable(tableDeckCells.length)}</Text>
-          </Pressable>
+          lessonButton(
+            'grammar-start-tabledeck',
+            s.grammar.practiceTable(tableDeckCells.length),
+            () => router.push(`/grammar/deck/${topicId}` as never),
+            false,
+            availableKinds.length === 0
+          )
         ) : wordDeckCells.length >= WORD_DECK_MIN_CARDS ? (
           // FB375: same deck screen, the word-source variant (D5/a).
-          <Pressable
-            testID="grammar-start-worddeck"
-            style={[styles.btn, availableKinds.length === 0 && styles.startBtn, { borderWidth: 1.5, borderColor: colors.tint }]}
-            onPress={() => router.push(`/grammar/deck/${topicId}` as never)}
-          >
-            <Text style={[styles.btnText, { color: colors.tint }]}>{s.grammar.practiceWords(wordDeckCells.length)}</Text>
-          </Pressable>
+          lessonButton(
+            'grammar-start-worddeck',
+            s.grammar.practiceWords(wordDeckCells.length),
+            () => router.push(`/grammar/deck/${topicId}` as never),
+            false,
+            availableKinds.length === 0
+          )
         ) : null}
       </ScrollView>
       <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:lesson`} />
@@ -565,6 +723,27 @@ const styles = StyleSheet.create({
   btnText: { fontSize: 16, fontWeight: '700' },
   startBtn: { marginTop: 18 },
   btnTextOnTint: { color: '#FFFFFF' },
+  // NY23: neo-brutalista gombok, cím (nagybetűs, 500 súly).
+  // A chat-gomb (FAB) alól is kigördül az utolsó gomb.
+  brutalPad: { paddingBottom: 130 },
+  brutalBack: { paddingVertical: 4, paddingHorizontal: 10 },
+  brutalTitle: { fontWeight: '500', textTransform: 'uppercase' },
+  brutalBtnWrap: { marginTop: 10, alignSelf: 'stretch' },
+  brutalBtn: { paddingVertical: 14, alignItems: 'center' },
+  brutalBtnText: { fontSize: 16, fontWeight: '500', textTransform: 'uppercase' },
+  brutalDoneBody: { padding: 16, paddingBottom: 60, gap: 12 },
+  brutalScoreBox: { padding: 24, alignItems: 'center', gap: 6 },
+  brutalScore: { fontSize: 56, fontWeight: '500' },
+  brutalNote: { fontSize: 13, fontWeight: '500', textAlign: 'center' },
+  brutalComboPos: { position: 'absolute', top: -14, right: -8 },
+  brutalStats: { flexDirection: 'row', gap: 10 },
+  brutalStatWrap: { flex: 1 },
+  brutalStat: { paddingVertical: 12, alignItems: 'center', gap: 2 },
+  brutalStatValue: { fontSize: 20, fontWeight: '500' },
+  brutalStatLabel: { fontSize: 11, fontWeight: '500', textTransform: 'uppercase' },
+  brutalProgressBox: { padding: 14, gap: 8 },
+  brutalMiss: { fontSize: 18, lineHeight: 26, fontWeight: '500' },
+  brutalUnderline: { fontSize: 14, fontWeight: '500', textTransform: 'uppercase', textDecorationLine: 'underline' },
   ghostBtn: { marginTop: 12, padding: 8 },
   ghostBtnText: { fontSize: 14 },
   empty: { fontSize: 15, textAlign: 'center', marginTop: 60, paddingHorizontal: 30, lineHeight: 22 },

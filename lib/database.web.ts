@@ -7,6 +7,7 @@ import { addDays, type Sm2Card } from './sm2';
 import { pcicItemsForLevel, type PcicLevel, type PcicViewLevel } from '@/data/pcic';
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
 import type { MistakeBatchRow } from './mistakes/deck';
+import { DEFAULT_GRAMMAR_PALETTE, isGrammarPaletteId, type GrammarPaletteId } from '@/constants/GrammarPalettes';
 
 export interface DB {
   getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
@@ -16,6 +17,8 @@ export interface DB {
   claimDailyGreeting(): Promise<boolean>;
   getStatusBarTint(): Promise<number>;
   setStatusBarTint(index: number): Promise<void>;
+  getGrammarPalette(): Promise<GrammarPaletteId>;
+  setGrammarPalette(id: GrammarPaletteId): Promise<void>;
   // PLAN-play 12. lépés: napi streak-írás visszakerült, a PCIC-értékelés hívja.
   updateStreak(): Promise<void>;
   addToSpellingList(wordId: number): Promise<void>;
@@ -134,6 +137,13 @@ class MemoryDB implements DB {
 
   async getStatusBarTint(): Promise<number> { return this.statusBarTint; }
   async setStatusBarTint(index: number): Promise<void> { this.statusBarTint = index; }
+
+  // NY11: app-wide color palette (memory mirror of user_meta.grammar_palette).
+  private grammarPalette: GrammarPaletteId = DEFAULT_GRAMMAR_PALETTE;
+
+  async getGrammarPalette(): Promise<GrammarPaletteId> { return this.grammarPalette; }
+  async setGrammarPalette(id: GrammarPaletteId): Promise<void> { this.grammarPalette = id; }
+
   // FB39: spelling-practice list, per-pair map like the other pair-scoped state.
   // Web doesn't survive reload, known, fine (same limit as wordsOnlyMap etc).
   private spellingLists: Map<string, Map<number, { step: number; due: string }>> = new Map();
@@ -460,7 +470,7 @@ class MemoryDB implements DB {
         pcic_spelling_list,
         streak: [{ id: 1, ...this.streak }],
         user_level: [...this.userLevels].map(([pair, l]) => ({ pair, ...l })),
-        user_meta: [{ id: 1, user_id: this.meta.userId, first_use_date: this.meta.firstUseDate, last_sync_date: this.meta.lastSyncDate }],
+        user_meta: [{ id: 1, user_id: this.meta.userId, first_use_date: this.meta.firstUseDate, last_sync_date: this.meta.lastSyncDate, grammar_palette: this.grammarPalette }],
       },
     };
   }
@@ -519,6 +529,7 @@ class MemoryDB implements DB {
     this.userLevels = new Map(t.user_level.map((r: any) => [r.pair, { level: r.level, correct_streak: r.correct_streak, mistakes_in_window: r.mistakes_in_window, fail_streak: r.fail_streak }]));
     const um = t.user_meta[0];
     if (um) this.meta = { userId: um.user_id, firstUseDate: um.first_use_date, lastSyncDate: um.last_sync_date };
+    this.grammarPalette = isGrammarPaletteId(um?.grammar_palette) ? um.grammar_palette : DEFAULT_GRAMMAR_PALETTE;
     this.applyWordMerges();
   }
 
