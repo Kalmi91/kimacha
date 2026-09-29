@@ -1,0 +1,533 @@
+{
+  "schema": 2,
+  "topic": "articles",
+  "level": "A1",
+  "title": {
+    "hu": "Névelők (a / an / the)",
+    "en": "Articles (a / an / the)",
+    "es": "Los artículos (a / an / the)",
+    "de": "Artikel (a / an / the)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Az angolban két fajta névelő van. Az „a” és az „an” a spanyol „un / una” (egy, valamilyen), a „the” pedig az „el / la / los / las” (az a bizonyos). Az angol névelő nem változik nemben és számban: ugyanaz a „the” áll hímnemű, nőnemű, egyes és többes számú főnév előtt.",
+        "en": "English has two kinds of articles. “A” and “an” are Spanish un / una (one, some); “the” is el / la / los / las (that particular one). English articles never change for gender or number: the same “the” goes before masculine, feminine, singular and plural nouns.",
+        "es": "El inglés tiene dos tipos de artículos. «A» y «an» son un / una; «the» es el / la / los / las. Los artículos del inglés no cambian por género ni por número: el mismo «the» va delante de nombres masculinos, femeninos, singulares y plurales.",
+        "de": "Das Englische hat zwei Arten von Artikeln. „A“ und „an“ entsprechen dem spanischen un / una (ein, irgendein), „the“ entspricht el / la / los / las (der bestimmte). Die englischen Artikel ändern sich nicht nach Geschlecht und Zahl: Dasselbe „the“ steht vor männlichen, weiblichen, singularen und pluralen Nomen."
+      }
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "a / an és the",
+        "en": "a / an and the",
+        "es": "a / an y the",
+        "de": "a / an und the"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "a / an (un / una): egyes számú, megszámlálható főnév előtt áll, ha valami új, vagy bármelyik a sok közül. Többes számú és megszámlálhatatlan főnév előtt nincs (dogs, music).",
+            "en": "a / an (un / una): goes before a singular, countable noun when it is new, or just one of many. Plural and uncountable nouns take no a / an (dogs, music).",
+            "es": "a / an (un / una): va delante de un nombre contable en singular cuando es nuevo o uno cualquiera de varios. Los nombres en plural y los incontables no llevan a / an (dogs, music).",
+            "de": "a / an (un / una): steht vor einem zählbaren Nomen im Singular, wenn es neu oder irgendeines von vielen ist. Vor Plural und unzählbaren Nomen steht kein a / an (dogs, music)."
+          },
+          "examples": [
+            {
+              "es": "I have a dog.",
+              "tr": {
+                "hu": "Van egy kutyám.",
+                "en": "I have a dog.",
+                "es": "Tengo un perro.",
+                "de": "Ich habe einen Hund."
+              }
+            },
+            {
+              "es": "She eats an apple.",
+              "tr": {
+                "hu": "Eszik egy almát.",
+                "en": "She eats an apple.",
+                "es": "Ella come una manzana.",
+                "de": "Sie isst einen Apfel."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "a vagy an: a HANGZÁS dönt, nem a betű. Magánhangzó-hang előtt „an” (an apple, an egg, an hour: a h néma), mássalhangzó-hang előtt „a” (a book, a university: az u itt „jú”). Mindig a közvetlenül következő szó számít: an old car, de a big car.",
+            "en": "a or an: the SOUND decides, not the letter. Before a vowel sound use “an” (an apple, an egg, an hour: the h is silent); before a consonant sound use “a” (a book, a university: the u sounds like “you”). The very next word counts: an old car, but a big car.",
+            "es": "a o an: decide el SONIDO, no la letra. Delante de un sonido vocálico va «an» (an apple, an egg, an hour: la h es muda); delante de un sonido consonántico va «a» (a book, a university: la u suena «yu»). Cuenta la palabra que sigue justo después: an old car, pero a big car.",
+            "de": "a oder an: der LAUT entscheidet, nicht der Buchstabe. Vor einem Vokallaut steht „an“ (an apple, an egg, an hour: das h ist stumm), vor einem Konsonantenlaut „a“ (a book, a university: das u klingt wie „ju“). Es zählt das unmittelbar folgende Wort: an old car, aber a big car."
+          },
+          "examples": [
+            {
+              "es": "It is a university.",
+              "tr": {
+                "hu": "Ez egy egyetem.",
+                "en": "It is a university.",
+                "es": "Es una universidad.",
+                "de": "Es ist eine Universität."
+              }
+            },
+            {
+              "es": "We wait for an hour.",
+              "tr": {
+                "hu": "Egy órát várunk.",
+                "en": "We wait for an hour.",
+                "es": "Esperamos una hora.",
+                "de": "Wir warten eine Stunde."
+              }
+            },
+            {
+              "es": "She has an old car.",
+              "tr": {
+                "hu": "Van egy régi autója.",
+                "en": "She has an old car.",
+                "es": "Ella tiene un carro viejo.",
+                "de": "Sie hat ein altes Auto."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "the (el / la / los / las): arra a konkrét dologra mutat, amelyről már szó volt, vagy amelyből csak egy létezik (the sun, the moon). Egyetlen alak van minden nemre és számra.",
+            "en": "the (el / la / los / las): points to a specific thing that was already mentioned, or that is the only one there is (the sun, the moon). One form for every gender and number.",
+            "es": "the (el / la / los / las): señala algo concreto de lo que ya se habló, o que es el único que existe (the sun, the moon). Una sola forma para todo género y número.",
+            "de": "the (el / la / los / las): zeigt auf etwas Bestimmtes, von dem schon die Rede war oder das es nur einmal gibt (the sun, the moon). Eine einzige Form für jedes Geschlecht und jede Zahl."
+          },
+          "examples": [
+            {
+              "es": "I have a dog. The dog is big.",
+              "tr": {
+                "hu": "Van egy kutyám. A kutya nagy.",
+                "en": "I have a dog. The dog is big.",
+                "es": "Tengo un perro. El perro es grande.",
+                "de": "Ich habe einen Hund. Der Hund ist groß."
+              }
+            },
+            {
+              "es": "The sun is hot.",
+              "tr": {
+                "hu": "A nap forró.",
+                "en": "The sun is hot.",
+                "es": "El sol está caliente.",
+                "de": "Die Sonne ist heiß."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Vigyázat: az angolban a foglalkozás elé mindig kell az „a / an”. Spanyolul névelő nélkül mondod („Es doctora”), angolul nem: „She is a doctor”, nem „She is doctor”.",
+        "en": "Careful: in English a job always takes “a / an”. Spanish says it without an article (“Es doctora”); English does not: “She is a doctor”, not “She is doctor”.",
+        "es": "Cuidado: en inglés la profesión siempre lleva «a / an». En español se dice sin artículo («Es doctora»); en inglés no: «She is a doctor», no «She is doctor».",
+        "de": "Vorsicht: Im Englischen steht vor einem Beruf immer „a / an“. Im Spanischen sagt man es ohne Artikel („Es doctora“), im Englischen nicht: „She is a doctor“, nicht „She is doctor“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Vigyázat: az általános értelemben álló főnév elé nem kell a „the”. Spanyolul „Me gusta la música”, angolul: „I like music”, nem „I like the music”. Ugyanígy: „Dogs are nice”, nem „The dogs are nice” (ha általában a kutyákról beszélsz).",
+        "en": "Careful: a noun used in a general sense takes no “the”. Spanish says “Me gusta la música”; English says “I like music”, not “I like the music”. Likewise “Dogs are nice”, not “The dogs are nice” (when you mean dogs in general).",
+        "es": "Cuidado: un nombre usado en sentido general no lleva «the». En español se dice «Me gusta la música»; en inglés: «I like music», no «I like the music». Igual: «Dogs are nice», no «The dogs are nice» (si hablas de los perros en general).",
+        "de": "Vorsicht: Ein Nomen im allgemeinen Sinn steht ohne „the“. Im Spanischen sagt man „Me gusta la música“, im Englischen: „I like music“, nicht „I like the music“. Ebenso: „Dogs are nice“, nicht „The dogs are nice“ (wenn du Hunde allgemein meinst)."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Az angol névelők: «a», «an» és «the». Az «a» és az «an» a spanyol un és una, a «the» pedig az el, la, los és las. Az «a» vagy «an» választásánál a hang dönt, nem a betű. Mondd így: «an apple», «an egg», «an hour», de «a book» és «a university». A «the» arra a dologra mutat, amiről már szó volt, vagy amiből csak egy van: «the sun». Figyelem: a foglalkozás elé kell névelő: «She is a doctor». Általános főnév elé nem kell a «the»: «I like music».",
+    "en": "The English articles are «a», «an» and «the». «A» and «an» are the Spanish un and una, and «the» is el, la, los and las. To choose between «a» and «an», the sound decides, not the letter. Say it like this: «an apple», «an egg», «an hour», but «a book» and «a university». «The» points to a thing that was already mentioned, or that exists only once: «the sun». Careful: a job needs an article: «She is a doctor». A general noun needs no «the»: «I like music».",
+    "es": "Los artículos del inglés son «a», «an» y «the». «A» y «an» son un y una, y «the» es el, la, los y las. Para elegir entre «a» y «an» decide el sonido, no la letra. Dilo así: «an apple», «an egg», «an hour», pero «a book» y «a university». «The» señala algo de lo que ya se habló, o que existe una sola vez: «the sun». Cuidado: la profesión lleva artículo: «She is a doctor». Un nombre general no lleva «the»: «I like music».",
+    "de": "Die englischen Artikel sind «a», «an» und «the». «A» und «an» sind das spanische un und una, «the» ist el, la, los und las. Ob «a» oder «an», entscheidet der Laut, nicht der Buchstabe. Sag es so: «an apple», «an egg», «an hour», aber «a book» und «a university». «The» zeigt auf etwas, von dem schon die Rede war oder das es nur einmal gibt: «the sun». Vorsicht: Vor einem Beruf steht ein Artikel: «She is a doctor». Vor einem allgemeinen Nomen steht kein «the»: «I like music»."
+  },
+  "glossary": [
+    {
+      "word": "university",
+      "gloss": {
+        "hu": "egyetem",
+        "en": "university",
+        "es": "universidad",
+        "de": "Universität"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "ar-01",
+      "sentence": "There is ___ egg in the bag.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az „egg” magánhangzó-hanggal kezdődik, ezért „an” kell: There is an egg in the bag.",
+        "en": "“Egg” starts with a vowel sound, so you need “an”: There is an egg in the bag.",
+        "es": "«Egg» empieza con un sonido vocálico, por eso va «an»: There is an egg in the bag.",
+        "de": "„Egg“ beginnt mit einem Vokallaut, deshalb steht „an“: There is an egg in the bag."
+      },
+      "wrong": {
+        "a": {
+          "hu": "Az „a” mássalhangzó-hang előtt áll (a book); az „egg” magánhangzóval kezdődik: an egg.",
+          "en": "“A” goes before a consonant sound (a book); “egg” starts with a vowel: an egg.",
+          "es": "«A» va delante de un sonido consonántico (a book); «egg» empieza con vocal: an egg.",
+          "de": "„A“ steht vor einem Konsonantenlaut (a book); „egg“ beginnt mit einem Vokal: an egg."
+        },
+        "the": {
+          "hu": "A „the” már ismert vagy egyetlen dologra mutat; itt egy bármilyen tojásról van szó, ezért „an”.",
+          "en": "“The” points to something already known or one of a kind; here it is just any egg, so “an”.",
+          "es": "«The» señala algo ya conocido o único; aquí es un huevo cualquiera, por eso «an».",
+          "de": "„The“ zeigt auf etwas Bekanntes oder Einzigartiges; hier ist es irgendein Ei, deshalb „an“."
+        }
+      },
+      "examples": [
+        "I eat an egg.",
+        "She has an orange."
+      ]
+    },
+    {
+      "id": "ar-02",
+      "sentence": "I wait for ___ hour.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az „hour” h-ja néma, a szó magánhangzó-hanggal indul, ezért „an”: I wait for an hour.",
+        "en": "The h in “hour” is silent, so the word starts with a vowel sound: I wait for an hour.",
+        "es": "La h de «hour» es muda, así que la palabra empieza con sonido vocálico: I wait for an hour.",
+        "de": "Das h in „hour“ ist stumm, das Wort beginnt also mit einem Vokallaut: I wait for an hour."
+      },
+      "wrong": {
+        "a": {
+          "hu": "Betűre mássalhangzó, hangra magánhangzó: a h néma, ezért nem „a” kell, hanem „an”.",
+          "en": "It is a consonant by letter but a vowel by sound: the h is silent, so it is “an”, not “a”.",
+          "es": "Por letra es consonante, pero por sonido es vocal: la h es muda, así que va «an», no «a».",
+          "de": "Dem Buchstaben nach ein Konsonant, dem Laut nach ein Vokal: das h ist stumm, also „an“, nicht „a“."
+        },
+        "the": {
+          "hu": "Itt bármilyen egy óra időről van szó, nem egy már ismert órányiról, ezért nem „the”: an hour.",
+          "en": "This is just any one hour, not a specific hour we already know, so not “the”: an hour.",
+          "es": "Aquí es una hora cualquiera, no una hora concreta ya conocida, así que no «the»: an hour.",
+          "de": "Hier geht es um irgendeine Stunde, nicht um eine bereits bekannte, also nicht „the“: an hour."
+        }
+      },
+      "examples": [
+        "I sleep for an hour.",
+        "It is an hour from here."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "ar-03",
+      "es": "She is a doctor.",
+      "target": "a",
+      "tr": {
+        "hu": "Ő orvos.",
+        "en": "She is a doctor.",
+        "es": "Ella es doctora.",
+        "de": "Sie ist Ärztin."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "foglalkozás: a foglalkozás elé a / an kell",
+            "en": "job: a job takes a / an",
+            "es": "profesión: la profesión lleva a / an",
+            "de": "Beruf: vor einem Beruf steht a / an"
+          }
+        },
+        {
+          "text": {
+            "hu": "egyetlen létező dolog: the",
+            "en": "the only one that exists: the",
+            "es": "lo único que existe: the",
+            "de": "das einzige seiner Art: the"
+          },
+          "wrong": {
+            "hu": "Nem az egyetlen orvosról van szó, hanem arról, mi ő: a foglalkozásáról. Ott „a doctor” áll, nem „the doctor”.",
+            "en": "The sentence is not about the only doctor in the world, but about what she is: her job. That takes “a doctor”, not “the doctor”.",
+            "es": "La oración no habla del único doctor que existe, sino de qué es ella: su profesión. Eso lleva «a doctor», no «the doctor».",
+            "de": "Der Satz handelt nicht vom einzigen Arzt der Welt, sondern davon, was sie ist: ihr Beruf. Dafür steht „a doctor“, nicht „the doctor“."
+          }
+        },
+        {
+          "text": {
+            "hu": "általános értelem: névelő nélkül",
+            "en": "general sense: no article",
+            "es": "sentido general: sin artículo",
+            "de": "allgemeiner Sinn: ohne Artikel"
+          },
+          "wrong": {
+            "hu": "Itt nem általánosságról van szó, hanem arról, mi ő. A foglalkozás elé kell az „a / an”; a spanyolban elmarad („Es doctora”), az angolban nem.",
+            "en": "This is not a general statement; it says what she is. A job needs “a / an”; Spanish drops it (“Es doctora”), English does not.",
+            "es": "Esto no es una afirmación general; dice qué es ella. La profesión necesita «a / an»; el español lo omite («Es doctora»), el inglés no.",
+            "de": "Das ist keine allgemeine Aussage, sondern sagt, was sie ist. Vor einem Beruf steht „a / an“; das Spanische lässt ihn weg („Es doctora“), das Englische nicht."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "ar-04",
+      "sentence": "There is ___ university in my city.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „university” u-ja „jú” hangot ad, ami mássalhangzó-hang, ezért „a”: There is a university in my city.",
+        "en": "The u in “university” sounds like “you”, a consonant sound, so “a”: There is a university in my city.",
+        "es": "La u de «university» suena «yu», un sonido consonántico, por eso «a»: There is a university in my city.",
+        "de": "Das u in „university“ klingt wie „ju“, ein Konsonantenlaut, deshalb „a“: There is a university in my city."
+      },
+      "wrong": {
+        "an": {
+          "hu": "Betűre magánhangzó, de a hang „jú”, azaz mássalhangzó-hang: a university, nem „an university”.",
+          "en": "It is a vowel by letter, but the sound is “you”, a consonant sound: a university, not “an university”.",
+          "es": "Por letra es vocal, pero el sonido es «yu», consonántico: a university, no «an university».",
+          "de": "Dem Buchstaben nach ein Vokal, aber der Laut ist „ju“, ein Konsonantenlaut: a university, nicht „an university“."
+        },
+        "the": {
+          "hu": "Itt egy bármelyik egyetemről van szó, nem egy már ismertről, ezért „a university”.",
+          "en": "This is just any university, not one we already know, so “a university”.",
+          "es": "Aquí es una universidad cualquiera, no una ya conocida, por eso «a university».",
+          "de": "Hier geht es um irgendeine Universität, nicht um eine bereits bekannte, deshalb „a university“."
+        }
+      },
+      "examples": [
+        "It is a big university.",
+        "She is a student at a university."
+      ]
+    },
+    {
+      "id": "ar-05",
+      "sentence": "I have a dog. ___ dog is big.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A kutyáról már szó volt (a dog), ezért másodszorra „the dog”: I have a dog. The dog is big.",
+        "en": "The dog was already mentioned (a dog), so the second time it is “the dog”: I have a dog. The dog is big.",
+        "es": "Del perro ya se habló (a dog), por eso la segunda vez es «the dog»: I have a dog. The dog is big.",
+        "de": "Vom Hund war schon die Rede (a dog), deshalb heißt es beim zweiten Mal „the dog“: I have a dog. The dog is big."
+      },
+      "wrong": {
+        "a": {
+          "hu": "Az „a” új, még nem említett dolog előtt áll; a kutyát az előző mondatban már bemutattuk.",
+          "en": "“A” goes before something new, not yet mentioned; the dog was introduced in the previous sentence.",
+          "es": "«A» va delante de algo nuevo, aún no mencionado; el perro ya se presentó en la oración anterior.",
+          "de": "„A“ steht vor etwas Neuem, noch nicht Erwähntem; der Hund wurde im vorigen Satz schon eingeführt."
+        },
+        "an": {
+          "hu": "Az „an” magánhangzó-hang előtt állna, és új dolgot jelölne; a „dog” mássalhangzóval indul, és már említettük: the dog.",
+          "en": "“An” goes before a vowel sound and marks something new; “dog” starts with a consonant and was already mentioned: the dog.",
+          "es": "«An» va delante de un sonido vocálico y marca algo nuevo; «dog» empieza con consonante y ya se mencionó: the dog.",
+          "de": "„An“ steht vor einem Vokallaut und bezeichnet etwas Neues; „dog“ beginnt mit einem Konsonanten und wurde schon erwähnt: the dog."
+        }
+      },
+      "examples": [
+        "I see a cat. The cat is small.",
+        "She has a car. The car is red."
+      ]
+    },
+    {
+      "id": "ar-06",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Ella es doctora.",
+          "en": "She is a doctor."
+        },
+        {
+          "es": "Tengo un huevo.",
+          "en": "I have an egg."
+        },
+        {
+          "es": "Me gusta la música.",
+          "en": "I like music."
+        },
+        {
+          "es": "Él es estudiante.",
+          "en": "He is a student."
+        },
+        {
+          "es": "El perro es grande.",
+          "en": "The dog is big."
+        },
+        {
+          "es": "Ella tiene un paraguas.",
+          "en": "She has an umbrella."
+        }
+      ]
+    },
+    {
+      "id": "ar-07",
+      "sentence": "My father is ___.",
+      "options": [
+        "teacher",
+        "a teacher",
+        "an teacher"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A foglalkozás elé kell az „a / an”. Spanyolul névelő nélkül mondod („Es maestro”), angolul: My father is a teacher.",
+        "en": "A job needs “a / an”. Spanish says it without an article (“Es maestro”); English says: My father is a teacher.",
+        "es": "La profesión necesita «a / an». En español se dice sin artículo («Es maestro»); en inglés: My father is a teacher.",
+        "de": "Vor einem Beruf steht „a / an“. Im Spanischen sagt man es ohne Artikel („Es maestro“), im Englischen: My father is a teacher."
+      },
+      "wrong": {
+        "teacher": {
+          "hu": "Névelő nélkül hiba, ez a tipikus spanyol átvétel („Es maestro”). Az angol a foglalkozás elé „a / an”-t kér.",
+          "en": "Without an article it is a mistake, the typical copy from Spanish (“Es maestro”). English wants “a / an” before a job.",
+          "es": "Sin artículo es un error, la copia típica del español («Es maestro»). El inglés pide «a / an» delante de la profesión.",
+          "de": "Ohne Artikel ist es ein Fehler, die typische Übernahme aus dem Spanischen („Es maestro“). Das Englische verlangt vor einem Beruf „a / an“."
+        },
+        "an teacher": {
+          "hu": "A „teacher” mássalhangzó-hanggal indul, ezért „a”, nem „an”.",
+          "en": "“Teacher” starts with a consonant sound, so “a”, not “an”.",
+          "es": "«Teacher» empieza con sonido consonántico, por eso «a», no «an».",
+          "de": "„Teacher“ beginnt mit einem Konsonantenlaut, deshalb „a“, nicht „an“."
+        }
+      },
+      "examples": [
+        "She is a nurse.",
+        "He is an engineer."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "ar-08",
+      "es": "The sun is hot.",
+      "target": "The",
+      "tr": {
+        "hu": "A nap forró.",
+        "en": "The sun is hot.",
+        "es": "El sol está caliente.",
+        "de": "Die Sonne ist heiß."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "foglalkozás: a / an",
+            "en": "job: a / an",
+            "es": "profesión: a / an",
+            "de": "Beruf: a / an"
+          },
+          "wrong": {
+            "hu": "A mondat nem azt mondja, mi valakinek a foglalkozása. A nap egy dolog, és csak egy van belőle: „the sun”.",
+            "en": "The sentence does not say what someone’s job is. The sun is a thing, and there is only one: “the sun”.",
+            "es": "La oración no dice cuál es la profesión de alguien. El sol es una cosa y solo hay uno: «the sun».",
+            "de": "Der Satz sagt nicht, was jemand beruflich ist. Die Sonne ist ein Ding, und es gibt nur eine: „the sun“."
+          }
+        },
+        {
+          "text": {
+            "hu": "egyetlen létező dolog: the",
+            "en": "the only one that exists: the",
+            "es": "lo único que existe: the",
+            "de": "das einzige seiner Art: the"
+          }
+        },
+        {
+          "text": {
+            "hu": "új, először említett dolog: a / an",
+            "en": "new, first-mentioned thing: a / an",
+            "es": "algo nuevo, mencionado por primera vez: a / an",
+            "de": "etwas Neues, zum ersten Mal Erwähntes: a / an"
+          },
+          "wrong": {
+            "hu": "A nap nem „valamelyik a sok közül”: csak egy nap van, ezért „the”, nem „a”.",
+            "en": "The sun is not “one of many”: there is only one sun, so “the”, not “a”.",
+            "es": "El sol no es «uno de tantos»: solo hay un sol, por eso «the», no «a».",
+            "de": "Die Sonne ist nicht „eine von vielen“: Es gibt nur eine Sonne, deshalb „the“, nicht „a“."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "ar-09",
+      "sentence": "I like tea and ___.",
+      "options": [
+        "the coffee",
+        "a coffee",
+        "coffee"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Általános értelemben névelő nélkül mondjuk: I like tea and coffee. A spanyol itt névelőt mond („el café”), az angol nem.",
+        "en": "In a general sense we use no article: I like tea and coffee. Spanish uses an article here (“el café”); English does not.",
+        "es": "En sentido general no se usa artículo: I like tea and coffee. El español usa artículo aquí («el café»); el inglés no.",
+        "de": "Im allgemeinen Sinn steht kein Artikel: I like tea and coffee. Das Spanische setzt hier einen Artikel („el café“), das Englische nicht."
+      },
+      "wrong": {
+        "the coffee": {
+          "hu": "A „the coffee” egy konkrét, már ismert kávéra mutatna; itt általában a kávéról van szó, ezért névelő nélkül.",
+          "en": "“The coffee” would point to one specific, known coffee; here it means coffee in general, so no article.",
+          "es": "«The coffee» señalaría un café concreto ya conocido; aquí se habla del café en general, por eso sin artículo.",
+          "de": "„The coffee“ würde auf einen bestimmten, bekannten Kaffee zeigen; hier geht es um Kaffee im Allgemeinen, also ohne Artikel."
+        },
+        "a coffee": {
+          "hu": "Az „a coffee” egy adag, egy csésze kávé; ha általában kedveled, a kávé névelő nélkül áll.",
+          "en": "“A coffee” is one cup of coffee; when you like it in general, coffee stands without an article.",
+          "es": "«A coffee» es una taza de café; cuando te gusta en general, coffee va sin artículo.",
+          "de": "„A coffee“ ist eine Tasse Kaffee; wenn man ihn allgemein mag, steht coffee ohne Artikel."
+        }
+      },
+      "examples": [
+        "I love music.",
+        "Dogs are nice."
+      ]
+    },
+    {
+      "id": "ar-10",
+      "sentence": "She has ___ old car.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A névelő a közvetlenül következő szóhoz igazodik: az „old” magánhangzó-hanggal indul, ezért „an”: She has an old car.",
+        "en": "The article follows the very next word: “old” starts with a vowel sound, so “an”: She has an old car.",
+        "es": "El artículo depende de la palabra que sigue justo después: «old» empieza con sonido vocálico, por eso «an»: She has an old car.",
+        "de": "Der Artikel richtet sich nach dem unmittelbar folgenden Wort: „old“ beginnt mit einem Vokallaut, deshalb „an“: She has an old car."
+      },
+      "wrong": {
+        "a": {
+          "hu": "A „car” valóban mássalhangzós, de a névelő közvetlenül az „old” előtt áll, az pedig magánhangzóval indul.",
+          "en": "“Car” is indeed a consonant, but the article sits right before “old”, which starts with a vowel.",
+          "es": "«Car» sí es consonante, pero el artículo va justo antes de «old», que empieza con vocal.",
+          "de": "„Car“ ist zwar ein Konsonant, aber der Artikel steht direkt vor „old“, und das beginnt mit einem Vokal."
+        },
+        "the": {
+          "hu": "A „the” már ismert vagy egyetlen dologra mutat; itt egy bármilyen régi autóról van szó.",
+          "en": "“The” points to something already known or one of a kind; here it is just any old car.",
+          "es": "«The» señala algo ya conocido o único; aquí es un carro viejo cualquiera.",
+          "de": "„The“ zeigt auf etwas Bekanntes oder Einzigartiges; hier geht es um irgendein altes Auto."
+        }
+      },
+      "examples": [
+        "He has an old phone.",
+        "It is an old house."
+      ]
+    }
+  ]
+}
