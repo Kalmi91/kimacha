@@ -4,6 +4,7 @@ import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
@@ -11,6 +12,7 @@ import { localDateString } from '@/lib/usageStats';
 import { hasLesson, syllabusTopic } from '@/lib/grammar/syllabus';
 import type { MistakesBatch } from '@/lib/mistakes/format';
 import { cardsForBatches, pickMistakeSession } from '@/lib/mistakes/deck';
+import { BrutalButton, Card } from '@/components/grammar/Brutal';
 
 // PLAN-hibaim.md 3. lépés ("Riport"): one row per loaded batch (newest
 // first, from getMistakeBatches()), a wrong-words list, the grammar patterns
@@ -20,6 +22,7 @@ import { cardsForBatches, pickMistakeSession } from '@/lib/mistakes/deck';
 export default function MistakesReportScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const s = t();
   const router = useRouter();
 
@@ -55,7 +58,7 @@ export default function MistakesReportScreen() {
       <Pressable onPress={() => router.back()} hitSlop={12}>
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
-      <Text style={[styles.title, { color: colors.text }]}>{s.mistakes.title}</Text>
+      <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.mistakes.title}</Text>
       <View style={styles.backSpacer} />
     </View>
   );
@@ -81,6 +84,14 @@ export default function MistakesReportScreen() {
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       {header}
       <ScrollView contentContainerStyle={styles.body}>
+        {g.brutal ? (
+          <BrutalButton
+            testID="mistakes-practice-btn"
+            fill="a"
+            label={s.mistakes.practice(dueCount)}
+            onPress={() => router.push('/mistakes/deck' as never)}
+          />
+        ) : (
         <Pressable
           testID="mistakes-practice-btn"
           style={[styles.practiceBtn, { backgroundColor: colors.tint }]}
@@ -88,11 +99,12 @@ export default function MistakesReportScreen() {
         >
           <Text style={styles.practiceBtnText}>{s.mistakes.practice(dueCount)}</Text>
         </Pressable>
+        )}
 
         {batches.map((batch) => {
           const doubtfulSentences = batch.sentences.filter((sn) => sn.doubtful);
           return (
-            <View key={batch.batchId} style={[styles.batchCard, { backgroundColor: colors.card }]}>
+            <Card key={batch.batchId} testID="mistakes-batch" classicStyle={styles.batchCard}>
               <Text style={[styles.batchTitle, { color: colors.text }]}>{batch.title}</Text>
               <Text style={[styles.batchDate, { color: colors.tabIconDefault }]}>{batch.date}</Text>
 
@@ -123,7 +135,7 @@ export default function MistakesReportScreen() {
                         hasLesson('es', lessonId) ? (
                           <Pressable
                             key={lessonId}
-                            style={[styles.lessonBtn, { borderColor: colors.tint }]}
+                            style={[styles.lessonBtn, { borderColor: colors.tint }, g.brutal && { borderColor: g.ink, borderWidth: 2, borderRadius: 0 }]}
                             onPress={() => router.push(`/grammar/${lessonId}` as never)}
                           >
                             <Text style={[styles.lessonBtnText, { color: colors.tint }]}>
@@ -156,7 +168,7 @@ export default function MistakesReportScreen() {
                   ))}
                 </View>
               )}
-            </View>
+            </Card>
           );
         })}
       </ScrollView>
@@ -170,6 +182,7 @@ const styles = StyleSheet.create({
   headerRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 12 },
   back: { fontSize: 22, width: 32 },
   backSpacer: { width: 32 },
+  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   title: { flex: 1, textAlign: 'center', fontSize: 17, fontWeight: '700' },
   emptyText: { fontSize: 15, textAlign: 'center', marginTop: 24 },
   body: { paddingBottom: 40, gap: 14 },

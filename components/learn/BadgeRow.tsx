@@ -1,6 +1,8 @@
 import { StyleSheet, View, Text } from 'react-native';
 
 import Colors from '@/constants/Colors';
+import { useGrammarColors } from '@/lib/grammarColors';
+import { BrutalBox, textOnFill, type BrutalFill } from '@/components/grammar/Brutal';
 
 type ColorScheme = (typeof Colors)['light'];
 
@@ -27,7 +29,25 @@ type Props = {
   colors: ColorScheme;
 };
 
+// NY19: brutalista palettán kis dobozok (a due = b, a done = a kitöltés).
+const TONE_FILL: Record<Tone, BrutalFill> = { default: 'paper', blue: 'b', green: 'paper', pink: 'a' };
+
 export default function BadgeRow({ items, colors }: Props) {
+  const g = useGrammarColors();
+  if (g.brutal) {
+    return (
+      <View style={styles.row}>
+        {items.map((item, i) => {
+          const fill = TONE_FILL[item.tone ?? 'default'];
+          return (
+            <BrutalBox key={i} fill={fill} offset={2} boxStyle={styles.brutalBadge}>
+              <Text style={[styles.brutalBadgeText, { color: textOnFill(g, fill) }]}>{item.label}</Text>
+            </BrutalBox>
+          );
+        })}
+      </View>
+    );
+  }
   return (
     <View style={styles.row}>
       {items.map((item, i) => (
@@ -56,4 +76,6 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '600',
   },
+  brutalBadge: { paddingHorizontal: 8, paddingVertical: 2, borderWidth: 2 },
+  brutalBadgeText: { fontSize: 13, fontWeight: '500' },
 });
