@@ -4,10 +4,12 @@ import { router } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import { useGrammarColors } from '@/lib/grammarColors';
 import { getDb } from '@/lib/database';
 import { t, setLanguage } from '@/lib/i18n';
 import { PCIC_VIEW_LEVELS, pcicItemsForLevel, pcicItemsForViewLevel, realLevelOfView, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import LevelRow from '@/components/LevelRow';
+import { BrutalButton } from '@/components/grammar/Brutal';
 
 // PLAN-ketiranyu 4. lépés (2026-09-28, jóváhagyott vázlat 1-5. pont): az
 // onboarding megint irányt kérdez, mint a régi (nem Kimacha Play) ág, de
@@ -20,6 +22,9 @@ import LevelRow from '@/components/LevelRow';
 export default function OnboardingScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
+  // NY19: brutalista palettán nagy, nagybetűs, ink színű cím.
+  const welcomeStyle = [styles.welcome, { color: colors.tint }, g.brutal && [styles.brutalWelcome, { color: g.ink }]];
   const s = t();
   const [step, setStep] = useState<'language' | 'welcome' | 'level'>('language');
   const [source, setSource] = useState<'en' | 'es'>('en');
@@ -48,9 +53,15 @@ export default function OnboardingScreen() {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         <View style={styles.content}>
-          <Text style={[styles.welcome, { color: colors.tint }]}>
+          <Text style={welcomeStyle}>
             Which language do you speak? / ¿Qué idioma hablas?
           </Text>
+          {g.brutal ? (
+            <View style={styles.langButtonGroup}>
+              <BrutalButton testID="onboarding-lang-en" fill="a" label="English" onPress={() => handleChooseLanguage('en')} style={styles.brutalBtn} />
+              <BrutalButton testID="onboarding-lang-es" fill="b" label="Español" onPress={() => handleChooseLanguage('es')} style={styles.brutalBtn} />
+            </View>
+          ) : (
           <View style={styles.langButtonGroup}>
             <Pressable style={[styles.startBtn, { backgroundColor: colors.tint }]} onPress={() => handleChooseLanguage('en')}>
               <Text style={styles.startBtnText}>English</Text>
@@ -59,6 +70,7 @@ export default function OnboardingScreen() {
               <Text style={styles.startBtnText}>Español</Text>
             </Pressable>
           </View>
+          )}
         </View>
       </View>
     );
@@ -83,7 +95,7 @@ export default function OnboardingScreen() {
     };
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
-        <Text style={[styles.welcome, { color: colors.tint }]}>{s.pcic.chooseLevel}</Text>
+        <Text style={welcomeStyle}>{s.pcic.chooseLevel}</Text>
         {levels.map((lvl) => {
           const total = pcicItemsForLevel(lvl).length;
           return (
@@ -110,10 +122,14 @@ export default function OnboardingScreen() {
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <View style={styles.content}>
-        <Text style={[styles.welcome, { color: colors.tint }]}>{s.onboarding.welcome}</Text>
+        <Text style={welcomeStyle}>{s.onboarding.welcome}</Text>
+        {g.brutal ? (
+          <BrutalButton testID="onboarding-start" label={s.onboarding.start} onPress={() => setStep('level')} style={styles.brutalBtn} />
+        ) : (
         <Pressable style={[styles.startBtn, { backgroundColor: colors.tint }]} onPress={() => setStep('level')}>
           <Text style={styles.startBtnText}>{s.onboarding.start}</Text>
         </Pressable>
+        )}
       </View>
     </View>
   );
@@ -135,6 +151,8 @@ const styles = StyleSheet.create({
     marginBottom: 32,
     paddingHorizontal: 8,
   },
+  brutalWelcome: { fontSize: 24, fontWeight: '500', textTransform: 'uppercase' },
+  brutalBtn: { minWidth: 240 },
   // 1. pont: a két nyelv-gomb egymás alatt, a meglévő startBtn stílussal.
   langButtonGroup: {
     gap: 14,
