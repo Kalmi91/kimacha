@@ -20,7 +20,8 @@ import grammarEnQuestionWords from '@/data/games/grammar/en/question-words.json'
 import grammarEnPresentContinuous from '@/data/games/grammar/en/present-continuous.json';
 import grammarEnPastSimpleRegular from '@/data/games/grammar/en/past-simple-regular.json';
 import grammarEnPastSimpleIrregular from '@/data/games/grammar/en/past-simple-irregular.json';
+import grammarEnGoingTo from '@/data/games/grammar/en/going-to.json';
 
 export const enContent: LanguageContentBundle = {
-  grammarTopics: [grammarEnToBe, grammarEnArticles, grammarEnPresentSimple, grammarEnPlurals, grammarEnThisThat, grammarEnPossessives, grammarEnThereIsAre, grammarEnPrepositions, grammarEnHaveGot, grammarEnCanAbility, grammarEnQuestionWords, grammarEnPresentContinuous, grammarEnPastSimpleRegular, grammarEnPastSimpleIrregular] as unknown as GrammarTopicData[],
+  grammarTopics: [grammarEnToBe, grammarEnArticles, grammarEnPresentSimple, grammarEnPlurals, grammarEnThisThat, grammarEnPossessives, grammarEnThereIsAre, grammarEnPrepositions, grammarEnHaveGot, grammarEnCanAbility, grammarEnQuestionWords, grammarEnPresentContinuous, grammarEnPastSimpleRegular, grammarEnPastSimpleIrregular, grammarEnGoingTo] as unknown as GrammarTopicData[],
 };

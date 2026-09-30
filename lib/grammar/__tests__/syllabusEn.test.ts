@@ -47,7 +47,7 @@ describe('English grammar syllabus (lang = en)', () => {
   });
 
   it('has only the lessons written so far, and nothing is orphaned', () => {
-    expect(lessonCoverage('en').written).toBe(14);
+    expect(lessonCoverage('en').written).toBe(15);
     expect(hasLesson('en', 'to_be')).toBe(true);
     expect(hasLesson('en', 'articles')).toBe(true);
     expect(hasLesson('en', 'present_simple')).toBe(true);
@@ -62,6 +62,7 @@ describe('English grammar syllabus (lang = en)', () => {
     expect(hasLesson('en', 'present_continuous')).toBe(true);
     expect(hasLesson('en', 'past_simple_regular')).toBe(true);
     expect(hasLesson('en', 'past_simple_irregular')).toBe(true);
+    expect(hasLesson('en', 'going_to')).toBe(true);
     expect(hasLesson('en', 'basic_verbs')).toBe(false);
     expect(nextWrittenTopic('en', 'basic_verbs')?.id).toBe('to_be');
     expect(nextWrittenTopic('en', 'to_be')?.id).toBe('articles');
@@ -77,7 +78,8 @@ describe('English grammar syllabus (lang = en)', () => {
     expect(nextWrittenTopic('en', 'question_words')?.id).toBe('present_continuous');
     expect(nextWrittenTopic('en', 'present_continuous')?.id).toBe('past_simple_regular');
     expect(nextWrittenTopic('en', 'past_simple_regular')?.id).toBe('past_simple_irregular');
-    expect(nextWrittenTopic('en', 'past_simple_irregular')).toBeUndefined();
+    expect(nextWrittenTopic('en', 'past_simple_irregular')?.id).toBe('going_to');
+    expect(nextWrittenTopic('en', 'going_to')).toBeUndefined();
     expect(orphanLessons('en')).toEqual([]);
   });
 
