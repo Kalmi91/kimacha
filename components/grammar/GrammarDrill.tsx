@@ -27,6 +27,7 @@ import { speechLang } from '@/lib/languages';
 import { buildGrammarRound, grammarRoundItemKind, isChoiceRoundItem, wrongExplanation } from '@/lib/games/grammarChoice';
 import { pickTransformRound, TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import { findWholeWord } from '@/lib/grammar/whyTarget';
+import { optionHint } from '@/lib/grammar/optionHints';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString, shuffleArray } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
@@ -310,6 +311,12 @@ function FormDrillItem({
   onDone: (correct: boolean) => void;
 }) {
   const [tableOpen, setTableOpen] = useState(false);
+  // FB417 (PLAN-fb0929 5. lépés): a kérdés-címke ("Sustantivo") spanyol, a segítő tábla oszlop-fejléce
+  // viszont a felület nyelvén ("Noun"), ezért a tanuló nem találta a táblában. Ha a fejléc más nyelven
+  // mást ír, a címke mellett zárójelben ott a táblabeli név is.
+  const headerCell = table?.header.find((h) => h.es === item.verb);
+  const localizedVerb = headerCell ? (headerCell[contentLang] ?? headerCell.en) : undefined;
+  const verbLabel = localizedVerb && localizedVerb !== item.verb ? `${item.verb} (${localizedVerb})` : item.verb;
   const [value, setValue] = useState('');
   const [checked, setChecked] = useState(false);
   const [correct, setCorrect] = useState(false);
@@ -341,7 +348,7 @@ function FormDrillItem({
         <Text style={[styles.brutalHint, { color: g.mu }]}>{s.grammar.formHint}</Text>
         <BrutalBox boxStyle={styles.brutalSentenceBox}>
           <Text style={[styles.formPrompt, { color: g.ink }]}>
-            {item.verb} · {item.person}
+            {verbLabel} · {item.person}
           </Text>
         </BrutalBox>
         <BrutalBox dashed={checked && !correct} style={checked && !correct ? styles.brutalDim : undefined} boxStyle={styles.brutalInputBox}>
@@ -385,7 +392,7 @@ function FormDrillItem({
 
       <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{s.grammar.formHint}</Text>
       <Text style={[styles.formPrompt, { color: colors.text }]}>
-        {item.verb} · {item.person}
+        {verbLabel} · {item.person}
       </Text>
       <TextInput
         testID="formInput"
@@ -506,6 +513,12 @@ function WhyDrillItem({
               >
                 <Text style={[styles.brutalOptionText, { color: hit ? g.onFill : g.ink }]}>{opt.text[contentLang] ?? opt.text.en}</Text>
                 {hit ? <Text style={[styles.brutalOptionText, { color: g.onFill }]}> ✓</Text> : null}
+                {/* FB410/FB411: kisbetűs példa-sor a szabály neve alatt, mi tartozik oda. */}
+                {optionHint(opt.text, contentLang) ? (
+                  <Text testID="why-option-hint" style={[styles.optionHint, { color: hit ? g.onFill : g.mu }]}>
+                    {optionHint(opt.text, contentLang)}
+                  </Text>
+                ) : null}
               </BrutalBox>
             );
           })}
@@ -587,6 +600,11 @@ function WhyDrillItem({
               disabled={answered}
             >
               <Text style={[styles.optionText, { color: colors.text }]}>{opt.text[contentLang] ?? opt.text.en}</Text>
+              {optionHint(opt.text, contentLang) ? (
+                <Text testID="why-option-hint" style={[styles.optionHint, { color: colors.tabIconDefault }]}>
+                  {optionHint(opt.text, contentLang)}
+                </Text>
+              ) : null}
             </Pressable>
           );
         })}
@@ -654,6 +672,8 @@ function TransformDrillItem({
     const candidates = [item.answer, ...(item.accept ?? [])];
     const ok = candidates.some((c) => strictAnswerMatch(input, c, { strictAccents }));
     setResult(ok ? 'ok' : 'bad');
+    // FB412 (PLAN-fb0929 5. lépés): a helyes mondat elhangzik, jó és rossz válasz után is.
+    speak(item.answer, speechLang('es'));
   };
 
   const inputBorder = result === 'ok' ? '#22C55E' : result === 'bad' ? '#EF4444' : colors.tabIconDefault;
@@ -997,6 +1017,11 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     if (answered) return;
     setSelected(optIdx);
     if (optIdx === current.correctIndex) setCorrectCount((c) => c + 1);
+    // FB412 (PLAN-fb0929 5. lépés): a helyes, kitöltött mondat elhangzik, jó és rossz válasz után is.
+    speak(
+      marking ? current.item.sentence : current.item.sentence.replace('___', current.options[current.correctIndex]),
+      speechLang(learnedLang)
+    );
     noteResult(
       optIdx === current.correctIndex,
       marking
@@ -1291,6 +1316,8 @@ const styles = StyleSheet.create({
   brutalAnswer: { fontSize: 20, fontWeight: '500', alignSelf: 'flex-start' },
   brutalQuestion: { fontSize: 15, fontWeight: '500', textTransform: 'uppercase', textAlign: 'center' },
   brutalWhyOptions: { gap: 12 },
+  // FB410/FB411: a szabály-opció alatti kisbetűs példa-sor (a wrap-sorban új sorba törik).
+  optionHint: { fontSize: 12, textAlign: 'center', flexBasis: '100%', marginTop: 2 },
   brutalWhyOption: { paddingVertical: 14, paddingHorizontal: 12, flexDirection: 'row', justifyContent: 'center', flexWrap: 'wrap' },
   brutalF: { width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
   brutalNext: { paddingVertical: 14, alignItems: 'center' },
