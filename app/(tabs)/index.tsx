@@ -21,7 +21,7 @@ import {
   type ArticlePick,
 } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget, thinSentences, dropOrphanCards } from '@/lib/pcicSession';
+import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget, thinSentences, dropOrphanCards, setProgressPercent } from '@/lib/pcicSession';
 import { applyChainOrder, chainGroupId } from '@/lib/pcicChains';
 import { cardsForViewLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
@@ -39,6 +39,7 @@ import LevelPickerSheet from '@/components/LevelPickerSheet';
 import { BrutalBox, BrutalButton, SegmentBar, brutalInputStyle, segmentsFilled, textOnFill } from '@/components/grammar/Brutal';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import FitText from '@/components/FitText';
+import DoneBadge from '@/components/DoneBadge';
 import TypedSentenceCard from '@/components/TypedSentenceCard';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
 import { resolvedTensesFromLessons, type ResolvedTense } from '@/lib/knownSentence';
@@ -590,7 +591,8 @@ export default function PcicScreen() {
           onClose={() => setLevelSheetOpen(false)}
         />
         <View style={styles.doneHeader}>
-          <Text style={styles.doneEmoji}>🎉</Text>
+          {/* FB402: rajzolt jelvény (pipa + konfetti) a 🎉 emoji helyett, a neo-brutalista stílusban. */}
+          <DoneBadge />
           <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.pcic.doneTitle}</Text>
         </View>
         {g.brutal ? (
@@ -648,8 +650,9 @@ export default function PcicScreen() {
   // számból épül (nem a mountonként nullázódó `sessionAnswered`-ből), hogy
   // tab-váltás vagy app-újraindítás után is a valós napi haladást mutassa,
   // ne ugorjon vissza üresre.
-  const sessionTotal = doneToday + queue.length;
-  const sessionPct = sessionTotal > 0 ? (doneToday / sessionTotal) * 100 : 0;
+  // FB401: a sáv 10-es szettekben mér (lib/pcicSession.ts setProgressPercent), hogy sok
+  // esedékes kártya mellett is minden megválaszolt kártya látsszon.
+  const barPct = setProgressPercent(doneToday, queue.length);
 
   // 5b: a lap tetejére kerülő lap/lépés-jelvény (CardShell chip propja),
   // a korábbi sectionRow-beli stepBadge szövegek helyén.
@@ -700,10 +703,10 @@ export default function PcicScreen() {
       />
 
       {g.brutal ? (
-        <SegmentBar testID="learn-progress" filled={segmentsFilled(sessionPct, 8)} segments={8} style={styles.brutalProgress} />
+        <SegmentBar testID="learn-progress" filled={segmentsFilled(barPct, 8)} segments={8} style={styles.brutalProgress} />
       ) : (
         <View style={[styles.progressTrack, { backgroundColor: colors.card }]}>
-          <View style={[styles.progressFill, { backgroundColor: colors.tint, width: `${sessionPct}%` }]} />
+          <View style={[styles.progressFill, { backgroundColor: colors.tint, width: `${barPct}%` }]} />
         </View>
       )}
 
