@@ -119,7 +119,10 @@ export default function TableDeckScreen() {
             enPrompt: c.enPrompt,
             verb: c.verb,
           }))
-        : wordCellsForLesson(lesson).map((c) => ({ id: c.id, answer: c.es, promptBig: c.en }));
+        : // PLAN-fb0929 10. lépés: es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
+          wordCellsForLesson(lesson, target).map((c) =>
+            target === 'en' ? { id: c.id, answer: c.en, promptBig: c.es } : { id: c.id, answer: c.es, promptBig: c.en }
+          );
     const strict = await db.getStrictAccents();
     const delaySec = await db.getAgainDelaySec();
     const levelData = await db.getLevel();
@@ -153,15 +156,18 @@ export default function TableDeckScreen() {
   // FB405: es→en irányban (spanyol felület) a cím a felület nyelvén, nem mindig angolul.
   const lessonTitle = entry?.title[learnedLang === 'en' ? 'es' : 'en'] ?? entry?.title.en ?? String(topicId);
 
+  // A FeedbackButton párcímkéje az aktív iránnyal (en→es vagy es→en).
+  const deckPair = learnedLang === 'en' ? 'es→en' : 'en→es';
+
   const currentId = nextCellId(deck, now);
   const current = currentId ? items.find((c) => c.id === currentId) : undefined;
   const complete = items.length > 0 && !current;
 
   const handleCheck = () => {
     if (!current) return;
-    const correct = typed.trim().length > 0 && strictAnswerMatch(typed, current.answer, { strictAccents, lang: 'es' });
+    const correct = typed.trim().length > 0 && strictAnswerMatch(typed, current.answer, { strictAccents, lang: learnedLang });
     setChecked({ correct });
-    speak(current.answer, speechLang('es'));
+    speak(current.answer, speechLang(learnedLang));
   };
 
   const handleNext = () => {
@@ -265,7 +271,7 @@ export default function TableDeckScreen() {
             <Text style={[styles.ghostBtnText, { color: colors.tabIconDefault }]}>{s.tableDeck.backToLesson}</Text>
           </Pressable>
         </View>
-        <FeedbackButton level={level} languagePair="en→es" currentCard={`grammar:${topicId}:tabledeck`} />
+        <FeedbackButton level={level} languagePair={deckPair} currentCard={`grammar:${topicId}:tabledeck`} />
       </View>
     );
   }
@@ -297,7 +303,9 @@ export default function TableDeckScreen() {
               ? current.enPrompt
                 ? s.tableDeck.promptCaptionEn
                 : s.tableDeck.promptCaption
-              : s.tableDeck.wordPromptCaption}
+              : learnedLang === 'en'
+                ? s.tableDeck.wordPromptCaptionEn
+                : s.tableDeck.wordPromptCaption}
           </Text>
           <FitText base={32} maxLines={3} reserve={100} style={[styles.promptBig, { color: colors.text }]}>
             {current.promptBig}
@@ -336,7 +344,7 @@ export default function TableDeckScreen() {
                   </Text>
                   <View style={styles.frontRow}>
                     <Text style={[styles.correctAnswer, { color: colors.tint }]}>{current.answer}</Text>
-                    <Pressable onPress={() => speak(current.answer, speechLang('es'))} style={styles.speakBtn}>
+                    <Pressable onPress={() => speak(current.answer, speechLang(learnedLang))} style={styles.speakBtn}>
                       <Text style={styles.speakIcon}>🔊</Text>
                     </Pressable>
                   </View>
@@ -358,7 +366,7 @@ export default function TableDeckScreen() {
 
       <FeedbackButton
         level={level}
-        languagePair="en→es"
+        languagePair={deckPair}
         currentCard={`grammar:${topicId}:tabledeck:${current.id}`}
         bottomOffset={dockH + dockLift}
       />

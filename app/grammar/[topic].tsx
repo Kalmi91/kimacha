@@ -167,7 +167,8 @@ export default function GrammarLessonScreen() {
   // FB375 (PLAN-fb0923 6. lépés, D5/a): a table-less lesson gets a word-deck
   // instead, built from its own vocabulary; only shown at >= 8 cards, and
   // never alongside the table-deck button (D5: "ne legyen két gomb").
-  const wordDeckCells = tableDeckCells.length === 0 ? wordCellsForLesson(lesson) : [];
+  // PLAN-fb0929 10. lépés: es→en irányban az angol szókészletből épül; ha nincs elég szó, nincs gomb.
+  const wordDeckCells = tableDeckCells.length === 0 ? wordCellsForLesson(lesson, learnedLang) : [];
 
   // Two worked examples from the first items, so the lesson SHOWS the rule
   // before it asks anything.

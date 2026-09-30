@@ -20,6 +20,10 @@ import type { ExamplePair, Lang4, LessonV2 } from './lessonTypes';
 import { PCIC_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
 import { normalizeWordToken, type Level } from '@/data/words';
 import { hashString, shuffleArray } from '../shuffle';
+import enA0 from '@/data/words/en/a0.json';
+import enA1 from '@/data/words/en/a1.json';
+import enA2 from '@/data/words/en/a2.json';
+import enB1 from '@/data/words/en/b1.json';
 
 export interface DeckCell {
   /** Stable within a lesson: `${tableId}::${person}::${verb}` (all lowercased). */
@@ -248,9 +252,9 @@ export const WORD_DECK_MIN_CARDS = 8;
 
 export interface WordDeckCard {
   id: string;
-  /** The prompt: the word's English meaning. */
+  /** English side. en→es direction: the prompt (the word's meaning); es→en direction: the answer to type. */
   en: string;
-  /** The answer to type: the Spanish word. */
+  /** Spanish side. en→es direction: the answer to type; es→en direction: the prompt. */
   es: string;
 }
 
@@ -380,8 +384,13 @@ const NON_WORD_GLOSS = /^(not a real form|non-existent form)/i;
  * occurrence in the sentences; each word once (mergeDeckState/answerCell
  * key on `id`, a repeat would silently collide).
  */
-export function wordCellsForLesson(lesson: GrammarTopicData | null | undefined): WordDeckCard[] {
+export function wordCellsForLesson(
+  lesson: GrammarTopicData | null | undefined,
+  learnedLang: string = 'es'
+): WordDeckCard[] {
   if (!lesson || !isLessonV2(lesson)) return [];
+  // PLAN-fb0929 10. lépés (Kálmán 2026-09-30): es→en irányban a pakli az angol szókészletből épül.
+  if (learnedLang === 'en') return wordCellsForEnglishLesson(lesson);
   const cards: WordDeckCard[] = [];
   const seen = new Set<string>();
 
@@ -404,6 +413,170 @@ export function wordCellsForLesson(lesson: GrammarTopicData | null | undefined):
       if (!hit) continue;
       seen.add(key);
       cards.push({ id: `word::${key}`, es: hit.es, en: hit.en });
+    }
+  }
+
+  return cards;
+}
+
+// ---------------------------------------------------------------------------
+// PLAN-fb0929 10. lépés (Kálmán 2026-09-30: "mehet a javítás"): az es→en irány
+// szavak-gyakorlása. Eddig a pakli a spanyol PCIC-ből épült, ezért angol kérdést
+// adott és spanyol választ várt. Most a kérdés a spanyol szó, a válasz a begépelt
+// angol szó, a szavak az angol szókészletből (data/words/en/<szint>.json) jönnek,
+// a lecke szintjén belül és a leckéhez kötve, három forrásból (ebben a sorrendben):
+//   1. a lecke szószedete (glossary): a szerző saját választása, `word` az angol szó;
+//   2. a lecke témájához kötött szavak (a szólista `topic` mezője = a lecke `topic`-ja,
+//      vagy a `focusTopic`), a lecke saját szókincse, többszavas minta is lehet ("I am");
+//   3. a lecke angol példamondataiból az a tartalmas szó, amelyik egyszavas angol
+//      szólista-tétel (zárt osztályú szó nélkül).
+// Ha nincs elég szó (WORD_DECK_MIN_CARDS alatt), a hívó nem mutat paklit.
+// A spanyol irány (en→es, hu→es) ettől bájtra változatlan.
+// ---------------------------------------------------------------------------
+
+interface EnWordEntry {
+  id: number;
+  es: string;
+  en: string;
+  topic?: string;
+  topicOrder?: number;
+}
+
+const EN_WORDS_BY_FILE: EnWordEntry[][] = [enA0, enA1, enA2, enB1] as unknown as EnWordEntry[][];
+
+// A lecke szintje-vagy-alatta: A0/A1 -> a0+a1, A2 -> +a2, B1 és fölötte -> +b1 (B2/C nincs angol lista).
+const EN_FILE_COUNT: Record<Level, number> = { A0: 2, A1: 2, A2: 3, B1: 4, B2: 4, C1: 4, C2: 4 };
+
+const enWordsCache = new Map<Level, EnWordEntry[]>();
+
+function enWordsUpTo(level: Level): EnWordEntry[] {
+  const cached = enWordsCache.get(level);
+  if (cached) return cached;
+  const words = EN_WORDS_BY_FILE.slice(0, EN_FILE_COUNT[level] ?? 2).flat();
+  enWordsCache.set(level, words);
+  return words;
+}
+
+const enIndexCache = new Map<Level, Map<string, EnWordEntry>>();
+
+// Egyszavas angol tételek kulcsa a kisbetűs angol szó, az első (alacsonyabb szintű) előfordulás marad.
+function enWordIndex(level: Level): Map<string, EnWordEntry> {
+  const cached = enIndexCache.get(level);
+  if (cached) return cached;
+  const index = new Map<string, EnWordEntry>();
+  for (const w of enWordsUpTo(level)) {
+    const key = w.en.trim().toLowerCase();
+    if (!key || /\s/.test(key) || index.has(key)) continue;
+    index.set(key, w);
+  }
+  enIndexCache.set(level, index);
+  return index;
+}
+
+// Zárt osztályú angol szavak (névelő, névmás, elöljáró, kötőszó, segédige, kérdőszó): ezek nem szó-kártyák.
+const FUNCTION_WORDS_EN = new Set([
+  'a', 'an', 'the',
+  'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her', 'us', 'them',
+  'my', 'your', 'his', 'its', 'our', 'their', 'mine', 'yours', 'hers', 'ours', 'theirs',
+  'this', 'that', 'these', 'those', 'there',
+  'and', 'or', 'but', 'so', 'if', 'because', 'when', 'while', 'than', 'as', 'then',
+  'of', 'in', 'on', 'at', 'to', 'for', 'from', 'with', 'by', 'about', 'into', 'over', 'under', 'up', 'down', 'out', 'off', 'after', 'before', 'between', 'near', 'behind',
+  'not', 'no', 'do', 'does', 'did', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being',
+  'have', 'has', 'had', 'will', 'would', 'can', 'could', 'shall', 'should', 'may', 'might', 'must',
+  'what', 'who', 'whom', 'whose', 'which', 'where', 'why', 'how',
+]);
+
+/** Egy angol szó-token kisbetűsen, a szélén lévő írásjel nélkül; '' ha nem egyszerű szó (szám, per-jel, ___ stb.). */
+function enToken(raw: string): string {
+  const t = raw.toLowerCase().replace(/[’‘]/g, "'").replace(/^[^a-z]+|[^a-z]+$/g, '');
+  return /^[a-z][a-z']*$/.test(t) ? t : '';
+}
+
+function pushEnExamples(out: string[], examples: ExamplePair[] | undefined): void {
+  // Az angol lecke konvenciója: az ExamplePair.es a TANULT (angol) mondat.
+  for (const ex of examples ?? []) out.push(ex.es);
+}
+
+// A lecke angol (tanult nyelvű) mondatai és szavai. A Lang4 magyarázó szövegek a felület nyelvén
+// vannak (spanyolul), azok nem forrás; a táblák celláit itt is felvesszük (angolra nincs tábla-pakli).
+function lessonSentencesEn(lesson: LessonV2): string[] {
+  const out: string[] = [];
+  for (const block of lesson.body) {
+    switch (block.kind) {
+      case 'list':
+        for (const item of block.items) pushEnExamples(out, item.examples);
+        break;
+      case 'usage':
+        for (const point of block.points) pushEnExamples(out, point.examples);
+        break;
+      case 'examples':
+        pushEnExamples(out, block.examples);
+        break;
+      case 'contrast':
+        for (const pair of block.pairs) {
+          out.push(pair.a, pair.b);
+          pushEnExamples(out, pair.examples);
+        }
+        break;
+      case 'table':
+        for (const row of block.rows) out.push(...row);
+        break;
+      case 'text':
+      case 'tip':
+        break;
+    }
+  }
+  for (const item of lesson.items as GrammarItem[]) {
+    if (item.kind === undefined || item.kind === 'gap') {
+      const gap = item as GrammarGapItem;
+      out.push(gap.sentence, ...(gap.examples ?? []));
+    } else if (item.kind === 'mark') {
+      const mark = item as GrammarMarkItem;
+      out.push(mark.sentence, ...(mark.examples ?? []));
+    } else if (isMatchItem(item)) {
+      for (const pair of item.pairs) out.push(pair.en);
+    } else if (isWhyItem(item)) {
+      out.push(item.es);
+    } else if (item.kind === 'form') {
+      out.push(item.answer);
+    }
+  }
+  return out;
+}
+
+function wordCellsForEnglishLesson(lesson: LessonV2): WordDeckCard[] {
+  const cards: WordDeckCard[] = [];
+  const seen = new Set<string>(); // kisbetűs angol válasz: egy szó egyszer (mergeDeckState/answerCell id-re kulcsol)
+  const push = (id: string, es: string, en: string) => {
+    const key = en.trim().toLowerCase();
+    if (!key || !es.trim() || seen.has(key)) return;
+    seen.add(key);
+    cards.push({ id, es, en });
+  };
+
+  // 1) a szerző szószedete: `word` az angol szó, a gloss.es a spanyol kérdés
+  for (const g of lesson.glossary ?? []) {
+    if (NON_WORD_GLOSS.test(g.gloss.en)) continue;
+    const key = enToken(g.word);
+    if (key) push(`glossary::${key}`, g.gloss.es, g.word);
+  }
+
+  // 2) a lecke témájához kötött szavak, a szintjén belül (a szólista topic mezője)
+  const topics = new Set([lesson.topic, lesson.focusTopic].filter((t): t is string => !!t));
+  if (topics.size > 0) {
+    const linked = enWordsUpTo(lesson.level).filter((w) => w.topic && topics.has(w.topic));
+    linked.sort((a, b) => (a.topicOrder ?? 0) - (b.topicOrder ?? 0));
+    for (const w of linked) push(`topic::${w.id}`, w.es, w.en);
+  }
+
+  // 3) a példamondatok tartalmas szavai, ha egyszavas angol szólista-tételek
+  const index = enWordIndex(lesson.level);
+  for (const sentence of lessonSentencesEn(lesson)) {
+    for (const raw of sentence.split(/\s+/)) {
+      const key = enToken(raw);
+      if (!key || FUNCTION_WORDS_EN.has(key)) continue;
+      const hit = index.get(key);
+      if (hit) push(`word::${key}`, hit.es, hit.en);
     }
   }
 
