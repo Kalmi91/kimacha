@@ -135,6 +135,19 @@ export default {
     runProgress: (done: number, total: number, pct: number) => `${done}/${total} · ${pct}%`,
     // FB419: az el / la névelő-választó feladat gombja (csak ott, ahol van ilyen készlet).
     startArticle: (n: number) => `El or la? (${n})`,
+    // PLAN-fb0929 7. lépés (D1): ideiglenes, új feladat-fajták (hibakereső, szórend, diktálás).
+    trialBadge: 'NEW · TEST',
+    startSpot: (n: number) => `Spot the mistake (${n})`,
+    startOrder: (n: number) => `Word order (${n})`,
+    startDictation: (n: number) => `Dictation (${n})`,
+    spotPrompt: 'Tap the word that is wrong',
+    spotPickFix: 'Pick the right form',
+    spotWordFine: 'That word is fine. Look again.',
+    spotDelete: '(remove it)',
+    orderHint: 'Put the words in order',
+    dictationHint: 'Listen and type what you hear',
+    dictationPlay: 'Play',
+    dictationSlow: 'Slower',
   },
   settings: {
     // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont):

@@ -141,6 +141,49 @@ export interface TransformItem {
   why: Lang4;
 }
 
+// PLAN-fb0929 7. lépés (D1, Kálmán 2026-09-29): három új feladat-fajta, EGYELŐRE csak két
+// leckében, ideiglenes "ÚJ · TESZT" jelöléssel (`trial: true`), hogy Kálmán kipróbálhassa
+// és jóváhagyhassa. A jelölés egy helyről kivehető (components/TrialBadge.tsx: TRIAL_BADGES).
+
+/** Hibakereső: a mondatban egy tipikus hiba van; a tanuló a rossz szóra bök, aztán 3 opcióból kiválasztja a jót. */
+export interface SpotItem {
+  kind: 'spot';
+  id: string;
+  trial?: boolean;
+  /** A hibás mondat, szóközönként tördelve koppintható szavakra (írásjel a szó része). */
+  es: string;
+  /** A hibás szó sorszáma a mondatban (0-tól). */
+  wrongIndex: number;
+  /** 3 javítás-opció; az üres szöveg a szó törlését jelenti. */
+  options: string[];
+  correctIndex: number;
+  /** Rövid magyarázat négy nyelven. */
+  explain: Lang4;
+  /** A HELYES mondat fordítása. */
+  tr: Lang4;
+}
+
+/** Szórend: felül a mondat a felület nyelvén, alatta keverve a spanyol szócsempék; koppintással sorba rakja. */
+export interface OrderItem {
+  kind: 'order';
+  id: string;
+  trial?: boolean;
+  /** A mondat a felület nyelvén. */
+  prompt: Lang4;
+  /** A helyes spanyol mondat (a csempék a szavaiból lesznek). */
+  es: string;
+}
+
+/** Diktálás: a mondat elhangzik (újrajátszható, lassabban is), a tanuló begépeli. */
+export interface DictationItem {
+  kind: 'dictation';
+  id: string;
+  trial?: boolean;
+  es: string;
+  /** A mondat fordítása, a válasz után mutatjuk. */
+  tr: Lang4;
+}
+
 export interface LessonV2 {
   schema: 2;
   topic: string;
@@ -149,6 +192,6 @@ export interface LessonV2 {
   body: LessonBlock[];
   speak: Lang4; // LECKE-SEMA 3: felolvasásra írt szöveg, a spanyol szakaszok «...» közt
   glossary?: { word: string; gloss: Lang4 }[];
-  items: (GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem | TransformItem)[];
+  items: (GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem | TransformItem | SpotItem | OrderItem | DictationItem)[];
   focusTopic?: string; // FB318: szó-témakör (data/topics), aminek a kártyái a lecke szó-halmazába tartoznak a transform-szavak mellett
 }

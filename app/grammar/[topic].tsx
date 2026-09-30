@@ -10,7 +10,7 @@ import { getDb } from '@/lib/database';
 import { normalizeWordToken, type Level } from '@/data/words';
 import { cumulativeCorpusWordIds, grammarKindCounts, isLessonV2, type GrammarGapItem, type GrammarItem, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
 import { buildGlossMap } from '@/lib/games/gloss';
-import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, syllabusTopic } from '@/lib/grammar/syllabus';
+import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, scoredKinds, syllabusTopic } from '@/lib/grammar/syllabus';
 import {
   betterBest,
   kindBestKey,
@@ -33,6 +33,7 @@ import LessonBody from '@/components/grammar/LessonBody';
 import MoreBlocks from '@/components/grammar/MoreBlocks';
 import FeedbackButton from '@/components/FeedbackModal';
 import FitText from '@/components/FitText';
+import TrialBadge from '@/components/TrialBadge';
 import { BrutalBox, Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
@@ -48,7 +49,7 @@ type ProgressRow = { itemId: string; state: string; data: unknown };
 
 // D3 (FB290, 2026-09-17): a gombok ebben a sorrendben jelennek meg, csak azok
 // a fajták, amikből van item a leckében.
-const KIND_ORDER: GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform'];
+const KIND_ORDER: GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform', 'spot', 'order', 'dictation'];
 
 export default function GrammarLessonScreen() {
   const { theme } = useTheme();
@@ -157,6 +158,8 @@ export default function GrammarLessonScreen() {
   // (pl. hay-estar nem kap ragozás-gombot, mert nincs benne form item).
   const kindCounts = grammarKindCounts(lesson);
   const availableKinds = KIND_ORDER.filter((k) => kindCounts[k] > 0);
+  // Az ideiglenes (csupa trial itemű) fajták: gombjuk jelvényt kap, és nem számítanak a lecke %-ába.
+  const trialKinds = new Set<GrammarKind>(availableKinds.filter((k) => !scoredKinds(lesson).includes(k)));
   // PLAN-play 13. lépés (s6): the deck button only where the lesson actually
   // has a conjugation table (lib/grammar/tableDeck.ts already excludes the
   // reference GridTables and vosotros rows).
@@ -223,8 +226,9 @@ export default function GrammarLessonScreen() {
     getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, itemId, state, data).catch(() => {});
   };
   // A lecke %-a: az ÖSSZES létező fajta átlaga, a meg nem kezdett fajta 0 (null: még semmit sem csinált).
+  // PLAN-fb0929 7. lépés (D1): az ideiglenes fajták nem húzzák le a lecke %-át (scoredKinds).
   const lessonScoreOf = (rows: ProgressRow[]) =>
-    lessonScore(availableKinds.map((k) => kindProgressFromRows(rows, String(topicId), k)));
+    lessonScore(scoredKinds(lesson).map((k) => kindProgressFromRows(rows, String(topicId), k)));
 
   const finish = async (correct: number, total: number, roundItemIds?: string[]) => {
     setPrevPct(lessonScoreOf(progressRows));
@@ -632,9 +636,15 @@ export default function GrammarLessonScreen() {
                         ? s.grammar.startForm(kindCounts.form)
                         : kind === 'why'
                           ? s.grammar.startWhy(kindCounts.why)
-                          : kindCounts.transform > TRANSFORM_ROUND_SIZE
-                            ? s.grammar.startTransformRound(TRANSFORM_ROUND_SIZE, kindCounts.transform)
-                            : s.grammar.startTransform(kindCounts.transform),
+                          : kind === 'spot'
+                            ? s.grammar.startSpot(kindCounts.spot)
+                            : kind === 'order'
+                              ? s.grammar.startOrder(kindCounts.order)
+                              : kind === 'dictation'
+                                ? s.grammar.startDictation(kindCounts.dictation)
+                                : kindCounts.transform > TRANSFORM_ROUND_SIZE
+                                  ? s.grammar.startTransformRound(TRANSFORM_ROUND_SIZE, kindCounts.transform)
+                                  : s.grammar.startTransform(kindCounts.transform),
                 () => {
                   setDrillKind(kind);
                   setPhase('drill');
@@ -642,6 +652,12 @@ export default function GrammarLessonScreen() {
                 true,
                 i === 0
               )}
+              {/* PLAN-fb0929 7. lépés (D1): az ideiglenes fajta gombja alatt az "ÚJ · TESZT" jelvény. */}
+              {trialKinds.has(kind) ? (
+                <View style={styles.trialRow}>
+                  <TrialBadge testID={`trial-badge-${kind}`} />
+                </View>
+              ) : null}
               {runInfo || kindPct !== null ? (
                 <Text testID={`grammar-kind-percent-${kind}`} style={[styles.kindPercentNote, { color: colors.tabIconDefault }]}>
                   {runInfo ? s.grammar.runProgress(runInfo.answered, runInfo.of, runInfo.percent) : s.grammar.lessonPercent(kindPct as number)}
@@ -750,4 +766,5 @@ const styles = StyleSheet.create({
   lessonPercentNote: { fontSize: 12, textAlign: 'center', marginTop: -6, marginBottom: 12 },
   // FB380: ugyanaz a sor-stílus, fajtánként a saját gombja alatt.
   kindPercentNote: { fontSize: 12, textAlign: 'center', marginTop: 2 },
+  trialRow: { alignItems: 'center', marginTop: 6 },
 });
