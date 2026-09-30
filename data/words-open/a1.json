@@ -968,11 +968,11 @@
     "hu": "több, még",
     "en": "more",
     "de": "mehr",
-    "sentence_es": "Yo quiero más agua.",
+    "sentence_es": "Quiero más agua.",
     "sentence_hu": "Több vizet kérek.",
     "sentence_en": "I want more water.",
     "sentence_de": "Ich möchte mehr Wasser.",
-    "sentence_lemmas": ["yo", "querer", "más", "agua"]
+    "sentence_lemmas": ["querer", "más", "agua"]
   },
   {
     "order": 66,
@@ -1115,9 +1115,9 @@
     "pos": "conj",
     "lemma": "que",
     "es": "que",
-    "hu": "hogy, amely",
-    "en": "that, which",
-    "de": "dass, der/die/das",
+    "hu": "hogy, amely; mint (összehasonlításban)",
+    "en": "that, which; than (in comparisons)",
+    "de": "dass, der/die/das; als (Vergleich)",
     "sentence_es": "Sé que él está aquí.",
     "sentence_hu": "Tudom, hogy itt van.",
     "sentence_en": "I know that he is here.",
@@ -1733,11 +1733,11 @@
     "hu": "ágy",
     "en": "bed",
     "de": "Bett",
-    "sentence_es": "Yo estoy en la cama.",
+    "sentence_es": "Estoy en la cama.",
     "sentence_hu": "Az ágyban vagyok.",
     "sentence_en": "I am in bed.",
     "sentence_de": "Ich bin im Bett.",
-    "sentence_lemmas": ["yo", "estar", "en", "el", "cama"]
+    "sentence_lemmas": ["estar", "en", "el", "cama"]
   },
   {
     "order": 117,
@@ -1778,11 +1778,11 @@
     "hu": "bolt",
     "en": "shop, store",
     "de": "Geschäft, Laden",
-    "sentence_es": "Yo voy a la tienda.",
+    "sentence_es": "Voy a la tienda.",
     "sentence_hu": "Megyek a boltba.",
     "sentence_en": "I am going to the store.",
     "sentence_de": "Ich gehe in den Laden.",
-    "sentence_lemmas": ["yo", "ir", "a", "el", "tienda"]
+    "sentence_lemmas": ["ir", "a", "el", "tienda"]
   },
   {
     "order": 120,
