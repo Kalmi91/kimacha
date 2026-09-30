@@ -118,6 +118,42 @@ if (badPos.length) {
   console.error(`Ismeretlen 'pos' érték (${badPos.length}): ${badPos.join(', ')}`);
 }
 
+// 8. FB398 (PLAN-fb0929 5. lépés), FIGYELMEZTETÉS, nem hiba: az igés kártya (szótári alakú
+//    ige) példamondatában a szótári alak (infinitivus) szerepeljen, ne csak a ragozott
+//    ("ir" kártya: "Quiero ir mañana.", nem "Voy mañana."). Az élő kártyák a
+//    data/words/*.json-ból jönnek. A tömeges átírás fordítást kíván (négy nyelv), ezért
+//    a szkript csak számol és mutat; az átírás Kálmán termináljából fut
+//    (docs/PCIC-WORKFLOW.md).
+{
+  const norm = (t) => t.toLowerCase().normalize('NFC').replace(/[¿?¡!.,;:]/g, ' ');
+  const INFINITIVE = /^[a-záéíóúüñ]+(ar|er|ir|ír)(se)?$/;
+  const warn = [];
+  for (const lv of ['a0', 'a1', 'a2', 'b1', 'b2']) {
+    let words;
+    try {
+      words = JSON.parse(readFileSync(`data/words/${lv}.json`, 'utf8'));
+    } catch {
+      continue;
+    }
+    for (const w of words) {
+      if (w.pos !== 'verb') continue;
+      const parts = w.es.trim().split(/\s+/);
+      if (parts.length > 1) continue; // "yo como" stb.: nem szótári alak
+      const head = parts[0].split('/')[0];
+      if (!INFINITIVE.test(head) && head !== 'ir' && head !== 'ser') continue;
+      const tokens = norm(w.sentence_es || '').split(/\s+/).filter(Boolean);
+      const base = head.replace(/se$/, '');
+      if (!tokens.includes(head) && !tokens.includes(base) && !tokens.includes(`${head}se`)) {
+        warn.push(`${lv} w${w.id} ${w.es}: "${w.sentence_es}"`);
+      }
+    }
+  }
+  if (warn.length) {
+    console.warn(`FIGYELMEZTETÉS (nem hiba): ${warn.length} igés kártya példamondatában nincs benne a szótári alak, pl.:`);
+    for (const line of warn.slice(0, 5)) console.warn(`  ${line}`);
+  }
+}
+
 if (errors) {
   console.error(`pcic:check FAIL, ${errors} hiba`);
   process.exit(1);

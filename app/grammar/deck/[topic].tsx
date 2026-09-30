@@ -30,6 +30,7 @@ import {
   type DeckState,
 } from '@/lib/grammar/tableDeck';
 import FeedbackButton from '@/components/FeedbackModal';
+import FitText from '@/components/FitText';
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
@@ -84,6 +85,12 @@ export default function TableDeckScreen() {
   const [deck, setDeck] = useState<DeckState>({ cells: [], resetCount: 0, shuffled: false });
   const [typed, setTyped] = useState('');
   const [checked, setChecked] = useState<{ correct: boolean } | null>(null);
+  // FB422 (PLAN-fb0929 2. lépés): a beviteli mező minden új cellánál újra mountol
+  // (a `key` ezt a számlálót tartalmazza), különben az `autoFocus` csak az első
+  // cellánál fut, és a Check után letiltott (`editable={false}`), majd újra
+  // engedélyezett natív mezőn Next után nem jön fel a billentyűzet. Ugyanaz az
+  // ok és javítás, mint a PCIC-kártyán (app/(tabs)/index.tsx cardSeq, FB408).
+  const [cellSeq, setCellSeq] = useState(0);
   const [dockH, setDockH] = useState(DOCK_RESERVE);
   const { dockLift } = useDockLift();
   // React Compiler purity rule: Date.now() may not be called during render
@@ -112,7 +119,10 @@ export default function TableDeckScreen() {
             enPrompt: c.enPrompt,
             verb: c.verb,
           }))
-        : wordCellsForLesson(lesson).map((c) => ({ id: c.id, answer: c.es, promptBig: c.en }));
+        : // PLAN-fb0929 10. lépés: es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
+          wordCellsForLesson(lesson, target).map((c) =>
+            target === 'en' ? { id: c.id, answer: c.en, promptBig: c.es } : { id: c.id, answer: c.es, promptBig: c.en }
+          );
     const strict = await db.getStrictAccents();
     const delaySec = await db.getAgainDelaySec();
     const levelData = await db.getLevel();
@@ -143,7 +153,11 @@ export default function TableDeckScreen() {
   };
 
   const entry = syllabusTopic(String(topicId), learnedLang);
-  const lessonTitle = entry?.title.en ?? String(topicId);
+  // FB405: es→en irányban (spanyol felület) a cím a felület nyelvén, nem mindig angolul.
+  const lessonTitle = entry?.title[learnedLang === 'en' ? 'es' : 'en'] ?? entry?.title.en ?? String(topicId);
+
+  // A FeedbackButton párcímkéje az aktív iránnyal (en→es vagy es→en).
+  const deckPair = learnedLang === 'en' ? 'es→en' : 'en→es';
 
   const currentId = nextCellId(deck, now);
   const current = currentId ? items.find((c) => c.id === currentId) : undefined;
@@ -151,9 +165,9 @@ export default function TableDeckScreen() {
 
   const handleCheck = () => {
     if (!current) return;
-    const correct = typed.trim().length > 0 && strictAnswerMatch(typed, current.answer, { strictAccents, lang: 'es' });
+    const correct = typed.trim().length > 0 && strictAnswerMatch(typed, current.answer, { strictAccents, lang: learnedLang });
     setChecked({ correct });
-    speak(current.answer, speechLang('es'));
+    speak(current.answer, speechLang(learnedLang));
   };
 
   const handleNext = () => {
@@ -165,6 +179,7 @@ export default function TableDeckScreen() {
     setTyped('');
     setChecked(null);
     setNow(nowMs);
+    setCellSeq((n) => n + 1);
   };
 
   const handleStartAgain = () => {
@@ -197,9 +212,9 @@ export default function TableDeckScreen() {
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
       )}
-      <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]} numberOfLines={1}>
+      <FitText base={17} maxLines={2} reserve={g.brutal ? 190 : 150} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>
         {lessonTitle}
-      </Text>
+      </FitText>
       {g.brutal ? (
         <Sticker label={s.tableDeck.progress(doneCount(deck), items.length)} fill="a" rotate={4} />
       ) : (
@@ -256,7 +271,7 @@ export default function TableDeckScreen() {
             <Text style={[styles.ghostBtnText, { color: colors.tabIconDefault }]}>{s.tableDeck.backToLesson}</Text>
           </Pressable>
         </View>
-        <FeedbackButton level={level} languagePair="en→es" currentCard={`grammar:${topicId}:tabledeck`} />
+        <FeedbackButton level={level} languagePair={deckPair} currentCard={`grammar:${topicId}:tabledeck`} />
       </View>
     );
   }
@@ -288,9 +303,13 @@ export default function TableDeckScreen() {
               ? current.enPrompt
                 ? s.tableDeck.promptCaptionEn
                 : s.tableDeck.promptCaption
-              : s.tableDeck.wordPromptCaption}
+              : learnedLang === 'en'
+                ? s.tableDeck.wordPromptCaptionEn
+                : s.tableDeck.wordPromptCaption}
           </Text>
-          <Text style={[styles.promptBig, { color: colors.text }]}>{current.promptBig}</Text>
+          <FitText base={32} maxLines={3} reserve={100} style={[styles.promptBig, { color: colors.text }]}>
+            {current.promptBig}
+          </FitText>
           {/* FB390: a meaning-table cell (lib/grammar/tableDeck.ts) has no
               infinitive to show underneath (verb: ''), so this caption stays
               hidden there instead of rendering an empty line. */}
@@ -299,6 +318,7 @@ export default function TableDeckScreen() {
           ) : null}
 
           <TextInput
+            key={`deck-in-${current.id}-${cellSeq}`}
             testID="tabledeck-input"
             style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, g.brutal && brutalInputStyle(g)]}
             value={typed}
@@ -324,7 +344,7 @@ export default function TableDeckScreen() {
                   </Text>
                   <View style={styles.frontRow}>
                     <Text style={[styles.correctAnswer, { color: colors.tint }]}>{current.answer}</Text>
-                    <Pressable onPress={() => speak(current.answer, speechLang('es'))} style={styles.speakBtn}>
+                    <Pressable onPress={() => speak(current.answer, speechLang(learnedLang))} style={styles.speakBtn}>
                       <Text style={styles.speakIcon}>🔊</Text>
                     </Pressable>
                   </View>
@@ -346,7 +366,7 @@ export default function TableDeckScreen() {
 
       <FeedbackButton
         level={level}
-        languagePair="en→es"
+        languagePair={deckPair}
         currentCard={`grammar:${topicId}:tabledeck:${current.id}`}
         bottomOffset={dockH + dockLift}
       />

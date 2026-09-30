@@ -9,6 +9,7 @@ import type { PcicItem, PcicTarget } from '@/data/pcic';
 import type { PcicGrade } from '@/lib/pcicMatch';
 import { sm2PreviewDays, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { sensesFor } from '@/lib/pcicSenses';
+import ResultBadge from '@/components/ResultBadge';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox } from '@/components/grammar/Brutal';
 
@@ -63,6 +64,8 @@ export default function PcicRevealedAnswer({
   return (
     <>
       <View style={styles.resultSection}>
+        {/* FB403: egyetlen, minden kártyán azonos jó / rossz jelzés (szín + alak + ✓/✗ + szöveg). */}
+        <ResultBadge correct={nextGrade === 'good'} align="center" testID="pcic-result-badge" />
         <Text style={styles.diffLine}>
           {charDiff(typedAnswer, grade.best, { case: true, accents: false }).map((d, i) => (
             <Text
