@@ -14,7 +14,7 @@ Becslés: ~600K token, 1-2 óra.
 - [x] 1. (12:53) Worktree előkészítés + kapu-script `scripts/words-open-check.mjs` → kész, ha: a script lefut egy kis kézi mintán, és `npm run lint` zöld
 - [x] 2. (13:01) 600 lemma listája (order, level, pos, lemma, es) a 4 fájlba, mondatok nélkül → kész, ha: a kapu R1, R2 szabálya zöld
 - [x] 3. (13:01) A1 kártyák (fordítás + mondat) → kész, ha: a kapu minden szabálya zöld az A1-en; Opus 10-es mintát néz
-- [ ] 4. A2, B1, B2 kártyák → kész, ha: a kapu teljes futása zöld
+- [x] 4. (13:22) A2, B1, B2 kártyák → kész, ha: a kapu teljes futása zöld
 - [ ] 5. Második AI-átnézés (független Sonnet) + javítás → kész, ha: minden jelölt kártya javítva, kapu zöld
 - [ ] 6. Repo-kapu, commit, push, PR + böngészős átnéző lap Kálmánnak → kész, ha: typecheck/lint/test zöld, PR nyitva, lap linkje kint
 
@@ -87,6 +87,7 @@ A script szabályonként kiírja a hibák számát és az első 5 példát, hib�
 - Nincs értelmetlen, erőltetett vagy természetellenes mondat; a mondat egy hétköznapi helyzetet ír le.
 - A fordítás hű és természetes mind a 3 nyelven; a névelő / nem helyes.
 - A `sentence_lemmas` és a rendhagyó-alak lista igaz.
+- Természetes spanyol: az alanyi névmás (yo, tú, él, nosotros…) csak ott marad, ahol egy anyanyelvi is kiírná (nyomaték, szembeállítás, egyértelműsítés 3. személyben). Szintenként a mondatok legfeljebb ~25%-a kezdődjön alanyi névmással (Opus-minta 2026-09-30: A1-ben 80/146 volt).
 
 ### Git
 
