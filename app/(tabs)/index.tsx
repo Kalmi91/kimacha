@@ -134,6 +134,16 @@ export default function PcicScreen() {
   // effektet lent), nem csak első mountkor (az `autoFocus` prop erre nem
   // elég, mert a TextInput kártyaváltáskor nem remountol).
   const inputRef = useRef<TextInput>(null);
+  // FB408/FB409 (PLAN-fb0929 2. lépés): a beviteli mező minden új kártyánál
+  // ÚJRA MOUNTOL (a TextInput `key`-e ezt a számlálót tartalmazza). Ok: a mező
+  // Check után `editable={false}` lett, majd Next után újra szerkeszthető, ugyanazon
+  // a natív EditText-en. Androidon a letiltott-majd-engedélyezett mezőnek a
+  // régi InputConnection / gépelési (composing) állapota megmarad: a `focus()`
+  // néha nem nyitja fel a billentyűzetet (FB408), és a Gboard szerint még
+  // "írás közben" lévő szövegből a törlés nem megy (FB409). Friss mező =
+  // friss InputConnection + `autoFocus`, ami minden mountnál felnyitja a
+  // billentyűzetet. A számláló azt is lefedi, ha ugyanaz a lap jön újra (again).
+  const [cardSeq, setCardSeq] = useState(0);
 
   // PLAN-play 10. lépés: `overrideLevel` a szint-választó lapról jövő azonnali
   // váltásnak, hogy ne kelljen a setLevel-re várni egy render-kört (a db-be
@@ -292,6 +302,7 @@ export default function PcicScreen() {
     setTypedAnswer('');
     setArticlePick('');
     setGrade(null);
+    setCardSeq((n) => n + 1);
   };
 
   // PLAN-play 11. lépés: Check után a szó felolvasása UTÁN, láncolva, magától
@@ -392,6 +403,7 @@ export default function PcicScreen() {
     setTypedAnswer('');
     setArticlePick('');
     setGrade(null);
+    setCardSeq((n) => n + 1);
   };
 
   const handleReset = () => {
@@ -517,13 +529,13 @@ export default function PcicScreen() {
           onSelect={handleSelectLevel}
           onClose={() => setLevelSheetOpen(false)}
         />
-        <ScrollView
-          style={styles.cardScroll}
-          contentContainerStyle={[styles.cardScrollContent, { paddingBottom: g.brutal ? 100 : 24 }]}
-          keyboardShouldPersistTaps="handled"
-          keyboardDismissMode="on-drag"
-        >
-          {sentenceCard.kind === 'tiles' ? (
+        {sentenceCard.kind === 'tiles' ? (
+          <ScrollView
+            style={styles.cardScroll}
+            contentContainerStyle={[styles.cardScrollContent, { paddingBottom: g.brutal ? 100 : 24 }]}
+            keyboardShouldPersistTaps="handled"
+            keyboardDismissMode="on-drag"
+          >
             <EasySentenceCard
               key={sentenceCard.itemId}
               sourceSentence={sentenceCard.source}
@@ -532,18 +544,28 @@ export default function PcicScreen() {
               speechLocale={speechLang(target)}
               onResult={() => setSentenceCard(null)}
             />
-          ) : (
-            <TypedSentenceCard
-              key={sentenceCard.itemId}
-              sourceSentence={sentenceCard.source}
-              targetSentence={sentenceCard.target}
-              strictAccents={strictAccents}
-              speechLocale={speechLang(target)}
-              onResult={() => setSentenceCard(null)}
-            />
-          )}
-        </ScrollView>
-        <FeedbackButton level={level} languagePair={languagePair} currentCard={`sentence:${sentenceCard.itemId}`} />
+          </ScrollView>
+        ) : (
+          // FB397: a begépelős mondatkártya saját görgetője + a dokkolt Check sáv a
+          // billentyűzet fölött (mint a szókártyán), ezért nincs külső ScrollView.
+          <TypedSentenceCard
+            key={sentenceCard.itemId}
+            sourceSentence={sentenceCard.source}
+            targetSentence={sentenceCard.target}
+            strictAccents={strictAccents}
+            speechLocale={speechLang(target)}
+            onResult={() => setSentenceCard(null)}
+            dockLift={dockLift}
+            dockH={dockH}
+            onDockHeight={setDockH}
+          />
+        )}
+        <FeedbackButton
+          level={level}
+          languagePair={languagePair}
+          currentCard={`sentence:${sentenceCard.itemId}`}
+          bottomOffset={sentenceCard.kind === 'tiles' ? undefined : dockH + dockLift}
+        />
       </KeyboardAvoidingView>
     );
   }
@@ -798,12 +820,14 @@ export default function PcicScreen() {
           )}
 
           <TextInput
+            key={`pcic-in-${current.itemId}-${cardSeq}`}
             ref={inputRef}
             style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, g.brutal && brutalInputStyle(g)]}
             value={typedAnswer}
             onChangeText={setTypedAnswer}
             onSubmitEditing={grade ? () => nextGrade && handleGrade(nextGrade) : handleCheck}
             editable={!grade}
+            autoFocus={!grade}
             {...answerInputProps}
           />
 
