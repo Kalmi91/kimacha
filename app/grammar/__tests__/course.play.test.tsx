@@ -152,8 +152,8 @@ describe('grammar course', () => {
     expect(screen.queryByTestId('grammar-level-B1')).toBeNull();
     expect(screen.queryByTestId('grammar-topic-presente-regular')).toBeNull();
     expect(screen.queryByTestId('grammar-topic-to_be')).toBeTruthy();
-    // basic_verbs még nincs megírva; a to_be leckéje megvan (5. lépés), tehát nem „pronto”.
-    expect(screen.getByTestId('grammar-percent-basic_verbs').props.children).toBe('próximamente');
+    // mind a 21 angol témához van lecke: egyik sem „próximamente”.
+    expect(screen.getByTestId('grammar-percent-basic_verbs').props.children).not.toBe('próximamente');
     expect(screen.getByTestId('grammar-percent-to_be').props.children).not.toBe('próximamente');
 
     setLanguage('en');
