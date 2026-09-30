@@ -133,6 +133,8 @@ export default {
     yourAnswer: 'Your answer',
     // FB421: a félbehagyott feladat sora a gomb alatt, pl. "3/10 · 30%".
     runProgress: (done: number, total: number, pct: number) => `${done}/${total} · ${pct}%`,
+    // FB419: az el / la névelő-választó feladat gombja (csak ott, ahol van ilyen készlet).
+    startArticle: (n: number) => `El or la? (${n})`,
   },
   settings: {
     // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont):
