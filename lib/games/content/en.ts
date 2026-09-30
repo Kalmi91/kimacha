@@ -10,7 +10,8 @@ import grammarEnToBe from '@/data/games/grammar/en/to-be.json';
 import grammarEnArticles from '@/data/games/grammar/en/articles.json';
 import grammarEnPresentSimple from '@/data/games/grammar/en/present-simple.json';
 import grammarEnPlurals from '@/data/games/grammar/en/plurals.json';
+import grammarEnThisThat from '@/data/games/grammar/en/this-that.json';
 
 export const enContent: LanguageContentBundle = {
-  grammarTopics: [grammarEnToBe, grammarEnArticles, grammarEnPresentSimple, grammarEnPlurals] as unknown as GrammarTopicData[],
+  grammarTopics: [grammarEnToBe, grammarEnArticles, grammarEnPresentSimple, grammarEnPlurals, grammarEnThisThat] as unknown as GrammarTopicData[],
 };
