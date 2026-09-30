@@ -1,0 +1,1482 @@
+{
+  "schema": 2,
+  "topic": "present_simple",
+  "level": "A1",
+  "title": {
+    "hu": "Az egyszerű jelen idő (I work, she works)",
+    "en": "The Present Simple (I work, she works)",
+    "es": "El Presente Simple (I work, she works)",
+    "de": "Das Present Simple (I work, she works)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Az egyszerű jelen idő a szokások, a napi rutin és az állandó igazságok ideje: „I work in an office”, „She lives in Mexico City”. Hasonlít a spanyol jelen időre, de két különbség van. Az első: az ige alig változik; csak a he / she / it mellé kerül egy -s (I work, she works). A második: az alany (I, you, he...) kötelező. Spanyolul alany nélkül mondod: „Trabajo aquí”; angolul nem mondhatod, hogy „Work here”, hanem: „I work here”.",
+        "en": "The Present Simple is the tense for habits, routines and things that are always true: “I work in an office”, “She lives in Mexico City”. It looks like your Spanish present tense, with two differences. First: the verb hardly changes; only he / she / it adds an -s (I work, she works). Second: the subject (I, you, he...) is required. In Spanish you say “Trabajo aquí” with no subject; in English you cannot say “Work here”, you say “I work here”.",
+        "es": "El Presente Simple es el tiempo de los hábitos, las rutinas y las cosas que siempre son verdad: «I work in an office», «She lives in Mexico City». Se parece a tu presente en español, pero con dos diferencias. Primera: el verbo casi no cambia; solo he / she / it añade una -s (I work, she works). Segunda: el sujeto (I, you, he...) es obligatorio. En español dices «Trabajo aquí» sin sujeto; en inglés no puedes decir «Work here», tienes que decir «I work here».",
+        "de": "Das Present Simple ist die Zeit für Gewohnheiten, Alltagsroutinen und Dinge, die immer gelten: „I work in an office“, „She lives in Mexico City“. Es ähnelt dem spanischen Präsens, aber mit zwei Unterschieden. Erstens: Das Verb verändert sich kaum; nur bei he / she / it kommt ein -s dazu (I work, she works). Zweitens: Das Subjekt (I, you, he...) ist Pflicht. Auf Spanisch sagst du „Trabajo aquí“ ohne Subjekt; im Englischen darfst du nicht „Work here“ sagen, sondern „I work here“."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "ps-aff",
+      "title": {
+        "hu": "Egyszerű jelen idő, állító mondat",
+        "en": "Present Simple, affirmative",
+        "es": "Presente Simple, afirmativa",
+        "de": "Present Simple, bejahend"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "work",
+          "en": "work",
+          "es": "work",
+          "de": "work"
+        },
+        {
+          "hu": "play",
+          "en": "play",
+          "es": "play",
+          "de": "play"
+        },
+        {
+          "hu": "watch",
+          "en": "watch",
+          "es": "watch",
+          "de": "watch"
+        },
+        {
+          "hu": "study",
+          "en": "study",
+          "es": "study",
+          "de": "study"
+        }
+      ],
+      "rows": [
+        [
+          "I",
+          "work",
+          "play",
+          "watch",
+          "study"
+        ],
+        [
+          "you",
+          "work",
+          "play",
+          "watch",
+          "study"
+        ],
+        [
+          "he / she / it",
+          "works",
+          "plays",
+          "watches",
+          "studies"
+        ],
+        [
+          "we",
+          "work",
+          "play",
+          "watch",
+          "study"
+        ],
+        [
+          "they",
+          "work",
+          "play",
+          "watch",
+          "study"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "A he / she / it -s végződése",
+        "en": "The -s ending for he / she / it",
+        "es": "La terminación -s de he / she / it",
+        "de": "Die -s-Endung bei he / she / it"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A legtöbb ige: csak -s kerül a végére (work → works). Akkor is, ha az y előtt magánhangzó áll (play → plays).",
+            "en": "Most verbs: just add -s (work → works). This includes verbs where y follows a vowel (play → plays).",
+            "es": "Casi todos los verbos: solo añade -s (work → works). También cuando la y va detrás de una vocal (play → plays).",
+            "de": "Die meisten Verben: einfach -s anhängen (work → works). Das gilt auch, wenn vor dem y ein Vokal steht (play → plays)."
+          },
+          "examples": [
+            {
+              "es": "He works here.",
+              "tr": {
+                "hu": "Ő itt dolgozik.",
+                "en": "He works here.",
+                "es": "Él trabaja aquí.",
+                "de": "Er arbeitet hier."
+              }
+            },
+            {
+              "es": "She plays with her friends.",
+              "tr": {
+                "hu": "Ő a barátaival játszik.",
+                "en": "She plays with her friends.",
+                "es": "Ella juega con sus amigos.",
+                "de": "Sie spielt mit ihren Freunden."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A -ch, -sh, -s, -x vagy -o végű igék: -es kerül a végükre (watch → watches, go → goes).",
+            "en": "Verbs ending in -ch, -sh, -s, -x or -o: add -es (watch → watches, go → goes).",
+            "es": "Verbos que terminan en -ch, -sh, -s, -x u -o: añade -es (watch → watches, go → goes).",
+            "de": "Verben auf -ch, -sh, -s, -x oder -o: -es anhängen (watch → watches, go → goes)."
+          },
+          "examples": [
+            {
+              "es": "She watches TV every night.",
+              "tr": {
+                "hu": "Minden este tévét néz.",
+                "en": "She watches TV every night.",
+                "es": "Ella ve la tele todas las noches.",
+                "de": "Sie sieht jeden Abend fern."
+              }
+            },
+            {
+              "es": "He goes to school by bus.",
+              "tr": {
+                "hu": "Busszal jár iskolába.",
+                "en": "He goes to school by bus.",
+                "es": "Él va a la escuela en autobús.",
+                "de": "Er fährt mit dem Bus zur Schule."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Mássalhangzó + y végű igék: az y helyére -ies kerül (study → studies).",
+            "en": "Verbs ending in consonant + y: change the y to -ies (study → studies).",
+            "es": "Verbos que terminan en consonante + y: la y cambia a -ies (study → studies).",
+            "de": "Verben auf Konsonant + y: Das y wird zu -ies (study → studies)."
+          },
+          "examples": [
+            {
+              "es": "She studies English.",
+              "tr": {
+                "hu": "Ő angolul tanul.",
+                "en": "She studies English.",
+                "es": "Ella estudia inglés.",
+                "de": "Sie lernt Englisch."
+              }
+            },
+            {
+              "es": "He studies at night.",
+              "tr": {
+                "hu": "Éjjel tanul.",
+                "en": "He studies at night.",
+                "es": "Él estudia por la noche.",
+                "de": "Er lernt nachts."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Egy különleges eset: a have alakja has (nem „haves”).",
+            "en": "One special case: have becomes has (not “haves”).",
+            "es": "Un caso especial: have se convierte en has (no «haves»).",
+            "de": "Ein Sonderfall: have wird zu has (nicht „haves“)."
+          },
+          "examples": [
+            {
+              "es": "She has a dog.",
+              "tr": {
+                "hu": "Van egy kutyája.",
+                "en": "She has a dog.",
+                "es": "Ella tiene un perro.",
+                "de": "Sie hat einen Hund."
+              }
+            },
+            {
+              "es": "He has a big family.",
+              "tr": {
+                "hu": "Nagy családja van.",
+                "en": "He has a big family.",
+                "es": "Él tiene una familia grande.",
+                "de": "Er hat eine große Familie."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Tagadás és kérdés: do / does",
+        "en": "Negatives and questions: do / does",
+        "es": "Negación y pregunta: do / does",
+        "de": "Verneinung und Frage: do / does"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Tagadás: don’t (I, you, we, they) vagy doesn’t (he, she, it) + az ige alapalakja. Az -s eltűnik az igéről: a doesn’t-be költözik (she doesn’t work, nem „she doesn’t works”).",
+            "en": "Negation: don’t (I, you, we, they) or doesn’t (he, she, it) + the base verb. The -s leaves the main verb: it lives in doesn’t (she doesn’t work, not “she doesn’t works”).",
+            "es": "Negación: don’t (I, you, we, they) o doesn’t (he, she, it) + el verbo base. La -s desaparece del verbo: pasa a doesn’t (she doesn’t work, no «she doesn’t works»).",
+            "de": "Verneinung: don’t (I, you, we, they) oder doesn’t (he, she, it) + Grundform des Verbs. Das -s verschwindet vom Verb: Es steckt in doesn’t (she doesn’t work, nicht „she doesn’t works“)."
+          },
+          "examples": [
+            {
+              "es": "I don't drink coffee.",
+              "tr": {
+                "hu": "Nem iszom kávét.",
+                "en": "I don't drink coffee.",
+                "es": "No bebo café.",
+                "de": "Ich trinke keinen Kaffee."
+              }
+            },
+            {
+              "es": "She doesn't drink coffee.",
+              "tr": {
+                "hu": "Ő nem iszik kávét.",
+                "en": "She doesn't drink coffee.",
+                "es": "Ella no bebe café.",
+                "de": "Sie trinkt keinen Kaffee."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Kérdés: Do (I, you, we, they) vagy Does (he, she, it) + alany + az ige alapalakja. Spanyolul elég a hanglejtés vagy a szórend („¿Trabajas aquí?”); angolul mindig kell a do / does.",
+            "en": "Questions: Do (I, you, we, they) or Does (he, she, it) + subject + base verb. In Spanish, intonation or word order is enough (“¿Trabajas aquí?”); English always needs do / does.",
+            "es": "Pregunta: Do (I, you, we, they) o Does (he, she, it) + sujeto + verbo base. En español basta con la entonación o el orden («¿Trabajas aquí?»); en inglés siempre hace falta do / does.",
+            "de": "Frage: Do (I, you, we, they) oder Does (he, she, it) + Subjekt + Grundform des Verbs. Im Spanischen genügen Betonung oder Wortstellung („¿Trabajas aquí?“); im Englischen brauchst du immer do / does."
+          },
+          "examples": [
+            {
+              "es": "Do you live here?",
+              "tr": {
+                "hu": "Itt laksz?",
+                "en": "Do you live here?",
+                "es": "¿Vives aquí?",
+                "de": "Wohnst du hier?"
+              }
+            },
+            {
+              "es": "Does she work here?",
+              "tr": {
+                "hu": "Ő itt dolgozik?",
+                "en": "Does she work here?",
+                "es": "¿Ella trabaja aquí?",
+                "de": "Arbeitet sie hier?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Rövid válasz: Yes / No + alany + do / does (vagy don’t / doesn’t). A főigét nem ismétled meg.",
+            "en": "Short answers: Yes / No + subject + do / does (or don’t / doesn’t). You do not repeat the main verb.",
+            "es": "Respuesta corta: Yes / No + sujeto + do / does (o don’t / doesn’t). No repites el verbo principal.",
+            "de": "Kurzantwort: Yes / No + Subjekt + do / does (oder don’t / doesn’t). Das Hauptverb wird nicht wiederholt."
+          },
+          "examples": [
+            {
+              "es": "Do you like tea? Yes, I do.",
+              "tr": {
+                "hu": "Szereted a teát? Igen.",
+                "en": "Do you like tea? Yes, I do.",
+                "es": "¿Te gusta el té? Sí.",
+                "de": "Magst du Tee? Ja."
+              }
+            },
+            {
+              "es": "Does he work here? No, he doesn't.",
+              "tr": {
+                "hu": "Ő itt dolgozik? Nem.",
+                "en": "Does he work here? No, he doesn't.",
+                "es": "¿Trabaja aquí? No.",
+                "de": "Arbeitet er hier? Nein."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ps-aux",
+      "title": {
+        "hu": "Tagadás és kérdés a „work” igével",
+        "en": "Negatives and questions with “work”",
+        "es": "Negación y pregunta con «work»",
+        "de": "Verneinung und Frage mit „work“"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "tagadás",
+          "en": "negative",
+          "es": "negación",
+          "de": "Verneinung"
+        },
+        {
+          "hu": "kérdés",
+          "en": "question",
+          "es": "pregunta",
+          "de": "Frage"
+        }
+      ],
+      "rows": [
+        [
+          "I",
+          "I don't work",
+          "Do I work?"
+        ],
+        [
+          "you",
+          "you don't work",
+          "Do you work?"
+        ],
+        [
+          "he / she / it",
+          "he / she / it doesn't work",
+          "Does he / she / it work?"
+        ],
+        [
+          "we",
+          "we don't work",
+          "Do we work?"
+        ],
+        [
+          "they",
+          "they don't work",
+          "Do they work?"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Mikor használjuk",
+        "en": "When we use it",
+        "es": "Cuándo se usa",
+        "de": "Wann wir es benutzen"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Szokásokra és napi rutinra. Gyakran áll mellette az always, often, sometimes, never, ami a főige ELŐTT van.",
+            "en": "For habits and routines. They often come with always, often, sometimes, never, which go BEFORE the main verb.",
+            "es": "Para hábitos y rutinas. Suelen ir con always, often, sometimes, never, que se ponen ANTES del verbo principal.",
+            "de": "Für Gewohnheiten und Routinen. Oft stehen always, often, sometimes, never dabei, und zwar VOR dem Hauptverb."
+          },
+          "examples": [
+            {
+              "es": "I always drink water.",
+              "tr": {
+                "hu": "Mindig vizet iszom.",
+                "en": "I always drink water.",
+                "es": "Siempre bebo agua.",
+                "de": "Ich trinke immer Wasser."
+              }
+            },
+            {
+              "es": "She never eats meat.",
+              "tr": {
+                "hu": "Ő soha nem eszik húst.",
+                "en": "She never eats meat.",
+                "es": "Ella nunca come carne.",
+                "de": "Sie isst nie Fleisch."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Tényekre és állandó helyzetekre: hol laksz, hol dolgozol, milyen valami.",
+            "en": "For facts and lasting situations: where you live, where you work, what something is like.",
+            "es": "Para hechos y situaciones que no cambian: dónde vives, dónde trabajas, cómo es algo.",
+            "de": "Für Tatsachen und dauerhafte Situationen: wo du wohnst, wo du arbeitest, wie etwas ist."
+          },
+          "examples": [
+            {
+              "es": "I live in Mexico City.",
+              "tr": {
+                "hu": "Mexikóvárosban lakom.",
+                "en": "I live in Mexico City.",
+                "es": "Vivo en la Ciudad de México.",
+                "de": "Ich wohne in Mexiko-Stadt."
+              }
+            },
+            {
+              "es": "My brother works in a shop.",
+              "tr": {
+                "hu": "A fivérem egy boltban dolgozik.",
+                "en": "My brother works in a shop.",
+                "es": "Mi hermano trabaja en una tienda.",
+                "de": "Mein Bruder arbeitet in einem Laden."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ízlésre, vágyra, szükségletre: like, love, want, need. Ezek az igék szinte sosem kapnak -ing végződést.",
+            "en": "For likes, wants and needs: like, love, want, need. These verbs almost never take -ing.",
+            "es": "Para gustos, deseos y necesidades: like, love, want, need. Estos verbos casi nunca llevan -ing.",
+            "de": "Für Vorlieben, Wünsche und Bedürfnisse: like, love, want, need. Diese Verben stehen fast nie mit -ing."
+          },
+          "examples": [
+            {
+              "es": "I like music.",
+              "tr": {
+                "hu": "Szeretem a zenét.",
+                "en": "I like music.",
+                "es": "Me gusta la música.",
+                "de": "Ich mag Musik."
+              }
+            },
+            {
+              "es": "He wants a coffee.",
+              "tr": {
+                "hu": "Kér egy kávét.",
+                "en": "He wants a coffee.",
+                "es": "Él quiere un café.",
+                "de": "Er möchte einen Kaffee."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Vigyázat az -s-sel: spanyolul minden személynél változik az ige, angolul csak a he / she / it mellett. Ne mondd, hogy „He play”, hanem: „He plays”.",
+        "en": "Watch the -s: in Spanish every person changes the verb, in English only he / she / it does. Do not say “He play”; say “He plays”.",
+        "es": "Cuidado con la -s: en español cada persona cambia el verbo, en inglés solo he / she / it. No digas «He play», di «He plays».",
+        "de": "Achtung beim -s: Im Spanischen ändert sich das Verb bei jeder Person, im Englischen nur bei he / she / it. Sag nicht „He play“, sondern „He plays“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Az ige elé tett „no” a spanyolból másolt hiba. Ne mondd, hogy „I no like coffee”, hanem: „I don’t like coffee”.",
+        "en": "Putting “no” before the verb copies Spanish. Do not say “I no like coffee”; say “I don’t like coffee”.",
+        "es": "Poner «no» delante del verbo es un calco del español. No digas «I no like coffee», di «I don’t like coffee».",
+        "de": "„no“ vor dem Verb ist eine Übernahme aus dem Spanischen. Sag nicht „I no like coffee“, sondern „I don’t like coffee“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A does / doesn’t után az ige visszatér az alapalakjára: az -s már a does-ban van. Ne mondd, hogy „She doesn’t works”, hanem: „She doesn’t work”. Kérdésben is: „Does she work?”, nem „Does she works?”.",
+        "en": "After does / doesn’t the verb goes back to its base form: the -s is already in does. Do not say “She doesn’t works”; say “She doesn’t work”. The same in questions: “Does she work?”, not “Does she works?”.",
+        "es": "Después de does / doesn’t el verbo vuelve a su forma base: la -s ya está en does. No digas «She doesn’t works», di «She doesn’t work». Igual en las preguntas: «Does she work?», no «Does she works?».",
+        "de": "Nach does / doesn’t steht das Verb wieder in der Grundform: Das -s steckt schon in does. Sag nicht „She doesn’t works“, sondern „She doesn’t work“. Genauso in Fragen: „Does she work?“, nicht „Does she works?“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Spanyolul a kérdés hanglejtéssel vagy fordított szórenddel megy (¿Trabajas aquí?); angolul kell a do / does. Ne mondd, hogy „Work you here?”, hanem: „Do you work here?”. És ne hagyd el az alanyt: nem „Live in Mexico”, hanem „I live in Mexico”.",
+        "en": "In Spanish a question is made with intonation or by inverting the verb (¿Trabajas aquí?); English needs do / does. Do not say “Work you here?”; say “Do you work here?”. And never drop the subject: not “Live in Mexico”, but “I live in Mexico”.",
+        "es": "En español la pregunta se hace con la entonación o invirtiendo el verbo (¿Trabajas aquí?); en inglés hace falta do / does. No digas «Work you here?», di «Do you work here?». Y no omitas el sujeto: no «Live in Mexico», sino «I live in Mexico».",
+        "de": "Im Spanischen bildet man die Frage mit Betonung oder durch Umstellen des Verbs (¿Trabajas aquí?); im Englischen braucht man do / does. Sag nicht „Work you here?“, sondern „Do you work here?“. Und lass das Subjekt nie weg: nicht „Live in Mexico“, sondern „I live in Mexico“."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Az egyszerű jelen idő szokásokra, napi rutinra és állandó igazságokra való. Az ige alig változik: «I work», «you work», «we work», «they work». Csak a he, she és it mellé kerül egy -s: «he works», «she plays», «it rains». A -ch, -sh és -o végű igék -es-t kapnak: «she watches», «he goes». Mássalhangzó plusz y végnél az y -ies lesz: «she studies». Tagadáshoz a «don't» vagy «doesn't» kell, utána az ige alapalakja: «I don't like coffee», «she doesn't work here». Kérdéshez a «do» vagy «does» kell: «Do you live here?», «Does she work here?». Vigyázat: ne mondd, hogy «he play» vagy «I no like», hanem: «he plays» és «I don't like».",
+    "en": "The Present Simple is for habits, routines and things that are always true. The verb hardly changes: «I work», «you work», «we work», «they work». Only he, she and it take an -s: «he works», «she plays», «it rains». After -ch, -sh and -o, add -es: «she watches», «he goes». After a consonant plus y, the y becomes -ies: «she studies». To make a negative, use «don't» or «doesn't» plus the base verb: «I don't like coffee», «she doesn't work here». To ask a question, use «do» or «does»: «Do you live here?», «Does she work here?». Careful: do not say «he play» or «I no like»; say «he plays» and «I don't like».",
+    "es": "El Presente Simple sirve para hábitos, rutinas y cosas que siempre son verdad. El verbo casi no cambia: «I work», «you work», «we work», «they work». Solo he, she e it llevan una -s: «he works», «she plays», «it rains». Con -ch, -sh y -o se añade -es: «she watches», «he goes». Con consonante más y, la y cambia a -ies: «she studies». Para negar usa «don't» o «doesn't» más el verbo base: «I don't like coffee», «she doesn't work here». Para preguntar usa «do» o «does»: «Do you live here?», «Does she work here?». Cuidado: no digas «he play» ni «I no like», di «he plays» y «I don't like».",
+    "de": "Das Present Simple steht für Gewohnheiten, Routinen und Dinge, die immer gelten. Das Verb verändert sich kaum: «I work», «you work», «we work», «they work». Nur he, she und it bekommen ein -s: «he works», «she plays», «it rains». Nach -ch, -sh und -o kommt -es: «she watches», «he goes». Nach Konsonant plus y wird das y zu -ies: «she studies». Zum Verneinen nimmst du «don't» oder «doesn't» plus Grundform: «I don't like coffee», «she doesn't work here». Für Fragen nimmst du «do» oder «does»: «Do you live here?», «Does she work here?». Vorsicht: Sag nicht «he play» oder «I no like», sondern «he plays» und «I don't like»."
+  },
+  "items": [
+    {
+      "id": "ps-01",
+      "sentence": "My sister ___ in a big house.",
+      "options": [
+        "live",
+        "lives",
+        "living"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A „my sister” egyes szám harmadik személy (she), ezért az igére -s kerül: My sister lives in a big house.",
+        "en": "“My sister” is third person singular (she), so the verb takes -s: My sister lives in a big house.",
+        "es": "«My sister» es tercera persona del singular (she), por eso el verbo lleva -s: My sister lives in a big house.",
+        "de": "„My sister“ ist dritte Person Singular (she), deshalb bekommt das Verb ein -s: My sister lives in a big house."
+      },
+      "wrong": {
+        "live": {
+          "hu": "A „live” az I, you, we, they mellé való. A „my sister” = she, ezért „lives”.",
+          "en": "“Live” goes with I, you, we, they. “My sister” = she, so it is “lives”.",
+          "es": "«Live» va con I, you, we, they. «My sister» = she, por eso «lives».",
+          "de": "„Live“ gehört zu I, you, we, they. „My sister“ = she, deshalb „lives“."
+        },
+        "living": {
+          "hu": "A „living” -ing alak; az egyszerű jelen időben nincs -ing: My sister lives.",
+          "en": "“Living” is an -ing form; the Present Simple has no -ing: My sister lives.",
+          "es": "«Living» es una forma en -ing; el Presente Simple no lleva -ing: My sister lives.",
+          "de": "„Living“ ist eine -ing-Form; im Present Simple gibt es kein -ing: My sister lives."
+        }
+      },
+      "examples": [
+        "He lives in Mexico City.",
+        "My brother lives at home."
+      ]
+    },
+    {
+      "id": "ps-02",
+      "sentence": "I ___ like coffee.",
+      "options": [
+        "don't",
+        "doesn't",
+        "no"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az „I” mellé a tagadáshoz a „don’t” kell, utána az ige alapalakja: I don’t like coffee.",
+        "en": "With “I”, the negative is “don’t” plus the base verb: I don’t like coffee.",
+        "es": "Con «I», la negación es «don’t» más el verbo base: I don’t like coffee.",
+        "de": "Nach „I“ lautet die Verneinung „don’t“ plus Grundform: I don’t like coffee."
+      },
+      "wrong": {
+        "doesn't": {
+          "hu": "A „doesn’t” csak a he, she, it mellé való; az „I” mellé nem: I don’t, sosem „I doesn’t”.",
+          "en": "“Doesn’t” goes only with he, she, it, not with “I”: I don’t, never “I doesn’t”.",
+          "es": "«Doesn’t» va solo con he, she, it, no con «I»: I don’t, nunca «I doesn’t».",
+          "de": "„Doesn’t“ gehört nur zu he, she, it, nicht zu „I“: I don’t, niemals „I doesn’t“."
+        },
+        "no": {
+          "hu": "A „no” a spanyol minta másolata; az angolban a „do” segédige kell a tagadáshoz: I don’t like, sosem „I no like”.",
+          "en": "“No” copies the Spanish pattern; English needs the helper verb do: I don’t like, never “I no like”.",
+          "es": "«No» copia el patrón del español; el inglés necesita el auxiliar do: I don’t like, nunca «I no like».",
+          "de": "„No“ folgt dem spanischen Muster; im Englischen braucht die Verneinung das Hilfsverb do: I don’t like, niemals „I no like“."
+        }
+      },
+      "examples": [
+        "You don't eat meat.",
+        "We don't drink tea."
+      ]
+    },
+    {
+      "id": "ps-03",
+      "kind": "form",
+      "verb": "study",
+      "person": "he / she / it",
+      "answer": "studies",
+      "table": "ps-aff"
+    },
+    {
+      "kind": "why",
+      "id": "ps-04",
+      "es": "She works in an office.",
+      "target": "works",
+      "tr": {
+        "hu": "Ő irodában dolgozik.",
+        "en": "She works in an office.",
+        "es": "Ella trabaja en una oficina.",
+        "de": "Sie arbeitet in einem Büro."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "he / she / it: az ige -s-t kap",
+            "en": "he / she / it: the verb takes -s",
+            "es": "he / she / it: el verbo lleva -s",
+            "de": "he / she / it: das Verb bekommt -s"
+          }
+        },
+        {
+          "text": {
+            "hu": "többes szám: az ige -s-t kap",
+            "en": "plural: the verb takes -s",
+            "es": "plural: el verbo lleva -s",
+            "de": "Plural: das Verb bekommt -s"
+          },
+          "wrong": {
+            "hu": "A „she” egyes szám, és az -s éppen az egyes szám harmadik személy jele. Többes számnál (they) az ige nem változik: they work.",
+            "en": "“She” is singular, and -s is exactly the mark of the third person singular. With a plural (they) the verb does not change: they work.",
+            "es": "«She» es singular, y la -s es justo la marca de la tercera persona del singular. Con un plural (they) el verbo no cambia: they work.",
+            "de": "„She“ ist Singular, und das -s ist genau das Zeichen der dritten Person Singular. Beim Plural (they) bleibt das Verb unverändert: they work."
+          }
+        },
+        {
+          "text": {
+            "hu": "múlt idő: az -s a múlt jele",
+            "en": "past tense: -s marks the past",
+            "es": "pasado: la -s marca el pasado",
+            "de": "Vergangenheit: -s zeigt die Vergangenheit an"
+          },
+          "wrong": {
+            "hu": "Ez jelen idő: szokásról szól, nem múltról. A múlt jele az -ed lenne (worked), nem az -s.",
+            "en": "This is present tense: a habit, not the past. The past would use -ed (worked), not -s.",
+            "es": "Es presente: un hábito, no un pasado. El pasado usaría -ed (worked), no -s.",
+            "de": "Das ist Präsens: eine Gewohnheit, keine Vergangenheit. Die Vergangenheit hätte -ed (worked), nicht -s."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "ps-05",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Trabajo en una oficina.",
+          "en": "I work in an office."
+        },
+        {
+          "es": "Ella estudia inglés.",
+          "en": "She studies English."
+        },
+        {
+          "es": "No bebo café.",
+          "en": "I don't drink coffee."
+        },
+        {
+          "es": "¿Vives aquí?",
+          "en": "Do you live here?"
+        },
+        {
+          "es": "Él no come carne.",
+          "en": "He doesn't eat meat."
+        },
+        {
+          "es": "Mi hermana lee libros.",
+          "en": "My sister reads books."
+        }
+      ]
+    },
+    {
+      "id": "ps-06",
+      "sentence": "___ you speak English?",
+      "options": [
+        "Do",
+        "Does",
+        "Are"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „you” mellé a kérdéshez a „Do” kell: Do you speak English?",
+        "en": "With “you”, a question starts with “Do”: Do you speak English?",
+        "es": "Con «you», la pregunta empieza con «Do»: Do you speak English?",
+        "de": "Bei „you“ beginnt die Frage mit „Do“: Do you speak English?"
+      },
+      "wrong": {
+        "Does": {
+          "hu": "A „Does” a he, she, it mellé való; a „you” mellé „Do” kell.",
+          "en": "“Does” goes with he, she, it; with “you” you need “Do”.",
+          "es": "«Does» va con he, she, it; con «you» hace falta «Do».",
+          "de": "„Does“ gehört zu he, she, it; bei „you“ braucht man „Do“."
+        },
+        "Are": {
+          "hu": "Az „Are” a to be alakja; a „speak” ige mellett a „do” segédige kell: Do you speak?",
+          "en": "“Are” is a form of to be; with the verb “speak” you need the helper verb do: Do you speak?",
+          "es": "«Are» es una forma de to be; con el verbo «speak» hace falta el auxiliar do: Do you speak?",
+          "de": "„Are“ ist eine Form von to be; bei dem Verb „speak“ braucht man das Hilfsverb do: Do you speak?"
+        }
+      },
+      "examples": [
+        "Do you live here?",
+        "Do they work in an office?"
+      ]
+    },
+    {
+      "id": "ps-07",
+      "sentence": "He doesn't ___ meat.",
+      "options": [
+        "eat",
+        "eats",
+        "eating"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „doesn’t” után az ige alapalakja áll, -s nélkül: He doesn’t eat meat.",
+        "en": "After “doesn’t” the verb stays in its base form, with no -s: He doesn’t eat meat.",
+        "es": "Después de «doesn’t» el verbo va en forma base, sin -s: He doesn’t eat meat.",
+        "de": "Nach „doesn’t“ steht das Verb in der Grundform, ohne -s: He doesn’t eat meat."
+      },
+      "wrong": {
+        "eats": {
+          "hu": "Az -s már a „doesn’t”-ben van (does + not); az igére nem kerül még egy: doesn’t eat, sosem „doesn’t eats”.",
+          "en": "The -s is already in “doesn’t” (does + not); the verb does not take another: doesn’t eat, never “doesn’t eats”.",
+          "es": "La -s ya está en «doesn’t» (does + not); el verbo no lleva otra: doesn’t eat, nunca «doesn’t eats».",
+          "de": "Das -s steckt schon in „doesn’t“ (does + not); das Verb bekommt kein zweites: doesn’t eat, niemals „doesn’t eats“."
+        },
+        "eating": {
+          "hu": "A „doesn’t” után nem -ing alak áll, hanem az ige alapalakja: doesn’t eat.",
+          "en": "After “doesn’t” comes the base form, not an -ing form: doesn’t eat.",
+          "es": "Después de «doesn’t» va la forma base, no una forma en -ing: doesn’t eat.",
+          "de": "Nach „doesn’t“ steht die Grundform, keine -ing-Form: doesn’t eat."
+        }
+      },
+      "examples": [
+        "She doesn't drink coffee.",
+        "My dog doesn't eat fish."
+      ]
+    },
+    {
+      "id": "ps-08",
+      "kind": "form",
+      "verb": "watch",
+      "person": "he / she / it",
+      "answer": "watches",
+      "table": "ps-aff"
+    },
+    {
+      "kind": "why",
+      "id": "ps-09",
+      "es": "Does she work here?",
+      "target": "Does",
+      "tr": {
+        "hu": "Ő itt dolgozik?",
+        "en": "Does she work here?",
+        "es": "¿Ella trabaja aquí?",
+        "de": "Arbeitet sie hier?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kérdés a he / she / it mellett: Does + alany + alapalak",
+            "en": "question with he / she / it: Does + subject + base verb",
+            "es": "pregunta con he / she / it: Does + sujeto + verbo base",
+            "de": "Frage bei he / she / it: Does + Subjekt + Grundform"
+          }
+        },
+        {
+          "text": {
+            "hu": "kérdés az I / you / we / they mellett: Do + alany + alapalak",
+            "en": "question with I / you / we / they: Do + subject + base verb",
+            "es": "pregunta con I / you / we / they: Do + sujeto + verbo base",
+            "de": "Frage bei I / you / we / they: Do + Subjekt + Grundform"
+          },
+          "wrong": {
+            "hu": "A „she” a he / she / it csoportba tartozik, ezért „Does”, nem „Do”. A „Do” az I, you, we, they mellé való.",
+            "en": "“She” is in the he / she / it group, so “Does”, not “Do”. “Do” goes with I, you, we, they.",
+            "es": "«She» está en el grupo he / she / it, por eso «Does», no «Do». «Do» va con I, you, we, they.",
+            "de": "„She“ gehört zur Gruppe he / she / it, deshalb „Does“, nicht „Do“. „Do“ gehört zu I, you, we, they."
+          }
+        },
+        {
+          "text": {
+            "hu": "a to be kérdése: Is + alany",
+            "en": "question with to be: Is + subject",
+            "es": "pregunta con to be: Is + sujeto",
+            "de": "Frage mit to be: Is + Subjekt"
+          },
+          "wrong": {
+            "hu": "A „work” nem a to be; a rendes igék kérdéséhez a „do / does” segédige kell, nem az „Is”.",
+            "en": "“Work” is not to be; questions with normal verbs use the helper do / does, not “Is”.",
+            "es": "«Work» no es to be; las preguntas con verbos normales usan el auxiliar do / does, no «Is».",
+            "de": "„Work“ ist nicht to be; Fragen mit normalen Verben brauchen das Hilfsverb do / does, nicht „Is“."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "ps-10",
+      "sentence": "My brother ___ to school by bus.",
+      "options": [
+        "go",
+        "goes",
+        "gos"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A „my brother” = he, és a go -o végű, ezért -es kell: goes.",
+        "en": "“My brother” = he, and go ends in -o, so it takes -es: goes.",
+        "es": "«My brother» = he, y go termina en -o, por eso lleva -es: goes.",
+        "de": "„My brother“ = he, und go endet auf -o, deshalb kommt -es: goes."
+      },
+      "wrong": {
+        "go": {
+          "hu": "A „go” az I, you, we, they mellé való; a „my brother” = he, ezért „goes”.",
+          "en": "“Go” goes with I, you, we, they; “my brother” = he, so “goes”.",
+          "es": "«Go» va con I, you, we, they; «my brother» = he, por eso «goes».",
+          "de": "„Go“ gehört zu I, you, we, they; „my brother“ = he, deshalb „goes“."
+        },
+        "gos": {
+          "hu": "Az -o végű igék nem sima -s-t kapnak, hanem -es-t: goes, sosem „gos”.",
+          "en": "Verbs ending in -o do not take a plain -s but -es: goes, never “gos”.",
+          "es": "Los verbos que terminan en -o no llevan una simple -s sino -es: goes, nunca «gos».",
+          "de": "Verben auf -o bekommen kein einfaches -s, sondern -es: goes, niemals „gos“."
+        }
+      },
+      "examples": [
+        "She goes home by bus.",
+        "He watches TV at night."
+      ]
+    },
+    {
+      "id": "ps-11",
+      "sentence": "We ___ English at school.",
+      "options": [
+        "study",
+        "studies",
+        "studys"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „we” mellé az ige alapalakja áll, -s nélkül: We study English at school.",
+        "en": "With “we” the verb stays in its base form, with no -s: We study English at school.",
+        "es": "Con «we» el verbo va en forma base, sin -s: We study English at school.",
+        "de": "Bei „we“ steht das Verb in der Grundform, ohne -s: We study English at school."
+      },
+      "wrong": {
+        "studies": {
+          "hu": "A „studies” a he, she, it mellé való; a „we” mellé az alapalak kell: We study.",
+          "en": "“Studies” goes with he, she, it; with “we” use the base form: We study.",
+          "es": "«Studies» va con he, she, it; con «we» se usa la forma base: We study.",
+          "de": "„Studies“ gehört zu he, she, it; bei „we“ steht die Grundform: We study."
+        },
+        "studys": {
+          "hu": "A „studys” nem létező alak: mássalhangzó + y után -ies lesz (she studies), a „we” mellé pedig az alapalak kell: study.",
+          "en": "“Studys” does not exist: consonant + y becomes -ies (she studies), and “we” takes the base form anyway: study.",
+          "es": "«Studys» no existe: consonante + y pasa a -ies (she studies), y con «we» va la forma base: study.",
+          "de": "„Studys“ gibt es nicht: Konsonant + y wird zu -ies (she studies), und bei „we“ steht ohnehin die Grundform: study."
+        }
+      },
+      "examples": [
+        "They study at night.",
+        "You study English."
+      ]
+    },
+    {
+      "id": "ps-12",
+      "sentence": "My dog ___ a big bed.",
+      "options": [
+        "has",
+        "have",
+        "haves"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „my dog” = it, és a have egyes szám harmadik személyben „has”: My dog has a big bed.",
+        "en": "“My dog” = it, and have becomes “has” in the third person singular: My dog has a big bed.",
+        "es": "«My dog» = it, y have se convierte en «has» en tercera persona del singular: My dog has a big bed.",
+        "de": "„My dog“ = it, und have wird in der dritten Person Singular zu „has“: My dog has a big bed."
+      },
+      "wrong": {
+        "have": {
+          "hu": "A „have” az I, you, we, they mellé való; a „my dog” = it, ezért „has”.",
+          "en": "“Have” goes with I, you, we, they; “my dog” = it, so “has”.",
+          "es": "«Have» va con I, you, we, they; «my dog» = it, por eso «has».",
+          "de": "„Have“ gehört zu I, you, we, they; „my dog“ = it, deshalb „has“."
+        },
+        "haves": {
+          "hu": "A have szabálytalan: nem „haves”, hanem „has”.",
+          "en": "Have is irregular: not “haves” but “has”.",
+          "es": "Have es irregular: no «haves», sino «has».",
+          "de": "Have ist unregelmäßig: nicht „haves“, sondern „has“."
+        }
+      },
+      "examples": [
+        "He has a big house.",
+        "They have a dog."
+      ]
+    },
+    {
+      "id": "ps-13",
+      "sentence": "___ your sister work in an office?",
+      "options": [
+        "Do",
+        "Does",
+        "Is"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A „your sister” = she, ezért a kérdés „Does”-szal indul: Does your sister work in an office?",
+        "en": "“Your sister” = she, so the question starts with “Does”: Does your sister work in an office?",
+        "es": "«Your sister» = she, por eso la pregunta empieza con «Does»: Does your sister work in an office?",
+        "de": "„Your sister“ = she, deshalb beginnt die Frage mit „Does“: Does your sister work in an office?"
+      },
+      "wrong": {
+        "Do": {
+          "hu": "A „Do” az I, you, we, they mellé való; a „your sister” = she, ezért „Does”.",
+          "en": "“Do” goes with I, you, we, they; “your sister” = she, so “Does”.",
+          "es": "«Do» va con I, you, we, they; «your sister» = she, por eso «Does».",
+          "de": "„Do“ gehört zu I, you, we, they; „your sister“ = she, deshalb „Does“."
+        },
+        "Is": {
+          "hu": "A „work” nem a to be; a kérdéshez a „do / does” segédige kell, nem az „Is”.",
+          "en": "“Work” is not to be; the question needs the helper do / does, not “Is”.",
+          "es": "«Work» no es to be; la pregunta necesita el auxiliar do / does, no «Is».",
+          "de": "„Work“ ist nicht to be; die Frage braucht das Hilfsverb do / does, nicht „Is“."
+        }
+      },
+      "examples": [
+        "Does he live here?",
+        "Does your brother study English?"
+      ]
+    },
+    {
+      "id": "ps-14",
+      "sentence": "My mother ___ at a big school.",
+      "options": [
+        "teach",
+        "teaches",
+        "teachs"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A „my mother” = she, és a teach -ch végű, ezért -es kell: teaches.",
+        "en": "“My mother” = she, and teach ends in -ch, so it takes -es: teaches.",
+        "es": "«My mother» = she, y teach termina en -ch, por eso lleva -es: teaches.",
+        "de": "„My mother“ = she, und teach endet auf -ch, deshalb kommt -es: teaches."
+      },
+      "wrong": {
+        "teach": {
+          "hu": "A „teach” az I, you, we, they mellé való; a „my mother” = she, ezért „teaches”.",
+          "en": "“Teach” goes with I, you, we, they; “my mother” = she, so “teaches”.",
+          "es": "«Teach» va con I, you, we, they; «my mother» = she, por eso «teaches».",
+          "de": "„Teach“ gehört zu I, you, we, they; „my mother“ = she, deshalb „teaches“."
+        },
+        "teachs": {
+          "hu": "A -ch végű igék nem sima -s-t kapnak, hanem -es-t: teaches, sosem „teachs”.",
+          "en": "Verbs ending in -ch do not take a plain -s but -es: teaches, never “teachs”.",
+          "es": "Los verbos que terminan en -ch no llevan una simple -s sino -es: teaches, nunca «teachs».",
+          "de": "Verben auf -ch bekommen kein einfaches -s, sondern -es: teaches, niemals „teachs“."
+        }
+      },
+      "examples": [
+        "She teaches English.",
+        "He teaches at a school."
+      ]
+    },
+    {
+      "id": "ps-24",
+      "kind": "form",
+      "verb": "work",
+      "person": "he / she / it",
+      "answer": "works",
+      "table": "ps-aff"
+    },
+    {
+      "id": "ps-15",
+      "sentence": "We ___ come home late.",
+      "options": [
+        "don't",
+        "doesn't",
+        "aren't"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „we” mellé a tagadáshoz a „don’t” kell, utána az ige alapalakja: We don’t come home late.",
+        "en": "With “we”, the negative is “don’t” plus the base verb: We don’t come home late.",
+        "es": "Con «we», la negación es «don’t» más el verbo base: We don’t come home late.",
+        "de": "Nach „we“ lautet die Verneinung „don’t“ plus Grundform: We don’t come home late."
+      },
+      "wrong": {
+        "doesn't": {
+          "hu": "A „doesn’t” csak a he, she, it mellé való; a „we” mellé „don’t” kell.",
+          "en": "“Doesn’t” goes only with he, she, it; with “we” you need “don’t”.",
+          "es": "«Doesn’t» va solo con he, she, it; con «we» hace falta «don’t».",
+          "de": "„Doesn’t“ gehört nur zu he, she, it; bei „we“ braucht man „don’t“."
+        },
+        "aren't": {
+          "hu": "Az „aren’t” a to be tagadása; a „come” ige mellett a „don’t” kell: We don’t come, sosem „We aren’t come”.",
+          "en": "“Aren’t” is the negative of to be; with the verb “come” you need “don’t”: We don’t come, never “We aren’t come”.",
+          "es": "«Aren’t» es la negación de to be; con el verbo «come» hace falta «don’t»: We don’t come, nunca «We aren’t come».",
+          "de": "„Aren’t“ ist die Verneinung von to be; bei dem Verb „come“ braucht man „don’t“: We don’t come, niemals „We aren’t come“."
+        }
+      },
+      "examples": [
+        "They don't work here.",
+        "I don't eat fish."
+      ]
+    },
+    {
+      "id": "ps-16",
+      "sentence": "She ___ TV at night.",
+      "options": [
+        "always watches",
+        "watches always",
+        "always watch"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A gyakoriságot jelentő szó (always) a főige ELŐTT áll, és a „she” mellett az ige -es-t kap: She always watches TV.",
+        "en": "A frequency word (always) goes BEFORE the main verb, and with “she” the verb takes -es: She always watches TV.",
+        "es": "La palabra de frecuencia (always) va ANTES del verbo principal, y con «she» el verbo lleva -es: She always watches TV.",
+        "de": "Das Häufigkeitswort (always) steht VOR dem Hauptverb, und bei „she“ bekommt das Verb -es: She always watches TV."
+      },
+      "wrong": {
+        "watches always": {
+          "hu": "Az always nem a főige után áll: She always watches, sosem „She watches always”.",
+          "en": "Always does not go after the main verb: She always watches, never “She watches always”.",
+          "es": "Always no va después del verbo principal: She always watches, nunca «She watches always».",
+          "de": "Always steht nicht nach dem Hauptverb: She always watches, niemals „She watches always“."
+        },
+        "always watch": {
+          "hu": "Az always jó helyen van, de a „she” mellé -es kell az igére: watches.",
+          "en": "Always is in the right place, but with “she” the verb needs -es: watches.",
+          "es": "Always está bien colocado, pero con «she» el verbo necesita -es: watches.",
+          "de": "Always steht an der richtigen Stelle, aber bei „she“ braucht das Verb -es: watches."
+        }
+      },
+      "examples": [
+        "I always drink water.",
+        "He never eats fish."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "ps-27",
+      "es": "I don't like fish.",
+      "target": "don't",
+      "tr": {
+        "hu": "Nem szeretem a halat.",
+        "en": "I don't like fish.",
+        "es": "No me gusta el pescado.",
+        "de": "Ich mag keinen Fisch."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "tagadás az I / you / we / they mellett: don’t + alapalak",
+            "en": "negative with I / you / we / they: don't + base verb",
+            "es": "negación con I / you / we / they: don't + verbo base",
+            "de": "Verneinung bei I / you / we / they: don't + Grundform"
+          }
+        },
+        {
+          "text": {
+            "hu": "tagadás a he / she / it mellett: doesn’t + alapalak",
+            "en": "negative with he / she / it: doesn't + base verb",
+            "es": "negación con he / she / it: doesn't + verbo base",
+            "de": "Verneinung bei he / she / it: doesn't + Grundform"
+          },
+          "wrong": {
+            "hu": "Az „I” nem a he / she / it csoportba tartozik, ezért „don’t”, nem „doesn’t”.",
+            "en": "“I” is not in the he / she / it group, so “don’t”, not “doesn’t”.",
+            "es": "«I» no está en el grupo he / she / it, por eso «don’t», no «doesn’t».",
+            "de": "„I“ gehört nicht zur Gruppe he / she / it, deshalb „don’t“, nicht „doesn’t“."
+          }
+        },
+        {
+          "text": {
+            "hu": "a to be tagadása: am not / isn’t / aren’t",
+            "en": "negative of to be: am not / isn’t / aren’t",
+            "es": "negación de to be: am not / isn’t / aren’t",
+            "de": "Verneinung von to be: am not / isn’t / aren’t"
+          },
+          "wrong": {
+            "hu": "A „like” nem a to be; a rendes igék tagadásához a „do / does + not” kell, nem az „am not”.",
+            "en": "“Like” is not to be; normal verbs are negated with “do / does + not”, not with “am not”.",
+            "es": "«Like» no es to be; los verbos normales se niegan con «do / does + not», no con «am not».",
+            "de": "„Like“ ist nicht to be; normale Verben werden mit „do / does + not“ verneint, nicht mit „am not“."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "ps-17",
+      "sentence": "Does she work here? No, she ___.",
+      "options": [
+        "doesn't",
+        "don't",
+        "isn't"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A rövid válasz a kérdés segédigéjét használja: Does she…? → No, she doesn’t.",
+        "en": "A short answer reuses the helper verb of the question: Does she…? → No, she doesn’t.",
+        "es": "La respuesta corta reutiliza el auxiliar de la pregunta: Does she…? → No, she doesn’t.",
+        "de": "Die Kurzantwort nimmt das Hilfsverb der Frage wieder auf: Does she…? → No, she doesn’t."
+      },
+      "wrong": {
+        "don't": {
+          "hu": "A „don’t” az I, you, we, they mellé való; a „she” mellé „doesn’t” kell.",
+          "en": "“Don’t” goes with I, you, we, they; with “she” you need “doesn’t”.",
+          "es": "«Don’t» va con I, you, we, they; con «she» hace falta «doesn’t».",
+          "de": "„Don’t“ gehört zu I, you, we, they; bei „she“ braucht man „doesn’t“."
+        },
+        "isn't": {
+          "hu": "Az „isn’t” a to be tagadása; a „Does…?” kérdésre „doesn’t”-tel válaszolunk, nem a to be-vel.",
+          "en": "“Isn’t” is the negative of to be; a “Does…?” question is answered with “doesn’t”, not with to be.",
+          "es": "«Isn’t» es la negación de to be; una pregunta con «Does…?» se responde con «doesn’t», no con to be.",
+          "de": "„Isn’t“ ist die Verneinung von to be; eine „Does…?“-Frage beantwortet man mit „doesn’t“, nicht mit to be."
+        }
+      },
+      "examples": [
+        "Do you live here? No, I don't.",
+        "Does he work here? Yes, he does."
+      ]
+    },
+    {
+      "id": "ps-18",
+      "sentence": "Where ___ you live?",
+      "options": [
+        "do",
+        "does",
+        "are"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A kérdőszó után is „do / does” segédige jön, a „you” mellé „do”: Where do you live?",
+        "en": "After a question word the helper do / does still comes, and “you” takes “do”: Where do you live?",
+        "es": "Después de una palabra interrogativa también va el auxiliar do / does, y con «you» va «do»: Where do you live?",
+        "de": "Auch nach einem Fragewort steht das Hilfsverb do / does, und bei „you“ steht „do“: Where do you live?"
+      },
+      "wrong": {
+        "does": {
+          "hu": "A „does” a he, she, it mellé való; a „you” mellé „do” kell.",
+          "en": "“Does” goes with he, she, it; with “you” you need “do”.",
+          "es": "«Does» va con he, she, it; con «you» hace falta «do».",
+          "de": "„Does“ gehört zu he, she, it; bei „you“ braucht man „do“."
+        },
+        "are": {
+          "hu": "Az „are” a to be alakja; a „live” ige mellett a „do” segédige kell: Where do you live?",
+          "en": "“Are” is a form of to be; with the verb “live” you need the helper do: Where do you live?",
+          "es": "«Are» es una forma de to be; con el verbo «live» hace falta el auxiliar do: Where do you live?",
+          "de": "„Are“ ist eine Form von to be; bei dem Verb „live“ braucht man das Hilfsverb do: Where do you live?"
+        }
+      },
+      "examples": [
+        "Where do they work?",
+        "Where does he live?"
+      ]
+    },
+    {
+      "id": "ps-19",
+      "sentence": "What ___ she eat for breakfast?",
+      "options": [
+        "does",
+        "do",
+        "is"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „she” mellé „does” kell, utána az ige alapalakja (eat, nem eats): What does she eat for breakfast?",
+        "en": "With “she” you need “does”, then the base verb (eat, not eats): What does she eat for breakfast?",
+        "es": "Con «she» hace falta «does», y después el verbo base (eat, no eats): What does she eat for breakfast?",
+        "de": "Bei „she“ braucht man „does“, danach die Grundform (eat, nicht eats): What does she eat for breakfast?"
+      },
+      "wrong": {
+        "do": {
+          "hu": "A „do” az I, you, we, they mellé való; a „she” mellé „does” kell.",
+          "en": "“Do” goes with I, you, we, they; with “she” you need “does”.",
+          "es": "«Do» va con I, you, we, they; con «she» hace falta «does».",
+          "de": "„Do“ gehört zu I, you, we, they; bei „she“ braucht man „does“."
+        },
+        "is": {
+          "hu": "Az „is” a to be alakja; az „eat” ige mellett a „does” segédige kell.",
+          "en": "“Is” is a form of to be; with the verb “eat” you need the helper does.",
+          "es": "«Is» es una forma de to be; con el verbo «eat» hace falta el auxiliar does.",
+          "de": "„Is“ ist eine Form von to be; bei dem Verb „eat“ braucht man das Hilfsverb does."
+        }
+      },
+      "examples": [
+        "What do you drink at night?",
+        "What does he eat at home?"
+      ]
+    },
+    {
+      "id": "ps-20",
+      "sentence": "I ___ a glass of water.",
+      "options": [
+        "want",
+        "wants",
+        "wanting"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az „I” mellé a want alapalakja áll, -s nélkül: I want a glass of water.",
+        "en": "With “I” the verb want stays in its base form, with no -s: I want a glass of water.",
+        "es": "Con «I» el verbo want va en forma base, sin -s: I want a glass of water.",
+        "de": "Bei „I“ steht want in der Grundform, ohne -s: I want a glass of water."
+      },
+      "wrong": {
+        "wants": {
+          "hu": "A „wants” a he, she, it mellé való; az „I” mellé „want” kell.",
+          "en": "“Wants” goes with he, she, it; with “I” you need “want”.",
+          "es": "«Wants» va con he, she, it; con «I» hace falta «want».",
+          "de": "„Wants“ gehört zu he, she, it; bei „I“ braucht man „want“."
+        },
+        "wanting": {
+          "hu": "A want (vágyat kifejező ige) egyszerű jelenben áll, nem -ing alakban: I want.",
+          "en": "Want (a verb of wishing) is used in the Present Simple, not in an -ing form: I want.",
+          "es": "Want (un verbo de deseo) se usa en Presente Simple, no en forma -ing: I want.",
+          "de": "Want (ein Verb des Wünschens) steht im Present Simple, nicht in einer -ing-Form: I want."
+        }
+      },
+      "examples": [
+        "You want a coffee.",
+        "They want a big house."
+      ]
+    },
+    {
+      "id": "ps-25",
+      "kind": "form",
+      "verb": "play",
+      "person": "we",
+      "answer": "play",
+      "table": "ps-aff"
+    },
+    {
+      "id": "ps-21",
+      "sentence": "She ___ with her dog.",
+      "options": [
+        "plays",
+        "playes",
+        "plaies"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A play végén az y előtt magánhangzó áll (a), ezért csak -s kerül rá: plays.",
+        "en": "In play the y follows a vowel (a), so it simply takes -s: plays.",
+        "es": "En play la y va detrás de una vocal (a), por eso solo lleva -s: plays.",
+        "de": "Bei play steht vor dem y ein Vokal (a), deshalb kommt nur -s dazu: plays."
+      },
+      "wrong": {
+        "playes": {
+          "hu": "Az -es a -ch, -sh, -s, -x, -o végű igékhez kell; a play y-ra végződik: plays.",
+          "en": "The -es ending is for verbs ending in -ch, -sh, -s, -x, -o; play ends in y: plays.",
+          "es": "La terminación -es es para verbos que acaban en -ch, -sh, -s, -x, -o; play acaba en y: plays.",
+          "de": "Die Endung -es gehört zu Verben auf -ch, -sh, -s, -x, -o; play endet auf y: plays."
+        },
+        "plaies": {
+          "hu": "Az -ies csak mássalhangzó + y után van (study → studies); a play-nél az y előtt magánhangzó áll: plays.",
+          "en": "The -ies ending is only for consonant + y (study → studies); in play a vowel comes before the y: plays.",
+          "es": "La terminación -ies es solo para consonante + y (study → studies); en play hay una vocal antes de la y: plays.",
+          "de": "Die Endung -ies gibt es nur nach Konsonant + y (study → studies); bei play steht vor dem y ein Vokal: plays."
+        }
+      },
+      "examples": [
+        "He plays with his friends.",
+        "My brother plays games."
+      ]
+    },
+    {
+      "id": "ps-22",
+      "sentence": "Does she ___ here?",
+      "options": [
+        "work",
+        "works",
+        "working"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „Does” után az ige alapalakja áll, -s nélkül: Does she work here?",
+        "en": "After “Does” the verb stays in its base form, with no -s: Does she work here?",
+        "es": "Después de «Does» el verbo va en forma base, sin -s: Does she work here?",
+        "de": "Nach „Does“ steht das Verb in der Grundform, ohne -s: Does she work here?"
+      },
+      "wrong": {
+        "works": {
+          "hu": "Az -s már a „Does”-ban van; az igére nem kerül még egy: Does she work, sosem „Does she works”.",
+          "en": "The -s is already in “Does”; the verb does not take another: Does she work, never “Does she works”.",
+          "es": "La -s ya está en «Does»; el verbo no lleva otra: Does she work, nunca «Does she works».",
+          "de": "Das -s steckt schon in „Does“; das Verb bekommt kein zweites: Does she work, niemals „Does she works“."
+        },
+        "working": {
+          "hu": "A „Does” után az alapalak áll, nem az -ing alak.",
+          "en": "After “Does” comes the base form, not an -ing form.",
+          "es": "Después de «Does» va la forma base, no una forma en -ing.",
+          "de": "Nach „Does“ steht die Grundform, keine -ing-Form."
+        }
+      },
+      "examples": [
+        "Does she speak English?",
+        "Does he eat meat?"
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "ps-28",
+      "es": "She has a small house.",
+      "target": "has",
+      "tr": {
+        "hu": "Neki kis háza van.",
+        "en": "She has a small house.",
+        "es": "Ella tiene una casa pequeña.",
+        "de": "Sie hat ein kleines Haus."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a have szabálytalan alakja a he / she / it mellett",
+            "en": "the irregular form of have with he / she / it",
+            "es": "la forma irregular de have con he / she / it",
+            "de": "die unregelmäßige Form von have bei he / she / it"
+          }
+        },
+        {
+          "text": {
+            "hu": "a szabályos -s, mint a works-ben",
+            "en": "the regular -s ending, as in works",
+            "es": "la terminación regular -s, como en works",
+            "de": "die regelmäßige Endung -s wie bei works"
+          },
+          "wrong": {
+            "hu": "A have nem követi a szabályos -s-t: nem „haves”, hanem „has”. Ezt külön meg kell tanulni.",
+            "en": "Have does not follow the regular -s rule: not “haves” but “has”. You have to learn it separately.",
+            "es": "Have no sigue la regla regular de la -s: no «haves», sino «has». Hay que aprenderlo aparte.",
+            "de": "Have folgt nicht der regelmäßigen -s-Regel: nicht „haves“, sondern „has“. Das muss man extra lernen."
+          }
+        },
+        {
+          "text": {
+            "hu": "a to be egyik alakja",
+            "en": "a form of to be",
+            "es": "una forma de to be",
+            "de": "eine Form von to be"
+          },
+          "wrong": {
+            "hu": "A „has” itt főige (birtoklás), nem a to be alakja. A to be alakja „is” lenne.",
+            "en": "“Has” is the main verb here (possession), not a form of to be. The to be form would be “is”.",
+            "es": "«Has» es aquí el verbo principal (posesión), no una forma de to be. La forma de to be sería «is».",
+            "de": "„Has“ ist hier das Hauptverb (Besitz), keine Form von to be. Die Form von to be wäre „is“."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "ps-23",
+      "sentence": "The teacher ___ English.",
+      "options": [
+        "speak",
+        "speaks",
+        "speaking"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A „the teacher” = he / she, ezért az igére -s kerül: The teacher speaks English.",
+        "en": "“The teacher” = he / she, so the verb takes -s: The teacher speaks English.",
+        "es": "«The teacher» = he / she, por eso el verbo lleva -s: The teacher speaks English.",
+        "de": "„The teacher“ = he / she, deshalb bekommt das Verb ein -s: The teacher speaks English."
+      },
+      "wrong": {
+        "speak": {
+          "hu": "A „speak” az I, you, we, they mellé való; a „the teacher” = he / she, ezért „speaks”.",
+          "en": "“Speak” goes with I, you, we, they; “the teacher” = he / she, so “speaks”.",
+          "es": "«Speak» va con I, you, we, they; «the teacher» = he / she, por eso «speaks».",
+          "de": "„Speak“ gehört zu I, you, we, they; „the teacher“ = he / she, deshalb „speaks“."
+        },
+        "speaking": {
+          "hu": "Az egyszerű jelen időben nincs -ing: The teacher speaks.",
+          "en": "The Present Simple has no -ing: The teacher speaks.",
+          "es": "El Presente Simple no lleva -ing: The teacher speaks.",
+          "de": "Im Present Simple gibt es kein -ing: The teacher speaks."
+        }
+      },
+      "examples": [
+        "My father speaks English.",
+        "The dog eats meat."
+      ]
+    },
+    {
+      "id": "ps-26",
+      "kind": "form",
+      "verb": "study",
+      "person": "they",
+      "answer": "study",
+      "table": "ps-aff"
+    },
+    {
+      "kind": "why",
+      "id": "ps-29",
+      "es": "She never drinks coffee.",
+      "target": "never",
+      "tr": {
+        "hu": "Ő soha nem iszik kávét.",
+        "en": "She never drinks coffee.",
+        "es": "Ella nunca bebe café.",
+        "de": "Sie trinkt nie Kaffee."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "gyakoriságot jelentő szó: a főige ELŐTT áll",
+            "en": "frequency word: it goes BEFORE the main verb",
+            "es": "palabra de frecuencia: va ANTES del verbo principal",
+            "de": "Häufigkeitswort: steht VOR dem Hauptverb"
+          }
+        },
+        {
+          "text": {
+            "hu": "gyakoriságot jelentő szó: a mondat végén áll",
+            "en": "frequency word: it goes at the end of the sentence",
+            "es": "palabra de frecuencia: va al final de la oración",
+            "de": "Häufigkeitswort: steht am Satzende"
+          },
+          "wrong": {
+            "hu": "Az angolban az always, never, often, sometimes a főige előtt áll (She never drinks), nem a mondat végén.",
+            "en": "In English always, never, often, sometimes go before the main verb (She never drinks), not at the end.",
+            "es": "En inglés always, never, often, sometimes van antes del verbo principal (She never drinks), no al final.",
+            "de": "Im Englischen stehen always, never, often, sometimes vor dem Hauptverb (She never drinks), nicht am Ende."
+          }
+        },
+        {
+          "text": {
+            "hu": "tagadás: a never mellé doesn’t is kell",
+            "en": "negation: never also needs doesn’t",
+            "es": "negación: never también necesita doesn’t",
+            "de": "Verneinung: never braucht zusätzlich doesn’t"
+          },
+          "wrong": {
+            "hu": "A „never” már maga tagad, ezért mellé nem kell „doesn’t”: She never drinks, sosem „She doesn’t never drinks”.",
+            "en": "“Never” already makes the sentence negative, so no “doesn’t” is needed: She never drinks, never “She doesn’t never drinks”.",
+            "es": "«Never» ya niega por sí solo, así que no hace falta «doesn’t»: She never drinks, nunca «She doesn’t never drinks».",
+            "de": "„Never“ verneint schon von selbst, deshalb braucht es kein „doesn’t“: She never drinks, niemals „She doesn’t never drinks“."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "ps-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "¿Ella trabaja aquí?",
+          "en": "Does she work here?"
+        },
+        {
+          "es": "Él no vive aquí.",
+          "en": "He doesn't live here."
+        },
+        {
+          "es": "¿Dónde vives?",
+          "en": "Where do you live?"
+        },
+        {
+          "es": "Siempre bebo agua.",
+          "en": "I always drink water."
+        },
+        {
+          "es": "Ella tiene un perro.",
+          "en": "She has a dog."
+        },
+        {
+          "es": "No hablamos inglés.",
+          "en": "We don't speak English."
+        }
+      ]
+    }
+  ]
+}

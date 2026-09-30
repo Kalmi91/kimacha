@@ -1,0 +1,1060 @@
+{
+  "schema": 2,
+  "topic": "superlatives",
+  "level": "A2",
+  "title": {
+    "hu": "A felsőfok (the tallest, the most expensive)",
+    "en": "Superlatives (the tallest, the most expensive)",
+    "es": "Los superlativos (the tallest, the most expensive)",
+    "de": "Der Superlativ (the tallest, the most expensive)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A felsőfokkal azt mondjuk, hogy valami egy csoportban a legtöbb: „She is the tallest girl in the class”. A spanyol „la más alta de la clase” angolul mindig „the” + melléknév-est vagy „the most” + melléknév. A „the” kötelező. És a „de” után angolul „in” vagy „of” áll, attól függően, mi követi.",
+        "en": "The superlative says that something is the most in a group: “She is the tallest girl in the class”. Spanish “la más alta de la clase” is always “the” + adjective-est or “the most” + adjective in English. The “the” is required. And after Spanish “de”, English uses “in” or “of”, depending on what follows.",
+        "es": "El superlativo dice que algo es lo más en un grupo: «She is the tallest girl in the class». El «la más alta de la clase» del español es siempre «the» + adjetivo-est o «the most» + adjetivo en inglés. El «the» es obligatorio. Y después del «de» español, el inglés usa «in» u «of», según lo que siga.",
+        "de": "Mit dem Superlativ sagt man, dass etwas in einer Gruppe am meisten ist: „She is the tallest girl in the class“. Spanisch „la más alta de la clase“ ist im Englischen immer „the“ + Adjektiv-est oder „the most“ + Adjektiv. Das „the“ ist Pflicht. Und nach spanisch „de“ steht im Englischen „in“ oder „of“, je nachdem, was folgt."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "sp-forms",
+      "title": {
+        "hu": "Felsőfok",
+        "en": "Superlatives",
+        "es": "Superlativos",
+        "de": "Superlativ"
+      },
+      "header": [
+        {
+          "hu": "Melléknév",
+          "en": "Adjective",
+          "es": "Adjetivo",
+          "de": "Adjektiv"
+        },
+        {
+          "hu": "superlative",
+          "en": "superlative",
+          "es": "superlative",
+          "de": "superlative"
+        }
+      ],
+      "rows": [
+        [
+          "tall",
+          "the tallest"
+        ],
+        [
+          "young",
+          "the youngest"
+        ],
+        [
+          "fast",
+          "the fastest"
+        ],
+        [
+          "cheap",
+          "the cheapest"
+        ],
+        [
+          "big",
+          "the biggest"
+        ],
+        [
+          "hot",
+          "the hottest"
+        ],
+        [
+          "happy",
+          "the happiest"
+        ],
+        [
+          "easy",
+          "the easiest"
+        ],
+        [
+          "expensive",
+          "the most expensive"
+        ],
+        [
+          "interesting",
+          "the most interesting"
+        ],
+        [
+          "beautiful",
+          "the most beautiful"
+        ],
+        [
+          "good",
+          "the best"
+        ],
+        [
+          "bad",
+          "the worst"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "A felsőfok képzése",
+        "en": "Forming the superlative",
+        "es": "Cómo se forma el superlativo",
+        "de": "Bildung des Superlativs"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Rövid melléknév: the + melléknév + -est (tall → the tallest). Ugyanazok a helyesírási szabályok, mint a középfoknál: big → the biggest, happy → the happiest, nice → the nicest.",
+            "en": "Short adjectives: the + adjective + -est (tall → the tallest). The same spelling rules as for the comparative: big → the biggest, happy → the happiest, nice → the nicest.",
+            "es": "Adjetivos cortos: the + adjetivo + -est (tall → the tallest). Las mismas reglas de ortografía que en el comparativo: big → the biggest, happy → the happiest, nice → the nicest.",
+            "de": "Kurze Adjektive: the + Adjektiv + -est (tall → the tallest). Dieselben Schreibregeln wie beim Komparativ: big → the biggest, happy → the happiest, nice → the nicest."
+          },
+          "examples": [
+            {
+              "es": "She is the tallest girl in the class.",
+              "tr": {
+                "hu": "Ő a legmagasabb lány az osztályban.",
+                "en": "She is the tallest girl in the class.",
+                "es": "Ella es la chica más alta de la clase.",
+                "de": "Sie ist das größte Mädchen in der Klasse."
+              }
+            },
+            {
+              "es": "This is the biggest house in the city.",
+              "tr": {
+                "hu": "Ez a legnagyobb ház a városban.",
+                "en": "This is the biggest house in the city.",
+                "es": "Esta es la casa más grande de la ciudad.",
+                "de": "Das ist das größte Haus in der Stadt."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Hosszú melléknév: the most + melléknév (the most expensive, the most interesting). A melléknév nem változik.",
+            "en": "Long adjectives: the most + adjective (the most expensive, the most interesting). The adjective does not change.",
+            "es": "Adjetivos largos: the most + adjetivo (the most expensive, the most interesting). El adjetivo no cambia.",
+            "de": "Lange Adjektive: the most + Adjektiv (the most expensive, the most interesting). Das Adjektiv verändert sich nicht."
+          },
+          "examples": [
+            {
+              "es": "It is the most interesting movie of the year.",
+              "tr": {
+                "hu": "Ez az év legérdekesebb filmje.",
+                "en": "It is the most interesting movie of the year.",
+                "es": "Es la película más interesante del año.",
+                "de": "Das ist der interessanteste Film des Jahres."
+              }
+            },
+            {
+              "es": "She has the most expensive phone.",
+              "tr": {
+                "hu": "Neki van a legdrágább telefonja.",
+                "en": "She has the most expensive phone.",
+                "es": "Ella tiene el teléfono más caro.",
+                "de": "Sie hat das teuerste Handy."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Rendhagyó alakok: good → the best, bad → the worst, far → the farthest. Ezeket meg kell tanulni.",
+            "en": "Irregular forms: good → the best, bad → the worst, far → the farthest. You have to learn them.",
+            "es": "Formas irregulares: good → the best, bad → the worst, far → the farthest. Hay que aprenderlas.",
+            "de": "Unregelmäßige Formen: good → the best, bad → the worst, far → the farthest. Man muss sie lernen."
+          },
+          "examples": [
+            {
+              "es": "It is the best book.",
+              "tr": {
+                "hu": "Ez a legjobb könyv.",
+                "en": "It is the best book.",
+                "es": "Es el mejor libro.",
+                "de": "Das ist das beste Buch."
+              }
+            },
+            {
+              "es": "That was the worst day.",
+              "tr": {
+                "hu": "Az volt a legrosszabb nap.",
+                "en": "That was the worst day.",
+                "es": "Ese fue el peor día.",
+                "de": "Das war der schlimmste Tag."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "In vagy of?",
+        "en": "In or of?",
+        "es": "¿In u of?",
+        "de": "In oder of?"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A spanyol „de” angolul „in” vagy „of”. IN + hely vagy csoport egészében (in the class, in the city, in my family). OF + többes szám vagy szám (of the three, of all, of the year).",
+            "en": "Spanish “de” is “in” or “of” in English. IN + a place or a group as a whole (in the class, in the city, in my family). OF + a plural or a number (of the three, of all, of the year).",
+            "es": "El «de» del español es «in» u «of» en inglés. IN + un lugar o un grupo en conjunto (in the class, in the city, in my family). OF + un plural o un número (of the three, of all, of the year).",
+            "de": "Spanisch „de“ ist im Englischen „in“ oder „of“. IN + ein Ort oder eine Gruppe als Ganzes (in the class, in the city, in my family). OF + ein Plural oder eine Zahl (of the three, of all, of the year)."
+          },
+          "examples": [
+            {
+              "es": "He is the youngest of the three.",
+              "tr": {
+                "hu": "Ő a legfiatalabb a háromból.",
+                "en": "He is the youngest of the three.",
+                "es": "Él es el más joven de los tres.",
+                "de": "Er ist der Jüngste von den dreien."
+              }
+            },
+            {
+              "es": "Who is the youngest in your family?",
+              "tr": {
+                "hu": "Ki a legfiatalabb a családodban?",
+                "en": "Who is the youngest in your family?",
+                "es": "¿Quién es el más joven de tu familia?",
+                "de": "Wer ist der Jüngste in deiner Familie?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A felsőfok elé mindig kell a „the”. Ne mondd, hogy „She is tallest girl”, hanem: „She is the tallest girl”.",
+        "en": "The superlative always needs “the” before it. Do not say “She is tallest girl”; say “She is the tallest girl”.",
+        "es": "El superlativo siempre necesita «the» delante. No digas «She is tallest girl», di «She is the tallest girl».",
+        "de": "Vor dem Superlativ steht immer „the“. Sag nicht „She is tallest girl“, sondern „She is the tallest girl“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Rövid melléknévhez ne tegyél „most”-ot. Ne mondd, hogy „the most tall” vagy „the most big”, hanem: „the tallest”, „the biggest”.",
+        "en": "Do not put “most” before a short adjective. Do not say “the most tall” or “the most big”; say “the tallest”, “the biggest”.",
+        "es": "No pongas «most» delante de un adjetivo corto. No digas «the most tall» ni «the most big», di «the tallest», «the biggest».",
+        "de": "Setze „most“ nicht vor ein kurzes Adjektiv. Sag nicht „the most tall“ oder „the most big“, sondern „the tallest“, „the biggest“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Csoport egésze előtt „in” áll, nem „of”. Ne mondd, hogy „the tallest of the class”, hanem: „the tallest in the class”.",
+        "en": "Before a group as a whole use “in”, not “of”. Do not say “the tallest of the class”; say “the tallest in the class”.",
+        "es": "Delante de un grupo en conjunto se usa «in», no «of». No digas «the tallest of the class», di «the tallest in the class».",
+        "de": "Vor einer Gruppe als Ganzes steht „in“, nicht „of“. Sag nicht „the tallest of the class“, sondern „the tallest in the class“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ne kettőzd a felsőfokot. Ne mondd, hogy „the most best”, hanem: „the best”. A „mejor” és a „peor” angolul „the best” és „the worst”.",
+        "en": "Do not mark the superlative twice. Do not say “the most best”; say “the best”. Spanish “el mejor” and “el peor” are “the best” and “the worst”.",
+        "es": "No marques el superlativo dos veces. No digas «the most best», di «the best». El «el mejor» y el «el peor» del español son «the best» y «the worst».",
+        "de": "Markiere den Superlativ nicht doppelt. Sag nicht „the most best“, sondern „the best“. Spanisch „el mejor“ und „el peor“ sind „the best“ und „the worst“."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A felsőfokkal azt mondjuk, hogy valami egy csoportban a legtöbb. Rövid melléknévhez -est jön: «tall», «the tallest», «big», «the biggest». Hosszú melléknév elé «the most» jön: «the most expensive». Rendhagyó alakok: «the best» és «the worst». A «the» kötelező: «She is the tallest girl in the class». Csoport előtt «in» áll, szám előtt «of»: «in the class», «of the three». Vigyázat: nem «the most tall», és nem «tallest of the class».",
+    "en": "The superlative says that something is the most in a group. Short adjectives take -est: «tall», «the tallest», «big», «the biggest». Long adjectives take «the most» before them: «the most expensive». Irregular forms: «the best» and «the worst». The «the» is required: «She is the tallest girl in the class». Before a group use «in», before a number use «of»: «in the class», «of the three». Careful: not «the most tall», and not «tallest of the class».",
+    "es": "El superlativo dice que algo es lo más en un grupo. Los adjetivos cortos llevan -est: «tall», «the tallest», «big», «the biggest». Los adjetivos largos llevan «the most» delante: «the most expensive». Formas irregulares: «the best» y «the worst». El «the» es obligatorio: «She is the tallest girl in the class». Delante de un grupo se usa «in», delante de un número «of»: «in the class», «of the three». Cuidado: no «the most tall», y no «tallest of the class».",
+    "de": "Mit dem Superlativ sagt man, dass etwas in einer Gruppe am meisten ist. Kurze Adjektive bekommen -est: «tall», «the tallest», «big», «the biggest». Lange Adjektive bekommen «the most» davor: «the most expensive». Unregelmäßige Formen: «the best» und «the worst». Das «the» ist Pflicht: «She is the tallest girl in the class». Vor einer Gruppe steht «in», vor einer Zahl «of»: «in the class», «of the three». Vorsicht: nicht «the most tall» und nicht «tallest of the class»."
+  },
+  "glossary": [
+    {
+      "word": "happier",
+      "gloss": {
+        "hu": "boldogabb (happy)",
+        "en": "happy + -er",
+        "es": "más feliz (happy)",
+        "de": "glücklicher (happy)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "sp-01",
+      "sentence": "She is the ___ girl in the class.",
+      "options": [
+        "tallest",
+        "taller",
+        "most tall"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A tall egy szótagú melléknév, ezért a felsőfoka -est: the tallest.",
+        "en": "Tall is a one-syllable adjective, so its superlative takes -est: the tallest.",
+        "es": "Tall es un adjetivo de una sílaba, por eso su superlativo lleva -est: the tallest.",
+        "de": "Tall ist ein einsilbiges Adjektiv, deshalb bekommt sein Superlativ -est: the tallest."
+      },
+      "wrong": {
+        "taller": {
+          "hu": "A „taller” középfok, két dolog összehasonlításához való; egy csoportban a legtöbbhöz felsőfok kell: the tallest.",
+          "en": "“Taller” is the comparative, for comparing two things; for the most in a group you need the superlative: the tallest.",
+          "es": "«Taller» es el comparativo, para comparar dos cosas; para lo más en un grupo hace falta el superlativo: the tallest.",
+          "de": "„Taller“ ist der Komparativ, um zwei Dinge zu vergleichen; für das Meiste in einer Gruppe braucht man den Superlativ: the tallest."
+        },
+        "most tall": {
+          "hu": "Rövid melléknévhez nem „most”, hanem -est kell: the tallest.",
+          "en": "A short adjective takes -est, not “most”: the tallest.",
+          "es": "Un adjetivo corto lleva -est, no «most»: the tallest.",
+          "de": "Ein kurzes Adjektiv bekommt -est, nicht „most“: the tallest."
+        }
+      },
+      "examples": [
+        "He is the tallest boy.",
+        "She is the tallest in her family."
+      ]
+    },
+    {
+      "id": "sp-02",
+      "sentence": "This is the ___ house in the city.",
+      "options": [
+        "biggest",
+        "bigger",
+        "most big"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A big mássalhangzó + magánhangzó + mássalhangzó, ezért a g megkettőződik: the biggest.",
+        "en": "Big is consonant + vowel + consonant, so the g is doubled: the biggest.",
+        "es": "Big es consonante + vocal + consonante, por eso la g se duplica: the biggest.",
+        "de": "Big ist Konsonant + Vokal + Konsonant, deshalb wird das g verdoppelt: the biggest."
+      },
+      "wrong": {
+        "bigger": {
+          "hu": "A „bigger” középfok, két dolog összehasonlításához való; egy csoportban a legtöbbhöz felsőfok kell: the biggest.",
+          "en": "“Bigger” is the comparative, for comparing two things; for the most in a group you need the superlative: the biggest.",
+          "es": "«Bigger» es el comparativo, para comparar dos cosas; para lo más en un grupo hace falta el superlativo: the biggest.",
+          "de": "„Bigger“ ist der Komparativ, um zwei Dinge zu vergleichen; für das Meiste in einer Gruppe braucht man den Superlativ: the biggest."
+        },
+        "most big": {
+          "hu": "Rövid melléknévhez nem „most”, hanem -est kell: the biggest.",
+          "en": "A short adjective takes -est, not “most”: the biggest.",
+          "es": "Un adjetivo corto lleva -est, no «most»: the biggest.",
+          "de": "Ein kurzes Adjektiv bekommt -est, nicht „most“: the biggest."
+        }
+      },
+      "examples": [
+        "This is the biggest school.",
+        "It is the biggest city."
+      ]
+    },
+    {
+      "id": "sp-16",
+      "kind": "form",
+      "verb": "superlative",
+      "person": "big",
+      "answer": "the biggest",
+      "table": "sp-forms"
+    },
+    {
+      "id": "sp-03",
+      "sentence": "He is the ___ of the three brothers.",
+      "options": [
+        "youngest",
+        "younger",
+        "most young"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Három testvér közül a legfiatalabb: the youngest. A young rövid melléknév, ezért -est kell.",
+        "en": "The youngest of three brothers: the youngest. Young is a short adjective, so it takes -est.",
+        "es": "El más joven de tres hermanos: the youngest. Young es un adjetivo corto, por eso lleva -est.",
+        "de": "Der Jüngste von drei Brüdern: the youngest. Young ist ein kurzes Adjektiv, deshalb bekommt es -est."
+      },
+      "wrong": {
+        "younger": {
+          "hu": "A „younger” középfok, két dolog összehasonlításához való; egy csoportban a legtöbbhöz felsőfok kell: the youngest.",
+          "en": "“Younger” is the comparative, for comparing two things; for the most in a group you need the superlative: the youngest.",
+          "es": "«Younger» es el comparativo, para comparar dos cosas; para lo más en un grupo hace falta el superlativo: the youngest.",
+          "de": "„Younger“ ist der Komparativ, um zwei Dinge zu vergleichen; für das Meiste in einer Gruppe braucht man den Superlativ: the youngest."
+        },
+        "most young": {
+          "hu": "Rövid melléknévhez nem „most”, hanem -est kell: the youngest.",
+          "en": "A short adjective takes -est, not “most”: the youngest.",
+          "es": "Un adjetivo corto lleva -est, no «most»: the youngest.",
+          "de": "Ein kurzes Adjektiv bekommt -est, nicht „most“: the youngest."
+        }
+      },
+      "examples": [
+        "She is the youngest of the three.",
+        "I am the youngest in my family."
+      ]
+    },
+    {
+      "id": "sp-04",
+      "sentence": "July is the ___ month of the year.",
+      "options": [
+        "hottest",
+        "hotter",
+        "most hot"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A hot mássalhangzó + magánhangzó + mássalhangzó, ezért a t megkettőződik: the hottest.",
+        "en": "Hot is consonant + vowel + consonant, so the t is doubled: the hottest.",
+        "es": "Hot es consonante + vocal + consonante, por eso la t se duplica: the hottest.",
+        "de": "Hot ist Konsonant + Vokal + Konsonant, deshalb wird das t verdoppelt: the hottest."
+      },
+      "wrong": {
+        "hotter": {
+          "hu": "A „hotter” középfok, két dolog összehasonlításához való; egy csoportban a legtöbbhöz felsőfok kell: the hottest.",
+          "en": "“Hotter” is the comparative, for comparing two things; for the most in a group you need the superlative: the hottest.",
+          "es": "«Hotter» es el comparativo, para comparar dos cosas; para lo más en un grupo hace falta el superlativo: the hottest.",
+          "de": "„Hotter“ ist der Komparativ, um zwei Dinge zu vergleichen; für das Meiste in einer Gruppe braucht man den Superlativ: the hottest."
+        },
+        "most hot": {
+          "hu": "Rövid melléknévhez nem „most”, hanem -est kell: the hottest.",
+          "en": "A short adjective takes -est, not “most”: the hottest.",
+          "es": "Un adjetivo corto lleva -est, no «most»: the hottest.",
+          "de": "Ein kurzes Adjektiv bekommt -est, nicht „most“: the hottest."
+        }
+      },
+      "examples": [
+        "Summer is the hottest month.",
+        "Today is the hottest day."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "sp-22",
+      "es": "She is the tallest girl in the class.",
+      "target": "tallest",
+      "tr": {
+        "hu": "Ő a legmagasabb lány az osztályban.",
+        "en": "She is the tallest girl in the class.",
+        "es": "Ella es la chica más alta de la clase.",
+        "de": "Sie ist das größte Mädchen in der Klasse."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "rövid melléknév felsőfoka: the + melléknév + -est",
+            "en": "superlative of a short adjective: the + adjective + -est",
+            "es": "superlativo de un adjetivo corto: the + adjetivo + -est",
+            "de": "Superlativ eines kurzen Adjektivs: the + Adjektiv + -est"
+          }
+        },
+        {
+          "text": {
+            "hu": "hosszú melléknév felsőfoka: the most + melléknév",
+            "en": "superlative of a long adjective: the most + adjective",
+            "es": "superlativo de un adjetivo largo: the most + adjetivo",
+            "de": "Superlativ eines langen Adjektivs: the most + Adjektiv"
+          },
+          "wrong": {
+            "hu": "A tall rövid melléknév, ezért nem „the most tall”, hanem „the tallest”.",
+            "en": "Tall is a short adjective, so not “the most tall” but “the tallest”.",
+            "es": "Tall es un adjetivo corto, por eso no «the most tall» sino «the tallest».",
+            "de": "Tall ist ein kurzes Adjektiv, deshalb nicht „the most tall“, sondern „the tallest“."
+          }
+        },
+        {
+          "text": {
+            "hu": "középfok: taller than",
+            "en": "comparative: taller than",
+            "es": "comparativo: taller than",
+            "de": "Komparativ: taller than"
+          },
+          "wrong": {
+            "hu": "Itt nem két dolgot hasonlítunk össze, hanem egy egész osztályt; ezért felsőfok kell.",
+            "en": "Here we do not compare two things but a whole class; so the superlative is needed.",
+            "es": "Aquí no comparamos dos cosas sino toda una clase; por eso hace falta el superlativo.",
+            "de": "Hier vergleichen wir nicht zwei Dinge, sondern eine ganze Klasse; deshalb braucht man den Superlativ."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "sp-05",
+      "sentence": "This is the ___ book in the school.",
+      "options": [
+        "most interesting",
+        "more interesting",
+        "interesting"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az interesting hosszú melléknév, ezért a felsőfoka: the most interesting.",
+        "en": "Interesting is a long adjective, so its superlative is: the most interesting.",
+        "es": "Interesting es un adjetivo largo, por eso su superlativo es: the most interesting.",
+        "de": "Interesting ist ein langes Adjektiv, deshalb lautet sein Superlativ: the most interesting."
+      },
+      "wrong": {
+        "more interesting": {
+          "hu": "A „more interesting” középfok, két dolog összehasonlításához való; egy csoportban a legtöbbhöz felsőfok kell: the most interesting.",
+          "en": "“More interesting” is the comparative, for comparing two things; for the most in a group you need the superlative: the most interesting.",
+          "es": "«More interesting» es el comparativo, para comparar dos cosas; para lo más en un grupo hace falta el superlativo: the most interesting.",
+          "de": "„More interesting“ ist der Komparativ, um zwei Dinge zu vergleichen; für das Meiste in einer Gruppe braucht man den Superlativ: the most interesting."
+        },
+        "interesting": {
+          "hu": "A „interesting” alapfok; a felsőfokhoz „the” és a felsőfok alak kell: the most interesting.",
+          "en": "“Interesting” is the base form; the superlative needs “the” and the superlative form: the most interesting.",
+          "es": "«Interesting» es la forma base; el superlativo necesita «the» y la forma de superlativo: the most interesting.",
+          "de": "„Interesting“ ist die Grundform; der Superlativ braucht „the“ und die Superlativform: the most interesting."
+        }
+      },
+      "examples": [
+        "It is the most interesting movie.",
+        "She reads the most interesting books."
+      ]
+    },
+    {
+      "id": "sp-06",
+      "sentence": "She has the ___ phone in the family.",
+      "options": [
+        "most expensive",
+        "more expensive",
+        "expensive"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az expensive hosszú melléknév, ezért a felsőfoka: the most expensive.",
+        "en": "Expensive is a long adjective, so its superlative is: the most expensive.",
+        "es": "Expensive es un adjetivo largo, por eso su superlativo es: the most expensive.",
+        "de": "Expensive ist ein langes Adjektiv, deshalb lautet sein Superlativ: the most expensive."
+      },
+      "wrong": {
+        "more expensive": {
+          "hu": "A „more expensive” középfok, két dolog összehasonlításához való; egy csoportban a legtöbbhöz felsőfok kell: the most expensive.",
+          "en": "“More expensive” is the comparative, for comparing two things; for the most in a group you need the superlative: the most expensive.",
+          "es": "«More expensive» es el comparativo, para comparar dos cosas; para lo más en un grupo hace falta el superlativo: the most expensive.",
+          "de": "„More expensive“ ist der Komparativ, um zwei Dinge zu vergleichen; für das Meiste in einer Gruppe braucht man den Superlativ: the most expensive."
+        },
+        "expensive": {
+          "hu": "A „expensive” alapfok; a felsőfokhoz „the” és a felsőfok alak kell: the most expensive.",
+          "en": "“Expensive” is the base form; the superlative needs “the” and the superlative form: the most expensive.",
+          "es": "«Expensive» es la forma base; el superlativo necesita «the» y la forma de superlativo: the most expensive.",
+          "de": "„Expensive“ ist die Grundform; der Superlativ braucht „the“ und die Superlativform: the most expensive."
+        }
+      },
+      "examples": [
+        "This is the most expensive hotel.",
+        "It is the most expensive car."
+      ]
+    },
+    {
+      "id": "sp-17",
+      "kind": "form",
+      "verb": "superlative",
+      "person": "happy",
+      "answer": "the happiest",
+      "table": "sp-forms"
+    },
+    {
+      "id": "sp-07",
+      "sentence": "This is the ___ movie of the year.",
+      "options": [
+        "best",
+        "better",
+        "most good"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A good rendhagyó: a felsőfoka the best.",
+        "en": "Good is irregular: its superlative is the best.",
+        "es": "Good es irregular: su superlativo es the best.",
+        "de": "Good ist unregelmäßig: Sein Superlativ ist the best."
+      },
+      "wrong": {
+        "better": {
+          "hu": "A „better” középfok, két dolog összehasonlításához való; egy csoportban a legtöbbhöz felsőfok kell: the best.",
+          "en": "“Better” is the comparative, for comparing two things; for the most in a group you need the superlative: the best.",
+          "es": "«Better» es el comparativo, para comparar dos cosas; para lo más en un grupo hace falta el superlativo: the best.",
+          "de": "„Better“ ist der Komparativ, um zwei Dinge zu vergleichen; für das Meiste in einer Gruppe braucht man den Superlativ: the best."
+        },
+        "most good": {
+          "hu": "A good felsőfoka nem „most good”, hanem „the best”.",
+          "en": "The superlative of good is not “most good” but “the best”.",
+          "es": "El superlativo de good no es «most good» sino «the best».",
+          "de": "Der Superlativ von good ist nicht „most good“, sondern „the best“."
+        }
+      },
+      "examples": [
+        "She is the best student.",
+        "It is the best book."
+      ]
+    },
+    {
+      "id": "sp-08",
+      "sentence": "It is the ___ food in the city.",
+      "options": [
+        "worst",
+        "worse",
+        "most bad"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A bad rendhagyó: a felsőfoka the worst.",
+        "en": "Bad is irregular: its superlative is the worst.",
+        "es": "Bad es irregular: su superlativo es the worst.",
+        "de": "Bad ist unregelmäßig: Sein Superlativ ist the worst."
+      },
+      "wrong": {
+        "worse": {
+          "hu": "A „worse” középfok, két dolog összehasonlításához való; egy csoportban a legtöbbhöz felsőfok kell: the worst.",
+          "en": "“Worse” is the comparative, for comparing two things; for the most in a group you need the superlative: the worst.",
+          "es": "«Worse» es el comparativo, para comparar dos cosas; para lo más en un grupo hace falta el superlativo: the worst.",
+          "de": "„Worse“ ist der Komparativ, um zwei Dinge zu vergleichen; für das Meiste in einer Gruppe braucht man den Superlativ: the worst."
+        },
+        "most bad": {
+          "hu": "A bad felsőfoka nem „most bad”, hanem „the worst”.",
+          "en": "The superlative of bad is not “most bad” but “the worst”.",
+          "es": "El superlativo de bad no es «most bad» sino «the worst».",
+          "de": "Der Superlativ von bad ist nicht „most bad“, sondern „the worst“."
+        }
+      },
+      "examples": [
+        "That was the worst day.",
+        "It is the worst hotel."
+      ]
+    },
+    {
+      "id": "sp-19",
+      "kind": "form",
+      "verb": "superlative",
+      "person": "good",
+      "answer": "the best",
+      "table": "sp-forms"
+    },
+    {
+      "id": "sp-09",
+      "sentence": "He is the ___ boy in the school.",
+      "options": [
+        "happiest",
+        "happier",
+        "most happy"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A happy -y végű, ezért az y helyére -iest kerül: the happiest.",
+        "en": "Happy ends in -y, so the y becomes -iest: the happiest.",
+        "es": "Happy termina en -y, por eso la y cambia a -iest: the happiest.",
+        "de": "Happy endet auf -y, deshalb wird das y zu -iest: the happiest."
+      },
+      "wrong": {
+        "happier": {
+          "hu": "A „happier” középfok, két dolog összehasonlításához való; egy csoportban a legtöbbhöz felsőfok kell: the happiest.",
+          "en": "“Happier” is the comparative, for comparing two things; for the most in a group you need the superlative: the happiest.",
+          "es": "«Happier» es el comparativo, para comparar dos cosas; para lo más en un grupo hace falta el superlativo: the happiest.",
+          "de": "„Happier“ ist der Komparativ, um zwei Dinge zu vergleichen; für das Meiste in einer Gruppe braucht man den Superlativ: the happiest."
+        },
+        "most happy": {
+          "hu": "Rövid melléknévhez nem „most”, hanem -est kell: the happiest.",
+          "en": "A short adjective takes -est, not “most”: the happiest.",
+          "es": "Un adjetivo corto lleva -est, no «most»: the happiest.",
+          "de": "Ein kurzes Adjektiv bekommt -est, nicht „most“: the happiest."
+        }
+      },
+      "examples": [
+        "She is the happiest girl.",
+        "This is the easiest test."
+      ]
+    },
+    {
+      "id": "sp-10",
+      "sentence": "My car is the ___ of all.",
+      "options": [
+        "cheapest",
+        "cheaper",
+        "most cheap"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A cheap egy szótagú melléknév, ezért a felsőfoka -est: the cheapest.",
+        "en": "Cheap is a one-syllable adjective, so its superlative takes -est: the cheapest.",
+        "es": "Cheap es un adjetivo de una sílaba, por eso su superlativo lleva -est: the cheapest.",
+        "de": "Cheap ist ein einsilbiges Adjektiv, deshalb bekommt sein Superlativ -est: the cheapest."
+      },
+      "wrong": {
+        "cheaper": {
+          "hu": "A „cheaper” középfok, két dolog összehasonlításához való; egy csoportban a legtöbbhöz felsőfok kell: the cheapest.",
+          "en": "“Cheaper” is the comparative, for comparing two things; for the most in a group you need the superlative: the cheapest.",
+          "es": "«Cheaper» es el comparativo, para comparar dos cosas; para lo más en un grupo hace falta el superlativo: the cheapest.",
+          "de": "„Cheaper“ ist der Komparativ, um zwei Dinge zu vergleichen; für das Meiste in einer Gruppe braucht man den Superlativ: the cheapest."
+        },
+        "most cheap": {
+          "hu": "Rövid melléknévhez nem „most”, hanem -est kell: the cheapest.",
+          "en": "A short adjective takes -est, not “most”: the cheapest.",
+          "es": "Un adjetivo corto lleva -est, no «most»: the cheapest.",
+          "de": "Ein kurzes Adjektiv bekommt -est, nicht „most“: the cheapest."
+        }
+      },
+      "examples": [
+        "This is the cheapest hotel.",
+        "It is the cheapest book."
+      ]
+    },
+    {
+      "id": "sp-18",
+      "kind": "form",
+      "verb": "superlative",
+      "person": "expensive",
+      "answer": "the most expensive",
+      "table": "sp-forms"
+    },
+    {
+      "kind": "why",
+      "id": "sp-23",
+      "es": "He is the youngest of the three.",
+      "target": "of",
+      "tr": {
+        "hu": "Ő a legfiatalabb a háromból.",
+        "en": "He is the youngest of the three.",
+        "es": "Él es el más joven de los tres.",
+        "de": "Er ist der Jüngste von den dreien."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "of + szám vagy többes szám (of the three, of all)",
+            "en": "of + a number or a plural (of the three, of all)",
+            "es": "of + un número o un plural (of the three, of all)",
+            "de": "of + eine Zahl oder ein Plural (of the three, of all)"
+          }
+        },
+        {
+          "text": {
+            "hu": "in + hely vagy csoport egésze (in the class)",
+            "en": "in + a place or a group as a whole (in the class)",
+            "es": "in + un lugar o un grupo en conjunto (in the class)",
+            "de": "in + ein Ort oder eine Gruppe als Ganzes (in the class)"
+          },
+          "wrong": {
+            "hu": "A „the three” konkrét szám, nem hely vagy csoportnév; számhoz „of” kell.",
+            "en": "“The three” is a specific number, not a place or a group name; a number takes “of”.",
+            "es": "«The three» es un número concreto, no un lugar ni el nombre de un grupo; un número lleva «of».",
+            "de": "„The three“ ist eine bestimmte Zahl, kein Ort und kein Gruppenname; eine Zahl bekommt „of“."
+          }
+        },
+        {
+          "text": {
+            "hu": "at + pont",
+            "en": "at + a point",
+            "es": "at + un punto",
+            "de": "at + ein Punkt"
+          },
+          "wrong": {
+            "hu": "Az „at” egy pontot jelöl (at the door); felsőfok után nem áll.",
+            "en": "“At” marks a point (at the door); it does not follow a superlative.",
+            "es": "«At» marca un punto (at the door); no va después de un superlativo.",
+            "de": "„At“ markiert einen Punkt (at the door); es steht nicht nach einem Superlativ."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "sp-11",
+      "sentence": "Who is the tallest ___ the class?",
+      "options": [
+        "in",
+        "of",
+        "at"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Egy csoport egésze előtt „in” áll: in the class.",
+        "en": "Before a group as a whole use “in”: in the class.",
+        "es": "Delante de un grupo en conjunto se usa «in»: in the class.",
+        "de": "Vor einer Gruppe als Ganzes steht „in“: in the class."
+      },
+      "wrong": {
+        "of": {
+          "hu": "Az „of” többes szám vagy szám előtt áll (of the three); egy osztály egészéhez „in” kell.",
+          "en": "“Of” goes before a plural or a number (of the three); for a class as a whole you need “in”.",
+          "es": "«Of» va delante de un plural o un número (of the three); para una clase en conjunto hace falta «in».",
+          "de": "„Of“ steht vor einem Plural oder einer Zahl (of the three); für eine Klasse als Ganzes braucht man „in“."
+        },
+        "at": {
+          "hu": "Az „at” egy pontot jelöl; a csoport egészéhez „in” kell.",
+          "en": "“At” marks a point; for a group as a whole you need “in”.",
+          "es": "«At» marca un punto; para un grupo en conjunto hace falta «in».",
+          "de": "„At“ markiert einen Punkt; für eine Gruppe als Ganzes braucht man „in“."
+        }
+      },
+      "examples": [
+        "She is the best in the school.",
+        "He is the youngest in the family."
+      ]
+    },
+    {
+      "id": "sp-12",
+      "sentence": "He is the youngest ___ the three.",
+      "options": [
+        "of",
+        "in",
+        "at"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Szám előtt („the three”) „of” áll: of the three.",
+        "en": "Before a number (“the three”) use “of”: of the three.",
+        "es": "Delante de un número («the three») se usa «of»: of the three.",
+        "de": "Vor einer Zahl („the three“) steht „of“: of the three."
+      },
+      "wrong": {
+        "in": {
+          "hu": "Az „in” hely vagy csoport egészéhez való; a „the three” szám, ezért „of”.",
+          "en": "“In” is for a place or a group as a whole; “the three” is a number, so “of”.",
+          "es": "«In» es para un lugar o un grupo en conjunto; «the three» es un número, por eso «of».",
+          "de": "„In“ gehört zu einem Ort oder einer Gruppe als Ganzes; „the three“ ist eine Zahl, deshalb „of“."
+        },
+        "at": {
+          "hu": "Az „at” egy pontot jelöl; számhoz „of” kell.",
+          "en": "“At” marks a point; for a number you need “of”.",
+          "es": "«At» marca un punto; para un número hace falta «of».",
+          "de": "„At“ markiert einen Punkt; bei einer Zahl braucht man „of“."
+        }
+      },
+      "examples": [
+        "She is the best of all.",
+        "It is the best of the three."
+      ]
+    },
+    {
+      "id": "sp-25",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Ella es la chica más alta de la clase.",
+          "en": "She is the tallest girl in the class."
+        },
+        {
+          "es": "Esta es la casa más grande de la ciudad.",
+          "en": "This is the biggest house in the city."
+        },
+        {
+          "es": "Él es el más joven de los tres.",
+          "en": "He is the youngest of the three."
+        },
+        {
+          "es": "Es la película más interesante del año.",
+          "en": "It is the most interesting movie of the year."
+        },
+        {
+          "es": "Es el mejor libro.",
+          "en": "It is the best book."
+        },
+        {
+          "es": "Es la comida más cara.",
+          "en": "It is the most expensive food."
+        }
+      ]
+    },
+    {
+      "id": "sp-13",
+      "sentence": "She is ___ tallest girl of all.",
+      "options": [
+        "the",
+        "a",
+        "more"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A felsőfok elé mindig „the” kell: the tallest.",
+        "en": "The superlative always needs “the” before it: the tallest.",
+        "es": "El superlativo siempre necesita «the» delante: the tallest.",
+        "de": "Vor dem Superlativ braucht man immer „the“: the tallest."
+      },
+      "wrong": {
+        "a": {
+          "hu": "Az „a” nem illik a felsőfok elé; a legmagasabb lány egyetlen, ezért „the”.",
+          "en": "“A” does not fit before a superlative; the tallest girl is one specific girl, so “the”.",
+          "es": "«A» no encaja delante de un superlativo; la chica más alta es una sola, por eso «the».",
+          "de": "„A“ passt nicht vor einen Superlativ; das größte Mädchen ist ein bestimmtes, deshalb „the“."
+        },
+        "more": {
+          "hu": "A „more” a középfokhoz kell (more expensive); a „tallest” elé „the” jön.",
+          "en": "“More” is for the comparative (more expensive); before “tallest” comes “the”.",
+          "es": "«More» es para el comparativo (more expensive); delante de «tallest» va «the».",
+          "de": "„More“ gehört zum Komparativ (more expensive); vor „tallest“ steht „the“."
+        }
+      },
+      "examples": [
+        "He is the youngest boy.",
+        "This is the biggest house."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "sp-24",
+      "es": "This is the best movie.",
+      "target": "best",
+      "tr": {
+        "hu": "Ez a legjobb film.",
+        "en": "This is the best movie.",
+        "es": "Esta es la mejor película.",
+        "de": "Das ist der beste Film."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "rendhagyó felsőfok: good → the best",
+            "en": "irregular superlative: good → the best",
+            "es": "superlativo irregular: good → the best",
+            "de": "unregelmäßiger Superlativ: good → the best"
+          }
+        },
+        {
+          "text": {
+            "hu": "szabályos -est: the goodest",
+            "en": "regular -est: the goodest",
+            "es": "-est regular: the goodest",
+            "de": "regelmäßiges -est: the goodest"
+          },
+          "wrong": {
+            "hu": "A good rendhagyó, ezért nem „goodest”, hanem „best”.",
+            "en": "Good is irregular, so not “goodest” but “best”.",
+            "es": "Good es irregular, por eso no «goodest» sino «best».",
+            "de": "Good ist unregelmäßig, deshalb nicht „goodest“, sondern „best“."
+          }
+        },
+        {
+          "text": {
+            "hu": "the most + good",
+            "en": "the most + good",
+            "es": "the most + good",
+            "de": "the most + good"
+          },
+          "wrong": {
+            "hu": "A good felsőfoka nem „the most good”, hanem „the best”.",
+            "en": "The superlative of good is not “the most good” but “the best”.",
+            "es": "El superlativo de good no es «the most good» sino «the best».",
+            "de": "Der Superlativ von good ist nicht „the most good“, sondern „the best“."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "sp-14",
+      "sentence": "My sister is taller than me, but my brother is the ___.",
+      "options": [
+        "tallest",
+        "taller",
+        "tall"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Három személy közül a legmagasabb: the tallest.",
+        "en": "The highest of three people: the tallest.",
+        "es": "El más alto de tres personas: the tallest.",
+        "de": "Der Größte von drei Personen: the tallest."
+      },
+      "wrong": {
+        "taller": {
+          "hu": "A „taller” középfok, két dolog összehasonlításához való; egy csoportban a legtöbbhöz felsőfok kell: the tallest.",
+          "en": "“Taller” is the comparative, for comparing two things; for the most in a group you need the superlative: the tallest.",
+          "es": "«Taller» es el comparativo, para comparar dos cosas; para lo más en un grupo hace falta el superlativo: the tallest.",
+          "de": "„Taller“ ist der Komparativ, um zwei Dinge zu vergleichen; für das Meiste in einer Gruppe braucht man den Superlativ: the tallest."
+        },
+        "tall": {
+          "hu": "A „tall” alapfok; a felsőfokhoz „the” és a felsőfok alak kell: the tallest.",
+          "en": "“Tall” is the base form; the superlative needs “the” and the superlative form: the tallest.",
+          "es": "«Tall» es la forma base; el superlativo necesita «the» y la forma de superlativo: the tallest.",
+          "de": "„Tall“ ist die Grundform; der Superlativ braucht „the“ und die Superlativform: the tallest."
+        }
+      },
+      "examples": [
+        "He is the tallest.",
+        "She is the tallest of all."
+      ]
+    },
+    {
+      "id": "sp-20",
+      "kind": "form",
+      "verb": "superlative",
+      "person": "bad",
+      "answer": "the worst",
+      "table": "sp-forms"
+    },
+    {
+      "id": "sp-15",
+      "sentence": "Which is the ___ month of the year?",
+      "options": [
+        "coldest",
+        "colder",
+        "most cold"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A cold egy szótagú melléknév, ezért a felsőfoka -est: the coldest.",
+        "en": "Cold is a one-syllable adjective, so its superlative takes -est: the coldest.",
+        "es": "Cold es un adjetivo de una sílaba, por eso su superlativo lleva -est: the coldest.",
+        "de": "Cold ist ein einsilbiges Adjektiv, deshalb bekommt sein Superlativ -est: the coldest."
+      },
+      "wrong": {
+        "colder": {
+          "hu": "A „colder” középfok, két dolog összehasonlításához való; egy csoportban a legtöbbhöz felsőfok kell: the coldest.",
+          "en": "“Colder” is the comparative, for comparing two things; for the most in a group you need the superlative: the coldest.",
+          "es": "«Colder» es el comparativo, para comparar dos cosas; para lo más en un grupo hace falta el superlativo: the coldest.",
+          "de": "„Colder“ ist der Komparativ, um zwei Dinge zu vergleichen; für das Meiste in einer Gruppe braucht man den Superlativ: the coldest."
+        },
+        "most cold": {
+          "hu": "Rövid melléknévhez nem „most”, hanem -est kell: the coldest.",
+          "en": "A short adjective takes -est, not “most”: the coldest.",
+          "es": "Un adjetivo corto lleva -est, no «most»: the coldest.",
+          "de": "Ein kurzes Adjektiv bekommt -est, nicht „most“: the coldest."
+        }
+      },
+      "examples": [
+        "January is the coldest month.",
+        "Winter is the coldest month."
+      ]
+    },
+    {
+      "id": "sp-21",
+      "kind": "form",
+      "verb": "superlative",
+      "person": "tall",
+      "answer": "the tallest",
+      "table": "sp-forms"
+    },
+    {
+      "id": "sp-26",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "el más alto",
+          "en": "the tallest"
+        },
+        {
+          "es": "el más grande",
+          "en": "the biggest"
+        },
+        {
+          "es": "el más caro",
+          "en": "the most expensive"
+        },
+        {
+          "es": "el mejor",
+          "en": "the best"
+        },
+        {
+          "es": "el peor",
+          "en": "the worst"
+        },
+        {
+          "es": "el más feliz",
+          "en": "the happiest"
+        }
+      ]
+    }
+  ]
+}

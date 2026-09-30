@@ -1,0 +1,1173 @@
+{
+  "schema": 2,
+  "topic": "present_continuous",
+  "level": "A1",
+  "title": {
+    "hu": "A folyamatos jelen (I am working)",
+    "en": "The Present Continuous (I am working)",
+    "es": "El Presente Continuo (I am working)",
+    "de": "Das Present Continuous (I am working)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A folyamatos jelen szerkezete: am / is / are + ige-ing. Nagyon hasonlít a spanyol „estar + gerundio”-ra: „I am working” = „Estoy trabajando”. Azt mondja, hogy valami MOST történik, vagy ebben az időszakban tart. Spanyolul a sima jelen is elmegy erre („trabajo ahora”), angolul viszont ilyenkor a folyamatos jelen kell.",
+        "en": "The present continuous is formed with am / is / are + verb-ing. It is very close to Spanish “estar + gerundio”: “I am working” = “Estoy trabajando”. It says that something is happening RIGHT NOW or around now. In Spanish the plain present can do this job too (“trabajo ahora”), but in English you need the continuous.",
+        "es": "El presente continuo se forma con am / is / are + verbo-ing. Se parece mucho al «estar + gerundio» del español: «I am working» = «Estoy trabajando». Dice que algo pasa AHORA MISMO o por estas fechas. En español el presente simple también sirve para eso («trabajo ahora»), pero en inglés hace falta el continuo.",
+        "de": "Das Present Continuous wird mit am / is / are + Verb-ing gebildet. Es ist dem spanischen „estar + gerundio“ sehr ähnlich: „I am working“ = „Estoy trabajando“. Es sagt, dass etwas GERADE JETZT oder in dieser Zeit passiert. Im Spanischen kann auch das einfache Präsens das ausdrücken („trabajo ahora“), im Englischen braucht man aber das Continuous."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "pc-forms",
+      "title": {
+        "hu": "Az -ing alak írása",
+        "en": "Spelling the -ing form",
+        "es": "Cómo se escribe la forma -ing",
+        "de": "Schreibung der -ing-Form"
+      },
+      "header": [
+        {
+          "hu": "Ige",
+          "en": "Verb",
+          "es": "Verbo",
+          "de": "Verb"
+        },
+        {
+          "hu": "-ing",
+          "en": "-ing",
+          "es": "-ing",
+          "de": "-ing"
+        }
+      ],
+      "rows": [
+        [
+          "work",
+          "working"
+        ],
+        [
+          "play",
+          "playing"
+        ],
+        [
+          "eat",
+          "eating"
+        ],
+        [
+          "make",
+          "making"
+        ],
+        [
+          "write",
+          "writing"
+        ],
+        [
+          "dance",
+          "dancing"
+        ],
+        [
+          "run",
+          "running"
+        ],
+        [
+          "swim",
+          "swimming"
+        ],
+        [
+          "sit",
+          "sitting"
+        ],
+        [
+          "study",
+          "studying"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Az -ing képzése",
+        "en": "Making the -ing form",
+        "es": "Cómo se forma el -ing",
+        "de": "Bildung der -ing-Form"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A legtöbb ige: csak -ing (work → working, play → playing, eat → eating). A -y megmarad (study → studying).",
+            "en": "Most verbs: just add -ing (work → working, play → playing, eat → eating). The -y stays (study → studying).",
+            "es": "Casi todos los verbos: solo añade -ing (work → working, play → playing, eat → eating). La -y se queda (study → studying).",
+            "de": "Die meisten Verben: einfach -ing anhängen (work → working, play → playing, eat → eating). Das -y bleibt (study → studying)."
+          },
+          "examples": [
+            {
+              "es": "She is working.",
+              "tr": {
+                "hu": "Ő éppen dolgozik.",
+                "en": "She is working.",
+                "es": "Ella está trabajando.",
+                "de": "Sie arbeitet gerade."
+              }
+            },
+            {
+              "es": "They are studying English.",
+              "tr": {
+                "hu": "Éppen angolul tanulnak.",
+                "en": "They are studying English.",
+                "es": "Están estudiando inglés.",
+                "de": "Sie lernen gerade Englisch."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "-e végű igék: az e elmarad (make → making, write → writing, dance → dancing).",
+            "en": "Verbs ending in -e: drop the e (make → making, write → writing, dance → dancing).",
+            "es": "Verbos que terminan en -e: la e desaparece (make → making, write → writing, dance → dancing).",
+            "de": "Verben auf -e: Das e fällt weg (make → making, write → writing, dance → dancing)."
+          },
+          "examples": [
+            {
+              "es": "He is making a cake.",
+              "tr": {
+                "hu": "Tortát készít.",
+                "en": "He is making a cake.",
+                "es": "Él está haciendo un pastel.",
+                "de": "Er macht gerade einen Kuchen."
+              }
+            },
+            {
+              "es": "We are dancing.",
+              "tr": {
+                "hu": "Éppen táncolunk.",
+                "en": "We are dancing.",
+                "es": "Estamos bailando.",
+                "de": "Wir tanzen gerade."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Egy szótagú, mássalhangzó + magánhangzó + mássalhangzó végű igék: a végső mássalhangzó megkettőződik (run → running, swim → swimming, sit → sitting).",
+            "en": "One-syllable verbs ending in consonant + vowel + consonant: double the last consonant (run → running, swim → swimming, sit → sitting).",
+            "es": "Verbos de una sílaba que terminan en consonante + vocal + consonante: se duplica la última consonante (run → running, swim → swimming, sit → sitting).",
+            "de": "Einsilbige Verben auf Konsonant + Vokal + Konsonant: Der letzte Konsonant wird verdoppelt (run → running, swim → swimming, sit → sitting)."
+          },
+          "examples": [
+            {
+              "es": "I am running now.",
+              "tr": {
+                "hu": "Most futok.",
+                "en": "I am running now.",
+                "es": "Estoy corriendo ahora.",
+                "de": "Ich laufe gerade."
+              }
+            },
+            {
+              "es": "They are swimming in the sea.",
+              "tr": {
+                "hu": "A tengerben úsznak.",
+                "en": "They are swimming in the sea.",
+                "es": "Están nadando en el mar.",
+                "de": "Sie schwimmen im Meer."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "pc-aux",
+      "title": {
+        "hu": "Állító, tagadó, kérdő",
+        "en": "Affirmative, negative, question",
+        "es": "Afirmativa, negativa, pregunta",
+        "de": "Bejahend, verneinend, Frage"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "állító",
+          "en": "affirmative",
+          "es": "afirmativa",
+          "de": "bejahend"
+        },
+        {
+          "hu": "tagadás",
+          "en": "negative",
+          "es": "negación",
+          "de": "Verneinung"
+        },
+        {
+          "hu": "kérdés",
+          "en": "question",
+          "es": "pregunta",
+          "de": "Frage"
+        }
+      ],
+      "rows": [
+        [
+          "I",
+          "I am working",
+          "I am not working",
+          "Am I working?"
+        ],
+        [
+          "you",
+          "you are working",
+          "you aren't working",
+          "Are you working?"
+        ],
+        [
+          "he / she / it",
+          "she is working",
+          "she isn't working",
+          "Is she working?"
+        ],
+        [
+          "we",
+          "we are working",
+          "we aren't working",
+          "Are we working?"
+        ],
+        [
+          "they",
+          "they are working",
+          "they aren't working",
+          "Are they working?"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Mikor használjuk",
+        "en": "When we use it",
+        "es": "Cuándo se usa",
+        "de": "Wann wir es benutzen"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Ami éppen most történik, vagy ebben az időszakban tart: I am working now. She is studying English this month. Jelzők: now, right now, today, at the moment.",
+            "en": "Something happening right now or during this period: I am working now. She is studying English this month. Clues: now, right now, today, at the moment.",
+            "es": "Algo que pasa ahora mismo o durante este período: I am working now. She is studying English this month. Pistas: now, right now, today, at the moment.",
+            "de": "Etwas, das gerade jetzt oder in dieser Zeit passiert: I am working now. She is studying English this month. Hinweiswörter: now, right now, today, at the moment."
+          },
+          "examples": [
+            {
+              "es": "I am cooking dinner now.",
+              "tr": {
+                "hu": "Most vacsorát főzök.",
+                "en": "I am cooking dinner now.",
+                "es": "Estoy cocinando la cena ahora.",
+                "de": "Ich koche gerade das Abendessen."
+              }
+            },
+            {
+              "es": "What are you doing?",
+              "tr": {
+                "hu": "Mit csinálsz?",
+                "en": "What are you doing?",
+                "es": "¿Qué estás haciendo?",
+                "de": "Was machst du gerade?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Rutinra és szokásra az egyszerű jelen kell: I watch TV every night. Az „every day, always, usually” jelzők az egyszerű jelen mellett vannak.",
+            "en": "For routines and habits use the present simple: I watch TV every night. Clues like “every day, always, usually” go with the present simple.",
+            "es": "Para rutinas y hábitos se usa el presente simple: I watch TV every night. Pistas como «every day, always, usually» van con el presente simple.",
+            "de": "Für Routinen und Gewohnheiten nimmt man das Present Simple: I watch TV every night. Hinweiswörter wie „every day, always, usually“ gehören zum Present Simple."
+          },
+          "examples": [
+            {
+              "es": "I watch TV every night.",
+              "tr": {
+                "hu": "Minden este tévét nézek.",
+                "en": "I watch TV every night.",
+                "es": "Veo la tele todas las noches.",
+                "de": "Ich sehe jeden Abend fern."
+              }
+            },
+            {
+              "es": "Right now, I am studying English.",
+              "tr": {
+                "hu": "Éppen angolul tanulok.",
+                "en": "Right now, I am studying English.",
+                "es": "Ahora mismo estoy estudiando inglés.",
+                "de": "Gerade lerne ich Englisch."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Érzést, vágyat, tudást kifejező igékkel (like, love, want, need, know) nem használjuk: I like music (nem „I am liking music”).",
+            "en": "It is not used with verbs of feeling, wanting or knowing (like, love, want, need, know): I like music (not “I am liking music”).",
+            "es": "No se usa con verbos de sentimiento, deseo o conocimiento (like, love, want, need, know): I like music (no «I am liking music»).",
+            "de": "Mit Verben des Fühlens, Wollens oder Wissens (like, love, want, need, know) benutzt man es nicht: I like music (nicht „I am liking music“)."
+          },
+          "examples": [
+            {
+              "es": "I like music.",
+              "tr": {
+                "hu": "Szeretem a zenét.",
+                "en": "I like music.",
+                "es": "Me gusta la música.",
+                "de": "Ich mag Musik."
+              }
+            },
+            {
+              "es": "She needs a coffee.",
+              "tr": {
+                "hu": "Szüksége van egy kávéra.",
+                "en": "She needs a coffee.",
+                "es": "Ella necesita un café.",
+                "de": "Sie braucht einen Kaffee."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Az am / is / are kötelező. Ne mondd, hogy „I working” vagy „She reading”, hanem: „I am working”, „She is reading”.",
+        "en": "Am / is / are is required. Do not say “I working” or “She reading”; say “I am working”, “She is reading”.",
+        "es": "Am / is / are es obligatorio. No digas «I working» ni «She reading», di «I am working», «She is reading».",
+        "de": "Am / is / are ist Pflicht. Sag nicht „I working“ oder „She reading“, sondern „I am working“, „She is reading“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A „most” történő dologra folyamatos jelen kell, nem egyszerű jelen. Ne mondd, hogy „I work now”, hanem: „I am working now”.",
+        "en": "For something happening now use the continuous, not the present simple. Do not say “I work now”; say “I am working now”.",
+        "es": "Para algo que pasa ahora se usa el continuo, no el presente simple. No digas «I work now», di «I am working now».",
+        "de": "Für etwas, das jetzt passiert, nimmt man das Continuous, nicht das Present Simple. Sag nicht „I work now“, sondern „I am working now“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ne használd az -ing alakot érzést vagy vágyat kifejező igékkel. Ne mondd, hogy „I am wanting a coffee”, hanem: „I want a coffee”.",
+        "en": "Do not use -ing with verbs of feeling or wanting. Do not say “I am wanting a coffee”; say “I want a coffee”.",
+        "es": "No uses -ing con verbos de sentimiento o deseo. No digas «I am wanting a coffee», di «I want a coffee».",
+        "de": "Benutze -ing nicht mit Verben des Fühlens oder Wollens. Sag nicht „I am wanting a coffee“, sondern „I want a coffee“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Figyelj a helyesírásra: „run” → „running” (dupla n), „make” → „making” (nincs e). Ne írd, hogy „runing” vagy „makeing”.",
+        "en": "Watch the spelling: “run” → “running” (double n), “make” → “making” (no e). Do not write “runing” or “makeing”.",
+        "es": "Cuida la ortografía: «run» → «running» (doble n), «make» → «making» (sin e). No escribas «runing» ni «makeing».",
+        "de": "Achte auf die Schreibung: „run“ → „running“ (doppeltes n), „make“ → „making“ (kein e). Schreib nicht „runing“ oder „makeing“."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A folyamatos jelen: «am», «is» vagy «are» plusz az ige -ing alakja. Olyasmit mond, ami éppen most történik: «I am working now», «she is reading», «they are playing». Tagadás: «I am not working», «he isn't working». Kérdés: «Are you working?», «What are you doing?». Az -e végű igékről elmarad az e: «make», «making». Egy szótagú igéknél a végső mássalhangzó megkettőződik: «run», «running». Vigyázat: nem «I working» és nem «I work now». Érzést kifejező igével nincs -ing: «I like music».",
+    "en": "The present continuous is «am», «is» or «are» plus the -ing form of the verb. It says that something is happening right now: «I am working now», «she is reading», «they are playing». Negative: «I am not working», «he isn't working». Questions: «Are you working?», «What are you doing?». Verbs ending in e lose the e: «make», «making». One-syllable verbs double the last consonant: «run», «running». Careful: not «I working» and not «I work now». Verbs of feeling take no -ing: «I like music».",
+    "es": "El presente continuo es «am», «is» o «are» más la forma -ing del verbo. Dice que algo pasa ahora mismo: «I am working now», «she is reading», «they are playing». Negación: «I am not working», «he isn't working». Pregunta: «Are you working?», «What are you doing?». Los verbos que terminan en e pierden la e: «make», «making». Los verbos de una sílaba duplican la última consonante: «run», «running». Cuidado: no «I working» y no «I work now». Los verbos de sentimiento no llevan -ing: «I like music».",
+    "de": "Das Present Continuous besteht aus «am», «is» oder «are» plus der -ing-Form des Verbs. Es sagt, dass etwas gerade jetzt passiert: «I am working now», «she is reading», «they are playing». Verneinung: «I am not working», «he isn't working». Fragen: «Are you working?», «What are you doing?». Verben auf e verlieren das e: «make», «making». Einsilbige Verben verdoppeln den letzten Konsonanten: «run», «running». Vorsicht: nicht «I working» und nicht «I work now». Verben des Fühlens haben kein -ing: «I like music»."
+  },
+  "glossary": [
+    {
+      "word": "running",
+      "gloss": {
+        "hu": "futás (run)",
+        "en": "run + -ing",
+        "es": "corriendo (run)",
+        "de": "laufend (run)"
+      }
+    },
+    {
+      "word": "swimming",
+      "gloss": {
+        "hu": "úszás (swim)",
+        "en": "swim + -ing",
+        "es": "nadando (swim)",
+        "de": "schwimmend (swim)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "pc-01",
+      "sentence": "I ___ working now.",
+      "options": [
+        "am",
+        "is",
+        "are"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az „I” mellé az „am” kell: I am working now.",
+        "en": "With “I” you need “am”: I am working now.",
+        "es": "Con «I» hace falta «am»: I am working now.",
+        "de": "Bei „I“ braucht man „am“: I am working now."
+      },
+      "wrong": {
+        "is": {
+          "hu": "Az „is” a he, she, it mellé való; az „I” mellé „am” kell.",
+          "en": "“Is” goes with he, she, it; with “I” you need “am”.",
+          "es": "«Is» va con he, she, it; con «I» hace falta «am».",
+          "de": "„Is“ gehört zu he, she, it; bei „I“ braucht man „am“."
+        },
+        "are": {
+          "hu": "Az „are” a you, we, they mellé való; az „I” mellé „am” kell.",
+          "en": "“Are” goes with you, we, they; with “I” you need “am”.",
+          "es": "«Are» va con you, we, they; con «I» hace falta «am».",
+          "de": "„Are“ gehört zu you, we, they; bei „I“ braucht man „am“."
+        }
+      },
+      "examples": [
+        "I am reading now.",
+        "I am cooking dinner."
+      ]
+    },
+    {
+      "id": "pc-02",
+      "sentence": "She ___ reading a book.",
+      "options": [
+        "is",
+        "are",
+        "am"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „she” mellé az „is” kell: She is reading a book.",
+        "en": "With “she” you need “is”: She is reading a book.",
+        "es": "Con «she» hace falta «is»: She is reading a book.",
+        "de": "Bei „she“ braucht man „is“: She is reading a book."
+      },
+      "wrong": {
+        "are": {
+          "hu": "Az „are” a you, we, they mellé való; a „she” mellé „is” kell.",
+          "en": "“Are” goes with you, we, they; with “she” you need “is”.",
+          "es": "«Are» va con you, we, they; con «she» hace falta «is».",
+          "de": "„Are“ gehört zu you, we, they; bei „she“ braucht man „is“."
+        },
+        "am": {
+          "hu": "Az „am” csak az „I” mellé való; a „she” mellé „is” kell.",
+          "en": "“Am” goes only with “I”; with “she” you need “is”.",
+          "es": "«Am» va solo con «I»; con «she» hace falta «is».",
+          "de": "„Am“ gehört nur zu „I“; bei „she“ braucht man „is“."
+        }
+      },
+      "examples": [
+        "He is reading a book.",
+        "My sister is working."
+      ]
+    },
+    {
+      "id": "pc-16",
+      "kind": "form",
+      "verb": "-ing",
+      "person": "make",
+      "answer": "making",
+      "table": "pc-forms"
+    },
+    {
+      "id": "pc-03",
+      "sentence": "We are ___ TV now.",
+      "options": [
+        "watch",
+        "watches",
+        "watching"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az „are” után az ige -ing alakja áll: We are watching TV now.",
+        "en": "After “are” the -ing form of the verb follows: We are watching TV now.",
+        "es": "Después de «are» va la forma -ing del verbo: We are watching TV now.",
+        "de": "Nach „are“ folgt die -ing-Form des Verbs: We are watching TV now."
+      },
+      "wrong": {
+        "watch": {
+          "hu": "Az „are” mellé -ing alak kell, az alapige nem elég: watching.",
+          "en": "After “are” you need the -ing form, the base verb is not enough: watching.",
+          "es": "Después de «are» hace falta la forma -ing, el verbo base no basta: watching.",
+          "de": "Nach „are“ braucht man die -ing-Form, die Grundform reicht nicht: watching."
+        },
+        "watches": {
+          "hu": "A „watches” egyszerű jelen he / she / it mellé; az „are” után -ing kell: watching.",
+          "en": "“Watches” is the present simple for he / she / it; after “are” you need -ing: watching.",
+          "es": "«Watches» es el presente simple para he / she / it; después de «are» hace falta -ing: watching.",
+          "de": "„Watches“ ist das Present Simple für he / she / it; nach „are“ braucht man -ing: watching."
+        }
+      },
+      "examples": [
+        "They are watching TV.",
+        "She is watching a movie."
+      ]
+    },
+    {
+      "id": "pc-04",
+      "sentence": "He is ___ coffee.",
+      "options": [
+        "drinking",
+        "drink",
+        "drinks"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az „is” után -ing alak áll: He is drinking coffee.",
+        "en": "After “is” comes the -ing form: He is drinking coffee.",
+        "es": "Después de «is» va la forma -ing: He is drinking coffee.",
+        "de": "Nach „is“ folgt die -ing-Form: He is drinking coffee."
+      },
+      "wrong": {
+        "drink": {
+          "hu": "Az „is” mellé -ing alak kell: drinking.",
+          "en": "After “is” you need the -ing form: drinking.",
+          "es": "Después de «is» hace falta la forma -ing: drinking.",
+          "de": "Nach „is“ braucht man die -ing-Form: drinking."
+        },
+        "drinks": {
+          "hu": "A „drinks” egyszerű jelen; az „is” után -ing kell: drinking.",
+          "en": "“Drinks” is the present simple; after “is” you need -ing: drinking.",
+          "es": "«Drinks» es presente simple; después de «is» hace falta -ing: drinking.",
+          "de": "„Drinks“ ist Present Simple; nach „is“ braucht man -ing: drinking."
+        }
+      },
+      "examples": [
+        "She is eating an apple.",
+        "I am drinking water."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "pc-21",
+      "es": "She is working now.",
+      "target": "is",
+      "tr": {
+        "hu": "Éppen dolgozik.",
+        "en": "She is working now.",
+        "es": "Ella está trabajando ahora.",
+        "de": "Sie arbeitet gerade."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "am / is / are + ige-ing: éppen most történik",
+            "en": "am / is / are + verb-ing: it is happening now",
+            "es": "am / is / are + verbo-ing: pasa ahora mismo",
+            "de": "am / is / are + Verb-ing: es passiert gerade jetzt"
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszerű jelen: She works",
+            "en": "present simple: She works",
+            "es": "presente simple: She works",
+            "de": "Present Simple: She works"
+          },
+          "wrong": {
+            "hu": "A „now” és az „is + -ing” a folyamatban lévő cselekvést fejezi ki; az egyszerű jelen rutint jelölne.",
+            "en": "“Now” and “is + -ing” show an action in progress; the present simple would show a routine.",
+            "es": "«Now» e «is + -ing» expresan una acción en curso; el presente simple indicaría una rutina.",
+            "de": "„Now“ und „is + -ing“ drücken eine laufende Handlung aus; das Present Simple würde eine Routine anzeigen."
+          }
+        },
+        {
+          "text": {
+            "hu": "to be + alapige: She is work",
+            "en": "to be + base verb: She is work",
+            "es": "to be + verbo base: She is work",
+            "de": "to be + Grundform: She is work"
+          },
+          "wrong": {
+            "hu": "Az „is” után -ing alak kell, az alapige nem elég: is working.",
+            "en": "After “is” you need the -ing form, the base verb is not enough: is working.",
+            "es": "Después de «is» hace falta la forma -ing, el verbo base no basta: is working.",
+            "de": "Nach „is“ braucht man die -ing-Form, die Grundform reicht nicht: is working."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "pc-05",
+      "sentence": "I am ___ dinner.",
+      "options": [
+        "cooks",
+        "cooking",
+        "cook"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az „am” után -ing alak áll: I am cooking dinner.",
+        "en": "After “am” comes the -ing form: I am cooking dinner.",
+        "es": "Después de «am» va la forma -ing: I am cooking dinner.",
+        "de": "Nach „am“ folgt die -ing-Form: I am cooking dinner."
+      },
+      "wrong": {
+        "cooks": {
+          "hu": "A „cooks” egyszerű jelen he / she / it mellé; az „am” után -ing kell: cooking.",
+          "en": "“Cooks” is the present simple for he / she / it; after “am” you need -ing: cooking.",
+          "es": "«Cooks» es el presente simple para he / she / it; después de «am» hace falta -ing: cooking.",
+          "de": "„Cooks“ ist das Present Simple für he / she / it; nach „am“ braucht man -ing: cooking."
+        },
+        "cook": {
+          "hu": "Az „am” mellé -ing alak kell, az alapige nem elég: cooking.",
+          "en": "After “am” you need the -ing form, the base verb is not enough: cooking.",
+          "es": "Después de «am» hace falta la forma -ing, el verbo base no basta: cooking.",
+          "de": "Nach „am“ braucht man die -ing-Form, die Grundform reicht nicht: cooking."
+        }
+      },
+      "examples": [
+        "We are cooking now.",
+        "He is cooking dinner."
+      ]
+    },
+    {
+      "id": "pc-06",
+      "sentence": "They are ___ English.",
+      "options": [
+        "studying",
+        "studys",
+        "study"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A study -y végén mássalhangzó áll, de az -ing előtt az y megmarad: studying.",
+        "en": "Study ends in consonant + y, but before -ing the y stays: studying.",
+        "es": "Study termina en consonante + y, pero antes de -ing la y se queda: studying.",
+        "de": "Study endet auf Konsonant + y, aber vor -ing bleibt das y: studying."
+      },
+      "wrong": {
+        "studys": {
+          "hu": "A „studys” nem létező alak; az „are” után -ing kell: studying.",
+          "en": "“Studys” does not exist; after “are” you need -ing: studying.",
+          "es": "«Studys» no existe; después de «are» hace falta -ing: studying.",
+          "de": "„Studys“ gibt es nicht; nach „are“ braucht man -ing: studying."
+        },
+        "study": {
+          "hu": "Az „are” mellé -ing alak kell, az alapige nem elég: studying.",
+          "en": "After “are” you need the -ing form, the base verb is not enough: studying.",
+          "es": "Después de «are» hace falta la forma -ing, el verbo base no basta: studying.",
+          "de": "Nach „are“ braucht man die -ing-Form, die Grundform reicht nicht: studying."
+        }
+      },
+      "examples": [
+        "She is studying now.",
+        "I am studying English."
+      ]
+    },
+    {
+      "id": "pc-17",
+      "kind": "form",
+      "verb": "-ing",
+      "person": "run",
+      "answer": "running",
+      "table": "pc-forms"
+    },
+    {
+      "id": "pc-07",
+      "sentence": "He is ___ a cake.",
+      "options": [
+        "making",
+        "makeing",
+        "makes"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A make -e végű, ezért az -ing előtt az e elmarad: making.",
+        "en": "Make ends in -e, so the e is dropped before -ing: making.",
+        "es": "Make termina en -e, por eso la e se pierde antes de -ing: making.",
+        "de": "Make endet auf -e, deshalb fällt das e vor -ing weg: making."
+      },
+      "wrong": {
+        "makeing": {
+          "hu": "Az -e végű igék e-je az -ing előtt elmarad: making, sosem „makeing”.",
+          "en": "The e of verbs ending in -e is dropped before -ing: making, never “makeing”.",
+          "es": "La e de los verbos que terminan en -e se pierde antes de -ing: making, nunca «makeing».",
+          "de": "Das e von Verben auf -e fällt vor -ing weg: making, niemals „makeing“."
+        },
+        "makes": {
+          "hu": "A „makes” egyszerű jelen he / she / it mellé; az „is” után -ing kell: making.",
+          "en": "“Makes” is the present simple for he / she / it; after “is” you need -ing: making.",
+          "es": "«Makes» es el presente simple para he / she / it; después de «is» hace falta -ing: making.",
+          "de": "„Makes“ ist das Present Simple für he / she / it; nach „is“ braucht man -ing: making."
+        }
+      },
+      "examples": [
+        "She is making dinner.",
+        "We are making a cake."
+      ]
+    },
+    {
+      "id": "pc-08",
+      "sentence": "I am ___ in the park now.",
+      "options": [
+        "running",
+        "runing",
+        "runs"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A run egy szótagú, mássalhangzó + magánhangzó + mássalhangzó: a végső n megkettőződik: running.",
+        "en": "Run has one syllable and ends in consonant + vowel + consonant: the final n is doubled: running.",
+        "es": "Run tiene una sílaba y termina en consonante + vocal + consonante: la n final se duplica: running.",
+        "de": "Run hat eine Silbe und endet auf Konsonant + Vokal + Konsonant: Das letzte n wird verdoppelt: running."
+      },
+      "wrong": {
+        "runing": {
+          "hu": "A rövid egy szótagú igéknél a végső mássalhangzó megkettőződik: running, nem „runing”.",
+          "en": "In short one-syllable verbs the last consonant is doubled: running, not “runing”.",
+          "es": "En los verbos cortos de una sílaba se duplica la última consonante: running, no «runing».",
+          "de": "Bei kurzen einsilbigen Verben wird der letzte Konsonant verdoppelt: running, nicht „runing“."
+        },
+        "runs": {
+          "hu": "A „runs” egyszerű jelen he / she / it mellé; az „am” után -ing kell: running.",
+          "en": "“Runs” is the present simple for he / she / it; after “am” you need -ing: running.",
+          "es": "«Runs» es el presente simple para he / she / it; después de «am» hace falta -ing: running.",
+          "de": "„Runs“ ist das Present Simple für he / she / it; nach „am“ braucht man -ing: running."
+        }
+      },
+      "examples": [
+        "She is running now.",
+        "They are running in the park."
+      ]
+    },
+    {
+      "id": "pc-09",
+      "sentence": "They are ___ in the sea.",
+      "options": [
+        "swim",
+        "swimming",
+        "swiming"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A swim egy szótagú, mássalhangzó + magánhangzó + mássalhangzó: a végső m megkettőződik: swimming.",
+        "en": "Swim has one syllable and ends in consonant + vowel + consonant: the final m is doubled: swimming.",
+        "es": "Swim tiene una sílaba y termina en consonante + vocal + consonante: la m final se duplica: swimming.",
+        "de": "Swim hat eine Silbe und endet auf Konsonant + Vokal + Konsonant: Das letzte m wird verdoppelt: swimming."
+      },
+      "wrong": {
+        "swim": {
+          "hu": "Az „are” mellé -ing alak kell, az alapige nem elég: swimming.",
+          "en": "After “are” you need the -ing form, the base verb is not enough: swimming.",
+          "es": "Después de «are» hace falta la forma -ing, el verbo base no basta: swimming.",
+          "de": "Nach „are“ braucht man die -ing-Form, die Grundform reicht nicht: swimming."
+        },
+        "swiming": {
+          "hu": "A rövid egy szótagú igéknél a végső mássalhangzó megkettőződik: swimming, nem „swiming”.",
+          "en": "In short one-syllable verbs the last consonant is doubled: swimming, not “swiming”.",
+          "es": "En los verbos cortos de una sílaba se duplica la última consonante: swimming, no «swiming».",
+          "de": "Bei kurzen einsilbigen Verben wird der letzte Konsonant verdoppelt: swimming, nicht „swiming“."
+        }
+      },
+      "examples": [
+        "We are swimming now.",
+        "The children are swimming."
+      ]
+    },
+    {
+      "id": "pc-24",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Estoy trabajando ahora.",
+          "en": "I am working now."
+        },
+        {
+          "es": "Ella está leyendo un libro.",
+          "en": "She is reading a book."
+        },
+        {
+          "es": "¿Qué estás haciendo?",
+          "en": "What are you doing?"
+        },
+        {
+          "es": "No estamos mirando la tele.",
+          "en": "We aren't watching TV."
+        },
+        {
+          "es": "¿Están jugando?",
+          "en": "Are they playing?"
+        },
+        {
+          "es": "Él está cocinando.",
+          "en": "He is cooking."
+        }
+      ]
+    },
+    {
+      "id": "pc-18",
+      "kind": "form",
+      "verb": "-ing",
+      "person": "swim",
+      "answer": "swimming",
+      "table": "pc-forms"
+    },
+    {
+      "id": "pc-10",
+      "sentence": "He ___ working today.",
+      "options": [
+        "isn't",
+        "aren't",
+        "doesn't"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az „is” tagadása „isn’t”, utána -ing alak áll: He isn’t working today.",
+        "en": "The negative of “is” is “isn’t”, followed by the -ing form: He isn’t working today.",
+        "es": "La negación de «is» es «isn’t», seguido de la forma -ing: He isn’t working today.",
+        "de": "Die Verneinung von „is“ ist „isn’t“, danach folgt die -ing-Form: He isn’t working today."
+      },
+      "wrong": {
+        "aren't": {
+          "hu": "Az „aren’t” a you, we, they mellé való; a „he” mellé „isn’t” kell.",
+          "en": "“Aren’t” goes with you, we, they; with “he” you need “isn’t”.",
+          "es": "«Aren’t» va con you, we, they; con «he» hace falta «isn’t».",
+          "de": "„Aren’t“ gehört zu you, we, they; bei „he“ braucht man „isn’t“."
+        },
+        "doesn't": {
+          "hu": "A folyamatos jelenben a to be tagadása kell, nem a „doesn’t”: He isn’t working.",
+          "en": "The present continuous is negated with to be, not “doesn’t”: He isn’t working.",
+          "es": "El presente continuo se niega con to be, no con «doesn’t»: He isn’t working.",
+          "de": "Das Present Continuous wird mit to be verneint, nicht mit „doesn’t“: He isn’t working."
+        }
+      },
+      "examples": [
+        "She isn't reading.",
+        "It isn't raining."
+      ]
+    },
+    {
+      "id": "pc-11",
+      "sentence": "___ you reading?",
+      "options": [
+        "Are",
+        "Do",
+        "Is"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A folyamatos jelen kérdésében az „are” kerül előre: Are you reading?",
+        "en": "In a present continuous question “are” moves to the front: Are you reading?",
+        "es": "En una pregunta en presente continuo «are» pasa al principio: Are you reading?",
+        "de": "In einer Present-Continuous-Frage rückt „are“ nach vorn: Are you reading?"
+      },
+      "wrong": {
+        "Do": {
+          "hu": "A folyamatos jelen kérdésében nem a „do”, hanem a to be áll elöl: Are you reading?",
+          "en": "In a present continuous question to be comes first, not “do”: Are you reading?",
+          "es": "En una pregunta en presente continuo va primero to be, no «do»: Are you reading?",
+          "de": "In einer Present-Continuous-Frage steht to be vorn, nicht „do“: Are you reading?"
+        },
+        "Is": {
+          "hu": "Az „Is” a he, she, it mellé való; a „you” mellé „Are” kell.",
+          "en": "“Is” goes with he, she, it; with “you” you need “Are”.",
+          "es": "«Is» va con he, she, it; con «you» hace falta «Are».",
+          "de": "„Is“ gehört zu he, she, it; bei „you“ braucht man „Are“."
+        }
+      },
+      "examples": [
+        "Are they working?",
+        "Is she reading?"
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "pc-22",
+      "es": "He is running.",
+      "target": "running",
+      "tr": {
+        "hu": "Éppen fut.",
+        "en": "He is running.",
+        "es": "Él está corriendo.",
+        "de": "Er läuft gerade."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "egy szótagú, mássalhangzó + magánhangzó + mássalhangzó: a végső mássalhangzó megkettőződik",
+            "en": "one syllable, consonant + vowel + consonant: the last consonant is doubled",
+            "es": "una sílaba, consonante + vocal + consonante: se duplica la última consonante",
+            "de": "eine Silbe, Konsonant + Vokal + Konsonant: der letzte Konsonant wird verdoppelt"
+          }
+        },
+        {
+          "text": {
+            "hu": "csak -ing kerül a végére, mint a working-nál",
+            "en": "just add -ing, as in working",
+            "es": "solo se añade -ing, como en working",
+            "de": "einfach -ing anhängen wie bei working"
+          },
+          "wrong": {
+            "hu": "A run rövid egy szótagú ige, ezért a végső n megkettőződik: running, nem „runing”.",
+            "en": "Run is a short one-syllable verb, so the final n is doubled: running, not “runing”.",
+            "es": "Run es un verbo corto de una sílaba, por eso la n final se duplica: running, no «runing».",
+            "de": "Run ist ein kurzes einsilbiges Verb, deshalb wird das n verdoppelt: running, nicht „runing“."
+          }
+        },
+        {
+          "text": {
+            "hu": "az -e elmarad az -ing előtt",
+            "en": "the e is dropped before -ing",
+            "es": "la e se pierde antes de -ing",
+            "de": "das e fällt vor -ing weg"
+          },
+          "wrong": {
+            "hu": "A run nem -e végű, ezért nincs mit elhagyni; itt a megkettőzés a szabály.",
+            "en": "Run does not end in -e, so there is nothing to drop; doubling is the rule here.",
+            "es": "Run no termina en -e, así que no hay nada que quitar; aquí la regla es duplicar.",
+            "de": "Run endet nicht auf -e, es gibt also nichts wegzulassen; hier gilt die Verdopplung."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "pc-12",
+      "sentence": "What ___ you doing?",
+      "options": [
+        "are",
+        "do",
+        "is"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A kérdőszó után a to be jön: What are you doing?",
+        "en": "After the question word comes to be: What are you doing?",
+        "es": "Después de la palabra interrogativa va to be: What are you doing?",
+        "de": "Nach dem Fragewort folgt to be: What are you doing?"
+      },
+      "wrong": {
+        "do": {
+          "hu": "A „doing” előtt a to be áll, nem a „do”: What are you doing?",
+          "en": "Before “doing” comes to be, not “do”: What are you doing?",
+          "es": "Antes de «doing» va to be, no «do»: What are you doing?",
+          "de": "Vor „doing“ steht to be, nicht „do“: What are you doing?"
+        },
+        "is": {
+          "hu": "Az „is” a he, she, it mellé való; a „you” mellé „are” kell.",
+          "en": "“Is” goes with he, she, it; with “you” you need “are”.",
+          "es": "«Is» va con he, she, it; con «you» hace falta «are».",
+          "de": "„Is“ gehört zu he, she, it; bei „you“ braucht man „are“."
+        }
+      },
+      "examples": [
+        "What is she doing?",
+        "What are they doing?"
+      ]
+    },
+    {
+      "id": "pc-19",
+      "kind": "form",
+      "verb": "-ing",
+      "person": "write",
+      "answer": "writing",
+      "table": "pc-forms"
+    },
+    {
+      "id": "pc-13",
+      "sentence": "I ___ music.",
+      "options": [
+        "like",
+        "am liking",
+        "is like"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „like” érzést kifejező ige, ezért egyszerű jelenben áll: I like music.",
+        "en": "“Like” is a verb of feeling, so it stays in the present simple: I like music.",
+        "es": "«Like» es un verbo de sentimiento, por eso va en presente simple: I like music.",
+        "de": "„Like“ ist ein Verb des Fühlens, deshalb steht es im Present Simple: I like music."
+      },
+      "wrong": {
+        "am liking": {
+          "hu": "A „like” állapotot fejez ki, nem folyamatot; nem kap -ing alakot: I like.",
+          "en": "“Like” shows a state, not a process; it takes no -ing form: I like.",
+          "es": "«Like» expresa un estado, no un proceso; no lleva forma -ing: I like.",
+          "de": "„Like“ drückt einen Zustand aus, keinen Vorgang; es hat keine -ing-Form: I like."
+        },
+        "is like": {
+          "hu": "Az „is” nem az „I” mellé való, és a „like” mellé sem kell to be: I like.",
+          "en": "“Is” does not go with “I”, and “like” needs no to be: I like.",
+          "es": "«Is» no va con «I», y «like» no necesita to be: I like.",
+          "de": "„Is“ gehört nicht zu „I“, und „like“ braucht kein to be: I like."
+        }
+      },
+      "examples": [
+        "We like music.",
+        "They need water."
+      ]
+    },
+    {
+      "id": "pc-14",
+      "sentence": "Right now, I ___ English.",
+      "options": [
+        "study",
+        "am studying",
+        "studies"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A „right now” folyamatos jelent kér: Right now, I am studying English.",
+        "en": "“Right now” calls for the continuous: Right now, I am studying English.",
+        "es": "«Right now» pide el continuo: Right now, I am studying English.",
+        "de": "„Right now“ verlangt das Continuous: Right now, I am studying English."
+      },
+      "wrong": {
+        "study": {
+          "hu": "A „right now” (éppen most) mellett nem egyszerű jelen, hanem folyamatos jelen kell.",
+          "en": "With “right now” you need the present continuous, not the present simple.",
+          "es": "Con «right now» hace falta el presente continuo, no el presente simple.",
+          "de": "Bei „right now“ braucht man das Present Continuous, nicht das Present Simple."
+        },
+        "studies": {
+          "hu": "A „studies” egyszerű jelen he / she / it mellé; az „I” mellé nem illik, és a „right now” is folyamatost kér.",
+          "en": "“Studies” is the present simple for he / she / it; it does not fit “I”, and “right now” asks for the continuous.",
+          "es": "«Studies» es el presente simple para he / she / it; no va con «I», y «right now» pide el continuo.",
+          "de": "„Studies“ ist das Present Simple für he / she / it; es passt nicht zu „I“, und „right now“ verlangt das Continuous."
+        }
+      },
+      "examples": [
+        "Right now, she is working.",
+        "I am reading a book now."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "pc-23",
+      "es": "I like music.",
+      "target": "like",
+      "tr": {
+        "hu": "Szeretem a zenét.",
+        "en": "I like music.",
+        "es": "Me gusta la música.",
+        "de": "Ich mag Musik."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "érzést kifejező ige: egyszerű jelenben áll",
+            "en": "a verb of feeling: it stays in the present simple",
+            "es": "un verbo de sentimiento: va en presente simple",
+            "de": "ein Verb des Fühlens: es steht im Present Simple"
+          }
+        },
+        {
+          "text": {
+            "hu": "éppen most zajló cselekvés: am liking",
+            "en": "an action happening right now: am liking",
+            "es": "una acción en curso ahora mismo: am liking",
+            "de": "eine Handlung, die gerade läuft: am liking"
+          },
+          "wrong": {
+            "hu": "A „like” állapot, nem cselekvés; ezért nem mondjuk, hogy „I am liking”.",
+            "en": "“Like” is a state, not an action; so we do not say “I am liking”.",
+            "es": "«Like» es un estado, no una acción; por eso no decimos «I am liking».",
+            "de": "„Like“ ist ein Zustand, keine Handlung; deshalb sagt man nicht „I am liking“."
+          }
+        },
+        {
+          "text": {
+            "hu": "szokás: mindig egyszerű jelen",
+            "en": "a habit: always the present simple",
+            "es": "un hábito: siempre presente simple",
+            "de": "eine Gewohnheit: immer Present Simple"
+          },
+          "wrong": {
+            "hu": "A mondat nem szokást, hanem érzést fejez ki; az érzést kifejező igék egyszerű jelenben állnak.",
+            "en": "The sentence shows a feeling, not a habit; verbs of feeling take the present simple.",
+            "es": "La oración expresa un sentimiento, no un hábito; los verbos de sentimiento van en presente simple.",
+            "de": "Der Satz drückt ein Gefühl aus, keine Gewohnheit; Verben des Fühlens stehen im Present Simple."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "pc-20",
+      "kind": "form",
+      "verb": "-ing",
+      "person": "study",
+      "answer": "studying",
+      "table": "pc-forms"
+    },
+    {
+      "id": "pc-15",
+      "sentence": "I ___ TV every night.",
+      "options": [
+        "watch",
+        "am watching",
+        "is watching"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az „every night” szokást jelez, ezért egyszerű jelen kell: I watch TV every night.",
+        "en": "“Every night” shows a habit, so you need the present simple: I watch TV every night.",
+        "es": "«Every night» indica un hábito, por eso hace falta el presente simple: I watch TV every night.",
+        "de": "„Every night“ zeigt eine Gewohnheit an, deshalb braucht man das Present Simple: I watch TV every night."
+      },
+      "wrong": {
+        "am watching": {
+          "hu": "Az „every night” rutin, nem éppen most történő dolog: egyszerű jelen kell.",
+          "en": "“Every night” is a routine, not something happening right now: use the present simple.",
+          "es": "«Every night» es una rutina, no algo que pasa ahora mismo: se usa el presente simple.",
+          "de": "„Every night“ ist eine Routine, nichts, was gerade jetzt passiert: Man nimmt das Present Simple."
+        },
+        "is watching": {
+          "hu": "Az „is” nem az „I” mellé való, és a szokás egyszerű jelennel megy: I watch.",
+          "en": "“Is” does not go with “I”, and a habit takes the present simple: I watch.",
+          "es": "«Is» no va con «I», y un hábito lleva el presente simple: I watch.",
+          "de": "„Is“ gehört nicht zu „I“, und eine Gewohnheit steht im Present Simple: I watch."
+        }
+      },
+      "examples": [
+        "She reads every night.",
+        "We eat lunch at two."
+      ]
+    },
+    {
+      "id": "pc-25",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "trabajando",
+          "en": "working"
+        },
+        {
+          "es": "leyendo",
+          "en": "reading"
+        },
+        {
+          "es": "corriendo",
+          "en": "running"
+        },
+        {
+          "es": "nadando",
+          "en": "swimming"
+        },
+        {
+          "es": "escribiendo",
+          "en": "writing"
+        },
+        {
+          "es": "estudiando",
+          "en": "studying"
+        }
+      ]
+    }
+  ]
+}
