@@ -1,0 +1,970 @@
+{
+  "schema": 2,
+  "topic": "prepositions",
+  "level": "A1",
+  "title": {
+    "hu": "Elöljárók: in, on, at, under",
+    "en": "Prepositions: in, on, at, under",
+    "es": "Preposiciones: in, on, at, under",
+    "de": "Präpositionen: in, on, at, under"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A spanyolban az „en” szinte mindent lefed: „en la mesa”, „en casa”, „en la ciudad”, „en julio”. Az angolban három szó dolgozik helyette: IN (valamin belül), ON (felületen, érintkezve), AT (egy pont, egy hely). Ugyanez igaz az időre is. Emellett vannak pontos helyzetet mondó elöljárók: under, next to, between, behind, in front of, near.",
+        "en": "Spanish “en” covers almost everything: “en la mesa”, “en casa”, “en la ciudad”, “en julio”. English uses three words instead: IN (inside something), ON (on a surface, touching), AT (a point, a spot). The same goes for time. There are also prepositions of exact position: under, next to, between, behind, in front of, near.",
+        "es": "El «en» del español cubre casi todo: «en la mesa», «en casa», «en la ciudad», «en julio». El inglés usa tres palabras: IN (dentro de algo), ON (sobre una superficie, en contacto), AT (un punto, un lugar). Lo mismo vale para el tiempo. Además hay preposiciones de posición exacta: under, next to, between, behind, in front of, near.",
+        "de": "Das spanische „en“ deckt fast alles ab: „en la mesa“, „en casa“, „en la ciudad“, „en julio“. Das Englische nimmt dafür drei Wörter: IN (innerhalb von etwas), ON (auf einer Fläche, mit Kontakt), AT (ein Punkt, ein Ort). Dasselbe gilt für die Zeit. Dazu kommen Präpositionen der genauen Lage: under, next to, between, behind, in front of, near."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "pr-forms",
+      "title": {
+        "hu": "in, on, at: hely és idő",
+        "en": "in, on, at: place and time",
+        "es": "in, on, at: lugar y tiempo",
+        "de": "in, on, at: Ort und Zeit"
+      },
+      "header": [
+        {
+          "hu": "Mire",
+          "en": "For",
+          "es": "Para",
+          "de": "Für"
+        },
+        {
+          "hu": "in",
+          "en": "in",
+          "es": "in",
+          "de": "in"
+        },
+        {
+          "hu": "on",
+          "en": "on",
+          "es": "on",
+          "de": "on"
+        },
+        {
+          "hu": "at",
+          "en": "at",
+          "es": "at",
+          "de": "at"
+        }
+      ],
+      "rows": [
+        [
+          "place",
+          "in the room",
+          "on the table",
+          "at the door"
+        ],
+        [
+          "town",
+          "in Mexico City",
+          "on the street",
+          "at the station"
+        ],
+        [
+          "time",
+          "in the morning",
+          "on Monday",
+          "at night"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Hely elöljárói",
+        "en": "Prepositions of place",
+        "es": "Preposiciones de lugar",
+        "de": "Präpositionen des Ortes"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "IN: valami belsejében (in the bag, in the room, in Mexico City). ON: felületen, érintkezve (on the table, on the wall). AT: egy pont, egy hely (at the door, at home, at school).",
+            "en": "IN: inside something (in the bag, in the room, in Mexico City). ON: on a surface, touching (on the table, on the wall). AT: a point, a spot (at the door, at home, at school).",
+            "es": "IN: dentro de algo (in the bag, in the room, in Mexico City). ON: sobre una superficie, en contacto (on the table, on the wall). AT: un punto, un lugar (at the door, at home, at school).",
+            "de": "IN: innerhalb von etwas (in the bag, in the room, in Mexico City). ON: auf einer Fläche, mit Kontakt (on the table, on the wall). AT: ein Punkt, ein Ort (at the door, at home, at school)."
+          },
+          "examples": [
+            {
+              "es": "The keys are in my bag.",
+              "tr": {
+                "hu": "A kulcsok a táskámban vannak.",
+                "en": "The keys are in my bag.",
+                "es": "Las llaves están en mi bolsa.",
+                "de": "Die Schlüssel sind in meiner Tasche."
+              }
+            },
+            {
+              "es": "The book is on the table.",
+              "tr": {
+                "hu": "A könyv az asztalon van.",
+                "en": "The book is on the table.",
+                "es": "El libro está en la mesa.",
+                "de": "Das Buch liegt auf dem Tisch."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Állandósult kifejezések, amelyeket meg kell tanulni: at home, at school, at work (nem „in home”). Város, ország: in (in Mexico).",
+            "en": "Fixed phrases you have to learn: at home, at school, at work (not “in home”). Cities and countries: in (in Mexico).",
+            "es": "Expresiones fijas que hay que aprender: at home, at school, at work (no «in home»). Ciudades y países: in (in Mexico).",
+            "de": "Feste Wendungen, die man lernen muss: at home, at school, at work (nicht „in home“). Städte und Länder: in (in Mexico)."
+          },
+          "examples": [
+            {
+              "es": "I am at home.",
+              "tr": {
+                "hu": "Otthon vagyok.",
+                "en": "I am at home.",
+                "es": "Estoy en casa.",
+                "de": "Ich bin zu Hause."
+              }
+            },
+            {
+              "es": "She is at school.",
+              "tr": {
+                "hu": "Az iskolában van.",
+                "en": "She is at school.",
+                "es": "Ella está en la escuela.",
+                "de": "Sie ist in der Schule."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Pontos helyzet: under (alatt), next to (mellett), between (között), behind (mögött), in front of (előtt), near (közel).",
+            "en": "Exact position: under, next to, between, behind, in front of, near.",
+            "es": "Posición exacta: under (debajo de), next to (al lado de), between (entre), behind (detrás de), in front of (delante de), near (cerca de).",
+            "de": "Genaue Lage: under (unter), next to (neben), between (zwischen), behind (hinter), in front of (vor), near (nahe bei)."
+          },
+          "examples": [
+            {
+              "es": "The cat is under the bed.",
+              "tr": {
+                "hu": "A macska az ágy alatt van.",
+                "en": "The cat is under the bed.",
+                "es": "El gato está debajo de la cama.",
+                "de": "Die Katze ist unter dem Bett."
+              }
+            },
+            {
+              "es": "The bank is between the hotel and the park.",
+              "tr": {
+                "hu": "A bank a szálloda és a park között van.",
+                "en": "The bank is between the hotel and the park.",
+                "es": "El banco está entre el hotel y el parque.",
+                "de": "Die Bank liegt zwischen dem Hotel und dem Park."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Idő elöljárói",
+        "en": "Prepositions of time",
+        "es": "Preposiciones de tiempo",
+        "de": "Präpositionen der Zeit"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "AT: pontos időpont és az éjszaka (at seven, at night). ON: napok (on Monday). IN: napszakok, hónapok, évszakok, évek (in the morning, in July, in summer).",
+            "en": "AT: exact times and night (at seven, at night). ON: days (on Monday). IN: parts of the day, months, seasons, years (in the morning, in July, in summer).",
+            "es": "AT: horas exactas y la noche (at seven, at night). ON: días (on Monday). IN: partes del día, meses, estaciones, años (in the morning, in July, in summer).",
+            "de": "AT: genaue Uhrzeiten und die Nacht (at seven, at night). ON: Tage (on Monday). IN: Tageszeiten, Monate, Jahreszeiten, Jahre (in the morning, in July, in summer)."
+          },
+          "examples": [
+            {
+              "es": "I get up at seven.",
+              "tr": {
+                "hu": "Hétkor kelek.",
+                "en": "I get up at seven.",
+                "es": "Me levanto a las siete.",
+                "de": "Ich stehe um sieben auf."
+              }
+            },
+            {
+              "es": "I have class on Monday.",
+              "tr": {
+                "hu": "Hétfőn órám van.",
+                "en": "I have class on Monday.",
+                "es": "Tengo clase el lunes.",
+                "de": "Ich habe am Montag Unterricht."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Az „en” nem mindig „in”. Ne mondd, hogy „I am in home”, hanem: „I am at home”. És ne „in Monday”, hanem „on Monday”.",
+        "en": "Spanish “en” is not always “in”. Do not say “I am in home”; say “I am at home”. And not “in Monday” but “on Monday”.",
+        "es": "El «en» del español no siempre es «in». No digas «I am in home», di «I am at home». Y no «in Monday», sino «on Monday».",
+        "de": "Spanisch „en“ ist nicht immer „in“. Sag nicht „I am in home“, sondern „I am at home“. Und nicht „in Monday“, sondern „on Monday“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A „next to” két szó. Ne mondd, hogy „next the school”, hanem: „next to the school”. A „behind” és az „in front of” után nincs „de”.",
+        "en": "“Next to” is two words. Do not say “next the school”; say “next to the school”. There is no “de” after “behind” or “in front of”.",
+        "es": "«Next to» son dos palabras. No digas «next the school», di «next to the school». Después de «behind» e «in front of» no hay «de».",
+        "de": "„Next to“ sind zwei Wörter. Sag nicht „next the school“, sondern „next to the school“. Nach „behind“ und „in front of“ steht kein „de“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A napszakoknál „in the morning / in the afternoon / in the evening”, de „at night”. Ez kivétel, meg kell tanulni.",
+        "en": "For parts of the day use “in the morning / in the afternoon / in the evening”, but “at night”. That is an exception you have to learn.",
+        "es": "Para las partes del día se dice «in the morning / in the afternoon / in the evening», pero «at night». Es una excepción que hay que aprender.",
+        "de": "Bei den Tageszeiten sagt man „in the morning / in the afternoon / in the evening“, aber „at night“. Das ist eine Ausnahme, die man lernen muss."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A spanyol «en» angolul három szó: «in», «on» és «at». «In» valamin belül van: «in the bag», «in Mexico City». «On» felületen van: «on the table». «At» egy pont vagy hely: «at the door», «at home», «at school». Idő: «at seven», «on Monday», «in July», «in the morning», «at night». Pontos helyzet: «under», «next to», «between», «behind», «in front of», «near». Vigyázat: nem «in home», hanem «at home».",
+    "en": "The Spanish «en» is three words in English: «in», «on» and «at». «In» is inside something: «in the bag», «in Mexico City». «On» is on a surface: «on the table». «At» is a point or a spot: «at the door», «at home», «at school». Time: «at seven», «on Monday», «in July», «in the morning», «at night». Exact position: «under», «next to», «between», «behind», «in front of», «near». Careful: not «in home» but «at home».",
+    "es": "El «en» del español son tres palabras en inglés: «in», «on» y «at». «In» es dentro de algo: «in the bag», «in Mexico City». «On» es sobre una superficie: «on the table». «At» es un punto o lugar: «at the door», «at home», «at school». Tiempo: «at seven», «on Monday», «in July», «in the morning», «at night». Posición exacta: «under», «next to», «between», «behind», «in front of», «near». Cuidado: no «in home», sino «at home».",
+    "de": "Das spanische «en» sind im Englischen drei Wörter: «in», «on» und «at». «In» heißt innerhalb von etwas: «in the bag», «in Mexico City». «On» heißt auf einer Fläche: «on the table». «At» ist ein Punkt oder Ort: «at the door», «at home», «at school». Zeit: «at seven», «on Monday», «in July», «in the morning», «at night». Genaue Lage: «under», «next to», «between», «behind», «in front of», «near». Vorsicht: nicht «in home», sondern «at home»."
+  },
+  "items": [
+    {
+      "id": "pp-01",
+      "sentence": "The book is ___ the table.",
+      "options": [
+        "in",
+        "on",
+        "at"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A könyv a felületen fekszik, érintkezve: on the table.",
+        "en": "The book lies on the surface, touching it: on the table.",
+        "es": "El libro está sobre la superficie, en contacto: on the table.",
+        "de": "Das Buch liegt auf der Fläche, mit Kontakt: on the table."
+      },
+      "wrong": {
+        "in": {
+          "hu": "Az „in” valami belsejét jelenti; az asztal felszínén van a könyv: on.",
+          "en": "“In” means inside something; the book is on the surface of the table: on.",
+          "es": "«In» significa dentro de algo; el libro está sobre la superficie de la mesa: on.",
+          "de": "„In“ bedeutet innerhalb von etwas; das Buch liegt auf der Tischfläche: on."
+        },
+        "at": {
+          "hu": "Az „at” egy pontot jelöl (at the door); az asztalon fekvő dologhoz „on” kell.",
+          "en": "“At” marks a point (at the door); for something lying on a table you need “on”.",
+          "es": "«At» marca un punto (at the door); para algo sobre una mesa hace falta «on».",
+          "de": "„At“ markiert einen Punkt (at the door); für etwas, das auf einem Tisch liegt, braucht man „on“."
+        }
+      },
+      "examples": [
+        "The bag is on the bed.",
+        "The cat is on the chair."
+      ]
+    },
+    {
+      "id": "pp-02",
+      "sentence": "The keys are ___ my bag.",
+      "options": [
+        "on",
+        "at",
+        "in"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A kulcsok a táska belsejében vannak: in my bag.",
+        "en": "The keys are inside the bag: in my bag.",
+        "es": "Las llaves están dentro de la bolsa: in my bag.",
+        "de": "Die Schlüssel sind im Inneren der Tasche: in my bag."
+      },
+      "wrong": {
+        "on": {
+          "hu": "Az „on” felületet jelent; a táska belsejéről van szó: in.",
+          "en": "“On” means a surface; we mean the inside of the bag: in.",
+          "es": "«On» significa una superficie; se habla del interior de la bolsa: in.",
+          "de": "„On“ bedeutet eine Fläche; gemeint ist das Innere der Tasche: in."
+        },
+        "at": {
+          "hu": "Az „at” egy pontot jelöl; a táskán belül „in” kell.",
+          "en": "“At” marks a point; inside a bag you need “in”.",
+          "es": "«At» marca un punto; dentro de una bolsa hace falta «in».",
+          "de": "„At“ markiert einen Punkt; in einer Tasche braucht man „in“."
+        }
+      },
+      "examples": [
+        "The milk is in the bag.",
+        "The dog is in the house."
+      ]
+    },
+    {
+      "id": "pp-03",
+      "sentence": "I am ___ home.",
+      "options": [
+        "in",
+        "on",
+        "at"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az „at home” állandósult kifejezés: I am at home.",
+        "en": "“At home” is a fixed phrase: I am at home.",
+        "es": "«At home» es una expresión fija: I am at home.",
+        "de": "„At home“ ist eine feste Wendung: I am at home."
+      },
+      "wrong": {
+        "in": {
+          "hu": "A spanyol „en casa” angolul nem „in home”, hanem „at home”.",
+          "en": "Spanish “en casa” is not “in home” in English but “at home”.",
+          "es": "El «en casa» del español no es «in home» en inglés, sino «at home».",
+          "de": "Das spanische „en casa“ ist im Englischen nicht „in home“, sondern „at home“."
+        },
+        "on": {
+          "hu": "Az „on home” nem létezik; a kifejezés „at home”.",
+          "en": "“On home” does not exist; the phrase is “at home”.",
+          "es": "«On home» no existe; la expresión es «at home».",
+          "de": "„On home“ gibt es nicht; die Wendung lautet „at home“."
+        }
+      },
+      "examples": [
+        "She is at home.",
+        "We are at home today."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "pp-16",
+      "es": "I am at home.",
+      "target": "at",
+      "tr": {
+        "hu": "Otthon vagyok.",
+        "en": "I am at home.",
+        "es": "Estoy en casa.",
+        "de": "Ich bin zu Hause."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "állandósult kifejezés: at home, at school, at work",
+            "en": "fixed phrase: at home, at school, at work",
+            "es": "expresión fija: at home, at school, at work",
+            "de": "feste Wendung: at home, at school, at work"
+          }
+        },
+        {
+          "text": {
+            "hu": "a spanyol „en” mindig „in”",
+            "en": "Spanish “en” is always “in”",
+            "es": "el «en» del español siempre es «in»",
+            "de": "spanisch „en“ ist immer „in“"
+          },
+          "wrong": {
+            "hu": "Az „en” nem mindig „in”: az „en casa” angolul „at home”.",
+            "en": "Spanish “en” is not always “in”: “en casa” is “at home”.",
+            "es": "El «en» del español no siempre es «in»: «en casa» es «at home».",
+            "de": "Spanisch „en“ ist nicht immer „in“: „en casa“ heißt „at home“."
+          }
+        },
+        {
+          "text": {
+            "hu": "felületen lévő dolog: on",
+            "en": "something on a surface: on",
+            "es": "algo sobre una superficie: on",
+            "de": "etwas auf einer Fläche: on"
+          },
+          "wrong": {
+            "hu": "Az otthon nem felület; az „at home” állandósult kifejezés.",
+            "en": "Home is not a surface; “at home” is a fixed phrase.",
+            "es": "La casa no es una superficie; «at home» es una expresión fija.",
+            "de": "Das Zuhause ist keine Fläche; „at home“ ist eine feste Wendung."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "pp-04",
+      "sentence": "My father is ___ work now.",
+      "options": [
+        "at",
+        "in",
+        "on"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az „at work” állandósult kifejezés: My father is at work now.",
+        "en": "“At work” is a fixed phrase: My father is at work now.",
+        "es": "«At work» es una expresión fija: My father is at work now.",
+        "de": "„At work“ ist eine feste Wendung: My father is at work now."
+      },
+      "wrong": {
+        "in": {
+          "hu": "A munkahelyen levést „at work” fejezi ki, nem „in work”.",
+          "en": "Being at your workplace is “at work”, not “in work”.",
+          "es": "Estar en el lugar de trabajo se dice «at work», no «in work».",
+          "de": "Am Arbeitsplatz zu sein heißt „at work“, nicht „in work“."
+        },
+        "on": {
+          "hu": "Az „on work” nem létezik; a kifejezés „at work”.",
+          "en": "“On work” does not exist; the phrase is “at work”.",
+          "es": "«On work» no existe; la expresión es «at work».",
+          "de": "„On work“ gibt es nicht; die Wendung lautet „at work“."
+        }
+      },
+      "examples": [
+        "He is at work now.",
+        "My mother is at work."
+      ]
+    },
+    {
+      "id": "pp-05",
+      "sentence": "The cat is ___ the bed, on the floor.",
+      "options": [
+        "under",
+        "on",
+        "at"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A macska a padlón van, az ágy alatt: under the bed.",
+        "en": "The cat is on the floor, below the bed: under the bed.",
+        "es": "El gato está en el suelo, debajo de la cama: under the bed.",
+        "de": "Die Katze ist auf dem Boden, unter dem Bett: under the bed."
+      },
+      "wrong": {
+        "on": {
+          "hu": "Az „on” felületen lévőt jelent; a macska a padlón van, nem az ágyon: under.",
+          "en": "“On” means on a surface; the cat is on the floor, not on the bed: under.",
+          "es": "«On» significa sobre una superficie; el gato está en el suelo, no sobre la cama: under.",
+          "de": "„On“ bedeutet auf einer Fläche; die Katze ist auf dem Boden, nicht auf dem Bett: under."
+        },
+        "at": {
+          "hu": "Az „at” egy pontot jelöl; az ágy alatti helyzethez „under” kell.",
+          "en": "“At” marks a point; for a position below the bed you need “under”.",
+          "es": "«At» marca un punto; para una posición debajo de la cama hace falta «under».",
+          "de": "„At“ markiert einen Punkt; für eine Lage unter dem Bett braucht man „under“."
+        }
+      },
+      "examples": [
+        "The dog is under the table.",
+        "The bag is under the chair."
+      ]
+    },
+    {
+      "id": "pp-06",
+      "sentence": "My house is ___ the school.",
+      "options": [
+        "next to",
+        "next",
+        "at"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „mellett” angolul „next to”, két szó: My house is next to the school.",
+        "en": "“Beside” is “next to” in English, two words: My house is next to the school.",
+        "es": "«Al lado de» es «next to» en inglés, dos palabras: My house is next to the school.",
+        "de": "„Neben“ heißt im Englischen „next to“, zwei Wörter: My house is next to the school."
+      },
+      "wrong": {
+        "next": {
+          "hu": "A „next” egyedül nem elég; „next to” kell: next to the school.",
+          "en": "“Next” alone is not enough; you need “next to”: next to the school.",
+          "es": "«Next» solo no basta; hace falta «next to»: next to the school.",
+          "de": "„Next“ allein reicht nicht; man braucht „next to“: next to the school."
+        },
+        "at": {
+          "hu": "Az „at” egy pontot jelöl; a szomszédságot a „next to” fejezi ki.",
+          "en": "“At” marks a point; being beside something is “next to”.",
+          "es": "«At» marca un punto; estar al lado de algo se dice «next to».",
+          "de": "„At“ markiert einen Punkt; das Danebenliegen drückt „next to“ aus."
+        }
+      },
+      "examples": [
+        "The bank is next to the hotel.",
+        "The hotel is next to the park."
+      ]
+    },
+    {
+      "id": "pp-19",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "El libro está en la mesa.",
+          "en": "The book is on the table."
+        },
+        {
+          "es": "Las llaves están en mi bolsa.",
+          "en": "The keys are in my bag."
+        },
+        {
+          "es": "Estoy en casa.",
+          "en": "I am at home."
+        },
+        {
+          "es": "El gato está debajo de la cama.",
+          "en": "The cat is under the bed."
+        },
+        {
+          "es": "Tengo clase el lunes.",
+          "en": "I have class on Monday."
+        },
+        {
+          "es": "Me levanto a las siete.",
+          "en": "I get up at seven."
+        }
+      ]
+    },
+    {
+      "id": "pp-07",
+      "sentence": "The bank is ___ the hotel and the park.",
+      "options": [
+        "between",
+        "under",
+        "in"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Két dolog közt „between” áll: between the hotel and the park.",
+        "en": "For two things on each side use “between”: between the hotel and the park.",
+        "es": "Para algo con dos cosas a los lados se usa «between»: between the hotel and the park.",
+        "de": "Für etwas mit zwei Dingen auf den Seiten steht „between“: between the hotel and the park."
+      },
+      "wrong": {
+        "under": {
+          "hu": "Az „under” alatt jelent; a bank a szálloda és a park KÖZÖTT van.",
+          "en": "“Under” means below; the bank is BETWEEN the hotel and the park.",
+          "es": "«Under» significa debajo; el banco está ENTRE el hotel y el parque.",
+          "de": "„Under“ bedeutet unter; die Bank liegt ZWISCHEN dem Hotel und dem Park."
+        },
+        "in": {
+          "hu": "Az „in” valami belsejét jelenti; két dolog közt „between” áll.",
+          "en": "“In” means inside something; between two things you use “between”.",
+          "es": "«In» significa dentro de algo; entre dos cosas se usa «between».",
+          "de": "„In“ bedeutet innerhalb von etwas; zwischen zwei Dingen steht „between“."
+        }
+      },
+      "examples": [
+        "The chair is between the bed and the table.",
+        "The park is between two streets."
+      ]
+    },
+    {
+      "id": "pp-08",
+      "sentence": "The garden is ___ the house, not in front.",
+      "options": [
+        "behind",
+        "between",
+        "on"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Ami nem elöl, hanem hátul van: behind the house.",
+        "en": "Not at the front but at the back: behind the house.",
+        "es": "No está delante sino atrás: behind the house.",
+        "de": "Nicht vorn, sondern hinten: behind the house."
+      },
+      "wrong": {
+        "between": {
+          "hu": "A „between” két dolog közt áll; itt egy dolog (a ház) mögötti helyről van szó: behind.",
+          "en": "“Between” needs two things; here we talk about the place at the back of one thing: behind.",
+          "es": "«Between» necesita dos cosas; aquí se habla del lugar detrás de una sola cosa: behind.",
+          "de": "„Between“ braucht zwei Dinge; hier geht es um den Ort hinter einer Sache: behind."
+        },
+        "on": {
+          "hu": "Az „on” felületet jelent; a ház mögötti helyhez „behind” kell.",
+          "en": "“On” means a surface; for the place at the back of the house you need “behind”.",
+          "es": "«On» significa una superficie; para el lugar detrás de la casa hace falta «behind».",
+          "de": "„On“ bedeutet eine Fläche; für den Ort hinter dem Haus braucht man „behind“."
+        }
+      },
+      "examples": [
+        "The car is behind the house.",
+        "The dog is behind the door."
+      ]
+    },
+    {
+      "id": "pp-09",
+      "sentence": "I live ___ Mexico City.",
+      "options": [
+        "in",
+        "at",
+        "on"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Város, ország előtt „in” áll: in Mexico City.",
+        "en": "Before a city or country use “in”: in Mexico City.",
+        "es": "Delante de una ciudad o un país se usa «in»: in Mexico City.",
+        "de": "Vor einer Stadt oder einem Land steht „in“: in Mexico City."
+      },
+      "wrong": {
+        "at": {
+          "hu": "Az „at” egy kisebb pontot jelöl (at the station); egy városhoz „in” kell.",
+          "en": "“At” marks a small point (at the station); for a city you need “in”.",
+          "es": "«At» marca un punto pequeño (at the station); para una ciudad hace falta «in».",
+          "de": "„At“ markiert einen kleinen Punkt (at the station); für eine Stadt braucht man „in“."
+        },
+        "on": {
+          "hu": "Az „on” felületet jelent; városhoz „in” kell.",
+          "en": "“On” means a surface; for a city you need “in”.",
+          "es": "«On» significa una superficie; para una ciudad hace falta «in».",
+          "de": "„On“ bedeutet eine Fläche; für eine Stadt braucht man „in“."
+        }
+      },
+      "examples": [
+        "She lives in a big city.",
+        "We work in Mexico."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "pp-17",
+      "es": "The book is on the table.",
+      "target": "on",
+      "tr": {
+        "hu": "A könyv az asztalon van.",
+        "en": "The book is on the table.",
+        "es": "El libro está en la mesa.",
+        "de": "Das Buch liegt auf dem Tisch."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "felületen, érintkezve: on",
+            "en": "on a surface, touching it: on",
+            "es": "sobre una superficie, en contacto: on",
+            "de": "auf einer Fläche, mit Kontakt: on"
+          }
+        },
+        {
+          "text": {
+            "hu": "valami belsejében: in",
+            "en": "inside something: in",
+            "es": "dentro de algo: in",
+            "de": "innerhalb von etwas: in"
+          },
+          "wrong": {
+            "hu": "A könyv nem az asztal belsejében van, hanem a felszínén: on.",
+            "en": "The book is not inside the table but on its surface: on.",
+            "es": "El libro no está dentro de la mesa sino sobre su superficie: on.",
+            "de": "Das Buch ist nicht im Inneren des Tisches, sondern auf seiner Fläche: on."
+          }
+        },
+        {
+          "text": {
+            "hu": "egy pont, egy hely: at",
+            "en": "a point, a spot: at",
+            "es": "un punto, un lugar: at",
+            "de": "ein Punkt, ein Ort: at"
+          },
+          "wrong": {
+            "hu": "Az „at” egy pontot jelöl (at the door); a felületen fekvő dologhoz „on” kell.",
+            "en": "“At” marks a point (at the door); for something lying on a surface you need “on”.",
+            "es": "«At» marca un punto (at the door); para algo sobre una superficie hace falta «on».",
+            "de": "„At“ markiert einen Punkt (at the door); für etwas auf einer Fläche braucht man „on“."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "pp-10",
+      "sentence": "She is ___ the door.",
+      "options": [
+        "in",
+        "at",
+        "on"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az ajtó egy pont, ahol áll: at the door.",
+        "en": "The door is a point where she stands: at the door.",
+        "es": "La puerta es un punto donde ella está: at the door.",
+        "de": "Die Tür ist ein Punkt, an dem sie steht: at the door."
+      },
+      "wrong": {
+        "in": {
+          "hu": "Az „in” valami belsejét jelenti; az ajtónál állni „at the door”.",
+          "en": "“In” means inside something; standing by the door is “at the door”.",
+          "es": "«In» significa dentro de algo; estar junto a la puerta es «at the door».",
+          "de": "„In“ bedeutet innerhalb von etwas; an der Tür stehen heißt „at the door“."
+        },
+        "on": {
+          "hu": "Az „on” felületet jelent; az ajtó egy pont, ezért „at”.",
+          "en": "“On” means a surface; the door is a point, so “at”.",
+          "es": "«On» significa una superficie; la puerta es un punto, por eso «at».",
+          "de": "„On“ bedeutet eine Fläche; die Tür ist ein Punkt, deshalb „at“."
+        }
+      },
+      "examples": [
+        "The man is at the door.",
+        "My sister is at the bus stop."
+      ]
+    },
+    {
+      "id": "pp-11",
+      "sentence": "I get up ___ seven.",
+      "options": [
+        "at",
+        "in",
+        "on"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Pontos időpont előtt „at” áll: at seven.",
+        "en": "Before an exact time use “at”: at seven.",
+        "es": "Delante de una hora exacta se usa «at»: at seven.",
+        "de": "Vor einer genauen Uhrzeit steht „at“: at seven."
+      },
+      "wrong": {
+        "in": {
+          "hu": "Az „in” napszakhoz, hónaphoz való (in the morning); pontos időhöz „at” kell.",
+          "en": "“In” is for parts of the day and months (in the morning); for an exact time you need “at”.",
+          "es": "«In» es para partes del día y meses (in the morning); para una hora exacta hace falta «at».",
+          "de": "„In“ gehört zu Tageszeiten und Monaten (in the morning); für eine genaue Uhrzeit braucht man „at“."
+        },
+        "on": {
+          "hu": "Az „on” napokhoz való (on Monday); pontos időhöz „at” kell.",
+          "en": "“On” is for days (on Monday); for an exact time you need “at”.",
+          "es": "«On» es para días (on Monday); para una hora exacta hace falta «at».",
+          "de": "„On“ gehört zu Tagen (on Monday); für eine genaue Uhrzeit braucht man „at“."
+        }
+      },
+      "examples": [
+        "We eat at eight.",
+        "The class is at nine."
+      ]
+    },
+    {
+      "id": "pp-12",
+      "sentence": "I have class ___ Monday.",
+      "options": [
+        "in",
+        "at",
+        "on"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Napok előtt „on” áll: on Monday.",
+        "en": "Before days use “on”: on Monday.",
+        "es": "Delante de los días se usa «on»: on Monday.",
+        "de": "Vor Wochentagen steht „on“: on Monday."
+      },
+      "wrong": {
+        "in": {
+          "hu": "Az „in” hónaphoz, napszakhoz való; napokhoz „on” kell.",
+          "en": "“In” is for months and parts of the day; for days you need “on”.",
+          "es": "«In» es para meses y partes del día; para días hace falta «on».",
+          "de": "„In“ gehört zu Monaten und Tageszeiten; für Wochentage braucht man „on“."
+        },
+        "at": {
+          "hu": "Az „at” pontos időhöz való; napokhoz „on” kell.",
+          "en": "“At” is for exact times; for days you need “on”.",
+          "es": "«At» es para horas exactas; para días hace falta «on».",
+          "de": "„At“ gehört zu genauen Uhrzeiten; für Wochentage braucht man „on“."
+        }
+      },
+      "examples": [
+        "We have a party on Sunday.",
+        "I work on Tuesday."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "pp-18",
+      "es": "I have class on Monday.",
+      "target": "on",
+      "tr": {
+        "hu": "Hétfőn órám van.",
+        "en": "I have class on Monday.",
+        "es": "Tengo clase el lunes.",
+        "de": "Ich habe am Montag Unterricht."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "napok előtt: on",
+            "en": "before days: on",
+            "es": "delante de los días: on",
+            "de": "vor Wochentagen: on"
+          }
+        },
+        {
+          "text": {
+            "hu": "hónapok és napszakok előtt: in",
+            "en": "before months and parts of the day: in",
+            "es": "delante de meses y partes del día: in",
+            "de": "vor Monaten und Tageszeiten: in"
+          },
+          "wrong": {
+            "hu": "A Monday nap, nem hónap vagy napszak, ezért „on”, nem „in”.",
+            "en": "Monday is a day, not a month or a part of the day, so “on”, not “in”.",
+            "es": "Monday es un día, no un mes ni una parte del día, por eso «on», no «in».",
+            "de": "Monday ist ein Tag, kein Monat und keine Tageszeit, deshalb „on“, nicht „in“."
+          }
+        },
+        {
+          "text": {
+            "hu": "pontos időpont előtt: at",
+            "en": "before exact times: at",
+            "es": "delante de horas exactas: at",
+            "de": "vor genauen Uhrzeiten: at"
+          },
+          "wrong": {
+            "hu": "A Monday nem óra, hanem nap; nappal az „on” áll, nem az „at”.",
+            "en": "Monday is not a clock time but a day; days take “on”, not “at”.",
+            "es": "Monday no es una hora sino un día; los días llevan «on», no «at».",
+            "de": "Monday ist keine Uhrzeit, sondern ein Tag; Tage stehen mit „on“, nicht mit „at“."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "pp-13",
+      "sentence": "I drink coffee ___ the morning.",
+      "options": [
+        "at",
+        "on",
+        "in"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Napszak előtt „in” áll: in the morning.",
+        "en": "Before a part of the day use “in”: in the morning.",
+        "es": "Delante de una parte del día se usa «in»: in the morning.",
+        "de": "Vor einer Tageszeit steht „in“: in the morning."
+      },
+      "wrong": {
+        "at": {
+          "hu": "Az „at” pontos időhöz való; a „morning” előtt „in” áll.",
+          "en": "“At” is for exact times; before “morning” we use “in”.",
+          "es": "«At» es para horas exactas; delante de «morning» se usa «in».",
+          "de": "„At“ gehört zu genauen Uhrzeiten; vor „morning“ steht „in“."
+        },
+        "on": {
+          "hu": "Az „on” napokhoz való; a „morning” előtt „in” áll.",
+          "en": "“On” is for days; before “morning” we use “in”.",
+          "es": "«On» es para días; delante de «morning» se usa «in».",
+          "de": "„On“ gehört zu Wochentagen; vor „morning“ steht „in“."
+        }
+      },
+      "examples": [
+        "She reads in the evening.",
+        "We eat in the afternoon."
+      ]
+    },
+    {
+      "id": "pp-14",
+      "sentence": "I sleep ___ night.",
+      "options": [
+        "at",
+        "in",
+        "on"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „night” előtt „at” áll: at night. Ez kivétel a napszakok között.",
+        "en": "Before “night” we use “at”: at night. It is an exception among the parts of the day.",
+        "es": "Delante de «night» se usa «at»: at night. Es una excepción entre las partes del día.",
+        "de": "Vor „night“ steht „at“: at night. Das ist eine Ausnahme unter den Tageszeiten."
+      },
+      "wrong": {
+        "in": {
+          "hu": "A „morning / afternoon / evening” előtt „in” áll, de a „night” kivétel: at night.",
+          "en": "Before “morning / afternoon / evening” we use “in”, but “night” is an exception: at night.",
+          "es": "Delante de «morning / afternoon / evening» se usa «in», pero «night» es una excepción: at night.",
+          "de": "Vor „morning / afternoon / evening“ steht „in“, aber „night“ ist eine Ausnahme: at night."
+        },
+        "on": {
+          "hu": "Az „on” napokhoz való; a „night” előtt „at” áll.",
+          "en": "“On” is for days; before “night” we use “at”.",
+          "es": "«On» es para días; delante de «night» se usa «at».",
+          "de": "„On“ gehört zu Wochentagen; vor „night“ steht „at“."
+        }
+      },
+      "examples": [
+        "He watches TV at night.",
+        "The dog sleeps at night."
+      ]
+    },
+    {
+      "id": "pp-15",
+      "sentence": "My birthday is ___ July.",
+      "options": [
+        "on",
+        "at",
+        "in"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Hónap előtt „in” áll: in July.",
+        "en": "Before a month use “in”: in July.",
+        "es": "Delante de un mes se usa «in»: in July.",
+        "de": "Vor einem Monat steht „in“: in July."
+      },
+      "wrong": {
+        "on": {
+          "hu": "Az „on” napokhoz való (on Monday); hónaphoz „in” kell.",
+          "en": "“On” is for days (on Monday); for a month you need “in”.",
+          "es": "«On» es para días (on Monday); para un mes hace falta «in».",
+          "de": "„On“ gehört zu Wochentagen (on Monday); für einen Monat braucht man „in“."
+        },
+        "at": {
+          "hu": "Az „at” pontos időhöz való; hónaphoz „in” kell.",
+          "en": "“At” is for exact times; for a month you need “in”.",
+          "es": "«At» es para horas exactas; para un mes hace falta «in».",
+          "de": "„At“ gehört zu genauen Uhrzeiten; für einen Monat braucht man „in“."
+        }
+      },
+      "examples": [
+        "We have class in January.",
+        "It is hot in summer."
+      ]
+    },
+    {
+      "id": "pp-20",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "debajo de",
+          "en": "under"
+        },
+        {
+          "es": "al lado de",
+          "en": "next to"
+        },
+        {
+          "es": "entre",
+          "en": "between"
+        },
+        {
+          "es": "detrás de",
+          "en": "behind"
+        },
+        {
+          "es": "delante de",
+          "en": "in front of"
+        },
+        {
+          "es": "cerca de",
+          "en": "near"
+        }
+      ]
+    }
+  ]
+}
