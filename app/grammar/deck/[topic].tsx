@@ -85,6 +85,12 @@ export default function TableDeckScreen() {
   const [deck, setDeck] = useState<DeckState>({ cells: [], resetCount: 0, shuffled: false });
   const [typed, setTyped] = useState('');
   const [checked, setChecked] = useState<{ correct: boolean } | null>(null);
+  // FB422 (PLAN-fb0929 2. lépés): a beviteli mező minden új cellánál újra mountol
+  // (a `key` ezt a számlálót tartalmazza), különben az `autoFocus` csak az első
+  // cellánál fut, és a Check után letiltott (`editable={false}`), majd újra
+  // engedélyezett natív mezőn Next után nem jön fel a billentyűzet. Ugyanaz az
+  // ok és javítás, mint a PCIC-kártyán (app/(tabs)/index.tsx cardSeq, FB408).
+  const [cellSeq, setCellSeq] = useState(0);
   const [dockH, setDockH] = useState(DOCK_RESERVE);
   const { dockLift } = useDockLift();
   // React Compiler purity rule: Date.now() may not be called during render
@@ -167,6 +173,7 @@ export default function TableDeckScreen() {
     setTyped('');
     setChecked(null);
     setNow(nowMs);
+    setCellSeq((n) => n + 1);
   };
 
   const handleStartAgain = () => {
@@ -303,6 +310,7 @@ export default function TableDeckScreen() {
           ) : null}
 
           <TextInput
+            key={`deck-in-${current.id}-${cellSeq}`}
             testID="tabledeck-input"
             style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, g.brutal && brutalInputStyle(g)]}
             value={typed}
