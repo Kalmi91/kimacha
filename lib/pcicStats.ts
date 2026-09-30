@@ -27,3 +27,14 @@ export function countGraduated(cards: Sm2Card[]): number {
 export function countKnown(cards: Sm2Card[], thresholdDays: number = KNOWN_THRESHOLD_DAYS): number {
   return cards.filter((c) => isGraduatedNaturally(c) && c.interval >= thresholdDays).length;
 }
+
+/**
+ * FB406 (PLAN-fb0929 6. lépés): a "Words Known" kártya száma. A 21 napos küszöb
+ * (`countKnown`) egy kezdőnél hetekig 0-t adott, holott már tanult szavakat, ezért a
+ * kártya a TANULT szavakat számolja: amelyik túljutott a tanuló-lépéseken (state
+ * 'review'), vagy amit ő maga jelölt ismertnek ("Ezt nem tanulom"). A stabil (21+
+ * napos) szám külön csempén marad.
+ */
+export function countLearned(cards: Sm2Card[]): number {
+  return cards.filter((c) => c.known || c.state === 'review').length;
+}

@@ -566,7 +566,12 @@ function auditLessonBody(topic, path) {
   });
 }
 
-function auditLessonSpeak(topic, path) {
+// FB414 (PLAN-fb0929 5. lépés, D3): a spanyol nyelvtani leckék felolvasása spanyol szó nélkül
+// szól (a «...» jelölt spanyol szakaszok kimaradnak a szövegből, a szöveg úgy van megírva,
+// hogy nélkülük is értelmes legyen). Ezért a spanyol leckékben (lang 'es') NEM lehet «...»
+// jelölés; az angol célnyelvű leckék (lang 'en') felolvasása változatlan: ott legalább egy
+// jelölt szakasz kell.
+function auditLessonSpeak(topic, path, dirLang = 'es') {
   checkLangs(topic.speak, `${path} speak`);
   for (const lang of LANGS) {
     const text = topic.speak?.[lang];
@@ -574,7 +579,10 @@ function auditLessonSpeak(topic, path) {
     const speakPath = `${path} speak[${lang}]`;
     const opens = (text.match(/«/g) ?? []).length;
     const closes = (text.match(/»/g) ?? []).length;
-    if (opens === 0) p1.push({ path: speakPath, issue: 'no «...» marked segment (spec: at least one Spanish section)' });
+    if (dirLang === 'es' && opens > 0) {
+      p1.push({ path: speakPath, issue: 'Spanish lessons must be read aloud without Spanish sections: no «...» marker allowed (FB414)' });
+    }
+    if (dirLang !== 'es' && opens === 0) p1.push({ path: speakPath, issue: 'no «...» marked segment (spec: at least one learned-language section)' });
     if (opens !== closes) p1.push({ path: speakPath, issue: 'unbalanced «» markers' });
     if (/[0-9]/.test(text)) p1.push({ path: speakPath, issue: 'digits not allowed in speak text' });
     if (/[()]/.test(text)) p1.push({ path: speakPath, issue: 'parentheses not allowed in speak text' });
@@ -710,6 +718,44 @@ function auditTenseField(tense, itemPath) {
 // NY1: az igeidő-drill mondat-átírás item-fajtája. `wordIds` a mondat
 // kártyáira mutat (ez hajtja az NY2 unlockot), mindegyiknek léteznie kell és
 // a lecke szintjénél nem lehet magasabb szintű.
+// PLAN-fb0929 7. lépés (D1): az új feladat-fajták (spot, order, dictation) ellenőrzése. A
+// mondatok szavainak tanítottnak / szószedettel ellátottnak kell lenniük (checkWords), a
+// magyarázatok és fordítások négy nyelven, a hibakereső hibás szava és opciói konzisztensek.
+function auditNewKindItem(item, itemPath, topic, checkWords) {
+  if (item.trial !== undefined && typeof item.trial !== 'boolean') p1.push({ path: itemPath, issue: 'trial must be a boolean' });
+  const es = typeof item.es === 'string' ? item.es.trim() : '';
+  if (!es) {
+    p1.push({ path: itemPath, issue: `${item.kind} item missing es` });
+    return;
+  }
+  const words = es.split(/\s+/).filter(Boolean);
+  checkWords(es);
+  checkLength(es, topic.level, itemPath);
+  if (item.kind === 'spot') {
+    if (!Number.isInteger(item.wrongIndex) || item.wrongIndex < 0 || item.wrongIndex >= words.length) {
+      p1.push({ path: itemPath, issue: `spot wrongIndex ${item.wrongIndex} out of range (${words.length} words)` });
+    }
+    const options = Array.isArray(item.options) ? item.options : [];
+    if (options.length !== 3) p1.push({ path: itemPath, issue: `spot item needs exactly 3 options, has ${options.length}` });
+    if (!Number.isInteger(item.correctIndex) || item.correctIndex < 0 || item.correctIndex >= options.length) {
+      p1.push({ path: itemPath, issue: `spot correctIndex ${item.correctIndex} out of range` });
+    }
+    if (new Set(options).size !== options.length) p1.push({ path: itemPath, issue: 'spot options must be unique' });
+    const wrongWord = (words[item.wrongIndex] ?? '').replace(/[.,;:!?¡¿]+$/, '').toLowerCase();
+    if (options.some((o) => o !== '' && o.toLowerCase() === wrongWord)) {
+      p1.push({ path: itemPath, issue: 'a spot option equals the wrong word itself' });
+    }
+    for (const opt of options) checkWords(opt);
+    checkLangs(item.explain, `${itemPath} explain`);
+    checkLangs(item.tr, `${itemPath} tr`);
+  } else if (item.kind === 'order') {
+    if (words.length < 2) p1.push({ path: itemPath, issue: 'order item needs at least 2 words' });
+    checkLangs(item.prompt, `${itemPath} prompt`);
+  } else {
+    checkLangs(item.tr, `${itemPath} tr`);
+  }
+}
+
 function auditTransformItem(item, itemPath, topic) {
   auditTenseField(item.tense, itemPath);
   checkLangs(item.prompt, `${itemPath} prompt`);
@@ -760,7 +806,7 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
     if ('rule' in topic) p1.push({ path, issue: 'V2 lesson (schema 2) must not have a rule field' });
     if ('more' in topic) p1.push({ path, issue: 'V2 lesson (schema 2) must not have a more field' });
     auditLessonBody(topic, path);
-    auditLessonSpeak(topic, path);
+    auditLessonSpeak(topic, path, lang);
   } else {
     checkLangs(topic.rule, `${path} rule`);
     if (topic.more) checkLangs(topic.more, `${path} more`);
@@ -799,6 +845,13 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
     }
     if (item.kind === 'transform') {
       auditTransformItem(item, itemPath, topic);
+      continue;
+    }
+    // PLAN-fb0929 7. lépés (D1): hibakereső / szórend / diktálás, ideiglenes ("trial") tételek.
+    if (item.kind === 'spot' || item.kind === 'order' || item.kind === 'dictation') {
+      auditNewKindItem(item, itemPath, topic, (text) => {
+        for (const tok of toks(text)) auditGrammarWord(tok, taughtSet, extra, itemPath, lang);
+      });
       continue;
     }
 

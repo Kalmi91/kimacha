@@ -1,4 +1,4 @@
-import { pcicAlternatives, gradePcicAnswer, suggestedGrade } from '../pcicMatch';
+import { pcicAlternatives, gradePcicAnswer, gradeSentenceAnswer, suggestedGrade, withoutLeadingSubjectPronoun } from '../pcicMatch';
 
 describe('pcicAlternatives', () => {
   it('expands a slash alternative into both single-word forms', () => {
@@ -82,5 +82,61 @@ describe('suggestedGrade', () => {
 
   it('a wrong match suggests Didn’t know', () => {
     expect(suggestedGrade({ match: 'wrong', best: 'x' })).toBe('again');
+  });
+});
+
+// FB400 (PLAN-fb0929 3. lépés): a kérdő- és felkiáltójel sosem hiba.
+describe('gradePcicAnswer: írásjelek (FB400)', () => {
+  it('a hiányzó ¿ és ? nem hiba', () => {
+    expect(gradePcicAnswer('Dónde estás', '¿Dónde estás?').match).toBe('exact');
+    expect(gradePcicAnswer('¿Dónde estás', '¿Dónde estás?').match).toBe('exact');
+    expect(gradePcicAnswer('Dónde estás?', '¿Dónde estás?').match).toBe('exact');
+  });
+
+  it('a hiányzó ¡ és ! nem hiba', () => {
+    expect(gradePcicAnswer('Qué bien', '¡Qué bien!').match).toBe('exact');
+  });
+
+  it('a mondat közbeni vessző hiánya sem hiba', () => {
+    expect(gradePcicAnswer('Hola cómo estás', 'Hola, ¿cómo estás?').match).toBe('exact');
+  });
+
+  it('az írásjel nélkül is hibás szó marad hibás', () => {
+    expect(gradePcicAnswer('Donde estas', '¿Dónde estás?', true).match).toBe('wrong');
+  });
+
+  it('az angol aposztróf a szó része marad', () => {
+    expect(gradePcicAnswer("dont", "don't").match).not.toBe('exact');
+    expect(gradePcicAnswer("don't", "Don't.").match).toBe('exact');
+  });
+});
+
+// FB399: a névmás nélküli mondat is jó.
+describe('gradeSentenceAnswer: alany-névmás (FB399)', () => {
+  it('a névmás nélküli válasz elfogadott, ha a helyes mondat névmással kezdődik', () => {
+    expect(gradeSentenceAnswer('como en casa', 'Yo como en casa').match).toBe('exact');
+    expect(gradeSentenceAnswer('Como en casa', 'Yo como en casa.').match).toBe('exact');
+    expect(gradeSentenceAnswer('vivimos aquí', 'Nosotros vivimos aquí').match).toBe('exact');
+  });
+
+  it('a névmással írt válasz továbbra is jó, és a mutatott alak a teljes mondat', () => {
+    const g = gradeSentenceAnswer('yo como en casa', 'Yo como en casa');
+    expect(g.match).toBe('exact');
+    expect(gradeSentenceAnswer('como en casa', 'Yo como en casa').best).toBe('Yo como en casa');
+  });
+
+  it('a névelő "El" nem névmás: az "El libro..." nem hagyható el', () => {
+    expect(gradeSentenceAnswer('libro es rojo', 'El libro es rojo').match).not.toBe('exact');
+    expect(withoutLeadingSubjectPronoun('El libro es rojo')).toBeNull();
+    expect(withoutLeadingSubjectPronoun('Él es médico')).toBe('es médico');
+  });
+
+  it('a "Tu" birtokos nem névmás, a "Tú" igen', () => {
+    expect(withoutLeadingSubjectPronoun('Tu casa es grande')).toBeNull();
+    expect(withoutLeadingSubjectPronoun('Tú eres alto')).toBe('eres alto');
+  });
+
+  it('a hibás válasz névmás nélkül is hibás', () => {
+    expect(gradeSentenceAnswer('bebo en casa', 'Yo como en casa').match).toBe('wrong');
   });
 });

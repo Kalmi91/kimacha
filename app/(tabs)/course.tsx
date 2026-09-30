@@ -14,12 +14,16 @@ import {
   syllabusLevels,
   hasLesson,
   lessonCoverage,
+  lessonKinds,
+  lessonHasTrial,
+  lessonFor,
   getGrammarTier,
   syllabusForLevel,
   topicsForUnit,
   unitsForLevel,
 } from '@/lib/grammar/syllabus';
-import { lessonBadgePercent, lessonPercentsByTopic } from '@/lib/grammar/lessonScore';
+import { lessonBadgePercent, lessonScoresByTopic } from '@/lib/grammar/lessonScore';
+import TrialBadge from '@/components/TrialBadge';
 import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
 import FeedbackButton from '@/components/FeedbackModal';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
@@ -79,7 +83,8 @@ export default function GrammarSyllabusScreen() {
     const rows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
     setProgress(doneGrammarTopicProgress(target, rows));
     // FB328: ugyanabból a lekérésből, külön DB-hívás nélkül.
-    setPercents(lessonPercentsByTopic(rows));
+    // FB415: a lecke %-a az összes fajta átlaga (a meg nem csinált 0), nem a kumulált jó-arány.
+    setPercents(lessonScoresByTopic(rows, (id) => lessonKinds(target, id)));
     setStreak((await db.getStreak())?.current_count ?? 0);
     setWeeklyGoal(await db.getWeeklyGoalMinutes());
     setWeekMinutes((await db.getUsageStats()).thisWeek);
@@ -155,6 +160,7 @@ export default function GrammarSyllabusScreen() {
                         ? s.grammar.started
                         : s.grammar.notStarted;
                 const tier = getGrammarTier(topic.id);
+                const hasTrial = written2 && lessonHasTrial(lessonFor(learnedLang, topic.id));
                 const textColor = inProgress ? g.onFill : written2 ? g.ink : g.mu;
                 return (
                   <BrutalBox
@@ -171,7 +177,7 @@ export default function GrammarSyllabusScreen() {
                         {topic.title[contentLang] ?? topic.title.en}
                       </Text>
                     </View>
-                    {tier || isDone ? (
+                    {tier || isDone || hasTrial ? (
                       <View style={styles.brutalStickers}>
                         {tier === 'core-plus' ? (
                           <Sticker testID={`grammar-core-plus-${topic.id}`} label={s.grammar.corePlusTag} fill="paper" rotate={-4} />
@@ -179,6 +185,8 @@ export default function GrammarSyllabusScreen() {
                           <Sticker testID={`grammar-core-${topic.id}`} label={s.grammar.coreTag} fill="paper" rotate={-4} />
                         ) : null}
                         {isDone ? <Sticker label={s.grammar.doneTag} fill="a" rotate={5} /> : null}
+                        {/* PLAN-fb0929 7. lépés (D1): az új feladat-fajtás két lecke jelvénye. */}
+                        {hasTrial ? <TrialBadge testID={`trial-badge-${topic.id}`} /> : null}
                       </View>
                     ) : null}
                     <Text style={[styles.brutalBlurb, { color: textColor }]} numberOfLines={2}>

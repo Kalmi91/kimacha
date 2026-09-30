@@ -59,3 +59,158 @@ export function lessonBadgePercent(
   }
   return null;
 }
+
+// ---------------------------------------------------------------------------
+// FB415 / FB420 / FB421 (PLAN-fb0929 4. lépés), Kálmán 2026-09-29: a lecke %-a a
+// lecke ÖSSZES feladat-fajtájának átlaga (a még meg nem csinált fajta 0), a
+// félbehagyott feladat elmentődik és onnan folytatódik, a jobb eredmény felülírja
+// a régit. A tárolás ugyanaz a game_progress tábla (`grammar-course`), két új
+// sor-fajtával fajtánként:
+//   `${topic}:${kind}:best`  state 'best'  data {correct, total}   (a legjobb befejezett kör)
+//   `${topic}:${kind}:run`   state 'run'   data KindRun | null     (a félbehagyott kör)
+// A régi kumulált számlálók (`${topic}:${kind}:answered` / `:correct`) csak
+// tartalékként olvasódnak (amíg a fajtának nincs sem best-, sem run-sora), hogy a
+// meglévő haladás ne tűnjön el.
+
+export type ScoredKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform' | 'spot' | 'order' | 'dictation';
+
+export interface KindBest {
+  correct: number;
+  total: number;
+}
+
+/** Egy félbehagyott kör: ugyanaz a kör folytatható (seed + item-id lista), `index` a már megválaszolt tételek száma. */
+export interface KindRun {
+  seed: number;
+  ids: string[];
+  index: number;
+  /** A jó válaszok száma egységekben (a párosításnál a jó párok), ld. GrammarDrill. */
+  correct: number;
+  /** A teljes kör egységekben (a párosításnál az összes pár). */
+  total: number;
+}
+
+export interface KindProgress {
+  best: KindBest | null;
+  run: KindRun | null;
+  legacy: KindBest | null;
+}
+
+export const NO_KIND_PROGRESS: KindProgress = { best: null, run: null, legacy: null };
+
+const ratioPercent = (correct: number, total: number): number | null =>
+  total > 0 ? Math.round((correct / total) * 100) : null;
+
+/**
+ * Egy feladat-fajta %-a: a legjobb befejezett kör és a most félbehagyott kör közül
+ * a jobb (a meg nem válaszolt tétel 0-nak számít, ezért 3 jó a 10-ből = 30%).
+ * `null`: a fajtát még nem kezdte el. Csak ha nincs best/run, jön a régi számláló.
+ */
+export function kindPercent(p: KindProgress): number | null {
+  const candidates: number[] = [];
+  if (p.best) {
+    const v = ratioPercent(p.best.correct, p.best.total);
+    if (v !== null) candidates.push(v);
+  }
+  if (p.run) {
+    const v = ratioPercent(p.run.correct, p.run.total);
+    if (v !== null) candidates.push(v);
+  }
+  if (candidates.length === 0 && p.legacy) {
+    const v = ratioPercent(p.legacy.correct, p.legacy.total);
+    if (v !== null) candidates.push(v);
+  }
+  return candidates.length > 0 ? Math.max(...candidates) : null;
+}
+
+/** A lecke %-a: az ÖSSZES fajta átlaga, a meg nem kezdett fajta 0. `null`, ha egyikhez sem nyúlt. */
+export function lessonScore(kinds: KindProgress[]): number | null {
+  if (kinds.length === 0) return null;
+  const percents = kinds.map(kindPercent);
+  if (percents.every((v) => v === null)) return null;
+  const sum = percents.reduce<number>((acc, v) => acc + (v ?? 0), 0);
+  return Math.round(sum / kinds.length);
+}
+
+/** A jobb eredmény felülírja a régit; egyenlő aránynál a régi marad. */
+export function betterBest(old: KindBest | null, next: KindBest): KindBest {
+  if (!old) return next;
+  const a = ratioPercent(old.correct, old.total) ?? -1;
+  const b = ratioPercent(next.correct, next.total) ?? -1;
+  return b > a ? next : old;
+}
+
+/** A lecke-képernyő fajta-gombja alatti sor "3/10 · 30%" alakja (csak félbehagyott körnél). */
+export function runSummary(run: KindRun): { answered: number; of: number; percent: number } {
+  return { answered: run.index, of: run.ids.length, percent: ratioPercent(run.correct, run.total) ?? 0 };
+}
+
+interface Row {
+  itemId: string;
+  state: string;
+  data: unknown;
+}
+
+function isKindBest(v: unknown): v is KindBest {
+  const o = v as KindBest | null;
+  return !!o && typeof o.correct === 'number' && typeof o.total === 'number';
+}
+
+function isKindRun(v: unknown): v is KindRun {
+  const o = v as KindRun | null;
+  return (
+    !!o &&
+    typeof o.seed === 'number' &&
+    Array.isArray(o.ids) &&
+    typeof o.index === 'number' &&
+    typeof o.correct === 'number' &&
+    typeof o.total === 'number'
+  );
+}
+
+export const kindBestKey = (topicId: string, kind: ScoredKind) => `${topicId}:${kind}:best`;
+export const kindRunKey = (topicId: string, kind: ScoredKind) => `${topicId}:${kind}:run`;
+
+/** Egy lecke egy fajtájának tárolt haladása a game_progress sorokból. */
+export function kindProgressFromRows(rows: Row[], topicId: string, kind: ScoredKind): KindProgress {
+  let best: KindBest | null = null;
+  let run: KindRun | null = null;
+  let answered: number | null = null;
+  let correct: number | null = null;
+  const bestKey = kindBestKey(topicId, kind);
+  const runKey = kindRunKey(topicId, kind);
+  const answeredKey = `${topicId}:${kind}:answered`;
+  const correctKey = `${topicId}:${kind}:correct`;
+  for (const row of rows) {
+    if (row.itemId === bestKey && row.state === 'best' && isKindBest(row.data)) best = row.data;
+    else if (row.itemId === runKey && row.state === 'run' && isKindRun(row.data)) run = row.data;
+    else if (row.itemId === answeredKey && row.state === 'count' && typeof row.data === 'number') answered = row.data;
+    else if (row.itemId === correctKey && row.state === 'count' && typeof row.data === 'number') correct = row.data;
+  }
+  const legacy = answered !== null && answered > 0 ? { correct: correct ?? 0, total: answered } : null;
+  return { best, run, legacy };
+}
+
+/**
+ * A szillabusz-lista minden lecke-%-a egy menetben. `kindsOf` a lecke létező
+ * feladat-fajtáit adja (üres: ismeretlen lecke). Ahol a lecke fajta-szintű sorai
+ * hiányoznak (a FB380 előtti adat), a régi témaszintű számláló a tartalék.
+ */
+export function lessonScoresByTopic(rows: Row[], kindsOf: (topicId: string) => ScoredKind[]): Map<string, number> {
+  const topics = new Set<string>();
+  for (const row of rows) {
+    const m = row.itemId.match(/^(.+?):(choice|article|match|form|why|transform|spot|order|dictation):(best|run|answered|correct)$/);
+    if (m) topics.add(m[1]);
+  }
+  const legacyByTopic = lessonPercentsByTopic(rows);
+  const result = new Map<string, number>();
+  for (const topicId of topics) {
+    const kinds = kindsOf(topicId);
+    const score = kinds.length > 0 ? lessonScore(kinds.map((k) => kindProgressFromRows(rows, topicId, k))) : null;
+    if (score !== null) result.set(topicId, score);
+  }
+  for (const [topicId, pct] of legacyByTopic) {
+    if (!result.has(topicId)) result.set(topicId, pct);
+  }
+  return result;
+}

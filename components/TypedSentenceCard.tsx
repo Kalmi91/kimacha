@@ -1,12 +1,14 @@
 import { useState } from 'react';
-import { StyleSheet, Text, Pressable, TextInput, Keyboard } from 'react-native';
+import { ScrollView, StyleSheet, Text, TextInput, Keyboard } from 'react-native';
 import { speak, stop as stopSpeech } from '@/lib/speech';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { BrutalButton, Card, brutalInputStyle } from '@/components/grammar/Brutal';
+import { Card, brutalInputStyle } from '@/components/grammar/Brutal';
+import ResultBadge from '@/components/ResultBadge';
+import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { t } from '@/lib/i18n';
-import { gradePcicAnswer, suggestedGrade } from '@/lib/pcicMatch';
+import { gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
 import { stripSentencePunct } from '@/lib/sentenceCards';
 import { answerInputProps } from '@/lib/inputProps';
 
@@ -18,9 +20,25 @@ interface Props {
   speechLocale?: string;
   // Same accent rule as the word card (Settings -> Difficulty).
   strictAccents?: boolean;
+  // FB397 (PLAN-fb0929 2. lépés): a Check/Next sáv ugyanaz a dokkolt sáv a
+  // billentyűzet fölött, mint a PCIC szókártyán (DockedAction). A szülő adja a
+  // billentyűzet-emelést (useDockLift) és fogadja a sáv magasságát, hogy a 💬 gomb
+  // fölé tudjon kerülni; alapértékkel önállóan (tesztben) is renderel.
+  dockLift?: number;
+  dockH?: number;
+  onDockHeight?: (h: number) => void;
 }
 
-export default function TypedSentenceCard({ sourceSentence, targetSentence, onResult, speechLocale, strictAccents = false }: Props) {
+export default function TypedSentenceCard({
+  sourceSentence,
+  targetSentence,
+  onResult,
+  speechLocale,
+  strictAccents = false,
+  dockLift = 0,
+  dockH = DOCK_RESERVE,
+  onDockHeight,
+}: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -33,80 +51,79 @@ export default function TypedSentenceCard({ sourceSentence, targetSentence, onRe
     Keyboard.dismiss();
     // Graded like the word card, on the sentence without its punctuation (the
     // tile card drops it too).
-    const grade = gradePcicAnswer(stripSentencePunct(typed), stripSentencePunct(targetSentence), strictAccents);
+    // FB399: a névmás nélküli válasz is jó ("Como en casa." a "Yo como en casa." helyett).
+    const grade = gradeSentenceAnswer(stripSentencePunct(typed), stripSentencePunct(targetSentence), strictAccents);
     const isCorrect = suggestedGrade(grade) === 'good';
     setResult(isCorrect ? 'correct' : 'wrong');
-    if (isCorrect && speechLocale) {
+    // FB412 (PLAN-fb0929 5. lépés): a helyes mondat MINDIG elhangzik, jó és rossz válasz után is.
+    if (speechLocale) {
       stopSpeech();
       speak(targetSentence, speechLocale);
     }
   };
 
+  // Az input és a visszajelzés a görgethető kártyában marad; a Check / Next
+  // a képernyő aljára dokkolt sáv (a szülő KeyboardAvoidingView-jának közvetlen
+  // gyereke, mint a PCIC szókártyán), a billentyűzet felső élén.
   return (
-    <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
-      <Text style={[styles.sourceText, { color: colors.text }]}>{sourceSentence}</Text>
+    <>
+      <ScrollView
+        style={styles.scroll}
+        contentContainerStyle={{ paddingBottom: 16 + dockH + dockLift }}
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
+      >
+        <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
+          <Text style={[styles.sourceText, { color: colors.text }]}>{sourceSentence}</Text>
 
-      <TextInput
-        style={[
-          styles.input,
-          { color: colors.text, borderColor: result === 'correct' ? '#22C55E' : result === 'wrong' ? '#EF4444' : colors.tabIconDefault },
-          g.brutal && brutalInputStyle(g),
-          g.brutal && result && { borderColor: result === 'correct' ? '#22C55E' : '#EF4444' },
-        ]}
-        placeholder={s.card.typeSentence}
-        placeholderTextColor={colors.tabIconDefault}
-        value={typed}
-        onChangeText={(v) => {
-          setTyped(v);
-          // Editing after a miss clears the verdict, so the same field takes
-          // another try instead of ending on "wrong".
-          if (result === 'wrong') setResult(null);
-        }}
-        onSubmitEditing={result ? () => onResult(result === 'correct') : handleCheck}
-        editable={result !== 'correct'}
-        autoFocus
-        {...answerInputProps}
+          <TextInput
+            style={[
+              styles.input,
+              { color: colors.text, borderColor: result === 'correct' ? colors.successFill : result === 'wrong' ? colors.danger : colors.tabIconDefault },
+              g.brutal && brutalInputStyle(g),
+              g.brutal && result && { borderColor: result === 'correct' ? colors.successFill : colors.danger },
+            ]}
+            placeholder={s.card.typeSentence}
+            placeholderTextColor={colors.tabIconDefault}
+            value={typed}
+            onChangeText={(v) => {
+              setTyped(v);
+              // Editing after a miss clears the verdict, so the same field takes
+              // another try instead of ending on "wrong".
+              if (result === 'wrong') setResult(null);
+            }}
+            onSubmitEditing={result ? () => onResult(result === 'correct') : handleCheck}
+            editable={result !== 'correct'}
+            autoFocus
+            {...answerInputProps}
+          />
+
+          {result === 'wrong' && <Text style={[styles.correctLine, { color: colors.success }]}>{targetSentence}</Text>}
+
+          {/* FB403: minden kártyán ugyanaz a jó / rossz jelzés (szín + alak + ✓/✗ + szöveg). */}
+          {result && <ResultBadge correct={result === 'correct'} label={result === 'correct' ? s.card.correct : s.card.wrong} />}
+        </Card>
+      </ScrollView>
+
+      <DockedAction
+        label={result ? `${s.card.next} →` : `✓ ${s.card.check}`}
+        onPress={result ? () => onResult(result === 'correct') : handleCheck}
+        tone={result ? 'next' : 'check'}
+        color={result ? (result === 'correct' ? colors.successFill : colors.danger) : undefined}
+        bottom={dockLift}
+        colors={colors}
+        onHeight={onDockHeight}
       />
-
-      {result === 'wrong' && <Text style={[styles.correctLine, { color: '#22C55E' }]}>{targetSentence}</Text>}
-
-      {result && (
-        <Text style={[styles.resultText, { color: result === 'correct' ? '#22C55E' : '#EF4444' }]}>
-          {result === 'correct' ? s.card.correct : s.card.wrong}
-        </Text>
-      )}
-
-      {g.brutal ? (
-        !result ? (
-          <BrutalButton label={s.card.check} onPress={handleCheck} style={styles.brutalBtn} />
-        ) : (
-          <BrutalButton label={`${s.card.next} →`} fill="a" onPress={() => onResult(result === 'correct')} style={styles.brutalBtn} />
-        )
-      ) : !result ? (
-        <Pressable style={[styles.checkBtn, styles.checkBtnPrimary, { backgroundColor: colors.accent }]} onPress={handleCheck}>
-          <Text style={styles.checkBtnText}>{s.card.check}</Text>
-        </Pressable>
-      ) : (
-        <Pressable
-          style={[styles.checkBtn, { backgroundColor: result === 'correct' ? '#22C55E' : '#EF4444' }]}
-          onPress={() => onResult(result === 'correct')}
-        >
-          <Text style={styles.checkBtnText}>{s.card.next} →</Text>
-        </Pressable>
-      )}
-    </Card>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   card: { borderRadius: 20, padding: 24, alignItems: 'center', minHeight: 280, gap: 16 },
   brutalCard: { padding: 24, alignItems: 'center', minHeight: 280, gap: 16 },
-  brutalBtn: { alignSelf: 'stretch' },
+  scroll: { flex: 1 },
   sourceText: { fontSize: 20, fontWeight: '700', textAlign: 'center' },
   input: { width: '100%', borderWidth: 2, borderRadius: 12, paddingHorizontal: 12, paddingVertical: 10, fontSize: 16 },
   resultText: { fontSize: 18, fontWeight: '700' },
   correctLine: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
-  checkBtn: { paddingHorizontal: 32, paddingVertical: 12, borderRadius: 14, marginTop: 8 },
-  checkBtnPrimary: { paddingHorizontal: 44, paddingVertical: 14, borderRadius: 24, alignSelf: 'center', shadowColor: '#000', shadowOffset: { width: 0, height: 3 }, shadowOpacity: 0.2, shadowRadius: 6, elevation: 4 },
-  checkBtnText: { color: '#FFF', fontSize: 16, fontWeight: '700' },
 });

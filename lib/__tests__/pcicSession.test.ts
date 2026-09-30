@@ -367,3 +367,31 @@ describe('thinSentences (PLAN-fb0924 8. lépés, FB394/396)', () => {
     expect(thinSentences(order, kind, ownGroup)).toEqual(order);
   });
 });
+
+// FB401 (PLAN-fb0929 6. lépés): a haladás-sáv 10-es szettekben mér, minden válasz látszik.
+import { setProgressPercent } from '../pcicSession';
+
+describe('setProgressPercent (FB401)', () => {
+  it('0 válasz: üres sáv', () => {
+    expect(setProgressPercent(0, 300)).toBe(0);
+  });
+
+  it('sok esedékes kártya mellett is látszik a haladás: 1 válasz a 10-es szettből 10%', () => {
+    expect(setProgressPercent(1, 299)).toBe(10);
+    expect(setProgressPercent(5, 295)).toBe(50);
+  });
+
+  it('a szett végén újraindul (10 válasz után új szett)', () => {
+    expect(setProgressPercent(10, 290)).toBe(0);
+    expect(setProgressPercent(13, 287)).toBe(30);
+  });
+
+  it('az utolsó rövid szett a hátralévőkhöz igazodik', () => {
+    // 3 válasz a szettben, még 1 kártya van hátra: a szett 4 kártyás, 75%
+    expect(setProgressPercent(3, 1)).toBe(75);
+  });
+
+  it('nincs több kártya: 0 (a kész-képernyő úgyis átveszi)', () => {
+    expect(setProgressPercent(0, 0)).toBe(0);
+  });
+});

@@ -111,6 +111,25 @@ const es: Strings = {
     practiceTable: (n: number) => `Practicar la tabla · ${n} celdas`,
     practiceWords: (n: number) => `Practicar las palabras · ${n} tarjetas`,
     enComingSoon: 'La gramática inglesa llegará más adelante.',
+    // FB416: a saját válasz a helyes fölött a hibás ragozásnál (AnswerCompare).
+    yourAnswer: 'Tu respuesta',
+    // FB421: a félbehagyott feladat sora a gomb alatt, pl. "3/10 · 30%".
+    runProgress: (done: number, total: number, pct: number) => `${done}/${total} · ${pct}%`,
+    // FB419: az el / la névelő-választó feladat gombja (csak ott, ahol van ilyen készlet).
+    startArticle: (n: number) => `¿El o la? (${n})`,
+    // PLAN-fb0929 7. lépés (D1): ideiglenes, új feladat-fajták (hibakereső, szórend, diktálás).
+    trialBadge: 'NUEVO · PRUEBA',
+    startSpot: (n: number) => `Encuentra el error (${n})`,
+    startOrder: (n: number) => `Orden de palabras (${n})`,
+    startDictation: (n: number) => `Dictado (${n})`,
+    spotPrompt: 'Toca la palabra incorrecta',
+    spotPickFix: 'Elige la forma correcta',
+    spotWordFine: 'Esa palabra está bien. Mira otra vez.',
+    spotDelete: '(quitarla)',
+    orderHint: 'Ordena las palabras',
+    dictationHint: 'Escucha y escribe lo que oyes',
+    dictationPlay: 'Escuchar',
+    dictationSlow: 'Más lento',
   },
   settings: {
     themeAuto: 'Automático',
@@ -337,6 +356,8 @@ const es: Strings = {
     promptCaption: 'persona · verbo',
     wordChip: 'PALABRA',
     wordPromptCaption: 'significado',
+    // PLAN-fb0929 10. lépés: es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
+    wordPromptCaptionEn: '¿Cómo se dice en inglés?',
     promptCaptionEn: 'traducir al español',
     progress: (done: number, total: number) => `${done} / ${total} hechas`,
     completeTitle: (n: number) => `Las ${n} celdas hechas 🎉`,

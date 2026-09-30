@@ -21,7 +21,7 @@ import {
 } from '@/lib/schedulePreview';
 import { PCIC_VIEW_LEVELS, pcicItemsForViewLevel, type PcicViewLevel } from '@/data/pcic';
 import { cardsForViewLevel } from '@/lib/pcicLevels';
-import { countKnown, countGraduated } from '@/lib/pcicStats';
+import { countKnown, countGraduated, countLearned } from '@/lib/pcicStats';
 import { countDoneToday } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
 import { Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
@@ -85,9 +85,10 @@ export default function StatsScreen() {
         setKnown(countKnown(cards));
         setGraduated(countGraduated(cards));
         const selCards = cardsForViewLevel(cards, lvl);
-        setLevelKnown(countKnown(selCards));
+        // FB406: a kártya a tanult szavakat számolja (nem a 21 napos küszöböt elért kevés szót).
+        setLevelKnown(countLearned(selCards));
         setLevelTotal(pcicItemsForViewLevel(lvl).length);
-        setOtherLevels(PCIC_VIEW_LEVELS.map(l => ({ level: l, known: countKnown(cardsForViewLevel(cards, l)) })));
+        setOtherLevels(PCIC_VIEW_LEVELS.map(l => ({ level: l, known: countLearned(cardsForViewLevel(cards, l)) })));
         // FB100 minta, PCIC-dátumokra: a bare 'YYYY-MM-DD' due-t helyi éjfélre
         // egészíti ki, különben `new Date('YYYY-MM-DD')` UTC-éjfélt parseol, és
         // negatív UTC-eltolású zónában (pl. CDMX) egy nappal korábbra csúszna.

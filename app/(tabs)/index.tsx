@@ -11,7 +11,7 @@ import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
 import { pcicItemsForViewLevel, findPcicItem, realLevelOfView, setPcicTarget, type PcicViewLevel, type PcicTarget } from '@/data/pcic';
-import { gradePcicAnswer, suggestedGrade, type PcicGrade } from '@/lib/pcicMatch';
+import { gradePcicAnswer, gradeSentenceAnswer, suggestedGrade, type PcicGrade } from '@/lib/pcicMatch';
 import {
   ARTICLE_OPTIONS,
   articleOf,
@@ -21,7 +21,7 @@ import {
   type ArticlePick,
 } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget, thinSentences, dropOrphanCards } from '@/lib/pcicSession';
+import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget, thinSentences, dropOrphanCards, setProgressPercent } from '@/lib/pcicSession';
 import { applyChainOrder, chainGroupId } from '@/lib/pcicChains';
 import { cardsForViewLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
@@ -38,6 +38,8 @@ import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
 import { BrutalBox, BrutalButton, SegmentBar, brutalInputStyle, segmentsFilled, textOnFill } from '@/components/grammar/Brutal';
 import EasySentenceCard from '@/components/EasySentenceCard';
+import FitText from '@/components/FitText';
+import DoneBadge from '@/components/DoneBadge';
 import TypedSentenceCard from '@/components/TypedSentenceCard';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
 import { resolvedTensesFromLessons, type ResolvedTense } from '@/lib/knownSentence';
@@ -133,6 +135,16 @@ export default function PcicScreen() {
   // effektet lent), nem csak első mountkor (az `autoFocus` prop erre nem
   // elég, mert a TextInput kártyaváltáskor nem remountol).
   const inputRef = useRef<TextInput>(null);
+  // FB408/FB409 (PLAN-fb0929 2. lépés): a beviteli mező minden új kártyánál
+  // ÚJRA MOUNTOL (a TextInput `key`-e ezt a számlálót tartalmazza). Ok: a mező
+  // Check után `editable={false}` lett, majd Next után újra szerkeszthető, ugyanazon
+  // a natív EditText-en. Androidon a letiltott-majd-engedélyezett mezőnek a
+  // régi InputConnection / gépelési (composing) állapota megmarad: a `focus()`
+  // néha nem nyitja fel a billentyűzetet (FB408), és a Gboard szerint még
+  // "írás közben" lévő szövegből a törlés nem megy (FB409). Friss mező =
+  // friss InputConnection + `autoFocus`, ami minden mountnál felnyitja a
+  // billentyűzetet. A számláló azt is lefedi, ha ugyanaz a lap jön újra (again).
+  const [cardSeq, setCardSeq] = useState(0);
 
   // PLAN-play 10. lépés: `overrideLevel` a szint-választó lapról jövő azonnali
   // váltásnak, hogy ne kelljen a setLevel-re várni egy render-kört (a db-be
@@ -291,6 +303,7 @@ export default function PcicScreen() {
     setTypedAnswer('');
     setArticlePick('');
     setGrade(null);
+    setCardSeq((n) => n + 1);
   };
 
   // PLAN-play 11. lépés: Check után a szó felolvasása UTÁN, láncolva, magától
@@ -323,7 +336,8 @@ export default function PcicScreen() {
       return;
     }
     // FB321: felfedéskor mindig szóljon a helyes célnyelvi alak.
-    const g = gradePcicAnswer(answer, answerText, strictAccents);
+    // FB399: mondat-tételnél a névmás nélküli válasz is jó.
+    const g = (currentItem.kind === 'sentence' ? gradeSentenceAnswer : gradePcicAnswer)(answer, answerText, strictAccents);
     setTypedAnswer(answer);
     setGrade(g);
     if (g.match !== 'exact') setArticlePick(articleOf(g.best));
@@ -391,6 +405,7 @@ export default function PcicScreen() {
     setTypedAnswer('');
     setArticlePick('');
     setGrade(null);
+    setCardSeq((n) => n + 1);
   };
 
   const handleReset = () => {
@@ -516,13 +531,13 @@ export default function PcicScreen() {
           onSelect={handleSelectLevel}
           onClose={() => setLevelSheetOpen(false)}
         />
-        <ScrollView
-          style={styles.cardScroll}
-          contentContainerStyle={[styles.cardScrollContent, { paddingBottom: g.brutal ? 100 : 24 }]}
-          keyboardShouldPersistTaps="handled"
-          keyboardDismissMode="on-drag"
-        >
-          {sentenceCard.kind === 'tiles' ? (
+        {sentenceCard.kind === 'tiles' ? (
+          <ScrollView
+            style={styles.cardScroll}
+            contentContainerStyle={[styles.cardScrollContent, { paddingBottom: g.brutal ? 100 : 24 }]}
+            keyboardShouldPersistTaps="handled"
+            keyboardDismissMode="on-drag"
+          >
             <EasySentenceCard
               key={sentenceCard.itemId}
               sourceSentence={sentenceCard.source}
@@ -531,18 +546,28 @@ export default function PcicScreen() {
               speechLocale={speechLang(target)}
               onResult={() => setSentenceCard(null)}
             />
-          ) : (
-            <TypedSentenceCard
-              key={sentenceCard.itemId}
-              sourceSentence={sentenceCard.source}
-              targetSentence={sentenceCard.target}
-              strictAccents={strictAccents}
-              speechLocale={speechLang(target)}
-              onResult={() => setSentenceCard(null)}
-            />
-          )}
-        </ScrollView>
-        <FeedbackButton level={level} languagePair={languagePair} currentCard={`sentence:${sentenceCard.itemId}`} />
+          </ScrollView>
+        ) : (
+          // FB397: a begépelős mondatkártya saját görgetője + a dokkolt Check sáv a
+          // billentyűzet fölött (mint a szókártyán), ezért nincs külső ScrollView.
+          <TypedSentenceCard
+            key={sentenceCard.itemId}
+            sourceSentence={sentenceCard.source}
+            targetSentence={sentenceCard.target}
+            strictAccents={strictAccents}
+            speechLocale={speechLang(target)}
+            onResult={() => setSentenceCard(null)}
+            dockLift={dockLift}
+            dockH={dockH}
+            onDockHeight={setDockH}
+          />
+        )}
+        <FeedbackButton
+          level={level}
+          languagePair={languagePair}
+          currentCard={`sentence:${sentenceCard.itemId}`}
+          bottomOffset={sentenceCard.kind === 'tiles' ? undefined : dockH + dockLift}
+        />
       </KeyboardAvoidingView>
     );
   }
@@ -566,7 +591,8 @@ export default function PcicScreen() {
           onClose={() => setLevelSheetOpen(false)}
         />
         <View style={styles.doneHeader}>
-          <Text style={styles.doneEmoji}>🎉</Text>
+          {/* FB402: rajzolt jelvény (pipa + konfetti) a 🎉 emoji helyett, a neo-brutalista stílusban. */}
+          <DoneBadge />
           <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.pcic.doneTitle}</Text>
         </View>
         {g.brutal ? (
@@ -624,8 +650,9 @@ export default function PcicScreen() {
   // számból épül (nem a mountonként nullázódó `sessionAnswered`-ből), hogy
   // tab-váltás vagy app-újraindítás után is a valós napi haladást mutassa,
   // ne ugorjon vissza üresre.
-  const sessionTotal = doneToday + queue.length;
-  const sessionPct = sessionTotal > 0 ? (doneToday / sessionTotal) * 100 : 0;
+  // FB401: a sáv 10-es szettekben mér (lib/pcicSession.ts setProgressPercent), hogy sok
+  // esedékes kártya mellett is minden megválaszolt kártya látsszon.
+  const barPct = setProgressPercent(doneToday, queue.length);
 
   // 5b: a lap tetejére kerülő lap/lépés-jelvény (CardShell chip propja),
   // a korábbi sectionRow-beli stepBadge szövegek helyén.
@@ -676,10 +703,10 @@ export default function PcicScreen() {
       />
 
       {g.brutal ? (
-        <SegmentBar testID="learn-progress" filled={segmentsFilled(sessionPct, 8)} segments={8} style={styles.brutalProgress} />
+        <SegmentBar testID="learn-progress" filled={segmentsFilled(barPct, 8)} segments={8} style={styles.brutalProgress} />
       ) : (
         <View style={[styles.progressTrack, { backgroundColor: colors.card }]}>
-          <View style={[styles.progressFill, { backgroundColor: colors.tint, width: `${sessionPct}%` }]} />
+          <View style={[styles.progressFill, { backgroundColor: colors.tint, width: `${barPct}%` }]} />
         </View>
       )}
 
@@ -699,7 +726,12 @@ export default function PcicScreen() {
           {/* 5b: a szó melletti 🔊 újra elmondja az angolt (Kálmán kiegészítése,
               anki-ui-terv.html), ugyanazzal a hívással, mint a lap-nyitáskori FB319 felolvasás. */}
           <View style={styles.wordRow}>
-            <Text style={[styles.frontText, { color: colors.text }]}>{promptText}</Text>
+            {/* FB404/405/413: a hosszú szó / mondat ("reason (justification)", "they are
+                going to arrive") a hosszától függő betűmérettel, összemenő szélességgel;
+                enélkül a natív sor kiterjedt a kártyán túlra és a bal széle levágódott. */}
+            <FitText base={32} maxLines={3} reserve={note ? 200 : 150} style={[styles.frontText, { color: colors.text }]}>
+              {promptText ?? ''}
+            </FitText>
             <Pressable onPress={() => speak(promptText ?? promptSource ?? '', speechLang(sourceLang))} style={styles.speakBtn}>
               <Text style={styles.speakIcon}>🔊</Text>
             </Pressable>
@@ -792,12 +824,14 @@ export default function PcicScreen() {
           )}
 
           <TextInput
+            key={`pcic-in-${current.itemId}-${cardSeq}`}
             ref={inputRef}
             style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, g.brutal && brutalInputStyle(g)]}
             value={typedAnswer}
             onChangeText={setTypedAnswer}
             onSubmitEditing={grade ? () => nextGrade && handleGrade(nextGrade) : handleCheck}
             editable={!grade}
+            autoFocus={!grade}
             {...answerInputProps}
           />
 
@@ -1027,6 +1061,7 @@ const styles = StyleSheet.create({
   },
   sectionRow: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'center',
     gap: 6,
@@ -1036,6 +1071,7 @@ const styles = StyleSheet.create({
   sectionText: {
     fontSize: 12,
     textAlign: 'center',
+    flexShrink: 1,
   },
   // 5c: szófaj-chip (noun/verb/phrase) a szekció-szöveg mellett.
   posChip: {

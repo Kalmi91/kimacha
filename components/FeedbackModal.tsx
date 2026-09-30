@@ -4,6 +4,7 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, BrutalButton, brutalInputStyle } from '@/components/grammar/Brutal';
+import CheckMark from '@/components/CheckMark';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { feedbackBuildTag } from '@/lib/appBuild';
@@ -133,10 +134,12 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
 
       <Modal visible={showThanks} transparent animationType="fade">
         <View style={styles.toastOverlay}>
-          <View style={[styles.toast, { backgroundColor: colors.tint }, g.brutal && [styles.brutalToast, { backgroundColor: g.a, borderColor: g.ink }]]}>
-            <Text style={styles.toastEmoji}>✅</Text>
-            <Text style={[styles.toastText, g.brutal && { color: g.onFill }]}>{s.feedback.thanks}</Text>
-          </View>
+          {/* FB407 (PLAN-fb0929 6. lépés): a zöld ✅ emoji helyett rajzolt pipa a tokenből,
+              vastag ink keretű, eltolt árnyékos dobozban (neo-brutalista stílus). */}
+          <BrutalBox testID="feedback-thanks" fill="a" offset={5} boxStyle={styles.toastBox}>
+            <CheckMark size={32} color={g.ink} thickness={7} />
+            <Text style={[styles.toastText, { color: g.onFill }]}>{s.feedback.thanks}</Text>
+          </BrutalBox>
         </View>
       </Modal>
 
@@ -230,7 +233,6 @@ const styles = StyleSheet.create({
   brutalModal: { padding: 24 },
   brutalModalBtn: { flex: 1 },
   brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
-  brutalToast: { borderRadius: 0, borderWidth: 2.5 },
   fabText: {
     fontSize: 24,
   },
@@ -286,18 +288,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'rgba(0,0,0,0.3)',
   },
-  toast: {
+  toastBox: {
     paddingHorizontal: 32,
     paddingVertical: 20,
-    borderRadius: 16,
     alignItems: 'center',
-    gap: 8,
-  },
-  toastEmoji: {
-    fontSize: 36,
+    gap: 10,
   },
   toastText: {
-    color: '#FFFFFF',
     fontSize: 18,
     fontWeight: '700',
   },

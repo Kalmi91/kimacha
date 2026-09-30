@@ -408,6 +408,487 @@
       ]
     },
     {
+      "kind": "table",
+      "id": "presente-irregular-zco",
+      "title": {
+        "hu": "-zco csoport, jelen idő",
+        "en": "-zco group, present tense",
+        "es": "Grupo -zco, presente",
+        "de": "-zco-Gruppe, Präsens"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "conocer",
+          "en": "conocer",
+          "es": "conocer",
+          "de": "conocer"
+        },
+        {
+          "hu": "parecer",
+          "en": "parecer",
+          "es": "parecer",
+          "de": "parecer"
+        },
+        {
+          "hu": "conducir",
+          "en": "conducir",
+          "es": "conducir",
+          "de": "conducir"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "conozco",
+          "parezco",
+          "conduzco"
+        ],
+        [
+          "tú",
+          "conoces",
+          "pareces",
+          "conduces"
+        ],
+        [
+          "él/ella/usted",
+          "conoce",
+          "parece",
+          "conduce"
+        ],
+        [
+          "nosotros",
+          "conocemos",
+          "parecemos",
+          "conducimos"
+        ],
+        [
+          "vosotros",
+          "conocéis",
+          "parecéis",
+          "conducís"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "conocen",
+          "parecen",
+          "conducen"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "presente-irregular-igo",
+      "title": {
+        "hu": "-igo csoport és oír, jelen idő",
+        "en": "-igo group and oír, present tense",
+        "es": "Grupo -igo y oír, presente",
+        "de": "-igo-Gruppe und oír, Präsens"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "traer",
+          "en": "traer",
+          "es": "traer",
+          "de": "traer"
+        },
+        {
+          "hu": "caer",
+          "en": "caer",
+          "es": "caer",
+          "de": "caer"
+        },
+        {
+          "hu": "oír",
+          "en": "oír",
+          "es": "oír",
+          "de": "oír"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "traigo",
+          "caigo",
+          "oigo"
+        ],
+        [
+          "tú",
+          "traes",
+          "caes",
+          "oyes"
+        ],
+        [
+          "él/ella/usted",
+          "trae",
+          "cae",
+          "oye"
+        ],
+        [
+          "nosotros",
+          "traemos",
+          "caemos",
+          "oímos"
+        ],
+        [
+          "vosotros",
+          "traéis",
+          "caéis",
+          "oís"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "traen",
+          "caen",
+          "oyen"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "presente-irregular-yo",
+      "title": {
+        "hu": "Egyedi yo-alakok: dar, ver, saber",
+        "en": "One-off yo forms: dar, ver, saber",
+        "es": "Formas de yo únicas: dar, ver, saber",
+        "de": "Einzelne yo-Formen: dar, ver, saber"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "dar",
+          "en": "dar",
+          "es": "dar",
+          "de": "dar"
+        },
+        {
+          "hu": "ver",
+          "en": "ver",
+          "es": "ver",
+          "de": "ver"
+        },
+        {
+          "hu": "saber",
+          "en": "saber",
+          "es": "saber",
+          "de": "saber"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "doy",
+          "veo",
+          "sé"
+        ],
+        [
+          "tú",
+          "das",
+          "ves",
+          "sabes"
+        ],
+        [
+          "él/ella/usted",
+          "da",
+          "ve",
+          "sabe"
+        ],
+        [
+          "nosotros",
+          "damos",
+          "vemos",
+          "sabemos"
+        ],
+        [
+          "vosotros",
+          "dais",
+          "veis",
+          "sabéis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "dan",
+          "ven",
+          "saben"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "presente-irregular-epq",
+      "title": {
+        "hu": "estar, poder, querer, jelen idő",
+        "en": "estar, poder and querer, present tense",
+        "es": "Estar, poder y querer, presente",
+        "de": "estar, poder und querer, Präsens"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "estar",
+          "en": "estar",
+          "es": "estar",
+          "de": "estar"
+        },
+        {
+          "hu": "poder",
+          "en": "poder",
+          "es": "poder",
+          "de": "poder"
+        },
+        {
+          "hu": "querer",
+          "en": "querer",
+          "es": "querer",
+          "de": "querer"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "estoy",
+          "puedo",
+          "quiero"
+        ],
+        [
+          "tú",
+          "estás",
+          "puedes",
+          "quieres"
+        ],
+        [
+          "él/ella/usted",
+          "está",
+          "puede",
+          "quiere"
+        ],
+        [
+          "nosotros",
+          "estamos",
+          "podemos",
+          "queremos"
+        ],
+        [
+          "vosotros",
+          "estáis",
+          "podéis",
+          "queréis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "están",
+          "pueden",
+          "quieren"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "presente-irregular-sv",
+      "title": {
+        "hu": "seguir és valer, jelen idő",
+        "en": "seguir and valer, present tense",
+        "es": "Seguir y valer, presente",
+        "de": "seguir und valer, Präsens"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "seguir",
+          "en": "seguir",
+          "es": "seguir",
+          "de": "seguir"
+        },
+        {
+          "hu": "valer",
+          "en": "valer",
+          "es": "valer",
+          "de": "valer"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "sigo",
+          "valgo"
+        ],
+        [
+          "tú",
+          "sigues",
+          "vales"
+        ],
+        [
+          "él/ella/usted",
+          "sigue",
+          "vale"
+        ],
+        [
+          "nosotros",
+          "seguimos",
+          "valemos"
+        ],
+        [
+          "vosotros",
+          "seguís",
+          "valéis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "siguen",
+          "valen"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "További rendhagyó igék",
+        "en": "More irregular verbs",
+        "es": "Más verbos irregulares",
+        "de": "Weitere unregelmäßige Verben"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A -zco csoport: a conocer (conozco), parecer (parezco) és conducir (conduzco) yo-alakja -zco végű, a többi alak szabályos.",
+            "en": "The -zco group: conocer (conozco), parecer (parezco) and conducir (conduzco) take -zco in the yo form, every other form is regular.",
+            "es": "El grupo -zco: conocer (conozco), parecer (parezco) y conducir (conduzco) llevan -zco en yo, las demás formas son regulares.",
+            "de": "Die -zco-Gruppe: conocer (conozco), parecer (parezco) und conducir (conduzco) haben in der yo-Form -zco, alle anderen Formen sind regelmäßig."
+          },
+          "examples": [
+            {
+              "es": "Conozco a tu hermano.",
+              "tr": {
+                "hu": "Ismerem a testvéredet.",
+                "en": "I know your brother.",
+                "es": "Conozco a tu hermano.",
+                "de": "Ich kenne deinen Bruder."
+              }
+            },
+            {
+              "es": "Yo conduzco el coche de mi padre.",
+              "tr": {
+                "hu": "Én vezetem az apám autóját.",
+                "en": "I drive my father's car.",
+                "es": "Yo conduzco el coche de mi padre.",
+                "de": "Ich fahre das Auto meines Vaters."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A -igo csoport: a traer (traigo) és caer (caigo) yo-alakjába -ig- kerül; az oír egészen külön: oigo, oyes, oye, oímos, oís, oyen.",
+            "en": "The -igo group: traer (traigo) and caer (caigo) add -ig- in the yo form; oír is a case of its own: oigo, oyes, oye, oímos, oís, oyen.",
+            "es": "El grupo -igo: traer (traigo) y caer (caigo) añaden -ig- en yo; oír es un caso aparte: oigo, oyes, oye, oímos, oís, oyen.",
+            "de": "Die -igo-Gruppe: traer (traigo) und caer (caigo) bekommen in der yo-Form -ig-; oír ist ein Sonderfall: oigo, oyes, oye, oímos, oís, oyen."
+          },
+          "examples": [
+            {
+              "es": "Yo traigo el libro a clase.",
+              "tr": {
+                "hu": "Én hozom a könyvet az órára.",
+                "en": "I bring the book to class.",
+                "es": "Yo traigo el libro a clase.",
+                "de": "Ich bringe das Buch zum Unterricht mit."
+              }
+            },
+            {
+              "es": "Yo oigo música mientras trabajo.",
+              "tr": {
+                "hu": "Zenét hallgatok, miközben dolgozom.",
+                "en": "I hear music while I work.",
+                "es": "Yo oigo música mientras trabajo.",
+                "de": "Ich höre Musik, während ich arbeite."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Egyedi yo-alakok: dar (doy), ver (veo), saber (sé), a többi alak szabályos; a sé ékezetet kap, hogy megkülönböztessük a se névmástól.",
+            "en": "One-off yo forms: dar (doy), ver (veo), saber (sé), every other form is regular; sé keeps its accent to tell it apart from the pronoun se.",
+            "es": "Formas de yo únicas: dar (doy), ver (veo), saber (sé), las demás formas son regulares; sé lleva tilde para distinguirse del pronombre se.",
+            "de": "Einzelne yo-Formen: dar (doy), ver (veo), saber (sé), alle anderen Formen sind regelmäßig; sé behält den Akzent, um es vom Pronomen se zu unterscheiden."
+          },
+          "examples": [
+            {
+              "es": "Le doy un regalo a mi madre.",
+              "tr": {
+                "hu": "Ajándékot adok anyámnak.",
+                "en": "I give my mother a gift.",
+                "es": "Le doy un regalo a mi madre.",
+                "de": "Ich gebe meiner Mutter ein Geschenk."
+              }
+            },
+            {
+              "es": "Yo veo la televisión en casa.",
+              "tr": {
+                "hu": "Otthon tévét nézek.",
+                "en": "I watch television at home.",
+                "es": "Yo veo la televisión en casa.",
+                "de": "Ich sehe zu Hause fern."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Az estar yo-alakja estoy (mint a soy, voy, doy); a poder (puedo) és a querer (quiero) tőhangja változik; a seguir (sigo) e → i, a valer (valgo) pedig -go csoport.",
+            "en": "The yo form of estar is estoy (like soy, voy, doy); poder (puedo) and querer (quiero) change their stem vowel; seguir (sigo) goes e → i, and valer (valgo) joins the -go group.",
+            "es": "La forma yo de estar es estoy (como soy, voy, doy); poder (puedo) y querer (quiero) cambian la vocal de la raíz; seguir (sigo) cambia e → i, y valer (valgo) entra en el grupo -go.",
+            "de": "Die yo-Form von estar ist estoy (wie soy, voy, doy); poder (puedo) und querer (quiero) verändern den Stammvokal; seguir (sigo) wechselt e → i, und valer (valgo) gehört zur -go-Gruppe."
+          },
+          "examples": [
+            {
+              "es": "Estoy en casa ahora.",
+              "tr": {
+                "hu": "Most otthon vagyok.",
+                "en": "I am at home now.",
+                "es": "Estoy en casa ahora.",
+                "de": "Ich bin jetzt zu Hause."
+              }
+            },
+            {
+              "es": "Quiero un café.",
+              "tr": {
+                "hu": "Egy kávét kérek.",
+                "en": "I want a coffee.",
+                "es": "Quiero un café.",
+                "de": "Ich möchte einen Kaffee."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "kind": "usage",
       "title": {
         "hu": "Mikor használjuk?",
@@ -648,10 +1129,10 @@
     }
   ],
   "speak": {
-    "hu": "A leggyakoribb spanyol igék rendhagyók, de a rendetlenség rendszeres. Sok igénél csak a yo-alak lóg ki a sorból: «hago», «pongo», «salgo», «traigo». A cer és cir végű igéknél a yo-alak zco-ra végződik: «conozco». Néhány igénél a yo-alak mellett a többi alak is változik, mint a «tengo, tienes, tiene» vagy a «vengo, vienes, viene». A ser és az ir teljesen kilóg a sorból: «soy, eres, es» és «voy, vas, va». A nosotros alak szinte mindig szabályos marad, ez a horgonyod, ha elbizonytalanodsz: «tenemos, venimos, decimos». A saber és a conocer nem ugyanaz: «sé la respuesta», de «conozco a tu hermano».",
-    "en": "The commonest Spanish verbs are irregular, but the mess follows a system. In many verbs only the yo form is odd: «hago», «pongo», «salgo», «traigo». For verbs ending in cer or cir, the yo form ends in zco: «conozco». In a few verbs the yo form changes and so do the others, like «tengo, tienes, tiene» or «vengo, vienes, viene». Ser and ir stand completely apart: «soy, eres, es» and «voy, vas, va». The nosotros form almost always stays regular, your anchor when in doubt: «tenemos, venimos, decimos». Saber and conocer are not the same: «sé la respuesta», but «conozco a tu hermano».",
-    "es": "Los verbos españoles más frecuentes son irregulares, pero el desorden tiene un sistema. En muchos verbos solo la forma de yo cambia: «hago», «pongo», «salgo», «traigo». En los verbos terminados en cer o cir, la forma de yo acaba en zco: «conozco». En algunos verbos cambia la forma de yo y también las demás, como «tengo, tienes, tiene» o «vengo, vienes, viene». Ser e ir son totalmente distintos: «soy, eres, es» y «voy, vas, va». La forma de nosotros casi siempre queda regular, tu ancla cuando dudas: «tenemos, venimos, decimos». Saber y conocer no son lo mismo: «sé la respuesta», pero «conozco a tu hermano».",
-    "de": "Die häufigsten spanischen Verben sind unregelmäßig, aber das Chaos hat ein System. Bei vielen Verben ist nur die yo-Form anders: «hago», «pongo», «salgo», «traigo». Bei Verben auf cer oder cir endet die yo-Form auf zco: «conozco». Bei manchen Verben ändert sich neben der yo-Form auch der Rest, wie bei «tengo, tienes, tiene» oder «vengo, vienes, viene». Ser und ir fallen völlig aus dem Rahmen: «soy, eres, es» und «voy, vas, va». Die nosotros-Form bleibt fast immer regelmäßig, dein Anker im Zweifel: «tenemos, venimos, decimos». Saber und conocer sind nicht dasselbe: «sé la respuesta», aber «conozco a tu hermano»."
+    "hu": "A leggyakoribb spanyol igék rendhagyók, de a rendetlenség rendszert követ. Sok igénél csak az én alak furcsa: go végű, vagy a cer és cir végű igéknél zco végű, esetleg egy plusz ig kerül bele. Néhány igénél az én alak változik, és a többi alak töve is. A lenni és a menni ige teljesen külön áll, és van még néhány, például az adni, a látni és a tény ismeretét kifejező tudni. A mi alak szinte mindig szabályos marad, ez a kapaszkodód bizonytalanság esetén. A tények tudása és a személyek ismerete két különböző ige.",
+    "en": "The commonest Spanish verbs are irregular, but the mess follows a system. In many verbs only the form for I is odd: it ends in go, or in zco for verbs ending in cer and cir, or it takes an extra ig. In some verbs the form for I changes and the stem of other forms changes too. The verbs for being and for going stand completely apart, and so do a few others, such as the ones for giving, seeing and knowing a fact. The form for we almost always stays regular, your anchor when in doubt. Knowing a fact and knowing a person are two different verbs.",
+    "es": "Los verbos más comunes del español son irregulares, pero el desorden sigue un sistema. En muchos verbos solo es extraña la forma de yo: termina en go, o en zco en los verbos que acaban en cer y cir, o lleva una ig añadida. En algunos verbos cambia la forma de yo y también la raíz de otras formas. Los verbos ser e ir están completamente aparte, y también unos pocos más, como los que significan dar, ver y saber un dato. La forma de nosotros casi siempre queda regular, tu ancla en caso de duda. Saber un dato y conocer a una persona son dos verbos distintos.",
+    "de": "Die häufigsten spanischen Verben sind unregelmäßig, aber das Durcheinander folgt einem System. Bei vielen Verben ist nur die Form für ich seltsam: Sie endet auf go, bei Verben auf cer und cir auf zco, oder sie bekommt ein zusätzliches ig. Bei manchen Verben ändert sich die Form für ich und auch der Stamm anderer Formen. Die Verben für sein und für gehen stehen ganz für sich, ebenso einige weitere, etwa die für geben, sehen und eine Tatsache wissen. Die Form für wir bleibt fast immer regelmäßig, dein Anker im Zweifel. Eine Tatsache wissen und eine Person kennen sind zwei verschiedene Verben."
   },
   "glossary": [
     {
@@ -805,6 +1286,15 @@
         "en": "let us go (subjunctive)",
         "es": "vayamos",
         "de": "gehen wir (Subjuntivo)"
+      }
+    },
+    {
+      "word": "conduzco",
+      "gloss": {
+        "hu": "a conducir (vezetni) igealakja",
+        "en": "a form of conducir (to drive)",
+        "es": "una forma de conducir (conducir)",
+        "de": "eine Form von conducir (fahren)"
       }
     }
   ],
@@ -1699,6 +2189,352 @@
         }
       ],
       "correctIndex": 2
+    },
+    {
+      "id": "pi-13",
+      "sentence": "Yo ___ en casa ahora.",
+      "options": [
+        "estoy",
+        "estó",
+        "estás"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az estar yo-alakja estoy, mint a soy, voy, doy.",
+        "en": "The yo form of estar is estoy, like soy, voy, doy.",
+        "es": "La forma yo de estar es estoy, como soy, voy, doy.",
+        "de": "Die yo-Form von estar ist estoy, wie soy, voy, doy."
+      },
+      "wrong": {
+        "estó": {
+          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Yo estoy en casa ahora.",
+          "en": "This would use a form that doesn't exist; the correct form is: Yo estoy en casa ahora.",
+          "es": "Esto usaría una forma que no existe; la forma correcta es: Yo estoy en casa ahora.",
+          "de": "Das würde eine nicht existierende Form verwenden; richtig ist: Yo estoy en casa ahora."
+        },
+        "estás": {
+          "hu": "Ez a(z) tú alak, de itt az alany yo; helyesen: Yo estoy en casa ahora.",
+          "en": "This is the tú form, but the subject here is yo; correct: Yo estoy en casa ahora.",
+          "es": "Esta es la forma de tú, pero aquí el sujeto es yo; correcto: Yo estoy en casa ahora.",
+          "de": "Das ist die Form für tú, aber das Subjekt ist hier yo; richtig: Yo estoy en casa ahora."
+        }
+      },
+      "examples": [
+        "Estoy en casa ahora.",
+        "Yo soy estudiante."
+      ]
+    },
+    {
+      "id": "pi-14",
+      "sentence": "Yo no ___ ir hoy.",
+      "options": [
+        "puedo",
+        "podo",
+        "puede"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A poder tőhangja o → ue változik a yo alakban: puedo.",
+        "en": "Poder changes its stem vowel o → ue in the yo form: puedo.",
+        "es": "Poder cambia la vocal de la raíz o → ue en la forma yo: puedo.",
+        "de": "Poder wechselt den Stammvokal o → ue in der yo-Form: puedo."
+      },
+      "wrong": {
+        "podo": {
+          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Yo no puedo ir hoy.",
+          "en": "This would use a form that doesn't exist; the correct form is: Yo no puedo ir hoy.",
+          "es": "Esto usaría una forma que no existe; la forma correcta es: Yo no puedo ir hoy.",
+          "de": "Das würde eine nicht existierende Form verwenden; richtig ist: Yo no puedo ir hoy."
+        },
+        "puede": {
+          "hu": "Ez a(z) él/ella/usted alak, de itt az alany yo; helyesen: Yo no puedo ir hoy.",
+          "en": "This is the él/ella/usted form, but the subject here is yo; correct: Yo no puedo ir hoy.",
+          "es": "Esta es la forma de él/ella/usted, pero aquí el sujeto es yo; correcto: Yo no puedo ir hoy.",
+          "de": "Das ist die Form für él/ella/usted, aber das Subjekt ist hier yo; richtig: Yo no puedo ir hoy."
+        }
+      },
+      "examples": [
+        "Yo no puedo ir hoy.",
+        "Tú puedes ir mañana."
+      ]
+    },
+    {
+      "id": "pi-15",
+      "sentence": "Yo ___ un café.",
+      "options": [
+        "quiero",
+        "quero",
+        "quiere"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A querer tőhangja e → ie változik a yo alakban: quiero.",
+        "en": "Querer changes its stem vowel e → ie in the yo form: quiero.",
+        "es": "Querer cambia la vocal de la raíz e → ie en la forma yo: quiero.",
+        "de": "Querer wechselt den Stammvokal e → ie in der yo-Form: quiero."
+      },
+      "wrong": {
+        "quero": {
+          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Yo quiero un café.",
+          "en": "This would use a form that doesn't exist; the correct form is: Yo quiero un café.",
+          "es": "Esto usaría una forma que no existe; la forma correcta es: Yo quiero un café.",
+          "de": "Das würde eine nicht existierende Form verwenden; richtig ist: Yo quiero un café."
+        },
+        "quiere": {
+          "hu": "Ez a(z) él/ella/usted alak, de itt az alany yo; helyesen: Yo quiero un café.",
+          "en": "This is the él/ella/usted form, but the subject here is yo; correct: Yo quiero un café.",
+          "es": "Esta es la forma de él/ella/usted, pero aquí el sujeto es yo; correcto: Yo quiero un café.",
+          "de": "Das ist die Form für él/ella/usted, aber das Subjekt ist hier yo; richtig: Yo quiero un café."
+        }
+      },
+      "examples": [
+        "Yo quiero un café.",
+        "Ella quiere agua."
+      ]
+    },
+    {
+      "id": "pi-16",
+      "sentence": "Yo ___ la televisión en casa.",
+      "options": [
+        "veo",
+        "vo",
+        "ve"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A ver yo-alakja veo: a ve- tőhöz jön az -o.",
+        "en": "The yo form of ver is veo: the stem ve- gets -o.",
+        "es": "La forma yo de ver es veo: a la raíz ve- se añade -o.",
+        "de": "Die yo-Form von ver ist veo: an den Stamm ve- kommt -o."
+      },
+      "wrong": {
+        "vo": {
+          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Yo veo la televisión en casa.",
+          "en": "This would use a form that doesn't exist; the correct form is: Yo veo la televisión en casa.",
+          "es": "Esto usaría una forma que no existe; la forma correcta es: Yo veo la televisión en casa.",
+          "de": "Das würde eine nicht existierende Form verwenden; richtig ist: Yo veo la televisión en casa."
+        },
+        "ve": {
+          "hu": "Ez a(z) él/ella/usted alak, de itt az alany yo; helyesen: Yo veo la televisión en casa.",
+          "en": "This is the él/ella/usted form, but the subject here is yo; correct: Yo veo la televisión en casa.",
+          "es": "Esta es la forma de él/ella/usted, pero aquí el sujeto es yo; correcto: Yo veo la televisión en casa.",
+          "de": "Das ist die Form für él/ella/usted, aber das Subjekt ist hier yo; richtig: Yo veo la televisión en casa."
+        }
+      },
+      "examples": [
+        "Yo veo la televisión en casa.",
+        "Ella ve a su madre."
+      ]
+    },
+    {
+      "id": "pi-17",
+      "sentence": "Yo ___ el libro a clase.",
+      "options": [
+        "traigo",
+        "traio",
+        "trae"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A traer yo-alakjába -ig- kerül: traigo (mint a caigo).",
+        "en": "Traer adds -ig- in the yo form: traigo (like caigo).",
+        "es": "Traer añade -ig- en la forma yo: traigo (como caigo).",
+        "de": "Traer bekommt in der yo-Form -ig-: traigo (wie caigo)."
+      },
+      "wrong": {
+        "traio": {
+          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Yo traigo el libro a clase.",
+          "en": "This would use a form that doesn't exist; the correct form is: Yo traigo el libro a clase.",
+          "es": "Esto usaría una forma que no existe; la forma correcta es: Yo traigo el libro a clase.",
+          "de": "Das würde eine nicht existierende Form verwenden; richtig ist: Yo traigo el libro a clase."
+        },
+        "trae": {
+          "hu": "Ez a(z) él/ella/usted alak, de itt az alany yo; helyesen: Yo traigo el libro a clase.",
+          "en": "This is the él/ella/usted form, but the subject here is yo; correct: Yo traigo el libro a clase.",
+          "es": "Esta es la forma de él/ella/usted, pero aquí el sujeto es yo; correcto: Yo traigo el libro a clase.",
+          "de": "Das ist die Form für él/ella/usted, aber das Subjekt ist hier yo; richtig: Yo traigo el libro a clase."
+        }
+      },
+      "examples": [
+        "Yo traigo el libro a clase.",
+        "Ella trae el café."
+      ]
+    },
+    {
+      "id": "pi-18",
+      "sentence": "Yo ___ el coche de mi padre.",
+      "options": [
+        "conduzco",
+        "conduco",
+        "conduce"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A -ducir végű igék yo-alakja -zco végű: conduzco (mint a conozco).",
+        "en": "Verbs ending in -ducir take -zco in the yo form: conduzco (like conozco).",
+        "es": "Los verbos acabados en -ducir llevan -zco en la forma yo: conduzco (como conozco).",
+        "de": "Verben auf -ducir bekommen in der yo-Form -zco: conduzco (wie conozco)."
+      },
+      "wrong": {
+        "conduco": {
+          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Yo conduzco el coche de mi padre.",
+          "en": "This would use a form that doesn't exist; the correct form is: Yo conduzco el coche de mi padre.",
+          "es": "Esto usaría una forma que no existe; la forma correcta es: Yo conduzco el coche de mi padre.",
+          "de": "Das würde eine nicht existierende Form verwenden; richtig ist: Yo conduzco el coche de mi padre."
+        },
+        "conduce": {
+          "hu": "Ez a(z) él/ella/usted alak, de itt az alany yo; helyesen: Yo conduzco el coche de mi padre.",
+          "en": "This is the él/ella/usted form, but the subject here is yo; correct: Yo conduzco el coche de mi padre.",
+          "es": "Esta es la forma de él/ella/usted, pero aquí el sujeto es yo; correcto: Yo conduzco el coche de mi padre.",
+          "de": "Das ist die Form für él/ella/usted, aber das Subjekt ist hier yo; richtig: Yo conduzco el coche de mi padre."
+        }
+      },
+      "examples": [
+        "Yo conduzco el coche de mi padre.",
+        "Ella conduce el coche."
+      ]
+    },
+    {
+      "id": "pi-match-02",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "yo estoy en casa",
+          "en": "I am at home"
+        },
+        {
+          "es": "yo quiero agua",
+          "en": "I want water"
+        },
+        {
+          "es": "yo veo la televisión",
+          "en": "I watch television"
+        },
+        {
+          "es": "yo doy un regalo",
+          "en": "I give a gift"
+        },
+        {
+          "es": "yo traigo el libro",
+          "en": "I bring the book"
+        },
+        {
+          "es": "yo conozco a tu hermano",
+          "en": "I know your brother"
+        }
+      ]
+    },
+    {
+      "id": "pi-form-13",
+      "kind": "form",
+      "verb": "estar",
+      "person": "yo",
+      "answer": "estoy",
+      "table": "presente-irregular-epq"
+    },
+    {
+      "id": "pi-form-14",
+      "kind": "form",
+      "verb": "poder",
+      "person": "tú",
+      "answer": "puedes",
+      "table": "presente-irregular-epq"
+    },
+    {
+      "id": "pi-form-15",
+      "kind": "form",
+      "verb": "querer",
+      "person": "yo",
+      "answer": "quiero",
+      "table": "presente-irregular-epq"
+    },
+    {
+      "id": "pi-form-16",
+      "kind": "form",
+      "verb": "saber",
+      "person": "yo",
+      "answer": "sé",
+      "table": "presente-irregular-yo"
+    },
+    {
+      "id": "pi-form-17",
+      "kind": "form",
+      "verb": "conocer",
+      "person": "yo",
+      "answer": "conozco",
+      "table": "presente-irregular-zco"
+    },
+    {
+      "id": "pi-form-18",
+      "kind": "form",
+      "verb": "dar",
+      "person": "yo",
+      "answer": "doy",
+      "table": "presente-irregular-yo"
+    },
+    {
+      "id": "pi-form-19",
+      "kind": "form",
+      "verb": "ver",
+      "person": "yo",
+      "answer": "veo",
+      "table": "presente-irregular-yo"
+    },
+    {
+      "id": "pi-form-20",
+      "kind": "form",
+      "verb": "oír",
+      "person": "yo",
+      "answer": "oigo",
+      "table": "presente-irregular-igo"
+    },
+    {
+      "id": "pi-form-21",
+      "kind": "form",
+      "verb": "traer",
+      "person": "yo",
+      "answer": "traigo",
+      "table": "presente-irregular-igo"
+    },
+    {
+      "id": "pi-form-22",
+      "kind": "form",
+      "verb": "parecer",
+      "person": "yo",
+      "answer": "parezco",
+      "table": "presente-irregular-zco"
+    },
+    {
+      "id": "pi-form-23",
+      "kind": "form",
+      "verb": "seguir",
+      "person": "yo",
+      "answer": "sigo",
+      "table": "presente-irregular-sv"
+    },
+    {
+      "id": "pi-form-24",
+      "kind": "form",
+      "verb": "conducir",
+      "person": "yo",
+      "answer": "conduzco",
+      "table": "presente-irregular-zco"
+    },
+    {
+      "id": "pi-form-25",
+      "kind": "form",
+      "verb": "caer",
+      "person": "yo",
+      "answer": "caigo",
+      "table": "presente-irregular-igo"
+    },
+    {
+      "id": "pi-form-26",
+      "kind": "form",
+      "verb": "valer",
+      "person": "yo",
+      "answer": "valgo",
+      "table": "presente-irregular-sv"
     }
   ]
 }

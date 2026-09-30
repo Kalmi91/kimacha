@@ -302,3 +302,14 @@ describe('wordCellsForLesson', () => {
     expect(wordCellsForLesson(tiny).length).toBeLessThan(WORD_DECK_MIN_CARDS);
   });
 });
+
+// FB418/FB419 (PLAN-fb0929 5. lépés): a rossz opciók nem létező alakjai nem szó-kártyák.
+describe('wordCellsForLesson: nem létező alakok kihagyása', () => {
+  it('a sustantivo-numero szó-paklija nem tartalmaz "not a real form" kártyát', () => {
+    const { lessonFor } = require('../syllabus');
+    const cells = wordCellsForLesson(lessonFor('es', 'sustantivo-numero'));
+    expect(cells.length).toBeGreaterThan(8);
+    expect(cells.some((c: { en: string }) => /real form/i.test(c.en))).toBe(false);
+    expect(cells.some((c: { es: string }) => c.es === 'lápizes' || c.es === 'vezes')).toBe(false);
+  });
+});

@@ -10,10 +10,13 @@ import { strictAnswerMatch } from '@/lib/answerMatch';
 import { answerInputProps } from '@/lib/inputProps';
 import {
   cumulativeCorpusWordIds,
+  isDictationItem,
   isFormItem,
   isLessonV2,
   isMarkItem,
   isMatchItem,
+  isOrderItem,
+  isSpotItem,
   isTransformItem,
   isWhyItem,
   type GrammarKind,
@@ -27,12 +30,16 @@ import { speechLang } from '@/lib/languages';
 import { buildGrammarRound, grammarRoundItemKind, isChoiceRoundItem, wrongExplanation } from '@/lib/games/grammarChoice';
 import { pickTransformRound, TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import { findWholeWord } from '@/lib/grammar/whyTarget';
+import { optionHint } from '@/lib/grammar/optionHints';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString, shuffleArray } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
 import LessonBody from '@/components/grammar/LessonBody';
 import MoreBlocks from '@/components/grammar/MoreBlocks';
 import { BrutalBox, SegmentBar, Sticker, inkButtonText, segmentsFilled, textOnFill } from '@/components/grammar/Brutal';
+import AnswerCompare from '@/components/grammar/AnswerCompare';
+import ResultBadge from '@/components/ResultBadge';
+import { DictationDrillItem, OrderDrillItem, SpotDrillItem } from '@/components/grammar/NewKinds';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 
 // The "which one is right, and why" drill, shared by the grammar course
@@ -66,6 +73,14 @@ interface Props {
   onRoundStats?: (stats: RoundStats) => void;
   /** NY22: a brutalista fejléc bezáró X-e (a lecke-oldal ← gombjával azonos: vissza a leckéhez). */
   onClose?: () => void;
+  /**
+   * FB421 (PLAN-fb0929 4. lépés): egy félbehagyott kör folytatása: ugyanaz a seed és
+   * item-lista, onnan, ahol abbamaradt. Ha az item-lista már nem egyezik (a lecke
+   * változott), a kör elölről indul.
+   */
+  resume?: { seed: number; ids: string[]; index: number; correct: number };
+  /** FB421: minden megválaszolt tétel után a kör állapota, a szülő ezt menti. */
+  onProgress?: (p: { seed: number; ids: string[]; index: number; correct: number; total: number }) => void;
 }
 
 // NY24: a kör-vége képernyő adatai; csak memóriában, nincs DB-írás.
@@ -83,12 +98,18 @@ const secondsSince = (startedAt: number) => Math.max(0, Math.round((Date.now() -
 
 // NY22: a nem-választós fajták közös brutalista elemei: b kitöltésű visszajelző
 // doboz (nagybetűs cím + egy mondat) és az ink kitöltésű gomb.
-function BrutalFeedback({ g, title, children }: { g: GrammarColors; title: string; children?: React.ReactNode }) {
+// FB403 (PLAN-fb0929 6. lépés): a jó / rossz jelzés a közös ResultBadge (szín + alak + ✓/✗ + szöveg),
+// a doboz fölött; a b kitöltésű doboz csak a magyarázatot hordozza (ha van).
+function BrutalFeedback({ g, title, correct, children }: { g: GrammarColors; title: string; correct: boolean; children?: React.ReactNode }) {
   return (
-    <BrutalBox fill="b" boxStyle={styles.brutalFeedback}>
-      <Text style={[styles.brutalFeedbackHead, { color: g.onFill }]}>{title}</Text>
-      {children}
-    </BrutalBox>
+    <>
+      <ResultBadge correct={correct} label={title} />
+      {children ? (
+        <BrutalBox fill="b" boxStyle={styles.brutalFeedback}>
+          {children}
+        </BrutalBox>
+      ) : null}
+    </>
   );
 }
 
@@ -119,13 +140,17 @@ function MatchDrillItem({
   learnedLang: string;
   colors: (typeof Colors)['light'];
   s: ReturnType<typeof t>;
-  onDone: (correct: boolean) => void;
+  // FB420: a második argumentum a jó párok száma (egy hiba = egy pár elveszik).
+  onDone: (correct: boolean, correctUnits?: number) => void;
 }) {
   const [rightOrder] = useState(() => shuffleArray(item.pairs.map((_, i) => i), hashString(item.id)));
   const [selectedLeft, setSelectedLeft] = useState<number | null>(null);
   const [matched, setMatched] = useState<Set<number>>(new Set());
   const [wrongPair, setWrongPair] = useState<{ left: number; right: number } | null>(null);
   const [hadWrong, setHadWrong] = useState(false);
+  // FB420 (PLAN-fb0929 4. lépés): a párosítás részpontot kap: az a pár veszít, amelyiknél
+  // volt rossz koppintás (egy pár egyszer, akárhányszor tévesztett), a többi számít.
+  const [errLefts, setErrLefts] = useState<Set<number>>(new Set());
   const g = useGrammarColors();
   // `pairs` {es, en} szó szerint spanyol/angol; a jobb oszlop a TANULT nyelv
   // (es→en irányban az angol), a bal a másik.
@@ -153,6 +178,7 @@ function MatchDrillItem({
     } else {
       setWrongPair({ left: selectedLeft, right: pos });
       setHadWrong(true);
+      setErrLefts((prev) => new Set(prev).add(selectedLeft));
       setSelectedLeft(null);
     }
   };
@@ -210,8 +236,8 @@ function MatchDrillItem({
         </View>
         {done ? (
           <>
-            <BrutalFeedback g={g} title={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} />
-            <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(!hadWrong)} />
+            <BrutalFeedback g={g} correct={!hadWrong} title={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} />
+            <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(!hadWrong, item.pairs.length - errLefts.size)} />
           </>
         ) : null}
       </View>
@@ -264,10 +290,8 @@ function MatchDrillItem({
       </View>
       {done ? (
         <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
-          <Text style={[styles.explainHeader, { color: hadWrong ? '#EF4444' : '#22C55E' }]}>
-            {hadWrong ? s.games.wrongFeedback : s.games.correctFeedback}
-          </Text>
-          <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(!hadWrong)}>
+          <ResultBadge correct={!hadWrong} label={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} />
+          <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(!hadWrong, item.pairs.length - errLefts.size)}>
             <Text style={styles.btnText}>{s.games.understood}</Text>
           </Pressable>
         </View>
@@ -296,6 +320,12 @@ function FormDrillItem({
   onDone: (correct: boolean) => void;
 }) {
   const [tableOpen, setTableOpen] = useState(false);
+  // FB417 (PLAN-fb0929 5. lépés): a kérdés-címke ("Sustantivo") spanyol, a segítő tábla oszlop-fejléce
+  // viszont a felület nyelvén ("Noun"), ezért a tanuló nem találta a táblában. Ha a fejléc más nyelven
+  // mást ír, a címke mellett zárójelben ott a táblabeli név is.
+  const headerCell = table?.header.find((h) => h.es === item.verb);
+  const localizedVerb = headerCell ? (headerCell[contentLang] ?? headerCell.en) : undefined;
+  const verbLabel = localizedVerb && localizedVerb !== item.verb ? `${item.verb} (${localizedVerb})` : item.verb;
   const [value, setValue] = useState('');
   const [checked, setChecked] = useState(false);
   const [correct, setCorrect] = useState(false);
@@ -327,7 +357,7 @@ function FormDrillItem({
         <Text style={[styles.brutalHint, { color: g.mu }]}>{s.grammar.formHint}</Text>
         <BrutalBox boxStyle={styles.brutalSentenceBox}>
           <Text style={[styles.formPrompt, { color: g.ink }]}>
-            {item.verb} · {item.person}
+            {verbLabel} · {item.person}
           </Text>
         </BrutalBox>
         <BrutalBox dashed={checked && !correct} style={checked && !correct ? styles.brutalDim : undefined} boxStyle={styles.brutalInputBox}>
@@ -345,10 +375,8 @@ function FormDrillItem({
           <BrutalInkButton g={g} testID="formCheck" label={s.grammar.check} onPress={check} />
         ) : (
           <>
-            <BrutalFeedback g={g} title={correct ? s.games.correctFeedback : s.games.wrongFeedback}>
-              {!correct ? (
-                <Text style={[styles.brutalAnswer, { backgroundColor: g.a, color: g.onFill }]}> {item.answer} </Text>
-              ) : null}
+            <BrutalFeedback g={g} correct={correct} title={correct ? s.games.correctFeedback : s.games.wrongFeedback}>
+              {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} onFill /> : null}
             </BrutalFeedback>
             <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(correct)} />
           </>
@@ -373,7 +401,7 @@ function FormDrillItem({
 
       <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{s.grammar.formHint}</Text>
       <Text style={[styles.formPrompt, { color: colors.text }]}>
-        {item.verb} · {item.person}
+        {verbLabel} · {item.person}
       </Text>
       <TextInput
         testID="formInput"
@@ -390,10 +418,8 @@ function FormDrillItem({
         </Pressable>
       ) : (
         <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
-          <Text style={[styles.explainHeader, { color: correct ? '#22C55E' : '#EF4444' }]}>
-            {correct ? s.games.correctFeedback : s.games.wrongFeedback}
-          </Text>
-          {!correct ? <Text style={[styles.explainText, { color: colors.text }]}>{item.answer}</Text> : null}
+          <ResultBadge correct={correct} label={correct ? s.games.correctFeedback : s.games.wrongFeedback} />
+          {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} /> : null}
           <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(correct)}>
             <Text style={styles.btnText}>{s.games.understood}</Text>
           </Pressable>
@@ -494,6 +520,12 @@ function WhyDrillItem({
               >
                 <Text style={[styles.brutalOptionText, { color: hit ? g.onFill : g.ink }]}>{opt.text[contentLang] ?? opt.text.en}</Text>
                 {hit ? <Text style={[styles.brutalOptionText, { color: g.onFill }]}> ✓</Text> : null}
+                {/* FB410/FB411: kisbetűs példa-sor a szabály neve alatt, mi tartozik oda. */}
+                {optionHint(opt.text, contentLang) ? (
+                  <Text testID="why-option-hint" style={[styles.optionHint, { color: hit ? g.onFill : g.mu }]}>
+                    {optionHint(opt.text, contentLang)}
+                  </Text>
+                ) : null}
               </BrutalBox>
             );
           })}
@@ -501,7 +533,7 @@ function WhyDrillItem({
 
         {answered ? (
           <>
-            <BrutalFeedback g={g} title={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback}>
+            <BrutalFeedback g={g} correct={isCorrect} title={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback}>
               {!isCorrect ? (
                 <Text style={[styles.explainText, { color: g.onFill }]}>
                   {item.options[selected].wrong?.[contentLang] ?? item.options[selected].wrong?.en ?? ''}
@@ -575,6 +607,11 @@ function WhyDrillItem({
               disabled={answered}
             >
               <Text style={[styles.optionText, { color: colors.text }]}>{opt.text[contentLang] ?? opt.text.en}</Text>
+              {optionHint(opt.text, contentLang) ? (
+                <Text testID="why-option-hint" style={[styles.optionHint, { color: colors.tabIconDefault }]}>
+                  {optionHint(opt.text, contentLang)}
+                </Text>
+              ) : null}
             </Pressable>
           );
         })}
@@ -582,9 +619,7 @@ function WhyDrillItem({
 
       {answered ? (
         <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
-          <Text style={[styles.explainHeader, { color: isCorrect ? '#22C55E' : '#EF4444' }]}>
-            {isCorrect ? s.games.correctFeedback : s.games.wrongFeedback}
-          </Text>
+          <ResultBadge correct={isCorrect} label={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback} />
           {!isCorrect ? (
             <Text style={[styles.explainText, { color: colors.text }]}>
               {item.options[selected].wrong?.[contentLang] ?? item.options[selected].wrong?.en ?? ''}
@@ -642,6 +677,8 @@ function TransformDrillItem({
     const candidates = [item.answer, ...(item.accept ?? [])];
     const ok = candidates.some((c) => strictAnswerMatch(input, c, { strictAccents }));
     setResult(ok ? 'ok' : 'bad');
+    // FB412 (PLAN-fb0929 5. lépés): a helyes mondat elhangzik, jó és rossz válasz után is.
+    speak(item.answer, speechLang('es'));
   };
 
   const inputBorder = result === 'ok' ? '#22C55E' : result === 'bad' ? '#EF4444' : colors.tabIconDefault;
@@ -690,7 +727,7 @@ function TransformDrillItem({
           <BrutalInkButton g={g} testID="transform-check" label={s.grammar.check} onPress={check} />
         ) : (
           <>
-            <BrutalFeedback g={g} title={result === 'ok' ? s.grammar.correct : s.grammar.correctAnswer}>
+            <BrutalFeedback g={g} correct={result === 'ok'} title={result === 'ok' ? s.grammar.correct : s.grammar.correctAnswer}>
               {result === 'bad' ? (
                 <Text style={[styles.brutalAnswer, { backgroundColor: g.a, color: g.onFill }]}> {item.answer} </Text>
               ) : null}
@@ -755,12 +792,12 @@ function TransformDrillItem({
         >
           {result === 'ok' ? (
             <>
-              <Text style={[styles.explainHeader, { color: '#22C55E' }]}>{s.grammar.correct}</Text>
+              <ResultBadge correct label={s.grammar.correct} />
               <Text style={[styles.explainText, { color: colors.text }]}>{item.why[contentLang] ?? item.why.en}</Text>
             </>
           ) : (
             <>
-              <Text style={[styles.explainHeader, { color: '#EF4444' }]}>{s.grammar.correctAnswer}</Text>
+              <ResultBadge correct={false} label={s.grammar.correctAnswer} />
               <Text style={[styles.transformAnswer, { color: colors.text }]}>{item.answer}</Text>
               <Text style={[styles.explainText, { color: colors.text }]}>{item.why[contentLang] ?? item.why.en}</Text>
             </>
@@ -781,13 +818,13 @@ function TransformDrillItem({
   );
 }
 
-export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, kinds = CHOICE_ONLY, transformSeen, onItemChange, onRoundStats, onClose }: Props) {
+export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, kinds = CHOICE_ONLY, transformSeen, onItemChange, onRoundStats, onClose, resume, onProgress }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
 
-  const [seed] = useState(() => hashString(`${topic.topic}:${Date.now()}`));
+  const [seed] = useState(() => resume?.seed ?? hashString(`${topic.topic}:${Date.now()}`));
   const fullRound = useMemo(() => buildGrammarRound(topic, seed), [topic, seed]);
   const transformPool = useMemo(() => fullRound.map((r) => r.item).filter(isTransformItem), [fullRound]);
   // FB316 (NY10): a körös (legkevésbé-gyakorolt-elöl, legfeljebb 10 itemes)
@@ -803,9 +840,20 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     }
     return fullRound.filter((r) => kinds.includes(grammarRoundItemKind(r)));
   }, [useTransformRounds, transformPool, transformSeen, seed, fullRound, kinds]);
-  const [index, setIndex] = useState(0);
+  // FB421: a kör tételeinek id-listája (a félbehagyott kör mentéséhez és a folytatás
+  // érvényesítéséhez) és a kör egységei: egy tétel 1 egység, a párosítás annyi, ahány
+  // párja van (FB420: a részpont a jó párok aránya, ezért a kör összesítője is párokban).
+  const roundIds = useMemo(() => round.map((r) => r.item.id), [round]);
+  const totalUnits = useMemo(() => round.reduce((n, r) => n + (isMatchItem(r.item) ? r.item.pairs.length : 1), 0), [round]);
+  const resumeOk =
+    !!resume &&
+    resume.index > 0 &&
+    resume.index < roundIds.length &&
+    resume.ids.length === roundIds.length &&
+    resume.ids.every((id, i) => id === roundIds[i]);
+  const [index, setIndex] = useState(resumeOk ? resume.index : 0);
   const [selected, setSelected] = useState<number | null>(null);
-  const [correctCount, setCorrectCount] = useState(0);
+  const [correctCount, setCorrectCount] = useState(resumeOk ? resume.correct : 0);
   const [showMore, setShowMore] = useState(false);
   // NY22: egymás utáni helyes válaszok a körön belül, csak memóriában (nincs
   // DB-írás); hibánál nullázódik, "x2"-től látszik a combo-matrica.
@@ -823,7 +871,8 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // NY3: a Beállítások ékezet-szigor kapcsolója, egyszer lekérve, csak ha a
   // körben van transform tétel (a többi ágnak nincs rá szüksége).
   const [strictAccents, setStrictAccents] = useState(false);
-  const hasTransform = kinds.includes('transform');
+  // PLAN-fb0929 7. lépés: a diktálás is az ékezet-beállítást használja.
+  const hasTransform = kinds.includes('transform') || kinds.includes('dictation');
   useEffect(() => {
     if (!hasTransform) return;
     getDb().getStrictAccents().then(setStrictAccents).catch(() => {});
@@ -841,6 +890,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
 
   const advance = (finalCorrectCount: number) => {
     if (index + 1 < round.length) {
+      onProgress?.({ seed, ids: roundIds, index: index + 1, correct: finalCorrectCount, total: totalUnits });
       setIndex((i) => i + 1);
       setSelected(null);
       setShowMore(false);
@@ -856,9 +906,9 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
       miss: missRef.current,
     });
     if (useTransformRounds) {
-      onFinish(finalCorrectCount, round.length, round.map((r) => r.item.id));
+      onFinish(finalCorrectCount, totalUnits, round.map((r) => r.item.id));
     } else {
-      onFinish(finalCorrectCount, round.length);
+      onFinish(finalCorrectCount, totalUnits);
     }
   };
 
@@ -869,15 +919,16 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // Match/form score at COMPLETION time, in the same event as the "next" tap,
   // so correctCount's state update has not landed yet; the final tally is
   // computed locally instead of trusted from the (possibly stale) closure.
-  const completeItem = (wasCorrect: boolean) => {
+  // FB420: `correctUnits` a részpont (a párosítás jó párjai); nélküle a tétel 1 egység, jó vagy nem.
+  const completeItem = (wasCorrect: boolean, correctUnits?: number) => {
     noteResult(
       wasCorrect,
       isTransformItem(roundItem.item)
         ? { sentence: roundItem.item.answer, highlight: roundItem.item.answer }
         : undefined
     );
-    const finalCount = wasCorrect ? correctCount + 1 : correctCount;
-    if (wasCorrect) setCorrectCount(finalCount);
+    const finalCount = correctCount + (correctUnits ?? (wasCorrect ? 1 : 0));
+    if (finalCount !== correctCount) setCorrectCount(finalCount);
     advance(finalCount);
   };
 
@@ -936,6 +987,31 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             s={s}
             onDone={completeItem}
           />
+        ) : isSpotItem(roundItem.item) ? (
+          <SpotDrillItem
+            key={roundItem.item.id}
+            item={roundItem.item}
+            learnedLang={learnedLang}
+            contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
+            onDone={completeItem}
+          />
+        ) : isOrderItem(roundItem.item) ? (
+          <OrderDrillItem
+            key={roundItem.item.id}
+            item={roundItem.item}
+            learnedLang={learnedLang}
+            contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
+            onDone={completeItem}
+          />
+        ) : isDictationItem(roundItem.item) ? (
+          <DictationDrillItem
+            key={roundItem.item.id}
+            item={roundItem.item}
+            learnedLang={learnedLang}
+            contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
+            strictAccents={strictAccents}
+            onDone={completeItem}
+          />
         ) : isTransformItem(roundItem.item) ? (
           <TransformDrillItem
             key={roundItem.item.id}
@@ -972,6 +1048,11 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     if (answered) return;
     setSelected(optIdx);
     if (optIdx === current.correctIndex) setCorrectCount((c) => c + 1);
+    // FB412 (PLAN-fb0929 5. lépés): a helyes, kitöltött mondat elhangzik, jó és rossz válasz után is.
+    speak(
+      marking ? current.item.sentence : current.item.sentence.replace('___', current.options[current.correctIndex]),
+      speechLang(learnedLang)
+    );
     noteResult(
       optIdx === current.correctIndex,
       marking
@@ -1069,10 +1150,9 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
         </View>
 
         {answered ? (
+          <>
+          <ResultBadge correct={isCorrect} label={isCorrect ? s.grammar.perfect : s.games.wrongFeedback} />
           <BrutalBox fill="b" boxStyle={styles.brutalFeedback}>
-            <Text style={[styles.brutalFeedbackHead, { color: g.onFill }]}>
-              {isCorrect ? s.grammar.perfect : s.games.wrongFeedback}
-            </Text>
             <Text style={[styles.explainText, { color: g.onFill }]}>{current.item.why[contentLang] ?? current.item.why.en}</Text>
             {!isCorrect && pickedText !== undefined ? (
               <Text style={[styles.explainText, { color: g.onFill }]}>
@@ -1104,6 +1184,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
               </View>
             ) : null}
           </BrutalBox>
+          </>
         ) : null}
         {answered ? (
           <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.brutalNext} onPress={next}>
@@ -1193,9 +1274,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
 
       {answered ? (
         <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
-          <Text style={[styles.explainHeader, { color: isCorrect ? '#22C55E' : '#EF4444' }]}>
-            {isCorrect ? s.games.correctFeedback : s.games.wrongFeedback}
-          </Text>
+          <ResultBadge correct={isCorrect} label={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback} />
           <Text style={[styles.explainText, { color: colors.text }]}>{current.item.why[contentLang] ?? current.item.why.en}</Text>
           {!isCorrect && pickedText !== undefined ? (
             <Text style={[styles.explainText, { color: colors.tabIconDefault }]}>
@@ -1250,7 +1329,7 @@ const styles = StyleSheet.create({
   brutalOptions: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
   brutalOption: { flexBasis: '46%', flexGrow: 1 },
   brutalOptionInner: { paddingVertical: 16, paddingHorizontal: 8, flexDirection: 'row', justifyContent: 'center' },
-  brutalOptionText: { fontSize: 17, fontWeight: '500' },
+  brutalOptionText: { fontSize: 17, fontWeight: '500', flexShrink: 1, textAlign: 'center' },
   brutalFeedback: { padding: 16, gap: 8 },
   brutalFeedbackHead: { fontSize: 18, fontWeight: '500', textTransform: 'uppercase' },
   // A chat-gomb (FAB) alól is kigördül az utolsó elem.
@@ -1266,12 +1345,15 @@ const styles = StyleSheet.create({
   brutalAnswer: { fontSize: 20, fontWeight: '500', alignSelf: 'flex-start' },
   brutalQuestion: { fontSize: 15, fontWeight: '500', textTransform: 'uppercase', textAlign: 'center' },
   brutalWhyOptions: { gap: 12 },
+  // FB410/FB411: a szabály-opció alatti kisbetűs példa-sor (a wrap-sorban új sorba törik).
+  optionHint: { fontSize: 12, textAlign: 'center', flexBasis: '100%', marginTop: 2 },
   brutalWhyOption: { paddingVertical: 14, paddingHorizontal: 12, flexDirection: 'row', justifyContent: 'center', flexWrap: 'wrap' },
   brutalF: { width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
   brutalNext: { paddingVertical: 14, alignItems: 'center' },
   brutalNextText: { fontSize: 16, fontWeight: '500', textTransform: 'uppercase' },
   sentenceCard: { borderRadius: 16, padding: 20 },
-  sentence: { fontSize: 20, lineHeight: 30, textAlign: 'center' },
+  // FB405: flexShrink, hogy a sor-konténerben (mondat + 🔊) is törjön, ne tolja ki a testvért.
+  sentence: { fontSize: 20, lineHeight: 30, textAlign: 'center', flexShrink: 1 },
   options: { gap: 10 },
   hiddenOptions: { height: 0 },
   markPrompt: { fontSize: 15, fontWeight: '700', textAlign: 'center' },
@@ -1291,7 +1373,7 @@ const styles = StyleSheet.create({
   matchColumns: { flexDirection: 'row', gap: 12 },
   matchColumn: { flex: 1, gap: 8 },
   matchCell: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 12, paddingHorizontal: 10, alignItems: 'center' },
-  matchCellText: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
+  matchCellText: { fontSize: 14, fontWeight: '600', textAlign: 'center', flexShrink: 1 },
   formBody: { gap: 10 },
   formPrompt: { fontSize: 18, fontWeight: '700', textAlign: 'center' },
   formInput: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 10, paddingHorizontal: 14, fontSize: 17, textAlign: 'center' },

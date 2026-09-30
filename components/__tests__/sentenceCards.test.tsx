@@ -38,6 +38,8 @@ describe('EasySentenceCard (összerakós)', () => {
     fireEvent.press(getAllByText('mesa')[0]);
     fireEvent.press(getByText('Check'));
     expect(getByText('el libro y la mesa')).toBeTruthy();
+    // FB412: rossz építésnél is elhangzik a helyes mondat.
+    expect(speech.speak).toHaveBeenLastCalledWith('el libro y la mesa', 'es-MX');
     fireEvent.press(getByText(/Next/));
     expect(onResult).toHaveBeenCalledWith(false);
   });
@@ -62,7 +64,7 @@ describe('TypedSentenceCard (begépelős)', () => {
     const onResult = jest.fn();
     const { getByText, getByPlaceholderText } = render(<TypedSentenceCard {...props} onResult={onResult} />);
     fireEvent.changeText(getByPlaceholderText('Type the sentence'), 'el libro y la mesa');
-    fireEvent.press(getByText('Check'));
+    fireEvent.press(getByText('✓ Check'));
     expect(speech.speak).toHaveBeenCalledWith('El libro y la mesa.', 'es-MX');
     fireEvent.press(getByText(/Next/));
     expect(onResult).toHaveBeenCalledWith(true);
@@ -73,22 +75,51 @@ describe('TypedSentenceCard (begépelős)', () => {
     const { getByText, getByPlaceholderText, queryByText } = render(<TypedSentenceCard {...props} onResult={onResult} />);
     const input = getByPlaceholderText('Type the sentence');
     fireEvent.changeText(input, 'el gato');
-    fireEvent.press(getByText('Check'));
+    fireEvent.press(getByText('✓ Check'));
     expect(getByText('El libro y la mesa.')).toBeTruthy();
     fireEvent.changeText(input, 'el libro');
     expect(queryByText('El libro y la mesa.')).toBeNull();
-    expect(speech.speak).not.toHaveBeenCalled();
+    // FB412: a helyes mondat rossz válasz után is elhangzik (egyszer, a Check-nél).
+    expect(speech.speak).toHaveBeenCalledTimes(1);
+    expect(speech.speak).toHaveBeenCalledWith('El libro y la mesa.', 'es-MX');
   });
 
   it('an accent-only slip passes when strict accents are off and fails when on', () => {
     const accent = { sourceSentence: 'It is at home.', targetSentence: 'Está en casa.' };
     const off = render(<TypedSentenceCard {...accent} onResult={jest.fn()} strictAccents={false} />);
     fireEvent.changeText(off.getByPlaceholderText('Type the sentence'), 'esta en casa');
-    fireEvent.press(off.getByText('Check'));
+    fireEvent.press(off.getByText('✓ Check'));
     expect(off.queryByText('Está en casa.')).toBeNull();
     const on = render(<TypedSentenceCard {...accent} onResult={jest.fn()} strictAccents />);
     fireEvent.changeText(on.getByPlaceholderText('Type the sentence'), 'esta en casa');
-    fireEvent.press(on.getByText('Check'));
+    fireEvent.press(on.getByText('✓ Check'));
     expect(on.getByText('Está en casa.')).toBeTruthy();
+  });
+
+  // FB399 (PLAN-fb0929 3. lépés): a névmás nélküli mondat is jó.
+  it('accepts the sentence without the leading subject pronoun', () => {
+    const onResult = jest.fn();
+    const { getByText, getByPlaceholderText } = render(
+      <TypedSentenceCard sourceSentence="I eat at home." targetSentence="Yo como en casa." speechLocale="es-MX" onResult={onResult} />
+    );
+    fireEvent.changeText(getByPlaceholderText('Type the sentence'), 'como en casa');
+    fireEvent.press(getByText('✓ Check'));
+    fireEvent.press(getByText(/Next/));
+    expect(onResult).toHaveBeenCalledWith(true);
+  });
+
+  // FB397 (PLAN-fb0929 2. lépés): a Check nem a kártyán belüli gomb, hanem a
+  // dokkolt sáv (DockedAction) a billentyűzet fölött, mint a szókártyán, és a
+  // szülő által adott emelés / hely szerint áll.
+  it('the Check bar is the docked action, lifted by the keyboard height the parent passes', () => {
+    const onHeight = jest.fn();
+    const { getByText, UNSAFE_getByProps } = render(
+      <TypedSentenceCard {...props} onResult={jest.fn()} dockLift={300} dockH={80} onDockHeight={onHeight} />
+    );
+    const bar = getByText('✓ Check');
+    expect(bar).toBeTruthy();
+    const docked = UNSAFE_getByProps({ bottom: 300 });
+    expect(docked.props.label).toBe('✓ Check');
+    expect(docked.props.tone).toBe('check');
   });
 });
