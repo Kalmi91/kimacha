@@ -365,7 +365,7 @@
     "pos": "adv",
     "lemma": "pronto",
     "es": "pronto",
-    "hu": "hamarosan, korán",
+    "hu": "hamarosan, nemsokára",
     "en": "soon",
     "de": "bald",
     "sentence_es": "Mi madre llega pronto.",
@@ -881,7 +881,7 @@
     "sentence_es": "Mi hijo escuchó a su padre.",
     "sentence_hu": "A fiam meghallgatta az apját.",
     "sentence_en": "My son listened to his father.",
-    "sentence_de": "Mein Sohn hat auf seinen Vater gehört.",
+    "sentence_de": "Mein Sohn hat seinem Vater zugehört.",
     "sentence_lemmas": ["mi", "hijo", "escuchar", "a", "su", "padre"]
   },
   {
@@ -1508,11 +1508,11 @@
     "hu": "példa",
     "en": "example",
     "de": "Beispiel",
-    "sentence_es": "Por ejemplo, como poco pan.",
-    "sentence_hu": "Például kevés kenyeret eszem.",
-    "sentence_en": "For example, I eat little bread.",
-    "sentence_de": "Zum Beispiel esse ich wenig Brot.",
-    "sentence_lemmas": ["por", "ejemplo", "comer", "poco", "pan"]
+    "sentence_es": "Mi madre es un buen ejemplo.",
+    "sentence_hu": "Anyám jó példa.",
+    "sentence_en": "My mother is a good example.",
+    "sentence_de": "Meine Mutter ist ein gutes Beispiel.",
+    "sentence_lemmas": ["mi", "madre", "ser", "un", "bueno", "ejemplo"]
   },
   {
     "order": 252,
@@ -1718,11 +1718,11 @@
     "hu": "fej",
     "en": "head",
     "de": "Kopf",
-    "sentence_es": "El niño pone la cabeza en la cama.",
-    "sentence_hu": "A gyerek az ágyra teszi a fejét.",
-    "sentence_en": "The child puts his head on the bed.",
-    "sentence_de": "Das Kind legt den Kopf aufs Bett.",
-    "sentence_lemmas": ["el", "niño", "poner", "el", "cabeza", "en", "el", "cama"]
+    "sentence_es": "Hoy tengo mucho en la cabeza.",
+    "sentence_hu": "Ma sok minden jár a fejemben.",
+    "sentence_en": "I have a lot on my mind today.",
+    "sentence_de": "Ich habe heute viel im Kopf.",
+    "sentence_lemmas": ["hoy", "tener", "mucho", "en", "el", "cabeza"]
   },
   {
     "order": 266,

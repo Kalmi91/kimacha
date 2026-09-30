@@ -15,7 +15,7 @@ Becslés: ~600K token, 1-2 óra.
 - [x] 2. (13:01) 600 lemma listája (order, level, pos, lemma, es) a 4 fájlba, mondatok nélkül → kész, ha: a kapu R1, R2 szabálya zöld
 - [x] 3. (13:01) A1 kártyák (fordítás + mondat) → kész, ha: a kapu minden szabálya zöld az A1-en; Opus 10-es mintát néz
 - [x] 4. (13:22) A2, B1, B2 kártyák → kész, ha: a kapu teljes futása zöld
-- [ ] 5. Második AI-átnézés (független Sonnet) + javítás → kész, ha: minden jelölt kártya javítva, kapu zöld
+- [~] 5. Második AI-átnézés (független Sonnet) + javítás → kész, ha: minden jelölt kártya javítva, kapu zöld
 - [ ] 6. Repo-kapu, commit, push, PR + böngészős átnéző lap Kálmánnak → kész, ha: typecheck/lint/test zöld, PR nyitva, lap linkje kint
 
 ## Spec (a subagent ezt hajtja végre 1:1)
