@@ -356,6 +356,8 @@ const es: Strings = {
     promptCaption: 'persona · verbo',
     wordChip: 'PALABRA',
     wordPromptCaption: 'significado',
+    // PLAN-fb0929 10. lépés: es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
+    wordPromptCaptionEn: '¿Cómo se dice en inglés?',
     promptCaptionEn: 'traducir al español',
     progress: (done: number, total: number) => `${done} / ${total} hechas`,
     completeTitle: (n: number) => `Las ${n} celdas hechas 🎉`,
