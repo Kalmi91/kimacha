@@ -23,7 +23,8 @@ import grammarEnPastSimpleIrregular from '@/data/games/grammar/en/past-simple-ir
 import grammarEnGoingTo from '@/data/games/grammar/en/going-to.json';
 import grammarEnWill from '@/data/games/grammar/en/will.json';
 import grammarEnPresentPerfect from '@/data/games/grammar/en/present-perfect.json';
+import grammarEnComparatives from '@/data/games/grammar/en/comparatives.json';
 
 export const enContent: LanguageContentBundle = {
-  grammarTopics: [grammarEnToBe, grammarEnArticles, grammarEnPresentSimple, grammarEnPlurals, grammarEnThisThat, grammarEnPossessives, grammarEnThereIsAre, grammarEnPrepositions, grammarEnHaveGot, grammarEnCanAbility, grammarEnQuestionWords, grammarEnPresentContinuous, grammarEnPastSimpleRegular, grammarEnPastSimpleIrregular, grammarEnGoingTo, grammarEnWill, grammarEnPresentPerfect] as unknown as GrammarTopicData[],
+  grammarTopics: [grammarEnToBe, grammarEnArticles, grammarEnPresentSimple, grammarEnPlurals, grammarEnThisThat, grammarEnPossessives, grammarEnThereIsAre, grammarEnPrepositions, grammarEnHaveGot, grammarEnCanAbility, grammarEnQuestionWords, grammarEnPresentContinuous, grammarEnPastSimpleRegular, grammarEnPastSimpleIrregular, grammarEnGoingTo, grammarEnWill, grammarEnPresentPerfect, grammarEnComparatives] as unknown as GrammarTopicData[],
 };
