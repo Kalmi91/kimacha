@@ -5,6 +5,7 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { Card, brutalInputStyle } from '@/components/grammar/Brutal';
+import ResultBadge from '@/components/ResultBadge';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { t } from '@/lib/i18n';
 import { gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
@@ -78,9 +79,9 @@ export default function TypedSentenceCard({
           <TextInput
             style={[
               styles.input,
-              { color: colors.text, borderColor: result === 'correct' ? '#22C55E' : result === 'wrong' ? '#EF4444' : colors.tabIconDefault },
+              { color: colors.text, borderColor: result === 'correct' ? colors.successFill : result === 'wrong' ? colors.danger : colors.tabIconDefault },
               g.brutal && brutalInputStyle(g),
-              g.brutal && result && { borderColor: result === 'correct' ? '#22C55E' : '#EF4444' },
+              g.brutal && result && { borderColor: result === 'correct' ? colors.successFill : colors.danger },
             ]}
             placeholder={s.card.typeSentence}
             placeholderTextColor={colors.tabIconDefault}
@@ -97,13 +98,10 @@ export default function TypedSentenceCard({
             {...answerInputProps}
           />
 
-          {result === 'wrong' && <Text style={[styles.correctLine, { color: '#22C55E' }]}>{targetSentence}</Text>}
+          {result === 'wrong' && <Text style={[styles.correctLine, { color: colors.success }]}>{targetSentence}</Text>}
 
-          {result && (
-            <Text style={[styles.resultText, { color: result === 'correct' ? '#22C55E' : '#EF4444' }]}>
-              {result === 'correct' ? s.card.correct : s.card.wrong}
-            </Text>
-          )}
+          {/* FB403: minden kártyán ugyanaz a jó / rossz jelzés (szín + alak + ✓/✗ + szöveg). */}
+          {result && <ResultBadge correct={result === 'correct'} label={result === 'correct' ? s.card.correct : s.card.wrong} />}
         </Card>
       </ScrollView>
 
@@ -111,7 +109,7 @@ export default function TypedSentenceCard({
         label={result ? `${s.card.next} →` : `✓ ${s.card.check}`}
         onPress={result ? () => onResult(result === 'correct') : handleCheck}
         tone={result ? 'next' : 'check'}
-        color={result ? (result === 'correct' ? '#22C55E' : '#EF4444') : undefined}
+        color={result ? (result === 'correct' ? colors.successFill : colors.danger) : undefined}
         bottom={dockLift}
         colors={colors}
         onHeight={onDockHeight}

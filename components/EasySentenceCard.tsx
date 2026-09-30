@@ -5,6 +5,7 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, BrutalButton, Card } from '@/components/grammar/Brutal';
+import ResultBadge from '@/components/ResultBadge';
 import { t } from '@/lib/i18n';
 import { sentenceBuildMatch } from '@/lib/answerMatch';
 
@@ -70,7 +71,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
     <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
       <Text style={[styles.sourceText, { color: colors.text }]}>{sourceSentence}</Text>
 
-      <View style={[styles.placedArea, { borderColor: result === 'correct' ? '#22C55E' : result === 'wrong' ? '#EF4444' : colors.tabIconDefault, borderStyle: result === 'correct' ? 'solid' : 'dashed' }, g.brutal && styles.brutalPlaced]}>
+      <View style={[styles.placedArea, { borderColor: result === 'correct' ? colors.successFill : result === 'wrong' ? colors.danger : colors.tabIconDefault, borderStyle: result === 'correct' ? 'solid' : 'dashed' }, g.brutal && styles.brutalPlaced]}>
         {placed.length === 0 ? (
           <Text style={[styles.placeholder, { color: colors.tabIconDefault }]}>...</Text>
         ) : (
@@ -91,7 +92,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
       </View>
 
       {result === 'wrong' && (
-        <Text style={[styles.correctLine, { color: '#22C55E' }]}>{targetSentence}</Text>
+        <Text style={[styles.correctLine, { color: colors.success }]}>{targetSentence}</Text>
       )}
 
       <View style={styles.wordRow}>
@@ -115,11 +116,8 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
         )}
       </View>
 
-      {result && (
-        <Text style={[styles.resultText, { color: result === 'correct' ? '#22C55E' : '#EF4444' }]}>
-          {result === 'correct' ? s.card.correct : s.card.wrong}
-        </Text>
-      )}
+      {/* FB403: minden kártyán ugyanaz a jó / rossz jelzés (szín + alak + ✓/✗ + szöveg). */}
+      {result && <ResultBadge correct={result === 'correct'} label={result === 'correct' ? s.card.correct : s.card.wrong} />}
 
       {g.brutal ? (
         !result ? (
@@ -137,7 +135,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
         </Pressable>
       ) : (
         <Pressable
-          style={[styles.checkBtn, { backgroundColor: result === 'correct' ? '#22C55E' : '#EF4444' }]}
+          style={[styles.checkBtn, { backgroundColor: result === 'correct' ? colors.successFill : colors.danger }]}
           onPress={() => onResult(result === 'correct')}
         >
           <Text style={styles.checkBtnText}>{s.card.next} →</Text>
