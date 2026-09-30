@@ -1,4 +1,4 @@
-import { countGraduated, countKnown, KNOWN_THRESHOLD_DAYS } from '../pcicStats';
+import { countGraduated, countKnown, countLearned, KNOWN_THRESHOLD_DAYS } from '../pcicStats';
 import { sm2NewCard, type Sm2Card } from '../sm2';
 
 const review = (id: string, interval: number, known = false): Sm2Card => ({
@@ -51,5 +51,28 @@ describe('countKnown', () => {
   it('empty input gives zero for both counts', () => {
     expect(countKnown([])).toBe(0);
     expect(countGraduated([])).toBe(0);
+  });
+});
+
+// FB406 (PLAN-fb0929 6. lépés): a "Words Known" kártya a tanult szavakat számolja.
+describe('countLearned', () => {
+  const card = (over: Partial<import('../sm2').Sm2Card>) =>
+    ({ itemId: 'x', state: 'new', step: 0, interval: 0, ease: 2.5, due: '2026-09-30', lapses: 0, ...over }) as import('../sm2').Sm2Card;
+
+  it('a tanuló-lépéseken túljutott (review) és a kézzel ismertnek jelölt szó is számít, az új és a tanuló nem', () => {
+    const cards = [
+      card({ itemId: 'a', state: 'review', interval: 1 }),
+      card({ itemId: 'b', state: 'review', interval: 30 }),
+      card({ itemId: 'c', state: 'new', known: true }),
+      card({ itemId: 'd', state: 'learning' }),
+      card({ itemId: 'e', state: 'new' }),
+    ];
+    expect(countLearned(cards)).toBe(3);
+  });
+
+  it('a 21 napos küszöbű countKnown ettől szigorúbb', () => {
+    const cards = [card({ itemId: 'a', state: 'review', interval: 1 }), card({ itemId: 'b', state: 'review', interval: 30 })];
+    expect(countKnown(cards)).toBe(1);
+    expect(countLearned(cards)).toBe(2);
   });
 });

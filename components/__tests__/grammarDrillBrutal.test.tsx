@@ -3,7 +3,7 @@
 // helyes = a kitöltés + pipa, b kitöltésű visszajelző, "next →" gomb.
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
-import { act, fireEvent, render, screen } from '@testing-library/react-native';
+import { act, fireEvent, render, screen, within } from '@testing-library/react-native';
 import { StyleSheet, View } from 'react-native';
 
 import GrammarDrill from '../grammar/GrammarDrill';
@@ -54,7 +54,8 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     const options = screen.getAllByTestId('grammar-option');
     expect(StyleSheet.flatten(options[items[0].correctIndex].props.style).backgroundColor).toBe(PALETTE_FILLS.brand.a);
     expect(screen.queryByText('perfect!')).toBeTruthy();
-    expect(screen.queryByText(' ✓')).toBeTruthy();
+    // FB403: a közös jó-jelzés (ResultBadge) is ✓-t mutat, ezért a helyes opción belül keressük.
+    expect(within(options[items[0].correctIndex]).queryByText(' ✓')).toBeTruthy();
     expect(screen.queryByTestId('grammar-combo')).toBeNull();
     fireEvent.press(screen.getByTestId('grammar-next'));
 
@@ -139,7 +140,8 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     expect(dashedCount()).toBe(0);
     fireEvent.press(screen.getByTestId('formCheck'));
     expect(screen.queryByText('Not quite!')).toBeTruthy();
-    expect(dashedCount()).toBe(1);
+    // a beviteli doboz + a szaggatott keretű ✗ jelzés (FB403: a rossz válasz alakja is más)
+    expect(dashedCount()).toBe(2);
     fireEvent.press(screen.getByTestId('grammar-next'));
     expect(onFinish).not.toHaveBeenCalled();
     expect(screen.queryByTestId('formCheck')).toBeTruthy();
@@ -184,7 +186,8 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     fireEvent.changeText(screen.getByTestId('transform-input'), 'nope');
     expect(dashedCount()).toBe(0);
     fireEvent.press(screen.getByTestId('transform-check'));
-    expect(dashedCount()).toBe(1);
+    // a beviteli doboz + a szaggatott keretű ✗ jelzés (FB403)
+    expect(dashedCount()).toBe(2);
     expect(screen.queryByText('Correct answer')).toBeTruthy();
     expect(StyleSheet.flatten(screen.getByTestId('transform-next').props.style).backgroundColor).toBe('#111111');
     fireEvent.press(screen.getByTestId('transform-next'));

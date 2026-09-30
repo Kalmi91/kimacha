@@ -35,6 +35,7 @@ import LessonBody from '@/components/grammar/LessonBody';
 import MoreBlocks from '@/components/grammar/MoreBlocks';
 import { BrutalBox, SegmentBar, Sticker, inkButtonText, segmentsFilled, textOnFill } from '@/components/grammar/Brutal';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
+import ResultBadge from '@/components/ResultBadge';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 
 // The "which one is right, and why" drill, shared by the grammar course
@@ -93,12 +94,18 @@ const secondsSince = (startedAt: number) => Math.max(0, Math.round((Date.now() -
 
 // NY22: a nem-választós fajták közös brutalista elemei: b kitöltésű visszajelző
 // doboz (nagybetűs cím + egy mondat) és az ink kitöltésű gomb.
-function BrutalFeedback({ g, title, children }: { g: GrammarColors; title: string; children?: React.ReactNode }) {
+// FB403 (PLAN-fb0929 6. lépés): a jó / rossz jelzés a közös ResultBadge (szín + alak + ✓/✗ + szöveg),
+// a doboz fölött; a b kitöltésű doboz csak a magyarázatot hordozza (ha van).
+function BrutalFeedback({ g, title, correct, children }: { g: GrammarColors; title: string; correct: boolean; children?: React.ReactNode }) {
   return (
-    <BrutalBox fill="b" boxStyle={styles.brutalFeedback}>
-      <Text style={[styles.brutalFeedbackHead, { color: g.onFill }]}>{title}</Text>
-      {children}
-    </BrutalBox>
+    <>
+      <ResultBadge correct={correct} label={title} />
+      {children ? (
+        <BrutalBox fill="b" boxStyle={styles.brutalFeedback}>
+          {children}
+        </BrutalBox>
+      ) : null}
+    </>
   );
 }
 
@@ -225,7 +232,7 @@ function MatchDrillItem({
         </View>
         {done ? (
           <>
-            <BrutalFeedback g={g} title={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} />
+            <BrutalFeedback g={g} correct={!hadWrong} title={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} />
             <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(!hadWrong, item.pairs.length - errLefts.size)} />
           </>
         ) : null}
@@ -279,9 +286,7 @@ function MatchDrillItem({
       </View>
       {done ? (
         <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
-          <Text style={[styles.explainHeader, { color: hadWrong ? '#EF4444' : '#22C55E' }]}>
-            {hadWrong ? s.games.wrongFeedback : s.games.correctFeedback}
-          </Text>
+          <ResultBadge correct={!hadWrong} label={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} />
           <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(!hadWrong, item.pairs.length - errLefts.size)}>
             <Text style={styles.btnText}>{s.games.understood}</Text>
           </Pressable>
@@ -366,7 +371,7 @@ function FormDrillItem({
           <BrutalInkButton g={g} testID="formCheck" label={s.grammar.check} onPress={check} />
         ) : (
           <>
-            <BrutalFeedback g={g} title={correct ? s.games.correctFeedback : s.games.wrongFeedback}>
+            <BrutalFeedback g={g} correct={correct} title={correct ? s.games.correctFeedback : s.games.wrongFeedback}>
               {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} onFill /> : null}
             </BrutalFeedback>
             <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(correct)} />
@@ -409,9 +414,7 @@ function FormDrillItem({
         </Pressable>
       ) : (
         <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
-          <Text style={[styles.explainHeader, { color: correct ? '#22C55E' : '#EF4444' }]}>
-            {correct ? s.games.correctFeedback : s.games.wrongFeedback}
-          </Text>
+          <ResultBadge correct={correct} label={correct ? s.games.correctFeedback : s.games.wrongFeedback} />
           {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} /> : null}
           <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(correct)}>
             <Text style={styles.btnText}>{s.games.understood}</Text>
@@ -526,7 +529,7 @@ function WhyDrillItem({
 
         {answered ? (
           <>
-            <BrutalFeedback g={g} title={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback}>
+            <BrutalFeedback g={g} correct={isCorrect} title={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback}>
               {!isCorrect ? (
                 <Text style={[styles.explainText, { color: g.onFill }]}>
                   {item.options[selected].wrong?.[contentLang] ?? item.options[selected].wrong?.en ?? ''}
@@ -612,9 +615,7 @@ function WhyDrillItem({
 
       {answered ? (
         <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
-          <Text style={[styles.explainHeader, { color: isCorrect ? '#22C55E' : '#EF4444' }]}>
-            {isCorrect ? s.games.correctFeedback : s.games.wrongFeedback}
-          </Text>
+          <ResultBadge correct={isCorrect} label={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback} />
           {!isCorrect ? (
             <Text style={[styles.explainText, { color: colors.text }]}>
               {item.options[selected].wrong?.[contentLang] ?? item.options[selected].wrong?.en ?? ''}
@@ -722,7 +723,7 @@ function TransformDrillItem({
           <BrutalInkButton g={g} testID="transform-check" label={s.grammar.check} onPress={check} />
         ) : (
           <>
-            <BrutalFeedback g={g} title={result === 'ok' ? s.grammar.correct : s.grammar.correctAnswer}>
+            <BrutalFeedback g={g} correct={result === 'ok'} title={result === 'ok' ? s.grammar.correct : s.grammar.correctAnswer}>
               {result === 'bad' ? (
                 <Text style={[styles.brutalAnswer, { backgroundColor: g.a, color: g.onFill }]}> {item.answer} </Text>
               ) : null}
@@ -787,12 +788,12 @@ function TransformDrillItem({
         >
           {result === 'ok' ? (
             <>
-              <Text style={[styles.explainHeader, { color: '#22C55E' }]}>{s.grammar.correct}</Text>
+              <ResultBadge correct label={s.grammar.correct} />
               <Text style={[styles.explainText, { color: colors.text }]}>{item.why[contentLang] ?? item.why.en}</Text>
             </>
           ) : (
             <>
-              <Text style={[styles.explainHeader, { color: '#EF4444' }]}>{s.grammar.correctAnswer}</Text>
+              <ResultBadge correct={false} label={s.grammar.correctAnswer} />
               <Text style={[styles.transformAnswer, { color: colors.text }]}>{item.answer}</Text>
               <Text style={[styles.explainText, { color: colors.text }]}>{item.why[contentLang] ?? item.why.en}</Text>
             </>
@@ -1119,10 +1120,9 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
         </View>
 
         {answered ? (
+          <>
+          <ResultBadge correct={isCorrect} label={isCorrect ? s.grammar.perfect : s.games.wrongFeedback} />
           <BrutalBox fill="b" boxStyle={styles.brutalFeedback}>
-            <Text style={[styles.brutalFeedbackHead, { color: g.onFill }]}>
-              {isCorrect ? s.grammar.perfect : s.games.wrongFeedback}
-            </Text>
             <Text style={[styles.explainText, { color: g.onFill }]}>{current.item.why[contentLang] ?? current.item.why.en}</Text>
             {!isCorrect && pickedText !== undefined ? (
               <Text style={[styles.explainText, { color: g.onFill }]}>
@@ -1154,6 +1154,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
               </View>
             ) : null}
           </BrutalBox>
+          </>
         ) : null}
         {answered ? (
           <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.brutalNext} onPress={next}>
@@ -1243,9 +1244,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
 
       {answered ? (
         <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
-          <Text style={[styles.explainHeader, { color: isCorrect ? '#22C55E' : '#EF4444' }]}>
-            {isCorrect ? s.games.correctFeedback : s.games.wrongFeedback}
-          </Text>
+          <ResultBadge correct={isCorrect} label={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback} />
           <Text style={[styles.explainText, { color: colors.text }]}>{current.item.why[contentLang] ?? current.item.why.en}</Text>
           {!isCorrect && pickedText !== undefined ? (
             <Text style={[styles.explainText, { color: colors.tabIconDefault }]}>
