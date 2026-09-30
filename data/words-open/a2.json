@@ -23,10 +23,10 @@
     "hu": "ugyanaz, ugyanolyan",
     "en": "same",
     "de": "gleich, derselbe",
-    "sentence_es": "Tenemos el mismo problema.",
-    "sentence_hu": "Teníamos{tener} el{el} mismo problema.",
-    "sentence_en": "Ugyanaz a problémánk volt.",
-    "sentence_de": "We had the same problem.",
+    "sentence_es": "Teníamos el mismo problema.",
+    "sentence_hu": "Ugyanaz a problémánk volt.",
+    "sentence_en": "We had the same problem.",
+    "sentence_de": "Wir hatten dasselbe Problem.",
     "sentence_lemmas": ["tener", "el", "mismo", "problema"]
   },
   {
@@ -233,11 +233,11 @@
     "hu": "amikor, ha",
     "en": "when",
     "de": "wenn, als",
-    "sentence_es": "Cuando tengo hambre, como pan.",
-    "sentence_hu": "Cuando llegó{llegar} mi padre, comimos{comer}.",
-    "sentence_en": "Amikor apám megérkezett, ettünk.",
-    "sentence_de": "When my father arrived, we ate.",
-    "sentence_lemmas": ["cuando", "tener", "hambre", "comer", "pan"]
+    "sentence_es": "Cuando llegó mi padre, comimos.",
+    "sentence_hu": "Amikor apám megérkezett, ettünk.",
+    "sentence_en": "When my father arrived, we ate.",
+    "sentence_de": "Als mein Vater ankam, haben wir gegessen.",
+    "sentence_lemmas": ["cuando", "llegar", "mi", "padre", "comer"]
   },
   {
     "order": 167,
@@ -248,11 +248,11 @@
     "hu": "amíg, miközben",
     "en": "while",
     "de": "während",
-    "sentence_es": "Leo un libro mientras mi padre trabaja.",
-    "sentence_hu": "Mi madre hablaba{hablar} mientras mi padre comía{comer}.",
-    "sentence_en": "Anyám beszélt, miközben apám evett.",
-    "sentence_de": "My mother was talking while my father was eating.",
-    "sentence_lemmas": ["leer", "un", "libro", "mientras", "mi", "padre", "trabajar"]
+    "sentence_es": "Mi madre hablaba mientras mi padre comía.",
+    "sentence_hu": "Anyám beszélt, miközben apám evett.",
+    "sentence_en": "My mother was talking while my father was eating.",
+    "sentence_de": "Meine Mutter sprach, während mein Vater aß.",
+    "sentence_lemmas": ["mi", "madre", "hablar", "mientras", "mi", "padre", "comer"]
   },
   {
     "order": 168,
@@ -263,11 +263,11 @@
     "hu": "akkor, tehát",
     "en": "then, so",
     "de": "dann, also",
-    "sentence_es": "Tengo hambre, entonces como algo.",
-    "sentence_hu": "Tenía{tener} hambre, entonces comí{comer} pan.",
-    "sentence_en": "Éhes voltam, ezért kenyeret ettem.",
-    "sentence_de": "I was hungry, so I ate bread.",
-    "sentence_lemmas": ["tener", "hambre", "entonces", "comer", "algo"]
+    "sentence_es": "Tenía hambre, entonces comí pan.",
+    "sentence_hu": "Éhes voltam, ezért kenyeret ettem.",
+    "sentence_en": "I was hungry, so I ate bread.",
+    "sentence_de": "Ich hatte Hunger, also habe ich Brot gegessen.",
+    "sentence_lemmas": ["tener", "hambre", "entonces", "comer", "pan"]
   },
   {
     "order": 169,
@@ -293,10 +293,10 @@
     "hu": "utána, azután",
     "en": "afterwards, after",
     "de": "danach, nach",
-    "sentence_es": "Después de comer voy a casa.",
-    "sentence_hu": "Después de comer fui{ir} a casa.",
-    "sentence_en": "Evés után hazamentem.",
-    "sentence_de": "After eating I went home.",
+    "sentence_es": "Después de comer fui a casa.",
+    "sentence_hu": "Evés után hazamentem.",
+    "sentence_en": "After eating I went home.",
+    "sentence_de": "Nach dem Essen bin ich nach Hause gegangen.",
     "sentence_lemmas": ["después", "de", "comer", "ir", "a", "casa"]
   },
   {
@@ -353,11 +353,11 @@
     "hu": "későn",
     "en": "late",
     "de": "spät",
-    "sentence_es": "Mi padre siempre llega tarde.",
-    "sentence_hu": "Mi padre llegó{llegar} tarde ayer.",
-    "sentence_en": "Apám későn érkezett tegnap.",
-    "sentence_de": "My father arrived late yesterday.",
-    "sentence_lemmas": ["mi", "padre", "siempre", "llegar", "tarde"]
+    "sentence_es": "Mi padre llegó tarde ayer.",
+    "sentence_hu": "Apám későn érkezett tegnap.",
+    "sentence_en": "My father arrived late yesterday.",
+    "sentence_de": "Mein Vater ist gestern spät angekommen.",
+    "sentence_lemmas": ["mi", "padre", "llegar", "tarde", "ayer"]
   },
   {
     "order": 175,
@@ -398,11 +398,11 @@
     "hu": "majdnem, szinte",
     "en": "almost",
     "de": "fast",
-    "sentence_es": "Casi no tengo dinero.",
-    "sentence_hu": "Casi no he{haber} comido{comer} hoy.",
-    "sentence_en": "Ma szinte nem ettem.",
-    "sentence_de": "I have hardly eaten today.",
-    "sentence_lemmas": ["casi", "no", "tener", "dinero"]
+    "sentence_es": "Casi no he comido hoy.",
+    "sentence_hu": "Ma szinte nem ettem.",
+    "sentence_en": "I have hardly eaten today.",
+    "sentence_de": "Ich habe heute fast nichts gegessen.",
+    "sentence_lemmas": ["casi", "no", "haber", "comer", "hoy"]
   },
   {
     "order": 178,
@@ -458,11 +458,11 @@
     "hu": "messze",
     "en": "far",
     "de": "weit",
-    "sentence_es": "La ciudad está lejos de aquí.",
-    "sentence_hu": "Mi escuela estaba{estar} lejos de mi casa.",
-    "sentence_en": "Az iskolám messze volt a házamtól.",
-    "sentence_de": "My school was far from my house.",
-    "sentence_lemmas": ["el", "ciudad", "estar", "lejos", "de", "aquí"]
+    "sentence_es": "Mi escuela estaba lejos de mi casa.",
+    "sentence_hu": "Az iskolám messze volt a házamtól.",
+    "sentence_en": "My school was far from my house.",
+    "sentence_de": "Meine Schule war weit von meinem Haus entfernt.",
+    "sentence_lemmas": ["mi", "escuela", "estar", "lejos", "de", "mi", "casa"]
   },
   {
     "order": 182,
@@ -488,11 +488,11 @@
     "hu": "-ig; egészen",
     "en": "until, up to",
     "de": "bis",
-    "sentence_es": "Trabajo hasta las cinco.",
-    "sentence_hu": "Ayer trabajé{trabajar} hasta las{el} cinco.",
-    "sentence_en": "Tegnap ötig dolgoztam.",
-    "sentence_de": "Yesterday I worked until five o'clock.",
-    "sentence_lemmas": ["trabajar", "hasta", "el", "cinco"]
+    "sentence_es": "Ayer trabajé hasta las cinco.",
+    "sentence_hu": "Tegnap ötig dolgoztam.",
+    "sentence_en": "Yesterday I worked until five o'clock.",
+    "sentence_de": "Gestern habe ich bis fünf Uhr gearbeitet.",
+    "sentence_lemmas": ["ayer", "trabajar", "hasta", "el", "cinco"]
   },
   {
     "order": 184,
@@ -503,11 +503,11 @@
     "hu": "óta; -tól, -től",
     "en": "since, from",
     "de": "seit, von ... an",
-    "sentence_es": "Espero aquí desde las cinco.",
-    "sentence_hu": "He{haber} esperado{esperar} aquí desde las{el} cinco.",
+    "sentence_es": "He esperado aquí desde las cinco.",
+    "sentence_hu": "Öt óra óta várok itt.",
     "sentence_en": "I have been waiting here since five.",
     "sentence_de": "Ich warte hier seit fünf Uhr.",
-    "sentence_lemmas": ["esperar", "aquí", "desde", "el", "cinco"]
+    "sentence_lemmas": ["haber", "esperar", "aquí", "desde", "el", "cinco"]
   },
   {
     "order": 185,
@@ -623,11 +623,11 @@
     "hu": "hét (szám)",
     "en": "seven",
     "de": "sieben",
-    "sentence_es": "Trabajo siete horas cada día.",
-    "sentence_hu": "Ayer trabajé{trabajar} siete horas{hora}.",
-    "sentence_en": "Tegnap hét órát dolgoztam.",
-    "sentence_de": "Yesterday I worked seven hours.",
-    "sentence_lemmas": ["trabajar", "siete", "hora", "cada", "día"]
+    "sentence_es": "Ayer trabajé siete horas.",
+    "sentence_hu": "Tegnap hét órát dolgoztam.",
+    "sentence_en": "Yesterday I worked seven hours.",
+    "sentence_de": "Gestern habe ich sieben Stunden gearbeitet.",
+    "sentence_lemmas": ["ayer", "trabajar", "siete", "hora"]
   },
   {
     "order": 193,
@@ -653,10 +653,10 @@
     "hu": "kilenc",
     "en": "nine",
     "de": "neun",
-    "sentence_es": "Hay nueve personas en la casa.",
-    "sentence_hu": "Había{haber} nueve personas{persona} en la{el} casa.",
-    "sentence_en": "Kilenc ember volt a házban.",
-    "sentence_de": "There were nine people in the house.",
+    "sentence_es": "Había nueve personas en la casa.",
+    "sentence_hu": "Kilenc ember volt a házban.",
+    "sentence_en": "There were nine people in the house.",
+    "sentence_de": "Im Haus waren neun Personen.",
     "sentence_lemmas": ["haber", "nueve", "persona", "en", "el", "casa"]
   },
   {
@@ -713,11 +713,11 @@
     "hu": "tenni, helyezni",
     "en": "to put, to place",
     "de": "legen, stellen, setzen",
-    "sentence_es": "Pongo el libro sobre la mesa.",
-    "sentence_hu": "Ayer puse{poner} el{el} libro sobre la{el} mesa.",
-    "sentence_en": "Tegnap az asztalra tettem a könyvet.",
-    "sentence_de": "Yesterday I put the book on the table.",
-    "sentence_lemmas": ["poner", "el", "libro", "sobre", "el", "mesa"]
+    "sentence_es": "Ayer puse el libro sobre la mesa.",
+    "sentence_hu": "Tegnap az asztalra tettem a könyvet.",
+    "sentence_en": "Yesterday I put the book on the table.",
+    "sentence_de": "Gestern habe ich das Buch auf den Tisch gelegt.",
+    "sentence_lemmas": ["ayer", "poner", "el", "libro", "sobre", "el", "mesa"]
   },
   {
     "order": 199,
@@ -743,11 +743,11 @@
     "hu": "belépni, bemenni",
     "en": "to enter, to go in",
     "de": "eintreten, hineingehen",
-    "sentence_es": "Entro en la tienda.",
-    "sentence_hu": "Ayer entré{entrar} en la{el} tienda.",
-    "sentence_en": "Tegnap beléptem a boltba.",
-    "sentence_de": "Yesterday I went into the store.",
-    "sentence_lemmas": ["entrar", "en", "el", "tienda"]
+    "sentence_es": "Ayer entré en la tienda.",
+    "sentence_hu": "Tegnap beléptem a boltba.",
+    "sentence_en": "Yesterday I went into the store.",
+    "sentence_de": "Gestern bin ich in den Laden gegangen.",
+    "sentence_lemmas": ["ayer", "entrar", "en", "el", "tienda"]
   },
   {
     "order": 201,
@@ -773,11 +773,11 @@
     "hu": "vinni; viselni",
     "en": "to carry, to take; to wear",
     "de": "tragen, bringen; anhaben",
-    "sentence_es": "Llevo pan a mi madre.",
-    "sentence_hu": "Ayer llevé{llevar} pan a mi madre.",
-    "sentence_en": "Tegnap kenyeret vittem az anyámnak.",
-    "sentence_de": "Yesterday I took bread to my mother.",
-    "sentence_lemmas": ["llevar", "pan", "a", "mi", "madre"]
+    "sentence_es": "Ayer llevé pan a mi madre.",
+    "sentence_hu": "Tegnap kenyeret vittem az anyámnak.",
+    "sentence_en": "Yesterday I took bread to my mother.",
+    "sentence_de": "Gestern habe ich meiner Mutter Brot gebracht.",
+    "sentence_lemmas": ["ayer", "llevar", "pan", "a", "mi", "madre"]
   },
   {
     "order": 203,
@@ -833,11 +833,11 @@
     "hu": "keresni",
     "en": "to look for, to search",
     "de": "suchen",
-    "sentence_es": "Busco mi teléfono en la casa.",
-    "sentence_hu": "Ayer busqué{buscar} mi teléfono en la{el} casa.",
-    "sentence_en": "Tegnap a telefonomat kerestem a házban.",
-    "sentence_de": "Yesterday I looked for my phone in the house.",
-    "sentence_lemmas": ["buscar", "mi", "teléfono", "en", "el", "casa"]
+    "sentence_es": "Ayer busqué mi teléfono en la casa.",
+    "sentence_hu": "Tegnap a telefonomat kerestem a házban.",
+    "sentence_en": "Yesterday I looked for my phone in the house.",
+    "sentence_de": "Gestern habe ich mein Telefon im Haus gesucht.",
+    "sentence_lemmas": ["ayer", "buscar", "mi", "teléfono", "en", "el", "casa"]
   },
   {
     "order": 207,
@@ -863,10 +863,10 @@
     "hu": "nézni",
     "en": "to look at, to watch",
     "de": "ansehen, anschauen",
-    "sentence_es": "Mi madre mira a los niños.",
-    "sentence_hu": "Mi madre miraba{mirar} a los{el} niños{niño}.",
-    "sentence_en": "Anyám a gyerekeket nézte.",
-    "sentence_de": "My mother was looking at the children.",
+    "sentence_es": "Mi madre miraba a los niños.",
+    "sentence_hu": "Anyám a gyerekeket nézte.",
+    "sentence_en": "My mother was looking at the children.",
+    "sentence_de": "Meine Mutter schaute die Kinder an.",
     "sentence_lemmas": ["mi", "madre", "mirar", "a", "el", "niño"]
   },
   {
@@ -878,10 +878,10 @@
     "hu": "hallgatni",
     "en": "to listen",
     "de": "zuhören, hören",
-    "sentence_es": "Mi hijo escucha a su padre.",
-    "sentence_hu": "Mi hijo escuchó{escuchar} a su padre.",
-    "sentence_en": "A fiam meghallgatta az apját.",
-    "sentence_de": "My son listened to his father.",
+    "sentence_es": "Mi hijo escuchó a su padre.",
+    "sentence_hu": "A fiam meghallgatta az apját.",
+    "sentence_en": "My son listened to his father.",
+    "sentence_de": "Mein Sohn hat auf seinen Vater gehört.",
     "sentence_lemmas": ["mi", "hijo", "escuchar", "a", "su", "padre"]
   },
   {
@@ -1013,11 +1013,11 @@
     "hu": "kezdeni",
     "en": "to begin, to start",
     "de": "anfangen, beginnen",
-    "sentence_es": "Empiezo a trabajar a las ocho.",
-    "sentence_hu": "Ayer empecé{empezar} a trabajar a las{el} ocho.",
-    "sentence_en": "Tegnap nyolckor kezdtem dolgozni.",
-    "sentence_de": "Yesterday I started working at eight.",
-    "sentence_lemmas": ["empezar", "a", "trabajar", "a", "el", "ocho"]
+    "sentence_es": "Ayer empecé a trabajar a las ocho.",
+    "sentence_hu": "Tegnap nyolckor kezdtem dolgozni.",
+    "sentence_en": "Yesterday I started working at eight.",
+    "sentence_de": "Gestern habe ich um acht Uhr angefangen zu arbeiten.",
+    "sentence_lemmas": ["ayer", "empezar", "a", "trabajar", "a", "el", "ocho"]
   },
   {
     "order": 219,
@@ -1103,11 +1103,11 @@
     "hu": "kérdezni",
     "en": "to ask (a question)",
     "de": "fragen",
-    "sentence_es": "Pregunto la hora a mi amigo.",
-    "sentence_hu": "Ayer pregunté{preguntar} la{el} hora a mi amigo.",
-    "sentence_en": "Tegnap megkérdeztem a barátomat, mennyi az idő.",
-    "sentence_de": "Yesterday I asked my friend the time.",
-    "sentence_lemmas": ["preguntar", "el", "hora", "a", "mi", "amigo"]
+    "sentence_es": "Ayer pregunté la hora a mi amigo.",
+    "sentence_hu": "Tegnap megkérdeztem a barátomat, mennyi az idő.",
+    "sentence_en": "Yesterday I asked my friend the time.",
+    "sentence_de": "Gestern habe ich meinen Freund nach der Uhrzeit gefragt.",
+    "sentence_lemmas": ["ayer", "preguntar", "el", "hora", "a", "mi", "amigo"]
   },
   {
     "order": 225,
@@ -1118,11 +1118,11 @@
     "hu": "válaszolni",
     "en": "to answer, to reply",
     "de": "antworten",
-    "sentence_es": "Respondo a mi madre con un sí.",
-    "sentence_hu": "Ayer respondí{responder} a mi madre con un{un} sí.",
-    "sentence_en": "Tegnap igennel válaszoltam anyámnak.",
-    "sentence_de": "Yesterday I answered my mother with a yes.",
-    "sentence_lemmas": ["responder", "a", "mi", "madre", "con", "un", "sí"]
+    "sentence_es": "Ayer respondí a mi madre con un sí.",
+    "sentence_hu": "Tegnap igennel válaszoltam anyámnak.",
+    "sentence_en": "Yesterday I answered my mother with a yes.",
+    "sentence_de": "Gestern habe ich meiner Mutter mit Ja geantwortet.",
+    "sentence_lemmas": ["ayer", "responder", "a", "mi", "madre", "con", "un", "sí"]
   },
   {
     "order": 226,
@@ -1163,10 +1163,10 @@
     "hu": "énekelni",
     "en": "to sing",
     "de": "singen",
-    "sentence_es": "Mi madre canta en casa.",
-    "sentence_hu": "Mi madre cantaba{cantar} en casa.",
-    "sentence_en": "Anyám otthon szokott énekelni.",
-    "sentence_de": "My mother used to sing at home.",
+    "sentence_es": "Mi madre cantaba en casa.",
+    "sentence_hu": "Anyám otthon szokott énekelni.",
+    "sentence_en": "My mother used to sing at home.",
+    "sentence_de": "Meine Mutter hat früher zu Hause gesungen.",
     "sentence_lemmas": ["mi", "madre", "cantar", "en", "casa"]
   },
   {
@@ -1178,11 +1178,11 @@
     "hu": "gyalogolni, sétálni",
     "en": "to walk",
     "de": "gehen, spazieren",
-    "sentence_es": "Camino a la escuela con mi hijo.",
-    "sentence_hu": "Ayer caminé{caminar} a la{el} escuela con mi hijo.",
-    "sentence_en": "Tegnap a fiammal gyalog mentem az iskolába.",
-    "sentence_de": "Yesterday I walked to school with my son.",
-    "sentence_lemmas": ["caminar", "a", "el", "escuela", "con", "mi", "hijo"]
+    "sentence_es": "Ayer caminé a la escuela con mi hijo.",
+    "sentence_hu": "Tegnap a fiammal gyalog mentem az iskolába.",
+    "sentence_en": "Yesterday I walked to school with my son.",
+    "sentence_de": "Gestern bin ich mit meinem Sohn zu Fuß zur Schule gegangen.",
+    "sentence_lemmas": ["ayer", "caminar", "a", "el", "escuela", "con", "mi", "hijo"]
   },
   {
     "order": 230,
@@ -1208,11 +1208,11 @@
     "hu": "használni",
     "en": "to use",
     "de": "benutzen, verwenden",
-    "sentence_es": "Uso mi teléfono cada día.",
-    "sentence_hu": "Ayer usé{usar} mi teléfono todo el{el} día.",
-    "sentence_en": "Tegnap egész nap a telefonomat használtam.",
-    "sentence_de": "Yesterday I used my phone all day.",
-    "sentence_lemmas": ["usar", "mi", "teléfono", "cada", "día"]
+    "sentence_es": "Ayer usé mi teléfono todo el día.",
+    "sentence_hu": "Tegnap egész nap a telefonomat használtam.",
+    "sentence_en": "Yesterday I used my phone all day.",
+    "sentence_de": "Gestern habe ich den ganzen Tag mein Telefon benutzt.",
+    "sentence_lemmas": ["ayer", "usar", "mi", "teléfono", "todo", "el", "día"]
   },
   {
     "order": 232,
@@ -1298,10 +1298,10 @@
     "hu": "tűnni, látszani",
     "en": "to seem, to look like",
     "de": "scheinen, aussehen",
-    "sentence_es": "La casa parece muy grande.",
-    "sentence_hu": "La{el} casa parecía{parecer} muy grande.",
-    "sentence_en": "A ház nagyon nagynak tűnt.",
-    "sentence_de": "The house looked very big.",
+    "sentence_es": "La casa parecía muy grande.",
+    "sentence_hu": "A ház nagyon nagynak tűnt.",
+    "sentence_en": "The house looked very big.",
+    "sentence_de": "Das Haus sah sehr groß aus.",
     "sentence_lemmas": ["el", "casa", "parecer", "muy", "grande"]
   },
   {
@@ -1343,11 +1343,11 @@
     "hu": "emberek, nép",
     "en": "people",
     "de": "Leute, Menschen",
-    "sentence_es": "Hay mucha gente en la calle.",
-    "sentence_hu": "Ayer había{haber} mucha{mucho} gente en la{el} calle.",
-    "sentence_en": "Tegnap sok ember volt az utcán.",
-    "sentence_de": "Yesterday there were many people on the street.",
-    "sentence_lemmas": ["haber", "mucho", "gente", "en", "el", "calle"]
+    "sentence_es": "Ayer había mucha gente en la calle.",
+    "sentence_hu": "Tegnap sok ember volt az utcán.",
+    "sentence_en": "Yesterday there were many people on the street.",
+    "sentence_de": "Gestern waren viele Leute auf der Straße.",
+    "sentence_lemmas": ["ayer", "haber", "mucho", "gente", "en", "el", "calle"]
   },
   {
     "order": 241,
@@ -1403,11 +1403,11 @@
     "hu": "orvos",
     "en": "doctor",
     "de": "Arzt",
-    "sentence_es": "Mi padre es médico.",
-    "sentence_hu": "Ayer fui{ir} al{a} médico.",
-    "sentence_en": "Tegnap orvoshoz mentem.",
-    "sentence_de": "Yesterday I went to the doctor.",
-    "sentence_lemmas": ["mi", "padre", "ser", "médico"]
+    "sentence_es": "Ayer fui al médico.",
+    "sentence_hu": "Tegnap orvoshoz mentem.",
+    "sentence_en": "Yesterday I went to the doctor.",
+    "sentence_de": "Gestern bin ich zum Arzt gegangen.",
+    "sentence_lemmas": ["ayer", "ir", "a", "médico"]
   },
   {
     "order": 245,
@@ -1433,11 +1433,11 @@
     "hu": "óra, osztály",
     "en": "class, lesson",
     "de": "Unterricht, Klasse",
-    "sentence_es": "Tengo clase a las ocho.",
-    "sentence_hu": "Ayer tuve{tener} clase a las{el} ocho.",
-    "sentence_en": "Tegnap nyolckor órám volt.",
-    "sentence_de": "Yesterday I had class at eight.",
-    "sentence_lemmas": ["tener", "clase", "a", "el", "ocho"]
+    "sentence_es": "Ayer tuve clase a las ocho.",
+    "sentence_hu": "Tegnap nyolckor órám volt.",
+    "sentence_en": "Yesterday I had class at eight.",
+    "sentence_de": "Gestern hatte ich um acht Uhr Unterricht.",
+    "sentence_lemmas": ["ayer", "tener", "clase", "a", "el", "ocho"]
   },
   {
     "order": 247,
@@ -1448,11 +1448,11 @@
     "hu": "kérdés",
     "en": "question",
     "de": "Frage",
-    "sentence_es": "Tengo una pregunta para usted.",
-    "sentence_hu": "Ayer hice{hacer} una{un} pregunta a mi profesor.",
-    "sentence_en": "Tegnap kérdést tettem fel a tanáromnak.",
-    "sentence_de": "Yesterday I asked my teacher a question.",
-    "sentence_lemmas": ["tener", "un", "pregunta", "para", "usted"]
+    "sentence_es": "Ayer hice una pregunta a mi profesor.",
+    "sentence_hu": "Tegnap kérdést tettem fel a tanáromnak.",
+    "sentence_en": "Yesterday I asked my teacher a question.",
+    "sentence_de": "Gestern habe ich meinem Lehrer eine Frage gestellt.",
+    "sentence_lemmas": ["ayer", "hacer", "un", "pregunta", "a", "mi", "profesor"]
   },
   {
     "order": 248,
@@ -1478,11 +1478,11 @@
     "hu": "ötlet, gondolat",
     "en": "idea",
     "de": "Idee",
-    "sentence_es": "Es una buena idea.",
-    "sentence_hu": "Mi hermano tuvo{tener} una{un} buena{bueno} idea.",
-    "sentence_en": "A fivéremnek jó ötlete támadt.",
-    "sentence_de": "My brother had a good idea.",
-    "sentence_lemmas": ["ser", "un", "bueno", "idea"]
+    "sentence_es": "Mi hermano tuvo una buena idea.",
+    "sentence_hu": "A fivéremnek jó ötlete támadt.",
+    "sentence_en": "My brother had a good idea.",
+    "sentence_de": "Mein Bruder hatte eine gute Idee.",
+    "sentence_lemmas": ["mi", "hermano", "tener", "un", "bueno", "idea"]
   },
   {
     "order": 250,
@@ -1538,10 +1538,10 @@
     "hu": "hely",
     "en": "place",
     "de": "Ort, Platz",
-    "sentence_es": "Este lugar es muy bonito.",
-    "sentence_hu": "Este lugar era{ser} muy bonito.",
-    "sentence_en": "Ez a hely nagyon szép volt.",
-    "sentence_de": "This place was very pretty.",
+    "sentence_es": "Este lugar era muy bonito.",
+    "sentence_hu": "Ez a hely nagyon szép volt.",
+    "sentence_en": "This place was very pretty.",
+    "sentence_de": "Dieser Ort war sehr schön.",
     "sentence_lemmas": ["este", "lugar", "ser", "muy", "bonito"]
   },
   {
@@ -1553,11 +1553,11 @@
     "hu": "park",
     "en": "park",
     "de": "Park",
-    "sentence_es": "Mi hijo juega en el parque.",
-    "sentence_hu": "Ayer mi hijo jugó{jugar} en el{el} parque.",
-    "sentence_en": "Tegnap a fiam a parkban játszott.",
-    "sentence_de": "Yesterday my son played in the park.",
-    "sentence_lemmas": ["mi", "hijo", "jugar", "en", "el", "parque"]
+    "sentence_es": "Ayer mi hijo jugó en el parque.",
+    "sentence_hu": "Tegnap a fiam a parkban játszott.",
+    "sentence_en": "Yesterday my son played in the park.",
+    "sentence_de": "Gestern hat mein Sohn im Park gespielt.",
+    "sentence_lemmas": ["ayer", "mi", "hijo", "jugar", "en", "el", "parque"]
   },
   {
     "order": 255,
@@ -1568,10 +1568,10 @@
     "hu": "szálloda",
     "en": "hotel",
     "de": "Hotel",
-    "sentence_es": "El hotel está cerca de mi casa.",
-    "sentence_hu": "El{el} hotel estaba{estar} cerca de mi casa.",
-    "sentence_en": "A szálloda a házam közelében volt.",
-    "sentence_de": "The hotel was near my house.",
+    "sentence_es": "El hotel estaba cerca de mi casa.",
+    "sentence_hu": "A szálloda a házam közelében volt.",
+    "sentence_en": "The hotel was near my house.",
+    "sentence_de": "Das Hotel war in der Nähe meines Hauses.",
     "sentence_lemmas": ["el", "hotel", "estar", "cerca", "de", "mi", "casa"]
   },
   {
@@ -1583,11 +1583,11 @@
     "hu": "étterem",
     "en": "restaurant",
     "de": "Restaurant",
-    "sentence_es": "Comemos en un restaurante hoy.",
-    "sentence_hu": "Ayer comimos{comer} en un{un} restaurante con mi familia.",
-    "sentence_en": "Tegnap étteremben ettünk a családommal.",
-    "sentence_de": "Yesterday we ate at a restaurant with my family.",
-    "sentence_lemmas": ["comer", "en", "un", "restaurante", "hoy"]
+    "sentence_es": "Ayer comimos en un restaurante con mi familia.",
+    "sentence_hu": "Tegnap étteremben ettünk a családommal.",
+    "sentence_en": "Yesterday we ate at a restaurant with my family.",
+    "sentence_de": "Gestern haben wir mit meiner Familie in einem Restaurant gegessen.",
+    "sentence_lemmas": ["ayer", "comer", "en", "un", "restaurante", "con", "mi", "familia"]
   },
   {
     "order": 257,
@@ -1598,11 +1598,11 @@
     "hu": "piac",
     "en": "market",
     "de": "Markt",
-    "sentence_es": "Compro fruta en el mercado.",
-    "sentence_hu": "Ayer compré{comprar} fruta en el{el} mercado.",
-    "sentence_en": "Tegnap gyümölcsöt vettem a piacon.",
-    "sentence_de": "Yesterday I bought fruit at the market.",
-    "sentence_lemmas": ["comprar", "fruta", "en", "el", "mercado"]
+    "sentence_es": "Ayer compré fruta en el mercado.",
+    "sentence_hu": "Tegnap gyümölcsöt vettem a piacon.",
+    "sentence_en": "Yesterday I bought fruit at the market.",
+    "sentence_de": "Gestern habe ich auf dem Markt Obst gekauft.",
+    "sentence_lemmas": ["ayer", "comprar", "fruta", "en", "el", "mercado"]
   },
   {
     "order": 258,
@@ -1613,10 +1613,10 @@
     "hu": "iroda",
     "en": "office",
     "de": "Büro",
-    "sentence_es": "Mi padre trabaja en una oficina.",
-    "sentence_hu": "Mi padre trabajaba{trabajar} en una{un} oficina.",
-    "sentence_en": "Apám régen irodában dolgozott.",
-    "sentence_de": "My father used to work in an office.",
+    "sentence_es": "Mi padre trabajaba en una oficina.",
+    "sentence_hu": "Apám régen irodában dolgozott.",
+    "sentence_en": "My father used to work in an office.",
+    "sentence_de": "Mein Vater hat früher in einem Büro gearbeitet.",
     "sentence_lemmas": ["mi", "padre", "trabajar", "en", "un", "oficina"]
   },
   {
@@ -1643,11 +1643,11 @@
     "hu": "reggeli",
     "en": "breakfast",
     "de": "Frühstück",
-    "sentence_es": "Mi desayuno es pan con café.",
-    "sentence_hu": "Hoy tomé{tomar} el{el} desayuno en casa.",
-    "sentence_en": "Ma otthon reggeliztem.",
-    "sentence_de": "Today I had breakfast at home.",
-    "sentence_lemmas": ["mi", "desayuno", "ser", "pan", "con", "café"]
+    "sentence_es": "Hoy tomé el desayuno en casa.",
+    "sentence_hu": "Ma otthon reggeliztem.",
+    "sentence_en": "Today I had breakfast at home.",
+    "sentence_de": "Heute habe ich zu Hause gefrühstückt.",
+    "sentence_lemmas": ["hoy", "tomar", "el", "desayuno", "en", "casa"]
   },
   {
     "order": 261,
@@ -1658,11 +1658,11 @@
     "hu": "vacsora",
     "en": "dinner, supper",
     "de": "Abendessen",
-    "sentence_es": "La cena está en la mesa.",
-    "sentence_hu": "Ayer la{el} cena fue{ser} muy buena{bueno}.",
-    "sentence_en": "Tegnap a vacsora nagyon jó volt.",
-    "sentence_de": "Yesterday dinner was very good.",
-    "sentence_lemmas": ["el", "cena", "estar", "en", "el", "mesa"]
+    "sentence_es": "Ayer la cena fue muy buena.",
+    "sentence_hu": "Tegnap a vacsora nagyon jó volt.",
+    "sentence_en": "Yesterday dinner was very good.",
+    "sentence_de": "Gestern war das Abendessen sehr gut.",
+    "sentence_lemmas": ["ayer", "el", "cena", "ser", "muy", "bueno"]
   },
   {
     "order": 262,
@@ -1748,11 +1748,11 @@
     "hu": "fájdalom",
     "en": "pain, ache",
     "de": "Schmerz",
-    "sentence_es": "Tengo dolor de cabeza.",
-    "sentence_hu": "Ayer tuve{tener} dolor de cabeza.",
-    "sentence_en": "Tegnap fájt a fejem.",
-    "sentence_de": "Yesterday I had a headache.",
-    "sentence_lemmas": ["tener", "dolor", "de", "cabeza"]
+    "sentence_es": "Ayer tuve dolor de cabeza.",
+    "sentence_hu": "Tegnap fájt a fejem.",
+    "sentence_en": "Yesterday I had a headache.",
+    "sentence_de": "Gestern hatte ich Kopfschmerzen.",
+    "sentence_lemmas": ["ayer", "tener", "dolor", "de", "cabeza"]
   },
   {
     "order": 268,
@@ -1763,10 +1763,10 @@
     "hu": "szoba",
     "en": "room, bedroom",
     "de": "Zimmer",
-    "sentence_es": "Mi habitación es pequeña pero bonita.",
-    "sentence_hu": "Mi habitación era{ser} pequeña{pequeño}, pero bonita{bonito}.",
-    "sentence_en": "A szobám kicsi volt, de szép.",
-    "sentence_de": "My room was small, but pretty.",
+    "sentence_es": "Mi habitación era pequeña, pero bonita.",
+    "sentence_hu": "A szobám kicsi volt, de szép.",
+    "sentence_en": "My room was small, but pretty.",
+    "sentence_de": "Mein Zimmer war klein, aber schön.",
     "sentence_lemmas": ["mi", "habitación", "ser", "pequeño", "pero", "bonito"]
   },
   {
@@ -1778,10 +1778,10 @@
     "hu": "konyha",
     "en": "kitchen",
     "de": "Küche",
-    "sentence_es": "Mi madre está en la cocina.",
-    "sentence_hu": "Mi madre estaba{estar} en la{el} cocina.",
-    "sentence_en": "Anyám a konyhában volt.",
-    "sentence_de": "My mother was in the kitchen.",
+    "sentence_es": "Mi madre estaba en la cocina.",
+    "sentence_hu": "Anyám a konyhában volt.",
+    "sentence_en": "My mother was in the kitchen.",
+    "sentence_de": "Meine Mutter war in der Küche.",
     "sentence_lemmas": ["mi", "madre", "estar", "en", "el", "cocina"]
   },
   {
@@ -1793,10 +1793,10 @@
     "hu": "ablak",
     "en": "window",
     "de": "Fenster",
-    "sentence_es": "El gato está en la ventana.",
-    "sentence_hu": "El{el} gato estaba{estar} en la{el} ventana.",
-    "sentence_en": "A macska az ablakban volt.",
-    "sentence_de": "The cat was at the window.",
+    "sentence_es": "El gato estaba en la ventana.",
+    "sentence_hu": "A macska az ablakban volt.",
+    "sentence_en": "The cat was at the window.",
+    "sentence_de": "Die Katze war am Fenster.",
     "sentence_lemmas": ["el", "gato", "estar", "en", "el", "ventana"]
   },
   {
@@ -1808,11 +1808,11 @@
     "hu": "kulcs",
     "en": "key",
     "de": "Schlüssel",
-    "sentence_es": "No encuentro mi llave.",
-    "sentence_hu": "Ayer perdí{perder} mi llave en la{el} calle.",
-    "sentence_en": "Tegnap elvesztettem a kulcsomat az utcán.",
-    "sentence_de": "Yesterday I lost my key on the street.",
-    "sentence_lemmas": ["no", "encontrar", "mi", "llave"]
+    "sentence_es": "Ayer perdí mi llave en la calle.",
+    "sentence_hu": "Tegnap elvesztettem a kulcsomat az utcán.",
+    "sentence_en": "Yesterday I lost my key on the street.",
+    "sentence_de": "Gestern habe ich meinen Schlüssel auf der Straße verloren.",
+    "sentence_lemmas": ["ayer", "perder", "mi", "llave", "en", "el", "calle"]
   },
   {
     "order": 272,
@@ -1853,11 +1853,11 @@
     "hu": "levél",
     "en": "letter",
     "de": "Brief",
-    "sentence_es": "Escribo una carta a mi amigo.",
-    "sentence_hu": "Ayer escribí{escribir} una{un} carta a mi amigo.",
-    "sentence_en": "Tegnap levelet írtam a barátomnak.",
-    "sentence_de": "Yesterday I wrote a letter to my friend.",
-    "sentence_lemmas": ["escribir", "un", "carta", "a", "mi", "amigo"]
+    "sentence_es": "Ayer escribí una carta a mi amigo.",
+    "sentence_hu": "Tegnap levelet írtam a barátomnak.",
+    "sentence_en": "Yesterday I wrote a letter to my friend.",
+    "sentence_de": "Gestern habe ich meinem Freund einen Brief geschrieben.",
+    "sentence_lemmas": ["ayer", "escribir", "un", "carta", "a", "mi", "amigo"]
   },
   {
     "order": 275,
@@ -1868,10 +1868,10 @@
     "hu": "fénykép",
     "en": "photo",
     "de": "Foto",
-    "sentence_es": "Tengo una foto de mi familia.",
-    "sentence_hu": "Tenía{tener} una{un} foto de mi familia.",
-    "sentence_en": "Volt egy fényképem a családomról.",
-    "sentence_de": "I had a photo of my family.",
+    "sentence_es": "Tenía una foto de mi familia.",
+    "sentence_hu": "Volt egy fényképem a családomról.",
+    "sentence_en": "I had a photo of my family.",
+    "sentence_de": "Ich hatte ein Foto von meiner Familie.",
     "sentence_lemmas": ["tener", "un", "foto", "de", "mi", "familia"]
   },
   {
@@ -1898,10 +1898,10 @@
     "hu": "üzenet",
     "en": "message",
     "de": "Nachricht",
-    "sentence_es": "Mi madre me escribe un mensaje.",
-    "sentence_hu": "Mi madre me escribió{escribir} un{un} mensaje.",
-    "sentence_en": "Anyám üzenetet írt nekem.",
-    "sentence_de": "My mother wrote me a message.",
+    "sentence_es": "Mi madre me escribió un mensaje.",
+    "sentence_hu": "Anyám üzenetet írt nekem.",
+    "sentence_en": "My mother wrote me a message.",
+    "sentence_de": "Meine Mutter hat mir eine Nachricht geschrieben.",
     "sentence_lemmas": ["mi", "madre", "me", "escribir", "un", "mensaje"]
   },
   {
@@ -1913,10 +1913,10 @@
     "hu": "ár",
     "en": "price",
     "de": "Preis",
-    "sentence_es": "¿Cuál es el precio del pan?",
-    "sentence_hu": "¿Cuál era{ser} el{el} precio del{de} pan?",
-    "sentence_en": "Mennyi volt a kenyér ára?",
-    "sentence_de": "What was the price of the bread?",
+    "sentence_es": "¿Cuál era el precio del pan?",
+    "sentence_hu": "Mennyi volt a kenyér ára?",
+    "sentence_en": "What was the price of the bread?",
+    "sentence_de": "Wie hoch war der Preis für das Brot?",
     "sentence_lemmas": ["cuál", "ser", "el", "precio", "de", "pan"]
   },
   {
@@ -1988,11 +1988,11 @@
     "hu": "zene",
     "en": "music",
     "de": "Musik",
-    "sentence_es": "Me gusta la música.",
-    "sentence_hu": "Ayer escuché{escuchar} música en casa.",
-    "sentence_en": "Tegnap otthon zenét hallgattam.",
-    "sentence_de": "Yesterday I listened to music at home.",
-    "sentence_lemmas": ["me", "gustar", "el", "música"]
+    "sentence_es": "Ayer escuché música en casa.",
+    "sentence_hu": "Tegnap otthon zenét hallgattam.",
+    "sentence_en": "Yesterday I listened to music at home.",
+    "sentence_de": "Gestern habe ich zu Hause Musik gehört.",
+    "sentence_lemmas": ["ayer", "escuchar", "música", "en", "casa"]
   },
   {
     "order": 284,
@@ -2063,10 +2063,10 @@
     "hu": "fiatal",
     "en": "young",
     "de": "jung",
-    "sentence_es": "Mi madre es muy joven.",
-    "sentence_hu": "Mi madre era{ser} muy joven.",
-    "sentence_en": "Anyám nagyon fiatal volt.",
-    "sentence_de": "My mother was very young.",
+    "sentence_es": "Mi madre era muy joven.",
+    "sentence_hu": "Anyám nagyon fiatal volt.",
+    "sentence_en": "My mother was very young.",
+    "sentence_de": "Meine Mutter war sehr jung.",
     "sentence_lemmas": ["mi", "madre", "ser", "muy", "joven"]
   },
   {
@@ -2093,11 +2093,11 @@
     "hu": "hosszú",
     "en": "long",
     "de": "lang",
-    "sentence_es": "La calle es larga.",
-    "sentence_hu": "El{el} viaje fue{ser} muy largo.",
-    "sentence_en": "Az utazás nagyon hosszú volt.",
-    "sentence_de": "The trip was very long.",
-    "sentence_lemmas": ["el", "calle", "ser", "largo"]
+    "sentence_es": "El viaje fue muy largo.",
+    "sentence_hu": "Az utazás nagyon hosszú volt.",
+    "sentence_en": "The trip was very long.",
+    "sentence_de": "Die Reise war sehr lang.",
+    "sentence_lemmas": ["el", "viaje", "ser", "muy", "largo"]
   },
   {
     "order": 291,
@@ -2108,11 +2108,11 @@
     "hu": "elégedett, boldog",
     "en": "happy, pleased",
     "de": "zufrieden, froh",
-    "sentence_es": "Mi padre está muy contento hoy.",
-    "sentence_hu": "Ayer mi padre estaba{estar} muy contento.",
-    "sentence_en": "Tegnap apám nagyon elégedett volt.",
-    "sentence_de": "Yesterday my father was very happy.",
-    "sentence_lemmas": ["mi", "padre", "estar", "muy", "contento", "hoy"]
+    "sentence_es": "Ayer mi padre estaba muy contento.",
+    "sentence_hu": "Tegnap apám nagyon elégedett volt.",
+    "sentence_en": "Yesterday my father was very happy.",
+    "sentence_de": "Gestern war mein Vater sehr zufrieden.",
+    "sentence_lemmas": ["ayer", "mi", "padre", "estar", "muy", "contento"]
   },
   {
     "order": 292,
@@ -2123,11 +2123,11 @@
     "hu": "szomorú",
     "en": "sad",
     "de": "traurig",
-    "sentence_es": "Mi madre está triste hoy.",
-    "sentence_hu": "Mi madre estuvo{estar} triste ayer.",
-    "sentence_en": "Anyám szomorú volt tegnap.",
-    "sentence_de": "My mother was sad yesterday.",
-    "sentence_lemmas": ["mi", "madre", "estar", "triste", "hoy"]
+    "sentence_es": "Mi madre estuvo triste ayer.",
+    "sentence_hu": "Anyám szomorú volt tegnap.",
+    "sentence_en": "My mother was sad yesterday.",
+    "sentence_de": "Meine Mutter war gestern traurig.",
+    "sentence_lemmas": ["mi", "madre", "estar", "triste", "ayer"]
   },
   {
     "order": 293,
