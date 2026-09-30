@@ -1,0 +1,1021 @@
+{
+  "schema": 2,
+  "topic": "question_words",
+  "level": "A1",
+  "title": {
+    "hu": "Kérdőszavak (what, where, who, when, why, how)",
+    "en": "Question words (what, where, who, when, why, how)",
+    "es": "Palabras interrogativas (what, where, who, when, why, how)",
+    "de": "Fragewörter (what, where, who, when, why, how)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Spanyolul a kérdést hanglejtéssel és a szórenddel jelzed („¿Dónde vives?”). Angolul a kérdőszó után segédige kell: a to be alakja (is, are), a „can”, vagy a „do / does”. A sorrend: KÉRDŐSZÓ + SEGÉDIGE + ALANY + IGE. Nem mondhatod, hogy „Where you live?”, hanem: „Where do you live?”.",
+        "en": "In Spanish you mark a question with intonation and word order (“¿Dónde vives?”). In English a question word is followed by a helper verb: a form of to be (is, are), “can”, or “do / does”. The order is: QUESTION WORD + HELPER + SUBJECT + VERB. You cannot say “Where you live?”; you say “Where do you live?”.",
+        "es": "En español marcas la pregunta con la entonación y el orden («¿Dónde vives?»). En inglés, después de la palabra interrogativa va un verbo auxiliar: una forma de to be (is, are), «can», o «do / does». El orden es: PALABRA INTERROGATIVA + AUXILIAR + SUJETO + VERBO. No puedes decir «Where you live?», hay que decir «Where do you live?».",
+        "de": "Im Spanischen zeigst du eine Frage durch Betonung und Wortstellung an („¿Dónde vives?“). Im Englischen folgt auf das Fragewort ein Hilfsverb: eine Form von to be (is, are), „can“ oder „do / does“. Die Reihenfolge lautet: FRAGEWORT + HILFSVERB + SUBJEKT + VERB. Man darf nicht „Where you live?“ sagen, sondern „Where do you live?“."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "qw-forms",
+      "title": {
+        "hu": "A kérdőszavak",
+        "en": "The question words",
+        "es": "Las palabras interrogativas",
+        "de": "Die Fragewörter"
+      },
+      "header": [
+        {
+          "hu": "Kérdőszó",
+          "en": "Question word",
+          "es": "Palabra",
+          "de": "Fragewort"
+        },
+        {
+          "hu": "példa",
+          "en": "example",
+          "es": "ejemplo",
+          "de": "Beispiel"
+        }
+      ],
+      "rows": [
+        [
+          "what",
+          "What is your name?"
+        ],
+        [
+          "where",
+          "Where do you live?"
+        ],
+        [
+          "who",
+          "Who is that man?"
+        ],
+        [
+          "when",
+          "When do you get up?"
+        ],
+        [
+          "why",
+          "Why are you tired?"
+        ],
+        [
+          "how",
+          "How are you?"
+        ],
+        [
+          "which",
+          "Which bag is yours?"
+        ],
+        [
+          "how many",
+          "How many books do you have?"
+        ],
+        [
+          "how much",
+          "How much water do you drink?"
+        ],
+        [
+          "how old",
+          "How old are you?"
+        ],
+        [
+          "what time",
+          "What time do you get up?"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "A szórend",
+        "en": "Word order",
+        "es": "El orden de las palabras",
+        "de": "Die Wortstellung"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A to be-vel: kérdőszó + am / is / are + alany. Nincs „do”.",
+            "en": "With to be: question word + am / is / are + subject. No “do”.",
+            "es": "Con to be: palabra interrogativa + am / is / are + sujeto. Sin «do».",
+            "de": "Mit to be: Fragewort + am / is / are + Subjekt. Kein „do“."
+          },
+          "examples": [
+            {
+              "es": "Where are you from?",
+              "tr": {
+                "hu": "Honnan jössz?",
+                "en": "Where are you from?",
+                "es": "¿De dónde eres?",
+                "de": "Woher kommst du?"
+              }
+            },
+            {
+              "es": "What is your name?",
+              "tr": {
+                "hu": "Mi a neved?",
+                "en": "What is your name?",
+                "es": "¿Cómo te llamas?",
+                "de": "Wie heißt du?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Más igékkel: kérdőszó + do / does + alany + alapige. A „does” a he / she / it mellé kerül, és az ige alapalakja marad.",
+            "en": "With other verbs: question word + do / does + subject + base verb. “Does” goes with he / she / it, and the verb stays in its base form.",
+            "es": "Con otros verbos: palabra interrogativa + do / does + sujeto + verbo base. «Does» va con he / she / it, y el verbo se queda en forma base.",
+            "de": "Mit anderen Verben: Fragewort + do / does + Subjekt + Grundform. „Does“ gehört zu he / she / it, und das Verb bleibt in der Grundform."
+          },
+          "examples": [
+            {
+              "es": "Where do you live?",
+              "tr": {
+                "hu": "Hol laksz?",
+                "en": "Where do you live?",
+                "es": "¿Dónde vives?",
+                "de": "Wo wohnst du?"
+              }
+            },
+            {
+              "es": "What does she eat for lunch?",
+              "tr": {
+                "hu": "Mit eszik ebédre?",
+                "en": "What does she eat for lunch?",
+                "es": "¿Qué come ella de almuerzo?",
+                "de": "Was isst sie zum Mittagessen?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ha a kérdőszó maga az alany (Who? What?), nincs „do”, és az ige úgy áll, mint egy kijelentésben: Who lives here?",
+            "en": "When the question word is itself the subject (Who? What?), there is no “do”, and the verb is as in a statement: Who lives here?",
+            "es": "Cuando la palabra interrogativa es el propio sujeto (Who? What?), no hay «do», y el verbo va como en una afirmación: Who lives here?",
+            "de": "Wenn das Fragewort selbst das Subjekt ist (Who? What?), gibt es kein „do“, und das Verb steht wie in einer Aussage: Who lives here?"
+          },
+          "examples": [
+            {
+              "es": "Who lives in this house?",
+              "tr": {
+                "hu": "Ki lakik ebben a házban?",
+                "en": "Who lives in this house?",
+                "es": "¿Quién vive en esta casa?",
+                "de": "Wer wohnt in diesem Haus?"
+              }
+            },
+            {
+              "es": "Who is that man?",
+              "tr": {
+                "hu": "Ki az a férfi?",
+                "en": "Who is that man?",
+                "es": "¿Quién es ese hombre?",
+                "de": "Wer ist dieser Mann?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Hasznos szerkezetek",
+        "en": "Useful phrases",
+        "es": "Estructuras útiles",
+        "de": "Nützliche Wendungen"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Életkor: How old are you? (nem „How many years have you?”). Óra: What time is it? / What time do you get up?",
+            "en": "Age: How old are you? (not “How many years have you?”). Clock: What time is it? / What time do you get up?",
+            "es": "Edad: How old are you? (no «How many years have you?»). Hora: What time is it? / What time do you get up?",
+            "de": "Alter: How old are you? (nicht „How many years have you?“). Uhrzeit: What time is it? / What time do you get up?"
+          },
+          "examples": [
+            {
+              "es": "How old are you?",
+              "tr": {
+                "hu": "Hány éves vagy?",
+                "en": "How old are you?",
+                "es": "¿Cuántos años tienes?",
+                "de": "Wie alt bist du?"
+              }
+            },
+            {
+              "es": "What time do you get up?",
+              "tr": {
+                "hu": "Hánykor kelsz?",
+                "en": "What time do you get up?",
+                "es": "¿A qué hora te levantas?",
+                "de": "Um wie viel Uhr stehst du auf?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Mennyiség: How many + számlálható többes szám (How many books?), How much + nem számlálható (How much water?). Ok: Why…? – Because…",
+            "en": "Quantity: How many + countable plural (How many books?), How much + uncountable (How much water?). Reason: Why…? – Because…",
+            "es": "Cantidad: How many + plural contable (How many books?), How much + incontable (How much water?). Motivo: Why…? – Because…",
+            "de": "Menge: How many + zählbarer Plural (How many books?), How much + unzählbar (How much water?). Grund: Why…? – Because…"
+          },
+          "examples": [
+            {
+              "es": "How many books do you have?",
+              "tr": {
+                "hu": "Hány könyved van?",
+                "en": "How many books do you have?",
+                "es": "¿Cuántos libros tienes?",
+                "de": "Wie viele Bücher hast du?"
+              }
+            },
+            {
+              "es": "Why are you tired? Because I work a lot.",
+              "tr": {
+                "hu": "Miért vagy fáradt? Mert sokat dolgozom.",
+                "en": "Why are you tired? Because I work a lot.",
+                "es": "¿Por qué estás cansado? Porque trabajo mucho.",
+                "de": "Warum bist du müde? Weil ich viel arbeite."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A „do / does” nélkül nincs kérdés. Ne mondd, hogy „Where you live?”, hanem: „Where do you live?”.",
+        "en": "No “do / does”, no question. Do not say “Where you live?”; say “Where do you live?”.",
+        "es": "Sin «do / does» no hay pregunta. No digas «Where you live?», di «Where do you live?».",
+        "de": "Ohne „do / does“ gibt es keine Frage. Sag nicht „Where you live?“, sondern „Where do you live?“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A „¿Cómo te llamas?” angolul „What is your name?”. Ne mondd, hogy „How do you call?”. És a „¿Cómo estás?” = „How are you?”, nem „How you are?”.",
+        "en": "“¿Cómo te llamas?” is “What is your name?” in English. Do not say “How do you call?”. And “¿Cómo estás?” is “How are you?”, not “How you are?”.",
+        "es": "«¿Cómo te llamas?» es «What is your name?» en inglés. No digas «How do you call?». Y «¿Cómo estás?» es «How are you?», no «How you are?».",
+        "de": "„¿Cómo te llamas?“ heißt im Englischen „What is your name?“. Sag nicht „How do you call?“. Und „¿Cómo estás?“ heißt „How are you?“, nicht „How you are?“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A „¿cuántos años tienes?” angolul „How old are you?”: nem „have”, hanem to be, és „years” helyett „old”.",
+        "en": "“¿Cuántos años tienes?” is “How old are you?” in English: not “have” but to be, and “old” instead of “years”.",
+        "es": "«¿Cuántos años tienes?» es «How old are you?» en inglés: no «have» sino to be, y «old» en lugar de «years».",
+        "de": "„¿Cuántos años tienes?“ heißt im Englischen „How old are you?“: nicht „have“, sondern to be, und „old“ statt „years“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ha a Who az alany, ne használj „does”-t. Ne mondd, hogy „Who does live here?”, hanem: „Who lives here?”.",
+        "en": "When “Who” is the subject, do not use “does”. Do not say “Who does live here?”; say “Who lives here?”.",
+        "es": "Cuando «Who» es el sujeto, no uses «does». No digas «Who does live here?», di «Who lives here?».",
+        "de": "Wenn „Who“ das Subjekt ist, benutze kein „does“. Sag nicht „Who does live here?“, sondern „Who lives here?“."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Az angol kérdésben a kérdőszó után segédige jön. To be-vel: «Where are you from?», «What is your name?». Más igékkel a «do» vagy «does» kell: «Where do you live?», «What does she eat?». Vigyázat: nem «Where you live?». Ha a «who» az alany, nincs «do»: «Who lives here?». Életkor: «How old are you?». Óra: «What time is it?». Mennyiség: «How many books?» és «How much water?».",
+    "en": "In an English question the question word is followed by a helper verb. With to be: «Where are you from?», «What is your name?». With other verbs you need «do» or «does»: «Where do you live?», «What does she eat?». Careful: not «Where you live?». When «who» is the subject there is no «do»: «Who lives here?». Age: «How old are you?». Clock: «What time is it?». Quantity: «How many books?» and «How much water?».",
+    "es": "En una pregunta en inglés, la palabra interrogativa va seguida de un verbo auxiliar. Con to be: «Where are you from?», «What is your name?». Con otros verbos hace falta «do» o «does»: «Where do you live?», «What does she eat?». Cuidado: no «Where you live?». Cuando «who» es el sujeto no hay «do»: «Who lives here?». Edad: «How old are you?». Hora: «What time is it?». Cantidad: «How many books?» y «How much water?».",
+    "de": "In einer englischen Frage folgt auf das Fragewort ein Hilfsverb. Mit to be: «Where are you from?», «What is your name?». Bei anderen Verben braucht man «do» oder «does»: «Where do you live?», «What does she eat?». Vorsicht: nicht «Where you live?». Wenn «who» das Subjekt ist, gibt es kein «do»: «Who lives here?». Alter: «How old are you?». Uhrzeit: «What time is it?». Menge: «How many books?» und «How much water?»."
+  },
+  "items": [
+    {
+      "id": "qw-01",
+      "sentence": "___ is your name?",
+      "options": [
+        "What",
+        "Who",
+        "Where"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A névre a „what” kérdez: What is your name?",
+        "en": "For a name you ask with “what”: What is your name?",
+        "es": "Para el nombre se pregunta con «what»: What is your name?",
+        "de": "Nach dem Namen fragt man mit „what“: What is your name?"
+      },
+      "wrong": {
+        "Who": {
+          "hu": "A „who” személyre kérdez („Who are you?”); a nevet „what” kérdezi meg.",
+          "en": "“Who” asks about a person (“Who are you?”); a name is asked with “what”.",
+          "es": "«Who» pregunta por una persona («Who are you?»); el nombre se pregunta con «what».",
+          "de": "„Who“ fragt nach einer Person („Who are you?“); nach dem Namen fragt man mit „what“."
+        },
+        "Where": {
+          "hu": "A „where” helyre kérdez; a névre nem.",
+          "en": "“Where” asks about a place, not a name.",
+          "es": "«Where» pregunta por un lugar, no por un nombre.",
+          "de": "„Where“ fragt nach einem Ort, nicht nach einem Namen."
+        }
+      },
+      "examples": [
+        "What is this?",
+        "What is your phone?"
+      ]
+    },
+    {
+      "id": "qw-02",
+      "sentence": "___ do you live?",
+      "options": [
+        "Where",
+        "What",
+        "Who"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A lakóhelyre a „where” kérdez: Where do you live?",
+        "en": "For a place to live you ask with “where”: Where do you live?",
+        "es": "Para el lugar donde vives se pregunta con «where»: Where do you live?",
+        "de": "Nach dem Wohnort fragt man mit „where“: Where do you live?"
+      },
+      "wrong": {
+        "What": {
+          "hu": "A „what” dologra kérdez; a helyre „where” kell.",
+          "en": "“What” asks about a thing; for a place you need “where”.",
+          "es": "«What» pregunta por una cosa; para un lugar hace falta «where».",
+          "de": "„What“ fragt nach einer Sache; für einen Ort braucht man „where“."
+        },
+        "Who": {
+          "hu": "A „who” személyre kérdez; a helyre „where” kell.",
+          "en": "“Who” asks about a person; for a place you need “where”.",
+          "es": "«Who» pregunta por una persona; para un lugar hace falta «where».",
+          "de": "„Who“ fragt nach einer Person; für einen Ort braucht man „where“."
+        }
+      },
+      "examples": [
+        "Where do you work?",
+        "Where do they live?"
+      ]
+    },
+    {
+      "id": "qw-03",
+      "sentence": "___ is that man? He is my father.",
+      "options": [
+        "Who",
+        "What",
+        "Where"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Személyre a „who” kérdez: Who is that man?",
+        "en": "For a person you ask with “who”: Who is that man?",
+        "es": "Para una persona se pregunta con «who»: Who is that man?",
+        "de": "Nach einer Person fragt man mit „who“: Who is that man?"
+      },
+      "wrong": {
+        "What": {
+          "hu": "A „what” dologra kérdez; a válasz (my father) személy, ezért „who”.",
+          "en": "“What” asks about a thing; the answer (my father) is a person, so “who”.",
+          "es": "«What» pregunta por una cosa; la respuesta (my father) es una persona, por eso «who».",
+          "de": "„What“ fragt nach einer Sache; die Antwort (my father) ist eine Person, deshalb „who“."
+        },
+        "Where": {
+          "hu": "A „where” helyre kérdez; a válasz személy, ezért „who”.",
+          "en": "“Where” asks about a place; the answer is a person, so “who”.",
+          "es": "«Where» pregunta por un lugar; la respuesta es una persona, por eso «who».",
+          "de": "„Where“ fragt nach einem Ort; die Antwort ist eine Person, deshalb „who“."
+        }
+      },
+      "examples": [
+        "Who is she?",
+        "Who are they?"
+      ]
+    },
+    {
+      "id": "qw-04",
+      "sentence": "___ do you get up? At seven.",
+      "options": [
+        "When",
+        "Where",
+        "Why"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az időpontra („At seven”) a „when” kérdez: When do you get up?",
+        "en": "For a time (“At seven”) you ask with “when”: When do you get up?",
+        "es": "Para la hora («At seven») se pregunta con «when»: When do you get up?",
+        "de": "Nach dem Zeitpunkt („At seven“) fragt man mit „when“: When do you get up?"
+      },
+      "wrong": {
+        "Where": {
+          "hu": "A „where” helyre kérdez; a válasz idő (At seven), ezért „when”.",
+          "en": "“Where” asks about a place; the answer is a time (At seven), so “when”.",
+          "es": "«Where» pregunta por un lugar; la respuesta es una hora (At seven), por eso «when».",
+          "de": "„Where“ fragt nach einem Ort; die Antwort ist eine Zeit (At seven), deshalb „when“."
+        },
+        "Why": {
+          "hu": "A „why” okra kérdez („Because…”); a válasz idő, ezért „when”.",
+          "en": "“Why” asks for a reason (“Because…”); the answer is a time, so “when”.",
+          "es": "«Why» pregunta por un motivo («Because…»); la respuesta es una hora, por eso «when».",
+          "de": "„Why“ fragt nach einem Grund („Because…“); die Antwort ist eine Zeit, deshalb „when“."
+        }
+      },
+      "examples": [
+        "When do you work?",
+        "When does she eat?"
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "qw-16",
+      "es": "Where do you live?",
+      "target": "do",
+      "tr": {
+        "hu": "Hol laksz?",
+        "en": "Where do you live?",
+        "es": "¿Dónde vives?",
+        "de": "Wo wohnst du?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kérdőszó + do / does + alany + alapige",
+            "en": "question word + do / does + subject + base verb",
+            "es": "palabra interrogativa + do / does + sujeto + verbo base",
+            "de": "Fragewort + do / does + Subjekt + Grundform"
+          }
+        },
+        {
+          "text": {
+            "hu": "kérdőszó + alany + ige, mint a spanyolban",
+            "en": "question word + subject + verb, as in Spanish",
+            "es": "palabra interrogativa + sujeto + verbo, como en español",
+            "de": "Fragewort + Subjekt + Verb wie im Spanischen"
+          },
+          "wrong": {
+            "hu": "Az angolban a „do” segédige kötelező: Where do you live?, nem „Where you live?”.",
+            "en": "In English the helper “do” is required: Where do you live?, not “Where you live?”.",
+            "es": "En inglés el auxiliar «do» es obligatorio: Where do you live?, no «Where you live?».",
+            "de": "Im Englischen ist das Hilfsverb „do“ Pflicht: Where do you live?, nicht „Where you live?“."
+          }
+        },
+        {
+          "text": {
+            "hu": "kérdőszó + ige + alany",
+            "en": "question word + verb + subject",
+            "es": "palabra interrogativa + verbo + sujeto",
+            "de": "Fragewort + Verb + Subjekt"
+          },
+          "wrong": {
+            "hu": "Az ige nem kerül az alany elé: „Where live you?” hibás, kell a „do”.",
+            "en": "The main verb does not go before the subject: “Where live you?” is wrong, you need “do”.",
+            "es": "El verbo principal no va antes del sujeto: «Where live you?» es incorrecto, hace falta «do».",
+            "de": "Das Hauptverb steht nicht vor dem Subjekt: „Where live you?“ ist falsch, man braucht „do“."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "qw-05",
+      "sentence": "___ are you tired? Because I work a lot.",
+      "options": [
+        "Why",
+        "How",
+        "What"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az okra („Because…”) a „why” kérdez: Why are you tired?",
+        "en": "For a reason (“Because…”) you ask with “why”: Why are you tired?",
+        "es": "Para el motivo («Because…») se pregunta con «why»: Why are you tired?",
+        "de": "Nach dem Grund („Because…“) fragt man mit „why“: Why are you tired?"
+      },
+      "wrong": {
+        "How": {
+          "hu": "A „how” módra vagy állapotra kérdez (How are you?); a „Because” okot ad, ezért „why”.",
+          "en": "“How” asks about manner or state (How are you?); “Because” gives a reason, so “why”.",
+          "es": "«How» pregunta por el modo o el estado (How are you?); «Because» da un motivo, por eso «why».",
+          "de": "„How“ fragt nach Art oder Befinden (How are you?); „Because“ nennt einen Grund, deshalb „why“."
+        },
+        "What": {
+          "hu": "A „what” dologra kérdez; az okot a „why” kérdezi.",
+          "en": "“What” asks about a thing; a reason is asked with “why”.",
+          "es": "«What» pregunta por una cosa; el motivo se pregunta con «why».",
+          "de": "„What“ fragt nach einer Sache; nach dem Grund fragt man mit „why“."
+        }
+      },
+      "examples": [
+        "Why are you here?",
+        "Why do you work?"
+      ]
+    },
+    {
+      "id": "qw-06",
+      "sentence": "___ are you? I am fine, thanks.",
+      "options": [
+        "How",
+        "What",
+        "Who"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az állapotra a „how” kérdez: How are you?",
+        "en": "For how someone is you ask with “how”: How are you?",
+        "es": "Para el estado de alguien se pregunta con «how»: How are you?",
+        "de": "Nach dem Befinden fragt man mit „how“: How are you?"
+      },
+      "wrong": {
+        "What": {
+          "hu": "A „What are you?” a foglalkozásra kérdez; az állapotra „how” kell.",
+          "en": "“What are you?” asks about a job; for how someone is you need “how”.",
+          "es": "«What are you?» pregunta por la profesión; para el estado hace falta «how».",
+          "de": "„What are you?“ fragt nach dem Beruf; für das Befinden braucht man „how“."
+        },
+        "Who": {
+          "hu": "A „Who are you?” a személyre kérdez; az állapotra „how” kell.",
+          "en": "“Who are you?” asks about the person; for how someone is you need “how”.",
+          "es": "«Who are you?» pregunta por la persona; para el estado hace falta «how».",
+          "de": "„Who are you?“ fragt nach der Person; für das Befinden braucht man „how“."
+        }
+      },
+      "examples": [
+        "How is your mother?",
+        "How are they?"
+      ]
+    },
+    {
+      "id": "qw-07",
+      "sentence": "How ___ are you? I am twenty.",
+      "options": [
+        "old",
+        "years",
+        "age"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az életkor kérdése „How old are you?”: az „old” szó kell.",
+        "en": "The age question is “How old are you?”: you need the word “old”.",
+        "es": "La pregunta por la edad es «How old are you?»: hace falta la palabra «old».",
+        "de": "Die Frage nach dem Alter lautet „How old are you?“: Man braucht das Wort „old“."
+      },
+      "wrong": {
+        "years": {
+          "hu": "A „How years are you?” hibás; a spanyol „años” helyett „old” áll.",
+          "en": "“How years are you?” is wrong; instead of Spanish “años” English uses “old”.",
+          "es": "«How years are you?» es incorrecto; en lugar del «años» del español el inglés usa «old».",
+          "de": "„How years are you?“ ist falsch; statt spanisch „años“ steht im Englischen „old“."
+        },
+        "age": {
+          "hu": "A „How age are you?” hibás; a kérdés „How old are you?”.",
+          "en": "“How age are you?” is wrong; the question is “How old are you?”.",
+          "es": "«How age are you?» es incorrecto; la pregunta es «How old are you?».",
+          "de": "„How age are you?“ ist falsch; die Frage lautet „How old are you?“."
+        }
+      },
+      "examples": [
+        "How old is your sister?",
+        "How old are they?"
+      ]
+    },
+    {
+      "id": "qw-19",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "¿Dónde vives?",
+          "en": "Where do you live?"
+        },
+        {
+          "es": "¿Cómo te llamas?",
+          "en": "What is your name?"
+        },
+        {
+          "es": "¿Quién es ese hombre?",
+          "en": "Who is that man?"
+        },
+        {
+          "es": "¿Cuántos años tienes?",
+          "en": "How old are you?"
+        },
+        {
+          "es": "¿A qué hora te levantas?",
+          "en": "What time do you get up?"
+        },
+        {
+          "es": "¿Por qué estás cansado?",
+          "en": "Why are you tired?"
+        }
+      ]
+    },
+    {
+      "id": "qw-08",
+      "sentence": "How ___ books do you have?",
+      "options": [
+        "many",
+        "much",
+        "long"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „books” számlálható többes szám, ezért „how many”: How many books do you have?",
+        "en": "“Books” is countable and plural, so “how many”: How many books do you have?",
+        "es": "«Books» es contable y plural, por eso «how many»: How many books do you have?",
+        "de": "„Books“ ist zählbar und Plural, deshalb „how many“: How many books do you have?"
+      },
+      "wrong": {
+        "much": {
+          "hu": "A „much” nem számlálható főnévhez való (water, music); a „books” számlálható: many.",
+          "en": "“Much” is for uncountable nouns (water, music); “books” is countable: many.",
+          "es": "«Much» es para nombres incontables (water, music); «books» es contable: many.",
+          "de": "„Much“ steht bei unzählbaren Nomen (water, music); „books“ ist zählbar: many."
+        },
+        "long": {
+          "hu": "A „how long” időtartamra kérdez; a könyvek számára „how many”.",
+          "en": "“How long” asks about duration; for a number of books it is “how many”.",
+          "es": "«How long» pregunta por la duración; para el número de libros es «how many».",
+          "de": "„How long“ fragt nach der Dauer; für die Zahl der Bücher heißt es „how many“."
+        }
+      },
+      "examples": [
+        "How many dogs do you have?",
+        "How many people are here?"
+      ]
+    },
+    {
+      "id": "qw-09",
+      "sentence": "How ___ water do you drink?",
+      "options": [
+        "much",
+        "many",
+        "long"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „water” nem számlálható, ezért „how much”: How much water do you drink?",
+        "en": "“Water” is uncountable, so “how much”: How much water do you drink?",
+        "es": "«Water» es incontable, por eso «how much»: How much water do you drink?",
+        "de": "„Water“ ist unzählbar, deshalb „how much“: How much water do you drink?"
+      },
+      "wrong": {
+        "many": {
+          "hu": "A „many” számlálható többes számhoz való (books); a „water” nem számlálható: much.",
+          "en": "“Many” is for countable plurals (books); “water” is uncountable: much.",
+          "es": "«Many» es para plurales contables (books); «water» es incontable: much.",
+          "de": "„Many“ steht bei zählbaren Pluralen (books); „water“ ist unzählbar: much."
+        },
+        "long": {
+          "hu": "A „how long” időtartamra kérdez; a vízmennyiségre „how much”.",
+          "en": "“How long” asks about duration; for an amount of water it is “how much”.",
+          "es": "«How long» pregunta por la duración; para la cantidad de agua es «how much».",
+          "de": "„How long“ fragt nach der Dauer; für die Wassermenge heißt es „how much“."
+        }
+      },
+      "examples": [
+        "How much milk do you drink?",
+        "How much food do they eat?"
+      ]
+    },
+    {
+      "id": "qw-10",
+      "sentence": "Where ___ you live?",
+      "options": [
+        "do",
+        "are",
+        "does"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az „live” rendes ige, ezért a kérdéshez „do” kell: Where do you live?",
+        "en": "“Live” is a normal verb, so the question needs “do”: Where do you live?",
+        "es": "«Live» es un verbo normal, por eso la pregunta necesita «do»: Where do you live?",
+        "de": "„Live“ ist ein normales Verb, deshalb braucht die Frage „do“: Where do you live?"
+      },
+      "wrong": {
+        "are": {
+          "hu": "Az „are” a to be alakja; az „live” mellett a „do” segédige kell.",
+          "en": "“Are” is a form of to be; with the verb “live” you need the helper “do”.",
+          "es": "«Are» es una forma de to be; con el verbo «live» hace falta el auxiliar «do».",
+          "de": "„Are“ ist eine Form von to be; bei dem Verb „live“ braucht man das Hilfsverb „do“."
+        },
+        "does": {
+          "hu": "A „does” a he, she, it mellé való; a „you” mellé „do” kell.",
+          "en": "“Does” goes with he, she, it; with “you” you need “do”.",
+          "es": "«Does» va con he, she, it; con «you» hace falta «do».",
+          "de": "„Does“ gehört zu he, she, it; bei „you“ braucht man „do“."
+        }
+      },
+      "examples": [
+        "Where do they work?",
+        "Where do you eat?"
+      ]
+    },
+    {
+      "id": "qw-11",
+      "sentence": "What ___ she eat for lunch?",
+      "options": [
+        "does",
+        "do",
+        "is"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „she” mellé „does” kell, utána az alapige: What does she eat for lunch?",
+        "en": "With “she” you need “does”, then the base verb: What does she eat for lunch?",
+        "es": "Con «she» hace falta «does», y después el verbo base: What does she eat for lunch?",
+        "de": "Bei „she“ braucht man „does“, danach die Grundform: What does she eat for lunch?"
+      },
+      "wrong": {
+        "do": {
+          "hu": "A „do” az I, you, we, they mellé való; a „she” mellé „does” kell.",
+          "en": "“Do” goes with I, you, we, they; with “she” you need “does”.",
+          "es": "«Do» va con I, you, we, they; con «she» hace falta «does».",
+          "de": "„Do“ gehört zu I, you, we, they; bei „she“ braucht man „does“."
+        },
+        "is": {
+          "hu": "Az „is” a to be alakja; az „eat” ige mellett a „does” segédige kell.",
+          "en": "“Is” is a form of to be; with the verb “eat” you need the helper “does”.",
+          "es": "«Is» es una forma de to be; con el verbo «eat» hace falta el auxiliar «does».",
+          "de": "„Is“ ist eine Form von to be; bei dem Verb „eat“ braucht man das Hilfsverb „does“."
+        }
+      },
+      "examples": [
+        "What does he drink?",
+        "What do you eat?"
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "qw-17",
+      "es": "Who lives here?",
+      "target": "lives",
+      "tr": {
+        "hu": "Ki lakik itt?",
+        "en": "Who lives here?",
+        "es": "¿Quién vive aquí?",
+        "de": "Wer wohnt hier?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a „who” az alany: nincs „do”, az ige -s-t kap",
+            "en": "“who” is the subject: no “do”, the verb takes -s",
+            "es": "«who» es el sujeto: sin «do», el verbo lleva -s",
+            "de": "„who“ ist das Subjekt: kein „do“, das Verb bekommt -s"
+          }
+        },
+        {
+          "text": {
+            "hu": "a „who” tárgy: kell a „does”",
+            "en": "“who” is the object: “does” is needed",
+            "es": "«who» es el objeto: hace falta «does»",
+            "de": "„who“ ist das Objekt: „does“ ist nötig"
+          },
+          "wrong": {
+            "hu": "Itt a „who” végzi a cselekvést, tehát alany: nincs „does”. (Who does she know? – itt a „who” tárgy.)",
+            "en": "Here “who” does the action, so it is the subject: no “does”. (Who does she know? – here “who” is the object.)",
+            "es": "Aquí «who» realiza la acción, así que es el sujeto: sin «does». (Who does she know? – aquí «who» es el objeto.)",
+            "de": "Hier führt „who“ die Handlung aus, ist also das Subjekt: kein „does“. (Who does she know? – hier ist „who“ das Objekt.)"
+          }
+        },
+        {
+          "text": {
+            "hu": "az ige alapalakban áll: Who live here?",
+            "en": "the verb is in its base form: Who live here?",
+            "es": "el verbo va en forma base: Who live here?",
+            "de": "das Verb steht in der Grundform: Who live here?"
+          },
+          "wrong": {
+            "hu": "A „who” egyes számú igét kér, ezért „lives”, -s-sel.",
+            "en": "“Who” takes a singular verb, so “lives”, with -s.",
+            "es": "«Who» lleva un verbo en singular, por eso «lives», con -s.",
+            "de": "„Who“ verlangt ein Verb im Singular, deshalb „lives“, mit -s."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "qw-12",
+      "sentence": "Where ___ you from?",
+      "options": [
+        "are",
+        "do",
+        "does"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „from” előtt a to be áll: Where are you from?",
+        "en": "Before “from” comes to be: Where are you from?",
+        "es": "Delante de «from» va to be: Where are you from?",
+        "de": "Vor „from“ steht to be: Where are you from?"
+      },
+      "wrong": {
+        "do": {
+          "hu": "A „be from” szerkezet to be-vel megy, „do” nélkül: Where are you from?",
+          "en": "The structure “be from” uses to be, with no “do”: Where are you from?",
+          "es": "La estructura «be from» usa to be, sin «do»: Where are you from?",
+          "de": "Die Struktur „be from“ benutzt to be, ohne „do“: Where are you from?"
+        },
+        "does": {
+          "hu": "A „does” a he, she, it mellé való, és nem a to be-hez: Where are you from?",
+          "en": "“Does” goes with he, she, it, and not with to be: Where are you from?",
+          "es": "«Does» va con he, she, it, y no con to be: Where are you from?",
+          "de": "„Does“ gehört zu he, she, it und nicht zu to be: Where are you from?"
+        }
+      },
+      "examples": [
+        "Where is he from?",
+        "Where are they from?"
+      ]
+    },
+    {
+      "id": "qw-13",
+      "sentence": "What ___ do you get up?",
+      "options": [
+        "time",
+        "hour",
+        "clock"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az órára a „what time” kérdez: What time do you get up?",
+        "en": "For the clock time you ask “what time”: What time do you get up?",
+        "es": "Para la hora se pregunta «what time»: What time do you get up?",
+        "de": "Nach der Uhrzeit fragt man „what time“: What time do you get up?"
+      },
+      "wrong": {
+        "hour": {
+          "hu": "A „What hour” nem szokásos; az óra kérdése „What time…?”.",
+          "en": "“What hour” is not the usual phrase; the clock question is “What time…?”.",
+          "es": "«What hour» no es la expresión habitual; la pregunta por la hora es «What time…?».",
+          "de": "„What hour“ ist nicht üblich; die Frage nach der Uhrzeit ist „What time…?“."
+        },
+        "clock": {
+          "hu": "A „clock” az óra tárgy; a kérdés „What time…?”.",
+          "en": "“Clock” is the object; the question is “What time…?”.",
+          "es": "«Clock» es el objeto reloj; la pregunta es «What time…?».",
+          "de": "„Clock“ ist der Gegenstand Uhr; die Frage lautet „What time…?“."
+        }
+      },
+      "examples": [
+        "What time is it?",
+        "What time does she work?"
+      ]
+    },
+    {
+      "id": "qw-14",
+      "sentence": "Who ___ in this house?",
+      "options": [
+        "lives",
+        "live",
+        "does live"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Ha a „who” az alany, nincs „do”, és az ige -s-t kap: Who lives in this house?",
+        "en": "When “who” is the subject there is no “do”, and the verb takes -s: Who lives in this house?",
+        "es": "Cuando «who» es el sujeto no hay «do», y el verbo lleva -s: Who lives in this house?",
+        "de": "Wenn „who“ das Subjekt ist, gibt es kein „do“, und das Verb bekommt -s: Who lives in this house?"
+      },
+      "wrong": {
+        "live": {
+          "hu": "A „who” egyes számú igét kér: lives, nem „live”.",
+          "en": "“Who” takes a singular verb: lives, not “live”.",
+          "es": "«Who» lleva un verbo en singular: lives, no «live».",
+          "de": "„Who“ verlangt ein Verb im Singular: lives, nicht „live“."
+        },
+        "does live": {
+          "hu": "Ha a „who” az alany, nem használunk „does”-t: Who lives…?",
+          "en": "When “who” is the subject we do not use “does”: Who lives…?",
+          "es": "Cuando «who» es el sujeto no usamos «does»: Who lives…?",
+          "de": "Wenn „who“ das Subjekt ist, benutzen wir kein „does“: Who lives…?"
+        }
+      },
+      "examples": [
+        "Who works here?",
+        "Who eats meat?"
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "qw-18",
+      "es": "How old are you?",
+      "target": "old",
+      "tr": {
+        "hu": "Hány éves vagy?",
+        "en": "How old are you?",
+        "es": "¿Cuántos años tienes?",
+        "de": "Wie alt bist du?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "életkor: How old + to be",
+            "en": "age: How old + to be",
+            "es": "edad: How old + to be",
+            "de": "Alter: How old + to be"
+          }
+        },
+        {
+          "text": {
+            "hu": "életkor: How many years + have",
+            "en": "age: How many years + have",
+            "es": "edad: How many years + have",
+            "de": "Alter: How many years + have"
+          },
+          "wrong": {
+            "hu": "A spanyol „tener años” másolata: angolul a „to be” és az „old” kell.",
+            "en": "This copies Spanish “tener años”: English needs to be and “old”.",
+            "es": "Esto copia el «tener años» del español: el inglés necesita to be y «old».",
+            "de": "Das ist eine Kopie von spanisch „tener años“: Das Englische braucht to be und „old“."
+          }
+        },
+        {
+          "text": {
+            "hu": "életkor: How old + do",
+            "en": "age: How old + do",
+            "es": "edad: How old + do",
+            "de": "Alter: How old + do"
+          },
+          "wrong": {
+            "hu": "Az életkor kérdésében a to be áll, nem a „do”: How old are you?",
+            "en": "The age question uses to be, not “do”: How old are you?",
+            "es": "La pregunta por la edad usa to be, no «do»: How old are you?",
+            "de": "Die Altersfrage benutzt to be, nicht „do“: How old are you?"
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "qw-15",
+      "sentence": "___ bag is yours, the red one or the black one?",
+      "options": [
+        "Which",
+        "Who",
+        "Where"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Néhány lehetőség közül a „which” kérdez: Which bag is yours?",
+        "en": "To choose among a few options you ask with “which”: Which bag is yours?",
+        "es": "Para elegir entre pocas opciones se pregunta con «which»: Which bag is yours?",
+        "de": "Bei einer Auswahl unter wenigen Möglichkeiten fragt man mit „which“: Which bag is yours?"
+      },
+      "wrong": {
+        "Who": {
+          "hu": "A „who” személyre kérdez; itt táskák közül választunk: which.",
+          "en": "“Who” asks about a person; here we choose among bags: which.",
+          "es": "«Who» pregunta por una persona; aquí se elige entre bolsas: which.",
+          "de": "„Who“ fragt nach einer Person; hier wird unter Taschen gewählt: which."
+        },
+        "Where": {
+          "hu": "A „where” helyre kérdez; itt táskák közül választunk: which.",
+          "en": "“Where” asks about a place; here we choose among bags: which.",
+          "es": "«Where» pregunta por un lugar; aquí se elige entre bolsas: which.",
+          "de": "„Where“ fragt nach einem Ort; hier wird unter Taschen gewählt: which."
+        }
+      },
+      "examples": [
+        "Which book is yours?",
+        "Which house is big?"
+      ]
+    },
+    {
+      "id": "qw-20",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "qué",
+          "en": "what"
+        },
+        {
+          "es": "dónde",
+          "en": "where"
+        },
+        {
+          "es": "quién",
+          "en": "who"
+        },
+        {
+          "es": "cuándo",
+          "en": "when"
+        },
+        {
+          "es": "por qué",
+          "en": "why"
+        },
+        {
+          "es": "cuántos (contables)",
+          "en": "how many"
+        }
+      ]
+    }
+  ]
+}

@@ -16,7 +16,8 @@ import grammarEnThereIsAre from '@/data/games/grammar/en/there-is-are.json';
 import grammarEnPrepositions from '@/data/games/grammar/en/prepositions.json';
 import grammarEnHaveGot from '@/data/games/grammar/en/have-got.json';
 import grammarEnCanAbility from '@/data/games/grammar/en/can-ability.json';
+import grammarEnQuestionWords from '@/data/games/grammar/en/question-words.json';
 
 export const enContent: LanguageContentBundle = {
-  grammarTopics: [grammarEnToBe, grammarEnArticles, grammarEnPresentSimple, grammarEnPlurals, grammarEnThisThat, grammarEnPossessives, grammarEnThereIsAre, grammarEnPrepositions, grammarEnHaveGot, grammarEnCanAbility] as unknown as GrammarTopicData[],
+  grammarTopics: [grammarEnToBe, grammarEnArticles, grammarEnPresentSimple, grammarEnPlurals, grammarEnThisThat, grammarEnPossessives, grammarEnThereIsAre, grammarEnPrepositions, grammarEnHaveGot, grammarEnCanAbility, grammarEnQuestionWords] as unknown as GrammarTopicData[],
 };
