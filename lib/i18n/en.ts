@@ -399,6 +399,8 @@ export default {
     // ugyanezt a képernyőt használja, csak ez a két string vált.
     wordChip: 'WORD',
     wordPromptCaption: 'meaning',
+    // PLAN-fb0929 10. lépés: es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
+    wordPromptCaptionEn: 'How do you say it in English?',
     // FB378: caption for a cell with an English prompt (translate to Spanish).
     promptCaptionEn: 'translate to Spanish',
     progress: (done: number, total: number) => `${done} / ${total} done`,
