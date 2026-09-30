@@ -47,7 +47,7 @@ describe('English grammar syllabus (lang = en)', () => {
   });
 
   it('has only the lessons written so far, and nothing is orphaned', () => {
-    expect(lessonCoverage('en').written).toBe(19);
+    expect(lessonCoverage('en').written).toBe(20);
     expect(hasLesson('en', 'to_be')).toBe(true);
     expect(hasLesson('en', 'articles')).toBe(true);
     expect(hasLesson('en', 'present_simple')).toBe(true);
@@ -67,6 +67,7 @@ describe('English grammar syllabus (lang = en)', () => {
     expect(hasLesson('en', 'present_perfect')).toBe(true);
     expect(hasLesson('en', 'comparatives')).toBe(true);
     expect(hasLesson('en', 'superlatives')).toBe(true);
+    expect(hasLesson('en', 'must_have_to')).toBe(true);
     expect(hasLesson('en', 'basic_verbs')).toBe(false);
     expect(nextWrittenTopic('en', 'basic_verbs')?.id).toBe('to_be');
     expect(nextWrittenTopic('en', 'to_be')?.id).toBe('articles');
@@ -87,7 +88,8 @@ describe('English grammar syllabus (lang = en)', () => {
     expect(nextWrittenTopic('en', 'will')?.id).toBe('present_perfect');
     expect(nextWrittenTopic('en', 'present_perfect')?.id).toBe('comparatives');
     expect(nextWrittenTopic('en', 'comparatives')?.id).toBe('superlatives');
-    expect(nextWrittenTopic('en', 'superlatives')).toBeUndefined();
+    expect(nextWrittenTopic('en', 'superlatives')?.id).toBe('must_have_to');
+    expect(nextWrittenTopic('en', 'must_have_to')).toBeUndefined();
     expect(orphanLessons('en')).toEqual([]);
   });
 
