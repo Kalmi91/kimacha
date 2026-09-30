@@ -117,7 +117,8 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     expect(screen.queryAllByText(' ✓').length).toBeGreaterThan(0);
     expect(screen.queryByText('Not quite!')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-next'));
-    expect(onFinish).toHaveBeenCalledWith(0, 1);
+    // FB420: a párosítás részpontot kap: 6 pár, 1 elrontott = 5/6 (nem 0/1).
+    expect(onFinish).toHaveBeenCalledWith(5, 6);
     view.unmount();
   });
 

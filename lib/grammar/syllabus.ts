@@ -750,6 +750,20 @@ export function doneGrammarTopicProgress(
   return result;
 }
 
+/**
+ * FB415 (PLAN-fb0929 4. lépés): a lecke létező feladat-fajtái a lecke-oldal gombjainak
+ * sorrendjében (a "why" is, ellentétben a "kész" feltétellel fentebb): a lecke %-a
+ * ezek átlaga, a meg nem kezdett fajta 0.
+ */
+export const LESSON_KIND_ORDER: readonly GrammarKind[] = ['choice', 'match', 'form', 'why', 'transform'];
+
+export function lessonKinds(lang: string, topicId: string): GrammarKind[] {
+  const lesson = lessonFor(lang, topicId);
+  if (!lesson) return [];
+  const counts = grammarKindCounts(lesson);
+  return LESSON_KIND_ORDER.filter((k) => counts[k] > 0);
+}
+
 /** How much of the syllabus is written, for the header line. */
 export function lessonCoverage(lang: string): { written: number; planned: number } {
   const syllabus = syllabusOf(lang);

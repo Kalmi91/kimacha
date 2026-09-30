@@ -14,12 +14,13 @@ import {
   syllabusLevels,
   hasLesson,
   lessonCoverage,
+  lessonKinds,
   getGrammarTier,
   syllabusForLevel,
   topicsForUnit,
   unitsForLevel,
 } from '@/lib/grammar/syllabus';
-import { lessonBadgePercent, lessonPercentsByTopic } from '@/lib/grammar/lessonScore';
+import { lessonBadgePercent, lessonScoresByTopic } from '@/lib/grammar/lessonScore';
 import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
 import FeedbackButton from '@/components/FeedbackModal';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
@@ -79,7 +80,8 @@ export default function GrammarSyllabusScreen() {
     const rows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
     setProgress(doneGrammarTopicProgress(target, rows));
     // FB328: ugyanabból a lekérésből, külön DB-hívás nélkül.
-    setPercents(lessonPercentsByTopic(rows));
+    // FB415: a lecke %-a az összes fajta átlaga (a meg nem csinált 0), nem a kumulált jó-arány.
+    setPercents(lessonScoresByTopic(rows, (id) => lessonKinds(target, id)));
     setStreak((await db.getStreak())?.current_count ?? 0);
     setWeeklyGoal(await db.getWeeklyGoalMinutes());
     setWeekMinutes((await db.getUsageStats()).thisWeek);

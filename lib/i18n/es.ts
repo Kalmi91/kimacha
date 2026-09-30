@@ -113,6 +113,8 @@ const es: Strings = {
     enComingSoon: 'La gramática inglesa llegará más adelante.',
     // FB416: a saját válasz a helyes fölött a hibás ragozásnál (AnswerCompare).
     yourAnswer: 'Tu respuesta',
+    // FB421: a félbehagyott feladat sora a gomb alatt, pl. "3/10 · 30%".
+    runProgress: (done: number, total: number, pct: number) => `${done}/${total} · ${pct}%`,
   },
   settings: {
     themeAuto: 'Automático',
