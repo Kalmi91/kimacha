@@ -38,6 +38,7 @@ import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
 import { BrutalBox, BrutalButton, SegmentBar, brutalInputStyle, segmentsFilled, textOnFill } from '@/components/grammar/Brutal';
 import EasySentenceCard from '@/components/EasySentenceCard';
+import FitText from '@/components/FitText';
 import TypedSentenceCard from '@/components/TypedSentenceCard';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
 import { resolvedTensesFromLessons, type ResolvedTense } from '@/lib/knownSentence';
@@ -699,7 +700,12 @@ export default function PcicScreen() {
           {/* 5b: a szó melletti 🔊 újra elmondja az angolt (Kálmán kiegészítése,
               anki-ui-terv.html), ugyanazzal a hívással, mint a lap-nyitáskori FB319 felolvasás. */}
           <View style={styles.wordRow}>
-            <Text style={[styles.frontText, { color: colors.text }]}>{promptText}</Text>
+            {/* FB404/405/413: a hosszú szó / mondat ("reason (justification)", "they are
+                going to arrive") a hosszától függő betűmérettel, összemenő szélességgel;
+                enélkül a natív sor kiterjedt a kártyán túlra és a bal széle levágódott. */}
+            <FitText base={32} maxLines={3} reserve={note ? 200 : 150} style={[styles.frontText, { color: colors.text }]}>
+              {promptText ?? ''}
+            </FitText>
             <Pressable onPress={() => speak(promptText ?? promptSource ?? '', speechLang(sourceLang))} style={styles.speakBtn}>
               <Text style={styles.speakIcon}>🔊</Text>
             </Pressable>
@@ -1027,6 +1033,7 @@ const styles = StyleSheet.create({
   },
   sectionRow: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'center',
     gap: 6,
@@ -1036,6 +1043,7 @@ const styles = StyleSheet.create({
   sectionText: {
     fontSize: 12,
     textAlign: 'center',
+    flexShrink: 1,
   },
   // 5c: szófaj-chip (noun/verb/phrase) a szekció-szöveg mellett.
   posChip: {

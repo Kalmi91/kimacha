@@ -66,6 +66,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 6,
+    // FB405: a spanyol feliratú chipek összege szélesebb a képernyőnél; enélkül a
+    // sor nem szűkül a szülőjéhez, így sosem tördelt, és az utolsó chip kilógott.
+    flexShrink: 1,
   },
   badge: {
     paddingHorizontal: 10,
