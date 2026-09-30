@@ -12,7 +12,7 @@ Becslés: ~600K token, 1-2 óra.
 ## Lépések
 
 - [x] 1. (12:53) Worktree előkészítés + kapu-script `scripts/words-open-check.mjs` → kész, ha: a script lefut egy kis kézi mintán, és `npm run lint` zöld
-- [ ] 2. 600 lemma listája (order, level, pos, lemma, es) a 4 fájlba, mondatok nélkül → kész, ha: a kapu R1, R2 szabálya zöld
+- [x] 2. (13:01) 600 lemma listája (order, level, pos, lemma, es) a 4 fájlba, mondatok nélkül → kész, ha: a kapu R1, R2 szabálya zöld
 - [ ] 3. A1 kártyák (fordítás + mondat) → kész, ha: a kapu minden szabálya zöld az A1-en; Opus 10-es mintát néz
 - [ ] 4. A2, B1, B2 kártyák → kész, ha: a kapu teljes futása zöld
 - [ ] 5. Második AI-átnézés (független Sonnet) + javítás → kész, ha: minden jelölt kártya javítva, kapu zöld
