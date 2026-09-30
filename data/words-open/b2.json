@@ -279,7 +279,7 @@
     "en": "to improve",
     "de": "verbessern",
     "sentence_es": "Habría mejorado mi español si hubiera estudiado más.",
-    "sentence_hu": "Jobban tudnék spanyolul, ha többet tanultam volna.",
+    "sentence_hu": "Jobb lett volna a spanyolom, ha többet tanultam volna.",
     "sentence_en": "I would have improved my Spanish if I had studied more.",
     "sentence_de": "Ich hätte mein Spanisch verbessert, wenn ich mehr gelernt hätte.",
     "sentence_lemmas": ["haber", "mejorar", "mi", "español", "si", "haber", "estudiar", "más"]
@@ -335,8 +335,8 @@
     "pos": "verb",
     "lemma": "obtener",
     "es": "obtener",
-    "hu": "megszerezni, kapni",
-    "en": "to obtain, to get",
+    "hu": "megszerezni (hivatalosan), beszerezni",
+    "en": "to obtain (formal), to acquire",
     "de": "erhalten, bekommen",
     "sentence_es": "Quiero obtener más información sobre este programa.",
     "sentence_hu": "Több információt szeretnék kapni erről a programról.",
@@ -414,9 +414,9 @@
     "en": "to involve, to imply",
     "de": "beinhalten, bedeuten",
     "sentence_es": "Este trabajo implica mucho tiempo.",
-    "sentence_hu": "Ez a munka sok időt igényel.",
+    "sentence_hu": "Ez a munka sok időráfordítással jár.",
     "sentence_en": "This job involves a lot of time.",
-    "sentence_de": "Diese Arbeit erfordert viel Zeit.",
+    "sentence_de": "Diese Arbeit bringt einen großen Zeitaufwand mit sich.",
     "sentence_lemmas": ["este", "trabajo", "implicar", "mucho", "tiempo"]
   },
   {
@@ -504,7 +504,7 @@
     "en": "to describe",
     "de": "beschreiben",
     "sentence_es": "¿Puedes describir tu casa nueva?",
-    "sentence_hu": "El tudnád írni az új házadat?",
+    "sentence_hu": "Le tudnád írni az új házadat?",
     "sentence_en": "Can you describe your new house?",
     "sentence_de": "Kannst du dein neues Haus beschreiben?",
     "sentence_lemmas": ["poder", "describir", "tu", "casa", "nuevo"]
@@ -623,11 +623,11 @@
     "hu": "tagadni, megtagadni",
     "en": "to deny, to refuse",
     "de": "leugnen, verweigern",
-    "sentence_es": "El niño niega que rompió la ventana.",
+    "sentence_es": "El niño niega haber roto la ventana.",
     "sentence_hu": "A gyerek tagadja, hogy betörte az ablakot.",
-    "sentence_en": "The child denies that he broke the window.",
+    "sentence_en": "The child denies having broken the window.",
     "sentence_de": "Das Kind bestreitet, dass es das Fenster zerbrochen hat.",
-    "sentence_lemmas": ["el", "niño", "negar", "que", "romper", "el", "ventana"]
+    "sentence_lemmas": ["el", "niño", "negar", "haber", "romper", "el", "ventana"]
   },
   {
     "order": 493,
@@ -804,9 +804,9 @@
     "en": "benefit, profit",
     "de": "Nutzen, Gewinn",
     "sentence_es": "Esta decisión tiene muchos beneficios.",
-    "sentence_hu": "Ennek a döntésnek sok előnye van.",
+    "sentence_hu": "Ennek a döntésnek sok haszna van.",
     "sentence_en": "This decision has many benefits.",
-    "sentence_de": "Diese Entscheidung hat viele Vorteile.",
+    "sentence_de": "Diese Entscheidung bringt viel Nutzen.",
     "sentence_lemmas": ["este", "decisión", "tener", "mucho", "beneficio"]
   },
   {
@@ -1013,11 +1013,11 @@
     "hu": "szándék",
     "en": "intention",
     "de": "Absicht",
-    "sentence_es": "No tengo la intención de cambiar mi trabajo.",
+    "sentence_es": "No tengo la intención de cambiar de trabajo.",
     "sentence_hu": "Nem áll szándékomban munkahelyet váltani.",
     "sentence_en": "I have no intention of changing my job.",
     "sentence_de": "Ich habe nicht die Absicht, meine Arbeit zu wechseln.",
-    "sentence_lemmas": ["no", "tener", "el", "intención", "de", "cambiar", "mi", "trabajo"]
+    "sentence_lemmas": ["no", "tener", "el", "intención", "de", "cambiar", "de", "trabajo"]
   },
   {
     "order": 519,
@@ -1040,13 +1040,13 @@
     "pos": "noun",
     "lemma": "norma",
     "es": "la norma",
-    "hu": "szabály, norma",
+    "hu": "előírás, norma",
     "en": "rule, norm",
-    "de": "Norm, Regel",
+    "de": "Norm, Vorschrift",
     "sentence_es": "Es una norma de la empresa.",
-    "sentence_hu": "Ez a cég szabálya.",
+    "sentence_hu": "Ez a cég előírása.",
     "sentence_en": "It is a company rule.",
-    "sentence_de": "Das ist eine Regel des Unternehmens.",
+    "sentence_de": "Das ist eine Vorschrift des Unternehmens.",
     "sentence_lemmas": ["ser", "un", "norma", "de", "el", "empresa"]
   },
   {
@@ -1208,7 +1208,7 @@
     "hu": "tudomány",
     "en": "science",
     "de": "Wissenschaft",
-    "sentence_es": "Mi hijo quiere estudiar ciencia en la universidad.",
+    "sentence_es": "Mi hijo quiere estudiar ciencias en la universidad.",
     "sentence_hu": "A fiam természettudományt akar tanulni az egyetemen.",
     "sentence_en": "My son wants to study science at the university.",
     "sentence_de": "Mein Sohn will an der Universität Naturwissenschaften studieren.",
@@ -1403,11 +1403,11 @@
     "hu": "következmény",
     "en": "consequence",
     "de": "Folge, Konsequenz",
-    "sentence_es": "Esta decisión puede tener consecuencias difíciles.",
-    "sentence_hu": "Ennek a döntésnek nehéz következményei lehetnek.",
-    "sentence_en": "This decision can have difficult consequences.",
-    "sentence_de": "Diese Entscheidung kann schwierige Folgen haben.",
-    "sentence_lemmas": ["este", "decisión", "poder", "tener", "consecuencia", "difícil"]
+    "sentence_es": "Esta decisión puede tener consecuencias importantes.",
+    "sentence_hu": "Ennek a döntésnek fontos következményei lehetnek.",
+    "sentence_en": "This decision can have important consequences.",
+    "sentence_de": "Diese Entscheidung kann wichtige Folgen haben.",
+    "sentence_lemmas": ["este", "decisión", "poder", "tener", "consecuencia", "importante"]
   },
   {
     "order": 545,
@@ -1569,9 +1569,9 @@
     "en": "doubt",
     "de": "Zweifel",
     "sentence_es": "Tengo una duda sobre este texto.",
-    "sentence_hu": "Kétségem van ezzel a szöveggel kapcsolatban.",
-    "sentence_en": "I have a doubt about this text.",
-    "sentence_de": "Ich habe Zweifel an diesem Text.",
+    "sentence_hu": "Kérdésem van ezzel a szöveggel kapcsolatban.",
+    "sentence_en": "I have a question about this text.",
+    "sentence_de": "Ich habe eine Frage zu diesem Text.",
     "sentence_lemmas": ["tener", "un", "duda", "sobre", "este", "texto"]
   },
   {
@@ -1598,11 +1598,11 @@
     "hu": "kép, arculat",
     "en": "image, picture",
     "de": "Bild",
-    "sentence_es": "Tengo una imagen de mi familia en la pared.",
-    "sentence_hu": "Van egy képem a családomról a falon.",
-    "sentence_en": "I have a picture of my family on the wall.",
-    "sentence_de": "Ich habe ein Bild von meiner Familie an der Wand.",
-    "sentence_lemmas": ["tener", "un", "imagen", "de", "mi", "familia", "en", "el", "pared"]
+    "sentence_es": "La imagen de mi teléfono es muy clara.",
+    "sentence_hu": "A telefonom képe nagyon tiszta.",
+    "sentence_en": "The picture on my phone is very clear.",
+    "sentence_de": "Das Bild auf meinem Telefon ist sehr klar.",
+    "sentence_lemmas": ["el", "imagen", "de", "mi", "teléfono", "ser", "muy", "claro"]
   },
   {
     "order": 558,
@@ -1718,11 +1718,11 @@
     "hu": "összetett, bonyolult",
     "en": "complex, complicated",
     "de": "komplex, kompliziert",
-    "sentence_es": "El problema es más complejo de lo que parece.",
-    "sentence_hu": "A probléma bonyolultabb, mint amilyennek látszik.",
-    "sentence_en": "The problem is more complex than it seems.",
-    "sentence_de": "Das Problem ist komplexer, als es scheint.",
-    "sentence_lemmas": ["el", "problema", "ser", "más", "complejo", "de", "lo", "que", "parecer"]
+    "sentence_es": "Este problema es más complejo que el otro.",
+    "sentence_hu": "Ez a probléma bonyolultabb, mint a másik.",
+    "sentence_en": "This problem is more complex than the other one.",
+    "sentence_de": "Dieses Problem ist komplexer als das andere.",
+    "sentence_lemmas": ["este", "problema", "ser", "más", "complejo", "que", "el", "otro"]
   },
   {
     "order": 566,
@@ -1733,11 +1733,11 @@
     "hu": "egyszerű",
     "en": "simple",
     "de": "einfach, schlicht",
-    "sentence_es": "La solución es más sencilla de lo que piensas.",
-    "sentence_hu": "A megoldás egyszerűbb, mint gondolod.",
-    "sentence_en": "The solution is simpler than you think.",
-    "sentence_de": "Die Lösung ist einfacher, als du denkst.",
-    "sentence_lemmas": ["el", "solución", "ser", "más", "sencillo", "de", "lo", "que", "pensar"]
+    "sentence_es": "Esta solución es más sencilla que la otra.",
+    "sentence_hu": "Ez a megoldás egyszerűbb, mint a másik.",
+    "sentence_en": "This solution is simpler than the other one.",
+    "sentence_de": "Diese Lösung ist einfacher als die andere.",
+    "sentence_lemmas": ["este", "solución", "ser", "más", "sencillo", "que", "el", "otro"]
   },
   {
     "order": 567,
@@ -1760,13 +1760,13 @@
     "pos": "adj",
     "lemma": "curioso",
     "es": "curioso",
-    "hu": "különös, kíváncsi",
+    "hu": "érdekes, kíváncsi",
     "en": "curious, strange",
-    "de": "merkwürdig, neugierig",
+    "de": "interessant, neugierig",
     "sentence_es": "Es curioso que mi perro coma fruta.",
     "sentence_hu": "Érdekes, hogy a kutyám gyümölcsöt eszik.",
     "sentence_en": "It is curious that my dog eats fruit.",
-    "sentence_de": "Es ist merkwürdig, dass mein Hund Obst frisst.",
+    "sentence_de": "Es ist interessant, dass mein Hund Obst frisst.",
     "sentence_lemmas": ["ser", "curioso", "que", "mi", "perro", "comer", "fruta"]
   },
   {
@@ -1868,11 +1868,11 @@
     "hu": "teljes, összes",
     "en": "total, complete",
     "de": "gesamt, total",
-    "sentence_es": "El precio total incluye el desayuno.",
-    "sentence_hu": "A teljes ár tartalmazza a reggelit.",
-    "sentence_en": "The total price includes breakfast.",
-    "sentence_de": "Der Gesamtpreis beinhaltet das Frühstück.",
-    "sentence_lemmas": ["el", "precio", "total", "incluir", "el", "desayuno"]
+    "sentence_es": "El número total de niños es veinte.",
+    "sentence_hu": "A gyerekek teljes száma húsz.",
+    "sentence_en": "The total number of children is twenty.",
+    "sentence_de": "Die Gesamtzahl der Kinder ist zwanzig.",
+    "sentence_lemmas": ["el", "número", "total", "de", "niño", "ser", "veinte"]
   },
   {
     "order": 576,
@@ -1883,11 +1883,11 @@
     "hu": "végső, utolsó",
     "en": "final, last",
     "de": "endgültig, letzte",
-    "sentence_es": "Al final, todo salió bien.",
-    "sentence_hu": "A végén minden jól sikerült.",
-    "sentence_en": "In the end, everything went well.",
-    "sentence_de": "Am Ende ist alles gut gegangen.",
-    "sentence_lemmas": ["a", "final", "todo", "salir", "bien"]
+    "sentence_es": "La decisión final es de mi jefe.",
+    "sentence_hu": "A végső döntés a főnökömé.",
+    "sentence_en": "The final decision is my boss's.",
+    "sentence_de": "Die endgültige Entscheidung liegt bei meinem Chef.",
+    "sentence_lemmas": ["el", "decisión", "final", "ser", "de", "mi", "jefe"]
   },
   {
     "order": 577,
