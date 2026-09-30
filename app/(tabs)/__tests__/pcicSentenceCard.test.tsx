@@ -126,7 +126,7 @@ describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
     // Begépelős kártya: az 5. szónak nincs mondata, a 6.-é (silla) megy át a kapun.
     expect(r.getByText('The chair and the table.')).toBeTruthy();
     fireEvent.changeText(r.getByPlaceholderText('Type the sentence'), 'la silla y la mesa');
-    fireEvent.press(r.getByText('Check'));
+    fireEvent.press(r.getByText('✓ Check'));
     fireEvent.press(r.getByText(/^Next/));
     await flush();
 

@@ -740,10 +740,10 @@
     }
   ],
   "speak": {
-    "hu": "A ser és az estar mindkettő azt jelenti: \"lenni\", de más-más dologra használjuk. A ser azt mondja meg, ki vagy vagy mi vagy alapvetően: «Soy profesor», «Somos de Budapest». Az estar azt mondja meg, hol vagy vagy hogyan vagy éppen: «Estoy cansado», «El libro está en la mesa». Néhány melléknév a kettővel más jelentést kap: «ser aburrido» unalmas, «estar aburrido» unatkozik. Egy esemény helyszínét ser fejezi ki, egy tárgyét estar: «La fiesta es aquí», de «La casa está aquí». A halálra mindig estar jár: «Está muerto».",
-    "en": "Ser and estar both mean \"to be\", but they are used for different things. Ser tells you who or what someone is at their core: «Soy profesor», «Somos de Budapest». Estar tells you where someone is or how they are right now: «Estoy cansado», «El libro está en la mesa». A few adjectives change meaning between the two: «ser aburrido» means boring, «estar aburrido» means bored. An event’s location takes ser, an object’s takes estar: «La fiesta es aquí», but «La casa está aquí». Death always takes estar: «Está muerto».",
-    "es": "Ser y estar se usan para cosas distintas, aunque en muchos idiomas parecen la misma idea. Ser indica quién o qué es alguien en el fondo: «Soy profesor», «Somos de Budapest». Estar indica dónde está alguien o cómo está ahora mismo: «Estoy cansado», «El libro está en la mesa». Algunos adjetivos cambian de sentido entre los dos: «ser aburrido» significa aburrido, «estar aburrido» significa que alguien se aburre. El lugar de un evento lleva ser, el de un objeto lleva estar: «La fiesta es aquí», pero «La casa está aquí». Para la muerte siempre se usa estar: «Está muerto».",
-    "de": "Ser und estar bedeuten beide \"sein\", werden aber für unterschiedliche Dinge benutzt. Ser sagt, wer oder was jemand im Kern ist: «Soy profesor», «Somos de Budapest». Estar sagt, wo jemand ist oder wie es ihm gerade geht: «Estoy cansado», «El libro está en la mesa». Manche Adjektive ändern mit den beiden die Bedeutung: «ser aburrido» heißt langweilig, «estar aburrido» heißt sich langweilen. Der Ort eines Ereignisses steht mit ser, der eines Objekts mit estar: «La fiesta es aquí», aber «La casa está aquí». Für den Tod steht immer estar: «Está muerto»."
+    "hu": "A két spanyol lenni ige másra való. Az első megmondja, ki vagy mi valaki alapvetően, például foglalkozást, származást vagy tartós tulajdonságot. A második megmondja, hol van valaki, vagy hogyan van éppen most. Néhány melléknév jelentést vált a kettő között: az elsővel az egyik szó unalmasat jelent, a másodikkal unatkozót. Egy esemény helyszínét az első ige fejezi ki, egy tárgyét a második. A halálra mindig a második jár.",
+    "en": "The two Spanish verbs for to be are used for different things. The first tells you who or what someone is at their core, such as a profession, an origin or a lasting quality. The second tells you where someone is or how they are right now. A few adjectives change meaning between the two: with the first, one word means boring, with the second it means bored. An event's location takes the first verb, an object's location takes the second. Death always takes the second.",
+    "es": "Los dos verbos españoles para to be se usan para cosas distintas. El primero dice quién o qué es alguien en el fondo, como una profesión, un origen o una cualidad duradera. El segundo dice dónde está alguien o cómo está ahora mismo. Unos pocos adjetivos cambian de significado entre los dos: con el primero, una palabra significa aburrido de aburrir, con el segundo significa aburrido de aburrirse. El lugar de un evento lleva el primer verbo, el lugar de un objeto lleva el segundo. La muerte siempre lleva el segundo.",
+    "de": "Die zwei spanischen Verben für sein werden für Verschiedenes gebraucht. Das erste sagt, wer oder was jemand im Kern ist, etwa ein Beruf, eine Herkunft oder eine dauerhafte Eigenschaft. Das zweite sagt, wo jemand ist oder wie es ihm gerade geht. Einige Adjektive ändern zwischen beiden die Bedeutung: mit dem ersten bedeutet ein Wort langweilig, mit dem zweiten gelangweilt. Der Ort eines Ereignisses nimmt das erste Verb, der Ort eines Gegenstands das zweite. Der Tod nimmt immer das zweite."
   },
   "glossary": [
     {
@@ -1608,6 +1608,191 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "se-spot-01",
+      "kind": "spot",
+      "trial": true,
+      "es": "Yo soy cansado.",
+      "wrongIndex": 1,
+      "options": [
+        "estoy",
+        "estás",
+        "eres"
+      ],
+      "correctIndex": 0,
+      "explain": {
+        "hu": "A fáradtság múló állapot, ezért az állapotot kifejező ige kell: estoy cansado.",
+        "en": "Being tired is a temporary state, so the verb for states is needed: estoy cansado.",
+        "es": "Estar cansado es un estado pasajero, por eso hace falta el verbo de los estados: estoy cansado.",
+        "de": "Müdigkeit ist ein vorübergehender Zustand, deshalb braucht man das Verb für Zustände: estoy cansado."
+      },
+      "tr": {
+        "hu": "Fáradt vagyok.",
+        "en": "I am tired.",
+        "es": "Estoy cansado.",
+        "de": "Ich bin müde."
+      }
+    },
+    {
+      "id": "se-spot-02",
+      "kind": "spot",
+      "trial": true,
+      "es": "Mi hermana está profesora.",
+      "wrongIndex": 2,
+      "options": [
+        "es",
+        "eres",
+        "son"
+      ],
+      "correctIndex": 0,
+      "explain": {
+        "hu": "A foglalkozás tartós besorolás, ezért a ser kell: mi hermana es profesora.",
+        "en": "A profession is a lasting classification, so ser is needed: mi hermana es profesora.",
+        "es": "La profesión es una clasificación estable, por eso hace falta ser: mi hermana es profesora.",
+        "de": "Ein Beruf ist eine dauerhafte Einordnung, deshalb braucht man ser: mi hermana es profesora."
+      },
+      "tr": {
+        "hu": "A húgom tanár.",
+        "en": "My sister is a teacher.",
+        "es": "Mi hermana es profesora.",
+        "de": "Meine Schwester ist Lehrerin."
+      }
+    },
+    {
+      "id": "se-spot-03",
+      "kind": "spot",
+      "trial": true,
+      "es": "Ellos están de México.",
+      "wrongIndex": 1,
+      "options": [
+        "son",
+        "somos",
+        "eres"
+      ],
+      "correctIndex": 0,
+      "explain": {
+        "hu": "A származás a ser dolga: ellos son de México.",
+        "en": "Origin takes ser: ellos son de México.",
+        "es": "El origen lleva ser: ellos son de México.",
+        "de": "Die Herkunft nimmt ser: ellos son de México."
+      },
+      "tr": {
+        "hu": "Ők Mexikóból valók.",
+        "en": "They are from Mexico.",
+        "es": "Ellos son de México.",
+        "de": "Sie kommen aus Mexiko."
+      }
+    },
+    {
+      "id": "se-spot-04",
+      "kind": "spot",
+      "trial": true,
+      "es": "Ella es en el trabajo.",
+      "wrongIndex": 1,
+      "options": [
+        "está",
+        "estás",
+        "están"
+      ],
+      "correctIndex": 0,
+      "explain": {
+        "hu": "A hely az estar dolga: ella está en el trabajo.",
+        "en": "Location takes estar: ella está en el trabajo.",
+        "es": "El lugar lleva estar: ella está en el trabajo.",
+        "de": "Der Ort nimmt estar: ella está en el trabajo."
+      },
+      "tr": {
+        "hu": "Ő a munkahelyén van.",
+        "en": "She is at work.",
+        "es": "Ella está en el trabajo.",
+        "de": "Sie ist bei der Arbeit."
+      }
+    },
+    {
+      "id": "se-spot-05",
+      "kind": "spot",
+      "trial": true,
+      "es": "La puerta es abierta.",
+      "wrongIndex": 2,
+      "options": [
+        "está",
+        "están",
+        "estás"
+      ],
+      "correctIndex": 0,
+      "explain": {
+        "hu": "Ha az ajtó egy cselekvés eredményeként nyitva van, az estar kell: la puerta está abierta.",
+        "en": "A door that is open as the result of an action takes estar: la puerta está abierta.",
+        "es": "Una puerta abierta como resultado de una acción lleva estar: la puerta está abierta.",
+        "de": "Eine Tür, die als Ergebnis einer Handlung offen ist, nimmt estar: la puerta está abierta."
+      },
+      "tr": {
+        "hu": "Az ajtó nyitva van.",
+        "en": "The door is open.",
+        "es": "La puerta está abierta.",
+        "de": "Die Tür ist offen."
+      }
+    },
+    {
+      "id": "se-dict-01",
+      "kind": "dictation",
+      "trial": true,
+      "es": "Estoy en casa.",
+      "tr": {
+        "hu": "Otthon vagyok.",
+        "en": "I am at home.",
+        "es": "Estoy en casa.",
+        "de": "Ich bin zu Hause."
+      }
+    },
+    {
+      "id": "se-dict-02",
+      "kind": "dictation",
+      "trial": true,
+      "es": "Somos de España.",
+      "tr": {
+        "hu": "Spanyolországból valók vagyunk.",
+        "en": "We are from Spain.",
+        "es": "Somos de España.",
+        "de": "Wir kommen aus Spanien."
+      }
+    },
+    {
+      "id": "se-dict-03",
+      "kind": "dictation",
+      "trial": true,
+      "es": "Ella está cansada.",
+      "tr": {
+        "hu": "Ő fáradt.",
+        "en": "She is tired.",
+        "es": "Ella está cansada.",
+        "de": "Sie ist müde."
+      }
+    },
+    {
+      "id": "se-dict-04",
+      "kind": "dictation",
+      "trial": true,
+      "es": "Son las tres.",
+      "tr": {
+        "hu": "Három óra van.",
+        "en": "It is three o’clock.",
+        "es": "Son las tres.",
+        "de": "Es ist drei Uhr."
+      }
+    },
+    {
+      "id": "se-dict-05",
+      "kind": "dictation",
+      "trial": true,
+      "es": "La puerta está abierta.",
+      "tr": {
+        "hu": "Az ajtó nyitva van.",
+        "en": "The door is open.",
+        "es": "La puerta está abierta.",
+        "de": "Die Tür ist offen."
+      }
     }
   ]
 }

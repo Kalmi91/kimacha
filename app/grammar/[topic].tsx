@@ -10,8 +10,17 @@ import { getDb } from '@/lib/database';
 import { normalizeWordToken, type Level } from '@/data/words';
 import { cumulativeCorpusWordIds, grammarKindCounts, isLessonV2, type GrammarGapItem, type GrammarItem, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
 import { buildGlossMap } from '@/lib/games/gloss';
-import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, syllabusTopic } from '@/lib/grammar/syllabus';
-import { lessonPercent } from '@/lib/grammar/lessonScore';
+import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, scoredKinds, syllabusTopic } from '@/lib/grammar/syllabus';
+import {
+  betterBest,
+  kindBestKey,
+  kindPercent,
+  kindProgressFromRows,
+  kindRunKey,
+  lessonScore,
+  runSummary,
+  type KindRun,
+} from '@/lib/grammar/lessonScore';
 import { tableCellsForLesson, wordCellsForLesson, WORD_DECK_MIN_CARDS } from '@/lib/grammar/tableDeck';
 import { TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import { getScrollY, setScrollY } from '@/lib/grammar/scrollMemory';
@@ -23,6 +32,8 @@ import GrammarDrill, { type RoundStats } from '@/components/grammar/GrammarDrill
 import LessonBody from '@/components/grammar/LessonBody';
 import MoreBlocks from '@/components/grammar/MoreBlocks';
 import FeedbackButton from '@/components/FeedbackModal';
+import FitText from '@/components/FitText';
+import TrialBadge from '@/components/TrialBadge';
 import { BrutalBox, Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
@@ -34,10 +45,11 @@ import { useLoadOnMount } from '@/lib/useLoadOnMount';
 // of the course is the other order: understand, then check.
 
 type Phase = 'lesson' | 'drill' | 'done';
+type ProgressRow = { itemId: string; state: string; data: unknown };
 
 // D3 (FB290, 2026-09-17): a gombok ebben a sorrendben jelennek meg, csak azok
 // a fajták, amikből van item a leckében.
-const KIND_ORDER: GrammarKind[] = ['choice', 'match', 'form', 'why', 'transform'];
+const KIND_ORDER: GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform', 'spot', 'order', 'dictation'];
 
 export default function GrammarLessonScreen() {
   const { theme } = useTheme();
@@ -67,17 +79,10 @@ export default function GrammarLessonScreen() {
   // FB316 (NY10): hányszor gyakorolt már egy-egy transform item (itemId -> n),
   // ez dönti el a következő 10-es kör sorrendjét (legkevésbé gyakorolt elöl).
   const [transformSeen, setTransformSeen] = useState<Record<string, number>>({});
-  // FB328: a lecke ÖSSZES eddigi köréből (bármelyik fajta) számolt kumulált
-  // megválaszolt/helyes darabszám, a Kész-képernyő "Eddig: NN%" sorához.
-  const [lessonAnswered, setLessonAnswered] = useState(0);
-  const [lessonCorrect, setLessonCorrect] = useState(0);
-  // FB380: ugyanaz a kumulált megválaszolt/helyes pár, fajtánként külön
-  // (`${topic}:${kind}:answered`/`:correct`), hogy a lecke-képernyőn minden
-  // feladat gomb mellett a SAJÁT %-a is látsszon, ugyanazzal a lessonPercent
-  // logikával, ami a kinti (Kész-képernyős) számot adja. A kinti szám ezek
-  // fajtánkénti darabszámainak összege, nem külön számított.
-  const [kindAnswered, setKindAnswered] = useState<Partial<Record<GrammarKind, number>>>({});
-  const [kindCorrect, setKindCorrect] = useState<Partial<Record<GrammarKind, number>>>({});
+  // FB415 / FB420 / FB421 (PLAN-fb0929 4. lépés): a lecke haladás-sorai (game_progress),
+  // amikből fajtánként a legjobb befejezett kör (best) és a félbehagyott kör (run) jön;
+  // a lecke %-a az ÖSSZES fajta átlaga (lib/grammar/lessonScore.ts), a meg nem csinált 0.
+  const [progressRows, setProgressRows] = useState<ProgressRow[]>([]);
   // NY24: a kör-vége képernyő adatai (csak memóriában): a drill statisztikája, a
   // kör ELŐTTI kumulált %, és a streak-nap.
   const [roundStats, setRoundStats] = useState<RoundStats | null>(null);
@@ -104,28 +109,11 @@ export default function GrammarLessonScreen() {
       const progressRows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
       const seenRow = progressRows.find((r) => r.itemId === `${String(topicId)}:transform:seen`);
       setTransformSeen((seenRow?.data as Record<string, number>) ?? {});
-      // FB328: ugyanabból a lekérésből, külön sor nélkül.
-      const answeredRow = progressRows.find((r) => r.itemId === `${String(topicId)}:answered`);
-      const correctRow = progressRows.find((r) => r.itemId === `${String(topicId)}:correct`);
-      setLessonAnswered(typeof answeredRow?.data === 'number' ? answeredRow.data : 0);
-      setLessonCorrect(typeof correctRow?.data === 'number' ? correctRow.data : 0);
-      // FB380: ugyanabból a lekérésből, fajtánként.
-      const nextKindAnswered: Partial<Record<GrammarKind, number>> = {};
-      const nextKindCorrect: Partial<Record<GrammarKind, number>> = {};
-      for (const kind of KIND_ORDER) {
-        const kA = progressRows.find((r) => r.itemId === `${String(topicId)}:${kind}:answered`);
-        const kC = progressRows.find((r) => r.itemId === `${String(topicId)}:${kind}:correct`);
-        if (typeof kA?.data === 'number') nextKindAnswered[kind] = kA.data;
-        if (typeof kC?.data === 'number') nextKindCorrect[kind] = kC.data;
-      }
-      setKindAnswered(nextKindAnswered);
-      setKindCorrect(nextKindCorrect);
+      // FB415/FB421: ugyanabból a lekérésből a fajták best/run/régi sorai.
+      setProgressRows(progressRows);
     } else {
       setTransformSeen({});
-      setLessonAnswered(0);
-      setLessonCorrect(0);
-      setKindAnswered({});
-      setKindCorrect({});
+      setProgressRows([]);
     }
   }, [topicId]);
 
@@ -151,9 +139,9 @@ export default function GrammarLessonScreen() {
           <Pressable onPress={() => router.back()} hitSlop={12}>
             <Text style={[styles.back, { color: colors.text }]}>←</Text>
           </Pressable>
-          <Text style={[styles.title, { color: colors.text }]} numberOfLines={1}>
+          <FitText base={17} maxLines={2} reserve={100} style={[styles.title, { color: colors.text }]}>
             {entry?.title[contentLang] ?? String(topicId)}
-          </Text>
+          </FitText>
           <View style={{ width: 24 }} />
         </View>
         <Text style={[styles.empty, { color: colors.tabIconDefault }]}>{s.grammar.soonLong}</Text>
@@ -170,6 +158,8 @@ export default function GrammarLessonScreen() {
   // (pl. hay-estar nem kap ragozás-gombot, mert nincs benne form item).
   const kindCounts = grammarKindCounts(lesson);
   const availableKinds = KIND_ORDER.filter((k) => kindCounts[k] > 0);
+  // Az ideiglenes (csupa trial itemű) fajták: gombjuk jelvényt kap, és nem számítanak a lecke %-ába.
+  const trialKinds = new Set<GrammarKind>(availableKinds.filter((k) => !scoredKinds(lesson).includes(k)));
   // PLAN-play 13. lépés (s6): the deck button only where the lesson actually
   // has a conjugation table (lib/grammar/tableDeck.ts already excludes the
   // reference GridTables and vosotros rows).
@@ -177,7 +167,8 @@ export default function GrammarLessonScreen() {
   // FB375 (PLAN-fb0923 6. lépés, D5/a): a table-less lesson gets a word-deck
   // instead, built from its own vocabulary; only shown at >= 8 cards, and
   // never alongside the table-deck button (D5: "ne legyen két gomb").
-  const wordDeckCells = tableDeckCells.length === 0 ? wordCellsForLesson(lesson) : [];
+  // PLAN-fb0929 10. lépés: es→en irányban az angol szókészletből épül; ha nincs elég szó, nincs gomb.
+  const wordDeckCells = tableDeckCells.length === 0 ? wordCellsForLesson(lesson, learnedLang) : [];
 
   // Two worked examples from the first items, so the lesson SHOWS the rule
   // before it asks anything.
@@ -230,8 +221,18 @@ export default function GrammarLessonScreen() {
     speakSequence(segments, () => setSpeaking(false));
   };
 
+  // FB415/FB421: a lecke haladás-sorainak írása: helyi állapot + tartós (game_progress).
+  const saveRow = (itemId: string, state: string, data: unknown) => {
+    setProgressRows((prev) => [...prev.filter((r) => r.itemId !== itemId), { itemId, state, data }]);
+    getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, itemId, state, data).catch(() => {});
+  };
+  // A lecke %-a: az ÖSSZES létező fajta átlaga, a meg nem kezdett fajta 0 (null: még semmit sem csinált).
+  // PLAN-fb0929 7. lépés (D1): az ideiglenes fajták nem húzzák le a lecke %-át (scoredKinds).
+  const lessonScoreOf = (rows: ProgressRow[]) =>
+    lessonScore(scoredKinds(lesson).map((k) => kindProgressFromRows(rows, String(topicId), k)));
+
   const finish = async (correct: number, total: number, roundItemIds?: string[]) => {
-    setPrevPct(lessonPercent(lessonAnswered, lessonCorrect));
+    setPrevPct(lessonScoreOf(progressRows));
     setScore({ correct, total });
     setPhase('done');
     // D3 (FB290): a sor kulcsa fajtánként külön (`${topic}:${kind}`), és csak
@@ -243,25 +244,11 @@ export default function GrammarLessonScreen() {
         .setGameProgress(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:${drillKind}`, 'done', { correct, total })
         .catch(() => {});
     }
-    // FB328: kumulált megválaszolt/helyes darabszám, MINDEN fajta MINDEN
-    // körénél, a meglévő >=80%-os "kész" küszöbtől függetlenül.
-    const nextAnswered = lessonAnswered + total;
-    const nextCorrect = lessonCorrect + correct;
-    setLessonAnswered(nextAnswered);
-    setLessonCorrect(nextCorrect);
-    getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:answered`, 'count', nextAnswered).catch(() => {});
-    getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:correct`, 'count', nextCorrect).catch(() => {});
-    // FB380: ugyanaz a kumulálás, fajtánként külön is, hogy a lecke-képernyőn
-    // minden feladat gomb mellett a saját %-a is látsszon (a kinti szám ezek
-    // összege: lessonAnswered/lessonCorrect fentebb pontosan ennyi minden
-    // körnél, tehát a kinti szám mindig a fajtánkénti részek súlyozott
-    // összege marad, nincs külön súlyozó logika).
-    const nextKindAnswered = (kindAnswered[drillKind] ?? 0) + total;
-    const nextKindCorrect = (kindCorrect[drillKind] ?? 0) + correct;
-    setKindAnswered((prev) => ({ ...prev, [drillKind]: nextKindAnswered }));
-    setKindCorrect((prev) => ({ ...prev, [drillKind]: nextKindCorrect }));
-    getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:${drillKind}:answered`, 'count', nextKindAnswered).catch(() => {});
-    getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:${drillKind}:correct`, 'count', nextKindCorrect).catch(() => {});
+    // FB421: befejezett kör: a jobb eredmény felülírja a régit (a gyengébb nem rontja),
+    // és a félbehagyott kör törlődik. A fajta %-a a legjobb kör eredménye.
+    const prevBest = kindProgressFromRows(progressRows, String(topicId), drillKind).best;
+    saveRow(kindBestKey(String(topicId), drillKind), 'best', betterBest(prevBest, { correct, total }));
+    saveRow(kindRunKey(String(topicId), drillKind), 'run', null);
     // FB316 (NY10): a kör itemjei "gyakoroltak" lesznek, jó és rossz válasz is
     // számít; egy írás a kör végén, nem itemenként.
     if (drillKind === 'transform' && roundItemIds && roundItemIds.length) {
@@ -284,9 +271,11 @@ export default function GrammarLessonScreen() {
       >
         <Text style={[styles.back, { color: g.ink }]}>←</Text>
       </BrutalBox>
-      <Text style={[styles.title, styles.brutalTitle, { color: g.ink }]} numberOfLines={1}>
+      {/* FB404/405/413: a hosszú (spanyol) cím két sorba törik és lépcsőzötten kisebb,
+          nem vágódik le "..."-tal. */}
+      <FitText base={17} maxLines={2} reserve={150} caps style={[styles.title, styles.brutalTitle, { color: g.ink }]}>
         {lessonTitle}
-      </Text>
+      </FitText>
       <Sticker label={lesson.level} fill="a" rotate={5} />
     </View>
   ) : (
@@ -294,9 +283,9 @@ export default function GrammarLessonScreen() {
       <Pressable onPress={() => (phase === 'lesson' ? router.back() : setPhase('lesson'))} hitSlop={12}>
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
-      <Text style={[styles.title, { color: colors.text }]} numberOfLines={1}>
+      <FitText base={17} maxLines={2} reserve={130} style={[styles.title, { color: colors.text }]}>
         {lessonTitle}
-      </Text>
+      </FitText>
       <Text style={[styles.levelTag, { color: colors.tint }]}>{lesson.level}</Text>
     </View>
   );
@@ -347,6 +336,10 @@ export default function GrammarLessonScreen() {
           onItemChange={setDrillItemId}
           onRoundStats={setRoundStats}
           onClose={() => setPhase('lesson')}
+          // FB421: a félbehagyott kör onnan folytatódik, ahol abbamaradt; minden
+          // megválaszolt tétel után elmentődik.
+          resume={kindProgressFromRows(progressRows, String(topicId), drillKind).run ?? undefined}
+          onProgress={(p) => saveRow(kindRunKey(String(topicId), drillKind), 'run', p satisfies KindRun)}
         />
         <FeedbackButton
           level={level}
@@ -364,7 +357,7 @@ export default function GrammarLessonScreen() {
     const next = nextWrittenTopic(learnedLang, String(topicId));
     // FB328: a lecke MINDEN eddigi köréből számolt kumulált arány, nem csak
     // ennek a körnek a pontszáma (ami fentebb, `pct`).
-    const cumulativePct = lessonPercent(lessonAnswered, lessonCorrect);
+    const cumulativePct = lessonScoreOf(progressRows);
     // NY24 (neo-brutalista, NYELVTAN.md "Neo-brutalista stílus" 3. képernyő): nagy
     // helyes-arány a kitöltött dobozban + combo-matrica, 3 kis doboz, "practice
     // this" a rontott mondattal, téma-progress szegmensekben, gombok.
@@ -625,22 +618,34 @@ export default function GrammarLessonScreen() {
             FB380: a gomb alatt a fajta SAJÁT %-a, ugyanazzal a lessonPercent
             logikával, ami a Kész-képernyő kinti számát adja. */}
         {availableKinds.map((kind, i) => {
-          const kindPct = lessonPercent(kindAnswered[kind] ?? 0, kindCorrect[kind] ?? 0);
+          // FB421 (D4): félbehagyott körnél "3/10 · 30%" (a meg nem válaszolt tétel 0), egyébként a
+          // fajta legjobb köre; a jobb eredmény felülírja a régit (lib/grammar/lessonScore.ts).
+          const kindProg = kindProgressFromRows(progressRows, String(topicId), kind);
+          const runInfo = kindProg.run ? runSummary(kindProg.run) : null;
+          const kindPct = kindPercent(kindProg);
           return (
             <View key={kind}>
               {lessonButton(
                 `grammar-start-${kind}`,
                 kind === 'choice'
                     ? s.grammar.startChoice(kindCounts.choice)
+                    : kind === 'article'
+                      ? s.grammar.startArticle(kindCounts.article)
                     : kind === 'match'
                       ? s.grammar.startMatch(kindCounts.match)
                       : kind === 'form'
                         ? s.grammar.startForm(kindCounts.form)
                         : kind === 'why'
                           ? s.grammar.startWhy(kindCounts.why)
-                          : kindCounts.transform > TRANSFORM_ROUND_SIZE
-                            ? s.grammar.startTransformRound(TRANSFORM_ROUND_SIZE, kindCounts.transform)
-                            : s.grammar.startTransform(kindCounts.transform),
+                          : kind === 'spot'
+                            ? s.grammar.startSpot(kindCounts.spot)
+                            : kind === 'order'
+                              ? s.grammar.startOrder(kindCounts.order)
+                              : kind === 'dictation'
+                                ? s.grammar.startDictation(kindCounts.dictation)
+                                : kindCounts.transform > TRANSFORM_ROUND_SIZE
+                                  ? s.grammar.startTransformRound(TRANSFORM_ROUND_SIZE, kindCounts.transform)
+                                  : s.grammar.startTransform(kindCounts.transform),
                 () => {
                   setDrillKind(kind);
                   setPhase('drill');
@@ -648,9 +653,15 @@ export default function GrammarLessonScreen() {
                 true,
                 i === 0
               )}
-              {kindPct !== null ? (
+              {/* PLAN-fb0929 7. lépés (D1): az ideiglenes fajta gombja alatt az "ÚJ · TESZT" jelvény. */}
+              {trialKinds.has(kind) ? (
+                <View style={styles.trialRow}>
+                  <TrialBadge testID={`trial-badge-${kind}`} />
+                </View>
+              ) : null}
+              {runInfo || kindPct !== null ? (
                 <Text testID={`grammar-kind-percent-${kind}`} style={[styles.kindPercentNote, { color: colors.tabIconDefault }]}>
-                  {s.grammar.lessonPercent(kindPct)}
+                  {runInfo ? s.grammar.runProgress(runInfo.answered, runInfo.of, runInfo.percent) : s.grammar.lessonPercent(kindPct as number)}
                 </Text>
               ) : null}
             </View>
@@ -721,7 +732,7 @@ const styles = StyleSheet.create({
     borderColor: 'transparent',
     alignItems: 'center',
   },
-  btnText: { fontSize: 16, fontWeight: '700' },
+  btnText: { fontSize: 16, fontWeight: '700', textAlign: 'center' },
   startBtn: { marginTop: 18 },
   btnTextOnTint: { color: '#FFFFFF' },
   // NY23: neo-brutalista gombok, cím (nagybetűs, 500 súly).
@@ -731,7 +742,7 @@ const styles = StyleSheet.create({
   brutalTitle: { fontWeight: '500', textTransform: 'uppercase' },
   brutalBtnWrap: { marginTop: 10, alignSelf: 'stretch' },
   brutalBtn: { paddingVertical: 14, alignItems: 'center' },
-  brutalBtnText: { fontSize: 16, fontWeight: '500', textTransform: 'uppercase' },
+  brutalBtnText: { fontSize: 16, fontWeight: '500', textTransform: 'uppercase', textAlign: 'center' },
   brutalDoneBody: { padding: 16, paddingBottom: 60, gap: 12 },
   brutalScoreBox: { padding: 24, alignItems: 'center', gap: 6 },
   brutalScore: { fontSize: 56, fontWeight: '500' },
@@ -756,4 +767,5 @@ const styles = StyleSheet.create({
   lessonPercentNote: { fontSize: 12, textAlign: 'center', marginTop: -6, marginBottom: 12 },
   // FB380: ugyanaz a sor-stílus, fajtánként a saját gombja alatt.
   kindPercentNote: { fontSize: 12, textAlign: 'center', marginTop: 2 },
+  trialRow: { alignItems: 'center', marginTop: 6 },
 });

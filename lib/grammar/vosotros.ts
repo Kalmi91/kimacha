@@ -80,6 +80,10 @@ export function isVosotrosItem(item: GrammarItem): boolean {
       return hasVosotrosEnding(item.answer) || hasVosotrosPronoun(item.sentence);
     case 'match':
     case 'why':
+    // PLAN-fb0929 7. lépés (D1): az új fajták (hibakereső, szórend, diktálás) mondatai sosem vosotros-feladatok.
+    case 'spot':
+    case 'order':
+    case 'dictation':
       return false;
     default: {
       // GrammarGapItem: `kind` is undefined or 'gap', the only member left

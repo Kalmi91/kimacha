@@ -212,3 +212,17 @@ export function pickStrongerSm2Card(a: Sm2Card, b: Sm2Card): Sm2Card {
   if (a.interval !== b.interval) return a.interval > b.interval ? a : b;
   return a.due <= b.due ? a : b;
 }
+
+// FB401 (PLAN-fb0929 6. lépés), Kálmán: „nav 8 fekete négyzet, aminek szerintem az előre
+// haladást kellene mutatnia, de nem mutatja". A sáv eddig a MAI összes kártyához mérte a
+// haladást (kész / kész + a sorban maradók), ezért egy sok esedékes kártyás napon a
+// 8 blokk egyszer sem mozdult. Mostantól 10-es SZETTEKBEN mér (mint a "+10 új szó"): a
+// szett n. kártyája után n/szett-méret a kitöltött rész, és minden megválaszolt kártya
+// látszik. Az utolsó, rövidebb szett a hátralévő kártyákhoz igazodik.
+export const PROGRESS_SET_SIZE = 10;
+
+export function setProgressPercent(answered: number, remaining: number, setSize: number = PROGRESS_SET_SIZE): number {
+  const inSet = answered % setSize;
+  const size = Math.min(setSize, inSet + remaining);
+  return size > 0 ? (inSet / size) * 100 : 0;
+}

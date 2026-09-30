@@ -129,6 +129,25 @@ export default {
     // PLAN-ketiranyu 4. lépés: es→en irányban a Grammar fül még nem tanít
     // angol nyelvtant, csak ezt az egy sort mutatja a lecke-lista helyett.
     enComingSoon: 'English grammar lessons are coming later.',
+    // FB416: a saját válasz a helyes fölött a hibás ragozásnál (AnswerCompare).
+    yourAnswer: 'Your answer',
+    // FB421: a félbehagyott feladat sora a gomb alatt, pl. "3/10 · 30%".
+    runProgress: (done: number, total: number, pct: number) => `${done}/${total} · ${pct}%`,
+    // FB419: az el / la névelő-választó feladat gombja (csak ott, ahol van ilyen készlet).
+    startArticle: (n: number) => `El or la? (${n})`,
+    // PLAN-fb0929 7. lépés (D1): ideiglenes, új feladat-fajták (hibakereső, szórend, diktálás).
+    trialBadge: 'NEW · TEST',
+    startSpot: (n: number) => `Spot the mistake (${n})`,
+    startOrder: (n: number) => `Word order (${n})`,
+    startDictation: (n: number) => `Dictation (${n})`,
+    spotPrompt: 'Tap the word that is wrong',
+    spotPickFix: 'Pick the right form',
+    spotWordFine: 'That word is fine. Look again.',
+    spotDelete: '(remove it)',
+    orderHint: 'Put the words in order',
+    dictationHint: 'Listen and type what you hear',
+    dictationPlay: 'Play',
+    dictationSlow: 'Slower',
   },
   settings: {
     // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont):
@@ -380,6 +399,8 @@ export default {
     // ugyanezt a képernyőt használja, csak ez a két string vált.
     wordChip: 'WORD',
     wordPromptCaption: 'meaning',
+    // PLAN-fb0929 10. lépés: es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
+    wordPromptCaptionEn: 'How do you say it in English?',
     // FB378: caption for a cell with an English prompt (translate to Spanish).
     promptCaptionEn: 'translate to Spanish',
     progress: (done: number, total: number) => `${done} / ${total} done`,

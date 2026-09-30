@@ -7,9 +7,12 @@
 
 import { shuffleArray, shuffleOptions, hashString } from '../shuffle';
 import {
+  isDictationItem,
   isFormItem,
   isMarkItem,
   isMatchItem,
+  isOrderItem,
+  isSpotItem,
   isTransformItem,
   isWhyItem,
   type GrammarGapItem,
@@ -18,7 +21,7 @@ import {
   type GrammarMarkItem,
   type GrammarTopicData,
 } from './content';
-import type { FormItem, MatchItem, TransformItem, WhyItem } from '../grammar/lessonTypes';
+import type { DictationItem, FormItem, MatchItem, OrderItem, SpotItem, TransformItem, WhyItem } from '../grammar/lessonTypes';
 import { markAnswerIndex, markTokens } from './grammarMark';
 import { filterVosotros, filterVosotrosPairs } from '../grammar/vosotros';
 
@@ -52,11 +55,18 @@ export interface GrammarTransformRoundItem {
   item: TransformItem;
 }
 
+// PLAN-fb0929 7. lépés (D1): a három új fajta (hibakereső, szórend, diktálás) is saját
+// round-item alakban, a why/transform mintáját követve.
+export interface GrammarNewKindRoundItem {
+  item: SpotItem | OrderItem | DictationItem;
+}
+
 export type GrammarRoundItem =
   | GrammarChoiceRoundItem
   | GrammarMatchFormRoundItem
   | GrammarWhyRoundItem
-  | GrammarTransformRoundItem;
+  | GrammarTransformRoundItem
+  | GrammarNewKindRoundItem;
 
 export function isChoiceRoundItem(r: GrammarRoundItem): r is GrammarChoiceRoundItem {
   return 'options' in r;
@@ -65,9 +75,12 @@ export function isChoiceRoundItem(r: GrammarRoundItem): r is GrammarChoiceRoundI
 // LECKE-SEMA D3 (FB290, 2026-09-17): melyik fajtába tartozik egy round-item,
 // hogy a lecke-drill a kért fajtákra tudja szűrni a kört (`kinds` prop).
 export function grammarRoundItemKind(r: GrammarRoundItem): GrammarKind {
-  if (isChoiceRoundItem(r)) return 'choice';
+  if (isChoiceRoundItem(r)) return (r.item as GrammarGapItem).set === 'article' ? 'article' : 'choice';
   if (isMatchItem(r.item)) return 'match';
   if (isFormItem(r.item)) return 'form';
+  if (isSpotItem(r.item)) return 'spot';
+  if (isOrderItem(r.item)) return 'order';
+  if (isDictationItem(r.item)) return 'dictation';
   return isTransformItem(r.item) ? 'transform' : 'why';
 }
 
@@ -85,7 +98,13 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
   const allItems = filterVosotros(topic.items as GrammarItem[]);
   const choiceItems = allItems.filter(
     (item): item is GrammarGapItem | GrammarMarkItem =>
-      !isMatchItem(item) && !isFormItem(item) && !isWhyItem(item) && !isTransformItem(item)
+      !isMatchItem(item) &&
+      !isFormItem(item) &&
+      !isWhyItem(item) &&
+      !isTransformItem(item) &&
+      !isSpotItem(item) &&
+      !isOrderItem(item) &&
+      !isDictationItem(item)
   );
   const orderedChoice: GrammarChoiceRoundItem[] = shuffleArray(choiceItems, seed).map((item) => {
     // FB219: a jelölős feladatnál a sorrend maga a mondat, tehát nincs mit
@@ -120,7 +139,12 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
     .filter((item): item is TransformItem => isTransformItem(item))
     .map((item) => ({ item }));
 
-  return [...orderedChoice, ...matchItems, ...formItems, ...whyItems, ...transformItems];
+  // PLAN-fb0929 7. lépés (D1): az új fajták is a kör VÉGÉRE, szerzői sorrendben.
+  const newKindItems: GrammarNewKindRoundItem[] = allItems
+    .filter((item): item is SpotItem | OrderItem | DictationItem => isSpotItem(item) || isOrderItem(item) || isDictationItem(item))
+    .map((item) => ({ item }));
+
+  return [...orderedChoice, ...matchItems, ...formItems, ...whyItems, ...transformItems, ...newKindItems];
 }
 
 // The wrong-answer explanation is keyed by the option's own text (GAMES.md
