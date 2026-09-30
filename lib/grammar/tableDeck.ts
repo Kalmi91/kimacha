@@ -367,6 +367,9 @@ function lessonSentences(lesson: LessonV2): string[] {
   return out;
 }
 
+// A szószedet-bejegyzés glosszája, ha nem létező alakot jelöl (a rossz válasz-opciókhoz kell).
+const NON_WORD_GLOSS = /^(not a real form|non-existent form)/i;
+
 /**
  * A word-deck source for a lesson: its glossary entries (the author's own
  * choice, so these never go through the function-word filter below - e.g.
@@ -385,6 +388,9 @@ export function wordCellsForLesson(lesson: GrammarTopicData | null | undefined):
   for (const g of lesson.glossary ?? []) {
     const key = normalizeWordToken(g.word);
     if (!key || seen.has(key)) continue;
+    // FB419/FB418 (PLAN-fb0929 5. lépés): a rossz opciók nem létező alakjai ("lápizes", "vezes")
+    // csak a hangolás miatt vannak a szószedetben (audit-games), nem szó-kártyának valók.
+    if (NON_WORD_GLOSS.test(g.gloss.en)) continue;
     seen.add(key);
     cards.push({ id: `glossary::${key}`, es: g.word, en: g.gloss.en });
   }

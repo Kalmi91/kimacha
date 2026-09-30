@@ -101,6 +101,12 @@ export interface GrammarGapItem extends GrammarItemBase {
   options: string[]; // target-language option texts
   correct: number; // index into options
   tense?: { from: TenseId; to: TenseId };
+  /** FB419: 'article' = a névelő-választó (el / la) feladat-készlet tétele, saját gombbal. */
+  set?: 'article';
+}
+
+export function isArticleSetItem(item: GrammarItem): boolean {
+  return (item as GrammarGapItem).set === 'article';
 }
 
 // FB219, Kálmán 2026-09-09 (grammar:clases-de-palabras:drill): „vagy lehetne
@@ -159,10 +165,12 @@ export function isTransformItem(item: GrammarItem): item is TransformItem {
 // LECKE-SEMA D3 (FB290, 2026-09-17): a lecke feladatai fajtánként külön
 // indíthatók (a mondat-feladatok, a párosítás és a ragozás nem egy gombban
 // megy), ehhez kell tudni fajtánként, hány item van egy leckében.
-export type GrammarKind = 'choice' | 'match' | 'form' | 'why' | 'transform';
+// FB419 (PLAN-fb0929 5. lépés): 'article' = a névelő-választó (el / la) külön gomb: gap
+// tételek `set: 'article'` jelöléssel, a saját gombjukon, nem a mondat-feladatok közt.
+export type GrammarKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform';
 
 export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, number> {
-  const counts: Record<GrammarKind, number> = { choice: 0, match: 0, form: 0, why: 0, transform: 0 };
+  const counts: Record<GrammarKind, number> = { choice: 0, article: 0, match: 0, form: 0, why: 0, transform: 0 };
   // FB357: the button label counts the round the learner actually plays, so a
   // vosotros item dropped from buildGrammarRound (lib/games/grammarChoice.ts)
   // does not inflate a "Mondatok (N)"-style count.
@@ -172,6 +180,7 @@ export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, 
     else if (isFormItem(item)) counts.form++;
     else if (isWhyItem(item)) counts.why++;
     else if (isTransformItem(item)) counts.transform++;
+    else if (isArticleSetItem(item)) counts.article++;
     else counts.choice++;
   }
   return counts;

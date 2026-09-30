@@ -117,8 +117,19 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     expect(screen.queryAllByText(' ✓').length).toBeGreaterThan(0);
     expect(screen.queryByText('Not quite!')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-next'));
-    // FB420: a párosítás részpontot kap: 6 pár, 1 elrontott = 5/6 (nem 0/1).
-    expect(onFinish).toHaveBeenCalledWith(5, 6);
+    // FB423: a leckében két párosítás van; a másodikat hibátlanul oldjuk meg.
+    const second = items.map((r) => r.item).filter((i) => (i as { kind?: string }).kind === 'match')[1] as unknown as {
+      id: string;
+      pairs: { en: string; es: string }[];
+    };
+    const secondOrder = shuffleArray(second.pairs.map((_, i) => i), hashString(second.id));
+    second.pairs.forEach((_, li) => {
+      fireEvent.press(screen.getByTestId(`match-left-${li}`));
+      fireEvent.press(screen.getByTestId(`match-right-${secondOrder.indexOf(li)}`));
+    });
+    fireEvent.press(screen.getByTestId('grammar-next'));
+    // FB420: a párosítás részpontot kap: az első 6 párból 5 (1 elrontott), a második 6/6 = 11/12 (nem 0).
+    expect(onFinish).toHaveBeenCalledWith(11, 12);
     view.unmount();
   });
 
