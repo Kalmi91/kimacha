@@ -138,9 +138,10 @@ if (!listOnly) {
   const IRREG_SRC = {
     ser: 'soy eres es somos son sois fui fuiste fue fuimos fueron era eras éramos eran sea seas seamos sean sido fuera fueras fuéramos fueran fuese',
     ir: 'voy vas va vamos van vais fui fuiste fue fuimos fueron iba ibas íbamos iban vaya vayas vayamos vayan ido fuera fueras fuéramos fueran fuese',
-    haber: 'he hube hubiste hubo hubimos hubieron hubiera hubiese',
+    haber: 'he hube hubiste hubo hubimos hubieron hubiera hubieras hubiéramos hubieran hubiese',
+    negar: 'niego niegas niega niegan',
     saber: 'sé supe supiste supo supimos supieron sepa sepas sepamos sepan supiera',
-    poder: 'puedo puedes puede pueden pude pudiste pudo pudimos pudieron pueda puedas puedan pudiendo pudiera',
+    poder: 'puedo puedes puede pueden pude pudiste pudo pudimos pudieron pueda puedas puedan pudiendo pudiera pudieras pudiéramos pudieran',
     decir: 'digo dices dice dicen dijo dije dijiste dijimos dijeron diga digas digamos digan dicho diciendo dijera',
     hacer: 'hice hiciste hizo hicimos hicieron hiciera hecho',
     dar: 'doy di diste dio dimos dieron dé des demos den diera',
