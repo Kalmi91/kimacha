@@ -755,13 +755,33 @@ export function doneGrammarTopicProgress(
  * sorrendjében (a "why" is, ellentétben a "kész" feltétellel fentebb): a lecke %-a
  * ezek átlaga, a meg nem kezdett fajta 0.
  */
-export const LESSON_KIND_ORDER: readonly GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform'];
+export const LESSON_KIND_ORDER: readonly GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform', 'spot', 'order', 'dictation'];
+
+// PLAN-fb0929 7. lépés (D1): az ideiglenes ("ÚJ · TESZT") fajták gombja megjelenik, de a
+// lecke %-át nem húzzák le (amíg Kálmán nem hagyja jóvá őket, nem részei a leckének).
+const TRIAL_KINDS: readonly GrammarKind[] = ['spot', 'order', 'dictation'];
+
+/** A lecke gombjai: minden fajta, amiből van item. */
+export function lessonButtonKinds(lesson: GrammarTopicData): GrammarKind[] {
+  const counts = grammarKindCounts(lesson);
+  return LESSON_KIND_ORDER.filter((k) => counts[k] > 0);
+}
+
+/** A lecke %-ába számító fajták: a gombok fajtái, az ideiglenes (csupa trial itemű) fajták nélkül. */
+export function scoredKinds(lesson: GrammarTopicData): GrammarKind[] {
+  return lessonButtonKinds(lesson).filter(
+    (k) => !TRIAL_KINDS.includes(k) || lesson.items.some((it) => (it as { kind?: string; trial?: boolean }).kind === k && !(it as { trial?: boolean }).trial)
+  );
+}
 
 export function lessonKinds(lang: string, topicId: string): GrammarKind[] {
   const lesson = lessonFor(lang, topicId);
-  if (!lesson) return [];
-  const counts = grammarKindCounts(lesson);
-  return LESSON_KIND_ORDER.filter((k) => counts[k] > 0);
+  return lesson ? scoredKinds(lesson) : [];
+}
+
+/** Van a leckében ideiglenes ("ÚJ · TESZT") tétel? A lecke-lista ebből jelvényez. */
+export function lessonHasTrial(lesson: GrammarTopicData | null | undefined): boolean {
+  return !!lesson && lesson.items.some((it) => (it as { trial?: boolean }).trial === true);
 }
 
 /** How much of the syllabus is written, for the header line. */

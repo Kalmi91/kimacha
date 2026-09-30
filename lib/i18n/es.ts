@@ -117,6 +117,19 @@ const es: Strings = {
     runProgress: (done: number, total: number, pct: number) => `${done}/${total} · ${pct}%`,
     // FB419: az el / la névelő-választó feladat gombja (csak ott, ahol van ilyen készlet).
     startArticle: (n: number) => `¿El o la? (${n})`,
+    // PLAN-fb0929 7. lépés (D1): ideiglenes, új feladat-fajták (hibakereső, szórend, diktálás).
+    trialBadge: 'NUEVO · PRUEBA',
+    startSpot: (n: number) => `Encuentra el error (${n})`,
+    startOrder: (n: number) => `Orden de palabras (${n})`,
+    startDictation: (n: number) => `Dictado (${n})`,
+    spotPrompt: 'Toca la palabra incorrecta',
+    spotPickFix: 'Elige la forma correcta',
+    spotWordFine: 'Esa palabra está bien. Mira otra vez.',
+    spotDelete: '(quitarla)',
+    orderHint: 'Ordena las palabras',
+    dictationHint: 'Escucha y escribe lo que oyes',
+    dictationPlay: 'Escuchar',
+    dictationSlow: 'Más lento',
   },
   settings: {
     themeAuto: 'Automático',

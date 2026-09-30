@@ -287,6 +287,22 @@
     {
       "word": "ningún",
       "gloss": { "hu": "egy … sem (főnév előtt)", "en": "not one, no (before a noun)", "es": "ningún", "de": "kein" }
+    },
+    {
+      "word": "conozco",
+      "gloss": { "hu": "ismerek (a conocer igealakja)", "en": "I know (a form of conocer, to know a person)", "es": "conozco (forma de conocer)", "de": "ich kenne (Form von conocer)" }
+    },
+    {
+      "word": "ninguna",
+      "gloss": { "hu": "egyetlen sem (nőnem)", "en": "not any (feminine)", "es": "ninguna (femenino)", "de": "keine (feminin)" }
+    },
+    {
+      "word": "ninguno",
+      "gloss": { "hu": "egyetlen sem (hímnem)", "en": "not any (masculine)", "es": "ninguno (masculino)", "de": "keiner (maskulin)" }
+    },
+    {
+      "word": "ningunos",
+      "gloss": { "hu": "nem létező alak", "en": "not a real form", "es": "forma inexistente", "de": "keine reale Form" }
     }
   ],
   "items": [
@@ -985,6 +1001,191 @@
         }
       ],
       "correctIndex": 2
+    },
+    {
+      "id": "neg-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "hu": "Nem beszélek spanyolul.",
+        "en": "I don't speak Spanish.",
+        "es": "No hablo español.",
+        "de": "I don't speak Spanish."
+      },
+      "es": "No hablo español."
+    },
+    {
+      "id": "neg-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "hu": "Nem látok semmit.",
+        "en": "I don't see anything.",
+        "es": "No veo nada.",
+        "de": "I don't see anything."
+      },
+      "es": "No veo nada."
+    },
+    {
+      "id": "neg-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "hu": "Senki sem jön.",
+        "en": "Nobody comes.",
+        "es": "Nadie viene.",
+        "de": "Nobody comes."
+      },
+      "es": "Nadie viene."
+    },
+    {
+      "id": "neg-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "hu": "Én sem.",
+        "en": "Me neither.",
+        "es": "A mí tampoco.",
+        "de": "Me neither."
+      },
+      "es": "A mí tampoco."
+    },
+    {
+      "id": "neg-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "hu": "Soha nem eszem húst.",
+        "en": "I never eat meat.",
+        "es": "Nunca como carne.",
+        "de": "I never eat meat."
+      },
+      "es": "Nunca como carne."
+    },
+    {
+      "id": "neg-spot-01",
+      "kind": "spot",
+      "trial": true,
+      "es": "No veo algo.",
+      "wrongIndex": 2,
+      "options": [
+        "nada",
+        "nadie",
+        "nunca"
+      ],
+      "correctIndex": 0,
+      "explain": {
+        "hu": "A no + ige után a tagadó szó kell, nem a állító: no veo nada.",
+        "en": "After no + verb the negative word is needed, not the affirmative one: no veo nada.",
+        "es": "Después de no + verbo hace falta la palabra negativa, no la afirmativa: no veo nada.",
+        "de": "Nach no + Verb braucht man das verneinende Wort, nicht das bejahende: no veo nada."
+      },
+      "tr": {
+        "hu": "Nem látok semmit.",
+        "en": "I don't see anything.",
+        "es": "No veo nada.",
+        "de": "Ich sehe nichts."
+      }
+    },
+    {
+      "id": "neg-spot-02",
+      "kind": "spot",
+      "trial": true,
+      "es": "No conozco a alguien.",
+      "wrongIndex": 3,
+      "options": [
+        "nadie",
+        "nada",
+        "nunca"
+      ],
+      "correctIndex": 0,
+      "explain": {
+        "hu": "Személyre a nadie vonatkozik: no conozco a nadie.",
+        "en": "For a person the word is nadie: no conozco a nadie.",
+        "es": "Para una persona la palabra es nadie: no conozco a nadie.",
+        "de": "Für eine Person steht nadie: no conozco a nadie."
+      },
+      "tr": {
+        "hu": "Nem ismerek senkit.",
+        "en": "I don't know anyone.",
+        "es": "No conozco a nadie.",
+        "de": "Ich kenne niemanden."
+      }
+    },
+    {
+      "id": "neg-spot-03",
+      "kind": "spot",
+      "trial": true,
+      "es": "Nadie no viene.",
+      "wrongIndex": 1,
+      "options": [
+        "",
+        "nunca",
+        "nada"
+      ],
+      "correctIndex": 0,
+      "explain": {
+        "hu": "Ha a tagadó szó az ige ELŐTT áll, a no elmarad: nadie viene.",
+        "en": "When the negative word comes BEFORE the verb, the no is dropped: nadie viene.",
+        "es": "Cuando la palabra negativa va ANTES del verbo, se omite el no: nadie viene.",
+        "de": "Steht das verneinende Wort VOR dem Verb, entfällt das no: nadie viene."
+      },
+      "tr": {
+        "hu": "Senki sem jön.",
+        "en": "Nobody comes.",
+        "es": "Nadie viene.",
+        "de": "Niemand kommt."
+      }
+    },
+    {
+      "id": "neg-spot-04",
+      "kind": "spot",
+      "trial": true,
+      "es": "No tengo ninguna libro.",
+      "wrongIndex": 2,
+      "options": [
+        "ningún",
+        "ninguno",
+        "ningunos"
+      ],
+      "correctIndex": 0,
+      "explain": {
+        "hu": "A ningún hímnemű egyes szám főnév előtt megrövidül: ningún libro.",
+        "en": "Before a masculine singular noun ninguno shortens: ningún libro.",
+        "es": "Ante un sustantivo masculino singular ninguno se acorta: ningún libro.",
+        "de": "Vor einem maskulinen Singular-Nomen wird ninguno kürzer: ningún libro."
+      },
+      "tr": {
+        "hu": "Nincs egy könyvem sem.",
+        "en": "I don't have any book.",
+        "es": "No tengo ningún libro.",
+        "de": "Ich habe kein Buch."
+      }
+    },
+    {
+      "id": "neg-spot-05",
+      "kind": "spot",
+      "trial": true,
+      "es": "Yo no quiero café y tú también.",
+      "wrongIndex": 6,
+      "options": [
+        "tampoco",
+        "nunca",
+        "nada"
+      ],
+      "correctIndex": 0,
+      "explain": {
+        "hu": "Tagadó mondat után az „én sem” jelentésű szó a tampoco: y tú tampoco.",
+        "en": "After a negative sentence the word for neither is tampoco: y tú tampoco.",
+        "es": "Después de una frase negativa la palabra para tampoco es tampoco: y tú tampoco.",
+        "de": "Nach einem verneinten Satz heißt „auch nicht“ tampoco: y tú tampoco."
+      },
+      "tr": {
+        "hu": "Én nem kérek kávét, és te sem.",
+        "en": "I don't want coffee and neither do you.",
+        "es": "Yo no quiero café y tú tampoco.",
+        "de": "Ich will keinen Kaffee und du auch nicht."
+      }
     }
   ]
 }

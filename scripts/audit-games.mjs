@@ -718,6 +718,44 @@ function auditTenseField(tense, itemPath) {
 // NY1: az igeidő-drill mondat-átírás item-fajtája. `wordIds` a mondat
 // kártyáira mutat (ez hajtja az NY2 unlockot), mindegyiknek léteznie kell és
 // a lecke szintjénél nem lehet magasabb szintű.
+// PLAN-fb0929 7. lépés (D1): az új feladat-fajták (spot, order, dictation) ellenőrzése. A
+// mondatok szavainak tanítottnak / szószedettel ellátottnak kell lenniük (checkWords), a
+// magyarázatok és fordítások négy nyelven, a hibakereső hibás szava és opciói konzisztensek.
+function auditNewKindItem(item, itemPath, topic, checkWords) {
+  if (item.trial !== undefined && typeof item.trial !== 'boolean') p1.push({ path: itemPath, issue: 'trial must be a boolean' });
+  const es = typeof item.es === 'string' ? item.es.trim() : '';
+  if (!es) {
+    p1.push({ path: itemPath, issue: `${item.kind} item missing es` });
+    return;
+  }
+  const words = es.split(/\s+/).filter(Boolean);
+  checkWords(es);
+  checkLength(es, topic.level, itemPath);
+  if (item.kind === 'spot') {
+    if (!Number.isInteger(item.wrongIndex) || item.wrongIndex < 0 || item.wrongIndex >= words.length) {
+      p1.push({ path: itemPath, issue: `spot wrongIndex ${item.wrongIndex} out of range (${words.length} words)` });
+    }
+    const options = Array.isArray(item.options) ? item.options : [];
+    if (options.length !== 3) p1.push({ path: itemPath, issue: `spot item needs exactly 3 options, has ${options.length}` });
+    if (!Number.isInteger(item.correctIndex) || item.correctIndex < 0 || item.correctIndex >= options.length) {
+      p1.push({ path: itemPath, issue: `spot correctIndex ${item.correctIndex} out of range` });
+    }
+    if (new Set(options).size !== options.length) p1.push({ path: itemPath, issue: 'spot options must be unique' });
+    const wrongWord = (words[item.wrongIndex] ?? '').replace(/[.,;:!?¡¿]+$/, '').toLowerCase();
+    if (options.some((o) => o !== '' && o.toLowerCase() === wrongWord)) {
+      p1.push({ path: itemPath, issue: 'a spot option equals the wrong word itself' });
+    }
+    for (const opt of options) checkWords(opt);
+    checkLangs(item.explain, `${itemPath} explain`);
+    checkLangs(item.tr, `${itemPath} tr`);
+  } else if (item.kind === 'order') {
+    if (words.length < 2) p1.push({ path: itemPath, issue: 'order item needs at least 2 words' });
+    checkLangs(item.prompt, `${itemPath} prompt`);
+  } else {
+    checkLangs(item.tr, `${itemPath} tr`);
+  }
+}
+
 function auditTransformItem(item, itemPath, topic) {
   auditTenseField(item.tense, itemPath);
   checkLangs(item.prompt, `${itemPath} prompt`);
@@ -807,6 +845,13 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
     }
     if (item.kind === 'transform') {
       auditTransformItem(item, itemPath, topic);
+      continue;
+    }
+    // PLAN-fb0929 7. lépés (D1): hibakereső / szórend / diktálás, ideiglenes ("trial") tételek.
+    if (item.kind === 'spot' || item.kind === 'order' || item.kind === 'dictation') {
+      auditNewKindItem(item, itemPath, topic, (text) => {
+        for (const tok of toks(text)) auditGrammarWord(tok, taughtSet, extra, itemPath, lang);
+      });
       continue;
     }
 

@@ -7,7 +7,7 @@
 // `grammarTopics`. No code in the grammar screens should need to change.
 
 import { LEVELS, getWordsForLevel, type Level } from '@/data/words';
-import type { FormItem, LessonV2, MatchItem, TenseId, TransformItem, WhyItem } from '../grammar/lessonTypes';
+import type { DictationItem, FormItem, LessonV2, MatchItem, OrderItem, SpotItem, TenseId, TransformItem, WhyItem } from '../grammar/lessonTypes';
 import { isVosotrosItem } from '../grammar/vosotros';
 
 // Cumulative corpus word ids up to and including `level` (A0..level), used by
@@ -138,7 +138,7 @@ export interface GrammarMarkItem extends GrammarItemBase {
 // játék köre) minden lecke-item-fajtát ismerjen, még ha egyelőre csak a
 // gap/mark kettőt dolgozza is fel (lib/games/grammarChoice.ts szűri ki a
 // match/form-ot a köréből, azok a lecke-képernyőn jelennek meg, step 3-4).
-export type GrammarItem = GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem | TransformItem;
+export type GrammarItem = GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem | TransformItem | SpotItem | OrderItem | DictationItem;
 
 export function isMarkItem(item: GrammarItem): item is GrammarMarkItem {
   return item.kind === 'mark';
@@ -157,6 +157,24 @@ export function isWhyItem(item: GrammarItem): item is WhyItem {
   return item.kind === 'why';
 }
 
+// PLAN-fb0929 7. lépés (D1): a három új feladat-fajta (hibakereső, szórend, diktálás).
+export function isSpotItem(item: GrammarItem): item is SpotItem {
+  return item.kind === 'spot';
+}
+
+export function isOrderItem(item: GrammarItem): item is OrderItem {
+  return item.kind === 'order';
+}
+
+export function isDictationItem(item: GrammarItem): item is DictationItem {
+  return item.kind === 'dictation';
+}
+
+/** Ideiglenes ("ÚJ · TESZT") tétel? */
+export function isTrialItem(item: GrammarItem): boolean {
+  return (item as { trial?: boolean }).trial === true;
+}
+
 // NY3 (NYELVTAN.md): az igeidő-drill mondat-átírás feladat-fajtája.
 export function isTransformItem(item: GrammarItem): item is TransformItem {
   return item.kind === 'transform';
@@ -167,10 +185,10 @@ export function isTransformItem(item: GrammarItem): item is TransformItem {
 // megy), ehhez kell tudni fajtánként, hány item van egy leckében.
 // FB419 (PLAN-fb0929 5. lépés): 'article' = a névelő-választó (el / la) külön gomb: gap
 // tételek `set: 'article'` jelöléssel, a saját gombjukon, nem a mondat-feladatok közt.
-export type GrammarKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform';
+export type GrammarKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform' | 'spot' | 'order' | 'dictation';
 
 export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, number> {
-  const counts: Record<GrammarKind, number> = { choice: 0, article: 0, match: 0, form: 0, why: 0, transform: 0 };
+  const counts: Record<GrammarKind, number> = { choice: 0, article: 0, match: 0, form: 0, why: 0, transform: 0, spot: 0, order: 0, dictation: 0 };
   // FB357: the button label counts the round the learner actually plays, so a
   // vosotros item dropped from buildGrammarRound (lib/games/grammarChoice.ts)
   // does not inflate a "Mondatok (N)"-style count.
@@ -180,6 +198,9 @@ export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, 
     else if (isFormItem(item)) counts.form++;
     else if (isWhyItem(item)) counts.why++;
     else if (isTransformItem(item)) counts.transform++;
+    else if (isSpotItem(item)) counts.spot++;
+    else if (isOrderItem(item)) counts.order++;
+    else if (isDictationItem(item)) counts.dictation++;
     else if (isArticleSetItem(item)) counts.article++;
     else counts.choice++;
   }

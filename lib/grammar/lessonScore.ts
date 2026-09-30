@@ -72,7 +72,7 @@ export function lessonBadgePercent(
 // tartalékként olvasódnak (amíg a fajtának nincs sem best-, sem run-sora), hogy a
 // meglévő haladás ne tűnjön el.
 
-export type ScoredKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform';
+export type ScoredKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform' | 'spot' | 'order' | 'dictation';
 
 export interface KindBest {
   correct: number;
@@ -199,7 +199,7 @@ export function kindProgressFromRows(rows: Row[], topicId: string, kind: ScoredK
 export function lessonScoresByTopic(rows: Row[], kindsOf: (topicId: string) => ScoredKind[]): Map<string, number> {
   const topics = new Set<string>();
   for (const row of rows) {
-    const m = row.itemId.match(/^(.+?):(choice|article|match|form|why|transform):(best|run|answered|correct)$/);
+    const m = row.itemId.match(/^(.+?):(choice|article|match|form|why|transform|spot|order|dictation):(best|run|answered|correct)$/);
     if (m) topics.add(m[1]);
   }
   const legacyByTopic = lessonPercentsByTopic(rows);
