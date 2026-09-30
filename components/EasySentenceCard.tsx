@@ -56,8 +56,9 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
     // FB137: tile for tile, no character tolerance, see sentenceBuildMatch.
     const isCorrect = sentenceBuildMatch(placed.map(i => bank[i]), targetWords);
     setResult(isCorrect ? 'correct' : 'wrong');
-    // A right build reads the whole sentence aloud; a wrong one shows it.
-    if (isCorrect && speechLocale) {
+    // FB412 (PLAN-fb0929 5. lépés): a helyes mondat MINDIG elhangzik, jó és rossz építés
+    // után is (a rossz építésnél ráadásul látszik is).
+    if (speechLocale) {
       stopSpeech();
       speakIn(targetSentence, speechLocale);
     }

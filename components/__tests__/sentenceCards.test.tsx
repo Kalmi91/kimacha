@@ -38,6 +38,8 @@ describe('EasySentenceCard (összerakós)', () => {
     fireEvent.press(getAllByText('mesa')[0]);
     fireEvent.press(getByText('Check'));
     expect(getByText('el libro y la mesa')).toBeTruthy();
+    // FB412: rossz építésnél is elhangzik a helyes mondat.
+    expect(speech.speak).toHaveBeenLastCalledWith('el libro y la mesa', 'es-MX');
     fireEvent.press(getByText(/Next/));
     expect(onResult).toHaveBeenCalledWith(false);
   });
@@ -77,7 +79,9 @@ describe('TypedSentenceCard (begépelős)', () => {
     expect(getByText('El libro y la mesa.')).toBeTruthy();
     fireEvent.changeText(input, 'el libro');
     expect(queryByText('El libro y la mesa.')).toBeNull();
-    expect(speech.speak).not.toHaveBeenCalled();
+    // FB412: a helyes mondat rossz válasz után is elhangzik (egyszer, a Check-nél).
+    expect(speech.speak).toHaveBeenCalledTimes(1);
+    expect(speech.speak).toHaveBeenCalledWith('El libro y la mesa.', 'es-MX');
   });
 
   it('an accent-only slip passes when strict accents are off and fails when on', () => {

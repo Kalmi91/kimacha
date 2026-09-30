@@ -54,7 +54,8 @@ export default function TypedSentenceCard({
     const grade = gradeSentenceAnswer(stripSentencePunct(typed), stripSentencePunct(targetSentence), strictAccents);
     const isCorrect = suggestedGrade(grade) === 'good';
     setResult(isCorrect ? 'correct' : 'wrong');
-    if (isCorrect && speechLocale) {
+    // FB412 (PLAN-fb0929 5. lépés): a helyes mondat MINDIG elhangzik, jó és rossz válasz után is.
+    if (speechLocale) {
       stopSpeech();
       speak(targetSentence, speechLocale);
     }
