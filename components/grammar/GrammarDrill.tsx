@@ -10,10 +10,13 @@ import { strictAnswerMatch } from '@/lib/answerMatch';
 import { answerInputProps } from '@/lib/inputProps';
 import {
   cumulativeCorpusWordIds,
+  isDictationItem,
   isFormItem,
   isLessonV2,
   isMarkItem,
   isMatchItem,
+  isOrderItem,
+  isSpotItem,
   isTransformItem,
   isWhyItem,
   type GrammarKind,
@@ -36,6 +39,7 @@ import MoreBlocks from '@/components/grammar/MoreBlocks';
 import { BrutalBox, SegmentBar, Sticker, inkButtonText, segmentsFilled, textOnFill } from '@/components/grammar/Brutal';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
 import ResultBadge from '@/components/ResultBadge';
+import { DictationDrillItem, OrderDrillItem, SpotDrillItem } from '@/components/grammar/NewKinds';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 
 // The "which one is right, and why" drill, shared by the grammar course
@@ -867,7 +871,8 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // NY3: a Beállítások ékezet-szigor kapcsolója, egyszer lekérve, csak ha a
   // körben van transform tétel (a többi ágnak nincs rá szüksége).
   const [strictAccents, setStrictAccents] = useState(false);
-  const hasTransform = kinds.includes('transform');
+  // PLAN-fb0929 7. lépés: a diktálás is az ékezet-beállítást használja.
+  const hasTransform = kinds.includes('transform') || kinds.includes('dictation');
   useEffect(() => {
     if (!hasTransform) return;
     getDb().getStrictAccents().then(setStrictAccents).catch(() => {});
@@ -980,6 +985,31 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
             colors={colors}
             s={s}
+            onDone={completeItem}
+          />
+        ) : isSpotItem(roundItem.item) ? (
+          <SpotDrillItem
+            key={roundItem.item.id}
+            item={roundItem.item}
+            learnedLang={learnedLang}
+            contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
+            onDone={completeItem}
+          />
+        ) : isOrderItem(roundItem.item) ? (
+          <OrderDrillItem
+            key={roundItem.item.id}
+            item={roundItem.item}
+            learnedLang={learnedLang}
+            contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
+            onDone={completeItem}
+          />
+        ) : isDictationItem(roundItem.item) ? (
+          <DictationDrillItem
+            key={roundItem.item.id}
+            item={roundItem.item}
+            learnedLang={learnedLang}
+            contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
+            strictAccents={strictAccents}
             onDone={completeItem}
           />
         ) : isTransformItem(roundItem.item) ? (
