@@ -92,6 +92,18 @@ describe('TypedSentenceCard (begépelős)', () => {
     expect(on.getByText('Está en casa.')).toBeTruthy();
   });
 
+  // FB399 (PLAN-fb0929 3. lépés): a névmás nélküli mondat is jó.
+  it('accepts the sentence without the leading subject pronoun', () => {
+    const onResult = jest.fn();
+    const { getByText, getByPlaceholderText } = render(
+      <TypedSentenceCard sourceSentence="I eat at home." targetSentence="Yo como en casa." speechLocale="es-MX" onResult={onResult} />
+    );
+    fireEvent.changeText(getByPlaceholderText('Type the sentence'), 'como en casa');
+    fireEvent.press(getByText('✓ Check'));
+    fireEvent.press(getByText(/Next/));
+    expect(onResult).toHaveBeenCalledWith(true);
+  });
+
   // FB397 (PLAN-fb0929 2. lépés): a Check nem a kártyán belüli gomb, hanem a
   // dokkolt sáv (DockedAction) a billentyűzet fölött, mint a szókártyán, és a
   // szülő által adott emelés / hely szerint áll.
