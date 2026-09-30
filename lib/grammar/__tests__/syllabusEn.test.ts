@@ -47,7 +47,7 @@ describe('English grammar syllabus (lang = en)', () => {
   });
 
   it('has only the lessons written so far, and nothing is orphaned', () => {
-    expect(lessonCoverage('en').written).toBe(8);
+    expect(lessonCoverage('en').written).toBe(9);
     expect(hasLesson('en', 'to_be')).toBe(true);
     expect(hasLesson('en', 'articles')).toBe(true);
     expect(hasLesson('en', 'present_simple')).toBe(true);
@@ -56,6 +56,7 @@ describe('English grammar syllabus (lang = en)', () => {
     expect(hasLesson('en', 'possessives')).toBe(true);
     expect(hasLesson('en', 'there_is_are')).toBe(true);
     expect(hasLesson('en', 'prepositions')).toBe(true);
+    expect(hasLesson('en', 'have_got')).toBe(true);
     expect(hasLesson('en', 'basic_verbs')).toBe(false);
     expect(nextWrittenTopic('en', 'basic_verbs')?.id).toBe('to_be');
     expect(nextWrittenTopic('en', 'to_be')?.id).toBe('articles');
@@ -65,7 +66,8 @@ describe('English grammar syllabus (lang = en)', () => {
     expect(nextWrittenTopic('en', 'this_that')?.id).toBe('possessives');
     expect(nextWrittenTopic('en', 'possessives')?.id).toBe('there_is_are');
     expect(nextWrittenTopic('en', 'there_is_are')?.id).toBe('prepositions');
-    expect(nextWrittenTopic('en', 'prepositions')).toBeUndefined();
+    expect(nextWrittenTopic('en', 'prepositions')?.id).toBe('have_got');
+    expect(nextWrittenTopic('en', 'have_got')).toBeUndefined();
     expect(orphanLessons('en')).toEqual([]);
   });
 
