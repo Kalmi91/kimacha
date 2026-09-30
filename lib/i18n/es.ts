@@ -115,6 +115,8 @@ const es: Strings = {
     yourAnswer: 'Tu respuesta',
     // FB421: a félbehagyott feladat sora a gomb alatt, pl. "3/10 · 30%".
     runProgress: (done: number, total: number, pct: number) => `${done}/${total} · ${pct}%`,
+    // FB419: az el / la névelő-választó feladat gombja (csak ott, ahol van ilyen készlet).
+    startArticle: (n: number) => `¿El o la? (${n})`,
   },
   settings: {
     themeAuto: 'Automático',

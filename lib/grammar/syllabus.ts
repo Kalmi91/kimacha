@@ -755,7 +755,7 @@ export function doneGrammarTopicProgress(
  * sorrendjében (a "why" is, ellentétben a "kész" feltétellel fentebb): a lecke %-a
  * ezek átlaga, a meg nem kezdett fajta 0.
  */
-export const LESSON_KIND_ORDER: readonly GrammarKind[] = ['choice', 'match', 'form', 'why', 'transform'];
+export const LESSON_KIND_ORDER: readonly GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform'];
 
 export function lessonKinds(lang: string, topicId: string): GrammarKind[] {
   const lesson = lessonFor(lang, topicId);

@@ -48,7 +48,7 @@ type ProgressRow = { itemId: string; state: string; data: unknown };
 
 // D3 (FB290, 2026-09-17): a gombok ebben a sorrendben jelennek meg, csak azok
 // a fajták, amikből van item a leckében.
-const KIND_ORDER: GrammarKind[] = ['choice', 'match', 'form', 'why', 'transform'];
+const KIND_ORDER: GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform'];
 
 export default function GrammarLessonScreen() {
   const { theme } = useTheme();
@@ -624,6 +624,8 @@ export default function GrammarLessonScreen() {
                 `grammar-start-${kind}`,
                 kind === 'choice'
                     ? s.grammar.startChoice(kindCounts.choice)
+                    : kind === 'article'
+                      ? s.grammar.startArticle(kindCounts.article)
                     : kind === 'match'
                       ? s.grammar.startMatch(kindCounts.match)
                       : kind === 'form'

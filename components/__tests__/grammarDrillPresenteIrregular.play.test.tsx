@@ -34,18 +34,21 @@ describe('GrammarDrill: presente-irregular full playthrough (FB299)', () => {
     expect(onFinish).toHaveBeenCalledWith(expect.any(Number), total);
   });
 
-  it('match kind (1 item): solving every pair reveals "következő" and it advances', () => {
+  it('match kind (2 items): solving every pair reveals "következő" and it advances', () => {
     const onFinish = jest.fn();
-    const matchItem = lesson.items.find((i): i is MatchItem => i.kind === 'match')!;
+    const matchItems = lesson.items.filter((i): i is MatchItem => i.kind === 'match');
+    expect(matchItems).toHaveLength(2); // FB423: a második párosítás az új igékkel
     render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['match']} />);
 
-    matchItem.pairs.forEach((pair, li) => {
-      fireEvent.press(screen.getByTestId(`match-left-${li}`));
-      fireEvent.press(screen.getByText(pair.es));
-    });
-    fireEvent.press(screen.getByTestId('grammar-next'));
-    // FB420: a kör egysége a pár: 6 pár, hiba nélkül 6/6.
-    expect(onFinish).toHaveBeenCalledWith(6, 6);
+    for (const matchItem of matchItems) {
+      matchItem.pairs.forEach((pair, li) => {
+        fireEvent.press(screen.getByTestId(`match-left-${li}`));
+        fireEvent.press(screen.getByText(pair.es));
+      });
+      fireEvent.press(screen.getByTestId('grammar-next'));
+    }
+    // FB420: a kör egysége a pár: 2 x 6 pár, hiba nélkül 12/12.
+    expect(onFinish).toHaveBeenCalledWith(12, 12);
   });
 
   it('form kind (12 item): "következő" advances every item to onFinish', () => {

@@ -65,7 +65,7 @@ export function isChoiceRoundItem(r: GrammarRoundItem): r is GrammarChoiceRoundI
 // LECKE-SEMA D3 (FB290, 2026-09-17): melyik fajtába tartozik egy round-item,
 // hogy a lecke-drill a kért fajtákra tudja szűrni a kört (`kinds` prop).
 export function grammarRoundItemKind(r: GrammarRoundItem): GrammarKind {
-  if (isChoiceRoundItem(r)) return 'choice';
+  if (isChoiceRoundItem(r)) return (r.item as GrammarGapItem).set === 'article' ? 'article' : 'choice';
   if (isMatchItem(r.item)) return 'match';
   if (isFormItem(r.item)) return 'form';
   return isTransformItem(r.item) ? 'transform' : 'why';
