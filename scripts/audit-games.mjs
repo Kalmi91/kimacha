@@ -566,7 +566,12 @@ function auditLessonBody(topic, path) {
   });
 }
 
-function auditLessonSpeak(topic, path) {
+// FB414 (PLAN-fb0929 5. lépés, D3): a spanyol nyelvtani leckék felolvasása spanyol szó nélkül
+// szól (a «...» jelölt spanyol szakaszok kimaradnak a szövegből, a szöveg úgy van megírva,
+// hogy nélkülük is értelmes legyen). Ezért a spanyol leckékben (lang 'es') NEM lehet «...»
+// jelölés; az angol célnyelvű leckék (lang 'en') felolvasása változatlan: ott legalább egy
+// jelölt szakasz kell.
+function auditLessonSpeak(topic, path, dirLang = 'es') {
   checkLangs(topic.speak, `${path} speak`);
   for (const lang of LANGS) {
     const text = topic.speak?.[lang];
@@ -574,7 +579,10 @@ function auditLessonSpeak(topic, path) {
     const speakPath = `${path} speak[${lang}]`;
     const opens = (text.match(/«/g) ?? []).length;
     const closes = (text.match(/»/g) ?? []).length;
-    if (opens === 0) p1.push({ path: speakPath, issue: 'no «...» marked segment (spec: at least one Spanish section)' });
+    if (dirLang === 'es' && opens > 0) {
+      p1.push({ path: speakPath, issue: 'Spanish lessons must be read aloud without Spanish sections: no «...» marker allowed (FB414)' });
+    }
+    if (dirLang !== 'es' && opens === 0) p1.push({ path: speakPath, issue: 'no «...» marked segment (spec: at least one learned-language section)' });
     if (opens !== closes) p1.push({ path: speakPath, issue: 'unbalanced «» markers' });
     if (/[0-9]/.test(text)) p1.push({ path: speakPath, issue: 'digits not allowed in speak text' });
     if (/[()]/.test(text)) p1.push({ path: speakPath, issue: 'parentheses not allowed in speak text' });
@@ -760,7 +768,7 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
     if ('rule' in topic) p1.push({ path, issue: 'V2 lesson (schema 2) must not have a rule field' });
     if ('more' in topic) p1.push({ path, issue: 'V2 lesson (schema 2) must not have a more field' });
     auditLessonBody(topic, path);
-    auditLessonSpeak(topic, path);
+    auditLessonSpeak(topic, path, lang);
   } else {
     checkLangs(topic.rule, `${path} rule`);
     if (topic.more) checkLangs(topic.more, `${path} more`);
