@@ -1,7 +1,8 @@
 // Kapu a szabad szókészlethez (data/words-open/{a1,a2,b1,b2}.json), PLAN-words-open.md R1-R8.
 // Futtatás: node scripts/words-open-check.mjs [--level a1|a2|b1|b2] [--list-only]
 //   --list-only  csak R1-R2 (a lista kész, a mondatok még nincsenek)
-//   --level X    az R3-R8 csak az X szint kártyáin fut (a keresésekhez mindig mind a 600 kártya betöltődik)
+//   --level X    az R3-R10 csak az X szint kártyáin fut (a keresésekhez mindig mind a 600 kártya betöltődik)
+//   --to N       az R3-R10 csak az order <= N kártyákon fut (félkész szint ellenőrzése)
 // Szabályonként kiírja a hibák számát és az első 5 példát, hibánál exit 1.
 //
 // R6 (szint-nyelvtan): a lib/grammar/tenseGate.ts NEM használható újra, mert az alak-térképét a régi
@@ -31,6 +32,8 @@ const EMPTY_SENTENCE_MAX_ORDER = 20;
 const args = process.argv.slice(2);
 const listOnly = args.includes('--list-only');
 let onlyLevel = null;
+const ti = args.indexOf('--to');
+const toOrder = ti !== -1 ? Number(args[ti + 1]) : 600; // csak az order <= N kártyákra futnak az R3-R10 (részkészlet-ellenőrzés)
 const li = args.indexOf('--level');
 if (li !== -1) {
   onlyLevel = (args[li + 1] || '').toLowerCase();
@@ -125,7 +128,7 @@ for (const c of cards) {
 if (!listOnly) {
   const byLemma = new Map();
   for (const c of cards) if (typeof c.lemma === 'string' && !byLemma.has(c.lemma)) byLemma.set(c.lemma, c);
-  const target = cards.filter((c) => !onlyLevel || c.__file === onlyLevel);
+  const target = cards.filter((c) => (!onlyLevel || c.__file === onlyLevel) && c.order <= toOrder);
 
   const tokenize = (s) =>
     s.toLowerCase().replace(/[¿?¡!.,;:()"«»…]/g, ' ').split(/\s+/).filter(Boolean);
@@ -148,6 +151,9 @@ if (!listOnly) {
     dormir: 'duermo duermes duerme duermen durmió durmieron durmiendo durmamos durmamos',
     volver: 'vuelvo vuelves vuelve vuelven vuelto volvió',
     pensar: 'pienso piensas piensa piensan',
+    pedir: 'pido pides pide piden pidió pidieron pidiendo pida',
+    perder: 'pierdo pierdes pierde pierden perdió',
+    cerrar: 'cierro cierras cierra cierran',
     contar: 'cuento cuentas cuenta cuentan',
     costar: 'cuesta cuestan',
     sentir: 'siento sientes siente sienten sintió',
@@ -289,11 +295,12 @@ if (!listOnly) {
         }
         return;
       }
-      if (GERUND_RE.test(t)) {
+      const tenses = paradigm(l).get(t);
+      if (!tenses && GERUND_RE.test(t)) {
+        // előbb a ragozási tábla: entiendo, mando jelen idő, nem gerundium
         found.push([prevL === 'estar' ? 'gerundio_estar' : 'gerundio', t]);
         return;
       }
-      const tenses = paradigm(l).get(t);
       if (tenses) {
         const sorted = [...tenses].sort((a, b) => STRUCT_LEVEL[a] - STRUCT_LEVEL[b]);
         let s = sorted[0];
