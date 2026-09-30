@@ -11,7 +11,8 @@ import grammarEnArticles from '@/data/games/grammar/en/articles.json';
 import grammarEnPresentSimple from '@/data/games/grammar/en/present-simple.json';
 import grammarEnPlurals from '@/data/games/grammar/en/plurals.json';
 import grammarEnThisThat from '@/data/games/grammar/en/this-that.json';
+import grammarEnPossessives from '@/data/games/grammar/en/possessives.json';
 
 export const enContent: LanguageContentBundle = {
-  grammarTopics: [grammarEnToBe, grammarEnArticles, grammarEnPresentSimple, grammarEnPlurals, grammarEnThisThat] as unknown as GrammarTopicData[],
+  grammarTopics: [grammarEnToBe, grammarEnArticles, grammarEnPresentSimple, grammarEnPlurals, grammarEnThisThat, grammarEnPossessives] as unknown as GrammarTopicData[],
 };

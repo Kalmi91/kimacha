@@ -1,0 +1,1014 @@
+{
+  "schema": 2,
+  "topic": "possessives",
+  "level": "A1",
+  "title": {
+    "hu": "A birtokos névmások (my, your, his, her)",
+    "en": "Possessive adjectives (my, your, his, her)",
+    "es": "Los posesivos (my, your, his, her)",
+    "de": "Die Possessivpronomen (my, your, his, her)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A birtokos névmások (my, your, his, her, its, our, their) megmondják, kié valami. A spanyol „su” egyetlen szó, angolul viszont négy: his, her, its, their, aszerint, hogy KI a birtokos. Fontos: nem a birtokolt dologhoz igazodnak (mint a spanyol „nuestro / nuestra”), hanem a birtokoshoz, és sosem változnak a szám szerint: my book, my books.",
+        "en": "Possessive adjectives (my, your, his, her, its, our, their) say who something belongs to. Spanish “su” is one word, but English has four: his, her, its, their, depending on WHO the owner is. Important: they agree with the owner, not with the thing owned (unlike Spanish “nuestro / nuestra”), and they never change for number: my book, my books.",
+        "es": "Los adjetivos posesivos (my, your, his, her, its, our, their) dicen de quién es algo. El «su» del español es una sola palabra, pero el inglés tiene cuatro: his, her, its, their, según QUIÉN sea el poseedor. Importante: concuerdan con el poseedor, no con la cosa poseída (a diferencia de «nuestro / nuestra»), y nunca cambian por el número: my book, my books.",
+        "de": "Die Possessivpronomen (my, your, his, her, its, our, their) sagen, wem etwas gehört. Das spanische „su“ ist ein einziges Wort, das Englische hat vier: his, her, its, their, je nachdem, WER der Besitzer ist. Wichtig: Sie richten sich nach dem Besitzer, nicht nach der besessenen Sache (anders als „nuestro / nuestra“), und sie ändern sich nie nach der Zahl: my book, my books."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "po-forms",
+      "title": {
+        "hu": "Birtokos névmások",
+        "en": "Possessive adjectives",
+        "es": "Adjetivos posesivos",
+        "de": "Possessivpronomen"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "possessive",
+          "en": "possessive",
+          "es": "possessive",
+          "de": "possessive"
+        }
+      ],
+      "rows": [
+        [
+          "I",
+          "my"
+        ],
+        [
+          "you",
+          "your"
+        ],
+        [
+          "he",
+          "his"
+        ],
+        [
+          "she",
+          "her"
+        ],
+        [
+          "it",
+          "its"
+        ],
+        [
+          "we",
+          "our"
+        ],
+        [
+          "they",
+          "their"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Hogyan működnek",
+        "en": "How they work",
+        "es": "Cómo funcionan",
+        "de": "Wie sie funktionieren"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A birtokos neme számít, nem a dologé: Carlos loves HIS dog, Maria loves HER dog. Spanyolul mindkettő „su perro”.",
+            "en": "The owner’s gender counts, not the thing’s: Carlos loves HIS dog, Maria loves HER dog. In Spanish both are “su perro”.",
+            "es": "Cuenta el género del poseedor, no el de la cosa: Carlos loves HIS dog, Maria loves HER dog. En español ambos son «su perro».",
+            "de": "Es zählt das Geschlecht des Besitzers, nicht das der Sache: Carlos loves HIS dog, Maria loves HER dog. Auf Spanisch sind beide „su perro“."
+          },
+          "examples": [
+            {
+              "es": "Carlos loves his dog.",
+              "tr": {
+                "hu": "Carlos szereti a kutyáját.",
+                "en": "Carlos loves his dog.",
+                "es": "Carlos quiere a su perro.",
+                "de": "Carlos liebt seinen Hund."
+              }
+            },
+            {
+              "es": "Maria loves her dog.",
+              "tr": {
+                "hu": "Maria szereti a kutyáját.",
+                "en": "Maria loves her dog.",
+                "es": "María quiere a su perro.",
+                "de": "Maria liebt ihren Hund."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Nincs névelő előtte, és nem változik többesben: my house, my houses (nem „the my house”, nem „mys houses”).",
+            "en": "No article before it, and no change in the plural: my house, my houses (not “the my house”, not “mys houses”).",
+            "es": "Sin artículo delante y sin cambio en plural: my house, my houses (no «the my house», no «mys houses»).",
+            "de": "Kein Artikel davor und keine Änderung im Plural: my house, my houses (nicht „the my house“, nicht „mys houses“)."
+          },
+          "examples": [
+            {
+              "es": "My house is big.",
+              "tr": {
+                "hu": "A házam nagy.",
+                "en": "My house is big.",
+                "es": "Mi casa es grande.",
+                "de": "Mein Haus ist groß."
+              }
+            },
+            {
+              "es": "Our children are here.",
+              "tr": {
+                "hu": "A gyerekeink itt vannak.",
+                "en": "Our children are here.",
+                "es": "Nuestros hijos están aquí.",
+                "de": "Unsere Kinder sind hier."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Testrészekkel és ruhával a birtokost használod, nem a névelőt (a spanyolban „me lavo las manos”): I wash my hands.",
+            "en": "With body parts and clothes you use the possessive, not the article (Spanish “me lavo las manos”): I wash my hands.",
+            "es": "Con partes del cuerpo y ropa se usa el posesivo, no el artículo (en español «me lavo las manos»): I wash my hands.",
+            "de": "Bei Körperteilen und Kleidung nimmt man das Possessivpronomen, nicht den Artikel (Spanisch „me lavo las manos“): I wash my hands."
+          },
+          "examples": [
+            {
+              "es": "I wash my hands.",
+              "tr": {
+                "hu": "Kezet mosok.",
+                "en": "I wash my hands.",
+                "es": "Me lavo las manos.",
+                "de": "Ich wasche mir die Hände."
+              }
+            },
+            {
+              "es": "She washes her face.",
+              "tr": {
+                "hu": "Megmossa az arcát.",
+                "en": "She washes her face.",
+                "es": "Ella se lava la cara.",
+                "de": "Sie wäscht sich das Gesicht."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "A birtokos ’s",
+        "en": "The possessive ’s",
+        "es": "El posesivo ’s",
+        "de": "Das Possessiv-’s"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Név vagy személy után ’s áll, és a birtokos ELÖL van: Ana’s book = „el libro de Ana”. Nincs „de”.",
+            "en": "After a name or a person add ’s, and the owner comes FIRST: Ana’s book = “el libro de Ana”. There is no “de”.",
+            "es": "Después de un nombre o una persona se añade ’s, y el poseedor va PRIMERO: Ana’s book = «el libro de Ana». No hay «de».",
+            "de": "Nach einem Namen oder einer Person kommt ’s, und der Besitzer steht ZUERST: Ana’s book = „el libro de Ana“. Ein „de“ gibt es nicht."
+          },
+          "examples": [
+            {
+              "es": "It is Ana's dog.",
+              "tr": {
+                "hu": "Ana kutyája.",
+                "en": "It is Ana's dog.",
+                "es": "Es el perro de Ana.",
+                "de": "Es ist Anas Hund."
+              }
+            },
+            {
+              "es": "My sister's name is Elena.",
+              "tr": {
+                "hu": "A nővérem/húgom neve Elena.",
+                "en": "My sister's name is Elena.",
+                "es": "El nombre de mi hermana es Elena.",
+                "de": "Der Name meiner Schwester ist Elena."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Vigyázat: „its” (birtokos) nincs aposztróffal, az „it’s” pedig „it is”: The dog eats its food. It’s a dog.",
+            "en": "Careful: “its” (possessive) has no apostrophe, and “it’s” means “it is”: The dog eats its food. It’s a dog.",
+            "es": "Cuidado: «its» (posesivo) no lleva apóstrofo, y «it’s» significa «it is»: The dog eats its food. It’s a dog.",
+            "de": "Vorsicht: „its“ (Possessiv) hat keinen Apostroph, und „it’s“ bedeutet „it is“: The dog eats its food. It’s a dog."
+          },
+          "examples": [
+            {
+              "es": "The dog eats its food.",
+              "tr": {
+                "hu": "A kutya megeszi az ennivalóját.",
+                "en": "The dog eats its food.",
+                "es": "El perro come su comida.",
+                "de": "Der Hund frisst sein Futter."
+              }
+            },
+            {
+              "es": "It's a big dog.",
+              "tr": {
+                "hu": "Ez egy nagy kutya.",
+                "en": "It's a big dog.",
+                "es": "Es un perro grande.",
+                "de": "Das ist ein großer Hund."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A spanyol „su” angolul a birtokostól függ. Ne mondd, hogy „Maria loves his dog”, ha Maria a birtokos: „Maria loves her dog”.",
+        "en": "Spanish “su” depends on the owner in English. Do not say “Maria loves his dog” when Maria is the owner: “Maria loves her dog”.",
+        "es": "El «su» del español depende en inglés del poseedor. No digas «Maria loves his dog» si María es la poseedora: «Maria loves her dog».",
+        "de": "Spanisch „su“ hängt im Englischen vom Besitzer ab. Sag nicht „Maria loves his dog“, wenn Maria die Besitzerin ist: „Maria loves her dog“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Birtokos előtt nincs névelő. Ne mondd, hogy „the my book”, hanem: „my book”.",
+        "en": "No article before a possessive. Do not say “the my book”; say “my book”.",
+        "es": "No se pone artículo delante del posesivo. No digas «the my book», di «my book».",
+        "de": "Vor dem Possessivpronomen steht kein Artikel. Sag nicht „the my book“, sondern „my book“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Testrésznél és ruhánál is birtokost használunk. Ne mondd, hogy „I wash the hands”, hanem: „I wash my hands”.",
+        "en": "With body parts and clothes we also use the possessive. Do not say “I wash the hands”; say “I wash my hands”.",
+        "es": "Con partes del cuerpo y ropa también usamos el posesivo. No digas «I wash the hands», di «I wash my hands».",
+        "de": "Auch bei Körperteilen und Kleidung nehmen wir das Possessivpronomen. Sag nicht „I wash the hands“, sondern „I wash my hands“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ne keverd össze: „your” = a tiéd, „you’re” = you are; „their” = az övék, „there” = ott. A hangjuk ugyanaz, az írásuk más.",
+        "en": "Do not mix them up: “your” = yours, “you’re” = you are; “their” = belonging to them, “there” = in that place. They sound the same but are written differently.",
+        "es": "No los confundas: «your» = tu, «you’re» = you are; «their» = de ellos, «there» = allí. Suenan igual pero se escriben distinto.",
+        "de": "Verwechsle sie nicht: „your“ = dein, „you’re“ = you are; „their“ = ihr (von ihnen), „there“ = dort. Sie klingen gleich, werden aber verschieden geschrieben."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A birtokos névmások megmondják, kié valami: «my», «your», «his», «her», «its», «our», «their». A spanyol «su» angolul a birtokostól függ: «Carlos loves his dog», «Maria loves her dog». Névelő nincs előttük: «my book», nem «the my book». Testrésznél is ezt használod: «I wash my hands». A név után ’s jön: «Ana’s book». Vigyázat: «its» aposztróf nélkül birtokos, az «it’s» pedig «it is».",
+    "en": "Possessive adjectives say who something belongs to: «my», «your», «his», «her», «its», «our», «their». The Spanish «su» depends on the owner in English: «Carlos loves his dog», «Maria loves her dog». There is no article before them: «my book», not «the my book». Use them with body parts too: «I wash my hands». After a name comes s with an apostrophe: «Ana’s book». Careful: «its» without an apostrophe is possessive, and «it’s» means «it is».",
+    "es": "Los adjetivos posesivos dicen de quién es algo: «my», «your», «his», «her», «its», «our», «their». El «su» del español depende en inglés del poseedor: «Carlos loves his dog», «Maria loves her dog». No llevan artículo delante: «my book», no «the my book». También se usan con partes del cuerpo: «I wash my hands». Después de un nombre va ’s: «Ana’s book». Cuidado: «its» sin apóstrofo es posesivo, y «it’s» significa «it is».",
+    "de": "Die Possessivpronomen sagen, wem etwas gehört: «my», «your», «his», «her», «its», «our», «their». Das spanische «su» hängt im Englischen vom Besitzer ab: «Carlos loves his dog», «Maria loves her dog». Ein Artikel steht nicht davor: «my book», nicht «the my book». Auch bei Körperteilen benutzt du sie: «I wash my hands». Nach einem Namen kommt ’s: «Ana’s book». Vorsicht: «its» ohne Apostroph ist besitzanzeigend, und «it’s» bedeutet «it is»."
+  },
+  "glossary": [
+    {
+      "word": "Ana's",
+      "gloss": {
+        "hu": "Ana-é",
+        "en": "Ana’s",
+        "es": "de Ana",
+        "de": "Anas"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "po-01",
+      "sentence": "I love ___ family.",
+      "options": [
+        "my",
+        "me",
+        "mine"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az „I” birtokos alakja „my”, és utána főnév áll: my family.",
+        "en": "The possessive of “I” is “my”, followed by a noun: my family.",
+        "es": "El posesivo de «I» es «my», seguido de un nombre: my family.",
+        "de": "Das Possessivpronomen zu „I“ ist „my“, danach folgt ein Nomen: my family."
+      },
+      "wrong": {
+        "me": {
+          "hu": "A „me” tárgyeset („love me”), nem birtokos; a főnév előtt „my” kell.",
+          "en": "“Me” is the object form (“love me”), not a possessive; before a noun you need “my”.",
+          "es": "«Me» es la forma de objeto («love me»), no un posesivo; delante de un nombre hace falta «my».",
+          "de": "„Me“ ist die Objektform („love me“), kein Possessivpronomen; vor einem Nomen braucht man „my“."
+        },
+        "mine": {
+          "hu": "A „mine” önállóan áll („It is mine”), főnév előtt nem használható: my family.",
+          "en": "“Mine” stands alone (“It is mine”) and cannot go before a noun: my family.",
+          "es": "«Mine» va solo («It is mine») y no puede ir delante de un nombre: my family.",
+          "de": "„Mine“ steht allein („It is mine“) und kann nicht vor einem Nomen stehen: my family."
+        }
+      },
+      "examples": [
+        "I like my house.",
+        "I love my dog."
+      ]
+    },
+    {
+      "id": "po-02",
+      "sentence": "Maria loves ___ dog.",
+      "options": [
+        "her",
+        "his",
+        "she"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A birtokos Maria, egy nő, ezért „her”: Maria loves her dog.",
+        "en": "The owner is Maria, a woman, so “her”: Maria loves her dog.",
+        "es": "La poseedora es María, una mujer, por eso «her»: Maria loves her dog.",
+        "de": "Die Besitzerin ist Maria, eine Frau, deshalb „her“: Maria loves her dog."
+      },
+      "wrong": {
+        "his": {
+          "hu": "A „his” férfi birtokoshoz való; Maria nő, ezért „her”.",
+          "en": "“His” is for a male owner; Maria is a woman, so “her”.",
+          "es": "«His» es para un poseedor hombre; María es una mujer, por eso «her».",
+          "de": "„His“ gehört zu einem männlichen Besitzer; Maria ist eine Frau, deshalb „her“."
+        },
+        "she": {
+          "hu": "A „she” alany („She loves”), nem birtokos; a főnév előtt „her” kell.",
+          "en": "“She” is a subject (“She loves”), not a possessive; before a noun you need “her”.",
+          "es": "«She» es un sujeto («She loves»), no un posesivo; delante de un nombre hace falta «her».",
+          "de": "„She“ ist ein Subjekt („She loves“), kein Possessivpronomen; vor einem Nomen braucht man „her“."
+        }
+      },
+      "examples": [
+        "Elena loves her mother.",
+        "Laura likes her house."
+      ]
+    },
+    {
+      "id": "po-15",
+      "kind": "form",
+      "verb": "possessive",
+      "person": "he",
+      "answer": "his",
+      "table": "po-forms"
+    },
+    {
+      "id": "po-03",
+      "sentence": "Carlos loves ___ dog.",
+      "options": [
+        "her",
+        "his",
+        "he"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A birtokos Carlos, egy férfi, ezért „his”: Carlos loves his dog.",
+        "en": "The owner is Carlos, a man, so “his”: Carlos loves his dog.",
+        "es": "El poseedor es Carlos, un hombre, por eso «his»: Carlos loves his dog.",
+        "de": "Der Besitzer ist Carlos, ein Mann, deshalb „his“: Carlos loves his dog."
+      },
+      "wrong": {
+        "her": {
+          "hu": "A „her” női birtokoshoz való; Carlos férfi, ezért „his”.",
+          "en": "“Her” is for a female owner; Carlos is a man, so “his”.",
+          "es": "«Her» es para una poseedora mujer; Carlos es un hombre, por eso «his».",
+          "de": "„Her“ gehört zu einer weiblichen Besitzerin; Carlos ist ein Mann, deshalb „his“."
+        },
+        "he": {
+          "hu": "A „he” alany („He loves”), nem birtokos; a főnév előtt „his” kell.",
+          "en": "“He” is a subject (“He loves”), not a possessive; before a noun you need “his”.",
+          "es": "«He» es un sujeto («He loves»), no un posesivo; delante de un nombre hace falta «his».",
+          "de": "„He“ ist ein Subjekt („He loves“), kein Possessivpronomen; vor einem Nomen braucht man „his“."
+        }
+      },
+      "examples": [
+        "Luis likes his job.",
+        "Diego loves his sister."
+      ]
+    },
+    {
+      "id": "po-04",
+      "sentence": "We love ___ house.",
+      "options": [
+        "we",
+        "ours",
+        "our"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A „we” birtokos alakja „our”: our house.",
+        "en": "The possessive of “we” is “our”: our house.",
+        "es": "El posesivo de «we» es «our»: our house.",
+        "de": "Das Possessivpronomen zu „we“ ist „our“: our house."
+      },
+      "wrong": {
+        "we": {
+          "hu": "A „we” alany; főnév előtt a birtokos „our” kell.",
+          "en": "“We” is a subject; before a noun you need the possessive “our”.",
+          "es": "«We» es un sujeto; delante de un nombre hace falta el posesivo «our».",
+          "de": "„We“ ist ein Subjekt; vor einem Nomen braucht man das Possessivpronomen „our“."
+        },
+        "ours": {
+          "hu": "Az „ours” önállóan áll („It is ours”), főnév előtt „our” kell.",
+          "en": "“Ours” stands alone (“It is ours”); before a noun you need “our”.",
+          "es": "«Ours» va solo («It is ours»); delante de un nombre hace falta «our».",
+          "de": "„Ours“ steht allein („It is ours“); vor einem Nomen braucht man „our“."
+        }
+      },
+      "examples": [
+        "We like our city.",
+        "We love our family."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "po-19",
+      "es": "Maria loves her dog.",
+      "target": "her",
+      "tr": {
+        "hu": "Maria szereti a kutyáját.",
+        "en": "Maria loves her dog.",
+        "es": "María quiere a su perro.",
+        "de": "Maria liebt ihren Hund."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a birtokos nő (she): her",
+            "en": "the owner is a woman (she): her",
+            "es": "la poseedora es una mujer (she): her",
+            "de": "die Besitzerin ist eine Frau (she): her"
+          }
+        },
+        {
+          "text": {
+            "hu": "a birtokolt dolog nőnemű: her",
+            "en": "the thing owned is feminine: her",
+            "es": "la cosa poseída es femenina: her",
+            "de": "die besessene Sache ist weiblich: her"
+          },
+          "wrong": {
+            "hu": "Az angol birtokos a birtokoshoz igazodik, nem a birtokolt dologhoz. A kutya itt nem számít, Maria a fontos.",
+            "en": "The English possessive agrees with the owner, not with the thing owned. The dog does not matter here, Maria does.",
+            "es": "El posesivo inglés concuerda con el poseedor, no con la cosa poseída. Aquí el perro no importa, importa María.",
+            "de": "Das englische Possessivpronomen richtet sich nach dem Besitzer, nicht nach der besessenen Sache. Der Hund zählt hier nicht, Maria schon."
+          }
+        },
+        {
+          "text": {
+            "hu": "több birtokos: their",
+            "en": "several owners: their",
+            "es": "varios poseedores: their",
+            "de": "mehrere Besitzer: their"
+          },
+          "wrong": {
+            "hu": "Maria egy személy, ezért nem „their”, hanem „her”.",
+            "en": "Maria is one person, so not “their” but “her”.",
+            "es": "María es una sola persona, por eso no «their», sino «her».",
+            "de": "Maria ist eine Person, deshalb nicht „their“, sondern „her“."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "po-05",
+      "sentence": "They love ___ children.",
+      "options": [
+        "they",
+        "there",
+        "their"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A „they” birtokos alakja „their”: their children.",
+        "en": "The possessive of “they” is “their”: their children.",
+        "es": "El posesivo de «they» es «their»: their children.",
+        "de": "Das Possessivpronomen zu „they“ ist „their“: their children."
+      },
+      "wrong": {
+        "they": {
+          "hu": "A „they” alany; főnév előtt a birtokos „their” kell.",
+          "en": "“They” is a subject; before a noun you need the possessive “their”.",
+          "es": "«They» es un sujeto; delante de un nombre hace falta el posesivo «their».",
+          "de": "„They“ ist ein Subjekt; vor einem Nomen braucht man das Possessivpronomen „their“."
+        },
+        "there": {
+          "hu": "A „there” helyet jelent (ott), nem birtokos; a hangja ugyanaz, de „their” kell.",
+          "en": "“There” means a place (over there), not a possessive; it sounds the same, but you need “their”.",
+          "es": "«There» indica un lugar (allí), no es un posesivo; suena igual, pero hace falta «their».",
+          "de": "„There“ bedeutet einen Ort (dort), kein Possessivpronomen; es klingt gleich, aber man braucht „their“."
+        }
+      },
+      "examples": [
+        "They like their house.",
+        "They love their dog."
+      ]
+    },
+    {
+      "id": "po-06",
+      "sentence": "The dog eats ___ food.",
+      "options": [
+        "its",
+        "it's",
+        "his"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az állat/dolog birtokos alakja „its”, aposztróf nélkül: The dog eats its food.",
+        "en": "The possessive for an animal or thing is “its”, with no apostrophe: The dog eats its food.",
+        "es": "El posesivo de un animal o cosa es «its», sin apóstrofo: The dog eats its food.",
+        "de": "Das Possessivpronomen für ein Tier oder eine Sache ist „its“, ohne Apostroph: The dog eats its food."
+      },
+      "wrong": {
+        "it's": {
+          "hu": "Az „it’s” = it is, nem birtokos; a birtokos „its”, aposztróf nélkül.",
+          "en": "“It’s” = it is, not a possessive; the possessive is “its”, with no apostrophe.",
+          "es": "«It’s» = it is, no un posesivo; el posesivo es «its», sin apóstrofo.",
+          "de": "„It’s“ = it is, kein Possessivpronomen; das Possessivpronomen ist „its“, ohne Apostroph."
+        },
+        "his": {
+          "hu": "A „his” férfi személyhez való; állathoz, dologhoz általában „its” áll.",
+          "en": "“His” is for a male person; for an animal or a thing we usually use “its”.",
+          "es": "«His» es para una persona hombre; para un animal o cosa se usa normalmente «its».",
+          "de": "„His“ gehört zu einer männlichen Person; für ein Tier oder eine Sache steht meist „its“."
+        }
+      },
+      "examples": [
+        "The cat likes its bed.",
+        "The house has its door open."
+      ]
+    },
+    {
+      "id": "po-16",
+      "kind": "form",
+      "verb": "possessive",
+      "person": "she",
+      "answer": "her",
+      "table": "po-forms"
+    },
+    {
+      "id": "po-07",
+      "sentence": "Is this ___ bag?",
+      "options": [
+        "your",
+        "you",
+        "yours"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „you” birtokos alakja „your”, és utána főnév áll: your bag.",
+        "en": "The possessive of “you” is “your”, followed by a noun: your bag.",
+        "es": "El posesivo de «you» es «your», seguido de un nombre: your bag.",
+        "de": "Das Possessivpronomen zu „you“ ist „your“, danach folgt ein Nomen: your bag."
+      },
+      "wrong": {
+        "you": {
+          "hu": "A „you” alany; főnév előtt a birtokos „your” kell.",
+          "en": "“You” is a subject; before a noun you need the possessive “your”.",
+          "es": "«You» es un sujeto; delante de un nombre hace falta el posesivo «your».",
+          "de": "„You“ ist ein Subjekt; vor einem Nomen braucht man das Possessivpronomen „your“."
+        },
+        "yours": {
+          "hu": "A „yours” önállóan áll („It is yours”), főnév előtt „your” kell.",
+          "en": "“Yours” stands alone (“It is yours”); before a noun you need “your”.",
+          "es": "«Yours» va solo («It is yours»); delante de un nombre hace falta «your».",
+          "de": "„Yours“ steht allein („It is yours“); vor einem Nomen braucht man „your“."
+        }
+      },
+      "examples": [
+        "Is this your phone?",
+        "Where is your house?"
+      ]
+    },
+    {
+      "id": "po-08",
+      "sentence": "I wash ___ hands every day.",
+      "options": [
+        "the",
+        "my",
+        "me"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Testrészekkel birtokost használunk, nem névelőt: I wash my hands.",
+        "en": "With body parts we use the possessive, not the article: I wash my hands.",
+        "es": "Con partes del cuerpo usamos el posesivo, no el artículo: I wash my hands.",
+        "de": "Bei Körperteilen nehmen wir das Possessivpronomen, nicht den Artikel: I wash my hands."
+      },
+      "wrong": {
+        "the": {
+          "hu": "A spanyolban „las manos”, de az angolban testrésznél „my” kell, nem „the”.",
+          "en": "In Spanish it is “las manos”, but in English a body part takes “my”, not “the”.",
+          "es": "En español es «las manos», pero en inglés una parte del cuerpo lleva «my», no «the».",
+          "de": "Im Spanischen heißt es „las manos“, aber im Englischen steht bei einem Körperteil „my“, nicht „the“."
+        },
+        "me": {
+          "hu": "A „me” tárgyeset, nem birtokos; a főnév előtt „my” kell.",
+          "en": "“Me” is the object form, not a possessive; before a noun you need “my”.",
+          "es": "«Me» es la forma de objeto, no un posesivo; delante de un nombre hace falta «my».",
+          "de": "„Me“ ist die Objektform, kein Possessivpronomen; vor einem Nomen braucht man „my“."
+        }
+      },
+      "examples": [
+        "She washes her face.",
+        "He washes his hands."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "po-20",
+      "es": "I wash my hands.",
+      "target": "my",
+      "tr": {
+        "hu": "Kezet mosok.",
+        "en": "I wash my hands.",
+        "es": "Me lavo las manos.",
+        "de": "Ich wasche mir die Hände."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "testrésznél az angol birtokost használ: my",
+            "en": "with body parts English uses the possessive: my",
+            "es": "con partes del cuerpo el inglés usa el posesivo: my",
+            "de": "bei Körperteilen benutzt das Englische das Possessivpronomen: my"
+          }
+        },
+        {
+          "text": {
+            "hu": "testrésznél névelő áll, mint a spanyolban: the",
+            "en": "with body parts the article is used, as in Spanish: the",
+            "es": "con partes del cuerpo se usa el artículo, como en español: the",
+            "de": "bei Körperteilen steht der Artikel wie im Spanischen: the"
+          },
+          "wrong": {
+            "hu": "A spanyolban „las manos”, de az angolban „my hands”. A birtokos jelöli, kinek a kezéről van szó.",
+            "en": "Spanish says “las manos”, but English says “my hands”. The possessive shows whose hands they are.",
+            "es": "El español dice «las manos», pero el inglés dice «my hands». El posesivo muestra de quién son las manos.",
+            "de": "Spanisch sagt „las manos“, Englisch „my hands“. Das Possessivpronomen zeigt, wessen Hände es sind."
+          }
+        },
+        {
+          "text": {
+            "hu": "a „my” elhagyható",
+            "en": "“my” can be left out",
+            "es": "«my» se puede omitir",
+            "de": "„my“ kann man weglassen"
+          },
+          "wrong": {
+            "hu": "Nem hagyható el: a „I wash hands” hibás, mindig kell a birtokos.",
+            "en": "It cannot be left out: “I wash hands” is wrong, the possessive is always needed.",
+            "es": "No se puede omitir: «I wash hands» es incorrecto, el posesivo siempre hace falta.",
+            "de": "Man kann es nicht weglassen: „I wash hands“ ist falsch, das Possessivpronomen ist immer nötig."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "po-09",
+      "sentence": "She washes ___ face every morning.",
+      "options": [
+        "the",
+        "her",
+        "his"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A birtokos ő (nő), és testrészről van szó: her face.",
+        "en": "The owner is she (a woman), and it is a body part: her face.",
+        "es": "La poseedora es ella, y se trata de una parte del cuerpo: her face.",
+        "de": "Die Besitzerin ist sie, und es geht um ein Körperteil: her face."
+      },
+      "wrong": {
+        "the": {
+          "hu": "Testrésznél az angolban birtokost használunk, nem „the”-t.",
+          "en": "With a body part English uses the possessive, not “the”.",
+          "es": "Con una parte del cuerpo el inglés usa el posesivo, no «the».",
+          "de": "Bei einem Körperteil benutzt das Englische das Possessivpronomen, nicht „the“."
+        },
+        "his": {
+          "hu": "A „his” férfi birtokoshoz való; a mondat alanya nő (she): her.",
+          "en": "“His” is for a male owner; the subject is a woman (she): her.",
+          "es": "«His» es para un poseedor hombre; el sujeto es una mujer (she): her.",
+          "de": "„His“ gehört zu einem männlichen Besitzer; das Subjekt ist eine Frau (she): her."
+        }
+      },
+      "examples": [
+        "He washes his face.",
+        "I wash my hands."
+      ]
+    },
+    {
+      "id": "po-10",
+      "sentence": "This is ___ book.",
+      "options": [
+        "Ana's",
+        "Ana",
+        "of Ana"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A birtokos ’s a névhez kapcsolódik, és a birtokos áll elöl: Ana’s book.",
+        "en": "The possessive ’s attaches to the name, and the owner comes first: Ana’s book.",
+        "es": "El posesivo ’s se une al nombre, y el poseedor va primero: Ana’s book.",
+        "de": "Das Possessiv-’s hängt am Namen, und der Besitzer steht zuerst: Ana’s book."
+      },
+      "wrong": {
+        "Ana": {
+          "hu": "Az „Ana” ’s nélkül nem fejezi ki a birtoklást: Ana’s book.",
+          "en": "“Ana” without ’s does not show possession: Ana’s book.",
+          "es": "«Ana» sin ’s no expresa posesión: Ana’s book.",
+          "de": "„Ana“ ohne ’s drückt keinen Besitz aus: Ana’s book."
+        },
+        "of Ana": {
+          "hu": "Az „of Ana” a spanyol „de Ana” másolata; az angolban ’s kell és a birtokos elöl áll: Ana’s book.",
+          "en": "“Of Ana” copies Spanish “de Ana”; English needs ’s with the owner first: Ana’s book.",
+          "es": "«Of Ana» copia el «de Ana» del español; el inglés necesita ’s con el poseedor primero: Ana’s book.",
+          "de": "„Of Ana“ ist eine Kopie von spanisch „de Ana“; das Englische braucht ’s mit dem Besitzer zuerst: Ana’s book."
+        }
+      },
+      "examples": [
+        "It is Ana's dog.",
+        "Ana's brother is here."
+      ]
+    },
+    {
+      "id": "po-17",
+      "kind": "form",
+      "verb": "possessive",
+      "person": "we",
+      "answer": "our",
+      "table": "po-forms"
+    },
+    {
+      "id": "po-11",
+      "sentence": "Ana and Carlos love ___ children.",
+      "options": [
+        "her",
+        "his",
+        "their"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A birtokosok ketten vannak (Ana és Carlos), ezért „their”: their children.",
+        "en": "There are two owners (Ana and Carlos), so “their”: their children.",
+        "es": "Hay dos poseedores (Ana y Carlos), por eso «their»: their children.",
+        "de": "Es gibt zwei Besitzer (Ana und Carlos), deshalb „their“: their children."
+      },
+      "wrong": {
+        "her": {
+          "hu": "A „her” egy női birtokoshoz való; itt két birtokos van: their.",
+          "en": "“Her” is for one female owner; here there are two owners: their.",
+          "es": "«Her» es para una poseedora mujer; aquí hay dos poseedores: their.",
+          "de": "„Her“ gehört zu einer Besitzerin; hier gibt es zwei Besitzer: their."
+        },
+        "his": {
+          "hu": "A „his” egy férfi birtokoshoz való; itt két birtokos van: their.",
+          "en": "“His” is for one male owner; here there are two owners: their.",
+          "es": "«His» es para un poseedor hombre; aquí hay dos poseedores: their.",
+          "de": "„His“ gehört zu einem Besitzer; hier gibt es zwei Besitzer: their."
+        }
+      },
+      "examples": [
+        "They love their house.",
+        "My parents like their city."
+      ]
+    },
+    {
+      "id": "po-12",
+      "sentence": "You and I love ___ city.",
+      "options": [
+        "our",
+        "your",
+        "their"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "„You and I” = we, ezért a birtokos „our”: our city.",
+        "en": "“You and I” = we, so the possessive is “our”: our city.",
+        "es": "«You and I» = we, por eso el posesivo es «our»: our city.",
+        "de": "„You and I“ = we, deshalb ist das Possessivpronomen „our“: our city."
+      },
+      "wrong": {
+        "your": {
+          "hu": "A „your” csak a te birtokodat jelenti; itt te és én együtt vagyunk a birtokos: our.",
+          "en": "“Your” means only yours; here you and I together are the owner: our.",
+          "es": "«Your» significa solo tuyo; aquí tú y yo juntos somos los poseedores: our.",
+          "de": "„Your“ bedeutet nur deins; hier sind du und ich zusammen die Besitzer: our."
+        },
+        "their": {
+          "hu": "A „their” másokról szól; itt te és én vagyunk a birtokos: our.",
+          "en": "“Their” is about other people; here you and I are the owner: our.",
+          "es": "«Their» habla de otras personas; aquí tú y yo somos los poseedores: our.",
+          "de": "„Their“ spricht von anderen Leuten; hier sind du und ich die Besitzer: our."
+        }
+      },
+      "examples": [
+        "We like our house.",
+        "We love our city."
+      ]
+    },
+    {
+      "id": "po-22",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Mi casa es grande.",
+          "en": "My house is big."
+        },
+        {
+          "es": "Su casa (de ella) es grande.",
+          "en": "Her house is big."
+        },
+        {
+          "es": "Su casa (de él) es grande.",
+          "en": "His house is big."
+        },
+        {
+          "es": "Nuestra familia es grande.",
+          "en": "Our family is big."
+        },
+        {
+          "es": "Sus hijos (de ellos) están aquí.",
+          "en": "Their children are here."
+        },
+        {
+          "es": "Me lavo las manos.",
+          "en": "I wash my hands."
+        }
+      ]
+    },
+    {
+      "id": "po-13",
+      "sentence": "My brother loves ___ mother.",
+      "options": [
+        "his",
+        "her",
+        "their"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A birtokos „my brother”, egy férfi, ezért „his”: My brother loves his mother.",
+        "en": "The owner is “my brother”, a man, so “his”: My brother loves his mother.",
+        "es": "El poseedor es «my brother», un hombre, por eso «his»: My brother loves his mother.",
+        "de": "Der Besitzer ist „my brother“, ein Mann, deshalb „his“: My brother loves his mother."
+      },
+      "wrong": {
+        "her": {
+          "hu": "A „her” női birtokoshoz való; a „my brother” férfi: his.",
+          "en": "“Her” is for a female owner; “my brother” is a man: his.",
+          "es": "«Her» es para una poseedora mujer; «my brother» es un hombre: his.",
+          "de": "„Her“ gehört zu einer Besitzerin; „my brother“ ist ein Mann: his."
+        },
+        "their": {
+          "hu": "A „their” több birtokosra vonatkozik; a „my brother” egy személy: his.",
+          "en": "“Their” is for several owners; “my brother” is one person: his.",
+          "es": "«Their» es para varios poseedores; «my brother» es una persona: his.",
+          "de": "„Their“ gehört zu mehreren Besitzern; „my brother“ ist eine Person: his."
+        }
+      },
+      "examples": [
+        "My sister loves her mother.",
+        "My father likes his job."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "po-21",
+      "es": "The dog eats its food.",
+      "target": "its",
+      "tr": {
+        "hu": "A kutya megeszi az ennivalóját.",
+        "en": "The dog eats its food.",
+        "es": "El perro come su comida.",
+        "de": "Der Hund frisst sein Futter."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "birtokos állathoz, dologhoz: its (aposztróf nélkül)",
+            "en": "possessive for an animal or thing: its (no apostrophe)",
+            "es": "posesivo de un animal o cosa: its (sin apóstrofo)",
+            "de": "Possessiv für ein Tier oder eine Sache: its (ohne Apostroph)"
+          }
+        },
+        {
+          "text": {
+            "hu": "az it is rövidítése: it’s",
+            "en": "short form of it is: it’s",
+            "es": "forma corta de it is: it’s",
+            "de": "Kurzform von it is: it’s"
+          },
+          "wrong": {
+            "hu": "Az „it’s” = it is. Ide nem illik: „The dog eats it is food”. A birtokos „its”, aposztróf nélkül.",
+            "en": "“It’s” = it is. It does not fit here: “The dog eats it is food”. The possessive is “its”, with no apostrophe.",
+            "es": "«It’s» = it is. Aquí no encaja: «The dog eats it is food». El posesivo es «its», sin apóstrofo.",
+            "de": "„It’s“ = it is. Das passt hier nicht: „The dog eats it is food“. Das Possessivpronomen ist „its“, ohne Apostroph."
+          }
+        },
+        {
+          "text": {
+            "hu": "férfi birtokos: his",
+            "en": "male owner: his",
+            "es": "poseedor hombre: his",
+            "de": "männlicher Besitzer: his"
+          },
+          "wrong": {
+            "hu": "Állatnál vagy dolognál általában „its” áll, a „his” férfi személyt jelöl.",
+            "en": "For an animal or a thing we normally use “its”; “his” is for a male person.",
+            "es": "Para un animal o cosa se usa normalmente «its»; «his» es para una persona hombre.",
+            "de": "Bei einem Tier oder einer Sache steht normalerweise „its“; „his“ steht für eine männliche Person."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "po-14",
+      "sentence": "Where is ___ phone?",
+      "options": [
+        "your",
+        "you're",
+        "you"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A főnév előtt a birtokos „your” áll: Where is your phone?",
+        "en": "Before a noun the possessive “your” is needed: Where is your phone?",
+        "es": "Delante de un nombre hace falta el posesivo «your»: Where is your phone?",
+        "de": "Vor einem Nomen braucht man das Possessivpronomen „your“: Where is your phone?"
+      },
+      "wrong": {
+        "you're": {
+          "hu": "Az „you’re” = you are; birtokos jelentéshez „your” kell.",
+          "en": "“You’re” = you are; for the possessive you need “your”.",
+          "es": "«You’re» = you are; para el posesivo hace falta «your».",
+          "de": "„You’re“ = you are; für das Possessivpronomen braucht man „your“."
+        },
+        "you": {
+          "hu": "A „you” alany; főnév előtt a birtokos „your” kell.",
+          "en": "“You” is a subject; before a noun you need the possessive “your”.",
+          "es": "«You» es un sujeto; delante de un nombre hace falta el posesivo «your».",
+          "de": "„You“ ist ein Subjekt; vor einem Nomen braucht man das Possessivpronomen „your“."
+        }
+      },
+      "examples": [
+        "Where is your house?",
+        "What is your name?"
+      ]
+    },
+    {
+      "id": "po-18",
+      "kind": "form",
+      "verb": "possessive",
+      "person": "they",
+      "answer": "their",
+      "table": "po-forms"
+    },
+    {
+      "id": "po-23",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "mi",
+          "en": "my"
+        },
+        {
+          "es": "tu",
+          "en": "your"
+        },
+        {
+          "es": "su (de él)",
+          "en": "his"
+        },
+        {
+          "es": "su (de ella)",
+          "en": "her"
+        },
+        {
+          "es": "nuestro / nuestra",
+          "en": "our"
+        },
+        {
+          "es": "su (de ellos)",
+          "en": "their"
+        }
+      ]
+    }
+  ]
+}
