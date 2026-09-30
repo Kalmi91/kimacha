@@ -16,7 +16,7 @@ Becslés: ~600K token, 1-2 óra.
 - [x] 3. (13:01) A1 kártyák (fordítás + mondat) → kész, ha: a kapu minden szabálya zöld az A1-en; Opus 10-es mintát néz
 - [x] 4. (13:22) A2, B1, B2 kártyák → kész, ha: a kapu teljes futása zöld
 - [x] 5. (13:38) Második AI-átnézés (független Sonnet) + javítás → kész, ha: minden jelölt kártya javítva, kapu zöld
-- [~] 6. (13:38) PR #59, lap: Opus. Repo-kapu, commit, push, PR + böngészős átnéző lap Kálmánnak → kész, ha: typecheck/lint/test zöld, PR nyitva, lap linkje kint
+- [x] 6. (13:38) (13:38) PR #59, lap: Opus. Repo-kapu, commit, push, PR + böngészős átnéző lap Kálmánnak → kész, ha: typecheck/lint/test zöld, PR nyitva, lap linkje kint Lap: https://claude.ai/artifact/DabMEEa6BAv95rh9K3KyT2 (db `jeloles`, doc id = order)
 
 ## Spec (a subagent ezt hajtja végre 1:1)
 
@@ -92,3 +92,5 @@ A script szabályonként kiírja a hibák számát és az első 5 példát, hib�
 ### Git
 
 Conventional Commit, AI-marker NÉLKÜL (se Co-Authored-By, se „Generated with”, se Claude-sor). `git add` mindig nevesítve, soha `-A`. Kapu push előtt: `npm run typecheck:ci`, `npm run lint`, `npm run test:ci`, `node scripts/words-open-check.mjs`. PR-t Kálmán merge-öl.
+
+Önellenőrzés: 3 Sonnet subagent (iro 1 db, 3x folytatva; független átnéző; lap-építő), ~0,9M subagent-token a becsült 600K helyett. Nyitott: #451 si, #598 así A2-szintű szó B2-ben.
