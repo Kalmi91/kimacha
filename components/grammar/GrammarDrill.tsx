@@ -67,6 +67,14 @@ interface Props {
   onRoundStats?: (stats: RoundStats) => void;
   /** NY22: a brutalista fejléc bezáró X-e (a lecke-oldal ← gombjával azonos: vissza a leckéhez). */
   onClose?: () => void;
+  /**
+   * FB421 (PLAN-fb0929 4. lépés): egy félbehagyott kör folytatása: ugyanaz a seed és
+   * item-lista, onnan, ahol abbamaradt. Ha az item-lista már nem egyezik (a lecke
+   * változott), a kör elölről indul.
+   */
+  resume?: { seed: number; ids: string[]; index: number; correct: number };
+  /** FB421: minden megválaszolt tétel után a kör állapota, a szülő ezt menti. */
+  onProgress?: (p: { seed: number; ids: string[]; index: number; correct: number; total: number }) => void;
 }
 
 // NY24: a kör-vége képernyő adatai; csak memóriában, nincs DB-írás.
@@ -120,13 +128,17 @@ function MatchDrillItem({
   learnedLang: string;
   colors: (typeof Colors)['light'];
   s: ReturnType<typeof t>;
-  onDone: (correct: boolean) => void;
+  // FB420: a második argumentum a jó párok száma (egy hiba = egy pár elveszik).
+  onDone: (correct: boolean, correctUnits?: number) => void;
 }) {
   const [rightOrder] = useState(() => shuffleArray(item.pairs.map((_, i) => i), hashString(item.id)));
   const [selectedLeft, setSelectedLeft] = useState<number | null>(null);
   const [matched, setMatched] = useState<Set<number>>(new Set());
   const [wrongPair, setWrongPair] = useState<{ left: number; right: number } | null>(null);
   const [hadWrong, setHadWrong] = useState(false);
+  // FB420 (PLAN-fb0929 4. lépés): a párosítás részpontot kap: az a pár veszít, amelyiknél
+  // volt rossz koppintás (egy pár egyszer, akárhányszor tévesztett), a többi számít.
+  const [errLefts, setErrLefts] = useState<Set<number>>(new Set());
   const g = useGrammarColors();
   // `pairs` {es, en} szó szerint spanyol/angol; a jobb oszlop a TANULT nyelv
   // (es→en irányban az angol), a bal a másik.
@@ -154,6 +166,7 @@ function MatchDrillItem({
     } else {
       setWrongPair({ left: selectedLeft, right: pos });
       setHadWrong(true);
+      setErrLefts((prev) => new Set(prev).add(selectedLeft));
       setSelectedLeft(null);
     }
   };
@@ -212,7 +225,7 @@ function MatchDrillItem({
         {done ? (
           <>
             <BrutalFeedback g={g} title={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} />
-            <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(!hadWrong)} />
+            <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(!hadWrong, item.pairs.length - errLefts.size)} />
           </>
         ) : null}
       </View>
@@ -268,7 +281,7 @@ function MatchDrillItem({
           <Text style={[styles.explainHeader, { color: hadWrong ? '#EF4444' : '#22C55E' }]}>
             {hadWrong ? s.games.wrongFeedback : s.games.correctFeedback}
           </Text>
-          <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(!hadWrong)}>
+          <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(!hadWrong, item.pairs.length - errLefts.size)}>
             <Text style={styles.btnText}>{s.games.understood}</Text>
           </Pressable>
         </View>
@@ -780,13 +793,13 @@ function TransformDrillItem({
   );
 }
 
-export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, kinds = CHOICE_ONLY, transformSeen, onItemChange, onRoundStats, onClose }: Props) {
+export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, kinds = CHOICE_ONLY, transformSeen, onItemChange, onRoundStats, onClose, resume, onProgress }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
 
-  const [seed] = useState(() => hashString(`${topic.topic}:${Date.now()}`));
+  const [seed] = useState(() => resume?.seed ?? hashString(`${topic.topic}:${Date.now()}`));
   const fullRound = useMemo(() => buildGrammarRound(topic, seed), [topic, seed]);
   const transformPool = useMemo(() => fullRound.map((r) => r.item).filter(isTransformItem), [fullRound]);
   // FB316 (NY10): a körös (legkevésbé-gyakorolt-elöl, legfeljebb 10 itemes)
@@ -802,9 +815,20 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     }
     return fullRound.filter((r) => kinds.includes(grammarRoundItemKind(r)));
   }, [useTransformRounds, transformPool, transformSeen, seed, fullRound, kinds]);
-  const [index, setIndex] = useState(0);
+  // FB421: a kör tételeinek id-listája (a félbehagyott kör mentéséhez és a folytatás
+  // érvényesítéséhez) és a kör egységei: egy tétel 1 egység, a párosítás annyi, ahány
+  // párja van (FB420: a részpont a jó párok aránya, ezért a kör összesítője is párokban).
+  const roundIds = useMemo(() => round.map((r) => r.item.id), [round]);
+  const totalUnits = useMemo(() => round.reduce((n, r) => n + (isMatchItem(r.item) ? r.item.pairs.length : 1), 0), [round]);
+  const resumeOk =
+    !!resume &&
+    resume.index > 0 &&
+    resume.index < roundIds.length &&
+    resume.ids.length === roundIds.length &&
+    resume.ids.every((id, i) => id === roundIds[i]);
+  const [index, setIndex] = useState(resumeOk ? resume.index : 0);
   const [selected, setSelected] = useState<number | null>(null);
-  const [correctCount, setCorrectCount] = useState(0);
+  const [correctCount, setCorrectCount] = useState(resumeOk ? resume.correct : 0);
   const [showMore, setShowMore] = useState(false);
   // NY22: egymás utáni helyes válaszok a körön belül, csak memóriában (nincs
   // DB-írás); hibánál nullázódik, "x2"-től látszik a combo-matrica.
@@ -840,6 +864,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
 
   const advance = (finalCorrectCount: number) => {
     if (index + 1 < round.length) {
+      onProgress?.({ seed, ids: roundIds, index: index + 1, correct: finalCorrectCount, total: totalUnits });
       setIndex((i) => i + 1);
       setSelected(null);
       setShowMore(false);
@@ -855,9 +880,9 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
       miss: missRef.current,
     });
     if (useTransformRounds) {
-      onFinish(finalCorrectCount, round.length, round.map((r) => r.item.id));
+      onFinish(finalCorrectCount, totalUnits, round.map((r) => r.item.id));
     } else {
-      onFinish(finalCorrectCount, round.length);
+      onFinish(finalCorrectCount, totalUnits);
     }
   };
 
@@ -868,15 +893,16 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // Match/form score at COMPLETION time, in the same event as the "next" tap,
   // so correctCount's state update has not landed yet; the final tally is
   // computed locally instead of trusted from the (possibly stale) closure.
-  const completeItem = (wasCorrect: boolean) => {
+  // FB420: `correctUnits` a részpont (a párosítás jó párjai); nélküle a tétel 1 egység, jó vagy nem.
+  const completeItem = (wasCorrect: boolean, correctUnits?: number) => {
     noteResult(
       wasCorrect,
       isTransformItem(roundItem.item)
         ? { sentence: roundItem.item.answer, highlight: roundItem.item.answer }
         : undefined
     );
-    const finalCount = wasCorrect ? correctCount + 1 : correctCount;
-    if (wasCorrect) setCorrectCount(finalCount);
+    const finalCount = correctCount + (correctUnits ?? (wasCorrect ? 1 : 0));
+    if (finalCount !== correctCount) setCorrectCount(finalCount);
     advance(finalCount);
   };
 
