@@ -1,0 +1,982 @@
+{
+  "schema": 2,
+  "topic": "will",
+  "level": "A2",
+  "title": {
+    "hu": "A jövő idő: will (te ayudaré)",
+    "en": "The future: will (I will help you)",
+    "es": "El futuro: will (te ayudaré)",
+    "de": "Die Zukunft: will (ich werde dir helfen)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A „will” + alapige a spanyol egyszerű jövő („ayudaré”, „lloverá”) angol megfelelője. Egyetlen alak minden személyhez, nincs -s, nincs „to”: I will help, she will help, they will help. Főleg ezekre használjuk: azonnali döntés és felajánlás, ígéret, és véleményen alapuló jóslat („I think it will rain”).",
+        "en": "“Will” + base verb is the English counterpart of the Spanish simple future (“ayudaré”, “lloverá”). One form for every person, no -s, no “to”: I will help, she will help, they will help. We mostly use it for spontaneous decisions and offers, promises, and predictions based on opinion (“I think it will rain”).",
+        "es": "«Will» + verbo base es el equivalente inglés del futuro simple del español («ayudaré», «lloverá»). Una sola forma para todas las personas, sin -s, sin «to»: I will help, she will help, they will help. Se usa sobre todo para decisiones espontáneas y ofrecimientos, promesas, y predicciones basadas en una opinión («I think it will rain»).",
+        "de": "„Will“ + Grundform ist das englische Gegenstück zum spanischen einfachen Futur („ayudaré“, „lloverá“). Eine Form für jede Person, kein -s, kein „to“: I will help, she will help, they will help. Wir benutzen es vor allem für spontane Entscheidungen und Angebote, Versprechen und Vorhersagen aus einer Meinung („I think it will rain“)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "wl-forms",
+      "title": {
+        "hu": "Will és will not",
+        "en": "Will and will not",
+        "es": "Will y will not",
+        "de": "Will und will not"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "will",
+          "en": "will",
+          "es": "will",
+          "de": "will"
+        },
+        {
+          "hu": "will not",
+          "en": "will not",
+          "es": "will not",
+          "de": "will not"
+        }
+      ],
+      "rows": [
+        [
+          "I",
+          "will",
+          "will not"
+        ],
+        [
+          "you",
+          "will",
+          "will not"
+        ],
+        [
+          "he / she / it",
+          "will",
+          "will not"
+        ],
+        [
+          "we",
+          "will",
+          "will not"
+        ],
+        [
+          "they",
+          "will",
+          "will not"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Alak",
+        "en": "Form",
+        "es": "Forma",
+        "de": "Form"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Állító: alany + will + alapige. Rövid alak: I’ll, you’ll, she’ll… Minden személynél ugyanaz (she will help, nem „she wills help”).",
+            "en": "Affirmative: subject + will + base verb. Short form: I’ll, you’ll, she’ll… The same for every person (she will help, not “she wills help”).",
+            "es": "Afirmativa: sujeto + will + verbo base. Forma corta: I’ll, you’ll, she’ll… Igual para todas las personas (she will help, no «she wills help»).",
+            "de": "Bejahend: Subjekt + will + Grundform. Kurzform: I’ll, you’ll, she’ll… Für jede Person gleich (she will help, nicht „she wills help“)."
+          },
+          "examples": [
+            {
+              "es": "She will call you tomorrow.",
+              "tr": {
+                "hu": "Holnap felhív.",
+                "en": "She will call you tomorrow.",
+                "es": "Ella te llamará mañana.",
+                "de": "Sie ruft dich morgen an."
+              }
+            },
+            {
+              "es": "I'll help you.",
+              "tr": {
+                "hu": "Segítek neked.",
+                "en": "I'll help you.",
+                "es": "Te ayudo.",
+                "de": "Ich helfe dir."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Tagadás: will not, rövid alakja won’t. Kérdés: Will + alany + alapige. Rövid válasz: Yes, I will. / No, I won’t. Nincs „do”.",
+            "en": "Negative: will not, short form won’t. Question: Will + subject + base verb. Short answers: Yes, I will. / No, I won’t. There is no “do”.",
+            "es": "Negación: will not, forma corta won’t. Pregunta: Will + sujeto + verbo base. Respuesta corta: Yes, I will. / No, I won’t. No hay «do».",
+            "de": "Verneinung: will not, Kurzform won’t. Frage: Will + Subjekt + Grundform. Kurzantwort: Yes, I will. / No, I won’t. Es gibt kein „do“."
+          },
+          "examples": [
+            {
+              "es": "I won't be late.",
+              "tr": {
+                "hu": "Nem fogok elkésni.",
+                "en": "I won't be late.",
+                "es": "No llegaré tarde.",
+                "de": "Ich werde nicht zu spät kommen."
+              }
+            },
+            {
+              "es": "Will you help me, please?",
+              "tr": {
+                "hu": "Segítesz nekem, kérlek?",
+                "en": "Will you help me, please?",
+                "es": "¿Me ayudarás, por favor?",
+                "de": "Hilfst du mir bitte?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Mire használjuk",
+        "en": "What we use it for",
+        "es": "Para qué se usa",
+        "de": "Wofür wir es benutzen"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Azonnali döntés és felajánlás: a beszéd pillanatában döntöd el. The phone is ringing. I’ll answer it.",
+            "en": "Spontaneous decisions and offers: you decide at the moment of speaking. The phone is ringing. I’ll answer it.",
+            "es": "Decisiones espontáneas y ofrecimientos: lo decides en el momento de hablar. The phone is ringing. I’ll answer it.",
+            "de": "Spontane Entscheidungen und Angebote: Du entscheidest im Moment des Sprechens. The phone is ringing. I’ll answer it."
+          },
+          "examples": [
+            {
+              "es": "It's cold. I will close the window.",
+              "tr": {
+                "hu": "Hideg van. Bezárom az ablakot.",
+                "en": "It's cold. I will close the window.",
+                "es": "Hace frío. Cierro la ventana.",
+                "de": "Es ist kalt. Ich mache das Fenster zu."
+              }
+            },
+            {
+              "es": "Don't worry, I will help you.",
+              "tr": {
+                "hu": "Ne aggódj, segítek.",
+                "en": "Don't worry, I will help you.",
+                "es": "No te preocupes, te ayudo.",
+                "de": "Keine Sorge, ich helfe dir."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ígéret és kérés: I won’t be late. Will you help me? Vélemény alapú jóslat: I think it will rain tomorrow. A tervekhez („voy a”) a going to jobb.",
+            "en": "Promises and requests: I won’t be late. Will you help me? Predictions based on opinion: I think it will rain tomorrow. For plans (“voy a”) going to is better.",
+            "es": "Promesas y peticiones: I won’t be late. Will you help me? Predicciones basadas en una opinión: I think it will rain tomorrow. Para planes («voy a») es mejor going to.",
+            "de": "Versprechen und Bitten: I won’t be late. Will you help me? Vorhersagen aus einer Meinung: I think it will rain tomorrow. Für Pläne („voy a“) passt going to besser."
+          },
+          "examples": [
+            {
+              "es": "I think it will rain tomorrow.",
+              "tr": {
+                "hu": "Szerintem holnap esni fog.",
+                "en": "I think it will rain tomorrow.",
+                "es": "Creo que mañana lloverá.",
+                "de": "Ich glaube, morgen regnet es."
+              }
+            },
+            {
+              "es": "She will be a doctor.",
+              "tr": {
+                "hu": "Orvos lesz.",
+                "en": "She will be a doctor.",
+                "es": "Ella será doctora.",
+                "de": "Sie wird Ärztin sein."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A „will” sosem kap -s-t, és utána nincs „to”. Ne mondd, hogy „He wills help” vagy „I will to go”, hanem: „He will help”, „I will go”.",
+        "en": "“Will” never takes -s, and there is no “to” after it. Do not say “He wills help” or “I will to go”; say “He will help”, “I will go”.",
+        "es": "«Will» nunca lleva -s, y después no hay «to». No digas «He wills help» ni «I will to go», di «He will help», «I will go».",
+        "de": "„Will“ bekommt nie ein -s, und danach steht kein „to“. Sag nicht „He wills help“ oder „I will to go“, sondern „He will help“, „I will go“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Kérdésben és tagadásban nincs „do”. Ne mondd, hogy „Do you will help?” vagy „I don’t will go”, hanem: „Will you help?” és „I won’t go”.",
+        "en": "In questions and negatives there is no “do”. Do not say “Do you will help?” or “I don’t will go”; say “Will you help?” and “I won’t go”.",
+        "es": "En preguntas y negaciones no hay «do». No digas «Do you will help?» ni «I don’t will go», di «Will you help?» y «I won’t go».",
+        "de": "In Fragen und Verneinungen gibt es kein „do“. Sag nicht „Do you will help?“ oder „I don’t will go“, sondern „Will you help?“ und „I won’t go“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A „will” után az ige mindig alapalakban áll, múlt vagy -ing alakban sosem. Ne mondd, hogy „I will went” vagy „I will going”, hanem: „I will go”.",
+        "en": "After “will” the verb is always in its base form, never in the past or -ing. Do not say “I will went” or “I will going”; say “I will go”.",
+        "es": "Después de «will» el verbo va siempre en forma base, nunca en pasado ni en -ing. No digas «I will went» ni «I will going», di «I will go».",
+        "de": "Nach „will“ steht das Verb immer in der Grundform, nie in der Vergangenheit oder mit -ing. Sag nicht „I will went“ oder „I will going“, sondern „I will go“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A „will” azonnali döntésre és jóslatra, a „going to” előre eldöntött tervre való. „I’m going to study tonight” (terv), de „I’ll help you” (most döntöttem).",
+        "en": "“Will” is for spontaneous decisions and predictions, “going to” for plans decided earlier. “I’m going to study tonight” (a plan), but “I’ll help you” (decided now).",
+        "es": "«Will» es para decisiones espontáneas y predicciones, «going to» para planes decididos antes. «I’m going to study tonight» (un plan), pero «I’ll help you» (lo decidí ahora).",
+        "de": "„Will“ steht für spontane Entscheidungen und Vorhersagen, „going to“ für früher beschlossene Pläne. „I’m going to study tonight“ (ein Plan), aber „I’ll help you“ (jetzt entschieden)."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A «will» plusz alapige a spanyol egyszerű jövő megfelelője. Minden személynél ugyanaz: «I will help», «she will help», «they will help». Azonnali döntésre és ígéretre használjuk: «I will help you», «I won't be late». Jóslatra is: «I think it will rain tomorrow». Tagadás: «will not» vagy «won't». Kérdés: «Will you help me?». Rövid válasz: «Yes, I will» vagy «No, I won't». Vigyázat: nem «he wills», nem «I will to go», és nem «do you will».",
+    "en": "The word «will» plus the base verb is the counterpart of the Spanish simple future. It is the same for every person: «I will help», «she will help», «they will help». We use it for spontaneous decisions and promises: «I will help you», «I won't be late». Also for predictions: «I think it will rain tomorrow». Negative: «will not» or «won't». Question: «Will you help me?». Short answers: «Yes, I will» or «No, I won't». Careful: not «he wills», not «I will to go», and not «do you will».",
+    "es": "«Will» más el verbo base es el equivalente del futuro simple del español. Es igual para todas las personas: «I will help», «she will help», «they will help». Se usa para decisiones espontáneas y promesas: «I will help you», «I won't be late». También para predicciones: «I think it will rain tomorrow». Negación: «will not» o «won't». Pregunta: «Will you help me?». Respuesta corta: «Yes, I will» o «No, I won't». Cuidado: no «he wills», no «I will to go» y no «do you will».",
+    "de": "«Will» plus Grundform entspricht dem spanischen einfachen Futur. Es ist für jede Person gleich: «I will help», «she will help», «they will help». Wir benutzen es für spontane Entscheidungen und Versprechen: «I will help you», «I won't be late». Auch für Vorhersagen: «I think it will rain tomorrow». Verneinung: «will not» oder «won't». Frage: «Will you help me?». Kurzantwort: «Yes, I will» oder «No, I won't». Vorsicht: nicht «he wills», nicht «I will to go» und nicht «do you will»."
+  },
+  "glossary": [
+    {
+      "word": "ago",
+      "gloss": {
+        "hu": "ennyivel ezelőtt",
+        "en": "back in time",
+        "es": "hace",
+        "de": "vor (zeitlich)"
+      }
+    },
+    {
+      "word": "I'll",
+      "gloss": {
+        "hu": "én (I will)",
+        "en": "I will",
+        "es": "yo (I will)",
+        "de": "ich werde (I will)"
+      }
+    },
+    {
+      "word": "won't",
+      "gloss": {
+        "hu": "nem fog (will not)",
+        "en": "will not",
+        "es": "no (will not)",
+        "de": "wird nicht (will not)"
+      }
+    },
+    {
+      "word": "you'll",
+      "gloss": {
+        "hu": "te (you will)",
+        "en": "you will",
+        "es": "tú (you will)",
+        "de": "du wirst (you will)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "wl-01",
+      "sentence": "She will ___ tomorrow.",
+      "options": [
+        "call",
+        "calls",
+        "calling"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „will” után az ige alapalakja áll: She will call tomorrow.",
+        "en": "After “will” the verb stays in its base form: She will call tomorrow.",
+        "es": "Después de «will» el verbo va en forma base: She will call tomorrow.",
+        "de": "Nach „will“ steht das Verb in der Grundform: She will call tomorrow."
+      },
+      "wrong": {
+        "calls": {
+          "hu": "A „will” után nem kap az ige -s-t, még a „she” mellett sem.",
+          "en": "After “will” the verb takes no -s, not even with “she”.",
+          "es": "Después de «will» el verbo no lleva -s, ni siquiera con «she».",
+          "de": "Nach „will“ bekommt das Verb kein -s, auch nicht bei „she“."
+        },
+        "calling": {
+          "hu": "A „will” után nincs -ing: will call.",
+          "en": "There is no -ing after “will”: will call.",
+          "es": "Después de «will» no hay -ing: will call.",
+          "de": "Nach „will“ steht kein -ing: will call."
+        }
+      },
+      "examples": [
+        "He will work tomorrow.",
+        "I will call you tonight."
+      ]
+    },
+    {
+      "id": "wl-02",
+      "sentence": "He ___ help you.",
+      "options": [
+        "will",
+        "wills",
+        "will to"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „will” minden személynél ugyanaz: He will help you.",
+        "en": "“Will” is the same for every person: He will help you.",
+        "es": "«Will» es igual para todas las personas: He will help you.",
+        "de": "„Will“ ist für jede Person gleich: He will help you."
+      },
+      "wrong": {
+        "wills": {
+          "hu": "A „will” sosem kap -s-t: he will, nem „he wills”.",
+          "en": "“Will” never takes -s: he will, not “he wills”.",
+          "es": "«Will» nunca lleva -s: he will, no «he wills».",
+          "de": "„Will“ bekommt nie ein -s: he will, nicht „he wills“."
+        },
+        "will to": {
+          "hu": "A „will” után nincs „to”: will help.",
+          "en": "There is no “to” after “will”: will help.",
+          "es": "Después de «will» no hay «to»: will help.",
+          "de": "Nach „will“ steht kein „to“: will help."
+        }
+      },
+      "examples": [
+        "She will help you.",
+        "They will help us."
+      ]
+    },
+    {
+      "id": "wl-14",
+      "kind": "form",
+      "verb": "will",
+      "person": "he / she / it",
+      "answer": "will",
+      "table": "wl-forms"
+    },
+    {
+      "id": "wl-03",
+      "sentence": "I ___ be late, I promise.",
+      "options": [
+        "won't",
+        "don't",
+        "not"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az ígéret tagadása: I won’t be late.",
+        "en": "The negative of a promise: I won’t be late.",
+        "es": "La negación de una promesa: I won’t be late.",
+        "de": "Die Verneinung eines Versprechens: I won’t be late."
+      },
+      "wrong": {
+        "don't": {
+          "hu": "A „will” tagadása „won’t”, nem „don’t”: I won’t be late.",
+          "en": "The negative of “will” is “won’t”, not “don’t”: I won’t be late.",
+          "es": "La negación de «will» es «won’t», no «don’t»: I won’t be late.",
+          "de": "Die Verneinung von „will“ ist „won’t“, nicht „don’t“: I won’t be late."
+        },
+        "not": {
+          "hu": "A „not” egyedül nem elég; a segédige is kell: won’t.",
+          "en": "“Not” alone is not enough; the helper verb is needed too: won’t.",
+          "es": "«Not» solo no basta; también hace falta el auxiliar: won’t.",
+          "de": "„Not“ allein reicht nicht; das Hilfsverb ist auch nötig: won’t."
+        }
+      },
+      "examples": [
+        "We won't be late.",
+        "She won't come."
+      ]
+    },
+    {
+      "id": "wl-04",
+      "sentence": "___ you help me, please?",
+      "options": [
+        "Will",
+        "Do",
+        "Are"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Kérés: Will you help me, please? A „will” kerül előre.",
+        "en": "A request: Will you help me, please? “Will” goes to the front.",
+        "es": "Una petición: Will you help me, please? «Will» pasa al principio.",
+        "de": "Eine Bitte: Will you help me, please? „Will“ rückt nach vorn."
+      },
+      "wrong": {
+        "Do": {
+          "hu": "A „will” mellé nem kell „do”: Will you help me?",
+          "en": "“Will” needs no “do”: Will you help me?",
+          "es": "«Will» no necesita «do»: Will you help me?",
+          "de": "„Will“ braucht kein „do“: Will you help me?"
+        },
+        "Are": {
+          "hu": "Az „Are” a to be alakja; a jövő kérdése „Will you…?”.",
+          "en": "“Are” is a form of to be; the future question is “Will you…?”.",
+          "es": "«Are» es una forma de to be; la pregunta de futuro es «Will you…?».",
+          "de": "„Are“ ist eine Form von to be; die Zukunftsfrage lautet „Will you…?“."
+        }
+      },
+      "examples": [
+        "Will you call me?",
+        "Will you open the door, please?"
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "wl-18",
+      "es": "Oh, the bag is heavy! I will help you.",
+      "target": "will",
+      "tr": {
+        "hu": "Ó, nehéz a táska! Segítek neked.",
+        "en": "Oh, the bag is heavy! I will help you.",
+        "es": "¡Oh, la bolsa pesa! Yo te ayudo.",
+        "de": "Oh, die Tasche ist schwer! Ich helfe dir."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "azonnali döntés vagy felajánlás: will",
+            "en": "a spontaneous decision or offer: will",
+            "es": "una decisión espontánea o un ofrecimiento: will",
+            "de": "eine spontane Entscheidung oder ein Angebot: will"
+          }
+        },
+        {
+          "text": {
+            "hu": "előre eldöntött terv: going to",
+            "en": "a plan decided earlier: going to",
+            "es": "un plan decidido antes: going to",
+            "de": "ein früher beschlossener Plan: going to"
+          },
+          "wrong": {
+            "hu": "Most látja, hogy nehéz a táska, és most dönt: ez azonnali döntés, ezért „will”.",
+            "en": "The speaker sees the bag is heavy and decides now: this is a spontaneous decision, so “will”.",
+            "es": "El hablante ve que la bolsa pesa y decide ahora: es una decisión espontánea, por eso «will».",
+            "de": "Der Sprecher sieht, dass die Tasche schwer ist, und entscheidet jetzt: eine spontane Entscheidung, deshalb „will“."
+          }
+        },
+        {
+          "text": {
+            "hu": "szokás: egyszerű jelen",
+            "en": "a habit: present simple",
+            "es": "un hábito: presente simple",
+            "de": "eine Gewohnheit: Present Simple"
+          },
+          "wrong": {
+            "hu": "Ez nem szokás, hanem egy ott és akkor hozott döntés.",
+            "en": "This is not a habit but a decision made right there.",
+            "es": "Esto no es un hábito sino una decisión tomada en ese momento.",
+            "de": "Das ist keine Gewohnheit, sondern eine Entscheidung im Moment."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "wl-05",
+      "sentence": "___ it rain tomorrow?",
+      "options": [
+        "Will",
+        "Does",
+        "Is"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A jövőre kérdező mondat „Will”-lel indul: Will it rain tomorrow?",
+        "en": "A question about the future starts with “Will”: Will it rain tomorrow?",
+        "es": "Una pregunta sobre el futuro empieza con «Will»: Will it rain tomorrow?",
+        "de": "Eine Frage zur Zukunft beginnt mit „Will“: Will it rain tomorrow?"
+      },
+      "wrong": {
+        "Does": {
+          "hu": "A „Does” jelen idő; a „tomorrow” jövőt jelez: Will.",
+          "en": "“Does” is present; “tomorrow” shows the future: Will.",
+          "es": "«Does» es presente; «tomorrow» indica futuro: Will.",
+          "de": "„Does“ ist Präsens; „tomorrow“ zeigt die Zukunft: Will."
+        },
+        "Is": {
+          "hu": "Az „Is” a to be alakja; a „rain” ige mellett a „Will” kell.",
+          "en": "“Is” is a form of to be; with the verb “rain” you need “Will”.",
+          "es": "«Is» es una forma de to be; con el verbo «rain» hace falta «Will».",
+          "de": "„Is“ ist eine Form von to be; bei dem Verb „rain“ braucht man „Will“."
+        }
+      },
+      "examples": [
+        "Will she come?",
+        "Will they arrive tonight?"
+      ]
+    },
+    {
+      "id": "wl-06",
+      "sentence": "Will she come? No, she ___.",
+      "options": [
+        "won't",
+        "doesn't",
+        "isn't"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „Will…?” kérdésre „won’t” a nemleges rövid válasz: No, she won’t.",
+        "en": "A “Will…?” question has “won’t” as the negative short answer: No, she won’t.",
+        "es": "Una pregunta con «Will…?» tiene «won’t» como respuesta corta negativa: No, she won’t.",
+        "de": "Eine „Will…?“-Frage hat „won’t“ als verneinende Kurzantwort: No, she won’t."
+      },
+      "wrong": {
+        "doesn't": {
+          "hu": "A „doesn’t” jelen idő; a „Will…?” kérdésre „won’t” a válasz.",
+          "en": "“Doesn’t” is present; a “Will…?” question is answered with “won’t”.",
+          "es": "«Doesn’t» es presente; una pregunta con «Will…?» se responde con «won’t».",
+          "de": "„Doesn’t“ ist Präsens; eine „Will…?“-Frage beantwortet man mit „won’t“."
+        },
+        "isn't": {
+          "hu": "Az „isn’t” a to be tagadása; a „Will…?” kérdésre „won’t”-tal válaszolunk.",
+          "en": "“Isn’t” is the negative of to be; a “Will…?” question is answered with “won’t”.",
+          "es": "«Isn’t» es la negación de to be; una pregunta con «Will…?» se responde con «won’t».",
+          "de": "„Isn’t“ ist die Verneinung von to be; eine „Will…?“-Frage beantwortet man mit „won’t“."
+        }
+      },
+      "examples": [
+        "Will he help? No, he won't.",
+        "Will you call? No, I won't."
+      ]
+    },
+    {
+      "id": "wl-15",
+      "kind": "form",
+      "verb": "will not",
+      "person": "they",
+      "answer": "will not",
+      "table": "wl-forms"
+    },
+    {
+      "id": "wl-07",
+      "sentence": "I think you ___ like it.",
+      "options": [
+        "will",
+        "wills",
+        "are"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Véleményen alapuló jóslat: I think you will like it.",
+        "en": "A prediction based on opinion: I think you will like it.",
+        "es": "Una predicción basada en una opinión: I think you will like it.",
+        "de": "Eine Vorhersage aus einer Meinung: I think you will like it."
+      },
+      "wrong": {
+        "wills": {
+          "hu": "A „will” sosem kap -s-t.",
+          "en": "“Will” never takes -s.",
+          "es": "«Will» nunca lleva -s.",
+          "de": "„Will“ bekommt nie ein -s."
+        },
+        "are": {
+          "hu": "Az „are” a to be alakja; a „like” ige mellett jövőhöz a „will” kell.",
+          "en": "“Are” is a form of to be; with the verb “like” the future needs “will”.",
+          "es": "«Are» es una forma de to be; con el verbo «like» el futuro necesita «will».",
+          "de": "„Are“ ist eine Form von to be; bei dem Verb „like“ braucht die Zukunft „will“."
+        }
+      },
+      "examples": [
+        "I think it will be hot.",
+        "I think she will call."
+      ]
+    },
+    {
+      "id": "wl-08",
+      "sentence": "The bag is heavy. I ___ help you.",
+      "options": [
+        "will",
+        "am",
+        "do"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Felajánlás: Don’t worry, I will help you.",
+        "en": "An offer: Don’t worry, I will help you.",
+        "es": "Un ofrecimiento: Don’t worry, I will help you.",
+        "de": "Ein Angebot: Don’t worry, I will help you."
+      },
+      "wrong": {
+        "am": {
+          "hu": "Az „am” a to be alakja; a felajánláshoz a „will” kell: I will help.",
+          "en": "“Am” is a form of to be; an offer needs “will”: I will help.",
+          "es": "«Am» es una forma de to be; un ofrecimiento necesita «will»: I will help.",
+          "de": "„Am“ ist eine Form von to be; ein Angebot braucht „will“: I will help."
+        },
+        "do": {
+          "hu": "A „do” segédige jelen idejű mondatokban kell; a felajánláshoz „will” áll.",
+          "en": "The helper “do” is for present sentences; an offer uses “will”.",
+          "es": "El auxiliar «do» es para oraciones en presente; un ofrecimiento usa «will».",
+          "de": "Das Hilfsverb „do“ steht in Sätzen im Präsens; ein Angebot benutzt „will“."
+        }
+      },
+      "examples": [
+        "I will call you.",
+        "We will help her."
+      ]
+    },
+    {
+      "id": "wl-09",
+      "sentence": "She will ___ a doctor.",
+      "options": [
+        "be",
+        "is",
+        "being"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „will” után a to be alapalakja áll: She will be a doctor.",
+        "en": "After “will” the base form of to be follows: She will be a doctor.",
+        "es": "Después de «will» va la forma base de to be: She will be a doctor.",
+        "de": "Nach „will“ folgt die Grundform von to be: She will be a doctor."
+      },
+      "wrong": {
+        "is": {
+          "hu": "A „will” után nem az „is”, hanem a „be” áll.",
+          "en": "After “will” comes “be”, not “is”.",
+          "es": "Después de «will» va «be», no «is».",
+          "de": "Nach „will“ steht „be“, nicht „is“."
+        },
+        "being": {
+          "hu": "A „will” után nincs -ing: will be.",
+          "en": "There is no -ing after “will”: will be.",
+          "es": "Después de «will» no hay -ing: will be.",
+          "de": "Nach „will“ steht kein -ing: will be."
+        }
+      },
+      "examples": [
+        "It will be hot tomorrow.",
+        "We will be at home."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "wl-19",
+      "es": "I think it will rain tomorrow.",
+      "target": "will",
+      "tr": {
+        "hu": "Szerintem holnap esni fog.",
+        "en": "I think it will rain tomorrow.",
+        "es": "Creo que mañana lloverá.",
+        "de": "Ich glaube, morgen regnet es."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "jóslat vélemény alapján („I think”)",
+            "en": "a prediction based on opinion (“I think”)",
+            "es": "una predicción basada en una opinión («I think»)",
+            "de": "eine Vorhersage aus einer Meinung („I think“)"
+          }
+        },
+        {
+          "text": {
+            "hu": "jóslat a most látható jelekből: going to",
+            "en": "a prediction from signs we see now: going to",
+            "es": "una predicción a partir de señales que vemos ahora: going to",
+            "de": "eine Vorhersage aus Anzeichen, die wir jetzt sehen: going to"
+          },
+          "wrong": {
+            "hu": "Itt nincs látható jel, csak vélemény („I think”), ezért „will”.",
+            "en": "There is no visible sign here, only an opinion (“I think”), so “will”.",
+            "es": "Aquí no hay ninguna señal visible, solo una opinión («I think»), por eso «will».",
+            "de": "Hier gibt es kein sichtbares Anzeichen, nur eine Meinung („I think“), deshalb „will“."
+          }
+        },
+        {
+          "text": {
+            "hu": "rögzített menetrend",
+            "en": "a fixed timetable",
+            "es": "un horario fijo",
+            "de": "ein fester Fahrplan"
+          },
+          "wrong": {
+            "hu": "Az időjárás nem menetrend; ez a beszélő véleménye.",
+            "en": "The weather is not a timetable; this is the speaker’s opinion.",
+            "es": "El clima no es un horario; esta es la opinión del hablante.",
+            "de": "Das Wetter ist kein Fahrplan; das ist die Meinung des Sprechers."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "wl-10",
+      "sentence": "Will you ___ me tomorrow?",
+      "options": [
+        "call",
+        "calls",
+        "to call"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „Will you” után az alapige áll: Will you call me tomorrow?",
+        "en": "After “Will you” the base verb follows: Will you call me tomorrow?",
+        "es": "Después de «Will you» va el verbo base: Will you call me tomorrow?",
+        "de": "Nach „Will you“ folgt die Grundform: Will you call me tomorrow?"
+      },
+      "wrong": {
+        "calls": {
+          "hu": "A „will” után nem kap az ige -s-t: call.",
+          "en": "After “will” the verb takes no -s: call.",
+          "es": "Después de «will» el verbo no lleva -s: call.",
+          "de": "Nach „will“ bekommt das Verb kein -s: call."
+        },
+        "to call": {
+          "hu": "A „will” után nincs „to”: Will you call?",
+          "en": "There is no “to” after “will”: Will you call?",
+          "es": "Después de «will» no hay «to»: Will you call?",
+          "de": "Nach „will“ steht kein „to“: Will you call?"
+        }
+      },
+      "examples": [
+        "Will you help me tonight?",
+        "Will they come tomorrow?"
+      ]
+    },
+    {
+      "id": "wl-16",
+      "kind": "form",
+      "verb": "will",
+      "person": "we",
+      "answer": "will",
+      "table": "wl-forms"
+    },
+    {
+      "id": "wl-11",
+      "sentence": "I will see you ___.",
+      "options": [
+        "tomorrow",
+        "yesterday",
+        "ago"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „will” jövőt jelöl, ezért jövő idejű időhatározó kell: tomorrow.",
+        "en": "“Will” marks the future, so a future time expression is needed: tomorrow.",
+        "es": "«Will» marca el futuro, por eso hace falta una expresión de tiempo futuro: tomorrow.",
+        "de": "„Will“ markiert die Zukunft, deshalb braucht man eine Zeitangabe der Zukunft: tomorrow."
+      },
+      "wrong": {
+        "yesterday": {
+          "hu": "A „yesterday” múlt; a „will” jövőre mutat: tomorrow.",
+          "en": "“Yesterday” is past; “will” points to the future: tomorrow.",
+          "es": "«Yesterday» es pasado; «will» apunta al futuro: tomorrow.",
+          "de": "„Yesterday“ ist Vergangenheit; „will“ zeigt in die Zukunft: tomorrow."
+        },
+        "ago": {
+          "hu": "Az „ago” múltbeli időt jelöl (two days ago); jövőhöz „tomorrow” kell.",
+          "en": "“Ago” marks past time (two days ago); for the future you need “tomorrow”.",
+          "es": "«Ago» marca tiempo pasado (two days ago); para el futuro hace falta «tomorrow».",
+          "de": "„Ago“ markiert vergangene Zeit (two days ago); für die Zukunft braucht man „tomorrow“."
+        }
+      },
+      "examples": [
+        "We will meet tonight.",
+        "She will come next week."
+      ]
+    },
+    {
+      "id": "wl-12",
+      "sentence": "He ___ come. He is tired.",
+      "options": [
+        "won't",
+        "wills not",
+        "not will"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „will” tagadása „won’t”: He won’t come.",
+        "en": "The negative of “will” is “won’t”: He won’t come.",
+        "es": "La negación de «will» es «won’t»: He won’t come.",
+        "de": "Die Verneinung von „will“ ist „won’t“: He won’t come."
+      },
+      "wrong": {
+        "wills not": {
+          "hu": "A „will” sosem kap -s-t, még tagadásban sem: will not / won’t.",
+          "en": "“Will” never takes -s, not even in a negative: will not / won’t.",
+          "es": "«Will» nunca lleva -s, ni siquiera en negativa: will not / won’t.",
+          "de": "„Will“ bekommt nie ein -s, auch nicht in der Verneinung: will not / won’t."
+        },
+        "not will": {
+          "hu": "A „not” a „will” UTÁN áll: will not / won’t.",
+          "en": "“Not” goes AFTER “will”: will not / won’t.",
+          "es": "«Not» va DESPUÉS de «will»: will not / won’t.",
+          "de": "„Not“ steht NACH „will“: will not / won’t."
+        }
+      },
+      "examples": [
+        "She won't help.",
+        "They won't arrive."
+      ]
+    },
+    {
+      "id": "wl-21",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Yo te ayudaré.",
+          "en": "I will help you."
+        },
+        {
+          "es": "Mañana lloverá.",
+          "en": "It will rain tomorrow."
+        },
+        {
+          "es": "No llegaré tarde.",
+          "en": "I won't be late."
+        },
+        {
+          "es": "¿Me ayudarás?",
+          "en": "Will you help me?"
+        },
+        {
+          "es": "Ella vendrá mañana.",
+          "en": "She will come tomorrow."
+        },
+        {
+          "es": "Te llamo esta noche.",
+          "en": "I'll call you tonight."
+        }
+      ]
+    },
+    {
+      "id": "wl-13",
+      "sentence": "___ call you tonight.",
+      "options": [
+        "I'll",
+        "I'm",
+        "Am"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az „I’ll” = I will: I’ll call you tonight.",
+        "en": "“I’ll” = I will: I’ll call you tonight.",
+        "es": "«I’ll» = I will: I’ll call you tonight.",
+        "de": "„I’ll“ = I will: I’ll call you tonight."
+      },
+      "wrong": {
+        "I'm": {
+          "hu": "Az „I’m” = I am; utána -ing vagy főnév jönne, nem alapige: I’ll call.",
+          "en": "“I’m” = I am; it would be followed by -ing or a noun, not a base verb: I’ll call.",
+          "es": "«I’m» = I am; iría seguido de -ing o un nombre, no de un verbo base: I’ll call.",
+          "de": "„I’m“ = I am; danach käme -ing oder ein Nomen, keine Grundform: I’ll call."
+        },
+        "Am": {
+          "hu": "Az „Am” kérdést nyitna; a kijelentéshez „I’ll” kell.",
+          "en": "“Am” would start a question; a statement needs “I’ll”.",
+          "es": "«Am» abriría una pregunta; una afirmación necesita «I’ll».",
+          "de": "„Am“ würde eine Frage einleiten; eine Aussage braucht „I’ll“."
+        }
+      },
+      "examples": [
+        "I'll help you.",
+        "I'll see you tomorrow."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "wl-20",
+      "es": "He will help.",
+      "target": "will",
+      "tr": {
+        "hu": "Segíteni fog.",
+        "en": "He will help.",
+        "es": "Él ayudará.",
+        "de": "Er wird helfen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a „will” minden személynél ugyanaz, -s nélkül",
+            "en": "“will” is the same for every person, with no -s",
+            "es": "«will» es igual para todas las personas, sin -s",
+            "de": "„will“ ist für jede Person gleich, ohne -s"
+          }
+        },
+        {
+          "text": {
+            "hu": "a he / she / it mellett -s kell: wills",
+            "en": "with he / she / it you need -s: wills",
+            "es": "con he / she / it hace falta -s: wills",
+            "de": "bei he / she / it braucht man -s: wills"
+          },
+          "wrong": {
+            "hu": "A „will” modális ige, ezért sosem kap -s-t: he will, nem „he wills”.",
+            "en": "“Will” is a modal verb, so it never takes -s: he will, not “he wills”.",
+            "es": "«Will» es un verbo modal, por eso nunca lleva -s: he will, no «he wills».",
+            "de": "„Will“ ist ein Modalverb, deshalb bekommt es nie ein -s: he will, nicht „he wills“."
+          }
+        },
+        {
+          "text": {
+            "hu": "a „will” után „to” kell",
+            "en": "after “will” you need “to”",
+            "es": "después de «will» hace falta «to»",
+            "de": "nach „will“ braucht man „to“"
+          },
+          "wrong": {
+            "hu": "A „will” után az alapige közvetlenül áll, „to” nélkül: will help.",
+            "en": "After “will” the base verb follows directly, with no “to”: will help.",
+            "es": "Después de «will» el verbo base va directamente, sin «to»: will help.",
+            "de": "Nach „will“ folgt die Grundform direkt, ohne „to“: will help."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "wl-17",
+      "kind": "form",
+      "verb": "will not",
+      "person": "he / she / it",
+      "answer": "will not",
+      "table": "wl-forms"
+    },
+    {
+      "id": "wl-22",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "ofrecer ayuda",
+          "en": "Don't worry, I will help you."
+        },
+        {
+          "es": "prometer algo",
+          "en": "I won't be late, I promise."
+        },
+        {
+          "es": "opinar sobre el futuro",
+          "en": "I think it will rain tomorrow."
+        },
+        {
+          "es": "pedir un favor",
+          "en": "Will you open the door, please?"
+        },
+        {
+          "es": "decidir en el momento",
+          "en": "It's cold. I will close the window."
+        },
+        {
+          "es": "negarse a algo",
+          "en": "He won't come."
+        }
+      ]
+    }
+  ]
+}
