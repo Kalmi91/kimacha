@@ -149,13 +149,14 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
     }
   });
 
-  it('speak has all 4 languages, balanced «», no digits or parentheses', () => {
+  it('speak has all 4 languages, no «» sections (FB414: read aloud without Spanish), no digits or parentheses', () => {
     for (const lang of LANGS) {
       const text = lesson.speak[lang];
       expect(text).toBeTruthy();
       const opens = (text.match(/«/g) ?? []).length;
       const closes = (text.match(/»/g) ?? []).length;
-      expect(opens).toBeGreaterThan(0);
+      // FB414 (PLAN-fb0929, D3): a spanyol leckék felolvasásában nincs jelölt spanyol szakasz.
+      expect(opens).toBe(0);
       expect(opens).toBe(closes);
       expect(text).not.toMatch(/[0-9]/);
       expect(text).not.toMatch(/[()]/);
