@@ -23,6 +23,7 @@ import GrammarDrill, { type RoundStats } from '@/components/grammar/GrammarDrill
 import LessonBody from '@/components/grammar/LessonBody';
 import MoreBlocks from '@/components/grammar/MoreBlocks';
 import FeedbackButton from '@/components/FeedbackModal';
+import FitText from '@/components/FitText';
 import { BrutalBox, Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
@@ -151,9 +152,9 @@ export default function GrammarLessonScreen() {
           <Pressable onPress={() => router.back()} hitSlop={12}>
             <Text style={[styles.back, { color: colors.text }]}>←</Text>
           </Pressable>
-          <Text style={[styles.title, { color: colors.text }]} numberOfLines={1}>
+          <FitText base={17} maxLines={2} reserve={100} style={[styles.title, { color: colors.text }]}>
             {entry?.title[contentLang] ?? String(topicId)}
-          </Text>
+          </FitText>
           <View style={{ width: 24 }} />
         </View>
         <Text style={[styles.empty, { color: colors.tabIconDefault }]}>{s.grammar.soonLong}</Text>
@@ -284,9 +285,11 @@ export default function GrammarLessonScreen() {
       >
         <Text style={[styles.back, { color: g.ink }]}>←</Text>
       </BrutalBox>
-      <Text style={[styles.title, styles.brutalTitle, { color: g.ink }]} numberOfLines={1}>
+      {/* FB404/405/413: a hosszú (spanyol) cím két sorba törik és lépcsőzötten kisebb,
+          nem vágódik le "..."-tal. */}
+      <FitText base={17} maxLines={2} reserve={150} caps style={[styles.title, styles.brutalTitle, { color: g.ink }]}>
         {lessonTitle}
-      </Text>
+      </FitText>
       <Sticker label={lesson.level} fill="a" rotate={5} />
     </View>
   ) : (
@@ -294,9 +297,9 @@ export default function GrammarLessonScreen() {
       <Pressable onPress={() => (phase === 'lesson' ? router.back() : setPhase('lesson'))} hitSlop={12}>
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
-      <Text style={[styles.title, { color: colors.text }]} numberOfLines={1}>
+      <FitText base={17} maxLines={2} reserve={130} style={[styles.title, { color: colors.text }]}>
         {lessonTitle}
-      </Text>
+      </FitText>
       <Text style={[styles.levelTag, { color: colors.tint }]}>{lesson.level}</Text>
     </View>
   );
@@ -721,7 +724,7 @@ const styles = StyleSheet.create({
     borderColor: 'transparent',
     alignItems: 'center',
   },
-  btnText: { fontSize: 16, fontWeight: '700' },
+  btnText: { fontSize: 16, fontWeight: '700', textAlign: 'center' },
   startBtn: { marginTop: 18 },
   btnTextOnTint: { color: '#FFFFFF' },
   // NY23: neo-brutalista gombok, cím (nagybetűs, 500 súly).
@@ -731,7 +734,7 @@ const styles = StyleSheet.create({
   brutalTitle: { fontWeight: '500', textTransform: 'uppercase' },
   brutalBtnWrap: { marginTop: 10, alignSelf: 'stretch' },
   brutalBtn: { paddingVertical: 14, alignItems: 'center' },
-  brutalBtnText: { fontSize: 16, fontWeight: '500', textTransform: 'uppercase' },
+  brutalBtnText: { fontSize: 16, fontWeight: '500', textTransform: 'uppercase', textAlign: 'center' },
   brutalDoneBody: { padding: 16, paddingBottom: 60, gap: 12 },
   brutalScoreBox: { padding: 24, alignItems: 'center', gap: 6 },
   brutalScore: { fontSize: 56, fontWeight: '500' },

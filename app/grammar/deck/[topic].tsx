@@ -30,6 +30,7 @@ import {
   type DeckState,
 } from '@/lib/grammar/tableDeck';
 import FeedbackButton from '@/components/FeedbackModal';
+import FitText from '@/components/FitText';
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
@@ -143,7 +144,8 @@ export default function TableDeckScreen() {
   };
 
   const entry = syllabusTopic(String(topicId), learnedLang);
-  const lessonTitle = entry?.title.en ?? String(topicId);
+  // FB405: es→en irányban (spanyol felület) a cím a felület nyelvén, nem mindig angolul.
+  const lessonTitle = entry?.title[learnedLang === 'en' ? 'es' : 'en'] ?? entry?.title.en ?? String(topicId);
 
   const currentId = nextCellId(deck, now);
   const current = currentId ? items.find((c) => c.id === currentId) : undefined;
@@ -197,9 +199,9 @@ export default function TableDeckScreen() {
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
       )}
-      <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]} numberOfLines={1}>
+      <FitText base={17} maxLines={2} reserve={g.brutal ? 190 : 150} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>
         {lessonTitle}
-      </Text>
+      </FitText>
       {g.brutal ? (
         <Sticker label={s.tableDeck.progress(doneCount(deck), items.length)} fill="a" rotate={4} />
       ) : (
@@ -290,7 +292,9 @@ export default function TableDeckScreen() {
                 : s.tableDeck.promptCaption
               : s.tableDeck.wordPromptCaption}
           </Text>
-          <Text style={[styles.promptBig, { color: colors.text }]}>{current.promptBig}</Text>
+          <FitText base={32} maxLines={3} reserve={100} style={[styles.promptBig, { color: colors.text }]}>
+            {current.promptBig}
+          </FitText>
           {/* FB390: a meaning-table cell (lib/grammar/tableDeck.ts) has no
               infinitive to show underneath (verb: ''), so this caption stays
               hidden there instead of rendering an empty line. */}

@@ -1250,7 +1250,7 @@ const styles = StyleSheet.create({
   brutalOptions: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
   brutalOption: { flexBasis: '46%', flexGrow: 1 },
   brutalOptionInner: { paddingVertical: 16, paddingHorizontal: 8, flexDirection: 'row', justifyContent: 'center' },
-  brutalOptionText: { fontSize: 17, fontWeight: '500' },
+  brutalOptionText: { fontSize: 17, fontWeight: '500', flexShrink: 1, textAlign: 'center' },
   brutalFeedback: { padding: 16, gap: 8 },
   brutalFeedbackHead: { fontSize: 18, fontWeight: '500', textTransform: 'uppercase' },
   // A chat-gomb (FAB) alól is kigördül az utolsó elem.
@@ -1271,7 +1271,8 @@ const styles = StyleSheet.create({
   brutalNext: { paddingVertical: 14, alignItems: 'center' },
   brutalNextText: { fontSize: 16, fontWeight: '500', textTransform: 'uppercase' },
   sentenceCard: { borderRadius: 16, padding: 20 },
-  sentence: { fontSize: 20, lineHeight: 30, textAlign: 'center' },
+  // FB405: flexShrink, hogy a sor-konténerben (mondat + 🔊) is törjön, ne tolja ki a testvért.
+  sentence: { fontSize: 20, lineHeight: 30, textAlign: 'center', flexShrink: 1 },
   options: { gap: 10 },
   hiddenOptions: { height: 0 },
   markPrompt: { fontSize: 15, fontWeight: '700', textAlign: 'center' },
@@ -1291,7 +1292,7 @@ const styles = StyleSheet.create({
   matchColumns: { flexDirection: 'row', gap: 12 },
   matchColumn: { flex: 1, gap: 8 },
   matchCell: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 12, paddingHorizontal: 10, alignItems: 'center' },
-  matchCellText: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
+  matchCellText: { fontSize: 14, fontWeight: '600', textAlign: 'center', flexShrink: 1 },
   formBody: { gap: 10 },
   formPrompt: { fontSize: 18, fontWeight: '700', textAlign: 'center' },
   formInput: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 10, paddingHorizontal: 14, fontSize: 17, textAlign: 'center' },
