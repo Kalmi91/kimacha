@@ -7,7 +7,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { Card, brutalInputStyle } from '@/components/grammar/Brutal';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { t } from '@/lib/i18n';
-import { gradePcicAnswer, suggestedGrade } from '@/lib/pcicMatch';
+import { gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
 import { stripSentencePunct } from '@/lib/sentenceCards';
 import { answerInputProps } from '@/lib/inputProps';
 
@@ -50,7 +50,8 @@ export default function TypedSentenceCard({
     Keyboard.dismiss();
     // Graded like the word card, on the sentence without its punctuation (the
     // tile card drops it too).
-    const grade = gradePcicAnswer(stripSentencePunct(typed), stripSentencePunct(targetSentence), strictAccents);
+    // FB399: a névmás nélküli válasz is jó ("Como en casa." a "Yo como en casa." helyett).
+    const grade = gradeSentenceAnswer(stripSentencePunct(typed), stripSentencePunct(targetSentence), strictAccents);
     const isCorrect = suggestedGrade(grade) === 'good';
     setResult(isCorrect ? 'correct' : 'wrong');
     if (isCorrect && speechLocale) {

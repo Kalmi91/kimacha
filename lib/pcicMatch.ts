@@ -9,8 +9,13 @@ import { levenshtein } from './levenshtein';
 import { stripTrailingPunct } from './charDiff';
 import type { Sm2Grade } from './sm2';
 
+// FB400 (PLAN-fb0929 3. lépés): a kérdő- és felkiáltójel, a pont és a vessző sosem
+// hiba, se elöl (¿ ¡), se hátul (? ! .), se a mondat közepén (vessző). Az
+// aposztróf és a kötőjel marad (angolul "don't", "well-known" a szó része).
+const IGNORED_PUNCT = /[¿?¡!.,;:…]/g;
+
 function normalize(s: string): string {
-  return s.trim().toLowerCase().replace(/\s+/g, ' ');
+  return s.trim().toLowerCase().replace(IGNORED_PUNCT, ' ').replace(/\s+/g, ' ').trim();
 }
 
 function foldAccents(s: string): string {
@@ -125,4 +130,34 @@ export function suggestedGrade(grade: PcicGrade): Sm2Grade {
   if (grade.match === 'exact') return 'good';
   if (grade.match === 'near' && grade.accentOnly) return 'good';
   return 'again';
+}
+
+// FB399 (PLAN-fb0929 3. lépés): a spanyol mondatban az alany-névmás elhagyható
+// ("Yo como en casa." helyett "Como en casa." is jó). Csak az ELSŐ szó számít, és
+// pontosan ékezettel: "él" névmás, "el" névelő; "tú" névmás, "tu" birtokos.
+const SUBJECT_PRONOUNS = new Set([
+  'yo', 'tú', 'él', 'ella', 'usted', 'nosotros', 'nosotras', 'vosotros', 'vosotras', 'ellos', 'ellas', 'ustedes',
+]);
+
+/** A mondat az elején álló alany-névmás nélkül, vagy null, ha nem névmással kezdődik. */
+export function withoutLeadingSubjectPronoun(sentence: string): string | null {
+  const match = sentence.trim().match(/^[¿¡"']*([^\s,]+)[,]?\s+(\S[\s\S]*)$/);
+  if (!match) return null;
+  if (!SUBJECT_PRONOUNS.has(match[1].toLowerCase())) return null;
+  return match[2].trim();
+}
+
+const GRADE_RANK: Record<PcicGrade['match'], number> = { exact: 2, near: 1, wrong: 0 };
+
+/**
+ * Mondat-bírálat: a szó-kártya bírálata (gradePcicAnswer), de a névmás nélküli
+ * válasz is elfogadott, ha a helyes mondat névmással kezdődik. A jobbik
+ * bírálat számít; a `best` a mutatott helyes alak (a teljes mondat marad).
+ */
+export function gradeSentenceAnswer(typed: string, target: string, strictAccents = false): PcicGrade {
+  const full = gradePcicAnswer(typed, target, strictAccents);
+  const short = withoutLeadingSubjectPronoun(target);
+  if (!short) return full;
+  const alt = gradePcicAnswer(typed, short, strictAccents);
+  return GRADE_RANK[alt.match] > GRADE_RANK[full.match] ? { ...alt, best: target } : full;
 }

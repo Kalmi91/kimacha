@@ -129,6 +129,8 @@ export default {
     // PLAN-ketiranyu 4. lépés: es→en irányban a Grammar fül még nem tanít
     // angol nyelvtant, csak ezt az egy sort mutatja a lecke-lista helyett.
     enComingSoon: 'English grammar lessons are coming later.',
+    // FB416: a saját válasz a helyes fölött a hibás ragozásnál (AnswerCompare).
+    yourAnswer: 'Your answer',
   },
   settings: {
     // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont):

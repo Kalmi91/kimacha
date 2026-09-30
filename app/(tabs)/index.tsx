@@ -11,7 +11,7 @@ import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
 import { pcicItemsForViewLevel, findPcicItem, realLevelOfView, setPcicTarget, type PcicViewLevel, type PcicTarget } from '@/data/pcic';
-import { gradePcicAnswer, suggestedGrade, type PcicGrade } from '@/lib/pcicMatch';
+import { gradePcicAnswer, gradeSentenceAnswer, suggestedGrade, type PcicGrade } from '@/lib/pcicMatch';
 import {
   ARTICLE_OPTIONS,
   articleOf,
@@ -335,7 +335,8 @@ export default function PcicScreen() {
       return;
     }
     // FB321: felfedéskor mindig szóljon a helyes célnyelvi alak.
-    const g = gradePcicAnswer(answer, answerText, strictAccents);
+    // FB399: mondat-tételnél a névmás nélküli válasz is jó.
+    const g = (currentItem.kind === 'sentence' ? gradeSentenceAnswer : gradePcicAnswer)(answer, answerText, strictAccents);
     setTypedAnswer(answer);
     setGrade(g);
     if (g.match !== 'exact') setArticlePick(articleOf(g.best));

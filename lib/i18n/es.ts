@@ -111,6 +111,8 @@ const es: Strings = {
     practiceTable: (n: number) => `Practicar la tabla · ${n} celdas`,
     practiceWords: (n: number) => `Practicar las palabras · ${n} tarjetas`,
     enComingSoon: 'La gramática inglesa llegará más adelante.',
+    // FB416: a saját válasz a helyes fölött a hibás ragozásnál (AnswerCompare).
+    yourAnswer: 'Tu respuesta',
   },
   settings: {
     themeAuto: 'Automático',

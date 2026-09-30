@@ -33,6 +33,7 @@ import GlossText from '@/components/games/GlossText';
 import LessonBody from '@/components/grammar/LessonBody';
 import MoreBlocks from '@/components/grammar/MoreBlocks';
 import { BrutalBox, SegmentBar, Sticker, inkButtonText, segmentsFilled, textOnFill } from '@/components/grammar/Brutal';
+import AnswerCompare from '@/components/grammar/AnswerCompare';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 
 // The "which one is right, and why" drill, shared by the grammar course
@@ -346,9 +347,7 @@ function FormDrillItem({
         ) : (
           <>
             <BrutalFeedback g={g} title={correct ? s.games.correctFeedback : s.games.wrongFeedback}>
-              {!correct ? (
-                <Text style={[styles.brutalAnswer, { backgroundColor: g.a, color: g.onFill }]}> {item.answer} </Text>
-              ) : null}
+              {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} onFill /> : null}
             </BrutalFeedback>
             <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(correct)} />
           </>
@@ -393,7 +392,7 @@ function FormDrillItem({
           <Text style={[styles.explainHeader, { color: correct ? '#22C55E' : '#EF4444' }]}>
             {correct ? s.games.correctFeedback : s.games.wrongFeedback}
           </Text>
-          {!correct ? <Text style={[styles.explainText, { color: colors.text }]}>{item.answer}</Text> : null}
+          {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} /> : null}
           <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(correct)}>
             <Text style={styles.btnText}>{s.games.understood}</Text>
           </Pressable>
