@@ -68,11 +68,11 @@
     "hu": "nem",
     "en": "no, not",
     "de": "nein, nicht",
-    "sentence_es": "Yo no estoy bien.",
-    "sentence_hu": "Nem vagyok jól.",
-    "sentence_en": "I am not fine.",
-    "sentence_de": "Mir geht es nicht gut.",
-    "sentence_lemmas": ["yo", "no", "estar", "bien"]
+    "sentence_es": "No, no estoy bien.",
+    "sentence_hu": "Nem, nem vagyok jól.",
+    "sentence_en": "No, I am not fine.",
+    "sentence_de": "Nein, mir geht es nicht gut.",
+    "sentence_lemmas": ["no", "no", "estar", "bien"]
   },
   {
     "order": 6,
@@ -83,11 +83,11 @@
     "hu": "igen",
     "en": "yes",
     "de": "ja",
-    "sentence_es": "Sí, yo estoy bien.",
+    "sentence_es": "Sí, estoy bien.",
     "sentence_hu": "Igen, jól vagyok.",
     "sentence_en": "Yes, I am fine.",
     "sentence_de": "Ja, mir geht es gut.",
-    "sentence_lemmas": ["sí", "yo", "estar", "bien"]
+    "sentence_lemmas": ["sí", "estar", "bien"]
   },
   {
     "order": 7,
@@ -98,11 +98,11 @@
     "hu": "szia, helló",
     "en": "hello, hi",
     "de": "hallo",
-    "sentence_es": "¡Hola, yo estoy bien!",
+    "sentence_es": "¡Hola, estoy bien!",
     "sentence_hu": "Szia, jól vagyok!",
     "sentence_en": "Hello, I am fine!",
     "sentence_de": "Hallo, mir geht es gut!",
-    "sentence_lemmas": ["hola", "yo", "estar", "bien"]
+    "sentence_lemmas": ["hola", "estar", "bien"]
   },
   {
     "order": 8,
@@ -113,11 +113,11 @@
     "hu": "köszönöm",
     "en": "thank you",
     "de": "danke",
-    "sentence_es": "Sí, gracias, yo estoy bien.",
+    "sentence_es": "Sí, gracias, estoy bien.",
     "sentence_hu": "Igen, köszönöm, jól vagyok.",
     "sentence_en": "Yes, thank you, I am fine.",
     "sentence_de": "Ja, danke, mir geht es gut.",
-    "sentence_lemmas": ["sí", "gracias", "yo", "estar", "bien"]
+    "sentence_lemmas": ["sí", "gracias", "estar", "bien"]
   },
   {
     "order": 9,
@@ -128,11 +128,11 @@
     "hu": "itt",
     "en": "here",
     "de": "hier",
-    "sentence_es": "Yo estoy aquí.",
-    "sentence_hu": "Itt vagyok.",
-    "sentence_en": "I am here.",
-    "sentence_de": "Ich bin hier.",
-    "sentence_lemmas": ["yo", "estar", "aquí"]
+    "sentence_es": "Sí, estoy aquí.",
+    "sentence_hu": "Igen, itt vagyok.",
+    "sentence_en": "Yes, I am here.",
+    "sentence_de": "Ja, ich bin hier.",
+    "sentence_lemmas": ["sí", "estar", "aquí"]
   },
   {
     "order": 10,
@@ -143,11 +143,11 @@
     "hu": "boldog",
     "en": "happy",
     "de": "glücklich",
-    "sentence_es": "Yo estoy feliz aquí.",
+    "sentence_es": "Estoy feliz aquí.",
     "sentence_hu": "Itt boldog vagyok.",
     "sentence_en": "I am happy here.",
     "sentence_de": "Ich bin hier glücklich.",
-    "sentence_lemmas": ["yo", "estar", "feliz", "aquí"]
+    "sentence_lemmas": ["estar", "feliz", "aquí"]
   },
   {
     "order": 11,
@@ -158,11 +158,11 @@
     "hu": "lenni (azonosság, tulajdonság)",
     "en": "to be (identity, quality)",
     "de": "sein (Identität, Eigenschaft)",
-    "sentence_es": "Yo soy feliz.",
-    "sentence_hu": "Boldog vagyok.",
-    "sentence_en": "I am happy.",
-    "sentence_de": "Ich bin glücklich.",
-    "sentence_lemmas": ["yo", "ser", "feliz"]
+    "sentence_es": "Sí, soy feliz.",
+    "sentence_hu": "Igen, boldog vagyok.",
+    "sentence_en": "Yes, I am happy.",
+    "sentence_de": "Ja, ich bin glücklich.",
+    "sentence_lemmas": ["sí", "ser", "feliz"]
   },
   {
     "order": 12,
@@ -203,11 +203,11 @@
     "hu": "rosszul",
     "en": "badly, not well",
     "de": "schlecht",
-    "sentence_es": "Él está mal.",
-    "sentence_hu": "Ő rosszul van.",
-    "sentence_en": "He is not well.",
-    "sentence_de": "Es geht ihm schlecht.",
-    "sentence_lemmas": ["él", "estar", "mal"]
+    "sentence_es": "No estoy mal.",
+    "sentence_hu": "Nem vagyok rosszul.",
+    "sentence_en": "I am not unwell.",
+    "sentence_de": "Mir geht es nicht schlecht.",
+    "sentence_lemmas": ["no", "estar", "mal"]
   },
   {
     "order": 15,
@@ -248,11 +248,11 @@
     "hu": "éhség",
     "en": "hunger",
     "de": "Hunger",
-    "sentence_es": "Yo tengo hambre.",
-    "sentence_hu": "Éhes vagyok.",
-    "sentence_en": "I am hungry.",
-    "sentence_de": "Ich habe Hunger.",
-    "sentence_lemmas": ["yo", "tener", "hambre"]
+    "sentence_es": "Sí, tengo hambre.",
+    "sentence_hu": "Igen, éhes vagyok.",
+    "sentence_en": "Yes, I am hungry.",
+    "sentence_de": "Ja, ich habe Hunger.",
+    "sentence_lemmas": ["sí", "tener", "hambre"]
   },
   {
     "order": 18,
@@ -278,11 +278,11 @@
     "hu": "ház, otthon",
     "en": "house, home",
     "de": "Haus, Zuhause",
-    "sentence_es": "Yo estoy en casa.",
+    "sentence_es": "Estoy en casa.",
     "sentence_hu": "Otthon vagyok.",
     "sentence_en": "I am at home.",
     "sentence_de": "Ich bin zu Hause.",
-    "sentence_lemmas": ["yo", "estar", "en", "casa"]
+    "sentence_lemmas": ["estar", "en", "casa"]
   },
   {
     "order": 20,
@@ -293,11 +293,11 @@
     "hu": "egy",
     "en": "a, an",
     "de": "ein",
-    "sentence_es": "Él tiene una casa.",
-    "sentence_hu": "Neki van egy háza.",
+    "sentence_es": "Tiene una casa.",
+    "sentence_hu": "Van egy háza.",
     "sentence_en": "He has a house.",
     "sentence_de": "Er hat ein Haus.",
-    "sentence_lemmas": ["él", "tener", "un", "casa"]
+    "sentence_lemmas": ["tener", "un", "casa"]
   },
   {
     "order": 21,
@@ -308,11 +308,11 @@
     "hu": "a, az",
     "en": "the",
     "de": "der, die, das",
-    "sentence_es": "Yo estoy en la casa.",
+    "sentence_es": "Estoy en la casa.",
     "sentence_hu": "A házban vagyok.",
     "sentence_en": "I am in the house.",
     "sentence_de": "Ich bin im Haus.",
-    "sentence_lemmas": ["yo", "estar", "en", "el", "casa"]
+    "sentence_lemmas": ["estar", "en", "el", "casa"]
   },
   {
     "order": 22,
@@ -323,11 +323,11 @@
     "hu": "idő",
     "en": "time",
     "de": "Zeit",
-    "sentence_es": "Yo tengo tiempo.",
-    "sentence_hu": "Van időm.",
-    "sentence_en": "I have time.",
-    "sentence_de": "Ich habe Zeit.",
-    "sentence_lemmas": ["yo", "tener", "tiempo"]
+    "sentence_es": "No tengo tiempo.",
+    "sentence_hu": "Nincs időm.",
+    "sentence_en": "I have no time.",
+    "sentence_de": "Ich habe keine Zeit.",
+    "sentence_lemmas": ["no", "tener", "tiempo"]
   },
   {
     "order": 23,
@@ -338,11 +338,11 @@
     "hu": "akarni, szeretni (valakit)",
     "en": "to want, to love (someone)",
     "de": "wollen, lieben (jemanden)",
-    "sentence_es": "Yo quiero una casa.",
+    "sentence_es": "Quiero una casa.",
     "sentence_hu": "Szeretnék egy házat.",
     "sentence_en": "I want a house.",
     "sentence_de": "Ich möchte ein Haus.",
-    "sentence_lemmas": ["yo", "querer", "un", "casa"]
+    "sentence_lemmas": ["querer", "un", "casa"]
   },
   {
     "order": 24,
@@ -353,11 +353,11 @@
     "hu": "víz",
     "en": "water",
     "de": "Wasser",
-    "sentence_es": "Yo quiero agua.",
-    "sentence_hu": "Vizet kérek.",
-    "sentence_en": "I want water.",
-    "sentence_de": "Ich möchte Wasser.",
-    "sentence_lemmas": ["yo", "querer", "agua"]
+    "sentence_es": "Sí, quiero agua.",
+    "sentence_hu": "Igen, vizet kérek.",
+    "sentence_en": "Yes, I want water.",
+    "sentence_de": "Ja, ich möchte Wasser.",
+    "sentence_lemmas": ["sí", "querer", "agua"]
   },
   {
     "order": 25,
@@ -368,11 +368,11 @@
     "hu": "enni",
     "en": "to eat",
     "de": "essen",
-    "sentence_es": "Yo quiero comer.",
-    "sentence_hu": "Enni szeretnék.",
-    "sentence_en": "I want to eat.",
-    "sentence_de": "Ich möchte essen.",
-    "sentence_lemmas": ["yo", "querer", "comer"]
+    "sentence_es": "No quiero comer.",
+    "sentence_hu": "Nem akarok enni.",
+    "sentence_en": "I do not want to eat.",
+    "sentence_de": "Ich möchte nicht essen.",
+    "sentence_lemmas": ["no", "querer", "comer"]
   },
   {
     "order": 26,
@@ -398,11 +398,11 @@
     "hu": "kenyér",
     "en": "bread",
     "de": "Brot",
-    "sentence_es": "Yo quiero pan y agua.",
+    "sentence_es": "Quiero pan y agua.",
     "sentence_hu": "Kenyeret és vizet kérek.",
     "sentence_en": "I want bread and water.",
     "sentence_de": "Ich möchte Brot und Wasser.",
-    "sentence_lemmas": ["yo", "querer", "pan", "y", "agua"]
+    "sentence_lemmas": ["querer", "pan", "y", "agua"]
   },
   {
     "order": 28,
@@ -413,11 +413,11 @@
     "hu": "kávé",
     "en": "coffee",
     "de": "Kaffee",
-    "sentence_es": "Yo quiero un café.",
+    "sentence_es": "Quiero un café.",
     "sentence_hu": "Egy kávét kérek.",
     "sentence_en": "I want a coffee.",
     "sentence_de": "Ich möchte einen Kaffee.",
-    "sentence_lemmas": ["yo", "querer", "un", "café"]
+    "sentence_lemmas": ["querer", "un", "café"]
   },
   {
     "order": 29,
@@ -428,11 +428,11 @@
     "hu": "inni",
     "en": "to drink",
     "de": "trinken",
-    "sentence_es": "Yo quiero beber agua.",
+    "sentence_es": "Quiero beber agua.",
     "sentence_hu": "Vizet szeretnék inni.",
     "sentence_en": "I want to drink water.",
     "sentence_de": "Ich möchte Wasser trinken.",
-    "sentence_lemmas": ["yo", "querer", "beber", "agua"]
+    "sentence_lemmas": ["querer", "beber", "agua"]
   },
   {
     "order": 30,
@@ -443,11 +443,11 @@
     "hu": "tej",
     "en": "milk",
     "de": "Milch",
-    "sentence_es": "Yo bebo leche.",
-    "sentence_hu": "Tejet iszom.",
-    "sentence_en": "I drink milk.",
-    "sentence_de": "Ich trinke Milch.",
-    "sentence_lemmas": ["yo", "beber", "leche"]
+    "sentence_es": "Bebo leche y agua.",
+    "sentence_hu": "Tejet és vizet iszom.",
+    "sentence_en": "I drink milk and water.",
+    "sentence_de": "Ich trinke Milch und Wasser.",
+    "sentence_lemmas": ["beber", "leche", "y", "agua"]
   },
   {
     "order": 31,
@@ -473,11 +473,11 @@
     "hu": "-val, -vel",
     "en": "with",
     "de": "mit",
-    "sentence_es": "Yo estoy con ella.",
+    "sentence_es": "Estoy con ella.",
     "sentence_hu": "Vele vagyok.",
     "sentence_en": "I am with her.",
     "sentence_de": "Ich bin mit ihr.",
-    "sentence_lemmas": ["yo", "estar", "con", "ella"]
+    "sentence_lemmas": ["estar", "con", "ella"]
   },
   {
     "order": 33,
@@ -488,11 +488,11 @@
     "hu": "menni",
     "en": "to go",
     "de": "gehen, fahren",
-    "sentence_es": "Yo voy con ella.",
+    "sentence_es": "Voy con ella.",
     "sentence_hu": "Vele megyek.",
     "sentence_en": "I go with her.",
     "sentence_de": "Ich gehe mit ihr.",
-    "sentence_lemmas": ["yo", "ir", "con", "ella"]
+    "sentence_lemmas": ["ir", "con", "ella"]
   },
   {
     "order": 34,
@@ -503,11 +503,11 @@
     "hu": "-ra, -re, -hoz, -hez, -höz",
     "en": "to, at",
     "de": "zu, nach",
-    "sentence_es": "Yo voy a casa.",
+    "sentence_es": "Voy a casa.",
     "sentence_hu": "Hazamegyek.",
     "sentence_en": "I am going home.",
     "sentence_de": "Ich gehe nach Hause.",
-    "sentence_lemmas": ["yo", "ir", "a", "casa"]
+    "sentence_lemmas": ["ir", "a", "casa"]
   },
   {
     "order": 35,
@@ -665,13 +665,13 @@
     "pos": "noun",
     "lemma": "niño",
     "es": "el niño",
-    "hu": "fiú, kisfiú (gyerek)",
-    "en": "boy (child)",
-    "de": "Junge (Kind)",
+    "hu": "gyerek, kisfiú",
+    "en": "child, boy",
+    "de": "Kind, Junge",
     "sentence_es": "El niño quiere leche.",
-    "sentence_hu": "A fiú tejet kér.",
-    "sentence_en": "The boy wants milk.",
-    "sentence_de": "Der Junge möchte Milch.",
+    "sentence_hu": "A gyerek tejet kér.",
+    "sentence_en": "The child wants milk.",
+    "sentence_de": "Das Kind möchte Milch.",
     "sentence_lemmas": ["el", "niño", "querer", "leche"]
   },
   {
@@ -683,11 +683,11 @@
     "hu": "személy, ember",
     "en": "person",
     "de": "Person, Mensch",
-    "sentence_es": "Ella es una persona feliz.",
-    "sentence_hu": "Ő egy boldog ember.",
-    "sentence_en": "She is a happy person.",
-    "sentence_de": "Sie ist ein glücklicher Mensch.",
-    "sentence_lemmas": ["ella", "ser", "un", "persona", "feliz"]
+    "sentence_es": "Mi madre es una persona feliz.",
+    "sentence_hu": "Anyám boldog ember.",
+    "sentence_en": "My mother is a happy person.",
+    "sentence_de": "Meine Mutter ist ein glücklicher Mensch.",
+    "sentence_lemmas": ["mi", "madre", "ser", "un", "persona", "feliz"]
   },
   {
     "order": 47,
@@ -698,11 +698,11 @@
     "hu": "beszélni",
     "en": "to speak, to talk",
     "de": "sprechen, reden",
-    "sentence_es": "Yo hablo con mi madre.",
+    "sentence_es": "Hablo con mi madre.",
     "sentence_hu": "Az anyámmal beszélek.",
     "sentence_en": "I talk with my mother.",
     "sentence_de": "Ich spreche mit meiner Mutter.",
-    "sentence_lemmas": ["yo", "hablar", "con", "mi", "madre"]
+    "sentence_lemmas": ["hablar", "con", "mi", "madre"]
   },
   {
     "order": 48,
@@ -713,11 +713,11 @@
     "hu": "élni, lakni",
     "en": "to live",
     "de": "leben, wohnen",
-    "sentence_es": "Yo vivo con mi familia.",
+    "sentence_es": "Vivo con mi familia.",
     "sentence_hu": "A családommal élek.",
     "sentence_en": "I live with my family.",
     "sentence_de": "Ich lebe mit meiner Familie.",
-    "sentence_lemmas": ["yo", "vivir", "con", "mi", "familia"]
+    "sentence_lemmas": ["vivir", "con", "mi", "familia"]
   },
   {
     "order": 49,
@@ -743,11 +743,11 @@
     "hu": "munka, állás",
     "en": "work, job",
     "de": "Arbeit, Job",
-    "sentence_es": "Yo tengo un trabajo.",
+    "sentence_es": "Tengo un trabajo.",
     "sentence_hu": "Van egy állásom.",
     "sentence_en": "I have a job.",
     "sentence_de": "Ich habe einen Job.",
-    "sentence_lemmas": ["yo", "tener", "un", "trabajo"]
+    "sentence_lemmas": ["tener", "un", "trabajo"]
   },
   {
     "order": 51,
@@ -758,11 +758,11 @@
     "hu": "város",
     "en": "city",
     "de": "Stadt",
-    "sentence_es": "Yo vivo en la ciudad.",
+    "sentence_es": "Vivo en la ciudad.",
     "sentence_hu": "A városban élek.",
     "sentence_en": "I live in the city.",
     "sentence_de": "Ich wohne in der Stadt.",
-    "sentence_lemmas": ["yo", "vivir", "en", "el", "ciudad"]
+    "sentence_lemmas": ["vivir", "en", "el", "ciudad"]
   },
   {
     "order": 52,
@@ -773,11 +773,11 @@
     "hu": "ma",
     "en": "today",
     "de": "heute",
-    "sentence_es": "Hoy yo estoy en casa.",
+    "sentence_es": "Hoy estoy en casa.",
     "sentence_hu": "Ma otthon vagyok.",
     "sentence_en": "Today I am at home.",
     "sentence_de": "Heute bin ich zu Hause.",
-    "sentence_lemmas": ["hoy", "yo", "estar", "en", "casa"]
+    "sentence_lemmas": ["hoy", "estar", "en", "casa"]
   },
   {
     "order": 53,
@@ -833,11 +833,11 @@
     "hu": "-ból, -ből, -é (birtok)",
     "en": "of, from",
     "de": "von, aus",
-    "sentence_es": "Yo soy de aquí.",
+    "sentence_es": "Soy de aquí.",
     "sentence_hu": "Innen vagyok.",
     "sentence_en": "I am from here.",
     "sentence_de": "Ich bin von hier.",
-    "sentence_lemmas": ["yo", "ser", "de", "aquí"]
+    "sentence_lemmas": ["ser", "de", "aquí"]
   },
   {
     "order": 57,
@@ -983,11 +983,11 @@
     "hu": "sok",
     "en": "much, a lot of",
     "de": "viel",
-    "sentence_es": "Yo tengo mucha hambre.",
+    "sentence_es": "Tengo mucha hambre.",
     "sentence_hu": "Nagyon éhes vagyok.",
     "sentence_en": "I am very hungry.",
     "sentence_de": "Ich habe großen Hunger.",
-    "sentence_lemmas": ["yo", "tener", "mucho", "hambre"]
+    "sentence_lemmas": ["tener", "mucho", "hambre"]
   },
   {
     "order": 67,
@@ -998,11 +998,11 @@
     "hu": "új",
     "en": "new",
     "de": "neu",
-    "sentence_es": "Yo tengo una casa nueva.",
+    "sentence_es": "Tengo una casa nueva.",
     "sentence_hu": "Van egy új házam.",
     "sentence_en": "I have a new house.",
     "sentence_de": "Ich habe ein neues Haus.",
-    "sentence_lemmas": ["yo", "tener", "un", "casa", "nuevo"]
+    "sentence_lemmas": ["tener", "un", "casa", "nuevo"]
   },
   {
     "order": 68,
@@ -1028,11 +1028,11 @@
     "hu": "fáradt",
     "en": "tired",
     "de": "müde",
-    "sentence_es": "Yo estoy muy cansado.",
+    "sentence_es": "Estoy muy cansado.",
     "sentence_hu": "Nagyon fáradt vagyok.",
     "sentence_en": "I am very tired.",
     "sentence_de": "Ich bin sehr müde.",
-    "sentence_lemmas": ["yo", "estar", "muy", "cansado"]
+    "sentence_lemmas": ["estar", "muy", "cansado"]
   },
   {
     "order": 70,
@@ -1043,11 +1043,11 @@
     "hu": "vagy",
     "en": "or",
     "de": "oder",
-    "sentence_es": "¿Tú quieres café o leche?",
+    "sentence_es": "¿Quieres café o leche?",
     "sentence_hu": "Kávét vagy tejet kérsz?",
     "sentence_en": "Do you want coffee or milk?",
     "sentence_de": "Möchtest du Kaffee oder Milch?",
-    "sentence_lemmas": ["tú", "querer", "café", "o", "leche"]
+    "sentence_lemmas": ["querer", "café", "o", "leche"]
   },
   {
     "order": 71,
@@ -1058,11 +1058,11 @@
     "hu": "de, viszont",
     "en": "but",
     "de": "aber",
-    "sentence_es": "Yo tengo hambre, pero no tengo comida.",
+    "sentence_es": "Tengo hambre, pero no tengo comida.",
     "sentence_hu": "Éhes vagyok, de nincs ételem.",
     "sentence_en": "I am hungry, but I have no food.",
     "sentence_de": "Ich habe Hunger, aber ich habe kein Essen.",
-    "sentence_lemmas": ["yo", "tener", "hambre", "pero", "no", "tener", "comida"]
+    "sentence_lemmas": ["tener", "hambre", "pero", "no", "tener", "comida"]
   },
   {
     "order": 72,
@@ -1073,11 +1073,11 @@
     "hu": "mert",
     "en": "because",
     "de": "weil",
-    "sentence_es": "Yo como porque tengo hambre.",
+    "sentence_es": "Como porque tengo hambre.",
     "sentence_hu": "Eszem, mert éhes vagyok.",
     "sentence_en": "I eat because I am hungry.",
     "sentence_de": "Ich esse, weil ich Hunger habe.",
-    "sentence_lemmas": ["yo", "comer", "porque", "tener", "hambre"]
+    "sentence_lemmas": ["comer", "porque", "tener", "hambre"]
   },
   {
     "order": 73,
@@ -1103,11 +1103,11 @@
     "hu": "tudni (tényt), tudni (valamit csinálni)",
     "en": "to know (a fact), to know how to",
     "de": "wissen, können (gelernt)",
-    "sentence_es": "Yo sé la hora.",
+    "sentence_es": "Sé la hora.",
     "sentence_hu": "Tudom, mennyi az idő.",
     "sentence_en": "I know the time.",
     "sentence_de": "Ich weiß, wie spät es ist.",
-    "sentence_lemmas": ["yo", "saber", "el", "hora"]
+    "sentence_lemmas": ["saber", "el", "hora"]
   },
   {
     "order": 75,
@@ -1118,11 +1118,11 @@
     "hu": "hogy, amely",
     "en": "that, which",
     "de": "dass, der/die/das",
-    "sentence_es": "Yo sé que él está aquí.",
+    "sentence_es": "Sé que él está aquí.",
     "sentence_hu": "Tudom, hogy itt van.",
     "sentence_en": "I know that he is here.",
     "sentence_de": "Ich weiß, dass er hier ist.",
-    "sentence_lemmas": ["yo", "saber", "que", "él", "estar", "aquí"]
+    "sentence_lemmas": ["saber", "que", "él", "estar", "aquí"]
   },
   {
     "order": 76,
@@ -1133,11 +1133,11 @@
     "hu": "csinálni, készíteni",
     "en": "to do, to make",
     "de": "machen, tun",
-    "sentence_es": "Yo hago la comida.",
+    "sentence_es": "Hago la comida.",
     "sentence_hu": "Elkészítem az ételt.",
     "sentence_en": "I make the food.",
     "sentence_de": "Ich mache das Essen.",
-    "sentence_lemmas": ["yo", "hacer", "el", "comida"]
+    "sentence_lemmas": ["hacer", "el", "comida"]
   },
   {
     "order": 77,
@@ -1148,11 +1148,11 @@
     "hu": "tudni, képesnek lenni, lehet",
     "en": "can, to be able to",
     "de": "können",
-    "sentence_es": "Yo puedo comer aquí.",
+    "sentence_es": "Puedo comer aquí.",
     "sentence_hu": "Itt tudok enni.",
     "sentence_en": "I can eat here.",
     "sentence_de": "Ich kann hier essen.",
-    "sentence_lemmas": ["yo", "poder", "comer", "aquí"]
+    "sentence_lemmas": ["poder", "comer", "aquí"]
   },
   {
     "order": 78,
@@ -1163,11 +1163,11 @@
     "hu": "látni",
     "en": "to see",
     "de": "sehen",
-    "sentence_es": "Yo veo a mi madre.",
+    "sentence_es": "Veo a mi madre.",
     "sentence_hu": "Látom az anyámat.",
     "sentence_en": "I see my mother.",
     "sentence_de": "Ich sehe meine Mutter.",
-    "sentence_lemmas": ["yo", "ver", "a", "mi", "madre"]
+    "sentence_lemmas": ["ver", "a", "mi", "madre"]
   },
   {
     "order": 79,
@@ -1178,11 +1178,11 @@
     "hu": "mondani",
     "en": "to say, to tell",
     "de": "sagen",
-    "sentence_es": "Yo digo que sí.",
+    "sentence_es": "Digo que sí.",
     "sentence_hu": "Igent mondok.",
     "sentence_en": "I say yes.",
     "sentence_de": "Ich sage ja.",
-    "sentence_lemmas": ["yo", "decir", "que", "sí"]
+    "sentence_lemmas": ["decir", "que", "sí"]
   },
   {
     "order": 80,
@@ -1208,11 +1208,11 @@
     "hu": "adni",
     "en": "to give",
     "de": "geben",
-    "sentence_es": "Yo doy pan a mi hermano.",
+    "sentence_es": "Doy pan a mi hermano.",
     "sentence_hu": "Kenyeret adok a fivéremnek.",
     "sentence_en": "I give bread to my brother.",
     "sentence_de": "Ich gebe meinem Bruder Brot.",
-    "sentence_lemmas": ["yo", "dar", "pan", "a", "mi", "hermano"]
+    "sentence_lemmas": ["dar", "pan", "a", "mi", "hermano"]
   },
   {
     "order": 82,
@@ -1238,11 +1238,11 @@
     "hu": "téged, neked",
     "en": "you, to you (informal)",
     "de": "dich, dir",
-    "sentence_es": "Yo te veo.",
-    "sentence_hu": "Látlak.",
-    "sentence_en": "I see you.",
-    "sentence_de": "Ich sehe dich.",
-    "sentence_lemmas": ["yo", "te", "ver"]
+    "sentence_es": "Te veo aquí.",
+    "sentence_hu": "Itt látlak.",
+    "sentence_en": "I see you here.",
+    "sentence_de": "Ich sehe dich hier.",
+    "sentence_lemmas": ["te", "ver", "aquí"]
   },
   {
     "order": 84,
@@ -1253,11 +1253,11 @@
     "hu": "őt, azt (tárgy)",
     "en": "him, it (direct object)",
     "de": "ihn, es",
-    "sentence_es": "Yo lo veo aquí.",
-    "sentence_hu": "Itt látom őt.",
-    "sentence_en": "I see him here.",
-    "sentence_de": "Ich sehe ihn hier.",
-    "sentence_lemmas": ["yo", "lo", "ver", "aquí"]
+    "sentence_es": "Lo veo en la casa.",
+    "sentence_hu": "Látom a házban.",
+    "sentence_en": "I see him in the house.",
+    "sentence_de": "Ich sehe ihn im Haus.",
+    "sentence_lemmas": ["lo", "ver", "en", "el", "casa"]
   },
   {
     "order": 85,
@@ -1268,11 +1268,11 @@
     "hu": "neki",
     "en": "to him, to her",
     "de": "ihm, ihr",
-    "sentence_es": "Yo le doy agua.",
+    "sentence_es": "Le doy agua.",
     "sentence_hu": "Vizet adok neki.",
     "sentence_en": "I give him water.",
     "sentence_de": "Ich gebe ihm Wasser.",
-    "sentence_lemmas": ["yo", "le", "dar", "agua"]
+    "sentence_lemmas": ["le", "dar", "agua"]
   },
   {
     "order": 86,
@@ -1403,11 +1403,11 @@
     "hu": "miatt, által, -ért",
     "en": "for, by, because of",
     "de": "für, wegen, durch",
-    "sentence_es": "Yo trabajo por mi familia.",
+    "sentence_es": "Trabajo por mi familia.",
     "sentence_hu": "A családomért dolgozom.",
     "sentence_en": "I work for my family.",
     "sentence_de": "Ich arbeite für meine Familie.",
-    "sentence_lemmas": ["yo", "trabajar", "por", "mi", "familia"]
+    "sentence_lemmas": ["trabajar", "por", "mi", "familia"]
   },
   {
     "order": 95,
@@ -1419,9 +1419,9 @@
     "en": "for, in order to",
     "de": "für, um zu",
     "sentence_es": "La leche es para el niño.",
-    "sentence_hu": "A tej a fiúnak van.",
-    "sentence_en": "The milk is for the boy.",
-    "sentence_de": "Die Milch ist für den Jungen.",
+    "sentence_hu": "A tej a gyereknek való.",
+    "sentence_en": "The milk is for the child.",
+    "sentence_de": "Die Milch ist für das Kind.",
     "sentence_lemmas": ["el", "leche", "ser", "para", "el", "niño"]
   },
   {
@@ -1433,11 +1433,11 @@
     "hu": "nélkül",
     "en": "without",
     "de": "ohne",
-    "sentence_es": "Yo quiero un café sin leche.",
+    "sentence_es": "Quiero un café sin leche.",
     "sentence_hu": "Tej nélküli kávét kérek.",
     "sentence_en": "I want a coffee without milk.",
     "sentence_de": "Ich möchte einen Kaffee ohne Milch.",
-    "sentence_lemmas": ["yo", "querer", "un", "café", "sin", "leche"]
+    "sentence_lemmas": ["querer", "un", "café", "sin", "leche"]
   },
   {
     "order": 97,
@@ -1448,11 +1448,11 @@
     "hu": "egész, minden",
     "en": "all, whole, every",
     "de": "ganz, alle, jeder",
-    "sentence_es": "Yo trabajo todo el día.",
+    "sentence_es": "Trabajo todo el día.",
     "sentence_hu": "Egész nap dolgozom.",
     "sentence_en": "I work all day.",
     "sentence_de": "Ich arbeite den ganzen Tag.",
-    "sentence_lemmas": ["yo", "trabajar", "todo", "el", "día"]
+    "sentence_lemmas": ["trabajar", "todo", "el", "día"]
   },
   {
     "order": 98,
@@ -1463,11 +1463,11 @@
     "hu": "semmi",
     "en": "nothing",
     "de": "nichts",
-    "sentence_es": "Yo no quiero nada.",
+    "sentence_es": "No quiero nada.",
     "sentence_hu": "Nem kérek semmit.",
     "sentence_en": "I do not want anything.",
     "sentence_de": "Ich möchte nichts.",
-    "sentence_lemmas": ["yo", "no", "querer", "nada"]
+    "sentence_lemmas": ["no", "querer", "nada"]
   },
   {
     "order": 99,
@@ -1478,11 +1478,11 @@
     "hu": "valami",
     "en": "something",
     "de": "etwas",
-    "sentence_es": "Yo quiero comer algo.",
+    "sentence_es": "Quiero comer algo.",
     "sentence_hu": "Szeretnék enni valamit.",
     "sentence_en": "I want to eat something.",
     "sentence_de": "Ich möchte etwas essen.",
-    "sentence_lemmas": ["yo", "querer", "comer", "algo"]
+    "sentence_lemmas": ["querer", "comer", "algo"]
   },
   {
     "order": 100,
@@ -1523,11 +1523,11 @@
     "hu": "mindig",
     "en": "always",
     "de": "immer",
-    "sentence_es": "Yo siempre bebo café.",
+    "sentence_es": "Siempre bebo café.",
     "sentence_hu": "Mindig kávét iszom.",
     "sentence_en": "I always drink coffee.",
     "sentence_de": "Ich trinke immer Kaffee.",
-    "sentence_lemmas": ["yo", "siempre", "beber", "café"]
+    "sentence_lemmas": ["siempre", "beber", "café"]
   },
   {
     "order": 103,
@@ -1538,11 +1538,11 @@
     "hu": "soha",
     "en": "never",
     "de": "nie",
-    "sentence_es": "Yo nunca bebo leche.",
+    "sentence_es": "Nunca bebo leche.",
     "sentence_hu": "Soha nem iszom tejet.",
     "sentence_en": "I never drink milk.",
     "sentence_de": "Ich trinke nie Milch.",
-    "sentence_lemmas": ["yo", "nunca", "beber", "leche"]
+    "sentence_lemmas": ["nunca", "beber", "leche"]
   },
   {
     "order": 104,
@@ -1583,11 +1583,11 @@
     "hu": "kettő",
     "en": "two",
     "de": "zwei",
-    "sentence_es": "Yo tengo dos hermanos.",
+    "sentence_es": "Tengo dos hermanos.",
     "sentence_hu": "Két fivérem van.",
     "sentence_en": "I have two brothers.",
     "sentence_de": "Ich habe zwei Brüder.",
-    "sentence_lemmas": ["yo", "tener", "dos", "hermano"]
+    "sentence_lemmas": ["tener", "dos", "hermano"]
   },
   {
     "order": 107,
@@ -1628,11 +1628,11 @@
     "hu": "tíz",
     "en": "ten",
     "de": "zehn",
-    "sentence_es": "Yo tengo diez amigos.",
+    "sentence_es": "Tengo diez amigos.",
     "sentence_hu": "Tíz barátom van.",
     "sentence_en": "I have ten friends.",
     "sentence_de": "Ich habe zehn Freunde.",
-    "sentence_lemmas": ["yo", "tener", "diez", "amigo"]
+    "sentence_lemmas": ["tener", "diez", "amigo"]
   },
   {
     "order": 110,
@@ -1643,11 +1643,11 @@
     "hu": "fiú (gyerek), fiam",
     "en": "son",
     "de": "Sohn",
-    "sentence_es": "Yo tengo un hijo.",
+    "sentence_es": "Tengo un hijo.",
     "sentence_hu": "Van egy fiam.",
     "sentence_en": "I have a son.",
     "sentence_de": "Ich habe einen Sohn.",
-    "sentence_lemmas": ["yo", "tener", "un", "hijo"]
+    "sentence_lemmas": ["tener", "un", "hijo"]
   },
   {
     "order": 111,
@@ -1673,11 +1673,11 @@
     "hu": "kutya",
     "en": "dog",
     "de": "Hund",
-    "sentence_es": "Yo tengo un perro.",
+    "sentence_es": "Tengo un perro.",
     "sentence_hu": "Van egy kutyám.",
     "sentence_en": "I have a dog.",
     "sentence_de": "Ich habe einen Hund.",
-    "sentence_lemmas": ["yo", "tener", "un", "perro"]
+    "sentence_lemmas": ["tener", "un", "perro"]
   },
   {
     "order": 113,
@@ -1764,9 +1764,9 @@
     "en": "school",
     "de": "Schule",
     "sentence_es": "El niño está en la escuela.",
-    "sentence_hu": "A fiú az iskolában van.",
-    "sentence_en": "The boy is at school.",
-    "sentence_de": "Der Junge ist in der Schule.",
+    "sentence_hu": "A gyerek az iskolában van.",
+    "sentence_en": "The child is at school.",
+    "sentence_de": "Das Kind ist in der Schule.",
     "sentence_lemmas": ["el", "niño", "estar", "en", "el", "escuela"]
   },
   {
@@ -1838,11 +1838,11 @@
     "hu": "pénz",
     "en": "money",
     "de": "Geld",
-    "sentence_es": "Yo no tengo dinero.",
+    "sentence_es": "No tengo dinero.",
     "sentence_hu": "Nincs pénzem.",
     "sentence_en": "I have no money.",
     "sentence_de": "Ich habe kein Geld.",
-    "sentence_lemmas": ["yo", "no", "tener", "dinero"]
+    "sentence_lemmas": ["no", "tener", "dinero"]
   },
   {
     "order": 124,
@@ -1853,11 +1853,11 @@
     "hu": "könyv",
     "en": "book",
     "de": "Buch",
-    "sentence_es": "Yo tengo un libro nuevo.",
+    "sentence_es": "Tengo un libro nuevo.",
     "sentence_hu": "Van egy új könyvem.",
     "sentence_en": "I have a new book.",
     "sentence_de": "Ich habe ein neues Buch.",
-    "sentence_lemmas": ["yo", "tener", "un", "libro", "nuevo"]
+    "sentence_lemmas": ["tener", "un", "libro", "nuevo"]
   },
   {
     "order": 125,
@@ -1868,11 +1868,11 @@
     "hu": "név",
     "en": "name",
     "de": "Name",
-    "sentence_es": "Yo no sé tu nombre.",
+    "sentence_es": "No sé tu nombre.",
     "sentence_hu": "Nem tudom a neved.",
     "sentence_en": "I do not know your name.",
     "sentence_de": "Ich kenne deinen Namen nicht.",
-    "sentence_lemmas": ["yo", "no", "saber", "tu", "nombre"]
+    "sentence_lemmas": ["no", "saber", "tu", "nombre"]
   },
   {
     "order": 126,
@@ -1898,11 +1898,11 @@
     "hu": "szó",
     "en": "word",
     "de": "Wort",
-    "sentence_es": "Yo no sé esta palabra.",
+    "sentence_es": "No sé esta palabra.",
     "sentence_hu": "Nem ismerem ezt a szót.",
     "sentence_en": "I do not know this word.",
     "sentence_de": "Ich kenne dieses Wort nicht.",
-    "sentence_lemmas": ["yo", "no", "saber", "este", "palabra"]
+    "sentence_lemmas": ["no", "saber", "este", "palabra"]
   },
   {
     "order": 128,
@@ -1913,11 +1913,11 @@
     "hu": "spanyol (nyelv)",
     "en": "Spanish (language)",
     "de": "Spanisch",
-    "sentence_es": "Yo hablo español.",
-    "sentence_hu": "Beszélek spanyolul.",
-    "sentence_en": "I speak Spanish.",
-    "sentence_de": "Ich spreche Spanisch.",
-    "sentence_lemmas": ["yo", "hablar", "español"]
+    "sentence_es": "Mi madre habla español.",
+    "sentence_hu": "Anyám spanyolul beszél.",
+    "sentence_en": "My mother speaks Spanish.",
+    "sentence_de": "Meine Mutter spricht Spanisch.",
+    "sentence_lemmas": ["mi", "madre", "hablar", "español"]
   },
   {
     "order": 129,
@@ -1943,11 +1943,11 @@
     "hu": "hús",
     "en": "meat",
     "de": "Fleisch",
-    "sentence_es": "Yo no como carne.",
+    "sentence_es": "No como carne.",
     "sentence_hu": "Nem eszem húst.",
     "sentence_en": "I do not eat meat.",
     "sentence_de": "Ich esse kein Fleisch.",
-    "sentence_lemmas": ["yo", "no", "comer", "carne"]
+    "sentence_lemmas": ["no", "comer", "carne"]
   },
   {
     "order": 131,
@@ -1973,11 +1973,11 @@
     "hu": "tojás",
     "en": "egg",
     "de": "Ei",
-    "sentence_es": "Yo quiero dos huevos.",
+    "sentence_es": "Quiero dos huevos.",
     "sentence_hu": "Két tojást kérek.",
     "sentence_en": "I want two eggs.",
     "sentence_de": "Ich möchte zwei Eier.",
-    "sentence_lemmas": ["yo", "querer", "dos", "huevo"]
+    "sentence_lemmas": ["querer", "dos", "huevo"]
   },
   {
     "order": 133,
@@ -2108,11 +2108,11 @@
     "hu": "egyedül, magányos",
     "en": "alone",
     "de": "allein",
-    "sentence_es": "Yo estoy solo en casa.",
+    "sentence_es": "Estoy solo en casa.",
     "sentence_hu": "Egyedül vagyok otthon.",
     "sentence_en": "I am alone at home.",
     "sentence_de": "Ich bin allein zu Hause.",
-    "sentence_lemmas": ["yo", "estar", "solo", "en", "casa"]
+    "sentence_lemmas": ["estar", "solo", "en", "casa"]
   },
   {
     "order": 142,
@@ -2138,11 +2138,11 @@
     "hu": "szükség van rá, szüksége van",
     "en": "to need",
     "de": "brauchen",
-    "sentence_es": "Yo necesito dinero.",
-    "sentence_hu": "Pénzre van szükségem.",
-    "sentence_en": "I need money.",
-    "sentence_de": "Ich brauche Geld.",
-    "sentence_lemmas": ["yo", "necesitar", "dinero"]
+    "sentence_es": "Necesito más dinero.",
+    "sentence_hu": "Több pénzre van szükségem.",
+    "sentence_en": "I need more money.",
+    "sentence_de": "Ich brauche mehr Geld.",
+    "sentence_lemmas": ["necesitar", "más", "dinero"]
   },
   {
     "order": 144,
@@ -2153,11 +2153,11 @@
     "hu": "venni, vásárolni",
     "en": "to buy",
     "de": "kaufen",
-    "sentence_es": "Yo compro pan en la tienda.",
+    "sentence_es": "Compro pan en la tienda.",
     "sentence_hu": "Kenyeret veszek a boltban.",
     "sentence_en": "I buy bread at the store.",
     "sentence_de": "Ich kaufe Brot im Laden.",
-    "sentence_lemmas": ["yo", "comprar", "pan", "en", "el", "tienda"]
+    "sentence_lemmas": ["comprar", "pan", "en", "el", "tienda"]
   },
   {
     "order": 145,
@@ -2168,11 +2168,11 @@
     "hu": "olvasni",
     "en": "to read",
     "de": "lesen",
-    "sentence_es": "Yo leo un libro.",
+    "sentence_es": "Leo un libro.",
     "sentence_hu": "Egy könyvet olvasok.",
     "sentence_en": "I read a book.",
     "sentence_de": "Ich lese ein Buch.",
-    "sentence_lemmas": ["yo", "leer", "un", "libro"]
+    "sentence_lemmas": ["leer", "un", "libro"]
   },
   {
     "order": 146,
@@ -2183,11 +2183,11 @@
     "hu": "írni",
     "en": "to write",
     "de": "schreiben",
-    "sentence_es": "Yo escribo a mi madre.",
+    "sentence_es": "Escribo a mi madre.",
     "sentence_hu": "Írok az anyámnak.",
     "sentence_en": "I write to my mother.",
     "sentence_de": "Ich schreibe meiner Mutter.",
-    "sentence_lemmas": ["yo", "escribir", "a", "mi", "madre"]
+    "sentence_lemmas": ["escribir", "a", "mi", "madre"]
   },
   {
     "order": 147,
@@ -2198,11 +2198,11 @@
     "hu": "kinyitni, megnyitni",
     "en": "to open",
     "de": "öffnen",
-    "sentence_es": "Yo abro la puerta.",
+    "sentence_es": "Abro la puerta.",
     "sentence_hu": "Kinyitom az ajtót.",
     "sentence_en": "I open the door.",
     "sentence_de": "Ich öffne die Tür.",
-    "sentence_lemmas": ["yo", "abrir", "el", "puerta"]
+    "sentence_lemmas": ["abrir", "el", "puerta"]
   },
   {
     "order": 148,
@@ -2213,11 +2213,11 @@
     "hu": "segíteni",
     "en": "to help",
     "de": "helfen",
-    "sentence_es": "Yo ayudo a mi madre.",
+    "sentence_es": "Ayudo a mi madre.",
     "sentence_hu": "Segítek az anyámnak.",
     "sentence_en": "I help my mother.",
     "sentence_de": "Ich helfe meiner Mutter.",
-    "sentence_lemmas": ["yo", "ayudar", "a", "mi", "madre"]
+    "sentence_lemmas": ["ayudar", "a", "mi", "madre"]
   },
   {
     "order": 149,
@@ -2243,10 +2243,10 @@
     "hu": "várni, remélni",
     "en": "to wait, to hope",
     "de": "warten, hoffen",
-    "sentence_es": "Yo espero a mi amigo aquí.",
+    "sentence_es": "Espero a mi amigo aquí.",
     "sentence_hu": "Itt várom a barátomat.",
     "sentence_en": "I wait for my friend here.",
     "sentence_de": "Ich warte hier auf meinen Freund.",
-    "sentence_lemmas": ["yo", "esperar", "a", "mi", "amigo", "aquí"]
+    "sentence_lemmas": ["esperar", "a", "mi", "amigo", "aquí"]
   }
 ]

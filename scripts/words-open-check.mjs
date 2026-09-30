@@ -42,6 +42,7 @@ if (li !== -1) {
 
 // ---------------------------------------------------------------- szabály-gyűjtő
 const RULES = {};
+const R10_STATS = [];
 function fail(rule, msg) {
   (RULES[rule] ||= []).push(msg);
 }
@@ -368,15 +369,28 @@ if (!listOnly) {
     if (seenSentences.has(s)) fail('R8', `${tag(c)}: "${s}" már: #${seenSentences.get(s)}`);
     else seenSentences.set(s, c.order);
   }
+
+  // R10 (kiegészítés, PLAN Minőség): alanyi névmással kezdődő mondat szintenként legfeljebb 25%.
+  const SUBJECT_PRON = new Set(['yo', 'tú', 'él', 'ella', 'nosotros', 'ellos', 'usted']);
+  for (const lv of LEVELS) {
+    const inLevel = target.filter((c) => c.__file === lv && Array.isArray(c.sentence_lemmas) && c.sentence_lemmas.length > 0);
+    if (!inLevel.length) continue;
+    const pron = inLevel.filter((c) => SUBJECT_PRON.has(c.sentence_lemmas[0]));
+    const pct = Math.round((pron.length / inLevel.length) * 100);
+    R10_STATS.push(`${lv.toUpperCase()} ${pron.length}/${inLevel.length} = ${pct}%`);
+    if (pron.length * 4 > inLevel.length) {
+      fail('R10', `${lv.toUpperCase()}: alanyi névmással kezdődő mondat ${pron.length}/${inLevel.length} (${pct}%) > 25%`);
+    }
+  }
 }
 
 // ---------------------------------------------------------------- jelentés
-const ruleList = listOnly ? ['R1', 'R2'] : ['R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9'];
+const ruleList = listOnly ? ['R1', 'R2'] : ['R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9', 'R10'];
 let bad = 0;
 for (const r of ruleList) {
   const errs = RULES[r] || [];
   bad += errs.length;
-  console.log(`${r}: ${errs.length ? `${errs.length} hiba` : 'ok'}`);
+  console.log(`${r}: ${errs.length ? `${errs.length} hiba` : 'ok'}${r === 'R10' && R10_STATS.length ? ` (${R10_STATS.join('; ')})` : ''}`);
   errs.slice(0, 5).forEach((e) => console.log(`   ${e}`));
 }
 const scope = listOnly ? 'lista' : onlyLevel ? onlyLevel.toUpperCase() : 'mind';
