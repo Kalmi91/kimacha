@@ -8,7 +8,8 @@ import type { GrammarTopicData, LanguageContentBundle } from '../content';
 
 import grammarEnToBe from '@/data/games/grammar/en/to-be.json';
 import grammarEnArticles from '@/data/games/grammar/en/articles.json';
+import grammarEnPresentSimple from '@/data/games/grammar/en/present-simple.json';
 
 export const enContent: LanguageContentBundle = {
-  grammarTopics: [grammarEnToBe, grammarEnArticles] as unknown as GrammarTopicData[],
+  grammarTopics: [grammarEnToBe, grammarEnArticles, grammarEnPresentSimple] as unknown as GrammarTopicData[],
 };
