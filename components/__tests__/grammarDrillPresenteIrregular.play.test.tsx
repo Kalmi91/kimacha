@@ -44,7 +44,8 @@ describe('GrammarDrill: presente-irregular full playthrough (FB299)', () => {
       fireEvent.press(screen.getByText(pair.es));
     });
     fireEvent.press(screen.getByTestId('grammar-next'));
-    expect(onFinish).toHaveBeenCalledWith(expect.any(Number), 1);
+    // FB420: a kör egysége a pár: 6 pár, hiba nélkül 6/6.
+    expect(onFinish).toHaveBeenCalledWith(6, 6);
   });
 
   it('form kind (12 item): "következő" advances every item to onFinish', () => {
