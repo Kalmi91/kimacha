@@ -4926,5 +4926,35 @@
     "sentence_en": "I have a coffee with my mother.",
     "sentence_de": "Ich trinke einen Kaffee mit meiner Mutter.",
     "sentence_lemmas": ["tomar", "un", "café", "con", "mi", "madre"]
+  },
+  {
+    "order": 870,
+    "level": "A1",
+    "pos": "adv",
+    "lemma": "fuera",
+    "es": "fuera",
+    "hu": "kint",
+    "en": "outside",
+    "de": "draußen",
+    "sentence_es": "Mi perro está fuera.",
+    "sentence_hu": "A kutyám kint van.",
+    "sentence_en": "My dog is outside.",
+    "sentence_de": "Mein Hund ist draußen.",
+    "sentence_lemmas": ["mi", "perro", "estar", "fuera"]
+  },
+  {
+    "order": 871,
+    "level": "A1",
+    "pos": "adj",
+    "lemma": "lento",
+    "es": "lento",
+    "hu": "lassú",
+    "en": "slow",
+    "de": "langsam",
+    "sentence_es": "Mi gato es muy lento.",
+    "sentence_hu": "A macskám nagyon lassú.",
+    "sentence_en": "My cat is very slow.",
+    "sentence_de": "Meine Katze ist sehr langsam.",
+    "sentence_lemmas": ["mi", "gato", "ser", "muy", "lento"]
   }
 ]

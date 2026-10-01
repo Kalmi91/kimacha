@@ -2384,5 +2384,50 @@
     "sentence_en": "I want to have my own house.",
     "sentence_de": "Ich möchte mein eigenes Haus haben.",
     "sentence_lemmas": ["querer", "tener", "mi", "propio", "casa"]
+  },
+  {
+    "order": 880,
+    "level": "B1",
+    "pos": "noun",
+    "lemma": "horario",
+    "es": "el horario",
+    "hu": "órarend, időbeosztás",
+    "en": "schedule, timetable",
+    "de": "Stundenplan, Zeitplan",
+    "sentence_es": "Mi horario en la escuela es muy largo.",
+    "sentence_hu": "Az iskolai órarendem nagyon hosszú.",
+    "sentence_en": "My school schedule is very long.",
+    "sentence_de": "Mein Stundenplan in der Schule ist sehr lang.",
+    "sentence_lemmas": ["mi", "horario", "en", "el", "escuela", "ser", "muy", "largo"]
+  },
+  {
+    "order": 881,
+    "level": "B1",
+    "pos": "noun",
+    "lemma": "ayuda",
+    "es": "la ayuda",
+    "hu": "segítség",
+    "en": "help",
+    "de": "Hilfe",
+    "sentence_es": "Mi madre necesita ayuda en casa.",
+    "sentence_hu": "Anyámnak segítségre van szüksége otthon.",
+    "sentence_en": "My mother needs help at home.",
+    "sentence_de": "Meine Mutter braucht Hilfe zu Hause.",
+    "sentence_lemmas": ["mi", "madre", "necesitar", "ayuda", "en", "casa"]
+  },
+  {
+    "order": 882,
+    "level": "B1",
+    "pos": "noun",
+    "lemma": "cuidado",
+    "es": "el cuidado",
+    "hu": "gondosság, vigyázat",
+    "en": "care, caution",
+    "de": "Sorgfalt, Vorsicht",
+    "sentence_es": "Mi madre trabaja con mucho cuidado.",
+    "sentence_hu": "Anyám nagy gonddal dolgozik.",
+    "sentence_en": "My mother works with great care.",
+    "sentence_de": "Meine Mutter arbeitet mit großer Sorgfalt.",
+    "sentence_lemmas": ["mi", "madre", "trabajar", "con", "mucho", "cuidado"]
   }
 ]
