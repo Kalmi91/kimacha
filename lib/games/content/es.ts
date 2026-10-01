@@ -22,6 +22,7 @@ import grammarEsPronombresOd from '@/data/games/grammar/es/pronombres-od.json';
 import grammarEsPronombresOi from '@/data/games/grammar/es/pronombres-oi.json';
 import grammarEsQuienAQuien from '@/data/games/grammar/es/quien-a-quien.json';
 import grammarEsIrAInfinitivo from '@/data/games/grammar/es/ir-a-infinitivo.json';
+import grammarEsMuyMucho from '@/data/games/grammar/es/muy-mucho.json';
 import grammarEsNumerosHoraFecha from '@/data/games/grammar/es/numeros-hora-fecha.json';
 import grammarEsPreposicionesBasicas from '@/data/games/grammar/es/preposiciones-basicas.json';
 import grammarEsEstarGerundio from '@/data/games/grammar/es/estar-gerundio.json';
@@ -94,6 +95,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsNegacion,
     grammarEsGustar,
     grammarEsIrAInfinitivo,
+    grammarEsMuyMucho,
     grammarEsNumerosHoraFecha,
     grammarEsPreposicionesBasicas,
     grammarEsIndefinidoRegular,
