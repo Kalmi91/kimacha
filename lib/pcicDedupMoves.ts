@@ -1,4 +1,4 @@
-// GENERÁLT FÁJL, ne szerkeszd kézzel: node scripts/pcic-dedup.mjs --write
+// GENERÁLT FÁJL (a generáló scripts/pcic-dedup.mjs a PLAN-regi-szavak-ki 6. lépésében kikerült), ne szerkeszd kézzel.
 //
 // PLAN-fb0924 7b. lépés (FB384, D3+D4): törölt (magasabb szintű/szinten-belüli
 // duplikátum) PCIC-item-id -> a megmaradó (legalacsonyabb szintű) item-id. A DB-

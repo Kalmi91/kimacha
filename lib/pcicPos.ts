@@ -1,5 +1,5 @@
 // 5c (FB348/351/358/359, döntés 6b: nincs adat-generálás): a PCIC-tételnek
-// (data/pcic/<szint>-all.json: id, order, es, kind, source, section,
+// (a régi PCIC-korpusz: id, order, es, kind, source, section,
 // headword) nincs szófaj-mezője. Kálmán 2026-09-21 a (b) opciót választotta:
 // olcsó szabály a spanyol alakból, generálás/adatbővítés nélkül. Ha egyszer
 // lesz valódi `pos` mező a tételen, ez a függvény azt olvassa előbb.
