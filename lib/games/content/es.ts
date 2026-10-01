@@ -20,6 +20,7 @@ import grammarEsPorPara from '@/data/games/grammar/es/por-para.json';
 import grammarEsPerifrasisModales from '@/data/games/grammar/es/perifrasis-modales.json';
 import grammarEsPronombresOd from '@/data/games/grammar/es/pronombres-od.json';
 import grammarEsPronombresOi from '@/data/games/grammar/es/pronombres-oi.json';
+import grammarEsCombinacionPronombres from '@/data/games/grammar/es/combinacion-pronombres.json';
 import grammarEsQuienAQuien from '@/data/games/grammar/es/quien-a-quien.json';
 import grammarEsIrAInfinitivo from '@/data/games/grammar/es/ir-a-infinitivo.json';
 import grammarEsMuyMucho from '@/data/games/grammar/es/muy-mucho.json';
@@ -108,6 +109,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsFuturoSimple,
     grammarEsMarcadoresTemporales,
     grammarEsImperativoAfirmativo,
+    grammarEsCombinacionPronombres,
     grammarEsVerbosReflexivos,
     grammarEsPorPara,
     grammarEsSubjuntivoPresenteForma,
