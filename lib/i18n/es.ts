@@ -469,6 +469,13 @@ const es: Strings = {
     skillReviewLesson: (title: string) => `Repasa la lección: ${title}`,
     skillReviewWords: 'Repasa estas palabras',
     skillPracticeSentences: 'Practica oraciones',
+    introSpeaking: (n: number) => `Expresión oral: ${n} ${n === 1 ? 'pregunta' : 'preguntas'}`,
+    skillSpeaking: 'Expresión oral',
+    speakTranslate: (lang: string): string => (lang === 'es' ? 'Dilo en español' : 'Dilo en inglés'),
+    speakRepeat: 'Léelo en voz alta',
+    speakHint: 'Toca el micrófono del teclado y di la oración. Tus palabras aparecen en el cuadro.',
+    speakPlaceholder: 'Aquí aparecen tus palabras',
+    speakYouSaid: 'Dijiste',
   },
   placement: {
     entry: '¿No estás seguro? Haz la prueba de nivel de 3 minutos',

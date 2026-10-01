@@ -6,7 +6,7 @@ import { pcicItemsForLevel, setPcicTarget, type PcicItem } from '@/data/pcic';
 import { knownTokens, resolvedTensesFromLessons, unknownTokens } from '@/lib/knownSentence';
 import { learnedEntries, tileWords } from '@/lib/sentenceCards';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
-import { buildExam, EXAM_BLUEPRINT, MATCH_PAIRS } from '../builder';
+import { buildExam, EXAM_BLUEPRINT, EXAM_SPEAK_COUNT, MATCH_PAIRS } from '../builder';
 import { a1SeedCards } from '../devSeed';
 import { gapSourcesForLevel } from '../grammarItems';
 import type { ExamItem } from '../types';
@@ -44,7 +44,7 @@ describe('buildExam: az A1 vizsga felépítése (en→es)', () => {
   const byId = new Map(items.map((i) => [i.id, i]));
   const learned = learnedIds(cards);
 
-  it('a terv szerinti tételszámokat adja (6 szó + 2 párosítás + 2 összerakás + 2 beírás, 12 nyelvtan, olvasás)', () => {
+  it('a terv szerinti tételszámokat adja (szó, párosítás, összerakás, beírás, nyelvtan, olvasás)', () => {
     const k = kinds(exam);
     expect(k.word_type).toBe(EXAM_BLUEPRINT.wordType);
     expect(k.match).toBe(EXAM_BLUEPRINT.match);
@@ -55,9 +55,36 @@ describe('buildExam: az A1 vizsga felépítése (en→es)', () => {
     expect(k.reading_mc).toBeLessThanOrEqual(EXAM_BLUEPRINT.reading);
   });
 
-  it('készség-sorrend: szavak, nyelvtan, olvasás', () => {
+  it('készség-sorrend: szavak, nyelvtan, olvasás, szóbeli', () => {
+    const skills = ['words', 'grammar', 'reading', 'speaking'];
     const order = exam.map((i) => i.skill);
-    expect(order).toEqual([...order].sort((a, b) => ['words', 'grammar', 'reading'].indexOf(a) - ['words', 'grammar', 'reading'].indexOf(b)));
+    expect(order).toEqual([...order].sort((a, b) => skills.indexOf(a) - skills.indexOf(b)));
+  });
+
+  it('a szóbeli tételek száma az EXAM_SPEAK_COUNT (alapérték 4), és az összes tétel a 30-ban marad', () => {
+    expect(EXAM_SPEAK_COUNT).toBe(4);
+    expect(kinds(exam).speak).toBe(EXAM_SPEAK_COUNT);
+    expect(exam).toHaveLength(30);
+  });
+
+  it('a szóbeli tétel tanult mondat: a kiinduló nyelvű prompt, a célnyelvi várt mondat, a mondat-kapun átmegy', () => {
+    const ctx = { learned: learnedEntries(cards, 'es', (id) => byId.get(id)), tenses: input.tenses };
+    const spoken = exam.filter((i): i is Extract<ExamItem, { kind: 'speak' }> => i.kind === 'speak');
+    expect(spoken).toHaveLength(EXAM_SPEAK_COUNT);
+    for (const sp of spoken) {
+      const owner = byId.get(sp.itemId) as PcicItem;
+      expect(learned.has(sp.itemId)).toBe(true);
+      expect(sp.mode).toBe('translate');
+      expect(sp.skill).toBe('speaking');
+      expect(sp.prompt).toBe(owner.exampleEn);
+      expect(sp.expected).toBe(owner.exampleEs);
+      expect(unknownTokens(sp.expected, 'es', ctx)).toEqual([]);
+    }
+  });
+
+  it('a szóbeli mondatok nem ismétlődnek más mondat-tétellel (összerakás, beírás, olvasás)', () => {
+    const owners = exam.flatMap((i) => (i.kind === 'sent_order' || i.kind === 'sent_type' || i.kind === 'speak' ? [i.itemId] : i.kind === 'reading_mc' ? i.itemIds : []));
+    expect(new Set(owners).size).toBe(owners.length);
   });
 
   it('minden szó-alapú tétel tanult kártyából jön (egy ismeretlen szó se kerül tételbe)', () => {

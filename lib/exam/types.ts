@@ -10,7 +10,7 @@ import type { PcicLevel } from '@/data/pcic';
 export const EXAM_LEVELS: readonly PcicLevel[] = ['A1', 'A2', 'B1', 'B2'];
 
 /** Az eredmény-lap készségei (A4); a tétel `skill`-je dönti el, melyikbe számít. */
-export type ExamSkill = 'words' | 'grammar' | 'reading';
+export type ExamSkill = 'words' | 'grammar' | 'reading' | 'speaking';
 
 export type ExamItem =
   // Szó beírása: a prompt a kiinduló nyelven, a válasz a célnyelven (irányfüggő).
@@ -25,7 +25,10 @@ export type ExamItem =
   // Nyelvtan: lyukas mondat 3 válasszal, egy kész szint-lecke tételeiből.
   | { kind: 'gap_mc'; skill: 'grammar'; topicId: string; sentence: string; options: string[]; correctIndex: number }
   // Olvasás: két tanult mondatból álló célnyelvi szöveg, a kiinduló nyelvű jelentését kell kiválasztani.
-  | { kind: 'reading_mc'; skill: 'reading'; itemIds: string[]; text: string; options: string[]; correctIndex: number };
+  | { kind: 'reading_mc'; skill: 'reading'; itemIds: string[]; text: string; options: string[]; correctIndex: number }
+  // Szóbeli (13. lépés): a billentyűzet mikrofonjával diktált mondat. `translate`: a prompt a kiinduló nyelvű
+  // mondat, az `expected` a célnyelvi; `repeat`: a prompt maga a célnyelvi mondat (olvasd fel).
+  | { kind: 'speak'; skill: 'speaking'; itemId: string; prompt: string; expected: string; mode: 'translate' | 'repeat' };
 
 /** Egy megválaszolt tétel: a későbbi lépések (SM-2 vissza, készségenkénti lap) ebből dolgoznak. */
 export interface ExamItemResult {
