@@ -83,7 +83,7 @@ describe('PCIC fül: Learn kártya-felület (5b)', () => {
     // LEARNING_STEPS=1: "Didn't know" (again) marad ma esedékes (<1 day), de
     // "Knew it" (good) egy lépésben graduál, interval 1 nap.
     expect(getAllByText('<1 day').length).toBe(1);
-    expect(getByText('1 days')).toBeTruthy();
+    expect(getByText('1 day')).toBeTruthy();
   });
 
   it('üres beküldés is felfedi a helyes alakot, "Next -> Didn\'t know"-t javasol, a koppintás dönt', async () => {
