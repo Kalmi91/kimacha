@@ -275,6 +275,7 @@ Napközbenre (kód vagy nem nyelvtan, Feedback sheet 2026-10-01 00:20, üres F o
 - [!] FB433 pcic:w3673: ear vs hearing, melyiket kérdezi. Szavak.
 - [!] FB434 sentence:w1236: értelmetlen mondat átírása + angol kiejtés. Szavak + kód.
 - [~] DÖNTÉS (Kálmán 2026-10-01 08:50, „mehet a”): az app normája a MEXIKÓI perfecto/indefinido-használat. Végrehajtás: „## BRIEF N-sor” lent (N1 `perfecto`, N2 `marcadores-temporales`, N3 `perfecto-vs-indefinido`, N4 független átnézés).
+  - N1 perfecto: [x] 09:12, 76 változás
 - [x] (eldöntve, lásd fent) Kérdés: a `marcadores-temporales` (Kálmán 2026-09-20-as példái szerint) és a `perfecto` lecke a hoy / esta semana / este año jelölőt perfecto-kiváltóként tanítja; a `perfecto-vs-indefinido` (F-1) a mexikói használatot követi (ezekkel indefinido, a perfecto spanyolországi). Melyik legyen az app normája? Ha a mexikói, a két régi lecke jelölőit igazítani kell (tartalom).
 - [!] TenseId-bővítés kell (kód, `/kimacha_nyelvtan`): imperativo-negativo, pluscuamperfecto, subjuntivo-perfecto, futuro-condicional-perfecto; utána ezek 50 transformot kaphatnak.
 - [!] Kártya-kérés (`/eget-szavak`): conocer A2 (a kártya B1), conozco A2, pasado A2.
