@@ -180,6 +180,34 @@
               }
             }
           ]
+        },
+        {
+          "text": {
+            "hu": "Mexikói használat: a «hoy», «esta semana», «este año» és «esta mañana» mellett beszédben az indefinido a megszokott (Hoy trabajé en la oficina. Esta semana trabajamos en casa.). A perfecto ezekkel spanyolországi használat (Hoy he trabajado en la oficina.). Ezért a gyakorló feladatok a perfectót egyértelmű jelölőkhöz kötik: ya, todavía no, alguna vez, nunca, hasta ahora.",
+            "en": "Mexican usage: with «hoy», «esta semana», «este año» and «esta mañana» the indefinido is the usual choice in speech (Hoy trabajé en la oficina. Esta semana trabajamos en casa.). The perfecto with these is Spanish (Spain) usage (Hoy he trabajado en la oficina.). That is why the exercises tie the perfecto to clear markers: ya, todavía no, alguna vez, nunca, hasta ahora.",
+            "es": "Uso mexicano: con «hoy», «esta semana», «este año» y «esta mañana» lo normal al hablar es el indefinido (Hoy trabajé en la oficina. Esta semana trabajamos en casa.). El perfecto con estas palabras es uso de España (Hoy he trabajado en la oficina.). Por eso los ejercicios ligan el perfecto a marcadores claros: ya, todavía no, alguna vez, nunca, hasta ahora.",
+            "de": "Mexikanischer Gebrauch: mit «hoy», «esta semana», «este año» und «esta mañana» ist beim Sprechen das Indefinido üblich (Hoy trabajé en la oficina. Esta semana trabajamos en casa.). Das Perfekt mit diesen Wörtern ist spanischer Gebrauch (Hoy he trabajado en la oficina.). Deshalb binden die Übungen das Perfekt an klare Marker: ya, todavía no, alguna vez, nunca, hasta ahora."
+          },
+          "examples": [
+            {
+              "es": "Hoy trabajé en la oficina.",
+              "tr": {
+                "hu": "Ma az irodában dolgoztam.",
+                "en": "Today I worked at the office.",
+                "es": "Hoy trabajé en la oficina.",
+                "de": "Heute habe ich im Büro gearbeitet."
+              }
+            },
+            {
+              "es": "Esta semana trabajamos en casa.",
+              "tr": {
+                "hu": "Ezen a héten otthon dolgoztunk.",
+                "en": "This week we worked at home.",
+                "es": "Esta semana trabajamos en casa.",
+                "de": "Diese Woche haben wir zu Hause gearbeitet."
+              }
+            }
+          ]
         }
       ]
     },
@@ -313,7 +341,7 @@
           "comí"
         ],
         [
-          "Esta semana ___ (hablar, yo) con mi madre.",
+          "Hasta ahora no ___ (hablar, yo) con mi padre.",
           "he hablado"
         ],
         [
@@ -422,36 +450,36 @@
     },
     {
       "id": "pvi-02",
-      "sentence": "Esta semana ___ (nosotros) dos películas en el cine.",
+      "sentence": "¿___ (ustedes) alguna vez esa película?",
       "options": [
-        "hemos visto",
-        "vimos",
-        "veíamos"
+        "han visto",
+        "vieron",
+        "veían"
       ],
       "correct": 0,
       "why": {
-        "hu": "A(z) «esta semana» (ezen a héten) még tartó időszak, ezért közelmúlt (perfecto) jön: hemos visto.",
-        "en": "«esta semana» (this week) is a period that is still going, so the present perfect is used: hemos visto.",
-        "es": "«esta semana» es un periodo que sigue abierto, por eso va el perfecto: hemos visto.",
-        "de": "«esta semana» (diese Woche) ist ein Zeitraum, der noch läuft, deshalb steht das Perfekt: hemos visto."
+        "hu": "A(z) «alguna vez» (valaha) az eddigi életről szól, ezért közelmúlt (perfecto) jön: han visto.",
+        "en": "«alguna vez» (ever) is about your life so far, so the present perfect is used: han visto.",
+        "es": "«alguna vez» habla de la vida hasta ahora, por eso va el perfecto: han visto.",
+        "de": "«alguna vez» (jemals) betrifft das Leben bis jetzt, deshalb steht das Perfekt: han visto."
       },
       "wrong": {
-        "vimos": {
-          "hu": "vimos: befejezett múlt (indefinido): egy lezárt múltbeli dolgot mondana. Ide nem illik, mert a(z) «esta semana» (ezen a héten) a mostanig tartó időre néz, az indefinido pedig lezárt időpontot jelölne. Helyesen: Esta semana hemos visto dos películas en el cine.",
-          "en": "vimos: preterite (indefinido): it would state a closed event in the past. It does not fit here, because «esta semana» (this week) looks at the time up to now, while the indefinido would mark a closed moment. Correct: Esta semana hemos visto dos películas en el cine.",
-          "es": "vimos: indefinido: diría algo cerrado en el pasado. Aquí no encaja, porque «esta semana» mira el tiempo hasta ahora, y el indefinido marcaría un momento cerrado. Correcto: Esta semana hemos visto dos películas en el cine.",
-          "de": "vimos: Indefinido: es würde ein abgeschlossenes Ereignis der Vergangenheit sagen. Das passt hier nicht, weil «esta semana» (diese Woche) blickt auf die Zeit bis jetzt, das Indefinido würde einen abgeschlossenen Zeitpunkt markieren. Richtig: Esta semana hemos visto dos películas en el cine."
+        "vieron": {
+          "hu": "vieron: befejezett múlt (indefinido): egy lezárt múltbeli dolgot mondana. Ide nem illik, mert a(z) «alguna vez» (valaha) a mostanig tartó időre néz, az indefinido pedig lezárt időpontot jelölne. Helyesen: ¿han visto alguna vez esa película?",
+          "en": "vieron: preterite (indefinido): it would state a closed event in the past. It does not fit here, because «alguna vez» (ever) looks at the time up to now, while the indefinido would mark a closed moment. Correct: ¿han visto alguna vez esa película?",
+          "es": "vieron: indefinido: diría algo cerrado en el pasado. Aquí no encaja, porque «alguna vez» mira el tiempo hasta ahora, y el indefinido marcaría un momento cerrado. Correcto: ¿han visto alguna vez esa película?",
+          "de": "vieron: Indefinido: es würde ein abgeschlossenes Ereignis der Vergangenheit sagen. Das passt hier nicht, weil «alguna vez» (jemals) blickt auf die Zeit bis jetzt, das Indefinido würde einen abgeschlossenen Zeitpunkt markieren. Richtig: ¿han visto alguna vez esa película?"
         },
-        "veíamos": {
-          "hu": "veíamos: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «esta semana» (ezen a héten) a mostanig tartó időre néz, nem múltbeli szokásra vagy háttérre. Helyesen: Esta semana hemos visto dos películas en el cine.",
-          "en": "veíamos: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «esta semana» (this week) looks at the time up to now, not at a past habit or a background. Correct: Esta semana hemos visto dos películas en el cine.",
-          "es": "veíamos: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «esta semana» mira el tiempo hasta ahora, no una costumbre ni un fondo del pasado. Correcto: Esta semana hemos visto dos películas en el cine.",
-          "de": "veíamos: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «esta semana» (diese Woche) blickt auf die Zeit bis jetzt, nicht auf eine vergangene Gewohnheit oder einen Hintergrund. Richtig: Esta semana hemos visto dos películas en el cine."
+        "veían": {
+          "hu": "veían: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «alguna vez» (valaha) a mostanig tartó időre néz, nem múltbeli szokásra vagy háttérre. Helyesen: ¿han visto alguna vez esa película?",
+          "en": "veían: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «alguna vez» (ever) looks at the time up to now, not at a past habit or a background. Correct: ¿han visto alguna vez esa película?",
+          "es": "veían: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «alguna vez» mira el tiempo hasta ahora, no una costumbre ni un fondo del pasado. Correcto: ¿han visto alguna vez esa película?",
+          "de": "veían: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «alguna vez» (jemals) blickt auf die Zeit bis jetzt, nicht auf eine vergangene Gewohnheit oder einen Hintergrund. Richtig: ¿han visto alguna vez esa película?"
         }
       },
       "examples": [
-        "Esta semana hemos trabajado en casa.",
-        "Esta semana hemos comido bien."
+        "¿Has viajado alguna vez en tren?",
+        "¿Has hablado alguna vez con un médico?"
       ]
     },
     {
@@ -694,7 +722,7 @@
     },
     {
       "id": "pvi-10",
-      "sentence": "Este año mi hermana ___ mucho.",
+      "sentence": "Hasta ahora mi hermana ___ mucho.",
       "options": [
         "viajó",
         "ha viajado",
@@ -702,28 +730,28 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A(z) «este año» (idén) még tartó időszak, ezért közelmúlt (perfecto) jön: ha viajado.",
-        "en": "«este año» (this year) is a period that is still going, so the present perfect is used: ha viajado.",
-        "es": "«este año» es un periodo que sigue abierto, por eso va el perfecto: ha viajado.",
-        "de": "«este año» (dieses Jahr) ist ein Zeitraum, der noch läuft, deshalb steht das Perfekt: ha viajado."
+        "hu": "A(z) «hasta ahora» (eddig) a mostanig tartó helyzetre utal, ezért közelmúlt (perfecto) jön: ha viajado.",
+        "en": "«hasta ahora» (so far) points at the situation up to now, so the present perfect is used: ha viajado.",
+        "es": "«hasta ahora» apunta a la situación hasta ahora, por eso va el perfecto: ha viajado.",
+        "de": "«hasta ahora» (bis jetzt) verweist auf die Lage bis jetzt, deshalb steht das Perfekt: ha viajado."
       },
       "wrong": {
         "viajó": {
-          "hu": "viajó: befejezett múlt (indefinido): egy lezárt múltbeli dolgot mondana. Ide nem illik, mert a(z) «este año» (idén) a mostanig tartó időre néz, az indefinido pedig lezárt időpontot jelölne. Helyesen: Este año mi hermana ha viajado mucho.",
-          "en": "viajó: preterite (indefinido): it would state a closed event in the past. It does not fit here, because «este año» (this year) looks at the time up to now, while the indefinido would mark a closed moment. Correct: Este año mi hermana ha viajado mucho.",
-          "es": "viajó: indefinido: diría algo cerrado en el pasado. Aquí no encaja, porque «este año» mira el tiempo hasta ahora, y el indefinido marcaría un momento cerrado. Correcto: Este año mi hermana ha viajado mucho.",
-          "de": "viajó: Indefinido: es würde ein abgeschlossenes Ereignis der Vergangenheit sagen. Das passt hier nicht, weil «este año» (dieses Jahr) blickt auf die Zeit bis jetzt, das Indefinido würde einen abgeschlossenen Zeitpunkt markieren. Richtig: Este año mi hermana ha viajado mucho."
+          "hu": "viajó: befejezett múlt (indefinido): egy lezárt múltbeli dolgot mondana. Ide nem illik, mert a(z) «hasta ahora» (eddig) a mostanig tartó időre néz, az indefinido pedig lezárt időpontot jelölne. Helyesen: Hasta ahora mi hermana ha viajado mucho.",
+          "en": "viajó: preterite (indefinido): it would state a closed event in the past. It does not fit here, because «hasta ahora» (so far) looks at the time up to now, while the indefinido would mark a closed moment. Correct: Hasta ahora mi hermana ha viajado mucho.",
+          "es": "viajó: indefinido: diría algo cerrado en el pasado. Aquí no encaja, porque «hasta ahora» mira el tiempo hasta ahora, y el indefinido marcaría un momento cerrado. Correcto: Hasta ahora mi hermana ha viajado mucho.",
+          "de": "viajó: Indefinido: es würde ein abgeschlossenes Ereignis der Vergangenheit sagen. Das passt hier nicht, weil «hasta ahora» (bis jetzt) blickt auf die Zeit bis jetzt, das Indefinido würde einen abgeschlossenen Zeitpunkt markieren. Richtig: Hasta ahora mi hermana ha viajado mucho."
         },
         "viajaba": {
-          "hu": "viajaba: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «este año» (idén) a mostanig tartó időre néz, nem múltbeli szokásra vagy háttérre. Helyesen: Este año mi hermana ha viajado mucho.",
-          "en": "viajaba: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «este año» (this year) looks at the time up to now, not at a past habit or a background. Correct: Este año mi hermana ha viajado mucho.",
-          "es": "viajaba: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «este año» mira el tiempo hasta ahora, no una costumbre ni un fondo del pasado. Correcto: Este año mi hermana ha viajado mucho.",
-          "de": "viajaba: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «este año» (dieses Jahr) blickt auf die Zeit bis jetzt, nicht auf eine vergangene Gewohnheit oder einen Hintergrund. Richtig: Este año mi hermana ha viajado mucho."
+          "hu": "viajaba: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «hasta ahora» (eddig) a mostanig tartó időre néz, nem múltbeli szokásra vagy háttérre. Helyesen: Hasta ahora mi hermana ha viajado mucho.",
+          "en": "viajaba: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «hasta ahora» (so far) looks at the time up to now, not at a past habit or a background. Correct: Hasta ahora mi hermana ha viajado mucho.",
+          "es": "viajaba: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «hasta ahora» mira el tiempo hasta ahora, no una costumbre ni un fondo del pasado. Correcto: Hasta ahora mi hermana ha viajado mucho.",
+          "de": "viajaba: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «hasta ahora» (bis jetzt) blickt auf die Zeit bis jetzt, nicht auf eine vergangene Gewohnheit oder einen Hintergrund. Richtig: Hasta ahora mi hermana ha viajado mucho."
         }
       },
       "examples": [
-        "Este año hemos viajado mucho.",
-        "Este año he trabajado mucho."
+        "Hasta ahora hemos viajado mucho.",
+        "Hasta ahora he trabajado bien."
       ]
     },
     {
@@ -836,7 +864,7 @@
       "id": "pvi-form-02",
       "kind": "form",
       "verb": "forma verbal",
-      "person": "Esta semana ___ (hablar, yo) con mi madre.",
+      "person": "Hasta ahora no ___ (hablar, yo) con mi padre.",
       "answer": "he hablado",
       "table": "perfecto-indefinido-formas"
     },
@@ -974,13 +1002,13 @@
     {
       "kind": "why",
       "id": "pvi-why-02",
-      "es": "Esta semana he trabajado mucho.",
-      "target": "Esta semana",
+      "es": "Hasta ahora he trabajado mucho.",
+      "target": "Hasta ahora",
       "tr": {
-        "hu": "Ezen a héten sokat dolgoztam.",
-        "en": "This week I have worked a lot.",
-        "es": "Esta semana he trabajado mucho.",
-        "de": "Diese Woche habe ich viel gearbeitet."
+        "hu": "Eddig sokat dolgoztam.",
+        "en": "So far I have worked a lot.",
+        "es": "Hasta ahora he trabajado mucho.",
+        "de": "Bis jetzt habe ich viel gearbeitet."
       },
       "options": [
         {
@@ -999,10 +1027,10 @@
             "de": "eine Gewohnheit oder ein Hintergrund in der Vergangenheit → Imperfekt"
           },
           "wrong": {
-            "hu": "ez múltbeli szokás vagy háttér lenne, de a(z) «esta semana» (ezen a héten) a mostanig tartó időre néz",
-            "en": "this would be a past habit or background, but «esta semana» (this week) looks at the time up to now",
-            "es": "esto sería una costumbre o un fondo del pasado, pero «esta semana» mira el tiempo hasta ahora",
-            "de": "das wäre eine vergangene Gewohnheit oder ein Hintergrund, aber «esta semana» (diese Woche) blickt auf die Zeit bis jetzt"
+            "hu": "ez múltbeli szokás vagy háttér lenne, de a(z) «hasta ahora» (eddig) a mostanig tartó időre néz",
+            "en": "this would be a past habit or background, but «hasta ahora» (so far) looks at the time up to now",
+            "es": "esto sería una costumbre o un fondo del pasado, pero «hasta ahora» mira el tiempo hasta ahora",
+            "de": "das wäre eine vergangene Gewohnheit oder ein Hintergrund, aber «hasta ahora» (bis jetzt) blickt auf die Zeit bis jetzt"
           }
         },
         {
@@ -1013,10 +1041,10 @@
             "de": "ein abgeschlossener Zeitpunkt in der Vergangenheit → Indefinido"
           },
           "wrong": {
-            "hu": "ez lezárt időpontot jelölne, de a(z) «esta semana» (ezen a héten) a mostanig tartó időre néz",
-            "en": "this would mark a closed moment, but «esta semana» (this week) looks at the time up to now",
-            "es": "esto marcaría un momento cerrado, pero «esta semana» mira el tiempo hasta ahora",
-            "de": "das würde einen abgeschlossenen Zeitpunkt markieren, aber «esta semana» (diese Woche) blickt auf die Zeit bis jetzt"
+            "hu": "ez lezárt időpontot jelölne, de a(z) «hasta ahora» (eddig) a mostanig tartó időre néz",
+            "en": "this would mark a closed moment, but «hasta ahora» (so far) looks at the time up to now",
+            "es": "esto marcaría un momento cerrado, pero «hasta ahora» mira el tiempo hasta ahora",
+            "de": "das würde einen abgeschlossenen Zeitpunkt markieren, aber «hasta ahora» (bis jetzt) blickt auf die Zeit bis jetzt"
           }
         }
       ],
@@ -1636,10 +1664,10 @@
         "12"
       ],
       "why": {
-        "hu": "A(z) «hasta ahora» (eddig) még tartó időszak: perfecto. estar, nosotros: hemos estado.",
-        "en": "«hasta ahora» (so far) is a period that is still going: perfecto. estar, nosotros: hemos estado.",
-        "es": "«hasta ahora» es un periodo que sigue abierto: perfecto. estar, nosotros: hemos estado.",
-        "de": "«hasta ahora» (bis jetzt) ist ein Zeitraum, der noch läuft: Perfekt. estar, nosotros: hemos estado."
+        "hu": "A(z) «hasta ahora» (eddig) a mostanig tartó helyzetre utal: perfecto. estar, nosotros: hemos estado.",
+        "en": "«hasta ahora» (so far) points at the situation up to now: perfecto. estar, nosotros: hemos estado.",
+        "es": "«hasta ahora» apunta a la situación hasta ahora: perfecto. estar, nosotros: hemos estado.",
+        "de": "«hasta ahora» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. estar, nosotros: hemos estado."
       }
     },
     {
@@ -1741,27 +1769,26 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Sokat utaznak. (idén)",
-        "en": "They travel a lot. (this year)",
-        "es": "Viajan mucho. (este año)",
-        "de": "Sie reisen viel. (dieses Jahr)"
+        "hu": "Nem utaznak egyedül. (soha)",
+        "en": "They don't travel alone. (never)",
+        "es": "No viajan solos. (jamás)",
+        "de": "Sie reisen nicht allein. (nie)"
       },
-      "answer": "Este año han viajado mucho.",
+      "answer": "Jamás han viajado solos.",
       "accept": [
-        "Este año ellos han viajado mucho.",
-        "Han viajado mucho este año."
+        "Ellos jamás han viajado solos.",
+        "No han viajado solos jamás."
       ],
       "wordIds": [
         "1579",
-        "3752",
-        "103",
-        "1818"
+        "87",
+        "3702"
       ],
       "why": {
-        "hu": "A(z) «este año» (idén) még tartó időszak: perfecto. viajar, ellos: han viajado.",
-        "en": "«este año» (this year) is a period that is still going: perfecto. viajar, ellos: han viajado.",
-        "es": "«este año» es un periodo que sigue abierto: perfecto. viajar, ellos: han viajado.",
-        "de": "«este año» (dieses Jahr) ist ein Zeitraum, der noch läuft: Perfekt. viajar, ellos: han viajado."
+        "hu": "A(z) «jamás» (soha) az eddigi életről szól, tapasztalat: perfecto. viajar, ellos: han viajado.",
+        "en": "«jamás» (never) is about your life so far, an experience: perfecto. viajar, ellos: han viajado.",
+        "es": "«jamás» habla de la vida hasta ahora, una experiencia: perfecto. viajar, ellos: han viajado.",
+        "de": "«jamás» (nie) betrifft das Leben bis jetzt, eine Erfahrung: Perfekt. viajar, ellos: han viajado."
       }
     },
     {
@@ -1984,27 +2011,26 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Otthon dolgozunk. (ezen a héten)",
-        "en": "We work at home. (this week)",
-        "es": "Trabajamos en casa. (esta semana)",
-        "de": "Wir arbeiten zu Hause. (diese Woche)"
+        "hu": "Otthon dolgozunk. (eddig)",
+        "en": "We work at home. (so far)",
+        "es": "Trabajamos en casa. (hasta ahora)",
+        "de": "Wir arbeiten zu Hause. (bis jetzt)"
       },
-      "answer": "Esta semana hemos trabajado en casa.",
+      "answer": "Hasta ahora hemos trabajado en casa.",
       "accept": [
-        "Esta semana nosotros hemos trabajado en casa.",
-        "Hemos trabajado en casa esta semana."
+        "Hasta ahora nosotros hemos trabajado en casa.",
+        "Hemos trabajado en casa hasta ahora."
       ],
       "wordIds": [
         "1409",
         "14",
-        "103",
-        "1314"
+        "12"
       ],
       "why": {
-        "hu": "A(z) «esta semana» (ezen a héten) még tartó időszak: perfecto. trabajar, nosotros: hemos trabajado.",
-        "en": "«esta semana» (this week) is a period that is still going: perfecto. trabajar, nosotros: hemos trabajado.",
-        "es": "«esta semana» es un periodo que sigue abierto: perfecto. trabajar, nosotros: hemos trabajado.",
-        "de": "«esta semana» (diese Woche) ist ein Zeitraum, der noch läuft: Perfekt. trabajar, nosotros: hemos trabajado."
+        "hu": "A(z) «hasta ahora» (eddig) a mostanig tartó helyzetre utal: perfecto. trabajar, nosotros: hemos trabajado.",
+        "en": "«hasta ahora» (so far) points at the situation up to now: perfecto. trabajar, nosotros: hemos trabajado.",
+        "es": "«hasta ahora» apunta a la situación hasta ahora: perfecto. trabajar, nosotros: hemos trabajado.",
+        "de": "«hasta ahora» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. trabajar, nosotros: hemos trabajado."
       }
     },
     {
@@ -2061,10 +2087,10 @@
         "12"
       ],
       "why": {
-        "hu": "A(z) «hasta ahora» (eddig) még tartó időszak: perfecto. trabajar, tú: has trabajado.",
-        "en": "«hasta ahora» (so far) is a period that is still going: perfecto. trabajar, tú: has trabajado.",
-        "es": "«hasta ahora» es un periodo que sigue abierto: perfecto. trabajar, tú: has trabajado.",
-        "de": "«hasta ahora» (bis jetzt) ist ein Zeitraum, der noch läuft: Perfekt. trabajar, tú: has trabajado."
+        "hu": "A(z) «hasta ahora» (eddig) a mostanig tartó helyzetre utal: perfecto. trabajar, tú: has trabajado.",
+        "en": "«hasta ahora» (so far) points at the situation up to now: perfecto. trabajar, tú: has trabajado.",
+        "es": "«hasta ahora» apunta a la situación hasta ahora: perfecto. trabajar, tú: has trabajado.",
+        "de": "«hasta ahora» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. trabajar, tú: has trabajado."
       }
     },
     {
@@ -2106,26 +2132,25 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Az irodában dolgozom. (ma)",
-        "en": "I work at the office. (today)",
-        "es": "Trabajo en la oficina. (hoy)",
-        "de": "Ich arbeite im Büro. (heute)"
+        "hu": "Az irodában dolgozom. (már)",
+        "en": "I work at the office. (already)",
+        "es": "Trabajo en la oficina. (ya)",
+        "de": "Ich arbeite im Büro. (schon)"
       },
-      "answer": "Hoy he trabajado en la oficina.",
+      "answer": "Ya he trabajado en la oficina.",
       "accept": [
-        "Hoy yo he trabajado en la oficina.",
-        "He trabajado en la oficina hoy."
+        "Yo ya he trabajado en la oficina.",
+        "He trabajado en la oficina ya."
       ],
       "wordIds": [
         "1409",
-        "1310",
-        "1312"
+        "1310"
       ],
       "why": {
-        "hu": "A(z) «hoy» (ma) még tartó időszak: perfecto. trabajar, yo: he trabajado.",
-        "en": "«hoy» (today) is a period that is still going: perfecto. trabajar, yo: he trabajado.",
-        "es": "«hoy» es un periodo que sigue abierto: perfecto. trabajar, yo: he trabajado.",
-        "de": "«hoy» (heute) ist ein Zeitraum, der noch läuft: Perfekt. trabajar, yo: he trabajado."
+        "hu": "A(z) «ya» (már) a mostanig tartó helyzetre utal: perfecto. trabajar, yo: he trabajado.",
+        "en": "«ya» (already) points at the situation up to now: perfecto. trabajar, yo: he trabajado.",
+        "es": "«ya» apunta a la situación hasta ahora: perfecto. trabajar, yo: he trabajado.",
+        "de": "«ya» (schon) verweist auf die Lage bis jetzt: Perfekt. trabajar, yo: he trabajado."
       }
     },
     {
@@ -2224,28 +2249,27 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Új ruhát veszünk. (idén)",
-        "en": "We buy new clothes. (this year)",
-        "es": "Compramos ropa nueva. (este año)",
-        "de": "Wir kaufen neue Kleidung. (dieses Jahr)"
+        "hu": "Új ruhát veszünk. (mostanában)",
+        "en": "We buy new clothes. (lately)",
+        "es": "Compramos ropa nueva. (últimamente)",
+        "de": "Wir kaufen neue Kleidung. (in letzter Zeit)"
       },
-      "answer": "Este año hemos comprado ropa nueva.",
+      "answer": "Últimamente hemos comprado ropa nueva.",
       "accept": [
-        "Este año nosotros hemos comprado ropa nueva.",
-        "Hemos comprado ropa nueva este año."
+        "Últimamente nosotros hemos comprado ropa nueva.",
+        "Hemos comprado ropa nueva últimamente."
       ],
       "wordIds": [
         "1394",
         "1831",
         "45",
-        "103",
-        "1818"
+        "2099"
       ],
       "why": {
-        "hu": "A(z) «este año» (idén) még tartó időszak: perfecto. comprar, nosotros: hemos comprado.",
-        "en": "«este año» (this year) is a period that is still going: perfecto. comprar, nosotros: hemos comprado.",
-        "es": "«este año» es un periodo que sigue abierto: perfecto. comprar, nosotros: hemos comprado.",
-        "de": "«este año» (dieses Jahr) ist ein Zeitraum, der noch läuft: Perfekt. comprar, nosotros: hemos comprado."
+        "hu": "A(z) «últimamente» (mostanában) még tartó időszak: perfecto. comprar, nosotros: hemos comprado.",
+        "en": "«últimamente» (lately) is a period that is still going: perfecto. comprar, nosotros: hemos comprado.",
+        "es": "«últimamente» es un periodo que sigue abierto: perfecto. comprar, nosotros: hemos comprado.",
+        "de": "«últimamente» (in letzter Zeit) ist ein Zeitraum, der noch läuft: Perfekt. comprar, nosotros: hemos comprado."
       }
     },
     {
@@ -2406,27 +2430,26 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "A testvérével beszél. (ezen a héten)",
-        "en": "He/She talks to his/her brother. (this week)",
-        "es": "Habla con su hermano. (esta semana)",
-        "de": "Er/Sie spricht mit seinem/ihrem Bruder. (diese Woche)"
+        "hu": "Nem beszél a testvérével. (soha)",
+        "en": "He/She doesn't talk to his/her brother. (never)",
+        "es": "No habla con su hermano. (jamás)",
+        "de": "Er/Sie spricht nicht mit seinem/ihrem Bruder. (nie)"
       },
-      "answer": "Esta semana ha hablado con su hermano.",
+      "answer": "Jamás ha hablado con su hermano.",
       "accept": [
-        "Esta semana él ha hablado con su hermano.",
-        "Ha hablado con su hermano esta semana."
+        "Jamás él ha hablado con su hermano.",
+        "No ha hablado con su hermano jamás."
       ],
       "wordIds": [
         "27",
         "1358",
-        "103",
-        "1314"
+        "3702"
       ],
       "why": {
-        "hu": "A(z) «esta semana» (ezen a héten) még tartó időszak: perfecto. hablar, él/ella: ha hablado.",
-        "en": "«esta semana» (this week) is a period that is still going: perfecto. hablar, él/ella: ha hablado.",
-        "es": "«esta semana» es un periodo que sigue abierto: perfecto. hablar, él/ella: ha hablado.",
-        "de": "«esta semana» (diese Woche) ist ein Zeitraum, der noch läuft: Perfekt. hablar, él/ella: ha hablado."
+        "hu": "A(z) «jamás» (soha) az eddigi életről szól, tapasztalat: perfecto. hablar, él/ella: ha hablado.",
+        "en": "«jamás» (never) is about your life so far, an experience: perfecto. hablar, él/ella: ha hablado.",
+        "es": "«jamás» habla de la vida hasta ahora, una experiencia: perfecto. hablar, él/ella: ha hablado.",
+        "de": "«jamás» (nie) betrifft das Leben bis jetzt, eine Erfahrung: Perfekt. hablar, él/ella: ha hablado."
       }
     },
     {
@@ -2649,26 +2672,26 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Moziba megyünk. (ma)",
-        "en": "We go to the cinema. (today)",
-        "es": "Vamos al cine. (hoy)",
-        "de": "Wir gehen ins Kino. (heute)"
+        "hu": "Nem megyünk moziba. (soha)",
+        "en": "We don't go to the cinema. (never)",
+        "es": "No vamos al cine. (jamás)",
+        "de": "Wir gehen nicht ins Kino. (nie)"
       },
-      "answer": "Hoy hemos ido al cine.",
+      "answer": "Jamás hemos ido al cine.",
       "accept": [
-        "Hoy nosotros hemos ido al cine.",
-        "Hemos ido al cine hoy."
+        "Jamás nosotros hemos ido al cine.",
+        "No hemos ido al cine jamás."
       ],
       "wordIds": [
         "31",
         "3587",
-        "1312"
+        "3702"
       ],
       "why": {
-        "hu": "A(z) «hoy» (ma) még tartó időszak: perfecto. ir, nosotros: hemos ido.",
-        "en": "«hoy» (today) is a period that is still going: perfecto. ir, nosotros: hemos ido.",
-        "es": "«hoy» es un periodo que sigue abierto: perfecto. ir, nosotros: hemos ido.",
-        "de": "«hoy» (heute) ist ein Zeitraum, der noch läuft: Perfekt. ir, nosotros: hemos ido."
+        "hu": "A(z) «jamás» (soha) az eddigi életről szól, tapasztalat: perfecto. ir, nosotros: hemos ido.",
+        "en": "«jamás» (never) is about your life so far, an experience: perfecto. ir, nosotros: hemos ido.",
+        "es": "«jamás» habla de la vida hasta ahora, una experiencia: perfecto. ir, nosotros: hemos ido.",
+        "de": "«jamás» (nie) betrifft das Leben bis jetzt, eine Erfahrung: Perfekt. ir, nosotros: hemos ido."
       }
     },
     {
@@ -2771,27 +2794,25 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Gyümölcsöt esznek. (ezen a héten)",
-        "en": "They eat fruit. (this week)",
-        "es": "Comen fruta. (esta semana)",
-        "de": "Sie essen Obst. (diese Woche)"
+        "hu": "Gyümölcsöt esznek. (már)",
+        "en": "They eat fruit. (already)",
+        "es": "Comen fruta. (ya)",
+        "de": "Sie essen Obst. (schon)"
       },
-      "answer": "Esta semana han comido fruta.",
+      "answer": "Ya han comido fruta.",
       "accept": [
-        "Esta semana ellos han comido fruta.",
-        "Han comido fruta esta semana."
+        "Ellos ya han comido fruta.",
+        "Han comido fruta ya."
       ],
       "wordIds": [
         "25",
-        "1060",
-        "103",
-        "1314"
+        "1060"
       ],
       "why": {
-        "hu": "A(z) «esta semana» (ezen a héten) még tartó időszak: perfecto. comer, ellos: han comido.",
-        "en": "«esta semana» (this week) is a period that is still going: perfecto. comer, ellos: han comido.",
-        "es": "«esta semana» es un periodo que sigue abierto: perfecto. comer, ellos: han comido.",
-        "de": "«esta semana» (diese Woche) ist ein Zeitraum, der noch läuft: Perfekt. comer, ellos: han comido."
+        "hu": "A(z) «ya» (már) a mostanig tartó helyzetre utal: perfecto. comer, ellos: han comido.",
+        "en": "«ya» (already) points at the situation up to now: perfecto. comer, ellos: han comido.",
+        "es": "«ya» apunta a la situación hasta ahora: perfecto. comer, ellos: han comido.",
+        "de": "«ya» (schon) verweist auf die Lage bis jetzt: Perfekt. comer, ellos: han comido."
       }
     }
   ]
