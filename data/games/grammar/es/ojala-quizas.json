@@ -87,25 +87,25 @@
           "text": {
             "hu": "Az ojalá egyedül is mondat, rövid válasz. Az ojalá que sí és az ojalá que no jelentése: remélem, igen, illetve remélem, nem.",
             "en": "Ojalá can stand alone as a short answer. Ojalá que sí and ojalá que no mean: I hope so, and I hope not.",
-            "es": "Ojalá puede ir solo como respuesta corta. Ojalá que sí y ojalá que no significan: espero que sí, y espero que no.",
+            "es": "La palabra ojalá puede ir sola como respuesta corta. Ojalá que sí y ojalá que no significan: espero que sí, y espero que no.",
             "de": "Ojalá kann allein als kurze Antwort stehen. Ojalá que sí und ojalá que no heißen: hoffentlich ja, und hoffentlich nicht."
           },
           "examples": [
             {
-              "es": ", ¿Va a llover?, Ojalá que no.",
+              "es": "«¿Va a llover?» «Ojalá que no.»",
               "tr": {
-                "hu": ", Esni fog?, Remélem, nem.",
+                "hu": "„Esni fog?” „Remélem, nem.”",
                 "en": "\"Is it going to rain?\" \"I hope not.\"",
-                "es": ", ¿Va a llover?, Ojalá que no.",
+                "es": "«¿Va a llover?» «Ojalá que no.»",
                 "de": "„Wird es regnen?“ „Hoffentlich nicht.“"
               }
             },
             {
-              "es": ", ¿Vas a aprobar?, Ojalá.",
+              "es": "«¿Vas a aprobar?» «Ojalá.»",
               "tr": {
-                "hu": ", Átmész?, Remélem.",
+                "hu": "„Átmész?” „Remélem.”",
                 "en": "\"Are you going to pass?\" \"I hope so.\"",
-                "es": ", ¿Vas a aprobar?, Ojalá.",
+                "es": "«¿Vas a aprobar?» «Ojalá.»",
                 "de": "„Bestehst du?“ „Hoffentlich.“"
               }
             }
@@ -837,7 +837,7 @@
       "id": "oq-ch-10",
       "sentence": "Tal vez ___ (nosotros) en casa, no estamos seguros.",
       "options": [
-        "cenamos",
+        "cenan",
         "cenar",
         "cenemos"
       ],
@@ -849,11 +849,11 @@
         "de": "Unsicherheit, keine Gewissheit: Subjuntivo nach tal vez, cenemos."
       },
       "wrong": {
-        "cenamos": {
-          "hu": "Kijelentővel azt sugallnád, hogy szerintetek valószínű, de a mondat másik fele azt mondja, hogy nem biztos; helyesen: Tal vez cenemos en casa, no estamos seguros.",
-          "en": "With the indicative you would suggest it is likely, but the other half of the sentence says you are not sure; correctly: Tal vez cenemos en casa, no estamos seguros.",
-          "es": "Con indicativo sugerirías que es probable, pero la otra mitad de la frase dice que no están seguros; correctamente: Tal vez cenemos en casa, no estamos seguros.",
-          "de": "Mit dem Indikativ würdest du andeuten, dass es wahrscheinlich ist, aber die andere Satzhälfte sagt, dass ihr nicht sicher seid; richtig: Tal vez cenemos en casa, no estamos seguros."
+        "cenan": {
+          "hu": "Ez az „ellos” alak, de a zárójelben „nosotros” áll; helyesen: Tal vez cenemos en casa, no estamos seguros.",
+          "en": "This is the “ellos” form, but the brackets say “nosotros”; correctly: Tal vez cenemos en casa, no estamos seguros.",
+          "es": "Esta es la forma de “ellos”, pero el paréntesis dice “nosotros”; correctamente: Tal vez cenemos en casa, no estamos seguros.",
+          "de": "Das ist die „ellos“-Form, aber in der Klammer steht „nosotros“; richtig: Tal vez cenemos en casa, no estamos seguros."
         },
         "cenar": {
           "hu": "A főnévi igenév nem ragozott ige, a „nosotros” alanyhoz ragozott kötőmód kell; helyesen: Tal vez cenemos en casa, no estamos seguros.",
@@ -876,7 +876,7 @@
       "sentence": "Quizás ___ (ella) en casa, creo que sí.",
       "options": [
         "está",
-        "esté",
+        "estoy",
         "estén"
       ],
       "correct": 0,
@@ -887,11 +887,11 @@
         "de": "Eher wahrscheinlich: Indikativ nach quizás, está."
       },
       "wrong": {
-        "esté": {
-          "hu": "Kötőmóddal bizonytalanabb lenne, de a mondat másik fele („creo que sí”) inkább valószínűnek tartja; helyesen: Quizás está en casa, creo que sí.",
-          "en": "The subjunctive would sound more unsure, but the other half of the sentence (“creo que sí”) finds it rather likely; correctly: Quizás está en casa, creo que sí.",
-          "es": "El subjuntivo sonaría más inseguro, pero la otra mitad de la frase (“creo que sí”) lo ve bastante probable; correctamente: Quizás está en casa, creo que sí.",
-          "de": "Der Subjuntivo klänge unsicherer, aber die andere Satzhälfte („creo que sí“) hält es eher für wahrscheinlich; richtig: Quizás está en casa, creo que sí."
+        "estoy": {
+          "hu": "Ez az „yo” alak („otthon vagyok”), de a zárójelben „ella” áll; helyesen: Quizás está en casa, creo que sí.",
+          "en": "This is the “yo” form (“I am at home”), but the brackets say “ella”; correctly: Quizás está en casa, creo que sí.",
+          "es": "Esta es la forma de “yo” (“estoy en casa”), pero el paréntesis dice “ella”; correctamente: Quizás está en casa, creo que sí.",
+          "de": "Das ist die „yo“-Form („ich bin zu Hause“), aber in der Klammer steht „ella“; richtig: Quizás está en casa, creo que sí."
         },
         "estén": {
           "hu": "Többes számú kötőmód, az „ella” viszont egyes szám, és a mondat valószínűnek tartja; helyesen: Quizás está en casa, creo que sí.",
