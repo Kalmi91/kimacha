@@ -2,7 +2,7 @@
 // tetelnek van szofaja, es sentence/pattern tetelnek sose.
 // PLAN-regi-szavak-ki 5. lepes: a posOf lemma-indexe a data/words-open, ezert a
 // teszt az elo pakli (data/pcic.ts, en->es irany) tetelein fut a korabbi nyers
-// PCIC-json helyett. Kivetel: a words-open det/interj szofaja (17 + 2 szo, pl.
+// PCIC-json helyett. Kivetel: a words-open det/interj szofaja (17 det + 4 interj, pl.
 // "este", "hola") az app Pos-keszletebe nem kepezheto le, azokra nincs chip.
 import { posOf } from '../pcicPos';
 import { PCIC_LEVELS, pcicItemsForLevel, setPcicTarget } from '../../data/pcic';
@@ -23,8 +23,8 @@ const NO_CHIP_IDS = new Set(OPEN_CARDS.filter((c) => c.pos === 'det' || c.pos ==
 describe('posOf lefedettseg (FB361-362)', () => {
   beforeAll(() => setPcicTarget('es'));
 
-  it('a det/interj kivetel pontosan 19 szo', () => {
-    expect(NO_CHIP_IDS.size).toBe(19);
+  it('a det/interj kivetel pontosan 21 szo', () => {
+    expect(NO_CHIP_IDS.size).toBe(21);
   });
 
   for (const level of PCIC_LEVELS) {
