@@ -21,7 +21,7 @@ import {
   type ArticlePick,
 } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget, thinSentences, dropOrphanCards, setProgressPercent } from '@/lib/pcicSession';
+import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget, thinSentences, dropOrphanCards, countFinishedToday, dayProgressPercent } from '@/lib/pcicSession';
 import { applyChainOrder, chainGroupId } from '@/lib/pcicChains';
 import { cardsForViewLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
@@ -631,9 +631,10 @@ export default function PcicScreen() {
   // számból épül (nem a mountonként nullázódó `sessionAnswered`-ből), hogy
   // tab-váltás vagy app-újraindítás után is a valós napi haladást mutassa,
   // ne ugorjon vissza üresre.
-  // FB401: a sáv 10-es szettekben mér (lib/pcicSession.ts setProgressPercent), hogy sok
-  // esedékes kártya mellett is minden megválaszolt kártya látsszon.
-  const barPct = setProgressPercent(doneToday, queue.length);
+  // PLAN-fb1001 9. lépés (FB430, D1): a sáv a MAI adag hátralévőjét mutatja (az első
+  // kártyánál üres, az utolsónál tele, adag közben nem indul újra; lib/pcicSession.ts
+  // dayProgressPercent). Az FB401-es 10-es szettes mérés minden 10. kártyánál újraindult.
+  const barPct = dayProgressPercent(countFinishedToday([...allCards.values()], queue, today), queue.length);
 
   // 5b: a lap tetejére kerülő lap/lépés-jelvény (CardShell chip propja),
   // a korábbi sectionRow-beli stepBadge szövegek helyén.
