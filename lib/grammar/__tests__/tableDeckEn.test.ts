@@ -130,19 +130,15 @@ describe('wordCellsForLesson spanyol irány (en→es, hu→es) változatlan', ()
     }
   });
 
-  // PLAN-learn-words-open (2026-10-01): a PCIC-szószedet az en→es pakli forrását
-  // követi (data/words-open, 600 kártya a korábbi nagy korpusz helyett), ezért a
-  // darabszámok kisebbek (44/35/33 helyett 30/30/26); a szószedet-kártyák és a
-  // sorrend változatlan.
-  it('a ser-estar pakli első kártyái bájtra a korábbiak (rögzített minta a változtatás előttről)', () => {
+  // PLAN-fb1001 16. lépés (Kálmán "b" döntése): a spanyol szó-pakli csak a tábla szavaiból
+  // épül, ezért a korábbi rögzített minták (ser-estar 30 kártya, glossary::boda...) helyett az
+  // invariáns: a kártyák egyike sem szószedet-only szó, és a számok a küszöb alatt vannak.
+  it('a ser-estar, gustar, clases-de-palabras paklija már nem tartalmaz szószedet-only szót', () => {
     const cards = wordCellsForLesson(lessonFor('es', 'ser-estar'));
-    expect(cards).toHaveLength(30);
-    expect(cards.slice(0, 3)).toEqual([
-      { id: 'glossary::boda', es: 'boda', en: 'wedding' },
-      { id: 'glossary::fiesta', es: 'fiesta', en: 'party' },
-      { id: 'glossary::fuego', es: 'fuego', en: 'fire' },
-    ]);
-    expect(wordCellsForLesson(lessonFor('es', 'gustar'))).toHaveLength(30);
-    expect(wordCellsForLesson(lessonFor('es', 'clases-de-palabras'))).toHaveLength(26);
+    expect(cards.some((c) => c.id === 'glossary::boda' || c.id === 'glossary::fiesta')).toBe(false);
+    expect(cards.length).toBeLessThan(WORD_DECK_MIN_CARDS);
+    expect(wordCellsForLesson(lessonFor('es', 'gustar')).length).toBeLessThan(WORD_DECK_MIN_CARDS);
+    expect(wordCellsForLesson(lessonFor('es', 'clases-de-palabras')).length).toBeLessThan(WORD_DECK_MIN_CARDS);
   });
 });
+
