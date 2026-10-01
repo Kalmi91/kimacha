@@ -1,4 +1,4 @@
-import { Modal, Pressable, View, StyleSheet } from 'react-native';
+import { Modal, Pressable, ScrollView, View, StyleSheet } from 'react-native';
 import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
@@ -63,6 +63,9 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
             sorok közti üres terület ne zárja be a lapot (mint az overlay). */}
         <Pressable style={[styles.sheet, { backgroundColor: colors.card }, g.brutal && [styles.brutalSheet, { borderColor: g.ink }]]} onPress={() => {}}>
           <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{title}</Text>
+          {/* 4. lépés: négy szint + négy vizsga-sor nem fér egy rövid telefonra, ezért a sorok görgethetők
+              (a cím fent marad, a lap legfeljebb a képernyő 90%-a). */}
+          <ScrollView showsVerticalScrollIndicator={false}>
           {levels.map((lvl) => {
             const total = pcicItemsForViewLevel(lvl).length;
             const { introduced } = levelProgressView(cards, lvl, total);
@@ -94,6 +97,7 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
             );
           })}
           {onPlacement && <PlacementEntry onPress={onPlacement} />}
+          </ScrollView>
         </Pressable>
       </Pressable>
     </Modal>
@@ -111,6 +115,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     padding: 20,
     paddingBottom: 32,
+    maxHeight: '90%',
   },
   // NY19: brutalista lap: sarok 0, felső 2,5 px ink vonal.
   brutalSheet: { borderTopLeftRadius: 0, borderTopRightRadius: 0, borderTopWidth: 2.5 },
