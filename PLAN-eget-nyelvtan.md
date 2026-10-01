@@ -169,7 +169,10 @@ A „BRIEF új lecke (2026-10-01 …)” érvényes, a munkahely helyett ez a wo
   - minta: `Cuando llegué, el tren ya ___.` → había salido
   - minta: `Nosotros ya ___ cuando ellos llegaron.` → habíamos cenado
   - minta: `hacer` + `vosotros` → habíais hecho
-- [ ] B5. `indefinidos` (A2 full) új lecke → kész, ha: ugyanaz
+- [x] B5. `indefinidos` (A2 full) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): indefinidos lesson (nyelvtan)` (01:17; audit 0 P1/0 P2, jest 1618 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform (nem igeidős téma); glossary: alguno, alguna, ninguno, ninguna; megj.: a GRAMMAR_TIER szerint `indefinidos` = core, nem full, a kódhoz nem nyúltam)
+  - minta: `¿Quieres ___ de beber?` → algo
+  - minta: `No veo a ___ en la calle.` → nadie
+  - minta: `¿Hay mesas libres? No hay ___.` → ninguna (nem: ninguno)
 - [ ] B6. `gerundio-participio-construcciones` (B2 exam) új lecke → kész, ha: ugyanaz
 - [ ] B7. `lo-neutro` (B2 exam) új lecke → kész, ha: ugyanaz
 - [ ] B8. `pasiva-ser-participio` (B2 exam) új lecke → kész, ha: ugyanaz
