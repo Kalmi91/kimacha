@@ -26,7 +26,7 @@ const mockExam = [
       { left: 'el agua', right: 'the water' },
     ],
   },
-  { kind: 'sent_order', skill: 'words', itemId: 'o6', prompt: 'I eat at home.', answerTokens: ['yo', 'como', 'en', 'casa'], distractors: ['tú', 'comes'] },
+  { kind: 'sent_order', skill: 'words', itemId: 'o6', prompt: 'I eat at home.', answerTokens: ['yo', 'como', 'en', 'casa'], sentence: 'Yo como en casa.', distractors: ['tú', 'comes'] },
   { kind: 'sent_type', skill: 'words', itemId: 'o7', prompt: 'We live here.', answer: 'Vivimos aquí.' },
   { kind: 'gap_mc', skill: 'grammar', topicId: 'presente-regular', sentence: 'Yo ___ español.', options: ['hablo', 'hablas', 'habla'], correctIndex: 0 },
   {
@@ -185,6 +185,17 @@ describe('szintvizsga képernyő (A1)', () => {
     expect(screen.getByTestId('exam-counter').props.children).toBe('Question 1 / 6');
     await press(screen, 'exam-next');
     expect(screen.getByTestId('exam-counter').props.children).toBe('Question 2 / 6');
+  });
+
+  it('hibás mondat-összerakásnál a helyes mondat az eredeti alakjában látszik (nagybetű, írásjel)', async () => {
+    await seed();
+    const screen = render(<ExamScreen />);
+    await flush();
+    await press(screen, 'exam-start');
+    await solve.word(screen, true);
+    await solve.match(screen, true);
+    await solve.tiles(screen, false);
+    expect(screen.getByTestId('exam-correct-answer').props.children).toBe('Yo como en casa.');
   });
 
   it('a "nem tudom" hibásnak számít és mutatja a helyeset', async () => {
