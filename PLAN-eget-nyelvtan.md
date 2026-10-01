@@ -132,7 +132,10 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (választós): «Hoy trabajo ___ mi compañero, porque está enfermo.» → por / para
   - minta (form): row[0] «Perdí las llaves y, ___, empezó a llover.» → para colmo
   - minta (form): row[0] «Rompí un vaso, pero ___.» → no es para tanto
-- [ ] 9. `se-impersonal-pasiva` (B1 exam) új lecke → kész, ha: ugyanaz
+- [x] 9. `se-impersonal-pasiva` (B1 exam) új lecke → kész, ha: ugyanaz · 02:25 · audit 0/0, jest 1670 ok, tsc 0, lint 0 err · 12 választós + 1 match (6 pár) + 12 form (tábla `se-impersonal-formas`, row[0] = lyukas helyzet-mondat az ige szótári alakjával zárójelben, cella = a se + igealak: se habla, se venden, se prohíbe, se necesitan…) + 7 why (3 szabály-név 4 közül: személytelen se / szenvedő se / a + személy / se puede + főnévi igenév); a body 5 szabálypont (személytelen, pasiva refleja egyeztetés, a + személy, felirat/hirdetés/tiltás, se puede + no se sorrend), 3 contrast-pár; syllabus-sor és sáv (exam) már megvolt (nem nyúltam hozzá), nincs glossary, nincs transform (nem igeidős téma); es.ts-ben a condicionales-tipo1 után, a por-para-avanzado előtt (syllabus-sorrend); teszt: speakNoSpanish 51→52; a speak jelölő-, szám-, zárójel- és spanyol-szó-mentes; a `sirve` (servir) a choice-itemben nem felismert alak, ezért ott preparar; a form-sorok csak szótári alakból gyártanak · hash: a `feat(grammar): se-impersonal-pasiva lesson (nyelvtan)` commit
+  - minta (választós): «En esta tienda ___ zapatos baratos.» → se venden / se vende
+  - minta (választós): «En clase ___ el móvil.» → no se usa / se no usa / no usa se
+  - minta (form): row[0] «En México ___ (hablar) español.» → se habla
 - …és a probe szerinti folytatás: D `ojala-quizas`, `gerundio-participio-construcciones`, `lo-neutro`, `pasiva-ser-participio`, `subjuntivo-perfecto`, `futuro-condicional-perfecto`, `leismo-laismo`, `probabilidad-con-tiempos`, `relativos-complejos`; E `indefinidos`, `perifrasis`, `pluscuamperfecto`, `relativos`, `concesivas`.
 
 Napközbenre (kód vagy nem nyelvtan, Feedback sheet 2026-10-01 00:20, üres F oszlop, FB428-438; FB397-427 a PR #57-ben kész, de az F oszlopuk üres):
