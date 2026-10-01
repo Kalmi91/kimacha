@@ -189,7 +189,10 @@ A „BRIEF új lecke (2026-10-01 …)” érvényes, a munkahely helyett ez a wo
   - minta: `No creo que Ana ya ___ llegado.` → haya (nem: ha)
   - minta: `Ojalá ___ (yo) estudiado más antes del examen.` → hubiera (nem: haya)
   - minta: `hacer` + `vosotros` → hayáis hecho
-- [ ] B10. `concesivas` (B2 full) új lecke → kész, ha: ugyanaz
+- [x] B10. `concesivas` (B2 full) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): concesivas lesson (nyelvtan)` (02:15; audit 0 P1/0 P2, jest 1683 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform (nem igeidős téma); glossary nincs; megj.: a GRAMMAR_TIER szerint `concesivas` = exam, nem full, a kódhoz nem nyúltam)
+  - minta: `Aunque ___ tarde mañana, el jefe nos esperará.` → lleguemos (nem: llegamos)
+  - minta: `A pesar ___ ruido, mi hija duerme muy bien.` → del (nem: de el)
+  - minta: `Aunque ___ (tener, ella) dos años, ya habla mucho.` → tiene
 - [ ] B11. `futuro-condicional-perfecto` (C1 exam) új lecke → kész, ha: ugyanaz
 - [ ] B12. `leismo-laismo` (C1 exam) új lecke → kész, ha: ugyanaz
 - [ ] B13. `probabilidad-con-tiempos` (C1 exam) új lecke → kész, ha: ugyanaz
