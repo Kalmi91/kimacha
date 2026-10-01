@@ -17,7 +17,7 @@ import { setPcicTarget, pcicItemsForLevel, PCIC_LEVELS, type PcicTarget, type Pc
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { validateBackupPayload } from '@/lib/backup';
 import { validateMistakesPayload } from '@/lib/mistakes/format';
-import { seedA1ExamState } from '@/lib/exam/devSeed';
+import { seedExamState } from '@/lib/exam/devSeed';
 import {
   DEFAULT_WEEKLY_GOAL_MINUTES,
   MIN_WEEKLY_GOAL_MINUTES,
@@ -328,14 +328,14 @@ export default function SettingsScreen() {
   const handleResetGrammar = () =>
     confirmReset(s.settings.resetGrammarTitle, s.settings.resetGrammarMessage, () => getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY));
 
-  // PLAN-vizsga A. szakasz 2. lépés (8. követelmény): csak __DEV__-ben látszó sor; beállít egy A1
-  // állapotot (a szint kártyáinak 85%-a graduált + egy A1 lecke kész), hogy a vizsga végigkattintható legyen.
+  // PLAN-vizsga A. szakasz 2. és 4. lépés (8. követelmény): csak __DEV__-ben látszó sor; beállítja a vizsga
+  // állapotát (A1-B2: a szint kártyáinak 85%-a graduált + a megírt leckék készek), hogy a vizsga végigkattintható legyen.
   const handleSeedExamA1 = async () => {
     const db = getDb();
     const onboarding = await db.getOnboarding();
     const target = (onboarding?.target as PcicTarget | undefined) ?? 'es';
     setPcicTarget(target);
-    await seedA1ExamState(db, target, localDateString());
+    await seedExamState(db, target, localDateString());
     setExamSeeded(true);
   };
 

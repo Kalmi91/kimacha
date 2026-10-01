@@ -4,7 +4,8 @@
 import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { getDb } from '../../database.web';
-import { a1SeedCards, a1SeedLesson, DEV_SEED_PERCENT, seedA1ExamState } from '../devSeed';
+import { a1SeedCards, a1SeedLesson, DEV_SEED_PERCENT, seedA1ExamState, seedExamState } from '../devSeed';
+import { EXAM_LEVELS } from '../types';
 import { EXAM_UNLOCK_PCT, examStatusFor } from '../unlock';
 
 describe('a1SeedCards', () => {
@@ -39,5 +40,23 @@ describe('seedA1ExamState (memory db)', () => {
 
   it('a lecke, amit késznek jelöl, A1-es és spanyolon a jelen idő', () => {
     expect(a1SeedLesson('es')).toBe('presente-regular');
+  });
+});
+
+describe('seedExamState (4. lépés: mind a négy szint)', () => {
+  it('a beállítás után az A1, A2, B1 és B2 vizsga is nyitva van, és kétszer lefuttatva is ugyanaz', async () => {
+    const db = getDb();
+    setPcicTarget('es');
+    await db.resetPcicCards();
+    await db.resetGameProgress(GRAMMAR_PROGRESS_KEY);
+    await seedExamState(db, 'es', '2026-10-01');
+    await seedExamState(db, 'es', '2026-10-01');
+    const cards = await db.getPcicCards();
+    const rows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
+    for (const level of EXAM_LEVELS) {
+      const status = examStatusFor(level, 'es', cards, rows);
+      expect(status).toMatchObject({ level, unlocked: true, lessonDone: true, missing: 0 });
+      expect(status.learned).toBeGreaterThanOrEqual(status.needed);
+    }
   });
 });
