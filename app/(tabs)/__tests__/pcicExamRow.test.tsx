@@ -43,6 +43,14 @@ const flush = async (times = 8) => {
   }
 };
 
+// A lap bezárul, és csak a kilépő animáció után (SHEET_CLOSE_MS) lép tovább a navigáció.
+const afterSheetClose = async () => {
+  await act(async () => {
+    jest.advanceTimersByTime(600);
+  });
+  await flush();
+};
+
 const openSheet = async () => {
   const screen = render(<PcicScreen />);
   await flush();
@@ -53,6 +61,7 @@ const openSheet = async () => {
 
 describe('Tanulófül: A1 vizsga-sor a szint-választó lapon', () => {
   beforeEach(async () => {
+    jest.useFakeTimers();
     mockPush.mockClear();
     setPcicTarget('es');
     await getDb().setOnboarding('en', 'es');
@@ -61,14 +70,18 @@ describe('Tanulófül: A1 vizsga-sor a szint-választó lapon', () => {
     await getDb().resetGameProgress(EXAM_PROGRESS_KEY);
     await getDb().setPcicLevel('A1');
   });
+  afterEach(() => jest.useRealTimers());
 
   it('haladás nélkül zárva: 0 / 120 szó, és koppintásra nem indul vizsga', async () => {
     const screen = await openSheet();
     expect(screen.getByTestId('exam-row-words').props.children).toBe('0 / 120 words learned, 120 to go');
     expect(screen.getByText(/Finish one A1 grammar lesson/)).toBeTruthy();
 
+    // "Practice words": a lap bezárul (az A1 pakli marad), vizsga nem indul.
     fireEvent.press(screen.getByTestId('exam-row-A1'));
     await flush();
+    expect(screen.queryByTestId('exam-row-A1')).toBeNull();
+    await afterSheetClose();
     expect(mockPush).not.toHaveBeenCalled();
   });
 
@@ -93,6 +106,11 @@ describe('Tanulófül: A1 vizsga-sor a szint-választó lapon', () => {
 
     fireEvent.press(screen.getByTestId('exam-row-A1'));
     await flush();
+    // A lap ELŐBB bezárul, a navigáció csak utána jön (különben a lap a vizsga fölött marad).
+    expect(screen.queryByTestId('exam-row-A1')).toBeNull();
+    expect(mockPush).not.toHaveBeenCalled();
+    await afterSheetClose();
+    expect(mockPush).toHaveBeenCalledTimes(1);
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/exam', params: { level: 'A1' } });
     expect(screen.queryByTestId('exam-row-A1')).toBeNull();
   });
@@ -112,6 +130,9 @@ describe('Tanulófül: A1 vizsga-sor a szint-választó lapon', () => {
 
     fireEvent.press(screen.getByTestId('exam-row-A1'));
     await flush();
+    expect(screen.queryByTestId('exam-row-A1')).toBeNull();
+    expect(mockPush).not.toHaveBeenCalled();
+    await afterSheetClose();
     expect(mockPush).toHaveBeenCalledWith('/(tabs)/course');
   });
 });

@@ -18,7 +18,8 @@ export type ExamItem =
   // Párosítás: bal = célnyelvi szó, jobb = kiinduló nyelvi jelentés.
   | { kind: 'match'; skill: 'words'; itemIds: string[]; pairs: { left: string; right: string }[] }
   // Mondat-összerakás: a prompt a kiinduló nyelvű mondat, a csempék a célnyelviek.
-  | { kind: 'sent_order'; skill: 'words'; itemId: string; prompt: string; answerTokens: string[]; distractors: string[] }
+  // `sentence` az eredeti célnyelvi mondat (nagybetűvel, írásjellel): a hibás válasz után ezt mutatja.
+  | { kind: 'sent_order'; skill: 'words'; itemId: string; prompt: string; answerTokens: string[]; sentence: string; distractors: string[] }
   // Mondat-beírás: a prompt a kiinduló nyelvű mondat, a válasz a célnyelvi.
   | { kind: 'sent_type'; skill: 'words'; itemId: string; prompt: string; answer: string }
   // Nyelvtan: lyukas mondat 3 válasszal, egy kész szint-lecke tételeiből.

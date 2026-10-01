@@ -105,6 +105,16 @@ describe('buildExam: az A1 vizsga felépítése (en→es)', () => {
     }
   });
 
+  it('az összerakós tétel az eredeti mondatot is viszi (nagybetű, írásjel), a csempék ennek a szavai', () => {
+    const orders = exam.filter((i): i is Extract<ExamItem, { kind: 'sent_order' }> => i.kind === 'sent_order');
+    expect(orders.length).toBeGreaterThan(0);
+    for (const o of orders) {
+      const owner = byId.get(o.itemId) as PcicItem;
+      expect(o.sentence).toBe(owner.exampleEs);
+      expect(tileWords(o.sentence)).toEqual(o.answerTokens);
+    }
+  });
+
   it('a nyelvtani tételek csak a kész leckékből jönnek, 3 válasszal és érvényes jó indexszel', () => {
     const gaps = exam.filter((i): i is Extract<ExamItem, { kind: 'gap_mc' }> => i.kind === 'gap_mc');
     expect(gaps.length).toBeGreaterThan(0);

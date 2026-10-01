@@ -46,6 +46,9 @@ import { resolvedTensesFromLessons, type ResolvedTense } from '@/lib/knownSenten
 import { INITIAL_CADENCE, nextSentenceStep, type CadenceState, type SentenceCardData } from '@/lib/sentenceCards';
 import { examStatusFor, type ExamLevelStatus } from '@/lib/exam/unlock';
 
+// A szint-választó lap bezáródásának ideje (a RN-web Modal 250 ms-os kilépő animációja, ami kb. 100 ms késéssel indul, + tartalék).
+const SHEET_CLOSE_MS = 500;
+
 // PLAN-pcic 5. lépés: a PCIC fül. Angol -> spanyol gépelés, Anki-gombokkal
 // (again/hard/good/easy), az önálló SM-2 ütemezőn (lib/sm2.ts, 4. lépés).
 // Nem a FSRS `cards`/`sessionQueue` ütemezőt használja, azt nem érinti.
@@ -219,18 +222,19 @@ export default function PcicScreen() {
 
   // PLAN-vizsga A. szakasz 2. lépés (A1 a): a vizsga-sor három útja: indul a vizsga, a hiányzó
   // szavak gyakorlása (az A1 pakli), vagy a nyelvtani leckék (ha csak a lecke hiányzik).
+  // A lap ELŐBB bezárul, és csak a kilépő animáció (web: 250 ms) után lépünk tovább: ha a push
+  // azonnal háttérbe teszi ezt a képernyőt, a Modal kilépése nem fejeződik be, és a lap az új
+  // képernyő fölött marad.
+  const closeSheetThen = (go: () => void) => {
+    setLevelSheetOpen(false);
+    setTimeout(go, SHEET_CLOSE_MS);
+  };
   const examRow = examA1
     ? {
         status: examA1,
-        onStart: () => {
-          setLevelSheetOpen(false);
-          router.push({ pathname: '/exam', params: { level: examA1.level } });
-        },
+        onStart: () => closeSheetThen(() => router.push({ pathname: '/exam', params: { level: examA1.level } })),
         onPractice: () => handleSelectLevel(examA1.level),
-        onGrammar: () => {
-          setLevelSheetOpen(false);
-          router.push('/(tabs)/course');
-        },
+        onGrammar: () => closeSheetThen(() => router.push('/(tabs)/course')),
       }
     : undefined;
 

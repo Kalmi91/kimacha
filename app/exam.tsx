@@ -68,7 +68,7 @@ function ExamItemView({ item, source, onDone }: { item: ExamItem; source: Source
         />
       );
     case 'sent_order':
-      return <ExamTilesCard prompt={item.prompt} answerTokens={item.answerTokens} distractors={item.distractors} onDone={onDone} />;
+      return <ExamTilesCard prompt={item.prompt} answerTokens={item.answerTokens} sentence={item.sentence} distractors={item.distractors} onDone={onDone} />;
     case 'match':
       return <ExamMatchCard pairs={item.pairs} onDone={onDone} />;
     case 'gap_mc':
