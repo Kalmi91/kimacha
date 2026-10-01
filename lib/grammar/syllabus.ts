@@ -112,6 +112,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   perifrasis: 'exam',
   'por-para-avanzado': 'exam',
   'verbos-preposicion': 'exam',
+  'estar-participio': 'exam',
   // --- B2 ---
   'subjuntivo-imperfecto': 'core',
   'subjuntivo-perfecto': 'exam',
@@ -560,6 +561,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'b1-estructuras',
     title: { hu: 'Igék állandó elöljáróval', en: 'Verbs with fixed prepositions', es: 'Verbos con preposición', de: 'Verben mit fester Präposition' },
     blurb: { hu: 'Pensar en, soñar con, depender de: az ige dönti el az elöljárót.', en: 'Pensar en, soñar con, depender de: the verb decides the preposition.', es: 'Pensar en, soñar con, depender de: el verbo decide la preposición.', de: 'Pensar en, soñar con, depender de: das Verb bestimmt die Präposition.' },
+  },
+  {
+    id: 'estar-participio',
+    level: 'B1',
+    unit: 'b1-estructuras',
+    title: { hu: 'Estar + participio: az eredmény állapota', en: 'Estar + participle: the resulting state', es: 'Estar + participio: el estado como resultado', de: 'Estar + Partizip: der Zustand als Ergebnis' },
+    blurb: { hu: 'La puerta está abierta: az eredmény állapota, a participio egyezik az alannyal.', en: 'La puerta está abierta: the resulting state, with the participle agreeing with the subject.', es: 'La puerta está abierta: el estado como resultado, con el participio concordando con el sujeto.', de: 'La puerta está abierta: der Zustand als Ergebnis, das Partizip passt sich dem Subjekt an.' },
   },
   // ========================= B2 =========================
   {
