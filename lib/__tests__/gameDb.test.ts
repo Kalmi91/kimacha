@@ -20,6 +20,14 @@ describe('game_progress (memory db)', () => {
     );
   });
 
+  it('resetGameProgress clears one game only (PLAN-fb1001 FB431)', async () => {
+    await db.setGameProgress('grammar-x', 'a', 'done');
+    await db.setGameProgress('other-x', 'b', 'done');
+    await db.resetGameProgress('grammar-x');
+    expect(await db.getGameProgress('grammar-x')).toEqual([]);
+    expect(await db.getGameProgress('other-x')).toHaveLength(1);
+  });
+
   it('survives an export/import round-trip', async () => {
     await db.setGameProgress('chat', 'coche-usado', 'done', { checklist: 6 });
 
