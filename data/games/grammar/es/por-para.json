@@ -144,8 +144,8 @@
             "de": "Por drückt auch einen Austausch oder einen Preis aus: wie viel, was man dafür gibt."
           },
           "examples": [
-            { "es": "Compro esta camisa por diez euros.", "tr": { "hu": "Ezt az inget tíz euróért veszem meg.", "en": "I'm buying this shirt for ten euros.", "es": "Compro esta camisa por diez euros.", "de": "Ich kaufe dieses Hemd für zehn Euro." } },
-            { "es": "Cambio mi coche por tu bicicleta.", "tr": { "hu": "Elcserélem a kocsimat a biciklidre.", "en": "I'll trade my car for your bike.", "es": "Cambio mi coche por tu bicicleta.", "de": "Ich tausche mein Auto gegen dein Fahrrad." } }
+            { "es": "Compro esta camisa por cien pesos.", "tr": { "hu": "Ezt az inget száz pesóért veszem meg.", "en": "I'm buying this shirt for a hundred pesos.", "es": "Compro esta camisa por cien pesos.", "de": "Ich kaufe dieses Hemd für hundert Pesos." } },
+            { "es": "Cambio mi carro por tu bicicleta.", "tr": { "hu": "Elcserélem a kocsimat a biciklidre.", "en": "I'll trade my car for your bike.", "es": "Cambio mi carro por tu bicicleta.", "de": "Ich tausche mein Auto gegen dein Fahrrad." } }
           ]
         },
         {
@@ -201,17 +201,17 @@
       ],
       "rows": [
         ["___, ¿me pasas la sal?", "Por favor"],
-        ["¿Vienes a la fiesta? ¡___!", "¡Por supuesto!"],
+        ["¿Vienes a la fiesta? ¡___!", "Por supuesto"],
         ["___ llegó el camión.", "Por fin"],
         ["Te quiero ___.", "para siempre"],
         ["Tengo sueño, ___ me voy a dormir.", "por eso"],
         ["¿___ sirve esto?", "Para qué"],
-        ["Te llamo ___.", "por teléfono"],
-        ["Trabajo ___.", "por la mañana"],
-        ["___, está bien.", "Para mí"],
-        ["El trabajo es ___.", "para mañana"],
-        ["___, llueve mucho hoy.", "Por cierto"],
-        ["___, el español es fácil de aprender.", "Por ejemplo"]
+        ["Te llamo ___, no te escribo.", "por teléfono"],
+        ["Trabajo ___; por la tarde estudio.", "por la mañana"],
+        ["___, está bien, pero otros dicen que no.", "Para mí"],
+        ["La tarea es ___.", "para mañana"],
+        ["___, ¿sabes que llueve mucho hoy?", "Por cierto"],
+        ["Me gustan los idiomas, ___ el francés.", "Por ejemplo"]
       ]
     },
     {
@@ -264,6 +264,17 @@
     "es": "Dos palabras pequeñas suenan casi igual, pero significan cosas distintas. Una apunta hacia una meta o un destinatario. La otra, en cambio, expresa una causa, un medio o una ruta. Un intercambio o un precio siempre es la segunda. Una fecha límite o tu opinión, en cambio, siempre es la primera. Si dudas, pregúntate: ¿por qué? esa es la segunda, ¿para qué o para quién? esa es la primera.",
     "de": "Zwei kleine Wörter klingen fast gleich und bedeuten doch Verschiedenes. Das eine zeigt auf ein Ziel oder einen Empfänger. Das andere dagegen drückt eine Ursache, ein Mittel oder einen Weg aus. Ein Tausch oder ein Preis ist immer das zweite. Eine Frist oder deine Meinung ist dagegen immer das erste. Wenn du unsicher bist, frage dich: warum? das ist das zweite, wofür oder für wen? das ist das erste."
   },
+  "glossary": [
+    {
+      "word": "peso",
+      "gloss": {
+        "hu": "peso (mexikói pénznem)",
+        "en": "peso (Mexican currency)",
+        "es": "el peso (moneda mexicana)",
+        "de": "Peso (mexikanische Währung)"
+      }
+    }
+  ],
   "items": [
     {
       "id": "pp-01",
@@ -288,7 +299,7 @@
     },
     {
       "id": "pp-02",
-      "sentence": "Este regalo es ___ ti.",
+      "sentence": "Toma, este regalo es ___ ti.",
       "options": ["para", "por"],
       "correct": 0,
       "why": {
@@ -299,10 +310,10 @@
       },
       "wrong": {
         "por": {
-          "hu": "A por ezt jelentené: helyetted vagy miattad kaptam ezt az ajándékot; itt viszont azt fejezzük ki, kinek szól, ezért helyes: Este regalo es para ti.",
-          "en": "Por would mean I got this gift on your behalf or because of you; here we're expressing who it's for, so the correct form is: Este regalo es para ti.",
-          "es": "Por significaría que recibí este regalo en tu lugar o por tu culpa; aquí expresamos para quién es, así que lo correcto es: Este regalo es para ti.",
-          "de": "Por würde bedeuten, ich hätte dieses Geschenk an deiner Stelle oder deinetwegen bekommen; hier drücken wir aus, für wen es ist, deshalb ist richtig: Este regalo es para ti."
+          "hu": "A por ezt jelentené: helyetted vagy miattad kaptam ezt az ajándékot; itt viszont azt fejezzük ki, kinek szól, ezért helyes: Toma, este regalo es para ti.",
+          "en": "Por would mean I got this gift on your behalf or because of you; here we're expressing who it's for, so the correct form is: Toma, este regalo es para ti.",
+          "es": "Por significaría que recibí este regalo en tu lugar o por tu culpa; aquí expresamos para quién es, así que lo correcto es: Toma, este regalo es para ti.",
+          "de": "Por würde bedeuten, ich hätte dieses Geschenk an deiner Stelle oder deinetwegen bekommen; hier drücken wir aus, für wen es ist, deshalb ist richtig: Toma, este regalo es para ti."
         }
       },
       "examples": ["Este libro es para mi hermana.", "Compro flores para mi madre."]
@@ -330,7 +341,7 @@
     },
     {
       "id": "pp-04",
-      "sentence": "Voy a México ___ dos semanas.",
+      "sentence": "Estuve en México ___ dos semanas.",
       "options": ["por", "para"],
       "correct": 0,
       "why": {
@@ -341,17 +352,17 @@
       },
       "wrong": {
         "para": {
-          "hu": "A para ezt jelentené: két hét a HATÁRIDŐ, mikorra kész kell lennem; itt viszont az IDŐTARTAM a lényeg, ezért helyes: Voy a México por dos semanas.",
-          "en": "Para would mean two weeks is a DEADLINE, by when something must be done; here the point is DURATION, so the correct form is: Voy a México por dos semanas.",
-          "es": "Para significaría que dos semanas es un PLAZO, para cuándo debe estar listo algo; aquí lo importante es la DURACIÓN, así que lo correcto es: Voy a México por dos semanas.",
-          "de": "Para würde bedeuten, zwei Wochen seien eine FRIST, bis wann etwas fertig sein muss; hier geht es aber um die DAUER, deshalb ist richtig: Voy a México por dos semanas."
+          "hu": "A para ezt jelentené: két hét a HATÁRIDŐ, mikorra kész kell lennem; itt viszont az IDŐTARTAM a lényeg, ezért helyes: Estuve en México por dos semanas.",
+          "en": "Para would mean two weeks is a DEADLINE, by when something must be done; here the point is DURATION, so the correct form is: Estuve en México por dos semanas.",
+          "es": "Para significaría que dos semanas es un PLAZO, para cuándo debe estar listo algo; aquí lo importante es la DURACIÓN, así que lo correcto es: Estuve en México por dos semanas.",
+          "de": "Para würde bedeuten, zwei Wochen seien eine FRIST, bis wann etwas fertig sein muss; hier geht es aber um die DAUER, deshalb ist richtig: Estuve en México por dos semanas."
         }
       },
       "examples": ["Vivo en España por un año.", "Esperamos por una hora."]
     },
     {
       "id": "pp-05",
-      "sentence": "Compro esta camisa ___ diez euros.",
+      "sentence": "Compro esta camisa ___ cien pesos.",
       "options": ["por", "para"],
       "correct": 0,
       "why": {
@@ -362,13 +373,13 @@
       },
       "wrong": {
         "para": {
-          "hu": "A para ezt jelentené: az ing valakinek SZÁNT ajándék tíz euróért; itt viszont a CSERE, az ár a lényeg, ezért helyes: Compro esta camisa por diez euros.",
-          "en": "Para would mean the shirt is intended as a gift worth ten euros; here the point is the EXCHANGE, the price, so the correct form is: Compro esta camisa por diez euros.",
-          "es": "Para significaría que la camisa está destinada a alguien y vale diez euros; aquí lo importante es el INTERCAMBIO, el precio, así que lo correcto es: Compro esta camisa por diez euros.",
-          "de": "Para würde bedeuten, das Hemd sei für jemanden bestimmt und zehn Euro wert; hier geht es aber um den AUSTAUSCH, den Preis, deshalb ist richtig: Compro esta camisa por diez euros."
+          "hu": "A para ezt jelentené: az ing valakinek SZÁNT ajándék száz pesóért; itt viszont a CSERE, az ár a lényeg, ezért helyes: Compro esta camisa por cien pesos.",
+          "en": "Para would mean the shirt is intended as a gift worth a hundred pesos; here the point is the EXCHANGE, the price, so the correct form is: Compro esta camisa por cien pesos.",
+          "es": "Para significaría que la camisa está destinada a alguien y vale cien pesos; aquí lo importante es el INTERCAMBIO, el precio, así que lo correcto es: Compro esta camisa por cien pesos.",
+          "de": "Para würde bedeuten, das Hemd sei für jemanden bestimmt und hundert Pesos wert; hier geht es aber um den AUSTAUSCH, den Preis, deshalb ist richtig: Compro esta camisa por cien pesos."
         }
       },
-      "examples": ["Compro un libro por diez euros.", "Compro pan por dos euros."]
+      "examples": ["Compro un libro por cien pesos.", "Compro pan por veinte pesos."]
     },
     {
       "id": "pp-06",
@@ -393,7 +404,7 @@
     },
     {
       "id": "pp-07",
-      "sentence": "Caminamos ___ el parque.",
+      "sentence": "Paseamos ___ el parque.",
       "options": ["por", "para"],
       "correct": 0,
       "why": {
@@ -404,10 +415,10 @@
       },
       "wrong": {
         "para": {
-          "hu": "A para ezt jelentené: a park egy cél FELÉ tartunk, mintha a park lenne az úti célunk; itt viszont a helyen KERESZTÜLi mozgás a lényeg, ezért helyes: Caminamos por el parque.",
-          "en": "Para would mean we're heading TOWARD the park, as if the park were our destination; here the point is movement THROUGH the place, so the correct form is: Caminamos por el parque.",
-          "es": "Para significaría que vamos HACIA el parque, como si el parque fuera nuestro destino; aquí lo importante es el movimiento A TRAVÉS del lugar, así que lo correcto es: Caminamos por el parque.",
-          "de": "Para würde bedeuten, wir gingen AUF den Park ZU, als wäre der Park unser Ziel; hier geht es aber um die Bewegung DURCH den Ort, deshalb ist richtig: Caminamos por el parque."
+          "hu": "A para ezt jelentené: a park egy cél FELÉ tartunk, mintha a park lenne az úti célunk; itt viszont a helyen KERESZTÜLi mozgás a lényeg, ezért helyes: Paseamos por el parque.",
+          "en": "Para would mean we're heading TOWARD the park, as if the park were our destination; here the point is movement THROUGH the place, so the correct form is: Paseamos por el parque.",
+          "es": "Para significaría que vamos HACIA el parque, como si el parque fuera nuestro destino; aquí lo importante es el movimiento A TRAVÉS del lugar, así que lo correcto es: Paseamos por el parque.",
+          "de": "Para würde bedeuten, wir gingen AUF den Park ZU, als wäre der Park unser Ziel; hier geht es aber um die Bewegung DURCH den Ort, deshalb ist richtig: Paseamos por el parque."
         }
       },
       "examples": ["Voy a pasar por tu casa.", "Vamos a pasar por el parque."]
@@ -530,17 +541,17 @@
       ]
     },
     { "id": "pp-form-01", "kind": "form", "verb": "expresión", "person": "___, ¿me pasas la sal?", "answer": "Por favor", "table": "por-para" },
-    { "id": "pp-form-02", "kind": "form", "verb": "expresión", "person": "¿Vienes a la fiesta? ¡___!", "answer": "¡Por supuesto!", "table": "por-para" },
+    { "id": "pp-form-02", "kind": "form", "verb": "expresión", "person": "¿Vienes a la fiesta? ¡___!", "answer": "Por supuesto", "table": "por-para" },
     { "id": "pp-form-03", "kind": "form", "verb": "expresión", "person": "___ llegó el camión.", "answer": "Por fin", "table": "por-para" },
     { "id": "pp-form-04", "kind": "form", "verb": "expresión", "person": "Te quiero ___.", "answer": "para siempre", "table": "por-para" },
     { "id": "pp-form-05", "kind": "form", "verb": "expresión", "person": "Tengo sueño, ___ me voy a dormir.", "answer": "por eso", "table": "por-para" },
     { "id": "pp-form-06", "kind": "form", "verb": "expresión", "person": "¿___ sirve esto?", "answer": "Para qué", "table": "por-para" },
-    { "id": "pp-form-07", "kind": "form", "verb": "expresión", "person": "Te llamo ___.", "answer": "por teléfono", "table": "por-para" },
-    { "id": "pp-form-08", "kind": "form", "verb": "expresión", "person": "Trabajo ___.", "answer": "por la mañana", "table": "por-para" },
-    { "id": "pp-form-09", "kind": "form", "verb": "expresión", "person": "___, está bien.", "answer": "Para mí", "table": "por-para" },
-    { "id": "pp-form-10", "kind": "form", "verb": "expresión", "person": "El trabajo es ___.", "answer": "para mañana", "table": "por-para" },
-    { "id": "pp-form-11", "kind": "form", "verb": "expresión", "person": "___, llueve mucho hoy.", "answer": "Por cierto", "table": "por-para" },
-    { "id": "pp-form-12", "kind": "form", "verb": "expresión", "person": "___, el español es fácil de aprender.", "answer": "Por ejemplo", "table": "por-para" },
+    { "id": "pp-form-07", "kind": "form", "verb": "expresión", "person": "Te llamo ___, no te escribo.", "answer": "por teléfono", "table": "por-para" },
+    { "id": "pp-form-08", "kind": "form", "verb": "expresión", "person": "Trabajo ___; por la tarde estudio.", "answer": "por la mañana", "table": "por-para" },
+    { "id": "pp-form-09", "kind": "form", "verb": "expresión", "person": "___, está bien, pero otros dicen que no.", "answer": "Para mí", "table": "por-para" },
+    { "id": "pp-form-10", "kind": "form", "verb": "expresión", "person": "La tarea es ___.", "answer": "para mañana", "table": "por-para" },
+    { "id": "pp-form-11", "kind": "form", "verb": "expresión", "person": "___, ¿sabes que llueve mucho hoy?", "answer": "Por cierto", "table": "por-para" },
+    { "id": "pp-form-12", "kind": "form", "verb": "expresión", "person": "Me gustan los idiomas, ___ el francés.", "answer": "Por ejemplo", "table": "por-para" },
     {
       "kind": "why",
       "id": "pp-why-01",
@@ -631,9 +642,9 @@
     {
       "kind": "why",
       "id": "pp-why-04",
-      "es": "Compro esta camisa por diez euros.",
-      "target": "por diez euros",
-      "tr": { "hu": "Ezt az inget tíz euróért veszem meg.", "en": "I'm buying this shirt for ten euros.", "es": "Compro esta camisa por diez euros.", "de": "Ich kaufe dieses Hemd für zehn Euro." },
+      "es": "Compro esta camisa por cien pesos.",
+      "target": "por cien pesos",
+      "tr": { "hu": "Ezt az inget száz pesóért veszem meg.", "en": "I'm buying this shirt for a hundred pesos.", "es": "Compro esta camisa por cien pesos.", "de": "Ich kaufe dieses Hemd für hundert Pesos." },
       "options": [
         { "text": { "hu": "csere, ár (por)", "en": "exchange, price (por)", "es": "intercambio, precio (por)", "de": "Austausch, Preis (por)" } },
         {
