@@ -181,7 +181,10 @@ A „BRIEF új lecke (2026-10-01 …)” érvényes, a munkahely helyett ez a wo
   - minta: `Para mí, ___ más importante es la familia.` → lo (nem: el, la)
   - minta: `Mira ___ que son tus hijos.` → lo grandes (nem: lo grande)
   - minta: `No sabes ___ (bien) canta mi hermana.` → lo bien que
-- [ ] B8. `pasiva-ser-participio` (B2 exam) új lecke → kész, ha: ugyanaz
+- [x] B8. `pasiva-ser-participio` (B2 exam) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): pasiva-ser-participio lesson (nyelvtan)` (01:50; audit 0 P1/0 P2, jest 1657 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform (nem igeidős téma); glossary nincs)
+  - minta: `La casa fue ___ por mi abuelo.` → construida (nem: construido)
+  - minta: `Las fotos ___ tomadas por mi hermano.` → fueron (nem: fue)
+  - minta: `Antes, los niños ___ (llevar) al colegio por su tío.` → eran llevados
 - [ ] B9. `subjuntivo-perfecto` (B2 exam, SUBJ) új lecke → kész, ha: ugyanaz
 - [ ] B10. `concesivas` (B2 full) új lecke → kész, ha: ugyanaz
 - [ ] B11. `futuro-condicional-perfecto` (C1 exam) új lecke → kész, ha: ugyanaz
