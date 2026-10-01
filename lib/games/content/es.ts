@@ -54,6 +54,7 @@ import grammarEsIndefinido10Verbos from '@/data/games/grammar/es/indefinido-10-v
 import grammarEsImperfecto from '@/data/games/grammar/es/imperfecto.json';
 import grammarEsIndefinidoImperfecto from '@/data/games/grammar/es/indefinido-imperfecto.json';
 import grammarEsPerfecto from '@/data/games/grammar/es/perfecto.json';
+import grammarEsPerfectoVsIndefinido from '@/data/games/grammar/es/perfecto-vs-indefinido.json';
 import grammarEsFuturoSimple from '@/data/games/grammar/es/futuro-simple.json';
 import grammarEsMarcadoresTemporales from '@/data/games/grammar/es/marcadores-temporales.json';
 import grammarEsDemostrativos from '@/data/games/grammar/es/demostrativos.json';
@@ -111,6 +112,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsImperfecto,
     grammarEsIndefinidoImperfecto,
     grammarEsPerfecto,
+    grammarEsPerfectoVsIndefinido,
     grammarEsEstarGerundio,
     grammarEsFuturoSimple,
     grammarEsMarcadoresTemporales,

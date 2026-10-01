@@ -83,6 +83,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   // Mexikóban a beszélt nyelv a pretéritót használja a perfecto helyett
   // (comí, nem he comido), ezért nem a beszéd-magban van. Kálmán, 2026-09-15.
   perfecto: 'exam',
+  'perfecto-vs-indefinido': 'exam',
   'estar-gerundio': 'core-plus',
   'futuro-simple': 'exam',
   'marcadores-temporales': 'core-plus',
@@ -358,6 +359,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'a2-pasado',
     title: { hu: 'Közelmúlt (pretérito perfecto)', en: 'The present perfect', es: 'El pretérito perfecto compuesto', de: 'Das Perfekt' },
     blurb: { hu: 'He comido: ma, esta semana, todavía no.', en: 'He comido: today, this week, not yet.', es: 'He comido: hoy, esta semana, todavía no.', de: 'He comido: heute, diese Woche, noch nicht.' },
+  },
+  {
+    id: 'perfecto-vs-indefinido',
+    level: 'A2',
+    unit: 'a2-pasado',
+    title: { hu: 'Perfecto vagy indefinido?', en: 'Present perfect or preterite?', es: '¿Pretérito perfecto o indefinido?', de: 'Perfekt oder Indefinido?' },
+    blurb: { hu: 'Ayer comí, esta semana he comido: lezárt idő vagy még tartó idő.', en: 'Ayer comí, esta semana he comido: closed time or time that is still going.', es: 'Ayer comí, esta semana he comido: tiempo cerrado o tiempo abierto.', de: 'Ayer comí, esta semana he comido: abgeschlossene oder noch laufende Zeit.' },
   },
   {
     id: 'estar-gerundio',
