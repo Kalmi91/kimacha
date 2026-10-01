@@ -343,6 +343,8 @@ export default {
     resetConfirmTitle: 'Reset progress',
     resetConfirmMessage: 'This clears all PCIC progress. Are you sure?',
     resetConfirmYes: 'Reset',
+    // PLAN-fb1001 K1: a Beállítások sor, a nullázódó szint nevével.
+    resetRow: (level: string) => `🗑️ Reset progress (${level})`,
     undo: 'Undo',
     dontLearn: "Don't learn this",
     // PLAN-play 12. lépés (s3): "Add to spelling" gomb Check után.
