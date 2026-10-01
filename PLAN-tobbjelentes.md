@@ -14,7 +14,7 @@ Jóváhagyott minta: https://claude.ai/artifact/BW7QfMboUhRby7DyZNL6WQ (4. verzi
 - [x] 6. (12:30) Régi adat leltára (csak olvasás): ki használja a `data/words/{a0..c2}.json`, `data/words/hu/**` és `data/pcic/**` fájlokat → kész, ha: a lista megvan, az orkesztrátor döntött a törlési körről
 - [ ] 7. (KÜLÖN PR, Kálmán döntésére vár: a régi spanyol szavakra épül a nyelvtan, a játékok, a helyesírás és a Kurzus fül) Régi adat kidobása + a ráépülő kód kivétele → kész, ha: a 3. lépés kapuja zöld
 - [x] 8. (13:18) Web-build képernyőkép mindkét irányban (néma felolvasással) → kész, ha: egyezik a mintával
-- [~] 9. (az 1-6. és 8. lépés PR-je) Kapu + push + PR → kész, ha: PR nyitva; merge Kálmán szavára
+- [x] 9. (13:24, PR #66, az 1-6. és 8. lépés) Kapu + push + PR → kész, ha: PR nyitva; merge Kálmán szavára
 
 ## Kálmán döntései (szó szerint, 2026-10-01)
 
@@ -509,3 +509,4 @@ A kapu szabályonként kiírja a hibák számát és az első 5 példát, hibán
 - 12:30 6. lépés (leltár, Explore): a régi spanyol data/words/*.json-ra épül: data/pcic.ts legacy ág, lib/grammar (tenseGate, tableDeck, lessonTypes, syllabus), app/spelling.tsx, lib/games (content, gloss), components/games/GlossText, components/grammar/GrammarDrill, app/(tabs)/course.tsx és settings.tsx, lib/mixedSpeech, lib/pcicPos. data/pcic/**: a Learn fül (index.tsx, pcicNotes, pcicSenses, PcicRevealedAnswer). data/words/hu/**: csak scriptek. A 7. lépés ezért döntés: Kálmántól kérdezve 12:33.
 - 13:18 8. lépés: web-build (worktree, --clear) mindkét irányban: en→es A1 #2 „to be” alatt „I am at home now.”, a feliz kártyán „also: contento”; es→en A0 „buenas noches” alatt „Llego a la fiesta: buenas noches a todos.”. A minta szerint néz ki.
 - 13:25 hint-átnézés (37a8bdc): 258 kártya, 23 javítva (en track), a [?] tételek az ügynök jelentésében: #9021, #5886, #7829, #5637/#5641, words-open #2 és #281.
+- 13:24 PR https://github.com/Kalmi91/kimacha/pull/66 nyitva (rebase origin/main 5e02a64-re, kapu zöld: jest 2071, typecheck 0, lint 0 hiba); merge Kálmán szavára. A 7. lépés külön ágon, a döntése után.
