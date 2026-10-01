@@ -23,9 +23,6 @@ const es: Strings = {
     // PLAN-fb1001 K4: a válasz-beírómező szürke placeholdere, a célnyelv nevével.
     typeIn: (lang: string): string => (lang === 'es' ? 'Escribe en español' : 'Escribe en inglés'),
   },
-  buttons: {
-    spelling: 'Ortografía',
-  },
   done: {
     streak: 'días seguidos',
   },
@@ -150,7 +147,6 @@ const es: Strings = {
     missingVoice: (langs: string) => `⚠️ No hay voz instalada para: ${langs}. Descárgala en los ajustes de texto a voz del teléfono; hasta entonces la app se queda en silencio en ese idioma.`,
     dailyNewLimit: 'Palabras nuevas al día',
     dailyNewLimitWords: (n: string) => `${n} palabras / día`,
-    spellingPractice: (due: number, total: number) => `Práctica de ortografía · ${due} pendientes, ${total} en la lista`,
     strictAccents: 'Los acentos cuentan',
     strictAccentsHint: 'Un acento que falta (á, é, ñ) cuenta como error al escribir.',
     articlePicker: 'Botones de artículo',
@@ -220,11 +216,6 @@ const es: Strings = {
     openSubtitlesUrl: 'https://opus.nlpl.eu',
     licenseLabel: 'creativecommons.org/licenses/by-sa/4.0',
     licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0',
-  },
-  spelling: {
-    title: 'Práctica de Ortografía',
-    empty: 'No hay palabras pendientes',
-    totalInList: (n: number) => `${n} palabras en tu lista`,
   },
   feedback: {
     button: 'Comentarios',
@@ -325,8 +316,6 @@ const es: Strings = {
     resetConfirmLevel: (level: string) => `Esto borra todo el progreso del mazo ${level}. ¿Estás seguro?`,
     undo: 'Deshacer',
     dontLearn: 'No aprender esto',
-    addToSpelling: '✎ Añadir a ortografía',
-    inSpellingList: '✓ En la lista de ortografía',
     learningStep: (step: number, total: number) => `paso ${step}/${total}`,
     newBadge: 'nueva',
     moreNew: (n: number) => `+${n} palabras nuevas`,
