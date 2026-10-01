@@ -692,37 +692,6 @@
       ]
     },
     {
-      "id": "dem-12",
-      "kind": "mark",
-      "sentence": "Aquel niño lee un libro.",
-      "target": "noun",
-      "answer": "niño",
-      "why": {
-        "hu": "A niño FŐNÉV: az a személy, akiről a mondat szól. Az aquel csak megmutatja, melyik gyerekről van szó.",
-        "en": "Niño is the NOUN: the person the sentence is about. Aquel only points at which child you mean.",
-        "es": "Niño es el SUSTANTIVO: la persona de la que habla la frase. Aquel solo señala cuál niño.",
-        "de": "Niño ist das NOMEN: die Person, um die es geht. Aquel zeigt nur, welches Kind gemeint ist."
-      },
-      "wrong": {
-        "Aquel": {
-          "hu": "Ha erre koppintasz, az aquel szót jelölöd meg, de az MUTATÓ NÉVMÁS, nem főnév: nem nevez meg dolgot, csak rámutat; a keresett FŐNÉV az a személy, akiről a mondat szól: niño.",
-          "en": "Tapping here marks aquel, but that is a DEMONSTRATIVE, not a noun: it does not name a thing, it points at one; the NOUN you are looking for is the person the sentence is about: niño.",
-          "es": "Si tocas aquí, marcas aquel, pero eso es un DEMOSTRATIVO, no un sustantivo: no nombra la cosa, la señala; el SUSTANTIVO buscado es la persona de la que habla la frase: niño.",
-          "de": "Tippst du hier, markierst du aquel, aber das ist ein DEMONSTRATIVUM, kein Nomen: Es benennt nichts, es zeigt darauf; das gesuchte NOMEN ist die Person, um die es geht: niño."
-        },
-        "lee": {
-          "hu": "Ha erre koppintasz, a lee szót jelölöd meg, de az IGE, a cselekvés maga; a keresett FŐNÉV az, aki csinálja: niño.",
-          "en": "Tapping here marks lee, but that is the VERB, the action itself; the NOUN you are looking for is the one doing it: niño.",
-          "es": "Si tocas aquí, marcas lee, pero eso es el VERBO, la acción misma; el SUSTANTIVO buscado es quien la hace: niño.",
-          "de": "Tippst du hier, markierst du lee, aber das ist das VERB, die Handlung selbst; das gesuchte NOMEN ist der, der sie tut: niño."
-        }
-      },
-      "examples": [
-        "Este hombre trabaja aquí.",
-        "Esa mujer es profesora."
-      ]
-    },
-    {
       "id": "dem-match-01",
       "kind": "match",
       "pairs": [
