@@ -1,0 +1,1550 @@
+{
+  "schema": 2,
+  "topic": "se-accidental",
+  "level": "B1",
+  "title": {
+    "hu": "Se me olvidó: a véletlen \"se\"",
+    "en": "Se me olvidó: the accidental se",
+    "es": "Se involuntario: se me olvidó, se me cayó",
+    "de": "Se me olvidó: das unbeabsichtigte se"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A hétköznapi kis balszerencsét spanyolul gyakran úgy mondják, mintha a dolog magától történt volna veled: Se me cayó el vaso (kiesett a kezemből a pohár), Se me olvidó la llave (kiment a fejemből a kulcs). A szerkezet: se + me / te / le / nos / les + az ige harmadik személyben + a dolog. A dolog az alany, az ige hozzá igazodik (cayó / cayeron), a személyt csak a névmás jelöli, pont mint a gustar-nál. A se azt jelzi, hogy ez nem szándékos volt, és nem a te tervedből jött. Mexikóban ez a mindennapi beszéd egyik alapszerkezete, ezért érteni és mondani is kell.",
+        "en": "In everyday Spanish, small bits of bad luck are often told as if the thing simply happened to you: Se me cayó el vaso (the glass slipped out of my hands), Se me olvidó la llave (the key slipped my mind). The pattern: se + me / te / le / nos / les + the verb in the third person + the thing. The thing is the subject and the verb agrees with it (cayó / cayeron); the person is shown only by the pronoun, just as with gustar. The se says that it was not on purpose and not part of your plan. In Mexico this is one of the basic patterns of everyday speech, so you need to understand it and use it.",
+        "es": "Los pequeños contratiempos de cada día se dicen a menudo como si la cosa hubiera pasado sola: Se me cayó el vaso, Se me olvidó la llave. La estructura: se + me / te / le / nos / les + el verbo en tercera persona + la cosa. La cosa es el sujeto y el verbo concuerda con ella (cayó / cayeron); la persona solo la marca el pronombre, igual que con gustar. El se dice que no fue a propósito y que no estaba en tus planes. En México es una de las estructuras básicas de la conversación diaria, así que hay que entenderla y usarla.",
+        "de": "Kleine Missgeschicke sagt man im Spanischen oft so, als wäre die Sache von allein passiert: Se me cayó el vaso (das Glas ist mir aus der Hand gefallen), Se me olvidó la llave (der Schlüssel ist mir entfallen). Der Bau: se + me / te / le / nos / les + das Verb in der dritten Person + die Sache. Die Sache ist das Subjekt, und das Verb richtet sich nach ihr (cayó / cayeron); die Person zeigt nur das Pronomen, genau wie bei gustar. Das se sagt, dass es nicht absichtlich war und nicht zu deinem Plan gehörte. In Mexiko ist das einer der Grundbausteine der Alltagssprache, du musst es also verstehen und benutzen."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Nyolc gyakori eset",
+        "en": "Eight common cases",
+        "es": "Ocho casos frecuentes",
+        "de": "Acht häufige Fälle"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Olvidar: elfelejteni, kiesni a fejből. Az elfelejtett dolog az alany: olvidó / olvidaron.",
+            "en": "Olvidar: to forget, to slip someone's mind. The forgotten thing is the subject: olvidó / olvidaron.",
+            "es": "Olvidar: dejar de recordar algo. Lo olvidado es el sujeto: olvidó / olvidaron.",
+            "de": "Olvidar: vergessen, einem entfallen. Die vergessene Sache ist das Subjekt: olvidó / olvidaron."
+          },
+          "examples": [
+            {
+              "es": "Se me olvidó la llave.",
+              "tr": {
+                "hu": "Elfelejtettem a kulcsot.",
+                "en": "I forgot the key.",
+                "es": "Se me olvidó la llave.",
+                "de": "Ich habe den Schlüssel vergessen."
+              }
+            },
+            {
+              "es": "A mis padres se les olvidó la cita.",
+              "tr": {
+                "hu": "A szüleim elfelejtették a megbeszélt időpontot.",
+                "en": "My parents forgot the appointment.",
+                "es": "A mis padres se les olvidó la cita.",
+                "de": "Meine Eltern haben den Termin vergessen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Caer: leesni, kiesni a kezedből. A leeső dolog az alany: cayó / cayeron.",
+            "en": "Caer: to fall, to slip out of your hands. The thing that falls is the subject: cayó / cayeron.",
+            "es": "Caer: bajar de golpe al suelo, escaparse de las manos. La cosa que cae es el sujeto: cayó / cayeron.",
+            "de": "Caer: fallen, einem aus der Hand rutschen. Die Sache, die fällt, ist das Subjekt: cayó / cayeron."
+          },
+          "examples": [
+            {
+              "es": "Se me cayó el vaso.",
+              "tr": {
+                "hu": "Kiesett a kezemből a pohár.",
+                "en": "The glass slipped out of my hands.",
+                "es": "Se me cayó el vaso.",
+                "de": "Das Glas ist mir aus der Hand gefallen."
+              }
+            },
+            {
+              "es": "Se me cayeron los platos.",
+              "tr": {
+                "hu": "Kiestek a kezemből a tányérok.",
+                "en": "The plates slipped out of my hands.",
+                "es": "Se me cayeron los platos.",
+                "de": "Die Teller sind mir aus der Hand gefallen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Perder: elveszni, elkallódni nálad. Az elveszett dolog az alany: perdió / perdieron.",
+            "en": "Perder: to get lost, to go missing on you. The lost thing is the subject: perdió / perdieron.",
+            "es": "Perder: extraviarse algo que era tuyo. La cosa perdida es el sujeto: perdió / perdieron.",
+            "de": "Perder: verloren gehen, bei dir abhandenkommen. Die verlorene Sache ist das Subjekt: perdió / perdieron."
+          },
+          "examples": [
+            {
+              "es": "Se me perdió la cartera.",
+              "tr": {
+                "hu": "Elveszett a pénztárcám.",
+                "en": "My wallet got lost.",
+                "es": "Se me perdió la cartera.",
+                "de": "Meine Brieftasche ist verloren gegangen."
+              }
+            },
+            {
+              "es": "Se nos perdieron las maletas.",
+              "tr": {
+                "hu": "Elkallódtak a bőröndjeink.",
+                "en": "Our suitcases got lost.",
+                "es": "Se nos perdieron las maletas.",
+                "de": "Unsere Koffer sind verloren gegangen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Romper: eltörni, tönkremenni nálad. A tönkrement dolog az alany: rompió / rompieron.",
+            "en": "Romper: to break, to get broken on you. The broken thing is the subject: rompió / rompieron.",
+            "es": "Romper: quebrarse o estropearse algo tuyo. La cosa rota es el sujeto: rompió / rompieron.",
+            "de": "Romper: kaputtgehen, bei dir zerbrechen. Die kaputte Sache ist das Subjekt: rompió / rompieron."
+          },
+          "examples": [
+            {
+              "es": "A mi hermana se le rompió la taza.",
+              "tr": {
+                "hu": "A testvéremnek eltört a csészéje.",
+                "en": "My sister's cup broke.",
+                "es": "A mi hermana se le rompió la taza.",
+                "de": "Meiner Schwester ist die Tasse kaputtgegangen."
+              }
+            },
+            {
+              "es": "Se me rompió el espejo.",
+              "tr": {
+                "hu": "Összetört a tükröm.",
+                "en": "My mirror broke.",
+                "es": "Se me rompió el espejo.",
+                "de": "Mein Spiegel ist kaputtgegangen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Acabar: elfogyni, kifogyni valamiből. Ami elfogyott, az az alany: acabó / acabaron.",
+            "en": "Acabar: to run out of something. What ran out is the subject: acabó / acabaron.",
+            "es": "Acabar: terminarse algo que se tenía. Lo que se terminó es el sujeto: acabó / acabaron.",
+            "de": "Acabar: ausgehen, einem ausgehen. Was ausgegangen ist, ist das Subjekt: acabó / acabaron."
+          },
+          "examples": [
+            {
+              "es": "Se nos acabó la leche.",
+              "tr": {
+                "hu": "Elfogyott a tejünk.",
+                "en": "We ran out of milk.",
+                "es": "Se nos acabó la leche.",
+                "de": "Uns ist die Milch ausgegangen."
+              }
+            },
+            {
+              "es": "Se me acabó la batería.",
+              "tr": {
+                "hu": "Lemerült az akkumulátorom.",
+                "en": "My battery ran out.",
+                "es": "Se me acabó la batería.",
+                "de": "Mein Akku ist leer."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Quedar: valahol maradni, otthon maradni. A hátrahagyott dolog az alany: quedó / quedaron.",
+            "en": "Quedar: to be left behind somewhere. The thing left behind is the subject: quedó / quedaron.",
+            "es": "Quedar: quedarse algo en un lugar. La cosa que se queda es el sujeto: quedó / quedaron.",
+            "de": "Quedar: irgendwo zurückbleiben. Die zurückgelassene Sache ist das Subjekt: quedó / quedaron."
+          },
+          "examples": [
+            {
+              "es": "Se me quedó el teléfono en casa.",
+              "tr": {
+                "hu": "Otthon maradt a telefonom.",
+                "en": "I left my phone at home.",
+                "es": "Se me quedó el teléfono en casa.",
+                "de": "Ich habe mein Telefon zu Hause gelassen."
+              }
+            },
+            {
+              "es": "Se nos quedaron las maletas en el carro.",
+              "tr": {
+                "hu": "Az autóban maradtak a bőröndjeink.",
+                "en": "We left our suitcases in the car.",
+                "es": "Se nos quedaron las maletas en el carro.",
+                "de": "Unsere Koffer sind im Auto geblieben."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Apagar: kikapcsolni; ebben a szerkezetben: magától lekapcsol, kialszik. Ami lekapcsol, az az alany: apagó / apagaron.",
+            "en": "Apagar: to switch off; in this pattern: to go off by itself. What goes off is the subject: apagó / apagaron.",
+            "es": "Apagar: dejar de funcionar; en esta estructura: apagarse solo. Lo que se apaga es el sujeto: apagó / apagaron.",
+            "de": "Apagar: ausschalten; in diesem Bau: sich von allein ausschalten. Was ausgeht, ist das Subjekt: apagó / apagaron."
+          },
+          "examples": [
+            {
+              "es": "Se me apagó el teléfono.",
+              "tr": {
+                "hu": "Lekapcsolt a telefonom.",
+                "en": "My phone turned off.",
+                "es": "Se me apagó el teléfono.",
+                "de": "Mein Telefon hat sich ausgeschaltet."
+              }
+            },
+            {
+              "es": "Se nos apagó la luz.",
+              "tr": {
+                "hu": "Kialudt nálunk a villany.",
+                "en": "Our light went out.",
+                "es": "Se nos apagó la luz.",
+                "de": "Bei uns ist das Licht ausgegangen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Hacerse tarde: későre járni, elkésni, mert elszaladt az idő. Állandósult fordulat, Mexikóban is mindennapi, az ige mindig egyes szám: se me hizo tarde.",
+            "en": "Hacerse tarde: to get late, to run late because time ran away. A fixed phrase, also an everyday one in Mexico, the verb is always singular: se me hizo tarde.",
+            "es": "Hacerse tarde: llegar tarde porque el tiempo pasó rápido. Expresión fija, también de uso diario en México, el verbo va siempre en singular: se me hizo tarde.",
+            "de": "Hacerse tarde: spät dran sein, weil die Zeit verflogen ist. Eine feste Wendung, auch in Mexiko alltäglich, das Verb steht immer im Singular: se me hizo tarde."
+          },
+          "examples": [
+            {
+              "es": "Perdón, se me hizo tarde.",
+              "tr": {
+                "hu": "Bocsánat, későre járt, elkéstem.",
+                "en": "Sorry, I ran late.",
+                "es": "Perdón, se me hizo tarde.",
+                "de": "Entschuldigung, ich bin spät dran."
+              }
+            },
+            {
+              "es": "Se nos hizo tarde en la escuela.",
+              "tr": {
+                "hu": "Későre járt nálunk az iskolában.",
+                "en": "We ran late at school.",
+                "es": "Se nos hizo tarde en la escuela.",
+                "de": "Wir sind in der Schule spät dran gewesen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Ami mindegyikre igaz",
+        "en": "What is true for all of them",
+        "es": "Lo que vale para todos",
+        "de": "Was für alle gilt"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A dolog az alany, az ige a dologhoz igazodik: egy dolognál egyes szám (perdió), több dolognál többes szám (perdieron). A személy nem az ige végén látszik, hanem a névmáson: nem \"se me perdí\", hanem se me perdió.",
+            "en": "The thing is the subject and the verb agrees with it: singular for one thing (perdió), plural for several things (perdieron). The person shows in the pronoun, not in the verb ending: not \"se me perdí\", but se me perdió.",
+            "es": "La cosa es el sujeto y el verbo concuerda con ella: singular con una cosa (perdió), plural con varias cosas (perdieron). La persona se ve en el pronombre, no en la terminación del verbo: no \"se me perdí\", sino se me perdió.",
+            "de": "Die Sache ist das Subjekt, und das Verb richtet sich nach ihr: Singular bei einer Sache (perdió), Plural bei mehreren Sachen (perdieron). Die Person zeigt sich im Pronomen, nicht in der Verbendung: nicht \"se me perdí\", sondern se me perdió."
+          },
+          "examples": [
+            {
+              "es": "Se me perdió la llave.",
+              "tr": {
+                "hu": "Elveszett a kulcsom.",
+                "en": "My key got lost.",
+                "es": "Se me perdió la llave.",
+                "de": "Mein Schlüssel ist verloren gegangen."
+              }
+            },
+            {
+              "es": "Se me perdieron las llaves.",
+              "tr": {
+                "hu": "Elvesztek a kulcsaim.",
+                "en": "My keys got lost.",
+                "es": "Se me perdieron las llaves.",
+                "de": "Meine Schlüssel sind verloren gegangen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A névmás: me, te, le, nos, les. Mexikóban a többes szám második személy is ustedes, ezért az os nincs, helyette les áll. Az \"a + személy\" megmondja, ki az a le / les (a Ana, a mis padres), vagy hangsúlyt ad (a mí, a ti), de a névmás ilyenkor sem marad el.",
+            "en": "The pronoun: me, te, le, nos, les. In Mexico the plural \"you\" is also ustedes, so os is not used and les stands in its place. \"a + person\" says who le / les is (a Ana, a mis padres), or adds emphasis (a mí, a ti), but the pronoun stays even then.",
+            "es": "El pronombre: me, te, le, nos, les. En México el plural de \"tú\" también es ustedes, por eso no se usa os y en su lugar va les. \"a + persona\" dice quién es le / les (a Ana, a mis padres), o da énfasis (a mí, a ti), pero el pronombre se queda también entonces.",
+            "de": "Das Pronomen: me, te, le, nos, les. In Mexiko ist auch die Mehrzahl von \"du\" ustedes, deshalb wird os nicht benutzt, und es steht les. \"a + Person\" sagt, wer le / les ist (a Ana, a mis padres), oder gibt Nachdruck (a mí, a ti), aber das Pronomen bleibt auch dann."
+          },
+          "examples": [
+            {
+              "es": "A Ana se le cayó el vaso.",
+              "tr": {
+                "hu": "Anának kiesett a kezéből a pohár.",
+                "en": "The glass slipped out of Ana's hands.",
+                "es": "A Ana se le cayó el vaso.",
+                "de": "Ana ist das Glas aus der Hand gefallen."
+              }
+            },
+            {
+              "es": "A mí se me acabó la leche.",
+              "tr": {
+                "hu": "Nekem fogyott el a tej.",
+                "en": "I ran out of milk.",
+                "es": "A mí se me acabó la leche.",
+                "de": "Mir ist die Milch ausgegangen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A sorrend mindig se + névmás: se me, se te, se le, se nos, se les. A \"me se cayó\" és a \"te se perdió\" hibás.",
+            "en": "The order is always se + pronoun: se me, se te, se le, se nos, se les. \"me se cayó\" and \"te se perdió\" are wrong.",
+            "es": "El orden es siempre se + pronombre: se me, se te, se le, se nos, se les. \"me se cayó\" y \"te se perdió\" son incorrectos.",
+            "de": "Die Reihenfolge ist immer se + Pronomen: se me, se te, se le, se nos, se les. \"me se cayó\" und \"te se perdió\" sind falsch."
+          },
+          "examples": [
+            {
+              "es": "Se me cayó el café.",
+              "tr": {
+                "hu": "Leesett a kávém.",
+                "en": "I dropped my coffee.",
+                "es": "Se me cayó el café.",
+                "de": "Mir ist mein Kaffee heruntergefallen."
+              }
+            },
+            {
+              "es": "Se te olvidó la cita.",
+              "tr": {
+                "hu": "Elfelejtetted a megbeszélt időpontot.",
+                "en": "You forgot the appointment.",
+                "es": "Se te olvidó la cita.",
+                "de": "Du hast den Termin vergessen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Szándékos tettet nem mondasz így: amit te csinálsz, azt alanyos mondattal mondod. A se-s mondat a nem tervezett dologról szól.",
+            "en": "You do not say a deliberate act this way: what you do yourself is said with a normal sentence with a subject. The se sentence is about the thing you did not plan.",
+            "es": "Un acto deliberado no se dice así: lo que haces tú se dice con una frase normal con sujeto. La frase con se habla de lo que no estaba planeado.",
+            "de": "Eine absichtliche Handlung sagt man nicht so: was du selbst tust, sagst du mit einem normalen Satz mit Subjekt. Der se-Satz handelt von dem, was nicht geplant war."
+          },
+          "examples": [
+            {
+              "es": "Cerré la puerta.",
+              "tr": {
+                "hu": "Becsuktam az ajtót.",
+                "en": "I closed the door.",
+                "es": "Cerré la puerta.",
+                "de": "Ich habe die Tür geschlossen."
+              }
+            },
+            {
+              "es": "Se me cerró la puerta.",
+              "tr": {
+                "hu": "Becsukódott az ajtó, nem akartam.",
+                "en": "The door closed on me.",
+                "es": "Se me cerró la puerta.",
+                "de": "Die Tür ist mir zugefallen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "se-accidental-resumen",
+      "title": {
+        "hu": "A hét ige egy pillantásra",
+        "en": "The seven verbs at a glance",
+        "es": "Los siete verbos de un vistazo",
+        "de": "Die sieben Verben auf einen Blick"
+      },
+      "header": [
+        {
+          "hu": "ige",
+          "en": "verb",
+          "es": "verbo",
+          "de": "Verb"
+        },
+        {
+          "hu": "egy dolog / több dolog",
+          "en": "one thing / several things",
+          "es": "una cosa / varias cosas",
+          "de": "eine Sache / mehrere Sachen"
+        },
+        {
+          "hu": "példa",
+          "en": "example",
+          "es": "ejemplo",
+          "de": "Beispiel"
+        }
+      ],
+      "rows": [
+        [
+          "olvidar",
+          "se me olvidó / se me olvidaron",
+          "Se me olvidó la llave."
+        ],
+        [
+          "caer",
+          "se me cayó / se me cayeron",
+          "Se me cayó el vaso."
+        ],
+        [
+          "perder",
+          "se me perdió / se me perdieron",
+          "Se me perdió la cartera."
+        ],
+        [
+          "romper",
+          "se me rompió / se me rompieron",
+          "Se me rompió el espejo."
+        ],
+        [
+          "acabar",
+          "se me acabó / se me acabaron",
+          "Se me acabó la leche."
+        ],
+        [
+          "quedar",
+          "se me quedó / se me quedaron",
+          "Se me quedó el teléfono en casa."
+        ],
+        [
+          "apagar",
+          "se me apagó / se me apagaron",
+          "Se me apagó el teléfono."
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Hasonló, mégis más",
+        "en": "Similar, yet different",
+        "es": "Parecido, pero distinto",
+        "de": "Ähnlich, aber anders"
+      },
+      "pairs": [
+        {
+          "a": "olvidé la llave",
+          "b": "se me olvidó la llave",
+          "note": {
+            "hu": "Mindkettő helyes. Az elsőben te vagy az alany: én felejtettem el. A másodikban a kulcs az alany, és kiment a fejedből: kevésbé terhel rád felelősséget, és a mexikói beszédben gyakori.",
+            "en": "Both are correct. In the first you are the subject: I forgot. In the second the key is the subject and it slipped your mind: it puts less blame on you, and it is common in Mexican speech.",
+            "es": "Las dos son correctas. En la primera el sujeto eres tú: yo olvidé. En la segunda el sujeto es la llave y se te fue de la cabeza: carga menos la culpa en ti, y es la forma habitual en el habla mexicana.",
+            "de": "Beide sind richtig. Im ersten bist du das Subjekt: ich habe vergessen. Im zweiten ist der Schlüssel das Subjekt und er ist dir entfallen: es legt weniger Schuld auf dich, und es ist in der mexikanischen Umgangssprache gebräuchlich."
+          },
+          "examples": [
+            {
+              "es": "Olvidé la llave.",
+              "tr": {
+                "hu": "Elfelejtettem a kulcsot.",
+                "en": "I forgot the key.",
+                "es": "Olvidé la llave.",
+                "de": "Ich habe den Schlüssel vergessen."
+              }
+            },
+            {
+              "es": "Se me olvidó la llave.",
+              "tr": {
+                "hu": "Kiment a fejemből a kulcs.",
+                "en": "The key slipped my mind.",
+                "es": "Se me olvidó la llave.",
+                "de": "Der Schlüssel ist mir entfallen."
+              }
+            }
+          ]
+        },
+        {
+          "a": "se me cayó",
+          "b": "se me cayeron",
+          "note": {
+            "hu": "Mindkettő azt mondja, hogy kiesett a kezedből valami, de a dolog száma dönt: egy dolog → cayó, több dolog → cayeron.",
+            "en": "Both say that something slipped out of your hands, but the number of the thing decides: one thing → cayó, several things → cayeron.",
+            "es": "Las dos dicen que algo se te cayó de las manos, pero decide el número de la cosa: una cosa → cayó, varias cosas → cayeron.",
+            "de": "Beide sagen, dass dir etwas aus der Hand gefallen ist, aber die Zahl der Sache entscheidet: eine Sache → cayó, mehrere Sachen → cayeron."
+          },
+          "examples": [
+            {
+              "es": "Se me cayó el vaso.",
+              "tr": {
+                "hu": "Kiesett a kezemből a pohár.",
+                "en": "The glass slipped out of my hands.",
+                "es": "Se me cayó el vaso.",
+                "de": "Das Glas ist mir aus der Hand gefallen."
+              }
+            },
+            {
+              "es": "Se me cayeron los vasos.",
+              "tr": {
+                "hu": "Kiestek a kezemből a poharak.",
+                "en": "The glasses slipped out of my hands.",
+                "es": "Se me cayeron los vasos.",
+                "de": "Die Gläser sind mir aus der Hand gefallen."
+              }
+            }
+          ]
+        },
+        {
+          "a": "se le cayó",
+          "b": "se les cayó",
+          "note": {
+            "hu": "A le egy személyt, a les több személyt jelöl, az ige viszont a dologhoz igazodik: több ember, de egy pohár → cayó.",
+            "en": "Le is one person, les is several, but the verb still agrees with the thing: several people, but one glass → cayó.",
+            "es": "Le es una persona y les son varias, pero el verbo concuerda con la cosa: varias personas, pero un vaso → cayó.",
+            "de": "Le ist eine Person, les sind mehrere, aber das Verb richtet sich nach der Sache: mehrere Leute, aber ein Glas → cayó."
+          },
+          "examples": [
+            {
+              "es": "A Ana se le cayó el vaso.",
+              "tr": {
+                "hu": "Anának kiesett a kezéből a pohár.",
+                "en": "The glass slipped out of Ana's hands.",
+                "es": "A Ana se le cayó el vaso.",
+                "de": "Ana ist das Glas aus der Hand gefallen."
+              }
+            },
+            {
+              "es": "A mis hermanos se les cayó el vaso.",
+              "tr": {
+                "hu": "A testvéreimnek kiesett a kezéből a pohár.",
+                "en": "The glass slipped out of my siblings' hands.",
+                "es": "A mis hermanos se les cayó el vaso.",
+                "de": "Meinen Geschwistern ist das Glas aus der Hand gefallen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "se-accidental-formas",
+      "title": {
+        "hu": "Példák: helyzetből se + névmás + ige",
+        "en": "Examples: from the situation to se + pronoun + verb",
+        "es": "Ejemplos: de la situación a se + pronombre + verbo",
+        "de": "Beispiele: von der Situation zu se + Pronomen + Verb"
+      },
+      "header": [
+        {
+          "hu": "mondat",
+          "en": "sentence",
+          "es": "frase",
+          "de": "Satz"
+        },
+        {
+          "hu": "se + névmás + ige",
+          "en": "se + pronoun + verb",
+          "es": "se + pronombre + verbo",
+          "de": "se + Pronomen + Verb"
+        }
+      ],
+      "rows": [
+        [
+          "Ayer, a mí ___ (olvidar) la llave.",
+          "se me olvidó"
+        ],
+        [
+          "Ayer, a ti ___ (caer) el vaso en la cocina.",
+          "se te cayó"
+        ],
+        [
+          "Ayer, a mi hermana ___ (romper) la taza.",
+          "se le rompió"
+        ],
+        [
+          "Ayer, a nosotros ___ (acabar) la leche.",
+          "se nos acabó"
+        ],
+        [
+          "Ayer, a ustedes ___ (perder) las llaves.",
+          "se les perdieron"
+        ],
+        [
+          "Ayer, a mí ___ (caer) los platos.",
+          "se me cayeron"
+        ],
+        [
+          "Ayer, a mis padres ___ (acabar) el dinero.",
+          "se les acabó"
+        ],
+        [
+          "Ayer, a mi hermano ___ (quedar) el teléfono en casa.",
+          "se le quedó"
+        ],
+        [
+          "Ayer, a nosotros ___ (perder) las maletas.",
+          "se nos perdieron"
+        ],
+        [
+          "Ayer, a Ana ___ (perder) la cartera.",
+          "se le perdió"
+        ],
+        [
+          "Ayer, a ti ___ (olvidar) la cita.",
+          "se te olvidó"
+        ],
+        [
+          "Ayer, a ti ___ (apagar) la computadora.",
+          "se te apagó"
+        ]
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ha azt akarod mondani, hogy valami elveszett, elromlott, elfogyott vagy kiesett, keresd meg a mondatban a DOLGOT, és mondd így: se + me / te / le / nos / les + ige a dologhoz igazodva. A sorrend mindig se me, soha nem me se.",
+        "en": "If you want to say that something got lost, broke, ran out or fell, find the THING in the sentence and say: se + me / te / le / nos / les + a verb that agrees with the thing. The order is always se me, never me se.",
+        "es": "Si quieres decir que algo se perdió, se rompió, se acabó o se cayó, busca la COSA en la frase y di: se + me / te / le / nos / les + un verbo que concuerde con la cosa. El orden es siempre se me, nunca me se.",
+        "de": "Wenn du sagen willst, dass etwas verloren ging, kaputtging, ausging oder herunterfiel, suche die SACHE im Satz und sage: se + me / te / le / nos / les + ein Verb, das zur Sache passt. Die Reihenfolge ist immer se me, nie me se."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Néhány kellemetlen apróságot spanyolul úgy mondunk, mintha a dolog magától történt volna velünk: kiesett a pohár, elfelejtettem a kulcsot, elfogyott a tej. A mondat alanya a dolog, az ige hozzá igazodik: egy dolognál egyes számot kap, több dolognál többeset. A személyt egy kis névmás jelöli: nekem, neked, neki, nekünk, nekik, ugyanúgy, mint a tetszik-szerű igéknél. Előtte mindig áll egy se, és ez a se azt jelzi, hogy nem szándékos volt. A sorrend rögzített: először a se, aztán a névmás, soha nem fordítva. Mexikóban a többes szám második személy is a magázó forma, ezért itt is a harmadik személyű névmás áll. Ha viszont a tett a te döntésed volt, akkor a hétköznapi, alanyos mondatot használod.",
+    "en": "Some small mishaps are said in Spanish as if the thing simply happened to us: the glass fell, I forgot the key, the milk ran out. The subject of the sentence is the thing, and the verb agrees with it: singular for one thing, plural for several. The person is shown by a small pronoun: to me, to you, to him or her, to us, to them, just as with the verbs that work like the verb for liking. In front of it there is always a se, and this se says that it was not on purpose. The order is fixed: first the se, then the pronoun, never the other way round. In Mexico the plural you is also the formal form, so the third person pronoun is used here as well. If the act was your own decision, you use the ordinary sentence with a subject.",
+    "es": "Algunos pequeños contratiempos se dicen como si la cosa hubiera pasado sola: se cayó el vaso, se olvidó la llave, se acabó la leche. El sujeto de la frase es la cosa y el verbo concuerda con ella: singular con una cosa, plural con varias. La persona la marca un pequeño pronombre: me, te, le, nos, les, igual que con los verbos que funcionan como gustar. Delante va siempre un se, y este se dice que no fue a propósito. El orden es fijo: primero el se, luego el pronombre, nunca al revés. En México el plural de tú también es ustedes, así que aquí también se usa el pronombre de tercera persona. Si el acto fue decisión tuya, usas la frase normal con sujeto.",
+    "de": "Manche kleinen Missgeschicke sagt man im Spanischen so, als wäre die Sache von allein passiert: das Glas ist gefallen, der Schlüssel ist entfallen, die Milch ist ausgegangen. Das Subjekt des Satzes ist die Sache, und das Verb richtet sich nach ihr: Singular bei einer Sache, Plural bei mehreren. Die Person zeigt ein kleines Pronomen: mir, dir, ihm oder ihr, uns, ihnen, genau wie bei den Verben, die wie das Verb für gefallen funktionieren. Davor steht immer ein se, und dieses se sagt, dass es nicht absichtlich war. Die Reihenfolge ist fest: erst das se, dann das Pronomen, nie umgekehrt. In Mexiko ist auch die Mehrzahl von du die Höflichkeitsform, deshalb steht auch hier das Pronomen der dritten Person. Wenn die Handlung deine eigene Entscheidung war, benutzt du den normalen Satz mit Subjekt."
+  },
+  "glossary": [
+    {
+      "word": "cayó",
+      "gloss": {
+        "hu": "leesett, kiesett",
+        "en": "it fell",
+        "es": "bajó de golpe al suelo",
+        "de": "es fiel"
+      }
+    },
+    {
+      "word": "cayeron",
+      "gloss": {
+        "hu": "leestek, kiestek",
+        "en": "they fell",
+        "es": "bajaron de golpe al suelo",
+        "de": "sie fielen"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "sa-01",
+      "sentence": "Se me ___ el teléfono en el camión.",
+      "options": [
+        "perdió",
+        "perdieron",
+        "perdí"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A(z) \"el teléfono\" (a telefon) egyes számú dolog, és ez az alany, ezért az ige is egyes számú: perdió.",
+        "en": "\"el teléfono\" (the phone) is a single thing, and it is the subject, so the verb is singular too: perdió.",
+        "es": "\"el teléfono\" es una sola cosa y es el sujeto, por eso el verbo también va en singular: perdió.",
+        "de": "\"el teléfono\" (das Telefon) ist eine einzelne Sache und ist das Subjekt, deshalb steht auch das Verb im Singular: perdió."
+      },
+      "wrong": {
+        "perdieron": {
+          "hu": "perdieron: többes szám. Ide nem illik, mert a(z) \"el teléfono\" (a telefon) egy dolog, az ige pedig a dologhoz igazodik. Helyesen: Se me perdió el teléfono en el camión.",
+          "en": "perdieron: plural. It does not fit here, because \"el teléfono\" (the phone) is a single thing, and the verb agrees with the thing. Correct: Se me perdió el teléfono en el camión.",
+          "es": "perdieron: plural. Aquí no encaja, porque \"el teléfono\" es una sola cosa y el verbo concuerda con la cosa. Correcto: Se me perdió el teléfono en el camión.",
+          "de": "perdieron: Plural. Das passt hier nicht, weil \"el teléfono\" (das Telefon) eine einzelne Sache ist und das Verb sich nach der Sache richtet. Richtig: Se me perdió el teléfono en el camión."
+        },
+        "perdí": {
+          "hu": "perdí: \"én\"-alak. Ide nem illik, mert itt a személyt a névmás jelöli, az alany a(z) \"el teléfono\" (a telefon), nem \"én\". Helyesen: Se me perdió el teléfono en el camión.",
+          "en": "perdí: the \"I\" form. It does not fit here, because the person is shown by the pronoun, and the subject is \"el teléfono\" (the phone), not \"I\". Correct: Se me perdió el teléfono en el camión.",
+          "es": "perdí: forma de \"yo\". Aquí no encaja, porque la persona la marca el pronombre y el sujeto es \"el teléfono\", no \"yo\". Correcto: Se me perdió el teléfono en el camión.",
+          "de": "perdí: \"ich\"-Form. Das passt hier nicht, weil die Person durch das Pronomen gezeigt wird und das Subjekt \"el teléfono\" (das Telefon) ist, nicht \"ich\". Richtig: Se me perdió el teléfono en el camión."
+        }
+      },
+      "examples": [
+        "Se me perdió la cartera.",
+        "Se te perdió el libro en la escuela."
+      ]
+    },
+    {
+      "id": "sa-02",
+      "sentence": "Se me ___ los vasos en la cocina.",
+      "options": [
+        "rompió",
+        "rompieron",
+        "rompí"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A(z) \"los vasos\" (a poharak) többes számú dolog, és ez az alany, ezért az ige is többes számú: rompieron.",
+        "en": "\"los vasos\" (the glasses) is a plural thing, and it is the subject, so the verb is plural too: rompieron.",
+        "es": "\"los vasos\" está en plural y es el sujeto, por eso el verbo también va en plural: rompieron.",
+        "de": "\"los vasos\" (die Gläser) steht im Plural und ist das Subjekt, deshalb steht auch das Verb im Plural: rompieron."
+      },
+      "wrong": {
+        "rompió": {
+          "hu": "rompió: egyes szám. Ide nem illik, mert a(z) \"los vasos\" (a poharak) több dolog, az ige pedig a dologhoz igazodik. Helyesen: Se me rompieron los vasos en la cocina.",
+          "en": "rompió: singular. It does not fit here, because \"los vasos\" (the glasses) is plural, and the verb agrees with the thing. Correct: Se me rompieron los vasos en la cocina.",
+          "es": "rompió: singular. Aquí no encaja, porque \"los vasos\" está en plural y el verbo concuerda con la cosa. Correcto: Se me rompieron los vasos en la cocina.",
+          "de": "rompió: Singular. Das passt hier nicht, weil \"los vasos\" (die Gläser) im Plural steht und das Verb sich nach der Sache richtet. Richtig: Se me rompieron los vasos en la cocina."
+        },
+        "rompí": {
+          "hu": "rompí: \"én\"-alak. Ide nem illik, mert itt a személyt a névmás jelöli, az alany a(z) \"los vasos\" (a poharak), nem \"én\". Helyesen: Se me rompieron los vasos en la cocina.",
+          "en": "rompí: the \"I\" form. It does not fit here, because the person is shown by the pronoun, and the subject is \"los vasos\" (the glasses), not \"I\". Correct: Se me rompieron los vasos en la cocina.",
+          "es": "rompí: forma de \"yo\". Aquí no encaja, porque la persona la marca el pronombre y el sujeto es \"los vasos\", no \"yo\". Correcto: Se me rompieron los vasos en la cocina.",
+          "de": "rompí: \"ich\"-Form. Das passt hier nicht, weil die Person durch das Pronomen gezeigt wird und das Subjekt \"los vasos\" (die Gläser) ist, nicht \"ich\". Richtig: Se me rompieron los vasos en la cocina."
+        }
+      },
+      "examples": [
+        "Se me rompieron los zapatos.",
+        "Se nos rompieron dos vasos."
+      ]
+    },
+    {
+      "id": "sa-03",
+      "sentence": "A Ana se ___ rompió la taza.",
+      "options": [
+        "les",
+        "le",
+        "me"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az \"a Ana\" egy személy, ezért egyes számú névmás kell: le.",
+        "en": "\"a Ana\" is one person, so a singular pronoun is needed: le.",
+        "es": "\"a Ana\" es una persona, por eso hace falta un pronombre en singular: le.",
+        "de": "\"a Ana\" ist eine Person, deshalb braucht es ein Pronomen im Singular: le."
+      },
+      "wrong": {
+        "les": {
+          "hu": "les: többes szám. Ide nem illik, mert Ana egy személy, a les pedig több személyt jelöl. Helyesen: A Ana se le rompió la taza.",
+          "en": "les: plural. It does not fit here, because Ana is one person, and les means several people. Correct: A Ana se le rompió la taza.",
+          "es": "les: plural. Aquí no encaja, porque Ana es una persona y les son varias. Correcto: A Ana se le rompió la taza.",
+          "de": "les: Plural. Das passt hier nicht, weil Ana eine Person ist und les mehrere Personen meint. Richtig: A Ana se le rompió la taza."
+        },
+        "me": {
+          "hu": "me: a \"nekem\" névmása. Ide nem illik, mert a mondat Anáról szól (a Ana), nem rólam. Helyesen: A Ana se le rompió la taza.",
+          "en": "me: the pronoun for \"I\". It does not fit here, because the sentence is about Ana (a Ana), not about me. Correct: A Ana se le rompió la taza.",
+          "es": "me: el pronombre de \"yo\". Aquí no encaja, porque la frase habla de Ana (a Ana), no de mí. Correcto: A Ana se le rompió la taza.",
+          "de": "me: das Pronomen für \"ich\". Das passt hier nicht, weil der Satz von Ana handelt (a Ana), nicht von mir. Richtig: A Ana se le rompió la taza."
+        }
+      },
+      "examples": [
+        "A mi hermana se le cayó el teléfono.",
+        "A Carlos se le olvidó la tarea."
+      ]
+    },
+    {
+      "id": "sa-04",
+      "sentence": "A Carlos y a mí se ___ olvidó la cita.",
+      "options": [
+        "te",
+        "me",
+        "nos"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Carlos és én, vagyis mi vagyunk: a névmás nos.",
+        "en": "Carlos and I, that is \"we\": the pronoun is nos.",
+        "es": "Carlos y yo, es decir nosotros: el pronombre es nos.",
+        "de": "Carlos und ich, das heißt \"wir\": das Pronomen ist nos."
+      },
+      "wrong": {
+        "te": {
+          "hu": "te: a \"neked\" névmása. Ide nem illik, mert a mondat Carlosról és rólam szól, nem rólad. Helyesen: A Carlos y a mí se nos olvidó la cita.",
+          "en": "te: the pronoun for \"you\". It does not fit here, because the sentence is about Carlos and me, not about you. Correct: A Carlos y a mí se nos olvidó la cita.",
+          "es": "te: el pronombre de \"tú\". Aquí no encaja, porque la frase habla de Carlos y de mí, no de ti. Correcto: A Carlos y a mí se nos olvidó la cita.",
+          "de": "te: das Pronomen für \"du\". Das passt hier nicht, weil der Satz von Carlos und mir handelt, nicht von dir. Richtig: A Carlos y a mí se nos olvidó la cita."
+        },
+        "me": {
+          "hu": "me: csak egy személy, \"nekem\". Ide nem illik, mert Carlos és én ketten vagyunk, vagyis mi: nos. Helyesen: A Carlos y a mí se nos olvidó la cita.",
+          "en": "me: only one person, me. It does not fit here, because Carlos and I are two people, that is \"we\": nos. Correct: A Carlos y a mí se nos olvidó la cita.",
+          "es": "me: solo una persona, yo. Aquí no encaja, porque Carlos y yo somos dos, es decir nosotros: nos. Correcto: A Carlos y a mí se nos olvidó la cita.",
+          "de": "me: nur eine Person, ich. Das passt hier nicht, weil Carlos und ich zwei Personen sind, das heißt \"wir\": nos. Richtig: A Carlos y a mí se nos olvidó la cita."
+        }
+      },
+      "examples": [
+        "A Ana y a mí se nos perdieron las llaves.",
+        "A mi hermano y a mí se nos hizo tarde."
+      ]
+    },
+    {
+      "id": "sa-05",
+      "sentence": "A mis padres se ___ acabó el dinero.",
+      "options": [
+        "nos",
+        "les",
+        "me"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az \"a mis padres\" több személy, ezért a névmás les. Az ige a dologhoz (el dinero) igazodik: acabó.",
+        "en": "\"a mis padres\" is several people, so the pronoun is les. The verb agrees with the thing (el dinero): acabó.",
+        "es": "\"a mis padres\" son varias personas, por eso el pronombre es les. El verbo concuerda con la cosa (el dinero): acabó.",
+        "de": "\"a mis padres\" sind mehrere Personen, deshalb ist das Pronomen les. Das Verb richtet sich nach der Sache (el dinero): acabó."
+      },
+      "wrong": {
+        "nos": {
+          "hu": "nos: a \"nekünk\" névmása. Ide nem illik, mert a mondat a szüleimről szól (a mis padres), nem rólunk. Helyesen: A mis padres se les acabó el dinero.",
+          "en": "nos: \"us\". It does not fit here, because the sentence is about my parents (a mis padres), not about us. Correct: A mis padres se les acabó el dinero.",
+          "es": "nos: \"nosotros\". Aquí no encaja, porque la frase habla de mis padres (a mis padres), no de nosotros. Correcto: A mis padres se les acabó el dinero.",
+          "de": "nos: \"uns\". Das passt hier nicht, weil der Satz von meinen Eltern handelt (a mis padres), nicht von uns. Richtig: A mis padres se les acabó el dinero."
+        },
+        "me": {
+          "hu": "me: a \"nekem\" névmása. Ide nem illik, mert a mondat a szüleimről szól (a mis padres), nem rólam. Helyesen: A mis padres se les acabó el dinero.",
+          "en": "me: the pronoun for \"I\". It does not fit here, because the sentence is about my parents (a mis padres), not about me. Correct: A mis padres se les acabó el dinero.",
+          "es": "me: el pronombre de \"yo\". Aquí no encaja, porque la frase habla de mis padres (a mis padres), no de mí. Correcto: A mis padres se les acabó el dinero.",
+          "de": "me: das Pronomen für \"ich\". Das passt hier nicht, weil der Satz von meinen Eltern handelt (a mis padres), nicht von mir. Richtig: A mis padres se les acabó el dinero."
+        }
+      },
+      "examples": [
+        "A mis amigos se les perdieron las maletas.",
+        "A los niños se les olvidó la tarea."
+      ]
+    },
+    {
+      "id": "sa-06",
+      "sentence": "Perdón, ___ olvidó tu nombre.",
+      "options": [
+        "me se",
+        "se me",
+        "yo me"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A sorrend mindig se + névmás: se me olvidó. Az alany a(z) \"tu nombre\" (a neved), a me a személyt jelöli.",
+        "en": "The order is always se + pronoun: se me olvidó. The subject is \"tu nombre\" (your name), and me shows the person.",
+        "es": "El orden es siempre se + pronombre: se me olvidó. El sujeto es \"tu nombre\" y me marca la persona.",
+        "de": "Die Reihenfolge ist immer se + Pronomen: se me olvidó. Das Subjekt ist \"tu nombre\" (dein Name), und me zeigt die Person."
+      },
+      "wrong": {
+        "me se": {
+          "hu": "me se: fordított sorrend. Ide nem illik, mert a se mindig a névmás előtt áll. Helyesen: Perdón, se me olvidó tu nombre.",
+          "en": "me se: reversed order. It does not fit here, because the se always comes before the pronoun. Correct: Perdón, se me olvidó tu nombre.",
+          "es": "me se: orden invertido. Aquí no encaja, porque el se va siempre antes del pronombre. Correcto: Perdón, se me olvidó tu nombre.",
+          "de": "me se: umgekehrte Reihenfolge. Das passt hier nicht, weil das se immer vor dem Pronomen steht. Richtig: Perdón, se me olvidó tu nombre."
+        },
+        "yo me": {
+          "hu": "yo me: itt nem az \"én\" az alany, a se pedig hiányzik. Ide nem illik, mert az alany a(z) \"tu nombre\" (a neved), a személyt a se me jelöli. Helyesen: Perdón, se me olvidó tu nombre.",
+          "en": "yo me: here \"I\" is not the subject, and the se is missing. It does not fit here, because the subject is \"tu nombre\" (your name), and the person is shown by se me. Correct: Perdón, se me olvidó tu nombre.",
+          "es": "yo me: aquí \"yo\" no es el sujeto y falta el se. Aquí no encaja, porque el sujeto es \"tu nombre\" y la persona la marca se me. Correcto: Perdón, se me olvidó tu nombre.",
+          "de": "yo me: hier ist \"ich\" nicht das Subjekt, und das se fehlt. Das passt hier nicht, weil das Subjekt \"tu nombre\" (dein Name) ist und die Person durch se me gezeigt wird. Richtig: Perdón, se me olvidó tu nombre."
+        }
+      },
+      "examples": [
+        "Perdón, se me olvidó la cita.",
+        "Se me olvidó tu número."
+      ]
+    },
+    {
+      "id": "sa-07",
+      "sentence": "A mí se me ___ la tarea en casa.",
+      "options": [
+        "olvidaron",
+        "olvidé",
+        "olvidó"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A(z) \"la tarea\" (a házi feladat) egyes számú dolog, és ez az alany, ezért az ige is egyes számú: olvidó.",
+        "en": "\"la tarea\" (the homework) is a single thing, and it is the subject, so the verb is singular too: olvidó.",
+        "es": "\"la tarea\" es una sola cosa y es el sujeto, por eso el verbo también va en singular: olvidó.",
+        "de": "\"la tarea\" (die Hausaufgabe) ist eine einzelne Sache und ist das Subjekt, deshalb steht auch das Verb im Singular: olvidó."
+      },
+      "wrong": {
+        "olvidaron": {
+          "hu": "olvidaron: többes szám. Ide nem illik, mert a(z) \"la tarea\" (a házi feladat) egy dolog, az ige pedig a dologhoz igazodik. Helyesen: A mí se me olvidó la tarea en casa.",
+          "en": "olvidaron: plural. It does not fit here, because \"la tarea\" (the homework) is a single thing, and the verb agrees with the thing. Correct: A mí se me olvidó la tarea en casa.",
+          "es": "olvidaron: plural. Aquí no encaja, porque \"la tarea\" es una sola cosa y el verbo concuerda con la cosa. Correcto: A mí se me olvidó la tarea en casa.",
+          "de": "olvidaron: Plural. Das passt hier nicht, weil \"la tarea\" (die Hausaufgabe) eine einzelne Sache ist und das Verb sich nach der Sache richtet. Richtig: A mí se me olvidó la tarea en casa."
+        },
+        "olvidé": {
+          "hu": "olvidé: \"én\"-alak. Ide nem illik, mert itt a személyt a névmás jelöli, az alany a(z) \"la tarea\" (a házi feladat), nem \"én\". Helyesen: A mí se me olvidó la tarea en casa.",
+          "en": "olvidé: the \"I\" form. It does not fit here, because the person is shown by the pronoun, and the subject is \"la tarea\" (the homework), not \"I\". Correct: A mí se me olvidó la tarea en casa.",
+          "es": "olvidé: forma de \"yo\". Aquí no encaja, porque la persona la marca el pronombre y el sujeto es \"la tarea\", no \"yo\". Correcto: A mí se me olvidó la tarea en casa.",
+          "de": "olvidé: \"ich\"-Form. Das passt hier nicht, weil die Person durch das Pronomen gezeigt wird und das Subjekt \"la tarea\" (die Hausaufgabe) ist, nicht \"ich\". Richtig: A mí se me olvidó la tarea en casa."
+        }
+      },
+      "examples": [
+        "Se me olvidó el paraguas.",
+        "A mí se me olvidaron las llaves."
+      ]
+    },
+    {
+      "id": "sa-08",
+      "sentence": "Tenía las manos mojadas y se me ___ la taza.",
+      "options": [
+        "cayó",
+        "acabó",
+        "apagó"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A nedves kéz miatt a csésze kicsúszott: caer = leesni, kiesni. A \"la taza\" az alany: cayó.",
+        "en": "With wet hands the cup slipped out: caer = to fall, to slip out. \"la taza\" is the subject: cayó.",
+        "es": "Con las manos mojadas la taza se escapó: caer = bajar de golpe al suelo. \"la taza\" es el sujeto: cayó.",
+        "de": "Mit nassen Händen ist die Tasse herausgerutscht: caer = fallen, herausrutschen. \"la taza\" ist das Subjekt: cayó."
+      },
+      "wrong": {
+        "acabó": {
+          "hu": "acabó: acabar = elfogyni, kifogyni valamiből. Ide nem illik, mert egy csésze nem fogy el, hanem kiesik a kézből. Helyesen: Tenía las manos mojadas y se me cayó la taza.",
+          "en": "acabó: acabar = to run out of something. It does not fit here, because a cup does not run out, it slips from your hand. Correct: Tenía las manos mojadas y se me cayó la taza.",
+          "es": "acabó: acabar = terminarse algo que se tenía. Aquí no encaja, porque una taza no se termina, se cae de la mano. Correcto: Tenía las manos mojadas y se me cayó la taza.",
+          "de": "acabó: acabar = ausgehen, zu Ende gehen. Das passt hier nicht, weil eine Tasse nicht ausgeht, sondern aus der Hand fällt. Richtig: Tenía las manos mojadas y se me cayó la taza."
+        },
+        "apagó": {
+          "hu": "apagó: apagar = kikapcsolni, kialudni. Ide nem illik, mert egy csésze nem kapcsol ki, hanem kiesik a kézből. Helyesen: Tenía las manos mojadas y se me cayó la taza.",
+          "en": "apagó: apagar = to switch off, to go out. It does not fit here, because a cup does not switch off, it slips from your hand. Correct: Tenía las manos mojadas y se me cayó la taza.",
+          "es": "apagó: apagar = dejar de funcionar. Aquí no encaja, porque una taza no se apaga, se cae de la mano. Correcto: Tenía las manos mojadas y se me cayó la taza.",
+          "de": "apagó: apagar = ausschalten, ausgehen. Das passt hier nicht, weil eine Tasse nicht ausgeht, sondern aus der Hand fällt. Richtig: Tenía las manos mojadas y se me cayó la taza."
+        }
+      },
+      "examples": [
+        "Se me cayó el vaso.",
+        "A mi mamá se le cayó la botella."
+      ]
+    },
+    {
+      "id": "sa-09",
+      "sentence": "El carro se paró: se nos ___ la gasolina.",
+      "options": [
+        "apagó",
+        "rompió",
+        "acabó"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A benzin fogyóeszköz, ezért elfogyott: acabar = elfogyni. A \"la gasolina\" az alany: acabó.",
+        "en": "Gasoline is something you use up, so it ran out: acabar = to run out. \"la gasolina\" is the subject: acabó.",
+        "es": "La gasolina es algo que se gasta, por eso se terminó: acabar = terminarse. \"la gasolina\" es el sujeto: acabó.",
+        "de": "Benzin verbraucht man, deshalb ist es ausgegangen: acabar = ausgehen. \"la gasolina\" ist das Subjekt: acabó."
+      },
+      "wrong": {
+        "apagó": {
+          "hu": "apagó: apagar = kikapcsolni, kialudni. Ide nem illik, mert a benzin nem kapcsol ki, hanem elfogy. Helyesen: El carro se paró: se nos acabó la gasolina.",
+          "en": "apagó: apagar = to switch off, to go out. It does not fit here, because gasoline does not switch off, it runs out. Correct: El carro se paró: se nos acabó la gasolina.",
+          "es": "apagó: apagar = dejar de funcionar. Aquí no encaja, porque la gasolina no se apaga, se termina. Correcto: El carro se paró: se nos acabó la gasolina.",
+          "de": "apagó: apagar = ausschalten, ausgehen. Das passt hier nicht, weil Benzin nicht ausgeht, sondern verbraucht wird. Richtig: El carro se paró: se nos acabó la gasolina."
+        },
+        "rompió": {
+          "hu": "rompió: romper = eltörni. Ide nem illik, mert a benzin nem törik el, hanem elfogy. Helyesen: El carro se paró: se nos acabó la gasolina.",
+          "en": "rompió: romper = to break. It does not fit here, because gasoline does not break, it runs out. Correct: El carro se paró: se nos acabó la gasolina.",
+          "es": "rompió: romper = quebrar. Aquí no encaja, porque la gasolina no se rompe, se termina. Correcto: El carro se paró: se nos acabó la gasolina.",
+          "de": "rompió: romper = zerbrechen. Das passt hier nicht, weil Benzin nicht zerbricht, sondern verbraucht wird. Richtig: El carro se paró: se nos acabó la gasolina."
+        }
+      },
+      "examples": [
+        "Se nos acabó la leche.",
+        "Se me acabó la batería."
+      ]
+    },
+    {
+      "id": "sa-10",
+      "sentence": "A ti se ___ cayó el teléfono en la calle.",
+      "options": [
+        "me",
+        "te",
+        "le"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az \"a ti\" te-t jelent (téged, neked), ezért a névmás te: se te cayó.",
+        "en": "\"a ti\" means \"you\", so the pronoun is te: se te cayó.",
+        "es": "\"a ti\" es \"tú\", por eso el pronombre es te: se te cayó.",
+        "de": "\"a ti\" bedeutet \"dir\", deshalb ist das Pronomen te: se te cayó."
+      },
+      "wrong": {
+        "me": {
+          "hu": "me: a \"nekem\" névmása. Ide nem illik, mert a mondat rólad szól (a ti), nem rólam. Helyesen: A ti se te cayó el teléfono en la calle.",
+          "en": "me: the pronoun for \"I\". It does not fit here, because the sentence is about you (a ti), not about me. Correct: A ti se te cayó el teléfono en la calle.",
+          "es": "me: el pronombre de \"yo\". Aquí no encaja, porque la frase habla de ti (a ti), no de mí. Correcto: A ti se te cayó el teléfono en la calle.",
+          "de": "me: das Pronomen für \"ich\". Das passt hier nicht, weil der Satz von dir handelt (a ti), nicht von mir. Richtig: A ti se te cayó el teléfono en la calle."
+        },
+        "le": {
+          "hu": "le: egy harmadik személy névmása (neki). Ide nem illik, mert az \"a ti\" téged jelent, nem egy harmadik személyt. Helyesen: A ti se te cayó el teléfono en la calle.",
+          "en": "le: the pronoun for a third person (him, her). It does not fit here, because \"a ti\" means you, not a third person. Correct: A ti se te cayó el teléfono en la calle.",
+          "es": "le: el pronombre de una tercera persona (él, ella). Aquí no encaja, porque \"a ti\" es tú, no una tercera persona. Correcto: A ti se te cayó el teléfono en la calle.",
+          "de": "le: das Pronomen für eine dritte Person (ihm, ihr). Das passt hier nicht, weil \"a ti\" dich meint, keine dritte Person. Richtig: A ti se te cayó el teléfono en la calle."
+        }
+      },
+      "examples": [
+        "A ti se te olvidó la cita.",
+        "A ti se te perdió la cartera."
+      ]
+    },
+    {
+      "id": "sa-11",
+      "sentence": "Llegué a la escuela y se me ___ los libros en casa.",
+      "options": [
+        "quedó",
+        "quedaron",
+        "quedé"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A(z) \"los libros\" (a könyvek) többes számú dolog, és ez az alany, ezért az ige is többes számú: quedaron.",
+        "en": "\"los libros\" (the books) is a plural thing, and it is the subject, so the verb is plural too: quedaron.",
+        "es": "\"los libros\" está en plural y es el sujeto, por eso el verbo también va en plural: quedaron.",
+        "de": "\"los libros\" (die Bücher) steht im Plural und ist das Subjekt, deshalb steht auch das Verb im Plural: quedaron."
+      },
+      "wrong": {
+        "quedó": {
+          "hu": "quedó: egyes szám. Ide nem illik, mert a(z) \"los libros\" (a könyvek) több dolog, az ige pedig a dologhoz igazodik. Helyesen: Llegué a la escuela y se me quedaron los libros en casa.",
+          "en": "quedó: singular. It does not fit here, because \"los libros\" (the books) is plural, and the verb agrees with the thing. Correct: Llegué a la escuela y se me quedaron los libros en casa.",
+          "es": "quedó: singular. Aquí no encaja, porque \"los libros\" está en plural y el verbo concuerda con la cosa. Correcto: Llegué a la escuela y se me quedaron los libros en casa.",
+          "de": "quedó: Singular. Das passt hier nicht, weil \"los libros\" (die Bücher) im Plural steht und das Verb sich nach der Sache richtet. Richtig: Llegué a la escuela y se me quedaron los libros en casa."
+        },
+        "quedé": {
+          "hu": "quedé: \"én\"-alak. Ide nem illik, mert itt a személyt a névmás jelöli, az alany a(z) \"los libros\" (a könyvek), nem \"én\". Helyesen: Llegué a la escuela y se me quedaron los libros en casa.",
+          "en": "quedé: the \"I\" form. It does not fit here, because the person is shown by the pronoun, and the subject is \"los libros\" (the books), not \"I\". Correct: Llegué a la escuela y se me quedaron los libros en casa.",
+          "es": "quedé: forma de \"yo\". Aquí no encaja, porque la persona la marca el pronombre y el sujeto es \"los libros\", no \"yo\". Correcto: Llegué a la escuela y se me quedaron los libros en casa.",
+          "de": "quedé: \"ich\"-Form. Das passt hier nicht, weil die Person durch das Pronomen gezeigt wird und das Subjekt \"los libros\" (die Bücher) ist, nicht \"ich\". Richtig: Llegué a la escuela y se me quedaron los libros en casa."
+        }
+      },
+      "examples": [
+        "Se me quedó el teléfono en casa.",
+        "Se nos quedaron las maletas en el carro."
+      ]
+    },
+    {
+      "id": "sa-12",
+      "sentence": "Perdón, se me ___ tarde en la oficina.",
+      "options": [
+        "hice",
+        "hicieron",
+        "hizo"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A hacerse tarde állandósult fordulat: se me hizo tarde (későre járt). Az ige mindig egyes szám, harmadik személy.",
+        "en": "Hacerse tarde is a fixed phrase: se me hizo tarde (it got late on me). The verb is always third person singular.",
+        "es": "Hacerse tarde es una expresión fija: se me hizo tarde (se me fue el tiempo). El verbo va siempre en tercera persona del singular.",
+        "de": "Hacerse tarde ist eine feste Wendung: se me hizo tarde (es wurde mir zu spät). Das Verb steht immer in der dritten Person Singular."
+      },
+      "wrong": {
+        "hice": {
+          "hu": "hice: \"én\"-alak. Ide nem illik, mert ebben a fordulatban nem én \"csinálok\" valamit: a se me hizo tarde egyben áll. Helyesen: Perdón, se me hizo tarde en la oficina.",
+          "en": "hice: the \"I\" form. It does not fit here, because in this phrase I am not \"doing\" something: se me hizo tarde stays together. Correct: Perdón, se me hizo tarde en la oficina.",
+          "es": "hice: forma de \"yo\". Aquí no encaja, porque en esta expresión yo no \"hago\" nada: se me hizo tarde va junto. Correcto: Perdón, se me hizo tarde en la oficina.",
+          "de": "hice: \"ich\"-Form. Das passt hier nicht, weil ich in dieser Wendung nichts \"tue\": se me hizo tarde bleibt zusammen. Richtig: Perdón, se me hizo tarde en la oficina."
+        },
+        "hicieron": {
+          "hu": "hicieron: többes szám. Ide nem illik, mert ebben az állandósult fordulatban az ige mindig egyes szám: hizo. Helyesen: Perdón, se me hizo tarde en la oficina.",
+          "en": "hicieron: plural. It does not fit here, because in this fixed phrase the verb is always singular: hizo. Correct: Perdón, se me hizo tarde en la oficina.",
+          "es": "hicieron: plural. Aquí no encaja, porque en esta expresión fija el verbo va siempre en singular: hizo. Correcto: Perdón, se me hizo tarde en la oficina.",
+          "de": "hicieron: Plural. Das passt hier nicht, weil in dieser festen Wendung das Verb immer im Singular steht: hizo. Richtig: Perdón, se me hizo tarde en la oficina."
+        }
+      },
+      "examples": [
+        "Se nos hizo tarde en la escuela.",
+        "Se me hizo tarde para el examen."
+      ]
+    },
+    {
+      "kind": "match",
+      "id": "sa-match-01",
+      "pairs": [
+        {
+          "es": "se me olvidó",
+          "en": "it slipped my mind"
+        },
+        {
+          "es": "se me cayó",
+          "en": "I dropped it"
+        },
+        {
+          "es": "se me perdió",
+          "en": "I lost it"
+        },
+        {
+          "es": "se me rompió",
+          "en": "it broke on me"
+        },
+        {
+          "es": "se me acabó",
+          "en": "I ran out of it"
+        },
+        {
+          "es": "se me quedó",
+          "en": "I left it behind"
+        }
+      ]
+    },
+    {
+      "kind": "form",
+      "id": "sa-form-01",
+      "verb": "se + pronombre + verbo",
+      "person": "Ayer, a mí ___ (olvidar) la llave.",
+      "answer": "se me olvidó",
+      "table": "se-accidental-formas"
+    },
+    {
+      "kind": "form",
+      "id": "sa-form-02",
+      "verb": "se + pronombre + verbo",
+      "person": "Ayer, a ti ___ (caer) el vaso en la cocina.",
+      "answer": "se te cayó",
+      "table": "se-accidental-formas"
+    },
+    {
+      "kind": "form",
+      "id": "sa-form-03",
+      "verb": "se + pronombre + verbo",
+      "person": "Ayer, a mi hermana ___ (romper) la taza.",
+      "answer": "se le rompió",
+      "table": "se-accidental-formas"
+    },
+    {
+      "kind": "form",
+      "id": "sa-form-04",
+      "verb": "se + pronombre + verbo",
+      "person": "Ayer, a nosotros ___ (acabar) la leche.",
+      "answer": "se nos acabó",
+      "table": "se-accidental-formas"
+    },
+    {
+      "kind": "form",
+      "id": "sa-form-05",
+      "verb": "se + pronombre + verbo",
+      "person": "Ayer, a ustedes ___ (perder) las llaves.",
+      "answer": "se les perdieron",
+      "table": "se-accidental-formas"
+    },
+    {
+      "kind": "form",
+      "id": "sa-form-06",
+      "verb": "se + pronombre + verbo",
+      "person": "Ayer, a mí ___ (caer) los platos.",
+      "answer": "se me cayeron",
+      "table": "se-accidental-formas"
+    },
+    {
+      "kind": "form",
+      "id": "sa-form-07",
+      "verb": "se + pronombre + verbo",
+      "person": "Ayer, a mis padres ___ (acabar) el dinero.",
+      "answer": "se les acabó",
+      "table": "se-accidental-formas"
+    },
+    {
+      "kind": "form",
+      "id": "sa-form-08",
+      "verb": "se + pronombre + verbo",
+      "person": "Ayer, a mi hermano ___ (quedar) el teléfono en casa.",
+      "answer": "se le quedó",
+      "table": "se-accidental-formas"
+    },
+    {
+      "kind": "form",
+      "id": "sa-form-09",
+      "verb": "se + pronombre + verbo",
+      "person": "Ayer, a nosotros ___ (perder) las maletas.",
+      "answer": "se nos perdieron",
+      "table": "se-accidental-formas"
+    },
+    {
+      "kind": "form",
+      "id": "sa-form-10",
+      "verb": "se + pronombre + verbo",
+      "person": "Ayer, a Ana ___ (perder) la cartera.",
+      "answer": "se le perdió",
+      "table": "se-accidental-formas"
+    },
+    {
+      "kind": "form",
+      "id": "sa-form-11",
+      "verb": "se + pronombre + verbo",
+      "person": "Ayer, a ti ___ (olvidar) la cita.",
+      "answer": "se te olvidó",
+      "table": "se-accidental-formas"
+    },
+    {
+      "kind": "form",
+      "id": "sa-form-12",
+      "verb": "se + pronombre + verbo",
+      "person": "Ayer, a ti ___ (apagar) la computadora.",
+      "answer": "se te apagó",
+      "table": "se-accidental-formas"
+    },
+    {
+      "kind": "why",
+      "id": "sa-why-01",
+      "es": "Se me cayeron los platos.",
+      "target": "cayeron",
+      "tr": {
+        "hu": "Kiestek a kezemből a tányérok.",
+        "en": "The plates slipped out of my hands.",
+        "es": "Se me cayeron los platos.",
+        "de": "Die Teller sind mir aus der Hand gefallen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a dologhoz (los platos) igazodik: többes szám",
+            "en": "it agrees with the thing (los platos): plural",
+            "es": "concuerda con la cosa (los platos): plural",
+            "de": "es richtet sich nach der Sache (los platos): Plural"
+          }
+        },
+        {
+          "text": {
+            "hu": "a me névmáshoz igazodik: az \"én\" alakja lenne",
+            "en": "it agrees with the pronoun me: it would be the \"I\" form",
+            "es": "concuerda con el pronombre me: sería la forma de \"yo\"",
+            "de": "es richtet sich nach dem Pronomen me: es wäre die \"ich\"-Form"
+          },
+          "wrong": {
+            "hu": "a me nem az ige alanya: ha az igéhez igazodna, a caí alak állna ott. A cayeron azért többes szám, mert a los platos többes számú.",
+            "en": "me is not the subject of the verb: if the verb agreed with it, the form would be caí. Cayeron is plural because los platos is plural.",
+            "es": "me no es el sujeto del verbo: si el verbo concordara con él, la forma sería caí. Cayeron va en plural porque los platos está en plural.",
+            "de": "me ist nicht das Subjekt des Verbs: würde sich das Verb danach richten, stünde dort caí. Cayeron ist Plural, weil los platos im Plural steht."
+          }
+        },
+        {
+          "text": {
+            "hu": "a se-hez igazodik: ezért mindig egyes szám",
+            "en": "it agrees with the se: so it is always singular",
+            "es": "concuerda con el se: por eso va siempre en singular",
+            "de": "es richtet sich nach dem se: deshalb steht es immer im Singular"
+          },
+          "wrong": {
+            "hu": "a se nem szabja meg az ige számát: ez a mondat is többes számú (cayeron), mert a dolog többes. Egy dolognál lenne cayó.",
+            "en": "the se does not decide the number of the verb: this sentence is plural too (cayeron), because the thing is plural. With one thing it would be cayó.",
+            "es": "el se no decide el número del verbo: esta frase también va en plural (cayeron), porque la cosa está en plural. Con una cosa sería cayó.",
+            "de": "das se bestimmt die Zahl des Verbs nicht: auch dieser Satz steht im Plural (cayeron), weil die Sache im Plural steht. Bei einer Sache wäre es cayó."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "sa-why-02",
+      "es": "Se me perdió la cartera.",
+      "target": "me",
+      "tr": {
+        "hu": "Elveszett a pénztárcám.",
+        "en": "My wallet got lost.",
+        "es": "Se me perdió la cartera.",
+        "de": "Meine Brieftasche ist verloren gegangen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a személy, akivel a dolog történt",
+            "en": "the person it happened to",
+            "es": "la persona a quien le pasó",
+            "de": "die Person, der es passiert ist"
+          }
+        },
+        {
+          "text": {
+            "hu": "a dolog, ami elveszett",
+            "en": "the thing that got lost",
+            "es": "la cosa que se perdió",
+            "de": "die Sache, die verloren ging"
+          },
+          "wrong": {
+            "hu": "az elveszett dolog a la cartera, az az alany. A me a személyt jelöli, akivel a dolog megtörtént.",
+            "en": "the lost thing is la cartera, and it is the subject. Me shows the person it happened to.",
+            "es": "la cosa perdida es la cartera, y es el sujeto. Me marca la persona a quien le pasó.",
+            "de": "die verlorene Sache ist la cartera, und sie ist das Subjekt. Me zeigt die Person, der es passiert ist."
+          }
+        },
+        {
+          "text": {
+            "hu": "a cselekvő, aki szándékosan elvesztette",
+            "en": "the doer who lost it on purpose",
+            "es": "quien lo perdió a propósito",
+            "de": "wer es absichtlich verloren hat"
+          },
+          "wrong": {
+            "hu": "a me nem szándékos cselekvőt jelöl: a se éppen azt mondja, hogy nem volt szándékos. A me azt jelöli, akivel a dolog történt.",
+            "en": "me does not show a deliberate doer: the se says exactly that it was not on purpose. Me shows the person it happened to.",
+            "es": "me no marca a un autor deliberado: el se dice justo que no fue a propósito. Me marca la persona a quien le pasó.",
+            "de": "me zeigt keinen absichtlich Handelnden: das se sagt gerade, dass es nicht absichtlich war. Me zeigt die Person, der es passiert ist."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "sa-why-03",
+      "es": "Se nos acabó la leche.",
+      "target": "Se",
+      "tr": {
+        "hu": "Elfogyott a tejünk.",
+        "en": "We ran out of milk.",
+        "es": "Se nos acabó la leche.",
+        "de": "Uns ist die Milch ausgegangen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "azt jelzi, hogy a dolog nem szándékosan, magától történt",
+            "en": "it shows that the thing happened by itself, not on purpose",
+            "es": "indica que la cosa pasó sola, sin querer",
+            "de": "es zeigt, dass die Sache von allein passiert ist, nicht absichtlich"
+          }
+        },
+        {
+          "text": {
+            "hu": "visszaható névmás: valaki önmagával csinál valamit",
+            "en": "a reflexive pronoun: someone does something to themselves",
+            "es": "un pronombre reflexivo: alguien hace algo a sí mismo",
+            "de": "ein Reflexivpronomen: jemand tut etwas mit sich selbst"
+          },
+          "wrong": {
+            "hu": "itt a se nem visszaható: a leche nem csinál semmit önmagával. A se azt jelzi, hogy az elfogyás nem szándékos, és a nos mondja meg, kivel történt.",
+            "en": "the se is not reflexive here: la leche does not do anything to itself. The se shows that running out was not on purpose, and nos says who it happened to.",
+            "es": "aquí el se no es reflexivo: la leche no hace nada a sí misma. El se indica que se terminó sin querer, y nos dice a quién le pasó.",
+            "de": "das se ist hier nicht reflexiv: la leche tut nichts mit sich selbst. Das se zeigt, dass das Ausgehen nicht absichtlich war, und nos sagt, wem es passiert ist."
+          }
+        },
+        {
+          "text": {
+            "hu": "általános szabály vagy hirdetés, senkit nem nevez meg",
+            "en": "a general rule or notice that names nobody",
+            "es": "una regla general o un aviso que no nombra a nadie",
+            "de": "eine allgemeine Regel oder Mitteilung, die niemanden nennt"
+          },
+          "wrong": {
+            "hu": "ez a mondat egy konkrét eseményt mond, és meg is nevezi, kivel történt: nos (mi). Az általános, senkit meg nem nevező mondat más szerkezet (pl. se habla español).",
+            "en": "this sentence tells one concrete event and even names who it happened to: nos (us). A general sentence that names nobody is a different pattern (e.g. se habla español).",
+            "es": "esta frase cuenta un hecho concreto y hasta dice a quién le pasó: nos. Una frase general que no nombra a nadie es otra estructura (p. ej. se habla español).",
+            "de": "dieser Satz erzählt ein konkretes Ereignis und nennt sogar, wem es passiert ist: nos (uns). Ein allgemeiner Satz, der niemanden nennt, ist ein anderer Bau (z. B. se habla español)."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "sa-why-04",
+      "es": "A mis padres se les perdió el perro.",
+      "target": "perdió",
+      "tr": {
+        "hu": "A szüleimnek elveszett a kutyája.",
+        "en": "My parents' dog got lost.",
+        "es": "A mis padres se les perdió el perro.",
+        "de": "Meinen Eltern ist der Hund verloren gegangen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a dologhoz (el perro) igazodik: egyes szám",
+            "en": "it agrees with the thing (el perro): singular",
+            "es": "concuerda con la cosa (el perro): singular",
+            "de": "es richtet sich nach der Sache (el perro): Singular"
+          }
+        },
+        {
+          "text": {
+            "hu": "a les-hez igazodik: ezért többes szám lenne",
+            "en": "it agrees with les: so it would be plural",
+            "es": "concuerda con les: por eso iría en plural",
+            "de": "es richtet sich nach les: deshalb wäre es Plural"
+          },
+          "wrong": {
+            "hu": "a les több személyt jelöl, de nem az ige alanya. Az ige az el perro-hoz igazodik, ezért egyes szám (perdió), akárhány ember a gazda.",
+            "en": "les shows several people, but it is not the subject of the verb. The verb agrees with el perro, so it is singular (perdió), however many owners there are.",
+            "es": "les marca a varias personas, pero no es el sujeto del verbo. El verbo concuerda con el perro, por eso va en singular (perdió), sean cuantos sean los dueños.",
+            "de": "les zeigt mehrere Personen, ist aber nicht das Subjekt des Verbs. Das Verb richtet sich nach el perro, deshalb steht es im Singular (perdió), egal wie viele Besitzer es gibt."
+          }
+        },
+        {
+          "text": {
+            "hu": "a mis padres-hez igazodik: ők a cselekvők",
+            "en": "it agrees with mis padres: they are the doers",
+            "es": "concuerda con mis padres: ellos son quienes lo hacen",
+            "de": "es richtet sich nach mis padres: sie sind die Handelnden"
+          },
+          "wrong": {
+            "hu": "a mis padres nem az alany: ők csak azok, akikkel a dolog történt. Ha az ige hozzájuk igazodna, perdieron állna, de az alany el perro.",
+            "en": "mis padres is not the subject: they are only the people it happened to. If the verb agreed with them, it would be perdieron, but the subject is el perro.",
+            "es": "mis padres no es el sujeto: son solo las personas a quienes les pasó. Si el verbo concordara con ellos, sería perdieron, pero el sujeto es el perro.",
+            "de": "mis padres ist nicht das Subjekt: sie sind nur die Personen, denen es passiert ist. Würde sich das Verb nach ihnen richten, stünde perdieron, aber das Subjekt ist el perro."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "sa-why-05",
+      "es": "Perdón, se me hizo tarde.",
+      "target": "se me",
+      "tr": {
+        "hu": "Bocsánat, későre járt, elkéstem.",
+        "en": "Sorry, I ran late.",
+        "es": "Perdón, se me hizo tarde.",
+        "de": "Entschuldigung, ich bin spät dran."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a se mindig a névmás előtt áll: se me",
+            "en": "the se always comes before the pronoun: se me",
+            "es": "el se va siempre antes del pronombre: se me",
+            "de": "das se steht immer vor dem Pronomen: se me"
+          }
+        },
+        {
+          "text": {
+            "hu": "a névmás áll elöl: me se",
+            "en": "the pronoun comes first: me se",
+            "es": "el pronombre va primero: me se",
+            "de": "das Pronomen steht zuerst: me se"
+          },
+          "wrong": {
+            "hu": "a me se fordított sorrend, hibás. A se mindig elöl áll: se me, se te, se nos.",
+            "en": "me se is the reverse order and is wrong. The se always comes first: se me, se te, se nos.",
+            "es": "me se es el orden inverso y es incorrecto. El se va siempre primero: se me, se te, se nos.",
+            "de": "me se ist die umgekehrte Reihenfolge und falsch. Das se steht immer zuerst: se me, se te, se nos."
+          }
+        },
+        {
+          "text": {
+            "hu": "a sorrend a személytől függ: se me, de te se",
+            "en": "the order depends on the person: se me, but te se",
+            "es": "el orden depende de la persona: se me, pero te se",
+            "de": "die Reihenfolge hängt von der Person ab: se me, aber te se"
+          },
+          "wrong": {
+            "hu": "a sorrend minden személynél ugyanaz: se me, se te, se le, se nos, se les. A te se hibás.",
+            "en": "the order is the same for every person: se me, se te, se le, se nos, se les. Te se is wrong.",
+            "es": "el orden es el mismo para todas las personas: se me, se te, se le, se nos, se les. Te se es incorrecto.",
+            "de": "die Reihenfolge ist bei jeder Person gleich: se me, se te, se le, se nos, se les. Te se ist falsch."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "sa-why-06",
+      "es": "Cerré la puerta con llave.",
+      "target": "Cerré",
+      "tr": {
+        "hu": "Kulccsal bezártam az ajtót.",
+        "en": "I locked the door.",
+        "es": "Cerré la puerta con llave.",
+        "de": "Ich habe die Tür abgeschlossen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a tettet te csinálod: alanyos mondat, se nélkül",
+            "en": "you do the act yourself: a normal sentence, without se",
+            "es": "el acto lo haces tú: una frase normal, sin se",
+            "de": "du tust die Handlung selbst: ein normaler Satz, ohne se"
+          }
+        },
+        {
+          "text": {
+            "hu": "nem szándékos, magától történt: ezért kellene a se me",
+            "en": "not on purpose, it happened by itself: that is why it would need se me",
+            "es": "no fue a propósito, pasó solo: por eso necesitaría se me",
+            "de": "nicht absichtlich, es passierte von allein: deshalb bräuchte es se me"
+          },
+          "wrong": {
+            "hu": "a kulccsal bezárás szándékos tett, te csináltad: ezt alanyos mondattal mondod. A se me a nem tervezett dolgot mondja (se me cerró la puerta).",
+            "en": "locking a door with a key is a deliberate act, you did it: you say it with a normal sentence. The se me tells what was not planned (se me cerró la puerta).",
+            "es": "cerrar con llave es un acto deliberado, lo hiciste tú: se dice con una frase normal. El se me cuenta lo que no estaba planeado (se me cerró la puerta).",
+            "de": "Abschließen ist eine absichtliche Handlung, du hast sie getan: du sagst sie mit einem normalen Satz. Das se me erzählt, was nicht geplant war (se me cerró la puerta)."
+          }
+        },
+        {
+          "text": {
+            "hu": "a la puerta az alany, ezért az ige harmadik személyű",
+            "en": "la puerta is the subject, so the verb is third person",
+            "es": "la puerta es el sujeto, por eso el verbo va en tercera persona",
+            "de": "la puerta ist das Subjekt, deshalb steht das Verb in der dritten Person"
+          },
+          "wrong": {
+            "hu": "itt a la puerta a tárgy (mit zártál be?), az alany te vagy: ezért cerré, az \"én\"-alak. A dolog alany-szerepe a se me szerkezetben van (se me cerró la puerta).",
+            "en": "here la puerta is the object (what did you lock?), and you are the subject: that is why it is cerré, the \"I\" form. The thing is the subject only in the se me pattern (se me cerró la puerta).",
+            "es": "aquí la puerta es el objeto (¿qué cerraste?), y el sujeto eres tú: por eso es cerré, la forma de \"yo\". La cosa es el sujeto solo en la estructura con se me (se me cerró la puerta).",
+            "de": "hier ist la puerta das Objekt (was hast du abgeschlossen?), und das Subjekt bist du: deshalb cerré, die \"ich\"-Form. Die Sache ist nur im Bau mit se me das Subjekt (se me cerró la puerta)."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "sa-why-07",
+      "es": "A mí se me olvidó la llave.",
+      "target": "A mí",
+      "tr": {
+        "hu": "Nekem ment ki a fejemből a kulcs.",
+        "en": "The key slipped my mind.",
+        "es": "A mí se me olvidó la llave.",
+        "de": "Mir ist der Schlüssel entfallen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hangsúlyoz: a me marad, az \"a mí\" csak kiemeli",
+            "en": "it adds emphasis: the me stays, \"a mí\" only stresses it",
+            "es": "da énfasis: el me se queda, \"a mí\" solo lo destaca",
+            "de": "es gibt Nachdruck: das me bleibt, \"a mí\" hebt es nur hervor"
+          }
+        },
+        {
+          "text": {
+            "hu": "helyettesíti a me-t, ezért a me elhagyható",
+            "en": "it replaces me, so the me can be left out",
+            "es": "sustituye al me, por eso el me se puede omitir",
+            "de": "es ersetzt das me, deshalb kann das me wegfallen"
+          },
+          "wrong": {
+            "hu": "az \"a mí\" nem helyettesíti a névmást: a me marad, az \"a mí\" csak hangsúlyt ad. A természetes mondat: A mí se me olvidó la llave.",
+            "en": "\"a mí\" does not replace the pronoun: the me stays, and \"a mí\" only adds emphasis. The natural sentence is: A mí se me olvidó la llave.",
+            "es": "\"a mí\" no sustituye al pronombre: el me se queda, y \"a mí\" solo da énfasis. La frase natural es: A mí se me olvidó la llave.",
+            "de": "\"a mí\" ersetzt das Pronomen nicht: das me bleibt, und \"a mí\" gibt nur Nachdruck. Der natürliche Satz ist: A mí se me olvidó la llave."
+          }
+        },
+        {
+          "text": {
+            "hu": "a se helyén áll: ezért a se elhagyható",
+            "en": "it stands in for the se, so the se can be left out",
+            "es": "ocupa el lugar del se, por eso el se se puede omitir",
+            "de": "es steht anstelle des se, deshalb kann das se wegfallen"
+          },
+          "wrong": {
+            "hu": "az \"a mí\" a me-hez tartozik, nem a se-hez: a se továbbra is kell, mert az mondja, hogy nem volt szándékos. Se nélkül a \"me olvidó la llave\" azt jelentené, hogy a kulcs felejtett el engem.",
+            "en": "\"a mí\" goes with the me, not with the se: the se is still needed, because it says that it was not on purpose. Without the se, \"me olvidó la llave\" would mean that the key forgot me.",
+            "es": "\"a mí\" va con el me, no con el se: el se sigue haciendo falta, porque dice que no fue a propósito. Sin el se, \"me olvidó la llave\" significaría que la llave me olvidó a mí.",
+            "de": "\"a mí\" gehört zum me, nicht zum se: das se wird weiter gebraucht, weil es sagt, dass es nicht absichtlich war. Ohne das se würde \"me olvidó la llave\" bedeuten, dass der Schlüssel mich vergessen hat."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}
