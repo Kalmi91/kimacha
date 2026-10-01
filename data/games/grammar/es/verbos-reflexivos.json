@@ -12,10 +12,10 @@
     {
       "kind": "text",
       "text": {
-        "hu": "A visszaható igénél ugyanaz a személy végzi a cselekvést és kapja is meg: felkelsz, lezuhanyzol, lefekszel saját magadnak. Egy kis névmás (me, te, se, nos, os, se) mutatja, kire irányul a cselekvés, mindig közvetlenül a ragozott ige előtt.",
-        "en": "With a reflexive verb, the same person both does the action and receives it: you get yourself up, shower yourself, put yourself to bed. A small pronoun (me, te, se, nos, os, se) shows who the action is aimed at, always right before the conjugated verb.",
-        "es": "En el verbo reflexivo, la misma persona hace la acción y también la recibe: te levantas, te duchas, te acuestas a ti mismo. Un pequeño pronombre (me, te, se, nos, os, se) muestra a quién va dirigida la acción, siempre justo antes del verbo conjugado.",
-        "de": "Beim reflexiven Verb tut dieselbe Person die Handlung und empfängt sie auch: du stehst dich selbst auf, duschst dich, legst dich hin. Ein kleines Pronomen (me, te, se, nos, os, se) zeigt, an wen die Handlung gerichtet ist, immer direkt vor dem konjugierten Verb."
+        "hu": "A visszaható igénél ugyanaz a személy végzi a cselekvést és kapja is meg: felkelsz, lezuhanyzol, lefekszel saját magadnak. Egy kis névmás (me, te, se, nos, os, se) mutatja, kire irányul a cselekvés, általában közvetlenül a ragozott ige előtt.",
+        "en": "With a reflexive verb, the same person both does the action and receives it: you get yourself up, shower yourself, put yourself to bed. A small pronoun (me, te, se, nos, os, se) shows who the action is aimed at, usually right before the conjugated verb.",
+        "es": "En el verbo reflexivo, la misma persona hace la acción y también la recibe: te levantas, te duchas, te acuestas a ti mismo. Un pequeño pronombre (me, te, se, nos, os, se) muestra a quién va dirigida la acción, normalmente justo antes del verbo conjugado.",
+        "de": "Beim reflexiven Verb tut dieselbe Person die Handlung und empfängt sie auch: du richtest dich selbst auf, duschst dich, legst dich hin. Ein kleines Pronomen (me, te, se, nos, os, se) zeigt, an wen die Handlung gerichtet ist, meist direkt vor dem konjugierten Verb."
       }
     },
     {
@@ -87,7 +87,7 @@
           "text": {
             "hu": "Kölcsönös cselekvés: két vagy több ember csinálja egymással ugyanazt.",
             "en": "Reciprocal action: two or more people do it to each other.",
-            "es": "Acción recíproca: dos o más personas se la hacen la una a la otra.",
+            "es": "Acción recíproca: dos o más personas se hacen lo mismo la una a la otra.",
             "de": "Wechselseitige Handlung: zwei oder mehr Personen tun es sich gegenseitig."
           },
           "examples": [
@@ -430,10 +430,10 @@
     }
   ],
   "speak": {
-    "hu": "A visszaható igénél te magad vagy az, akire a cselekvés irányul, ezért egy kis névmás mutatja, ki a célszemély, mindig az ige előtt. Egyes igék egész mást jelentenek visszaható alakban, például aludni és elaludni. Két ember egymással is megteheti ugyanazt. Ez az alak állapotváltozásra is működik. A névmás kapcsolódhat főnévi vagy határozói igenévhez, és ilyenkor gyakran írott ékezetet kap. Mexikóban a többes szám tegező alak mindig a többes szám harmadik személyű névmást használja.",
-    "en": "With a reflexive verb you yourself are the one the action is aimed at, so a small pronoun shows who is meant, always before the verb. Some verbs mean something quite different in the reflexive form, such as sleeping and falling asleep. Two people can also do the same thing to each other. This form also works for a change of state. The pronoun can attach to an infinitive or a gerund, and then it often gets a written accent. In Mexico the plural you form always uses the third person plural pronoun.",
-    "es": "Con un verbo reflexivo tú mismo eres a quien va dirigida la acción, por eso un pronombre pequeño muestra a quién se refiere, siempre antes del verbo. Algunos verbos significan algo bastante distinto en la forma reflexiva, como dormir y dormirse. Dos personas también pueden hacerse lo mismo la una a la otra. Esta forma sirve también para un cambio de estado. El pronombre puede unirse a un infinitivo o a un gerundio, y entonces suele llevar tilde. En México, la forma plural de tú usa siempre el pronombre de tercera persona del plural.",
-    "de": "Bei einem reflexiven Verb bist du selbst das Ziel der Handlung, deshalb zeigt ein kleines Pronomen, wer gemeint ist, immer vor dem Verb. Manche Verben bedeuten in der reflexiven Form etwas ganz anderes, etwa schlafen und einschlafen. Zwei Personen können auch dasselbe einander antun. Diese Form funktioniert auch für eine Zustandsänderung. Das Pronomen kann an einen Infinitiv oder ein Gerundium treten, und dann bekommt es oft einen geschriebenen Akzent. In Mexiko benutzt die Pluralform von du immer das Pronomen der dritten Person Plural."
+    "hu": "A visszaható igénél te magad vagy az, akire a cselekvés irányul, ezért egy kis névmás mutatja, ki a célszemély, általában az ige előtt. Egyes igék egész mást jelentenek visszaható alakban, például aludni és elaludni. Két ember egymással is megteheti ugyanazt. Ez az alak állapotváltozásra is működik. A névmás kapcsolódhat főnévi vagy határozói igenévhez, és ilyenkor gyakran írott ékezetet kap. Mexikóban a többes szám tegező alak mindig a többes szám harmadik személyű névmást használja.",
+    "en": "With a reflexive verb you yourself are the one the action is aimed at, so a small pronoun shows who is meant, usually before the verb. Some verbs mean something quite different in the reflexive form, such as sleeping and falling asleep. Two people can also do the same thing to each other. This form also works for a change of state. The pronoun can attach to an infinitive or a gerund, and then it often gets a written accent. In Mexico the plural you form always uses the third person plural pronoun.",
+    "es": "Con un verbo reflexivo tú mismo eres a quien va dirigida la acción, por eso un pronombre pequeño muestra a quién se refiere, normalmente antes del verbo. Algunos verbos significan algo bastante distinto en la forma reflexiva, como dormir y dormirse. Dos personas también pueden hacerse lo mismo la una a la otra. Esta forma sirve también para un cambio de estado. El pronombre puede unirse a un infinitivo o a un gerundio, y entonces suele llevar tilde. En México, la forma plural de tú usa siempre el pronombre de tercera persona del plural.",
+    "de": "Bei einem reflexiven Verb bist du selbst das Ziel der Handlung, deshalb zeigt ein kleines Pronomen, wer gemeint ist, meist vor dem Verb. Manche Verben bedeuten in der reflexiven Form etwas ganz anderes, etwa schlafen und einschlafen. Zwei Personen können auch dasselbe einander antun. Diese Form funktioniert auch für eine Zustandsänderung. Das Pronomen kann an einen Infinitiv oder ein Gerundium treten, und dann bekommt es oft einen geschriebenen Akzent. In Mexiko benutzt die Pluralform von du immer das Pronomen der dritten Person Plural."
   },
   "glossary": [
     { "word": "levantarse", "gloss": { "hu": "felkelni", "en": "to get up", "es": "levantarse", "de": "aufstehen" } },
@@ -500,9 +500,9 @@
       "wrong": {
         "se": {
           "hu": "A 'se' az udvarias usted-hez tartozik: '¿Cómo se llama usted?' azt kérdezné, hogy Önt hogy hívják, nem téged; tú-hoz a te tartozik: ¿cómo te llamas?",
-          "en": "'Se' belongs to the polite usted: '¿Cómo se llama usted?' would ask what your formal name is, not yours informally; tú takes te: ¿cómo te llamas?",
+          "en": "'Se' belongs to the polite usted: '¿Cómo se llama usted?' asks a person you address formally, not you as tú; tú takes te: ¿cómo te llamas?",
           "es": "'Se' es del usted formal: '¿Cómo se llama usted?' preguntaría el nombre de usted, no el tuyo; a tú le corresponde te: ¿cómo te llamas?",
-          "de": "'Se' gehört zum höflichen usted: '¿Cómo se llama usted?' würde nach Ihrem höflichen Namen fragen, nicht nach deinem; zu tú gehört te: ¿cómo te llamas?"
+          "de": "'Se' gehört zum höflichen usted: '¿Cómo se llama usted?' fragt eine Person, die man siezt, nicht dich als tú; zu tú gehört te: ¿cómo te llamas?"
         },
         "me": {
           "hu": "A 'me' rólam szólna: '¿Cómo me llamo?' azt kérdezné, hogy engem hogy hívnak, nem téged; a másik személyhez a te tartozik: ¿cómo te llamas?",
@@ -708,7 +708,7 @@
       "options": ["nos", "se", "le"],
       "correct": 0,
       "why": {
-        "hu": "Nosotroshoz a nos tartozik, tagadásban is a no elé kerül, az ige elé.",
+        "hu": "Nosotroshoz a nos tartozik, tagadásban is a no után, az ige elé kerül.",
         "en": "Nosotros takes nos, and even in the negative it goes before the verb, after no.",
         "es": "A nosotros le corresponde nos, y en negativo va antes del verbo, después de no.",
         "de": "Zu nosotros gehört nos, auch verneint steht es vor dem Verb, nach no."
@@ -847,8 +847,8 @@
       "id": "rf-form-07",
       "kind": "form",
       "verb": "ducharse",
-      "person": "vosotros",
-      "answer": "os ducháis",
+      "person": "tú",
+      "answer": "te duchas",
       "table": "reflexivos-presente"
     },
     {
@@ -887,8 +887,8 @@
       "id": "rf-form-12",
       "kind": "form",
       "verb": "acostarse",
-      "person": "vosotros",
-      "answer": "os acostáis",
+      "person": "yo",
+      "answer": "me acuesto",
       "table": "reflexivos-presente"
     },
     {
@@ -1149,12 +1149,12 @@
     {
       "kind": "why",
       "id": "vr-why-06",
-      "es": "Os levantáis temprano.",
-      "target": "Os",
+      "es": "Ustedes se levantan temprano.",
+      "target": "se",
       "tr": {
         "hu": "Korán keltek.",
         "en": "You all get up early.",
-        "es": "Os levantáis temprano.",
+        "es": "Ustedes se levantan temprano.",
         "de": "Ihr steht früh auf."
       },
       "options": [
@@ -1178,6 +1178,12 @@
             "en": "os (vosotros)",
             "es": "os (vosotros)",
             "de": "os (ihr)"
+          },
+          "wrong": {
+            "hu": "Az os a spanyolországi vosotros névmása ('Os levantáis temprano'); Mexikóban az ustedes mellett se áll: ustedes se levantan.",
+            "en": "Os is the Spain pronoun for vosotros ('Os levantáis temprano'); in Mexico ustedes takes se: ustedes se levantan.",
+            "es": "Os es el pronombre de vosotros en España ('Os levantáis temprano'); en México a ustedes le corresponde se: ustedes se levantan.",
+            "de": "Os ist das spanische Pronomen für vosotros ('Os levantáis temprano'); in Mexiko gehört zu ustedes se: ustedes se levantan."
           }
         },
         {
@@ -1186,16 +1192,10 @@
             "en": "se (ellos/ellas/ustedes)",
             "es": "se (ellos/ellas/ustedes)",
             "de": "se (sie/Sie)"
-          },
-          "wrong": {
-            "hu": "Ha se (ellos) lenne, 'Se levantan temprano' állna, azaz ŐK kelnek korán, és ez az alak Mexikóban járná a vosotros helyett; itt viszont a spanyolországi vosotros-alak áll: os levantáis.",
-            "en": "If it were se (ellos), it would say 'Se levantan temprano', meaning THEY get up early, the form used in Mexico instead of vosotros; here it is the Spain vosotros form: os levantáis.",
-            "es": "Si fuera se (ellos), diría 'Se levantan temprano', o sea que ELLOS se levantan, la forma que se usaría en México en vez de vosotros; aquí está la forma de España: os levantáis.",
-            "de": "Wäre es se (ellos), hieße es 'Se levantan temprano', also stehen SIE auf, die Form, die in Mexiko statt vosotros benutzt wird; hier steht die spanische vosotros-Form: os levantáis."
           }
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 2
     },
     {
       "kind": "why",

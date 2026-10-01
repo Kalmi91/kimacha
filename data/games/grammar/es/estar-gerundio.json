@@ -242,7 +242,7 @@
             },
             {
               "es": "Llevamos toda la tarde trabajando.",
-              "tr": { "hu": "Egész délután dolgozunk.", "en": "We have been working all afternoon.", "es": "Llevamos toda la tarde trabajando.", "de": "Wir arbeiten schon den ganzen Nachmittag." }
+              "tr": { "hu": "Már egész délután dolgozunk.", "en": "We have been working all afternoon.", "es": "Llevamos toda la tarde trabajando.", "de": "Wir arbeiten schon den ganzen Nachmittag." }
             }
           ]
         }
@@ -655,10 +655,10 @@
           "de": "\"Estoy yendo\" würde bedeuten, dass du GERADE JETZT unterwegs bist, nicht dass du etwas für morgen planst; richtig: Mañana voy al cine con Ana."
         },
         "iba": {
-          "hu": "Az \"iba\" múlt idejű (imperfecto) alak, azt jelentené, hogy régen, szokásból mentél valahova, nem azt, hogy holnap fogsz; helyesen: Mañana voy al cine con Ana.",
-          "en": "\"Iba\" is a past tense (imperfect) form, it would mean you used to go somewhere in the past, not that you will tomorrow; correctly: Mañana voy al cine con Ana.",
-          "es": "\"Iba\" es una forma de pasado (imperfecto), significaría que ibas a algún lugar en el pasado, no que irás mañana; correctamente: Mañana voy al cine con Ana.",
-          "de": "\"Iba\" ist eine Vergangenheitsform (Imperfekt), sie würde bedeuten, dass du früher irgendwohin gegangen bist, nicht dass du morgen gehst; richtig: Mañana voy al cine con Ana."
+          "hu": "Az \"iba\" múlt idejű (imperfecto) alak, a \"mañana\" jövőre utaló szó mellé nem illik; helyesen: Mañana voy al cine con Ana.",
+          "en": "\"Iba\" is a past tense (imperfect) form, it does not fit with \"mañana\", a word pointing to the future; correctly: Mañana voy al cine con Ana.",
+          "es": "\"Iba\" es una forma de pasado (imperfecto), no encaja con \"mañana\", que apunta al futuro; correctamente: Mañana voy al cine con Ana.",
+          "de": "\"Iba\" ist eine Vergangenheitsform (Imperfekt), sie passt nicht zu \"mañana\", das auf die Zukunft zeigt; richtig: Mañana voy al cine con Ana."
         }
       },
       "examples": ["Mañana voy al cine.", "El sábado voy a la fiesta de Ana."]
@@ -847,10 +847,10 @@
         },
         {
           "text": {
-            "hu": "-er/-ir ige: -iendo",
-            "en": "-er/-ir verb: -iendo",
-            "es": "verbo -er/-ir: -iendo",
-            "de": "-er/-ir-Verb: -iendo"
+            "hu": "szabályos -er/-ir ige: -iendo",
+            "en": "regular -er/-ir verb: -iendo",
+            "es": "verbo -er/-ir regular: -iendo",
+            "de": "regelmäßiges -er/-ir-Verb: -iendo"
           },
           "wrong": {
             "hu": "A -iendo végződés -er/-ir igékre vonatkozik (comiendo, viviendo); a hablar -ar ige, aminek gerundiója -ando: hablando.",
@@ -904,10 +904,10 @@
         },
         {
           "text": {
-            "hu": "-er/-ir ige: -iendo",
-            "en": "-er/-ir verb: -iendo",
-            "es": "verbo -er/-ir: -iendo",
-            "de": "-er/-ir-Verb: -iendo"
+            "hu": "szabályos -er/-ir ige: -iendo",
+            "en": "regular -er/-ir verb: -iendo",
+            "es": "verbo -er/-ir regular: -iendo",
+            "de": "regelmäßiges -er/-ir-Verb: -iendo"
           }
         },
         {
@@ -955,10 +955,10 @@
         },
         {
           "text": {
-            "hu": "-er/-ir ige: -iendo",
-            "en": "-er/-ir verb: -iendo",
-            "es": "verbo -er/-ir: -iendo",
-            "de": "-er/-ir-Verb: -iendo"
+            "hu": "szabályos -er/-ir ige: -iendo",
+            "en": "regular -er/-ir verb: -iendo",
+            "es": "verbo -er/-ir regular: -iendo",
+            "de": "regelmäßiges -er/-ir-Verb: -iendo"
           },
           "wrong": {
             "hu": "A sima -iendo végződés olyan igékre vonatkozik, mint comer (comiendo); a leer tövében viszont két magánhangzó találkozik, ezért egy y kerül közéjük: leyendo, nem leiendo.",
@@ -1000,10 +1000,10 @@
         },
         {
           "text": {
-            "hu": "-er/-ir ige: -iendo",
-            "en": "-er/-ir verb: -iendo",
-            "es": "verbo -er/-ir: -iendo",
-            "de": "-er/-ir-Verb: -iendo"
+            "hu": "szabályos -er/-ir ige: -iendo",
+            "en": "regular -er/-ir verb: -iendo",
+            "es": "verbo -er/-ir regular: -iendo",
+            "de": "regelmäßiges -er/-ir-Verb: -iendo"
           },
           "wrong": {
             "hu": "A sima -iendo végződés olyan igékre vonatkozik, mint vivir (viviendo); a dormir töve viszont megváltozik (o→u) a gerundióban, ez rendhagyó: durmiendo, nem dormiendo.",
@@ -1051,10 +1051,10 @@
         },
         {
           "text": {
-            "hu": "-er/-ir ige: -iendo",
-            "en": "-er/-ir verb: -iendo",
-            "es": "verbo -er/-ir: -iendo",
-            "de": "-er/-ir-Verb: -iendo"
+            "hu": "szabályos -er/-ir ige: -iendo",
+            "en": "regular -er/-ir verb: -iendo",
+            "es": "verbo -er/-ir regular: -iendo",
+            "de": "regelmäßiges -er/-ir-Verb: -iendo"
           },
           "wrong": {
             "hu": "A -iendo végződés -er/-ir igékre vonatkozik (comiendo, viviendo); a trabajar -ar ige, aminek gerundiója -ando: trabajando.",
@@ -1094,10 +1094,10 @@
       "options": [
         {
           "text": {
-            "hu": "-er/-ir ige: -iendo",
-            "en": "-er/-ir verb: -iendo",
-            "es": "verbo -er/-ir: -iendo",
-            "de": "-er/-ir-Verb: -iendo"
+            "hu": "szabályos -er/-ir ige: -iendo",
+            "en": "regular -er/-ir verb: -iendo",
+            "es": "verbo -er/-ir regular: -iendo",
+            "de": "regelmäßiges -er/-ir-Verb: -iendo"
           },
           "wrong": {
             "hu": "A sima -iendo végződés olyan igékre vonatkozik, mint vivir (viviendo); a decir töve viszont megváltozik (e→i) a gerundióban, ez rendhagyó: diciendo, nem deciendo.",
@@ -1159,10 +1159,10 @@
         },
         {
           "text": {
-            "hu": "-er/-ir ige: -iendo",
-            "en": "-er/-ir verb: -iendo",
-            "es": "verbo -er/-ir: -iendo",
-            "de": "-er/-ir-Verb: -iendo"
+            "hu": "szabályos -er/-ir ige: -iendo",
+            "en": "regular -er/-ir verb: -iendo",
+            "es": "verbo -er/-ir regular: -iendo",
+            "de": "regelmäßiges -er/-ir-Verb: -iendo"
           }
         },
         {
