@@ -133,11 +133,11 @@ Kimacha
 
 EN:
 ```
-Learn Spanish word by word: spaced repetition, grammar and 12 word games.
+Learn Spanish word by word: spaced repetition, typing practice and grammar.
 ```
 HU:
 ```
-Tanulj spanyolul szóról szóra: ismétlés, nyelvtan és 12 szójáték.
+Tanulj spanyolul szóról szóra: ismétlés, gépelés és nyelvtan.
 ```
 
 ### Teljes leírás (max 4000 karakter)
@@ -150,35 +150,27 @@ only sentences you can already read.
 WHAT MAKES IT DIFFERENT
 Most apps show you a sentence full of words you have never met. Kimacha never
 does. A sentence only appears once every word in it has been taught, so you are
-never guessing. Grammar is unlocked the same way: a pattern shows up when you
-know the words it needs, not when you hit an arbitrary score.
+never guessing. Spanish verb tenses work the same way: a tense shows up in your
+sentences once you have finished its lesson in the Grammar tab.
 
 HOW YOU LEARN
-- Spaced repetition (FSRS): every card comes back exactly when you are about to
-  forget it, not sooner, not later.
-- Three steps per word: recognise it, recall it, then type it. A word only counts
-  as learned once you can spell it.
-- Tap-to-order sentences and typed sentences, kept to one sentence per four
+- Spaced repetition: you rate every answer, and each card comes back after a
+  longer gap every time you remember it.
+- Typing, not just recognising: you see a word in one language and write it in
+  the other. A word counts as learned once you have typed it correctly.
+- Tap-to-order sentences and typed sentences, kept to one sentence per four new
   words, because this is a vocabulary app first.
-- A daily new-word budget you control, with a brake that stops new words piling
-  up while half-learned ones are still open.
-- An "i" button on the cards that explains the actual grammar rule behind what
-  you are seeing, in your own language.
+- A daily new-word budget you set yourself, and a button to take more when you
+  are ready.
 
-TOPICS, NOT A TREADMILL
-A tech-tree of topics per level, from A0 to C1: numbers, food, clothing, the
-house, the body, work, travel, and the grammar patterns that go with them. Pick
-what you need. Skip what you do not. Progress is per topic, and the exam for a
-level unlocks when you have mastered enough of it.
-
-12 GAMES, PLAYED WITH YOUR OWN WORDS
-Word rain, bubble pop, word search, memory match, conjugation slots, odd one
-out, similar-word drills, story mode and more. Every game draws from the words
-you have actually studied, and weights the ones you keep getting wrong.
+LEVELS, NOT A TREADMILL
+Words are sorted into levels, A1 to B2: pick yours and move up when you are
+ready. Grammar has its own tab, with short lessons by level. Progress is per
+topic, and the exam for a level unlocks when you have mastered enough of it.
 
 LANGUAGES
-Learn Spanish or English. Interface and explanations in Hungarian, English,
-Spanish or German.
+Learn Spanish if you speak English, or English if you speak Spanish. The
+interface is in English or Spanish to match.
 
 OFFLINE AND PRIVATE
 The whole course is on your phone. No account, no sign-up, no ads. Your progress
@@ -193,35 +185,28 @@ mondattal, amit már el tudsz olvasni.
 MIBEN MÁS
 A legtöbb app olyan mondatot mutat, amiben ismeretlen szavak vannak. A Kimacha
 soha. Egy mondat csak akkor jön elő, ha minden szavát tanultad már, tehát nem
-kell találgatnod. A nyelvtan is így nyílik: egy szerkezet akkor kerül elő, ha
-megvannak hozzá a szavak, nem akkor, ha elértél egy pontszámot.
+kell találgatnod. A spanyol igeidők is így nyílnak: egy igeidő akkor kerül elő
+a mondataidban, ha elvégezted a leckéjét a Nyelvtan fülön.
 
 HOGYAN TANULSZ
-- Térközös ismétlés (FSRS): minden kártya pont akkor jön vissza, amikor
-  elfelejtenéd.
-- Szavanként három lépcső: felismerés, előhívás, majd leírás. Egy szó csak akkor
-  számít megtanultnak, ha le is tudod írni.
-- Összerakós és gépelős mondatok, négy szóra egy mondat arányban, mert ez
+- Térközös ismétlés: minden választ értékelsz, és a kártya minden jó válasz után
+  hosszabb idő múlva jön vissza.
+- Gépelés, nem csak felismerés: az egyik nyelven látod a szót, a másikon leírod.
+  Egy szó akkor számít megtanultnak, ha helyesen leírtad.
+- Összerakós és gépelős mondatok, négy új szóra egy mondat arányban, mert ez
   elsősorban szótanuló app.
-- Napi új-szó keret, amit te állítasz, plusz egy fék, ami nem enged új szavakat
-  rád tolni, amíg a félbehagyottak nyitva vannak.
-- A mondat bármelyik szavára koppintva beteheted a helyesírás-gyakorlóba.
-- „i" gomb a kártyán, ami a mögötte lévő valódi nyelvtani szabályt elmagyarázza,
-  a saját nyelveden.
+- Napi új-szó keret, amit te állítasz, és egy gomb, amivel többet kérhetsz, ha
+  készen állsz.
 
-TÉMÁK, NEM FUTÓSZALAG
-Szintenként témakör-fa A0-tól C1-ig: számok, étel, ruha, ház, test, munka,
-utazás, és a hozzájuk tartozó nyelvtan. Azt tanulod, amire szükséged van. A
-haladás témánként számít, a szintvizsga pedig akkor nyílik, ha eleget tudsz.
-
-12 JÁTÉK, A SAJÁT SZAVAIDDAL
-Szó-eső, buborék, szókereső, memória, ragozás-slot, kakukktojás, hasonló szavak,
-sztori-mód és több. Minden játék abból dolgozik, amit tényleg tanultál, és azt
-hozza fel gyakrabban, amivel szenvedsz.
+SZINTEK, NEM FUTÓSZALAG
+A szavak szintekbe vannak rendezve, A1-től B2-ig: válaszd a sajátodat, és lépj
+feljebb, ha készen állsz. A nyelvtan külön fülön van, rövid leckékkel
+szintenként. A haladás témánként számít, a szintvizsga pedig akkor nyílik, ha
+eleget tudsz.
 
 NYELVEK
-Spanyolt vagy angolt tanulhatsz. A felület és a magyarázatok magyarul, angolul,
-spanyolul vagy németül.
+Spanyolt tanulhatsz, ha angolul beszélsz, vagy angolt, ha spanyolul. A felület
+ennek megfelelően angol vagy spanyol.
 
 OFFLINE ÉS PRIVÁT
 A teljes tananyag a telefonodon van. Nincs fiók, nincs regisztráció, nincs
