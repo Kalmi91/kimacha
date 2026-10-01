@@ -153,7 +153,10 @@ Munkahely és tiltott fájlok: mint a javítás-briefben. A recept a skill „Eg
 Munkahely `C:\AI\kimacha-wt-eget-nyelvtan-b`, ág `nyelvtan-b` (379a915-ről). Az A sáv (`nyelvtan`, `C:\AI\kimacha-wt-eget-nyelvtan`) a J1-F4 + 1-9. tételeken dolgozik; ez a sáv a queue végét viszi, hogy ne érjenek egymáshoz. Mindkét sáv a `lib/games/content/es.ts`-t és a darabszám-tesztet bővíti: ezt a reggeli összefésülés oldja meg (`nyelvtan-b` → `nyelvtan`), éjjel nincs rebase, nincs push ebből a sávból.
 A „BRIEF új lecke (2026-10-01 …)” érvényes, a munkahely helyett ez a worktree. A cap mindkét sávra: 09:00 CDMX (Kálmán 00:20: „a”).
 
-- [ ] B1. `ojala-quizas` (B1 exam, SUBJ) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit
+- [x] B1. `ojala-quizas` (B1 exam, SUBJ) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit @@HASH@@ (00:35; audit 0 P1/0 P2, jest 1566 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, `tense` mindenen, transform nélkül; glossary: quizás, tal vez, llueva, venga)
+  - minta: `Ojalá ___ mañana.` → llueva
+  - minta: `A lo mejor ___ (ella) hoy.` → viene
+  - minta: `Quizás ___ (ella), pero lo dudo mucho.` → venga
 - [ ] B2. `relativos` (B1 full) új lecke → kész, ha: ugyanaz
 - [ ] B3. `perifrasis` (B1 full) új lecke → kész, ha: ugyanaz
 - [ ] B4. `pluscuamperfecto` (B1 full) új lecke → kész, ha: ugyanaz
