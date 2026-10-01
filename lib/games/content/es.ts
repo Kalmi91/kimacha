@@ -33,6 +33,7 @@ import grammarEsTemporalesSubjuntivo from '@/data/games/grammar/es/temporales-su
 import grammarEsCondicionalSimple from '@/data/games/grammar/es/condicional-simple.json';
 import grammarEsCondicionalesTipo1 from '@/data/games/grammar/es/condicionales-tipo1.json';
 import grammarEsRelativos from '@/data/games/grammar/es/relativos.json';
+import grammarEsPerifrasis from '@/data/games/grammar/es/perifrasis.json';
 import grammarEsSubjuntivoImperfecto from '@/data/games/grammar/es/subjuntivo-imperfecto.json';
 import grammarEsCondicionalesTipo23 from '@/data/games/grammar/es/condicionales-tipo2-3.json';
 import grammarEsEstiloIndirecto from '@/data/games/grammar/es/estilo-indirecto.json';
@@ -115,6 +116,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsCondicionalSimple,
     grammarEsCondicionalesTipo1,
     grammarEsRelativos,
+    grammarEsPerifrasis,
     grammarEsSubjuntivoImperfecto,
     grammarEsCondicionalesTipo23,
     grammarEsEstiloIndirecto,
