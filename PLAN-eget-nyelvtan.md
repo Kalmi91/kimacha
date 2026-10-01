@@ -166,7 +166,11 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (választós): «Quiero un departamento que ___ balcón, pero todavía no encontré nada.» → tenga
   - minta (form): «No hay nadie en mi familia que ___ (hablar) alemán.» → hable
   - minta (form): «Busco a la señora que ___ (vender) frutas; ayer la vi.» → vende
-- [ ] F-4. `verbos-preposicion` (B1, új téma) → kész, ha: ugyanaz
+- [x] F-4. `verbos-preposicion` (B1, új téma) → kész, ha: ugyanaz · 04:13 · audit 0/0, jest 1917 ok, tsc 0, lint 0 err · sáv `exam`: a rossz elöljáró gyakori beszédhiba, de a mondat enélkül is gyártható (nem blokkol), későbbi téma nem épül rá, vizsga-igényt külön nem ellenőriztem · 12 választós + 1 match (6 pár: pensar en / to think about …) + 12 form (tábla `verbos-preposicion-formas`, row[0] = lyukas mondat + a folytatás zárójelben, cella = elöljáró + folytatás: `en mi familia`, `del clima`, `de cerrar la puerta`) + 7 why (3 szabály-név: az en / con / de csoport); transform és `tense` nincs (nem igeidő); unit `b1-estructuras`, syllabus-sor a `por-para-avanzado` után; minden választósban EGY opció helyes (az en / con / de / a / por közül; a `soñar en`, `quedar de`, `pensar con` nem szerepel opcióként, mert két helyes változat ütközhetne), a `wrong` mondat-specifikus (pl. `pensar de` = vélemény, itt nincs vélemény), a quedar a `quedar en + infinitivo`; mexikói szóhasználat (manejar, departamento, papás, jefe); glossary üres (a tabledeck-pakli csak a tábla szavait kapja, FB437/438); tesztek: speakNoSpanish 69→70, syllabusEn 69→70 + ujjlenyomat · hash: a `feat(grammar): verbos-preposicion lesson (nyelvtan)` commit
+  - minta (választós): «Pienso ___ mi familia todos los días.» → en
+  - minta (form): «Mi viaje depende ___. (el clima)» → del clima
+  - minta (form): «Me enamoré ___ en el viaje. (Oaxaca)» → de Oaxaca
+  - kártya-kérés: acordarse B1 (csak az `el acuerdo` kártya van, az auditot a tő egyezése engedi át), enamorarse B1 (csak az `enamorado` A1), celular A2 (mexikói szó, a mondatban `teléfono` áll)
 - [ ] F-5. `verbos-de-cambio` (B2, új téma) → kész, ha: ugyanaz
 
 ## BRIEF F-sor (2026-10-01, új téma a tantervbe, tételenként EGY agent)
