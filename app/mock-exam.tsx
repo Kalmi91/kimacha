@@ -5,7 +5,7 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
 import { getDb } from '@/lib/database';
-import { pcicItemsForLevel, setPcicTarget, type PcicTarget } from '@/data/pcic';
+import { PCIC_LEVELS, pcicItemsForLevel, setPcicTarget, type PcicTarget } from '@/data/pcic';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { hasVoiceFor, loadVoices, stop as stopSpeaking } from '@/lib/speech';
@@ -18,6 +18,7 @@ import { MockResultView, MockReviewView } from '@/components/exam/MockResultView
 import { mockAvailable, MOCK_LEVELS } from '@/lib/exam/mock/blueprint';
 import { buildMockExam, mockExamSignature } from '@/lib/exam/mock/build';
 import { buildGlossaryIndex, mockGlossary } from '@/lib/exam/mock/glossary';
+import { buildLexicon } from '@/lib/exam/mock/writing';
 import { scoreMockExam, type MockResult } from '@/lib/exam/mock/score';
 import {
   CLOCK_WARNING_SECONDS,
@@ -52,6 +53,8 @@ export default function MockExamScreen() {
   const [level, setLevel] = useState<MockLevel>('A1');
   const [exam, setExam] = useState<MockExam | null>(null);
   const [learned, setLearned] = useState<ReadonlySet<string>>(new Set());
+  // A célnyelv ismert szavai az írás értelmességi ellenőrzéséhez (lib/exam/mock/writing.ts).
+  const [lexicon, setLexicon] = useState<ReadonlySet<string> | undefined>(undefined);
   const [saved, setSaved] = useState<MockSession | null>(null);
   const [canSpeak, setCanSpeak] = useState(true);
   const [paperIdx, setPaperIdx] = useState(0);
@@ -91,6 +94,7 @@ export default function MockExamScreen() {
       setTarget(tgt);
       setLevel(lvl);
       setLearned(new Set(cards.filter(isExamLearned).map((c) => c.itemId)));
+      setLexicon(buildLexicon(PCIC_LEVELS.flatMap((l) => pcicItemsForLevel(l)), tgt));
       setCanSpeak(hasVoiceFor(speechLang(tgt)));
       setSaved(resumable);
       setExam(built);
@@ -115,7 +119,7 @@ export default function MockExamScreen() {
   }, [phase, paperIdx]);
 
   const finish = async (all: MockAnswers, ex: MockExam) => {
-    const res = scoreMockExam(ex, all);
+    const res = scoreMockExam(ex, all, { lexicon });
     const db = getDb();
     await saveMockLast(db, target, level, res, localDateString());
     await clearMockSession(db, target, level);

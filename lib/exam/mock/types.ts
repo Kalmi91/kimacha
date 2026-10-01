@@ -61,12 +61,22 @@ export interface MockListenTask {
   questions: MockChoice[];
 }
 
+/** Mit kell egy űrlap-mezőnek tartalmaznia (lib/exam/mock/writing.ts checkField); alapból szám-mezőnél életkor, szövegnél egy szó. */
+export type MockFormCheck = 'fullname' | 'word' | 'address' | 'age' | 'phone' | 'email' | 'level';
+
+export interface MockFormField {
+  id: string;
+  label: string;
+  type: 'text' | 'number';
+  check?: MockFormCheck;
+}
+
 export interface MockFormFillTask {
   id: string;
   kind: 'form_fill';
   instruction: string;
   context: string;
-  fields: { id: string; label: string; type: 'text' | 'number' }[];
+  fields: MockFormField[];
 }
 
 export interface MockShortMessageTask {
