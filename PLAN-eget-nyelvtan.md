@@ -110,7 +110,10 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (választós): «¿El pastel? ___ compro a mis padres.» → Se lo / Se los / Se la
   - minta (választós): «Mi coche es nuevo: ___ a nadie.» → no se lo vendo / se lo no vendo / no lo se vendo
   - minta (form): row[0] «¿Le diste el regalo a Ana? Sí, ___ di ayer.» → se lo
-- [ ] 4. `imperativo-negativo` (A2 exam) új lecke → kész, ha: ugyanaz
+- [x] 4. `imperativo-negativo` (A2 exam) új lecke → kész, ha: ugyanaz · 01:27 · audit 0/0, jest 1605 ok, tsc 0, lint 0 err · 12 választós + 1 match (6 pár) + 12 form (tábla `imperativo-negativo`, ugyanaz az ige-oszlop-fejléc mint az `imperativo-afirmativo`-ban, sor = tú/usted/ustedes, cella = `no` + kötőmód-alak) + 7 why; syllabus-sor és sáv (exam) már megvolt (nem nyúltam hozzá), nincs glossary; es.ts-ben az `imperativo-afirmativo` után; teszt: speakNoSpanish 46→47; TenseId-bővítés kell: imperativo-negativo, /kimacha_nyelvtan (transform és `tense` nélkül készült, mint az afirmativo) · hash: a `feat(grammar): imperativo-negativo lesson (nyelvtan)` commit
+  - minta (választós): «Doctor, ___ tan rápido, por favor.» → no hable / no hables / no habla
+  - minta (választós): «Ana, ___ ahora, el café está caliente.» → no lo tomes / no los tomes / no tomes lo
+  - minta (form): hablar · usted → no hable
 - [ ] 5. `llevar-traer-ir-venir` (A2 exam) új lecke → kész, ha: ugyanaz
 - [ ] 6. `pedir-preguntar` (A2 exam) új lecke → kész, ha: ugyanaz
 - [ ] 7. `saber-conocer` (A2 exam) új lecke → kész, ha: ugyanaz
