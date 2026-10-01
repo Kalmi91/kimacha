@@ -30,9 +30,9 @@ describe('splitByLanguage', () => {
   });
 
   it('keeps a run of Spanish words in one segment', () => {
-    const segments = splitByLanguage('Példa: el perro grande corre.', hu);
+    const segments = splitByLanguage('Példa: el perro grande aquí.', hu);
     expect(segments).toHaveLength(2);
-    expect(segments[1].text).toBe('el perro grande corre.');
+    expect(segments[1].text).toBe('el perro grande aquí.');
   });
 
   it('returns one segment for text with no Spanish in it', () => {

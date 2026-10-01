@@ -1,4 +1,5 @@
-import { words, findWordById, findWordByText, getWordsForLevel, normalizeWordToken } from '@/data/words';
+import { findWordById, findWordByText, getWordsForLevel, normalizeWordToken } from '@/data/words';
+import { openWords } from '@/data/openWords';
 
 // Play-vágás 7. lépés (2026-09-23): FB129/FB130 (Kálmán 2026-08-15) drove the
 // branch-first id lookup this described, resolving a Hungarian-branch card
@@ -15,19 +16,21 @@ describe('word lookup by id', () => {
 // FB150, Kálmán 2026-08-22 (`sentence:El calabacín es una verdura verde.`): a tap
 // on any word of a sentence has to find that word's card, so it can go into the
 // spelling list.
+// PLAN-regi-szavak-ki 5. lépés: a szöveg szerinti keresés a words-open kártyáin fut
+// (id = a kártya order-e): yo = 1, tal vez = 436.
 describe('word lookup by text', () => {
   it('finds a headword through case and sentence punctuation', () => {
-    expect(findWordByText('YO HABLO', 'es', 'es')?.id).toBe(1001);
-    expect(findWordByText('Yo hablo.', 'es', 'es')?.id).toBe(1001);
+    expect(findWordByText('YO', 'es', 'es')?.id).toBe(1);
+    expect(findWordByText('Yo.', 'es', 'es')?.id).toBe(1);
   });
 
   it('finds the card of a token that is the tail of a multi-word headword', () => {
-    // The sentence says "hablas", the card is headed "tú hablas".
-    expect(findWordByText('hablas,', 'es', 'es')?.id).toBe(1002);
+    // The sentence says "perhaps", the card is headed "maybe, perhaps" (tal vez).
+    expect(findWordByText('perhaps,', 'en', 'es')?.id).toBe(436);
   });
 
   it('finds a headword whose card carries an article the sentence dropped', () => {
-    const withArticle = words.find(w => /^(el|la|los|las) /.test(w.es));
+    const withArticle = openWords.find(w => /^(el|la|los|las) /.test(w.es));
     expect(withArticle).toBeDefined();
     const bare = withArticle!.es.replace(/^(el|la|los|las) /, '');
     expect(findWordByText(bare, 'es', 'es')?.id).toBe(withArticle!.id);
@@ -35,8 +38,8 @@ describe('word lookup by text', () => {
   });
 
   it('matches the language the tapped text is written in, on both sides of a card', () => {
-    expect(findWordByText('I speak', 'en', 'es')?.id).toBe(1001);
-    expect(findWordByText('én beszélek', 'hu', 'es')?.id).toBe(1001);
+    expect(findWordByText('I', 'en', 'es')?.id).toBe(1);
+    expect(findWordByText('én', 'hu', 'es')?.id).toBe(1);
   });
 
   it('reports no card instead of guessing one', () => {
