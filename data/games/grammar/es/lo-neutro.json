@@ -1,0 +1,1320 @@
+{
+  "schema": 2,
+  "topic": "lo-neutro",
+  "level": "B2",
+  "title": {
+    "hu": "A semleges lo",
+    "en": "The neuter lo",
+    "es": "El lo neutro",
+    "de": "Das neutrale lo"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A lo semleges névelő: nem főnév előtt áll, hanem egy tulajdonság, egy ügy vagy egy egész mondat helyén, és azt a dolgot jelenti. Nincs többes száma és nincs nőneme, ezért a melléknév utána mindig hímnemű egyes számú: lo importante, lo bueno. Három fő szerepe van: lo + melléknév (lo importante), lo que (az, amit vagy ami) és lo + melléknév vagy határozó + que (lo bien que canta). Ne keverd össze a tárgyesetű lo névmással (lo veo).",
+        "en": "Lo is a neuter article: it does not stand before a noun but in place of a quality, a matter or a whole clause, and it means the thing that is such. It has no plural and no feminine, so the adjective after it is always masculine singular: lo importante, lo bueno. It has three main roles: lo + adjective (lo importante), lo que (what, that which) and lo + adjective or adverb + que (lo bien que canta). Do not confuse it with the object pronoun lo (lo veo).",
+        "es": "Lo es un artículo neutro: no va delante de un sustantivo, sino en lugar de una cualidad, de un asunto o de una oración entera, y significa la cosa que es así. No tiene plural ni femenino, y por eso el adjetivo que lo sigue va siempre en masculino singular: lo importante, lo bueno. Tiene tres usos principales: lo + adjetivo (lo importante), lo que (aquello que) y lo + adjetivo o adverbio + que (lo bien que canta). No lo confundas con el pronombre de objeto lo (lo veo).",
+        "de": "Lo ist ein neutraler Artikel: Er steht nicht vor einem Nomen, sondern anstelle einer Eigenschaft, einer Angelegenheit oder eines ganzen Satzes und bedeutet die Sache, die so ist. Er hat keinen Plural und kein Femininum, deshalb steht das Adjektiv danach immer im Maskulinum Singular: lo importante, lo bueno. Er hat drei Hauptverwendungen: lo + Adjektiv (lo importante), lo que (das, was) und lo + Adjektiv oder Adverb + que (lo bien que canta). Verwechsle ihn nicht mit dem Objektpronomen lo (lo veo)."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Mire használjuk a lo-t",
+        "en": "What lo is used for",
+        "es": "Para qué sirve lo",
+        "de": "Wofür man lo braucht"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Lo + melléknév = az a dolog, ami olyan (jó, fontos, nehéz). A melléknév mindig hímnemű egyes számú marad. Gyakori: lo mejor, lo peor, lo más importante.",
+            "en": "Lo + adjective = the thing that is such (good, important, hard). The adjective always stays masculine singular. Common: lo mejor, lo peor, lo más importante.",
+            "es": "Lo + adjetivo = la cosa que es así (buena, importante, difícil). El adjetivo se queda siempre en masculino singular. Frecuentes: lo mejor, lo peor, lo más importante.",
+            "de": "Lo + Adjektiv = die Sache, die so ist (gut, wichtig, schwer). Das Adjektiv bleibt immer im Maskulinum Singular. Häufig: lo mejor, lo peor, lo más importante."
+          },
+          "examples": [
+            {
+              "es": "Lo importante es la salud.",
+              "tr": {
+                "hu": "A lényeg az egészség.",
+                "en": "The important thing is health.",
+                "es": "Lo importante es la salud.",
+                "de": "Das Wichtige ist die Gesundheit."
+              }
+            },
+            {
+              "es": "Lo bueno es que estamos juntos.",
+              "tr": {
+                "hu": "A jó az, hogy együtt vagyunk.",
+                "en": "The good thing is that we are together.",
+                "es": "Lo bueno es que estamos juntos.",
+                "de": "Das Gute ist, dass wir zusammen sind."
+              }
+            },
+            {
+              "es": "Lo mejor de la casa es la cocina.",
+              "tr": {
+                "hu": "A ház legjobb része a konyha.",
+                "en": "The best thing about the house is the kitchen.",
+                "es": "Lo mejor de la casa es la cocina.",
+                "de": "Das Beste am Haus ist die Küche."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Lo que = az, amit vagy ami. Akkor használod, ha nincs főnév, amire a mondat utalna. Ha van főnév (el libro que…), elég a que. Mindennel együtt: todo lo que = mindaz, amit.",
+            "en": "Lo que = what, that which. Use it when there is no noun for the clause to refer to. If there is a noun (el libro que…), plain que is enough. With everything: todo lo que = everything that.",
+            "es": "Lo que = aquello que. Se usa cuando no hay un sustantivo al que se refiera la oración. Si hay un sustantivo (el libro que…), basta con que. Con todo: todo lo que.",
+            "de": "Lo que = das, was. Man braucht es, wenn es kein Nomen gibt, auf das sich der Satz bezieht. Gibt es ein Nomen (el libro que…), genügt einfaches que. Mit todo: todo lo que = alles, was."
+          },
+          "examples": [
+            {
+              "es": "No entiendo lo que dices.",
+              "tr": {
+                "hu": "Nem értem, amit mondasz.",
+                "en": "I don't understand what you say.",
+                "es": "No entiendo lo que dices.",
+                "de": "Ich verstehe nicht, was du sagst."
+              }
+            },
+            {
+              "es": "Todo lo que tengo está aquí.",
+              "tr": {
+                "hu": "Minden, amim van, itt van.",
+                "en": "Everything I have is here.",
+                "es": "Todo lo que tengo está aquí.",
+                "de": "Alles, was ich habe, ist hier."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Vessző után a lo cual (a beszédben gyakran a lo que) az egész előző mondatra utal: ami… Az írott, választékos nyelvben a lo cual a megszokott.",
+            "en": "After a comma, lo cual (in speech often lo que) refers to the whole previous clause: which… Lo cual is the usual form in careful, written Spanish.",
+            "es": "Después de una coma, lo cual (al hablar, a menudo lo que) se refiere a toda la oración anterior: algo que… Lo cual es lo habitual en la lengua escrita y cuidada.",
+            "de": "Nach einem Komma bezieht sich lo cual (in der Umgangssprache oft lo que) auf den ganzen vorigen Satz: was… In der geschriebenen, gepflegten Sprache ist lo cual üblich."
+          },
+          "examples": [
+            {
+              "es": "Llegó tarde, lo cual no me gustó.",
+              "tr": {
+                "hu": "Későn érkezett, ami nem tetszett nekem.",
+                "en": "He arrived late, which I did not like.",
+                "es": "Llegó tarde, lo cual no me gustó.",
+                "de": "Er kam spät, was mir nicht gefiel."
+              }
+            },
+            {
+              "es": "No vino nadie, lo que me sorprendió.",
+              "tr": {
+                "hu": "Senki nem jött el, ami meglepett.",
+                "en": "Nobody came, which surprised me.",
+                "es": "No vino nadie, lo que me sorprendió.",
+                "de": "Niemand kam, was mich überraschte."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Lo de + főnév vagy főnévi igenév = az ügy, amiről szó van, és amit a beszélők már ismernek. A beszélt nyelvben nagyon gyakori.",
+            "en": "Lo de + noun or infinitive = the matter of…, something the speakers already know about. Very common in speech.",
+            "es": "Lo de + sustantivo o infinitivo = el asunto de…, algo que los hablantes ya conocen. Es muy frecuente al hablar.",
+            "de": "Lo de + Nomen oder Infinitiv = die Sache mit…, etwas, das die Sprecher schon kennen. In der gesprochenen Sprache sehr häufig."
+          },
+          "examples": [
+            {
+              "es": "¿Ya sabes lo de Pedro?",
+              "tr": {
+                "hu": "Tudod már, mi volt Pedróval?",
+                "en": "Do you know about Pedro yet?",
+                "es": "¿Ya sabes lo de Pedro?",
+                "de": "Weißt du schon das mit Pedro?"
+              }
+            },
+            {
+              "es": "No quiero hablar de lo de ayer.",
+              "tr": {
+                "hu": "Nem akarok a tegnapiról beszélni.",
+                "en": "I don't want to talk about yesterday's business.",
+                "es": "No quiero hablar de lo de ayer.",
+                "de": "Ich will nicht über die Sache von gestern reden."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Lo + melléknév vagy határozó + que = mennyire…! A melléknév ilyenkor ahhoz igazodik, akiről szó van: lo grandes que son (többes szám). A határozó (bien, rápido) sosem változik.",
+            "en": "Lo + adjective or adverb + que = how…! Here the adjective agrees with the person or thing described: lo grandes que son (plural). An adverb (bien, rápido) never changes.",
+            "es": "Lo + adjetivo o adverbio + que = cuánto…. Aquí el adjetivo concuerda con aquello de lo que se habla: lo grandes que son. El adverbio (bien, rápido) no cambia nunca.",
+            "de": "Lo + Adjektiv oder Adverb + que = wie…! Hier richtet sich das Adjektiv nach der Person oder Sache: lo grandes que son (Plural). Ein Adverb (bien, rápido) verändert sich nie."
+          },
+          "examples": [
+            {
+              "es": "No sabes lo bien que canta.",
+              "tr": {
+                "hu": "Nem is tudod, milyen jól énekel.",
+                "en": "You don't know how well he sings.",
+                "es": "No sabes lo bien que canta.",
+                "de": "Du weißt nicht, wie gut er singt."
+              }
+            },
+            {
+              "es": "Mira lo grandes que son.",
+              "tr": {
+                "hu": "Nézd, milyen nagyok.",
+                "en": "Look how big they are.",
+                "es": "Mira lo grandes que son.",
+                "de": "Schau, wie groß sie sind."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Néhány állandó kifejezés: lo mismo (ugyanaz), lo contrario (az ellenkezője), por lo tanto (ezért).",
+            "en": "A few fixed expressions: lo mismo (the same), lo contrario (the opposite), por lo tanto (therefore).",
+            "es": "Algunas expresiones fijas: lo mismo, lo contrario, por lo tanto.",
+            "de": "Einige feste Wendungen: lo mismo (dasselbe), lo contrario (das Gegenteil), por lo tanto (deshalb)."
+          },
+          "examples": [
+            {
+              "es": "Yo pienso lo mismo.",
+              "tr": {
+                "hu": "Én ugyanazt gondolom.",
+                "en": "I think the same.",
+                "es": "Yo pienso lo mismo.",
+                "de": "Ich denke dasselbe."
+              }
+            },
+            {
+              "es": "Ella dice lo contrario.",
+              "tr": {
+                "hu": "Ő az ellenkezőjét mondja.",
+                "en": "She says the opposite.",
+                "es": "Ella dice lo contrario.",
+                "de": "Sie sagt das Gegenteil."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "lo-forma",
+      "title": {
+        "hu": "Helyzet + alak",
+        "en": "Situation + form",
+        "es": "Situación + forma",
+        "de": "Situation + Form"
+      },
+      "header": [
+        {
+          "hu": "Mondat (a lyuk a szerkezet alakja)",
+          "en": "Sentence (the gap is the form)",
+          "es": "Frase (el hueco es la forma)",
+          "de": "Satz (die Lücke ist die Form)"
+        },
+        {
+          "hu": "Alak",
+          "en": "Form",
+          "es": "forma",
+          "de": "Form"
+        },
+        {
+          "hu": "Mikor",
+          "en": "When",
+          "es": "uso",
+          "de": "Wann"
+        }
+      ],
+      "rows": [
+        [
+          "Para el examen, ___ (importante) es dormir.",
+          "lo importante",
+          "lo + adjetivo"
+        ],
+        [
+          "Me gusta la casa, pero ___ (malo) es el ruido.",
+          "lo malo",
+          "lo + adjetivo, masculino singular"
+        ],
+        [
+          "En esta ciudad ___ (difícil) es encontrar casa.",
+          "lo difícil",
+          "lo + adjetivo"
+        ],
+        [
+          "Cuéntame ___ (mejor) de tu viaje.",
+          "lo mejor",
+          "lo mejor de + sustantivo"
+        ],
+        [
+          "Hice ___ (mismo) que tú.",
+          "lo mismo",
+          "expresión fija"
+        ],
+        [
+          "No entiendo ___ dices.",
+          "lo que",
+          "lo que, sin sustantivo"
+        ],
+        [
+          "Todo ___ tengo está en esta caja.",
+          "lo que",
+          "todo lo que"
+        ],
+        [
+          "Llegó tarde, ___ no me gustó nada.",
+          "lo cual",
+          "lo cual, tras coma, toda la oración"
+        ],
+        [
+          "¿Qué pasó con ___ Pedro?",
+          "lo de",
+          "lo de + sustantivo, el asunto"
+        ],
+        [
+          "No quiero hablar de ___ ayer.",
+          "lo de",
+          "lo de + tiempo, el asunto"
+        ],
+        [
+          "No sabes ___ (bien) canta mi hermana.",
+          "lo bien que",
+          "lo + adverbio + que, no cambia"
+        ],
+        [
+          "Mira ___ (grande) son tus hijos.",
+          "lo grandes que",
+          "lo + adjetivo + que, concuerda"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Gyakori párok",
+        "en": "Common pairs",
+        "es": "Pares frecuentes",
+        "de": "Häufige Paare"
+      },
+      "pairs": [
+        {
+          "a": "lo que",
+          "b": "que",
+          "note": {
+            "hu": "Lo que: nincs főnév, amire utalna (lo que compré = az, amit vettem). Que: van főnév (el libro que compré = a könyv, amit vettem).",
+            "en": "Lo que: no noun to refer to (lo que compré = what I bought). Que: there is a noun (el libro que compré = the book I bought).",
+            "es": "Lo que: no hay sustantivo al que referirse (lo que compré = aquello que compré). Que: hay sustantivo (el libro que compré).",
+            "de": "Lo que: kein Nomen, auf das man sich bezieht (lo que compré = was ich gekauft habe). Que: es gibt ein Nomen (el libro que compré = das Buch, das ich gekauft habe)."
+          },
+          "examples": [
+            {
+              "es": "Lo que compré es caro.",
+              "tr": {
+                "hu": "Az, amit vettem, drága.",
+                "en": "What I bought is expensive.",
+                "es": "Lo que compré es caro.",
+                "de": "Was ich gekauft habe, ist teuer."
+              }
+            },
+            {
+              "es": "El libro que compré es caro.",
+              "tr": {
+                "hu": "A könyv, amit vettem, drága.",
+                "en": "The book I bought is expensive.",
+                "es": "El libro que compré es caro.",
+                "de": "Das Buch, das ich gekauft habe, ist teuer."
+              }
+            }
+          ]
+        },
+        {
+          "a": "lo bueno",
+          "b": "el bueno",
+          "note": {
+            "hu": "Lo bueno: egy tulajdonság, a jó dolog (nincs főnév). El bueno: egy hímnemű főnév, amit nem mondunk ki (a jó darab, a jó fiú).",
+            "en": "Lo bueno: a quality, the good thing (no noun). El bueno: a masculine noun left unsaid (the good one, the good guy).",
+            "es": "Lo bueno: una cualidad, la cosa buena (sin sustantivo). El bueno: un sustantivo masculino que no se dice (el bueno de los dos).",
+            "de": "Lo bueno: eine Eigenschaft, das Gute (kein Nomen). El bueno: ein maskulines Nomen, das nicht genannt wird (der gute, der Gute von beiden)."
+          },
+          "examples": [
+            {
+              "es": "Lo bueno es el precio.",
+              "tr": {
+                "hu": "A jó az ár.",
+                "en": "The good thing is the price.",
+                "es": "Lo bueno es el precio.",
+                "de": "Das Gute ist der Preis."
+              }
+            },
+            {
+              "es": "El bueno cuesta más.",
+              "tr": {
+                "hu": "A jobbik többe kerül.",
+                "en": "The good one costs more.",
+                "es": "El bueno cuesta más.",
+                "de": "Der gute kostet mehr."
+              }
+            }
+          ]
+        },
+        {
+          "a": "lo bien que canta",
+          "b": "tan bien que canta",
+          "note": {
+            "hu": "Lo bien que: mennyire jól (csodálkozás). Tan bien que: olyan jól, hogy… (utána következmény jön).",
+            "en": "Lo bien que: how well (surprise). Tan bien que: so well that… (a result follows).",
+            "es": "Lo bien que: cuán bien (sorpresa). Tan bien que: tan bien, que… (sigue una consecuencia).",
+            "de": "Lo bien que: wie gut (Staunen). Tan bien que: so gut, dass… (danach folgt eine Folge)."
+          },
+          "examples": [
+            {
+              "es": "No sabes lo bien que canta.",
+              "tr": {
+                "hu": "Nem is tudod, milyen jól énekel.",
+                "en": "You don't know how well she sings.",
+                "es": "No sabes lo bien que canta.",
+                "de": "Du weißt nicht, wie gut sie singt."
+              }
+            },
+            {
+              "es": "Canta tan bien que todos escuchan.",
+              "tr": {
+                "hu": "Olyan jól énekel, hogy mindenki hallgatja.",
+                "en": "She sings so well that everyone listens.",
+                "es": "Canta tan bien que todos escuchan.",
+                "de": "Sie singt so gut, dass alle zuhören."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A lo után a melléknév mindig hímnemű egyes számú: lo importante, soha nem lo importantes. Egyetlen kivétel a lo + melléknév + que (mennyire…): ott igazodik, lo grandes que son.",
+        "en": "After lo the adjective is always masculine singular: lo importante, never lo importantes. The only exception is lo + adjective + que (how…): there it agrees, lo grandes que son.",
+        "es": "Tras lo el adjetivo va siempre en masculino singular: lo importante, nunca lo importantes. La única excepción es lo + adjetivo + que (cuán…): ahí concuerda, lo grandes que son.",
+        "de": "Nach lo steht das Adjektiv immer im Maskulinum Singular: lo importante, nie lo importantes. Die einzige Ausnahme ist lo + Adjektiv + que (wie…): dort richtet es sich, lo grandes que son."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ne keverd össze a névelő lo-t a tárgyesetű névmás lo-val: Lo importante es dormir (névelő), de Lo veo (tárgyesetű névmás: látom őt vagy azt).",
+        "en": "Do not confuse the article lo with the object pronoun lo: Lo importante es dormir (article), but Lo veo (object pronoun: I see him or it).",
+        "es": "No confundas el artículo lo con el pronombre de objeto lo: Lo importante es dormir (artículo), pero Lo veo (pronombre de objeto).",
+        "de": "Verwechsle den Artikel lo nicht mit dem Objektpronomen lo: Lo importante es dormir (Artikel), aber Lo veo (Objektpronomen: ich sehe ihn oder es)."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A lo egy semleges névelő. Nem főnév előtt áll, hanem egy tulajdonság, egy ügy vagy egy egész mondat helyén, és azt a dolgot jelenti. Nincs többes száma és nincs nőneme, ezért a melléknév utána mindig hímnemű egyes számú marad. Az első használata: lo és melléknév, az a dolog, ami olyan. A második: lo que, az, amit vagy ami, ha nincs főnév, amire utalnál. Vessző után a lo cual az egész előző mondatra utal. A lo de után főnév vagy főnévi igenév jön, és egy már ismert ügyet jelent. Végül a lo, egy melléknév vagy határozó és a que együtt azt mondja meg, mennyire olyan valami. Ilyenkor a melléknév ahhoz igazodik, akiről szó van, a határozó pedig soha nem változik.",
+    "en": "Lo is a neuter article. It does not stand before a noun but in place of a quality, a matter or a whole clause, and it means the thing that is such. It has no plural and no feminine, so the adjective after it always stays masculine singular. The first use: lo and an adjective, the thing that is like that. The second: lo que, what or that which, when there is no noun to refer to. After a comma, lo cual refers to the whole previous clause. After lo de comes a noun or an infinitive, and it means a matter people already know. Finally, lo, an adjective or adverb and que together say how much something is so. Then the adjective agrees with whatever is described, while the adverb never changes.",
+    "es": "Lo es un artículo neutro. No va delante de un sustantivo, sino en lugar de una cualidad, de un asunto o de una oración entera, y significa la cosa que es así. No tiene plural ni femenino, y por eso el adjetivo que lo sigue va siempre en masculino singular. El primer uso: lo y un adjetivo, la cosa que es así. El segundo: lo que, aquello que, cuando no hay un sustantivo al que referirse. Después de una coma, lo cual se refiere a toda la oración anterior. Tras lo de va un sustantivo o un infinitivo, y significa un asunto que ya se conoce. Por último, lo, un adjetivo o adverbio y que juntos dicen cuánto es algo así. Entonces el adjetivo concuerda con aquello de lo que se habla, y el adverbio no cambia nunca.",
+    "de": "Lo ist ein neutraler Artikel. Er steht nicht vor einem Nomen, sondern anstelle einer Eigenschaft, einer Angelegenheit oder eines ganzen Satzes und bedeutet die Sache, die so ist. Er hat keinen Plural und kein Femininum, deshalb bleibt das Adjektiv danach immer im Maskulinum Singular. Die erste Verwendung: lo und ein Adjektiv, die Sache, die so ist. Die zweite: lo que, das, was, wenn es kein Nomen gibt, auf das man sich bezieht. Nach einem Komma bezieht sich lo cual auf den ganzen vorigen Satz. Nach lo de folgt ein Nomen oder ein Infinitiv, und es bedeutet eine Angelegenheit, die man schon kennt. Schließlich sagen lo, ein Adjektiv oder Adverb und que zusammen, wie sehr etwas so ist. Dann richtet sich das Adjektiv nach dem, worüber man spricht, und das Adverb verändert sich nie."
+  },
+  "items": [
+    {
+      "id": "lon-ch-01",
+      "sentence": "Para mí, ___ más importante es la familia.",
+      "options": [
+        "el",
+        "lo",
+        "la"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A lo + melléknév egy tulajdonságot nevez meg (az, ami a legfontosabb), főnév nélkül.",
+        "en": "Lo + adjective names a quality (the thing that matters most) without a noun.",
+        "es": "Lo + adjetivo nombra una cualidad (la cosa que más importa) sin sustantivo.",
+        "de": "Lo + Adjektiv nennt eine Eigenschaft (das, was am wichtigsten ist) ohne Nomen."
+      },
+      "wrong": {
+        "el": {
+          "hu": "Az el egy hímnemű főnévre utalna (el libro más importante); itt nincs főnév, csak egy tulajdonság, ezért lo kell; helyesen: Para mí, lo más importante es la familia.",
+          "en": "El would point to a masculine noun (el libro más importante); here there is no noun, only a quality, so lo is needed; correctly: Para mí, lo más importante es la familia.",
+          "es": "El se referiría a un sustantivo masculino (el libro más importante); aquí no hay sustantivo, solo una cualidad, así que hace falta lo; correctamente: Para mí, lo más importante es la familia.",
+          "de": "El würde sich auf ein maskulines Nomen beziehen (el libro más importante); hier gibt es kein Nomen, nur eine Eigenschaft, also braucht man lo; richtig: Para mí, lo más importante es la familia."
+        },
+        "la": {
+          "hu": "A la egy nőnemű főnévre utalna (la cosa más importante); itt nincs főnév, ezért a semleges lo kell; helyesen: Para mí, lo más importante es la familia.",
+          "en": "La would point to a feminine noun (la cosa más importante); here there is no noun, so the neuter lo is needed; correctly: Para mí, lo más importante es la familia.",
+          "es": "La se referiría a un sustantivo femenino (la cosa más importante); aquí no hay sustantivo, así que hace falta el neutro lo; correctamente: Para mí, lo más importante es la familia.",
+          "de": "La würde sich auf ein feminines Nomen beziehen (la cosa más importante); hier gibt es kein Nomen, also braucht man das neutrale lo; richtig: Para mí, lo más importante es la familia."
+        }
+      },
+      "examples": [
+        "Lo bueno es que no llueve.",
+        "Lo mejor es dormir más."
+      ]
+    },
+    {
+      "id": "lon-ch-02",
+      "sentence": "Me gusta esta casa, pero ___ es el ruido.",
+      "options": [
+        "lo malo",
+        "la mala",
+        "lo mala"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Lo malo = az, ami rossz: a lo mellett a melléknév hímnemű egyes számú, főnév nélkül.",
+        "en": "Lo malo = the bad thing: after lo the adjective is masculine singular, with no noun.",
+        "es": "Lo malo = la cosa mala: tras lo el adjetivo va en masculino singular, sin sustantivo.",
+        "de": "Lo malo = das Schlechte: Nach lo steht das Adjektiv im Maskulinum Singular, ohne Nomen."
+      },
+      "wrong": {
+        "la mala": {
+          "hu": "A la mala egy nőnemű főnévre utalna (la mala suerte); itt az a dolog a gond, ami rossz, ezért a semleges lo kell; helyesen: Me gusta esta casa, pero lo malo es el ruido.",
+          "en": "La mala would point to a feminine noun (la mala suerte); here we mean the thing that is bad, so the neuter lo is needed; correctly: Me gusta esta casa, pero lo malo es el ruido.",
+          "es": "La mala se referiría a un sustantivo femenino (la mala suerte); aquí hablamos de la cosa que es mala, así que va el neutro lo; correctamente: Me gusta esta casa, pero lo malo es el ruido.",
+          "de": "La mala würde sich auf ein feminines Nomen beziehen (la mala suerte); hier geht es um die Sache, die schlecht ist, also das neutrale lo; richtig: Me gusta esta casa, pero lo malo es el ruido."
+        },
+        "lo mala": {
+          "hu": "A lo mellett a melléknév mindig hímnemű egyes számú: lo malo, soha nem lo mala; helyesen: Me gusta esta casa, pero lo malo es el ruido.",
+          "en": "After lo the adjective is always masculine singular: lo malo, never lo mala; correctly: Me gusta esta casa, pero lo malo es el ruido.",
+          "es": "Tras lo el adjetivo va siempre en masculino singular: lo malo, nunca lo mala; correctamente: Me gusta esta casa, pero lo malo es el ruido.",
+          "de": "Nach lo steht das Adjektiv immer im Maskulinum Singular: lo malo, nie lo mala; richtig: Me gusta esta casa, pero lo malo es el ruido."
+        }
+      },
+      "examples": [
+        "Lo malo es que no hay tiempo.",
+        "Lo difícil es empezar."
+      ]
+    },
+    {
+      "id": "lon-ch-03",
+      "sentence": "No entiendo ___ pasa aquí.",
+      "options": [
+        "que",
+        "lo cual",
+        "lo que"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Nincs főnév, amire a mondat utalna, ezért a lo que (az, amit) kell.",
+        "en": "There is no noun to refer to, so lo que (what) is needed.",
+        "es": "No hay un sustantivo al que referirse, así que hace falta lo que (aquello que).",
+        "de": "Es gibt kein Nomen, auf das man sich bezieht, also braucht man lo que (das, was)."
+      },
+      "wrong": {
+        "que": {
+          "hu": "A que önmagában főnév után áll (la cosa que dices); itt nincs főnév, ezért lo que kell; helyesen: No entiendo lo que pasa aquí.",
+          "en": "Que alone follows a noun (la cosa que dices); here there is no noun, so lo que is needed; correctly: No entiendo lo que pasa aquí.",
+          "es": "Que solo se usa tras un sustantivo (la cosa que dices); aquí no lo hay, así que hace falta lo que; correctamente: No entiendo lo que pasa aquí.",
+          "de": "Que allein steht nach einem Nomen (la cosa que dices); hier gibt es keins, also braucht man lo que; richtig: No entiendo lo que pasa aquí."
+        },
+        "lo cual": {
+          "hu": "A lo cual vessző után áll, és egy egész előző mondatra utal; itt nincs ilyen mondat; helyesen: No entiendo lo que pasa aquí.",
+          "en": "Lo cual comes after a comma and refers to a whole previous clause; there is none here; correctly: No entiendo lo que pasa aquí.",
+          "es": "Lo cual va tras una coma y se refiere a una oración entera anterior; aquí no hay ninguna; correctamente: No entiendo lo que pasa aquí.",
+          "de": "Lo cual steht nach einem Komma und bezieht sich auf einen ganzen vorigen Satz; hier gibt es keinen; richtig: No entiendo lo que pasa aquí."
+        }
+      },
+      "examples": [
+        "Compro lo que necesito.",
+        "Hago lo que puedo."
+      ]
+    },
+    {
+      "id": "lon-ch-04",
+      "sentence": "Llegó tarde, ___ no me gustó nada.",
+      "options": [
+        "lo cual",
+        "el cual",
+        "lo de"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A vessző utáni mellékmondat az egész előző mondatra (a késésre) utal: ezt a lo cual adja.",
+        "en": "The clause after the comma refers to the whole previous sentence (arriving late): lo cual does that.",
+        "es": "La oración tras la coma se refiere a toda la anterior (llegar tarde): eso lo hace lo cual.",
+        "de": "Der Satz nach dem Komma bezieht sich auf den ganzen vorigen Satz (das späte Kommen): Das leistet lo cual."
+      },
+      "wrong": {
+        "el cual": {
+          "hu": "Az el cual egy hímnemű főnévre utal; itt egy egész mondatra (a késésre) kell utalni, ezért a semleges forma kell; helyesen: Llegó tarde, lo cual no me gustó nada.",
+          "en": "El cual points to a masculine noun; here the reference is to a whole clause (arriving late), so the neuter form is needed; correctly: Llegó tarde, lo cual no me gustó nada.",
+          "es": "El cual se refiere a un sustantivo masculino; aquí hay que referirse a una oración entera (llegar tarde), así que va la forma neutra; correctamente: Llegó tarde, lo cual no me gustó nada.",
+          "de": "El cual bezieht sich auf ein maskulines Nomen; hier muss man sich auf einen ganzen Satz (das späte Kommen) beziehen, also braucht man die neutrale Form; richtig: Llegó tarde, lo cual no me gustó nada."
+        },
+        "lo de": {
+          "hu": "A lo de után főnév vagy főnévi igenév jön (lo de Pedro); itt a vessző után egy mellékmondat kezdődik; helyesen: Llegó tarde, lo cual no me gustó nada.",
+          "en": "Lo de is followed by a noun or an infinitive (lo de Pedro); here a clause starts after the comma; correctly: Llegó tarde, lo cual no me gustó nada.",
+          "es": "Tras lo de va un sustantivo o un infinitivo (lo de Pedro); aquí tras la coma empieza una oración; correctamente: Llegó tarde, lo cual no me gustó nada.",
+          "de": "Nach lo de folgt ein Nomen oder ein Infinitiv (lo de Pedro); hier beginnt nach dem Komma ein Satz; richtig: Llegó tarde, lo cual no me gustó nada."
+        }
+      },
+      "examples": [
+        "No tiene tiempo, lo cual es normal.",
+        "Hoy no llueve, lo cual es bueno."
+      ]
+    },
+    {
+      "id": "lon-ch-05",
+      "sentence": "No quiero hablar de ___ ayer.",
+      "options": [
+        "el de",
+        "lo de",
+        "lo que"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A lo de + időhatározó egy ügyet nevez meg, amiről a beszélők már tudnak (a tegnapi ügyet).",
+        "en": "Lo de + a time word names a matter the speakers already know about (yesterday's business).",
+        "es": "Lo de + una palabra de tiempo nombra un asunto que los hablantes ya conocen (lo de ayer).",
+        "de": "Lo de + Zeitangabe nennt eine Angelegenheit, die die Sprecher schon kennen (die Sache von gestern)."
+      },
+      "wrong": {
+        "el de": {
+          "hu": "Az el de egy hímnemű főnevet pótolna (el de ayer = a tegnapi hímnemű dolog); itt egy ügyről van szó, nem egy tárgyról; helyesen: No quiero hablar de lo de ayer.",
+          "en": "El de would replace a masculine noun (el de ayer = yesterday's masculine thing); here we mean a matter, not an object; correctly: No quiero hablar de lo de ayer.",
+          "es": "El de sustituiría a un sustantivo masculino (el de ayer); aquí se trata de un asunto, no de un objeto; correctamente: No quiero hablar de lo de ayer.",
+          "de": "El de würde ein maskulines Nomen ersetzen (el de ayer); hier geht es um eine Angelegenheit, nicht um einen Gegenstand; richtig: No quiero hablar de lo de ayer."
+        },
+        "lo que": {
+          "hu": "A lo que után ragozott ige jön (lo que pasó ayer); az ayer határozószó, ige nélkül nem áll meg; helyesen: No quiero hablar de lo de ayer.",
+          "en": "Lo que is followed by a conjugated verb (lo que pasó ayer); ayer is an adverb and has no verb; correctly: No quiero hablar de lo de ayer.",
+          "es": "Tras lo que va un verbo conjugado (lo que pasó ayer); ayer es un adverbio y no lleva verbo; correctamente: No quiero hablar de lo de ayer.",
+          "de": "Nach lo que folgt ein konjugiertes Verb (lo que pasó ayer); ayer ist ein Adverb und hat kein Verb; richtig: No quiero hablar de lo de ayer."
+        }
+      },
+      "examples": [
+        "¿Ya sabes lo de Ana?",
+        "Hablamos de lo de mañana."
+      ]
+    },
+    {
+      "id": "lon-ch-06",
+      "sentence": "No sabes ___ bien que canta mi hermana.",
+      "options": [
+        "tan",
+        "el",
+        "lo"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A lo + határozó + que azt fejezi ki: mennyire jól; a bien nem változik.",
+        "en": "Lo + adverb + que expresses how well; bien never changes.",
+        "es": "Lo + adverbio + que expresa cuán bien; bien no cambia.",
+        "de": "Lo + Adverb + que drückt aus, wie gut; bien verändert sich nie."
+      },
+      "wrong": {
+        "tan": {
+          "hu": "A tan bien que azt jelenti: olyan jól, hogy (következmény jön); itt a csodálkozás kell: mennyire jól; helyesen: No sabes lo bien que canta mi hermana.",
+          "en": "Tan bien que means so well that (a result follows); here we need the how-well of surprise; correctly: No sabes lo bien que canta mi hermana.",
+          "es": "Tan bien que significa tan bien, que (sigue una consecuencia); aquí hace falta expresar cuánto, con sorpresa; correctamente: No sabes lo bien que canta mi hermana.",
+          "de": "Tan bien que heißt so gut, dass (eine Folge kommt); hier braucht man das Wie-gut des Staunens; richtig: No sabes lo bien que canta mi hermana."
+        },
+        "el": {
+          "hu": "Az el egy főnév előtt áll (el bien = a jó); a bien itt határozószó, ezért lo kell; helyesen: No sabes lo bien que canta mi hermana.",
+          "en": "El comes before a noun (el bien = the good); bien is an adverb here, so lo is needed; correctly: No sabes lo bien que canta mi hermana.",
+          "es": "El va delante de un sustantivo (el bien); aquí bien es un adverbio, así que hace falta lo; correctamente: No sabes lo bien que canta mi hermana.",
+          "de": "El steht vor einem Nomen (el bien = das Gute); bien ist hier ein Adverb, also braucht man lo; richtig: No sabes lo bien que canta mi hermana."
+        }
+      },
+      "examples": [
+        "Mira lo bien que baila.",
+        "No sabes lo rápido que corre."
+      ]
+    },
+    {
+      "id": "lon-ch-07",
+      "sentence": "Mira ___ que son tus hijos.",
+      "options": [
+        "lo grande",
+        "lo grandes",
+        "los grandes"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A lo + melléknév + que szerkezetben a melléknév ahhoz igazodik, akiről szó van: hijos, tehát grandes.",
+        "en": "In lo + adjective + que the adjective agrees with whoever is described: hijos, so grandes.",
+        "es": "En lo + adjetivo + que el adjetivo concuerda con aquello de lo que se habla: hijos, por tanto grandes.",
+        "de": "In lo + Adjektiv + que richtet sich das Adjektiv nach dem, worüber man spricht: hijos, also grandes."
+      },
+      "wrong": {
+        "lo grande": {
+          "hu": "Itt a melléknév nem marad hímnemű egyes számú, hanem a többes számú alanyhoz igazodik (son tus hijos); helyesen: Mira lo grandes que son tus hijos.",
+          "en": "The adjective does not stay masculine singular here; it agrees with the plural subject (son tus hijos); correctly: Mira lo grandes que son tus hijos.",
+          "es": "Aquí el adjetivo no se queda en masculino singular; concuerda con el sujeto plural (son tus hijos); correctamente: Mira lo grandes que son tus hijos.",
+          "de": "Das Adjektiv bleibt hier nicht im Maskulinum Singular; es richtet sich nach dem Subjekt im Plural (son tus hijos); richtig: Mira lo grandes que son tus hijos."
+        },
+        "los grandes": {
+          "hu": "A los grandes a nagyokat jelenti (főnévként); a csodálkozás szerkezete lo + melléknév + que; helyesen: Mira lo grandes que son tus hijos.",
+          "en": "Los grandes means the big ones (as a noun); the construction of surprise is lo + adjective + que; correctly: Mira lo grandes que son tus hijos.",
+          "es": "Los grandes significa los de gran tamaño (como sustantivo); la construcción de la sorpresa es lo + adjetivo + que; correctamente: Mira lo grandes que son tus hijos.",
+          "de": "Los grandes heißt die Großen (als Nomen); die Konstruktion des Staunens ist lo + Adjektiv + que; richtig: Mira lo grandes que son tus hijos."
+        }
+      },
+      "examples": [
+        "Mira lo bonitas que son.",
+        "No sabes lo contentos que estamos."
+      ]
+    },
+    {
+      "id": "lon-ch-08",
+      "sentence": "Todo ___ tengo está en esta caja.",
+      "options": [
+        "los que",
+        "lo que",
+        "lo cual"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A todo egyes számú és főnév nélküli: mindaz, amit = todo lo que.",
+        "en": "Todo is singular with no noun: everything that = todo lo que.",
+        "es": "Todo es singular y sin sustantivo: todo aquello que = todo lo que.",
+        "de": "Todo ist Singular und ohne Nomen: alles, was = todo lo que."
+      },
+      "wrong": {
+        "los que": {
+          "hu": "A los que többes számú főnévre utalna, és a todo helyett todos kellene (todos los que tengo); itt főnév nélküli egész van; helyesen: Todo lo que tengo está en esta caja.",
+          "en": "Los que would refer to a plural noun and need todos (todos los que tengo); here the whole has no noun; correctly: Todo lo que tengo está en esta caja.",
+          "es": "Los que se referiría a un sustantivo plural y haría falta todos (todos los que tengo); aquí el conjunto no tiene sustantivo; correctamente: Todo lo que tengo está en esta caja.",
+          "de": "Los que würde sich auf ein Nomen im Plural beziehen und todos verlangen (todos los que tengo); hier hat das Ganze kein Nomen; richtig: Todo lo que tengo está en esta caja."
+        },
+        "lo cual": {
+          "hu": "A lo cual vessző után áll, és egy előző mondatra utal; a todo után lo que kell; helyesen: Todo lo que tengo está en esta caja.",
+          "en": "Lo cual comes after a comma and refers to a previous sentence; after todo you need lo que; correctly: Todo lo que tengo está en esta caja.",
+          "es": "Lo cual va tras una coma y se refiere a una oración anterior; tras todo hace falta lo que; correctamente: Todo lo que tengo está en esta caja.",
+          "de": "Lo cual steht nach einem Komma und bezieht sich auf einen vorigen Satz; nach todo braucht man lo que; richtig: Todo lo que tengo está en esta caja."
+        }
+      },
+      "examples": [
+        "Quiero todo lo que veo.",
+        "Leo todo lo que tengo."
+      ]
+    },
+    {
+      "id": "lon-ch-09",
+      "sentence": "Me gustó todo, pero ___ del viaje fue la comida.",
+      "options": [
+        "el mejor",
+        "la mejor",
+        "lo mejor"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A lo mejor = a legjobb dolog; főnév nincs, ezért semleges lo áll.",
+        "en": "Lo mejor = the best thing; there is no noun, so the neuter lo is used.",
+        "es": "Lo mejor = la mejor cosa; no hay sustantivo, así que va el neutro lo.",
+        "de": "Lo mejor = das Beste; es gibt kein Nomen, also steht das neutrale lo."
+      },
+      "wrong": {
+        "el mejor": {
+          "hu": "Az el mejor egy hímnemű főnévre utalna (el mejor día); itt nincs főnév, a legjobb dologról van szó, ezért lo mejor; helyesen: Me gustó todo, pero lo mejor del viaje fue la comida.",
+          "en": "El mejor would point to a masculine noun (el mejor día); here there is no noun, we mean the best thing, so lo mejor; correctly: Me gustó todo, pero lo mejor del viaje fue la comida.",
+          "es": "El mejor se referiría a un sustantivo masculino (el mejor día); aquí no hay sustantivo, hablamos de la mejor cosa, así que lo mejor; correctamente: Me gustó todo, pero lo mejor del viaje fue la comida.",
+          "de": "El mejor würde sich auf ein maskulines Nomen beziehen (el mejor día); hier gibt es kein Nomen, wir meinen das Beste, also lo mejor; richtig: Me gustó todo, pero lo mejor del viaje fue la comida."
+        },
+        "la mejor": {
+          "hu": "A la mejor egy nőnemű főnévre utalna (la mejor foto); itt nincs főnév, ezért a semleges lo kell; helyesen: Me gustó todo, pero lo mejor del viaje fue la comida.",
+          "en": "La mejor would point to a feminine noun (la mejor foto); here there is no noun, so the neuter lo is needed; correctly: Me gustó todo, pero lo mejor del viaje fue la comida.",
+          "es": "La mejor se referiría a un sustantivo femenino (la mejor foto); aquí no hay sustantivo, así que hace falta el neutro lo; correctamente: Me gustó todo, pero lo mejor del viaje fue la comida.",
+          "de": "La mejor würde sich auf ein feminines Nomen beziehen (la mejor foto); hier gibt es kein Nomen, also braucht man das neutrale lo; richtig: Me gustó todo, pero lo mejor del viaje fue la comida."
+        }
+      },
+      "examples": [
+        "Lo peor de la semana es el lunes.",
+        "Lo mejor del día es la cena."
+      ]
+    },
+    {
+      "id": "lon-ch-10",
+      "sentence": "Hice ___ que tú.",
+      "options": [
+        "lo mismo",
+        "el mismo",
+        "la misma"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A lo mismo azt jelenti: ugyanazt a dolgot; semleges, főnév nélkül.",
+        "en": "Lo mismo means the same thing; it is neuter, without a noun.",
+        "es": "Lo mismo significa la misma cosa; es neutro y no lleva sustantivo.",
+        "de": "Lo mismo heißt dasselbe; es ist neutral und hat kein Nomen."
+      },
+      "wrong": {
+        "el mismo": {
+          "hu": "Az el mismo egy hímnemű főnévre utalna (el mismo libro); itt nincs főnév, hanem az ugyanaz a dolog; helyesen: Hice lo mismo que tú.",
+          "en": "El mismo would point to a masculine noun (el mismo libro); here there is no noun, just the same thing; correctly: Hice lo mismo que tú.",
+          "es": "El mismo se referiría a un sustantivo masculino (el mismo libro); aquí no hay sustantivo, sino la misma cosa; correctamente: Hice lo mismo que tú.",
+          "de": "El mismo würde sich auf ein maskulines Nomen beziehen (el mismo libro); hier gibt es kein Nomen, nur dieselbe Sache; richtig: Hice lo mismo que tú."
+        },
+        "la misma": {
+          "hu": "A la misma egy nőnemű főnévre utalna (la misma casa); a hice után az ugyanazt a dolgot lo mismo adja; helyesen: Hice lo mismo que tú.",
+          "en": "La misma would point to a feminine noun (la misma casa); after hice the same thing is lo mismo; correctly: Hice lo mismo que tú.",
+          "es": "La misma se referiría a un sustantivo femenino (la misma casa); tras hice la misma cosa es lo mismo; correctamente: Hice lo mismo que tú.",
+          "de": "La misma würde sich auf ein feminines Nomen beziehen (la misma casa); nach hice ist dasselbe lo mismo; richtig: Hice lo mismo que tú."
+        }
+      },
+      "examples": [
+        "Ella piensa lo contrario.",
+        "Yo quiero lo mismo."
+      ]
+    },
+    {
+      "id": "lon-ch-11",
+      "sentence": "El libro ___ compré es caro.",
+      "options": [
+        "que",
+        "lo que",
+        "lo cual"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Van főnév (el libro), amire a mellékmondat utal, ezért elég a que; a lo que főnév nélkül kell.",
+        "en": "There is a noun (el libro) for the clause to refer to, so que is enough; lo que is for when there is no noun.",
+        "es": "Hay un sustantivo (el libro) al que se refiere la oración, así que basta con que; lo que es para cuando no hay sustantivo.",
+        "de": "Es gibt ein Nomen (el libro), auf das sich der Satz bezieht, also genügt que; lo que braucht man, wenn es kein Nomen gibt."
+      },
+      "wrong": {
+        "lo que": {
+          "hu": "A lo que azt jelenti: az, amit, főnév nélkül; itt az el libro főnévre utalunk, ezért a lo felesleges; helyesen: El libro que compré es caro.",
+          "en": "Lo que means what, with no noun; here we refer to the noun el libro, so lo is wrong; correctly: El libro que compré es caro.",
+          "es": "Lo que significa aquello que, sin sustantivo; aquí nos referimos al sustantivo el libro, así que sobra lo; correctamente: El libro que compré es caro.",
+          "de": "Lo que heißt das, was, ohne Nomen; hier beziehen wir uns auf das Nomen el libro, also ist lo falsch; richtig: El libro que compré es caro."
+        },
+        "lo cual": {
+          "hu": "A lo cual vessző után áll, és egy egész mondatra utal; itt egy főnévre (el libro) vonatkozik a mellékmondat; helyesen: El libro que compré es caro.",
+          "en": "Lo cual comes after a comma and refers to a whole sentence; here the clause refers to a noun (el libro); correctly: El libro que compré es caro.",
+          "es": "Lo cual va tras una coma y se refiere a una oración entera; aquí la oración se refiere a un sustantivo (el libro); correctamente: El libro que compré es caro.",
+          "de": "Lo cual steht nach einem Komma und bezieht sich auf einen ganzen Satz; hier bezieht sich der Satz auf ein Nomen (el libro); richtig: El libro que compré es caro."
+        }
+      },
+      "examples": [
+        "La casa que quiero es grande.",
+        "El chico que habla es mi hermano."
+      ]
+    },
+    {
+      "id": "lon-ch-12",
+      "sentence": "¿Qué piensas de ___ viajar en agosto?",
+      "options": [
+        "de",
+        "lo de",
+        "el de"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A lo de + főnévi igenév egy ügyet nevez meg (az augusztusi utazás ügyét).",
+        "en": "Lo de + infinitive names a matter (the matter of travelling in August).",
+        "es": "Lo de + infinitivo nombra un asunto (el asunto de viajar en agosto).",
+        "de": "Lo de + Infinitiv nennt eine Angelegenheit (die Sache mit der Reise im August)."
+      },
+      "wrong": {
+        "de": {
+          "hu": "A de de nem helyes; ha a viajar egy ügyet nevez meg, a lo de kell; helyesen: ¿Qué piensas de lo de viajar en agosto?",
+          "en": "De de is not correct; when viajar names a matter, lo de is needed; correctly: ¿Qué piensas de lo de viajar en agosto?",
+          "es": "De de no es correcto; cuando viajar nombra un asunto, hace falta lo de; correctamente: ¿Qué piensas de lo de viajar en agosto?",
+          "de": "De de ist nicht korrekt; wenn viajar eine Angelegenheit nennt, braucht man lo de; richtig: ¿Qué piensas de lo de viajar en agosto?"
+        },
+        "el de": {
+          "hu": "Az el de egy hímnemű főnevet pótolna (el de Ana); itt egy ügyről van szó (viajar); helyesen: ¿Qué piensas de lo de viajar en agosto?",
+          "en": "El de would replace a masculine noun (el de Ana); here we mean a matter (viajar); correctly: ¿Qué piensas de lo de viajar en agosto?",
+          "es": "El de sustituiría a un sustantivo masculino (el de Ana); aquí se trata de un asunto (viajar); correctamente: ¿Qué piensas de lo de viajar en agosto?",
+          "de": "El de würde ein maskulines Nomen ersetzen (el de Ana); hier geht es um eine Angelegenheit (viajar); richtig: ¿Qué piensas de lo de viajar en agosto?"
+        }
+      },
+      "examples": [
+        "¿Qué piensas de lo de mañana?",
+        "Me gusta lo de viajar solo."
+      ]
+    },
+    {
+      "kind": "match",
+      "id": "lon-match-01",
+      "pairs": [
+        {
+          "es": "lo importante",
+          "en": "the important thing"
+        },
+        {
+          "es": "lo que dices",
+          "en": "what you say"
+        },
+        {
+          "es": "lo de ayer",
+          "en": "yesterday's business"
+        },
+        {
+          "es": "lo bien que canta",
+          "en": "how well he sings"
+        },
+        {
+          "es": "lo mismo",
+          "en": "the same thing"
+        },
+        {
+          "es": "lo mejor",
+          "en": "the best thing"
+        }
+      ]
+    },
+    {
+      "id": "lon-form-01",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Para el examen, ___ (importante) es dormir.",
+      "answer": "lo importante",
+      "table": "lo-forma"
+    },
+    {
+      "id": "lon-form-02",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Me gusta la casa, pero ___ (malo) es el ruido.",
+      "answer": "lo malo",
+      "table": "lo-forma"
+    },
+    {
+      "id": "lon-form-03",
+      "kind": "form",
+      "verb": "forma",
+      "person": "En esta ciudad ___ (difícil) es encontrar casa.",
+      "answer": "lo difícil",
+      "table": "lo-forma"
+    },
+    {
+      "id": "lon-form-04",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Cuéntame ___ (mejor) de tu viaje.",
+      "answer": "lo mejor",
+      "table": "lo-forma"
+    },
+    {
+      "id": "lon-form-05",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Hice ___ (mismo) que tú.",
+      "answer": "lo mismo",
+      "table": "lo-forma"
+    },
+    {
+      "id": "lon-form-06",
+      "kind": "form",
+      "verb": "forma",
+      "person": "No entiendo ___ dices.",
+      "answer": "lo que",
+      "table": "lo-forma"
+    },
+    {
+      "id": "lon-form-07",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Todo ___ tengo está en esta caja.",
+      "answer": "lo que",
+      "table": "lo-forma"
+    },
+    {
+      "id": "lon-form-08",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Llegó tarde, ___ no me gustó nada.",
+      "answer": "lo cual",
+      "table": "lo-forma"
+    },
+    {
+      "id": "lon-form-09",
+      "kind": "form",
+      "verb": "forma",
+      "person": "¿Qué pasó con ___ Pedro?",
+      "answer": "lo de",
+      "table": "lo-forma"
+    },
+    {
+      "id": "lon-form-10",
+      "kind": "form",
+      "verb": "forma",
+      "person": "No quiero hablar de ___ ayer.",
+      "answer": "lo de",
+      "table": "lo-forma"
+    },
+    {
+      "id": "lon-form-11",
+      "kind": "form",
+      "verb": "forma",
+      "person": "No sabes ___ (bien) canta mi hermana.",
+      "answer": "lo bien que",
+      "table": "lo-forma"
+    },
+    {
+      "id": "lon-form-12",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Mira ___ (grande) son tus hijos.",
+      "answer": "lo grandes que",
+      "table": "lo-forma"
+    },
+    {
+      "kind": "why",
+      "id": "lon-why-01",
+      "es": "Lo importante es dormir bien.",
+      "target": "Lo importante",
+      "tr": {
+        "hu": "A lényeg az, hogy jól aludj.",
+        "en": "The important thing is to sleep well.",
+        "es": "Lo importante es dormir bien.",
+        "de": "Wichtig ist, gut zu schlafen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lo + melléknév = az a dolog, ami olyan",
+            "en": "lo + adjective = the thing that is like that",
+            "es": "lo + adjetivo = la cosa que es así",
+            "de": "lo + Adjektiv = die Sache, die so ist"
+          }
+        },
+        {
+          "text": {
+            "hu": "lo que = az, amit vagy ami (nincs főnév)",
+            "en": "lo que = what, that which (no noun)",
+            "es": "lo que = aquello que (sin sustantivo)",
+            "de": "lo que = das, was (kein Nomen)"
+          },
+          "wrong": {
+            "hu": "A lo que után ragozott ige jön (lo que importa); itt a lo közvetlenül a melléknév előtt áll, és a que hiányzik.",
+            "en": "Lo que is followed by a conjugated verb (lo que importa); here lo stands right before the adjective and there is no que.",
+            "es": "Tras lo que va un verbo conjugado (lo que importa); aquí lo va justo delante del adjetivo y no hay que.",
+            "de": "Nach lo que folgt ein konjugiertes Verb (lo que importa); hier steht lo direkt vor dem Adjektiv und es gibt kein que."
+          }
+        },
+        {
+          "text": {
+            "hu": "lo + melléknév vagy határozó + que = mennyire…",
+            "en": "lo + adjective or adverb + que = how…",
+            "es": "lo + adjetivo o adverbio + que = cuánto…",
+            "de": "lo + Adjektiv oder Adverb + que = wie…"
+          },
+          "wrong": {
+            "hu": "A mennyire…! szerkezethez a melléknév után que is kell (lo importante que es); itt nincs que.",
+            "en": "The how…! construction needs que after the adjective (lo importante que es); there is no que here.",
+            "es": "La construcción cuánto… necesita que tras el adjetivo (lo importante que es); aquí no hay que.",
+            "de": "Die Konstruktion wie…! braucht que nach dem Adjektiv (lo importante que es); hier gibt es kein que."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "lon-why-02",
+      "es": "No entiendo lo que dices.",
+      "target": "lo que",
+      "tr": {
+        "hu": "Nem értem, amit mondasz.",
+        "en": "I don't understand what you say.",
+        "es": "No entiendo lo que dices.",
+        "de": "Ich verstehe nicht, was du sagst."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lo + melléknév = az a dolog, ami olyan",
+            "en": "lo + adjective = the thing that is like that",
+            "es": "lo + adjetivo = la cosa que es así",
+            "de": "lo + Adjektiv = die Sache, die so ist"
+          },
+          "wrong": {
+            "hu": "Nincs melléknév a lo után: a lo que egy ragozott igét (dices) kapcsol az entiendo-hoz.",
+            "en": "There is no adjective after lo: lo que connects a conjugated verb (dices) to entiendo.",
+            "es": "No hay adjetivo tras lo: lo que une un verbo conjugado (dices) con entiendo.",
+            "de": "Nach lo steht kein Adjektiv: lo que verbindet ein konjugiertes Verb (dices) mit entiendo."
+          }
+        },
+        {
+          "text": {
+            "hu": "lo cual = az egész előző mondatra utal",
+            "en": "lo cual = refers to the whole previous clause",
+            "es": "lo cual = se refiere a toda la oración anterior",
+            "de": "lo cual = bezieht sich auf den ganzen vorigen Satz"
+          },
+          "wrong": {
+            "hu": "A lo cual vessző után áll, és egy előző mondatra utal; itt nincs vessző, és a lo que az entiendo tárgya.",
+            "en": "Lo cual comes after a comma and refers to a previous sentence; here there is no comma, and lo que is the object of entiendo.",
+            "es": "Lo cual va tras una coma y se refiere a una oración anterior; aquí no hay coma, y lo que es el objeto de entiendo.",
+            "de": "Lo cual steht nach einem Komma und bezieht sich auf einen vorigen Satz; hier gibt es kein Komma, und lo que ist das Objekt von entiendo."
+          }
+        },
+        {
+          "text": {
+            "hu": "lo que = az, amit vagy ami (nincs főnév)",
+            "en": "lo que = what, that which (no noun)",
+            "es": "lo que = aquello que (sin sustantivo)",
+            "de": "lo que = das, was (kein Nomen)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "lon-why-03",
+      "es": "Llegó tarde, lo cual no me gustó.",
+      "target": "lo cual",
+      "tr": {
+        "hu": "Későn érkezett, ami nem tetszett nekem.",
+        "en": "He arrived late, which I did not like.",
+        "es": "Llegó tarde, lo cual no me gustó.",
+        "de": "Er kam spät, was mir nicht gefiel."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lo de + főnév = az ügy, amiről szó van",
+            "en": "lo de + noun = the matter of…",
+            "es": "lo de + sustantivo = el asunto de…",
+            "de": "lo de + Nomen = die Sache mit…"
+          },
+          "wrong": {
+            "hu": "A lo de után főnév vagy főnévi igenév jön; itt a lo cual után ragozott ige áll (no me gustó).",
+            "en": "Lo de is followed by a noun or an infinitive; here lo cual is followed by a conjugated verb (no me gustó).",
+            "es": "Tras lo de va un sustantivo o un infinitivo; aquí tras lo cual va un verbo conjugado (no me gustó).",
+            "de": "Nach lo de folgt ein Nomen oder ein Infinitiv; hier folgt auf lo cual ein konjugiertes Verb (no me gustó)."
+          }
+        },
+        {
+          "text": {
+            "hu": "lo cual = az egész előző mondatra utal",
+            "en": "lo cual = refers to the whole previous clause",
+            "es": "lo cual = se refiere a toda la oración anterior",
+            "de": "lo cual = bezieht sich auf den ganzen vorigen Satz"
+          }
+        },
+        {
+          "text": {
+            "hu": "lo + melléknév = az a dolog, ami olyan",
+            "en": "lo + adjective = the thing that is like that",
+            "es": "lo + adjetivo = la cosa que es así",
+            "de": "lo + Adjektiv = die Sache, die so ist"
+          },
+          "wrong": {
+            "hu": "A lo cual nem lo + melléknév: a cual itt vonatkozó szó, amely az egész előző mondatra (a késésre) utal.",
+            "en": "Lo cual is not lo + adjective: cual is a relative here, referring to the whole previous clause (arriving late).",
+            "es": "Lo cual no es lo + adjetivo: cual es aquí un relativo que se refiere a toda la oración anterior (llegar tarde).",
+            "de": "Lo cual ist nicht lo + Adjektiv: cual ist hier ein Relativpronomen, das sich auf den ganzen vorigen Satz (das späte Kommen) bezieht."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "lon-why-04",
+      "es": "¿Ya sabes lo de Pedro?",
+      "target": "lo de Pedro",
+      "tr": {
+        "hu": "Tudod már, mi volt Pedróval?",
+        "en": "Do you know about Pedro yet?",
+        "es": "¿Ya sabes lo de Pedro?",
+        "de": "Weißt du schon das mit Pedro?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lo de + főnév = az ügy, amiről szó van",
+            "en": "lo de + noun = the matter of…",
+            "es": "lo de + sustantivo = el asunto de…",
+            "de": "lo de + Nomen = die Sache mit…"
+          }
+        },
+        {
+          "text": {
+            "hu": "lo + melléknév = az a dolog, ami olyan",
+            "en": "lo + adjective = the thing that is like that",
+            "es": "lo + adjetivo = la cosa que es así",
+            "de": "lo + Adjektiv = die Sache, die so ist"
+          },
+          "wrong": {
+            "hu": "A lo után itt név (Pedro) áll, nem melléknév; a de + név az ügyet nevezi meg.",
+            "en": "After lo there is a name (Pedro), not an adjective; de + name names the matter.",
+            "es": "Tras lo hay un nombre (Pedro), no un adjetivo; de + nombre nombra el asunto.",
+            "de": "Nach lo steht ein Name (Pedro), kein Adjektiv; de + Name nennt die Angelegenheit."
+          }
+        },
+        {
+          "text": {
+            "hu": "lo + melléknév vagy határozó + que = mennyire…",
+            "en": "lo + adjective or adverb + que = how…",
+            "es": "lo + adjetivo o adverbio + que = cuánto…",
+            "de": "lo + Adjektiv oder Adverb + que = wie…"
+          },
+          "wrong": {
+            "hu": "Nincs que, és nincs melléknév vagy határozó; a lo de + név az ügyet jelenti.",
+            "en": "There is no que and no adjective or adverb; lo de + name means the matter.",
+            "es": "No hay que ni adjetivo o adverbio; lo de + nombre significa el asunto.",
+            "de": "Es gibt kein que und kein Adjektiv oder Adverb; lo de + Name bedeutet die Angelegenheit."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "lon-why-05",
+      "es": "No sabes lo bien que canta.",
+      "target": "lo bien que",
+      "tr": {
+        "hu": "Nem is tudod, milyen jól énekel.",
+        "en": "You don't know how well he sings.",
+        "es": "No sabes lo bien que canta.",
+        "de": "Du weißt nicht, wie gut er singt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lo + melléknév = az a dolog, ami olyan",
+            "en": "lo + adjective = the thing that is like that",
+            "es": "lo + adjetivo = la cosa que es así",
+            "de": "lo + Adjektiv = die Sache, die so ist"
+          },
+          "wrong": {
+            "hu": "A lo + melléknév egy dolgot nevez meg; itt viszont a bien határozószó, és a que után egy ige jön: ez a mennyire…! szerkezet.",
+            "en": "Lo + adjective names a thing; here bien is an adverb and a verb follows que: this is the how…! construction.",
+            "es": "Lo + adjetivo nombra una cosa; aquí bien es un adverbio y tras que va un verbo: es la construcción cuánto….",
+            "de": "Lo + Adjektiv nennt eine Sache; hier ist bien ein Adverb und nach que folgt ein Verb: Das ist die Konstruktion wie…!"
+          }
+        },
+        {
+          "text": {
+            "hu": "lo + melléknév vagy határozó + que = mennyire…",
+            "en": "lo + adjective or adverb + que = how…",
+            "es": "lo + adjetivo o adverbio + que = cuánto…",
+            "de": "lo + Adjektiv oder Adverb + que = wie…"
+          }
+        },
+        {
+          "text": {
+            "hu": "lo que = az, amit vagy ami (nincs főnév)",
+            "en": "lo que = what, that which (no noun)",
+            "es": "lo que = aquello que (sin sustantivo)",
+            "de": "lo que = das, was (kein Nomen)"
+          },
+          "wrong": {
+            "hu": "A lo que egy egységes szó (az, amit); itt a bien áll a lo és a que között.",
+            "en": "Lo que is one unit (what, that which); here bien stands between lo and que.",
+            "es": "Lo que es una unidad (aquello que); aquí bien va entre lo y que.",
+            "de": "Lo que ist eine Einheit (das, was); hier steht bien zwischen lo und que."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "lon-why-06",
+      "es": "Mira lo grandes que son tus hijos.",
+      "target": "lo grandes que",
+      "tr": {
+        "hu": "Nézd, milyen nagyok a gyerekeid.",
+        "en": "Look how big your children are.",
+        "es": "Mira lo grandes que son tus hijos.",
+        "de": "Schau, wie groß deine Kinder sind."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lo que = az, amit vagy ami (nincs főnév)",
+            "en": "lo que = what, that which (no noun)",
+            "es": "lo que = aquello que (sin sustantivo)",
+            "de": "lo que = das, was (kein Nomen)"
+          },
+          "wrong": {
+            "hu": "A lo que egy egységes szó (az, amit); itt a grandes áll a lo és a que között.",
+            "en": "Lo que is one unit (what, that which); here grandes stands between lo and que.",
+            "es": "Lo que es una unidad (aquello que); aquí grandes va entre lo y que.",
+            "de": "Lo que ist eine Einheit (das, was); hier steht grandes zwischen lo und que."
+          }
+        },
+        {
+          "text": {
+            "hu": "lo + melléknév = az a dolog, ami olyan",
+            "en": "lo + adjective = the thing that is like that",
+            "es": "lo + adjetivo = la cosa que es así",
+            "de": "lo + Adjektiv = die Sache, die so ist"
+          },
+          "wrong": {
+            "hu": "A lo + melléknév esetén a melléknév hímnemű egyes számú volna (lo grande); a grandes többes szám, mert az alanyhoz igazodik.",
+            "en": "With lo + adjective the adjective would be masculine singular (lo grande); grandes is plural because it agrees with the subject.",
+            "es": "Con lo + adjetivo el adjetivo iría en masculino singular (lo grande); grandes es plural porque concuerda con el sujeto.",
+            "de": "Bei lo + Adjektiv stünde das Adjektiv im Maskulinum Singular (lo grande); grandes steht im Plural, weil es sich nach dem Subjekt richtet."
+          }
+        },
+        {
+          "text": {
+            "hu": "lo + melléknév vagy határozó + que = mennyire…",
+            "en": "lo + adjective or adverb + que = how…",
+            "es": "lo + adjetivo o adverbio + que = cuánto…",
+            "de": "lo + Adjektiv oder Adverb + que = wie…"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "lon-why-07",
+      "es": "Pienso lo mismo que tú.",
+      "target": "lo mismo",
+      "tr": {
+        "hu": "Én is ugyanazt gondolom, mint te.",
+        "en": "I think the same as you.",
+        "es": "Pienso lo mismo que tú.",
+        "de": "Ich denke dasselbe wie du."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lo que = az, amit vagy ami (nincs főnév)",
+            "en": "lo que = what, that which (no noun)",
+            "es": "lo que = aquello que (sin sustantivo)",
+            "de": "lo que = das, was (kein Nomen)"
+          },
+          "wrong": {
+            "hu": "Itt a lo után a mismo áll, és a que csak az összehasonlítást hozza (mint te); a lo mismo állandó kifejezés.",
+            "en": "Here mismo follows lo, and que only brings the comparison (as you); lo mismo is a fixed expression.",
+            "es": "Aquí tras lo va mismo, y que solo trae la comparación (como tú); lo mismo es una expresión fija.",
+            "de": "Hier folgt mismo auf lo, und que bringt nur den Vergleich (wie du); lo mismo ist eine feste Wendung."
+          }
+        },
+        {
+          "text": {
+            "hu": "lo mismo, lo contrario = állandó kifejezés",
+            "en": "lo mismo, lo contrario = fixed expression",
+            "es": "lo mismo, lo contrario = expresión fija",
+            "de": "lo mismo, lo contrario = feste Wendung"
+          }
+        },
+        {
+          "text": {
+            "hu": "lo de + főnév = az ügy, amiről szó van",
+            "en": "lo de + noun = the matter of…",
+            "es": "lo de + sustantivo = el asunto de…",
+            "de": "lo de + Nomen = die Sache mit…"
+          },
+          "wrong": {
+            "hu": "A lo de után főnév vagy főnévi igenév áll (lo de Pedro); itt a lo mismo ugyanazt jelenti.",
+            "en": "Lo de is followed by a noun or an infinitive (lo de Pedro); here lo mismo means the same thing.",
+            "es": "Tras lo de va un sustantivo o un infinitivo (lo de Pedro); aquí lo mismo significa la misma cosa.",
+            "de": "Nach lo de folgt ein Nomen oder ein Infinitiv (lo de Pedro); hier bedeutet lo mismo dasselbe."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}
