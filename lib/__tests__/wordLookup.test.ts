@@ -47,6 +47,26 @@ describe('word lookup by text', () => {
     expect(findWordByText('   ', 'es', 'es')).toBeUndefined();
   });
 
+  // A words-open csak tőalakot hordoz; a ragozott, többes és nemi alak a tő kártyájához tartozik
+  // (hablar = 47, tener = 16, el amigo = 40, nuevo = 67, la ciudad = 51), de szót, ami nincs a
+  // words-openben, nem talál ki.
+  it('finds the headword card of a conjugated, plural or feminine form', () => {
+    expect(findWordByText('hablé', 'es', 'es')?.id).toBe(47);
+    expect(findWordByText('Hablaremos.', 'es', 'es')?.id).toBe(47);
+    expect(findWordByText('tuvo', 'es', 'es')?.id).toBe(16);
+    expect(findWordByText('amigos', 'es', 'es')?.id).toBe(40);
+    expect(findWordByText('los amigos', 'es', 'es')?.id).toBe(40);
+    expect(findWordByText('nuevas', 'es', 'es')?.id).toBe(67);
+    expect(findWordByText('ciudades', 'es', 'es')?.id).toBe(51);
+    expect(findWordByText('hablé', 'hu', 'es')).toBeUndefined();
+  });
+
+  it('does not gloss a form of a word that is not in the list', () => {
+    expect(openWords.some(w => w.lemma === 'bailar')).toBe(false);
+    expect(findWordByText('bailaba', 'es', 'es')).toBeUndefined();
+    expect(findWordByText('bailamos', 'es', 'es')).toBeUndefined();
+  });
+
   it('normalizes a token the same way the tap markers do', () => {
     expect(normalizeWordToken('¿Cuándo?')).toBe('cuándo');
     expect(normalizeWordToken('  El   Gato, ')).toBe('el gato');
