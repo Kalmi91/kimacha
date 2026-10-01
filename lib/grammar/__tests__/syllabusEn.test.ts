@@ -112,8 +112,8 @@ describe('Spanish grammar syllabus (default lang) is unchanged', () => {
     const fingerprint = createHash('sha1').update(JSON.stringify([GRAMMAR_UNITS, GRAMMAR_SYLLABUS])).digest('hex');
     expect({ units: GRAMMAR_UNITS.length, topics: GRAMMAR_SYLLABUS.length, fingerprint }).toEqual({
       units: 17,
-      topics: 70,
-      fingerprint: 'b01a15c8c2fdb2344d40de3b223d87b0b3048531',
+      topics: 71,
+      fingerprint: 'ac0619852ca65cfc365d90589078f1fcbf6dba5e',
     });
   });
 });

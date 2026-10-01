@@ -122,6 +122,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'finales-causales': 'core',
   'lo-neutro': 'exam',
   'gerundio-participio-construcciones': 'exam',
+  'verbos-de-cambio': 'exam',
   // --- C1 ---
   'futuro-condicional-perfecto': 'exam',
   'probabilidad-con-tiempos': 'exam',
@@ -623,6 +624,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'b2-oraciones',
     title: { hu: 'Gerundio és participio szerkezetek', en: 'Gerund and participle constructions', es: 'Construcciones de gerundio y participio', de: 'Gerundium- und Partizipkonstruktionen' },
     blurb: { hu: 'Siendo, hecho esto, llevar + gerundio.', en: 'Siendo, hecho esto, llevar + gerund.', es: 'Siendo, hecho esto, llevar + gerundio.', de: 'Siendo, hecho esto, llevar + Gerundium.' },
+  },
+  {
+    id: 'verbos-de-cambio',
+    level: 'B2',
+    unit: 'b2-oraciones',
+    title: { hu: 'Változás-igék', en: 'Verbs of change', es: 'Verbos de cambio', de: 'Verben der Veränderung' },
+    blurb: { hu: 'Ponerse, volverse, hacerse, quedarse, llegar a ser: hogyan lesz valami valamivé.', en: 'Ponerse, volverse, hacerse, quedarse, llegar a ser: how something becomes something else.', es: 'Ponerse, volverse, hacerse, quedarse, llegar a ser: cómo algo pasa a ser otra cosa.', de: 'Ponerse, volverse, hacerse, quedarse, llegar a ser: wie etwas zu etwas anderem wird.' },
   },
   // ========================= C1 =========================
   {
