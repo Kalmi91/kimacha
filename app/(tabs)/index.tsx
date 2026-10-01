@@ -10,7 +10,7 @@ import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
-import { pcicItemsForViewLevel, findPcicItem, realLevelOfView, setPcicTarget, type PcicViewLevel, type PcicTarget } from '@/data/pcic';
+import { pcicItemsForViewLevel, findPcicItem, setPcicTarget, type PcicViewLevel, type PcicTarget } from '@/data/pcic';
 import { gradePcicAnswer, gradeSentenceAnswer, suggestedGrade, type PcicGrade } from '@/lib/pcicMatch';
 import {
   ARTICLE_OPTIONS,
@@ -22,11 +22,8 @@ import {
 } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget, thinSentences, dropOrphanCards, countFinishedToday, dayProgressPercent } from '@/lib/pcicSession';
-import { applyChainOrder, chainGroupId } from '@/lib/pcicChains';
 import { cardsForViewLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
-import { pcicNoteText } from '@/lib/pcicNotes';
-import { sensesFor } from '@/lib/pcicSenses';
 import FeedbackButton from '@/components/FeedbackModal';
 import SpeakButton from '@/components/SpeakButton';
 import BadgeRow from '@/components/learn/BadgeRow';
@@ -50,13 +47,12 @@ import { INITIAL_CADENCE, nextSentenceStep, type CadenceState, type SentenceCard
 // (again/hard/good/easy), az önálló SM-2 ütemezőn (lib/sm2.ts, 4. lépés).
 // Nem a FSRS `cards`/`sessionQueue` ütemezőt használja, azt nem érinti.
 
-// PLAN-fb0924 8. lépés (FB394/396): a lánc-átrendezés (applyChainOrder) UTÁN a
-// mondat-ritkítás (thinSentences) - de csak NORMÁL szinten; az "A1+"/"A2+"
-// nézet kizárólag mondatból áll, ott a ritkítás mindent kidobna.
-function pcicIntroOrder(memberIds: string[], cards: Sm2Card[], view: PcicViewLevel): string[] {
-  const reordered = applyChainOrder(memberIds, cards, realLevelOfView(view));
-  if (view === 'A1+' || view === 'A2+') return reordered;
-  return thinSentences(reordered, (id) => findPcicItem(id)?.kind, (id) => chainGroupId(id) ?? id);
+// PLAN-fb0924 8. lépés (FB394/396): mondat-ritkítás (thinSentences) - de csak
+// NORMÁL szinten; az "A1+"/"A2+" nézet kizárólag mondatból áll, ott a ritkítás
+// mindent kidobna.
+function pcicIntroOrder(memberIds: string[], view: PcicViewLevel): string[] {
+  if (view === 'A1+' || view === 'A2+') return memberIds;
+  return thinSentences(memberIds, (id) => findPcicItem(id)?.kind, (id) => id);
 }
 
 // SZ2 (SZAVAK.md): egy visszavonható értékelés pillanatképe. `counted` = a
@@ -101,11 +97,6 @@ export default function PcicScreen() {
   const [typedAnswer, setTypedAnswer] = useState('');
   const [articlePick, setArticlePick] = useState<ArticlePick>('');
   const [grade, setGrade] = useState<PcicGrade | null>(null);
-  // FB392/393: a ℹ️ jegyzet ki/be nyitása. Az itemId-t tárolja (nem egy
-  // puszta boolean-t), hogy kártyaváltáskor a becsukódás LEVEZETETT állapot
-  // legyen (nincs szükség rá, hogy egy effekt setState-tel nullázza -
-  // react-hooks/set-state-in-effect).
-  const [noteOpenFor, setNoteOpenFor] = useState<string | null>(null);
   const [sessionAnswered, setSessionAnswered] = useState(0);
   const [sessionNew, setSessionNew] = useState(0);
   const [sessionAgain, setSessionAgain] = useState(0);
@@ -186,7 +177,7 @@ export default function PcicScreen() {
     setAgainDelaySec(delaySec);
     setToday(day);
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
-    setQueue(pickSm2Session(cards, pcicIntroOrder(newOrder, cards, lvl), day, pcicNewBudget({ limit: newLimit, bonus, introducedToday })));
+    setQueue(pickSm2Session(cards, pcicIntroOrder(newOrder, lvl), day, pcicNewBudget({ limit: newLimit, bonus, introducedToday })));
     setTypedAnswer('');
     setGrade(null);
     setSessionAnswered(0);
@@ -232,16 +223,7 @@ export default function PcicScreen() {
   // fordítva. `sourceLang` a prompt/felolvasás nyelve, `target` a válaszé.
   const sourceLang = target === 'es' ? 'en' : 'es';
 
-  // PLAN-fb0924 7b. lépés (FB384, D4): ha a szónak több, érdemben eltérő
-  // jelentése van (data/pcic/senses.json, a duplikátum-egyesítés töltötte
-  // fel), a prompt (és a felolvasás) mindet mutatja/mondja " · "-tal
-  // elválasztva; a beírandó válasz ettől függetlenül a szó maga marad
-  // (currentItem.es). `currentItem` fentebb defíniált, ez az effekt ELŐTT
-  // kell, mert az is ezt mondja ki. PLAN-ketiranyu 4. lépés: a jelentés-lista
-  // angol gloss, csak es célnyelven van értelme (en-es irány).
-  const senses = target === 'es' && currentItem ? sensesFor(currentItem.id) : undefined;
   const promptSource = target === 'es' ? currentItem?.en : currentItem?.es;
-  const promptText = senses ? senses.map((sn) => sn.en).join(' · ') : promptSource;
   const answerText = target === 'es' ? currentItem?.es : currentItem?.en;
 
   // FB319/FB391: a prompt felolvasása ÉS a beviteli mező fókusza, amikor egy
@@ -253,8 +235,8 @@ export default function PcicScreen() {
   // a kártya bezárásakor (sentenceOpen false) szól, mint egy új lapnál.
   const sentenceOpen = sentenceCard !== null;
   useEffect(() => {
-    if (!loading && !sentenceOpen && currentItem && promptText && !grade) {
-      speak(promptText, speechLang(sourceLang));
+    if (!loading && !sentenceOpen && currentItem && promptSource && !grade) {
+      speak(promptSource, speechLang(sourceLang));
       inputRef.current?.focus();
     }
     // PLAN-play 11. lépés: kártyaváltáskor a folyamatban lévő felolvasás
@@ -303,7 +285,7 @@ export default function PcicScreen() {
   };
 
   // PLAN-play 11. lépés: Check után a szó felolvasása UTÁN, láncolva, magától
-  // szól a példamondat is, ha van a tételhez (data/pcic/<szint>-sentences.json).
+  // szól a példamondat is, ha van a tételhez (exampleEs/exampleEn).
   // PLAN-ketiranyu 4. lépés: mindkettő a célnyelven szól, nem mindig spanyolul.
   const speakRevealed = (best: string) => {
     const example = target === 'es' ? currentItem?.exampleEs : currentItem?.exampleEn;
@@ -409,7 +391,7 @@ export default function PcicScreen() {
     setQueue(
       pickSm2Session(
         activeCards,
-        pcicIntroOrder(newOrder, activeCards, level),
+        pcicIntroOrder(newOrder, level),
         today,
         pcicNewBudget({ limit: dailyNewLimit, bonus: next, introducedToday })
       )
@@ -638,12 +620,6 @@ export default function PcicScreen() {
   // szabály/korpusz spanyol szóalakra épül, angol célnyelven nincs értelme).
   const pos = target === 'es' ? posOf(currentItem) : null;
 
-  // FB392/393: ℹ️ jegyzet, CSAK ha az itemnek van (lib/pcicNotes.ts); a
-  // nyitottság LEVEZETETT (noteOpenFor === az aktuális item id-je), tehát
-  // kártyaváltáskor magától becsukódik, nincs rá külön effekt.
-  const note = pcicNoteText(currentItem.id);
-  const noteOpen = noteOpenFor === currentItem.id;
-
   // FB363/FB367: régió-chip (PCIC `[Régió]` zárójel tartalma) és mx-chip
   // (spanyolországi/mexikói köznyelvi eltérés) a szófaj-chip mellett.
   const regionChipLabel = currentItem.region
@@ -699,22 +675,10 @@ export default function PcicScreen() {
             {/* FB404/405/413: a hosszú szó / mondat ("reason (justification)", "they are
                 going to arrive") a hosszától függő betűmérettel, összemenő szélességgel;
                 enélkül a natív sor kiterjedt a kártyán túlra és a bal széle levágódott. */}
-            <FitText base={32} maxLines={3} reserve={note ? 200 : 150} style={[styles.frontText, { color: colors.text }]}>
-              {promptText ?? ''}
+            <FitText base={32} maxLines={3} reserve={150} style={[styles.frontText, { color: colors.text }]}>
+              {promptSource ?? ''}
             </FitText>
-            <SpeakButton onPress={() => speak(promptText ?? promptSource ?? '', speechLang(sourceLang))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
-            {/* FB392/393: ℹ️ gomb, csak jegyzetes itemen; koppintásra ki/be
-                nyílik a jegyzet, kártyaváltáskor levezetve becsukódik. */}
-            {note && (
-              <Pressable
-                onPress={() => setNoteOpenFor(noteOpen ? null : currentItem.id)}
-                style={styles.speakBtn}
-                accessibilityLabel="note"
-                testID="pcic-note-toggle"
-              >
-                <Text style={styles.speakIcon}>ℹ️</Text>
-              </Pressable>
-            )}
+            <SpeakButton onPress={() => speak(promptSource ?? '', speechLang(sourceLang))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
           </View>
           {/* PLAN-tobbjelentes 3. lépés (SZ8): kis mondat a szó alatt, ha a kérdésnek több
               jelentése van; a `*…*` jelölt rész félkövér + rózsaszín aláhúzás, a csillag nem
@@ -728,11 +692,6 @@ export default function PcicScreen() {
                   part
                 )
               )}
-            </Text>
-          )}
-          {note && noteOpen && (
-            <Text testID="pcic-note-text" style={[styles.noteText, { color: colors.tabIconDefault }]}>
-              {note}
             </Text>
           )}
           {/* 5c: a chip (szófaj) + a szekció ugyanabban a sorban látszik
@@ -1032,13 +991,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textDecorationLine: 'underline',
     textDecorationColor: '#EC4899',
-  },
-  noteText: {
-    fontSize: 14,
-    lineHeight: 20,
-    textAlign: 'center',
-    marginTop: 8,
-    marginBottom: 4,
   },
   sectionRow: {
     flexDirection: 'row',

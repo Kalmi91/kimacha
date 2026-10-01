@@ -6,35 +6,12 @@
 
 import { matchesLevel, cardsForLevel, levelProgress } from '../pcicLevels';
 import { sm2NewCard } from '../sm2';
-import { PCIC_LEVEL_MOVES } from '../pcicLevelMoves';
-// PLAN-ketiranyu 2. lépés (2026-09-28): a PCIC_LEVEL_MOVES a régi, valódi
-// PCIC-korpusz id-terén él (lib/db/migrations.ts natív-induláskori migrációja
-// használja), data/pcic.ts pedig mostantól a data/words alapú korpuszt adja -
-// a lenti item/realLevel ellenőrzés ezért a rejtett data/pcicCorpus.ts-re
-// váltott importtal olvassa a valódi id-ket. A `matchesLevel` hívás maga
-// (production lib/pcicLevels.ts) a PRODUCTION data/pcic-et használja belül,
-// de mivel ott az id nincs betöltve, az id-előtag tartalékra esik - ami erre
-// a valódi PCIC-id-mintára (az előtag = a tényleges szint) helyes marad.
-import { findPcicItem, levelOfItem } from '@/data/pcicCorpus';
 
 describe('matchesLevel', () => {
   it('matches a NOT-in-corpus (fixture) id to its own id-prefix (fallback)', () => {
     expect(matchesLevel('b1-abc123', 'B1')).toBe(true);
     expect(matchesLevel('a1-abc123', 'B1')).toBe(false);
     expect(matchesLevel('a2-abc123', 'A2')).toBe(true);
-  });
-
-  // PLAN-fb0924 7a: egy mozgatott, valódi PCIC-szó itemId-je most az ÚJ
-  // szintjének előtagjával kezdődik (a régi id megszűnt), tehát ez ÖNMAGÁBAN
-  // már a prefix-fallback-kal is helyes; a második teszt (levelOfItem) mutatja
-  // meg direktben, hogy a valódi mechanizmus (data-alapú, nem az id-string) fut.
-  it('a moved word (from lib/pcicLevelMoves.ts) matches its NEW level, not any stale prefix', () => {
-    const [oldId, newId] = Object.entries(PCIC_LEVEL_MOVES)[0];
-    const item = findPcicItem(newId);
-    expect(item).toBeDefined(); // az új id valódi, betöltött tétel
-    expect(findPcicItem(oldId)).toBeUndefined(); // a régi id többé nem létezik
-    const realLevel = levelOfItem(newId)!;
-    expect(matchesLevel(newId, realLevel)).toBe(true);
   });
 });
 
