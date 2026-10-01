@@ -90,6 +90,7 @@ import grammarEsHaceDesdeHace from '@/data/games/grammar/es/hace-desde-hace.json
 import grammarEsDiminutivos from '@/data/games/grammar/es/diminutivos.json';
 import grammarEsOracionesConsecutivas from '@/data/games/grammar/es/oraciones-consecutivas.json';
 import grammarEsSeImpersonalPasiva from '@/data/games/grammar/es/se-impersonal-pasiva.json';
+import grammarEsSeAccidental from '@/data/games/grammar/es/se-accidental.json';
 
 // K33 (play-vágás, 2026-09-22): a Játék/Átbeszélő fülek és a hozzájuk tartozó
 // data/games/{ccat,myths,chats,stories,confusables} mappák kikerültek. A
@@ -157,6 +158,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsCondicionalesTipo1,
     grammarEsRelativos,
     grammarEsSeImpersonalPasiva,
+    grammarEsSeAccidental,
     grammarEsPerifrasis,
     grammarEsPorParaAvanzado,
     grammarEsVerbosPreposicion,

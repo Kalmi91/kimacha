@@ -112,6 +112,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   pluscuamperfecto: 'exam',
   relativos: 'core',
   'se-impersonal-pasiva': 'exam',
+  'se-accidental': 'full',
   perifrasis: 'exam',
   'por-para-avanzado': 'exam',
   'verbos-preposicion': 'exam',
@@ -565,6 +566,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'b1-estructuras',
     title: { hu: 'Se: személytelen és passzív', en: 'Se: impersonal and passive', es: 'Se impersonal y pasiva refleja', de: 'Se: unpersönlich und Passiv' },
     blurb: { hu: 'Se habla español, se venden casas.', en: 'Se habla español, se venden casas.', es: 'Se habla español, se venden casas.', de: 'Se habla español, se venden casas.' },
+  },
+  {
+    id: 'se-accidental',
+    level: 'B1',
+    unit: 'b1-estructuras',
+    title: { hu: 'Se me olvidó: a véletlen "se"', en: 'Se me olvidó: the accidental se', es: 'Se involuntario: se me olvidó, se me cayó', de: 'Se me olvidó: das unbeabsichtigte se' },
+    blurb: { hu: 'Se me cayó, se nos acabó: a dolog "csinálta", te csak elszenvedted.', en: 'Se me cayó, se nos acabó: the thing "did it", you just went through it.', es: 'Se me cayó, se nos acabó: la cosa "lo hizo", tú solo lo viviste.', de: 'Se me cayó, se nos acabó: die Sache "tat es", du hast es nur erlebt.' },
   },
   {
     id: 'perifrasis',
