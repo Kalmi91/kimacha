@@ -2122,22 +2122,6 @@
     "pos": "adj"
   },
   {
-    "id": 10137,
-    "level": "B1",
-    "es": "la enfermedad",
-    "hu": "betegség",
-    "en": "disease",
-    "de": "die Krankheit",
-    "topic": "science_tech",
-    "topicOrder": 13,
-    "sentence_es": "El doctor dijo que la enfermedad no es grave.",
-    "sentence_hu": "Az orvos azt mondta, hogy a betegség nem súlyos.",
-    "sentence_en": "The doctor said that the disease isn't serious.",
-    "sentence_de": "Der Arzt sagte, dass die Krankheit nicht schwer ist.",
-    "pos": "noun",
-    "gender": "f"
-  },
-  {
     "id": 10138,
     "level": "B1",
     "es": "el objeto",
@@ -3188,21 +3172,6 @@
     "sentence_hu": "A gazdasági problémák tavaly óta romlottak.",
     "sentence_en": "The economic problems have got worse since last year.",
     "sentence_de": "Die wirtschaftlichen Probleme sind seit letztem Jahr schlimmer geworden.",
-    "pos": "adj"
-  },
-  {
-    "id": 10206,
-    "level": "B1",
-    "es": "preocupado",
-    "hu": "aggódó",
-    "en": "concerned",
-    "de": "besorgt",
-    "topic": "feelings_mind",
-    "topicOrder": 10,
-    "sentence_es": "Estoy preocupado por mi mamá, no se siente bien.",
-    "sentence_hu": "Aggódom az anyám miatt, nem érzi jól magát.",
-    "sentence_en": "I'm concerned about my mother, she isn't feeling well.",
-    "sentence_de": "Ich mache mir Sorgen um meine Mutter, ihr geht es nicht gut.",
     "pos": "adj"
   },
   {
@@ -5114,22 +5083,6 @@
     "pos": "adj"
   },
   {
-    "id": 10330,
-    "level": "B1",
-    "es": "el objetivo",
-    "hu": "cél",
-    "en": "aim",
-    "de": "das Ziel",
-    "topic": "ideas",
-    "topicOrder": 26,
-    "sentence_es": "Mi objetivo es terminar el proyecto antes de diciembre.",
-    "sentence_hu": "A célom az, hogy december előtt befejezzem a projektet.",
-    "sentence_en": "My aim is to finish the project before December.",
-    "sentence_de": "Mein Ziel ist es, das Projekt vor Dezember zu beenden.",
-    "pos": "noun",
-    "gender": "m"
-  },
-  {
     "id": 10331,
     "level": "B1",
     "es": "ligeramente",
@@ -5962,21 +5915,6 @@
     "sentence_en": "You worked hard, so you deserve a break.",
     "sentence_de": "Du hast hart gearbeitet, also hast du eine Pause verdient.",
     "pos": "verb"
-  },
-  {
-    "id": 10385,
-    "level": "B1",
-    "es": "seguramente",
-    "hu": "biztosan",
-    "en": "surely",
-    "de": "bestimmt",
-    "topic": "describing",
-    "topicOrder": 75,
-    "sentence_es": "Seguro estás bromeando, ese precio no puede ser correcto.",
-    "sentence_hu": "Biztosan viccelsz, ez az ár nem lehet helyes.",
-    "sentence_en": "Surely you're joking, that price can't be right.",
-    "sentence_de": "Das ist bestimmt ein Witz, dieser Preis kann nicht stimmen.",
-    "pos": "adv"
   },
   {
     "id": 10386,
@@ -7222,22 +7160,6 @@
     "gender": "m"
   },
   {
-    "id": 10466,
-    "level": "B1",
-    "es": "la mayoría",
-    "hu": "többség",
-    "en": "majority",
-    "de": "die Mehrheit",
-    "topic": "ideas",
-    "topicOrder": 42,
-    "sentence_es": "La mayoría de los estudiantes ha aprobado el examen.",
-    "sentence_hu": "A diákok többsége átment a vizsgán.",
-    "sentence_en": "The majority of the students have passed the exam.",
-    "sentence_de": "Die Mehrheit der Studenten hat die Prüfung bestanden.",
-    "pos": "noun",
-    "gender": "f"
-  },
-  {
     "id": 10467,
     "level": "B1",
     "es": "recordar (traer a la memoria)",
@@ -7311,21 +7233,6 @@
     "sentence_en": "We've had virtual meetings since everybody started working from home.",
     "sentence_de": "Wir haben virtuelle Meetings, seit alle von zu Hause arbeiten.",
     "pos": "adj"
-  },
-  {
-    "id": 10472,
-    "level": "B1",
-    "es": "por supuesto",
-    "hu": "természetesen",
-    "en": "naturally",
-    "de": "natürlich",
-    "topic": "describing",
-    "topicOrder": 90,
-    "sentence_es": "Por supuesto que te ayudaré si me necesitas.",
-    "sentence_hu": "Természetesen segítek, ha szükséged van rám.",
-    "sentence_en": "Naturally, I'll help you if you need me.",
-    "sentence_de": "Natürlich helfe ich dir, wenn du mich brauchst.",
-    "pos": "adv"
   },
   {
     "id": 10473,
@@ -7460,6 +7367,7 @@
     "hu": "humor",
     "en": "humor",
     "de": "der Humor",
+    "hint_es": "Tiene un gran sentido del *humor*.",
     "topic": "feelings_mind",
     "topicOrder": 34,
     "sentence_es": "Su humor siempre me hace reír cuando estoy triste.",
@@ -10530,21 +10438,6 @@
     "pos": "adj"
   },
   {
-    "id": 10679,
-    "level": "B1",
-    "es": "avergonzado",
-    "hu": "szégyenkezik",
-    "en": "ashamed",
-    "de": "beschämt",
-    "topic": "feelings_mind",
-    "topicOrder": 56,
-    "sentence_es": "Me da vergüenza mi error y ya pedí perdón.",
-    "sentence_hu": "Szégyellem a hibámat, és már bocsánatot kértem.",
-    "sentence_en": "I'm ashamed of my mistake, and I've said sorry.",
-    "sentence_de": "Ich schäme mich für meinen Fehler und habe mich entschuldigt.",
-    "pos": "adj"
-  },
-  {
     "id": 10680,
     "level": "B1",
     "es": "mortal",
@@ -12204,22 +12097,6 @@
     "sentence_hu": "A diákok közötti jó interakció segít nekik gyorsabban tanulni.",
     "sentence_en": "Good interaction between students helps them learn faster.",
     "sentence_de": "Gute Interaktion zwischen den Studenten hilft ihnen, schneller zu lernen.",
-    "pos": "noun",
-    "gender": "f"
-  },
-  {
-    "id": 10787,
-    "level": "B1",
-    "es": "la garantía",
-    "hu": "garancia",
-    "en": "warranty",
-    "de": "die Garantie",
-    "topic": "work_money",
-    "topicOrder": 84,
-    "sentence_es": "La garantía dura dos años, así que guarda el recibo en una carpeta.",
-    "sentence_hu": "A garancia két évig érvényes, ezért tedd a nyugtát egy mappába.",
-    "sentence_en": "The warranty lasts two years, so put the receipt in a folder.",
-    "sentence_de": "Die Garantie gilt zwei Jahre, also leg den Beleg in einen Ordner.",
     "pos": "noun",
     "gender": "f"
   },

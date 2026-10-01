@@ -429,7 +429,7 @@ function enWordIndex(level: Level): Map<string, EnWordEntry> {
   if (cached) return cached;
   const index = new Map<string, EnWordEntry>();
   for (const w of enWordsUpTo(level)) {
-    const key = w.en.trim().toLowerCase();
+    const key = w.en.split(' / ')[0].trim().toLowerCase(); // perjeles válasznál (S1) a fő alak a szótári szó
     if (!key || /\s/.test(key) || index.has(key)) continue;
     index.set(key, w);
   }
@@ -511,7 +511,8 @@ function lessonSentencesEn(lesson: LessonV2): string[] {
 function wordCellsForEnglishLesson(lesson: LessonV2): WordDeckCard[] {
   const cards: WordDeckCard[] = [];
   const seen = new Set<string>(); // kisbetűs angol válasz: egy szó egyszer (mergeDeckState/answerCell id-re kulcsol)
-  const push = (id: string, es: string, en: string) => {
+  const push = (id: string, es: string, enRaw: string) => {
+    const en = enRaw.split(' / ')[0]; // perjeles válasznál (S1) a kártya a fő alakot kéri
     const key = en.trim().toLowerCase();
     if (!key || !es.trim() || seen.has(key)) return;
     seen.add(key);
