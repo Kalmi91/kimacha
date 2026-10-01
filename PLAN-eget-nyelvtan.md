@@ -136,7 +136,21 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (választós): «En esta tienda ___ zapatos baratos.» → se venden / se vende
   - minta (választós): «En clase ___ el móvil.» → no se usa / se no usa / no usa se
   - minta (form): row[0] «En México ___ (hablar) español.» → se habla
-- …és a probe szerinti folytatás: D `ojala-quizas`, `gerundio-participio-construcciones`, `lo-neutro`, `pasiva-ser-participio`, `subjuntivo-perfecto`, `futuro-condicional-perfecto`, `leismo-laismo`, `probabilidad-con-tiempos`, `relativos-complejos`; E `indefinidos`, `perifrasis`, `pluscuamperfecto`, `relativos`, `concesivas`.
+- …és a probe szerinti folytatás: D `ojala-quizas`, `gerundio-participio-construcciones`, `lo-neutro`, `pasiva-ser-participio`, `subjuntivo-perfecto`, `futuro-condicional-perfecto`, `leismo-laismo`, `probabilidad-con-tiempos`, `relativos-complejos`; E `indefinidos`, `perifrasis`, `pluscuamperfecto`, `relativos`, `concesivas`. Ezeket a B sáv viszi (`nyelvtan-b`, lásd ott a „## Sáv B” szakaszt).
+- T-sor (02:30-tól, az A sáv a queue után): igeidős leckék, amelyeknek van `tense`-jelvénye, de nincs 50 transformja (probe 02:15; a skill „Igeidős témánál … 50 transform”, NYELVTAN.md NY10):
+- [ ] T1. `imperfecto` (A2): +50 transform (presente → imperfecto) → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): imperfecto 50 transform (nyelvtan)`
+- [ ] T2. `condicional-simple` (B1): +50 transform (presente → condicional) → kész, ha: ugyanaz, commit `feat(grammar): condicional-simple 50 transform (nyelvtan)`
+- [ ] T3. `indefinido-imperfecto` (A2): +50 transform, csak ha a transform-séma enged igeidő-jelölő súgót (pl. «ayer» / «de niño») → kész, ha: ugyanaz, vagy `[!]` + ok
+- Szándékosan kimarad: `indefinido-regular` / `-irregular` (az `indefinido-10-verbos` már 50 transformmal viszi, K2), `subjuntivo-disparadores` / `temporales-subjuntivo` (a `subjuntivo-presente-forma` 50 transformja ugyanez a fajta).
+
+## BRIEF T-sor (2026-10-01, 50 transform meglévő leckébe, tételenként EGY agent)
+
+Munkahely és tiltott fájlok: mint a javítás-briefben. A transform-szabály a skill (`C:\Users\kalma\.claude\skills\eget-nyelvtan\SKILL.md`) 147-166. sora 1:1: 50 `transform` item, 10 ige × 5 mondat, vegyes személyek, kijelentő / tagadó / kérdő, `tense` minden új itemen, `wordIds` a mondat minden tartalmas szavára (kártya-id stringként, csak `A0 … <lecke szintje>`), ismétlés-plafon (egy tartalmas szó max 3×, egy szerkezet max 2×), `prompt.es ≠ answer`, `accept` a kitett-névmásos / szórendi változatra, max 12 szó, természetes mondat.
+- Minta: `data/games/grammar/es/futuro-simple.json` transform itemei (forma, id-sémája, `tense`). A meglévő itemekhez (choice, match, form, why) nem nyúlsz.
+- Az igék: a lecke táblájának igéi, a gyakoriak előre; ha 10 nincs, a lecke szintjéig tanított gyakori igék.
+- A probe `--cards <SZINT> <fájl>` harmadik argumentuma a KIMENETI fájl: a worktree-n kívülre írd (`C:\Users\kalma\AppData\Local\Temp\claude\cards-<tétel>.txt`), és írás előtt node-dal ellenőrzöd a `wordIds`-t.
+- Kapu, commit (AI-marker nélkül), PLAN-sor frissítés `date '+%H:%M'`-mel, a lecke commitjával együtt.
+- Jelentés max 10 sor: item-számok, a kapu utolsó sora, hash, 5 minta `prompt.es → answer`.
 
 Napközbenre (kód vagy nem nyelvtan, Feedback sheet 2026-10-01 00:20, üres F oszlop, FB428-438; FB397-427 a PR #57-ben kész, de az F oszlopuk üres):
 - [!] FB437/FB438 gyökere kód: `lib/grammar/tableDeck.ts` (378-) a lecke szó-paklija = glossary + mondat-szavak; Kálmán szabálya: a tabledeck-pakliban csak a táblázat szavai. `/kimacha_nyelvtan`.
