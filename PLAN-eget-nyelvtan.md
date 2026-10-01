@@ -186,7 +186,10 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (választós): «¿Tienes la receta, Ana? ___ , por favor.» → dámela
   - minta (form): «Ya es tarde, Diego: ___ ahora mismo. (levantarse, tú)» → levántate
   - kártya-kérés: celular A2 (mexikói szó, a form-sorban `teléfono` áll)
-- [ ] F-8. `hace-desde-hace` (A2, új téma) → kész, ha: ugyanaz
+- [x] F-8. `hace-desde-hace` (A2, új téma) → kész, ha: ugyanaz · 05:15 · audit 0/0, jest 1969 ok, tsc 0, lint 0 err · sáv `exam`: a „mennyi ideje” kérdésre a `marcadores-temporales` hace + indefinido kifejezése kerülő utat ad (nem blokkol), a `perifrasis` (B1) llevar + gerundio pontja külön áll, későbbi téma nem épül rá, vizsga-igényt külön nem ellenőriztem · 12 választós + 1 match (6 pár) + 12 form (tábla `hace-desde-hace-formas`, row[0] = lyukas mondat + zárójelben az ige, a hace ... que sorokon az igeidő is: `(vivir, yo, presente)`; cella = az igealak vagy a kötőszó: `vivo`, `estudia`, `lleva`, `trabajando`, `fueron`, `desde`, `hace`) + 7 why (5 szabály-név: hace ... que + jelen / desde hace + jelen / desde + időpont / llevar + gerundio / hace + múlt idő); transform és `tense` nincs (nem igeidős téma: a szerkezet a jelen és az indefinido közti választás, a jelvény elárulná a választ); unit `a2-pasado`, syllabus-sor az `estar-gerundio` után; minden választósban EGY opció helyes: a puszta `hace` jelen idő mellett (Vivo aquí hace dos años, a latin-amerikai beszédben előfordul) sehol nincs opcióként, a `hace ... que` + indefinido (Hace dos años que llegué) nincs igeidő-választóban; a `desde` opció csak évszám / óra / nap előtt vagy a `desde hace` mellett áll, a `tienes` / `tengo` + gerundio (mexikói beszéd) nincs opcióként; a `wrong` mondat-specifikus, nem mond általános szabályt; mexikói szóhasználat (departamento, coche, manejar, papás, escuela); glossary üres; tesztek: speakNoSpanish 73→74, syllabusEn 73→74 + ujjlenyomat · hash: a `feat(grammar): hace-desde-hace lesson (nyelvtan)` commit
+  - minta (választós): «___ dos años que vivo en este departamento.» → Hace
+  - minta (választós): «Mis papás llegaron a Puebla ___ cinco años.» → hace
+  - minta (form): «Mi papá ___ seis meses buscando trabajo. (llevar)» → lleva
 - [ ] F-9. `diminutivos` (A2, új téma) → kész, ha: ugyanaz
 - [ ] F-10. `oraciones-consecutivas` (B2, új téma) → kész, ha: ugyanaz
 

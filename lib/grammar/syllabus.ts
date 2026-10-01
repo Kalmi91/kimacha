@@ -85,6 +85,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   perfecto: 'exam',
   'perfecto-vs-indefinido': 'exam',
   'estar-gerundio': 'core-plus',
+  'hace-desde-hace': 'exam',
   'futuro-simple': 'exam',
   'marcadores-temporales': 'core-plus',
   'imperativo-afirmativo': 'core',
@@ -379,6 +380,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'a2-pasado',
     title: { hu: 'Éppen most: estar + gerundio', en: 'Right now: estar + gerund', es: 'Ahora mismo: estar + gerundio', de: 'Gerade jetzt: estar + Gerundium' },
     blurb: { hu: 'Estoy comiendo: ami épp zajlik.', en: 'Estoy comiendo: what is happening right now.', es: 'Estoy comiendo: lo que pasa ahora.', de: 'Estoy comiendo: was gerade passiert.' },
+  },
+  {
+    id: 'hace-desde-hace',
+    level: 'A2',
+    unit: 'a2-pasado',
+    title: { hu: 'Mennyi ideje: hace, desde hace, llevar', en: 'How long: hace, desde hace, llevar', es: 'Cuánto tiempo: hace, desde hace, llevar', de: 'Seit wann: hace, desde hace, llevar' },
+    blurb: { hu: 'Hace dos años que vivo aquí, vivo aquí desde hace dos años: ami régen kezdődött és még tart.', en: 'Hace dos años que vivo aquí, vivo aquí desde hace dos años: what began earlier and is still going.', es: 'Hace dos años que vivo aquí, vivo aquí desde hace dos años: lo que empezó antes y sigue.', de: 'Hace dos años que vivo aquí, vivo aquí desde hace dos años: was früher begann und noch andauert.' },
   },
   {
     id: 'futuro-simple',
