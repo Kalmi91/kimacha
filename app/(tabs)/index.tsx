@@ -124,9 +124,6 @@ export default function PcicScreen() {
   // eddig csak a törölt Tanulás fül olvasta) mostantól a PCIC napi új tételeinek
   // számát is adja; a fejléc "new" chipje ebből számol (queue state === 'new').
   const [dailyNewLimit, setDailyNewLimit] = useState(DEFAULT_DAILY_NEW_LIMIT);
-  // PLAN-play 12. lépés (s3): a helyesírás-listán már szereplő PCIC-tételek
-  // id-je, hogy a "Add to spelling" gomb "✓ In spelling list"-re váltson.
-  const [pcicSpellingIds, setPcicSpellingIds] = useState<Set<string>>(new Set());
   // 5b: a dokkolt Check/Next sáv mért magassága, a görgető alsó paddingjéhez
   // és a 💬 bottomOffsetjéhez (DockedAction.tsx, a Learn DOCK_RESERVE-je az alapérték).
   const [dockH, setDockH] = useState(DOCK_RESERVE);
@@ -176,7 +173,6 @@ export default function PcicScreen() {
     const strict = await db.getStrictAccents();
     const newLimit = await db.getDailyNewLimit();
     const delaySec = await db.getAgainDelaySec();
-    const spellingRows = await db.getPcicSpellingList();
     const bonus = await db.getPcicNewBonus(day);
     // PLAN-ketiranyu 7. lépés: a feloldott igeidők a kész nyelvtani leckékből
     // (csak spanyol célnyelven van igeidő-kapu).
@@ -188,7 +184,6 @@ export default function PcicScreen() {
     setStrictAccents(strict);
     setDailyNewLimit(newLimit);
     setAgainDelaySec(delaySec);
-    setPcicSpellingIds(new Set(spellingRows.map((r) => r.itemId)));
     setToday(day);
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
     setQueue(pickSm2Session(cards, pcicIntroOrder(newOrder, cards, lvl), day, pcicNewBudget({ limit: newLimit, bonus, introducedToday })));
@@ -202,7 +197,7 @@ export default function PcicScreen() {
     setPcicBonus(bonus);
     setLoading(false);
     // setTypedAnswer is listed because the React Compiler infers it as a
-    // dependency of this async callback (FB minta, lásd app/spelling.tsx); it
+    // dependency of this async callback (FB minta); it
     // is stable, so nothing changes at runtime, but an empty array here counts
     // as broken memoization.
   }, [setTypedAnswer]);
@@ -384,15 +379,6 @@ export default function PcicScreen() {
     setLastGraded(null);
     setCadence(lastGraded.cadenceBefore);
     setSentenceCard(null);
-  };
-
-  // PLAN-play 12. lépés (s3, döntés a): csak Check után hívható (a gomb csak
-  // grade-nél látszik); PCIC-azonosítóval kerül a listára (lib/database.ts
-  // pcic_spelling_list), a helyesírás-tréner (app/spelling.tsx) ebből is olvas.
-  const handleAddSpelling = async () => {
-    if (!current) return;
-    await getDb().addToPcicSpellingList(current.itemId);
-    setPcicSpellingIds((prev) => new Set(prev).add(current.itemId));
   };
 
   const handleDontLearn = async () => {
@@ -848,22 +834,7 @@ export default function PcicScreen() {
             />
           )}
 
-          {/* PLAN-play 12. lépés (s3, döntés a): a "Add to spelling" gomb csak
-              Check után látszik, a "Don't learn this" mellett; a meglévő gomb
-              mérete/helyzete változatlan. */}
           <View style={styles.bottomRow}>
-            {grade && (
-              <Pressable onPress={handleAddSpelling} hitSlop={8}>
-                <Text
-                  style={[
-                    styles.spellingBtn,
-                    { color: pcicSpellingIds.has(current.itemId) ? '#22C55E' : colors.tabIconDefault },
-                  ]}
-                >
-                  {pcicSpellingIds.has(current.itemId) ? s.pcic.inSpellingList : s.pcic.addToSpelling}
-                </Text>
-              </Pressable>
-            )}
             <Pressable onPress={handleDontLearn} hitSlop={8}>
               <Text style={[styles.dontLearn, { color: colors.tabIconDefault }]}>{s.pcic.dontLearn}</Text>
             </Pressable>
@@ -1130,18 +1101,13 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     marginBottom: 8,
   },
-  // PLAN-play 12. lépés (s3): a "Add to spelling" gomb sora a "Don't learn
-  // this" mellett; ungraded állapotban (a gomb rejtve) egyetlen gyerek marad,
-  // a flex-end ilyenkor is a régi jobbra-igazított helyre teszi a dontLearn-t.
+  // PLAN-play 12. lépés (s3): a "Don't learn this" sora; a flex-end a régi
+  // jobbra-igazított helyre teszi a dontLearn-t.
   bottomRow: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'center',
     gap: 16,
-  },
-  spellingBtn: {
-    fontSize: 13,
-    marginBottom: 8,
   },
   checkBtn: {
     alignSelf: 'stretch',

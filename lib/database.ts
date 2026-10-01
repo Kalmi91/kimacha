@@ -29,21 +29,6 @@ export interface DB {
   // PLAN-play 12. lépés: napi streak-írás visszakerült (a Tanulás fül vitte
   // el, a PCIC-értékelés az egyetlen hívó innentől, lásd app/(tabs)/index.tsx).
   updateStreak(): Promise<void>;
-  addToSpellingList(wordId: number): Promise<void>;
-  getSpellingList(): Promise<{ wordId: number; step: number; due: string }[]>;
-  getSpellingDueCount(): Promise<number>;
-  // FB186: a lista TELJES mérete, hogy a Beállítások sora meg tudja mondani,
-  // a szám esedékes gyakorlás-e vagy összesen ennyi szó van a listán.
-  getSpellingListCount(): Promise<number>;
-  updateSpellingStep(wordId: number, step: number, due: string): Promise<void>;
-  // PLAN-play 12. lépés (s3): PCIC-tétel a helyesírás-listán, a fenti
-  // word_id-alapú listától külön (a PCIC id string, pl. "b1-0184"). Nem
-  // pair-hez kötött, mint a pcic_cards tábla.
-  addToPcicSpellingList(itemId: string): Promise<void>;
-  getPcicSpellingList(): Promise<{ itemId: string; step: number; due: string }[]>;
-  getPcicSpellingDueCount(): Promise<number>;
-  getPcicSpellingListCount(): Promise<number>;
-  updatePcicSpellingStep(itemId: string, step: number, due: string): Promise<void>;
   getStrictAccents(): Promise<boolean>;
   setStrictAccents(v: boolean): Promise<void>;
   // FB364: a PCIC "rontott" (again) kártya ennyi másodperc múlva jön
@@ -216,83 +201,6 @@ class SQLiteDB implements DB {
     if (row?.last_open_date === today) return false;
     await db.runAsync('UPDATE user_meta SET last_open_date = ? WHERE id = 1', [today]);
     return true;
-  }
-
-  // FB39: spelling-practice list, scoped to the active pair like cards.
-  async addToSpellingList(wordId: number) {
-    const db = await this.open();
-    const now = new Date().toISOString();
-    await db.runAsync(
-      'INSERT OR IGNORE INTO spelling_list (pair, word_id, step, due) VALUES (?, ?, 0, ?)',
-      [this.activePair, wordId, now]
-    );
-  }
-
-  async getSpellingList() {
-    const db = await this.open();
-    const rows = await db.getAllAsync<any>('SELECT word_id, step, due FROM spelling_list WHERE pair = ?', [this.activePair]);
-    return rows.map((r: any) => ({ wordId: r.word_id, step: r.step, due: r.due }));
-  }
-
-  async getSpellingDueCount() {
-    const db = await this.open();
-    const row = await db.getFirstAsync<any>(
-      'SELECT COUNT(*) as cnt FROM spelling_list WHERE pair = ? AND due <= ?',
-      [this.activePair, new Date().toISOString()]
-    );
-    return row?.cnt ?? 0;
-  }
-
-  async getSpellingListCount() {
-    const db = await this.open();
-    const row = await db.getFirstAsync<any>(
-      'SELECT COUNT(*) as cnt FROM spelling_list WHERE pair = ?',
-      [this.activePair]
-    );
-    return row?.cnt ?? 0;
-  }
-
-  async updateSpellingStep(wordId: number, step: number, due: string) {
-    const db = await this.open();
-    await db.runAsync(
-      'UPDATE spelling_list SET step = ?, due = ? WHERE pair = ? AND word_id = ?',
-      [step, due, this.activePair, wordId]
-    );
-  }
-
-  // PLAN-play 12. lépés (s3): ugyanaz, mint a fenti négy metódus, de a
-  // PCIC-tétel string id-jére (pl. "b1-0184"), nem pair-hez kötve, mint a
-  // pcic_cards tábla.
-  async addToPcicSpellingList(itemId: string) {
-    const db = await this.open();
-    const now = new Date().toISOString();
-    await db.runAsync('INSERT OR IGNORE INTO pcic_spelling_list (item_id, step, due) VALUES (?, 0, ?)', [itemId, now]);
-  }
-
-  async getPcicSpellingList() {
-    const db = await this.open();
-    const rows = await db.getAllAsync<any>('SELECT item_id, step, due FROM pcic_spelling_list');
-    return rows.map((r: any) => ({ itemId: r.item_id, step: r.step, due: r.due }));
-  }
-
-  async getPcicSpellingDueCount() {
-    const db = await this.open();
-    const row = await db.getFirstAsync<any>(
-      'SELECT COUNT(*) as cnt FROM pcic_spelling_list WHERE due <= ?',
-      [new Date().toISOString()]
-    );
-    return row?.cnt ?? 0;
-  }
-
-  async getPcicSpellingListCount() {
-    const db = await this.open();
-    const row = await db.getFirstAsync<any>('SELECT COUNT(*) as cnt FROM pcic_spelling_list');
-    return row?.cnt ?? 0;
-  }
-
-  async updatePcicSpellingStep(itemId: string, step: number, due: string) {
-    const db = await this.open();
-    await db.runAsync('UPDATE pcic_spelling_list SET step = ?, due = ? WHERE item_id = ?', [step, due, itemId]);
   }
 
   // FB132: difficulty switch, per pair (accents matter in Spanish, less so in
