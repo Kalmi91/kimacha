@@ -181,7 +181,11 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (választós): «Hace frío porque la ventana ___ abierta.» → está
   - minta (form): «Ahora Ana y Sofía ___ conmigo. (estar + enojar)» → están enojadas
   - kártya-kérés: celular A2 (mexikói szó, a mondatban `teléfono` áll), boleto A2 (a mondatban `entradas` áll)
-- [ ] F-7. `imperativo-pronombres` (A2, új téma) → kész, ha: ugyanaz
+- [x] F-7. `imperativo-pronombres` (A2, új téma) → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit · 05:02 · audit 0/0, jest 1956 ok, tsc 0, lint 0 err · sáv `exam`: az igenlő dime / siéntate már az `imperativo-afirmativo` (core) egyik szabálypontja, a kettős névmás és a tagadó helyzet az `imperativo-negativo` / `combinacion-pronombres` (exam) témára épül, későbbi téma nem épül rá, vizsga-igényt külön nem ellenőriztem · 12 választós + 1 match (6 pár) + 12 form (tábla `imperativo-pronombres-formas`, row[0] = rövid helyzet + zárójelben ige, megszólított és névmás-szerep, cella = a teljes alak hangsúlyjellel: ayúdame, ponte, devuélvemelo, pásemelo, siéntense, se lo envíes, te vayas) + 7 why (rule-név: tapad / tagadóban elé / ékezet a harmadik szótagra / nincs ékezet / se lo / usted-se / no + kötőmód) · transform és `tense` nincs (nem igeidős téma, névmás-helyzet); unit `a2-pronombres`, syllabus-sor a `verbos-como-gustar` után; minden választósban EGY opció helyes (a megszólítást név / señora / niños / mamá adja, a rossz opció ékezet-hiba, rossz sorrend, rossz megszólítás-alak vagy igenlő alak tagadás után); glossary 22 alak (a lecke tárgya maga a névmásos felszólító alak, ezt az audit nem ismeri fel: cómprame, dime, dámela, dásela, désela, llévaselo, siéntate ... + señora); tesztek: speakNoSpanish 72→73, syllabusEn 72→73 + ujjlenyomat · hash: a `feat(grammar): imperativo-pronombres lesson (nyelvtan)` commit
+  - minta (választós): «Es un secreto, Ana. No ___ a nadie.» → se lo digas
+  - minta (választós): «¿Tienes la receta, Ana? ___ , por favor.» → dámela
+  - minta (form): «Ya es tarde, Diego: ___ ahora mismo. (levantarse, tú)» → levántate
+  - kártya-kérés: celular A2 (mexikói szó, a form-sorban `teléfono` áll)
 - [ ] F-8. `hace-desde-hace` (A2, új téma) → kész, ha: ugyanaz
 - [ ] F-9. `diminutivos` (A2, új téma) → kész, ha: ugyanaz
 - [ ] F-10. `oraciones-consecutivas` (B2, új téma) → kész, ha: ugyanaz
