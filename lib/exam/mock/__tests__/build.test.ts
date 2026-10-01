@@ -39,11 +39,11 @@ describe('blueprint: irányonkénti, szintenkénti vizsga-alak', () => {
     ]);
   });
 
-  it('es→en: még nincs próbavizsga (az A1-nek nincs ellenőrzött hivatalos alakja)', () => {
+  it('es→en: csak az A2 van meg (az A1-nek nincs ellenőrzött hivatalos alakja)', () => {
     expect(MOCK_LEVELS.es).toEqual(['A1', 'A2']);
-    expect(MOCK_LEVELS.en).toEqual([]);
+    expect(MOCK_LEVELS.en).toEqual(['A2']);
     expect(mockAvailable('en', 'A1')).toBe(false);
-    expect(mockAvailable('en', 'A2')).toBe(false);
+    expect(mockAvailable('en', 'A2')).toBe(true);
     expect(() => getMockBlueprint('en', 'A1')).toThrow();
   });
 });
@@ -158,6 +158,29 @@ describe('buildMockExam: es A2', () => {
     expect(paper(e, 'reading').tasks.map(mockTaskItemCount)).toEqual([4, 6, 5, 6]);
     expect(paper(e, 'listening').tasks.map(mockTaskItemCount)).toEqual([6, 5, 4]);
     expect(kinds(paper(e, 'writing').tasks)).toEqual(['short_message', 'short_message']);
+  });
+});
+
+describe('buildMockExam: es→en A2 (spanyolul beszélő tanul angolt)', () => {
+  const { items, exam: e } = exam('en', 'A2');
+
+  it('a hivatalos angol alak: Reading / Writing / Listening / Speaking, 40 / 20 / 30 / 10 perc, PART n. utasítás', () => {
+    expect(e.papers.map((p) => [p.name, p.minutes])).toEqual([
+      ['Reading', 40],
+      ['Writing', 20],
+      ['Listening', 30],
+      ['Speaking', 10],
+    ]);
+    expect(paper(e, 'reading').tasks[0].instruction.startsWith('PART 1. ')).toBe(true);
+  });
+
+  it('a feladat az angol szint-szavakból épül (célnyelvi mondat = exampleEn)', () => {
+    const sentences = new Set(items.map((i) => i.exampleEn?.trim()));
+    const match = paper(e, 'reading').tasks.find((t) => t.kind === 'match');
+    if (match?.kind !== 'match') throw new Error('nincs match');
+    for (const p of match.prompts) expect(sentences.has(p.text)).toBe(true);
+    expect(paper(e, 'reading').tasks.length).toBe(4);
+    expect(paper(e, 'listening').tasks.length).toBe(3);
   });
 });
 
