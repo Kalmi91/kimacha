@@ -734,12 +734,12 @@ const TENSE_IDS = [
   'subjuntivo-presente',
 ];
 
-// Kártya-id (string) -> szint, a hat words-fájlból egyszer felépítve, a
+// Kártya-azonosító (a words-open `order`-e, string) -> szint, a words-open fájlokból egyszer felépítve, a
 // transform item `wordIds` szint-ellenőrzéséhez.
 const wordLevelById = new Map();
 for (const lvl of LEVELS) {
   for (const card of loadLevelWords(lvl)) {
-    wordLevelById.set(String(card.id), lvl);
+    wordLevelById.set(String(card.order), lvl); // words-open: a kártya azonosítója az `order`
   }
 }
 
