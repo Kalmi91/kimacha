@@ -1,0 +1,1329 @@
+{
+  "schema": 2,
+  "topic": "relativos-complejos",
+  "level": "C1",
+  "title": {
+    "hu": "Összetett vonatkozó szerkezetek",
+    "en": "Complex relative clauses",
+    "es": "Relativos complejos",
+    "de": "Komplexe Relativsätze"
+  },
+  "glossary": [
+    {
+      "word": "cuyo",
+      "gloss": {
+        "hu": "cuyo, cuya, cuyos, cuyas: akinek a, aminek a (birtokos vonatkozó szó)",
+        "en": "cuyo, cuya, cuyos, cuyas: whose (a possessive relative)",
+        "es": "cuyo, cuya, cuyos, cuyas: de quien, de lo que (relativo posesivo)",
+        "de": "cuyo, cuya, cuyos, cuyas: dessen, deren (possessives Relativwort)"
+      }
+    },
+    {
+      "word": "cuya",
+      "gloss": {
+        "hu": "cuya: a cuyo nőnemű alakja (akinek a)",
+        "en": "cuya: the feminine form of cuyo (whose)",
+        "es": "cuya: forma femenina de cuyo (de quien)",
+        "de": "cuya: die feminine Form von cuyo (deren)"
+      }
+    },
+    {
+      "word": "cuyas",
+      "gloss": {
+        "hu": "cuyas: a cuyo nőnemű többes alakja (akiknek a)",
+        "en": "cuyas: the feminine plural form of cuyo (whose)",
+        "es": "cuyas: forma femenina plural de cuyo (de quienes)",
+        "de": "cuyas: die feminine Pluralform von cuyo (deren)"
+      }
+    }
+  ],
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A B1-es leckében a vonatkozó mondat alapjait tanultad: que, quien, donde. C1 szinten három dolog jön hozzá. Egy: a que elé névelő kerülhet (el que, la que, lo que), és az elöljáró a névelő elé áll (la casa en la que vivo). Kettő: az írott, formális nyelv a cual alakokat kedveli (el cual, lo cual), amelyek ugyanazt jelentik, csak hivatalosabbak. Három: a cuyo a „akinek a” szócska, és a birtokolt főnévvel egyezik. Ezek a szerkezetek hosszú, pontos mondatokban kellenek: levélben, jelentésben, cikkben.",
+        "en": "The B1 lesson taught you the basics of the relative clause: que, quien, donde. At C1 three things are added. One: an article can stand before que (el que, la que, lo que), and a preposition goes before that article (la casa en la que vivo). Two: written, formal language likes the cual forms (el cual, lo cual), which mean the same but sound more official. Three: cuyo is the word for whose, and it agrees with the thing that is owned. These structures are needed in long, precise sentences: in letters, reports and articles.",
+        "es": "En la lección de B1 aprendiste lo básico de la oración de relativo: que, quien, donde. En C1 se añaden tres cosas. Una: delante de que puede ir un artículo (el que, la que, lo que), y la preposición va antes de ese artículo (la casa en la que vivo). Dos: la lengua escrita y formal prefiere las formas con cual (el cual, lo cual), que significan lo mismo pero suenan más oficiales. Tres: cuyo expresa posesión (de quien, de lo que) y concuerda con lo poseído. Estas estructuras hacen falta en frases largas y precisas: en cartas, informes y artículos.",
+        "de": "In der B1-Lektion hast du die Grundlagen des Relativsatzes gelernt: que, quien, donde. Auf C1-Niveau kommen drei Dinge dazu. Erstens: Vor que kann ein Artikel stehen (el que, la que, lo que), und eine Präposition steht vor diesem Artikel (la casa en la que vivo). Zweitens: Die geschriebene, formelle Sprache mag die cual-Formen (el cual, lo cual), die dasselbe bedeuten, aber offizieller klingen. Drittens: cuyo bedeutet dessen oder deren und richtet sich nach dem Besitzten. Diese Strukturen braucht man in langen, präzisen Sätzen: in Briefen, Berichten und Artikeln."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "A szabály pontjai",
+        "en": "The rules",
+        "es": "Los puntos de la regla",
+        "de": "Die Regelpunkte"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Névelő + que: a névelő az előzménnyel egyezik nemben és számban (el que, la que, los que, las que). Kiválasztást jelent: „az, amelyik”. Előzmény nélkül is állhat, ha a szövegből kiderül, miről van szó.",
+            "en": "Article + que: the article agrees with the antecedent in gender and number (el que, la que, los que, las que). It picks one out: the one that. It can stand without an antecedent when the context makes clear what is meant.",
+            "es": "Artículo + que: el artículo concuerda con el antecedente en género y número (el que, la que, los que, las que). Sirve para elegir: el que, la que. Puede ir sin antecedente cuando el contexto aclara de qué se habla.",
+            "de": "Artikel + que: Der Artikel richtet sich nach dem Bezugswort in Genus und Numerus (el que, la que, los que, las que). Er wählt etwas aus: derjenige, welcher. Er kann ohne Bezugswort stehen, wenn der Zusammenhang klar macht, was gemeint ist."
+          },
+          "examples": [
+            {
+              "es": "De los dos coches, el que tiene mi hermano es más caro.",
+              "tr": {
+                "hu": "A két autó közül az, amelyik a testvéremé, drágább.",
+                "en": "Of the two cars, the one my brother has is more expensive.",
+                "es": "De los dos coches, el que tiene mi hermano es más caro.",
+                "de": "Von den beiden Autos ist das, das mein Bruder hat, teurer."
+              }
+            },
+            {
+              "es": "De mis amigas, las que viven en Madrid son tres.",
+              "tr": {
+                "hu": "A barátnőim közül azok, akik Madridban élnek, hárman vannak.",
+                "en": "Of my friends, the ones who live in Madrid are three.",
+                "es": "De mis amigas, las que viven en Madrid son tres.",
+                "de": "Von meinen Freundinnen sind die, die in Madrid wohnen, drei."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Lo que: semleges alak, amikor nincs főnévi előzmény: „az, ami”. A todo után is lo que áll: todo lo que tengo.",
+            "en": "Lo que: the neutral form, when there is no noun as an antecedent: what, the thing that. After todo it is also lo que: todo lo que tengo.",
+            "es": "Lo que: forma neutra, cuando no hay un sustantivo como antecedente: lo que dices. Después de todo también va lo que: todo lo que tengo.",
+            "de": "Lo que: die neutrale Form, wenn es kein Nomen als Bezugswort gibt: was, das, was. Auch nach todo steht lo que: todo lo que tengo."
+          },
+          "examples": [
+            {
+              "es": "No me gusta lo que escribiste.",
+              "tr": {
+                "hu": "Nem tetszik, amit írtál.",
+                "en": "I do not like what you wrote.",
+                "es": "No me gusta lo que escribiste.",
+                "de": "Mir gefällt nicht, was du geschrieben hast."
+              }
+            },
+            {
+              "es": "Lo que más me gusta es viajar.",
+              "tr": {
+                "hu": "Amit a legjobban szeretek, az az utazás.",
+                "en": "What I like most is traveling.",
+                "es": "Lo que más me gusta es viajar.",
+                "de": "Was ich am liebsten mag, ist Reisen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Elöljáró + névelő + que: az elöljáró mindig a névelő előtt áll, nem a mondat végén. Az elöljárót az ige vonzata adja (confiar en, contar con, creer en), a névelő pedig az előzménnyel egyezik, nem az igével: la persona en la que confío, las ciudades por las que pasamos.",
+            "en": "Preposition + article + que: the preposition always stands before the article, not at the end of the sentence. The preposition is set by the verb (confiar en, contar con, creer en), and the article agrees with the antecedent, not with the verb: la persona en la que confío, las ciudades por las que pasamos.",
+            "es": "Preposición + artículo + que: la preposición va siempre antes del artículo, no al final de la frase. La preposición la pide el verbo (confiar en, contar con, creer en) y el artículo concuerda con el antecedente, no con el verbo: la persona en la que confío, las ciudades por las que pasamos.",
+            "de": "Präposition + Artikel + que: Die Präposition steht immer vor dem Artikel, nicht am Satzende. Die Präposition verlangt das Verb (confiar en, contar con, creer en), und der Artikel richtet sich nach dem Bezugswort, nicht nach dem Verb: la persona en la que confío, las ciudades por las que pasamos."
+          },
+          "examples": [
+            {
+              "es": "El motivo por el que llamé es urgente.",
+              "tr": {
+                "hu": "Az ok, amiért hívtam, sürgős.",
+                "en": "The reason why I called is urgent.",
+                "es": "El motivo por el que llamé es urgente.",
+                "de": "Der Grund, warum ich angerufen habe, ist dringend."
+              }
+            },
+            {
+              "es": "Las personas con las que trabajo son simpáticas.",
+              "tr": {
+                "hu": "Az emberek, akikkel dolgozom, kedvesek.",
+                "en": "The people I work with are nice.",
+                "es": "Las personas con las que trabajo son simpáticas.",
+                "de": "Die Leute, mit denen ich arbeite, sind nett."
+              }
+            },
+            {
+              "es": "La ciudad a la que viajamos es muy bonita.",
+              "tr": {
+                "hu": "A város, ahová utazunk, nagyon szép.",
+                "en": "The city we are traveling to is very pretty.",
+                "es": "La ciudad a la que viajamos es muy bonita.",
+                "de": "Die Stadt, in die wir reisen, ist sehr schön."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "El cual, la cual, los cuales, las cuales: ugyanazt jelentik, mint az el que alakok, de hivatalosabbak, főleg írott szövegben élnek. Elöljáró után és vessző után gyakoriak, mennyiségjelző után is jellemzők (algunos de los cuales). Mindig kell előzmény: előzmény nélkül nem állnak.",
+            "en": "El cual, la cual, los cuales, las cuales: they mean the same as the el que forms, but they are more formal and live mainly in written texts. They are common after a preposition and after a comma, and typical after a quantifier (algunos de los cuales). They always need an antecedent: they cannot stand without one.",
+            "es": "El cual, la cual, los cuales, las cuales: significan lo mismo que las formas con el que, pero son más formales y viven sobre todo en textos escritos. Son frecuentes después de preposición y de coma, y típicas después de un cuantificador (algunos de los cuales). Siempre necesitan un antecedente: no existen sin él.",
+            "de": "El cual, la cual, los cuales, las cuales: Sie bedeuten dasselbe wie die Formen mit el que, sind aber formeller und leben vor allem in geschriebenen Texten. Sie sind nach einer Präposition und nach einem Komma häufig und nach einer Mengenangabe typisch (algunos de los cuales). Sie brauchen immer ein Bezugswort: Ohne eines können sie nicht stehen."
+          },
+          "examples": [
+            {
+              "es": "La empresa en la cual trabaja mi tío es muy antigua.",
+              "tr": {
+                "hu": "A cég, amelyben a nagybátyám dolgozik, nagyon régi.",
+                "en": "The company in which my uncle works is very old.",
+                "es": "La empresa en la cual trabaja mi tío es muy antigua.",
+                "de": "Die Firma, in der mein Onkel arbeitet, ist sehr alt."
+              }
+            },
+            {
+              "es": "Mis padres, a los cuales veo poco, viven en Oaxaca.",
+              "tr": {
+                "hu": "A szüleim, akiket keveset látok, Oaxacában élnek.",
+                "en": "My parents, whom I rarely see, live in Oaxaca.",
+                "es": "Mis padres, a los cuales veo poco, viven en Oaxaca.",
+                "de": "Meine Eltern, die ich selten sehe, wohnen in Oaxaca."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Lo cual: egy egész mondatra vagy gondolatra utal, nem egy főnévre. Általában vessző után áll, és hivatalosabb, mint a lo que. Elöljáróval következményt jelent: por lo que, por lo cual = „ezért”.",
+            "en": "Lo cual: it refers to a whole clause or idea, not to a noun. It usually stands after a comma and is more formal than lo que. With a preposition it expresses a result: por lo que, por lo cual = so, therefore.",
+            "es": "Lo cual: remite a toda una frase o idea, no a un sustantivo. Suele ir después de coma y es más formal que lo que. Con preposición expresa consecuencia: por lo que, por lo cual = así que.",
+            "de": "Lo cual: Es bezieht sich auf einen ganzen Satz oder Gedanken, nicht auf ein Nomen. Es steht meist nach einem Komma und ist formeller als lo que. Mit Präposition drückt es eine Folge aus: por lo que, por lo cual = deshalb."
+          },
+          "examples": [
+            {
+              "es": "Ganó el partido, lo cual sorprendió a todos.",
+              "tr": {
+                "hu": "Megnyerte a meccset, ami mindenkit meglepett.",
+                "en": "He won the match, which surprised everyone.",
+                "es": "Ganó el partido, lo cual sorprendió a todos.",
+                "de": "Er gewann das Spiel, was alle überraschte."
+              }
+            },
+            {
+              "es": "El jefe estaba enfermo, por lo cual no vino.",
+              "tr": {
+                "hu": "A főnök beteg volt, ezért nem jött.",
+                "en": "The boss was ill, so he did not come.",
+                "es": "El jefe estaba enfermo, por lo cual no vino.",
+                "de": "Der Chef war krank, deshalb kam er nicht."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Cuyo, cuya, cuyos, cuyas: „akinek a, aminek a”. Egyszerre vonatkozó szó és birtokos, ezért nem kell mellé su, és névelő sem állhat utána. Nem a birtokossal egyezik, hanem a birtokolt főnévvel, amely közvetlenül utána áll: una mujer cuya hija vive en Alemania.",
+            "en": "Cuyo, cuya, cuyos, cuyas: whose. It is a relative word and a possessive at once, so su is not needed and no article can follow it. It agrees not with the owner but with the thing owned, which stands right after it: una mujer cuya hija vive en Alemania.",
+            "es": "Cuyo, cuya, cuyos, cuyas: de quien, de lo que. Es relativo y posesivo a la vez, así que no hace falta su y tampoco puede ir un artículo detrás. Concuerda no con el poseedor, sino con lo poseído, que va justo después: una mujer cuya hija vive en Alemania.",
+            "de": "Cuyo, cuya, cuyos, cuyas: dessen, deren. Es ist Relativwort und Possessiv zugleich, deshalb braucht man su nicht, und auch kein Artikel kann folgen. Es richtet sich nicht nach dem Besitzer, sondern nach dem Besitzten, das direkt danach steht: una mujer cuya hija vive en Alemania."
+          },
+          "examples": [
+            {
+              "es": "La mujer cuya hija vive en Alemania es mi vecina.",
+              "tr": {
+                "hu": "Az a nő, akinek a lánya Németországban él, a szomszédom.",
+                "en": "The woman whose daughter lives in Germany is my neighbor.",
+                "es": "La mujer cuya hija vive en Alemania es mi vecina.",
+                "de": "Die Frau, deren Tochter in Deutschland lebt, ist meine Nachbarin."
+              }
+            },
+            {
+              "es": "Es un restaurante cuyos platos son muy baratos.",
+              "tr": {
+                "hu": "Ez egy olyan étterem, amelynek az ételei nagyon olcsók.",
+                "en": "It is a restaurant whose dishes are very cheap.",
+                "es": "Es un restaurante cuyos platos son muy baratos.",
+                "de": "Das ist ein Restaurant, dessen Gerichte sehr billig sind."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Donde, como, cuando: vonatkozó határozószók. A donde helyre (la ciudad donde nací), a como módra (la forma como lo explicó), a cuando időre (la época cuando vivíamos allí) utal. Mindháromra jó az en que is: la ciudad en que nací, la forma en que lo explicó, la época en que vivíamos.",
+            "en": "Donde, como, cuando: relative adverbs. Donde refers to a place (la ciudad donde nací), como to a manner (la forma como lo explicó), cuando to a time (la época cuando vivíamos allí). En que also works for all three: la ciudad en que nací, la forma en que lo explicó, la época en que vivíamos.",
+            "es": "Donde, como, cuando: adverbios relativos. Donde se refiere a un lugar (la ciudad donde nací), como a una manera (la forma como lo explicó), cuando a un tiempo (la época cuando vivíamos allí). En que sirve para los tres: la ciudad en que nací, la forma en que lo explicó, la época en que vivíamos.",
+            "de": "Donde, como, cuando: Relativadverbien. Donde bezieht sich auf einen Ort (la ciudad donde nací), como auf die Art und Weise (la forma como lo explicó), cuando auf eine Zeit (la época cuando vivíamos allí). En que passt für alle drei: la ciudad en que nací, la forma en que lo explicó, la época en que vivíamos."
+          },
+          "examples": [
+            {
+              "es": "La ciudad donde nací es muy pequeña.",
+              "tr": {
+                "hu": "A város, ahol születtem, nagyon kicsi.",
+                "en": "The city where I was born is very small.",
+                "es": "La ciudad donde nací es muy pequeña.",
+                "de": "Die Stadt, in der ich geboren wurde, ist sehr klein."
+              }
+            },
+            {
+              "es": "La manera como lo hizo me sorprendió.",
+              "tr": {
+                "hu": "Ahogy csinálta, az meglepett.",
+                "en": "The way he did it surprised me.",
+                "es": "La manera como lo hizo me sorprendió.",
+                "de": "Die Art, wie er es machte, überraschte mich."
+              }
+            },
+            {
+              "es": "Recuerdo el día cuando nos conocimos.",
+              "tr": {
+                "hu": "Emlékszem arra a napra, amikor megismerkedtünk.",
+                "en": "I remember the day when we met.",
+                "es": "Recuerdo el día cuando nos conocimos.",
+                "de": "Ich erinnere mich an den Tag, als wir uns kennenlernten."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "relc-hueco",
+      "title": {
+        "hu": "Mondat + a hiányzó vonatkozó szó",
+        "en": "Sentence + the missing relative word",
+        "es": "Frase + la palabra de relativo que falta",
+        "de": "Satz + das fehlende Relativwort"
+      },
+      "header": [
+        {
+          "hu": "Mondat (a lyuk a hiányzó szó)",
+          "en": "Sentence (the gap is the missing word)",
+          "es": "Frase (el hueco es la palabra que falta)",
+          "de": "Satz (die Lücke ist das fehlende Wort)"
+        },
+        {
+          "hu": "Lyuk",
+          "en": "Gap",
+          "es": "hueco",
+          "de": "Lücke"
+        },
+        {
+          "hu": "Típus",
+          "en": "Type",
+          "es": "tipo",
+          "de": "Typ"
+        }
+      ],
+      "rows": [
+        [
+          "El escritor ___ libro leí es de Oaxaca.",
+          "cuyo",
+          "cuyo + sustantivo masculino singular"
+        ],
+        [
+          "Tengo una amiga ___ madre es médica.",
+          "cuya",
+          "cuya + sustantivo femenino singular"
+        ],
+        [
+          "Hablé con unos chicos ___ padres viven en Puebla.",
+          "cuyos",
+          "cuyos + sustantivo masculino plural"
+        ],
+        [
+          "Es una ciudad ___ calles siempre están llenas.",
+          "cuyas",
+          "cuyas + sustantivo femenino plural"
+        ],
+        [
+          "De los dos libros, ___ compré ayer es mejor.",
+          "el que",
+          "el que: elige uno de un grupo masculino"
+        ],
+        [
+          "De las dos casas, ___ vimos ayer es más barata.",
+          "la que",
+          "la que: elige una de un grupo femenino"
+        ],
+        [
+          "Entre estos vestidos, ___ más me gustan son los rojos.",
+          "los que",
+          "los que: elige varios de un grupo masculino plural"
+        ],
+        [
+          "Todo ___ tengo es tuyo.",
+          "lo que",
+          "lo que: neutro, después de todo"
+        ],
+        [
+          "Eso es justo ___ necesitaba.",
+          "lo que",
+          "lo que: neutro, sin sustantivo antes"
+        ],
+        [
+          "La persona en ___ que confío es mi madre.",
+          "la",
+          "el artículo concuerda con persona (femenino)"
+        ],
+        [
+          "Los amigos ___ los que cuento son pocos.",
+          "con",
+          "preposición que pide el verbo contar"
+        ],
+        [
+          "Las ideas ___ las que creo son muy simples.",
+          "en",
+          "preposición que pide el verbo creer"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Ugyanaz a jelentés, más regiszter vagy más hatókör",
+        "en": "Same meaning, other register or other range",
+        "es": "Mismo significado, otro registro u otro alcance",
+        "de": "Gleiche Bedeutung, anderes Register oder anderer Bereich"
+      },
+      "pairs": [
+        {
+          "a": "el que",
+          "b": "el cual",
+          "note": {
+            "hu": "Ugyanazt jelentik. Az el cual hivatalosabb, főleg írott szövegben él; az el que a beszédben is szokásos. Elöljáró után mindkettő jó.",
+            "en": "They mean the same. El cual is more formal and lives mainly in written texts; el que is usual in speech too. After a preposition both are fine.",
+            "es": "Significan lo mismo. El cual es más formal y vive sobre todo en textos escritos; el que es habitual también al hablar. Después de preposición los dos son correctos.",
+            "de": "Sie bedeuten dasselbe. El cual ist formeller und lebt vor allem in geschriebenen Texten; el que ist auch in der gesprochenen Sprache üblich. Nach einer Präposition sind beide richtig."
+          },
+          "examples": [
+            {
+              "es": "La casa en la que vivo es antigua.",
+              "tr": {
+                "hu": "A ház, amelyben lakom, régi.",
+                "en": "The house I live in is old.",
+                "es": "La casa en la que vivo es antigua.",
+                "de": "Das Haus, in dem ich wohne, ist alt."
+              }
+            },
+            {
+              "es": "La casa en la cual vive el presidente es antigua.",
+              "tr": {
+                "hu": "A ház, amelyben az elnök lakik, régi.",
+                "en": "The house in which the president lives is old.",
+                "es": "La casa en la cual vive el presidente es antigua.",
+                "de": "Das Haus, in dem der Präsident wohnt, ist alt."
+              }
+            }
+          ]
+        },
+        {
+          "a": "lo que",
+          "b": "lo cual",
+          "note": {
+            "hu": "A lo que előzmény nélkül is állhat (lo que dices). A lo cual csak egy mondat után áll, vessző után, és hivatalosabb.",
+            "en": "Lo que can stand without an antecedent (lo que dices). Lo cual stands only after a clause, after a comma, and is more formal.",
+            "es": "Lo que puede ir sin antecedente (lo que dices). Lo cual va solo después de una frase, tras coma, y es más formal.",
+            "de": "Lo que kann ohne Bezugswort stehen (lo que dices). Lo cual steht nur nach einem Satz, nach einem Komma, und ist formeller."
+          },
+          "examples": [
+            {
+              "es": "Lo que dijo me preocupa.",
+              "tr": {
+                "hu": "Amit mondott, az aggaszt.",
+                "en": "What he said worries me.",
+                "es": "Lo que dijo me preocupa.",
+                "de": "Was er sagte, beunruhigt mich."
+              }
+            },
+            {
+              "es": "Dijo que no, lo cual me preocupó.",
+              "tr": {
+                "hu": "Nemet mondott, ami aggasztott.",
+                "en": "He said no, which worried me.",
+                "es": "Dijo que no, lo cual me preocupó.",
+                "de": "Er sagte nein, was mich beunruhigte."
+              }
+            }
+          ]
+        },
+        {
+          "a": "donde",
+          "b": "en que",
+          "note": {
+            "hu": "A donde csak helyre utal. Az en que helyre, időre és módra is: la ciudad en que nací, el día en que nos conocimos, la forma en que lo hizo.",
+            "en": "Donde refers only to a place. En que works for a place, a time and a manner: la ciudad en que nací, el día en que nos conocimos, la forma en que lo hizo.",
+            "es": "Donde se refiere solo a un lugar. En que sirve para un lugar, un tiempo y una manera: la ciudad en que nací, el día en que nos conocimos, la forma en que lo hizo.",
+            "de": "Donde bezieht sich nur auf einen Ort. En que passt für einen Ort, eine Zeit und die Art und Weise: la ciudad en que nací, el día en que nos conocimos, la forma en que lo hizo."
+          },
+          "examples": [
+            {
+              "es": "La ciudad donde nací es pequeña.",
+              "tr": {
+                "hu": "A város, ahol születtem, kicsi.",
+                "en": "The city where I was born is small.",
+                "es": "La ciudad donde nací es pequeña.",
+                "de": "Die Stadt, in der ich geboren wurde, ist klein."
+              }
+            },
+            {
+              "es": "El día en que nos conocimos fue lunes.",
+              "tr": {
+                "hu": "Az a nap, amikor megismerkedtünk, hétfő volt.",
+                "en": "The day we met was a Monday.",
+                "es": "El día en que nos conocimos fue lunes.",
+                "de": "Der Tag, an dem wir uns kennenlernten, war ein Montag."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ökölszabály: ha a vonatkozó szó után a birtokolt főnév jön, cuyo kell (cuyas novelas). Ha nincs főnévi előzmény, el que vagy lo que áll. Ha elöljáró tartozik hozzá, az megy elöl: en la que, con la cual. A cual alakok hivatalosak: beszédben a que a szokásosabb.",
+        "en": "Rule of thumb: if the thing owned comes right after the relative word, you need cuyo (cuyas novelas). If there is no noun antecedent, el que or lo que stands. If a preposition belongs to it, the preposition goes first: en la que, con la cual. The cual forms are official: in speech que is more usual.",
+        "es": "Regla práctica: si después del relativo viene lo poseído, hace falta cuyo (cuyas novelas). Si no hay un antecedente nominal, va el que o lo que. Si lleva preposición, la preposición va primero: en la que, con la cual. Las formas con cual son oficiales: al hablar es más habitual que.",
+        "de": "Faustregel: Folgt auf das Relativwort das Besitzte, braucht man cuyo (cuyas novelas). Gibt es kein Nomen als Bezugswort, steht el que oder lo que. Gehört eine Präposition dazu, steht sie zuerst: en la que, con la cual. Die cual-Formen sind offiziell: Beim Sprechen ist que üblicher."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A haladó szinten a vonatkozó mondat pontosabb lesz. A que elé névelő kerülhet, és ez az előzménnyel egyezik: el que, la que, los que, las que. Ha nincs főnév előtte, lo que áll. Az elöljáró mindig a névelő elé kerül: la casa en la que vivo. A formális, írott nyelv az el cual, la cual alakokat kedveli, a lo cual pedig egy egész mondatra utal. A cuyo azt jelenti, hogy akinek a, és a birtokolt főnévvel egyezik: el autor cuyas novelas leo. A donde, a como és a cuando is lehet vonatkozó szó.",
+    "en": "At the advanced level the relative clause becomes more precise. An article can stand before que, and it agrees with the antecedent: el que, la que, los que, las que. When there is no noun before it, you use lo que. The preposition always comes before the article: la casa en la que vivo. Formal, written language prefers el cual, la cual and lo cual, which refers to a whole sentence. Cuyo means whose and agrees with the thing owned: el autor cuyas novelas leo. Donde, como and cuando can also work as relative words.",
+    "es": "En el nivel avanzado la oración de relativo se hace más precisa. Delante de que puede ir un artículo, que concuerda con el antecedente: el que, la que, los que, las que. Cuando no hay un sustantivo delante, se usa lo que. La preposición va siempre antes del artículo: la casa en la que vivo. La lengua formal y escrita prefiere el cual, la cual y lo cual, que se refiere a toda una frase. Cuyo significa de quien o de lo que y concuerda con lo poseído: el autor cuyas novelas leo. Donde, como y cuando también funcionan como relativos.",
+    "de": "Auf fortgeschrittenem Niveau wird der Relativsatz präziser. Vor que kann ein Artikel stehen, der sich nach dem Bezugswort richtet: el que, la que, los que, las que. Wenn davor kein Nomen steht, verwendet man lo que. Die Präposition steht immer vor dem Artikel: la casa en la que vivo. Die formelle, geschriebene Sprache bevorzugt el cual, la cual und lo cual, das sich auf einen ganzen Satz bezieht. Cuyo bedeutet dessen oder deren und richtet sich nach dem Besitzten: el autor cuyas novelas leo. Donde, como und cuando können ebenfalls als Relativwörter dienen."
+  },
+  "items": [
+    {
+      "id": "rc-ch-01",
+      "sentence": "Ese es el autor ___ novelas leo siempre.",
+      "options": [
+        "cuyo",
+        "cuyas",
+        "cuya"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A cuyo a birtokolt főnévvel egyezik (novelas: nőnem, többes szám), nem a birtokossal (autor): cuyas.",
+        "en": "Cuyo agrees with the thing owned (novelas: feminine, plural), not with the owner (autor): cuyas.",
+        "es": "Cuyo concuerda con lo poseído (novelas: femenino plural), no con el poseedor (autor): cuyas.",
+        "de": "Cuyo richtet sich nach dem Besitzten (novelas: feminin, Plural), nicht nach dem Besitzer (autor): cuyas."
+      },
+      "wrong": {
+        "cuyo": {
+          "hu": "A cuyo az autorhoz (hímnem, egyes szám) igazodna, de a cuyo a birtokolt főnévhez, a novelashoz igazodik; helyesen: Ese es el autor cuyas novelas leo siempre.",
+          "en": "Cuyo would agree with autor (masculine singular), but cuyo agrees with the thing owned, novelas; correctly: Ese es el autor cuyas novelas leo siempre.",
+          "es": "Cuyo concordaría con autor (masculino singular), pero cuyo concuerda con lo poseído, novelas; correctamente: Ese es el autor cuyas novelas leo siempre.",
+          "de": "Cuyo würde sich nach autor richten (maskulin Singular), aber cuyo richtet sich nach dem Besitzten, novelas; richtig: Ese es el autor cuyas novelas leo siempre."
+        },
+        "cuya": {
+          "hu": "A cuya egyes számú, a novelas viszont többes szám; helyesen: Ese es el autor cuyas novelas leo siempre.",
+          "en": "Cuya is singular, but novelas is plural; correctly: Ese es el autor cuyas novelas leo siempre.",
+          "es": "Cuya es singular, pero novelas es plural; correctamente: Ese es el autor cuyas novelas leo siempre.",
+          "de": "Cuya ist Singular, novelas aber Plural; richtig: Ese es el autor cuyas novelas leo siempre."
+        }
+      }
+    },
+    {
+      "id": "rc-ch-02",
+      "sentence": "Tengo un vecino ___ perro es muy grande.",
+      "options": [
+        "que su",
+        "cuyo",
+        "el cual"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A cuyo egyszerre vonatkozó szó és birtokos: cuyo perro = akinek a kutyája; a perro hímnem, egyes szám.",
+        "en": "Cuyo is a relative word and a possessive at once: cuyo perro = whose dog; perro is masculine singular.",
+        "es": "Cuyo es relativo y posesivo a la vez: cuyo perro = el perro de quien; perro es masculino singular.",
+        "de": "Cuyo ist Relativwort und Possessiv zugleich: cuyo perro = dessen Hund; perro ist maskulin Singular."
+      },
+      "wrong": {
+        "que su": {
+          "hu": "A que su nem standard: a cuyo már kifejezi a birtoklást, nem kell mellé su; helyesen: Tengo un vecino cuyo perro es muy grande.",
+          "en": "Que su is not standard: cuyo already expresses possession, so su is not needed; correctly: Tengo un vecino cuyo perro es muy grande.",
+          "es": "Que su no es estándar: cuyo ya expresa la posesión, y no hace falta su; correctamente: Tengo un vecino cuyo perro es muy grande.",
+          "de": "Que su ist nicht standardsprachlich: cuyo drückt den Besitz schon aus, su ist unnötig; richtig: Tengo un vecino cuyo perro es muy grande."
+        },
+        "el cual": {
+          "hu": "Az el cual után nem állhat főnév, és nem fejez ki birtoklást: nincs el cual perro; helyesen: Tengo un vecino cuyo perro es muy grande.",
+          "en": "El cual cannot be followed by a noun and does not express possession: there is no el cual perro; correctly: Tengo un vecino cuyo perro es muy grande.",
+          "es": "Después de el cual no puede ir un sustantivo, y no expresa posesión: no existe el cual perro; correctamente: Tengo un vecino cuyo perro es muy grande.",
+          "de": "Nach el cual kann kein Nomen stehen, und es drückt keinen Besitz aus: el cual perro gibt es nicht; richtig: Tengo un vecino cuyo perro es muy grande."
+        }
+      }
+    },
+    {
+      "id": "rc-ch-03",
+      "sentence": "Llegó tarde a la reunión, ___ molestó mucho al jefe.",
+      "options": [
+        "lo cual",
+        "la cual",
+        "el cual"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az előzmény az egész mondat (llegó tarde), nem egy főnév, ezért a semleges lo cual kell.",
+        "en": "The antecedent is the whole clause (llegó tarde), not a noun, so the neuter lo cual is needed.",
+        "es": "El antecedente es toda la frase (llegó tarde), no un sustantivo, por eso va la forma neutra lo cual.",
+        "de": "Das Bezugswort ist der ganze Satz (llegó tarde), kein Nomen, deshalb steht das Neutrum lo cual."
+      },
+      "wrong": {
+        "la cual": {
+          "hu": "A la cual a reunión főnévre utalna, de a főnököt nem a megbeszélés bosszantotta, hanem a késés; helyesen: Llegó tarde a la reunión, lo cual molestó mucho al jefe.",
+          "en": "La cual would refer to the noun reunión, but it was not the meeting that annoyed the boss, it was the lateness; correctly: Llegó tarde a la reunión, lo cual molestó mucho al jefe.",
+          "es": "La cual remitiría al sustantivo reunión, pero lo que molestó al jefe no fue la reunión, sino el retraso; correctamente: Llegó tarde a la reunión, lo cual molestó mucho al jefe.",
+          "de": "La cual würde sich auf das Nomen reunión beziehen, aber nicht die Sitzung ärgerte den Chef, sondern die Verspätung; richtig: Llegó tarde a la reunión, lo cual molestó mucho al jefe."
+        },
+        "el cual": {
+          "hu": "Az el cual hímnemű főnévre utalna, de a mondatban nincs ilyen: az előzmény egy egész állítás; helyesen: Llegó tarde a la reunión, lo cual molestó mucho al jefe.",
+          "en": "El cual would refer to a masculine noun, but there is none: the antecedent is a whole statement; correctly: Llegó tarde a la reunión, lo cual molestó mucho al jefe.",
+          "es": "El cual remitiría a un sustantivo masculino, pero no lo hay: el antecedente es toda una afirmación; correctamente: Llegó tarde a la reunión, lo cual molestó mucho al jefe.",
+          "de": "El cual würde sich auf ein maskulines Nomen beziehen, aber es gibt keines: Das Bezugswort ist eine ganze Aussage; richtig: Llegó tarde a la reunión, lo cual molestó mucho al jefe."
+        }
+      }
+    },
+    {
+      "id": "rc-ch-04",
+      "sentence": "Me sorprendió ___ dijo el profesor.",
+      "options": [
+        "lo que",
+        "el que",
+        "lo cual"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Nincs főnévi előzmény, csak egy elvont „az, amit mondott”: ilyenkor lo que áll.",
+        "en": "There is no noun as an antecedent, only an abstract the thing he said: that takes lo que.",
+        "es": "No hay un sustantivo como antecedente, solo algo abstracto, lo dicho: en ese caso va lo que.",
+        "de": "Es gibt kein Nomen als Bezugswort, nur etwas Abstraktes, das Gesagte: dann steht lo que."
+      },
+      "wrong": {
+        "el que": {
+          "hu": "Az el que hímnemű előzményre utalna (az, aki), nem arra, amit a tanár mondott; helyesen: Me sorprendió lo que dijo el profesor.",
+          "en": "El que would point to a masculine antecedent (the one who), not to what the professor said; correctly: Me sorprendió lo que dijo el profesor.",
+          "es": "El que remitiría a un antecedente masculino (el que dijo algo), no a lo dicho por el profesor; correctamente: Me sorprendió lo que dijo el profesor.",
+          "de": "El que würde auf ein maskulines Bezugswort verweisen (derjenige, der), nicht auf das, was der Lehrer sagte; richtig: Me sorprendió lo que dijo el profesor."
+        },
+        "lo cual": {
+          "hu": "A lo cual-nak egy mondat kell előtte, vessző után: itt nincs előtte semmi; helyesen: Me sorprendió lo que dijo el profesor.",
+          "en": "Lo cual needs a clause before it, after a comma: here there is nothing before it; correctly: Me sorprendió lo que dijo el profesor.",
+          "es": "Lo cual necesita una frase antes, después de coma: aquí no hay nada antes; correctamente: Me sorprendió lo que dijo el profesor.",
+          "de": "Lo cual braucht einen Satz davor, nach einem Komma: hier steht nichts davor; richtig: Me sorprendió lo que dijo el profesor."
+        }
+      }
+    },
+    {
+      "id": "rc-ch-05",
+      "sentence": "La casa en ___ crecí ya no existe.",
+      "options": [
+        "la que",
+        "el que",
+        "lo que"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A casa nőnemű egyes szám, ezért a névelő la; az elöljáró (en) a névelő elé kerül: la casa en la que.",
+        "en": "Casa is feminine singular, so the article is la; the preposition (en) goes before the article: la casa en la que.",
+        "es": "Casa es femenino singular, por eso el artículo es la; la preposición (en) va antes del artículo: la casa en la que.",
+        "de": "Casa ist feminin Singular, deshalb ist der Artikel la; die Präposition (en) steht vor dem Artikel: la casa en la que."
+      },
+      "wrong": {
+        "el que": {
+          "hu": "Az el que hímnemű, a casa viszont nőnemű; helyesen: La casa en la que crecí ya no existe.",
+          "en": "El que is masculine, but casa is feminine; correctly: La casa en la que crecí ya no existe.",
+          "es": "El que es masculino, pero casa es femenino; correctamente: La casa en la que crecí ya no existe.",
+          "de": "El que ist maskulin, casa aber feminin; richtig: La casa en la que crecí ya no existe."
+        },
+        "lo que": {
+          "hu": "A lo que semleges: akkor áll, ha nincs főnévi előzmény, itt viszont a casa az előzmény; helyesen: La casa en la que crecí ya no existe.",
+          "en": "Lo que is neuter: it is used when there is no noun antecedent, but here casa is the antecedent; correctly: La casa en la que crecí ya no existe.",
+          "es": "Lo que es neutro: se usa cuando no hay antecedente nominal, pero aquí el antecedente es casa; correctamente: La casa en la que crecí ya no existe.",
+          "de": "Lo que ist Neutrum: Es steht, wenn es kein Nomen als Bezugswort gibt, hier aber ist casa das Bezugswort; richtig: La casa en la que crecí ya no existe."
+        }
+      }
+    },
+    {
+      "id": "rc-ch-06",
+      "sentence": "El asunto sobre ___ habló el ministro fue la deuda.",
+      "options": [
+        "el cual",
+        "lo cual",
+        "cuyo"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Elöljáró (sobre) után a hivatalos, írott nyelv az el cual alakot kedveli; az asunto hímnem, egyes szám: el cual. A sobre el que is helyes, csak kevésbé hivatalos.",
+        "en": "After a preposition (sobre) formal, written language likes el cual; asunto is masculine singular: el cual. Sobre el que is also correct, only less formal.",
+        "es": "Después de una preposición (sobre) la lengua formal y escrita prefiere el cual; asunto es masculino singular: el cual. Sobre el que también es correcto, solo menos formal.",
+        "de": "Nach einer Präposition (sobre) bevorzugt die formelle, geschriebene Sprache el cual; asunto ist maskulin Singular: el cual. Sobre el que ist auch richtig, nur weniger formell."
+      },
+      "wrong": {
+        "lo cual": {
+          "hu": "A lo cual egy egész mondatra utal, itt viszont az asunto (hímnem) az előzmény; helyesen: El asunto sobre el cual habló el ministro fue la deuda.",
+          "en": "Lo cual refers to a whole clause, but here the antecedent is asunto (masculine); correctly: El asunto sobre el cual habló el ministro fue la deuda.",
+          "es": "Lo cual remite a toda una frase, pero aquí el antecedente es asunto (masculino); correctamente: El asunto sobre el cual habló el ministro fue la deuda.",
+          "de": "Lo cual bezieht sich auf einen ganzen Satz, hier ist aber asunto (maskulin) das Bezugswort; richtig: El asunto sobre el cual habló el ministro fue la deuda."
+        },
+        "cuyo": {
+          "hu": "A cuyo birtoklást fejez ki, és főnév követi: itt nincs birtoklás; helyesen: El asunto sobre el cual habló el ministro fue la deuda.",
+          "en": "Cuyo expresses possession and a noun follows it: here there is no possession; correctly: El asunto sobre el cual habló el ministro fue la deuda.",
+          "es": "Cuyo expresa posesión y le sigue un sustantivo: aquí no hay posesión; correctamente: El asunto sobre el cual habló el ministro fue la deuda.",
+          "de": "Cuyo drückt Besitz aus, und ein Nomen folgt: hier gibt es keinen Besitz; richtig: El asunto sobre el cual habló el ministro fue la deuda."
+        }
+      }
+    },
+    {
+      "id": "rc-ch-07",
+      "sentence": "Ayer vinieron mis primos, uno de ___ vive en Madrid.",
+      "options": [
+        "los cuales",
+        "las cuales",
+        "lo cual"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Mennyiségjelző + de után jellemző a cual alak, és az előzménnyel egyezik: a primos hímnem többes szám, tehát los cuales.",
+        "en": "After a quantifier + de the cual form is typical, and it agrees with the antecedent: primos is masculine plural, so los cuales.",
+        "es": "Después de un cuantificador + de es típica la forma con cual, que concuerda con el antecedente: primos es masculino plural, así que los cuales.",
+        "de": "Nach Mengenangabe + de ist die cual-Form typisch, und sie richtet sich nach dem Bezugswort: primos ist maskulin Plural, also los cuales."
+      },
+      "wrong": {
+        "las cuales": {
+          "hu": "A las cuales nőnem, a primos viszont hímnem többes szám; helyesen: Ayer vinieron mis primos, uno de los cuales vive en Madrid.",
+          "en": "Las cuales is feminine, but primos is masculine plural; correctly: Ayer vinieron mis primos, uno de los cuales vive en Madrid.",
+          "es": "Las cuales es femenino, pero primos es masculino plural; correctamente: Ayer vinieron mis primos, uno de los cuales vive en Madrid.",
+          "de": "Las cuales ist feminin, primos aber maskulin Plural; richtig: Ayer vinieron mis primos, uno de los cuales vive en Madrid."
+        },
+        "lo cual": {
+          "hu": "A lo cual egy egész mondatra utal, itt viszont a primos (főnév) az előzmény; helyesen: Ayer vinieron mis primos, uno de los cuales vive en Madrid.",
+          "en": "Lo cual refers to a whole clause, but here the antecedent is primos (a noun); correctly: Ayer vinieron mis primos, uno de los cuales vive en Madrid.",
+          "es": "Lo cual remite a toda una frase, pero aquí el antecedente es primos (un sustantivo); correctamente: Ayer vinieron mis primos, uno de los cuales vive en Madrid.",
+          "de": "Lo cual bezieht sich auf einen ganzen Satz, hier ist aber primos (ein Nomen) das Bezugswort; richtig: Ayer vinieron mis primos, uno de los cuales vive en Madrid."
+        }
+      }
+    },
+    {
+      "id": "rc-ch-08",
+      "sentence": "La forma ___ lo explicó el profesor fue muy clara.",
+      "options": [
+        "como",
+        "donde",
+        "cuando"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A forma módot jelent, és módra utalva a como vonatkozó határozószó áll: la forma como (más szóval la forma en que).",
+        "en": "Forma means a manner, and for a manner the relative adverb como is used: la forma como (also la forma en que).",
+        "es": "Forma indica la manera, y para la manera se usa el adverbio relativo como: la forma como (también la forma en que).",
+        "de": "Forma bezeichnet die Art und Weise, und dafür steht das Relativadverb como: la forma como (auch la forma en que)."
+      },
+      "wrong": {
+        "donde": {
+          "hu": "A donde helyre utal (la ciudad donde), a forma viszont módot jelent; helyesen: La forma como lo explicó el profesor fue muy clara.",
+          "en": "Donde refers to a place (la ciudad donde), but forma means a manner; correctly: La forma como lo explicó el profesor fue muy clara.",
+          "es": "Donde se refiere a un lugar (la ciudad donde), pero forma indica la manera; correctamente: La forma como lo explicó el profesor fue muy clara.",
+          "de": "Donde bezieht sich auf einen Ort (la ciudad donde), forma aber bezeichnet die Art und Weise; richtig: La forma como lo explicó el profesor fue muy clara."
+        },
+        "cuando": {
+          "hu": "A cuando időre utal (la época cuando), a forma viszont módot jelent; helyesen: La forma como lo explicó el profesor fue muy clara.",
+          "en": "Cuando refers to a time (la época cuando), but forma means a manner; correctly: La forma como lo explicó el profesor fue muy clara.",
+          "es": "Cuando se refiere a un tiempo (la época cuando), pero forma indica la manera; correctamente: La forma como lo explicó el profesor fue muy clara.",
+          "de": "Cuando bezieht sich auf eine Zeit (la época cuando), forma aber bezeichnet die Art und Weise; richtig: La forma como lo explicó el profesor fue muy clara."
+        }
+      }
+    },
+    {
+      "id": "rc-ch-09",
+      "sentence": "Recuerdo la época ___ vivíamos en Puebla.",
+      "options": [
+        "cuando",
+        "donde",
+        "como"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az época időt jelent, és időre utalva a cuando vonatkozó határozószó áll: la época cuando (más szóval la época en que).",
+        "en": "Época means a time, and for a time the relative adverb cuando is used: la época cuando (also la época en que).",
+        "es": "Época indica un tiempo, y para el tiempo se usa el adverbio relativo cuando: la época cuando (también la época en que).",
+        "de": "Época bezeichnet eine Zeit, und dafür steht das Relativadverb cuando: la época cuando (auch la época en que)."
+      },
+      "wrong": {
+        "donde": {
+          "hu": "A donde helyre utal, az época viszont időt jelent; helyesen: Recuerdo la época cuando vivíamos en Puebla.",
+          "en": "Donde refers to a place, but época means a time; correctly: Recuerdo la época cuando vivíamos en Puebla.",
+          "es": "Donde se refiere a un lugar, pero época indica un tiempo; correctamente: Recuerdo la época cuando vivíamos en Puebla.",
+          "de": "Donde bezieht sich auf einen Ort, época aber bezeichnet eine Zeit; richtig: Recuerdo la época cuando vivíamos en Puebla."
+        },
+        "como": {
+          "hu": "A como módra utal, az época viszont időt jelent; helyesen: Recuerdo la época cuando vivíamos en Puebla.",
+          "en": "Como refers to a manner, but época means a time; correctly: Recuerdo la época cuando vivíamos en Puebla.",
+          "es": "Como se refiere a una manera, pero época indica un tiempo; correctamente: Recuerdo la época cuando vivíamos en Puebla.",
+          "de": "Como bezieht sich auf die Art und Weise, época aber bezeichnet eine Zeit; richtig: Recuerdo la época cuando vivíamos en Puebla."
+        }
+      }
+    },
+    {
+      "id": "rc-ch-10",
+      "sentence": "___ llegue primero gana.",
+      "options": [
+        "El que",
+        "Los que",
+        "Cuyo"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A mondat alanya egyetlen személy (el que llegue = az, aki megérkezik): hímnem, egyes szám, el que. Itt a quien is jó lenne.",
+        "en": "The subject is a single person (el que llegue = the one who arrives): masculine singular, el que. Quien would also be correct here.",
+        "es": "El sujeto es una sola persona (el que llegue): masculino singular, el que. Quien también sería correcto aquí.",
+        "de": "Das Subjekt ist eine einzelne Person (el que llegue = derjenige, der ankommt): maskulin Singular, el que. Quien wäre hier auch richtig."
+      },
+      "wrong": {
+        "Los que": {
+          "hu": "A los que többes szám, az ige (llegue) viszont egyes számú; helyesen: El que llegue primero gana.",
+          "en": "Los que is plural, but the verb (llegue) is singular; correctly: El que llegue primero gana.",
+          "es": "Los que es plural, pero el verbo (llegue) es singular; correctamente: El que llegue primero gana.",
+          "de": "Los que ist Plural, das Verb (llegue) aber Singular; richtig: El que llegue primero gana."
+        },
+        "Cuyo": {
+          "hu": "A cuyo után főnév jön, és birtoklást fejez ki: itt nincs főnév és nincs birtoklás; helyesen: El que llegue primero gana.",
+          "en": "Cuyo is followed by a noun and expresses possession: here there is no noun and no possession; correctly: El que llegue primero gana.",
+          "es": "Cuyo va seguido de un sustantivo y expresa posesión: aquí no hay sustantivo ni posesión; correctamente: El que llegue primero gana.",
+          "de": "Auf cuyo folgt ein Nomen, und es drückt Besitz aus: hier gibt es weder ein Nomen noch Besitz; richtig: El que llegue primero gana."
+        }
+      }
+    },
+    {
+      "id": "rc-ch-11",
+      "sentence": "Esa es la razón ___ me fui de casa.",
+      "options": [
+        "por la que",
+        "por lo que",
+        "para la que"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A razón nőnemű egyes szám, az ok pedig por-ral megy: la razón por la que.",
+        "en": "Razón is feminine singular, and a reason takes por: la razón por la que.",
+        "es": "Razón es femenino singular, y la causa se expresa con por: la razón por la que.",
+        "de": "Razón ist feminin Singular, und der Grund wird mit por ausgedrückt: la razón por la que."
+      },
+      "wrong": {
+        "por lo que": {
+          "hu": "A lo que semleges, és nem egyezik a nőnemű razónnal; helyesen: Esa es la razón por la que me fui de casa.",
+          "en": "Lo que is neuter and does not agree with the feminine razón; correctly: Esa es la razón por la que me fui de casa.",
+          "es": "Lo que es neutro y no concuerda con razón, que es femenino; correctamente: Esa es la razón por la que me fui de casa.",
+          "de": "Lo que ist Neutrum und stimmt nicht mit dem femininen razón überein; richtig: Esa es la razón por la que me fui de casa."
+        },
+        "para la que": {
+          "hu": "A para célt fejez ki, az ok viszont por-t kér; helyesen: Esa es la razón por la que me fui de casa.",
+          "en": "Para expresses a purpose, but a cause takes por; correctly: Esa es la razón por la que me fui de casa.",
+          "es": "Para indica finalidad, pero la causa pide por; correctamente: Esa es la razón por la que me fui de casa.",
+          "de": "Para drückt einen Zweck aus, eine Ursache verlangt aber por; richtig: Esa es la razón por la que me fui de casa."
+        }
+      }
+    },
+    {
+      "id": "rc-ch-12",
+      "sentence": "Llovía mucho, ___ nos quedamos en casa.",
+      "options": [
+        "por lo que",
+        "porque",
+        "por el que"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Itt nincs főnév, az előzmény az egész mondat (llovía mucho): por lo que = ezért; az írott nyelvben por lo cual is lehet.",
+        "en": "There is no noun here, the antecedent is the whole clause (llovía mucho): por lo que = so, therefore; por lo cual is also possible.",
+        "es": "Aquí no hay sustantivo, el antecedente es toda la frase (llovía mucho): por lo que = así que; también se puede decir por lo cual.",
+        "de": "Hier gibt es kein Nomen, das Bezugswort ist der ganze Satz (llovía mucho): por lo que = deshalb; auch por lo cual ist möglich."
+      },
+      "wrong": {
+        "porque": {
+          "hu": "A porque az okot vezeti be (mert), itt viszont a második rész a következmény: az eső az ok; helyesen: Llovía mucho, por lo que nos quedamos en casa.",
+          "en": "Porque introduces the cause (because), but here the second part is the result: the rain is the cause; correctly: Llovía mucho, por lo que nos quedamos en casa.",
+          "es": "Porque introduce la causa, pero aquí la segunda parte es la consecuencia: la lluvia es la causa; correctamente: Llovía mucho, por lo que nos quedamos en casa.",
+          "de": "Porque leitet die Ursache ein (weil), hier aber ist der zweite Teil die Folge: der Regen ist die Ursache; richtig: Llovía mucho, por lo que nos quedamos en casa."
+        },
+        "por el que": {
+          "hu": "Az el que hímnemű főnévre utalna, itt viszont nincs főnév; helyesen: Llovía mucho, por lo que nos quedamos en casa.",
+          "en": "El que would refer to a masculine noun, but there is no noun here; correctly: Llovía mucho, por lo que nos quedamos en casa.",
+          "es": "El que remitiría a un sustantivo masculino, pero aquí no hay sustantivo; correctamente: Llovía mucho, por lo que nos quedamos en casa.",
+          "de": "El que würde sich auf ein maskulines Nomen beziehen, hier gibt es aber kein Nomen; richtig: Llovía mucho, por lo que nos quedamos en casa."
+        }
+      }
+    },
+    {
+      "kind": "match",
+      "id": "rc-match-01",
+      "pairs": [
+        {
+          "es": "cuyo / cuya",
+          "en": "whose"
+        },
+        {
+          "es": "lo cual",
+          "en": "which (a whole clause)"
+        },
+        {
+          "es": "el que",
+          "en": "the one that"
+        },
+        {
+          "es": "por lo que",
+          "en": "so, which is why"
+        },
+        {
+          "es": "en el que",
+          "en": "in which"
+        },
+        {
+          "es": "la forma como",
+          "en": "the way in which"
+        }
+      ]
+    },
+    {
+      "id": "rc-form-01",
+      "kind": "form",
+      "verb": "hueco",
+      "person": "El escritor ___ libro leí es de Oaxaca.",
+      "answer": "cuyo",
+      "table": "relc-hueco"
+    },
+    {
+      "id": "rc-form-02",
+      "kind": "form",
+      "verb": "hueco",
+      "person": "Tengo una amiga ___ madre es médica.",
+      "answer": "cuya",
+      "table": "relc-hueco"
+    },
+    {
+      "id": "rc-form-03",
+      "kind": "form",
+      "verb": "hueco",
+      "person": "Hablé con unos chicos ___ padres viven en Puebla.",
+      "answer": "cuyos",
+      "table": "relc-hueco"
+    },
+    {
+      "id": "rc-form-04",
+      "kind": "form",
+      "verb": "hueco",
+      "person": "Es una ciudad ___ calles siempre están llenas.",
+      "answer": "cuyas",
+      "table": "relc-hueco"
+    },
+    {
+      "id": "rc-form-05",
+      "kind": "form",
+      "verb": "hueco",
+      "person": "De los dos libros, ___ compré ayer es mejor.",
+      "answer": "el que",
+      "table": "relc-hueco"
+    },
+    {
+      "id": "rc-form-06",
+      "kind": "form",
+      "verb": "hueco",
+      "person": "De las dos casas, ___ vimos ayer es más barata.",
+      "answer": "la que",
+      "table": "relc-hueco"
+    },
+    {
+      "id": "rc-form-07",
+      "kind": "form",
+      "verb": "hueco",
+      "person": "Entre estos vestidos, ___ más me gustan son los rojos.",
+      "answer": "los que",
+      "table": "relc-hueco"
+    },
+    {
+      "id": "rc-form-08",
+      "kind": "form",
+      "verb": "hueco",
+      "person": "Todo ___ tengo es tuyo.",
+      "answer": "lo que",
+      "table": "relc-hueco"
+    },
+    {
+      "id": "rc-form-09",
+      "kind": "form",
+      "verb": "hueco",
+      "person": "Eso es justo ___ necesitaba.",
+      "answer": "lo que",
+      "table": "relc-hueco"
+    },
+    {
+      "id": "rc-form-10",
+      "kind": "form",
+      "verb": "hueco",
+      "person": "La persona en ___ que confío es mi madre.",
+      "answer": "la",
+      "table": "relc-hueco"
+    },
+    {
+      "id": "rc-form-11",
+      "kind": "form",
+      "verb": "hueco",
+      "person": "Los amigos ___ los que cuento son pocos.",
+      "answer": "con",
+      "table": "relc-hueco"
+    },
+    {
+      "id": "rc-form-12",
+      "kind": "form",
+      "verb": "hueco",
+      "person": "Las ideas ___ las que creo son muy simples.",
+      "answer": "en",
+      "table": "relc-hueco"
+    },
+    {
+      "kind": "why",
+      "id": "rc-why-01",
+      "es": "Es una empresa cuyos empleados trabajan desde casa.",
+      "target": "cuyos",
+      "tr": {
+        "hu": "Ez egy olyan vállalat, amelynek az alkalmazottai otthonról dolgoznak.",
+        "en": "It is a company whose employees work from home.",
+        "es": "Es una empresa cuyos empleados trabajan desde casa.",
+        "de": "Das ist ein Unternehmen, dessen Mitarbeiter von zu Hause arbeiten."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "cuyo: birtokos vonatkozó szó, a birtokolt főnévvel egyezik",
+            "en": "cuyo: a possessive relative, agrees with the thing owned",
+            "es": "cuyo: relativo posesivo, concuerda con lo poseído",
+            "de": "cuyo: possessives Relativwort, richtet sich nach dem Besitzten"
+          }
+        },
+        {
+          "text": {
+            "hu": "el cual: formális vonatkozó szó, az előzménnyel egyezik",
+            "en": "el cual: a formal relative, agrees with the antecedent",
+            "es": "el cual: relativo formal, concuerda con el antecedente",
+            "de": "el cual: formelles Relativwort, richtet sich nach dem Bezugswort"
+          },
+          "wrong": {
+            "hu": "Az el cual után nem következik főnév, és nem fejez ki birtoklást",
+            "en": "El cual is not followed by a noun and does not express possession",
+            "es": "Después de el cual no va un sustantivo, y no expresa posesión",
+            "de": "Nach el cual folgt kein Nomen, und es drückt keinen Besitz aus"
+          }
+        },
+        {
+          "text": {
+            "hu": "que su: köznyelvi birtokos szerkezet",
+            "en": "que su: a colloquial possessive structure",
+            "es": "que su: estructura posesiva coloquial",
+            "de": "que su: umgangssprachliche Possessivstruktur"
+          },
+          "wrong": {
+            "hu": "A que su nem standard, a mondat a cuyos alakot használja",
+            "en": "Que su is not standard, the sentence uses cuyos",
+            "es": "Que su no es estándar, la frase usa cuyos",
+            "de": "Que su ist nicht standardsprachlich, der Satz verwendet cuyos"
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "rc-why-02",
+      "es": "No contestó el teléfono, lo cual me preocupó.",
+      "target": "lo cual",
+      "tr": {
+        "hu": "Nem vette fel a telefont, ami aggasztott.",
+        "en": "He did not answer the phone, which worried me.",
+        "es": "No contestó el teléfono, lo cual me preocupó.",
+        "de": "Er ging nicht ans Telefon, was mich beunruhigte."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "el cual: hímnemű főnévre utal",
+            "en": "el cual: refers to a masculine noun",
+            "es": "el cual: remite a un sustantivo masculino",
+            "de": "el cual: bezieht sich auf ein maskulines Nomen"
+          },
+          "wrong": {
+            "hu": "Az előzmény nem egy hímnemű főnév, hanem az egész mondat",
+            "en": "The antecedent is not a masculine noun but the whole clause",
+            "es": "El antecedente no es un sustantivo masculino, sino toda la frase",
+            "de": "Das Bezugswort ist kein maskulines Nomen, sondern der ganze Satz"
+          }
+        },
+        {
+          "text": {
+            "hu": "lo cual: egy egész mondatra utal, hivatalosabb, mint a lo que",
+            "en": "lo cual: refers to a whole clause, more formal than lo que",
+            "es": "lo cual: remite a toda una frase, más formal que lo que",
+            "de": "lo cual: bezieht sich auf einen ganzen Satz, formeller als lo que"
+          }
+        },
+        {
+          "text": {
+            "hu": "cuyo: birtokos vonatkozó szó",
+            "en": "cuyo: a possessive relative",
+            "es": "cuyo: relativo posesivo",
+            "de": "cuyo: possessives Relativwort"
+          },
+          "wrong": {
+            "hu": "Nincs birtoklás, és a lo cual után nem áll főnév",
+            "en": "There is no possession, and no noun follows lo cual",
+            "es": "No hay posesión, y detrás de lo cual no va un sustantivo",
+            "de": "Es gibt keinen Besitz, und nach lo cual folgt kein Nomen"
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "rc-why-03",
+      "es": "La escuela en la que estudié es muy vieja.",
+      "target": "en la que",
+      "tr": {
+        "hu": "Az iskola, amelyben tanultam, nagyon régi.",
+        "en": "The school I studied at is very old.",
+        "es": "La escuela en la que estudié es muy vieja.",
+        "de": "Die Schule, in der ich gelernt habe, ist sehr alt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "donde: vonatkozó határozószó, nincs benne névelő",
+            "en": "donde: a relative adverb, no article in it",
+            "es": "donde: adverbio relativo, no lleva artículo",
+            "de": "donde: Relativadverb, ohne Artikel"
+          },
+          "wrong": {
+            "hu": "Itt elöljáró + névelő + que áll, nem a donde",
+            "en": "Here it is preposition + article + que, not donde",
+            "es": "Aquí va preposición + artículo + que, no donde",
+            "de": "Hier steht Präposition + Artikel + que, nicht donde"
+          }
+        },
+        {
+          "text": {
+            "hu": "cuyo: birtokos vonatkozó szó",
+            "en": "cuyo: a possessive relative",
+            "es": "cuyo: relativo posesivo",
+            "de": "cuyo: possessives Relativwort"
+          },
+          "wrong": {
+            "hu": "Nincs birtoklás: a la que csak az escuelához kapcsolja a mondatot",
+            "en": "There is no possession: la que only connects the sentence to escuela",
+            "es": "No hay posesión: la que solo une la frase con escuela",
+            "de": "Es gibt keinen Besitz: la que verbindet den Satz nur mit escuela"
+          }
+        },
+        {
+          "text": {
+            "hu": "elöljáró + névelő + que: a névelő az előzménnyel egyezik",
+            "en": "preposition + article + que: the article agrees with the antecedent",
+            "es": "preposición + artículo + que: el artículo concuerda con el antecedente",
+            "de": "Präposition + Artikel + que: der Artikel richtet sich nach dem Bezugswort"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "rc-why-04",
+      "es": "Lo que dijo es verdad.",
+      "target": "Lo que",
+      "tr": {
+        "hu": "Amit mondott, igaz.",
+        "en": "What he said is true.",
+        "es": "Lo que dijo es verdad.",
+        "de": "Was er sagte, ist wahr."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lo cual: egy egész mondatra utal",
+            "en": "lo cual: refers to a whole clause",
+            "es": "lo cual: remite a toda una frase",
+            "de": "lo cual: bezieht sich auf einen ganzen Satz"
+          },
+          "wrong": {
+            "hu": "A lo cual előtt vessző és egy mondat áll, itt nincs mondat előtte",
+            "en": "Lo cual comes after a comma and a clause, here there is no clause before it",
+            "es": "Lo cual va después de una frase y una coma, aquí no hay frase antes",
+            "de": "Lo cual steht nach einem Satz und einem Komma, hier steht kein Satz davor"
+          }
+        },
+        {
+          "text": {
+            "hu": "lo que: semleges alak, nincs főnévi előzmény",
+            "en": "lo que: the neutral form, no noun antecedent",
+            "es": "lo que: forma neutra, sin antecedente nominal",
+            "de": "lo que: die neutrale Form, ohne Nomen als Bezugswort"
+          }
+        },
+        {
+          "text": {
+            "hu": "el que: hímnemű előzményre utal",
+            "en": "el que: refers to a masculine antecedent",
+            "es": "el que: remite a un antecedente masculino",
+            "de": "el que: bezieht sich auf ein maskulines Bezugswort"
+          },
+          "wrong": {
+            "hu": "Nincs hímnemű előzmény, amelyre az el que utalhatna",
+            "en": "There is no masculine antecedent for el que to refer to",
+            "es": "No hay un antecedente masculino al que pueda remitir el que",
+            "de": "Es gibt kein maskulines Bezugswort, auf das el que sich beziehen könnte"
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "rc-why-05",
+      "es": "La empresa para la cual trabajo es muy grande.",
+      "target": "la cual",
+      "tr": {
+        "hu": "A cég, amelynek dolgozom, nagyon nagy.",
+        "en": "The company I work for is very big.",
+        "es": "La empresa para la cual trabajo es muy grande.",
+        "de": "Die Firma, für die ich arbeite, ist sehr groß."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "el cual / la cual: formális, írott nyelvi, elöljáró után",
+            "en": "el cual / la cual: formal, written, after a preposition",
+            "es": "el cual / la cual: formal, escrito, después de preposición",
+            "de": "el cual / la cual: formell, schriftlich, nach einer Präposition"
+          }
+        },
+        {
+          "text": {
+            "hu": "lo cual: egy egész mondatra utal",
+            "en": "lo cual: refers to a whole clause",
+            "es": "lo cual: remite a toda una frase",
+            "de": "lo cual: bezieht sich auf einen ganzen Satz"
+          },
+          "wrong": {
+            "hu": "A lo cual mondatra utal, itt a la empresa (főnév) az előzmény",
+            "en": "Lo cual refers to a clause, here the antecedent is la empresa (a noun)",
+            "es": "Lo cual remite a una frase, aquí el antecedente es la empresa (un sustantivo)",
+            "de": "Lo cual bezieht sich auf einen Satz, hier ist la empresa (ein Nomen) das Bezugswort"
+          }
+        },
+        {
+          "text": {
+            "hu": "cuyo: birtokos vonatkozó szó",
+            "en": "cuyo: a possessive relative",
+            "es": "cuyo: relativo posesivo",
+            "de": "cuyo: possessives Relativwort"
+          },
+          "wrong": {
+            "hu": "A cuyo birtoklást fejez ki és főnév követi; itt a la cual a para elöljárót kapcsolja az empresához",
+            "en": "Cuyo expresses possession and a noun follows it; here la cual joins the preposition para to empresa",
+            "es": "Cuyo expresa posesión y le sigue un sustantivo; aquí la cual une la preposición para con empresa",
+            "de": "Cuyo drückt Besitz aus, und ein Nomen folgt; hier verbindet la cual die Präposition para mit empresa"
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "rc-why-06",
+      "es": "Recuerdo el verano cuando aprendí a nadar.",
+      "target": "cuando",
+      "tr": {
+        "hu": "Emlékszem arra a nyárra, amikor megtanultam úszni.",
+        "en": "I remember the summer when I learned to swim.",
+        "es": "Recuerdo el verano cuando aprendí a nadar.",
+        "de": "Ich erinnere mich an den Sommer, als ich schwimmen lernte."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "donde: vonatkozó határozószó helyre",
+            "en": "donde: a relative adverb for a place",
+            "es": "donde: adverbio relativo de lugar",
+            "de": "donde: Relativadverb für einen Ort"
+          },
+          "wrong": {
+            "hu": "A donde helyre utal, a verano viszont időt jelent",
+            "en": "Donde refers to a place, but verano means a time",
+            "es": "Donde se refiere a un lugar, pero verano indica un tiempo",
+            "de": "Donde bezieht sich auf einen Ort, verano aber bezeichnet eine Zeit"
+          }
+        },
+        {
+          "text": {
+            "hu": "cuando: vonatkozó határozószó időre",
+            "en": "cuando: a relative adverb for a time",
+            "es": "cuando: adverbio relativo de tiempo",
+            "de": "cuando: Relativadverb für eine Zeit"
+          }
+        },
+        {
+          "text": {
+            "hu": "como: vonatkozó határozószó módra",
+            "en": "como: a relative adverb for a manner",
+            "es": "como: adverbio relativo de manera",
+            "de": "como: Relativadverb für die Art und Weise"
+          },
+          "wrong": {
+            "hu": "A como módra utal, a verano viszont időt jelent",
+            "en": "Como refers to a manner, but verano means a time",
+            "es": "Como se refiere a una manera, pero verano indica un tiempo",
+            "de": "Como bezieht sich auf die Art und Weise, verano aber bezeichnet eine Zeit"
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "rc-why-07",
+      "es": "Tengo tres hermanos, dos de los cuales viven aquí.",
+      "target": "los cuales",
+      "tr": {
+        "hu": "Három testvérem van, közülük kettő itt él.",
+        "en": "I have three siblings, two of whom live here.",
+        "es": "Tengo tres hermanos, dos de los cuales viven aquí.",
+        "de": "Ich habe drei Geschwister, zwei davon wohnen hier."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lo cual: egy egész mondatra utal",
+            "en": "lo cual: refers to a whole clause",
+            "es": "lo cual: remite a toda una frase",
+            "de": "lo cual: bezieht sich auf einen ganzen Satz"
+          },
+          "wrong": {
+            "hu": "Az előzmény a hermanos (főnév), nem egy mondat",
+            "en": "The antecedent is hermanos (a noun), not a clause",
+            "es": "El antecedente es hermanos (un sustantivo), no una frase",
+            "de": "Das Bezugswort ist hermanos (ein Nomen), kein Satz"
+          }
+        },
+        {
+          "text": {
+            "hu": "cuyos: birtokos vonatkozó szó",
+            "en": "cuyos: a possessive relative",
+            "es": "cuyos: relativo posesivo",
+            "de": "cuyos: possessives Relativwort"
+          },
+          "wrong": {
+            "hu": "Nincs birtoklás: a dos de los cuales a hermanosból emel ki kettőt",
+            "en": "There is no possession: dos de los cuales picks two out of hermanos",
+            "es": "No hay posesión: dos de los cuales elige dos de los hermanos",
+            "de": "Es gibt keinen Besitz: dos de los cuales wählt zwei der hermanos aus"
+          }
+        },
+        {
+          "text": {
+            "hu": "mennyiségjelző + de + los cuales: a főnévi előzményre utal",
+            "en": "quantifier + de + los cuales: refers to the noun antecedent",
+            "es": "cuantificador + de + los cuales: remite al antecedente nominal",
+            "de": "Mengenangabe + de + los cuales: bezieht sich auf das Bezugsnomen"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}
