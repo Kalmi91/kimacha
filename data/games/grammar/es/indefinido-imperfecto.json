@@ -2019,7 +2019,8 @@
       "answer": "¿Comió en el restaurante anoche?",
       "accept": [
         "¿Ella comió en el restaurante anoche?",
-        "Anoche, ¿comió en el restaurante?"
+        "Anoche, ¿comió en el restaurante?",
+        "¿Él comió en el restaurante anoche?"
       ],
       "wordIds": [
         "25",
@@ -2041,26 +2042,27 @@
         "to": "imperfecto"
       },
       "prompt": {
-        "hu": "Nem eszünk húst. (azelőtt)",
-        "en": "We don't eat meat. (back then)",
-        "es": "No comemos carne. (antes)",
-        "de": "Wir essen kein Fleisch. (früher)"
+        "hu": "Nem eszünk húst. (abban az időben)",
+        "en": "We don't eat meat. (back in those days)",
+        "es": "No comemos carne. (en aquella época)",
+        "de": "Wir essen kein Fleisch. (damals)"
       },
-      "answer": "Antes no comíamos carne.",
+      "answer": "En aquella época no comíamos carne.",
       "accept": [
-        "Antes nosotros no comíamos carne.",
-        "No comíamos carne antes."
+        "En aquella época nosotros no comíamos carne.",
+        "No comíamos carne en aquella época."
       ],
       "wordIds": [
         "25",
         "1058",
-        "63"
+        "3506",
+        "2065"
       ],
       "why": {
-        "hu": "A(z) «antes» (azelőtt) szokást vagy leírást jelöl: imperfecto. comer, nosotros: comíamos. A no az ige elé kerül.",
-        "en": "«antes» (back then) marks a habit or a description: imperfecto. comer, nosotros: comíamos. No goes before the verb.",
-        "es": "«antes» señala una costumbre o una descripción: imperfecto. comer, nosotros: comíamos. El no va antes del verbo.",
-        "de": "«antes» (früher) markiert eine Gewohnheit oder Beschreibung: Imperfecto. comer, nosotros: comíamos. Das no steht vor dem Verb."
+        "hu": "A(z) «en aquella época» (abban az időben) szokást vagy leírást jelöl: imperfecto. comer, nosotros: comíamos. A no az ige elé kerül.",
+        "en": "«en aquella época» (back in those days) marks a habit or a description: imperfecto. comer, nosotros: comíamos. No goes before the verb.",
+        "es": "«en aquella época» señala una costumbre o una descripción: imperfecto. comer, nosotros: comíamos. El no va antes del verbo.",
+        "de": "«en aquella época» (damals) markiert eine Gewohnheit oder Beschreibung: Imperfecto. comer, nosotros: comíamos. Das no steht vor dem Verb."
       }
     },
     {
@@ -2139,7 +2141,8 @@
       "answer": "¿Fue al médico el jueves?",
       "accept": [
         "¿Él fue al médico el jueves?",
-        "El jueves, ¿fue al médico?"
+        "El jueves, ¿fue al médico?",
+        "¿Ella fue al médico el jueves?"
       ],
       "wordIds": [
         "31",
@@ -2193,17 +2196,17 @@
       "prompt": {
         "hu": "Nem autóval jársz iskolába. (kisgyerekként)",
         "en": "You don't go to school by car. (as a little kid)",
-        "es": "No vas al colegio en coche. (de pequeño)",
+        "es": "No vas a la escuela en coche. (de pequeño)",
         "de": "Du fährst nicht mit dem Auto zur Schule. (als kleines Kind)"
       },
-      "answer": "De pequeño no ibas al colegio en coche.",
+      "answer": "De pequeño no ibas a la escuela en coche.",
       "accept": [
-        "De pequeño tú no ibas al colegio en coche.",
-        "No ibas al colegio en coche de pequeño."
+        "De pequeño tú no ibas a la escuela en coche.",
+        "No ibas a la escuela en coche de pequeño."
       ],
       "wordIds": [
         "31",
-        "1307",
+        "1175",
         "1842",
         "46"
       ],
@@ -2373,27 +2376,28 @@
         "to": "imperfecto"
       },
       "prompt": {
-        "hu": "Nézi a focit az apjával? (azelőtt)",
-        "en": "Does he watch soccer with his father? (back then)",
-        "es": "¿Ve el fútbol con su padre? (antes)",
-        "de": "Schaut er mit seinem Vater Fußball? (früher)"
+        "hu": "Nézi a focit az apjával? (fiatalon)",
+        "en": "Does he watch soccer with his father? (when young)",
+        "es": "¿Ve el fútbol con su padre? (de joven)",
+        "de": "Schaut er mit seinem Vater Fußball? (in jungen Jahren)"
       },
-      "answer": "¿Veía el fútbol con su padre antes?",
+      "answer": "¿Veía el fútbol con su padre de joven?",
       "accept": [
-        "¿Él veía el fútbol con su padre antes?",
-        "Antes, ¿veía el fútbol con su padre?"
+        "¿Él veía el fútbol con su padre de joven?",
+        "¿Ella veía el fútbol con su padre de joven?",
+        "De joven, ¿veía el fútbol con su padre?"
       ],
       "wordIds": [
         "37",
         "1554",
         "43",
-        "63"
+        "1420"
       ],
       "why": {
-        "hu": "A(z) «antes» (azelőtt) szokást vagy leírást jelöl: imperfecto. ver, él/ella: veía.",
-        "en": "«antes» (back then) marks a habit or a description: imperfecto. ver, él/ella: veía.",
-        "es": "«antes» señala una costumbre o una descripción: imperfecto. ver, él/ella: veía.",
-        "de": "«antes» (früher) markiert eine Gewohnheit oder Beschreibung: Imperfecto. ver, él/ella: veía."
+        "hu": "A(z) «de joven» (fiatalon) szokást vagy leírást jelöl: imperfecto. ver, él/ella: veía.",
+        "en": "«de joven» (when young) marks a habit or a description: imperfecto. ver, él/ella: veía.",
+        "es": "«de joven» señala una costumbre o una descripción: imperfecto. ver, él/ella: veía.",
+        "de": "«de joven» (in jungen Jahren) markiert eine Gewohnheit oder Beschreibung: Imperfecto. ver, él/ella: veía."
       }
     },
     {
@@ -2474,7 +2478,8 @@
       "answer": "¿Hizo la comida el martes?",
       "accept": [
         "¿Ella hizo la comida el martes?",
-        "El martes, ¿hizo la comida?"
+        "El martes, ¿hizo la comida?",
+        "¿Él hizo la comida el martes?"
       ],
       "wordIds": [
         "34",
@@ -2557,25 +2562,27 @@
         "to": "indefinido"
       },
       "prompt": {
-        "hu": "A nagynénémmel élek. (2019-ben)",
-        "en": "I live with my aunt. (in 2019)",
-        "es": "Vivo con mi tía. (en 2019)",
-        "de": "Ich wohne bei meiner Tante. (im Jahr 2019)"
+        "hu": "A nagynénémmel élek. (két évig)",
+        "en": "I live with my aunt. (for two years)",
+        "es": "Vivo con mi tía. (durante dos años)",
+        "de": "Ich wohne bei meiner Tante. (zwei Jahre lang)"
       },
-      "answer": "En 2019 viví con mi tía.",
+      "answer": "Durante dos años viví con mi tía.",
       "accept": [
-        "En 2019 yo viví con mi tía.",
-        "Viví con mi tía en 2019."
+        "Durante dos años yo viví con mi tía.",
+        "Viví con mi tía durante dos años."
       ],
       "wordIds": [
         "82",
-        "1348"
+        "1348",
+        "1811",
+        "1818"
       ],
       "why": {
-        "hu": "A(z) «en 2019» (2019-ben) lezárt időpontot jelöl: indefinido. vivir, yo: viví.",
-        "en": "«en 2019» (in 2019) marks a closed point in time: indefinido. vivir, yo: viví.",
-        "es": "«en 2019» señala un momento cerrado: indefinido. vivir, yo: viví.",
-        "de": "«en 2019» (im Jahr 2019) markiert einen abgeschlossenen Zeitpunkt: Indefinido. vivir, yo: viví."
+        "hu": "A(z) «durante dos años» (két évig) lezárt időtartamot jelöl: indefinido. vivir, yo: viví.",
+        "en": "«durante dos años» (for two years) marks a closed period of time: indefinido. vivir, yo: viví.",
+        "es": "«durante dos años» señala un período cerrado: indefinido. vivir, yo: viví.",
+        "de": "«durante dos años» (zwei Jahre lang) markiert einen abgeschlossenen Zeitraum: Indefinido. vivir, yo: viví."
       }
     },
     {
@@ -2586,27 +2593,26 @@
         "to": "indefinido"
       },
       "prompt": {
-        "hu": "A faluban élnek. (öt éve)",
-        "en": "They live in the village. (five years ago)",
-        "es": "Viven en el pueblo. (hace cinco años)",
-        "de": "Sie wohnen im Dorf. (vor fünf Jahren)"
+        "hu": "A faluban élnek. (egész nyáron)",
+        "en": "They live in the village. (all summer)",
+        "es": "Viven en el pueblo. (todo el verano)",
+        "de": "Sie wohnen im Dorf. (den ganzen Sommer)"
       },
-      "answer": "Hace cinco años vivieron en el pueblo.",
+      "answer": "Todo el verano vivieron en el pueblo.",
       "accept": [
-        "Hace cinco años ellos vivieron en el pueblo.",
-        "Vivieron en el pueblo hace cinco años."
+        "Todo el verano ellos vivieron en el pueblo.",
+        "Vivieron en el pueblo todo el verano."
       ],
       "wordIds": [
         "82",
         "3678",
-        "1818",
-        "1813"
+        "1819"
       ],
       "why": {
-        "hu": "A(z) «hace cinco años» (öt éve) lezárt időpontot jelöl: indefinido. vivir, ellos: vivieron.",
-        "en": "«hace cinco años» (five years ago) marks a closed point in time: indefinido. vivir, ellos: vivieron.",
-        "es": "«hace cinco años» señala un momento cerrado: indefinido. vivir, ellos: vivieron.",
-        "de": "«hace cinco años» (vor fünf Jahren) markiert einen abgeschlossenen Zeitpunkt: Indefinido. vivir, ellos: vivieron."
+        "hu": "A(z) «todo el verano» (egész nyáron) lezárt időtartamot jelöl: indefinido. vivir, ellos: vivieron.",
+        "en": "«todo el verano» (all summer) marks a closed period of time: indefinido. vivir, ellos: vivieron.",
+        "es": "«todo el verano» señala un período cerrado: indefinido. vivir, ellos: vivieron.",
+        "de": "«todo el verano» (den ganzen Sommer) markiert einen abgeschlossenen Zeitraum: Indefinido. vivir, ellos: vivieron."
       }
     },
     {
@@ -2767,27 +2773,27 @@
         "to": "imperfecto"
       },
       "prompt": {
-        "hu": "Anyám sokat dolgozik. (mindig)",
-        "en": "My mother works a lot. (always)",
-        "es": "Mi madre trabaja mucho. (siempre)",
-        "de": "Meine Mutter arbeitet viel. (immer)"
+        "hu": "Anyám sokat dolgozik. (esténként)",
+        "en": "My mother works a lot. (in the evenings)",
+        "es": "Mi madre trabaja mucho. (por las noches)",
+        "de": "Meine Mutter arbeitet viel. (abends)"
       },
-      "answer": "Mi madre siempre trabajaba mucho.",
+      "answer": "Por las noches mi madre trabajaba mucho.",
       "accept": [
-        "Siempre mi madre trabajaba mucho.",
-        "Mi madre trabajaba mucho siempre."
+        "Mi madre trabajaba mucho por las noches.",
+        "Mi madre por las noches trabajaba mucho."
       ],
       "wordIds": [
         "1409",
         "42",
-        "57",
+        "50",
         "3752"
       ],
       "why": {
-        "hu": "A(z) «siempre» (mindig) szokást vagy leírást jelöl: imperfecto. trabajar, él/ella: trabajaba.",
-        "en": "«siempre» (always) marks a habit or a description: imperfecto. trabajar, él/ella: trabajaba.",
-        "es": "«siempre» señala una costumbre o una descripción: imperfecto. trabajar, él/ella: trabajaba.",
-        "de": "«siempre» (immer) markiert eine Gewohnheit oder Beschreibung: Imperfecto. trabajar, él/ella: trabajaba."
+        "hu": "A(z) «por las noches» (esténként) szokást vagy leírást jelöl: imperfecto. trabajar, él/ella: trabajaba.",
+        "en": "«por las noches» (in the evenings) marks a habit or a description: imperfecto. trabajar, él/ella: trabajaba.",
+        "es": "«por las noches» señala una costumbre o una descripción: imperfecto. trabajar, él/ella: trabajaba.",
+        "de": "«por las noches» (abends) markiert eine Gewohnheit oder Beschreibung: Imperfecto. trabajar, él/ella: trabajaba."
       }
     },
     {
@@ -2889,7 +2895,7 @@
         "to": "indefinido"
       },
       "prompt": {
-        "hu": "Van randevúd? (két napja)",
+        "hu": "Van időpontod? (két napja)",
         "en": "Do you have an appointment? (two days ago)",
         "es": "¿Tienes una cita? (hace dos días)",
         "de": "Hast du einen Termin? (vor zwei Tagen)"
@@ -2950,26 +2956,26 @@
         "to": "imperfecto"
       },
       "prompt": {
-        "hu": "Nincs autónk. (azelőtt)",
-        "en": "We don't have a car. (back then)",
-        "es": "No tenemos coche. (antes)",
-        "de": "Wir haben kein Auto. (früher)"
+        "hu": "Nincs autónk. (fiatalon)",
+        "en": "We don't have a car. (when we were young)",
+        "es": "No tenemos coche. (de jóvenes)",
+        "de": "Wir haben kein Auto. (in jungen Jahren)"
       },
-      "answer": "Antes no teníamos coche.",
+      "answer": "De jóvenes no teníamos coche.",
       "accept": [
-        "Antes nosotros no teníamos coche.",
-        "No teníamos coche antes."
+        "De jóvenes nosotros no teníamos coche.",
+        "No teníamos coche de jóvenes."
       ],
       "wordIds": [
         "33",
         "1842",
-        "63"
+        "1420"
       ],
       "why": {
-        "hu": "A(z) «antes» (azelőtt) szokást vagy leírást jelöl: imperfecto. tener, nosotros: teníamos. A no az ige elé kerül.",
-        "en": "«antes» (back then) marks a habit or a description: imperfecto. tener, nosotros: teníamos. No goes before the verb.",
-        "es": "«antes» señala una costumbre o una descripción: imperfecto. tener, nosotros: teníamos. El no va antes del verbo.",
-        "de": "«antes» (früher) markiert eine Gewohnheit oder Beschreibung: Imperfecto. tener, nosotros: teníamos. Das no steht vor dem Verb."
+        "hu": "A(z) «de jóvenes» (fiatalon) szokást vagy leírást jelöl: imperfecto. tener, nosotros: teníamos. A no az ige elé kerül.",
+        "en": "«de jóvenes» (when we were young) marks a habit or a description: imperfecto. tener, nosotros: teníamos. No goes before the verb.",
+        "es": "«de jóvenes» señala una costumbre o una descripción: imperfecto. tener, nosotros: teníamos. El no va antes del verbo.",
+        "de": "«de jóvenes» (in jungen Jahren) markiert eine Gewohnheit oder Beschreibung: Imperfecto. tener, nosotros: teníamos. Das no steht vor dem Verb."
       }
     },
     {
@@ -3010,27 +3016,26 @@
         "to": "indefinido"
       },
       "prompt": {
-        "hu": "A kórházban vagyok. (három hónapja)",
-        "en": "I am in the hospital. (three months ago)",
-        "es": "Estoy en el hospital. (hace tres meses)",
-        "de": "Ich bin im Krankenhaus. (vor drei Monaten)"
+        "hu": "A kórházban vagyok. (egy hétig)",
+        "en": "I am in the hospital. (for a week)",
+        "es": "Estoy en el hospital. (durante una semana)",
+        "de": "Ich bin im Krankenhaus. (eine Woche lang)"
       },
-      "answer": "Hace tres meses estuve en el hospital.",
+      "answer": "Durante una semana estuve en el hospital.",
       "accept": [
-        "Hace tres meses yo estuve en el hospital.",
-        "Estuve en el hospital hace tres meses."
+        "Durante una semana yo estuve en el hospital.",
+        "Estuve en el hospital durante una semana."
       ],
       "wordIds": [
         "3743",
         "1306",
-        "1315",
-        "1812"
+        "1314"
       ],
       "why": {
-        "hu": "A(z) «hace tres meses» (három hónapja) lezárt időpontot jelöl: indefinido. estar, yo: estuve.",
-        "en": "«hace tres meses» (three months ago) marks a closed point in time: indefinido. estar, yo: estuve.",
-        "es": "«hace tres meses» señala un momento cerrado: indefinido. estar, yo: estuve.",
-        "de": "«hace tres meses» (vor drei Monaten) markiert einen abgeschlossenen Zeitpunkt: Indefinido. estar, yo: estuve."
+        "hu": "A(z) «durante una semana» (egy hétig) lezárt időtartamot jelöl: indefinido. estar, yo: estuve.",
+        "en": "«durante una semana» (for a week) marks a closed period of time: indefinido. estar, yo: estuve.",
+        "es": "«durante una semana» señala un período cerrado: indefinido. estar, yo: estuve.",
+        "de": "«durante una semana» (eine Woche lang) markiert einen abgeschlossenen Zeitraum: Indefinido. estar, yo: estuve."
       }
     },
     {
@@ -3041,26 +3046,27 @@
         "to": "indefinido"
       },
       "prompt": {
-        "hu": "Nincsenek a városban. (kedden)",
-        "en": "They are not in the city. (on Tuesday)",
-        "es": "No están en la ciudad. (el martes)",
-        "de": "Sie sind nicht in der Stadt. (am Dienstag)"
+        "hu": "Nincsenek a városban. (három napig)",
+        "en": "They are not in the city. (for three days)",
+        "es": "No están en la ciudad. (durante tres días)",
+        "de": "Sie sind nicht in der Stadt. (drei Tage lang)"
       },
-      "answer": "El martes no estuvieron en la ciudad.",
+      "answer": "Durante tres días no estuvieron en la ciudad.",
       "accept": [
-        "El martes ellos no estuvieron en la ciudad.",
-        "No estuvieron en la ciudad el martes."
+        "Durante tres días ellos no estuvieron en la ciudad.",
+        "No estuvieron en la ciudad durante tres días."
       ],
       "wordIds": [
         "3743",
         "1851",
-        "1197"
+        "1812",
+        "49"
       ],
       "why": {
-        "hu": "A(z) «el martes» (kedden) lezárt időpontot jelöl: indefinido. estar, ellos: estuvieron. A no az ige elé kerül.",
-        "en": "«el martes» (on Tuesday) marks a closed point in time: indefinido. estar, ellos: estuvieron. No goes before the verb.",
-        "es": "«el martes» señala un momento cerrado: indefinido. estar, ellos: estuvieron. El no va antes del verbo.",
-        "de": "«el martes» (am Dienstag) markiert einen abgeschlossenen Zeitpunkt: Indefinido. estar, ellos: estuvieron. Das no steht vor dem Verb."
+        "hu": "A(z) «durante tres días» (három napig) lezárt időtartamot jelöl: indefinido. estar, ellos: estuvieron. A no az ige elé kerül.",
+        "en": "«durante tres días» (for three days) marks a closed period of time: indefinido. estar, ellos: estuvieron. No goes before the verb.",
+        "es": "«durante tres días» señala un período cerrado: indefinido. estar, ellos: estuvieron. El no va antes del verbo.",
+        "de": "«durante tres días» (drei Tage lang) markiert einen abgeschlossenen Zeitraum: Indefinido. estar, ellos: estuvieron. Das no steht vor dem Verb."
       }
     },
     {
@@ -3102,26 +3108,26 @@
         "to": "imperfecto"
       },
       "prompt": {
-        "hu": "Elégedett? (mindig)",
-        "en": "Is he happy? (always)",
-        "es": "¿Está contento? (siempre)",
-        "de": "Ist er zufrieden? (immer)"
+        "hu": "Elégedett? (gyerekként)",
+        "en": "Is he happy? (as a child)",
+        "es": "¿Está contento? (de niño)",
+        "de": "Ist er zufrieden? (als Kind)"
       },
-      "answer": "¿Estaba siempre contento?",
+      "answer": "¿Estaba contento de niño?",
       "accept": [
-        "¿Él estaba siempre contento?",
-        "¿Siempre estaba contento?"
+        "¿Él estaba contento de niño?",
+        "De niño, ¿estaba contento?"
       ],
       "wordIds": [
         "3743",
         "1360",
-        "57"
+        "1141"
       ],
       "why": {
-        "hu": "A(z) «siempre» (mindig) szokást vagy leírást jelöl: imperfecto. estar, él/ella: estaba.",
-        "en": "«siempre» (always) marks a habit or a description: imperfecto. estar, él/ella: estaba.",
-        "es": "«siempre» señala una costumbre o una descripción: imperfecto. estar, él/ella: estaba.",
-        "de": "«siempre» (immer) markiert eine Gewohnheit oder Beschreibung: Imperfecto. estar, él/ella: estaba."
+        "hu": "A(z) «de niño» (gyerekként) szokást vagy leírást jelöl: imperfecto. estar, él/ella: estaba.",
+        "en": "«de niño» (as a child) marks a habit or a description: imperfecto. estar, él/ella: estaba.",
+        "es": "«de niño» señala una costumbre o una descripción: imperfecto. estar, él/ella: estaba.",
+        "de": "«de niño» (als Kind) markiert eine Gewohnheit oder Beschreibung: Imperfecto. estar, él/ella: estaba."
       }
     },
     {
@@ -3162,26 +3168,26 @@
         "to": "indefinido"
       },
       "prompt": {
-        "hu": "Jó nap van. (pénteken)",
-        "en": "It is a good day. (on Friday)",
-        "es": "Es un buen día. (el viernes)",
-        "de": "Es ist ein guter Tag. (am Freitag)"
+        "hu": "Jó nap van. (tegnap)",
+        "en": "It is a good day. (yesterday)",
+        "es": "Es un buen día. (ayer)",
+        "de": "Es ist ein guter Tag. (gestern)"
       },
-      "answer": "El viernes fue un buen día.",
+      "answer": "Ayer fue un buen día.",
       "accept": [
-        "Fue un buen día el viernes."
+        "Fue un buen día ayer."
       ],
       "wordIds": [
         "3746",
         "18",
         "49",
-        "1200"
+        "1311"
       ],
       "why": {
-        "hu": "A(z) «el viernes» (pénteken) lezárt időpontot jelöl: indefinido. ser, él/ella: fue.",
-        "en": "«el viernes» (on Friday) marks a closed point in time: indefinido. ser, él/ella: fue.",
-        "es": "«el viernes» señala un momento cerrado: indefinido. ser, él/ella: fue.",
-        "de": "«el viernes» (am Freitag) markiert einen abgeschlossenen Zeitpunkt: Indefinido. ser, él/ella: fue."
+        "hu": "A(z) «ayer» (tegnap) lezárt időpontot jelöl: indefinido. ser, él/ella: fue.",
+        "en": "«ayer» (yesterday) marks a closed point in time: indefinido. ser, él/ella: fue.",
+        "es": "«ayer» señala un momento cerrado: indefinido. ser, él/ella: fue.",
+        "de": "«ayer» (gestern) markiert einen abgeschlossenen Zeitpunkt: Indefinido. ser, él/ella: fue."
       }
     },
     {
@@ -3192,25 +3198,26 @@
         "to": "indefinido"
       },
       "prompt": {
-        "hu": "Munkatársak vagyunk. (2019-ben)",
-        "en": "We are colleagues. (in 2019)",
-        "es": "Somos compañeros. (en 2019)",
-        "de": "Wir sind Kollegen. (im Jahr 2019)"
+        "hu": "Munkatársak vagyunk. (egy évig)",
+        "en": "We are colleagues. (for a year)",
+        "es": "Somos compañeros. (durante un año)",
+        "de": "Wir sind Kollegen. (ein Jahr lang)"
       },
-      "answer": "En 2019 fuimos compañeros.",
+      "answer": "Durante un año fuimos compañeros.",
       "accept": [
-        "En 2019 nosotros fuimos compañeros.",
-        "Fuimos compañeros en 2019."
+        "Durante un año nosotros fuimos compañeros.",
+        "Fuimos compañeros durante un año."
       ],
       "wordIds": [
         "3746",
-        "1606"
+        "1606",
+        "1818"
       ],
       "why": {
-        "hu": "A(z) «en 2019» (2019-ben) lezárt időpontot jelöl: indefinido. ser, nosotros: fuimos.",
-        "en": "«en 2019» (in 2019) marks a closed point in time: indefinido. ser, nosotros: fuimos.",
-        "es": "«en 2019» señala un momento cerrado: indefinido. ser, nosotros: fuimos.",
-        "de": "«en 2019» (im Jahr 2019) markiert einen abgeschlossenen Zeitpunkt: Indefinido. ser, nosotros: fuimos."
+        "hu": "A(z) «durante un año» (egy évig) lezárt időtartamot jelöl: indefinido. ser, nosotros: fuimos.",
+        "en": "«durante un año» (for a year) marks a closed period of time: indefinido. ser, nosotros: fuimos.",
+        "es": "«durante un año» señala un período cerrado: indefinido. ser, nosotros: fuimos.",
+        "de": "«durante un año» (ein Jahr lang) markiert einen abgeschlossenen Zeitraum: Indefinido. ser, nosotros: fuimos."
       }
     },
     {
@@ -3221,27 +3228,27 @@
         "to": "imperfecto"
       },
       "prompt": {
-        "hu": "Nagyon nyugodt vagyok. (mindig)",
-        "en": "I am very calm. (always)",
-        "es": "Soy muy tranquilo. (siempre)",
-        "de": "Ich bin sehr ruhig. (immer)"
+        "hu": "Nagyon nyugodt vagyok. (gyerekként)",
+        "en": "I am very calm. (as a child)",
+        "es": "Soy muy tranquilo. (de niño)",
+        "de": "Ich bin sehr ruhig. (als Kind)"
       },
-      "answer": "Siempre era muy tranquilo.",
+      "answer": "De niño era muy tranquilo.",
       "accept": [
-        "Siempre yo era muy tranquilo.",
-        "Era muy tranquilo siempre."
+        "De niño yo era muy tranquilo.",
+        "Era muy tranquilo de niño."
       ],
       "wordIds": [
         "3746",
         "9",
         "1367",
-        "57"
+        "1141"
       ],
       "why": {
-        "hu": "A(z) «siempre» (mindig) szokást vagy leírást jelöl: imperfecto. ser, yo: era.",
-        "en": "«siempre» (always) marks a habit or a description: imperfecto. ser, yo: era.",
-        "es": "«siempre» señala una costumbre o una descripción: imperfecto. ser, yo: era.",
-        "de": "«siempre» (immer) markiert eine Gewohnheit oder Beschreibung: Imperfecto. ser, yo: era."
+        "hu": "A(z) «de niño» (gyerekként) szokást vagy leírást jelöl: imperfecto. ser, yo: era.",
+        "en": "«de niño» (as a child) marks a habit or a description: imperfecto. ser, yo: era.",
+        "es": "«de niño» señala una costumbre o una descripción: imperfecto. ser, yo: era.",
+        "de": "«de niño» (als Kind) markiert eine Gewohnheit oder Beschreibung: Imperfecto. ser, yo: era."
       }
     },
     {

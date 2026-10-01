@@ -236,7 +236,7 @@
         ["En Narvarte.", "dónde", "¿Dónde vives?"],
         ["A la tienda.", "adónde", "¿Adónde vas?"],
         ["Mañana.", "cuándo", "¿Cuándo llegas?"],
-        ["Bien, gracias.", "cómo", "¿Cómo estás?"],
+        ["Es alto y delgado.", "cómo", "¿Cómo es tu hermano?"],
         ["Cuesta veinte pesos.", "cuánto", "¿Cuánto cuesta?"],
         ["Con mi hermana.", "con quién", "¿Con quién vas?"],
         ["Tengo treinta años.", "cuántos", "¿Cuántos años tienes?"],
@@ -702,7 +702,7 @@
       "id": "int-form-06",
       "kind": "form",
       "verb": "Interrogativo",
-      "person": "Bien, gracias.",
+      "person": "Es alto y delgado.",
       "answer": "cómo",
       "table": "interrogativos-respuestas"
     },
