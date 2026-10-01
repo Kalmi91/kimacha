@@ -81,7 +81,7 @@ export default function OnboardingScreen() {
     // szűrő); es-en-ben csak A1, mindig felkínálva, akkor is, ha még üres (az
     // 50 angol szó az 5. lépésben jön) - ilyenkor a sor alatt egy mondat mondja ki.
     // 2026-09-28 review, 2. pont: en-es-ben a választható nézet-szintek
-    // (A1/A2/B1, a B2 rejtett - PLAN-ketiranyu 2. lépés), nem a nyers PCIC_LEVELS.
+    // (A1/A2/B1/B2, PLAN-learn-words-open 2. lépés), nem a nyers PCIC_LEVELS.
     // PLAN-esen: es-en-ben is A1 + A2 van adat, ugyanaz a szűrő mindkét irányra.
     const levels: PcicLevel[] =
       PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForViewLevel(lvl).length > 0).map(realLevelOfView);
