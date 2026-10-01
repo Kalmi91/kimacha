@@ -1,4 +1,4 @@
-// NY19: a Helyesírás és a Credits képernyő brutalista palettán (BrutalBox / BrutalButton),
+// NY19: a Credits képernyő brutalista palettán (BrutalBox / BrutalButton),
 // classic palettán a mai kinézet. Mock-minta: credits.test.tsx, onboarding.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -21,7 +21,6 @@ import { act, render } from '@testing-library/react-native';
 import { getDb } from '@/lib/database';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import CreditsScreen from '../credits';
-import SpellingScreen from '../spelling';
 
 jest.setTimeout(30000);
 
@@ -33,7 +32,7 @@ const flush = async (times = 6) => {
   }
 };
 
-describe('Credits és Helyesírás, neo-brutalista (NY19)', () => {
+describe('Credits, neo-brutalista (NY19)', () => {
   it('Credits: brand palettán BrutalBox kártya, classic palettán nincs', async () => {
     await getDb().setGrammarPalette('brand');
     const brand = render(<ThemeProvider><CreditsScreen /></ThemeProvider>);
@@ -45,20 +44,6 @@ describe('Credits és Helyesírás, neo-brutalista (NY19)', () => {
     const classic = render(<ThemeProvider><CreditsScreen /></ThemeProvider>);
     await flush();
     expect(classic.queryByTestId('credits-card')).toBeNull();
-    classic.unmount();
-  });
-
-  it('Helyesírás (üres lista): brand palettán BrutalButton, classic palettán a mai gomb', async () => {
-    await getDb().setGrammarPalette('brand');
-    const brand = render(<ThemeProvider><SpellingScreen /></ThemeProvider>);
-    await flush();
-    expect(brand.queryByTestId('spelling-back')).toBeTruthy();
-    brand.unmount();
-
-    await getDb().setGrammarPalette('classic');
-    const classic = render(<ThemeProvider><SpellingScreen /></ThemeProvider>);
-    await flush();
-    expect(classic.queryByTestId('spelling-back')).toBeNull();
     classic.unmount();
   });
 });

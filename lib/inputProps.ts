@@ -1,5 +1,5 @@
 // Shared TextInput props for every ANSWER field (typing card, practice field,
-// spelling drill, exam typing).
+// exam typing).
 //
 // FB145, Kálmán 2026-08-18: "azt meg tudod csinálni, hogy az applikációval
 // kikapcsoltatod a telefonom auto complitjét? hogy itt felajánlja a szavakat ez
