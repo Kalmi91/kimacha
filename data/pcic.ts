@@ -32,9 +32,11 @@ export const PCIC_LEVELS: PcicLevel[] = ['A1', 'A2', 'B1', 'B2'];
 // mindig false lent), ezért az "A1+"/"A2+" virtuális szint kiesik a
 // VÁLASZTHATÓ szintek közül. A `PcicViewLevel` típus marad A1+/A2+-szal
 // (LEVEL_LABELS, realLevelOfView visszakompatibilitás), csak a
-// PCIC_VIEW_LEVELS lista rövidült.
+// PCIC_VIEW_LEVELS lista rövidült. PLAN-learn-words-open 2. lépés: a B2 is
+// választható (en→es 150 tétel); az es→en iránynál B2 üres, ott a szint-
+// választók a "0 tétel = nem kínáljuk fel" szűrővel kihagyják.
 export type PcicViewLevel = PcicLevel | 'A1+' | 'A2+';
-export const PCIC_VIEW_LEVELS: PcicViewLevel[] = ['A1', 'A2', 'B1'];
+export const PCIC_VIEW_LEVELS: PcicViewLevel[] = ['A1', 'A2', 'B1', 'B2'];
 
 // s1 (anki-ui-terv.html): a négy szint felirata a szint-választó lapon.
 export const LEVEL_LABELS: Record<PcicViewLevel, string> = {

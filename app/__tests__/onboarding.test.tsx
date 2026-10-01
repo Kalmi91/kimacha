@@ -44,9 +44,9 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
     expect(getByText('Beginner')).toBeTruthy();
     expect(getByText('A2')).toBeTruthy();
     expect(getByText('B1')).toBeTruthy();
-    // 2026-09-28 review, 2. pont: a B2 rejtett (PCIC_VIEW_LEVELS = A1/A2/B1).
-    expect(queryByText('B2')).toBeNull();
-    expect(queryByText('Upper intermediate')).toBeNull();
+    // PLAN-learn-words-open 2. lépés: a B2 is választható (words-open b2.json, 150 tétel).
+    expect(getByText('B2')).toBeTruthy();
+    expect(getByText('Upper intermediate')).toBeTruthy();
   });
 
   it('en→es szint kiválasztása menti az onboardingot + a PCIC szintet, és a fülekre navigál', async () => {
@@ -79,6 +79,8 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
     expect(getByText('B1')).toBeTruthy();
     // PLAN-esen: A1 = en a0+a1, A2 = en a2, a "még nincs szó" sor nem jelenik meg.
     expect(queryByText('Todavía no hay palabras.')).toBeNull();
+    // PLAN-learn-words-open 2. lépés: az es→en B2 üres, a "0 tétel = nem kínáljuk fel" szűrő kihagyja.
+    expect(queryByText('B2')).toBeNull();
   });
 
   it('es→en A1 kiválasztása "es"/"en"-t ment, mindig A1 szinttel', async () => {
