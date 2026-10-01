@@ -11,10 +11,10 @@ Jóváhagyott minta: https://claude.ai/artifact/BW7QfMboUhRby7DyZNL6WQ (4. verzi
 - [x] 3. (12:19) App: kis mondat (hint) a nagy szó alatt + „also:” sor a Check után + tesztek → kész, ha: `npm run typecheck:ci`, `npm run lint`, `npm run test:ci` zöld
 - [x] 4. (12:35) Átnézés A: a 600 words-open kártya (angol→spanyol) a Spec szerint → kész, ha: `node scripts/words-open-check.mjs` zöld
 - [x] 5. (13:11) Átnézés B: a 2 804 tételes angol track (spanyol→angol), adagokban → kész, ha: a `validate-en-track` R11-R14 hibája 0, és a régi hibák (id-blokk 1132, cross-level dup 11) száma nem nő
-- [ ] 6. Régi adat leltára (csak olvasás): ki használja a `data/words/{a0..c2}.json`, `data/words/hu/**` és `data/pcic/**` fájlokat → kész, ha: a lista megvan, az orkesztrátor döntött a törlési körről
-- [ ] 7. Régi adat kidobása + a ráépülő kód kivétele → kész, ha: a 3. lépés kapuja zöld
-- [ ] 8. Web-build képernyőkép mindkét irányban (néma felolvasással) → kész, ha: egyezik a mintával
-- [ ] 9. Kapu + push + PR → kész, ha: PR nyitva; merge Kálmán szavára
+- [x] 6. (12:30) Régi adat leltára (csak olvasás): ki használja a `data/words/{a0..c2}.json`, `data/words/hu/**` és `data/pcic/**` fájlokat → kész, ha: a lista megvan, az orkesztrátor döntött a törlési körről
+- [ ] 7. (KÜLÖN PR, Kálmán döntésére vár: a régi spanyol szavakra épül a nyelvtan, a játékok, a helyesírás és a Kurzus fül) Régi adat kidobása + a ráépülő kód kivétele → kész, ha: a 3. lépés kapuja zöld
+- [x] 8. (13:18) Web-build képernyőkép mindkét irányban (néma felolvasással) → kész, ha: egyezik a mintával
+- [~] 9. (az 1-6. és 8. lépés PR-je) Kapu + push + PR → kész, ha: PR nyitva; merge Kálmán szavára
 
 ## Kálmán döntései (szó szerint, 2026-10-01)
 
@@ -506,3 +506,6 @@ A kapu szabályonként kiírja a hibák számát és az első 5 példát, hibán
     - #10745 hint_es: "Los niños no duermen de *emoción*." → "No puedo dormir de la *emoción*."
   - Kapu: words-open-check ZÖLD (601 kártya); validate-en-track R11-R14 = 0, id-blokk hiba 1112 → 1112, cross-level dup 3 → 3 (kártyák 2759 → 2759); typecheck:ci, lint (0 hiba, 5 régi figyelmeztetés), test:ci (2046 teszt) zöld.
   - [?] nem nyúltam hozzá: #9021 el más cerca (the nearest; a köznyelvi alak, a mondata „más cercana”, a „más cercano” kérdésforma a hintet is megszüntetné a #9260-nal együtt); #5886 la noche (evening; a „a las siete de la noche” hint a night-ra is illhet); #7829 cuántos años mondata („¿Cuántos años van los niños a la escuela?” nem túl természetes); #5637/#5641 él + futuro (csak az „Él” jelölt, nem az „Él llamará”); words-open #2 estar mondatai üresek (eredetileg is); words-open #281 time (a mondat „once a week”, nem „time”); az #5067/#5267/#5268/#5271 (this_that) mondatai nemhez igazodó alakot (Este/Esta) használnak a semleges „esto/eso” kérdés helyett, nem hintes kártyák.
+- 12:30 6. lépés (leltár, Explore): a régi spanyol data/words/*.json-ra épül: data/pcic.ts legacy ág, lib/grammar (tenseGate, tableDeck, lessonTypes, syllabus), app/spelling.tsx, lib/games (content, gloss), components/games/GlossText, components/grammar/GrammarDrill, app/(tabs)/course.tsx és settings.tsx, lib/mixedSpeech, lib/pcicPos. data/pcic/**: a Learn fül (index.tsx, pcicNotes, pcicSenses, PcicRevealedAnswer). data/words/hu/**: csak scriptek. A 7. lépés ezért döntés: Kálmántól kérdezve 12:33.
+- 13:18 8. lépés: web-build (worktree, --clear) mindkét irányban: en→es A1 #2 „to be” alatt „I am at home now.”, a feliz kártyán „also: contento”; es→en A0 „buenas noches” alatt „Llego a la fiesta: buenas noches a todos.”. A minta szerint néz ki.
+- 13:25 hint-átnézés (37a8bdc): 258 kártya, 23 javítva (en track), a [?] tételek az ügynök jelentésében: #9021, #5886, #7829, #5637/#5641, words-open #2 és #281.
