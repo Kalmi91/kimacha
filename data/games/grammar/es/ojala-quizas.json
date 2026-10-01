@@ -439,10 +439,10 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Ojalá = mindig kötőmód. A lo mejor = mindig kijelentő. Quizás és tal vez = kötőmód, ha nagyon bizonytalan vagy, kijelentő, ha inkább valószínűnek tartod.",
-        "en": "Ojalá = always subjunctive. A lo mejor = always indicative. Quizás and tal vez = subjunctive when you are very unsure, indicative when you think it is rather likely.",
-        "es": "Ojalá = siempre subjuntivo. A lo mejor = siempre indicativo. Quizás y tal vez = subjuntivo si estás muy inseguro, indicativo si lo crees bastante probable.",
-        "de": "Ojalá = immer Subjuntivo. A lo mejor = immer Indikativ. Quizás und tal vez = Subjuntivo, wenn du sehr unsicher bist, Indikativ, wenn du es eher für wahrscheinlich hältst."
+        "hu": "Ojalá = mindig kötőmód. A lo mejor = mindig kijelentő. Quizás és tal vez = kötőmód, ha nagyon bizonytalan vagy, kijelentő, ha inkább valószínűnek tartod. Mindkettő helyes.",
+        "en": "Ojalá = always subjunctive. A lo mejor = always indicative. Quizás and tal vez = subjunctive when you are very unsure, indicative when you think it is rather likely. Both are correct.",
+        "es": "Ojalá = siempre subjuntivo. A lo mejor = siempre indicativo. Quizás y tal vez = subjuntivo si estás muy inseguro, indicativo si lo crees bastante probable. Los dos son correctos.",
+        "de": "Ojalá = immer Subjuntivo. A lo mejor = immer Indikativ. Quizás und tal vez = Subjuntivo, wenn du sehr unsicher bist, Indikativ, wenn du es eher für wahrscheinlich hältst. Beides ist richtig."
       }
     }
   ],
@@ -799,23 +799,23 @@
       "id": "oq-ch-09",
       "sentence": "Quizás ___ (ella), pero lo dudo mucho.",
       "options": [
-        "viene",
+        "venir",
         "venga",
         "vengan"
       ],
       "correct": 1,
       "why": {
-        "hu": "Nagy kétely: quizás után kötőmód, venga.",
-        "en": "Strong doubt: subjunctive after quizás, venga.",
-        "es": "Mucha duda: subjuntivo después de quizás, venga.",
-        "de": "Starker Zweifel: Subjuntivo nach quizás, venga."
+        "hu": "Quizás + kötőmód (nagy kétely): venga.",
+        "en": "Quizás + subjunctive (strong doubt): venga.",
+        "es": "Quizás + subjuntivo (mucha duda): venga.",
+        "de": "Quizás + Subjuntivo (starker Zweifel): venga."
       },
       "wrong": {
-        "viene": {
-          "hu": "Kijelentővel azt sugallnád, hogy szerinted valószínű, de a mondat másik fele kételkedik; helyesen: Quizás venga, pero lo dudo mucho.",
-          "en": "With the indicative you would suggest it is likely, but the other half of the sentence doubts it; correctly: Quizás venga, pero lo dudo mucho.",
-          "es": "Con indicativo sugerirías que es probable, pero la otra mitad de la frase duda; correctamente: Quizás venga, pero lo dudo mucho.",
-          "de": "Mit dem Indikativ würdest du andeuten, dass es wahrscheinlich ist, aber die andere Satzhälfte zweifelt; richtig: Quizás venga, pero lo dudo mucho."
+        "venir": {
+          "hu": "A főnévi igenév nem ragozott ige, az „ella” alanyhoz ragozott alak kell; helyesen: Quizás venga, pero lo dudo mucho.",
+          "en": "The infinitive is not a conjugated verb, the “ella” subject needs a conjugated form; correctly: Quizás venga, pero lo dudo mucho.",
+          "es": "El infinitivo no es un verbo conjugado, el sujeto “ella” necesita una forma conjugada; correctamente: Quizás venga, pero lo dudo mucho.",
+          "de": "Der Infinitiv ist kein konjugiertes Verb, das Subjekt „ella“ braucht eine konjugierte Form; richtig: Quizás venga, pero lo dudo mucho."
         },
         "vengan": {
           "hu": "Többes számú alak, az „ella” viszont egyes szám; helyesen: Quizás venga, pero lo dudo mucho.",
@@ -843,10 +843,10 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Bizonytalanság, nincs bizonyosság: tal vez után kötőmód, cenemos.",
-        "en": "Uncertainty, no certainty: subjunctive after tal vez, cenemos.",
-        "es": "Incertidumbre, sin certeza: subjuntivo después de tal vez, cenemos.",
-        "de": "Unsicherheit, keine Gewissheit: Subjuntivo nach tal vez, cenemos."
+        "hu": "Tal vez + kötőmód (bizonytalanság): cenemos.",
+        "en": "Tal vez + subjunctive (uncertainty): cenemos.",
+        "es": "Tal vez + subjuntivo (incertidumbre): cenemos.",
+        "de": "Tal vez + Subjuntivo (Unsicherheit): cenemos."
       },
       "wrong": {
         "cenan": {
@@ -881,10 +881,10 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Inkább valószínű: quizás után kijelentő, está.",
-        "en": "Rather likely: indicative after quizás, está.",
-        "es": "Bastante probable: indicativo después de quizás, está.",
-        "de": "Eher wahrscheinlich: Indikativ nach quizás, está."
+        "hu": "Quizás + kijelentő (inkább valószínű): está.",
+        "en": "Quizás + indicative (rather likely): está.",
+        "es": "Quizás + indicativo (bastante probable): está.",
+        "de": "Quizás + Indikativ (eher wahrscheinlich): está."
       },
       "wrong": {
         "estoy": {
@@ -894,10 +894,10 @@
           "de": "Das ist die „yo“-Form („ich bin zu Hause“), aber in der Klammer steht „ella“; richtig: Quizás está en casa, creo que sí."
         },
         "estén": {
-          "hu": "Többes számú kötőmód, az „ella” viszont egyes szám, és a mondat valószínűnek tartja; helyesen: Quizás está en casa, creo que sí.",
-          "en": "This is a plural subjunctive, but “ella” is singular, and the sentence finds it likely; correctly: Quizás está en casa, creo que sí.",
-          "es": "Esto es un subjuntivo plural, pero “ella” es singular, y la frase lo ve probable; correctamente: Quizás está en casa, creo que sí.",
-          "de": "Das ist ein Subjuntivo im Plural, aber „ella“ ist Singular, und der Satz hält es für wahrscheinlich; richtig: Quizás está en casa, creo que sí."
+          "hu": "Többes számú kötőmód, az „ella” viszont egyes szám; helyesen: Quizás está en casa, creo que sí.",
+          "en": "This is a plural subjunctive, but “ella” is singular; correctly: Quizás está en casa, creo que sí.",
+          "es": "Esto es un subjuntivo plural, pero “ella” es singular; correctamente: Quizás está en casa, creo que sí.",
+          "de": "Das ist ein Subjuntivo im Plural, aber „ella“ ist Singular; richtig: Quizás está en casa, creo que sí."
         }
       },
       "examples": [
@@ -1255,10 +1255,10 @@
             "de": "quizás / tal vez + Indikativ = eher wahrscheinlich"
           },
           "wrong": {
-            "hu": "Kijelentővel azt mondanád: szerintem valószínű, de a mondat azt mondja: nem tudom, ezért itt kötőmód áll.",
-            "en": "With the indicative you would say: I think it is likely, but the sentence says: I do not know, so the subjunctive stands here.",
-            "es": "Con indicativo dirías: creo que es probable, pero la frase dice: no sé, por eso aquí va subjuntivo.",
-            "de": "Mit dem Indikativ würdest du sagen: ich halte es für wahrscheinlich, aber der Satz sagt: ich weiß es nicht, deshalb steht hier der Subjuntivo."
+            "hu": "A kijelentő is helyes a quizás után, de ez a mondat kötőmódot használ (venga), nem kijelentőt.",
+            "en": "The indicative is also correct after quizás, but this sentence uses the subjunctive (venga), not the indicative.",
+            "es": "El indicativo también es correcto después de quizás, pero esta frase usa el subjuntivo (venga), no el indicativo.",
+            "de": "Der Indikativ ist nach quizás auch richtig, aber dieser Satz verwendet den Subjuntivo (venga), nicht den Indikativ."
           }
         },
         {
@@ -1310,10 +1310,10 @@
             "de": "quizás / tal vez + Subjuntivo = sehr unsicher"
           },
           "wrong": {
-            "hu": "Kötőmóddal nagy kételyt fejeznél ki, de a mondat második fele („creo que sí”) inkább valószínűnek tartja, ezért itt kijelentő áll.",
-            "en": "The subjunctive would express strong doubt, but the second half of the sentence (“creo que sí”) finds it rather likely, so the indicative stands here.",
-            "es": "El subjuntivo expresaría mucha duda, pero la segunda mitad de la frase (“creo que sí”) lo ve bastante probable, por eso aquí va indicativo.",
-            "de": "Der Subjuntivo würde starken Zweifel ausdrücken, aber die zweite Satzhälfte („creo que sí“) hält es eher für wahrscheinlich, deshalb steht hier der Indikativ."
+            "hu": "A kötőmód is helyes a tal vez után, de ez a mondat kijelentőt használ (está), nem kötőmódot.",
+            "en": "The subjunctive is also correct after tal vez, but this sentence uses the indicative (está), not the subjunctive.",
+            "es": "El subjuntivo también es correcto después de tal vez, pero esta frase usa el indicativo (está), no el subjuntivo.",
+            "de": "Der Subjuntivo ist nach tal vez auch richtig, aber dieser Satz verwendet den Indikativ (está), nicht den Subjuntivo."
           }
         },
         {
@@ -1475,10 +1475,10 @@
             "de": "quizás / tal vez + Indikativ = eher wahrscheinlich"
           },
           "wrong": {
-            "hu": "Kijelentővel azt mondanád: szerintem valószínű, de a mondat azt mondja: kétlem, ezért itt kötőmód áll.",
-            "en": "With the indicative you would say: I think it is likely, but the sentence says: I doubt it, so the subjunctive stands here.",
-            "es": "Con indicativo dirías: creo que es probable, pero la frase dice: lo dudo, por eso aquí va subjuntivo.",
-            "de": "Mit dem Indikativ würdest du sagen: ich halte es für wahrscheinlich, aber der Satz sagt: ich bezweifle es, deshalb steht hier der Subjuntivo."
+            "hu": "A kijelentő is helyes a tal vez után, de ez a mondat kötőmódot használ (gane), nem kijelentőt.",
+            "en": "The indicative is also correct after tal vez, but this sentence uses the subjunctive (gane), not the indicative.",
+            "es": "El indicativo también es correcto después de tal vez, pero esta frase usa el subjuntivo (gane), no el indicativo.",
+            "de": "Der Indikativ ist nach tal vez auch richtig, aber dieser Satz verwendet den Subjuntivo (gane), nicht den Indikativ."
           }
         },
         {
