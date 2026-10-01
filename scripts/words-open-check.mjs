@@ -1,9 +1,10 @@
 // Kapu a szabad szókészlethez (data/words-open/{a1,a2,b1,b2}.json), PLAN-words-open.md R1-R8.
 // Futtatás: node scripts/words-open-check.mjs [--level a1|a2|b1|b2] [--list-only]
-//   --list-only  csak R1-R2 (a lista kész, a mondatok még nincsenek)
+//   --list-only  csak R1-R2 és R11-R14 (a lista kész, a mondatok még nincsenek)
 //   --level X    az R3-R10 csak az X szint kártyáin fut (a keresésekhez mindig mind a 600 kártya betöltődik)
 //   --to N       az R3-R10 csak az order <= N kártyákon fut (félkész szint ellenőrzése)
 // Szabályonként kiírja a hibák számát és az első 5 példát, hibánál exit 1.
+// PLAN-tobbjelentes.md 2. lépés: R1/R2 lazítás (több jelentés, 600 fölötti kártyák), R11-R14 (scripts/multi-meaning-rules.mjs).
 //
 // R6 (szint-nyelvtan): a lib/grammar/tenseGate.ts NEM használható újra, mert az alak-térképét a régi
 // data/words korpusz igéiből építi (a szabad készlet így tőle függene) és TS-alias-importot használ.
@@ -15,6 +16,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { checkMultiMeaning } from './multi-meaning-rules.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIR = path.join(ROOT, 'data', 'words-open');
@@ -33,7 +35,7 @@ const args = process.argv.slice(2);
 const listOnly = args.includes('--list-only');
 let onlyLevel = null;
 const ti = args.indexOf('--to');
-const toOrder = ti !== -1 ? Number(args[ti + 1]) : 600; // csak az order <= N kártyákra futnak az R3-R10 (részkészlet-ellenőrzés)
+const toOrder = ti !== -1 ? Number(args[ti + 1]) : Infinity; // csak az order <= N kártyákra futnak az R3-R10 (részkészlet-ellenőrzés)
 const li = args.indexOf('--level');
 if (li !== -1) {
   onlyLevel = (args[li + 1] || '').toLowerCase();
@@ -71,14 +73,15 @@ for (const lv of LEVELS) {
 }
 fileProblems.forEach((m) => fail('R2', m));
 
-// ---------------------------------------------------------------- R1 egyediség
+// ---------------------------------------------------------------- R1 egyediség (a lemma+en és az es+en PÁR; egy lemma több jelentéssel több kártyán lehet)
 function checkUnique(field) {
   const seen = new Map();
   for (const c of cards) {
     const v = c[field];
-    if (typeof v !== 'string') continue;
-    if (seen.has(v)) fail('R1', `${field} "${v}" kétszer: #${seen.get(v)} és #${c.order}`);
-    else seen.set(v, c.order);
+    if (typeof v !== 'string' || typeof c.en !== 'string') continue;
+    const k = `${v}\u0000${c.en}`;
+    if (seen.has(k)) fail('R1', `${field}+en "${v}" / "${c.en}" kétszer: #${seen.get(k)} és #${c.order}`);
+    else seen.set(k, c.order);
   }
 }
 checkUnique('lemma');
@@ -87,26 +90,28 @@ checkUnique('es');
 // ---------------------------------------------------------------- R2 darabszám, sáv, kulcsok
 for (const lv of LEVELS) {
   const n = cards.filter((c) => c.__file === lv).length;
-  if (!fileProblems.some((m) => m.startsWith(lv)) && n !== 150) fail('R2', `${lv}.json ${n} kártya (kell: 150)`);
+  if (!fileProblems.some((m) => m.startsWith(lv)) && n < 150) fail('R2', `${lv}.json ${n} kártya (kell: legalább 150)`);
 }
-const orders = cards.map((c) => c.order);
-for (let i = 0; i < 600; i++) {
-  if (orders[i] !== i + 1) {
-    fail('R2', `order hézag/sorrend: a(z) ${i + 1}. helyen ${orders[i]} áll`);
+// order egyedi és hézagmentes 1..N (a tömbbeli hely nem számít: a 601-től új kártya a testvére mellé kerül)
+const sortedOrders = cards.map((c) => c.order).sort((a, b) => a - b);
+for (let i = 0; i < sortedOrders.length; i++) {
+  if (sortedOrders[i] !== i + 1) {
+    fail('R2', `order hézag/ismétlődés: a rendezett lista ${i + 1}. helyén ${sortedOrders[i]} áll`);
     break;
   }
 }
-if (cards.length !== 600 && !fileProblems.length) fail('R2', `összesen ${cards.length} kártya (kell: 600)`);
 const bandLevel = (order) => (order <= 150 ? 'A1' : order <= 300 ? 'A2' : order <= 450 ? 'B1' : 'B2');
 for (const c of cards) {
   if (!Number.isInteger(c.order)) {
     fail('R2', `${c.__file}.json[${c.__idx}] order nem egész`);
     continue;
   }
-  if (c.level !== bandLevel(c.order)) fail('R2', `${tag(c)}: level ${c.level}, kellene ${bandLevel(c.order)}`);
+  // az order-sáv = szint csak az 1-600-ra él, 600 fölött a level mező dönt (a fájl-egyezés lent mindkettőre)
+  if (c.order <= 600 && c.level !== bandLevel(c.order)) fail('R2', `${tag(c)}: level ${c.level}, kellene ${bandLevel(c.order)}`);
   if (c.level !== c.__file.toUpperCase()) fail('R2', `${tag(c)}: ${c.__file}.json fájlban ${c.level} szint`);
   const keys = Object.keys(c).filter((k) => !k.startsWith('__'));
-  if (keys.join(',') !== KEYS.join(',')) fail('R2', `${tag(c)}: kulcsok/sorrend eltér: ${keys.join(',')}`);
+  const wantKeys = keys.includes('hint_en') ? [...KEYS.slice(0, 8), 'hint_en', ...KEYS.slice(8)] : KEYS; // hint_en: opcionális 14. kulcs a de után
+  if (keys.join(',') !== wantKeys.join(',')) fail('R2', `${tag(c)}: kulcsok/sorrend eltér: ${keys.join(',')}`);
   if (!POS.has(c.pos)) fail('R2', `${tag(c)}: pos "${c.pos}" érvénytelen`);
   for (const k of ['lemma', 'es', 'hu', 'en', 'de', 'sentence_es', 'sentence_hu', 'sentence_en', 'sentence_de']) {
     if (typeof c[k] !== 'string') fail('R2', `${tag(c)}: ${k} nem string`);
@@ -116,18 +121,29 @@ for (const c of cards) {
   }
   if (typeof c.lemma === 'string') {
     if (!c.lemma || c.lemma !== c.lemma.toLowerCase() || /\s/.test(c.lemma)) fail('R2', `${tag(c)}: lemma nem csupasz kisbetűs szó`);
+    // perjeles es-nél (S1) a fő alak, vagyis az első alternatíva felel meg a lemmának
+    const esMain = typeof c.es === 'string' ? c.es.split(' / ')[0] : c.es;
     if (c.pos === 'noun') {
-      if (c.es !== `el ${c.lemma}` && c.es !== `la ${c.lemma}` && c.es !== `los ${c.lemma}` && c.es !== `las ${c.lemma}`) {
+      if (esMain !== `el ${c.lemma}` && esMain !== `la ${c.lemma}` && esMain !== `los ${c.lemma}` && esMain !== `las ${c.lemma}`) {
         fail('R2', `${tag(c)}: főnév es-e névelős lemma kell legyen, most "${c.es}"`);
       }
-    } else if (c.es !== c.lemma) fail('R2', `${tag(c)}: es "${c.es}" != lemma`);
+    } else if (esMain !== c.lemma) fail('R2', `${tag(c)}: es "${c.es}" != lemma`);
   }
 }
 
+// ---------------------------------------------------------------- R11-R14 több jelentésű szavak (hint, perjeles válasz)
+checkMultiMeaning({
+  cards, qKey: 'en', aKey: 'es', hintKey: 'hint_en', articles: ['a', 'an', 'the'], ignore: ['to'], tag, fail,
+});
+
 // ---------------------------------------------------------------- R3-R9 (csak ha nem --list-only)
 if (!listOnly) {
+  // lemma -> kártyák (egy lemma több jelentéssel több kártyán lehet)
   const byLemma = new Map();
-  for (const c of cards) if (typeof c.lemma === 'string' && !byLemma.has(c.lemma)) byLemma.set(c.lemma, c);
+  for (const c of cards) if (typeof c.lemma === 'string') byLemma.set(c.lemma, [...(byLemma.get(c.lemma) || []), c]);
+  const isVerb = (l) => byLemma.get(l)?.some((k) => k.pos === 'verb') ?? false;
+  // „már tanult”: 1-600-nál a kisebb-egyenlő order, 600 fölött a legfeljebb ugyanilyen szintű kártya
+  const known = (k, c) => (c.order > 600 ? LEVEL_RANK[k.level] <= LEVEL_RANK[c.level] : k.order <= c.order);
   const target = cards.filter((c) => (!onlyLevel || c.__file === onlyLevel) && c.order <= toOrder);
 
   const tokenize = (s) =>
@@ -285,7 +301,7 @@ if (!listOnly) {
     tokens.forEach((t, i) => {
       const l = lemmas[i];
       if (t === 'si') found.push(['si_mondat', t]);
-      if (byLemma.get(l)?.pos !== 'verb') return;
+      if (!isVerb(l)) return;
       if (t === l) return;
       const prevL = lemmas[i - 1];
       if (PART_RE.test(t) || IRREG_PART.has(t)) {
@@ -343,16 +359,16 @@ if (!listOnly) {
     if (!/^[¿¡]*[A-ZÁÉÍÓÚÑÜ]/.test(s)) fail('R3', `${tag(c)}: nem nagybetűvel kezdődik: "${s}"`);
     if (!/[.!?]$/.test(s)) fail('R3', `${tag(c)}: nem . ! ? zárja: "${s}"`);
     if (tokens.length < 3) fail('R3', `${tag(c)}: ${tokens.length} szó-token (min 3): "${s}"`);
-    if (!lemmas.some((l) => byLemma.get(l)?.pos === 'verb')) fail('R3', `${tag(c)}: nincs ige-lemma: "${s}"`);
+    if (!lemmas.some((l) => isVerb(l))) fail('R3', `${tag(c)}: nincs ige-lemma: "${s}"`);
 
     // R4 csak tanult szó
     if (tokens.length !== lemmas.length) {
       fail('R4', `${tag(c)}: ${tokens.length} token, ${lemmas.length} lemma: "${s}"`);
     } else {
       lemmas.forEach((l) => {
-        const k = byLemma.get(l);
-        if (!k) fail('R4', `${tag(c)}: "${l}" nem kártya-lemma`);
-        else if (k.order > c.order) fail('R4', `${tag(c)}: "${l}" (#${k.order}) később jön`);
+        const ks = byLemma.get(l);
+        if (!ks) fail('R4', `${tag(c)}: "${l}" nem kártya-lemma`);
+        else if (!ks.some((k) => known(k, c))) fail('R4', `${tag(c)}: "${l}" (#${ks[0].order}) ${c.order > 600 ? 'magasabb szintű' : 'később jön'}`);
       });
     }
     if (!lemmas.includes(c.lemma)) fail('R4', `${tag(c)}: a kártya saját lemmája nincs a mondatban`);
@@ -393,7 +409,9 @@ if (!listOnly) {
 }
 
 // ---------------------------------------------------------------- jelentés
-const ruleList = listOnly ? ['R1', 'R2'] : ['R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9', 'R10'];
+const ruleList = listOnly
+  ? ['R1', 'R2', 'R11', 'R12', 'R13', 'R14']
+  : ['R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9', 'R10', 'R11', 'R12', 'R13', 'R14'];
 let bad = 0;
 for (const r of ruleList) {
   const errs = RULES[r] || [];

@@ -66,18 +66,26 @@ export interface PcicItem {
   // (FB75), ha a szónak van kézzel írt note_en/note_hu-ja.
   noteEn?: string;
   noteHu?: string;
+  // PLAN-tobbjelentes 3. lépés (SZ8): kis mondat a kérdés-szó alatt, ha a kérdésnek
+  // több jelentése van (words-open hint_en / angol track hint_es); a kérdezett szó
+  // `*csillag*` között áll.
+  hint?: string;
 }
 
 const LEADING_ARTICLE_RE = /^(el|la|los|las|un|una)\s+/i;
 
 // `kind`: 'phrase', ha a névelő levágása után is több szó marad, különben 'word'.
-function kindOfEs(es: string): PcicKind {
-  const stripped = es.trim().replace(LEADING_ARTICLE_RE, '');
-  const wordCount = stripped.split(/\s+/).filter(Boolean).length;
-  return wordCount > 1 ? 'phrase' : 'word';
+// PLAN-tobbjelentes 3. lépés (S1): perjeles " / " alaknál minden alternatívát külön
+// nézünk ("el carro / el coche" egy szavas főnévként 'word', nem 'phrase').
+export function kindOfEs(es: string): PcicKind {
+  const isPhrase = es.split(' / ').some((alt) => {
+    const stripped = alt.trim().replace(LEADING_ARTICLE_RE, '');
+    return stripped.split(/\s+/).filter(Boolean).length > 1;
+  });
+  return isPhrase ? 'phrase' : 'word';
 }
 
-function noteField(word: WordEntry, key: 'note_en' | 'note_hu'): string | undefined {
+function noteField(word: WordEntry, key: 'note_en' | 'note_hu' | 'hint_es'): string | undefined {
   const value = word[key];
   return typeof value === 'string' && value.length > 0 ? value : undefined;
 }
@@ -100,6 +108,7 @@ function itemsFromWords(entries: WordEntry[], idPrefix: 'w' | 'e' = 'w'): PcicIt
       exampleEn: w.sentence_en,
       noteEn: noteField(w, 'note_en'),
       noteHu: noteField(w, 'note_hu'),
+      hint: noteField(w, 'hint_es'),
     }));
 }
 
@@ -107,7 +116,7 @@ function itemsFromWords(entries: WordEntry[], idPrefix: 'w' | 'e' = 'w'): PcicIt
 // csak a1.json, nincs külön A0). Id-tér: o<order> (a fájl `order` mezője,
 // 1-600), hogy ne ütközzön a régi w<id> és az es→en e<id> id-kkel. A words-open
 // pos-ából csak az app Pos-ába eső szófajok mennek át (det, interj nem).
-type OpenCard = { order: number; pos: string; es: string; en: string; sentence_es: string; sentence_en: string };
+type OpenCard = { order: number; pos: string; es: string; en: string; sentence_es: string; sentence_en: string; hint_en?: string };
 
 const OPEN_POS_TO_PCIC: Partial<Record<string, Pos>> = {
   noun: 'noun',
@@ -131,6 +140,7 @@ function itemsFromOpen(cards: OpenCard[]): PcicItem[] {
     pos: OPEN_POS_TO_PCIC[c.pos],
     exampleEs: c.sentence_es || undefined,
     exampleEn: c.sentence_en || undefined,
+    hint: c.hint_en || undefined,
   }));
 }
 

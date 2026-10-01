@@ -6,6 +6,8 @@ import {
   bodyOf,
   composeAnswer,
 } from '../articlePicker';
+import { gradePcicAnswer } from '../pcicMatch';
+import { kindOfEs } from '../../data/pcic';
 
 describe('articlePickerApplies', () => {
   it('shows the chips on Spanish word cards', () => {
@@ -123,5 +125,37 @@ describe('articleRowAppliesForPos (FB214 kiegészítés, PCIC chip)', () => {
     expect(articleRowAppliesForPos({ pos: 'conj' })).toBe(false);
     expect(articleRowAppliesForPos({ pos: 'prefix' })).toBe(false);
     expect(articleRowAppliesForPos({ pos: 'suffix' })).toBe(false);
+  });
+});
+
+// PLAN-tobbjelentes 3. lépés (S1): egy " / " alak, amelynek minden alternatívája
+// "névelő + egy szó", úgy viselkedik, mint az egyszavas főnév.
+describe('perjeles (" / ") válasz', () => {
+  const answer = 'el carro / el coche / el auto';
+
+  it('kind: word, ha minden alternatíva névelő + egy szó; phrase, ha valamelyik több szavas', () => {
+    expect(kindOfEs(answer)).toBe('word');
+    expect(kindOfEs('hacer / ejecutar')).toBe('word');
+    expect(kindOfEs('el fin de semana')).toBe('phrase');
+    expect(kindOfEs('el carro / el fin de semana')).toBe('phrase');
+    expect(kindOfEs('tocar/sentir frío')).toBe('phrase');
+  });
+
+  it('a névelő-gombsor megjelenik', () => {
+    expect(articlePickerApplies('es', true, answer)).toBe(true);
+  });
+
+  it('bármelyik alternatíva névelője + szava elfogadott (composeAnswer + értékelő)', () => {
+    expect(gradePcicAnswer(composeAnswer('el', 'coche'), answer).match).toBe('exact');
+    expect(gradePcicAnswer(composeAnswer('el', 'auto'), answer).match).toBe('exact');
+    expect(gradePcicAnswer(composeAnswer('la', 'obra'), 'la obra / el drama').match).toBe('exact');
+    expect(gradePcicAnswer(composeAnswer('el', 'drama'), 'la obra / el drama').match).toBe('exact');
+    expect(gradePcicAnswer(composeAnswer('', 'coche'), answer).match).not.toBe('exact');
+  });
+
+  it('hibás válasznál a legközelebbi alternatíva névelője kerül vissza a gombsorra', () => {
+    const g = gradePcicAnswer(composeAnswer('el', 'cochee'), answer);
+    expect(articleOf(g.best)).toBe('el');
+    expect(bodyOf(g.best)).toBe('coche');
   });
 });

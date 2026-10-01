@@ -12,6 +12,8 @@
  *    that level's topic list.
  *  - cross-level dedup: one English headword (normalized `en`) is taught in exactly
  *    one level+topic (so A2 can't re-teach an A0/A1 word).
+ *  - R11-R14 (PLAN-tobbjelentes.md 2. lépés, scripts/multi-meaning-rules.mjs): `es` question on 2+ cards
+ *    needs `hint_es`; hint format; hint only on such cards; slash-separated `en` answers well-formed.
  *
  * Run: node scripts/validate-en-track.mjs   (exit 1 on any violation, build gate)
  */
@@ -19,6 +21,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { checkMultiMeaning } from './multi-meaning-rules.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -29,6 +32,8 @@ const ID_RANGE = { A0: [5800, 5999], A1: [5001, 5399], A2: [5400, 5799], B1: [10
 
 const errors = [];
 const err = (m) => errors.push(m);
+const rules = {}; // R11-R14: szabályonként külön, hogy az első 5 példa ne vesszen el a régi hibák mögött
+const ruleFail = (r, m) => (rules[r] ||= []).push(m);
 const loadJson = (p) => (existsSync(join(ROOT, p)) ? JSON.parse(readFileSync(join(ROOT, p), 'utf8')) : null);
 const normEn = (s) => (s ?? '').toLowerCase().replace(/['’]/g, '').replace(/[.,;:!?"()]/g, '').trim();
 
@@ -60,11 +65,13 @@ const REQUIRED = ['id', 'level', 'es', 'hu', 'en', 'de', 'topic', 'topicOrder', 
 const seenId = new Map();       // id → level
 const seenHeadword = new Map();  // normalized en → "level/topic"
 let totalCards = 0;
+const allCards = [];
 
 for (const lvl of LEVELS) {
   const cards = loadJson(`data/words/en/${lvl.toLowerCase()}.json`);
   if (!cards) continue;
   totalCards += cards.length;
+  allCards.push(...cards);
   const [lo, hi] = ID_RANGE[lvl];
   for (const c of cards) {
     for (const f of REQUIRED) {
@@ -87,14 +94,26 @@ for (const lvl of LEVELS) {
   }
 }
 
+checkMultiMeaning({
+  cards: allCards, qKey: 'es', aKey: 'en', hintKey: 'hint_es',
+  articles: ['el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas'],
+  tag: (c) => `${c.level} #${c.id} ${c.es}`, fail: ruleFail,
+});
+const ruleErrors = ['R11', 'R12', 'R13', 'R14'].reduce((n, r) => n + (rules[r] || []).length, 0);
+
 console.log('en-track validation:');
 for (const lvl of LEVELS) console.log(`  ${lvl} topics: ${topicIdsByLevel[lvl].size}`);
 console.log(`  total cards: ${totalCards}`);
-if (errors.length === 0) {
+for (const r of ['R11', 'R12', 'R13', 'R14']) {
+  const errs = rules[r] || [];
+  console.log(`  ${r}: ${errs.length ? `${errs.length} hiba` : 'ok'}`);
+  errs.slice(0, 5).forEach((e) => console.log(`     ${e}`));
+}
+if (errors.length + ruleErrors === 0) {
   console.log('VALIDATE OK');
   process.exit(0);
 } else {
-  console.log(`VALIDATE FAIL (${errors.length}):`);
+  console.log(`VALIDATE FAIL (${errors.length + ruleErrors}):`);
   for (const e of errors.slice(0, 40)) console.log('  - ' + e);
   process.exit(1);
 }

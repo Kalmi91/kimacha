@@ -730,6 +730,20 @@ export default function PcicScreen() {
               </Pressable>
             )}
           </View>
+          {/* PLAN-tobbjelentes 3. lépés (SZ8): kis mondat a szó alatt, ha a kérdésnek több
+              jelentése van; a `*…*` jelölt rész félkövér + rózsaszín aláhúzás, a csillag nem
+              látszik. Gépeléskor és a Check után is ott marad, felolvasás nem változik. */}
+          {currentItem.hint && (
+            <Text testID="learn-hint" style={[styles.hintText, { color: colors.tabIconDefault }]}>
+              {currentItem.hint.split('*').map((part, i) =>
+                i % 2 === 1 ? (
+                  <Text key={i} style={[styles.hintMark, { color: colors.text }]}>{part}</Text>
+                ) : (
+                  part
+                )
+              )}
+            </Text>
+          )}
           {note && noteOpen && (
             <Text testID="pcic-note-text" style={[styles.noteText, { color: colors.tabIconDefault }]}>
               {note}
@@ -1036,6 +1050,18 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   // FB392/393: a ℹ️ jegyzet szövege, a wordRow alatt.
+  // PLAN-tobbjelentes 3. lépés: kis mondat (hint) a nagy szó alatt.
+  hintText: {
+    fontSize: 14,
+    lineHeight: 20,
+    textAlign: 'center',
+    marginTop: 4,
+  },
+  hintMark: {
+    fontWeight: '700',
+    textDecorationLine: 'underline',
+    textDecorationColor: '#EC4899',
+  },
   noteText: {
     fontSize: 14,
     lineHeight: 20,
