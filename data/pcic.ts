@@ -1,14 +1,11 @@
-// PLAN-ketiranyu 2. lépés (2026-09-28): az Anki-fül mostantól a spanyol
-// gyakorisági szókészletből (data/words/{a0,a1,a2,b1,b2}.json) épül, nem a
-// PCIC-korpuszból. A régi tartalom VÁLTOZATLANUL a data/pcicCorpus.ts-be
-// költözött (csak teszt/script importálhatja onnan, lib/__tests__/
-// noPcicInBundle.test.ts az őr). Ez a modul ugyanazt az exportált API-t adja,
-// hogy a fogyasztók (lib/pcicNotes.ts, lib/pcicLevels.ts, lib/pcicSession.ts,
-// lib/grammar/tableDeck.ts, app/(tabs)/index.tsx, app/onboarding.tsx,
-// app/spelling.tsx, components/LevelPickerSheet.tsx, ...) ne változzanak.
+// Az Anki-fül paklijai: en→es irányban a data/words-open (o<order> id-tér), es→en
+// irányban a data/words/en (e<id> id-tér). PLAN-regi-szavak-ki 6. lépés: a PCIC-korpusz
+// és a régi spanyol szólista (w<id>) kikerült, a modul neve és API-ja a fogyasztók
+// (lib/pcicLevels.ts, lib/pcicSession.ts, lib/grammar/tableDeck.ts, app/(tabs)/index.tsx,
+// app/onboarding.tsx, components/LevelPickerSheet.tsx, ...) miatt maradt.
 
 import type { Pos } from '@/lib/pcicPos';
-import { getWordsForLevel, type WordEntry } from '@/data/words';
+import type { WordEntry } from '@/data/words';
 // PLAN-ketiranyu 5. lépés (D-A döntés, 2026-09-26: "a", a régi angol-célnyelvű
 // ág kész, ellenőrzött kártyái, ~0 token). Csak ez a modul importálja, e<id>
 // id-térrel (lásd itemsFromWords). PLAN-esen: A1 = a0 + a1, A2 = a2.
@@ -62,10 +59,6 @@ export interface PcicItem {
   // a Check utáni felfedésen jelenik meg.
   exampleEs?: string;
   exampleEn?: string;
-  // PLAN-ketiranyu 2. lépés: a lib/cardNotes.ts hibrid ℹ️ jegyzet-mezője
-  // (FB75), ha a szónak van kézzel írt note_en/note_hu-ja.
-  noteEn?: string;
-  noteHu?: string;
   // PLAN-tobbjelentes 3. lépés (SZ8): kis mondat a kérdés-szó alatt, ha a kérdésnek
   // több jelentése van (words-open hint_en / angol track hint_es); a kérdezett szó
   // `*csillag*` között áll.
@@ -85,14 +78,14 @@ export function kindOfEs(es: string): PcicKind {
   return isPhrase ? 'phrase' : 'word';
 }
 
-function noteField(word: WordEntry, key: 'note_en' | 'note_hu' | 'hint_es'): string | undefined {
+function noteField(word: WordEntry, key: 'hint_es'): string | undefined {
   const value = word[key];
   return typeof value === 'string' && value.length > 0 ? value : undefined;
 }
 
 // FB357-jelzésű (vosotros: true) kártya kimarad, ahogy a nyelvtani leckéknél is.
 // PLAN-ketiranyu 4. lépés: `idPrefix` különbözteti meg a két irány id-terét
-// a KÖZÖS pcic_cards táblában (nincs pár-oszlop): en→es 'w<id>', es→en 'e<id>'.
+// a KÖZÖS pcic_cards táblában (nincs pár-oszlop): en→es 'o<order>' (itemsFromOpen), es→en 'e<id>'.
 function itemsFromWords(entries: WordEntry[], idPrefix: 'w' | 'e' = 'w'): PcicItem[] {
   return entries
     .filter((w) => !w.vosotros)
@@ -106,8 +99,6 @@ function itemsFromWords(entries: WordEntry[], idPrefix: 'w' | 'e' = 'w'): PcicIt
       pos: w.pos,
       exampleEs: w.sentence_es,
       exampleEn: w.sentence_en,
-      noteEn: noteField(w, 'note_en'),
-      noteHu: noteField(w, 'note_hu'),
       hint: noteField(w, 'hint_es'),
     }));
 }
@@ -144,30 +135,12 @@ function itemsFromOpen(cards: OpenCard[]): PcicItem[] {
   }));
 }
 
-// Egysoros kapcsoló: 'legacy'-re állítva az en→es pakli újra a régi
-// data/words/**-ból épül (w<id>), a fájlokhoz nem nyúltunk.
-export const ES_WORD_SOURCE: 'open' | 'legacy' = 'open';
-
-// Legacy: A1 nézet = a0 + a1 (a1 fájl önmagában túl kevés lenne); A2 = a2; B1
-// = b1; B2 = b2 (data/words/*.json).
-function buildItemsByLevelEs(): Record<PcicLevel, PcicItem[]> {
-  if (ES_WORD_SOURCE === 'legacy') {
-    return {
-      A1: itemsFromWords([...getWordsForLevel('A0'), ...getWordsForLevel('A1')], 'w'),
-      A2: itemsFromWords(getWordsForLevel('A2'), 'w'),
-      B1: itemsFromWords(getWordsForLevel('B1'), 'w'),
-      B2: itemsFromWords(getWordsForLevel('B2'), 'w'),
-    };
-  }
-  return {
-    A1: itemsFromOpen(openA1 as OpenCard[]),
-    A2: itemsFromOpen(openA2 as OpenCard[]),
-    B1: itemsFromOpen(openB1 as OpenCard[]),
-    B2: itemsFromOpen(openB2 as OpenCard[]),
-  };
-}
-
-const ITEMS_BY_LEVEL_ES: Record<PcicLevel, PcicItem[]> = buildItemsByLevelEs();
+const ITEMS_BY_LEVEL_ES: Record<PcicLevel, PcicItem[]> = {
+  A1: itemsFromOpen(openA1 as OpenCard[]),
+  A2: itemsFromOpen(openA2 as OpenCard[]),
+  B1: itemsFromOpen(openB1 as OpenCard[]),
+  B2: itemsFromOpen(openB2 as OpenCard[]),
+};
 
 // PLAN-esen (2026-09-28): az es→en irány A1 paklija = data/words/en/a0.json +
 // a1.json (külön A0 nincs), A2 = a2.json (e<id> id-tér, a régi első 50 id-je
