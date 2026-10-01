@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
+import { legibleOn } from '@/constants/Skins';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
@@ -139,11 +140,11 @@ export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
       testID="usage-toast-pill"
       style={[
         styles.pill,
-        { backgroundColor: isMilestone ? '#22C55E' : colors.tint, opacity, transform: [{ translateY }] },
+        { backgroundColor: isMilestone ? legibleOn('#22C55E', '#FFFFFF') : colors.tint, opacity, transform: [{ translateY }] },
         isMilestone && styles.milestonePill,
       ]}
     >
-      <Text style={[styles.text, isMilestone && styles.milestoneText]}>{message}</Text>
+      <Text style={[styles.text, !isMilestone && { color: colors.onTint }, isMilestone && styles.milestoneText]}>{message}</Text>
     </Animated.View>
   );
 }

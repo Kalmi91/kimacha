@@ -44,7 +44,8 @@ export function grammarColorsFor(theme: ThemeKey): GrammarColors {
       text: c.text,
       brutal: false,
       onA: c.onTint,
-      onB: c.onTint,
+      // PLAN-temak 7G: a rózsaszín (b) kitöltésen a fehér 3,53 volt, a fekete 5,2.
+      onB: bestOn(c.accent, [c.onTint, '#000000']),
       c: c.accent,
       border: c.text,
       onInk: c.accent,

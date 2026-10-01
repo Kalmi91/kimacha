@@ -3,6 +3,7 @@ import { StyleSheet, View, Pressable } from 'react-native';
 import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
+import { legibleOn } from '@/constants/Skins';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, Sticker } from '@/components/grammar/Brutal';
 import { SkinCardFrame } from '@/components/skins/Slots';
@@ -50,7 +51,7 @@ function CardBody({ compact, chip, chipTone = 'neutral', onPress, colors, childr
     >
       {chip && (
         <View style={[styles.lapChip, { backgroundColor: colors.background }]}>
-          <Text style={[styles.lapChipText, { color: chipTone === 'new' ? '#22C55E' : colors.tabIconDefault }]}>
+          <Text style={[styles.lapChipText, { color: chipTone === 'new' ? legibleOn('#22C55E', colors.background) : colors.tabIconDefault }]}>
             {chip}
           </Text>
         </View>

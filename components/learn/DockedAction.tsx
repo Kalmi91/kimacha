@@ -4,6 +4,8 @@ import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalButton } from '@/components/grammar/Brutal';
+import { useSkinDecor } from '@/components/skins';
+import { legibleOn } from '@/constants/Skins';
 
 type ColorScheme = (typeof Colors)['light'];
 
@@ -33,6 +35,7 @@ type Props = {
 
 export default function DockedAction({ label, onPress, tone, color, bottom, colors, onHeight }: Props) {
   const g = useGrammarColors();
+  const checkFill = useSkinDecor().checkFill;
   return (
     <View
       style={[styles.dockedAction, { bottom, backgroundColor: colors.background }]}
@@ -40,9 +43,9 @@ export default function DockedAction({ label, onPress, tone, color, bottom, colo
     >
       {g.brutal ? (
         // NY19: Check = ink kitöltés, Next = a kitöltés.
-        <BrutalButton testID="learn-docked-action" label={label} fill={tone === 'next' ? 'a' : 'ink'} icon={tone === 'next' ? '→' : '✓'} onPress={onPress} />
+        <BrutalButton testID="learn-docked-action" label={label} fill={tone === 'next' ? 'a' : checkFill ?? 'ink'} icon={tone === 'next' ? '→' : '✓'} onPress={onPress} />
       ) : (
-        <Pressable style={[styles.inlineCheckBtn, { backgroundColor: color ?? TONE_COLOR[tone] }]} onPress={onPress}>
+        <Pressable style={[styles.inlineCheckBtn, { backgroundColor: legibleOn(color ?? TONE_COLOR[tone], '#FFFFFF') }]} onPress={onPress}>
           <Text style={styles.inlineCheckText}>{label}</Text>
         </Pressable>
       )}

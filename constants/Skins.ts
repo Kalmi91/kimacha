@@ -173,7 +173,7 @@ export const SKINS: Record<SkinId, Skin> = {
     modes: ['light'],
     colors: {
       light: {
-        bg: '#008383', paper: '#C0C0C0', ink: '#000000', mu: '#FDFDFD', a: '#000080', onA: '#FFFFFF',
+        bg: '#008383', paper: '#C0C0C0', ink: '#000000', mu: '#000000', a: '#000080', onA: '#FFFFFF',
         extra: { field: '#FFFFFF', bevelLight: '#FFFFFF', bevelDark: '#808080' },
       },
     },
@@ -427,7 +427,7 @@ export const SKINS: Record<SkinId, Skin> = {
     modes: ['light', 'dark'],
     colors: {
       light: { bg: '#F8FAFC', paper: '#FFFFFF', ink: '#1E293B', mu: '#64748B', a: '#2563EB', onA: '#FFFFFF', b: '#EC4899' },
-      dark: { bg: '#0F172A', paper: '#1E293B', ink: '#F1F5F9', mu: '#94A3B8', a: '#3B82F6', onA: '#FFFFFF', b: '#EC4899' },
+      dark: { bg: '#0F172A', paper: '#1E293B', ink: '#F1F5F9', mu: '#94A3B8', a: '#3B82F6', onA: '#0F172A', b: '#EC4899' },
     },
     shape: BRUTAL_SHAPE,
     fonts: { title: null, word: null, body: null },
@@ -526,4 +526,25 @@ export function contrastRatio(fg: string, bg: string): number {
 // A szöveg színe egy kitöltésen, ha a téma nem ad explicit onB / onC-t: a jobb kontrasztú a jelöltek közül.
 export function bestOn(fill: string, candidates: string[]): string {
   return candidates.reduce((best, c) => (contrastRatio(c, fill) > contrastRatio(best, fill) ? c : best));
+}
+
+const HEX6 = /^#[0-9a-f]{6}$/i;
+
+// PLAN-temak 7G: olvasható szín egy háttéren. Ha az `fg` a `bg`-n átmegy a küszöbön (alap WCAG AA
+// 4.5, jelnél / nagy szövegnél 3), változatlan marad (a mai kinézet nem változik); különben azonos
+// árnyalaton a bg-től távolodva feketébe / fehérbe keveri, a legkisebb változtatásig, ami átmegy.
+// Ugyanígy kitöltésre is: `legibleOn(fill, '#FFFFFF')` = a fehér szöveget elbíró kitöltés.
+export function legibleOn(fg: string, bg: string, min = 4.5): string {
+  if (!HEX6.test(fg) || !HEX6.test(bg) || contrastRatio(fg, bg) >= min) return fg;
+  const rgb = (h: string) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+  const [r, g, b] = rgb(fg);
+  const targets = luminance(bg) > luminance(fg) ? [0, 255] : [255, 0];
+  for (const t of targets) {
+    for (let step = 1; step <= 50; step++) {
+      const k = step / 50;
+      const hex = `#${[r, g, b].map((v) => Math.round(v + (t - v) * k).toString(16).padStart(2, '0')).join('')}`.toUpperCase();
+      if (contrastRatio(hex, bg) >= min) return hex;
+    }
+  }
+  return fg;
 }

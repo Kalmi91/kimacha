@@ -6,6 +6,7 @@ import { File, Paths } from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import * as DocumentPicker from 'expo-document-picker';
 import Colors from '@/constants/Colors';
+import { legibleOn } from '@/constants/Skins';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
@@ -103,6 +104,7 @@ export default function SettingsScreen() {
   const wideText = !!activeSkin.fonts.body || activeSkin.fontScale > 1 || activeSkin.spacingScope === 'all';
   const stepLabel = { minWidth: wideText ? 112 : 64 };
   const colors = Colors[theme];
+  const arrowColor = legibleOn(colors.tint, colors.card, 3);
   const g = useGrammarColors();
   const s = t();
   const router = useRouter();
@@ -371,7 +373,7 @@ export default function SettingsScreen() {
           (install it in the phone's text-to-speech settings) is obvious. */}
       {missingVoices.length > 0 && (
         <Row>
-          <Text style={[styles.missingVoiceText, { color: '#EAB308' }]}>
+          <Text style={[styles.missingVoiceText, { color: legibleOn('#EAB308', colors.card) }]}>
             {s.settings.missingVoice(missingVoices.map(voiceName).join(', '))}
           </Text>
         </Row>
@@ -448,44 +450,44 @@ export default function SettingsScreen() {
             {direction[0] === 'en' ? s.settings.directionEnEs : s.settings.directionEsEn}
           </Text>
         </View>
-        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
       </Row>
 
       {/* Q0: backup (export + share) and restore (pick file + confirm + import). */}
       <Row onPress={handleBackup}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>💾 {s.backup.backup}</Text>
-        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
       </Row>
 
       <Row onPress={handleRestore}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>♻️ {s.backup.restore}</Text>
-        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
       </Row>
 
       {/* PLAN-hibaim.md 3. lépés: import a "Hibáim" kötegből (Drive JSON). */}
       <Row onPress={handleLoadMistakes}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.mistakes.load}</Text>
-        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
       </Row>
 
       {/* PLAN-fb1001 K1 + 7. lépés: haladás-nullázás megerősítéssel, paklinként és a nyelvtanra. */}
       {resetLevels.map((lvl) => (
         <Row key={lvl} onPress={() => handleResetDeck(lvl)}>
           <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.pcic.resetRow(lvl)}</Text>
-          <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
+          <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
         </Row>
       ))}
       {hasGrammarProgress && (
         <Row onPress={handleResetGrammar}>
           <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.resetGrammar}</Text>
-          <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
+          <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
         </Row>
       )}
 
       {/* PLAN-credits.md: word-data attribution screen entry point. */}
       <Row onPress={() => router.push('/credits')}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.credits}</Text>
-        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
       </Row>
 
       {/* FB82: app version, small and grey, so the user can tell which build runs. */}

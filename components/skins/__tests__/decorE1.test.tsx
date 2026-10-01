@@ -13,6 +13,7 @@ import * as RN from 'react-native';
 import { Text } from 'react-native';
 
 import { BrutalBox, BrutalButton } from '@/components/grammar/Brutal';
+import DockedAction from '@/components/learn/DockedAction';
 import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
 import { SKIN_DECOR } from '@/components/skins';
 import { PAPEL_PICADO, loteriaNumber } from '@/components/skins/loteria';
@@ -150,6 +151,25 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     expect(view.getByText('✓  Check')).toBeTruthy();
     expect(view.getByTestId('skin-speak-label').props.children).toBe('Read aloud');
     view.unmount();
+  });
+
+  it('senior: ha a felirat már tartalmazza az ikont (a dokkolt "✓ Check"), nincs dupla pipa', async () => {
+    const view = await mountUi('senior', <BrutalButton testID="btn" label="✓ Check" icon="✓" onPress={() => {}} />);
+    expect(view.getByText('✓ Check')).toBeTruthy();
+    expect(view.queryByText('✓  ✓ Check')).toBeNull();
+    view.unmount();
+  });
+
+  it('retro95: a dokkolt Check-sáv a spec szerint a-színű (sötétkék, fehér szöveg); a Neo-brutálon ink marad', async () => {
+    const ui = <DockedAction label="✓ Check" tone="check" bottom={0} colors={Colors.light} onPress={() => {}} />;
+    const retro = await mountUi('retro95', ui);
+    const c = SKINS.retro95.colors.light!;
+    expect(flat(retro.getByTestId('learn-docked-action').props.style).backgroundColor).toBe(c.a);
+    expect(flat(retro.getByText('✓ Check').props.style).color).toBe(c.onA);
+    retro.unmount();
+    const brutal = await mountUi('brutal', ui);
+    expect(flat(brutal.getByTestId('learn-docked-action').props.style).backgroundColor).not.toBe(c.a);
+    brutal.unmount();
   });
 
   it('senior: a Neo-brutál téma gombja változatlan (nincs ikon, nincs min. 48), nincs hang-felirat', async () => {

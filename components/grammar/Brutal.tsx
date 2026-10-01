@@ -281,7 +281,7 @@ export function BrutalButton({
         <Text style={styles.underline}>{label.charAt(0)}</Text>
         {label.slice(1)}
       </>
-    ) : variant === 'stacked' && icon ? (
+    ) : variant === 'stacked' && icon && !label.includes(icon) ? (
       `${icon}  ${label}`
     ) : (
       label

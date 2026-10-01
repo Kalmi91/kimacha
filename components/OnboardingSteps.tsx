@@ -2,7 +2,7 @@ import { Pressable, ScrollView, StyleSheet, Text as RNText, View, useColorScheme
 import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
-import { ONBOARDING_SKINS, SKINS, resolveMode, type SkinId } from '@/constants/Skins';
+import { ONBOARDING_SKINS, SKINS, legibleOn, resolveMode, type SkinId } from '@/constants/Skins';
 import { BrutalButton, radiusStyle, roleColor } from '@/components/grammar/Brutal';
 import { useGrammarColors, grammarColorsFor } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
@@ -20,7 +20,7 @@ function StartButton({ testID, label, onPress }: { testID: string; label: string
   if (g.brutal) return <BrutalButton testID={testID} label={label} onPress={onPress} style={styles.brutalBtn} />;
   return (
     <Pressable testID={testID} style={[styles.startBtn, { backgroundColor: Colors[theme].tint }]} onPress={onPress}>
-      <Text style={styles.startBtnText}>{label}</Text>
+      <Text style={[styles.startBtnText, { color: Colors[theme].onTint }]}>{label}</Text>
     </Pressable>
   );
 }
@@ -45,7 +45,7 @@ export function OnboardingIntro({ titleStyle, onStart }: { titleStyle: StyleProp
       </View>
       {lines.map((line) => (
         <View key={line} style={styles.row}>
-          <Text style={[styles.bullet, { color: g.a }]}>•</Text>
+          <Text style={[styles.bullet, { color: legibleOn(g.a, g.bg, 3) }]}>•</Text>
           <Text style={[styles.itemText, styles.rowText, { color: g.ink }]}>{line}</Text>
         </View>
       ))}

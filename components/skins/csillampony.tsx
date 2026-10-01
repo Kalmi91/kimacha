@@ -87,9 +87,9 @@ function CsillamponyWord({ children }: { word: string; children: ReactNode }) {
   return (
     <View style={styles.word}>
       <View style={styles.arcRow}>
-        <Text style={[styles.star, { color: RAINBOW[1] }]}>✦</Text>
+        <Text testID="decor-csillampony-star" style={[styles.star, { color: RAINBOW[1] }]}>✦</Text>
         <Rainbow />
-        <Text style={[styles.star, { color: RAINBOW[5] }]}>✦</Text>
+        <Text testID="decor-csillampony-star" style={[styles.star, { color: RAINBOW[5] }]}>✦</Text>
       </View>
       {children}
     </View>
