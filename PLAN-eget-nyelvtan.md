@@ -203,7 +203,7 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
 - R-sor az A sávon (05:55-től; a B sáv R1-R16-ot viszi, a brief: `C:\AI\kimacha-wt-eget-nyelvtan-b\PLAN-eget-nyelvtan.md` „## BRIEF átnézés (R-sor, …)”; a két sáv más-más JSON-hoz nyúl):
 - [x] R17. `diminutivos`, `oraciones-consecutivas`, `indefinido-irregular`, `indefinido-10-verbos` → kész, ha: átnézve, javítva, kapu zöld, commit `fix(grammar): átnézés R17 (nyelvtan)` (06:09; javítás: diminutivos 4, oraciones-consecutivas 4, indefinido-irregular 11, indefinido-10-verbos 32)
 - [x] R18. `condicionales-tipo1`, `condicionales-tipo2-3`, `estilo-indirecto`, `finales-causales` → ugyanaz (06:29; javítás: condicionales-tipo1 24, condicionales-tipo2-3 14, estilo-indirecto 21, finales-causales 5)
-- [ ] R19. `subjuntivo-presente-forma`, `subjuntivo-disparadores`, `temporales-subjuntivo`, `subjuntivo-imperfecto` → ugyanaz
+- [x] R19. `subjuntivo-presente-forma`, `subjuntivo-disparadores`, `temporales-subjuntivo`, `subjuntivo-imperfecto` → ugyanaz (06:55; javítás: subjuntivo-presente-forma 28, subjuntivo-disparadores 4, temporales-subjuntivo 16, subjuntivo-imperfecto 16)
 
 ## BRIEF F-sor (2026-10-01, új téma a tantervbe, tételenként EGY agent)
 
