@@ -185,11 +185,11 @@
               }
             },
             {
-              "es": "El coche es de mi padre.",
+              "es": "El carro es de mi padre.",
               "tr": {
                 "hu": "Az autó az apámé.",
                 "en": "The car is my father’s.",
-                "es": "El coche es de mi padre.",
+                "es": "El carro es de mi padre.",
                 "de": "Das Auto gehört meinem Vater."
               }
             }
@@ -799,6 +799,15 @@
         "es": "la vez",
         "de": "Mal"
       }
+    },
+    {
+      "word": "carro",
+      "gloss": {
+        "hu": "autó",
+        "en": "car",
+        "es": "el carro (el coche)",
+        "de": "Auto"
+      }
     }
   ],
   "items": [
@@ -831,7 +840,7 @@
     },
     {
       "id": "se-02",
-      "sentence": "Tú ___ muy inteligente.",
+      "sentence": "Tú ___ muy inteligente, como tu madre.",
       "options": [
         "eres",
         "estás"
@@ -845,15 +854,15 @@
       },
       "wrong": {
         "estás": {
-          "hu": "Az \"estás\" is helyes mondatot ad, de mást jelent: \"Tú estás muy inteligente\" azt jelentené, hogy MOST, ebben a helyzetben viselkedsz okosan, nem azt, hogy általában intelligens vagy.",
-          "en": "\"Estás\" also makes a correct sentence, but a different one: \"Tú estás muy inteligente\" would mean you are being clever right now, in this situation, not that you are generally intelligent.",
-          "es": "\"Estás\" también forma una frase correcta, pero distinta: \"Tú estás muy inteligente\" significaría que estás actuando de forma lista ahora mismo, no que seas inteligente en general.",
-          "de": "\"Estás\" ergibt ebenfalls einen korrekten Satz, aber mit anderer Bedeutung: \"Tú estás muy inteligente\" würde heißen, dass du gerade jetzt klug wirkst, nicht dass du allgemein intelligent bist."
+          "hu": "Az „estás” azt mondaná, hogy most viselkedsz okosan, a „como tu madre” viszont tartós tulajdonságot hasonlít össze, ahhoz ser kell: Tú eres muy inteligente, como tu madre.",
+          "en": "\"Estás\" would say you are acting clever right now, but \"como tu madre\" compares a lasting trait, which takes ser: Tú eres muy inteligente, como tu madre.",
+          "es": "\"Estás\" diría que ahora estás actuando de forma lista, pero \"como tu madre\" compara un rasgo duradero, que lleva ser: Tú eres muy inteligente, como tu madre.",
+          "de": "\"Estás\" würde sagen, dass du dich gerade klug verhältst, aber \"como tu madre\" vergleicht eine dauerhafte Eigenschaft, und die steht mit ser: Tú eres muy inteligente, como tu madre."
         }
       },
       "examples": [
         "Él es muy amable.",
-        "Sois muy amables."
+        "Ustedes son muy amables."
       ]
     },
     {
@@ -939,24 +948,24 @@
     },
     {
       "id": "se-06",
-      "sentence": "El café ___ caliente.",
+      "sentence": "El café ___ una bebida caliente.",
       "options": [
         "es",
         "está"
       ],
       "correct": 0,
       "why": {
-        "hu": "Itt a kávéról mint italfajtáról van szó, ami mindig forró, ez általános tulajdonság, ezért ser.",
-        "en": "This is about coffee as a drink, which is always hot, a general property, so ser.",
-        "es": "Aquí se habla del café como bebida, que siempre es caliente, una propiedad general, por eso ser.",
-        "de": "Hier geht es um Kaffee als Getränk, das immer heiß ist, eine allgemeine Eigenschaft, deshalb ser."
+        "hu": "A kávé besorolása: italfajta, főnév áll az ige után (una bebida caliente), ezért ser.",
+        "en": "This classifies coffee as a kind of drink, with a noun after the verb (una bebida caliente), so ser.",
+        "es": "Aquí se clasifica el café como tipo de bebida, con un sustantivo después del verbo (una bebida caliente), por eso ser.",
+        "de": "Hier wird Kaffee als Getränkeart eingeordnet, mit einem Substantiv nach dem Verb (una bebida caliente), deshalb ser."
       },
       "wrong": {
         "está": {
-          "hu": "Az \"está\" is helyes mondat, de mást jelent: \"El café está caliente\" azt jelentené, hogy EZ a konkrét kávé most forró, nem azt, hogy a kávé általában forró ital.",
-          "en": "\"Está\" also makes a correct sentence, but a different one: \"El café está caliente\" would mean THIS particular coffee is hot right now, not that coffee in general is a hot drink.",
-          "es": "\"Está\" también forma una frase correcta, pero distinta: \"El café está caliente\" significaría que ESTE café en concreto está caliente ahora, no que el café en general sea una bebida caliente.",
-          "de": "\"Está\" ergibt ebenfalls einen korrekten Satz, aber mit anderer Bedeutung: \"El café está caliente\" würde heißen, dass GENAU DIESER Kaffee jetzt heiß ist, nicht dass Kaffee allgemein ein heißes Getränk ist."
+          "hu": "Az „está” itt nem alkot helyes mondatot: főnév (una bebida) előtt nem áll estar, a besorolást ser mondja: El café es una bebida caliente.",
+          "en": "\"Está\" does not make a correct sentence here: estar does not go before a noun (una bebida), a classification takes ser: El café es una bebida caliente.",
+          "es": "\"Está\" no forma una frase correcta aquí: estar no va delante de un sustantivo (una bebida), la clasificación lleva ser: El café es una bebida caliente.",
+          "de": "\"Está\" ergibt hier keinen korrekten Satz: estar steht nicht vor einem Substantiv (una bebida), eine Einordnung steht mit ser: El café es una bebida caliente."
         }
       },
       "examples": [
@@ -1020,7 +1029,7 @@
     },
     {
       "id": "se-09",
-      "sentence": "Él ___ alto y delgado.",
+      "sentence": "Él ___ alto y delgado, como su padre.",
       "options": [
         "es",
         "está"
@@ -1034,10 +1043,10 @@
       },
       "wrong": {
         "está": {
-          "hu": "Az \"está\" is elhangozhatna, de mást sugallna: \"Él está alto y delgado\" azt jelentené, hogy mostanában TŰNIK magasnak és soványnak, például lefogyott, változás eredménye, nem azt, hogy ez az állandó testalkata.",
-          "en": "\"Está\" could also be said, but it would suggest something else: \"Él está alto y delgado\" would mean he currently LOOKS tall and thin, for example after losing weight, a result of change, not that this is his lasting build.",
-          "es": "\"Está\" también podría decirse, pero sugeriría otra cosa: \"Él está alto y delgado\" significaría que ahora PARECE alto y delgado, por ejemplo tras adelgazar, resultado de un cambio, no que sea su complexión de siempre.",
-          "de": "\"Está\" könnte man auch sagen, es würde aber etwas anderes andeuten: \"Él está alto y delgado\" würde heißen, dass er im Moment groß und dünn WIRKT, zum Beispiel nach Abnehmen, Ergebnis einer Veränderung, nicht dass das seine dauerhafte Statur ist."
+          "hu": "Az „está” változást sugallna (pl. lefogyott, megnőtt), a „como su padre” viszont tartós testalkatot hasonlít össze, ahhoz ser kell: Él es alto y delgado, como su padre.",
+          "en": "\"Está\" would suggest a change (e.g. he lost weight, he grew), but \"como su padre\" compares a lasting build, which takes ser: Él es alto y delgado, como su padre.",
+          "es": "\"Está\" sugeriría un cambio (p. ej. adelgazó, creció), pero \"como su padre\" compara una complexión duradera, que lleva ser: Él es alto y delgado, como su padre.",
+          "de": "\"Está\" würde eine Veränderung andeuten (z. B. abgenommen, gewachsen), aber \"como su padre\" vergleicht eine dauerhafte Statur, und die steht mit ser: Él es alto y delgado, como su padre."
         }
       },
       "examples": [
@@ -1047,7 +1056,7 @@
     },
     {
       "id": "se-10",
-      "sentence": "Hoy ___ muy feliz.",
+      "sentence": "Hoy ___ muy contento.",
       "options": [
         "estoy",
         "soy"
@@ -1056,15 +1065,15 @@
       "why": {
         "hu": "A hangulat múló állapot, ma boldog vagy, holnap lehet más, ezért estar.",
         "en": "Mood is a passing state, happy today, could be different tomorrow, so estar.",
-        "es": "El ánimo es un estado pasajero, hoy feliz, mañana puede ser distinto, por eso estar.",
+        "es": "El ánimo es un estado pasajero, hoy contento, mañana puede ser distinto, por eso estar.",
         "de": "Die Stimmung ist ein vorübergehender Zustand, heute glücklich, morgen vielleicht anders, deshalb estar."
       },
       "wrong": {
         "soy": {
-          "hu": "A \"soy\" is helyes mondatot adna, de mást jelentene: \"Hoy soy muy feliz\" azt állítaná, hogy a boldogság az ALAPTERMÉSZETED, nem a mai hangulatod.",
-          "en": "\"Soy\" would also make a correct sentence, but a different one: \"Hoy soy muy feliz\" would claim happiness is your BASIC NATURE, not just today’s mood.",
-          "es": "\"Soy\" también formaría una frase correcta, pero distinta: \"Hoy soy muy feliz\" afirmaría que la felicidad es tu NATURALEZA, no tu estado de ánimo de hoy.",
-          "de": "\"Soy\" würde ebenfalls einen korrekten Satz ergeben, aber mit anderer Bedeutung: \"Hoy soy muy feliz\" würde behaupten, Glück sei dein GRUNDWESEN, nicht nur deine heutige Stimmung."
+          "hu": "A „soy” itt nem természetes: a contento a mostani kedvet mondja, azt estar fejezi ki: Hoy estoy muy contento.",
+          "en": "\"Soy\" is not natural here: contento describes how you feel right now, and that takes estar: Hoy estoy muy contento.",
+          "es": "\"Soy\" no es natural aquí: contento dice cómo te sientes ahora, y eso lleva estar: Hoy estoy muy contento.",
+          "de": "\"Soy\" ist hier nicht natürlich: contento sagt, wie du dich gerade fühlst, und das steht mit estar: Hoy estoy muy contento."
         }
       },
       "examples": [
@@ -1425,10 +1434,10 @@
             "de": "Herkunft (ser)"
           },
           "wrong": {
-            "hu": "A ser a származást fejezné ki (\"Soy de casa\" nem is természetes mondat); itt a jelenlegi HELYRŐL van szó, ami mindig estar: estoy en casa.",
-            "en": "Ser would express origin (\"Soy de casa\" is not even a natural sentence); here it is about the current LOCATION, which always takes estar: estoy en casa.",
-            "es": "Ser expresaría el origen (\"Soy de casa\" ni siquiera es una frase natural); aquí se trata de la UBICACIÓN actual, que siempre lleva estar: estoy en casa.",
-            "de": "Ser würde die Herkunft ausdrücken (\"Soy de casa\" ist nicht einmal ein natürlicher Satz); hier geht es um den aktuellen ORT, der immer mit estar steht: estoy en casa."
+            "hu": "A ser a származást fejezné ki (pl. soy de México); itt viszont a jelenlegi HELYRŐL van szó, amit estar fejez ki: estoy en casa.",
+            "en": "Ser would express origin (e.g. soy de México); here it is about the current LOCATION, which takes estar: estoy en casa.",
+            "es": "Ser expresaría el origen (p. ej. soy de México); aquí se trata de la UBICACIÓN actual, que lleva estar: estoy en casa.",
+            "de": "Ser würde die Herkunft ausdrücken (z. B. soy de México); hier geht es um den aktuellen ORT, der mit estar steht: estoy en casa."
           }
         },
         {
@@ -1543,16 +1552,16 @@
         },
         {
           "text": {
-            "hu": "múló állapot (estar)",
-            "en": "temporary state (estar)",
-            "es": "estado pasajero (estar)",
-            "de": "vorübergehender Zustand (estar)"
+            "hu": "foglalkozás, azonosság (ser)",
+            "en": "profession, identity (ser)",
+            "es": "profesión, identidad (ser)",
+            "de": "Beruf, Identität (ser)"
           },
           "wrong": {
-            "hu": "A múló állapot pont hangulatra, egészségre vonatkozik (fáradt, beteg); egy tárgy nyitottsága inkább egy VÁLTOZÁS EREDMÉNYE (valaki kinyitotta), nem hangulat.",
-            "en": "The temporary-state point is about mood or health (tired, sick); an object being open is more the RESULT OF A CHANGE (someone opened it), not a mood.",
-            "es": "El punto de estado pasajero es sobre ánimo o salud (cansado, enfermo); que un objeto esté abierto es más bien el RESULTADO DE UN CAMBIO (alguien lo abrió), no un ánimo.",
-            "de": "Der Punkt für vorübergehenden Zustand betrifft Stimmung oder Gesundheit (müde, krank); dass ein Gegenstand offen ist, ist eher das ERGEBNIS EINER VERÄNDERUNG (jemand hat ihn geöffnet), keine Stimmung."
+            "hu": "A ser azonosságot vagy foglalkozást mondana (soy profesor); az ajtó nyitottsága viszont ÁLLAPOT, ahhoz estar kell: la puerta está abierta.",
+            "en": "Ser would express identity or profession (soy profesor); an open door is a STATE, which takes estar: la puerta está abierta.",
+            "es": "Ser expresaría identidad o profesión (soy profesor); que una puerta esté abierta es un ESTADO, y eso lleva estar: la puerta está abierta.",
+            "de": "Ser würde Identität oder Beruf ausdrücken (soy profesor); dass eine Tür offen ist, ist ein ZUSTAND, und der steht mit estar: la puerta está abierta."
           }
         }
       ],
@@ -1608,131 +1617,6 @@
         }
       ],
       "correctIndex": 0
-    },
-    {
-      "id": "se-spot-01",
-      "kind": "spot",
-      "trial": true,
-      "es": "Yo soy cansado.",
-      "wrongIndex": 1,
-      "options": [
-        "estoy",
-        "estás",
-        "eres"
-      ],
-      "correctIndex": 0,
-      "explain": {
-        "hu": "A fáradtság múló állapot, ezért az állapotot kifejező ige kell: estoy cansado.",
-        "en": "Being tired is a temporary state, so the verb for states is needed: estoy cansado.",
-        "es": "Estar cansado es un estado pasajero, por eso hace falta el verbo de los estados: estoy cansado.",
-        "de": "Müdigkeit ist ein vorübergehender Zustand, deshalb braucht man das Verb für Zustände: estoy cansado."
-      },
-      "tr": {
-        "hu": "Fáradt vagyok.",
-        "en": "I am tired.",
-        "es": "Estoy cansado.",
-        "de": "Ich bin müde."
-      }
-    },
-    {
-      "id": "se-spot-02",
-      "kind": "spot",
-      "trial": true,
-      "es": "Mi hermana está profesora.",
-      "wrongIndex": 2,
-      "options": [
-        "es",
-        "eres",
-        "son"
-      ],
-      "correctIndex": 0,
-      "explain": {
-        "hu": "A foglalkozás tartós besorolás, ezért a ser kell: mi hermana es profesora.",
-        "en": "A profession is a lasting classification, so ser is needed: mi hermana es profesora.",
-        "es": "La profesión es una clasificación estable, por eso hace falta ser: mi hermana es profesora.",
-        "de": "Ein Beruf ist eine dauerhafte Einordnung, deshalb braucht man ser: mi hermana es profesora."
-      },
-      "tr": {
-        "hu": "A húgom tanár.",
-        "en": "My sister is a teacher.",
-        "es": "Mi hermana es profesora.",
-        "de": "Meine Schwester ist Lehrerin."
-      }
-    },
-    {
-      "id": "se-spot-03",
-      "kind": "spot",
-      "trial": true,
-      "es": "Ellos están de México.",
-      "wrongIndex": 1,
-      "options": [
-        "son",
-        "somos",
-        "eres"
-      ],
-      "correctIndex": 0,
-      "explain": {
-        "hu": "A származás a ser dolga: ellos son de México.",
-        "en": "Origin takes ser: ellos son de México.",
-        "es": "El origen lleva ser: ellos son de México.",
-        "de": "Die Herkunft nimmt ser: ellos son de México."
-      },
-      "tr": {
-        "hu": "Ők Mexikóból valók.",
-        "en": "They are from Mexico.",
-        "es": "Ellos son de México.",
-        "de": "Sie kommen aus Mexiko."
-      }
-    },
-    {
-      "id": "se-spot-04",
-      "kind": "spot",
-      "trial": true,
-      "es": "Ella es en el trabajo.",
-      "wrongIndex": 1,
-      "options": [
-        "está",
-        "estás",
-        "están"
-      ],
-      "correctIndex": 0,
-      "explain": {
-        "hu": "A hely az estar dolga: ella está en el trabajo.",
-        "en": "Location takes estar: ella está en el trabajo.",
-        "es": "El lugar lleva estar: ella está en el trabajo.",
-        "de": "Der Ort nimmt estar: ella está en el trabajo."
-      },
-      "tr": {
-        "hu": "Ő a munkahelyén van.",
-        "en": "She is at work.",
-        "es": "Ella está en el trabajo.",
-        "de": "Sie ist bei der Arbeit."
-      }
-    },
-    {
-      "id": "se-spot-05",
-      "kind": "spot",
-      "trial": true,
-      "es": "La puerta es abierta.",
-      "wrongIndex": 2,
-      "options": [
-        "está",
-        "están",
-        "estás"
-      ],
-      "correctIndex": 0,
-      "explain": {
-        "hu": "Ha az ajtó egy cselekvés eredményeként nyitva van, az estar kell: la puerta está abierta.",
-        "en": "A door that is open as the result of an action takes estar: la puerta está abierta.",
-        "es": "Una puerta abierta como resultado de una acción lleva estar: la puerta está abierta.",
-        "de": "Eine Tür, die als Ergebnis einer Handlung offen ist, nimmt estar: la puerta está abierta."
-      },
-      "tr": {
-        "hu": "Az ajtó nyitva van.",
-        "en": "The door is open.",
-        "es": "La puerta está abierta.",
-        "de": "Die Tür ist offen."
-      }
     },
     {
       "id": "se-dict-01",

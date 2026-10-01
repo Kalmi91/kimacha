@@ -270,12 +270,12 @@
               }
             },
             {
-              "es": "La próxima semana viven en su nueva casa.",
+              "es": "La próxima semana comemos en su nueva casa.",
               "tr": {
-                "hu": "Jövő héten az új házukban laknak.",
-                "en": "Next week they live in their new house.",
-                "es": "La próxima semana viven en su nueva casa.",
-                "de": "Nächste Woche wohnen sie in ihrem neuen Haus."
+                "hu": "Jövő héten az új házukban eszünk.",
+                "en": "Next week we eat at their new house.",
+                "es": "La próxima semana comemos en su nueva casa.",
+                "de": "Nächste Woche essen wir in ihrem neuen Haus."
               }
             }
           ]
@@ -423,11 +423,11 @@
       }
     },
     {
-      "word": "pizarra",
+      "word": "pizarrón",
       "gloss": {
         "hu": "tábla (iskolai)",
         "en": "blackboard",
-        "es": "la pizarra",
+        "es": "el pizarrón",
         "de": "Tafel"
       }
     },
@@ -812,13 +812,13 @@
         }
       },
       "examples": [
-        "El profesor escribe en la pizarra.",
+        "El profesor escribe en el pizarrón.",
         "La niña vive con su abuela."
       ]
     },
     {
       "id": "pr-12",
-      "sentence": "Nosotros ___ el menú del día.",
+      "sentence": "Mañana nosotros ___ el menú del día.",
       "options": [
         "comemos",
         "comimos",

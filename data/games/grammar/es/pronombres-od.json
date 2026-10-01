@@ -14,7 +14,7 @@
       "text": {
         "hu": "A tárgyeset névmás (lo, la, los, las, me, te, nos, os) egy már megnevezett dolgot vagy személyt helyettesít, hogy ne kelljen megismételni a főnevet. Nem az alany, hanem a cselekvés célpontja: azt fejezi ki, KIT vagy MIT érint közvetlenül az ige.",
         "en": "The direct object pronoun (lo, la, los, las, me, te, nos, os) replaces something or someone already mentioned, so you do not have to repeat the noun. It is not the subject, but the target of the action: it expresses WHOM or WHAT the verb directly affects.",
-        "es": "El pronombre de objeto directo (lo, la, los, las, me, te, nos, os) sustituye algo o a alguien ya mencionado, para no repetir el sustantivo. No es el sujeto, sino el destinatario de la acción: expresa A QUIÉN o QUÉ afecta directamente el verbo.",
+        "es": "El pronombre de objeto directo (lo, la, los, las, me, te, nos, os) sustituye algo o a alguien ya mencionado, para no repetir el sustantivo. No es el sujeto, sino aquello sobre lo que recae la acción: expresa A QUIÉN o QUÉ afecta directamente el verbo.",
         "de": "Das direkte Objektpronomen (lo, la, los, las, me, te, nos, os) ersetzt etwas oder jemanden, der bereits genannt wurde, damit man das Substantiv nicht wiederholen muss. Es ist nicht das Subjekt, sondern das Ziel der Handlung: es drückt aus, WEN oder WAS das Verb direkt betrifft."
       }
     },
@@ -367,10 +367,10 @@
           "a": "lo",
           "b": "le",
           "note": {
-            "hu": "A \"lo\" a tárgyeset névmása (mit/kit érint közvetlenül az ige), a \"le\" a részes eseté (kinek); embereknél gyakori hiba a kettő felcserélése, ezt hívják leísmónak.",
-            "en": "\"Lo\" is the direct object pronoun (what/whom the verb directly affects), \"le\" is the indirect object pronoun (to whom); with people, mixing up the two is a common mistake called leísmo.",
-            "es": "\"Lo\" es el pronombre de objeto directo (qué o a quién afecta directamente el verbo), \"le\" es el de objeto indirecto (a quién); con personas, confundir los dos es un error común llamado leísmo.",
-            "de": "\"Lo\" ist das direkte Objektpronomen (wen oder was das Verb direkt betrifft), \"le\" ist das indirekte (wem); bei Personen ist die Verwechslung der beiden ein häufiger Fehler, genannt leísmo."
+            "hu": "A \"lo\" a tárgyeset névmása (mit/kit érint közvetlenül az ige), a \"le\" a részes eseté (kinek); embereknél a kettő felcserélését (a \"le\" tárgyként használatát) leísmónak hívják, Mexikóban ez nem a standard.",
+            "en": "\"Lo\" is the direct object pronoun (what/whom the verb directly affects), \"le\" is the indirect object pronoun (to whom); with people, mixing up the two (using \"le\" as a direct object) is called leísmo, and it is not the standard in Mexico.",
+            "es": "\"Lo\" es el pronombre de objeto directo (qué o a quién afecta directamente el verbo), \"le\" es el de objeto indirecto (a quién); con personas, confundir los dos (usar \"le\" como objeto directo) se llama leísmo y en México no es la norma.",
+            "de": "\"Lo\" ist das direkte Objektpronomen (wen oder was das Verb direkt betrifft), \"le\" ist das indirekte (wem); bei Personen heißt die Verwechslung der beiden (le als direktes Objekt) leísmo und ist in Mexiko nicht der Standard."
           },
           "examples": [
             {
@@ -627,6 +627,15 @@
         "es": "dudar",
         "de": "zweifeln"
       }
+    },
+    {
+      "word": "carro",
+      "gloss": {
+        "hu": "autó",
+        "en": "car",
+        "es": "el carro (el coche)",
+        "de": "Auto"
+      }
     }
   ],
   "items": [
@@ -673,10 +682,10 @@
       },
       "wrong": {
         "Lo": {
-          "hu": "\"Lo\" hímnemű dolgokra való, a \"mochila\" viszont nőnemű; \"Lo\" egy hímnemű dologgal lenne helyes, pl. \"el bolso\": ¿El bolso? Lo llevo yo.",
-          "en": "\"Lo\" is for masculine things, but \"mochila\" is feminine; \"Lo\" would be correct with a masculine noun instead, like \"el bolso\": ¿El bolso? Lo llevo yo.",
-          "es": "\"Lo\" es para cosas masculinas, pero \"mochila\" es femenina; \"Lo\" sería correcto con un sustantivo masculino, como \"el bolso\": ¿El bolso? Lo llevo yo.",
-          "de": "\"Lo\" ist für maskuline Dinge, aber \"mochila\" ist feminin; \"Lo\" wäre mit einem maskulinen Substantiv korrekt, wie \"el bolso\": ¿El bolso? Lo llevo yo."
+          "hu": "\"Lo\" hímnemű dolgokra való, a \"mochila\" viszont nőnemű; \"Lo\" egy hímnemű dologgal lenne helyes, pl. \"el abrigo\": ¿El abrigo? Lo llevo yo.",
+          "en": "\"Lo\" is for masculine things, but \"mochila\" is feminine; \"Lo\" would be correct with a masculine noun instead, like \"el abrigo\": ¿El abrigo? Lo llevo yo.",
+          "es": "\"Lo\" es para cosas masculinas, pero \"mochila\" es femenina; \"Lo\" sería correcto con un sustantivo masculino, como \"el abrigo\": ¿El abrigo? Lo llevo yo.",
+          "de": "\"Lo\" ist für maskuline Dinge, aber \"mochila\" ist feminin; \"Lo\" wäre mit einem maskulinen Substantiv korrekt, wie \"el abrigo\": ¿El abrigo? Lo llevo yo."
         },
         "Las": {
           "hu": "\"Las\" többes számú, itt viszont csak egy hátizsákról van szó; \"Las\" akkor lenne helyes, ha több hátizsákot vinnél: ¿Las mochilas? Las llevo yo.",
@@ -686,7 +695,7 @@
         }
       },
       "examples": [
-        "¿El coche? Lo llevo yo.",
+        "¿El carro? Lo llevo yo.",
         "¿Las llaves? Las llevo yo."
       ]
     },
@@ -813,7 +822,7 @@
     {
       "id": "od-07",
       "sentence": "¿Vas a llamar a Pedro? Sí, ___ voy a llamar.",
-      "options": ["lo", "le", "los"],
+      "options": ["lo", "la", "los"],
       "correct": 0,
       "why": {
         "hu": "Llamar tárgyesettel jár (lo/la), Pedro hímnemű és egy személy.",
@@ -822,11 +831,11 @@
         "de": "Llamar verlangt ein direktes Objekt (lo/la), Pedro ist maskulin und eine Person."
       },
       "wrong": {
-        "le": {
-          "hu": "\"Le\" itt leísmo lenne: a \"llamar a alguien\" tárgyeset névmást kér (lo), nem részes esetet; \"le\" olyan igénél helyes, ami részeshatározót kér: Le escribo un mensaje (üzenetet írok neki).",
-          "en": "\"Le\" here would be leísmo: \"llamar a alguien\" takes a direct object pronoun (lo), not an indirect one; \"le\" is correct with a verb that takes an indirect object: Le escribo un mensaje (I write him a message).",
-          "es": "\"Le\" aquí sería leísmo: \"llamar a alguien\" pide pronombre de objeto directo (lo), no indirecto; \"le\" es correcto con un verbo que pida objeto indirecto: Le escribo un mensaje.",
-          "de": "\"Le\" wäre hier leísmo: \"llamar a alguien\" verlangt ein direktes Objektpronomen (lo), kein indirektes; \"le\" ist bei einem Verb korrekt, das ein indirektes Objekt verlangt: Le escribo un mensaje (ich schreibe ihm eine Nachricht)."
+        "la": {
+          "hu": "\"La\" nőnemű személyre való, Pedro viszont férfi; \"La\" akkor lenne helyes, ha Anát hívnád: ¿Vas a llamar a Ana? Sí, la voy a llamar.",
+          "en": "\"La\" is for a feminine person, but Pedro is male; \"La\" would be correct if you were calling Ana: ¿Vas a llamar a Ana? Sí, la voy a llamar.",
+          "es": "\"La\" es para una persona femenina, pero Pedro es hombre; \"La\" sería correcto si llamaras a Ana: ¿Vas a llamar a Ana? Sí, la voy a llamar.",
+          "de": "\"La\" ist für eine weibliche Person, Pedro ist aber ein Mann; \"La\" wäre korrekt, wenn du Ana anrufen würdest: ¿Vas a llamar a Ana? Sí, la voy a llamar."
         },
         "los": {
           "hu": "\"Los\" többes szám, Pedro viszont csak egy ember; \"Los\" akkor lenne helyes, ha többüket hívnád: ¿Vas a llamar a Pedro y a Juan? Sí, los voy a llamar.",
@@ -949,10 +958,10 @@
           "de": "\"Tú\" ist Subjektpronomen, hier braucht es aber ein Objektpronomen; \"Tú\" wäre als Subjekt vor dem konjugierten Verb korrekt: Tú me amas (du liebst mich)."
         },
         "Ti": {
-          "hu": "\"Ti\" csak elöljárószó után áll (a ti, para ti), nem közvetlenül ige előtt; helyesen: Te amo a ti también (téged is szeretlek).",
-          "en": "\"Ti\" only appears after a preposition (a ti, para ti), not directly before a verb; correctly: Te amo a ti también (I love you too).",
-          "es": "\"Ti\" solo va después de una preposición (a ti, para ti), no directamente antes del verbo; correctamente: Te amo a ti también.",
-          "de": "\"Ti\" steht nur nach einer Präposition (a ti, para ti), nicht direkt vor einem Verb; richtig: Te amo a ti también (ich liebe auch dich)."
+          "hu": "\"Ti\" csak elöljárószó után áll (a ti, para ti), nem közvetlenül ige előtt; helyesen: A ti también te amo (téged is szeretlek).",
+          "en": "\"Ti\" only appears after a preposition (a ti, para ti), not directly before a verb; correctly: A ti también te amo (I love you too).",
+          "es": "\"Ti\" solo va después de una preposición (a ti, para ti), no directamente antes del verbo; correctamente: A ti también te amo.",
+          "de": "\"Ti\" steht nur nach einer Präposition (a ti, para ti), nicht direkt vor einem Verb; richtig: A ti también te amo (ich liebe auch dich)."
         }
       },
       "examples": [
@@ -1138,7 +1147,7 @@
         "hu": "Én viszem.",
         "en": "I'll carry it.",
         "es": "La llevo yo.",
-        "de": "Ich trage ihn."
+        "de": "Ich trage sie."
       },
       "options": [
         {
@@ -1273,10 +1282,10 @@
             "de": "1./2. Person (me/te/nos/os)"
           },
           "wrong": {
-            "hu": "A me/te/nos/os saját magamat vagy a beszélgetőpartneremet jelölné (\"Me tienes en la bolsa\" értelmetlen lenne); itt egy TÁRGYAT (las llaves) helyettesítünk, ezért las.",
-            "en": "Me/te/nos/os would mark myself or the person I am talking to (\"Me tienes en la bolsa\" would make no sense); here we replace a THING (las llaves), so las.",
-            "es": "Me/te/nos/os marcaría a mí mismo o a mi interlocutor (\"Me tienes en la bolsa\" no tendría sentido); aquí sustituimos una COSA (las llaves), por eso las.",
-            "de": "Me/te/nos/os würde mich selbst oder meinen Gesprächspartner bezeichnen (\"Me tienes en la bolsa\" würde keinen Sinn ergeben); hier ersetzen wir eine SACHE (las llaves), deshalb las."
+            "hu": "A me/te/nos/os saját magamat vagy a beszélgetőpartneremet jelölné; itt egy TÁRGYAT (las llaves) helyettesítünk, ezért las.",
+            "en": "Me/te/nos/os would mark myself or the person I am talking to; here we replace a THING (las llaves), so las.",
+            "es": "Me/te/nos/os marcaría a mí mismo o a mi interlocutor; aquí sustituimos una COSA (las llaves), por eso las.",
+            "de": "Me/te/nos/os würde mich selbst oder meinen Gesprächspartner bezeichnen; hier ersetzen wir eine SACHE (las llaves), deshalb las."
           }
         }
       ],

@@ -92,11 +92,11 @@
           },
           "examples": [
             {
-              "es": "El piso es grande; además, está bien ubicado.",
+              "es": "El departamento es grande; además, está bien ubicado.",
               "tr": {
                 "hu": "A lakás nagy, ráadásul jó helyen van.",
                 "en": "The apartment is big; moreover, it's well located.",
-                "es": "El piso es grande; además, está bien ubicado.",
+                "es": "El departamento es grande; además, está bien ubicado.",
                 "de": "Die Wohnung ist groß, außerdem liegt sie gut."
               }
             },
@@ -307,13 +307,13 @@
           "además",
           "adición",
           "ambos",
-          "El piso es grande; además, está muy bien ubicado."
+          "El departamento es grande; además, está muy bien ubicado."
         ],
         [
           "es más",
           "adición",
           "escrito",
-          "El coche es caro; es más, gasta mucha gasolina."
+          "El carro es caro; es más, gasta mucha gasolina."
         ],
         [
           "en primer lugar",
@@ -344,6 +344,80 @@
           "explicación",
           "hablado",
           "Llegamos a las nueve, o sea, media hora tarde."
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "marcadores-situaciones",
+      "title": {
+        "hu": "Helyzetből kötőelem",
+        "en": "From the situation to the connector",
+        "es": "De la situación al nexo",
+        "de": "Von der Situation zum Konnektor"
+      },
+      "header": [
+        {
+          "hu": "helyzet",
+          "en": "situation",
+          "es": "situación",
+          "de": "Situation"
+        },
+        {
+          "hu": "kötőelem",
+          "en": "connector",
+          "es": "conector",
+          "de": "Konnektor"
+        }
+      ],
+      "rows": [
+        [
+          "contraste (empieza por «s»): Es un libro corto; ___, es muy difícil.",
+          "sin embargo"
+        ],
+        [
+          "contraste entre dos personas (empieza por «e»): Ana vive en Madrid; su hermano, ___, en Lima.",
+          "en cambio"
+        ],
+        [
+          "contraste a pesar de todo (empieza por «au»): No tenía dinero; ___, hizo el viaje.",
+          "aun así"
+        ],
+        [
+          "consecuencia + subjuntivo (empieza por «de a»): Llovía mucho, ___ cancelaran el partido.",
+          "de ahí que"
+        ],
+        [
+          "consecuencia, hablado, sin pausa (empieza por «a»): No tenía trabajo, ___ buscó otro.",
+          "así que"
+        ],
+        [
+          "adición neutra (empieza por «ade»): El departamento es grande; ___, está bien ubicado.",
+          "además"
+        ],
+        [
+          "adición más fuerte (empieza por «es»): No contestó el correo; ___, ni lo abrió.",
+          "es más"
+        ],
+        [
+          "orden, abre la lista (empieza por «en»): ___, hay que revisar el presupuesto; en segundo lugar, el plazo.",
+          "en primer lugar"
+        ],
+        [
+          "orden, cierra la lista (empieza por «por»): En primer lugar, el precio; en segundo, el plazo; ___, la calidad.",
+          "por último"
+        ],
+        [
+          "tema nuevo (empieza por «en cu»): ___ los precios, subieron este año.",
+          "en cuanto a"
+        ],
+        [
+          "explicación, formal, escrito (empieza por «es d»): Trabaja por su cuenta, ___, es autónomo.",
+          "es decir"
+        ],
+        [
+          "explicación, hablado (empieza por «o»): Llegamos a las nueve, ___, media hora tarde.",
+          "o sea"
         ]
       ]
     },
@@ -503,7 +577,7 @@
         }
       },
       "examples": [
-        "El coche era caro; sin embargo, lo compraron.",
+        "El carro era caro; sin embargo, lo compraron.",
         "Tenía mucho trabajo; sin embargo, hizo el viaje."
       ]
     },
@@ -572,7 +646,7 @@
       },
       "examples": [
         "Ana llega temprano; su hermana, en cambio, siempre llega tarde.",
-        "El coche es caro; el otro, en cambio, es barato."
+        "El carro es caro; el otro, en cambio, es barato."
       ]
     },
     {
@@ -707,13 +781,13 @@
         }
       },
       "examples": [
-        "No tenía coche, así que caminó al trabajo.",
+        "No tenía carro, así que caminó al trabajo.",
         "No tenía dinero, así que buscó trabajo."
       ]
     },
     {
       "id": "md-08",
-      "sentence": "El piso es grande; ___, está muy cerca del trabajo.",
+      "sentence": "El departamento es grande; ___, está muy cerca del trabajo.",
       "options": [
         "además",
         "por lo tanto",
@@ -723,7 +797,7 @@
       "why": {
         "hu": "Hozzáadás: nagy a lakás, ÉS EZENFELÜL közel van a munkahelyhez, az „además” egy újabb pozitívumot told hozzá.",
         "en": "Addition: the apartment is big, AND ON TOP OF THAT it's close to work, \"además\" adds another positive point.",
-        "es": "Adición: el piso es grande, Y ADEMÁS está cerca del trabajo, «además» añade otro punto positivo.",
+        "es": "Adición: el departamento es grande, Y ADEMÁS está cerca del trabajo, «además» añade otro punto positivo.",
         "de": "Hinzufügung: die Wohnung ist groß, UND AUßERDEM liegt sie nah an der Arbeit, „además” fügt einen weiteren positiven Punkt hinzu."
       },
       "wrong": {
@@ -747,7 +821,7 @@
     },
     {
       "id": "md-09",
-      "sentence": "El coche es caro; ___, gasta mucha gasolina.",
+      "sentence": "El carro es caro; ___, gasta mucha gasolina.",
       "options": [
         "es más",
         "aun así",
@@ -757,7 +831,7 @@
       "why": {
         "hu": "Hozzáadás, erősítés: drága a kocsi, SŐT sok benzint is fogyaszt, az „es más” egy erősebb érvet told hozzá.",
         "en": "Addition, reinforcement: the car is expensive, WHAT'S MORE it uses a lot of fuel, \"es más\" adds a stronger point.",
-        "es": "Adición, refuerzo: el coche es caro, ES MÁS gasta mucha gasolina, «es más» añade un argumento más fuerte.",
+        "es": "Adición, refuerzo: el carro es caro, ES MÁS gasta mucha gasolina, «es más» añade un argumento más fuerte.",
         "de": "Hinzufügung, Verstärkung: das Auto ist teuer, MEHR NOCH verbraucht es viel Benzin, „es más” fügt ein stärkeres Argument hinzu."
       },
       "wrong": {
@@ -775,7 +849,7 @@
         }
       },
       "examples": [
-        "El piso es caro; es más, es pequeño.",
+        "El departamento es caro; es más, es pequeño.",
         "El plan es difícil; es más, es caro."
       ]
     },
@@ -914,98 +988,98 @@
     {
       "id": "md-form-01",
       "kind": "form",
-      "verb": "función",
-      "person": "sin embargo",
-      "answer": "contraste",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "contraste (empieza por «s»): Es un libro corto; ___, es muy difícil.",
+      "answer": "sin embargo",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-02",
       "kind": "form",
-      "verb": "función",
-      "person": "no obstante",
-      "answer": "contraste",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "contraste entre dos personas (empieza por «e»): Ana vive en Madrid; su hermano, ___, en Lima.",
+      "answer": "en cambio",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-03",
       "kind": "form",
-      "verb": "registro",
-      "person": "en cambio",
-      "answer": "ambos",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "contraste a pesar de todo (empieza por «au»): No tenía dinero; ___, hizo el viaje.",
+      "answer": "aun así",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-04",
       "kind": "form",
-      "verb": "función",
-      "person": "aun así",
-      "answer": "contraste",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "consecuencia + subjuntivo (empieza por «de a»): Llovía mucho, ___ cancelaran el partido.",
+      "answer": "de ahí que",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-05",
       "kind": "form",
-      "verb": "función",
-      "person": "por lo tanto",
-      "answer": "consecuencia",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "consecuencia, hablado, sin pausa (empieza por «a»): No tenía trabajo, ___ buscó otro.",
+      "answer": "así que",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-06",
       "kind": "form",
-      "verb": "registro",
-      "person": "por consiguiente",
-      "answer": "escrito",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "adición neutra (empieza por «ade»): El departamento es grande; ___, está bien ubicado.",
+      "answer": "además",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-07",
       "kind": "form",
-      "verb": "registro",
-      "person": "así que",
-      "answer": "hablado",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "adición más fuerte (empieza por «es»): No contestó el correo; ___, ni lo abrió.",
+      "answer": "es más",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-08",
       "kind": "form",
-      "verb": "función",
-      "person": "además",
-      "answer": "adición",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "orden, abre la lista (empieza por «en»): ___, hay que revisar el presupuesto; en segundo lugar, el plazo.",
+      "answer": "en primer lugar",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-09",
       "kind": "form",
-      "verb": "función",
-      "person": "es más",
-      "answer": "adición",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "orden, cierra la lista (empieza por «por»): En primer lugar, el precio; en segundo, el plazo; ___, la calidad.",
+      "answer": "por último",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-10",
       "kind": "form",
-      "verb": "función",
-      "person": "en primer lugar",
-      "answer": "orden",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "tema nuevo (empieza por «en cu»): ___ los precios, subieron este año.",
+      "answer": "en cuanto a",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-11",
       "kind": "form",
-      "verb": "registro",
-      "person": "por último",
-      "answer": "ambos",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "explicación, formal, escrito (empieza por «es d»): Trabaja por su cuenta, ___, es autónomo.",
+      "answer": "es decir",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-12",
       "kind": "form",
-      "verb": "función",
-      "person": "en cuanto a",
-      "answer": "tema",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "explicación, hablado (empieza por «o»): Llegamos a las nueve, ___, media hora tarde.",
+      "answer": "o sea",
+      "table": "marcadores-situaciones"
     },
     {
       "kind": "why",
@@ -1129,10 +1203,10 @@
             "de": "Gegensatz: sin embargo, no obstante"
           },
           "wrong": {
-            "hu": "A mondat nem egy szembenállást fejez ki, hanem egy tényt vagy annak következményét/magyarázatát.",
-            "en": "The sentence doesn't express an opposition, but a fact or its consequence/explanation.",
-            "es": "La oración no expresa una oposición, sino un hecho o su consecuencia/explicación.",
-            "de": "Der Satz drückt keinen Gegensatz aus, sondern eine Tatsache oder ihre Folge/Erklärung."
+            "hu": "A mondat nem szembenállást fejez ki, hanem új szempontra vagy témára tér át.",
+            "en": "The sentence doesn't express an opposition, but moves on to a new aspect or topic.",
+            "es": "La oración no expresa una oposición, sino que pasa a un nuevo aspecto o tema.",
+            "de": "Der Satz drückt keinen Gegensatz aus, sondern wechselt zu einem neuen Aspekt oder Thema."
           }
         },
         {
@@ -1143,10 +1217,10 @@
             "de": "Folge: por lo tanto, así que"
           },
           "wrong": {
-            "hu": "A mondat nem egy okból von le következtetést, hanem szembenállást vagy magyarázatot fejez ki.",
-            "en": "The sentence doesn't draw a conclusion from a cause, but expresses an opposition or an explanation.",
-            "es": "La oración no saca una conclusión de una causa, sino que expresa una oposición o una explicación.",
-            "de": "Der Satz zieht keine Schlussfolgerung aus einem Grund, sondern drückt einen Gegensatz oder eine Erklärung aus."
+            "hu": "A mondat nem egy okból von le következtetést, hanem új szempontra vagy témára tér át.",
+            "en": "The sentence doesn't draw a conclusion from a cause, but moves on to a new aspect or topic.",
+            "es": "La oración no saca una conclusión de una causa, sino que pasa a un nuevo aspecto o tema.",
+            "de": "Der Satz zieht keine Schlussfolgerung aus einem Grund, sondern wechselt zu einem neuen Aspekt oder Thema."
           }
         },
         {

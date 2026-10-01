@@ -1,0 +1,1294 @@
+{
+  "schema": 2,
+  "topic": "subjuntivo-relativo",
+  "level": "B1",
+  "title": {
+    "hu": "Kötőmód a vonatkozó mondatban",
+    "en": "Subjunctive in relative clauses",
+    "es": "Subjuntivo en oraciones de relativo",
+    "de": "Subjuntivo im Relativsatz"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Ez a lecke a que utáni vonatkozó mellékmondat módját mutatja meg: kijelentő vagy kötőmód. A kérdés mindig ugyanaz: ismered azt, akiről vagy amiről beszélsz, és létezik? Ha igen (Tengo un departamento que tiene balcón), kijelentő jön. Ha még keresed, nem tudod, hogy létezik-e, vagy egyáltalán nincs ilyen (Busco un departamento que tenga balcón, No hay nadie que sepa), kötőmód jön. A que-t a relativos lecke adta, az alakokat a subjuntivo-presente-forma, a kiváltó szemléletet a subjuntivo-disparadores; itt a vonatkozó mondat a téma.",
+        "en": "This lesson shows the mood of the relative clause after que: indicative or subjunctive. The question is always the same: do you know the person or thing you are talking about, and does it exist? If so (Tengo un departamento que tiene balcón), the indicative follows. If you are still looking for it, do not know whether it exists, or there is none at all (Busco un departamento que tenga balcón, No hay nadie que sepa), the subjunctive follows. The que came from the relativos lesson, the forms from subjuntivo-presente-forma, the trigger idea from subjuntivo-disparadores; here the relative clause is the topic.",
+        "es": "Esta lección muestra el modo de la oración de relativo después de que: indicativo o subjuntivo. La pregunta es siempre la misma: ¿conoces a la persona o la cosa de la que hablas, y existe? Si es así (Tengo un departamento que tiene balcón), sigue el indicativo. Si todavía la buscas, no sabes si existe o no hay ninguna (Busco un departamento que tenga balcón, No hay nadie que sepa), sigue el subjuntivo. El que lo dio la lección relativos, las formas subjuntivo-presente-forma, la idea de los detonantes subjuntivo-disparadores; aquí el tema es la oración de relativo.",
+        "de": "Diese Lektion zeigt den Modus des Relativsatzes nach que: Indikativ oder Subjuntivo. Die Frage ist immer dieselbe: Kennst du die Person oder Sache, von der du sprichst, und gibt es sie? Wenn ja (Tengo un departamento que tiene balcón), folgt der Indikativ. Wenn du sie noch suchst, nicht weißt, ob es sie gibt, oder es sie gar nicht gibt (Busco un departamento que tenga balcón, No hay nadie que sepa), folgt der Subjuntivo. Das que kam aus der Lektion relativos, die Formen aus subjuntivo-presente-forma, die Auslöser-Idee aus subjuntivo-disparadores; hier ist der Relativsatz das Thema."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Ismert vagy ismeretlen előzmény",
+        "en": "Known or unknown antecedent",
+        "es": "Antecedente conocido o desconocido",
+        "de": "Bekanntes oder unbekanntes Bezugswort"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Ismert, létező előzmény: ha azt mondod, hogy van, és ismered (tengo, conozco, hay un…), a que után kijelentő jön.",
+            "en": "Known, existing antecedent: when you say it exists and you know it (tengo, conozco, hay un…), the indicative follows que.",
+            "es": "Antecedente conocido y existente: si dices que existe y lo conoces (tengo, conozco, hay un…), después de que va indicativo.",
+            "de": "Bekanntes, existierendes Bezugswort: Wenn du sagst, dass es existiert und du es kennst (tengo, conozco, hay un…), folgt nach que der Indikativ."
+          },
+          "examples": [
+            {
+              "es": "Tengo un departamento que tiene balcón.",
+              "tr": {
+                "hu": "Van egy lakásom, amelynek van erkélye.",
+                "en": "I have an apartment that has a balcony.",
+                "es": "Tengo un departamento que tiene balcón.",
+                "de": "Ich habe eine Wohnung, die einen Balkon hat."
+              }
+            },
+            {
+              "es": "Hay un café cerca que abre tarde.",
+              "tr": {
+                "hu": "Van a közelben egy kávézó, ami későn nyit.",
+                "en": "There's a café nearby that opens late.",
+                "es": "Hay un café cerca que abre tarde.",
+                "de": "In der Nähe gibt es ein Café, das spät öffnet."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Keresett, még ismeretlen előzmény: busco, necesito, quiero + egy olyan valami vagy valaki, akiről még nem tudod, ki vagy mi az. Elég, ha megfelel a feltételnek, bármelyik jó: kötőmód jön.",
+            "en": "Sought, still unknown antecedent: busco, necesito, quiero + a something or someone you do not know yet. It is enough that it meets the condition, any will do: the subjunctive follows.",
+            "es": "Antecedente buscado y todavía desconocido: busco, necesito, quiero + algo o alguien que todavía no conoces. Basta con que cumpla la condición, cualquiera sirve: sigue el subjuntivo.",
+            "de": "Gesuchtes, noch unbekanntes Bezugswort: busco, necesito, quiero + etwas oder jemand, den du noch nicht kennst. Es genügt, dass es die Bedingung erfüllt, jedes passt: es folgt der Subjuntivo."
+          },
+          "examples": [
+            {
+              "es": "Busco un departamento que tenga balcón.",
+              "tr": {
+                "hu": "Olyan lakást keresek, amelynek van erkélye.",
+                "en": "I'm looking for an apartment that has a balcony.",
+                "es": "Busco un departamento que tenga balcón.",
+                "de": "Ich suche eine Wohnung, die einen Balkon hat."
+              }
+            },
+            {
+              "es": "Necesito a alguien que me ayude.",
+              "tr": {
+                "hu": "Szükségem van valakire, aki segít nekem.",
+                "en": "I need someone who can help me.",
+                "es": "Necesito a alguien que me ayude.",
+                "de": "Ich brauche jemanden, der mir hilft."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Nem létező előzmény: no hay nadie / nada / ningún…, no conozco a nadie + que után kötőmód jön, mert nincs olyan, amire a mellékmondat igaz lehetne.",
+            "en": "Non-existent antecedent: no hay nadie / nada / ningún…, no conozco a nadie + que takes the subjunctive, because there is nothing the clause could be true of.",
+            "es": "Antecedente que no existe: no hay nadie / nada / ningún…, no conozco a nadie + que lleva subjuntivo, porque no hay nada de lo que la oración pueda ser verdad.",
+            "de": "Nicht existierendes Bezugswort: no hay nadie / nada / ningún…, no conozco a nadie + que verlangt den Subjuntivo, weil es nichts gibt, auf das der Nebensatz zutreffen könnte."
+          },
+          "examples": [
+            {
+              "es": "No hay nadie que sepa la respuesta.",
+              "tr": {
+                "hu": "Nincs senki, aki tudná a választ.",
+                "en": "There is nobody who knows the answer.",
+                "es": "No hay nadie que sepa la respuesta.",
+                "de": "Es gibt niemanden, der die Antwort weiß."
+              }
+            },
+            {
+              "es": "No conozco a nadie que viva en Puebla.",
+              "tr": {
+                "hu": "Nem ismerek senkit, aki Pueblában lakik.",
+                "en": "I don't know anyone who lives in Puebla.",
+                "es": "No conozco a nadie que viva en Puebla.",
+                "de": "Ich kenne niemanden, der in Puebla wohnt."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Kérdés a létezésről: ¿hay alguien que…?, ¿conoces a alguien que…? Azt kérdezed, hogy van-e ilyen, ezért kötőmód jön.",
+            "en": "A question about existence: ¿hay alguien que…?, ¿conoces a alguien que…? You are asking whether such a thing exists, so the subjunctive follows.",
+            "es": "Pregunta sobre la existencia: ¿hay alguien que…?, ¿conoces a alguien que…? Preguntas si existe, por eso sigue el subjuntivo.",
+            "de": "Frage nach der Existenz: ¿hay alguien que…?, ¿conoces a alguien que…? Du fragst, ob es so etwas gibt, deshalb folgt der Subjuntivo."
+          },
+          "examples": [
+            {
+              "es": "¿Hay alguien aquí que hable alemán?",
+              "tr": {
+                "hu": "Van itt valaki, aki beszél németül?",
+                "en": "Is there anyone here who speaks German?",
+                "es": "¿Hay alguien aquí que hable alemán?",
+                "de": "Gibt es hier jemanden, der Deutsch spricht?"
+              }
+            },
+            {
+              "es": "¿Conoces un lugar que sea barato?",
+              "tr": {
+                "hu": "Ismersz egy olyan helyet, ami olcsó?",
+                "en": "Do you know a place that is cheap?",
+                "es": "¿Conoces un lugar que sea barato?",
+                "de": "Kennst du einen Ort, der billig ist?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Konkrét, megnevezett előzmény: ha pontosan tudod, kit vagy mit keresel (el chico que…, la casa que…), a busco mellett is kijelentő marad. A busco önmagában nem hívja elő a kötőmódot.",
+            "en": "Specific, named antecedent: when you know exactly whom or what you are looking for (el chico que…, la casa que…), the indicative stays even with busco. Busco does not trigger the subjunctive by itself.",
+            "es": "Antecedente concreto y señalado: si sabes exactamente a quién o qué buscas (el chico que…, la casa que…), el indicativo se queda incluso con busco. Busco no exige subjuntivo por sí solo.",
+            "de": "Bestimmtes, benanntes Bezugswort: Wenn du genau weißt, wen oder was du suchst (el chico que…, la casa que…), bleibt der Indikativ auch bei busco. Busco löst den Subjuntivo nicht von selbst aus."
+          },
+          "examples": [
+            {
+              "es": "Busco al chico que vive en mi calle.",
+              "tr": {
+                "hu": "Azt a fiút keresem, aki az utcámban lakik.",
+                "en": "I'm looking for the boy who lives on my street.",
+                "es": "Busco al chico que vive en mi calle.",
+                "de": "Ich suche den Jungen, der in meiner Straße wohnt."
+              }
+            },
+            {
+              "es": "Busco el departamento que tiene balcón; es el de mi amigo.",
+              "tr": {
+                "hu": "Azt a lakást keresem, amelynek van erkélye; a barátomé.",
+                "en": "I'm looking for the apartment that has a balcony; it's my friend's.",
+                "es": "Busco el departamento que tiene balcón; es el de mi amigo.",
+                "de": "Ich suche die Wohnung, die einen Balkon hat; es ist die von meinem Freund."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "subjuntivo-relativo-formas",
+      "title": {
+        "hu": "Példák: helyzetből igealak",
+        "en": "Examples: from the situation to the verb form",
+        "es": "Ejemplos: de la situación a la forma del verbo",
+        "de": "Beispiele: von der Situation zur Verbform"
+      },
+      "header": [
+        {
+          "hu": "mondat",
+          "en": "sentence",
+          "es": "frase",
+          "de": "Satz"
+        },
+        {
+          "hu": "az ige alakja",
+          "en": "verb form",
+          "es": "forma del verbo",
+          "de": "Verbform"
+        },
+        {
+          "hu": "mód",
+          "en": "mood",
+          "es": "modo",
+          "de": "Modus"
+        }
+      ],
+      "rows": [
+        [
+          "Busco un trabajo que ___ (ser) interesante, pero todavía no lo encontré.",
+          "sea",
+          "subjuntivo: todavía no lo encontré"
+        ],
+        [
+          "Tengo un amigo que ___ (trabajar) en un banco.",
+          "trabaja",
+          "indicativo: lo conozco"
+        ],
+        [
+          "Quiero una casa que ___ (tener) jardín, pero no sé si existe.",
+          "tenga",
+          "subjuntivo: no sé si existe"
+        ],
+        [
+          "Conozco a una chica que ___ (vivir) en mi edificio.",
+          "vive",
+          "indicativo: la conozco"
+        ],
+        [
+          "Necesito a alguien que ___ (poder) ayudarme, pero no sé quién.",
+          "pueda",
+          "subjuntivo: no sé quién"
+        ],
+        [
+          "No hay nadie en mi familia que ___ (hablar) alemán.",
+          "hable",
+          "subjuntivo: no existe"
+        ],
+        [
+          "Hay un café en la esquina que ___ (ser) muy barato.",
+          "es",
+          "indicativo: existe"
+        ],
+        [
+          "No conozco a nadie que ___ (vivir) cerca de aquí.",
+          "viva",
+          "subjuntivo: no existe"
+        ],
+        [
+          "Mi hermana trabaja en una empresa que ___ (pagar) muy bien.",
+          "paga",
+          "indicativo: existe"
+        ],
+        [
+          "No hay nada en el menú que me ___ (gustar).",
+          "guste",
+          "subjuntivo: no existe"
+        ],
+        [
+          "No sé si hay una tienda cerca que ___ (abrir) hoy.",
+          "abra",
+          "subjuntivo: no sé si existe"
+        ],
+        [
+          "Busco a la señora que ___ (vender) frutas; ayer la vi.",
+          "vende",
+          "indicativo: la conozco"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Ugyanaz a mondat, két mód",
+        "en": "Same sentence, two moods",
+        "es": "La misma frase, dos modos",
+        "de": "Derselbe Satz, zwei Modi"
+      },
+      "pairs": [
+        {
+          "a": "busco el departamento que tiene balcón",
+          "b": "busco un departamento que tenga balcón",
+          "note": {
+            "hu": "Az «el departamento» egy konkrét, ismert lakás: tiene (kijelentő). Az «un departamento» bármelyik lehet, amelyiknek van erkélye, és még nem tudod, létezik-e: tenga (kötőmód).",
+            "en": "«El departamento» is one specific, known apartment: tiene (indicative). «Un departamento» can be any apartment with a balcony, and you do not know yet whether it exists: tenga (subjunctive).",
+            "es": "«El departamento» es uno concreto y conocido: tiene (indicativo). «Un departamento» puede ser cualquiera con balcón, y todavía no sabes si existe: tenga (subjuntivo).",
+            "de": "«El departamento» ist eine bestimmte, bekannte Wohnung: tiene (Indikativ). «Un departamento» kann irgendeine Wohnung mit Balkon sein, und du weißt noch nicht, ob es sie gibt: tenga (Subjuntivo)."
+          },
+          "examples": [
+            {
+              "es": "Busco el departamento que tiene balcón.",
+              "tr": {
+                "hu": "Azt a lakást keresem, amelynek van erkélye.",
+                "en": "I'm looking for the apartment that has a balcony.",
+                "es": "Busco el departamento que tiene balcón.",
+                "de": "Ich suche die Wohnung, die einen Balkon hat."
+              }
+            },
+            {
+              "es": "Busco un departamento que tenga balcón.",
+              "tr": {
+                "hu": "Olyan lakást keresek, amelynek van erkélye.",
+                "en": "I'm looking for an apartment that has a balcony.",
+                "es": "Busco un departamento que tenga balcón.",
+                "de": "Ich suche eine Wohnung, die einen Balkon hat."
+              }
+            }
+          ]
+        },
+        {
+          "a": "hay alguien que sabe",
+          "b": "no hay nadie que sepa",
+          "note": {
+            "hu": "A «hay alguien que sabe» azt állítja, hogy van ilyen ember: kijelentő. A «no hay nadie que sepa» azt mondja, hogy nincs: kötőmód.",
+            "en": "«Hay alguien que sabe» states that such a person exists: indicative. «No hay nadie que sepa» says there is none: subjunctive.",
+            "es": "«Hay alguien que sabe» afirma que esa persona existe: indicativo. «No hay nadie que sepa» dice que no hay ninguna: subjuntivo.",
+            "de": "«Hay alguien que sabe» stellt fest, dass es so jemanden gibt: Indikativ. «No hay nadie que sepa» sagt, dass es niemanden gibt: Subjuntivo."
+          },
+          "examples": [
+            {
+              "es": "Hay alguien que sabe la respuesta.",
+              "tr": {
+                "hu": "Van valaki, aki tudja a választ.",
+                "en": "There is someone who knows the answer.",
+                "es": "Hay alguien que sabe la respuesta.",
+                "de": "Es gibt jemanden, der die Antwort weiß."
+              }
+            },
+            {
+              "es": "No hay nadie que sepa la respuesta.",
+              "tr": {
+                "hu": "Nincs senki, aki tudná a választ.",
+                "en": "There is nobody who knows the answer.",
+                "es": "No hay nadie que sepa la respuesta.",
+                "de": "Es gibt niemanden, der die Antwort weiß."
+              }
+            }
+          ]
+        },
+        {
+          "a": "conozco a alguien que habla alemán",
+          "b": "¿conoces a alguien que hable alemán?",
+          "note": {
+            "hu": "Az állító mondatban ismered a személyt: kijelentő. A kérdésben azt kérdezed, hogy létezik-e ilyen: kötőmód.",
+            "en": "In the statement you know the person: indicative. In the question you are asking whether such a person exists: subjunctive.",
+            "es": "En la afirmación conoces a la persona: indicativo. En la pregunta preguntas si existe esa persona: subjuntivo.",
+            "de": "In der Aussage kennst du die Person: Indikativ. In der Frage fragst du, ob es so jemanden gibt: Subjuntivo."
+          },
+          "examples": [
+            {
+              "es": "Conozco a alguien que habla alemán.",
+              "tr": {
+                "hu": "Ismerek valakit, aki beszél németül.",
+                "en": "I know someone who speaks German.",
+                "es": "Conozco a alguien que habla alemán.",
+                "de": "Ich kenne jemanden, der Deutsch spricht."
+              }
+            },
+            {
+              "es": "¿Conoces a alguien que hable alemán?",
+              "tr": {
+                "hu": "Ismersz valakit, aki beszél németül?",
+                "en": "Do you know anyone who speaks German?",
+                "es": "¿Conoces a alguien que hable alemán?",
+                "de": "Kennst du jemanden, der Deutsch spricht?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Egy kérdés dönt: tudod, hogy létezik, és ismered? Igen: kijelentő. Még keresed, nincs ilyen, vagy épp azt kérdezed, van-e: kötőmód.",
+        "en": "One question decides: do you know it exists, and do you know it? Yes: indicative. You are still looking, there is none, or you are just asking whether there is one: subjunctive.",
+        "es": "Una pregunta decide: ¿sabes que existe y lo conoces? Sí: indicativo. Todavía lo buscas, no hay ninguno o justo preguntas si hay: subjuntivo.",
+        "de": "Eine Frage entscheidet: Weißt du, dass es existiert, und kennst du es? Ja: Indikativ. Du suchst noch, es gibt keins, oder du fragst gerade, ob es eins gibt: Subjuntivo."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A vonatkozó mondatban a mód attól függ, hogy ismered-e azt, akiről vagy amiről beszélsz. Ha konkrét, és létezik, kijelentő mód jön. Ha még keresed, nem tudod, hogy létezik-e, vagy egyáltalán nincs ilyen, kötőmód jön. Kérdésben is kötőmód áll, ha azt kérdezed, van-e ilyen. A keresni ige maga nem hívja elő a kötőmódot: ha egy konkrét, ismert dolgot keresel, marad a kijelentő mód.",
+    "en": "In a relative clause the mood depends on whether you know the person or thing you are talking about. If it is specific and exists, the indicative is used. If you are still looking for it, do not know whether it exists, or there is none at all, the subjunctive is used. A question also takes the subjunctive when you are asking whether such a thing exists. The verb to look for does not trigger the subjunctive by itself: if you are looking for something specific and known, the indicative stays.",
+    "es": "En una oración de relativo, el modo depende de si conoces a la persona o la cosa de la que hablas. Si es concreta y existe, se usa el indicativo. Si todavía la buscas, no sabes si existe o no hay ninguna, se usa el subjuntivo. Una pregunta también lleva subjuntivo cuando preguntas si existe algo así. El verbo buscar no exige el subjuntivo por sí solo: si buscas algo concreto y conocido, se queda el indicativo.",
+    "de": "Im Relativsatz hängt der Modus davon ab, ob du die Person oder Sache kennst, von der du sprichst. Ist sie bestimmt und existiert sie, steht der Indikativ. Suchst du sie noch, weißt du nicht, ob es sie gibt, oder gibt es keine, steht der Subjuntivo. Auch eine Frage verlangt den Subjuntivo, wenn du fragst, ob es so etwas gibt. Das Verb suchen löst den Subjuntivo nicht von selbst aus: Suchst du etwas Bestimmtes und Bekanntes, bleibt der Indikativ."
+  },
+  "glossary": [
+    {
+      "word": "sea",
+      "gloss": {
+        "hu": "legyen (ser, kötőmód jelen)",
+        "en": "is (ser, present subjunctive)",
+        "es": "sea (subjuntivo presente de ser)",
+        "de": "sei (Subjuntivo Präsens von ser)"
+      }
+    },
+    {
+      "word": "conozco",
+      "gloss": {
+        "hu": "ismerem (conocer)",
+        "en": "I know (conocer, a person)",
+        "es": "yo conozco",
+        "de": "ich kenne (conocer)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "sr-01",
+      "sentence": "Quiero un departamento que ___ balcón, pero todavía no encontré nada.",
+      "options": [
+        "tiene",
+        "tenga",
+        "tendrá"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Még nem találtál ilyet, a keresett lakás ismeretlen: a que után kötőmód jön, tenga.",
+        "en": "You have not found one yet, the apartment you want is unknown: the subjunctive follows que, tenga.",
+        "es": "Todavía no has encontrado ninguno, el departamento que quieres es desconocido: después de que va subjuntivo, tenga.",
+        "de": "Du hast noch keine gefunden, die gewünschte Wohnung ist unbekannt: nach que folgt der Subjuntivo, tenga."
+      },
+      "wrong": {
+        "tiene": {
+          "hu": "tiene: kijelentő. Ide nem illik, mert még egyet sem találtál, ezért nincs konkrét, ismert lakás, amiről állíthatnád, hogy van erkélye. Helyesen: Quiero un departamento que tenga balcón, pero todavía no encontré nada.",
+          "en": "tiene: indicative. It does not fit here, because you have not found one yet, so there is no specific, known apartment of which you could state that it has a balcony. Correct: Quiero un departamento que tenga balcón, pero todavía no encontré nada.",
+          "es": "tiene: indicativo. Aquí no encaja, porque todavía no has encontrado ninguno, así que no hay un departamento concreto y conocido del que puedas afirmar que tiene balcón. Correcto: Quiero un departamento que tenga balcón, pero todavía no encontré nada.",
+          "de": "tiene: Indikativ. Das passt hier nicht, denn du hast noch keine gefunden, es gibt also keine bestimmte, bekannte Wohnung, von der du sagen könntest, dass sie einen Balkon hat. Richtig: Quiero un departamento que tenga balcón, pero todavía no encontré nada."
+        },
+        "tendrá": {
+          "hu": "tendrá: jövő idő. Ide nem illik, mert a que utáni, még ismeretlen lakásnál kötőmód áll, nem jövő idő. Helyesen: Quiero un departamento que tenga balcón, pero todavía no encontré nada.",
+          "en": "tendrá: future tense. It does not fit here, because for a still unknown apartment after que the subjunctive is used, not the future. Correct: Quiero un departamento que tenga balcón, pero todavía no encontré nada.",
+          "es": "tendrá: futuro. Aquí no encaja, porque para un departamento todavía desconocido después de que se usa el subjuntivo, no el futuro. Correcto: Quiero un departamento que tenga balcón, pero todavía no encontré nada.",
+          "de": "tendrá: Futur. Das passt hier nicht, denn bei einer noch unbekannten Wohnung steht nach que der Subjuntivo, nicht das Futur. Richtig: Quiero un departamento que tenga balcón, pero todavía no encontré nada."
+        }
+      },
+      "examples": [
+        "Busco un departamento que tenga balcón.",
+        "Quiero una casa que tenga jardín."
+      ]
+    },
+    {
+      "id": "sr-02",
+      "sentence": "Tengo un departamento que ___ balcón y es muy grande.",
+      "options": [
+        "tiene",
+        "tenga",
+        "tuvo"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A «tengo» azt jelenti, hogy a lakás már megvan és ismered: a que után kijelentő jön, tiene.",
+        "en": "«Tengo» means the apartment is already yours and you know it: the indicative follows que, tiene.",
+        "es": "«Tengo» significa que el departamento ya existe y lo conoces: después de que va indicativo, tiene.",
+        "de": "«Tengo» heißt, dass die Wohnung schon da ist und du sie kennst: nach que folgt der Indikativ, tiene."
+      },
+      "wrong": {
+        "tenga": {
+          "hu": "tenga: kötőmód. Ide nem illik, mert a lakás a tiéd, már létezik és ismered (tengo), nincs mit keresned vagy megkérdezned. Helyesen: Tengo un departamento que tiene balcón y es muy grande.",
+          "en": "tenga: subjunctive. It does not fit here, because the apartment is yours, it already exists and you know it (tengo), there is nothing to look for or to ask about. Correct: Tengo un departamento que tiene balcón y es muy grande.",
+          "es": "tenga: subjuntivo. Aquí no encaja, porque el departamento es tuyo, ya existe y lo conoces (tengo), no hay nada que buscar ni preguntar. Correcto: Tengo un departamento que tiene balcón y es muy grande.",
+          "de": "tenga: Subjuntivo. Das passt hier nicht, denn die Wohnung gehört dir, sie existiert schon und du kennst sie (tengo), es gibt nichts zu suchen oder zu fragen. Richtig: Tengo un departamento que tiene balcón y es muy grande."
+        },
+        "tuvo": {
+          "hu": "tuvo: múlt idő (indefinido). Ide nem illik, mert a mondat jelen idejű (tengo): a lakásnak most van erkélye. Helyesen: Tengo un departamento que tiene balcón y es muy grande.",
+          "en": "tuvo: past tense (preterite). It does not fit here, because the sentence is in the present (tengo): the apartment has a balcony now. Correct: Tengo un departamento que tiene balcón y es muy grande.",
+          "es": "tuvo: pretérito indefinido. Aquí no encaja, porque la oración está en presente (tengo): el departamento tiene balcón ahora. Correcto: Tengo un departamento que tiene balcón y es muy grande.",
+          "de": "tuvo: Vergangenheit (Indefinido). Das passt hier nicht, denn der Satz steht im Präsens (tengo): die Wohnung hat jetzt einen Balkon. Richtig: Tengo un departamento que tiene balcón y es muy grande."
+        }
+      },
+      "examples": [
+        "Tengo un departamento que tiene balcón.",
+        "Tengo una amiga que tiene un coche nuevo."
+      ]
+    },
+    {
+      "id": "sr-03",
+      "sentence": "En esta ciudad no hay nadie que ___ alemán.",
+      "options": [
+        "habla",
+        "hablará",
+        "hable"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A «no hay nadie» szerint nincs ilyen ember: nem létező előzménynél kötőmód áll, hable.",
+        "en": "«No hay nadie» says there is no such person: after a non-existent antecedent the subjunctive is used, hable.",
+        "es": "«No hay nadie» dice que no existe esa persona: después de un antecedente que no existe va subjuntivo, hable.",
+        "de": "«No hay nadie» sagt, dass es keine solche Person gibt: nach einem nicht existierenden Bezugswort steht der Subjuntivo, hable."
+      },
+      "wrong": {
+        "habla": {
+          "hu": "habla: kijelentő. Ide nem illik, mert a «no hay nadie» szerint nincs ilyen ember, a kijelentő viszont azt állítaná, hogy van, aki beszél németül. Helyesen: En esta ciudad no hay nadie que hable alemán.",
+          "en": "habla: indicative. It does not fit here, because «no hay nadie» says there is no such person, while the indicative would claim that someone speaks German. Correct: En esta ciudad no hay nadie que hable alemán.",
+          "es": "habla: indicativo. Aquí no encaja, porque «no hay nadie» dice que no existe esa persona, mientras que el indicativo afirmaría que alguien habla alemán. Correcto: En esta ciudad no hay nadie que hable alemán.",
+          "de": "habla: Indikativ. Das passt hier nicht, weil «no hay nadie» sagt, dass es keine solche Person gibt, während der Indikativ behaupten würde, dass jemand Deutsch spricht. Richtig: En esta ciudad no hay nadie que hable alemán."
+        },
+        "hablará": {
+          "hu": "hablará: jövő idő. Ide nem illik, mert a nem létező előzmény (no hay nadie) kötőmódot kér, nem jövő időt. Helyesen: En esta ciudad no hay nadie que hable alemán.",
+          "en": "hablará: future tense. It does not fit here, because a non-existent antecedent (no hay nadie) asks for the subjunctive, not the future. Correct: En esta ciudad no hay nadie que hable alemán.",
+          "es": "hablará: futuro. Aquí no encaja, porque un antecedente que no existe (no hay nadie) pide subjuntivo, no futuro. Correcto: En esta ciudad no hay nadie que hable alemán.",
+          "de": "hablará: Futur. Das passt hier nicht, denn ein nicht existierendes Bezugswort (no hay nadie) verlangt den Subjuntivo, nicht das Futur. Richtig: En esta ciudad no hay nadie que hable alemán."
+        }
+      },
+      "examples": [
+        "No hay nadie que hable alemán.",
+        "No hay nadie que sepa la respuesta."
+      ]
+    },
+    {
+      "id": "sr-04",
+      "sentence": "No sé si hay alguien aquí que ___ cocinar.",
+      "options": [
+        "sepa",
+        "sabe",
+        "sepas"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Nem tudod, hogy van-e ilyen ember: ismeretlen előzmény, ezért kötőmód jön, sepa.",
+        "en": "You do not know whether such a person exists: an unknown antecedent, so the subjunctive follows, sepa.",
+        "es": "No sabes si existe esa persona: antecedente desconocido, por eso va subjuntivo, sepa.",
+        "de": "Du weißt nicht, ob es so jemanden gibt: ein unbekanntes Bezugswort, deshalb folgt der Subjuntivo, sepa."
+      },
+      "wrong": {
+        "sabe": {
+          "hu": "sabe: kijelentő. Ide nem illik, mert a «no sé si hay alguien» szerint nem tudod, hogy van-e ilyen ember, a kijelentő viszont azt állítaná, hogy van, aki tud főzni. Helyesen: No sé si hay alguien aquí que sepa cocinar.",
+          "en": "sabe: indicative. It does not fit here, because «no sé si hay alguien» says you do not know whether such a person exists, while the indicative would claim that someone can cook. Correct: No sé si hay alguien aquí que sepa cocinar.",
+          "es": "sabe: indicativo. Aquí no encaja, porque «no sé si hay alguien» dice que no sabes si existe esa persona, mientras que el indicativo afirmaría que alguien sabe cocinar. Correcto: No sé si hay alguien aquí que sepa cocinar.",
+          "de": "sabe: Indikativ. Das passt hier nicht, weil «no sé si hay alguien» sagt, dass du nicht weißt, ob es so jemanden gibt, während der Indikativ behaupten würde, dass jemand kochen kann. Richtig: No sé si hay alguien aquí que sepa cocinar."
+        },
+        "sepas": {
+          "hu": "sepas: „te”-alak. Ide nem illik, mert az alany az «alguien», vagyis harmadik személy, nem «te». Helyesen: No sé si hay alguien aquí que sepa cocinar.",
+          "en": "sepas: the «you» form. It does not fit here, because the subject is «alguien», a third person, not «you». Correct: No sé si hay alguien aquí que sepa cocinar.",
+          "es": "sepas: forma de «tú». Aquí no encaja, porque el sujeto es «alguien», tercera persona, no «tú». Correcto: No sé si hay alguien aquí que sepa cocinar.",
+          "de": "sepas: «du»-Form. Das passt hier nicht, denn das Subjekt ist «alguien», die dritte Person, nicht «du». Richtig: No sé si hay alguien aquí que sepa cocinar."
+        }
+      },
+      "examples": [
+        "No sé si hay alguien que sepa cocinar.",
+        "¿Hay alguien que sepa cocinar?"
+      ]
+    },
+    {
+      "id": "sr-05",
+      "sentence": "Conozco a un maestro que ___ alemán muy bien.",
+      "options": [
+        "hablo",
+        "hable",
+        "habla"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A «conozco a» azt jelenti, hogy ismered azt a tanárt: konkrét, létező személynél kijelentő áll, habla.",
+        "en": "«Conozco a» means you know that teacher: after a specific, existing person the indicative is used, habla.",
+        "es": "«Conozco a» significa que conoces a ese maestro: después de una persona concreta y existente va indicativo, habla.",
+        "de": "«Conozco a» heißt, dass du diesen Lehrer kennst: nach einer bestimmten, existierenden Person steht der Indikativ, habla."
+      },
+      "wrong": {
+        "hablo": {
+          "hu": "hablo: „én”-alak. Ide nem illik, mert az alany a tanár, nem „én”, ezért harmadik személyű alak kell. Helyesen: Conozco a un maestro que habla alemán muy bien.",
+          "en": "hablo: the «I» form. It does not fit here, because the subject is the teacher, not «I», so a third-person form is needed. Correct: Conozco a un maestro que habla alemán muy bien.",
+          "es": "hablo: forma de «yo». Aquí no encaja, porque el sujeto es el maestro, no «yo», por eso hace falta una forma de tercera persona. Correcto: Conozco a un maestro que habla alemán muy bien.",
+          "de": "hablo: «ich»-Form. Das passt hier nicht, denn das Subjekt ist der Lehrer, nicht «ich», deshalb braucht es eine Form der dritten Person. Richtig: Conozco a un maestro que habla alemán muy bien."
+        },
+        "hable": {
+          "hu": "hable: kötőmód. Ide nem illik, mert a «conozco a un maestro» azt jelenti, hogy ismered a tanárt, tehát létezik és konkrét: nem keresel, és nem kérdezel rá. Helyesen: Conozco a un maestro que habla alemán muy bien.",
+          "en": "hable: subjunctive. It does not fit here, because «conozco a un maestro» means you know the teacher, so he exists and is specific: you are not searching or asking. Correct: Conozco a un maestro que habla alemán muy bien.",
+          "es": "hable: subjuntivo. Aquí no encaja, porque «conozco a un maestro» significa que conoces al maestro, así que existe y es concreto: no buscas ni preguntas. Correcto: Conozco a un maestro que habla alemán muy bien.",
+          "de": "hable: Subjuntivo. Das passt hier nicht, weil «conozco a un maestro» heißt, dass du den Lehrer kennst, er existiert also und ist bestimmt: du suchst und fragst nicht. Richtig: Conozco a un maestro que habla alemán muy bien."
+        }
+      },
+      "examples": [
+        "Conozco a una chica que baila muy bien.",
+        "Conozco a alguien que habla alemán."
+      ]
+    },
+    {
+      "id": "sr-06",
+      "sentence": "Busco un trabajo que ___ cerca, pero no sé si existe.",
+      "options": [
+        "está",
+        "esté",
+        "estaría"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Olyan munkát keresel, amiről nem tudod, hogy létezik-e: ismeretlen előzmény, ezért kötőmód jön, esté.",
+        "en": "You are looking for a job you do not know exists: an unknown antecedent, so the subjunctive follows, esté.",
+        "es": "Buscas un trabajo del que no sabes si existe: antecedente desconocido, por eso va subjuntivo, esté.",
+        "de": "Du suchst eine Stelle, von der du nicht weißt, ob es sie gibt: ein unbekanntes Bezugswort, deshalb folgt der Subjuntivo, esté."
+      },
+      "wrong": {
+        "está": {
+          "hu": "está: kijelentő. Ide nem illik, mert a «no sé si existe» szerint nem tudod, létezik-e ilyen munka, a kijelentő viszont azt állítaná, hogy van. Helyesen: Busco un trabajo que esté cerca, pero no sé si existe.",
+          "en": "está: indicative. It does not fit here, because «no sé si existe» says you do not know whether such a job exists, while the indicative would claim that there is one. Correct: Busco un trabajo que esté cerca, pero no sé si existe.",
+          "es": "está: indicativo. Aquí no encaja, porque «no sé si existe» dice que no sabes si existe ese trabajo, mientras que el indicativo afirmaría que sí lo hay. Correcto: Busco un trabajo que esté cerca, pero no sé si existe.",
+          "de": "está: Indikativ. Das passt hier nicht, weil «no sé si existe» sagt, dass du nicht weißt, ob es so eine Stelle gibt, während der Indikativ behaupten würde, dass es sie gibt. Richtig: Busco un trabajo que esté cerca, pero no sé si existe."
+        },
+        "estaría": {
+          "hu": "estaría: feltételes mód. Ide nem illik, mert a que utáni, még ismeretlen munkánál kötőmód áll, nem feltételes mód. Helyesen: Busco un trabajo que esté cerca, pero no sé si existe.",
+          "en": "estaría: conditional. It does not fit here, because for a still unknown job after que the subjunctive is used, not the conditional. Correct: Busco un trabajo que esté cerca, pero no sé si existe.",
+          "es": "estaría: condicional. Aquí no encaja, porque para un trabajo todavía desconocido después de que se usa el subjuntivo, no el condicional. Correcto: Busco un trabajo que esté cerca, pero no sé si existe.",
+          "de": "estaría: Konditional. Das passt hier nicht, denn bei einer noch unbekannten Stelle steht nach que der Subjuntivo, nicht der Konditional. Richtig: Busco un trabajo que esté cerca, pero no sé si existe."
+        }
+      },
+      "examples": [
+        "Busco un trabajo que esté cerca.",
+        "Busco una casa que esté cerca del centro."
+      ]
+    },
+    {
+      "id": "sr-07",
+      "sentence": "No hay ningún restaurante cerca que ___ después de las diez.",
+      "options": [
+        "abrirá",
+        "abra",
+        "abre"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A «no hay ningún» szerint nincs ilyen étterem: nem létező előzménynél kötőmód áll, abra.",
+        "en": "«No hay ningún» says there is no such restaurant: after a non-existent antecedent the subjunctive is used, abra.",
+        "es": "«No hay ningún» dice que no existe ese restaurante: después de un antecedente que no existe va subjuntivo, abra.",
+        "de": "«No hay ningún» sagt, dass es kein solches Restaurant gibt: nach einem nicht existierenden Bezugswort steht der Subjuntivo, abra."
+      },
+      "wrong": {
+        "abrirá": {
+          "hu": "abrirá: jövő idő. Ide nem illik, mert a nem létező előzmény (no hay ningún) kötőmódot kér, nem jövő időt. Helyesen: No hay ningún restaurante cerca que abra después de las diez.",
+          "en": "abrirá: future tense. It does not fit here, because a non-existent antecedent (no hay ningún) asks for the subjunctive, not the future. Correct: No hay ningún restaurante cerca que abra después de las diez.",
+          "es": "abrirá: futuro. Aquí no encaja, porque un antecedente que no existe (no hay ningún) pide subjuntivo, no futuro. Correcto: No hay ningún restaurante cerca que abra después de las diez.",
+          "de": "abrirá: Futur. Das passt hier nicht, denn ein nicht existierendes Bezugswort (no hay ningún) verlangt den Subjuntivo, nicht das Futur. Richtig: No hay ningún restaurante cerca que abra después de las diez."
+        },
+        "abre": {
+          "hu": "abre: kijelentő. Ide nem illik, mert a «no hay ningún» szerint egy ilyen étterem sincs, a kijelentő viszont azt állítaná, hogy van tíz után is nyitva tartó. Helyesen: No hay ningún restaurante cerca que abra después de las diez.",
+          "en": "abre: indicative. It does not fit here, because «no hay ningún» says there is not a single such restaurant, while the indicative would claim that there is one open after ten. Correct: No hay ningún restaurante cerca que abra después de las diez.",
+          "es": "abre: indicativo. Aquí no encaja, porque «no hay ningún» dice que no hay ni un restaurante así, mientras que el indicativo afirmaría que hay uno abierto después de las diez. Correcto: No hay ningún restaurante cerca que abra después de las diez.",
+          "de": "abre: Indikativ. Das passt hier nicht, weil «no hay ningún» sagt, dass es kein einziges solches Restaurant gibt, während der Indikativ behaupten würde, dass eines nach zehn noch offen ist. Richtig: No hay ningún restaurante cerca que abra después de las diez."
+        }
+      },
+      "examples": [
+        "No hay ningún restaurante que abra tarde.",
+        "No hay ningún lugar que abra hoy."
+      ]
+    },
+    {
+      "id": "sr-08",
+      "sentence": "Hay una tienda aquí cerca que ___ toda la noche.",
+      "options": [
+        "abra",
+        "abre",
+        "abrió"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A «hay una tienda» azt állítja, hogy van ilyen bolt: létező előzménynél kijelentő áll, abre.",
+        "en": "«Hay una tienda» states that such a shop exists: after an existing antecedent the indicative is used, abre.",
+        "es": "«Hay una tienda» afirma que existe esa tienda: después de un antecedente que existe va indicativo, abre.",
+        "de": "«Hay una tienda» stellt fest, dass es so einen Laden gibt: nach einem existierenden Bezugswort steht der Indikativ, abre."
+      },
+      "wrong": {
+        "abra": {
+          "hu": "abra: kötőmód. Ide nem illik, mert a «hay una tienda» kijelenti, hogy van ilyen bolt, tehát létezik és konkrét: nem keresed, és nem is kérdezel rá. Helyesen: Hay una tienda aquí cerca que abre toda la noche.",
+          "en": "abra: subjunctive. It does not fit here, because «hay una tienda» states that the shop exists, so it is specific: you are neither searching for it nor asking about it. Correct: Hay una tienda aquí cerca que abre toda la noche.",
+          "es": "abra: subjuntivo. Aquí no encaja, porque «hay una tienda» afirma que la tienda existe, así que es concreta: ni la buscas ni preguntas por ella. Correcto: Hay una tienda aquí cerca que abre toda la noche.",
+          "de": "abra: Subjuntivo. Das passt hier nicht, denn «hay una tienda» stellt fest, dass der Laden existiert, er ist also bestimmt: du suchst ihn nicht und fragst auch nicht danach. Richtig: Hay una tienda aquí cerca que abre toda la noche."
+        },
+        "abrió": {
+          "hu": "abrió: múlt idő (indefinido). Ide nem illik, mert a mondat jelen idejű (hay): a bolt most is egész éjjel nyitva van. Helyesen: Hay una tienda aquí cerca que abre toda la noche.",
+          "en": "abrió: past tense (preterite). It does not fit here, because the sentence is in the present (hay): the shop is open all night now. Correct: Hay una tienda aquí cerca que abre toda la noche.",
+          "es": "abrió: pretérito indefinido. Aquí no encaja, porque la oración está en presente (hay): la tienda abre toda la noche ahora. Correcto: Hay una tienda aquí cerca que abre toda la noche.",
+          "de": "abrió: Vergangenheit (Indefinido). Das passt hier nicht, denn der Satz steht im Präsens (hay): der Laden hat jetzt die ganze Nacht offen. Richtig: Hay una tienda aquí cerca que abre toda la noche."
+        }
+      },
+      "examples": [
+        "Hay un café cerca que abre tarde.",
+        "Hay una tienda que vende pan."
+      ]
+    },
+    {
+      "id": "sr-09",
+      "sentence": "Busco un café. ¿Hay uno que ___ barato?",
+      "options": [
+        "es",
+        "sería",
+        "sea"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Olyan kávézót keresel, amiről nem tudod, van-e: a kérdés a létezésről szól, ezért kötőmód jön, sea.",
+        "en": "You are looking for a café you do not know exists: the question is about existence, so the subjunctive follows, sea.",
+        "es": "Buscas un café del que no sabes si existe: la pregunta es sobre la existencia, por eso va subjuntivo, sea.",
+        "de": "Du suchst ein Café, von dem du nicht weißt, ob es eins gibt: die Frage geht um die Existenz, deshalb folgt der Subjuntivo, sea."
+      },
+      "wrong": {
+        "es": {
+          "hu": "es: kijelentő. Ide nem illik, mert a kérdés éppen azt kérdezi, van-e olcsó kávézó, a kijelentő viszont azt feltételezné, hogy már tudod, hogy van. Helyesen: Busco un café. ¿Hay uno que sea barato?",
+          "en": "es: indicative. It does not fit here, because the question asks exactly whether a cheap café exists, while the indicative would assume that you already know there is one. Correct: Busco un café. ¿Hay uno que sea barato?",
+          "es": "es: indicativo. Aquí no encaja, porque la pregunta cuestiona justo si existe un café barato, mientras que el indicativo supondría que ya sabes que existe. Correcto: Busco un café. ¿Hay uno que sea barato?",
+          "de": "es: Indikativ. Das passt hier nicht, denn die Frage fragt gerade, ob es ein billiges Café gibt, während der Indikativ voraussetzen würde, dass du schon weißt, dass es eins gibt. Richtig: Busco un café. ¿Hay uno que sea barato?"
+        },
+        "sería": {
+          "hu": "sería: feltételes mód. Ide nem illik, mert a kérdésben az ismeretlen kávézó kötőmódot kér, nem feltételes módot. Helyesen: Busco un café. ¿Hay uno que sea barato?",
+          "en": "sería: conditional. It does not fit here, because in the question the unknown café asks for the subjunctive, not the conditional. Correct: Busco un café. ¿Hay uno que sea barato?",
+          "es": "sería: condicional. Aquí no encaja, porque en la pregunta el café desconocido pide subjuntivo, no condicional. Correcto: Busco un café. ¿Hay uno que sea barato?",
+          "de": "sería: Konditional. Das passt hier nicht, denn in der Frage verlangt das unbekannte Café den Subjuntivo, nicht den Konditional. Richtig: Busco un café. ¿Hay uno que sea barato?"
+        }
+      },
+      "examples": [
+        "¿Hay alguien que hable alemán?",
+        "¿Conoces un lugar que sea barato?"
+      ]
+    },
+    {
+      "id": "sr-10",
+      "sentence": "Busco al chico que ___ en mi calle; ayer lo vi.",
+      "options": [
+        "viva",
+        "vive",
+        "vivo"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az «al chico» egy konkrét fiú, akit tegnap láttál: ismert előzménynél a busco ellenére kijelentő áll, vive.",
+        "en": "«Al chico» is one specific boy you saw yesterday: after a known antecedent the indicative is used even with busco, vive.",
+        "es": "«Al chico» es un chico concreto al que viste ayer: después de un antecedente conocido va indicativo, aunque sea con busco, vive.",
+        "de": "«Al chico» ist ein bestimmter Junge, den du gestern gesehen hast: nach einem bekannten Bezugswort steht der Indikativ, auch bei busco, vive."
+      },
+      "wrong": {
+        "viva": {
+          "hu": "viva: kötőmód. Ide nem illik, mert az «al chico» egy konkrét fiú, akit tegnap láttál, a kötőmód pedig bármelyik ott lakó fiút jelentene; a busco önmagában nem hív elő kötőmódot. Helyesen: Busco al chico que vive en mi calle; ayer lo vi.",
+          "en": "viva: subjunctive. It does not fit here, because «al chico» is one specific boy you saw yesterday, while the subjunctive would mean any boy living there; busco does not trigger the subjunctive by itself. Correct: Busco al chico que vive en mi calle; ayer lo vi.",
+          "es": "viva: subjuntivo. Aquí no encaja, porque «al chico» es un chico concreto al que viste ayer, mientras que el subjuntivo significaría cualquier chico que viva allí; busco no exige subjuntivo por sí solo. Correcto: Busco al chico que vive en mi calle; ayer lo vi.",
+          "de": "viva: Subjuntivo. Das passt hier nicht, denn «al chico» ist ein bestimmter Junge, den du gestern gesehen hast, während der Subjuntivo irgendeinen Jungen bedeuten würde, der dort wohnt; busco löst den Subjuntivo nicht von selbst aus. Richtig: Busco al chico que vive en mi calle; ayer lo vi."
+        },
+        "vivo": {
+          "hu": "vivo: „én”-alak. Ide nem illik, mert az alany a fiú, nem „én”, ezért harmadik személyű alak kell. Helyesen: Busco al chico que vive en mi calle; ayer lo vi.",
+          "en": "vivo: the «I» form. It does not fit here, because the subject is the boy, not «I», so a third-person form is needed. Correct: Busco al chico que vive en mi calle; ayer lo vi.",
+          "es": "vivo: forma de «yo». Aquí no encaja, porque el sujeto es el chico, no «yo», por eso hace falta una forma de tercera persona. Correcto: Busco al chico que vive en mi calle; ayer lo vi.",
+          "de": "vivo: «ich»-Form. Das passt hier nicht, denn das Subjekt ist der Junge, nicht «ich», deshalb braucht es eine Form der dritten Person. Richtig: Busco al chico que vive en mi calle; ayer lo vi."
+        }
+      },
+      "examples": [
+        "Busco al chico que vive aquí.",
+        "Busco la casa que tiene balcón."
+      ]
+    },
+    {
+      "id": "sr-11",
+      "sentence": "No conozco a nadie que ___ en Puebla.",
+      "options": [
+        "vive",
+        "viva",
+        "vivo"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A «no conozco a nadie» szerint nincs ilyen ismerősöd: nem létező előzménynél kötőmód áll, viva.",
+        "en": "«No conozco a nadie» says you know no such person: after a non-existent antecedent the subjunctive is used, viva.",
+        "es": "«No conozco a nadie» dice que no conoces a nadie así: después de un antecedente que no existe va subjuntivo, viva.",
+        "de": "«No conozco a nadie» sagt, dass du niemanden kennst, auf den das zutrifft: nach einem nicht existierenden Bezugswort steht der Subjuntivo, viva."
+      },
+      "wrong": {
+        "vive": {
+          "hu": "vive: kijelentő. Ide nem illik, mert a «no conozco a nadie» szerint nem ismersz ilyen embert, a kijelentő viszont azt állítaná, hogy van, aki Pueblában lakik. Helyesen: No conozco a nadie que viva en Puebla.",
+          "en": "vive: indicative. It does not fit here, because «no conozco a nadie» says you know no such person, while the indicative would claim that someone lives in Puebla. Correct: No conozco a nadie que viva en Puebla.",
+          "es": "vive: indicativo. Aquí no encaja, porque «no conozco a nadie» dice que no conoces a nadie así, mientras que el indicativo afirmaría que alguien vive en Puebla. Correcto: No conozco a nadie que viva en Puebla.",
+          "de": "vive: Indikativ. Das passt hier nicht, weil «no conozco a nadie» sagt, dass du niemanden kennst, auf den das zutrifft, während der Indikativ behaupten würde, dass jemand in Puebla wohnt. Richtig: No conozco a nadie que viva en Puebla."
+        },
+        "vivo": {
+          "hu": "vivo: „én”-alak. Ide nem illik, mert az alany a «nadie», vagyis harmadik személy, nem „én”. Helyesen: No conozco a nadie que viva en Puebla.",
+          "en": "vivo: the «I» form. It does not fit here, because the subject is «nadie», a third person, not «I». Correct: No conozco a nadie que viva en Puebla.",
+          "es": "vivo: forma de «yo». Aquí no encaja, porque el sujeto es «nadie», tercera persona, no «yo». Correcto: No conozco a nadie que viva en Puebla.",
+          "de": "vivo: «ich»-Form. Das passt hier nicht, denn das Subjekt ist «nadie», die dritte Person, nicht «ich». Richtig: No conozco a nadie que viva en Puebla."
+        }
+      },
+      "examples": [
+        "No conozco a nadie que trabaje aquí.",
+        "No conozco a nadie que sepa alemán."
+      ]
+    },
+    {
+      "id": "sr-12",
+      "sentence": "Necesito a alguien que me ___ mañana; todavía no sé quién.",
+      "options": [
+        "ayuda",
+        "ayudó",
+        "ayude"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Valakire van szükséged, de még nem tudod, kire: ismeretlen előzmény, ezért kötőmód jön, ayude.",
+        "en": "You need someone but do not know who yet: an unknown antecedent, so the subjunctive follows, ayude.",
+        "es": "Necesitas a alguien pero todavía no sabes a quién: antecedente desconocido, por eso va subjuntivo, ayude.",
+        "de": "Du brauchst jemanden, weißt aber noch nicht, wen: ein unbekanntes Bezugswort, deshalb folgt der Subjuntivo, ayude."
+      },
+      "wrong": {
+        "ayuda": {
+          "hu": "ayuda: kijelentő. Ide nem illik, mert a «todavía no sé quién» szerint nem tudod, ki az, a kijelentő viszont egy konkrét, ismert segítőt jelölne. Helyesen: Necesito a alguien que me ayude mañana; todavía no sé quién.",
+          "en": "ayuda: indicative. It does not fit here, because «todavía no sé quién» says you do not know who it is, while the indicative would point to a specific, known helper. Correct: Necesito a alguien que me ayude mañana; todavía no sé quién.",
+          "es": "ayuda: indicativo. Aquí no encaja, porque «todavía no sé quién» dice que no sabes quién es, mientras que el indicativo señalaría a una persona concreta y conocida. Correcto: Necesito a alguien que me ayude mañana; todavía no sé quién.",
+          "de": "ayuda: Indikativ. Das passt hier nicht, weil «todavía no sé quién» sagt, dass du nicht weißt, wer es ist, während der Indikativ auf einen bestimmten, bekannten Helfer zeigen würde. Richtig: Necesito a alguien que me ayude mañana; todavía no sé quién."
+        },
+        "ayudó": {
+          "hu": "ayudó: múlt idő (indefinido). Ide nem illik, mert a «mañana» jövőre mutat, a múlt idő nem illik hozzá, az ismeretlen előzmény pedig kötőmódot kér. Helyesen: Necesito a alguien que me ayude mañana; todavía no sé quién.",
+          "en": "ayudó: past tense (preterite). It does not fit here, because «mañana» points to the future, so the past does not fit, and an unknown antecedent asks for the subjunctive. Correct: Necesito a alguien que me ayude mañana; todavía no sé quién.",
+          "es": "ayudó: pretérito indefinido. Aquí no encaja, porque «mañana» apunta al futuro, así que el pasado no encaja, y un antecedente desconocido pide subjuntivo. Correcto: Necesito a alguien que me ayude mañana; todavía no sé quién.",
+          "de": "ayudó: Vergangenheit (Indefinido). Das passt hier nicht, denn «mañana» zeigt in die Zukunft, die Vergangenheit passt also nicht, und ein unbekanntes Bezugswort verlangt den Subjuntivo. Richtig: Necesito a alguien que me ayude mañana; todavía no sé quién."
+        }
+      },
+      "examples": [
+        "Necesito a alguien que me ayude.",
+        "Busco a alguien que cocine bien."
+      ]
+    },
+    {
+      "kind": "match",
+      "id": "sr-match-01",
+      "pairs": [
+        {
+          "es": "busco una casa que tenga jardín",
+          "en": "I'm looking for a house with a garden (any such house)"
+        },
+        {
+          "es": "tengo una casa que tiene jardín",
+          "en": "I have a house with a garden (this one)"
+        },
+        {
+          "es": "busco la casa que tiene jardín",
+          "en": "I'm looking for the house with a garden (a known one)"
+        },
+        {
+          "es": "no hay nadie que sepa",
+          "en": "there is nobody who knows"
+        },
+        {
+          "es": "hay alguien que sabe",
+          "en": "there is someone who knows"
+        },
+        {
+          "es": "¿hay alguien que sepa?",
+          "en": "is there anyone who knows?"
+        }
+      ]
+    },
+    {
+      "id": "sr-form-01",
+      "kind": "form",
+      "verb": "forma del verbo",
+      "person": "Busco un trabajo que ___ (ser) interesante, pero todavía no lo encontré.",
+      "answer": "sea",
+      "table": "subjuntivo-relativo-formas"
+    },
+    {
+      "id": "sr-form-02",
+      "kind": "form",
+      "verb": "forma del verbo",
+      "person": "Tengo un amigo que ___ (trabajar) en un banco.",
+      "answer": "trabaja",
+      "table": "subjuntivo-relativo-formas"
+    },
+    {
+      "id": "sr-form-03",
+      "kind": "form",
+      "verb": "forma del verbo",
+      "person": "Quiero una casa que ___ (tener) jardín, pero no sé si existe.",
+      "answer": "tenga",
+      "table": "subjuntivo-relativo-formas"
+    },
+    {
+      "id": "sr-form-04",
+      "kind": "form",
+      "verb": "forma del verbo",
+      "person": "Conozco a una chica que ___ (vivir) en mi edificio.",
+      "answer": "vive",
+      "table": "subjuntivo-relativo-formas"
+    },
+    {
+      "id": "sr-form-05",
+      "kind": "form",
+      "verb": "forma del verbo",
+      "person": "Necesito a alguien que ___ (poder) ayudarme, pero no sé quién.",
+      "answer": "pueda",
+      "table": "subjuntivo-relativo-formas"
+    },
+    {
+      "id": "sr-form-06",
+      "kind": "form",
+      "verb": "forma del verbo",
+      "person": "No hay nadie en mi familia que ___ (hablar) alemán.",
+      "answer": "hable",
+      "table": "subjuntivo-relativo-formas"
+    },
+    {
+      "id": "sr-form-07",
+      "kind": "form",
+      "verb": "forma del verbo",
+      "person": "Hay un café en la esquina que ___ (ser) muy barato.",
+      "answer": "es",
+      "table": "subjuntivo-relativo-formas"
+    },
+    {
+      "id": "sr-form-08",
+      "kind": "form",
+      "verb": "forma del verbo",
+      "person": "No conozco a nadie que ___ (vivir) cerca de aquí.",
+      "answer": "viva",
+      "table": "subjuntivo-relativo-formas"
+    },
+    {
+      "id": "sr-form-09",
+      "kind": "form",
+      "verb": "forma del verbo",
+      "person": "Mi hermana trabaja en una empresa que ___ (pagar) muy bien.",
+      "answer": "paga",
+      "table": "subjuntivo-relativo-formas"
+    },
+    {
+      "id": "sr-form-10",
+      "kind": "form",
+      "verb": "forma del verbo",
+      "person": "No hay nada en el menú que me ___ (gustar).",
+      "answer": "guste",
+      "table": "subjuntivo-relativo-formas"
+    },
+    {
+      "id": "sr-form-11",
+      "kind": "form",
+      "verb": "forma del verbo",
+      "person": "No sé si hay una tienda cerca que ___ (abrir) hoy.",
+      "answer": "abra",
+      "table": "subjuntivo-relativo-formas"
+    },
+    {
+      "id": "sr-form-12",
+      "kind": "form",
+      "verb": "forma del verbo",
+      "person": "Busco a la señora que ___ (vender) frutas; ayer la vi.",
+      "answer": "vende",
+      "table": "subjuntivo-relativo-formas"
+    },
+    {
+      "kind": "why",
+      "id": "sr-why-01",
+      "es": "Busco un departamento que tenga balcón.",
+      "target": "tenga",
+      "tr": {
+        "hu": "Olyan lakást keresek, amelynek van erkélye.",
+        "en": "I'm looking for an apartment that has a balcony.",
+        "es": "Busco un departamento que tenga balcón.",
+        "de": "Ich suche eine Wohnung, die einen Balkon hat."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ismert, létező előzmény → kijelentő",
+            "en": "known, existing antecedent → indicative",
+            "es": "antecedente conocido y existente → indicativo",
+            "de": "bekanntes, existierendes Bezugswort → Indikativ"
+          },
+          "wrong": {
+            "hu": "Ez a szabály már meglévő, ismert előzményre szól (tengo, conozco), itt viszont egy még ismeretlen lakást keresel (un departamento), ezért a «tenga» kötőmód.",
+            "en": "This rule is for an antecedent that already exists and is known (tengo, conozco), but here you are looking for an apartment you do not know yet (un departamento), so «tenga» is subjunctive.",
+            "es": "Esta regla es para un antecedente que ya existe y se conoce (tengo, conozco), pero aquí buscas un departamento que todavía no conoces (un departamento), por eso «tenga» es subjuntivo.",
+            "de": "Diese Regel gilt für ein Bezugswort, das schon existiert und bekannt ist (tengo, conozco), aber hier suchst du eine Wohnung, die du noch nicht kennst (un departamento), deshalb ist «tenga» Subjuntivo."
+          }
+        },
+        {
+          "text": {
+            "hu": "keresett, még ismeretlen előzmény → kötőmód",
+            "en": "sought, still unknown antecedent → subjunctive",
+            "es": "antecedente buscado y todavía desconocido → subjuntivo",
+            "de": "gesuchtes, noch unbekanntes Bezugswort → Subjuntivo"
+          }
+        },
+        {
+          "text": {
+            "hu": "nem létező előzmény → kötőmód",
+            "en": "non-existent antecedent → subjunctive",
+            "es": "antecedente que no existe → subjuntivo",
+            "de": "nicht existierendes Bezugswort → Subjuntivo"
+          },
+          "wrong": {
+            "hu": "Ez a szabály arra szól, amikor azt mondod, hogy nincs ilyen (no hay nadie), itt viszont nem tagadsz: csak még nem találtad meg a lakást.",
+            "en": "This rule is for when you say there is no such thing (no hay nadie), but here you do not deny anything: you just have not found the apartment yet.",
+            "es": "Esta regla es para cuando dices que no existe (no hay nadie), pero aquí no niegas nada: solo todavía no has encontrado el departamento.",
+            "de": "Diese Regel gilt, wenn du sagst, dass es so etwas nicht gibt (no hay nadie), aber hier verneinst du nichts: du hast die Wohnung nur noch nicht gefunden."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "sr-why-02",
+      "es": "Tengo un amigo que habla alemán.",
+      "target": "habla",
+      "tr": {
+        "hu": "Van egy barátom, aki beszél németül.",
+        "en": "I have a friend who speaks German.",
+        "es": "Tengo un amigo que habla alemán.",
+        "de": "Ich habe einen Freund, der Deutsch spricht."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "keresett, még ismeretlen előzmény → kötőmód",
+            "en": "sought, still unknown antecedent → subjunctive",
+            "es": "antecedente buscado y todavía desconocido → subjuntivo",
+            "de": "gesuchtes, noch unbekanntes Bezugswort → Subjuntivo"
+          },
+          "wrong": {
+            "hu": "Ez a szabály még ismeretlen, keresett előzményre szól, de a barátod már megvan és ismered (tengo), ezért a «habla» kijelentő.",
+            "en": "This rule is for a sought, still unknown antecedent, but you already have this friend and know him (tengo), so «habla» is indicative.",
+            "es": "Esta regla es para un antecedente buscado y todavía desconocido, pero ya tienes a ese amigo y lo conoces (tengo), por eso «habla» es indicativo.",
+            "de": "Diese Regel gilt für ein gesuchtes, noch unbekanntes Bezugswort, aber du hast diesen Freund schon und kennst ihn (tengo), deshalb ist «habla» Indikativ."
+          }
+        },
+        {
+          "text": {
+            "hu": "nem létező előzmény → kötőmód",
+            "en": "non-existent antecedent → subjunctive",
+            "es": "antecedente que no existe → subjuntivo",
+            "de": "nicht existierendes Bezugswort → Subjuntivo"
+          },
+          "wrong": {
+            "hu": "Ez a szabály arra szól, amikor nincs ilyen, itt viszont van ilyen barátod (tengo).",
+            "en": "This rule is for when there is no such thing, but here you do have such a friend (tengo).",
+            "es": "Esta regla es para cuando no existe, pero aquí sí tienes un amigo así (tengo).",
+            "de": "Diese Regel gilt, wenn es so etwas nicht gibt, aber hier hast du einen solchen Freund (tengo)."
+          }
+        },
+        {
+          "text": {
+            "hu": "ismert, létező előzmény → kijelentő",
+            "en": "known, existing antecedent → indicative",
+            "es": "antecedente conocido y existente → indicativo",
+            "de": "bekanntes, existierendes Bezugswort → Indikativ"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "sr-why-03",
+      "es": "No hay nadie que sepa la respuesta.",
+      "target": "sepa",
+      "tr": {
+        "hu": "Nincs senki, aki tudná a választ.",
+        "en": "There is nobody who knows the answer.",
+        "es": "No hay nadie que sepa la respuesta.",
+        "de": "Es gibt niemanden, der die Antwort weiß."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "nem létező előzmény → kötőmód",
+            "en": "non-existent antecedent → subjunctive",
+            "es": "antecedente que no existe → subjuntivo",
+            "de": "nicht existierendes Bezugswort → Subjuntivo"
+          }
+        },
+        {
+          "text": {
+            "hu": "ismert, létező előzmény → kijelentő",
+            "en": "known, existing antecedent → indicative",
+            "es": "antecedente conocido y existente → indicativo",
+            "de": "bekanntes, existierendes Bezugswort → Indikativ"
+          },
+          "wrong": {
+            "hu": "Ez a szabály létező, ismert előzményre szól (tengo, conozco), itt viszont a «no hay nadie» azt mondja, hogy nincs ilyen ember.",
+            "en": "This rule is for an existing, known antecedent (tengo, conozco), but here «no hay nadie» says there is no such person.",
+            "es": "Esta regla es para un antecedente existente y conocido (tengo, conozco), pero aquí «no hay nadie» dice que no existe esa persona.",
+            "de": "Diese Regel gilt für ein existierendes, bekanntes Bezugswort (tengo, conozco), aber hier sagt «no hay nadie», dass es niemanden gibt."
+          }
+        },
+        {
+          "text": {
+            "hu": "kérdés arról, hogy létezik-e → kötőmód",
+            "en": "question about whether it exists → subjunctive",
+            "es": "pregunta sobre si existe → subjuntivo",
+            "de": "Frage, ob es existiert → Subjuntivo"
+          },
+          "wrong": {
+            "hu": "Ez a szabály kérdésre szól (¿hay alguien que…?), ez a mondat viszont nem kérdez: közli, hogy nincs senki.",
+            "en": "This rule is for a question (¿hay alguien que…?), but this sentence does not ask: it states that nobody does.",
+            "es": "Esta regla es para una pregunta (¿hay alguien que…?), pero esta oración no pregunta: afirma que no hay nadie.",
+            "de": "Diese Regel gilt für eine Frage (¿hay alguien que…?), aber dieser Satz fragt nicht: er stellt fest, dass es niemanden gibt."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "sr-why-04",
+      "es": "¿Hay alguien aquí que hable alemán?",
+      "target": "hable",
+      "tr": {
+        "hu": "Van itt valaki, aki beszél németül?",
+        "en": "Is there anyone here who speaks German?",
+        "es": "¿Hay alguien aquí que hable alemán?",
+        "de": "Gibt es hier jemanden, der Deutsch spricht?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "nem létező előzmény → kötőmód",
+            "en": "non-existent antecedent → subjunctive",
+            "es": "antecedente que no existe → subjuntivo",
+            "de": "nicht existierendes Bezugswort → Subjuntivo"
+          },
+          "wrong": {
+            "hu": "Ez a szabály arra szól, amikor közlöd, hogy nincs ilyen, itt viszont nem állítod, hogy nincs senki: csak megkérdezed, van-e valaki.",
+            "en": "This rule is for when you state that there is no such thing, but here you do not claim that nobody does: you only ask whether somebody does.",
+            "es": "Esta regla es para cuando afirmas que no existe, pero aquí no dices que no hay nadie: solo preguntas si hay alguien.",
+            "de": "Diese Regel gilt, wenn du feststellst, dass es so etwas nicht gibt, aber hier behauptest du nicht, dass es niemanden gibt: du fragst nur, ob es jemanden gibt."
+          }
+        },
+        {
+          "text": {
+            "hu": "kérdés arról, hogy létezik-e → kötőmód",
+            "en": "question about whether it exists → subjunctive",
+            "es": "pregunta sobre si existe → subjuntivo",
+            "de": "Frage, ob es existiert → Subjuntivo"
+          }
+        },
+        {
+          "text": {
+            "hu": "ismert, létező előzmény → kijelentő",
+            "en": "known, existing antecedent → indicative",
+            "es": "antecedente conocido y existente → indicativo",
+            "de": "bekanntes, existierendes Bezugswort → Indikativ"
+          },
+          "wrong": {
+            "hu": "Ez a szabály létező, ismert előzményre szól, itt viszont nem tudod, van-e valaki, aki beszél németül: éppen ezt kérdezed.",
+            "en": "This rule is for an existing, known antecedent, but here you do not know whether someone speaks German: that is exactly what you ask.",
+            "es": "Esta regla es para un antecedente existente y conocido, pero aquí no sabes si alguien habla alemán: justo eso preguntas.",
+            "de": "Diese Regel gilt für ein existierendes, bekanntes Bezugswort, aber hier weißt du nicht, ob jemand Deutsch spricht: genau das fragst du."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "sr-why-05",
+      "es": "Busco al chico que vive en mi calle.",
+      "target": "vive",
+      "tr": {
+        "hu": "Azt a fiút keresem, aki az utcámban lakik.",
+        "en": "I'm looking for the boy who lives on my street.",
+        "es": "Busco al chico que vive en mi calle.",
+        "de": "Ich suche den Jungen, der in meiner Straße wohnt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "keresett, még ismeretlen előzmény → kötőmód",
+            "en": "sought, still unknown antecedent → subjunctive",
+            "es": "antecedente buscado y todavía desconocido → subjuntivo",
+            "de": "gesuchtes, noch unbekanntes Bezugswort → Subjuntivo"
+          },
+          "wrong": {
+            "hu": "A busco önmagában nem hív elő kötőmódot: itt egy konkrét fiút keresel (al chico), ezért a «vive» kijelentő marad.",
+            "en": "Busco does not trigger the subjunctive by itself: here you are looking for one specific boy (al chico), so «vive» stays indicative.",
+            "es": "Busco no exige subjuntivo por sí solo: aquí buscas a un chico concreto (al chico), por eso «vive» sigue en indicativo.",
+            "de": "Busco löst den Subjuntivo nicht von selbst aus: hier suchst du einen bestimmten Jungen (al chico), deshalb bleibt «vive» im Indikativ."
+          }
+        },
+        {
+          "text": {
+            "hu": "konkrét, megnevezett előzmény → kijelentő, busco mellett is",
+            "en": "specific, named antecedent → indicative, even with busco",
+            "es": "antecedente concreto y señalado → indicativo, incluso con busco",
+            "de": "bestimmtes, benanntes Bezugswort → Indikativ, auch bei busco"
+          }
+        },
+        {
+          "text": {
+            "hu": "nem létező előzmény → kötőmód",
+            "en": "non-existent antecedent → subjunctive",
+            "es": "antecedente que no existe → subjuntivo",
+            "de": "nicht existierendes Bezugswort → Subjuntivo"
+          },
+          "wrong": {
+            "hu": "Ez a szabály nem létező előzményre szól (no hay nadie), itt viszont van ilyen fiú: konkrétan őt keresed.",
+            "en": "This rule is for a non-existent antecedent (no hay nadie), but here such a boy exists: you are looking for exactly him.",
+            "es": "Esta regla es para un antecedente que no existe (no hay nadie), pero aquí ese chico existe: buscas justo a él.",
+            "de": "Diese Regel gilt für ein nicht existierendes Bezugswort (no hay nadie), aber hier gibt es diesen Jungen: du suchst genau ihn."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "sr-why-06",
+      "es": "Hay un café cerca que abre hasta las doce.",
+      "target": "abre",
+      "tr": {
+        "hu": "Van a közelben egy kávézó, ami tizenkettőig nyitva van.",
+        "en": "There is a café nearby that is open until twelve.",
+        "es": "Hay un café cerca que abre hasta las doce.",
+        "de": "In der Nähe gibt es ein Café, das bis zwölf offen hat."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ismert, létező előzmény → kijelentő",
+            "en": "known, existing antecedent → indicative",
+            "es": "antecedente conocido y existente → indicativo",
+            "de": "bekanntes, existierendes Bezugswort → Indikativ"
+          }
+        },
+        {
+          "text": {
+            "hu": "kérdés arról, hogy létezik-e → kötőmód",
+            "en": "question about whether it exists → subjunctive",
+            "es": "pregunta sobre si existe → subjuntivo",
+            "de": "Frage, ob es existiert → Subjuntivo"
+          },
+          "wrong": {
+            "hu": "Ez a szabály kérdésre szól, itt viszont nincs kérdés: közlöd, hogy van egy ilyen kávézó.",
+            "en": "This rule is for a question, but here there is no question: you state that such a café exists.",
+            "es": "Esta regla es para una pregunta, pero aquí no hay pregunta: afirmas que existe ese café.",
+            "de": "Diese Regel gilt für eine Frage, aber hier gibt es keine Frage: du stellst fest, dass es dieses Café gibt."
+          }
+        },
+        {
+          "text": {
+            "hu": "keresett, még ismeretlen előzmény → kötőmód",
+            "en": "sought, still unknown antecedent → subjunctive",
+            "es": "antecedente buscado y todavía desconocido → subjuntivo",
+            "de": "gesuchtes, noch unbekanntes Bezugswort → Subjuntivo"
+          },
+          "wrong": {
+            "hu": "Ez a szabály keresett, még ismeretlen előzményre szól, itt viszont nem keresel semmit: közlöd, hogy van egy kávézó (hay un café).",
+            "en": "This rule is for a sought, still unknown antecedent, but here you are not looking for anything: you state that there is a café (hay un café).",
+            "es": "Esta regla es para un antecedente buscado y todavía desconocido, pero aquí no buscas nada: afirmas que hay un café (hay un café).",
+            "de": "Diese Regel gilt für ein gesuchtes, noch unbekanntes Bezugswort, aber hier suchst du nichts: du stellst fest, dass es ein Café gibt (hay un café)."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "sr-why-07",
+      "es": "Necesito a alguien que me ayude.",
+      "target": "ayude",
+      "tr": {
+        "hu": "Szükségem van valakire, aki segít nekem.",
+        "en": "I need someone who can help me.",
+        "es": "Necesito a alguien que me ayude.",
+        "de": "Ich brauche jemanden, der mir hilft."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "konkrét, megnevezett előzmény → kijelentő, busco mellett is",
+            "en": "specific, named antecedent → indicative, even with busco",
+            "es": "antecedente concreto y señalado → indicativo, incluso con busco",
+            "de": "bestimmtes, benanntes Bezugswort → Indikativ, auch bei busco"
+          },
+          "wrong": {
+            "hu": "Ez a szabály konkrét, megnevezett előzményre szól (el chico, la señora), itt viszont az «alguien» bárki lehet, aki segít, és még nem tudod, ki.",
+            "en": "This rule is for a specific, named antecedent (el chico, la señora), but here «alguien» can be anyone who helps, and you do not know who yet.",
+            "es": "Esta regla es para un antecedente concreto y señalado (el chico, la señora), pero aquí «alguien» puede ser cualquiera que ayude, y todavía no sabes quién.",
+            "de": "Diese Regel gilt für ein bestimmtes, benanntes Bezugswort (el chico, la señora), aber hier kann «alguien» jeder sein, der hilft, und du weißt noch nicht, wer."
+          }
+        },
+        {
+          "text": {
+            "hu": "nem létező előzmény → kötőmód",
+            "en": "non-existent antecedent → subjunctive",
+            "es": "antecedente que no existe → subjuntivo",
+            "de": "nicht existierendes Bezugswort → Subjuntivo"
+          },
+          "wrong": {
+            "hu": "Ez a szabály arra szól, amikor azt mondod, hogy nincs ilyen ember (no hay nadie), itt viszont nem tagadsz: valakire szükséged van, csak még nem tudod, kire.",
+            "en": "This rule is for when you say there is no such person (no hay nadie), but here you do not deny anything: you need someone, you just do not know who yet.",
+            "es": "Esta regla es para cuando dices que no existe esa persona (no hay nadie), pero aquí no niegas nada: necesitas a alguien, solo que todavía no sabes a quién.",
+            "de": "Diese Regel gilt, wenn du sagst, dass es so jemanden nicht gibt (no hay nadie), aber hier verneinst du nichts: du brauchst jemanden, weißt nur noch nicht, wen."
+          }
+        },
+        {
+          "text": {
+            "hu": "keresett, még ismeretlen előzmény → kötőmód",
+            "en": "sought, still unknown antecedent → subjunctive",
+            "es": "antecedente buscado y todavía desconocido → subjuntivo",
+            "de": "gesuchtes, noch unbekanntes Bezugswort → Subjuntivo"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}
