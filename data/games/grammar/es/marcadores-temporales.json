@@ -338,19 +338,19 @@
           "jugaba"
         ],
         [
-          "Siempre ___ (comer, nosotros) en casa de mi abuela.",
+          "Siempre ___ (comer, nosotros; imperfecto) en casa de mi abuela.",
           "comíamos"
         ],
         [
-          "Esta semana ___ (trabajar, nosotros) mucho.",
+          "Esta semana ___ (trabajar, nosotros; perfecto) mucho.",
           "hemos trabajado"
         ],
         [
-          "Todavía no ___ (ver, yo) esa película.",
+          "Todavía no ___ (ver, yo; perfecto) esa película.",
           "he visto"
         ],
         [
-          "Nunca ___ (ir, yo) a Oaxaca.",
+          "Nunca ___ (ir, yo; perfecto) a Oaxaca.",
           "he ido"
         ],
         [
@@ -358,7 +358,7 @@
           "salgo"
         ],
         [
-          "Ahora ___ (leer, yo) un libro muy bueno.",
+          "Hoy en día ___ (leer, yo) muy poco.",
           "leo"
         ],
         [
@@ -469,7 +469,7 @@
     },
     {
       "id": "mt-03",
-      "sentence": "El 5 de octubre ___ (yo) mi primer día de trabajo.",
+      "sentence": "El 5 de octubre ___ (yo) un accidente en el metro.",
       "options": [
         "tuve",
         "tenía",
@@ -484,16 +484,16 @@
       },
       "wrong": {
         "tenía": {
-          "hu": "Ezzel a mondat azt jelentené: „az első munkanapom volt (leírás, kezdet és vég nélkül)”, ami nem illik ide; helyesen: El 5 de octubre tuve mi primer día de trabajo.",
-          "en": "This would say: “I was having my first day of work (a description with no start or end)”, which does not fit here; correctly: El 5 de octubre tuve mi primer día de trabajo.",
-          "es": "Esto diría: «yo tenía mi primer día de trabajo (una descripción sin principio ni fin)», lo cual no encaja aquí; correctamente: El 5 de octubre tuve mi primer día de trabajo.",
-          "de": "Das würde bedeuten: „ich hatte meinen ersten Arbeitstag (eine Beschreibung ohne Anfang und Ende)“, was hier nicht passt; richtig: El 5 de octubre tuve mi primer día de trabajo."
+          "hu": "Ezzel a mondat azt jelentené: „balesetem volt (leírás, kezdet és vég nélkül)”, ami nem illik ide; helyesen: El 5 de octubre tuve un accidente en el metro.",
+          "en": "This would say: “I was having an accident (a description with no start or end)”, which does not fit here; correctly: El 5 de octubre tuve un accidente en el metro.",
+          "es": "Esto diría: «yo tenía un accidente (una descripción sin principio ni fin)», lo cual no encaja aquí; correctamente: El 5 de octubre tuve un accidente en el metro.",
+          "de": "Das würde bedeuten: „ich hatte einen Unfall (eine Beschreibung ohne Anfang und Ende)“, was hier nicht passt; richtig: El 5 de octubre tuve un accidente en el metro."
         },
         "he tenido": {
-          "hu": "Ezzel a mondat azt jelentené: „megvolt az első munkanapom (egy még tartó időszakban)”, ami nem illik ide; helyesen: El 5 de octubre tuve mi primer día de trabajo.",
-          "en": "This would say: “I have had my first day of work (in a period that is still going)”, which does not fit here; correctly: El 5 de octubre tuve mi primer día de trabajo.",
-          "es": "Esto diría: «he tenido mi primer día de trabajo (en un periodo que sigue abierto)», lo cual no encaja aquí; correctamente: El 5 de octubre tuve mi primer día de trabajo.",
-          "de": "Das würde bedeuten: „ich habe meinen ersten Arbeitstag gehabt (in einem Zeitraum, der noch andauert)“, was hier nicht passt; richtig: El 5 de octubre tuve mi primer día de trabajo."
+          "hu": "Ezzel a mondat azt jelentené: „volt egy balesetem (egy még tartó időszakban)”, ami nem illik ide; helyesen: El 5 de octubre tuve un accidente en el metro.",
+          "en": "This would say: “I have had an accident (in a period that is still going)”, which does not fit here; correctly: El 5 de octubre tuve un accidente en el metro.",
+          "es": "Esto diría: «he tenido un accidente (en un periodo que sigue abierto)», lo cual no encaja aquí; correctamente: El 5 de octubre tuve un accidente en el metro.",
+          "de": "Das würde bedeuten: „ich habe einen Unfall gehabt (in einem Zeitraum, der noch andauert)“, was hier nicht passt; richtig: El 5 de octubre tuve un accidente en el metro."
         }
       },
       "examples": [
@@ -574,7 +574,7 @@
       "sentence": "Todavía no ___ (yo) la cena.",
       "options": [
         "he hecho",
-        "hice",
+        "hacía",
         "haré"
       ],
       "correct": 0,
@@ -585,11 +585,11 @@
         "de": "«Todavía no» zeigt, dass die Sache noch zum aktuellen Zeitraum gehört, deshalb steht das Perfekt: he hecho."
       },
       "wrong": {
-        "hice": {
-          "hu": "Ezzel a mondat lezárt múltbeli tényként hangzana, a «todavía no» viszont még nyitott időszakot jelöl; a tanult szabály szerint itt perfecto kell (a mexikói beszédben a hice is előfordul, lásd a tippet): Todavía no he hecho la cena.",
-          "en": "This would sound like a closed past fact, while «todavía no» marks a period that is still open; by the rule you learn here the perfect is needed (in Mexican speech hice also occurs, see the tip): Todavía no he hecho la cena.",
-          "es": "Esto sonaría como un hecho pasado cerrado, mientras que «todavía no» marca un periodo aún abierto; según la regla que se aprende aquí hace falta el perfecto (en el habla mexicana también se oye hice, mira el consejo): Todavía no he hecho la cena.",
-          "de": "Das klänge wie eine abgeschlossene Tatsache der Vergangenheit, während «todavía no» einen noch offenen Zeitraum markiert; nach der hier gelernten Regel braucht es das Perfekt (in der mexikanischen Umgangssprache kommt auch hice vor, siehe den Tipp): Todavía no he hecho la cena."
+        "hacía": {
+          "hu": "Ezzel a mondat azt jelentené: „még nem csináltam a vacsorát (múltbeli háttér)”, ami nem illik ide; helyesen: Todavía no he hecho la cena.",
+          "en": "This would say: “I was not yet making dinner (past background)”, which does not fit here; correctly: Todavía no he hecho la cena.",
+          "es": "Esto diría: «todavía no hacía la cena (un fondo pasado)», lo cual no encaja aquí; correctamente: Todavía no he hecho la cena.",
+          "de": "Das würde bedeuten: „ich machte das Abendessen noch nicht (ein Hintergrund in der Vergangenheit)“, was hier nicht passt; richtig: Todavía no he hecho la cena."
         },
         "haré": {
           "hu": "Ezzel a mondat azt jelentené: „még nem fogom elkészíteni a vacsorát (jövő)”, ami nem illik ide; helyesen: Todavía no he hecho la cena.",
@@ -869,7 +869,7 @@
       "id": "mt-form-05",
       "kind": "form",
       "verb": "forma verbal",
-      "person": "Siempre ___ (comer, nosotros) en casa de mi abuela.",
+      "person": "Siempre ___ (comer, nosotros; imperfecto) en casa de mi abuela.",
       "answer": "comíamos",
       "table": "marcadores-formas"
     },
@@ -877,7 +877,7 @@
       "id": "mt-form-06",
       "kind": "form",
       "verb": "forma verbal",
-      "person": "Esta semana ___ (trabajar, nosotros) mucho.",
+      "person": "Esta semana ___ (trabajar, nosotros; perfecto) mucho.",
       "answer": "hemos trabajado",
       "table": "marcadores-formas"
     },
@@ -885,7 +885,7 @@
       "id": "mt-form-07",
       "kind": "form",
       "verb": "forma verbal",
-      "person": "Todavía no ___ (ver, yo) esa película.",
+      "person": "Todavía no ___ (ver, yo; perfecto) esa película.",
       "answer": "he visto",
       "table": "marcadores-formas"
     },
@@ -893,7 +893,7 @@
       "id": "mt-form-08",
       "kind": "form",
       "verb": "forma verbal",
-      "person": "Nunca ___ (ir, yo) a Oaxaca.",
+      "person": "Nunca ___ (ir, yo; perfecto) a Oaxaca.",
       "answer": "he ido",
       "table": "marcadores-formas"
     },
@@ -909,7 +909,7 @@
       "id": "mt-form-10",
       "kind": "form",
       "verb": "forma verbal",
-      "person": "Ahora ___ (leer, yo) un libro muy bueno.",
+      "person": "Hoy en día ___ (leer, yo) muy poco.",
       "answer": "leo",
       "table": "marcadores-formas"
     },
