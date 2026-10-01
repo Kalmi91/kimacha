@@ -63,6 +63,18 @@ export function isConjugationTable(header: Lang4[], rows: string[][]): boolean {
   return rows.every((row) => isPersonLabel(row[0]));
 }
 
+// PLAN-fb1001 11. lépés (FB437/FB438): személy-tábla = minden sor címkéje személy-névmás
+// (yo, tú, él/ella/usted...), a fejléc 2..n cellája viszont NEM csupa infinitivus
+// (pl. "Sujeto -> pronombre de objeto indirecto", "Persona -> ir a + infinitivo",
+// "Persona -> Masculino singular | ..."). Az ilyen tábla egyértelműen kérdezhető
+// (személy x oszlop -> a cella), ezért a táblázat-pakli adja, nem a szó-pakli
+// fallback (szószedet + mondat-szavak), ami "felesleges szavakat" mutatott.
+export function isPersonTable(header: Lang4[], rows: string[][]): boolean {
+  if (header.length < 2 || rows.length === 0) return false;
+  if (isConjugationTable(header, rows)) return false;
+  return rows.every((row) => isPersonLabel(row[0]));
+}
+
 // FB390: a reference table shaped like interrogativos.json's overview (row[0]
 // = an English meaning, e.g. "what"/"who"; row[1] = the single Spanish term
 // that means it, e.g. "qué"; further columns are extra reference context,

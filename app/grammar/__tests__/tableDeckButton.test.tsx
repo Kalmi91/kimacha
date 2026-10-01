@@ -72,12 +72,16 @@ describe('grammar lesson screen: table-deck button', () => {
     view.unmount();
   });
 
-  it('a schema-1 (legacy) lesson has no deck button', async () => {
-    mockTopicId = 'posesivos';
+  // PLAN-fb1001 11. lépés (FB437/FB438): a személy-tábla (minden sor személy-névmás, a fejléc nem
+  // csupa infinitivus) kérdezhető, ezért gombot kap; a régi "posesivos = schema-1, nincs gomb"
+  // teszt a posesivos schema-2-re költözésekor elavult volt.
+  it('a person table (pronombres-oi) gets the deck button, 5 cells (vosotros dropped)', async () => {
+    mockTopicId = 'pronombres-oi';
     const view = render(<GrammarLessonScreen />);
     await flush();
 
-    expect(screen.queryByTestId('grammar-start-tabledeck')).toBeFalsy();
+    expect(screen.getByTestId('grammar-start-tabledeck')).toBeTruthy();
+    expect(screen.getByText('Practice the table · 5 cells')).toBeTruthy();
 
     view.unmount();
   });
