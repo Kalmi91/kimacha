@@ -140,10 +140,10 @@
         },
         {
           "text": {
-            "hu": "A ni … ni azt jelenti, sem … sem, és mindig egy meglévő no mellett áll.",
-            "en": "Ni … ni means neither … nor, and it always stands alongside an existing no.",
-            "es": "Ni … ni significa ni … ni, y siempre va junto a un no ya presente.",
-            "de": "Ni … ni bedeutet weder … noch und steht immer neben einem bereits vorhandenen no."
+            "hu": "A ni … ni azt jelenti, sem … sem, és az ige UTÁN mindig egy no mellett áll.",
+            "en": "Ni … ni means neither … nor, and after the verb it always stands alongside a no.",
+            "es": "Ni … ni significa ni … ni, y detrás del verbo siempre va junto a un no.",
+            "de": "Ni … ni bedeutet weder … noch und steht nach dem Verb immer neben einem no."
           },
           "examples": [
             {
@@ -151,8 +151,8 @@
               "tr": { "hu": "Nem eszem húst, sem halat.", "en": "I eat neither meat nor fish.", "es": "No como carne ni pescado.", "de": "Ich esse weder Fleisch noch Fisch." }
             },
             {
-              "es": "No tengo casa ni coche.",
-              "tr": { "hu": "Nincs se házam, se autóm.", "en": "I have neither a house nor a car.", "es": "No tengo casa ni coche.", "de": "Ich habe weder ein Haus noch ein Auto." }
+              "es": "No tengo casa ni carro.",
+              "tr": { "hu": "Nincs se házam, se autóm.", "en": "I have neither a house nor a car.", "es": "No tengo casa ni carro.", "de": "Ich habe weder ein Haus noch ein Auto." }
             }
           ]
         },
@@ -245,10 +245,10 @@
           "a": "también",
           "b": "tampoco",
           "note": {
-            "hu": "A también azt jelenti, én is (igenlő párhuzam); a tampoco azt jelenti, én sem (tagadó párhuzam). Sosem keverednek egy mondatban.",
-            "en": "También means me too (an affirmative parallel); tampoco means me neither (a negative parallel). They never mix in one sentence.",
-            "es": "También significa yo también (paralelo afirmativo); tampoco significa yo tampoco (paralelo negativo). Nunca se mezclan en una frase.",
-            "de": "También bedeutet ich auch (bejahende Parallele); tampoco bedeutet ich auch nicht (verneinende Parallele). Sie mischen sich nie in einem Satz."
+            "hu": "A también azt jelenti, én is (igenlő párhuzam); a tampoco azt jelenti, én sem (tagadó párhuzam). Egy párhuzamon belül sosem keverednek.",
+            "en": "También means me too (an affirmative parallel); tampoco means me neither (a negative parallel). They never mix within one parallel.",
+            "es": "También significa yo también (paralelo afirmativo); tampoco significa yo tampoco (paralelo negativo). Nunca se mezclan dentro de un mismo paralelo.",
+            "de": "También bedeutet ich auch (bejahende Parallele); tampoco bedeutet ich auch nicht (verneinende Parallele). Sie mischen sich nie innerhalb einer Parallele."
           },
           "examples": [
             {
@@ -302,7 +302,11 @@
     },
     {
       "word": "ningunos",
-      "gloss": { "hu": "nem létező alak", "en": "not a real form", "es": "forma inexistente", "de": "keine reale Form" }
+      "gloss": { "hu": "ritka többes alak (hímnem)", "en": "rare plural form (masculine)", "es": "forma plural rara (masculino)", "de": "seltene Pluralform (maskulin)" }
+    },
+    {
+      "word": "carro",
+      "gloss": { "hu": "autó", "en": "car", "es": "el carro (el coche)", "de": "Auto" }
     }
   ],
   "items": [
@@ -319,7 +323,7 @@
       },
       "wrong": {
         "nada": {
-          "hu": "Ezzel a mondat azt jelentené, hogy Yo nada hablo español, de a nada főnévi tagadószó (semmi), nem az igét tagadó szó; az ige elé no kell; helyesen: Yo no hablo español.",
+          "hu": "Ezzel a mondat azt jelentené, hogy Yo nada hablo español, de a nada dologra vonatkozó tagadószó (semmi), nem az igét tagadó szó; az ige elé no kell; helyesen: Yo no hablo español.",
           "en": "This would give Yo nada hablo español, but nada is the negative word for a thing (nothing), not the word that negates the verb; before the verb you need no; correctly: Yo no hablo español.",
           "es": "Esto daría Yo nada hablo español, pero nada es la palabra negativa para una cosa (ninguna cosa), no la que niega el verbo; delante del verbo hace falta no; correctamente: Yo no hablo español.",
           "de": "Das würde Yo nada hablo español ergeben, aber nada ist das negative Wort für eine Sache (nichts), nicht das Wort, das das Verb verneint; vor dem Verb braucht es no; richtig: Yo no hablo español."
@@ -340,10 +344,10 @@
       },
       "wrong": {
         "nadie": {
-          "hu": "Ezzel a mondat azt jelentené, hogy No veo nadie, de a nadie SZEMÉLYRE való (senki), itt viszont arról van szó, hogy semmit sem lát, egy dologról; helyesen: No veo nada.",
-          "en": "This would give No veo nadie, but nadie is for a PERSON (nobody), while here it is about seeing nothing, a thing; correctly: No veo nada.",
-          "es": "Esto daría No veo nadie, pero nadie es para una PERSONA, y aquí se trata de no ver ninguna cosa; correctamente: No veo nada.",
-          "de": "Das würde No veo nadie ergeben, aber nadie gilt für eine PERSON, während es hier darum geht, nichts zu sehen, eine Sache; richtig: No veo nada."
+          "hu": "Ezzel a mondat azt jelentené, hogy No veo nadie, de a nadie SZEMÉLYRE való (senki), és személy tárgy elé a kell: No veo a nadie; itt viszont arról van szó, hogy semmit sem lát, egy dologról; helyesen: No veo nada.",
+          "en": "This would give No veo nadie, but nadie is for a PERSON (nobody) and would need the personal a: No veo a nadie, while here it is about seeing nothing, a thing; correctly: No veo nada.",
+          "es": "Esto daría No veo nadie, pero nadie es para una PERSONA y pediría la a personal: No veo a nadie, y aquí se trata de no ver ninguna cosa; correctamente: No veo nada.",
+          "de": "Das würde No veo nadie ergeben, aber nadie gilt für eine PERSON und bräuchte das persönliche a: No veo a nadie, während es hier darum geht, nichts zu sehen, eine Sache; richtig: No veo nada."
         }
       },
       "examples": ["No tengo nada.", "No come nada."]
@@ -351,7 +355,7 @@
     {
       "id": "neg-03",
       "sentence": "___ viene hoy.",
-      "options": ["Nadie", "No"],
+      "options": ["Nadie", "No nadie"],
       "correct": 0,
       "why": {
         "hu": "Ha a tagadó szó az ige ELÉ kerül, ő maga a tagadás, és nem kell no: Nadie viene.",
@@ -360,11 +364,11 @@
         "de": "Steht das negative Wort VOR dem Verb, verneint es selbst, und no entfällt: Nadie viene."
       },
       "wrong": {
-        "No": {
-          "hu": "Ezzel a mondat azt jelentené, hogy No viene hoy, vagyis csak azt, hogy valaki nem jön ma, de itt SENKIRŐL van szó, ahhoz a nadie kell; helyesen: Nadie viene hoy.",
-          "en": "This would give No viene hoy, meaning only that someone is not coming today, but here it is about NOBODY, which needs nadie; correctly: Nadie viene hoy.",
-          "es": "Esto daría No viene hoy, es decir, solo que alguien no viene hoy, pero aquí se habla de que NADIE viene, y para eso hace falta nadie; correctamente: Nadie viene hoy.",
-          "de": "Das würde No viene hoy ergeben, also nur, dass jemand heute nicht kommt, aber hier geht es darum, dass NIEMAND kommt, dafür braucht es nadie; richtig: Nadie viene hoy."
+        "No nadie": {
+          "hu": "Ezzel a mondat azt jelentené, hogy No nadie viene hoy, de az ige előtt a nadie önmagában tagad, a no felesleges; helyesen: Nadie viene hoy.",
+          "en": "This would give No nadie viene hoy, but before the verb nadie negates on its own and the no is superfluous; correctly: Nadie viene hoy.",
+          "es": "Esto daría No nadie viene hoy, pero delante del verbo nadie niega solo y el no sobra; correctamente: Nadie viene hoy.",
+          "de": "Das würde No nadie viene hoy ergeben, aber vor dem Verb verneint nadie allein, und das no ist überflüssig; richtig: Nadie viene hoy."
         }
       },
       "examples": ["Nadie habla aquí.", "Nadie come pan."]
@@ -372,7 +376,7 @@
     {
       "id": "neg-04",
       "sentence": "No como ___ en ese restaurante.",
-      "options": ["nunca", "nada"],
+      "options": ["nunca", "nadie"],
       "correct": 0,
       "why": {
         "hu": "Az IDŐRE a nunca (soha) való, és a no vele együtt áll: no … nunca.",
@@ -381,11 +385,11 @@
         "de": "Für die ZEIT steht nunca (nie), zusammen mit no: no … nunca."
       },
       "wrong": {
-        "nada": {
-          "hu": "Ezzel a mondat azt jelentené, hogy No como nada en ese restaurante, vagyis hogy semmit sem eszik ott, de a mondat arról szól, MILYEN GYAKRAN eszik ott, nem arról, mit; helyesen: No como nunca en ese restaurante.",
-          "en": "This would give No como nada en ese restaurante, meaning he eats nothing there, but the sentence is about HOW OFTEN he eats there, not what; correctly: No como nunca en ese restaurante.",
-          "es": "Esto daría No como nada en ese restaurante, es decir, que no come ninguna cosa allí, pero la frase habla de CON QUÉ FRECUENCIA come allí, no de qué; correctamente: No como nunca en ese restaurante.",
-          "de": "Das würde No como nada en ese restaurante ergeben, also dass er dort nichts isst, aber der Satz spricht davon, WIE OFT er dort isst, nicht was; richtig: No como nunca en ese restaurante."
+        "nadie": {
+          "hu": "Ezzel a mondat azt jelentené, hogy No como nadie en ese restaurante, de a nadie SZEMÉLYRE való (senki), és tárgyként a személyes „a” kellene elé; itt viszont az a kérdés, MILYEN GYAKRAN eszik ott; helyesen: No como nunca en ese restaurante.",
+          "en": "This would give No como nadie en ese restaurante, but nadie is for a PERSON (nobody) and would need the personal a as an object; here the question is HOW OFTEN he eats there; correctly: No como nunca en ese restaurante.",
+          "es": "Esto daría No como nadie en ese restaurante, pero nadie es para una PERSONA y como objeto pediría la a personal; aquí se trata de CON QUÉ FRECUENCIA come allí; correctamente: No como nunca en ese restaurante.",
+          "de": "Das würde No como nadie en ese restaurante ergeben, aber nadie gilt für eine PERSON und bräuchte als Objekt das persönliche a; hier geht es darum, WIE OFT er dort isst; richtig: No como nunca en ese restaurante."
         }
       },
       "examples": ["No voy nunca al cine.", "Nunca bebo café."]
@@ -403,31 +407,31 @@
       },
       "wrong": {
         "Nada": {
-          "hu": "Ezzel a mondat azt jelentené, hogy Nada tengo ningún libro aquí, de a nada nem állhat itt igetagadó szóként; a kettős tagadás első fele mindig no; helyesen: No tengo ningún libro aquí.",
-          "en": "This would give Nada tengo ningún libro aquí, but nada cannot stand here as the word negating the verb; the first half of the double negative is always no; correctly: No tengo ningún libro aquí.",
-          "es": "Esto daría Nada tengo ningún libro aquí, pero nada no puede ir aquí como la palabra que niega el verbo; la primera mitad de la doble negación siempre es no; correctamente: No tengo ningún libro aquí.",
-          "de": "Das würde Nada tengo ningún libro aquí ergeben, aber nada kann hier nicht als das verbverneinende Wort stehen; die erste Hälfte der doppelten Verneinung ist immer no; richtig: No tengo ningún libro aquí."
+          "hu": "Ezzel a mondat azt jelentené, hogy Nada tengo ningún libro aquí, de a nada nem állhat itt igetagadó szóként; a kettős tagadás első fele itt a no; helyesen: No tengo ningún libro aquí.",
+          "en": "This would give Nada tengo ningún libro aquí, but nada cannot stand here as the word negating the verb; the first half of the double negative is no here; correctly: No tengo ningún libro aquí.",
+          "es": "Esto daría Nada tengo ningún libro aquí, pero nada no puede ir aquí como la palabra que niega el verbo; la primera mitad de la doble negación aquí es no; correctamente: No tengo ningún libro aquí.",
+          "de": "Das würde Nada tengo ningún libro aquí ergeben, aber nada kann hier nicht als das verbverneinende Wort stehen; die erste Hälfte der doppelten Verneinung ist hier no; richtig: No tengo ningún libro aquí."
         }
       },
       "examples": ["No tengo ningún problema.", "No hay ningún hombre aquí."]
     },
     {
       "id": "neg-06",
-      "sentence": "A mí ___ me gusta el pescado.",
+      "sentence": "No me gusta el pescado y a ti ___ te gusta.",
       "options": ["tampoco", "también"],
       "correct": 0,
       "why": {
-        "hu": "A tampoco a tagadó párja a también-nek: nekem sem.",
-        "en": "Tampoco is the negative partner of también: me neither.",
+        "hu": "A tampoco a tagadó párja a también-nek: neked sem.",
+        "en": "Tampoco is the negative partner of también: you neither.",
         "es": "Tampoco es la pareja negativa de también.",
-        "de": "Tampoco ist das negative Gegenstück zu también: mir auch nicht."
+        "de": "Tampoco ist das negative Gegenstück zu también: dir auch nicht."
       },
       "wrong": {
         "también": {
-          "hu": "Ezzel a mondat azt jelentené, hogy A mí también me gusta el pescado, vagyis nekem IS tetszik, egy állító párhuzamot, de itt egy tagadó párhuzam kell (nekem sem); helyesen: A mí tampoco me gusta el pescado.",
-          "en": "This would give A mí también me gusta el pescado, meaning I like it TOO, an affirmative parallel, but here a negative parallel is needed (me neither); correctly: A mí tampoco me gusta el pescado.",
-          "es": "Esto daría A mí también me gusta el pescado, es decir, a mí TAMBIÉN me gusta, un paralelo afirmativo, pero aquí hace falta un paralelo negativo (a mí tampoco); correctamente: A mí tampoco me gusta el pescado.",
-          "de": "Das würde A mí también me gusta el pescado ergeben, also mir gefällt es AUCH, eine bejahende Parallele, aber hier braucht es eine verneinende Parallele (mir auch nicht); richtig: A mí tampoco me gusta el pescado."
+          "hu": "Ezzel a mondat azt jelentené, hogy No me gusta el pescado y a ti también te gusta, vagyis neked IS tetszik, egy állító párhuzamot, de az első fele tagadó, ezért tagadó párhuzam kell (neked sem); helyesen: No me gusta el pescado y a ti tampoco te gusta.",
+          "en": "This would give No me gusta el pescado y a ti también te gusta, meaning you like it TOO, an affirmative parallel, but the first half is negative, so a negative parallel is needed (you neither); correctly: No me gusta el pescado y a ti tampoco te gusta.",
+          "es": "Esto daría No me gusta el pescado y a ti también te gusta, es decir, a ti TAMBIÉN te gusta, un paralelo afirmativo, pero la primera mitad es negativa, así que hace falta un paralelo negativo (a ti tampoco); correctamente: No me gusta el pescado y a ti tampoco te gusta.",
+          "de": "Das würde No me gusta el pescado y a ti también te gusta ergeben, also dir gefällt es AUCH, eine bejahende Parallele, aber die erste Hälfte ist verneint, also braucht es eine verneinende Parallele (dir auch nicht); richtig: No me gusta el pescado y a ti tampoco te gusta."
         }
       },
       "examples": ["A mí tampoco me gusta.", "A mí también me gusta."]
@@ -472,7 +476,7 @@
           "de": "Das würde No tengo tiempo y dinero ergeben, wobei y nur verbindet, nicht verneint; nach einer Verneinung braucht das zweite Element ni; richtig: No tengo tiempo ni dinero."
         }
       },
-      "examples": ["No como carne ni pescado.", "No tengo casa ni coche."]
+      "examples": ["No como carne ni pescado.", "No tengo casa ni carro."]
     },
     {
       "id": "neg-09",
@@ -547,7 +551,7 @@
     {
       "id": "neg-12",
       "kind": "mark",
-      "sentence": "Nadie come pan en esta casa.",
+      "sentence": "Nadie come pan aquí.",
       "target": "noun",
       "answer": "pan",
       "why": {
@@ -795,16 +799,16 @@
         },
         {
           "text": {
-            "hu": "a tagadószó az ige ELŐTT áll → a no elmarad",
-            "en": "the negative word comes BEFORE the verb → the no is dropped",
-            "es": "la palabra negativa va DELANTE del verbo → el no desaparece",
-            "de": "das negative Wort steht VOR dem Verb → das no fällt weg"
+            "hu": "nadie/nada: személyt vagy dolgot tagad",
+            "en": "nadie/nada: negates a person or a thing",
+            "es": "nadie/nada: niega una persona o una cosa",
+            "de": "nadie/nada: verneint eine Person oder eine Sache"
           },
           "wrong": {
-            "hu": "A tampoco itt is az ige előtt áll, de nem ezért van itt: nem a szórend választja el a no-tól, hanem a también tagadó párja.",
-            "en": "Tampoco does stand before the verb here too, but that is not why it is used: it is not a word-order choice, it is the negative partner of también.",
-            "es": "Tampoco va delante del verbo también aquí, pero no es por eso: no es una cuestión de orden, es la pareja negativa de también.",
-            "de": "Tampoco steht hier zwar auch vor dem Verb, aber nicht deshalb: Es ist keine Wortstellungsfrage, sondern das negative Gegenstück zu también."
+            "hu": "Itt nincs se személy, se dolog, amit tagadnánk: a tampoco egy korábbi tagadáshoz csatlakozik (én sem).",
+            "en": "There is no person or thing being negated here: tampoco joins an earlier negation (me neither).",
+            "es": "Aquí no se niega ninguna persona ni cosa: tampoco se suma a una negación anterior (yo tampoco).",
+            "de": "Hier wird weder eine Person noch eine Sache verneint: tampoco schließt sich an eine frühere Verneinung an (ich auch nicht)."
           }
         },
         {
@@ -979,16 +983,16 @@
         },
         {
           "text": {
-            "hu": "a tagadószó az ige ELŐTT áll → a no elmarad",
-            "en": "the negative word comes BEFORE the verb → the no is dropped",
-            "es": "la palabra negativa va DELANTE del verbo → el no desaparece",
-            "de": "das negative Wort steht VOR dem Verb → das no fällt weg"
+            "hu": "nadie/nada: személyt vagy dolgot tagad",
+            "en": "nadie/nada: negates a person or a thing",
+            "es": "nadie/nada: niega una persona o una cosa",
+            "de": "nadie/nada: verneint eine Person oder eine Sache"
           },
           "wrong": {
-            "hu": "A tampoco itt is az ige előtt áll, de nem ezért van itt: nem a szórend választja el a no-tól, hanem a también tagadó párja.",
-            "en": "Tampoco does stand before the verb here too, but that is not why it is used: it is not a word-order choice, it is the negative partner of también.",
-            "es": "Tampoco va delante del verbo también aquí, pero no es por eso: no es una cuestión de orden, es la pareja negativa de también.",
-            "de": "Tampoco steht hier zwar auch vor dem Verb, aber nicht deshalb: Es ist keine Wortstellungsfrage, sondern das negative Gegenstück zu también."
+            "hu": "Itt nincs se személy, se dolog, amit tagadnánk: a tampoco egy korábbi tagadáshoz csatlakozik (én sem).",
+            "en": "There is no person or thing being negated here: tampoco joins an earlier negation (me neither).",
+            "es": "Aquí no se niega ninguna persona ni cosa: tampoco se suma a una negación anterior (yo tampoco).",
+            "de": "Hier wird weder eine Person noch eine Sache verneint: tampoco schließt sich an eine frühere Verneinung an (ich auch nicht)."
           }
         },
         {
