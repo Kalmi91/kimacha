@@ -103,6 +103,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'subjuntivo-disparadores': 'core',
   'ojala-quizas': 'exam',
   'temporales-subjuntivo': 'core',
+  'subjuntivo-relativo': 'exam',
   'condicional-simple': 'core-plus',
   'condicionales-tipo1': 'core',
   pluscuamperfecto: 'exam',
@@ -494,6 +495,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'b1-subjuntivo',
     title: { hu: 'Cuando + kötőmód', en: 'Cuando + subjunctive', es: 'Cuando + subjuntivo', de: 'Cuando + Subjuntivo' },
     blurb: { hu: 'Jövőbeli időhatározó: cuando llegues, no llegas.', en: 'Future time clauses: cuando llegues, not llegas.', es: 'Temporales de futuro: cuando llegues.', de: 'Zukünftige Temporalsätze: cuando llegues.' },
+  },
+  {
+    id: 'subjuntivo-relativo',
+    level: 'B1',
+    unit: 'b1-subjuntivo',
+    title: { hu: 'Kötőmód a vonatkozó mondatban', en: 'Subjunctive in relative clauses', es: 'Subjuntivo en oraciones de relativo', de: 'Subjuntivo im Relativsatz' },
+    blurb: { hu: 'Busco un departamento que tenga balcón: ismeretlen előzmény, kötőmód.', en: 'Busco un departamento que tenga balcón: unknown antecedent, subjunctive.', es: 'Busco un departamento que tenga balcón: antecedente desconocido, subjuntivo.', de: 'Busco un departamento que tenga balcón: unbekanntes Bezugswort, Subjuntivo.' },
   },
   {
     id: 'condicional-simple',
