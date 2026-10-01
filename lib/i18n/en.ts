@@ -318,7 +318,7 @@ export default {
     scheduleNext: (when: string) => `Next refresh: ${when}`,
     scheduleNextToday: (time: string) => `today ${time}`,
     scheduleNextTomorrow: (time: string) => `tomorrow ${time}`,
-    scheduleNextDays: (days: number) => `in ${days} days`,
+    scheduleNextDays: (days: number) => `in ${days} ${days === 1 ? 'day' : 'days'}`,
     scheduleEmpty: 'Nothing put away yet, learn a few words!',
   },
   // PLAN-pcic step 5: the PCIC tab (English -> Spanish typing, Anki buttons).
@@ -358,7 +358,7 @@ export default {
     // FB350/5. commit: a gombsor intervallum-előnézete (korábban lib/sm2.ts
     // sm2Preview-ban magyarul égetve be, minden nyelven).
     intervalToday: '<1 day',
-    intervalDays: (n: number) => `${n} days`,
+    intervalDays: (n: number) => `${n} ${n === 1 ? 'day' : 'days'}`,
     // PLAN-play 10. lépés (s1/s2, anki-ui-terv.html): szint-választó + Next.
     chooseLevel: 'Choose level',
     next: (label: string) => `Next → ${label}`,
