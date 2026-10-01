@@ -495,7 +495,7 @@
       "options": [
         "he visto",
         "había visto",
-        "vi"
+        "había vido"
       ],
       "correct": 1,
       "why": {
@@ -511,11 +511,11 @@
           "es": "He visto es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (antes de ese viaje); correctamente: No había visto nunca el mar antes de ese viaje.",
           "de": "He visto ist das Perfekt (perfecto): es hängt mit der Gegenwart zusammen, der Satz verweist aber auf einen Moment in der Vergangenheit (antes de ese viaje); richtig: No había visto nunca el mar antes de ese viaje."
         },
-        "vi": {
-          "hu": "Vi egyetlen lezárt eseményt mondana; a nunca és az antes de ese viaje viszont a múltbeli pillanatig tartó tapasztalatot jelöli; helyesen: No había visto nunca el mar antes de ese viaje.",
-          "en": "Vi would name one finished event; nunca and antes de ese viaje mark an experience up to a past moment; correctly: No había visto nunca el mar antes de ese viaje.",
-          "es": "Vi nombraría un solo hecho terminado; nunca y antes de ese viaje marcan una experiencia hasta un momento pasado; correctamente: No había visto nunca el mar antes de ese viaje.",
-          "de": "Vi würde ein einzelnes abgeschlossenes Ereignis nennen; nunca und antes de ese viaje markieren eine Erfahrung bis zu einem vergangenen Moment; richtig: No había visto nunca el mar antes de ese viaje."
+        "había vido": {
+          "hu": "A vido nem létezik: a ver participiója rendhagyó (visto); helyesen: No había visto nunca el mar antes de ese viaje.",
+          "en": "Vido does not exist: the participle of ver is irregular (visto); correctly: No había visto nunca el mar antes de ese viaje.",
+          "es": "Vido no existe: el participio de ver es irregular (visto); correctamente: No había visto nunca el mar antes de ese viaje.",
+          "de": "Vido gibt es nicht: das Partizip von ver ist unregelmäßig (visto); richtig: No había visto nunca el mar antes de ese viaje."
         }
       },
       "examples": [
@@ -629,7 +629,7 @@
       "id": "plu-ch-07",
       "sentence": "Cuando llegué, mi madre ya ___ la cena.",
       "options": [
-        "preparaba",
+        "ha preparado",
         "preparó",
         "había preparado"
       ],
@@ -641,11 +641,11 @@
         "de": "Ya markiert, dass es vor meiner Ankunft schon fertig war: había preparado."
       },
       "wrong": {
-        "preparaba": {
-          "hu": "A preparaba folyamatos múlt: azt írja le, hogy épp készítette; a ya viszont azt mondja, hogy már kész volt; helyesen: Cuando llegué, mi madre ya había preparado la cena.",
-          "en": "Preparaba is the imperfect: it says she was in the middle of preparing it; ya says it was already done; correctly: Cuando llegué, mi madre ya había preparado la cena.",
-          "es": "Preparaba es el imperfecto: dice que estaba en proceso; ya dice que estaba terminado; correctamente: Cuando llegué, mi madre ya había preparado la cena.",
-          "de": "Preparaba ist das Imperfekt: es sagt, dass sie gerade dabei war; ya sagt, dass es schon fertig war; richtig: Cuando llegué, mi madre ya había preparado la cena."
+        "ha preparado": {
+          "hu": "Ha preparado a közelmúlt (perfecto): a mához kötődik, a mondat viszont múltbeli pillanatra utal (cuando llegué); helyesen: Cuando llegué, mi madre ya había preparado la cena.",
+          "en": "Ha preparado is the present perfect: it is tied to the present, but the sentence points to a moment in the past (cuando llegué); correctly: Cuando llegué, mi madre ya había preparado la cena.",
+          "es": "Ha preparado es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (cuando llegué); correctamente: Cuando llegué, mi madre ya había preparado la cena.",
+          "de": "Ha preparado ist das Perfekt (perfecto): es hängt mit der Gegenwart zusammen, der Satz verweist aber auf einen Moment in der Vergangenheit (cuando llegué); richtig: Cuando llegué, mi madre ya había preparado la cena."
         },
         "preparó": {
           "hu": "A preparó külön, lezárt eseményt mondana a megérkezéskor vagy utána; itt a vacsora már korábban elkészült; helyesen: Cuando llegué, mi madre ya había preparado la cena.",
@@ -665,7 +665,7 @@
       "options": [
         "había escrito",
         "ha escrito",
-        "escribió"
+        "había escribido"
       ],
       "correct": 0,
       "why": {
@@ -681,11 +681,11 @@
           "es": "Ha escrito es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (dijo); correctamente: Ella dijo que ya había escrito la carta.",
           "de": "Ha escrito ist das Perfekt (perfecto): es hängt mit der Gegenwart zusammen, der Satz verweist aber auf einen Moment in der Vergangenheit (dijo); richtig: Ella dijo que ya había escrito la carta."
         },
-        "escribió": {
-          "hu": "Az escribió lezárt eseményt neveznél meg, de a levél megírása a dijo előtt történt, és ezt ilyenkor a régmúlt jelöli; helyesen: Ella dijo que ya había escrito la carta.",
-          "en": "Escribió names a finished event, but the letter was written before dijo, and the past perfect normally marks that; correctly: Ella dijo que ya había escrito la carta.",
-          "es": "Escribió nombra un hecho terminado, pero la carta se escribió antes de dijo, y eso lo marca normalmente el pluscuamperfecto; correctamente: Ella dijo que ya había escrito la carta.",
-          "de": "Escribió nennt ein abgeschlossenes Ereignis, aber der Brief wurde vor dijo geschrieben, und das markiert normalerweise das Plusquamperfekt; richtig: Ella dijo que ya había escrito la carta."
+        "había escribido": {
+          "hu": "Az escribido nem létezik: az escribir participiója rendhagyó (escrito); helyesen: Ella dijo que ya había escrito la carta.",
+          "en": "Escribido does not exist: the participle of escribir is irregular (escrito); correctly: Ella dijo que ya había escrito la carta.",
+          "es": "Escribido no existe: el participio de escribir es irregular (escrito); correctamente: Ella dijo que ya había escrito la carta.",
+          "de": "Escribido gibt es nicht: das Partizip von escribir ist unregelmäßig (escrito); richtig: Ella dijo que ya había escrito la carta."
         }
       },
       "examples": [
@@ -799,7 +799,7 @@
       "id": "plu-ch-12",
       "sentence": "Mis amigos ya ___ cuando llegamos a la fiesta.",
       "options": [
-        "se iban",
+        "se han ido",
         "se habían ido",
         "se había ido"
       ],
@@ -811,11 +811,11 @@
         "de": "Mis amigos ist Plural, und ya markiert ein Ereignis vor llegamos: se habían ido."
       },
       "wrong": {
-        "se iban": {
-          "hu": "A se iban folyamatos múlt: azt írja le, hogy épp indulóban voltak; a ya viszont azt mondja, hogy már elmentek; helyesen: Mis amigos ya se habían ido cuando llegamos a la fiesta.",
-          "en": "Se iban is the imperfect: it says they were just leaving; ya says they had already gone; correctly: Mis amigos ya se habían ido cuando llegamos a la fiesta.",
-          "es": "Se iban es el imperfecto: dice que se estaban yendo; ya dice que ya se habían ido; correctamente: Mis amigos ya se habían ido cuando llegamos a la fiesta.",
-          "de": "Se iban ist das Imperfekt: es sagt, dass sie gerade gingen; ya sagt, dass sie schon weg waren; richtig: Mis amigos ya se habían ido cuando llegamos a la fiesta."
+        "se han ido": {
+          "hu": "Se han ido a közelmúlt (perfecto): a mához kötődik, a mondat viszont múltbeli pillanatra utal (cuando llegamos); helyesen: Mis amigos ya se habían ido cuando llegamos a la fiesta.",
+          "en": "Se han ido is the present perfect: it is tied to the present, but the sentence points to a moment in the past (cuando llegamos); correctly: Mis amigos ya se habían ido cuando llegamos a la fiesta.",
+          "es": "Se han ido es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (cuando llegamos); correctamente: Mis amigos ya se habían ido cuando llegamos a la fiesta.",
+          "de": "Se han ido ist das Perfekt (perfecto): es hängt mit der Gegenwart zusammen, der Satz verweist aber auf einen Moment in der Vergangenheit (cuando llegamos); richtig: Mis amigos ya se habían ido cuando llegamos a la fiesta."
         },
         "se había ido": {
           "hu": "Se había ido nem illik ide: egyes szám, a mis amigos viszont többes szám; a megfelelő alak: se habían ido; helyesen: Mis amigos ya se habían ido cuando llegamos a la fiesta.",
@@ -1026,7 +1026,7 @@
             "de": "he + Partizip = mit der Gegenwart verbunden"
           },
           "wrong": {
-            "hu": "A he + participio a mai napig tartó tapasztalatot mond: nunca he viajado = ma sem utaztam még; itt a hasta ese día múltbeli határpontot ad.",
+            "hu": "A he + participio a mai napig tartó tapasztalatot mond: nunca he viajado = eddig még sosem utaztam; itt a hasta ese día múltbeli határpontot ad.",
             "en": "He + participle gives an experience up to today: nunca he viajado = I have never travelled so far; here hasta ese día gives a limit in the past.",
             "es": "He + participio da una experiencia hasta hoy: nunca he viajado; aquí hasta ese día da un límite en el pasado.",
             "de": "He + Partizip nennt eine Erfahrung bis heute: nunca he viajado = ich bin bis jetzt noch nie gereist; hier setzt hasta ese día eine Grenze in der Vergangenheit."
