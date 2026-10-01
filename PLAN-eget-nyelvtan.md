@@ -148,6 +148,26 @@ Munkahely és tiltott fájlok: mint a javítás-briefben. A recept a skill „Eg
 
 ---
 
+## Sáv B (2026-10-01, párhuzamos második sáv, Kálmán 00:20: „ha kell indíts több subagentet, hogy párhuzamosan tudjanak dolgozni”)
+
+Munkahely `C:\AI\kimacha-wt-eget-nyelvtan-b`, ág `nyelvtan-b` (379a915-ről). Az A sáv (`nyelvtan`, `C:\AI\kimacha-wt-eget-nyelvtan`) a J1-F4 + 1-9. tételeken dolgozik; ez a sáv a queue végét viszi, hogy ne érjenek egymáshoz. Mindkét sáv a `lib/games/content/es.ts`-t és a darabszám-tesztet bővíti: ezt a reggeli összefésülés oldja meg (`nyelvtan-b` → `nyelvtan`), éjjel nincs rebase, nincs push ebből a sávból.
+A „BRIEF új lecke (2026-10-01 …)” érvényes, a munkahely helyett ez a worktree. A cap mindkét sávra: 09:00 CDMX (Kálmán 00:20: „a”).
+
+- [ ] B1. `ojala-quizas` (B1 exam, SUBJ) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit
+- [ ] B2. `relativos` (B1 full) új lecke → kész, ha: ugyanaz
+- [ ] B3. `perifrasis` (B1 full) új lecke → kész, ha: ugyanaz
+- [ ] B4. `pluscuamperfecto` (B1 full) új lecke → kész, ha: ugyanaz
+- [ ] B5. `indefinidos` (A2 full) új lecke → kész, ha: ugyanaz
+- [ ] B6. `gerundio-participio-construcciones` (B2 exam) új lecke → kész, ha: ugyanaz
+- [ ] B7. `lo-neutro` (B2 exam) új lecke → kész, ha: ugyanaz
+- [ ] B8. `pasiva-ser-participio` (B2 exam) új lecke → kész, ha: ugyanaz
+- [ ] B9. `subjuntivo-perfecto` (B2 exam, SUBJ) új lecke → kész, ha: ugyanaz
+- [ ] B10. `concesivas` (B2 full) új lecke → kész, ha: ugyanaz
+- [ ] B11. `futuro-condicional-perfecto` (C1 exam) új lecke → kész, ha: ugyanaz
+- [ ] B12. `leismo-laismo` (C1 exam) új lecke → kész, ha: ugyanaz
+- [ ] B13. `probabilidad-con-tiempos` (C1 exam) új lecke → kész, ha: ugyanaz
+- [ ] B14. `relativos-complejos` (C1 exam) új lecke → kész, ha: ugyanaz
+
 ## BRIEF ir-a-infinitivo (1. lépés, NY6a)
 
 Worktree gyökér: `/home/kalmi/ai/kimacha-wt-eget-nyelvtan`. Minden `node` / `npx` innen fut.
