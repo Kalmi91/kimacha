@@ -173,7 +173,10 @@ A „BRIEF új lecke (2026-10-01 …)” érvényes, a munkahely helyett ez a wo
   - minta: `¿Quieres ___ de beber?` → algo
   - minta: `No veo a ___ en la calle.` → nadie
   - minta: `¿Hay mesas libres? No hay ___.` → ninguna (nem: ninguno)
-- [ ] B6. `gerundio-participio-construcciones` (B2 exam) új lecke → kész, ha: ugyanaz
+- [x] B6. `gerundio-participio-construcciones` (B2 exam) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): gerundio-participio-construcciones lesson (nyelvtan)` (01:28; audit 0 P1/0 P2, jest 1631 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform (nem igeidős téma); glossary: siendo, leyendo, leídos)
+  - minta: `Una vez ___ las puertas, entramos.` → abiertas (nem: abiertos)
+  - minta: `Salió de casa y ___ a la oficina.` → llegó (nem: llegando)
+  - minta: `Llevo ___ (ver) tres películas.` → vistas
 - [ ] B7. `lo-neutro` (B2 exam) új lecke → kész, ha: ugyanaz
 - [ ] B8. `pasiva-ser-participio` (B2 exam) új lecke → kész, ha: ugyanaz
 - [ ] B9. `subjuntivo-perfecto` (B2 exam, SUBJ) új lecke → kész, ha: ugyanaz
