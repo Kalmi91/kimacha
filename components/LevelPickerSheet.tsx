@@ -1,4 +1,5 @@
-import { Modal, Pressable, Text, View, StyleSheet } from 'react-native';
+import { Modal, Pressable, View, StyleSheet } from 'react-native';
+import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
 import { t } from '@/lib/i18n';
@@ -48,7 +49,7 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
         {/* A lap tartalma saját Pressable-lel nyeli el a koppintást, hogy a
             sorok közti üres terület ne zárja be a lapot (mint az overlay). */}
         <Pressable style={[styles.sheet, { backgroundColor: colors.card }, g.brutal && [styles.brutalSheet, { borderColor: g.ink }]]} onPress={() => {}}>
-          <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{title}</Text>
+          <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{title}</Text>
           {levels.map((lvl) => {
             const total = pcicItemsForViewLevel(lvl).length;
             const { introduced } = levelProgressView(cards, lvl, total);

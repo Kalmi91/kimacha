@@ -1,9 +1,11 @@
 import { type ReactNode } from 'react';
-import { StyleSheet, View, Text, Pressable } from 'react-native';
+import { StyleSheet, View, Pressable } from 'react-native';
+import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, Sticker } from '@/components/grammar/Brutal';
+import { SkinCardFrame } from '@/components/skins/Slots';
 
 type ColorScheme = (typeof Colors)['light'];
 
@@ -21,7 +23,16 @@ type Props = {
   children: ReactNode;
 };
 
-export default function CardShell({ compact, chip, chipTone = 'neutral', onPress, colors, children }: Props) {
+// PLAN-temak 2A: a téma dísz-kerete (CardFrame) a kártya körül; dísz nélkül az alap kártya.
+export default function CardShell(props: Props) {
+  return (
+    <SkinCardFrame>
+      <CardBody {...props} />
+    </SkinCardFrame>
+  );
+}
+
+function CardBody({ compact, chip, chipTone = 'neutral', onPress, colors, children }: Props) {
   const g = useGrammarColors();
   // NY19: brutalista palettán BrutalBox, a chip matrica (new = b kitöltés).
   if (g.brutal) {

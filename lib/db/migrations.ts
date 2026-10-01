@@ -212,7 +212,9 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
       last_sync_date TEXT,
       last_open_date TEXT,
       status_bar_tint INTEGER,
-      grammar_palette TEXT
+      grammar_palette TEXT,
+      skin TEXT,
+      skin_mix TEXT
     );
     CREATE TABLE IF NOT EXISTS learn_settings (
       pair TEXT PRIMARY KEY,
@@ -331,6 +333,13 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
   // Migration: app-wide color palette id (DBs created before the neon UI, NY11).
   try {
     await db.execAsync('ALTER TABLE user_meta ADD COLUMN grammar_palette TEXT');
+  } catch {}
+  // Migration: chosen theme + "Saját mix" JSON (DBs created before the theme engine, PLAN-temak 2A).
+  try {
+    await db.execAsync('ALTER TABLE user_meta ADD COLUMN skin TEXT');
+  } catch {}
+  try {
+    await db.execAsync('ALTER TABLE user_meta ADD COLUMN skin_mix TEXT');
   } catch {}
   // Migration: daily new-word budget columns (FB77). daily_new_limit is the
   // standing setting; new_bonus/new_bonus_date carry the "+5 new words" taps,

@@ -31,6 +31,9 @@ describe('Onboarding, neo-brutalista (NY19)', () => {
     fireEvent.press(view.getByTestId('onboarding-lang-en'));
     expect(view.queryByTestId('onboarding-start')).toBeTruthy();
     fireEvent.press(view.getByTestId('onboarding-start'));
+    // PLAN-temak 4C: bevezető + téma-lépés a szint előtt.
+    fireEvent.press(view.getByTestId('onboarding-intro-start'));
+    fireEvent.press(view.getByTestId('onboarding-theme-next'));
     expect(view.queryByText('Choose level')).toBeTruthy();
     view.unmount();
   });

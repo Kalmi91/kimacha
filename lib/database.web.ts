@@ -8,6 +8,7 @@ import { pcicItemsForLevel, type PcicLevel, type PcicViewLevel } from '@/data/pc
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
 import type { MistakeBatchRow } from './mistakes/deck';
 import { DEFAULT_GRAMMAR_PALETTE, isGrammarPaletteId, type GrammarPaletteId } from '@/constants/GrammarPalettes';
+import { isSkinSelection, parseSkinMix, type SkinMix, type SkinSelection } from '@/constants/Skins';
 
 export interface DB {
   getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
@@ -19,6 +20,11 @@ export interface DB {
   setStatusBarTint(index: number): Promise<void>;
   getGrammarPalette(): Promise<GrammarPaletteId>;
   setGrammarPalette(id: GrammarPaletteId): Promise<void>;
+  // PLAN-temak 2A: a választott téma és a Saját mix (null = még nincs választás; setSkin(null) visszaállít).
+  getSkin(): Promise<SkinSelection | null>;
+  setSkin(id: SkinSelection | null): Promise<void>;
+  getSkinMix(): Promise<SkinMix | null>;
+  setSkinMix(mix: SkinMix): Promise<void>;
   // PLAN-play 12. lépés: napi streak-írás visszakerült, a PCIC-értékelés hívja.
   updateStreak(): Promise<void>;
   getStrictAccents(): Promise<boolean>;
@@ -134,6 +140,15 @@ class MemoryDB implements DB {
 
   async getGrammarPalette(): Promise<GrammarPaletteId> { return this.grammarPalette; }
   async setGrammarPalette(id: GrammarPaletteId): Promise<void> { this.grammarPalette = id; }
+
+  // PLAN-temak 2A: választott téma + Saját mix (memory mirror of user_meta.skin / skin_mix).
+  private skin: SkinSelection | null = null;
+  private skinMix: SkinMix | null = null;
+
+  async getSkin(): Promise<SkinSelection | null> { return this.skin; }
+  async setSkin(id: SkinSelection | null): Promise<void> { this.skin = id; }
+  async getSkinMix(): Promise<SkinMix | null> { return this.skinMix; }
+  async setSkinMix(mix: SkinMix): Promise<void> { this.skinMix = mix; }
 
   // Play-vágás 7. lépés: getWordsOnly/setWordsOnly and getRandomTopics/
   // setRandomTopics are gone (no caller since the Learn/Topics tabs left),
@@ -394,7 +409,7 @@ class MemoryDB implements DB {
         onboarding: this.onboarding ? [{ id: 1, ...this.onboarding }] : [],
         streak: [{ id: 1, ...this.streak }],
         user_level: [...this.userLevels].map(([pair, l]) => ({ pair, ...l })),
-        user_meta: [{ id: 1, user_id: this.meta.userId, first_use_date: this.meta.firstUseDate, last_sync_date: this.meta.lastSyncDate, grammar_palette: this.grammarPalette }],
+        user_meta: [{ id: 1, user_id: this.meta.userId, first_use_date: this.meta.firstUseDate, last_sync_date: this.meta.lastSyncDate, grammar_palette: this.grammarPalette, skin: this.skin, skin_mix: this.skinMix ? JSON.stringify(this.skinMix) : null }],
       },
     };
   }
@@ -445,6 +460,8 @@ class MemoryDB implements DB {
     const um = t.user_meta[0];
     if (um) this.meta = { userId: um.user_id, firstUseDate: um.first_use_date, lastSyncDate: um.last_sync_date };
     this.grammarPalette = isGrammarPaletteId(um?.grammar_palette) ? um.grammar_palette : DEFAULT_GRAMMAR_PALETTE;
+    this.skin = isSkinSelection(um?.skin) ? um.skin : null;
+    this.skinMix = parseSkinMix(um?.skin_mix);
     this.applyWordMerges();
   }
 

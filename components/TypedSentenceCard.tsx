@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { ScrollView, StyleSheet, Text, TextInput, Keyboard } from 'react-native';
+import { ScrollView, StyleSheet, TextInput, Keyboard } from 'react-native';
+import { Text } from '@/components/KText';
 import { speak, stop as stopSpeech } from '@/lib/speech';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';

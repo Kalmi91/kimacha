@@ -9,6 +9,7 @@ import type { MistakeBatchRow } from './mistakes/deck';
 import { runMigrations, applyWordMerges } from './db/migrations';
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
 import { DEFAULT_GRAMMAR_PALETTE, isGrammarPaletteId, type GrammarPaletteId } from '@/constants/GrammarPalettes';
+import { isSkinSelection, parseSkinMix, type SkinMix, type SkinSelection } from '@/constants/Skins';
 
 // PLAN-play 10. lépés: egy meglévő telepítésen a haladás ma "b1-..." id-kkel
 // forog, ezért az oszlop hiánya (régi DB) B1-re esik vissza, nem A1-re.
@@ -26,6 +27,11 @@ export interface DB {
   setStatusBarTint(index: number): Promise<void>;
   getGrammarPalette(): Promise<GrammarPaletteId>;
   setGrammarPalette(id: GrammarPaletteId): Promise<void>;
+  // PLAN-temak 2A: a választott téma és a Saját mix (null = még nincs választás; setSkin(null) visszaállít).
+  getSkin(): Promise<SkinSelection | null>;
+  setSkin(id: SkinSelection | null): Promise<void>;
+  getSkinMix(): Promise<SkinMix | null>;
+  setSkinMix(mix: SkinMix): Promise<void>;
   // PLAN-play 12. lépés: napi streak-írás visszakerült (a Tanulás fül vitte
   // el, a PCIC-értékelés az egyetlen hívó innentől, lásd app/(tabs)/index.tsx).
   updateStreak(): Promise<void>;
@@ -158,6 +164,31 @@ class SQLiteDB implements DB {
   async setGrammarPalette(id: GrammarPaletteId): Promise<void> {
     const db = await this.open();
     await db.runAsync('UPDATE user_meta SET grammar_palette = ? WHERE id = 1', [id]);
+  }
+
+  // PLAN-temak 2A: a választott téma. NULL = a felhasználó még nem választott: a hívó
+  // (lib/ThemeContext.tsx) a mentett paletta szerint dönt (classic → classic, minden más → brutal).
+  async getSkin(): Promise<SkinSelection | null> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT skin FROM user_meta WHERE id = 1');
+    return isSkinSelection(row?.skin) ? row.skin : null;
+  }
+
+  async setSkin(id: SkinSelection | null): Promise<void> {
+    const db = await this.open();
+    await db.runAsync('UPDATE user_meta SET skin = ? WHERE id = 1', [id]);
+  }
+
+  // A Saját mix négy forrása JSON-ként; érvénytelen / hiányzó érték = null.
+  async getSkinMix(): Promise<SkinMix | null> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT skin_mix FROM user_meta WHERE id = 1');
+    return parseSkinMix(row?.skin_mix);
+  }
+
+  async setSkinMix(mix: SkinMix): Promise<void> {
+    const db = await this.open();
+    await db.runAsync('UPDATE user_meta SET skin_mix = ? WHERE id = 1', [JSON.stringify(mix)]);
   }
 
   // PLAN-play 10. lépés: a kiválasztott PCIC szint. PLAN-ketiranyu 4. lépés

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { StyleSheet, Text, View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard } from 'react-native';
+import { StyleSheet, View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard } from 'react-native';
+import { Text } from '@/components/KText';
 import { useFocusEffect } from 'expo-router';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 
@@ -28,6 +29,7 @@ import FeedbackButton from '@/components/FeedbackModal';
 import SpeakButton from '@/components/SpeakButton';
 import BadgeRow from '@/components/learn/BadgeRow';
 import CardShell from '@/components/learn/CardShell';
+import { SkinBackdrop, SkinHeader, SkinSpeakLabel, SkinWord } from '@/components/skins/Slots';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
@@ -410,7 +412,7 @@ export default function PcicScreen() {
   const levelChipLabel = level === 'A1+' || level === 'A2+' ? `${level.slice(0, 2)} +1` : level;
 
   const headerRow = (
-    <>
+    <SkinHeader>
     <View style={styles.headerRow}>
       <View style={styles.headerBadges}>
         {g.brutal ? (
@@ -450,7 +452,7 @@ export default function PcicScreen() {
       {s.pcic.badgeIntroducedToday(introducedTodayByKind.words, introducedTodayByKind.sentences, todayNewBudget)}
     </Text>
     <MistakesEntry colors={colors} />
-    </>
+    </SkinHeader>
   );
 
   if (loading) {
@@ -469,6 +471,7 @@ export default function PcicScreen() {
         style={[styles.container, { backgroundColor: colors.background }]}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
+        <SkinBackdrop />
         {headerRow}
         <LevelPickerSheet
           visible={levelSheetOpen}
@@ -530,6 +533,7 @@ export default function PcicScreen() {
     const introducedPct = newOrder.length > 0 ? (introducedCount / newOrder.length) * 100 : 0;
     return (
       <View style={[styles.container, styles.doneContainer, { backgroundColor: colors.background }]}>
+        <SkinBackdrop />
         {headerRow}
         <LevelPickerSheet
           visible={levelSheetOpen}
@@ -544,7 +548,7 @@ export default function PcicScreen() {
         <View style={styles.doneHeader}>
           {/* FB402: rajzolt jelvény (pipa + konfetti) a 🎉 emoji helyett, a neo-brutalista stílusban. */}
           <DoneBadge />
-          <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.pcic.doneTitle}</Text>
+          <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.pcic.doneTitle}</Text>
         </View>
         {g.brutal ? (
           <View style={styles.tilesRow}>
@@ -636,6 +640,7 @@ export default function PcicScreen() {
       style={[styles.container, { backgroundColor: colors.background }]}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
+      <SkinBackdrop />
       {headerRow}
       <LevelPickerSheet
         visible={levelSheetOpen}
@@ -675,10 +680,16 @@ export default function PcicScreen() {
             {/* FB404/405/413: a hosszú szó / mondat ("reason (justification)", "they are
                 going to arrive") a hosszától függő betűmérettel, összemenő szélességgel;
                 enélkül a natív sor kiterjedt a kártyán túlra és a bal széle levágódott. */}
-            <FitText base={32} maxLines={3} reserve={150} style={[styles.frontText, { color: colors.text }]}>
-              {promptSource ?? ''}
-            </FitText>
-            <SpeakButton onPress={() => speak(promptSource ?? '', speechLang(sourceLang))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
+            <SkinWord word={promptSource ?? ''} lang={sourceLang}>
+              <FitText variant="word" base={32} maxLines={3} reserve={150} style={[styles.frontText, { color: colors.text }]}>
+                {promptSource ?? ''}
+              </FitText>
+            </SkinWord>
+            {/* PLAN-temak 6E: a senior téma a 🔊 alá szöveges feliratot tesz (SkinSpeakLabel). */}
+            <View style={{ alignItems: 'center' }}>
+              <SpeakButton onPress={() => speak(promptSource ?? '', speechLang(sourceLang))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
+              <SkinSpeakLabel />
+            </View>
           </View>
           {/* PLAN-tobbjelentes 3. lépés (SZ8): kis mondat a szó alatt, ha a kérdésnek több
               jelentése van; a `*…*` jelölt rész félkövér + rózsaszín aláhúzás, a csillag nem
