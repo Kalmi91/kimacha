@@ -159,7 +159,7 @@
             {
               "es": "Mi hermano vive con nosotros.",
               "tr": {
-                "hu": "A fivérem velünk lakik.",
+                "hu": "A testvérem velünk lakik.",
                 "en": "My brother lives with us.",
                 "es": "Mi hermano vive con nosotros.",
                 "de": "Mein Bruder wohnt bei uns."
@@ -209,7 +209,7 @@
             "hu": "Az a mí, a ti, a ella, a nosotros, a ustedes kiemel, vagy ellentétet fejez ki. A rövid névmás (me, te, le, nos, les) viszont ott marad az igénél: a mí me gusta, nem a mí gusta.",
             "en": "A mí, a ti, a ella, a nosotros, a ustedes add emphasis or contrast. The short pronoun (me, te, le, nos, les) still stays next to the verb: a mí me gusta, not a mí gusta.",
             "es": "A mí, a ti, a ella, a nosotros, a ustedes dan énfasis o contraste. El pronombre corto (me, te, le, nos, les) sigue junto al verbo: a mí me gusta, no a mí gusta.",
-            "de": "A mí, a ti, a ella, a nosotros, a ustedes betonen oder setzen einen Gegensatz. Das kurze Pronomen (me, te, le, nos, les) bleibt trotzdem beim Verb: a mí me gusta, nicht a mí gusta."
+            "de": "A mí, a ti, a ella, a nosotros, a ustedes betonen oder drücken einen Gegensatz aus. Das kurze Pronomen (me, te, le, nos, les) bleibt trotzdem beim Verb: a mí me gusta, nicht a mí gusta."
           },
           "examples": [
             {
@@ -252,7 +252,7 @@
             {
               "es": "Este café es para mi hermano.",
               "tr": {
-                "hu": "Ez a kávé a fivéremnek való.",
+                "hu": "Ez a kávé a testvéremnek való.",
                 "en": "This coffee is for my brother.",
                 "es": "Este café es para mi hermano.",
                 "de": "Dieser Kaffee ist für meinen Bruder."
@@ -280,7 +280,7 @@
             {
               "es": "Mi hermano va al cine con ustedes.",
               "tr": {
-                "hu": "A fivérem veletek megy moziba.",
+                "hu": "A testvérem veletek megy moziba.",
                 "en": "My brother is going to the cinema with you.",
                 "es": "Mi hermano va al cine con ustedes.",
                 "de": "Mein Bruder geht mit euch ins Kino."
@@ -321,7 +321,7 @@
             {
               "es": "Este regalo es para mi hermano.",
               "tr": {
-                "hu": "Ez az ajándék a fivéremnek szól.",
+                "hu": "Ez az ajándék a testvéremnek szól.",
                 "en": "This gift is for my brother.",
                 "es": "Este regalo es para mi hermano.",
                 "de": "Dieses Geschenk ist für meinen Bruder."
@@ -560,10 +560,10 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A con után a te névmás egy szóvá olvad: contigo. Anát szólítom meg, vele (veled) akarok tanulni: Ana, hoy quiero estudiar contigo.",
-        "en": "After con the pronoun for you merges into one word: contigo. I am talking to Ana, and I want to study with her (with you): Ana, hoy quiero estudiar contigo.",
-        "es": "Después de con el pronombre de tú se funde en una sola palabra: contigo. Le hablo a Ana y quiero estudiar con ella (contigo): Ana, hoy quiero estudiar contigo.",
-        "de": "Nach con verschmilzt das Pronomen für du zu einem Wort: contigo. Ich spreche mit Ana und will mit ihr (mit dir) lernen: Ana, hoy quiero estudiar contigo."
+        "hu": "A con után a te névmás egy szóvá olvad: contigo. Anát szólítom meg, és veled akarok tanulni: Ana, hoy quiero estudiar contigo.",
+        "en": "After con the pronoun for you merges into one word: contigo. I am talking to Ana, and I want to study with you: Ana, hoy quiero estudiar contigo.",
+        "es": "Después de con el pronombre de tú se funde en una sola palabra: contigo. Le hablo a Ana y quiero estudiar contigo: Ana, hoy quiero estudiar contigo.",
+        "de": "Nach con verschmilzt das Pronomen für du zu einem Wort: contigo. Ich spreche Ana an und will mit dir lernen: Ana, hoy quiero estudiar contigo."
       },
       "wrong": {
         "con ti": {
@@ -596,7 +596,7 @@
       "why": {
         "hu": "A sin után az elöljáró utáni alak áll: az én helyett mí, ékezettel. Sin mí = nélkülem: Mi hermana nunca come sin mí.",
         "en": "After sin the form used after a preposition appears: mí instead of yo, with an accent. Sin mí = without me: Mi hermana nunca come sin mí.",
-        "es": "Después de sin va la forma de preposición: mí en lugar de yo, con tilde. Sin mí = sin yo: Mi hermana nunca come sin mí.",
+        "es": "Después de sin va la forma de preposición: mí en lugar de yo, con tilde: sin mí, no sin yo. Mi hermana nunca come sin mí.",
         "de": "Nach sin steht die Form nach der Präposition: mí statt yo, mit Akzent. Sin mí = ohne mich: Mi hermana nunca come sin mí."
       },
       "wrong": {
@@ -620,7 +620,7 @@
     },
     {
       "id": "pp-05",
-      "sentence": "Ana es mi amiga. El sábado voy al cine con ___.",
+      "sentence": "Ana es mi amiga. Voy al cine con ___ porque es divertida.",
       "options": [
         "ella",
         "él",
@@ -790,7 +790,7 @@
     },
     {
       "id": "pp-10",
-      "sentence": "A ti te gusta el té, pero a ___ me gusta el café.",
+      "sentence": "A ti te gusta el té; a ___ me gusta el café.",
       "options": [
         "mí",
         "yo",
@@ -824,7 +824,7 @@
     },
     {
       "id": "pp-11",
-      "sentence": "¿A ustedes les gusta bailar? A ___ sí, a mi hermano no.",
+      "sentence": "¿A ustedes les gusta bailar? Sí, a ___ nos gusta mucho.",
       "options": [
         "nosotros",
         "nos",
@@ -1226,7 +1226,7 @@
       "es": "Esta carta es para mi hermano.",
       "target": "mi",
       "tr": {
-        "hu": "Ez a levél a fivéremnek szól.",
+        "hu": "Ez a levél a testvéremnek szól.",
         "en": "This letter is for my brother.",
         "es": "Esta carta es para mi hermano.",
         "de": "Dieser Brief ist für meinen Bruder."
