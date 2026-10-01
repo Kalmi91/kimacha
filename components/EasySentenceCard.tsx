@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { speak as speakIn, stop as stopSpeech } from '@/lib/speech';
 import Colors from '@/constants/Colors';
@@ -16,9 +16,12 @@ interface Props {
   onResult: (correct: boolean) => void;
   // FB118: speech locale of the learned language, so a placed tile can be heard.
   speechLocale?: string;
+  // PLAN-fb1001 10. lépés (FB434): a feladat-mondat (a kiinduló nyelven) a kártya megnyitásakor
+  // elhangzik, mint a szókártya promptja (FB319).
+  sourceSpeechLocale?: string;
 }
 
-export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, speechLocale }: Props) {
+export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, speechLocale, sourceSpeechLocale }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -33,6 +36,11 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   const [placed, setPlaced] = useState<number[]>([]);
   const [result, setResult] = useState<'correct' | 'wrong' | null>(null);
   const targetSentence = targetWords.join(' ');
+
+  useEffect(() => {
+    if (sourceSpeechLocale) speakIn(sourceSentence, sourceSpeechLocale);
+    return () => stopSpeech();
+  }, [sourceSentence, sourceSpeechLocale]);
 
   const usedSet = new Set(placed);
 

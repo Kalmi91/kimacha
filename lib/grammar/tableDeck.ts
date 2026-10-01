@@ -13,10 +13,10 @@
 // without timers.
 
 import type { GrammarGapItem, GrammarItem, GrammarMarkItem, GrammarTopicData } from '../games/content';
-import { isLessonV2, isMatchItem, isTransformItem, isWhyItem } from '../games/content';
-import { isConjugationTable, isMeaningTable } from './tableShape';
+import { isLessonV2, isMatchItem, isWhyItem } from '../games/content';
+import { isConjugationTable, isMeaningTable, isPersonTable } from './tableShape';
 import { DEFAULT_AGAIN_DELAY_SEC } from '../pcicSession';
-import type { ExamplePair, Lang4, LessonV2 } from './lessonTypes';
+import type { ExamplePair, LessonV2 } from './lessonTypes';
 import { PCIC_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
 import { normalizeWordToken, type Level } from '@/data/words';
 import { hashString, shuffleArray } from '../shuffle';
@@ -99,7 +99,9 @@ export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined)
   const seen = new Set<string>();
   for (const block of lesson.body) {
     if (block.kind !== 'table') continue;
-    if (isConjugationTable(block.header, block.rows)) {
+    // PLAN-fb1001 11. lépés: a személy-tábla (Persona -> ir a + infinitivo, Sujeto -> névmás)
+    // ugyanúgy cella-kártyákat ad, mint a ragozási; a "verb" itt az oszlop-fejléc.
+    if (isConjugationTable(block.header, block.rows) || isPersonTable(block.header, block.rows)) {
       const verbHeaders = block.header.slice(1);
       block.rows.forEach((row, ri) => {
         const person = row[0];
@@ -307,82 +309,43 @@ function pcicWordIndex(level: Level): Map<string, { es: string; en: string }> {
   return index;
 }
 
-function pushLang4(out: string[], text: Lang4 | undefined): void {
-  if (text?.es) out.push(text.es);
-}
-
-function pushExamples(out: string[], examples: ExamplePair[] | undefined): void {
-  for (const ex of examples ?? []) out.push(ex.es);
-}
-
-// A lecke minden spanyol példamondata: body-blokkok (a táblák celláit
-// tableCellsForLesson már lefedi, itt kimaradnak) + items (form-nak nincs
-// önálló "es" mezője - verb/person/answer kategória-címke is lehet, pl.
-// "Adverbio (-mente)" -, ezért az marad ki egyedüliként).
-function lessonSentences(lesson: LessonV2): string[] {
-  const out: string[] = [];
+// PLAN-fb1001 16. lépés (FB437/FB438, Kálmán "b" döntése 2026-10-01): a szó-pakli csak a
+// lecke TÁBLÁZATAINAK szavaiból épül (minden `table` blokk minden cellájának tokenjei, az
+// első előfordulás sorrendjében), nem a szószedetből és a példamondatok szavaiból.
+// A szeparátorok (szóköz, "/", "+", zárójel) tokenekre vágnak ("él/ella/usted", "ir a + inf.").
+function tableWordKeys(lesson: LessonV2): string[] {
+  const keys: string[] = [];
+  const seen = new Set<string>();
   for (const block of lesson.body) {
-    switch (block.kind) {
-      case 'text':
-      case 'tip':
-        pushLang4(out, block.text);
-        break;
-      case 'list':
-        for (const item of block.items) {
-          pushLang4(out, item.text);
-          pushExamples(out, item.examples);
+    if (block.kind !== 'table') continue;
+    for (const row of block.rows) {
+      for (const cell of row) {
+        for (const token of cell.split(/[\s/+()]+/)) {
+          const key = normalizeWordToken(token);
+          if (!key || seen.has(key)) continue;
+          seen.add(key);
+          keys.push(key);
         }
-        break;
-      case 'usage':
-        for (const point of block.points) {
-          pushLang4(out, point.text);
-          pushExamples(out, point.examples);
-        }
-        break;
-      case 'examples':
-        pushExamples(out, block.examples);
-        break;
-      case 'contrast':
-        for (const pair of block.pairs) {
-          out.push(pair.a, pair.b);
-          pushLang4(out, pair.note);
-          pushExamples(out, pair.examples);
-        }
-        break;
-      case 'table':
-        break;
+      }
     }
   }
-  for (const item of lesson.items as GrammarItem[]) {
-    if (item.kind === undefined || item.kind === 'gap') {
-      const gap = item as GrammarGapItem;
-      out.push(gap.sentence, ...gap.examples);
-    } else if (item.kind === 'mark') {
-      const mark = item as GrammarMarkItem;
-      out.push(mark.sentence, ...mark.examples);
-    } else if (isMatchItem(item)) {
-      for (const pair of item.pairs) out.push(pair.es);
-    } else if (isWhyItem(item)) {
-      out.push(item.es);
-    } else if (isTransformItem(item)) {
-      out.push(item.answer);
-    }
-  }
-  return out;
+  return keys;
 }
 
 // A szószedet-bejegyzés glosszája, ha nem létező alakot jelöl (a rossz válasz-opciókhoz kell).
 const NON_WORD_GLOSS = /^(not a real form|non-existent form)/i;
 
 /**
- * A word-deck source for a lesson: its glossary entries (the author's own
- * choice, so these never go through the function-word filter below - e.g.
- * clases-de-palabras glosses "mía"/"mío" on purpose, as vocabulary), plus
- * every content word from its example sentences that both (a) is not a
- * closed-class function word and (b) has an English meaning in the PCIC
- * (at the lesson's level or below). Order: glossary first, then first
- * occurrence in the sentences; each word once (mergeDeckState/answerCell
- * key on `id`, a repeat would silently collide).
+ * A word-deck source for a lesson. PLAN-fb1001 16. lépés (Kálmán "b" döntése): ONLY the words
+ * of the lesson's tables (tableWordKeys), never the glossary-only or example-sentence words
+ * ("itt miért vannak ilyen szavak? felesleges"). A table word that the glossary glosses
+ * (the author's own choice, so it skips the function-word filter - e.g. clases-de-palabras
+ * glosses "mía"/"mío" on purpose) uses the glossary entry; any other table word counts if it
+ * (a) is not a closed-class function word and (b) has an English meaning in the PCIC (at the
+ * lesson's level or below). Order: glossary entries first, then first occurrence in the
+ * tables; each word once (mergeDeckState/answerCell key on `id`, a repeat would silently
+ * collide). A lesson without tables, or whose tables hold no such word, gives 0 cards, so
+ * the caller (app/grammar/[topic].tsx) shows no deck entry.
  */
 export function wordCellsForLesson(
   lesson: GrammarTopicData | null | undefined,
@@ -393,10 +356,12 @@ export function wordCellsForLesson(
   if (learnedLang === 'en') return wordCellsForEnglishLesson(lesson);
   const cards: WordDeckCard[] = [];
   const seen = new Set<string>();
+  const tableKeys = tableWordKeys(lesson);
+  const inTable = new Set(tableKeys);
 
   for (const g of lesson.glossary ?? []) {
     const key = normalizeWordToken(g.word);
-    if (!key || seen.has(key)) continue;
+    if (!key || seen.has(key) || !inTable.has(key)) continue;
     // FB419/FB418 (PLAN-fb0929 5. lépés): a rossz opciók nem létező alakjai ("lápizes", "vezes")
     // csak a hangolás miatt vannak a szószedetben (audit-games), nem szó-kártyának valók.
     if (NON_WORD_GLOSS.test(g.gloss.en)) continue;
@@ -405,15 +370,12 @@ export function wordCellsForLesson(
   }
 
   const pcic = pcicWordIndex(lesson.level);
-  for (const sentence of lessonSentences(lesson)) {
-    for (const token of sentence.split(/\s+/)) {
-      const key = normalizeWordToken(token);
-      if (!key || seen.has(key) || FUNCTION_WORDS_ES.has(key)) continue;
-      const hit = pcic.get(key);
-      if (!hit) continue;
-      seen.add(key);
-      cards.push({ id: `word::${key}`, es: hit.es, en: hit.en });
-    }
+  for (const key of tableKeys) {
+    if (seen.has(key) || FUNCTION_WORDS_ES.has(key)) continue;
+    const hit = pcic.get(key);
+    if (!hit) continue;
+    seen.add(key);
+    cards.push({ id: `word::${key}`, es: hit.es, en: hit.en });
   }
 
   return cards;

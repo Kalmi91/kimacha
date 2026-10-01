@@ -72,12 +72,38 @@ describe('grammar lesson screen: table-deck button', () => {
     view.unmount();
   });
 
-  it('a schema-1 (legacy) lesson has no deck button', async () => {
-    mockTopicId = 'posesivos';
+  // PLAN-fb1001 11. lépés (FB437/FB438): a személy-tábla (minden sor személy-névmás, a fejléc nem
+  // csupa infinitivus) kérdezhető, ezért gombot kap; a régi "posesivos = schema-1, nincs gomb"
+  // teszt a posesivos schema-2-re költözésekor elavult volt.
+  it('a person table (pronombres-oi) gets the deck button, 5 cells (vosotros dropped)', async () => {
+    mockTopicId = 'pronombres-oi';
     const view = render(<GrammarLessonScreen />);
     await flush();
 
+    expect(screen.getByTestId('grammar-start-tabledeck')).toBeTruthy();
+    expect(screen.getByText('Practice the table · 5 cells')).toBeTruthy();
+
+    view.unmount();
+  });
+  // PLAN-fb1001 16. lépés (FB437/FB438, Kálmán "b" döntése): a szó-pakli csak a tábla szavaiból
+  // épül; ahol így küszöb alatt marad, nincs pakli-belépő (és nincs crash).
+  it('clases-de-palabras (a tábla szavai a küszöb alatt) nem kap szó-pakli belépőt', async () => {
+    mockTopicId = 'clases-de-palabras';
+    const view = render(<GrammarLessonScreen />);
+    await flush();
+
+    expect(screen.queryByTestId('grammar-start-worddeck')).toBeFalsy();
     expect(screen.queryByTestId('grammar-start-tabledeck')).toBeFalsy();
+
+    view.unmount();
+  });
+
+  it('marcadores-temporales (elég tábla-szó) megtartja a szó-pakli belépőt', async () => {
+    mockTopicId = 'marcadores-temporales';
+    const view = render(<GrammarLessonScreen />);
+    await flush();
+
+    expect(screen.getByTestId('grammar-start-worddeck')).toBeTruthy();
 
     view.unmount();
   });

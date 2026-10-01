@@ -223,6 +223,8 @@ export default function SpellingScreen() {
           onSubmitEditing={result ? handleNext : handleCheck}
           editable={!result}
           autoFocus
+          placeholder={s.card.typeIn(learned)}
+          placeholderTextColor={colors.tabIconDefault}
           {...answerInputProps}
         />
 

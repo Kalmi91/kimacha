@@ -11,7 +11,8 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { t, setLanguage, notifyLanguageChange } from '@/lib/i18n';
 import { type Level } from '@/data/words';
 import { getDb } from '@/lib/database';
-import { setPcicTarget, type PcicTarget } from '@/data/pcic';
+import { setPcicTarget, pcicItemsForLevel, PCIC_LEVELS, type PcicTarget, type PcicLevel } from '@/data/pcic';
+import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { validateBackupPayload } from '@/lib/backup';
 import { validateMistakesPayload } from '@/lib/mistakes/format';
 import {
@@ -38,6 +39,20 @@ import { loadVoices, hasVoiceFor } from '@/lib/speech';
 import { languages } from '@/lib/languages';
 
 const appVersionLabel = appBuildTag();
+
+// PLAN-fb1001 7. lépés (FB431): a nullázható paklik (a szintek, amiken van
+// haladás) és az, hogy van-e nyelvtan-haladás. Az aktív irány szavai számítanak.
+async function loadResettable(): Promise<{ levels: PcicLevel[]; grammar: boolean }> {
+  const db = getDb();
+  const onboarding = await db.getOnboarding();
+  if (onboarding) setPcicTarget(onboarding.target as PcicTarget);
+  const [cards, grammarRows] = await Promise.all([db.getPcicCards(), db.getGameProgress(GRAMMAR_PROGRESS_KEY)]);
+  const ids = new Set(cards.map((c) => c.itemId));
+  return {
+    levels: PCIC_LEVELS.filter((lvl) => pcicItemsForLevel(lvl).some((i) => ids.has(i.id))),
+    grammar: grammarRows.length > 0,
+  };
+}
 
 // NY19: a beállítás-sor: brutalista palettán BrutalBox, classic palettán a mai kártya-sor.
 function Row({ onPress, children }: { onPress?: () => void; children: ReactNode }) {
@@ -115,6 +130,10 @@ export default function SettingsScreen() {
   // hint the learner only hears a wrong-language reading (or now, silence) and
   // has no idea it is a missing system voice, not the app.
   const [missingVoices, setMissingVoices] = useState<string[]>([]);
+  // PLAN-fb1001 K1/7. lépés: a nullázó sorok: egy pakli-sor minden szintre, amin van
+  // haladás, és egy nyelvtan-sor, ha van nyelvtan-haladás.
+  const [resetLevels, setResetLevels] = useState<PcicLevel[]>([]);
+  const [hasGrammarProgress, setHasGrammarProgress] = useState(false);
 
   useFocusEffect(
     useCallback(() => {
@@ -136,6 +155,10 @@ export default function SettingsScreen() {
       Promise.all([db.getSpellingDueCount(), db.getPcicSpellingDueCount()]).then(([a, b]) => setSpellingDue(a + b));
       Promise.all([db.getSpellingListCount(), db.getPcicSpellingListCount()]).then(([a, b]) => setSpellingTotal(a + b));
       db.getArticlePicker().then(setArticlePicker);
+      loadResettable().then(({ levels, grammar }) => {
+        setResetLevels(levels);
+        setHasGrammarProgress(grammar);
+      });
     }, [])
   );
 
@@ -213,10 +236,12 @@ export default function SettingsScreen() {
 
   // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont): a
   // korábban angolra égetett gombfeliratok a felület nyelvén.
-  const themeOptions: { label: string; value: 'system' | 'light' | 'dark' }[] = [
-    { label: `🔄 ${s.settings.themeAuto}`, value: 'system' },
-    { label: `☀️ ${s.settings.themeLight}`, value: 'light' },
-    { label: `🌙 ${s.settings.themeDark}`, value: 'dark' },
+  // PLAN-fb1001 8. lépés (FB428): az ikon a felirat FÖLÉ kerül külön sorba, hogy a hosszú
+  // felirat ("Automático") 3 oszlopban se csússzon ki a gombból.
+  const themeOptions: { icon: string; label: string; value: 'system' | 'light' | 'dark' }[] = [
+    { icon: '🔄', label: s.settings.themeAuto, value: 'system' },
+    { icon: '☀️', label: s.settings.themeLight, value: 'light' },
+    { icon: '🌙', label: s.settings.themeDark, value: 'dark' },
   ];
 
   // NY12: color palettes, two dots (accent + second color) and the name.
@@ -299,6 +324,30 @@ export default function SettingsScreen() {
     }
   };
 
+  // PLAN-fb1001 K1 + 7. lépés (FB431): a Learn fejlécéből ide költözött haladás-nullázás,
+  // paklinként (szintenként) és a nyelvtanra külön; mind megerősítéssel. A Learn és a
+  // Kurzus fül fókuszra újratölt, a sorok itt azonnal frissülnek.
+  const confirmReset = (title: string, message: string, doReset: () => Promise<void>) => {
+    const run = async () => {
+      await doReset();
+      const r = await loadResettable();
+      setResetLevels(r.levels);
+      setHasGrammarProgress(r.grammar);
+    };
+    if (Platform.OS === 'web') {
+      if (window.confirm(`${title}\n${message}`)) run();
+    } else {
+      Alert.alert(title, message, [
+        { text: s.feedback.cancel, style: 'cancel' },
+        { text: s.pcic.resetConfirmYes, style: 'destructive', onPress: run },
+      ]);
+    }
+  };
+  const handleResetDeck = (lvl: PcicLevel) =>
+    confirmReset(s.pcic.resetConfirmTitle, s.pcic.resetConfirmLevel(lvl), () => getDb().resetPcicCards(lvl.toLowerCase()));
+  const handleResetGrammar = () =>
+    confirmReset(s.settings.resetGrammarTitle, s.settings.resetGrammarMessage, () => getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY));
+
   // PLAN-hibaim.md 3. lépés: pick a kimacha-hibaim JSON (the /hibaim skill's
   // output), validate it with the app's own rules (lib/mistakes/format.ts),
   // save it (loading the same batchId again replaces its content, card
@@ -343,7 +392,13 @@ export default function SettingsScreen() {
             boxStyle={styles.brutalOption}
             onPress={() => setOverride(opt.value)}
           >
-            <Text style={[styles.optionText, styles.brutalOptionText, { color: override === opt.value ? g.onFill : g.ink }]}>
+            <Text style={styles.themeIcon}>{opt.icon}</Text>
+            <Text
+              numberOfLines={1}
+              adjustsFontSizeToFit
+              minimumFontScale={0.8}
+              style={[styles.optionText, styles.brutalOptionText, styles.themeLabel, { color: override === opt.value ? g.onFill : g.ink }]}
+            >
               {opt.label}
             </Text>
           </BrutalBox>
@@ -356,7 +411,13 @@ export default function SettingsScreen() {
             ]}
             onPress={() => setOverride(opt.value)}
           >
-            <Text style={[styles.optionText, { color: override === opt.value ? colors.onTint : colors.text }]}>
+            <Text style={styles.themeIcon}>{opt.icon}</Text>
+            <Text
+              numberOfLines={1}
+              adjustsFontSizeToFit
+              minimumFontScale={0.8}
+              style={[styles.optionText, styles.themeLabel, { color: override === opt.value ? colors.onTint : colors.text }]}
+            >
               {opt.label}
             </Text>
           </Pressable>
@@ -490,36 +551,50 @@ export default function SettingsScreen() {
             {direction[0] === 'en' ? s.settings.directionEnEs : s.settings.directionEsEn}
           </Text>
         </View>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
       </Row>
 
       {/* FB39: entry point into the spelling-practice trainer screen. */}
       <Row onPress={() => router.push('/spelling')}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.spellingPractice(spellingDue, spellingTotal)}</Text>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
       </Row>
 
       {/* Q0: backup (export + share) and restore (pick file + confirm + import). */}
       <Row onPress={handleBackup}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>💾 {s.backup.backup}</Text>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
       </Row>
 
       <Row onPress={handleRestore}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>♻️ {s.backup.restore}</Text>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
       </Row>
 
       {/* PLAN-hibaim.md 3. lépés: import a "Hibáim" kötegből (Drive JSON). */}
       <Row onPress={handleLoadMistakes}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.mistakes.load}</Text>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
       </Row>
+
+      {/* PLAN-fb1001 K1 + 7. lépés: haladás-nullázás megerősítéssel, paklinként és a nyelvtanra. */}
+      {resetLevels.map((lvl) => (
+        <Row key={lvl} onPress={() => handleResetDeck(lvl)}>
+          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.pcic.resetRow(lvl)}</Text>
+          <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
+        </Row>
+      ))}
+      {hasGrammarProgress && (
+        <Row onPress={handleResetGrammar}>
+          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.resetGrammar}</Text>
+          <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
+        </Row>
+      )}
 
       {/* PLAN-credits.md: word-data attribution screen entry point. */}
       <Row onPress={() => router.push('/credits')}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.credits}</Text>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
       </Row>
 
       {/* FB82: app version, small and grey, so the user can tell which build runs. */}
@@ -584,8 +659,9 @@ const styles = StyleSheet.create({
   container: {
     padding: 24,
     paddingTop: 40,
-    // room under the last row so the FAB never covers it
-    paddingBottom: 96,
+    // room under the last row so the FAB never covers it (PLAN-fb1001 8. lépés: 96 → 120,
+    // a hosszabb lista utolsó sora is a 💬 fölé görgethető)
+    paddingBottom: 120,
   },
   versionText: {
     marginTop: 12,
@@ -631,7 +707,9 @@ const styles = StyleSheet.create({
   brutalStepOuter: { width: 38 },
   brutalStep: { width: 34, height: 34, alignItems: 'center', justifyContent: 'center' },
   brutalOptionOuter: { flex: 1 },
-  brutalOption: { paddingVertical: 12, alignItems: 'center' },
+  // PLAN-fb1001 8. lépés (FB428): flex:1 + középre, hogy az előlap kitöltse a magasabb
+  // szomszéd miatt nyújtott külső dobozt (különben az árnyék lelógott a doboz alól).
+  brutalOption: { paddingVertical: 12, alignItems: 'center', justifyContent: 'center', flex: 1 },
   brutalOptionText: { fontWeight: '500', textTransform: 'uppercase' },
   brutalDot: { borderRadius: 0, borderWidth: 2 },
   brutalPaletteOuter: { flexBasis: '46%' },
@@ -664,6 +742,9 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '600',
   },
+  // PLAN-fb1001 8. lépés (FB428): téma-gomb (3 oszlop): ikon fent, kisebb egysoros felirat.
+  themeIcon: { fontSize: 16, marginBottom: 2 },
+  themeLabel: { fontSize: 11, textAlign: 'center' },
   paletteGroup: {
     flexWrap: 'wrap',
   },
@@ -711,6 +792,12 @@ const styles = StyleSheet.create({
     // push the switch/stepper out of the card, RN text does not shrink on its own.
     flex: 1,
     marginRight: 12,
+  },
+  // PLAN-fb1001 8. lépés: a "→" a sor jobb szélén ül, a szöveg kapja a maradék szélességet.
+  rowArrow: {
+    fontSize: 16,
+    fontWeight: '600',
+    flexShrink: 0,
   },
   // FB65: −/+ stepper for the weekly goal row.
   missingVoiceText: { fontSize: 13, lineHeight: 18, flex: 1 },
