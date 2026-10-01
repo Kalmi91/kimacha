@@ -292,7 +292,7 @@ A „BRIEF új lecke (2026-10-01 …)” érvényes, a munkahely helyett ez a wo
 
 Ok: a 24 új lecke és a 3×50 transform mind szerző-agenttől jön, kapu zöld, de a kapu nem lát nyelvi hibát (két helyes opció, nem természetes mondat, rossz fordítás). Minta: a `words-open` független átnézése (PR #59). Az A sáv közben az F-sort írja új fájlokba, ezért ez a kör csak a lent felsorolt, már kész JSON-okhoz nyúl.
 
-- [ ] R1. `marcadores-temporales`, `muy-mucho`, `combinacion-pronombres`, `imperativo-negativo` → kész, ha: átnézve, javítva, kapu zöld, commit `fix(grammar): átnézés R1 (nyelvtan)`
+- [x] R1. `marcadores-temporales`, `muy-mucho`, `combinacion-pronombres`, `imperativo-negativo` → kész, ha: átnézve, javítva, kapu zöld, commit `fix(grammar): átnézés R1 (nyelvtan)` (03:42; javítás: marcadores-temporales 7, muy-mucho 6, combinacion-pronombres 2, imperativo-negativo 1)
 - [ ] R2. `llevar-traer-ir-venir`, `pedir-preguntar`, `saber-conocer`, `por-para-avanzado` → ugyanaz
 - [ ] R3. `se-impersonal-pasiva`, `ojala-quizas`, `relativos`, `perifrasis` → ugyanaz
 - [ ] R4. `pluscuamperfecto`, `indefinidos`, `gerundio-participio-construcciones`, `lo-neutro` → ugyanaz
