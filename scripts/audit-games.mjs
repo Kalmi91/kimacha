@@ -53,7 +53,7 @@
  */
 
 import { readFileSync, readdirSync, existsSync } from 'fs';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 import { dirname, join } from 'path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -277,11 +277,37 @@ for (const lvl of LEVELS) {
   taughtByLevel[lvl] = set;
 }
 
+// PLAN-regi-szavak-ki 7b: a tanított szó ragozott alakja (és az igéhez írt névmás, verlo) is
+// tanított, ugyanazzal az alak-készlettel, amelyet az app glossza-indexe használ (lib/esForms).
+// A modul tiszta TS, a words-open-check.mjs is így tölti a lib/games/conjugate.ts-t.
+const origEmitWarning = process.emitWarning;
+process.emitWarning = () => {};
+const libUrl = (f) => pathToFileURL(join(ROOT, 'lib', f)).href;
+const { formsOfCard, encliticBases } = await import(libUrl('esForms.ts'));
+const { conjugate, TENSES } = await import(libUrl('games/conjugate.ts'));
+const { esPlural, esFeminine } = await import(libUrl('esInflect.ts'));
+process.emitWarning = origEmitWarning;
+const FORM_DEPS = { conjugate, TENSES, esPlural, esFeminine };
+
+const formsByLevel = {};
+for (const lvl of LEVELS) {
+  const forms = new Set();
+  for (const card of loadLevelWords(lvl)) {
+    for (const f of formsOfCard(card.es ?? '', card.pos ?? '', FORM_DEPS)) forms.add(removeAccents(f));
+  }
+  formsByLevel[lvl] = forms;
+}
+
 function cumulativeTaught(level) {
   const idx = LEVELS.indexOf(level);
   const set = new Set();
+  const forms = new Set();
   const upTo = idx === -1 ? LEVELS.length - 1 : idx; // unknown level: be generous, use everything loaded
-  for (let i = 0; i <= upTo; i++) for (const t of taughtByLevel[LEVELS[i]]) set.add(t);
+  for (let i = 0; i <= upTo; i++) {
+    for (const t of taughtByLevel[LEVELS[i]]) set.add(t);
+    for (const f of formsByLevel[LEVELS[i]]) forms.add(f);
+  }
+  set.forms = forms; // a tanított szavak ragozott alakjai (az O(1) kereséshez külön halmaz)
   return set;
 }
 
@@ -298,6 +324,18 @@ function tokenKnown(tok, taughtSet, extra) {
   // infinitive is taught.
   const infinitive = IRREGULAR_FORMS.get(stripped);
   if (infinitive && (taughtSet.has(infinitive) || extra?.has(infinitive))) return true;
+  // A tanított szó ragozott alakja (a ragozó motor + a tőváltozatok), vagy az igéhez írt névmás
+  // (verlo, ayúdame) után megmaradó tő ige-alak vagy infinitív.
+  const forms = taughtSet.forms;
+  if (forms) {
+    if (forms.has(stripped)) return true;
+    for (const base of encliticBases(stripped)) if (forms.has(base) || taughtSet.has(base)) return true;
+    // ugyanaz a végső o<->a / os<->as tűrés, mint a tanított szavaknál (matches): a hibás válaszlehetőség
+    // (vo a voy/va helyett) a tanított ige hibás alakja
+    const swapped = stripped.replace(/o$/, 'a').replace(/os$/, 'as');
+    const swappedBack = stripped.replace(/a$/, 'o').replace(/as$/, 'os');
+    if (stripped.length > 1 && (forms.has(swapped) || forms.has(swappedBack))) return true;
+  }
   // Glossary/member words can be conjugated forms of each other (a confusables
   // set's own infinitive member used inflected in an example), so stem-match
   // against them too, not just against the corpus.
