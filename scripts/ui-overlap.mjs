@@ -11,7 +11,14 @@
 //            téglalapja 4 px²-nél jobban metszi egymást. Szövegnél a sor-téglalapok
 //            (Range) a számítottak, a line-height-ra szűkítve; a hivatkozott
 //            (kattintható) elemben lévő szöveg az okozó elemre vezet vissza (egy hiba = egy sor)
-//   overflow kilógás: szöveg vagy gomb jobb széle > a nézet szélessége
+//   overflow kilógás: szöveg vagy gomb jobb széle > a nézet szélessége (kapcsoló: offscreen)
+//   contrast olvashatóság (WCAG AA): a látható szöveges levél-elem színe vs. a tényleges háttér
+//            (az első nem átlátszó background-color az ősök közt, az átlátszóság / opacity
+//            beszámítva; kép / gradiens ős esetén kihagyva). Küszöb 4.5, nagy szövegnél (>= 24 px,
+//            vagy >= 18.66 px és >= 600 súly) és a betű / szám nélküli jelnél (•, →, ▾; WCAG 1.4.11
+//            grafikus elem) 3.0; a TextInput placeholdere
+//            (::placeholder) a mező hátterén 4.5. Letiltott (disabled / aria-disabled) elem,
+//            ikon-betű (magánhasználatú kódpont) és emoji kimarad
 //   load     a kombináció nem töltött be / a lépés nem találta a gombot
 // A díszeket rajzoló elemek (data-testid="decor-...") és leszármazottaik kimaradnak; ugyanígy
 // az átmeneti, szándékosan a tartalom fölé rajzolt UsageToast (data-testid="usage-toast").
@@ -22,6 +29,7 @@
 //
 // Használat: node scripts/ui-overlap.mjs [--skins a,b|mix] [--routes r1,r2]
 //            [--viewports 360x740,412x915] [--shots] [--no-build]
+//            [--checks clip,overlap,offscreen,contrast]   (alapból mind)
 // (npm run ui:overlap -- --skins brutal,deco)
 
 import { spawn, spawnSync } from 'node:child_process';
@@ -72,13 +80,14 @@ const ROUTES = {
 // Paraméterek
 
 function parseArgs(argv) {
-  const o = { skins: null, routes: null, viewports: null, shots: false, build: true };
+  const o = { skins: null, routes: null, viewports: null, checks: null, shots: false, build: true };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     const list = () => (argv[++i] ?? '').split(',').map((s) => s.trim()).filter(Boolean);
     if (a === '--skins') o.skins = list();
     else if (a === '--routes') o.routes = list();
     else if (a === '--viewports') o.viewports = list();
+    else if (a === '--checks') o.checks = list();
     else if (a === '--shots') o.shots = true;
     else if (a === '--no-build') o.build = false;
     else {
@@ -314,7 +323,8 @@ function pageFindTarget(spec) {
 }
 
 // A vizsgálat: { issues: [{ type, text, other? }], stats }.
-function pageAnalyze() {
+function pageAnalyze(checks) {
+  const want = new Set(checks);
   const vw = document.documentElement.clientWidth;
   const issues = [];
   const trunc = (s) => String(s).replace(/\s+/g, ' ').trim().slice(0, 40);
@@ -534,7 +544,110 @@ function pageAnalyze() {
       }
     }
   }
-  return { issues, stats: { items: items.length } };
+
+  // (d) olvashatóság: WCAG AA kontraszt a tényleges háttéren
+  if (want.has('contrast')) {
+    const parseColor = (s) => {
+      const m = /^rgba?\(([^)]+)\)$/.exec(String(s).trim());
+      if (!m) return null;
+      const p = m[1].split(/[\s,/]+/).filter(Boolean).map(Number);
+      if (p.length < 3 || p.slice(0, 3).some(Number.isNaN)) return null;
+      return { r: p[0], g: p[1], b: p[2], a: p.length > 3 && !Number.isNaN(p[3]) ? p[3] : 1 };
+    };
+    const over = (f, b) => ({
+      r: f.r * f.a + b.r * (1 - f.a),
+      g: f.g * f.a + b.g * (1 - f.a),
+      b: f.b * f.a + b.b * (1 - f.a),
+      a: 1,
+    });
+    const lum = (c) => {
+      const [r, g, b] = [c.r, c.g, c.b].map((v) => {
+        const s = v / 255;
+        return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+      });
+      return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    };
+    const ratio = (c1, c2) => {
+      const a = lum(c1);
+      const b = lum(c2);
+      return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+    };
+    const hex = (c) => `#${[c.r, c.g, c.b].map((v) => Math.round(v).toString(16).padStart(2, '0')).join('')}`;
+    const TOAST = '[data-testid^="usage-toast"]';
+    // Az elem és ősei: a szülői opacity-k szorzata (a gyökértől lefelé számolva), és a hátterek
+    // az első teljesen fedő rétegig. null = kép / gradiens / dísz a háttérben (nem mérhető).
+    const paint = (el) => {
+      const chain = [];
+      for (let a = el; a; a = a.parentElement) chain.push(a);
+      const css = chain.map((a) => getComputedStyle(a));
+      const suffix = [];
+      let p = 1;
+      for (let i = chain.length - 1; i >= 0; i--) {
+        // a toast be- / kiúszó opacity-je átmeneti, nem a kontrasztja
+        p *= chain[i].matches(TOAST) ? 1 : parseFloat(css[i].opacity);
+        suffix[i] = p;
+      }
+      const layers = [];
+      for (let i = 0; i < chain.length; i++) {
+        if (chain[i].matches('[data-testid^="decor-"]') || css[i].backgroundImage !== 'none') return null;
+        const c = parseColor(css[i].backgroundColor);
+        if (!c) return null;
+        if (c.a <= 0) continue;
+        const eff = { ...c, a: c.a * suffix[i] };
+        layers.push(eff);
+        if (eff.a >= 0.999) break;
+      }
+      let bg = { r: 255, g: 255, b: 255, a: 1 };
+      for (let i = layers.length - 1; i >= 0; i--) bg = over(layers[i], bg);
+      return { bg, opacity: suffix[0] };
+    };
+    const DISABLED = '[aria-disabled="true"], [disabled], :disabled';
+    const GLYPH = /^[\s\u{E000}-\u{F8FF}\p{Extended_Pictographic}\u{FE0F}\u{200D}]*$/u;
+    const report = (el, label, fg, bgc, need) => {
+      const r = ratio(fg, bgc);
+      if (r + 1e-9 >= need) return;
+      issues.push({
+        type: 'contrast',
+        text: label,
+        at: desc(el),
+        other: `${r.toFixed(2)} < ${need} (${hex(fg)} / ${hex(bgc)})`,
+      });
+    };
+    // a szöveges elemek + az átmeneti toast szövege (saját háttere van, az olvashatóság számít)
+    const cands = items.filter((it) => it.kind === 'text').map((it) => ({ el: it.el, label: it.label, cs: it.cs }));
+    for (const [el, nodes] of byEl) {
+      if (!el.closest(TOAST) || el.closest('[data-testid^="decor-"]') || !visible(el)) continue;
+      const r = el.getBoundingClientRect();
+      if (r.width < 1 || r.height < 1) continue;
+      cands.push({ el, label: trunc(nodes.map((n) => n.nodeValue).join(' ')), cs: getComputedStyle(el) });
+    }
+    for (const it of cands) {
+      const el = it.el;
+      const raw = el.textContent ?? '';
+      if (GLYPH.test(raw) || el.closest(DISABLED)) continue;
+      const fgc = parseColor(it.cs.color);
+      const pt = paint(el);
+      if (!fgc || !pt) continue;
+      const fg = over({ ...fgc, a: fgc.a * pt.opacity }, pt.bg);
+      const size = parseFloat(it.cs.fontSize);
+      const weight = parseInt(it.cs.fontWeight, 10) || 400;
+      const large = size >= 24 || (size >= 18.66 && weight >= 600);
+      // betű / szám nélküli jel (•, →, ▾, ✓): grafikus elem, WCAG 1.4.11: 3.0
+      const symbol = !/[\p{L}\p{N}]/u.test(raw);
+      report(el, it.label, fg, pt.bg, large || symbol ? 3 : 4.5);
+    }
+    for (const el of document.body.querySelectorAll('input[placeholder], textarea[placeholder]')) {
+      if (!visible(el) || inDecor(el) || el.value || el.closest(DISABLED)) continue;
+      const pcs = getComputedStyle(el, '::placeholder');
+      const fgc = parseColor(pcs.color);
+      const pt = paint(el);
+      if (!fgc || !pt) continue;
+      const fg = over({ ...fgc, a: fgc.a * parseFloat(pcs.opacity || 1) * pt.opacity }, pt.bg);
+      report(el, trunc(el.getAttribute('placeholder')), fg, pt.bg, 4.5);
+    }
+  }
+  const kept = issues.filter((i) => want.has(i.type === 'overflow' ? 'offscreen' : i.type));
+  return { issues: kept, stats: { items: items.length } };
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -559,6 +672,9 @@ async function main() {
     return { name: v, width: Number(m[1]), height: Number(m[2]) };
   });
   if (skippedRoutes.length) console.log(`Kimarad (nincs a projektben): ${skippedRoutes.join(', ')}`);
+  const ALL_CHECKS = ['clip', 'overlap', 'offscreen', 'contrast'];
+  const checks = opt.checks ?? ALL_CHECKS;
+  for (const k of checks) if (!ALL_CHECKS.includes(k)) throw new Error(`Ismeretlen vizsgálat: ${k} (${ALL_CHECKS.join(', ')})`);
 
   if (opt.build) {
     console.log('expo export -p web ...');
@@ -641,7 +757,7 @@ async function main() {
           throw new Error(`nincs ${def.ready}`);
         }
         await settle();
-        const res = await cdp.evaluate(`(${pageAnalyze})()`);
+        const res = await cdp.evaluate(`(${pageAnalyze})(${JSON.stringify(checks)})`);
         comboIssues.push(...res.issues);
       } catch (err) {
         comboIssues.push({ type: 'load', text: String(err.message ?? err).slice(0, 40) });
@@ -674,7 +790,7 @@ async function main() {
   for (const i of issues) totals[i.type] = (totals[i.type] ?? 0) + 1;
   const report = {
     generatedAt: new Date().toISOString(),
-    args: { skins: skinList, routes, skippedRoutes, viewports: viewports.map((v) => v.name), shots: opt.shots },
+    args: { skins: skinList, routes, skippedRoutes, viewports: viewports.map((v) => v.name), checks, shots: opt.shots },
     combos: combos.length,
     secondsTotal: Math.round(seconds),
     secondsPerCombo: combos.length ? Number((seconds / combos.length).toFixed(2)) : 0,
