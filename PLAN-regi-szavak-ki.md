@@ -161,3 +161,15 @@ Az app élő pakli-modulja a `data/pcic.ts` (words-open + angol track): ez NEM a
     - #764 to love → encantar | Me encanta la música.
     - #766 to interest → interesar | Me interesa la historia.
     - #775 to last → durar | El viaje dura una semana.
+- 15:33 7b. lépés, 3. adag (B1): +42 kártya, order 777-818 (b1.json vége): words-open-check ZÖLD (818 kártya); lecke-kapu P1 2060 → 1876 (a wordIds 1409 még nincs átállítva). Idióma-kártyák: a "de repente" fő alakja a perjeles `repente / de repente` (az R2 szerint a főalak egy szó, a lemma egyezzen vele), az "acordarse" angol kérdése "to remember (reflexive)", mert a meglévő recordar kártya `to remember` kérdése nem kap hint-et.
+  - Minta, 10 véletlen új kártya (en → es | mondat):
+    - #778 to rest → descansar | Después de trabajar, mi padre descansa en casa.
+    - #779 great → genial | La fiesta de ayer fue genial.
+    - #788 gasoline → la gasolina | El carro necesita gasolina.
+    - #789 I hope → ojalá | Ojalá llueva mañana.
+    - #796 alarm clock → el despertador | Mi despertador está en la mesa.
+    - #802 sorry → perdón | Perdón, no entiendo la pregunta.
+    - #807 customer → el cliente | Los clientes esperan en la tienda.
+    - #809 alcohol → el alcohol | Mi padre no toma alcohol.
+    - #811 to forbid → prohibir | La escuela prohíbe el teléfono.
+    - #817 to doubt → dudar | Dudo que mi hijo llegue temprano.
